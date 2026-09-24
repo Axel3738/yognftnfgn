@@ -19,7 +19,7 @@
   },
   {
    "id": "H02",
-   "text": "Hårt datum ingen kan flytta (1 dec, uppställning, första frost) slår 'pågående skada' — köpet görs 2–12 v före datumet",
+   "text": "Hårt datum ingen kan flytta (1 dec, uppställning, första frost) slår 'pågående skada' — köpet görs 2–12 v före datumet | 2026-09-24: snöslungekapellet (snö 4–10 v bort vid launch) REAL_LOSER 0,55 medan ATV-kapellet (älgjakt NU) vann — för väderdatum ska '2–12 v före' läsas som 2–6 v.",
    "villkor": {
     "deadline_typ": [
      "1 december",
@@ -67,12 +67,12 @@
   },
   {
    "id": "H06",
-   "text": "Look-alikes under vårt pris och 2–3 annonsörer dödar INTE när ett synligt märkesankare ≥ 1,2× finns (V2 vann med 157-kronorskopia)",
+   "text": "Look-alikes under vårt pris och 2–3 annonsörer dödar INTE när ett synligt märkesankare ≥ 1,2× finns (V2 vann med 157-kronorskopia) | Första Meta-bevis 2026-09-24: ATV-kapellet (golv Jula 399 under vårt 579, Polaris-ankare 3 045) REAL_WINNER 1 963 / 11 / 4,07. Motbevis-kandidat kvar: kojan (look-alike under oss, vann i fönster 1 men skalade inte). Test ute: ATV-vindrutan K0301 (golv ATVhuset 995 < 1 199, ankare 2,3×).",
    "villkor": {
     "kedjegolv_under_vart_pris": true,
     "markesankare_min": 1.2
    },
-   "test_sokning": "släpp igenom kandidater med golv under oss om ankare ≥ 1,2× finns — märk dem så utfallet går att skära",
+   "test_sokning": "släpp igenom kandidater med golv under oss om ankare ≥ 1,2× finns — märk dem så utfallet går att skära Skilj 'golv = en kopia under ankare ≥ 1,6×' (släpp igenom, märk H06) från 'golv = sortiment med 100+ varianter i fackhandeln' (fäll).",
    "skapad": "2026-09-11"
   },
   {

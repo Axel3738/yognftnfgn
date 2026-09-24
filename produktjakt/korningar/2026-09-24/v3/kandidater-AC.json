@@ -1,0 +1,532 @@
+{
+ "agent": "AC — ATV-/skoter-/jaktägaren efter ATV-kapellet (H01/H02/H08)",
+ "datum": "2026-09-24",
+ "sammanfattning": "0 kandidater klarar orderns golvregel ('golv i exakt samma form under vårt pris = struken direkt'). ATV-ägarens tillbehör täcks av fackhandeln (ATVhuset: 128 sadelöverdrag, 25 vindrutor, 19 gevärsfästen, 16 redskapsfästen) till priser under det vårt BE-CPA ≥ 190 kräver; jakt- och hundformerna (torktäcke, viltsäck, åtelspridare, åtelbelysning) finns styckvis hos Hylte/Jaktia/zoo-kedjorna eller saknar leverantör på AliExpress. Två rader faller ENBART på golvregeln och har samma struktur som ATV-kapellet (Jula 399 under 579, Polaris-ankare 3 045 → REAL WINNER): de ligger komplett LIVE-verifierade under strukna[0..1].rad så huvudsessionen kan lyfta dem med H06 om den vill.",
+ "kandidater": [
+  {
+   "koncept_id": null,
+   "namn_sv": "ATV-vindrutan för passet",
+   "objekt": "NYTT: ATV-föraren på passet i regn och snö — vindruta",
+   "form": "annat",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "B_SKYDDA_DYRT",
+   "slot": "exploration",
+   "hypotes_id": "H06",
+   "vinnarlikhet": {
+    "likast": "ATV-Kapell Storlek 3XL / Termoskyddet för Husbil",
+    "delade_variabler": [
+     "samma ägare och samma objekt som ATV-kapellet (REAL WINNER 2026-09-24)",
+     "objekt ute, dyr > 10 tkr (ATV 80–150 tkr)",
+     "hårt datum: älgjakt 2,0 v + första snö Norrland 4,4 v",
+     "ankare ≥ 1,6× (Moose 2 755 = 2,3×)",
+     "prisband ≥ 1 000 med objekt ≥ 100× priset (H04)",
+     "textfri hero i ATV-form"
+    ],
+    "avvikelser": [
+     "form 'annat' (0 av 14 dömda vann)",
+     "golv ATVhuset 995 under vårt pris",
+     "kräver montering på styret (medföljande klämmor)",
+     "akrylruta 91 cm — fraktskaderisk"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "algjakt_syd",
+    "deadline_typ": "älgjakt",
+    "veckor_kvar": 2.0,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005002679622965",
+    "url": "https://www.aliexpress.com/item/1005002679622965.html",
+    "pris_usd": 58.61,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-24T06:09:30Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-24/v3/bilder/1005002679622965.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant, universal ('Fit For Polaris Arctic CAT CAN AM Honda Fourtrax … Yamaha Grizzly'); syskon 1005006168581252 samma pris 58,61 USD (bara sökträff)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "packshot: klar ruta med svart tonad nederkant + hela monteringssatsen (klämmor, bågar, skruv) — eget foto på fyrhjulingen i regn behövs"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ATVhuset (ATV-PRO ATV Vindruta Universal)",
+     "pris_sek": 995,
+     "url": "https://www.atvhuset.se/chassie-kaross/vindruta/atv-vindruta-universal",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Moose ATV Vindruta Universal (ATVhuset) 2 755 kr; Powermadd Cobra Quick Release 2 950 kr",
+     "pris_sek": 2755,
+     "url": "https://www.atvhuset.se/chassie-kaross/vindruta",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 2.3,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "atvhuset.se vindruta-kategorin läst 2026-09-24 (25 produkter, 269–6 499 kr)",
+     "atvhuset.se produktsida ATV Vindruta Universal läst (995 kr, 91,5 × 52 cm, 22 mm, 20+ i lager)",
+     "sökutdrag: motorbiten.com, atvdack.se, atvbutiken.com har universalrutor 90 × 51 cm (pris ej läst)",
+     "jula/biltema: ej i sökutdrag — ej mätt"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     763,
+     932
+    ],
+    "pris_sek": 1199,
+    "brutto_sek": [
+     267,
+     436
+    ],
+    "be_cpa_sek": [
+     267,
+     436
+    ],
+    "be_roas": 3.4,
+    "flerkop": false,
+    "returrisk": "medel — universal 22 mm-styre, men fraktskada på akryl"
+   },
+   "meta_tanke": {
+    "hook": "Kör du till passet utan ruta?",
+    "objekt_i_bild": "fyrhjulingen med rutan på, regn/snö på rutan, föraren torr bakom",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "samma sträcka utan och med ruta: blött ansikte mot torrt, händerna bakom rutan"
+   },
+   "varfor": "Samma ägare, samma objekt och samma säsong som ATV-kapellet som just blev REAL WINNER, med ankare 2,3× och två hårda datum (älgjakt 2 v, första snö 4 v). Faller bara på orderns golvregel. | LYFT AV HUVUDSESSIONEN 2026-09-24 som H06-test: golv ATVhuset 995 under vårt 1 199, ankare Moose 2 755 (2,3×) — samma struktur som ATV-kapellet (Jula 399 < 579, REAL_WINNER i dag).",
+   "huvudrisk": "Golv 995 kr i exakt samma form (ATVhuset) under vårt pris; akrylruta 91 cm = fraktskaderisk",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": null,
+    "K2": null,
+    "K3": null,
+    "K4": null,
+    "K5": null,
+    "K6": null,
+    "K7": null,
+    "K8": null,
+    "K9": null,
+    "K10": null,
+    "K11": null,
+    "K12": null
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt: 'vindruta' = 0, 'ruta' = 0 (ATV-Kapell, Sadelväskor ATV, Styrhandtag ATV, Motocross Handskydd är andra saker)",
+     "koncept.py sok 'atv' = 11 träffar (kapell + sadelöverdrag), ingen vindruta",
+     "kontot 7 d: ej läst (rör inte Meta)"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005002679622965.html",
+    "https://www.aliexpress.com/item/1005006168581252.html",
+    "https://www.atvhuset.se/chassie-kaross/vindruta/atv-vindruta-universal",
+    "https://www.atvhuset.se/chassie-kaross/vindruta"
+   ]
+  }
+ ],
+ "strukna": [
+  {
+   "namn": "ATV-vindrutan universal (91 × 52 cm, 22 mm-styre)",
+   "skal": "GOLV UNDER: ATVhuset 'ATV Vindruta Universal' ATV-PRO 995 kr (20+ i lager, läst 2026-09-24) är exakt samma form (91,5 × 52 cm, 22 mm-styre, akryl). Ali 58,61 USD → landad 763–932 kr → pris måste vara ≥ 1 199 för BE-CPA ≥ 190 i hela intervallet → golvet 995 ligger under. Ankaret finns: Moose ATV Vindruta Universal 2 755 kr / Powermadd Cobra 2 950 kr (2,3–2,5×). Strukturen är identisk med ATV-kapellet (golv Jula 399 under 579, ankare 3 045 → 11 köp/ROAS 4,07) — H06-fall, inte H01-fall. → LYFT som H06-exploration av huvudsessionen.",
+   "aterupptas_om": "huvudsessionen släpper igenom golv-under när ankare ≥ 1,6× (H06); eller en Ali-listning ≤ 45 USD i ATV-form hittas (pris 999 med BE-CPA ≥ 190 i hela intervallet).",
+   "rad": {
+    "koncept_id": null,
+    "namn_sv": "ATV-vindrutan för passet",
+    "objekt": "NYTT: ATV-föraren på passet i regn och snö — vindruta",
+    "form": "annat",
+    "arketyp": "E_VADER_SASONG",
+    "arketyp_sekundar": "B_SKYDDA_DYRT",
+    "slot": "exploration",
+    "hypotes_id": "H06",
+    "vinnarlikhet": {
+     "likast": "ATV-Kapell Storlek 3XL / Termoskyddet för Husbil",
+     "delade_variabler": [
+      "samma ägare och samma objekt som ATV-kapellet (REAL WINNER 2026-09-24)",
+      "objekt ute, dyr > 10 tkr (ATV 80–150 tkr)",
+      "hårt datum: älgjakt 2,0 v + första snö Norrland 4,4 v",
+      "ankare ≥ 1,6× (Moose 2 755 = 2,3×)",
+      "prisband ≥ 1 000 med objekt ≥ 100× priset (H04)",
+      "textfri hero i ATV-form"
+     ],
+     "avvikelser": [
+      "form 'annat' (0 av 14 dömda vann)",
+      "golv ATVhuset 995 under vårt pris",
+      "kräver montering på styret (medföljande klämmor)",
+      "akrylruta 91 cm — fraktskaderisk"
+     ]
+    },
+    "sasong": {
+     "fonster_id": "algjakt_syd",
+     "deadline_typ": "älgjakt",
+     "veckor_kvar": 2.0,
+     "timing": "NOW"
+    },
+    "listning": {
+     "product_id": "1005002679622965",
+     "url": "https://www.aliexpress.com/item/1005002679622965.html",
+     "pris_usd": 58.61,
+     "sald": "",
+     "verdict": "LIVE_VERIFIED",
+     "verifierad_at": "2026-09-24T06:09:30Z",
+     "kontroll": {
+      "produktsida_oppnad": true,
+      "titel_stammer": true,
+      "hero_nedladdad": "korningar/2026-09-24/v3/bilder/1005002679622965.jpg",
+      "hero_sedd": true,
+      "pris_sett": true,
+      "varianter": "en variant, universal ('Fit For Polaris Arctic CAT CAN AM Honda Fourtrax … Yamaha Grizzly'); syskon 1005006168581252 samma pris 58,61 USD (bara sökträff)",
+      "video": "ej tillgänglig i containern"
+     }
+    },
+    "material": {
+     "klass": 1,
+     "hero_textfri": true,
+     "hero_i_kontext": false,
+     "samma_produkt": true,
+     "forsta_3s": "ej mätt (ingen video)",
+     "kommentar": "packshot: klar ruta med svart tonad nederkant + hela monteringssatsen (klämmor, bågar, skruv) — eget foto på fyrhjulingen i regn behövs"
+    },
+    "marknad": {
+     "lagsta_jamforbara": {
+      "aktor": "ATVhuset (ATV-PRO ATV Vindruta Universal)",
+      "pris_sek": 995,
+      "url": "https://www.atvhuset.se/chassie-kaross/vindruta/atv-vindruta-universal",
+      "exakt_samma_form": true
+     },
+     "premium_ankare": {
+      "namn": "Moose ATV Vindruta Universal (ATVhuset) 2 755 kr; Powermadd Cobra Quick Release 2 950 kr",
+      "pris_sek": 2755,
+      "url": "https://www.atvhuset.se/chassie-kaross/vindruta",
+      "i_sortiment": true
+     },
+     "ankare_kvot": 2.3,
+     "annonsorer_se": "ej mätt",
+     "kollade_kallor": [
+      "atvhuset.se vindruta-kategorin läst 2026-09-24 (25 produkter, 269–6 499 kr)",
+      "atvhuset.se produktsida ATV Vindruta Universal läst (995 kr, 91,5 × 52 cm, 22 mm, 20+ i lager)",
+      "sökutdrag: motorbiten.com, atvdack.se, atvbutiken.com har universalrutor 90 × 51 cm (pris ej läst)",
+      "jula/biltema: ej i sökutdrag — ej mätt"
+     ]
+    },
+    "ekonomi": {
+     "landad_sek": [
+      763,
+      932
+     ],
+     "pris_sek": 1199,
+     "brutto_sek": [
+      267,
+      436
+     ],
+     "be_cpa_sek": [
+      267,
+      436
+     ],
+     "be_roas": 3.4,
+     "flerkop": false,
+     "returrisk": "medel — universal 22 mm-styre, men fraktskada på akryl"
+    },
+    "meta_tanke": {
+     "hook": "Kör du till passet utan ruta?",
+     "objekt_i_bild": "fyrhjulingen med rutan på, regn/snö på rutan, föraren torr bakom",
+     "sjalvselekterande": true,
+     "forstas_3s": true,
+     "bevisas_visuellt": "samma sträcka utan och med ruta: blött ansikte mot torrt, händerna bakom rutan"
+    },
+    "varfor": "Samma ägare, samma objekt och samma säsong som ATV-kapellet som just blev REAL WINNER, med ankare 2,3× och två hårda datum (älgjakt 2 v, första snö 4 v). Faller bara på orderns golvregel. | LYFT AV HUVUDSESSIONEN 2026-09-24 som H06-test: golv ATVhuset 995 under vårt 1 199, ankare Moose 2 755 (2,3×) — samma struktur som ATV-kapellet (Jula 399 < 579, REAL_WINNER i dag).",
+    "huvudrisk": "Golv 995 kr i exakt samma form (ATVhuset) under vårt pris; akrylruta 91 cm = fraktskaderisk",
+    "konfidens": "MEDEL",
+    "poang": {
+     "vinnarlikhet": 2,
+     "meta_creative": 2,
+     "efterfragan": 2,
+     "lucka": 2,
+     "ekonomi": 2,
+     "sasong": 2,
+     "leverantor": 2,
+     "nyhet": 1,
+     "hypotesvarde": 2
+    },
+    "per_kriterium": {
+     "K0": "ok",
+     "K1": null,
+     "K2": null,
+     "K3": null,
+     "K4": null,
+     "K5": null,
+     "K6": null,
+     "K7": null,
+     "K8": null,
+     "K9": null,
+     "K10": null,
+     "K11": null,
+     "K12": null
+    },
+    "k0": {
+     "dubblett": false,
+     "kollat": [
+      "katalog-live.txt: 'vindruta' = 0, 'ruta' = 0 (ATV-Kapell, Sadelväskor ATV, Styrhandtag ATV, Motocross Handskydd är andra saker)",
+      "koncept.py sok 'atv' = 11 träffar (kapell + sadelöverdrag), ingen vindruta",
+      "kontot 7 d: ej läst (rör inte Meta)"
+     ]
+    },
+    "kallor": [
+     "https://www.aliexpress.com/item/1005002679622965.html",
+     "https://www.aliexpress.com/item/1005006168581252.html",
+     "https://www.atvhuset.se/chassie-kaross/vindruta/atv-vindruta-universal",
+     "https://www.atvhuset.se/chassie-kaross/vindruta"
+    ]
+   }
+  },
+  {
+   "namn": "ATV-sätesöverdraget vattentätt (Sätesöverdragaren-strukturen)",
+   "skal": "GOLV UNDER: ATVhuset 'Sadelöverdrag till ATV Universal modell' (ATV LAB) 399 kr, 20+ i lager, läst 2026-09-24 — exakt samma form. Ali 15,70 USD → landad 204–250 → pris 449 krävs för BE-CPA ≥ 190 → golvet 399 ligger under; på 399 blir BE-CPA 149–195 (under 190). Ankare finns (Parts Unlimited universal 549 = 1,22×, Moose Polaris 670 = 1,49×, Can-Am 740 = 1,65×). Ingen Ali-listning ≤ 13,5 USD i ATV-form hittad (fem sökningar).",
+   "aterupptas_om": "H06-väg (ankare ≥ 1,2× räcker) eller Ali-listning ≤ 13,5 USD i universal ATV-form → pris 399 = golvet, BE-CPA ≥ 190.",
+   "rad": {
+    "koncept_id": null,
+    "namn_sv": "ATV-sätesöverdraget 600D",
+    "objekt": "Fyrhjuling/ATV — sadeln",
+    "form": "överdrag",
+    "arketyp": "C_LAGA_ISTALLET",
+    "arketyp_sekundar": "B_SKYDDA_DYRT",
+    "slot": "exploitation",
+    "hypotes_id": "H06",
+    "vinnarlikhet": {
+     "likast": "Sätesöverdragaren (åkgräsklippare) / ATV-Kapell 3XL",
+     "delade_variabler": [
+      "exakt Sätesöverdragarens struktur: sprucken sadel → skummet suger vatten → fryser → överdrag i stället för ny sadel (2 500–4 000 kr)",
+      "samma ägare och objekt som ATV-kapellet",
+      "objekt ute, dyr > 10 tkr",
+      "old way = improvisation (sopsäck/tejp)",
+      "deadline pågående skada + första snö",
+      "ankare 1,2–1,6×"
+     ],
+     "avvikelser": [
+      "golv ATVhuset 399 under vårt pris",
+      "prisband 300–499 (LÅG förlorare)",
+      "universal med remmar — passform på stora utility-sadlar ej mätt",
+      "skyddsform (formtaket)"
+     ]
+    },
+    "sasong": {
+     "fonster_id": "forsta_sno_norr",
+     "deadline_typ": "första snö",
+     "veckor_kvar": 4.4,
+     "timing": "NOW"
+    },
+    "listning": {
+     "product_id": "1005003599678023",
+     "url": "https://www.aliexpress.com/item/1005003599678023.html",
+     "pris_usd": 15.7,
+     "sald": "",
+     "verdict": "LIVE_VERIFIED",
+     "verifierad_at": "2026-09-24T06:09:30Z",
+     "kontroll": {
+      "produktsida_oppnad": true,
+      "titel_stammer": true,
+      "hero_nedladdad": "korningar/2026-09-24/v3/bilder/1005003599678023.jpg",
+      "hero_sedd": true,
+      "pris_sett": true,
+      "varianter": "en variant, universal med justerbara remmar ('Universal ATV Seat Cover Water-Resistant with Adjustable Straps'); modellspecifika syskon 18,78–33 USD",
+      "video": "ej tillgänglig i containern"
+     }
+    },
+    "material": {
+     "klass": 2,
+     "hero_textfri": true,
+     "hero_i_kontext": true,
+     "samma_produkt": true,
+     "forsta_3s": "ej mätt (ingen video)",
+     "kommentar": "textfri hero: överdraget ensamt + monterat på en ATV-sadel — kan användas direkt"
+    },
+    "marknad": {
+     "lagsta_jamforbara": {
+      "aktor": "ATVhuset (ATV LAB Sadelöverdrag till ATV Universal modell)",
+      "pris_sek": 399,
+      "url": "https://www.atvhuset.se/kaross/sadeloverdrag",
+      "exakt_samma_form": true
+     },
+     "premium_ankare": {
+      "namn": "Moose Sadelöverdrag Polaris Sportsman 670 kr / Can-Am Outlander 740 kr; Parts Unlimited universal 549 kr (ATVhuset)",
+      "pris_sek": 670,
+      "url": "https://www.atvhuset.se/kaross/sadeloverdrag",
+      "i_sortiment": true
+     },
+     "ankare_kvot": 1.49,
+     "annonsorer_se": "ej mätt",
+     "kollade_kallor": [
+      "atvhuset.se sadelöverdrag-kategorin läst 2026-09-24 (128 produkter, 299–2 773 kr; universal 399 och 549)",
+      "amazon.se sökutdrag: universal sätesöverdrag ATV 85 × 55 cm (pris ej läst)",
+      "jula/biltema: ej mätt"
+     ]
+    },
+    "ekonomi": {
+     "landad_sek": [
+      204,
+      250
+     ],
+     "pris_sek": 449,
+     "brutto_sek": [
+      199,
+      245
+     ],
+     "be_cpa_sek": [
+      199,
+      245
+     ],
+     "be_roas": 2.02,
+     "flerkop": false,
+     "returrisk": "medel — universal med remmar, sadellängd varierar 70–90 cm"
+    },
+    "meta_tanke": {
+     "hook": "Har sadeln på fyrhjulingen spruckit?",
+     "objekt_i_bild": "sprucken ATV-sadel med blött skum → överdraget dras på",
+     "sjalvselekterande": true,
+     "forstas_3s": true,
+     "bevisas_visuellt": "vatten hälls på — rinner av överdraget i stället för in i sprickan"
+    },
+    "varfor": "Sätesöverdragarens vinnarstruktur (pågående skada, formsytt, ankare 1,2–1,6×) flyttad till ATV-kapellets ägare och objekt, fyra veckor före första snö. Faller bara på orderns golvregel.",
+    "huvudrisk": "ATVhuset säljer exakt samma form för 399 kr; på det priset blir BE-CPA 149–195.",
+    "konfidens": "MEDEL",
+    "poang": {
+     "vinnarlikhet": 3,
+     "meta_creative": 3,
+     "efterfragan": 2,
+     "lucka": 1,
+     "ekonomi": 1,
+     "sasong": 2,
+     "leverantor": 2,
+     "nyhet": 0,
+     "hypotesvarde": 2
+    },
+    "per_kriterium": {
+     "K0": "ok",
+     "K1": null,
+     "K2": null,
+     "K3": null,
+     "K4": null,
+     "K5": null,
+     "K6": null,
+     "K7": null,
+     "K8": null,
+     "K9": null,
+     "K10": null,
+     "K11": null,
+     "K12": null
+    },
+    "k0": {
+     "dubblett": false,
+     "kollat": [
+      "katalog-live.txt: 'sätes' = MC Sätesöverdrag Camo 289 (MC-form, annan sadel), Sätesöverdrag för Åkgräsklippare 649, Båtsitsöverdrag — ingen ATV-form",
+      "koncept.py sok 'atv' = K0061/K0184/K0188/K0190 ATV seat cover som 'kandidat' (aldrig levererade, inget nej)",
+      "kontot 7 d: ej läst (rör inte Meta)"
+     ]
+    },
+    "kallor": [
+     "https://www.aliexpress.com/item/1005003599678023.html",
+     "https://www.atvhuset.se/kaross/sadeloverdrag"
+    ]
+   }
+  },
+  {
+   "namn": "Redskapsklämmorna 2-pack för lastgallret (yxa/spade/såg — spöklämma-strukturen, H11/H08)",
+   "skal": "Ali 'Rubber Clamp Mount Fits 1–1.5 in, 2pcs' 10,74 USD (1005008666271178, LIVE-öppnad, hero sedd: två snabblåsklämmor + bottenplattor) → landad 140–171 → pris 499. ATVhuset säljer 'Redskapshållare 22–31 mm (Par)' 199 kr och '32–45 mm (Par)' 239 kr, 20+ i lager (läst 2026-09-24) — samma form, samma spann, under vårt pris. Kolpin Rhino Grip (par) 1 075 kr och V-Grip 649 kr är ankare men räddar inte golvet."
+  },
+  {
+   "namn": "Vapenhållaren för fyrhjulingen (gummirem/rack, 2-pack)",
+   "skal": "ATVhuset gevärsfästen: Moose Big Horn 470, Expedition 550, Axis Dubbel 555, V-Grip 760 kr (19 produkter, läst 2026-09-24). Ali remhållare 19,35 USD (1005005457434023) svarar tomt (BLOCKED, två försök); gummerad rack 31,59 USD (1005006227563608, LIVE) → landad 411–503 → pris ≥ 699 mot golv 470. Struken på golv + blockerad listning."
+  },
+  {
+   "namn": "Vapenfodralet för ATV (hårt fodral med rackfäste)",
+   "skal": "Fackhandel har formen: Kolpin 6.0 Impact 1 490, ATV-PRO Gevärsfodral med fäste 1 356–1 695, P.Lindberg 1 325, Moose GEN II rea 545 (1 st). Ali gav inga ATV-monterade fodral under 100 USD — bara axelfodral 20 USD utan fäste och väggställ. Ingen leverantör."
+  },
+  {
+   "namn": "ATV-ryggstödet universal (passageraren/frun till passet)",
+   "skal": "Ali 'ATV Backrest Removable Universal Mount' 40,39 USD (1005012919749566, LIVE, hero = bara dynan 36 × 22 cm utan fäste) → landad 526–642 → pris ≥ 774. Golv: Moose Ryggstöd universal 690 kr (ATVhuset, läst 2026-09-24), motorsweden 679 kr, P.Lindberg 315 (modellspecifikt). Under vårt pris."
+  },
+  {
+   "namn": "Torktäcket för drevhunden efter passet (H09)",
+   "skal": "Ali mikrofiber-torkrock 15,85 USD (1005007930561215, LIVE, hero sedd) och 13,95 USD (1005008624171970, LIVE, hero sedd) → landad 202–252 → pris 499. Svenskt golv i exakt samma form: Topline Badrock till hund 269 kr, Rukka Medea 329, Rukka Micro 349 (hundnet.se test, läst 2026-09-24); ankare Siccaro Smart 749–899, Supreme 2.0 974–1 299 (zoo.se); BAY torktäcke 599 hos Hylte. Golv 269 under vårt pris — struken. H09 (djur ute i kylan) står fortfarande på 0 test."
+  },
+  {
+   "namn": "Viltpåsarna 5-pack (kvartspåsar, älgköttet flugfritt)",
+   "skal": "Ali 5-pack 27,43 USD (1005010286639684, LIVE, hero sedd: vit påse med älgkött) → landad 357–436 → pris 699. Svensk form är en säck per djur, styckvis: Hylte 5etta Viltsäck älg 159–195, Jaktia GreyOak/Alces älg 345–449 (båda lästa 2026-09-24) — jägaren har redan en ('sett innan'); Amazon.se säljer exakt Ali-6-packet (Moreeulsi, pris ej läst). Form 'annat' 0/14 vinnare. Struken."
+  },
+  {
+   "namn": "Åtelspridaren / foderautomatkit på timer (H12)",
+   "skal": "Fackhandeln har formen billigt: Genzo Solid Foderspridare 595 kr, Digital timer 289 kr, Ryom 75 L 1 895 kr (Hylte, läst 2026-09-24). AliExpress gav inga viltfoderspridare på fyra fraser (bara fisk-/husdjursmatare och äggkläckare). Ingen leverantör + golv 595."
+  },
+  {
+   "namn": "Åtelbelysningen (grönt LED med skymningssensor)",
+   "skal": "Ankare finns (Genzo Max-Led V.3 995, Nordic Gamekeeper 575, Genzo Spotlight 2-pack 595 — Hylte läst 2026-09-24) men två Ali-fraser gav bara undervattens-fiskelampor och fågelmatare. Ingen leverantör."
+  },
+  {
+   "namn": "Syntetlinan till ATV-vinschen (6 mm × 15 m)",
+   "skal": "Ali 15,15–20,39 USD (sökträff) → landad 219–295 → pris ≥ 449. ATVhuset säljer syntetlina 5 mm × 15 m 379–389 kr och 6,35 mm × 15,2 m 449 kr (läst 2026-09-24); Biltema 'Syntetlina 15 m' finns (sida 403, pris ej läst) — kedjan har formen. Struken."
+  },
+  {
+   "namn": "Skoterns tunnelväska / ATV-frontväska",
+   "skal": "snowmobile.se tunnelväska 399 kr (sökutdrag) under vårt pris; Ali gav bara scooter-/MC-tunnelväskor 29–78 USD, ingen skoterform. ATV-väska = 'Sadelväskor för Fyrhjuling' 569 finns i katalogen (K0 på sak)."
+  },
+  {
+   "namn": "Skoterhandskydd / ATV-handtagsmuffar",
+   "skal": "K0 på sak: 'MC Handvärmare – Vindtäta Greppöverdrag' 369 och 'Motocross Handskydd' 229 finns i katalogen; ordern utesluter MC Handvärmare."
+  },
+  {
+   "namn": "Snöskoterns sadelöverdrag universal",
+   "skal": "Ali gav bara MC-/bilöverdrag (universal 62–80 cm) — ingen skoterlängd; svensk universalform 62 × 92 cm nämns i sökutdrag utan pris. Ej verifierbar → ingen rad."
+  },
+  {
+   "namn": "Skoterkälke-kapell, skidglid till skotersläp, bältesmatta",
+   "skal": "Tre Ali-fraser gav skoterkapell (K0228 ja), båttrailerglid och takssnörasskydd — ingen kälke-/släpform. Ingen leverantör."
+  },
+  {
+   "namn": "Hjulblock för ATV på släpet",
+   "skal": "Ali: MC-hjulställ 28–94 USD och husbilskilar; Biltema/Jula säljer hjulkilar (kedja). Inte sökt vidare."
+  },
+  {
+   "namn": "Släpvagn: magnet-LED-ljus, kulhandske, kapell",
+   "skal": "Kedja (Biltema/Jula) har magnetljus; kulskydd är standard (SIGNALER 'sett innan'); släpkärrekapellet K0229 nej 'nöjd'. Inte sökta."
+  },
+  {
+   "namn": "Vedsäck big bag med lyftöglor, vedstapelnät, ATV-vedkärra",
+   "skal": "Granngården/kedjan har vedsäckar 60–200 kr styck (sökutdrag); nät saknar form/efterfrågan; vedkärra faller på frakt (> 20 kg). Inte sökta på Ali."
+  },
+  {
+   "namn": "ATV-däckkedjor, ATV-plog, lastnät, viltkamera, hundpejl, skjutstöd, vapenrengöring",
+   "skal": "Uteslutna av ordern (fackhandel/kedja/katalog/förlorare). Inte sökta."
+  },
+  {
+   "namn": "Isolerat burtäcke till hundburen i bilen (H09)",
+   "skal": "Ali 'Kennel Cover Insulated' 34,89 USD är för trådburar i vardagsrum (US-mått), inte svenska alu-bilburar — måste mäta, returrisk hög. Svenskt burskydd (Trixie) ej prismätt. LÅG → ingen rad."
+  }
+ ]
+}

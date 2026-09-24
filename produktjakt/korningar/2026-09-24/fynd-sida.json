@@ -1,0 +1,3192 @@
+{
+ "datum": "2026-09-24",
+ "version": "v3",
+ "kalla": "korningar/2026-09-24/v3/batch.json",
+ "antal_kandidater": 6,
+ "per_slot": {
+  "exploitation": 2,
+  "exploration": 1,
+  "sasong": 3
+ },
+ "produkter": [
+  {
+   "product_id": "1005008812148086",
+   "titel": "Värmepumpstvätten — påse, spruta, borstar",
+   "url": "https://www.aliexpress.com/item/1005008812148086.html",
+   "pris": 21.85,
+   "valuta": "USD",
+   "pris_text": "US $21.85",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-24/v3/bilder/1005008812148086.jpg",
+   "sald": "",
+   "grupp": "NYTT: Luftvärmepumpens innerdel (1,8 miljoner i villor)",
+   "objekt": "NYTT: Luftvärmepumpens innerdel (1,8 miljoner i villor)",
+   "taggar": {
+    "objekt": "NYTT: Luftvärmepumpens innerdel (1,8 miljoner i villor)",
+    "form": "verktyg",
+    "arketyp": "D_SNABBARE_METOD",
+    "deadline_typ": "första frost",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Tjänsten: värmepumpsservice med invändig rengöring, 1 900–3 000 kr/besök (bytautvarmepumpen.se; effektivvvs.se; leadhive.se 2026)"
+   },
+   "ekonomi": {
+    "landad": 316,
+    "forslag_pris": 799,
+    "multipel": 2.53,
+    "be_cpa": 483,
+    "be_roas": 1.65,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     284,
+     348
+    ]
+   },
+   "namn_sv": "Värmepumpstvätten — påse, spruta, borstar",
+   "status": "bevisad struktur",
+   "poang": 14.3,
+   "rank_slutlig": 14.3,
+   "rank": 1,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 14,
+    "K2": 12,
+    "K3": 8,
+    "K4": 9,
+    "K5": 8,
+    "K6": 8,
+    "K7": 6,
+    "K8": 6,
+    "K9": 4,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "hook": "När tvättades din värmepump inuti senast?",
+   "efter_bild": "brunt vatten rinner ur slangen i hinken — samma payoff som sotet i sotarsetets påse",
+   "huvudrisk": "Objektet står inne (objekt_ute = nej är kontots starkaste förlorarsignal) och heron är textig — kontextbild måste beskäras eller skjutas själv.",
+   "varfor": "Exakt sotarsetets struktur på nästa maskin i samma hus: tjänsten (1 900–3 000 kr per service) ersätts av påse + tryckspruta + borstar för 799 kr och payoffen (smutsvattnet) syns på 3 s. Ingen kedja har formen — Jula/Bauhaus/Elon säljer bara sprayen — och 1,8 miljoner villor har objektet.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0298",
+   "arketyp": "D_SNABBARE_METOD",
+   "arketyp_sekundar": "C_LAGA_ISTALLET",
+   "slot": "exploitation",
+   "hypotes_id": "H07",
+   "sasong": {
+    "fonster_id": "forsta_frost_mellan",
+    "deadline_typ": "första frost",
+    "veckor_kvar": 3.0,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Sotarset Med Böjliga Stänger",
+    "delade_variabler": [
+     "old way = tjänst (värmepumpsservice 1 900–3 000 kr/besök, bytautvarmepumpen.se + effektivvvs.se 2026-09-24)",
+     "ägare 55+ småhus (1,8 miljoner luft-luft-pumpar i villor)",
+     "synlig payoff på 3 s (brunt vatten rinner ur påsen i hinken)",
+     "prisband 500–999",
+     "deadline säsongsstart (pumpen slås om till värme vid första frost)",
+     "kedjan har bara förbrukningsvaran (sprayen 159–200 kr), inte formen"
+    ],
+    "avvikelser": [
+     "objekt_ute = nej (innerdelen sitter i vardagsrummet) — förlorarsignal HÖG i LEARNING_STATE",
+     "hero har inbränd text (materialklass 1)",
+     "kräver att kunden själv sprayar och spolar — 20 minuters jobb"
+    ]
+   },
+   "rank_forklaring": "exploitation: vinnarlikhet 3×2 + ekonomi 2 + säsong 2 + creative 2 + lucka 2 + signalbonus +0.3 [arketyp=D_SNABBARE_METOD 2V/2F (+0.0); form=verktyg 2V/3F (-0.2); prisband=500–999 10V/3F (+0.5)] = 14.3",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "CDON (marknadsplats) — 'Luftkonditionering Rengöring Skyddspåse … 2 m vattenrör', bara påsen",
+     "pris_sek": null,
+     "url": "https://cdon.se/produkt/luftkonditionering-rengoring-skyddspase-dammtvatt-ac-clean-skydd-med-2-m-vattenror-for-1-till-2-hp-luftkonditionering-ee2b5c16c494514b/",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "Tjänsten: värmepumpsservice med invändig rengöring, 1 900–3 000 kr/besök (bytautvarmepumpen.se; effektivvvs.se; leadhive.se 2026)",
+     "pris_sek": 1900,
+     "url": "https://effektivvvs.se/service-luftvarmepump-pris/",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 2.38,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "jula.se (Värmepumpsrengöring 500 ml 629360 — bara spray, ingen påse/kit)",
+     "bauhaus.se (Jape Sanera 0,5 L — bara spray)",
+     "elon.se (Elvita luftvärmepumpsrengöring — spray)",
+     "polarpumpen.se (kunskapsbank: rengöring själv med dammsugare + spray; inget kit i sortimentet hittat)",
+     "cdon.se (påse utan spruta/borstar, pris 403 vid hämtning)",
+     "amazon.se (B087N1QQTX påse — pris ej visat, 503)",
+     "quickparts.se (403)",
+     "effektivvvs.se / bytautvarmepumpen.se / leadhive.se (tjänstepris)"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron visar påsen hängande under en öppnad innerdel med spruta och borstar utlagda — i kontext, men med inbränd text (BTU-mått, '8pcs', delnamn) som måste beskäras eller ersättas; syskonlistningarna 1005006027709452 och 1005012698135612 är ännu textigare"
+   },
+   "meta_tanke": {
+    "hook": "När tvättades din värmepump inuti senast?",
+    "objekt_i_bild": "innerdelen i vardagsrummet med påsen under, slangen ner i hinken",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "brunt vatten rinner ur slangen i hinken — samma payoff som sotet i sotarsetets påse"
+   },
+   "listning": {
+    "product_id": "1005008812148086",
+    "url": "https://www.aliexpress.com/item/1005008812148086.html",
+    "pris_usd": 21.85,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-24T05:52:30Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-24/v3/bilder/1005008812148086.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "8-delarsset: påse 120 cm (18 000–36 000 BTU) + 2 L tryckspruta + 3 borstar + väggskydd + trasa + handskar; 100 cm-påse finns i syskonlistningar (1005013167164340, 4,29 USD)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 3,
+    "meta_creative": 2,
+    "efterfragan": 3,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005008812148086.html",
+    "https://effektivvvs.se/service-luftvarmepump-pris/",
+    "https://bytautvarmepumpen.se/luftvarmepump/pris/",
+    "https://www.leadhive.se/kalkylator/service-varmepump",
+    "https://bytautvarmepumpen.se/luftvarmepump/",
+    "https://www.jula.se/catalog/bygg-och-farg/varme-och-ventilation/uppvarmning/varmepumpar-tillbehor/varmepumpsrengoring-629360/",
+    "https://www.bauhaus.se/varmepumpsrengoring-jape-sanera-0-5l",
+    "https://www.polarpumpen.se/kunskapsbanken/varmepump-kunskapsbank/luftvarmepump-kunskapsbank/anvanda-luftvarmepump/skotsel-luftvarmepump/rengoring-luftvarmepump-och-filter/",
+    "https://cdon.se/produkt/luftkonditionering-rengoring-skyddspase-dammtvatt-ac-clean-skydd-med-2-m-vattenror-for-1-till-2-hp-luftkonditionering-ee2b5c16c494514b/"
+   ]
+  },
+  {
+   "product_id": "1005013214543488",
+   "titel": "Hjulvagnen — vinterhjulen upp på navet",
+   "url": "https://www.aliexpress.com/item/1005013214543488.html",
+   "pris": 37.92,
+   "valuta": "USD",
+   "pris_text": "US $37.92",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-24/v3/bilder/1005013214543488.jpg",
+   "sald": "",
+   "grupp": "NYTT: Bilens vinterhjul — hjulbytet hemma",
+   "objekt": "NYTT: Bilens vinterhjul — hjulbytet hemma",
+   "taggar": {
+    "objekt": "NYTT: Bilens vinterhjul — hjulbytet hemma",
+    "form": "verktyg",
+    "arketyp": "D_SNABBARE_METOD",
+    "deadline_typ": "första snö",
+    "prisband": "≥ 1 000",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Eks Verktyg Hjulvagn (verkstadsform); Hjullyft 500 kg personbil 20 700 kr som takankare"
+   },
+   "ekonomi": {
+    "landad": 548,
+    "forslag_pris": 1299,
+    "multipel": 2.37,
+    "be_cpa": 751,
+    "be_roas": 1.73,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     493,
+     603
+    ]
+   },
+   "namn_sv": "Hjulvagnen — vinterhjulen upp på navet",
+   "status": "bevisad struktur",
+   "poang": 13.1,
+   "rank_slutlig": 13.1,
+   "rank": 2,
+   "per_kriterium": {
+    "K0": "ok (hjulmutterdragaren 09-14 = samma jobb, annat moment)",
+    "K1": 12,
+    "K2": 10,
+    "K3": 8,
+    "K4": 8,
+    "K5": 10,
+    "K6": 8,
+    "K7": 6,
+    "K8": 8,
+    "K9": 3,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "hook": "Lyfter du vinterhjulen själv i år?",
+   "efter_bild": "hjulet rullas upp på rullarna och glider rakt in på bultarna — ingen lyfter",
+   "huvudrisk": "Ankaret ligger under H12:s 2,4×-krav och varan är tung — frakten kan äta marginalen; hero utan kontext.",
+   "varfor": "Testar H12 i tjänst-läget: ≥ 900 kr, fackhandelsankare 1,69× (Eks 2 195 kr, ingen kedja har formen), payoffen syns i ett klipp — och hjulskiftet ägaren betalar 300–650 kr för två gånger om året görs hemma utan att lyfta 25 kg. Samma ägare som köpte hjulmutterdragaren 09-14, nästa moment i samma jobb.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0299",
+   "arketyp": "D_SNABBARE_METOD",
+   "arketyp_sekundar": "C_LAGA_ISTALLET",
+   "slot": "exploitation",
+   "hypotes_id": "H12",
+   "sasong": {
+    "fonster_id": "forsta_sno_mellan",
+    "deadline_typ": "första snö",
+    "veckor_kvar": 8.1,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Bälteslipmaskinen (mini bandslipare 3-i-1)",
+    "delade_variabler": [
+     "maskinen gör jobbet (rullarna lyfter hjulet, ägaren lyfter inte)",
+     "prisband ≥ 1 000 (1 299 kr)",
+     "märkesankare i fackhandel (Eks Verktyg Hjulvagn 2 195 kr = 1,69×)",
+     "synlig payoff på 3 s (hjulet rullas upp och in på navet)",
+     "old way = tjänst (hjulskifte 300–650 kr hos verkstaden, två gånger om året) eller lyfta 20–25 kg själv"
+    ],
+    "avvikelser": [
+     "objekt_ute = ja men jobbet görs två gånger om året — inte dagligt bruk",
+     "hero utan kontext (vit bakgrund, inbränd text '330LBS')",
+     "tung vara (~10 kg) — fraktfaktorn 1,5× kan vara för låg, ej mätt"
+    ]
+   },
+   "rank_forklaring": "exploitation: vinnarlikhet 2×2 + ekonomi 3 + säsong 3 + creative 1 + lucka 2 + signalbonus +0.1 [arketyp=D_SNABBARE_METOD 2V/2F (+0.0); form=verktyg 2V/3F (-0.2); deadline_typ=första snö 2V/1F (+0.3)] = 13.1",
+   "asymmetrisk": true,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Eks Verktyg (fackhandel) — Hjulvagn",
+     "pris_sek": 2195,
+     "url": "https://eksverktyg.se/kategori/hjullyftar/",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Eks Verktyg Hjulvagn (verkstadsform); Hjullyft 500 kg personbil 20 700 kr som takankare",
+     "pris_sek": 2195,
+     "url": "https://eksverktyg.se/kategori/hjullyftar/",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.69,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "bauhaus.se/fritid/bil/garagetillbehor/byta-dack (domkrafter, momentnycklar, mutterdragare — ingen hjulvagn/hjullyft)",
+     "biltema.se (Hjuldolly hydraulisk = flyttar bilen, annan form; 'allt för hjulbytet' gav 403)",
+     "jula.se/dackverktyg (403 — ej läst)",
+     "verktygsboden.se/dackverktyg (ingen hjullyft i läst innehåll)",
+     "eksverktyg.se (Hjulvagn 2 195 kr; Hjullyft 500 kg 20 700 kr)",
+     "bilbolaget.nu (hjulskifte 595 kr) / minbilkoll.se (300–600 kr, 550–650 kr på lyft)"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "packshot: orange stålvagn med två rostfria rullar och ett SUV-hjul på, vit bakgrund, inbränd text 'Weight Load Capacity 330LBS' till höger — ser ut som 1 500–2 000 kr; kontextbild (hjulet rullas in på navet i garaget) måste skjutas själv"
+   },
+   "meta_tanke": {
+    "hook": "Lyfter du vinterhjulen själv i år?",
+    "objekt_i_bild": "SUV-hjulet på vagnen, rullas fram till navet i garaget",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "hjulet rullas upp på rullarna och glider rakt in på bultarna — ingen lyfter"
+   },
+   "listning": {
+    "product_id": "1005013214543488",
+    "url": "https://www.aliexpress.com/item/1005013214543488.html",
+    "pris_usd": 37.92,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-24T05:57:40Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-24/v3/bilder/1005013214543488.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant, ställbar rullbredd, 159 kg (350 lbs) enligt titeln — heron säger 330 lbs; dyrare syskon 76–78 USD (1005013240886829, 1005013157151826)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 1,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 3,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005013214543488.html",
+    "https://eksverktyg.se/kategori/hjullyftar/",
+    "https://www.bauhaus.se/fritid/bil/garagetillbehor/byta-dack",
+    "https://www.biltema.se/bil---mc/verkstadsutrustning/lyftutrustning/hjuldollys/hjuldolly-hydraulisk-2000039919",
+    "https://bilbolaget.nu/verkstad-service/dackverkstad/hjulskifte/",
+    "https://minbilkoll.se/guide/dackbyte-pris"
+   ]
+  },
+  {
+   "product_id": "1005005494907500",
+   "titel": "Fiskedragsbyggsatsen — bygg egna spinnare",
+   "url": "https://www.aliexpress.com/item/1005005494907500.html",
+   "pris": 20.11,
+   "valuta": "USD",
+   "pris_text": "US $20.11",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-24/v3/bilder/1005005494907500.jpg",
+   "sald": "",
+   "grupp": "NYTT: Hobbyfiskarens egna spinnare — byggsats som gåva (fars dag, jul)",
+   "objekt": "NYTT: Hobbyfiskarens egna spinnare — byggsats som gåva (fars dag, jul)",
+   "taggar": {
+    "objekt": "NYTT: Hobbyfiskarens egna spinnare — byggsats som gåva (fars dag, jul)",
+    "form": "låda",
+    "arketyp": "G_Q4_GAVA",
+    "deadline_typ": "fars dag",
+    "prisband": "500–999",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "ej mätt — ingen svensk boxad 'spinner making kit' hittad i denna körning; Adventskalender Fiskedrag 469 kr ligger i butiken som intern referens (24 färdiga drag)"
+   },
+   "ekonomi": {
+    "landad": 291,
+    "forslag_pris": 599,
+    "multipel": 2.06,
+    "be_cpa": 308,
+    "be_roas": 2.0,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     262,
+     320
+    ]
+   },
+   "namn_sv": "Fiskedragsbyggsatsen — bygg egna spinnare",
+   "status": "säsong",
+   "poang": 10,
+   "rank_slutlig": 10,
+   "rank": 3,
+   "per_kriterium": null,
+   "hook": "Har han gjort sin egen gäddspinnare?",
+   "efter_bild": "en spinnare byggs på 5 sekunder ur lådan; nästa klipp: samma spinnare i gäddkäften",
+   "huvudrisk": "Lågt upplevt värde — småbitar i plastlåda kan se ut som 99 kr, vilket är exakt Axels 'kanske'-orsak 2026-09-09.",
+   "varfor": "H05:s egen testsökning ('hobbyset till namngiven mottagare med datum') utan kalenderformen: fars dag 6,4 v, 140 synliga delar i låda, mannen med spöna som mottagare — och ingen svensk kedja säljer det boxat. Objektraden och datumet är samma som husbilskalendern (Axel ja 09-15), formen är ny.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0300",
+   "arketyp": "G_Q4_GAVA",
+   "arketyp_sekundar": "F_HOBBY_IDENTITET",
+   "slot": "sasong",
+   "hypotes_id": "H05",
+   "sasong": {
+    "fonster_id": "fars_dag",
+    "deadline_typ": "fars dag",
+    "veckor_kvar": 6.4,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Adventskalendern Racingbilar",
+    "delade_variabler": [
+     "hårt datum (fars dag 8 nov) som ingen kan flytta",
+     "N synliga delar i fack (140 delar: skedar, blad, pärlor, trekrokar)",
+     "gåva till namngiven mottagare i relation (mannen med spöna) — H05:s 'hobbyset'",
+     "flerköp nej"
+    ],
+    "avvikelser": [
+     "form låda i stället för kalender (kalenderformen är mättad: 12 i butiken, dinosaurie förlorade)",
+     "objektet är hobbyn, inte en ägd sak ute",
+     "lågt upplevt värde-risk: småbitar i plastlåda (Axels signal 2026-09-09)"
+    ]
+   },
+   "rank_forklaring": "säsong: säsong 3×2 + efterfrågan 2 + ekonomi 2 = 10",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen svensk kedja med boxad byggsats hittad; sportfiskeprylar.se/Örjans Fiske säljer komponenter styckvis ('gör egna spinnare'-guide), jula.se säljer färdiga spinnare",
+     "pris_sek": null,
+     "url": "https://www.orjansfiske.se/guider/gora-egna-spinnare/",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "ej mätt — ingen svensk boxad 'spinner making kit' hittad i denna körning; Adventskalender Fiskedrag 469 kr ligger i butiken som intern referens (24 färdiga drag)",
+     "pris_sek": null,
+     "url": "https://www.sportfiskeprylar.se/sv/ovrigt/gjuta-egna-gummibeten",
+     "i_sortiment": false
+    },
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "websök 'gör egna fiskedrag byggsats kit spinnare komponenter' 2026-09-24: sportfiskeprylar.se (komponenter/betesbygge), orjansfiske.se (guide: 7 komponenter), jiggar.nu, fiskredskap.se — inga boxade kit med pris i utdragen",
+     "jula.se/biltema.se: färdiga spinnare, ingen byggsats i träffarna",
+     "koncept.py sok dragbygg: 0 träffar · katalog-live.txt: 'Adventskalender Fiskedrag 469' och 'Fiskeset med Förvaringslåda 499' (färdiga drag/redskap — annan form)"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron är en textfri packshot: öppen plastlåda med 8 fack (guld/silverblad, hylsor, pärlor, trekrokar) plus delarna utlagda under — ingen färdig spinnare i handen, ingen kontext; creativen måste visa spinnaren som byggs på 5 s och gäddan"
+   },
+   "meta_tanke": {
+    "hook": "Har han gjort sin egen gäddspinnare?",
+    "objekt_i_bild": "lådan öppen på köksbordet, händerna trär blad + pärlor + hylsa på axeln, färdig spinnare lyfts upp",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "en spinnare byggs på 5 sekunder ur lådan; nästa klipp: samma spinnare i gäddkäften"
+   },
+   "listning": {
+    "product_id": "1005005494907500",
+    "url": "https://www.aliexpress.com/item/1005005494907500.html",
+    "pris_usd": 20.11,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-24T06:03:16Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-24/v3/bilder/1005005494907500.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "ur titel/sökträff: 140 delar i en variant (låda med 8 fack). Syskon: 1005007871357474 (140 delar, USD 15,42, LIVE 06:03:06Z, hero sedd: delarna utlagda UTAN låda — sämre upplevt värde) och 1005013056404323 (680 delar, USD 17,32 — produktsidan svarade tomt).",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 1,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005005494907500.html",
+    "https://www.aliexpress.com/item/1005007871357474.html",
+    "https://www.orjansfiske.se/guider/gora-egna-spinnare/",
+    "https://www.sportfiskeprylar.se/sv/ovrigt/gjuta-egna-gummibeten",
+    "https://www.kalender-365.se/helgdagar/fars-dag.html"
+   ]
+  },
+  {
+   "product_id": "1005002679622965",
+   "titel": "ATV-vindrutan för passet",
+   "url": "https://www.aliexpress.com/item/1005002679622965.html",
+   "pris": 58.61,
+   "valuta": "USD",
+   "pris_text": "US $58.61",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-24/v3/bilder/1005002679622965.jpg",
+   "sald": "",
+   "grupp": "NYTT: ATV-föraren på passet i regn och snö — vindruta",
+   "objekt": "NYTT: ATV-föraren på passet i regn och snö — vindruta",
+   "taggar": {
+    "objekt": "NYTT: ATV-föraren på passet i regn och snö — vindruta",
+    "form": "annat",
+    "arketyp": "E_VADER_SASONG",
+    "deadline_typ": "älgjakt",
+    "prisband": "≥ 1 000",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Moose ATV Vindruta Universal (ATVhuset) 2 755 kr; Powermadd Cobra Quick Release 2 950 kr"
+   },
+   "ekonomi": {
+    "landad": 848,
+    "forslag_pris": 1199,
+    "multipel": 1.41,
+    "be_cpa": 352,
+    "be_roas": 3.4,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     763,
+     932
+    ]
+   },
+   "namn_sv": "ATV-vindrutan för passet",
+   "status": "utforskning",
+   "poang": 9,
+   "rank_slutlig": 9,
+   "rank": 4,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": null,
+    "K2": null,
+    "K3": null,
+    "K4": null,
+    "K5": null,
+    "K6": null,
+    "K7": null,
+    "K8": null,
+    "K9": null,
+    "K10": null,
+    "K11": null,
+    "K12": null
+   },
+   "hook": "Kör du till passet utan ruta?",
+   "efter_bild": "samma sträcka utan och med ruta: blött ansikte mot torrt, händerna bakom rutan",
+   "huvudrisk": "Golv 995 kr i exakt samma form (ATVhuset) under vårt pris; akrylruta 91 cm = fraktskaderisk",
+   "varfor": "Samma ägare, samma objekt och samma säsong som ATV-kapellet som just blev REAL WINNER, med ankare 2,3× och två hårda datum (älgjakt 2 v, första snö 4 v). Faller bara på orderns golvregel. | LYFT AV HUVUDSESSIONEN 2026-09-24 som H06-test: golv ATVhuset 995 under vårt 1 199, ankare Moose 2 755 (2,3×) — samma struktur som ATV-kapellet (Jula 399 < 579, REAL_WINNER i dag).",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0301",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "B_SKYDDA_DYRT",
+   "slot": "exploration",
+   "hypotes_id": "H06",
+   "sasong": {
+    "fonster_id": "algjakt_syd",
+    "deadline_typ": "älgjakt",
+    "veckor_kvar": 2.0,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "ATV-Kapell Storlek 3XL / Termoskyddet för Husbil",
+    "delade_variabler": [
+     "samma ägare och samma objekt som ATV-kapellet (REAL WINNER 2026-09-24)",
+     "objekt ute, dyr > 10 tkr (ATV 80–150 tkr)",
+     "hårt datum: älgjakt 2,0 v + första snö Norrland 4,4 v",
+     "ankare ≥ 1,6× (Moose 2 755 = 2,3×)",
+     "prisband ≥ 1 000 med objekt ≥ 100× priset (H04)",
+     "textfri hero i ATV-form"
+    ],
+    "avvikelser": [
+     "form 'annat' (0 av 14 dömda vann)",
+     "golv ATVhuset 995 under vårt pris",
+     "kräver montering på styret (medföljande klämmor)",
+     "akrylruta 91 cm — fraktskaderisk"
+    ]
+   },
+   "rank_forklaring": "exploration: hypotesvärde 2×2 + nyhet 1 + creative 2 + ekonomi 2 = 9",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ATVhuset (ATV-PRO ATV Vindruta Universal)",
+     "pris_sek": 995,
+     "url": "https://www.atvhuset.se/chassie-kaross/vindruta/atv-vindruta-universal",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Moose ATV Vindruta Universal (ATVhuset) 2 755 kr; Powermadd Cobra Quick Release 2 950 kr",
+     "pris_sek": 2755,
+     "url": "https://www.atvhuset.se/chassie-kaross/vindruta",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 2.3,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "atvhuset.se vindruta-kategorin läst 2026-09-24 (25 produkter, 269–6 499 kr)",
+     "atvhuset.se produktsida ATV Vindruta Universal läst (995 kr, 91,5 × 52 cm, 22 mm, 20+ i lager)",
+     "sökutdrag: motorbiten.com, atvdack.se, atvbutiken.com har universalrutor 90 × 51 cm (pris ej läst)",
+     "jula/biltema: ej i sökutdrag — ej mätt"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "packshot: klar ruta med svart tonad nederkant + hela monteringssatsen (klämmor, bågar, skruv) — eget foto på fyrhjulingen i regn behövs"
+   },
+   "meta_tanke": {
+    "hook": "Kör du till passet utan ruta?",
+    "objekt_i_bild": "fyrhjulingen med rutan på, regn/snö på rutan, föraren torr bakom",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "samma sträcka utan och med ruta: blött ansikte mot torrt, händerna bakom rutan"
+   },
+   "listning": {
+    "product_id": "1005002679622965",
+    "url": "https://www.aliexpress.com/item/1005002679622965.html",
+    "pris_usd": 58.61,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-24T06:09:30Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-24/v3/bilder/1005002679622965.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant, universal ('Fit For Polaris Arctic CAT CAN AM Honda Fourtrax … Yamaha Grizzly'); syskon 1005006168581252 samma pris 58,61 USD (bara sökträff)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005002679622965.html",
+    "https://www.aliexpress.com/item/1005006168581252.html",
+    "https://www.atvhuset.se/chassie-kaross/vindruta/atv-vindruta-universal",
+    "https://www.atvhuset.se/chassie-kaross/vindruta"
+   ]
+  },
+  {
+   "product_id": "1005002637853707",
+   "titel": "Kaninburens vinterhuv",
+   "url": "https://www.aliexpress.com/item/1005002637853707.html",
+   "pris": 20.02,
+   "valuta": "USD",
+   "pris_text": "US $20.02",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-24/v3/bilder/1005002637853707.jpg",
+   "sald": "",
+   "grupp": "Kanin/marsvin i bur ute",
+   "objekt": "Kanin/marsvin i bur ute",
+   "taggar": {
+    "objekt": "Kanin/marsvin i bur ute",
+    "form": "huv",
+    "arketyp": "E_VADER_SASONG",
+    "deadline_typ": "första frost",
+    "prisband": "500–999",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "ingen svensk aktör i formen huv mätt; närmast objektankare: Kerbl 4-Season Superior isolerad kaninbur (granngarden.se, pris ej läst) och Trixie Natura 116 utebur 2 159–2 399 kr (djurmaxi.se) — annan form (bur, inte huv). Teddytassen 'Vindskydd för kaninburar' 89 kr är en klar plastskiva 50 × 70 cm, inte en huv."
+   },
+   "ekonomi": {
+    "landad": 290,
+    "forslag_pris": 699,
+    "multipel": 2.41,
+    "be_cpa": 410,
+    "be_roas": 1.7,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     261,
+     318
+    ]
+   },
+   "namn_sv": "Kaninburens vinterhuv",
+   "status": "säsong",
+   "poang": 8,
+   "rank_slutlig": 8,
+   "rank": 5,
+   "per_kriterium": null,
+   "hook": "Står kaninburen ute i vinter?",
+   "efter_bild": "regn/snö på huven, torr kanin innanför; klaffen rullas upp för matning — före/efter med presenningen som blåser av",
+   "huvudrisk": "Storleksval (en-/tvåvåningsbur) ger returer, och ägaren är barnfamilj snarare än 55+ småhus.",
+   "varfor": "Renaste H09-testet efter hönsgårdsduken (nyttodjur, tak, förlorade): älskat sällskapsdjur + första frost 3,0 v + formsydd huv över ägt objekt ute, och ingen svensk kedja säljer formen. Samma struktur som kojan (vann) med en variabel bytt: kanin i stället för katt.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0302",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "B_SKYDDA_DYRT",
+   "slot": "sasong",
+   "hypotes_id": "H09",
+   "sasong": {
+    "fonster_id": "forsta_frost_mellan",
+    "deadline_typ": "första frost",
+    "veckor_kvar": 3.0,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Isolerade Utekattkojan",
+    "delade_variabler": [
+     "objekt_ute",
+     "älskat djur (kanin = sällskapsdjur, inte nyttodjur)",
+     "deadline första frost",
+     "golv under nej (ingen svensk kedja i formen)",
+     "old way improvisation (presenning/filt över buren)",
+     "formsydd form över ägt objekt (H01-struktur)"
+    ],
+    "avvikelser": [
+     "ägaren är barnfamilj/mor- och farföräldrar, inte 55+ småhus ensamt",
+     "objektet är billigt (bur 1–3 tkr) — värdet sitter i djuret",
+     "storlek måste matcha buren (en-/tvåvåning)"
+    ]
+   },
+   "rank_forklaring": "säsong: säsong 2×2 + efterfrågan 2 + ekonomi 2 = 8",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Amazon.se marketplace — Excerando kaninbur skydd 210D dubbelt lager 122 × 51 × 104 cm (B08L375LFT)",
+     "pris_sek": null,
+     "url": "https://www.amazon.se/Excerando-kaninbur-h%C3%A5llbar-dubbelt-termisk/dp/B08L375LFT",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "ingen svensk aktör i formen huv mätt; närmast objektankare: Kerbl 4-Season Superior isolerad kaninbur (granngarden.se, pris ej läst) och Trixie Natura 116 utebur 2 159–2 399 kr (djurmaxi.se) — annan form (bur, inte huv). Teddytassen 'Vindskydd för kaninburar' 89 kr är en klar plastskiva 50 × 70 cm, inte en huv.",
+     "pris_sek": null,
+     "url": "https://www.teddytassen.se/webbshop/kanin/kaninburar--kaninhus/vindskydd-till-burar/vindskydd-for-kaninburar-1753.html",
+     "i_sortiment": false
+    },
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "websök 'kaninbur vinterskydd isolerat överdrag' 2026-09-24: granngarden.se (Kerbl isolerad bur), zooplus.se/zoo.se/arkenzoo.se (isolerade burar, inga huvar), teddytassen.se (Vintra isolerad bur; vindskydd plastskiva 89 kr — läst)",
+     "websök 'Trixie skydd utomhusbur' 2026-09-24: bara burar i Sverige; Trixie Natura regntrekk ~90 NOK bara på finn.no (Norge)",
+     "websök 'hutch cover / burskydd kanin' 2026-09-24: Amazon.se Excerando (pris ej läsbart — sidan bara JS), Fruugo.se kategori",
+     "pricerunner.se/sp/vindskydd-djur (37 produkter) — ej öppnad",
+     "koncept.py sok kanin: 0 träffar · katalog-live.txt: ingen kanin/bur"
+    ]
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron är ett riktigt foto: svart huv med klar PVC-front över en tvåvåningsbur på gräsmatta, två kaniner synliga innanför — textfri, i kontext, objektet i bild. Syskonlistningarnas heron är renderade packshots i tre färger."
+   },
+   "meta_tanke": {
+    "hook": "Står kaninburen ute i vinter?",
+    "objekt_i_bild": "tvåvåningsburen på gräsmattan med huven på, kaninen synlig genom PVC-fronten",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "regn/snö på huven, torr kanin innanför; klaffen rullas upp för matning — före/efter med presenningen som blåser av"
+   },
+   "listning": {
+    "product_id": "1005002637853707",
+    "url": "https://www.aliexpress.com/item/1005002637853707.html",
+    "pris_usd": 20.02,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-24T05:55:05Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-24/v3/bilder/1005002637853707.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "ur titel/sökträff: storlek ej läsbar i titeln — syskonlistningen 1005006896280524 (USD 18,12, LIVE 05:55:10Z, hero sedd: svart 210D på tvåvåningsbur, packshot) säljs som '4FT', så storlekar finns; 1005009813590071 (USD 25,19, LIVE 05:55:08Z, hero sedd: tre färger grön/grå/svart på vit botten). Måste mäta burens längd.",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 3,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 3
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005002637853707.html",
+    "https://www.aliexpress.com/item/1005006896280524.html",
+    "https://www.aliexpress.com/item/1005009813590071.html",
+    "https://www.teddytassen.se/webbshop/kanin/kaninburar--kaninhus/vindskydd-till-burar/vindskydd-for-kaninburar-1753.html",
+    "https://www.granngarden.se/kaninbur-isolerad-kerbl-4-season-superior-130x66x110cm",
+    "https://www.djurmaxi.se/trixie-kaninbur-natura-116-28743.html",
+    "https://www.amazon.se/Excerando-kaninbur-h%C3%A5llbar-dubbelt-termisk/dp/B08L375LFT"
+   ]
+  },
+  {
+   "product_id": "1005012664907030",
+   "titel": "Kikarbröstväskan för älgpasset",
+   "url": "https://www.aliexpress.com/item/1005012664907030.html",
+   "pris": 13.48,
+   "valuta": "USD",
+   "pris_text": "US $13.48",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-24/v3/bilder/1005012664907030.jpg",
+   "sald": "",
+   "grupp": "NYTT: Jaktkikaren på passet (2–15 tkr) — dinglar i halsrem",
+   "objekt": "NYTT: Jaktkikaren på passet (2–15 tkr) — dinglar i halsrem",
+   "taggar": {
+    "objekt": "NYTT: Jaktkikaren på passet (2–15 tkr) — dinglar i halsrem",
+    "form": "sele",
+    "arketyp": "A_AGARE_FRIKTION",
+    "deadline_typ": "älgjakt",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Mystery Ranch QD Bino Harness L (bröstväska med magnetlock, 500D Cordura) — Widforss 995 kr (rek 1 095), utsåld i One Size 2026-09-24"
+   },
+   "ekonomi": {
+    "landad": 194,
+    "forslag_pris": 599,
+    "multipel": 3.09,
+    "be_cpa": 404,
+    "be_roas": 1.48,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     175,
+     214
+    ]
+   },
+   "namn_sv": "Kikarbröstväskan för älgpasset",
+   "status": "säsong",
+   "poang": 8,
+   "rank_slutlig": 8,
+   "rank": 6,
+   "per_kriterium": null,
+   "hook": "Slår kikaren mot bröstet på passet?",
+   "efter_bild": "halsremmen: kikaren dinglar och slår när han kliver över stängslet — bröstväskan: kikaren ligger stilla, torr, lock upp och sikta på 1 sekund",
+   "huvudrisk": "'Sett innan' — erfarna jägare känner bino harness från Widforss/Jaktia, och heron saknar kikare och kontext.",
+   "varfor": "Hårt datum (älgjakt syd 8 okt, 2,0 v) plus fars dag (6,4 v) på ett ägt objekt värt 2–15 tkr som skyddas mot regn och slag; samma sele-struktur som axelbältet med ett synligt märkesankare 1,66× (Mystery Ranch 995) och ingen kedja i formen. Fars dag-rad utan kalender: presenten syns i bild och pekar på mannen med jakten.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0303",
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "B_SKYDDA_DYRT",
+   "slot": "sasong",
+   "hypotes_id": "H02",
+   "sasong": {
+    "fonster_id": "algjakt_syd",
+    "deadline_typ": "älgjakt",
+    "veckor_kvar": 2.0,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Axelbältet (trimmersele)",
+    "delade_variabler": [
+     "form sele — kroppsligt i säsongsjobbet",
+     "objekt ute, medel 1–10 tkr (kikaren)",
+     "deadline säsongsstart (älgjakt syd 8 okt)",
+     "old way = svikande default (halsremmen som följde med kikaren: nackont, kikaren slår mot bröstet, regn på linserna) — H03",
+     "märkesankare ≥ 1,6× (Mystery Ranch 995 kr)",
+     "ägare 55+ småhus (jägare)"
+    ],
+    "avvikelser": [
+     "formen är känd i jaktfackhandeln (Widforss/Jaktia 900–2 000 kr) — 'sett innan'-risk hos erfarna jägare",
+     "hero är packshot på vit botten utan kikare/jägare",
+     "fars dag 6,4 v är andra datumet (gåva från frun) — H05-sida"
+    ]
+   },
+   "rank_forklaring": "säsong: säsong 2×2 + efterfrågan 2 + ekonomi 2 = 8",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Widforss — Vortex Kikarsele (enkel elastisk sele utan väska, annan form)",
+     "pris_sek": 349,
+     "url": "https://www.widforss.se/p/vortex-kikarsele",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "Mystery Ranch QD Bino Harness L (bröstväska med magnetlock, 500D Cordura) — Widforss 995 kr (rek 1 095), utsåld i One Size 2026-09-24",
+     "pris_sek": 995,
+     "url": "https://www.widforss.se/mystery-ranch-qd-bino-harness-l-foliage",
+     "i_sortiment": false
+    },
+    "ankare_kvot": 1.66,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "widforss.se Vortex Kikarsele 349 kr (rek 499) — läst 2026-09-24: enkel sele, inte bröstväska",
+     "widforss.se Mystery Ranch QD Bino Harness 995 kr — läst 2026-09-24 (utsåld One Size)",
+     "websök 'kikarsele pris jaktia biltema jula widforss': pricerunner.se/sp/kikarsele 47 produkter (ej öppnad), Seeland kikarrem (Widforss), inga bröstväskor hos Biltema/Jula",
+     "websök 'bino harness kikarväska billigaste amazon.se jaktia': inga svenska träffar under 900 kr; finn.no Blaser bino harness 900 NOK, Vortex GlassPak Pro 1 999 NOK (Norge)",
+     "jaktia.se/search?q=kikarsele: 404 · widforss.se/tillbehor-jaktvaskor: ingen kikarselekategori på sidan",
+     "koncept.py sok kikare/kniv: 0 relevanta · katalog-live.txt: ingen kikare/sele utom Trimmersele"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron är en textfri packshot av selen framifrån (khaki, mesh-rygg, bröstväska med lock) på beige botten — ingen kikare, ingen jägare; kontextbild (jägaren på passet, kikaren ur väskan på 1 s) måste tas eller genereras"
+   },
+   "meta_tanke": {
+    "hook": "Slår kikaren mot bröstet på passet?",
+    "objekt_i_bild": "jägaren i passet, kikaren lyfts ur bröstväskan med en hand medan bössan hänger på axeln",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "halsremmen: kikaren dinglar och slår när han kliver över stängslet — bröstväskan: kikaren ligger stilla, torr, lock upp och sikta på 1 sekund"
+   },
+   "listning": {
+    "product_id": "1005012664907030",
+    "url": "https://www.aliexpress.com/item/1005012664907030.html",
+    "pris_usd": 13.48,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-24T05:57:52Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-24/v3/bilder/1005012664907030.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "ur titel/sökträff: en variant synlig (khaki, mesh-sele med MOLLE, magnetlock, sidofickor); sökträffen visar även NEW VIEW bino pack 27,00 USD (1005011717683999) och Vector Optics 30,27 USD (1005012934002192) som dyrare syskon — ej öppnade.",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012664907030.html",
+    "https://www.aliexpress.com/item/1005011717683999.html",
+    "https://www.widforss.se/mystery-ranch-qd-bino-harness-l-foliage",
+    "https://www.widforss.se/p/vortex-kikarsele",
+    "https://www.pricerunner.se/sp/kikarsele.html",
+    "https://svenskjakt.se/start/nyhet/algjakten-2026-jakttider-b"
+   ]
+  },
+  {
+   "product_id": "1005008743247722",
+   "titel": "Slangboxhuven isolerad 55 cm",
+   "url": "https://www.aliexpress.com/item/1005008743247722.html",
+   "pris": 16.49,
+   "valuta": "USD",
+   "pris_text": "US $16.49",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-16/v3/bilder/1005008743247722.jpg",
+   "sald": "",
+   "grupp": "NYTT: Väggmonterad slangbox/slangvinda (Gardena RollUp/PowerRoll, 955–3 049 kr) — sitter kvar på väggen med vatten i slangen första frostnatten",
+   "objekt": "NYTT: Väggmonterad slangbox/slangvinda (Gardena RollUp/PowerRoll, 955–3 049 kr) — sitter kvar på väggen med vatten i slangen första frostnatten",
+   "taggar": {
+    "objekt": "NYTT: Väggmonterad slangbox/slangvinda (Gardena RollUp/PowerRoll, 955–3 049 kr) — sitter kvar på väggen med vatten i slangen första frostnatten",
+    "form": "huv",
+    "arketyp": "B_SKYDDA_DYRT",
+    "deadline_typ": "första frost",
+    "prisband": "500–999",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "saknas — Gardena säljer ingen huv till slangboxen; deras råd är att lyfta ner boxen och förvara frostfritt (gardena.com/se)"
+   },
+   "ekonomi": {
+    "landad": 238,
+    "forslag_pris": 549,
+    "multipel": 2.31,
+    "be_cpa": 311,
+    "be_roas": 1.77,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     214,
+     262
+    ]
+   },
+   "namn_sv": "(från 16/9) Slangboxhuven isolerad 55 cm",
+   "status": "bevisad struktur",
+   "poang": 15.4,
+   "rank_slutlig": 15.4,
+   "rank": 1,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 14,
+    "K3": 12,
+    "K4": 8,
+    "K5": 8,
+    "K6": 8,
+    "K7": 4,
+    "K8": 7,
+    "K9": 4,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "hook": "Sitter slangboxen kvar på väggen i oktober?",
+   "efter_bild": "sprucken slang/spricka i boxen efter frostnatt bredvid boxen under huven",
+   "huvudrisk": "Amazon.se har en look-alike i exakt samma form vars pris inte gick att läsa (503) — och heron är en sommarbild, frostberättelsen måste byggas i creativen.",
+   "varfor": "Samma struktur som Kranskydd Frost (REAL WINNER) men på ett 10× dyrare objekt som nästan varje villa med Gardena-box lämnar ute: vatten kvar i slangen fryser, boxens plast spricker, och Gardenas eget råd är 'lyft ner den' — vilket ingen gör. Första frost Svealand om 4,1 v, Götaland 4,7 v.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0284",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploitation",
+   "hypotes_id": "H02",
+   "sasong": {
+    "fonster_id": "forsta_frost_mellan",
+    "deadline_typ": "första frost",
+    "veckor_kvar": 4.1,
+    "timing": "NOW",
+    "kommentar": "NYTT objekt — fönstret satt ur SASONG.md första frostnatt Svealand 4,1 v (Norrland NU 0,3 v, Götaland 4,7 v); sasong.py --objekt ger EVERGREEN på 'Trädgårdsslangen' eftersom raden saknas i objekt.json"
+   },
+   "vinnarlikhet": {
+    "likast": "Kranskydd Frost 420D",
+    "delade_variabler": [
+     "objekt_ute",
+     "deadline första frost",
+     "old way ingenting/improvisation",
+     "form överdrag/huv",
+     "arketyp_sekundar E_VADER_SASONG",
+     "villaägare 55+"
+    ],
+    "avvikelser": [
+     "objektet är dyrare (1–3 tkr mot en kran)",
+     "ingen svensk fackhandelsankare i formen"
+    ]
+   },
+   "rank_forklaring": "exploitation: vinnarlikhet 3×2 + ekonomi 2 + säsong 3 + creative 2 + lucka 1 + signalbonus +1.4 [arketyp=B_SKYDDA_DYRT 8V/1F (+0.8); prisband=500–999 8V/2F (+0.6)] = 15.4",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "amazon.se (Skydd för slangvinda, 420D Oxford, 60×45×60 cm)",
+     "pris_sek": "ej mätt — sidan svarade 503 två gånger 2026-09-16",
+     "url": "https://www.amazon.se/Skydd-Tr%C3%A4dsslangrulle-Vattent%C3%A4t-Skadet%C3%A5lig-Skydds%C3%B6verdrag/dp/B0G3WTL3D1",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "saknas — Gardena säljer ingen huv till slangboxen; deras råd är att lyfta ner boxen och förvara frostfritt (gardena.com/se)",
+     "pris_sek": null,
+     "url": "https://www.gardena.com/se/produkter/bevattning/slangboxar-slangvindor/vaggmonterad-slangvinda-35-med-automatisk-inrullning/967169501.html",
+     "i_sortiment": false
+    },
+    "objekt_varde": {
+     "namn": "Gardena slangboxar väggmonterade",
+     "pris_sek": "955–3 049 kr (Bygghemma sökutdrag 2026-09-16)",
+     "url": "https://www.bygghemma.se/tradgard-och-utemiljo/bevattning-och-vattenpump/slangvinda-och-slangvagn/"
+    },
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "gardena.com/se",
+     "bygghemma.se",
+     "clasohlson.com",
+     "amazon.se (503)",
+     "prisjakt.nu (blockerad)",
+     "pricerunner.se (tom sida)"
+    ]
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "Hero: huven på slangboxen mot tegelvägg, man vattnar i bakgrunden, två packshots under (dragsko + isolerat silverfoder). Textfri. Sommarbild — frostbilden (rimfrost/is på boxen) måste vi göra själva."
+   },
+   "meta_tanke": {
+    "hook": "Sitter slangboxen kvar på väggen i oktober?",
+    "objekt_i_bild": "Gardena-boxen på husväggen, rimfrost på slangen — sedan huven på",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "sprucken slang/spricka i boxen efter frostnatt bredvid boxen under huven"
+   },
+   "listning": {
+    "product_id": "1005008743247722",
+    "url": "https://www.aliexpress.com/item/1005008743247722.html",
+    "pris_usd": 16.49,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-16T04:46:38Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "titel_live": "Insulated Hose Reel Cover 21.6x21.6x11.8inch Black",
+     "hero_nedladdad": "korningar/2026-09-16/v3/bilder/1005008743247722.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en storlek 55 × 55 × 30 cm (21.6 × 21.6 × 11.8 tum), svart; syskonlistningar 1005008319880437 (21,22 USD, samma vara) och 1005012956861720 (420D, 19,42 USD)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 3,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 1,
+    "ekonomi": 2,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005008743247722.html",
+    "https://www.gardena.com/se/produkter/bevattning/slangboxar-slangvindor/vaggmonterad-slangvinda-35-med-automatisk-inrullning/967169501.html",
+    "https://www.bygghemma.se/tradgard-och-utemiljo/bevattning-och-vattenpump/slangvinda-och-slangvagn/",
+    "https://www.amazon.se/Skydd-Tr%C3%A4dsslangrulle-Vattent%C3%A4t-Skadet%C3%A5lig-Skydds%C3%B6verdrag/dp/B0G3WTL3D1"
+   ],
+   "fran_datum": "2026-09-16"
+  },
+  {
+   "product_id": "1005009285428265",
+   "titel": "Lövsilarna för stuprören, 6-pack",
+   "url": "https://www.aliexpress.com/item/1005009285428265.html",
+   "pris": 7.74,
+   "valuta": "USD",
+   "pris_text": "US $7.74",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-16/v3/bilder/1005009285428265.jpg",
+   "sald": "",
+   "grupp": "Hängrännor",
+   "objekt": "Hängrännor",
+   "taggar": {
+    "objekt": "Hängrännor",
+    "form": "nät",
+    "arketyp": "E_VADER_SASONG",
+    "deadline_typ": "lövfällning",
+    "prisband": "300–499",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Bauhaus Lövavskiljare Mr Flowout 70–100 mm (styck, endast webblager) / Hornbach Lindab självrensande lövsil 195 kr"
+   },
+   "ekonomi": {
+    "landad": 112,
+    "forslag_pris": 349,
+    "multipel": 3.12,
+    "be_cpa": 237,
+    "be_roas": 1.47,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     101,
+     123
+    ]
+   },
+   "namn_sv": "(från 16/9) Lövsilarna för stuprören, 6-pack",
+   "status": "bevisad struktur",
+   "poang": 14.0,
+   "rank_slutlig": 14.0,
+   "rank": 2,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": null,
+    "K2": null,
+    "K3": null,
+    "K4": null,
+    "K5": null,
+    "K6": null,
+    "K7": null,
+    "K8": null,
+    "K9": null,
+    "K10": null,
+    "K11": null,
+    "K12": null
+   },
+   "hook": "Hur många stuprör har huset?",
+   "efter_bild": "före: rännan svämmar över vid stupröret i regnet — efter: silen sitter i, löven ligger ovanpå, vattnet rinner igenom",
+   "huvudrisk": "Passformen: listningen säger 3 tum (76 mm) expanderbar, svenska stuprör är oftast 87 mm — måste bekräftas hos leverantören före launch, annars blir returerna dyra.",
+   "varfor": "Exakt sorkkorgsmönstret: kedjan säljer EN lövsil för 81–234 kr och villan har 4–8 stuprör — sex för 349 kr ligger under kedjans styckpris × antal (486–1 314 kr) med ankare 3,35× (Mr Flowout/Lindab). Lövfällningen toppar om 4,1 veckor och objektet står ute på vartenda småhus.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0285",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "I_FLERKOP",
+   "slot": "exploitation",
+   "hypotes_id": "H08",
+   "sasong": {
+    "fonster_id": "lovfallning",
+    "deadline_typ": "lövfällning",
+    "veckor_kvar": 4.1,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Fiskespöhållaren (spöklämma 4-pack)",
+    "delade_variabler": [
+     "objekt ute (husets stuprör)",
+     "flerköp inbyggt — villan har 4–8 stuprör, kedjan säljer en i taget",
+     "< 500 kr",
+     "improvisation i dag (hönsnät i röret / ingenting → rännan svämmar över och stupröret fryser)",
+     "ägare 55+ i småhus",
+     "material klass 1"
+    ],
+    "avvikelser": [
+     "hårt datum finns här (lövfällning) — spöklämman hade inget",
+     "kedjan har formen styckvis (Wijo/Plannja renstratt 81–234 kr, Mr Flowout 219, Lindab självrensande 195)",
+     "passform 87 mm ej mätt (listningen säger 3 tum = 76 mm, expanderbar)"
+    ]
+   },
+   "rank_forklaring": "exploitation: vinnarlikhet 3×2 + ekonomi 1 + säsong 3 + creative 2 + lucka 2 + signalbonus +0.0 [arketyp=E_VADER_SASONG 2V/1F (+0.3); prisband=300–499 6V/11F (-0.3)] = 14.0",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Bygghemma (Renstratt Wijo, plåttratt, kampanjpris)",
+     "pris_sek": 81,
+     "url": "https://www.bygghemma.se/hus-och-bygg/tak/takavvattning/stupror/lovsil/",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "Bauhaus Lövavskiljare Mr Flowout 70–100 mm (styck, endast webblager) / Hornbach Lindab självrensande lövsil 195 kr",
+     "pris_sek": 219,
+     "url": "https://www.bauhaus.se/lovavskiljare-mr-flowout-svart-plast-70-100-mm",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 3.35,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "bygghemma.se lövsil-kategorin (Wijo fr. 81, Plannja fr. 120, Lövis Wijo fr. 142, Mr Flowout 199, Plannja Lövis 234 — alla per styck, läst 2026-09-16)",
+     "bauhaus.se Mr Flowout svart 219 kr (Ø70–100 mm, lagerförs inte i varuhus)",
+     "hornbach.se sökutdrag: Lindab SLS självrensande lövsil 195 kr",
+     "byggmax.se Mr Flowout (sidan gav bara meny — pris ej läst)",
+     "jula.se lövavskiljare 353441 (403 — pris ej läst)",
+     "biltema.se renstratt (403 — pris ej läst)",
+     "pricerunner.se lövavskiljare (tom sida)"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "textfri packshot på mörk botten: två expanderade aluminiumsilar, konstruktionen syns — eget foto/klipp med silen som trycks ner i stupröret och löven som stannar ovanpå behövs"
+   },
+   "meta_tanke": {
+    "hook": "Hur många stuprör har huset?",
+    "objekt_i_bild": "stuprörets överkant fullt av löv — och sex silar i rad på trappan",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "före: rännan svämmar över vid stupröret i regnet — efter: silen sitter i, löven ligger ovanpå, vattnet rinner igenom"
+   },
+   "listning": {
+    "product_id": "1005009285428265",
+    "url": "https://www.aliexpress.com/item/1005009285428265.html",
+    "pris_usd": 7.74,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-16T04:46:00Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-16/v3/bilder/1005009285428265.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "6-pack (titel); aluminium, expanderbar, '3 inch' (76 mm) — passform mot svenska 87/100 mm stuprör ej mätt; syskonlistning 1005012955083310 (4/6 st 'universal expandable', 9,65 USD) som reserv om 3 tum inte spänner ut",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 3,
+    "meta_creative": 2,
+    "efterfragan": 3,
+    "lucka": 2,
+    "ekonomi": 1,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005009285428265.html",
+    "https://www.aliexpress.com/item/1005012955083310.html",
+    "https://www.bygghemma.se/hus-och-bygg/tak/takavvattning/stupror/lovsil/",
+    "https://www.bauhaus.se/lovavskiljare-mr-flowout-svart-plast-70-100-mm",
+    "https://www.hornbach.se/c/byggmaterial-tra-fonster-dorrar/tak/takavvattning/stupror-tillbehor/S26888/"
+   ],
+   "fran_datum": "2026-09-16"
+  },
+  {
+   "product_id": "1005010043603476",
+   "titel": "Regnfisken vid stupröret",
+   "url": "https://www.aliexpress.com/item/1005010043603476.html",
+   "pris": 26.19,
+   "valuta": "USD",
+   "pris_text": "US $26.19",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-16/v3/bilder/1005010043603476.jpg",
+   "sald": "",
+   "grupp": "NYTT: Stuprörets utkast — dekorativ utkastare i stället för plåtutkastaren",
+   "objekt": "NYTT: Stuprörets utkast — dekorativ utkastare i stället för plåtutkastaren",
+   "taggar": {
+    "objekt": "NYTT: Stuprörets utkast — dekorativ utkastare i stället för plåtutkastaren",
+    "form": "dekor",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "höstregn",
+    "prisband": "500–999",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "ej mätt — vattenliv.se säljer bronsmålad fisk som springbrunnsfigur (annan användning, pris ej läst); ingen svensk aktör hittad med dekorativ stuprörsutkastare i fiskform"
+   },
+   "ekonomi": {
+    "landad": 379,
+    "forslag_pris": 899,
+    "multipel": 2.37,
+    "be_cpa": 520,
+    "be_roas": 1.73,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     341,
+     417
+    ]
+   },
+   "namn_sv": "(från 16/9) Regnfisken vid stupröret",
+   "status": "utforskning",
+   "poang": 14,
+   "rank_slutlig": 14,
+   "rank": 3,
+   "per_kriterium": null,
+   "hook": "Vad gör fisken under stupröret?",
+   "efter_bild": "vattnet rinner in bak och ut genom gapet — rörelsen är hela annonsen",
+   "huvudrisk": "Upplevt värde: 899 kr för resin (Axels signal 09-09) — priset följer protokollet (landad × 2,4 utan ankare) och kan behöva sänkas till 699 (BE-CPA 282–358); heron i listningen är oanvändbar och mått är ej mätt.",
+   "varfor": "H10 på ett objekt varje småhus har (stuprörets utkast) i en form som inte finns i svenskt flöde alls — kedjan har bara plåtutkastaren för 250 kr, som fisken ersätter. Höstregn NOW (3,4 v) ger demon gratis, och flerköp är inbyggt (ett stuprör per hörn).",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0286",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploration",
+   "hypotes_id": "H10",
+   "sasong": {
+    "fonster_id": "hostregn",
+    "deadline_typ": "höstregn",
+    "veckor_kvar": 3.4,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Soptunneklistermärkena",
+    "delade_variabler": [
+     "objekt_ute",
+     "agare_55plus_smahus",
+     "form_dekor",
+     "latent_behov_nej",
+     "flerkop_ja (ett stuprör per hushörn)"
+    ],
+    "avvikelser": [
+     "899 kr i stället för 199",
+     "old way = köpt plåtutkastare som fungerar (250 kr hos kedjan) — inte ingenting",
+     "resin: upplevt värde måste bäras av storleken"
+    ]
+   },
+   "rank_forklaring": "exploration: hypotesvärde 3×2 + nyhet 3 + creative 2 + ekonomi 3 = 14",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Bauhaus/Byggmax/Hornbach (plåtutkastare till stuprör, standardform — inte samma form)",
+     "pris_sek": 250,
+     "url": "https://www.bygghemma.se/hus-och-bygg/tak/takavvattning/stupror/utkastare/",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "ej mätt — vattenliv.se säljer bronsmålad fisk som springbrunnsfigur (annan användning, pris ej läst); ingen svensk aktör hittad med dekorativ stuprörsutkastare i fiskform",
+     "pris_sek": null,
+     "url": "https://vattenliv.se/produkt-kategori/springbrunnar/figurer-springbrunn",
+     "i_sortiment": false
+    },
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "bygghemma.se/bauhaus.se/byggmax.se/hornbach.se (utkastare: bara plåt, från ~250 kr)",
+     "vattenliv.se (springbrunnsfigurer, annan funktion)",
+     "websök 'regnfisk / stuprör fisk / koi stuprör dekorativ utkastare': 0 svenska träffar 2026-09-16",
+     "jula/biltema/clas ohlson/rusta/plantagen: 0 träffar i sökningen"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron är ett fabriksgolvsfoto av tre gråa koi-fiskar — textfri men oanvändbar som annons; syskonlistningen 1005013107770248 har en ren packshot i hand (korningar/2026-09-16/v3/bilder/1005013107770248.jpg). Kontextbild krävs: fisken under stuprörets utkast med vatten ur munnen"
+   },
+   "meta_tanke": {
+    "hook": "Vad gör fisken under stupröret?",
+    "objekt_i_bild": "stuprörets utkast vid husgrunden, fisken under, regnvatten ur munnen",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "vattnet rinner in bak och ut genom gapet — rörelsen är hela annonsen"
+   },
+   "listning": {
+    "product_id": "1005010043603476",
+    "url": "https://www.aliexpress.com/item/1005010043603476.html",
+    "pris_usd": 26.19,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-16T04:55:00Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-16/v3/bilder/1005010043603476.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant (grå koi i resin) enligt titel/hero — mått ej mätt; syskonlistning 1005013107770248 (USD 45,59, LIVE, hero: fisken i handen, vit/grå, gapet öppet) är samma koncept i troligen större format",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 3,
+    "ekonomi": 3,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 3,
+    "hypotesvarde": 3
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005010043603476.html",
+    "https://www.aliexpress.com/item/1005013107770248.html",
+    "https://www.bygghemma.se/hus-och-bygg/tak/takavvattning/stupror/utkastare/",
+    "https://vattenliv.se/produkt-kategori/springbrunnar/figurer-springbrunn"
+   ],
+   "fran_datum": "2026-09-16"
+  },
+  {
+   "product_id": "1005010672730085",
+   "titel": "Stenlocket — döljer brunnslocket",
+   "url": "https://www.aliexpress.com/item/1005010672730085.html",
+   "pris": 36.4,
+   "valuta": "USD",
+   "pris_text": "US $36.4",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-16/v3/bilder/1005010672730085.jpg",
+   "sald": "",
+   "grupp": "NYTT: Brunnslocket i gräsmattan (avlopps-/dagvattenbrunn, septiktank)",
+   "objekt": "NYTT: Brunnslocket i gräsmattan (avlopps-/dagvattenbrunn, septiktank)",
+   "taggar": {
+    "objekt": "NYTT: Brunnslocket i gräsmattan (avlopps-/dagvattenbrunn, septiktank)",
+    "form": "dekor",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "ingen",
+    "prisband": "500–999",
+    "ankare_klass": "1,3–1,6×",
+    "ankare_kalla": "gartendek.se Ihålig falsk konstgjord sten S-04 (sökutdrag; M/XL-storlekar har pris som inte gick att läsa)"
+   },
+   "ekonomi": {
+    "landad": 526,
+    "forslag_pris": 999,
+    "multipel": 1.9,
+    "be_cpa": 472,
+    "be_roas": 2.11,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     474,
+     579
+    ]
+   },
+   "namn_sv": "(från 16/9) Stenlocket — döljer brunnslocket",
+   "status": "utforskning",
+   "poang": 13,
+   "rank_slutlig": 13,
+   "rank": 4,
+   "per_kriterium": null,
+   "hook": "Vad gömmer du under stenen?",
+   "efter_bild": "en hand lyfter stenen, brunnslocket under — hela produkten är bilden",
+   "huvudrisk": "Volymfrakt — ihålig glasfibersten är stor och lätt, ×1,5-antagandet för landad kan vara för lågt (ej mätt); mått saknas i titeln så passform mot svenska lock (Ø 40–60 cm) måste bekräftas med leverantören.",
+   "varfor": "Renaste H10-testet i dag: objekt som nästan varje småhus har (brunnslock i gräsmattan), formen finns inte hos någon kedja — bara en specialist (gartendek 1 250–1 450) och Amazon — och heron förstås utan ett ord. Samma struktur som klistermärkena (dekor, ingen friktion, ingenting i dag) men med upplevt värde: stenen ser ut som sitt pris.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0287",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": null,
+   "slot": "exploration",
+   "hypotes_id": "H10",
+   "sasong": {
+    "fonster_id": null,
+    "deadline_typ": "ingen",
+    "veckor_kvar": null,
+    "timing": "EVERGREEN"
+   },
+   "vinnarlikhet": {
+    "likast": "Soptunneklistermärkena",
+    "delade_variabler": [
+     "objekt_ute",
+     "agare_55plus_smahus",
+     "form_dekor",
+     "old_way_ingenting",
+     "latent_behov_nej",
+     "noll_friktion (ställs över locket, lyfts av med ett grepp)"
+    ],
+    "avvikelser": [
+     "999 kr i stället för 199",
+     "en sten per lock — flerköp bara vid flera brunnar",
+     "stor volym i frakt"
+    ]
+   },
+   "rank_forklaring": "exploration: hypotesvärde 3×2 + nyhet 3 + creative 2 + ekonomi 2 = 13",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "gartendek.se (Ihålig falsk konstgjord sten S-01 / S-04, sökutdrag 2026-09-16 — sidan svarade ENOTFOUND i containern)",
+     "pris_sek": 1250,
+     "url": "https://gartendek.se/falsk-sten/",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "gartendek.se Ihålig falsk konstgjord sten S-04 (sökutdrag; M/XL-storlekar har pris som inte gick att läsa)",
+     "pris_sek": 1450,
+     "url": "https://gartendek.se/falsk-sten/ihalig-falsk-konstgjord-sten-for-tradgard-s-04",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.45,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "gartendek.se (specialist: S-01 1 250, S-04 1 450 — ur sökutdrag, sidan onåbar)",
+     "amazon.se B09Z5PY146 Backyard X-Scapes 76×71×33 cm (sidan öppnad, pris ej synligt)",
+     "instantgarden.se/collections/sten (bara dekorgrus/singel, ingen falsk sten)",
+     "jula/biltema/clas ohlson/rusta/bauhaus/plantagen/granngården: 0 träffar på konstgjord sten för brunnslock i sökningen"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron är en textfri packshot av en sandfärgad sten mot vit bakgrund — ren men utan gräsmatta/brunnslock; kontextbild måste tas eller genereras (sten på gräs, locket skymtar när den lyfts)"
+   },
+   "meta_tanke": {
+    "hook": "Vad gömmer du under stenen?",
+    "objekt_i_bild": "gräsmattan med brunnslocket — stenen lyfts av och locket syns under",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "en hand lyfter stenen, brunnslocket under — hela produkten är bilden"
+   },
+   "listning": {
+    "product_id": "1005010672730085",
+    "url": "https://www.aliexpress.com/item/1005010672730085.html",
+    "pris_usd": 36.4,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-16T04:46:00Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-16/v3/bilder/1005010672730085.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "storlek och färg ej läsbara ur titel/sökträff (titeln: 'SucceBuy Faux Rock Cover … Well Pump Cover') — mått ej mätt; syskonlistning 1005012021370312 (USD 58,19, 'Fake Rock Faux Stone … Pump Cover') ej öppnad",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 2,
+    "efterfragan": 1,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 0,
+    "leverantor": 2,
+    "nyhet": 3,
+    "hypotesvarde": 3
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005010672730085.html",
+    "https://gartendek.se/falsk-sten/ihalig-falsk-konstgjord-sten-for-tradgard-s-04",
+    "https://gartendek.se/falsk-sten/ihalig-falsk-konstgjord-sten-for-tradgard-m04",
+    "https://www.amazon.se/Konstgjord-brunnspumpskydd-landskapsdesign-dekoration-glasfiberklippa/dp/B09Z5PY146",
+    "https://instantgarden.se/collections/sten"
+   ],
+   "fran_datum": "2026-09-16"
+  },
+  {
+   "product_id": "1005006151587411",
+   "titel": "Regntunnehuven 200 L med dragsko",
+   "url": "https://www.aliexpress.com/item/1005006151587411.html",
+   "pris": 14.3,
+   "valuta": "USD",
+   "pris_text": "US $14.3",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-16/v3/bilder/1005006151587411.jpg",
+   "sald": "",
+   "grupp": "Regntunna vid stupröret",
+   "objekt": "Regntunna vid stupröret",
+   "taggar": {
+    "objekt": "Regntunna vid stupröret",
+    "form": "huv",
+    "arketyp": "E_VADER_SASONG",
+    "deadline_typ": "första frost",
+    "prisband": "300–499",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "saknas i fackhandeln — Jula/Wexthuset säljer hårda lock (Jula lock Ø70 cm ca 60 kr inkl moms ur sökutdrag), ingen tyghuv; Bauhaus/Granngården/Plantagen: inget överdrag för regntunna hittat"
+   },
+   "ekonomi": {
+    "landad": 207,
+    "forslag_pris": 449,
+    "multipel": 2.17,
+    "be_cpa": 242,
+    "be_roas": 1.86,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     186,
+     228
+    ]
+   },
+   "namn_sv": "(från 16/9) Regntunnehuven 200 L med dragsko",
+   "status": "bevisad struktur",
+   "poang": 12.0,
+   "rank_slutlig": 12.0,
+   "rank": 5,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 10,
+    "K3": 12,
+    "K4": 8,
+    "K5": 6,
+    "K6": 8,
+    "K7": 3,
+    "K8": 5,
+    "K9": 4,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "hook": "Tömde du regntunnan — eller ska den spricka?",
+   "efter_bild": "tömd tunna under huven, is på grannens öppna tunna",
+   "huvudrisk": "Ekonomin är tunn (BE-CPA 221–263 kr, prisband 300–499 är en svag signal) och amazon.se har exakt samma form till oläst pris — plus att huven inte i sig hindrar frost, bara påfyllningen.",
+   "varfor": "Tunnan spricker vid vattenlinjen eller vid plastkranen när regnet fyllt den igen efter tömningen (regnvattentunna.se, byggahus-tråd) — dagens default är 'vänd den upp och ner' eller en presenning; ingen svensk kedja säljer en huv i tyg, bara hårda lock. Första frost Svealand 4,1 v.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0288",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "B_SKYDDA_DYRT",
+   "slot": "exploitation",
+   "hypotes_id": "H03",
+   "sasong": {
+    "fonster_id": "forsta_frost_mellan",
+    "deadline_typ": "första frost",
+    "veckor_kvar": 4.1,
+    "timing": "NOW",
+    "kommentar": "sasong.py --objekt 'Regntunna vid stupröret' → forsta_frost_norr NOW 0,3 v / mellan 4,1 v / syd 4,7 v"
+   },
+   "vinnarlikhet": {
+    "likast": "IBC-Tanköverdraget",
+    "delade_variabler": [
+     "objekt_ute",
+     "form överdrag/huv",
+     "old way improvisation (tunnan vänds upp och ner / presenning)",
+     "deadline första frost (IBC-radens vinterfas)",
+     "villaägare 55+",
+     "en variant"
+    ],
+    "avvikelser": [
+     "objektet är billigare (599–1 999 kr mot IBC 1–10 tkr)",
+     "huven hindrar påfyllning och UV — den hindrar inte frost i en full tunna; tunnan måste tömmas först"
+    ]
+   },
+   "rank_forklaring": "exploitation: vinnarlikhet 3×2 + ekonomi 1 + säsong 3 + creative 1 + lucka 1 + signalbonus +0.0 [arketyp=E_VADER_SASONG 2V/1F (+0.3); prisband=300–499 6V/11F (-0.3)] = 12.0",
+   "asymmetrisk": true,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "amazon.se (AYYDS regntunna skyddsfodral 200 L Ø65 × 95 cm, Oxford, dragsko)",
+     "pris_sek": "ej mätt — sidan gav bara metadata utan pris 2026-09-16",
+     "url": "https://www.amazon.se/AYYDS-regnvattentunna-v%C3%A4derbest%C3%A4ndigt-skyddsfodral-regnbottenskydd/dp/B09Y913422",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "saknas i fackhandeln — Jula/Wexthuset säljer hårda lock (Jula lock Ø70 cm ca 60 kr inkl moms ur sökutdrag), ingen tyghuv; Bauhaus/Granngården/Plantagen: inget överdrag för regntunna hittat",
+     "pris_sek": null,
+     "url": "https://www.jula.se/catalog/tradgard/bevattning/vattenslangar-och-tillbehor/vattentunnor/lock-for-vattentunna-023890/",
+     "i_sortiment": false
+    },
+    "objekt_varde": {
+     "namn": "Garantia regntunna 210 L / övriga",
+     "pris_sek": "599 / 829 / 1 999 kr (Hornbach sökutdrag 2026-09-16)",
+     "url": "https://www.hornbach.se/c/tradgard/bevattning/vattentunnor-tillbehor/regntunnor/S31005/"
+    },
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "hornbach.se",
+     "jula.se (403 på produktsidan, pris ur sökutdrag)",
+     "wexthuset.com",
+     "bauhaus.se",
+     "granngarden.se",
+     "amazon.se",
+     "prisjakt.nu (blockerad)"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "Hero: svart cylinderhuv med dragsko mot vit bakgrund — ren packshot, ingen tunna, ingen trädgård. Kontextbild måste göras."
+   },
+   "meta_tanke": {
+    "hook": "Tömde du regntunnan — eller ska den spricka?",
+    "objekt_i_bild": "regntunnan vid stupröret, spricka i sidan vid vattenlinjen",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "tömd tunna under huven, is på grannens öppna tunna"
+   },
+   "listning": {
+    "product_id": "1005006151587411",
+    "url": "https://www.aliexpress.com/item/1005006151587411.html",
+    "pris_usd": 14.3,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-16T04:47:31Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "titel_live": "55 Gallon Drum Cover, Water Storage Barrel Outdoor Waterproof Rain Snow Bucket Cover with Drawstring, UV Protection, Anti Dust",
+     "hero_nedladdad": "korningar/2026-09-16/v3/bilder/1005006151587411.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "55 gallon (208 L) — passar svenska 200–240 L-tunnor Ø 60–70 cm × 85–95 cm; en variant i sökträffen (storleksval ej läsbart i containern)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 3,
+    "meta_creative": 1,
+    "efterfragan": 2,
+    "lucka": 1,
+    "ekonomi": 1,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005006151587411.html",
+    "https://www.hornbach.se/c/tradgard/bevattning/vattentunnor-tillbehor/regntunnor/S31005/",
+    "https://www.jula.se/catalog/tradgard/bevattning/vattenslangar-och-tillbehor/vattentunnor/lock-for-vattentunna-023890/",
+    "https://www.amazon.se/AYYDS-regnvattentunna-v%C3%A4derbest%C3%A4ndigt-skyddsfodral-regnbottenskydd/dp/B09Y913422",
+    "http://regnvattentunna.se/vinterforvaring-och-avstangning/",
+    "https://www.byggahus.se/forum/threads/vinterloesning-foer-regnvattentunna.322917/"
+   ],
+   "fran_datum": "2026-09-16"
+  },
+  {
+   "product_id": "1005010029349245",
+   "titel": "Elcykelbatteriets vinterjacka, 2-pack",
+   "url": "https://www.aliexpress.com/item/1005010029349245.html",
+   "pris": 7.85,
+   "valuta": "USD",
+   "pris_text": "US $7.85",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-16/v3/bilder/1005010029349245.jpg",
+   "sald": "",
+   "grupp": "Elcykel under skärmtak",
+   "objekt": "Elcykel under skärmtak",
+   "taggar": {
+    "objekt": "Elcykel under skärmtak",
+    "form": "överdrag",
+    "arketyp": "B_SKYDDA_DYRT",
+    "deadline_typ": "höstregn",
+    "prisband": "300–499",
+    "ankare_klass": "1,3–1,6×",
+    "ankare_kalla": "Wheelyshop batteriskydd ram elcykel (neopren 53 × 37 cm, 'frost, vatten och sol')"
+   },
+   "ekonomi": {
+    "landad": 227,
+    "forslag_pris": 499,
+    "multipel": 2.2,
+    "be_cpa": 272,
+    "be_roas": 1.83,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     204,
+     250
+    ]
+   },
+   "namn_sv": "(från 16/9) Elcykelbatteriets vinterjacka, 2-pack",
+   "status": "utforskning",
+   "poang": 8,
+   "rank_slutlig": 8,
+   "rank": 6,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": null,
+    "K2": null,
+    "K3": null,
+    "K4": null,
+    "K5": null,
+    "K6": null,
+    "K7": null,
+    "K8": null,
+    "K9": null,
+    "K10": null,
+    "K11": null,
+    "K12": null
+   },
+   "hook": "Står elcyklarna ute i höst?",
+   "efter_bild": "jackan dras på batteriet med två kardborreband; regnet rinner av; räckviddssiffran i displayen mot kall morgon",
+   "huvudrisk": "Passar bara ramskenebatterier — pakethållarbatterier (vanliga på svenska dam-elcyklar) faller utanför, och look-alikes finns redan på Amazon.se/Fyndiq.",
+   "varfor": "Skyddar det dyraste på en ägd sak ute (batteriet, 4–8 tkr) inför höstregn och första frost, i formsydd form med fackhandelsankare 349 kr/st (Wheelyshop) — 2-pack för 499 kr ger 'hans och hennes' och testar H08:s 2-packsklausul rent. Fönstret är NOW (3,4 v), objektet är ute och ägaren är 55+ i småhus.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0289",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "I_FLERKOP",
+   "slot": "exploration",
+   "hypotes_id": "H08",
+   "sasong": {
+    "fonster_id": "hostregn",
+    "deadline_typ": "höstregn",
+    "veckor_kvar": 3.4,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Termoskyddet för Husbil 211 × 171 cm / Motorhöljet",
+    "delade_variabler": [
+     "objekt ute (elcykeln under skärmtaket/carporten)",
+     "dyr > 10 tkr (elcykel 15–35 tkr, batteriet 4–8 tkr)",
+     "formsydd överdragsform med kardborre",
+     "deadline första frost/höstregn (kyla tar räckvidden, regn tar kontakterna)",
+     "ägare 55+ i småhus — paret köper två cyklar",
+     "fackhandelsankare 1,2–1,6× (Wheelyshop 349 kr/st)"
+    ],
+    "avvikelser": [
+     "flerköpet är 2, inte 4–20 (H08:s '2-pack under fri-fraktgränsen' — otestat i kontot)",
+     "passar bara ramskenebatterier (down tube), inte pakethållarbatterier",
+     "look-alikes finns på Amazon.se/Fyndiq (pris ej läst)"
+    ]
+   },
+   "rank_forklaring": "exploration: hypotesvärde 2×2 + nyhet 2 + creative 1 + ekonomi 1 = 8",
+   "asymmetrisk": true,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Wheelyshop (Batteriskydd ram elcykel, neopren, i lager)",
+     "pris_sek": 349,
+     "url": "https://www.wheelyshop.se/products/batteriskydd-ram-elcykel",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Wheelyshop batteriskydd ram elcykel (neopren 53 × 37 cm, 'frost, vatten och sol')",
+     "pris_sek": 349,
+     "url": "https://www.wheelyshop.se/products/batteriskydd-ram-elcykel",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.4,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "wheelyshop.se 349 kr/st (läst 2026-09-16)",
+     "cykelhub.se PRO batteriskydd (503 — pris ej läst)",
+     "fyndiq.se batteriskydd universell (403 — pris ej läst)",
+     "amazon.se: två neoprenskydd i sökutdraget (pris ej läst)",
+     "batteridoktorn.se regntäcke/skyddsväska (sökutdrag, pris ej läst)",
+     "jula/biltema/clas: inget batteriskydd i sökutdragen"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron är en textig featurebild (NEOPRENE / COLD-PROOF / UNIVERSAL) med liten inset av jackan på ramen — insetten är kontexten; eget foto med två cyklar under skärmtaket i regn behövs"
+   },
+   "meta_tanke": {
+    "hook": "Står elcyklarna ute i höst?",
+    "objekt_i_bild": "två elcyklar under skärmtaket i regnet, batterierna i svarta jackor",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "jackan dras på batteriet med två kardborreband; regnet rinner av; räckviddssiffran i displayen mot kall morgon"
+   },
+   "listning": {
+    "product_id": "1005010029349245",
+    "url": "https://www.aliexpress.com/item/1005010029349245.html",
+    "pris_usd": 7.85,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-16T04:57:00Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-16/v3/bilder/1005010029349245.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant, universal med kardborre för ramskenebatterier ('adjustable & secure for most down tube batteries' i heron); neopren, orange insida; 7,85 USD per styck — 2-packet är vårt erbjudande",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 3,
+    "meta_creative": 1,
+    "efterfragan": 1,
+    "lucka": 1,
+    "ekonomi": 1,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005010029349245.html",
+    "https://www.aliexpress.com/item/1005006296543277.html",
+    "https://www.wheelyshop.se/products/batteriskydd-ram-elcykel",
+    "https://www.amazon.se/batteri-skyddsk%C3%A5pa-universal-omkrets-skyddstillbeh%C3%B6r/dp/B0BPGQ8QSC"
+   ],
+   "fran_datum": "2026-09-16"
+  },
+  {
+   "product_id": "1005012730363106",
+   "titel": "Fasadlisten — solcell utan sladd",
+   "url": "https://www.aliexpress.com/item/1005012730363106.html",
+   "pris": 29.59,
+   "valuta": "USD",
+   "pris_text": "US $29.59",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-23/v3/bilder/1005012730363106.jpg",
+   "sald": "",
+   "grupp": "NYTT: Husfasaden vid entrén/garaget — ytterväggen utan eluttag",
+   "objekt": "NYTT: Husfasaden vid entrén/garaget — ytterväggen utan eluttag",
+   "taggar": {
+    "objekt": "NYTT: Husfasaden vid entrén/garaget — ytterväggen utan eluttag",
+    "form": "annat",
+    "arketyp": "E_VADER_SASONG",
+    "deadline_typ": "mörker",
+    "prisband": "500–999",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "ej mätt — 230 V-linjära fasadarmaturer (wall washer) finns i lampbutikerna men kräver elektriker; ingen solcellsdriven list hittad hos svensk aktör"
+   },
+   "ekonomi": {
+    "landad": 428,
+    "forslag_pris": 999,
+    "multipel": 2.33,
+    "be_cpa": 571,
+    "be_roas": 1.75,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     385,
+     471
+    ]
+   },
+   "namn_sv": "(från 23/9) Fasadlisten — solcell utan sladd",
+   "status": "bevisad struktur",
+   "poang": 15.5,
+   "rank_slutlig": 15.5,
+   "rank": 1,
+   "per_kriterium": null,
+   "hook": "Ingen el vid entrén? Ingen elektriker heller.",
+   "efter_bild": "listen skruvas upp på 30 sekunder, ingen sladd, tänds när det mörknar — samma vägg före/efter",
+   "huvudrisk": "Lumen och brinntid är ej mätta — en solcellslist som slocknar 19:00 i november dödar recensionerna; heron har inbränd text och listning saknar sensorinfo.",
+   "varfor": "Strukturell kusin till kontots färskaste vinnare (Solcellslampan 09-17): solcell på ytterväggen, 55+ småhus, 500–999 kr, golv i annan form — men i en list-form ingen svensk aktör säljer på solcell, med upplevt värde som ser ut som 999 kr (svart aluminium, arkitektljus). Vintertid 25 okt är datumet som gör köpet nu (H02).",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0290",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "H_VISUELL_NYHET",
+   "slot": "exploitation",
+   "hypotes_id": "H02",
+   "sasong": {
+    "fonster_id": "vintertid_morker",
+    "deadline_typ": "mörker",
+    "veckor_kvar": 4.6,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED",
+    "delade_variabler": [
+     "objekt_ute",
+     "agare_55plus_smahus",
+     "form_elektronik_solcell",
+     "golv under ja (solcellsvägglampor i annan form)",
+     "prisband 500–999",
+     "montering_vägg utan elektriker",
+     "old way köpt produkt som fungerar"
+    ],
+    "avvikelser": [
+     "ingen rörelsesensor enligt titeln — skymningsstyrd (ej mätt)",
+     "999 kr mot vinnarens 589",
+     "estetik snarare än säkerhet"
+    ]
+   },
+   "rank_forklaring": "exploitation: vinnarlikhet 3×2 + ekonomi 3 + säsong 3 + creative 2 + lucka 2 + signalbonus -0.5 [arketyp=E_VADER_SASONG 2V/2F (+0.0); form=annat 0V/13F (-1.0); prisband=500–999 9V/3F (+0.5)] = 15.5",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "lamp24.se solcellslampor vägg (sidan läst 2026-09-23: ingen linjär/wall washer-form alls, prisspann 159–1 349 kr för kompakta solcellsvägglampor)",
+     "pris_sek": 159,
+     "url": "https://www.lamp24.se/c/utomhuslampor/solcellslampor/solcellslampor-vagg",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "ej mätt — 230 V-linjära fasadarmaturer (wall washer) finns i lampbutikerna men kräver elektriker; ingen solcellsdriven list hittad hos svensk aktör",
+     "pris_sek": null,
+     "url": "https://www.lamp24.se/c/utomhuslampor/solcellslampor/solcellslampor-vagg",
+     "i_sortiment": false
+    },
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "lamp24.se/solcellslampor-vagg (läst: 0 linjära, 159–1 349 kr)",
+     "websök 'solcellslampa wall washer / linjär / fasadbelysning solcell' 2026-09-23: CDON/Megabilligt 2- och 4-pack upp/ner-fasadlampor (annan form), Lampgrossen Alippa (kompakt), Jula vägglampa solcell 018353 (kompakt), Clas Ohlson stallykta 36-9069 (kompakt) — ingen list",
+     "ljustema.se / ljusochmiljo.se / lamporochljus.se i träffarna: kompakta solcellsvägglampor, ingen linjär"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "inbränd text 'IP65 outdoor waterproof' uppe till vänster måste beskäras; i övrigt en ren kontextbild — listen på väggen i regn, ljuset ner över putsen"
+   },
+   "meta_tanke": {
+    "hook": "Ingen el vid entrén? Ingen elektriker heller.",
+    "objekt_i_bild": "husfasaden vid ytterdörren i skymning, listen tänder sig själv",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "listen skruvas upp på 30 sekunder, ingen sladd, tänds när det mörknar — samma vägg före/efter"
+   },
+   "listning": {
+    "product_id": "1005012730363106",
+    "url": "https://www.aliexpress.com/item/1005012730363106.html",
+    "pris_usd": 29.59,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-23T07:00:00Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-23/v3/bilder/1005012730363106.jpg",
+     "hero_sedd": true,
+     "hero_sedd_kommentar": "svart avlång aluminiumlist på putsad vägg i regn, varmt ljus nedåt — samma produkt som titeln",
+     "pris_sett": true,
+     "varianter": "titel: 'Solar LED Wall Washer Light Outdoor Black Linear Porch Lamp' — en färg (svart); längd/lumen/sensor ej läsbara ur titel eller sökträff (ej mätt). Syskonlistning 1005012730473195 (USD 29,39, samma titel) ej öppnad.",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 3,
+    "meta_creative": 2,
+    "efterfragan": 1,
+    "lucka": 2,
+    "ekonomi": 3,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012730363106.html",
+    "https://www.aliexpress.com/item/1005012730473195.html",
+    "https://www.lamp24.se/c/utomhuslampor/solcellslampor/solcellslampor-vagg",
+    "https://www.jula.se/catalog/el-och-belysning/belysning/utomhusbelysning/solcellslampor/vagglampa-solcell-led-018353/",
+    "https://cdon.se/produkt/4-pack-solcellslampa-for-fasad-vagg-utomhus-fasadbelysning-solcell-svart-654c2a7a7c7a40d1/"
+   ],
+   "fran_datum": "2026-09-23"
+  },
+  {
+   "product_id": "1005013153718888",
+   "titel": "Rullskydden 6-pack (multirullarna)",
+   "url": "https://www.aliexpress.com/item/1005013153718888.html",
+   "pris": 1.83,
+   "valuta": "USD",
+   "pris_text": "US $1.83",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-23/v3/bilder/1005013153718888.jpg",
+   "sald": "",
+   "grupp": "NYTT: Fiskerullarna — 4–8 st på spöna och i lådan",
+   "objekt": "NYTT: Fiskerullarna — 4–8 st på spöna och i lådan",
+   "taggar": {
+    "objekt": "NYTT: Fiskerullarna — 4–8 st på spöna och i lådan",
+    "form": "överdrag",
+    "arketyp": "B_SKYDDA_DYRT",
+    "deadline_typ": "upptagning",
+    "prisband": "300–499",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Shimano Reel Cover Spinning (Sportfiskeprylar, per styck); Daiwa Neoprene Reel Pouch SP 159, Gunki Reel Cover 119"
+   },
+   "ekonomi": {
+    "landad": 159,
+    "forslag_pris": 449,
+    "multipel": 2.82,
+    "be_cpa": 290,
+    "be_roas": 1.55,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     143,
+     175
+    ]
+   },
+   "namn_sv": "(från 23/9) Rullskydden 6-pack (multirullarna)",
+   "status": "bevisad struktur",
+   "poang": 15.3,
+   "rank_slutlig": 15.3,
+   "rank": 2,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": null,
+    "K2": null,
+    "K3": null,
+    "K4": null,
+    "K5": null,
+    "K6": null,
+    "K7": null,
+    "K8": null,
+    "K9": null,
+    "K10": null,
+    "K11": null,
+    "K12": null
+   },
+   "hook": "Ligger rullarna lösa i lådan i vinter?",
+   "efter_bild": "rullen slår i båtkanten → repad; kåpan dras över med ett grepp; sex rullar i rad, alla täckta",
+   "huvudrisk": "Ekonomin står på ett 1,83-dollarpris som kan vara ett variantpris — haspelvarianten (3,89 USD) faller under BE-CPA 190 i 6-pack, så multirulle-baserna måste räcka.",
+   "varfor": "Skyddar det dyraste på spöet (rullen 1–4 tkr) med en form fackhandeln säljer styckvis 109–179 kr — sex för 449 kr ligger långt under 6 × 109 = 654 med ankare 2,39×. Samma ägare och samma upptagningsdatum som spöstrumporna; kan säljas som par med dem.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0291",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "I_FLERKOP",
+   "slot": "exploitation",
+   "hypotes_id": "H08",
+   "sasong": {
+    "fonster_id": "batupptagning",
+    "deadline_typ": "upptagning",
+    "veckor_kvar": 2.4,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Fiskespöhållaren (spöklämma 4-pack) / Motorhöljet",
+    "delade_variabler": [
+     "samma ägare som spöklämman (427 köp)",
+     "dyrast på spöet: rullen 1–4 tkr, skyddas av en 30-kronorsform",
+     "flerköp: en per rulle, 4–8 rullar per gäddfiskare — fackhandeln säljer skyddet styckvis 109–179 kr",
+     "old way = improvisation (rullen ligger lös i lådan / handduk) → repor och sand i vevpartiet",
+     "material klass 2 (neopren, hero i bruk)",
+     "deadline upptagning: rullarna tas av och läggs undan för vintern"
+    ],
+    "avvikelser": [
+     "listningen är en LÅGPROFIL-/multirullekåpa (baitcast) — haspelvarianten (1005007010256558, 3,89 USD/st, S/M/L) klarar INTE ekonomin i 6-pack (BE-CPA 162 vid 499 kr)",
+     "multirulle-ägarna (gädda/jerkbait) är en mindre bas än haspelfiskarna — ej mätt",
+     "1,83 USD är misstänkt lågt (【F】-prefix) — kan vara ett variantpris; kolla före launch"
+    ]
+   },
+   "rank_forklaring": "exploitation: vinnarlikhet 3×2 + ekonomi 2 + säsong 2 + creative 2 + lucka 2 + signalbonus +1.3 [arketyp=B_SKYDDA_DYRT 9V/1F (+0.8); form=överdrag 8V/1F (+0.8); prisband=300–499 8V/14F (-0.3)] = 15.3",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Sportfiskeprylar (Savage Gear Neoprene Reel Cover, per styck) / Fiskejournalen Savage Gear lågprofilrullsfodral 119 (rea 99)",
+     "pris_sek": 109,
+     "url": "https://www.sportfiskeprylar.se/sv/vaskor-boxar-forvaring/rullskydd-rullvaskor/rullskydd",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Shimano Reel Cover Spinning (Sportfiskeprylar, per styck); Daiwa Neoprene Reel Pouch SP 159, Gunki Reel Cover 119",
+     "pris_sek": 179,
+     "url": "https://www.sportfiskeprylar.se/sv/vaskor-boxar-forvaring/rullskydd-rullvaskor/rullskydd",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 2.39,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "sportfiskeprylar.se rullskydd-kategorin läst 2026-09-23: 109–179 kr per styck, inget flerpack",
+     "fiskejournalen.se rullskydd läst: Savage Gear lågprofil 119 (rea 99), haspel 119 (rea från 109) — per styck",
+     "biltema.se: ej i sökutdrag — rullskydd ej mätt",
+     "dollarstore/jula: ej mätt"
+    ]
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "textfri hero: kåpan på en multirulle på spöet + kåpan ensam; för sexpacket behövs eget foto med sex spön i ställ, alla rullar i kåpa"
+   },
+   "meta_tanke": {
+    "hook": "Ligger rullarna lösa i lådan i vinter?",
+    "objekt_i_bild": "sex spön i spöklämman, varje rulle i svart neoprenkåpa — en rulle utan kåpa med sand i vevpartiet",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "rullen slår i båtkanten → repad; kåpan dras över med ett grepp; sex rullar i rad, alla täckta"
+   },
+   "listning": {
+    "product_id": "1005013153718888",
+    "url": "https://www.aliexpress.com/item/1005013153718888.html",
+    "pris_usd": 1.83,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-23T07:08:13Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-23/v3/bilder/1005013153718888.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "1 st per listning (1,83 USD) — 6-packet är vårt erbjudande (6 × 1,83 = 10,98 USD); heron visar en lågprofil-/multirullekåpa i neopren, en storlek; haspelsyskon 1005007010256558 (3,89 USD, S/M/L, LIVE-öppnad, hero sedd: tre kåpor + en på spöet) faller på ekonomin i 6-pack",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 3,
+    "meta_creative": 2,
+    "efterfragan": 1,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005013153718888.html",
+    "https://www.aliexpress.com/item/1005007010256558.html",
+    "https://www.sportfiskeprylar.se/sv/vaskor-boxar-forvaring/rullskydd-rullvaskor/rullskydd",
+    "https://www.fiskejournalen.se/fiskeforvaring/rullskydd"
+   ],
+   "fran_datum": "2026-09-23"
+  },
+  {
+   "product_id": "1005013202910600",
+   "titel": "Skorstenshuven med kajnät 23 × 23",
+   "url": "https://www.aliexpress.com/item/1005013202910600.html",
+   "pris": 31.97,
+   "valuta": "USD",
+   "pris_text": "US $31.97",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-23/v3/bilder/1005013202910600.jpg",
+   "sald": "",
+   "grupp": "NYTT: Skorstenskanalen (murad, 140 × 140 mm)",
+   "objekt": "NYTT: Skorstenskanalen (murad, 140 × 140 mm)",
+   "taggar": {
+    "objekt": "NYTT: Skorstenskanalen (murad, 140 × 140 mm)",
+    "form": "huv",
+    "arketyp": "C_LAGA_ISTALLET",
+    "deadline_typ": "höstregn",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Kamin & Skorstensskyddaren — måttbeställd skorstenshuv med fågelskydd (4 100–5 000 kr, montering Skåne/västkusten)"
+   },
+   "ekonomi": {
+    "landad": 462,
+    "forslag_pris": 899,
+    "multipel": 1.95,
+    "be_cpa": 437,
+    "be_roas": 2.06,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     416,
+     508
+    ]
+   },
+   "namn_sv": "(från 23/9) Skorstenshuven med kajnät 23 × 23",
+   "status": "bevisad struktur",
+   "poang": 13.5,
+   "rank_slutlig": 13.5,
+   "rank": 3,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 12,
+    "K3": 8,
+    "K4": 6,
+    "K5": 8,
+    "K6": 8,
+    "K7": 5,
+    "K8": 7,
+    "K9": 3,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "hook": "Regnar det rakt ner i din skorsten?",
+   "efter_bild": "regnet rinner av huven, kajan stoppas av gallret — kanalen under är torr",
+   "huvudrisk": "Passform: en storlek (23 cm) och montering på taket — ägare 55+ som inte vill upp på taket anlitar ändå plåtslagaren.",
+   "varfor": "Plåtslagarens huv kostar 4 100–5 000 kr; kedjan säljer bara kajgaller för 126–179 kr utan regnskydd. En rostfri huv med nät för 899 kr täcker samma kanal som sotarsetets ägare precis sotade — samma ägare, samma säsong, ny form.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0292",
+   "arketyp": "C_LAGA_ISTALLET",
+   "arketyp_sekundar": "B_SKYDDA_DYRT",
+   "slot": "exploitation",
+   "hypotes_id": "H03",
+   "sasong": {
+    "fonster_id": "hostregn",
+    "deadline_typ": "höstregn",
+    "veckor_kvar": 2.4,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Taköverdraget för Husvagn 6,5 × 3 m",
+    "delade_variabler": [
+     "objekt ute",
+     "objekt dyr > 10 tkr (skorstenen/huset)",
+     "skyddsform över öppningen",
+     "deadline höstregn/eldningssäsong",
+     "old way = tjänst (plåtslagare 3 600–5 000 kr) eller kajgaller utan regnskydd",
+     "ägare 55+ småhus"
+    ],
+    "avvikelser": [
+     "en fast storlek — passar bara kanal ≤ 200 mm (140 × 140), inte 140 × 270",
+     "montering uppe på taket"
+    ]
+   },
+   "rank_forklaring": "exploitation: vinnarlikhet 3×2 + ekonomi 2 + säsong 2 + creative 1 + lucka 2 + signalbonus +0.5 [prisband=500–999 9V/3F (+0.5)] = 13.5",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Skorsten.org / NSP / Hornbach (kajgaller 140×140 — galler utan regnskydd)",
+     "pris_sek": 126,
+     "url": "https://skorsten.org/produkt/kajgaller-140x140/",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "Kamin & Skorstensskyddaren — måttbeställd skorstenshuv med fågelskydd (4 100–5 000 kr, montering Skåne/västkusten)",
+     "pris_sek": 4100,
+     "url": "https://kamin-skorsten.se/skorstenshuv/",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 4.56,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "kamin-skorsten.se",
+     "bauhaus.se (Dinak skorstenshuv Ø150 4 995 kr — hel huv för stålskorsten)",
+     "k-rauta.se (komplett skorstenshuv 6 014 kr)",
+     "butik.nspab.se (skorstenshuv 6 525 kr; kajgaller 153 kr)",
+     "hornbach.se (kajgaller 140×140, sidan laddade inte)",
+     "skorsten.org (kajgaller 126 kr)",
+     "akersbergavedspisar.se (regnhuv måttbeställd, pris ej angivet)"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "textfri rostfri packshot med tak, galler och perforerade fästflänsar; ser ut som 700–900 kr; kontextbild (huven på skorstenskronan) måste skjutas själv"
+   },
+   "meta_tanke": {
+    "hook": "Regnar det rakt ner i din skorsten?",
+    "objekt_i_bild": "murad skorsten med öppen kanal, huven sätts på",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "regnet rinner av huven, kajan stoppas av gallret — kanalen under är torr"
+   },
+   "listning": {
+    "product_id": "1005013202910600",
+    "url": "https://www.aliexpress.com/item/1005013202910600.html",
+    "pris_usd": 31.97,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-23T06:54:25Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-23/v3/bilder/1005013202910600.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en storlek 9 × 9 tum (22,86 cm), ställbara fästflänsar",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 3,
+    "meta_creative": 1,
+    "efterfragan": 1,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 1
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005013202910600.html",
+    "https://kamin-skorsten.se/skorstenshuv/",
+    "https://www.bauhaus.se/skorstenshuv-dinak-svart-o150mm",
+    "https://www.k-rauta.se/produkt/komplett-skorstenshuv/7350031818918",
+    "https://butik.nspab.se/produkt/skorstenshuv/",
+    "https://skorsten.org/produkt/kajgaller-140x140/",
+    "https://www.hornbach.se/p/kajgaller-safepipe-i-norden-silver-stal-fagelskydd-for-skorsten-passar-skorstenskanal-140x140-mm/12348049/"
+   ],
+   "fran_datum": "2026-09-23"
+  },
+  {
+   "product_id": "1005005707928093",
+   "titel": "Ventilationsrensaren för borrmaskin",
+   "url": "https://www.aliexpress.com/item/1005005707928093.html",
+   "pris": 17.33,
+   "valuta": "USD",
+   "pris_text": "US $17.33",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-23/v3/bilder/1005005707928093.jpg",
+   "sald": "",
+   "grupp": "NYTT: Frånluftskanalerna och imkanalen i villan",
+   "objekt": "NYTT: Frånluftskanalerna och imkanalen i villan",
+   "taggar": {
+    "objekt": "NYTT: Frånluftskanalerna och imkanalen i villan",
+    "form": "verktyg",
+    "arketyp": "D_SNABBARE_METOD",
+    "deadline_typ": "vedsäsong",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Swema Renskabel 5 m med Ø180 perlonborste, borrmaskinsdriven (2 266 kr ex moms)"
+   },
+   "ekonomi": {
+    "landad": 251,
+    "forslag_pris": 599,
+    "multipel": 2.39,
+    "be_cpa": 348,
+    "be_roas": 1.72,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     226,
+     276
+    ]
+   },
+   "namn_sv": "(från 23/9) Ventilationsrensaren för borrmaskin",
+   "status": "bevisad struktur",
+   "poang": 13.3,
+   "rank_slutlig": 13.3,
+   "rank": 4,
+   "per_kriterium": {
+    "K0": "ok (objektet nytt, formen nära K0030)",
+    "K1": 12,
+    "K2": 12,
+    "K3": 8,
+    "K4": 8,
+    "K5": 8,
+    "K6": 8,
+    "K7": 5,
+    "K8": 5,
+    "K9": 4,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "hook": "När rensades ventilationen i ditt hus senast?",
+   "efter_bild": "borsten dras ut ur kanalen full av grått damm — samma payoff som sotet i påsen",
+   "huvudrisk": "Samma stänger som K0030 (sotarsetet) — kunden som redan köpt det kan uppleva dubblett; hero saknar kontext.",
+   "varfor": "Exakt sotarsetets struktur på nästa kanal i samma hus: tjänsten (ventilationsrensning ~3 500 kr) ersätts av stänger + borste på borrmaskin för 599 kr, payoffen syns i borsten. Ingen kedja har formen; Swema-proffskabeln 2 833 kr är ankaret.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0293",
+   "arketyp": "D_SNABBARE_METOD",
+   "arketyp_sekundar": "C_LAGA_ISTALLET",
+   "slot": "exploitation",
+   "hypotes_id": "H03",
+   "sasong": {
+    "fonster_id": "vedsasong",
+    "deadline_typ": "vedsäsong",
+    "veckor_kvar": 3.1,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Sotarset Med Böjliga Stänger",
+    "delade_variabler": [
+     "old way = tjänst (ventilationsfirman ~3 500 kr)",
+     "form verktyg på böjliga stänger med borrmaskinsfäste",
+     "ägare 55+ småhus",
+     "synlig payoff (dammtussarna i borsten)",
+     "prisband 300–599",
+     "deadline eldningssäsong/inomhussäsong"
+    ],
+    "avvikelser": [
+     "objekt_ute = nej (kanalen sitter i huset)",
+     "inget hårt datum — bara att fönstren stängs",
+     "samma stänger som K0030, bara borsten skiljer"
+    ]
+   },
+   "rank_forklaring": "exploitation: vinnarlikhet 3×2 + ekonomi 2 + säsong 2 + creative 1 + lucka 2 + signalbonus +0.3 [arketyp=D_SNABBARE_METOD 2V/2F (+0.0); form=verktyg 2V/3F (-0.2); prisband=500–999 9V/3F (+0.5)] = 13.3",
+   "asymmetrisk": true,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Swema (proffs)",
+     "pris_sek": 2833,
+     "url": "https://swema.se/produkt/renskabel/",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "Swema Renskabel 5 m med Ø180 perlonborste, borrmaskinsdriven (2 266 kr ex moms)",
+     "pris_sek": 2833,
+     "url": "https://swema.se/produkt/renskabel/",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 4.73,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "clasohlson.com (Rensborste 50-3582 — utgången)",
+     "biltema.se (Rensverktyg 3-i-1 = avloppsspiral, inte kanalborste)",
+     "jula.se (ventilationskanal, ingen rensborste med stänger hittad)",
+     "swema.se",
+     "ventilation.se (Tornado 6 m-paket, sidan gav 503 — pris ej mätt)",
+     "aerius.se / storstadensventilation.se (tjänstepris ~3 500 kr)"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "textfri packshot: 12 vita stänger + svart nylonborste + borrmaskinsadapter; kontextbild (borsten i frånluftsdonet, dammet) måste skjutas själv"
+   },
+   "meta_tanke": {
+    "hook": "När rensades ventilationen i ditt hus senast?",
+    "objekt_i_bild": "frånluftsdonet i badrummet, borsten kommer ut svart",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "borsten dras ut ur kanalen full av grått damm — samma payoff som sotet i påsen"
+   },
+   "listning": {
+    "product_id": "1005005707928093",
+    "url": "https://www.aliexpress.com/item/1005005707928093.html",
+    "pris_usd": 17.33,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-23T06:54:25Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-23/v3/bilder/1005005707928093.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "borsthuvud 100 eller 150 mm; stänglängd 16,5–30 ft (5–9 m) enligt titeln",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 3,
+    "meta_creative": 1,
+    "efterfragan": 1,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 1
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005005707928093.html",
+    "https://swema.se/produkt/renskabel/",
+    "https://www.clasohlson.com/se/RENSBORSTE/p/50-3582",
+    "https://www.biltema.se/bygg/vvs/avloppsrensare/rensverktyg-3-i-1-2000034472",
+    "https://storstadensventilation.se/rengora-ventilationskanaler/",
+    "https://aerius.se/rengora-ventilationskanaler-hur-ofta/"
+   ],
+   "fran_datum": "2026-09-23"
+  },
+  {
+   "product_id": "1005007347749661",
+   "titel": "Vapenstrumporna 4-pack (hela vapengarderoben)",
+   "url": "https://www.aliexpress.com/item/1005007347749661.html",
+   "pris": 19.25,
+   "valuta": "USD",
+   "pris_text": "US $19.25",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-23/v3/bilder/1005007347749661.jpg",
+   "sald": "",
+   "grupp": "NYTT: Jaktvapnen — 2–4 st i vapenskåpet och i bilen till passet",
+   "objekt": "NYTT: Jaktvapnen — 2–4 st i vapenskåpet och i bilen till passet",
+   "taggar": {
+    "objekt": "NYTT: Jaktvapnen — 2–4 st i vapenskåpet och i bilen till passet",
+    "form": "överdrag",
+    "arketyp": "B_SKYDDA_DYRT",
+    "deadline_typ": "älgjakt",
+    "prisband": "500–999",
+    "ankare_klass": "1,3–1,6×",
+    "ankare_kalla": "Remington vapenstrumpa/gevärsstrumpa (Jaktgiganten, per styck — sökutdrag); Elastisk vapenstrumpa 10 × 135 cm 159 kr (e-ville, slutsåld)"
+   },
+   "ekonomi": {
+    "landad": 278,
+    "forslag_pris": 599,
+    "multipel": 2.15,
+    "be_cpa": 321,
+    "be_roas": 1.87,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     250,
+     306
+    ]
+   },
+   "namn_sv": "(från 23/9) Vapenstrumporna 4-pack (hela vapengarderoben)",
+   "status": "bevisad struktur",
+   "poang": 13.0,
+   "rank_slutlig": 13.0,
+   "rank": 5,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": null,
+    "K2": null,
+    "K3": null,
+    "K4": null,
+    "K5": null,
+    "K6": null,
+    "K7": null,
+    "K8": null,
+    "K9": null,
+    "K10": null,
+    "K11": null,
+    "K12": null
+   },
+   "hook": "Har alla vapnen i skåpet en strumpa?",
+   "efter_bild": "geväret dras ur strumpan på passet → kolven blank; bredvid: nakna vapen som skavt mot varandra i skåpet och i bilen",
+   "huvudrisk": "Dollarstore säljer samma form för 70 kr och vapnet står inne i skåpet större delen av året — två förlorarsignaler (kedjegolv, objekt inne) som ankaret 1,33× och älgjakten måste väga upp.",
+   "varfor": "Dyrt ägt objekt (15–40 tkr) i formsydd billig form med flerköp inbyggt (vapengarderoben = fyra vapen) och ett hårt datum om 2,1 v; fackhandeln säljer strumpan styckvis 159–199 kr så fyrpacket för 599 ligger under 4 × 199 = 796 med ankare 1,33×. Solpanelen till åtelkameran (1 749 kr) i katalogen visar att jägaren redan finns i kontot.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0294",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "I_FLERKOP",
+   "slot": "exploitation",
+   "hypotes_id": "H08",
+   "sasong": {
+    "fonster_id": "algjakt_syd",
+    "deadline_typ": "älgjakt",
+    "veckor_kvar": 2.1,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Motorhöljet (Marin motorhölje 420D) / Fiskespöhållaren",
+    "delade_variabler": [
+     "dyrt objekt > 10 tkr (kulgevär med kikarsikte 15–40 tkr) i en formsydd, billig form",
+     "flerköp: vapengarderoben rymmer fyra vapen — fackhandeln säljer strumpan styckvis 159–199 kr",
+     "ägare 55+ i småhus (jägaren)",
+     "hårt datum: älgjaktspremiären 8 okt (2,1 v) — vapnet åker i bilen och till passet varje helg",
+     "pågående skada: fukt och repor i vapenskåpet över vintern (silikonbehandlad = rostskydd)",
+     "kedjegolv under oss MEN ankare ≥ 1,2× (H06-mönstret: Motorhöljet, Axelbältet)"
+    ],
+    "avvikelser": [
+     "objektet står inne (vapenskåp) större delen av året — 'objekt_ute = nej' är en HÖG förlorarsignal; ute bara under transport/pass",
+     "Dollarstore säljer en vapenstrumpa för 70 kr (sökutdrag) — lucka 1, inte 2",
+     "typiska jägaren har 2–3 vapen, inte 4 — fyrpacket säljs som 'hela garderoben', inte som nödvändighet"
+    ]
+   },
+   "rank_forklaring": "exploitation: vinnarlikhet 2×2 + ekonomi 2 + säsong 2 + creative 2 + lucka 1 + signalbonus +2.0 [arketyp=B_SKYDDA_DYRT 9V/1F (+0.8); form=överdrag 8V/1F (+0.8); prisband=500–999 9V/3F (+0.5)] = 13.0",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Dollarstore (Vapenstrumpa 144 cm, per styck — sökutdrag)",
+     "pris_sek": 70,
+     "url": "https://dollarstore.se/catalogsearch/result/?q=vapenstrumpa",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Remington vapenstrumpa/gevärsstrumpa (Jaktgiganten, per styck — sökutdrag); Elastisk vapenstrumpa 10 × 135 cm 159 kr (e-ville, slutsåld)",
+     "pris_sek": 199,
+     "url": "https://www.jaktgiganten.se/Remington-vapenskydd",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.33,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "WebSearch 'vapenstrumpa pris' 2026-09-23: Dollarstore 70 kr, Jaktgiganten Remington 199 kr, e-ville 159 kr (slutsåld) — alla per styck, inget flerpack",
+     "jaktia.se / widforss.se / hylte-lantman.com: vapenstrumpa syns inte i sökutdragen (kategorisidor bara) — pris ej mätt",
+     "vildsvin.se 'Vapenstrumpa Tactical', netjakt.se 'Vapenstrumpa XL 132 cm för kikarsikte', jagamera.se — finns styckvis, pris ej läst"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron är en packshot av fyra hoprullade strumpor med inklippt '4 Pack'-text och ett gevär i strumpa uppe till vänster — texten måste beskäras; eget foto med fyra vapen i strumpor i ett öppet vapenskåp behövs"
+   },
+   "meta_tanke": {
+    "hook": "Har alla vapnen i skåpet en strumpa?",
+    "objekt_i_bild": "öppet vapenskåp med fyra vapen — två i strumpa, två nakna med repor på kolven",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "geväret dras ur strumpan på passet → kolven blank; bredvid: nakna vapen som skavt mot varandra i skåpet och i bilen"
+   },
+   "listning": {
+    "product_id": "1005007347749661",
+    "url": "https://www.aliexpress.com/item/1005007347749661.html",
+    "pris_usd": 19.25,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-23T07:08:13Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-23/v3/bilder/1005007347749661.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "4-pack i titeln ('4pcs Silicone Treated Gun Socks 55 × 3.9 in'), 140 × 10 cm, fyra färger i heron (svart, grå, grön, brun) med dragsko — passar kulgevär med kikarsikte; enkelstrumpor finns 3,15–7,75 USD (1005007307045470 LIVE-öppnad, hero sedd) som reserv",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 1,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005007347749661.html",
+    "https://www.aliexpress.com/item/1005007307045470.html",
+    "https://www.jaktgiganten.se/Remington-vapenskydd",
+    "https://netjakt.se/vapen/vapenfodral/vapenstrumpa",
+    "https://www.e-ville.com/sv/3045787-jakttillbehor/36117-elastisk-vapenstrumpa-10x135cm.html",
+    "https://svenskjakt.se/start/nyhet/algjakten-2026-jakttider-b"
+   ],
+   "fran_datum": "2026-09-23"
+  },
+  {
+   "product_id": "1005008351027236",
+   "titel": "Vägnabbarna — uppfartens landningsbana",
+   "url": "https://www.aliexpress.com/item/1005008351027236.html",
+   "pris": 7.87,
+   "valuta": "USD",
+   "pris_text": "US $7.87",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-23/v3/bilder/1005008351027236.jpg",
+   "sald": "",
+   "grupp": "NYTT: Uppfartens kant (asfalt/marksten) — infarten i mörker",
+   "objekt": "NYTT: Uppfartens kant (asfalt/marksten) — infarten i mörker",
+   "taggar": {
+    "objekt": "NYTT: Uppfartens kant (asfalt/marksten) — infarten i mörker",
+    "form": "annat",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "mörker",
+    "prisband": "500–999",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "ej mätt — bara B2B-trafikleverantörer (trafficsigncustom.com/sv, nk-roadstud.com/sv) säljer solcellsnabbar mot Sverige, priser på förfrågan"
+   },
+   "ekonomi": {
+    "landad": 455,
+    "forslag_pris": 999,
+    "multipel": 2.2,
+    "be_cpa": 544,
+    "be_roas": 1.84,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     410,
+     500
+    ]
+   },
+   "namn_sv": "(från 23/9) Vägnabbarna — uppfartens landningsbana",
+   "status": "utforskning",
+   "poang": 13,
+   "rank_slutlig": 13,
+   "rank": 6,
+   "per_kriterium": null,
+   "hook": "Ser du var uppfarten slutar i mörkret?",
+   "efter_bild": "före/efter samma uppfart: svart → landningsbana; nabben körs över av bilen utan att ta skada",
+   "huvudrisk": "Snöröjning: en upphöjd nabb (~20 mm) kan ryckas loss av plogblad/snöslungans skrapskena — ska säljas för kanten utanför plogstråket och för skottade uppfarter; 999 kr för 4 nabbar utan märkesankare kan slå i upplevt värde (ekonomin är räknad på 4-pack, landad 4 × 102–125 kr).",
+   "varfor": "Renaste H10-raden i mörkerlinsen: vägbanans kattögon på den egna uppfarten finns inte hos någon svensk kedja (bara B2B-trafik), heron förstås utan ord och vintertid 25 okt ger ett hårt datum 4,6 v bort. Samma struktur som Solcellslampan (ute, solcell, 55+, kväll efter kväll) men i en form kontot inte har, med flerköp inbyggt.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0295",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploration",
+   "hypotes_id": "H10",
+   "sasong": {
+    "fonster_id": "vintertid_morker",
+    "deadline_typ": "mörker",
+    "veckor_kvar": 4.6,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED",
+    "delade_variabler": [
+     "objekt_ute",
+     "agare_55plus_smahus",
+     "form_elektronik_solcell",
+     "latent_behov_nej (mörker syns varje kväll)",
+     "flerkop_ja (4–8 nabbar per uppfart)"
+    ],
+    "avvikelser": [
+     "golv under nej (ingen svensk konsumentaktör i formen)",
+     "hero är packshot med logotyp — kontextbild krävs",
+     "monteras med skruv/lim i marken, inte på väggen"
+    ]
+   },
+   "rank_forklaring": "exploration: hypotesvärde 3×2 + nyhet 3 + creative 1 + ekonomi 3 = 13",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen svensk konsumentaktör hittad i formen (solcellsnabb i marken); närmast: Clas Ohlson Solcellslampa markspjut 3-pack 36-6488-1 (spjut i gräset — annan form, pris ej läst)",
+     "pris_sek": null,
+     "url": "https://www.clasohlson.com/se/Solcellslampa-3-pack/p/36-6488-1",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "ej mätt — bara B2B-trafikleverantörer (trafficsigncustom.com/sv, nk-roadstud.com/sv) säljer solcellsnabbar mot Sverige, priser på förfrågan",
+     "pris_sek": null,
+     "url": "https://trafficsigncustom.com/sv/shop/traffic-safety-equipment/light-road-stud/",
+     "i_sortiment": false
+    },
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "websök 'vägnabb solcell / solar road stud köp sverige' 2026-09-23: 0 svenska butiker, bara B2B och Wikipedia",
+     "websök amazon.se 'solar road stud': inga svenska listningar i träffarna",
+     "pricerunner.se/sp/solcellsdriven vägnabb: tom sida",
+     "clasohlson.com / biltema.se / jula.se / bauhaus.se (markspot, markspjut, Globo markspot 1 495 kr): bara spjut- och infällda rundspottar, ingen nabb",
+     "V 09-16: infartsmarkör med solcell struken (stolpform, Clas 36-5190) — nabben är en annan form: i marken, körbar"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron är en packshot av nabben (fyrkantig aluminium, solcell mitt, 2×2 röda LED) med säljarlogotyp uppe till vänster — måste beskäras; kontextbild (uppfarten i skymning med raden av lysande nabbar) måste tas eller genereras"
+   },
+   "meta_tanke": {
+    "hook": "Ser du var uppfarten slutar i mörkret?",
+    "objekt_i_bild": "uppfarten i skymning, en rad lysande nabbar längs kanten, bilen svänger in",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "före/efter samma uppfart: svart → landningsbana; nabben körs över av bilen utan att ta skada"
+   },
+   "listning": {
+    "product_id": "1005008351027236",
+    "url": "https://www.aliexpress.com/item/1005008351027236.html",
+    "pris_usd": 7.87,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-23T06:55:00Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-23/v3/bilder/1005008351027236.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "ur titel/sökträff: gjuten aluminium, IP68, 2-sidig röd LED + reflex (färger ej läsbara i sökträffen). Syskonlistning 32823000004 (USD 11,24, LIVE 07:00Z, hero sedd: halvrund, vit, ensidig — snyggare för uppfartskant, hero med logotyp) och 1005009117619223 (USD 6,65, sidan svarade tomt).",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 1,
+    "efterfragan": 1,
+    "lucka": 3,
+    "ekonomi": 3,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 3,
+    "hypotesvarde": 3
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005008351027236.html",
+    "https://www.aliexpress.com/item/32823000004.html",
+    "https://www.clasohlson.com/se/Solcellslampa-3-pack/p/36-6488-1",
+    "https://www.bauhaus.se/solcellslampa-globo-globe-markspott",
+    "https://trafficsigncustom.com/sv/shop/traffic-safety-equipment/light-road-stud/",
+    "https://en.wikipedia.org/wiki/Solar_road_stud"
+   ],
+   "fran_datum": "2026-09-23"
+  },
+  {
+   "product_id": "1005013101998904",
+   "titel": "Skorstenssnurran mot bakdrag, rostfri",
+   "url": "https://www.aliexpress.com/item/1005013101998904.html",
+   "pris": 44.39,
+   "valuta": "USD",
+   "pris_text": "US $44.39",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-23/v3/bilder/1005013101998904.jpg",
+   "sald": "",
+   "grupp": "NYTT: Skorstenstoppen på stålskorsten/rökrör (rund, Ø150–200) — bakdrag",
+   "objekt": "NYTT: Skorstenstoppen på stålskorsten/rökrör (rund, Ø150–200) — bakdrag",
+   "taggar": {
+    "objekt": "NYTT: Skorstenstoppen på stålskorsten/rökrör (rund, Ø150–200) — bakdrag",
+    "form": "annat",
+    "arketyp": "D_SNABBARE_METOD",
+    "deadline_typ": "vedsäsong",
+    "prisband": "≥ 1 000",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "BAUHAUS Vindsnurra för skorstensdrag 160 mm, rostfri med kullager"
+   },
+   "ekonomi": {
+    "landad": 642,
+    "forslag_pris": 1299,
+    "multipel": 2.02,
+    "be_cpa": 657,
+    "be_roas": 1.98,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     578,
+     706
+    ]
+   },
+   "namn_sv": "(från 23/9) Skorstenssnurran mot bakdrag, rostfri",
+   "status": "bevisad struktur",
+   "poang": 11.0,
+   "rank_slutlig": 11.0,
+   "rank": 7,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 12,
+    "K3": 6,
+    "K4": 6,
+    "K5": 10,
+    "K6": 8,
+    "K7": 6,
+    "K8": 8,
+    "K9": 3,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "hook": "Slår röken ner i rummet när det blåser?",
+   "efter_bild": "snurran roterar, röken stiger rakt upp — ingen rök vid kaminluckan",
+   "huvudrisk": "Passform (diametrar ej lästa ur titeln, rund stos passar inte murad kanal utan platta) och montering på taket.",
+   "varfor": "Testar H12 rent: vinddriven maskin ≥ 900 kr med Bauhaus-ankare 3,1× och rörlig payoff i bild; svenskt golv i samma form ligger på 1 836 kr, 40 % över oss. Samma kaminägare som köpte sotarsetet, samma eldningsstart.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0296",
+   "arketyp": "D_SNABBARE_METOD",
+   "arketyp_sekundar": "C_LAGA_ISTALLET",
+   "slot": "exploitation",
+   "hypotes_id": "H12",
+   "sasong": {
+    "fonster_id": "vedsasong",
+    "deadline_typ": "vedsäsong",
+    "veckor_kvar": 3.1,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Bälteslipmaskinen (mini bandslipare 3-i-1)",
+    "delade_variabler": [
+     "maskinen gör jobbet (vinddriven, ingen el)",
+     "märkesankare ≥ 2,4× (Bauhaus 3 995 / 1 299 = 3,1×)",
+     "prisband ≥ 1 000",
+     "synlig payoff på 3 s (snurran roterar, röken går rakt upp)",
+     "old way = köpt produkt som inte fungerar (fast huv) eller tjänst (skorstensfirma)"
+    ],
+    "avvikelser": [
+     "objekt ute (bandslipen var inne)",
+     "diameterpassning — ägaren måste mäta",
+     "montering på taket"
+    ]
+   },
+   "rank_forklaring": "exploitation: vinnarlikhet 2×2 + ekonomi 3 + säsong 2 + creative 1 + lucka 2 + signalbonus -1.0 [arketyp=D_SNABBARE_METOD 2V/2F (+0.0); form=annat 0V/13F (-1.0)] = 11.0",
+   "asymmetrisk": true,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Skorsten.org (Skorstenssnurra 160 aluminium)",
+     "pris_sek": 1867,
+     "url": "https://skorsten.org/produktkategori/skorstenssnurra/",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "BAUHAUS Vindsnurra för skorstensdrag 160 mm, rostfri med kullager",
+     "pris_sek": 3995,
+     "url": "https://www.bauhaus.se/vindsnurra-for-skorstensdrag-160mm",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 3.08,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "bauhaus.se",
+     "skorsten.org (1 836–2 064 kr; Aspirotor 3 467–3 592 kr)",
+     "ventilation.se (Skorstenssnurra rostfri 160 — 1 600 kr, utgången)",
+     "kamintillbehor.se (Aspiromatic, pris ej mätt)"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "textfri, högpolerad rostfri snurra med rund stos — ser ut som 1 500–2 000 kr; kontext (snurrar på skorstenen) kräver egen video"
+   },
+   "meta_tanke": {
+    "hook": "Slår röken ner i rummet när det blåser?",
+    "objekt_i_bild": "skorstenstoppen med snurran som roterar i vinden",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "snurran roterar, röken stiger rakt upp — ingen rök vid kaminluckan"
+   },
+   "listning": {
+    "product_id": "1005013101998904",
+    "url": "https://www.aliexpress.com/item/1005013101998904.html",
+    "pris_usd": 44.39,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-23T06:57:14Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-23/v3/bilder/1005013101998904.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "diametrar står inte i titeln — ej mätt; heron visar rund stos",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 1,
+    "efterfragan": 1,
+    "lucka": 2,
+    "ekonomi": 3,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005013101998904.html",
+    "https://www.bauhaus.se/vindsnurra-for-skorstensdrag-160mm",
+    "https://skorsten.org/produktkategori/skorstenssnurra/",
+    "https://ventilation.se/sv/products/skorstenssnurra-rostfri-160"
+   ],
+   "fran_datum": "2026-09-23"
+  },
+  {
+   "product_id": "1005012672884280",
+   "titel": "Spöstrumporna 6-pack (spöna i garaget)",
+   "url": "https://www.aliexpress.com/item/1005012672884280.html",
+   "pris": 17.79,
+   "valuta": "USD",
+   "pris_text": "US $17.79",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-23/v3/bilder/1005012672884280.jpg",
+   "sald": "",
+   "grupp": "NYTT: Fiskespöna — 4–10 st i garaget och bilen",
+   "objekt": "NYTT: Fiskespöna — 4–10 st i garaget och bilen",
+   "taggar": {
+    "objekt": "NYTT: Fiskespöna — 4–10 st i garaget och bilen",
+    "form": "överdrag",
+    "arketyp": "A_AGARE_FRIKTION",
+    "deadline_typ": "upptagning",
+    "prisband": "300–499",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Daiwa Rod Cover 190 cm / Westin Rod Cover (Sportfiskeprylar, per styck) — Svartzonker Rod Sock 109, Savage Gear Rod Sock Flex 129"
+   },
+   "ekonomi": {
+    "landad": 257,
+    "forslag_pris": 499,
+    "multipel": 1.94,
+    "be_cpa": 242,
+    "be_roas": 2.06,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     231,
+     283
+    ]
+   },
+   "namn_sv": "(från 23/9) Spöstrumporna 6-pack (spöna i garaget)",
+   "status": "utforskning",
+   "poang": 10,
+   "rank_slutlig": 10,
+   "rank": 8,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": null,
+    "K2": null,
+    "K3": null,
+    "K4": null,
+    "K5": null,
+    "K6": null,
+    "K7": null,
+    "K8": null,
+    "K9": null,
+    "K10": null,
+    "K11": null,
+    "K12": null
+   },
+   "hook": "Hur många spön ligger lösa i garaget?",
+   "efter_bild": "två spön lyfts ur bilen och ringarna hakar i varandra → strumpan dras på i två sekunder → sex spön bärs i en famn utan att trassla",
+   "huvudrisk": "En spöstrumpa är en 99-kronorsvara på hyllan — upplevt värde måste bäras av sexpacket och spöklämman i bild; Biltema/Dollarstore-golv är inte mätt.",
+   "varfor": "Samma ägare som spöklämman (427 köp) och samma struktur: kaos på flera ägda saker → ordning i ett grepp, flerköp, under 500 kr — och fackhandeln säljer strumpan styckvis 99–139 kr (6 st = 654–834 kr mot våra 499). Upptagningen om 2,4 v är ögonblicket spöna åker ur båten och in i garaget.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0297",
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "I_FLERKOP",
+   "slot": "exploration",
+   "hypotes_id": "H11",
+   "sasong": {
+    "fonster_id": "batupptagning",
+    "deadline_typ": "upptagning",
+    "veckor_kvar": 2.4,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Fiskespöhållaren (spöklämma 4-pack)",
+    "delade_variabler": [
+     "exakt samma ägare som kontots näst största vinnare (427 köp) — spöna som redan sitter i klämman",
+     "flerköp inbyggt: 4–10 spön per hushåll, fackhandeln säljer strumpan styckvis 99–139 kr",
+     "< 500 kr",
+     "old way = improvisation (gummisnodd, handduk, inget) → ringar som fastnar i varandra och bryts",
+     "material klass 2 (flätad mesh, hero i bruk)",
+     "en variant — ingen storlek att mäta"
+    ],
+    "avvikelser": [
+     "formen är en strumpa/sleeve (skyddsform) — inte en klämma; formtaket räknar den",
+     "deadline finns (upptagningen: spöna åker ur båten in i garaget) — spöklämman hade ingen",
+     "kedjegolv (Biltema/Dollarstore) ej mätt i denna körning"
+    ]
+   },
+   "rank_forklaring": "exploration: hypotesvärde 3×2 + nyhet 1 + creative 2 + ekonomi 1 = 10",
+   "asymmetrisk": true,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Sportfiskeprylar (Söder Tackle Rod Suits / Mikado Neoprene Rod Cover — per styck)",
+     "pris_sek": 99,
+     "url": "https://www.sportfiskeprylar.se/sv/vaskor-boxar-forvaring/spoforvaring-sposkydd/sposkydd",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Daiwa Rod Cover 190 cm / Westin Rod Cover (Sportfiskeprylar, per styck) — Svartzonker Rod Sock 109, Savage Gear Rod Sock Flex 129",
+     "pris_sek": 139,
+     "url": "https://www.sportfiskeprylar.se/sv/vaskor-boxar-forvaring/spoforvaring-sposkydd/sposkydd",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.67,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "sportfiskeprylar.se spöskydd-kategorin läst 2026-09-23: 11 enkla spöstrumpor 75–139 kr styck, inget flerpack av strumpor (Rod Glove EZ-Rod 2-pack 39 kr är ett SPÖBAND, inte en strumpa — kontrollerat på märkessidan)",
+     "fiskejournalen.se sökutdrag: spöskydd 59–149 kr budget, 349–999 premium",
+     "fiske.se sökutdrag: Svartzonker Rod Sock",
+     "profish.se sökutdrag: 'enkel spöstrumpa 100–150 kr'",
+     "biltema.se: bara fiskespön i sökutdraget — spöstrumpa ej mätt",
+     "dollarstore/jula/rusta: ej mätt"
+    ]
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron visar strumpan på spöet med rullen i bruk + inset av meshen; textfri men har en inklippt tecknad abborre nere till vänster som bör beskäras — eget foto med sex spön i strumpor på spöklämman behövs"
+   },
+   "meta_tanke": {
+    "hook": "Hur många spön ligger lösa i garaget?",
+    "objekt_i_bild": "sex spön i svarta strumpor på spöklämman — bredvid två lösa spön med intrasslade ringar",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "två spön lyfts ur bilen och ringarna hakar i varandra → strumpan dras på i två sekunder → sex spön bärs i en famn utan att trassla"
+   },
+   "listning": {
+    "product_id": "1005012672884280",
+    "url": "https://www.aliexpress.com/item/1005012672884280.html",
+    "pris_usd": 17.79,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-23T07:08:13Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-23/v3/bilder/1005012672884280.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "6-pack i titeln ('6Pcs Fishing Pole Protective Socks Breathable Braided Mesh Rod Cover'), svart flätad mesh med resår i ändarna, en variant/universal längd (längd ej angiven i titel); syskon 1005012968478951 (6-pack, 16,09 USD — heron kom trasig, ej sedd) och 1005007300306954 (12-pack, 28,39 USD — bara sökträff) som reserv",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 3,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 1,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 3
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012672884280.html",
+    "https://www.aliexpress.com/item/1005012968478951.html",
+    "https://www.aliexpress.com/item/1005007300306954.html",
+    "https://www.sportfiskeprylar.se/sv/vaskor-boxar-forvaring/spoforvaring-sposkydd/sposkydd",
+    "https://www.sportfiskeprylar.se/sv/varumarken/rod-glove.html",
+    "https://www.fiskejournalen.se/fiskeforvaring/sposkydd"
+   ],
+   "fran_datum": "2026-09-23"
+  }
+ ],
+ "strukna": [],
+ "utanfor_batch": []
+}

@@ -1,6 +1,6 @@
 {
  "_om": "Konceptregistret (V3). Skrivs av koncept.py; feedback.py och meta_facit.py uppdaterar via koncept.py. Ett koncept = objekt + form, med alla listningar, svar, förutsägelser och Metas facit.",
- "nasta": 298,
+ "nasta": 304,
  "koncept": {
   "K0001": {
    "id": "K0001",
@@ -19271,6 +19271,504 @@
     }
    ],
    "namn_sv": "Spöstrumporna 6-pack (spöna i garaget)"
+  },
+  "K0298": {
+   "id": "K0298",
+   "skapad": "2026-09-24",
+   "namn": "Värmepumpstvätten — påse, spruta, borstar",
+   "objekt": "NYTT: Luftvärmepumpens innerdel (1,8 miljoner i villor)",
+   "form": "verktyg",
+   "sak": "nytt: luftvärmepumpens innerdel+verktyg",
+   "arketyp": "D_SNABBARE_METOD",
+   "arketyp_sekundar": "C_LAGA_ISTALLET",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005008812148086",
+     "url": "https://www.aliexpress.com/item/1005008812148086.html",
+     "bild": null,
+     "pris_usd": 21.85,
+     "forst_sedd": "2026-09-24",
+     "verifieringar": [
+      {
+       "datum": "2026-09-24",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-24T05:52:30Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-24",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 1,
+     "rank_poang": 14.3,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 2,
+      "efterfragan": 3,
+      "lucka": 2,
+      "ekonomi": 2,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 799,
+     "landad": 316,
+     "be_cpa": 483,
+     "hook": "När tvättades din värmepump inuti senast?",
+     "varfor": "Exakt sotarsetets struktur på nästa maskin i samma hus: tjänsten (1 900–3 000 kr per service) ersätts av påse + tryckspruta + borstar för 799 kr och payoffen (smutsvattnet) syns på 3 s. Ingen kedja har formen — Jula/Bauhaus/Elon säljer bara sprayen — och 1,8 miljoner villor har objektet.",
+     "huvudrisk": "Objektet står inne (objekt_ute = nej är kontots starkaste förlorarsignal) och heron är textig — kontextbild måste beskäras eller skjutas själv.",
+     "hypotes_id": "H07",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 14,
+      "K2": 12,
+      "K3": 8,
+      "K4": 9,
+      "K5": 8,
+      "K6": 8,
+      "K7": 6,
+      "K8": 6,
+      "K9": 4,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-24",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "levererad på V3-arket (rank 1, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Värmepumpstvätten — påse, spruta, borstar"
+  },
+  "K0299": {
+   "id": "K0299",
+   "skapad": "2026-09-24",
+   "namn": "Hjulvagnen — vinterhjulen upp på navet",
+   "objekt": "NYTT: Bilens vinterhjul — hjulbytet hemma",
+   "form": "verktyg",
+   "sak": "nytt: bilens vinterhjul+verktyg",
+   "arketyp": "D_SNABBARE_METOD",
+   "arketyp_sekundar": "C_LAGA_ISTALLET",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005013214543488",
+     "url": "https://www.aliexpress.com/item/1005013214543488.html",
+     "bild": null,
+     "pris_usd": 37.92,
+     "forst_sedd": "2026-09-24",
+     "verifieringar": [
+      {
+       "datum": "2026-09-24",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-24T05:57:40Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-24",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 2,
+     "rank_poang": 13.1,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 1,
+      "efterfragan": 2,
+      "lucka": 2,
+      "ekonomi": 3,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 1299,
+     "landad": 548,
+     "be_cpa": 751,
+     "hook": "Lyfter du vinterhjulen själv i år?",
+     "varfor": "Testar H12 i tjänst-läget: ≥ 900 kr, fackhandelsankare 1,69× (Eks 2 195 kr, ingen kedja har formen), payoffen syns i ett klipp — och hjulskiftet ägaren betalar 300–650 kr för två gånger om året görs hemma utan att lyfta 25 kg. Samma ägare som köpte hjulmutterdragaren 09-14, nästa moment i samma jobb.",
+     "huvudrisk": "Ankaret ligger under H12:s 2,4×-krav och varan är tung — frakten kan äta marginalen; hero utan kontext.",
+     "hypotes_id": "H12",
+     "per_kriterium": {
+      "K0": "ok (hjulmutterdragaren 09-14 = samma jobb, annat moment)",
+      "K1": 12,
+      "K2": 10,
+      "K3": 8,
+      "K4": 8,
+      "K5": 10,
+      "K6": 8,
+      "K7": 6,
+      "K8": 8,
+      "K9": 3,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-24",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "levererad på V3-arket (rank 2, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Hjulvagnen — vinterhjulen upp på navet"
+  },
+  "K0300": {
+   "id": "K0300",
+   "skapad": "2026-09-24",
+   "namn": "Fiskedragsbyggsatsen — bygg egna spinnare",
+   "objekt": "NYTT: Hobbyfiskarens egna spinnare — byggsats som gåva (fars dag, jul)",
+   "form": "låda",
+   "sak": "nytt: hobbyfiskarens egna spinnare+låda",
+   "arketyp": "G_Q4_GAVA",
+   "arketyp_sekundar": "F_HOBBY_IDENTITET",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005005494907500",
+     "url": "https://www.aliexpress.com/item/1005005494907500.html",
+     "bild": null,
+     "pris_usd": 20.11,
+     "forst_sedd": "2026-09-24",
+     "verifieringar": [
+      {
+       "datum": "2026-09-24",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-24T06:03:16Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-24",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 3,
+     "rank_poang": 10,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 1,
+      "efterfragan": 2,
+      "lucka": 2,
+      "ekonomi": 2,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 599,
+     "landad": 291,
+     "be_cpa": 308,
+     "hook": "Har han gjort sin egen gäddspinnare?",
+     "varfor": "H05:s egen testsökning ('hobbyset till namngiven mottagare med datum') utan kalenderformen: fars dag 6,4 v, 140 synliga delar i låda, mannen med spöna som mottagare — och ingen svensk kedja säljer det boxat. Objektraden och datumet är samma som husbilskalendern (Axel ja 09-15), formen är ny.",
+     "huvudrisk": "Lågt upplevt värde — småbitar i plastlåda kan se ut som 99 kr, vilket är exakt Axels 'kanske'-orsak 2026-09-09.",
+     "hypotes_id": "H05",
+     "per_kriterium": null,
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-24",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "levererad på V3-arket (rank 3, sasong, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Fiskedragsbyggsatsen — bygg egna spinnare"
+  },
+  "K0301": {
+   "id": "K0301",
+   "skapad": "2026-09-24",
+   "namn": "ATV-vindrutan för passet",
+   "objekt": "NYTT: ATV-föraren på passet i regn och snö — vindruta",
+   "form": "annat",
+   "sak": "nytt: atv-föraren på passet i regn och snö+annat",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "B_SKYDDA_DYRT",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005002679622965",
+     "url": "https://www.aliexpress.com/item/1005002679622965.html",
+     "bild": null,
+     "pris_usd": 58.61,
+     "forst_sedd": "2026-09-24",
+     "verifieringar": [
+      {
+       "datum": "2026-09-24",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-24T06:09:30Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-24",
+     "levererad": true,
+     "slot": "exploration",
+     "rank": 4,
+     "rank_poang": 9,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 2,
+      "efterfragan": 2,
+      "lucka": 2,
+      "ekonomi": 2,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 1199,
+     "landad": 848,
+     "be_cpa": 352,
+     "hook": "Kör du till passet utan ruta?",
+     "varfor": "Samma ägare, samma objekt och samma säsong som ATV-kapellet som just blev REAL WINNER, med ankare 2,3× och två hårda datum (älgjakt 2 v, första snö 4 v). Faller bara på orderns golvregel. | LYFT AV HUVUDSESSIONEN 2026-09-24 som H06-test: golv ATVhuset 995 under vårt 1 199, ankare Moose 2 755 (2,3×) — samma struktur som ATV-kapellet (Jula 399 < 579, REAL_WINNER i dag).",
+     "huvudrisk": "Golv 995 kr i exakt samma form (ATVhuset) under vårt pris; akrylruta 91 cm = fraktskaderisk",
+     "hypotes_id": "H06",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": null,
+      "K2": null,
+      "K3": null,
+      "K4": null,
+      "K5": null,
+      "K6": null,
+      "K7": null,
+      "K8": null,
+      "K9": null,
+      "K10": null,
+      "K11": null,
+      "K12": null
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-24",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "levererad på V3-arket (rank 4, exploration, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "ATV-vindrutan för passet"
+  },
+  "K0302": {
+   "id": "K0302",
+   "skapad": "2026-09-24",
+   "namn": "Kaninburens vinterhuv",
+   "objekt": "Kanin/marsvin i bur ute",
+   "form": "huv",
+   "sak": "kanin/marsvin i bur ute+huv",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "B_SKYDDA_DYRT",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005002637853707",
+     "url": "https://www.aliexpress.com/item/1005002637853707.html",
+     "bild": null,
+     "pris_usd": 20.02,
+     "forst_sedd": "2026-09-24",
+     "verifieringar": [
+      {
+       "datum": "2026-09-24",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-24T05:55:05Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-24",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 5,
+     "rank_poang": 8,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 3,
+      "efterfragan": 2,
+      "lucka": 2,
+      "ekonomi": 2,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 3
+     },
+     "konfidens": "MEDEL",
+     "pris": 699,
+     "landad": 290,
+     "be_cpa": 410,
+     "hook": "Står kaninburen ute i vinter?",
+     "varfor": "Renaste H09-testet efter hönsgårdsduken (nyttodjur, tak, förlorade): älskat sällskapsdjur + första frost 3,0 v + formsydd huv över ägt objekt ute, och ingen svensk kedja säljer formen. Samma struktur som kojan (vann) med en variabel bytt: kanin i stället för katt.",
+     "huvudrisk": "Storleksval (en-/tvåvåningsbur) ger returer, och ägaren är barnfamilj snarare än 55+ småhus.",
+     "hypotes_id": "H09",
+     "per_kriterium": null,
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-24",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "levererad på V3-arket (rank 5, sasong, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Kaninburens vinterhuv"
+  },
+  "K0303": {
+   "id": "K0303",
+   "skapad": "2026-09-24",
+   "namn": "Kikarbröstväskan för älgpasset",
+   "objekt": "NYTT: Jaktkikaren på passet (2–15 tkr) — dinglar i halsrem",
+   "form": "sele",
+   "sak": "nytt: jaktkikaren på passet+sele",
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "B_SKYDDA_DYRT",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012664907030",
+     "url": "https://www.aliexpress.com/item/1005012664907030.html",
+     "bild": null,
+     "pris_usd": 13.48,
+     "forst_sedd": "2026-09-24",
+     "verifieringar": [
+      {
+       "datum": "2026-09-24",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-24T05:57:52Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-24",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 6,
+     "rank_poang": 8,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 2,
+      "efterfragan": 2,
+      "lucka": 2,
+      "ekonomi": 2,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 599,
+     "landad": 194,
+     "be_cpa": 404,
+     "hook": "Slår kikaren mot bröstet på passet?",
+     "varfor": "Hårt datum (älgjakt syd 8 okt, 2,0 v) plus fars dag (6,4 v) på ett ägt objekt värt 2–15 tkr som skyddas mot regn och slag; samma sele-struktur som axelbältet med ett synligt märkesankare 1,66× (Mystery Ranch 995) och ingen kedja i formen. Fars dag-rad utan kalender: presenten syns i bild och pekar på mannen med jakten.",
+     "huvudrisk": "'Sett innan' — erfarna jägare känner bino harness från Widforss/Jaktia, och heron saknar kikare och kontext.",
+     "hypotes_id": "H02",
+     "per_kriterium": null,
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-24",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "levererad på V3-arket (rank 6, sasong, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Kikarbröstväskan för älgpasset"
   }
  }
 }

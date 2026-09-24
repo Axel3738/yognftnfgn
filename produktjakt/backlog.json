@@ -116,5 +116,37 @@
   "deadline": "vintertid 4,6 v",
   "korningsvecka": 41,
   "orsak": "2026-09-23 lins AA: bästa heron i linsen (LIVE, kontext, textfri) men Fyndiq säljer exakt samma för 184 kr och inget ankare finns — H06 gäller inte. Bara om märkesankare ≥ 1,2× hittas."
+ },
+ {
+  "objekt": "NYTT: Robotklipparen i garaget över vintern",
+  "form": "vinterväska/förvaringsväska",
+  "arketyp": "B_SKYDDA_DYRT",
+  "deadline": "robotindockning 4,4 v",
+  "korningsvecka": 40,
+  "orsak": "2026-09-24 lins AD: ankare Gardena 689 / Worx 639 finns, men AliExpress gav bara handjagarväskor på tre fraser. Sök igen med modellnamn (Gardena Sileno, Husqvarna Automower) eller vänta på ny listning."
+ },
+ {
+  "objekt": "NYTT: Knivbyggsatsen — täljd egen jaktkniv",
+  "form": "byggsats i låda",
+  "arketyp": "G_Q4_GAVA",
+  "deadline": "fars dag 6,4 v / jul",
+  "korningsvecka": 41,
+  "orsak": "2026-09-24 lins AD: ankare Karesuando 1 145 / Casström 615–989, ingen boxad byggsats i svensk handel — men Ali säljer blad och skaft separat, ingen sats. Bara om en komplett sats hittas (blad + skaft + slida)."
+ },
+ {
+  "objekt": "Fyrhjuling/ATV — sadeln",
+  "form": "överdrag",
+  "arketyp": "B_SKYDDA_DYRT",
+  "deadline": "älgjakt 2,0 v / första snö",
+  "korningsvecka": 41,
+  "orsak": "2026-09-24 lins AC: LIVE 15,70 USD, pris 449, BE-CPA 199–245, ankare Moose 670 = 1,49×, men ATVhuset har 128 sadelöverdrag (universal 399) — golvet är hela marknaden. Lyfts bara om ATV-vindrutan (K0301, H06-test) vinner i Meta."
+ },
+ {
+  "objekt": "NYTT: Pizzaugnen på altanen över vintern",
+  "form": "huv",
+  "arketyp": "B_SKYDDA_DYRT",
+  "deadline": "vintertäckning 6,7 v",
+  "korningsvecka": 41,
+  "orsak": "2026-09-24 lins AD: golv Bauhaus 133/269 i exakt form, ankare Ooni 499–549 (1,9–2,0× mot 269). H06-kandidat — lyfts om vindrutan (K0301) vinner."
  }
 ]
