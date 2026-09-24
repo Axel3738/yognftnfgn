@@ -131,6 +131,49 @@ export function aterintrade(flode) {
   return { duration: a.varaktighet, unit };
 }
 
+/**
+ * Placed Orders egenskap med produktnamnen (Shopify-integrationen skickar en lista
+ * med hela produkttitlar). ⚠️ OBEKRÄFTAT: specen säger bara att `field` är en
+ * sträng. `kolla.mjs --prov` listar Placed Orders egenskaper — står inte ItemNames
+ * där är det här fel namn, och flödet triggar aldrig.
+ */
+export const ORDER_PRODUKTFALT = 'ItemNames';
+
+/**
+ * `trigger.produkt_innehaller` → MetricTrigger.trigger_filter (spec 2026-07-15):
+ * condition_groups[{ conditions: [MetricPropertyCondition { type: 'metric-property',
+ * metric_id, field, filter: ListContainsOperatorListContainsFilter { type: 'list',
+ * operator: 'contains', value } }] }]. Villkoren i en grupp är OR.
+ *
+ * Listfiltret matchar ett HELT element, inte en delsträng — "Marin Motorhölje"
+ * träffar aldrig "Marin Motorhölje 420D – Universellt Skydd". Därför slås varje ord
+ * upp mot Shopify-titlarna (bygg.mjs → produkter.json) och ett villkor skrivs per
+ * hel titel. Utan produktdata skickas orden som de står, med en varning.
+ */
+export function produktTriggerFilter({ metricId, ord, produkter = null }) {
+  const lista = [].concat(ord ?? []).map((o) => String(o).trim()).filter(Boolean);
+  if (!lista.length) throw Object.assign(new Error('produkt_innehaller är tom.'), { kod: 'TRIGGER_OKAND' });
+  const varningar = [];
+  let titlar;
+  if (Array.isArray(produkter) && produkter.length) {
+    titlar = [];
+    for (const o of lista) {
+      const traff = produkter.map((p) => p.titel ?? p.title).filter((t) => t && t.toLocaleLowerCase('sv-SE').includes(o.toLocaleLowerCase('sv-SE')));
+      if (!traff.length) throw Object.assign(new Error(`produkt_innehaller "${o}" matchar ingen produkttitel i Shopify-datan — flödet skulle aldrig starta.`), { kod: 'PRODUKT_OKAND' });
+      titlar.push(...traff);
+    }
+    titlar = [...new Set(titlar)];
+  } else {
+    titlar = lista;
+    varningar.push(`Ingen produktdata bredvid manifestet: trigger_filter matchar exakt ${lista.map((x) => `"${x}"`).join(', ')} i ${ORDER_PRODUKTFALT}, som bär HELA produkttitlar. Kör bygg.mjs så titlarna slås upp.`);
+  }
+  return {
+    trigger_filter: { condition_groups: [{ conditions: titlar.map((t) => ({ type: 'metric-property', metric_id: metricId, field: ORDER_PRODUKTFALT, filter: { type: 'list', operator: 'contains', value: t } })) }] },
+    titlar,
+    varningar,
+  };
+}
+
 const ENHET = { hour: 'hours', hours: 'hours', timmar: 'hours', timme: 'hours', day: 'days', days: 'days', dagar: 'days', dag: 'days', minute: 'minutes', minutes: 'minutes', minuter: 'minutes' };
 
 /** Flödets definition: linjär kedja vänta → mejl → vänta → mejl, allt draft. */
@@ -219,7 +262,7 @@ export function raknaSenasteDygn(minne, typ, nu) {
  * @param {boolean} [o.uppdatera]
  * @param {string} o.kontoDir    konto/<brand>/
  */
-export async function laddaUpp({ brand, manifest, klient = null, skarpt = false, bara = null, uppdatera = false, kontoDir, nu = () => new Date(), logg = () => {} }) {
+export async function laddaUpp({ brand, manifest, klient = null, skarpt = false, bara = null, uppdatera = false, kontoDir, produkter = null, nu = () => new Date(), logg = () => {} }) {
   if (skarpt && !klient) throw new Error('Skarp uppladdning kräver en nyckel.');
   if (bara && !['segment', 'mallar', 'kampanjer', 'floden'].includes(bara)) throw new Error(`--bara ${bara}: välj segment, mallar, kampanjer eller floden.`);
   if (manifest?.brand && manifest.brand !== brand.id) throw new Error(`Manifestet är byggt för "${manifest.brand}", inte ${brand.id}. Butiker blandas aldrig.`);
@@ -304,6 +347,7 @@ export async function laddaUpp({ brand, manifest, klient = null, skarpt = false,
     if (f) { listIds[namn] = f.id; return f.id; }
     const svar = await skriv('lista', namn, 'POST', '/api/lists', { data: { type: 'list', attributes: { name: namn, opt_in_process: 'single_opt_in' } } });
     listIds[namn] = svar.data.id;
+    r.varningar.push(`Listan ${namn} är ny och tom. Shopifys prenumeranter hamnar i den lista som är vald i Klaviyo → Integrations → Shopify → "Sync email subscribers to Klaviyo" — välj ${namn} där, annars får flöden som startar på listan inga mottagare.`);
     return svar.data.id;
   };
   if (!bara) {
@@ -364,7 +408,8 @@ export async function laddaUpp({ brand, manifest, klient = null, skarpt = false,
       return f.id;
     }
     if (!skarpt) return `<segment:${namn}>`;
-    const e = new Error(`segmentet "${namn}" finns inte i kontot${bib ? ' — kör segmentsteget först (utan --bara, eller --bara segment)' : ' och inte i segment.mjs'}.`);
+    const saknadMetrik = bib ? bib.metriker.filter((x) => !ids[x]) : [];
+    const e = new Error(`segmentet "${namn}" finns inte i kontot${saknadMetrik.length ? ` — det kan inte byggas förrän metriken ${saknadMetrik.map((x) => KANDA_METRIKER[x].join('/')).join(', ')} finns i kontot` : bib ? ' — kör segmentsteget först (utan --bara, eller --bara segment)' : ' och inte i segment.mjs'}.`);
     e.kod = 'SEGMENT_SAKNAS';
     throw e;
   };
@@ -479,9 +524,16 @@ export async function laddaUpp({ brand, manifest, klient = null, skarpt = false,
         if (f) { hoppa('flode', fl.namn, `finns redan (${f.id}) — flöden skrivs aldrig över, ändra i Klaviyo eller byt versionsnummer`); continue; }
         let trigger;
         const t = fl.trigger ?? {};
+        if (t.produkt_innehaller && t.typ !== 'metrik') throw Object.assign(new Error('produkt_innehaller går bara på en metrik-trigger'), { kod: 'TRIGGER_OKAND' });
         if (t.typ === 'metrik') {
           const namn = Array.isArray(t.metrik) ? t.metrik : [t.metrik];
           trigger = { type: 'metric', id: metriker ? metrikId(metriker, namn) : `<metrik:${namn[0]}>` };
+          if (t.produkt_innehaller) {
+            const pf = produktTriggerFilter({ metricId: trigger.id, ord: t.produkt_innehaller, produkter });
+            trigger.trigger_filter = pf.trigger_filter;
+            for (const v of pf.varningar) r.varningar.push(`${fl.namn}: ${v}`);
+            r.varningar.push(`${fl.namn}: triggar bara på ordrar där ${ORDER_PRODUKTFALT} innehåller ${pf.titlar.map((x) => `"${x}"`).join(' eller ')}. Fältnamnet ${ORDER_PRODUKTFALT} är obekräftat — kör node klaviyo/kolla.mjs --prov och läs placed_order_egenskaper innan flödet slås på.`);
+          }
         } else if (t.typ === 'lista') {
           trigger = { type: 'list', id: await sakraLista(t.lista) };
         } else if (t.typ === 'segment') {
@@ -588,11 +640,15 @@ async function main() {
     process.exit(1);
   }
   const manifest = laddaInnehall(JSON.parse(fs.readFileSync(manifestFil, 'utf8')), path.dirname(manifestFil));
+  // Shopify-titlarna (bygg.mjs skriver dem bredvid manifestet) — för produkt_innehaller.
+  const produktFil = path.join(path.dirname(manifestFil), 'produkter.json');
+  let produkter = null;
+  try { produkter = JSON.parse(fs.readFileSync(produktFil, 'utf8')); } catch { produkter = null; }
   const klient = nyckel ? new KlaviyoKlient({ nyckel: nyckel.nyckel, logg: (t) => console.error(t) }) : null;
   const kontoDir = path.join(HAR, 'konto', brand.id);
   let r;
   try {
-    r = await laddaUpp({ brand, manifest, klient, skarpt: a.skarpt, bara: a.bara, uppdatera: a.uppdatera, kontoDir });
+    r = await laddaUpp({ brand, manifest, klient, skarpt: a.skarpt, bara: a.bara, uppdatera: a.uppdatera, kontoDir, produkter });
   } catch (e) {
     console.error(e instanceof KlaviyoFel || e.kod ? `STOPP: ${e.message}` : e.stack);
     process.exit(2);

@@ -284,3 +284,6 @@ steg, så "har köpt sedan start" stoppar resten av flödet utan en split.
 6. Formen på `send_strategy` i 2026-07-15 (felsvaret vid första kampanjen avgör).
 7. Händelsevariablerna i flödesmallarna (`event.extra.line_items` m.fl.):
    kontrolleras med `POST /api/template-render` mot en riktig händelse.
+8. Fältet för `produkt_innehaller`: `ItemNames` på Placed Order, med listfiltret
+   `contains` (matchar ett HELT element, därför slås orden upp mot Shopify-titlarna).
+   `kolla.mjs --prov` listar Placed Orders egenskaper (`placed_order_egenskaper`).

@@ -14,7 +14,7 @@ import { fileURLToPath } from 'node:url';
 import { KlaviyoKlient, KlaviyoFel, nyckelFranEnv, kontrolleraKonto } from './klient.mjs';
 import { hamtaMetriker, metrikIds, SHOPIFY_METRIKER, KANDA_METRIKER } from './metriker.mjs';
 import { PRODUKTNAMN_EGENSKAP } from './segment.mjs';
-import { lasBrand } from './ladda-upp.mjs';
+import { lasBrand, ORDER_PRODUKTFALT } from './ladda-upp.mjs';
 
 const HAR = path.dirname(fileURLToPath(import.meta.url));
 
@@ -148,6 +148,14 @@ export async function provmatningar({ klient, metriker, ids }) {
       const egen = (e?.data ?? []).map((x) => x.attributes?.property ?? x.attributes?.label);
       p.ordered_product_egenskaper = { egenskaper: egen, produktnamn_finns: egen.includes(PRODUKTNAMN_EGENSKAP), segment_mjs_anvander: PRODUKTNAMN_EGENSKAP };
     } catch (err) { p.ordered_product_egenskaper = { fel: err.message }; }
+  }
+  // Placed Orders egenskaper: fältet produkt_innehaller filtrerar på (ladda-upp.mjs ORDER_PRODUKTFALT).
+  if (ids.placed_order) {
+    try {
+      const e = await klient.get(`/api/metrics/${ids.placed_order}/metric-properties`, { 'fields[metric-property]': 'property,label,inferred_type,sample_values' });
+      const egen = (e?.data ?? []).map((x) => ({ egenskap: x.attributes?.property ?? x.attributes?.label, typ: x.attributes?.inferred_type ?? null, exempel: (x.attributes?.sample_values ?? []).slice(0, 3) }));
+      p.placed_order_egenskaper = { egenskaper: egen, produktfalt_finns: egen.some((x) => x.egenskap === ORDER_PRODUKTFALT), ladda_upp_anvander: ORDER_PRODUKTFALT };
+    } catch (err) { p.placed_order_egenskaper = { fel: err.message }; }
   }
   p.ej_matt = [
     '4. om template_id i ett flöde kopieras eller länkas — mäts när första flödet laddats upp (GET /api/flow-messages/{id}/template)',

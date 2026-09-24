@@ -5,7 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { KlaviyoKlient } from '../klient.mjs';
-import { laddaUpp, laddaInnehall, mallKontroll, rapportText, raknaSenasteDygn, DYGNSTAK, aterintrade, planeradTid } from '../ladda-upp.mjs';
+import { laddaUpp, laddaInnehall, mallKontroll, rapportText, raknaSenasteDygn, DYGNSTAK, aterintrade, planeradTid, produktTriggerFilter, ORDER_PRODUKTFALT } from '../ladda-upp.mjs';
 import { SEGMENT } from '../segment.mjs';
 import { falskKlaviyo } from './falsk.mjs';
 
@@ -303,4 +303,48 @@ test('två kassametriker i kontot ⇒ varning om vilken som väljs', async () =>
   const { k } = ny({ metriker: [['M_PO', 'Placed Order'], ['M_SC', 'Started Checkout'], ['M_CS', 'Checkout Started'], ['M_VP', 'Viewed Product'], ['M_AOS', 'Active on Site'], ['M_OP', 'Ordered Product'], ['M_OE', 'Opened Email'], ['M_CE', 'Clicked Email'], ['M_RE', 'Received Email']] });
   const r = await laddaUpp({ brand: BRAND, manifest: MANIFEST(), klient: k, kontoDir: tmp(), nu: NU });
   assert.ok(r.varningar.some((v) => /started_checkout.*"Started Checkout", "Checkout Started"/.test(v)));
+});
+
+test('produkt_innehaller: trigger_filter med metric-property på hela produkttitlar (listfiltret matchar hela element)', async () => {
+  const produkter = [
+    { titel: 'Marin Motorhölje 420D – Universellt Skydd' },
+    { titel: 'Motorhölje för Utombordare – Tåligt Skydd' },
+    { titel: 'Båtmotorskydd 420D – Heltäckande för Utombordare' },
+  ];
+  const pf = produktTriggerFilter({ metricId: 'M_PO', ord: ['Marin Motorhölje'], produkter });
+  assert.deepEqual(pf.trigger_filter, { condition_groups: [{ conditions: [{ type: 'metric-property', metric_id: 'M_PO', field: ORDER_PRODUKTFALT, filter: { type: 'list', operator: 'contains', value: 'Marin Motorhölje 420D – Universellt Skydd' } }] }] });
+  assert.equal(pf.varningar.length, 0);
+  // Utan produktdata: orden som de står, med varning.
+  const utan = produktTriggerFilter({ metricId: 'M_PO', ord: ['Marin Motorhölje'] });
+  assert.equal(utan.trigger_filter.condition_groups[0].conditions[0].filter.value, 'Marin Motorhölje');
+  assert.match(utan.varningar[0], /HELA produkttitlar/);
+  assert.throws(() => produktTriggerFilter({ metricId: 'M_PO', ord: ['Finns inte'], produkter }), (e) => e.kod === 'PRODUKT_OKAND');
+
+  // Hela vägen genom uppladdaren, skarpt mot den falska Klaviyo.
+  const m = MANIFEST();
+  m.floden[0].trigger = { typ: 'metrik', metrik: ['Placed Order'], produkt_innehaller: ['Marin Motorhölje'] };
+  const { k, f } = ny();
+  const r = await laddaUpp({ brand: BRAND, manifest: m, klient: k, skarpt: true, kontoDir: tmp(), nu: NU, produkter });
+  assert.equal(r.stopp.length, 0, JSON.stringify(r.stopp));
+  const def = f.tillstand.floden.find((x) => x.attributes.name === 'FLOW_checkout_overgiven_v1').attributes.definition;
+  assert.equal(def.triggers[0].type, 'metric');
+  assert.equal(def.triggers[0].id, 'M_PO');
+  assert.equal(def.triggers[0].trigger_filter.condition_groups[0].conditions[0].value, undefined);
+  assert.equal(def.triggers[0].trigger_filter.condition_groups[0].conditions[0].filter.value, 'Marin Motorhölje 420D – Universellt Skydd');
+  assert.ok(r.varningar.some((v) => /obekräftat.*kolla\.mjs --prov/.test(v)));
+  // Produktfilter på en listtrigger är fel.
+  const m2 = MANIFEST();
+  m2.floden[1].trigger = { typ: 'lista', lista: 'LISTA_nyhetsbrev', produkt_innehaller: ['x'] };
+  const r2 = await laddaUpp({ brand: BRAND, manifest: m2, klient: null, kontoDir: tmp(), nu: NU });
+  assert.ok(r2.stopp.some((x) => x.kod === 'TRIGGER_OKAND'));
+});
+
+test('segment som inte kan byggas (metrik saknas): kampanjens stopp säger vilken metrik', async () => {
+  const { k } = ny({ metriker: [['M_PO', 'Placed Order'], ['M_SC', 'Started Checkout'], ['M_VP', 'Viewed Product'], ['M_OP', 'Ordered Product'], ['M_OE', 'Opened Email'], ['M_CE', 'Clicked Email'], ['M_RE', 'Received Email']] });
+  const r = await laddaUpp({ brand: BRAND, manifest: MANIFEST(), klient: k, skarpt: true, kontoDir: tmp(), nu: NU });
+  const s = r.stopp.find((x) => x.typ === 'kampanj');
+  assert.equal(s?.kod, 'METRIK_SAKNAS');
+  assert.match(s.orsak, /active_on_site/);
+  // Listan skapades ny ⇒ påminnelse om Shopify-synken.
+  assert.ok(r.varningar.some((v) => /LISTA_nyhetsbrev är ny och tom/.test(v)));
 });
