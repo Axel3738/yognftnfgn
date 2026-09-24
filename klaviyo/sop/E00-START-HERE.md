@@ -85,11 +85,11 @@ step at a time, starting with QA (E03). The order is in the README the owner has
 | **Delivered** | Recipients minus bounces (emails that could not be delivered) |
 | **Open rate** | Share who opened. **Unreliable**: Apple opens emails automatically. Never judge an email on it |
 | **Click rate** | Share of delivered who clicked a link |
-| **Placed order rate** | Share of delivered who ordered within Klaviyo's attribution window after opening or clicking |
+| **Placed order rate** | Share of delivered who ordered within Klaviyo's attribution window after **clicking** (our setting: click-only, 5 days, Apple opens excluded) |
 | **Revenue per recipient (RPR)** | Order value credited to the email ÷ recipients. The fairest single number, but never used alone |
 | **Unsubscribe rate** | Share who clicked unsubscribe. Alarm above **1 %** |
 | **Spam rate** | Share who marked it as spam. Alarm above **0.3 %** |
-| **Attribution window** | How long after an open or click an order still counts for the email. That is why results are read on **day 7**, not the next morning |
+| **Attribution window** | How long after a **click** an order still counts for the email. Our account setting (Evolve advice, 2026-09-24): **click-only, 5 days, Apple Mail Privacy opens excluded** (Settings → Attribution). Opens never count, because Apple fakes them. That is why results are read on **day 7**, not the next morning |
 | **Too early** | Fewer than 3 orders or fewer than 500 delivered. No verdict |
 | **Memo** | The one sentence saying what the email tests and why |
 | **Draft / Manual / Live** | Flow email status. Draft = off. Manual = waits for someone to press send per email. Live = sends by itself |
