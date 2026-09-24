@@ -2,9 +2,17 @@
   "id": "f06-sunset",
   "namn": "FLOW_segment_sunset_v1",
   "memo": "Klaviyos sunset-mönster: den som inte öppnat eller klickat på 180 dagar trots minst fem mottagna mejl får två ärliga, vänliga mejl i stället för att tystnaden bara fortsätter. Klickar hen inte heller nu slutar vi skicka, vilket skyddar leveransbarheten för alla andra prenumeranter. Steget 'sluta skicka' (märka profilen som avslutad) görs i Klaviyo av VA:n enligt SOP E06 tills motorn själv kan skapa update-profile-anrop. Ingen skuldbeläggning: mejlen är en ärlig fråga, inte ett argument.",
-  "trigger": { "typ": "segment", "segment": "SEG_oengagerade_180d" },
-  "filter": ["samtycke"],
-  "ateintrade": { "varaktighet": null, "enhet": "alltime" },
+  "trigger": {
+    "typ": "segment",
+    "segment": "SEG_oengagerade_180d"
+  },
+  "filter": [
+    "samtycke"
+  ],
+  "ateintrade": {
+    "varaktighet": null,
+    "enhet": "alltime"
+  },
   "steg": [
     {
       "typ": "mejl",
@@ -31,9 +39,18 @@
           "kod": "M"
         },
         "amnesrader": [
-          { "text": "Vill du fortfarande ha våra mejl?", "begar": "en direkt, ärlig fråga att svara på" },
-          { "text": "Vi mejlar bara den som vill ha det", "begar": "känna att listan respekterar valet" },
-          { "text": "Säg till om du vill fortsätta", "begar": "en enkel handling, inget att fundera över" }
+          {
+            "text": "Vill du fortfarande ha våra mejl?",
+            "begar": "en direkt, ärlig fråga att svara på"
+          },
+          {
+            "text": "Vi mejlar bara den som vill ha det",
+            "begar": "känna att listan respekterar valet"
+          },
+          {
+            "text": "Säg till om du vill fortsätta",
+            "begar": "en enkel handling, inget att fundera över"
+          }
         ],
         "forhandstext": "Ett klick räcker. Annars slutar vi skicka till dig.",
         "block": [
@@ -42,18 +59,52 @@
             "rubrik": "Vill du fortfarande ha våra mejl?",
             "text": "{{fornamn}}, det har gått en tid sedan du öppnade eller klickade i ett mejl från oss.\n\nDet är helt okej. Vi skickar bara till dig om du faktiskt vill ha dem.\n\nHör vi inget nu slutar vi skicka till dig, så du inte får mejl du ändå inte läser."
           },
-          { "typ": "knapp", "text": "Ja, fortsätt skicka", "lank": "kollektion:alla-produkter" }
+          {
+            "typ": "knapp",
+            "text": "Ja, fortsätt skicka",
+            "lank": "kollektion:alla-produkter"
+          }
         ],
         "tretest": [
-          { "rad": "Vill du fortfarande ha våra mejl?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-          { "rad": "Vi mejlar bara den som vill ha det", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-          { "rad": "Säg till om du vill fortsätta", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-          { "rad": "Ett klick räcker. Annars slutar vi skicka till dig.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-          { "rad": "Ja, fortsätt skicka", "visualisera": true, "falsifiera": true, "ingen_annan": true }
-        ]
+          {
+            "rad": "Vill du fortfarande ha våra mejl?",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Vi mejlar bara den som vill ha det",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Säg till om du vill fortsätta",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Ett klick räcker. Annars slutar vi skicka till dig.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Ja, fortsätt skicka",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "format": "rentext"
       }
     },
-    { "typ": "vanta", "enhet": "days", "varde": 5 },
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 5
+    },
     {
       "typ": "mejl",
       "mejl": {
@@ -79,9 +130,18 @@
           "kod": "M"
         },
         "amnesrader": [
-          { "text": "Det här är sista mejlet", "begar": "veta exakt var man står, utan fler mejl efteråt" },
-          { "text": "Vi hör inget, så vi slutar skicka", "begar": "förstå den verkliga konsekvensen av tystnad" },
-          { "text": "Ett sista klick, om du vill stanna kvar", "begar": "en sista enkel möjlighet att välja kvar" }
+          {
+            "text": "Det här är sista mejlet",
+            "begar": "veta exakt var man står, utan fler mejl efteråt"
+          },
+          {
+            "text": "Vi hör inget, så vi slutar skicka",
+            "begar": "förstå den verkliga konsekvensen av tystnad"
+          },
+          {
+            "text": "Ett sista klick, om du vill stanna kvar",
+            "begar": "en sista enkel möjlighet att välja kvar"
+          }
         ],
         "forhandstext": "Efter det här hör du inte från oss igen, om vi inte hör från dig.",
         "block": [
@@ -90,15 +150,45 @@
             "rubrik": "Det här är sista mejlet",
             "text": "{{fornamn}}, det här är sista mejlet du får från oss om vi inte hör något.\n\nHör vi inget nu tar vi bort dig från listan. Vill du ha kvar mejlen är det bara att klicka."
           },
-          { "typ": "knapp", "text": "Ja, ha kvar mig på listan", "lank": "kollektion:alla-produkter" }
+          {
+            "typ": "knapp",
+            "text": "Ja, ha kvar mig på listan",
+            "lank": "kollektion:alla-produkter"
+          }
         ],
         "tretest": [
-          { "rad": "Det här är sista mejlet", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-          { "rad": "Vi hör inget, så vi slutar skicka", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-          { "rad": "Ett sista klick, om du vill stanna kvar", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-          { "rad": "Efter det här hör du inte från oss igen, om vi inte hör från dig.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-          { "rad": "Ja, ha kvar mig på listan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
-        ]
+          {
+            "rad": "Det här är sista mejlet",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Vi hör inget, så vi slutar skicka",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Ett sista klick, om du vill stanna kvar",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Efter det här hör du inte från oss igen, om vi inte hör från dig.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Ja, ha kvar mig på listan",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "format": "rentext"
       }
     }
   ]
