@@ -64,9 +64,8 @@ Batch #1 (Gilz 044–047, 11 videor från 21/9) är för ung — 0,6–9,5 kr va
 2. **Knapphet med ett faktum bakom finns bara i vinnaren.** "Dom sålde slut i
    november förra året" är den enda brådskan i hela kontot, och den sitter i
    den enda annonsen över break-even med volym. Bygg vidare på den
-   (verifierad hos Axel? — ⚠️ OWNER: raden är kreatörens påstående, be
-   Axel bekräfta att sushilådan tog slut i november 2025 innan den skrivs i
-   en static).
+   (**bekräftad av Axel 2026-09-24**: sushilådan tog slut i november 2025 —
+   får användas i copy).
 3. **Bild + erbjudande är den billigaste vinsten.** `offer_static_d3`
    (Köp 2 – få 2, sex lådor) gör 6,7 % köp/LPV och +1 204 kr; tio andra
    statics fick aldrig leverans. Jul-bildadsetet står tomt.
@@ -136,9 +135,12 @@ arbetshypoteser tills kommentarerna går att läsa.
 
 1. **Rond 2 (2026-09-24): sex briefer** — fyra iterationer på Nathalie
    (`048`–`051`), en julbild (`052`), en ny vinkel skämtet (`053`). Läs av 1/10.
-2. **Axels beslut:** pausa haikuh3 (−3 184), 012v2 (−1 244), haikuh2 (−282);
-   ge `jul_video` en minimispend så jul-testet går att läsa; sidrättigheten
-   för kommentarer; råfilen från Nathalie utan captions.
+2. **Axels beslut 2026-09-24 på rondens förslag:** pausa haikuh3/012v2/haikuh2 —
+   **nej** ("håller lowkey inte med", inget skäl); minimispend på `jul_video` —
+   **nej** ("inte bra"); "sålde slut i november" — **bekräftat**; råfilen —
+   redigerarna har den. Kommentarerna: token:en har `pages_read_engagement`,
+   men Matstrumpors sida `820358954504320` är inte tilldelad systemanvändaren
+   "API LONG TERM" (13 andra sidor är det) — Axel tilldelar sidan.
 3. **Batch #1 (Gilz 044–047)** etiketteras 28/9 om Meta ger dem något — i
    dag har de 0,6–9,5 kr var.
 4. **"Köp 1 – få 1" mot "Köp 2 – få 2"** som isolerad variabel i två bilder,

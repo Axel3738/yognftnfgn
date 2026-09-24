@@ -58,8 +58,15 @@ brief i Google Docs.
 
 **Kommentarerna kunde INTE läsas:** `tools/annonskommentarer.mjs` svarar
 `(#10) requires pages_read_engagement` på sidan `820358954504320` (Matstrumpors
-Facebooksida) — `META_ACCESS_TOKEN` saknar rättigheten för den sidan. Tills
-Axel gett den kan inga INVAND-briefer skrivas ur kommentarer för Matstrumpor.
+Facebooksida). Mätt samma dag: token:en HAR `pages_read_engagement` — men
+sidan är inte tilldelad systemanvändaren "API LONG TERM" (`me/accounts` listar
+13 sidor, ingen Matstrumpor). Axel tilldelar sidan i Business Settings; tills
+dess kan inga INVAND-briefer skrivas ur kommentarer för Matstrumpor.
+
+**Axels beslut på rondens förslag (2026-09-24):** pausa haikuh3/012v2/haikuh2 —
+nej; minimispend jul_video — nej; "sålde slut i november" — bekräftat;
+Nathalies råfil — redigerarna har den. SLÄPP-raderna nedan står kvar som
+rondens rekommendation; annonserna är live på Axels beslut.
 
 ---
 

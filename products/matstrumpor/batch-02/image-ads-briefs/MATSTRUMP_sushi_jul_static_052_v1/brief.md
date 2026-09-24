@@ -44,7 +44,7 @@
 ## Rules
 - **The ad never names the store.** No "Matstrumpor", no "matstrumpor.se" — not in a caption, not on the end card, not in the voice. The link in Ads Manager does that job. The parent ad's last caption does say it; this version must not.
 - **Price and offer:** only "399 kr" for the 5-pack if a price is shown at all, and the offer only as written in the script ("Köp 1 – få 1 gratis" / "Köp 2 – få 2 gratis" — both live on the product page 2026-09-24). Never another number, never a percentage.
-- **Sold-out claim:** "sålde slut i november förra året" is the creator's own statement in the live parent ad. ⚠️ OWNER: Axel confirms it before this version goes live; if he cannot, replace that line with the parent's "Ge bort dom" and comment on the row.
+- **Sold-out claim:** "sålde slut i november förra året" is true — confirmed by Axel 2026-09-24 (the tray sold out in November 2025). Use it as written.
 - **Returns:** if ever mentioned, "14 dagars ångerrätt enligt lag" — never "öppet köp", never "garanti".
 - **Captions:** burned in, Swedish, word for word from the script table, max 2 lines, inside the middle 80 % of the frame. Å, Ä, Ö must render.
 - **No generated people.** Real creator footage only (hook-visual rule 2026-08-04). AI-generated faces are a dead concept on this product (s001 series, 012v2).
