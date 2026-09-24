@@ -6,7 +6,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 const HÄR = path.dirname(fileURLToPath(import.meta.url));
 const copy = {};
-for (const n of [1, 2, 3, 4, 5, 6, 7, 8, 9]) { const f = path.join(HÄR, `copy-${n}.json`); if (existsSync(f)) Object.assign(copy, JSON.parse(readFileSync(f, 'utf8'))); }
+for (const n of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) { const f = path.join(HÄR, `copy-${n}.json`); if (existsSync(f)) Object.assign(copy, JSON.parse(readFileSync(f, 'utf8'))); }
 writeFileSync(path.join(HÄR, 'copy.json'), JSON.stringify(copy, null, 1));
 
 const FORB = { sv: ['revolutionerande', 'ultimat', 'game-changer', 'måste-ha', 'oumbärlig', 'magisk', 'aldrig mer', 'total trygghet', 'vattentät', 'snabb leverans', 'dagars leverans', 'aldrig', 'alltid', 'minecraft', 'volkswagen', '24h', 'garanterat'],

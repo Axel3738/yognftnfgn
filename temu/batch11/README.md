@@ -197,3 +197,17 @@ mellan funktioner och garanti, och elcykeljackan visade fel produkt. Åtgärdat 
 - **Nya galleri-flaggor:** `bort: [altdelsträng]` tar bort befintliga medier (norska motsvarigheten slås upp i
   `alt-no.json`), `gif: false` tar bort GIF:en, `filNo` = egen fil för NO.
 
+## Trädansiktet — fem ansikten som varianter (2026-09-24)
+Axel: "Tree face har ju varianter, det är samma pris på alla" → CWD-frågan struken, produkten byggd med fem varianter
+(Storögd, Skäggig, Putmun, Mossigt leende, Mustasch · NO: Storøyd, Skjeggete, Trutmunn, Mosegrodd smil, Bart), samma
+pris (389/509 kr, 319/419 NOK), SKU `TEMU-B13-TRADANSIKTE` + `-SKAGGIG/-PUTMUN/-MOSSIG/-MUSTASCH`.
+- `copy-10.json` — Sonnet-copy sv + no (granska-copy läser nu copy-1..10).
+- `galleri.mjs` — skörd 02 (översikt, alla fem, ingen text) först; ett på-stam-foto per ansikte (alt "Ansiktet <namn> …"
+  styr variantbilden); leverantörens fyra måttbilder hade engelsk text i vänsterkolumnen som inte gick att beskära bort
+  utan att klippa ögonen — **KIE nano-banana-edit tog bort texten** ("Remove all the text …"), granskat: alla fyra rena,
+  paddade till kvadrat. Putmun har inget eget på-stam-foto — variantbilden är delarna på vit botten.
+- `tradansikte.mjs <se|no> [--skarp]` — optionen Ansikte/Ansikt, varianter, variantbilder via alt-prefix. Körs EFTER
+  `galleri-bygg.mjs` (som skapar produkten). Idempotent.
+- GIF: KIE veo3_fast från ekorrbilden (bildstart), `ai.mjs`.
+- Notion: VÄNTA-kortet (`13 Trädansiktet – VÄNTA …`) byts till live-kort med Landing page när sidan är uppe.
+

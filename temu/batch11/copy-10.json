@@ -1,0 +1,60 @@
+{
+ "tradansikte": {
+  "sv": {
+   "titel": "Trädansiktet – Gubben i Trädet, 3 Delar, 5 Ansikten",
+   "problemH": "Trädet i trädgården saknar ett ansikte",
+   "problemP": "Det är den där stammen alla går förbi på väg till något viktigare – studsmattan, brevlådan, bilen. Ingen tittar upp, ingen pekar, ingen stannar till. Trädet gör sitt jobb med skugga och löv, och det är precis vad ett träd förväntas göra.",
+   "losningH": "Tre delar, ett ansikte – trädet får ett uttryck",
+   "losningP": "Ögon, näsa och mun sätts på stammen och trädet får ett ansikte. Välj mellan fem uttryck: Skäggig, Putmun, Mossigt leende, Mustasch eller Storögd – vart och ett i tre delar. Nästa gång någon går förbi är det inte bara ett träd de ser.",
+   "bullets": [
+    "<strong>Fem ansikten att välja mellan</strong> – varje ansikte i tre delar: ögon, näsa och mun",
+    "<strong>Syns tydligt, försvinner inte i barken</strong> – ögon ca 5–6 × 4 cm, näsa 7–10 cm hög, mun 7–12 cm bred (måtten varierar mellan ansiktena)",
+    "<strong>Presenten till den som redan har allt till trädgården</strong> – ett ansikte på trädet är inte något de köpt själva",
+    "<strong>Det barnen upptäcker själva</strong> – tre delar på stammen räcker för att någon ska stanna till och peka",
+    "<strong>Ett ansikte per köp</strong> – Skäggig, Putmun, Mossigt leende, Mustasch eller Storögd, du väljer vilket som passar trädet"
+   ],
+   "seoTitel": "Trädansiktet – Ansikte Till Trädet, 5 Varianter",
+   "seoText": "Ett dekorativt ansikte i tre delar till trädstammen – ögon, näsa och mun. Fem uttryck att välja mellan, ett per köp.",
+   "taggar": [
+    "trädansikte",
+    "ansikte till träd",
+    "trädgårdsdekoration",
+    "present trädgård",
+    "dekoration till träd"
+   ],
+   "alt": {
+    "hero": "Ett ansikte i tre delar monterat på en trädstam i trädgården",
+    "detalj": "Ögon, näsa och mun lagda bredvid varandra innan de sätts på stammen"
+   },
+   "varning": null
+  },
+  "no": {
+   "titel": "Treansiktet – Ansiktet i Treet, 3 Deler, 5 Ansikter",
+   "problemH": "Treet i hagen mangler et ansikt",
+   "problemP": "Det er stammen alle går forbi på vei til noe viktigere – trampolinen, postkassen, bilen. Ingen ser opp, ingen peker, ingen stopper. Treet gjør jobben sin med skygge og løv, og det er akkurat det man forventer av et tre.",
+   "losningH": "Tre deler, ett ansikt – treet får et uttrykk",
+   "losningP": "Øyne, nese og munn settes på stammen, og treet får et ansikt. Velg mellom fem uttrykk: Skjeggete, Trutmunn, Mosegrodd smil, Bart eller Storøyd – hvert i tre deler. Neste gang noen går forbi, er det ikke bare et tre de ser.",
+   "bullets": [
+    "<strong>Fem ansikter å velge mellom</strong> – hvert ansikt i tre deler: øyne, nese og munn",
+    "<strong>Synes tydelig, forsvinner ikke i barken</strong> – øyne ca. 5–6 × 4 cm, nese 7–10 cm høy, munn 7–12 cm bred (målene varierer mellom ansiktene)",
+    "<strong>Gaven til den som allerede har alt til hagen</strong> – et ansikt på treet er ikke noe de har kjøpt selv",
+    "<strong>Det barna oppdager selv</strong> – tre deler på stammen er nok til at noen stopper opp og peker",
+    "<strong>Ett ansikt per kjøp</strong> – Skjeggete, Trutmunn, Mosegrodd smil, Bart eller Storøyd, du velger det som passer treet"
+   ],
+   "seoTitel": "Treansiktet – Ansikt Til Treet, 5 Varianter",
+   "seoText": "Et dekorativt ansikt i tre deler til trestammen – øyne, nese og munn. Fem uttrykk å velge mellom, ett per kjøp.",
+   "taggar": [
+    "treansikt",
+    "ansikt til tre",
+    "hagedekorasjon",
+    "gave til hagen",
+    "dekorasjon til tre"
+   ],
+   "alt": {
+    "hero": "Et ansikt i tre deler montert på en trestamme i hagen",
+    "detalj": "Øyne, nese og munn lagt ved siden av hverandre før de settes på stammen"
+   },
+   "varning": null
+  }
+ }
+}
