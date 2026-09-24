@@ -1,0 +1,141 @@
+# TEMPLATES — the messages, Swedish + English meaning
+
+Claude adapts these to each creator (name, one real thing they made, the
+product). **Never send a template word for word to many creators** — every
+first message must mention something this creator actually made.
+`[brackets]` = fill in. Sign every message with your first name + "Bäverbutiken".
+
+---
+
+## First message
+
+> Hej [namn]! Jag heter [ditt namn] och jobbar med Bäverbutiken, en svensk
+> webbutik som testar många nya produkter varje månad. Jag gillade verkligen
+> [en konkret sak de gjort, t.ex. "videon där du visar båtpresenningen i
+> regnet"]. Det kändes äkta, inte som reklam.
+>
+> Vi söker kreatörer som vill jobba med oss långsiktigt. Just nu gäller det
+> [produkt]. Vi erbjuder 1 500 kr per video för tre videor, och du får
+> behålla produkten. Blir videorna bra kommer vi gärna tillbaka med fler
+> produkter.
+>
+> Låter det intressant? Svara här så berättar jag mer.
+
+*English: Hi [name]! I'm [name] and I work with Bäverbutiken, a Swedish online
+store that tests many new products every month. I really liked [the concrete
+thing]. It felt real, not like an ad. We're looking for creators to work with
+long-term. Right now it's [product]. We offer 1 500 kr per video for three
+videos, and you keep the product. If the videos are good we'd love to come back
+with more products. Interested? Reply here and I'll tell you more.*
+
+## Follow-up (once, after 4 days)
+
+> Hej igen [namn]! Ville bara höra om du hann se mitt meddelande om
+> [produkt]. Inga problem om det inte passar, säg bara till.
+
+*English: Hi again! Just checking if you saw my message about [product]. No
+problem if it doesn't fit, just let me know.*
+
+## Counter-offer (they asked for more)
+
+> Tack för snabbt svar! Jag förstår din prisnivå. För ett första test kan vi
+> inte gå upp till [deras pris], men vi kan erbjuda [2 000] kr per video. Det
+> viktiga för oss är långsiktigheten: vi lanserar nya produkter hela tiden
+> och vill hellre ha några få kreatörer som får många uppdrag än tvärtom.
+> Blir det bra nu blir det fler jobb.
+
+*English: Thanks for the quick reply! I understand your price. For a first test
+we can't go to [their price], but we can offer [2 000] kr per video. What matters
+to us is the long term: we launch new products all the time and would rather
+have a few creators who get many jobs. If this goes well, there'll be more work.*
+
+## Rights / raw footage question
+
+> Rättigheterna ingår i priset. Vi använder videorna i våra egna annonser, i
+> alla kanaler och utan tidsgräns, och vi vill ha med råmaterialet (alla
+> oredigerade klipp). Så jobbar vi med alla kreatörer. Du får gärna lägga upp
+> videorna på ditt eget konto också.
+
+*English: The rights are included in the price. We use the videos in our own
+ads, all channels, no time limit, and we want the raw footage (all unedited
+clips). That's how we work with every creator. You're welcome to post the
+videos on your own account too.*
+
+## Walk away (polite)
+
+> Tack för att du tog dig tid! Just nu passar det tyvärr inte vår budget,
+> men jag sparar din profil och hör gärna av mig längre fram. Lycka till!
+
+*English: Thanks for your time! Right now it doesn't fit our budget, but I'll
+save your profile and would love to get in touch later. Good luck!*
+
+## Polite no (they declined)
+
+> Inga problem, tack för att du svarade! Hör gärna av dig om det ändrar sig.
+
+*English: No problem, thanks for answering! Get in touch if anything changes.*
+
+## Agreement (they must answer "ja")
+
+> Toppen! Så här ser upplägget ut:
+> - [3] videor à [1 500] kr, totalt [4 500] kr
+> - Råmaterialet (alla oredigerade klipp) ingår
+> - Du får [produkt] gratis och behåller den
+> - Leverans inom [14] dagar efter att produkten kommit fram
+> - Vi får använda videorna i våra annonser, alla kanaler, utan tidsgräns
+> - En omtagning ingår om något inte blir som i briefen
+> - Du fakturerar Stonebite Ecom AB efter att vi godkänt videorna, 30 dagars betalning
+> - Ingen exklusivitet
+>
+> Svara "ja" så kör vi, så skickar jag produkten direkt.
+
+*English: Great! Here's the deal: [3] videos at [1 500] kr, [4 500] kr total ·
+raw footage included · you get [product] free and keep it · delivery within [14]
+days after it arrives · we may use the videos in our ads, all channels, no time
+limit · one redo included · you invoice Stonebite Ecom AB after we approve the
+videos, 30 days payment · no exclusivity. Reply "yes" and we go, I'll send the
+product right away.*
+
+## Address
+
+> Vad kul! Vilket namn, adress och telefonnummer ska jag skicka produkten
+> till? Leveransen tar 5 till 10 arbetsdagar.
+
+*English: Great! What name, address and phone number should I send the product
+to? Delivery takes 5 to 10 business days.*
+
+## Reminder (2 days before due)
+
+> Hej [namn]! Hoppas produkten kom fram bra. Bara en påminnelse om att
+> videorna ska levereras senast [datum]. Säg till om du behöver något!
+
+*English: Hi! Hope the product arrived well. Just a reminder that the videos are
+due by [date]. Let me know if you need anything!*
+
+## Redo
+
+> Tack för videorna! [Video 2] är nästan klar, men [konkret, t.ex.
+> "produkten syns först efter 9 sekunder"]. Kan du göra om den så att
+> [konkret, t.ex. "du börjar med produkten i handen"]? Resten ser jättebra ut.
+
+*English: Thanks for the videos! [Video 2] is almost there, but [specific]. Could
+you redo it so [specific]? The rest looks great.*
+
+## Approved + invoice request
+
+> Videorna är godkända, tack! Skicka fakturan på [belopp] kr till mig, ställd
+> till Stonebite Ecom AB, org.nr 559576-2401, Sjöhed 160, 442 74 Harestad.
+> 30 dagars betalning. Har du inget företag går det bra att fakturera via
+> t.ex. Frilans Finans eller Cool Company.
+
+*English: The videos are approved, thanks! Send the invoice for [amount] kr to
+me, addressed to Stonebite Ecom AB, [details]. 30 days payment. If you don't
+have a company you can invoice through e.g. Frilans Finans or Cool Company.*
+
+## Next product (after a good deal)
+
+> Hej [namn]! Videorna du gjorde för [förra produkten] blev riktigt bra. Nu
+> har vi en ny produkt, [produkt]. Vill du göra tre videor på samma villkor?
+
+*English: Hi! The videos you made for [last product] turned out really well. We
+have a new product, [product]. Want to make three videos on the same terms?*

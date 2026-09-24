@@ -13,20 +13,16 @@ dessa villkor. Ändras de: uppdatera här först, aldrig i ett enskilt meddeland
 | Betalningssätt och när | Swish, inom 7 dagar efter godkänd leverans |
 | Exklusivitet | Ingen — kreatören får jobba med andra varumärken |
 
-## Vem skickar (Axels beslut 2026-09-24)
+## Ändrat 2026-09-24 (Axel) — gäller före tabellen ovan
 
-**VA:n skickar själv** med `/ugc-va` från sitt eget Claude-konto — inget ok per
-batch från Axel längre, så länge hon håller sig inom tabellen ovan. Allt
-utanför den (över 3 000 kr/video, betalning i förskott, exklusivitet,
-tidsbegränsade rättigheter, provision, en produkt som inte står nedan) ⇒ hon
-stoppar och frågar Axel. Axel betalar alltid själv (Swish); VA:n betalar aldrig.
-Regelboken till henne: `factory/ugc/VA-SOP.md` (engelska).
-
-## Produkter som får UGC just nu
-
-Bara produkter på den här listan får kontaktas för. Axel (eller UGC-kalkylen,
-när den finns på `main`) lägger till en rad när det är värt att köpa UGC.
-Tom lista ⇒ `/ugc-va` stoppar och ber VA:n fråga Axel.
-
-| Produkt-id | Butik (avsändare i meddelandet) | Produktsida | Max antal kreatörer | Tillagd |
-|---|---|---|---|---|
+- **Betalning: faktura** till Stonebite Ecom AB efter mottagen OCH godkänd
+  video, 30 dagar. Aldrig Swish, aldrig förskott. Kreatör utan företag
+  fakturerar via Frilans Finans/Cool Company/Gigapay.
+- **Råmaterialet ingår alltid** (alla oredigerade klipp).
+- **Inga extra rättighetsavgifter:** användningsrätten ingår i priset, ingen tidsgräns.
+- **Förhandlingstaktiken:** långsiktigt samarbete över många produkter
+  (Bäverbutiken testar nya produkter hela tiden) i stället för högre pris.
+- **VA:n sköter allt själv** med paketet `factory/ugc/va-kit/` på ett eget
+  Claude-konto — INTE i det här repot. Kreatörerna sparas i hennes Google
+  Sheet, inte här. Paketets `TERMS.md` är hennes kopia av villkoren: ändras
+  något här, ändra där också och skicka henne den nya filen.
