@@ -1984,3 +1984,46 @@ ACTIVE med 12 adsets, pris 1 106 NOK läst live.
 Kvar öppet: presentvinkeln kör fortfarande i två adsets (`- G` och `- GT`) i
 samma CBO. Frågan ligger hos Axel sedan i går; ingen ping i dag eftersom
 ingenting ändrats. Inget rört.
+
+---
+
+## USA-runda 11 — 2026-09-24 (`/ops-oversatt carashell/takskyddet --marknad US`)
+
+**Tom runda. Inget översatt, inget uppladdat, inget rört.**
+
+| Kö | Rader | Att göra |
+|---|---|---|
+| `SE-ACTIVE to be translated` | 0 | — |
+| `Approved` (eftersläpningskollen) | 58 | 0 — alla bär redan en US-annons |
+
+De 58 är gårdagens 45 plus de 13 videorna från USA-runda 10. Kön är i kapp i
+båda statusarna.
+
+**Kontokollen (US-kampanjen `120251451415500435`, ACTIVE):** 78 annonser, 74
+ACTIVE. **Gårdagens tretton klarade allihop Metas granskning** — ingen
+underkänd, ingen begränsad. De fyra PAUSED är `*_FELSPRAK`-annonserna med den
+norska rösten; de är avstängda med flit och ersatta i går.
+
+**Butiken redo för USA:** produktsidan svarar 200 på engelska med 199 USD från
+249, och lagerrensningssidan svarar 200 som amerikansk besökare med samma två
+tal och 90-dagarsgarantin.
+
+**Meta strypte kontot igen** — fjärde dagen i rad. Båda köerna kördes om tills
+de gick igenom; inget saknas i rapporten. Kostar ~20 minuter per runda.
+Rimlig orsak står kvar: CaraShells fyra andra rutiner (NO 16:05 och 16:15,
+speglingarna 16:45 och 16:55) läser samma konto strax före den här.
+
+**Dubbeladsetet GT/G kan inte växa längre.** NO-sessionen la in spärren i koden
+2026-09-23 (`krockandeAdsets` i `tools/meta-lib.mjs`, `namnMedKoncept` +
+`krockandeKoder` i kön): inget nytt adset föds för en vinkel kampanjen redan
+bär under en kod som skiljer en bokstav, och kön varnar varje körning så länge
+de två finns kvar. Att slå ihop dem är fortfarande ägarens beslut — Meta kan
+inte flytta en annons mellan adsets.
+
+**Kvarstår oförändrat, ingen åtgärd:** originalkampanjen
+`CARASHELL_US_Taköverdrag …` PAUSED med 2 246 kr spend (ägarens beslut);
+annonserna ärver lagerrensningssidans länk, så priset läses för hand ur de
+amerikanska sidorna varje runda.
+
+**Discord:** engelsk rapport i `#annons-uppladdning`, meddelande
+`1552700685110218846`, ingen ACTION NEEDED.

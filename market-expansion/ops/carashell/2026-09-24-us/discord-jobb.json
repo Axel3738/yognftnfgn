@@ -1,0 +1,23 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-24",
+  "lage": "oversatt",
+  "marknad": "US",
+  "server": "CaraShell",
+  "kanal": "annons-uppladdning",
+  "gjort": [
+    "US round for the roof cover: nothing to translate today. The queue held 0 rows in 'SE-ACTIVE to be translated' - yesterday's 13 videos emptied it.",
+    "The Approved queue was checked as well: 58 rows, every one of them already carries a US ad. Nothing is lagging behind (45 yesterday + the 13 that went live).",
+    "Health check on the US campaign (1 CARASHELL_US_Takoverdrag ... - kopia, ACTIVE): 78 ads, 74 ACTIVE. All 13 videos from yesterday passed Meta review - none disapproved, none limited. The 4 PAUSED are the *_FELSPRAK ads with the Norwegian voice, paused on purpose and replaced yesterday.",
+    "Store readiness for the US confirmed: the American product page answers 200 in English (Roof Cover for Travel Trailers & Motorhomes 18-44 ft) at $199 from $249, and the landing page the ads point to answers 200 as an American visitor with the same numbers and the 90-day guarantee.",
+    "0 HeyGen credits and 0 kie.ai credits used - nothing was rendered. Nothing was changed in Notion and no ad was touched."
+  ],
+  "varningar": [
+    "The Meta account was rate limited again during this run (error 17 on the Norwegian account, which the queue also reads to see which markets already carry each ad). Both queues were re-run until they went through - no data is missing from this report. This is now the fourth day running; it costs about 20 minutes per round.",
+    "The campaign still has two ad sets for the same angle, CARASHELL_US_GT and CARASHELL_US_G, splitting that angle's budget in the CBO. Nothing was touched - the owner decides which one counts. Since yesterday the queue also refuses to create a second ad set for an angle that already exists under a one-letter-different code, so it cannot grow.",
+    "The queue still cannot read the price automatically, because the campaign's inherited link is the listicle page rather than a product page. The price was read directly from both American pages instead: $199 from $249. Known carry-over, not a fault."
+  ],
+  "action_axel": [],
+  "nasta_korning": "2026-09-25 17:05"
+}
