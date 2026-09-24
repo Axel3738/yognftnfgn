@@ -1,0 +1,250 @@
+{
+  "agent": "JQ — husdjurets spel och leksaker",
+  "datum": "2026-09-24-jul3",
+  "sammanfattning": "Struktur: hundens och kattens julklapp som RÖR SIG — ägaren 55+ filmar djuret. Golvet lästes FÖRE ali.py (PriceRunner via curl 12:20–12:35Z; zoo.se sök-API JS-renderad, bara 'inga resultat'-texten läsbar; Arken Zoo 404; Granngården 0 träffar). 13 former prövade, ~20 Ali-fraser, 20 produktsidor öppnade (9 tomma = BLOCKED), 12 heron sedda. Tre kandidater: (1) automatisk bollkastare — golv på PriceRunner är marknadsplatsvaror 476–1 199 men PetSafe 1 999 / Nomad Tales 2 429 ger ankare 2,0×, zoo.se + Granngården har ingen → H06-märkt; (2) spring pole/dragfjäder från trädet — ingen svensk aktör i formen (bara handhållna bungee-rep 79–129 och en tether med markskruv 428), H10; (3) väggmonterad automatisk snörkastare för katt — formen saknas i svenskt flöde, H10, LÅG med flit (asymmetrisk på nyhet+lucka). Fällda: aktiveringsspel/snusmatta/agility/elektriska kattleksaker/självrullande bollar = sortiment 20+ i kedja utan ankare ≥ 1,6×; klätterhjul > 4 kg och över taket; kattens jaktmaskin på snöre (58,79 USD) och kattens hjul över pristaket; flirt pole BE-CPA < 190 vid K8-rimligt pris; kulbanetorn i plast 95–237 i kedja. Kärnfynd: husdjurskedjorna (zoo.se/Arken/PriceRunner-marknadsplatser) täcker allt som är billigt och stilla — det som överlever är maskinen som KASTAR (ankare 2×) och former som bara finns utomlands (spring pole, väggkastare).",
+  "kandidater": [
+    {
+      "koncept_id": null,
+      "namn_sv": "Bollkastaren hunden laddar själv",
+      "objekt": "NYTT: Bollkastaren som hunden laddar själv — kastar 3–9 m, tre bollar",
+      "form": "annat",
+      "arketyp": "G_Q4_GAVA",
+      "arketyp_sekundar": "H_VISUELL_NYHET",
+      "slot": "sasong",
+      "hypotes_id": "H06",
+      "vinnarlikhet": {
+        "likast": "Adventskalendern Racingbilar / ATV-kapellet (H06)",
+        "delade_variabler": ["julklapp med hårt datum", "älskat objekt (hunden) — kojans köpare kvinna 55+", "golv under oss med synligt ankare ≥ 1,6× (ATV-kapellet 4,07)", "pris 500–999"],
+        "avvikelser": ["maskin med batteri (form=verktyg-risk)", "inte skydd/väder", "kontot har aldrig testat hundleksak"]
+      },
+      "sasong": {"fonster_id": "jul", "deadline_typ": "jul", "veckor_kvar": 12.4, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005012241775924",
+        "url": "https://www.aliexpress.com/item/1005012241775924.html",
+        "pris_usd": 41.38,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-24T12:24:45Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-24-jul3/v3/bilder/1005012241775924.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "en variant, laddbar, 3 lägen (19/32/45 ft = 6/10/14 m), 3 st 5 cm-bollar (små/medelstora hundar)",
+          "video": "ej tillgänglig i containern",
+          "alternativa_listningar": "1005011860994857 (36,99 USD) TOM ×2 = BLOCKED; 1005012409754819 (35,59 USD) TOM = BLOCKED; 1005012678256567 (35,19 USD) TOM = BLOCKED; 1005013130278667 (16,29 USD minimodell) TOM = BLOCKED — alla samma SAK, bara som billigare inköp om de går att öppna i morgon"
+        }
+      },
+      "material": {
+        "klass": 2,
+        "hero_textfri": false,
+        "hero_i_kontext": false,
+        "samma_produkt": true,
+        "forsta_3s": "ej mätt (ingen video) — men formen bevisar sig själv: hunden släpper bollen i, maskinen skjuter iväg den",
+        "kommentar": "packshot vit/grön med inbränd 'WARNING'-text på fronten och guldbanner '1-5 Days Fast Shipping' nederst — banner måste beskäras, varningstexten sitter på produkten; creative måste vara film på hunden, inte heron"
+      },
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "PriceRunner-marknadsplats (PenRux)", "pris_sek": 476, "url": "https://www.pricerunner.se/search?q=automatisk%20bollkastare%20hund", "exakt_samma_form": true},
+        "premium_ankare": {"namn": "PetSafe Automatic Ball Thrower", "pris_sek": 1999, "url": "https://www.pricerunner.se/search?q=automatisk%20bollkastare%20hund", "i_sortiment": true},
+        "ankare_kvot": 2.0,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["pricerunner.se (12:20Z: 19 listningar 148–2 429, generiska 476–1 199: Pawhut 619–683, Naroote 899, Northio 1 269; ankare PetSafe 1 999, BoT by BlueRoad 1 945, Nomad Tales Bloom 2 429)", "zoo.se sök 'bollkastare' (12:23Z: 'gav inga resultat', totalHits 0)", "granngarden.se sök (12:23Z: hitCount 0)", "arkenzoo.se (404 på sök-URL — oläst)", "Jula/Fyndiq/CDON/Amazon.se: oläst (403)"]
+      },
+      "ekonomi": {
+        "landad_sek": [538, 658],
+        "pris_sek": 999,
+        "brutto_sek": [341, 461],
+        "be_cpa_sek": [341, 461],
+        "be_roas": 2.49,
+        "flerkop": false,
+        "returrisk": "medel — 5 cm-bollar passar små/medelstora hundar; stor hund kräver större bollar (skriv det i annonsen)"
+      },
+      "meta_tanke": {
+        "hook": "Tröttnat på att kasta bollen?",
+        "objekt_i_bild": "hunden som släpper bollen i maskinen — och rusar efter den",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "bollen släpps i, skjuts 6–14 m, hunden hämtar och laddar själv — loopen på 3 sekunder"
+      },
+      "varfor": "Ankare PetSafe 1 999 = 2,0× mot 999 medan zoo.se och Granngården saknar formen helt — samma H06-struktur som ATV-kapellet (Jula 399 under oss, Polaris 3 045 över) som vann 4,07. Rör sig, tävlas med, hunden själv i bild: precis det Axel sa ja till i dag (curling, pingisrobot, hästkapplöpning).",
+      "huvudrisk": "Golvet på PriceRunner är 19 listningar (marknadsplats, inte kedja) — om H06-undantaget bara gäller EN kopia faller raden; och landad 538–658 lämnar bara 341–461 kr under taket 999.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 2, "meta_creative": 1, "efterfragan": 2, "lucka": 2, "ekonomi": 2, "sasong": 3, "leverantor": 2, "nyhet": 1, "hypotesvarde": 2},
+      "per_kriterium": {"K0": "ok", "K1": 12, "K2": 12, "K3": 8, "K4": 6, "K5": 8, "K6": 8, "K7": 3, "K8": 9, "K9": 4, "K10": 2, "K11": 1, "K12": 1},
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (hund: Hopfällbar Hundmatta, Pälsborste — ingen leksak)", "koncept.py sok hund/katt/husdjur/bollkast (0 träffar på formen)", "REDAN-PROVAT.md (ingen husdjursrad)"]},
+      "kallor": ["https://www.aliexpress.com/item/1005012241775924.html", "https://www.pricerunner.se/search?q=automatisk%20bollkastare%20hund", "https://www.zoo.se/sok?q=bollkastare", "https://www.granngarden.se/sok?q=bollkastare"]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Dragfjädern i trädet, 5 m rep",
+      "objekt": "NYTT: Dragfjädern som hänger i trädet — hunden drar mot fjädern, 5 m rep och karbinhakar",
+      "form": "annat",
+      "arketyp": "H_VISUELL_NYHET",
+      "arketyp_sekundar": "G_Q4_GAVA",
+      "slot": "sasong",
+      "hypotes_id": "H10",
+      "vinnarlikhet": {
+        "likast": "Soptunneklistermärkena (H10) / Isolerade Utekattkojan",
+        "delade_variabler": ["formen finns inte i svenskt flöde", "älskat djur ute (kojan: kvinna 55+)", "noll monteringsfriktion — karbinhake runt gren eller balk"],
+        "avvikelser": ["ingen pågående skada", "hunden måste gilla dragkamp", "K8 vilar på repet + fjädern, inte på en maskin"]
+      },
+      "sasong": {"fonster_id": "jul", "deadline_typ": "jul", "veckor_kvar": 12.4, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005006863806207",
+        "url": "https://www.aliexpress.com/item/1005006863806207.html",
+        "pris_usd": 24.09,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-24T12:29:12Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-24-jul3/v3/bilder/1005006863806207.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "fyra varianter av dragleksaken (gummiboll, flätat rep, repboll, tennisboll) — samma rep 5 m + rostfri fjäder + 2 karbinhakar; välj EN",
+          "video": "ej tillgänglig i containern",
+          "alternativa_listningar": "1005005947269978 (31,39 USD) LIVE_VERIFIED 12:27:40Z, hero SEDD: textfri kontextbild — svart hund hoppar mot repet i trädet, packshot i höger halva — bästa creative-bilden, landad 409–499 → 799; 1005009603469627 (21,35 USD) LIVE 12:27:27Z men heron är en instruktionsgrafik för dörrmontering (inomhusvarianten); 1005009562044039, 1005009337417180, 1005009358463335 TOM = BLOCKED"
+        }
+      },
+      "material": {
+        "klass": 2,
+        "hero_textfri": true,
+        "hero_i_kontext": false,
+        "samma_produkt": true,
+        "forsta_3s": "ej mätt (ingen video) — hunden som hänger i repet från grenen bär sig själv",
+        "kommentar": "huvudlistningens hero är packshot av fyra set (rep, fjäder, hakar, leksak) på vitt — använd 1005005947269978:s trädbild eller egen film; vinter: fungerar i gren, carport eller garagebalk"
+      },
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "PetStages steel retractable rope with ground screw (tether, inte fjäder)", "pris_sek": 428, "url": "https://www.pricerunner.se/search?q=retpinne%20hund", "exakt_samma_form": false},
+        "premium_ankare": {"namn": "ej mätt — ingen svensk listning i formen (Tether Tug/Spring pole saknas)", "pris_sek": null, "url": null, "i_sortiment": false},
+        "ankare_kvot": null,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["pricerunner.se 'tether tug' (12:23Z: bara handhållna dragleksaker Kong/Julius-K9 89–239)", "pricerunner.se 'spring pole hund' (12:23Z: bara Pawhut agilityset)", "pricerunner.se 'bungee hundleksak träd' (12:26Z: handhållna bungee-rep Trixie/Companion 79–218 + EN Temu 'Outdoor Bungee Tug' 83 kr — liten dörrbungee, inte 5 m rep med fjäder)", "pricerunner.se 'retpinne hund' (12:23Z: Zeblaze 163, PetStages markskruv 428)", "zoo.se sök 'spring pole'/'retpinne' (JS-renderad, oläst)"]
+      },
+      "ekonomi": {
+        "landad_sek": [313, 383],
+        "pris_sek": 699,
+        "brutto_sek": [316, 386],
+        "be_cpa_sek": [316, 386],
+        "be_roas": 1.99,
+        "flerkop": false,
+        "returrisk": "låg — inget att mäta; risken är hund som inte drar"
+      },
+      "meta_tanke": {
+        "hook": "Hunden som aldrig får nog av dragkamp?",
+        "objekt_i_bild": "hunden som hänger i repet från grenen, fjädern som spänns",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "hunden drar, fjädern ger efter och rycker tillbaka — hunden leker själv medan ägaren filmar"
+      },
+      "varfor": "Ingen svensk aktör säljer formen (bara handhållna bungee-rep 79–218 och en tether 428) — ren H10-nyhet med noll montering, och ett stort älskat djur i bild är kojans köpare. Landad 313–383 ger BE-CPA 316–386 vid 699.",
+      "huvudrisk": "Utan ankare vilar 699 på upplevt värde hos rep + fjäder — och hunden måste vara en dragkampshund, vilket halverar målgruppen.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 1, "meta_creative": 2, "efterfragan": 2, "lucka": 3, "ekonomi": 2, "sasong": 3, "leverantor": 2, "nyhet": 3, "hypotesvarde": 2},
+      "per_kriterium": {"K0": "ok", "K1": 10, "K2": 12, "K3": 8, "K4": 8, "K5": 10, "K6": 7, "K7": 4, "K8": 6, "K9": 4, "K10": 2, "K11": 1, "K12": 1},
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (ingen hundleksak)", "koncept.py sok hund/flirt/agility (0 träffar på formen)", "REDAN-PROVAT.md"]},
+      "kallor": ["https://www.aliexpress.com/item/1005006863806207.html", "https://www.aliexpress.com/item/1005005947269978.html", "https://www.pricerunner.se/search?q=tether%20tug", "https://www.pricerunner.se/search?q=bungee%20hundleksak%20tr%C3%A4d"]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Väggkastaren som slänger snöret åt katten",
+      "objekt": "NYTT: Väggkastaren för katten — motor på sugkopp som slänger ut och drar in snöret själv",
+      "form": "annat",
+      "arketyp": "H_VISUELL_NYHET",
+      "arketyp_sekundar": "G_Q4_GAVA",
+      "slot": "sasong",
+      "hypotes_id": "H10",
+      "vinnarlikhet": {
+        "likast": "Isolerade Utekattkojan / Soptunneklistermärkena (H10)",
+        "delade_variabler": ["katten = kojans köpare (kvinna 55–74)", "formen finns inte i svenskt flöde", "noll friktion — sugkopp på vägg/dörr"],
+        "avvikelser": ["inomhus, inget väder", "under 500 kr", "plast som måste bära 449 (K8)"]
+      },
+      "sasong": {"fonster_id": "jul", "deadline_typ": "jul", "veckor_kvar": 12.4, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005013092548409",
+        "url": "https://www.aliexpress.com/item/1005013092548409.html",
+        "pris_usd": 12.49,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-24T12:34:58Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-24-jul3/v3/bilder/1005013092548409.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "giraffmodell, laddbar, självhäftande/sugkopp — en variant i sökträffen",
+          "video": "ej tillgänglig i containern",
+          "alternativa_listningar": "1005012979885581 (17,59 USD, kattansikte) LIVE 12:35:28Z, hero sedd: AI-render full av inbränd text ('TWO GEARS') — sämre; 1005012751009668 (15,29), 1005012986012387 (15,69) ej öppnade; 1005012705783846 (11,05, handhållen katapult) TOM = BLOCKED"
+        }
+      },
+      "material": {
+        "klass": 2,
+        "hero_textfri": false,
+        "hero_i_kontext": true,
+        "samma_produkt": true,
+        "forsta_3s": "ej mätt (ingen video) — katten som står på bakbenen och slår efter snörena bär hooken",
+        "kommentar": "kontextbild i vardagsrum med två katter, produkten på dörr och som packshot till vänster; inbränd rubrik uppe till vänster måste beskäras"
+      },
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "Sixfolo självspelande dörrhängande kattleksak (manuellt snöre på dörr, inte motor)", "pris_sek": 140, "url": "https://www.pricerunner.se/search?q=kattleksak%20sn%C3%B6re%20automatisk%20kastar", "exakt_samma_form": false},
+        "premium_ankare": {"namn": "ej mätt — ingen svensk listning i formen", "pris_sek": null, "url": null, "i_sortiment": false},
+        "ankare_kvot": null,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["pricerunner.se 'elektrisk kattleksak' (12:20Z: 20 listningar 109–765 — golvmodeller med snurrplatta/fjäder/boll, ingen väggmonterad snörkastare)", "pricerunner.se 'kattleksak snöre automatisk kastar' (12:35Z: Sixfolo 140 manuell, resten musleksaker)", "pricerunner.se 'kattleksak bana automatisk' (12:32Z: rullbollar 157–249)", "zoo.se sök (JS-renderad, oläst)"]
+      },
+      "ekonomi": {
+        "landad_sek": [163, 199],
+        "pris_sek": 449,
+        "brutto_sek": [250, 286],
+        "be_cpa_sek": [250, 286],
+        "be_roas": 1.68,
+        "flerkop": false,
+        "returrisk": "låg — sugkopp/självhäftande, inget att mäta"
+      },
+      "meta_tanke": {
+        "hook": "Katten som ingen orkar leka med?",
+        "objekt_i_bild": "katten på bakbenen som slår efter snöret som maskinen slänger ut",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "snöret slängs ut, dras in, katten hoppar — loop utan människa i bild"
+      },
+      "varfor": "Formen (motoriserad snörkastare på vägg) finns inte hos någon svensk aktör medan golvmodellerna med snurrplatta är 20+ i sortiment — H10-nyhet till kojans köpare. LÅG med flit: asymmetrisk på nyhet och lucka (3), men K8 för 449 är obevisad.",
+      "huvudrisk": "12-dollarsplast som ska bära 449 — och kattleksaker i svenskt flöde ligger 109–295, så kunden har ett prisankare i huvudet trots att formen är ny.",
+      "konfidens": "LÅG",
+      "poang": {"vinnarlikhet": 1, "meta_creative": 2, "efterfragan": 2, "lucka": 3, "ekonomi": 1, "sasong": 3, "leverantor": 2, "nyhet": 3, "hypotesvarde": 2},
+      "per_kriterium": {"K0": "ok", "K1": 10, "K2": 12, "K3": 8, "K4": 6, "K5": 10, "K6": 7, "K7": 3, "K8": 5, "K9": 4, "K10": 2, "K11": 1, "K12": 1},
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (katt: Isolerad Utekattkoja, Pälsborste — ingen leksak)", "koncept.py sok katt/kattleksak (bara koja/vattenskål/värmedyna)", "REDAN-PROVAT.md"]},
+      "kallor": ["https://www.aliexpress.com/item/1005013092548409.html", "https://www.pricerunner.se/search?q=elektrisk%20kattleksak", "https://www.pricerunner.se/search?q=kattleksak%20sn%C3%B6re%20automatisk%20kastar"]
+    }
+  ],
+  "strukna": [
+    {"namn": "Hundens aktiveringsspel i trä nivå 3 (Nina Ottosson-typ)", "orsak": "Golvet är hela marknaden: PriceRunner 'nina ottosson' 20 listningar 69–439 (Challenge Slider 300, MultiPuzzle 325, Tower of Treats 439) + 'aktiveringsspel hund' 20 listningar 64–449 (Trixie, Fiboo, Little&Bigger) — sortiment i kedja, inget ankare ≥ 1,6×. Dessutom stilla = Axels nej i dag. Inte sökt på Ali."},
+    {"namn": "Snusmatta i storformat", "orsak": "Sortiment: PriceRunner 17 listningar 63–715 (Tiaki 202, PetSniff 399, Doglemi 715) — golv i exakt form, stilla. Inte sökt på Ali."},
+    {"namn": "Agility-set för trädgården, hopfällbart", "orsak": "Sortiment: PriceRunner 20 listningar 104–2 839 (Pawhut 381–849, Northio 619–1 219, Zooplus 104) — golv i exakt form; träning = Axels nej. Inte sökt på Ali."},
+    {"namn": "Kattens klätterhjul", "orsak": "Vikt > 4 kg och över pristaket: Ali 70–96 USD → landad 1 010–1 390; svenskt golv Northix 1 449 / Opetdo 1 463 / SKIHOT 2 098 upp till 6 501 (PriceRunner 12:20Z, 18 listningar)."},
+    {"namn": "Automatisk kattleksak med fjäder/laser som rör sig (golvmodeller)", "orsak": "Sortiment: PriceRunner 'elektrisk kattleksak' 20 listningar 109–765 (INF 109–159, snurrplatta 295–765, Tiaki 159–186) — golv i exakt form utan ankare ≥ 1,6×. ROJECO 2-in-1 (34,89 USD) bär varumärke i titeln."},
+    {"namn": "Självrullande boll för hund med LED (Ali 1005012177136795, 22,65 USD, LIVE 12:29:17Z, hero sedd: blå boll med lysande knapp, packshot med hund)", "orsak": "Golv i exakt form under oss: Otego 69, Elektrisk rullboll 148, Teksome 157, Satana 189, INF 219, Felineo 249 (PriceRunner 12:20–12:32Z); Cheerble Wicked Ball 428–599 är ankare 1,0–1,3× mot ett K8-rimligt 449 — under 1,6×."},
+    {"namn": "Kattens kulbana i flera våningar (Ali 1005013001819505 roterande torn 29,29 USD LIVE 12:27:51Z hero sedd: textfri kontextbild med katt; plastvarianter 3,85–9,69 USD)", "orsak": "99-kronorsvara bekräftad: 'Kattbana Grön' 95 kr, Trixie Cat Activity Gambling Tower 237 (plast), Catit Senses Play Circuit 114–379, Dogman Aktiveringsleksak Bana 87 (PriceRunner) — golv i exakt form, K8 låg."},
+    {"namn": "Klöspelare i trä med kulbana i foten, 4-i-1 (Ali 1005013156162930, 28,47 USD, LIVE 12:27:54Z, hero sedd: kontextbild, text 'Best Gift For Cats' upptill)", "orsak": "Klöspelare är sortiment i varje kedja (PriceRunner 'kattleksak trä bana våningar': Northix bambu 499, Northio med lekboll 799, Trixie, vidaXL 329); rör sig lite (katten petar kulor) och trä+sisal väger troligen > 3 kg (ej mätt)."},
+    {"namn": "Flirt pole / jaktleksak på spö (Ali 10,15–16,96 USD; 33,49 USD retractable)", "orsak": "Ekonomin: 10,15 USD → landad 132–162 → K8-rimligt pris 349 ger BE-CPA 187–217 (undre kant < 190); golv Yes4All Flirt Pole 250, Zeblaze retpinne 163 (PriceRunner 12:20Z) i exakt form utan ankare. Inte öppnad."},
+    {"namn": "Bubbelmaskin med baconsmak för hund", "orsak": "Ali saknar husdjursvarianten ('dog bubble machine' gav badskumsmaskiner; 'bacon bubble machine' gav barnleksaker 6–9 USD); svenskt golv Trixie Bacon Bubbles 55 kr + Lalarma bubbelmaskin 539 — K8 = 0."},
+    {"namn": "Gömd mus under duk, motoriserad (Ali 1005010042555539, 14,69 USD, LIVE 12:25:35Z, hero sedd: kontextbild med två katter, inbränd rubrik)", "orsak": "Golv i exakt form under oss: Trixie Cat Activity 'Catch the Mouse' 120 kr (kedjemärke) + Pawstrip 635 marknadsplats (PriceRunner 12:23Z); tygduk med fiskmönster ser ut som 199 (K8)."},
+    {"namn": "Bollrullare för inomhus (Ali 1005009760569767, 36,39 USD, LIVE 12:30:10Z, hero sedd)", "orsak": "Heron är AFP-märkt ('all for paws Interactives') — varumärke som säljs i svenska kedjor; samma SAK som kandidat 1."},
+    {"namn": "Självspelande bollkastare med klämma (Ali 1005012833913392, 27,69 USD, LIVE 12:29:15Z, hero sedd: orange plaströr på klämma)", "orsak": "K8: plaströr som ser ut som 149 kr; ingen motor — bollen rullar bara ut. Samma SAK-familj som kandidat 1, svagare."},
+    {"namn": "Kattens jaktmaskin på snöre, fjärrstyrd (Ali 1005012731558835, 58,79 USD, LIVE 12:30:12Z, hero sedd: kontextbild med katt och fjärrkontroll, inbränd rubrik)", "orsak": "Över pristaket: 58,79 USD → landad 765–935 → 999 ger BE-CPA 64–234. Ingen svensk aktör hittad (PriceRunner 'lure coursing hund' bara Trixie Lure Rod 174) — starkaste visuella nyheten i kategorin, återupptas om en listning < 35 USD dyker upp. Syskon 62,69 / 83,79 USD."},
+    {"namn": "Godiskastande husdjurskamera (Furbo-typ)", "orsak": "Ali-sökningen gav bara minikameror utan godis (6–35 USD); svenskt ankare Petcube Bites 2 Lite 1 527 / Petlibro 1 499–1 698 (PriceRunner 12:31Z); app + wifi = friktion för 55+, och butiken har redan en kamera (Övervakningskamera 799). Inte öppnad."},
+    {"namn": "Godisautomat med knapp som hunden trycker på (Ali val/anka 10–34 USD)", "orsak": "Golv: INF 'Interaktiv Tryck och Dosera Godisdispenser' 489, Satana 289 (PriceRunner 12:31Z); stilla vara i plast (K8). Inte öppnad."},
+    {"namn": "Rörligt smart ben (Wickedbone-klon)", "orsak": "Ali saknar generisk kopia (två fraser gav bara rullbollar och robothundar); Cheerble Wickedbone 699 är enda svenska listningen — varumärke."},
+    {"namn": "Fjärrstyrd hare/bytesdjur för hund", "orsak": "Ingen Ali-listning för hund (frasen gav kattmöss 9–19 USD); PriceRunner 'fjärrstyrd hare hund' tom. Kattmöss = sortiment (Robocat 229, Cheerble Wicked Mouse 239)."},
+    {"namn": "Flyball-låda", "orsak": "Ingen listning på AliExpress (frasen gav blind boxes och valplådor); PriceRunner 'flyball hund' bara Chuckit-bollar 37–147."},
+    {"namn": "Kattens fönsterfågelmatare ('kattens TV')", "orsak": "Sortiment: PriceRunner 20 listningar 35–533 (Trixie 115, Tiaki 148, Gardenlife 80–330, Eva Solo 497–533); Ali 2–11 USD. Golv i exakt form, K8 låg."},
+    {"namn": "Elektrisk snörkatapult, handhållen för katt (Ali 1005012705783846, 11,05 USD)", "orsak": "Produktsidan svarade tomt (BLOCKED); väggmodellen (kandidat 3) valdes i stället — samma SAK-familj."},
+    {"namn": "Kattens elektriska 'fiskespö' (Ali 1005011863915715, 38,09 USD)", "orsak": "Produktsidan svarade tomt (BLOCKED) och landad 495–605 → 999 mot kattleksaksgolv 109–765 — ekonomin faller på K8."},
+    {"namn": "Tuggleksak som skriker/rör sig (skrikande höna, vibrerande fisk)", "orsak": "49–99 kr i varje kedja (PriceRunner 'elektrisk kattleksak' vibration 215, 'interaktiv boll hund' 39–238) — K8 = 0. Inte sökt på Ali."},
+    {"namn": "Hundens julkalender", "orsak": "Kalendrar stängda enligt order (12 kalendrar i butiken, H05 mättad) — inte sökt."},
+    {"namn": "Mini-bollkastare för inomhus/små hundar (Ali 1005013130278667, 16,29 USD)", "orsak": "Samma SAK som kandidat 1; produktsidan svarade tomt (BLOCKED). Noterad som billigare inköp (landad 212–259 → 599) om den går att öppna i morgon."}
+  ]
+}
