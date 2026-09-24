@@ -145,6 +145,24 @@ export const GALLERI = {
   // (2026-09-24: driftbilens GIF och bordsfotbollens spelbild + GIF låg färdiga i scratch men laddades aldrig upp.)
   rcoffroad: { qc: 'forst', bilder: [] },
   bordsfotboll: { qc: 'forst', bilder: [] },
+  // Trädansiktet (Axel 2026-09-24: "Tree face har ju varianter, det är samma pris på alla" → fem ansikten som varianter).
+  // Skörden: 02 = översikt (ett ansikte på stam + fyra delsatser, ingen text), 08/10/11/17 = leverantörens måttbilder med
+  // engelsk text till vänster — texten tas bort med KIE (beskärning klipper ögonen), sedan beskärs/paddas resultatet (tradansikte-kie-crop i README). Ansiktsnamnet i alt-texten styr variantbilden
+  // (tradansikte.mjs). Inget QC-foto finns.
+  tradansikte: { qc: 'sist', bilder: [
+    { fil: '02', alt: 'Trädansiktet: fem ansikten att välja på, varje i tre delar' },
+    { fil: '15', alt: 'Ansiktet Storögd på en tallstam' },
+    { fil: '09', alt: 'Ansiktet Skäggig på en tallstam' },
+    { fil: '10', ny: '10c', alt: 'Ansiktet Putmun – ögon, näsa och mun', kie: 'Remove all the text, numbers, arrows and the orange header bar. Keep the three sculpted face parts exactly as they are, same colours and shapes, on a plain white background.' },
+    { fil: '13', alt: 'Ansiktet Mossigt leende på en ekstam' },
+    { fil: '16', alt: 'Ansiktet Mustasch på en mossig stam' },
+    { fil: '08', ny: '08c', alt: 'Skäggig – de tre delarna', kie: 'Remove all the text, numbers, arrows and the orange header bar. Keep the three sculpted face parts exactly as they are, same colours and shapes, on a plain white background.' },
+    { fil: '11', ny: '11c', alt: 'Mossigt leende – de tre delarna', kie: 'Remove all the text, numbers, arrows and the orange header bar. Keep the three sculpted face parts exactly as they are, same colours and shapes, on a plain white background.' },
+    { fil: '17', ny: '17c', alt: 'Mustasch – de tre delarna', kie: 'Remove all the text, numbers, arrows and the orange header bar. Keep the three sculpted face parts exactly as they are, same colours and shapes, on a plain white background.' },
+    { fil: '14', alt: 'Mossigt leende med två ekorrar på stammen' },
+    { fil: '18', alt: 'Skäggig på en ljus stam' },
+    { fil: '12', alt: 'Mustasch i skymningen' },
+  ] },
   // ── nya (VÄNTA → bygg) ────────────────────────────────────────────────────
   bathuv: { bilder: [
     { fil: '08', alt: 'Båthuven över en båt på trailer vid stranden', crop: [0, 0.12, 1, 0.88] },

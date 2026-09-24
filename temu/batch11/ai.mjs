@@ -81,5 +81,6 @@ export const AI = {
     bilder: [ { namn: 'ai-hero', ref: 'Retrobussarna i närbild', alt: 'Retrobussarna hänger i en julgran med varma ljus (AI-illustration)', prompt: 'The same retro camper van ornaments hanging by thin gold strings from the branches of a Christmas tree with warm fairy lights, soft bokeh, close enough to see the vans clearly.' } ] },
   elcykeljacka: { video: { ref: 'Batteriskyddet på rambatteriet och det hopvikta', prompt: 'Two hands wrap the same black battery cover around the e-bike frame battery and press the strap closed; the bike stands still in a garage.' } },
   cykelhallarskydd: { video: { ref: 'Cykelhållarskyddet över cyklarna bak p', prompt: 'The motorhome with the covered bikes stands still while light rain falls; a car passes in the blurred background.' } },
+  tradansikte: { video: { ref: 'Mossigt leende med två ekorrar', typ: 'FIRST_AND_LAST_FRAMES_2_VIDEO', prompt: 'The two squirrels twitch and climb a little on the trunk while leaves move in a light breeze; the tree face stays exactly as it is.' } },
   lovsilar: { video: { ref: 'Vatten rinner genom lövsilen', prompt: 'Rainwater pours through the stainless mesh strainer while leaves are held back on top.' } },
 };

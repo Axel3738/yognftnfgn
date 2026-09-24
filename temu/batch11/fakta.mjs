@@ -90,7 +90,7 @@ export const FAKTA = {
     latt: { matt: '101 × 86 × 78 cm', tyg: '210D', farg: 'svart', ventilation: 'ventilationsöppning på sidan', fasten: 'öljetter med snöre i nederkant' },
     qc: [`${B}/qc-20260918012844.png`], status: 'bygg' },
   tradansikte: { batch: 13, sku: 'TEMU-B13-TRADANSIKTE', kategori: K('hg-3'), radnamn: 'Trädansiktet — gubben i trädet',
-    landat: { se: 10.19, no: 11.21 }, latt: {}, status: 'vanta', vanta: 'skörd finns, men AliExpress-listningen har flera olika ansikten och arket säger inte vilket CWD offererat — fråga CWD' },
+    landat: { se: 10.19, no: 11.21 }, latt: {}, status: 'bygg' },   // 2026-09-24 Axel: alla ansikten är varianter till samma pris → fem varianter (tradansikte.mjs)
   regnkedja: { batch: 13, sku: 'TEMU-B13-REGNKEDJA', kategori: K('hg-3-54'), radnamn: 'Regnkedjan 3,8 m med 12 koppar',
     landat: { se: 21.69, no: 25.48 },
     latt: { langd: '3,8 m', koppar: 12, material: 'metall i kopparfärg (bilden)', form: 'koppar med rutmönster på kedja' },
