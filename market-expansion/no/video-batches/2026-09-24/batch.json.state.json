@@ -3,65 +3,119 @@
   "assetUrl": "https://resource2.heygen.ai/video/217f02019e914c779479d496f725bde1/original.mp4",
   "proofreadId": "5413016b60984797aefffa3ee8ce49cf-nb-nb-NO",
   "sprak": "Norwegian Bokmål (Norway)",
-  "marknad": "NO",
-  "output_language": "Norwegian Bokmål (Norway)",
-  "sprakkoll": {
-   "HeyGens översättning": {
-    "ok": true,
-    "gissat": "nb",
-    "ord": 67,
-    "skal": null
-   }
-  },
-  "srtDone": true
+  "marknad": "NO"
  },
  "kajakhallare_CS_1_H3": {
   "assetUrl": "https://resource2.heygen.ai/video/02534819798e459eab12937ada4f5298/original.mp4",
   "proofreadId": "0e29b85ec0e54f76b10d0fe49d1b8c3f-nb-nb-NO",
   "sprak": "Norwegian Bokmål (Norway)",
+  "marknad": "NO"
+ },
+ "kajakhallare_GT_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/cb3036a96a9f42bdac3114187e20fabe/original.mp4",
+  "proofreadId": "950dba42c1d8453685ed6443302a32b3-nb-nb-NO",
+  "sprak": "Norwegian Bokmål (Norway)",
+  "marknad": "NO"
+ },
+ "kajakhallare_GT_1_H2": {
+  "assetUrl": "https://resource2.heygen.ai/video/8414654f2a0c4d5a82baa72e7987a903/original.mp4",
+  "proofreadId": "f2e15fe8cc2a4926aa6ea89414330673-nb-nb-NO",
+  "sprak": "Norwegian Bokmål (Norway)",
+  "marknad": "NO"
+ },
+ "kajakhallare_GT_1_H3": {
+  "assetUrl": "https://resource2.heygen.ai/video/4a2f1b7b7e3b4ed48efba9d3b5d3450f/original.mp4",
+  "proofreadId": "b6a2223d6f5e450e9d8b825ea2ebe16e-nb-nb-NO",
+  "sprak": "Norwegian Bokmål (Norway)",
+  "marknad": "NO"
+ },
+ "kajakhallare_PD_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/9573023884494da297dc25612bb87d00/original.mp4",
+  "proofreadId": "ccd2a09585824d8689d8570c631c7134-nb-nb-NO",
+  "sprak": "Norwegian Bokmål (Norway)",
+  "marknad": "NO"
+ },
+ "kajakhallare_PD_1_H2": {
+  "assetUrl": "https://resource2.heygen.ai/video/24580d1da52e457d8ba87ca3278cf73a/original.mp4",
+  "proofreadId": "6ae9c4e84a5e41f8ac5cb09be31c8581-nb-nb-NO",
+  "sprak": "Norwegian Bokmål (Norway)",
+  "marknad": "NO"
+ },
+ "kajakhallare_PD_1_H3": {
+  "assetUrl": "https://resource2.heygen.ai/video/4644114a31424a989b572bd1d87737ac/original.mp4",
+  "proofreadId": "af473b8b0e3f4434a72e1ac12a1b1017-nb-nb-NO",
+  "sprak": "Norwegian Bokmål (Norway)",
+  "marknad": "NO"
+ },
+ "kajakhallare_SP_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/b84b52c2cf2a4899871a69684638d2b0/original.mp4",
+  "proofreadId": "4cba56bfdc69411189f0b34df3fb853e-nb-nb-NO",
+  "sprak": "Norwegian Bokmål (Norway)",
+  "marknad": "NO"
+ },
+ "kajakhallare_SP_1_H3": {
+  "assetUrl": "https://resource2.heygen.ai/video/31853537ea9b469886374b60b72986ec/original.mp4",
+  "proofreadId": "1e29e9a7f77d4ef995b75c5f0951bbf6-nb-nb-NO",
+  "sprak": "Norwegian Bokmål (Norway)",
+  "marknad": "NO"
+ },
+ "atv-kapell_CS_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/a81257cb4be54691a92f859d19faea6d/original.mp4",
+  "proofreadId": "185ce73db0494b70bfb744b926941fcf-nb-nb-NO",
+  "sprak": "Norwegian Bokmål (Norway)",
+  "marknad": "NO"
+ },
+ "kapell-till-snoslunga_CS_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/14e986bfed754808803a94381b13b5a0/original.mp4",
+  "proofreadId": "a23ee98179034e32b07695cb2ec125ec-nb-nb-NO",
+  "sprak": "Norwegian Bokmål (Norway)",
   "marknad": "NO",
   "output_language": "Norwegian Bokmål (Norway)",
   "sprakkoll": {
    "HeyGens översättning": {
     "ok": true,
     "gissat": "nb",
-    "ord": 70,
+    "ord": 58,
     "skal": null
    }
   },
   "srtDone": true
  },
- "kajakhallare_GT_1_H1": {
-  "assetUrl": "https://resource2.heygen.ai/video/cb3036a96a9f42bdac3114187e20fabe/original.mp4",
-  "proofreadId": "950dba42c1d8453685ed6443302a32b3-nb-nb-NO",
+ "kapell-till-snoslunga_CS_1_H2": {
+  "assetUrl": "https://resource2.heygen.ai/video/77f76c80f6544f3fa62cab8e27cb8acc/original.mp4",
+  "proofreadId": "cae1a661be4a44c09140dd7dad2a278b-nb-nb-NO",
   "sprak": "Norwegian Bokmål (Norway)",
   "marknad": "NO",
-  "output_language": "Norwegian Bokmål (Norway)"
+  "output_language": "Norwegian Bokmål (Norway)",
+  "sprakkoll": {
+   "HeyGens översättning": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 66,
+    "skal": null
+   }
+  },
+  "srtDone": true
  },
- "kajakhallare_GT_1_H2": {
-  "assetUrl": "https://resource2.heygen.ai/video/8414654f2a0c4d5a82baa72e7987a903/original.mp4",
-  "proofreadId": "f2e15fe8cc2a4926aa6ea89414330673-nb-nb-NO",
+ "kapell-till-snoslunga_CS_1_H3": {
+  "assetUrl": "https://resource2.heygen.ai/video/3eca57a2841d442f8330aa4222ff3108/original.mp4",
+  "proofreadId": "f572e8dbc38f4374b71666a0fbf245ed-nb-nb-NO",
   "sprak": "Norwegian Bokmål (Norway)",
   "marknad": "NO",
-  "output_language": "Norwegian Bokmål (Norway)"
+  "output_language": "Norwegian Bokmål (Norway)",
+  "sprakkoll": {
+   "HeyGens översättning": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 61,
+    "skal": null
+   }
+  },
+  "srtDone": true
  },
- "kajakhallare_GT_1_H3": {
-  "assetUrl": "https://resource2.heygen.ai/video/4a2f1b7b7e3b4ed48efba9d3b5d3450f/original.mp4",
-  "proofreadId": "b6a2223d6f5e450e9d8b825ea2ebe16e-nb-nb-NO",
-  "sprak": "Norwegian Bokmål (Norway)",
-  "marknad": "NO",
-  "output_language": "Norwegian Bokmål (Norway)"
- },
- "kajakhallare_PD_1_H1": {
-  "assetUrl": "https://resource2.heygen.ai/video/9573023884494da297dc25612bb87d00/original.mp4",
-  "proofreadId": "ccd2a09585824d8689d8570c631c7134-nb-nb-NO",
-  "sprak": "Norwegian Bokmål (Norway)",
-  "marknad": "NO",
-  "output_language": "Norwegian Bokmål (Norway)"
- },
- "kajakhallare_PD_1_H2": {
-  "assetUrl": "https://resource2.heygen.ai/video/24580d1da52e457d8ba87ca3278cf73a/original.mp4",
-  "proofreadId": "6ae9c4e84a5e41f8ac5cb09be31c8581-nb-nb-NO",
+ "kapell-till-snoslunga_G_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/855ca73e6d004c18926606a48725bea9/original.mp4",
+  "proofreadId": "c084fce748eb46b98e1ca09904ee10a1-nb-nb-NO",
   "sprak": "Norwegian Bokmål (Norway)",
   "marknad": "NO",
   "output_language": "Norwegian Bokmål (Norway)",
@@ -75,23 +129,103 @@
   },
   "srtDone": true
  },
- "kajakhallare_PD_1_H3": {
-  "assetUrl": "https://resource2.heygen.ai/video/4644114a31424a989b572bd1d87737ac/original.mp4",
-  "proofreadId": "af473b8b0e3f4434a72e1ac12a1b1017-nb-nb-NO",
+ "kapell-till-snoslunga_G_1_H2": {
+  "assetUrl": "https://resource2.heygen.ai/video/8de12c72925248789db32ce8c7b98cf4/original.mp4",
+  "proofreadId": "4d953181a23a4c5bb9bf998920337a2f-nb-nb-NO",
+  "sprak": "Norwegian Bokmål (Norway)",
+  "marknad": "NO",
+  "output_language": "Norwegian Bokmål (Norway)",
+  "sprakkoll": {
+   "HeyGens översättning": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 85,
+    "skal": null
+   }
+  },
+  "srtDone": true
+ },
+ "kapell-till-snoslunga_G_1_H3": {
+  "assetUrl": "https://resource2.heygen.ai/video/29d13f87c275443bb184e24215da4228/original.mp4",
+  "proofreadId": "b311413baefc469cbfd4732d9db5d039-nb-nb-NO",
+  "sprak": "Norwegian Bokmål (Norway)",
+  "marknad": "NO",
+  "output_language": "Norwegian Bokmål (Norway)",
+  "sprakkoll": {
+   "HeyGens översättning": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 85,
+    "skal": null
+   }
+  },
+  "srtDone": true
+ },
+ "kapell-till-snoslunga_PD_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/49793d3be16146a1b7c1f3b4d2b7ba32/original.mp4",
+  "proofreadId": "fcb4104798294d9496149fcbfd14977c-nb-nb-NO",
   "sprak": "Norwegian Bokmål (Norway)",
   "marknad": "NO",
   "output_language": "Norwegian Bokmål (Norway)"
  },
- "kajakhallare_SP_1_H1": {
-  "assetUrl": "https://resource2.heygen.ai/video/b84b52c2cf2a4899871a69684638d2b0/original.mp4",
-  "proofreadId": "4cba56bfdc69411189f0b34df3fb853e-nb-nb-NO",
+ "kapell-till-snoslunga_PD_1_H2": {
+  "assetUrl": "https://resource2.heygen.ai/video/d10c2d7884e94fa5bb1498258bd1aae6/original.mp4",
+  "proofreadId": "dcc9c03df37d4f7a8b6db27e757526c0-nb-nb-NO",
+  "sprak": "Norwegian Bokmål (Norway)",
+  "marknad": "NO",
+  "output_language": "Norwegian Bokmål (Norway)",
+  "sprakkoll": {
+   "HeyGens översättning": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 77,
+    "skal": null
+   }
+  },
+  "srtDone": true
+ },
+ "kapell-till-snoslunga_PD_1_H3": {
+  "assetUrl": "https://resource2.heygen.ai/video/c816da51e155463ca8c396c32a77328d/original.mp4",
+  "proofreadId": "59c5c3a23f16478982b780dba54cc377-nb-nb-NO",
+  "sprak": "Norwegian Bokmål (Norway)",
+  "marknad": "NO",
+  "output_language": "Norwegian Bokmål (Norway)",
+  "sprakkoll": {
+   "HeyGens översättning": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 70,
+    "skal": null
+   }
+  },
+  "srtDone": true
+ },
+ "kapell-till-snoslunga_SP_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/7d8607b628a647efb54b8ff1f25bdd3a/original.mp4",
+  "proofreadId": "01fc9cdcaf464847abf03af9a76ceb0d-nb-nb-NO",
   "sprak": "Norwegian Bokmål (Norway)",
   "marknad": "NO",
   "output_language": "Norwegian Bokmål (Norway)"
  },
- "kajakhallare_SP_1_H3": {
-  "assetUrl": "https://resource2.heygen.ai/video/31853537ea9b469886374b60b72986ec/original.mp4",
-  "proofreadId": "1e29e9a7f77d4ef995b75c5f0951bbf6-nb-nb-NO",
+ "kapell-till-snoslunga_SP_1_H2": {
+  "assetUrl": "https://resource2.heygen.ai/video/640acaddc2354322b8f8ec74b719e168/original.mp4",
+  "proofreadId": "dc8e64be5726425699927756a49cb899-nb-nb-NO",
+  "sprak": "Norwegian Bokmål (Norway)",
+  "marknad": "NO",
+  "output_language": "Norwegian Bokmål (Norway)",
+  "sprakkoll": {
+   "HeyGens översättning": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 61,
+    "skal": null
+   }
+  },
+  "srtDone": true
+ },
+ "kapell-till-snoslunga_SP_1_H3": {
+  "assetUrl": "https://resource2.heygen.ai/video/b16185b8fa8c4c1d9b5dcda08fab765e/original.mp4",
+  "proofreadId": "36f2b4797882483790889e5ec744dbbe-nb-nb-NO",
   "sprak": "Norwegian Bokmål (Norway)",
   "marknad": "NO",
   "output_language": "Norwegian Bokmål (Norway)"
