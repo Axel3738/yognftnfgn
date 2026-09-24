@@ -56,6 +56,13 @@ you used.
    nothing fits" in the SOP and say which rule you used.
 5. Tell her the new sheet status and next action date.
 
+### `bio` · `comment <post text>` · `post idea`
+For the Instagram warm-up (handbook chapter 1). `bio`: 2 short Swedish lines
+for the Stonebite profile, no store names. `comment`: one short, real Swedish
+comment on the pasted post (never generic, never the same twice). `post idea`:
+one simple post idea + Swedish caption, no prices, no store names, no customers.
+Always with the English meaning.
+
 ### `post <product link>`
 A short Swedish post for a Facebook group, asking Swedish UGC creators to get
 in touch (what we sell, one video + raw footage, product included, paid by

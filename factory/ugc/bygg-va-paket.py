@@ -20,6 +20,7 @@ import markdown
 
 KIT = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'va-kit')
 KAPITEL = [  # (fil, kapitelnamn i handboken)
+    ('INSTAGRAM.md', 'Warm up the Instagram account'),
     ('SOP.md', 'Your job, step by step'),
     ('TERMS.md', 'Terms'),
     ('VETTING.md', 'Vetting'),
@@ -104,6 +105,21 @@ def main():
     os.makedirs(os.path.join(ut, 'Google Sheet templates'))
 
     las = lambda f: open(os.path.join(KIT, f), encoding='utf-8').read()
+
+    # Inloggningarna: bara i en egen PDF, aldrig i handboken (den laddas upp i
+    # Claude-projektet) och aldrig i repot (inlogg.local.json är gitignorerad).
+    hemligt = os.path.join(KIT, 'inlogg.local.json')
+    if os.path.exists(hemligt):
+        import json
+        varden = json.load(open(hemligt, encoding='utf-8'))
+        text = las('ACCOUNTS.md')
+        for k, v in varden.items():
+            text = text.replace('{{' + k + '}}', v)
+        if '{{' in text:
+            sys.exit('inlogg.local.json saknar ett värde: ' + re.findall(r'\{\{\w+\}\}', text)[0])
+        pdf(sida('Logins', md_html(text)), os.path.join(ut, '0 - YOUR LOGINS (secret).pdf'))
+    else:
+        print('VARNING: inlogg.local.json saknas — ingen inloggnings-PDF byggd')
 
     pdf(sida('Start here', md_html(las('README.md'))), os.path.join(ut, '1 - START HERE.pdf'))
 

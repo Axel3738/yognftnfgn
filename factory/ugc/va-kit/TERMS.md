@@ -11,7 +11,7 @@ If a creator asks for something outside it → the matching case in `SOP.md`
 |---|---|
 | Store name in messages | **Bäverbutiken** (Swedish online store, tests many new products every month) |
 | Company that pays (on the invoice) | **Stonebite Ecom AB**, org.nr **559576-2401**, Sjöhed 160, 442 74 Harestad, Sweden |
-| Where invoices go | The creator emails the invoice to you → you forward it to Axel the same day. **This is the only thing Axel ever gets.** |
+| Where invoices go | The creator emails the invoice to the company Gmail (your login PDF) → you forward it to Axel the same day. **This is the only thing Axel ever gets.** |
 
 ## The deal we offer
 

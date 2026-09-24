@@ -41,18 +41,11 @@ If nothing gets dropped for two weeks, go up to **20 active** on your own.
 
 ## The Instagram account
 
-You DM from **our own UGC Instagram account** that Axel gives you — never
-your private account and never the store's main account. Axel keeps the
-password and the two-step login, so don't change either.
-
-- **Weeks 1–2: warm it up.** No DMs. Post a few times, follow creators, like
-  and comment normally for 10–15 minutes a day.
-- **Week 3:** max **20 DMs per day**.
-- **After that:** go up slowly, max **50 per day**. (Accounts get blocked
-  around 80–100 a day.)
-- **Instagram shows a warning or blocks you:** stop DMs for 48 hours, then start
-  again at half the number. Use email and TikTok in the meantime.
-- Email and TikTok messages don't count toward the Instagram limit.
+You DM from **our Instagram account** (login in your secret login PDF) —
+never your private account. Before the first DM, do the 14-day warm-up in
+chapter **1. Warm up the Instagram account**. After that: max 20 DMs a day in
+week 3, then +10 a week, **never more than 50 a day**. Email and TikTok don't
+count toward that limit.
 
 ---
 

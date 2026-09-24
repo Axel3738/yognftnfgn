@@ -31,6 +31,14 @@ dessa villkor. Ändras de: uppdatera här först, aldrig i ett enskilt meddeland
   beslutar Axel nästa steg; VA:n lovar aldrig retainer eller bonusbelopp.
 - **Beloppen är exklusive moms** (Axel 2026-09-24): 1 500 kr exkl. moms;
   momsregistrerade kreatörer lägger på moms på fakturan.
+- **Konton (Axel 2026-09-24):** VA:n gör allt från Google-kontot
+  `claude.employees@stonebite.org` (Gmail, Sheets, Drive, Claude via "Continue
+  with Google") och skriver till kreatörer från Instagram
+  `stonebite_organisation`, som värms upp 14 dagar först (handbokens kapitel 1).
+  Lösenorden står BARA i `va-kit/inlogg.local.json` (gitignorerad) och i
+  VA:ns "0 - YOUR LOGINS (secret).pdf" — aldrig i repot eller i handboken som
+  laddas upp i Claude-projektet. Saknas filen i en ny container: be Axel om
+  inloggningarna igen innan paketet byggs.
 - **VA:n frågar aldrig Axel** (Axels order 2026-09-24: "jag vill aldrig behöva se
   nått annat än möjligtvis fakturan"). Varje utfall har en egen regel i SOP:en;
   det som saknas avgörs av fem regler ("When nothing fits"). VA:n väljer själv

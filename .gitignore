@@ -132,3 +132,5 @@ stonebite/data/kalender.jsonl
 stonebite/data/kontakter.jsonl
 # Autosvarets logg när minutservern körs lokalt utan STONEBITE_DATA (i drift: volymen). Repots logg är kundtjanst/autosvar/logg/.
 stonebite/data/autosvar/
+# UGC-paketets inloggningar: bara i VA:ns PDF, aldrig i repot.
+factory/ugc/va-kit/inlogg.local.json
