@@ -86,7 +86,8 @@ Sheet: status `deal`, new row in **Deals**.
 2. Shopify admin → Orders → Create order → add the product → discount 100 %
    → shipping to their address → note: `UGC <creator ID>`.
 3. Write only the **order number** in Deals. Never the address.
-4. Tell them delivery takes **5–10 business days**.
+4. Tell them delivery takes **5–10 business days** and that they must **message
+   you the same day it arrives** (it's in the agreement — the deadline starts then).
 5. **3 business days later:** open the order in Shopify. It must say
    *Fulfilled* with a tracking number. If not → tell Axel the order number.
 
@@ -102,6 +103,10 @@ Videos due = product arrived + agreed days. Next action = the due date.
 Two days before: a friendly reminder (Template: Reminder).
 
 ### 10. Check the delivery — all must be YES
+
+⏰ **You must answer within 7 days of the delivery.** The agreement says: if we
+don't answer in 7 days, the delivery counts as approved and we must pay — even
+if it's bad. Put "check D00X" as next action the same day the files arrive.
 
 **First, save the files.** Creators often send WeTransfer or other links that
 **expire after a few days**. Download everything and put it in the Drive folder
@@ -123,7 +128,9 @@ name, prices, promises and anything wrong. You check the pictures.
 - [ ] The store name is **not** said in the video
 - [ ] Nothing that looks like AI or a fake review
 
-Any NO → ask for the redo (Template: Redo). One redo is included.
+Any NO → ask for the redo (Template: Redo) and say **exactly** which point is
+missing. They must redo within 5 days. One redo is included. We may not reject
+a video that meets every point just because we don't like it.
 
 ### 11. Approve
 All YES → **you approve.** Put the videos AND the raw footage in the shared
@@ -204,7 +211,9 @@ Then:
 | Says yes | Agreement message → wait for written "ja". | `deal` |
 | Product lost / not arrived after 10 business days | Check the Shopify order tracking, tell the creator, ask Axel before sending a new one. | `working` |
 | Product arrived broken | Ask for a photo, create a new 0 kr order, new due date. | `working` |
-| Videos not delivered on the due date | Reminder same day. +3 days: second reminder. +7 days: ask Axel. | `working` |
+| Videos not delivered on the due date | Reminder same day. +3 days: second reminder. +7 days: ask Axel — the agreement lets us cancel: no payment, and the creator returns the product or pays its price. Axel decides. | `working` |
+| Creator doesn't say when the product arrived | Check the tracking: the "delivered / ready for pickup" date counts as arrival. Write it in Deals. | `working` |
+| Redo still misses a point | Ask Axel — we may cancel (same as late delivery). | `delivered` |
 | Delivery misses the checklist | Redo template, specific about what to fix. | `delivered` |
 | Second delivery still bad | Ask Axel. Don't promise payment. | `delivered` |
 | Delivery OK | You approve → files to Drive → invoice request. | `approved` |
