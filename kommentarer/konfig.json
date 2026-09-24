@@ -1,0 +1,66 @@
+{
+  "_om": "Kommentarsgranskningen (/kommentarer). Läs kommentarer/README.md. Konton, domäner och sidor här är FACIT för vilken verksamhet en kommentar hör till — blanda aldrig verksamheterna. Uppdatera med datum när något ändras.",
+  "konton": [
+    { "id": "1867947880635861", "namn": "MagiBorsten", "standard": { "verksamhet": "Bäverbutiken", "marknad": "SE" } },
+    { "id": "1050941584152547", "namn": "Magiborsten NO", "standard": { "verksamhet": "Bäverbutiken", "marknad": "NO" } },
+    { "id": "915422744950975", "namn": "Magiborsten DK (OPS-kontot)", "standard": { "verksamhet": "Bäverbutiken", "marknad": "DK" } },
+    { "id": "1107817401910319", "namn": "Magiborsten UK", "standard": { "verksamhet": "Bäverbutiken", "marknad": "UK" } },
+    { "id": "1619718346388201", "namn": "Magiborsten FI", "standard": { "verksamhet": "Bäverbutiken", "marknad": "FI" } }
+  ],
+  "konton_valfria": [
+    { "id": "730973156224390", "namn": "nya kungen (Matstrumpor)", "sidtoken_env": "META_ACCESS_TOKEN_MATSTRUMPOR", "standard": { "verksamhet": "Matstrumpor", "marknad": "SE" }, "_om": "Sidan ligger i Business Manager Matstrumpor.se och nås bara med META_ACCESS_TOKEN_MATSTRUMPOR (samma som tools/annonskommentarer.mjs --sidtoken-env). Går kontot eller sidan inte att läsa står orsaken i rapporten — aldrig som noll kommentarer." }
+  ],
+  "konton_utanfor": [
+    { "id": "1346450049878358", "namn": "SnarkLös (Grillkliniken)", "orsak": "legacy, META_ACCESS_TOKEN når inte kontot" }
+  ],
+  "domaner": {
+    "baverbutiken.se": { "verksamhet": "Bäverbutiken", "marknad": "SE" },
+    "beverbutikken.no": { "verksamhet": "Bäverbutiken", "marknad": "NO" },
+    "baeverbutiken.dk": { "verksamhet": "Bäverbutiken", "marknad": "DK" },
+    "majavakauppa.fi": { "verksamhet": "Bäverbutiken", "marknad": "FI" },
+    "beavershop.co.uk": { "verksamhet": "Bäverbutiken", "marknad": "UK" },
+    "matstrumpor.se": { "verksamhet": "Matstrumpor", "marknad": "SE" },
+    "carashell.com": { "verksamhet": "CaraShell", "marknad": "US" }
+  },
+  "sidor": {
+    "678639638662543": "Bäverbutiken",
+    "879054088633562": "Bäverbutiken",
+    "1324465810740336": "Bäverbutiken",
+    "1305042582683792": "Bäverbutiken",
+    "1381171778405935": "CaraShell",
+    "1339381299252136": "DryTrek",
+    "1262406533629248": "HeimGuard",
+    "1399193996606775": "TankGuard",
+    "1283919631474370": "TackleBay",
+    "1353362171174302": "CatCabin",
+    "1304279782771044": "AdventLane",
+    "1255520490988068": "EdgeBench",
+    "1368352486352053": "FjordCover",
+    "1317870104733246": "Bäverbutiken",
+    "820358954504320": "Matstrumpor"
+  },
+  "sidnamn": {
+    "_om": "Namn på sidor som token:en inte kan läsa (då ger Meta inget namn). Mätt 2026-09-24: 1317870104733246 bär alla 34 FI-annonser i Magiborsten FI — token:en saknar sidrollen där.",
+    "1317870104733246": "Majavakauppa (FI) — sidan i Magiborsten FI"
+  },
+  "produktmappar": {
+    "_om": "Annonsprefix → products/<mapp>/ för produkter som har ett minne (mätt 2026-09-24). Prefixet jämförs utan å/ä/ö och utan skiftläge. Produkter utan mapp får sina leads i kommentarer/leads.md.",
+    "Enginecover": "motorholjet", "Motorholje": "motorholjet",
+    "Trimmerbelt": "axelbaltet", "Axelbalte": "axelbaltet",
+    "Seatcover": "satesoverdragaren",
+    "Beachslippers": "strandtofflorna", "Strandtofflor": "strandtofflorna",
+    "Takoverdrag": "takoverdraget-husvagn",
+    "CaraShellRoof": "carashell/takskyddet", "CaraShellFront": "carashell/termoskyddet",
+    "HeimGuard": "hemvakten", "TankGuard": "tankguard", "DryTrek": "drytrek",
+    "AdventLaneRacing": "kalender", "TackleBayRod": "tacklebay/fiskespohallare-4-pack",
+    "CatCabin": "catcabin", "MATSTRUMP": "matstrumpor"
+  },
+  "discord": {
+    "kanal": "ad-comments",
+    "servrar": { "Bäverbutiken": "Bäverbutiken" },
+    "hoppa": { "Matstrumpor": "Matstrumpor har ingen Discord-server, och Axel har inte pekat ut en kanal för Matstrumpors rapporter (CLAUDE.md, /matstrumporkungen) — rapporten står bara i kommentarer/rapporter/." },
+    "_om": "OPS-brand utan rad i servrar letas upp på brandnamnet (valjButiksServer: 'CaraShell' → 'CaraShell — OPS'). Hittas ingen ENTYDIG server blir det ett fel (exit 4) — aldrig en annan verksamhets server."
+  },
+  "fonster": { "forsta_korning_timmar": 72, "max_dagar": 7, "overlapp_timmar": 3, "annonser_spend_dagar": 3, "trend_dagar": 14, "minne_dagar": 21 },
+  "rapport": { "max_allvarliga": 25, "max_fragor": 15, "max_citat_per_invandning": 3, "max_svarsforslag": 6, "resonans_likes": 3 }
+}
