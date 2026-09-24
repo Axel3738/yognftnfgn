@@ -1,13 +1,19 @@
 # Frågor till Evolve-chatboten om UGC (2026-09-24)
 
-Axel klistrar in blocket nedan i Evolve och klistrar tillbaka svaret till en
+Axel klistrar in blocket nedan i Evolve och klistrar tillbaka svaren till en
 Claude-session, som för in det i `factory/ugc/va-kit/`. Skrivet på engelska
 med flit: chatboten är tränad på engelskt e-handelsmaterial och svarar
 skarpast där.
 
 ---
 
+Delat i två meddelanden (Axel 2026-09-24: ett var för långt för chatboten). Skicka del 1, vänta på svaret, skicka del 2.
+
+## Del 1 av 2
+
 ```
+This is PART 1 of 2. Answer the questions in part 1 now. Part 2 comes in my next message and uses the same context.
+
 I run a Swedish e-commerce company and I'm building a UGC creator process that my VA runs. I need your most concrete, number-backed answers. Answer each question by its number. Where you'd normally say "it depends", tell me what it depends on and what YOU would do in my situation.
 
 CONTEXT
@@ -38,6 +44,14 @@ Contract, legal, payment (Sweden)
 8. Is a written "yes" in a DM/email enough as an agreement, or do we need a short signed contract? What are the 5 clauses that must be in it for paid-ads usage in Sweden/EU (GDPR, likeness, perpetual rights, raw footage)?
 9. Many Swedish creators have no company. Invoicing through Frilans Finans / Cool Company / Gigapay — any problems, and who should pay that fee?
 10. We ship the product for free. Any tax or "benefit" issue for the creator or us in Sweden?
+```
+
+## Del 2 av 2
+
+```
+PART 2 of 2. Same context as part 1 (Swedish general store, Meta ads, VA in the Philippines who doesn't speak Swedish, 1 500–3 000 SEK per video, raw footage + perpetual rights included, invoice after approval, long-term work as our negotiation card). Answer by number.
+
+Contract, legal, payment (continued)
 11. Can we run a Swedish creator's video in Norway, Denmark and Finland, dubbed or subtitled? Or do we need local creators per country for it to perform?
 
 Brief and quality
