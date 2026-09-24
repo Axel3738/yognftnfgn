@@ -143,7 +143,11 @@ creative-loopen. En lead är kundens egna ord som pekar på en brief:
 - Hellre tre riktiga leads än tio. Inga leads en lugn dag är ett giltigt svar.
 
 **c) Förslag på svar (`svar`)** — max 6, bara för obesvarade 🔵 köpfrågor och
-🔴 där ett svar hjälper, och bara när svaret finns på produktsidan:
+🔴 kundärenden (ej levererat, missnöjd köpare), och bara när svaret finns på
+produktsidan. ⛔ **Aldrig svar på invändningar, skepsis, "skräp", troll, beröm,
+bluff från förbipasserande eller spam** (Axels order 2026-09-24: "jag vill inte
+att du ska svara allt möjligt på alla") — invändningarna besvaras i nästa
+annons, inte i kommentarsfältet. Skriptet stoppar ett svar på något annat.
 1. Hämta produktens fakta: `NODE_USE_ENV_PROXY=1 node -e "fetch('<länk-utan-frågeparametrar>.json').then(r=>r.json()).then(j=>console.log(JSON.stringify({titel:j.product.title,pris:j.product.variants.map(v=>[v.title,v.price]),text:j.product.body_html.replace(/<[^>]+>/g,' ').slice(0,4000)})))"`
    (länken står i raden som `lank`; `/pages/`-länkar har ingen .json — hoppa).
 2. Svaren skrivs av en subagent: Agent-verktyget med `model: "sonnet"` (CLAUDE.md

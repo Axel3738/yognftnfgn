@@ -201,7 +201,7 @@ async function rapport() {
   const verkPerId = new Map([...lasLogg(trendFran), ...nya].map((r) => [r.id, r.verksamhet]));
   let dom = null;
   if (radDom) {
-    const kontroll = kontrolleraDom(radDom, { kandaIds: new Set(verkPerId.keys()), nyaIds, verkPerId, hamtad: data.hamtad, verksamheter: new Set(Object.keys(data.sammanstallning)) });
+    const kontroll = kontrolleraDom(radDom, { kandaIds: new Set(verkPerId.keys()), nyaIds, verkPerId, hamtad: data.hamtad, verksamheter: new Set(Object.keys(data.sammanstallning)), raderPerId: new Map(nya.map((r) => [r.id, r])), maxSvar: k.rapport?.max_svarsforslag ?? 6 });
     if (kontroll.fel.length) {
       logg(`✗ Domen har ${kontroll.fel.length} fel — rätta ${domFil} och kör igen:`);
       for (const f of kontroll.fel) logg(`  - ${f}`);

@@ -297,3 +297,16 @@ test('Instagram: kommentarerna normaliseras, fönstret filtreras här och userna
   assert.deepEqual([kommentarer[0].id, kommentarer[0].kanal, kommentarer[0].message, kommentarer[0].post], ['ig_1', 'instagram', 'Fukten då?', '9_1']);
   assert.equal(status.kommentarer, 1);
 });
+
+test('svar föreslås bara på köpfrågor och kundärenden — aldrig på invändningar, troll eller beröm, max 6', () => {
+  const rader = [rad('9_1', 'Vad kostar den?'), rad('9_2', 'Värsta skräpet'), rad('9_3', 'Har inte fått min order'), rad('9_4', 'Bra produkt!'), rad('9_5', 'Bluff!! Köp inte')];
+  const raderPerId = new Map(rader.map((r) => [r.id, r]));
+  const ids = new Set(rader.map((r) => r.id));
+  const svar = (id) => ({ id, text: 'x', en: 'x', fakta: 'produktsidan' });
+  const { fel, dom } = kontrolleraDom({ svar: rader.map((r) => svar(r.id)) }, { kandaIds: ids, nyaIds: ids, raderPerId });
+  assert.deepEqual(dom.svar.map((x) => x.id), ['9_1', '9_3']);
+  assert.equal(fel.length, 3);
+  const manga = [...Array(8)].map((_, i) => rad(`8_${i}`, 'Vad kostar den?'));
+  const m = kontrolleraDom({ svar: manga.map((r) => svar(r.id)) }, { kandaIds: new Set(manga.map((r) => r.id)), nyaIds: new Set(manga.map((r) => r.id)), raderPerId: new Map(manga.map((r) => [r.id, r])), maxSvar: 6 });
+  assert.equal(m.dom.svar.length, 6);
+});
