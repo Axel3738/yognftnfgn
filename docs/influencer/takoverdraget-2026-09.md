@@ -243,4 +243,7 @@ En rad per svar som kommer in. Fylls på i den här filen, aldrig i chatten.
 | Datum | Profil | Händelse (mail ut / svar / samtal / avtal / nej / live) | Vad hen sa | Vad det lär oss |
 |---|---|---|---|---|
 | 2026-09-19 | alla | Rapporten skriven, inga mail skickade | | Nio av tio mail klara; det tionde väntar på en scorecard eller en kontaktväg. |
+| 2026-09-21 | alla nio | mail och DM ut | | Utskicket gjort från hello@carashell.se. |
+| 2026-09-23 | Marlene Jikita | svar: ja, men vill hellre ha termoskyddet | "Taköverdraget känns lite knepigt för oss, då vår husbil inte står still så många dagar i taget." Har nu en halvintegrerad Adria. | **Taköverdraget säljer till den som ställer av.** Kör profilen året om ser hon ingen nytta och säger det rakt ut. Det stämmer med köpardatan, där 93 % är 55+. Fråga om profilen ställer av innan nästa outreach-omgång, och erbjud termoskyddet till dem som kör året om. |
+| 2026-09-24 | Cajsa Olsson | svar: ja, adress lämnad | "både för att man själv lätt kan ta av och på det plus att det är en fördel att det inte täcker hela husvagnen" | Hon upprepade obedd de två argument som mailets fjärde mening leder med. Produktvinkeln är rätt formulerad och kan gå rakt in i annonscopy. ⚠️ Vagnen är en Adria 305 från 1980 och minsta överdraget är 5,5 m — längden måste bekräftas före utskick. |
 
