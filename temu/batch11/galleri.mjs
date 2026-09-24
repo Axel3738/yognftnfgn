@@ -149,7 +149,7 @@ export const GALLERI = {
   // Skörden: 02 = översikt (ett ansikte på stam + fyra delsatser, ingen text), 08/10/11/17 = leverantörens måttbilder med
   // engelsk text till vänster — texten tas bort med KIE (beskärning klipper ögonen), sedan beskärs/paddas resultatet (tradansikte-kie-crop i README). Ansiktsnamnet i alt-texten styr variantbilden
   // (tradansikte.mjs). Inget QC-foto finns.
-  tradansikte: { qc: 'sist', bilder: [
+  tradansikte: { qc: 'sist', bilder: [   // GIF:en byttes (v2, referensläge) med ersatt 2026-09-24, flaggan borttagen
     { fil: '02', alt: 'Trädansiktet: fem ansikten att välja på, varje i tre delar' },
     { fil: '15', alt: 'Ansiktet Storögd på en tallstam' },
     { fil: '09', alt: 'Ansiktet Skäggig på en tallstam' },
