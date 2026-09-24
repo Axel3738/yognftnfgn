@@ -1,10 +1,10 @@
 {
  "datum": "2026-09-24",
- "antal_svar": 105,
+ "antal_svar": 114,
  "per_dom": {
-  "ja": 69,
-  "kanske": 15,
-  "nej": 21
+  "ja": 71,
+  "kanske": 16,
+  "nej": 27
  },
  "antal_utfall": 7,
  "score_regel": "(ja + 0.5*kanske + 1) / (ja + kanske + nej + 2); 0.5 = inget svar; launchad = 2 ja, >=BE = 3 ja, <BE = 3 nej",
@@ -591,6 +591,60 @@
     "kanske": 0,
     "nej": 1,
     "score": 0.333
+   },
+   "NYTT: Balanstornet som tippar — 48 delar på en pinne": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Barnbarnets första flygande leksak — fågeln lyfter ur handen på gräsmattan": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Hockey-/skridskobarnbarnet i november — skäret tränas i strumporna på hallgolvet medan isen väntar": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Vardagsrumsgolvet i december — kulan ska in i mitten med fötterna, farmor mot barnbarnet på tid": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Vardagsrumsbordet på julafton — motorn drar vagnen upp, sedan åker den av sig själv": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Källarväggen/garaget i november — slå i takt med musiken, barnbarnen mot farfar på poäng": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Magnetstenarna på snöret — den som får dem att klicka ihop förlorar": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "NYTT: Tåget som kör runt julgranen — byggs på julafton, går av sig självt": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Travbanan på matbordet — batteridriven tivoliklassiker": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
    }
   },
   "ankare_kalla": {
@@ -1152,6 +1206,60 @@
     "nej": 1,
     "score": 0.333
    },
+   "Hasbro Jenga (närmaste klassiker i 'stapla tills det rasar') — PriceRunner 179–199, Coolstuff 229; Goki Wooden Balance Game Tower 360": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "X-Fly Bionic Bird (AliExpress, utländskt — inget svenskt ankare hittat)": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "inSPORTline Slideboard Fluxlide 180cm": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "ej verifierat — Hape Balance Board Intelligent Trä 1 600 (PriceRunner) kan vara samma form men formen är inte läst": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "LEGO Creator Roller Coaster 10261 (4 124 bitar — större sak)": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "RIXCH Elektronisk Musik Boxningsmaskin Väggmonterad Smart Boxning (PriceRunner); Northio Elektronisk Bluetooth Boxningsmaskin Med LED 1 379; Mobiclinic 1 051": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "Borderline Editions Kluster (originalet, 24 stenar + snöre) — Coolstuff 299 kr; PriceRunner lägst 199 kr hos 32 butiker, 'WATCHED 50+'": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "LEGO Julexpressen 10361": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "ej hittat — ingen svensk aktör säljer en batteridriven hästkapplöpningsbana (sökt 2026-09-24)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
    "eurotrail/getcamping.se": {
     "ja": 3,
     "kanske": 0,
@@ -1199,8 +1307,8 @@
    "≥ 1,6×": {
     "ja": 24,
     "kanske": 7,
-    "nej": 10,
-    "score": 0.663
+    "nej": 13,
+    "score": 0.62
    },
    "1,3–1,6×": {
     "ja": 23,
@@ -1209,16 +1317,16 @@
     "score": 0.806
    },
    "golv utan ankare": {
-    "ja": 16,
-    "kanske": 1,
+    "ja": 17,
+    "kanske": 2,
     "nej": 0,
-    "score": 0.921
+    "score": 0.905
    },
    "ej mätt": {
-    "ja": 10,
+    "ja": 11,
     "kanske": 0,
-    "nej": 3,
-    "score": 0.733
+    "nej": 6,
+    "score": 0.632
    },
    "1,2–1,3×": {
     "ja": 7,
@@ -1271,16 +1379,16 @@
     "score": 0.636
    },
    "H_VISUELL_NYHET": {
-    "ja": 7,
-    "kanske": 1,
-    "nej": 2,
-    "score": 0.708
+    "ja": 9,
+    "kanske": 2,
+    "nej": 5,
+    "score": 0.611
    },
    "G_Q4_GAVA": {
     "ja": 11,
     "kanske": 2,
-    "nej": 1,
-    "score": 0.812
+    "nej": 3,
+    "score": 0.722
    },
    "E_VADER_SASONG": {
     "ja": 14,
@@ -1297,8 +1405,8 @@
    "F_HOBBY_IDENTITET": {
     "ja": 2,
     "kanske": 0,
-    "nej": 1,
-    "score": 0.6
+    "nej": 2,
+    "score": 0.5
    },
    "A4": {
     "ja": 3,
@@ -1449,10 +1557,10 @@
     "score": 0.667
    },
    "jul": {
-    "ja": 6,
-    "kanske": 1,
-    "nej": 3,
-    "score": 0.625
+    "ja": 8,
+    "kanske": 2,
+    "nej": 9,
+    "score": 0.476
    },
    "tjäle": {
     "ja": 2,
@@ -1493,10 +1601,10 @@
     "score": 0.667
    },
    "annat": {
-    "ja": 18,
-    "kanske": 6,
-    "nej": 7,
-    "score": 0.667
+    "ja": 20,
+    "kanske": 7,
+    "nej": 13,
+    "score": 0.583
    },
    "kalenderlåda": {
     "ja": 4,
@@ -2124,6 +2232,60 @@
     "nej": 1,
     "score": 0.333
    },
+   "NYTT: Balanstornet som tippar — 48 delar på en pinne": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Barnbarnets första flygande leksak — fågeln lyfter ur handen på gräsmattan": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Hockey-/skridskobarnbarnet i november — skäret tränas i strumporna på hallgolvet medan isen väntar": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Vardagsrumsgolvet i december — kulan ska in i mitten med fötterna, farmor mot barnbarnet på tid": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Vardagsrumsbordet på julafton — motorn drar vagnen upp, sedan åker den av sig själv": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Källarväggen/garaget i november — slå i takt med musiken, barnbarnen mot farfar på poäng": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Magnetstenarna på snöret — den som får dem att klicka ihop förlorar": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "NYTT: Tåget som kör runt julgranen — byggs på julafton, går av sig självt": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Travbanan på matbordet — batteridriven tivoliklassiker": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
    "Staketet — stolpen": {
     "ja": 2,
     "kanske": 0,
@@ -2151,10 +2313,10 @@
   },
   "prisband": {
    "500–999": {
-    "ja": 49,
+    "ja": 50,
     "kanske": 8,
-    "nej": 13,
-    "score": 0.75
+    "nej": 18,
+    "score": 0.705
    },
    "≥ 1 000": {
     "ja": 12,
@@ -2163,10 +2325,10 @@
     "score": 0.722
    },
    "300–499": {
-    "ja": 21,
-    "kanske": 3,
-    "nej": 1,
-    "score": 0.87
+    "ja": 22,
+    "kanske": 4,
+    "nej": 2,
+    "score": 0.833
    }
   }
  },

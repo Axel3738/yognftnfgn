@@ -21243,7 +21243,15 @@
    "arketyp": "H_VISUELL_NYHET",
    "arketyp_sekundar": "G_Q4_GAVA",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Travbanan på matbordet — batteridriven tivoliklassiker",
+    "form": "annat",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "jul",
+    "prisband": "500–999",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "ej hittat — ingen svensk aktör säljer en batteridriven hästkapplöpningsbana (sökt 2026-09-24)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -21306,10 +21314,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24-jul2",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T11:53:59.677Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -21319,6 +21335,10 @@
     {
      "datum": "2026-09-24-jul2",
      "handelse": "levererad på V3-arket (rank 1, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24-jul2",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Hästkapplöpningen, batteridriven tivoliklassiker"
@@ -21333,7 +21353,15 @@
    "arketyp": "H_VISUELL_NYHET",
    "arketyp_sekundar": "G_Q4_GAVA",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Barnbarnets första flygande leksak — fågeln lyfter ur handen på gräsmattan",
+    "form": "annat",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "jul",
+    "prisband": "500–999",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "X-Fly Bionic Bird (AliExpress, utländskt — inget svenskt ankare hittat)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -21396,10 +21424,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24-jul2",
+     "dom": "nej",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T11:55:12.492Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "nej",
    "aterupptas_om": [],
    "historik": [
     {
@@ -21409,6 +21445,10 @@
     {
      "datum": "2026-09-24-jul2",
      "handelse": "levererad på V3-arket (rank 2, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24-jul2",
+     "handelse": "Axel: nej "
     }
    ],
    "namn_sv": "RC-fågeln som flaxar, 2,4 GHz"
@@ -21423,7 +21463,15 @@
    "arketyp": "G_Q4_GAVA",
    "arketyp_sekundar": "H_VISUELL_NYHET",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Tåget som kör runt julgranen — byggs på julafton, går av sig självt",
+    "form": "annat",
+    "arketyp": "G_Q4_GAVA",
+    "deadline_typ": "jul",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "LEGO Julexpressen 10361"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -21486,10 +21534,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24-jul2",
+     "dom": "nej",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T11:55:10.296Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "nej",
    "aterupptas_om": [],
    "historik": [
     {
@@ -21499,6 +21555,10 @@
     {
      "datum": "2026-09-24-jul2",
      "handelse": "levererad på V3-arket (rank 3, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24-jul2",
+     "handelse": "Axel: nej "
     }
    ],
    "namn_sv": "Julexpressen i klossar med motor, 1 062 bitar"
@@ -21513,7 +21573,15 @@
    "arketyp": "G_Q4_GAVA",
    "arketyp_sekundar": "H_VISUELL_NYHET",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Vardagsrumsbordet på julafton — motorn drar vagnen upp, sedan åker den av sig själv",
+    "form": "annat",
+    "arketyp": "G_Q4_GAVA",
+    "deadline_typ": "jul",
+    "prisband": "500–999",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "LEGO Creator Roller Coaster 10261 (4 124 bitar — större sak)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -21576,10 +21644,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24-jul2",
+     "dom": "nej",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T11:55:09.635Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "nej",
    "aterupptas_om": [],
    "historik": [
     {
@@ -21589,6 +21665,10 @@
     {
      "datum": "2026-09-24-jul2",
      "handelse": "levererad på V3-arket (rank 4, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24-jul2",
+     "handelse": "Axel: nej "
     }
    ],
    "namn_sv": "Berg-och-dalbanan med motorhiss, klossar"
@@ -21603,7 +21683,15 @@
    "arketyp": "H_VISUELL_NYHET",
    "arketyp_sekundar": "G_Q4_GAVA",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Magnetstenarna på snöret — den som får dem att klicka ihop förlorar",
+    "form": "annat",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "jul",
+    "prisband": "300–499",
+    "ankare_klass": "golv utan ankare",
+    "ankare_kalla": "Borderline Editions Kluster (originalet, 24 stenar + snöre) — Coolstuff 299 kr; PriceRunner lägst 199 kr hos 32 butiker, 'WATCHED 50+'"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -21666,10 +21754,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24-jul2",
+     "dom": "kanske",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T11:55:16.388Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "kanske",
    "aterupptas_om": [],
    "historik": [
     {
@@ -21679,6 +21775,10 @@
     {
      "datum": "2026-09-24-jul2",
      "handelse": "levererad på V3-arket (rank 5, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24-jul2",
+     "handelse": "Axel: kanske "
     }
    ],
    "namn_sv": "Magnetschacket, guldstenar på snöre"
@@ -21693,7 +21793,15 @@
    "arketyp": "H_VISUELL_NYHET",
    "arketyp_sekundar": "G_Q4_GAVA",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Balanstornet som tippar — 48 delar på en pinne",
+    "form": "annat",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "jul",
+    "prisband": "300–499",
+    "ankare_klass": "golv utan ankare",
+    "ankare_kalla": "Hasbro Jenga (närmaste klassiker i 'stapla tills det rasar') — PriceRunner 179–199, Coolstuff 229; Goki Wooden Balance Game Tower 360"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -21756,10 +21864,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24-jul2",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T11:55:26.046Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -21769,6 +21885,10 @@
     {
      "datum": "2026-09-24-jul2",
      "handelse": "levererad på V3-arket (rank 6, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24-jul2",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Tetra Tower, balansstapling 48 delar"
@@ -21783,7 +21903,15 @@
    "arketyp": "H_VISUELL_NYHET",
    "arketyp_sekundar": "G_Q4_GAVA",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Ringen som ska på kroken — 4 spelare i trä",
+    "form": "annat",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "jul",
+    "prisband": "500–999",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "inget svenskt ankare i 4-spelarform hittat"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -21873,7 +22001,15 @@
    "arketyp": "H_VISUELL_NYHET",
    "arketyp_sekundar": "G_Q4_GAVA",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Källarväggen/garaget i november — slå i takt med musiken, barnbarnen mot farfar på poäng",
+    "form": "annat",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "jul",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "RIXCH Elektronisk Musik Boxningsmaskin Väggmonterad Smart Boxning (PriceRunner); Northio Elektronisk Bluetooth Boxningsmaskin Med LED 1 379; Mobiclinic 1 051"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -21936,10 +22072,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24-jul2",
+     "dom": "nej",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T11:55:36.159Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "nej",
    "aterupptas_om": [],
    "historik": [
     {
@@ -21949,6 +22093,10 @@
     {
      "datum": "2026-09-24-jul2",
      "handelse": "levererad på V3-arket (rank 8, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24-jul2",
+     "handelse": "Axel: nej "
     }
    ],
    "namn_sv": "Musikboxningsmaskinen för väggen, LED"
@@ -21963,7 +22111,15 @@
    "arketyp": "F_HOBBY_IDENTITET",
    "arketyp_sekundar": "G_Q4_GAVA",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Hockey-/skridskobarnbarnet i november — skäret tränas i strumporna på hallgolvet medan isen väntar",
+    "form": "annat",
+    "arketyp": "F_HOBBY_IDENTITET",
+    "deadline_typ": "jul",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "inSPORTline Slideboard Fluxlide 180cm"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -22026,10 +22182,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24-jul2",
+     "dom": "nej",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T11:55:49.818Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "nej",
    "aterupptas_om": [],
    "historik": [
     {
@@ -22039,6 +22203,10 @@
     {
      "datum": "2026-09-24-jul2",
      "handelse": "levererad på V3-arket (rank 9, sasong, konfidens LÅG)"
+    },
+    {
+     "datum": "2026-09-24-jul2",
+     "handelse": "Axel: nej "
     }
    ],
    "namn_sv": "Glidmattan 180 cm — skridskoskär i hallen"
@@ -22053,7 +22221,15 @@
    "arketyp": "H_VISUELL_NYHET",
    "arketyp_sekundar": "G_Q4_GAVA",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Vardagsrumsgolvet i december — kulan ska in i mitten med fötterna, farmor mot barnbarnet på tid",
+    "form": "annat",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "jul",
+    "prisband": "300–499",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "ej verifierat — Hape Balance Board Intelligent Trä 1 600 (PriceRunner) kan vara samma form men formen är inte läst"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -22116,10 +22292,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24-jul2",
+     "dom": "nej",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T11:55:54.008Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "nej",
    "aterupptas_om": [],
    "historik": [
     {
@@ -22129,6 +22313,10 @@
     {
      "datum": "2026-09-24-jul2",
      "handelse": "levererad på V3-arket (rank 10, sasong, konfidens LÅG)"
+    },
+    {
+     "datum": "2026-09-24-jul2",
+     "handelse": "Axel: nej "
     }
    ],
    "namn_sv": "Balansbrädan med kullabyrint, trä"
