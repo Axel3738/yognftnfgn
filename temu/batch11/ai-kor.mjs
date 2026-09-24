@@ -64,7 +64,7 @@ async function video() {
     if (bara.length && !bara.includes(id)) continue;
     if (!a.video) continue;
     const mp4 = path.join(UT, id, 'video.mp4'); if (existsSync(mp4)) { console.log(`= ${id}/video finns`); await gif(id, mp4); continue; }
-    const r = await (await fetch('https://api.kie.ai/api/v1/veo/generate', { method: 'POST', headers: h, body: JSON.stringify({ prompt: a.video.prompt + GUARD_VIDEO, imageUrls: [ref(id, a.video.ref)], model: 'veo3_fast', aspectRatio: '16:9', generationType: 'REFERENCE_2_VIDEO' }) })).json();
+    const r = await (await fetch('https://api.kie.ai/api/v1/veo/generate', { method: 'POST', headers: h, body: JSON.stringify({ prompt: a.video.prompt + GUARD_VIDEO, imageUrls: [ref(id, a.video.ref)], model: 'veo3_fast', aspectRatio: '16:9', generationType: 'REFERENCE_2_VIDEO', enableFallback: true }) })).json();   // enableFallback: KIE byter modell när Veo svarar 500 "Internal Error" (kamadohuv/värmesulor fem gånger i rad) — bara 16:9/9:16
     if (r.code !== 200) { console.log(`! ${id}/video: ${JSON.stringify(r).slice(0, 200)}`); continue; }
     jobb.push({ id, task: r.data.taskId, mp4 }); console.log(`→ ${id}/video ${r.data.taskId}`);
     await sov(4000);   // KIE svarar 429 på tätare anrop
