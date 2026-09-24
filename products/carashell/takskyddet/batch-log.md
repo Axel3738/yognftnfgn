@@ -1966,3 +1966,9 @@ levererade ~5 000 kr. Köpen är oförändrade (10–14/dygn) medan pengarna 2,5
 
 NO och DK körs fortfarande utan vakt på 4 000 kr/dygn vardera (rapporterat 2026-09-23,
 Axels beslut väntar).
+
+## 2026-09-24 — leveransrundan: fjärde dygnet, oförändrat
+
+Samma två rader, samma md5, samma slutkort med `carashell.se`. Inget
+uppladdat, ingen status ändrad, inga nya kommentarer. Kontot står still på
+748 annonser sedan i går.
