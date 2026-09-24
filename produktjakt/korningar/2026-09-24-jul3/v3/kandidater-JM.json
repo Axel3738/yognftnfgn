@@ -1,0 +1,135 @@
+{
+  "agent": "JM — RC-arbetsmaskiner",
+  "datum": "2026-09-24-jul3",
+  "sammanfattning": "0 kandidater av 17 prövade former. Strukturen 'RC-arbetsmaskin som gör riktigt jobb i miniatyr' är kedjornas sortiment i Sverige: Amewi, Jamara, HuiNa, Carson, Revell, Rastar och Toymax distribueras via PriceRunner i varje form som finns på AliExpress under 55 USD (traktor 1:16 20+ varianter, hjullastare 8–10, gaffeltruck 7, kranbil 5, betongbil 4, skördetröska 4, bogserbåt 3 i exakt form 516–660). De hyllor som ÄR tomma i Sverige — RC-snöslunga som slungar snö, RC-skotare/skogsmaskin, RC-timmerbil med kran, RC-pistmaskin, RC-bärgningsbil med vinsch — finns på AliExpress bara som hobbytillbehör till 1/10–1/12-crawlers (133–180 USD), 19-kanals HuiNa 1:18 (93 USD) eller hydraulik i metall (1 173–5 800 USD): landad ≥ 1 350 kr mot pristaket 999. Betesbåten är en äkta lucka i pris (svenskt golv 1 789+) men billigaste AliExpress-listning 95 USD → landad 1 379. Två produktsidor öppnades och heron sågs (sopbil 1:12, 'kranbil' 38,81 USD) — båda föll på att bilden inte är titelns vara (tippbil med inbränd text; bandkran med Yiling-märke och rökeffekt). Golvet lästes FÖRE ali.py på alla former (PriceRunner via curl, 27 sökningar 12:00–12:09Z), 26 AliExpress-fraser. Lärdom för LEARNING_STATE: RC-arbetsmaskiner är samma mönster som Temu-kategorierna i julrunda 1 — det som finns billigt finns redan i kedjan, det som saknas i kedjan kostar hobbypris.",
+  "kandidater": [],
+  "strukna": [
+    {
+      "namn": "RC-snöslunga som kastar riktig snö (viral decemberform)",
+      "skal": "Golv läst FÖRE (PriceRunner 'rc snöslunga' 12:00:21Z: 0 relevanta, bara Lexibook-bilar och skidhandskar; 'radiostyrd snöslunga': snösläder; 'rc snow blower': tom) — äkta tom hylla. Men AliExpress har ingen leksaksgradig komplett maskin: fyra fraser ('rc snow blower toy throws real snow', 'remote control snow thrower toy children', 'rc snow blower model toy 1:12', 'rc snow sweeper vehicle toy 2.4g') ger bara tillbehör till 1/12-crawlers (1005008200674873 179,99 USD, 1005008200893305 172,69), 'RC Metal Snowplow Snow Blower Lift Turbine' 1005011644426734 133,69 / 1005008964798659 159,37 (3D-printad påbyggnad) och riktiga maskiner 1 134–1 541 USD. Billigaste kompletta 133,69 USD → landad 1 933 kr, pristak 999 (H04 gäller inte). Struken på ekonomi, inte på lucka.",
+      "kallor": [
+        "https://www.pricerunner.se/search?q=rc%20sn%C3%B6slunga",
+        "https://www.aliexpress.com/w/wholesale-rc-snow-blower-toy-throws-real-snow.html",
+        "https://www.aliexpress.com/item/1005011644426734.html"
+      ]
+    },
+    {
+      "namn": "RC-snöplog / hjullastare med plogblad i metall",
+      "skal": "PriceRunner 'rc snöplog' (12:00Z): bara Husqvarna riktiga snöblad 6 990–18 900 och RC-tillbehör; närmaste leksak är Amewi 'RC Traktor med skrapa Push Blade' 264 kr (1:24) = plogform i kedja under oss. AliExpress: metallplogblad är tillbehör till Traxxas/Axial 1/10 (29,99–74,49 USD, 1005012831429494, 1005006262463307) och hjullastaren Double E E594 1/14 kompaktlastare 57,89–59,69 USD (1005007994366284, 1005010707076064) → landad 753–921 → BE-CPA 78–246 vid 999, undre kant < 190. Hjullastarformen har dessutom golv Amewi 436 / Jamara 492 / HuiNa 487 / Carrera CAT 289 / Kayoba 599 (PriceRunner 'rc hjullastare' + 'radiostyrd vägvält').",
+      "kallor": [
+        "https://www.pricerunner.se/search?q=rc%20sn%C3%B6plog",
+        "https://www.pricerunner.se/search?q=rc%20hjullastare",
+        "https://www.aliexpress.com/item/1005007994366284.html"
+      ]
+    },
+    {
+      "namn": "RC-traktor 1:16 med släp / skogsvagn (Bruder-ankare)",
+      "skal": "Golvet är hela marknaden i RC-form: PriceRunner 'rc traktor 1:16' + 'radiostyrd traktor med släp' (12:00Z) ger 20+ varianter — Happy People Claas 635, Jamara JCB 764 / Lindner frontlastare 766, MCU JCB 839, Carson frontlastare 950, Maisto New Holland 599 / Fergusson 650, Tomy John Deere 349, Revell Claas 1:18 257, Amewi 1:24 264–435 (skrapa, tippande, boskapstransport, kratta), Power X med trailer 325. Sortiment 20+ → fälls enligt golvregeln. AliExpress 'rc tractor 1:16 with trailer log' gav inget i 1:16 utom HuiNa 1501 770S 1:18 93,49 USD (landad 1 352) och diecast utan RC.",
+      "kallor": [
+        "https://www.pricerunner.se/search?q=rc%20traktor%201%3A16",
+        "https://www.pricerunner.se/search?q=radiostyrd%20traktor%20med%20sl%C3%A4p"
+      ]
+    },
+    {
+      "namn": "RC-timmerbil med kran som lyfter / RC-skotare / RC-skogsmaskin",
+      "skal": "Tom hylla i Sverige (PriceRunner 'radiostyrd timmerbil kran', 'rc timmerbil', 'radiostyrd skotare skogsmaskin', 'rc skogsmaskin' 12:00–12:02Z: inga timmerbilar, bara tornkranar/kranbilar och grävare). AliExpress saknar leksaksgraden: fyra fraser ('rc log truck with crane timber', 'rc forestry forwarder log loader', 'rc timber truck crane 2.4g toy', 'rc log loader truck grapple toy alloy', 'rc log truck 1:24 2.4g timber transporter') ger LESU-hydraulik 1 897–5 849 USD, MOC-klossar 167 USD, HuiNa 1501 770S 1:18 19CH 93,49–102,39 USD (landad 1 352–1 480) och diecast 1:32/1:87 utan RC. Ingen listning under 55 USD.",
+      "kallor": [
+        "https://www.pricerunner.se/search?q=radiostyrd%20timmerbil%20kran",
+        "https://www.aliexpress.com/w/wholesale-rc-log-truck-with-crane-timber.html",
+        "https://www.aliexpress.com/item/1005013164760307.html"
+      ]
+    },
+    {
+      "namn": "RC-kranbil ('RC Crane Tractor 2.4G 15CH Alloy Arm', AliExpress 1005010177142113, 38,81 USD)",
+      "skal": "Produktsidan öppnad 12:05:11Z, hero nedladdad (korningar/2026-09-24-jul3/v3/bilder/1005010177142113.jpg) och sedd: bilden visar en bandkran + en separat grävare i ett collage med inbränd text ('TRUCK', 'YILING', 'POWER'), rökeffekt ur skorstenen och en hand med kontroll — barnleksak (K8), inte timmerbilen konceptet sökte. Golv i kranform: Pricenet kran 495, Megaleg tornkran 559, Power X 436, HuiNa bandkran 1 150 (1,28× mot 899 — under 1,6), Jamara 908; JG strök tornkranen i dag på samma sortiment. Struken på K8 + samma SAK som JG:s strykning.",
+      "kallor": [
+        "https://www.aliexpress.com/item/1005010177142113.html",
+        "https://www.pricerunner.se/search?q=rc%20kranbil"
+      ]
+    },
+    {
+      "namn": "RC-betesbåt / foderbåt för fiskaren (bait boat)",
+      "skal": "Äkta prislucka i Sverige: PriceRunner 'betesbåt' + 'bait boat' (12:01Z) börjar på 1 789 (V030 Basic), 2 069 (Northio Flytec V900), 2 295 (Joysway Baiting 500), 2 396 (Amewi) — inget under 999. Men AliExpress billigaste: MBLN Mini Bait Boat 500 m 95,39 USD (1005010724611087), '1.5kg 500m' 106,89 USD (1005012775158071), Flytec V802/V803 182–222 USD → landad ≥ 1 379 kr. Kan inte prissättas under taket 999 med BE-CPA ≥ 190 (skulle behöva ≤ 56 USD). Fel årstid för bruk dessutom (karpfiske vår–höst); som julklapp ok men ekonomin faller först.",
+      "kallor": [
+        "https://www.pricerunner.se/search?q=betesb%C3%A5t",
+        "https://www.aliexpress.com/w/wholesale-mini-rc-bait-boat-fishing-200m.html",
+        "https://www.aliexpress.com/item/1005010724611087.html"
+      ]
+    },
+    {
+      "namn": "RC-segelbåt 60–80 cm för 'mannen med båten'",
+      "skal": "Golv i exakt form på PriceRunner 'radiostyrd segelbåt' (12:01Z): Ninco Sailfish 369, Jamara Atlantique 568, Joysway Caribbean V3 839, Orion V2 1 389; ankare Joysway Focus 1M 3 749 / Dragon Force 65 3 495 (≥ 1,6× finns). AliExpress gav ingen segelbåt i 60–80 cm under 55 USD på tre fraser ('rc sailboat 2.4g 65cm', 'rc sailing yacht boat remote control', 'rc sailboat wind power 2.4g', 'sailboat remote control 2.4ghz 650mm rtr') — bara speedbåtar 11–34 USD med ordet 'sailboat' i titeln, en glasfiberbåt 420 USD och sändare. Ingen listning = ingen kandidat.",
+      "kallor": [
+        "https://www.pricerunner.se/search?q=radiostyrd%20segelb%C3%A5t",
+        "https://www.aliexpress.com/w/wholesale-rc-sailing-yacht-boat-remote-control.html"
+      ]
+    },
+    {
+      "namn": "RC-bogserbåt",
+      "skal": "Golv i exakt form under oss utan ankare ≥ 1,6×: PriceRunner 'rc bogserbåt' (12:01Z) — Heng Tug Boat mini 516 (två färger), 'RC Bogserbåt 2.4G dubbelmotor' 547, Amewi Fairplay I 1:72 660. Inte sökt på AliExpress (formen är tagen).",
+      "kallor": ["https://www.pricerunner.se/search?q=rc%20bogserb%C3%A5t"]
+    },
+    {
+      "namn": "RC-hydraulisk grävare i metall ≥ 1:14",
+      "skal": "JG strök plastvarianten på sortiment (20 varianter). Metall/hydraulik-villkoret prövat: PriceRunner 'radiostyrd grävmaskin metall hydraulisk' (12:07Z) Amewi ACV730 metallväxlar 2 192, Amewi G704E full metal 6 247, HuiNa 22ch 5 195 = ankare finns; men AliExpress 'rc hydraulic excavator metal 1:14' ger Double E E111/EC160E KIT 1 173–2 161 USD, '374' 4 361 USD — 44,89-dollarsträffarna (1005010198191211) är ett snabbfäste, inte en grävare. Landad ≥ 17 000 kr. Omöjlig ekonomi.",
+      "kallor": [
+        "https://www.pricerunner.se/search?q=radiostyrd%20gr%C3%A4vmaskin%20metall%20hydraulisk",
+        "https://www.aliexpress.com/w/wholesale-rc-hydraulic-excavator-metal-1-14.html"
+      ]
+    },
+    {
+      "namn": "RC-gaffeltruck som lyfter",
+      "skal": "Golv i exakt form under oss: PriceRunner 'rc gaffeltruck' (12:01Z) Revell Control 1:16 379, Megaleg XM6833L 489, generisk 1:10 434, Amewi 1:64 332, Toymax 1:64 296; ankare Megaleg 1:10 1 049 / Amewi Forklift 1 158 = 1,2–1,3× mot 899, under 1,6. Sju varianter. Inte sökt på AliExpress.",
+      "kallor": ["https://www.pricerunner.se/search?q=rc%20gaffeltruck"]
+    },
+    {
+      "namn": "RC-sopbil med fungerande lyft ('1:12 RC Sanitation Truck Liftable', AliExpress 1005010113248085, 43,89 USD)",
+      "skal": "Produktsidan öppnad 12:05:09Z, hero nedladdad (korningar/2026-09-24-jul3/v3/bilder/1005010113248085.jpg) och sedd: bilden visar en grön TIPPBIL ('DUMP TRUCK MODEL' inbränt på flaket, 'Heavy Truck' på dörren) i gräs — inte en sopbil med lyftarm. Titel ≠ vara → samma_produkt = false. Tippbilsformen har golv Jamara 326, Toymax 1:18 407, Lexibook 539, HuiNa 829 (PriceRunner). Sopbilsformen: Buki France RC Sopbil 295 (PriceRunner 12:07Z) under oss utan ankare; 1:24-varianten 1005006198220456 44,19 USD och 6CH-varianten 14,59 USD är för små för 899 (K8). Struken.",
+      "kallor": [
+        "https://www.aliexpress.com/item/1005010113248085.html",
+        "https://www.pricerunner.se/search?q=buki%20sopbil"
+      ]
+    },
+    {
+      "namn": "RC-betongbil med roterande trumma",
+      "skal": "Golv i exakt form: PriceRunner 'rc betongbil' (12:04Z) Jamara 545, Rastar Actros 559, Carson Arocs 1:20 990, HuiNa 1:14 1 360 (1,5× mot 899 — under 1,6). AliExpress 'rc cement mixer truck 2.4g rotating drum' gav bara 1:14-modell 217,59 USD och riktiga blandare. Ingen listning under 55 USD.",
+      "kallor": ["https://www.pricerunner.se/search?q=rc%20betongbil"]
+    },
+    {
+      "namn": "RC-skördetröska / ensilagehack",
+      "skal": "Golv i exakt form under oss: PriceRunner 'radiostyrd skördetröska' (12:04Z) Korody 1:24 alloy 459 / 459 / 559, Adlibris SpeedX silage harvester 379; ankare bara Wiking byggsats 2 657 (inte RC). AliExpress 'rc combine harvester 2.4g toy' gav inga RC-tröskor (bara 5–9-dollars traktorer och diecast 122 USD).",
+      "kallor": ["https://www.pricerunner.se/search?q=radiostyrd%20sk%C3%B6rdetr%C3%B6ska"]
+    },
+    {
+      "namn": "RC-pistmaskin (barnbarnets vinterfavorit)",
+      "skal": "Sverige: Dickie Toys RC Pistenbully 600 779 kr (PriceRunner, licensform) = en listning. AliExpress 'rc snow groomer piste toy': bara Prinoth-diecast 1:43 74,88 USD, MOC-klossar 'Snow Groomer' 99,99 USD (1005006918618848) och bandsatser. Ingen generisk RC-pistmaskin under 55 USD.",
+      "kallor": [
+        "https://www.pricerunner.se/search?q=rc%20betongbil",
+        "https://www.aliexpress.com/w/wholesale-rc-snow-groomer-piste-toy.html"
+      ]
+    },
+    {
+      "namn": "RC-bärgningsbil med fungerande vinsch",
+      "skal": "Tom hylla (PriceRunner 'radiostyrd bärgningsbil' 12:04Z: inga bärgningsbilar) men AliExpress 'rc tow truck winch 2.4g 1:16' ger bara vinschar som reservdel till WPL-crawlers (11–23 USD) och LESU-vinsch 53 USD — ingen komplett bil. Ingen listning.",
+      "kallor": ["https://www.aliexpress.com/w/wholesale-rc-tow-truck-winch-2-4g-1-16.html"]
+    },
+    {
+      "namn": "RC-dumper 1:14 / vägvält",
+      "skal": "Dumper: golv Jamara 326, Toymax 1:18 407, MCU 1:24 379, Lexibook 539, HuiNa 829–1 670 (PriceRunner 'radiostyrd dumper 1:14', 'rc gaffeltruck'); AliExpress HuiNa 1536PRO 531 USD, generisk 1:20 9CH 34,73 USD (ser ut som 299 — K8). Vägvält: AliExpress 'Large 1:20 RC Road Roller' 94,09 USD (1005012412222062) → landad 1 360, över taket; PriceRunner 'radiostyrd vägvält' tom på vältar.",
+      "kallor": [
+        "https://www.pricerunner.se/search?q=radiostyrd%20dumper%201%3A14",
+        "https://www.aliexpress.com/w/wholesale-rc-road-roller-2-4g-alloy-1-20.html"
+      ]
+    },
+    {
+      "namn": "RC-vedklyv / RC-vedkran",
+      "skal": "Finns inte som leksaksform — inte sökt (AliExpress 'rc forestry forwarder log loader' gav bara riktiga vedklyvar 402 USD och flismaskiner).",
+      "kallor": []
+    },
+    {
+      "namn": "RC-fågel, RC-dinosaurie, robothund, RC-grävmaskin (plast, sortiment 20), amfibiebil, hovercraft, väggklättrare, drönare > 250 g, RC-snöskoter, RC-tornkran, RC-brandbil, RC-bilar (K0: driftbil 1:24 + offroad 1:16 i katalogen)",
+      "skal": "Prövade i julrunda 1–2 (REDAN-PROVAT.md) eller K0 — inte sökta om.",
+      "kallor": []
+    }
+  ]
+}
