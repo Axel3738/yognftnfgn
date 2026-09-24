@@ -85,7 +85,7 @@ export const GALLERI = {
   // Axel 2026-09-24 (andra granskningen): första bilden var QC-fotot och GIF:en "riktigt dålig". Fil 20 var dessutom FEL ask
   // ("ADVENT CALENDAR"-designen med engelsk text) — den riktiga produkten är "Merry Christmas"-asken (QC-fotot), fil 19 utan textöverlägg.
   // Stengallret i fil 11 visar 32 stenar, så alt-texten får inte säga "24".
-  adelstenskalender: { qc: 'sist', bort: ['Den röda asken öppen med grävblocken', '24 stenar'], bilder: [
+  adelstenskalender: { qc: 'sist', bort: ['Den röda asken öppen med grävblocken', '24 stenar'], bilder: [   // GIF:en byttes med ersatt 2026-09-24, flaggan borttagen
     { fil: '19', alt: 'Ädelstenskalendern öppen: 24 luckor, grävblocken, hammaren, penseln och luppen' },
     { fil: '11', ny: '11b', alt: 'Exempel på ädelstenar som kan gömma sig i blocken', crop: [0.07, 0.63, 0.88, 0.35] },
   ] },
