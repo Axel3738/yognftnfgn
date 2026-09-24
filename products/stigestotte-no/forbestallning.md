@@ -58,3 +58,10 @@ Allt nedan är MÄTT 2026-09-24 04:00–04:45 UTC om inget annat står.
 8. Mejl: SKU-gren i fraktmallen och en norsk orderbekräftelse med förbeställningsvillkor.
 9. Kod: InfoReceived = "fraktsedel bokad" i autosvar/sparning/tvistfakta, och förbeställningsläge per SKU.
 10. Ny copy med äkta datum, skriven för män 55+. CS-voiceovern måste göras om.
+
+## Beslut
+- 2026-09-24: Axel bekräftade produkten (Stigestøtte 2-pk NO). Leverantörens datum inväntas.
+- 2026-09-24 ~07:00 CEST: kampanjen `120252183673160233` PAUSAD av sessionen (Axel: "du får göra research").
+  Underlag: 21–24 sep 7 310 SEK, 3 köp, ROAS 0,40 / 0,92 / 0 mot break-even 1,63, och varan skickas inte.
+  Tillbakaläst: `status PAUSED, effective_status PAUSED`. Pausad med spend = beslut: ingen rutin slår på den.
+  Slås på igen först när förbeställningen är live med äkta datum och copyn utan "kun i dag".
