@@ -525,7 +525,7 @@ export function arAvstangd(logg, kampanjId) {
   return senaste !== null && senaste.kod === 'STANG_AV';
 }
 
-export function annonsbehov(rader, { logg = [], idag = null, marknad = 'SE' } = {}) {
+export function annonsbehov(rader, { logg = [], idag = null, marknad = 'SE', spegel = {} } = {}) {
   if (idag === null) return [];
   // Bara Sverige får briefer. Axels besked 2026-09-01: de norska annonserna ÄR
   // de svenska annonserna, översatta i ett eget flöde (/translate-no). Ronden
@@ -604,7 +604,10 @@ export function annonsbehov(rader, { logg = [], idag = null, marknad = 'SE' } = 
 
     if (harBatch) {
       if (dagarSedanBatch !== null && dagarSedanBatch < BRIEF_INTERVALL_DAGAR) continue; // låt batchen landa
-      const budgetAntal = rundkvot(r.budget);
+      // Spegelmarknaderna (Axel 2026-09-24): CaraShells budget i OPS- och
+      // USA-kontot räknas in i kvoten — så många marknader, så många extra.
+      const sp = spegel?.[r.id] ?? null;
+      const budgetAntal = rundkvot(r.budget, { marknader: sp?.antal_marknader ?? 0 });
       if (budgetAntal === 0) continue; // ingen budget — ingen runda
       // Punkt 8: antalet briefer överstiger aldrig antalet lärdomar vi hunnit
       // skriva sedan förra batchen. Budgeten sätter bara ett övre golv.
@@ -630,10 +633,10 @@ export function annonsbehov(rader, { logg = [], idag = null, marknad = 'SE' } = 
       }
       behov.push({
         kampanj_id: r.id, namn: r.namn, typ: 'brief_runda',
-        dagarSedanBatch, rundaAntal, budgetAntal, brieftak: tak, mix: m, funnellage: Boolean(r.funnellage), invandningar: r.invandningar ?? null,
+        dagarSedanBatch, rundaAntal, budgetAntal, brieftak: tak, mix: m, funnellage: Boolean(r.funnellage), invandningar: r.invandningar ?? null, spegel: sp,
         orsak: rundaAntal === 0
           ? `${dagarSedanBatch} dagar sedan senaste batchen, men 0 lärdomar skrivna sedan dess (${tak.etiketterade_utan_lardom} etiketterade annonser utan lärdom) — inga briefer förrän lärdomarna finns (punkt 8): node agent/lardom.mjs --skelett --kampanj ${r.id}.${fokus}${funnel}`
-          : `${dagarSedanBatch} dagar sedan senaste batchen — dags för 3-dagarsrundan (${rundaAntal} annonser via /cs; budgeten hade gett ${budgetAntal}, lärdomarna sedan förra batchen ${tak.tak}${tak.namngivna?.length ? ` + ${tak.namngivna.length} namngivna i lärdomarna: ${tak.namngivna.join(', ')}` : ''}${funnelBygg.length ? ` + ${funnelBygg.length} rutor i matrisen` : ''}). Mix ${Math.round(m.vidarebyggen * 100)} % vidarebyggen / ${Math.round(m.nya * 100)} % nya vinklar (${m.skal}).${fokus}${funnel}`,
+          : `${dagarSedanBatch} dagar sedan senaste batchen — dags för 3-dagarsrundan (${rundaAntal} annonser via /cs; budgeten hade gett ${budgetAntal}${sp?.antal_marknader ? ` inkl. ${sp.antal_marknader} spegelmarknad(er) à ${SPEGEL_BRIEFER_PER_MARKNAD}: ${sp.marknader.map((x) => `${x.kod} ${kr(x.budget)}/dag`).join(', ')}` : ''}, lärdomarna sedan förra batchen ${tak.tak}${tak.namngivna?.length ? ` + ${tak.namngivna.length} namngivna i lärdomarna: ${tak.namngivna.join(', ')}` : ''}${funnelBygg.length ? ` + ${funnelBygg.length} rutor i matrisen` : ''}). Mix ${Math.round(m.vidarebyggen * 100)} % vidarebyggen / ${Math.round(m.nya * 100)} % nya vinklar (${m.skal}).${fokus}${funnel}`,
       });
       continue;
     }
@@ -685,9 +688,60 @@ export function annonsbehov(rader, { logg = [], idag = null, marknad = 'SE' } = 
  * lämnade redigerarna utan jobb.
  */
 export const RUNDA_MINST = 4;
-export function rundkvot(budgetSek) {
+/**
+ * Spegelmarknaderna (Axels beslut 2026-09-24): "jag sköter budgetarna, men
+ * jag vill att du tar hänsyn till hur mycket spend de marknaderna får och
+ * sen utifrån det hur många briefs vi gör." Varje aktiv spegelmarknad
+ * (CaraShell SE/NO/DK/US/AU …) ger så här många briefer EXTRA per runda,
+ * ovanpå Bäverbutikens egen rundkvot. **0 tills Axel valt talet** — då står
+ * marknaderna bara i rapporten. Talet är hans, aldrig motorns.
+ */
+export const SPEGEL_BRIEFER_PER_MARKNAD = 0;
+export function rundkvot(budgetSek, { marknader = 0 } = {}) {
   const vecka = annonskvot(budgetSek).antal;
-  return vecka === 0 ? 0 : Math.max(RUNDA_MINST, vecka * 2);
+  if (vecka === 0) return 0;
+  const extra = Number.isFinite(marknader) && marknader > 0 ? marknader * SPEGEL_BRIEFER_PER_MARKNAD : 0;
+  return Math.max(RUNDA_MINST, vecka * 2) + extra;
+}
+
+/**
+ * Spegelkampanjernas budget för en produkt, ur agent/spegelbudget.json
+ * (skrivs av /rond-auto steg 1c ur OPS- och USA-kontot). Ren.
+ *
+ * `post.speglar.monster` är ett regex mot kampanjnamnet; bara ACTIVE
+ * kampanjer räknas. Marknaden läses ur namnet: `CARASHELL_<SE|NO|DK|FI>_`
+ * eller ett inledande `US|AU|UK|CA|NZ`/`_US_`. Kampanjer på samma marknad
+ * (listicle + huvudkampanj) slås ihop till EN marknad.
+ * Returnerar null när produkten inte speglas eller datan saknas.
+ */
+export function spegelbudget(post, spegeldata) {
+  const monster = post?.speglar?.monster;
+  if (!monster || !spegeldata?.konton) return null;
+  let re;
+  try { re = new RegExp(monster, 'i'); } catch { return null; }
+  const marknader = {};
+  for (const [kontoId, konto] of Object.entries(spegeldata.konton)) {
+    for (const k of konto?.kampanjer ?? []) {
+      const namn = String(k.namn ?? '');
+      if (!re.test(namn) || k.effective_status !== 'ACTIVE') continue;
+      const m = /CARASHELL_(SE|NO|DK|FI|US|UK)_/i.exec(namn) ?? /^(?:\d+\s+)?(US|AU|UK|CA|NZ)\b/i.exec(namn) ?? /_(US|AU|UK|CA|NZ)_/i.exec(namn);
+      const kod = m ? m[1].toUpperCase() : 'OKÄND';
+      const budget = lasBelopp(k.daily_budget);
+      const spend = Number.isFinite(k.spend_3d) ? k.spend_3d : null;
+      const mk = marknader[kod] ?? (marknader[kod] = { kod, budget: 0, spend_3d: 0, kampanjer: [], konto: kontoId });
+      mk.budget += Number.isFinite(budget) ? budget : 0;
+      mk.spend_3d += spend ?? 0;
+      mk.kampanjer.push(namn.split('|')[0].trim());
+    }
+  }
+  const lista = Object.values(marknader).sort((a, b) => b.budget - a.budget);
+  return {
+    hamtad: spegeldata.hamtad ?? null,
+    marknader: lista,
+    antal_marknader: lista.length,
+    budget: lista.reduce((s, m) => s + m.budget, 0),
+    spend_3d: lista.reduce((s, m) => s + m.spend_3d, 0),
+  };
 }
 
 function b_spend(rader, behovsrad) {
@@ -792,6 +846,22 @@ export function rapport(rader, meta, behov = []) {
     ut.push('Listicle / lagerrensning / vi-testade / anledningar styrs för hand (Axels order 2026-09-22). Ingen höjning, ingen sänkning, ingen paus, inga briefer, ingen spendtjuv.');
     ut.push('');
     for (const r of agarens) ut.push(`- **${r.namn.split('|')[0].trim()}** — ${kr(r.budget)}/dag${Number.isFinite(r.roas3d) ? ` · ROAS 3d ${r.roas3d.toFixed(2).replace('.', ',')}` : ''}${Number.isFinite(r.dom.breakEven) ? ` · break-even ${r.dom.breakEven.toFixed(2).replace('.', ',')}` : ''} · dom AGARENS`);
+    ut.push('');
+  }
+
+  // Spegelmarknaderna (Axel 2026-09-24): CaraShells budget per marknad, så
+  // det syns hur mycket produkten egentligen spenderar — Axel sköter de
+  // budgetarna själv, ronden räknar in dem i briefkvoten.
+  const speglade = rader.filter((r) => meta.spegel?.[r.id]?.antal_marknader);
+  if (speglade.length) {
+    ut.push(`## 🪞 Spegelmarknader — CaraShell (${speglade.length} produkt${speglade.length === 1 ? '' : 'er'})`);
+    ut.push('');
+    ut.push(`Budgetarna där är Axels (rörs aldrig av motorn). De räknas in i briefkvoten: ${SPEGEL_BRIEFER_PER_MARKNAD} extra brief(er) per aktiv marknad (SPEGEL_BRIEFER_PER_MARKNAD${SPEGEL_BRIEFER_PER_MARKNAD === 0 ? ' — 0 tills Axel valt talet' : ''}).`);
+    ut.push('');
+    for (const r of speglade) {
+      const s = meta.spegel[r.id];
+      ut.push(`- **${r.namn.split('|')[0].trim()}** — Bäverbutiken ${kr(r.budget)}/dag + spegel ${kr(s.budget)}/dag på ${s.antal_marknader} marknad(er): ${s.marknader.map((m) => `${m.kod} ${kr(m.budget)}/dag (3 d ${kr(m.spend_3d)})`).join(', ')}`);
+    }
     ut.push('');
   }
 
@@ -1003,9 +1073,25 @@ async function main() {
     varningar.push(`${utankarta.length} kampanj(er) saknas i produktkarta.json och kördes som testprodukt: ${utankarta.map((r) => r.namn.split('|')[0].trim()).join(', ')}.`);
   }
 
-  const meta = { idag, hamtad: data.hamtad, marknad, varningar, surf: Boolean(surf) };
+  // Spegelmarknaderna (Axel 2026-09-24): CaraShells budget i OPS- och
+  // USA-kontot, ur agent/spegelbudget.json. Bara för briefkvoten och
+  // rapporten — budgetronden rör aldrig de kontona.
+  const spegel = {};
+  const spegeldata = await lasSpegelbudget();
+  if (spegeldata) {
+    const alder = (Date.now() - Date.parse(spegeldata.hamtad ?? '')) / 3600000;
+    if (!Number.isFinite(alder) || alder > MAX_DATAALDER_TIMMAR) {
+      varningar.push(`agent/spegelbudget.json är ${Number.isFinite(alder) ? `${Math.round(alder)} timmar gammal` : 'utan hamtad-stämpel'} — spegelmarknaderna räknas inte i dag. Hämta CaraShell-kampanjerna i OPS- och USA-kontot (rond-auto steg 1c).`);
+    } else {
+      for (const r of rader) { const s = spegelbudget(karta[r.id], spegeldata); if (s) spegel[r.id] = s; }
+    }
+  } else if (Object.values(karta).some((p) => p?.speglar)) {
+    varningar.push('agent/spegelbudget.json saknas — spegelmarknaderna (CaraShell) räknas inte i briefkvoten i dag (rond-auto steg 1c).');
+  }
+
+  const meta = { idag, hamtad: data.hamtad, marknad, varningar, surf: Boolean(surf), spegel };
   if (argv.includes('--json')) {
-    const behovslista = annonsbehov(rader, { logg, idag, marknad }).map((b) => {
+    const behovslista = annonsbehov(rader, { logg, idag, marknad, spegel }).map((b) => {
       const rad = rader.find((r) => r.id === b.kampanj_id);
       return { ...b, veckokvot: annonskvot(rad?.budget) };
     });
@@ -1014,7 +1100,16 @@ async function main() {
       veckokvot: rader.map((r) => ({ kampanj_id: r.id, namn: r.namn, ...annonskvot(r.budget) })),
     }, null, 2));
   } else {
-    console.log(rapport(rader, meta, annonsbehov(rader, { logg, idag, marknad })));
+    console.log(rapport(rader, meta, annonsbehov(rader, { logg, idag, marknad, spegel })));
+  }
+}
+
+/** agent/spegelbudget.json, eller null när filen saknas eller inte går att läsa. */
+async function lasSpegelbudget() {
+  try {
+    return JSON.parse(await readFile(join(HÄR, 'spegelbudget.json'), 'utf8'));
+  } catch {
+    return null;
   }
 }
 

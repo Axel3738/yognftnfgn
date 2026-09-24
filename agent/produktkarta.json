@@ -183,6 +183,10 @@
         "sek": 0,
         "kalla": "Axels prissheet (Google Sheet 10VrOx…, fliken ALLA PRODUKTER, rad 399: \"Utvändigt termoskydd till husbilens vindruta\"), 1 st till Sverige: produkt + frakt 6,82 + 9,17 = 15.99 USD, plus 2,9 EUR EU-avgift per order (sheetets rubrik \"total cost without 2,9 eur tax\"). Priset 559 kr läst ur baverbutiken.se/products.json 2026-09-22. Axels beslut 2026-09-22: marginalerna räknas ur sheetet.",
         "datum": "2026-09-22"
+      },
+      "speglar": {
+        "monster": "Termoskydd",
+        "not": "Samma som Taköverdraget: speglas till CaraShell, budgetarna är Axels, ronden räknar in marknaderna i briefkvoten (agent/spegelbudget.json)."
       }
     },
     {
@@ -957,6 +961,10 @@
         "sek": 0,
         "kalla": "Axels prissheet (Google Sheet 10VrOx…, fliken ALLA PRODUKTER, rad 278: \"Taköverdrag till husvagn / husbil, 6,5 × 3 m (basstorleken; nio storlekar 5,5–13,5 m med egna priser och kostnader — större storlek ger högre AOV och ungefär proportionellt högre kostnad)\"), 1 st till Sverige: produkt + frakt 17,42 + 18,75 = 36.17 USD, plus 2,9 EUR EU-avgift per order (sheetets rubrik \"total cost without 2,9 eur tax\"). Priset 1129 kr läst ur baverbutiken.se/products.json 2026-09-22. Axels beslut 2026-09-22: marginalerna räknas ur sheetet.",
         "datum": "2026-09-22"
+      },
+      "speglar": {
+        "monster": "Tak(ö|o)verdrag|Takovertrekk|Kattopeite",
+        "not": "Axels beslut 2026-09-24: annonserna speglas till CaraShell (OPS-kontot 915422744950975: SE/NO/DK/FI, USA/UK-kontot 1107817401910319: US/AU/UK/CA/NZ). Han sköter budgetarna där själv; ronden läser dem ur agent/spegelbudget.json och räknar in marknaderna i briefkvoten."
       }
     },
     {

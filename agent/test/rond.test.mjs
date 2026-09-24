@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { annonsbehov, annonskvot, arAvstangd, attributionsvarning, bedomKampanj, bedomSurf, breakEvenForPost, cpaTrendRader, dygnsvarningar, efterMidnatt, kontrolleraKonto, planera, rapport, rundkvot, visningsvarning, visningsvarningar, TILLATET_KONTO } from '../rond.mjs';
+import { annonsbehov, annonskvot, spegelbudget, SPEGEL_BRIEFER_PER_MARKNAD, arAvstangd, attributionsvarning, bedomKampanj, bedomSurf, breakEvenForPost, cpaTrendRader, dygnsvarningar, efterMidnatt, kontrolleraKonto, planera, rapport, rundkvot, visningsvarning, visningsvarningar, TILLATET_KONTO } from '../rond.mjs';
 
 const bas = () => ({
   hamtad: '2026-08-28T07:00:00Z',
@@ -874,4 +874,53 @@ test('rapporten skriver visningsköpsvarningen före åtgärderna', () => {
   const text = rapport([rad], { idag: '2026-09-22', hamtad: '2026-09-22T05:00:00Z' });
   assert.match(text, /Visningsköp nära break-even/);
   assert.ok(text.indexOf('Visningsköp nära break-even') < text.indexOf('## Att'), 'varningen ska stå före åtgärderna');
+});
+
+// --- spegelmarknaderna (Axel 2026-09-24) ------------------------------------
+
+test('spegelbudget: bara ACTIVE kampanjer som matchar mönstret, ihopslagna per marknad', () => {
+  const post = { speglar: { monster: 'Tak(ö|o)verdrag|Takovertrekk' } };
+  const data = { hamtad: '2026-09-24T05:20:00Z', konton: {
+    '915422744950975': { kampanjer: [
+      { namn: 'CARASHELL_SE_Taköverdraget | BE-ROAS 1,51', effective_status: 'ACTIVE', daily_budget: '9600 kr (SEK)', spend_3d: 26496 },
+      { namn: 'CARASHELL_SE_Taköverdraget LISTICLE', effective_status: 'ACTIVE', daily_budget: '2000 kr (SEK)', spend_3d: 9866 },
+      { namn: 'CARASHELL_NO_Takovertrekket | BE-ROAS 1,51', effective_status: 'ACTIVE', daily_budget: '4000 kr (SEK)', spend_3d: 10503 },
+      { namn: 'CARASHELL_SE_Termoskydd Husbil', effective_status: 'ACTIVE', daily_budget: '700 kr (SEK)', spend_3d: 100 },
+      { namn: 'CARASHELL_DK_Taköverdrag Husvagn', effective_status: 'PAUSED', daily_budget: '4000 kr (SEK)', spend_3d: null },
+    ] },
+    '1107817401910319': { kampanjer: [
+      { namn: '1 CARASHELL_US_Taköverdrag Husvagn & Husbil | BE-ROAS 1.63 – kopia', effective_status: 'ACTIVE', daily_budget: '16000 kr (SEK)', spend_3d: 24503 },
+      { namn: 'AU LISTICLE Taköverdrag CARASHELL', effective_status: 'ACTIVE', daily_budget: '8000 kr (SEK)', spend_3d: 10156 },
+      { namn: 'UK LISTICLE Taköverdrag CARASHELL', effective_status: 'PAUSED', daily_budget: '2000 kr (SEK)', spend_3d: 2159 },
+    ] },
+  } };
+  const s = spegelbudget(post, data);
+  assert.equal(s.antal_marknader, 4);                       // SE, NO, US, AU — DK och UK är pausade
+  assert.deepEqual(s.marknader.map((m) => m.kod), ['US', 'SE', 'AU', 'NO']);
+  assert.equal(s.marknader.find((m) => m.kod === 'SE').budget, 11600);   // huvudkampanj + listicle = en marknad
+  assert.equal(s.budget, 39600);
+  assert.equal(s.spend_3d, 26496 + 9866 + 10503 + 24503 + 10156);
+  // Termoskyddet matchar inte Taköverdragets mönster, och utan speglar-block blir det null.
+  assert.equal(spegelbudget({ produkt: 'X' }, data), null);
+  assert.equal(spegelbudget(post, null), null);
+});
+
+test('rundkvot: spegelmarknaderna ger SPEGEL_BRIEFER_PER_MARKNAD extra per marknad — 0 tills Axel valt talet', () => {
+  assert.equal(rundkvot(16000, { marknader: 4 }), 8 + 4 * SPEGEL_BRIEFER_PER_MARKNAD);
+  assert.equal(rundkvot(16000), 8);
+  assert.equal(rundkvot(0, { marknader: 4 }), 0);     // ingen egen budget — ingen runda
+});
+
+test('annonsbehov: spegeln följer med i behovsraden och i orsaken', () => {
+  const rader = [{ id: 'a', namn: 'Tak | BE ROAS 1.50', spendTotal: 90000, budget: 16000, dom: { vinstProcent: 30 } }];
+  const lardom = (n) => ({ kampanj_id: 'a', kod: 'LARDOM', annons_id: `${n}`, lardom_id: `L-${n}`, genomford: true, datum: '2026-09-21' });
+  const logg = [{ kampanj_id: 'a', kod: 'CS_BATCH_KLAR', genomford: true, datum: '2026-09-20' }, ...[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(lardom)];
+  const sp = { a: { antal_marknader: 2, budget: 20000, spend_3d: 30000, marknader: [{ kod: 'US', budget: 16000, spend_3d: 24000, kampanjer: [] }, { kod: 'NO', budget: 4000, spend_3d: 6000, kampanjer: [] }] } };
+  const behov = annonsbehov(rader, { logg, idag: '2026-09-24', spegel: sp });
+  assert.equal(behov.length, 1);
+  assert.equal(behov[0].spegel.antal_marknader, 2);
+  assert.equal(behov[0].budgetAntal, rundkvot(16000, { marknader: 2 }));
+  assert.match(behov[0].orsak, /2 spegelmarknad\(er\).*US 16.000 kr\/dag/);
+  // Utan spegel: som förut.
+  assert.equal(annonsbehov(rader, { logg, idag: '2026-09-24' })[0].spegel, null);
 });

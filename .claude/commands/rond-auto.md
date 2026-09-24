@@ -135,6 +135,37 @@ rätt.
 loggraden.** Kartan har försvunnit två gånger för att ändringen låg kvar bara
 i containern (2026-08-30: 11 nya kampanjer fick läggas in igen för hand).
 
+### 1c. Spegelmarknaderna — CaraShells budget (Axels beslut 2026-09-24)
+
+Axel: *"Jag sköter budgetarna, men jag vill att du tar hänsyn till hur mycket
+spend de marknaderna får och sen utifrån det hur många briefs vi gör."*
+Taköverdraget och Termoskyddet speglas till CaraShell, och 2026-09-24 låg
+43 600 kr/dag av Taköverdragets budget utanför SE-kontot (US 16 000, SE
+11 600, AU 8 000, NO 4 000, DK 4 000). **Budgetronden rör ALDRIG de kontona**
+— de läses bara, för briefkvoten och rapporten.
+
+Efter SE och NO: hämta CaraShell-kampanjerna i de två OPS-kontona med
+`ads_get_ad_entities`, `level: "campaign"`, `date_preset: "last_3d"`,
+fälten `id`, `name`, `effective_status`, `daily_budget`, `amount_spent`,
+`purchase_roas`, `actions:omni_purchase`, filter `campaign.name CONTAIN
+CARASHELL`:
+
+| Konto | Vad |
+|---|---|
+| `915422744950975` MagiBorsten DK (OPS) | CaraShell SE/NO/DK/FI |
+| `1107817401910319` Magiborsten UK | CaraShell US/AU/UK/CA/NZ |
+
+Skriv svaret ordagrant till **`agent/spegelbudget.json`** (formatet står i
+filen: `hamtad`, `konton.<id>.kampanjer[]` med `namn`, `effective_status`,
+`daily_budget` som `"9600 kr (SEK)"`, `spend_3d`, `roas_3d`, `kop_3d` —
+`null` när det saknas). Committa filen i samma push som loggen. `rond.mjs`
+läser den själv: produkter med `speglar.monster` i `produktkarta.json` får
+sina aktiva spegelmarknader räknade (`spegelbudget()`), rapporten får
+avsnittet `## 🪞 Spegelmarknader`, och `rundkvot` lägger på
+`SPEGEL_BRIEFER_PER_MARKNAD` extra briefer per marknad. **Talet är 0 tills
+Axel valt det** — ändra konstanten i `agent/rond.mjs` när han svarat, aldrig
+på egen hand. Är filen äldre än 20 timmar varnar ronden och räknar utan den.
+
 ## 2. Räkna — en gång per marknad
 
 ```bash
@@ -1254,6 +1285,7 @@ Misslyckas Discord-posten: nämn det i svaret men stoppa ingenting.
 - [ ] Färsk `git pull` innan något annat
 - [ ] Tre Meta-anrop gjorda mot BÅDA kontona: SE `1867947880635861` och NO `1050941584152547`
 - [ ] `kontodata.json` (SE) och `kontodata-no.json` (NO) skrivna ordagrant
+- [ ] `agent/spegelbudget.json` skriven ur OPS-kontot och USA-kontot (bara CaraShell, bara läst — steg 1c) och committad; `## 🪞 Spegelmarknader` läst i rapporten
 - [ ] Ronden körd för båda marknaderna; `plan.sparrad` kontrollerad för var och en
 - [ ] Varje åtgärd utförd med öre-fältet ur planen och verifierad med läsning
 - [ ] Kontodatan hämtad med `action_attribution_windows: ["7d_click"]` och `attribution` skrivet — eller rapporterat varför inte
