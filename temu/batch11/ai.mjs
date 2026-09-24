@@ -11,13 +11,13 @@ export const AI = {
       { namn: 'ai-2', ref: 'Båthuven på en båt på trailer i snö', alt: 'Båthuven med snö på, båten i vinterförvaring (AI-illustration)', prompt: 'The same covered boat on its trailer in an outdoor boat storage yard in winter, a thin layer of snow on the cover, other trailered boats blurred in the background.' },
     ] },
   kamadohuv: {
-    video: { ref: 'Kamadohuven över en äggformad kamadogrill', prompt: 'Light rain begins to fall on the covered kamado grill on the deck; drops run off the black fabric; the autumn leaves behind it move slightly in the wind.' },
+    video: { ref: 'Kamadogrillen utan huv bredvid en täckt kamado', prompt: 'Light rain begins to fall on the covered kamado grill on the deck; drops run off the black fabric; the autumn leaves behind it move slightly in the wind.' },
     bilder: [
       { namn: 'ai-hero', plats: 'hero', ref: 'Kamadohuven på grillens ben', alt: 'Kamadohuven över en äggformad kamadogrill på en trädäck-terrass (AI-illustration)', prompt: 'The same black cover placed over a large egg-shaped ceramic kamado grill standing in its metal cart on a wooden deck terrace, autumn garden behind, soft daylight.' },
       { namn: 'ai-2', ref: 'Kamadohuven på grillens ben', alt: 'Kamadogrillen utan huv bredvid en täckt kamado (AI-illustration)', prompt: 'Two egg-shaped ceramic kamado grills side by side on a stone patio: the left one uncovered, dark green glossy ceramic with its dome lid; the right one fitted with the same black cover from the reference so the shape underneath is obvious.' },
     ] },
   maskinhylla: { video: { ref: 'Maskinhyllan på väggen med fyra maskin', prompt: 'Very slow, gentle push-in towards the wall shelf full of tools; a hand lifts one drill off its slot and puts it back.' } },
-  fonstertermomatta: { video: { ref: 'Mattan på husvagnens fönster', prompt: 'Morning sunlight slowly brightens on the caravan side; the silver mat in the window reflects it; a very slow gentle push-in.' } },
+  fonstertermomatta: { video: { ref: 'Termomattan med sugproppar', prompt: 'Morning sunlight slowly brightens on the caravan side; the silver mat in the window reflects it; a very slow gentle push-in.' } },
   laktarponcho: {
     bilder: [ { namn: 'ai-usb', ref: 'Ponchon med dragkedja fram', alt: 'Ponchon på läktaren med USB-kabeln till en powerbank (AI-illustration)', prompt: 'The same beige poncho worn by a person seen from the shoulders down, sitting on a cold stadium bench, a white USB cable running from inside the poncho to a small black power bank held in their gloved hand.' } ] },
   scooterkapell: {
@@ -38,7 +38,7 @@ export const AI = {
       { namn: 'ai-2', ref: 'Tre regntunnor med huv', alt: 'Dragskon åtdragen runt tunnans kant (AI-illustration)', prompt: 'Close-up of the drawstring at the bottom edge of the same black cover pulled tight around the rim of a blue plastic rain barrel.' },
     ] },
   bikupsjacka: { video: { ref: 'Två bikupor med vinterjackor i snö', prompt: 'Light snow falls slowly on the two covered beehives; nothing else moves.' } },
-  krukvaxthuv: { video: { ref: 'Tre krukväxthuvar i beige fiberduk', prompt: 'A light breeze moves the three covered plants very slightly; a few leaves drift past on the ground. No snowflakes, no graphics.' } },   // första försöket lade in en tecknad snöflinga
+  krukvaxthuv: { video: { ref: 'Tre krukväxthuvar – 3-pack', prompt: 'The three covered plants stand still while a light breeze moves the fabric very slightly. No snowflakes, no graphics, no text changes.' } },   // första försöket lade in en tecknad snöflinga
   ljusslingevindor: {
     video: { ref: 'Ljusslingevinda, tom och med ljussling', prompt: 'Two hands wind a green Christmas light string onto the black winder, turn by turn.' },
     bilder: [ { namn: 'ai-fore-efter', ref: 'Ljusslingevinda, tom och med ljussling', alt: 'Trassliga ljusslingor i en låda bredvid slingor upplindade på vindorna (AI-illustration)', prompt: 'On a wooden table: on the left a cardboard box overflowing with tangled green Christmas light strings; on the right three of the same black winders with light strings neatly wound on them.' } ] },
@@ -46,7 +46,7 @@ export const AI = {
     video: { ref: 'Skruvdragare hängd i hållaren på vägge', prompt: 'A hand lifts the cordless drill off the teal wall holder and puts it back, clicking it into place.' },
     bilder: [ { namn: 'ai-fore-efter', ref: 'Makita-hållare på väggen med skruvdrag', alt: 'Verktyg i en hög på bänken bredvid samma verktyg upphängda i hållarna (AI-illustration)', prompt: 'Split scene in a garage: on the left a cluttered workbench with cordless tools and batteries lying in a pile; on the right a plywood wall where the same teal holders from the reference hold the tools neatly in a row.' } ] },
   varmesulor: {
-    video: { ref: 'Värmesulorna med fjärrkontrollen, prod', prompt: 'A hand slides the same black insole into a brown winter boot; then boots step onto fresh snow.' },
+    video: { ref: 'Värmesulan läggs i en vinterkänga', prompt: 'The hand slides the same black insole all the way into the brown winter boot and sets the boot down on the doorstep.' },
     bilder: [ { namn: 'ai-stovel', ref: 'Värmesulorna med fjärrkontrollen, prod', alt: 'Värmesulan läggs i en vinterkänga, snö utanför dörren (AI-illustration)', prompt: 'A hand slides the same black heated insole into a brown leather winter boot in a doorway, snow-covered ground outside, the small remote lying beside the boot.' } ] },
   rcdrift: {
     video: { ref: 'QC-bild med den grå driftbilen', prompt: 'The same grey RC drift car slides sideways around the orange cones on a smooth floor, wheels spinning; the controller stays in the foreground.' },
@@ -75,7 +75,7 @@ export const AI = {
   husbilskalender: {
     video: { ref: 'Retrobussarna i närbild', prompt: 'The camper van ornaments sway gently on their strings with warm fairy lights twinkling behind them.' },
     bilder: [ { namn: 'ai-hero', plats: 'hero', ref: 'Retrobussarna i närbild', alt: 'Retrobussarna hänger i en julgran med varma ljus (AI-illustration)', prompt: 'The same retro camper van ornaments hanging by thin gold strings from the branches of a Christmas tree with warm fairy lights, soft bokeh, close enough to see the vans clearly.' } ] },
-  elcykeljacka: { video: { ref: 'Batteriskyddet lindat runt elcykelns rambatteri', prompt: 'Two hands wrap the same black battery cover around the e-bike frame battery and press the strap closed; the bike stands still in a garage.' } },
+  elcykeljacka: { video: { ref: 'Batteriskyddet på rambatteriet och det hopvikta', prompt: 'Two hands wrap the same black battery cover around the e-bike frame battery and press the strap closed; the bike stands still in a garage.' } },
   cykelhallarskydd: { video: { ref: 'Cykelhållarskyddet över cyklarna bak p', prompt: 'The motorhome with the covered bikes stands still while light rain falls; a car passes in the blurred background.' } },
   lovsilar: { video: { ref: 'Vatten rinner genom lövsilen', prompt: 'Rainwater pours through the stainless mesh strainer while leaves are held back on top.' } },
 };

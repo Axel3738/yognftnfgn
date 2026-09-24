@@ -125,3 +125,36 @@ bathuv (2), poolpumphuv (2 + QC), adelstenskalender (2 + QC).
 
 **Kvar:** rcdrift + bordsfotboll (Temu-skörden kräver Axel inloggad), de fem CWD-frågorna i
 `temu/qc/2026-09-18-cwd-qc.md`, magnetblockens 300-pack-variant.
+
+## Axels granskning 2026-09-24 — "Fixa allt det här nu"
+Axel gick igenom alla 31 sidor. Kärnan: GIF på varje sida, bättre första bilder, alltid en bild
+mellan funktioner och garanti, och elcykeljackan visade fel produkt. Åtgärdat i två omgångar
+(`galleri-bygg.mjs` är idempotent — andra passet lade bara på det som tillkommit):
+
+- **AI-material via KIE** (`ai.mjs` = jobben, `ai-kor.mjs` = körningen): 20 bilder (nano-banana-edit,
+  ~34 credits/st) och 29 videor (veo3_fast, ~40 credits/st) med en riktig produktbild i SE som
+  referens. Varje bild och varje GIF granskades i kontaktark innan uppladdning. **Underkänt:**
+  ädelstenens första hero (AI skrev "ADVENT CALENDAR" på asken — omgjord med skärpt prompt, nu rätt),
+  kamadohuvens första GIF (formlös presenning), ädelstenens första GIF (påhittad text på asken),
+  krukväxthuvens GIF (tecknad snöflinga), cykelhållarskyddets GIF (bara svart tyg). KIE svarade
+  "Internal Error" på 17 av 28 videor i första vändan — omkörningar löste de flesta; kredit återförs vid fel.
+- **GIF-regler:** 1:1, 6 s, 8 fps, ≤ 4 MB; först i beskrivningen (efter problemet), **sist** i galleriet.
+  Highland Cow-GIF:en gjordes om till 1:1 och flyttades sist. Riktiga videor användes där de fanns
+  utan textöverlägg: läktarponchon (första 5 s, undertexterna bortklippta), Highland Cow (lagret).
+  Elcykeljackans leverantörsvideo har engelska textöverlägg i varje sekund — AI-video i stället.
+- **AI-hero där Axel bad om det:** båthuv, kamadohuv (med en äggformad kamado bredvid så formen syns),
+  slangboxhuv, regntunnehuv (blå 200 L-tunna), ädelsten, husbilskalender, rullknivslip, driftbil.
+  Före/efter som en AI-bild: scooterkapell, ljusslingevindor, makitahållare. Läktarponchon fick en
+  bild med USB-kabeln till en powerbank så det syns att den är elektrisk. Alla märkta "(AI-illustration)"
+  + raden "Livsstilsbilderna är AI-genererade illustrationer" (skrivs av `beskrivning.mjs`).
+- **Elcykeljackan:** QC-fotot (stickad olivgrön) var fel produkt; leverantörslänken visar en svart
+  jacka med orange insida. QC borttaget, skördebilderna in, ny copy (`copy-9.json`), nytt handle
+  `elcykelbatteriets-vinterskydd-2-pack-svart-med-orange-insida` (galleri.mjs `omskriven: true`).
+- **Rullknivslipen:** beskärningarna lades på vit kvadrat (`pad: true`) och laddades om (`ersatt: true`).
+- **Poolvärmepumpshuven:** bilden med huven i drift först, QC-rendern sist.
+- **Tredje bilden:** `galleri-bygg.mjs` faller tillbaka på bild B/A så det alltid ligger en bild mellan
+  funktioner och garanti (båthuv och regntunnehuv saknade den).
+- **Nej till två saker:** (1) "någon typ av recension i produktbilderna" — påhittade omdömen görs
+  aldrig (CLAUDE.md). (2) Driftbilens varianter — arket har bara qty-rader (7,08/14,15/21,23 USD),
+  inga färger; Temu-titeln säger "Färgglad" men CWD har inte offererat färger. Fråga till CWD.
+- **Kvar utan GIF efter fyra försök:** se `ai-video-8.log`-raden nedan (uppdateras).
