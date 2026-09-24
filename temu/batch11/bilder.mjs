@@ -11,6 +11,8 @@ const S = 1000, PAD = 36;
 // beskärning i andelar av källbilden (left, top, width, height) där QC-bilden har skräp
 const CROP = { vedklyvshuv: [0, 0.35, 1, 0.65], highlandcow: [0, 0, 1, 0.44], takachuv: [0, 0.07, 1, 0.9], lovsilar: [0, 0, 1, 0.955],
   adelstenskalender: [0.05, 0.02, 0.87, 0.92], cykelhallarskydd: [0, 0, 1, 0.985] };
+// Beskärning av DETALJ-bilden (qc[1]) — husbilskalendern: tummen nere till vänster bort
+const CROP2 = { husbilskalender: [0.1, 0, 0.9, 0.95] };
 const BADGE = { se: (n) => [`${n} ST`, 'INGÅR'], no: (n) => [`${n} STK`, 'FØLGER MED'] };
 
 async function ruta(fil, crop) {
@@ -30,7 +32,7 @@ function badge(land, n) {
 for (const [id, f] of Object.entries(FAKTA)) {
   if (f.status !== 'bygg' || !f.qc?.length) continue;
   const hero = await ruta(f.qc[0], CROP[id]);
-  const detalj = f.qc[1] ? await ruta(f.qc[1]) : null;
+  const detalj = f.qc[1] ? await ruta(f.qc[1], CROP2[id]) : null;
   for (const land of ['se', 'no']) {
     const d = path.join(UT[land], id); mkdirSync(d, { recursive: true });
     const h = f.flerpack ? await sharp(hero).composite([{ input: badge(land, f.flerpack), top: 0, left: 0 }]).jpeg({ quality: 92 }).toBuffer() : hero;

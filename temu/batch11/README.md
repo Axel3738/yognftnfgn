@@ -34,12 +34,13 @@ Hero-bilderna är CWD:s QC-foton (500–1200 px, tillfälliga) — byts när sk�
 | magnetblock (200 st) | 13 | 799 | 809 | QC ask + kuber | ✅ **bara 200-pack** — 300-pack (29,12 USD) läggs till som variant när en 300-bild finns |
 | adelstenskalender (24 luckor) | 13 | 469 | 399 | QC-ask (beskuren, skärmkanter bort) | ✅ 2026-09-24 — Axel: den röda asken är produkten. Stentyp/verktyg/ålder påstås inte |
 | cykelhallarskydd (2 cyklar) | 13 | 669 | 639 | QC (bild 25) | ✅ 2026-09-24 — jag dömde bilden fel som ATV-kapell; arkets ref-kolumn är tom, inga mått/material påstås |
+| husbilskalender (24 luckor) | 13 | 379 | 339 | QC fack + ask, detalj fack | ✅ 2026-09-24 — Axel: "Ja gör husbilskalendern". Biltillverkarens namn står på asken men skrivs ALDRIG i copy/alt/taggar/video |
 
-**VÄNTA (15):** bathuv, kamadohuv (QC-bilden är grå, vi säljer svart), kajakhuv, maskinhylla,
+**VÄNTA (14):** bathuv, kamadohuv (QC-bilden är grå, vi säljer svart), kajakhuv, maskinhylla,
 fonstertermomatta, varmemuff (**slut hos CWD, tillbaka tidigast om en månad — pre-order när datum
 finns**; arkets rad 62 är dess qty-2-rad), laktarponcho, scooterkapell (bara hoppackad påse på bilden),
 tradansikte, snosmaltmatta (spänning/EU-kontakt obekräftad),
-krukbarrem, sorkkorgar, husbilskalender ("VOLKSWAGEN CAMPER" på asken — Axel avgör), slangboxhuv,
+krukbarrem, sorkkorgar, slangboxhuv,
 regntunnehuv. Byggs med `skapa.mjs` när skörden ligger i `temu/bildskord/<id>/` — sätt
 `status: 'bygg'` + `qc:`/bildväg i `fakta.mjs`, skriv copy (subagent) och kör.
 
@@ -50,12 +51,12 @@ hönsluckan (ingen quote), fågelholken (MOQ 500).
 - `fakta.mjs` — låsta fakta, SKU `TEMU-B11/B12/B13-*`, kategori-GID (slagna i taxonomin), status bygg/vanta + orsak, QC-bildvägar
 - `priser.mjs` — SE = nio((landat + 2,9 €) × 3 × 9,4698), NO = nio(landat × 3 × 9,2989), jämför × 1,3
 - `bilder.mjs` — QC-foto → 1000×1000 hero/detalj, beskärning per produkt, antalsbadge (sharp, SE/NO)
-- `copy-1..4.json` → `granska-copy.mjs` → `copy.json` — fyra Sonnet-skribenter (sv+no), skript-granskning
+- `copy-1..5.json` → `granska-copy.mjs` → `copy.json` — fem Sonnet-skribenter (sv+no), skript-granskning
   (förbjudna ord, räkneord, flerpack i titel + första bullet, seo-längder) + huvudsessionens korrläsning
 - `skapa.mjs <se|no> [--skarp] [id …]` — skapar/uppdaterar, rcoffroad = uppdatera SE + klona till NO
 - `rc-farger.mjs <se|no> [--skarp]` — RC 1:16: option Färg/Farge, varianter Svart/Orange, variantbilder, femte bulleten (`copy-rc-farg.json`). Idempotent
 - `slutgranska.mjs` — läser allt live i SE + NO: mall, kategori, moms av, cogs, jämför > pris, media 200, alt, rester, garanti, storefront 200
-- `notion-kort.mjs` — 35 Notion-kort (20 live + 15 VÄNTA) som JSON till notion-create-pages
+- `notion-kort.mjs` — 35 Notion-kort (21 live + 14 VÄNTA) som JSON till notion-create-pages
 
 ## Rättningar i copyn (huvudsessionens korrläsning)
 "aldrig/alltid" i regnkedjan och bordsfotbollen · "bygglen" → "byggen" · bikupsjackans "tål att sitta
@@ -72,6 +73,7 @@ Fyra saker jag hade fel eller obesvarade, rättade samma dag:
   CWD, tillbaka tidigast om en månad; pre-order när datum finns. Notion-kortet omdöpt.
 - **RC 1:16** finns i blå, svart och orange (Axel) — varianter i båda butikerna, se tabellen.
 - **Ädelstenskalendern**: den röda asken är rätt ("4. ja") — byggd SE + NO.
-- **Husbilskalendern** ("VOLKSWAGEN CAMPER" på asken) ligger kvar på VÄNTA tills Axel bestämt:
-  namnet är ett registrerat varumärke, och varken vi eller leverantören har licens — risken är
-  nedtagning/krav från VW och avslag i Meta, inte att kunden ogillar den.
+- **Husbilskalendern**: Axel valde att sälja ("Ja gör husbilskalendern", 2026-09-24) med risken
+  förklarad — asken bär ett registrerat varumärke utan licens, så risken är nedtagning/krav och
+  Meta-avslag. Skyddet vi har: namnet skrivs aldrig i copy, alt-texter, taggar eller video —
+  "retrobuss"/"campingbuss". Byggd SE + NO på QC-bilderna 30–31.

@@ -1136,5 +1136,61 @@
    },
    "varning": "Sykler og stativ følger ikke med, bare trekket."
   }
+ },
+ "husbilskalender": {
+  "sv": {
+   "titel": "Husbilskalendern 24 Luckor – Retrobussar Och Campingprylar",
+   "problemH": "Adventskalendern räknar ner till jul, inte till nästa resa",
+   "problemP": "Husbilen eller husvagnen står avställd sedan hösten, och december känns som den månad som ligger längst bort från nästa resa. En chokladkalender smakar likadant för alla – den säger ingenting om resfebern som redan väntar till våren.",
+   "losningH": "24 numrerade luckor, en retrobuss bakom nästan varje",
+   "losningP": "Bakom var och en av de 24 numrerade luckorna väntar en liten retrobuss i miniatyr, i olika färger och mönster – några blommålade, andra blå, gröna eller tvåfärgade. Ett par luckor gömmer campingprylar i stället, som en campingstol och ett litet bord. Asken är orange, tryckt med \"CAMPER ADVENT CALENDAR – HOLIDAY ROAD TRIP\" och en blommålad retrobuss i hippiestil.",
+   "bullets": [
+    "<strong>En liten retrobuss väntar bakom nästan varje lucka</strong> – 24 numrerade luckor räknar ner till julafton",
+    "<strong>Färgen varierar lucka för lucka</strong> – bussar i blommålat, blått, grönt och tvåfärgat mönster",
+    "<strong>Du ser vad kalendern är gjord för innan du ens öppnat den</strong> – orange ask tryckt med \"CAMPER ADVENT CALENDAR – HOLIDAY ROAD TRIP\"",
+    "<strong>Ett par luckor bjuder på campingprylar i stället</strong> – en campingstol och ett litet bord bland bussarna."
+   ],
+   "seoTitel": "Husbilskalendern 24 Luckor – Adventskalender",
+   "seoText": "Adventskalender med 24 luckor. Bakom nästan varje lucka väntar en liten retrobuss i miniatyr – ett par luckor bjuder på campingprylar i stället.",
+   "taggar": [
+    "adventskalender",
+    "husbilskalender",
+    "campingvagn",
+    "husbilstillbehör",
+    "julklapp husbil"
+   ],
+   "alt": {
+    "hero": "Fabriksbild av förpackningens plastfack med små retrobussar i olika färger, upplagda bredvid den orange asken",
+    "detalj": "Närbild på plastfacken med retrobussarna i olika färger och mönster"
+   },
+   "varning": null
+  },
+  "no": {
+   "titel": "Bobilkalenderen 24 Luker – Retrobusser Og Campingutstyr",
+   "problemH": "Adventskalenderen teller ned til jul, ikke til neste tur",
+   "problemP": "Bobilen eller campingvognen står i vinterlagring siden høsten, og desember føles som måneden som ligger lengst unna neste tur. En sjokoladekalender smaker likt for alle – den sier ingenting om reisefeberen som allerede venter til våren.",
+   "losningH": "24 nummererte luker, en retrobuss bak nesten hver",
+   "losningP": "Bak hver av de 24 nummererte lukene venter en liten retrobuss i miniatyr, i ulike farger og mønstre – noen blomstermalte, andre blå, grønne eller tofargede. Et par luker gjemmer campingutstyr i stedet, som en campingstol og et lite bord. Esken er oransje, trykt med \"CAMPER ADVENT CALENDAR – HOLIDAY ROAD TRIP\" og en blomstermalt retrobuss i hippiestil.",
+   "bullets": [
+    "<strong>En liten retrobuss venter bak nesten hver luke</strong> – 24 nummererte luker teller ned til julaften",
+    "<strong>Fargen varierer luke for luke</strong> – busser i blomstermalt, blått, grønt og tofarget mønster",
+    "<strong>Du ser hva kalenderen er laget for før du i det hele tatt har åpnet den</strong> – oransje eske trykt med \"CAMPER ADVENT CALENDAR – HOLIDAY ROAD TRIP\"",
+    "<strong>Et par luker byr på campingutstyr i stedet</strong> – en campingstol og et lite bord blant bussene."
+   ],
+   "seoTitel": "Bobilkalenderen 24 Luker – Adventskalender",
+   "seoText": "Adventskalender med 24 luker. Bak nesten hver luke venter en liten retrobuss i miniatyr – et par luker byr på campingutstyr i stedet.",
+   "taggar": [
+    "adventskalender",
+    "bobilkalender",
+    "campingvogn",
+    "bobiltilbehør",
+    "julegave bobil"
+   ],
+   "alt": {
+    "hero": "Fabrikkbilde av emballasjens plastrom med små retrobusser i ulike farger, lagt ved siden av den oransje esken",
+    "detalj": "Nærbilde av plastrommene med retrobussene i ulike farger og mønstre"
+   },
+   "varning": null
+  }
  }
 }
