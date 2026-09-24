@@ -38,7 +38,7 @@ export const AI = {
       { namn: 'ai-2', ref: 'Tre regntunnor med huv', alt: 'Dragskon åtdragen runt tunnans kant (AI-illustration)', prompt: 'Close-up of the drawstring at the bottom edge of the same black cover pulled tight around the rim of a blue plastic rain barrel.' },
     ] },
   bikupsjacka: { video: { ref: 'Två bikupor med vinterjackor i snö', prompt: 'Light snow falls slowly on the two covered beehives; nothing else moves.' } },
-  krukvaxthuv: { video: { ref: 'Tre krukväxthuvar – 3-pack', prompt: 'The three covered plants stand still while a light breeze moves the fabric very slightly. No snowflakes, no graphics, no text changes.' } },   // första försöket lade in en tecknad snöflinga
+  krukvaxthuv: { video: { ref: 'Tre krukväxthuvar – 3-pack', typ: 'FIRST_AND_LAST_FRAMES_2_VIDEO', prompt: 'The three covered plants stand still while a light breeze moves the fabric very slightly. Silent scene, no sound. No snowflakes, no graphics, no text changes.' } },   // typ: bildstart i stället för referens — REFERENCE_2_VIDEO gav 500 sex gånger   // första försöket lade in en tecknad snöflinga
   ljusslingevindor: {
     video: { ref: 'Ljusslingevinda, tom och med ljussling', prompt: 'Two hands wind a green Christmas light string onto the black winder, turn by turn.' },
     bilder: [ { namn: 'ai-fore-efter', ref: 'Ljusslingevinda, tom och med ljussling', alt: 'Trassliga ljusslingor i en låda bredvid slingor upplindade på vindorna (AI-illustration)', prompt: 'On a wooden table: on the left a cardboard box overflowing with tangled green Christmas light strings; on the right three of the same black winders with light strings neatly wound on them.' } ] },
@@ -46,7 +46,7 @@ export const AI = {
     video: { ref: 'Skruvdragare hängd i hållaren på vägge', prompt: 'A hand lifts the cordless drill off the teal wall holder and puts it back, clicking it into place.' },
     bilder: [ { namn: 'ai-fore-efter', ref: 'Makita-hållare på väggen med skruvdrag', alt: 'Verktyg i en hög på bänken bredvid samma verktyg upphängda i hållarna (AI-illustration)', prompt: 'Split scene in a garage: on the left a cluttered workbench with cordless tools and batteries lying in a pile; on the right a plywood wall where the same teal holders from the reference hold the tools neatly in a row.' } ] },
   varmesulor: {
-    video: { ref: 'Värmesulan läggs i en vinterkänga', prompt: 'The hand slides the same black insole all the way into the brown winter boot and sets the boot down on the doorstep.' },
+    video: { ref: 'Värmesulan läggs i en vinterkänga', typ: 'FIRST_AND_LAST_FRAMES_2_VIDEO', prompt: 'The hand slides the same black insole all the way into the brown winter boot and sets the boot down on the doorstep. Silent scene, no sound.' },   // typ: se krukvaxthuv; Veo vägrade generera ljud (400) två gånger
     bilder: [ { namn: 'ai-stovel', ref: 'Värmesulorna med fjärrkontrollen, prod', alt: 'Värmesulan läggs i en vinterkänga, snö utanför dörren (AI-illustration)', prompt: 'A hand slides the same black heated insole into a brown leather winter boot in a doorway, snow-covered ground outside, the small remote lying beside the boot.' } ] },
   rcdrift: {
     video: { ref: 'QC-bild med den grå driftbilen', prompt: 'The same grey RC drift car slides sideways around the orange cones on a smooth floor, wheels spinning; the controller stays in the foreground.' },

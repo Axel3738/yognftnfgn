@@ -8,7 +8,7 @@
 //  - "waterproof"/"100 %" o.dyl. får inte följa med — bilder med sådana löften beskärs eller hoppas
 //  - QC-fotot (fabriksbilden) ligger kvar: qc:'forst' = det förblir hero, qc:'sist' = flyttas sist
 // crop = [x, y, w, h] som andelar. fil = nummer i bildskord-mappen. alt = svenska (används i SE och NO).
-// pad = lägg den beskurna bilden på vit kvadrat (1:1). qc:'bort' = ta bort de gamla QC-medierna. ersatt = ladda om
+// pad = lägg den beskurna bilden på vit kvadrat (1:1). qc:'bort' = ta bort de gamla QC-medierna. ersatt = ladda om (vid VARJE körning — ta bort flaggan när omladdningen är gjord)
 // bilderna även om alt-texten redan finns. AI-material (bilder + GIF) kommer från ai.mjs och läggs på av galleri-bygg.
 export const GALLERI = {
   // ── redan live ────────────────────────────────────────────────────────────
@@ -65,14 +65,15 @@ export const GALLERI = {
     { fil: '10', alt: 'Regnkedjan vid en blomsteraffär' },
     { fil: '12', alt: 'Regnkedjan vid ett uterum' },
   ] },
-  // Axel 2026-09-24: "konstig ratio, låg kvalitet" — beskärningarna läggs på vit kvadrat (pad) och laddas om (ersatt)
-  rullknivslip: { qc: 'sist', ersatt: true, bilder: [
+  // Axel 2026-09-24: "konstig ratio, låg kvalitet" — beskärningarna läggs på vit kvadrat (pad). Omladdade med ersatt: true
+  // i SE + NO samma dag; flaggan är borttagen så körningarna är idempotenta igen (ersatt laddar om vid VARJE körning).
+  rullknivslip: { qc: 'sist', bilder: [
     { fil: '04', alt: 'Rullknivslipen i trä med vinkelblocket och en kniv', crop: [0, 0.22, 1, 0.6], pad: true },
     { fil: '07', alt: 'Kniven hålls mot vinkelblocket medan rullen dras', crop: [0, 0.2, 1, 0.45], pad: true },
     { fil: '09', alt: 'Kniven slipas vid skärbrädan', crop: [0.22, 0.2, 0.78, 0.8], pad: true },
     { fil: '03', alt: 'Slipskivan lossas från rullen', crop: [0, 0.28, 0.68, 0.72], pad: true },
   ] },
-  highlandcow: { qc: 'sist', ersatt: ['video'], gif: { fil: '09.mp4', alt: 'Kalendrarna på lagret, video' }, bilder: [   // GIF:en gjord om till 1:1 och flyttad sist (Axel 2026-09-24)
+  highlandcow: { qc: 'sist', gif: { fil: '09.mp4', alt: 'Kalendrarna på lagret, video' }, bilder: [   // GIF:en gjord om till 1:1 och flyttad sist (Axel 2026-09-24)
     { fil: '15', alt: 'Highland Cow-kalendern i julmiljö' },
     { fil: '10', alt: 'De 24 highland cow-figurerna uppradade' },
     { fil: '12', alt: 'Asken och figurerna' },
