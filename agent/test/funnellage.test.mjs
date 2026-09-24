@@ -16,11 +16,14 @@ const ROT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const TAK = readFileSync(join(ROT, 'products', 'takoverdraget-husvagn', 'invandningar.md'), 'utf8');
 const matris = () => { const m = matrisUrText(TAK); return { fil: 'x', rader: m.rader, tackning: tackning(m.rader) }; };
 
-test('kontraktet: Taköverdragets matris läses, fukt är obesvarad med 38 % och tre tomma rutor', () => {
+test('kontraktet: Taköverdragets matris läses, fukt är obesvarad (största invändningen) och tre tomma rutor', () => {
   const m = matris();
   const fukt = m.tackning.find((t) => t.kort === 'fukt');
   assert.ok(fukt, 'raden fukt finns');
-  assert.equal(fukt.andel, 0.38);
+  // Matrisen är levande data som ronden skriver om (38 % 2026-09-22, 37 %
+  // 2026-09-23) — testet låser formen, inte procenttalet.
+  assert.ok(fukt.andel >= 0.25 && fukt.andel <= 0.6, `fukt-andelen ${fukt.andel} ligger utanför det rimliga`);
+  assert.equal(fukt.andel, Math.max(...m.tackning.map((t) => t.andel)), 'fukt är största invändningen');
   assert.equal(fukt.live, 0);
   assert.equal(fukt.obesvarad, true);
   assert.ok(fukt.tomma.length >= 3);

@@ -30,6 +30,21 @@ import {
   FORSTA_BATCH_VINST_PROCENT,
 } from './rond.mjs';
 
+/**
+ * ⛔ AVSTÄNGT sedan 2026-09-24 — Axels beslut samma dag: "Jag ska sluta bygga
+ * OPS-butiker hela tiden nu, pga att det är mycket mer stressmoment. Inga mer
+ * OPS förutom vid extrema undantag." `startskottsbehov` returnerar därför tomt
+ * och CLI:t vägrar posta, tills anroparen uttryckligen säger `undantag: true`
+ * respektive `--undantag` — och det gör bara en människa på Axels ord, aldrig
+ * ronden. Koden ligger kvar orörd bakom spärren: ett undantag ska kunna köras
+ * utan att någon bygger om larmet.
+ */
+export const STARTSKOTT_AV = Object.freeze({
+  av: true,
+  sedan: '2026-09-24',
+  skal: 'Axels beslut 2026-09-24: inga fler OPS-butiker (stressmoment), bara vid extrema undantag',
+});
+
 /** Koden startskottet skriver i budgetloggen. Idempotensen hänger på den. */
 export const STARTSKOTT_KOD = 'OPS_STARTSKOTT';
 
@@ -103,7 +118,10 @@ export function startskottHarGatt(logg, kampanjId) {
  * @param {Array} rader utfallet ur `bedomKampanj` (id, namn, spendTotal, dom)
  * @returns {Array<{kampanj_id: string, namn: string, spendTotal: number, vinstProcent: number}>}
  */
-export function startskottsbehov(rader, { logg = [], marknad = 'SE' } = {}) {
+export function startskottsbehov(rader, { logg = [], marknad = 'SE', undantag = false } = {}) {
+  // Avstängt (STARTSKOTT_AV): inga fler OPS-butiker. Bara ett uttryckligt
+  // undantag på Axels ord släpper igenom listan.
+  if (STARTSKOTT_AV.av && !undantag) return [];
   // Bara Sverige. Norska annonser är svenska annonser översatta i ett eget
   // flöde — en norsk kampanj ska aldrig utlösa en ny butik.
   if (marknad !== 'SE') return [];
@@ -322,6 +340,12 @@ async function huvud(argv) {
       console.error(`Kunde inte läsa jobbfilen: ${e.message}`);
       process.exit(1);
     }
+  }
+
+  if (STARTSKOTT_AV.av && !torr && !argv.includes('--undantag')) {
+    console.error(`⛔ Startskottet är avstängt sedan ${STARTSKOTT_AV.sedan} — ${STARTSKOTT_AV.skal}.`);
+    console.error('   Ett extremt undantag på Axels ord körs med --undantag. Ronden gör det aldrig.');
+    process.exit(1);
   }
 
   let utfall;

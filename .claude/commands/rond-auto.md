@@ -24,12 +24,13 @@ upp, skala ner och stänga av enligt reglerna, utan att fråga per rad.
 
 **Tolkningsregel (Axel 2026-08-30, omskriven 2026-09-10):** när körordern
 (trigger-prompten) säger "utför bara det som står i plan.atgarder" syftar det
-på BUDGETÄNDRINGARNA i Meta. **Annonsbehoven i steg 4b och startskotten i
-steg 4d är fortfarande obligatoriska** — alla förstabatcher, alla förfallna
-brief-rundor och alla larm, utan tak. En körning som lämnar förfallna behov
-utan åtgärd och utan redovisning är INTE klar. *(Körningen 2026-08-30 hoppade
-över hela kön på den meningen — det var fel tolkning. Briefhalvan togs bort
-2026-09-10 och lades tillbaka 2026-09-13 på Axels order; startskottet är kvar.)*
+på BUDGETÄNDRINGARNA i Meta. **Annonsbehoven i steg 4b är fortfarande
+obligatoriska** — alla förstabatcher och alla förfallna brief-rundor, utan tak.
+En körning som lämnar förfallna behov utan åtgärd och utan redovisning är INTE
+klar. *(Körningen 2026-08-30 hoppade över hela kön på den meningen — det var
+fel tolkning. Briefhalvan togs bort 2026-09-10 och lades tillbaka 2026-09-13
+på Axels order. Startskottet i steg 4d är AVSTÄNGT sedan 2026-09-24 — Axel
+bygger inga fler OPS-butiker utom vid extrema undantag.)*
 
 Ronden KÖRS varje dag, men varje produkts BUDGET ändras högst var tredje dag —
 utom snabbspåret: en produkt i skalningszonen med ROAS ≥ 3 får höjas 20 %
@@ -1033,7 +1034,22 @@ Hittar du en hub som saknar produkt i `agent/produktkarta.json`, eller en
 kampanj i produktkartan som saknar hub: säg det. Det är oftast en glömd
 uppsättning, inte ett fel i datan.
 
-## 4d. Startskottet (Axels beslut 2026-09-10, kvar sedan 2026-09-13 vid sidan av briefsen)
+## 4d. Startskottet — ⛔ AVSTÄNGT sedan 2026-09-24
+
+**Axels beslut 2026-09-24:** *"Jag ska sluta bygga OPS-butiker hela tiden nu,
+pga att det är mycket mer stressmoment. Inga mer OPS förutom vid extrema
+undantag."* Ronden postar därför **inga startskott** och skriver inga
+`OPS_STARTSKOTT`-rader. `startskottsbehov` i `agent/startskott.mjs` returnerar
+tomt (`STARTSKOTT_AV`), och CLI:t vägrar posta utan `--undantag`. Ett extremt
+undantag är Axels ord i chatten, aldrig rondens dom — då kör en människa
+`node agent/startskott.mjs --jobb <fil.json> --undantag` för hand. Steg 4d
+hoppas över i varje körning, utan rad i leveransen. Briefhalvan (4b–4c) är
+oförändrad: produkter som klarar testet får sin förstabatch på Bäverbutiken
+som vanligt. Sista startskottet som gick ut var ATV-Kapellet 2026-09-24 —
+Axels svar på det var det här beslutet.
+
+Texten nedan beskriver hur startskottet fungerade och gäller bara vid ett
+uttryckligt undantag.
 
 **Axel ångrade sig 2026-09-13: ronden gör BÅDE briefer (4b–4c) OCH startskott.**
 Den 10:e togs briefhalvan bort; den 13:e lades den tillbaka, för Axel vill
@@ -1173,8 +1189,8 @@ därmed inte sparades. Försök inte rädda dem någon annan väg.
 Svara sedan kort på svenska: vad som ändrades (produkt, från → till), vad som
 sköts upp och varför, om något larmade — vilka brief-rundor/batcher som
 kördes (produkt + antal briefer + Notion-länk) respektive ligger kvar i kön
-till imorgon — och **vilka startskott som gick ut** (produkt + siffrorna).
-Gick inget startskott: skriv ingenting om det. Inga bibelsvar.
+till imorgon. Startskott finns inte längre (4d avstängt 2026-09-24) — skriv
+ingenting om dem. Inga bibelsvar.
 
 **Creative strategy-raderna är obligatoriska i varje rond** (CS-KLART punkt
 15–16) — klistra in utskriften av:
@@ -1266,13 +1282,8 @@ Misslyckas Discord-posten: nämn det i svaret men stoppa ingenting.
 - [ ] Notion-svepet kört: hubbar avlästa med `is_archived` (sök både "creative hub" och "BÄVER"),
       drafts hämtade, `agent/notion-uppgifter.json` omskriven med dagens datum och pushad
 - [ ] Nya och nyss arkiverade hubbar redovisade i leveransen
-- [ ] Startskottslistan hämtad ur `startskottsbehov` — inte ur `annonsbehov`
-- [ ] OPS-kontot `915422744950975` avläst; produkter som redan har en butik
-      tystade med `OPS_FINNS_REDAN` i stället för att larmas
-- [ ] Varje rad i startskottslistan har fått ett larm i `#ops-startskott` — eller
-      exakt redovisat varför inte (kampanjen inte ACTIVE, källänk saknas)
-- [ ] Varje startskott loggat som `OPS_STARTSKOTT` och pushat
-- [ ] Inga startskott för NO
+- [ ] Inget startskott postat och ingen `OPS_STARTSKOTT`-rad skriven (4d avstängt
+      2026-09-24 — bara ett uttryckligt undantag från Axel, med `--undantag`, får köra det)
 - [ ] Alla loggrader skrivna och pushade efter varje ändring (= minnet sparat)
 - [ ] Ingen artefakt publicerad och `agent/dashboard.mjs` inte körd
 - [ ] Kort svar till Axel enligt svarsformatet i CLAUDE.md regel 14

@@ -15,9 +15,17 @@
       "campaign_id": "120250333936950291",
       "produkt": "Spabadskapellet i Svart 210D",
       "lage": "test",
-      "lage_motivering": "ny kampanj startad 2026-09-23 02:14, 127 kr spend och noll köp vid morgonens rond — tillagd av /rond-auto. Break-even står i kampanjnamnet (1.63). Priset i butiken 619 kr (jämförpris 809) läst ur baverbutiken.se/products.json 2026-09-23 (handle spabadskapell-i-svart-210d-haller-lov-och-skrap-borta). Prissheetet gick inte att läsa i sin helhet via Drive-MCP:n (read_file_content gav bara batch 1 och början av batch 2) — inget kostnad-block skrivet, aldrig gissat; slå upp raden och fyll blocket när sheetet går att läsa.",
+      "lage_motivering": "ny kampanj startad 2026-09-23 02:14, 127 kr spend och noll köp vid morgonens rond — tillagd av /rond-auto. Break-even står i kampanjnamnet (1.63). Priset i butiken 619 kr (jämförpris 809) läst ur baverbutiken.se/products.json 2026-09-23 (handle spabadskapell-i-svart-210d-haller-lov-och-skrap-borta). Kostnadsblocket fyllt 2026-09-24 ur prissheetets CSV-export (Drive-MCP:n visar bara batch 1–2; export?format=csv ger hela arket).",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "uträknad ur kostnadsblocket (Axels prissheet)",
+      "kostnad": {
+        "pris_sek": 619,
+        "usd": 18.27,
+        "eur": 2.9,
+        "sek": 0,
+        "kalla": "Axels prissheet (Google Sheet 10VrOx…, CSV-export 2026-09-24, BATCH 9: \"Round Bathtub Cover Outdoor Anti-Uv Spa Hot Tub Dust Cover\"), 1 st till Sverige: produkt + frakt 9,54 + 8,73 = 18,27 USD, plus 2,9 EUR EU-avgift per order. Priset 619 kr läst ur baverbutiken.se/products.json (se lage_motivering). Offerten gäller största storleken (210D, 215 × 70 cm); minsta storleken 190 × 30 cm är 14,6 USD enligt sheetets anteckning — blocket räknar på den dyrare.",
+        "datum": "2026-09-24"
+      }
     },
     {
       "campaign_id": "120252299552200233",
@@ -1181,49 +1189,97 @@
       "campaign_id": "120250349342590291",
       "produkt": "Solcellsladdaren 10 W MPPT",
       "lage": "test",
-      "lage_motivering": "ny kampanj startad 2026-09-24 02:51, under 5 kr spend och noll köp vid morgonens rond — tillagd av /rond-auto 2026-09-24. Break-even står i kampanjnamnet (1.61). Priset i butiken 559 kr (jämförpris 1 118) läst ur baverbutiken.se/products.json 2026-09-24 (handle solcellsladdare-10-w-mppt-underhallsladdare-for-12-v). Prissheetet gick inte att läsa i sin helhet via Drive-MCP:n (read_file_content gav bara batch 1 och början av batch 2, samma som 2026-09-23) — inget kostnad-block skrivet, aldrig gissat; slå upp raden och fyll blocket när sheetet går att läsa.",
+      "lage_motivering": "ny kampanj startad 2026-09-24 02:51, under 5 kr spend och noll köp vid morgonens rond — tillagd av /rond-auto 2026-09-24. Break-even står i kampanjnamnet (1.61). Priset i butiken 559 kr (jämförpris 1 118) läst ur baverbutiken.se/products.json 2026-09-24 (handle solcellsladdare-10-w-mppt-underhallsladdare-for-12-v). Kostnadsblocket fyllt 2026-09-24 ur prissheetets CSV-export (Drive-MCP:n visar bara batch 1–2; export?format=csv ger hela arket).",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "uträknad ur kostnadsblocket (Axels prissheet)",
+      "kostnad": {
+        "pris_sek": 559,
+        "usd": 15.96,
+        "eur": 2.9,
+        "sek": 0,
+        "kalla": "Axels prissheet (Google Sheet 10VrOx…, CSV-export 2026-09-24, BATCH 9: \"LEAORLD 12V 10W MPPT Solar Battery Charger Maintainer\"), 1 st till Sverige: produkt + frakt 8,62 + 7,34 = 15,96 USD, plus 2,9 EUR EU-avgift per order. Priset 559 kr läst ur baverbutiken.se/products.json (se lage_motivering).",
+        "datum": "2026-09-24"
+      }
     },
     {
       "campaign_id": "120250349317190291",
       "produkt": "Pussel Adventskalendern",
       "lage": "test",
-      "lage_motivering": "ny kampanj startad 2026-09-24 02:44, under 5 kr spend och noll köp vid morgonens rond — tillagd av /rond-auto 2026-09-24. Break-even står i kampanjnamnet (1.78). Priset i butiken 449 kr (jämförpris 898) läst ur baverbutiken.se/products.json 2026-09-24 (handle pussel-adventskalender-24-dagar-med-pusselbitar). Prissheetet gick inte att läsa i sin helhet via Drive-MCP:n (read_file_content gav bara batch 1 och början av batch 2, samma som 2026-09-23) — inget kostnad-block skrivet, aldrig gissat; slå upp raden och fyll blocket när sheetet går att läsa.",
+      "lage_motivering": "ny kampanj startad 2026-09-24 02:44, under 5 kr spend och noll köp vid morgonens rond — tillagd av /rond-auto 2026-09-24. Break-even står i kampanjnamnet (1.78). Priset i butiken 449 kr (jämförpris 898) läst ur baverbutiken.se/products.json 2026-09-24 (handle pussel-adventskalender-24-dagar-med-pusselbitar). Kostnadsblocket fyllt 2026-09-24 ur prissheetets CSV-export (Drive-MCP:n visar bara batch 1–2; export?format=csv ger hela arket).",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "uträknad ur kostnadsblocket (Axels prissheet)",
+      "kostnad": {
+        "pris_sek": 449,
+        "usd": 14.56,
+        "eur": 2.9,
+        "sek": 0,
+        "kalla": "Axels prissheet (Google Sheet 10VrOx…, CSV-export 2026-09-24, BATCH 13: \"Pussel kalender (Julkalenderpussel 1008 bitar)\"), 1 st till Sverige: produkt + frakt 4,92 + 9,64 = 14,56 USD, plus 2,9 EUR EU-avgift per order. Priset 449 kr läst ur baverbutiken.se/products.json (se lage_motivering).",
+        "datum": "2026-09-24"
+      }
     },
     {
       "campaign_id": "120250349292760291",
       "produkt": "Motorlåset i Rostfritt Stål",
       "lage": "test",
-      "lage_motivering": "ny kampanj startad 2026-09-24 02:37, under 5 kr spend och noll köp vid morgonens rond — tillagd av /rond-auto 2026-09-24. Break-even står i kampanjnamnet (1.64). Priset i butiken 909 kr (jämförpris 1 189) läst ur baverbutiken.se/products.json 2026-09-24 (handle motorlas-i-rostfritt-stal-laser-utombordarens-fastskruvar). Prissheetet gick inte att läsa i sin helhet via Drive-MCP:n (read_file_content gav bara batch 1 och början av batch 2, samma som 2026-09-23) — inget kostnad-block skrivet, aldrig gissat; slå upp raden och fyll blocket när sheetet går att läsa.",
+      "lage_motivering": "ny kampanj startad 2026-09-24 02:37, under 5 kr spend och noll köp vid morgonens rond — tillagd av /rond-auto 2026-09-24. Break-even står i kampanjnamnet (1.64). Priset i butiken 909 kr (jämförpris 1 189) läst ur baverbutiken.se/products.json 2026-09-24 (handle motorlas-i-rostfritt-stal-laser-utombordarens-fastskruvar). Kostnadsblocket fyllt 2026-09-24 ur prissheetets CSV-export (Drive-MCP:n visar bara batch 1–2; export?format=csv ger hela arket).",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "uträknad ur kostnadsblocket (Axels prissheet)",
+      "kostnad": {
+        "pris_sek": 909,
+        "usd": 28.48,
+        "eur": 2.9,
+        "sek": 0,
+        "kalla": "Axels prissheet (Google Sheet 10VrOx…, CSV-export 2026-09-24, BATCH 10: \"Motorlåset rostfritt utombordare\"), 1 st till Sverige: produkt + frakt 14,62 + 13,86 = 28,48 USD, plus 2,9 EUR EU-avgift per order. Priset 909 kr läst ur baverbutiken.se/products.json (se lage_motivering).",
+        "datum": "2026-09-24"
+      }
     },
     {
       "campaign_id": "120250349257210291",
       "produkt": "Golf Adventskalendern",
       "lage": "test",
-      "lage_motivering": "ny kampanj startad 2026-09-24 02:31, under 5 kr spend och noll köp vid morgonens rond — tillagd av /rond-auto 2026-09-24. Break-even står i kampanjnamnet (1.70). Priset i butiken 549 kr (jämförpris 719) läst ur baverbutiken.se/products.json 2026-09-24 (handle golf-adventskalender-24-golftillbehor). Prissheetet gick inte att läsa i sin helhet via Drive-MCP:n (read_file_content gav bara batch 1 och början av batch 2, samma som 2026-09-23) — inget kostnad-block skrivet, aldrig gissat; slå upp raden och fyll blocket när sheetet går att läsa.",
+      "lage_motivering": "ny kampanj startad 2026-09-24 02:31, under 5 kr spend och noll köp vid morgonens rond — tillagd av /rond-auto 2026-09-24. Break-even står i kampanjnamnet (1.70). Priset i butiken 549 kr (jämförpris 719) läst ur baverbutiken.se/products.json 2026-09-24 (handle golf-adventskalender-24-golftillbehor). Kostnadsblocket fyllt 2026-09-24 ur prissheetets CSV-export (Drive-MCP:n visar bara batch 1–2; export?format=csv ger hela arket).",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "uträknad ur kostnadsblocket (Axels prissheet)",
+      "kostnad": {
+        "pris_sek": 549,
+        "usd": 17.19,
+        "eur": 2.9,
+        "sek": 0,
+        "kalla": "Axels prissheet (Google Sheet 10VrOx…, CSV-export 2026-09-24, BATCH 13: \"Golf advent calendar\"), 1 st till Sverige: produkt + frakt 9,08 + 8,11 = 17,19 USD, plus 2,9 EUR EU-avgift per order. Priset 549 kr läst ur baverbutiken.se/products.json (se lage_motivering).",
+        "datum": "2026-09-24"
+      }
     },
     {
       "campaign_id": "120250349224920291",
       "produkt": "Dörr- och Fönsterlarmet 110 dB",
       "lage": "test",
-      "lage_motivering": "ny kampanj startad 2026-09-24 02:24, under 5 kr spend och noll köp vid morgonens rond — tillagd av /rond-auto 2026-09-24. Break-even står i kampanjnamnet (1.61). Priset i butiken 449 kr (jämförpris 589) läst ur baverbutiken.se/products.json 2026-09-24 (handle dorr-och-fonsterlarm-110-db-tradlos-fjarrkontroll). Prissheetet gick inte att läsa i sin helhet via Drive-MCP:n (read_file_content gav bara batch 1 och början av batch 2, samma som 2026-09-23) — inget kostnad-block skrivet, aldrig gissat; slå upp raden och fyll blocket när sheetet går att läsa.",
+      "lage_motivering": "ny kampanj startad 2026-09-24 02:24, under 5 kr spend och noll köp vid morgonens rond — tillagd av /rond-auto 2026-09-24. Break-even står i kampanjnamnet (1.61). Priset i butiken 449 kr (jämförpris 589) läst ur baverbutiken.se/products.json 2026-09-24 (handle dorr-och-fonsterlarm-110-db-tradlos-fjarrkontroll). Kostnadsblocket fyllt 2026-09-24 ur prissheetets CSV-export (Drive-MCP:n visar bara batch 1–2; export?format=csv ger hela arket).",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "uträknad ur kostnadsblocket (Axels prissheet)",
+      "kostnad": {
+        "pris_sek": 449,
+        "usd": 12.25,
+        "eur": 2.9,
+        "sek": 0,
+        "kalla": "Axels prissheet (Google Sheet 10VrOx…, CSV-export 2026-09-24, BATCH 8: \"New 110dB Door And Window Vibration Alarm Wireless\"), 1 st till Sverige: produkt + frakt 5,30 + 6,95 = 12,25 USD, plus 2,9 EUR EU-avgift per order. Priset 449 kr läst ur baverbutiken.se/products.json (se lage_motivering).",
+        "datum": "2026-09-24"
+      }
     },
     {
       "campaign_id": "120250349169940291",
       "produkt": "Täljsetet 30 Delar",
       "lage": "test",
-      "lage_motivering": "ny kampanj startad 2026-09-24 02:15, under 5 kr spend och noll köp vid morgonens rond — tillagd av /rond-auto 2026-09-24. Break-even står i kampanjnamnet (1.63). Priset i butiken 869 kr (jämförpris 1 139) läst ur baverbutiken.se/products.json 2026-09-24 (handle taljset-30-delar-6-knivar-och-6-jarn). Prissheetet gick inte att läsa i sin helhet via Drive-MCP:n (read_file_content gav bara batch 1 och början av batch 2, samma som 2026-09-23) — inget kostnad-block skrivet, aldrig gissat; slå upp raden och fyll blocket när sheetet går att läsa.",
+      "lage_motivering": "ny kampanj startad 2026-09-24 02:15, under 5 kr spend och noll köp vid morgonens rond — tillagd av /rond-auto 2026-09-24. Break-even står i kampanjnamnet (1.63). Priset i butiken 869 kr (jämförpris 1 139) läst ur baverbutiken.se/products.json 2026-09-24 (handle taljset-30-delar-6-knivar-och-6-jarn). Kostnadsblocket fyllt 2026-09-24 ur prissheetets CSV-export (Drive-MCP:n visar bara batch 1–2; export?format=csv ger hela arket).",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "uträknad ur kostnadsblocket (Axels prissheet)",
+      "kostnad": {
+        "pris_sek": 869,
+        "usd": 26.94,
+        "eur": 2.9,
+        "sek": 0,
+        "kalla": "Axels prissheet (Google Sheet 10VrOx…, CSV-export 2026-09-24, BATCH 10: \"Täljsetet 30 delar i väska\"), 1 st till Sverige: produkt + frakt 13,08 + 13,86 = 26,94 USD, plus 2,9 EUR EU-avgift per order. Priset 869 kr läst ur baverbutiken.se/products.json (se lage_motivering).",
+        "datum": "2026-09-24"
+      }
     }
   ],
   "valutakurser": {

@@ -174,10 +174,18 @@ bygger Axel hubbarna själv och döper dem **"BÄVER <produkt>"**.
 *(Briefhalvan togs bort 2026-09-10 och lades tillbaka 2026-09-13 — Axel vill
 skala på Bäverbutiken OCH bygga OPS-butiker, med fler videoredigerare.)*
 
-## Startskottet (sedan 2026-09-10, körs vid sidan av briefsen)
+## Startskottet — ⛔ AVSTÄNGT sedan 2026-09-24
 
-När en produkt klarar testet postar ronden **dessutom ett Discord-meddelande**
-i `#ops-startskott` som säger att produkten ska få en egen OPS-butik.
+**Axels beslut 2026-09-24:** inga fler OPS-butiker ("mycket mer stressmoment"),
+bara vid extrema undantag. `STARTSKOTT_AV` i `agent/startskott.mjs` gör att
+`startskottsbehov` returnerar tomt och att CLI:t vägrar posta utan
+`--undantag`. Ronden postar inga larm och skriver inga `OPS_STARTSKOTT`-rader;
+briefhalvan (förstabatch + brief-rundor på Bäverbutiken) är oförändrad. Ett
+undantag körs för hand på Axels ord: `node agent/startskott.mjs --jobb
+<fil.json> --undantag`. Resten av avsnittet beskriver hur det fungerade.
+
+När en produkt klarade testet postade ronden **dessutom ett Discord-meddelande**
+i `#ops-startskott` som sa att produkten skulle få en egen OPS-butik.
 
 - **Klarat testet — 1 500 kr total spend OCH minst 20 % vinst** → första batchen
   (`/forsta-batch`) OCH ett startskott (`agent/startskott.mjs`, loggas som

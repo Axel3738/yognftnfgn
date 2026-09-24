@@ -12,6 +12,7 @@ import {
   PROVLARM,
   startskottHarGatt,
   startskottsbehov,
+  STARTSKOTT_AV,
   saknadeFalt,
   formateraStartskott,
   byggLoggrad,
@@ -206,7 +207,7 @@ test('kanalen är ops-startskott', () => {
 
 test('startskottsbehov: en produkt över tröskeln larmas', () => {
   assert.deepEqual(
-    startskottsbehov([rad()], { logg: [] }).map((b) => b.kampanj_id),
+    startskottsbehov([rad()], { logg: [], undantag: true }).map((b) => b.kampanj_id),
     ['K1'],
   );
 });
@@ -217,52 +218,52 @@ test('startskottsbehov: DEN VIKTIGA — en produkt med gammal batch larmas änd�
   // hade aldrig fått ett larm. Tröskeln läses därför direkt.
   const logg = [{ kampanj_id: 'K1', kod: 'FORSTA_BATCH_KLAR', genomford: true, datum: '2026-08-20' },
     { kampanj_id: 'K1', kod: 'CS_BATCH_KLAR', genomford: true, datum: '2026-09-01' }];
-  assert.equal(startskottsbehov([rad()], { logg }).length, 1);
+  assert.equal(startskottsbehov([rad()], { logg, undantag: true }).length, 1);
 });
 
 test('startskottsbehov: under spendtröskeln larmas inte', () => {
-  assert.deepEqual(startskottsbehov([rad({ spendTotal: 1499 })], { logg: [] }), []);
+  assert.deepEqual(startskottsbehov([rad({ spendTotal: 1499 })], { logg: [], undantag: true }), []);
 });
 
 test('startskottsbehov: exakt på spendtröskeln larmas', () => {
-  assert.equal(startskottsbehov([rad({ spendTotal: 1500 })], { logg: [] }).length, 1);
+  assert.equal(startskottsbehov([rad({ spendTotal: 1500 })], { logg: [], undantag: true }).length, 1);
 });
 
 test('startskottsbehov: under vinstkravet larmas inte', () => {
   const r = rad({ dom: { kod: 'LAT_VARA', vinstProcent: 19.9 } });
-  assert.deepEqual(startskottsbehov([r], { logg: [] }), []);
+  assert.deepEqual(startskottsbehov([r], { logg: [], undantag: true }), []);
 });
 
 test('startskottsbehov: exakt på vinstkravet larmas', () => {
   const r = rad({ dom: { kod: 'LAT_VARA', vinstProcent: 20 } });
-  assert.equal(startskottsbehov([r], { logg: [] }).length, 1);
+  assert.equal(startskottsbehov([r], { logg: [], undantag: true }).length, 1);
 });
 
 test('startskottsbehov: okänd vinst larmas aldrig', () => {
   const r = rad({ dom: { kod: 'FOR_LITE_DATA', vinstProcent: null } });
-  assert.deepEqual(startskottsbehov([r], { logg: [] }), []);
+  assert.deepEqual(startskottsbehov([r], { logg: [], undantag: true }), []);
 });
 
 test('startskottsbehov: redan larmad tystas', () => {
   const logg = [{ kampanj_id: 'K1', kod: STARTSKOTT_KOD, genomford: true }];
-  assert.deepEqual(startskottsbehov([rad()], { logg }), []);
+  assert.deepEqual(startskottsbehov([rad()], { logg, undantag: true }), []);
 });
 
 test('startskottsbehov: produkt som redan har en OPS-butik tystas', () => {
   const logg = [{ kampanj_id: 'K1', kod: FINNS_REDAN_KOD, genomford: true }];
-  assert.deepEqual(startskottsbehov([rad()], { logg }), []);
+  assert.deepEqual(startskottsbehov([rad()], { logg, undantag: true }), []);
 });
 
 test('startskottsbehov: fryst, avstängd och trappan larmas aldrig', () => {
   for (const kod of ['FRYST', 'STANG_AV', 'ATGARDSTRAPPAN']) {
     const r = rad({ dom: { kod, vinstProcent: 40 } });
-    assert.deepEqual(startskottsbehov([r], { logg: [] }), [], `${kod} skulle inte larma`);
+    assert.deepEqual(startskottsbehov([r], { logg: [], undantag: true }), [], `${kod} skulle inte larma`);
   }
 });
 
 test('startskottsbehov: en kampanj som ronden stängt av tidigare larmas inte', () => {
   const logg = [{ kampanj_id: 'K1', kod: 'STANG_AV', genomford: true, datum: '2026-09-01' }];
-  assert.deepEqual(startskottsbehov([rad()], { logg }), []);
+  assert.deepEqual(startskottsbehov([rad()], { logg, undantag: true }), []);
 });
 
 test('startskottsbehov: återaktiverad kampanj larmas igen', () => {
@@ -270,7 +271,7 @@ test('startskottsbehov: återaktiverad kampanj larmas igen', () => {
     { kampanj_id: 'K1', kod: 'STANG_AV', genomford: true, datum: '2026-09-01' },
     { kampanj_id: 'K1', kod: 'ATERAKTIVERA', genomford: true, datum: '2026-09-02' },
   ];
-  assert.equal(startskottsbehov([rad()], { logg }).length, 1);
+  assert.equal(startskottsbehov([rad()], { logg, undantag: true }).length, 1);
 });
 
 test('startskottsbehov: Norge larmas aldrig', () => {
@@ -284,12 +285,29 @@ test('startskottsbehov: störst spend först', () => {
     rad({ id: 'mellan', spendTotal: 40000 }),
   ];
   assert.deepEqual(
-    startskottsbehov(rader, { logg: [] }).map((b) => b.kampanj_id),
+    startskottsbehov(rader, { logg: [], undantag: true }).map((b) => b.kampanj_id),
     ['stor', 'mellan', 'liten'],
   );
 });
 
 test('startskottsbehov: tål skräp i indatan', () => {
-  assert.deepEqual(startskottsbehov(null, { logg: [] }), []);
-  assert.deepEqual(startskottsbehov([null, {}, rad({ id: null })], { logg: [] }), []);
+  assert.deepEqual(startskottsbehov(null, { logg: [], undantag: true }), []);
+  assert.deepEqual(startskottsbehov([null, {}, rad({ id: null })], { logg: [], undantag: true }), []);
+});
+
+// --- avstängt sedan 2026-09-24 (Axels beslut: inga fler OPS-butiker) --------
+
+test('STARTSKOTT_AV: larmet är avstängt och bär datum + skäl', () => {
+  assert.equal(STARTSKOTT_AV.av, true);
+  assert.equal(STARTSKOTT_AV.sedan, '2026-09-24');
+  assert.match(STARTSKOTT_AV.skal, /inga fler OPS/);
+});
+
+test('startskottsbehov: utan undantag larmas INGEN, hur bra produkten än går', () => {
+  assert.deepEqual(startskottsbehov([rad({ spendTotal: 50000, dom: { kod: 'SKALA', vinstProcent: 45 } })], { logg: [] }), []);
+  assert.deepEqual(startskottsbehov([rad()], { logg: [], undantag: false }), []);
+});
+
+test('startskottsbehov: undantag släpper igenom samma lista som förut', () => {
+  assert.equal(startskottsbehov([rad()], { logg: [], undantag: true }).length, 1);
 });
