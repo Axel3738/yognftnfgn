@@ -127,6 +127,14 @@ model ShopSettings {
   /// betalar i en annan valuta än butikens). Marknader utan post använder
   /// feeRate ovan och ingen växlingsavgift.
   marketFees      Json?
+  /// Googles refresh-token (krypterad). Satt = Google Ads är kopplat.
+  /// Google ger access-token i en timme och refresh-token tills den
+  /// återkallas, så det är den senare som sparas.
+  googleRefreshToken String?
+  /// När kopplingen gjordes — visas som "kopplad sedan" i Inställningar.
+  googleTokenSavedAt DateTime?
+  /// Google-kontot som kopplade, för igenkänning i UI:t. Aldrig mer än så.
+  googleEmail        String?
   /// Handlarens EGEN Claude-nyckel (krypterad). Satt = appens AI-funktioner
   /// kör på butikens konto i stället för serverns. Null = serverns nyckel
   /// används, och saknas den är AI-funktionerna dolda.
@@ -183,9 +191,39 @@ model StoreLinkCode {
 /// fönster utan Shopify-session, så raden är det enda som binder Metas
 /// svar till rätt butik — och till webbläsaren som startade (nonceHash
 /// matchas mot en cookie). Kortlivad och engångs med flit.
+/// Ett kopplat Google Ads-konto. Speglar MetaAdAccount: en butik kan ha
+/// flera, och annonskostnaden är summan av dem alla.
+///
+/// `customerId` är kundnumret utan bindestreck ("1234567890"). I DailySpend
+/// lagras det med prefixet `g:` så Google och Meta kan samsas i samma tabell
+/// utan att ett kundnummer råkar krocka med ett Meta-konto-id.
+model GoogleAdsAccount {
+  shop            String
+  customerId      String
+  /// Kontots namn hos Google, cachat så listan går att läsa utan API-anrop.
+  name            String?
+  /// Kontots valuta, läst från Google. Null = inte läst ännu.
+  currency        String?
+  /// Kontots tidszon (IANA). Google rapporterar dagar i kontots zon.
+  timezoneName    String?
+  /// Chefskontot anropet ska gå via, utan bindestreck. Null = kontot nås
+  /// direkt. Krävs när kundkontot ligger under ett Google Ads-chefskonto.
+  loginCustomerId String?
+  createdAt       DateTime @default(now())
+
+  @@id([shop, customerId])
+  @@index([shop])
+}
+
 model MetaLoginState {
   state     String   @id
   shop      String
+  /// Vilken tjänst inloggningen gäller: "meta" eller "google". Tabellen
+  /// heter fortfarande MetaLoginState — den byggdes för Facebook och döptes
+  /// aldrig om, för en omdöpning av en tabell mitt i drift är ett verkligt
+  /// avbrott för att vinna ett namn. Allt annat delas: engångs-state,
+  /// nonce-cookien, utgången och samma säkerhetsresonemang.
+  provider  String   @default("meta")
   /// sha256 av nonce-cookien som sätts när fönstret öppnas. Null = fönstret
   /// har inte öppnats än; sätts exakt en gång.
   nonceHash String?

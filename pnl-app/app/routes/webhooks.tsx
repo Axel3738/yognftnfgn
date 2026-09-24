@@ -3,6 +3,7 @@ import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
 import { decrypt, kundHash } from "../lib/crypto.server";
 import { aterkallaToken, farAterkallas, META_TOMT } from "../lib/meta-login.server";
+import { GOOGLE_TOMT } from "../lib/google-ads.server";
 
 export async function action({ request }: ActionFunctionArgs) {
   const { topic, shop, session, payload } = await authenticate.webhook(request);
@@ -27,9 +28,13 @@ export async function action({ request }: ActionFunctionArgs) {
          fem sekunder. */
       await prisma.$transaction([
         ...(s?.metaAccessToken ? [prisma.shopSettings.update({ where: { shop }, data: META_TOMT })] : []),
+        /* Samma sak för Google: en avinstallerad butik ska inte lämna kvar
+           en giltig refresh-token, som lever tills den återkallas. */
+        ...(s?.googleRefreshToken ? [prisma.shopSettings.update({ where: { shop }, data: GOOGLE_TOMT })] : []),
         prisma.dailySpend.deleteMany({ where: { shop } }),
         prisma.hourlySpend.deleteMany({ where: { shop } }),
         prisma.metaAdAccount.deleteMany({ where: { shop } }),
+        prisma.googleAdsAccount.deleteMany({ where: { shop } }),
         prisma.metaLoginState.deleteMany({ where: { shop } }),
       ]);
       if (token && aterkalla) void aterkallaToken(token, 3_000);
@@ -68,6 +73,7 @@ export async function action({ request }: ActionFunctionArgs) {
         prisma.dailySpend.deleteMany({ where: { shop } }),
         prisma.hourlySpend.deleteMany({ where: { shop } }),
         prisma.metaAdAccount.deleteMany({ where: { shop } }),
+        prisma.googleAdsAccount.deleteMany({ where: { shop } }),
         prisma.costChange.deleteMany({ where: { shop } }),
         prisma.costTier.deleteMany({ where: { shop } }),
         prisma.pnlCache.deleteMany({ where: { shop } }),

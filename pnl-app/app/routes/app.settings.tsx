@@ -60,6 +60,18 @@ import {
   taBortKonto,
 } from "../lib/meta-konton.server";
 import { dagarKvar, kontoId, VARNA_DAGAR, type Annonskonto } from "../lib/meta-login";
+import {
+  googleAvailable,
+  GOOGLE_TOMT,
+  glomKontolista,
+  hamtaGoogleKonton,
+  koppplaBort,
+  laggTillGoogleKonto,
+  taBortGoogleKonto,
+  tillgangligaKonton,
+  type GoogleKonto,
+} from "../lib/google-ads.server";
+import { glomGoogleFel } from "../lib/google-spend.server";
 import { kandaMarknader, uppmattaAvgifter } from "../lib/daily.server";
 import { hemlandAv, marknadskod, marknadsnamn, sorteraMarknader, stadaAvgifter } from "../lib/marknad";
 import { hamtaKoppling, provaNyckel, serNyckelUt } from "../lib/ai-nyckel.server";
@@ -160,6 +172,36 @@ export async function loader({ request }: LoaderFunctionArgs) {
     kontoFel,
     krypteringPa: encryptionAvailable(),
     currency: s.currency,
+    /* Google Ads. `valbara` är ett nätverksanrop mot Google (cachat tio
+       minuter) — misslyckas det blir det tom lista plus ett fel, aldrig en
+       tyst tom väljare som ser ut som "du har inga konton". */
+    google: await (async () => {
+      const uppsatt = googleAvailable();
+      const kopplat = Boolean(s.googleRefreshToken);
+      const valda = kopplat ? await hamtaGoogleKonton(session.shop).catch(() => []) : [];
+      let valbara: GoogleKonto[] = [];
+      let fel = false;
+      if (kopplat) {
+        try {
+          valbara = await tillgangligaKonton(session.shop);
+        } catch {
+          fel = true;
+        }
+      }
+      return {
+        uppsatt,
+        kopplat,
+        epost: s.googleEmail,
+        valda: valda.map((k) => ({ customerId: k.customerId, name: k.name ?? k.customerId, currency: k.currency })),
+        valbara: valbara.map((k) => ({
+          customerId: k.customerId,
+          name: k.name,
+          currency: k.currency,
+          timezone: k.timezone,
+        })),
+        fel,
+      };
+    })(),
   });
 }
 
@@ -176,6 +218,47 @@ export async function action({ request }: ActionFunctionArgs) {
     if (!metaLoginAvailable()) return json({ ok: false, message: T.settings.loginFailed }, { status: 400 });
     const url = await skapaInloggning(session.shop);
     return json({ ok: true, url });
+  }
+
+  if (intent === "google-login-url") {
+    /* Engångslänken skapas här — i en autentiserad action — så att butiken
+       är bevisad innan fönstret öppnas. Fönstret självt har ingen session. */
+    if (!googleAvailable()) return json({ ok: false, message: T.settings.googleNotConfigured }, { status: 400 });
+    const url = await skapaInloggning(session.shop, undefined, "google");
+    return json({ ok: true, url });
+  }
+
+  if (intent === "google-disconnect") {
+    await prisma.shopSettings.update({ where: { shop: session.shop }, data: GOOGLE_TOMT });
+    await koppplaBort(session.shop);
+    glomGoogleFel(session.shop);
+    glomKontolista(session.shop);
+    return json({ ok: true, message: T.settings.googleDisconnected });
+  }
+
+  if (intent === "google-account-add") {
+    const id = String(f.get("customerId") ?? "").replace(/\D/g, "");
+    if (!id) return json({ ok: false, message: T.settings.unknownError });
+    const namn = String(f.get("name") ?? "").trim() || id;
+    await laggTillGoogleKonto(session.shop, {
+      customerId: id,
+      name: namn,
+      currency: String(f.get("currency") ?? "").trim(),
+      timezone: String(f.get("timezone") ?? "").trim(),
+      loginCustomerId: null,
+    });
+    /* Nytt konto: en gammal backoff från ett dött konto får inte hindra
+       hämtningen av det här. */
+    glomGoogleFel(session.shop);
+    return json({ ok: true, message: T.settings.googleAdded(namn) });
+  }
+
+  if (intent === "google-account-remove") {
+    const id = String(f.get("customerId") ?? "").replace(/\D/g, "");
+    if (!id) return json({ ok: false, message: T.settings.unknownError });
+    const namn = String(f.get("name") ?? "").trim() || id;
+    await taBortGoogleKonto(session.shop, id);
+    return json({ ok: true, message: T.settings.googleRemoved(namn) });
   }
 
   if (intent === "meta-disconnect") {
@@ -953,6 +1036,12 @@ export default function Settings() {
           </Card>
         </Layout.Section>
 
+        {/* Koppla Google Ads. Eget kort bredvid Metas: kostnaden hamnar i
+            samma vinstsiffra, men kopplingen är en annan. */}
+        <Layout.Section>
+          <GoogleKort google={d.google} T={T} />
+        </Layout.Section>
+
         {/* Koppla Claude. Egen knapp och eget kort — kopplingen ska se ut som
             Meta-kopplingen, inte gömma sig bakom Spara längst ner. */}
         <Layout.Section>
@@ -1313,6 +1402,211 @@ function KontoRad({
             </InlineStack>
           </BlockStack>
         </Collapsible>
+      </BlockStack>
+    </Card>
+  );
+}
+
+/**
+ * Google Ads-kortet.
+ *
+ * Samma flöde som Meta: en knapp öppnar Googles dialog i ett eget fönster
+ * (Google renderar inte sin inloggning i en iframe, och appen bor i en),
+ * fönstret säger till med postMessage när det är klart, och sidan laddar om
+ * sig själv. Finns bara ett Google Ads-konto är handlaren klar där — annars
+ * väljer hen i listan nedan.
+ */
+function GoogleKort({
+  google,
+  T,
+}: {
+  google: {
+    uppsatt: boolean;
+    kopplat: boolean;
+    epost: string | null;
+    valda: { customerId: string; name: string; currency: string | null }[];
+    valbara: { customerId: string; name: string; currency: string; timezone: string }[];
+    fel: boolean;
+  };
+  T: ReturnType<typeof t>;
+}) {
+  const fetcher = useFetcher<{ ok: boolean; message?: string; url?: string }>();
+  const revalidator = useRevalidator();
+  const popup = useRef<Window | null>(null);
+  const [popupBlocked, setPopupBlocked] = useState(false);
+  const [loginUrl, setLoginUrl] = useState<string | null>(null);
+  const [valt, setValt] = useState("");
+  const hanterat = useRef<unknown>(null);
+
+  /* Fönstret öppnas i samma klick som knappen trycks — öppnas det först när
+     serverns svar kommit räknas det som en popup utan användarhandling och
+     blockeras av webbläsaren. */
+  const starta = () => {
+    setPopupBlocked(false);
+    setLoginUrl(null);
+    const w = window.open("", "google-login", "popup,width=640,height=760");
+    if (w) {
+      popup.current = w;
+      try {
+        w.document.write(`<p style="font-family:system-ui;padding:24px">${T.settings.loginOpening}</p>`);
+      } catch {
+        /* kosmetiskt */
+      }
+    } else {
+      popup.current = null;
+      setPopupBlocked(true); // länken visas när adressen kommit
+    }
+    fetcher.submit({ intent: "google-login-url" }, { method: "POST" });
+  };
+
+  useEffect(() => {
+    if (!fetcher.data || fetcher.data === hanterat.current) return;
+    hanterat.current = fetcher.data;
+    const data = fetcher.data;
+    if (!data.url) return;
+    const w = popup.current;
+    if (!data.ok) {
+      w?.close();
+      popup.current = null;
+      return;
+    }
+    /* about:blank saknar bas-URL — adressen måste vara absolut. */
+    const abs = new URL(data.url, window.location.origin).href;
+    if (w && !w.closed) w.location.href = abs;
+    else setLoginUrl(abs);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [fetcher.state, fetcher.data]);
+
+  /* Fönstret säger till när det är klart. Origin-kontrollen är inte
+     kosmetisk: utan den kan vilken sida som helst posta "klart" hit. */
+  useEffect(() => {
+    const lyssna = (e: MessageEvent) => {
+      if (e.origin !== window.location.origin) return;
+      const m = e.data as { type?: string; ok?: boolean } | null;
+      if (!m || typeof m !== "object" || m.type !== "google-login") return;
+      if (m.ok) revalidator.revalidate();
+    };
+    window.addEventListener("message", lyssna);
+    return () => window.removeEventListener("message", lyssna);
+  }, [revalidator]);
+
+  const valdaId = new Set(google.valda.map((k) => k.customerId));
+  const kvar = google.valbara.filter((k) => !valdaId.has(k.customerId));
+  const laddar = fetcher.state !== "idle";
+
+  return (
+    <Card>
+      <BlockStack gap="300">
+        <Text as="h2" variant="headingMd">{T.settings.googleTitle}</Text>
+        <Text as="p" tone="subdued">{T.settings.googleIntro}</Text>
+
+        {!google.uppsatt ? (
+          <Banner tone="info">{T.settings.googleNotConfigured}</Banner>
+        ) : (
+          <BlockStack gap="400">
+            <InlineStack gap="300" blockAlign="center" wrap>
+              {google.kopplat ? (
+                <Text as="p" fontWeight="semibold">
+                  {google.epost
+                    ? T.settings.googleConnectedAs(google.epost)
+                    : T.settings.googleConnectedNoEmail}
+                </Text>
+              ) : null}
+              <Button variant={google.kopplat ? undefined : "primary"} loading={laddar} onClick={starta}>
+                {google.kopplat ? T.settings.googleReconnect : T.settings.googleConnect}
+              </Button>
+              {google.kopplat ? (
+                <Button
+                  tone="critical"
+                  loading={laddar}
+                  onClick={() => fetcher.submit({ intent: "google-disconnect" }, { method: "POST" })}
+                >
+                  {T.settings.googleDisconnect}
+                </Button>
+              ) : null}
+            </InlineStack>
+
+            {/* Popup stoppad av webbläsaren: handlaren klickar länken själv. */}
+            {popupBlocked && loginUrl ? (
+              <Text as="p">
+                <a href={loginUrl} target="google-login" rel="noreferrer">
+                  {T.settings.googleConnect}
+                </a>
+              </Text>
+            ) : null}
+
+            {google.fel ? <Banner tone="critical">{T.settings.googleListFailed}</Banner> : null}
+
+            {google.valda.length ? (
+              <BlockStack gap="200">
+                {google.valda.map((k) => (
+                  <InlineStack key={k.customerId} gap="300" blockAlign="center" wrap>
+                    <Text as="p">{`${k.name}${k.currency ? ` · ${k.currency}` : ""}`}</Text>
+                    <Button
+                      tone="critical"
+                      variant="plain"
+                      loading={laddar}
+                      onClick={() =>
+                        fetcher.submit(
+                          { intent: "google-account-remove", customerId: k.customerId, name: k.name },
+                          { method: "POST" },
+                        )
+                      }
+                    >
+                      {T.settings.googleRemove}
+                    </Button>
+                  </InlineStack>
+                ))}
+                <Text as="p" variant="bodySm" tone="subdued">{T.settings.googleMarketNote}</Text>
+              </BlockStack>
+            ) : null}
+
+            {google.kopplat && !google.fel ? (
+              kvar.length ? (
+                <InlineStack gap="300" blockAlign="end" wrap>
+                  <Select
+                    label={T.settings.googlePickAccount}
+                    options={kvar.map((k) => ({
+                      label: `${k.name}${k.currency ? ` · ${k.currency}` : ""}`,
+                      value: k.customerId,
+                    }))}
+                    placeholder={T.settings.googlePickAccount}
+                    value={valt}
+                    onChange={setValt}
+                    helpText={T.settings.googlePickHelp}
+                  />
+                  <Button
+                    disabled={!valt}
+                    loading={laddar}
+                    onClick={() => {
+                      const k = kvar.find((x) => x.customerId === valt);
+                      if (!k) return;
+                      fetcher.submit(
+                        {
+                          intent: "google-account-add",
+                          customerId: k.customerId,
+                          name: k.name,
+                          currency: k.currency,
+                          timezone: k.timezone,
+                        },
+                        { method: "POST" },
+                      );
+                      setValt("");
+                    }}
+                  >
+                    {T.settings.googleAdd}
+                  </Button>
+                </InlineStack>
+              ) : google.valda.length ? null : (
+                <Text as="p" tone="subdued">{T.settings.googleNoAccounts}</Text>
+              )
+            ) : null}
+          </BlockStack>
+        )}
+
+        {fetcher.state === "idle" && fetcher.data?.message ? (
+          <Banner tone={fetcher.data.ok ? "success" : "critical"}>{fetcher.data.message}</Banner>
+        ) : null}
       </BlockStack>
     </Card>
   );

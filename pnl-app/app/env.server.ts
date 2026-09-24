@@ -57,4 +57,19 @@ if (Boolean(metaId) !== Boolean(metaSecret)) {
   );
 }
 
+/* Samma sak för Google Ads: utan variablerna döljs knappen, men en halv
+   konfiguration syns annars först när en handlare klickar och får ett
+   kryptiskt svar från Google. Båda eller ingen.
+   GOOGLE_ADS_DEVELOPER_TOKEN är avsiktligt frivillig — se filhuvudet i
+   app/lib/google-ads.server.ts. */
+const googleId = process.env.GOOGLE_ADS_CLIENT_ID?.trim();
+const googleSecret = process.env.GOOGLE_ADS_CLIENT_SECRET?.trim();
+if (Boolean(googleId) !== Boolean(googleSecret)) {
+  throw new Error(
+    `\n\nGOOGLE_ADS_CLIENT_ID och GOOGLE_ADS_CLIENT_SECRET måste sättas tillsammans — nu är bara ` +
+      `${googleId ? "GOOGLE_ADS_CLIENT_ID" : "GOOGLE_ADS_CLIENT_SECRET"} satt. Sätt båda ` +
+      `(Google Cloud Console → APIs & Services → Credentials → OAuth client ID) eller ta bort båda.\n`,
+  );
+}
+
 export {};

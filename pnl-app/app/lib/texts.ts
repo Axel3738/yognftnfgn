@@ -186,6 +186,7 @@ const en = {
       "no-account-manual": "A Meta token is saved, but no ad account chosen yet. Ad spend is not fetched until you enter one under Settings.",
       expired: "The Meta connection has expired — ad spend is no longer fetched. Renew it under Settings.",
       retrying: "Ad spend could not be fetched just now — retrying in a few minutes.",
+      "google-expired": "The Google Ads connection has expired — its spend is no longer fetched. Connect it again under Settings.",
       "fetch-failed": (reason: string) => `Could not fetch ad spend: ${reason}`,
     },
     fxTitle: "Ad spend could not be converted",
@@ -716,6 +717,25 @@ const en = {
     disconnectButton: "Disconnect Meta",
     disconnectHelp: "Removes the token and the ad account. Cached ad spend is deleted.",
     disconnected: "Meta was disconnected.",
+    googleTitle: "Google Ads",
+    googleIntro:
+      "Connect Google Ads and its spend is added to the same profit figure as Meta — one ad cost, not two numbers to add up in your head.",
+    googleConnect: "Connect Google Ads",
+    googleReconnect: "Connect again",
+    googleDisconnect: "Disconnect Google Ads",
+    googleDisconnected: "Google Ads was disconnected.",
+    googleConnectedAs: (email: string) => `Connected as ${email}`,
+    googleConnectedNoEmail: "Connected",
+    googleNotConfigured: "Google Ads is not set up on this server yet.",
+    googlePickAccount: "Ad account",
+    googlePickHelp: "Pick the Google Ads account whose spend belongs to this store. You can add more than one.",
+    googleAdd: "Add",
+    googleAdded: (name: string) => `${name} was added.`,
+    googleRemoved: (name: string) => `${name} was removed.`,
+    googleRemove: "Remove",
+    googleNoAccounts: "No Google Ads accounts were found for this login.",
+    googleListFailed: "The Google accounts could not be fetched — connect again.",
+    googleMarketNote: "Google spend is counted under all markets, not under a single market.",
     unknownError: "Something went wrong. Reload the page and try again.",
     manualTitle: "Paste a token by hand instead",
     manualBody: "For system users or if the login above does not work for you.",
@@ -761,6 +781,22 @@ const en = {
     notConfigured: "Facebook login is not set up on this server.",
     hostMismatch: (served: string, configured: string) =>
       `The app is served from ${served} but the server's SHOPIFY_APP_URL is ${configured}. The Facebook login only works when they match — fix the variable on the server.`,
+  },
+
+  googleLogin: {
+    notConfigured: "Google Ads is not set up on this server.",
+    cancelled: "You cancelled at Google. Nothing was changed. Close this window and try again when you want to connect.",
+    failed: (reason: string) => `Google did not accept the login: ${reason}. Close this window and try again.`,
+    noCode: "Google returned no authorization code. Close this window and try again.",
+    noAccounts:
+      "This Google account has no Google Ads accounts, so nothing was saved. Log in with the Google account that manages your ads.",
+    doneBody: (email: string | null, shop: string) =>
+      (email ? `Signed in as ${email}` : "Signed in") +
+      ` — the store ${shop} can now read your Google Ads spend. ` +
+      "Go back to Settings and pick your ad account. This window closes by itself.",
+    doneBodyAccount: (email: string | null, shop: string, account: string) =>
+      (email ? `Signed in as ${email}` : "Signed in") +
+      ` — the store ${shop} now reads ad spend from ${account}. You're done. This window closes by itself.`,
   },
 
   group: {
@@ -1063,6 +1099,7 @@ const sv: Texts = {
       "no-account-manual": "En Meta-token är sparad, men inget annonskonto valt än. Annonskostnaden hämtas inte förrän du fyllt i ett under Inställningar.",
       expired: "Meta-kopplingen har gått ut — annonskostnaden hämtas inte längre. Förnya den under Inställningar.",
       retrying: "Annonskostnaden gick inte att hämta just nu — nytt försök om några minuter.",
+      "google-expired": "Google Ads-kopplingen har gått ut — dess kostnad hämtas inte längre. Koppla den igen under Inställningar.",
       "fetch-failed": (reason: string) => `Kunde inte hämta annonskostnaden: ${reason}`,
     },
     fxTitle: "Annonskostnaden kunde inte räknas om",
@@ -1593,6 +1630,25 @@ const sv: Texts = {
     disconnectButton: "Koppla bort Meta",
     disconnectHelp: "Tar bort token och annonskonto. Cachad annonskostnad raderas.",
     disconnected: "Meta kopplades bort.",
+    googleTitle: "Google Ads",
+    googleIntro:
+      "Koppla Google Ads så läggs kostnaden i samma vinstsiffra som Meta — en annonskostnad, inte två tal att lägga ihop i huvudet.",
+    googleConnect: "Koppla Google Ads",
+    googleReconnect: "Koppla igen",
+    googleDisconnect: "Koppla bort Google Ads",
+    googleDisconnected: "Google Ads kopplades bort.",
+    googleConnectedAs: (email: string) => `Kopplat som ${email}`,
+    googleConnectedNoEmail: "Kopplat",
+    googleNotConfigured: "Google Ads är inte uppsatt på den här servern än.",
+    googlePickAccount: "Annonskonto",
+    googlePickHelp: "Välj det Google Ads-konto vars kostnad hör till den här butiken. Du kan lägga till flera.",
+    googleAdd: "Lägg till",
+    googleAdded: (name: string) => `${name} lades till.`,
+    googleRemoved: (name: string) => `${name} togs bort.`,
+    googleRemove: "Ta bort",
+    googleNoAccounts: "Inga Google Ads-konton hittades för den här inloggningen.",
+    googleListFailed: "Google-kontona gick inte att hämta — koppla igen.",
+    googleMarketNote: "Google-kostnaden räknas under alla marknader, inte under en enskild marknad.",
     unknownError: "Något gick fel. Ladda om sidan och försök igen.",
     manualTitle: "Klistra in en token för hand i stället",
     manualBody: "För systemanvändare, eller om inloggningen ovan inte fungerar för dig.",
@@ -1638,6 +1694,22 @@ const sv: Texts = {
     notConfigured: "Facebook-inloggning är inte uppsatt på den här servern.",
     hostMismatch: (served: string, configured: string) =>
       `Appen visas från ${served} men serverns SHOPIFY_APP_URL är ${configured}. Facebook-inloggningen fungerar bara när de är samma — rätta variabeln på servern.`,
+  },
+
+  googleLogin: {
+    notConfigured: "Google Ads är inte uppsatt på den här servern.",
+    cancelled: "Du avbröt hos Google. Inget ändrades. Stäng fönstret och försök igen när du vill koppla.",
+    failed: (reason: string) => `Google godkände inte inloggningen: ${reason}. Stäng fönstret och försök igen.`,
+    noCode: "Google skickade ingen auktoriseringskod. Stäng fönstret och försök igen.",
+    noAccounts:
+      "Det här Google-kontot har inga Google Ads-konton, så inget sparades. Logga in med Google-kontot som sköter dina annonser.",
+    doneBody: (email: string | null, shop: string) =>
+      (email ? `Inloggad som ${email}` : "Inloggad") +
+      ` — butiken ${shop} kan nu läsa din annonskostnad från Google Ads. ` +
+      "Gå tillbaka till Inställningar och välj annonskonto. Fönstret stängs av sig självt.",
+    doneBodyAccount: (email: string | null, shop: string, account: string) =>
+      (email ? `Inloggad som ${email}` : "Inloggad") +
+      ` — butiken ${shop} läser nu annonskostnaden från ${account}. Klart. Fönstret stängs av sig självt.`,
   },
 
   group: {

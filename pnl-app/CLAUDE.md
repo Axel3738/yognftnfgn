@@ -679,6 +679,59 @@ per timme, tullens restpost under marknaden "" får inte tappas, och
 avgifternas okända andel är en periodkvot. Bygg den **aldrig** som 24 anrop
 till `compute()`.
 
+### Google Ads-kopplingen (2026-09-24, build google-ads-v111)
+
+Axel: *"du måste göra så att man kan connecta Google Ads. Och det ska kunna
+göras att jag bara behöver göra typ max en cowork prompt och sen connecta
+den Google Ads åt mig."*
+
+Handlaren klickar **en** knapp i Inställningar. Allt annat är byggt.
+Full beskrivning: `pnl-app/docs/google-ads.md`.
+
+**Den bärande designen: Google skriver i SAMMA tabeller som Meta**
+(`DailySpend`/`HourlySpend`, kontot `g:<kundnummer>`). Därför räknar
+panelen, gruppsumman, timgrafen, MER, ROAS och break-even med Google utan
+att en enda rad i räknemotorn ändrades. Bygg aldrig ett parallellt
+Google-spår — då får butiken två annonskostnader att jämka ihop i huvudet,
+vilket är precis det appen finns för att slippa.
+
+Fem saker som är medvetna:
+
+1. **Prefixet `g:` är inte kosmetiskt.** Metas konto-id och Googles
+   kundnummer är båda rena siffror. Utan prefixet kunde de skriva över
+   varandras dagar i den delade tabellen — utan att något såg fel ut.
+   Eget test.
+2. **`cost_micros` är MILJONDELAR.** Utan delningen blir annonskostnaden
+   en miljon gånger för hög och vinsten lika mycket för låg. Eget test.
+3. **`searchStream` svarar med en LISTA av batchar.** Läses bara den
+   första tappas allt efter de första tusen raderna, tyst. Eget test.
+4. **Marknaden är alltid `""`.** Google-kampanjer har ingen
+   marknadsmärkning ännu, så kostnaden syns under "alla marknader" och
+   räknas inte in under en enskild. Samma regel som omärkta
+   Meta-kampanjer — hellre utanför en marknadssiffra än felaktigt inne i.
+5. **Inloggningsmaskineriet är Metas**, med en `provider`-kolumn på
+   `MetaLoginState`: samma engångsrad, samma nonce-cookie, samma spärr mot
+   vidarebefordrade länkar, och cookiens `Path` följer providern. En egen
+   andra variant hade betytt två uppsättningar säkerhetsspärrar att hålla
+   i synk. Popupens postMessage har egen typ (`google-login`), annars
+   börjar Meta-kortet polla efter en Google-inloggning.
+
+⚠️ **`prompt=consent` får inte tas bort ur dialogadressen.** Utan den ger
+Google ingen refresh-token till den som redan gett samtycke, och
+kopplingen dör efter en timme.
+
+⚠️ **Developer token är frivillig med flit.** Googles REST-dokumentation
+säger att huvudet krävs; Googles ändringslogg säger att det sunsattes
+2026-09-09 och ignoreras. Sidan som skulle avgöra saken gav 404. Huvudet
+skickas när `GOOGLE_ADS_DEVELOPER_TOKEN` är satt och utelämnas annars —
+det fungerar under båda reglerna. Skriv inte om det till "krävs" utan att
+ha läst ett svar från Google som säger det.
+
+**Servern behöver `GOOGLE_ADS_CLIENT_ID` + `GOOGLE_ADS_CLIENT_SECRET`** på
+alla sex tjänsterna, och redirect-URI:n `<SHOPIFY_APP_URL>/google/callback`
+i OAuth-klienten. Saknas de döljs knappen; är bara en satt vägrar appen
+starta.
+
 ### Timgrafen på panelen (2026-09-23, build timgraf-v109)
 
 `app/components/Timgraf.tsx`: 24 staplar, med väljare för omsättning,

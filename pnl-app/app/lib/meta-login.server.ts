@@ -32,8 +32,13 @@ const STATE_MINUTER = 30;
 /** Hur länge länken får ligga oöppnad. Fönstret öppnar den inom sekunder —
  *  en länk som öppnas minuter senare är en vidarebefordrad länk. */
 const START_SEKUNDER = 120;
-/** Cookien som binder Metas svar till webbläsaren som startade. */
+/** Cookien som binder svaret till webbläsaren som startade.
+ *  Sökvägen följer providern (/meta respektive /google) — en cookie med
+ *  Path=/meta skickas aldrig till /google/callback, och då hade Google-
+ *  inloggningen alltid fallit på "fel webbläsare". */
 export const COOKIE_NAMN = "meta_login";
+export type Provider = "meta" | "google";
+const cookieSokvag = (provider: Provider) => (provider === "google" ? "/google" : "/meta");
 
 export interface MetaLoginConfig {
   appId: string;
@@ -79,16 +84,22 @@ const hash = (s: string) => createHash("sha256").update(s).digest("hex");
  * Skapar engångsraden och returnerar den relativa adress fönstret ska öppna.
  * Anropas från en autentiserad action — det är där butiken bevisas.
  */
-export async function skapaInloggning(shop: string, syfte?: string): Promise<string> {
+export async function skapaInloggning(shop: string, syfte?: string, provider: Provider = "meta"): Promise<string> {
   const state = randomBytes(24).toString("base64url");
   await prisma.metaLoginState.create({
-    data: { shop, state, syfte: syfte ?? null, expiresAt: new Date(Date.now() + STATE_MINUTER * 60 * 1000) },
+    data: {
+      shop,
+      state,
+      syfte: syfte ?? null,
+      provider,
+      expiresAt: new Date(Date.now() + STATE_MINUTER * 60 * 1000),
+    },
   });
   /* Städning i förbifarten: rader äldre än en timme är döda oavsett. */
   void prisma.metaLoginState
     .deleteMany({ where: { expiresAt: { lt: new Date(Date.now() - 60 * 60 * 1000) } } })
     .catch(() => {});
-  return `/meta/start?state=${encodeURIComponent(state)}`;
+  return `/${provider}/start?state=${encodeURIComponent(state)}`;
 }
 
 /**
@@ -124,9 +135,25 @@ export async function startaInloggning(
   cfg: MetaLoginConfig,
   state: string,
 ): Promise<{ shop: string; nonce: string; dialogUrl: string } | null> {
+  const oppnad = await oppnaRad(state, "meta");
+  return oppnad && { ...oppnad, dialogUrl: dialogUrl(cfg, state) };
+}
+
+/**
+ * Provider-neutrala delen av steg 1: markera raden som öppnad (exakt en
+ * gång) och ge tillbaka butik + nonce. Google-flödet bygger sin egen
+ * dialogadress ovanpå den här — spärrarna ska vara exakt desamma.
+ */
+export async function oppnaRad(
+  state: string,
+  provider: Provider,
+): Promise<{ shop: string; nonce: string } | null> {
   if (!state) return null;
   const rad = await prisma.metaLoginState.findUnique({ where: { state } });
   if (!rad || rad.usedAt || rad.nonceHash || rad.expiresAt < new Date()) return null;
+  /* En rad skapad för Meta får inte öppnas av Google-rutten och tvärtom:
+     annars kunde ett Google-svar spara en token på ett Meta-flödes rad. */
+  if ((rad.provider ?? "meta") !== provider) return null;
   if (Date.now() - rad.createdAt.getTime() > START_SEKUNDER * 1000) return null;
 
   const nonce = randomBytes(24).toString("base64url");
@@ -138,7 +165,7 @@ export async function startaInloggning(
   });
   if (r.count !== 1) return null;
 
-  return { shop: rad.shop, nonce, dialogUrl: dialogUrl(cfg, state) };
+  return { shop: rad.shop, nonce };
 }
 
 /** Metas inloggningsdialog. Exporterad för test. */
@@ -171,10 +198,12 @@ export function dialogUrl(cfg: MetaLoginConfig, state: string): string {
 export async function forbrukaInloggning(
   state: string,
   cookieNonce: string | null,
+  provider: Provider = "meta",
 ): Promise<{ ok: true; shop: string; syfte: string | null } | { ok: false; skal: "okand" | "fel-webblasare" }> {
   if (!state) return { ok: false, skal: "okand" };
   const rad = await prisma.metaLoginState.findUnique({ where: { state } });
   if (!rad || rad.usedAt || rad.expiresAt < new Date()) return { ok: false, skal: "okand" };
+  if ((rad.provider ?? "meta") !== provider) return { ok: false, skal: "okand" };
   if (!rad.nonceHash || !cookieNonce || hash(cookieNonce) !== rad.nonceHash) {
     return { ok: false, skal: "fel-webblasare" };
   }
@@ -186,14 +215,15 @@ export async function forbrukaInloggning(
   return { ok: true, shop: rad.shop, syfte: rad.syfte };
 }
 
-/** Cookie-headern för fönstret. Path /meta: ingen annan sida ser den. */
-export function nonceCookie(nonce: string): string {
-  return `${COOKIE_NAMN}=${nonce}; Path=/meta; Max-Age=${STATE_MINUTER * 60}; HttpOnly; Secure; SameSite=Lax`;
+/** Cookie-headern för fönstret. Sökvägen är providerns: ingen annan sida ser den. */
+export function nonceCookie(nonce: string, provider: Provider = "meta"): string {
+  const p = cookieSokvag(provider);
+  return `${COOKIE_NAMN}=${nonce}; Path=${p}; Max-Age=${STATE_MINUTER * 60}; HttpOnly; Secure; SameSite=Lax`;
 }
 
 /** Tömmer cookien efter avslutat flöde. */
-export function tomNonceCookie(): string {
-  return `${COOKIE_NAMN}=; Path=/meta; Max-Age=0; HttpOnly; Secure; SameSite=Lax`;
+export function tomNonceCookie(provider: Provider = "meta"): string {
+  return `${COOKIE_NAMN}=; Path=${cookieSokvag(provider)}; Max-Age=0; HttpOnly; Secure; SameSite=Lax`;
 }
 
 export function lasNonceCookie(request: Request): string | null {

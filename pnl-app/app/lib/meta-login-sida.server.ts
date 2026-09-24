@@ -23,6 +23,10 @@ export function metaLoginSida(
     status?: number;
     /** Säg till Settings-sidan (postMessage) och stäng fönstret av sig självt. */
     signal?: LoginSignal;
+    /** Vilket kort på Settings-sidan som lyssnar. Google-kortet får en egen
+     *  typ, annars hade Meta-kortet börjat polla efter en Google-inloggning
+     *  och visat "väntar på Facebook" i all oändlighet. */
+    signalType?: "meta-login" | "google-login";
     headers?: Record<string, string>;
   },
 ): Response {
@@ -30,7 +34,7 @@ export function metaLoginSida(
   const nonce = randomBytes(16).toString("base64");
   const signalSkript = opts.signal
     ? `
-  try { if (window.opener) window.opener.postMessage(${JSON.stringify({ type: "meta-login", ...opts.signal })}, window.location.origin); } catch (e) {}
+  try { if (window.opener) window.opener.postMessage(${JSON.stringify({ type: opts.signalType ?? "meta-login", ...opts.signal })}, window.location.origin); } catch (e) {}
   setTimeout(function () { window.close(); }, ${opts.signal.ok ? 2500 : 6000});`
     : "";
   const html = `<!doctype html>

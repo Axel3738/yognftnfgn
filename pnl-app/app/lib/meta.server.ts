@@ -19,6 +19,8 @@ import { summeraDagar } from "./spend-summa";
 import { GRAPH_VERSION, kontoId } from "./meta-login";
 import { marknadskod } from "./marknad";
 import { tidszonsOffset, timmeUrBreakdown } from "./timmar";
+import { uppdateraGoogleSpend, type GoogleUtfall } from "./google-spend.server";
+import { somKonto } from "./google-ads.server";
 
 const GRAPH = `https://graph.facebook.com/${GRAPH_VERSION}`;
 
@@ -27,7 +29,7 @@ const GRAPH = `https://graph.facebook.com/${GRAPH_VERSION}`;
  * språk och kan visa EN banner per läge. `error` (texten) finns kvar för
  * loggar och för anropare som bara frågar "gick det?".
  */
-export type SpendErrorCode = "no-connection" | "expired" | "retrying" | "fetch-failed";
+export type SpendErrorCode = "no-connection" | "expired" | "retrying" | "fetch-failed" | "google-expired";
 
 export interface MetaConfig {
   adAccountId: string;
@@ -455,9 +457,18 @@ export async function getSpend(
       orderBy: { day: "asc" },
     }) as unknown as Promise<SpendRad[]>;
 
+  /* Google Ads skriver sina egna rader i SAMMA tabell (kontot `g:<id>`), så
+     butiken får en annonskostnad i stället för två system att jämka ihop.
+     Uppdateringen görs före läsningen, annars saknas dagens kostnad i den
+     summa som just räknas. */
+  const google = await uppdateraGoogleSpend(shop, from, to, today, shopCurrency, opts).catch((e) => {
+    console.error(`Google-uppdatering för ${shop} misslyckades:`, (e as Error).message);
+    return { konton: [] } as GoogleUtfall;
+  });
+
   const cached = await las();
 
-  if (!alla.length) {
+  if (!alla.length && !google.konton.length) {
     /* Ingen koppling: servera historiken som den är. Att filtrera på kopplade
        konton här hade raderat panelen för en butik som just kopplat bort. */
     return {
@@ -475,7 +486,7 @@ export async function getSpend(
     utfall.push(await hamtaEttKonto(shop, cfg, cached, from, to, today, shopCurrency, opts));
   }
 
-  const kopplade = new Set(alla.map((c) => c.adAccountId));
+  const kopplade = new Set([...alla.map((c) => c.adAccountId), ...google.konton]);
   const marknad = marknadskod(opts?.market);
   const fresh = (await las()).filter((r) => kopplade.has(r.account) && (!marknad || r.market === marknad));
 
@@ -492,14 +503,36 @@ export async function getSpend(
      "försöker igen" går över av sig självt. */
   const varst =
     utfall.find((u) => u.errorCode === "expired") ?? utfall.find((u) => u.error);
+  /* Googles fel visas när Meta inte redan har ett att visa: panelen har en
+     rad för det här, och två samtidiga fel gör ingen klokare. En utgången
+     Google-koppling väger dock lika tungt som Metas — den kräver en
+     handling av handlaren. */
+  const googleFel = google.error
+    ? { error: google.error, errorCode: (google.utgangen ? "google-expired" : "retrying") as SpendErrorCode }
+    : null;
 
-  const behover = utfall.filter((u) => u.needsFx);
-  const valutor = (rader: Kontoutfall[]) => [...new Set(rader.map((u) => u.fran).filter(Boolean))].join(" + ");
-  const misslyckade = behover.filter((u) => !u.fxOk);
+  /* Valutorna som behövde räknas om, och de som inte gick. Googles konton
+     räknas med på exakt samma villkor som Metas: lyckad omräkning
+     informerar, misslyckad MÅSTE synas — annars adderas två valutor som om
+     de vore en. */
+  const valutor = (v: (string | null | undefined)[]) => [...new Set(v.filter(Boolean))].join(" + ");
+  const behover = [
+    ...utfall.filter((u) => u.needsFx).map((u) => u.fran),
+    ...(google.fxFran ?? []),
+    ...(google.fxSaknas ?? []),
+  ];
+  const misslyckade = [
+    ...utfall.filter((u) => u.needsFx && !u.fxOk).map((u) => u.fran),
+    ...(google.fxSaknas ?? []),
+  ];
 
   return {
     days: summeraDagar(summerbara(fresh), dolda),
-    ...(varst?.error ? { error: varst.error, errorCode: varst.errorCode } : {}),
+    ...(varst?.error
+      ? { error: varst.error, errorCode: varst.errorCode }
+      : googleFel
+        ? googleFel
+        : {}),
     ...(behover.length && shopCurrency
       ? misslyckade.length
         ? { currencyMismatch: { spend: valutor(misslyckade), shop: shopCurrency } }
@@ -698,7 +731,14 @@ export async function timvisSpend(
   butikensTidszon: string,
   market = "",
 ): Promise<{ timmar: number[]; offset: number | null } | null> {
-  const kopplade = (konton ?? []).map((c) => kontoId(c.adAccountId)).filter(Boolean);
+  const metaKonton = (konton ?? []).map((c) => kontoId(c.adAccountId)).filter(Boolean);
+  /* Google Ads skriver timrader i samma tabell och deltar på samma villkor —
+     inklusive tidszonskravet nedan. */
+  const googleKonton = await prisma.googleAdsAccount.findMany({
+    where: { shop },
+    select: { customerId: true, timezoneName: true },
+  });
+  const kopplade = [...metaKonton, ...googleKonton.map((k) => somKonto(k.customerId))];
   if (!kopplade.length || !dagar.length) return null;
 
   const [rader, konton2] = await Promise.all([
@@ -711,7 +751,7 @@ export async function timvisSpend(
       },
     }),
     prisma.metaAdAccount.findMany({
-      where: { shop, accountId: { in: kopplade } },
+      where: { shop, accountId: { in: metaKonton } },
       select: { timezoneName: true },
     }),
   ]);
@@ -721,7 +761,9 @@ export async function timvisSpend(
      zonpar butiken kan ha, och en förskjutning per dag vore mycket arbete
      för de tre dagar om året då EU och USA byter sommartid olika. */
   const mitt = dagar[Math.floor(dagar.length / 2)];
-  const zoner = [...new Set(konton2.map((k) => k.timezoneName).filter(Boolean))] as string[];
+  const zoner = [
+    ...new Set([...konton2, ...googleKonton].map((k) => k.timezoneName).filter(Boolean)),
+  ] as string[];
   const offsets = zoner.map((z) => tidszonsOffset(z, butikensTidszon, mitt));
   /* Flera konton i olika zoner, eller en okänd zon: går inte att lägga på en
      gemensam klocka. Hellre ingen ROAS än en förskjuten. */
