@@ -3,6 +3,9 @@ pipeline/output/
 *.log
 .env
 
+# Agentens isolerade git-worktrees (tillfällig arbetsyta för bakgrundsagenter)
+.claude/worktrees/
+
 # Genererade bildannonser — artefakter, inte källkod
 bildannonser/output/
 
