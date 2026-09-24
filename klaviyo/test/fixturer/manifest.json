@@ -1,0 +1,77 @@
+{
+  "brand": "baverbutiken",
+  "byggd": "2026-09-24T12:00:00+02:00",
+  "mejl": [
+    {
+      "id": "k01-prov",
+      "namn": "MAIL_20261001_Takoverdrag_PD_1_prov_v1",
+      "amnesrader": [
+        { "text": "Ämnesrad A", "begar": "slippa fukt" },
+        { "text": "Ämnesrad B", "begar": "slippa läckor" },
+        { "text": "Ämnesrad C", "begar": "spara tid" }
+      ],
+      "forhandstext": "Förhandstext",
+      "html": "<html><body><p>Hej</p><p>{% unsubscribe %}</p><p>{{ organization.full_address }}</p></body></html>",
+      "text": "Hej",
+      "kalla": "kampanj"
+    },
+    {
+      "id": "f02-steg1",
+      "namn": "FLOW_checkout_overgiven_v1_mejl1",
+      "amnesrader": [{ "text": "Du glömde något", "begar": "slutföra köpet" }],
+      "forhandstext": "Kassan väntar",
+      "html": "<html><body>{% unsubscribe %} {{ organization.full_address }}</body></html>",
+      "text": "Kassan väntar",
+      "kalla": "flode",
+      "flode_id": "f02-overgiven-kassa",
+      "steg_index": 1
+    },
+    {
+      "id": "f02-steg2",
+      "namn": "FLOW_checkout_overgiven_v1_mejl2",
+      "amnesrader": [{ "text": "Fortfarande kvar i kassan", "begar": "slutföra köpet" }],
+      "forhandstext": "Sista påminnelsen",
+      "html": "<html><body>{% unsubscribe %} {{ organization.full_address }}</body></html>",
+      "text": "Sista påminnelsen",
+      "kalla": "flode",
+      "flode_id": "f02-overgiven-kassa",
+      "steg_index": 3
+    }
+  ],
+  "kampanjer": [
+    {
+      "id": "k01-prov",
+      "namn": "MAIL_20261001_Takoverdrag_PD_1_prov_v1",
+      "planerad": "2026-10-01T18:00:00+02:00",
+      "segment": ["SEG_uppvarmning_steg1"],
+      "exkludera": ["SEG_oengagerade_180d"],
+      "mejl_id": "k01-prov",
+      "status_plan": "klar"
+    }
+  ],
+  "floden": [
+    {
+      "id": "f02-overgiven-kassa",
+      "namn": "FLOW_checkout_overgiven_v1",
+      "trigger": { "typ": "metrik", "metrik": ["Started Checkout", "Checkout Started"] },
+      "filter": ["samtycke", "ej_kopt_sedan_start", "ej_i_flodet_7d"],
+      "ateintrade": { "varaktighet": 7, "enhet": "day" },
+      "steg": [
+        { "typ": "vanta", "enhet": "hours", "varde": 1 },
+        { "typ": "mejl", "mejl_id": "f02-steg1" },
+        { "typ": "vanta", "enhet": "days", "varde": 1 },
+        { "typ": "mejl", "mejl_id": "f02-steg2" }
+      ]
+    },
+    {
+      "id": "f01-valkomst",
+      "namn": "FLOW_valkomst_v1",
+      "trigger": { "typ": "lista", "lista": "LISTA_nyhetsbrev" },
+      "filter": ["samtycke", "ej_i_flodet_30d"],
+      "ateintrade": null,
+      "steg": [
+        { "typ": "mejl", "mejl_id": "f02-steg1" }
+      ]
+    }
+  ]
+}

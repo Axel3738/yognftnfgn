@@ -132,3 +132,6 @@ stonebite/data/kalender.jsonl
 stonebite/data/kontakter.jsonl
 # Autosvarets logg när minutservern körs lokalt utan STONEBITE_DATA (i drift: volymen). Repots logg är kundtjanst/autosvar/logg/.
 stonebite/data/autosvar/
+
+# Klaviyo-motorn: byggda mejl, galleri, produkt- och recensionscache (klaviyo/bygg.mjs)
+klaviyo/output/

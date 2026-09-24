@@ -11,7 +11,7 @@
     "dash": "node dashboard/build.mjs",
     "status": "node dashboard/cli.mjs status",
     "review": "node dashboard/cli.mjs review-queue",
-    "test": "node --test dashboard/test/*.test.mjs bildannonser/test/*.test.mjs commission/test/*.test.mjs factory/test/*.test.mjs tools/test/*.test.mjs kundtjanst/test/*.test.mjs mejl/test/*.test.mjs listicle/test/*.test.mjs pipeline/test/*.test.mjs sparning/test/*.test.mjs stonebite/test/*.test.mjs bonus/test/*.test.mjs",
+    "test": "node --test dashboard/test/*.test.mjs bildannonser/test/*.test.mjs commission/test/*.test.mjs factory/test/*.test.mjs tools/test/*.test.mjs kundtjanst/test/*.test.mjs mejl/test/*.test.mjs listicle/test/*.test.mjs pipeline/test/*.test.mjs sparning/test/*.test.mjs stonebite/test/*.test.mjs bonus/test/*.test.mjs klaviyo/test/*.test.mjs",
     "listicle": "node listicle/bygg.mjs",
     "mejl": "node mejl/bygg.mjs",
     "mejl:butiker": "node mejl/bygg-butik.mjs --alla",
@@ -28,7 +28,11 @@
     "tvist": "node kundtjanst/tvistfakta.mjs",
     "sida": "node stonebite/server.mjs",
     "sida:hamta": "node stonebite/hamta.mjs",
-    "bonus": "node bonus/kor.mjs"
+    "bonus": "node bonus/kor.mjs",
+    "klaviyo:bygg": "node klaviyo/bygg.mjs",
+    "klaviyo:kolla": "node klaviyo/kolla.mjs",
+    "klaviyo:ladda": "node klaviyo/ladda-upp.mjs",
+    "klaviyo:rapport": "node klaviyo/rapport.mjs"
   },
   "engines": {
     "node": ">=20"

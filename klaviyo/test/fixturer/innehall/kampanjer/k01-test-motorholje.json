@@ -1,0 +1,28 @@
+{
+  "id": "k01-test-motorholje",
+  "namn": "MAIL_20260929_Motorholje_PD_1_test_problem_regnet_v1",
+  "memo": "Hypotes: att visa vad regnet gör med en motor utan hölje slår en ren produktvisning bland engagerade prenumeranter.",
+  "taggar": { "typ": "I", "kalla": "egen-data", "kalla_ref": "products/motorholjet/dna.md", "lardom": null, "avatar": "båtägaren", "begar": "slippa rost", "awareness": "problem", "urgency": "sasong", "confidence": "medium", "prefix": "Enginecover", "kod": "PD" },
+  "amnesrader": [
+    { "text": "Regnet hittar in under presenningen", "begar": "slippa rost" },
+    { "text": "{{fornamn}}, hur står motorn i vinter?", "begar": "trygghet" },
+    { "text": "Ett hölje som sitter kvar i blåsten", "begar": "slippa jobb" }
+  ],
+  "forhandstext": "Vatten i elen är det dyraste en båtägare kan råka ut för.",
+  "block": [
+    { "typ": "hero", "rubrik": "Motorn står ute hela vintern", "text": "Hej {{fornamn}},\n\nRegnet letar sig in där presenningen glipar.", "bild": "produkt:motorholje-test", "knapp": { "text": "Se höljet", "lank": "produkt:motorholje-test" } },
+    { "typ": "punkter", "rubrik": "Det här gör det", "punkter": ["Sitter kvar i blåsten", "Håller regnet borta från elen", "På med en hand"] },
+    { "typ": "produkt", "handle": "motorholje-test", "text": "Du sparar in en vårservice.", "knapp": "Köp höljet" },
+    { "typ": "citat", "handle": "motorholje-test", "antal": 2 },
+    { "typ": "produktrad", "rubrik": "Mer för båten", "handles": ["spohallare-test", "baverlampa-pro"] },
+    { "typ": "grundare", "text": "Jag testar allt på min egen båt först." },
+    { "typ": "knapp", "text": "Alla produkter", "lank": "kollektion:alla-produkter" },
+    { "typ": "fakta" }
+  ],
+  "tretest": [ { "rad": "ämnesrad A", "visualisera": true, "falsifiera": true, "ingen_annan": true } ],
+  "planerad": "2026-09-29T18:00:00+02:00",
+  "segment": ["SEG_uppvarmning_steg1"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "klar",
+  "kraver_axel": null
+}

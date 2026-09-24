@@ -1,0 +1,38 @@
+{
+  "id": "f02-test-kassa",
+  "namn": "FLOW_checkout_overgiven_test_v1",
+  "memo": "Hypotes: en påminnelse efter en timme med det som ligger i kassan tar tillbaka fler än ingen påminnelse.",
+  "trigger": { "typ": "metrik", "metrik": ["Started Checkout", "Checkout Started"] },
+  "filter": ["samtycke", "ej_kopt_sedan_start", "ej_i_flodet_7d"],
+  "ateintrade": { "varaktighet": 7, "enhet": "day" },
+  "steg": [
+    { "typ": "vanta", "enhet": "hours", "varde": 1 },
+    { "typ": "mejl", "mejl": {
+      "namn": "FLOW_checkout_e1",
+      "memo": "Påminnelse med kassans rader.",
+      "taggar": { "typ": "M", "urgency": "ingen", "awareness": "product" },
+      "amnesrader": [ { "text": "Du glömde något i kassan", "begar": "slutföra" }, { "text": "Varukorgen väntar på dig", "begar": "slutföra" }, { "text": "{{fornamn}}, ska vi skicka den?", "begar": "slutföra" } ],
+      "forhandstext": "Allt ligger kvar precis som du lämnade det.",
+      "block": [
+        { "typ": "text", "rubrik": "Den ligger kvar", "text": "Hej {{fornamn}}, vi sparade din varukorg." },
+        { "typ": "dynamisk", "kalla": "checkout_rader" },
+        { "typ": "fakta" }
+      ],
+      "tretest": [ { "rad": "ämnesrad A", "visualisera": true, "falsifiera": true, "ingen_annan": true } ]
+    } },
+    { "typ": "vanta", "enhet": "days", "varde": 1 },
+    { "typ": "mejl", "mejl": {
+      "id": "f02-test-kassa-sista",
+      "namn": "FLOW_checkout_e2",
+      "memo": "Andra påminnelsen med produkten kunden tittade på.",
+      "taggar": { "typ": "M", "urgency": "ingen", "awareness": "product" },
+      "amnesrader": [ { "text": "Fortfarande intresserad?", "begar": "slutföra" }, { "text": "Den här tittade du på", "begar": "slutföra" }, { "text": "Vi håller den åt dig ett tag", "begar": "slutföra" } ],
+      "forhandstext": "Här är den igen.",
+      "block": [
+        { "typ": "dynamisk", "kalla": "visad_produkt" },
+        { "typ": "dynamisk", "kalla": "order_rader" }
+      ],
+      "tretest": [ { "rad": "ämnesrad A", "visualisera": true, "falsifiera": true, "ingen_annan": true } ]
+    } }
+  ]
+}
