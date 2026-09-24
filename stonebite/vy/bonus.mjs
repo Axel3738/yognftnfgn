@@ -239,6 +239,25 @@ export function bonusSida({ snapshot, anvandare, csrf, meddelande = '', fel = ''
 
 // ------------------------------------------------- delarna för Min sida
 
+/**
+ * Lönen går varannan vecka, 1–15 och 16–månadens slut (Joshs önskan
+ * 2026-09-24). Talen är motorns (`halvor` i utfallet) — vyn räknar aldrig om.
+ * Commission räknas på hela månadens spend och har ingen egen halva: den får
+ * ett eget kort i stället för en påhittad uppdelning.
+ */
+function halvkort(mitt, period) {
+  const h = mitt?.halvor;
+  if (!h) return '';
+  const manad = String(period?.fran ?? '').slice(0, 7);
+  const sista = String(period?.till ?? '').slice(8, 10) || '31';
+  const kortet = (etikett, belopp, forklaring) => kort({ etikett, varde: USD(belopp ?? 0), forklaring });
+  return [
+    kortet(`${t('Löneperiod')} 1–15`, h.forsta, `${manad}-01 – ${manad}-15`),
+    kortet(`${t('Löneperiod')} 16–${sista}`, h.andra, `${manad}-16 – ${manad}-${sista}`),
+    h.manad > 0 ? kortet(t('Andel av spenden (hela månaden)'), h.manad, t('Räknas på hela månaden och delas inte på perioderna.')) : '',
+  ].join('');
+}
+
 /** "Du har tjänat X" + dina uppdrag + dina bevis + rapporteringsknappen. */
 export function minBonus({ snapshot, anvandare, person, csrf }) {
   const b = snapshot?.bonus ?? null;
@@ -285,6 +304,7 @@ export function minBonus({ snapshot, anvandare, person, csrf }) {
         forklaring: `${b?.period?.fran ?? ''} – ${b?.period?.till ?? ''}. ${t('Betalas ut med lönen.')}`,
         status: (mitt?.summa ?? 0) > 0 ? status('bra', 'på väg till dig') : status('neutral', 'inget än'),
       })}
+      ${halvkort(mitt, b?.period)}
       ${(mitt?.rader ?? []).slice(0, 3).map((r) => kort({
         etikett: r.namn,
         varde: USD(r.summa),

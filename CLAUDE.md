@@ -867,6 +867,13 @@ text att kopiera** (sv + en) och en veckoräknare "1 av 3".
 **Mätt 2026-09-21: 2 av 1 210 recensioner nämnde någon i teamet.** Den siffran
 står nu överst på sidan Recensioner.
 
+**Halvmånaderna på Min sida (2026-09-24, Joshs önskan — lönen går 1–15 och
+16–månadens slut):** motorn lägger `halvor: { forsta, andra, manad }` på varje
+person (`halvaFor` i `bonus/motor.mjs`, bevisdatumet avgör, den 15:e hör till
+första halvan). Commission (andel av spenden) och teamandelen räknas på hela
+månaden och står som `manad` — de delas aldrig på en påhittad nyckel. Mätt
+samma dag: Josh 1–15 $240, 16–30 $60, spend $50,94 = hans summa $350,94.
+
 **Fyra regler som sitter i koden:**
 1. **Hellre okopplad än fel person** — två namn i samma recension betalar ingen.
 2. **Ingen utbetalning utan underlag** — varje krona pekar på ett bevis.

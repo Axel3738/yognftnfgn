@@ -56,6 +56,10 @@ const ORDBOK = {
   'Du har inte tjänat något än den här månaden — uppdragen nedan visar hur du gör.':
     'You have not earned anything yet this month — the tasks below show you how.',
   'Intjänat': 'Earned',
+  'Löneperiod': 'Pay period',
+  'Andel av spenden (hela månaden)': 'Share of ad spend (whole month)',
+  'Räknas på hela månaden och delas inte på perioderna.':
+    'Calculated on the whole month, so it is not split between the pay periods.',
   'Betalas ut med lönen.': 'Paid out with your salary.',
   'på väg till dig': 'on its way to you',
   'inget än': 'nothing yet',
