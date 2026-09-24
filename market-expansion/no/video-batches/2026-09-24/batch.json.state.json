@@ -1,0 +1,99 @@
+{
+ "kajakhallare_CS_1_H2": {
+  "assetUrl": "https://resource2.heygen.ai/video/217f02019e914c779479d496f725bde1/original.mp4",
+  "proofreadId": "5413016b60984797aefffa3ee8ce49cf-nb-nb-NO",
+  "sprak": "Norwegian Bokmål (Norway)",
+  "marknad": "NO",
+  "output_language": "Norwegian Bokmål (Norway)",
+  "sprakkoll": {
+   "HeyGens översättning": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 67,
+    "skal": null
+   }
+  },
+  "srtDone": true
+ },
+ "kajakhallare_CS_1_H3": {
+  "assetUrl": "https://resource2.heygen.ai/video/02534819798e459eab12937ada4f5298/original.mp4",
+  "proofreadId": "0e29b85ec0e54f76b10d0fe49d1b8c3f-nb-nb-NO",
+  "sprak": "Norwegian Bokmål (Norway)",
+  "marknad": "NO",
+  "output_language": "Norwegian Bokmål (Norway)",
+  "sprakkoll": {
+   "HeyGens översättning": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 70,
+    "skal": null
+   }
+  },
+  "srtDone": true
+ },
+ "kajakhallare_GT_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/cb3036a96a9f42bdac3114187e20fabe/original.mp4",
+  "proofreadId": "950dba42c1d8453685ed6443302a32b3-nb-nb-NO",
+  "sprak": "Norwegian Bokmål (Norway)",
+  "marknad": "NO",
+  "output_language": "Norwegian Bokmål (Norway)"
+ },
+ "kajakhallare_GT_1_H2": {
+  "assetUrl": "https://resource2.heygen.ai/video/8414654f2a0c4d5a82baa72e7987a903/original.mp4",
+  "proofreadId": "f2e15fe8cc2a4926aa6ea89414330673-nb-nb-NO",
+  "sprak": "Norwegian Bokmål (Norway)",
+  "marknad": "NO",
+  "output_language": "Norwegian Bokmål (Norway)"
+ },
+ "kajakhallare_GT_1_H3": {
+  "assetUrl": "https://resource2.heygen.ai/video/4a2f1b7b7e3b4ed48efba9d3b5d3450f/original.mp4",
+  "proofreadId": "b6a2223d6f5e450e9d8b825ea2ebe16e-nb-nb-NO",
+  "sprak": "Norwegian Bokmål (Norway)",
+  "marknad": "NO",
+  "output_language": "Norwegian Bokmål (Norway)"
+ },
+ "kajakhallare_PD_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/9573023884494da297dc25612bb87d00/original.mp4",
+  "proofreadId": "ccd2a09585824d8689d8570c631c7134-nb-nb-NO",
+  "sprak": "Norwegian Bokmål (Norway)",
+  "marknad": "NO",
+  "output_language": "Norwegian Bokmål (Norway)"
+ },
+ "kajakhallare_PD_1_H2": {
+  "assetUrl": "https://resource2.heygen.ai/video/24580d1da52e457d8ba87ca3278cf73a/original.mp4",
+  "proofreadId": "6ae9c4e84a5e41f8ac5cb09be31c8581-nb-nb-NO",
+  "sprak": "Norwegian Bokmål (Norway)",
+  "marknad": "NO",
+  "output_language": "Norwegian Bokmål (Norway)",
+  "sprakkoll": {
+   "HeyGens översättning": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 87,
+    "skal": null
+   }
+  },
+  "srtDone": true
+ },
+ "kajakhallare_PD_1_H3": {
+  "assetUrl": "https://resource2.heygen.ai/video/4644114a31424a989b572bd1d87737ac/original.mp4",
+  "proofreadId": "af473b8b0e3f4434a72e1ac12a1b1017-nb-nb-NO",
+  "sprak": "Norwegian Bokmål (Norway)",
+  "marknad": "NO",
+  "output_language": "Norwegian Bokmål (Norway)"
+ },
+ "kajakhallare_SP_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/b84b52c2cf2a4899871a69684638d2b0/original.mp4",
+  "proofreadId": "4cba56bfdc69411189f0b34df3fb853e-nb-nb-NO",
+  "sprak": "Norwegian Bokmål (Norway)",
+  "marknad": "NO",
+  "output_language": "Norwegian Bokmål (Norway)"
+ },
+ "kajakhallare_SP_1_H3": {
+  "assetUrl": "https://resource2.heygen.ai/video/31853537ea9b469886374b60b72986ec/original.mp4",
+  "proofreadId": "1e29e9a7f77d4ef995b75c5f0951bbf6-nb-nb-NO",
+  "sprak": "Norwegian Bokmål (Norway)",
+  "marknad": "NO",
+  "output_language": "Norwegian Bokmål (Norway)"
+ }
+}
