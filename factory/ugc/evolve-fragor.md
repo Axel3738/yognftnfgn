@@ -40,10 +40,6 @@ Price and negotiation
 6. Is 3 videos the right first test? Or is it better to buy 1 video + raw footage from 3 different creators?
 7. Should we pay per video, per product, a monthly retainer for our best creators, or a performance bonus (e.g. extra 1 000 SEK if the ad passes X spend)? What do the best brands do?
 
-Contract, legal, payment (Sweden)
-8. Is a written "yes" in a DM/email enough as an agreement, or do we need a short signed contract? What are the 5 clauses that must be in it for paid-ads usage in Sweden/EU (GDPR, likeness, perpetual rights, raw footage)?
-9. Many Swedish creators have no company. Invoicing through Frilans Finans / Cool Company / Gigapay — any problems, and who should pay that fee?
-10. We ship the product for free. Any tax or "benefit" issue for the creator or us in Sweden?
 ```
 
 ## Del 2 av 2
@@ -51,7 +47,10 @@ Contract, legal, payment (Sweden)
 ```
 PART 2 of 2. Same context as part 1 (Swedish general store, Meta ads, VA in the Philippines who doesn't speak Swedish, 1 500–3 000 SEK per video, raw footage + perpetual rights included, invoice after approval, long-term work as our negotiation card). Answer by number.
 
-Contract, legal, payment (continued)
+Contract, legal, payment (Sweden)
+8. Is a written "yes" in a DM/email enough as an agreement, or do we need a short signed contract? What are the 5 clauses that must be in it for paid-ads usage in Sweden/EU (GDPR, likeness, perpetual rights, raw footage)?
+9. Many Swedish creators have no company. Invoicing through Frilans Finans / Cool Company / Gigapay — any problems, and who should pay that fee?
+10. We ship the product for free. Any tax or "benefit" issue for the creator or us in Sweden?
 11. Can we run a Swedish creator's video in Norway, Denmark and Finland, dubbed or subtitled? Or do we need local creators per country for it to perform?
 
 Brief and quality
