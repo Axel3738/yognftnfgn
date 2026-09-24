@@ -1,35 +1,195 @@
 {
   "kommentar": "Spegelkampanjernas budget — CaraShell-kampanjerna i OPS-kontot (MagiBorsten DK 915422744950975) och USA/UK-kontot (Magiborsten UK 1107817401910319). Axels beslut 2026-09-24: han sköter budgetarna där själv, men ronden ska räkna in de marknadernas spend när den bestämmer hur många briefer Bäverbutikens produkt får (annonserna speglas SE → CaraShell). Skrivs av /rond-auto steg 1c varje morgon ur ads_get_ad_entities (level campaign, last_3d, filter CARASHELL). Budgetronden rör ALDRIG de här kontona.",
-  "hamtad": "2026-09-24T05:20:00Z",
+  "hamtad": "2026-09-24T05:55:00Z",
   "konton": {
     "915422744950975": {
       "namn": "MagiBorsten DK (OPS)",
       "kampanjer": [
-        { "id": "120249050544990172", "namn": "CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11", "effective_status": "ACTIVE", "daily_budget": "9600 kr (SEK)", "spend_3d": 26496.43, "roas_3d": 2.059431, "kop_3d": 38 },
-        { "id": "120249050596730172", "namn": "CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11", "effective_status": "ACTIVE", "daily_budget": "4000 kr (SEK)", "spend_3d": 10503.2, "roas_3d": 2.492968, "kop_3d": 19 },
-        { "id": "120249183405560172", "namn": "CARASHELL_DK_Taköverdrag Husvagn & Husbil 5,5 | BE-ROAS 1.63 | 2026-09-20", "effective_status": "ACTIVE", "daily_budget": "4000 kr (SEK)", "spend_3d": 11345.07, "roas_3d": 1.618005, "kop_3d": 13 },
-        { "id": "120249121867590172", "namn": "CARASHELL_SE_Taköverdraget LISTICLE", "effective_status": "ACTIVE", "daily_budget": "2000 kr (SEK)", "spend_3d": 9865.91, "roas_3d": 1.990186, "kop_3d": 15 },
-        { "id": "120249183407750172", "namn": "CARASHELL_DK_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-20", "effective_status": "PAUSED", "daily_budget": "1000 kr (SEK)", "spend_3d": null, "roas_3d": null, "kop_3d": null },
-        { "id": "120249155398780172", "namn": "CARASHELL_FI_Kattopeite Asuntovaunu | Launch 2026-09-18", "effective_status": "PAUSED", "daily_budget": "1100 kr (SEK)", "spend_3d": null, "roas_3d": null, "kop_3d": null },
-        { "id": "120249115382210172", "namn": "CARASHELL_NO_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16", "effective_status": "PAUSED", "daily_budget": "1000 kr (SEK)", "spend_3d": null, "roas_3d": null, "kop_3d": null },
-        { "id": "120249115376140172", "namn": "CARASHELL_SE_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16", "effective_status": "PAUSED", "daily_budget": "700 kr (SEK)", "spend_3d": null, "roas_3d": null, "kop_3d": null }
+        {
+          "id": "120249183405560172",
+          "namn": "CARASHELL_DK_Taköverdrag Husvagn & Husbil 5,5 | BE-ROAS 1.63 | 2026-09-20",
+          "effective_status": "ACTIVE",
+          "daily_budget": "4000 kr (SEK)",
+          "spend_3d": 11347.29,
+          "roas_3d": 1.617688,
+          "kop_3d": 13
+        },
+        {
+          "id": "120249121867590172",
+          "namn": "CARASHELL_SE_Taköverdraget LISTICLE",
+          "effective_status": "ACTIVE",
+          "daily_budget": "2000 kr (SEK)",
+          "spend_3d": 9870.94,
+          "roas_3d": 1.989172,
+          "kop_3d": 15
+        },
+        {
+          "id": "120249050596730172",
+          "namn": "CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11",
+          "effective_status": "ACTIVE",
+          "daily_budget": "4000 kr (SEK)",
+          "spend_3d": 10506.25,
+          "roas_3d": 2.492244,
+          "kop_3d": 19
+        },
+        {
+          "id": "120249050544990172",
+          "namn": "CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11",
+          "effective_status": "ACTIVE",
+          "daily_budget": "9600 kr (SEK)",
+          "spend_3d": 26503.34,
+          "roas_3d": 2.058894,
+          "kop_3d": 38
+        },
+        {
+          "id": "120249183407750172",
+          "namn": "CARASHELL_DK_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-20",
+          "effective_status": "PAUSED",
+          "daily_budget": "1000 kr (SEK)",
+          "spend_3d": null,
+          "roas_3d": null,
+          "kop_3d": null
+        },
+        {
+          "id": "120249155398780172",
+          "namn": "CARASHELL_FI_Kattopeite Asuntovaunu | Launch 2026-09-18",
+          "effective_status": "PAUSED",
+          "daily_budget": "1100 kr (SEK)",
+          "spend_3d": null,
+          "roas_3d": null,
+          "kop_3d": null
+        },
+        {
+          "id": "120249115382210172",
+          "namn": "CARASHELL_NO_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16",
+          "effective_status": "PAUSED",
+          "daily_budget": "1000 kr (SEK)",
+          "spend_3d": null,
+          "roas_3d": null,
+          "kop_3d": null
+        },
+        {
+          "id": "120249115376140172",
+          "namn": "CARASHELL_SE_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16",
+          "effective_status": "PAUSED",
+          "daily_budget": "700 kr (SEK)",
+          "spend_3d": null,
+          "roas_3d": null,
+          "kop_3d": null
+        }
       ]
     },
     "1107817401910319": {
       "namn": "Magiborsten UK (OPS: US/AU/UK/CA/NZ)",
       "kampanjer": [
-        { "id": "120251451415500435", "namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia", "effective_status": "ACTIVE", "daily_budget": "16000 kr (SEK)", "spend_3d": 24502.62, "roas_3d": 2.625174, "kop_3d": 24 },
-        { "id": "120251471312320435", "namn": "AU LISTICLE Taköverdrag CARASHELL", "effective_status": "ACTIVE", "daily_budget": "8000 kr (SEK)", "spend_3d": 10156.01, "roas_3d": 2.96773, "kop_3d": 14 },
-        { "id": "120251471243740435", "namn": "UK LISTICLE Taköverdrag CARASHELL", "effective_status": "PAUSED", "daily_budget": "2000 kr (SEK)", "spend_3d": 2159.35, "roas_3d": null, "kop_3d": null },
-        { "id": "120251471347220435", "namn": "NZ LISTICLE Taköverdrag CARASHELL", "effective_status": "PAUSED", "daily_budget": "2000 kr (SEK)", "spend_3d": null, "roas_3d": null, "kop_3d": null },
-        { "id": "120251471271400435", "namn": "CA LISTICLE Taköverdrag CARASHELL", "effective_status": "PAUSED", "daily_budget": "2000 kr (SEK)", "spend_3d": null, "roas_3d": null, "kop_3d": null },
-        { "id": "120251464399510435", "namn": "NZ Taköverdrag CARASHELL", "effective_status": "PAUSED", "daily_budget": "2000 kr (SEK)", "spend_3d": null, "roas_3d": null, "kop_3d": null },
-        { "id": "120251464373380435", "namn": "AU Taköverdrag CARASHELL", "effective_status": "PAUSED", "daily_budget": "2000 kr (SEK)", "spend_3d": null, "roas_3d": null, "kop_3d": null },
-        { "id": "120251464335880435", "namn": "CA Taköverdrag CARASHELL", "effective_status": "PAUSED", "daily_budget": "2000 kr (SEK)", "spend_3d": null, "roas_3d": null, "kop_3d": null },
-        { "id": "120251463790410435", "namn": "UK Taköverdrag CARASHELL", "effective_status": "PAUSED", "daily_budget": "2000 kr (SEK)", "spend_3d": null, "roas_3d": null, "kop_3d": null },
-        { "id": "120251451414990435", "namn": "1 CARASHELL_US_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16 – kopia", "effective_status": "PAUSED", "daily_budget": "1000 kr (SEK)", "spend_3d": null, "roas_3d": null, "kop_3d": null },
-        { "id": "120251442339640435", "namn": "CARASHELL_US_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16", "effective_status": "PAUSED", "daily_budget": "1000 kr (SEK)", "spend_3d": null, "roas_3d": null, "kop_3d": null },
-        { "id": "120251436741400435", "namn": "CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16", "effective_status": "PAUSED", "daily_budget": "1000 kr (SEK)", "spend_3d": null, "roas_3d": null, "kop_3d": null }
+        {
+          "id": "120251471312320435",
+          "namn": "AU LISTICLE Taköverdrag CARASHELL",
+          "effective_status": "ACTIVE",
+          "daily_budget": "8000 kr (SEK)",
+          "spend_3d": 10163.19,
+          "roas_3d": 2.965634,
+          "kop_3d": 14
+        },
+        {
+          "id": "120251451415500435",
+          "namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+          "effective_status": "ACTIVE",
+          "daily_budget": "16000 kr (SEK)",
+          "spend_3d": 24506.29,
+          "roas_3d": 2.62478,
+          "kop_3d": 24
+        },
+        {
+          "id": "120251471347220435",
+          "namn": "NZ LISTICLE Taköverdrag CARASHELL",
+          "effective_status": "PAUSED",
+          "daily_budget": "2000 kr (SEK)",
+          "spend_3d": null,
+          "roas_3d": null,
+          "kop_3d": null
+        },
+        {
+          "id": "120251471271400435",
+          "namn": "CA LISTICLE Taköverdrag CARASHELL",
+          "effective_status": "PAUSED",
+          "daily_budget": "2000 kr (SEK)",
+          "spend_3d": null,
+          "roas_3d": null,
+          "kop_3d": null
+        },
+        {
+          "id": "120251471243740435",
+          "namn": "UK LISTICLE Taköverdrag CARASHELL",
+          "effective_status": "PAUSED",
+          "daily_budget": "2000 kr (SEK)",
+          "spend_3d": 2159.35,
+          "roas_3d": null,
+          "kop_3d": null
+        },
+        {
+          "id": "120251464399510435",
+          "namn": "NZ Taköverdrag CARASHELL",
+          "effective_status": "PAUSED",
+          "daily_budget": "2000 kr (SEK)",
+          "spend_3d": null,
+          "roas_3d": null,
+          "kop_3d": null
+        },
+        {
+          "id": "120251464373380435",
+          "namn": "AU Taköverdrag CARASHELL",
+          "effective_status": "PAUSED",
+          "daily_budget": "2000 kr (SEK)",
+          "spend_3d": null,
+          "roas_3d": null,
+          "kop_3d": null
+        },
+        {
+          "id": "120251464335880435",
+          "namn": "CA Taköverdrag CARASHELL",
+          "effective_status": "PAUSED",
+          "daily_budget": "2000 kr (SEK)",
+          "spend_3d": null,
+          "roas_3d": null,
+          "kop_3d": null
+        },
+        {
+          "id": "120251463790410435",
+          "namn": "UK Taköverdrag CARASHELL",
+          "effective_status": "PAUSED",
+          "daily_budget": "2000 kr (SEK)",
+          "spend_3d": null,
+          "roas_3d": null,
+          "kop_3d": null
+        },
+        {
+          "id": "120251451414990435",
+          "namn": "1 CARASHELL_US_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16 – kopia",
+          "effective_status": "PAUSED",
+          "daily_budget": "1000 kr (SEK)",
+          "spend_3d": null,
+          "roas_3d": null,
+          "kop_3d": null
+        },
+        {
+          "id": "120251442339640435",
+          "namn": "CARASHELL_US_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16",
+          "effective_status": "PAUSED",
+          "daily_budget": "1000 kr (SEK)",
+          "spend_3d": null,
+          "roas_3d": null,
+          "kop_3d": null
+        },
+        {
+          "id": "120251436741400435",
+          "namn": "CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16",
+          "effective_status": "PAUSED",
+          "daily_budget": "1000 kr (SEK)",
+          "spend_3d": null,
+          "roas_3d": null,
+          "kop_3d": null
+        }
       ]
     }
   }

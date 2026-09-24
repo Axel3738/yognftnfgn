@@ -1194,6 +1194,14 @@
       "break_even_kalla": "kampanjnamnet"
     },
     {
+      "campaign_id": "120252363909390233",
+      "produkt": "Kajakkholder NO",
+      "lage": "test",
+      "lage_motivering": "ny norsk kampanj startad 2026-09-24 05:27, 92 kr spend, inga köp än — tillagd av /rond-auto 2026-09-24. Break-even står i kampanjnamnet (BE-ROAS 1,62, norskt skrivsätt). Norsk spegling av Kajakhållaren 2-pack (SE 120250320735920291) — inget kostnadsblock: marginalerna är olika i Norge, och sheetet räknar frakt till Sverige.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
       "campaign_id": "120250349342590291",
       "produkt": "Solcellsladdaren 10 W MPPT",
       "lage": "test",
