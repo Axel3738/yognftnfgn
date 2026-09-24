@@ -247,7 +247,7 @@ Matstrumpor.se säljer strumpor förpackade som mat, med fri frakt och 30 dagars
 
 Vänliga hälsningar
 Axel Odhner
-Matstrumpor.se, Stonebite AB
+Matstrumpor.se, Stonebite Ecom AB
 070-xxx xx xx
 ```
 

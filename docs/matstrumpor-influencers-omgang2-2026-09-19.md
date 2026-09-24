@@ -110,3 +110,166 @@ Ingen av siffrorna i tabellen ovan ersätter Modash.
 Rekommenderad ordning: kör de åtta i Modash, poängsätt dem med skalan i
 `docs/matstrumpor-modash-score.md`, och kontakta bara dem som klarar både den och en
 presenttolerans på minst 6.
+
+## Färdiga mail (2026-09-24)
+
+Skrivna efter kursens sju meningar. Skickas från axel.odhner@stonebite.org, ett mail per person,
+aldrig hemlig kopia. **Villkor:** kör profilen i Modash först och skicka bara om den får minst 6 på
+skalan i `docs/matstrumpor-modash-score.md`. Alla sex har presenttolerans 6,5 eller högre.
+Uppföljning efter fyra arbetsdagar, två rader. Ingen DM till artisten medan managern inte svarat.
+
+### 1. Jessica Andersson
+
+Till: info@heldmanagement.se (Held MGMT). Modash: @jessica_andersson_officiell.
+
+Krok: tjugonde Diggiloo-sommaren (jessicaandersson.com). Tidsangivelsen visar att vi vet att julturnén går 20 nov–22 dec (christmasnight.se).
+
+```
+Ämne: Grattis till tjugonde Diggiloo-sommaren, Jessica Andersson
+
+Hej!
+
+Jag heter Axel och driver Matstrumpor.se. Grattis till Jessicas tjugonde sommar med Diggiloo.
+
+Jag skriver för att jag vill skicka två av våra sushilådor till Jessica och familjen, utan några förväntningar. Anledningen är att vi är intresserade av ett betalt samarbete i början av november, innan Christmas Nights drar igång.
+
+Lådan är en julklapp: fem par strumpor rullade som maki i en förpackning som ser ut som riktig takeaway, med ätpinnar, färdig att ges bort utan inslagning. Vi vill att Jessica testar den först och ser om hon gillar den lika mycket som våra kunder, som nästan bara är kvinnor över 45.
+
+Gillar hon lådorna bokar vi ett kort samtal och går igenom samarbetet. Skicka gärna er prislista för stories och annonsrätt, och säg vem hos er som sköter Jessicas samarbeten.
+
+Matstrumpor.se säljer strumpor förpackade som mat, med fri frakt och 30 dagars öppet köp. Vi tror att Jessica passar oss perfekt.
+
+Vänliga hälsningar
+Axel Odhner
+Matstrumpor.se, Stonebite Ecom AB
+```
+
+### 2. DJ Gloria (Madelein Månsson)
+
+Till: anna@djgloria.com (dottern Anna Törnqvist Camisão, manager). Modash: @madeleindjgloria, annars @madeleingloria.
+
+Krok: Svenska institutets film på sharingsweden.se, publicerad 2025-11-27 (verifierad 2026-09-24). Ingen rad om prislista i mailet, eftersom Anna inte är van vid influencerpriser.
+
+```
+Ämne: Grattis till Svenska institutets film om Gloria
+
+Hej Anna!
+
+Jag heter Axel och driver Matstrumpor.se. Grattis till att Svenska institutet gjort en film om Gloria som Sveriges äldsta DJ.
+
+Jag skriver för att jag vill skicka två av våra sushilådor till Gloria och dig, utan några förväntningar. Anledningen är att vi är intresserade av ett betalt samarbete inför jul.
+
+Lådan är en julklapp: fem par strumpor rullade som maki i en förpackning som ser ut som riktig takeaway, med ätpinnar, färdig att ges bort utan inslagning. Vi vill att Gloria testar den först och ser om hon gillar den lika mycket som våra kunder, som nästan bara är kvinnor över 45.
+
+Gillar hon lådorna bokar vi ett kort samtal och går igenom samarbetet.
+
+Matstrumpor.se säljer strumpor förpackade som mat, med fri frakt och 30 dagars öppet köp. Vi tror att Gloria passar oss perfekt.
+
+Vänliga hälsningar
+Axel Odhner
+Matstrumpor.se, Stonebite Ecom AB
+```
+
+### 3. Linda Bengtzing
+
+Till: madde@showstore.se (Madde Wallqvist, Showstore). Modash: @lindabengtzing.
+
+Krok: debut 1986 (Wikipedia) och samtalskvällen 14 okt på Scalateatern (lindabengtzing.se/spelningar). Inspelning måste ske i oktober, december är fullbokad.
+
+```
+Ämne: Grattis till 40 år på scen, Linda Bengtzing
+
+Hej Madde!
+
+Jag heter Axel och driver Matstrumpor.se. Grattis till Lindas 40 år på scen, och lycka till med kvällen om klimakteriet, ADHD och schlager i Karlstad.
+
+Jag skriver för att jag vill skicka två av våra sushilådor till Linda, utan några förväntningar. Anledningen är att vi är intresserade av ett betalt samarbete inför jul.
+
+Lådan är en julklapp: fem par strumpor rullade som maki i en förpackning som ser ut som riktig takeaway, med ätpinnar, färdig att ges bort utan inslagning. Vi vill att Linda testar den först och ser om hon gillar den lika mycket som våra kunder, som nästan bara är kvinnor över 45.
+
+Gillar hon lådorna bokar vi ett kort samtal och går igenom samarbetet. Skicka gärna din prislista för stories och annonsrätt samtidigt.
+
+Matstrumpor.se säljer strumpor förpackade som mat, med fri frakt och 30 dagars öppet köp. Vi tror att Linda passar oss perfekt.
+
+Vänliga hälsningar
+Axel Odhner
+Matstrumpor.se, Stonebite Ecom AB
+```
+
+### 4. Shirley Clamp
+
+Till: johanna@clapyourhands.net (Johanna Boström Stone, Clap Your Hands). Modash: @shirleyclamp.
+
+Krok: programledare SVT1 26 sep och 3 okt 2026. "I november, när galan är över" visar att vi känner till SVT:s karantän utan att säga ordet.
+
+```
+Ämne: Grattis till Världens Barn-galan, Shirley Clamp
+
+Hej Johanna!
+
+Jag heter Axel och driver Matstrumpor.se. Grattis till att Shirley leder Stå upp för Världens Barn i SVT i höst.
+
+Jag skriver för att jag vill skicka två av våra sushilådor till Shirley och familjen, utan några förväntningar. Anledningen är att vi är intresserade av ett betalt samarbete i november, när galan är över.
+
+Lådan är en julklapp: fem par strumpor rullade som maki i en förpackning som ser ut som riktig takeaway, med ätpinnar, färdig att ges bort utan inslagning. Vi vill att Shirley testar den först och ser om hon gillar den lika mycket som våra kunder, som nästan bara är kvinnor över 45.
+
+Gillar hon lådorna bokar vi ett kort samtal och går igenom samarbetet. Skicka gärna din prislista för stories och annonsrätt samtidigt.
+
+Matstrumpor.se säljer strumpor förpackade som mat, med fri frakt och 30 dagars öppet köp. Vi tror att Shirley passar oss perfekt.
+
+Vänliga hälsningar
+Axel Odhner
+Matstrumpor.se, Stonebite Ecom AB
+```
+
+### 5. Charlotte Perrelli
+
+Till: kimpa@stockhouse.se (Joakim Jordansson, Stockhouse). Modash: @laperrelli.
+
+Krok: Ajsees annonser för PERRELLI sol- och läsglasögon, skapade juli–aug 2026 (Meta Ad Library). Lägst prioritet: licensierar bara sitt eget namn, julbordsturné från 27 nov.
+
+```
+Ämne: Grattis till PERRELLI-glasögonen, Charlotte Perrelli
+
+Hej Joakim!
+
+Jag heter Axel och driver Matstrumpor.se. Grattis till PERRELLI-glasögonen, som nu finns i butik.
+
+Jag skriver för att jag vill skicka två av våra sushilådor till Charlotte, utan några förväntningar. Anledningen är att vi är intresserade av ett betalt samarbete i november, inför jul.
+
+Lådan är en julklapp: fem par strumpor rullade som maki i en förpackning som ser ut som riktig takeaway, med ätpinnar, färdig att ges bort utan inslagning. Vi vill att Charlotte testar den först och ser om hon gillar den lika mycket som våra kunder, som nästan bara är kvinnor över 45.
+
+Gillar hon lådorna bokar vi ett kort samtal och går igenom samarbetet. Skicka gärna din prislista för stories och annonsrätt samtidigt.
+
+Matstrumpor.se säljer strumpor förpackade som mat, med fri frakt och 30 dagars öppet köp. Vi tror att Charlotte passar oss perfekt.
+
+Vänliga hälsningar
+Axel Odhner
+Matstrumpor.se, Stonebite Ecom AB
+```
+
+### 6. Nanne Grönvall
+
+Till: hello@clapyourhands.net (samma Johanna som Shirley). Modash: @nannegronvall.
+
+Skicka INTE samma vecka som Shirleys, samma manager. Ta upp Nanne i samtalet med Johanna, eller skicka en vecka senare om Shirley blir nej. Krok undviker medvetet hennes sjukdom.
+
+```
+Ämne: Trettio år sedan Den vilda, Nanne Grönvall
+
+Hej Johanna!
+
+Jag heter Axel och driver Matstrumpor.se. Grattis till att det i år är trettio år sedan Nanne och One More Time vann Melodifestivalen med Den vilda.
+
+Jag skriver för att jag vill skicka två av våra sushilådor till Nanne och familjen, utan några förväntningar. Anledningen är att vi är intresserade av ett betalt samarbete inför jul.
+
+Lådan är en julklapp: fem par strumpor rullade som maki i en förpackning som ser ut som riktig takeaway, med ätpinnar, färdig att ges bort utan inslagning. Vi vill att Nanne testar den först och ser om hon gillar den lika mycket som våra kunder, som nästan bara är kvinnor över 45.
+
+Gillar hon lådorna bokar vi ett kort samtal och går igenom samarbetet. Skicka gärna din prislista för stories och annonsrätt samtidigt.
+
+Matstrumpor.se säljer strumpor förpackade som mat, med fri frakt och 30 dagars öppet köp. Vi tror att Nanne passar oss perfekt.
+
+Vänliga hälsningar
+Axel Odhner
+Matstrumpor.se, Stonebite Ecom AB
+```
