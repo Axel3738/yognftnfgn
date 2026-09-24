@@ -165,9 +165,9 @@ function produktbild(s, url, bredd, alt = '') {
   return `<img src="${esk(url)}" alt="${esk(alt)}" width="${bredd}" style="display: block; width: 100%; max-width: ${bredd}px; height: auto; border: 1px solid ${s.ram}; margin: 0 auto;">`;
 }
 
-function kort(s, { href, bild, namn, pris }) {
+function kort(s, { href, bild, namn, pris, bredd = 33 }) {
   return `
-                  <td class="kl-kort" width="33%" valign="top" align="center" style="padding: 8px 6px;">
+                  <td class="kl-kort" width="${bredd}%" valign="top" align="center" style="padding: 8px 6px;">
                     <a href="${href}" target="_blank" style="text-decoration: none;">
                       ${bild ? produktbild(s, bild, 150, namn) : ''}
                       <p style="${s.brod} font-size: 13px; line-height: 1.4; color: ${s.svart}; margin: 8px 0 0;">${namn}</p>
@@ -359,6 +359,7 @@ const BLOCK = {
   },
   produktrad(b, ctx) {
     const { s, lage } = ctx;
+    const bredd = Math.floor(100 / Math.max(1, Math.min((b.handles ?? []).length, 4)));
     const kortHtml = (b.handles ?? [])
       .map((h) => {
         const p = ctx.produkt(h);
@@ -366,7 +367,7 @@ const BLOCK = {
           ctx.varningar.push(`Produkten "${h}" i produktraden finns inte i Shopify-datan, kortet utgår.`);
           return '';
         }
-        return kort(s, { href: esk(p.url), bild: p.bild ? bildLiten(p.bild, 300) : null, namn: esk(kortnamn(p.titel)), pris: prisHtml(s, p, { storlek: 13 }) });
+        return kort(s, { href: esk(p.url), bild: p.bild ? bildLiten(p.bild, 300) : null, namn: esk(kortnamn(p.titel)), pris: prisHtml(s, p, { storlek: 13 }), bredd });
       })
       .join('');
     if (!kortHtml) return '';

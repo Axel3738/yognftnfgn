@@ -102,9 +102,15 @@ export function validera(mejl, { html = null, text = null, produkter = [], brand
   });
   if (!String(mejl.forhandstext ?? '').trim()) fel.push('Förhandstexten är tom.');
   if (!Array.isArray(mejl.tretest) || !mejl.tretest.length) varningar.push('Tre-frågorstestet (tretest) är inte redovisat.');
+  // docs/copy-regler.md: testet gäller "varje headline, hook och punchline" —
+  // alltså ämnesrad, förhandstext och rubriker. En knapptext ("Se kameran") är
+  // navigering, inte ett påstående; den redovisas men stoppar inte bygget.
   for (const t of mejl.tretest ?? []) {
     const nej = ['visualisera', 'falsifiera', 'ingen_annan'].filter((k) => t?.[k] === false);
-    if (nej.length) fel.push(`Tre-frågorstestet: "${t.rad}" klarar inte ${nej.join(', ')}.`);
+    if (!nej.length) continue;
+    const text = `Tre-frågorstestet: "${t.rad}" klarar inte ${nej.join(', ')}.`;
+    if (/\(knapp\b/i.test(String(t.rad))) varningar.push(`${text} (knapptext, stoppar inte)`);
+    else fel.push(text);
   }
 
   // Copyn
