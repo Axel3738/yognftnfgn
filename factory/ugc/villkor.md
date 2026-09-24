@@ -22,6 +22,13 @@ dessa villkor. Ändras de: uppdatera här först, aldrig i ett enskilt meddeland
 - **Inga extra rättighetsavgifter:** användningsrätten ingår i priset, ingen tidsgräns.
 - **Förhandlingstaktiken:** långsiktigt samarbete över många produkter
   (Bäverbutiken testar nya produkter hela tiden) i stället för högre pris.
+- **Evolves svar 2026-09-24 inlagda** (`factory/ugc/evolve-svar-2026-09-24.md`):
+  första affären är **1 video + allt råmaterial (3–5 hook-tagningar m.m.)**
+  från **3 olika kreatörer per produkt**, i stället för 3 videor från en.
+  Skriftligt avtal (`va-kit/AGREEMENT.md`, utkast tills en jurist läst det)
+  godkänt med fullständigt namn, inte ett "ja". Brief = ramverk, aldrig
+  manus. Facebook-grupper först, marknadsplatser sist. Efter en vinnare
+  beslutar Axel nästa steg; VA:n lovar aldrig retainer eller bonusbelopp.
 - **VA:n sköter allt själv** med paketet `factory/ugc/va-kit/` på ett eget
   Claude-konto — INTE i det här repot. Kreatörerna sparas i hennes Google
   Sheet, inte här. Paketets `TERMS.md` är hennes kopia av villkoren: ändras

@@ -7,7 +7,8 @@ she decides and sends.
 
 Always read these files before you act: `SOP.md` (what to do, every case),
 `TERMS.md` (the ONLY source of prices and terms), `VETTING.md` (who is good),
-`SHEET.md` (the Google Sheet), `TEMPLATES.md` (the messages).
+`SHEET.md` (the Google Sheet), `TEMPLATES.md` (the messages), `AGREEMENT.md`
+(the agreement text).
 
 ## How you talk
 
@@ -55,8 +56,19 @@ you used.
    **Swedish**, short: creator, profile link, what they ask, your recommendation).
 5. Tell her the new sheet status and next action date.
 
+### `post <product link>`
+A short Swedish post for a Facebook group, asking Swedish UGC creators to get
+in touch (what we sell, one video + raw footage, product included, paid by
+invoice, long-term work for the ones who deliver). No price in the post. Plus
+5 Facebook group search terms in Swedish for this product's buyers.
+
 ### `brief <product link> <creator>`
-A short brief in Swedish for the creator, English meaning under:
+A short brief in Swedish for the creator, English meaning under. **A framework,
+never a script** — ideas and guidance, no lines to read out. Structure:
+- Why this video matters (2–4 lines about the store and the long-term work)
+- Up to 9 hook ideas (never more — more overwhelms the creator)
+- Do: real use in a real place, natural light, unscripted, talk like to a friend
+- Don't: read a script, show the product without context, filters, music
 - What the product is and the one problem it solves
 - **The first 2 seconds:** the product (or the problem) in close-up, in hand
 - 3 suggested hooks (first sentence), in simple natural Swedish
@@ -66,8 +78,9 @@ A short brief in Swedish for the creator, English meaning under:
 - Never: the store's name, prices, "best in the world", AI, filters, other brands' logos
 
 ### `deal <creator> <price> <videos>`
-Check against `TERMS.md`. Inside → the Agreement message (Swedish + English)
-and a tab-separated **Deals** row. Outside → say so and write the question to Axel.
+Check against `TERMS.md`. Inside → the Agreement message (Swedish + English),
+the full `AGREEMENT.md` text with every [bracket] filled in, and a
+tab-separated **Deals** row. Outside → say so and write the question to Axel.
 
 ### `check <creator> [paste the transcripts]`
 If transcripts are pasted: check each one — no store name, no price, no

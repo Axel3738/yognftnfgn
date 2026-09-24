@@ -20,8 +20,8 @@ to save), `TEMPLATES.md` (the messages).
 
 1. Open the sheet. Filter **Next action + date** = today or earlier. Do those first.
 2. Answer every creator reply from yesterday (use `/ugc reply`).
-3. If fewer than 3 creators are in `negotiating` or `deal` for the current
-   product: find and contact new ones (`/ugc <product link>`). Max 15 new
+3. Goal per product: **3 different creators with a deal.** If fewer than 3 are
+   in `negotiating` or `deal`: find and contact new ones (`/ugc <product link>`). Max 15 new
    messages per day — more looks like spam.
 4. Update the sheet for everything you did. **If it is not in the sheet, it did not happen.**
 
@@ -29,8 +29,22 @@ to save), `TEMPLATES.md` (the messages).
 
 ## Step by step
 
-### 1. Find — `/ugc <product link>`
-Claude reads the product, tells you the target customer (the "avatar"),
+### 1. Find — where to look, in this order
+
+1. **Swedish Facebook groups** — the best channel (Evolve 2026-09-24). Join
+   Swedish UGC creator groups, plus groups where the product's buyers hang out
+   (boat owners, caravans, gardening, parents). Post the job or search for
+   people who film. Claude can't see inside Facebook groups — you do this part,
+   and Claude writes your post (`/ugc post <product link>`).
+2. **TikTok and Instagram search** — Swedish words for the product and the
+   situation (e.g. "båt vinterförvaring", "husvagn tips"). People who already
+   film themselves with things.
+3. **Marketplaces (Collabstr etc.) last.** They often demand payment up front,
+   and we only pay by invoice after approval. Influee: low quality in the
+   Nordics. Never move a marketplace deal to DM — that breaks their rules and
+   can close the account.
+
+Then run `/ugc <product link>`: Claude reads the product, tells you the target customer (the "avatar"),
 searches for creators and suggests 10 with a score.
 **Check the sheet first** — Claude cannot see it. Anyone already in the sheet:
 skip, or continue the old conversation.
@@ -60,8 +74,11 @@ meaning under it. Send it in the channel on their profile. Sheet: status `contac
 ### 5. Negotiate — see "Negotiation" below. Paste every reply into `/ugc reply`.
 
 ### 6. Deal in writing
-When you agree, send the **agreement message** (`TEMPLATES.md` → Agreement).
-The creator must answer **"ja"** (yes). No written yes = no deal.
+When you agree, send the **agreement message** (`TEMPLATES.md` → Agreement)
+together with the full agreement text (`AGREEMENT.md`, Claude fills in the
+blanks with `/ugc deal`). The creator must answer in writing **with their full
+name**: "Jag godkänner avtalet, Anna Svensson". A plain "ja" is not enough.
+Save a screenshot of the acceptance in the deal's Drive folder.
 Sheet: status `deal`, new row in **Deals**.
 
 ### 7. Send the product
@@ -75,7 +92,9 @@ Sheet: status `deal`, new row in **Deals**.
 
 ### 8. Brief
 Run `/ugc brief <product link> <creator ID>`. Claude writes a short brief in
-Swedish (what to film, the first 2 seconds, what to say, what not to do).
+Swedish. **It is a framework, not a script** — ideas and do's/don'ts, never
+lines to read out. Scripted videos look like ads and die; our best ad was
+unscripted.
 Send it the same day as the product.
 
 ### 9. Wait
@@ -93,7 +112,8 @@ creator also sends the text they said in each video (it's in the agreement).
 Paste that text into `/ugc check <creator>`. Claude checks it for the store
 name, prices, promises and anything wrong. You check the pictures.
 
-- [ ] Agreed number of videos
+- [ ] 1 video (or what was agreed)
+- [ ] The shot list in the raw footage: 3–5 hook takes, product from several angles, problem/demo, hands close-ups, B-roll
 - [ ] **Raw footage included** (all unedited clips)
 - [ ] **The spoken text (transcript) for every video** — checked by Claude, OK
 - [ ] Vertical 9:16, phone-filmed
@@ -121,13 +141,19 @@ in 5 days"). Never tell a creator a payment date other than "30 days".
 
 ### 13. Paid
 Axel tells you when it's paid. Deals: Paid = date. Creators: status `paid`,
-Result = good / ok / bad. Good → ask for the next product (Template: Next product).
+Result = fill in when Axel tells you how the ad did.
+
+**After a video: don't decide the next step yourself.** Tell Axel "D00X
+delivered, raw footage in Drive". The ads are tested first. If a video wins,
+**Axel decides** what to order next (new hooks, new angles, next product or
+ongoing monthly work) and you send it. A creator with 2–3 videos and no winning
+ad → Result `bad — do not use` for now (keep them in the bank).
 
 ---
 
 ## Negotiation — our tactic
 
-**Our strongest card is not money. It's repeat work.** Bäverbutiken tests new
+**Our strongest card is not money. It's repeat work** (Evolve 2026-09-24: "sell the vision"). Bäverbutiken tests new
 products all the time, so we need new UGC every month. A creator who delivers
 well now gets product after product. Say that early and mean it:
 
@@ -171,6 +197,8 @@ Then:
 | Has no company / can't invoice | Suggest an invoicing service (`TERMS.md`). | unchanged |
 | Wants to sign their own contract | Ask Axel. Don't sign anything. | `negotiating` |
 | Wants a commission / % of sales | Ask Axel. | `negotiating` |
+| Asks "what happens after this?" / wants a retainer | "If your video works in our ads, we come back with more work." Never a number — tell Axel. | unchanged |
+| Accepts with only "ja" | Ask them to write "Jag godkänner avtalet" + full name. | `negotiating` |
 | Wants to post the video on their own account too | Fine, no exclusivity — but the post must be marked as advertising ("Reklam" or "i samarbete med …"), Swedish law requires it. | unchanged |
 | Says yes | Agreement message → wait for written "ja". | `deal` |
 | Product lost / not arrived after 10 business days | Check the Shopify order tracking, tell the creator, ask Axel before sending a new one. | `working` |

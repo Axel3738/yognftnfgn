@@ -10,6 +10,7 @@ You need: a Claude account, a Google account, and this folder.
 | `VETTING.md` | How to tell a good creator (7-question filter + score 0–16) |
 | `SHEET.md` | How to set up and fill the Google Sheet |
 | `TEMPLATES.md` | Every message, Swedish + English meaning |
+| `AGREEMENT.md` | The agreement text the creator accepts in writing |
 | `CLAUDE.md` | Instructions for Claude (you don't need to read it) |
 | `creators-sheet-template.csv`, `deals-sheet-template.csv` | Columns for the sheet |
 
@@ -18,7 +19,7 @@ You need: a Claude account, a Google account, and this folder.
 ### Option A — claude.ai Project (easiest, nothing to install) ✅ recommended
 1. Go to claude.ai → **Projects** → **Create project** → name it "UGC outreach".
 2. **Set project instructions** → paste the whole content of `CLAUDE.md`.
-3. **Project knowledge** → upload `SOP.md`, `TERMS.md`, `VETTING.md`, `SHEET.md`, `TEMPLATES.md`.
+3. **Project knowledge** → upload `SOP.md`, `TERMS.md`, `VETTING.md`, `SHEET.md`, `TEMPLATES.md`, `AGREEMENT.md`.
 4. Make sure **web search** is on (the tools button in the chat box).
 5. Start a new chat in the project and write a product link — or
    `reply <creator> <their message>`, `brief …`, `deal …`, `check …`.

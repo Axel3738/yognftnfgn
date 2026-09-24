@@ -15,8 +15,8 @@ first message must mention something this creator actually made.
 > regnet"]. Det kändes äkta, inte som reklam.
 >
 > Vi söker kreatörer som vill jobba med oss långsiktigt. Just nu gäller det
-> [produkt]. Vi erbjuder 1 500 kr per video för tre videor, och du får
-> behålla produkten. Blir videorna bra kommer vi gärna tillbaka med fler
+> [produkt]. Vi erbjuder 1 500 kr för en video plus råmaterialet, och du
+> får behålla produkten. Blir videorna bra kommer vi gärna tillbaka med fler
 > produkter.
 >
 > Låter det intressant? Svara här så berättar jag mer.
@@ -24,8 +24,8 @@ first message must mention something this creator actually made.
 *English: Hi [name]! I'm [name] and I work with Bäverbutiken, a Swedish online
 store that tests many new products every month. I really liked [the concrete
 thing]. It felt real, not like an ad. We're looking for creators to work with
-long-term. Right now it's [product]. We offer 1 500 kr per video for three
-videos, and you keep the product. If the videos are good we'd love to come back
+long-term. Right now it's [product]. We offer 1 500 kr for one video plus the raw
+footage, and you keep the product. If the videos are good we'd love to come back
 with more products. Interested? Reply here and I'll tell you more.*
 
 ## Follow-up (once, after 4 days)
@@ -35,6 +35,20 @@ with more products. Interested? Reply here and I'll tell you more.*
 
 *English: Hi again! Just checking if you saw my message about [product]. No
 problem if it doesn't fit, just let me know.*
+
+## Long-term lines (use in negotiation — Evolve's framework, no numbers)
+
+> Vi testar nya produkter varje månad, så det här är ingen engångsgrej. Blir
+> videon bra kommer vi tillbaka med nästa produkt, och nästa.
+
+*English: We test new products every month, so this isn't a one-off. If the
+video is good, we'll come back with the next product, and the next.*
+
+> Se det här som ett första test. De kreatörer som levererar är de vi fortsätter
+> jobba med.
+
+*English: See this as a first test. The creators who deliver are the ones we
+keep working with.*
 
 ## Counter-offer (they asked for more)
 
@@ -77,31 +91,19 @@ save your profile and would love to get in touch later. Good luck!*
 
 *English: No problem, thanks for answering! Get in touch if anything changes.*
 
-## Agreement (they must answer "ja")
+## Agreement (send with the full text from AGREEMENT.md)
 
-> Toppen! Så här ser upplägget ut:
-> - [3] videor à [1 500] kr, totalt [4 500] kr
-> - Råmaterialet (alla oredigerade klipp) ingår
-> - Du får [produkt] gratis och behåller den
-> - Leverans inom [14] dagar efter att produkten kommit fram
-> - Vi får använda videorna i våra annonser, alla kanaler, i alla våra butiker och länder, utan tidsgräns
-> - Vi får klippa, redigera, översätta och dubba videorna, även med AI-röst och läppsynk
-> - En omtagning ingår om något inte blir som i briefen
-> - Med filerna skickar du texten du säger i varje video (skriv av den, det räcker)
-> - Du bekräftar att du är minst 18 år
-> - Du fakturerar Stonebite Ecom AB efter att vi godkänt videorna, 30 dagars betalning
-> - Ingen exklusivitet
->
-> Svara "ja" så kör vi, så skickar jag produkten direkt.
+> Toppen! Här är avtalet i sin helhet. Kort sagt: en video plus allt
+> råmaterial (med 3 till 5 olika början) för [1 500] kr, du behåller
+> [produkt], leverans inom [14] dagar efter att produkten kommit fram, och du
+> fakturerar efter att vi godkänt videon. Läs igenom och svara "Jag godkänner
+> avtalet" med ditt fullständiga namn, så skickar jag produkten direkt.
 
-*English: Great! Here's the deal: [3] videos at [1 500] kr, [4 500] kr total ·
-raw footage included · you get [product] free and keep it · delivery within [14]
-days after it arrives · we may use the videos in our ads, all channels, all our stores and
-countries, no time limit · we may cut, edit, translate and dub them, also with
-AI voice and lip-sync · one redo included · with the files you send the text you say in each
-video · you confirm you're at least 18 · you invoice Stonebite Ecom AB after we approve the
-videos, 30 days payment · no exclusivity. Reply "yes" and we go, I'll send the
-product right away.*
+*English: Great! Here is the full agreement. In short: one video plus all raw
+footage (with 3 to 5 different openings) for [1 500] kr, you keep [product],
+delivery within [14] days after the product arrives, and you invoice after we
+approve the video. Read it and reply "Jag godkänner avtalet" with your full
+name, and I'll send the product right away.*
 
 ## Address
 
@@ -147,10 +149,10 @@ video and send it here? One message per video is enough.*
 me, addressed to Stonebite Ecom AB, [details]. 30 days payment. If you don't
 have a company you can invoice through e.g. Frilans Finans or Cool Company.*
 
-## Next product (after a good deal)
+## Next product (ONLY when Axel says so)
 
 > Hej [namn]! Videorna du gjorde för [förra produkten] blev riktigt bra. Nu
-> har vi en ny produkt, [produkt]. Vill du göra tre videor på samma villkor?
+> har vi en ny produkt, [produkt]. Vill du göra en video till på samma villkor?
 
 *English: Hi! The videos you made for [last product] turned out really well. We
-have a new product, [product]. Want to make three videos on the same terms?*
+have a new product, [product]. Want to make another video on the same terms?*
