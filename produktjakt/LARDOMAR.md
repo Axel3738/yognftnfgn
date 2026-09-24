@@ -3,43 +3,43 @@
 Läses av `/produktjakt` INNAN sökningen. Auto-delen räknas av `feedback.py vikter`; skriv aldrig i den för hand.
 
 <!-- auto:start -->
-Uppdaterad 2026-09-24. **75 svar** — ja 51, kanske 14, nej 10.
+Uppdaterad 2026-09-24. **94 svar** — ja 62, kanske 14, nej 18.
 
 ## Det Axel säger ja till
 
-- prisband **500–999**: 38 ja, 7 kanske, 5 nej → score 0.817
-- ankare_klass **1,3–1,6×**: 20 ja, 2 kanske, 2 nej → score 0.846
-- form **överdrag**: 18 ja, 1 kanske, 2 nej → score 0.848
-- ankare_klass **≥ 1,6×**: 16 ja, 7 kanske, 5 nej → score 0.683
-- prisband **300–499**: 15 ja, 3 kanske, 0 nej → score 0.875
+- prisband **500–999**: 44 ja, 7 kanske, 11 nej → score 0.758
+- form **överdrag**: 22 ja, 1 kanske, 2 nej → score 0.87
+- ankare_klass **1,3–1,6×**: 22 ja, 2 kanske, 3 nej → score 0.828
+- ankare_klass **≥ 1,6×**: 21 ja, 7 kanske, 9 nej → score 0.654
+- prisband **300–499**: 20 ja, 3 kanske, 0 nej → score 0.9
+- arketyp **B_SKYDDA_DYRT**: 16 ja, 1 kanske, 3 nej → score 0.795
 - ankare_klass **golv utan ankare**: 13 ja, 0 kanske, 0 nej → score 0.933
-- arketyp **B_SKYDDA_DYRT**: 12 ja, 1 kanske, 3 nej → score 0.75
-- arketyp **E_VADER_SASONG**: 11 ja, 1 kanske, 1 nej → score 0.833
+- arketyp **E_VADER_SASONG**: 13 ja, 1 kanske, 3 nej → score 0.763
+- deadline_typ **första frost**: 13 ja, 2 kanske, 3 nej → score 0.75
 - deadline_typ **uppställning**: 11 ja, 1 kanske, 1 nej → score 0.833
-- prisband **≥ 1 000**: 11 ja, 0 kanske, 2 nej → score 0.8
+- form **annat**: 11 ja, 5 kanske, 4 nej → score 0.659
+- prisband **≥ 1 000**: 11 ja, 0 kanske, 4 nej → score 0.706
 - deadline_klass **6–12 v**: 10 ja, 1 kanske, 0 nej → score 0.885
-- deadline_typ **första frost**: 10 ja, 2 kanske, 2 nej → score 0.75
-- form **annat**: 10 ja, 5 kanske, 2 nej → score 0.711
+- ankare_klass **ej mätt**: 10 ja, 0 kanske, 3 nej → score 0.733
 - arketyp **A1**: 9 ja, 1 kanske, 0 nej → score 0.875
-- deadline_klass **2–6 v**: 9 ja, 0 kanske, 0 nej → score 0.909
 
 ## Det Axel säger nej till
 
-- ankare_klass **≥ 1,6×**: 5 nej, 16 ja → score 0.683
-- prisband **500–999**: 5 nej, 38 ja → score 0.817
-- arketyp **B_SKYDDA_DYRT**: 3 nej, 12 ja → score 0.75
-- arketyp **A_AGARE_FRIKTION**: 2 nej, 3 ja → score 0.545
-- deadline_typ **upptagning**: 2 nej, 4 ja → score 0.625
-- deadline_typ **första frost**: 2 nej, 10 ja → score 0.75
-- form **annat**: 2 nej, 10 ja → score 0.711
-- prisband **≥ 1 000**: 2 nej, 11 ja → score 0.8
-- form **överdrag**: 2 nej, 18 ja → score 0.848
-- ankare_klass **1,3–1,6×**: 2 nej, 20 ja → score 0.846
-- grupp **belysning och mörker**: 1 nej, 0 ja → score 0.333
-- grupp **Gårdshunden/hundgården**: 1 nej, 0 ja → score 0.333
-- grupp **Luftvärmepumpens utedel**: 1 nej, 0 ja → score 0.333
-- grupp **Släpkärra**: 1 nej, 0 ja → score 0.333
-- grupp **NYTT: Husvagnens stödben (fyra ben som vevas ner vid uppställningen och står i höstblöt gräsmark i sex månader — sjunker, gnisslar och rostar; plattorna sitter kvar på benet under färd)**: 1 nej, 0 ja → score 0.333
+- prisband **500–999**: 11 nej, 44 ja → score 0.758
+- ankare_klass **≥ 1,6×**: 9 nej, 21 ja → score 0.654
+- form **annat**: 4 nej, 11 ja → score 0.659
+- prisband **≥ 1 000**: 4 nej, 11 ja → score 0.706
+- arketyp **A_AGARE_FRIKTION**: 3 nej, 4 ja → score 0.538
+- arketyp **D_SNABBARE_METOD**: 3 nej, 6 ja → score 0.636
+- ankare_klass **ej mätt**: 3 nej, 10 ja → score 0.733
+- arketyp **E_VADER_SASONG**: 3 nej, 13 ja → score 0.763
+- deadline_typ **första frost**: 3 nej, 13 ja → score 0.75
+- arketyp **B_SKYDDA_DYRT**: 3 nej, 16 ja → score 0.795
+- ankare_klass **1,3–1,6×**: 3 nej, 22 ja → score 0.828
+- deadline_typ **höstregn**: 2 nej, 2 ja → score 0.5
+- form **dekor**: 2 nej, 2 ja → score 0.5
+- form **verktyg**: 2 nej, 5 ja → score 0.667
+- arketyp **H_VISUELL_NYHET**: 2 nej, 6 ja → score 0.682
 
 ## Orsakerna han anger
 
@@ -85,8 +85,11 @@ Uppdaterad 2026-09-24. **75 svar** — ja 51, kanske 14, nej 10.
 - deadline_klass:6–12 v
 - deadline_klass:pågående
 - deadline_typ:1 december
+- deadline_typ:fars dag
 - deadline_typ:första frost
 - deadline_typ:första snö
+- deadline_typ:lövfällning
+- deadline_typ:mörker
 - deadline_typ:uppställning
 - deadline_typ:upptagning
 - deadline_typ:vedsäsong
@@ -123,3 +126,4 @@ Uppdaterad 2026-09-24. **75 svar** — ja 51, kanske 14, nej 10.
 - 2026-09-16: 0 nya svar · STOPP nya: inga · LYFT nya: 41 · parkerat: fenderskydd 4-pack → mars (lucka finns, fel fönster), roskragen stängd · Meta-utfall: inga nya domar; sittkäppen + infartslarmet taggade · Avvikelse: 20 kort obesvarade två dygn — batchen hålls liten · Ändrat i sökningen i morgon: golv läses före ali.py; H08 i fackhandelsobjekt; H10 ger 1–2.
 - 2026-09-23: 20 nya svar (14/5/1) · STOPP nya: inga · LYFT nya: 44 · parkerat: nyckelhålslampan (Fyndiq 184, bara med ankare) · Meta-utfall: sotarsetet REAL_WINNER (verktygsregeln fel), biltvättborsten/dinosauriekalendern/hönsgårdsduken REAL_LOSER · Avvikelse: modellen rätt på 1 av 8 launcher, Axels klick 4 av 7 · Ändrat i sökningen i morgon: 'tjänsten man slipper' som egen lins; hönsgård + kalendrar stängda; snurra-typ = maskin, inte skydd.
 - 2026-09-24: 0 nya svar (14 kort väntar) · STOPP nya: inga · LYFT nya: 44 · parkerat: robotklipparens vinterväska (Gardena 689, ingen Ali-form), knivbyggsatsen (Karesuando 1 145, Ali bara delar), ATV-sätesöverdraget + pizzaugnshuven (H06, bara om vindrutan vinner) · Meta-utfall: ATV-kapellet REAL_WINNER 4,07 med golv under oss (H06 stärkt); snöslungekapellet REAL_LOSER 0,55 (väderdatum för långt bort); kajakhållaren svag · Avvikelse: lins AC gav 0 rader på golvregeln fast dagens vinnare bryter mot den — huvudsessionen lyfte vindrutan som H06-test · Ändrat i sökningen i morgon: golv = sortiment (fackhandel med 100+ varianter) fäller, golv = en kopia under ankare ≥ 1,6× fäller inte; säsong via hårda datum utan kalender fortsätter.
+- 2026-09-24 (kl 09, svar på dagens sida): 19 nya svar (11/0/8) · nej utan etikett: kaninhuven, regnfisken, stenlocket, kikarväskan, fasadlisten, skorstenssnurran, skorstenshuven, hjulvagnen · STOPP nya: inga · LYFT nya: 47 · Läsning: fackhandelsstrumpor 3/3 ja; frosthuvar på trädgårdsobjekt 4/4 ja; dekor (H10) 0/2; skorsten/tak 0/2 (montering på taket); hjulvagn > 1 000 nej · Ändrat: H10 bara funktionell ny form (vägnabbar), aldrig dekor; djur i bur ute stängt (H09); tak-monterat stängt.

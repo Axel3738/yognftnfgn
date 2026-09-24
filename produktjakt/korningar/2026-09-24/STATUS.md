@@ -107,3 +107,13 @@ Robotklipparens vinterväska (Gardena 689/Worx 639 — Ali ger bara handjagarvä
 - [x] koncept.json bär K0298–K0303
 - [x] LEARNING_STATE-raden + STATUS.md + RUTIN-KVITTO.md; committat och pushat
 - [x] Discord-rapport skickad
+
+## Tillägg 0A (kl 09 svensk tid): Axel svarade på 19 av 20 kort — 11 ja / 0 kanske / 8 nej
+
+**Ja:** Fiskedragsbyggsatsen (K0300), Ventilationsrensaren (K0293), Regntunnehuven (K0288), Vapenstrumporna (K0294), Vägnabbarna (K0295), Slangboxhuven (K0284), Värmepumpstvätten (K0298), Lövsilarna (K0285), Elcykelbatteriets vinterjacka (K0289), Spöstrumporna (K0297), Rullskydden (K0291).
+**Nej (utan orsaksetikett):** Kaninburens vinterhuv (K0302), Regnfisken (K0286), Stenlocket (K0287), Kikarbröstväskan (K0303), Fasadlisten (K0290), Skorstenssnurran (K0296), Skorstenshuven (K0292), Hjulvagnen (K0299).
+**Obesvarat:** ATV-vindrutan (K0301, H06-testet).
+
+Läsning: **alla tre fackhandelsstrumporna fick ja** (lins Z:s fynd 09-23 bekräftat i klick), liksom alla fyra "huv/nät över trädgårdsobjekt inför frost" (regntunna, slangbox, lövsilar, elcykelbatteri). **Båda dekor-raderna (H10 "ny form på hus/tomt") fick nej** — H10 har nu 1 ja (vägnabbarna) / 3 nej (regnfisk, stenlock, fasadlist). **Båda skorstensraderna nej** trots ankare 3–4,6× — "tjänsten man slipper" bar inte när objektet sitter på taket (montering). Hjulvagnen 1 299 nej (H12 under 2,4×, som förutsett). Kaninhuven nej — H09 nu hönsgård LOSER + kanin nej: djur i bur ute är stängt.
+
+Direkt efter svaren gav Axel en ny order: **julrunda på Temus kategorier Spel & tillbehör + Byggleksaker, 10+ produkter** — körs som egen körning `korningar/2026-09-24-jul/`.

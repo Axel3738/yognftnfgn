@@ -1,10 +1,10 @@
 {
  "datum": "2026-09-24",
- "antal_svar": 75,
+ "antal_svar": 94,
  "per_dom": {
-  "ja": 51,
+  "ja": 62,
   "kanske": 14,
-  "nej": 10
+  "nej": 18
  },
  "antal_utfall": 7,
  "score_regel": "(ja + 0.5*kanske + 1) / (ja + kanske + nej + 2); 0.5 = inget svar; launchad = 2 ja, >=BE = 3 ja, <BE = 3 nej",
@@ -411,6 +411,120 @@
     "kanske": 0,
     "nej": 0,
     "score": 0.667
+   },
+   "Kanin/marsvin i bur ute": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Hobbyfiskarens egna spinnare — byggsats som gåva (fars dag, jul)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Frånluftskanalerna och imkanalen i villan": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Regntunna vid stupröret": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Jaktvapnen — 2–4 st i vapenskåpet och i bilen till passet": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Uppfartens kant (asfalt/marksten) — infarten i mörker": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Väggmonterad slangbox/slangvinda (Gardena RollUp/PowerRoll, 955–3 049 kr) — sitter kvar på väggen med vatten i slangen första frostnatten": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Luftvärmepumpens innerdel (1,8 miljoner i villor)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Hängrännor": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Elcykel under skärmtak": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Stuprörets utkast — dekorativ utkastare i stället för plåtutkastaren": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Brunnslocket i gräsmattan (avlopps-/dagvattenbrunn, septiktank)": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Jaktkikaren på passet (2–15 tkr) — dinglar i halsrem": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Fiskespöna — 4–10 st i garaget och bilen": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Husfasaden vid entrén/garaget — ytterväggen utan eluttag": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Skorstenstoppen på stålskorsten/rökrör (rund, Ø150–200) — bakdrag": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Fiskerullarna — 4–8 st på spöna och i lådan": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Skorstenskanalen (murad, 140 × 140 mm)": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Bilens vinterhjul — hjulbytet hemma": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
    }
   },
   "ankare_kalla": {
@@ -792,6 +906,120 @@
     "nej": 0,
     "score": 0.667
    },
+   "ingen svensk aktör i formen huv mätt; närmast objektankare: Kerbl 4-Season Superior isolerad kaninbur (granngarden.se, pris ej läst) och Trixie Natura 116 utebur 2 159–2 399 kr (djurmaxi.se) — annan form (bur, inte huv). Teddytassen 'Vindskydd för kaninburar' 89 kr är en klar plastskiva 50 × 70 cm, inte en huv.": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "ej mätt — ingen svensk boxad 'spinner making kit' hittad i denna körning; Adventskalender Fiskedrag 469 kr ligger i butiken som intern referens (24 färdiga drag)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Swema Renskabel 5 m med Ø180 perlonborste, borrmaskinsdriven (2 266 kr ex moms)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "saknas i fackhandeln — Jula/Wexthuset säljer hårda lock (Jula lock Ø70 cm ca 60 kr inkl moms ur sökutdrag), ingen tyghuv; Bauhaus/Granngården/Plantagen: inget överdrag för regntunna hittat": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Remington vapenstrumpa/gevärsstrumpa (Jaktgiganten, per styck — sökutdrag); Elastisk vapenstrumpa 10 × 135 cm 159 kr (e-ville, slutsåld)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "ej mätt — bara B2B-trafikleverantörer (trafficsigncustom.com/sv, nk-roadstud.com/sv) säljer solcellsnabbar mot Sverige, priser på förfrågan": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "saknas — Gardena säljer ingen huv till slangboxen; deras råd är att lyfta ner boxen och förvara frostfritt (gardena.com/se)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Tjänsten: värmepumpsservice med invändig rengöring, 1 900–3 000 kr/besök (bytautvarmepumpen.se; effektivvvs.se; leadhive.se 2026)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Bauhaus Lövavskiljare Mr Flowout 70–100 mm (styck, endast webblager) / Hornbach Lindab självrensande lövsil 195 kr": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Wheelyshop batteriskydd ram elcykel (neopren 53 × 37 cm, 'frost, vatten och sol')": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "ej mätt — vattenliv.se säljer bronsmålad fisk som springbrunnsfigur (annan användning, pris ej läst); ingen svensk aktör hittad med dekorativ stuprörsutkastare i fiskform": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "gartendek.se Ihålig falsk konstgjord sten S-04 (sökutdrag; M/XL-storlekar har pris som inte gick att läsa)": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "Mystery Ranch QD Bino Harness L (bröstväska med magnetlock, 500D Cordura) — Widforss 995 kr (rek 1 095), utsåld i One Size 2026-09-24": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "Daiwa Rod Cover 190 cm / Westin Rod Cover (Sportfiskeprylar, per styck) — Svartzonker Rod Sock 109, Savage Gear Rod Sock Flex 129": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "ej mätt — 230 V-linjära fasadarmaturer (wall washer) finns i lampbutikerna men kräver elektriker; ingen solcellsdriven list hittad hos svensk aktör": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "BAUHAUS Vindsnurra för skorstensdrag 160 mm, rostfri med kullager": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "Shimano Reel Cover Spinning (Sportfiskeprylar, per styck); Daiwa Neoprene Reel Pouch SP 159, Gunki Reel Cover 119": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Kamin & Skorstensskyddaren — måttbeställd skorstenshuv med fågelskydd (4 100–5 000 kr, montering Skåne/västkusten)": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "Eks Verktyg Hjulvagn (verkstadsform); Hjullyft 500 kg personbil 20 700 kr som takankare": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
    "eurotrail/getcamping.se": {
     "ja": 3,
     "kanske": 0,
@@ -837,16 +1065,16 @@
   },
   "ankare_klass": {
    "≥ 1,6×": {
-    "ja": 16,
+    "ja": 21,
     "kanske": 7,
-    "nej": 5,
-    "score": 0.683
+    "nej": 9,
+    "score": 0.654
    },
    "1,3–1,6×": {
-    "ja": 20,
+    "ja": 22,
     "kanske": 2,
-    "nej": 2,
-    "score": 0.846
+    "nej": 3,
+    "score": 0.828
    },
    "golv utan ankare": {
     "ja": 13,
@@ -855,10 +1083,10 @@
     "score": 0.933
    },
    "ej mätt": {
-    "ja": 6,
+    "ja": 10,
     "kanske": 0,
-    "nej": 0,
-    "score": 0.875
+    "nej": 3,
+    "score": 0.733
    },
    "1,2–1,3×": {
     "ja": 7,
@@ -893,40 +1121,46 @@
     "score": 0.5
    },
    "B_SKYDDA_DYRT": {
-    "ja": 12,
+    "ja": 16,
     "kanske": 1,
     "nej": 3,
-    "score": 0.75
+    "score": 0.795
    },
    "A_AGARE_FRIKTION": {
-    "ja": 3,
+    "ja": 4,
     "kanske": 4,
-    "nej": 2,
-    "score": 0.545
+    "nej": 3,
+    "score": 0.538
    },
    "D_SNABBARE_METOD": {
-    "ja": 4,
+    "ja": 6,
     "kanske": 0,
-    "nej": 1,
-    "score": 0.714
+    "nej": 3,
+    "score": 0.636
    },
    "H_VISUELL_NYHET": {
-    "ja": 5,
+    "ja": 6,
     "kanske": 1,
-    "nej": 0,
-    "score": 0.812
+    "nej": 2,
+    "score": 0.682
    },
    "G_Q4_GAVA": {
-    "ja": 7,
+    "ja": 8,
     "kanske": 1,
     "nej": 0,
-    "score": 0.85
+    "score": 0.864
    },
    "E_VADER_SASONG": {
-    "ja": 11,
+    "ja": 13,
     "kanske": 1,
+    "nej": 3,
+    "score": 0.763
+   },
+   "C_LAGA_ISTALLET": {
+    "ja": 0,
+    "kanske": 0,
     "nej": 1,
-    "score": 0.833
+    "score": 0.333
    },
    "A4": {
     "ja": 3,
@@ -971,8 +1205,8 @@
    "första snö": {
     "ja": 6,
     "kanske": 1,
-    "nej": 1,
-    "score": 0.75
+    "nej": 2,
+    "score": 0.682
    },
    "uppställning": {
     "ja": 11,
@@ -981,16 +1215,16 @@
     "score": 0.833
    },
    "höstregn": {
-    "ja": 1,
+    "ja": 2,
     "kanske": 1,
-    "nej": 0,
-    "score": 0.625
+    "nej": 2,
+    "score": 0.5
    },
    "älgjakt": {
-    "ja": 4,
+    "ja": 5,
     "kanske": 0,
-    "nej": 0,
-    "score": 0.833
+    "nej": 1,
+    "score": 0.75
    },
    "jaktstart": {
     "ja": 1,
@@ -999,10 +1233,10 @@
     "score": 0.667
    },
    "vedsäsong": {
-    "ja": 3,
+    "ja": 4,
     "kanske": 1,
-    "nej": 0,
-    "score": 0.75
+    "nej": 1,
+    "score": 0.688
    },
    "1 december": {
     "ja": 8,
@@ -1011,16 +1245,16 @@
     "score": 0.9
    },
    "första frost": {
-    "ja": 10,
+    "ja": 13,
     "kanske": 2,
-    "nej": 2,
+    "nej": 3,
     "score": 0.75
    },
    "upptagning": {
-    "ja": 4,
+    "ja": 6,
     "kanske": 0,
     "nej": 2,
-    "score": 0.625
+    "score": 0.7
    },
    "vintermatning": {
     "ja": 2,
@@ -1029,10 +1263,10 @@
     "score": 0.75
    },
    "fars dag": {
-    "ja": 2,
+    "ja": 3,
     "kanske": 1,
     "nej": 0,
-    "score": 0.7
+    "score": 0.75
    },
    "invintring": {
     "ja": 1,
@@ -1043,8 +1277,8 @@
    "ingen": {
     "ja": 2,
     "kanske": 2,
-    "nej": 0,
-    "score": 0.667
+    "nej": 1,
+    "score": 0.571
    },
    "vintertäckning": {
     "ja": 1,
@@ -1059,10 +1293,10 @@
     "score": 0.667
    },
    "lövfällning": {
-    "ja": 2,
+    "ja": 3,
     "kanske": 1,
     "nej": 0,
-    "score": 0.7
+    "score": 0.75
    },
    "isläggning": {
     "ja": 1,
@@ -1070,13 +1304,13 @@
     "nej": 0,
     "score": 0.667
    },
-   "tjäle": {
-    "ja": 2,
-    "kanske": 0,
-    "nej": 0,
-    "score": 0.75
-   },
    "mörker": {
+    "ja": 3,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.667
+   },
+   "tjäle": {
     "ja": 2,
     "kanske": 0,
     "nej": 0,
@@ -1091,10 +1325,10 @@
     "score": 0.625
    },
    "överdrag": {
-    "ja": 18,
+    "ja": 22,
     "kanske": 1,
     "nej": 2,
-    "score": 0.848
+    "score": 0.87
    },
    "tak/överdrag": {
     "ja": 1,
@@ -1103,10 +1337,10 @@
     "score": 0.667
    },
    "huv": {
-    "ja": 4,
+    "ja": 6,
     "kanske": 1,
-    "nej": 0,
-    "score": 0.786
+    "nej": 2,
+    "score": 0.682
    },
    "dyna": {
     "ja": 1,
@@ -1115,10 +1349,10 @@
     "score": 0.667
    },
    "annat": {
-    "ja": 10,
+    "ja": 11,
     "kanske": 5,
-    "nej": 2,
-    "score": 0.711
+    "nej": 4,
+    "score": 0.659
    },
    "kalenderlåda": {
     "ja": 4,
@@ -1141,14 +1375,14 @@
    "dekor": {
     "ja": 2,
     "kanske": 0,
-    "nej": 0,
-    "score": 0.75
+    "nej": 2,
+    "score": 0.5
    },
    "låda": {
-    "ja": 1,
+    "ja": 2,
     "kanske": 0,
     "nej": 0,
-    "score": 0.667
+    "score": 0.75
    },
    "hus": {
     "ja": 1,
@@ -1163,9 +1397,9 @@
     "score": 0.833
    },
    "verktyg": {
-    "ja": 3,
+    "ja": 5,
     "kanske": 0,
-    "nej": 1,
+    "nej": 2,
     "score": 0.667
    },
    "klämma": {
@@ -1175,16 +1409,16 @@
     "score": 0.5
    },
    "nät": {
-    "ja": 1,
+    "ja": 2,
     "kanske": 0,
     "nej": 0,
-    "score": 0.667
+    "score": 0.75
    },
    "sele": {
     "ja": 0,
     "kanske": 1,
-    "nej": 0,
-    "score": 0.5
+    "nej": 1,
+    "score": 0.375
    },
    "kalender": {
     "ja": 3,
@@ -1566,6 +1800,120 @@
     "nej": 0,
     "score": 0.667
    },
+   "Kanin/marsvin i bur ute": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Hobbyfiskarens egna spinnare — byggsats som gåva (fars dag, jul)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Frånluftskanalerna och imkanalen i villan": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Regntunna vid stupröret": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Jaktvapnen — 2–4 st i vapenskåpet och i bilen till passet": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Uppfartens kant (asfalt/marksten) — infarten i mörker": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Väggmonterad slangbox/slangvinda (Gardena RollUp/PowerRoll, 955–3 049 kr) — sitter kvar på väggen med vatten i slangen första frostnatten": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Luftvärmepumpens innerdel (1,8 miljoner i villor)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Hängrännor": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Elcykel under skärmtak": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Stuprörets utkast — dekorativ utkastare i stället för plåtutkastaren": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Brunnslocket i gräsmattan (avlopps-/dagvattenbrunn, septiktank)": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Jaktkikaren på passet (2–15 tkr) — dinglar i halsrem": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Fiskespöna — 4–10 st i garaget och bilen": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Husfasaden vid entrén/garaget — ytterväggen utan eluttag": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Skorstenstoppen på stålskorsten/rökrör (rund, Ø150–200) — bakdrag": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Fiskerullarna — 4–8 st på spöna och i lådan": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Skorstenskanalen (murad, 140 × 140 mm)": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Bilens vinterhjul — hjulbytet hemma": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
    "Staketet — stolpen": {
     "ja": 2,
     "kanske": 0,
@@ -1593,22 +1941,22 @@
   },
   "prisband": {
    "500–999": {
-    "ja": 38,
+    "ja": 44,
     "kanske": 7,
-    "nej": 5,
-    "score": 0.817
+    "nej": 11,
+    "score": 0.758
    },
    "≥ 1 000": {
     "ja": 11,
     "kanske": 0,
-    "nej": 2,
-    "score": 0.8
+    "nej": 4,
+    "score": 0.706
    },
    "300–499": {
-    "ja": 15,
+    "ja": 20,
     "kanske": 3,
     "nej": 0,
-    "score": 0.875
+    "score": 0.9
    }
   }
  },
@@ -1699,8 +2047,11 @@
   "deadline_klass:6–12 v",
   "deadline_klass:pågående",
   "deadline_typ:1 december",
+  "deadline_typ:fars dag",
   "deadline_typ:första frost",
   "deadline_typ:första snö",
+  "deadline_typ:lövfällning",
+  "deadline_typ:mörker",
   "deadline_typ:uppställning",
   "deadline_typ:upptagning",
   "deadline_typ:vedsäsong",

@@ -1685,13 +1685,13 @@
     "datum": "2026-09-19"
    },
    "meta": {
-    "spend": 11490.39,
+    "spend": 11513.51,
     "kop": 72,
-    "roas": 3.2577,
-    "cpa": 159.59,
+    "roas": 3.2512,
+    "cpa": 159.91,
     "be": 1.61,
     "be_cpa": 322.92,
-    "vinstbidrag": 11759.76,
+    "vinstbidrag": 11736.72,
     "band": "HIGH",
     "klass": "REAL_WINNER",
     "lutning": "positiv",
@@ -2811,7 +2811,7 @@
     "datum": "2026-09-23"
    },
    "meta": {
-    "spend": 915.39,
+    "spend": 925.19,
     "kop": 0,
     "roas": null,
     "cpa": null,
@@ -8625,7 +8625,7 @@
     "datum": "2026-09-24"
    },
    "meta": {
-    "spend": 173.46,
+    "spend": 184.82,
     "kop": 0,
     "roas": null,
     "cpa": null,
@@ -12232,13 +12232,13 @@
     "datum": "2026-09-22"
    },
    "meta": {
-    "spend": 1963.24,
+    "spend": 1970.78,
     "kop": 11,
-    "roas": 4.0699,
-    "cpa": 178.48,
+    "roas": 4.0543,
+    "cpa": 179.16,
     "be": 1.62,
     "be_cpa": 448.38,
-    "vinstbidrag": 2968.9,
+    "vinstbidrag": 2961.42,
     "band": "MEANINGFUL",
     "klass": "REAL_WINNER",
     "lutning": "positiv",
@@ -12485,7 +12485,7 @@
     "datum": "2026-09-24"
    },
    "meta": {
-    "spend": 150.47,
+    "spend": 158.71,
     "kop": 0,
     "roas": null,
     "cpa": null,
@@ -13364,13 +13364,13 @@
     "datum": "2026-09-24"
    },
    "meta": {
-    "spend": 190.44,
+    "spend": 202.69,
     "kop": 1,
-    "roas": 2.3577,
-    "cpa": 190.44,
+    "roas": 2.2152,
+    "cpa": 202.69,
     "be": 1.63,
     "be_cpa": 533.13,
-    "vinstbidrag": 342.69,
+    "vinstbidrag": 330.44,
     "band": "UNTESTED",
     "klass": "UNTESTED",
     "lutning": null,
@@ -17944,6 +17944,11 @@
        "datum": "2026-09-23",
        "verdict": "SOKTRAFF+HERO",
        "kalla": "korningar/2026-09-23/fynd-sida.json"
+      },
+      {
+       "datum": "2026-09-24",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-24/fynd-sida.json"
       }
      ]
     }
@@ -17992,10 +17997,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T07:02:27.211Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -18005,6 +18018,10 @@
     {
      "datum": "2026-09-16",
      "handelse": "levererad på V3-arket (rank 1, exploitation, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Slangboxhuven isolerad 55 cm"
@@ -18047,6 +18064,11 @@
        "datum": "2026-09-23",
        "verdict": "SOKTRAFF+HERO",
        "kalla": "korningar/2026-09-23/fynd-sida.json"
+      },
+      {
+       "datum": "2026-09-24",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-24/fynd-sida.json"
       }
      ]
     }
@@ -18095,10 +18117,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T07:02:24.876Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -18112,6 +18142,10 @@
     {
      "datum": "2026-09-24",
      "handelse": "i butiken: Lövsilarna 6-pack – Stoppar Löven Vid Stuprörets Mynning 379 kr (kampanj ej sedd)"
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Lövsilarna för stuprören, 6-pack",
@@ -18160,6 +18194,11 @@
        "datum": "2026-09-23",
        "verdict": "SOKTRAFF",
        "kalla": "korningar/2026-09-23/fynd-sida.json"
+      },
+      {
+       "datum": "2026-09-24",
+       "verdict": "SOKTRAFF",
+       "kalla": "korningar/2026-09-24/fynd-sida.json"
       }
      ]
     }
@@ -18194,10 +18233,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24",
+     "dom": "nej",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T07:02:23.477Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "nej",
    "aterupptas_om": [],
    "historik": [
     {
@@ -18207,6 +18254,10 @@
     {
      "datum": "2026-09-16",
      "handelse": "levererad på V3-arket (rank 3, exploration, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "Axel: nej "
     }
    ],
    "namn_sv": "Regnfisken vid stupröret"
@@ -18249,6 +18300,11 @@
        "datum": "2026-09-23",
        "verdict": "SOKTRAFF",
        "kalla": "korningar/2026-09-23/fynd-sida.json"
+      },
+      {
+       "datum": "2026-09-24",
+       "verdict": "SOKTRAFF",
+       "kalla": "korningar/2026-09-24/fynd-sida.json"
       }
      ]
     }
@@ -18283,10 +18339,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24",
+     "dom": "nej",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T07:02:21.841Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "nej",
    "aterupptas_om": [],
    "historik": [
     {
@@ -18296,6 +18360,10 @@
     {
      "datum": "2026-09-16",
      "handelse": "levererad på V3-arket (rank 4, exploration, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "Axel: nej "
     }
    ],
    "namn_sv": "Stenlocket — döljer brunnslocket"
@@ -18338,6 +18406,11 @@
        "datum": "2026-09-23",
        "verdict": "SOKTRAFF+HERO",
        "kalla": "korningar/2026-09-23/fynd-sida.json"
+      },
+      {
+       "datum": "2026-09-24",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-24/fynd-sida.json"
       }
      ]
     }
@@ -18386,10 +18459,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T07:02:20.543Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -18399,6 +18480,10 @@
     {
      "datum": "2026-09-16",
      "handelse": "levererad på V3-arket (rank 5, exploitation, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Regntunnehuven 200 L med dragsko"
@@ -18441,6 +18526,11 @@
        "datum": "2026-09-23",
        "verdict": "SOKTRAFF+HERO",
        "kalla": "korningar/2026-09-23/fynd-sida.json"
+      },
+      {
+       "datum": "2026-09-24",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-24/fynd-sida.json"
       }
      ]
     }
@@ -18489,10 +18579,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T07:02:18.415Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -18506,6 +18604,10 @@
     {
      "datum": "2026-09-24",
      "handelse": "i butiken: Elcykelbatteriets Vinterjacka 2-pack – Stickad Olivgrön 349 kr (kampanj ej sedd)"
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Elcykelbatteriets vinterjacka, 2-pack",
@@ -18549,6 +18651,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-23T07:00:00Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-24",
+       "verdict": "SOKTRAFF",
+       "kalla": "korningar/2026-09-24/fynd-sida.json"
       }
      ]
     }
@@ -18583,10 +18690,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24",
+     "dom": "nej",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T07:02:16.713Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "nej",
    "aterupptas_om": [],
    "historik": [
     {
@@ -18596,6 +18711,10 @@
     {
      "datum": "2026-09-23",
      "handelse": "levererad på V3-arket (rank 1, exploitation, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "Axel: nej "
     }
    ],
    "namn_sv": "Fasadlisten — solcell utan sladd"
@@ -18633,6 +18752,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-23T07:08:13Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-24",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-24/fynd-sida.json"
       }
      ]
     }
@@ -18681,10 +18805,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T07:02:15.029Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -18694,6 +18826,10 @@
     {
      "datum": "2026-09-23",
      "handelse": "levererad på V3-arket (rank 2, exploitation, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Rullskydden 6-pack (multirullarna)"
@@ -18731,6 +18867,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-23T06:54:25Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-24",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-24/fynd-sida.json"
       }
      ]
     }
@@ -18779,10 +18920,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24",
+     "dom": "nej",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T07:02:11.117Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "nej",
    "aterupptas_om": [],
    "historik": [
     {
@@ -18792,6 +18941,10 @@
     {
      "datum": "2026-09-23",
      "handelse": "levererad på V3-arket (rank 3, exploitation, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "Axel: nej "
     }
    ],
    "namn_sv": "Skorstenshuven med kajnät 23 × 23"
@@ -18829,6 +18982,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-23T06:54:25Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-24",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-24/fynd-sida.json"
       }
      ]
     }
@@ -18877,10 +19035,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T07:01:57.817Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -18890,6 +19056,10 @@
     {
      "datum": "2026-09-23",
      "handelse": "levererad på V3-arket (rank 4, exploitation, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Ventilationsrensaren för borrmaskin"
@@ -18927,6 +19097,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-23T07:08:13Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-24",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-24/fynd-sida.json"
       }
      ]
     }
@@ -18975,10 +19150,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T07:01:59.927Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -18988,6 +19171,10 @@
     {
      "datum": "2026-09-23",
      "handelse": "levererad på V3-arket (rank 5, exploitation, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Vapenstrumporna 4-pack (hela vapengarderoben)"
@@ -19025,6 +19212,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-23T06:55:00Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-24",
+       "verdict": "SOKTRAFF",
+       "kalla": "korningar/2026-09-24/fynd-sida.json"
       }
      ]
     }
@@ -19059,10 +19251,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T07:02:01.079Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -19072,6 +19272,10 @@
     {
      "datum": "2026-09-23",
      "handelse": "levererad på V3-arket (rank 6, exploration, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Vägnabbarna — uppfartens landningsbana"
@@ -19109,6 +19313,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-23T06:57:14Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-24",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-24/fynd-sida.json"
       }
      ]
     }
@@ -19157,10 +19366,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24",
+     "dom": "nej",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T07:02:03.151Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "nej",
    "aterupptas_om": [],
    "historik": [
     {
@@ -19170,6 +19387,10 @@
     {
      "datum": "2026-09-23",
      "handelse": "levererad på V3-arket (rank 7, exploitation, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "Axel: nej "
     }
    ],
    "namn_sv": "Skorstenssnurran mot bakdrag, rostfri"
@@ -19207,6 +19428,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-23T07:08:13Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-24",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-24/fynd-sida.json"
       }
      ]
     }
@@ -19255,10 +19481,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T07:02:05.977Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -19268,6 +19502,10 @@
     {
      "datum": "2026-09-23",
      "handelse": "levererad på V3-arket (rank 8, exploration, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Spöstrumporna 6-pack (spöna i garaget)"
@@ -19282,7 +19520,15 @@
    "arketyp": "D_SNABBARE_METOD",
    "arketyp_sekundar": "C_LAGA_ISTALLET",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Luftvärmepumpens innerdel (1,8 miljoner i villor)",
+    "form": "verktyg",
+    "arketyp": "D_SNABBARE_METOD",
+    "deadline_typ": "första frost",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Tjänsten: värmepumpsservice med invändig rengöring, 1 900–3 000 kr/besök (bytautvarmepumpen.se; effektivvvs.se; leadhive.se 2026)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -19345,10 +19591,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T07:01:18.463Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -19358,6 +19612,10 @@
     {
      "datum": "2026-09-24",
      "handelse": "levererad på V3-arket (rank 1, exploitation, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Värmepumpstvätten — påse, spruta, borstar"
@@ -19372,7 +19630,15 @@
    "arketyp": "D_SNABBARE_METOD",
    "arketyp_sekundar": "C_LAGA_ISTALLET",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Bilens vinterhjul — hjulbytet hemma",
+    "form": "verktyg",
+    "arketyp": "D_SNABBARE_METOD",
+    "deadline_typ": "första snö",
+    "prisband": "≥ 1 000",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Eks Verktyg Hjulvagn (verkstadsform); Hjullyft 500 kg personbil 20 700 kr som takankare"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -19435,10 +19701,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24",
+     "dom": "nej",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T07:01:05.620Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "nej",
    "aterupptas_om": [],
    "historik": [
     {
@@ -19448,6 +19722,10 @@
     {
      "datum": "2026-09-24",
      "handelse": "levererad på V3-arket (rank 2, exploitation, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "Axel: nej "
     }
    ],
    "namn_sv": "Hjulvagnen — vinterhjulen upp på navet"
@@ -19462,7 +19740,15 @@
    "arketyp": "G_Q4_GAVA",
    "arketyp_sekundar": "F_HOBBY_IDENTITET",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Hobbyfiskarens egna spinnare — byggsats som gåva (fars dag, jul)",
+    "form": "låda",
+    "arketyp": "G_Q4_GAVA",
+    "deadline_typ": "fars dag",
+    "prisband": "500–999",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "ej mätt — ingen svensk boxad 'spinner making kit' hittad i denna körning; Adventskalender Fiskedrag 469 kr ligger i butiken som intern referens (24 färdiga drag)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -19511,10 +19797,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T07:01:14.863Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -19524,6 +19818,10 @@
     {
      "datum": "2026-09-24",
      "handelse": "levererad på V3-arket (rank 3, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Fiskedragsbyggsatsen — bygg egna spinnare"
@@ -19538,7 +19836,15 @@
    "arketyp": "E_VADER_SASONG",
    "arketyp_sekundar": "B_SKYDDA_DYRT",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: ATV-föraren på passet i regn och snö — vindruta",
+    "form": "annat",
+    "arketyp": "E_VADER_SASONG",
+    "deadline_typ": "älgjakt",
+    "prisband": "≥ 1 000",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Moose ATV Vindruta Universal (ATVhuset) 2 755 kr; Powermadd Cobra Quick Release 2 950 kr"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -19628,7 +19934,15 @@
    "arketyp": "E_VADER_SASONG",
    "arketyp_sekundar": "B_SKYDDA_DYRT",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "Kanin/marsvin i bur ute",
+    "form": "huv",
+    "arketyp": "E_VADER_SASONG",
+    "deadline_typ": "första frost",
+    "prisband": "500–999",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "ingen svensk aktör i formen huv mätt; närmast objektankare: Kerbl 4-Season Superior isolerad kaninbur (granngarden.se, pris ej läst) och Trixie Natura 116 utebur 2 159–2 399 kr (djurmaxi.se) — annan form (bur, inte huv). Teddytassen 'Vindskydd för kaninburar' 89 kr är en klar plastskiva 50 × 70 cm, inte en huv."
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -19677,10 +19991,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24",
+     "dom": "nej",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T07:01:21.475Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "nej",
    "aterupptas_om": [],
    "historik": [
     {
@@ -19690,6 +20012,10 @@
     {
      "datum": "2026-09-24",
      "handelse": "levererad på V3-arket (rank 5, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "Axel: nej "
     }
    ],
    "namn_sv": "Kaninburens vinterhuv"
@@ -19704,7 +20030,15 @@
    "arketyp": "A_AGARE_FRIKTION",
    "arketyp_sekundar": "B_SKYDDA_DYRT",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Jaktkikaren på passet (2–15 tkr) — dinglar i halsrem",
+    "form": "sele",
+    "arketyp": "A_AGARE_FRIKTION",
+    "deadline_typ": "älgjakt",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Mystery Ranch QD Bino Harness L (bröstväska med magnetlock, 500D Cordura) — Widforss 995 kr (rek 1 095), utsåld i One Size 2026-09-24"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -19753,10 +20087,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24",
+     "dom": "nej",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T07:01:44.197Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "nej",
    "aterupptas_om": [],
    "historik": [
     {
@@ -19766,6 +20108,10 @@
     {
      "datum": "2026-09-24",
      "handelse": "levererad på V3-arket (rank 6, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "Axel: nej "
     }
    ],
    "namn_sv": "Kikarbröstväskan för älgpasset"
