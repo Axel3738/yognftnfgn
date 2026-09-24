@@ -51,18 +51,18 @@
     "datum": "2026-09-09"
    },
    "meta": {
-    "spend": 118714.28,
-    "kop": 339,
-    "roas": 3.4668,
-    "cpa": 350.19,
+    "spend": 135475.7,
+    "kop": 363,
+    "roas": 3.2675,
+    "cpa": 373.21,
     "be": 1.63,
-    "be_cpa": 744.8,
-    "vinstbidrag": 133772.79,
+    "be_cpa": 748.13,
+    "vinstbidrag": 136095.96,
     "band": "HIGH",
     "klass": "REAL_WINNER",
     "lutning": "positiv",
     "bekraftelse": "bekräftad (snapshot 2026-09-11)",
-    "last": "2026-09-23",
+    "last": "2026-09-24",
     "utfall": ">=BE"
    },
    "status": "vinnare",
@@ -146,7 +146,7 @@
     "klass": "REAL_WINNER",
     "lutning": "positiv (marginell, < 5 % från BE)",
     "bekraftelse": "bekräftad (snapshot 2026-09-11)",
-    "last": "2026-09-23",
+    "last": "2026-09-24",
     "utfall": ">=BE"
    },
    "status": "vinnare",
@@ -212,18 +212,18 @@
     "datum": "2026-09-08"
    },
    "meta": {
-    "spend": 12345.93,
+    "spend": 12352.52,
     "kop": 37,
-    "roas": 1.7524,
-    "cpa": 333.67,
+    "roas": 1.7514,
+    "cpa": 333.85,
     "be": 1.62,
     "be_cpa": 360.94,
-    "vinstbidrag": 1008.99,
+    "vinstbidrag": 1002.33,
     "band": "HIGH",
     "klass": "REAL_WINNER",
     "lutning": "positiv",
     "bekraftelse": "bekräftad (snapshot 2026-09-11)",
-    "last": "2026-09-23",
+    "last": "2026-09-24",
     "utfall": ">=BE"
    },
    "status": "vinnare",
@@ -347,18 +347,18 @@
     "datum": "2026-09-18"
    },
    "meta": {
-    "spend": 4805.66,
+    "spend": 4819.85,
     "kop": 7,
-    "roas": 1.1638,
-    "cpa": 686.52,
+    "roas": 1.1604,
+    "cpa": 688.55,
     "be": 1.67,
     "be_cpa": 478.44,
-    "vinstbidrag": -1456.56,
+    "vinstbidrag": -1470.77,
     "band": "MEANINGFUL",
     "klass": "REAL_LOSER",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-23"
+    "last": "2026-09-24"
    },
    "status": "forlorare",
    "aterupptas_om": [],
@@ -886,7 +886,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-23"
+    "last": "2026-09-24"
    },
    "status": "launchad",
    "aterupptas_om": [],
@@ -1685,18 +1685,18 @@
     "datum": "2026-09-19"
    },
    "meta": {
-    "spend": 8428.73,
-    "kop": 56,
-    "roas": 3.4038,
-    "cpa": 150.51,
+    "spend": 11490.39,
+    "kop": 72,
+    "roas": 3.2577,
+    "cpa": 159.59,
     "be": 1.61,
-    "be_cpa": 318.2,
-    "vinstbidrag": 9390.64,
+    "be_cpa": 322.92,
+    "vinstbidrag": 11759.76,
     "band": "HIGH",
     "klass": "REAL_WINNER",
     "lutning": "positiv",
     "bekraftelse": "preliminär",
-    "last": "2026-09-23"
+    "last": "2026-09-24"
    },
    "status": "vinnare",
    "aterupptas_om": [],
@@ -2029,7 +2029,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-23",
+    "last": "2026-09-24",
     "utfall": "launchad"
    },
    "status": "launchad",
@@ -2429,7 +2429,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-23",
+    "last": "2026-09-24",
     "utfall": "launchad"
    },
    "status": "launchad",
@@ -2811,18 +2811,18 @@
     "datum": "2026-09-23"
    },
    "meta": {
-    "spend": 187.24,
+    "spend": 915.39,
     "kop": 0,
     "roas": null,
     "cpa": null,
     "be": 1.63,
     "be_cpa": 379.75,
     "vinstbidrag": null,
-    "band": "UNTESTED",
-    "klass": "UNTESTED",
-    "lutning": null,
+    "band": "EARLY_SIGNAL",
+    "klass": "INSUFFICIENT_DATA",
+    "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-23"
+    "last": "2026-09-24"
    },
    "status": "launchad",
    "aterupptas_om": [],
@@ -6335,7 +6335,7 @@
     "klass": "REAL_LOSER",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-23"
+    "last": "2026-09-24"
    },
    "status": "forlorare",
    "aterupptas_om": [
@@ -8619,9 +8619,26 @@
      "ts": "2026-09-10T05:38:08.595Z"
     }
    ],
-   "launch": null,
-   "meta": null,
-   "status": "ja",
+   "launch": {
+    "kampanj": "Solcellsladdaren 10 W MPPT | BE ROAS 1.61 | Launch 2026-09-24",
+    "kampanj_id": "120250349342590291",
+    "datum": "2026-09-24"
+   },
+   "meta": {
+    "spend": 173.46,
+    "kop": 0,
+    "roas": null,
+    "cpa": null,
+    "be": 1.61,
+    "be_cpa": 347.2,
+    "vinstbidrag": null,
+    "band": "UNTESTED",
+    "klass": "UNTESTED",
+    "lutning": null,
+    "bekraftelse": "preliminär",
+    "last": "2026-09-24"
+   },
+   "status": "launchad",
    "aterupptas_om": [],
    "historik": [
     {
@@ -8639,6 +8656,10 @@
     {
      "datum": "2026-09-13",
      "handelse": "i butiken: Solcellsladdare 10 W MPPT 559 kr (kampanj ej sedd i kontot än)"
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "launchad i kontot: Solcellsladdaren 10 W MPPT | BE ROAS 1.61 | Launch 2026-09-24"
     }
    ],
    "namn_sv": "Solcellsladdare 10 W MPPT, batteriunderhåll",
@@ -10208,7 +10229,7 @@
     "klass": "REAL_LOSER",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-23"
+    "last": "2026-09-24"
    },
    "status": "forlorare",
    "aterupptas_om": [
@@ -11235,20 +11256,20 @@
     "datum": "2026-09-22"
    },
    "meta": {
-    "spend": 954.94,
-    "kop": 0,
-    "roas": null,
-    "cpa": null,
+    "spend": 1684.23,
+    "kop": 2,
+    "roas": 0.5451,
+    "cpa": 842.12,
     "be": 1.62,
     "be_cpa": 283.33,
-    "vinstbidrag": null,
-    "band": "EARLY_SIGNAL",
-    "klass": "INSUFFICIENT_DATA",
+    "vinstbidrag": -1117.58,
+    "band": "MEANINGFUL",
+    "klass": "REAL_LOSER",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-23"
+    "last": "2026-09-24"
    },
-   "status": "launchad",
+   "status": "forlorare",
    "aterupptas_om": [],
    "historik": [
     {
@@ -11376,7 +11397,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-23",
+    "last": "2026-09-24",
     "utfall": "launchad"
    },
    "status": "launchad",
@@ -11429,18 +11450,18 @@
     "datum": "2026-09-11"
    },
    "meta": {
-    "spend": 23510.73,
-    "kop": 106,
-    "roas": 2.7217,
-    "cpa": 221.8,
+    "spend": 25453.31,
+    "kop": 110,
+    "roas": 2.6019,
+    "cpa": 231.39,
     "be": 1.61,
-    "be_cpa": 374.96,
-    "vinstbidrag": 16234.96,
+    "be_cpa": 373.94,
+    "vinstbidrag": 15680.5,
     "band": "HIGH",
     "klass": "REAL_WINNER",
     "lutning": "positiv",
     "bekraftelse": "bekräftad (snapshot 2026-09-12)",
-    "last": "2026-09-23",
+    "last": "2026-09-24",
     "utfall": ">=BE"
    },
    "status": "vinnare",
@@ -12211,20 +12232,20 @@
     "datum": "2026-09-22"
    },
    "meta": {
-    "spend": 939.65,
-    "kop": 6,
-    "roas": 4.1285,
-    "cpa": 156.61,
+    "spend": 1963.24,
+    "kop": 11,
+    "roas": 4.0699,
+    "cpa": 178.48,
     "be": 1.62,
-    "be_cpa": 399.1,
-    "vinstbidrag": 1454.94,
-    "band": "EARLY_SIGNAL",
-    "klass": "INSUFFICIENT_DATA",
+    "be_cpa": 448.38,
+    "vinstbidrag": 2968.9,
+    "band": "MEANINGFUL",
+    "klass": "REAL_WINNER",
     "lutning": "positiv",
     "bekraftelse": "preliminär",
-    "last": "2026-09-23"
+    "last": "2026-09-24"
    },
-   "status": "launchad",
+   "status": "vinnare",
    "aterupptas_om": [],
    "historik": [
     {
@@ -12458,9 +12479,26 @@
      "ts": "2026-09-11T06:45:20.303Z"
     }
    ],
-   "launch": null,
-   "meta": null,
-   "status": "ja",
+   "launch": {
+    "kampanj": "Motorlåset i Rostfritt Stål | BE ROAS 1.64 | Launch 2026-09-24",
+    "kampanj_id": "120250349292760291",
+    "datum": "2026-09-24"
+   },
+   "meta": {
+    "spend": 150.47,
+    "kop": 0,
+    "roas": null,
+    "cpa": null,
+    "be": 1.64,
+    "be_cpa": 554.27,
+    "vinstbidrag": null,
+    "band": "UNTESTED",
+    "klass": "UNTESTED",
+    "lutning": null,
+    "bekraftelse": "preliminär",
+    "last": "2026-09-24"
+   },
+   "status": "launchad",
    "aterupptas_om": [],
    "historik": [
     {
@@ -12478,6 +12516,10 @@
     {
      "datum": "2026-09-13",
      "handelse": "i butiken: Motorlås I Rostfritt Stål 909 kr (kampanj ej sedd i kontot än)"
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "launchad i kontot: Motorlåset i Rostfritt Stål | BE ROAS 1.64 | Launch 2026-09-24"
     }
    ],
    "namn_sv": "Motorlåset rostfritt utombordare",
@@ -12581,7 +12623,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-23"
+    "last": "2026-09-24"
    },
    "status": "launchad",
    "aterupptas_om": [],
@@ -12722,7 +12764,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-23"
+    "last": "2026-09-24"
    },
    "status": "launchad",
    "aterupptas_om": [],
@@ -12852,18 +12894,18 @@
     "datum": "2026-09-22"
    },
    "meta": {
-    "spend": 971.15,
+    "spend": 1718.8,
     "kop": 1,
-    "roas": 1.0486,
-    "cpa": 971.15,
+    "roas": 0.5924,
+    "cpa": 1718.8,
     "be": 1.62,
     "be_cpa": 369.75,
-    "vinstbidrag": -601.4,
+    "vinstbidrag": -1349.05,
     "band": "EARLY_SIGNAL",
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-23"
+    "last": "2026-09-24"
    },
    "status": "launchad",
    "aterupptas_om": [],
@@ -13206,7 +13248,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "positiv",
     "bekraftelse": "preliminär",
-    "last": "2026-09-23"
+    "last": "2026-09-24"
    },
    "status": "launchad",
    "aterupptas_om": [],
@@ -13316,9 +13358,26 @@
      "ts": "2026-09-11T09:14:37.745Z"
     }
    ],
-   "launch": null,
-   "meta": null,
-   "status": "ja",
+   "launch": {
+    "kampanj": "Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24",
+    "kampanj_id": "120250349169940291",
+    "datum": "2026-09-24"
+   },
+   "meta": {
+    "spend": 190.44,
+    "kop": 1,
+    "roas": 2.3577,
+    "cpa": 190.44,
+    "be": 1.63,
+    "be_cpa": 533.13,
+    "vinstbidrag": 342.69,
+    "band": "UNTESTED",
+    "klass": "UNTESTED",
+    "lutning": null,
+    "bekraftelse": "preliminär",
+    "last": "2026-09-24"
+   },
+   "status": "launchad",
    "aterupptas_om": [],
    "historik": [
     {
@@ -13336,6 +13395,10 @@
     {
      "datum": "2026-09-13",
      "handelse": "i butiken: Täljset 30 Delar 869 kr (kampanj ej sedd i kontot än)"
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "launchad i kontot: Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24"
     }
    ],
    "namn_sv": "Täljsetet 30 delar i väska",
@@ -13960,9 +14023,19 @@
     {
      "datum": "2026-09-12",
      "handelse": "Axel: ja "
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "i butiken: Värmesulor Med Fjärrkontroll – Varma Fötter På Passet 869 kr (kampanj ej sedd)"
     }
    ],
-   "namn_sv": "Värmesulorna för älgpasset"
+   "namn_sv": "Värmesulorna för älgpasset",
+   "butik": {
+    "titel": "Värmesulor Med Fjärrkontroll – Varma Fötter På Passet",
+    "pris_sek": 869.0,
+    "sedd": "2026-09-24",
+    "kalla": "katalog-live 2026-09-24"
+   }
   },
   "K0250": {
    "id": "K0250",
@@ -14154,9 +14227,19 @@
     {
      "datum": "2026-09-12",
      "handelse": "Axel: ja ['Känns rätt']"
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "i butiken: Krukväxthuv 3-pack – Skydd Mot Vind, Regn Och Frost 589 kr (kampanj ej sedd)"
     }
    ],
-   "namn_sv": "Krukväxthuven med dragkedja, 3-pack"
+   "namn_sv": "Krukväxthuven med dragkedja, 3-pack",
+   "butik": {
+    "titel": "Krukväxthuv 3-pack – Skydd Mot Vind, Regn Och Frost",
+    "pris_sek": 589.0,
+    "sedd": "2026-09-24",
+    "kalla": "katalog-live 2026-09-24"
+   }
   },
   "K0252": {
    "id": "K0252",
@@ -14252,9 +14335,19 @@
     {
      "datum": "2026-09-12",
      "handelse": "Axel: ja ['Känns rätt']"
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "i butiken: Bikupans Vinterjacka 194 × 46 cm – Reflekterande Insida 519 kr (kampanj ej sedd)"
     }
    ],
-   "namn_sv": "Bikupans vinterjacka"
+   "namn_sv": "Bikupans vinterjacka",
+   "butik": {
+    "titel": "Bikupans Vinterjacka 194 × 46 cm – Reflekterande Insida",
+    "pris_sek": 519.0,
+    "sedd": "2026-09-24",
+    "kalla": "katalog-live 2026-09-24"
+   }
   },
   "K0253": {
    "id": "K0253",
@@ -14474,9 +14567,19 @@
     {
      "datum": "2026-09-12",
      "handelse": "Axel: ja "
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "i butiken: Ljusslingevindor 10-pack – Ordning På Julens Ljusslingor 409 kr (kampanj ej sedd)"
     }
    ],
-   "namn_sv": "Ljusslingevindorna 10-pack"
+   "namn_sv": "Ljusslingevindorna 10-pack",
+   "butik": {
+    "titel": "Ljusslingevindor 10-pack – Ordning På Julens Ljusslingor",
+    "pris_sek": 409.0,
+    "sedd": "2026-09-24",
+    "kalla": "katalog-live 2026-09-24"
+   }
   },
   "K0255": {
    "id": "K0255",
@@ -14584,9 +14687,19 @@
     {
      "datum": "2026-09-12",
      "handelse": "Axel: kanske "
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "i butiken: Makita-hållare 5-pack – Verktygen Samlade På Väggen 359 kr (kampanj ej sedd)"
     }
    ],
-   "namn_sv": "Makita-hållaren 5-pack (maskinen på väggen)"
+   "namn_sv": "Makita-hållaren 5-pack (maskinen på väggen)",
+   "butik": {
+    "titel": "Makita-hållare 5-pack – Verktygen Samlade På Väggen",
+    "pris_sek": 359.0,
+    "sedd": "2026-09-24",
+    "kalla": "katalog-live 2026-09-24"
+   }
   },
   "K0256": {
    "id": "K0256",
@@ -14704,9 +14817,19 @@
     {
      "datum": "2026-09-15",
      "handelse": "Axel: ja "
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "i butiken: Vedklyvshuv I Svart 210D – Håller Fukt Och Smuts Borta 459 kr (kampanj ej sedd)"
     }
    ],
-   "namn_sv": "Vedklyvshuven 210D"
+   "namn_sv": "Vedklyvshuven 210D",
+   "butik": {
+    "titel": "Vedklyvshuv I Svart 210D – Håller Fukt Och Smuts Borta",
+    "pris_sek": 459.0,
+    "sedd": "2026-09-24",
+    "kalla": "katalog-live 2026-09-24"
+   }
   },
   "K0257": {
    "id": "K0257",
@@ -14944,9 +15067,19 @@
     {
      "datum": "2026-09-15",
      "handelse": "Axel: ja "
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "i butiken: Poolvärmepumpens Vinterhuv 101 × 86 × 78 cm – Ventilerad 539 kr (kampanj ej sedd)"
     }
    ],
-   "namn_sv": "Poolvärmepumpens vinterhuv"
+   "namn_sv": "Poolvärmepumpens vinterhuv",
+   "butik": {
+    "titel": "Poolvärmepumpens Vinterhuv 101 × 86 × 78 cm – Ventilerad",
+    "pris_sek": 539.0,
+    "sedd": "2026-09-24",
+    "kalla": "katalog-live 2026-09-24"
+   }
   },
   "K0259": {
    "id": "K0259",
@@ -15156,9 +15289,19 @@
     {
      "datum": "2026-09-15",
      "handelse": "Axel: kanske "
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "i butiken: Regnkedjan 3,8 m, 12 Koppar – Vattnet Syns Rinna Ner 719 kr (kampanj ej sedd)"
     }
    ],
-   "namn_sv": "Regnkedjan 3,8 m med 12 koppar"
+   "namn_sv": "Regnkedjan 3,8 m med 12 koppar",
+   "butik": {
+    "titel": "Regnkedjan 3,8 m, 12 Koppar – Vattnet Syns Rinna Ner",
+    "pris_sek": 719.0,
+    "sedd": "2026-09-24",
+    "kalla": "katalog-live 2026-09-24"
+   }
   },
   "K0261": {
    "id": "K0261",
@@ -15608,9 +15751,19 @@
     {
      "datum": "2026-09-15",
      "handelse": "Axel: kanske "
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "i butiken: Rullknivslipen i Trä, 20° – Vinkeln Är Redan Bestämd 579 kr (kampanj ej sedd)"
     }
    ],
-   "namn_sv": "Rullknivslipen i trä, 2 diamantskivor"
+   "namn_sv": "Rullknivslipen i trä, 2 diamantskivor",
+   "butik": {
+    "titel": "Rullknivslipen i Trä, 20° – Vinkeln Är Redan Bestämd",
+    "pris_sek": 579.0,
+    "sedd": "2026-09-24",
+    "kalla": "katalog-live 2026-09-24"
+   }
   },
   "K0265": {
    "id": "K0265",
@@ -15714,9 +15867,19 @@
     {
      "datum": "2026-09-15",
      "handelse": "Axel: ja "
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "i butiken: Highland Cow-Kalendern 3D, 24 Figurer – En Ny Ko Varje Dag 469 kr (kampanj ej sedd)"
     }
    ],
-   "namn_sv": "Highland Cow-kalendern 3D, 24 figurer"
+   "namn_sv": "Highland Cow-kalendern 3D, 24 figurer",
+   "butik": {
+    "titel": "Highland Cow-Kalendern 3D, 24 Figurer – En Ny Ko Varje Dag",
+    "pris_sek": 469.0,
+    "sedd": "2026-09-24",
+    "kalla": "katalog-live 2026-09-24"
+   }
   },
   "K0266": {
    "id": "K0266",
@@ -15820,9 +15983,19 @@
     {
      "datum": "2026-09-15",
      "handelse": "Axel: ja "
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "i butiken: Ädelstenskalendern 24 Luckor – Gräv Fram En Sten Varje Dag 469 kr (kampanj ej sedd)"
     }
    ],
-   "namn_sv": "Ädelstenskalendern, 24 grävblock"
+   "namn_sv": "Ädelstenskalendern, 24 grävblock",
+   "butik": {
+    "titel": "Ädelstenskalendern 24 Luckor – Gräv Fram En Sten Varje Dag",
+    "pris_sek": 469.0,
+    "sedd": "2026-09-24",
+    "kalla": "katalog-live 2026-09-24"
+   }
   },
   "K0267": {
    "id": "K0267",
@@ -16837,9 +17010,19 @@
     {
      "datum": "2026-09-15",
      "handelse": "Axel: ja "
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "i butiken: Husbilens Cykelhållarskydd 2 Cyklar – Smutsen Stannar Utanpå 669 kr (kampanj ej sedd)"
     }
    ],
-   "namn_sv": "Husbilens cykelhållarskydd 2 cyklar"
+   "namn_sv": "Husbilens cykelhållarskydd 2 cyklar",
+   "butik": {
+    "titel": "Husbilens Cykelhållarskydd 2 Cyklar – Smutsen Stannar Utanpå",
+    "pris_sek": 669.0,
+    "sedd": "2026-09-24",
+    "kalla": "katalog-live 2026-09-24"
+   }
   },
   "K0276": {
    "id": "K0276",
@@ -16952,9 +17135,19 @@
     {
      "datum": "2026-09-15",
      "handelse": "Axel: ja "
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "i butiken: Husbilens Tak-AC-Huv 80 × 80 × 38 cm – Skydd Mellan Resorna 449 kr (kampanj ej sedd)"
     }
    ],
-   "namn_sv": "Husbilens tak-AC-huv"
+   "namn_sv": "Husbilens tak-AC-huv",
+   "butik": {
+    "titel": "Husbilens Tak-AC-Huv 80 × 80 × 38 cm – Skydd Mellan Resorna",
+    "pris_sek": 449.0,
+    "sedd": "2026-09-24",
+    "kalla": "katalog-live 2026-09-24"
+   }
   },
   "K0277": {
    "id": "K0277",
@@ -17283,9 +17476,19 @@
     {
      "datum": "2026-09-15",
      "handelse": "Axel: ja "
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "i butiken: Buskjackan 2-Pack 120 × 180 cm – Skärmar Av Vind Och Kyla 429 kr (kampanj ej sedd)"
     }
    ],
-   "namn_sv": "Buskjackan med dragkedja, 2-pack"
+   "namn_sv": "Buskjackan med dragkedja, 2-pack",
+   "butik": {
+    "titel": "Buskjackan 2-Pack 120 × 180 cm – Skärmar Av Vind Och Kyla",
+    "pris_sek": 429.0,
+    "sedd": "2026-09-24",
+    "kalla": "katalog-live 2026-09-24"
+   }
   },
   "K0280": {
    "id": "K0280",
@@ -17689,9 +17892,19 @@
     {
      "datum": "2026-09-15",
      "handelse": "Axel: ja "
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "i butiken: Husbilskalendern 24 Luckor – Retrobussar Och Campingprylar 379 kr (kampanj ej sedd)"
     }
    ],
-   "namn_sv": "Husbilskalendern, 24 retrobussar"
+   "namn_sv": "Husbilskalendern, 24 retrobussar",
+   "butik": {
+    "titel": "Husbilskalendern 24 Luckor – Retrobussar Och Campingprylar",
+    "pris_sek": 379.0,
+    "sedd": "2026-09-24",
+    "kalla": "katalog-live 2026-09-24"
+   }
   },
   "K0284": {
    "id": "K0284",
@@ -17726,6 +17939,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-16T04:46:38Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-23",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-23/fynd-sida.json"
       }
      ]
     }
@@ -17824,6 +18042,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-16T04:46:00Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-23",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-23/fynd-sida.json"
       }
      ]
     }
@@ -17885,9 +18108,19 @@
     {
      "datum": "2026-09-16",
      "handelse": "levererad på V3-arket (rank 2, exploitation, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "i butiken: Lövsilarna 6-pack – Stoppar Löven Vid Stuprörets Mynning 379 kr (kampanj ej sedd)"
     }
    ],
-   "namn_sv": "Lövsilarna för stuprören, 6-pack"
+   "namn_sv": "Lövsilarna för stuprören, 6-pack",
+   "butik": {
+    "titel": "Lövsilarna 6-pack – Stoppar Löven Vid Stuprörets Mynning",
+    "pris_sek": 379.0,
+    "sedd": "2026-09-24",
+    "kalla": "katalog-live 2026-09-24"
+   }
   },
   "K0286": {
    "id": "K0286",
@@ -17922,6 +18155,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-16T04:55:00Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-23",
+       "verdict": "SOKTRAFF",
+       "kalla": "korningar/2026-09-23/fynd-sida.json"
       }
      ]
     }
@@ -18006,6 +18244,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-16T04:46:00Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-23",
+       "verdict": "SOKTRAFF",
+       "kalla": "korningar/2026-09-23/fynd-sida.json"
       }
      ]
     }
@@ -18090,6 +18333,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-16T04:47:31Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-23",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-23/fynd-sida.json"
       }
      ]
     }
@@ -18188,6 +18436,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-16T04:57:00Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-23",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-23/fynd-sida.json"
       }
      ]
     }
@@ -18249,9 +18502,19 @@
     {
      "datum": "2026-09-16",
      "handelse": "levererad på V3-arket (rank 6, exploration, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24",
+     "handelse": "i butiken: Elcykelbatteriets Vinterjacka 2-pack – Stickad Olivgrön 349 kr (kampanj ej sedd)"
     }
    ],
-   "namn_sv": "Elcykelbatteriets vinterjacka, 2-pack"
+   "namn_sv": "Elcykelbatteriets vinterjacka, 2-pack",
+   "butik": {
+    "titel": "Elcykelbatteriets Vinterjacka 2-pack – Stickad Olivgrön",
+    "pris_sek": 349.0,
+    "sedd": "2026-09-24",
+    "kalla": "katalog-live 2026-09-24"
+   }
   },
   "K0290": {
    "id": "K0290",
@@ -18263,7 +18526,15 @@
    "arketyp": "E_VADER_SASONG",
    "arketyp_sekundar": "H_VISUELL_NYHET",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Husfasaden vid entrén/garaget — ytterväggen utan eluttag",
+    "form": "annat",
+    "arketyp": "E_VADER_SASONG",
+    "deadline_typ": "mörker",
+    "prisband": "500–999",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "ej mätt — 230 V-linjära fasadarmaturer (wall washer) finns i lampbutikerna men kräver elektriker; ingen solcellsdriven list hittad hos svensk aktör"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -18339,7 +18610,15 @@
    "arketyp": "B_SKYDDA_DYRT",
    "arketyp_sekundar": "I_FLERKOP",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Fiskerullarna — 4–8 st på spöna och i lådan",
+    "form": "överdrag",
+    "arketyp": "B_SKYDDA_DYRT",
+    "deadline_typ": "upptagning",
+    "prisband": "300–499",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Shimano Reel Cover Spinning (Sportfiskeprylar, per styck); Daiwa Neoprene Reel Pouch SP 159, Gunki Reel Cover 119"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -18429,7 +18708,15 @@
    "arketyp": "C_LAGA_ISTALLET",
    "arketyp_sekundar": "B_SKYDDA_DYRT",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Skorstenskanalen (murad, 140 × 140 mm)",
+    "form": "huv",
+    "arketyp": "C_LAGA_ISTALLET",
+    "deadline_typ": "höstregn",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Kamin & Skorstensskyddaren — måttbeställd skorstenshuv med fågelskydd (4 100–5 000 kr, montering Skåne/västkusten)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -18519,7 +18806,15 @@
    "arketyp": "D_SNABBARE_METOD",
    "arketyp_sekundar": "C_LAGA_ISTALLET",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Frånluftskanalerna och imkanalen i villan",
+    "form": "verktyg",
+    "arketyp": "D_SNABBARE_METOD",
+    "deadline_typ": "vedsäsong",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Swema Renskabel 5 m med Ø180 perlonborste, borrmaskinsdriven (2 266 kr ex moms)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -18609,7 +18904,15 @@
    "arketyp": "B_SKYDDA_DYRT",
    "arketyp_sekundar": "I_FLERKOP",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Jaktvapnen — 2–4 st i vapenskåpet och i bilen till passet",
+    "form": "överdrag",
+    "arketyp": "B_SKYDDA_DYRT",
+    "deadline_typ": "älgjakt",
+    "prisband": "500–999",
+    "ankare_klass": "1,3–1,6×",
+    "ankare_kalla": "Remington vapenstrumpa/gevärsstrumpa (Jaktgiganten, per styck — sökutdrag); Elastisk vapenstrumpa 10 × 135 cm 159 kr (e-ville, slutsåld)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -18699,7 +19002,15 @@
    "arketyp": "H_VISUELL_NYHET",
    "arketyp_sekundar": "E_VADER_SASONG",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Uppfartens kant (asfalt/marksten) — infarten i mörker",
+    "form": "annat",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "mörker",
+    "prisband": "500–999",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "ej mätt — bara B2B-trafikleverantörer (trafficsigncustom.com/sv, nk-roadstud.com/sv) säljer solcellsnabbar mot Sverige, priser på förfrågan"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -18775,7 +19086,15 @@
    "arketyp": "D_SNABBARE_METOD",
    "arketyp_sekundar": "C_LAGA_ISTALLET",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Skorstenstoppen på stålskorsten/rökrör (rund, Ø150–200) — bakdrag",
+    "form": "annat",
+    "arketyp": "D_SNABBARE_METOD",
+    "deadline_typ": "vedsäsong",
+    "prisband": "≥ 1 000",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "BAUHAUS Vindsnurra för skorstensdrag 160 mm, rostfri med kullager"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -18865,7 +19184,15 @@
    "arketyp": "A_AGARE_FRIKTION",
    "arketyp_sekundar": "I_FLERKOP",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Fiskespöna — 4–10 st i garaget och bilen",
+    "form": "överdrag",
+    "arketyp": "A_AGARE_FRIKTION",
+    "deadline_typ": "upptagning",
+    "prisband": "300–499",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Daiwa Rod Cover 190 cm / Westin Rod Cover (Sportfiskeprylar, per styck) — Svartzonker Rod Sock 109, Savage Gear Rod Sock Flex 129"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
