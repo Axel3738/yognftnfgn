@@ -19859,6 +19859,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-24T06:09:30Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-24-jul",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-24-jul/fynd-sida.json"
       }
      ]
     }
@@ -19907,10 +19912,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24-jul",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T10:23:28.651Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -19920,6 +19933,10 @@
     {
      "datum": "2026-09-24",
      "handelse": "levererad på V3-arket (rank 4, exploration, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24-jul",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "ATV-vindrutan för passet"
@@ -20126,7 +20143,15 @@
    "arketyp": "H_VISUELL_NYHET",
    "arketyp_sekundar": "G_Q4_GAVA",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Julbordets spelkväll — curling som svävar på köksbordet",
+    "form": "annat",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "jul",
+    "prisband": "500–999",
+    "ankare_klass": "golv utan ankare",
+    "ankare_kalla": "Skills Curling golv (400 × 60 cm matta, 8 puckar, icke-elektrisk) — Lekia"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -20189,10 +20214,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24-jul",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T10:19:48.738Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -20202,6 +20235,10 @@
     {
      "datum": "2026-09-24-jul",
      "handelse": "levererad på V3-arket (rank 1, sasong, konfidens HÖG)"
+    },
+    {
+     "datum": "2026-09-24-jul",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Svävande bordscurling, elektrisk"
@@ -20216,7 +20253,15 @@
    "arketyp": "G_Q4_GAVA",
    "arketyp_sekundar": "F_HOBBY_IDENTITET",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Farfar och barnbarnet bygger ihop den — kulbana i trä med elhiss som går av sig själv",
+    "form": "annat",
+    "arketyp": "G_Q4_GAVA",
+    "deadline_typ": "jul",
+    "prisband": "500–999",
+    "ankare_klass": "golv utan ankare",
+    "ankare_kalla": "Hubelino Stor Byggsats 213 delar (Jollyroom)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -20279,10 +20324,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24-jul",
+     "dom": "kanske",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T10:20:30.337Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "kanske",
    "aterupptas_om": [],
    "historik": [
     {
@@ -20292,6 +20345,10 @@
     {
      "datum": "2026-09-24-jul",
      "handelse": "levererad på V3-arket (rank 2, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24-jul",
+     "handelse": "Axel: kanske "
     }
    ],
    "namn_sv": "Elektriska kulbanan med hiss, 19 kulor"
@@ -20306,7 +20363,15 @@
    "arketyp": "F_HOBBY_IDENTITET",
    "arketyp_sekundar": "G_Q4_GAVA",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Julklappen till mannen med båten — fyren i klossar som lyser när den är klar",
+    "form": "annat",
+    "arketyp": "F_HOBBY_IDENTITET",
+    "deadline_typ": "jul",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Reobrix Lighthouse Medieval Town 3 228 bitar (Hemshopen.se)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -20369,10 +20434,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24-jul",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T10:20:53.985Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -20382,6 +20455,10 @@
     {
      "datum": "2026-09-24-jul",
      "handelse": "levererad på V3-arket (rank 3, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24-jul",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Fyren i klossar som lyser, 1 092 bitar"
@@ -20396,7 +20473,15 @@
    "arketyp": "G_Q4_GAVA",
    "arketyp_sekundar": "H_VISUELL_NYHET",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Barnbarnets julklapp — kulbana i trä som byggs ihop på julafton",
+    "form": "annat",
+    "arketyp": "G_Q4_GAVA",
+    "deadline_typ": "jul",
+    "prisband": "300–499",
+    "ankare_klass": "1,3–1,6×",
+    "ankare_kalla": "Hubelino Mellan Byggsats 123 delar (Jollyroom)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -20459,10 +20544,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24-jul",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T10:21:22.781Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -20472,6 +20565,10 @@
     {
      "datum": "2026-09-24-jul",
      "handelse": "levererad på V3-arket (rank 4, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24-jul",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Kulbanetornet i trä, 449"
@@ -20486,7 +20583,15 @@
    "arketyp": "G_Q4_GAVA",
    "arketyp_sekundar": "H_VISUELL_NYHET",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Julbordets mittpunkt — pariserhjul i trä som snurrar, lyser och spelar",
+    "form": "annat",
+    "arketyp": "G_Q4_GAVA",
+    "deadline_typ": "jul",
+    "prisband": "500–999",
+    "ankare_klass": "golv utan ankare",
+    "ankare_kalla": "Rolife Night of the Eiffel Tower 164 delar med LED (Hobbyland) 449 / ROKR marble runs med LED 759 — kusiner i samma serie, inte samma form"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -20549,10 +20654,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24-jul",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T10:21:31.315Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -20562,6 +20675,10 @@
     {
      "datum": "2026-09-24-jul",
      "handelse": "levererad på V3-arket (rank 5, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24-jul",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Pariserhjulet med LED och musik"
@@ -20576,7 +20693,15 @@
    "arketyp": "G_Q4_GAVA",
    "arketyp_sekundar": "H_VISUELL_NYHET",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Fönsterbrädan i advent — julgran i trä med tomtesläde som snurrar till musik",
+    "form": "annat",
+    "arketyp": "G_Q4_GAVA",
+    "deadline_typ": "jul",
+    "prisband": "500–999",
+    "ankare_klass": "golv utan ankare",
+    "ankare_kalla": "Panduro/Kreatima ROKR speldosa (orrery, 101 delar) och karusell-speldosa (336 delar) — grannform: speldosa i trä som byggsats"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -20639,10 +20764,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24-jul",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T10:21:50.803Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -20652,6 +20785,10 @@
     {
      "datum": "2026-09-24-jul",
      "handelse": "levererad på V3-arket (rank 6, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24-jul",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Julgranen som snurrar, speldosa i trä"
@@ -20666,7 +20803,15 @@
    "arketyp": "F_HOBBY_IDENTITET",
    "arketyp_sekundar": "G_Q4_GAVA",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Pingisbordet i källaren — motståndaren som aldrig tröttnar",
+    "form": "annat",
+    "arketyp": "F_HOBBY_IDENTITET",
+    "deadline_typ": "jul",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Joola iPong bordtennisrobot — Fitshop"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -20729,10 +20874,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24-jul",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T10:22:14.383Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -20742,6 +20895,10 @@
     {
      "datum": "2026-09-24-jul",
      "handelse": "levererad på V3-arket (rank 7, sasong, konfidens LÅG)"
+    },
+    {
+     "datum": "2026-09-24-jul",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Pingisroboten, spiralmagasin"
@@ -20756,7 +20913,15 @@
    "arketyp": "A_AGARE_FRIKTION",
    "arketyp_sekundar": "G_Q4_GAVA",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Pusslet på matbordet — måste flyttas när det ska dukas till jul",
+    "form": "annat",
+    "arketyp": "A_AGARE_FRIKTION",
+    "deadline_typ": "jul",
+    "prisband": "500–999",
+    "ankare_klass": "1,2–1,3×",
+    "ankare_kalla": "CDON — Puzzle Ready träpusselbräda 1000 bitar 998 kr / pusselbräda med 4 lådor 1 679 kr (ur sökträff 2026-09-24, produktsidan 403)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -20819,10 +20984,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24-jul",
+     "dom": "nej",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T10:22:53.930Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "nej",
    "aterupptas_om": [],
    "historik": [
     {
@@ -20832,6 +21005,10 @@
     {
      "datum": "2026-09-24-jul",
      "handelse": "levererad på V3-arket (rank 8, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24-jul",
+     "handelse": "Axel: nej "
     }
    ],
    "namn_sv": "Pusselbrädan med sex lådor"
@@ -20846,7 +21023,15 @@
    "arketyp": "F_HOBBY_IDENTITET",
    "arketyp_sekundar": "G_Q4_GAVA",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Mannens julaftonsbygge — mekanisk pendelklocka i trä på väggen",
+    "form": "annat",
+    "arketyp": "F_HOBBY_IDENTITET",
+    "deadline_typ": "jul",
+    "prisband": "500–999",
+    "ankare_klass": "1,3–1,6×",
+    "ankare_kalla": "Ugears Aero Klocka väggklocka (320 delar, pendel) — PriceRunner; Wood Trick pendelväggklocka 4 195 som övre ankare"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -20909,10 +21094,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24-jul",
+     "dom": "nej",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T10:22:46.705Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "nej",
    "aterupptas_om": [],
    "historik": [
     {
@@ -20922,6 +21115,10 @@
     {
      "datum": "2026-09-24-jul",
      "handelse": "levererad på V3-arket (rank 9, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24-jul",
+     "handelse": "Axel: nej "
     }
    ],
    "namn_sv": "Pendelväggklockan med kugghjul, trä"
@@ -20936,7 +21133,15 @@
    "arketyp": "G_Q4_GAVA",
    "arketyp_sekundar": "F_HOBBY_IDENTITET",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Julklappen som ska låsas upp — skattkista i trä med kombinationslås, byggd av mottagaren",
+    "form": "annat",
+    "arketyp": "G_Q4_GAVA",
+    "deadline_typ": "jul",
+    "prisband": "300–499",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Ugears 3D Safe Mechanical 179 delar (kassaskåp med kodlås, synliga kugghjul) — PriceRunner"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -20999,10 +21204,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24-jul",
+     "dom": "nej",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T10:23:26.971Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "nej",
    "aterupptas_om": [],
    "historik": [
     {
@@ -21012,6 +21225,10 @@
     {
      "datum": "2026-09-24-jul",
      "handelse": "levererad på V3-arket (rank 10, sasong, konfidens LÅG)"
+    },
+    {
+     "datum": "2026-09-24-jul",
+     "handelse": "Axel: nej "
     }
    ],
    "namn_sv": "Skattkistan med tre kodhjul, trä"

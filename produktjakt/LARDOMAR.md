@@ -3,43 +3,43 @@
 Läses av `/produktjakt` INNAN sökningen. Auto-delen räknas av `feedback.py vikter`; skriv aldrig i den för hand.
 
 <!-- auto:start -->
-Uppdaterad 2026-09-24. **94 svar** — ja 62, kanske 14, nej 18.
+Uppdaterad 2026-09-24. **105 svar** — ja 69, kanske 15, nej 21.
 
 ## Det Axel säger ja till
 
-- prisband **500–999**: 44 ja, 7 kanske, 11 nej → score 0.758
+- prisband **500–999**: 49 ja, 8 kanske, 13 nej → score 0.75
+- ankare_klass **≥ 1,6×**: 24 ja, 7 kanske, 10 nej → score 0.663
+- ankare_klass **1,3–1,6×**: 23 ja, 2 kanske, 4 nej → score 0.806
 - form **överdrag**: 22 ja, 1 kanske, 2 nej → score 0.87
-- ankare_klass **1,3–1,6×**: 22 ja, 2 kanske, 3 nej → score 0.828
-- ankare_klass **≥ 1,6×**: 21 ja, 7 kanske, 9 nej → score 0.654
-- prisband **300–499**: 20 ja, 3 kanske, 0 nej → score 0.9
+- prisband **300–499**: 21 ja, 3 kanske, 1 nej → score 0.87
+- form **annat**: 18 ja, 6 kanske, 7 nej → score 0.667
+- ankare_klass **golv utan ankare**: 16 ja, 1 kanske, 0 nej → score 0.921
 - arketyp **B_SKYDDA_DYRT**: 16 ja, 1 kanske, 3 nej → score 0.795
-- ankare_klass **golv utan ankare**: 13 ja, 0 kanske, 0 nej → score 0.933
-- arketyp **E_VADER_SASONG**: 13 ja, 1 kanske, 3 nej → score 0.763
+- arketyp **E_VADER_SASONG**: 14 ja, 1 kanske, 3 nej → score 0.775
 - deadline_typ **första frost**: 13 ja, 2 kanske, 3 nej → score 0.75
+- prisband **≥ 1 000**: 12 ja, 0 kanske, 4 nej → score 0.722
+- arketyp **G_Q4_GAVA**: 11 ja, 2 kanske, 1 nej → score 0.812
 - deadline_typ **uppställning**: 11 ja, 1 kanske, 1 nej → score 0.833
-- form **annat**: 11 ja, 5 kanske, 4 nej → score 0.659
-- prisband **≥ 1 000**: 11 ja, 0 kanske, 4 nej → score 0.706
 - deadline_klass **6–12 v**: 10 ja, 1 kanske, 0 nej → score 0.885
 - ankare_klass **ej mätt**: 10 ja, 0 kanske, 3 nej → score 0.733
-- arketyp **A1**: 9 ja, 1 kanske, 0 nej → score 0.875
 
 ## Det Axel säger nej till
 
-- prisband **500–999**: 11 nej, 44 ja → score 0.758
-- ankare_klass **≥ 1,6×**: 9 nej, 21 ja → score 0.654
-- form **annat**: 4 nej, 11 ja → score 0.659
-- prisband **≥ 1 000**: 4 nej, 11 ja → score 0.706
-- arketyp **A_AGARE_FRIKTION**: 3 nej, 4 ja → score 0.538
+- prisband **500–999**: 13 nej, 49 ja → score 0.75
+- ankare_klass **≥ 1,6×**: 10 nej, 24 ja → score 0.663
+- form **annat**: 7 nej, 18 ja → score 0.667
+- arketyp **A_AGARE_FRIKTION**: 4 nej, 4 ja → score 0.5
+- prisband **≥ 1 000**: 4 nej, 12 ja → score 0.722
+- ankare_klass **1,3–1,6×**: 4 nej, 23 ja → score 0.806
 - arketyp **D_SNABBARE_METOD**: 3 nej, 6 ja → score 0.636
+- deadline_typ **jul**: 3 nej, 6 ja → score 0.625
 - ankare_klass **ej mätt**: 3 nej, 10 ja → score 0.733
-- arketyp **E_VADER_SASONG**: 3 nej, 13 ja → score 0.763
 - deadline_typ **första frost**: 3 nej, 13 ja → score 0.75
+- arketyp **E_VADER_SASONG**: 3 nej, 14 ja → score 0.775
 - arketyp **B_SKYDDA_DYRT**: 3 nej, 16 ja → score 0.795
-- ankare_klass **1,3–1,6×**: 3 nej, 22 ja → score 0.828
 - deadline_typ **höstregn**: 2 nej, 2 ja → score 0.5
 - form **dekor**: 2 nej, 2 ja → score 0.5
 - form **verktyg**: 2 nej, 5 ja → score 0.667
-- arketyp **H_VISUELL_NYHET**: 2 nej, 6 ja → score 0.682
 
 ## Orsakerna han anger
 
@@ -88,6 +88,7 @@ Uppdaterad 2026-09-24. **94 svar** — ja 62, kanske 14, nej 18.
 - deadline_typ:fars dag
 - deadline_typ:första frost
 - deadline_typ:första snö
+- deadline_typ:jul
 - deadline_typ:lövfällning
 - deadline_typ:mörker
 - deadline_typ:uppställning

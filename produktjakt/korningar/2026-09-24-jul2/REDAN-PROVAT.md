@@ -1,0 +1,118 @@
+# Redan prövat i julrundan 2026-09-24 (sök INTE om dessa)
+
+- LEVERERAD (JA): Svävande bordscurling, elektrisk
+- LEVERERAD (JA): Pingisroboten, spiralmagasin
+- STRUKEN (JA): Hänga gubbe med snurrhjul (Temu 606456829034765) och kloner — FÖRBJUDEN enligt Axel — inte sökt.
+- STRUKEN (JA): Bordsbowling, arkad med kägelåterställning (Ali 1005012043862848, 25,19 USD) — K8: heron är en barnleksak ('Bowling mania', tecknade flaggor, inbränd text) som ser ut som 199 kr — kan inte bära 599+.
+- STRUKEN (JA): Träbowling mini med avfyrare (Ali 1005012012212810, 12,45 USD) — Golv i exakt form under oss: Jongleringsbutiken 'Mini Bowling' i trä 175 kr (ord. 210), Fyndiq ×3 + Amazon.se samma form (pris dolt/503). Pr
+- STRUKEN (JA): Fyra i rad i jätteformat (Jula Kayoba XL 999 som ankare) — Ali saknar mellanstorlek: 3–7 USD (bordsleksak) eller 92–299 USD (jätte) → landad ≥ 1 340 kr mot Jula 999. Coolstuff XL Fyra i rad utgången.
+- STRUKEN (JA): Roterande fyra i rad 'Line Up 4' (Ali 1005006457725865, 6,55 USD) — K8: heron visar en 99-kronorsleksak i kartong; Lekia GAF Fyra i rad 149 kr är golvet.
+- STRUKEN (JA): Air hockey bordsmodell batteridriven (Ali 1005012159831922, 18,59 USD) — Golv i exakt form under oss: Jollyroom TRG Tabletop Air Hockey 269 kr, Lekia Sport Me 69 × 37 cm 549 kr. Ingen ny mekanik heller.
+- STRUKEN (JA): Svävande hockeypuck-set utan bord (Ali 1005010496126130, 8,99 USD) — K8: 9-dollarspryl utan bord — upplevt värde under 200 kr; svävande fotboll finns hos Jula/Rusta i samma mekanik.
+- STRUKEN (JA): Bingo med elektrisk kulblandare/LED — Golv i exakt form: Amazon.se elektronisk bingomaskin (60/100 bollar), CDON Ninco elektrisk bingo; Clas Ohlson metallbur 31-6484/31-7143. Ali
+- STRUKEN (JA): Shut the box (4 spelare, trä) — Golv i exakt form: Adlibris, Jollyroom Tobar, CDON, Fyndiq — och 60-åringen känner inte igen spelet på en sekund.
+- STRUKEN (JA): Bordscurling/shuffleboard 120 cm (icke-elektrisk) — Golv i exakt form: Engelhart 3-i-1 330 kr (Kalenderspecialisten), PartyVikings 122 × 33, jem & fix Nordic Games 2-i-1.
+- STRUKEN (JA): Dominotåg (automatisk utläggning) — Golv i exakt form: Lekia 'Dominobana med tåg' 249 kr, Jollyroom 249 kr. Ali 2,81–23,59 USD.
+- STRUKEN (JA): Träflipper / flipperspel — Ankare BRIO 34017/34019 499–589 kr (Jollyroom) + Tobar träflipper; Ali träflipper 39,99 USD → landad 578 > ankaret. 16,33-dollarsvarianten (
+- STRUKEN (JA): Magnetisk kulbana / kulbana med hiss / Spacerail (byggleksaker) — Golv i exakt form: Clas Ohlson magnetisk kulbana 88 delar 349 kr, Lekia Kulbana med hiss 236 st 499 kr, Spacerail 339 kr (24.se) / 561 (vida
+- STRUKEN (JA): Tumble Trax — magnetisk kulbana på kylskåpet — Ingen AliExpress-listning hittad (två fraser); svenskt golv ABC Leksaker 379 kr (Learning Resources).
+- STRUKEN (JA): Mekanisk kulbana i trä, 3D-pussel (Ali 1005006599798079, 25,14 USD) — Ankaret Robotime ROKR Marble Parkour 599 kr (Kreatima/Panduro) ger pris ≤ 509 (0,85×); landad 363 → BE-CPA < 190. Rokr-listningarna på Ali ä
+- STRUKEN (JA): Pingisrobot — dyra/automatiska modeller (Ali 281–1 010 USD) — Över pristaket 999; den billiga spiralmodellen levererad i stället (H06-märkt).
+- STRUKEN (JA): Lyckohjul / prishjul 40–61 cm — Golv: Clas Ohlson lyckohjul i trä 31-6613, Partykungen bords-/golvmodell, CDON 61 cm. Ali 56–63 USD → 999+. Inte ett spel alla kan heller.
+- STRUKEN (JA): Höga stången / King of Hammer (Ali 1005005348120659, 53,75 USD) — Produktsidan svarade tomt (BLOCKED) och landad 777 kr → över pristaket.
+- STRUKEN (JA): Fia med knuff med pop-tärning — Inga träffar på Ali; svenskt golv Hasbro Trouble 230 kr (IP) + Alga Fia 30 × 30 cm hos Lekia/Jollyroom.
+- STRUKEN (JA): Couronne/carrom i bordsformat — Golv i exakt form: Micki Couronne 319 kr (Jollyroom) – 589 kr; Ali gav inga carrombräden under 50 cm. Crokinole (45–190 USD) känner ingen 60
+- STRUKEN (JA): Bordskrocket / mini-krocket — Inga Ali-träffar (bara virkade blommor); svenskt inomhuskrocket finns hos Blå Elefant (New Classic Toys).
+- STRUKEN (JA): Inomhusboule (mjuka klot) — Golv i exakt form: Clas Ohlson Inomhusboule 31-1288, Fler Bollar, Fyndiq 8-pack, Amazon.se Remember Soft-Boccia.
+- STRUKEN (JA): Puttmatta med automatisk bollretur — Utanför linsen (golf är hobby, inte familjespel) och golv på Amazon.se (B0C2779VN8, GimiYaa) + Dormy Perfect Putting Mat som ankare — lämnas
+- STRUKEN (JA): Sling puck / 'fast sling puck' — Inte en klassiker en 60-åring känner igen; Ali 4–29 USD ser ut som 99 kr; Fyndiq/Coolstuff säljer formen.
+- STRUKEN (JA): Elektroniskt fyra i rad (Giiker Smart Four, 64,39 USD) — Varumärke + landad 931 kr → över taket.
+- STRUKEN (JA): Cornhole i bordsformat (30–34 USD) — Amerikansk klassiker — inte igenkänd på en sekund i Sverige.
+- STRUKEN (JA): Kubb / mölkky / jätteyatzy / jätte-jenga / jätteschack — Sommarspel (fel fönster) och golv hos Jula/Rusta/Biltema i exakt form.
+- STRUKEN (JA): Balansspel 'Tetra tower' (6–17 USD) — Ny form men ingen klassiker bakom — fel struktur för linsen.
+- LEVERERAD (JB): Kulbanetornet i trä, 449
+- LEVERERAD (JB): Elektriska kulbanan med hiss, 19 kulor
+- LEVERERAD (JB): Fyren i klossar som lyser, 1 092 bitar
+- STRUKEN (JB): Magnetisk kulbana (plattor/rör på kylskåp, whiteboard, PicassoTiles/Geomag-typ) — K0: butiken har Magnetiska byggblocken 200 st (799) + Magnetplattor i storformat (469); golv Jollyroom PicassoTiles 399, Lekia Geomag, Pandu
+- STRUKEN (JB): Träklossbana à la Haba/Kullerbü (stora träklossar, 60–100 delar) — Finns inte på AliExpress (tre fraser gav bara 3D-pussel och tågräls); ankaret Haba 840–4 120 (Lekakademin) hade annars varit bra.
+- STRUKEN (JB): Mekanisk träkulbana med handvev, 254 delar (ROKR-kopia, 1005006634250532, 29,93  — Golv i exakt form UNDER oss: Panduro ROKR handvev 254 delar 599 kr i kedja, 50+ i lager — vi hade behövt 699+ (landad 433). Struken på golvr
+- STRUKEN (JB): Elektrisk träkulbana i arkadformat med LED (1005013023358718, 55,89 USD) — Landad 808 → pris 1 199 över pristaket 999; H04 gäller bara objekt ≥ 100× priset.
+- STRUKEN (JB): Elektrisk kulbana mörkt trä (1005007476383282, 41,09 USD) — Landad 594 → 899 kr; Hobbyland ROKR elektrisk 759 ligger under — samma form. Rad 2 valdes i stället (lägre landad, pris 749 = golvet ligger 
+- STRUKEN (JB): Motormodell V8 i metall (TECHING-typ, 250–500 delar) — Golv Fyndiq 421 kr (V8 metall, 500 delar) + flera varianter 239–421 — exakt samma form under oss; stora TECHING-satsen landar > 1 500 kr.
+- STRUKEN (JB): Stirlingmotor byggsats (STARPOWER 35,91 USD, verifierad 07:18:22Z, hero nedladda — Samma form finns hos Amazon.se (6 listningar) och Fyndiq; priserna ligger bakom captcha/403 så luckan går inte att visa — hittar aldrig på g
+- STRUKEN (JB): Mekanisk klocka/pendelur i trä 3D-pussel (ROKR ugglklocka m.fl.) — Fyndiq säljer ROKR ugglklocka 161 delar + generisk väggklocka i samma form (pris bakom 403); Amazon.se UGEARS/Robotime. Formen är kommoditis
+- STRUKEN (JB): Julgran i klossar med ljus, 1 156 bitar (KAVOWORLD 1005013166123159, 44,09 USD,  — LEGO:s egen julgran 449 kr (Elefun) ligger under vårt pris 899 i samma form — varumärkesägaren själv billigare. Struken.
+- STRUKEN (JB): Julby/vinterby i klossar (6-i-1 9,95 USD; julhus 1 825 bitar 56 USD) — 6-i-1: småbitar som ser ut som 99 kr (K8). 1 825-bitars: landad 812 → över 999. Resinby (1005010155284566) är ingen byggsats + Rusta/Clas Oh
+- STRUKEN (JB): Modellbåt i trä till 'mannen med båten' (segelbåt/vikingaskepp byggsats) — Hobbymodeller.se nybörjarsatser 295–550 kr (Zodiac 295, segelbåt 395, vikingaskepp 350) + Hobbyland Rolife 529–579 — exakt samma form under 
+- STRUKEN (JB): Kugghjuls-/STEM-set (Hjulkul 216 delar, 833-delars kugghjulsset) — Golv Lekia (Bricks & Blocks Hjulkul) + Amazon.se; småbitar i plastlåda = K8 struken utan ali-sökning.
+- STRUKEN (JB): Kedjereaktionsmaskin / Rube Goldberg-set — Ingen svensk aktör hittad (bra) men formen finns inte som listning på AliExpress — två fraser gav klockdelar och hopprep.
+- STRUKEN (JB): Byggklossar 1 000 bitar / brandbil / stadsset — Fyndiq/CDON 451 kr för 1 000 bitar + kompatibla brandbilar — golv under oss och K8 lågt.
+- LEVERERAD (JC): Pusselbrädan med sex lådor
+- STRUKEN (JC): Elektrisk kortblandare (2 lekar, plast, AA) — Axels artros-idé — Exakt samma form under oss: Boardgamer 179 kr, PartyVikings 199 kr (i lager), Pokerbutiken plast 329 / X1 499 kr. Träversionen (AliExpress 4
+- STRUKEN (JC): Automatisk kortgivare 360° (delar ut till 8 spelare) — Starkaste visuella nyheten i kategorin men ekonomin faller: 51,45–62,87 USD → landad 670–909 kr, pris max 999 → BE-CPA 90–329, undre kant < 
+- STRUKEN (JC): Korthållare i trä 4-pack (händer som inte orkar hålla 13 kort) — Varsam (hjälpmedel) säljer samma böjda trähållare för 80 kr styck, Boardgamer 119 kr, Lekolar 2-pack. Sökträffens minpris 10,59–13,65 USD gä
+- STRUKEN (JC): Bingotrumma med kulor (metallbur) — Exakt samma form under oss: Boardgamer 229 kr (i lager), Relaxdays 451 kr; Spelexpertens deluxe 749/629 kr utgått. Elektronisk bingomaskin g
+- STRUKEN (JC): Elektronisk dartavla med LED-segment — Golv utan LED: Spelexperten Catdart 299 / Longfield 399 kr; LED-modeller 1 691+ kr slut i lager (Dartshop). AliExpress LED 68–111 USD → land
+- STRUKEN (JC): Bordscurling / bordsshuffleboard i trä — Spelexperten Curling & Shuffleboard 180 × 40 cm 459 kr i lager, Compact Curling 149 kr, CDON shuffleboard från 302 kr — exakt samma form und
+- STRUKEN (JC): Golvcurling (stenar på kullager, inomhus) — Fackhandel för skola/äldreboende (Lekolar, Lekakademin, Unisport) har formen; 8 stenar väger 3–4 kg; AliExpress säljer lösa stenar 18 USD/st
+- STRUKEN (JC): Bordsairhockey batteridriven — Lekia 499 kr (69 × 37 cm) — samma form som AliExpress 18,59 USD; dessutom syskon till Bordsfotbollen 439 kr vars utfall inte är sett.
+- STRUKEN (JC): Svarsknappar / quiz-buzzers 4-pack — 6–18 USD plastknappar → pris max 399 och ser ut som 99 kr (K8); Amazon.se har flera set (503, oläst). Ingen ägd friktion — bara nyhet.
+- STRUKEN (JC): Bordtennisrobot (bollmaskin) — Utanför strukturen (spelkvällen/julbordet); minimodellerna 33 USD ser ut som leksak, riktiga 298–359 USD; Amazon.se-sortimentet oläst (503).
+- STRUKEN (JC): Magnetiskt schack/backgammon i trä, pokerset i aluminiumväska, storstilskortleka — Golv i samma form hos Spelexperten/Adlibris/Rusta; Luffarschacket i trä är REAL_LOSER (0,36) som närmaste syskon; pokerset > 3 kg; kortlekar
+- STRUKEN (JC): Bordtennisnät för matbordet — K0: Bordtennisnät Infällbart 309 kr finns redan i katalogen.
+- STRUKEN (JC): Ordbrädspel 'hänga gubbe' med snurrande hjul (Temu 606456829034765) och kloner — Förbjuden av Axel — vännen har den. Inte sökt.
+- STRUKEN (JD): Snöbollskastaren (Shark Snowball Launcher, AliExpress 1005006367834669, 18,45 US — LIVE_VERIFIED 2026-09-24T07:28Z (sida öppnad, titel stämmer, hero nedladdad korningar/2026-09-24-jul/v3/bilder/1005006367834669.jpg och sedd
+- STRUKEN (JD): Jätte-fyra-i-rad 120 cm (plast, 42 jumboringar) — Golv läst före sökningen: Jula Kayoba Fyra i rad XL 122×83 cm 999 kr (https://www.jula.se/…/fyra-i-rad-xl-029889/, pris ur sökträff, sidan 4
+- STRUKEN (JD): Fyra-i-rad i trä 48–60 cm (den mellanstora 'jätten') — Verklig lucka i hyllan: Spelexperten Jättestort Fyra i Rad 57×59×28 cm 429 kr UTGÅTT (https://www.spelexperten.com/sallskapsspel/klassiska/j
+- STRUKEN (JD): Jätte-tornspel i trä (stackas till 1–1,5 m) — Exakt samma form under oss: Tactic XL Tower 319 kr i lager Jollyroom (https://www.jollyroom.se/fritid-hobby/utomhusspel/ovrigt/tactic-xl-tow
+- STRUKEN (JD): Kubb med LED / självlysande kubb för mörkret — Ingen svensk aktör har formen (sökt: Spelexperten kubbsortiment, Boardgamer Kubb Stor, Clas Ohlson 31-9982, Lekia Skills, Jollyroom Kubb Del
+- STRUKEN (JD): Självlysande / LED-boule — Ingen svensk aktör (bara LED-badbollar, kattbollar, golfbollar). AliExpress 'glow in the dark bocce ball set LED' gav bara metallboule 38,85
+- STRUKEN (JD): Jättetärningar i skum 30 cm (2–4-pack, golv-yatzy) — Tress jättetärning skum 30 cm 0,65 kg (pris dolt, https://www.tress.com/se/jattetarning-i-skum-652432), Lekolar 13 cm 2-pack, Lekia Jätteyat
+- STRUKEN (JD): Golvschack / jätteschack med 20–25 cm pjäser och matta — Svenskt golv: Lekolar stor spelmatta 100 × 100 cm med 20 cm-pjäser (skolavtal, pris dolt), Uber Giant Chess 60 cm 5 995 kr + bräde 2 495 (Sp
+- STRUKEN (JD): Jättedomino i trä 28 st (18 × 7,5 cm) — Golv: Klubbensport BS Toys 519 exkl = ~649 kr, 7 på fjärrlager, beställningsvara 13 dagar (https://www.klubbensport.se/bs-toys/2548702/…) — 
+- STRUKEN (JD): Cornhole-bräda hopfällbar (LED eller trä) — Exakt samma form under oss: Lekia Cornhole 399 kr, Jollyroom SportMe 339–579 kr, BEX Cornhole PRO 1 269 (ankare, men PriceRunner 200+ produk
+- STRUKEN (JD): Ringkastning i trä / jätteringkast — Jollyroom Bamse Ringspel 159, BEX Kasta Ring 199, Schildkröt 329; PriceRunner från 199 — golv i samma form, K8 låg.
+- STRUKEN (JD): Stångspel Mölkky-typ / finsk bowling — Clas Ohlson Nummerkubb Mölkky, Jollyroom Tactic Mölkky GO 279, Lekia Mölkky Go 349, Jula kastspel 3-i-1 199. AliExpress Sportnow 12 pins 40,
+- STRUKEN (JD): Stegspel / ladder golf i trä — Proshop 341 kr i lager, XXL, Coolstuff, jem&fix, Partyhallen — exakt samma form under oss.
+- STRUKEN (JD): Bordshockey i trä med fjäderspelare — Stiga Play Off Classic på Jula/Lekolar/Spelexperten — varumärkesgolv; 'Sling puck' på Amazon.se/litenleker. Golv + inomhus + inget datum.
+- STRUKEN (JD): Snöbollsmaskin / snöbollsform (klämma) — Jula Wham-o snöbollsmall, Partykungen Snowball Maker, Fyndiq/Fruugo/Amazon.se hjärt- och djurformer, Ozerty 4-pack. AliExpress 2,75 USD. K8 
+- STRUKEN (JD): Snöblocksform / snöfort- och iglooformar 2-pack (AliExpress 1005010699950569, 21 — LIVE_VERIFIED 07:28Z, hero sedd (två blå plastformar med handtag, packshot, textfri). Golv läst FÖRE: Klubbensport 'Snöborg- och iglooformar
+- STRUKEN (JD): Snöskulpturssäcken (tubform med dragkedja, 1,5 m cylinder) — Coolstuff har LAGT NER den (https://www.coolstuff.se/…/snoskulpturssacken-pid-18445, 'utgått') — äkta lucka. AliExpress 'snowman making kit 
+- STRUKEN (JD): LED-frisbee för mörkret — Jollyroom Waboba Wingman UFO med LED 169 kr; Clas Ohlson 31-6965 utgått. AliExpress 10–27 USD. Golv under oss, K8 låg.
+- STRUKEN (JD): Curling på sjöis (set med stenar), golvcurling, iscurling — AliExpress ger bara torrcurling 4 st 18,49 USD (lins JC:s strukna golvcurling), bordscurling 12–17 USD och uppblåsbara rinkar 2 620 USD. Rik
+- STRUKEN (JD): Isglid-/snöhockey med LED-puck, pond-hockey-mål — Inga LED-puckträffar (Biltema puck, Rexhockey, Amazon sling puck). Hockeymål finns hos Biltema/XXL — inte sökt vidare på AliExpress; utanför
+- STRUKEN (JD): Jätte-fia / jätte-ormar-och-stegar golvmatta 1,5–3 m — Klubbensport Fia 149 × 149 cm (Sport-Thieme), Lekolar Stort fiaspel 50 cm (skola), Amazon.se DOM 3 × 3 m-matta med uppblåsbar tärning + Graf
+- STRUKEN (JD): Jättedam-matta med 24 stora pjäser — AliExpress 'giant checkers rug game mat 24 pieces' gav bara dartmattor, luffarschackmatta 7,69 USD och rutiga mattor — ingen listning. Sveri
+- STRUKEN (JD): Jätte-memory i trä utomhus — AliExpress 'giant memory game wooden outdoor' gav minneskort (SD/TF) och en 4,85-dollars leksak. Ingen listning.
+- STRUKEN (JD): Jättetornspel/-mikado, jätteplockepinn — Lekia Jätteplockepinn 199, Jollyroom BEX Mega Mikado 319 — golv i samma form.
+- STRUKEN (JD): Stubbspel med spik och hammare (Hammerschlagen) — AliExpress 'hammer nail stump game wooden' gav massagepinnar och frimärksstansar — ingen listning; stubben väger dessutom > 5 kg.
+- STRUKEN (JD): Självlysande / LED-fotboll för mörkret (snöfotboll) — Golv: Smartasaker, Fritidsbutik, 24.se, Techkungen, PartyHandel säljer självlysande fotboll; Lekia Skills Air Hover LED, Clas Ohlson svävand
+- STRUKEN (JD): Magnetiskt pilspel för väggen, kastspel med kardborre — Lekia Magnetisk darttavla 199 kr, kardborre 70 kr. Golv, K8 = 0.
+- STRUKEN (JD): Jättefotboll, bollpannband, bordsfotboll, magnetplattor/byggblock, RC-bilar, adv — K0: finns i katalogen (katalog-live.txt 2026-09-24) — inte sökta.
+- STRUKEN (JD): Lins JC:s 13 strukna (kortblandare, kortgivare, korthållare, bingotrumma, LED-da — Inte sökta om, enligt order.
+- LEVERERAD (JE): Pendelväggklockan med kugghjul, trä
+- LEVERERAD (JE): Pariserhjulet med LED och musik
+- LEVERERAD (JE): Julgranen som snurrar, speldosa i trä
+- LEVERERAD (JE): Skattkistan med tre kodhjul, trä
+- STRUKEN (JE): Hänga gubbe med snurrande hjul (Temu 606456829034765) och kloner — FÖRBJUDEN enligt Axel — inte sökt.
+- STRUKEN (JE): Speldosa/orrery och karusell-speldosa i trä (Ali 15,19 USD 1005013229835206, ver — Golv i exakt form: Panduro/Kreatima ROKR speldosa 599 (50+ i lager) och karusell 336 delar 599, Ugears Carousel 619, Rolife-karusell 165 och
+- STRUKEN (JE): Jordglob i trä 3D-pussel (Ali generisk 21,65 USD 1005006035458085) — Panduro ROKR Luminous Globe 180 delar 699 (50+ i lager) + Ugears Globus 184 bitar 348 på PriceRunner + Fyndiq 'lysande jordglob 180 bitar' —
+- STRUKEN (JE): Mekanisk vintage-bil / cabriolet / ånglok i trä (Ali 16,25–22,75 USD; Ury ånglok — Golv under oss i exakt form: Robotime 3D Pussel Vintage Bil 358, Ugears Roadster 289, Dream Cabriolet 477, U-9 Grand Prix 619 (PriceRunner);
+- STRUKEN (JE): Traktor med synlig motor (Ali: bara ROKR Tractor Locomotive 69,89 USD 1005012987 — Enda träffen är märkesvara (ROKR) → landad 1 010 kr, över pristaket; generisk mekanisk traktor finns inte på AliExpress i dag (två fraser).
+- STRUKEN (JE): Sherlock's Camera — mekanisk kameralåda (Ali 41,29 USD 1005010210745863, verifie — iDventure Cluebox PRO Sherlock Holmes Kamera 620 kr på PriceRunner är SAMMA produkt; landad 597 → kan inte prissättas under golvet.
+- STRUKEN (JE): Stirlingmotor byggsats (Ali 15,81–34,36 USD) — Golvet är hela marknaden: PriceRunner 'stirlingmotor' listar 17 svenska listningar 360–1 285 kr (Tomtop 360, elektrisk 485–565, Grandado 705
+- STRUKEN (JE): Grammofon i trä (Ali 13,29 USD 1005005346802755, verifierad 07:39:50Z, hero sedd — Heron visar Rolife-märkt vara (18,5 cm) med inbränd SPU-text; ROKR Diva Gramophone 56,24 är märke; ingen svensk aktör hittad men K8 för 13-d
+- STRUKEN (JE): Mekanisk skrivmaskin i trä (Ali 121–184 USD) — Hobbyland ROKR skrivmaskin 999 är taket och landad 1 760+ — omöjlig ekonomi.
+- STRUKEN (JE): Gravitationsdriven pendelklocka (ROKR LK501-kopia, Ali 59,79 USD 100501229765691 — Landad 864 resp. 607 kr → 999 mot Ugears Aero 959 = ankare under oss; ugglan säljs dessutom av Fyndiq (ROKR 161 delar, pris bakom 403). Pend
+- STRUKEN (JE): Ury retro väggklocka med pendel (30,91 USD 1005006451864791, verifierad 07:38:00 — Kvartsverk utan synliga kugghjul och hero med inbränd 'Ury Wall Clock' — SAK-kollision med kandidat 1, svagare K8.
+- STRUKEN (JE): Luftskepp / raket / spelautomat i trä — Luftskepp: OUZEY/steampunk 52–67 USD → landad 759–965 utan ankare; 11-dollarsvarianterna är 2.5D-pussel (K8). Raket: Hobbyland ROKR Space Sh
+- STRUKEN (JE): Armborst/pistol i trä — Ali-sökningen gav noll träffar; Hobbyland har ROKR AK-47 529 / kulspruta 579 / luftvärnskanon 379 = golv i formen. Vapenmotiv passar dessuto
+- STRUKEN (JE): Automata med vev (figurer som rör sig) — Finns inte som listning på AliExpress i dag (en fras gav bara speldosor/generatorer); PriceRunner 'automata trä byggsats' tom.
+- STRUKEN (JE): Bordsshuffleboard i trä 120–180 cm (H06-prövad) — Golvet är hela marknaden: PriceRunner 100+ shuffleboardprodukter, Spelexperten Curling & Shuffleboard 180 × 40 cm 459 i lager, CDON bordsshu
+- STRUKEN (JE): Bordshockey i trä med stavar (H06-prövad, Stiga Play Off 749–899 som ankare) — Ankaret finns (Stiga 1,6× mot 469) men ingen trä-stavhockey finns på AliExpress: sökträffen ger sling puck (10,33), 14-dollarsplast (1005008
+- STRUKEN (JE): Träflipper i storformat (H06-prövad) — Golvet är hela marknaden: PriceRunner 86 flipperspel, BRIO 34017/34019 499–589, Tobar (Jollyroom), Vilac Space (CDON), Fyndiq 334–800; Ali 3
+- STRUKEN (JE): Magnetiskt pilspel för väggen (H06-prövad) — Bull's magnetisk darttavla 199 (Spelexperten, i lager), Skills 199/149 (Lekia, 25 butiker), INF 209, Fyndiq — inget ankare ≥ 1,6× i magnetfo
+- STRUKEN (JE): Balansspel/stapelspel i trä, tärningstorn — Fyndiq/CDON säljer formen 200–415 kr; 'balansstenar' 1 147 är enda premium men Ali-kopior 10–20 USD ser ut som 99 kr (K8) och 60-åringen kän
+- STRUKEN (JE): Mölkky-typ kastspel i björk — Sommarspel (fel fönster, JA) och golv Jula/Rusta/Biltema.
+- STRUKEN (JE): 3-i-rad i sten/trä för soffbordet — Luffarschacket i trä är REAL_LOSER (2 088 kr / 2 köp / 0,36) och ligger i katalogen (K0).
+- STRUKEN (JE): Kulbanor, magnetplattor, fyr/julgran i klossar, V8-motor, modellbåt, pusselbräda — Levererade eller strukna av JA/JB/JC — inte sökta om.

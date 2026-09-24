@@ -1,10 +1,10 @@
 {
  "datum": "2026-09-24",
- "antal_svar": 94,
+ "antal_svar": 105,
  "per_dom": {
-  "ja": 62,
-  "kanske": 14,
-  "nej": 18
+  "ja": 69,
+  "kanske": 15,
+  "nej": 21
  },
  "antal_utfall": 7,
  "score_regel": "(ja + 0.5*kanske + 1) / (ja + kanske + nej + 2); 0.5 = inget svar; launchad = 2 ja, >=BE = 3 ja, <BE = 3 nej",
@@ -525,6 +525,72 @@
     "kanske": 0,
     "nej": 1,
     "score": 0.333
+   },
+   "NYTT: ATV-föraren på passet i regn och snö — vindruta": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Pingisbordet i källaren — motståndaren som aldrig tröttnar": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Julklappen till mannen med båten — fyren i klossar som lyser när den är klar": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Julbordets mittpunkt — pariserhjul i trä som snurrar, lyser och spelar": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Julklappen som ska låsas upp — skattkista i trä med kombinationslås, byggd av mottagaren": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Barnbarnets julklapp — kulbana i trä som byggs ihop på julafton": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Julbordets spelkväll — curling som svävar på köksbordet": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Mannens julaftonsbygge — mekanisk pendelklocka i trä på väggen": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Farfar och barnbarnet bygger ihop den — kulbana i trä med elhiss som går av sig själv": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "NYTT: Fönsterbrädan i advent — julgran i trä med tomtesläde som snurrar till musik": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Pusslet på matbordet — måste flyttas när det ska dukas till jul": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
    }
   },
   "ankare_kalla": {
@@ -1020,6 +1086,72 @@
     "nej": 1,
     "score": 0.333
    },
+   "Moose ATV Vindruta Universal (ATVhuset) 2 755 kr; Powermadd Cobra Quick Release 2 950 kr": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Joola iPong bordtennisrobot — Fitshop": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Reobrix Lighthouse Medieval Town 3 228 bitar (Hemshopen.se)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Rolife Night of the Eiffel Tower 164 delar med LED (Hobbyland) 449 / ROKR marble runs med LED 759 — kusiner i samma serie, inte samma form": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Ugears 3D Safe Mechanical 179 delar (kassaskåp med kodlås, synliga kugghjul) — PriceRunner": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "Hubelino Mellan Byggsats 123 delar (Jollyroom)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Skills Curling golv (400 × 60 cm matta, 8 puckar, icke-elektrisk) — Lekia": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Ugears Aero Klocka väggklocka (320 delar, pendel) — PriceRunner; Wood Trick pendelväggklocka 4 195 som övre ankare": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "Hubelino Stor Byggsats 213 delar (Jollyroom)": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "Panduro/Kreatima ROKR speldosa (orrery, 101 delar) och karusell-speldosa (336 delar) — grannform: speldosa i trä som byggsats": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "CDON — Puzzle Ready träpusselbräda 1000 bitar 998 kr / pusselbräda med 4 lådor 1 679 kr (ur sökträff 2026-09-24, produktsidan 403)": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
    "eurotrail/getcamping.se": {
     "ja": 3,
     "kanske": 0,
@@ -1065,22 +1197,22 @@
   },
   "ankare_klass": {
    "≥ 1,6×": {
-    "ja": 21,
+    "ja": 24,
     "kanske": 7,
-    "nej": 9,
-    "score": 0.654
+    "nej": 10,
+    "score": 0.663
    },
    "1,3–1,6×": {
-    "ja": 22,
+    "ja": 23,
     "kanske": 2,
-    "nej": 3,
-    "score": 0.828
+    "nej": 4,
+    "score": 0.806
    },
    "golv utan ankare": {
-    "ja": 13,
-    "kanske": 0,
+    "ja": 16,
+    "kanske": 1,
     "nej": 0,
-    "score": 0.933
+    "score": 0.921
    },
    "ej mätt": {
     "ja": 10,
@@ -1091,8 +1223,8 @@
    "1,2–1,3×": {
     "ja": 7,
     "kanske": 1,
-    "nej": 0,
-    "score": 0.85
+    "nej": 1,
+    "score": 0.773
    },
    "ingen aktör": {
     "ja": 2,
@@ -1129,8 +1261,8 @@
    "A_AGARE_FRIKTION": {
     "ja": 4,
     "kanske": 4,
-    "nej": 3,
-    "score": 0.538
+    "nej": 4,
+    "score": 0.5
    },
    "D_SNABBARE_METOD": {
     "ja": 6,
@@ -1139,28 +1271,34 @@
     "score": 0.636
    },
    "H_VISUELL_NYHET": {
-    "ja": 6,
+    "ja": 7,
     "kanske": 1,
     "nej": 2,
-    "score": 0.682
+    "score": 0.708
    },
    "G_Q4_GAVA": {
-    "ja": 8,
-    "kanske": 1,
-    "nej": 0,
-    "score": 0.864
+    "ja": 11,
+    "kanske": 2,
+    "nej": 1,
+    "score": 0.812
    },
    "E_VADER_SASONG": {
-    "ja": 13,
+    "ja": 14,
     "kanske": 1,
     "nej": 3,
-    "score": 0.763
+    "score": 0.775
    },
    "C_LAGA_ISTALLET": {
     "ja": 0,
     "kanske": 0,
     "nej": 1,
     "score": 0.333
+   },
+   "F_HOBBY_IDENTITET": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.6
    },
    "A4": {
     "ja": 3,
@@ -1221,10 +1359,10 @@
     "score": 0.5
    },
    "älgjakt": {
-    "ja": 5,
+    "ja": 6,
     "kanske": 0,
     "nej": 1,
-    "score": 0.75
+    "score": 0.778
    },
    "jaktstart": {
     "ja": 1,
@@ -1310,6 +1448,12 @@
     "nej": 1,
     "score": 0.667
    },
+   "jul": {
+    "ja": 6,
+    "kanske": 1,
+    "nej": 3,
+    "score": 0.625
+   },
    "tjäle": {
     "ja": 2,
     "kanske": 0,
@@ -1349,10 +1493,10 @@
     "score": 0.667
    },
    "annat": {
-    "ja": 11,
-    "kanske": 5,
-    "nej": 4,
-    "score": 0.659
+    "ja": 18,
+    "kanske": 6,
+    "nej": 7,
+    "score": 0.667
    },
    "kalenderlåda": {
     "ja": 4,
@@ -1914,6 +2058,72 @@
     "nej": 1,
     "score": 0.333
    },
+   "NYTT: ATV-föraren på passet i regn och snö — vindruta": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Pingisbordet i källaren — motståndaren som aldrig tröttnar": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Julklappen till mannen med båten — fyren i klossar som lyser när den är klar": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Julbordets mittpunkt — pariserhjul i trä som snurrar, lyser och spelar": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Julklappen som ska låsas upp — skattkista i trä med kombinationslås, byggd av mottagaren": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Barnbarnets julklapp — kulbana i trä som byggs ihop på julafton": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Julbordets spelkväll — curling som svävar på köksbordet": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Mannens julaftonsbygge — mekanisk pendelklocka i trä på väggen": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Farfar och barnbarnet bygger ihop den — kulbana i trä med elhiss som går av sig själv": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "NYTT: Fönsterbrädan i advent — julgran i trä med tomtesläde som snurrar till musik": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Pusslet på matbordet — måste flyttas när det ska dukas till jul": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
    "Staketet — stolpen": {
     "ja": 2,
     "kanske": 0,
@@ -1941,22 +2151,22 @@
   },
   "prisband": {
    "500–999": {
-    "ja": 44,
-    "kanske": 7,
-    "nej": 11,
-    "score": 0.758
+    "ja": 49,
+    "kanske": 8,
+    "nej": 13,
+    "score": 0.75
    },
    "≥ 1 000": {
-    "ja": 11,
+    "ja": 12,
     "kanske": 0,
     "nej": 4,
-    "score": 0.706
+    "score": 0.722
    },
    "300–499": {
-    "ja": 20,
+    "ja": 21,
     "kanske": 3,
-    "nej": 0,
-    "score": 0.9
+    "nej": 1,
+    "score": 0.87
    }
   }
  },
@@ -2050,6 +2260,7 @@
   "deadline_typ:fars dag",
   "deadline_typ:första frost",
   "deadline_typ:första snö",
+  "deadline_typ:jul",
   "deadline_typ:lövfällning",
   "deadline_typ:mörker",
   "deadline_typ:uppställning",
