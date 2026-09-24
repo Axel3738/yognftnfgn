@@ -21,7 +21,7 @@ If a creator asks for something outside it → the matching case in `SOP.md`
 | Top price (only creators with 14–16 points) | **3 000 kr per video** |
 | Videos per first deal | **3 videos** (a test — more deals follow if they are good) |
 | Raw footage | **ALWAYS included.** Every unedited clip they filmed, not just the finished video. No raw footage = the delivery is not complete. |
-| Usage rights | **Included in the price. No extra fee for rights, no time limit.** We use the videos as ads on our own pages, all channels. We never pay a separate "usage rights" or "whitelisting" fee. |
+| Usage rights | **Included in the price. No extra fee for rights, no time limit.** We use the videos as ads on our own pages, all channels, **in all our stores and countries**, and we may **edit, cut, translate and dub them (also with AI voice and lip-sync)**. This must be in the agreement the creator says "ja" to. We never pay a separate "usage rights" or "whitelisting" fee. |
 | Product | Sent free, the creator keeps it |
 | Delivery time | 14 days after the product arrives (you may accept up to 21) |
 | Payment | **Invoice, AFTER we received AND approved the videos + raw footage.** Never before. Payment term on the invoice: 30 days. |

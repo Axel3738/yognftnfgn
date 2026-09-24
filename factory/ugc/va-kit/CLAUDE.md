@@ -71,8 +71,9 @@ and a tab-separated **Deals** row. Outside → say so and write the question to 
 
 ### `check <creator> [paste the transcripts]`
 If transcripts are pasted: check each one — no store name, no price, no
-promises ("bäst", "garanterat", medical/safety claims), nothing negative about
-the product, the product named correctly, sounds natural. Say per video: OK or
+promises ("bäst", "garanterat", medical/safety claims), no invented experience
+("jag har använt den hela vintern" when they had it two weeks), no claim we
+can't prove ("vattentät", "passar alla"), nothing negative about the product, the product named correctly, sounds natural. Say per video: OK or
 what's wrong (in English), and write the redo message if needed.
 Then walk through the rest of the delivery checklist in `SOP.md` step 10 as yes/no questions,
 one at a time. Any NO → the Redo message. All YES → the Approved + invoice message.

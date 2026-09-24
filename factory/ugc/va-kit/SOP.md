@@ -171,7 +171,7 @@ Then:
 | Has no company / can't invoice | Suggest an invoicing service (`TERMS.md`). | unchanged |
 | Wants to sign their own contract | Ask Axel. Don't sign anything. | `negotiating` |
 | Wants a commission / % of sales | Ask Axel. | `negotiating` |
-| Wants to post the video on their own account too | Fine, no exclusivity. | unchanged |
+| Wants to post the video on their own account too | Fine, no exclusivity — but the post must be marked as advertising ("Reklam" or "i samarbete med …"), Swedish law requires it. | unchanged |
 | Says yes | Agreement message → wait for written "ja". | `deal` |
 | Product lost / not arrived after 10 business days | Check the Shopify order tracking, tell the creator, ask Axel before sending a new one. | `working` |
 | Product arrived broken | Ask for a photo, create a new 0 kr order, new due date. | `working` |

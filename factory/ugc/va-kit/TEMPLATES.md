@@ -52,12 +52,14 @@ have a few creators who get many jobs. If this goes well, there'll be more work.
 ## Rights / raw footage question
 
 > Rättigheterna ingår i priset. Vi använder videorna i våra egna annonser, i
-> alla kanaler och utan tidsgräns, och vi vill ha med råmaterialet (alla
+> alla kanaler, i alla våra butiker och länder och utan tidsgräns, vi får
+> klippa, översätta och dubba dem, och vi vill ha med råmaterialet (alla
 > oredigerade klipp). Så jobbar vi med alla kreatörer. Du får gärna lägga upp
-> videorna på ditt eget konto också.
+> videorna på ditt eget konto också, märkt som reklam.
 
 *English: The rights are included in the price. We use the videos in our own
-ads, all channels, no time limit, and we want the raw footage (all unedited
+ads, all channels, all our stores and countries, no time limit, we may cut,
+translate and dub them, and we want the raw footage (all unedited
 clips). That's how we work with every creator. You're welcome to post the
 videos on your own account too.*
 
@@ -82,7 +84,8 @@ save your profile and would love to get in touch later. Good luck!*
 > - Råmaterialet (alla oredigerade klipp) ingår
 > - Du får [produkt] gratis och behåller den
 > - Leverans inom [14] dagar efter att produkten kommit fram
-> - Vi får använda videorna i våra annonser, alla kanaler, utan tidsgräns
+> - Vi får använda videorna i våra annonser, alla kanaler, i alla våra butiker och länder, utan tidsgräns
+> - Vi får klippa, redigera, översätta och dubba videorna, även med AI-röst och läppsynk
 > - En omtagning ingår om något inte blir som i briefen
 > - Med filerna skickar du texten du säger i varje video (skriv av den, det räcker)
 > - Du bekräftar att du är minst 18 år
@@ -93,8 +96,9 @@ save your profile and would love to get in touch later. Good luck!*
 
 *English: Great! Here's the deal: [3] videos at [1 500] kr, [4 500] kr total ·
 raw footage included · you get [product] free and keep it · delivery within [14]
-days after it arrives · we may use the videos in our ads, all channels, no time
-limit · one redo included · with the files you send the text you say in each
+days after it arrives · we may use the videos in our ads, all channels, all our stores and
+countries, no time limit · we may cut, edit, translate and dub them, also with
+AI voice and lip-sync · one redo included · with the files you send the text you say in each
 video · you confirm you're at least 18 · you invoice Stonebite Ecom AB after we approve the
 videos, 30 days payment · no exclusivity. Reply "yes" and we go, I'll send the
 product right away.*
