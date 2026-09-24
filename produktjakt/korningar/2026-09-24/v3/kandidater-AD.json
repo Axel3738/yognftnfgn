@@ -1,0 +1,229 @@
+{
+  "agent": "AD — hårda datum utan kalender (H02/H05/H09)",
+  "datum": "2026-09-24",
+  "kandidater": [
+    {
+      "koncept_id": null,
+      "namn_sv": "Kaninburens vinterhuv",
+      "objekt": "Kanin/marsvin i bur ute",
+      "form": "huv",
+      "arketyp": "E_VADER_SASONG",
+      "arketyp_sekundar": "B_SKYDDA_DYRT",
+      "slot": "sasong",
+      "hypotes_id": "H09",
+      "vinnarlikhet": {
+        "likast": "Isolerade Utekattkojan",
+        "delade_variabler": ["objekt_ute", "älskat djur (kanin = sällskapsdjur, inte nyttodjur)", "deadline första frost", "golv under nej (ingen svensk kedja i formen)", "old way improvisation (presenning/filt över buren)", "formsydd form över ägt objekt (H01-struktur)"],
+        "avvikelser": ["ägaren är barnfamilj/mor- och farföräldrar, inte 55+ småhus ensamt", "objektet är billigt (bur 1–3 tkr) — värdet sitter i djuret", "storlek måste matcha buren (en-/tvåvåning)"]
+      },
+      "sasong": {"fonster_id": "forsta_frost_mellan", "deadline_typ": "första frost", "veckor_kvar": 3.0, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005002637853707",
+        "url": "https://www.aliexpress.com/item/1005002637853707.html",
+        "pris_usd": 20.02,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-24T05:55:05Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-24/v3/bilder/1005002637853707.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "ur titel/sökträff: storlek ej läsbar i titeln — syskonlistningen 1005006896280524 (USD 18,12, LIVE 05:55:10Z, hero sedd: svart 210D på tvåvåningsbur, packshot) säljs som '4FT', så storlekar finns; 1005009813590071 (USD 25,19, LIVE 05:55:08Z, hero sedd: tre färger grön/grå/svart på vit botten). Måste mäta burens längd.",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {"klass": 2, "hero_textfri": true, "hero_i_kontext": true, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "heron är ett riktigt foto: svart huv med klar PVC-front över en tvåvåningsbur på gräsmatta, två kaniner synliga innanför — textfri, i kontext, objektet i bild. Syskonlistningarnas heron är renderade packshots i tre färger."},
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "Amazon.se marketplace — Excerando kaninbur skydd 210D dubbelt lager 122 × 51 × 104 cm (B08L375LFT)", "pris_sek": null, "url": "https://www.amazon.se/Excerando-kaninbur-h%C3%A5llbar-dubbelt-termisk/dp/B08L375LFT", "exakt_samma_form": true},
+        "premium_ankare": {"namn": "ingen svensk aktör i formen huv mätt; närmast objektankare: Kerbl 4-Season Superior isolerad kaninbur (granngarden.se, pris ej läst) och Trixie Natura 116 utebur 2 159–2 399 kr (djurmaxi.se) — annan form (bur, inte huv). Teddytassen 'Vindskydd för kaninburar' 89 kr är en klar plastskiva 50 × 70 cm, inte en huv.", "pris_sek": null, "url": "https://www.teddytassen.se/webbshop/kanin/kaninburar--kaninhus/vindskydd-till-burar/vindskydd-for-kaninburar-1753.html", "i_sortiment": false},
+        "ankare_kvot": null,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": [
+          "websök 'kaninbur vinterskydd isolerat överdrag' 2026-09-24: granngarden.se (Kerbl isolerad bur), zooplus.se/zoo.se/arkenzoo.se (isolerade burar, inga huvar), teddytassen.se (Vintra isolerad bur; vindskydd plastskiva 89 kr — läst)",
+          "websök 'Trixie skydd utomhusbur' 2026-09-24: bara burar i Sverige; Trixie Natura regntrekk ~90 NOK bara på finn.no (Norge)",
+          "websök 'hutch cover / burskydd kanin' 2026-09-24: Amazon.se Excerando (pris ej läsbart — sidan bara JS), Fruugo.se kategori",
+          "pricerunner.se/sp/vindskydd-djur (37 produkter) — ej öppnad",
+          "koncept.py sok kanin: 0 träffar · katalog-live.txt: ingen kanin/bur"
+        ]
+      },
+      "ekonomi": {"landad_sek": [261, 318], "pris_sek": 699, "brutto_sek": [381, 438], "be_cpa_sek": [381, 438], "be_roas": 1.7, "flerkop": false, "returrisk": "medel — kunden måste mäta burens längd och välja storlek; huven ska passa en- eller tvåvåningsbur"},
+      "meta_tanke": {
+        "hook": "Står kaninburen ute i vinter?",
+        "objekt_i_bild": "tvåvåningsburen på gräsmattan med huven på, kaninen synlig genom PVC-fronten",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "regn/snö på huven, torr kanin innanför; klaffen rullas upp för matning — före/efter med presenningen som blåser av"
+      },
+      "varfor": "Renaste H09-testet efter hönsgårdsduken (nyttodjur, tak, förlorade): älskat sällskapsdjur + första frost 3,0 v + formsydd huv över ägt objekt ute, och ingen svensk kedja säljer formen. Samma struktur som kojan (vann) med en variabel bytt: kanin i stället för katt.",
+      "huvudrisk": "Storleksval (en-/tvåvåningsbur) ger returer, och ägaren är barnfamilj snarare än 55+ småhus.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 2, "meta_creative": 3, "efterfragan": 2, "lucka": 2, "ekonomi": 2, "sasong": 2, "leverantor": 2, "nyhet": 2, "hypotesvarde": 3},
+      "per_kriterium": null,
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (ingen kanin/bur)", "koncept.py sok kanin (0 träffar)", "fynd.json 09-09…09-23 (inget kaninobjekt)"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005002637853707.html",
+        "https://www.aliexpress.com/item/1005006896280524.html",
+        "https://www.aliexpress.com/item/1005009813590071.html",
+        "https://www.teddytassen.se/webbshop/kanin/kaninburar--kaninhus/vindskydd-till-burar/vindskydd-for-kaninburar-1753.html",
+        "https://www.granngarden.se/kaninbur-isolerad-kerbl-4-season-superior-130x66x110cm",
+        "https://www.djurmaxi.se/trixie-kaninbur-natura-116-28743.html",
+        "https://www.amazon.se/Excerando-kaninbur-h%C3%A5llbar-dubbelt-termisk/dp/B08L375LFT"
+      ]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Kikarbröstväskan för älgpasset",
+      "objekt": "NYTT: Jaktkikaren på passet (2–15 tkr) — dinglar i halsrem",
+      "form": "sele",
+      "arketyp": "A_AGARE_FRIKTION",
+      "arketyp_sekundar": "B_SKYDDA_DYRT",
+      "slot": "sasong",
+      "hypotes_id": "H02",
+      "vinnarlikhet": {
+        "likast": "Axelbältet (trimmersele)",
+        "delade_variabler": ["form sele — kroppsligt i säsongsjobbet", "objekt ute, medel 1–10 tkr (kikaren)", "deadline säsongsstart (älgjakt syd 8 okt)", "old way = svikande default (halsremmen som följde med kikaren: nackont, kikaren slår mot bröstet, regn på linserna) — H03", "märkesankare ≥ 1,6× (Mystery Ranch 995 kr)", "ägare 55+ småhus (jägare)"],
+        "avvikelser": ["formen är känd i jaktfackhandeln (Widforss/Jaktia 900–2 000 kr) — 'sett innan'-risk hos erfarna jägare", "hero är packshot på vit botten utan kikare/jägare", "fars dag 6,4 v är andra datumet (gåva från frun) — H05-sida"]
+      },
+      "sasong": {"fonster_id": "algjakt_syd", "deadline_typ": "älgjakt", "veckor_kvar": 2.0, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005012664907030",
+        "url": "https://www.aliexpress.com/item/1005012664907030.html",
+        "pris_usd": 13.48,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-24T05:57:52Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-24/v3/bilder/1005012664907030.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "ur titel/sökträff: en variant synlig (khaki, mesh-sele med MOLLE, magnetlock, sidofickor); sökträffen visar även NEW VIEW bino pack 27,00 USD (1005011717683999) och Vector Optics 30,27 USD (1005012934002192) som dyrare syskon — ej öppnade.",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {"klass": 1, "hero_textfri": true, "hero_i_kontext": false, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "heron är en textfri packshot av selen framifrån (khaki, mesh-rygg, bröstväska med lock) på beige botten — ingen kikare, ingen jägare; kontextbild (jägaren på passet, kikaren ur väskan på 1 s) måste tas eller genereras"},
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "Widforss — Vortex Kikarsele (enkel elastisk sele utan väska, annan form)", "pris_sek": 349, "url": "https://www.widforss.se/p/vortex-kikarsele", "exakt_samma_form": false},
+        "premium_ankare": {"namn": "Mystery Ranch QD Bino Harness L (bröstväska med magnetlock, 500D Cordura) — Widforss 995 kr (rek 1 095), utsåld i One Size 2026-09-24", "pris_sek": 995, "url": "https://www.widforss.se/mystery-ranch-qd-bino-harness-l-foliage", "i_sortiment": false},
+        "ankare_kvot": 1.66,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": [
+          "widforss.se Vortex Kikarsele 349 kr (rek 499) — läst 2026-09-24: enkel sele, inte bröstväska",
+          "widforss.se Mystery Ranch QD Bino Harness 995 kr — läst 2026-09-24 (utsåld One Size)",
+          "websök 'kikarsele pris jaktia biltema jula widforss': pricerunner.se/sp/kikarsele 47 produkter (ej öppnad), Seeland kikarrem (Widforss), inga bröstväskor hos Biltema/Jula",
+          "websök 'bino harness kikarväska billigaste amazon.se jaktia': inga svenska träffar under 900 kr; finn.no Blaser bino harness 900 NOK, Vortex GlassPak Pro 1 999 NOK (Norge)",
+          "jaktia.se/search?q=kikarsele: 404 · widforss.se/tillbehor-jaktvaskor: ingen kikarselekategori på sidan",
+          "koncept.py sok kikare/kniv: 0 relevanta · katalog-live.txt: ingen kikare/sele utom Trimmersele"
+        ]
+      },
+      "ekonomi": {"landad_sek": [175, 214], "pris_sek": 599, "brutto_sek": [385, 424], "be_cpa_sek": [385, 424], "be_roas": 1.48, "flerkop": false, "returrisk": "låg — one size, justerbara remmar, rymmer 8×42–10×50"},
+      "meta_tanke": {
+        "hook": "Slår kikaren mot bröstet på passet?",
+        "objekt_i_bild": "jägaren i passet, kikaren lyfts ur bröstväskan med en hand medan bössan hänger på axeln",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "halsremmen: kikaren dinglar och slår när han kliver över stängslet — bröstväskan: kikaren ligger stilla, torr, lock upp och sikta på 1 sekund"
+      },
+      "varfor": "Hårt datum (älgjakt syd 8 okt, 2,0 v) plus fars dag (6,4 v) på ett ägt objekt värt 2–15 tkr som skyddas mot regn och slag; samma sele-struktur som axelbältet med ett synligt märkesankare 1,66× (Mystery Ranch 995) och ingen kedja i formen. Fars dag-rad utan kalender: presenten syns i bild och pekar på mannen med jakten.",
+      "huvudrisk": "'Sett innan' — erfarna jägare känner bino harness från Widforss/Jaktia, och heron saknar kikare och kontext.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 2, "meta_creative": 2, "efterfragan": 2, "lucka": 2, "ekonomi": 2, "sasong": 2, "leverantor": 2, "nyhet": 2, "hypotesvarde": 2},
+      "per_kriterium": null,
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (bara Trimmersele — annat objekt)", "koncept.py sok kikare (0 träffar)", "fynd.json 09-09…09-23 (Vapenstrumporna, Värmemuffen, Värmehandskarna — andra objekt)"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005012664907030.html",
+        "https://www.aliexpress.com/item/1005011717683999.html",
+        "https://www.widforss.se/mystery-ranch-qd-bino-harness-l-foliage",
+        "https://www.widforss.se/p/vortex-kikarsele",
+        "https://www.pricerunner.se/sp/kikarsele.html",
+        "https://svenskjakt.se/start/nyhet/algjakten-2026-jakttider-b"
+      ]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Fiskedragsbyggsatsen — bygg egna spinnare",
+      "objekt": "Mannen själv / partnern — hobbykalendern (fars dag, jul)",
+      "form": "låda",
+      "arketyp": "G_Q4_GAVA",
+      "arketyp_sekundar": "F_HOBBY_IDENTITET",
+      "slot": "sasong",
+      "hypotes_id": "H05",
+      "vinnarlikhet": {
+        "likast": "Adventskalendern Racingbilar",
+        "delade_variabler": ["hårt datum (fars dag 8 nov) som ingen kan flytta", "N synliga delar i fack (140 delar: skedar, blad, pärlor, trekrokar)", "gåva till namngiven mottagare i relation (mannen med spöna) — H05:s 'hobbyset'", "flerköp nej"],
+        "avvikelser": ["form låda i stället för kalender (kalenderformen är mättad: 12 i butiken, dinosaurie förlorade)", "objektet är hobbyn, inte en ägd sak ute", "lågt upplevt värde-risk: småbitar i plastlåda (Axels signal 2026-09-09)"]
+      },
+      "sasong": {"fonster_id": "fars_dag", "deadline_typ": "fars dag", "veckor_kvar": 6.4, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005005494907500",
+        "url": "https://www.aliexpress.com/item/1005005494907500.html",
+        "pris_usd": 20.11,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-24T06:03:16Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-24/v3/bilder/1005005494907500.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "ur titel/sökträff: 140 delar i en variant (låda med 8 fack). Syskon: 1005007871357474 (140 delar, USD 15,42, LIVE 06:03:06Z, hero sedd: delarna utlagda UTAN låda — sämre upplevt värde) och 1005013056404323 (680 delar, USD 17,32 — produktsidan svarade tomt).",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {"klass": 1, "hero_textfri": true, "hero_i_kontext": false, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "heron är en textfri packshot: öppen plastlåda med 8 fack (guld/silverblad, hylsor, pärlor, trekrokar) plus delarna utlagda under — ingen färdig spinnare i handen, ingen kontext; creativen måste visa spinnaren som byggs på 5 s och gäddan"},
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "ingen svensk kedja med boxad byggsats hittad; sportfiskeprylar.se/Örjans Fiske säljer komponenter styckvis ('gör egna spinnare'-guide), jula.se säljer färdiga spinnare", "pris_sek": null, "url": "https://www.orjansfiske.se/guider/gora-egna-spinnare/", "exakt_samma_form": false},
+        "premium_ankare": {"namn": "ej mätt — ingen svensk boxad 'spinner making kit' hittad i denna körning; Adventskalender Fiskedrag 469 kr ligger i butiken som intern referens (24 färdiga drag)", "pris_sek": null, "url": "https://www.sportfiskeprylar.se/sv/ovrigt/gjuta-egna-gummibeten", "i_sortiment": false},
+        "ankare_kvot": null,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": [
+          "websök 'gör egna fiskedrag byggsats kit spinnare komponenter' 2026-09-24: sportfiskeprylar.se (komponenter/betesbygge), orjansfiske.se (guide: 7 komponenter), jiggar.nu, fiskredskap.se — inga boxade kit med pris i utdragen",
+          "jula.se/biltema.se: färdiga spinnare, ingen byggsats i träffarna",
+          "koncept.py sok dragbygg: 0 träffar · katalog-live.txt: 'Adventskalender Fiskedrag 469' och 'Fiskeset med Förvaringslåda 499' (färdiga drag/redskap — annan form)"
+        ]
+      },
+      "ekonomi": {"landad_sek": [262, 320], "pris_sek": 599, "brutto_sek": [279, 337], "be_cpa_sek": [279, 337], "be_roas": 2.0, "flerkop": false, "returrisk": "låg — en variant, ingen mätning"},
+      "meta_tanke": {
+        "hook": "Har han gjort sin egen gäddspinnare?",
+        "objekt_i_bild": "lådan öppen på köksbordet, händerna trär blad + pärlor + hylsa på axeln, färdig spinnare lyfts upp",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "en spinnare byggs på 5 sekunder ur lådan; nästa klipp: samma spinnare i gäddkäften"
+      },
+      "varfor": "H05:s egen testsökning ('hobbyset till namngiven mottagare med datum') utan kalenderformen: fars dag 6,4 v, 140 synliga delar i låda, mannen med spöna som mottagare — och ingen svensk kedja säljer det boxat. Objektraden och datumet är samma som husbilskalendern (Axel ja 09-15), formen är ny.",
+      "huvudrisk": "Lågt upplevt värde — småbitar i plastlåda kan se ut som 99 kr, vilket är exakt Axels 'kanske'-orsak 2026-09-09.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 2, "meta_creative": 1, "efterfragan": 2, "lucka": 2, "ekonomi": 2, "sasong": 3, "leverantor": 2, "nyhet": 2, "hypotesvarde": 2},
+      "per_kriterium": null,
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (Adventskalender Fiskedrag, Fiskeset med låda — andra former)", "koncept.py sok dragbygg (0 träffar)", "fynd.json 09-09…09-23 (inget dragbygge)"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005005494907500.html",
+        "https://www.aliexpress.com/item/1005007871357474.html",
+        "https://www.orjansfiske.se/guider/gora-egna-spinnare/",
+        "https://www.sportfiskeprylar.se/sv/ovrigt/gjuta-egna-gummibeten",
+        "https://www.kalender-365.se/helgdagar/fars-dag.html"
+      ]
+    }
+  ],
+  "strukna": [
+    {"namn": "Fönsterfågelmataren med sugproppar (vintermatning 4,4 v)", "skal": "Golv i exakt samma form under oss: Vivara 139,90 / 219,90 kr (Kreta), Clas Ohlson 31-6332 'Fågelmatare för fönster, med sugpropp' (sökutdrag 2026-09-24). Ej sökt på AliExpress."},
+    {"namn": "Fågelmatarstationen på stolpe (vintermatning)", "skal": "Kedja/fackhandel har formen: Granngården Fågelmatarstation 225 cm, Vivara markstång/Tambora (sökutdrag 2026-09-24). AliExpress: shepherd hooks 13–36 USD — ej vidare."},
+    {"namn": "Robotklipparens vinterväska (indockning 4,4 v)", "skal": "Ankare finns (Gardena förvaringsväska 689 kr Kjell.com, Worx WA0197 639 kr) och ingen kedja har formen — men fyra AliExpress-fraser gav bara gräsklipparväskor för handjagare (1005013187857173 + 1005013204587382 LIVE, heron sedda: uppsamlingsväska på handtaget). Ingen listning i formen → backlog: sök 'automower carry bag' via annan källa."},
+    {"namn": "Robotklipparens regnhuv (1005012963974037 LIVE 05:57:55Z, USD 12,25, hero i kontext sedd)", "skal": "Golv i exakt samma form under oss: Batteriexperten/Grimsholm 'Skyddsöverdrag för robotgräsklippare' 99 kr (läst 2026-09-24). Backloggens Jula-tak 499 gäller dessutom formen tak."},
+    {"namn": "Knivbyggsatsen (fars dag, syskon till täljsetet)", "skal": "Ankare finns: Karesuando Knivsats 95 1 145 kr (läst), Casström materialkit 615 / 989 kr (nordik.se, läst); Jula/Clas/Biltema saknar byggsats. Men tre AliExpress-fraser gav bara blad, skaftblock och niter separat — inget komplett kit. → backlog: kräver annan leverantörskälla eller egen bundling."},
+    {"namn": "Pizzaugnshuven Ooni Koda 12/16 (1005005642262219 LIVE 06:02:03Z, USD 12,79, hero nedladdad ej bedömd; K0115/K0165 gamla kandidater)", "skal": "Golv i exakt samma form under oss: Bauhaus Napoli 13\" 133 kr och Cozze 13\" 269 kr (lästa 2026-09-24); Ooni original 499–549 kr (Hornbach/Grillkung). Struken enligt golvregeln — H06 (ankare ≥ 1,2×) kunde lyfta den om huvudsessionen vill; första frost är dessutom ett svagt datum för en ugn."},
+    {"namn": "Isfrihållaren / dammluftpumpen (isläggning 8,9 v)", "skal": "Ingen listning i formen (sökningen gav poolkuddar och isbad); Oase IceFree 4 Seasons 689–799 kr, Thermo 200 999 kr (zoogiganten/olibetta), PondoPolar Air (dammprodukter.se 404). Objektet täcks av Dammvärmaren K0262 (Axel ja)."},
+    {"namn": "Kikarselen enkel (Raiseek 1005005200385727 LIVE 05:57:49Z, USD 13,38, hero sedd)", "skal": "Golv i exakt samma form under oss: Vortex Kikarsele 349 kr (rek 499) på Widforss (läst 2026-09-24). Bröstväskan levererad i stället."},
+    {"namn": "Hundkojans isolerade dörrflik (utedjur 7,4 v)", "skal": "AliExpress bara PVC-flikar 8–14 USD — lågt upplevt värde; Granngården säljer isolerade hundluckor. Backloggen sa redan 'bara dörrflikar'."},
+    {"namn": "Övernattningsholken för småfåglar (vintermatning)", "skal": "Ingen listning i formen (bara papegoj-/häckningsholkar); Vivara/Granngården säljer holkar under 200 kr."},
+    {"namn": "Husvagnsmarkisens vinterhylsa (uppställning 2,3 v)", "skal": "Ingen listning (bara Fiamma-reservdelar och terrassmarkispåsar); Rusta markisskydd 199–599 kr har formen för terrassmarkis."},
+    {"namn": "Propellerväskan för utombordaren (upptagning)", "skal": "Flicker 32–70 USD → landad 470–1 010, för dyrt; svensk fackhandel säljer propellerskydd (bur) 1 869–4 019 kr — annan form. Halvkåpan 12,51 USD är motorhöljet som redan finns i butiken."},
+    {"namn": "Kylventilens vintertäckning för husvagn (uppställning)", "skal": "Campingfackhandel har originalen (Dometic/Thetford, quickparts/scandihills) — sett innan; AliExpress bara stängningsclips 3 USD."},
+    {"namn": "Skruvsorteraren i trä / verkstadsförvaring (fars dag)", "skal": "Ej sökt: objekt inomhus + form annat (0 av 14 dömda vann i LEARNING_STATE) och ingen mekanism — struken på struktur."},
+    {"namn": "Kalendrar, hönsvärme, hönsgårdsprodukter", "skal": "Uteslutna per order (12 kalendrar i butiken, Dinosaurie/Gör-din-egen förlorade; Hönsgårdsduken förlorade)."}
+  ]
+}
