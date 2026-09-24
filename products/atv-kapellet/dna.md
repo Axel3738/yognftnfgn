@@ -75,7 +75,7 @@ Copyn (Drive `ATV-kapell_PD_adcopy_1`, "DEMO"):
 
 | Komponent | Exakt rad (ur adcopy-dokumentet) | Valens | Awareness | Avatar |
 |---|---|---|---|---|
-| HOOK (text) | "Din ATV förtjärnar bättre än att stå ute och skadas av vädret." | negativ → omsorg | problem-medveten | ATV-ägaren som parkerar ute |
+| HOOK (text) | "Din ATV förtjänar bättre än att stå ute och skadas av vädret." | negativ → omsorg | problem-medveten | ATV-ägaren som parkerar ute |
 | BRIDGE | "Vattentätt, vindtätt och UV-skyddat" | positiv | lösnings-medveten | samma |
 | HOLD | "Passar de flesta märken – Polaris, Honda, Yamaha, Can-Am" / "Ingen mer skrapning eller tvätt innan du kör" | positiv, invändningen "passar den min?" | produkt-medveten | samma |
 | CTA | "Dra bara på kapellet och glöm bort vädret. Beställ ditt ATV-Kapell idag." | neutral | — | samma |
