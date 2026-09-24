@@ -183,6 +183,8 @@
     "Mottagaren har en ny adress. Paketet är omadresserat och skickas vidare dit": "The recipient has a new address. The parcel has been re-addressed and forwarded there",
     "Paketet är på väg till ombudet": "The parcel is on its way to the pickup point",
     "Paketet gick åt fel håll men är nu på väg till rätt ort": "The parcel went the wrong way but is now on its way to the right place",
-    "Budet hittade inte fram. Du får ett sms eller mejl där du kan fylla i adressuppgifterna, så gör vi ett nytt försök. Svarar du inte skickas paketet till närmaste ombud": "The courier could not find the address. You will get a text or email where you can fill in the address details, and we will try again. If you do not reply, the parcel will be sent to the nearest pickup point"
+    "Budet hittade inte fram. Du får ett sms eller mejl där du kan fylla i adressuppgifterna, så gör vi ett nytt försök. Svarar du inte skickas paketet till närmaste ombud": "The courier could not find the address. You will get a text or email where you can fill in the address details, and we will try again. If you do not reply, the parcel will be sent to the nearest pickup point",
+    "Paketet är för stort för brevlådan och skickas därför till ett ombud. Det kan ta 1-2 arbetsdagar extra, och du får besked när det går att hämta": "The parcel is too large for your mailbox and is being sent to a pickup point instead. This can add 1-2 business days, and you will be notified when it is ready to collect",
+    "Paketet är registrerat hos fraktbolaget": "The parcel has been registered with the carrier"
   }
 }
