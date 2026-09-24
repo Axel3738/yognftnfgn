@@ -185,5 +185,6 @@
   "the parcel has been registered with us": "Paketet är registrerat hos fraktbolaget",
   "communication failed": "Aviseringen till dig gick inte fram",
   "fallback shipment solution was triggered": "Fraktbolaget har bytt till en annan leveranslösning",
-  "tracking number allocated & order ready": "Fraktetiketten är skapad"
+  "tracking number allocated & order ready": "Fraktetiketten är skapad",
+  "shipping order created": "Ordern är registrerad hos fraktbolaget"
 }
