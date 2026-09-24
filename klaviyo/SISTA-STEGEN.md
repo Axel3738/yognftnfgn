@@ -47,12 +47,12 @@ Klaviyo för Bäverbutiken: ladda upp allt som utkast. Allt är byggt och testat
 
 1. git fetch origin claude/bold-hopper-a95yg9 och checka ut grenen. Kör node --test klaviyo/test/*.test.mjs, allt ska vara grönt.
 2. Kontrollera att miljövariabeln KLAVIYO_API_KEY_BAVERBUTIKEN finns (bara namnet, skriv aldrig ut värdet). Saknas den: stoppa och säg exakt var Axel lägger in den (klaviyo/SISTA-STEGEN.md steg 2).
-3. node klaviyo/kolla.mjs och sedan node klaviyo/kolla.mjs --prov. public_api_key måste vara TMFt7M, annars STOPP. Skriv in varje mätt punkt under "Obekräftat" i klaviyo/ARKITEKTUR.md med datum. Rätta motorn om en mätning visar att den gissat fel (t.ex. kassametrikens namn, content-type, send_strategy), med test.
+3. node klaviyo/kolla.mjs och sedan node klaviyo/kolla.mjs --prov. public_api_key måste vara TMFt7M, annars STOPP. Skriv in varje mätt punkt under "Obekräftat" i klaviyo/ARKITEKTUR.md med datum. Rätta motorn om en mätning visar att den gissat fel (t.ex. kassametrikens namn, content-type, send_strategy, fältet ItemNames för F07:s produktfilter i placed_order_egenskaper), med test.
 4. node klaviyo/bygg.mjs (live-priser + Judge.me). Måste gå ut med 0 fel.
 5. node klaviyo/ladda-upp.mjs (torrt). Läs planen. Kampanjer vars planerade datum redan passerat: flytta datumet i kampanjfilen till nästa lediga tisdag eller torsdag 18:00, i samma ordning, bygg om, och notera det i klaviyo/logg/baverbutiken/kampanjlogg.md.
 6. node klaviyo/ladda-upp.mjs --skarpt. Allt ska bli utkast: kampanjer Draft, flödesmejl draft. Inget send-job, inget live. Kör om vid avbrott; motorn är idempotent (konto/baverbutiken/uppladdat.jsonl).
 7. Verifiera med node klaviyo/kolla.mjs att segmenten, mallarna, kampanjerna och flödena finns och att inget är live eller schemalagt. Läs antalet profiler i SEG_samtycke och SEG_uppvarmning_steg1 och skriv in dem i docs/os/EPOST-STRATEGI.md med datum.
-8. Uppdatera klaviyo/README.md (läget) och lägg ett kort Klaviyo-avsnitt i CLAUDE.md (kommandotabellen + var saker finns). Committa, pusha grenen, skapa en PR mot main och merga den när npm test är grönt (CLAUDE.md: main är den enda som gäller).
+8. Uppdatera klaviyo/README.md (läget) och Klaviyo-avsnittet i CLAUDE.md med det du mätt. Committa, pusha grenen, skapa en PR mot main och merga den när npm test är grönt (CLAUDE.md: main är den enda som gäller).
 9. Slutrapport till Axel på svenska, kort: vad som finns i Klaviyo nu (länkar till flödena och kampanjerna), och hans uppgifter sist, numrerade:
    a) svara vilka som får kampanjer (A bara subscribed, rekommenderas; B + köpare i kategoriflöden; C alla köpare),
    b) kolla i Shopify admin → Inställningar → Kassa om rutan för e-postreklam är förikryssad,
