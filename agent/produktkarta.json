@@ -1159,7 +1159,9 @@
         "sek": 0,
         "kalla": "Axels prissheet (Google Sheet 10VrOx…, fliken ALLA PRODUKTER, rad 518: \"ATV-kapellet Heavy Duty\"), 1 st till Sverige: produkt + frakt 7,08 + 9,69 = 16.77 USD, plus 2,9 EUR EU-avgift per order (sheetets rubrik \"total cost without 2,9 eur tax\"). Priset 579 kr läst ur baverbutiken.se/products.json 2026-09-22. Axels beslut 2026-09-22: marginalerna räknas ur sheetet.",
         "datum": "2026-09-22"
-      }
+      },
+      "produkt_mapp": "atv-kapellet",
+      "hub_not": "Ingen Notion-hub 2026-09-24 — skapas ur MALL Creative hub MALL först när förstabatchens briefer finns (första möjliga dag 2026-09-29, etiketter dag 7). Produktminnet products/atv-kapellet/ skrivet av /rond-auto 2026-09-24."
     },
     {
       "campaign_id": "120250320680220291",
