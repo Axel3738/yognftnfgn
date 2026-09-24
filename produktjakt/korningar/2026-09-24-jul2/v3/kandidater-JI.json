@@ -1,0 +1,269 @@
+{
+  "agent": "JI — sport och rörelse hemma",
+  "datum": "2026-09-24-jul2",
+  "sammanfattning": "Strukturen 'tävla i vardagsrummet/garaget när det är mörkt' är nästan helt kedjornas sortiment: 22 former golvlästa FÖRE ali.py (PriceRunner via curl + Hylte), 16 föll på exakt samma form under oss utan ankare (basketkorg för dörren, fotbollsmål med skottduk, hockeypads/passare, reflexbollar, hopprep med räknare, minipingisbord, pickleball, badmintonnät, chippingnät, bågskytte, returbräda, hopprepsmaskin …). Tre överlever: musikboxningsmaskinen (H06 — golv 418 kr men ankare RIXCH 1 964 / Northio 1 379, elektrisk/rörlig mekanik på igenkänt objekt), glidmattan 180 cm för hockey-/skridskobarnbarnet (enda svenska listning inSPORTline 1 499 = ankare 1,88×) och balansbrädan med kullabyrint (ingen svensk aktör i formen på PriceRunner, textfri hero, men K8 osäker på 399). Reaktionsljusen (BlazePod-ankare 3 595) föll på vattenmärkt barnhero + BE-CPA 204; arkadbasket och radar föll över pristaket.",
+  "kandidater": [
+    {
+      "koncept_id": null,
+      "namn_sv": "Musikboxningsmaskinen för väggen, LED",
+      "objekt": "NYTT: Källarväggen/garaget i november — slå i takt med musiken, barnbarnen mot farfar på poäng",
+      "form": "annat",
+      "arketyp": "H_VISUELL_NYHET",
+      "arketyp_sekundar": "G_Q4_GAVA",
+      "slot": "sasong",
+      "hypotes_id": "H06",
+      "vinnarlikhet": {
+        "likast": "ATV-kapellet (H06:s första Meta-bevis)",
+        "delade_variabler": ["golv i exakt form under oss", "synligt ankare ≥ 1,6× (RIXCH 1 964, Northio 1 379)", "500–999 kr", "en variant"],
+        "avvikelser": ["inomhus, inget ägt objekt att skydda", "gåva/rörelse i stället för skada", "elektronik (batteri/Bluetooth = 'funkar inte'-returer)"]
+      },
+      "sasong": {"fonster_id": "black_week", "deadline_typ": "jul", "veckor_kvar": 9.1, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005012536365551",
+        "url": "https://www.aliexpress.com/item/1005012536365551.html",
+        "pris_usd": 38.08,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-24T10:33:39Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-24-jul2/v3/bilder/1005012536365551.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "en variant i sökträffen (svart, 6 LED-mål, Bluetooth, handskar + USB-kabel med enligt heron); alternativa listningar 1005013053137692 (39,20 USD, hero med inbränd text) och 1005013021153390 (37,32 USD, hero med inbränd text) — båda öppnade 10:33–10:34Z",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {
+        "klass": 2,
+        "hero_textfri": true,
+        "hero_i_kontext": true,
+        "samma_produkt": true,
+        "forsta_3s": "ej mätt (ingen video)",
+        "kommentar": "verkligt foto: kvinna slår på väggmålet med lysande LED-ringar, inga ord inbrända (bara dekorativa notgrafik uppe till vänster som kan beskäras); de två alternativa heron har rubriktext"
+      },
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "PriceRunner — 'Smart Music Boxing Training Machine' (generisk)", "pris_sek": 418, "url": "https://www.pricerunner.se/search?q=music%20boxing%20machine", "exakt_samma_form": true},
+        "premium_ankare": {"namn": "RIXCH Elektronisk Musik Boxningsmaskin Väggmonterad Smart Boxning (PriceRunner); Northio Elektronisk Bluetooth Boxningsmaskin Med LED 1 379; Mobiclinic 1 051", "pris_sek": 1964, "url": "https://www.pricerunner.se/search?q=musik%20boxningsmaskin", "i_sortiment": true},
+        "ankare_kvot": 2.18,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": [
+          "pricerunner.se ?q=musik boxningsmaskin (2026-09-24: Tomtop 534, Interaktiv 549/599, OptiGym 789, Mobiclinic 1 051, MAGIC SELECT 1 227, RIXCH 1 964)",
+          "pricerunner.se ?q=music boxing machine (2026-09-24: Smart Music Boxing 418, InnovaGoods 849, Tildasstore 1 279, Northio 1 379, XJKLBYQ 1 440)",
+          "pricerunner.se ?q=reflexboll boxning (reflexbollar 78–369 = annan form)",
+          "pricerunner.se ?q=slagkraftmätare boxning (Mumuru Boxing Trainer With Music 299 — bordsmodell, annan form)"
+        ],
+        "anm": "Golv i exakt form finns (418–599 kr, ca 10 listningar på PriceRunner 2026-09-24 — inte 20+, alltså inte hela marknaden). Ankare ≥ 1,6× finns i tre märken (Mobiclinic/Northio/RIXCH). H06-rad med flit: ATV-kapellet vann 4,07 med Jula 399 under sig och Polaris 3 045 över."
+      },
+      "ekonomi": {
+        "landad_sek": [496, 606], "pris_sek": 899, "brutto_sek": [293, 403], "be_cpa_sek": [293, 403], "be_roas": 2.58,
+        "flerkop": false, "returrisk": "medel — elektronik (laddning, Bluetooth-parning) och 'sitter inte fast på väggen' (kardborreband); en variant, inget att mäta"
+      },
+      "meta_tanke": {
+        "hook": "Vem i familjen håller takten längst?",
+        "objekt_i_bild": "väggmålet med sex lysande ringar, farfar och barnbarn med handskarna på i källaren",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "ringarna tänds i tur och ordning till musiken, slaget släcker dem, poängen räknas upp på displayen"
+      },
+      "varfor": "Elektrisk/rörlig mekanik på ett igenkänt objekt (boxningsmål) — samma struktur som julrundans två ja (svävande curling, pingisrobot). Ankare 2,18× över golvet, BE-CPA 293–403 vid 899, black week 9 v.",
+      "huvudrisk": "Golv 418–599 kr i exakt samma form på PriceRunner — H06 måste bära den; 55+-kontot kan se den som ungdomsgrej.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 1, "meta_creative": 2, "efterfragan": 1, "lucka": 2, "ekonomi": 2, "sasong": 3, "leverantor": 2, "nyhet": 1, "hypotesvarde": 2},
+      "per_kriterium": {"K0": "ok", "K1": 8, "K2": 12, "K3": 8, "K4": 8, "K5": 6, "K6": 8, "K7": 4, "K8": 8, "K9": 5, "K10": 2, "K11": 1, "K12": 1},
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt 2026-09-24 (Bollpannband 179 och Kasta & Fånga-set 419 är andra former)", "koncept.py sok box/boxning (bara förvaringsboxar)", "REDAN-PROVAT.md (ingen boxningsform prövad)"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005012536365551.html",
+        "https://www.aliexpress.com/w/wholesale-music-boxing-machine-wall-mounted.html",
+        "https://www.pricerunner.se/search?q=musik%20boxningsmaskin",
+        "https://www.pricerunner.se/search?q=music%20boxing%20machine"
+      ]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Glidmattan 180 cm — skridskoskär i hallen",
+      "objekt": "NYTT: Hockey-/skridskobarnbarnet i november — skäret tränas i strumporna på hallgolvet medan isen väntar",
+      "form": "annat",
+      "arketyp": "F_HOBBY_IDENTITET",
+      "arketyp_sekundar": "G_Q4_GAVA",
+      "slot": "sasong",
+      "hypotes_id": "H05",
+      "vinnarlikhet": {
+        "likast": "Adventskalendern Racingbilar (H05: gåva med hårt datum till namngiven mottagare)",
+        "delade_variabler": ["hårt datum (julafton)", "mottagare i relation (barnbarnet som spelar hockey)", "500–999 kr", "hobbyidentitet syns i kontot (Ishockey-adventskalendern 399)"],
+        "avvikelser": ["ingen svikande default", "träningsredskap, inte 24 synliga saker", "storleksval 140/180/200 cm"]
+      },
+      "sasong": {"fonster_id": "jul", "deadline_typ": "jul", "veckor_kvar": 12.4, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005008607926106",
+        "url": "https://www.aliexpress.com/item/1005008607926106.html",
+        "pris_usd": 25.19,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-24T10:38:42Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-24-jul2/v3/bilder/1005008607926106.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "tre längder 140/180/200 cm enligt titeln (sökträffens 25,19 USD gäller lägsta = 140 cm; 180 cm ej prissatt i containern — skriv intervallet); skoöverdrag ingår enligt heron. Alternativ listning 1005005505404194 (28,83 USD) svarade tomt (BLOCKED, två försök)",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {
+        "klass": 1,
+        "hero_textfri": false,
+        "hero_i_kontext": true,
+        "samma_produkt": true,
+        "forsta_3s": "ej mätt (ingen video)",
+        "kommentar": "render av svart matta med ändstopp på trägolv i sovrum — inbränd text 'Professional edition / Black 140cm*50cm / Give' måste bort; ingen människa i bild, creativen behöver egen klippning (barn i strumpor som glider)"
+      },
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "inSPORTline Slideboard Fluxlide 180 cm (PriceRunner) — enda svenska listning i exakt form", "pris_sek": 1499, "url": "https://www.pricerunner.se/search?q=slideboard", "exakt_samma_form": true},
+        "premium_ankare": {"namn": "inSPORTline Slideboard Fluxlide 180cm", "pris_sek": 1499, "url": "https://www.pricerunner.se/search?q=slide%20board%20tr%C3%A4ning", "i_sortiment": true},
+        "ankare_kvot": 1.88,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": [
+          "pricerunner.se ?q=slideboard (2026-09-24: bara inSPORTline 1 499)",
+          "pricerunner.se ?q=slide board träning (2026-09-24: inSPORTline 1 499; slide pads/core sliders 118–189 = annan form; wobble boards 188–762)",
+          "pricerunner.se ?q=glidbräda skridskoträning (Zandstra Easy Glider 690 = skridskoskydd, annan form)",
+          "pricerunner.se ?q=glidmatta hockey (bara CCM/Bauer-skydd)"
+        ],
+        "anm": "Inget golv under oss i exakt form på PriceRunner 2026-09-24. Fyndiq/CDON/Amazon.se svarar 403 — oläst, hittar aldrig på golv. Hockeymonkey/Rexhockey-sök svarade 404/tomt (curl)."
+      },
+      "ekonomi": {
+        "landad_sek": [328, 401], "pris_sek": 799, "brutto_sek": [398, 471], "be_cpa_sek": [398, 471], "be_roas": 1.84,
+        "flerkop": false, "returrisk": "låg–medel — kunden väljer längd (140/180/200), mattan kan 'glida på golvet' utan halkskydd under"
+      },
+      "meta_tanke": {
+        "hook": "Skäret tränas i hallen — i strumporna",
+        "objekt_i_bild": "barn i strumpor som glider fram och tillbaka på mattan i hallen, hockeyklubban i handen",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "glidet från ändstopp till ändstopp, samma rörelse som på isen, på 2 m hallgolv"
+      },
+      "varfor": "Hockeyfamiljen finns redan i kontot (Ishockey-adventskalendern), enda svenska aktör ligger 1,88× över oss, BE-CPA 398–471 vid 799 och julafton 12 v bort. Kroppsligt i säsongen (skridskosäsongen börjar) — samma struktur som damaskerna.",
+      "huvudrisk": "Träningsredskap snarare än spel — 'tävlingen' måste byggas i creativen (vem glider flest på 30 s); heron kräver egen bild.",
+      "konfidens": "LÅG",
+      "poang": {"vinnarlikhet": 1, "meta_creative": 1, "efterfragan": 1, "lucka": 2, "ekonomi": 2, "sasong": 3, "leverantor": 2, "nyhet": 2, "hypotesvarde": 2},
+      "per_kriterium": {"K0": "ok", "K1": 8, "K2": 10, "K3": 8, "K4": 6, "K5": 6, "K6": 10, "K7": 4, "K8": 6, "K9": 5, "K10": 2, "K11": 1, "K12": 1},
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt 2026-09-24 (ingen matta/glidform; Ishockey-adventskalendern = annan form, samma köpare)", "koncept.py sok hockey (0 träffar)", "REDAN-PROVAT.md (JD strök isglid/pond-hockey-mål — annan form)"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005008607926106.html",
+        "https://www.aliexpress.com/w/wholesale-slide-board-skating-training.html",
+        "https://www.pricerunner.se/search?q=slideboard",
+        "https://www.pricerunner.se/search?q=slide%20board%20tr%C3%A4ning"
+      ]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Balansbrädan med kullabyrint, trä",
+      "objekt": "NYTT: Vardagsrumsgolvet i december — kulan ska in i mitten med fötterna, farmor mot barnbarnet på tid",
+      "form": "annat",
+      "arketyp": "H_VISUELL_NYHET",
+      "arketyp_sekundar": "G_Q4_GAVA",
+      "slot": "sasong",
+      "hypotes_id": "H10",
+      "vinnarlikhet": {
+        "likast": "Soptunneklistermärkena (H10: kategorinyhet, textfri hero, < 500 kr, inget golv)",
+        "delade_variabler": ["ingen svensk aktör i formen", "textfri hero i kontext", "< 500 kr", "noll friktion — objekt/rörelse alla har"],
+        "avvikelser": ["inte ett ägt objekt ute", "inomhus", "K8 osäker (liten träskiva)"]
+      },
+      "sasong": {"fonster_id": "jul", "deadline_typ": "jul", "veckor_kvar": 12.4, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005012192366608",
+        "url": "https://www.aliexpress.com/item/1005012192366608.html",
+        "pris_usd": 10.74,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-24T10:39:26Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-24-jul2/v3/bilder/1005012192366608.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "en variant i sökträffen (trä, spirallabyrint, halkskyddad ovansida med fotmarkeringar). Större vippbräda med labyrint 1005012719535433 (46,60 USD, öppnad 10:39:31Z, hero med text 'Ideal for Kids & Adults') = premiumalternativ utan verifierat ankare; 1005009344329060 (17,85 USD) visade sig vara en handhållen bambulabyrint (BRIO-form) — struken",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {
+        "klass": 2,
+        "hero_textfri": true,
+        "hero_i_kontext": true,
+        "samma_produkt": true,
+        "forsta_3s": "ej mätt (ingen video)",
+        "kommentar": "textfritt foto: kvinna på ett ben på yogamatta, brädan med spirallabyrint bredvid — kulan syns inte tydligt i heron; creativen bör visa fötterna på brädan och kulan som rullar"
+      },
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "ingen svensk aktör i formen 'balansbräda med kullabyrint' hittad — närmast BRIO Labyrintbrädor 161 (handhållen) och balansbrädor utan labyrint 159–859 (Master, Abilica, Gorilla Sports, Cwy)", "pris_sek": null, "url": "https://www.pricerunner.se/search?q=balansbr%C3%A4da%20labyrint", "exakt_samma_form": false},
+        "premium_ankare": {"namn": "ej verifierat — Hape Balance Board Intelligent Trä 1 600 (PriceRunner) kan vara samma form men formen är inte läst", "pris_sek": null, "url": "https://www.pricerunner.se/search?q=hape%20balance%20board%20intelligent", "i_sortiment": false},
+        "ankare_kvot": null,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": [
+          "pricerunner.se ?q=balansbräda labyrint (2026-09-24: inga labyrintbrädor, balansbrädor 159–859, BRIO Labyrintbrädor 161 handhållen)",
+          "pricerunner.se ?q=balance maze board (2026-09-24: Goki/Hape/Northix/Cwy balansbrädor utan labyrint 274–1 600)",
+          "pricerunner.se ?q=balansbräda kula labyrint (samma bild)",
+          "pricerunner.se ?q=hape balance board intelligent (1 600, form oläst)"
+        ],
+        "anm": "Formen saknas i svenskt flöde på PriceRunner (tre sökningar). Fyndiq/CDON/Amazon.se 403 — oläst. Utan ankare gäller landad × 2,4 (min 300) → 399."
+      },
+      "ekonomi": {
+        "landad_sek": [140, 171], "pris_sek": 399, "brutto_sek": [228, 259], "be_cpa_sek": [228, 259], "be_roas": 1.64,
+        "flerkop": false, "returrisk": "låg — en variant, inget att mäta; risk 'mindre än jag trodde' (storlek står inte i sökträffen — ej mätt)"
+      },
+      "meta_tanke": {
+        "hook": "Får farmor in kulan före barnbarnet?",
+        "objekt_i_bild": "två fötter på träbrädan, kulan som rullar genom spiralen mot mitten, vardagsrumsgolv",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "brädan tippar, kulan letar sig varv för varv in i mitten — och faller ur när balansen brister"
+      },
+      "varfor": "Enda formen i linsen utan svensk aktör: balansträning (55+, fallprevention) och spel (tid, familjen) i samma sak, textfri hero, BE-CPA 228–259 klarar 190-golvet. Ren H10-exploration.",
+      "huvudrisk": "K8 — en 40 cm träskiva kan se ut som 199 kr; storleken är inte läst och ankaret är obekräftat.",
+      "konfidens": "LÅG",
+      "poang": {"vinnarlikhet": 1, "meta_creative": 3, "efterfragan": 1, "lucka": 3, "ekonomi": 1, "sasong": 3, "leverantor": 2, "nyhet": 3, "hypotesvarde": 2},
+      "per_kriterium": {"K0": "ok", "K1": 10, "K2": 10, "K3": 12, "K4": 4, "K5": 5, "K6": 8, "K7": 4, "K8": 4, "K9": 5, "K10": 2, "K11": 1, "K12": 1},
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt 2026-09-24 (ingen balans-/labyrintform)", "koncept.py sok (0 träffar på balans/labyrint via REDAN-PROVAT)", "REDAN-PROVAT.md (JA strök 'Tetra tower' balansspel = annan form; JE strök balans-/stapelspel i trä = annan form)"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005012192366608.html",
+        "https://www.aliexpress.com/w/wholesale-balance-board-maze-game-wooden.html",
+        "https://www.pricerunner.se/search?q=balansbr%C3%A4da%20labyrint",
+        "https://www.pricerunner.se/search?q=balance%20maze%20board"
+      ]
+    }
+  ],
+  "strukna": [
+    {"namn": "Basketkorg för dörren med elektronisk poängräkning", "skal": "Golv i exakt form under oss (PriceRunner 2026-09-24): SportMe dörrhängd 335, Hy-Pro Slam Time LED 289, Wilson/SKLZ mini hoop 224–392, Lexibook med poängräknare 519 — inget ankare ≥ 1,6×. Inte sökt på Ali."},
+    {"namn": "Arkadbasket hopfällbar med dubbla korgar och räkneverk", "skal": "Ali 123–381 USD (1005007268664432 m.fl.) → landad ≥ 1 780 kr, över pristaket; golv Costway 1 534 / VEVOR 1 976 och bordsmodeller 179–399 (Very, Legami, Thumbs Up)."},
+    {"namn": "Minigolf-/puttset med hinder för vardagsrummet", "skal": "Golv i form: Plantoys 349/499, Leantoys 340, Legler 557, SES 193 (PriceRunner) — barnset; puttmatta med bollretur struken av JA. Inte sökt på Ali."},
+    {"namn": "Golf chipping-spel / chippingnät med mål", "skal": "Golv: GolfGear Chipping Game 549, Northix chippingnät 199–269, Masters pop-up 300, VEVOR 264–363 (PriceRunner) — och Golfnät 305×305 finns i katalogen (K0 på nätformen)."},
+    {"namn": "Hockeymål med skottavla/målvaktsduk för garaget", "skal": "Golv: SportMe Street Hockey Goal Mini 499 + Target Wall 399, Atom Sports 839, VEVOR 1 370, VEVOR Shooter Tutor 497, CCM Shooter Tutor 869 (PriceRunner) — hela prisstegen är tagen av hockeyhandeln."},
+    {"namn": "Hockey skottplatta + passare (rebounder) som kit", "skal": "Golv i exakt form under oss: Merco Hockey Rebounder Shooting Pad 313, Mohawke Shooting Pad 499, Bauer Sharpshooter 549, SportMe 699, Better Hockey 899–1 599, VEVOR passare 828 (PriceRunner 2026-09-24). Bauer Reactor 2 999 och Bauer skotträningskit 1 999 är ankare men formen är sortiment. Inte sökt på Ali."},
+    {"namn": "Fotbollsmål med skottduk och poängräknare", "skal": "Golv i exakt form: vidaXL mål med skottduk 374/538, Northix pop-up med target wall 759, Clas Ohlson 2-pack 179, Relaxdays 1 000 (PriceRunner). Inte sökt på Ali."},
+    {"namn": "Boxningsreflexboll / reflexställ / boxboll på stång", "skal": "Golv: reflexbollar 78–369 (Sport1, Venum, Everlast), boxboll på stativ Outsiders 522 / Vielrosse 649 / Northio 689 / Sport1 Pro Set 699 (PriceRunner) — samma form, inget ankare ≥ 1,6× som inte är märkesvara."},
+    {"namn": "Slagkraftmätare / 'hur hårt slår du'-arkad", "skal": "Ali: hemmodeller 62–84 USD (1005011903751960, 1005012360293188) → landad 899–1 217 kr, över taket; arkadmaskiner 290–7 394 USD. Ingen svensk aktör i formen — men ekonomin faller."},
+    {"namn": "Speed bag-plattform (päronboll) för garaget", "skal": "Ankare Everlast 1 950 / Gorilla Sports 1 599 finns, men plattformen väger > 4 kg och Everlast-bollen 329 / Tunturi stående 969 täcker formen (PriceRunner). Inte sökt på Ali."},
+    {"namn": "Reaktionsljus 6-pack (BlazePod-typ)", "skal": "Ankare BlazePod 3 595 (4 st) / 4 989 (6 st) på PriceRunner och ingen generisk svensk form — men enda Ali-listningen ≤ 55 USD (1005012215697700, 54,99, öppnad 10:38:49Z, hero sedd) är ett barnset med vattenmärkt hero ('CN758815' över hela bilden) och landad 795 → 999 ger BE-CPA 204 vid pristaket. Övriga 73–313 USD."},
+    {"namn": "Hopprep med räknare / smart hopprep", "skal": "Golv: eStore 69, XQ Max 39, Tunturi 199, LCD-modeller 205–425 (PriceRunner) — K8 = 0. Inte sökt på Ali."},
+    {"namn": "Elektrisk hopprepsmaskin (roterande arm, familjespel)", "skal": "Ali 1005010596792319 (34,59 USD, öppnad 10:36:57Z, hero nedladdad) — men PriceRunner 'Automatiskt Hopprepsmaskin' 219 kr i exakt form under oss utan ankare."},
+    {"namn": "Bordtennisbord i miniformat, hopfällbart", "skal": "Golvet är hela marknaden: Nordcore 590, JOOLA 657, C-Mini 699, Trekkrunner 799, Mini 829, Stiga Mini Table 999, Cornilleau 1 995 (PriceRunner) — och Bordtennisnät Infällbart 309 finns i katalogen. Inte sökt på Ali."},
+    {"namn": "Bordtennis returbräda (solo-träning)", "skal": "Golv i exakt form: 488–780 kr, sex generiska listningar (PriceRunner 2026-09-24). Syskon till pingisroboten som JA levererade."},
+    {"namn": "Pickleball-set och bärbart pickleballnät", "skal": "Set: Magni 220, Sunflex 319, Franklin 389 — nät: Cwy 759, Northio 939–1 219, Gamma 1 726–2 799 (PriceRunner). Golv i form + utomhus-/hallsport, fel struktur för mörkret hemma."},
+    {"namn": "Badminton-/volleybollnät för trädgården", "skal": "Golv: 195–565 kr, tretton generiska listningar (PriceRunner). Sommarform."},
+    {"namn": "Bågskytteset / bågskyttetavla i skum för inomhus", "skal": "Golv: barnset 137–349, vidaXL Super Archery Set 769, Stealth 349 (PriceRunner); tavla saknas i svenskt flöde men set-formen är tagen. Inte sökt på Ali."},
+    {"namn": "Luftgevärsskjutbana med fallmål / elektronisk skjuttavla", "skal": "Fackhandel Hylte Lantman säljer 5etta Twister/Vandrande/Ruter Ess skjutmål (metall, curl 2026-09-24) — golv i formen; Ali 'electronic airgun target scoring' gav bara Nerf-/laserleksaker (5,71–37 USD, K8 låg) och CSTAG laserpistolset 86,79 USD."},
+    {"namn": "Laser-lerduveskytte / elektronisk lerduvesimulator", "skal": "Ingen listning på Ali ('laser clay pigeon shooting game' gav T-shirts, slangbellekulor och metallmål); PriceRunner: Genzo handkastare 115–159, Caldwell automat 5 475. Ingen produkt att köpa."},
+    {"namn": "Torrträningslaser med elektronisk tavla (jägaren tränar skottet hemma)", "skal": "Ali: tavla 46–48 USD (1005007360474421, 1005009848823820) + laserpatron 27–37 USD per kaliber → kit landad ≥ 1 055 kr över taket; kalibervarianter = returrisk; PriceRunner: RED5 Laser Shooting Game 499 (leksak), Walther MSL 539. Träningsverktyg, inte spel."},
+    {"namn": "Radarpistol — 'hur hårt skjuter barnbarnet' (boll-/puckhastighet)", "skal": "Ali: tennis-/fotbollsradar 104–306 USD (1005012558178434 m.fl.) → över taket; 36,49-dollarsmodellen är en airsoft-kronograf. Ankare Bushnell Velocity 2 695 finns men ingen listning under 100 USD."},
+    {"namn": "Handhållen bambulabyrint 'balance maze' (Ali 1005009344329060, 17,85 USD)", "skal": "Öppnad 10:38:00Z, hero nedladdad och sedd: en handhållen rund bambulabyrint (händer på kanten) — BRIO Labyrintbrädor 161 kr är golvet i formen och K8 bär inte 399+. Bytt till vippbrädan med labyrint (kandidat 3)."},
+    {"namn": "Vippbräda med labyrint 'Mamabrum' (Ali 1005012322057483, 38,34 USD)", "skal": "Varumärke i titeln + produktsidan svarade tomt två gånger (BLOCKED)."},
+    {"namn": "Yxkastning med tavla för garaget", "skal": "PriceRunner: kastyxor Husqvarna 257 / Cold Steel 446–695 men ingen tavla i svenskt flöde; en trätavla väger > 5 kg och yxor är vapenmotiv. Inte sökt på Ali."},
+    {"namn": "Dartboard-skåp i trä", "skal": "JE strök som sortiment — hoppad över enligt order."},
+    {"namn": "Puttmatta med automatisk bollretur", "skal": "Struken av JA (REDAN-PROVAT) — inte sökt om. PriceRunner-ankare noterat: 'Golf Putting Matta Med Bollretur' 3 295."},
+    {"namn": "Air hockey, bordscurling, bordshockey, kubb/mölkky, cornhole, sling puck, svävande fotboll, magnetisk dart", "skal": "Strukna av JA/JC/JD/JE (REDAN-PROVAT) — inte sökta om."},
+    {"namn": "Bordsfotboll, Bollpannband, Jättefotboll, Bordtennisnät, Golfnät, Golf-/Ishockeykalender, Kasta & Fånga-set", "skal": "K0: finns i katalogen (katalog-live.txt 2026-09-24) — inte sökta."}
+  ]
+}
