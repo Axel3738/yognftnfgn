@@ -29,6 +29,8 @@
 | 2026-09-19 | Sofia Åhman | Mail | **Nej.** "Jag är dock inte intresserad av ett samarbete då jag inte tycker det passar in i min profil som är hälsa och friskvård." Svar samma dag på det personliga mailet. | En rad tillbaka, inget argument. Mönster: båda nejen (Hallin, Åhman) kommer från de mest kurerade auktoritetsprofilerna. Kursen har ingen invändningshantering; 10 utskick ska ge 3–5 avtal, två nej är inom planen. Kvar i dialog: Hermansen (Tony). Väntar: Jonsson, Adelsköld, Sjödin, Törnblom, Lyth, Crafoord, Bennich. Påminnelse måndag 22/9. |
 | 2026-09-19 | De 29 scorecardsen | Omräkning | Rangordnade på presenttolerans (snittet av `everyday_humour_fit` och `gift_giver_fit`). Båda som tackat nej ligger på plats 19 och 21 av 29. Varningen fanns alltså i datan. | Ny regel: under 6 i presenttolerans kontaktas inte, oavsett Modash. Tabell i `docs/matstrumpor-presenttolerans-2026-09-19.md`. |
 | 2026-09-24 | Omgång 2: Jessica Andersson, DJ Gloria, Linda Bengtzing, Shirley Clamp, Charlotte Perrelli, Nanne Grönvall | Mail från axel.odhner@stonebite.org, ett per mottagare | Skickat. Mailen i `docs/matstrumpor-influencers-omgang2-2026-09-19.md`. | Uppföljning onsdag 30/9 (fyra arbetsdagar) till dem som inte svarat. Ingen DM till artisten medan managern är tyst. |
+| 2026-09-24 | Nanne Grönvall | Mail, svar från Malin på Clap Your Hands kl 9.26 | **Vidarebefordrat.** "Vi har vidarebefordrat detta till Nanne, återkopplar till dig så snart vi kan." | Tacka med en rad. Vänta. Shirley och Nanne ligger nu hos samma bolag, ta båda i samma samtal. |
+| 2026-09-24 | Nina Hermansen | Instagram-DM | Tony har inte hört av sig, fristen 23/9 passerad. | DM till Nina i dag och be om Tonys mejl. |
 
 ## 1. Uppdraget och ramarna (Axels svar 2026-09-17)
 

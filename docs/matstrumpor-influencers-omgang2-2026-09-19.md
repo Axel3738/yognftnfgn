@@ -273,3 +273,22 @@ Vänliga hälsningar
 Axel Odhner
 Matstrumpor.se, Stonebite Ecom AB
 ```
+
+## Telefonnummer (publicerade bokningsnummer, kontrollerade 2026-09-24)
+
+Axel har dyslexi och ringer hellre än skriver. Uppföljningen 30/9 görs därför per telefon där det finns ett nummer.
+Bara publicerade företags- och bokningsnummer, aldrig privata nummer.
+
+| Profil | Vem som svarar | Nummer | Källa |
+|---|---|---|---|
+| Shirley Clamp och Nanne Grönvall | Johanna Boström Stone, Clap Your Hands | 070-640 85 04 | shirleyclamp.se, nanneofficial.com |
+| Linda Bengtzing | Madde Wallqvist, Showstore | 073-656 63 99 | lindabengtzing.se/boka-samarbete |
+| Charlotte Perrelli | Joakim Jordansson, Stockhouse | 070-491 93 93 | charlotteperrelli.com/contact |
+| Jessica Andersson | Held MGMT | inget publicerat | heldmanagement.se har bara info@ |
+| DJ Gloria | Anna Törnqvist Camisão | inget publicerat | djgloria.com har bara anna@ |
+| Agneta Sjödin (omgång 1) | Daniel Backlund, Front Agency | 073-710 02 28 | frontagency.se |
+| Mia Törnblom (omgång 1) | MT Ledarskap, växel | 08-692 95 95 | mtledarskap.se |
+| Helena Lyth (omgång 1) | ProAd | 040-61 60 001 | proad.se |
+
+Agneta Sjödin och Mia Törnblom ligger under 6 i presenttolerans och Helena Lyth under 6 i Modash, så de jagas inte.
+
