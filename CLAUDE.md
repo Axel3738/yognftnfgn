@@ -492,6 +492,13 @@ används. **Produkter utan skörd måste ändå ha en post i `galleri.mjs`**, an
 aldrig upp (driftbilen och bordsfotbollen låg färdiga i scratch i timmar). **Handlar köpet om passform** (batteriskydd,
 huvar, överdrag) ska sidan ha en måttguide — ritad deterministiskt med sharp, aldrig AI.
 
+**Axel redigerar gallerier själv i Shopify-admin — och skripten lägger tillbaka det han tagit bort.** `galleri-bygg.mjs`
+är idempotent på alt-text: saknas en bild laddas den upp igen. *(2026-09-24 kväll: Axel bytte bordsfotbollens galleri mot
+egna Canva-bilder och tog bort AI-bilderna; en körning lade tillbaka dem inom en timme.)* Kontrollera `updatedAt` och
+filnamnen (`Namnlosdesign-…png` = Canva) innan varje skarp körning; har han rört galleriet körs produkten bara med
+`--bara-text` (beskrivningen byggs om från det som ligger där, galleriet rörs inte). En patch som slår fel får aldrig
+följas av en skarp körning i samma kommando — `assert` först, kör sedan.
+
 **Varje produktsida ska ha en GIF (Axels granskning 2026-09-24: "Du har ju struntat i GIF:ar
 överallt").** Finns ingen leverantörsvideo utan textöverlägg görs en AI-video med KIE veo3_fast
 från en RIKTIG produktbild (`temu/batch11/ai.mjs` + `ai-kor.mjs`, ~40 credits/video), GIF i **1:1**,

@@ -211,3 +211,13 @@ pris (389/509 kr, 319/419 NOK), SKU `TEMU-B13-TRADANSIKTE` + `-SKAGGIG/-PUTMUN/-
 - GIF: KIE veo3_fast från ekorrbilden (bildstart), `ai.mjs`.
 - Notion: VÄNTA-kortet (`13 Trädansiktet – VÄNTA …`) byts till live-kort med Landing page när sidan är uppe.
 
+## Axel redigerar gallerier själv i admin (2026-09-24 kväll)
+Bordsfotbollen (SE) fick två egna Canva-bilder ("KOMPETITIV FOTBOLL · Storlek 42*21*9 cm") och AI-bilderna + GIF:en
+togs bort; magnetblocken fick AI-heron borttagen och ai-lek/QC-fotona flyttade först. **`galleri-bygg.mjs` är idempotent
+på alt-text och skulle lägga tillbaka allt** — därför finns `--bara-text`: rör inte galleriet, bygger bara om
+beskrivningen från medierna som ligger där (GIF först om den finns kvar). *(Första försöket att lägga till flaggan
+misslyckades tyst och skriptet laddade upp AI-bilderna igen — återställt samma minut, se CLAUDE.md.)*
+Regel: har Axel rört ett galleri i admin körs produkten bara med `--bara-text`. Kolla `updatedAt` och filnamn
+("Namnlosdesign-…" = Canva) innan en skarp körning.
+`notion-bilder.mjs [--skarp] [namndel …]` uppdaterar "Images"-stycket på batchens Notion-kort med det som ligger live.
+

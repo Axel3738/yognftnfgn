@@ -1,5 +1,5 @@
 // Lägger skördens galleri på produkterna i SE och NO enligt galleri.mjs (förberett av galleri-fix.mjs).
-//   node temu/batch11/galleri-bygg.mjs <se|no> [--skarp] [id …]
+//   node temu/batch11/galleri-bygg.mjs <se|no> [--skarp] [--bara-text] [id …]
 // Finns produkten (SKU) → nya bilder laddas upp med alt-text, ordnas (QC-fotot först eller sist),
 // beskrivningen byggs om i 7-blocksordningen med GIF/bild A, bild B, bild C.
 // Finns den inte (VÄNTA → bygg) → skapas komplett: titel, galleri, beskrivning, variant, alla kanaler.
@@ -19,7 +19,7 @@ const UT = '/tmp/claude-0/-home-user-yognftnfgn/4034ad3c-cd7c-513c-944c-3efffa12
 const AIUT = '/tmp/claude-0/-home-user-yognftnfgn/4034ad3c-cd7c-513c-944c-3efffa125d52/scratchpad/ai';
 const VENDOR = { se: 'Bäverbutiken', no: 'Beverbutikken' };
 const sov = (ms) => new Promise((r) => setTimeout(r, ms));
-const land = process.argv[2], skarp = process.argv.includes('--skarp');
+const land = process.argv[2], skarp = process.argv.includes('--skarp'), baraText = process.argv.includes('--bara-text');   // --bara-text: rör inte galleriet (Axel har redigerat det själv i admin), bygg bara om beskrivningen från medierna som ligger där
 const bara = process.argv.slice(3).filter((a) => !a.startsWith('--'));
 if (!['se', 'no'].includes(land)) { console.error('Användning: node temu/batch11/galleri-bygg.mjs <se|no> [--skarp] [id …]'); process.exit(1); }
 const COPY = JSON.parse(readFileSync(path.join(HÄR, 'copy.json'), 'utf8'));
@@ -79,8 +79,8 @@ for (const [id, g] of Object.entries(GALLERI)) {
   // qc:'bort' → gamla medier som inte hör till det nya galleriet tas bort (fel QC-foto). ersatt → bilder med samma alt laddas om.
   const bortAlt = [...(g.bort || []), ...(g.bort || []).map((b) => ALT_NO[b] || (Object.entries(ALT_NO).find(([sv]) => sv.includes(b))?.[1] ?? b))];   // svenska delsträngar + deras norska motsvarighet
   const bort = gamla.filter((m) => (g.gif === false && gifAltar.includes(m.alt)) || bortAlt.some((b) => (m.alt || '').includes(b)) || (g.qc === 'bort' && !nya.some((x) => x.alt === m.alt) && m.alt !== gif?.alt) || (g.ersatt === true && (nya.some((x) => x.alt === m.alt) || m.alt === gif?.alt)) || (Array.isArray(g.ersatt) && g.ersatt.some((e) => (m.alt || '').includes(e))));
-  if (bort.length && skarp) { await b.mutera(`mutation($productId:ID!,$mediaIds:[ID!]!){productDeleteMedia(productId:$productId,mediaIds:$mediaIds){deletedMediaIds mediaUserErrors{field message}}}`, { productId: finns.id, mediaIds: bort.map((m) => m.id) }, 'productDeleteMedia'); gamla = gamla.filter((m) => !bort.includes(m)); console.log(`  - ${id}: ${bort.length} gamla medier borttagna`); }
-  const attLadda = [...(gif ? [gif] : []), ...nya].filter((x) => !gamla.some((m) => m.alt === x.alt));
+  if (bort.length && skarp && !baraText) { await b.mutera(`mutation($productId:ID!,$mediaIds:[ID!]!){productDeleteMedia(productId:$productId,mediaIds:$mediaIds){deletedMediaIds mediaUserErrors{field message}}}`, { productId: finns.id, mediaIds: bort.map((m) => m.id) }, 'productDeleteMedia'); gamla = gamla.filter((m) => !bort.includes(m)); console.log(`  - ${id}: ${bort.length} gamla medier borttagna`); }
+  const attLadda = baraText ? [] : [...(gif ? [gif] : []), ...nya].filter((x) => !gamla.some((m) => m.alt === x.alt));
   if (!skarp) { console.log(`${finns ? '~' : '+'} ${id}: ${finns ? finns.title : t.titel}\n    ${gamla.length} befintliga (${bort.length} tas bort, ${byt.length} alt→no), ${attLadda.length} nya (${nya.length} bilder varav ${aiB.length} AI${gif ? ' + gif' : ''}), QC ${g.qc || 'sist'}${finns ? '' : ` · SKAPAS ${p.pris}/${p.jamfor} cogs ${p.cogs}`}`); continue; }
 
   let pid = finns?.id;
@@ -98,14 +98,16 @@ for (const [id, g] of Object.entries(GALLERI)) {
   const qcM = alla.filter((m) => !nyaM.includes(m) && m !== gifM);
   const ordning = [...(g.qc === 'forst' ? [...qcM, ...nyaM] : [...nyaM, ...qcM]), ...(gifM ? [gifM] : [])];
   const moves = ordning.map((m, i) => ({ id: m.id, newPosition: String(i) })).filter((mv, i) => alla[i]?.id !== mv.id);
-  if (moves.length) await b.mutera(`mutation($id:ID!,$moves:[MoveInput!]!){productReorderMedia(id:$id,moves:$moves){userErrors{field message}}}`, { id: pid, moves }, 'productReorderMedia');
+  if (moves.length && !baraText) await b.mutera(`mutation($id:ID!,$moves:[MoveInput!]!){productReorderMedia(id:$id,moves:$moves){userErrors{field message}}}`, { id: pid, moves }, 'productReorderMedia');
   // beskrivningens tre bildplatser: A = gif eller första nya bilden, B = nästa, C = nästa (annars QC)
   // beskrivningens tre platser: A = GIF (annars första bilden), B och C = nästa två — C faller tillbaka på B/A så
   // det alltid ligger en bild mellan funktioner och garanti (Axel 2026-09-24)
-  const pool = [...nyaM, ...qcM];
-  const A = gifM ? { ...gifM, gif: true } : pool.shift();
-  const B = pool.shift() || (gifM ? nyaM[0] : null) || null;
-  const C = pool.shift() || (B && B !== nyaM[0] ? nyaM[0] : null) || B || (gifM ? null : A) || null;
+  // bara-text: platserna följer galleriets nuvarande ordning (GIF:en först i texten om den finns kvar)
+  const gifNu = baraText ? alla.find((m) => (m.url || '').includes('.gif')) : gifM;
+  const pool = baraText ? alla.filter((m) => m !== gifNu) : [...nyaM, ...qcM];
+  const A = gifNu ? { ...gifNu, gif: true } : pool.shift();
+  const B = pool.shift() || (gifNu && !baraText ? nyaM[0] : null) || null;
+  const C = pool.shift() || (B && B !== nyaM[0] && !baraText ? nyaM[0] : null) || B || (gifNu ? null : A) || null;
   await b.mutera(`mutation u($input:ProductUpdateInput!){productUpdate(product:$input){userErrors{field message}}}`,
     { input: { id: pid, descriptionHtml: beskrivning(t, { a: A, b: B, c: C }, land), ...(finns ? {} : { status: 'ACTIVE' }), ...(g.omskriven ? { title: t.titel, handle: slug(t.titel), tags: t.taggar, seo: { title: t.seoTitel, description: t.seoText } } : {}) } }, 'productUpdate');
   if (!finns) {
