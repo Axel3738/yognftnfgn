@@ -333,7 +333,7 @@ export function galleri({ brand, manifest, mejlUt, toppFel = [], toppVarningar =
   @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #141414; --kort: #1f1f1f; --text: #f1f1f1; --svag: #a9a9a9; --ram: #3a3a3a; --rod: #ff5a5f; --gron: #5ed283; --gul: #f0c050; } }
   :root[data-theme="dark"] { --bg: #141414; --kort: #1f1f1f; --text: #f1f1f1; --svag: #a9a9a9; --ram: #3a3a3a; --rod: #ff5a5f; --gron: #5ed283; --gul: #f0c050; }
   * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--text); font: 19px/1.55 Arial, Helvetica, sans-serif; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 19px/1.55 Arial, Helvetica, sans-serif; overflow-wrap: anywhere; }
   main { max-width: 1400px; margin: 0 auto; padding: 24px 16px 80px; }
   h1 { font-size: 34px; margin: 0 0 6px; } h2 { font-size: 28px; margin: 48px 0 16px; } h3 { font-size: 22px; margin: 0; } h4 { font-size: 17px; margin: 18px 0 6px; text-transform: uppercase; letter-spacing: .5px; color: var(--svag); }
   a { color: inherit; }
