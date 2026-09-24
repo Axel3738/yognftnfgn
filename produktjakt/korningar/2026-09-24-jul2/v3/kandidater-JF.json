@@ -1,0 +1,202 @@
+{
+  "agent": "JF — elektroniska familjespel",
+  "datum": "2026-09-24-jul2",
+  "sammanfattning": "Julrunda 2, struktur 'elektroniskt/interaktivt familjespel — lyser, låter, rör sig eller räknar'. Golvet lästes FÖRE varje Ali-sökning: 55 PriceRunner-frågor (Lekia/Jollyroom/Coolstuff/Clas/Jula/Rusta/Spelexperten svarar 403/404/500 eller renderar i JS — PriceRunner är den läsbara källan), 32 Ali-fraser, 9 produktsidor öppnade (7 svarade, 2 BLOCKED), 7 heron nedladdade och sedda. Kärnfynd: kategorin 'elektroniskt bordsspel' är kedjornas hemmaplan — Ambassador/Menkind/Lexibook 'Electronic Arcade'-serien (basket 399, flipper 599, skee-ball 359, klomaskin 429) + Mattel/Hasbro/Johntoy (whack-a-mole 272–344, Simon 208, lögndetektor 181) täcker nästan varje klassiker under 600 kr i exakt form. Coin pusher, buzz wire, skjutbana med ankor och elektrisk roulette finns inte som konsumentlistning på AliExpress (bara tivolijättar 300–1 800 USD). Reaktionsspelen är antingen 99-kronorsprylar (Robetoy 99 = samma form som Ali 8–16 USD) eller sportträning över pristaket (BlazePod-kopior 55–105 USD). Två rader klarade grindarna: (1) den batteridrivna hästkapplöpningen — tivoliklassiker med rörlig mekanik, ingen svensk aktör i formen (8 golvfrågor), MEDEL; (2) musik-boxningsmaskinen som H06-test — golv Tomtop 534 i exakt form men RIXCH/Northio-ankare 2,2×/1,5×, tvåspelarläge, LÅG. Hellre 2 som håller än 5 som faller på golvregeln.",
+  "kandidater": [
+    {
+      "koncept_id": null,
+      "namn_sv": "Hästkapplöpningen, batteridriven tivoliklassiker",
+      "objekt": "NYTT: Julbordets spelkväll — travbanan på matbordet, sex hästar i vibrerande lopp",
+      "form": "annat",
+      "arketyp": "H_VISUELL_NYHET",
+      "arketyp_sekundar": "G_Q4_GAVA",
+      "slot": "sasong",
+      "hypotes_id": "H10",
+      "vinnarlikhet": {
+        "likast": "Adventskalendern Racingbilar",
+        "delade_variabler": ["hårt datum (black week/julafton)", "300–999 kr", "gåva till relation (barnbarn/familj)", "rörelse som syns på 3 s"],
+        "avvikelser": ["ingen svikande default", "inte 24 synliga saker", "ny form kontot aldrig testat", "plast, inte trä"]
+      },
+      "sasong": {"fonster_id": "black_week", "deadline_typ": "jul", "veckor_kvar": 9.1, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005013158801765",
+        "url": "https://www.aliexpress.com/item/1005013158801765.html",
+        "pris_usd": 23.09,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-24T10:35:25Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-24-jul2/v3/bilder/1005013158801765.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "en variant (6 banor, 6 hästar, batteridriven vibrationsbana) — samma vara i fyra listningar: 1005009138675021 26,59 USD (öppnad 10:35:27Z, hero sedd, textfri i kontext med riktiga travhästar), 1005007583135219 24,59, 1005009502693893 24,59 (ej öppnade), 1005008354151782 40,89 'vintage' (öppnad 10:33:07Z, hero sedd — collage med fotbollsvariant, samma bana)",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {
+        "klass": 2,
+        "hero_textfri": false,
+        "hero_i_kontext": true,
+        "samma_produkt": true,
+        "forsta_3s": "ej mätt (ingen video)",
+        "kommentar": "primärlistningens hero har inbränd text '6 HORSE RACES' upptill — beskär; listningen 1005009138675021 har textfri hero (banan framför fotot av riktiga travhästar) som går rakt in som stillbild. Produkten är knallgrön plast ('Racing Union' tryckt på sidan) — videon måste bära värdet: hästarna som vibrerar fram i sex banor och målgrinden som fäller."
+      },
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "Alga Travspelet med V85 (brädspel, INTE mekanisk bana) — PriceRunner", "pris_sek": 349, "url": "https://www.pricerunner.se/search?q=travspel", "exakt_samma_form": false},
+        "premium_ankare": {"namn": "ej hittat — ingen svensk aktör säljer en batteridriven hästkapplöpningsbana (sökt 2026-09-24)", "pris_sek": null, "url": null, "i_sortiment": false},
+        "ankare_kvot": null,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": [
+          "pricerunner.se?q=hästkapplöpning spel elektrisk (tom)",
+          "pricerunner.se?q=hästkapplöpning spel (Schleich, by Astrup Polo 221 — annan sak)",
+          "pricerunner.se?q=hästkapplöpning leksak (hoppdjur, käpphästar — annan sak)",
+          "pricerunner.se?q=derby spel hästar (Schleich, 'Derby' 467 brädspel)",
+          "pricerunner.se?q=horse race game (Schleich, tv-spel)",
+          "pricerunner.se?q=kapplöpningsspel (tom på formen)",
+          "pricerunner.se?q=travspel (Alga Travspelet 349)",
+          "pricerunner.se?q=racing union (Fox-skor — ingen leksak)"
+        ],
+        "anm": "Ingen svensk aktör i formen 'batteridriven bana med springande hästar' hittad i åtta golvfrågor. Fyndiq/CDON/Amazon.se svarar 403 och gick inte att läsa — luckan är visad på PriceRunner, inte bevisad hos dem."
+      },
+      "ekonomi": {
+        "landad_sek": [300, 367],
+        "pris_sek": 699,
+        "brutto_sek": [332, 399],
+        "be_cpa_sek": [332, 399],
+        "be_roas": 1.91,
+        "flerkop": false,
+        "returrisk": "låg — en variant, inget att mäta; batteridrivet (AA) kan ge 'funkar inte'-returer"
+      },
+      "meta_tanke": {
+        "hook": "Vem vinner loppet på julbordet?",
+        "objekt_i_bild": "sex hästar som vibrerar fram i sex banor på matbordet, familjen lutad över, målgrinden fälls",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "hästarna rör sig av sig själva och ingen vet vem som vinner — samma tivolikänsla som travbanan på Gröna Lund, alla känner igen den på en sekund"
+      },
+      "varfor": "Enda formen i linsen utan svensk aktör (8 golvfrågor, 0 träffar) OCH med rörlig mekanik på ett igenkänt spel — exakt vad Axels ja-rad (bordscurling, pariserhjul, kulbana, snurrande gran) har gemensamt. Hårt datum (black week 9 v, julafton 12 v), BE-CPA 332–399 utan ankare, priset satt av K8 (699) i stället för formeln landad × 2,4 (≈ 800).",
+      "huvudrisk": "K8: knallgrön plast som stillbild kan läsas som 249 kr — hela priset måste bäras av rörelsen i videon; ankare saknas så priset saknar referens.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 1, "meta_creative": 2, "efterfragan": 2, "lucka": 3, "ekonomi": 2, "sasong": 3, "leverantor": 2, "nyhet": 3, "hypotesvarde": 2},
+      "per_kriterium": {"K0": "ok", "K1": null, "K2": null, "K3": null, "K4": null, "K5": null, "K6": null, "K7": null, "K8": "medel/låg — plast, men stor rörlig bana (≈ 55 cm) med sex figurer", "K9": null, "K10": null, "K11": null, "K12": null},
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (grep häst/spel/arkad/reaktion: bara Bollpannband — annan sak)", "koncept.py sok häst/kapplöp/arkad: 0 träffar", "REDAN-PROVAT.md (116 former — hästkapplöpning inte prövad)"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005013158801765.html",
+        "https://www.aliexpress.com/item/1005009138675021.html",
+        "https://www.aliexpress.com/item/1005008354151782.html",
+        "https://www.pricerunner.se/search?q=travspel",
+        "https://www.pricerunner.se/search?q=h%C3%A4stkappl%C3%B6pning%20spel"
+      ]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Musik-boxningsmaskinen, väggmonterad med LED",
+      "objekt": "NYTT: Väggen i hallen/garaget — boxningsmaskin som lyser, räknar och spelar musik, två spelare",
+      "form": "annat",
+      "arketyp": "H_VISUELL_NYHET",
+      "arketyp_sekundar": "G_Q4_GAVA",
+      "slot": "sasong",
+      "hypotes_id": "H06",
+      "vinnarlikhet": {
+        "likast": "ATV-kapellet (H06-vinnaren: golv Jula 399 under 579, Polaris-ankare 3 045)",
+        "delade_variabler": ["golv i exakt form under vårt pris", "synligt ankare ≥ 1,6×", "500–999 kr", "hårt datum (jul)"],
+        "avvikelser": ["inget ägt dyrt objekt att skydda", "inomhus", "TikTok-känd form — 2–3 annonsörer trolig"]
+      },
+      "sasong": {"fonster_id": "jul", "deadline_typ": "jul", "veckor_kvar": 12.4, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005013080742995",
+        "url": "https://www.aliexpress.com/item/1005013080742995.html",
+        "pris_usd": 38.93,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-24T10:35:30Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-24-jul2/v3/bilder/1005013080742995.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "en variant enligt sökträff (6 slagytor, LED-räknare, USB-laddning, kardborreband för vägg); alternativ 1005012595353127 43,78 USD (öppnad 10:35:32Z, hero är ren infografik med text — 3 lägen: boxning/rytm/battle, 5 hastigheter), 1005013069754002 31,67 USD (barnmodell, ej öppnad), 1005012536365551 38,08 USD (ej öppnad)",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {
+        "klass": 2,
+        "hero_textfri": false,
+        "hero_i_kontext": true,
+        "samma_produkt": true,
+        "forsta_3s": "ej mätt (ingen video)",
+        "kommentar": "heron visar maskinen på väggen med tända LED-pilar och räknare — textremsa nedtill ('Widen and enlarge 6 target surface') måste beskäras. Svart rejäl form, läser som elektronik i 800-kronorsklass."
+      },
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "Tomtop JMS Smart Musikalisk Boxningsmaskin med handskar — PriceRunner", "pris_sek": 534, "url": "https://www.pricerunner.se/search?q=boxningsmaskin", "exakt_samma_form": true},
+        "premium_ankare": {"namn": "RIXCH Elektronisk Musik Boxningsmaskin Väggmonterad Smart (PriceRunner); Northio Elektronisk Bluetooth Boxningsmaskin med LED 1 379", "pris_sek": 1963, "url": "https://www.pricerunner.se/search?q=boxningsmaskin", "i_sortiment": true},
+        "ankare_kvot": 2.18,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": [
+          "pricerunner.se?q=boxningsmaskin (16 kort: Tomtop 534, 'Interaktiv boxningsmaskin med högtalare' 549, OptiGym 789, InnovaGoods 849, Mobiclinic 1 050, Tildasstore 1 279, Northio 1 379, XJKLBYQ 1 440, Magic Select 1 455, RIXCH 1 963)",
+          "pricerunner.se?q=boxningsmaskin musik (7 kort, samma)",
+          "pricerunner.se?q=musik boxningsmaskin vägg (7 kort, samma)",
+          "pricerunner.se?q=boxningsrobot (samma maskiner + Silverlit Robo Kombat)"
+        ],
+        "anm": "H06-läge: golv i EXAKT form under oss (Tomtop 534, 'Interaktiv' 549) men synligt ankare RIXCH 1 963 = 2,2× och Northio 1 379 = 1,5× mot vårt 899. Golvet är ~10 listningar på PriceRunner — under 20-gränsen där H06 fälls, men inte långt ifrån. Amazon.se/Fyndiq oläsbara (403)."
+      },
+      "ekonomi": {
+        "landad_sek": [507, 619],
+        "pris_sek": 899,
+        "brutto_sek": [280, 392],
+        "be_cpa_sek": [280, 392],
+        "be_roas": 2.68,
+        "flerkop": false,
+        "returrisk": "medel — kardborrefästet på väggen kan lossna vid slag ('sitter inte fast'-returer); en variant, inget att mäta"
+      },
+      "meta_tanke": {
+        "hook": "Slå lamporna i takt — vem får högst poäng?",
+        "objekt_i_bild": "maskinen på väggen, LED-pilarna tänds runt slagytorna, räknaren tickar, två som turas om",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "lampan tänds → slaget → poängen räknas upp på displayen, i musiktakt — syns utan förklaring"
+      },
+      "varfor": "Enda elektroniska formen i linsen med både ett tvåspelarläge och ett svenskt märkesankare ≥ 1,6× (RIXCH 2,2×, Northio 1,5×) över ett golv i exakt form — ett rent H06-test efter ATV-kapellets ja (golv Jula 399 < 579, ankare 3 045 → 1 963 / 11 / 4,07). Julafton 12 v, BE-CPA 280–392.",
+      "huvudrisk": "Formen är TikTok-känd och golvet ligger på ~10 svenska listningar 534–1 963 — om Amazon.se/Fyndiq (oläsbara i dag) bär 20+ varianter är golvet hela marknaden och raden ska fällas; dessutom träning snarare än 'spel' för en 60-åring.",
+      "konfidens": "LÅG",
+      "poang": {"vinnarlikhet": 2, "meta_creative": 2, "efterfragan": 1, "lucka": 2, "ekonomi": 2, "sasong": 2, "leverantor": 2, "nyhet": 1, "hypotesvarde": 3},
+      "per_kriterium": {"K0": "ok", "K1": null, "K2": null, "K3": null, "K4": null, "K5": null, "K6": null, "K7": null, "K8": "ok — svart rejäl elektronikform med LED och display", "K9": null, "K10": null, "K11": null, "K12": null},
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (grep box/spel: bara Bollpannband — annan sak)", "koncept.py sok boxning/box: 0 träffar på formen (12 'box'-träffar = förvaringsboxar)", "REDAN-PROVAT.md (inte prövad)"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005013080742995.html",
+        "https://www.aliexpress.com/item/1005012595353127.html",
+        "https://www.pricerunner.se/search?q=boxningsmaskin"
+      ]
+    }
+  ],
+  "strukna": [
+    {"namn": "Hänga gubbe med snurrande hjul (Temu 606456829034765) och kloner", "skal": "FÖRBJUDEN enligt Axel — inte sökt."},
+    {"namn": "Klomaskin / candy grabber bordsformat (Ali 37,09–49,69 USD: 1005007647374939, 1005010089179417, 1005009935330676; 6–7 USD-varianterna är fickleksaker)", "skal": "Golv i exakt form under oss: MikaMax Godismaskin med klo 440/450, Fat Brain Electronic Arcade Claw Machine 429 (PriceRunner 10:27–10:31Z). Ankare Northio Klomaskin 869 = bara 1,16–1,24× mot 699–749 → H06 (≥ 1,6×) öppnar inte, och landad 483–590 ger BE-CPA 109–216 — under 190 i undre kant. Produktsidan 1005007013528055 svarade dessutom tomt (BLOCKED)."},
+    {"namn": "Whack-a-mole elektronisk, arkadform med skumhammare (Ali 1005012796261358, 38,19 USD)", "skal": "Golv i samma spel under oss: Johntoy Whack a Mole with Light and Sound 272, Mattel Whac-A-Mole 344 (PriceRunner 10:34Z); inget svenskt ankare över; produktsidan svarade tomt (BLOCKED)."},
+    {"namn": "Coin pusher / myntskjutare i bordsformat", "skal": "Finns inte som konsumentlistning på AliExpress (tre fraser: bara kommersiella 470–4 200 USD, en byggklosssats 88,89 USD och fidget-'push cards'). Svenskt golv fanns inte heller (PriceRunner 'coin pusher'/'myntpusher arkad' tomma på formen) — luckan är äkta men leverantör saknas."},
+    {"namn": "Buzz wire / skakhand med ljud", "skal": "AliExpress ger bara tivolijättar 202–1 630 USD och en DIY-sats 16,82 USD (K8 = 0). PriceRunner 'buzz wire'/'steady hand game'/'skakhand spel' tomma på formen."},
+    {"namn": "Reaktionsspel 'fånga ljuset' handhållet (Ali 1005013183181407 15,79 USD, verifierad 10:33:05Z, hero sedd; 1005013031503761 26,59 USD BLOCKED ×2; 1005008144987121 8,06 USD)", "skal": "Heron visar en handhållen trekknappsdosa med LED-ring — samma form som Robetoy Rhythm Reaktionsspel 11 × 14 cm 99 kr (PriceRunner 10:34Z). K8: ser ut som 99 kr och är det."},
+    {"namn": "Reaktionsljus-pods (BlazePod-typ, 4–6 st) som familjeduell (Ali 54,99–104 USD)", "skal": "Landad 795–1 508 kr mot pristak 999 → BE-CPA 124–283 i bästa fall, under 190 i undre kant. BlazePod 3 595 (4 st) hade varit ett fint ankare — ekonomin faller ändå."},
+    {"namn": "Elektroniskt målspel / skjutbana (IR-laser 32,69 USD, rörliga mål med mjukpilar 22,88–33,73 USD, svävande bollar 31,89–52,69 USD)", "skal": "Vapenmotiv + barnleksak (K8); golv: Suntoy Electronic Arcade Hover Shot 399 (samma svävande-bollar-form), Hasbro Nerf Robot Battle Arena 180, Nerf Rukkus 200, vidaXL kulfång 429 (PriceRunner 10:26Z). Skjutbana med rörliga ankor finns inte som listning (två fraser gav badankor)."},
+    {"namn": "Dansmatta för TV/bluetooth, två spelare med LED (Ali 41,79–45,48 USD; barnmodell 32,19 USD)", "skal": "Golv i exakt form under oss: Northio Interaktiv Dansmatta 259, 'Färgglad och rolig dansmatta' 299, Dancing Challenge Playmat 349; ankare Thumbs Up Mad Monkey 2-players 719 och Lexibook Bluetooth 777 (PriceRunner 10:27Z). Landad 604–658 lämnar ingen prisnivå under ankaret (0,85 × 777 = 660)."},
+    {"namn": "Bordsbasket arkad, elektroniskt flipper, skee-ball/alley-ball ('Electronic Arcade'-serien)", "skal": "Golvet är hela marknaden: Very Arcade Basketball 179, Ambassador Electronic Arcade Basketball 399, Lexibook 519, HYES 699, Northio 719, Joyfy 836 + 8 hopfällbara basketmaskiner 1 533–3 743; flipper Ambassador 599, 'Flipper arkadspel med ljus och musik' 329, Lexibook 499–579; Menkind Alley-Ball 359 (PriceRunner 10:28Z). Inte sökt på Ali."},
+    {"namn": "'Bomben' / hot potato med timer (Tick Tock Boom-typ)", "skal": "Ingen leksakslistning på AliExpress (frasen gav badbomber och köksklockor); svenskt golv Northix Tik Tak Bomb 369, Piatnik Tick Tack Bumm 296 (PriceRunner 10:27Z)."},
+    {"namn": "Lögndetektor-partyspel (elchock)", "skal": "Golv: Hasbro The Lie Detector Game 181, OUKEYI mikro elektrisk lögndetektor 163 (PriceRunner 10:27Z) — K8 = 0, inte sökt på Ali."},
+    {"namn": "Elektroniskt minnesspel Simon-typ", "skal": "Hasbro Simon 208 (IP + golv), Johntoy Memory Game Light Sound Pocket 96, Goki memospel med ljud 293 (PriceRunner 10:27–10:28Z). Ali-varianten 7,39 USD är en fickleksak (K8)."},
+    {"namn": "Elektrisk/automatisk roulette", "skal": "AliExpress ger bara lyckohjul och 'digital lottery spinning wheel' (lyckohjulet är struket av JA); PriceRunner 'elektrisk roulette' tom; mekanisk roulette MikaMax 149 – Philos 1 112 är golvet för formen."},
+    {"namn": "Elektronisk tärning / automatisk tärningsskakare (Ali 9,89 USD)", "skal": "Barpryl 10 USD (K8 = 0); Whadda elektronisk tärning 169 (PriceRunner) — inte en form som bär 300+."},
+    {"namn": "Fjärrstyrda boxningsrobotar 2-spelare (Ali JJRC R30 32,63 – 70,99 USD)", "skal": "Golv i exakt form under oss: Silverlit Robo Kombat 415, Balloon Puncher Twin Pack 449, Tornado Battle Pack 277 (PriceRunner 10:37Z); Mattel Rock 'Em Sock 'Em är IP; inget ankare över."},
+    {"namn": "Fotbollsmål/pingismål som räknar mål elektroniskt", "skal": "Ingen listning på AliExpress (frasen gav resultattavlor och basketmaskiner); PriceRunner 'fotbollsmål räknare' bara vanliga mål 179–4 066."},
+    {"namn": "Elektrisk målvaktsrobot", "skal": "Golv: Strikesphere Soccer Bot 479/556, Golden Bear Smart Ball Indoor Soccer Bot 709 (PriceRunner 10:39Z); AliExpress gav bara hover-fotboll (struken av JD) och bordsfotboll."},
+    {"namn": "Minigolf inomhus med motoriserad väderkvarn", "skal": "Finns inte som listning på AliExpress (frasen gav kattleksaker och kulbanor); PriceRunner 'minigolf inomhus väderkvarn' tom."},
+    {"namn": "Elektriskt skalspel (koppar som blandar sig själva)", "skal": "Ingen listning — sökträffen var brus."},
+    {"namn": "Elektrisk enarmad bandit (minimodell)", "skal": "AliExpress ger bara nyckelringar 2,59–4,15 USD (K8 = 0); PriceRunner 'enarmad bandit' ger MC-hjälmar."},
+    {"namn": "Roterande fiskespel med musik (klassikern med snappande fiskar)", "skal": "Barnleksak i plast som ser ut som 99 kr (K8) — inte sökt på Ali; PriceRunner 'fiskespel elektriskt' visar träfiskespel 89–454 och ett 'Musikaliskt fiskespel 45 fiskar' 1 185."},
+    {"namn": "Laser maze / laserlabyrint som partyspel", "skal": "Bara Thinkfun Laser Maze 269 (logikpussel, annan sak) på PriceRunner; ingen konsumentlistning på Ali (bara tivolijättar)."},
+    {"namn": "Quiz-buzzers med ljus (Ali 6,39–12,69 USD)", "skal": "Struken av JC i dag (K8, plastknappar) — inte sökt om."},
+    {"namn": "Elektroniskt fyra i rad, elektroniskt luffarschack med AI (Ali 17,12 USD)", "skal": "Giiker struken av JA (märke + pris); Luffarschacket i trä är REAL_LOSER (0,36) och ligger i katalogen (K0)."}
+  ]
+}
