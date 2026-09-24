@@ -29,6 +29,12 @@ dessa villkor. Ändras de: uppdatera här först, aldrig i ett enskilt meddeland
   godkänt med fullständigt namn, inte ett "ja". Brief = ramverk, aldrig
   manus. Facebook-grupper först, marknadsplatser sist. Efter en vinnare
   beslutar Axel nästa steg; VA:n lovar aldrig retainer eller bonusbelopp.
+- **Inget månadsarbete, ingen retainer, ingen bonus** (Axels val B
+  2026-09-24): en video i taget, även efter en vinnare.
+- **Paketet levereras som PDF** (Axels dom samma dag: .md går inte att läsa
+  på Windows): `python3 factory/ugc/bygg-va-paket.py <utmapp>` bygger
+  "1 - START HERE.pdf", "2 - VA Handbook.pdf", en .txt för Claude-projektet
+  och CSV-mallarna. Källan är fortfarande `va-kit/*.md` — ändra där, bygg om.
 - **VA:n sköter allt själv** med paketet `factory/ugc/va-kit/` på ett eget
   Claude-konto — INTE i det här repot. Kreatörerna sparas i hennes Google
   Sheet, inte här. Paketets `TERMS.md` är hennes kopia av villkoren: ändras

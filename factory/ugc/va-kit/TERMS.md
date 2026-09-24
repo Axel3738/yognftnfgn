@@ -21,7 +21,7 @@ If a creator asks for something outside it → the matching case in `SOP.md`
 | Top price (only creators with 14–16 points) | **3 000 kr per video** |
 | First deal | **1 video + all raw footage**, including **3–5 different takes of the first 3 seconds (hooks)**. Per product we test **3 different creators**, not 3 videos from one (Evolve 2026-09-24: 3 creators = 3 chances at a winner). |
 | Shot list (always in the raw footage) | 3–5 hook takes · product in hand from several angles · the problem / a demonstration · hands close-ups · everyday "lifestyle" B-roll |
-| After a winning video | **Only Axel decides** what comes next (new hooks, new angles, next product, or ongoing monthly work). You never offer a retainer or a bonus amount yourself. |
+| After a winning video | **Only Axel decides** what comes next (new hooks, new angles or the next product). **We never offer monthly work, a retainer or a bonus** — one video at a time (Axel 2026-09-24). |
 | Agreement | The creator gets the full agreement text (`AGREEMENT.md`) and accepts it **in writing with their full name** ("Jag godkänner avtalet, [namn]"). A plain "ja" is not enough. |
 | Raw footage | **ALWAYS included.** Every unedited clip they filmed, not just the finished video. No raw footage = the delivery is not complete. |
 | Usage rights | **Included in the price. No extra fee for rights, no time limit.** We use the videos as ads on our own pages, all channels, **in all our stores and countries**, and we may **edit, cut, translate and dub them (also with AI voice and lip-sync)**. This must be in the agreement the creator says "ja" to. We never pay a separate "usage rights" or "whitelisting" fee. |

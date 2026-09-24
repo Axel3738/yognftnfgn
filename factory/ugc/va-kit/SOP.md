@@ -145,8 +145,9 @@ Result = fill in when Axel tells you how the ad did.
 
 **After a video: don't decide the next step yourself.** Tell Axel "D00X
 delivered, raw footage in Drive". The ads are tested first. If a video wins,
-**Axel decides** what to order next (new hooks, new angles, next product or
-ongoing monthly work) and you send it. A creator with 2–3 videos and no winning
+**Axel decides** what to order next (new hooks, new angles or the next
+product) and you send it. **We never offer monthly work or a
+retainer** (Axel 2026-09-24): one video at a time. A creator with 2–3 videos and no winning
 ad → Result `bad — do not use` for now (keep them in the bank).
 
 ---
@@ -197,7 +198,7 @@ Then:
 | Has no company / can't invoice | Suggest an invoicing service (`TERMS.md`). | unchanged |
 | Wants to sign their own contract | Ask Axel. Don't sign anything. | `negotiating` |
 | Wants a commission / % of sales | Ask Axel. | `negotiating` |
-| Asks "what happens after this?" / wants a retainer | "If your video works in our ads, we come back with more work." Never a number — tell Axel. | unchanged |
+| Asks "what happens after this?" / wants monthly work | "If your video works in our ads, we come back with the next product." We never offer monthly work or a retainer. | unchanged |
 | Accepts with only "ja" | Ask them to write "Jag godkänner avtalet" + full name. | `negotiating` |
 | Wants to post the video on their own account too | Fine, no exclusivity — but the post must be marked as advertising ("Reklam" or "i samarbete med …"), Swedish law requires it. | unchanged |
 | Says yes | Agreement message → wait for written "ja". | `deal` |
