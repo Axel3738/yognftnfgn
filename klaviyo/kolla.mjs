@@ -80,7 +80,8 @@ export async function kolla({ brand, klient, prov = false, nu = () => new Date()
 
   // Metriker
   const metriker = await hamtaMetriker(klient);
-  const { ids, saknas } = metrikIds(metriker);
+  const { ids, saknas, tvetydiga } = metrikIds(metriker);
+  varningar.push(...tvetydiga);
   lage.metriker = { alla: metriker, kanda: ids, saknas };
   const shopifySaknas = saknas.filter((s) => SHOPIFY_METRIKER.includes(s.nyckel));
   if (shopifySaknas.length) varningar.push(`Shopify-metriker saknas: ${shopifySaknas.map((s) => KANDA_METRIKER[s.nyckel].join('/')).join(', ')}. Är Shopify-integrationen kopplad (Klaviyo → Integrations → Shopify)? Utan dem går flöden och köparsegment inte att bygga.`);

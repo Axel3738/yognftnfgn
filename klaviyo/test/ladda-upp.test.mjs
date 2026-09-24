@@ -5,7 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { KlaviyoKlient } from '../klient.mjs';
-import { laddaUpp, laddaInnehall, mallKontroll, rapportText, raknaSenasteDygn, DYGNSTAK } from '../ladda-upp.mjs';
+import { laddaUpp, laddaInnehall, mallKontroll, rapportText, raknaSenasteDygn, DYGNSTAK, aterintrade, planeradTid } from '../ladda-upp.mjs';
 import { SEGMENT } from '../segment.mjs';
 import { falskKlaviyo } from './falsk.mjs';
 
@@ -66,7 +66,8 @@ test('skarpt: allt skapas i rätt ordning och med specens form', async () => {
 
   // Kampanjen
   const kamp = f.anrop.find((a) => a.sokvag === '/api/campaigns' && a.metod === 'POST').kropp.data.attributes;
-  assert.deepEqual(kamp.send_strategy, { method: 'static', datetime: '2026-10-01T18:00:00+02:00', options: { is_local: false } });
+  // Samma ögonblick som kampanjfilens 18:00 svensk tid, skickat i UTC.
+  assert.deepEqual(kamp.send_strategy, { method: 'static', datetime: '2026-10-01T16:00:00.000Z', options: { is_local: false } });
   assert.deepEqual(kamp.send_options, { use_smart_sending: true });
   assert.equal(kamp.tracking_options.add_tracking_params, true);
   assert.deepEqual(kamp.tracking_options.custom_tracking_params, [{ type: 'static', name: 'utm_source', value: 'klaviyo' }, { type: 'static', name: 'utm_medium', value: 'email' }]);
@@ -235,14 +236,71 @@ test('byggarens manifest: html och text som filnamn läses in bredvid manifestet
   assert.throws(() => laddaInnehall({ mejl: [{ id: 'c', html: 'saknas.html' }] }, dir), /finns inte/);
 });
 
-test('återinträde "alltime" utan varaktighet: duration 0, unit alltime', async () => {
+test('återinträde "alltime": duration 1 (aldrig igen) — 0 betyder "får gå in igen" i specen', async () => {
   const m = MANIFEST();
   m.floden[1].ateintrade = { varaktighet: null, enhet: 'alltime' };
-  const r = await laddaUpp({ brand: BRAND, manifest: m, klient: null, kontoDir: tmp(), nu: NU });
-  const def = r.exempel['POST /api/flows'] && Object.values(r.exempel).length;
-  assert.ok(def);
   const { k, f } = ny();
   await laddaUpp({ brand: BRAND, manifest: m, klient: k, skarpt: true, kontoDir: tmp(), nu: NU });
   const v = f.tillstand.floden.find((x) => x.attributes.name === 'FLOW_valkomst_v1').attributes.definition;
-  assert.deepEqual(v.reentry_criteria, { duration: 0, unit: 'alltime' });
+  assert.deepEqual(v.reentry_criteria, { duration: 1, unit: 'alltime' });
+  assert.deepEqual(aterintrade({ namn: 'x', ateintrade: { varaktighet: 7, enhet: 'dagar' } }), { duration: 7, unit: 'day' });
+  assert.throws(() => aterintrade({ namn: 'x', ateintrade: { varaktighet: null, enhet: 'day' } }), /heltal/);
+  assert.throws(() => aterintrade({ namn: 'x', ateintrade: { varaktighet: 3, enhet: 'month' } }), /okänd enhet/);
+});
+
+test('planerad tid som passerat: kampanjen skapas inte, mallen laddas upp, orsaken står i klartext', async () => {
+  const { k, f } = ny();
+  const sent = () => new Date('2026-10-02T12:00:00Z'); // efter kampanjens 1 oktober
+  const r = await laddaUpp({ brand: BRAND, manifest: MANIFEST(), klient: k, skarpt: true, kontoDir: tmp(), nu: sent });
+  const s = r.stopp.find((x) => x.typ === 'kampanj');
+  assert.equal(s?.kod, 'PLANERAD_PASSERAD');
+  assert.match(s.orsak, /TPL_k01-prov_v1/);
+  assert.equal(inget(f, /^\/api\/campaigns$/, 'POST').length, 0);
+  assert.ok(f.tillstand.mallar.some((t) => t.attributes.name === 'TPL_k01-prov_v1'));
+  // Under marginalen räknas som passerat; saknad tid och skräp stoppas också.
+  assert.throws(() => planeradTid({ planerad: '2026-10-01T18:30:00+02:00' }, new Date('2026-10-01T16:00:00Z')), (e) => e.kod === 'PLANERAD_PASSERAD');
+  assert.throws(() => planeradTid({}, NU()), (e) => e.kod === 'PLANERAD_SAKNAS');
+  assert.throws(() => planeradTid({ planerad: 'nästa tisdag' }, NU()), (e) => e.kod === 'PLANERAD_OGILTIG');
+  assert.equal(planeradTid({ planerad: '2026-10-01T18:00:00+02:00' }, NU()), '2026-10-01T16:00:00.000Z');
+});
+
+test('avbruten körning: kampanjen skapad men mallen aldrig kopplad ⇒ nästa körning kopplar den, ingen dubblett', async () => {
+  const { k, f } = ny();
+  const dir = tmp();
+  // Första körningen dör efter att kampanjen skapats: assign-template svarar nätfel.
+  const riktig = f.fetchFn;
+  let dod = true;
+  const k1 = new KlaviyoKlient({ nyckel: 'pk_test', paus: 0, sov: async () => {}, fetchFn: async (url, o) => {
+    if (dod && url.includes('assign-template')) throw new Error('ECONNRESET');
+    return riktig(url, o);
+  } });
+  const r1 = await laddaUpp({ brand: BRAND, manifest: MANIFEST(), klient: k1, skarpt: true, kontoDir: dir, nu: NU });
+  assert.ok(r1.stopp.some((s) => s.typ === 'kampanj'));
+  assert.equal(f.tillstand.kampanjer.length, 1);
+  assert.equal(f.tillstand.meddelanden[`MSG_${f.tillstand.kampanjer[0].id}`].mall, null);
+  dod = false;
+  const r2 = await laddaUpp({ brand: BRAND, manifest: MANIFEST(), klient: k, skarpt: true, kontoDir: dir, nu: NU });
+  assert.equal(r2.stopp.length, 0, JSON.stringify(r2.stopp));
+  assert.equal(f.tillstand.kampanjer.length, 1);
+  assert.ok(f.tillstand.meddelanden[`MSG_${f.tillstand.kampanjer[0].id}`].mall);
+  // Tredje körningen: allt på plats, inget skrivs.
+  const fore = f.anrop.filter((a) => a.metod !== 'GET').length;
+  await laddaUpp({ brand: BRAND, manifest: MANIFEST(), klient: k, skarpt: true, kontoDir: dir, nu: NU });
+  assert.equal(f.anrop.filter((a) => a.metod !== 'GET').length, fore);
+});
+
+test('samtycke: ett befintligt segment med BIBLIOTEKETS namn men utan samtycke i Klaviyo stoppas', async () => {
+  const utan = { condition_groups: [{ conditions: [{ type: 'profile-metric', metric_id: 'M_OE', measurement: 'count', measurement_filter: { type: 'numeric', operator: 'greater-than-or-equal', value: 1 }, timeframe_filter: { type: 'date', operator: 'alltime' } }] }] };
+  const { k, f } = ny({ segment: [{ id: 'SX', name: 'SEG_uppvarmning_steg1', definition: utan }] });
+  const r = await laddaUpp({ brand: BRAND, manifest: MANIFEST(), klient: k, skarpt: true, kontoDir: tmp(), nu: NU });
+  assert.ok(r.stopp.some((s) => s.typ === 'kampanj' && s.kod === 'SAMTYCKE_SAKNAS'), JSON.stringify(r.stopp));
+  assert.equal(inget(f, /^\/api\/campaigns$/, 'POST').length, 0);
+  // Och objektet som motorn inte skapat syns som varning.
+  assert.ok(r.varningar.some((v) => /SEG_uppvarmning_steg1.*skapades inte av motorn/.test(v)));
+});
+
+test('två kassametriker i kontot ⇒ varning om vilken som väljs', async () => {
+  const { k } = ny({ metriker: [['M_PO', 'Placed Order'], ['M_SC', 'Started Checkout'], ['M_CS', 'Checkout Started'], ['M_VP', 'Viewed Product'], ['M_AOS', 'Active on Site'], ['M_OP', 'Ordered Product'], ['M_OE', 'Opened Email'], ['M_CE', 'Clicked Email'], ['M_RE', 'Received Email']] });
+  const r = await laddaUpp({ brand: BRAND, manifest: MANIFEST(), klient: k, kontoDir: tmp(), nu: NU });
+  assert.ok(r.varningar.some((v) => /started_checkout.*"Started Checkout", "Checkout Started"/.test(v)));
 });

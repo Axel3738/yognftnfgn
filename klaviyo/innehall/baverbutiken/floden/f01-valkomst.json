@@ -61,13 +61,9 @@
             "text": "Jag driver Bäverbutiken. Det du hittar här är prylar för båten, husvagnen, husbilen, trädgården och huset, sånt som löser ett konkret problem.\n\nInga prylar som bara ser bra ut i en annons."
           },
           {
-            "typ": "produktrad",
-            "rubrik": "De tre vi säljer mest av",
-            "handles": [
-              "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
-              "batmotorskydd-420d-heltackande-for-utombordare",
-              "overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
-            ]
+            "typ": "text",
+            "rubrik": "Det här säljer vi mest av",
+            "text": "Taköverdraget till husvagnen är det vi säljer mest av. Efter det kommer båtmotorskyddet, och sen övervakningskameran."
           },
           {
             "typ": "fakta"
@@ -105,7 +101,7 @@
             "ingen_annan": true
           },
           {
-            "rad": "De tre vi säljer mest av",
+            "rad": "Det här säljer vi mest av",
             "visualisera": true,
             "falsifiera": true,
             "ingen_annan": true

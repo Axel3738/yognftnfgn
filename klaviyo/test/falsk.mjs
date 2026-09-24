@@ -140,7 +140,10 @@ export function falskKlaviyo({
     if (m) {
       const k = tillstand.kampanjer.find((x) => x.id === m[1]);
       if (!k) return svar(404, { errors: [{ code: 'not_found', detail: 'nope' }] });
-      if (m[2] && metod === 'GET') return svar(200, { data: [res('campaign-message', `MSG_${k.id}`, {})] });
+      if (m[2] && metod === 'GET') {
+        const mall = tillstand.meddelanden[`MSG_${k.id}`]?.mall;
+        return svar(200, { data: [res('campaign-message', `MSG_${k.id}`, {}, { relationships: { template: { data: mall ? { type: 'template', id: mall } : null } } })] });
+      }
       if (metod === 'PATCH') { Object.assign(k.attributes, a); return svar(200, { data: k }); }
     }
     m = /^\/api\/campaign-messages\/([^/]+)$/.exec(p);

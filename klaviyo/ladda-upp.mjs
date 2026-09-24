@@ -100,6 +100,37 @@ export function mallKropp(mejl) {
   return { data: { type: 'template', attributes: { name: mallNamn(mejl), editor_type: 'CODE', html: mejl.html, text: mejl.text ?? null } } };
 }
 
+/** Minsta marginal mellan nu och en planerad sändtid. Ett datum närmare än så är i praktiken passerat. */
+export const PLAN_MARGINAL_MIN = 60;
+
+/**
+ * Kampanjens planerade tid → UTC-ISO, eller ett fel med orsak. Aldrig tomt:
+ * utan send_strategy sätter Klaviyo "Immediate" (specen, CampaignCreateQuery).
+ * Ett passerat datum skapas inte — kampanjen stoppas och säger hur den räddas.
+ */
+export function planeradTid(kampanj, nu, mall = null) {
+  const fel = (kod, text) => Object.assign(new Error(text), { kod });
+  if (!kampanj.planerad) throw fel('PLANERAD_SAKNAS', 'kampanjfilen saknar "planerad" — utan tid blir kampanjen "skicka direkt" i Klaviyo. Sätt en tid och bygg om.');
+  const t = Date.parse(kampanj.planerad);
+  if (!Number.isFinite(t)) throw fel('PLANERAD_OGILTIG', `"planerad" (${kampanj.planerad}) är inget giltigt datum.`);
+  if (t < nu.getTime() + PLAN_MARGINAL_MIN * 60000) {
+    throw fel('PLANERAD_PASSERAD', `planerad tid ${kampanj.planerad} har passerat (eller är under ${PLAN_MARGINAL_MIN} min bort) — kampanjen skapas inte. Mallen${mall ? ` ${mall}` : ''} laddas upp ändå. Sätt ny tid i kampanjfilen och kör bygg + ladda-upp igen (Axels beslut om kampanjen ska gå alls).`);
+  }
+  return new Date(t).toISOString();
+}
+
+/** ReentryCriteria (spec): unit day|hour|week|alltime. Vid alltime betyder duration 1 "aldrig igen", 0 "får gå in igen". */
+const ENHET_ATER = { day: 'day', days: 'day', dag: 'day', dagar: 'day', hour: 'hour', hours: 'hour', timme: 'hour', timmar: 'hour', week: 'week', weeks: 'week', vecka: 'week', veckor: 'week', alltime: 'alltime' };
+export function aterintrade(flode) {
+  const a = flode.ateintrade;
+  if (!a) return null;
+  const unit = ENHET_ATER[a.enhet];
+  if (!unit) throw new Error(`Flödet ${flode.namn}: okänd enhet för återinträde "${a.enhet}" (day, hour, week, alltime).`);
+  if (unit === 'alltime') return { duration: 1, unit };
+  if (!Number.isInteger(a.varaktighet) || a.varaktighet < 1) throw new Error(`Flödet ${flode.namn}: återinträdets varaktighet måste vara ett heltal ≥ 1 (fick ${a.varaktighet}).`);
+  return { duration: a.varaktighet, unit };
+}
+
 const ENHET = { hour: 'hours', hours: 'hours', timmar: 'hours', timme: 'hours', day: 'days', days: 'days', dagar: 'days', dag: 'days', minute: 'minutes', minutes: 'minutes', minuter: 'minutes' };
 
 /** Flödets definition: linjär kedja vänta → mejl → vänta → mejl, allt draft. */
@@ -138,11 +169,7 @@ export function flodesDefinition({ flode, trigger, filterDef, mejlPaId, mallIdPa
     }
     throw new Error(`Flödet ${flode.namn} steg ${i + 1}: okänd stegtyp "${s.typ}" (vanta, mejl).`);
   });
-  // ReentryCriteria kräver duration (heltal) även för unit "alltime"; byggaren skriver
-  // varaktighet null då. 0 skickas — obekräftat vad Klaviyo gör med talet vid alltime.
-  const reentry = flode.ateintrade
-    ? { duration: flode.ateintrade.varaktighet ?? 0, unit: flode.ateintrade.enhet }
-    : null;
+  const reentry = aterintrade(flode);
   return {
     triggers: [trigger],
     profile_filter: filterDef,
@@ -236,6 +263,16 @@ export async function laddaUpp({ brand, manifest, klient = null, skarpt = false,
     const kant = [...minne].reverse().find((m) => m.namn === namn && m.id);
     return kant ? { id: kant.id, attributes: { name: namn }, franMinnet: true } : null;
   };
+  /**
+   * Ett objekt med motorns namn som motorn inte skapat (saknas i uppladdat.jsonl):
+   * det hoppas som vanligt, men sessionen får veta det. Annars ser ett gammalt
+   * handbyggt flöde "Välkomst" ut som motorns eget, och motorns skapas aldrig.
+   */
+  const frammande = (typ, namn, f) => {
+    if (!f || f.franMinnet || !klient) return;
+    if (minne.some((m) => m.id === f.id)) return;
+    r.varningar.push(`${typ} "${namn}" finns redan i Klaviyo (${f.id}) men skapades inte av motorn enligt uppladdat.jsonl — motorn rör det inte. Kontrollera i Klaviyo att det är rätt objekt, eller döp om.`);
+  };
   const hoppa = (typ, namn, orsak) => { r.hoppade.push({ typ, namn, orsak }); plan(`HOPPA ${typ} ${namn}: ${orsak}`); };
   const stoppa = (typ, namn, e) => {
     if (AVBRYT.has(e.kod) || e.status === 401 || e.status === 403) throw e;
@@ -253,6 +290,7 @@ export async function laddaUpp({ brand, manifest, klient = null, skarpt = false,
     const u = metrikIdsUr(metriker);
     ids = u.ids;
     for (const s of u.saknas) r.varningar.push(`Metrik ${s.nyckel}: ${s.orsak}`);
+    for (const t of u.tvetydiga ?? []) r.varningar.push(t);
   } else {
     ids = platshallarIds();
     r.varningar.push('Torrkörning utan nyckel: inget är kontrollerat mot kontot, id:n är platshållare.');
@@ -274,6 +312,8 @@ export async function laddaUpp({ brand, manifest, klient = null, skarpt = false,
 
   // 3. segment -----------------------------------------------------------------
   const segIds = {};
+  const segSkapadeNu = new Set();
+  const segVerifierade = new Set();
   if (kor('segment')) {
     for (const s of SEGMENT) {
       try {
@@ -282,9 +322,10 @@ export async function laddaUpp({ brand, manifest, klient = null, skarpt = false,
         const definition = s.bygg(ids);
         if (s.kampanjOk) kravSamtycke(definition, s.namn);
         const f = await finns('segment', s.namn);
-        if (f) { segIds[s.namn] = f.id; hoppa('segment', s.namn, `finns redan (${f.id})`); continue; }
+        if (f) { frammande('segment', s.namn, f); segIds[s.namn] = f.id; hoppa('segment', s.namn, `finns redan (${f.id})`); continue; }
         const svar = await skriv('segment', s.namn, 'POST', '/api/segments', { data: { type: 'segment', attributes: { name: s.namn, definition } } });
         segIds[s.namn] = svar.data.id;
+        segSkapadeNu.add(s.namn);
       } catch (e) { stoppa('segment', s.namn, e); }
     }
   }
@@ -306,13 +347,19 @@ export async function laddaUpp({ brand, manifest, klient = null, skarpt = false,
       throw e;
     }
     if (inkludera && bib) kravSamtycke(bib.bygg(ids), namn);
-    if (segIds[namn]) return segIds[namn];
+    // Ett segment som redan fanns i Klaviyo kontrolleras på sin RIKTIGA definition,
+    // även när namnet finns i segment.mjs: någon kan ha byggt det för hand eller
+    // ändrat det i Klaviyo. Bara det som skapades i den här körningen är känt.
+    const verifiera = async (id) => {
+      if (!inkludera || !klient || segSkapadeNu.has(namn) || segVerifierade.has(id) || String(id).startsWith('TORR-')) return;
+      const full = await klient.get(`/api/segments/${id}`, { 'fields[segment]': 'definition,name' });
+      kravSamtycke(full?.data?.attributes?.definition, namn);
+      segVerifierade.add(id);
+    };
+    if (segIds[namn]) { await verifiera(segIds[namn]); return segIds[namn]; }
     const f = await finns('segment', namn);
     if (f) {
-      if (inkludera && !bib && klient) {
-        const full = await klient.get(`/api/segments/${f.id}`, { 'fields[segment]': 'definition,name' });
-        kravSamtycke(full?.data?.attributes?.definition, namn);
-      }
+      await verifiera(f.id);
       segIds[namn] = f.id;
       return f.id;
     }
@@ -339,6 +386,7 @@ export async function laddaUpp({ brand, manifest, klient = null, skarpt = false,
         if (fel.length) { const e = new Error(`mallen ${fel.join(' och ')} (järnregel 4, MFL 20 §)`); e.kod = 'MALL_UTAN_AVREGISTRERING'; throw e; }
         const f = await finns('template', namn);
         if (f) {
+          frammande('mall', namn, f);
           tplIds[m.id] = f.id;
           if (uppdatera) {
             await skriv('mall', namn, 'PATCH', `/api/templates/${f.id}`, { data: { type: 'template', id: f.id, attributes: { html: m.html, text: m.text ?? null } } }, 'uppdaterad');
@@ -369,21 +417,37 @@ export async function laddaUpp({ brand, manifest, klient = null, skarpt = false,
         if (!m) throw Object.assign(new Error(`mejlet "${k.mejl_id}" finns inte i manifestet`), { kod: 'MEJL_SAKNAS' });
         if (!amne(m, 0)) throw Object.assign(new Error('ämnesrad A saknas'), { kod: 'AMNE_SAKNAS' });
         if (!k.segment?.length) throw Object.assign(new Error('kampanjen har inget segment att gå till'), { kod: 'PUBLIK_SAKNAS' });
-        if (k.planerad && Date.parse(k.planerad) < nu().getTime()) r.varningar.push(`${k.namn}: planerad tid ${k.planerad} har redan passerat — Klaviyo kan neka schemat, sätt ny tid i Klaviyo.`);
+        const f = await finns('campaign', k.namn);
+        frammande('kampanj', k.namn, f);
+        const status = f ? (f.attributes?.status ?? (f.franMinnet ? 'okänd (ur minnet)' : 'okänd')) : null;
+        if (f && !uppdatera) {
+          // Avbruten körning: kampanjen skapades men mallen hann inte kopplas. Koppla nu.
+          if (status === 'Draft' && klient && skarpt) {
+            const msg = await klient.get(`/api/campaigns/${f.id}/campaign-messages`, { include: 'template' });
+            const med = msg?.data?.[0];
+            if (med && !med.relationships?.template?.data?.id) {
+              const tplId = await mallIdFor(m);
+              await skriv('kampanjmall', k.namn, 'POST', '/api/campaign-message-assign-template', {
+                data: { type: 'campaign-message', id: med.id, relationships: { template: { data: { type: 'template', id: tplId } } } },
+              }, 'uppdaterad');
+              abRad(r, k, m);
+              continue;
+            }
+          }
+          hoppa('kampanj', k.namn, `finns redan (${f.id}, ${status})`); abRad(r, k, m); continue;
+        }
+        if (f && status !== 'Draft') { hoppa('kampanj', k.namn, `finns (${f.id}) men status är ${status}, inte Draft — rörs aldrig`); continue; }
+        const planerad = planeradTid(k, nu(), mallNamn(m));
         const inkludera = [];
         for (const s of k.segment) inkludera.push(await publikId(s, { inkludera: true }));
         const exkludera = [];
         for (const s of k.exkludera ?? []) exkludera.push(await publikId(s, { inkludera: false }));
         const tplId = await mallIdFor(m);
-        const kropp = kampanjKropp({ kampanj: k, mejl: m, brand, inkludera, exkludera });
+        const kropp = kampanjKropp({ kampanj: { ...k, planerad }, mejl: m, brand, inkludera, exkludera });
 
-        const f = await finns('campaign', k.namn);
         let kampanjId;
         let meddelandeId;
         if (f) {
-          const status = f.attributes?.status ?? (f.franMinnet ? 'okänd (ur minnet)' : 'okänd');
-          if (!uppdatera) { hoppa('kampanj', k.namn, `finns redan (${f.id}, ${status})`); abRad(r, k, m); continue; }
-          if (status !== 'Draft') { hoppa('kampanj', k.namn, `finns (${f.id}) men status är ${status}, inte Draft — rörs aldrig`); continue; }
           kampanjId = f.id;
           const a = kropp.data.attributes;
           await skriv('kampanj', k.namn, 'PATCH', `/api/campaigns/${kampanjId}`, { data: { type: 'campaign', id: kampanjId, attributes: { name: a.name, audiences: a.audiences, send_strategy: a.send_strategy, send_options: a.send_options, tracking_options: a.tracking_options } } }, 'uppdaterad');
@@ -411,6 +475,7 @@ export async function laddaUpp({ brand, manifest, klient = null, skarpt = false,
           throw Object.assign(new Error('flödets filter saknar "samtycke" — varje marknadsflöde kräver samtyckesvillkoret i profile_filter (järnregel 2)'), { kod: 'SAMTYCKE_SAKNAS' });
         }
         const f = await finns('flow', fl.namn);
+        frammande('flode', fl.namn, f);
         if (f) { hoppa('flode', fl.namn, `finns redan (${f.id}) — flöden skrivs aldrig över, ändra i Klaviyo eller byt versionsnummer`); continue; }
         let trigger;
         const t = fl.trigger ?? {};

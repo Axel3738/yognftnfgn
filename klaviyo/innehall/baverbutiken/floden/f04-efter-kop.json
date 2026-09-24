@@ -1,23 +1,62 @@
 {
   "id": "f04-efter-kop",
-  "namn": "Efter köp",
-  "memo": "Bara 3,3 % av köparna har köpt igen (mätt i Shopify 2026-09-24). Kunderna kommer från en annons för en enda nischprodukt. Flödet ska få andra köpet att hända inom samma nisch, med det erbjudande som redan finns: köp igen och få en gratisprodukt, lyckohjulet (Axels beslut 2026-09-13). Mejl 1 skickas när paketet rimligen har kommit fram (p90 20 dygn).",
+  "namn": "FLOW_order_efterkop_v2",
+  "memo": "Omgjort 2026-09-24 (BRIEFER.md → F04). Förra versionen påminde om erbjudandet dag 20, men TACKIGEN gäller bara 7 dagar från ordern, så påminnelsen kom efter att löftet gått ut. Nu introduceras erbjudandet redan i E1 (dag 4, medan det fortfarande gäller) och E2 (dag 18, efter leveransen) säljer vidare utan erbjudande.",
   "trigger": { "typ": "metrik", "metrik": ["Placed Order"] },
   "filter": ["samtycke"],
   "ateintrade": { "varaktighet": 30, "enhet": "day" },
   "steg": [
-    { "typ": "vanta", "enhet": "days", "varde": 20 },
+    { "typ": "vanta", "enhet": "days", "varde": 4 },
     { "typ": "mejl", "mejl": {
       "id": "f04-efter-kop-e1",
-      "namn": "FLOW_order_E1_M_kom-allt-fram_v1",
-      "memo": "p90 för leverans är 20 dygn (klaviyo/brands/baverbutiken.json#leverans_p90_dygn), så paketet ska rimligen ha kommit. Erbjudandet introduceras här första gången efter köp.",
+      "namn": "FLOW_order_E1_M_din-bestallning-ar-pa-vag_v1",
+      "memo": "Dag 4: paketet är inte framme än, men avsändaren är känd nu och det är rätt läge att förklara leveransen innan kunden hör av sig och undrar. TACKIGEN gäller 7 dagar från ordern (mejl/konfig.json), så erbjudandet måste introduceras nu för att hinna nyttjas, inte dag 20 som förut.",
       "taggar": {
         "typ": "M",
         "kalla": "egen-data",
-        "kalla_ref": "klaviyo/brands/baverbutiken.json",
+        "kalla_ref": "mejl/konfig.json#erbjudande, klaviyo/brands/baverbutiken.json#leverans_p90_dygn",
         "lardom": null,
-        "avatar": "kunden vars paket borde ha kommit fram nu",
-        "begar": "veta att paketet kom fram, och få hjälp om det inte gjorde det",
+        "avatar": "kunden som just beställt och inte hört något sen dess",
+        "begar": "veta hur lång tid det tar och kunna se paketet själv, utan att behöva mejla",
+        "awareness": "product",
+        "urgency": "konsekvens",
+        "confidence": "medium",
+        "prefix": "Efterkop",
+        "kod": "M"
+      },
+      "amnesrader": [
+        { "text": "Din beställning är på väg", "begar": "lugna, direkt bekräftelse på att allt rullar" },
+        { "text": "Så hittar du paketet med en gång", "begar": "kunna spåra själv utan att mejla" },
+        { "text": "En gåva om du handlar igen den här veckan", "begar": "introducera erbjudandet innan det går ut" }
+      ],
+      "forhandstext": "Så lång tid tar det, och var du ser paketet just nu.",
+      "block": [
+        { "typ": "text", "rubrik": "Din beställning är på väg", "text": "Leveransen tar normalt 5-10 arbetsdagar. Du behöver inte gissa, paketnumret börjar på BB- och du hittar det i orderbekräftelsen, sedan kan du se exakt var det är just nu." },
+        { "typ": "grundare", "text": "Ser det konstigt ut eller känns det för långsamt, mejla kundsupport@baverbutiken.se och jag svarar själv." },
+        { "typ": "knapp", "text": "Följ ditt paket", "lank": "url:https://baverbutiken.se/pages/spara" },
+        { "typ": "erbjudande", "text": "Redan sugen på nästa pryl? Snurra hjulet, det gäller bara en vecka från din beställning." }
+      ],
+      "tretest": [
+        { "rad": "Din beställning är på väg", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Så hittar du paketet med en gång", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "En gåva om du handlar igen den här veckan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Så lång tid tar det, och var du ser paketet just nu.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Din beställning är på väg (rubrik)", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+      ],
+      "format": "rentext"
+    } },
+    { "typ": "vanta", "enhet": "days", "varde": 14 },
+    { "typ": "mejl", "mejl": {
+      "id": "f04-efter-kop-e2",
+      "namn": "FLOW_order_E2_M_kom-allt-fram_v1",
+      "memo": "Dag 18, efter att paketet rimligen kommit fram (p90 20 dygn räknas till leverans, men leveransen sker oftast tidigare). Erbjudandet från E1 har gått ut (7 dagar), så det upprepas inte. I stället produktrad med storsäljare, för att flytta blicken mot andra köp utan ett tidsbegränsat erbjudande att luta sig mot.",
+      "taggar": {
+        "typ": "M",
+        "kalla": "egen-data",
+        "kalla_ref": "klaviyo/brands/baverbutiken.json#leverans_p90_dygn",
+        "lardom": null,
+        "avatar": "kunden vars paket rimligen har kommit fram nu",
+        "begar": "bekräfta att leveransen gick bra, och få hjälp om den inte gjorde det",
         "awareness": "product",
         "urgency": "ingen",
         "confidence": "medium",
@@ -26,59 +65,22 @@
       },
       "amnesrader": [
         { "text": "Kom allt fram som det ska", "begar": "bekräfta att leveransen gick bra" },
-        { "text": "Saknar du fortfarande paketet", "begar": "få hjälp om leveransen strular" },
-        { "text": "En gåva om du redan handlat klart", "begar": "introducera erbjudandet" }
+        { "text": "Säg till om något saknas", "begar": "få hjälp om något är fel" },
+        { "text": "Det här köper andra kunder mest just nu", "begar": "se vad som säljer bäst i butiken" }
       ],
-      "forhandstext": "Fick du allt. Och en gåva om du redan är klar.",
+      "forhandstext": "Vid det här laget brukar paketet ha landat.",
       "block": [
-        { "typ": "text", "rubrik": "Kom allt fram?", "text": "Det brukar ha kommit fram vid det här laget. Saknar du något eller ser det konstigt ut, mejla kundsupport@baverbutiken.se eller kolla spårningssidan, den visar exakt var paketet är." },
-        { "typ": "erbjudande", "text": "Du har redan handlat en gång. Snurra hjulet och se vad du kan vinna till nästa köp." },
-        { "typ": "produktrad", "rubrik": "Andra som köpte det du köpte, köpte även det här", "handles": ["takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan", "batmotorskydd-420d-heltackande-for-utombordare", "overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"] }
-      ],
-      "tretest": [
-        { "rad": "Kom allt fram som det ska", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-        { "rad": "Saknar du fortfarande paketet", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-        { "rad": "En gåva om du redan handlat klart", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-        { "rad": "Fick du allt. Och en gåva om du redan är klar.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-        { "rad": "Kom allt fram?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-        { "rad": "Andra som köpte det du köpte, köpte även det här", "visualisera": true, "falsifiera": true, "ingen_annan": true }
-      ]
-    } },
-    { "typ": "vanta", "enhet": "days", "varde": 14 },
-    { "typ": "mejl", "mejl": {
-      "id": "f04-efter-kop-e2",
-      "namn": "FLOW_order_E2_S_nytt-for-sasongen_v1",
-      "memo": "Säsongsprodukter till en köpare som redan litar på butiken. Erbjudandet upprepas för den som inte snurrat hjulet än.",
-      "taggar": {
-        "typ": "S",
-        "kalla": "egen-data",
-        "kalla_ref": null,
-        "lardom": null,
-        "avatar": "tidigare köpare, säsongen har hunnit byta sedan köpet",
-        "begar": "hitta nästa relevanta pryl för hösten eller vintern",
-        "awareness": "solution",
-        "urgency": "sasong",
-        "confidence": "medium",
-        "prefix": "Efterkop",
-        "kod": "S"
-      },
-      "amnesrader": [
-        { "text": "Nytt sen du handlade senast", "begar": "se vad som tillkommit i sortimentet" },
-        { "text": "Sotarsetet, lampan och damaskerna", "begar": "se konkreta produktnamn" },
-        { "text": "Hjulet väntar fortfarande på dig", "begar": "påminna om outnyttjat erbjudande" }
-      ],
-      "forhandstext": "Fyra prylar för säsongen, och gåvan om du inte snurrat än.",
-      "block": [
-        { "typ": "produktrad", "rubrik": "Nytt för säsongen", "handles": ["sotarset-med-bojliga-stanger-rensar-rokkanal-och-kaminror", "solcellslampa-med-rorelsesensor-tre-huvuden-210-led", "damasker-vandring-haller-sno-vata-grus-ute", "adventskalender-racingbilar-24-bilar-bakom-24-luckor"] },
-        { "typ": "erbjudande", "text": "Har du inte snurrat hjulet än, det väntar fortfarande på dig." },
+        { "typ": "text", "rubrik": "Kom allt fram?", "text": "Vid det här laget brukar paketet ha kommit fram. Ser något konstigt ut eller saknas något, mejla kundsupport@baverbutiken.se, vi löser det." },
+        { "typ": "produktrad", "rubrik": "Andra som köpte det du köpte, köpte även det här", "handles": ["takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan", "batmotorskydd-420d-heltackande-for-utombordare", "overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"] },
         { "typ": "fakta" }
       ],
       "tretest": [
-        { "rad": "Nytt sen du handlade senast", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-        { "rad": "Sotarsetet, lampan och damaskerna", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-        { "rad": "Hjulet väntar fortfarande på dig", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-        { "rad": "Fyra prylar för säsongen, och gåvan om du inte snurrat än.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-        { "rad": "Nytt för säsongen", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+        { "rad": "Kom allt fram som det ska", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Säg till om något saknas", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Det här köper andra kunder mest just nu", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Vid det här laget brukar paketet ha landat.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Kom allt fram?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Andra som köpte det du köpte, köpte även det här", "visualisera": true, "falsifiera": true, "ingen_annan": true }
       ]
     } }
   ]

@@ -504,6 +504,112 @@ const BLOCK = {
   dynamisk: dynamiskBlock,
 };
 
+// ---------------------------------------------------------------------------
+// format: "rentext" — ett personligt mejl från Axel (ARKITEKTUR.md, mejlnivå).
+// Ingen hero, inga produktkort, ingen svart logga-rad: brödtext i Arial 16px,
+// högst en länk, signaturen "Axel, <butik>" och samma juridiska sidfot.
+// Klaviyo rekommenderar ren text för välkomst E1, efter köp E1 och sunset.
+// ---------------------------------------------------------------------------
+
+export const RENTEXT_BLOCK = ['text', 'knapp', 'grundare', 'fakta', 'erbjudande'];
+const RT_BROD = 'font-family: Arial,Helvetica,sans-serif; font-size: 16px; line-height: 1.6;';
+
+function rtStycken(s, text, lage) {
+  return stycken(text)
+    .map((st) => `<p style="${RT_BROD} color: ${s.svart}; margin: 0 0 16px;">${kundtext(st, lage).replace(/\n/g, '<br>')}</p>`)
+    .join('\n              ');
+}
+
+function rtLank(s, text, href) {
+  return `<p style="${RT_BROD} margin: 0 0 16px;"><a href="${href}" target="_blank" style="color: ${s.svart}; font-weight: bold; text-decoration: underline;">${esk(text)}</a></p>`;
+}
+
+const RENTEXT = {
+  text(b, ctx) {
+    const { s, lage } = ctx;
+    return rad(
+      (b.rubrik ? `<p style="${RT_BROD} font-weight: bold; color: ${s.svart}; margin: 0 0 8px;">${kundtext(b.rubrik, lage)}</p>` : '') + rtStycken(s, b.text, lage),
+      '0 32px 0'
+    );
+  },
+  knapp(b, ctx) {
+    return rad(rtLank(ctx.s, b.text, esk(lank(b.lank, ctx))), '0 32px 0');
+  },
+  // Hela mejlet är redan från Axel: grundarblocket blir vanliga stycken.
+  grundare(b, ctx) {
+    return rad(rtStycken(ctx.s, b.text, ctx.lage), '0 32px 0');
+  },
+  fakta(b, ctx) {
+    const { s, brand } = ctx;
+    const rader = [
+      brand.leverans_text ? `Leverans: ${esk(brand.leverans_text)}` : null,
+      brand.angerratt_text ? `Ångerrätt: ${esk(brand.angerratt_text)}` : null,
+      brand.sparningssida ? `Spåra paketet: <a href="${esk(brand.sparningssida)}" target="_blank" style="color: ${s.svart};">${esk(brand.sparningssida.replace(/^https:\/\//, ''))}</a>` : null,
+    ].filter(Boolean);
+    return rad(`<p style="${RT_BROD} color: ${s.svart}; margin: 0 0 16px;">${rader.join('<br>')}</p>`, '0 32px 0');
+  },
+  erbjudande(b, ctx) {
+    const { s, lage, erbjudande: e, brand } = ctx;
+    if (!e?.kod) {
+      ctx.varningar.push('Erbjudandet saknas i brandets konfig (erbjudande_fran), blocket utgår.');
+      return '';
+    }
+    const vinster = (e.gratisprodukter ?? []).map((h) => ctx.produkt(h)).filter((p) => p?.bild);
+    const maxVarde = vinster.length ? Math.max(...vinster.map((p) => p.pris)) : null;
+    const hjulUrl = `${brand.butik_url.replace(/\/$/, '')}/pages/${e.hjul_handle ?? e.kollektion_handle ?? 'din-gratisprodukt'}`;
+    const v = erbjudandeVillkor(e, maxVarde);
+    return rad(
+      (b.text ? rtStycken(s, b.text, lage) : '') +
+      `<p style="${RT_BROD} color: ${s.svart}; margin: 0 0 16px;">${esk(v.kort)} Din gåvokod: <strong>${esk(e.kod)}</strong></p>` +
+      rtLank(s, 'Snurra hjulet', esk(hjulUrl)) +
+      `<p style="font-family: Arial,Helvetica,sans-serif; font-size: 12px; line-height: 1.5; color: ${s.gra}; margin: 0 0 16px;">${esk(v.finstilt)}</p>`,
+      '0 32px 0'
+    );
+  },
+};
+
+export function signatur(ctx) {
+  return `${ctx.stil.grundare ?? 'Axel'}, ${ctx.brand.namn}`;
+}
+
+function rentextDokument(ctx, { titel, forhandstext, rader }) {
+  const { s, brand, lage } = ctx;
+  const avreg = lage === 'klaviyo' ? "{% unsubscribe 'Avregistrera dig' %}" : `<a href="#" style="color: ${s.gra};">Avregistrera dig</a>`;
+  const org = lage === 'klaviyo' ? '{{ organization.name }}, {{ organization.full_address }}' : `${esk(brand.namn)}, (adressen hämtas ur Klaviyo)`;
+  const utfyllnad = '&#847;&zwnj;&nbsp;'.repeat(60);
+  return `<!DOCTYPE html>
+<html lang="${esk(brand.sprak ?? 'sv')}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="x-apple-disable-message-reformatting">
+  <title>${kundtext(titel, lage)}</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: #ffffff;">
+  <div style="display: none; max-height: 0; overflow: hidden; mso-hide: all;">${kundtext(forhandstext, lage)}${utfyllnad}</div>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff">
+    <tr>
+      <td align="left" style="padding: 24px 0 8px;">
+        <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="max-width: 600px; width: 100%;">${rader}
+          <tr>
+            <td style="padding: 0 32px 24px;"><p style="${RT_BROD} color: ${s.svart}; margin: 0;">${esk(signatur(ctx))}</p></td>
+          </tr>
+          <tr>
+            <td style="padding: 16px 32px 28px; border-top: 1px solid ${s.ram};">
+              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 12px; line-height: 1.7; color: ${s.gra}; margin: 0;">${esk(varforText(brand))}</p>
+              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 12px; line-height: 1.7; color: ${s.gra}; margin: 4px 0 0;">${avreg}</p>
+              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 12px; line-height: 1.7; color: ${s.gra}; margin: 4px 0 0;">${org}</p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+`;
+}
+
 // Villkoren i klartext ur konfigen. Samma formuleringar som notiserna
 // (mejl/copy.json → upsell), men beloppen läses ur konfigen och Shopify.
 export function erbjudandeVillkor(e, maxVarde = null) {
@@ -636,7 +742,7 @@ function textversion(mejl, ctx) {
         ut.push(`${b.text}: ${lank(b.lank, { ...ctx, varningar: [] })}`);
         break;
       case 'grundare':
-        ut.push(`${t(b.text)}\n${ctx.stil.grundare ?? 'Axel'}, grundare`);
+        ut.push(mejl.format === 'rentext' ? t(b.text) : `${t(b.text)}\n${ctx.stil.grundare ?? 'Axel'}, grundare`);
         break;
       case 'fakta':
         ut.push(`Leverans: ${brand.leverans_text}\nÅngerrätt: ${brand.angerratt_text}\nSpåra paketet: ${brand.sparningssida}`);
@@ -662,6 +768,7 @@ function textversion(mejl, ctx) {
         break;
     }
   }
+  if (mejl.format === 'rentext') ut.push(signatur(ctx));
   ut.push('--');
   ut.push(varforText(brand));
   ut.push(lage === 'klaviyo' ? 'Avregistrera dig: {% unsubscribe_link %}' : 'Avregistrera dig: (länken sätts av Klaviyo)');
@@ -702,16 +809,19 @@ export function byggMejl(mejl, { brand, stil = null, erbjudande = undefined, pro
     handles: handlesI(mejl),
     varningar,
   };
+  const rentext = mejl.format === 'rentext';
+  if (mejl.format && !rentext) varningar.push(`Okänt format "${mejl.format}", mejlet byggs som vanligt.`);
+  const bibliotek = rentext ? RENTEXT : BLOCK;
   let rader = '';
   for (const b of mejl.block ?? []) {
-    const f = BLOCK[b.typ];
+    const f = bibliotek[b.typ];
     if (!f) {
-      varningar.push(`Okänd blocktyp "${b.typ}", blocket utgår.`);
+      varningar.push(rentext ? `Blocktypen "${b.typ}" finns inte i ett rentext-mejl, blocket utgår.` : `Okänd blocktyp "${b.typ}", blocket utgår.`);
       continue;
     }
     rader += f(b, ctx);
   }
-  const html = dokument(ctx, { titel: mejl.amnesrader?.[0]?.text ?? mejl.namn ?? '', forhandstext: mejl.forhandstext ?? '', rader });
+  const html = (rentext ? rentextDokument : dokument)(ctx, { titel: mejl.amnesrader?.[0]?.text ?? mejl.namn ?? '', forhandstext: mejl.forhandstext ?? '', rader });
   const text = textversion(mejl, ctx);
   return { html, text, varningar: [...new Set(varningar)] };
 }

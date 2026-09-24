@@ -79,6 +79,14 @@ export function sparrSkicka(metod, sokvag, kropp) {
   if (/^\/api\/(flow-send|send-)/.test(s)) stopp(`${metod} ${s} skickar`);
   if (metod === 'GET' || !kropp) return;
   const attr = kropp?.data?.attributes ?? {};
+  // Kampanj utan sändtid blir "Immediate" i Klaviyo (specen: send_strategy defaults
+  // to Immediate). Ett klick på Send i Klaviyo skickar då direkt. Motorn sätter
+  // alltid en planerad tid.
+  if (/^\/api\/campaigns(\/[^/]+)?$/.test(s)) {
+    const st = attr.send_strategy;
+    if (metod === 'POST' && !st?.method) stopp('kampanjen saknar send_strategy — Klaviyo gör den då till "skicka direkt"');
+    if (st && st.method !== 'static') stopp(`kampanjen skulle få send_strategy "${st.method}", motorn sätter bara "static" med en planerad tid`);
+  }
   if (/^\/api\/flows(\/|$)/.test(s)) {
     if (attr.status && attr.status !== 'draft') stopp(`flödet skulle få status "${attr.status}"`);
     for (const a of attr.definition?.actions ?? []) {

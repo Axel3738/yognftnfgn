@@ -124,3 +124,14 @@ test('metriker: två med samma namn är stopp, inte ett val', () => {
   const m = [{ id: 'A', namn: 'Placed Order', integration: 'Shopify' }, { id: 'B', namn: 'Placed Order', integration: 'API' }];
   assert.throws(() => metrikId(m, 'Placed Order'), (e) => e.kod === 'METRIK_FLERA' && /A från Shopify/.test(e.message));
 });
+
+test('spärren: kampanj utan send_strategy eller med "immediate" skapas aldrig', () => {
+  const kamp = (st) => ({ data: { type: 'campaign', attributes: { name: 'x', ...(st === undefined ? {} : { send_strategy: st }) } } });
+  assert.throws(() => sparrSkicka('POST', '/api/campaigns', kamp(undefined)), (e) => e.kod === 'SPARR_SKICKA');
+  assert.throws(() => sparrSkicka('POST', '/api/campaigns', kamp({ method: 'immediate' })), (e) => e.kod === 'SPARR_SKICKA');
+  assert.throws(() => sparrSkicka('PATCH', '/api/campaigns/C1', kamp({ method: 'immediate' })), (e) => e.kod === 'SPARR_SKICKA');
+  assert.doesNotThrow(() => sparrSkicka('POST', '/api/campaigns', kamp({ method: 'static', datetime: '2026-10-01T16:00:00Z', options: { is_local: false } })));
+  assert.doesNotThrow(() => sparrSkicka('PATCH', '/api/campaigns/C1', kamp(undefined)));
+  // campaign-messages och assign-template berörs inte
+  assert.doesNotThrow(() => sparrSkicka('PATCH', '/api/campaign-messages/M1', { data: { attributes: { definition: {} } } }));
+});

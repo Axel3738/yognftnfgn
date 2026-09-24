@@ -12,7 +12,7 @@
 // visst sammanhang: dynamiska block kräver ett metrikflöde, erbjudandet
 // kräver köpare.
 
-import { handlesI } from './mallar.mjs';
+import { handlesI, RENTEXT_BLOCK } from './mallar.mjs';
 
 // Samma idé som kundtjanst/autosvar/svar.mjs: ett enda tankstreck syns direkt
 // som AI-text (Axels feedback 2026-09-22). Intervall skrivs "5-10".
@@ -124,6 +124,16 @@ export function validera(mejl, { html = null, text = null, produkter = [], brand
     const mall = t.replace(/\{\{fornamn\}\}/g, '');
     if (/\{\{|\{%/.test(mall)) fel.push(`Mallspråk i copyn (${var_}): bara {{fornamn}} är tillåtet.`);
     if (/\{\{\s*f[oö]rnamn\s*\}\}/i.test(t) && !t.includes('{{fornamn}}')) fel.push(`Felstavad platshållare i ${var_}: skriv exakt {{fornamn}}.`);
+  }
+
+  // format: "rentext" — personligt mejl, bara vissa block och högst en knapp.
+  if (mejl.format !== undefined && mejl.format !== null && mejl.format !== 'rentext') fel.push(`Okänt format "${mejl.format}" (bara "rentext" finns).`);
+  if (mejl.format === 'rentext') {
+    (mejl.block ?? []).forEach((b, i) => {
+      if (!RENTEXT_BLOCK.includes(b.typ)) fel.push(`Block ${i + 1} (${b.typ}) får inte stå i ett rentext-mejl. Tillåtna: ${RENTEXT_BLOCK.join(', ')}.`);
+    });
+    const knappar = (mejl.block ?? []).filter((b) => b.typ === 'knapp').length;
+    if (knappar > 1) fel.push(`Rentext-mejlet har ${knappar} knappar, högst en.`);
   }
 
   // Blocken

@@ -55,10 +55,17 @@ export function metrikId(metriker, namnLista) {
 export function metrikIds(metriker) {
   const ids = {};
   const saknas = [];
+  const tvetydiga = [];
   for (const [nyckel, namn] of Object.entries(KANDA_METRIKER)) {
     try { ids[nyckel] = metrikId(metriker, namn); } catch (e) { saknas.push({ nyckel, namn, orsak: e.message, kod: e.kod }); }
+    // Båda kassanamnen i kontot (gammal och ny Shopify-integration): första namnet
+    // väljs, men det kan vara den döda metriken — ett flöde på den triggar aldrig.
+    const finns = namn.filter((n) => metriker.some((m) => m.namn === n));
+    if (finns.length > 1) {
+      tvetydiga.push(`Metriken ${nyckel} finns under flera namn i kontot (${finns.map((n) => `"${n}"`).join(', ')}); motorn tar "${finns[0]}". Kontrollera i Klaviyo → Analytics → Metrics vilken som får händelser nu — ett flöde på fel metrik triggar aldrig.`);
+    }
   }
-  return { ids, saknas };
+  return { ids, saknas, tvetydiga };
 }
 
 /** Torrkörning utan nyckel: platshållare i stället för id, så planen går att läsa. */
