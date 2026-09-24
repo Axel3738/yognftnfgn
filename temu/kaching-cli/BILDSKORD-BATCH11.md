@@ -6,6 +6,11 @@ molnsessionen bygger gallerierna efteråt. Offerten: MASTER-arket, batch 11–13
 
 ---
 
+Två saker kräver att Axel sitter vid datorn (lärdom 2026-09-24):
+- **Temu-länkarna** (rcdrift, bordsfotboll, magnetblock) visar en inloggningsruta i Chrome-fönstret —
+  Axel loggar in eller stänger rutan, annars blir det 0 bilder eller bara Temus rekommendationer.
+- **`git push`** kräver GitHub-inloggning på datorn — ett webbläsarfönster öppnas första gången.
+
 Dra ner senaste från git först. Kör sedan, från repo-roten:
 
 ```

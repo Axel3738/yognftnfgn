@@ -4,4 +4,6 @@ pipeline/output/
 .env
 # Bildskördarens Chrome-profil (kakor, inloggning) — aldrig i ett publikt repo
 temu/kaching-cli/profile-temu/
+temu/kaching-cli/profile-ali/
+temu/bildskord/prov*/
 temu/kaching-cli/profile/

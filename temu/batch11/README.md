@@ -77,3 +77,15 @@ Fyra saker jag hade fel eller obesvarade, rättade samma dag:
   förklarad — asken bär ett registrerat varumärke utan licens, så risken är nedtagning/krav och
   Meta-avslag. Skyddet vi har: namnet skrivs aldrig i copy, alt-texter, taggar eller video —
   "retrobuss"/"campingbuss". Byggd SE + NO på QC-bilderna 30–31.
+
+## Skörden 2026-09-24 (Axels dator, lokal session) — att veta när gallerierna byggs
+32 av 34 mappar skördade och rensade lokalt (committade som `8db81aa0`, push väntar på Axels
+GitHub-inloggning). Kvar: **rcdrift** och **bordsfotboll** (Temu visade inloggningsruta — körs om
+med Axel vid datorn). Anteckningar från rensningen:
+- `slangboxhuv`: bara 1 bild — sidan laddar inte fler, kört två gånger.
+- `poolpumphuv`: 3 bilder, `fonstertermomatta`: 4 bilder — tunna gallerier, komplettera med AI-livsstil (märkt).
+- `rullknivslip`: bild 10 visar ett annat varumärke ("LUXE SPHERE") — använd inte.
+- `adelstenskalender`: bild 10 och 13 visar en annan askdesign, troligen en variant — kolla mot vår röda ask innan de används.
+- `magnetblock`: bilderna 01, 02, 03, 06, 08, 09 är produkten.
+- Lokala sessionens lärdom: `git add temu/bildskord` hade tagit med testmapparna `prov*` — nu i `.gitignore`
+  tillsammans med `temu/kaching-cli/profile-ali/`.

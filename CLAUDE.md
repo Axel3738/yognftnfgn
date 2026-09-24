@@ -435,6 +435,12 @@ Bakgrund: Temu blockerar molnmiljön (Chromium resettas, curl får tomt skal) me
 `img.kwcdn.com` är öppet — skörden kräver Axels dator, allt annat gör molnet.
 Skörden pushas till branchen → molnsessionen fyller gallerierna med bilder,
 GIF:ar och video i efterhand.
+**Prompten ska säga rakt ut vad som kräver Axel vid datorn:** Temu-länkar visar en
+inloggningsruta i Chrome-fönstret (annars 0 bilder eller bara rekommendationer), och `git push`
+kräver GitHub-inloggning på datorn. *(2026-09-24: den lokala sessionen körde 32 av 34 mappar
+ensam, men Temu-produkterna fick 0 bilder och pushen stannade på inloggningen — Axel: "VAD SKA
+JAG GÖRA?")* Axels dator är en **Windows-maskin** (`C:\Users\…\yognftnfgn`), inte en Mac —
+skriv kommandon som funkar i PowerShell, och skörden pushas till **den här branchen**, inte main.
 **AliExpress-länkar** (batch 11–13 var nästan bara sådana) skördas med
 `temu/kaching-cli/ali-bilder.mjs` — samma flöde, andra CDN-domäner; AliExpress lastar in
 många andra produkters bilder, så mappen måste rensas innan den pushas. Har CWD skickat
