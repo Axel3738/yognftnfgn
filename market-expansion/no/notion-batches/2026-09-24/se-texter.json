@@ -1,0 +1,8 @@
+{
+ "Takoverdrag_OB_5_1": { "former": [
+   { "typ": "rubrik", "rader": ["Ja, det blir tätt."], "stil": "svart fet rubrik DIREKT på vit bakgrund, ingen platta, centrerad" },
+   { "typ": "rubrik", "rader": ["Fast bara taket."], "stil": "svart fet rubrik DIREKT på vit bakgrund, egen mening (inget block med raden ovanför), centrerad" },
+   { "typ": "rubrik", "rader": ["Det här täcker bara taket. Sidorna är öppna."], "stil": "svart normal underrad direkt på vit bakgrund, mindre, centrerad" },
+   { "typ": "platta", "rader": ["1 129 kr (ord. 1 469 kr)"], "stil": "svart fet text på ljusgrå platta nederst, centrerad" },
+   { "typ": "knapp", "rader": ["Beställ ditt taköverdrag"], "stil": "blå knapp, vit fet text, centrerad" } ] }
+}

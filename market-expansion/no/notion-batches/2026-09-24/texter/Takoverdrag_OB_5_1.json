@@ -1,0 +1,79 @@
+[
+ {
+  "box": [
+   200,
+   68,
+   880,
+   146
+  ],
+  "rader": 1,
+  "fet": true,
+  "storlek": 73,
+  "farg": [
+   17,
+   17,
+   17
+  ],
+  "text": "Ja, det blir tett."
+ },
+ {
+  "box": [
+   200,
+   189,
+   880,
+   267
+  ],
+  "rader": 1,
+  "fet": true,
+  "storlek": 73,
+  "farg": [
+   17,
+   17,
+   17
+  ],
+  "text": "Men bare taket."
+ },
+ {
+  "box": [
+   180,
+   324,
+   900,
+   363
+  ],
+  "rader": 1,
+  "fet": false,
+  "storlek": 30,
+  "farg": [
+   17,
+   17,
+   17
+  ],
+  "text": "Dette dekker bare taket. Sidene er åpne."
+ },
+ {
+  "box": [
+   50,
+   1005,
+   1030,
+   1106
+  ],
+  "rader": 1,
+  "fet": true,
+  "storlek": 67,
+  "farg": [
+   17,
+   17,
+   17
+  ],
+  "fyll": "ljus",
+  "alfa": 255,
+  "text": "1 189 kr (før 1 549 kr)"
+ },
+ {
+  "form": 7,
+  "text": "Bestill takovertrekket",
+  "rad": 0,
+  "se": "Beställ ditt taköverdrag",
+  "vanster": false
+ }
+]

@@ -1,0 +1,85 @@
+{
+ "_kommentar": "Takoverdrag_OB_5_1: fyra av fem textelement saknar platta — svart text direkt på vit bakgrund — så formdetektorn hittar dem aldrig (den tog i stället husbilens fönster och hjul för plattor). Rutorna nedan är MÄTTA på bilden, inte gissade: rubrikrad 1 y 78-135, rad 2 y 199-256, underraden y 332-354, prisraden y 1013-1097. Knappen (form 4) hittar detektorn själv.",
+ "Takoverdrag_OB_5_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      200,
+      68,
+      880,
+      146
+     ],
+     "post": 0,
+     "rader": 1,
+     "fet": true,
+     "storlek": 73,
+     "farg": [
+      17,
+      17,
+      17
+     ]
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      200,
+      189,
+      880,
+      267
+     ],
+     "post": 0,
+     "rader": 1,
+     "fet": true,
+     "storlek": 73,
+     "farg": [
+      17,
+      17,
+      17
+     ]
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      180,
+      324,
+      900,
+      363
+     ],
+     "post": 0,
+     "rader": 1,
+     "fet": false,
+     "storlek": 30,
+     "farg": [
+      17,
+      17,
+      17
+     ]
+    }
+   ],
+   "3": [
+    {
+     "box": [
+      50,
+      1005,
+      1030,
+      1106
+     ],
+     "post": 0,
+     "rader": 1,
+     "fet": true,
+     "storlek": 67,
+     "farg": [
+      17,
+      17,
+      17
+     ],
+     "fyll": "ljus",
+     "alfa": 255
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,27 @@
+{
+  "Takoverdrag_OB_5_1": {
+    "malnamn": "Takovertrekk_NO_OB_5_1",
+    "former": [
+      { "texter": [{ "rader": [0], "text": "Ja, det blir tett." }] },
+      { "texter": [{ "rader": [0], "text": "Men bare taket." }] },
+      { "texter": [{ "rader": [0], "text": "Dette dekker bare taket. Sidene er åpne." }] },
+      { "texter": [{ "rader": [0], "text": "1 189 kr (før 1 549 kr)" }] },
+      { "texter": [{ "rader": [0], "text": "Bestill takovertrekket" }] }
+    ],
+    "copy": {
+      "message": "Du har rett: et heldekkende trekk rundt hele vognen blir tett rundt om.\nDette dekker bare taket, 6,5 × 3 m – sidene er åpne, akkurat som før.\nRegnet renner av den sølvbelagte 210D-oxfordveven i stedet for å bli stående.\n1 189 kr (før 1 549 kr, spar 360 kr / 23 %). Bestill takovertrekket.",
+      "headline": "Ja, det blir tett. Men bare taket.",
+      "description": ""
+    },
+    "andringar": [
+      "1 129 kr → 1 189 kr",
+      "1 469 kr → 1 549 kr (jämförpris/'ord.')",
+      "340 kr → 360 kr (spar-beloppet)",
+      "23 % rabatt oförändrad",
+      "Länk: baverbutiken.se-produktsida → https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
+      "Knapptext förkortad 'Beställ ditt taköverdrag' → 'Bestill takovertrekket' (bestämd form i stället för possessiv – 22 tecken mot källans 24, rymmer garanterat)",
+      "'ord.' (ordinarie) → 'før' (norsk prisstandard)",
+      "6,5 × 3 m och 210D oförändrade (språkneutrala)"
+    ]
+  }
+}
