@@ -815,6 +815,22 @@ Axels besked samma dag: testet var inget han valt ("vi ab testar ju
 recensioner") — fabriken lägger in `paket` automatiskt (`factory/paket.mjs`
 NIVAER, PROCESS.md steg 7).
 
+**Rabattestet AVSTÄNGT 2026-09-24 06:01 UTC** (Axels beslut: "då väljer vi A
+alla dagar i veckan … så länge det inte fuckar för alla andra marknader så
+tar vi bort detta test"). `ms_ab_tests` i temat `CaraShell – CRO v1`:
+`paket\nkorgtrygg` → `#paket\nkorgtrygg` — en rad, resten av filen
+byte-identisk. Recensionstestet `korgtrygg` rullar vidare orört. Trippelkoll:
+(1) API-tillbakaläsning, (2) kundens HTML i alla nio länder (SE, NO, DK, FI,
+US, GB, CA, AU, NZ) för båda produkterna — bara `korgtrygg` i konfigen, A
+synligt med 3 nivåer, B dolt, 18 av 18 gröna, (3) Chromium, även med gammal
+B-kaka (`ms_ab_paket=b`): A visas, 2 st −15 % / 3 st −20 % (SE 1 919,30 /
+2 709,60 kr, NO 931,60 / 1 315,20 kr, US $338,30 / $477,60, FI €215,73 /
+€304,56). B-koderna (`CARASHELLROO2B` …) står kvar aktiva, så en gammal
+varukorg med B-rabatt går fortfarande igenom. Produktfilerna bär
+`test_aktivt: false`, så ett nytt fabriksvarv skriver samma sak.
+⚠️ Sett i samma kontroll, INTE orsakat av ändringen: engelska paketvalet
+skriver decimalkomma (`$169,15 per cover`) i stället för punkt.
+
 **Omärkta ordrar:** 8 av 134 (`korgtrygg`) och 18 av 314 (`paket`, 1 härledd
 ur rabattkoden). CaraShells `ms-ab.js` är versionen från 2026-09-10 och saknar
 Matstrumpors efterstämpling (2026-09-19), som täppte samma hål där.

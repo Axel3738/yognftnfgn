@@ -540,7 +540,7 @@ test('rensaSettings på zip:ens riktiga settings_data: sociala länkar tömda, b
   assert.equal(c.blocks.judgeme_karna.type, JUDGEME_EMBED);
   assert.equal(c.logo, '');
   assert.equal(c.brand_image, '');
-  assert.equal(c.ms_ab_tests, 'paket');
+  assert.equal(c.ms_ab_tests, '#paket', 'paketvalets A/B är av utan test_aktivt: true');
   assert.equal(c.currency_code_enabled, true, 'NOK-marknad ⇒ valutakoden visas');
   assert.ok('Matstrumpor' in j.presets, 'presetnamnet är avbranda.stadaSettings sak, inte rensaSettings');
 });
@@ -907,6 +907,26 @@ test('slaIhopTester: paketvalets A/B får ALDRIG skrivas över av korgtestet', a
   // Utan paket-test ska korgtestet ändå in, annars sätts aldrig attributet.
   const r2 = rensaSettings({ current: { ms_ab_tests: '' } }, { extraTester: [KORGTRYGGHET_TEST] });
   assert.equal(r2.current.ms_ab_tests, 'korgtrygg');
+});
+
+test('paketvalets A/B (rabatterna) är AV om inte produktfilen säger test_aktivt: true — Axels beslut 2026-09-24', async () => {
+  const { rensaSettings, paketTest, KORGTRYGGHET_TEST } = await import('../tema.mjs');
+  const produkt = (paket) => ({ offer: { paket } });
+  // Standard: raden skrivs med # — ms-head hoppar över den, A syns för alla.
+  const av = rensaSettings({ current: {} }, { produkt: produkt({ test: 'paket' }), extraTester: [KORGTRYGGHET_TEST] });
+  assert.equal(av.current.ms_ab_tests, '#paket\nkorgtrygg');
+  assert.equal(rensaSettings({ current: {} }, { produkt: produkt({ test: 'paket', test_aktivt: false }) }).current.ms_ab_tests, '#paket');
+  // Uttryckligen på: testet går live precis som förut.
+  const pa = rensaSettings({ current: {} }, { produkt: produkt({ test: 'paket', test_aktivt: true }), extraTester: [KORGTRYGGHET_TEST] });
+  assert.equal(pa.current.ms_ab_tests, 'paket\nkorgtrygg');
+  // Ett redan avstängt id får inte två #.
+  assert.equal(rensaSettings({ current: {} }, { produkt: produkt({ test: '#paket' }) }).current.ms_ab_tests, '#paket');
+  // Mallen bygger fortfarande A- och B-blocken ur id:t: att stänga testet får
+  // aldrig ge ett paketblock utan variant (det renderar noll nivåer).
+  assert.equal(paketTest(produkt({ test: 'paket', test_aktivt: false })), 'paket');
+  const { kontrolleraPaket } = await import('../validera.mjs');
+  assert.deepEqual(kontrolleraPaket({ paket: { test: 'paket', test_aktivt: false } }, { pris: 100 }).fel, []);
+  assert.match(kontrolleraPaket({ paket: { test: 'paket', test_aktivt: 'nej' } }, { pris: 100 }).fel.join(' '), /test_aktivt/);
 });
 
 test('korgtrygghet: trygghetsradens kolumner tvingas till en — variabeln på föräldern biter inte', async () => {

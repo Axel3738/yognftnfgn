@@ -327,6 +327,12 @@ offer:
   # steg djupare rabatt. Inga egna nivåer behövs — mitten förvald.
   paket:
     test: "paket"
+    # AV sedan 2026-09-24 (Axels beslut: "vi ab testar inte rabatter" — A
+    # mot B gav 152 mot 144 köp, ingen skillnad). Temat skriver "#paket":
+    # A syns i alla marknader, B-nivåerna och B-koderna står kvar dolda.
+    # Ta inte bort id:t — då renderar paketblocket noll nivåer (tema.mjs
+    # paketTest). true slår på testet igen.
+    test_aktivt: false
     # Samma steg som fabrikens standard-A/B (paket.mjs NIVAER) — utskrivna
     # här bara för att TA BORT brickan "Bäst pris" på 3-packet (Axels order
     # 2026-09-17). Rabatt, koder (CARASHELLROO2A …) och handles är oförändrade.

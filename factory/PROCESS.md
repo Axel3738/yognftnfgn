@@ -138,7 +138,13 @@ Hela listan i `factory/README.md`.
 7. ⚙️ Paketen (steg 9–10): metaobjekt `ms_paketniva` (translatable PÅ från
    start) + riktiga rabattkoder som ger exakt paketpriset, ur `offer.paket` i
    produktfilen. A = källans Kaching-nivåer, B = testoffer, A/B via temats
-   ms-ab. **Förvald nivå är ALLTID mitten** (⌈n/2⌉), aldrig första (Axel
+   ms-ab. **Rabattestet är AV som standard** (Axels beslut 2026-09-24: "vi
+   ab testar inte rabatter" — CaraShell körde det i 12 dygn, A 152 mot B 144
+   köp, ingen skillnad): `rensaSettings` skriver `#paket` i `ms_ab_tests`, så
+   A syns för alla och B byggs men visas aldrig. `offer.paket.test_aktivt:
+   true` slår på det. Stäng det ALDRIG genom att tömma `offer.paket.test` —
+   då får mallen ett paketblock utan variant, och det renderar noll nivåer.
+   **Förvald nivå är ALLTID mitten** (⌈n/2⌉), aldrig första (Axel
    2026-09-07). Q4-ramverket (standard för VARJE OPS, Axel 2026-09-07): en
    billig komplementprodukt som (a) GRATIS bonus i paketnivåerna — antalet
    följer paketantalet, 2-pack ⇒ 2 gratis (Axel 2026-09-08) — och (b) betald
