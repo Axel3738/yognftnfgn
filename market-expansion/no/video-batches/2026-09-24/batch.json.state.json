@@ -21,7 +21,8 @@
   },
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "c124a4030e354ba99131344da0065a36-nb"
+  "renderId": "c124a4030e354ba99131344da0065a36-nb",
+  "downloaded": true
  },
  "kajakhallare_CS_1_H3": {
   "assetUrl": "https://resource2.heygen.ai/video/02534819798e459eab12937ada4f5298/original.mp4",
@@ -45,7 +46,8 @@
   },
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "834c04b1e45440ec87a1660054e2da05-nb"
+  "renderId": "834c04b1e45440ec87a1660054e2da05-nb",
+  "downloaded": true
  },
  "kajakhallare_GT_1_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/cb3036a96a9f42bdac3114187e20fabe/original.mp4",
@@ -69,7 +71,8 @@
   },
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "f6b335f5d02f4b1e8b8e3f512072b7fc-nb"
+  "renderId": "f6b335f5d02f4b1e8b8e3f512072b7fc-nb",
+  "downloaded": true
  },
  "kajakhallare_GT_1_H2": {
   "assetUrl": "https://resource2.heygen.ai/video/8414654f2a0c4d5a82baa72e7987a903/original.mp4",
@@ -93,7 +96,8 @@
   },
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "3d441b5c8da147ccb6437aefb6503825-nb"
+  "renderId": "3d441b5c8da147ccb6437aefb6503825-nb",
+  "downloaded": true
  },
  "kajakhallare_GT_1_H3": {
   "assetUrl": "https://resource2.heygen.ai/video/4a2f1b7b7e3b4ed48efba9d3b5d3450f/original.mp4",
@@ -117,7 +121,8 @@
   },
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "3e68b553a67944dba57c3062c0e7e5f7-nb"
+  "renderId": "3e68b553a67944dba57c3062c0e7e5f7-nb",
+  "downloaded": true
  },
  "kajakhallare_PD_1_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/9573023884494da297dc25612bb87d00/original.mp4",
@@ -141,7 +146,8 @@
   },
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "0214a89a64a549919e8f19f149cc2ce5-nb"
+  "renderId": "0214a89a64a549919e8f19f149cc2ce5-nb",
+  "downloaded": true
  },
  "kajakhallare_PD_1_H2": {
   "assetUrl": "https://resource2.heygen.ai/video/24580d1da52e457d8ba87ca3278cf73a/original.mp4",
@@ -165,7 +171,8 @@
   },
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "74692db40dfd48fdbbc0ced37440af22-nb"
+  "renderId": "74692db40dfd48fdbbc0ced37440af22-nb",
+  "downloaded": true
  },
  "kajakhallare_PD_1_H3": {
   "assetUrl": "https://resource2.heygen.ai/video/4644114a31424a989b572bd1d87737ac/original.mp4",
@@ -189,7 +196,9 @@
   },
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "9bf90fce2dc34bfc9b2335b5aba14751-nb"
+  "renderId": "9bf90fce2dc34bfc9b2335b5aba14751-nb",
+  "downloaded": "failed",
+  "error": "Insufficient credit. This operation requires 'api' credits."
  },
  "kajakhallare_SP_1_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/b84b52c2cf2a4899871a69684638d2b0/original.mp4",
@@ -213,7 +222,9 @@
   },
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "d5d8a61ff9864b5b9af3f465eb55344c-nb"
+  "renderId": "d5d8a61ff9864b5b9af3f465eb55344c-nb",
+  "downloaded": "failed",
+  "error": "Insufficient credit. This operation requires 'api' credits."
  },
  "kajakhallare_SP_1_H3": {
   "assetUrl": "https://resource2.heygen.ai/video/31853537ea9b469886374b60b72986ec/original.mp4",
@@ -237,7 +248,9 @@
   },
   "srtDone": true,
   "srtApplied": true,
-  "renderId": "b4c04b3602fa4e868bbbc1061ec84561-nb"
+  "renderId": "b4c04b3602fa4e868bbbc1061ec84561-nb",
+  "downloaded": "failed",
+  "error": "Insufficient credit. This operation requires 'api' credits."
  },
  "atv-kapell_CS_1_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/a81257cb4be54691a92f859d19faea6d/original.mp4",

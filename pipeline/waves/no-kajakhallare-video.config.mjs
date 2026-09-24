@@ -31,22 +31,18 @@ export default {
       },
       ads: [
         { name: 'Kajakkholder_NO_PD_1_H1', file: 'NO_kajakhallare_PD_1_H1.mp4' },
-        { name: 'Kajakkholder_NO_PD_1_H2', file: 'NO_kajakhallare_PD_1_H2.mp4' },
-        { name: 'Kajakkholder_NO_PD_1_H3', file: 'NO_kajakhallare_PD_1_H3.mp4' },
+        // PD_1_H2 RENDERADES men underkändes av röstkollen (rostkoll.py, 2026-09-24):
+        // "dubben låter 11.3 dB högre än källan i sina sista 100 ms — rösten hinner
+        // inte tala klart" (avhugget slut). PD_1_H3 renderades ALDRIG — HeyGen-kvoten
+        // tog slut mitt i kajakhallares renderingsomgång (RENDER FAIL "Insufficient
+        // credit"). Lägg tillbaka båda när de renderats om och klarat röstkollen.
       ],
     },
-    {
-      name: 'Kajakkholder NO - SP',
-      copy: {
-        message: 'Dette er grunnen til at så mange kajakkeiere har byttet oppbevaring i år 🛶⭐\nKunder forteller om hvor enkelt det var å endelig få kajakken bort fra gulvet – og hvor stabilt den sitter oppe på veggen.\n✔ Tåler opptil 45 kg\n✔ Rask, enkel montering\n✔ Mange fornøyde kunder\nSe hvorfor så mange allerede har byttet til Kajakkholderen – og gjør som dem.',
-        headline: 'Slutt å snuble i kajakken i garasjen',
-        description: 'Vurdert av kunder som endelig fikk orden på garasjen.',
-      },
-      ads: [
-        { name: 'Kajakkholder_NO_SP_1_H1', file: 'NO_kajakhallare_SP_1_H1.mp4' },
-        { name: 'Kajakkholder_NO_SP_1_H3', file: 'NO_kajakhallare_SP_1_H3.mp4' },
-      ],
-    },
+    // SP-konceptet HELT UTESLUTET 2026-09-24: båda dess videor (SP_1_H1, SP_1_H3)
+    // fick "RENDER FAIL Insufficient credit" — kvoten tog slut innan de hann
+    // renderas. Adsetet skapas inte alls (no-video-launch.mjs kräver att varje
+    // annonsfil finns på disk och avbryter annars hela körningen). Lägg tillbaka
+    // konceptet (se git-historiken för copyn) när SP_1_H1/H3 renderats om.
     {
       name: 'Kajakkholder NO - CS',
       copy: {
@@ -56,7 +52,9 @@ export default {
       },
       ads: [
         { name: 'Kajakkholder_NO_CS_1_H2', file: 'NO_kajakhallare_CS_1_H2.mp4' },
-        { name: 'Kajakkholder_NO_CS_1_H3', file: 'NO_kajakhallare_CS_1_H3.mp4' },
+        // CS_1_H3 RENDERADES men underkändes av röstkollen (rostkoll.py, 2026-09-24):
+        // "dubben låter 7.1 dB högre än källan i sina sista 100 ms — rösten hinner
+        // inte tala klart" (avhugget slut). Lägg tillbaka när den renderats om.
       ],
     },
     {
@@ -68,7 +66,9 @@ export default {
       },
       ads: [
         { name: 'Kajakkholder_NO_GT_1_H1', file: 'NO_kajakhallare_GT_1_H1.mp4' },
-        { name: 'Kajakkholder_NO_GT_1_H2', file: 'NO_kajakhallare_GT_1_H2.mp4' },
+        // GT_1_H2 RENDERADES men underkändes av röstkollen (rostkoll.py, 2026-09-24):
+        // "dubben låter 16.3 dB högre än källan i sina sista 100 ms — rösten hinner
+        // inte tala klart" (avhugget slut). Lägg tillbaka när den renderats om.
         { name: 'Kajakkholder_NO_GT_1_H3', file: 'NO_kajakhallare_GT_1_H3.mp4' },
       ],
     },
