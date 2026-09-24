@@ -15,9 +15,10 @@
       "id": "120251217860260023",
       "namn": "MATSTRUMP_SALES_20260826",
       "typ": "CBO",
-      "dagsbudget_sek": 1000,
+      "dagsbudget_sek": 10000,
       "objective": "OUTCOME_SALES",
-      "matt_2026_09_21": "ACTIVE · 17 031,37 kr spend / 14 dagar · ROAS 1,392"
+      "matt_2026_09_21": "ACTIVE · 17 031,37 kr spend / 14 dagar · ROAS 1,392",
+      "matt_2026_09_24": "ACTIVE · 18 208 kr / 14 d · 58 köp · ROAS 1,456. Budget höjd av Axel 23/9: 1000→2000→10000 kr/dag (kontots aktivitetslogg). Ronden rör aldrig budgeten — talet här är avläst, inte satt."
     },
     "pixel_id": "1785935302094082",
     "malgrupp_mall": {

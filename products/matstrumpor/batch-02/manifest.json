@@ -1,0 +1,56 @@
+[
+  {
+    "namn": "MATSTRUMP_sushi_gift_ugc_048_v1",
+    "typ": "video",
+    "brief": "video-ads-briefs/MATSTRUMP_sushi_gift_ugc_048_v1/brief.md",
+    "koncept": "nathalie",
+    "parent": "09-17 Nathalie captions musik",
+    "lardom": "L-09-17_Nathalie_captions_musik",
+    "iteration": 1
+  },
+  {
+    "namn": "MATSTRUMP_sushi_gift_ugc_049_v1",
+    "typ": "video",
+    "brief": "video-ads-briefs/MATSTRUMP_sushi_gift_ugc_049_v1/brief.md",
+    "koncept": "nathalie",
+    "parent": "09-17 Nathalie captions musik",
+    "lardom": "L-09-17_Nathalie_captions_musik",
+    "iteration": 2
+  },
+  {
+    "namn": "MATSTRUMP_sushi_gift_ugc_050_v1",
+    "typ": "video",
+    "brief": "video-ads-briefs/MATSTRUMP_sushi_gift_ugc_050_v1/brief.md",
+    "koncept": "nathalie",
+    "parent": "09-17 Nathalie captions musik",
+    "lardom": "L-09-17_Nathalie_captions_musik",
+    "iteration": 3
+  },
+  {
+    "namn": "MATSTRUMP_sushi_jul_ugc_051_v1",
+    "typ": "video",
+    "brief": "video-ads-briefs/MATSTRUMP_sushi_jul_ugc_051_v1/brief.md",
+    "koncept": "nathalie",
+    "parent": "09-17 Nathalie captions musik",
+    "lardom": "L-09-17_Nathalie_captions_musik",
+    "iteration": 4
+  },
+  {
+    "namn": "MATSTRUMP_sushi_jul_static_052_v1",
+    "typ": "bild",
+    "brief": "image-ads-briefs/MATSTRUMP_sushi_jul_static_052_v1/brief.md",
+    "koncept": "offer-static",
+    "parent": "MATSTRUMP_sushi_offer_static_d3_v1",
+    "lardom": "L-MATSTRUMP_sushi_offer_static_d3_v1",
+    "iteration": 1
+  },
+  {
+    "namn": "MATSTRUMP_sushi_skamt_ugc_053_v1",
+    "typ": "video",
+    "brief": "video-ads-briefs/MATSTRUMP_sushi_skamt_ugc_053_v1/brief.md",
+    "koncept": "skamt-fika",
+    "parent": null,
+    "lardom": "L-MATSTRUMP_sushi_gift_ugc_012v2_v1",
+    "iteration": 1
+  }
+]

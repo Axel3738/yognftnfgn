@@ -70,3 +70,9 @@ test('granska fångar upptaget namn och okänd vinkel', () => {
   assert.equal(okand.ok, false);
   assert.match(okand.fel.join(' '), /Vinkeln "halloween"/);
 });
+
+test('hookvarianter med siffra först räknas som upptaget nummer (044h1 ⇒ 44)', () => {
+  assert.equal(tolka('MATSTRUMP_sushi_jul_ugc_044h1_v1').nummer, 44);
+  assert.equal(tolka('MATSTRUMP_sushi_gift_ugc_012v2_v1').nummer, 12);
+  assert.equal(nastaNummer([...KONTOT, 'MATSTRUMP_sushi_jul_ugc_047h3_v1']), 48, '047h3 ligger live ⇒ nästa är 048');
+});

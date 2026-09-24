@@ -25,7 +25,11 @@ export function tolka(namn) {
     vinkel: vinkel.toLowerCase(),
     format: format.toLowerCase(),
     id: id.toLowerCase(),
-    nummer: /^\d+$/.test(id) ? Number(id) : null,
+    // Löpnumret är siffrorna id-fältet BÖRJAR med: `038` ⇒ 38, `044h1` ⇒ 44
+    // (uppladdarens hookvarianter 2026-09-21), `012v2` ⇒ 12. Ett id som börjar
+    // med bokstäver (`haikuh3`, `s001h1`) är ett äldre namn utan nummer.
+    // Mätt 2026-09-24: utan det här gav --namn 044 igen fast 044–047 låg live.
+    nummer: /^\d/.test(id) ? Number(/^\d+/.exec(id)[0]) : null,
     version: Number(version),
   };
 }

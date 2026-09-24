@@ -19,6 +19,7 @@ import {
   valjRond, redanGranskad, hittaBatch, nastaGranskning, harSektion, domFor, giltigDom, kommentarText, feedbackSektion, laggInSektion,
   feedbackRadMarkdown, feedbackEgenskaper, byggRapport, samlaKorning,
   REGI_FRAN, SPARRKODER, KOMPONENT_TAGGAR, manusrader, regiUr, granskaRegi, giltigKalla, komponentUr, sparra, spegelPris,
+  tolkaMatstrumporNamn,
 } from '../briefgranskning.mjs';
 import { serUtSomSvenska } from '../lib/engelska.mjs';
 
@@ -975,4 +976,12 @@ test('granskaBrief video: "AI content:"-raden saknas ⇒ anmärkning (US-steget 
   const med = granskaBrief({ ...RAD_VIDEO, text: VIDEO_REGI }, CTX_VIDEO);
   assert.ok(!med.anmarkningar.some((a) => a.kod === 'ai'));
   assert.ok(!granskaBrief({ ...RAD, text: BRA }, CTX).anmarkningar.some((a) => a.kod === 'ai'), 'bild: ingen AI-rad krävs');
+});
+
+test('Matstrumpors namnmönster läses av spärren (vinkel = koncept, numret på plats fem, formatet avgör video/bild)', () => {
+  const v = tolkaMatstrumporNamn('MATSTRUMP_sushi_gift_ugc_048_v1');
+  assert.deepEqual({ koncept: v.koncept, nummer: v.nummer, variant: v.variant }, { koncept: 'GIFT', nummer: 48, variant: 'H1' });
+  const b = tolkaMatstrumporNamn('MATSTRUMP_sushi_jul_static_049_v1');
+  assert.deepEqual({ koncept: b.koncept, nummer: b.nummer, variant: b.variant }, { koncept: 'JUL', nummer: 49, variant: '1' });
+  assert.equal(tolkaMatstrumporNamn('Takoverdrag_BOF_3_1'), null);
 });

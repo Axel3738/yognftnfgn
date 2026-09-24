@@ -79,6 +79,69 @@ blödningen, eller behåll hooken och bygg om det som händer efter sekund 3.
 
 ---
 
+## 2026-09-24 — rond 2: första riktiga /matstrumporkungen-ronden (85 etiketter, 85 lärdomar, 6 briefer, 6 förslag)
+
+**Avläsning (token, 7d_click, 14 d till 23/9):** 96 annonser, 79 med spend,
+**18 208 kr · 58 köp · ROAS 1,456** — under break-even 1,498. Axel höjde
+CBO:n 1 000 → 2 000 → **10 000 kr/dag den 23/9** (aktivitetsloggen). Ronden
+rör aldrig budgeten.
+
+**Etiketter (annonsens egna första vecka):** 85 nya + haikuh3 sedan 21/9.
+**Breakthrough-frekvens 1 av 85 = 1 %.** 41 INGEN_LEVERANS · 39 LOSER ·
+3 KPI_WINNER (`offer_static_d3`, `s001h1_v2`, `038`) · 1 SPEND_WINNER
+(`haikuh3`) · **1 BREAKTHROUGH: `09-17 Nathalie captions musik`** (49 % av
+kampanjens spend, ROAS 2,42, 29 köp / 7 d, budgeten höjd under veckan).
+Batch #1 (Gilz 044–047, 11 videor från 21/9) är för ung: 0,6–9,5 kr var.
+
+**Vinstbidrag 14 d (utan moms):** Nathalie +3 078 (benchmark) · d3 +1 204 ·
+s001h1 −6 · haikuh2 −282 · 012v2 −1 244 · **haikuh3 −3 184**.
+
+**Lärdomar:** 85 skrivna i `lardomar.md` — sju egna (Nathalie, haikuh3, d3,
+s001h1_v2, haikuh2, 012v2, 038) och sex batchlärdomar för svält-högen
+(#0a UGC 30 st, #0a statics 10, #0b nya8 7, #0c nya20 20, #0d bilder 9,
+Sofie ×2). Hookarna lästes ur videorna (kontots `advideos` ger källfilen;
+frames var 1,5 s). 70 av 85 etiketter är Metas svält i CBO:n, inte dom.
+
+**Rond 2 = batch #2, 6 briefer (mix 5 vidarebyggen / 1 ny vinkel — levande
+breakthrough finns):**
+
+| Annons | Typ | Förälder | It. | Lärdom | Vad |
+|---|---|---|---|---|---|
+| `MATSTRUMP_sushi_gift_ugc_048_v1` | I | Nathalie | 1 | L-09-17_Nathalie_captions_musik | Ny hook: "Den här sålde slut i november förra året." — kroppen orörd |
+| `MATSTRUMP_sushi_gift_ugc_049_v1` | I | Nathalie | 2 | + L-haikuh3 | Längre problemdel (ljuset i byrålådan, "åh, tack") före hennes video |
+| `MATSTRUMP_sushi_gift_ugc_050_v1` | I | Nathalie | 3 | L-Nathalie | In media res: vännens skratt först, sedan rewind |
+| `MATSTRUMP_sushi_jul_ugc_051_v1` | I | Nathalie | 4 | + L-Sofie_H1_H2 | Julstrumpe-öppning (Sofie H2:s tvåbild) → jul-adsetet |
+| `MATSTRUMP_sushi_jul_static_052_v1` | I (bild) | d3 | 1 | L-d3 + L-Nathalie | d3-layouten + "Sålde slut förra julen" + Köp 1 – få 1 → jul_bilder |
+| `MATSTRUMP_sushi_skamt_ugc_053_v1` | N | — | 1 | L-012v2 + L-Sofie | Ny vinkel: skämtet på fikat, avatar `skamtaren` (gissning — inga kommentarer) |
+
+Copy: sonnet-subagent (tre-frågorstestet i varje brief), regi rad för rad av
+sessionen ur frames (`OUR AD 09-17_Nathalie_captions_musik mm:ss`), spärren
+`tools/briefgranskning.mjs --manifest` grön 6/6, raderna skapade i hubben
+via REST (Draft, `notion-resultat.json`). Briefer och manifest:
+`products/matstrumpor/batch-02/`.
+
+**Hypotes för batchen:** tro (verklig kreatör + verklig mottagare) och
+knappheten "sålde slut i november" är det som skiljer vinnaren från
+förlorarna — inte hooken. Fyra iterationer prövar var i videon de ska
+sitta; julversionerna ger jul-adseten en annons Meta faktiskt matar.
+
+**Förslag till Axel (FORSLAG-rader, inget utfört):** pausa haikuh3 (−3 184),
+012v2 (−1 244), haikuh2 (−282); låt s001h1 ligga; höj inte Nathalie mer
+(10× igår); ge `jul_video` en minimispend så jul-testet går att läsa.
+
+**Att veta till nästa rond:** kommentarerna nekas (`pages_read_engagement`
+saknas på sidan 820358954504320); Nathalies hook rate 0,2 % är ett mätfel
+att förklara, inte en dom; namnmotorn räknade 044–047 som lediga (rättat:
+`044h1` ⇒ 44, `kanda-namn.json` uppdaterad ur kontot + hubben); spärren
+förstod inte Matstrumpors namnmönster (rättat i `tools/briefgranskning.mjs`,
+`tolkaMatstrumporNamn`).
+
+**Utfall (dag 7):** läses tidigast 2026-10-01 om Meta ger dem något — de
+laddas upp av `/matstrumpor` när redigerarna satt dem i `To be Reviewed`.
+**Lärdom:** `lardomar.md` → L-<annons> när etiketten finns.
+
+---
+
 ## Format för kommande rader
 
 ```

@@ -572,7 +572,8 @@ export function komponentUr(taggar) {
   if (typ === 'N' && harParent) brister.push('typ=N with a parent — a new angle has no parent; same promise in new words is an iteration (typ=I), CS-KLART point 19');
   // Punkt 6: varje brief pekar på lärdomen den bygger på (L-<annons_id>, ett eller flera).
   const lardom = String(t.lardom ?? '').replace(/`/g, '').trim();
-  if (lardom && !lardom.split(/\s*[,+]\s*/).every((x) => /^L-\d+$/.test(x))) brister.push(`lardom=${lardom} is not a learning id (L-<ad_id>, from products/<id>/lardomar.md) — a brief that cannot point at a learning is not written`);
+  // Bäverbutiken: L-<Metas annons-id>. Matstrumpor: L-<annonsnamn> (matstrumpor/lardom.mjs skelett) — mellanslag i namnet byts mot _.
+  if (lardom && !lardom.split(/\s*[,+]\s*/).every((x) => /^L-[\w.-]+$/.test(x))) brister.push(`lardom=${lardom} is not a learning id (L-<ad_id>, from products/<id>/lardomar.md) — a brief that cannot point at a learning is not written`);
   return { saknade, ogiltiga, brister, typ: typ || null, parent: harParent ? parent : null, lardom: lardom || null };
 }
 
@@ -659,6 +660,22 @@ export function roasEnsamt(text) {
  * Bäver-briefer: med OPS-mallens krav som fel fick alla 78 fyra–sex fel, och
  * redigerarna hade fått 78 kommentarer om saker de inte kan påverka.
  */
+/** Matstrumpors namn (`MATSTRUMP_sushi_<vinkel>_<format>_<nnn>_v<n>`, matstrumpor/namn.mjs)
+ *  följer inte docs/naming-convention.md — koncept-fältet är gement och numret
+ *  ligger på plats fem. Utan det här stoppade spärren varje Matstrumpor-brief
+ *  med "has no number" (mätt 2026-09-24, första /matstrumporkungen-ronden).
+ *  Vinkeln blir konceptet, formatet avgör video/bild; ingen H-variant finns. */
+const MATSTRUMP_VIDEO = ['ugc', 'beforeafter', 'comparison', 'lifestyle', 'anim'];
+export function tolkaMatstrumporNamn(namn) {
+  const m = /^(MATSTRUMP_sushi)_([a-zåäö]+)_([a-zåäö]+)_(\d+)[a-z0-9]*_v(\d+)$/i.exec(String(namn ?? '').trim());
+  if (!m) return null;
+  const video = MATSTRUMP_VIDEO.includes(m[3].toLowerCase());
+  return { prefix: m[1], koncept: m[2].toUpperCase(), nummer: Number(m[4]), variant: video ? `H${m[5]}` : m[5], matstrumpor: true, format: m[3].toLowerCase() };
+}
+function tolkaNamnAllaMonster(namn) {
+  return tolkaMatstrumporNamn(namn) ?? tolkaNamn(namn);
+}
+
 export function granskaBrief(r, ctx = {}) {
   const fel = [];
   const anm = [];
@@ -666,7 +683,7 @@ export function granskaBrief(r, ctx = {}) {
   const A = (kod, text) => anm.push({ kod, text });
   const text = String(r.text ?? '');
   const namn = annonsdel(r.namn);
-  const t = tolkaNamn(namn);
+  const t = tolkaNamnAllaMonster(namn);
   const typ = r.typ ?? typAv(r.typ_notion);
 
   // 1. Namnet (docs/naming-convention.md: <prefix>_<KONCEPT>_<nr>[_<variant>]).
