@@ -9,7 +9,7 @@
     "Magiborsten NO (NO)"
   ],
   "lage_regel": "drift = minst 30 köp sedan start OCH livstids-ROAS över break-even (produkten har bevisat sig). Allt annat = test. Skillnaden spelar roll bara vid förlust: en testprodukt går åtgärdstrappan, en driftprodukt halveras ner mot 500 kr.",
-  "uppdaterad": "2026-09-23",
+  "uppdaterad": "2026-09-24",
   "kampanjer": [
     {
       "campaign_id": "120250333936950291",
@@ -1169,6 +1169,54 @@
       "produkt": "Feiesett NO",
       "lage": "test",
       "lage_motivering": "ny norsk kampanj startad 2026-09-21, 845 kr, 7 köp vid tillägget — tillagd av /rond-auto 2026-09-22. Break-even står i kampanjnamnet (norskt skrivsätt BE-ROAS med komma).",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250349342590291",
+      "produkt": "Solcellsladdaren 10 W MPPT",
+      "lage": "test",
+      "lage_motivering": "ny kampanj startad 2026-09-24 02:51, under 5 kr spend och noll köp vid morgonens rond — tillagd av /rond-auto 2026-09-24. Break-even står i kampanjnamnet (1.61). Priset i butiken 559 kr (jämförpris 1 118) läst ur baverbutiken.se/products.json 2026-09-24 (handle solcellsladdare-10-w-mppt-underhallsladdare-for-12-v). Prissheetet gick inte att läsa i sin helhet via Drive-MCP:n (read_file_content gav bara batch 1 och början av batch 2, samma som 2026-09-23) — inget kostnad-block skrivet, aldrig gissat; slå upp raden och fyll blocket när sheetet går att läsa.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250349317190291",
+      "produkt": "Pussel Adventskalendern",
+      "lage": "test",
+      "lage_motivering": "ny kampanj startad 2026-09-24 02:44, under 5 kr spend och noll köp vid morgonens rond — tillagd av /rond-auto 2026-09-24. Break-even står i kampanjnamnet (1.78). Priset i butiken 449 kr (jämförpris 898) läst ur baverbutiken.se/products.json 2026-09-24 (handle pussel-adventskalender-24-dagar-med-pusselbitar). Prissheetet gick inte att läsa i sin helhet via Drive-MCP:n (read_file_content gav bara batch 1 och början av batch 2, samma som 2026-09-23) — inget kostnad-block skrivet, aldrig gissat; slå upp raden och fyll blocket när sheetet går att läsa.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250349292760291",
+      "produkt": "Motorlåset i Rostfritt Stål",
+      "lage": "test",
+      "lage_motivering": "ny kampanj startad 2026-09-24 02:37, under 5 kr spend och noll köp vid morgonens rond — tillagd av /rond-auto 2026-09-24. Break-even står i kampanjnamnet (1.64). Priset i butiken 909 kr (jämförpris 1 189) läst ur baverbutiken.se/products.json 2026-09-24 (handle motorlas-i-rostfritt-stal-laser-utombordarens-fastskruvar). Prissheetet gick inte att läsa i sin helhet via Drive-MCP:n (read_file_content gav bara batch 1 och början av batch 2, samma som 2026-09-23) — inget kostnad-block skrivet, aldrig gissat; slå upp raden och fyll blocket när sheetet går att läsa.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250349257210291",
+      "produkt": "Golf Adventskalendern",
+      "lage": "test",
+      "lage_motivering": "ny kampanj startad 2026-09-24 02:31, under 5 kr spend och noll köp vid morgonens rond — tillagd av /rond-auto 2026-09-24. Break-even står i kampanjnamnet (1.70). Priset i butiken 549 kr (jämförpris 719) läst ur baverbutiken.se/products.json 2026-09-24 (handle golf-adventskalender-24-golftillbehor). Prissheetet gick inte att läsa i sin helhet via Drive-MCP:n (read_file_content gav bara batch 1 och början av batch 2, samma som 2026-09-23) — inget kostnad-block skrivet, aldrig gissat; slå upp raden och fyll blocket när sheetet går att läsa.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250349224920291",
+      "produkt": "Dörr- och Fönsterlarmet 110 dB",
+      "lage": "test",
+      "lage_motivering": "ny kampanj startad 2026-09-24 02:24, under 5 kr spend och noll köp vid morgonens rond — tillagd av /rond-auto 2026-09-24. Break-even står i kampanjnamnet (1.61). Priset i butiken 449 kr (jämförpris 589) läst ur baverbutiken.se/products.json 2026-09-24 (handle dorr-och-fonsterlarm-110-db-tradlos-fjarrkontroll). Prissheetet gick inte att läsa i sin helhet via Drive-MCP:n (read_file_content gav bara batch 1 och början av batch 2, samma som 2026-09-23) — inget kostnad-block skrivet, aldrig gissat; slå upp raden och fyll blocket när sheetet går att läsa.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250349169940291",
+      "produkt": "Täljsetet 30 Delar",
+      "lage": "test",
+      "lage_motivering": "ny kampanj startad 2026-09-24 02:15, under 5 kr spend och noll köp vid morgonens rond — tillagd av /rond-auto 2026-09-24. Break-even står i kampanjnamnet (1.63). Priset i butiken 869 kr (jämförpris 1 139) läst ur baverbutiken.se/products.json 2026-09-24 (handle taljset-30-delar-6-knivar-och-6-jarn). Prissheetet gick inte att läsa i sin helhet via Drive-MCP:n (read_file_content gav bara batch 1 och början av batch 2, samma som 2026-09-23) — inget kostnad-block skrivet, aldrig gissat; slå upp raden och fyll blocket när sheetet går att läsa.",
       "break_even_roas": null,
       "break_even_kalla": "kampanjnamnet"
     }
