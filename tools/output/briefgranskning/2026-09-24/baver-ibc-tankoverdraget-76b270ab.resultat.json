@@ -1,0 +1,24 @@
+{
+  "hub_id": "76b270ab-908c-8393-8a47-01f6ae366d42",
+  "hub_titel": "BÄVER IBC-Tanköverdraget",
+  "slug": "baver-ibc-tankoverdraget-76b270ab",
+  "rond": "2026-09-22",
+  "idag": "2026-09-24",
+  "antal": 3,
+  "rena": 0,
+  "anm": 3,
+  "fel": 0,
+  "feedback_rad": {
+    "skapad": true,
+    "page_id": "3e5270ab-908c-81f7-865e-c49e641d09f8",
+    "url": "https://app.notion.com/p/Brief-review-2026-09-22-3e5270ab908c81f7865ec49e641d09f8",
+    "titel": "Brief review 2026-09-22",
+    "block": 20
+  },
+  "feedback_fil": null,
+  "kommentarer": [],
+  "varningar": [
+    "no product folder in the repo (products.json / register.json) — dna.md and feedback.md do not apply; the Feedback row in the hub is the memory"
+  ],
+  "torr": false
+}

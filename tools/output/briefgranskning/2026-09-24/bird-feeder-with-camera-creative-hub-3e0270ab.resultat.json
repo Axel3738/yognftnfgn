@@ -1,0 +1,24 @@
+{
+  "hub_id": "3e0270ab-908c-818b-9630-cd66fb6f7db6",
+  "hub_titel": "Bird feeder with camera creative hub",
+  "slug": "bird-feeder-with-camera-creative-hub-3e0270ab",
+  "rond": "2026-09-19",
+  "idag": "2026-09-24",
+  "antal": 15,
+  "rena": 0,
+  "anm": 15,
+  "fel": 0,
+  "feedback_rad": {
+    "skapad": true,
+    "page_id": "3e5270ab-908c-810c-8396-fc67f45db47a",
+    "url": "https://app.notion.com/p/Brief-review-2026-09-19-3e5270ab908c810c8396fc67f45db47a",
+    "titel": "Brief review 2026-09-19",
+    "block": 23
+  },
+  "feedback_fil": null,
+  "kommentarer": [],
+  "varningar": [
+    "no product folder in the repo (products.json / register.json) — dna.md and feedback.md do not apply; the Feedback row in the hub is the memory"
+  ],
+  "torr": false
+}

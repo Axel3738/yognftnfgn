@@ -1,0 +1,30 @@
+{
+  "hub_id": "3e1270ab-908c-810c-9d50-f14ab53b461f",
+  "hub_titel": "Car wash brush creative hub",
+  "slug": "car-wash-brush-creative-hub-3e1270ab",
+  "rond": "2026-09-20",
+  "idag": "2026-09-24",
+  "antal": 17,
+  "rena": 0,
+  "anm": 16,
+  "fel": 1,
+  "feedback_rad": {
+    "skapad": true,
+    "page_id": "3e5270ab-908c-8150-8974-f830a28c895c",
+    "url": "https://app.notion.com/p/Brief-review-2026-09-20-3e5270ab908c81508974f830a28c895c",
+    "titel": "Brief review 2026-09-20",
+    "block": 22
+  },
+  "feedback_fil": null,
+  "kommentarer": [
+    {
+      "namn": "Biltvattborste_BOF_3_1",
+      "utfall": "skriven",
+      "text": "Brief review 2026-09-20 (Car wash brush creative hub) — this brief has an error the editor must know about:\n1. The hook `100 cm – räcker den till taket?` fails the three-question test: a question cannot be true or false. Before upload: make the answer the headline (the sub-line `Personbil: sidor, motorhuv, bagagelucka – ja.` or BOF_2_1's `100 cm räcker till sidorna och motorhuven. Inte taket på en SUV.`) and drop the question.\nFix before production. If the ad is already live, apply it to the next version — nothing is paused. Status unchanged."
+    }
+  ],
+  "varningar": [
+    "no product folder in the repo (products.json / register.json) — dna.md and feedback.md do not apply; the Feedback row in the hub is the memory"
+  ],
+  "torr": false
+}

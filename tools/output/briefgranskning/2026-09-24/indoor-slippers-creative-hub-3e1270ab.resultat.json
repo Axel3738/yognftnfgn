@@ -1,0 +1,30 @@
+{
+  "hub_id": "3e1270ab-908c-8131-a121-fe435a4e22aa",
+  "hub_titel": "Indoor slippers creative hub",
+  "slug": "indoor-slippers-creative-hub-3e1270ab",
+  "rond": "2026-09-20",
+  "idag": "2026-09-24",
+  "antal": 17,
+  "rena": 0,
+  "anm": 16,
+  "fel": 1,
+  "feedback_rad": {
+    "skapad": true,
+    "page_id": "3e5270ab-908c-8130-8221-c776013a58ba",
+    "url": "https://app.notion.com/p/Brief-review-2026-09-20-3e5270ab908c81308221c776013a58ba",
+    "titel": "Brief review 2026-09-20",
+    "block": 22
+  },
+  "feedback_fil": null,
+  "kommentarer": [
+    {
+      "namn": "Inomhustofflor_OB_1_1",
+      "utfall": "skriven",
+      "text": "Brief review 2026-09-20 (Indoor slippers creative hub) — this brief has an error the editor must know about:\n1. The hook `Finns den i 47?` fails the three-question test: a question cannot be true or false. Before upload: make the size range the headline (`Herr 40–47, khaki eller svart.`) with 47 highlighted in the size graphic, and drop the question.\nFix before production. If the ad is already live, apply it to the next version — nothing is paused. Status unchanged."
+    }
+  ],
+  "varningar": [
+    "no product folder in the repo (products.json / register.json) — dna.md and feedback.md do not apply; the Feedback row in the hub is the memory"
+  ],
+  "torr": false
+}

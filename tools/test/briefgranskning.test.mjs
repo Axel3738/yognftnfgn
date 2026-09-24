@@ -328,6 +328,13 @@ test('annonstextUr: tabellerna, COPY CARD, hook-raden — inte rationalen, inte 
   assert.doesNotMatch(d, /SP is the strongest angle/);
 });
 
+test('annonstextUr: PRIS/BETYG VERIFIERAT-noterna efter COPY CARD är metadata — domänen utan https:// får inte bli ett butiksnamnsfel', () => {
+  const brief = `${BRA}\nPRIS VERIFIERAT 2026-09-23 (/bildannonser): the product page baverbutiken.se/products/termoskydd was read live and returns price 559 kr.\nBETYG VERIFIERAT 2026-09-23: 4,80 av 5 på 10 recensioner avläst på baverbutiken.se.\n`;
+  const a = annonstextUr(brief);
+  assert.doesNotMatch(a, /VERIFIERAT/, 'verifieringsnoten är inte annonstext');
+  assert.deepEqual(namntraff(a, ['Bäverbutiken', 'baverbutiken.se', 'baverbutiken']), [], 'domänen i noten är metadata');
+});
+
 test('namntraff: Bäverbutiken, den speglade butiken och Bäver-familjen — annonsnamnet räknas aldrig', () => {
   const namn = butiksnamnFor(TAK_HUB, REGISTER);
   assert.deepEqual(namntraff('Ett av 16 omdömen. Takoverdrag_SP_5_1 är namnet.', namn), []);

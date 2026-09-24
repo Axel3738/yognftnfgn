@@ -1,0 +1,68 @@
+{
+  "hub_id": "3cc270ab-908c-813c-94fa-d90daa9bf776",
+  "rond": "2026-09-22",
+  "bra": [
+    "All three rules from the 2026-09-18 review held: `End cards carry product, price and CTA only` — no logo — is in every Rules block; every CPA is written against break-even (PD_19_1 260/361 kr, PD_4_H1 256 kr against 566 kr) with purchases; the store terms rule says the page carries only the statutory 14 days and tells the writer not to use even that.",
+    "PD_32_1, PD_33_H1 and CS_6_1 are three one-variable iterations on the breakthrough PD_19_1 (sub-line content / format / mechanism sub-line), each with the lesson id, Memo and read-out; `no kronor figure for a sharpening service exists in the repo, so none is written` is exactly the discipline rule 3 asks for.",
+    "GT_1_H1 turns the owner's idea into a filmable line with the three-question rewrite shown, uses a real date (Father's Day, Sunday 8 November 2026 — correct) instead of invented urgency, and sources the demo from the delivered PD_4_H1.",
+    "Shot-level direction complete on both videos, sources per row, `NEW FOOTAGE` limited to two seconds of a drawer and a chisel on the belt.",
+    "Price 909 / 1 182 / 273 kr / 23 % read live and the percentage recomputed from the two read numbers."
+  ],
+  "missat": [
+    "The break-even moved again: 554 kr in the 2026-09-18 round, 566 kr now — the 2026-09-21 rule asked for one number per product. Settle it from COGS once and write it in products.json or the hub's Feedback row.",
+    "Iterations of PD_19_1 are named as new concepts (`PD_32_1`, `CS_6_1`) instead of variants of the parent (`PD_19_2`, `PD_19_3`) — the ad name no longer says they belong to the same family, and the next /cs groups by name (docs/naming-convention.md).",
+    "PD_32_1's English column says `sharpened in 10 seconds` while the Swedish line `Varje kniv i lådan vässad — en enda betalning.` does not — the editor bakes the Swedish and reads the English; they must say the same thing.",
+    "GT_1_H1: `Fars dag-presenten`, `fars dag-klapparna` — Swedish compounds are written `farsdagspresenten` / `farsdagsklapparna`; a Swedish speaker reads the hyphenated form as a typo.",
+    "The tool flags GT_1_H1's isolated variable as two things (buyer and occasion) — for a new concept that is fine, but say `typ=N` means no isolation is claimed."
+  ],
+  "regler": [
+    "One break-even for this product, written once and reused — 554 on 18/9, 566 on 22/9 is two numbers; settle it and put it where every writer reads it.",
+    "An iteration keeps the parent's concept code and number and bumps the variant (`PD_19_2`, `PD_19_H2`) — never a new number under another code; the family must be readable in the ad name.",
+    "The English column says exactly what the Swedish line says — no extra `in 10 seconds` in the meaning column; and compounds are written the Swedish way (`farsdagspresenten`)."
+  ],
+  "rader": [
+    {
+      "namn": "Beltgrinder_PD_32_1",
+      "fel": [],
+      "anmarkningar": [
+        "English meaning adds `in 10 seconds` that the Swedish line does not say — align them.",
+        "Named as a new concept (32) though it is iteration 1 of PD_19_1 — should be PD_19_2."
+      ],
+      "bra": [
+        "One variable (the sub-line), lesson cited, no invented sharpening-service figure."
+      ]
+    },
+    {
+      "namn": "Beltgrinder_PD_33_H1",
+      "fel": [],
+      "anmarkningar": [
+        "Named as a new concept (33) though it is iteration 2 of PD_19_1 — should be PD_19_H2."
+      ],
+      "bra": [
+        "The breakthrough's argument on the best-converting format, with the read-out range stated."
+      ]
+    },
+    {
+      "namn": "Beltgrinder_CS_6_1",
+      "fel": [],
+      "anmarkningar": [
+        "Coded CS and numbered 6 though it is iteration 3 of PD_19_1 — the name breaks the family."
+      ],
+      "bra": [
+        "Adds the page's two mechanism facts under the proven headline, nothing else."
+      ]
+    },
+    {
+      "namn": "Beltgrinder_GT_1_H1",
+      "fel": [],
+      "anmarkningar": [
+        "\"Isolated variable: the buyer (gift-giver) and the occasion\" may name more than one variable — a variant changes exactly one thing",
+        "`Fars dag-presenten` / `fars dag-klapparna` — write the compounds the Swedish way (`farsdagspresenten`, `farsdagsklapparna`).",
+        "Two variables named (buyer and occasion) — fine for `typ=N`, say so."
+      ],
+      "bra": [
+        "Owner's idea made concrete with the rewrite shown; a real date, not invented urgency; demo sourced from the delivered PD_4_H1."
+      ]
+    }
+  ]
+}

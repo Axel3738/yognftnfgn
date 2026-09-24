@@ -1,0 +1,24 @@
+{
+  "hub_id": "3cf270ab-908c-8113-a35c-f9c1cd61d727",
+  "hub_titel": "Boat motor cover creative hub",
+  "slug": "boat-motor-cover-creative-hub-3cf270ab",
+  "rond": "2026-09-23",
+  "idag": "2026-09-24",
+  "antal": 4,
+  "rena": 0,
+  "anm": 4,
+  "fel": 0,
+  "feedback_rad": {
+    "skapad": true,
+    "page_id": "3e5270ab-908c-81b0-8fd6-cbbc94c82177",
+    "url": "https://app.notion.com/p/Brief-review-2026-09-23-3e5270ab908c81b08fd6cbbc94c82177",
+    "titel": "Brief review 2026-09-23",
+    "block": 21
+  },
+  "feedback_fil": null,
+  "kommentarer": [],
+  "varningar": [
+    "no product folder in the repo (products.json / register.json) — dna.md and feedback.md do not apply; the Feedback row in the hub is the memory"
+  ],
+  "torr": false
+}

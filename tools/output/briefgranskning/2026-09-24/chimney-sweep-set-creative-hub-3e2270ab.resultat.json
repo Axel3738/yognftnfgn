@@ -1,0 +1,70 @@
+{
+  "hub_id": "3e2270ab-908c-8171-bbae-fff6adedbe5a",
+  "hub_titel": "Chimney sweep set creative hub",
+  "slug": "chimney-sweep-set-creative-hub-3e2270ab",
+  "rond": "2026-09-21",
+  "idag": "2026-09-24",
+  "antal": 14,
+  "rena": 0,
+  "anm": 5,
+  "fel": 9,
+  "feedback_rad": {
+    "skapad": true,
+    "page_id": "3e5270ab-908c-817a-b95f-f8e2b3a1530f",
+    "url": "https://app.notion.com/p/Brief-review-2026-09-21-3e5270ab908c817ab95ff8e2b3a1530f",
+    "titel": "Brief review 2026-09-21",
+    "block": 23
+  },
+  "feedback_fil": null,
+  "kommentarer": [
+    {
+      "namn": "Sotarset_PD_1_H5",
+      "utfall": "skriven",
+      "text": "Brief review 2026-09-21 (Chimney sweep set creative hub) — this brief has an error the editor must know about:\n1. no shot-level direction table (Time | Script line | Audio | On-screen text | Picture | Effect + length | Source | Reference | Latitude — docs/os/BRIEF-REGI.md); the editor has 2 script lines and no picture for any of them\nFix before production. If the ad is already live, apply it to the next version — nothing is paused. Status unchanged."
+    },
+    {
+      "namn": "Sotarset_PD_4_1",
+      "utfall": "skriven",
+      "text": "Brief review 2026-09-21 (Chimney sweep set creative hub) — this brief has 2 errors the editor must know about:\n1. a line failed the three-question test (❌) and still went out: `Det här satt i röret.`\n2. Direction for the fix: keep the real-soot photo, make the headline carry what only this set does — the soot came out through the bend, after nine rods — so the line cannot be signed by any brush. Never ship a line the test marks signable.\nFix before production. If the ad is already live, apply it to the next version — nothing is paused. Status unchanged."
+    },
+    {
+      "namn": "Sotarset_PD_1_H4",
+      "utfall": "skriven",
+      "text": "Brief review 2026-09-21 (Chimney sweep set creative hub) — this brief has 3 errors the editor must know about:\n1. a line failed the three-question test (❌) and still went out: `Det här satt i röret.`\n2. no shot-level direction table (Time | Script line | Audio | On-screen text | Picture | Effect + length | Source | Reference | Latitude — docs/os/BRIEF-REGI.md); the editor has 2 script lines and no picture for any of them\n3. Direction for the fix: the three-second hook shows the black brush coming out — name what it came through (the bend / the nine rods) so the line is this set's, not any brush's.\nFix before production. If the ad is already live, apply it to the next version — nothing is paused. Status unchanged."
+    },
+    {
+      "namn": "Sotarset_PD_2_H1",
+      "utfall": "skriven",
+      "text": "Brief review 2026-09-21 (Chimney sweep set creative hub) — this brief has 3 errors the editor must know about:\n1. a line failed the three-question test (❌) and still went out: `Skruva ihop stängerna en efter en.`, `Borsten kommer ut svart.`\n2. no shot-level direction table (Time | Script line | Audio | On-screen text | Picture | Effect + length | Source | Reference | Latitude — docs/os/BRIEF-REGI.md); the editor has 6 script lines and no picture for any of them\n3. Direction for the fix: `Skruva ihop stängerna en efter en.` and `Borsten kommer ut svart.` are instructional/generic by the brief's own test — tie them to the mechanism (the rods bending behind the stove, 3,69 m) or cut them; the hook and rows 3 and 5 already carry the product.\nFix before production. If the ad is already live, apply it to the next version — nothing is paused. Status unchanged."
+    },
+    {
+      "namn": "Sotarset_PD_3_H1",
+      "utfall": "skriven",
+      "text": "Brief review 2026-09-21 (Chimney sweep set creative hub) — this brief has 3 errors the editor must know about:\n1. a line failed the three-question test (❌) and still went out: `Skruva på nästa stång och fortsätt.`, `Sotet borstas loss.`\n2. no shot-level direction table (Time | Script line | Audio | On-screen text | Picture | Effect + length | Source | Reference | Latitude — docs/os/BRIEF-REGI.md); the editor has 6 script lines and no picture for any of them\n3. Direction for the fix: `Skruva på nästa stång och fortsätt.` and `Sotet borstas loss.` are generic by the brief's own test — fold them into the bend/nine-rod lines or cut them.\nFix before production. If the ad is already live, apply it to the next version — nothing is paused. Status unchanged."
+    },
+    {
+      "namn": "Sotarset_CS_2_H1",
+      "utfall": "skriven",
+      "text": "Brief review 2026-09-21 (Chimney sweep set creative hub) — this brief has 3 errors the editor must know about:\n1. a line failed the three-question test (❌) and still went out: `599 kr. Men inte längre.`, `Spara 140 kr.`\n2. no shot-level direction table (Time | Script line | Audio | On-screen text | Picture | Effect + length | Source | Reference | Latitude — docs/os/BRIEF-REGI.md); the editor has 6 script lines and no picture for any of them\n3. Direction for the fix: `599 kr. Men inte längre.` and `Spara 140 kr.` are any store's price-cut lines by the brief's own test — the box-contents line (`9 stänger, en borste, en adapter`) is the one only this set can say; lead with it and let the price follow.\nFix before production. If the ad is already live, apply it to the next version — nothing is paused. Status unchanged."
+    },
+    {
+      "namn": "Sotarset_PD_5_H1",
+      "utfall": "skriven",
+      "text": "Brief review 2026-09-21 (Chimney sweep set creative hub) — this brief has an error the editor must know about:\n1. no shot-level direction table (Time | Script line | Audio | On-screen text | Picture | Effect + length | Source | Reference | Latitude — docs/os/BRIEF-REGI.md); the editor has 6 script lines and no picture for any of them\nFix before production. If the ad is already live, apply it to the next version — nothing is paused. Status unchanged."
+    },
+    {
+      "namn": "Sotarset_PD_4_H1",
+      "utfall": "skriven",
+      "text": "Brief review 2026-09-21 (Chimney sweep set creative hub) — this brief has 3 errors the editor must know about:\n1. a line failed the three-question test (❌) and still went out: `Det här satt i röret.`, `Klart på minuter.`\n2. no shot-level direction table (Time | Script line | Audio | On-screen text | Picture | Effect + length | Source | Reference | Latitude — docs/os/BRIEF-REGI.md); the editor has 5 script lines and no picture for any of them\n3. Direction for the fix: `Det här satt i röret.` and `Klart på minuter.` are signable by any brush (the brief says so) and the page states no time — name the bend and the nine rods in the caption, and either time the job or drop `minuter`.\nFix before production. If the ad is already live, apply it to the next version — nothing is paused. Status unchanged."
+    },
+    {
+      "namn": "Sotarset_UG_1_H1",
+      "utfall": "skriven",
+      "text": "Brief review 2026-09-21 (Chimney sweep set creative hub) — this brief has 3 errors the editor must know about:\n1. a line failed the three-question test (❌) and still went out: `Jag sotade kaminröret själv. Utan sotare.`, `Man skruvar ihop stängerna, en efter en.`, `Sotet lossnar. Så här ser det ut.`\n2. no shot-level direction table (Time | Script line | Audio | On-screen text | Picture | Effect + length | Source | Reference | Latitude — docs/os/BRIEF-REGI.md); the editor has 6 script lines and no picture for any of them\n3. Direction for the fix: the creator's lines `Jag sotade kaminröret själv. Utan sotare.`, `Man skruvar ihop stängerna …`, `Sotet lossnar …` are ordinary by design — that is fine for UGC, but one line must carry what only this set does (`Den böjer sig runt krökarna` does; make sure it stays in and is not cut for length).\nFix before production. If the ad is already live, apply it to the next version — nothing is paused. Status unchanged."
+    }
+  ],
+  "varningar": [
+    "no product folder in the repo (products.json / register.json) — dna.md and feedback.md do not apply; the Feedback row in the hub is the memory"
+  ],
+  "torr": false
+}

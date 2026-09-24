@@ -1,0 +1,66 @@
+{
+  "hub_id": "7ec270ab-908c-82f6-a2a8-0153159b20fa",
+  "rond": "2026-09-23",
+  "bra": [
+    "All three rules from the 2026-09-19 review held: `dragsko` is gone and the strap line is rewritten from the page (straps on all four sides, hooked at the bottom edge) in every iteration; the storage-bag line and the seeded-review line are dropped on purpose; no GT brief; every brief carries VARIABELTAGGAR, a lesson id (L-120250242482300291) and store-neutral rules for the mirror.",
+    "The three iterations on the breakthrough SP_4_H1 change exactly one thing each (opening line / 5-second problem beat / no opening line), name the parent, the read-out metric and the deadline (2026-10-07) — the first round in this hub where the data will be able to answer a question.",
+    "OB_5_1 is built on measured voice-of-customer (30 comments on SP_4_H1, 37 % fukt/kondens), grants the objection instead of calling it a myth, and reuses only vetted lines from OB_4_H1.",
+    "Shot-level direction is complete on all three videos: audio, on-screen text, picture, effect, source, reference and MAY/MUST NOT latitude per row, with a fallback when a source is missing.",
+    "Price 1 129 / 1 469 kr and the nine sizes match the page (read live from the product page 2026-09-24); `takluckor`, `tätmassan`, `silverbelagd 210D-oxfordväv` are the page's own words."
+  ],
+  "missat": [
+    "Every CPA in the round (SP_4_H1: 463 kr) is judged against the campaign's ROAS 3,08, never against a break-even CPA — ANALYSMETOD says kill and scale decisions live on the break-even line. This hub has no break-even in products.json; CaraShell's dna.md uses 693 kr. Whichever applies, write it next to the CPA.",
+    "SP_4_H3 opens on a 15-word, two-clause sentence (`Vid en taklucka utan skydd blir vattnet lätt stående, och tätmassan tar stryk.`) over a 5-second shot — the viewer reads a caption in three seconds; let the standing water carry the first two seconds and start the sentence after.",
+    "SP_4_H3 needs footage nobody has (a caravan hatch with standing water) — it is in the table's Source column and in latitude, but not called out at the top of the brief; the editor finds out on row 1.",
+    "The three-question table is ✅✅❌ on every line again; here it is defensible because almost every line is the parent's proven copy, but the one genuinely new line per iteration deserves a real test — SP_4_H3's opener is the one that would have failed on length.",
+    "The lesson file cited (products/takoverdraget-husvagn/lardomar.md) is not on `main` — only invandningar.md is. Cite what the next reader can open, or name the branch."
+  ],
+  "regler": [
+    "Write every CPA against a break-even CPA in the same sentence (`CPA 463 kr against break-even X kr`), never against the campaign ROAS — and state where the break-even number comes from, since products.json has none for this hub.",
+    "The opening line of a video is one clause the viewer can read in three seconds; when the problem needs a sentence (SP_4_H3), the picture opens and the sentence starts on row 2.",
+    "Footage the editor must shoot new goes in a `NEW FOOTAGE` block at the top of the brief, with the fallback if it cannot be shot — never only in a table cell."
+  ],
+  "rader": [
+    {
+      "namn": "Takoverdrag_OB_5_1",
+      "fel": [],
+      "anmarkningar": [
+        "Model objection static: grants the belief, shows the open sides, reuses vetted lines only. The only thing missing is a break-even next to the CPA curve it cites (147 → 466 kr)."
+      ],
+      "bra": [
+        "Built on measured comments (37 % fukt), not on a guess."
+      ]
+    },
+    {
+      "namn": "Takoverdrag_SP_4_H4",
+      "fel": [],
+      "anmarkningar": [
+        "Fine. Row 1 correctly says NO TEXT and the latitude forbids filling the silence."
+      ],
+      "bra": [
+        "The silent cut-in is the cleanest in-media-res test in the round."
+      ]
+    },
+    {
+      "namn": "Takoverdrag_SP_4_H3",
+      "fel": [],
+      "anmarkningar": [
+        "The opener is 15 words in two clauses for a 5-second row — too long to read; open on the standing water and start the line at second 2.",
+        "Row 1 requires new footage (hatch with standing water); flag it at the top of the brief, not only in the Source column."
+      ],
+      "bra": [
+        "Hold rate named as the read-out against the parent's 18 %."
+      ]
+    },
+    {
+      "namn": "Takoverdrag_SP_4_H2",
+      "fel": [],
+      "anmarkningar": [
+        "Clean one-variable test (opening line only) with hook rate as the read-out; the strap line is the page's. Add the break-even CPA next to `CPA 463 kr`."
+      ],
+      "bra": [
+        "Names the parent, the variable, the metric and the deadline."
+      ]
+    }
+  ]
+}

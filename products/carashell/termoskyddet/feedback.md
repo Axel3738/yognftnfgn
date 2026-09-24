@@ -41,3 +41,31 @@ Inga påhittade siffror — allt kommer ur briefarna, butiken (läst live) och d
 | `Termoskydd_SP_9_1` | ⚠️ | — | the Rules section does not carry "the ad never names the store" (rule since 2026-09-18) · no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief · Source path "products/termoskyddet-husbil/backlog.md" does not exist — cite a real file or mark "guess". · Build detail coded SP (social proof) — code the angle (PD). |
 | `Termoskydd_PD_8_H1` | ⚠️ | — | the Rules section does not carry "the ad never names the store" (rule since 2026-09-18) · no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief · End card carries `fri frakt inom Sverige` into a mirrored hub (see hub feedback). |
 | `Termoskydd_BOF_7_1` | ⚠️ | — | new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess · the Rules section does not carry "the ad never names the store" (rule since 2026-09-18) · no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief · New BOF price card with no source — acceptable for retargeting if the Why says so. |
+
+## Rond 2026-09-23 — batch okänd (4 briefer) · granskad 2026-09-24 · hub BÄVER Termoskyddet för Husbil
+
+**Bra**
+- All three rules from the 2026-09-18 review held: store-neutral everywhere (no `30 dagars öppet köp`, no shipping, no Klarna — the mirror into CaraShell is named in every Rules block); the angle is coded honestly (CS iterations of the CS parents); the sources are real lesson ids (L-120250175770080291, L-120250175768000291) with spend, purchases and CPA.
+- CS_12_H1 explains why iteration 2 is skipped on its parent (CS_10_1 already tests that variable on the sibling parent) — that is the discipline `CS-KLART` asks for: never two ads the data cannot tell apart.
+- Every claim is the page's own and verified live: `Två minuters jobb` is on the page, 211 × 171 cm and 90 cm side flaps match, price 559 / 932 / 373 / 40 % is read live and the note says so.
+- Zero-review honesty (no stars, no `tusentals husbilsägare`), the wrong-season ban (`inför sommaren`) and the fabricated-urgency ban are written into every brief.
+- Shot-level direction complete on both videos, with `NEW FOOTAGE`/stock called out where no asset exists.
+
+**Missat**
+- CPA 185 kr (CS_3) and 152 kr (CS_2) are quoted without the break-even CPA (347 kr, dna.md) in the same sentence — the reader cannot see how much room the winners have.
+- CS_12_H1's H1 hook `Torka bort imman. Varje morgon.` is an imperative — it reads as telling the viewer to do the chore. H3 (`Sluta torka imma varje morgon.`) says what the ad means; pick that one.
+- CS_10_1 and CS_12_1 carry both a VARIABELTAGGAR line and a duplicate `Variables:` line — one is the tool's, the other is noise.
+- The parents (CS_2, CS_3) are live ads without a Notion row; the briefs say so but give no Meta ad id — the next reader has to search the account by name.
+- The tool's two store-name hits on CS_10_1 and CS_12_1 were false: the domain sits in the appended `PRIS VERIFIERAT` note, not in any ad line. Fixed in tools/briefgranskning.mjs this run; nothing for the editor.
+
+**Tre regler för nästa rond**
+1. Write every CPA against break-even 347 kr in the same sentence — `CPA 185 kr against break-even 347 kr` — never a CPA alone.
+2. A hook is never an instruction to do the chore the product removes: `Sluta torka imma varje morgon` says it; `Torka bort imman` does not.
+3. When the parent is a live ad without a Notion row, write its Meta ad id in the Why so the next reader can open it — and drop the duplicate `Variables:` line; VARIABELTAGGAR is the one the tools read.
+
+| Brief | Dom | Fel | Anmärkningar |
+|---|---|---|---|
+| `Termoskydd_CS_12_H1` | ⚠️ | — | H1 `Torka bort imman. Varje morgon.` reads as an instruction to wipe; use H3 `Sluta torka imma varje morgon.` as the one hook. · Add break-even 347 kr next to CPA 152 kr. |
+| `Termoskydd_CS_12_1` | ⚠️ | — | Duplicate `Variables:` line under VARIABELTAGGAR — drop it. · Add break-even 347 kr next to CPA 152 kr. Parent has no Notion row: give the Meta ad id. |
+| `Termoskydd_CS_11_H1` | ⚠️ | — | Add break-even 347 kr next to CPA 185 kr. |
+| `Termoskydd_CS_10_1` | ⚠️ | — | Duplicate `Variables:` line — drop it. Top half needs stock or new footage of real condensation; it is flagged, good. · Add break-even 347 kr next to CPA 185 kr. |

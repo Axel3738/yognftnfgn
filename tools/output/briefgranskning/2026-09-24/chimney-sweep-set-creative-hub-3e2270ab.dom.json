@@ -1,0 +1,269 @@
+{
+  "hub_id": "3e2270ab-908c-8171-bbae-fff6adedbe5a",
+  "rond": "2026-09-21",
+  "bra": [
+    "The only hub in nine that runs the three-question test honestly: lines any brush brand could sign are marked ✅ in the competitor column, price and CTA lines are marked \"Not applicable\" — the table is a test here, not decoration.",
+    "Every source is named or marked \"guess\" exactly as the rules ask; the parent PD_1_H2 is cited with purchases, CPA and break-even (15 purchases, CPA 147 kr against 307 kr, +2 410 kr contribution); PD_1_H4/H5 change only seconds 0–3 of the winner's file.",
+    "Store terms are right: `Fri frakt inom Sverige`, `14 dagars ångerrätt enligt lag`, Klarna — `never 30 dagars öppet köp` is in every Rules block; the store name never appears.",
+    "Locked facts verified against the page (read live from the product page 2026-09-24): 9 rods × 41 cm, 3,69 m, 100 mm brush, hex adapter, `Når bakom kaminen eller torktumlaren`, `Följer krökar där en stel stång fastnar`, `Bygg bara den längd du behöver`; the six-rod-photo warning protects the count claim.",
+    "PD_4_1 and PD_4_H1: real soot or the brief is held — never staged."
+  ],
+  "missat": [
+    "Seven briefs ship a line the writer's own test marked competitor-signable (`Det här satt i röret.`, `Borsten kommer ut svart.`, `Sotet borstas loss.`, `Skruva ihop stängerna en efter en.`, `Klart på minuter.`, `Jag sotade kaminröret själv. Utan sotare.`, `599 kr. Men inte längre.`) with a justification next to the ✅. The copy rule is the other way round: a line that fails is rewritten until it carries something only this set can say (the bend, the nine rods, 3,69 m) — honesty about the failure does not license shipping it.",
+    "Eight videos have no shot-level direction table — the rule applies from 2026-09-21, the round's own date; PD_1_H4/H5 edit three seconds, but the six new videos leave picture, effect and source to the editor.",
+    "G_2_1 cites `product page \"perfekt julklapp\"` — the phrase is not on the page (read live from the product page 2026-09-24); the gift angle is a guess and is already marked one, so drop the false citation.",
+    "PD is used for five different angles (reach, comparison, proof, scale, specs) — the Variables line names them, the ad name does not; the next /cs groups by name.",
+    "`Klart på minuter.` (PD_4_H1) is a timing claim the page does not make — film it and write the real time, or drop it.",
+    "The old `Variables:` line (angle · hook-type · format · proof · offer · talker) is used instead of VARIABELTAGGAR; no Memo, no `AI content:` line, no COPY CARD.",
+    "This product has no memory in the repo — the Feedback row in the hub is its memory."
+  ],
+  "regler": [
+    "A line the test marks competitor-signable is rewritten before the brief goes out — add the thing only this set can say (nine rods, the bend through the elbow, 3,69 m) — never shipped with a justification next to the ✅.",
+    "Every video written from 2026-09-21 carries one direction row per script line (Audio · On-screen text · Picture · Effect · Source · Latitude) — eight videos this round have none.",
+    "VARIABELTAGGAR, `Memo:` and `AI content:` replace the old Variables line, and a phrase quoted \"from the page\" must be on the page — `perfekt julklapp` is not."
+  ],
+  "rader": [
+    {
+      "namn": "Sotarset_PD_2_1",
+      "fel": [],
+      "anmarkningar": [
+        "variable tags missing: hook-typ, visuell stil, textmängd, talare",
+        "\"Isolated variable: the angle (reach), tested cheaply as a static before committing to video\" may name more than one variable — a variant changes exactly one thing",
+        "component tags missing: typ, koncept, kalla, avatar, awareness, begar, mekanism, tro, urgency, hook-mekanik, confidence, lardom (typ=N|IM|I|M|S · koncept · kalla · avatar · awareness · begar · mekanism · tro · urgency · hook-mekanik · confidence · lardom=L-…) — the next /cs cannot group profit by component; a brief without lardom= is not written (CS-KLART point 6)",
+        "no \"Memo:\" line — one sentence on why this ad beats the current level (Evolve's breakthrough memo)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Fine — page line as hook, exact spec as sub-line."
+      ],
+      "bra": [
+        "`Når bakom kaminen.` is the page's own line and needs the flexible mechanism to be true."
+      ]
+    },
+    {
+      "namn": "Sotarset_PD_1_H5",
+      "fel": [
+        "no shot-level direction table (Time | Script line | Audio | On-screen text | Picture | Effect + length | Source | Reference | Latitude — docs/os/BRIEF-REGI.md); the editor has 2 script lines and no picture for any of them"
+      ],
+      "anmarkningar": [
+        "variable tags missing: hook-typ, visuell stil, textmängd, talare",
+        "no \"AI content:\" line (person / voice / image only / none) — the US translation step then burns in \"Contains AI-generated content\" as if it were a person",
+        "component tags missing: typ, koncept, kalla, avatar, awareness, begar, mekanism, tro, urgency, hook-mekanik, confidence, lardom (typ=N|IM|I|M|S · koncept · kalla · avatar · awareness · begar · mekanism · tro · urgency · hook-mekanik · confidence · lardom=L-…) — the next /cs cannot group profit by component; a brief without lardom= is not written (CS-KLART point 6)",
+        "no \"Memo:\" line — one sentence on why this ad beats the current level (Evolve's breakthrough memo)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "The direction table is missing; for a 3-second replacement on the winner's file, one row (picture: rod bending through an elbow, close-up; source: new footage or the PD_1_H2 file) is enough."
+      ],
+      "bra": [
+        "Changes exactly seconds 0–3 of the winner."
+      ]
+    },
+    {
+      "namn": "Sotarset_PD_3_1",
+      "fel": [],
+      "anmarkningar": [
+        "variable tags missing: hook-typ, visuell stil, textmängd, talare",
+        "\"Isolated variable: the angle (comparison), tested cheaply as a static\" may name more than one variable — a variant changes exactly one thing",
+        "component tags missing: typ, koncept, kalla, avatar, awareness, begar, mekanism, tro, urgency, hook-mekanik, confidence, lardom (typ=N|IM|I|M|S · koncept · kalla · avatar · awareness · begar · mekanism · tro · urgency · hook-mekanik · confidence · lardom=L-…) — the next /cs cannot group profit by component; a brief without lardom= is not written (CS-KLART point 6)",
+        "no \"Memo:\" line — one sentence on why this ad beats the current level (Evolve's breakthrough memo)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Fine — split with the stiff rod stopped and the flexible one through, generic `stel stång` kept generic."
+      ],
+      "bra": [
+        "Conflict type A as a two-panel image."
+      ]
+    },
+    {
+      "namn": "Sotarset_CS_2_1",
+      "fel": [],
+      "anmarkningar": [
+        "variable tags missing: hook-typ, visuell stil, textmängd, talare",
+        "\"Isolated variable: the offer (honest price only), tested cheaply as a static\" may name more than one variable — a variant changes exactly one thing",
+        "component tags missing: typ, koncept, kalla, avatar, awareness, begar, mekanism, tro, urgency, hook-mekanik, confidence, lardom (typ=N|IM|I|M|S · koncept · kalla · avatar · awareness · begar · mekanism · tro · urgency · hook-mekanik · confidence · lardom=L-…) — the next /cs cannot group profit by component; a brief without lardom= is not written (CS-KLART point 6)",
+        "no \"Memo:\" line — one sentence on why this ad beats the current level (Evolve's breakthrough memo)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Fine — honest price, nothing else."
+      ],
+      "bra": [
+        "Static validation before more CS video."
+      ]
+    },
+    {
+      "namn": "Sotarset_PD_6_1",
+      "fel": [],
+      "anmarkningar": [
+        "variable tags missing: hook-typ, visuell stil, textmängd, talare",
+        "\"Isolated variable: the angle (spec/contents), tested cheaply as a static\" may name more than one variable — a variant changes exactly one thing",
+        "component tags missing: typ, koncept, kalla, avatar, awareness, begar, mekanism, tro, urgency, hook-mekanik, confidence, lardom (typ=N|IM|I|M|S · koncept · kalla · avatar · awareness · begar · mekanism · tro · urgency · hook-mekanik · confidence · lardom=L-…) — the next /cs cannot group profit by component; a brief without lardom= is not written (CS-KLART point 6)",
+        "no \"Memo:\" line — one sentence on why this ad beats the current level (Evolve's breakthrough memo)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Fine — the rod count kept uncountable in the photo, the count in the spec line only."
+      ],
+      "bra": [
+        "The six-rod-photo trap is handled in the layout itself."
+      ]
+    },
+    {
+      "namn": "Sotarset_G_2_1",
+      "fel": [],
+      "anmarkningar": [
+        "variable tags missing: hook-typ, visuell stil, textmängd, talare",
+        "\"Isolated variable: the angle (gift), tested cheaply as a static\" may name more than one variable — a variant changes exactly one thing",
+        "component tags missing: typ, koncept, kalla, avatar, awareness, begar, mekanism, tro, urgency, hook-mekanik, confidence, lardom (typ=N|IM|I|M|S · koncept · kalla · avatar · awareness · begar · mekanism · tro · urgency · hook-mekanik · confidence · lardom=L-…) — the next /cs cannot group profit by component; a brief without lardom= is not written (CS-KLART point 6)",
+        "no \"Memo:\" line — one sentence on why this ad beats the current level (Evolve's breakthrough memo)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "`product page \"perfekt julklapp\"` — not on the page (read live from the product page 2026-09-24); the angle is a guess and marked so; remove the false citation."
+      ],
+      "bra": [
+        "Headline ties the gift to the self-use fact so it stays falsifiable."
+      ]
+    },
+    {
+      "namn": "Sotarset_PD_4_1",
+      "fel": [
+        "a line failed the three-question test (❌) and still went out: `Det här satt i röret.`",
+        "Direction for the fix: keep the real-soot photo, make the headline carry what only this set does — the soot came out through the bend, after nine rods — so the line cannot be signed by any brush. Never ship a line the test marks signable."
+      ],
+      "anmarkningar": [
+        "variable tags missing: hook-typ, visuell stil, textmängd, talare",
+        "\"Isolated variable: the proof (real photo of what comes out of the pipe), tested cheaply as a static\" may name more than one variable — a variant changes exactly one thing",
+        "component tags missing: typ, koncept, kalla, avatar, awareness, begar, mekanism, tro, urgency, hook-mekanik, confidence, lardom (typ=N|IM|I|M|S · koncept · kalla · avatar · awareness · begar · mekanism · tro · urgency · hook-mekanik · confidence · lardom=L-…) — the next /cs cannot group profit by component; a brief without lardom= is not written (CS-KLART point 6)",
+        "no \"Memo:\" line — one sentence on why this ad beats the current level (Evolve's breakthrough memo)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "`Real photo only or hold` is the right rule."
+      ],
+      "bra": [
+        "Refuses to stage the proof."
+      ]
+    },
+    {
+      "namn": "Sotarset_PD_1_H4",
+      "fel": [
+        "a line failed the three-question test (❌) and still went out: `Det här satt i röret.`",
+        "no shot-level direction table (Time | Script line | Audio | On-screen text | Picture | Effect + length | Source | Reference | Latitude — docs/os/BRIEF-REGI.md); the editor has 2 script lines and no picture for any of them",
+        "Direction for the fix: the three-second hook shows the black brush coming out — name what it came through (the bend / the nine rods) so the line is this set's, not any brush's."
+      ],
+      "anmarkningar": [
+        "variable tags missing: hook-typ, visuell stil, textmängd, talare",
+        "no \"AI content:\" line (person / voice / image only / none) — the US translation step then burns in \"Contains AI-generated content\" as if it were a person",
+        "component tags missing: typ, koncept, kalla, avatar, awareness, begar, mekanism, tro, urgency, hook-mekanik, confidence, lardom (typ=N|IM|I|M|S · koncept · kalla · avatar · awareness · begar · mekanism · tro · urgency · hook-mekanik · confidence · lardom=L-…) — the next /cs cannot group profit by component; a brief without lardom= is not written (CS-KLART point 6)",
+        "no \"Memo:\" line — one sentence on why this ad beats the current level (Evolve's breakthrough memo)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Direction table missing; one row for the new 3 seconds is enough."
+      ],
+      "bra": [
+        "Changes exactly seconds 0–3 of the winner."
+      ]
+    },
+    {
+      "namn": "Sotarset_PD_2_H1",
+      "fel": [
+        "a line failed the three-question test (❌) and still went out: `Skruva ihop stängerna en efter en.`, `Borsten kommer ut svart.`",
+        "no shot-level direction table (Time | Script line | Audio | On-screen text | Picture | Effect + length | Source | Reference | Latitude — docs/os/BRIEF-REGI.md); the editor has 6 script lines and no picture for any of them",
+        "Direction for the fix: `Skruva ihop stängerna en efter en.` and `Borsten kommer ut svart.` are instructional/generic by the brief's own test — tie them to the mechanism (the rods bending behind the stove, 3,69 m) or cut them; the hook and rows 3 and 5 already carry the product."
+      ],
+      "anmarkningar": [
+        "variable tags missing: hook-typ, visuell stil, textmängd, talare",
+        "no \"AI content:\" line (person / voice / image only / none) — the US translation step then burns in \"Contains AI-generated content\" as if it were a person",
+        "component tags missing: typ, koncept, kalla, avatar, awareness, begar, mekanism, tro, urgency, hook-mekanik, confidence, lardom (typ=N|IM|I|M|S · koncept · kalla · avatar · awareness · begar · mekanism · tro · urgency · hook-mekanik · confidence · lardom=L-…) — the next /cs cannot group profit by component; a brief without lardom= is not written (CS-KLART point 6)",
+        "no \"Memo:\" line — one sentence on why this ad beats the current level (Evolve's breakthrough memo)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "No direction table."
+      ],
+      "bra": [
+        "The reach angle from the page's own line, body from the proven demo."
+      ]
+    },
+    {
+      "namn": "Sotarset_PD_3_H1",
+      "fel": [
+        "a line failed the three-question test (❌) and still went out: `Skruva på nästa stång och fortsätt.`, `Sotet borstas loss.`",
+        "no shot-level direction table (Time | Script line | Audio | On-screen text | Picture | Effect + length | Source | Reference | Latitude — docs/os/BRIEF-REGI.md); the editor has 6 script lines and no picture for any of them",
+        "Direction for the fix: `Skruva på nästa stång och fortsätt.` and `Sotet borstas loss.` are generic by the brief's own test — fold them into the bend/nine-rod lines or cut them."
+      ],
+      "anmarkningar": [
+        "variable tags missing: hook-typ, visuell stil, textmängd, talare",
+        "no \"AI content:\" line (person / voice / image only / none) — the US translation step then burns in \"Contains AI-generated content\" as if it were a person",
+        "component tags missing: typ, koncept, kalla, avatar, awareness, begar, mekanism, tro, urgency, hook-mekanik, confidence, lardom (typ=N|IM|I|M|S · koncept · kalla · avatar · awareness · begar · mekanism · tro · urgency · hook-mekanik · confidence · lardom=L-…) — the next /cs cannot group profit by component; a brief without lardom= is not written (CS-KLART point 6)",
+        "no \"Memo:\" line — one sentence on why this ad beats the current level (Evolve's breakthrough memo)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "No direction table."
+      ],
+      "bra": [
+        "Conflict type A on screen: stiff stops, flexible goes through."
+      ]
+    },
+    {
+      "namn": "Sotarset_CS_2_H1",
+      "fel": [
+        "a line failed the three-question test (❌) and still went out: `599 kr. Men inte längre.`, `Spara 140 kr.`",
+        "no shot-level direction table (Time | Script line | Audio | On-screen text | Picture | Effect + length | Source | Reference | Latitude — docs/os/BRIEF-REGI.md); the editor has 6 script lines and no picture for any of them",
+        "Direction for the fix: `599 kr. Men inte längre.` and `Spara 140 kr.` are any store's price-cut lines by the brief's own test — the box-contents line (`9 stänger, en borste, en adapter`) is the one only this set can say; lead with it and let the price follow."
+      ],
+      "anmarkningar": [
+        "variable tags missing: hook-typ, visuell stil, textmängd, talare",
+        "no \"AI content:\" line (person / voice / image only / none) — the US translation step then burns in \"Contains AI-generated content\" as if it were a person",
+        "component tags missing: typ, koncept, kalla, avatar, awareness, begar, mekanism, tro, urgency, hook-mekanik, confidence, lardom (typ=N|IM|I|M|S · koncept · kalla · avatar · awareness · begar · mekanism · tro · urgency · hook-mekanik · confidence · lardom=L-…) — the next /cs cannot group profit by component; a brief without lardom= is not written (CS-KLART point 6)",
+        "no \"Memo:\" line — one sentence on why this ad beats the current level (Evolve's breakthrough memo)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "No direction table; rows 4–5 (brush head, adapter close-ups) have no line at all — write NO TEXT or a fact."
+      ],
+      "bra": [
+        "Honest offer, no urgency, no invented terms."
+      ]
+    },
+    {
+      "namn": "Sotarset_PD_5_H1",
+      "fel": [
+        "no shot-level direction table (Time | Script line | Audio | On-screen text | Picture | Effect + length | Source | Reference | Latitude — docs/os/BRIEF-REGI.md); the editor has 6 script lines and no picture for any of them"
+      ],
+      "anmarkningar": [
+        "variable tags missing: hook-typ, visuell stil, textmängd, talare",
+        "no \"AI content:\" line (person / voice / image only / none) — the US translation step then burns in \"Contains AI-generated content\" as if it were a person",
+        "component tags missing: typ, koncept, kalla, avatar, awareness, begar, mekanism, tro, urgency, hook-mekanik, confidence, lardom (typ=N|IM|I|M|S · koncept · kalla · avatar · awareness · begar · mekanism · tro · urgency · hook-mekanik · confidence · lardom=L-…) — the next /cs cannot group profit by component; a brief without lardom= is not written (CS-KLART point 6)",
+        "no \"Memo:\" line — one sentence on why this ad beats the current level (Evolve's breakthrough memo)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "No direction table; rows 3 and 5 have no line — write NO TEXT or a fact. The count-up hook is a genuinely new mechanic and the specs are exact."
+      ],
+      "bra": [
+        "`Bygg bara den längd du behöver` is the page's own line and only a modular set can say it."
+      ]
+    },
+    {
+      "namn": "Sotarset_PD_4_H1",
+      "fel": [
+        "a line failed the three-question test (❌) and still went out: `Det här satt i röret.`, `Klart på minuter.`",
+        "no shot-level direction table (Time | Script line | Audio | On-screen text | Picture | Effect + length | Source | Reference | Latitude — docs/os/BRIEF-REGI.md); the editor has 5 script lines and no picture for any of them",
+        "Direction for the fix: `Det här satt i röret.` and `Klart på minuter.` are signable by any brush (the brief says so) and the page states no time — name the bend and the nine rods in the caption, and either time the job or drop `minuter`."
+      ],
+      "anmarkningar": [
+        "variable tags missing: hook-typ, visuell stil, textmängd, talare",
+        "no \"AI content:\" line (person / voice / image only / none) — the US translation step then burns in \"Contains AI-generated content\" as if it were a person",
+        "component tags missing: typ, koncept, kalla, avatar, awareness, begar, mekanism, tro, urgency, hook-mekanik, confidence, lardom (typ=N|IM|I|M|S · koncept · kalla · avatar · awareness · begar · mekanism · tro · urgency · hook-mekanik · confidence · lardom=L-…) — the next /cs cannot group profit by component; a brief without lardom= is not written (CS-KLART point 6)",
+        "no \"Memo:\" line — one sentence on why this ad beats the current level (Evolve's breakthrough memo)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "No direction table.",
+        "Real footage or hold — right."
+      ],
+      "bra": [
+        "Proof by footage of what actually comes out."
+      ]
+    },
+    {
+      "namn": "Sotarset_UG_1_H1",
+      "fel": [
+        "a line failed the three-question test (❌) and still went out: `Jag sotade kaminröret själv. Utan sotare.`, `Man skruvar ihop stängerna, en efter en.`, `Sotet lossnar. Så här ser det ut.`",
+        "no shot-level direction table (Time | Script line | Audio | On-screen text | Picture | Effect + length | Source | Reference | Latitude — docs/os/BRIEF-REGI.md); the editor has 6 script lines and no picture for any of them",
+        "Direction for the fix: the creator's lines `Jag sotade kaminröret själv. Utan sotare.`, `Man skruvar ihop stängerna …`, `Sotet lossnar …` are ordinary by design — that is fine for UGC, but one line must carry what only this set does (`Den böjer sig runt krökarna` does; make sure it stays in and is not cut for length)."
+      ],
+      "anmarkningar": [
+        "variable tags missing: hook-typ, visuell stil, textmängd, talare",
+        "no \"AI content:\" line (person / voice / image only / none) — the US translation step then burns in \"Contains AI-generated content\" as if it were a person",
+        "component tags missing: typ, koncept, kalla, avatar, awareness, begar, mekanism, tro, urgency, hook-mekanik, confidence, lardom (typ=N|IM|I|M|S · koncept · kalla · avatar · awareness · begar · mekanism · tro · urgency · hook-mekanik · confidence · lardom=L-…) — the next /cs cannot group profit by component; a brief without lardom= is not written (CS-KLART point 6)",
+        "no \"Memo:\" line — one sentence on why this ad beats the current level (Evolve's breakthrough memo)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "No direction table; `AI content:` missing — a real creator is `none`."
+      ],
+      "bra": [
+        "No voice-over, creator subtitled word for word."
+      ]
+    }
+  ]
+}

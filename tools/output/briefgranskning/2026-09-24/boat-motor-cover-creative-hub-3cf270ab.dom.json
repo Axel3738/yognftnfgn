@@ -1,0 +1,71 @@
+{
+  "hub_id": "3cf270ab-908c-8113-a35c-f9c1cd61d727",
+  "rond": "2026-09-23",
+  "bra": [
+    "All three rules from the 2026-09-18 review held: the store is never named (captions carry `579 kr` only), no `30 dagars öppet köp` or any policy line, every concept has a lesson id with spend, purchases and CPA — six of eleven had no source last round, four of four have one now.",
+    "OB_1_1 grants the biggest objection in the account (43 % skepsis, 7 comments on SP_1_H5) with the page's own two facts (six months laid up; a bare motor is what a thief sees from the road) and refuses to call it a myth.",
+    "The SP_1 iterations drop the parent's unbacked `så många har bytt` line and say so — and change one thing each (hook / 13-second problem section / silent in-media-res open).",
+    "Every claim verified against the page (read live from the product page 2026-09-24): `Snart står båten på land igen`, `sex månader`, `tjuv … från vägen`, `regn, snö och frost`, `väder och smuts`, 420D, nine sizes 0–5 to 250–350 hk. `salt` and `fågelskit` correctly banned — not on the page.",
+    "Shot-level direction complete on all three videos, with sources per row."
+  ],
+  "missat": [
+    "CPA 371 kr (SP_1_H3) and CPA 171 kr (SP_1_H5) are judged against the campaign ROAS 3,18, not against the break-even CPA (393 kr in the 2026-09-18 briefs) — the number that decides kill and scale is missing from every Why.",
+    "Three videos ask the editor for NEW FOOTAGE of the same pull-over and strap motif at a dock, while the parent SP_1_H3 and its siblings SP_1_H1/H5 are delivered ads whose files sit behind the Drive links on their hub rows. `no Drive folder exists for this product` is wrong for the editors' own deliveries — point the Source column at the parent's file first.",
+    "`AI content: none` on three videos with a voice-over — if the VO is synthetic it must say `voice`; the US step reads this line and a false `none` skips a required disclosure.",
+    "The lesson file cited (lardomar.md) and products/batmotorskyddet-420d/invandningar.md are not on `main`; the next reader cannot open them.",
+    "SP_1_H14 leans on hook/hold rates (42,8 % / 60,3 % on FM_1_H1) as the reason to lengthen the problem section — hook and hold are diagnosis, purchases are the verdict (ANALYSMETOD step 6)."
+  ],
+  "regler": [
+    "Write every CPA against break-even 393 kr in the same sentence — the campaign ROAS is not a line to judge an ad against.",
+    "Before `NEW FOOTAGE`, the Source column points at the parent's delivered file (the Drive link on the SP_1_H3/H5/H1 rows in this hub) — three re-shoots of the same motif in one round is waste; new footage only for shots no delivered ad has.",
+    "`AI content:` tells the truth about the voice: a synthetic voice-over is `voice`, never `none` — the US translation step burns in the disclosure from this line."
+  ],
+  "rader": [
+    {
+      "namn": "Batmotor_OB_1_1",
+      "fel": [],
+      "anmarkningar": [
+        "Add break-even 393 kr next to CPA 171 kr. Seven comments is a thin base for a 43 % share — say so in the Memo."
+      ],
+      "bra": [
+        "Grants the objection with the page's own facts; single still, no split screen, product stays the focus."
+      ]
+    },
+    {
+      "namn": "Batmotor_SP_1_H15",
+      "fel": [],
+      "anmarkningar": [
+        "Row 1 new footage of the strap cinch exists in the delivered SP_1 ads — source it there.",
+        "`AI content: none` with a VO: if synthetic, write `voice`.",
+        "Add break-even 393 kr next to CPA 371 kr."
+      ],
+      "bra": [
+        "Silent open, no establishing shot, one variable."
+      ]
+    },
+    {
+      "namn": "Batmotor_SP_1_H14",
+      "fel": [],
+      "anmarkningar": [
+        "Five rows of new footage (rain on a bare motor, from the road, pull-over, strap) — reuse the delivered SP_1 files for rows 4–5; only rows 1–3 are genuinely new.",
+        "Hook/hold rates from FM_1_H1 justify the longer problem part — they are diagnosis; state the purchases behind them.",
+        "`AI content: none` with a VO: if synthetic, write `voice`."
+      ],
+      "bra": [
+        "Every problem line is the page's own sentence."
+      ]
+    },
+    {
+      "namn": "Batmotor_SP_1_H13",
+      "fel": [],
+      "anmarkningar": [
+        "Rows 1–2 ask for new dock footage of the pull-over and strap; the parent SP_1_H3 and siblings H5/H1 are delivered videos in this hub — source those files first.",
+        "`AI content: none` with a VO: if synthetic, write `voice`.",
+        "Add break-even 393 kr next to CPA 371 kr."
+      ],
+      "bra": [
+        "Drops the unbacked social-proof line and names why."
+      ]
+    }
+  ]
+}

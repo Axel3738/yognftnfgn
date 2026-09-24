@@ -1,0 +1,57 @@
+{
+  "hub_id": "76b270ab-908c-8393-8a47-01f6ae366d42",
+  "rond": "2026-09-22",
+  "bra": [
+    "All three rules from the 2026-09-20 review held: every hook is a declarative (`Grönt vatten i en IBC-tank utan UV-skydd.`), the zip time is `[TID]` to be measured in the take — `never write 2 minuter` is in the Rules — and every brief carries VARIABELTAGGAR plus the parent's CPA against break-even (204 kr against 441 kr, 38 purchases).",
+    "Three iterations on the breakthrough PD_1_H1 with one variable each (opening at second 0 / five-second problem part / macro opening at full length), and H3 finally separates PD_Extra's opening from its 10-second cut — a question the account has carried unanswered.",
+    "Shot-level direction complete on all three, with the parent's Drive file as source per row and `NEW FOOTAGE` only where the parent has no green-water shot.",
+    "No price in a PD ad (dna.md Winning DNA 1) is stated and followed; the store price is given for reference only and read live.",
+    "The store is never named; no policy lines; the facts list is locked to the page (120 × 100 × 116 cm, 1000 L, 210D, zip, top opening)."
+  ],
+  "missat": [
+    "The parent's CTA `Skydda din tank idag.` carries `idag` — a soft urgency word in a hub that bans invented urgency. It is inherited and kept for isolation in these three; the next new concept drops it.",
+    "The Notion bodies end with stray lines `IBC_PD_12_H1 (H1)` / `(H2)` / `(H3)` after the COPY CARD — leftovers from the hook table that a skimming editor reads as three more hooks.",
+    "`[TID]` appears in the primary text too — the brief says it is filled before upload but not by whom; the editor measures it, the uploader copies it — say so.",
+    "The tool flags kronor amounts in a PD ad with no price rule — it is the \"store price for reference\" line; harmless, but the PD rule could say `Price: none in the creative` in the standard slot so the tool reads it."
+  ],
+  "regler": [
+    "The measured time has an owner: the editor writes the seconds in a comment on the row when delivering, the uploader copies it into the primary text — `[TID]` never reaches Meta.",
+    "Inherited lines are inherited on purpose: `Skydda din tank idag` stays in the three iterations for isolation, and the next NEW concept on this product drops `idag`.",
+    "Clean the Notion body before the editor sees it — no stray `(H1)/(H2)/(H3)` lines after the COPY CARD."
+  ],
+  "rader": [
+    {
+      "namn": "IBC_PD_12_H1",
+      "fel": [],
+      "anmarkningar": [
+        "the ad text carries kronor amounts but the brief states no price rule (\"Price exactly … kr\")",
+        "Stray `IBC_PD_12_H1 (H1)/(H2)/(H3)` lines after the COPY CARD — remove. `[TID]` needs an owner (editor comments the seconds; uploader copies)."
+      ],
+      "bra": [
+        "Symptom at second 0, everything after is the proven body verbatim."
+      ]
+    },
+    {
+      "namn": "IBC_PD_12_H2",
+      "fel": [],
+      "anmarkningar": [
+        "the ad text carries kronor amounts but the brief states no price rule (\"Price exactly … kr\")",
+        "Same stray lines after the COPY CARD. Row 2 may need new green-water footage — flagged in the table; put it at the top too."
+      ],
+      "bra": [
+        "Five-second problem part, one variable, CPA against break-even."
+      ]
+    },
+    {
+      "namn": "IBC_PD_12_H3",
+      "fel": [],
+      "anmarkningar": [
+        "the ad text carries kronor amounts but the brief states no price rule (\"Price exactly … kr\")",
+        "Same stray lines after the COPY CARD."
+      ],
+      "bra": [
+        "Finally separates PD_Extra's macro opening from its 10-second cut."
+      ]
+    }
+  ]
+}

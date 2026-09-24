@@ -1,0 +1,276 @@
+{
+  "hub_id": "3e1270ab-908c-810c-9d50-f14ab53b461f",
+  "rond": "2026-09-20",
+  "bra": [
+    "Every product fact is the page's and verified live (read live from the product page 2026-09-24): 100 cm, 335 g, 25 cm, `var tionde sekund`, `Ryggen värker innan halva bilen är tvättad` (the page's own headline), stainless steel, grey microfibre.",
+    "The reach limitation is stated honestly in four briefs (sides, bonnet and boot — not an SUV roof) and the ban on `halkfri`, `reptålig`, `skonar lacken` is in every Rules block.",
+    "BOF_2_1 reads the store terms right — only the statutory 14-day right of withdrawal, no invented guarantee, no Klarna mark — the finding from the 2026-09-21 review landed in a brand-new hub.",
+    "Reviews verified live and dated, quoted verbatim, no aggregate line; PD_3_H1/PD_3_H2 hold the body identical and change only the hook.",
+    "Store name never appears; no policy lines; price 799 / 1 039 / 240 kr right in all 17."
+  ],
+  "missat": [
+    "BOF_3_1 opens on a question (`100 cm – räcker den till taket?`) — a question cannot be true or false; the answer is already in the sub-line and should be the headline. Still in To be Reviewed, so it can be fixed before upload.",
+    "Body lines are shared across concepts: `Armen orkar hela tvätten – borsten väger 335 gram.` in 7 of 17 briefs, `100 cm teleskopskaft i rostfritt stål.` in 8 — when the same line sits in seven concepts, the data cannot say which idea sold.",
+    "The round contradicts itself: RV_1_1 quotes a customer saying the pole reaches `överallt` while four sibling briefs say it does not reach an SUV roof. Both are true for the people saying them, but side by side in one feed they read as a contradiction — pair the quote with the reach line or use Erik's quote only.",
+    "PD_3_H1 calls its parent `the account's current winner` without naming it or giving CPA, purchases or break-even; CS_3_H1 shows price cards for 11 seconds before any demo.",
+    "No VARIABELTAGGAR, no Memo, no `AI content:` line, no COPY CARD and no shot-level direction table — the brief format since 2026-09-21 (docs/os/BRIEF-REGI.md, `CS-KLART` 2.9/2.12); written 2026-09-19/20 so the direction table is a note, not an error, this once.",
+    "This product has no memory in the repo — the Feedback row in the hub is its memory."
+  ],
+  "regler": [
+    "Hooks are declaratives: the answer is the headline (`100 cm räcker till sidorna och motorhuven. Inte SUV-taket.` is already written in BOF_2_1) — never `räcker den till taket?`.",
+    "A body line belongs to one concept: `335 gram` is TR_1_1's claim, `100 cm rostfritt stål` is LI_1_1's — the other concepts get their own proof line, or the next /cs cannot tell which idea sold.",
+    "Every brief carries the 2026-09-21 format (VARIABELTAGGAR, Memo, AI content, direction table), and a Why that says \"winner\" names the ad with CPA, purchases and break-even."
+  ],
+  "rader": [
+    {
+      "namn": "Biltvattborste_BOF_3_1",
+      "fel": [
+        "The hook `100 cm – räcker den till taket?` fails the three-question test: a question cannot be true or false. Before upload: make the answer the headline (the sub-line `Personbil: sidor, motorhuv, bagagelucka – ja.` or BOF_2_1's `100 cm räcker till sidorna och motorhuven. Inte taket på en SUV.`) and drop the question."
+      ],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "no \"Memo:\" line — one sentence on why this ad beats the current level (Evolve's breakthrough memo)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+      ],
+      "bra": [
+        "The honest SUV answer is exactly right — only the question form is wrong."
+      ]
+    },
+    {
+      "namn": "Biltvattborste_CO_2_1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "no \"Memo:\" line — one sentence on why this ad beats the current level (Evolve's breakthrough memo)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Fine — the page's own comparison as a labelled split."
+      ],
+      "bra": [
+        "Each side carries its own fact."
+      ]
+    },
+    {
+      "namn": "Biltvattborste_BOF_2_1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "no \"Memo:\" line — one sentence on why this ad beats the current level (Evolve's breakthrough memo)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Model store-terms handling: statutory 14 days only, nothing invented."
+      ],
+      "bra": [
+        "The 2026-09-21 lesson applied in a new hub."
+      ]
+    },
+    {
+      "namn": "Biltvattborste_RV_1_1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "no \"Memo:\" line — one sentence on why this ad beats the current level (Evolve's breakthrough memo)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Peter's `komma åt överallt` sits next to four briefs saying \"not the SUV roof\" — pair it with the reach line or lead with Erik's quote."
+      ],
+      "bra": [
+        "Verbatim, verified, dated."
+      ]
+    },
+    {
+      "namn": "Biltvattborste_RV_2_1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "no \"Memo:\" line — one sentence on why this ad beats the current level (Evolve's breakthrough memo)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Fine."
+      ],
+      "bra": [
+        "Second independent voice."
+      ]
+    },
+    {
+      "namn": "Biltvattborste_OB_2_1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "no \"Memo:\" line — one sentence on why this ad beats the current level (Evolve's breakthrough memo)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Fine — declarative, honest range marked on the car."
+      ],
+      "bra": [
+        "Removes the roof objection before the click."
+      ]
+    },
+    {
+      "namn": "Biltvattborste_BOF_1_1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "no \"Memo:\" line — one sentence on why this ad beats the current level (Evolve's breakthrough memo)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "CTA slot carries `100 cm rostfritt stål.` — a spec, not a call to action; fine for a static but say so."
+      ],
+      "bra": [
+        "Price-only recap."
+      ]
+    },
+    {
+      "namn": "Biltvattborste_LI_1_1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "no \"Memo:\" line — one sentence on why this ad beats the current level (Evolve's breakthrough memo)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Fine — four measurements, no adjectives."
+      ],
+      "bra": [
+        "Pure-fact listicle."
+      ]
+    },
+    {
+      "namn": "Biltvattborste_TR_1_1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "no \"Memo:\" line — one sentence on why this ad beats the current level (Evolve's breakthrough memo)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "`335 gram` as the headline is the right trust hook; the bottom band repeats it — use the slot for the reach line instead."
+      ],
+      "bra": [
+        "A number anyone can check."
+      ]
+    },
+    {
+      "namn": "Biltvattborste_PD_4_1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "no \"Memo:\" line — one sentence on why this ad beats the current level (Evolve's breakthrough memo)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Fine — the page's own headline over a POV shot."
+      ],
+      "bra": [
+        "Pain line, product mid-sweep."
+      ]
+    },
+    {
+      "namn": "Biltvattborste_OB_1_H1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "no \"AI content:\" line (person / voice / image only / none) — the US translation step then burns in \"Contains AI-generated content\" as if it were a person",
+        "(brief written before 2026-09-21, direction table not required then) no shot-level direction table (Time | Script line | Audio | On-screen text | Picture | Effect + length | Source | Reference | Latitude — docs/os/BRIEF-REGI.md); the editor has 7 script lines and no picture for any of them",
+        "no \"Memo:\" line — one sentence on why this ad beats the current level (Evolve's breakthrough memo)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "`AI content:` missing; no direction table (written before the rule). Rows 2–4 reuse the same three body lines as five other briefs."
+      ],
+      "bra": [
+        "Honest side-by-side, no trick angles — a line no competitor signs."
+      ]
+    },
+    {
+      "namn": "Biltvattborste_CS_3_H1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "no \"AI content:\" line (person / voice / image only / none) — the US translation step then burns in \"Contains AI-generated content\" as if it were a person",
+        "(brief written before 2026-09-21, direction table not required then) no shot-level direction table (Time | Script line | Audio | On-screen text | Picture | Effect + length | Source | Reference | Latitude — docs/os/BRIEF-REGI.md); the editor has 7 script lines and no picture for any of them",
+        "no \"Memo:\" line — one sentence on why this ad beats the current level (Evolve's breakthrough memo)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "0–11 s is three price cards in a row before the brush moves — hold risk; put the sweep at 3 s.",
+        "`AI content:` missing; no direction table."
+      ],
+      "bra": [
+        "Price, compare-at and saving exact."
+      ]
+    },
+    {
+      "namn": "Biltvattborste_PD_3_H1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "no \"AI content:\" line (person / voice / image only / none) — the US translation step then burns in \"Contains AI-generated content\" as if it were a person",
+        "(brief written before 2026-09-21, direction table not required then) no shot-level direction table (Time | Script line | Audio | On-screen text | Picture | Effect + length | Source | Reference | Latitude — docs/os/BRIEF-REGI.md); the editor has 7 script lines and no picture for any of them",
+        "no \"Memo:\" line — one sentence on why this ad beats the current level (Evolve's breakthrough memo)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Why says \"the account's current winner\" — name it, with CPA, purchases and break-even.",
+        "`AI content:` missing; no direction table."
+      ],
+      "bra": [
+        "Keeps the POV demo, swaps the hook for the page's own pain line."
+      ]
+    },
+    {
+      "namn": "Biltvattborste_CO_1_H1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "no \"AI content:\" line (person / voice / image only / none) — the US translation step then burns in \"Contains AI-generated content\" as if it were a person",
+        "(brief written before 2026-09-21, direction table not required then) no shot-level direction table (Time | Script line | Audio | On-screen text | Picture | Effect + length | Source | Reference | Latitude — docs/os/BRIEF-REGI.md); the editor has 7 script lines and no picture for any of them",
+        "no \"Memo:\" line — one sentence on why this ad beats the current level (Evolve's breakthrough memo)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "`AI content:` missing; no direction table."
+      ],
+      "bra": [
+        "The ten-second rinse is the pointable detail that makes the comparison concrete."
+      ]
+    },
+    {
+      "namn": "Biltvattborste_G_2_H1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "no \"AI content:\" line (person / voice / image only / none) — the US translation step then burns in \"Contains AI-generated content\" as if it were a person",
+        "(brief written before 2026-09-21, direction table not required then) no shot-level direction table (Time | Script line | Audio | On-screen text | Picture | Effect + length | Source | Reference | Latitude — docs/os/BRIEF-REGI.md); the editor has 7 script lines and no picture for any of them",
+        "no \"Memo:\" line — one sentence on why this ad beats the current level (Evolve's breakthrough memo)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Hook `En present som gör söndagstvätten till ett svep.` is a promise, not a picture — the unwrap shot carries it; fine. `AI content:` missing; no direction table."
+      ],
+      "bra": [
+        "Concrete recipient, no Christmas claim."
+      ]
+    },
+    {
+      "namn": "Biltvattborste_CS_4_1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "no \"Memo:\" line — one sentence on why this ad beats the current level (Evolve's breakthrough memo)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Static twin of CS_3_H1 — say `Isolated variable: format`."
+      ],
+      "bra": [
+        "Price card done right."
+      ]
+    },
+    {
+      "namn": "Biltvattborste_PD_3_H2",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "no \"AI content:\" line (person / voice / image only / none) — the US translation step then burns in \"Contains AI-generated content\" as if it were a person",
+        "(brief written before 2026-09-21, direction table not required then) no shot-level direction table (Time | Script line | Audio | On-screen text | Picture | Effect + length | Source | Reference | Latitude — docs/os/BRIEF-REGI.md); the editor has 7 script lines and no picture for any of them",
+        "no \"Memo:\" line — one sentence on why this ad beats the current level (Evolve's breakthrough memo)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Clean hook isolation against PD_3_H1 — say `Isolated variable: hook` explicitly. `AI content:` missing; no direction table."
+      ],
+      "bra": [
+        "Body held identical to the sibling."
+      ]
+    }
+  ]
+}

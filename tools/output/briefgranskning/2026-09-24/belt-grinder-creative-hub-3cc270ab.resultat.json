@@ -1,0 +1,24 @@
+{
+  "hub_id": "3cc270ab-908c-813c-94fa-d90daa9bf776",
+  "hub_titel": "Belt grinder creative hub",
+  "slug": "belt-grinder-creative-hub-3cc270ab",
+  "rond": "2026-09-22",
+  "idag": "2026-09-24",
+  "antal": 4,
+  "rena": 0,
+  "anm": 4,
+  "fel": 0,
+  "feedback_rad": {
+    "skapad": true,
+    "page_id": "3e5270ab-908c-81ca-a5cc-c03a087465d1",
+    "url": "https://app.notion.com/p/Brief-review-2026-09-22-3e5270ab908c81caa5ccc03a087465d1",
+    "titel": "Brief review 2026-09-22",
+    "block": 21
+  },
+  "feedback_fil": null,
+  "kommentarer": [],
+  "varningar": [
+    "no product folder in the repo (products.json / register.json) — dna.md and feedback.md do not apply; the Feedback row in the hub is the memory"
+  ],
+  "torr": false
+}

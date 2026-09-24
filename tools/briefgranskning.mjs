@@ -315,7 +315,11 @@ export function annonstextUr(text) {
     const s = utanFet(r).trim();
     if (iCopy) {
       if (arRubrik(s) && !/copy card/i.test(s)) iCopy = false;
-      else { if (!/^(destination|landing page)\s*:/i.test(s)) ut.push(s); continue; }
+      // Verifieringsnoterna som /bildannonser hänger på efter COPY CARD
+      // ("PRIS VERIFIERAT … baverbutiken.se/products/…") är metadata, inte
+      // annonstext — domänen står där utan https:// och överlevde URL-strippningen
+      // (mätt 2026-09-24: två falska butiksnamn-fel på Termoskyddets rond).
+      else { if (!/^(destination|landing page)\s*:|^(pris|betyg)\s+verifierat\b/i.test(s)) ut.push(s); continue; }
     }
     if (iTabell) {
       if (!s || arRubrik(s) || !/\|/.test(s)) iTabell = false;

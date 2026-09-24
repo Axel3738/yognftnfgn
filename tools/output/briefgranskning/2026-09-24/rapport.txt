@@ -1,0 +1,37 @@
+🔎 BÄVERBUTIKEN brief review — 2026-09-24
+Hubs found: 24 · reviewed: 9 · skipped: 11 · unreadable: 4
+
+**Reviewed**
+• `BÄVER Taköverdraget för Husvagn` — round 2026-09-23, 4 briefs: 0 clean · 4 with notes · 0 with errors · Feedback row `Brief review 2026-09-23` · rules in products/carashell/takskyddet/feedback.md
+• `BÄVER Termoskyddet för Husbil` — round 2026-09-23, 4 briefs: 0 clean · 4 with notes · 0 with errors · Feedback row `Brief review 2026-09-23` · rules in products/carashell/termoskyddet/feedback.md
+• `Boat motor cover creative hub` — round 2026-09-23, 4 briefs: 0 clean · 4 with notes · 0 with errors · Feedback row `Brief review 2026-09-23`
+• `Bird feeder with camera creative hub` — round 2026-09-19, 15 briefs: 0 clean · 15 with notes · 0 with errors · Feedback row `Brief review 2026-09-19`
+• `Car wash brush creative hub` — round 2026-09-20, 17 briefs: 0 clean · 16 with notes · 1 with errors · Feedback row `Brief review 2026-09-20` · 1 comment on rows
+• `Indoor slippers creative hub` — round 2026-09-20, 17 briefs: 0 clean · 16 with notes · 1 with errors · Feedback row `Brief review 2026-09-20` · 1 comment on rows
+• `Chimney sweep set creative hub` — round 2026-09-21, 14 briefs: 0 clean · 5 with notes · 9 with errors · Feedback row `Brief review 2026-09-21` · 9 comments on rows
+• `BÄVER IBC-Tanköverdraget` — round 2026-09-22, 3 briefs: 0 clean · 3 with notes · 0 with errors · Feedback row `Brief review 2026-09-22`
+• `Belt grinder creative hub` — round 2026-09-22, 4 briefs: 0 clean · 4 with notes · 0 with errors · Feedback row `Brief review 2026-09-22`
+
+**Skipped**
+• `Product test center SE BÄVER` — not a creative hub: Status lacks the brief lifecycle (Draft → To be Reviewed) — products or SOPs, not briefs
+• `Bäverkoppling.se` — not a creative hub: other business or the template (by title)
+• `kundsupport Grillkliniken` — not a creative hub: other business or the template (by title)
+• `Annonsidéer` — not a creative hub: no Typ field
+• `BÄVER Adventskalendern Racingbilar` — round 2026-09-20 already reviewed (Brief review 2026-09-20)
+• `Kranskydd Frost 420D creative hub` — latest round 2026-09-05 is 19 days old (limit 10) — no newer briefs to give feedback on
+• `BÄVER Termoskyddet för Husbil` — no ad rows (Typ … Pending Approval)
+• `Creative Hub master` — not a creative hub: other business or the template (by title)
+• `Motorcycle Cover creative hub` — round 2026-09-18 already reviewed (Brief review 2026-09-18)
+• `ADVENTLANE Product test center` — not a creative hub: Status lacks the brief lifecycle (Draft → To be Reviewed) — products or SOPs, not briefs
++1 more
+
+**Unreadable**
+• `Boat cover 420D creative hub` — Notion 404 — archived or not shared with the integration
+• `Beach crocs creative hub` — Notion 404 — archived or not shared with the integration
+• `Trimmer belt creative hub` — Notion 404 — archived or not shared with the integration
+• `Mower seat creative hub` — Notion 404 — archived or not shared with the integration
+
+**⚠️ Warnings**
+• no product folder in the repo (products.json / register.json) — dna.md and feedback.md do not apply; the Feedback row in the hub is the memory
+
+✅ Nothing for you to do. Next run: 2026-09-28
