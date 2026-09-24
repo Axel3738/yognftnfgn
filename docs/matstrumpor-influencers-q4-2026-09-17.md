@@ -31,6 +31,7 @@
 | 2026-09-24 | Omgång 2: Jessica Andersson, DJ Gloria, Linda Bengtzing, Shirley Clamp, Charlotte Perrelli, Nanne Grönvall | Mail från axel.odhner@stonebite.org, ett per mottagare | Skickat. Mailen i `docs/matstrumpor-influencers-omgang2-2026-09-19.md`. | Uppföljning onsdag 30/9 (fyra arbetsdagar) till dem som inte svarat. Ingen DM till artisten medan managern är tyst. |
 | 2026-09-24 | Nanne Grönvall | Mail, svar från Malin på Clap Your Hands kl 9.26 | **Vidarebefordrat.** "Vi har vidarebefordrat detta till Nanne, återkopplar till dig så snart vi kan." | Tacka med en rad. Vänta. Shirley och Nanne ligger nu hos samma bolag, ta båda i samma samtal. |
 | 2026-09-24 | Nina Hermansen | Instagram-DM | Tony har inte hört av sig, fristen 23/9 passerad. | DM till Nina i dag och be om Tonys mejl. |
+| 2026-09-25 | Nina Hermansen | Instagram-DM | Nina: "Har han inte! Vad tusan. Han har säkert mycket just nu men ja, kontakta honom nu. Toppen!" Tonys adress: tony@niiinis.se | Mail till Tony från axel.odhner@stonebite.org med Nina som referens: lådor först, prislista, Instagram-insikter, kort samtal. Påminnelse 1/10 om inget svar. |
 
 ## 1. Uppdraget och ramarna (Axels svar 2026-09-17)
 
