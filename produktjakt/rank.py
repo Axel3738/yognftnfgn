@@ -116,7 +116,16 @@ def main():
     ap.add_argument("--in", dest="inn", nargs="+", required=True)
     ap.add_argument("--ut", required=True)
     ap.add_argument("--max", type=int, default=15)
+    ap.add_argument("--tema", action="store_true",
+                    help="temarunda (t.ex. Axels julrunda 2026-09-24): alla slots får fyllas upp till --max, inget arketyptak, inga slot-minima")
+    ap.add_argument("--datum", help="körningens datum/mapp-namn i batch.json (default i dag)")
     a = ap.parse_args()
+    global ARKETYPTAK
+    if a.tema:
+        for s_ in SLOT_MAX:
+            SLOT_MAX[s_] = a.max
+            SLOT_MIN[s_] = 0
+        ARKETYPTAK = 1.0
     larande = json.load(open(LARANDE, encoding="utf-8")) if os.path.exists(LARANDE) else {}
     kand = las_kandidater(a.inn)
 
@@ -178,7 +187,7 @@ def main():
     for i, k in enumerate(batch, 1):
         k["rank"] = i
         k.pop("_p", None)
-    ut = {"datum": datetime.date.today().isoformat(), "antal": len(batch),
+    ut = {"datum": a.datum or datetime.date.today().isoformat(), "antal": len(batch), "tema": bool(a.tema),
           "per_slot": {s: sum(1 for k in batch if k.get("slot") == s) for s in SLOT_MAX},
           "under_minimum": {s: SLOT_MIN[s] - sum(1 for k in batch if k.get("slot") == s) for s in SLOT_MAX if sum(1 for k in batch if k.get("slot") == s) < SLOT_MIN[s]},
           "batch": batch,
