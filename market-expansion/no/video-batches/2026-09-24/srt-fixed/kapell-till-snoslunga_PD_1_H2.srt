@@ -11,7 +11,7 @@ Her er løsningen.
 Dette er et trekk til snøfreseren din.
 
 4
-00:00:05,520 --> 00:00:06,720
+00:00:05,540 --> 00:00:06,720
 Det er tykt og sterkt.
 
 5
@@ -27,5 +27,17 @@ Det passer perfekt. Stram snoren. Nå sitter det fast. Uten trekk samler støv, 
 Med trekket blir alt liggende oppå.
 
 8
-00:00:16,860 --> 00:00:25,000
-Snøfreseren din er ren under. Passer til snøfresere på opptil 120 ganger 82 ganger 60 centimeter. Bestill i dag. Lenken finner du her nedenfor.
+00:00:16,860 --> 00:00:18,420
+Snøfreseren din er ren under.
+
+9
+00:00:18,420 --> 00:00:22,960
+Snøfresere opptil 120 x 82 x 60 cm.
+
+10
+00:00:22,960 --> 00:00:23,723
+Bestill i dag.
+
+11
+00:00:23,723 --> 00:00:25,133
+Lenken finner du nedenfor.

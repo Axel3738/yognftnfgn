@@ -11,7 +11,7 @@ Här är lösningen.
 Det här är ett skydd till din snöslunga.
 
 4
-00:00:05,520 --> 00:00:06,720
+00:00:05,540 --> 00:00:06,720
 Det är tjockt och starkt.
 
 5
@@ -27,5 +27,17 @@ Det passar precis. Dra åt snöret. Nu sitter det fast. Utan skydd samlas damm, 
 Med skyddet stannar allt ovanpå skyddet.
 
 8
-00:00:16,860 --> 00:00:25,000
-Din snöslunga är ren under. Passar snöslungor upp till 120 gånger 82 gånger 60 centimeter. Beställ i dag. Länken finns här nedanför
+00:00:16,860 --> 00:00:18,420
+Din snöslunga är ren under.
+
+9
+00:00:18,420 --> 00:00:22,960
+Passar snöslungor upp till 120 gånger 82 gånger 60 centimeter.
+
+10
+00:00:22,960 --> 00:00:23,723
+Beställ i dag.
+
+11
+00:00:23,723 --> 00:00:25,133
+Länken finns här nedanför.
