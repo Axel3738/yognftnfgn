@@ -1,6 +1,6 @@
 {
  "_om": "Konceptregistret (V3). Skrivs av koncept.py; feedback.py och meta_facit.py uppdaterar via koncept.py. Ett koncept = objekt + form, med alla listningar, svar, förutsägelser och Metas facit.",
- "nasta": 314,
+ "nasta": 324,
  "koncept": {
   "K0001": {
    "id": "K0001",
@@ -21232,6 +21232,906 @@
     }
    ],
    "namn_sv": "Skattkistan med tre kodhjul, trä"
+  },
+  "K0314": {
+   "id": "K0314",
+   "skapad": "2026-09-24-jul2",
+   "namn": "Hästkapplöpningen, batteridriven tivoliklassiker",
+   "objekt": "NYTT: Travbanan på matbordet — batteridriven tivoliklassiker",
+   "form": "annat",
+   "sak": "nytt: travbanan på matbordet+annat",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "G_Q4_GAVA",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005013158801765",
+     "url": "https://www.aliexpress.com/item/1005013158801765.html",
+     "bild": null,
+     "pris_usd": 23.09,
+     "forst_sedd": "2026-09-24-jul2",
+     "verifieringar": [
+      {
+       "datum": "2026-09-24-jul2",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-24T10:35:25Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-24-jul2",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 1,
+     "rank_poang": 10,
+     "poang_axlar": {
+      "vinnarlikhet": 1,
+      "meta_creative": 2,
+      "efterfragan": 2,
+      "lucka": 3,
+      "ekonomi": 2,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 3,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 699,
+     "landad": 334,
+     "be_cpa": 366,
+     "hook": "Vem vinner loppet på julbordet?",
+     "varfor": "Enda formen i linsen utan svensk aktör (8 golvfrågor, 0 träffar) OCH med rörlig mekanik på ett igenkänt spel — exakt vad Axels ja-rad (bordscurling, pariserhjul, kulbana, snurrande gran) har gemensamt. Hårt datum (black week 9 v, julafton 12 v), BE-CPA 332–399 utan ankare, priset satt av K8 (699) i stället för formeln landad × 2,4 (≈ 800).",
+     "huvudrisk": "K8: knallgrön plast som stillbild kan läsas som 249 kr — hela priset måste bäras av rörelsen i videon; ankare saknas så priset saknar referens.",
+     "hypotes_id": "H10",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": null,
+      "K2": null,
+      "K3": null,
+      "K4": null,
+      "K5": null,
+      "K6": null,
+      "K7": null,
+      "K8": "medel/låg — plast, men stor rörlig bana (≈ 55 cm) med sex figurer",
+      "K9": null,
+      "K10": null,
+      "K11": null,
+      "K12": null
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-24-jul2",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-24-jul2",
+     "handelse": "levererad på V3-arket (rank 1, sasong, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Hästkapplöpningen, batteridriven tivoliklassiker"
+  },
+  "K0315": {
+   "id": "K0315",
+   "skapad": "2026-09-24-jul2",
+   "namn": "RC-fågeln som flaxar, 2,4 GHz",
+   "objekt": "NYTT: Barnbarnets första flygande leksak — fågeln lyfter ur handen på gräsmattan",
+   "form": "annat",
+   "sak": "nytt: barnbarnets första flygande leksak+annat",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "G_Q4_GAVA",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005008428240230",
+     "url": "https://www.aliexpress.com/item/1005008428240230.html",
+     "bild": null,
+     "pris_usd": 25.88,
+     "forst_sedd": "2026-09-24-jul2",
+     "verifieringar": [
+      {
+       "datum": "2026-09-24-jul2",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-24T10:37:19Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-24-jul2",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 2,
+     "rank_poang": 10,
+     "poang_axlar": {
+      "vinnarlikhet": 1,
+      "meta_creative": 3,
+      "efterfragan": 2,
+      "lucka": 3,
+      "ekonomi": 2,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 3,
+      "hypotesvarde": 3
+     },
+     "konfidens": "MEDEL",
+     "pris": 699,
+     "landad": 374,
+     "be_cpa": 324,
+     "hook": "Fågeln lyfter ur barnbarnets hand",
+     "varfor": "Formen finns inte i svenskt flöde (bara gummibandsfågel 145 kr) och heron är ett textfritt foto i kontext — H10 rent. Rör sig och flyger i första sekunden, vilket är exakt det Axel sa ja till i julrundan.",
+     "huvudrisk": "Flyger utomhus i vindstilla — december i Sverige gör att leksaken ofta provas först på våren, och 899 enligt ×2,4-regeln ser inte ut som sitt pris (därför 699).",
+     "hypotes_id": "H10",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 12,
+      "K2": 10,
+      "K3": 8,
+      "K4": 8,
+      "K5": 6,
+      "K6": 12,
+      "K7": 5,
+      "K8": 6,
+      "K9": 3,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-24-jul2",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-24-jul2",
+     "handelse": "levererad på V3-arket (rank 2, sasong, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "RC-fågeln som flaxar, 2,4 GHz"
+  },
+  "K0316": {
+   "id": "K0316",
+   "skapad": "2026-09-24-jul2",
+   "namn": "Julexpressen i klossar med motor, 1 062 bitar",
+   "objekt": "NYTT: Tåget som kör runt julgranen — byggs på julafton, går av sig självt",
+   "form": "annat",
+   "sak": "nytt: tåget som kör runt julgranen+annat",
+   "arketyp": "G_Q4_GAVA",
+   "arketyp_sekundar": "H_VISUELL_NYHET",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005013030189703",
+     "url": "https://www.aliexpress.com/item/1005013030189703.html",
+     "bild": null,
+     "pris_usd": 42.39,
+     "forst_sedd": "2026-09-24-jul2",
+     "verifieringar": [
+      {
+       "datum": "2026-09-24-jul2",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-24T10:40:31Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-24-jul2",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 3,
+     "rank_poang": 10,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 1,
+      "efterfragan": 2,
+      "lucka": 2,
+      "ekonomi": 2,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 999,
+     "landad": 613,
+     "be_cpa": 386,
+     "hook": "Tåget kör runt granen på julafton",
+     "varfor": "Samma struktur som fyren (1 092 bitar, JA) och pariserhjulet med LED (JA) — mannens julaftonsbygge — men det här bygget RÖR SIG och står under granen; LEGO:s egen version är ankaret 1,6× över oss. H05 med julafton som datum.",
+     "huvudrisk": "MOC-kopia av LEGO 10254-designen — inget märke på bitarna men Meta kan flagga 'LEGO-lik'; heron har inbränd rea-text och måste göras om till tåget i gång.",
+     "hypotes_id": "H05",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 12,
+      "K2": 12,
+      "K3": 8,
+      "K4": 6,
+      "K5": 8,
+      "K6": 10,
+      "K7": 4,
+      "K8": 9,
+      "K9": 4,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-24-jul2",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-24-jul2",
+     "handelse": "levererad på V3-arket (rank 3, sasong, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Julexpressen i klossar med motor, 1 062 bitar"
+  },
+  "K0317": {
+   "id": "K0317",
+   "skapad": "2026-09-24-jul2",
+   "namn": "Berg-och-dalbanan med motorhiss, klossar",
+   "objekt": "NYTT: Vardagsrumsbordet på julafton — motorn drar vagnen upp, sedan åker den av sig själv",
+   "form": "annat",
+   "sak": "nytt: vardagsrumsbordet på julafton+annat",
+   "arketyp": "G_Q4_GAVA",
+   "arketyp_sekundar": "H_VISUELL_NYHET",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012326709382",
+     "url": "https://www.aliexpress.com/item/1005012326709382.html",
+     "bild": null,
+     "pris_usd": 44.62,
+     "forst_sedd": "2026-09-24-jul2",
+     "verifieringar": [
+      {
+       "datum": "2026-09-24-jul2",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-24T10:44:54Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-24-jul2",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 4,
+     "rank_poang": 10,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 1,
+      "efterfragan": 2,
+      "lucka": 3,
+      "ekonomi": 2,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 3,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 999,
+     "landad": 646,
+     "be_cpa": 354,
+     "hook": "Motorn drar vagnen upp — sen släpper den",
+     "varfor": "Samma struktur som fyren/pariserhjulet (JA) men bygget rör sig av sig självt via motorhiss — den byggleksak som gör mest på 3 sekunder; ingen svensk kompatibel byggsats hittad och LEGO:s enda motsvarighet är 10261 för 6 339.",
+     "huvudrisk": "Tre modeller i en listning (variant måste låsas) och heron är en render — banan är en helix, inte en riktig loop, så annonsen får inte lova 'loop'.",
+     "hypotes_id": "H05",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 10,
+      "K2": 10,
+      "K3": 6,
+      "K4": 4,
+      "K5": 8,
+      "K6": 10,
+      "K7": 4,
+      "K8": 7,
+      "K9": 3,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-24-jul2",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-24-jul2",
+     "handelse": "levererad på V3-arket (rank 4, sasong, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Berg-och-dalbanan med motorhiss, klossar"
+  },
+  "K0318": {
+   "id": "K0318",
+   "skapad": "2026-09-24-jul2",
+   "namn": "Magnetschacket, guldstenar på snöre",
+   "objekt": "NYTT: Magnetstenarna på snöret — den som får dem att klicka ihop förlorar",
+   "form": "annat",
+   "sak": "nytt: magnetstenarna på snöret+annat",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "G_Q4_GAVA",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012728937929",
+     "url": "https://www.aliexpress.com/item/1005012728937929.html",
+     "bild": null,
+     "pris_usd": 13.59,
+     "forst_sedd": "2026-09-24-jul2",
+     "verifieringar": [
+      {
+       "datum": "2026-09-24-jul2",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-24T10:31:48Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-24-jul2",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 5,
+     "rank_poang": 9,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 3,
+      "efterfragan": 2,
+      "lucka": 0,
+      "ekonomi": 1,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 3
+     },
+     "konfidens": "MEDEL",
+     "pris": 449,
+     "landad": 196,
+     "be_cpa": 252,
+     "hook": "Den som får stenarna att klicka förlorar",
+     "varfor": "Axels order + starkaste virala Q4-spelet 2025 (Kluster-formen): förstås på 3 s, spelas av 6-åring och 60-åring, hårt datum 9–12 v. Guldstenar + snöre ser dyrare ut än fruktkloner; 449 kr ger BE-CPA 233–272 trots golv 129–299.",
+     "huvudrisk": "Golvet i exakt form ligger under oss hos 32 butiker (Kluster 199) — kunden kan prisjämföra på en sekund; bär bara om creativen säljer 'klicket', inte produkten.",
+     "hypotes_id": "H06",
+     "per_kriterium": {
+      "K0": "ok — Luffarschacket i trä (REAL_LOSER) är en annan SAK",
+      "K1": null,
+      "K2": null,
+      "K3": null,
+      "K4": null,
+      "K5": null,
+      "K6": null,
+      "K7": null,
+      "K8": "medel — guldstenar 3,4 cm och snöre; inte den billigaste listningen (6,48 USD)",
+      "K9": null,
+      "K10": null,
+      "K11": null,
+      "K12": null
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-24-jul2",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-24-jul2",
+     "handelse": "levererad på V3-arket (rank 5, sasong, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Magnetschacket, guldstenar på snöre"
+  },
+  "K0319": {
+   "id": "K0319",
+   "skapad": "2026-09-24-jul2",
+   "namn": "Tetra Tower, balansstapling 48 delar",
+   "objekt": "NYTT: Balanstornet som tippar — 48 delar på en pinne",
+   "form": "annat",
+   "sak": "nytt: balanstornet som tippar+annat",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "G_Q4_GAVA",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005007193841427",
+     "url": "https://www.aliexpress.com/item/1005007193841427.html",
+     "bild": null,
+     "pris_usd": 7.59,
+     "forst_sedd": "2026-09-24-jul2",
+     "verifieringar": [
+      {
+       "datum": "2026-09-24-jul2",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-24T10:33:49Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-24-jul2",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 6,
+     "rank_poang": 9,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 2,
+      "efterfragan": 2,
+      "lucka": 3,
+      "ekonomi": 1,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 3,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 349,
+     "landad": 110,
+     "be_cpa": 239,
+     "hook": "Tornet står på en gungbräda — vem fäller det?",
+     "varfor": "Enda formen i rundan utan svensk aktör (0 träffar PriceRunner/Coolstuff/Teknikmagasinet), viral 2025, förstås utan text. 349 kr mot landad 99–121 ger BE-CPA 228–250 och Jenga-igenkänning som bro för 60-åringen.",
+     "huvudrisk": "Plastblock som i stillbild kan se ut som 99-kronorsleksak (K8) — bär bara om videon visar tippet; heron har inbränd '48 PCS'-text.",
+     "hypotes_id": "H10",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": null,
+      "K2": null,
+      "K3": null,
+      "K4": null,
+      "K5": null,
+      "K6": null,
+      "K7": null,
+      "K8": "låg–medel — plast, men 48 delar och gungbräda läser som 'spel', inte 'pryl'",
+      "K9": null,
+      "K10": null,
+      "K11": null,
+      "K12": null
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-24-jul2",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-24-jul2",
+     "handelse": "levererad på V3-arket (rank 6, sasong, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Tetra Tower, balansstapling 48 delar"
+  },
+  "K0320": {
+   "id": "K0320",
+   "skapad": "2026-09-24-jul2",
+   "namn": "Ringkrok-spelet i trä, 4 spelare",
+   "objekt": "NYTT: Ringen som ska på kroken — 4 spelare i trä",
+   "form": "annat",
+   "sak": "nytt: ringen som ska på kroken+annat",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "G_Q4_GAVA",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005010554638681",
+     "url": "https://www.aliexpress.com/item/1005010554638681.html",
+     "bild": null,
+     "pris_usd": 26.89,
+     "forst_sedd": "2026-09-24-jul2",
+     "verifieringar": [
+      {
+       "datum": "2026-09-24-jul2",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-24T10:36:42Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-24-jul2",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 7,
+     "rank_poang": 9,
+     "poang_axlar": {
+      "vinnarlikhet": 1,
+      "meta_creative": 1,
+      "efterfragan": 1,
+      "lucka": 2,
+      "ekonomi": 2,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 3,
+      "hypotesvarde": 2
+     },
+     "konfidens": "LÅG",
+     "pris": 699,
+     "landad": 389,
+     "be_cpa": 310,
+     "hook": "Ringen på kroken — först till fem vinner",
+     "varfor": "Viralt barspel i trä som ingen svensk aktör säljer i 4-spelarform; trä + stativ bär 699 kr (K8) och BE-CPA 271–349 är rundans bästa ekonomi. Julafton 12 v, mellandagarna 13 v.",
+     "huvudrisk": "Det är ett dryckes-/vuxenspel med shotglas i heron — fel för 'hela familjen', hero måste göras om, och 26,89 USD är obekräftat mot en 11,59-dollarslistning i samma form (kvalitetsskillnad ej mätt).",
+     "hypotes_id": "H10",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": null,
+      "K2": null,
+      "K3": null,
+      "K4": null,
+      "K5": null,
+      "K6": null,
+      "K7": null,
+      "K8": "medel–hög — massivt trästativ 4 armar",
+      "K9": null,
+      "K10": null,
+      "K11": null,
+      "K12": null
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-24-jul2",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-24-jul2",
+     "handelse": "levererad på V3-arket (rank 7, sasong, konfidens LÅG)"
+    }
+   ],
+   "namn_sv": "Ringkrok-spelet i trä, 4 spelare"
+  },
+  "K0321": {
+   "id": "K0321",
+   "skapad": "2026-09-24-jul2",
+   "namn": "Musikboxningsmaskinen för väggen, LED",
+   "objekt": "NYTT: Källarväggen/garaget i november — slå i takt med musiken, barnbarnen mot farfar på poäng",
+   "form": "annat",
+   "sak": "nytt: källarväggen/garaget i november+annat",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "G_Q4_GAVA",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012536365551",
+     "url": "https://www.aliexpress.com/item/1005012536365551.html",
+     "bild": null,
+     "pris_usd": 38.08,
+     "forst_sedd": "2026-09-24-jul2",
+     "verifieringar": [
+      {
+       "datum": "2026-09-24-jul2",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-24T10:33:39Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-24-jul2",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 8,
+     "rank_poang": 9,
+     "poang_axlar": {
+      "vinnarlikhet": 1,
+      "meta_creative": 2,
+      "efterfragan": 1,
+      "lucka": 2,
+      "ekonomi": 2,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 899,
+     "landad": 551,
+     "be_cpa": 348,
+     "hook": "Vem i familjen håller takten längst?",
+     "varfor": "Elektrisk/rörlig mekanik på ett igenkänt objekt (boxningsmål) — samma struktur som julrundans två ja (svävande curling, pingisrobot). Ankare 2,18× över golvet, BE-CPA 293–403 vid 899, black week 9 v.",
+     "huvudrisk": "Golv 418–599 kr i exakt samma form på PriceRunner — H06 måste bära den; 55+-kontot kan se den som ungdomsgrej.",
+     "hypotes_id": "H06",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 8,
+      "K2": 12,
+      "K3": 8,
+      "K4": 8,
+      "K5": 6,
+      "K6": 8,
+      "K7": 4,
+      "K8": 8,
+      "K9": 5,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-24-jul2",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-24-jul2",
+     "handelse": "levererad på V3-arket (rank 8, sasong, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Musikboxningsmaskinen för väggen, LED"
+  },
+  "K0322": {
+   "id": "K0322",
+   "skapad": "2026-09-24-jul2",
+   "namn": "Glidmattan 180 cm — skridskoskär i hallen",
+   "objekt": "NYTT: Hockey-/skridskobarnbarnet i november — skäret tränas i strumporna på hallgolvet medan isen väntar",
+   "form": "annat",
+   "sak": "nytt: hockey-/skridskobarnbarnet i november+annat",
+   "arketyp": "F_HOBBY_IDENTITET",
+   "arketyp_sekundar": "G_Q4_GAVA",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005008607926106",
+     "url": "https://www.aliexpress.com/item/1005008607926106.html",
+     "bild": null,
+     "pris_usd": 25.19,
+     "forst_sedd": "2026-09-24-jul2",
+     "verifieringar": [
+      {
+       "datum": "2026-09-24-jul2",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-24T10:38:42Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-24-jul2",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 9,
+     "rank_poang": 9,
+     "poang_axlar": {
+      "vinnarlikhet": 1,
+      "meta_creative": 1,
+      "efterfragan": 1,
+      "lucka": 2,
+      "ekonomi": 2,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "LÅG",
+     "pris": 799,
+     "landad": 364,
+     "be_cpa": 434,
+     "hook": "Skäret tränas i hallen — i strumporna",
+     "varfor": "Hockeyfamiljen finns redan i kontot (Ishockey-adventskalendern), enda svenska aktör ligger 1,88× över oss, BE-CPA 398–471 vid 799 och julafton 12 v bort. Kroppsligt i säsongen (skridskosäsongen börjar) — samma struktur som damaskerna.",
+     "huvudrisk": "Träningsredskap snarare än spel — 'tävlingen' måste byggas i creativen (vem glider flest på 30 s); heron kräver egen bild.",
+     "hypotes_id": "H05",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 8,
+      "K2": 10,
+      "K3": 8,
+      "K4": 6,
+      "K5": 6,
+      "K6": 10,
+      "K7": 4,
+      "K8": 6,
+      "K9": 5,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-24-jul2",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-24-jul2",
+     "handelse": "levererad på V3-arket (rank 9, sasong, konfidens LÅG)"
+    }
+   ],
+   "namn_sv": "Glidmattan 180 cm — skridskoskär i hallen"
+  },
+  "K0323": {
+   "id": "K0323",
+   "skapad": "2026-09-24-jul2",
+   "namn": "Balansbrädan med kullabyrint, trä",
+   "objekt": "NYTT: Vardagsrumsgolvet i december — kulan ska in i mitten med fötterna, farmor mot barnbarnet på tid",
+   "form": "annat",
+   "sak": "nytt: vardagsrumsgolvet i december+annat",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "G_Q4_GAVA",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012192366608",
+     "url": "https://www.aliexpress.com/item/1005012192366608.html",
+     "bild": null,
+     "pris_usd": 10.74,
+     "forst_sedd": "2026-09-24-jul2",
+     "verifieringar": [
+      {
+       "datum": "2026-09-24-jul2",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-24T10:39:26Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-24-jul2",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 10,
+     "rank_poang": 8,
+     "poang_axlar": {
+      "vinnarlikhet": 1,
+      "meta_creative": 3,
+      "efterfragan": 1,
+      "lucka": 3,
+      "ekonomi": 1,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 3,
+      "hypotesvarde": 2
+     },
+     "konfidens": "LÅG",
+     "pris": 399,
+     "landad": 156,
+     "be_cpa": 244,
+     "hook": "Får farmor in kulan före barnbarnet?",
+     "varfor": "Enda formen i linsen utan svensk aktör: balansträning (55+, fallprevention) och spel (tid, familjen) i samma sak, textfri hero, BE-CPA 228–259 klarar 190-golvet. Ren H10-exploration.",
+     "huvudrisk": "K8 — en 40 cm träskiva kan se ut som 199 kr; storleken är inte läst och ankaret är obekräftat.",
+     "hypotes_id": "H10",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 10,
+      "K2": 10,
+      "K3": 12,
+      "K4": 4,
+      "K5": 5,
+      "K6": 8,
+      "K7": 4,
+      "K8": 4,
+      "K9": 5,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-24-jul2",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-24-jul2",
+     "handelse": "levererad på V3-arket (rank 10, sasong, konfidens LÅG)"
+    }
+   ],
+   "namn_sv": "Balansbrädan med kullabyrint, trä"
   }
  }
 }

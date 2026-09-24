@@ -1,0 +1,1622 @@
+{
+ "datum": "2026-09-24-jul2",
+ "version": "v3",
+ "kalla": "korningar/2026-09-24-jul2/v3/batch.json",
+ "antal_kandidater": 10,
+ "per_slot": {
+  "exploitation": 0,
+  "exploration": 0,
+  "sasong": 10
+ },
+ "produkter": [
+  {
+   "product_id": "1005013158801765",
+   "titel": "Hästkapplöpningen, batteridriven tivoliklassiker",
+   "url": "https://www.aliexpress.com/item/1005013158801765.html",
+   "pris": 23.09,
+   "valuta": "USD",
+   "pris_text": "US $23.09",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-24-jul2/v3/bilder/1005013158801765.jpg",
+   "sald": "",
+   "grupp": "NYTT: Travbanan på matbordet — batteridriven tivoliklassiker",
+   "objekt": "NYTT: Travbanan på matbordet — batteridriven tivoliklassiker",
+   "taggar": {
+    "objekt": "NYTT: Travbanan på matbordet — batteridriven tivoliklassiker",
+    "form": "annat",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "jul",
+    "prisband": "500–999",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "ej hittat — ingen svensk aktör säljer en batteridriven hästkapplöpningsbana (sökt 2026-09-24)"
+   },
+   "ekonomi": {
+    "landad": 334,
+    "forslag_pris": 699,
+    "multipel": 2.09,
+    "be_cpa": 366,
+    "be_roas": 1.91,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     300,
+     367
+    ]
+   },
+   "namn_sv": "Hästkapplöpningen, batteridriven tivoliklassiker",
+   "status": "säsong",
+   "poang": 10,
+   "rank_slutlig": 10,
+   "rank": 1,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": null,
+    "K2": null,
+    "K3": null,
+    "K4": null,
+    "K5": null,
+    "K6": null,
+    "K7": null,
+    "K8": "medel/låg — plast, men stor rörlig bana (≈ 55 cm) med sex figurer",
+    "K9": null,
+    "K10": null,
+    "K11": null,
+    "K12": null
+   },
+   "hook": "Vem vinner loppet på julbordet?",
+   "efter_bild": "hästarna rör sig av sig själva och ingen vet vem som vinner — samma tivolikänsla som travbanan på Gröna Lund, alla känner igen den på en sekund",
+   "huvudrisk": "K8: knallgrön plast som stillbild kan läsas som 249 kr — hela priset måste bäras av rörelsen i videon; ankare saknas så priset saknar referens.",
+   "varfor": "Enda formen i linsen utan svensk aktör (8 golvfrågor, 0 träffar) OCH med rörlig mekanik på ett igenkänt spel — exakt vad Axels ja-rad (bordscurling, pariserhjul, kulbana, snurrande gran) har gemensamt. Hårt datum (black week 9 v, julafton 12 v), BE-CPA 332–399 utan ankare, priset satt av K8 (699) i stället för formeln landad × 2,4 (≈ 800).",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0314",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "G_Q4_GAVA",
+   "slot": "sasong",
+   "hypotes_id": "H10",
+   "sasong": {
+    "fonster_id": "black_week",
+    "deadline_typ": "jul",
+    "veckor_kvar": 9.1,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Adventskalendern Racingbilar",
+    "delade_variabler": [
+     "hårt datum (black week/julafton)",
+     "300–999 kr",
+     "gåva till relation (barnbarn/familj)",
+     "rörelse som syns på 3 s"
+    ],
+    "avvikelser": [
+     "ingen svikande default",
+     "inte 24 synliga saker",
+     "ny form kontot aldrig testat",
+     "plast, inte trä"
+    ]
+   },
+   "rank_forklaring": "säsong: säsong 3×2 + efterfrågan 2 + ekonomi 2 = 10",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Alga Travspelet med V85 (brädspel, INTE mekanisk bana) — PriceRunner",
+     "pris_sek": 349,
+     "url": "https://www.pricerunner.se/search?q=travspel",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "ej hittat — ingen svensk aktör säljer en batteridriven hästkapplöpningsbana (sökt 2026-09-24)",
+     "pris_sek": null,
+     "url": null,
+     "i_sortiment": false
+    },
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se?q=hästkapplöpning spel elektrisk (tom)",
+     "pricerunner.se?q=hästkapplöpning spel (Schleich, by Astrup Polo 221 — annan sak)",
+     "pricerunner.se?q=hästkapplöpning leksak (hoppdjur, käpphästar — annan sak)",
+     "pricerunner.se?q=derby spel hästar (Schleich, 'Derby' 467 brädspel)",
+     "pricerunner.se?q=horse race game (Schleich, tv-spel)",
+     "pricerunner.se?q=kapplöpningsspel (tom på formen)",
+     "pricerunner.se?q=travspel (Alga Travspelet 349)",
+     "pricerunner.se?q=racing union (Fox-skor — ingen leksak)"
+    ],
+    "anm": "Ingen svensk aktör i formen 'batteridriven bana med springande hästar' hittad i åtta golvfrågor. Fyndiq/CDON/Amazon.se svarar 403 och gick inte att läsa — luckan är visad på PriceRunner, inte bevisad hos dem."
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": false,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "primärlistningens hero har inbränd text '6 HORSE RACES' upptill — beskär; listningen 1005009138675021 har textfri hero (banan framför fotot av riktiga travhästar) som går rakt in som stillbild. Produkten är knallgrön plast ('Racing Union' tryckt på sidan) — videon måste bära värdet: hästarna som vibrerar fram i sex banor och målgrinden som fäller."
+   },
+   "meta_tanke": {
+    "hook": "Vem vinner loppet på julbordet?",
+    "objekt_i_bild": "sex hästar som vibrerar fram i sex banor på matbordet, familjen lutad över, målgrinden fälls",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "hästarna rör sig av sig själva och ingen vet vem som vinner — samma tivolikänsla som travbanan på Gröna Lund, alla känner igen den på en sekund"
+   },
+   "listning": {
+    "product_id": "1005013158801765",
+    "url": "https://www.aliexpress.com/item/1005013158801765.html",
+    "pris_usd": 23.09,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-24T10:35:25Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-24-jul2/v3/bilder/1005013158801765.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant (6 banor, 6 hästar, batteridriven vibrationsbana) — samma vara i fyra listningar: 1005009138675021 26,59 USD (öppnad 10:35:27Z, hero sedd, textfri i kontext med riktiga travhästar), 1005007583135219 24,59, 1005009502693893 24,59 (ej öppnade), 1005008354151782 40,89 'vintage' (öppnad 10:33:07Z, hero sedd — collage med fotbollsvariant, samma bana)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 1,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 3,
+    "ekonomi": 2,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 3,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005013158801765.html",
+    "https://www.aliexpress.com/item/1005009138675021.html",
+    "https://www.aliexpress.com/item/1005008354151782.html",
+    "https://www.pricerunner.se/search?q=travspel",
+    "https://www.pricerunner.se/search?q=h%C3%A4stkappl%C3%B6pning%20spel"
+   ]
+  },
+  {
+   "product_id": "1005008428240230",
+   "titel": "RC-fågeln som flaxar, 2,4 GHz",
+   "url": "https://www.aliexpress.com/item/1005008428240230.html",
+   "pris": 25.88,
+   "valuta": "USD",
+   "pris_text": "US $25.88",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-24-jul2/v3/bilder/1005008428240230.jpg",
+   "sald": "",
+   "grupp": "NYTT: Barnbarnets första flygande leksak — fågeln lyfter ur handen på gräsmattan",
+   "objekt": "NYTT: Barnbarnets första flygande leksak — fågeln lyfter ur handen på gräsmattan",
+   "taggar": {
+    "objekt": "NYTT: Barnbarnets första flygande leksak — fågeln lyfter ur handen på gräsmattan",
+    "form": "annat",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "jul",
+    "prisband": "500–999",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "X-Fly Bionic Bird (AliExpress, utländskt — inget svenskt ankare hittat)"
+   },
+   "ekonomi": {
+    "landad": 374,
+    "forslag_pris": 699,
+    "multipel": 1.87,
+    "be_cpa": 324,
+    "be_roas": 2.15,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     337,
+     412
+    ]
+   },
+   "namn_sv": "RC-fågeln som flaxar, 2,4 GHz",
+   "status": "säsong",
+   "poang": 10,
+   "rank_slutlig": 10,
+   "rank": 2,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 10,
+    "K3": 8,
+    "K4": 8,
+    "K5": 6,
+    "K6": 12,
+    "K7": 5,
+    "K8": 6,
+    "K9": 3,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "hook": "Fågeln lyfter ur barnbarnets hand",
+   "efter_bild": "vingarna flaxar och fågeln stiger — ser ut som en riktig fågel på 3 sekunder",
+   "huvudrisk": "Flyger utomhus i vindstilla — december i Sverige gör att leksaken ofta provas först på våren, och 899 enligt ×2,4-regeln ser inte ut som sitt pris (därför 699).",
+   "varfor": "Formen finns inte i svenskt flöde (bara gummibandsfågel 145 kr) och heron är ett textfritt foto i kontext — H10 rent. Rör sig och flyger i första sekunden, vilket är exakt det Axel sa ja till i julrundan.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0315",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "G_Q4_GAVA",
+   "slot": "sasong",
+   "hypotes_id": "H10",
+   "sasong": {
+    "fonster_id": "black_week",
+    "deadline_typ": "jul",
+    "veckor_kvar": 9.1,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Soptunneklistermärkena",
+    "delade_variabler": [
+     "kategorinyhet i svenskt flöde",
+     "textfri hero i kontext",
+     "förstås utan förklaring",
+     "objekt alla har (barnbarn/trädgård)"
+    ],
+    "avvikelser": [
+     "gåva med datum i stället för ägd friktion",
+     "500–999 i stället för < 300",
+     "kräver utomhusyta"
+    ]
+   },
+   "rank_forklaring": "säsong: säsong 3×2 + efterfrågan 2 + ekonomi 2 = 10",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "PriceRunner — 'Gummiband Ornithopter Fågelflyleksak' (gummibandsdriven, ej RC)",
+     "pris_sek": 145,
+     "url": "https://www.pricerunner.se/search?q=ornithopter",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "X-Fly Bionic Bird (AliExpress, utländskt — inget svenskt ankare hittat)",
+     "pris_sek": 2875,
+     "url": "https://www.aliexpress.com/item/1005012778113578.html",
+     "i_sortiment": false
+    },
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se/search?q=ornithopter (LEGO Dune 1 948, gummibandsfågel 145, fågelburar) 2026-09-24",
+     "pricerunner.se/search?q=radiostyrd fågel (0 träffar) 2026-09-24",
+     "pricerunner.se/search?q=flygande fågel leksak (bara kattleksaker 154–189) 2026-09-24",
+     "pricerunner.se/search?q=radiostyrd fjäril (0 relevanta) 2026-09-24",
+     "pricerunner.se/search?q=ebird radiostyrd (0 träffar) 2026-09-24",
+     "coolstuff.se/search?q=ornithopter (3 irrelevanta träffar: chipskalendrar) 2026-09-24",
+     "teknikmagasinet.se/search?q=flygande fågel (inget) 2026-09-24"
+    ],
+    "anm": "Ingen svensk aktör säljer en radiostyrd flaxande fågel 2026-09-24. Inget svenskt premiumankare → pris satt på K8 (699), inte på ×2,4-regeln (899)."
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "verkligt foto på gräs: fågel + fjärrkontroll uppe, fem färgvarianter nere — textfri, går att beskära till en fågel i handen; flygbild måste tas själv"
+   },
+   "meta_tanke": {
+    "hook": "Fågeln lyfter ur barnbarnets hand",
+    "objekt_i_bild": "fågeln flaxar iväg över gräsmattan, farfar med fjärrkontrollen",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "vingarna flaxar och fågeln stiger — ser ut som en riktig fågel på 3 sekunder"
+   },
+   "listning": {
+    "product_id": "1005008428240230",
+    "url": "https://www.aliexpress.com/item/1005008428240230.html",
+    "pris_usd": 25.88,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-24T10:37:19Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-24-jul2/v3/bilder/1005008428240230.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "titel '2.4GHz RC Bird Remote Control Toy for Kids' — heron visar 5 färgmönster (blå, grön, lila, röd, orange), samma modell; sökträffens minpris 25,88 USD",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 1,
+    "meta_creative": 3,
+    "efterfragan": 2,
+    "lucka": 3,
+    "ekonomi": 2,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 3,
+    "hypotesvarde": 3
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005008428240230.html",
+    "https://www.pricerunner.se/search?q=ornithopter",
+    "https://www.pricerunner.se/search?q=radiostyrd%20f%C3%A5gel"
+   ]
+  },
+  {
+   "product_id": "1005013030189703",
+   "titel": "Julexpressen i klossar med motor, 1 062 bitar",
+   "url": "https://www.aliexpress.com/item/1005013030189703.html",
+   "pris": 42.39,
+   "valuta": "USD",
+   "pris_text": "US $42.39",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-24-jul2/v3/bilder/1005013030189703.jpg",
+   "sald": "",
+   "grupp": "NYTT: Tåget som kör runt julgranen — byggs på julafton, går av sig självt",
+   "objekt": "NYTT: Tåget som kör runt julgranen — byggs på julafton, går av sig självt",
+   "taggar": {
+    "objekt": "NYTT: Tåget som kör runt julgranen — byggs på julafton, går av sig självt",
+    "form": "annat",
+    "arketyp": "G_Q4_GAVA",
+    "deadline_typ": "jul",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "LEGO Julexpressen 10361"
+   },
+   "ekonomi": {
+    "landad": 613,
+    "forslag_pris": 999,
+    "multipel": 1.63,
+    "be_cpa": 386,
+    "be_roas": 2.59,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     552,
+     674
+    ]
+   },
+   "namn_sv": "Julexpressen i klossar med motor, 1 062 bitar",
+   "status": "säsong",
+   "poang": 10,
+   "rank_slutlig": 10,
+   "rank": 3,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 12,
+    "K3": 8,
+    "K4": 6,
+    "K5": 8,
+    "K6": 10,
+    "K7": 4,
+    "K8": 9,
+    "K9": 4,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "hook": "Tåget kör runt granen på julafton",
+   "efter_bild": "tåget rullar in i bild under granen — motorn syns i första sekunden",
+   "huvudrisk": "MOC-kopia av LEGO 10254-designen — inget märke på bitarna men Meta kan flagga 'LEGO-lik'; heron har inbränd rea-text och måste göras om till tåget i gång.",
+   "varfor": "Samma struktur som fyren (1 092 bitar, JA) och pariserhjulet med LED (JA) — mannens julaftonsbygge — men det här bygget RÖR SIG och står under granen; LEGO:s egen version är ankaret 1,6× över oss. H05 med julafton som datum.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0316",
+   "arketyp": "G_Q4_GAVA",
+   "arketyp_sekundar": "H_VISUELL_NYHET",
+   "slot": "sasong",
+   "hypotes_id": "H05",
+   "sasong": {
+    "fonster_id": "jul",
+    "deadline_typ": "jul",
+    "veckor_kvar": 12.4,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Adventskalendern Racingbilar",
+    "delade_variabler": [
+     "hårt datum (julafton)",
+     "mottagare i relation (barnbarn/mannen)",
+     "många synliga delar",
+     "ankare 1,2–1,6× (LEGO 1 599)"
+    ],
+    "avvikelser": [
+     "999 i stället för 300–499",
+     "inte 24 luckor",
+     "kräver bygge före wow"
+    ]
+   },
+   "rank_forklaring": "säsong: säsong 3×2 + efterfrågan 2 + ekonomi 2 = 10",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "PriceRunner — Ekvip Spelande Jultåg På Räls LED Ø136 cm (färdigt plasttåg, ej byggsats)",
+     "pris_sek": 299,
+     "url": "https://www.pricerunner.se/search?q=julgranst%C3%A5g",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "LEGO Julexpressen 10361",
+     "pris_sek": 1599,
+     "url": "https://www.pricerunner.se/search?q=lego%20julexpressen%2010361",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.6,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se/search?q=lego julexpressen 10361 (1 599; Winter Holiday Train 10254 3 798) 2026-09-24",
+     "pricerunner.se/search?q=julgranståg (Hisab 229, Dynas 199, Ekvip 299, MikaMax 200 — färdiga plasttåg; Märklin 2 950, Piko 1 659, LGB 4 433) 2026-09-24",
+     "pricerunner.se/search?q=tåg byggklossar motor (LEGO tågmotor 160–249, BRIO 143–237 — ingen kompatibel motoriserad byggsats) 2026-09-24",
+     "pricerunner.se/search?q=berg och dalbana byggklossar (inget relevant) 2026-09-24",
+     "Fyndiq/CDON/Amazon.se: 403 — oläst (kompatibla tåg kan finnas där)"
+    ],
+    "anm": "Till skillnad från julgranen i klossar (JB struken: LEGO:s egen 449 UNDER oss) ligger varumärkesägaren HÄR ÖVER oss: LEGO Julexpressen 1 599 mot vårt 999 = 1,6×. Kompatibla kopior på Fyndiq/CDON gick inte att läsa (403)."
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "render av loket + tre vagnar (isbjörn, paket) på vit bakgrund med inbränd '51% OFF' + 'PDF instruction manual sent via email' nertill — måste beskäras; ingen bild av tåget i gång runt granen, den måste skapas"
+   },
+   "meta_tanke": {
+    "hook": "Tåget kör runt granen på julafton",
+    "objekt_i_bild": "loket med rök och lysande vagnar i cirkel runt granfoten, barnbarnet på golvet",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "tåget rullar in i bild under granen — motorn syns i första sekunden"
+   },
+   "listning": {
+    "product_id": "1005013030189703",
+    "url": "https://www.aliexpress.com/item/1005013030189703.html",
+    "pris_usd": 42.39,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-24T10:40:31Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-24-jul2/v3/bilder/1005013030189703.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant (1 062 bitar, motoriserad, PDF-instruktion via mejl enligt heron); sökträff 42,39 USD; svarade tomt på första anropet, LIVE på ?gatewayAdapt=glo2usa",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 3,
+    "meta_creative": 1,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005013030189703.html",
+    "https://www.pricerunner.se/search?q=lego%20julexpressen%2010361",
+    "https://www.pricerunner.se/search?q=julgranst%C3%A5g"
+   ]
+  },
+  {
+   "product_id": "1005012326709382",
+   "titel": "Berg-och-dalbanan med motorhiss, klossar",
+   "url": "https://www.aliexpress.com/item/1005012326709382.html",
+   "pris": 44.62,
+   "valuta": "USD",
+   "pris_text": "US $44.62",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-24-jul2/v3/bilder/1005012326709382.jpg",
+   "sald": "",
+   "grupp": "NYTT: Vardagsrumsbordet på julafton — motorn drar vagnen upp, sedan åker den av sig själv",
+   "objekt": "NYTT: Vardagsrumsbordet på julafton — motorn drar vagnen upp, sedan åker den av sig själv",
+   "taggar": {
+    "objekt": "NYTT: Vardagsrumsbordet på julafton — motorn drar vagnen upp, sedan åker den av sig själv",
+    "form": "annat",
+    "arketyp": "G_Q4_GAVA",
+    "deadline_typ": "jul",
+    "prisband": "500–999",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "LEGO Creator Roller Coaster 10261 (4 124 bitar — större sak)"
+   },
+   "ekonomi": {
+    "landad": 646,
+    "forslag_pris": 999,
+    "multipel": 1.55,
+    "be_cpa": 354,
+    "be_roas": 2.82,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     581,
+     710
+    ]
+   },
+   "namn_sv": "Berg-och-dalbanan med motorhiss, klossar",
+   "status": "säsong",
+   "poang": 10,
+   "rank_slutlig": 10,
+   "rank": 4,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 10,
+    "K2": 10,
+    "K3": 6,
+    "K4": 4,
+    "K5": 8,
+    "K6": 10,
+    "K7": 4,
+    "K8": 7,
+    "K9": 3,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "hook": "Motorn drar vagnen upp — sen släpper den",
+   "efter_bild": "vagnen dras upp av motorn och rullar spiralen ner utan hand — rörelse i första sekunden",
+   "huvudrisk": "Tre modeller i en listning (variant måste låsas) och heron är en render — banan är en helix, inte en riktig loop, så annonsen får inte lova 'loop'.",
+   "varfor": "Samma struktur som fyren/pariserhjulet (JA) men bygget rör sig av sig självt via motorhiss — den byggleksak som gör mest på 3 sekunder; ingen svensk kompatibel byggsats hittad och LEGO:s enda motsvarighet är 10261 för 6 339.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0317",
+   "arketyp": "G_Q4_GAVA",
+   "arketyp_sekundar": "H_VISUELL_NYHET",
+   "slot": "sasong",
+   "hypotes_id": "H05",
+   "sasong": {
+    "fonster_id": "jul",
+    "deadline_typ": "jul",
+    "veckor_kvar": 12.4,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Adventskalendern Racingbilar",
+    "delade_variabler": [
+     "hårt datum (julafton)",
+     "mottagare i relation",
+     "många synliga delar"
+    ],
+    "avvikelser": [
+     "999",
+     "kräver bygge",
+     "render, inte foto"
+    ]
+   },
+   "rank_forklaring": "säsong: säsong 3×2 + efterfrågan 2 + ekonomi 2 = 10",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ej hittad — PriceRunner 'berg och dalbana byggklossar' / 'berg och dalbana leksak motor' gav inga kompatibla byggsatser",
+     "pris_sek": null,
+     "url": "https://www.pricerunner.se/search?q=berg%20och%20dalbana%20byggklossar",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "LEGO Creator Roller Coaster 10261 (4 124 bitar — större sak)",
+     "pris_sek": 6339,
+     "url": "https://www.pricerunner.se/search?q=lego%20loop%20coaster%2010303",
+     "i_sortiment": true
+    },
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se/search?q=lego loop coaster 10303 (10261 6 339; City Stuntz loop 999) 2026-09-24",
+     "pricerunner.se/search?q=berg och dalbana byggklossar (inget) 2026-09-24",
+     "pricerunner.se/search?q=berg och dalbana leksak motor (BRIO Builder motor 429, inget coaster) 2026-09-24"
+    ],
+    "anm": "Ankaret är en annan skala (4 124 bitar) — kvoten skrivs inte. Kompatibla kopior på Fyndiq/CDON olästa (403)."
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "textfri render på vit bakgrund: röd Technic-bana i spiral/åtta på blåvita pelare, motorbox och kedjehiss synliga — ingen vertikal loop, det är en helixbana; beskär till modell 1 för annonsen, foto av bygget i gång måste tas själv"
+   },
+   "meta_tanke": {
+    "hook": "Motorn drar vagnen upp — sen släpper den",
+    "objekt_i_bild": "kedjehissen lyfter vagnen, spiralbanan i mitten av bordet, barnbarnet tittar",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "vagnen dras upp av motorn och rullar spiralen ner utan hand — rörelse i första sekunden"
+   },
+   "listning": {
+    "product_id": "1005012326709382",
+    "url": "https://www.aliexpress.com/item/1005012326709382.html",
+    "pris_usd": 44.62,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-24T10:44:54Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-24-jul2/v3/bilder/1005012326709382.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "listningen bär TRE modeller i heron: (1) berg-och-dalbana med motoriserad kedjehiss och röd spiralbana på pelare, (2) oval bana med kuggväxlad vagn, (3) liten linbana — sökträffens minpris 44,62 USD antas gälla den största (berg-och-dalbanan); varianten måste låsas i beställningen. Svarade tomt fyra gånger 10:39–10:41Z, LIVE på femte försöket 10:44:54Z (rak URL).",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 1,
+    "efterfragan": 2,
+    "lucka": 3,
+    "ekonomi": 2,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 3,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012326709382.html",
+    "https://www.aliexpress.com/item/1005011809446658.html",
+    "https://www.pricerunner.se/search?q=lego%20loop%20coaster%2010303"
+   ]
+  },
+  {
+   "product_id": "1005012728937929",
+   "titel": "Magnetschacket, guldstenar på snöre",
+   "url": "https://www.aliexpress.com/item/1005012728937929.html",
+   "pris": 13.59,
+   "valuta": "USD",
+   "pris_text": "US $13.59",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-24-jul2/v3/bilder/1005012728937929.jpg",
+   "sald": "ej mätt — sökträffens sald-fält tomt 2026-09-24",
+   "grupp": "NYTT: Magnetstenarna på snöret — den som får dem att klicka ihop förlorar",
+   "objekt": "NYTT: Magnetstenarna på snöret — den som får dem att klicka ihop förlorar",
+   "taggar": {
+    "objekt": "NYTT: Magnetstenarna på snöret — den som får dem att klicka ihop förlorar",
+    "form": "annat",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "jul",
+    "prisband": "300–499",
+    "ankare_klass": "golv utan ankare",
+    "ankare_kalla": "Borderline Editions Kluster (originalet, 24 stenar + snöre) — Coolstuff 299 kr; PriceRunner lägst 199 kr hos 32 butiker, 'WATCHED 50+'"
+   },
+   "ekonomi": {
+    "landad": 196,
+    "forslag_pris": 449,
+    "multipel": 2.29,
+    "be_cpa": 252,
+    "be_roas": 1.8,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     177,
+     216
+    ]
+   },
+   "namn_sv": "Magnetschacket, guldstenar på snöre",
+   "status": "säsong",
+   "poang": 9,
+   "rank_slutlig": 9,
+   "rank": 5,
+   "per_kriterium": {
+    "K0": "ok — Luffarschacket i trä (REAL_LOSER) är en annan SAK",
+    "K1": null,
+    "K2": null,
+    "K3": null,
+    "K4": null,
+    "K5": null,
+    "K6": null,
+    "K7": null,
+    "K8": "medel — guldstenar 3,4 cm och snöre; inte den billigaste listningen (6,48 USD)",
+    "K9": null,
+    "K10": null,
+    "K11": null,
+    "K12": null
+   },
+   "hook": "Den som får stenarna att klicka förlorar",
+   "efter_bild": "stenen släpps, magneterna smäller ihop med ett klick — reglerna förstås utan ett ord",
+   "huvudrisk": "Golvet i exakt form ligger under oss hos 32 butiker (Kluster 199) — kunden kan prisjämföra på en sekund; bär bara om creativen säljer 'klicket', inte produkten.",
+   "varfor": "Axels order + starkaste virala Q4-spelet 2025 (Kluster-formen): förstås på 3 s, spelas av 6-åring och 60-åring, hårt datum 9–12 v. Guldstenar + snöre ser dyrare ut än fruktkloner; 449 kr ger BE-CPA 233–272 trots golv 129–299.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0318",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "G_Q4_GAVA",
+   "slot": "sasong",
+   "hypotes_id": "H06",
+   "sasong": {
+    "fonster_id": "black_week",
+    "deadline_typ": "jul",
+    "veckor_kvar": 9.1,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Adventskalendern Racingbilar",
+    "delade_variabler": [
+     "hårt datum (black week/julafton)",
+     "300–499 kr",
+     "gåva till relation (familjen runt bordet)",
+     "flerköp möjligt (ett set per hushåll som ska besökas)"
+    ],
+    "avvikelser": [
+     "golv UNDER oss i exakt form (Kluster 199–299)",
+     "ingen svikande default",
+     "form kontot aldrig testat"
+    ]
+   },
+   "rank_forklaring": "säsong: säsong 3×2 + efterfrågan 2 + ekonomi 1 = 9",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "24.se via PriceRunner — 'Selskabsspil Med Magnetiske Sten' (1 butik, i lager)",
+     "pris_sek": 129,
+     "url": "https://www.pricerunner.se/pl/613-3393497242/Saellskapsspel/Selskabsspil-Med-Magnetiske-Sten-priser",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Borderline Editions Kluster (originalet, 24 stenar + snöre) — Coolstuff 299 kr; PriceRunner lägst 199 kr hos 32 butiker, 'WATCHED 50+'",
+     "pris_sek": 299,
+     "url": "https://www.coolstuff.se/lek-spel/spel/sallskapsspel/kluster-spel-pid-19256",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 0.67,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se/search?q=magnetschack (2026-09-24): Kluster 199 (32 butiker), Magnetiskt Schackspel 2024 Familjespel 299 (1 butik), Selskabsspil Med Magnetiske Sten 129, Magnetiska Stenar Sällskapsspel 149, Northix Magnetisk Brädspel 799 (oklart om samma form)",
+     "pricerunner.se/pl/613-5220979 Kluster 199 kr",
+     "pricerunner.se/pl/613-3568889070 Magnetiskt Schackspel 2024 Familjespel 299 kr, IN_STOCK",
+     "coolstuff.se/search?q=magnetspel: Kluster 299, Kluster DUO 299",
+     "coolstuff.se/search?q=magnetic+chess: 0 träffar",
+     "teknikmagasinet.se/sok?q=magnetschack: 0 träffar",
+     "lekia.se, spelexperten.com (404 på alla sök-URL:er), jula.se 403, fyndiq.se 403, amazon.se 503, adlibris.com 429, jollyroom.se 500 — EJ lästa"
+    ],
+    "anm": "Golvet ligger UNDER oss i exakt form: originalet Kluster 199–299 kr och kloner 129–299. Levereras på Axels uttryckliga order (2026-09-24: 'magnet chess sålde 2,3 Mkr på en dag förra Q4') och märks H06 — ankarkvoten 0,67 klarar INTE H06:s 1,2×-krav, det är ordern som bär raden."
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "render med blixt-effekter (inte foto) men textfri, hand som lägger sten, snöre på golvet, barn i bakgrunden — går som stillbild; själva 'klicket' måste bäras av video"
+   },
+   "meta_tanke": {
+    "hook": "Den som får stenarna att klicka förlorar",
+    "objekt_i_bild": "hand som lägger en guldsten mellan de andra på snöret, stenarna rycker ihop",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "stenen släpps, magneterna smäller ihop med ett klick — reglerna förstås utan ett ord"
+   },
+   "listning": {
+    "product_id": "1005012728937929",
+    "url": "https://www.aliexpress.com/item/1005012728937929.html",
+    "pris_usd": 13.59,
+    "sald": "ej mätt — sökträffens sald-fält tomt 2026-09-24",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-24T10:31:48Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-24-jul2/v3/bilder/1005012728937929.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "titeln anger 'longest side 3.4cm' — antal stenar står inte i titeln (heron visar ~16 stenar på golvet + ett rör med ~20); en variant enligt sökträffen. Alt-listning samma hero: 1005010664100422 (15,85 USD, verifierad 10:33:26Z). Större set 'Kollide' 1005012030499825 (27,19 USD, verifierad 10:36:45Z, två rör à ~20 stenar) — hero med varumärkeslik kartong och text, struken som primär.",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 3,
+    "efterfragan": 2,
+    "lucka": 0,
+    "ekonomi": 1,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 3
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012728937929.html",
+    "https://www.aliexpress.com/item/1005010664100422.html",
+    "https://www.aliexpress.com/item/1005012030499825.html",
+    "https://www.coolstuff.se/lek-spel/spel/sallskapsspel/kluster-spel-pid-19256",
+    "https://www.pricerunner.se/pl/613-5220979/Saellskapsspel/Kluster-priser",
+    "https://www.pricerunner.se/pl/613-3568889070/Saellskapsspel/Magnetiskt-Schackspel-2024-Familjespel-priser",
+    "https://www.pricerunner.se/pl/613-3393497242/Saellskapsspel/Selskabsspil-Med-Magnetiske-Sten-priser"
+   ]
+  },
+  {
+   "product_id": "1005007193841427",
+   "titel": "Tetra Tower, balansstapling 48 delar",
+   "url": "https://www.aliexpress.com/item/1005007193841427.html",
+   "pris": 7.59,
+   "valuta": "USD",
+   "pris_text": "US $7.59",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-24-jul2/v3/bilder/1005007193841427.jpg",
+   "sald": "ej mätt — sökträffens sald-fält tomt 2026-09-24",
+   "grupp": "NYTT: Balanstornet som tippar — 48 delar på en pinne",
+   "objekt": "NYTT: Balanstornet som tippar — 48 delar på en pinne",
+   "taggar": {
+    "objekt": "NYTT: Balanstornet som tippar — 48 delar på en pinne",
+    "form": "annat",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "jul",
+    "prisband": "300–499",
+    "ankare_klass": "golv utan ankare",
+    "ankare_kalla": "Hasbro Jenga (närmaste klassiker i 'stapla tills det rasar') — PriceRunner 179–199, Coolstuff 229; Goki Wooden Balance Game Tower 360"
+   },
+   "ekonomi": {
+    "landad": 110,
+    "forslag_pris": 349,
+    "multipel": 3.17,
+    "be_cpa": 239,
+    "be_roas": 1.5,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     99,
+     121
+    ]
+   },
+   "namn_sv": "Tetra Tower, balansstapling 48 delar",
+   "status": "säsong",
+   "poang": 9,
+   "rank_slutlig": 9,
+   "rank": 6,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": null,
+    "K2": null,
+    "K3": null,
+    "K4": null,
+    "K5": null,
+    "K6": null,
+    "K7": null,
+    "K8": "låg–medel — plast, men 48 delar och gungbräda läser som 'spel', inte 'pryl'",
+    "K9": null,
+    "K10": null,
+    "K11": null,
+    "K12": null
+   },
+   "hook": "Tornet står på en gungbräda — vem fäller det?",
+   "efter_bild": "brädan tippar, tornet svajar, klossarna rasar — samma 3-sekunderspayoff som Jenga fast synligare",
+   "huvudrisk": "Plastblock som i stillbild kan se ut som 99-kronorsleksak (K8) — bär bara om videon visar tippet; heron har inbränd '48 PCS'-text.",
+   "varfor": "Enda formen i rundan utan svensk aktör (0 träffar PriceRunner/Coolstuff/Teknikmagasinet), viral 2025, förstås utan text. 349 kr mot landad 99–121 ger BE-CPA 228–250 och Jenga-igenkänning som bro för 60-åringen.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0319",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "G_Q4_GAVA",
+   "slot": "sasong",
+   "hypotes_id": "H10",
+   "sasong": {
+    "fonster_id": "black_week",
+    "deadline_typ": "jul",
+    "veckor_kvar": 9.1,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Soptunneklistermärkena",
+    "delade_variabler": [
+     "kategorinyhet i svenskt flöde",
+     "< 500 kr",
+     "noll friktion / ren nyhet",
+     "förstås på 3 s utan text"
+    ],
+    "avvikelser": [
+     "ingen ägd sak",
+     "plast (K8 svagare)",
+     "gåva med datum i stället för ägt objekt"
+    ]
+   },
+   "rank_forklaring": "säsong: säsong 3×2 + efterfrågan 2 + ekonomi 1 = 9",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen svensk aktör hittad i exakt form (gungbräda + tetris-block)",
+     "pris_sek": null,
+     "url": null,
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "Hasbro Jenga (närmaste klassiker i 'stapla tills det rasar') — PriceRunner 179–199, Coolstuff 229; Goki Wooden Balance Game Tower 360",
+     "pris_sek": 229,
+     "url": "https://www.pricerunner.se/search?q=jenga",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 0.66,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se/search?q=tetra%20tower (2026-09-24): 0 spelträffar (bara power towers/Zarges)",
+     "pricerunner.se/search?q=tetra%20tower%20spel%20balans: 1 träff, annat spel (Cat And The Tower 259)",
+     "pricerunner.se/search?q=balansspel%20stapla: barnspel 92–329 (Small Foot, Magni, Selecta) — annan form",
+     "pricerunner.se/search?q=balanstorn%20spel: Goki 360/223, Northix balansstenar 289 — annan form",
+     "coolstuff.se/search?q=tetra+tower: 1 träff, Escape Welt Quest Tower 699 (annan sak)",
+     "coolstuff.se/search?q=balansspel: Catastrophe 169, Dogsaster 169, Stapla Stolar 79, Jenga 229 — annan form",
+     "teknikmagasinet.se/sok?q=tetra+tower: 0",
+     "lekia.se/spelexperten.com: sök-URL:er 404 — EJ lästa"
+    ],
+    "anm": "JA strök formen 2026-09-24 som 'ingen klassiker' — tas upp igen under viral-strukturen enligt order. Ankarkvoten räknas mot Jenga som är en annan form; i exakt form finns inget svenskt golv (mätt i dag hos tre källor)."
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "verkligt foto med tre vuxna runt tornet (bra), men inbränd '48 PCS'-etikett uppe till höger och kartong uppe till vänster — måste beskäras; alt-heron (1005007527740629) har samma text + barn"
+   },
+   "meta_tanke": {
+    "hook": "Tornet står på en gungbräda — vem fäller det?",
+    "objekt_i_bild": "tetris-tornet som lutar på gungbrädan, händer runt bordet",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "brädan tippar, tornet svajar, klossarna rasar — samma 3-sekunderspayoff som Jenga fast synligare"
+   },
+   "listning": {
+    "product_id": "1005007193841427",
+    "url": "https://www.aliexpress.com/item/1005007193841427.html",
+    "pris_usd": 7.59,
+    "sald": "ej mätt — sökträffens sald-fält tomt 2026-09-24",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-24T10:33:49Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-24-jul2/v3/bilder/1005007193841427.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "48 delar enligt titel; sökträffen listar 16/32/48/64-delarsvarianter hos andra säljare (1005010751256862, 1005008672064327). Alt-listning 1005007527740629 (10,05 USD, verifierad 10:33:54Z, hero med barn). 17,19-dollarslistningen 1005011975289485 svarade tomt två gånger (BLOCKED).",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 3,
+    "ekonomi": 1,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 3,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005007193841427.html",
+    "https://www.aliexpress.com/item/1005007527740629.html",
+    "https://www.pricerunner.se/search?q=tetra%20tower",
+    "https://www.pricerunner.se/search?q=jenga",
+    "https://www.coolstuff.se/search?q=tetra+tower"
+   ]
+  },
+  {
+   "product_id": "1005010554638681",
+   "titel": "Ringkrok-spelet i trä, 4 spelare",
+   "url": "https://www.aliexpress.com/item/1005010554638681.html",
+   "pris": 26.89,
+   "valuta": "USD",
+   "pris_text": "US $26.89",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-24-jul2/v3/bilder/1005010554638681.jpg",
+   "sald": "ej mätt — sökträffens sald-fält tomt 2026-09-24",
+   "grupp": "NYTT: Ringen som ska på kroken — 4 spelare i trä",
+   "objekt": "NYTT: Ringen som ska på kroken — 4 spelare i trä",
+   "taggar": {
+    "objekt": "NYTT: Ringen som ska på kroken — 4 spelare i trä",
+    "form": "annat",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "jul",
+    "prisband": "500–999",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "inget svenskt ankare i 4-spelarform hittat"
+   },
+   "ekonomi": {
+    "landad": 389,
+    "forslag_pris": 699,
+    "multipel": 1.8,
+    "be_cpa": 310,
+    "be_roas": 2.3,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     350,
+     428
+    ]
+   },
+   "namn_sv": "Ringkrok-spelet i trä, 4 spelare",
+   "status": "säsong",
+   "poang": 9,
+   "rank_slutlig": 9,
+   "rank": 7,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": null,
+    "K2": null,
+    "K3": null,
+    "K4": null,
+    "K5": null,
+    "K6": null,
+    "K7": null,
+    "K8": "medel–hög — massivt trästativ 4 armar",
+    "K9": null,
+    "K10": null,
+    "K11": null,
+    "K12": null
+   },
+   "hook": "Ringen på kroken — först till fem vinner",
+   "efter_bild": "ringen svingar, missar, svingar, fastnar på kroken — payoffen är fysisk och hörbar",
+   "huvudrisk": "Det är ett dryckes-/vuxenspel med shotglas i heron — fel för 'hela familjen', hero måste göras om, och 26,89 USD är obekräftat mot en 11,59-dollarslistning i samma form (kvalitetsskillnad ej mätt).",
+   "varfor": "Viralt barspel i trä som ingen svensk aktör säljer i 4-spelarform; trä + stativ bär 699 kr (K8) och BE-CPA 271–349 är rundans bästa ekonomi. Julafton 12 v, mellandagarna 13 v.",
+   "konfidens": "LÅG",
+   "koncept_id": "K0320",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "G_Q4_GAVA",
+   "slot": "sasong",
+   "hypotes_id": "H10",
+   "sasong": {
+    "fonster_id": "jul",
+    "deadline_typ": "jul",
+    "veckor_kvar": 12.4,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Svävande bordscurling (levererad JA, otestad)",
+    "delade_variabler": [
+     "spelkväll med hårt datum",
+     "500–999 kr",
+     "ny form i svenskt flöde",
+     "förstås på 3 s"
+    ],
+    "avvikelser": [
+     "vuxen-/barspel snarare än familjespel",
+     "hero med inbrända badges",
+     "ingen ägd sak"
+    ]
+   },
+   "rank_forklaring": "säsong: säsong 3×2 + efterfrågan 1 + ekonomi 2 = 9",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "'Winning Ring Toss Dryckesspel' (PriceRunner, kategori ringkast — 2-spelarform, ej 4-spelarställning)",
+     "pris_sek": 219,
+     "url": "https://www.pricerunner.se/pl/72-3228171146/Leksaker/Winning-Ring-Toss-Dryckesspel-priser",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "inget svenskt ankare i 4-spelarform hittat",
+     "pris_sek": null,
+     "url": null,
+     "i_sortiment": false
+    },
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se/search?q=hook%20and%20ring%20game (2026-09-24): Wooden Ring Game 170, Winning Ring Toss Dryckesspel 219, Goki 302 — pinnkast/2-spelar, inte 4-spelarställning",
+     "pricerunner.se/search?q=ringspel%20krok%20trä: Summertime/Northix/Tactic/Bex 119–246 — kasta-ring, annan form",
+     "pricerunner.se/search?q=ring%20on%20hook%20spel, bimini ring: 0 relevanta",
+     "coolstuff.se/search?q=hook+ring: 40 träffar, bara badringar — 0 relevanta",
+     "teknikmagasinet.se/sok?q=hook+ring+game: 0"
+    ],
+    "anm": "Formen 'ring på snöre som ska fastna på kroken' finns i Sverige bara som 2-spelarvariant 219 kr (dryckesspel). 4-spelarställningen i trä är obefintlig — men saknar också ankare, så luckan är obevisad efterfrågan."
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "render i barmiljö med 'VS'-grafik och två badges ('Fast-Paced Fun', 'For Adults & Bar') inbrända — måste beskäras eller ersättas; shotglasen i bild gör det till ett dryckesspel"
+   },
+   "meta_tanke": {
+    "hook": "Ringen på kroken — först till fem vinner",
+    "objekt_i_bild": "fyra händer som svingar ringarna mot krokarna på trästativet mitt på bordet",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "ringen svingar, missar, svingar, fastnar på kroken — payoffen är fysisk och hörbar"
+   },
+   "listning": {
+    "product_id": "1005010554638681",
+    "url": "https://www.aliexpress.com/item/1005010554638681.html",
+    "pris_usd": 26.89,
+    "sald": "ej mätt — sökträffens sald-fält tomt 2026-09-24",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-24T10:36:42Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-24-jul2/v3/bilder/1005010554638681.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "4-spelarställning i trä, snören med ringar, shotglas i bild (ingår troligen inte — ej verifierat); en variant enligt sökträffen. Billigare 4-spelarlistning 1005013210543580 (11,59 USD, ej öppnad); 2-spelarformen 10,89–14,25 USD.",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 1,
+    "meta_creative": 1,
+    "efterfragan": 1,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 3,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005010554638681.html",
+    "https://www.aliexpress.com/item/1005013210543580.html",
+    "https://www.pricerunner.se/pl/72-3228171146/Leksaker/Winning-Ring-Toss-Dryckesspel-priser",
+    "https://www.pricerunner.se/search?q=hook%20and%20ring%20game"
+   ]
+  },
+  {
+   "product_id": "1005012536365551",
+   "titel": "Musikboxningsmaskinen för väggen, LED",
+   "url": "https://www.aliexpress.com/item/1005012536365551.html",
+   "pris": 38.08,
+   "valuta": "USD",
+   "pris_text": "US $38.08",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-24-jul2/v3/bilder/1005012536365551.jpg",
+   "sald": "",
+   "grupp": "NYTT: Källarväggen/garaget i november — slå i takt med musiken, barnbarnen mot farfar på poäng",
+   "objekt": "NYTT: Källarväggen/garaget i november — slå i takt med musiken, barnbarnen mot farfar på poäng",
+   "taggar": {
+    "objekt": "NYTT: Källarväggen/garaget i november — slå i takt med musiken, barnbarnen mot farfar på poäng",
+    "form": "annat",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "jul",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "RIXCH Elektronisk Musik Boxningsmaskin Väggmonterad Smart Boxning (PriceRunner); Northio Elektronisk Bluetooth Boxningsmaskin Med LED 1 379; Mobiclinic 1 051"
+   },
+   "ekonomi": {
+    "landad": 551,
+    "forslag_pris": 899,
+    "multipel": 1.63,
+    "be_cpa": 348,
+    "be_roas": 2.58,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     496,
+     606
+    ]
+   },
+   "namn_sv": "Musikboxningsmaskinen för väggen, LED",
+   "status": "säsong",
+   "poang": 9,
+   "rank_slutlig": 9,
+   "rank": 8,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 8,
+    "K2": 12,
+    "K3": 8,
+    "K4": 8,
+    "K5": 6,
+    "K6": 8,
+    "K7": 4,
+    "K8": 8,
+    "K9": 5,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "hook": "Vem i familjen håller takten längst?",
+   "efter_bild": "ringarna tänds i tur och ordning till musiken, slaget släcker dem, poängen räknas upp på displayen",
+   "huvudrisk": "Golv 418–599 kr i exakt samma form på PriceRunner — H06 måste bära den; 55+-kontot kan se den som ungdomsgrej.",
+   "varfor": "Elektrisk/rörlig mekanik på ett igenkänt objekt (boxningsmål) — samma struktur som julrundans två ja (svävande curling, pingisrobot). Ankare 2,18× över golvet, BE-CPA 293–403 vid 899, black week 9 v.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0321",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "G_Q4_GAVA",
+   "slot": "sasong",
+   "hypotes_id": "H06",
+   "sasong": {
+    "fonster_id": "black_week",
+    "deadline_typ": "jul",
+    "veckor_kvar": 9.1,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "ATV-kapellet (H06:s första Meta-bevis)",
+    "delade_variabler": [
+     "golv i exakt form under oss",
+     "synligt ankare ≥ 1,6× (RIXCH 1 964, Northio 1 379)",
+     "500–999 kr",
+     "en variant"
+    ],
+    "avvikelser": [
+     "inomhus, inget ägt objekt att skydda",
+     "gåva/rörelse i stället för skada",
+     "elektronik (batteri/Bluetooth = 'funkar inte'-returer)"
+    ]
+   },
+   "rank_forklaring": "säsong: säsong 3×2 + efterfrågan 1 + ekonomi 2 = 9",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "PriceRunner — 'Smart Music Boxing Training Machine' (generisk)",
+     "pris_sek": 418,
+     "url": "https://www.pricerunner.se/search?q=music%20boxing%20machine",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "RIXCH Elektronisk Musik Boxningsmaskin Väggmonterad Smart Boxning (PriceRunner); Northio Elektronisk Bluetooth Boxningsmaskin Med LED 1 379; Mobiclinic 1 051",
+     "pris_sek": 1964,
+     "url": "https://www.pricerunner.se/search?q=musik%20boxningsmaskin",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 2.18,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se ?q=musik boxningsmaskin (2026-09-24: Tomtop 534, Interaktiv 549/599, OptiGym 789, Mobiclinic 1 051, MAGIC SELECT 1 227, RIXCH 1 964)",
+     "pricerunner.se ?q=music boxing machine (2026-09-24: Smart Music Boxing 418, InnovaGoods 849, Tildasstore 1 279, Northio 1 379, XJKLBYQ 1 440)",
+     "pricerunner.se ?q=reflexboll boxning (reflexbollar 78–369 = annan form)",
+     "pricerunner.se ?q=slagkraftmätare boxning (Mumuru Boxing Trainer With Music 299 — bordsmodell, annan form)"
+    ],
+    "anm": "Golv i exakt form finns (418–599 kr, ca 10 listningar på PriceRunner 2026-09-24 — inte 20+, alltså inte hela marknaden). Ankare ≥ 1,6× finns i tre märken (Mobiclinic/Northio/RIXCH). H06-rad med flit: ATV-kapellet vann 4,07 med Jula 399 under sig och Polaris 3 045 över."
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "verkligt foto: kvinna slår på väggmålet med lysande LED-ringar, inga ord inbrända (bara dekorativa notgrafik uppe till vänster som kan beskäras); de två alternativa heron har rubriktext"
+   },
+   "meta_tanke": {
+    "hook": "Vem i familjen håller takten längst?",
+    "objekt_i_bild": "väggmålet med sex lysande ringar, farfar och barnbarn med handskarna på i källaren",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "ringarna tänds i tur och ordning till musiken, slaget släcker dem, poängen räknas upp på displayen"
+   },
+   "listning": {
+    "product_id": "1005012536365551",
+    "url": "https://www.aliexpress.com/item/1005012536365551.html",
+    "pris_usd": 38.08,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-24T10:33:39Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-24-jul2/v3/bilder/1005012536365551.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant i sökträffen (svart, 6 LED-mål, Bluetooth, handskar + USB-kabel med enligt heron); alternativa listningar 1005013053137692 (39,20 USD, hero med inbränd text) och 1005013021153390 (37,32 USD, hero med inbränd text) — båda öppnade 10:33–10:34Z",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 1,
+    "meta_creative": 2,
+    "efterfragan": 1,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012536365551.html",
+    "https://www.aliexpress.com/w/wholesale-music-boxing-machine-wall-mounted.html",
+    "https://www.pricerunner.se/search?q=musik%20boxningsmaskin",
+    "https://www.pricerunner.se/search?q=music%20boxing%20machine"
+   ]
+  },
+  {
+   "product_id": "1005008607926106",
+   "titel": "Glidmattan 180 cm — skridskoskär i hallen",
+   "url": "https://www.aliexpress.com/item/1005008607926106.html",
+   "pris": 25.19,
+   "valuta": "USD",
+   "pris_text": "US $25.19",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-24-jul2/v3/bilder/1005008607926106.jpg",
+   "sald": "",
+   "grupp": "NYTT: Hockey-/skridskobarnbarnet i november — skäret tränas i strumporna på hallgolvet medan isen väntar",
+   "objekt": "NYTT: Hockey-/skridskobarnbarnet i november — skäret tränas i strumporna på hallgolvet medan isen väntar",
+   "taggar": {
+    "objekt": "NYTT: Hockey-/skridskobarnbarnet i november — skäret tränas i strumporna på hallgolvet medan isen väntar",
+    "form": "annat",
+    "arketyp": "F_HOBBY_IDENTITET",
+    "deadline_typ": "jul",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "inSPORTline Slideboard Fluxlide 180cm"
+   },
+   "ekonomi": {
+    "landad": 364,
+    "forslag_pris": 799,
+    "multipel": 2.2,
+    "be_cpa": 434,
+    "be_roas": 1.84,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     328,
+     401
+    ]
+   },
+   "namn_sv": "Glidmattan 180 cm — skridskoskär i hallen",
+   "status": "säsong",
+   "poang": 9,
+   "rank_slutlig": 9,
+   "rank": 9,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 8,
+    "K2": 10,
+    "K3": 8,
+    "K4": 6,
+    "K5": 6,
+    "K6": 10,
+    "K7": 4,
+    "K8": 6,
+    "K9": 5,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "hook": "Skäret tränas i hallen — i strumporna",
+   "efter_bild": "glidet från ändstopp till ändstopp, samma rörelse som på isen, på 2 m hallgolv",
+   "huvudrisk": "Träningsredskap snarare än spel — 'tävlingen' måste byggas i creativen (vem glider flest på 30 s); heron kräver egen bild.",
+   "varfor": "Hockeyfamiljen finns redan i kontot (Ishockey-adventskalendern), enda svenska aktör ligger 1,88× över oss, BE-CPA 398–471 vid 799 och julafton 12 v bort. Kroppsligt i säsongen (skridskosäsongen börjar) — samma struktur som damaskerna.",
+   "konfidens": "LÅG",
+   "koncept_id": "K0322",
+   "arketyp": "F_HOBBY_IDENTITET",
+   "arketyp_sekundar": "G_Q4_GAVA",
+   "slot": "sasong",
+   "hypotes_id": "H05",
+   "sasong": {
+    "fonster_id": "jul",
+    "deadline_typ": "jul",
+    "veckor_kvar": 12.4,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Adventskalendern Racingbilar (H05: gåva med hårt datum till namngiven mottagare)",
+    "delade_variabler": [
+     "hårt datum (julafton)",
+     "mottagare i relation (barnbarnet som spelar hockey)",
+     "500–999 kr",
+     "hobbyidentitet syns i kontot (Ishockey-adventskalendern 399)"
+    ],
+    "avvikelser": [
+     "ingen svikande default",
+     "träningsredskap, inte 24 synliga saker",
+     "storleksval 140/180/200 cm"
+    ]
+   },
+   "rank_forklaring": "säsong: säsong 3×2 + efterfrågan 1 + ekonomi 2 = 9",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "inSPORTline Slideboard Fluxlide 180 cm (PriceRunner) — enda svenska listning i exakt form",
+     "pris_sek": 1499,
+     "url": "https://www.pricerunner.se/search?q=slideboard",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "inSPORTline Slideboard Fluxlide 180cm",
+     "pris_sek": 1499,
+     "url": "https://www.pricerunner.se/search?q=slide%20board%20tr%C3%A4ning",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.88,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se ?q=slideboard (2026-09-24: bara inSPORTline 1 499)",
+     "pricerunner.se ?q=slide board träning (2026-09-24: inSPORTline 1 499; slide pads/core sliders 118–189 = annan form; wobble boards 188–762)",
+     "pricerunner.se ?q=glidbräda skridskoträning (Zandstra Easy Glider 690 = skridskoskydd, annan form)",
+     "pricerunner.se ?q=glidmatta hockey (bara CCM/Bauer-skydd)"
+    ],
+    "anm": "Inget golv under oss i exakt form på PriceRunner 2026-09-24. Fyndiq/CDON/Amazon.se svarar 403 — oläst, hittar aldrig på golv. Hockeymonkey/Rexhockey-sök svarade 404/tomt (curl)."
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "render av svart matta med ändstopp på trägolv i sovrum — inbränd text 'Professional edition / Black 140cm*50cm / Give' måste bort; ingen människa i bild, creativen behöver egen klippning (barn i strumpor som glider)"
+   },
+   "meta_tanke": {
+    "hook": "Skäret tränas i hallen — i strumporna",
+    "objekt_i_bild": "barn i strumpor som glider fram och tillbaka på mattan i hallen, hockeyklubban i handen",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "glidet från ändstopp till ändstopp, samma rörelse som på isen, på 2 m hallgolv"
+   },
+   "listning": {
+    "product_id": "1005008607926106",
+    "url": "https://www.aliexpress.com/item/1005008607926106.html",
+    "pris_usd": 25.19,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-24T10:38:42Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-24-jul2/v3/bilder/1005008607926106.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "tre längder 140/180/200 cm enligt titeln (sökträffens 25,19 USD gäller lägsta = 140 cm; 180 cm ej prissatt i containern — skriv intervallet); skoöverdrag ingår enligt heron. Alternativ listning 1005005505404194 (28,83 USD) svarade tomt (BLOCKED, två försök)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 1,
+    "meta_creative": 1,
+    "efterfragan": 1,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005008607926106.html",
+    "https://www.aliexpress.com/w/wholesale-slide-board-skating-training.html",
+    "https://www.pricerunner.se/search?q=slideboard",
+    "https://www.pricerunner.se/search?q=slide%20board%20tr%C3%A4ning"
+   ]
+  },
+  {
+   "product_id": "1005012192366608",
+   "titel": "Balansbrädan med kullabyrint, trä",
+   "url": "https://www.aliexpress.com/item/1005012192366608.html",
+   "pris": 10.74,
+   "valuta": "USD",
+   "pris_text": "US $10.74",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-24-jul2/v3/bilder/1005012192366608.jpg",
+   "sald": "",
+   "grupp": "NYTT: Vardagsrumsgolvet i december — kulan ska in i mitten med fötterna, farmor mot barnbarnet på tid",
+   "objekt": "NYTT: Vardagsrumsgolvet i december — kulan ska in i mitten med fötterna, farmor mot barnbarnet på tid",
+   "taggar": {
+    "objekt": "NYTT: Vardagsrumsgolvet i december — kulan ska in i mitten med fötterna, farmor mot barnbarnet på tid",
+    "form": "annat",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "jul",
+    "prisband": "300–499",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "ej verifierat — Hape Balance Board Intelligent Trä 1 600 (PriceRunner) kan vara samma form men formen är inte läst"
+   },
+   "ekonomi": {
+    "landad": 156,
+    "forslag_pris": 399,
+    "multipel": 2.56,
+    "be_cpa": 244,
+    "be_roas": 1.64,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     140,
+     171
+    ]
+   },
+   "namn_sv": "Balansbrädan med kullabyrint, trä",
+   "status": "säsong",
+   "poang": 8,
+   "rank_slutlig": 8,
+   "rank": 10,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 10,
+    "K2": 10,
+    "K3": 12,
+    "K4": 4,
+    "K5": 5,
+    "K6": 8,
+    "K7": 4,
+    "K8": 4,
+    "K9": 5,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "hook": "Får farmor in kulan före barnbarnet?",
+   "efter_bild": "brädan tippar, kulan letar sig varv för varv in i mitten — och faller ur när balansen brister",
+   "huvudrisk": "K8 — en 40 cm träskiva kan se ut som 199 kr; storleken är inte läst och ankaret är obekräftat.",
+   "varfor": "Enda formen i linsen utan svensk aktör: balansträning (55+, fallprevention) och spel (tid, familjen) i samma sak, textfri hero, BE-CPA 228–259 klarar 190-golvet. Ren H10-exploration.",
+   "konfidens": "LÅG",
+   "koncept_id": "K0323",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "G_Q4_GAVA",
+   "slot": "sasong",
+   "hypotes_id": "H10",
+   "sasong": {
+    "fonster_id": "jul",
+    "deadline_typ": "jul",
+    "veckor_kvar": 12.4,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Soptunneklistermärkena (H10: kategorinyhet, textfri hero, < 500 kr, inget golv)",
+    "delade_variabler": [
+     "ingen svensk aktör i formen",
+     "textfri hero i kontext",
+     "< 500 kr",
+     "noll friktion — objekt/rörelse alla har"
+    ],
+    "avvikelser": [
+     "inte ett ägt objekt ute",
+     "inomhus",
+     "K8 osäker (liten träskiva)"
+    ]
+   },
+   "rank_forklaring": "säsong: säsong 3×2 + efterfrågan 1 + ekonomi 1 = 8",
+   "asymmetrisk": true,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen svensk aktör i formen 'balansbräda med kullabyrint' hittad — närmast BRIO Labyrintbrädor 161 (handhållen) och balansbrädor utan labyrint 159–859 (Master, Abilica, Gorilla Sports, Cwy)",
+     "pris_sek": null,
+     "url": "https://www.pricerunner.se/search?q=balansbr%C3%A4da%20labyrint",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "ej verifierat — Hape Balance Board Intelligent Trä 1 600 (PriceRunner) kan vara samma form men formen är inte läst",
+     "pris_sek": null,
+     "url": "https://www.pricerunner.se/search?q=hape%20balance%20board%20intelligent",
+     "i_sortiment": false
+    },
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se ?q=balansbräda labyrint (2026-09-24: inga labyrintbrädor, balansbrädor 159–859, BRIO Labyrintbrädor 161 handhållen)",
+     "pricerunner.se ?q=balance maze board (2026-09-24: Goki/Hape/Northix/Cwy balansbrädor utan labyrint 274–1 600)",
+     "pricerunner.se ?q=balansbräda kula labyrint (samma bild)",
+     "pricerunner.se ?q=hape balance board intelligent (1 600, form oläst)"
+    ],
+    "anm": "Formen saknas i svenskt flöde på PriceRunner (tre sökningar). Fyndiq/CDON/Amazon.se 403 — oläst. Utan ankare gäller landad × 2,4 (min 300) → 399."
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "textfritt foto: kvinna på ett ben på yogamatta, brädan med spirallabyrint bredvid — kulan syns inte tydligt i heron; creativen bör visa fötterna på brädan och kulan som rullar"
+   },
+   "meta_tanke": {
+    "hook": "Får farmor in kulan före barnbarnet?",
+    "objekt_i_bild": "två fötter på träbrädan, kulan som rullar genom spiralen mot mitten, vardagsrumsgolv",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "brädan tippar, kulan letar sig varv för varv in i mitten — och faller ur när balansen brister"
+   },
+   "listning": {
+    "product_id": "1005012192366608",
+    "url": "https://www.aliexpress.com/item/1005012192366608.html",
+    "pris_usd": 10.74,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-24T10:39:26Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-24-jul2/v3/bilder/1005012192366608.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant i sökträffen (trä, spirallabyrint, halkskyddad ovansida med fotmarkeringar). Större vippbräda med labyrint 1005012719535433 (46,60 USD, öppnad 10:39:31Z, hero med text 'Ideal for Kids & Adults') = premiumalternativ utan verifierat ankare; 1005009344329060 (17,85 USD) visade sig vara en handhållen bambulabyrint (BRIO-form) — struken",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 1,
+    "meta_creative": 3,
+    "efterfragan": 1,
+    "lucka": 3,
+    "ekonomi": 1,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 3,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012192366608.html",
+    "https://www.aliexpress.com/w/wholesale-balance-board-maze-game-wooden.html",
+    "https://www.pricerunner.se/search?q=balansbr%C3%A4da%20labyrint",
+    "https://www.pricerunner.se/search?q=balance%20maze%20board"
+   ]
+  }
+ ],
+ "strukna": [],
+ "utanfor_batch": []
+}

@@ -41,6 +41,10 @@ landad ≈ USD × 9,64 × 1,5 (frakt/avgifter; skriv intervall ±10 %). Pris: 0,
 ankare: landad × 2,4, minst 300. BE-CPA = pris − landad (utan moms). BE-ROAS = pris ÷ (pris − landad). Flerköp: finns fysiskt
 skäl att köpa 2+? Returrisk: måste kunden mäta?
 
+**Objektfältet börjar med SAKEN, aldrig situationen** (mätt 2026-09-24: fyra linser skrev "Julbordets spelkväll — …" och kolliderade på SAK-nyckeln med gårdagens rad). Rätt: "NYTT: Magnetstenarna på snöret — …"; fel: "NYTT: Julbordets spelkväll — magnetstenarna …".
+
+**Golv i exakt form under oss** (uppdaterat 2026-09-24): fäll när golvet är SORTIMENT (20+ varianter i kedja/fackhandel) utan ankare. En kopia under oss med synligt ankare ≥ 1,6× = märk `hypotes_id: "H06"` och leverera — ATV-kapellet (Meta REAL_WINNER) och Axels ja på vindrutan + pingisroboten är beviset.
+
 ## Formtaket (Axels signal 2026-09-11: "för mycket överdrag")
 Skyddsformer (överdrag, kapell, huv, skydd, tak, lock) får vara högst 40 % av dagens batch — `rank.py` lyfter ut resten.
 Sök därför strukturer, inte former: **ordning/friktion på flera ägda saker** (spöklämman: kaos → ordning, flerköp),
