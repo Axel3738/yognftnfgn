@@ -261,79 +261,78 @@ Flödena är `klar`, eftersom de är motorn och inte ett test av ett koncept.
 
 ---
 
-## Flöden
+## Flöden (omgång 2, 2026-09-24 natt, efter researchen)
+
+Underlag: `klaviyo/evolve/FLODESRESEARCH.md` (Klaviyos guider och externa riktmärken),
+`klaviyo/evolve/ATERKOP-ANALYS.md` (vår egen Shopify-data, Damons metod) och
+`klaviyo/evolve/SVAR.md` (Evolve). Evolve har ingen flödesmall, så strukturen kommer
+från Klaviyo och vår data. Innehållet följer vår creative strategy.
+
+**Byggordning (Axels beslut: ingen popup).** Klaviyo känner bara igen besökare som gett
+sin adress i kassan, i ett formulär eller genom klick i ett mejl. Pengarna ligger därför i
+F02 kassa → F04 efter köp → F07 motorhölje → båtmotorskydd → F05 vinback → F06 sunset.
+F01 välkomst och F03 webbhistorik byggs som utkast men får få mottagare utan popup.
 
 Alla flöden: `filter` börjar med `samtycke`. Alla mejl är utkast (draft).
+`format: "rentext"` på ett mejl = ren text från Axel (ingen hero-bild, inga produktkort, korta
+stycken, signatur). Klaviyo rekommenderar det för personliga mejl (research punkt 5).
 
 ### F01 Välkomst: `floden/f01-valkomst.json`, `FLOW_prenumerant_valkommen_v1`
-- **Trigger:** lista `LISTA_nyhetsbrev`. **Filter:** samtycke, ej_kopt_sedan_start.
-  **Återinträde:** aldrig (alltime).
-- **Memo:** Kontot har inga signup-formulär (mätt 2026-09-24), och sajtens två
-  Shopify-formulär lovar "exklusiva rabatter" utan att någon finns. Välkomstflödet ska
-  göra nya prenumeranter till köpare utan rabatt, genom storsäljarna och tryggheten
-  (leverans, spårning, ångerrätt). Om en välkomstrabatt ska finnas är Axels beslut.
-- **E1** (direkt): välkommen. Vem som står bakom (Axel), vad butiken säljer (prylar
-  för båten, husvagnen, trädgården och huset, alltså det sortimentet faktiskt
-  innehåller), sedan storsäljarna → produktrad (takoverdrag, batmotorskydd,
-  overvakningskamera) → fakta. Taggar: typ M · awareness solution · confidence medium.
-- **E2** (+2 dagar): "Det här köper folk just nu". Produktrad (ibc-tankoverdrag,
-  balteslipmaskin, fiskespohallare-4-pack, termoskydd) → citat (takoverdrag, 2) → fakta.
-- **E3** (+3 dagar): "Så funkar det när du handlar": leverans 5-10 arbetsdagar,
-  spårningssidan med paketnummer BB-, 14 dagars ångerrätt, kundsupport. Svaret på
-  "vågar jag handla här?" → grundare → knapp till storsäljarna (`kollektion:alla-produkter`).
+- Oförändrad struktur (E1 direkt, E2 +2 d, E3 +3 d). **E1 blir `format: "rentext"`**: Axel
+  hälsar, en rad om vad butiken säljer, en länk till storsäljarna.
+- Få mottagare utan popup; det är väntat och inget fel.
 
 ### F02 Övergiven kassa: `floden/f02-overgiven-kassa.json`, `FLOW_checkout_overgiven_v1`
-- **Trigger:** metrik Started Checkout / Checkout Started. **Filter:** samtycke,
-  ej_kopt_sedan_start. **Återinträde:** 7 dagar.
-- **Memo:** Shopify skickar redan en egen notis om övergiven kassa (`mejl/mallar.mjs:847`).
-  Det här flödet ersätter den med tre steg som svarar på invändningarna. Det får gå
-  live först när Shopifys notis är avstängd, annars får kunden dubbla mejl. Det är
-  Axels klick.
-- **E1** (1 timme): "Din varukorg är kvar". dynamisk checkout_rader → knapp till kassan. Kort.
-- **E2** (+1 dag): invändningarna. När kommer det (5-10 arbetsdagar, spårningssida)?
-  Kan jag ångra mig (14 dagars ångerrätt)? Vem svarar om något strular (kundsupport)?
-  → dynamisk checkout_rader → fakta.
-- **E3** (+2 dagar): sista påminnelsen, utan falsk brådska. Grundarens röst → dynamisk
-  checkout_rader. Inget "varukorgen töms".
+- **E1 flyttas från 1 timme till 3 timmar** (Klaviyos standard 2–4 h, research punkt 2).
+  E2 +1 dag, E3 +2 dagar oförändrade.
+- Ingen rabatt: en rabatt i E3 är Axels beslut. Om han väljer den läggs en rabattlänk
+  `/discount/KOD?redirect=/checkout` in (Evolve, Zack TTA).
+- Riktmärke (Billy, Evolve, externt): E1 ska ha över 35 % öppning, annars är det ett
+  leveransproblem, inte ett copyproblem.
+- Shopifys egen notis om övergiven kassa ska av samma dag som flödet slås på.
 
-### F03 Webbhistorik: `floden/f03-webbhistorik.json`, `FLOW_visad-produkt_paminnelse_v1`
-- **Trigger:** metrik Viewed Product. **Filter:** samtycke, ej_kopt_sedan_start,
-  ej_checkout_sedan_start. **Återinträde:** 14 dagar.
-- **Memo:** Den som tittat men inte gått till kassan är på nivån product. En enkel
-  påminnelse om exakt produkten, och trygghet i andra mejlet.
-- **E1** (4 timmar): dynamisk visad_produkt, en mening, knapp.
-- **E2** (+1 dag): dynamisk visad_produkt → fakta → produktrad storsäljare (3).
+### F03 Webbhistorik: oförändrad (utkast, få mottagare utan popup).
 
-### F04 Efter köp: `floden/f04-efter-kop.json`, `FLOW_order_efterkop_v1`
-- **Trigger:** metrik Placed Order. **Filter:** samtycke. **Återinträde:** 30 dagar.
-- **Memo:** Bara 3,3 % av köparna har köpt igen (mätt i Shopify 2026-09-24).
-  Kunderna kommer från en annons för en enda nischprodukt. Flödet ska få andra köpet
-  att hända inom samma nisch, med det erbjudande som redan finns: köp igen och få en
-  gratisprodukt, lyckohjulet (Axels beslut 2026-09-13). Mejl 1 skickas när paketet
-  rimligen har kommit fram (p90 20 dygn).
-- **E1** (+20 dagar): "Kom allt fram?" Hjälp om något saknas (spårningssida,
-  kundsupport) → erbjudande (lyckohjulet) → produktrad storsäljare (3).
-- **E2** (+14 dagar): "Nytt för säsongen". Produktrad (4 säsongsprodukter: sotarset,
-  solcellslampa med rörelsesensor, damasker, adventskalender racingbilar) → erbjudande
-  → fakta.
+### F04 Efter köp: `floden/f04-efter-kop.json`, `FLOW_order_efterkop_v2`
+- **Omgjort.** Förra versionen påminde om erbjudandet dag 20, men TACKIGEN lovas i 7 dagar
+  från ordern (`mejl/konfig.json`), så påminnelsen kom efter att löftet gått ut.
+- **E1 +4 dagar, `format: "rentext"`, från Axel:** varför det tar 5-10 arbetsdagar,
+  spårningssidan med paketnumret som börjar på BB-, att kundsupport svarar, och en rad
+  om att hjulet med gratisprodukten gäller i en vecka från ordern. `erbjudande`-blocket
+  ligger sist. Mål: färre "var är min order"-mejl och ett andra köp medan erbjudandet
+  gäller. Mäts med WISMO-andelen i autosvarets logg.
+- **E2 +14 dagar efter E1 (cirka dag 18, efter leveransen):** "Kom allt fram?" Hjälp om
+  något är fel (kundsupport, 14 dagars ångerrätt), sedan produktrad med storsäljarna.
+  INGET erbjudande, eftersom det har gått ut.
+- Data: riktiga återköp har median 18 dagar, p25 9 och p75 28 (skevt urval). Köp 2 är
+  större än köp 1 (median 579 mot 459 kr). Det är skälet till att E2 visar produkter.
 
-### F05 Vinback: `floden/f05-vinback.json`, `FLOW_order_vinback_v1`
-- **Trigger:** metrik Placed Order. **Filter:** samtycke, ej_kopt_sedan_start.
-  **Återinträde:** 90 dagar.
-- **Memo:** Median 13 dagar mellan köp 1 och 2 för de få som köper igen (skevt urval).
-  Den som inte köpt på 75 dagar kommer inte av sig själv. Två mejl med det befintliga
-  erbjudandet.
-- **Steg:** vänta 75 dagar → **E1** "Det har hänt en del sedan sist" (nyheter och
-  storsäljare, produktrad 4 → erbjudande) → vänta 10 dagar → **E2** "Hjulet väntar
-  fortfarande" (erbjudande → produktrad 3 → fakta).
+### F07 NY: Motorhölje → båtmotorskydd: `floden/f07-motorholje-till-batmotorskydd.json`, `FLOW_order_motorholje-batmotorskydd_v1`
+- **Enda produktparet med stöd i datan:** 12 av 21 återköpare som köpte Marin Motorhölje
+  först köpte sedan Båtmotorskydd heltäckande, 17–41 dagar senare, median cirka 28
+  (`ATERKOP-ANALYS.md`).
+- Trigger: metrik Placed Order med produktfilter "Marin Motorhölje"
+  (`trigger.produkt_innehaller`). Filter: samtycke, ej_kopt_sedan_start. Återinträde:
+  aldrig (alltime).
+- **E1 +21 dagar:** höljet skyddar när båten ligger i. Båtmotorskyddet täcker hela
+  motorn ner över riggen när den står upp (fakta ur produktsidan
+  `batmotorskydd-420d-heltackande-for-utombordare`). Produkt → fakta. Säsongen hjälper:
+  båtupptagning sep–okt.
+- **E2 +7 dagar:** kort påminnelse, produkt och produktrad med båtprylar
+  (batsitsoverdrag, fiskespohallare-4-pack, marin-fortojningslina-elastisk-uv-talig).
 
-### F06 Sunset: `floden/f06-sunset.json`, `FLOW_segment_sunset_v1`
-- **Trigger:** segment `SEG_oengagerade_180d`. **Filter:** samtycke. **Återinträde:** aldrig.
-- **Memo:** Klaviyos sunset-mönster: den som inte öppnat eller klickat på 180 dagar
-  trots 5 mejl får två mejl. Klickar hen inte heller då slutar vi skicka, vilket skyddar
-  leveransbarheten för alla andra. Steget "sluta skicka" (märka profilen) görs i
-  Klaviyo av VA:n (sop E06) tills motorn kan skapa update-profile.
-- **E1** (direkt): "Vill du fortfarande ha våra mejl?" Knapp "Ja, fortsätt skicka"
-  (länk till butiken, klicket räknas som engagemang) + ärlig rad om att vi annars
-  slutar.
-- **E2** (+5 dagar): "Det här är sista mejlet", kort och vänligt, knapp.
+### F05 Vinback: `floden/f05-vinback.json`, `FLOW_order_vinback_v2`
+- **Väntan flyttas från 75 till 120 dagar.** 47 tvåorderskunder köpte igen efter mer än
+  120 dagar (`ATERKOP-ANALYS.md`). Klaviyos riktmärke är 60–90 dagar för
+  förbrukningsvaror, och våra är inte förbrukningsvaror.
+- **E1 (dag 120):** nyheter och storsäljare, med **Bävertratten**
+  (`bavertratt-tanka-utan-spill`) först i produktraden: den vanligaste andra produkten
+  efter lång paus (14 av 69). Inget erbjudande, eftersom TACKIGEN gäller 7 dagar från
+  en order och den här kunden inte har någon ny.
+- **E2 +14 dagar:** kort, produktrad med säsongsprodukter, fakta.
+- Butikskredit som vinback-erbjudande (Evolve, Grayson) är Axels beslut.
+
+### F06 Sunset: `floden/f06-sunset.json`
+- **Båda mejlen blir `format: "rentext"`** (Klaviyos sunset-guide). Efter E2 väntar
+  flödet 10 dagar innan VA:n märker och spärrar profilen (SOP E06; motorn skapar inte
+  update-profile).

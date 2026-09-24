@@ -148,6 +148,16 @@ produktens **handle**; byggaren hämtar resten ur Shopify.
 }
 ```
 
+Mejlnivå, valfritt: `"format": "rentext"` = personligt mejl från Axel. Inget hero, inga
+produktkort. Tillåtna block: `text`, `knapp` (högst en), `grundare`, `fakta`, `erbjudande`.
+Byggaren ritar det som ett nästan omärkt mejl: logga liten eller ingen, brödtext, signatur.
+Används där Klaviyo rekommenderar ren text (välkomst E1, efter köp E1, sunset).
+
+Flödestrigger, valfritt: `"trigger": { "typ": "metrik", "metrik": ["Placed Order"],
+"produkt_innehaller": ["Marin Motorhölje"] }` blir Klaviyos `trigger_filter`, en
+`metric-property`-villkor på orderns produktnamn. Flödet startar bara för ordrar med den
+produkten.
+
 Regler för blocken:
 - `text` får innehålla `{{fornamn}}` (byggaren gör om det till
   `{{ first_name|default:'' }}`) och radbrytningar `\n\n` (nytt stycke). Inget annat
