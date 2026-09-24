@@ -16,7 +16,7 @@
     "kod": "OB"
   },
   "amnesrader": [
-    { "text": "\"Välkomnar du inte fukt då?\"", "begar": "adressera oron direkt" },
+    { "text": "Silverskikt mot sol, oxfordväv mot regn", "begar": "svar på fuktfrågan, konkret" },
     { "text": "Det täcker taket, inte hela vagnen", "begar": "förstå skillnaden mot ett helöverdrag" },
     { "text": "Vad en kund frågade om fukt", "begar": "nyfikenhet på vad andra undrar" }
   ],
@@ -44,7 +44,7 @@
     { "typ": "fakta" }
   ],
   "tretest": [
-    { "rad": "\"Välkomnar du inte fukt då?\" (ämnesrad)", "visualisera": true, "falsifiera": true, "ingen_annan": false },
+    { "rad": "Silverskikt mot sol, oxfordväv mot regn (ämnesrad)", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Det täcker taket, inte hela vagnen (ämnesrad)", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Vad en kund frågade om fukt (ämnesrad)", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Kunden skrev det under en av våra annonser. (förhandstext)", "visualisera": true, "falsifiera": true, "ingen_annan": true },

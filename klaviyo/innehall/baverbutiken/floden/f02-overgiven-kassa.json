@@ -98,7 +98,7 @@
         "kod": "M"
       },
       "amnesrader": [
-        { "text": "Sista mejlet om din kassa, jag lovar", "begar": "veta att detta är sista påminnelsen" },
+        { "text": "Sista mejlet om din kassa", "begar": "veta att detta är sista påminnelsen" },
         { "text": "Fortfarande något du undrar över", "begar": "möjlighet att fråga innan man släpper köpet" },
         { "text": "Jag hör av mig en sista gång", "begar": "personlig kontakt, inte ett automatiskt system" }
       ],
@@ -108,7 +108,7 @@
         { "typ": "dynamisk", "kalla": "checkout_rader" }
       ],
       "tretest": [
-        { "rad": "Sista mejlet om din kassa, jag lovar", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Sista mejlet om din kassa", "visualisera": true, "falsifiera": true, "ingen_annan": true },
         { "rad": "Fortfarande något du undrar över", "visualisera": true, "falsifiera": true, "ingen_annan": true },
         { "rad": "Jag hör av mig en sista gång", "visualisera": true, "falsifiera": true, "ingen_annan": true },
         { "rad": "Sista påminnelsen. Undrar du något, mejla, annars hör du inget mer om den här kassan.", "visualisera": true, "falsifiera": true, "ingen_annan": true }

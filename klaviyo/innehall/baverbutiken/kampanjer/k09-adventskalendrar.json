@@ -17,14 +17,14 @@
   },
   "amnesrader": [
     { "text": "Beställ senast 11 november för lucka 1", "begar": "hinna i tid, undvika att missa den" },
-    { "text": "En kalender som inte är choklad", "begar": "något bestående i stället för choklad" },
+    { "text": "24 bilar, varje sin egen färg och modell", "begar": "samla något som växer, inte äta upp direkt" },
     { "text": "En för racingbilar, en för fiske, en för hockey", "begar": "hitta rätt kalender för just den personen" }
   ],
   "forhandstext": "Sex kalendrar, en för varje sorts person i huset.",
   "block": [
     {
       "typ": "hero",
-      "rubrik": "Chokladkalendern är slut den andra december",
+      "rubrik": "Den tjugofjärde bilen ställer sig bredvid de tjugotre andra",
       "text": "Kalendern öppnas på trettio sekunder, chokladen är uppäten före frukost, och resten av dagen finns inget kvar. Bakom varje lucka i den här står i stället en bil att leka med.",
       "bild": "produkt:adventskalender-racingbilar-24-bilar-bakom-24-luckor",
       "knapp": { "text": "Se racingbilskalendern", "lank": "produkt:adventskalender-racingbilar-24-bilar-bakom-24-luckor" }
@@ -54,10 +54,10 @@
   ],
   "tretest": [
     { "rad": "Beställ senast 11 november för lucka 1 (ämnesrad)", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "En kalender som inte är choklad (ämnesrad)", "visualisera": true, "falsifiera": true, "ingen_annan": false },
+    { "rad": "24 bilar, varje sin egen färg och modell (ämnesrad)", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "En för racingbilar, en för fiske, en för hockey (ämnesrad)", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Sex kalendrar, en för varje sorts person i huset. (förhandstext)", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Chokladkalendern är slut den andra december (rubrik, hero)", "visualisera": true, "falsifiera": true, "ingen_annan": false },
+    { "rad": "Den tjugofjärde bilen ställer sig bredvid de tjugotre andra (rubrik, hero)", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Se racingbilskalendern (knapp, hero)", "visualisera": true, "falsifiera": true, "ingen_annan": true }
   ],
   "planerad": "2026-10-27T18:00:00+01:00",
