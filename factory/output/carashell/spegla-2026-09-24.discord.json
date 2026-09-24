@@ -1,0 +1,42 @@
+{
+  "brand": "CaraShell",
+  "datum": "2026-09-24",
+  "lage": "spegla",
+  "gjort": [
+    "Takoverdrag_OB_5_1 → CaraShellRoof_OB_105_1: SE ad 120249250677510172 live in CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11 (adset CARASHELL_SE_Taköverdraget - OB), NO ad 120249250712380172 live in CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11 — row in hub",
+    "Takoverdrag_OB_4_H1 → CaraShellRoof_OB_104_H1: SE ad 120249250828910172 live in CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11 (adset CARASHELL_SE_Taköverdraget - OB), NO ad 120249250842220172 live in CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11 — row in hub",
+    "Takoverdrag_OB_3_H1 → CaraShellRoof_OB_103_H1: SE ad 120249250865390172 live in CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11 (adset CARASHELL_SE_Taköverdraget - OB), NO ad 120249250960120172 live in CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11 — row in hub",
+    "Takoverdrag_CO_5_H1 → CaraShellRoof_CO_105_H1: SE ad 120249250968760172 live in CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11 (adset CARASHELL_SE_Taköverdraget - CO), NO ad 120249250978490172 live in CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11 — row in hub",
+    "Takoverdrag_PD_10_H1 → CaraShellRoof_PD_110_H1: SE ad 120249251052800172 live in CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11 (adset CARASHELL_SE_Taköverdraget - PD), NO ad 120249251068280172 live in CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11 — row in hub",
+    "Takoverdrag_CS_9_H1 → CaraShellRoof_CS_109_H1: SE ad 120249251079280172 live in CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11 (adset CARASHELL_SE_Taköverdraget - CS), NO ad 120249251181710172 live in CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11 — row in hub",
+    "Takoverdrag_OB_2_H1: 🇺🇸 English version 120251575130410435 is live — source row set to Approved",
+    "Takoverdrag_TR_3_H1: 🇺🇸 English version 120251575116270435 is live — source row set to Approved",
+    "Takoverdrag_GT_10_H1: 🇺🇸 English version 120251574989110435 is live — source row set to Approved",
+    "Takoverdrag_CO_3_H1: 🇺🇸 English version 120251574965360435 is live — source row set to Approved",
+    "Takoverdrag_GT_7_H1: 🇺🇸 English version 120251574936760435 is live — source row set to Approved",
+    "Takoverdrag_RI_2_H1: 🇺🇸 English version 120251574762570435 is live — source row set to Approved",
+    "Takoverdrag_GT_8_H1: 🇺🇸 English version 120251574733400435 is live — source row set to Approved",
+    "Takoverdrag_CS_8_H1: 🇺🇸 English version 120251574720300435 is live — source row set to Approved",
+    "Takoverdrag_CS_7_H1: 🇺🇸 English version 120251574623040435 is live — source row set to Approved"
+  ],
+  "varningar": [
+    "Takoverdrag_GT_11_H1: skipped — nämner Bäverbutiken: Bäverbutiken",
+    "Takoverdrag_OB_4_H1 (SE): end card could not be checked — ffmpeg could not read the duration. Does not block the upload — someone has to look at the last seconds.",
+    "Takoverdrag_OB_4_H1 (NO): end card could not be checked — ffmpeg could not read the duration. Does not block the upload — someone has to look at the last seconds.",
+    "Takoverdrag_GT_11_H1 (SE): end card could not be checked — ffmpeg could not read the duration. Does not block the upload — someone has to look at the last seconds.",
+    "Takoverdrag_GT_11_H1 (NO): end card could not be checked — ffmpeg could not read the duration. Does not block the upload — someone has to look at the last seconds.",
+    "Takoverdrag_OB_3_H1 (SE): end card could not be checked — ffmpeg could not read the duration. Does not block the upload — someone has to look at the last seconds.",
+    "Takoverdrag_OB_3_H1 (NO): end card could not be checked — ffmpeg could not read the duration. Does not block the upload — someone has to look at the last seconds.",
+    "Takoverdrag_CO_5_H1 (SE): end card could not be checked — ffmpeg could not read the duration. Does not block the upload — someone has to look at the last seconds.",
+    "Takoverdrag_CO_5_H1 (NO): end card could not be checked — ffmpeg could not read the duration. Does not block the upload — someone has to look at the last seconds.",
+    "Takoverdrag_PD_10_H1 (SE): end card could not be checked — ffmpeg could not read the duration. Does not block the upload — someone has to look at the last seconds.",
+    "Takoverdrag_PD_10_H1 (NO): end card could not be checked — ffmpeg could not read the duration. Does not block the upload — someone has to look at the last seconds.",
+    "Takoverdrag_CS_9_H1 (SE): end card could not be checked — ffmpeg could not read the duration. Does not block the upload — someone has to look at the last seconds.",
+    "Takoverdrag_CS_9_H1 (NO): end card could not be checked — ffmpeg could not read the duration. Does not block the upload — someone has to look at the last seconds.",
+    "SE-kampanj: \"CARASHELL_SE_Taköverdraget LISTICLE\" är eget spår (namnet bär LISTICLE) och tog inte emot annonserna."
+  ],
+  "action_axel": [
+    "Takoverdrag_GT_11_H1: nämner Bäverbutiken: Bäverbutiken — decide whether the editor should make a store version"
+  ],
+  "nasta_korning": "tomorrow 16:20 + slot"
+}

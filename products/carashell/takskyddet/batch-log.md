@@ -2027,3 +2027,43 @@ amerikanska sidorna varje runda.
 
 **Discord:** engelsk rapport i `#annons-uppladdning`, meddelande
 `1552700685110218846`, ingen ACTION NEEDED.
+
+---
+
+## 2026-09-24 — speglingen: 6 av 7 speglade, 12 annonser live, 9 → Approved
+
+Kön var 7 rader i `CaraShell SE ready to be active`. Sex speglades, en stoppades
+på varumärkesregeln. Pris SE 1 129 kr och NO 1 106 NOK lästa live ur butiken;
+alla creatives bar 1 129 kr — 0 % avvikelse, inget prisstopp.
+
+| Källrad | Spegelnamn | SE-annons | NO-annons |
+|---|---|---|---|
+| `Takoverdrag_OB_5_1` (bild) | `CaraShellRoof_OB_105_1` | `120249250677510172` | `120249250712380172` |
+| `Takoverdrag_OB_4_H1` | `CaraShellRoof_OB_104_H1` | `120249250828910172` | `120249250842220172` |
+| `Takoverdrag_OB_3_H1` | `CaraShellRoof_OB_103_H1` | `120249250865390172` | `120249250960120172` |
+| `Takoverdrag_CO_5_H1` | `CaraShellRoof_CO_105_H1` | `120249250968760172` | `120249250978490172` |
+| `Takoverdrag_PD_10_H1` | `CaraShellRoof_PD_110_H1` | `120249251052800172` | `120249251068280172` |
+| `Takoverdrag_CS_9_H1` | `CaraShellRoof_CS_109_H1` | `120249251079280172` | `120249251181710172` |
+
+**Tillbakaläst ur Meta: 12 av 12** — alla i konto `915422744950975`, SE i
+`CARASHELL_SE_Taköverdraget` och NO i `CARASHELL_NO_Takovertrekket`, samtliga
+`status: ACTIVE`. `CaraShellRoof_NO_CS_109_H1` stod `effective_status:
+IN_PROCESS` vid läsningen — Metas granskningsfönster, inte ett fel.
+Räkningen gjordes för att sammanfattningen inte är ett bevis (lärdomen
+2026-09-22: "9 speglade, 0 fel" saknade två NO-annonser).
+
+**Stoppad (1):** `Takoverdrag_GT_11_H1` — copyn nämner Bäverbutiken
+("Han glömmer strumpor. Inte det här."-raden bär butiksnamnet i brieftexten).
+Järnregel 2: en OPS-butik säger aldrig vilken butik det är. Ingen uppladdning,
+källradens status orörd, raden ligger som ACTION NEEDED i Discord — Axel avgör
+om redigeraren ska göra en butiksversion. Samma stopp som `Takoverdrag_TR_1_1`
+och `SP_5_1` 2026-09-18.
+
+**9 källrader → `Approved`:** `OB_2_H1`, `TR_3_H1`, `GT_10_H1`, `CO_3_H1`,
+`GT_7_H1`, `RI_2_H1`, `GT_8_H1`, `CS_8_H1`, `CS_7_H1` — alla nio bar sin
+US-annons i Magiborsten UK (`1107817401910319`) vid körningen. Väntekön från
+i går är därmed tömd.
+
+**Kvarstående varning, oförändrad:** `CARASHELL_SE_Taköverdraget LISTICLE` är
+ett eget spår (namnet bär LISTICLE) och tar aldrig emot speglade annonser —
+korrekt beteende, rapporteras varje körning.
