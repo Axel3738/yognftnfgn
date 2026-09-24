@@ -1,6 +1,6 @@
 # Batch-log — IBC-Tanköverdraget
 
-Breakthrough-frekvens: 1/45 (2 %)
+Breakthrough-frekvens: 1/48 (2 %)
 
 ## Batch #1 — 2026-09-01 (`/forsta-batch`, automatisk rutinkörning)
 
@@ -592,3 +592,12 @@ Lärdom `L-120250005818370291` (skriven 2026-09-21): symptomet (grönt vatten) b
 | IBC_PD_12_H3 | I | IBC_PD_1_H1 | öppningsbilden: PD_Extras makro på väven, i FULL längd | isolerar dna-hypotes 4 (öppning vs klipplängd) | CPA ~179 kr ⇒ öppningen bär; ≥ 277 ⇒ klippet bar | okänd | — |
 
 Efter dessa tre är PD_1_H1:s tre iterationer förbrukade (deadline 2026-10-05). Nästa vidarebygg kräver en ny breakthrough eller att H1–H3 får etikett dag 7. `[TID]` i blixtlåsraden fylls av redigeraren ur den riktiga tagningen — aldrig "2 minuter" (sidan anger ingen tid).
+
+## Etiketter dag 7 (2026-09-24)
+
+| Annons | Batch | Typ | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Bedömbar | Playbook |
+|---|---|---|---|---|---|---|---|---|---|
+| IBC_PD_8_H1 | — | — | **LOSER** | 1 % | 55 kr | 0 | 0,00 / 2,69 | nej | släpp |
+| IBC_CS_7_1 | — | — | **LOSER** | 1 % | 38 kr | 0 | 0,00 / 2,69 | nej | släpp |
+| IBC_SP_5_H1 | — | — | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 2,69 | nej | hooken föll — logga och släpp, aldrig ABO |
+

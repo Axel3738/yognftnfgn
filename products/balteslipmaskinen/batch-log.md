@@ -1,6 +1,6 @@
 # Batch-logg — Bälteslipmaskinen
 
-Breakthrough-frekvens: 1/34 (3 %)
+Breakthrough-frekvens: 1/35 (3 %)
 
 ## Batch #1 — originaladsen (launch 2026-08-21, före OS:et)
 16 annonser i CBO (PD/SP/CS/G-serier). Utfall t.o.m. 2026-08-29: se dna.md.
@@ -437,4 +437,9 @@ Efter dessa är PD_19_1:s tre iterationer förbrukade (deadline 2026-10-05). Ing
 
 Fönster 2026-09-16..22 (annonsernas egen första vecka). Hook rate okänd — Ads-MCP:n ger inte video_view (3 s).
 
+## Etiketter dag 7 (2026-09-24)
+
+| Annons | Batch | Typ | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Bedömbar | Playbook |
+|---|---|---|---|---|---|---|---|---|---|
+| Beltgrinder_REV_2_1 | — | — | **INGEN_DATA** | — | 0 kr | 0 | 0,00 / 1,68 | nej | ingen data |
 
