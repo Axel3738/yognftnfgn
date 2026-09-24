@@ -138,8 +138,10 @@ export function flodesDefinition({ flode, trigger, filterDef, mejlPaId, mallIdPa
     }
     throw new Error(`Flödet ${flode.namn} steg ${i + 1}: okänd stegtyp "${s.typ}" (vanta, mejl).`);
   });
+  // ReentryCriteria kräver duration (heltal) även för unit "alltime"; byggaren skriver
+  // varaktighet null då. 0 skickas — obekräftat vad Klaviyo gör med talet vid alltime.
   const reentry = flode.ateintrade
-    ? { duration: flode.ateintrade.varaktighet, unit: flode.ateintrade.enhet }
+    ? { duration: flode.ateintrade.varaktighet ?? 0, unit: flode.ateintrade.enhet }
     : null;
   return {
     triggers: [trigger],
@@ -148,6 +150,21 @@ export function flodesDefinition({ flode, trigger, filterDef, mejlPaId, mallIdPa
     entry_action_id: actions.length ? 'a1' : null,
     ...(reentry ? { reentry_criteria: reentry } : {}),
   };
+}
+
+/**
+ * Byggaren skriver html och text som FILNAMN bredvid manifestet
+ * (k01-….html / .txt). Läser in dem så resten av uppladdaren får innehållet.
+ * Ett fält som redan är HTML (innehåller "<") lämnas orört.
+ */
+export function laddaInnehall(manifest, dir) {
+  const las = (v, slut) => {
+    if (typeof v !== 'string' || v.includes('<') || v.includes('\n') || !v.endsWith(slut)) return v;
+    const fil = path.join(dir, v);
+    if (!fs.existsSync(fil)) throw new Error(`Manifestet pekar på ${v}, men filen finns inte i ${dir}. Kör node klaviyo/bygg.mjs igen.`);
+    return fs.readFileSync(fil, 'utf8');
+  };
+  return { ...manifest, mejl: (manifest.mejl ?? []).map((m) => ({ ...m, html: las(m.html, '.html'), text: las(m.text, '.txt') })) };
 }
 
 // ------------------------------------------------------------------ minnet
@@ -505,7 +522,7 @@ async function main() {
     console.error(`Manifestet ${path.relative(process.cwd(), manifestFil)} finns inte — kör node klaviyo/bygg.mjs först.`);
     process.exit(1);
   }
-  const manifest = JSON.parse(fs.readFileSync(manifestFil, 'utf8'));
+  const manifest = laddaInnehall(JSON.parse(fs.readFileSync(manifestFil, 'utf8')), path.dirname(manifestFil));
   const klient = nyckel ? new KlaviyoKlient({ nyckel: nyckel.nyckel, logg: (t) => console.error(t) }) : null;
   const kontoDir = path.join(HAR, 'konto', brand.id);
   let r;

@@ -5,7 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { KlaviyoKlient } from '../klient.mjs';
-import { laddaUpp, mallKontroll, rapportText, raknaSenasteDygn, DYGNSTAK } from '../ladda-upp.mjs';
+import { laddaUpp, laddaInnehall, mallKontroll, rapportText, raknaSenasteDygn, DYGNSTAK } from '../ladda-upp.mjs';
 import { SEGMENT } from '../segment.mjs';
 import { falskKlaviyo } from './falsk.mjs';
 
@@ -222,4 +222,27 @@ test('saknad Shopify-metrik: segmentet hoppas med orsak, flödet stoppas', async
   const r = await laddaUpp({ brand: BRAND, manifest: MANIFEST(), klient: k, skarpt: true, kontoDir: tmp(), nu: NU });
   assert.ok(r.hoppade.some((h) => h.namn === 'SEG_kopare' && /Placed Order/.test(h.orsak)));
   assert.ok(r.stopp.some((s) => s.namn === 'FLOW_checkout_overgiven_v1' && s.kod === 'METRIK_SAKNAS'));
+});
+
+test('byggarens manifest: html och text som filnamn läses in bredvid manifestet', () => {
+  const dir = tmp();
+  fs.writeFileSync(path.join(dir, 'a.html'), '<p>{% unsubscribe %}</p>{{ organization.full_address }}');
+  fs.writeFileSync(path.join(dir, 'a.txt'), 'text');
+  const m = laddaInnehall({ mejl: [{ id: 'a', html: 'a.html', text: 'a.txt' }, { id: 'b', html: '<p>redan html</p>', text: null }] }, dir);
+  assert.match(m.mejl[0].html, /unsubscribe/);
+  assert.equal(m.mejl[0].text, 'text');
+  assert.equal(m.mejl[1].html, '<p>redan html</p>');
+  assert.throws(() => laddaInnehall({ mejl: [{ id: 'c', html: 'saknas.html' }] }, dir), /finns inte/);
+});
+
+test('återinträde "alltime" utan varaktighet: duration 0, unit alltime', async () => {
+  const m = MANIFEST();
+  m.floden[1].ateintrade = { varaktighet: null, enhet: 'alltime' };
+  const r = await laddaUpp({ brand: BRAND, manifest: m, klient: null, kontoDir: tmp(), nu: NU });
+  const def = r.exempel['POST /api/flows'] && Object.values(r.exempel).length;
+  assert.ok(def);
+  const { k, f } = ny();
+  await laddaUpp({ brand: BRAND, manifest: m, klient: k, skarpt: true, kontoDir: tmp(), nu: NU });
+  const v = f.tillstand.floden.find((x) => x.attributes.name === 'FLOW_valkomst_v1').attributes.definition;
+  assert.deepEqual(v.reentry_criteria, { duration: 0, unit: 'alltime' });
 });
