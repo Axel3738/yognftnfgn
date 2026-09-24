@@ -85,11 +85,11 @@ async function video() {
   console.log('kvar:', jobb.filter((j) => !j.klar).map((j) => j.id).join(', ') || '—');
 }
 
-async function gif(id, mp4) {
+async function gif(id, mp4, start = AI[id]?.video?.start || 0) {   // start = sekunder att hoppa över i början (video.start i ai.mjs)
   mkdirSync(path.join(GALLERI, id), { recursive: true });
   const ut = path.join(GALLERI, id, 'video.gif');
   for (const [bredd, farger] of [[360, 96], [320, 64], [280, 48]]) {
-    execFileSync(FF, ['-y', '-loglevel', 'error', '-t', '6', '-i', mp4, '-vf', `crop='min(iw,ih)':'min(iw,ih)',fps=8,scale=${bredd}:${bredd}:flags=lanczos,split[s0][s1];[s0]palettegen=max_colors=${farger}[p];[s1][p]paletteuse=dither=bayer:bayer_scale=4`, '-loop', '0', ut]);
+    execFileSync(FF, ['-y', '-loglevel', 'error', '-ss', String(start), '-t', '6', '-i', mp4, '-vf', `crop='min(iw,ih)':'min(iw,ih)',fps=8,scale=${bredd}:${bredd}:flags=lanczos,split[s0][s1];[s0]palettegen=max_colors=${farger}[p];[s1][p]paletteuse=dither=bayer:bayer_scale=4`, '-loop', '0', ut]);
     if (statSync(ut).size < 4e6) break;
   }
   execFileSync(FF, ['-y', '-loglevel', 'error', '-i', ut, '-vf', "select='not(mod(n\\,8))',scale=200:-1,tile=6x1", '-frames:v', '1', path.join(UT, `${id}-gifframes.jpg`)]);

@@ -480,6 +480,18 @@ som får skördebilder, i den här exakta ordningen:
 6. Bild
 7. Garanti
 
+**Första bilden ska visa hela produkten så att man förstår vad det är** (Axels andra granskning 2026-09-24:
+husbilskalenderns första bild var ett inzoomat plastfack — "går inte att se att det är en kalender ens"; ädelstenens
+och magnetblockens var QC-foton "tagna på ett lager"). Inzoomade detaljer, fack och högar är aldrig första bild.
+**En GIF ska visa produkten i användning** — gör den inte det (rullknivslipen: "visade inte hur produkten används")
+byts den mot en bild (`gif: false`), hellre bild än en dålig GIF. **AI får aldrig hitta på förpackning eller text**:
+magnetblockens första AI-hero fick en påhittad låda med "Ages 3+" och underkändes — säg "no box, no packaging, no
+text" i prompten och jämför alltid mot QC-fotot. **Skördebilder kan visa en annan variant av produkten** —
+ädelstenens fil 20 var en helt annan ask än den CWD levererar; jämför varje skördebild mot QC-fotot innan den
+används. **Produkter utan skörd måste ändå ha en post i `galleri.mjs`**, annars laddas deras AI-bilder och GIF:ar
+aldrig upp (driftbilen och bordsfotbollen låg färdiga i scratch i timmar). **Handlar köpet om passform** (batteriskydd,
+huvar, överdrag) ska sidan ha en måttguide — ritad deterministiskt med sharp, aldrig AI.
+
 **Varje produktsida ska ha en GIF (Axels granskning 2026-09-24: "Du har ju struntat i GIF:ar
 överallt").** Finns ingen leverantörsvideo utan textöverlägg görs en AI-video med KIE veo3_fast
 från en RIKTIG produktbild (`temu/batch11/ai.mjs` + `ai-kor.mjs`, ~40 credits/video), GIF i **1:1**,

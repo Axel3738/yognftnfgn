@@ -176,3 +176,24 @@ mellan funktioner och garanti, och elcykeljackan visade fel produkt. Åtgärdat 
   få en rad i `alt-no.json` — saknas den loggas det i slutet av NO-körningen och svenskan används.
 - **`ersatt` laddar om vid VARJE körning** — flaggan togs bort från rullknivslipen och Highland Cow när
   omladdningen var gjord, annars laddas 7 medier om varje gång.
+
+## Axels andra granskning 2026-09-24 — åtta sidor
+- **Driftbil 1:16 (rcoffroad) + bordsfotboll:** GIF och AI-bilder låg färdiga i scratch men laddades aldrig upp —
+  produkterna saknade post i `galleri.mjs` och `galleri-bygg` hoppar över allt som inte står där. Poster tillagda
+  (`bilder: []`). Bordsfotbollen fick en andra AI-bild (bollen på väg i mål); "FOOTBALL" på sargen finns på den
+  riktiga produkten (QC-fotot), så texten är inte påhittad.
+- **Ädelstenskalendern:** skördefil 20 var FEL ask ("ADVENT CALENDAR"-designen, engelsk text) — den riktiga är
+  "Merry Christmas"-asken (QC). Fil 19 (asken öppen, blocken, verktygen, utan text) är nu första bild, AI-heron
+  tvåa, QC sist. Stengallret visar 32 stenar → alt utan siffra. GIF:en omgjord med bildstart från fil 19
+  (hammaren knackar upp ett block).
+- **Husbilskalendern:** första bild = fil 05 (asken öppen med 24 numrerade luckor) beskuren under den engelska
+  texten, på vit kvadrat. QC-facket sist.
+- **Magnetblocken:** AI-hero från QC-fotot. Första försöket hittade på en egen låda med "Ages 3+" — underkänt,
+  omgjort utan låda.
+- **Rullknivslipen:** GIF bort (`gif: false`), sidan får bild i stället. **Vedklyvshuven:** fil 09 (renderad,
+  ser genomskinlig ut) borttagen, GIF omgjord från fotot i förrådet (helt svart huv, dragskon dras åt).
+- **Elcykeljackan:** måttguide (`elcykel-matt.mjs`, sharp/SVG, sv + no via `filNo`) och ny bullet
+  "Mät batteriet innan du köper – 54 × 45,7 cm utfällt, ramomkrets 30–40 cm" (leverantörens storleksbild, skörd 09).
+- **Nya galleri-flaggor:** `bort: [altdelsträng]` tar bort befintliga medier (norska motsvarigheten slås upp i
+  `alt-no.json`), `gif: false` tar bort GIF:en, `filNo` = egen fil för NO.
+

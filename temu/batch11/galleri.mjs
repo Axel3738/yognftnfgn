@@ -8,7 +8,7 @@
 //  - "waterproof"/"100 %" o.dyl. får inte följa med — bilder med sådana löften beskärs eller hoppas
 //  - QC-fotot (fabriksbilden) ligger kvar: qc:'forst' = det förblir hero, qc:'sist' = flyttas sist
 // crop = [x, y, w, h] som andelar. fil = nummer i bildskord-mappen. alt = svenska (används i SE och NO).
-// pad = lägg den beskurna bilden på vit kvadrat (1:1). qc:'bort' = ta bort de gamla QC-medierna. ersatt = ladda om (vid VARJE körning — ta bort flaggan när omladdningen är gjord)
+// pad = lägg den beskurna bilden på vit kvadrat (1:1). bort = [alt-delsträngar] på befintliga medier som ska tas bort. gif: false = ingen GIF (befintlig tas bort). filNo = egen fil för NO. qc:'bort' = ta bort de gamla QC-medierna. ersatt = ladda om (vid VARJE körning — ta bort flaggan när omladdningen är gjord)
 // bilderna även om alt-texten redan finns. AI-material (bilder + GIF) kommer från ai.mjs och läggs på av galleri-bygg.
 export const GALLERI = {
   // ── redan live ────────────────────────────────────────────────────────────
@@ -46,10 +46,10 @@ export const GALLERI = {
     { fil: '11', alt: 'Två steg: skruva fast hållaren, skjut in maskinen', crop: [0, 0.13, 1, 0.4] },
   ] },
   rcdrift: { qc: 'forst', bilder: [] },   // Temu-skörden misslyckades (inloggning) — körs om
-  vedklyvshuv: { qc: 'sist', bilder: [
+  // Axel 2026-09-24 (andra granskningen): fil 09 (renderad, ser genomskinlig ut som en presenning) tas bort — huven är helt svart.
+  // Fil 08 (förrådet) är också en render där maskinen syns igenom huven — bort av samma skäl (2026-09-24).
+  vedklyvshuv: { qc: 'sist', bort: ['under tak i regn', 'i ett förråd'], bilder: [
     { fil: '06', alt: 'Vedklyvshuven över en vedklyv, dragsko i kanten' },
-    { fil: '08', alt: 'Huven över vedklyven i ett förråd' },
-    { fil: '09', alt: 'Huven på vedklyven under tak i regn' },
     { fil: '07', alt: 'Huven framifrån och händer som drar åt dragskon' },
     { fil: '05', alt: 'Närbild på 210D-väven och dragskons söm' },
   ] },
@@ -67,7 +67,8 @@ export const GALLERI = {
   ] },
   // Axel 2026-09-24: "konstig ratio, låg kvalitet" — beskärningarna läggs på vit kvadrat (pad). Omladdade med ersatt: true
   // i SE + NO samma dag; flaggan är borttagen så körningarna är idempotenta igen (ersatt laddar om vid VARJE körning).
-  rullknivslip: { qc: 'sist', bilder: [
+  // Axel 2026-09-24 (andra granskningen): GIF:en visade inte hur produkten används — byts mot bild (gif: false tar bort den).
+  rullknivslip: { qc: 'sist', gif: false, bilder: [
     { fil: '04', alt: 'Rullknivslipen i trä med vinkelblocket och en kniv', crop: [0, 0.22, 1, 0.6], pad: true },
     { fil: '07', alt: 'Kniven hålls mot vinkelblocket medan rullen dras', crop: [0, 0.2, 1, 0.45], pad: true },
     { fil: '09', alt: 'Kniven slipas vid skärbrädan', crop: [0.22, 0.2, 0.78, 0.8], pad: true },
@@ -81,9 +82,12 @@ export const GALLERI = {
     { fil: '20', alt: 'Tre askar' },
     { fil: '14', alt: 'Asken i handen på lagret' },
   ] },
-  adelstenskalender: { qc: 'forst', bilder: [
-    { fil: '20', alt: 'Den röda asken öppen med grävblocken och verktygen' },
-    { fil: '11', ny: '11b', alt: '24 stenar', crop: [0.07, 0.63, 0.88, 0.35] },
+  // Axel 2026-09-24 (andra granskningen): första bilden var QC-fotot och GIF:en "riktigt dålig". Fil 20 var dessutom FEL ask
+  // ("ADVENT CALENDAR"-designen med engelsk text) — den riktiga produkten är "Merry Christmas"-asken (QC-fotot), fil 19 utan textöverlägg.
+  // Stengallret i fil 11 visar 32 stenar, så alt-texten får inte säga "24".
+  adelstenskalender: { qc: 'sist', bort: ['Den röda asken öppen med grävblocken', '24 stenar'], bilder: [
+    { fil: '19', alt: 'Ädelstenskalendern öppen: 24 luckor, grävblocken, hammaren, penseln och luppen' },
+    { fil: '11', ny: '11b', alt: 'Exempel på ädelstenar som kan gömma sig i blocken', crop: [0.07, 0.63, 0.88, 0.35] },
   ] },
   cykelhallarskydd: { qc: 'sist', bilder: [
     { fil: '06', alt: 'Cykelhållarskyddet över cyklarna bak på en husbil' },
@@ -108,7 +112,10 @@ export const GALLERI = {
     { fil: '03', alt: 'Två buskjackor i en trädgård', crop: [0, 0, 1, 0.72] },
     { fil: '10', alt: 'Buskjackan med dragkedjan öppen', crop: [0, 0, 0.5, 1] },
   ] },
-  husbilskalender: { qc: 'forst', bilder: [
+  // Axel 2026-09-24 (andra granskningen): första bilden (QC, inzoomat plastfack) — "går inte att se att det är en kalender".
+  // Fil 05 = asken öppen med 24 numrerade luckor; beskuren så den engelska texten uppe till höger försvinner, på vit kvadrat.
+  husbilskalender: { qc: 'sist', bilder: [
+    { fil: '05', ny: '05h', alt: 'Husbilskalendern öppen: 24 luckor med retrobussar att hänga upp', crop: [0, 0.27, 1, 0.72], pad: true },
     { fil: '06', alt: 'Retrobussarna i närbild', crop: [0, 0, 0.68, 0.85] },
     { fil: '10', alt: 'Retrobussar hängda i en julgran', crop: [0.32, 0.22, 0.6, 0.55] },
     { fil: '04', alt: 'Retrobussarna uppradade', crop: [0.42, 0, 0.58, 1] },
@@ -124,13 +131,20 @@ export const GALLERI = {
   elcykeljacka: { qc: 'bort', omskriven: true, bilder: [   // leverantörens video har engelska textöverlägg i varje sekund — AI-video i stället (ai.mjs)
     { fil: '10', alt: 'Batteriskyddet lindat runt elcykelns rambatteri, orange insida syns i kanten' },
     { fil: '12', alt: 'Batteriskyddet på rambatteriet och det hopvikta skyddet med kardborrebandet' },
+    // Axel 2026-09-24: "passar det mitt batteri?" — måttguide ritad med sharp (elcykel-matt.mjs), måtten från leverantörens storleksbild (skörd 09)
+    { fil: 'matt', filNo: 'matt-no', alt: 'Storleksguide: 54 × 45,7 cm utfällt, passar ramomkrets 30–40 cm' },
   ] },
-  magnetblock: { qc: 'forst', bilder: [
+  // Axel 2026-09-24 (andra granskningen): QC-högen "ser ut som tagen på ett lager" — AI-hero från QC-fotot först (ai.mjs), QC sist.
+  magnetblock: { qc: 'sist', bilder: [
     { fil: '01', alt: 'Bygge med magnetiska byggblock', crop: [0, 0, 1, 0.72] },
     { fil: '02', alt: 'Hus och vattenfall byggt av blocken', crop: [0, 0, 1, 0.72] },
     { fil: '08', alt: 'Borg byggd av blocken', crop: [0, 0, 1, 0.72] },
     { fil: '09', alt: 'Torn och trädgård av blocken', crop: [0, 0, 1, 0.72] },
   ] },
+  // Utan skörd men med AI-material (ai.mjs): posten måste finnas, annars hoppar galleri-bygg över produkten.
+  // (2026-09-24: driftbilens GIF och bordsfotbollens spelbild + GIF låg färdiga i scratch men laddades aldrig upp.)
+  rcoffroad: { qc: 'forst', bilder: [] },
+  bordsfotboll: { qc: 'forst', bilder: [] },
   // ── nya (VÄNTA → bygg) ────────────────────────────────────────────────────
   bathuv: { bilder: [
     { fil: '08', alt: 'Båthuven över en båt på trailer vid stranden', crop: [0, 0.12, 1, 0.88] },

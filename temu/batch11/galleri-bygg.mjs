@@ -32,7 +32,7 @@ if ((land === 'se' && shop.currencyCode !== 'SEK') || (land === 'no' && shop.cur
 console.log(`${shop.name} — ${skarp ? 'SKARP KÖRNING' : 'torrkörning'}\n`);
 const kanaler = skarp ? await b.kanaler() : [];
 const slug = (t) => t.toLowerCase().replace(/[åä]/g, 'a').replace(/ö|ø/g, 'o').replace(/æ/g, 'ae').replace(/é/g, 'e').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-const utfil = (id, x) => path.join(UT, id, `${x.ny || x.fil}${x.kie ? '-sv' : ''}.jpg`);
+const utfil = (id, x) => path.join(UT, id, `${(land === 'no' && x.filNo) || x.ny || x.fil}${x.kie ? '-sv' : ''}.jpg`);
 
 async function väntaMedia(pid, ids) {
   for (let i = 0; ; i++) {
@@ -66,7 +66,8 @@ for (const [id, g] of Object.entries(GALLERI)) {
   const aiB = (AI[id]?.bilder || []).map((x) => ({ fil: path.join(AIUT, id, `${x.namn}.jpg`), alt: altFor(x.alt), altSv: x.alt, hero: x.plats === 'hero' })).filter((x) => existsSync(x.fil) || console.log(`  ! ${id}: AI-bild ${path.basename(x.fil)} saknas — hoppas`));
   const nya = [...aiB.filter((x) => x.hero), ...g.bilder.map((x) => ({ fil: utfil(id, x), alt: altFor(x.alt), altSv: x.alt })).filter((x) => existsSync(x.fil) || console.log(`  ! ${id}: saknar ${path.basename(x.fil)} (KIE ej klar?) — hoppas`)), ...aiB.filter((x) => !x.hero)];
   const gifAlt = altFor(g.gif?.alt) || (AI[id]?.video ? (land === 'no' ? 'Produktet i bevegelse (AI-illustrasjon)' : 'Produkten i rörelse (AI-illustration)') : null);
-  const gif = gifAlt && existsSync(path.join(UT, id, 'video.gif')) ? { fil: path.join(UT, id, 'video.gif'), alt: gifAlt, altSv: g.gif?.alt || gifAlt, gif: true } : null;
+  const gif = g.gif !== false && gifAlt && existsSync(path.join(UT, id, 'video.gif')) ? { fil: path.join(UT, id, 'video.gif'), alt: gifAlt, altSv: g.gif?.alt || gifAlt, gif: true } : null;
+  const gifAltar = ['Produkten i rörelse (AI-illustration)', 'Produktet i bevegelse (AI-illustrasjon)', g.gif?.alt, altFor(g.gif?.alt)].filter(Boolean);
   if (!nya.length && !gif) { console.log(`- ${id}: inga nya bilder`); continue; }
 
   const finns = (await b.fraga(`query($q:String!){products(first:2,query:$q){nodes{id title handle status media(first:50){nodes{id alt ... on MediaImage{image{url}}}}}}}`, { q: `sku:${f.sku}` })).products.nodes[0];
@@ -76,7 +77,8 @@ for (const [id, g] of Object.entries(GALLERI)) {
   const byt = land === 'no' ? [...nya, ...(gif ? [gif] : [])].filter((x) => x.altSv !== x.alt && !gamla.some((m) => m.alt === x.alt)).map((x) => ({ m: gamla.find((m) => m.alt === x.altSv), alt: x.alt })).filter((r) => r.m) : [];
   if (byt.length) { if (skarp) await b.mutera(`mutation($productId:ID!,$media:[UpdateMediaInput!]!){productUpdateMedia(productId:$productId,media:$media){media{id} mediaUserErrors{field message}}}`, { productId: finns.id, media: byt.map((r) => ({ id: r.m.id, alt: r.alt })) }, 'productUpdateMedia'); for (const r of byt) r.m.alt = r.alt; }   // fileUpdate kräver write_files, som token saknar
   // qc:'bort' → gamla medier som inte hör till det nya galleriet tas bort (fel QC-foto). ersatt → bilder med samma alt laddas om.
-  const bort = gamla.filter((m) => (g.qc === 'bort' && !nya.some((x) => x.alt === m.alt) && m.alt !== gif?.alt) || (g.ersatt === true && (nya.some((x) => x.alt === m.alt) || m.alt === gif?.alt)) || (Array.isArray(g.ersatt) && g.ersatt.some((e) => (m.alt || '').includes(e))));
+  const bortAlt = [...(g.bort || []), ...(g.bort || []).map((b) => ALT_NO[b] || (Object.entries(ALT_NO).find(([sv]) => sv.includes(b))?.[1] ?? b))];   // svenska delsträngar + deras norska motsvarighet
+  const bort = gamla.filter((m) => (g.gif === false && gifAltar.includes(m.alt)) || bortAlt.some((b) => (m.alt || '').includes(b)) || (g.qc === 'bort' && !nya.some((x) => x.alt === m.alt) && m.alt !== gif?.alt) || (g.ersatt === true && (nya.some((x) => x.alt === m.alt) || m.alt === gif?.alt)) || (Array.isArray(g.ersatt) && g.ersatt.some((e) => (m.alt || '').includes(e))));
   if (bort.length && skarp) { await b.mutera(`mutation($productId:ID!,$mediaIds:[ID!]!){productDeleteMedia(productId:$productId,mediaIds:$mediaIds){deletedMediaIds mediaUserErrors{field message}}}`, { productId: finns.id, mediaIds: bort.map((m) => m.id) }, 'productDeleteMedia'); gamla = gamla.filter((m) => !bort.includes(m)); console.log(`  - ${id}: ${bort.length} gamla medier borttagna`); }
   const attLadda = [...(gif ? [gif] : []), ...nya].filter((x) => !gamla.some((m) => m.alt === x.alt));
   if (!skarp) { console.log(`${finns ? '~' : '+'} ${id}: ${finns ? finns.title : t.titel}\n    ${gamla.length} befintliga (${bort.length} tas bort, ${byt.length} alt→no), ${attLadda.length} nya (${nya.length} bilder varav ${aiB.length} AI${gif ? ' + gif' : ''}), QC ${g.qc || 'sist'}${finns ? '' : ` · SKAPAS ${p.pris}/${p.jamfor} cogs ${p.cogs}`}`); continue; }
