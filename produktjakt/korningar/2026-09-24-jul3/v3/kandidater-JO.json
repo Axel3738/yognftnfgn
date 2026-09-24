@@ -1,0 +1,145 @@
+{
+  "agent": "JO — småbarnets träleksak som rör sig",
+  "datum": "2026-09-24-jul3",
+  "sammanfattning": "0 kandidater av 21 prövade former. Strukturen 'småbarnets (1–5 år) julklapp i trä som rör sig, med Hape/Brio/Janod/Kids Concept som ankare' är de nordiska leksaksmärkenas eget sortiment i Sverige: BRIO, Micki, Kids Concept, Goki, Small Foot, Little Dutch, Jabadabado, Sebra, Viga och Bigjigs fyller VARJE form med 17–20 varianter på PriceRunner i 130–750 kr (hammarbänk 20 st 133–554, dragleksak 20 st 69–359, gunghäst 20 st 695–4 125, aktivitetskub 19 träkuber 365–3 671, busy board 20 st, pärlbana 20 st 90–365, gåvagn 20 st 299–1 395, tornkran 20 st 169–687, tågbana Brio 20+, dockhus 20 st) — och ankaret (Hape 2 193, Pinolino 2 395, Flexa 1 267) sitter ovanför ett golv som redan är sortiment, så H06 öppnar inget. De två hyllor som ÄR tunna i Sverige — träparkeringshuset med hiss (9 i formen, Hape Gearhead/Flexa 1,8× som ankare) och kultornet med klockor av Trihorse-typ (saknas helt) — finns inte som generika på AliExpress: 14 Ali-fraser gav 3D-pussel, tågtillbehör, Montessori-boxar och ramp racers; parkeringshuset bara som märket Mamabrum 108–142 USD (landad 1 565–2 049, över taket) och kultornet bara som en AI-renderad plastleksak (1005010044149022, 20,59 USD, öppnad + hero sedd, K8 = 0). Tre produktsidor öppnades och heron sågs (kultornet, aktivitetskuben ×2) — kuben är äkta trä men en studiopackshot utan barn, i exakt samma look som Little Dutch Ocean 719, och kläms mellan 19 golvvarianter. Golvet lästes FÖRE ali.py på alla former (PriceRunner via curl, 29 sökningar 12:13–12:21Z). Lärdom för LEARNING_STATE: småbarnets träleksak är samma mönster som JM:s RC-arbetsmaskiner och julrunda 1:s Temu-kategorier — det som är en klassiker finns redan hos Lekia/Jollyroom i 20 varianter från nordiska märken, och AliExpress bär inte den klassiska rörliga träformen (Hape/Brio-typ) som generika under 55 USD; 55+-avataren som köper till barnbarn får sökas via mannens bygge eller familjespelet, inte via småbarnshyllan.",
+  "kandidater": [],
+  "strukna": [
+    {
+      "namn": "Aktivitetskuben 5-i-1 i trä (AliExpress 1005007171269535, 33,59 USD — enda formen enligt ordern som fick sökas 'med ankare ≥ 1,6× och < 20 varianter')",
+      "skal": "Produktsidan öppnad 12:20:39Z (titel stämmer: 'Wooden Activity Cube for Toddlers 5in1 Animal Shape Sorter Bead Maze'), hero nedladdad (korningar/2026-09-24-jul3/v3/bilder/1005007171269535.jpg) och sedd: äkta trä, textfri, MEN studiopackshot utan barn/kontext och exakt samma havstema-look som Little Dutch Wooden Activity Cube Ocean 719 kr. Syskonlistning 1005006228235276 (32,39 USD, samma bild) svarade tomt 12:20:36Z = BLOCKED; 1005013046230677 (47,06 USD, med kultorn + xylofon) → landad 680 → 999. Golv läst FÖRE (PriceRunner 'aktivitetskub trä' 12:13:58Z + 'aktivitetskub' + 'activity cube trä barn' 12:20:49Z): 19 träkuber i exakt form — Kruzzel 365, generisk 400, Small Foot 417, HELLOWOOD 435, Viga 449, Liewood 459, Fisher-Price 472, Sebra 479, Little Dutch 486/499/539/719, Northix 619, Classic World Large 699, Bigjigs 720, Hape 2 193, Legler 3 671 (+ Vtech/Smoby i plast) = sortiment på gränsen till 20. Landad 437–535 → pris 799 kläms mellan Little Dutch 486–719 / Classic World 699 / Bigjigs 720 och Hape 2 193 (2,7×): BE-CPA 264–362 räknat, men K8 håller inte när 19 varianter i samma look ligger 300–400 kr under. Rörelsen på 3 s är svag (kulram, kugghjul) — inte 'rullar/klapprar' som curling/hästkapplöpningen Axel sa ja till. Vikt ej mätt (kuber i denna storlek väger ofta 2–3 kg). Leksaksnorm EN71/CE: ej sett i titeln. Struken på sortiment + K8 + svag rörelse.",
+      "kallor": [
+        "https://www.aliexpress.com/item/1005007171269535.html",
+        "https://www.aliexpress.com/item/1005006228235276.html",
+        "https://www.aliexpress.com/w/wholesale-wooden-activity-cube-5-in-1-toddler-bead-maze.html",
+        "https://www.pricerunner.se/search?q=aktivitetskub%20tr%C3%A4",
+        "https://www.pricerunner.se/search?q=activity%20cube%20tr%C3%A4%20barn"
+      ]
+    },
+    {
+      "namn": "Kultornet i trä med klockor / ball drop-torn (Trihorse-typen) — AliExpress 1005010044149022 'Stacking Ball Colorful Track Slide Rolling Ball … Knock Music', 20,59 USD",
+      "skal": "Äkta hylla i Sverige: Trihorse saknas (PriceRunner 'Trihorse kulbana' 12:15:30Z: 1 irrelevant träff), småbarnskulbanor i trä finns dock som sortiment ('kulbana småbarn trä' 12:14:17Z: Kids Concept 159/269, EduFun 180, Jabadabado 239, Kinder & Kids musikträd 459, Goki 469, Small Foot 562, Varis 629, Moulin Roty 637, Pinolino Kuno 2 395). AliExpress saknar träformen: fem fraser ('wooden ball tower toddler bells', 'wooden ball run tower xylophone toddler', 'kugelbahn wooden toddler ball track', 'wooden ball drop toy toddler tower', 'wooden roll ball slide toy toddler large') gav spjälsängsmobiler, 3D-pussel, Montessori-boxar och busy boards. Enda tornträffen öppnad 12:19:11Z (via ?gatewayAdapt=glo2usa, första försöket tomt), hero nedladdad (korningar/2026-09-24-jul3/v3/bilder/1005010044149022.jpg) och sedd: AI-render av ett PLASTTORN med blanka plastbollar och tryckta rymdpaneler — inte trä, ser ut som 199 kr (K8 = 0) och är samma form som BRIO Ball Crusher 251 / Goki Hammer Bench & Ball Track 341 (PriceRunner 'hammarbänk kulbana trä' 12:19:58Z). Struken.",
+      "kallor": [
+        "https://www.aliexpress.com/item/1005010044149022.html",
+        "https://www.aliexpress.com/w/wholesale-wooden-ball-drop-toy-toddler-tower.html",
+        "https://www.pricerunner.se/search?q=kulbana%20sm%C3%A5barn%20tr%C3%A4",
+        "https://www.pricerunner.se/search?q=hammarb%C3%A4nk%20kulbana%20tr%C3%A4"
+      ]
+    },
+    {
+      "namn": "Träparkeringshuset i tre plan med hiss (Hape Park & Go / Gearhead som ankare)",
+      "skal": "Den enda formen i linsen med lucka enligt H06: golv läst FÖRE (PriceRunner 'parkeringshus trä' 12:14:07Z + 'Hape parkeringshus' 12:14:17Z) ger 9 i exakt form — generisk 274 / 334, Hape Park & Go 639, Small Foot Rally 739, Costway 741, Legler Premium Car Park 1 142, Hape Gearhead Stunt Garage 1 231, Flexa 1 267, Beleduc XXL 2 295 — dvs < 20 med synligt ankare 1,8× mot 699. Men AliExpress bär ingen generika: fyra fraser ('wooden parking garage toy elevator 3 level', 'wooden car garage toy lift toddler', 'wooden parking lot toy multi storey cars children', 'children wooden parking garage toy 3 floors') gav bara märket Mamabrum (1005012327024001 108,25 USD, 1005012326348971 141,68 USD → landad 1 565–2 049, över pristaket 999; JI strök samma märke i går som BLOCKED), 1/64-dioramor för samlarbilar (15–66 USD), tågbanetillbehör och en DIY-garageport 10,99 USD. Ingen listning under 55 USD = ingen kandidat. Reserven brandstation i trä med hiss: golv EduFun 429 / Northio 469 (PriceRunner 12:16Z), Ali 'wooden fire station toy elevator children' gav bara DIY-hisskit 4–8 USD och tågtillbehör.",
+      "kallor": [
+        "https://www.pricerunner.se/search?q=parkeringshus%20tr%C3%A4",
+        "https://www.pricerunner.se/search?q=Hape%20parkeringshus",
+        "https://www.aliexpress.com/w/wholesale-children-wooden-parking-garage-toy-3-floors.html",
+        "https://www.aliexpress.com/item/1005012327024001.html",
+        "https://www.aliexpress.com/w/wholesale-wooden-fire-station-toy-elevator-children.html"
+      ]
+    },
+    {
+      "namn": "Tågbanan i trä med batterilok, 72–108 delar (Brio-ankare)",
+      "skal": "Golvet är hela marknaden: PriceRunner 'tågbana trä batteridrivet lok' (12:14:07Z) 20+ — BRIO My First Railway Battery Set 411, Battery Engine 166, Cargo Battery Engine 143, Metro 552, Deluxe 1 899; generika i exakt form under oss: ECOTOYS 74 delar batteri 599, Kruzzel 88 delar batteri 909, Viga 90 delar 995, Micki Medium 515. AliExpress 'wooden train set electric locomotive 100 pieces children': 72 delar 47,95 USD (1005012967874722), 72/108 delar 48,53 USD (1005008884740894) → landad 693–702 → 999 mot ECOTOYS 599 i samma form; 100-delars med kran 116,92 USD över taket. Sortiment 20+ → fälls enligt golvregeln; Axels nej på klosståget i dag är dessutom en tågsignal.",
+      "kallor": [
+        "https://www.pricerunner.se/search?q=t%C3%A5gbana%20tr%C3%A4%20batteridrivet%20lok",
+        "https://www.aliexpress.com/w/wholesale-wooden-train-set-electric-locomotive-100-pieces-children.html"
+      ]
+    },
+    {
+      "namn": "Hammarbänk / kulhammarbänk med kulor som rullar ut i bana",
+      "skal": "Golv läst FÖRE: PriceRunner 'hammarbänk trä' (12:13:5xZ) 20 varianter 133–554 — Woodlets 133, Dantoy 149, Bieco 167, Micki 179–259, Kids Concept 194–229, BRIO Classic Pounding Bench 197, BRIO Ball Crusher 251 (kulhammarbänken själv), Hape Pound & Tap med xylofon 242, Goki 285 / Hammer Bench & Ball Track 341, Small Foot 554. Sortiment 20 utan ankare över 554 → fälls. Inte sökt på AliExpress.",
+      "kallor": [
+        "https://www.pricerunner.se/search?q=hammarb%C3%A4nk%20tr%C3%A4",
+        "https://www.pricerunner.se/search?q=Hape%20Pound%20Tap"
+      ]
+    },
+    {
+      "namn": "Träkran / tornkran med magnet och vev (Hape Crane Lift som ankare)",
+      "skal": "Golv läst FÖRE: PriceRunner 'tornkran trä leksak' + 'lyftkran trä leksak' + 'träkran magnet' (12:14–12:15Z) 20 varianter 169–687 — Jamara Kidiwood 178, Viga 191, Jabadabado Crane with Magnet 199, Bigjigs 248, BRIO Container Crane 317, Cubika lyftkran med magneter 349, Northix 349, Mentari 377, BRIO Light Up Crane 415, Legler 426, Vilac 440, Goki 495, Hape Crane Lift 559, Tidlo Tower Crane 687. Sortiment 20; Hape 559 är bara 1,4× mot 399. Inte sökt på AliExpress.",
+      "kallor": [
+        "https://www.pricerunner.se/search?q=tornkran%20tr%C3%A4%20leksak",
+        "https://www.pricerunner.se/search?q=lyftkran%20tr%C3%A4%20leksak"
+      ]
+    },
+    {
+      "namn": "Bilrampen i flera plan / car ramp racer i trä",
+      "skal": "Golv läst FÖRE: PriceRunner 'bilramp trä leksak' (12:14:07Z) — Kruzzel 149, EduFun Ramp Racer 215, Viga dubbel 299, Rampage 313/664, Little Dutch 381, Top Bright 390, Legler Premium Car Park 1 142 = 8 i exakt form under 400. AliExpress 'montessori wooden car ramp tower toddler 4 cars': 1005010717691834 24,89 USD, 1005012674462559 28,09 USD, 1005007346837832 9,27 USD → ser ut som 199 kr bredvid EduFun 215 (K8). Struken utan produktsida.",
+      "kallor": [
+        "https://www.pricerunner.se/search?q=bilramp%20tr%C3%A4%20leksak",
+        "https://www.aliexpress.com/w/wholesale-montessori-wooden-car-ramp-tower-toddler-4-cars.html"
+      ]
+    },
+    {
+      "namn": "Vevad speldosa-karusell / pariserhjul i trä för barn",
+      "skal": "AliExpress 'wooden hand crank ferris wheel toy toddler': bara speldosor för vuxna — Rosiking 37,37 USD (1005010079967275), LUCKY 48,39, björn-pariserhjul 44,89 → landad 540–700 → 999; SAK-kollision med lins JE:s levererade 'Pariserhjulet med LED och musik'. Svenskt golv PriceRunner 'speldosa karusell barn' (12:14:17Z): Docooler minikarusell LED 344, Trousselier 545–649. Struken.",
+      "kallor": [
+        "https://www.aliexpress.com/w/wholesale-wooden-hand-crank-ferris-wheel-toy-toddler.html",
+        "https://www.pricerunner.se/search?q=speldosa%20karusell%20barn"
+      ]
+    },
+    {
+      "namn": "Dragleksak som klapprar (tvättbjörn, anka, tåg med klossar)",
+      "skal": "Golv läst FÖRE: PriceRunner 'dragleksak trä' (12:13:58Z) 20 varianter 69–359 — Tooky Toy 69/99, Goki 89, Cubika 129/229, Sebra 148/192, Eichhorn 165/198, BRIO Valross 249, Plantoys 229, Little Dutch 179/359, Done by Deer 349. Sortiment 20, K8 lågt. Inte sökt på AliExpress.",
+      "kallor": ["https://www.pricerunner.se/search?q=dragleksak%20tr%C3%A4"]
+    },
+    {
+      "namn": "Gunghäst i trä (hopfällbar)",
+      "skal": "Golv läst FÖRE: PriceRunner 'gunghäst trä' (12:13:58Z) 20 varianter 695–4 125 — Spring Copenhagen 695, Kids Concept 719–1 099, Teddykompaniet 799–1 295, Bloomingville 834–1 008, Small Foot 828, vidaXL 899–1 035, Kay Bojesen 4 125. Sortiment 20 och vikten ligger över 3 kg i formen. Inte sökt på AliExpress.",
+      "kallor": ["https://www.pricerunner.se/search?q=gungh%C3%A4st%20tr%C3%A4"]
+    },
+    {
+      "namn": "Balansbräda i trä för barn (wobble board)",
+      "skal": "Axels nej i dag på träning + lins JI:s balansbräda med kullabyrint (K0323) fick nej. Golv läst ändå: PriceRunner 'balansbräda barn trä' (12:13:58Z) 19 varianter 92–2 183 (Titan Life 217, Endurance 299, Pure2Improve 356, YY Vertical 631, Schildkröt 744, B2X 749, Cwy Waldorf 899, Flexa 1 385). Inte sökt på AliExpress.",
+      "kallor": ["https://www.pricerunner.se/search?q=balansbr%C3%A4da%20barn%20tr%C3%A4"]
+    },
+    {
+      "namn": "Busy board / aktivitetsbräda",
+      "skal": "Golv läst FÖRE: PriceRunner 'busy board' (12:14:07Z) 20 varianter 129–2 112 (Happy Baby 187, Busy Board Montessori 259, Qizfun 293, Tooky Toy 299, Withosent 319, Barbo 319, Liewood 423, Aiyaplay 539, VEVOR 773, Woobiboo 1 831–2 112). Sortiment 20. Inte sökt på AliExpress.",
+      "kallor": ["https://www.pricerunner.se/search?q=busy%20board"]
+    },
+    {
+      "namn": "Pärlbana / bead maze i storformat, kulram",
+      "skal": "Golv läst FÖRE: PriceRunner 'pärllabyrint trä' (12:15:40Z) 20 varianter 90–365 — Kids Concept 90/159/269, Goki 113/207/360, Eichhorn 118–329, Bigjigs 180–299, Hape Spring a Ling 200 / labyrint 365, Small Foot 229/336. Sortiment 20, K8 lågt. Inte sökt på AliExpress.",
+      "kallor": ["https://www.pricerunner.se/search?q=p%C3%A4rllabyrint%20tr%C3%A4"]
+    },
+    {
+      "namn": "Gåvagn / lära-gå-vagn med klossar",
+      "skal": "Golv läst FÖRE: PriceRunner 'gåvagn trä' (12:15:40Z) 20 varianter 299–1 395 — IKEA 299, Krea 379, BRIO 390/397, Micki 439, Pippi 439–449, Jabadabado 519–679, Kids Concept 619–749, Little Dutch 764–949, Small Foot 1 346, MODU 1 395. Sortiment 20. Inte sökt på AliExpress.",
+      "kallor": ["https://www.pricerunner.se/search?q=g%C3%A5vagn%20tr%C3%A4"]
+    },
+    {
+      "namn": "Dockskåp / dockhus i trä",
+      "skal": "Golv läst FÖRE: PriceRunner 'dockhus trä' (12:15:30Z) 20 varianter 249–2 109 (Pricenet 249–469, Cwy 3-vånings 679, B2X 969, Eitech 1 710, ECOTOYS 1 969, MST 2 109). Sortiment 20 + ett 3-våningshus i trä väger > 3 kg. Inte sökt på AliExpress.",
+      "kallor": ["https://www.pricerunner.se/search?q=dockhus%20tr%C3%A4"]
+    },
+    {
+      "namn": "Lekkök i trä",
+      "skal": "Hoppat enligt ordern (för tungt, > 3 kg). Inte sökt.",
+      "kallor": []
+    },
+    {
+      "namn": "Träpussel med knoppar",
+      "skal": "Axel sa nej på pusselbrädan i går (annan SAK, men K8 lågt och ingen rörelse på 3 s). Inte sökt.",
+      "kallor": []
+    },
+    {
+      "namn": "Roterande Montessori-trumma i trä",
+      "skal": "Golv läst FÖRE: PriceRunner 'roterande trumma montessori' (12:16Z) — Small Foot Wooden Montessori Spinning Drum 149, generisk 180, Northio tvättmaskin 309. K8 = 0. Inte sökt på AliExpress.",
+      "kallor": ["https://www.pricerunner.se/search?q=roterande%20trumma%20montessori"]
+    },
+    {
+      "namn": "Klättertriangel Pikler med ramp (dök upp i garagesökningen, 91,68 USD)",
+      "skal": "1005010017576528 → landad 1 326 kr över taket, väger > 3 kg och är träning (Axels nej). Struken utan golvläsning.",
+      "kallor": ["https://www.aliexpress.com/item/1005010017576528.html"]
+    },
+    {
+      "namn": "Kulbanor (trä/magnet/elektriska), magnetplattor, kloss-set, klosståg/coaster, RC, 3D-träpussel, förvaring",
+      "skal": "REDAN-PROVAT.md (233 former) eller Axels nej i dag — inte sökta om.",
+      "kallor": []
+    },
+    {
+      "namn": "Träduellspel för två, familjespel med spänning, träpussel i djurform",
+      "skal": "Syskonlinserna JK/JL/JN:s strukturer — inte rörda.",
+      "kallor": []
+    }
+  ]
+}
