@@ -8,6 +8,7 @@ import { Butik } from '../api.mjs';
 import { FAKTA } from './fakta.mjs';
 import { PRIS } from './priser.mjs';
 import { GALLERI } from './galleri.mjs';
+import { AI } from './ai.mjs';
 import { beskrivning, SPRÅK } from './beskrivning.mjs';
 import { readFileSync, existsSync } from 'node:fs';
 import path from 'node:path';
@@ -15,6 +16,7 @@ import { fileURLToPath } from 'node:url';
 
 const HÄR = path.dirname(fileURLToPath(import.meta.url));
 const UT = '/tmp/claude-0/-home-user-yognftnfgn/4034ad3c-cd7c-513c-944c-3efffa125d52/scratchpad/galleri';
+const AIUT = '/tmp/claude-0/-home-user-yognftnfgn/4034ad3c-cd7c-513c-944c-3efffa125d52/scratchpad/ai';
 const VENDOR = { se: 'Bäverbutiken', no: 'Beverbutikken' };
 const sov = (ms) => new Promise((r) => setTimeout(r, ms));
 const land = process.argv[2], skarp = process.argv.includes('--skarp');
@@ -25,6 +27,7 @@ const b = new Butik(land); const shop = await b.verifiera();
 if ((land === 'se' && shop.currencyCode !== 'SEK') || (land === 'no' && shop.currencyCode !== 'NOK')) throw new Error(`Fel butik: ${shop.name}`);
 console.log(`${shop.name} — ${skarp ? 'SKARP KÖRNING' : 'torrkörning'}\n`);
 const kanaler = skarp ? await b.kanaler() : [];
+const slug = (t) => t.toLowerCase().replace(/[åä]/g, 'a').replace(/ö|ø/g, 'o').replace(/æ/g, 'ae').replace(/é/g, 'e').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const utfil = (id, x) => path.join(UT, id, `${x.ny || x.fil}${x.kie ? '-sv' : ''}.jpg`);
 
 async function väntaMedia(pid, ids) {
@@ -55,15 +58,21 @@ for (const [id, g] of Object.entries(GALLERI)) {
   if (bara.length && !bara.includes(id)) continue;
   const f = FAKTA[id], t = COPY[id]?.[SPRÅK[land]], p = PRIS.find((x) => x.id === id)?.land[land.toUpperCase()];
   if (!t) { console.log(`- ${id}: ingen ${SPRÅK[land]}-copy — hoppar`); continue; }
-  const nya = g.bilder.map((x) => ({ fil: utfil(id, x), alt: x.alt })).filter((x) => existsSync(x.fil) || console.log(`  ! ${id}: saknar ${path.basename(x.fil)} (KIE ej klar?) — hoppas`));
-  const gif = g.gif && existsSync(path.join(UT, id, 'video.gif')) ? { fil: path.join(UT, id, 'video.gif'), alt: g.gif.alt, gif: true } : null;
+  // ordning: AI-hero → skördebilder → övriga AI-bilder. AI-filer ligger i <scratch>/ai/<id>/<namn>.jpg (ai-kor.mjs)
+  const aiB = (AI[id]?.bilder || []).map((x) => ({ fil: path.join(AIUT, id, `${x.namn}.jpg`), alt: x.alt, hero: x.plats === 'hero' })).filter((x) => existsSync(x.fil) || console.log(`  ! ${id}: AI-bild ${path.basename(x.fil)} saknas — hoppas`));
+  const nya = [...aiB.filter((x) => x.hero), ...g.bilder.map((x) => ({ fil: utfil(id, x), alt: x.alt })).filter((x) => existsSync(x.fil) || console.log(`  ! ${id}: saknar ${path.basename(x.fil)} (KIE ej klar?) — hoppas`)), ...aiB.filter((x) => !x.hero)];
+  const gifAlt = g.gif?.alt || (AI[id]?.video ? (land === 'no' ? 'Produktet i bevegelse (AI-illustrasjon)' : 'Produkten i rörelse (AI-illustration)') : null);
+  const gif = gifAlt && existsSync(path.join(UT, id, 'video.gif')) ? { fil: path.join(UT, id, 'video.gif'), alt: gifAlt, gif: true } : null;
   if (!nya.length && !gif) { console.log(`- ${id}: inga nya bilder`); continue; }
 
   const finns = (await b.fraga(`query($q:String!){products(first:2,query:$q){nodes{id title handle status media(first:50){nodes{id alt ... on MediaImage{image{url}}}}}}}`, { q: `sku:${f.sku}` })).products.nodes[0];
   if (!finns && f.status !== 'bygg') { console.log(`- ${id}: finns inte och status ${f.status} — hoppar`); continue; }
-  const gamla = finns ? finns.media.nodes.map((m) => ({ id: m.id, url: m.image?.url, alt: m.alt })) : [];
+  let gamla = finns ? finns.media.nodes.map((m) => ({ id: m.id, url: m.image?.url, alt: m.alt })) : [];
+  // qc:'bort' → gamla medier som inte hör till det nya galleriet tas bort (fel QC-foto). ersatt → bilder med samma alt laddas om.
+  const bort = gamla.filter((m) => (g.qc === 'bort' && !nya.some((x) => x.alt === m.alt) && m.alt !== gif?.alt) || (g.ersatt === true && (nya.some((x) => x.alt === m.alt) || m.alt === gif?.alt)) || (Array.isArray(g.ersatt) && g.ersatt.some((e) => (m.alt || '').includes(e))));
+  if (bort.length && skarp) { await b.mutera(`mutation($productId:ID!,$mediaIds:[ID!]!){productDeleteMedia(productId:$productId,mediaIds:$mediaIds){deletedMediaIds mediaUserErrors{field message}}}`, { productId: finns.id, mediaIds: bort.map((m) => m.id) }, 'productDeleteMedia'); gamla = gamla.filter((m) => !bort.includes(m)); console.log(`  - ${id}: ${bort.length} gamla medier borttagna`); }
   const attLadda = [...(gif ? [gif] : []), ...nya].filter((x) => !gamla.some((m) => m.alt === x.alt));
-  if (!skarp) { console.log(`${finns ? '~' : '+'} ${id}: ${finns ? finns.title : t.titel}\n    ${gamla.length} befintliga, ${attLadda.length} nya (${nya.length} bilder${gif ? ' + gif' : ''}), QC ${g.qc || 'sist'}${finns ? '' : ` · SKAPAS ${p.pris}/${p.jamfor} cogs ${p.cogs}`}`); continue; }
+  if (!skarp) { console.log(`${finns ? '~' : '+'} ${id}: ${finns ? finns.title : t.titel}\n    ${gamla.length} befintliga (${bort.length} tas bort), ${attLadda.length} nya (${nya.length} bilder varav ${aiB.length} AI${gif ? ' + gif' : ''}), QC ${g.qc || 'sist'}${finns ? '' : ` · SKAPAS ${p.pris}/${p.jamfor} cogs ${p.cogs}`}`); continue; }
 
   let pid = finns?.id;
   if (!pid) {
@@ -74,19 +83,22 @@ for (const [id, g] of Object.entries(GALLERI)) {
   // alla media i önskad ordning: [gif?, nya…] + QC, eller QC + [nya…] (gif ligger alltid först bland de nya)
   const alla = (await b.fraga(`query($id:ID!){product(id:$id){media(first:50){nodes{id alt ... on MediaImage{image{url}}}}}}`, { id: pid })).product.media.nodes.map((m) => ({ id: m.id, url: m.image?.url, alt: m.alt }));
   const byAlt = (alt) => alla.find((m) => m.alt === alt);
-  const nyaM = [...(gif ? [byAlt(gif.alt)] : []), ...nya.map((x) => byAlt(x.alt))].filter(Boolean);
-  const qcM = alla.filter((m) => !nyaM.includes(m));
-  const ordning = g.qc === 'forst' ? [...qcM, ...nyaM] : [...nyaM, ...qcM];
+  // galleriordning (Axel 2026-09-24: GIF:en aldrig först — den ligger sist, beskrivningen visar den ändå)
+  const gifM = gif ? byAlt(gif.alt) : null;
+  const nyaM = nya.map((x) => byAlt(x.alt)).filter(Boolean);
+  const qcM = alla.filter((m) => !nyaM.includes(m) && m !== gifM);
+  const ordning = [...(g.qc === 'forst' ? [...qcM, ...nyaM] : [...nyaM, ...qcM]), ...(gifM ? [gifM] : [])];
   const moves = ordning.map((m, i) => ({ id: m.id, newPosition: String(i) })).filter((mv, i) => alla[i]?.id !== mv.id);
   if (moves.length) await b.mutera(`mutation($id:ID!,$moves:[MoveInput!]!){productReorderMedia(id:$id,moves:$moves){userErrors{field message}}}`, { id: pid, moves }, 'productReorderMedia');
   // beskrivningens tre bildplatser: A = gif eller första nya bilden, B = nästa, C = nästa (annars QC)
-  const bilderNya = nya.map((x) => byAlt(x.alt)).filter(Boolean);
-  const gifM = gif ? byAlt(gif.alt) : null;
-  const pool = [...bilderNya, ...qcM];
-  const A = gifM ? { ...gifM, gif: true } : pool.shift(); if (!gifM) {} else {}
-  const B = pool.shift() || null, C = pool.shift() || null;
+  // beskrivningens tre platser: A = GIF (annars första bilden), B och C = nästa två — C faller tillbaka på B/A så
+  // det alltid ligger en bild mellan funktioner och garanti (Axel 2026-09-24)
+  const pool = [...nyaM, ...qcM];
+  const A = gifM ? { ...gifM, gif: true } : pool.shift();
+  const B = pool.shift() || (gifM ? nyaM[0] : null) || null;
+  const C = pool.shift() || (B && B !== nyaM[0] ? nyaM[0] : null) || B || (gifM ? null : A) || null;
   await b.mutera(`mutation u($input:ProductUpdateInput!){productUpdate(product:$input){userErrors{field message}}}`,
-    { input: { id: pid, descriptionHtml: beskrivning(t, { a: A, b: B, c: C }, land), ...(finns ? {} : { status: 'ACTIVE' }) } }, 'productUpdate');
+    { input: { id: pid, descriptionHtml: beskrivning(t, { a: A, b: B, c: C }, land), ...(finns ? {} : { status: 'ACTIVE' }), ...(g.omskriven ? { title: t.titel, handle: slug(t.titel), tags: t.taggar, seo: { title: t.seoTitel, description: t.seoText } } : {}) } }, 'productUpdate');
   if (!finns) {
     const v = await b.fraga(`query($id:ID!){product(id:$id){variants(first:3){nodes{id}}}}`, { id: pid });
     await b.mutera(`mutation($productId:ID!,$variants:[ProductVariantsBulkInput!]!){productVariantsBulkUpdate(productId:$productId,variants:$variants){userErrors{field message}}}`,

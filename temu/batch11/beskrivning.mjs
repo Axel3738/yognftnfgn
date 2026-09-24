@@ -10,6 +10,7 @@ export function beskrivning(t, bilder, land) {
   return `<h3>${esc(t.problemH)}</h3><p>${esc(t.problemP)}</p>` + bildHtml(bilder.a, t) +
     `<h3>${esc(t.losningH)}</h3><p>${esc(t.losningP)}</p>` + bildHtml(bilder.b, t) +
     `<h3>${r.funktioner}</h3><ul>\n` + t.bullets.map((x) => `<li>${x}</li>`).join('\n') + `\n</ul>` + bildHtml(bilder.c, t) +
+    ([bilder.a, bilder.b, bilder.c].some((m) => (m?.alt || '').includes('(AI')) ? `<p><em>${land === 'no' ? 'Livsstilsbildene er AI-genererte illustrasjoner.' : 'Livsstilsbilderna är AI-genererade illustrationer.'}</em></p>` : '') +
     (t.varning ? `<p><em>${esc(t.varning)}</em></p>` : '') +
     `<h3>${r.garanti}</h3><p>${GARANTI4[SPRÅK[land]]}</p>`;
 }

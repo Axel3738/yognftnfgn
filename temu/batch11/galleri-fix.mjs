@@ -27,7 +27,10 @@ async function crop() {
       const src = path.join(SKORD, id, `${b.fil}.jpg`);
       let img = sharp(src); const m = await img.metadata();
       if (b.crop) img = img.extract({ left: Math.round(b.crop[0] * m.width), top: Math.round(b.crop[1] * m.height), width: Math.round(b.crop[2] * m.width), height: Math.round(b.crop[3] * m.height) });
-      await img.resize(2000, 2000, { fit: 'inside', withoutEnlargement: true }).jpeg({ quality: 90 }).toFile(utfil(id, b));
+      if (b.pad) {   // vit kvadrat runt den beskurna bilden (Axel 2026-09-24: "konstig ratio")
+        const inre = await img.resize(1400, 1400, { fit: 'inside', withoutEnlargement: false, kernel: 'lanczos3' }).toBuffer(); const mi = await sharp(inre).metadata();
+        await sharp({ create: { width: 1500, height: 1500, channels: 3, background: '#ffffff' } }).composite([{ input: inre, left: Math.round((1500 - mi.width) / 2), top: Math.round((1500 - mi.height) / 2) }]).jpeg({ quality: 90 }).toFile(utfil(id, b));
+      } else await img.resize(2000, 2000, { fit: 'inside', withoutEnlargement: true }).jpeg({ quality: 90 }).toFile(utfil(id, b));
     }
     if (g.gif) {
       const src = path.join(SCRATCH, 'gif', `${id}.mp4`); const ut = path.join(UT, id, 'video.gif');

@@ -8,6 +8,8 @@
 //  - "waterproof"/"100 %" o.dyl. får inte följa med — bilder med sådana löften beskärs eller hoppas
 //  - QC-fotot (fabriksbilden) ligger kvar: qc:'forst' = det förblir hero, qc:'sist' = flyttas sist
 // crop = [x, y, w, h] som andelar. fil = nummer i bildskord-mappen. alt = svenska (används i SE och NO).
+// pad = lägg den beskurna bilden på vit kvadrat (1:1). qc:'bort' = ta bort de gamla QC-medierna. ersatt = ladda om
+// bilderna även om alt-texten redan finns. AI-material (bilder + GIF) kommer från ai.mjs och läggs på av galleri-bygg.
 export const GALLERI = {
   // ── redan live ────────────────────────────────────────────────────────────
   varmesulor: { qc: 'sist', bilder: [
@@ -51,7 +53,7 @@ export const GALLERI = {
     { fil: '07', alt: 'Huven framifrån och händer som drar åt dragskon' },
     { fil: '05', alt: 'Närbild på 210D-väven och dragskons söm' },
   ] },
-  poolpumphuv: { qc: 'forst', bilder: [
+  poolpumphuv: { qc: 'sist', bilder: [   // Axel 2026-09-24: bilden med huven i drift ska vara först, inte QC-rendern
     { fil: '07', alt: 'Poolvärmepumpens vinterhuv över pumpen, rören går ut genom öppningarna', crop: [0, 0.1, 0.9, 0.9] },
     { fil: '05', alt: 'Huven med snö på toppen' },
   ] },
@@ -63,13 +65,14 @@ export const GALLERI = {
     { fil: '10', alt: 'Regnkedjan vid en blomsteraffär' },
     { fil: '12', alt: 'Regnkedjan vid ett uterum' },
   ] },
-  rullknivslip: { qc: 'sist', bilder: [
-    { fil: '04', alt: 'Rullknivslipen i trä med vinkelblocket och en kniv', crop: [0, 0.22, 1, 0.6] },
-    { fil: '07', alt: 'Kniven hålls mot vinkelblocket medan rullen dras', crop: [0, 0.2, 1, 0.45] },
-    { fil: '09', alt: 'Kniven slipas vid skärbrädan', crop: [0.22, 0.2, 0.78, 0.8] },
-    { fil: '03', alt: 'Slipskivan lossas från rullen', crop: [0, 0.28, 0.68, 0.72] },
+  // Axel 2026-09-24: "konstig ratio, låg kvalitet" — beskärningarna läggs på vit kvadrat (pad) och laddas om (ersatt)
+  rullknivslip: { qc: 'sist', ersatt: true, bilder: [
+    { fil: '04', alt: 'Rullknivslipen i trä med vinkelblocket och en kniv', crop: [0, 0.22, 1, 0.6], pad: true },
+    { fil: '07', alt: 'Kniven hålls mot vinkelblocket medan rullen dras', crop: [0, 0.2, 1, 0.45], pad: true },
+    { fil: '09', alt: 'Kniven slipas vid skärbrädan', crop: [0.22, 0.2, 0.78, 0.8], pad: true },
+    { fil: '03', alt: 'Slipskivan lossas från rullen', crop: [0, 0.28, 0.68, 0.72], pad: true },
   ] },
-  highlandcow: { qc: 'sist', gif: { fil: '09.mp4', alt: 'Kalendrarna på lagret, video' }, bilder: [
+  highlandcow: { qc: 'sist', ersatt: ['video'], gif: { fil: '09.mp4', alt: 'Kalendrarna på lagret, video' }, bilder: [   // GIF:en gjord om till 1:1 och flyttad sist (Axel 2026-09-24)
     { fil: '15', alt: 'Highland Cow-kalendern i julmiljö' },
     { fil: '10', alt: 'De 24 highland cow-figurerna uppradade' },
     { fil: '12', alt: 'Asken och figurerna' },
@@ -116,7 +119,11 @@ export const GALLERI = {
     { fil: '10', alt: 'Vatten rinner genom lövsilen', crop: [0, 0.32, 1, 0.68] },
     { fil: '13', alt: 'Nätet i närbild' },
   ] },
-  elcykeljacka: { qc: 'forst', bilder: [] },   // skörden visar en SVART neoprenjacka — vår är stickad olivgrön (QC). Används inte.
+  // Axel 2026-09-24: QC-fotot (stickad olivgrön) var FEL produkt — skörden (svart med orange insida) är rätt. QC tas bort.
+  elcykeljacka: { qc: 'bort', omskriven: true, bilder: [   // leverantörens video har engelska textöverlägg i varje sekund — AI-video i stället (ai.mjs)
+    { fil: '10', alt: 'Batteriskyddet lindat runt elcykelns rambatteri, orange insida syns i kanten' },
+    { fil: '12', alt: 'Batteriskyddet på rambatteriet och det hopvikta skyddet med kardborrebandet' },
+  ] },
   magnetblock: { qc: 'forst', bilder: [
     { fil: '01', alt: 'Bygge med magnetiska byggblock', crop: [0, 0, 1, 0.72] },
     { fil: '02', alt: 'Hus och vattenfall byggt av blocken', crop: [0, 0, 1, 0.72] },
@@ -156,7 +163,7 @@ export const GALLERI = {
     { fil: '08', alt: 'Mattan på husvagnens fönster', crop: [0, 0, 1, 0.72] },
     { fil: '05', alt: 'Mattan i en takluckas öppning' },
   ] },
-  laktarponcho: { bilder: [
+  laktarponcho: { gif: { fil: '10.mp4', alt: 'Ponchon tas på, video' }, bilder: [   // leverantörens video, första 5 s (utan de kinesiska undertexterna)
     { fil: '06', alt: 'Ponchon med dragkedja fram, i snö', crop: [0.12, 0.08, 0.88, 0.92] },
     { fil: '15', alt: 'Ponchon över axlarna', crop: [0.45, 0.2, 0.55, 0.8] },
     { fil: '05', alt: 'Ponchon i soffan', crop: [0, 0.22, 1, 0.5] },

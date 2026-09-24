@@ -1,0 +1,58 @@
+{
+ "elcykeljacka": {
+  "sv": {
+   "titel": "Elcykelbatteriets Vinterskydd 2-pack – Svart Med Orange Insida",
+   "problemH": "Batteriet tappar räckvidd så fort kylan sätter in",
+   "problemP": "Litiumbatterier känner av kylan, och elcykeln blir stående ute eller i ett okylt förråd hela vintern med batteriet helt exponerat på ramen. Första morgonturen möts du av ett batteri som redan är kallt innan du ens trampat iväg.",
+   "losningH": "Ett lager runt batteriet, fäst med kardborreband",
+   "losningP": "Skyddet lindas runt batteriet på ramens underrör, svart utsida och orange insida, och stängs med ett brett kardborreband utan verktyg. Två skydd i paketet — ett till varje cykel, eller ett extra att växla med vid tvätt.",
+   "bullets": [
+    "<strong>2 skydd i paketet</strong> – ett till varje cykel, eller ett extra att växla med",
+    "<strong>Lindas runt batteriet på ramens underrör</strong> – där de flesta elcykelbatterier sitter monterade",
+    "<strong>Kardborrebandet håller skyddet på plats</strong> – på och av utan verktyg",
+    "<strong>Ett lager mellan batteriet och kylan</strong> – hjälper battericellerna hålla värmen"
+   ],
+   "seoTitel": "Elcykelbatteriets Vinterskydd 2-pack – Svart/Orange",
+   "seoText": "2 batteriskydd för elcykelns rambatteri. Svart utsida, orange insida, kardborreband håller skyddet på plats utan verktyg.",
+   "taggar": [
+    "elcykelbatteriskydd",
+    "batteriskydd elcykel",
+    "vinterskydd elcykel",
+    "2-pack",
+    "elcykel tillbehör"
+   ],
+   "alt": {
+    "hero": "Svart batteriskydd lindat runt elcykelns rambatteri, orange insida syns i kanten",
+    "detalj": "Skyddet öppet, kardborrebandet och den orange insidan"
+   },
+   "varning": null
+  },
+  "no": {
+   "titel": "El-sykkelbatteriets Vintertrekk 2-pk – Sort Med Oransje Innside",
+   "problemH": "Batteriet mister rekkevidde så snart kulden setter inn",
+   "problemP": "Litiumbatterier merker kulden, og el-sykkelen blir stående ute eller i et ukjølt bod hele vinteren med batteriet helt eksponert på rammen. Første morgentur møtes du av et batteri som allerede er kaldt før du har rukket å tråkke av gårde.",
+   "losningH": "Et lag rundt batteriet, festet med borrelås",
+   "losningP": "Trekket vikles rundt batteriet på rammens underrør, sort utside og oransje innside, og lukkes med et bredt borrelåsbånd uten verktøy. To trekk i pakken — ett til hver sykkel, eller ett ekstra å bytte til ved vask.",
+   "bullets": [
+    "<strong>2 trekk i pakken</strong> – ett til hver sykkel, eller ett ekstra å bytte til",
+    "<strong>Vikles rundt batteriet på rammens underrør</strong> – der de fleste el-sykkelbatterier sitter montert",
+    "<strong>Borrelåsen holder trekket på plass</strong> – av og på uten verktøy",
+    "<strong>Et lag mellom batteriet og kulden</strong> – hjelper battericellene å holde på varmen"
+   ],
+   "seoTitel": "El-sykkelbatteriets Vintertrekk 2-pk – Sort/Oransje",
+   "seoText": "2 batteritrekk for el-sykkelens rammebatteri. Sort utside, oransje innside, borrelås holder trekket på plass uten verktøy.",
+   "taggar": [
+    "el-sykkelbatteritrekk",
+    "batteritrekk el-sykkel",
+    "vinterbeskyttelse el-sykkel",
+    "2-pk",
+    "el-sykkel tilbehør"
+   ],
+   "alt": {
+    "hero": "Sort batteritrekk viklet rundt el-sykkelens rammebatteri, oransje innside synes i kanten",
+    "detalj": "Trekket åpent, borrelåsen og den oransje innsiden"
+   },
+   "varning": null
+  }
+ }
+}

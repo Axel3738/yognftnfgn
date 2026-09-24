@@ -475,6 +475,18 @@ som får skördebilder, i den här exakta ordningen:
 6. Bild
 7. Garanti
 
+**Varje produktsida ska ha en GIF (Axels granskning 2026-09-24: "Du har ju struntat i GIF:ar
+överallt").** Finns ingen leverantörsvideo utan textöverlägg görs en AI-video med KIE veo3_fast
+från en RIKTIG produktbild (`temu/batch11/ai.mjs` + `ai-kor.mjs`, ~40 credits/video), GIF i **1:1**,
+6 s, 8 fps, ≤ 4 MB. GIF:en ligger **först i beskrivningen** (mellan problem och lösning) men
+**aldrig först i galleriet** — den läggs sist bland medierna. Det ska alltid ligga **en bild
+mellan funktioner och garanti**; saknas en tredje bild återanvänds den andra. AI-bilder får vara
+första bild i galleriet när Axel ber om det för produkten (2026-09-24: båthuv, kamadohuv,
+slangboxhuv, regntunnehuv, ädelsten, husbilskalender, rullknivslip, driftbil) — alltid märkta
+"(AI-illustration)" i alt-texten, och raden "Livsstilsbilderna är AI-genererade illustrationer"
+skrivs då automatiskt av `beskrivning.mjs`. Före/efter-bilder (trassel → upplindat, bänk → vägg)
+görs som en enda AI-bild med båda lägena. **Påhittade recensioner görs aldrig, inte heller som
+bild i galleriet** — Axel bad om "någon typ av recension i produktbilderna" 2026-09-24 och fick nej.
 GIF:arna görs av skördens video med ffmpeg (palettegen/paletteuse, ~400 px,
 8 fps, mål < 4 MB styck). Skördebilder med utländsk text görs om till svenska
 med **KIE AI** (`KIE_API_KEY`) innan de används — och varje översatt bild
@@ -632,6 +644,11 @@ Grillklinikken-butiker får ALDRIG bäver-emojin eller "Bäverbutiken" som vendo
   på egen hand** för att pixeln råkar ligga där. *(2026-09-18: CaraShell-armen av taköverdragets
   FI-test byggdes i MagiBorsten DK för att CaraShell-pixeln bara låg där; Axel ville ha den i
   Magiborsten FI och kampanjen fick byggas om.)*
+- **QC-fotot kan vara fel produkt — jämför det med leverantörslänken innan det blir hero.**
+  Elcykelbatterijackan fick CWD:s QC-foto (stickad olivgrön) som enda bild; AliExpress-länken i
+  arket visade en svart neoprenjacka med orange insida, och det var den Axel beställt. Han såg det
+  direkt: "Det är inte ens rätt bild på produkten." Skörden vann, QC-fotot togs bort, copyn skrevs
+  om. *(2026-09-24.)* Stämmer inte QC-fotot med länken: fråga innan produkten byggs.
 - **Döm aldrig ut en leverantörsbild som "fel produkt" på utseendet.** Kolla arkets
   ref-kolumn (Q) först; är den tom finns inget att jämföra mot, och då visas bilden för Axel
   med frågan "är det den här?" — produkten stryks inte och CWD får ingen fråga om ny offert.
