@@ -132,7 +132,12 @@
         "sek": 0,
         "kalla": "Axels prissheet (Google Sheet 10VrOx…, fliken ALLA PRODUKTER, rad 444: \"outdoor smart censor lamp (solcellslampan, batch 8)\"), 1 st till Sverige: produkt + frakt 5,30 + 11,82 = 17.12 USD, plus 2,9 EUR EU-avgift per order (sheetets rubrik \"total cost without 2,9 eur tax\"). Priset 589 kr läst ur baverbutiken.se/products.json 2026-09-22. Axels beslut 2026-09-22: marginalerna räknas ur sheetet.",
         "datum": "2026-09-22"
-      }
+      },
+      "notion_hub_id": "3e5270ab-908c-81ed-8316-f0f4327d75db",
+      "notion_hub_datakalla": "collection://397270ab-908c-8253-ae5b-87a01a38c0c4",
+      "notion_hub_namn": "Solar motion sensor light creative hub",
+      "produkt_mapp": "solcellslampan-med-rorelsesensor-210-led",
+      "hub_not": "Hub skapad 2026-09-24 av /rond-auto som dubblett av MALL Creative hub MALL (3cc270ab-908c-8005-a50e-db6b1b179794) när Solcellslampa_PD_3 blev BREAKTHROUGH; omdöpt via notion-update-data-source. Åtkomsten ärvs från mallen — går inte att läsa via API; ser redigerarna inte hubben: fråga Axel."
     },
     {
       "campaign_id": "120250254068910291",
