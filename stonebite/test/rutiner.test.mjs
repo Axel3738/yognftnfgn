@@ -31,6 +31,18 @@ test('ok, sen och saknas efter ålder på senaste spåret', () => {
   assert.match(inget.ord, /inget spår/);
 });
 
+test('en rutin som bara committar vid arbete blir omätbar på tystnad, aldrig sen', () => {
+  const spegling = { ...dagrutin, id: 'sg', namn: 'Speglingen', spar: { typ: 'git', monster: '^Spegling', bara_vid_arbete: true } };
+  const spar = (timSedan) => [{ tid: new Date(NU.getTime() - timSedan * 3_600_000).toISOString(), rubrik: 'Spegling takskyddet: 3 speglade' }];
+  assert.equal(bedomRutin(spegling, spar(10), { nu: NU }).status, 'ok');
+  const tyst = bedomRutin(spegling, spar(45), { nu: NU });
+  assert.equal(tyst.status, 'omatbar');
+  assert.match(tyst.ord, /committar bara när den haft något att göra/);
+  assert.equal(bedomRutin(spegling, spar(200), { nu: NU }).status, 'omatbar');
+  // Utan flaggan är samma spår "sen" — flaggan är hela skillnaden.
+  assert.equal(bedomRutin({ ...spegling, spar: { typ: 'git', monster: '^Spegling' } }, spar(45), { nu: NU }).status, 'sen');
+});
+
 test('mönstret matchar bara rätt rubriker och räknar antalet', () => {
   const spar = [
     { tid: '2026-09-22T07:50:00Z', rubrik: 'Nattvakten DryTrek 2026-09-22, körning nr 11' },

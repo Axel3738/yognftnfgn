@@ -240,6 +240,12 @@ export function bedomRutin(rutin, spar, { nu = new Date(), dagar = 14, sokvagTid
     return { ...bas, status: 'saknas', antal: 0, ord: `inget spår på ${dagar} dagar` };
   }
   const status = alder <= iv * 1.5 ? 'ok' : alder <= iv * 3 ? 'sen' : 'saknas';
+  // En rutin som bara committar när den haft något att göra (speglingen: tom
+  // kö ⇒ ingen commit) kan inte dömas "sen" på ett gammalt spår — tystnaden
+  // kan lika gärna vara en tom kö. Då är den omätbar, med orsak, aldrig sen.
+  if (status !== 'ok' && rutin.spar.bara_vid_arbete) {
+    return { ...bas, status: 'omatbar', senast, antal, ord: `senaste spår ${statusord('ok', alder, iv).replace(/^körde /, '')} — committar bara när den haft något att göra, så tystnad går inte att döma` };
+  }
   return { ...bas, status, senast, antal, ord: statusord(status, alder, iv) };
 }
 
