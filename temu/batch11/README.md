@@ -58,12 +58,13 @@ hönsluckan (ingen quote), fågelholken (MOQ 500).
   (förbjudna ord, räkneord, flerpack i titel + första bullet, seo-längder) + huvudsessionens korrläsning
 - `skapa.mjs <se|no> [--skarp] [id …]` — skapar/uppdaterar, rcoffroad = uppdatera SE + klona till NO
 - `rc-farger.mjs <se|no> [--skarp]` — RC 1:16: option Färg/Farge, varianter Svart/Orange, variantbilder, femte bulleten (`copy-rc-farg.json`). Idempotent
-- `slutgranska.mjs` — läser allt live i SE + NO: mall, kategori, moms av, cogs, jämför > pris, media 200, alt, rester, garanti, storefront 200
+- `slutgranska.mjs [se|no] [id …]` — läser allt live i SE + NO: mall, kategori, moms av, cogs, jämför > pris, media 200, alt, rester, garanti, storefront 200 (2,5 s paus per sida — storefronten svarar 429 annars)
+- `lankar.mjs` → **`LANKAR.md`** — länktabellen till alla batchens produktsidor i SE + NO, hämtad skarpt (kör om den när handles ändras)
 - `notion-kort.mjs` — Notion-kort som JSON till notion-create-pages (hoppar över bygg-produkter som inte finns i SE ännu)
 - `galleri.mjs` — GALLERIBESLUT per produkt efter skörden: bild, beskärning, KIE, alt, QC först/sist, GIF
 - `galleri-fix.mjs <crop|kie|ark> [id …]` — förbereder bilderna (sharp-beskärning, KIE-översättning, ffmpeg-GIF) + kontaktark
 - `beskrivning.mjs` — 7-blocksbeskrivningen (problem → GIF/bild → lösning → bild → funktioner → bild → garanti), delad
-- `galleri-bygg.mjs <se|no> [--skarp] [id …]` — laddar upp galleriet med alt-text, ordnar (QC först/sist), bygger om beskrivningen; skapar produkten om den saknas. Idempotent på alt-text som JSON till notion-create-pages
+- `galleri-bygg.mjs <se|no> [--skarp] [id …]` — laddar upp galleriet med alt-text, ordnar (QC först/sist), bygger om beskrivningen; skapar produkten om den saknas. Idempotent på alt-text
 
 ## Rättningar i copyn (huvudsessionens korrläsning)
 "aldrig/alltid" i regnkedjan och bordsfotbollen · "bygglen" → "byggen" · bikupsjackans "tål att sitta

@@ -1,15 +1,16 @@
 // Slutgranskning skarpt: läser varje batch 11–13-produkt i SE och NO och kontrollerar det som ligger live.
-//   node temu/batch11/slutgranska.mjs
+//   node temu/batch11/slutgranska.mjs [se|no] [id …]   — utan argument: båda butikerna, alla bygg-produkter
 import { Butik } from '../api.mjs';
 import { FAKTA } from './fakta.mjs';
 const REST = { se: /<!--|TODO|\{\{|ångerrätt|snabb leverans|vattentät/i, no: /<!--|TODO|\{\{|angrerett|rask levering|hurtig levering|vanntett|Vår garanti<\/h3><p>30 dagars/i };
 const DOM = { se: 'https://baverbutiken.se', no: 'https://beverbutikken.no' };
+const ARG = process.argv.slice(2); const LAND = ['se', 'no'].includes(ARG[0]) ? [ARG.shift()] : ['se', 'no']; const VAL = new Set(ARG);
 let fel = 0, n = 0;
-for (const land of ['se', 'no']) {
+for (const land of LAND) {
   const b = new Butik(land);
   console.log(`\n== ${land.toUpperCase()}`);
   for (const [id, f] of Object.entries(FAKTA)) {
-    if (f.status !== 'bygg') continue;
+    if (f.status !== 'bygg' || (VAL.size && !VAL.has(id))) continue;
     const q = await b.fraga(`query($q:String!){products(first:2,query:$q){nodes{title handle status templateSuffix category{id} seo{title description} descriptionHtml resourcePublicationsCount{count}
       variants(first:3){nodes{sku price compareAtPrice taxable inventoryPolicy inventoryItem{unitCost{amount}}}} media(first:10){nodes{status ... on MediaImage{image{url altText}}}}}}}`, { q: `sku:${f.sku}` });
     const p = q.products.nodes[0]; const anm = [];
