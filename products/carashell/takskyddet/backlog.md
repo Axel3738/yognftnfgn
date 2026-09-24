@@ -38,6 +38,13 @@ Plockas ett item: märk raden `[använd i batch #N]` i stället för att radera 
 | **`SP_2_1` som video** — kontots bästa annons i rörligt format | Bild slår video i snitt (mönster 10), men `CS_1_H1` visar att video kan vinna på den här produkten. `SP_2_1` har aldrig testats som video med CaraShells egna omdömen. | **data:** `SP_2_1` CPA 169 kr, 58 % av vinstbidraget | **väntar på redigerare** — kan inte göras av fabriken |
 | **Vad fastnar en 16,3 %-klickare på?** — samma bild som `PD_4_1` men med en landningsnära rad i stället för konsekvensraden | `PD_4_1` fångade kontots högsta CTR och sålde noll. `PD_6_1` testar ett pris mot ett okänt pris; det här testar i stället att byta ut raden och behålla bilden, så variabeln blir copyn och inte greppet. | **data:** mönster 13 | **väntar** — läggs om `PD_6_1` inte löser det |
 
+## Nytt i backloggen 2026-09-24 (`/kommentarer`, kundens egna ord)
+
+| Koncept | Varför just detta | Källa | Status |
+|---|---|---|---|
+| **Taket MED AC-aggregat** — OB för US: en husbil med AC-aggregat och ventilhatt på taket, och hur överdraget sitter runt dem | Den vanligaste frågan i US-kommentarerna (15+): "You only show flat roof RVs", "What about where the A/C units stick up?". Produktsidan svarar inte — svaret måste in där först, annars är annonsen ett påhittat påstående. | kommentarer på CaraShellRoof US-annonserna, 10 belägg, 23–24 sep, `kalla=voc`, se `kommentarer/leads.md` | **väntar** — kräver Axels svar om hur det funkar med AC-aggregat |
+| **"Sebra till sommaren"** — OB som tar rädslan att remmarna nöter lacken i vind | Dagens starkaste kommentar (6 likes) + "straps break off", "svake strikk". Samma tråd bär motsvaret (rörisolering på banden, "aldrig märken"). Bara det produktsidan säger om remmarna. Hookraden skrivs i `/cs`. | kommentarer på CaraShellRoof_PD_2_1 m.fl., 5 belägg, 24 sep, `kalla=voc`, se `kommentarer/leads.md` | **väntar** |
+
 ⚠️ De fem ursprungliga koncepten är alla plockade (batch #2). De två som briefades
 som video och aldrig blev gjorda — **#4 "En person, en minut"** och **#5
 "Husbilen, inte husvagnen"** — är omgjorda till bild i batch #3 (`PD_7_1` och
