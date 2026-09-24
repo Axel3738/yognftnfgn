@@ -62,6 +62,8 @@ hönsluckan (ingen quote), fågelholken (MOQ 500).
 - `lankar.mjs` → **`LANKAR.md`** — länktabellen till alla batchens produktsidor i SE + NO, hämtad skarpt (kör om den när handles ändras)
 - `notion-kort.mjs` — Notion-kort som JSON till notion-create-pages (hoppar över bygg-produkter som inte finns i SE ännu)
 - `galleri.mjs` — GALLERIBESLUT per produkt efter skörden: bild, beskärning, KIE, alt, QC först/sist, GIF
+- `alt-no.json` — { svensk alt: norsk alt } för NO (148 rader); läses av `galleri-bygg.mjs`, saknade rader loggas
+- `ai.mjs` — AI-registret (video + bilder per produkt: referens-alt, prompt, `typ` = generationType); `ai-kor.mjs bilder|video|ark [id …]` kör KIE (nano-banana-edit / veo3_fast med enableFallback), gör GIF och kontaktark
 - `galleri-fix.mjs <crop|kie|ark> [id …]` — förbereder bilderna (sharp-beskärning, KIE-översättning, ffmpeg-GIF) + kontaktark
 - `beskrivning.mjs` — 7-blocksbeskrivningen (problem → GIF/bild → lösning → bild → funktioner → bild → garanti), delad
 - `galleri-bygg.mjs <se|no> [--skarp] [id …]` — laddar upp galleriet med alt-text, ordnar (QC först/sist), bygger om beskrivningen; skapar produkten om den saknas. Idempotent på alt-text
@@ -158,7 +160,19 @@ mellan funktioner och garanti, och elcykeljackan visade fel produkt. Åtgärdat 
 - **Nej till två saker:** (1) "någon typ av recension i produktbilderna" — påhittade omdömen görs
   aldrig (CLAUDE.md). (2) Driftbilens varianter — arket har bara qty-rader (7,08/14,15/21,23 USD),
   inga färger; Temu-titeln säger "Färgglad" men CWD har inte offererat färger. Fråga till CWD.
-- **Kvar utan GIF efter fyra försök (KIE "Internal Error" varje gång, oavsett referensbild):**
-  krukväxthuv, kamadohuv, värmesulor, elcykeljacka — och cykelhållarskyddet, vars GIF ströks (bara
-  svart tyg i bild). 26 av 31 sidor har GIF. Kör `node temu/batch11/ai-kor.mjs video <id>` igen en annan
-  dag, följt av `galleri-bygg.mjs se/no --skarp <id>`.
+- **GIF-läget efter tolv videokörningar:** 29 av 31 sidor har GIF. Elcykeljackans och kamadohuvens
+  videor gick igenom i de sista vändorna (kamadohuvens med `enableFallback: true` — KIE byter modell när
+  Veo svarar 500). Krukväxthuven gick igenom först med `typ: 'FIRST_AND_LAST_FRAMES_2_VIDEO'` (bildstart
+  i stället för referens) — men startbilden med 3-PACK-badgen gav en GIF där texten tonar bort, så den
+  gjordes om från fotot utan badge. **Utan GIF:** värmesulorna (sju försök: 500 "Internal Error" ×5,
+  400 "unable to generate audio" ×2, oavsett referens, typ och prompt) och cykelhållarskyddet (GIF:en
+  ströks — bara svart tyg i bild). Kör `node temu/batch11/ai-kor.mjs video varmesulor` en annan dag,
+  följt av `galleri-bygg.mjs se/no --skarp varmesulor`.
+- **Norska alt-texter (2026-09-24, upptäckt i slutgranskningen):** alla 139 skördebilder i NO låg med
+  svensk alt-text — `galleri.mjs`/`ai.mjs` bär bara svenska. `alt-no.json` (148 rader, Sonnet-översatt
+  och korrläst mot produkternas norska titlar) slås upp av `galleri-bygg.mjs` för NO; redan uppladdade
+  medier bytte alt via `productUpdateMedia` (`fileUpdate` kräver `write_files`, som token saknar).
+  Verifierat live: 187 medier i NO, 0 svenska, 0 tomma. Nya alt-texter i `galleri.mjs`/`ai.mjs` måste
+  få en rad i `alt-no.json` — saknas den loggas det i slutet av NO-körningen och svenskan används.
+- **`ersatt` laddar om vid VARJE körning** — flaggan togs bort från rullknivslipen och Highland Cow när
+  omladdningen var gjord, annars laddas 7 medier om varje gång.
