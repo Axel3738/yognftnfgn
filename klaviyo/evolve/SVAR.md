@@ -76,3 +76,10 @@ konkurrenternas mejl (umzrs [C3]).
 - **Riktmärket för leverans:** kassamejl 1 under 35 % öppning = leveransproblem. In i `EPOST-STRATEGI.md` som externt riktmärke (Billy), inte som vår data.
 - **Popup, välkomstrabatt, rabatt i kassaflödet och butikskredit** är Axels beslut (pengar). Förslagen står i hans frågelista.
 - **Arbetsdelningen stämmer med planen:** Claude (och Axel) gör strategin, VA:n gör utförandet efter SOP:erna. Zaraks poäng är skälet till att VA:n aldrig äger strategin.
+
+### Axels beslut 2026-09-24: ingen popup (än)
+"Jag tycker typ vi kör utan popup nästan." Alia köps inte. Nya prenumeranter kommer
+alltså bara från kryssrutan i kassan och de två Shopify-formulären i sidfoten och på
+startsidan. Följden för flödena: välkomstflödet (F01) får få mottagare, och de flesta
+som kommer in i listan har redan köpt. Pengarna i e-posten ligger därför i flödena för
+kassa, efter köp och vinback. Beslutet prövas igen när flödena går.
