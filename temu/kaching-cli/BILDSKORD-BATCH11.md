@@ -33,6 +33,7 @@ node ali-bilder.mjs 'https://www.aliexpress.com/item/1005010434731652.html' lakt
 node temu-bilder.mjs 'https://www.temu.com/se/g-601104005758727.html' rcdrift
 node ali-bilder.mjs 'https://www.aliexpress.com/item/1005012964334132.html' vedklyvshuv
 node ali-bilder.mjs 'https://www.aliexpress.com/item/1005013078903398.html' scooterkapell
+node ali-bilder.mjs 'https://www.aliexpress.com/item/1005012440559009.html' cykelhallarskydd
 node ali-bilder.mjs 'https://www.aliexpress.com/item/1005009382324430.html' poolpumphuv
 node ali-bilder.mjs 'https://www.aliexpress.com/item/1005012337155910.html' tradansikte
 node ali-bilder.mjs 'https://www.aliexpress.com/item/1005011850496209.html' regnkedja
@@ -62,7 +63,7 @@ När allt är kört:
 3. Säg till i molnsessionen att skörden är pushad.
 
 Inte med i listan (byggs inte): dammvärmaren (bara US-version), minikedjesågen (ingen quote),
-hönsluckan (ingen quote), fågelholken (MOQ 500), cykelhållarskyddet (offererat som
-ATV-kapell — ny offert begärd), RC-bilen 1:16 (finns redan i butiken).
+hönsluckan (ingen quote), fågelholken (MOQ 500), RC-bilen 1:16 (finns redan i butiken —
+bilderna på alla tre färgerna ligger redan där).
 
 Regler: rör inte `profile-*`-mapparna, och skörda bara produkter vi säljer.

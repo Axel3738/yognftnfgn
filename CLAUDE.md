@@ -623,6 +623,17 @@ Grillklinikken-butiker får ALDRIG bäver-emojin eller "Bäverbutiken" som vendo
   på egen hand** för att pixeln råkar ligga där. *(2026-09-18: CaraShell-armen av taköverdragets
   FI-test byggdes i MagiBorsten DK för att CaraShell-pixeln bara låg där; Axel ville ha den i
   Magiborsten FI och kampanjen fick byggas om.)*
+- **Döm aldrig ut en leverantörsbild som "fel produkt" på utseendet.** Kolla arkets
+  ref-kolumn (Q) först; är den tom finns inget att jämföra mot, och då visas bilden för Axel
+  med frågan "är det den här?" — produkten stryks inte och CWD får ingen fråga om ny offert.
+  *(2026-09-18: jag dömde cykelhållarskyddets QC-bild som ett ATV-kapell och hittade på ett
+  mått ur ett annat produktminne. Axel: "Det är ingen atv cover, det är bike rack cover."
+  Produkten låg fem dagar i "byggs inte" i onödan.)*
+- **Namnlösa rader i offertarket hör till raden ovanför.** Arket har en rad per antal
+  (qty 1, qty 2 …) och bara den första bär namnet; Axels egna anteckningar ("OUT OF STOCK …
+  PRE ORDER") hamnar i qty-2-radens namnruta. Kolla J-kolumnen: dubbla styckpriset = samma
+  produkt. Fråga aldrig "vilken produkt är rad N?" innan den kollen är gjord. *(2026-09-23:
+  rad 62 = Värmemuffen, 19,69 = 2 × 9,85 USD.)*
 - **Meta-fältnamnen är exakta:** `amount_spent`, `actions:omni_purchase`,
   `cost_per_omni_purchase`, `purchase_roas`. INTE `spend`/`purchases`.
   ⚠️ `omni_purchase_values` är buggig — den returnerade intäkt **100× för lågt på

@@ -20,7 +20,7 @@ Hero-bilderna är CWD:s QC-foton (500–1200 px, tillfälliga) — byts när sk�
 | ljusslingevindor (10-pack) | 11 | 409 | 359 | QC | ✅ badge |
 | makitahallare (5-pack) | 11 | 359 | 319 | QC | ✅ badge |
 | rcdrift | 12 | 689 | 679 | QC-kit | ✅ grå enligt bilden |
-| rcoffroad | 12 | 999 | 1 099 | SE:s 5 gamla | ✅ **fanns i SE sedan 2026-07-22** — sidan omskriven (bort med "14 dagars ångerrätt"), cogs 239,59 → 300,00, alt-texter satta, klonad till NO |
+| rcoffroad | 12 | 999 | 1 099 | SE:s 5 gamla | ✅ **fanns i SE sedan 2026-07-22** — sidan omskriven (bort med "14 dagars ångerrätt"), cogs 239,59 → 300,00, alt-texter satta, klonad till NO. **2026-09-24: tre färgvarianter** Blå/Svart/Orange i SE + NO (`rc-farger.mjs`), blå behåller grund-SKU:n, svart/orange `-SVART`/`-ORANGE`, variantbild per färg ur de fem befintliga |
 | vedklyvshuv | 13 | 459 | 399 | QC (beskuren) | ✅ |
 | poolpumphuv | 13 | 539 | 469 | QC-render 101×86×78 | ✅ |
 | regnkedja (12 koppar) | 13 | 719 | 719 | QC | ✅ 12 koppar räknade |
@@ -32,29 +32,46 @@ Hero-bilderna är CWD:s QC-foton (500–1200 px, tillfälliga) — byts när sk�
 | elcykeljacka (2-pack) | 13 | 349 | 299 | QC | ✅ badge |
 | bordsfotboll (6 bollar) | 13 | 439 | 389 | QC fram + bak | ✅ 6 bollar (CWD 09-19) |
 | magnetblock (200 st) | 13 | 799 | 809 | QC ask + kuber | ✅ **bara 200-pack** — 300-pack (29,12 USD) läggs till som variant när en 300-bild finns |
+| adelstenskalender (24 luckor) | 13 | 469 | 399 | QC-ask (beskuren, skärmkanter bort) | ✅ 2026-09-24 — Axel: den röda asken är produkten. Stentyp/verktyg/ålder påstås inte |
+| cykelhallarskydd (2 cyklar) | 13 | 669 | 639 | QC (bild 25) | ✅ 2026-09-24 — jag dömde bilden fel som ATV-kapell; arkets ref-kolumn är tom, inga mått/material påstås |
 
-**VÄNTA (16):** bathuv, kamadohuv (QC-bilden är grå, vi säljer svart), kajakhuv, maskinhylla,
-fonstertermomatta, varmemuff, laktarponcho, scooterkapell (bara hoppackad påse på bilden),
-tradansikte, snosmaltmatta (spänning/EU-kontakt obekräftad), adelstenskalender (asken obekräftad),
+**VÄNTA (15):** bathuv, kamadohuv (QC-bilden är grå, vi säljer svart), kajakhuv, maskinhylla,
+fonstertermomatta, varmemuff (**slut hos CWD, tillbaka tidigast om en månad — pre-order när datum
+finns**; arkets rad 62 är dess qty-2-rad), laktarponcho, scooterkapell (bara hoppackad påse på bilden),
+tradansikte, snosmaltmatta (spänning/EU-kontakt obekräftad),
 krukbarrem, sorkkorgar, husbilskalender ("VOLKSWAGEN CAMPER" på asken — Axel avgör), slangboxhuv,
 regntunnehuv. Byggs med `skapa.mjs` när skörden ligger i `temu/bildskord/<id>/` — sätt
 `status: 'bygg'` + `qc:`/bildväg i `fakta.mjs`, skriv copy (subagent) och kör.
 
-**Byggs inte (6):** dammvärmaren (bara US-version, CWD 09-19), minikedjesågen (ingen quote),
-hönsluckan (ingen quote), fågelholken (MOQ 500), cykelhållarskyddet (CWD offererade ett ATV-kapell —
-ny offert begärd), rad 62 "OUT OF STOCK … PRE ORDER" (namnlös rad, 35,51 USD — vilken produkt?).
+**Byggs inte (4):** dammvärmaren (bara US-version, CWD 09-19), minikedjesågen (ingen quote),
+hönsluckan (ingen quote), fågelholken (MOQ 500).
 
 ## Filerna
 - `fakta.mjs` — låsta fakta, SKU `TEMU-B11/B12/B13-*`, kategori-GID (slagna i taxonomin), status bygg/vanta + orsak, QC-bildvägar
 - `priser.mjs` — SE = nio((landat + 2,9 €) × 3 × 9,4698), NO = nio(landat × 3 × 9,2989), jämför × 1,3
 - `bilder.mjs` — QC-foto → 1000×1000 hero/detalj, beskärning per produkt, antalsbadge (sharp, SE/NO)
-- `copy-1..3.json` → `granska-copy.mjs` → `copy.json` — tre Sonnet-skribenter (sv+no), skript-granskning
+- `copy-1..4.json` → `granska-copy.mjs` → `copy.json` — fyra Sonnet-skribenter (sv+no), skript-granskning
   (förbjudna ord, räkneord, flerpack i titel + första bullet, seo-längder) + huvudsessionens korrläsning
 - `skapa.mjs <se|no> [--skarp] [id …]` — skapar/uppdaterar, rcoffroad = uppdatera SE + klona till NO
+- `rc-farger.mjs <se|no> [--skarp]` — RC 1:16: option Färg/Farge, varianter Svart/Orange, variantbilder, femte bulleten (`copy-rc-farg.json`). Idempotent
 - `slutgranska.mjs` — läser allt live i SE + NO: mall, kategori, moms av, cogs, jämför > pris, media 200, alt, rester, garanti, storefront 200
-- `notion-kort.mjs` — 34 Notion-kort (18 live + 16 VÄNTA) som JSON till notion-create-pages
+- `notion-kort.mjs` — 35 Notion-kort (20 live + 15 VÄNTA) som JSON till notion-create-pages
 
 ## Rättningar i copyn (huvudsessionens korrläsning)
 "aldrig/alltid" i regnkedjan och bordsfotbollen · "bygglen" → "byggen" · bikupsjackans "tål att sitta
 ute genom vintern" (påstående utan underlag) · vedklyvshuvens "formsydd" (inte belagt) ·
 norska "posten" → "jaktposten" (posten = postkontoret) · onödiga varningar borttagna.
+
+## 2026-09-24 — Axels rättelser av min första läsning
+Fyra saker jag hade fel eller obesvarade, rättade samma dag:
+- **Cykelhållarskyddet** var inget ATV-kapell. Bild 25 är produkten; arkets ref-kolumn är tom, så
+  "256 × 110 × 120" var min egen koppling. Byggt SE + NO på QC-bilden, CWD-frågan struken, produkten
+  tillagd i skördeprompten (34 kommandon). Copy: alt-texten skriver "fabriksfoto" — bilden är tagen
+  inomhus, inte på en husbil — och bullet 4 byttes från en upprepning till "Ser diskret ut bak på bilen".
+- **Pre-order-raden (62)** är Värmemuffens qty-2-rad (19,69 = 2 × 9,85 USD). Värmemuffen är slut hos
+  CWD, tillbaka tidigast om en månad; pre-order när datum finns. Notion-kortet omdöpt.
+- **RC 1:16** finns i blå, svart och orange (Axel) — varianter i båda butikerna, se tabellen.
+- **Ädelstenskalendern**: den röda asken är rätt ("4. ja") — byggd SE + NO.
+- **Husbilskalendern** ("VOLKSWAGEN CAMPER" på asken) ligger kvar på VÄNTA tills Axel bestämt:
+  namnet är ett registrerat varumärke, och varken vi eller leverantören har licens — risken är
+  nedtagning/krav från VW och avslag i Meta, inte att kunden ogillar den.

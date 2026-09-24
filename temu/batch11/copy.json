@@ -412,7 +412,8 @@
     "<strong>Tål en tuffare terräng</strong> – kaross i metallegering i stället för plast.",
     "<strong>Räcker en hel lekstund</strong> – två batterier på 3,7 V ger tillsammans upp till 50 minuters körning enligt leverantören.",
     "<strong>Stör inte om flera kör samtidigt</strong> – fjärrkontrollen använder 2,4 GHz.",
-    "<strong>Kommer upp i riktig fart utomhus</strong> – toppfart 20 km/h."
+    "<strong>Kommer upp i riktig fart utomhus</strong> – toppfart 20 km/h.",
+    "<strong>Du väljer den kulör du gillar mest</strong> – finns i blått, svart och orange."
    ],
    "seoTitel": "Radiostyrd Offroadbil 1:16 – Metallkaross, Två Batterier",
    "seoText": "Radiostyrd offroadbil 1:16 med metallkaross och 2,4 GHz-radio. Två 3,7 V-batterier ger upp till 50 min körning enligt leverantören.",
@@ -439,7 +440,8 @@
     "<strong>Tåler tøffere terreng</strong> – karosseri i metallegering i stedet for plast.",
     "<strong>Rekker en hel lekestund</strong> – to batterier på 3,7 V gir sammen opptil 50 minutters kjøring ifølge leverandøren.",
     "<strong>Forstyrrer ikke om flere kjører samtidig</strong> – fjernkontrollen bruker 2,4 GHz.",
-    "<strong>Kommer opp i ordentlig fart utendørs</strong> – toppfart 20 km/t."
+    "<strong>Kommer opp i ordentlig fart utendørs</strong> – toppfart 20 km/t.",
+    "<strong>Du velger fargen du liker best</strong> – finnes i blått, sort og oransje."
    ],
    "seoTitel": "Radiostyrt Offroadbil 1:16 – Metallkaross, To Batterier",
    "seoText": "Radiostyrt offroadbil 1:16 med metallkaross og 2,4 GHz-radio. To 3,7 V-batterier gir opptil 50 min kjøring ifølge leverandøren.",
@@ -1021,6 +1023,118 @@
     "detalj": "Nærbilde av to kuber som fester seg til hverandre med magnetene"
    },
    "varning": null
+  }
+ },
+ "adelstenskalender": {
+  "sv": {
+   "titel": "Ädelstenskalendern 24 Luckor – Gräv Fram En Sten Varje Dag",
+   "problemH": "Chokladluckan är tom på några sekunder",
+   "problemP": "Luckan öppnas, chokladbiten är uppäten på några sekunder, och morgonen är över innan den ens hunnit börja. Kvar blir bara ett tomt omslag på golvet, och nästa lucka känns precis som den förra.",
+   "losningH": "24 luckor, ett grävblock bakom varje",
+   "losningP": "Bakom var och en av de 24 numrerade luckorna ligger ett grävblock med en ädelsten inuti, som barnet gräver fram själv. Asken är röd med \"Merry Christmas\" i guldtext, en tomte och julmotiv tryckta på varje lucka.",
+   "bullets": [
+    "<strong>24 luckor att öppna, en per dag</strong> – en ny lucka från 1 till 24 fram till julafton.",
+    "<strong>Ett grävblock bakom varje lucka</strong> – en ädelsten ligger inuti och grävs fram för hand.",
+    "<strong>Kvar blir en sten, inte bara ett tomt omslag</strong> – varje grävblock ger en ädelsten att spara.",
+    "<strong>Julen syns redan på asken</strong> – röd med \"Merry Christmas\" i guldtext, tomte och julmotiv på varje lucka."
+   ],
+   "seoTitel": "Ädelstenskalendern 24 Luckor – Gräv Fram En Sten",
+   "seoText": "Adventskalender med 24 luckor. Bakom varje lucka ligger ett grävblock med en ädelsten att gräva fram, dag för dag fram till jul.",
+   "taggar": [
+    "adventskalender",
+    "julkalender",
+    "ädelsten barn",
+    "grävblock",
+    "julklapp"
+   ],
+   "alt": {
+    "hero": "Röd ask med 24 numrerade luckor, tryckt med \"Merry Christmas\" i guldtext, en tomte och julmotiv",
+    "detalj": null
+   },
+   "varning": null
+  },
+  "no": {
+   "titel": "Edelsteinkalenderen 24 Luker – Grav Frem En Stein Hver Dag",
+   "problemH": "Sjokoladeluken er tom på noen sekunder",
+   "problemP": "Luken åpnes, sjokoladebiten er spist opp på noen sekunder, og morgenen er over før den i det hele tatt har begynt. Igjen ligger bare en tom innpakning på gulvet, og neste luke føles akkurat som den forrige.",
+   "losningH": "24 luker, en graveblokk bak hver",
+   "losningP": "Bak hver av de 24 nummererte lukene ligger en graveblokk med en edelstein inni, som barnet graver frem selv. Esken er rød med \"Merry Christmas\" i gulltekst, en nisse og julemotiver trykt på hver luke.",
+   "bullets": [
+    "<strong>24 luker å åpne, en per dag</strong> – en ny luke fra 1 til 24 frem til julaften.",
+    "<strong>En graveblokk bak hver luke</strong> – en edelstein ligger inni og graves frem for hånd.",
+    "<strong>Igjen ligger en stein, ikke bare en tom innpakning</strong> – hver graveblokk gir en edelstein å ta vare på.",
+    "<strong>Julen synes allerede på esken</strong> – rød med \"Merry Christmas\" i gulltekst, nisse og julemotiver på hver luke."
+   ],
+   "seoTitel": "Edelsteinkalenderen 24 Luker – Grav Frem En Stein",
+   "seoText": "Adventskalender med 24 luker. Bak hver luke ligger en graveblokk med en edelstein å grave frem, dag for dag frem til jul.",
+   "taggar": [
+    "adventskalender",
+    "julekalender",
+    "edelstein barn",
+    "graveblokk",
+    "julegave"
+   ],
+   "alt": {
+    "hero": "Rød eske med 24 nummererte luker, trykt med \"Merry Christmas\" i gulltekst, en nisse og julemotiver",
+    "detalj": null
+   },
+   "varning": null
+  }
+ },
+ "cykelhallarskydd": {
+  "sv": {
+   "titel": "Husbilens Cykelhållarskydd 2 Cyklar – Smutsen Stannar Utanpå",
+   "problemH": "Cyklarna tar hela resans väder bak på husbilen",
+   "problemP": "Cyklarna sitter kvar på hållaren bak hela resan och hela uppställningen, genom regn och vägdamm, och syns för alla som går förbi på campingplatsen eller rastplatsen.",
+   "losningH": "Ett kapell som läggs över båda cyklarna",
+   "losningP": "Kapellet i svart tyg läggs över de två cyklarna på husbilens eller husvagnens cykelhållare. Det som annars lägger sig direkt på cyklarna – vägsmuts, regn, damm och fågelskit – hamnar på kapellet i stället, och cyklarna syns inte längre för förbipasserande.",
+   "bullets": [
+    "<strong>Båda cyklarna får skydd, inte bara en</strong> – kapellet är gjort för 2 cyklar på hållaren.",
+    "<strong>Vägsmuts och regn hamnar på kapellet</strong> – inte direkt på cyklarna.",
+    "<strong>Cyklarna syns inte för förbipasserande</strong> – kapellet döljer dem bakifrån.",
+    "<strong>Ser diskret ut bak på bilen</strong> – kapellet är svart."
+   ],
+   "seoTitel": "Husbilens Cykelhållarskydd 2 Cyklar – Smuts Utanpå",
+   "seoText": "Kapell som läggs över husbilens cykelhållare, för 2 cyklar. Vägsmuts, regn och damm hamnar på kapellet i stället för på cyklarna.",
+   "taggar": [
+    "cykelhållarskydd husbil",
+    "kapell cykelhållare",
+    "husbilstillbehör",
+    "cykelskydd husvagn",
+    "husbil cyklar"
+   ],
+   "alt": {
+    "hero": "Svart kapell draperat över cyklarna på en cykelhållare (fabriksfoto)",
+    "detalj": null
+   },
+   "varning": "Cyklar och hållare ingår inte, bara kapellet."
+  },
+  "no": {
+   "titel": "Bobilens Sykkeltrekk 2 Sykler – Skitt Havner Utenpå",
+   "problemH": "Syklene tar hele turens vær bak på bobilen",
+   "problemP": "Syklene sitter på stativet bak gjennom hele turen og hele oppholdet, i regn og veistøv, og synes for alle som går forbi på campingplassen eller rasteplassen.",
+   "losningH": "Et trekk som legges over begge syklene",
+   "losningP": "Trekket i sort stoff legges over de to syklene på bobilens eller campingvognens sykkelstativ. Det som ellers legger seg rett på syklene – veisøle, regn, støv og fugleskitt – havner på trekket i stedet, og syklene synes ikke lenger for forbipasserende.",
+   "bullets": [
+    "<strong>Begge syklene får dekke, ikke bare én</strong> – trekket er laget for 2 sykler på stativet.",
+    "<strong>Veisøle og regn havner på trekket</strong> – ikke rett på syklene.",
+    "<strong>Syklene synes ikke for forbipasserende</strong> – trekket skjuler dem bakfra.",
+    "<strong>Ser diskret ut bak på bilen</strong> – trekket er sort."
+   ],
+   "seoTitel": "Bobilens Sykkeltrekk 2 Sykler – Skitt Utenpå",
+   "seoText": "Trekk som legges over bobilens sykkelstativ, for 2 sykler. Veisøle, regn og støv havner på trekket i stedet for på syklene.",
+   "taggar": [
+    "sykkeltrekk bobil",
+    "trekk sykkelstativ",
+    "bobiltilbehør",
+    "sykkeltrekk campingvogn",
+    "bobil sykler"
+   ],
+   "alt": {
+    "hero": "Sort trekk drapert over syklene på et sykkelstativ (fabrikkfoto)",
+    "detalj": null
+   },
+   "varning": "Sykler og stativ følger ikke med, bare trekket."
   }
  }
 }

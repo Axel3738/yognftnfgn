@@ -9,7 +9,8 @@ import path from 'node:path';
 const UT = { se: '/tmp/claude-0/-home-user-yognftnfgn/4034ad3c-cd7c-513c-944c-3efffa125d52/scratchpad/b11/ut', no: '/tmp/claude-0/-home-user-yognftnfgn/4034ad3c-cd7c-513c-944c-3efffa125d52/scratchpad/b11/ut-no' };
 const S = 1000, PAD = 36;
 // beskärning i andelar av källbilden (left, top, width, height) där QC-bilden har skräp
-const CROP = { vedklyvshuv: [0, 0.35, 1, 0.65], highlandcow: [0, 0, 1, 0.44], takachuv: [0, 0.07, 1, 0.9], lovsilar: [0, 0, 1, 0.955] };
+const CROP = { vedklyvshuv: [0, 0.35, 1, 0.65], highlandcow: [0, 0, 1, 0.44], takachuv: [0, 0.07, 1, 0.9], lovsilar: [0, 0, 1, 0.955],
+  adelstenskalender: [0.05, 0.02, 0.87, 0.92], cykelhallarskydd: [0, 0, 1, 0.985] };
 const BADGE = { se: (n) => [`${n} ST`, 'INGÅR'], no: (n) => [`${n} STK`, 'FØLGER MED'] };
 
 async function ruta(fil, crop) {
