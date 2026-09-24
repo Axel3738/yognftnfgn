@@ -48,7 +48,7 @@ export const GALLERI = {
   rcdrift: { qc: 'forst', bilder: [] },   // Temu-skörden misslyckades (inloggning) — körs om
   // Axel 2026-09-24 (andra granskningen): fil 09 (renderad, ser genomskinlig ut som en presenning) tas bort — huven är helt svart.
   // Fil 08 (förrådet) är också en render där maskinen syns igenom huven — bort av samma skäl (2026-09-24).
-  vedklyvshuv: { qc: 'sist', bort: ['under tak i regn', 'i ett förråd'], bilder: [
+  vedklyvshuv: { qc: 'sist', bort: ['under tak i regn', 'i ett förråd'], bilder: [   // GIF:en byttes med ersatt: ['Produkten i rörelse', 'Produktet i bevegelse'] 2026-09-24, flaggan borttagen
     { fil: '06', alt: 'Vedklyvshuven över en vedklyv, dragsko i kanten' },
     { fil: '07', alt: 'Huven framifrån och händer som drar åt dragskon' },
     { fil: '05', alt: 'Närbild på 210D-väven och dragskons söm' },
