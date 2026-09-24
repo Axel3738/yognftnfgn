@@ -84,6 +84,8 @@ save your profile and would love to get in touch later. Good luck!*
 > - Leverans inom [14] dagar efter att produkten kommit fram
 > - Vi får använda videorna i våra annonser, alla kanaler, utan tidsgräns
 > - En omtagning ingår om något inte blir som i briefen
+> - Med filerna skickar du texten du säger i varje video (skriv av den, det räcker)
+> - Du bekräftar att du är minst 18 år
 > - Du fakturerar Stonebite Ecom AB efter att vi godkänt videorna, 30 dagars betalning
 > - Ingen exklusivitet
 >
@@ -92,7 +94,8 @@ save your profile and would love to get in touch later. Good luck!*
 *English: Great! Here's the deal: [3] videos at [1 500] kr, [4 500] kr total ·
 raw footage included · you get [product] free and keep it · delivery within [14]
 days after it arrives · we may use the videos in our ads, all channels, no time
-limit · one redo included · you invoice Stonebite Ecom AB after we approve the
+limit · one redo included · with the files you send the text you say in each
+video · you confirm you're at least 18 · you invoice Stonebite Ecom AB after we approve the
 videos, 30 days payment · no exclusivity. Reply "yes" and we go, I'll send the
 product right away.*
 
@@ -120,6 +123,14 @@ due by [date]. Let me know if you need anything!*
 
 *English: Thanks for the videos! [Video 2] is almost there, but [specific]. Could
 you redo it so [specific]? The rest looks great.*
+
+## Transcript (they forgot it)
+
+> Tack! En sak till: kan du skriva av texten du säger i varje video och skicka
+> den här? Det räcker med ett meddelande per video.
+
+*English: Thanks! One more thing: can you write down the text you say in each
+video and send it here? One message per video is enough.*
 
 ## Approved + invoice request
 

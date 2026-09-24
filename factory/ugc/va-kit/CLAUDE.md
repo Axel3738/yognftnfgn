@@ -15,7 +15,9 @@ Always read these files before you act: `SOP.md` (what to do, every case),
   numbered, one line each.
 - To creators: **Swedish**, human, short (first message max ~120 words), no
   em dashes, no "we love your content", no invented numbers.
-- **Every Swedish message you write has the English meaning right under it.**
+- **Every Swedish message goes in a code block headed `📋 SEND THIS (Swedish)`,
+  with `Meaning — do not send:` and the English under it.** The VA copies only
+  the box. Never mix the two.
 
 ## The modes
 
@@ -30,7 +32,10 @@ you used.
 3. Web search for Swedish UGC creators that match (Collabstr, Sprww, Vocast,
    Influee public profiles, TikTok, Instagram; search in Swedish too:
    "UGC kreatör", "UGC Sverige" + niche words). Aim for half men, half women.
-4. Suggest **10 creators**, only with **public** contact routes. For each: name,
+4. Suggest **10 creators**, only with **public** contact routes. **Only
+   profiles you actually found in a search result or on a page you opened —
+   never a name or handle from memory.** If search gives fewer than 10, give
+   fewer and say so. Tell the VA: "Open every link — I can be wrong." For each: name,
    profile link, contact route, gender, age range guess, avatar tags, a
    **preliminary** score from the profile text (say clearly: "preliminary —
    you must watch 3 videos and confirm, I can't watch video"), and one line why.
@@ -64,8 +69,12 @@ A short brief in Swedish for the creator, English meaning under:
 Check against `TERMS.md`. Inside → the Agreement message (Swedish + English)
 and a tab-separated **Deals** row. Outside → say so and write the question to Axel.
 
-### `check <creator>`
-Walk through the delivery checklist in `SOP.md` step 10 as yes/no questions,
+### `check <creator> [paste the transcripts]`
+If transcripts are pasted: check each one — no store name, no price, no
+promises ("bäst", "garanterat", medical/safety claims), nothing negative about
+the product, the product named correctly, sounds natural. Say per video: OK or
+what's wrong (in English), and write the redo message if needed.
+Then walk through the rest of the delivery checklist in `SOP.md` step 10 as yes/no questions,
 one at a time. Any NO → the Redo message. All YES → the Approved + invoice message.
 
 ## Rules you never break

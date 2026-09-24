@@ -35,8 +35,15 @@ searches for creators and suggests 10 with a score.
 **Check the sheet first** — Claude cannot see it. Anyone already in the sheet:
 skip, or continue the old conversation.
 
+⚠️ **Open every link Claude gives you.** Claude can be wrong and sometimes
+suggests profiles that don't exist or belong to someone else. Link doesn't open,
+no face, no Swedish → delete it. Never message someone you haven't seen yourself.
+
+**Only products Axel gave you.** Never pick a product yourself.
+
 ### 2. Vet
-Open each profile. Do the quick filter yourself (`VETTING.md` §1), watch 3
+Open each profile. **The creator must be 18 or older** — if they look
+younger or say they go to school (grundskola/gymnasiet), skip them. Do the quick filter yourself (`VETTING.md` §1), watch 3
 videos, confirm or correct Claude's score. Claude cannot watch videos — **you
 are the eyes**. Aim for half men, half women.
 
@@ -46,8 +53,8 @@ this product. Tier B = good but for another avatar — save photo, contact route
 avatar tags, do not contact now.
 
 ### 4. First message
-Claude writes it (Swedish + English meaning). Send it in the channel on their
-profile. Sheet: status `contacted`, last contact = today, next action =
+Claude writes it. **Copy ONLY the box marked 📋 SEND THIS** — never the English
+meaning under it. Send it in the channel on their profile. Sheet: status `contacted`, last contact = today, next action =
 "follow-up" in 4 days.
 
 ### 5. Negotiate — see "Negotiation" below. Paste every reply into `/ugc reply`.
@@ -63,6 +70,8 @@ Sheet: status `deal`, new row in **Deals**.
    → shipping to their address → note: `UGC <creator ID>`.
 3. Write only the **order number** in Deals. Never the address.
 4. Tell them delivery takes **5–10 business days**.
+5. **3 business days later:** open the order in Shopify. It must say
+   *Fulfilled* with a tracking number. If not → tell Axel the order number.
 
 ### 8. Brief
 Run `/ugc brief <product link> <creator ID>`. Claude writes a short brief in
@@ -74,11 +83,22 @@ Videos due = product arrived + agreed days. Next action = the due date.
 Two days before: a friendly reminder (Template: Reminder).
 
 ### 10. Check the delivery — all must be YES
+
+**First, save the files.** Creators often send WeTransfer or other links that
+**expire after a few days**. Download everything and put it in the Drive folder
+the same day — before you check anything.
+
+**You can't hear if the Swedish is right — so Claude checks the words.** The
+creator also sends the text they said in each video (it's in the agreement).
+Paste that text into `/ugc check <creator>`. Claude checks it for the store
+name, prices, promises and anything wrong. You check the pictures.
+
 - [ ] Agreed number of videos
 - [ ] **Raw footage included** (all unedited clips)
+- [ ] **The spoken text (transcript) for every video** — checked by Claude, OK
 - [ ] Vertical 9:16, phone-filmed
 - [ ] Product in the first 3 seconds
-- [ ] Swedish spoken, no burned-in subtitles
+- [ ] Someone is talking (not only music), no burned-in subtitles
 - [ ] No copyrighted music, no other brand's logo in focus
 - [ ] The store name is **not** said in the video
 - [ ] Nothing that looks like AI or a fake review
@@ -95,6 +115,9 @@ Send Template: Approved + invoice request. The invoice goes to Stonebite Ecom
 AB (details in `TERMS.md`). When it arrives: forward it to Axel the same day,
 with the Drive link to the delivery in the same email.
 Deals: Invoice received + Sent to Axel.
+
+**Day 25 after you sent the invoice to Axel:** remind him ("Invoice D00X is due
+in 5 days"). Never tell a creator a payment date other than "30 days".
 
 ### 13. Paid
 Axel tells you when it's paid. Deals: Paid = date. Creators: status `paid`,
@@ -157,6 +180,11 @@ Then:
 | Second delivery still bad | Ask Axel. Don't promise payment. | `delivered` |
 | Delivery OK | You approve → files to Drive → invoice request. | `approved` |
 | Creator rude, pushy or strange | Stop answering. Tell Axel. | `do not use` |
+| Creator says they are under 18 | Thank them, stop. We only work with adults. | `do not use` |
+| Creator asks to be deleted from our list | Delete their row the same day. | row deleted |
+| Creator sent no transcript | Ask for it (Template: Transcript). No transcript = not complete. | `delivered` |
+| Order not *Fulfilled* 3 business days after you created it | Tell Axel the order number. Tell the creator it's a bit delayed. | `working` |
+| Creator says the product is bad / not as described | Don't argue. Thank them, ask Axel. Don't let them film something negative for us. | `working` |
 | Anything not in this table | Ask Axel before you answer the creator. | unchanged |
 
 ## Never
@@ -167,3 +195,5 @@ Then:
 - Never write the store name into a script.
 - Never contact the same creator twice from zero — check the sheet.
 - Never put addresses, phone numbers or ID numbers in the sheet or in Claude files.
+- Never send the English meaning to a creator — only the 📋 SEND THIS box.
+- Never work with anyone under 18.

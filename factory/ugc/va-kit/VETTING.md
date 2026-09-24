@@ -33,6 +33,7 @@ A NO on question 1, 2 or 7 → stop. Otherwise you need at least 5 YES.
 
 ## 3. Red flags — out immediately, whatever the score
 
+- Under 18 (looks young, mentions school) — we only work with adults
 - AI face or AI people anywhere
 - Fake testimonials ("verified customer" that doesn't exist)
 - Stolen samples: different voices, other people's watermarks

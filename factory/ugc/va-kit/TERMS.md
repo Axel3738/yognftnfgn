@@ -26,6 +26,8 @@ If a creator asks for something outside it → the matching case in `SOP.md`
 | Delivery time | 14 days after the product arrives (you may accept up to 21) |
 | Payment | **Invoice, AFTER we received AND approved the videos + raw footage.** Never before. Payment term on the invoice: 30 days. |
 | Redo | 1 redo included if a video misses the brief |
+| Transcript | The creator writes down what they said in each video and sends it with the files (the VA can't understand Swedish — Claude checks the text) |
+| Age | Creators must be 18 or older |
 | Exclusivity | None — they may work with other brands |
 
 ## The price rule in one line
