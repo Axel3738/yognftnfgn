@@ -20,10 +20,30 @@ to save), `TEMPLATES.md` (the messages).
 
 1. Open the sheet. Filter **Next action + date** = today or earlier. Do those first.
 2. Answer every creator reply from yesterday (use `/ugc reply`).
-3. Goal per product: **3 different creators with a deal.** If fewer than 3 are
-   in `negotiating` or `deal`: find and contact new ones (`/ugc <product link>`). Max 15 new
-   messages per day — more looks like spam.
+3. Goal per product: **3 different creators with a deal.** Expect about **1 in
+   10** to say yes, so contact about **30 creators per product**. If fewer than
+   3 are in `negotiating` or `deal`: find and contact new ones (`/ugc <product link>`).
+   Daily limit: see "The Instagram account" below.
 4. Update the sheet for everything you did. **If it is not in the sheet, it did not happen.**
+
+**How much you handle:** start with **10–15 active creators** (anyone between
+`contacted` and `paid`). Following up is the hard part, not sending messages.
+If nothing gets dropped for two weeks, tell Axel and take more.
+
+## The Instagram account
+
+You DM from **our own UGC Instagram account** that Axel gives you — never
+your private account and never the store's main account. Axel keeps the
+password and the two-step login, so don't change either.
+
+- **Weeks 1–2: warm it up.** No DMs. Post a few times, follow creators, like
+  and comment normally for 10–15 minutes a day.
+- **Week 3:** max **20 DMs per day**.
+- **After that:** go up slowly, max **50 per day**. (Accounts get blocked
+  around 80–100 a day.)
+- **Instagram shows a warning or blocks you:** stop DMs for 48 hours, tell Axel,
+  and start again at half the number.
+- Email and TikTok messages don't count toward the Instagram limit.
 
 ---
 

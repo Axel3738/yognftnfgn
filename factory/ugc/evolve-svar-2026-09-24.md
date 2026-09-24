@@ -36,3 +36,12 @@ att Evolve själv sa att den inte visste — de frågorna är öppna.
   många DM per dag (16), svars- och avslutsfrekvens (17), när i produkttestet
   UGC ska beställas med 5–6 veckors ledtid (18), hur många kreatörer en VA
   klarar (3).
+
+## Community-svar samma dag (fråga 3, 15–18)
+
+| Fråga | Svar | Inlagt |
+|---|---|---|
+| Konto + volym (16) | Eget varumärkt IG-konto för VA:n, inte huvudkontot [C5]; 2FA så VA:n inte kan byta lösenord [C6]; värm upp kontot [C4]; ~100 DM/dag är taket där IG börjar spärra [C4]. Evolve: 1–2 veckors uppvärmning, start 20–30/dag. | SOP "The Instagram account": 2 veckor uppvärmning, 20/dag, tak 50 |
+| Svarsfrekvens (17) | Beror på produkten; räkna med ~1/4 av den förväntade träffen (≈10 % på vanliga produkter) [C7]. | SOP: ~30 kontakter per produkt |
+| Tidpunkt (18) | Ingen källa. Spencer: säg till kreatören att frakten från Kina tar tid [C1]. Evolves resonemang: beställ UGC på produkter med tidiga tecken (CTR, några köp) under första dagarna, eller ha en bank kreatörer som filmar i förväg. | Axels beslut vilka länkar VA:n får |
+| VA-kapacitet (3) | Inget tak, begränsningen är uppföljningen [C2]; en VA drar en hel kreatörspipeline själv [C3]. Start 10–15 aktiva. | SOP |
