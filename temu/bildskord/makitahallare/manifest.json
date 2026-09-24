@@ -1,0 +1,66 @@
+{
+ "kalla": "https://www.aliexpress.com/item/1005012077981896.html",
+ "skordad": "2026-09-24T03:29:42.264Z",
+ "filer": [
+  {
+   "fil": "06.mp4",
+   "url": "https://gv-vod-cdn.aliexpress-media.com/ae_sg_gmc/vt/gv9d-8718df8c-a1827ac9-9cc42567-7d32/trans/aidc/08tdur-h265-hd.mp4",
+   "typ": "video/mp4",
+   "bytes": 45216
+  },
+  {
+   "fil": "07.avif",
+   "url": "https://ae-pic-a1.aliexpress-media.com/kf/Scbf3345e63cb48dbba60568dcfc3fc58z.jpg",
+   "typ": "image/avif",
+   "bytes": 49673
+  },
+  {
+   "fil": "08.avif",
+   "url": "https://ae-pic-a1.aliexpress-media.com/kf/Sb1c78085d78b4bf4a491f0b9c4430c2aH.jpg",
+   "typ": "image/avif",
+   "bytes": 95195
+  },
+  {
+   "fil": "09.avif",
+   "url": "https://ae-pic-a1.aliexpress-media.com/kf/Sb83c5d52a3844b58889194a4e1f4ba82S.jpg",
+   "typ": "image/avif",
+   "bytes": 82166
+  },
+  {
+   "fil": "10.avif",
+   "url": "https://ae-pic-a1.aliexpress-media.com/kf/Sd7c0095cf99f4a3d80f73844f9a15606E.jpg",
+   "typ": "image/avif",
+   "bytes": 80872
+  },
+  {
+   "fil": "11.avif",
+   "url": "https://ae-pic-a1.aliexpress-media.com/kf/S4e6abfb341fc4419aba3cddb73f6da3at.jpg",
+   "typ": "image/avif",
+   "bytes": 97956
+  },
+  {
+   "fil": "12.avif",
+   "url": "https://ae-pic-a1.aliexpress-media.com/kf/Sd52a9605ae8f474cbf174cb132d90ce6F.jpg",
+   "typ": "image/avif",
+   "bytes": 115622
+  },
+  {
+   "fil": "13.avif",
+   "url": "https://ae-pic-a1.aliexpress-media.com/kf/Sc084a6ac125040df90a0c6ad810c9631f.jpg",
+   "typ": "image/avif",
+   "bytes": 101492
+  },
+  {
+   "fil": "14.avif",
+   "url": "https://ae-pic-a1.aliexpress-media.com/kf/S87eea58eca124e68a518dae288dd9025c.jpg",
+   "typ": "image/avif",
+   "bytes": 99655
+  },
+  {
+   "fil": "15.avif",
+   "url": "https://ae-pic-a1.aliexpress-media.com/kf/S06d48e68c5ec4ddb8d45b68d6fb8b069H.jpg",
+   "typ": "image/avif",
+   "bytes": 15563
+  }
+ ]
+}

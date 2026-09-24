@@ -1,0 +1,42 @@
+{
+ "kalla": "https://www.aliexpress.com/item/1005012384664996.html",
+ "skordad": "2026-09-24T03:40:30.556Z",
+ "filer": [
+  {
+   "fil": "03.avif",
+   "url": "https://ae-pic-a1.aliexpress-media.com/kf/S1efd416cc7c0442a9b57bf81affdc5d6w.jpg",
+   "typ": "image/avif",
+   "bytes": 34304
+  },
+  {
+   "fil": "04.avif",
+   "url": "https://ae-pic-a1.aliexpress-media.com/kf/S2a76853da4244b92946942de5a052311u.jpg",
+   "typ": "image/avif",
+   "bytes": 33550
+  },
+  {
+   "fil": "05.avif",
+   "url": "https://ae-pic-a1.aliexpress-media.com/kf/Sd533c38751a54e3e833fa7a27c56c66ft.jpg",
+   "typ": "image/avif",
+   "bytes": 34210
+  },
+  {
+   "fil": "06.avif",
+   "url": "https://ae-pic-a1.aliexpress-media.com/kf/Sf87ffdea5846481ca4525ffbeb19ab67Q.jpg",
+   "typ": "image/avif",
+   "bytes": 40267
+  },
+  {
+   "fil": "07.avif",
+   "url": "https://ae-pic-a1.aliexpress-media.com/kf/Sa7937300807e45a88aee0255136b0bdar.jpg",
+   "typ": "image/avif",
+   "bytes": 39951
+  },
+  {
+   "fil": "09.mp4",
+   "url": "https://gv-vod-cdn.aliexpress-media.com/ae_sg_gmc/vt/gv9e-66d065a1-a1aae557-9e15e4fe-7e55/trans/aidc/9ums9p-h265-hd.mp4",
+   "typ": "video/mp4",
+   "bytes": 35010
+  }
+ ]
+}

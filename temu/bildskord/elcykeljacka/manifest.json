@@ -1,0 +1,42 @@
+{
+ "kalla": "https://www.aliexpress.com/item/1005010029349245.html",
+ "skordad": "2026-09-24T03:44:24.783Z",
+ "filer": [
+  {
+   "fil": "02.avif",
+   "url": "https://ae-pic-a1.aliexpress-media.com/kf/Ad2e6ad8c68b346148f1fe5f20ef6643f4.png_960x960.png_.avif",
+   "typ": "image/avif",
+   "bytes": 41666
+  },
+  {
+   "fil": "04.mp4",
+   "url": "https://gv-vod-cdn.aliexpress-media.com/ae_sg_gmc/vt/gva0-42883d31-a181e043-9e1512f9-4107/trans/aidc/jltgee-h265-hd.mp4",
+   "typ": "video/mp4",
+   "bytes": 43679
+  },
+  {
+   "fil": "09.avif",
+   "url": "https://ae-pic-a1.aliexpress-media.com/kf/Se1d99a2758c34dd0975fbe978e393df2Y.jpg",
+   "typ": "image/avif",
+   "bytes": 26893
+  },
+  {
+   "fil": "10.avif",
+   "url": "https://ae-pic-a1.aliexpress-media.com/kf/S44bc014325dd4d4fa5a179f34577878cO.jpg",
+   "typ": "image/avif",
+   "bytes": 42297
+  },
+  {
+   "fil": "11.avif",
+   "url": "https://ae-pic-a1.aliexpress-media.com/kf/Se55aacb543cf4c10addc995194cabbeaL.jpg",
+   "typ": "image/avif",
+   "bytes": 167959
+  },
+  {
+   "fil": "12.avif",
+   "url": "https://ae-pic-a1.aliexpress-media.com/kf/S98df6e991d784ae7b40d1a8c6777cd830.jpg",
+   "typ": "image/avif",
+   "bytes": 27678
+  }
+ ]
+}

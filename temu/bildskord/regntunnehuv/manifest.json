@@ -1,0 +1,36 @@
+{
+ "kalla": "https://www.aliexpress.com/item/1005006151587411.html",
+ "skordad": "2026-09-24T03:43:50.609Z",
+ "filer": [
+  {
+   "fil": "03.mp4",
+   "url": "https://gv-vod-cdn.aliexpress-media.com/ae_sg_gmc/vt/gv9d-af650431-a1aebeb2-9c2cc375-4ef6/trans/aidc/rmeeiy-h265-hd.mp4",
+   "typ": "video/mp4",
+   "bytes": 85845
+  },
+  {
+   "fil": "04.avif",
+   "url": "https://ae-pic-a1.aliexpress-media.com/kf/S022691998a6f4d8bafdf257d2c5151c6t.png",
+   "typ": "image/avif",
+   "bytes": 106496
+  },
+  {
+   "fil": "05.avif",
+   "url": "https://ae-pic-a1.aliexpress-media.com/kf/S560b6438da324e90ab1acbc827f164c3G.png",
+   "typ": "image/avif",
+   "bytes": 26428
+  },
+  {
+   "fil": "06.avif",
+   "url": "https://ae-pic-a1.aliexpress-media.com/kf/Sf90264091e6745db8ee788e952fbe0bbC.png",
+   "typ": "image/avif",
+   "bytes": 51312
+  },
+  {
+   "fil": "07.avif",
+   "url": "https://ae-pic-a1.aliexpress-media.com/kf/S5dad614a33664a3abe33790310ebc502f.png",
+   "typ": "image/avif",
+   "bytes": 99464
+  }
+ ]
+}

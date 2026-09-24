@@ -1,0 +1,42 @@
+{
+ "kalla": "https://www.temu.com/se/g-601103521999665.html",
+ "skordad": "2026-09-24T03:46:42.611Z",
+ "filer": [
+  {
+   "fil": "01.avif",
+   "url": "https://img.kwcdn.com/product/fancy/bdf6f6c3-c899-4a47-aeb6-1c4487ad3a79.jpg",
+   "typ": "image/avif",
+   "bytes": 118162
+  },
+  {
+   "fil": "02.avif",
+   "url": "https://img.kwcdn.com/product/fancy/ba61e87c-b4fe-40f1-9782-f01d748fe88a.jpg",
+   "typ": "image/avif",
+   "bytes": 82774
+  },
+  {
+   "fil": "03.avif",
+   "url": "https://img.kwcdn.com/product/fancy/bb66fdc0-427f-44eb-a82e-1d69315bd5f2.jpg",
+   "typ": "image/avif",
+   "bytes": 72639
+  },
+  {
+   "fil": "06.avif",
+   "url": "https://img.kwcdn.com/product/open/23fd722ca0af4b1eb14ccca7a61a39d8-goods.jpeg",
+   "typ": "image/avif",
+   "bytes": 58873
+  },
+  {
+   "fil": "08.avif",
+   "url": "https://img.kwcdn.com/product/fancy/53d53158-8ceb-407c-b3f6-b7f58e2d35a4.jpg",
+   "typ": "image/avif",
+   "bytes": 118731
+  },
+  {
+   "fil": "09.avif",
+   "url": "https://img.kwcdn.com/product/fancy/0acdbcc2-f7f2-4321-a26c-a647adcc0d1f.jpg",
+   "typ": "image/avif",
+   "bytes": 100277
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "kalla": "https://www.aliexpress.com/item/1005013106730364.html",
+ "skordad": "2026-09-24T03:25:49.550Z",
+ "filer": [
+  {
+   "fil": "03.avif",
+   "url": "https://ae-pic-a1.aliexpress-media.com/kf/Sd2b407c714554b47bb1fcd520f6ee72aQ.jpg_480x480q75.jpg_.avif",
+   "typ": "image/avif",
+   "bytes": 24214
+  },
+  {
+   "fil": "04.avif",
+   "url": "https://ae-pic-a1.aliexpress-media.com/kf/S894ab8509ab347449f4b79ca3c69e46a2.jpg",
+   "typ": "image/avif",
+   "bytes": 77563
+  },
+  {
+   "fil": "05.avif",
+   "url": "https://ae-pic-a1.aliexpress-media.com/kf/S927d7122631741e49523a4f60b966249E.jpg",
+   "typ": "image/avif",
+   "bytes": 141315
+  },
+  {
+   "fil": "06.avif",
+   "url": "https://ae-pic-a1.aliexpress-media.com/kf/S764938205aa34f5c8bd82f4180993020m.jpg",
+   "typ": "image/avif",
+   "bytes": 26401
+  },
+  {
+   "fil": "07.avif",
+   "url": "https://ae-pic-a1.aliexpress-media.com/kf/Sf103fceab32a47a4bfe329b36aadf84dT.jpg",
+   "typ": "image/avif",
+   "bytes": 21101
+  }
+ ]
+}
