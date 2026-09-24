@@ -32,6 +32,7 @@
 | 2026-09-24 | Nanne Grönvall | Mail, svar från Malin på Clap Your Hands kl 9.26 | **Vidarebefordrat.** "Vi har vidarebefordrat detta till Nanne, återkopplar till dig så snart vi kan." | Tacka med en rad. Vänta. Shirley och Nanne ligger nu hos samma bolag, ta båda i samma samtal. |
 | 2026-09-24 | Nina Hermansen | Instagram-DM | Tony har inte hört av sig, fristen 23/9 passerad. | DM till Nina i dag och be om Tonys mejl. |
 | 2026-09-25 | Nina Hermansen | Instagram-DM | Nina: "Har han inte! Vad tusan. Han har säkert mycket just nu men ja, kontakta honom nu. Toppen!" Tonys adress: tony@niiinis.se | Mail till Tony från axel.odhner@stonebite.org med Nina som referens: lådor först, prislista, Instagram-insikter, kort samtal. Påminnelse 1/10 om inget svar. |
+| 2026-09-25 | Linda Bengtzing | Mail, svar från Madde Wallqvist kl 17.35 | **JA till lådorna.** "Vilken rolig idé, Linda provar väldigt gärna strumporna." Adress: Linda Bengtzing AB, Knektvägen 3 b, 135 55 Tyresö. "Vi hörs vidare när hon testat dom." | Två sushilådor skickas, tullfritt för mottagaren, ingen faktura i paketet. Tacka Madde, be om Instagram-insikter. Starta tvåveckorsobservationen av Lindas stories i dag. Inspelning måste ske i oktober, hennes december är fullbokad. |
 
 ## 1. Uppdraget och ramarna (Axels svar 2026-09-17)
 
