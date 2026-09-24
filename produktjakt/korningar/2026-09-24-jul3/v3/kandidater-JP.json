@@ -1,0 +1,66 @@
+{
+  "agent": "JP — racerbanan på golvet",
+  "datum": "2026-09-24-jul3",
+  "sammanfattning": "Linsen 'två kontroller, två spelare, en bana på golvet' gav NOLL kandidater som klarar grindarna — levererar 0 i stället för svaga rader (protokollet: 4 bra slår 12 svaga). Strukturen lever dock: golvet för generisk 1:43-bilbana är 7 listningar (Joysway SuperFun 201 349 / Super 251 559 / 256 629 / 254 699, JJ Slot 516 cm 629 / Dino Hunter 699, 'Kid Stor Racingbana med 2 bilar' 479 — PriceRunner 12:17–12:20Z), alltså INTE sortiment, och ankaret är Carrera GO (GT Powerplay 738, Speed Zone 6,3 m 817, Racing Set 795, Race to Victory 982, DTM 1 060–1 190, Max Performance 1 320) + Ninco 1 215 + Scalextric 1:32 999–2 602 — ett rent H06-fall om vi kan ligga på 699–899 med ankare ≥ 1,6×. Det som saknas är LEVERANTÖREN: AliExpress ger i dag (26 fraser, 12:19–12:30Z) bara lösa bilpar 6,72–24,79 USD ('Accessories … Double' = två bilar till Carrera Go, heron bekräftar: bara bilar) eller kompletta set på 57,19 USD (1005005913130007, landad 744–910 → pris 999 → BE-CPA 89–255, mitt 172 < 190) och 92,39 USD (1005008270045279, landad 1 336 — över taket). Fem set-titlade listningar i 19–37-dollarsbandet svarade tomt tre gånger vardera (BLOCKED, inte döda): 1005007548582178 (22,15 '599x'), 1005006330894945 (23,09), 1005004727508598 (19,48), 1005006054053728 (36,49 — sökträffens titel avslöjar 'WRC Cars … Accessories', alltså bilar), 1005008912223700 (17,91). Övriga former i linsen: batteridriven loopbana (Ali 35,59 BLOCKED ×3, golv Gear4play Car Track with Loop 868 / Spin Racing 90), micro-RC-race-set (ingen set-listning — bara enstaka 1:64-driftbilar 11–17 USD med textheron; golv Hot Wheels RC 1:64 279–662, Amewi 170–200; Turbo Racing 829–1 250 vore ankare), elektrisk travbana med bilar/kameler/MC (ingen listning, 3 fraser), dragracing med startljus (ingen listning, 2 fraser), kulracing två spår (ingen listning — bara kulbanor, JB:s struktur), RC-båtrace i badkaret (golvet är hela marknaden: PriceRunner 20+ listningar 222–1 088 kr, Amewi/Jamara/Feilun/Revell), hajbilarna 2-spelare på magnetbana (38,48 USD LIVE_VERIFIED, men AI-render med text och barnleksak — K8). Rekommendation till huvudsessionen: H06-öppningen på generisk 1:43-bilbana är verklig; sök om leverantören en annan dag (Temu-kategorin eller Ali-fraserna 'slot racing set 1:43' när de fem blockerade listningarna svarar) — kravet är ett komplett set (bana ≥ 4 m, två handkontroller, två bilar, loop) på 30–42 USD.",
+  "kandidater": [],
+  "strukna": [
+    {
+      "namn": "NYTT: Bilbanan med två handkontroller och dubbel loop — 1:43, komplett set (Ali 1005005913130007, 57,19 USD)",
+      "orsak": "LIVE_VERIFIED 2026-09-24T12:22:42Z (sida öppnad, titel 'Electric Railway Track Toy Set Double Remote Control Car Racing Track…', hero nedladdad korningar/2026-09-24-jul3/v3/bilder/1005005913130007.jpg och sedd: pappa + barn på golvet med varsin handkontroll, två loopar, i kontext — men inbränd kinesisk logotyp uppe till vänster). Golv läst FÖRE (PriceRunner 12:17–12:20Z): generisk 1:43 7 listningar 349–699, Carrera GO-ankare 738–1 320 → H06-struktur ok vid 699–899. Fälld på ekonomin: landad 57,19 × 9,64 × 1,5 = 827 (744–910) → pris max 999 → BE-CPA 89–255, mitt 172 < 190. Vid 1 199 (ATV-vindrutans väg) blir BE-CPA 289–455 men då finns inget ankare över oss i 1:43 (Carrera DTM 1 190 ≈ 1,0×; Scalextric 1980s GP 2 602 är 1:32 = annan form). Varianter/banlängd ej läsbara (produktsidan ger inget pris). Återuppta om en variant ≤ 42 USD dyker upp.",
+      "listning": {"product_id": "1005005913130007", "url": "https://www.aliexpress.com/item/1005005913130007.html", "pris_usd": 57.19, "verdict": "LIVE_VERIFIED", "verifierad_at": "2026-09-24T12:22:42Z", "hero": "korningar/2026-09-24-jul3/v3/bilder/1005005913130007.jpg"},
+      "marknad": {"golv": "Joysway SuperFun 201 349 / Super 251 559 / Super 256 629 / Super 254 699; JJ Slot Racerbane 516 cm 629 / Dino Hunter 699; Kid Stor Racingbana med 2 bilar 479 (https://www.pricerunner.se/search?q=joysway%20racerbana, 12:20Z)", "ankare": "Carrera GO GT Powerplay 738, Speed Zone 6,3 m 817, Racing Set 795, Race to Victory 982, DTM High Speed Showdown 1 060, DTM Speed Giants 1 190, Max Performance 1 320; Ninco Circuit GT Modena 1 215; Scalextric 1:32 999–2 602 (https://www.pricerunner.se/search?q=carrera%20go, 12:18Z)", "hypotes_id": "H06"}
+    },
+    {
+      "namn": "NYTT: Bilbanan i storformat med två handkontroller (Ali 1005008270045279, 92,39 USD)",
+      "orsak": "LIVE_VERIFIED 12:25:12Z, hero sedd (packshot med kartong, hand på kontrollen, inbränd text 'Electric large-scale race track'). Landad 92,39 × 9,64 × 1,5 = 1 336 kr → över pristaket 999 utan diskussion."
+    },
+    {
+      "namn": "1:43-bilpar som säljs som 'set' (Ali 1005006887356720 16,28 · 1005010680166541 13,71 · 1005012697687611 15,05 · 1005009972476208 24,79 · 1005008251210513 14,57 · 1005007128393412 1:32 26,99 · 1005009993981077 1:64 21,34)",
+      "orsak": "Alla sju öppnade 12:22–12:23Z, heron sedda: enbart bilar (2–12 st) på ett banstycke — 'Accessories … Double' betyder två bilar till Carrera Go/Scalextric, ingen bana och inga kontroller. Inte SAKEN i linsen."
+    },
+    {
+      "namn": "Set-titlade 1:43-listningar i 19–37-dollarsbandet (1005007548582178 22,15 '599x' · 1005006330894945 23,09 · 1005004727508598 19,48 · 1005006054053728 36,49 · 1005008912223700 17,91)",
+      "orsak": "Produktsidorna svarade tomt tre gånger vardera (glo2usa + .com + m.) 12:25–12:30Z — BLOCKED, inte döda. Sökträffens titel på 1005006054053728 säger 'WRC Cars … Accessories' (bilar); de övriga fyra är okända. Det är här ett 30–42-dollarsset måste hittas för att H06-strukturen ska bli en rad."
+    },
+    {
+      "namn": "Batteridriven loopbana där bilarna kör själva (Ali 1005011886065915, 35,59 USD)",
+      "orsak": "Produktsidan tom tre gånger (BLOCKED). Golv läst: Gear4play Car Track with Loop 868, Spin Racing Bilbana med loop 90, Hot Wheels Triple Loop 477 (IP) — PriceRunner 'bilbana loop' 12:18Z. Ingen verifierad listning → ingen rad."
+    },
+    {
+      "namn": "Micro-RC-racing-set — två 1:64-bilar + bana i lådan",
+      "orsak": "Finns inte som set-listning på AliExpress (4 fraser 12:19–12:27Z): bara enstaka 1:64-driftbilar 11,04–17,79 USD och 1005009861447148 (37,59, öppnad 12:23:02Z, hero med inbränd '1:64 MINI TABLETOP DRIFT CAR', en bil). Två lösa bilar är inte en SAK. Golv PriceRunner 12:23Z: Hot Wheels RC 1:64 279–662, Amewi 1:64 170–200; ankare Turbo Racing 1:76 829–1 250 hade räckt."
+    },
+    {
+      "namn": "Elektrisk travbana i storformat med bilar/kameler/motorcyklar (hästkapplöpningens mekanik på annan sak)",
+      "orsak": "Ingen listning på AliExpress — 'electric camel racing game battery toy', 'electric motorcycle racing derby game battery lanes', 'derby racing game electric lanes toy cars finish line' gav bilmodeller, MC-reservdelar och flexibla banor (12:19–12:27Z). PriceRunner 'kamelkapplöpning spel' = Camel Up (brädspel), 'motorcykelkapplöpning' = TV-spel."
+    },
+    {
+      "namn": "Dragracing-bana med startljus för två",
+      "orsak": "Ingen listning på AliExpress (två fraser 12:19Z/12:21Z gav skumpilar, tåg och Hot Wheels-kopior). PriceRunner 'dragracing bana': Racing Ejection Bilbana 249, Kid Stor Racingbana 479 (kastbanor, inte tävling med startljus)."
+    },
+    {
+      "namn": "Kulracing-bana med två spår och startgrind",
+      "orsak": "Ingen race-listning — Ali gav bara kulbanor/3D-pussel (JB:s struktur, redan strukna) på två fraser; PriceRunner 'kulrace bana startgrind' ger PicassoTiles/Kulbana med hiss. Hoppad enligt order (bara RACE-bana med två spår räknas)."
+    },
+    {
+      "namn": "Fjärrstyrda båtar-race i badkar/pool, två båtar + mål",
+      "orsak": "Golvet är hela marknaden: PriceRunner 'rc båt racing' + 'radiostyrd båt 2-pack' 12:19Z = 20+ listningar 222–1 088 kr (Revell Dolphin 222, Maisto 234, Fusion 439, Amewi 558–799, Feilun 595–769, Jamara 662, G4P 599–799) → sortiment, ingen H06-lucka. Ali: bara enstaka minibåtar (1005008892926235 19,67 USD öppnad 12:24:14Z, hero AI-render med text 'Stunt remote control Speedboat'); inget 2-båtar+mål-set."
+    },
+    {
+      "namn": "Hajbilarna 2-spelare på magnetisk ormbana 'Shark Swallow' (Ali 1005012887987134, 38,48 USD)",
+      "orsak": "LIVE_VERIFIED 12:22:45Z, hero sedd: AI-render under vatten med inbränd text 'PICK YOUR HUE, AND LET'S PLAY!' — barnleksak i plast som läser som 199 kr (K8); landad 556 → 899 går inte att bära. Ingen svensk aktör (PriceRunner 'shark swallow' 12:20Z bara gosedjur) men formen är ny för fel skäl."
+    },
+    {
+      "namn": "Elektrisk magnetisk DIY-bana 'Parent-Child' (Ali 1005012177080489, 18,56 USD)",
+      "orsak": "Öppnad 12:24:55Z, hero sedd: småbarnsbana med stoppskyltar och tåg (JO:s struktur) — inte två kontroller, inte tävling. Struken."
+    },
+    {
+      "namn": "Katapult-/ejection-racerbana (Ali 1005007899277812 9,93 USD; PriceRunner Racing Ejection 249, Suntoy Katapultbana 129)",
+      "orsak": "Golv i exakt form under 250 kr och 10-dollarspryl (K8 = 0). Inte sökt vidare."
+    },
+    {
+      "namn": "Magic tracks / lysande flexibel bilbana, kulbanor, RC-bilar (K0), klosståg, väggklättrande RC, 'bilramp-race' i trä (JO)",
+      "orsak": "REDAN-PROVAT / K0 / syskonlins enligt order — inte sökta."
+    }
+  ]
+}
