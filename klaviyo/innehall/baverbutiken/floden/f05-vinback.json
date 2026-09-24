@@ -1,0 +1,85 @@
+{
+  "id": "f05-vinback",
+  "namn": "Vinback",
+  "memo": "Median 13 dagar mellan köp 1 och 2 för de få som köper igen (skevt urval). Den som inte köpt på 75 dagar kommer inte av sig själv. Två mejl med det befintliga erbjudandet.",
+  "trigger": { "typ": "metrik", "metrik": ["Placed Order"] },
+  "filter": ["samtycke", "ej_kopt_sedan_start"],
+  "ateintrade": { "varaktighet": 90, "enhet": "day" },
+  "steg": [
+    { "typ": "vanta", "enhet": "days", "varde": 75 },
+    { "typ": "mejl", "mejl": {
+      "id": "f05-vinback-e1",
+      "namn": "FLOW_order_E1_M_det-har-hant-en-del-sedan-sist_v1",
+      "memo": "75 dagar utan nytt köp, medan median tid till köp2 är 13 dagar för de som köper igen, alltså en lång paus. Återintroducerar butiken bredare, inte bara produkten de köpte.",
+      "taggar": {
+        "typ": "M",
+        "kalla": "egen-data",
+        "kalla_ref": "klaviyo/innehall/baverbutiken/BRIEFER.md:323",
+        "lardom": null,
+        "avatar": "köpare som inte handlat på över två månader",
+        "begar": "påminnas om att butiken finns och vad som är nytt",
+        "awareness": "solution",
+        "urgency": "ingen",
+        "confidence": "medium",
+        "prefix": "Vinback",
+        "kod": "M"
+      },
+      "amnesrader": [
+        { "text": "Det har hänt en del sedan sist", "begar": "nyfikenhet på vad som förändrats" },
+        { "text": "Fyra prylar du inte såg förra gången", "begar": "upptäcka nytt i sortimentet" },
+        { "text": "En gåva väntar när du kommer tillbaka", "begar": "introducera erbjudandet" }
+      ],
+      "forhandstext": "Fyra prylar och en gåva, om du är sugen på att handla igen.",
+      "block": [
+        { "typ": "text", "rubrik": "Det har hänt en del sedan sist", "text": "Det är ett tag sen du handlade hos oss. Här är fyra av det vi säljer mest just nu." },
+        { "typ": "produktrad", "rubrik": "Mest sålt just nu", "handles": ["takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan", "batmotorskydd-420d-heltackande-for-utombordare", "overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning", "ibc-tankoverdrag-1000-l-stoppar-alger-uv"] },
+        { "typ": "erbjudande", "text": "Handla en gång till och snurra hjulet, det kan bli en gratisprodukt." }
+      ],
+      "tretest": [
+        { "rad": "Det har hänt en del sedan sist", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Fyra prylar du inte såg förra gången", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "En gåva väntar när du kommer tillbaka", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Fyra prylar och en gåva, om du är sugen på att handla igen.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Det har hänt en del sedan sist", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Mest sålt just nu", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+      ]
+    } },
+    { "typ": "vanta", "enhet": "days", "varde": 10 },
+    { "typ": "mejl", "mejl": {
+      "id": "f05-vinback-e2",
+      "namn": "FLOW_order_E2_M_hjulet-vantar-fortfarande_v1",
+      "memo": "Sista mejlet i vinback-flödet. Erbjudandet överst, tre produkter till, sen tryggheten.",
+      "taggar": {
+        "typ": "M",
+        "kalla": "egen-data",
+        "kalla_ref": null,
+        "lardom": null,
+        "avatar": "köpare som inte handlat på över två månader",
+        "begar": "en sista påminnelse om erbjudandet innan det glöms bort",
+        "awareness": "solution",
+        "urgency": "ingen",
+        "confidence": "medium",
+        "prefix": "Vinback",
+        "kod": "M"
+      },
+      "amnesrader": [
+        { "text": "Hjulet väntar fortfarande på dig", "begar": "minnas outnyttjat erbjudande" },
+        { "text": "Tre till, om det förra inte lockade", "begar": "alternativ om tidigare mejl inte lockade" },
+        { "text": "Sista mejlet från oss om det här", "begar": "veta att detta är sista i sekvensen" }
+      ],
+      "forhandstext": "Gåvan finns kvar, plus tre prylar till om det förra inte var något för dig.",
+      "block": [
+        { "typ": "erbjudande", "text": "Du har fortfarande en gåva att hämta ut vid nästa köp. Snurra hjulet." },
+        { "typ": "produktrad", "rubrik": "Tre till som säljer bra", "handles": ["termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande", "balteslipmaskin-mini-3-i-1-knivslip-polerare", "fiskespohallare-4-pack-kraftig-forvaring"] },
+        { "typ": "fakta" }
+      ],
+      "tretest": [
+        { "rad": "Hjulet väntar fortfarande på dig", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Tre till, om det förra inte lockade", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Sista mejlet från oss om det här", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Gåvan finns kvar, plus tre prylar till om det förra inte var något för dig.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Tre till som säljer bra", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+      ]
+    } }
+  ]
+}
