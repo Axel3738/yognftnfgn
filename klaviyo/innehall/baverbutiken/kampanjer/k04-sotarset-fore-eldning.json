@@ -1,0 +1,67 @@
+{
+  "id": "k04-sotarset-fore-eldning",
+  "namn": "MAIL_20261008_Sotarset_N_1_uppvarmning_problem_sota-innan-du-eldar_v1",
+  "memo": "Nytt koncept utan produktminne. Säsongsvinkel: eldningssäsongen börjar och det svåråtkomliga röret. Hypotes: säsongen gör problemet aktuellt nog för att sälja utan bevisad vinkel. Det är en GISSNING.",
+  "taggar": {
+    "typ": "N",
+    "kalla": "gissning",
+    "kalla_ref": null,
+    "lardom": null,
+    "avatar": "villaägaren med kamin eller braskamin",
+    "begar": "elda tryggt i vinter utan att ringa någon för varje rör",
+    "awareness": "problem",
+    "urgency": "sasong",
+    "confidence": "low",
+    "prefix": "Sotarset",
+    "kod": "PD"
+  },
+  "amnesrader": [
+    { "text": "Draget blir sämre för varje eldning", "begar": "elda utan att draget blir sämre och sämre" },
+    { "text": "Rensa själv mellan sotarens besök", "begar": "kunna rensa själv i stället för att boka sotare" },
+    { "text": "Når bakom kaminen utan att krypa dit", "begar": "komma åt bakom kaminen utan att krypa dit själv" }
+  ],
+  "forhandstext": "Nio böjliga stänger följer krökarna i röret.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Draget blir sämre för varje eldning",
+      "text": "Hej {{fornamn}},\n\nSotlagret växer tyst i bakgrunden. Kaminen drar sämre och lukten sitter i.",
+      "bild": "produkt:sotarset-med-bojliga-stanger-rensar-rokkanal-och-kaminror",
+      "knapp": { "text": "Se sotarsetet", "lank": "produkt:sotarset-med-bojliga-stanger-rensar-rokkanal-och-kaminror" }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Nio böjliga stänger på 41 cm skruvas ihop till 3,69 meters räckvidd. De följer krökarna i röret i stället för att ta stopp i första kröken, och når bakom kaminen eller torktumlaren."
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "Tre saker settet gör",
+      "punkter": [
+        "Rensar mellan sotarens besök, utan att boka någon.",
+        "Böjer med i kröken där en stel stång fastnar.",
+        "Borstar loss sotet med nylonstrån i stället för att skrapa."
+      ]
+    },
+    {
+      "typ": "produkt",
+      "handle": "sotarset-med-bojliga-stanger-rensar-rokkanal-och-kaminror",
+      "text": "Byggs i den längd du behöver, en stång i taget.",
+      "knapp": "Se sotarsetet"
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "Draget blir sämre för varje eldning", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Rensa själv mellan sotarens besök", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Når bakom kaminen utan att krypa dit", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Nio böjliga stänger följer krökarna i röret.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Tre saker settet gör", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se sotarsetet", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-10-08T18:00:00+02:00",
+  "segment": ["SEG_uppvarmning_steg1"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "klar",
+  "kraver_axel": null
+}

@@ -1,0 +1,88 @@
+{
+  "id": "k13-julklappsguide",
+  "namn": "MAIL_20261119_Julklapp_GT_3_engagerade90d_solution_julklappar-3-dec_v1",
+  "memo": "Presentvinkeln är bevisad i annonserna (Takoverdrag_GT_2_H1: 14 av 14 köp på vinkeln, 8 202 kr vinstbidrag). Det här mejlet testar om en guide sorterad per mottagartyp (tre grupper, tre produkter var) säljer fler produkter per mottagare än ett mejl med en enda produkt (K05). Sista beställningsdag för jul är 3 december (23 dec minus p90 20 dygn, klaviyo/brands/baverbutiken.json → kalender), och det datumet är en riktig orsak, inte en påhittad brådska.",
+  "taggar": {
+    "typ": "I",
+    "_typ": "N=nytt koncept, I=iteration av annonsvinnare, IM=imitation, M=mejlspecifikt, S=säsong",
+    "kalla": "egen-data",
+    "_kalla": "egen-data | winning-line | voc | swipe | gissning",
+    "kalla_ref": "products/carashell/takskyddet/dna.md:56-66",
+    "lardom": null,
+    "avatar": "den som ska köpa julklappar till flera olika typer av mottagare och inte vill leta produkt för produkt",
+    "begar": "en genväg till rätt klapp per person, i tid för att den ska hinna fram",
+    "awareness": "solution",
+    "_awareness": "unaware | problem | solution | product | promo",
+    "urgency": "konsekvens",
+    "_urgency": "sasong | lager | pris | konsekvens | ingen",
+    "confidence": "medium",
+    "_confidence": "high | medium | low (low = gissning)",
+    "prefix": "Julklapp",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    { "text": "En guide, inte fler val än du behöver", "begar": "minska beslutströttheten inför julklappsköpen" },
+    { "text": "Till den som redan har allt", "begar": "adressera en specifik, svår mottagartyp" },
+    { "text": "Sista dag att beställa: 3 december", "begar": "veta det verkliga datumet i tid" }
+  ],
+  "forhandstext": "Tre sorters mottagare, tre förslag var. Klart innan du hunnit tänka efter.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "En guide till julklappar, sorterade efter person",
+      "text": "{{fornamn}}, tre sorters mottagare, tre förslag var. Inget att fundera på länge.",
+      "bild": "produkt:whisky-adventskalender-24-dekorflaskor",
+      "knapp": { "text": "Se alla förslag", "lank": "kollektion:alla-produkter" }
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Till den som har allt",
+      "handles": [
+        "whisky-adventskalender-24-dekorflaskor",
+        "baverlampa-pro",
+        "kepslampa-300-lumen-clip-on-led-pannlampa"
+      ]
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Till båten och stugan",
+      "handles": [
+        "fiskespohallare-4-pack-kraftig-forvaring",
+        "mini-fiskespo-set-teleskopiskt-dubbelsidigt",
+        "batsitsoverdrag-210d-vadertaligt-stolsskydd"
+      ]
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Till den som pysslar",
+      "handles": [
+        "balteslipmaskin-mini-3-i-1-knivslip-polerare",
+        "fagelmatare-med-kamera-och-solcellspanel-se-faglarna-i-appen",
+        "overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+      ]
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Sista dag för att beställa och få paketet i tid till jul är torsdag 3 december. Efter det hinner det inte fram."
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "En guide, inte fler val än du behöver", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Till den som redan har allt", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sista dag att beställa: 3 december", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Tre sorters mottagare, tre förslag var. Klart innan du hunnit tänka efter.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En guide till julklappar, sorterade efter person", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Till den som har allt", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Till båten och stugan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Till den som pysslar", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se alla förslag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sista dag för att beställa och få paketet i tid till jul är torsdag 3 december. Efter det hinner det inte fram.", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-11-19T18:00:00+01:00",
+  "segment": ["SEG_engagerade_90d"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

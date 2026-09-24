@@ -1,0 +1,68 @@
+{
+  "id": "k09-adventskalendrar",
+  "namn": "MAIL_20261027_Adventskalender_PD_2_engagerade90d_product_lucka-ett_v1",
+  "memo": "Racingbilskalenderns bildannons PD_2_1 (produkten rakt upp och ner: 8 köp, CPA 172 kr, ROAS 3,85) är benchmark. Kalendern ska finnas hemma till lucka 1. Senaste säkra beställningsdag är 11 nov (1 dec minus 20 dygn), och det är en riktig brådska. Hypotes: ett urval kalendrar, en per mottagartyp, säljer fler än en enda.",
+  "taggar": {
+    "typ": "I",
+    "kalla": "egen-data",
+    "kalla_ref": "products/kalender/dna.md:88-89",
+    "lardom": null,
+    "avatar": "föräldern, mor- och farföräldern eller partnern som vill ha en kalender som inte är choklad",
+    "begar": "en kalender som passar just den personen",
+    "awareness": "product",
+    "urgency": "konsekvens",
+    "confidence": "medium",
+    "prefix": "Adventskalender",
+    "kod": "PD"
+  },
+  "amnesrader": [
+    { "text": "Beställ senast 11 november för lucka 1", "begar": "hinna i tid, undvika att missa den" },
+    { "text": "En kalender som inte är choklad", "begar": "något bestående i stället för choklad" },
+    { "text": "En för racingbilar, en för fiske, en för hockey", "begar": "hitta rätt kalender för just den personen" }
+  ],
+  "forhandstext": "Sex kalendrar, en för varje sorts person i huset.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Chokladkalendern är slut den andra december",
+      "text": "Kalendern öppnas på trettio sekunder, chokladen är uppäten före frukost, och resten av dagen finns inget kvar. Bakom varje lucka i den här står i stället en bil att leka med.",
+      "bild": "produkt:adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+      "knapp": { "text": "Se racingbilskalendern", "lank": "produkt:adventskalender-racingbilar-24-bilar-bakom-24-luckor" }
+    },
+    {
+      "typ": "text",
+      "rubrik": "En för varje sorts person",
+      "text": "Racingbilar, fiskedrag, golf, dinosaurier, pussel eller hockey. Sex kalendrar med 24 numrerade luckor, en sak att öppna varje morgon i december, ingen choklad."
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": null,
+      "handles": [
+        "adventskalender-fiskedrag-24-drag-bakom-24-luckor",
+        "golf-adventskalender-24-golftillbehor",
+        "dinosaurie-adventskalender-24-dinosaurier",
+        "pussel-adventskalender-24-dagar-med-pusselbitar",
+        "ishockey-adventskalender-24-luckor-med-hockeyprylar"
+      ]
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Beställ senast 11 november så hinner kalendern fram före den första december."
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "Beställ senast 11 november för lucka 1 (ämnesrad)", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En kalender som inte är choklad (ämnesrad)", "visualisera": true, "falsifiera": true, "ingen_annan": false },
+    { "rad": "En för racingbilar, en för fiske, en för hockey (ämnesrad)", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sex kalendrar, en för varje sorts person i huset. (förhandstext)", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Chokladkalendern är slut den andra december (rubrik, hero)", "visualisera": true, "falsifiera": true, "ingen_annan": false },
+    { "rad": "Se racingbilskalendern (knapp, hero)", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-10-27T18:00:00+01:00",
+  "segment": ["SEG_engagerade_90d"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

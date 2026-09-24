@@ -1,0 +1,66 @@
+{
+  "id": "k08-morkret-kommer",
+  "namn": "MAIL_20261022_Solcellslampa_S_1_engagerade60d_problem_morkret-kommer_v1",
+  "memo": "Vintertid söndag 25 okt: det blir mörkt en timme tidigare. Inget produktminne finns, så det är en GISSNING. Hypotes: en konkret händelse med datum gör ett ljusmejl relevant.",
+  "taggar": {
+    "typ": "S",
+    "kalla": "gissning",
+    "kalla_ref": null,
+    "avatar": "villaägaren med mörk uppfart eller trädgård",
+    "begar": "att se var man går när man kommer hem",
+    "awareness": "problem",
+    "urgency": "sasong",
+    "confidence": "low",
+    "prefix": "Solcellslampa",
+    "kod": "S"
+  },
+  "amnesrader": [
+    { "text": "Söndag blir det mörkt en timme tidigare", "begar": "relevans, ett konkret datum" },
+    { "text": "Ingen elektriker, ingen sladd", "begar": "enkel installation utan krångel" },
+    { "text": "Ljuset som tänds innan du hittar nyckelhålet", "begar": "trygghet och bekvämlighet vid hemkomst" }
+  ],
+  "forhandstext": "Klockan ställs om söndag 25 oktober.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Nyckelhålet du aldrig hittar i mörkret",
+      "text": "Klockan ställs om på söndag, och det blir mörkt en timme tidigare. En fast monterad lampa hade krävt en elektriker, en sladdlampa fryser fast i snön till våren.",
+      "bild": "produkt:solcellslampa-med-rorelsesensor-tre-huvuden-210-led",
+      "knapp": { "text": "Se lampan", "lank": "produkt:solcellslampa-med-rorelsesensor-tre-huvuden-210-led" }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Solcellslampan monteras på väggen utan en enda kabel. Solcellspanelen laddar det inbyggda 1200 mAh-batteriet under dagen, och rörelsesensorn tänder alla tre huvudena, 210 lysdioder, när du kommer gående.\n\nVarje huvud vrids för sig, så du riktar ljuset mot uppfarten, trappan eller nyckelhålet, inte bara rakt fram."
+    },
+    {
+      "typ": "produkt",
+      "handle": "solcellslampa-med-rorelsesensor-tre-huvuden-210-led",
+      "text": "Ingen elektriker, ingen sladd. Bara solljus och en rörelsesensor.",
+      "knapp": "Se lampan"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Mer ljus",
+      "handles": [
+        "solcellslarm-2-pack-siren-och-blixt-vid-rorelse",
+        "baverlampa-pro",
+        "kepslampa-300-lumen-clip-on-led-pannlampa"
+      ]
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "Söndag blir det mörkt en timme tidigare (ämnesrad)", "visualisera": true, "falsifiera": true, "ingen_annan": false },
+    { "rad": "Ingen elektriker, ingen sladd (ämnesrad)", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Ljuset som tänds innan du hittar nyckelhålet (ämnesrad)", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Klockan ställs om söndag 25 oktober. (förhandstext)", "visualisera": true, "falsifiera": true, "ingen_annan": false },
+    { "rad": "Nyckelhålet du aldrig hittar i mörkret (rubrik, hero)", "visualisera": true, "falsifiera": true, "ingen_annan": false },
+    { "rad": "Se lampan (knapp, hero och produkt)", "visualisera": true, "falsifiera": true, "ingen_annan": false }
+  ],
+  "planerad": "2026-10-22T18:00:00+02:00",
+  "segment": ["SEG_engagerade_60d"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

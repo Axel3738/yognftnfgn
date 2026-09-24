@@ -1,0 +1,85 @@
+{
+  "id": "f04-efter-kop",
+  "namn": "Efter köp",
+  "memo": "Bara 3,3 % av köparna har köpt igen (mätt i Shopify 2026-09-24). Kunderna kommer från en annons för en enda nischprodukt. Flödet ska få andra köpet att hända inom samma nisch, med det erbjudande som redan finns: köp igen och få en gratisprodukt, lyckohjulet (Axels beslut 2026-09-13). Mejl 1 skickas när paketet rimligen har kommit fram (p90 20 dygn).",
+  "trigger": { "typ": "metrik", "metrik": ["Placed Order"] },
+  "filter": ["samtycke"],
+  "ateintrade": { "varaktighet": 30, "enhet": "day" },
+  "steg": [
+    { "typ": "vanta", "enhet": "days", "varde": 20 },
+    { "typ": "mejl", "mejl": {
+      "id": "f04-efter-kop-e1",
+      "namn": "FLOW_order_E1_M_kom-allt-fram_v1",
+      "memo": "p90 för leverans är 20 dygn (klaviyo/brands/baverbutiken.json#leverans_p90_dygn), så paketet ska rimligen ha kommit. Erbjudandet introduceras här första gången efter köp.",
+      "taggar": {
+        "typ": "M",
+        "kalla": "egen-data",
+        "kalla_ref": "klaviyo/brands/baverbutiken.json",
+        "lardom": null,
+        "avatar": "kunden vars paket borde ha kommit fram nu",
+        "begar": "veta att paketet kom fram, och få hjälp om det inte gjorde det",
+        "awareness": "product",
+        "urgency": "ingen",
+        "confidence": "medium",
+        "prefix": "Efterkop",
+        "kod": "M"
+      },
+      "amnesrader": [
+        { "text": "Kom allt fram som det ska", "begar": "bekräfta att leveransen gick bra" },
+        { "text": "Saknar du fortfarande paketet", "begar": "få hjälp om leveransen strular" },
+        { "text": "En gåva om du redan handlat klart", "begar": "introducera erbjudandet" }
+      ],
+      "forhandstext": "Fick du allt. Och en gåva om du redan är klar.",
+      "block": [
+        { "typ": "text", "rubrik": "Kom allt fram?", "text": "Det brukar ha kommit fram vid det här laget. Saknar du något eller ser det konstigt ut, mejla kundsupport@baverbutiken.se eller kolla spårningssidan, den visar exakt var paketet är." },
+        { "typ": "erbjudande", "text": "Du har redan handlat en gång. Snurra hjulet och se vad du kan vinna till nästa köp." },
+        { "typ": "produktrad", "rubrik": "Andra som köpte det du köpte, köpte även det här", "handles": ["takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan", "batmotorskydd-420d-heltackande-for-utombordare", "overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"] }
+      ],
+      "tretest": [
+        { "rad": "Kom allt fram som det ska", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Saknar du fortfarande paketet", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "En gåva om du redan handlat klart", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Fick du allt. Och en gåva om du redan är klar.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Kom allt fram?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Andra som köpte det du köpte, köpte även det här", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+      ]
+    } },
+    { "typ": "vanta", "enhet": "days", "varde": 14 },
+    { "typ": "mejl", "mejl": {
+      "id": "f04-efter-kop-e2",
+      "namn": "FLOW_order_E2_S_nytt-for-sasongen_v1",
+      "memo": "Säsongsprodukter till en köpare som redan litar på butiken. Erbjudandet upprepas för den som inte snurrat hjulet än.",
+      "taggar": {
+        "typ": "S",
+        "kalla": "egen-data",
+        "kalla_ref": null,
+        "lardom": null,
+        "avatar": "tidigare köpare, säsongen har hunnit byta sedan köpet",
+        "begar": "hitta nästa relevanta pryl för hösten eller vintern",
+        "awareness": "solution",
+        "urgency": "sasong",
+        "confidence": "medium",
+        "prefix": "Efterkop",
+        "kod": "S"
+      },
+      "amnesrader": [
+        { "text": "Nytt sen du handlade senast", "begar": "se vad som tillkommit i sortimentet" },
+        { "text": "Sotarsetet, lampan och damaskerna", "begar": "se konkreta produktnamn" },
+        { "text": "Hjulet väntar fortfarande på dig", "begar": "påminna om outnyttjat erbjudande" }
+      ],
+      "forhandstext": "Fyra prylar för säsongen, och gåvan om du inte snurrat än.",
+      "block": [
+        { "typ": "produktrad", "rubrik": "Nytt för säsongen", "handles": ["sotarset-med-bojliga-stanger-rensar-rokkanal-och-kaminror", "solcellslampa-med-rorelsesensor-tre-huvuden-210-led", "damasker-vandring-haller-sno-vata-grus-ute", "adventskalender-racingbilar-24-bilar-bakom-24-luckor"] },
+        { "typ": "erbjudande", "text": "Har du inte snurrat hjulet än, det väntar fortfarande på dig." },
+        { "typ": "fakta" }
+      ],
+      "tretest": [
+        { "rad": "Nytt sen du handlade senast", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Sotarsetet, lampan och damaskerna", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Hjulet väntar fortfarande på dig", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Fyra prylar för säsongen, och gåvan om du inte snurrat än.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Nytt för säsongen", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+      ]
+    } }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "id": "f02-overgiven-kassa",
+  "namn": "Övergiven kassa",
+  "memo": "Shopify skickar redan en egen notis om övergiven kassa (mejl/mallar.mjs:847). Det här flödet ersätter den med tre steg som svarar på invändningarna. Det får gå live först när Shopifys notis är avstängd, annars får kunden dubbla mejl. Det är Axels klick.",
+  "trigger": { "typ": "metrik", "metrik": ["Started Checkout", "Checkout Started"] },
+  "filter": ["samtycke", "ej_kopt_sedan_start"],
+  "ateintrade": { "varaktighet": 7, "enhet": "day" },
+  "steg": [
+    { "typ": "vanta", "enhet": "hours", "varde": 1 },
+    { "typ": "mejl", "mejl": {
+      "id": "f02-overgiven-kassa-e1",
+      "namn": "FLOW_checkout_E1_M_din-varukorg-ar-kvar_v1",
+      "memo": "Kort påminnelse, inga invändningar än. Bara att varorna finns kvar och en väg tillbaka.",
+      "taggar": {
+        "typ": "M",
+        "kalla": "egen-data",
+        "kalla_ref": "klaviyo/innehall/baverbutiken/BRIEFER.md:292",
+        "lardom": null,
+        "avatar": "kunden som lade varor i kassan men inte betalade",
+        "begar": "hitta tillbaka till det man redan valt",
+        "awareness": "product",
+        "urgency": "ingen",
+        "confidence": "medium",
+        "prefix": "Kassan",
+        "kod": "M"
+      },
+      "amnesrader": [
+        { "text": "Din kundvagn är fortfarande packad", "begar": "hitta tillbaka snabbt" },
+        { "text": "Du kom halvvägs genom kassan", "begar": "minnas var man var i processen" },
+        { "text": "Vi sparade det du la i korgen", "begar": "veta att inget försvunnit" }
+      ],
+      "forhandstext": "Varorna ligger kvar. Klicka dig tillbaka på en gång.",
+      "block": [
+        { "typ": "text", "rubrik": "Din varukorg är kvar", "text": "Vi sparade allt du la i kassan. Ingenting är borttaget." },
+        { "typ": "dynamisk", "kalla": "checkout_rader" }
+      ],
+      "tretest": [
+        { "rad": "Din kundvagn är fortfarande packad", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Du kom halvvägs genom kassan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Vi sparade det du la i korgen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Varorna ligger kvar. Klicka dig tillbaka på en gång.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Din varukorg är kvar", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+      ]
+    } },
+    { "typ": "vanta", "enhet": "days", "varde": 1 },
+    { "typ": "mejl", "mejl": {
+      "id": "f02-overgiven-kassa-e2",
+      "namn": "FLOW_checkout_E2_OB_tre-fragor-innan-du-betalar_v1",
+      "memo": "Svarar på de tre vanligaste invändningarna innan betalning: leverans, ångerrätt, support. Ingen ny produktbild, bara svar.",
+      "taggar": {
+        "typ": "M",
+        "kalla": "egen-data",
+        "kalla_ref": "klaviyo/brands/baverbutiken.json",
+        "lardom": null,
+        "avatar": "kunden som lade varor i kassan men inte betalade",
+        "begar": "veta att köpet är tryggt innan man betalar",
+        "awareness": "product",
+        "urgency": "ingen",
+        "confidence": "medium",
+        "prefix": "Kassan",
+        "kod": "OB"
+      },
+      "amnesrader": [
+        { "text": "Tre frågor du kanske har innan du betalar", "begar": "få svar innan betalning" },
+        { "text": "Hur lång tid tar leveransen egentligen", "begar": "veta leveranstiden" },
+        { "text": "Kan jag ångra mig om jag ändrar mig", "begar": "veta om ångerrätt finns" }
+      ],
+      "forhandstext": "Leverans, ångerrätt och vem du kan fråga, kort svarat.",
+      "block": [
+        { "typ": "text", "rubrik": "Tre frågor innan du betalar", "text": "Hur lång tid tar det. Kan jag ångra mig. Och vem svarar om något strular. Här är svaren." },
+        { "typ": "dynamisk", "kalla": "checkout_rader" },
+        { "typ": "fakta" }
+      ],
+      "tretest": [
+        { "rad": "Tre frågor du kanske har innan du betalar", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Hur lång tid tar leveransen egentligen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Kan jag ångra mig om jag ändrar mig", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Leverans, ångerrätt och vem du kan fråga, kort svarat.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Tre frågor innan du betalar", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+      ]
+    } },
+    { "typ": "vanta", "enhet": "days", "varde": 2 },
+    { "typ": "mejl", "mejl": {
+      "id": "f02-overgiven-kassa-e3",
+      "namn": "FLOW_checkout_E3_M_sista-paminnelsen-fran-axel_v1",
+      "memo": "Sista mejlet i flödet. Ingen countdown, ingen 'varukorgen töms'. Grundarens röst, sen släpper vi det.",
+      "taggar": {
+        "typ": "M",
+        "kalla": "egen-data",
+        "kalla_ref": null,
+        "lardom": null,
+        "avatar": "kunden som lade varor i kassan men inte betalade",
+        "begar": "en sista möjlighet att fråga innan man bestämmer sig",
+        "awareness": "product",
+        "urgency": "ingen",
+        "confidence": "medium",
+        "prefix": "Kassan",
+        "kod": "M"
+      },
+      "amnesrader": [
+        { "text": "Sista mejlet om din kassa, jag lovar", "begar": "veta att detta är sista påminnelsen" },
+        { "text": "Fortfarande något du undrar över", "begar": "möjlighet att fråga innan man släpper köpet" },
+        { "text": "Jag hör av mig en sista gång", "begar": "personlig kontakt, inte ett automatiskt system" }
+      ],
+      "forhandstext": "Sista påminnelsen. Undrar du något, mejla, annars hör du inget mer om den här kassan.",
+      "block": [
+        { "typ": "grundare", "text": "Jag skickar det här en sista gång. Har du en fråga om produkten, leveransen eller något annat, mejla kundsupport@baverbutiken.se och jag svarar själv. Annars stör vi dig inte mer om den här kassan." },
+        { "typ": "dynamisk", "kalla": "checkout_rader" }
+      ],
+      "tretest": [
+        { "rad": "Sista mejlet om din kassa, jag lovar", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Fortfarande något du undrar över", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Jag hör av mig en sista gång", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Sista påminnelsen. Undrar du något, mejla, annars hör du inget mer om den här kassan.", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+      ]
+    } }
+  ]
+}

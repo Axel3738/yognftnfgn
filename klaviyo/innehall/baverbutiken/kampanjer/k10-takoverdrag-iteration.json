@@ -1,0 +1,60 @@
+{
+  "id": "k10-takoverdrag-iteration",
+  "namn": "MAIL_20261029_Takoverdrag_OB_4_engagerade90d_product_fukten_v1",
+  "memo": "Platshållare för vidarebygget på K01. Vinner K01 skrivs det här om till tre nya krokar på samma vinkel. Förlorar K01 byter det vinkel till erbjudandet (Takoverdrag_CS_2_H1, bästa CPA 81 kr). Utkastet skrivs med invändningen i fokus (OB): fukt och kondens, 38 % av kommentarerna.",
+  "taggar": {
+    "typ": "I",
+    "kalla": "voc",
+    "kalla_ref": "products/takoverdraget-husvagn/invandningar.md:18-30",
+    "lardom": null,
+    "avatar": "husvagnsägaren som ställer av vagnen för vintern (samma som K01)",
+    "begar": "att inte skapa ett fuktproblem",
+    "awareness": "product",
+    "urgency": "sasong",
+    "confidence": "medium",
+    "prefix": "Takoverdrag",
+    "kod": "OB"
+  },
+  "amnesrader": [
+    { "text": "\"Välkomnar du inte fukt då?\"", "begar": "adressera oron direkt" },
+    { "text": "Det täcker taket, inte hela vagnen", "begar": "förstå skillnaden mot ett helöverdrag" },
+    { "text": "Vad en kund frågade om fukt", "begar": "nyfikenhet på vad andra undrar" }
+  ],
+  "forhandstext": "Kunden skrev det under en av våra annonser.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "\"Att täcka så där välkomnar du kondens och fukt.\"",
+      "text": "Det skrev en kund under en av våra annonser. Rimlig fråga: blir det inte fuktigt att lägga något över taket?",
+      "bild": "produkt:takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+      "knapp": { "text": "Se hur det sitter", "lank": "produkt:takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan" }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Överdraget täcker bara taket, inte väggarna eller hela vagnen. Det hakas fast med remmar på alla fyra sidor i en krok i nederkant, det är inget helöverdrag som sluter runt vagnen.\n\nSilverskiktet gör att solen tar på ytan i stället för på taket, och regnet rinner av den belagda 210D-oxfordväven i stället för att bli stående."
+    },
+    {
+      "typ": "produkt",
+      "handle": "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+      "text": "Taköverdrag Husvagn, bara taket, inte hela vagnen.",
+      "knapp": "Se taköverdraget"
+    },
+    { "typ": "citat", "handle": "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan", "antal": 2 },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "\"Välkomnar du inte fukt då?\" (ämnesrad)", "visualisera": true, "falsifiera": true, "ingen_annan": false },
+    { "rad": "Det täcker taket, inte hela vagnen (ämnesrad)", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Vad en kund frågade om fukt (ämnesrad)", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Kunden skrev det under en av våra annonser. (förhandstext)", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "\"Att täcka så där välkomnar du kondens och fukt.\" (rubrik, hero)", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se hur det sitter (knapp, hero)", "visualisera": true, "falsifiera": true, "ingen_annan": false },
+    { "rad": "Se taköverdraget (knapp, produkt)", "visualisera": true, "falsifiera": true, "ingen_annan": false }
+  ],
+  "planerad": "2026-10-29T18:00:00+01:00",
+  "segment": ["SEG_engagerade_90d"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

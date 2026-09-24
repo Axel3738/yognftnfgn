@@ -1,0 +1,72 @@
+{
+  "id": "k01-takoverdrag-vinterforvaring",
+  "namn": "MAIL_20260929_Takoverdrag_PD_1_uppvarmning_problem_taket-du-aldrig-kollar_v1",
+  "memo": "Hypotes: problemvinkeln \"taket du aldrig kollar\" bar mest spend och flest köp i annonserna (16 köp, CPA 226 kr). Fukt/kondens är den tyngsta invändningen i kommentarerna (38 %) och har aldrig besvarats i en annons. Ett mejl som väcker problemet och svarar på fukten borde konvertera bättre än annonsen, eftersom mottagaren redan känner butiken.",
+  "taggar": {
+    "typ": "I",
+    "kalla": "egen-data",
+    "kalla_ref": "products/carashell/takskyddet/dna.md:56-58 + products/takoverdraget-husvagn/invandningar.md:18-30",
+    "lardom": null,
+    "avatar": "husvagnsägaren som ställer av vagnen för vintern",
+    "begar": "slippa läckor och fuktskador till våren",
+    "awareness": "problem",
+    "urgency": "sasong",
+    "confidence": "medium",
+    "prefix": "Takoverdrag",
+    "kod": "PD"
+  },
+  "amnesrader": [
+    { "text": "Taket du aldrig går upp och kollar", "begar": "veta vad som faktiskt tar stryk på vagnen" },
+    { "text": "Bara taket täcks, inte hela vagnen", "begar": "förstå varför bara taket behöver skydd" },
+    { "text": "Den sätts på av en person, inte två", "begar": "kunna sätta på skyddet utan att be om hjälp" }
+  ],
+  "forhandstext": "Regnet och löven hamnar där uppe, hela vintern.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Taket är ytan du aldrig kollar",
+      "text": "Hej {{fornamn}},\n\nRegnet, löven och fågelskiten hamnar på taket. Du ser det inte förrän det läcker.",
+      "bild": "produkt:takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+      "knapp": { "text": "Se taköverdraget", "lank": "produkt:takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan" }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Vatten som stannar kvar kring takluckor och skarvar mjuknar tätmassan under vintern. Då krävs en reparation, inte en tvätt."
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "Vad täcks, och vad täcks inte",
+      "punkter": [
+        "Bara taket täcks, inte väggarna eller fönstren.",
+        "Remmar på alla fyra sidor i stället för ett helöverdrag som sluter runt hela vagnen.",
+        "Vattnet rinner av den belagda väven i stället för att bli stående vid takluckorna."
+      ]
+    },
+    {
+      "typ": "produkt",
+      "handle": "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+      "text": "Sex och en halv gånger tre meter, gjort för en normalstor vagn.",
+      "knapp": "Skydda taket i vinter"
+    },
+    { "typ": "citat", "handle": "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan", "antal": 2 },
+    { "typ": "fakta" },
+    { "typ": "knapp", "text": "Skydda taket innan vintern", "lank": "produkt:takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan" }
+  ],
+  "tretest": [
+    { "rad": "Taket du aldrig går upp och kollar", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Bara taket täcks, inte hela vagnen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Den sätts på av en person, inte två", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Regnet och löven hamnar där uppe, hela vintern.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Taket är ytan du aldrig kollar", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Vad täcks, och vad täcks inte", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Skydda taket i vinter", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Skydda taket innan vintern", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se taköverdraget", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-09-29T18:00:00+02:00",
+  "segment": ["SEG_uppvarmning_steg1"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "klar",
+  "kraver_axel": null
+}

@@ -1,0 +1,63 @@
+{
+  "id": "k12-black-friday",
+  "namn": "MAIL_20261127_Bastsaljare_CS_2_engagerade90d_promo_black-friday_v1",
+  "memo": "Samma läge som K11 (ingen rabatt beslutad, kraver_axel oförändrat), men egna krokar: dagen i sig, inte veckan, och fyra produkter i stället för sju för att inte upprepa K11 ordagrant för samma mottagare. Ingen egen datapunkt (kalla_ref null).",
+  "taggar": {
+    "typ": "M",
+    "_typ": "N=nytt koncept, I=iteration av annonsvinnare, IM=imitation, M=mejlspecifikt, S=säsong",
+    "kalla": "egen-data",
+    "_kalla": "egen-data | winning-line | voc | swipe | gissning",
+    "kalla_ref": null,
+    "lardom": null,
+    "avatar": "samma som K11: den som ändå ska handla inför vintern och julen, oavsett vilken dag det är",
+    "begar": "se konkreta prylar utan att behöva jämföra procent mot andra butikers skyltar",
+    "awareness": "promo",
+    "_awareness": "unaware | problem | solution | product | promo",
+    "urgency": "ingen",
+    "_urgency": "sasong | lager | pris | konsekvens | ingen",
+    "confidence": "low",
+    "_confidence": "high | medium | low (low = gissning)",
+    "prefix": "Bastsaljare",
+    "kod": "CS"
+  },
+  "amnesrader": [
+    { "text": "En fredag utan skyltar", "begar": "nyfikenhet på en annan vinkel än prisskyltar" },
+    { "text": "Taket, motorn, kniven och rutan", "begar": "se konkret vad mejlet faktiskt handlar om" },
+    { "text": "Det som håller, oavsett dag", "begar": "trygghet i att kvaliteten inte ändras med datumet" }
+  ],
+  "forhandstext": "Fyra prylar, samma kvalitet som igår.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "En fredag om vad som faktiskt håller",
+      "text": "{{fornamn}}, i dag pratar mycket om siffror på skyltar. Vi håller oss till fyra prylar som gör sitt jobb: taket, motorn, kniven och rutan.",
+      "bild": "produkt:overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+      "knapp": { "text": "Se de fyra", "lank": "kollektion:alla-produkter" }
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "De fyra som håller",
+      "handles": [
+        "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+        "overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+        "balteslipmaskin-mini-3-i-1-knivslip-polerare",
+        "termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande"
+      ]
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "En fredag utan skyltar", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Taket, motorn, kniven och rutan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Det som håller, oavsett dag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fyra prylar, samma kvalitet som igår.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En fredag om vad som faktiskt håller", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "De fyra som håller", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se de fyra", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-11-27T18:00:00+01:00",
+  "segment": ["SEG_engagerade_90d"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": "Rabatt utöver dagens priser i Black Week är ägarens beslut (CLAUDE.md regel 12). Utkastet säljer på dagens priser och jämförpriser, och nämner aldrig rea, rabatt eller procent."
+}

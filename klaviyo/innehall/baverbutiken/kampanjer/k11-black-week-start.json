@@ -1,0 +1,66 @@
+{
+  "id": "k11-black-week-start",
+  "namn": "MAIL_20261123_Bastsaljare_CS_1_engagerade90d_promo_black-week_v1",
+  "memo": "Hypotes: utan en rabatt att sälja på testar mejlet om ren synlighet, en samlad lista över det vi redan säljer mest av, räcker för att få klick i en vecka där de flesta redan tänker på vinter och jul. Ingen egen datapunkt stödjer det ännu (kalla_ref null) - detta är kontots första kampanj i den här veckan. Ordet 'rea/rabatt/procent' används aldrig; kraver_axel gäller ett eventuellt prisbeslut, inte copyn.",
+  "taggar": {
+    "typ": "M",
+    "_typ": "N=nytt koncept, I=iteration av annonsvinnare, IM=imitation, M=mejlspecifikt, S=säsong",
+    "kalla": "egen-data",
+    "_kalla": "egen-data | winning-line | voc | swipe | gissning",
+    "kalla_ref": null,
+    "lardom": null,
+    "avatar": "den som ändå ska handla inför vintern och julen den här veckan, med eller utan extraprisad reklam",
+    "begar": "veta att priset inte ändrats i onödan, och se vad som redan säljer bra utan att behöva jämföra procent",
+    "awareness": "promo",
+    "_awareness": "unaware | problem | solution | product | promo",
+    "urgency": "ingen",
+    "_urgency": "sasong | lager | pris | konsekvens | ingen",
+    "confidence": "low",
+    "_confidence": "high | medium | low (low = gissning)",
+    "prefix": "Bastsaljare",
+    "kod": "CS"
+  },
+  "amnesrader": [
+    { "text": "Sju prylar, samma pris som förra veckan", "begar": "veta att priset inte ändrats i onödan" },
+    { "text": "Det här har redan sålt mest i år", "begar": "se vad andra redan valt, utan att behöva jämföra" },
+    { "text": "Ingen countdown här, bara prylarna", "begar": "slippa köppress men ändå få syn på det som finns" }
+  ],
+  "forhandstext": "Taköverdraget, båtmotorskyddet och fem till, till samma pris som igår.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Veckan då de flesta handlar inför vintern och julen",
+      "text": "{{fornamn}}, vi har inget nytt pris att visa dig den här veckan. Det vi har är taköverdraget, båtmotorskyddet och fem andra prylar som redan är de vi säljer mest av, år efter år.",
+      "bild": "produkt:takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+      "knapp": { "text": "Se de sju produkterna", "lank": "kollektion:alla-produkter" }
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Sju produkter, samma pris som igår",
+      "handles": [
+        "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+        "batmotorskydd-420d-heltackande-for-utombordare",
+        "ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+        "overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+        "balteslipmaskin-mini-3-i-1-knivslip-polerare",
+        "fiskespohallare-4-pack-kraftig-forvaring",
+        "termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande"
+      ]
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "Sju prylar, samma pris som förra veckan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Det här har redan sålt mest i år", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Ingen countdown här, bara prylarna", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Taköverdraget, båtmotorskyddet och fem till, till samma pris som igår.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Veckan då de flesta handlar inför vintern och julen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sju produkter, samma pris som igår", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se de sju produkterna", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-11-23T18:00:00+01:00",
+  "segment": ["SEG_engagerade_90d"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": "Rabatt utöver dagens priser i Black Week är ägarens beslut (CLAUDE.md regel 12). Utkastet säljer på dagens priser och jämförpriser, och nämner aldrig rea, rabatt eller procent."
+}
