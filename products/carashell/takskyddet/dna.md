@@ -807,6 +807,14 @@ varken fler köp eller fler flerpack. Rabattkoderna i perioden: bara
 `CARASHELLROO2A` ×9 och `CARASHELLROO2B` ×8, inget 3-pack. Att stänga testet
 är en rabattfråga — Axels beslut.
 
+Detalj (samma körning, Axels följdfråga): 1 st A 140 / B 134, 2 st A 12
+(7,9 %) / B 10 (6,9 %), 3 st 0 / 0 — Fisher p = 0,83 på andelen flerpack.
+Rabatt given (`totalDiscountsSet`, SEK): A 3 725 kr, B 4 348 kr. Testet rör
+bara de ~7 % som köper fler än en — 1 st har ingen rabatt i någon variant.
+Axels besked samma dag: testet var inget han valt ("vi ab testar ju
+recensioner") — fabriken lägger in `paket` automatiskt (`factory/paket.mjs`
+NIVAER, PROCESS.md steg 7).
+
 **Omärkta ordrar:** 8 av 134 (`korgtrygg`) och 18 av 314 (`paket`, 1 härledd
 ur rabattkoden). CaraShells `ms-ab.js` är versionen från 2026-09-10 och saknar
 Matstrumpors efterstämpling (2026-09-19), som täppte samma hål där.
