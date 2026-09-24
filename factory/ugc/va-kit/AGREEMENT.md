@@ -16,7 +16,7 @@ yourself — if the creator wants a change, ask Axel.
 
 Brackets: `[FULLSTÄNDIGT NAMN]`, `[PROFIL-LÄNK]`, `[PRODUKT]`,
 `[ANTAL DAGAR]` (14; up to 21 only if agreed in the negotiation),
-`[BELOPP]` (the agreed price), `[PRODUKTPRIS]` (the price on the product page
+`[BELOPP]` (the agreed price, excluding VAT), `[PRODUKTPRIS]` (the price on the product page
 the day you send the product).
 
 ---
@@ -56,7 +56,7 @@ Beställaren ger besked inom 7 dagar efter leveransen. Hörs beställaren inte a
 Är leveransen sen får kreatören en påminnelse. Beställaren får häva avtalet om leveransen fortfarande saknas 7 dagar efter tidsgränsen, eller om omtagningen inte heller uppfyller punkt 3. Då betalas ingen ersättning, beställaren använder inget av materialet, och kreatören skickar inom 14 dagar tillbaka produkten till beställarens adress ovan på egen bekostnad eller betalar i stället [PRODUKTPRIS] kr (produktens pris på produktsidan när den skickades). Produkten blir kreatörens när leveransen godkänts.
 
 6. Ersättning
-[BELOPP] kr för uppdraget. Kreatören fakturerar Stonebite Ecom AB först efter godkännandet. Betalning sker 30 dagar efter mottagen faktura. Kreatören har F-skatt eller fakturerar via en egenanställningstjänst (t.ex. Frilans Finans, Cool Company eller Gigapay). Kreatören ansvarar för sin egen skatt. Obs: även produktens värde kan vara skattepliktig inkomst.
+[BELOPP] kr exklusive moms för uppdraget. Är kreatören momsregistrerad läggs moms till på fakturan. Kreatören fakturerar Stonebite Ecom AB först efter godkännandet. Betalning sker 30 dagar efter mottagen faktura. Kreatören har F-skatt eller fakturerar via en egenanställningstjänst (t.ex. Frilans Finans, Cool Company eller Gigapay). Kreatören ansvarar för sin egen skatt. Obs: även produktens värde kan vara skattepliktig inkomst.
 
 7. Rättigheter
 När leveransen godkänts överlåter kreatören till beställaren upphovsrätten och alla närstående rättigheter (även som medverkande och som den som filmat) till videon och råmaterialet. Beställaren får utan tidsgräns, i alla kanaler och länder och i alla butiker beställaren driver, använda materialet i marknadsföring och klippa, redigera, korta, kombinera, textsätta, översätta och dubba det. Beställaren får överlåta eller upplåta rätten vidare, t.ex. till annonsplattformar, byråer och bolag som driver beställarens butiker. Kreatören behöver inte namnges och avstår från sin ideella rätt så långt lagen tillåter för de användningar som står i detta avtal. Rättigheterna kan inte återkallas.

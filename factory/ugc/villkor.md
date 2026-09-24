@@ -29,6 +29,8 @@ dessa villkor. Ändras de: uppdatera här först, aldrig i ett enskilt meddeland
   godkänt med fullständigt namn, inte ett "ja". Brief = ramverk, aldrig
   manus. Facebook-grupper först, marknadsplatser sist. Efter en vinnare
   beslutar Axel nästa steg; VA:n lovar aldrig retainer eller bonusbelopp.
+- **Beloppen är exklusive moms** (Axel 2026-09-24): 1 500 kr exkl. moms;
+  momsregistrerade kreatörer lägger på moms på fakturan.
 - **Inget månadsarbete, ingen retainer, ingen bonus** (Axels val B
   2026-09-24): en video i taget, även efter en vinnare.
 - **Paketet levereras som PDF** (Axels dom samma dag: .md går inte att läsa

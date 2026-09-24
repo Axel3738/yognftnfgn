@@ -15,7 +15,7 @@ first message must mention something this creator actually made.
 > regnet"]. Det kändes äkta, inte som reklam.
 >
 > Vi söker kreatörer som vill jobba med oss långsiktigt. Just nu gäller det
-> [produkt]. Vi erbjuder 1 500 kr för en video plus råmaterialet, och du
+> [produkt]. Vi erbjuder 1 500 kr exkl. moms för en video plus råmaterialet, och du
 > får behålla produkten. Blir videorna bra kommer vi gärna tillbaka med fler
 > produkter.
 >
@@ -24,7 +24,7 @@ first message must mention something this creator actually made.
 *English: Hi [name]! I'm [name] and I work with Bäverbutiken, a Swedish online
 store that tests many new products every month. I really liked [the concrete
 thing]. It felt real, not like an ad. We're looking for creators to work with
-long-term. Right now it's [product]. We offer 1 500 kr for one video plus the raw
+long-term. Right now it's [product]. We offer 1 500 kr excl. VAT for one video plus the raw
 footage, and you keep the product. If the videos are good we'd love to come back
 with more products. Interested? Reply here and I'll tell you more.*
 
@@ -53,13 +53,13 @@ keep working with.*
 ## Counter-offer (they asked for more)
 
 > Tack för snabbt svar! Jag förstår din prisnivå. För ett första test kan vi
-> inte gå upp till [deras pris], men vi kan erbjuda [2 000] kr per video. Det
+> inte gå upp till [deras pris], men vi kan erbjuda [2 000] kr exkl. moms per video. Det
 > viktiga för oss är långsiktigheten: vi lanserar nya produkter hela tiden
 > och vill hellre ha några få kreatörer som får många uppdrag än tvärtom.
 > Blir det bra nu blir det fler jobb.
 
 *English: Thanks for the quick reply! I understand your price. For a first test
-we can't go to [their price], but we can offer [2 000] kr per video. What matters
+we can't go to [their price], but we can offer [2 000] kr excl. VAT per video. What matters
 to us is the long term: we launch new products all the time and would rather
 have a few creators who get many jobs. If this goes well, there'll be more work.*
 
@@ -94,13 +94,13 @@ save your profile and would love to get in touch later. Good luck!*
 ## Agreement (send with the full text from AGREEMENT.md)
 
 > Toppen! Här är avtalet i sin helhet. Kort sagt: en video plus allt
-> råmaterial (med 3 till 5 olika början) för [1 500] kr, du behåller
+> råmaterial (med 3 till 5 olika början) för [1 500] kr exkl. moms, du behåller
 > [produkt], leverans inom [14] dagar efter att produkten kommit fram, och du
 > fakturerar efter att vi godkänt videon. Läs igenom och svara "Jag godkänner
 > avtalet" med ditt fullständiga namn, så skickar jag produkten direkt.
 
 *English: Great! Here is the full agreement. In short: one video plus all raw
-footage (with 3 to 5 different openings) for [1 500] kr, you keep [product],
+footage (with 3 to 5 different openings) for [1 500] kr excl. VAT, you keep [product],
 delivery within [14] days after the product arrives, and you invoice after we
 approve the video. Read it and reply "Jag godkänner avtalet" with your full
 name, and I'll send the product right away.*
@@ -140,12 +140,12 @@ video and send it here? One message per video is enough.*
 
 ## Approved + invoice request
 
-> Videorna är godkända, tack! Skicka fakturan på [belopp] kr till mig, ställd
+> Videorna är godkända, tack! Skicka fakturan på [belopp] kr exkl. moms till mig, ställd
 > till Stonebite Ecom AB, org.nr 559576-2401, Sjöhed 160, 442 74 Harestad.
 > 30 dagars betalning. Har du inget företag går det bra att fakturera via
 > t.ex. Frilans Finans eller Cool Company.
 
-*English: The videos are approved, thanks! Send the invoice for [amount] kr to
+*English: The videos are approved, thanks! Send the invoice for [amount] kr excl. VAT to
 me, addressed to Stonebite Ecom AB, [details]. 30 days payment. If you don't
 have a company you can invoice through e.g. Frilans Finans or Cool Company.*
 

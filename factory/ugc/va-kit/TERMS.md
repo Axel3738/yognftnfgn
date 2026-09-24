@@ -17,8 +17,8 @@ If a creator asks for something outside it → the matching case in `SOP.md`
 
 | Item | Value |
 |---|---|
-| Start offer | **1 500 kr per video** |
-| Top price (only creators with 14–16 points) | **3 000 kr per video** |
+| Start offer | **1 500 kr per video, excluding VAT** (Axel 2026-09-24). A creator who charges VAT adds 25 % on top on the invoice — that is fine. Always say "exkl. moms" to creators. |
+| Top price (only creators with 14–16 points) | **3 000 kr per video, excluding VAT** |
 | First deal | **1 video + all raw footage**, including **3–5 different takes of the first 3 seconds (hooks)**. Per product we test **3 different creators**, not 3 videos from one (Evolve 2026-09-24: 3 creators = 3 chances at a winner). |
 | Shot list (always in the raw footage) | 3–5 hook takes · product in hand from several angles · the problem / a demonstration · hands close-ups · everyday "lifestyle" B-roll |
 | After a winning video | **Only Axel decides** what comes next (new hooks, new angles or the next product). **We never offer monthly work, a retainer or a bonus** — one video at a time (Axel 2026-09-24). |
