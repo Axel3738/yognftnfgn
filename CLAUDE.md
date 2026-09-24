@@ -109,7 +109,12 @@ inte röras utan att Axel ber om det.
     grep -oE '[a-z0-9-]+\.myshopify\.com'`. Samma uppgift finns också i
     `shop { myshopifyDomain }` via Shopify-connectorn. Han fick leta i onödan.)*
     Ordningen är alltid: **försök själv → misslyckas → fråga med exakt en fråga.**
-16. **Ett fel = en ny regel.** Missar du något, eller säger Axel "så här vill jag ha
+16. **Produktlänkar ska stå direkt i svaret som klickbara URL:er** — aldrig bara som en filväg i
+    repot (`temu/…/LANKAR.md`) och aldrig som handle. Axel öppnar inte filer på branchen; han klickar
+    på länkar i chatten. *(2026-09-24: två gånger fick han "länkarna ligger i filen" och svarade
+    "vart är alla produktlänkar?" och "jag kan inte göra nått med dessa pisslänkar".)* Är det fler än
+    tio produkter: en tabell med produktnamn + SE-länk + NO-länk, inget annat runt omkring.
+17. **Ett fel = en ny regel.** Missar du något, eller säger Axel "så här vill jag ha
     det", skriv in det här i samma svar. Reglerna är produkten — nästa session vet
     ingenting utom det som står skrivet.
 
