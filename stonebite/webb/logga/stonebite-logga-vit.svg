@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 24" width="1500" height="240">
+  <defs><mask id="bett"><rect width="24" height="24" fill="#fff"/><circle cx="19.4" cy="6.6" r="4.1" fill="#000"/></mask></defs>
+  <path mask="url(#bett)" fill="#f3f4f5" d="M4.2 7.4 11.1 3a1.7 1.7 0 0 1 1.8 0l6.9 4.4c.5.3.8.9.8 1.5v6.2c0 .6-.3 1.2-.8 1.5l-6.9 4.4a1.7 1.7 0 0 1-1.8 0L4.2 16.6a1.8 1.8 0 0 1-.8-1.5V8.9c0-.6.3-1.2.8-1.5Z"/>
+  <text x="31" y="16.6" fill="#f3f4f5" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-weight="600" font-size="11.5" letter-spacing="1.8">STONEBITE</text>
+</svg>
