@@ -63,17 +63,45 @@ första avläsningen, tidigast tre dygn efter start. Ingen dom under 300 kr / 3 
    före produktsidan och kan vara importerade. 316 och 319 bygger på dem; 319 har
    inget organiskt alternativ.
 
-## Så laddas batchen upp i Notion (när Axel sagt ja)
+## I Notion sedan 2026-09-25 (Axels order: "ladda upp dom i creative hub MASTER")
 
 Hubben "Creative Hub master" `36f270ab-908c-803b-8949-ff2326f4f76c` (`commission/hubbar.json`).
-Spärren först, sedan en rad per brief:
+Alla 20 rader skapade med `tools/notion-brief-upp.mjs` efter grön spärr, Status `Draft`,
+Typ `Video - Pending Approval` **även för de åtta bilderna** (hubbens Typ-lista saknar
+"Image - Pending Approval", och NOTION-FORMAT säger samma tagg för allt), hela briefen
+som sidinnehåll, tillbakaläst. Kontrollerat med en egen fråga mot hubben efteråt:
+20 rader, alla Draft, alla med rätt Typ och landningssida.
+
+| Rad | Notion |
+|---|---|
+| Mastern_GT_301_H1 | https://www.notion.so/3e6270ab908c81eb9591d044f65f16d3 |
+| Mastern_GT_302_H1 | https://www.notion.so/3e6270ab908c81dc94adcb04bad5cc4e |
+| Mastern_GT_303_H1 | https://www.notion.so/3e6270ab908c815d977cc8d67389d44f |
+| Mastern_OB_304_H1 | https://www.notion.so/3e6270ab908c81c1b839c32ddb580769 |
+| Mastern_GT_305_H1 | https://www.notion.so/3e6270ab908c81f390cbfa1be074b68c |
+| Mastern_GT_306_H1 | https://www.notion.so/3e6270ab908c810daa67ff394b82d05c |
+| Mastern_GT_307_H1 | https://www.notion.so/3e6270ab908c81db860bd2f5ec8ec1ff |
+| Mastern_GT_308_H1 | https://www.notion.so/3e6270ab908c81a69097c9a42be374eb |
+| Mastern_GT_309_H1 | https://www.notion.so/3e6270ab908c81b5a07ed3ec511a2fc2 |
+| Mastern_GT_310_H1 | https://www.notion.so/3e6270ab908c81e49657d74c8d609d4c |
+| Mastern_GT_311_H1 | https://www.notion.so/3e6270ab908c814889d7c5ad58575483 |
+| Mastern_GT_312_H1 | https://www.notion.so/3e6270ab908c81d894b9c672e079edf7 |
+| Mastern_GT_313_1 | https://www.notion.so/3e6270ab908c81c1972bc83ccb1faa91 |
+| Mastern_GT_314_1 | https://www.notion.so/3e6270ab908c81798735e81a2fc364f8 |
+| Mastern_GT_315_1 | https://www.notion.so/3e6270ab908c81b9b1f5df5f3f912646 |
+| Mastern_SP_316_1 | https://www.notion.so/3e6270ab908c816d8a3ced9385087365 |
+| Mastern_GT_317_1 | https://www.notion.so/3e6270ab908c815bb460ffc9d170d513 |
+| Mastern_GT_318_1 | https://www.notion.so/3e6270ab908c814eb8c9ceb54c717f21 |
+| Mastern_SP_319_1 | https://www.notion.so/3e6270ab908c8148b22ed5cb874a713e |
+| Mastern_CS_320_1 | https://www.notion.so/3e6270ab908c813fa609cc4327566d47 |
+
+Ansvarig och Prioritet sätts av Axel i hubben. En omskriven brief byts ut med
+`--ersatt` (samma rad, Status och kommentarer kvar) — aldrig en ny rad:
 
 ```bash
 node tools/briefgranskning.mjs --rad docs/briefs/fars-dag-2026/video-ads-briefs/Mastern_GT_301_H1/brief.md --prefix Mastern --pris 999 --jamforpris 1600
-node tools/notion-brief-upp.mjs docs/briefs/fars-dag-2026/video-ads-briefs/Mastern_GT_301_H1/brief.md --hub 36f270ab-908c-803b-8949-ff2326f4f76c --typ video --torr
+node tools/notion-brief-upp.mjs docs/briefs/fars-dag-2026/video-ads-briefs/Mastern_GT_301_H1/brief.md --hub 36f270ab-908c-803b-8949-ff2326f4f76c --typ video --ersatt
 ```
-
-Exit 1 ur spärren ⇒ ingen rad. `--torr` först, sedan skarpt. Statics med `--typ bild`.
 
 ## Filerna
 
