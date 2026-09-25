@@ -230,6 +230,17 @@ const DYNAMISKA = {
     knappText: 'Tillbaka till kassan',
     knappHref: '{% if event.extra.responsive_checkout_url %}{{ event.extra.responsive_checkout_url }}{% else %}{{ event.extra.checkout_url }}{% endif %}',
   },
+  // Fulfilled Order bär samma line_items som ordern. Utan pris: mejlet
+  // handlar om vad kunden fick hem, inte om vad det kostade.
+  skickade_rader: {
+    rubrik: 'Det här fick du hem',
+    loop: 'event.extra.line_items',
+    titel: '{{ item.title }}',
+    bild: 'item.product.images.0.src',
+    antal: '{{ item.quantity }}',
+    pris: '',
+    knappText: null,
+  },
   order_rader: {
     rubrik: 'Det här beställde du',
     loop: 'event.extra.line_items',
@@ -292,7 +303,7 @@ function dynamiskBlock(b, ctx) {
     rader = `{% for item in ${d.loop} %}${dynamiskRadHtml(s, { bild: `{{ ${d.bild} }}`, bildVillkor: d.bild, titel: d.titel, antal: d.antal, pris: d.pris })}{% endfor %}`;
   } else {
     const ex = exempelProdukter(ctx);
-    rader = ex.map((p) => dynamiskRadHtml(s, { bild: esk(bildLiten(p.bild)), titel: esk(p.titel), antal: 1, pris: kr(p.pris) })).join('');
+    rader = ex.map((p) => dynamiskRadHtml(s, { bild: esk(bildLiten(p.bild)), titel: esk(p.titel), antal: 1, pris: d.pris === '' ? '' : kr(p.pris) })).join('');
     href = esk(ctx.brand.butik_url);
   }
   const rubrik = `<p style="${s.rubrik} font-size: 16px; color: ${s.svart}; letter-spacing: 0.5px; margin: 0 0 4px;">${esk(d.rubrik)}</p>`;
@@ -432,11 +443,18 @@ const BLOCK = {
   stjarnor(b, ctx) {
     const { s } = ctx;
     const celler = stjarnLankar(b, ctx)
-      .map((href, i) => `<td align="center" style="padding: 0 4px;"><a href="${esk(href)}" target="_blank" title="${i + 1} av 5" style="${s.brod} font-size: 40px; line-height: 1; color: #f5b301; text-decoration: none;">&#9733;</a></td>`)
+      .map((href, i) => `<td align="center" style="padding: 0 3px;"><a href="${esk(href)}" target="_blank" title="${i + 1} av 5" style="${s.brod} font-size: 44px; line-height: 1; color: #f5b301; text-decoration: none;">&#9733;</a></td>`)
       .join('');
     return rad(`
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr>${celler}</tr></table>${b.text ? `
-              <p align="center" style="${s.brod} font-size: 13px; color: ${s.gra}; margin: 10px 0 0;">${esk(b.text)}</p>` : ''}`, '12px 32px 16px');
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${s.svart}">
+                <tr>
+                  <td align="center" style="padding: 24px 16px 22px;">${b.rubrik ? `
+                    <p style="${s.rubrik} font-size: 18px; letter-spacing: 1px; color: #ffffff; margin: 0 0 14px;">${esk(b.rubrik)}</p>` : ''}
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr>${celler}</tr></table>${b.text ? `
+                    <p style="${s.brod} font-size: 13px; line-height: 1.5; color: #d9d9d9; margin: 14px 0 0;">${esk(b.text)}</p>` : ''}
+                  </td>
+                </tr>
+              </table>`, '16px 32px 16px');
   },
   grundare(b, ctx) {
     const { s, lage } = ctx;
