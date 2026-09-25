@@ -39,5 +39,6 @@
     "jul_sista_bestallning": "2026-12-03",
     "kalender_comment": "Sista beställningsdagarna = högtiden minus leverans_p90_dygn (20). Huvudsessionens beslut 2026-09-24, Axel kan ändra: jul 23/12 − 20 = 3/12, fars dag 8/11 − 20 = 19/10."
   },
-  "public_id_comment": "Mätt 2026-09-25: sajten laddar klaviyo.js?company_id=QZ4jLG, och Cowork såg samma id i Klaviyo → Settings → API keys (företaget 'Bäverbutiken'). Till och med 2026-09-24 laddade sajten TMFt7M, ett äldre konto (avsändare kundsupport@baverkoppling.se). Kontot byttes mellan mätningarna. TMFt7M rörs aldrig."
+  "public_id_comment": "Mätt 2026-09-25: sajten laddar klaviyo.js?company_id=QZ4jLG, och Cowork såg samma id i Klaviyo → Settings → API keys (företaget 'Bäverbutiken'). Till och med 2026-09-24 laddade sajten TMFt7M, ett äldre konto (avsändare kundsupport@baverkoppling.se). Kontot byttes mellan mätningarna. TMFt7M rörs aldrig.",
+  "plan_2026_09_25": "Gratisplanen (Cowork läste det i Klaviyo → Billing 2026-09-25): gräns 250 profiler, 0 aktiva. Kampanjer till 6 186 med samtycke kräver en betald plan, och det är Axels beslut."
 }
