@@ -167,12 +167,22 @@ export function hittaLarm({ snapshot, skickade = [], personer = [], nu = new Dat
     const brand = brandForKundtjanst(tv.brand) ?? tv.brand;
     const nyckel = `tvist:${tv.brand}:${tv.order}:${tv.deadline}`;
     if (redan.has(nyckel)) continue;
+    // Två tvister på SAMMA order och deadline (mätt 2026-09-25: #5053 hade två
+    // inquiries, 348 + 255 SEK) är ETT ärende för VA:n — en ping med båda
+    // beloppen, aldrig två pingar med samma nyckel.
+    const samma = larm.find((l) => l.nyckel === nyckel);
+    if (samma) {
+      samma.antalTvister = (samma.antalTvister ?? 1) + 1;
+      if (samma.valuta === tv.valuta && Number.isFinite(Number(tv.belopp))) samma.belopp = Number(samma.belopp ?? 0) + Number(tv.belopp);
+      if (tv.typ === 'chargeback') samma.tvisttyp = 'chargeback';
+      continue;
+    }
     const kanal = kanalFor(kanaler, brand);
     if (!kanal) { varningar.push(`${tv.order} (${tv.brand}): ingen Discord-kanal att posta i`); continue; }
     larm.push({
       nyckel, typ: 'tvist', brand, kanalId: kanal.kanalId, kanal: kanal.kanal, server: kanal.server,
       order: tv.order, butik: tv.brand, tvisttyp: tv.typ, belopp: tv.belopp, valuta: tv.valuta, deadline: tv.deadline, kvar,
-      mottagare: mottagareFor(personer, brand),
+      antalTvister: 1, mottagare: mottagareFor(personer, brand),
     });
   }
 
@@ -185,7 +195,8 @@ export function formulera(l) {
   const brand = BRANDNAMN[l.brand] ?? l.brand;
   if (l.typ === 'tvist') {
     const typ = l.tvisttyp === 'chargeback' ? '🔴 **Chargeback deadline' : '🟡 **Bank inquiry deadline';
-    const belopp = l.belopp ? `${Number(l.belopp).toLocaleString('en-US')} ${l.valuta ?? ''}`.trim() : 'amount unknown';
+    const flera = (l.antalTvister ?? 1) > 1 ? `${l.antalTvister} ${l.tvisttyp === 'chargeback' ? 'chargebacks' : 'inquiries'} on this order, ` : '';
+    const belopp = l.belopp ? `${flera}${Number(l.belopp).toLocaleString('en-US')} ${l.valuta ?? ''}${flera ? ' in total' : ''}`.trim() : 'amount unknown';
     // Utan ordernamn bär snapshoten Shopifys interna order-id — säg det, så VA:n inte söker på fel sak.
     const order = String(l.order ?? '').startsWith('#') ? l.order : `Shopify order id ${l.order}`;
     const tid = l.kvar < 0 ? `OVERDUE by ${Math.abs(l.kvar)} day${Math.abs(l.kvar) === 1 ? '' : 's'}` : l.kvar === 0 ? 'due TODAY' : `${l.kvar} day${l.kvar === 1 ? '' : 's'} left`;

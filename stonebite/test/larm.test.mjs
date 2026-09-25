@@ -105,6 +105,20 @@ test('tvister: deadline inom tre dagar eller passerad pingar, i varumärkets esk
   assert.deepEqual(per['#9001'].mottagare.map((p) => p.id), ['mechile', 'va2']);
 });
 
+test('två tvister på samma order och deadline är EN ping med båda beloppen (#5053, 2026-09-25)', () => {
+  const snapshot = { eskalering: { kanaler: [kanal('baverbutiken', 'customer-service', [])] }, oppnaTvister: [
+    { tvistId: 'a', order: '#5053', brand: 'baverbutiken', typ: 'inquiry', belopp: 348, valuta: 'SEK', deadline: '2026-09-24', oppen: true },
+    { tvistId: 'b', order: '#5053', brand: 'baverbutiken', typ: 'inquiry', belopp: 255, valuta: 'SEK', deadline: '2026-09-24', oppen: true },
+  ] };
+  const { larm } = hittaLarm({ snapshot, personer: PERSONER, nu: NU });
+  assert.equal(larm.length, 1, 'en ping, inte två med samma nyckel');
+  assert.equal(larm[0].belopp, 603);
+  assert.equal(larm[0].antalTvister, 2);
+  const text = formulera(larm[0]);
+  assert.match(text, /2 inquiries on this order, 603 SEK in total/);
+  assert.equal((text.match(/#5053/g) ?? []).length, 1);
+});
+
 test('minnet stoppar dubbletter — samma tvist och samma rad pingas aldrig två gånger', () => {
   const snapshot = { eskalering: { kanaler: [kanal('baverbutiken', 'customer-service', [m(3, 'Axel', 'Obesvarat')])] },
     oppnaTvister: [{ order: '#5584', brand: 'baverbutiken', typ: 'chargeback', belopp: 348, valuta: 'SEK', deadline: '2026-09-23', oppen: true }] };
