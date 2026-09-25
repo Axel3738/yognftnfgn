@@ -1,0 +1,63 @@
+{
+  "id": "k14-sista-bestallningsdag-jul",
+  "namn": "MAIL_20261201_Julklapp_GT_4_engagerade90d_promo_sista-dag-3-dec_v1",
+  "memo": "Riktig brådska: efter torsdag 3 december hinner paketet inte fram till jul (klaviyo/brands/baverbutiken.json → kalender, 23 dec minus p90 20 dygn). Mejlet säger det rakt ut och lovar inget efter datumet. Produktraden är de fyra platshållarna ur K13 (den slutliga uppsättningen sätts om K13:s köpdata pekar på andra produkter, men mejlet byggs redan nu så det finns att skicka).",
+  "taggar": {
+    "typ": "M",
+    "_typ": "N=nytt koncept, I=iteration av annonsvinnare, IM=imitation, M=mejlspecifikt, S=säsong",
+    "kalla": "egen-data",
+    "_kalla": "egen-data | winning-line | voc | swipe | gissning",
+    "kalla_ref": null,
+    "lardom": null,
+    "avatar": "den som ännu inte bestämt julklappen och är nära sista beställningsdagen",
+    "begar": "hinna beställa i tid utan att missa datumet",
+    "awareness": "promo",
+    "_awareness": "unaware | problem | solution | product | promo",
+    "urgency": "konsekvens",
+    "_urgency": "sasong | lager | pris | konsekvens | ingen",
+    "confidence": "medium",
+    "_confidence": "high | medium | low (low = gissning)",
+    "prefix": "Julklapp",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    { "text": "Torsdag är sista dagen för jul", "begar": "veta det verkliga, konkreta datumet" },
+    { "text": "Efter torsdag hinner det inte fram", "begar": "förstå konsekvensen av att vänta" },
+    { "text": "Fyra förslag, om du inte bestämt dig", "begar": "få hjälp att bestämma snabbt" }
+  ],
+  "forhandstext": "3 december. Efter det räknar vi inte med att det hinner fram till jul.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Torsdag är sista dagen",
+      "text": "{{fornamn}}, beställer du senast torsdag 3 december hinner paketet fram till jul. Efter det räknar vi inte med att det gör det.",
+      "bild": "produkt:takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+      "knapp": { "text": "Beställ innan torsdag", "lank": "kollektion:alla-produkter" }
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Fyra förslag, om du inte bestämt dig än",
+      "handles": [
+        "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+        "fiskespohallare-4-pack-kraftig-forvaring",
+        "balteslipmaskin-mini-3-i-1-knivslip-polerare",
+        "overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+      ]
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "Torsdag är sista dagen för jul", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Efter torsdag hinner det inte fram", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fyra förslag, om du inte bestämt dig", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "3 december. Efter det räknar vi inte med att det hinner fram till jul.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Torsdag är sista dagen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fyra förslag, om du inte bestämt dig än", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Beställ innan torsdag", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-12-01T18:00:00+01:00",
+  "segment": ["SEG_engagerade_90d"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

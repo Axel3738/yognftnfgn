@@ -1,0 +1,212 @@
+{
+  "id": "f05-vinback",
+  "namn": "FLOW_order_vinback_v2",
+  "memo": "Omgjort 2026-09-24 (BRIEFER.md → F05). Väntan flyttad 75 → 120 dagar: 47 tvåorderskunder köpte igen efter mer än 120 dagar (klaviyo/evolve/ATERKOP-ANALYS.md). Bävertratten (bavertratt-tanka-utan-spill) är den vanligaste andra produkten efter en lång paus (14 av 69) och står först i E1:s produktrad. Inget erbjudande i något av mejlen: TACKIGEN gäller 7 dagar från en order, och den här kunden har ingen ny.",
+  "trigger": {
+    "typ": "metrik",
+    "metrik": [
+      "Placed Order"
+    ]
+  },
+  "filter": [
+    "samtycke",
+    "ej_kopt_sedan_start"
+  ],
+  "ateintrade": {
+    "varaktighet": 90,
+    "enhet": "day"
+  },
+  "steg": [
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 120
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f05-vinback-e1",
+        "namn": "FLOW_order_E1_M_det-har-hant-en-del-sedan-sist_v2",
+        "memo": "120 dagar utan nytt köp. Bävertratten öppnar produktraden eftersom den är det vanligaste andra köpet efter en lång paus (14 av 69, ATERKOP-ANALYS.md). Inget erbjudande, för TACKIGEN kräver en färsk order.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "klaviyo/evolve/ATERKOP-ANALYS.md",
+          "lardom": null,
+          "avatar": "köpare som inte handlat på över fyra månader",
+          "begar": "påminnas om att butiken finns och se vad andra som varit borta länge köper igen",
+          "awareness": "solution",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "Vinback",
+          "kod": "M"
+        },
+        "amnesrader": [
+          {
+            "text": "Det har hänt en del sedan sist",
+            "begar": "nyfikenhet på vad som förändrats"
+          },
+          {
+            "text": "Den här köper folk oftast efter ett uppehåll",
+            "begar": "se vad andra kunder i samma läge väljer"
+          },
+          {
+            "text": "Fyra prylar du inte såg förra gången",
+            "begar": "upptäcka nytt i sortimentet"
+          }
+        ],
+        "forhandstext": "En liten pryl de flesta väntar för länge med, och tre till.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Det har hänt en del sedan sist",
+            "text": "Det är ett tag sen du handlade hos oss. Här är vad andra kunder som varit borta lika länge brukar handla när de kommer tillbaka."
+          },
+          {
+            "typ": "produktrad",
+            "rubrik": "Det här handlar man ofta efter ett uppehåll",
+            "handles": [
+              "bavertratt-tanka-utan-spill",
+              "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+              "batmotorskydd-420d-heltackande-for-utombordare",
+              "overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+            ]
+          },
+          {
+            "typ": "fakta"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Det har hänt en del sedan sist",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Den här köper folk oftast efter ett uppehåll",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Fyra prylar du inte såg förra gången",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "En liten pryl de flesta väntar för länge med, och tre till.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Det har hänt en del sedan sist",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Det här handlar man ofta efter ett uppehåll",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ]
+      }
+    },
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 14
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f05-vinback-e2",
+        "namn": "FLOW_order_E2_S_tre-prylar-for-sasongen_v2",
+        "memo": "Sista mejlet i vinback-flödet. Kort, säsongsprodukter, ingen upprepning av erbjudandet eftersom det aldrig fanns med i E1.",
+        "taggar": {
+          "typ": "S",
+          "kalla": "egen-data",
+          "kalla_ref": null,
+          "lardom": null,
+          "avatar": "köpare som inte handlat på över fyra månader",
+          "begar": "en sista, kort påminnelse med något relevant för säsongen",
+          "awareness": "solution",
+          "urgency": "sasong",
+          "confidence": "medium",
+          "prefix": "Vinback",
+          "kod": "S"
+        },
+        "amnesrader": [
+          {
+            "text": "Tre prylar för säsongen",
+            "begar": "se konkreta säsongsprodukter"
+          },
+          {
+            "text": "Fortfarande något du funderar på",
+            "begar": "möjlighet att fråga innan man släpper tanken"
+          },
+          {
+            "text": "Sista mejlet från oss den här gången",
+            "begar": "veta att detta är sista i sekvensen"
+          }
+        ],
+        "forhandstext": "Tre prylar för säsongen, sen hör du inget mer om det här från oss.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Tre prylar för säsongen",
+            "text": "Kort och gott, det här säljer bäst just nu för den tid på året det är."
+          },
+          {
+            "typ": "produktrad",
+            "rubrik": "Säsongens mest köpta",
+            "handles": [
+              "sotarset-med-bojliga-stanger-rensar-rokkanal-och-kaminror",
+              "damasker-vandring-haller-sno-vata-grus-ute",
+              "adventskalender-racingbilar-24-bilar-bakom-24-luckor"
+            ]
+          },
+          {
+            "typ": "fakta"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Tre prylar för säsongen",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Fortfarande något du funderar på",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Sista mejlet från oss den här gången",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Tre prylar för säsongen, sen hör du inget mer om det här från oss.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Säsongens mest köpta",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ]
+      }
+    }
+  ]
+}

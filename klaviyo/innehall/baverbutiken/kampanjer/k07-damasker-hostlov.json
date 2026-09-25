@@ -1,0 +1,62 @@
+{
+  "id": "k07-damasker-hostlov",
+  "namn": "MAIL_20261020_Damasker_PD_1_engagerade60d_solution_torra-fotter_v1",
+  "memo": "Demon av påtagningen (Damasker_PD_1: 56 köp, CPA 191 kr) är den enda bevisade vinkeln. UGC och social proof har förlorat. Mejlet bygger därför på hur lätt de sätts på, i steg, och inte på recensioner. Höstlov v44 och älgjakten (sedan 8 okt i södra Sverige) är säsongen.",
+  "taggar": {
+    "typ": "I",
+    "kalla": "egen-data",
+    "kalla_ref": "products/drytrek/dna.md:44-47",
+    "lardom": null,
+    "avatar": "den som går i skogen på hösten, jägaren eller vandraren",
+    "begar": "torra fötter och byxben hela dagen",
+    "awareness": "solution",
+    "urgency": "sasong",
+    "confidence": "medium",
+    "prefix": "Damasker",
+    "kod": "PD"
+  },
+  "amnesrader": [
+    { "text": "44 cm skydd, tre grepp, klart", "begar": "enkelhet kombinerat med skydd" },
+    { "text": "Kroken i snörningen håller den uppe hela dagen", "begar": "resultatet, slippa blöta strumpor" },
+    { "text": "Redo för älgpasset i gryningen", "begar": "säsong och sammanhang, jakt och höstlov" }
+  ],
+  "forhandstext": "Kroka fast, dra remmen, slut kardborren.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Kardborren runt benet stänger ute gruset",
+      "text": "Snö nerifrån, blöt sly och grus som letar sig ner i kängan. Det är sällan vädret som stoppar turen, det är det som tar sig in nedtill.",
+      "bild": "produkt:damasker-vandring-haller-sno-vata-grus-ute",
+      "knapp": { "text": "Se damaskerna", "lank": "produkt:damasker-vandring-haller-sno-vata-grus-ute" }
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "Så sätter du på dem",
+      "punkter": [
+        "Kroka fast i snörningen",
+        "Dra remmen under foten",
+        "Slut kardborren runt benet"
+      ]
+    },
+    {
+      "typ": "produkt",
+      "handle": "damasker-vandring-haller-sno-vata-grus-ute",
+      "text": "44 centimeter skydd i 100 % polyester, i en storlek som justeras efter benet.",
+      "knapp": "Se damaskerna"
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "44 cm skydd, tre grepp, klart (ämnesrad)", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Kroken i snörningen håller den uppe hela dagen (ämnesrad)", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Redo för älgpasset i gryningen (ämnesrad)", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Kroka fast, dra remmen, slut kardborren. (förhandstext)", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Kardborren runt benet stänger ute gruset (rubrik, hero)", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se damaskerna (knapp, hero och produkt)", "visualisera": true, "falsifiera": true, "ingen_annan": false }
+  ],
+  "planerad": "2026-10-20T18:00:00+02:00",
+  "segment": ["SEG_engagerade_60d"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

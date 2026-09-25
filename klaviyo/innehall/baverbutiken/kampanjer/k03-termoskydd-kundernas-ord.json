@@ -1,0 +1,59 @@
+{
+  "id": "k03-termoskydd-kundernas-ord",
+  "namn": "MAIL_20261006_Termoskydd_SP_2_uppvarmning_product_kundernas-ord_v1",
+  "memo": "Hypotes: kundomdömen i bild gav annonsens högsta CTR (7,04 %) och vittnesmålet SP_2 bästa CPA (149 kr). Erbjudandevinkeln med mest köp bygger på falsk brådska och används inte. Riktiga recensioner ordagrant plus höstens problem, kalla nätter och imma, ska konvertera utan brådska.",
+  "taggar": {
+    "typ": "I",
+    "kalla": "egen-data",
+    "kalla_ref": "products/carashell/termoskyddet/dna.md:70-82",
+    "lardom": null,
+    "avatar": "husbilsägaren som kör hösten ut",
+    "begar": "varm och torr hytt utan imma på morgonen",
+    "awareness": "product",
+    "urgency": "sasong",
+    "confidence": "medium",
+    "prefix": "Termoskydd",
+    "kod": "SP"
+  },
+  "amnesrader": [
+    { "text": "Immig ruta varje morgon", "begar": "vakna utan att behöva torka bort imma" },
+    { "text": "Alla på rastplatsen ser rakt in", "begar": "inte bli sedd av alla som går förbi på rastplatsen" },
+    { "text": "Sätts fast utan att öppna en dörr", "begar": "sätta på skyddet utan att öppna dörrarna i kylan" }
+  ],
+  "forhandstext": "Skyddet sitter utanpå glaset, inte innanför.",
+  "block": [
+    { "typ": "citat", "handle": "termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande", "antal": 2 },
+    {
+      "typ": "hero",
+      "rubrik": "Imma inifrån, varje morgon",
+      "text": "Hej {{fornamn}},\n\nFukten från natten lägger sig på insidan av rutan. Gardiner gör bara att den stannar kvar mellan glaset och tyget.",
+      "bild": "produkt:termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+      "knapp": { "text": "Se termoskyddet", "lank": "produkt:termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande" }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Skyddet spänns utanpå rutan i stället för innanför, så kylan aldrig får kontakt med glaset från insidan. Det mörklägger samtidigt hela framvagnen, och ingen ser in på rastplatsen."
+    },
+    {
+      "typ": "produkt",
+      "handle": "termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+      "text": "Täcker vindrutan och båda sidorutorna, 211 cm bred och 171 cm över mitten.",
+      "knapp": "Se termoskyddet"
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "Immig ruta varje morgon", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Alla på rastplatsen ser rakt in", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sätts fast utan att öppna en dörr", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Skyddet sitter utanpå glaset, inte innanför.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Imma inifrån, varje morgon", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se termoskyddet", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-10-06T18:00:00+02:00",
+  "segment": ["SEG_uppvarmning_steg1"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "klar",
+  "kraver_axel": null
+}

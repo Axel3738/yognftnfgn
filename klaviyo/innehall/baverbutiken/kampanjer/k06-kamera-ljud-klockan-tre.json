@@ -1,0 +1,127 @@
+{
+  "id": "k06-kamera-ljud-klockan-tre",
+  "namn": "MAIL_20261015_Overvakningskamera_PD_2_engagerade60d_problem_ljud-klockan-tre_v1",
+  "memo": "Problemöppningen \"Ett ljud på tomten klockan tre\" hade bäst hook rate (43,1 %) men bara 2 köp: stoppar, men inte bevisad på köp. Social proof i video bar 65 % av vinstbidraget. Hypotes: kroken som ämnesrad plus riktiga recensioner som bevis ger både öppning och köp. Höstmörkret gör kroken aktuell.",
+  "taggar": {
+    "typ": "I",
+    "kalla": "egen-data",
+    "kalla_ref": "products/hemvakten/dna.md:122-135",
+    "lardom": null,
+    "avatar": "villaägaren som hör något ute på natten",
+    "begar": "att veta vad som händer utan att gå ut",
+    "awareness": "problem",
+    "urgency": "ingen",
+    "confidence": "medium",
+    "prefix": "Overvakningskamera",
+    "kod": "PD"
+  },
+  "amnesrader": [
+    {
+      "text": "Larmar på personer, inte på katter",
+      "begar": "pålitlighet, inga falsklarm"
+    },
+    {
+      "text": "Ett ljud på tomten klockan tre",
+      "begar": "veta vad som händer utan att gå ut i mörkret"
+    },
+    {
+      "text": "Kameran vänder sig efter det som rör sig",
+      "begar": "trygghet, den följer automatiskt"
+    }
+  ],
+  "forhandstext": "AI:n vet skillnaden mellan en gren och en människa.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "En gren rör sig. Kameran vet skillnaden.",
+      "text": "Du ligger vaken och gissar: katten, vinden eller något annat. Att gå ut och kolla är det sista du vill.",
+      "bild": "produkt:overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+      "knapp": {
+        "text": "Se vad som rör sig",
+        "lank": "produkt:overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+      }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "En kamera med två linser täcker 355 grader med panorering och zoom. AI:n skiljer människor från grenar och katter, så den larmar på rätt saker.\n\nRör sig något på tomten följer kameran automatiskt, och mobilen säger till direkt."
+    },
+    {
+      "typ": "citat",
+      "handle": "overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+      "antal": 2
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "Vad kameran gör",
+      "punkter": [
+        "Inga döda vinklar, dubbla linser och PTZ 355 grader",
+        "Larmar på personer, inte på katter, med AI-detektering",
+        "Följer rörelsen automatiskt och skickar direktnotis i mobilen",
+        "Tål utomhusbruk året om"
+      ]
+    },
+    {
+      "typ": "produkt",
+      "handle": "overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+      "text": "Övervakningskamera Trådlös, med AI som vet skillnaden mellan en gren och en person.",
+      "knapp": "Se kameran"
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    {
+      "rad": "Larmar på personer, inte på katter (ämnesrad)",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Ett ljud på tomten klockan tre (ämnesrad, annonsens bevisade hook)",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Kameran vänder sig efter det som rör sig (ämnesrad)",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "AI:n vet skillnaden mellan en gren och en människa. (förhandstext)",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "En gren rör sig. Kameran vet skillnaden. (rubrik, hero)",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Se vad som rör sig (knapp, hero)",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": false
+    },
+    {
+      "rad": "Se kameran (knapp, produkt)",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": false
+    }
+  ],
+  "planerad": "2026-10-15T18:00:00+02:00",
+  "segment": [
+    "SEG_engagerade_60d"
+  ],
+  "exkludera": [
+    "SEG_oengagerade_180d"
+  ],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

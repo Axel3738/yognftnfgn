@@ -1,0 +1,574 @@
+{
+  "brand": "baverbutiken",
+  "hamtad": "2026-09-25T05:49:47.991Z",
+  "konto": {
+    "id": "QZ4jLG",
+    "public_api_key": "QZ4jLG",
+    "test_account": false,
+    "tidszon": "Europe/Stockholm",
+    "valuta": "SEK",
+    "organisation": "Bäverbutiken",
+    "adress": {
+      "address1": null,
+      "address2": null,
+      "city": null,
+      "region": null,
+      "country": "United States",
+      "zip": null
+    }
+  },
+  "avsandare": {
+    "konto_standard": {
+      "email": "",
+      "namn": "Bäverbutiken"
+    },
+    "brandfilen": {
+      "from_email": "kundsupport@baverbutiken.se",
+      "from_label": "Bäverbutiken",
+      "reply_to_email": "kundsupport@baverbutiken.se"
+    }
+  },
+  "metriker": {
+    "alla": [
+      {
+        "id": "QX3jCb",
+        "namn": "Subscribed to Back in Stock",
+        "integration": "Klaviyo"
+      },
+      {
+        "id": "RA4neN",
+        "namn": "Refunded Order",
+        "integration": "Shopify"
+      },
+      {
+        "id": "Rg8ATA",
+        "namn": "Skipped Send",
+        "integration": "Klaviyo"
+      },
+      {
+        "id": "Rvr7Tq",
+        "namn": "Active on Site",
+        "integration": "API"
+      },
+      {
+        "id": "RwBBY8",
+        "namn": "Subscribed to Email Marketing",
+        "integration": "Klaviyo"
+      },
+      {
+        "id": "T4yuq5",
+        "namn": "Clicked email to unsubscribe",
+        "integration": "Klaviyo"
+      },
+      {
+        "id": "TZvimU",
+        "namn": "Placed Order",
+        "integration": "Shopify"
+      },
+      {
+        "id": "ThQZpT",
+        "namn": "Clicked Email",
+        "integration": "Klaviyo"
+      },
+      {
+        "id": "TnufKh",
+        "namn": "Checkout Started",
+        "integration": "Shopify"
+      },
+      {
+        "id": "UQYmUy",
+        "namn": "Marked Email as Spam",
+        "integration": "Klaviyo"
+      },
+      {
+        "id": "UZDCyY",
+        "namn": "Opened Email",
+        "integration": "Klaviyo"
+      },
+      {
+        "id": "V6gSUn",
+        "namn": "Viewed Product",
+        "integration": "API"
+      },
+      {
+        "id": "VMVbSp",
+        "namn": "Cancelled Order",
+        "integration": "Shopify"
+      },
+      {
+        "id": "VaU9fL",
+        "namn": "Added to Cart",
+        "integration": "Shopify"
+      },
+      {
+        "id": "WDqfr3",
+        "namn": "Bounced Email",
+        "integration": "Klaviyo"
+      },
+      {
+        "id": "WN5w5t",
+        "namn": "Received Email",
+        "integration": "Klaviyo"
+      },
+      {
+        "id": "WXk2Lf",
+        "namn": "Viewed Product",
+        "integration": "Shopify"
+      },
+      {
+        "id": "XAm5nS",
+        "namn": "Fulfilled Order",
+        "integration": "Shopify"
+      },
+      {
+        "id": "XQWQsS",
+        "namn": "Unsubscribed from Email Marketing",
+        "integration": "Klaviyo"
+      },
+      {
+        "id": "XaR3Au",
+        "namn": "Fulfilled Partial Order",
+        "integration": "Shopify"
+      },
+      {
+        "id": "XwUj8c",
+        "namn": "Subscribed to List",
+        "integration": "Klaviyo"
+      },
+      {
+        "id": "Ydn7Zv",
+        "namn": "Ordered Product",
+        "integration": "Shopify"
+      },
+      {
+        "id": "YrQ8Vw",
+        "namn": "Dropped Email",
+        "integration": "Klaviyo"
+      }
+    ],
+    "kanda": {
+      "placed_order": "TZvimU",
+      "started_checkout": "TnufKh",
+      "active_on_site": "Rvr7Tq",
+      "added_to_cart": "VaU9fL",
+      "ordered_product": "Ydn7Zv",
+      "opened_email": "UZDCyY",
+      "clicked_email": "ThQZpT",
+      "received_email": "WN5w5t"
+    },
+    "saknas": [
+      {
+        "nyckel": "viewed_product",
+        "namn": [
+          "Viewed Product"
+        ],
+        "orsak": "Metriken \"Viewed Product\" finns 2 gånger i kontot (V6gSUn från API, WXk2Lf från Shopify). Motorn väljer inte själv — säg vilken som gäller.",
+        "kod": "METRIK_FLERA"
+      }
+    ]
+  },
+  "listor": [
+    {
+      "id": "ThfZj2",
+      "namn": "LISTA_nyhetsbrev",
+      "opt_in": "single_opt_in"
+    },
+    {
+      "id": "UwtkwY",
+      "namn": "Email List",
+      "opt_in": "single_opt_in"
+    },
+    {
+      "id": "WiTe3t",
+      "namn": "Preview List",
+      "opt_in": "single_opt_in"
+    }
+  ],
+  "segment": [
+    {
+      "id": "QSq5gM",
+      "namn": "Potential Purchasers (Shopify)",
+      "aktiv": true
+    },
+    {
+      "id": "RqMRy2",
+      "namn": "Win-Back Opportunities (Shopify)",
+      "aktiv": true
+    },
+    {
+      "id": "RqcRt9",
+      "namn": "SEG_uppvarmning_steg1",
+      "aktiv": true
+    },
+    {
+      "id": "SKtd8E",
+      "namn": "VIP Customers (Shopify)",
+      "aktiv": true
+    },
+    {
+      "id": "SuYrZB",
+      "namn": "SEG_kopare",
+      "aktiv": true
+    },
+    {
+      "id": "SyLWjH",
+      "namn": "Engaged (90 Days)",
+      "aktiv": true
+    },
+    {
+      "id": "TQeMF8",
+      "namn": "Repeat Buyers (Shopify)",
+      "aktiv": true
+    },
+    {
+      "id": "TjSfvT",
+      "namn": "SEG_kategori_hus_hem",
+      "aktiv": true
+    },
+    {
+      "id": "UKaRrV",
+      "namn": "SEG_oengagerade_180d",
+      "aktiv": true
+    },
+    {
+      "id": "UrQ6bA",
+      "namn": "Engaged (60 Days)",
+      "aktiv": true
+    },
+    {
+      "id": "UsEQcS",
+      "namn": "SEG_samtycke",
+      "aktiv": true
+    },
+    {
+      "id": "UsrAbr",
+      "namn": "SEG_ej_kopt",
+      "aktiv": true
+    },
+    {
+      "id": "V4R8Nd",
+      "namn": "Engaged (30 Days)",
+      "aktiv": true
+    },
+    {
+      "id": "V5sCN4",
+      "namn": "SEG_kopare_30d",
+      "aktiv": true
+    },
+    {
+      "id": "VBQr5h",
+      "namn": "SEG_flerkopare",
+      "aktiv": true
+    },
+    {
+      "id": "VPWrYp",
+      "namn": "SEG_kategori_bat_marin",
+      "aktiv": true
+    },
+    {
+      "id": "VxsqKk",
+      "namn": "SEG_engagerade_60d",
+      "aktiv": true
+    },
+    {
+      "id": "X5YxdD",
+      "namn": "SEG_kategori_husvagn_husbil",
+      "aktiv": true
+    },
+    {
+      "id": "XjSifP",
+      "namn": "SEG_engagerade_90d",
+      "aktiv": true
+    },
+    {
+      "id": "Xui4Vj",
+      "namn": "New Subscribers",
+      "aktiv": true
+    },
+    {
+      "id": "YAvpzW",
+      "namn": "Churn Risks (Shopify)",
+      "aktiv": true
+    },
+    {
+      "id": "YaL7L7",
+      "namn": "SEG_kategori_tradgard",
+      "aktiv": true
+    },
+    {
+      "id": "YzF9tC",
+      "namn": "SEG_vinback_90d",
+      "aktiv": true
+    }
+  ],
+  "floden": [
+    {
+      "id": "TTsxRQ",
+      "namn": "FLOW_segment_sunset_v1",
+      "status": "draft",
+      "trigger_type": "Added to List",
+      "arkiverad": false
+    },
+    {
+      "id": "WLDZUM",
+      "namn": "FLOW_order_motorholje-batmotorskydd_v1",
+      "status": "draft",
+      "trigger_type": "Metric",
+      "arkiverad": false
+    },
+    {
+      "id": "XY5QXa",
+      "namn": "Välkomst",
+      "status": "draft",
+      "trigger_type": "Added to List",
+      "arkiverad": false
+    },
+    {
+      "id": "XgrxZ9",
+      "namn": "Övergiven kassa",
+      "status": "draft",
+      "trigger_type": "Metric",
+      "arkiverad": false
+    },
+    {
+      "id": "XyVzec",
+      "namn": "FLOW_order_vinback_v2",
+      "status": "draft",
+      "trigger_type": "Metric",
+      "arkiverad": false
+    },
+    {
+      "id": "YgzScd",
+      "namn": "FLOW_order_efterkop_v2",
+      "status": "draft",
+      "trigger_type": "Metric",
+      "arkiverad": false
+    }
+  ],
+  "mallar": {
+    "antal": 30,
+    "motorns": [
+      {
+        "id": "WvzJMT",
+        "namn": "TPL_f01-valkomst-e1_v1"
+      },
+      {
+        "id": "VSyGbg",
+        "namn": "TPL_f01-valkomst-e2_v1"
+      },
+      {
+        "id": "SQ6Hrx",
+        "namn": "TPL_f01-valkomst-e3_v1"
+      },
+      {
+        "id": "RA4Cch",
+        "namn": "TPL_f02-overgiven-kassa-e1_v1"
+      },
+      {
+        "id": "SKtt69",
+        "namn": "TPL_f02-overgiven-kassa-e2_v1"
+      },
+      {
+        "id": "UxTkAC",
+        "namn": "TPL_f02-overgiven-kassa-e3_v1"
+      },
+      {
+        "id": "Y8K7BA",
+        "namn": "TPL_f03-webbhistorik-e1_v1"
+      },
+      {
+        "id": "V6h8RR",
+        "namn": "TPL_f03-webbhistorik-e2_v1"
+      },
+      {
+        "id": "Y47Rgc",
+        "namn": "TPL_f04-efter-kop-e1_v1"
+      },
+      {
+        "id": "S3Pa88",
+        "namn": "TPL_f04-efter-kop-e2_v1"
+      },
+      {
+        "id": "Xr6NDz",
+        "namn": "TPL_f05-vinback-e1_v1"
+      },
+      {
+        "id": "SAcWpm",
+        "namn": "TPL_f05-vinback-e2_v1"
+      },
+      {
+        "id": "Xktyib",
+        "namn": "TPL_f06-sunset-e1_v1"
+      },
+      {
+        "id": "WHsvFy",
+        "namn": "TPL_f06-sunset-e2_v1"
+      },
+      {
+        "id": "RSyDrk",
+        "namn": "TPL_f07-motorholje-till-batmotorskydd-e1_v1"
+      },
+      {
+        "id": "Vtqqsi",
+        "namn": "TPL_f07-motorholje-till-batmotorskydd-e2_v1"
+      },
+      {
+        "id": "Y68RqH",
+        "namn": "TPL_k01-takoverdrag-vinterforvaring_v1"
+      },
+      {
+        "id": "XZvB5j",
+        "namn": "TPL_k02-baten-ska-upp_v1"
+      },
+      {
+        "id": "TMCMrJ",
+        "namn": "TPL_k03-termoskydd-kundernas-ord_v1"
+      },
+      {
+        "id": "TaBJP7",
+        "namn": "TPL_k04-sotarset-fore-eldning_v1"
+      },
+      {
+        "id": "Uk2zGX",
+        "namn": "TPL_k05-fars-dag_v1"
+      },
+      {
+        "id": "RUzDzR",
+        "namn": "TPL_k06-kamera-ljud-klockan-tre_v1"
+      },
+      {
+        "id": "VvrqAP",
+        "namn": "TPL_k07-damasker-hostlov_v1"
+      },
+      {
+        "id": "XhRi7i",
+        "namn": "TPL_k08-morkret-kommer_v1"
+      },
+      {
+        "id": "Ytg8Za",
+        "namn": "TPL_k09-adventskalendrar_v1"
+      },
+      {
+        "id": "RcVkBQ",
+        "namn": "TPL_k10-takoverdrag-iteration_v1"
+      },
+      {
+        "id": "WAcZ9h",
+        "namn": "TPL_k11-black-week-start_v1"
+      },
+      {
+        "id": "UaL52b",
+        "namn": "TPL_k12-black-friday_v1"
+      },
+      {
+        "id": "XKBQ39",
+        "namn": "TPL_k13-julklappsguide_v1"
+      },
+      {
+        "id": "R8i6gs",
+        "namn": "TPL_k14-sista-bestallningsdag-jul_v1"
+      }
+    ]
+  },
+  "kampanjer": [
+    {
+      "id": "01M3BHPWX2MBAP7MSM7JXX7FBR",
+      "namn": "MAIL_20261201_Julklapp_GT_4_engagerade90d_promo_sista-dag-3-dec_v1",
+      "status": "Draft",
+      "planerad": null
+    },
+    {
+      "id": "01M3BHPRG1RAV5TW6TDMWMZBVQ",
+      "namn": "MAIL_20261119_Julklapp_GT_3_engagerade90d_solution_julklappar-3-dec_v1",
+      "status": "Draft",
+      "planerad": null
+    },
+    {
+      "id": "01M3BHPMKTRZRSR566GNCXGGK5",
+      "namn": "MAIL_20261127_Bastsaljare_CS_2_engagerade90d_promo_black-friday_v1",
+      "status": "Draft",
+      "planerad": null
+    },
+    {
+      "id": "01M3BHPG4KA7PWZDAV63E3RJQS",
+      "namn": "MAIL_20261123_Bastsaljare_CS_1_engagerade90d_promo_black-week_v1",
+      "status": "Draft",
+      "planerad": null
+    },
+    {
+      "id": "01M3BHPCAHF2RW5YB78X5BBWSN",
+      "namn": "MAIL_20261029_Takoverdrag_OB_4_engagerade90d_product_fukten_v1",
+      "status": "Draft",
+      "planerad": null
+    },
+    {
+      "id": "01M3BHP7VZPYERT6B29MZ7W58V",
+      "namn": "MAIL_20261027_Adventskalender_PD_2_engagerade90d_product_lucka-ett_v1",
+      "status": "Draft",
+      "planerad": null
+    },
+    {
+      "id": "01M3BHP40HHCMV3QAA1AHGZDV7",
+      "namn": "MAIL_20261022_Solcellslampa_S_1_engagerade60d_problem_morkret-kommer_v1",
+      "status": "Draft",
+      "planerad": null
+    },
+    {
+      "id": "01M3BHP02E57BXKGWHTERSB0CW",
+      "namn": "MAIL_20261020_Damasker_PD_1_engagerade60d_solution_torra-fotter_v1",
+      "status": "Draft",
+      "planerad": null
+    },
+    {
+      "id": "01M3BHNVNFH2K7R3CA0ZX2TN3P",
+      "namn": "MAIL_20261015_Overvakningskamera_PD_2_engagerade60d_problem_ljud-klockan-tre_v1",
+      "status": "Draft",
+      "planerad": null
+    },
+    {
+      "id": "01M3BHNQEWWSKJ8RYAN7W73AXP",
+      "namn": "MAIL_20261013_Takoverdrag_GT_2_engagerade60d_product_farsdag-19okt_v1",
+      "status": "Draft",
+      "planerad": null
+    },
+    {
+      "id": "01M3BHNKFX2JQQWFBBS0P5P82D",
+      "namn": "MAIL_20261008_Sotarset_N_1_uppvarmning_problem_sota-innan-du-eldar_v1",
+      "status": "Draft",
+      "planerad": null
+    },
+    {
+      "id": "01M3BHNFHD92GXS2QKNNDGAGKG",
+      "namn": "MAIL_20261006_Termoskydd_SP_2_uppvarmning_product_kundernas-ord_v1",
+      "status": "Draft",
+      "planerad": null
+    },
+    {
+      "id": "01M3BHNAYF01K95MR3X50FA6JV",
+      "namn": "MAIL_20261001_Batmotorskydd_S_1_uppvarmning_solution_baten-ska-upp_v1",
+      "status": "Draft",
+      "planerad": null
+    },
+    {
+      "id": "01M3BHN6HKJ1NXVNW0JYG9ZM0G",
+      "namn": "MAIL_20260929_Takoverdrag_PD_1_uppvarmning_problem_taket-du-aldrig-kollar_v1",
+      "status": "Draft",
+      "planerad": null
+    }
+  ],
+  "varningar": [
+    "Kontot saknar postadress — {{ organization.full_address }} blir tom i sidfoten (MFL 20 §). Fyll i Settings → Brand.",
+    "Shopify-metriker saknas: Viewed Product. Är Shopify-integrationen kopplad (Klaviyo → Integrations → Shopify)? Utan dem går flöden och köparsegment inte att bygga.",
+    "Metriken \"Viewed Product\" finns 2 gånger i kontot (V6gSUn från API, WXk2Lf från Shopify). Motorn väljer inte själv — säg vilken som gäller."
+  ],
+  "senaste_uppladdning": {
+    "tid": "2026-09-25T05:49:44.483Z",
+    "bara": null,
+    "skapade": 4,
+    "uppdaterade": 0,
+    "hoppade": 60,
+    "stopp": [
+      "flode Webbhistorik: Metriken \"Viewed Product\" finns 2 gånger i kontot (V6gSUn från API, WXk2Lf från Shopify). Motorn väljer inte själv — säg vilken som gäller."
+    ]
+  }
+}

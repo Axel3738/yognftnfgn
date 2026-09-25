@@ -1,0 +1,86 @@
+{
+  "id": "f07-motorholje-till-batmotorskydd",
+  "namn": "FLOW_order_motorholje-batmotorskydd_v1",
+  "memo": "Enda produktparet med stöd i datan (klaviyo/evolve/ATERKOP-ANALYS.md): 12 av 21 återköpare som köpte Marin Motorhölje först köpte sedan Båtmotorskydd heltäckande, 17 till 41 dagar senare, median cirka 28. Motorhöljet skyddar motorn medan båten ligger i vattnet, båtmotorskyddet skyddar den när båten tas upp för säsongen, samma kund, olika behov.",
+  "trigger": { "typ": "metrik", "metrik": ["Placed Order"], "produkt_innehaller": ["Marin Motorhölje"] },
+  "filter": ["samtycke", "ej_kopt_sedan_start"],
+  "ateintrade": { "varaktighet": null, "enhet": "alltime" },
+  "steg": [
+    { "typ": "vanta", "enhet": "days", "varde": 21 },
+    { "typ": "mejl", "mejl": {
+      "id": "f07-motorholje-till-batmotorskydd-e1",
+      "namn": "FLOW_order_E1_S_batmotorn-tas-snart-upp_v1",
+      "memo": "Dag 21 efter köp av Marin Motorhölje, mitt i båtupptagningssäsongen (sep-okt). Motorhöljet skyddar i vattnet, båtmotorskyddet skyddar på land, en riktig skillnad ur produktsidorna, inte samma produkt två gånger.",
+      "taggar": {
+        "typ": "S",
+        "kalla": "egen-data",
+        "kalla_ref": "klaviyo/evolve/ATERKOP-ANALYS.md",
+        "lardom": null,
+        "avatar": "båtägaren som köpt motorhölje och snart tar upp båten för säsongen",
+        "begar": "ha motorn skyddad även när båten står på land, inte bara i vattnet",
+        "awareness": "solution",
+        "urgency": "sasong",
+        "confidence": "medium",
+        "prefix": "Batmotorskydd",
+        "kod": "S"
+      },
+      "amnesrader": [
+        { "text": "Motorhöljet skyddar i vattnet. Och på land?", "begar": "se skillnaden mellan de två skydden" },
+        { "text": "Båten tas snart upp för säsongen", "begar": "koppla till en händelse som redan är nära" },
+        { "text": "Ett skydd till, för när motorn står still", "begar": "förstå att det andra skyddet fyller ett annat behov" }
+      ],
+      "forhandstext": "Motorhöljet du redan har täcker en sak. Det här täcker en annan.",
+      "block": [
+        { "typ": "text", "rubrik": "Motorhöljet skyddar i vattnet. Vad skyddar på land?", "text": "Motorhöljet du köpte sitter på motorn medan båten ligger i. När båten tas upp för säsongen står motorn i stället still och oskyddad mot regn, snö och UV, ett annat läge än det höljet är gjort för." },
+        { "typ": "produkt", "handle": "batmotorskydd-420d-heltackande-for-utombordare", "text": "Båtmotorskyddet dras över hela motorn, från kåpan ner över riggen, och spänns fast utan verktyg. 420D Oxford-tyg håller regn, snö och UV ute under hela tiden båten står uppställd, och en övertäckt motor syns inte lika lätt från vägen.", "knapp": "Se båtmotorskyddet" },
+        { "typ": "fakta" }
+      ],
+      "tretest": [
+        { "rad": "Motorhöljet skyddar i vattnet. Och på land?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Båten tas snart upp för säsongen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Ett skydd till, för när motorn står still", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Motorhöljet du redan har täcker en sak. Det här täcker en annan.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Motorhöljet skyddar i vattnet. Vad skyddar på land?", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+      ]
+    } },
+    { "typ": "vanta", "enhet": "days", "varde": 7 },
+    { "typ": "mejl", "mejl": {
+      "id": "f07-motorholje-till-batmotorskydd-e2",
+      "namn": "FLOW_order_E2_M_innan-baten-stalls-undan_v1",
+      "memo": "Kort påminnelse en vecka senare, med tre saker till som andra båtägare tar med när båten ställs undan.",
+      "taggar": {
+        "typ": "M",
+        "kalla": "egen-data",
+        "kalla_ref": "klaviyo/evolve/ATERKOP-ANALYS.md",
+        "lardom": null,
+        "avatar": "samma båtägare, en vecka senare",
+        "begar": "en sista, kort påminnelse och några saker till innan båten ställs undan",
+        "awareness": "solution",
+        "urgency": "sasong",
+        "confidence": "medium",
+        "prefix": "Batmotorskydd",
+        "kod": "M"
+      },
+      "amnesrader": [
+        { "text": "Fortfarande något som saknas på båten?", "begar": "en påminnelse utan att upprepa förra mejlet" },
+        { "text": "Tre saker till innan den ställs undan", "begar": "se fler relevanta produkter" },
+        { "text": "Sista påminnelsen om vinterförvaringen", "begar": "veta att detta är sista mejlet i flödet" }
+      ],
+      "forhandstext": "Motorn är en sak, sittdyna, förtöjning och spöhållare tre till.",
+      "block": [
+        { "typ": "text", "rubrik": "Innan båten ställs undan", "text": "Motorn är en sak. Här är tre till som andra båtägare tar med sig innan säsongen är slut." },
+        { "typ": "produkt", "handle": "batmotorskydd-420d-heltackande-for-utombordare", "text": "Passar nio storlekar, från de minsta utombordarna till de riktigt stora.", "knapp": "Se båtmotorskyddet" },
+        { "typ": "produktrad", "rubrik": "Tre till för båten", "handles": ["batsitsoverdrag-210d-vadertaligt-stolsskydd", "fiskespohallare-4-pack-kraftig-forvaring", "marin-fortojningslina-elastisk-uv-talig"] },
+        { "typ": "fakta" }
+      ],
+      "tretest": [
+        { "rad": "Fortfarande något som saknas på båten?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Tre saker till innan den ställs undan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Sista påminnelsen om vinterförvaringen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Motorn är en sak, sittdyna, förtöjning och spöhållare tre till.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Innan båten ställs undan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+        { "rad": "Tre till för båten", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+      ]
+    } }
+  ]
+}

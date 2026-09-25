@@ -1,0 +1,195 @@
+{
+  "id": "f06-sunset",
+  "namn": "FLOW_segment_sunset_v1",
+  "memo": "Klaviyos sunset-mönster: den som inte öppnat eller klickat på 180 dagar trots minst fem mottagna mejl får två ärliga, vänliga mejl i stället för att tystnaden bara fortsätter. Klickar hen inte heller nu slutar vi skicka, vilket skyddar leveransbarheten för alla andra prenumeranter. Steget 'sluta skicka' (märka profilen som avslutad) görs i Klaviyo av VA:n enligt SOP E06 tills motorn själv kan skapa update-profile-anrop. Ingen skuldbeläggning: mejlen är en ärlig fråga, inte ett argument.",
+  "trigger": {
+    "typ": "segment",
+    "segment": "SEG_oengagerade_180d"
+  },
+  "filter": [
+    "samtycke"
+  ],
+  "ateintrade": {
+    "varaktighet": null,
+    "enhet": "alltime"
+  },
+  "steg": [
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f06-sunset-e1",
+        "namn": "FLOW_segment_E1_M_vill-du-ha-mejl_v1",
+        "memo": "Direkt, ärlig fråga utan skuld. Konsekvensen (vi slutar skicka) är sann och sägs rakt ut, som orsak, inte som hot.",
+        "taggar": {
+          "typ": "M",
+          "_typ": "N=nytt koncept, I=iteration av annonsvinnare, IM=imitation, M=mejlspecifikt, S=säsong",
+          "kalla": "egen-data",
+          "_kalla": "egen-data | winning-line | voc | swipe | gissning",
+          "kalla_ref": null,
+          "lardom": null,
+          "avatar": "prenumeranten som inte öppnat eller klickat på ett mejl från oss på 180 dagar",
+          "begar": "veta att det är okej att inte längre vilja ha mejl, och kunna säga det med ett klick",
+          "awareness": "product",
+          "_awareness": "unaware | problem | solution | product | promo (sunset-mejl mäter listrelation, ingen sålt produkt)",
+          "urgency": "ingen",
+          "_urgency": "sasong | lager | pris | konsekvens | ingen",
+          "confidence": "high",
+          "_confidence": "high | medium | low (low = gissning; hög eftersom mönstret är Klaviyos etablerade sunset-flöde)",
+          "prefix": "Sunset",
+          "kod": "M"
+        },
+        "amnesrader": [
+          {
+            "text": "Vill du fortfarande ha våra mejl?",
+            "begar": "en direkt, ärlig fråga att svara på"
+          },
+          {
+            "text": "Vi mejlar bara den som vill ha det",
+            "begar": "känna att listan respekterar valet"
+          },
+          {
+            "text": "Säg till om du vill fortsätta",
+            "begar": "en enkel handling, inget att fundera över"
+          }
+        ],
+        "forhandstext": "Ett klick räcker. Annars slutar vi skicka till dig.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Vill du fortfarande ha våra mejl?",
+            "text": "{{fornamn}}, det har gått en tid sedan du öppnade eller klickade i ett mejl från oss.\n\nDet är helt okej. Vi skickar bara till dig om du faktiskt vill ha dem.\n\nHör vi inget nu slutar vi skicka till dig, så du inte får mejl du ändå inte läser."
+          },
+          {
+            "typ": "knapp",
+            "text": "Ja, fortsätt skicka",
+            "lank": "kollektion:alla-produkter"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Vill du fortfarande ha våra mejl?",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Vi mejlar bara den som vill ha det",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Säg till om du vill fortsätta",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Ett klick räcker. Annars slutar vi skicka till dig.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Ja, fortsätt skicka",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "format": "rentext"
+      }
+    },
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 5
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f06-sunset-e2",
+        "namn": "FLOW_segment_E2_M_sista-mejlet_v1",
+        "memo": "Kort och vänligt sista mejl. Ingen upprepning av argument, bara ett sista, tydligt val innan vi tar bort profilen från listan (VA:ns SOP E06).",
+        "taggar": {
+          "typ": "M",
+          "_typ": "N=nytt koncept, I=iteration av annonsvinnare, IM=imitation, M=mejlspecifikt, S=säsong",
+          "kalla": "egen-data",
+          "_kalla": "egen-data | winning-line | voc | swipe | gissning",
+          "kalla_ref": null,
+          "lardom": null,
+          "avatar": "samma prenumerant som E1, fem dagar senare, utan att ha klickat",
+          "begar": "en tydlig avslutning, utan att bli tillmejlad igen och igen",
+          "awareness": "product",
+          "_awareness": "unaware | problem | solution | product | promo (sunset-mejl mäter listrelation, ingen sålt produkt)",
+          "urgency": "konsekvens",
+          "_urgency": "sasong | lager | pris | konsekvens | ingen",
+          "confidence": "high",
+          "_confidence": "high | medium | low (low = gissning; hög eftersom mönstret är Klaviyos etablerade sunset-flöde)",
+          "prefix": "Sunset",
+          "kod": "M"
+        },
+        "amnesrader": [
+          {
+            "text": "Det här är sista mejlet",
+            "begar": "veta exakt var man står, utan fler mejl efteråt"
+          },
+          {
+            "text": "Vi hör inget, så vi slutar skicka",
+            "begar": "förstå den verkliga konsekvensen av tystnad"
+          },
+          {
+            "text": "Ett sista klick, om du vill stanna kvar",
+            "begar": "en sista enkel möjlighet att välja kvar"
+          }
+        ],
+        "forhandstext": "Efter det här hör du inte från oss igen, om vi inte hör från dig.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Det här är sista mejlet",
+            "text": "{{fornamn}}, det här är sista mejlet du får från oss om vi inte hör något.\n\nHör vi inget nu tar vi bort dig från listan. Vill du ha kvar mejlen är det bara att klicka."
+          },
+          {
+            "typ": "knapp",
+            "text": "Ja, ha kvar mig på listan",
+            "lank": "kollektion:alla-produkter"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Det här är sista mejlet",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Vi hör inget, så vi slutar skicka",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Ett sista klick, om du vill stanna kvar",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Efter det här hör du inte från oss igen, om vi inte hör från dig.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Ja, ha kvar mig på listan",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "format": "rentext"
+      }
+    }
+  ]
+}

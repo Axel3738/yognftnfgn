@@ -1,0 +1,73 @@
+{
+  "id": "k02-baten-ska-upp",
+  "namn": "MAIL_20261001_Batmotorskydd_S_1_uppvarmning_solution_baten-ska-upp_v1",
+  "memo": "Hypotes: båtägare köper ihop, motorhölje/sitsöverdrag/spöhållare är vanliga par i ordrarna (60 d). En checklista (\"det här ska på innan båten ställs undan\") testar om en lista säljer fler produkter per order än ett enproduktsmejl, mätt som AOV mot K01.",
+  "taggar": {
+    "typ": "S",
+    "kalla": "egen-data",
+    "kalla_ref": "köpta-tillsammans-paren i kartläggningen 2026-09-24 + products/motorholjet/dna.md:85,98 + products/tacklebay/fiskespohallare-4-pack/dna.md:111-122",
+    "lardom": null,
+    "avatar": "båtägaren som tar upp båten i oktober",
+    "begar": "att båten ska vara i skick till våren utan jobb",
+    "awareness": "solution",
+    "urgency": "sasong",
+    "confidence": "medium",
+    "prefix": "Batmotorskydd",
+    "kod": "S"
+  },
+  "amnesrader": [
+    { "text": "Motorn står ute i sex månader", "begar": "skydda motorn från ett halvår ute" },
+    { "text": "Klart innan båten är surrad", "begar": "sätta på skyddet utan verktyg eller hjälp" },
+    { "text": "Fyra saker innan båten ställs undan", "begar": "få allt klart i en enda genomgång" }
+  ],
+  "forhandstext": "En blank motor är det första en tjuv ser från vägen.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Motorn står ute i sex månader",
+      "text": "Hej {{fornamn}},\n\nRegn, snö och frost jobbar på utombordaren i sex månader efter att båten kommit upp på land.",
+      "bild": "produkt:batmotorskydd-420d-heltackande-for-utombordare",
+      "knapp": { "text": "Skydda motorn", "lank": "produkt:batmotorskydd-420d-heltackande-for-utombordare" }
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "Innan båten ställs undan",
+      "punkter": [
+        "Utombordaren: skydd från kåpa till rigg, 420D-tyg mot regn, snö och UV.",
+        "En annan motor ombord: samma typ av skydd, för motorer från 6 till 250 hk.",
+        "Sitsarna: dras enkelt på och skyddar mot sol, regn och fågelsmuts.",
+        "Spöna: fyra hållare så de inte trasslar in i varandra i garaget."
+      ]
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Mer som brukar följa med",
+      "handles": [
+        "marin-motorholje-420d-universellt-skydd",
+        "batsitsoverdrag-210d-vadertaligt-stolsskydd",
+        "fiskespohallare-4-pack-kraftig-forvaring"
+      ]
+    },
+    {
+      "typ": "text",
+      "rubrik": "Aldrig mer trassliga fiskespön",
+      "text": "Fyra kraftiga hållare håller varje spö på sin egen plats, i båten eller på väggen i garaget. Ingen mer hopplock av trassliga linor."
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "Motorn står ute i sex månader", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Klart innan båten är surrad", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fyra saker innan båten ställs undan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En blank motor är det första en tjuv ser från vägen.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Innan båten ställs undan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Mer som brukar följa med", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Aldrig mer trassliga fiskespön", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Skydda motorn", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-10-01T18:00:00+02:00",
+  "segment": ["SEG_uppvarmning_steg1"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "klar",
+  "kraver_axel": null
+}
