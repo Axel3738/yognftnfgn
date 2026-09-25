@@ -83,6 +83,18 @@ Läses av `/kommentarer` innan svaren skrivs.
   ⚠️ Inte ett svar på frågorna: tyget (420D Oxford eller tunnare?), om det
   finns ventilationshål, och om remmar/spänne följer med är fortfarande okänt.
   Svara aldrig kunder "den är ventilerad" förrän leverantören sagt det rakt ut.
+- **Banden skaver (fråga 12):** leverantören ber om en video på problemet och
+  kan inte bedöma utan. Källan är EN annonskommentar, ingen video finns.
+  Obesvarat.
+
+## Arbetslampa för Makita-batteri (`Arbeidslampe`, NO)
+
+- **Leverantören 2026-09-25:** lampan är inte svag i deras video. Svagt ljus
+  kan bero på batteriet; de ber att kunden provar ett annat batteri, och
+  kvarstår felet rapporterar de det till fabriken. Svar till en köpare som
+  säger att den lyser svagt: be hen prova ett annat fulladdat batteri och höra
+  av sig med ordernumret om det inte hjälper. Säg inte att "för hög spänning"
+  är orsaken — det är leverantörens gissning, inte belagt.
 
 ## Rätta på sidan
 
