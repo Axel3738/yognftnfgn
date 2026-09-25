@@ -2095,3 +2095,9 @@ ut. LISTICLE ligger kvar på 2 000 kr och är **tillbaka i hållbandet**: vinst 
 
 **Nästa avläsning:** spenderar Meta verkligen mindre på 6 750 kr, och följer ROAS
 med tillbaka? Det är den sista biten i beviset.
+
+## 2026-09-25 — leveransrundan: femte dygnet, oförändrat
+
+Samma två rader, samma md5, samma slutkort med `carashell.se`. Inget
+uppladdat, ingen status ändrad. Kontot 748 → 760 annonser sedan i går
+(spegling och översättning rullar).
