@@ -6,6 +6,7 @@
   "vi har fått en beställning på en leverans och väntar på paketet": "Avsändaren har bokat leveransen och fraktbolaget väntar på paketet",
   "we have received a notification from your shipper that they are preparing an item for you. the tracking information will be updated when the parcel is handed over to postnord": "Avsändaren förbereder ditt paket. Spårningen uppdateras när PostNord har tagit emot det",
   "the booking of the delivery is completed": "Leveransen är bokad",
+  "sender has despatched item": "Avsändaren har skickat iväg paketet",
   "shipment picked up": "Paketet är upphämtat",
   "yanwen pickup scan": "Yanwen har hämtat paketet",
   "4px received shipment": "4PX har tagit emot paketet",
