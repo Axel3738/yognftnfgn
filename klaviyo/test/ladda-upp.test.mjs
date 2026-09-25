@@ -178,6 +178,7 @@ test('flöde utan samtycke i filtret stoppas', async () => {
 test('kundundantag: bara i ett Placed Order-flöde och aldrig ihop med samtycke', async () => {
   for (const [trigger, filter, ok] of [
     [{ typ: 'metrik', metrik: ['Placed Order'] }, ['kundundantag', 'ej_kopt_sedan_start'], true],
+    [{ typ: 'metrik', metrik: ['Fulfilled Order'] }, ['kundundantag'], true],
     [{ typ: 'metrik', metrik: ['Started Checkout'] }, ['kundundantag'], false],
     [{ typ: 'lista', lista: 'LISTA_nyhetsbrev' }, ['kundundantag'], false],
     [{ typ: 'metrik', metrik: ['Placed Order'] }, ['kundundantag', 'samtycke'], false],

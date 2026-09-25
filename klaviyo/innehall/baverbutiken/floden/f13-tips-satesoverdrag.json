@@ -1,0 +1,116 @@
+{
+  "id": "f13-tips-satesoverdrag",
+  "namn": "FLOW_tips_satesoverdrag_v1",
+  "memo": "Tipsmejl när sätesöverdraget är framme (Axels önskan 2026-09-25: \"custom tips på produkter\"). Triggas av Fulfilled Order med produkten i ordern, 12 dagar efter att den skickats (leverans 5-10 arbetsdagar). Tipsen kommer bara ur produktsidan och kommentarer/produktfakta.md. Kundundantaget: tips om en vara kunden köpt.",
+  "trigger": {
+    "typ": "metrik",
+    "metrik": [
+      "Fulfilled Order"
+    ],
+    "produkt_innehaller": [
+      "Sätesöverdrag för Åkgräsklippare"
+    ]
+  },
+  "filter": [
+    "kundundantag"
+  ],
+  "ateintrade": {
+    "varaktighet": null,
+    "enhet": "alltime"
+  },
+  "steg": [
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 12
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f13-tips-satesoverdrag-e1",
+        "namn": "FLOW_tips_E1_M_sa-far-du-ut-mest-av-satesoverdraget_v1",
+        "memo": "Tipsmejl vid leverans. Fyrfärgsvarianten nämns för att den redan står i produktsidans varianter.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "produktsida",
+          "kalla_ref": "scratchpad/prod/satesoverdrag-for-akgrasklippare-slittaligt-600d-oxford.txt",
+          "lardom": null,
+          "avatar": "kunden som just fått sätesöverdraget till åkgräsklipparen",
+          "begar": "veta hur man monterar det rätt och att det håller på plats",
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "high",
+          "prefix": "Satesoverdrag",
+          "kod": "M"
+        },
+        "amnesrader": [
+          {
+            "text": "60 sekunder till ett torrt säte",
+            "begar": "veta hur snabbt det går att montera"
+          },
+          {
+            "text": "Så håller remmarna sätet på plats",
+            "begar": "veta hur man spänner fast det ordentligt"
+          },
+          {
+            "text": "Fyra färger att välja mellan",
+            "begar": "upptäcka variantutbudet"
+          }
+        ],
+        "forhandstext": "Fyra saker som gör klippningen skönare.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Så får du ut mest av sätesöverdraget",
+            "text": "Några sekunder extra vid monteringen gör hela skillnaden på sätet."
+          },
+          {
+            "typ": "punkter",
+            "rubrik": null,
+            "punkter": [
+              "Trä överdraget direkt över din befintliga dyna, det tar under 60 sekunder utan verktyg.",
+              "Spänn de justerbara remmarna ordentligt så det sitter stadigt även på guppig mark.",
+              "Den vattenavvisande ytan håller dig torr även efter morgondagg eller regn.",
+              "Finns i fyra färger, grå, svart, grön och ljusgrå, om du vill matcha maskinen."
+            ]
+          },
+          {
+            "typ": "fakta"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "60 sekunder till ett torrt säte",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Så håller remmarna sätet på plats",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Fyra färger att välja mellan",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Så får du ut mest av sätesöverdraget",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Fyra saker som gör klippningen skönare.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ]
+      }
+    }
+  ]
+}

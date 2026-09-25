@@ -140,3 +140,13 @@ test('format "rentext": personligt mejl från Axel, ingen hero eller produktkort
   // Vanligt mejl oförändrat: loggraden och den svarta sidfoten finns kvar.
   assert.match(bygg(mejl()).html, /Frågor\? Svara på mejlet/);
 });
+
+test('länken sparning: bär kundens paketnummer base64-kodat, och bara ett exempelnummer i exemplet', async () => {
+  const { lank } = await import('../mallar.mjs');
+  const ctx = (lage) => ({ brand: { butik_url: 'https://baverbutiken.se' }, lage, varningar: [], produkt: () => null });
+  const k = lank('sparning:', ctx('klaviyo'));
+  assert.ok(k.startsWith('https://baverbutiken.se/pages/spara{% if event.extra.fulfillments.0.tracking_number %}?k={{ event.extra.fulfillments.0.tracking_number|base64_encode|urlencode }}'), k);
+  assert.ok(!/["<>&]/.test(k), 'länken får inget tecken som eskapas sönder i href');
+  assert.equal(lank('sparning:', ctx('exempel')), 'https://baverbutiken.se/pages/spara?k=WVQyNjI2MTAwNzA4Njc0Njkw');
+  assert.equal(Buffer.from('WVQyNjI2MTAwNzA4Njc0Njkw', 'base64').toString(), 'YT2626100708674690');
+});

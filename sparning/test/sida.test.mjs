@@ -466,6 +466,15 @@ test('sidan körs: utan nummer, utan skanningar, okänt nummer, tomt fält', () 
   assert.equal(viaHash.get('bbs-rubrik').textContent, 'Paketet är levererat');
   assert.equal(viaHash.get('bbs-nummer').textContent, 'YT2626100708870041');
 
+  // Klaviyos mejl bär numret base64-kodat (?k=), eftersom mallspråket
+  // saknar sha256 och inte kan räkna fram bävernumret.
+  const kodat = kor(kropp, '?k=' + encodeURIComponent(Buffer.from('YT2626100708870041').toString('base64')));
+  assert.equal(kodat.get('bbs-rubrik').textContent, 'Paketet är levererat');
+  assert.ok(kodat.adresser.length === 1 && !/[?&]k=/.test(kodat.adresser[0]), 'den kodade parametern ska bytas mot nummer=');
+  // Trasig kod ⇒ sökrutan, aldrig en tom sida.
+  const trasig = kor(kropp, '?k=%%%');
+  assert.equal(trasig.get('bbs-sok').hidden, false);
+
   // Okänt nummer ⇒ förklaringen OCH fältet, så kunden kan pröva igen.
   const okant = kor(kropp, '?nummer=YT0000000000000000');
   assert.equal(okant.get('bbs-saknas').hidden, false);

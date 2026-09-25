@@ -1,0 +1,116 @@
+{
+  "id": "f08-tips-balteslip",
+  "namn": "FLOW_tips_balteslip_v1",
+  "memo": "Tipsmejl när bälteslipmaskinen är framme (Axels önskan 2026-09-25: \"custom tips på produkter\"). Triggas av Fulfilled Order med produkten i ordern, 12 dagar efter att den skickats (leverans 5-10 arbetsdagar). Tipsen kommer bara ur produktsidan och kommentarer/produktfakta.md. Kundundantaget: tips om en vara kunden köpt.",
+  "trigger": {
+    "typ": "metrik",
+    "metrik": [
+      "Fulfilled Order"
+    ],
+    "produkt_innehaller": [
+      "Bälteslipmaskin Mini"
+    ]
+  },
+  "filter": [
+    "kundundantag"
+  ],
+  "ateintrade": {
+    "varaktighet": null,
+    "enhet": "alltime"
+  },
+  "steg": [
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 12
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f08-tips-balteslip-e1",
+        "namn": "FLOW_tips_E1_M_sa-far-du-ut-mest-av-slipmaskinen_v1",
+        "memo": "Tipsmejl som går ut när paketet är framme. Slipvinkeln är fast (15°) med flit, så tipset förklarar varför i stället för att låta kunden leta efter en inställning som inte finns. Reservkitet nämns exakt som Axel formulerade det 2026-09-25.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "kommentarer/produktfakta.md#Bälteslipmaskin",
+          "lardom": null,
+          "avatar": "kunden som just fått sin bälteslipmaskin",
+          "begar": "veta hur man använder maskinen rätt utan att gissa sig fram",
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "high",
+          "prefix": "Balteslip",
+          "kod": "M"
+        },
+        "amnesrader": [
+          {
+            "text": "Vinkeln på slipmaskinen är fast med flit",
+            "begar": "förstå varför en detalj är som den är"
+          },
+          {
+            "text": "Så väljer du rätt slipband",
+            "begar": "veta hur man väljer bland det som följer med"
+          },
+          {
+            "text": "Ett reservkit är på väg",
+            "begar": "veta att fler delar kommer senare"
+          }
+        ],
+        "forhandstext": "Fyra saker som gör skillnad när du använder den.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Så får du ut mest av bälteslipmaskinen",
+            "text": "Maskinen är gjord för att du ska slippa gissa dig fram. Här är vad som gör skillnad."
+          },
+          {
+            "typ": "punkter",
+            "rubrik": null,
+            "punkter": [
+              "Vinkeln är fast på 15°, med flit, så du slipper ställa in den för hand varje gång.",
+              "Flera olika slipband följer med i olika grovlekar, välj grövre för att forma om eggen och finare för sista polityren.",
+              "Testa dig fram bland de 7 hastigheterna, lägre fart för tunna eggar, högre för att forma metall eller trä.",
+              "Vi håller på att lansera ett kit med fler slipband och slipskivor, för den dagen de som följer med är slitna."
+            ]
+          },
+          {
+            "typ": "fakta"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Vinkeln på slipmaskinen är fast med flit",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Så väljer du rätt slipband",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Ett reservkit är på väg",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Så får du ut mest av bälteslipmaskinen",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Fyra saker som gör skillnad när du använder den.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ]
+      }
+    }
+  ]
+}

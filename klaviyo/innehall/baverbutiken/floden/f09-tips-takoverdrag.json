@@ -1,0 +1,116 @@
+{
+  "id": "f09-tips-takoverdrag",
+  "namn": "FLOW_tips_takoverdrag_v1",
+  "memo": "Tipsmejl när taköverdraget är framme (Axels önskan 2026-09-25: \"custom tips på produkter\"). Triggas av Fulfilled Order med produkten i ordern, 12 dagar efter att den skickats (leverans 5-10 arbetsdagar). Tipsen kommer bara ur produktsidan och kommentarer/produktfakta.md. Kundundantaget: tips om en vara kunden köpt.",
+  "trigger": {
+    "typ": "metrik",
+    "metrik": [
+      "Fulfilled Order"
+    ],
+    "produkt_innehaller": [
+      "Taköverdrag Husvagn"
+    ]
+  },
+  "filter": [
+    "kundundantag"
+  ],
+  "ateintrade": {
+    "varaktighet": null,
+    "enhet": "alltime"
+  },
+  "steg": [
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 12
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f09-tips-takoverdrag-e1",
+        "namn": "FLOW_tips_E1_M_sa-far-du-ut-mest-av-takoverdraget_v1",
+        "memo": "Tipsmejl vid leverans. Bara monteringsdetaljer som redan står på produktsidan eller är bekräftade av Axel (banden skaver inte, mjukt material) - ingen gissning om AC-aggregat eller solceller från produktfakta.md eftersom Axel själv kallade det oklart/ej bekräftat.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "produktsida",
+          "kalla_ref": "scratchpad/prod/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan.txt; kommentarer/produktfakta.md#Taköverdraget",
+          "lardom": null,
+          "avatar": "kunden som just fått taköverdraget",
+          "begar": "veta hur man monterar det så det sitter kvar hela säsongen",
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "high",
+          "prefix": "Takoverdrag",
+          "kod": "M"
+        },
+        "amnesrader": [
+          {
+            "text": "Så spänner du taköverdraget rätt",
+            "begar": "veta hur man monterar det korrekt"
+          },
+          {
+            "text": "Banden skaver inte mot lacken",
+            "begar": "veta att det inte skadar vagnen"
+          },
+          {
+            "text": "Två extra remmar följer med",
+            "begar": "upptäcka vad som ingår i paketet"
+          }
+        ],
+        "forhandstext": "Fyra saker som gör att överdraget sitter kvar hela säsongen.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Så får du ut mest av taköverdraget",
+            "text": "Ett par minuter extra vid monteringen gör att överdraget sitter kvar hela säsongen."
+          },
+          {
+            "typ": "punkter",
+            "rubrik": null,
+            "punkter": [
+              "Spänn remmarna på alla fyra sidor, de är 2,5 meter och justerbara efter din vagn.",
+              "Använd de två extra 10,5 meter-spännremmarna som följer med för extra stadga i blåst.",
+              "Banden är gjorda av ett mjukt material som inte skaver mot lacken.",
+              "Efter säsongen, vik ihop överdraget och lägg det i den medföljande förvaringspåsen."
+            ]
+          },
+          {
+            "typ": "fakta"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Så spänner du taköverdraget rätt",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Banden skaver inte mot lacken",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Två extra remmar följer med",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Så får du ut mest av taköverdraget",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Fyra saker som gör att överdraget sitter kvar hela säsongen.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ]
+      }
+    }
+  ]
+}

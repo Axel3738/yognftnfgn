@@ -1,0 +1,116 @@
+{
+  "id": "f12-tips-ibc",
+  "namn": "FLOW_tips_ibc_v1",
+  "memo": "Tipsmejl när ibc-tanköverdraget är framme (Axels önskan 2026-09-25: \"custom tips på produkter\"). Triggas av Fulfilled Order med produkten i ordern, 12 dagar efter att den skickats (leverans 5-10 arbetsdagar). Tipsen kommer bara ur produktsidan och kommentarer/produktfakta.md. Kundundantaget: tips om en vara kunden köpt.",
+  "trigger": {
+    "typ": "metrik",
+    "metrik": [
+      "Fulfilled Order"
+    ],
+    "produkt_innehaller": [
+      "IBC-tanköverdrag"
+    ]
+  },
+  "filter": [
+    "kundundantag"
+  ],
+  "ateintrade": {
+    "varaktighet": null,
+    "enhet": "alltime"
+  },
+  "steg": [
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 12
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f12-tips-ibc-e1",
+        "namn": "FLOW_tips_E1_M_sa-far-du-ut-mest-av-tankoverdraget_v1",
+        "memo": "Tipsmejl vid leverans. Bara mekaniken (dragkedja, öppning, mått) - inga skötselråd som inte står på produktsidan.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "produktsida",
+          "kalla_ref": "scratchpad/prod/ibc-tankoverdrag-1000-l-stoppar-alger-uv.txt",
+          "lardom": null,
+          "avatar": "kunden som just fått IBC-tanköverdraget",
+          "begar": "veta hur man sätter på det så det faktiskt stoppar algerna",
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "high",
+          "prefix": "IBC",
+          "kod": "M"
+        },
+        "amnesrader": [
+          {
+            "text": "Stäng dragkedjan hela vägen",
+            "begar": "veta hur man undviker att algerna kommer tillbaka"
+          },
+          {
+            "text": "Kommer du åt locket utan att ta av allt?",
+            "begar": "förstå en praktisk detalj"
+          },
+          {
+            "text": "Passar din tank måtten?",
+            "begar": "kontrollera att storleken stämmer"
+          }
+        ],
+        "forhandstext": "Fyra saker som håller vattnet klart hela säsongen.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Så får du ut mest av IBC-tanköverdraget",
+            "text": "Rätt användning håller vattnet klart och plasten hel hela säsongen."
+          },
+          {
+            "typ": "punkter",
+            "rubrik": null,
+            "punkter": [
+              "Dra överdraget helt över tanken och stäng dragkedjan ordentligt, annars kommer ljus in och algerna kan starta igen.",
+              "Öppningen upptill gör att du kommer åt locket utan att ta av hela överdraget.",
+              "Kontrollera att måtten stämmer, 120 × 100 × 116 cm är gjort för en standard 1000-liters IBC.",
+              "Sätt på överdraget medan tanken är ren, så inga algrester ligger kvar under tyget."
+            ]
+          },
+          {
+            "typ": "fakta"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Stäng dragkedjan hela vägen",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Kommer du åt locket utan att ta av allt?",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Passar din tank måtten?",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Så får du ut mest av IBC-tanköverdraget",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Fyra saker som håller vattnet klart hela säsongen.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -32,6 +32,9 @@ const HAR = path.dirname(fileURLToPath(import.meta.url));
 
 /** Dygnstak ur specen (rate limits "Daily"). Räknas rullande 24 h i uppladdat.jsonl. */
 export const DYGNSTAK = { segment: 100, flode: 100 };
+/** Metrikerna som betyder att kunden har köpt — bara de bär kundundantaget. */
+const KOPTRIGGRAR = ['Placed Order', 'Fulfilled Order'];
+
 /** Fel som stoppar HELA körningen, inte bara ett objekt. */
 const AVBRYT = new Set(['FEL_KONTO', 'SPARR_SKICKA', 'RATE_LIMIT']);
 
@@ -536,10 +539,10 @@ export async function laddaUpp({ brand, manifest, klient = null, skarpt = false,
       try {
         const filt = fl.filter ?? [];
         if (filt.includes('kundundantag')) {
-          // Kundundantaget gäller bara den som köpt: triggern måste vara Placed Order och inget annat.
+          // Kundundantaget gäller bara den som köpt: triggern måste vara ett köp (lagd eller skickad order).
           const tm = fl.trigger?.typ === 'metrik' ? [fl.trigger.metrik].flat() : [];
-          if (filt.includes('samtycke') || tm.length === 0 || tm.some((x) => x !== 'Placed Order')) {
-            throw Object.assign(new Error('"kundundantag" går bara i ett flöde som triggas av Placed Order, och aldrig tillsammans med "samtycke" (MFL 19 § andra stycket)'), { kod: 'UNDANTAG_FEL' });
+          if (filt.includes('samtycke') || tm.length === 0 || tm.some((x) => !KOPTRIGGRAR.includes(x))) {
+            throw Object.assign(new Error('"kundundantag" går bara i ett flöde som triggas av ett köp (Placed Order eller Fulfilled Order), och aldrig tillsammans med "samtycke" (MFL 19 § andra stycket)'), { kod: 'UNDANTAG_FEL' });
           }
         } else if (!filt.includes('samtycke')) {
           throw Object.assign(new Error('flödets filter saknar "samtycke" — varje marknadsflöde kräver samtyckesvillkoret i profile_filter (järnregel 2)'), { kod: 'SAMTYCKE_SAKNAS' });

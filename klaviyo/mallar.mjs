@@ -102,6 +102,16 @@ export function lank(spec, ctx) {
     return p?.url ?? `${bas}/products/${varde}`;
   }
   if (typ === 'kollektion') return `${bas}/collections/${varde}`;
+  // "sparning:" = kundens eget paket på butikens spårningssida. Klaviyos
+  // mallspråk saknar sha256 (mätt 2026-09-25), så bävernumret går inte att
+  // räkna fram här. Fraktbolagets nummer skickas base64-kodat som ?k= och
+  // sidan byter det mot bävernumret (sparning/sida.mjs). Bara i flöden som
+  // triggas av Fulfilled Order — där bär händelsen fulfillments.
+  if (typ === 'sparning') {
+    const sida = `${bas}${(varde || '/pages/spara').startsWith('/') ? '' : '/'}${varde || '/pages/spara'}`;
+    if (ctx.lage === 'exempel') return `${sida}?k=WVQyNjI2MTAwNzA4Njc0Njkw`;
+    return `${sida}{% if event.extra.fulfillments.0.tracking_number %}?k={{ event.extra.fulfillments.0.tracking_number|base64_encode|urlencode }}{% endif %}`;
+  }
   if (typ === 'sida') return `${bas}${varde.startsWith('/') ? '' : '/'}${varde}`;
   if (typ === 'url' && /^https:\/\//.test(varde)) return varde;
   if (/^https:\/\//.test(s)) return s;

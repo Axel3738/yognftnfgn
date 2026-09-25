@@ -1,0 +1,122 @@
+{
+  "id": "f11-tips-batmotorskydd",
+  "namn": "FLOW_tips_batmotorskydd_v1",
+  "memo": "Tipsmejl när båtmotorskyddet är framme (Axels önskan 2026-09-25: \"custom tips på produkter\"). Triggas av Fulfilled Order med produkten i ordern, 12 dagar efter att den skickats (leverans 5-10 arbetsdagar). Tipsen kommer bara ur produktsidan och kommentarer/produktfakta.md. Kundundantaget: tips om en vara kunden köpt.",
+  "trigger": {
+    "typ": "metrik",
+    "metrik": [
+      "Fulfilled Order"
+    ],
+    "produkt_innehaller": [
+      "Båtmotorskydd 420D"
+    ]
+  },
+  "filter": [
+    "kundundantag"
+  ],
+  "ateintrade": {
+    "varaktighet": null,
+    "enhet": "alltime"
+  },
+  "steg": [
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 12
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f11-tips-batmotorskydd-e1",
+        "namn": "FLOW_tips_E1_M_sa-far-du-ut-mest-av-batmotorskyddet_v1",
+        "memo": "Tipsmejl vid leverans, plus en länk till motorhöljet enligt uppdraget (samma par som F07: motorhöljet skyddar i vattnet, båtmotorskyddet på land - fakta redan etablerad i klaviyo/evolve/ATERKOP-ANALYS.md, ingen ny gissning om motorhöljet självt).",
+        "taggar": {
+          "typ": "M",
+          "kalla": "produktsida",
+          "kalla_ref": "scratchpad/prod/batmotorskydd-420d-heltackande-for-utombordare.txt; klaviyo/evolve/ATERKOP-ANALYS.md",
+          "lardom": null,
+          "avatar": "kunden som just fått båtmotorskyddet",
+          "begar": "veta hur man monterar det rätt innan säsongen är slut",
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "high",
+          "prefix": "Batmotorskydd",
+          "kod": "M"
+        },
+        "amnesrader": [
+          {
+            "text": "Så drar du på skyddet rätt",
+            "begar": "veta korrekt montering"
+          },
+          {
+            "text": "Nio storlekar, en för din motor",
+            "begar": "hitta rätt storlek"
+          },
+          {
+            "text": "Ett skydd till, för när båten är i vattnet",
+            "begar": "upptäcka det kompletterande skyddet"
+          }
+        ],
+        "forhandstext": "Fyra saker som gör att skyddet sitter hela vintern, plus ett skydd till för när båten är i vattnet.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Så får du ut mest av båtmotorskyddet",
+            "text": "Rätt montering gör att skyddet håller ute regn, snö och UV hela tiden båten står uppställd."
+          },
+          {
+            "typ": "punkter",
+            "rubrik": null,
+            "punkter": [
+              "Dra skyddet över hela motorn, från kåpan ner över riggen, innan du spänner remmen runt mitten.",
+              "Dubbelkolla att du valt rätt storlek för din motors hästkraft, nio storlekar finns, från 0-5 hk till 250-350 hk.",
+              "Inga verktyg behövs, skyddet går på innan båten är surrad.",
+              "Låt motorn vara torr innan du drar på skyddet."
+            ]
+          },
+          {
+            "typ": "produkt",
+            "handle": "marin-motorholje-420d-universellt-skydd",
+            "text": "Motorhöljet skyddar motorn medan båten ligger i vattnet. Båtmotorskyddet tar över när båten ställs på land för säsongen.",
+            "knapp": "Se motorhöljet"
+          },
+          {
+            "typ": "fakta"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Så drar du på skyddet rätt",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Nio storlekar, en för din motor",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Ett skydd till, för när båten är i vattnet",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Så får du ut mest av båtmotorskyddet",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Fyra saker som gör att skyddet sitter hela vintern, plus ett skydd till för när båten är i vattnet.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ]
+      }
+    }
+  ]
+}
