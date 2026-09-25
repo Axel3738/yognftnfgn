@@ -32,16 +32,16 @@ Ordagrant, de tyngsta (kundnamn och adresser aldrig):
 
 | Invändning | Video-svar | Statisk | Demo | Jämförelse |
 |---|---|---|---|---|
-| **Fukt / kondens / självdrag** (34 %) | `Takoverdrag_OB_4_H1` live | `Takoverdrag_OB_5_1` briefad, ej live | ⬜ | ⬜ |
-| Blåser sönder (7 %) | `Takoverdrag_OB_1_H1` live | ⬜ | ⬜ | ⬜ |
+| **Fukt / kondens / självdrag** (34 %) | `Takoverdrag_OB_4_H1` live | `Takoverdrag_OB_5_1` live | `Takoverdrag_OB_6_H1` briefad, ej live | `Takoverdrag_OB_7_H1` briefad, ej live |
+| Blåser sönder (7 %) | `Takoverdrag_OB_1_H1` live | `Takoverdrag_OB_8_1` briefad, ej live | `Takoverdrag_OB_9_H1` briefad, ej live | ⬜ |
 | Önskemål (5 %) | ⬜ | ⬜ | ⬜ | ⬜ |
-| Täcker för lite (2 %) | ⬜ | ⬜ | ⬜ | ⬜ |
-| Vattentätt | `Takoverdrag_OB_3_H1` live | ⬜ | ⬜ | ⬜ |
+| Täcker för lite (2 %) | ⬜ | `Takoverdrag_OB_12_1` briefad, ej live | ⬜ | ⬜ |
+| Vattentätt | `Takoverdrag_OB_3_H1` live | `Takoverdrag_OB_10_1` briefad, ej live | `Takoverdrag_OB_11_H1` briefad, ej live | ⬜ |
 | Förvaring | `Takoverdrag_OB_2_H1` live | ⬜ | ⬜ | ⬜ |
 
-**Täckning:** fukt 1 av 4 format (+1 briefad) (34 %) · blåser 1 av 4 format (7 %) · önskemål 0 av 4 format (5 %) · täcker 0 av 4 format (2 %) · vattentätt 1 av 4 format · förvaring 1 av 4 format.
+**Täckning (efter batch #6, 2026-09-25):** fukt 4 av 4 format (2 live + 2 briefade) (34 %) · blåser 3 av 4 format (1 live + 2 briefade) (7 %) · önskemål 0 av 4 format (5 %) · täcker 1 av 4 format (briefad) (2 %) · vattentätt 3 av 4 format (1 live + 2 briefade) · förvaring 1 av 4 format. Batch #6 (7 briefer, Notion Draft) skrevs på Axels order samma dag; `Takoverdrag_OB_5_1` står som live för att kontot visar den ACTIVE och raden i hubben är i `CaraShell EN ready to be active`.
 
-**OB-annonser i kontot utan rad i matrisen (1):** `Takoverdrag_OB_5_1` (statisk, active) — läs briefen, sätt `invandning=` i taggraden eller skriv in namnet i rätt ruta för hand.
+**OB-annonser i kontot utan rad i matrisen:** inga (OB_5_1 inskriven 2026-09-25 i rutan fukt × statisk).
 
 ## Varför det här är produktens viktigaste lucka
 

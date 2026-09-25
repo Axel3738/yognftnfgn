@@ -432,3 +432,41 @@ Etiketten är ingen dom (`bedombar` står bredvid). Annonsens egna första vecka
 | Takoverdrag_CS_1_H1 | 3 | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 2,82 | nej | hooken föll — logga och släpp, aldrig ABO |
 | Takoverdrag_SP_5_1 | 1 | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 2,82 | nej | hooken föll — logga och släpp, aldrig ABO |
 
+
+## Batch #6 — 2026-09-25 (invändningsronden, Axels order samma dag)
+
+**Läget (avläst 2026-09-25):** LAT_VARA — CPA per dygn 466 → 551 → 723 → 537 kr (21–24/9),
+budget 16 000 kr oförändrad, 3 d: 51 779 kr / 87 köp / ROAS 2,22 mot break-even 1,63 (kampanjnamnet),
+FUNNELLÄGE. Axel 2026-09-25: "Vi ligger på över 150 k dagara och du gör inga briefs för den" —
+ronden hade inte byggt något på produkten (4 briefer från 23/9 i Draft, 0 nya lärdomar). Byggt
+i stället: **sju briefer på tomma rutor i invändningsmatrisen** (`invandningar.md`, ommätt samma dag:
+44 kommentarer, fukt 34 %), fria mot brieftaket (`invandning=`, `ruta=`, `kalla=voc`). Feedback-raden
+Brief review 2026-09-23 följd: CPA mot break-even-CPA i samma mening med källa (dna.md 715 kr),
+öppningsrad en sats läsbar på 3 s, NEW FOOTAGE-block överst med fallback. Annonsidéer: 0 rader Ny.
+Priset läst live: 1 129 kr / 1 469 kr (6,5 × 3 m). Lärdom L-120250242482300291 (SP_4_H1
+BREAKTHROUGH, CPA 463 kr mot break-even-CPA 715 kr).
+
+### Batch #6 — 4 video + 3 bild, alla i Notion som Draft (BÄVER Taköverdraget för Husvagn, `7ec270ab…`)
+
+| Annons | Typ | Ruta | Parent | Isolerad variabel | Hookrad | Notion |
+|---|---|---|---|---|---|---|
+| `Takoverdrag_OB_6_H1` | I | fukt × demo | OB_4_H1 | ett varv runt vagnen med överdraget på (NEW FOOTAGE, fallback SP_4_H1 + tak-van.jpg) | "Bara taket är under duken, resten av vagnen står fri." | `3e6270ab908c811ea393dbbe7b9a7e38` |
+| `Takoverdrag_OB_7_H1` | I | fukt × jämförelse | OB_4_H1 | delad bild helöverdrag / bara taket, slider | "Tätt överdrag och skyddat tak är inte samma sak." | `3e6270ab908c81e3afbec4099793691b` |
+| `Takoverdrag_OB_8_1` | S | blåser × statisk | OB_1_H1 | kroken som stilla bild (tak-spanne.jpg) | "Remmen hakar i en krok, inte i en knut du hoppas håller." | `3e6270ab908c81079bb7e7b5d54755a4` |
+| `Takoverdrag_OB_9_H1` | I | blåser × demo | OB_1_H1 | löst presenninghörn (stock, aldrig vår) → remmen i kroken ur SP_4_H1 | "Ett löst hörn flyger i väg." | `3e6270ab908c811a9edbc28c6b534500` |
+| `Takoverdrag_OB_10_1` | S | vattentätt × statisk | OB_3_H1 | våt silveryta efter hällningen (frame ur OB_3_H1) | "Regnet rinner av vävens yta i stället för att bli stående." | `3e6270ab908c81569b7bfc4b4c952c7d` |
+| `Takoverdrag_OB_11_H1` | I | vattentätt × demo | OB_3_H1 | hällningen som hela annonsen från sekund 3 (OUR AD OB_3_H1 0:06–0:14) | "Silverbelagd 210D-oxfordväv släpper vattnet direkt av taket." | `3e6270ab908c81a49a7ffc042ee08cca` |
+| `Takoverdrag_OB_12_1` | N | täcker för lite × statisk | — | medge att helöverdrag skyddar mer, sälj taket som den dyraste ytan | "Vårt överdrag ligger bara på taket, den dyraste ytan." | `3e6270ab908c81b9a1cefcf7766c3029` |
+
+Spärren `briefgranskning.mjs` (main): första körningen 6 av 7 stoppade (typ N med parent ⇒ I/S,
+"or/eller" i Picture ×3), rättat, 7/7 gröna. `lardom.mjs --brief`: 7 BRIEF-rader.
+`tools/notion-brief-upp.mjs` (REST): alla sju skapade och tillbakalästa, blocken stämmer; SQL-kontroll
+7 rader Draft med rätt Typ + Landing page. Copy av sonnet-subagenter (regel 6); huvudsessionen strök
+tre saker copyn bar som sidan inte säger: takluckan går att öppna under överdraget (OB_6, hela
+raden bort — sidan nämner luckan bara som stället där vattnet står), "fyra hörn" → sidans "fyra
+sidor" (OB_8/OB_9), "19,5 m²" → "6,5 × 3 m" och "inte mot lacken" → sidans titelrad (OB_12).
+Butiksneutralt (speglas till CaraShell). **Mätt i hubben samma dag:** OB_3_H1, OB_4_H1 och OB_5_1
+står i `CaraShell EN ready to be active` — alltså live i båda butikerna; matrisen rättad
+(OB_5_1 = live). **Kvar obyggt:** blåser × jämförelse, vattentätt × jämförelse, önskemål (alla
+fyra), täcker × video/demo/jämförelse, förvaring × statisk/demo/jämförelse — och de namngivna
+`SP_6_1` / `CS_14_1` från batch #5.
