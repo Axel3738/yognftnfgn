@@ -4,42 +4,44 @@ Vilka invändningar kunderna faktiskt har, och vilka av dem vi har svarat på.
 **Tomma rutor är nästa brief.** Den här filen är produktminne — den läses innan
 en briefrond och uppdateras efter (`node tools/invandningsmatris.mjs`).
 
-Mätt 2026-09-23. Källa: 30 kommentarer på `Takoverdrag_SP_4_H1` (35 608 kr, kampanjens största annons), 45 dagar, via `tools/annonskommentarer.mjs`. Formaten lästa ur kontot: 64 annonser i kampanjen, 2 med vinkelkoden OB.
-
-⚠️ Supportmejlen är INTE med: Brandet baverbutiken har ingen brevlåda i miljön — saknar KUNDTJANST_MAIL_PASS_BAVERBUTIKEN.. Kör om i en container som har nyckeln: `node kundtjanst/mail.mjs sok "husvagn" --kropp`.
+Mätt 2026-09-25. Källa: 44 kommentarer på `Takoverdrag_SP_4_H1` (43 756 kr, kampanjens största annons), 45 dagar, via `tools/annonskommentarer.mjs`. Formaten lästa ur kontot: 72 annonser i kampanjen, 5 med vinkelkoden OB.
 
 ## Vad kunderna invänder
 
-30 poster i källorna (30 kommentarer, 0 mejl). Andelen räknas på alla poster.
+44 poster i källorna (44 kommentarer, 0 mejl). Andelen räknas på alla poster.
 
 | Invändning | Antal | Andel | Kommentarer | Mejl |
 |---|---|---|---|---|
-| **Fukt / mögel / ventilation** | **11** | 37 % | 11 | 0 |
-| Önskemål | 2 | 7 % | 2 | 0 |
-| Skepsis / kritik | 1 | 3 % | 1 | 0 |
-| Fungerar det | 1 | 3 % | 1 | 0 |
+| **Fukt / mögel / ventilation** | **15** | 34 % | 15 | 0 |
+| **Fungerar det** | **3** | 7 % | 3 | 0 |
+| Önskemål | 2 | 5 % | 2 | 0 |
+| Skepsis / kritik | 1 | 2 % | 1 | 0 |
+| Storlek / passform | 1 | 2 % | 1 | 0 |
 
 Ordagrant, de tyngsta (kundnamn och adresser aldrig):
 
 > Man ställer alltid en vagn vid förvaring med lutning bakåt eller framåt. Taktäckning förstör husvagnen självdrag via takluckorna. Rekommenderas ej.
 > Ställ vagn på en RIKTIG Vinterförvaring så slipper man all tyngd av snön. Att täcka så där Välkomnar du Kondens och fukt
+> Blåser det inte sönder?? Har haft flera, nåde heltäckande och taktöckande som bara blåser sönder....
+> Tål en hel vinter, Sen då?? Köpa nytt??
 > Skulle vara ännu bättre om det fans lösa sidor att dra fast för även vita sidor å fönster tar mycket stryk efter en lång vinter. Jag vet‼️ efter många år med va
 > Hans Lindman Va min kommentar svårt att förstå. Takskyddet ser lätt ut att få på men jag tycker att man skyddar vagnen för lite. Jag har heltält men det är väld
 > Skräp
-> Blåser det inte sönder?? Har haft flera, nåde heltäckande och taktöckande som bara blåser sönder....
 
 ## Matrisen
 
 | Invändning | Video-svar | Statisk | Demo | Jämförelse |
 |---|---|---|---|---|
-| **Fukt / kondens / självdrag** (37 %) | `OB_4_H1` briefad, ej live | ⬜ | ⬜ | ⬜ |
-| Önskemål (7 %) | ⬜ | ⬜ | ⬜ | ⬜ |
-| Blåser sönder (3 %) | `Takoverdrag_OB_1_H1` live | ⬜ | ⬜ | ⬜ |
-| Vattentätt | `OB_3_H1` briefad, väntar film | ⬜ | ⬜ | ⬜ |
+| **Fukt / kondens / självdrag** (34 %) | `Takoverdrag_OB_4_H1` live | `Takoverdrag_OB_5_1` briefad, ej live | ⬜ | ⬜ |
+| Blåser sönder (7 %) | `Takoverdrag_OB_1_H1` live | ⬜ | ⬜ | ⬜ |
+| Önskemål (5 %) | ⬜ | ⬜ | ⬜ | ⬜ |
+| Täcker för lite (2 %) | ⬜ | ⬜ | ⬜ | ⬜ |
+| Vattentätt | `Takoverdrag_OB_3_H1` live | ⬜ | ⬜ | ⬜ |
 | Förvaring | `Takoverdrag_OB_2_H1` live | ⬜ | ⬜ | ⬜ |
-| Täcker för lite | ⬜ | ⬜ | ⬜ | ⬜ |
 
-**Täckning:** fukt 0 av 4 format (+1 briefad) (37 %) · önskemål 0 av 4 format (7 %) · blåser 1 av 4 format (3 %) · vattentätt 0 av 4 format (+1 briefad) · förvaring 1 av 4 format · täcker 0 av 4 format.
+**Täckning:** fukt 1 av 4 format (+1 briefad) (34 %) · blåser 1 av 4 format (7 %) · önskemål 0 av 4 format (5 %) · täcker 0 av 4 format (2 %) · vattentätt 1 av 4 format · förvaring 1 av 4 format.
+
+**OB-annonser i kontot utan rad i matrisen (1):** `Takoverdrag_OB_5_1` (statisk, active) — läs briefen, sätt `invandning=` i taggraden eller skriv in namnet i rätt ruta för hand.
 
 ## Varför det här är produktens viktigaste lucka
 
