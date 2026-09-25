@@ -86,3 +86,17 @@ Skicka ingenting och slå inte på något själv. Bygg inga schemalagda rutiner.
 | TXT | _dmarc | v=DMARC1; p=none; |
 
 MX, SPF, A och www rörs inte. TXT-posten på @ läggs bredvid SPF-posten och ersätter den inte.
+
+## Utfall, Cowork 2026-09-25 (steg 6–9)
+
+| Steg | Resultat |
+|---|---|
+| 6 | ✅ `_dmarc` TXT `v=DMARC1; p=none;` inlagd hos Loopia. ❌ NS-posterna för `send` gick inte: Loopias DNS-editor kan inte delegera en underdomän. ❌ TXT @ `klaviyo-site-verification=QZ4jLG` inte inlagd än. |
+| 7 | ⏳ Verify står på **pending**, eftersom NS-posterna saknas. |
+| 8 | ✅ Listan `LISTA_nyhetsbrev` (`ThfZj2`) är kopplad till Shopify-synken med samtyckessynk på. |
+| 9 | ✅ Shopify ansluten. Importen av kunderna pågick (11 %) vid rapporten. |
+
+**Val för sändardomänen (Axels beslut 2026-09-25, rekommendation A):**
+A) Be Loopias support lägga in de fyra NS-posterna för `send` + TXT @ (de kan göra det som editorn inte kan).
+B) Låt Cowork byta routing i Klaviyo från Dynamic till Static och se om Klaviyo då ger CNAME-poster, som Loopias editor klarar.
+Tills domänen är verifierad skickar Klaviyo från sin delade domän. Det fungerar, men sämre leveransbarhet; inga utskick innan den är klar.
