@@ -13,9 +13,12 @@
 //      ⚠️ `?ids=a,b,c` är avvecklat — "The ids query parameter is deprecated in
 //      v26.0+" (mätt samma dag, även mot v21.0-adressen).
 //      `filter=stream` ger svaren också, `since=` fönstret.
-//   4. `from` returneras INTE (sekretess) — vi kan varken se vem som skrev eller
-//      om sidan själv svarat. Namn i texten kommer ur taggar: `message_tags`
-//      bär offset/längd, och maska.mjs byter dem mot "@…".
+//   4. `from` returneras INTE för privatpersoner (sekretess) — vi ser inte vem
+//      som skrev. Namn i texten kommer ur taggar: `message_tags` bär
+//      offset/längd, och maska.mjs byter dem mot "@…". ⚠️ Men för SIDANS egna
+//      kommentarer kommer `from` med (mätt 2026-09-25: 41 av 343 "kommentarer"
+//      i fönstret var sidans egna publicerade svar, och de fick svarsförslag som
+//      om de vore kunder). Sidans egna kommentarer hoppas därför här.
 //
 // Mätt samma dag: 72 timmar gav 204 kommentarer (SE 84, NO 17, OPS/CaraShell
 // 54, UK/CaraShell US 49) på ~63 sekunder. En sida (1317870104733246) gav
@@ -181,7 +184,7 @@ export async function hamtaAnnonser(klient, kontoId, { dagar = 3, idag }) {
   }));
 }
 
-export const KOMMENTARFALT = 'id,message,message_tags,created_time,like_count,comment_count,parent{id},permalink_url,is_hidden,attachment{type}';
+export const KOMMENTARFALT = 'id,from{id},message,message_tags,created_time,like_count,comment_count,parent{id},permalink_url,is_hidden,attachment{type}';
 const MAX_SIDOR_PER_INLAGG = 20;
 
 /** Följ paging.next, med tak. Ett fel lämnar det som hunnit läsas + felet — det stoppar aldrig resten. */
@@ -247,6 +250,7 @@ export async function hamtaKommentarer(klient, inlagg, { sedanUnix, logg = (s) =
         if (fel) felPoster.push({ post: del[j], fel });
         for (const k of rader) {
           if (Date.parse(k.created_time) / 1000 < sedanUnix) continue;
+          if (k.from?.id === sidaId) continue; // sidans eget svar, ingen kund
           // Flera annonsinlägg kan dela EN kommentarstråd (mätt 2026-09-24: 34 av
           // 217 kommentarer kom tillbaka på två inlägg). Kommentaren räknas en gång;
           // inlägget som äger den (första ledet i kommentarens id) blir `post`.
