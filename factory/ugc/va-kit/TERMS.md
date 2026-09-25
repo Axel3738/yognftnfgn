@@ -9,7 +9,7 @@ If a creator asks for something outside it → the matching case in `SOP.md`
 
 | | |
 |---|---|
-| Store name in messages | **Bäverbutiken** (Swedish online store, tests many new products every month) |
+| Store name in messages | **The store the product comes from** (Axel 2026-09-25: two brands): **Bäverbutiken** (baverbutiken.se — tests many new products every month) or **Matstrumpor.se** (matstrumpor.se — fun food socks). Write it as [BUTIK] in every template. |
 | Company that pays (on the invoice) | **Stonebite Ecom AB**, org.nr **559576-2401**, Sjöhed 160, 442 74 Harestad, Sweden |
 | Where invoices go | The creator emails the invoice to the company Gmail (your login PDF) → you forward it to Axel the same day. **This is the only thing Axel ever gets.** |
 

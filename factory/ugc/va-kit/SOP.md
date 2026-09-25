@@ -76,10 +76,17 @@ suggests profiles that don't exist or belong to someone else. Link doesn't open,
 no face, no Swedish → delete it. Never message someone you haven't seen yourself.
 
 **You pick the products yourself, with this rule:**
-1. Open https://baverbutiken.se/collections/all?sort_by=best-selling — the store's best sellers, most sold first.
-2. Take a product from the **top 20** that is **at least 300 kr** and **easy to hold and show in a video** (not tiny parts, not something that needs installing by a professional).
-3. Max **2 products at a time**, 3 creators each. When a product has 3 approved videos, pick the next one from the list.
+1. Two stores, two best-seller lists (most sold first):
+   - **Bäverbutiken:** https://baverbutiken.se/collections/all?sort_by=best-selling
+   - **Matstrumpor.se:** https://matstrumpor.se/collections/all?sort_by=best-selling
+2. Bäverbutiken: take a product from the **top 20** that is **at least 300 kr** and **easy to hold and show in a video** (not tiny parts, not something that needs installing by a professional). Matstrumpor.se: any of the **top 10**.
+3. Max **2 products at a time** (for example one from each store), 3 creators each. When a product has 3 approved videos, pick the next one from the list.
 4. Skip a product that already has 3 approved videos in the sheet (Deals tab).
+
+**Creators we worked with before** (Axel knows some — e.g. Nathalie): they come
+first. Check the sheet, send the **Returning creator** template (mention both
+stores), skip the quick filter — but they still accept the full agreement for
+every new video. Axel said: use them when they fit the product.
 
 **Budget:** max **6 new deals per month**. Count them in the Deals tab (Agreed date this month). At 6: stop making new deals until the 1st.
 
@@ -190,7 +197,7 @@ Result (Creators tab) — you set it yourself, from the delivery:
 
 ## Negotiation — our tactic
 
-**Our strongest card is not money. It's repeat work** (Evolve 2026-09-24: "sell the vision"). Bäverbutiken tests new
+**Our strongest card is not money. It's repeat work** (Evolve 2026-09-24: "sell the vision"). We test new
 products all the time, so we need new UGC every month. A creator who delivers
 well now gets product after product. Say that early and mean it:
 

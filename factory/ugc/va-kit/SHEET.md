@@ -1,6 +1,6 @@
 # The Google Sheet — how to set it up and fill it in
 
-One Google Sheet: **"UGC Creators — Bäverbutiken"**. Share it with Axel (edit).
+One Google Sheet: **"UGC Creators — Stonebite"** (both stores, one sheet — add a column **Store** in Deals). Share it with Axel (edit).
 It is our creator bank. We keep it for years, so keep it clean.
 
 Import `creators-sheet-template.csv` and `deals-sheet-template.csv`

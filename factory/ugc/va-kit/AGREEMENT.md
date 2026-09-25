@@ -15,7 +15,7 @@ Screenshot the reply into the deal's Drive folder. Never change a clause
 yourself — if the creator wants a change: "We use the same agreement with every
 creator." Insists → walk away.
 
-Brackets: `[FULLSTÄNDIGT NAMN]`, `[PROFIL-LÄNK]`, `[PRODUKT]`,
+Brackets: `[BUTIK]` (Bäverbutiken or Matstrumpor.se — the product's store), `[FULLSTÄNDIGT NAMN]`, `[PROFIL-LÄNK]`, `[PRODUKT]`,
 `[ANTAL DAGAR]` (14; up to 21 only if agreed in the negotiation),
 `[BELOPP]` (the agreed price, excluding VAT), `[PRODUKTPRIS]` (the price on the product page
 the day you send the product).
@@ -28,7 +28,7 @@ the day you send the product).
 SAMARBETSAVTAL: UGC-VIDEO
 
 Parter
-Beställare: Stonebite Ecom AB, org.nr 559576-2401, Sjöhed 160, 442 74 Harestad, contact@stonebite.org (driver Bäverbutiken).
+Beställare: Stonebite Ecom AB, org.nr 559576-2401, Sjöhed 160, 442 74 Harestad, contact@stonebite.org (driver bl.a. Bäverbutiken och Matstrumpor.se).
 Kreatör: [FULLSTÄNDIGT NAMN], [PROFIL-LÄNK].
 
 1. Uppdrag
@@ -66,7 +66,7 @@ När leveransen godkänts överlåter kreatören till beställaren upphovsrätte
 Kreatören samtycker till att hens namn, bild och röst används i beställarens reklam enligt punkt 7 (lagen om namn och bild i reklam). Det gäller även AI-bearbetning: dubbning med en AI-skapad röst som låter som kreatörens, och läppsynk så att kreatören ser ut att tala ett annat språk. AI-rösten används bara för att återge, översätta eller korta det kreatören själv sagt om produkten, aldrig för att låta kreatören säga något annat eller tala för en annan produkt. Beställaren märker AI-bearbetat material så som lag och plattformarnas regler kräver. Samtycket är en del av avtalet och kan inte återkallas.
 
 9. Kreatörens egna inlägg
-Efter godkännandet får kreatören lägga upp videon på egna konton. Inlägget ska märkas som reklam direkt i början av texten, t.ex. "Reklam för Bäverbutiken".
+Efter godkännandet får kreatören lägga upp videon på egna konton. Inlägget ska märkas som reklam direkt i början av texten, t.ex. "Reklam för [BUTIK]".
 
 10. Personuppgifter
 Stonebite Ecom AB är personuppgiftsansvarig för kreatörens namn, kontakt- och adressuppgifter och för bild och röst i materialet. Uppgifterna behandlas för att fullgöra avtalet (art. 6.1 b GDPR) och för bokföring enligt lag. Materialet sparas så länge det används, fakturauppgifter så länge bokföringslagen kräver. Uppgifterna kan hanteras av våra assistenter och IT-leverantörer, även utanför EU, med det skydd GDPR kräver. Frågor, utdrag eller rättelse: contact@stonebite.org. Klagomål kan lämnas till IMY.

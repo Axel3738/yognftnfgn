@@ -3,13 +3,26 @@
 Claude adapts these to each creator (name, one real thing they made, the
 product). **Never send a template word for word to many creators** — every
 first message must mention something this creator actually made.
-`[brackets]` = fill in. Sign every message with your first name + "Bäverbutiken".
+`[brackets]` = fill in. Sign every message with your first name + the store: [BUTIK] = **Bäverbutiken** or **Matstrumpor.se** (the store the product comes from).
 
 ---
 
+## Returning creator (we worked together before)
+
+> Hej [namn]! Jag heter [ditt namn] och hör av mig från [BUTIK]. Vi har
+> jobbat ihop tidigare och vill gärna göra det igen. Vi har två butiker nu,
+> Bäverbutiken och Matstrumpor.se, och just nu gäller det [produkt]. Samma
+> upplägg som sist: 1 500 kr exkl. moms för en video plus råmaterialet, och du
+> behåller produkten. Är du med?
+
+*English: Hi [name]! I'm [name], writing from [STORE]. We've worked together
+before and would love to again. We have two stores now, Bäverbutiken and
+Matstrumpor.se, and right now it's [product]. Same setup as last time: 1 500 kr
+excl. VAT for one video plus the raw footage, and you keep the product. Are you in?*
+
 ## First message
 
-> Hej [namn]! Jag heter [ditt namn] och jobbar med Bäverbutiken, en svensk
+> Hej [namn]! Jag heter [ditt namn] och jobbar med [BUTIK], en svensk
 > webbutik som testar många nya produkter varje månad. Jag gillade verkligen
 > [en konkret sak de gjort, t.ex. "videon där du visar båtpresenningen i
 > regnet"]. Det kändes äkta, inte som reklam.
@@ -21,7 +34,7 @@ first message must mention something this creator actually made.
 >
 > Låter det intressant? Svara här så berättar jag mer.
 
-*English: Hi [name]! I'm [name] and I work with Bäverbutiken, a Swedish online
+*English: Hi [name]! I'm [name] and I work with [STORE], a Swedish online
 store that tests many new products every month. I really liked [the concrete
 thing]. It felt real, not like an ad. We're looking for creators to work with
 long-term. Right now it's [product]. We offer 1 500 kr excl. VAT for one video plus the raw

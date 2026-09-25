@@ -39,6 +39,10 @@ dessa villkor. Ändras de: uppdatera här först, aldrig i ett enskilt meddeland
   VA:ns "0 - YOUR LOGINS (secret).pdf" — aldrig i repot eller i handboken som
   laddas upp i Claude-projektet. Saknas filen i en ny container: be Axel om
   inloggningarna igen innan paketet byggs.
+- **Två varumärken (Axel 2026-09-25):** Bäverbutiken OCH Matstrumpor.se — VA:n
+  väljer bland båda butikernas bästsäljare, [BUTIK] i mallar och avtal.
+  Tidigare kreatörer (t.ex. Nathalie) kontaktas först med mallen "Returning
+  creator", nytt avtal per video.
 - **VA:n frågar aldrig Axel** (Axels order 2026-09-24: "jag vill aldrig behöva se
   nått annat än möjligtvis fakturan"). Varje utfall har en egen regel i SOP:en;
   det som saknas avgörs av fem regler ("When nothing fits"). VA:n väljer själv
