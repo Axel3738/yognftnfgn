@@ -26,8 +26,8 @@ fars dag 8/11 (sista beställning **19/10**), Black Week 23–30/11, jul (sista 
 | 46 | tis 10/11 | **K17 ny** | MC-kapell, sätesöverdrag, båtmotorskydd | Ställ undan maskinerna för vintern | ska byggas |
 | 47 | tis 17/11 | **K18 ny** | Motorhölje, taköverdrag, fiskespöhållare | Det flest köpt i höst (topp 3, 60 dagar) | ska byggas |
 | 47 | tor 19/11 | K13 | Julklappsguide | Presenter som löser ett problem | utkast |
-| 48 | mån 23/11 | K11 | Sju storsäljare | Black Week, **rabatt = Axels beslut** | utkast |
-| 48 | fre 27/11 | K12 | Fyra storsäljare | Black Friday, **rabatt = Axels beslut** | utkast |
+| 48 | mån 23/11 | K11 | Sju storsäljare | Black Week, trappa 10/20/30 % | utkast |
+| 48 | fre 27/11 | K12 | Fyra storsäljare | Black Friday, trappa 10/20/30 % | utkast |
 | 49 | tis 1/12 | K14 | Bälteslip, fiskespöhållare, kamera, taköverdrag | Torsdag är sista dagen för jul | utkast |
 | 49 | **tor 3/12** | **K19 ny** | Samma som K14 | Sista dagen i dag för jul | ska byggas |
 | 50 | tis 8/12 | **K20 ny** | Sotarset, termoskydd, kranskydd | Hinner inte till jul, men används hela vintern | ska byggas |
@@ -50,6 +50,6 @@ tillkommer. Mät om när Klaviyo visar faktisk förbrukning (Billing).
 
 - Kampanjer går bara till segment med samtycke (motorn stoppar annat).
 - Första fyra (K01–K04) går till uppvärmningssegmentet, sedan engagerade 60/90 dagar.
-- Ingen rabatt utan Axels beslut. K11 och K12 säger just nu "samma pris som förra veckan".
+- Ingen rabatt utan Axels beslut. **Black Week: Axels beslut 2026-09-25, trappa på hela sajten:** 10 % på 1 vara, 20 % på 2, 30 % på 3 eller fler, 23/11 00:00 till 1/12 00:00. Ligger i Shopify som tre schemalagda automatiska rabatter (`DiscountAutomaticNode` 2303810240861, 2303810273629, 2303810306397, skapade med appen "bäver email", som har `write_discounts`). De kombineras inte med varandra eller med andra rabatter, bara med fraktrabatter, och Shopify väljer det bästa steget. K11 och K12 säljer trappan.
 - Leveranstiden skrivs aldrig i ett mejl (spårningssidan visar den).
 - Nya produkter under hösten får en plats genom att flytta en tisdag, inte genom fler utskick.
