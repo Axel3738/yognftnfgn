@@ -149,3 +149,13 @@ test('spärren: bara namngivna flöden får status live, och aldrig ett kampanju
   assert.throws(() => sparrSkicka('PATCH', '/api/flows/F1', { data: { attributes: { status: 'live', name: 'x' } } }, tillat), (e) => e.kod === 'SPARR_SKICKA');
   assert.throws(() => sparrSkicka('POST', '/api/campaign-send-jobs', { data: {} }, tillat), (e) => e.kod === 'SPARR_SKICKA');
 });
+
+test('spärren: send-job bara för en namngiven kampanj, aldrig för någon annan', async () => {
+  const { sparrSkicka } = await import('../klient.mjs');
+  const job = (id) => ({ data: { type: 'campaign-send-job', id } });
+  assert.throws(() => sparrSkicka('POST', '/api/campaign-send-jobs', job('C1')), (e) => e.kod === 'SPARR_SKICKA');
+  assert.doesNotThrow(() => sparrSkicka('POST', '/api/campaign-send-jobs', job('C1'), new Set(['kampanj:C1'])));
+  assert.throws(() => sparrSkicka('POST', '/api/campaign-send-jobs', job('C2'), new Set(['kampanj:C1'])), (e) => e.kod === 'SPARR_SKICKA');
+  // Ett flödes-id i mängden öppnar aldrig ett kampanjutskick.
+  assert.throws(() => sparrSkicka('POST', '/api/campaign-send-jobs', job('C1'), new Set(['C1'])), (e) => e.kod === 'SPARR_SKICKA');
+});
