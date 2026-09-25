@@ -26,6 +26,7 @@ Id:n står i `konto/baverbutiken/uppladdat.jsonl`.
 | Kommandot | `/klaviyo kolla|bygg|ladda-upp|rapport|cs` (`.claude/commands/klaviyo.md`) |
 | Evolve | `klaviyo/evolve/`: botens svar, flödesresearchen, återköpsanalysen |
 | Sista stegen | `klaviyo/SISTA-STEGEN.md`: Cowork-prompten och sessionsprompten |
+| Kampanjschemat | `innehall/baverbutiken/KALENDER-2026.md` (K01–K22, 29/9–29/12, en tisdag i veckan + högtider). Sida: https://claude.ai/artifact/SYZSwihWS9g9LNTi2wqqMD |
 
 ## Så körs det
 
