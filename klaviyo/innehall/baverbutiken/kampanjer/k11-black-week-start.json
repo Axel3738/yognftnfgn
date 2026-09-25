@@ -1,66 +1,73 @@
 {
   "id": "k11-black-week-start",
-  "namn": "MAIL_20261123_Bastsaljare_CS_1_engagerade90d_promo_black-week_v1",
-  "memo": "Hypotes: utan en rabatt att sälja på testar mejlet om ren synlighet, en samlad lista över det vi redan säljer mest av, räcker för att få klick i en vecka där de flesta redan tänker på vinter och jul. Ingen egen datapunkt stödjer det ännu (kalla_ref null) - detta är kontots första kampanj i den här veckan. Ordet 'rea/rabatt/procent' används aldrig; kraver_axel gäller ett eventuellt prisbeslut, inte copyn.",
+  "namn": "MAIL_20261123_Bastsaljare_CS_1_engagerade90d_promo_black-week_v2",
+  "version": 2,
+  "memo": "Axels beslut 2026-09-25: hela sajten har en rabattrappa 23-30 november, 10 procent for 1 vara, 20 for 2, 30 for 3 eller fler, ingen kod behovs, den dras automatiskt i kassan. K11 oppnar veckan och forklarar trappan konkret sa mottagaren forstar den pa fem sekunder, med produkterna grupperade sa det ar latt att se vad man kan lagga till for att na nasta niva.",
   "taggar": {
-    "typ": "M",
+    "typ": "S",
     "_typ": "N=nytt koncept, I=iteration av annonsvinnare, IM=imitation, M=mejlspecifikt, S=säsong",
     "kalla": "egen-data",
     "_kalla": "egen-data | winning-line | voc | swipe | gissning",
-    "kalla_ref": null,
+    "kalla_ref": "CLAUDE.md: Axels beslut 2026-09-25 (rabattrappa Black Week, 10/20/30 procent, 23-30 november)",
     "lardom": null,
-    "avatar": "den som ändå ska handla inför vintern och julen den här veckan, med eller utan extraprisad reklam",
-    "begar": "veta att priset inte ändrats i onödan, och se vad som redan säljer bra utan att behöva jämföra procent",
+    "avatar": "den som ändå ska handla inför vintern och julen den här veckan, och vill förstå den nya rabattrappan",
+    "begar": "förstå exakt hur mycket rabatt de får beroende på hur många varor de lägger i kundvagnen",
     "awareness": "promo",
     "_awareness": "unaware | problem | solution | product | promo",
-    "urgency": "ingen",
+    "urgency": "pris",
     "_urgency": "sasong | lager | pris | konsekvens | ingen",
-    "confidence": "low",
+    "confidence": "high",
     "_confidence": "high | medium | low (low = gissning)",
     "prefix": "Bastsaljare",
     "kod": "CS"
   },
   "amnesrader": [
-    { "text": "Sju prylar, samma pris som förra veckan", "begar": "veta att priset inte ändrats i onödan" },
-    { "text": "Det här har redan sålt mest i år", "begar": "se vad andra redan valt, utan att behöva jämföra" },
-    { "text": "Ingen countdown här, bara prylarna", "begar": "slippa köppress men ändå få syn på det som finns" }
+    { "text": "Tre varor i kundvagnen ger automatiskt mest rabatt", "begar": "veta att fler varor ger mer rabatt utan att göra något extra" },
+    { "text": "10, 20 eller 30 procent, kassan räknar själv", "begar": "se exakt vilken rabattnivå de hamnar på" },
+    { "text": "Ingen kod, rabatten dyker upp när du lägger till en vara till", "begar": "konkret bevis på att rabatten syns direkt i kundvagnen" }
   ],
-  "forhandstext": "Taköverdraget, båtmotorskyddet och fem till, till samma pris som igår.",
+  "forhandstext": "1 vara ger 10 procent, 2 ger 20, 3 eller fler ger 30. Ingen kod behövs.",
   "block": [
     {
       "typ": "hero",
-      "rubrik": "Veckan då de flesta handlar inför vintern och julen",
-      "text": "{{fornamn}}, vi har inget nytt pris att visa dig den här veckan. Det vi har är taköverdraget, båtmotorskyddet och fem andra prylar som redan är de vi säljer mest av, år efter år.",
+      "rubrik": "Rabatten trappar upp av sig själv, hela veckan",
+      "text": "{{fornamn}}, från i dag till och med nästa måndag räknar kassan ut din rabatt automatiskt. En vara ger 10 procent, två ger 20, tre eller fler ger 30. Ingen kod, ingen anmälan. Lägg det du behöver i kundvagnen och se procenten ändras när nästa vara läggs till.",
       "bild": "produkt:takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
-      "knapp": { "text": "Se de sju produkterna", "lank": "kollektion:alla-produkter" }
+      "knapp": { "text": "Se alla produkter", "lank": "kollektion:alla-produkter" }
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "Så funkar trappan",
+      "punkter": ["1 vara: 10 % rabatt", "2 varor: 20 % rabatt", "3 varor eller fler: 30 % rabatt"]
     },
     {
       "typ": "produktrad",
-      "rubrik": "Sju produkter, samma pris som igår",
+      "rubrik": "Kombinera för nästa nivå",
       "handles": [
         "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+        "termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
         "batmotorskydd-420d-heltackande-for-utombordare",
         "ibc-tankoverdrag-1000-l-stoppar-alger-uv",
         "overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
         "balteslipmaskin-mini-3-i-1-knivslip-polerare",
-        "fiskespohallare-4-pack-kraftig-forvaring",
-        "termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande"
+        "fiskespohallare-4-pack-kraftig-forvaring"
       ]
     },
     { "typ": "fakta" }
   ],
   "tretest": [
-    { "rad": "Sju prylar, samma pris som förra veckan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Det här har redan sålt mest i år", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Ingen countdown här, bara prylarna", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Taköverdraget, båtmotorskyddet och fem till, till samma pris som igår.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Veckan då de flesta handlar inför vintern och julen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Sju produkter, samma pris som igår", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Se de sju produkterna", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+    { "rad": "Tre varor i kundvagnen ger automatiskt mest rabatt", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "10, 20 eller 30 procent, kassan räknar själv", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Ingen kod, rabatten dyker upp när du lägger till en vara till", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "1 vara ger 10 procent, 2 ger 20, 3 eller fler ger 30. Ingen kod behövs.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Rabatten trappar upp av sig själv, hela veckan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Så funkar trappan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Kombinera för nästa nivå", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se alla produkter", "visualisera": true, "falsifiera": true, "ingen_annan": true }
   ],
   "planerad": "2026-11-23T18:00:00+01:00",
   "segment": ["SEG_engagerade_90d"],
   "exkludera": ["SEG_oengagerade_180d"],
-  "status_plan": "utkast-skrivs-om-efter-lardom",
-  "kraver_axel": "Rabatt utöver dagens priser i Black Week är ägarens beslut (CLAUDE.md regel 12). Utkastet säljer på dagens priser och jämförpriser, och nämner aldrig rea, rabatt eller procent."
+  "status_plan": "klar",
+  "kraver_axel": null
 }

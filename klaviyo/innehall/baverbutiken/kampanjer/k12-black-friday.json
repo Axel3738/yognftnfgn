@@ -1,63 +1,126 @@
 {
   "id": "k12-black-friday",
-  "namn": "MAIL_20261127_Bastsaljare_CS_2_engagerade90d_promo_black-friday_v1",
-  "memo": "Samma läge som K11 (ingen rabatt beslutad, kraver_axel oförändrat), men egna krokar: dagen i sig, inte veckan, och fyra produkter i stället för sju för att inte upprepa K11 ordagrant för samma mottagare. Ingen egen datapunkt (kalla_ref null).",
+  "namn": "MAIL_20261127_Bastsaljare_CS_2_engagerade90d_promo_black-friday_v2",
+  "version": 2,
+  "memo": "Axels beslut 2026-09-25: samma rabattrappa som K11 (10/20/30 procent, 23-30 november, automatisk i kassan). K12 landar pa fredagen med en annan vinkel: hur nara nasta niva mottagaren ar och att tre dagar av trappan aterstar, med fyra produkter grupperade i tva par sa ett tillagg racker for att na en hogre niva.",
   "taggar": {
-    "typ": "M",
+    "typ": "S",
     "_typ": "N=nytt koncept, I=iteration av annonsvinnare, IM=imitation, M=mejlspecifikt, S=säsong",
     "kalla": "egen-data",
     "_kalla": "egen-data | winning-line | voc | swipe | gissning",
-    "kalla_ref": null,
+    "kalla_ref": "CLAUDE.md: Axels beslut 2026-09-25 (rabattrappa Black Week, 10/20/30 procent, 23-30 november)",
     "lardom": null,
-    "avatar": "samma som K11: den som ändå ska handla inför vintern och julen, oavsett vilken dag det är",
-    "begar": "se konkreta prylar utan att behöva jämföra procent mot andra butikers skyltar",
+    "avatar": "samma som K11: den som ändå ska handla inför vintern och julen, nu på fredagen mitt i veckan",
+    "begar": "veta hur nära nästa rabattnivå de redan är, och att erbjudandet snart tar slut",
     "awareness": "promo",
     "_awareness": "unaware | problem | solution | product | promo",
-    "urgency": "ingen",
+    "urgency": "sasong",
     "_urgency": "sasong | lager | pris | konsekvens | ingen",
-    "confidence": "low",
+    "confidence": "high",
     "_confidence": "high | medium | low (low = gissning)",
     "prefix": "Bastsaljare",
     "kod": "CS"
   },
   "amnesrader": [
-    { "text": "En fredag utan skyltar", "begar": "nyfikenhet på en annan vinkel än prisskyltar" },
-    { "text": "Taket, motorn, kniven och rutan", "begar": "se konkret vad mejlet faktiskt handlar om" },
-    { "text": "Det som håller, oavsett dag", "begar": "trygghet i att kvaliteten inte ändras med datumet" }
+    {
+      "text": "Två varor i kundvagnen räcker för 20 procent",
+      "begar": "veta exakt vilken nivå två varor ger"
+    },
+    {
+      "text": "Rabattrappan gäller till och med måndag",
+      "begar": "veta att erbjudandet snart tar slut, en riktig deadline"
+    },
+    {
+      "text": "En vara till, en nivå högre",
+      "begar": "motivation att lägga till en vara till för att nå nästa steg"
+    }
   ],
-  "forhandstext": "Fyra prylar, samma kvalitet som igår.",
+  "forhandstext": "1 vara ger 10 procent, 2 ger 20, 3 eller fler ger 30. Till och med måndag.",
   "block": [
     {
       "typ": "hero",
-      "rubrik": "En fredag om vad som faktiskt håller",
-      "text": "{{fornamn}}, i dag pratar mycket om siffror på skyltar. Vi håller oss till fyra prylar som gör sitt jobb: taket, motorn, kniven och rutan.",
+      "rubrik": "Fredagen mitt i rabattrappan",
+      "text": "{{fornamn}}, i dag är det fredag och rabattrappan gäller fortfarande hela sajten. En vara ger 10 procent, två ger 20, tre eller fler ger 30. Den gäller till och med måndag, sen är den borta. Lägg till en vara till i kundvagnen och se procenten stiga direkt.",
       "bild": "produkt:overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
-      "knapp": { "text": "Se de fyra", "lank": "kollektion:alla-produkter" }
+      "knapp": {
+        "text": "Se alla produkter",
+        "lank": "kollektion:alla-produkter"
+      }
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "Så funkar trappan",
+      "punkter": [
+        "1 vara: 10 % rabatt",
+        "2 varor: 20 % rabatt",
+        "3 varor eller fler: 30 % rabatt"
+      ]
     },
     {
       "typ": "produktrad",
-      "rubrik": "De fyra som håller",
+      "rubrik": "En vara till, en nivå högre",
       "handles": [
         "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+        "termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
         "overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
-        "balteslipmaskin-mini-3-i-1-knivslip-polerare",
-        "termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande"
+        "balteslipmaskin-mini-3-i-1-knivslip-polerare"
       ]
     },
-    { "typ": "fakta" }
+    {
+      "typ": "fakta"
+    }
   ],
   "tretest": [
-    { "rad": "En fredag utan skyltar", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Taket, motorn, kniven och rutan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Det som håller, oavsett dag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Fyra prylar, samma kvalitet som igår.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "En fredag om vad som faktiskt håller", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "De fyra som håller", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Se de fyra", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+    {
+      "rad": "Två varor i kundvagnen räcker för 20 procent",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Rabattrappan gäller till och med måndag",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "En vara till, en nivå högre",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "1 vara ger 10 procent, 2 ger 20, 3 eller fler ger 30. Till och med måndag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Fredagen mitt i rabattrappan",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Så funkar trappan",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Se alla produkter",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    }
   ],
   "planerad": "2026-11-27T18:00:00+01:00",
-  "segment": ["SEG_engagerade_90d"],
-  "exkludera": ["SEG_oengagerade_180d"],
-  "status_plan": "utkast-skrivs-om-efter-lardom",
-  "kraver_axel": "Rabatt utöver dagens priser i Black Week är ägarens beslut (CLAUDE.md regel 12). Utkastet säljer på dagens priser och jämförpriser, och nämner aldrig rea, rabatt eller procent."
+  "segment": [
+    "SEG_engagerade_90d"
+  ],
+  "exkludera": [
+    "SEG_oengagerade_180d"
+  ],
+  "status_plan": "klar",
+  "kraver_axel": null
 }
