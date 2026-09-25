@@ -15,7 +15,7 @@ Research 7 (Chan & Mogilner 2017): experiential gifts strengthen relationships m
 
 ## 2. Hypothesis
 A gift framed as an invitation (time together) outperforms a gift framed as a product for the adult-child audience, because it answers what the fathers themselves say they want.
-**Hook (H1):** «SV H1»
+**Hook (H1):** Åttonde november är inringad i kalendern. I år ger vi pappa Mastern.
 
 ## 3. Format
 | | |
@@ -35,14 +35,14 @@ Swedish is what runs in the ad. The right column is meaning only, for the editor
 
 | Time | Swedish (use this) | English meaning |
 |---|---|---|
-| 0–3 s · HOOK H1 | «SV H1» | «EN H1» — INTENT: This year we are not giving dad a thing. We are giving him a Sunday — and the thing that lets him sit at the table. Object: a wall calendar with the 8th of November circled and "hos pappa" written. |
-| 0–3 s · HOOK H2 | «SV H2» | «EN H2» — INTENT: Text message: "We come at two. You grill." Object: the phone with the message thread. |
-| 0–3 s · HOOK H3 | «SV H3» | «EN H3» — INTENT: Dad's chair is empty for twenty minutes every time we eat at his place. Object: the empty chair at the head of the table, plates on. |
-| 3–8 s · WHAT DADS WANT | «SV 4» | «EN 4» — INTENT: Ask the fathers what they want for Father's Day and most say the same thing: to see their children, to be invited to dinner. So this year we invite ourselves to his place. |
-| 8–13 s · THE EMPTY CHAIR | «SV 5» | «EN 5» — INTENT: And every dinner at his place ends the same way: we clear the table, he stands at the grill with a wire brush that only scrapes the top. Twenty minutes. His chair empty. Not his fault — the brush's. |
-| 13–20 s · THE BOX ON THE TABLE | «SV 6» | «EN 6» — INTENT: This year the box is on the table when we arrive. Mastern: one button, the head spins down into the gaps while the grate is still warm, sixty seconds, two heads and nothing comes loose. |
-| 20–26 s · HE SITS DOWN | «SV 7» | «EN 7» — INTENT: Then he sits down. With us. Every Sunday from now on. That is the whole routine. |
-| 26–31 s · LOCK + CTA | «SV 8» | «EN 8» — INTENT: 999 kr, thirty days open purchase, lifetime warranty. Then the giver's line from §6 — the invitation. |
+| 0–3 s · HOOK H1 | Åttonde november är inringad i kalendern. I år ger vi pappa Mastern. | The eighth of November is circled on the calendar. This year we're giving dad Mastern. |
+| 0–3 s · HOOK H2 | Ett sms till pappa: "Vi kommer klockan två. Du grillar, vi tar med Mastern." | A text to dad: "We're coming at two. You grill, we're bringing Mastern." |
+| 0–3 s · HOOK H3 | Pappas stol står tom i tjugo minuter. Stålborsten kommer aldrig ner i springorna. | Dad's chair sits empty for twenty minutes. The wire brush never gets down into the gaps. |
+| 3–8 s · WHAT DADS WANT | De flesta pappor vill träffa sina barn och bli bjudna på middag. I år bjuder vi in oss själva, och vi tar med Mastern. | Most dads want to see their children and be invited to dinner. This year we invite ourselves, and we bring Mastern. |
+| 8–13 s · THE EMPTY CHAIR | Men middagen hos honom slutar alltid likadant. Vi diskar, han står vid grillen med en stålborste som aldrig når ner i springorna. Tjugo minuter. Stolen tom. Inte hans fel, borstens. | But dinner at his place always ends the same way. We do the dishes, he stands at the grill with a wire brush that never reaches down into the gaps. Twenty minutes. His chair empty. Not his fault, the brush's. |
+| 13–20 s · THE BOX ON THE TABLE | I år står lådan på bordet redan när vi kommer. Mastern: en knapp, huvudet snurrar ner i springorna medan gallret fortfarande är varmt. Sextio sekunder. Två huvuden. Inget lossnar. | This year the box is already on the table when we arrive. Mastern: one button, the head spins down into the gaps while the grate is still warm. Sixty seconds. Two heads. Nothing comes loose. |
+| 20–26 s · HE SITS DOWN | Sen sätter han sig, färdig på sextio sekunder. Med oss. Varje söndag härefter. Det är hela grejen. | Then he sits down, done in sixty seconds. With us. Every Sunday from now on. That's the whole routine. |
+| 26–31 s · LOCK + CTA | 999 kr. Trettio dagars öppet köp. Livstidsgaranti. | 999 kr. Thirty days open purchase. Lifetime warranty. |
 
 ## 5. Direction — one row per script line (docs/os/BRIEF-REGI.md)
 **Assets:** Drive "Content for all markets. B-roll etc" (id 1Q9-TFnhQI3QV0z80Lw1iOOB7Wk_RWJ-r) — sub-folders: home-recorded product macro (1gLEJU2bdzXWU-w2eHoxo9XD2jImMv_Zr), problem agitation / dirty grates / scrubbing (1YY7Y_DuaPAszwF4jM70g0xue1N_hUsq6), mid clips + grillers (1K2B_qE8jVlKng6k1Cpcw_GRsEOXD0aXZ), CTA / end card (1K8LjlcndXuWdWI2ic7a0A4JDJqcnLaFe), brush-safe heads (1QU-V7oD19egsbS90cKC6BCIYH84JJlih), old methods: onion, foil, wire brush (1ZoRoDhf07RKXvKa-FMEx5zypdQwr3s90), brushes normal stores sell (10srWqlx7x_MXiJO0MLtR8pDP_JkaR39B), expensive new grills (1k5VjErDXeW4RZz1zQEbFWry1Vo6QzXu1), broken grills thrown away (1VggaPZ1X7VDSbSR8jmTBpBvH2Zq0sIGW), UGC Rickard Jenders (1NMTQHuODyqFUMrPoiG69vRR8LtJZa_-T), Beerhansson UGC (1ucL6wrOSre-h9m038xMZwjuWHLrYaeWN), Gilz content (1gZua5tjAFUfuzH9xFWry91q7sRELGAbO) · product photos Aug 2026 (14xo1cnBbNMhv-i0d7WUbtgfMXVVcvlWf) · CDN: https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Namnlosdesign-2026-07-06T113034.467.png, https://cdn.shopify.com/s/files/1/0947/0174/8548/files/WhatsAppImage2026-04-13at10.08.29.jpg, https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260423_053932_274855d0-6200-477e-b94d-9253bb51021a.png, https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260423_053920_89553003-6fbe-4990-ac4a-75b8cfe135b2.png, https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260423_062233_5b01b9d2-7444-4824-b577-a781dd3f0193.png
@@ -51,31 +51,48 @@ Swedish is what runs in the ad. The right column is meaning only, for the editor
 
 | # | Time | Script line (Swedish) | Audio | On-screen text | Picture | Effect + length | Source | Reference | Latitude |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 | 0:00–0:03 (H1) | «SV H1» | VO | «SV H1» | Macro of a paper calendar page, November, the 8th circled in pen with "hos pappa" written; a hand pins it. **First frame:** the circled 8th of November. | cut-in | NEW FOOTAGE: a real November calendar page with the 8th circled, filmed by Axel | — | none |
-| 2 | 0:00–0:03 (H2) | «SV H2» | VO | «SV H2» | Macro of a phone: a sent message "Vi kommer vid två. Du grillar." and the reply "Ja!!" from "Pappa". **First frame:** the message thread. | zoom-in 1 s | NEW FOOTAGE: a staged real message thread on a phone, filmed by Axel | — | none |
-| 3 | 0:00–0:03 (H3) | «SV H3» | VO | «SV H3» | Macro of an empty chair at the head of a set dinner table, a plate in front of it, everyone else's hands in frame. **First frame:** the empty chair, the full plates. | freeze 0.5 s then cut-in | NEW FOOTAGE: an empty chair at a set table with family hands, filmed by Axel or UGC creator Beerhansson | — | none |
-| 4 | 0:03–0:08 | «SV 4» | VO | «SV 4» | The family arriving at dad's house in November, jackets, the grill glowing on the terrace. | cut-in | NEW FOOTAGE: a family arriving at a house in November, terrace grill lit, filmed by UGC creator Beerhansson (folder 1ucL6wrOSre-h9m038xMZwjuWHLrYaeWN) | — | b-roll order free |
-| 5 | 0:08–0:13 | «SV 5» | VO | «SV 5» | Hands clearing plates; through the window he scrubs; macro of the gap the brush never reaches. | cut-in | DRIVE 1YY7Y_DuaPAszwF4jM70g0xue1N_hUsq6 [EDITOR PICKS: wire-brush scrubbing + macro of the grease in a gap] | — | b-roll order free |
-| 6 | 0:13–0:20 | «SV 6» | VO | «SV 6» | The box on the dinner table; then his hand on the button, the coarse head spinning in a gap with steam, the polish head. | slow-mo 0.5× 2 s on the spinning head | DRIVE 1gLEJU2bdzXWU-w2eHoxo9XD2jImMv_Zr [EDITOR PICKS: button press, head spinning in a gap with steam, polish head] | — | b-roll order free |
-| 7 | 0:20–0:26 | «SV 7» | VO | «SV 7» | He pulls out his chair and sits at the head of the table, the grill behind the window with the lid closed. | none | DRIVE 1K2B_qE8jVlKng6k1Cpcw_GRsEOXD0aXZ [EDITOR PICKS: the griller sitting down at the table after cleaning] | 050 sitting-down beat | b-roll order free |
-| 8 | 0:26–0:31 | «SV 8» | VO | «SV 8» | End card: Mastern on the grill edge, price, the two promises, button. | none | DRIVE 1K8LjlcndXuWdWI2ic7a0A4JDJqcnLaFe [EDITOR PICKS: the end card plate] | — | none |
+| 1 | 0:00–0:03 (H1) | Åttonde november är inringad i kalendern. I år ger vi pappa Mastern. | VO | Åttonde november är inringad i kalendern. I år ger vi pappa Mastern. | Macro of a paper calendar page, November, the 8th circled in pen with "hos pappa" written; a hand pins it. **First frame:** the circled 8th of November. | cut-in | NEW FOOTAGE: a real November calendar page with the 8th circled, filmed by Axel | — | none |
+| 2 | 0:00–0:03 (H2) | Ett sms till pappa: "Vi kommer klockan två. Du grillar, vi tar med Mastern." | VO | Ett sms till pappa: "Vi kommer klockan två. Du grillar, vi tar med Mastern." | Macro of a phone: a sent message "Vi kommer vid två. Du grillar." and the reply "Ja!!" from "Pappa". **First frame:** the message thread. | zoom-in 1 s | NEW FOOTAGE: a staged real message thread on a phone, filmed by Axel | — | none |
+| 3 | 0:00–0:03 (H3) | Pappas stol står tom i tjugo minuter. Stålborsten kommer aldrig ner i springorna. | VO | Pappas stol står tom i tjugo minuter. Stålborsten kommer aldrig ner i springorna. | Macro of an empty chair at the head of a set dinner table, a plate in front of it, everyone else's hands in frame. **First frame:** the empty chair, the full plates. | freeze 0.5 s then cut-in | NEW FOOTAGE: an empty chair at a set table with family hands, filmed by Axel or UGC creator Beerhansson | — | none |
+| 4 | 0:03–0:08 | De flesta pappor vill träffa sina barn och bli bjudna på middag. I år bjuder vi in oss själva, och vi tar med Mastern. | VO | De flesta pappor vill träffa sina barn och bli bjudna på middag. I år bjuder vi in oss själva, och vi tar med Mastern. | The family arriving at dad's house in November, jackets, the grill glowing on the terrace. | cut-in | NEW FOOTAGE: a family arriving at a house in November, terrace grill lit, filmed by UGC creator Beerhansson (folder 1ucL6wrOSre-h9m038xMZwjuWHLrYaeWN) | — | b-roll order free |
+| 5 | 0:08–0:13 | Men middagen hos honom slutar alltid likadant. Vi diskar, han står vid grillen med en stålborste som aldrig når ner i springorna. Tjugo minuter. Stolen tom. Inte hans fel, borstens. | VO | Men middagen hos honom slutar alltid likadant. Vi diskar, han står vid grillen med en stålborste som aldrig når ner i springorna. Tjugo minuter. Stolen tom. Inte hans fel, borstens. | Hands clearing plates; through the window he scrubs; macro of the gap the brush never reaches. | cut-in | DRIVE 1YY7Y_DuaPAszwF4jM70g0xue1N_hUsq6 [EDITOR PICKS: wire-brush scrubbing + macro of the grease in a gap] | — | b-roll order free |
+| 6 | 0:13–0:20 | I år står lådan på bordet redan när vi kommer. Mastern: en knapp, huvudet snurrar ner i springorna medan gallret fortfarande är varmt. Sextio sekunder. Två huvuden. Inget lossnar. | VO | I år står lådan på bordet redan när vi kommer. Mastern: en knapp, huvudet snurrar ner i springorna medan gallret fortfarande är varmt. Sextio sekunder. Två huvuden. Inget lossnar. | The box on the dinner table; then his hand on the button, the coarse head spinning in a gap with steam, the polish head. | slow-mo 0.5× 2 s on the spinning head | DRIVE 1gLEJU2bdzXWU-w2eHoxo9XD2jImMv_Zr [EDITOR PICKS: button press, head spinning in a gap with steam, polish head] | — | b-roll order free |
+| 7 | 0:20–0:26 | Sen sätter han sig, färdig på sextio sekunder. Med oss. Varje söndag härefter. Det är hela grejen. | VO | Sen sätter han sig, färdig på sextio sekunder. Med oss. Varje söndag härefter. Det är hela grejen. | He pulls out his chair and sits at the head of the table, the grill behind the window with the lid closed. | none | DRIVE 1K2B_qE8jVlKng6k1Cpcw_GRsEOXD0aXZ [EDITOR PICKS: the griller sitting down at the table after cleaning] | 050 sitting-down beat | b-roll order free |
+| 8 | 0:26–0:31 | 999 kr. Trettio dagars öppet köp. Livstidsgaranti. | VO | 999 kr. Trettio dagars öppet köp. Livstidsgaranti. | End card: Mastern on the grill edge, price, the two promises, button. | none | DRIVE 1K8LjlcndXuWdWI2ic7a0A4JDJqcnLaFe [EDITOR PICKS: the end card plate] | — | none |
 
 ## 6. What the giver says when the box opens
-«SV giver line — one spoken sentence the giver can say at the table; it is the last caption before the end card» — «EN meaning». 
+Sätt dig med oss, pappa, Mastern tar hand om resten. — Sit down with us, dad, Mastern takes care of the rest.
 
 ## 7. COPY CARD (goes in Ads Manager, not in the creative)
 **Primary text:**
-> «SV primary text — four to six short lines, each its own line; opens with the giver's scene, then what he stops doing, then the lock: 999 kr, 30 dagars öppet köp, livstidsgaranti, fri frakt inom Sverige»
+> Vi bjöd in oss själva till pappa på fars dag, med Mastern i väskan.
+> Han slapp stå kvar vid grillen och skrapa i springorna medan vi diskade.
+> Mastern rensar springorna på sextio sekunder, medan gallret fortfarande är varmt. Sen satt han med oss hela kvällen.
+> 999 kr. Trettio dagars öppet köp. Livstidsgaranti, går den sönder får han en ny. Fri frakt inom Sverige.
 
-**Headline:** `«SV headline, max 40 characters, carries Mastern or the price»`
-**Description:** `«SV description, max 60 characters: two facts + 30 dagars öppet köp»`
+**Headline:** `Mastern. Han sitter med oss i år.`
+**Description:** `Springorna rena, sextio sekunder. Trettio dagars öppet köp.`
 **CTA button:** `Handla nu` (Shop Now)
 **Destination:** https://grillkliniken.se/pages/landing-page-blank-jul-3-09-12-32
 
 ## 8. Three-question test (docs/copy-regler.md) — every delivered line
 | Line | Visualise? | Falsifiable? | Only we can say it? |
 |---|---|---|---|
-«ONE ROW PER DELIVERED SWEDISH LINE — every hook, every script line, the giver's line, the headline, the description and each primary-text line. Every cell must be ✅ with a five-to-fifteen-word reason. A line that earns a ❌ anywhere is rewritten until it passes or dropped; it never stays in the brief with a ❌. Rows are plain table rows: | line | ✅ reason | ✅ reason | ✅ reason |»
+| Åttonde november är inringad i kalendern. I år ger vi pappa Mastern. | ✅ en kalender med ett datum inringat, en bild man ser | ✅ inringat eller inte, given eller inte given | ✅ nämner Mastern vid namn |
+| Ett sms till pappa: "Vi kommer klockan två. Du grillar, vi tar med Mastern." | ✅ ett sms-flöde på en telefon, konkret skärm | ✅ ett skickat meddelande med ett exakt innehåll | ✅ nämner Mastern vid namn |
+| Pappas stol står tom i tjugo minuter. Stålborsten kommer aldrig ner i springorna. | ✅ en tom stol vid bordet, en bild man ser | ✅ tjugo minuter och ett mekaniskt påstående, går att testa | ✅ springorna är Masterns egen term för problemet |
+| De flesta pappor vill träffa sina barn och bli bjudna på middag. I år bjuder vi in oss själva, och vi tar med Mastern. | ✅ barn på besök och en middag, konkreta scener | ✅ ett verkligt undersökningsfynd (Svensk Handel), återgivet i ord | ✅ nämner Mastern vid namn |
+| Men middagen hos honom slutar alltid likadant. Vi diskar, han står vid grillen med en stålborste som aldrig når ner i springorna. Tjugo minuter. Stolen tom. Inte hans fel, borstens. | ✅ disk, grill, en stol som står tom | ✅ ett mekaniskt påstående och en tidsangivelse, går att testa | ✅ springorna är Masterns egen term |
+| I år står lådan på bordet redan när vi kommer. Mastern: en knapp, huvudet snurrar ner i springorna medan gallret fortfarande är varmt. Sextio sekunder. Två huvuden. Inget lossnar. | ✅ lådan på bordet, huvudet som snurrar ner | ✅ mekaniska, tidsatta påståenden som går att testa | ✅ Mastern, springorna och sextio sekunder är Masterns egna bevis |
+| Sen sätter han sig, färdig på sextio sekunder. Med oss. Varje söndag härefter. Det är hela grejen. | ✅ honom som sätter sig vid bordet | ✅ en förutsägelse man kan hålla honom till | ✅ sextio sekunder är Masterns eget, uppmätta bevis |
+| 999 kr. Trettio dagars öppet köp. Livstidsgaranti. | ✅ ett pris och ett paket som skickas tillbaka | ✅ butikens egna, kontrollerbara villkor | ✅ 999 kr är Masterns exakta, verifierade pris |
+| Sätt dig med oss, pappa, Mastern tar hand om resten. | ✅ honom som sätter sig, en konkret handling | ✅ ett löfte som håller eller inte håller | ✅ nämner Mastern vid namn |
+| Mastern. Han sitter med oss i år. | ✅ honom som sitter med familjen | ✅ en förutsägelse man kan pröva | ✅ nämner Mastern vid namn |
+| Springorna rena, sextio sekunder. Trettio dagars öppet köp. | ✅ rena springor, en tidsangivelse | ✅ mätbara, kontrollerbara påståenden | ✅ springorna och sextio sekunder är Masterns egna bevis |
+| Vi bjöd in oss själva till pappa på fars dag, med Mastern i väskan. | ✅ en väska med Mastern i, en resa till pappa | ✅ en rapporterad, specifik handling | ✅ nämner Mastern vid namn |
+| Han slapp stå kvar vid grillen och skrapa i springorna medan vi diskade. | ✅ honom vid grillen, disken i köket | ✅ ett mekaniskt påstående som går att testa | ✅ springorna är Masterns egen term |
+| Mastern rensar springorna på sextio sekunder, medan gallret fortfarande är varmt. Sen satt han med oss hela kvällen. | ✅ rengöringen och honom som sitter med, i följd | ✅ en tidsatt, testbar mekanisk process | ✅ Mastern, springorna och sextio sekunder är Masterns egna bevis |
+| 999 kr. Trettio dagars öppet köp. Livstidsgaranti, går den sönder får han en ny. Fri frakt inom Sverige. | ✅ pris, paket och en ny borste går att se | ✅ butikens egna, kontrollerbara villkor | ✅ 999 kr är Masterns exakta, verifierade pris |
 
 ## 9. Rules
 - **Price exactly 999 kr** (ord. 1 600 kr) — on the end card and in the copy. Never a percentage (not "35 %", not "40 %"), never a countdown, never a second price. Verified live 2026-09-25 on grillkliniken.se/products/elektrisk-grillborste (999 / 1 600). Numbers other than the price are written in words in Swedish (femton tusen, trettio dagar, sextio sekunder).

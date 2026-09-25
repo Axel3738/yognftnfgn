@@ -14,7 +14,7 @@ Product alone on a cream background, three promise lines, headline "the gift tha
 
 ## 2. Hypothesis
 A pure trust static converts the partner audience at a lower CPA than any story video, because her objection is risk, not interest.
-**Headline:** «SV headline»
+**Headline:** Mastern: den present du inte kan välja fel.
 
 ## 3. Format
 | | |
@@ -27,11 +27,11 @@ A pure trust static converts the partner audience at a lower CPA than any story 
 ## 4. Exact text (Swedish word for word, do not re-translate)
 | Element | Swedish (use this) | English meaning |
 |---|---|---|
-| On-image headline | «SV H» | «EN H» — INTENT: The gift for him that cannot go wrong — do not open with the word present; e.g. lead with "honom" or with the promise |
-| Promise line 1 | «SV P1» | «EN P1» — INTENT: 30 dagars öppet köp — exactly as the store writes it |
-| Promise line 2 | «SV P2» | «EN P2» — INTENT: livstidsgaranti — går den sönder får han en ny |
-| Promise line 3 | «SV P3» | «EN P3» — INTENT: svenskt företag, fri frakt inom Sverige, du får exakt det du ser |
-| Price line | «SV P» | «EN P» — INTENT: 999 kr |
+| On-image headline | Mastern: den present du inte kan välja fel. | Mastern: the gift you can't get wrong. |
+| Promise line 1 | Trettio dagars öppet köp. | Thirty days open purchase. |
+| Promise line 2 | Livstidsgaranti. Går den sönder får han en ny. | Lifetime warranty. If it breaks he gets a new one. |
+| Promise line 3 | Svenskt företag. Fri frakt inom Sverige. Du får exakt det du ser. | Swedish company. Free shipping within Sweden. You get exactly what you see. |
+| Price line | 999 kr | 999 kr |
 
 ## 5. Design brief
 - Whitespace is the design. Nothing moves, nothing shouts.
@@ -42,17 +42,30 @@ A pure trust static converts the partner audience at a lower CPA than any story 
 
 ## 7. COPY CARD (goes in Ads Manager, not in the creative)
 **Primary text:**
-> «SV primary text — four to six short lines, each its own line; opens with the giver's scene, then what he stops doing, then the lock: 999 kr, 30 dagars öppet köp, livstidsgaranti, fri frakt inom Sverige»
+> Jag ville inte gissa fel present till honom i år, så jag valde Mastern.
+> Han slipper skrapa med en stålborste som aldrig når springorna.
+> Känns det ändå fel: trettio dagars öppet köp.
+> 999 kr. Livstidsgaranti, går den sönder får han en ny. Fri frakt inom Sverige.
 
-**Headline:** `«SV headline, max 40 characters, carries Mastern or the price»`
-**Description:** `«SV description, max 60 characters: two facts + 30 dagars öppet köp»`
+**Headline:** `Mastern. Omöjlig att välja fel.`
+**Description:** `Livstidsgaranti. Fri frakt. Trettio dagars öppet köp.`
 **CTA button:** `Handla nu` (Shop Now)
 **Destination:** https://grillkliniken.se/products/elektrisk-grillborste
 
 ## 8. Three-question test (docs/copy-regler.md) — every delivered line
 | Line | Visualise? | Falsifiable? | Only we can say it? |
 |---|---|---|---|
-«ONE ROW PER DELIVERED SWEDISH LINE — every hook, every script line, the giver's line, the headline, the description and each primary-text line. Every cell must be ✅ with a five-to-fifteen-word reason. A line that earns a ❌ anywhere is rewritten until it passes or dropped; it never stays in the brief with a ❌. Rows are plain table rows: | line | ✅ reason | ✅ reason | ✅ reason |»
+| Mastern: den present du inte kan välja fel. | ✅ att välja en present är en konkret, bekant handling | ✅ ett löfte som håller eller inte, mot villkoren nedan | ✅ nämner Mastern vid namn |
+| Trettio dagars öppet köp. | ✅ ett paket som går att skicka tillbaka | ✅ butikens egna, verifierade och kontrollerbara villkor | ✅ butikens exakta, verifierade löfte för just Mastern |
+| Livstidsgaranti. Går den sönder får han en ny. | ✅ en trasig borste som byts mot en ny | ✅ butikens egna, kontrollerbara villkor | ✅ den exakta livstidsgaranti-formuleringen är Masterns egen |
+| Svenskt företag. Fri frakt inom Sverige. Du får exakt det du ser. | ✅ ett paket som kommer inom Sverige | ✅ verifierbara, konkreta påståenden om företaget och leveransen | ✅ ekar butikens egen, bevisade förtroende-rad (049) |
+| 999 kr | ✅ ett pris man ser direkt på bilden | ✅ det exakta, verifierade priset | ✅ 999 kr är Masterns exakta pris |
+| Jag ville inte gissa fel present till honom i år, så jag valde Mastern. | ✅ någon som väljer en present, en bekant scen | ✅ en rapporterad, specifik handling | ✅ nämner Mastern vid namn |
+| Han slipper skrapa med en stålborste som aldrig når springorna. | ✅ skrapandet och springorna syns framför sig | ✅ ett mekaniskt påstående som går att testa | ✅ springorna är Masterns egen term för problemet |
+| Känns det ändå fel: trettio dagars öppet köp. | ✅ ett paket som skickas tillbaka | ✅ butikens egna, kontrollerbara villkor | ✅ butikens exakta, verifierade löfte för just Mastern |
+| 999 kr. Livstidsgaranti, går den sönder får han en ny. Fri frakt inom Sverige. | ✅ pris, paket och en ny borste går att se | ✅ butikens egna, kontrollerbara villkor | ✅ 999 kr är Masterns exakta, verifierade pris |
+| Mastern. Omöjlig att välja fel. | ✅ en handling (att välja) som antingen går rätt eller fel | ✅ ett löfte som håller eller inte, mot villkoren | ✅ nämner Mastern vid namn |
+| Livstidsgaranti. Fri frakt. Trettio dagars öppet köp. | ✅ en ny borste, ett paket, en retur går att se | ✅ butikens egna, kontrollerbara villkor | ✅ den exakta livstidsgaranti-formuleringen är Masterns egen |
 
 ## 9. Rules
 - **Price exactly 999 kr** (ord. 1 600 kr) — on the end card and in the copy. Never a percentage (not "35 %", not "40 %"), never a countdown, never a second price. Verified live 2026-09-25 on grillkliniken.se/products/elektrisk-grillborste (999 / 1 600). Numbers other than the price are written in words in Swedish (femton tusen, trettio dagar, sextio sekunder).

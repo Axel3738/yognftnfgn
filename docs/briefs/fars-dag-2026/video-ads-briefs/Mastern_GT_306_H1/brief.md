@@ -15,7 +15,7 @@ The giver's doubt about a grill brush in November is timing: the grill is going 
 
 ## 2. Hypothesis
 Season-as-proof (November gift, April evidence) converts the giver who thinks "wrong time of year for a grill gift" — and the winter story gives the 128 mechanism a new opening.
-**Hook (H1):** «SV H1»
+**Hook (H1):** Fars dag är i november. Mastern syns först i april.
 
 ## 3. Format
 | | |
@@ -35,14 +35,14 @@ Swedish is what runs in the ad. The right column is meaning only, for the editor
 
 | Time | Swedish (use this) | English meaning |
 |---|---|---|
-| 0–3 s · HOOK H1 | «SV H1» | «EN H1» — INTENT: Father's Day is in November. This gift shows in April. Object: the grill under its cover with wet leaves and frost. |
-| 0–3 s · HOOK H2 | «SV H2» | «EN H2» — INTENT: Peter N.: took the grill out for Valborg and the grate was rotten after winter. Object: a rusty, flaking grate macro. |
-| 0–3 s · HOOK H3 | «SV H3» | «EN H3» — INTENT: The last thing dad does in November decides what the grill looks like in May. Object: the grill lid closing for the season. |
-| 3–9 s · WHAT WINTER DOES | «SV 4» | «EN 4» — INTENT: Grease left in the gaps does not sleep over winter. It is corrosive: it breaks the metal down from below. Discoloration in October, rust by Christmas, a flaking grate in May. The wire brush never reached it. |
-| 9–14 s · THE GIFT | «SV 5» | «EN 5» — INTENT: So this year dad's Father's Day gift is the last clean before the cover goes on. Mastern. The box on the terrace table in November. |
-| 14–21 s · FUNCTION | «SV 6» | «EN 6» — INTENT: Warm grate, wet head, one button. The head spins down into the gaps, sixty seconds. Two heads, nothing comes loose. Then the cover goes on over a clean grate. |
-| 21–27 s · APRIL | «SV 7» | «EN 7» — INTENT: And in April he lifts the cover and the grate is the grate he closed. Stefan E. wrote that his neighbour asked how the grate looked so clean before Valborg and bought one a week later — verbatim with the name. A grill for fifteen thousand lasts fifteen years, not seven. |
-| 27–32 s · LOCK + CTA | «SV 8» | «EN 8» — INTENT: 999 kr, thirty days open purchase, lifetime warranty. Then the giver's line from §6. |
+| 0–3 s · HOOK H1 | Fars dag är i november. Mastern syns först i april. | Father's Day is in November. Mastern shows first in April. |
+| 0–3 s · HOOK H2 | Peter N: "Tog fram grillen inför Valborg och gallret var ruttet efter vintern." | Peter N: "Took the grill out for Valborg and the grate was rotten after winter." |
+| 0–3 s · HOOK H3 | Det sista pappa gör med Mastern avgör hur grillen ser ut i maj. | The last thing dad does with Mastern decides what the grill looks like in May. |
+| 3–9 s · WHAT WINTER DOES | Fett i springorna vilar inte över vintern. Det är frätande, bryter ner metallen underifrån. Missfärgat, rostigt, flagigt. Stålborsten nådde aldrig dit. | Grease in the gaps doesn't rest over winter. It's corrosive, it breaks the metal down from below. Discoloured, rusty, flaking. The wire brush never reached it. |
+| 9–14 s · THE GIFT | I år är pappas present den sista rengöringen innan överdraget läggs på: Mastern. | This year dad's gift is the last clean before the cover goes on: Mastern. |
+| 14–21 s · FUNCTION | Varmt galler, blött huvud, en knapp. Huvudet snurrar ner i springorna, sextio sekunder. Två huvuden, inget lossnar. Sen läggs överdraget på ett rent galler. | Warm grate, wet head, one button. The head spins down into the gaps, sixty seconds. Two heads, nothing comes loose. Then the cover goes on over a clean grate. |
+| 21–27 s · APRIL | I april: samma galler han stängde in. Stefan E: "Grannen frågade hur gallret såg så rent ut inför Valborg. Han köpte en vecka efter." En grill för femton tusen ska hålla femton år, inte sju. | In April: the same grate he closed. Stefan E: "My neighbour asked how the grate looked so clean before Valborg. He bought one a week later." A grill for fifteen thousand should last fifteen years, not seven. |
+| 27–32 s · LOCK + CTA | 999 kr. Trettio dagars öppet köp. Livstidsgaranti. | 999 kr. Thirty days open purchase. Lifetime warranty. |
 
 ## 5. Direction — one row per script line (docs/os/BRIEF-REGI.md)
 **Assets:** Drive "Content for all markets. B-roll etc" (id 1Q9-TFnhQI3QV0z80Lw1iOOB7Wk_RWJ-r) — sub-folders: home-recorded product macro (1gLEJU2bdzXWU-w2eHoxo9XD2jImMv_Zr), problem agitation / dirty grates / scrubbing (1YY7Y_DuaPAszwF4jM70g0xue1N_hUsq6), mid clips + grillers (1K2B_qE8jVlKng6k1Cpcw_GRsEOXD0aXZ), CTA / end card (1K8LjlcndXuWdWI2ic7a0A4JDJqcnLaFe), brush-safe heads (1QU-V7oD19egsbS90cKC6BCIYH84JJlih), old methods: onion, foil, wire brush (1ZoRoDhf07RKXvKa-FMEx5zypdQwr3s90), brushes normal stores sell (10srWqlx7x_MXiJO0MLtR8pDP_JkaR39B), expensive new grills (1k5VjErDXeW4RZz1zQEbFWry1Vo6QzXu1), broken grills thrown away (1VggaPZ1X7VDSbSR8jmTBpBvH2Zq0sIGW), UGC Rickard Jenders (1NMTQHuODyqFUMrPoiG69vRR8LtJZa_-T), Beerhansson UGC (1ucL6wrOSre-h9m038xMZwjuWHLrYaeWN), Gilz content (1gZua5tjAFUfuzH9xFWry91q7sRELGAbO) · product photos Aug 2026 (14xo1cnBbNMhv-i0d7WUbtgfMXVVcvlWf) · CDN: https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Namnlosdesign-2026-07-06T113034.467.png, https://cdn.shopify.com/s/files/1/0947/0174/8548/files/WhatsAppImage2026-04-13at10.08.29.jpg, https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260423_053932_274855d0-6200-477e-b94d-9253bb51021a.png, https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260423_053920_89553003-6fbe-4990-ac4a-75b8cfe135b2.png, https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260423_062233_5b01b9d2-7444-4824-b577-a781dd3f0193.png
@@ -51,31 +51,48 @@ Swedish is what runs in the ad. The right column is meaning only, for the editor
 
 | # | Time | Script line (Swedish) | Audio | On-screen text | Picture | Effect + length | Source | Reference | Latitude |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 | 0:00–0:03 (H1) | «SV H1» | VO | «SV H1» | Macro of a grill cover with wet leaves and a rim of frost, dawn light; a hand brushes the leaves off. **First frame:** the frosted cover with leaves. | slider before/after 2 s (cover → spring grate) | NEW FOOTAGE: a covered grill with leaves and frost in a Swedish garden, filmed by Axel in October/November | — | none |
-| 2 | 0:00–0:03 (H2) | «SV H2» | VO | «SV H2» | Macro of a rusted, flaking grate bar, orange flakes, a fingernail lifting one; the review as caption with the name. **First frame:** the rusty bar with a flake lifting. | zoom-in 1 s | DRIVE 1VggaPZ1X7VDSbSR8jmTBpBvH2Zq0sIGW [EDITOR PICKS: rusted, flaking grate macro] | — | none |
-| 3 | 0:00–0:03 (H3) | «SV H3» | VO | «SV H3» | Macro of a hand closing the grill lid, then pulling the cover over it, cold breath visible. **First frame:** the lid closing. | cut-in | NEW FOOTAGE: closing the lid and pulling the cover on, November, filmed by Axel | — | none |
-| 4 | 0:03–0:09 | «SV 4» | VO | «SV 4» | Macro sequence in one gap: black crust → brown discoloration → rust → a flake lifting. Then the wire brush scraping only the top of the bars. | slider before/after 2 s | DRIVE 1VggaPZ1X7VDSbSR8jmTBpBvH2Zq0sIGW [EDITOR PICKS: rust progression on grate bars] + DRIVE 1YY7Y_DuaPAszwF4jM70g0xue1N_hUsq6 [EDITOR PICKS: wire brush only on the top of the bars] | 128 H3 corrosion progression | b-roll order free |
-| 5 | 0:09–0:14 | «SV 5» | VO | «SV 5» | The Mastern box opened on a terrace table, jacket sleeves, the grill lid open behind. | none | NEW FOOTAGE: unboxing on a terrace table in November light, filmed by Axel | — | none |
-| 6 | 0:14–0:21 | «SV 6» | VO | «SV 6» | Hand on the button, the coarse head spinning in a gap with steam, flakes lifting, the clean bars, the cover pulled over. | slow-mo 0.5× 2 s on the spinning head | DRIVE 1gLEJU2bdzXWU-w2eHoxo9XD2jImMv_Zr [EDITOR PICKS: head spinning in a gap with steam, clean bars] | — | b-roll order free |
-| 7 | 0:21–0:27 | «SV 7» | VO | «SV 7» | The cover lifted in spring light, clean bars; the review card with the name. | reverse 3 s (leaves blowing back off the cover) then cut-in | NEW FOOTAGE: the cover lifted off a clean grill in spring light — shoot the "spring" shot on a bright day now, filmed by Axel | 050 quote-card style | b-roll order free |
-| 8 | 0:27–0:32 | «SV 8» | VO | «SV 8» | End card: Mastern on the grill edge, price, the two promises, button. | none | DRIVE 1K8LjlcndXuWdWI2ic7a0A4JDJqcnLaFe [EDITOR PICKS: the end card plate] | — | none |
+| 1 | 0:00–0:03 (H1) | Fars dag är i november. Mastern syns först i april. | VO | Fars dag är i november. Mastern syns först i april. | Macro of a grill cover with wet leaves and a rim of frost, dawn light; a hand brushes the leaves off. **First frame:** the frosted cover with leaves. | slider before/after 2 s (cover → spring grate) | NEW FOOTAGE: a covered grill with leaves and frost in a Swedish garden, filmed by Axel in October/November | — | none |
+| 2 | 0:00–0:03 (H2) | Peter N: "Tog fram grillen inför Valborg och gallret var ruttet efter vintern." | VO | Peter N: "Tog fram grillen inför Valborg och gallret var ruttet efter vintern." | Macro of a rusted, flaking grate bar, orange flakes, a fingernail lifting one; the review as caption with the name. **First frame:** the rusty bar with a flake lifting. | zoom-in 1 s | DRIVE 1VggaPZ1X7VDSbSR8jmTBpBvH2Zq0sIGW [EDITOR PICKS: rusted, flaking grate macro] | — | none |
+| 3 | 0:00–0:03 (H3) | Det sista pappa gör med Mastern avgör hur grillen ser ut i maj. | VO | Det sista pappa gör med Mastern avgör hur grillen ser ut i maj. | Macro of a hand closing the grill lid, then pulling the cover over it, cold breath visible. **First frame:** the lid closing. | cut-in | NEW FOOTAGE: closing the lid and pulling the cover on, November, filmed by Axel | — | none |
+| 4 | 0:03–0:09 | Fett i springorna vilar inte över vintern. Det är frätande, bryter ner metallen underifrån. Missfärgat, rostigt, flagigt. Stålborsten nådde aldrig dit. | VO | Fett i springorna vilar inte över vintern. Det är frätande, bryter ner metallen underifrån. Missfärgat, rostigt, flagigt. Stålborsten nådde aldrig dit. | Macro sequence in one gap: black crust → brown discoloration → rust → a flake lifting. Then the wire brush scraping only the top of the bars. | slider before/after 2 s | DRIVE 1VggaPZ1X7VDSbSR8jmTBpBvH2Zq0sIGW [EDITOR PICKS: rust progression on grate bars] + DRIVE 1YY7Y_DuaPAszwF4jM70g0xue1N_hUsq6 [EDITOR PICKS: wire brush only on the top of the bars] | 128 H3 corrosion progression | b-roll order free |
+| 5 | 0:09–0:14 | I år är pappas present den sista rengöringen innan överdraget läggs på: Mastern. | VO | I år är pappas present den sista rengöringen innan överdraget läggs på: Mastern. | The Mastern box opened on a terrace table, jacket sleeves, the grill lid open behind. | none | NEW FOOTAGE: unboxing on a terrace table in November light, filmed by Axel | — | none |
+| 6 | 0:14–0:21 | Varmt galler, blött huvud, en knapp. Huvudet snurrar ner i springorna, sextio sekunder. Två huvuden, inget lossnar. Sen läggs överdraget på ett rent galler. | VO | Varmt galler, blött huvud, en knapp. Huvudet snurrar ner i springorna, sextio sekunder. Två huvuden, inget lossnar. Sen läggs överdraget på ett rent galler. | Hand on the button, the coarse head spinning in a gap with steam, flakes lifting, the clean bars, the cover pulled over. | slow-mo 0.5× 2 s on the spinning head | DRIVE 1gLEJU2bdzXWU-w2eHoxo9XD2jImMv_Zr [EDITOR PICKS: head spinning in a gap with steam, clean bars] | — | b-roll order free |
+| 7 | 0:21–0:27 | I april: samma galler han stängde in. Stefan E: "Grannen frågade hur gallret såg så rent ut inför Valborg. Han köpte en vecka efter." En grill för femton tusen ska hålla femton år, inte sju. | VO | I april: samma galler han stängde in. Stefan E: "Grannen frågade hur gallret såg så rent ut inför Valborg. Han köpte en vecka efter." En grill för femton tusen ska hålla femton år, inte sju. | The cover lifted in spring light, clean bars; the review card with the name. | reverse 3 s (leaves blowing back off the cover) then cut-in | NEW FOOTAGE: the cover lifted off a clean grill in spring light — shoot the "spring" shot on a bright day now, filmed by Axel | 050 quote-card style | b-roll order free |
+| 8 | 0:27–0:32 | 999 kr. Trettio dagars öppet köp. Livstidsgaranti. | VO | 999 kr. Trettio dagars öppet köp. Livstidsgaranti. | End card: Mastern on the grill edge, price, the two promises, button. | none | DRIVE 1K8LjlcndXuWdWI2ic7a0A4JDJqcnLaFe [EDITOR PICKS: the end card plate] | — | none |
 
 ## 6. What the giver says when the box opens
-«SV giver line — one spoken sentence the giver can say at the table; it is the last caption before the end card» — «EN meaning». 
+Nu klarar gallret vintern med Mastern, pappa. — Now the grate survives winter with Mastern, dad.
 
 ## 7. COPY CARD (goes in Ads Manager, not in the creative)
 **Primary text:**
-> «SV primary text — four to six short lines, each its own line; opens with the giver's scene, then what he stops doing, then the lock: 999 kr, 30 dagars öppet köp, livstidsgaranti, fri frakt inom Sverige»
+> Vi gav pappa Mastern i november, som sista rengöringen innan överdraget.
+> Han slipper hitta ett rostigt galler i vår, som förra året, för Mastern kom åt springorna.
+> Mastern rensar springorna på sextio sekunder, medan gallret fortfarande är varmt.
+> 999 kr. Trettio dagars öppet köp. Livstidsgaranti, går den sönder får han en ny. Fri frakt inom Sverige.
 
-**Headline:** `«SV headline, max 40 characters, carries Mastern or the price»`
-**Description:** `«SV description, max 60 characters: two facts + 30 dagars öppet köp»`
+**Headline:** `Mastern. Beviset kommer i april.`
+**Description:** `Springorna rena, ingen rost i vår. Trettio dagars öppet köp.`
 **CTA button:** `Handla nu` (Shop Now)
 **Destination:** https://grillkliniken.se/pages/landing-page-blank-jul-3-09-12-32
 
 ## 8. Three-question test (docs/copy-regler.md) — every delivered line
 | Line | Visualise? | Falsifiable? | Only we can say it? |
 |---|---|---|---|
-«ONE ROW PER DELIVERED SWEDISH LINE — every hook, every script line, the giver's line, the headline, the description and each primary-text line. Every cell must be ✅ with a five-to-fifteen-word reason. A line that earns a ❌ anywhere is rewritten until it passes or dropped; it never stays in the brief with a ❌. Rows are plain table rows: | line | ✅ reason | ✅ reason | ✅ reason |»
+| Fars dag är i november. Mastern syns först i april. | ✅ två datum, en tidslinje man kan se framför sig | ✅ en tidsangivelse som stämmer eller inte | ✅ nämner Mastern vid namn |
+| Peter N: "Tog fram grillen inför Valborg och gallret var ruttet efter vintern." | ✅ ett ruttet galler, en konkret bild | ✅ en riktig recension, går att slå upp ordagrant | ✅ en namngiven, riktig recension ingen konkurrent kan låna |
+| Det sista pappa gör med Mastern avgör hur grillen ser ut i maj. | ✅ en handling i november, ett resultat i maj | ✅ ett orsakssamband som går att pröva över tid | ✅ nämner Mastern vid namn |
+| Fett i springorna vilar inte över vintern. Det är frätande, bryter ner metallen underifrån. Missfärgat, rostigt, flagigt. Stålborsten nådde aldrig dit. | ✅ en progression man kan se, månad för månad | ✅ ett kemiskt-mekaniskt påstående som går att testa | ✅ springorna är Masterns egen term för problemet |
+| I år är pappas present den sista rengöringen innan överdraget läggs på: Mastern. | ✅ ett överdrag som läggs på ett rent galler | ✅ en specifik, rapporterad handling | ✅ nämner Mastern vid namn |
+| Varmt galler, blött huvud, en knapp. Huvudet snurrar ner i springorna, sextio sekunder. Två huvuden, inget lossnar. Sen läggs överdraget på ett rent galler. | ✅ huvudet som snurrar ner, överdraget som läggs på | ✅ mekaniska, tidsatta påståenden som går att testa | ✅ springorna och sextio sekunder är Masterns egna bevis |
+| I april: samma galler han stängde in. Stefan E: "Grannen frågade hur gallret såg så rent ut inför Valborg. Han köpte en vecka efter." En grill för femton tusen ska hålla femton år, inte sju. | ✅ överdraget som lyfts av, ett rent galler i vårljus | ✅ en riktig recension och en jämförelse som går att pröva | ✅ en namngiven, riktig recension ingen konkurrent kan låna |
+| 999 kr. Trettio dagars öppet köp. Livstidsgaranti. | ✅ ett pris och ett paket som skickas tillbaka | ✅ butikens egna, kontrollerbara villkor | ✅ 999 kr är Masterns exakta, verifierade pris |
+| Nu klarar gallret vintern med Mastern, pappa. | ✅ ett galler som klarar sig genom vintern | ✅ en förutsägelse man kan hålla honom till i vår | ✅ nämner Mastern vid namn |
+| Mastern. Beviset kommer i april. | ✅ ett bevis som dyker upp en bestämd månad | ✅ ett löfte som stämmer eller inte i april | ✅ nämner Mastern vid namn |
+| Springorna rena, ingen rost i vår. Trettio dagars öppet köp. | ✅ rena springor, ingen rost, en bild man ser | ✅ mätbara, kontrollerbara påståenden | ✅ springorna är Masterns egen, unika term |
+| Vi gav pappa Mastern i november, som sista rengöringen innan överdraget. | ✅ ett överdrag, en rengöring i november | ✅ en rapporterad, specifik handling | ✅ nämner Mastern vid namn |
+| Han slipper hitta ett rostigt galler i vår, som förra året, för Mastern kom åt springorna. | ✅ ett rostigt galler jämfört mellan två vårar | ✅ en jämförelse man kan pröva mot förra året | ✅ springorna och Mastern är de unika, namngivna bevisen |
+| Mastern rensar springorna på sextio sekunder, medan gallret fortfarande är varmt. | ✅ rengöringen medan gallret ångar, en bild man ser | ✅ en tidsatt, testbar mekanisk process | ✅ Mastern, springorna och sextio sekunder är Masterns egna bevis |
+| 999 kr. Trettio dagars öppet köp. Livstidsgaranti, går den sönder får han en ny. Fri frakt inom Sverige. | ✅ pris, paket och en ny borste går att se | ✅ butikens egna, kontrollerbara villkor | ✅ 999 kr är Masterns exakta, verifierade pris |
 
 ## 9. Rules
 - **Price exactly 999 kr** (ord. 1 600 kr) — on the end card and in the copy. Never a percentage (not "35 %", not "40 %"), never a countdown, never a second price. Verified live 2026-09-25 on grillkliniken.se/products/elektrisk-grillborste (999 / 1 600). Numbers other than the price are written in words in Swedish (femton tusen, trettio dagar, sextio sekunder).

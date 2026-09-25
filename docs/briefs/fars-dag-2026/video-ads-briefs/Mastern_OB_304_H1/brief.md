@@ -15,7 +15,7 @@ Objection ads carry the code OB (naming convention, Axel 2026-09-21). The object
 
 ## 2. Hypothesis
 A demo that starts from the giver's doubt (OB) converts the doubters that a proud demo never reaches — and the 30-day open purchase is the line that lets a sceptic buy.
-**Hook (H1):** «SV H1»
+**Hook (H1):** Mastern låg oöppnad en vecka. Jag var rädd den skulle hamna i skåpet.
 
 ## 3. Format
 | | |
@@ -35,14 +35,14 @@ Swedish is what runs in the ad. The right column is meaning only, for the editor
 
 | Time | Swedish (use this) | English meaning |
 |---|---|---|
-| 0–3 s · HOOK H1 | «SV H1» | «EN H1» — INTENT: I was afraid of giving dad a gadget that ends up in a drawer. Object: the unopened Mastern box on the workbench. |
-| 0–3 s · HOOK H2 | «SV H2» | «EN H2» — INTENT: This is what was still in a grate that had "just been cleaned". Object: a bowl of water turning black as the head is dipped. |
-| 0–3 s · HOOK H3 | «SV H3» | «EN H3» — INTENT: Marcus A. expected another piece of Chinese junk. Object: his review on the phone screen. |
-| 3–8 s · THE DOUBT | «SV 4» | «EN 4» — INTENT: An electric grill brush. Dad has a wire brush that cost a hundred kronor; why would a nine-hundred-kronor one be different? So I tested it before I wrapped it. |
-| 8–15 s · THE TEST | «SV 5» | «EN 5» — INTENT: Warm grate. Wet head. One pass — black flakes lift out of the gaps the wire brush never reached. Dip the head in a bowl: the water goes black. That was in his "clean" grate. |
-| 15–22 s · THE BUILD | «SV 6» | «EN 6» — INTENT: Why it is not a gimmick: the coarse head locks the metal in so nothing comes loose; the polish head has no metal at all; 2 600 mAh, four to six cleanings per charge; the heads go in the dishwasher. |
-| 22–28 s · PROOF | «SV 7» | «EN 7» — INTENT: Marcus A.: expected another piece of Chinese junk but this feels robust. Lars-Erik H.: Weber Genesis grate from black to clean in ninety seconds. Verbatim, with names. |
-| 28–33 s · LOCK + CTA | «SV 8» | «EN 8» — INTENT: If it is a gimmick he sends it back: thirty days open purchase. If it breaks he gets a new one: lifetime warranty. 999 kr. Then the giver's line from §6. |
+| 0–3 s · HOOK H1 | Mastern låg oöppnad en vecka. Jag var rädd den skulle hamna i skåpet. | Mastern sat unopened for a week. I was afraid it would end up in the drawer. |
+| 0–3 s · HOOK H2 | Det här satt i ett nyss rengjort galler. Vattnet blev svart direkt. | This was still in a grate that had just been cleaned. The water turned black at once. |
+| 0–3 s · HOOK H3 | Marcus A. trodde det skulle bli skräp igen. Fyra stjärnor sa något annat. | Marcus A. thought it would be junk again. Four stars said something else. |
+| 3–8 s · THE DOUBT | En elektrisk grillborste, Mastern. Pappa har redan en stålborste. Jag testade den innan jag slog in den. | An electric grill brush, Mastern. Dad already has a wire brush. I tested it myself before I wrapped it. |
+| 8–15 s · THE TEST | Varmt galler. Blött huvud. Ett drag, och svarta flagor lossnar ur springorna. Jag doppade huvudet i en skål vatten. Vattnet blev svart. Det var hans redan städade galler. | Warm grate. Wet head. One pass, and black flakes lift out of the gaps. I dipped the head in a bowl of water. The water turned black. That was his already-cleaned grate. |
+| 15–22 s · THE BUILD | Grovhuvudet låser fast metallen, så inget lossnar. Polerhuvudet har ingen metall alls. En laddning räcker till fyra till sex rengöringar. Båda huvudena går i diskmaskinen. | The coarse head locks the metal in, so nothing comes loose. The polish head has no metal at all. One charge lasts four to six cleanings. Both heads go in the dishwasher. |
+| 22–28 s · PROOF | Marcus A: Förväntade mig ännu ett Kinapynt, men den här känns robust. Lars-Erik H: Weber Genesis-gallret, från svart till rent på nittio sekunder. | Marcus A: Expected another piece of Chinese junk, but this feels robust. Lars-Erik H: The Weber Genesis grate, from black to clean in ninety seconds. |
+| 28–33 s · LOCK + CTA | Känns den fel: trettio dagars öppet köp. Går den sönder: livstidsgaranti. 999 kr. | If it feels wrong: thirty days open purchase. If it breaks: lifetime warranty. 999 kr. |
 
 ## 5. Direction — one row per script line (docs/os/BRIEF-REGI.md)
 **Assets:** Drive "Content for all markets. B-roll etc" (id 1Q9-TFnhQI3QV0z80Lw1iOOB7Wk_RWJ-r) — sub-folders: home-recorded product macro (1gLEJU2bdzXWU-w2eHoxo9XD2jImMv_Zr), problem agitation / dirty grates / scrubbing (1YY7Y_DuaPAszwF4jM70g0xue1N_hUsq6), mid clips + grillers (1K2B_qE8jVlKng6k1Cpcw_GRsEOXD0aXZ), CTA / end card (1K8LjlcndXuWdWI2ic7a0A4JDJqcnLaFe), brush-safe heads (1QU-V7oD19egsbS90cKC6BCIYH84JJlih), old methods: onion, foil, wire brush (1ZoRoDhf07RKXvKa-FMEx5zypdQwr3s90), brushes normal stores sell (10srWqlx7x_MXiJO0MLtR8pDP_JkaR39B), expensive new grills (1k5VjErDXeW4RZz1zQEbFWry1Vo6QzXu1), broken grills thrown away (1VggaPZ1X7VDSbSR8jmTBpBvH2Zq0sIGW), UGC Rickard Jenders (1NMTQHuODyqFUMrPoiG69vRR8LtJZa_-T), Beerhansson UGC (1ucL6wrOSre-h9m038xMZwjuWHLrYaeWN), Gilz content (1gZua5tjAFUfuzH9xFWry91q7sRELGAbO) · product photos Aug 2026 (14xo1cnBbNMhv-i0d7WUbtgfMXVVcvlWf) · CDN: https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Namnlosdesign-2026-07-06T113034.467.png, https://cdn.shopify.com/s/files/1/0947/0174/8548/files/WhatsAppImage2026-04-13at10.08.29.jpg, https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260423_053932_274855d0-6200-477e-b94d-9253bb51021a.png, https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260423_053920_89553003-6fbe-4990-ac4a-75b8cfe135b2.png, https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260423_062233_5b01b9d2-7444-4824-b577-a781dd3f0193.png
@@ -51,31 +51,48 @@ Swedish is what runs in the ad. The right column is meaning only, for the editor
 
 | # | Time | Script line (Swedish) | Audio | On-screen text | Picture | Effect + length | Source | Reference | Latitude |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 | 0:00–0:03 (H1) | «SV H1» | VO | «SV H1» | Macro of the unopened Mastern box on a garage workbench, a drawer half open beside it with old gadgets. **First frame:** the unopened box beside the drawer. | zoom-in 1 s | NEW FOOTAGE: the unopened box on a workbench next to a junk drawer, filmed by Axel | — | none |
-| 2 | 0:00–0:03 (H2) | «SV H2» | VO | «SV H2» | Macro of a white bowl of water; the brush head dips in and the water turns black. **First frame:** the bowl, water still clear. | slow-mo 0.5× 2 s | DRIVE 1gLEJU2bdzXWU-w2eHoxo9XD2jImMv_Zr [EDITOR PICKS: the head dipped in a bowl of water, water turning black] | — | none |
-| 3 | 0:00–0:03 (H3) | «SV H3» | VO | «SV H3» | Macro of a phone showing the four-star review by Marcus A., thumb scrolling. **First frame:** the review on the phone. | freeze 0.5 s | NEW FOOTAGE: screen recording of the Marcus A. review on the product page | — | none |
-| 4 | 0:03–0:08 | «SV 4» | VO | «SV 4» | The wire brush next to Mastern on the workbench; hands lift both. | cut-in | DRIVE 10srWqlx7x_MXiJO0MLtR8pDP_JkaR39B [EDITOR PICKS: a cheap store wire brush next to Mastern] | — | b-roll order free |
-| 5 | 0:08–0:15 | «SV 5» | VO | «SV 5» | Macro sequence: the head wetted, one pass on a warm grate with steam, flakes lifting, the dip, the black water. | slow-mo 0.5× 2 s on the black water | DRIVE 1gLEJU2bdzXWU-w2eHoxo9XD2jImMv_Zr [EDITOR PICKS: wet head, pass with steam, flakes, dip in bowl, black water] | — | b-roll order free |
-| 6 | 0:15–0:22 | «SV 6» | VO | «SV 6» | Macro of the coarse head's locked bristles, the polish head, the USB port, a head in a dishwasher rack. | cut-in | DRIVE 1QU-V7oD19egsbS90cKC6BCIYH84JJlih [EDITOR PICKS: coarse head close-up, polish head, USB port] | — | b-roll order free |
-| 7 | 0:22–0:28 | «SV 7» | VO | «SV 7» | Two review cards over the clean grate, names visible. | none | CDN https://cdn.shopify.com/s/files/1/0947/0174/8548/files/WhatsAppImage2026-04-13at10.08.29.jpg | 050 quote-card style | b-roll order free |
-| 8 | 0:28–0:33 | «SV 8» | VO | «SV 8» | End card: Mastern on the grill edge, price, the two promises, button. | none | DRIVE 1K8LjlcndXuWdWI2ic7a0A4JDJqcnLaFe [EDITOR PICKS: the end card plate] | — | none |
+| 1 | 0:00–0:03 (H1) | Mastern låg oöppnad en vecka. Jag var rädd den skulle hamna i skåpet. | VO | Mastern låg oöppnad en vecka. Jag var rädd den skulle hamna i skåpet. | Macro of the unopened Mastern box on a garage workbench, a drawer half open beside it with old gadgets. **First frame:** the unopened box beside the drawer. | zoom-in 1 s | NEW FOOTAGE: the unopened box on a workbench next to a junk drawer, filmed by Axel | — | none |
+| 2 | 0:00–0:03 (H2) | Det här satt i ett nyss rengjort galler. Vattnet blev svart direkt. | VO | Det här satt i ett nyss rengjort galler. Vattnet blev svart direkt. | Macro of a white bowl of water; the brush head dips in and the water turns black. **First frame:** the bowl, water still clear. | slow-mo 0.5× 2 s | DRIVE 1gLEJU2bdzXWU-w2eHoxo9XD2jImMv_Zr [EDITOR PICKS: the head dipped in a bowl of water, water turning black] | — | none |
+| 3 | 0:00–0:03 (H3) | Marcus A. trodde det skulle bli skräp igen. Fyra stjärnor sa något annat. | VO | Marcus A. trodde det skulle bli skräp igen. Fyra stjärnor sa något annat. | Macro of a phone showing the four-star review by Marcus A., thumb scrolling. **First frame:** the review on the phone. | freeze 0.5 s | NEW FOOTAGE: screen recording of the Marcus A. review on the product page | — | none |
+| 4 | 0:03–0:08 | En elektrisk grillborste, Mastern. Pappa har redan en stålborste. Jag testade den innan jag slog in den. | VO | En elektrisk grillborste, Mastern. Pappa har redan en stålborste. Jag testade den innan jag slog in den. | The wire brush next to Mastern on the workbench; hands lift both. | cut-in | DRIVE 10srWqlx7x_MXiJO0MLtR8pDP_JkaR39B [EDITOR PICKS: a cheap store wire brush next to Mastern] | — | b-roll order free |
+| 5 | 0:08–0:15 | Varmt galler. Blött huvud. Ett drag, och svarta flagor lossnar ur springorna. Jag doppade huvudet i en skål vatten. Vattnet blev svart. Det var hans redan städade galler. | VO | Varmt galler. Blött huvud. Ett drag, och svarta flagor lossnar ur springorna. Jag doppade huvudet i en skål vatten. Vattnet blev svart. Det var hans redan städade galler. | Macro sequence: the head wetted, one pass on a warm grate with steam, flakes lifting, the dip, the black water. | slow-mo 0.5× 2 s on the black water | DRIVE 1gLEJU2bdzXWU-w2eHoxo9XD2jImMv_Zr [EDITOR PICKS: wet head, pass with steam, flakes, dip in bowl, black water] | — | b-roll order free |
+| 6 | 0:15–0:22 | Grovhuvudet låser fast metallen, så inget lossnar. Polerhuvudet har ingen metall alls. En laddning räcker till fyra till sex rengöringar. Båda huvudena går i diskmaskinen. | VO | Grovhuvudet låser fast metallen, så inget lossnar. Polerhuvudet har ingen metall alls. En laddning räcker till fyra till sex rengöringar. Båda huvudena går i diskmaskinen. | Macro of the coarse head's locked bristles, the polish head, the USB port, a head in a dishwasher rack. | cut-in | DRIVE 1QU-V7oD19egsbS90cKC6BCIYH84JJlih [EDITOR PICKS: coarse head close-up, polish head, USB port] | — | b-roll order free |
+| 7 | 0:22–0:28 | Marcus A: Förväntade mig ännu ett Kinapynt, men den här känns robust. Lars-Erik H: Weber Genesis-gallret, från svart till rent på nittio sekunder. | VO | Marcus A: Förväntade mig ännu ett Kinapynt, men den här känns robust. Lars-Erik H: Weber Genesis-gallret, från svart till rent på nittio sekunder. | Two review cards over the clean grate, names visible. | none | CDN https://cdn.shopify.com/s/files/1/0947/0174/8548/files/WhatsAppImage2026-04-13at10.08.29.jpg | 050 quote-card style | b-roll order free |
+| 8 | 0:28–0:33 | Känns den fel: trettio dagars öppet köp. Går den sönder: livstidsgaranti. 999 kr. | VO | Känns den fel: trettio dagars öppet köp. Går den sönder: livstidsgaranti. 999 kr. | End card: Mastern on the grill edge, price, the two promises, button. | none | DRIVE 1K8LjlcndXuWdWI2ic7a0A4JDJqcnLaFe [EDITOR PICKS: the end card plate] | — | none |
 
 ## 6. What the giver says when the box opens
-«SV giver line — one spoken sentence the giver can say at the table; it is the last caption before the end card» — «EN meaning». 
+Den här hamnar inte i skåpet, pappa. — This one won't end up in the drawer, dad.
 
 ## 7. COPY CARD (goes in Ads Manager, not in the creative)
 **Primary text:**
-> «SV primary text — four to six short lines, each its own line; opens with the giver's scene, then what he stops doing, then the lock: 999 kr, 30 dagars öppet köp, livstidsgaranti, fri frakt inom Sverige»
+> Jag var rädd Mastern bara skulle hamna i ett skåp.
+> Så jag testade den: varmt galler, ett drag, och vattnet i skålen blev svart.
+> Nu slipper pappa skrapa med en stålborste som aldrig når springorna.
+> 999 kr. Trettio dagars öppet köp. Livstidsgaranti, går den sönder får han en ny. Fri frakt inom Sverige.
 
-**Headline:** `«SV headline, max 40 characters, carries Mastern or the price»`
-**Description:** `«SV description, max 60 characters: two facts + 30 dagars öppet köp»`
+**Headline:** `Mastern. Testad innan den slogs in.`
+**Description:** `Springorna rena. Inga strån. Trettio dagars öppet köp.`
 **CTA button:** `Handla nu` (Shop Now)
 **Destination:** https://grillkliniken.se/products/elektrisk-grillborste
 
 ## 8. Three-question test (docs/copy-regler.md) — every delivered line
 | Line | Visualise? | Falsifiable? | Only we can say it? |
 |---|---|---|---|
-«ONE ROW PER DELIVERED SWEDISH LINE — every hook, every script line, the giver's line, the headline, the description and each primary-text line. Every cell must be ✅ with a five-to-fifteen-word reason. A line that earns a ❌ anywhere is rewritten until it passes or dropped; it never stays in the brief with a ❌. Rows are plain table rows: | line | ✅ reason | ✅ reason | ✅ reason |»
+| Mastern låg oöppnad en vecka. Jag var rädd den skulle hamna i skåpet. | ✅ en oöppnad låda och ett skåp, en bild man ser direkt | ✅ den låg antingen oöppnad en vecka eller inte | ✅ nämner Mastern vid namn |
+| Det här satt i ett nyss rengjort galler. Vattnet blev svart direkt. | ✅ vattnet som svartnar är en konkret bild | ✅ svartnade vattnet eller inte, går att kontrollera | ✅ skål-demon är Masterns eget bevis, ingen annan kan visa den |
+| Marcus A. trodde det skulle bli skräp igen. Fyra stjärnor sa något annat. | ✅ en man som håller upp en recension på telefonen | ✅ hans betyg och ord går att slå upp på produktsidan | ✅ en namngiven, riktig recension ingen konkurrent kan låna |
+| En elektrisk grillborste, Mastern. Pappa har redan en stålborste. Jag testade den innan jag slog in den. | ✅ två borstar bredvid varandra, ett paket som slås in | ✅ ett test som antingen gjordes eller inte gjordes | ✅ nämner Mastern vid namn |
+| Varmt galler. Blött huvud. Ett drag, och svarta flagor lossnar ur springorna. Jag doppade huvudet i en skål vatten. Vattnet blev svart. Det var hans redan städade galler. | ✅ hela sekvensen är en bild, steg för steg | ✅ flagorna och det svarta vattnet syns eller syns inte | ✅ springorna och skål-demon är Masterns egna, unika bevis |
+| Grovhuvudet låser fast metallen, så inget lossnar. Polerhuvudet har ingen metall alls. En laddning räcker till fyra till sex rengöringar. Båda huvudena går i diskmaskinen. | ✅ två huvuden man kan peka på och se skilja sig | ✅ mekaniska påståenden som går att testa | ✅ grovhuvud och polerhuvud finns bara på Mastern |
+| Marcus A: Förväntade mig ännu ett Kinapynt, men den här känns robust. Lars-Erik H: Weber Genesis-gallret, från svart till rent på nittio sekunder. | ✅ recensionskort med namn syns i bild | ✅ orden går att slå upp ordagrant på produktsidan | ✅ två namngivna, riktiga recensioner ingen konkurrent äger |
+| Känns den fel: trettio dagars öppet köp. Går den sönder: livstidsgaranti. 999 kr. | ✅ ett paket som skickas tillbaka, en ny borste som kommer | ✅ butikens egna, kontrollerbara villkor | ✅ 999 kr är Masterns exakta, verifierade pris |
+| Den här hamnar inte i skåpet, pappa. | ✅ samma skåp som i hooken, en bild man minns | ✅ en förutsägelse man kan hålla honom till senare | ✅ bygger på den här annonsens egen bevisade historia |
+| Mastern. Testad innan den slogs in. | ✅ ett test man kan se framför sig | ✅ det hände eller det hände inte | ✅ nämner Mastern vid namn |
+| Springorna rena. Inga strån. Trettio dagars öppet köp. | ✅ rena springor, inga strån i maten | ✅ mätbara, kontrollerbara påståenden | ✅ springorna och inga strån är Masterns egna, unika bevis |
+| Jag var rädd Mastern bara skulle hamna i ett skåp. | ✅ samma skåp-bild som hooken | ✅ en rapporterad känsla och avsikt, går att ifrågasätta | ✅ nämner Mastern vid namn |
+| Så jag testade den: varmt galler, ett drag, och vattnet i skålen blev svart. | ✅ hela testet är en bild man ser | ✅ testet gick att göra om, svart eller inte svart | ✅ skål-demon är Masterns eget, unika bevis |
+| Nu slipper pappa skrapa med en stålborste som aldrig når springorna. | ✅ skrapandet och springorna syns framför sig | ✅ ett mekaniskt påstående som går att testa | ✅ springorna är Masterns egen term för problemet |
+| 999 kr. Trettio dagars öppet köp. Livstidsgaranti, går den sönder får han en ny. Fri frakt inom Sverige. | ✅ pris, paket och en ny borste går att se | ✅ butikens egna, kontrollerbara villkor | ✅ 999 kr är Masterns exakta, verifierade pris |
 
 ## 9. Rules
 - **Price exactly 999 kr** (ord. 1 600 kr) — on the end card and in the copy. Never a percentage (not "35 %", not "40 %"), never a countdown, never a second price. Verified live 2026-09-25 on grillkliniken.se/products/elektrisk-grillborste (999 / 1 600). Numbers other than the price are written in words in Swedish (femton tusen, trettio dagar, sextio sekunder).

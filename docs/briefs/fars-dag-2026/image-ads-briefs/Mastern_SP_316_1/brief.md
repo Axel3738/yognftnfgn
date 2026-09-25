@@ -14,7 +14,7 @@ Quote card: the review large, the name under it, Mastern small in the corner, he
 
 ## 2. Hypothesis
 A customer's minutes, framed as the thing the giver gives, converts at 050's level for a giver audience.
-**Headline:** «SV headline»
+**Headline:** Mastern ger honom halvtimmen tillbaka.
 
 ## 3. Format
 | | |
@@ -27,10 +27,10 @@ A customer's minutes, framed as the thing the giver gives, converts at 050's lev
 ## 4. Exact text (Swedish word for word, do not re-translate)
 | Element | Swedish (use this) | English meaning |
 |---|---|---|
-| Quote (verbatim) | «SV Q» | «EN Q» — INTENT: Normalt ett jobb jag skjuter upp i en halvtimme. Nu tar det knappt en minut. — exactly as on the product page, with the name "Christer F." and five stars |
-| On-image headline | «SV H» | «EN H» — INTENT: Give him the half hour back. — short, present tense |
-| Price line | «SV P» | «EN P» — INTENT: 999 kr |
-| Footer | «SV F» | «EN F» — INTENT: 30 dagars öppet köp · livstidsgaranti · fri frakt inom Sverige |
+| Quote (verbatim) | Normalt ett jobb jag skjuter upp i en halvtimme. Nu tar det knappt en minut. | Normally a job I put off for half an hour. Now it takes barely a minute. |
+| On-image headline | Mastern ger honom halvtimmen tillbaka. | Mastern gives him the half hour back. |
+| Price line | 999 kr | 999 kr |
+| Footer | Trettio dagars öppet köp · Livstidsgaranti · Fri frakt inom Sverige | Thirty days open purchase · Lifetime warranty · Free shipping within Sweden |
 
 ## 5. Design brief
 - The quote is the image. Typography does the work; no photo behind the text.
@@ -41,17 +41,29 @@ A customer's minutes, framed as the thing the giver gives, converts at 050's lev
 
 ## 7. COPY CARD (goes in Ads Manager, not in the creative)
 **Primary text:**
-> «SV primary text — four to six short lines, each its own line; opens with the giver's scene, then what he stops doing, then the lock: 999 kr, 30 dagars öppet köp, livstidsgaranti, fri frakt inom Sverige»
+> Christer F. skrev: "Normalt ett jobb jag skjuter upp i en halvtimme. Nu tar det knappt en minut."
+> Ge honom den halvtimmen tillbaka, varje helg, med Mastern.
+> Mastern rensar springorna på sextio sekunder, medan gallret fortfarande är varmt.
+> 999 kr. Trettio dagars öppet köp. Livstidsgaranti, går den sönder får han en ny. Fri frakt inom Sverige.
 
-**Headline:** `«SV headline, max 40 characters, carries Mastern or the price»`
-**Description:** `«SV description, max 60 characters: two facts + 30 dagars öppet köp»`
+**Headline:** `Mastern ger halvtimmen tillbaka.`
+**Description:** `Springorna rena, sextio sekunder. Trettio dagars öppet köp.`
 **CTA button:** `Handla nu` (Shop Now)
 **Destination:** https://grillkliniken.se/pages/landing-page-blank-jul-3-09-12-32
 
 ## 8. Three-question test (docs/copy-regler.md) — every delivered line
 | Line | Visualise? | Falsifiable? | Only we can say it? |
 |---|---|---|---|
-«ONE ROW PER DELIVERED SWEDISH LINE — every hook, every script line, the giver's line, the headline, the description and each primary-text line. Every cell must be ✅ with a five-to-fifteen-word reason. A line that earns a ❌ anywhere is rewritten until it passes or dropped; it never stays in the brief with a ❌. Rows are plain table rows: | line | ✅ reason | ✅ reason | ✅ reason |»
+| Mastern ger honom halvtimmen tillbaka. | ✅ en halvtimme man får tillbaka, en konkret vinst | ✅ ett löfte kopplat till citatet precis ovanför | ✅ nämner Mastern vid namn |
+| Normalt ett jobb jag skjuter upp i en halvtimme. Nu tar det knappt en minut. | ✅ ett jobb som skjuts upp, en tid som krymper | ✅ en riktig recension, går att slå upp ordagrant | ✅ en namngiven, riktig recension (Christer F.) ingen konkurrent kan låna |
+| 999 kr | ✅ ett pris man ser direkt på bilden | ✅ det exakta, verifierade priset | ✅ 999 kr är Masterns exakta pris |
+| Trettio dagars öppet köp · Livstidsgaranti · Fri frakt inom Sverige | ✅ ett paket, en ny borste, en leverans går att se | ✅ butikens egna, kontrollerbara villkor | ✅ den exakta livstidsgaranti-formuleringen är Masterns egen |
+| Christer F. skrev: "Normalt ett jobb jag skjuter upp i en halvtimme. Nu tar det knappt en minut." | ✅ ett jobb som skjuts upp, en tid som krymper | ✅ en riktig recension, går att slå upp ordagrant | ✅ en namngiven, riktig recension ingen konkurrent kan låna |
+| Ge honom den halvtimmen tillbaka, varje helg, med Mastern. | ✅ en halvtimme man vinner tillbaka varje helg | ✅ ett löfte kopplat till citatet, går att pröva | ✅ nämner Mastern vid namn |
+| Mastern rensar springorna på sextio sekunder, medan gallret fortfarande är varmt. | ✅ rengöringen medan gallret ångar, en bild man ser | ✅ en tidsatt, testbar mekanisk process | ✅ Mastern, springorna och sextio sekunder är Masterns egna bevis |
+| 999 kr. Trettio dagars öppet köp. Livstidsgaranti, går den sönder får han en ny. Fri frakt inom Sverige. | ✅ pris, paket och en ny borste går att se | ✅ butikens egna, kontrollerbara villkor | ✅ 999 kr är Masterns exakta, verifierade pris |
+| Mastern ger halvtimmen tillbaka. | ✅ en halvtimme man får tillbaka | ✅ ett löfte kopplat till citatet ovanför | ✅ nämner Mastern vid namn |
+| Springorna rena, sextio sekunder. Trettio dagars öppet köp. | ✅ rena springor, en tidsangivelse | ✅ mätbara, kontrollerbara påståenden | ✅ springorna och sextio sekunder är Masterns egna bevis |
 
 ## 9. Rules
 - **Price exactly 999 kr** (ord. 1 600 kr) — on the end card and in the copy. Never a percentage (not "35 %", not "40 %"), never a countdown, never a second price. Verified live 2026-09-25 on grillkliniken.se/products/elektrisk-grillborste (999 / 1 600). Numbers other than the price are written in words in Swedish (femton tusen, trettio dagar, sextio sekunder).
