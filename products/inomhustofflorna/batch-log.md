@@ -88,3 +88,16 @@ Etiketten är ingen dom (`bedombar` står bredvid). Annonsens egna första vecka
 | Inomhustofflor_GT_1_H1 | — | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 1,67 | nej | hooken föll — logga och släpp, aldrig ABO |
 | Inomhustofflor_GT_2_1 | — | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 1,67 | nej | hooken föll — logga och släpp, aldrig ABO |
 
+## Brief-runda + batch #2 — 2026-09-25 (`/rond-auto` steg 4b)
+
+**Läget (3 d, avläst 2026-09-25):** RAKNA_BACKDAGAR — 500 kr (golvet), ROAS 0,58 mot break-even 1,51, livstid 1,66; 3 back-dygn i rad, 2 kvar. Spendtjuven (rapportläge): SP_1_H1 TROTT_VINNARE (1 608 kr, ROAS 0,91), inte pausad. Etiketter dag 7 satta på alla 15 annonser i dag + 15 lärdomar (SP_1_H1 SPEND_WINNER, SP_1_H2 KPI_WINNER, 13 observationer) ⇒ rundaAntal 4 med tre namngivna platser (SP_1_H4/H5/H6). Feedback-raden Brief review 2026-09-20 läst. Annonsidéer: 0 rader Ny. Priset läst live: 489 / 978 kr.
+
+### Batch #2 — 2 video, alla i Notion som Draft (Indoor slippers creative hub)
+
+| Annons | Format | Parent · iteration | Hypotes (en variabel) | Hookrad | Notion |
+|---|---|---|---|---|---|
+| `Inomhustofflor_SP_1_H5` | video 12 s | SP_1_H2 · längre problemdel | sex sekunder av sidans eget problem (kallt golv, tofflan glider av i trappan) före tofflan lyfter hook rate över 30 % | "Golvet är kallt innan kaffet är klart." | `3e6270ab908c81dc83a5f9f7c3853ff2` |
+| `Inomhustofflor_SP_1_H6` | video 12 s | SP_1_H2 · in media res | foten kliver i tofflan i sekund 0 (slow-mo) håller scrollen bättre än stillbilden | "På en sekund." | `3e6270ab908c81f088b0e3643d1fa4f8` |
+
+Rad 3–4 identiska (hälremmen håller kvar hela vägen ner · 489 kr halva priset). **`SP_1_H4` struken** — recensionerna är launchimport (se rättelsen i dna.md); förälderns obelagda citat ärvs inte. Regitabell rad för rad, spärren exit 0 (en varning om variabelraden i H6), `lardom.mjs --brief` 2 BRIEF-rader, ett item öppnat och kontrollerat. `## Avatarer` tillagt i dna.md. Copy av sonnet-subagent (regel 6). ⚠️ ffmpeg saknas — källorna är `DRIVE <id> [EDITOR PICKS: …]`.
+
