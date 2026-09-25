@@ -17,6 +17,7 @@ import { byggMejl, laddaBrandResurser, esk, ROT } from './mallar.mjs';
 import { validera } from './validera.mjs';
 import { hamtaProdukterCache } from './produkter.mjs';
 import { hamtaRecensionerCache } from './recensioner.mjs';
+import { nyttRegister, medPlatshallare, bildSkript } from './bilder.mjs';
 
 const STATUS_PLAN = new Set(['klar', 'utkast-skrivs-om-efter-lardom', 'kraver-axel']);
 
@@ -246,7 +247,9 @@ function triggerText(t) {
   return JSON.stringify(t);
 }
 
-function mejlKort(x) {
+// Med `reg` (bilder inbäddade, klaviyo/bilder.mjs) skrivs ramarna som data-srcdoc
+// med platshållare; utan skrivs srcdoc rakt av, som när bygg.mjs själv skriver galleriet.
+function mejlKort(x, reg = null) {
   const p = x.post;
   const status = x.fel.length ? `<span class="bricka fel">${x.fel.length} fel</span>` : '<span class="bricka ok">Inga fel</span>';
   const amnen = p.amnesrader
@@ -257,7 +260,8 @@ function mejlKort(x) {
     .map(([k, v]) => `<span class="tagg">${esk(k)}: ${esk(v)}</span>`)
     .join(' ');
   const lista = (rader, klass) => (rader.length ? `<ul class="${klass}">${rader.map((r) => `<li>${esk(r)}</li>`).join('')}</ul>` : '');
-  const src = esk(x.exempelHtml);
+  const src = reg ? esk(medPlatshallare(x.exempelHtml, reg)) : esk(x.exempelHtml);
+  const attr = reg ? 'data-srcdoc' : 'srcdoc';
   return `
     <article class="mejl" id="m-${esk(p.id)}">
       <header>
@@ -279,13 +283,14 @@ function mejlKort(x) {
         </div>
       </div>
       <div class="vyer">
-        <figure><figcaption>Mobil (390 px)</figcaption><div class="ram"><iframe title="${esk(p.id)} mobil" width="390" height="900" srcdoc="${src}" loading="lazy"></iframe></div></figure>
-        <figure><figcaption>Dator (600 px)</figcaption><div class="ram"><iframe title="${esk(p.id)} dator" width="640" height="900" srcdoc="${src}" loading="lazy"></iframe></div></figure>
+        <figure><figcaption>Mobil (390 px)</figcaption><div class="ram"><iframe title="${esk(p.id)} mobil" width="390" height="900" ${attr}="${src}" loading="lazy"></iframe></div></figure>
+        <figure><figcaption>Dator (600 px)</figcaption><div class="ram"><iframe title="${esk(p.id)} dator" width="640" height="900" ${attr}="${src}" loading="lazy"></iframe></div></figure>
       </div>
     </article>`;
 }
 
-export function galleri({ brand, manifest, mejlUt, toppFel = [], toppVarningar = [], nu = new Date() }) {
+export function galleri({ brand, manifest, mejlUt, toppFel = [], toppVarningar = [], nu = new Date(), bilder = null }) {
+  const reg = bilder ? nyttRegister() : null;
   const perId = new Map(mejlUt.map((x) => [x.post.id, x]));
   const kampanjer = [...manifest.kampanjer].sort((a, b) => String(a.planerad).localeCompare(String(b.planerad)));
   const tidslinje = kampanjer
@@ -322,8 +327,8 @@ export function galleri({ brand, manifest, mejlUt, toppFel = [], toppVarningar =
       </section>`;
     })
     .join('');
-  const kampanjMejl = mejlUt.filter((x) => x.post.kalla === 'kampanj').map(mejlKort).join('');
-  const flodesMejl = mejlUt.filter((x) => x.post.kalla === 'flode').map(mejlKort).join('');
+  const kampanjMejl = mejlUt.filter((x) => x.post.kalla === 'kampanj').map((x) => mejlKort(x, reg)).join('');
+  const flodesMejl = mejlUt.filter((x) => x.post.kalla === 'flode').map((x) => mejlKort(x, reg)).join('');
   const antalFel = manifest.fel.length;
   return `<!DOCTYPE html>
 <html lang="sv">
@@ -390,6 +395,7 @@ export function galleri({ brand, manifest, mejlUt, toppFel = [], toppVarningar =
   <h2>Flödesmejlen</h2>
   ${flodesMejl || '<p class="svag">Inga.</p>'}
 </main>
+${reg ? bildSkript(reg, bilder) : ''}
 <script>
   // Ramarna får mejlets höjd, så inget behöver skrollas inuti.
   for (const f of document.querySelectorAll('iframe')) {

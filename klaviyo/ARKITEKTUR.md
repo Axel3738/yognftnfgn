@@ -61,6 +61,8 @@ klaviyo/
   shopify-butik.mjs        Shopify-modul för butiker i sparning/butiker.json (Matstrumpor), samma form som mejl/shopify.mjs
   recensioner.mjs          riktiga Judge.me-recensioner för citatblock: API (Bäverbutiken) eller widget (Matstrumpor)
   bygg.mjs                 CLI: innehåll + produkter → output/<brand>/ (html, text, galleri)
+  gallerier.mjs            CLI: kampanj-, flödes- och mallgalleriet (+ index.html) för Axel, telefonram per mejl
+  bilder.mjs               bilderna i gallerierna: hämtas en gång, cachas, ligger en gång per sida som data-URI (artifact-visaren blockerar CDN-bilder)
   kolla.mjs                CLI: nyckel, konto, inventering (--profiler räknar samtycket) → konto/<brand>/lage.json
   ladda-upp.mjs            CLI: segment, mallar, kampanjer, flöden → Klaviyo (utkast)
   sla-pa.mjs               CLI: namngivna flöden → live, bara på Axels ord, --ja, --brand
@@ -76,7 +78,7 @@ klaviyo/
   konto/<brand>/lage.json  senaste inventeringen av kontot (skrivs av kolla.mjs)
   sop/                     VA-SOP:er på engelska + README.md på svenska
   test/*.test.mjs          node:test, falsk fetch, inget nät
-  output/                  gitignorerad: byggda mejl och galleriet
+  output/                  gitignorerad: byggda mejl, gallerierna och bildcachen (output/<brand>/bilder/)
 ```
 
 ## `brands/<id>.json`

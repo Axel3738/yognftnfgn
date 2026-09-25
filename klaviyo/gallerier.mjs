@@ -7,17 +7,24 @@
 //
 // Läser output/<brand>/manifest.json + <id>.exempel.html (skrivna av bygg.mjs) och
 // innehall/<brand>/. Skriver output/<brand>/galleri-kampanjer.html, galleri-floden.html
-// och galleri-mallar.html (gitignorerade). Publiceras som Artifacts av sessionen; med
-// `--lankar` ({ kampanjer, floden, mallar, schema, galleri }) får sidorna en meny
-// som pekar på varandra. Varje mejl visas i en telefonram (iframe srcdoc), som
-// bygg.mjs galleri, men sidan är byggd för att titta på, inte för att felsöka.
+// och galleri-mallar.html (gitignorerade) — och bygger om index.html (bygg.mjs galleri)
+// med bilderna inbäddade. Publiceras som Artifacts av sessionen; med `--lankar`
+// ({ kampanjer, floden, mallar, schema, galleri }) får sidorna en meny som pekar på
+// varandra. Varje mejl visas i en telefonram (iframe), som bygg.mjs galleri, men
+// sidan är byggd för att titta på, inte för att felsöka.
+//
+// ⚠️ Bilderna bäddas in (klaviyo/bilder.mjs): artifact-visaren blockerar bilder från
+// Shopifys CDN, så mejlen visade trasiga bilder 2026-09-25. Varje bild hämtas en
+// gång (cache output/<brand>/bilder/) och ligger EN gång per sida som data-URI;
+// ramarna fylls vid laddning. Kräver nät första gången — sedan går cachen.
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { esk, ROT } from './mallar.mjs';
-import { lasInnehall } from './bygg.mjs';
+import { lasInnehall, galleri as byggGalleri } from './bygg.mjs';
 import { delar, STATUS, SEGMENT_ORD, ENHET, triggerText } from './schema-sida.mjs';
+import { nyttRegister, medPlatshallare, bildSkript, bildUrlar, hamtaBilder } from './bilder.mjs';
 
 const FLODESNAMN = { f01: 'Välkomst', f02: 'Övergiven kassa', f03: 'Webbhistorik', f04: 'Efter köp', f05: 'Vinna tillbaka', f06: 'Sunset', f07: 'Återköp' };
 const FILTER_ORD = { samtycke: 'bara den som sagt ja till mejl', kundundantag: 'alla köpare som inte tackat nej', ej_kopt_sedan_start: 'stannar om personen köper', ej_checkout_sedan_start: 'stannar om personen går till kassan', ej_i_flodet_7d: 'inte i flödet senaste 7 dagarna', ej_i_flodet_14d: 'inte i flödet senaste 14 dagarna', ej_i_flodet_30d: 'inte i flödet senaste 30 dagarna', kopt_minst_en_gang: 'har köpt minst en gång' };
@@ -28,8 +35,10 @@ function flodesNamn(id, namn) {
   return FLODESNAMN[k] ? `${k.toUpperCase()} ${FLODESNAMN[k]}` : namn;
 }
 
-function telefon(html, titel) {
-  return `<figure class="telefon"><div class="skarm"><iframe title="${esk(titel)}" srcdoc="${esk(html)}" loading="lazy" scrolling="no"></iframe></div></figure>`;
+// Ramen skrivs med data-srcdoc + platshållare (bild:N); skriptet från bildSkript()
+// sätter in bilderna och gör den till en riktig srcdoc vid laddning.
+function telefon(html, titel, reg) {
+  return `<figure class="telefon"><div class="skarm"><iframe title="${esk(titel)}" data-srcdoc="${esk(medPlatshallare(html, reg))}" loading="lazy" scrolling="no"></iframe></div></figure>`;
 }
 
 function huvud({ brand, sida, titel, ingress, lankar }) {
@@ -110,13 +119,7 @@ function stil(brand, s) {
 </style>`;
 }
 
-const AUTOSIZE = `<script>
-  for (const f of document.querySelectorAll('iframe')) {
-    f.addEventListener('load', () => { try { const h = f.contentDocument.documentElement.scrollHeight; if (h > 200) f.style.height = h + 'px'; } catch (e) {} });
-  }
-</script>`;
-
-function kampanjKort({ k, mejl, html, brand }) {
+function kampanjKort({ k, mejl, html, brand, reg }) {
   const d = delar(k.planerad, brand.tidszon ?? 'Europe/Stockholm');
   const [st, kl] = STATUS[k.status_plan] ?? [k.status_plan ?? 'Utkast', 'sen'];
   const kod = (k.id.match(/^k(\d+)/i) ? `K${k.id.match(/^k(\d+)/i)[1]}` : k.id);
@@ -134,12 +137,13 @@ function kampanjKort({ k, mejl, html, brand }) {
     <dl class="rad"><dt>Hypotes</dt><dd class="svag">${esk(String(mejl.memo ?? '').replace(/^\s*hypotes:\s*/i, ''))}</dd></dl>
     <p class="svag">${esk(k.namn)}</p>
   </div>
-  ${telefon(html, `${kod} i mobilen`)}
+  ${telefon(html, `${kod} i mobilen`, reg)}
 </article>`;
 }
 
-export function galleriKampanjer({ brand, kampanjer, htmlFor, lankar }) {
+export function galleriKampanjer({ brand, kampanjer, htmlFor, lankar, bilder = new Map() }) {
   const s = STIL_FALLBACK;
+  const reg = nyttRegister();
   const sorterade = [...kampanjer].sort((a, b) => String(a.planerad).localeCompare(String(b.planerad)));
   const hopp = sorterade.map((k) => { const d = delar(k.planerad, brand.tidszon); const kod = k.id.match(/^k(\d+)/i) ? `K${k.id.match(/^k(\d+)/i)[1]}` : k.id; return `<li><a href="#${esk(k.id)}">${esk(kod)} · ${d ? `${d.dag} ${esk(d.man)}` : ''}</a></li>`; }).join('');
   return `<title>${esk(brand.namn)} kampanjer</title>
@@ -147,14 +151,15 @@ ${stil(brand, s)}
 <main>
 ${huvud({ brand, sida: 'kampanjer', titel: 'Alla kampanjer, färdiga', ingress: `${sorterade.length} kampanjer i datumordning, renderade som de ser ut i mobilen. Ämnesrad A är den som står överst; B och C testas mot den. Allt ligger som utkast i Klaviyo tills du säger till.`, lankar })}
 <ul class="hopp">${hopp}</ul>
-${sorterade.map((k) => kampanjKort({ k, mejl: k, html: htmlFor(k.id), brand })).join('\n')}
+${sorterade.map((k) => kampanjKort({ k, mejl: k, html: htmlFor(k.id), brand, reg })).join('\n')}
 </main>
-${AUTOSIZE}
+${bildSkript(reg, bilder)}
 `;
 }
 
-export function galleriFloden({ brand, floden, htmlFor, lankar }) {
+export function galleriFloden({ brand, floden, htmlFor, lankar, bilder = new Map() }) {
   const s = STIL_FALLBACK;
+  const reg = nyttRegister();
   const hopp = floden.map((f) => `<li><a href="#${esk(f.id)}">${esk(flodesNamn(f.id, f.namn))}</a></li>`).join('');
   const sektioner = floden.map((f) => {
     let n = 0;
@@ -165,7 +170,7 @@ export function galleriFloden({ brand, floden, htmlFor, lankar }) {
       n += 1;
       const m = st.mejl ?? {};
       const id = m.id ?? `${f.id}-e${n}`;
-      return `<div class="steg"><p class="eyebrow">Mejl ${n}</p><p class="amne">${esk(m.amnesrader?.[0]?.text ?? id)}</p><p class="fht">${esk(m.forhandstext ?? '')}</p>${telefon(htmlFor(id), `${id} i mobilen`)}</div>`;
+      return `<div class="steg"><p class="eyebrow">Mejl ${n}</p><p class="amne">${esk(m.amnesrader?.[0]?.text ?? id)}</p><p class="fht">${esk(m.forhandstext ?? '')}</p>${telefon(htmlFor(id), `${id} i mobilen`, reg)}</div>`;
     }).join('');
     return `<section class="flode" id="${esk(f.id)}">
   <div class="flode-huvud">
@@ -183,18 +188,19 @@ ${huvud({ brand, sida: 'floden', titel: 'Alla flöden, steg för steg', ingress:
 <ul class="hopp">${hopp}</ul>
 ${sektioner}
 </main>
-${AUTOSIZE}
+${bildSkript(reg, bilder)}
 `;
 }
 
-export function galleriMallar({ brand, manifest, htmlFor, lankar }) {
+export function galleriMallar({ brand, manifest, htmlFor, lankar, bilder = new Map() }) {
   const s = STIL_FALLBACK;
+  const reg = nyttRegister();
   const mejl = manifest.mejl ?? [];
   const kort = mejl.map((m) => `<article class="kort" id="${esk(m.id)}">
   <p class="eyebrow">${m.kalla === 'kampanj' ? 'Kampanj' : `Flöde · ${esk(flodesNamn(m.flode_id ?? '', m.flode_id ?? ''))}`}</p>
   <p class="amne" style="font-size:19px">${esk(m.amnesrader?.[0]?.text ?? m.id)}</p>
   <p class="namn svag">TPL_${esk(m.id)}_v${esk(m.version ?? 1)}</p>
-  ${telefon(htmlFor(m.id), `${m.id} i mobilen`)}
+  ${telefon(htmlFor(m.id), `${m.id} i mobilen`, reg)}
 </article>`).join('\n');
   return `<title>${esk(brand.namn)} mallar</title>
 ${stil(brand, s)}
@@ -202,8 +208,21 @@ ${stil(brand, s)}
 ${huvud({ brand, sida: 'mallar', titel: 'Alla mallar, renderade', ingress: `${mejl.length} mallar i Klaviyo, som de ser ut i mobilen. Namnet under varje mall är mallens namn i Klaviyo (Content → Templates).`, lankar })}
 <div class="rutnat">${kort}</div>
 </main>
-${AUTOSIZE}
+${bildSkript(reg, bilder)}
 `;
+}
+
+// bygg.mjs galleri() vill ha mejlUt (post + fel + varningar + exempelHtml); ur
+// manifestet går det att återskapa: felen står där som "<id>: <fel>".
+export function mejlUtUrManifest(manifest, htmlFor) {
+  const ids = (manifest.mejl ?? []).map((m) => m.id);
+  const egna = (lista, id) => (lista ?? []).filter((r) => r.startsWith(`${id}: `)).map((r) => r.slice(id.length + 2));
+  const topp = (lista) => (lista ?? []).filter((r) => !ids.some((id) => r.startsWith(`${id}: `)));
+  return {
+    mejlUt: (manifest.mejl ?? []).map((post) => ({ post, fel: egna(manifest.fel, post.id), varningar: egna(manifest.varningar, post.id), exempelHtml: htmlFor(post.id), mejl: null })),
+    toppFel: topp(manifest.fel),
+    toppVarningar: topp(manifest.varningar),
+  };
 }
 
 function arg(namn) {
@@ -212,6 +231,8 @@ function arg(namn) {
 }
 
 async function main() {
+  // Undici läser inte HTTPS_PROXY själv; samma knep som bygg.mjs (bilderna hämtas).
+  (await import('../mejl/shopify.mjs')).kravProxy();
   const brandId = arg('--brand') ?? 'baverbutiken';
   const brand = JSON.parse(readFileSync(join(ROT, 'klaviyo', 'brands', `${brandId}.json`), 'utf8'));
   const ut = join(ROT, 'klaviyo', 'output', brandId);
@@ -228,15 +249,20 @@ async function main() {
     return readFileSync(fil, 'utf8');
   };
   mkdirSync(ut, { recursive: true });
+  const urlar = [...new Set(manifest.mejl.flatMap((m) => bildUrlar(htmlFor(m.id))))];
+  const { bilder, saknas } = await hamtaBilder({ urlar, cacheDir: join(ut, 'bilder'), logg: (t) => console.log(t) });
+  const ur = mejlUtUrManifest(manifest, htmlFor);
   const filer = {
-    'galleri-kampanjer.html': galleriKampanjer({ brand, kampanjer: innehall.kampanjer, htmlFor, lankar }),
-    'galleri-floden.html': galleriFloden({ brand, floden: innehall.floden, htmlFor, lankar }),
-    'galleri-mallar.html': galleriMallar({ brand, manifest, htmlFor, lankar }),
+    'galleri-kampanjer.html': galleriKampanjer({ brand, kampanjer: innehall.kampanjer, htmlFor, lankar, bilder }),
+    'galleri-floden.html': galleriFloden({ brand, floden: innehall.floden, htmlFor, lankar, bilder }),
+    'galleri-mallar.html': galleriMallar({ brand, manifest, htmlFor, lankar, bilder }),
+    'index.html': byggGalleri({ brand, manifest, mejlUt: ur.mejlUt, toppFel: ur.toppFel, toppVarningar: ur.toppVarningar, bilder }),
   };
   for (const [namn, html] of Object.entries(filer)) {
     writeFileSync(join(ut, namn), html);
     console.log(`${namn}: ${Math.round(Buffer.byteLength(html, 'utf8') / 1024)} kB`);
   }
+  if (saknas.length) console.log(`⚠️  ${saknas.length} bilder saknas (behåller sina URL:er i sidorna): ${saknas.map((s) => s.url).join(', ')}`);
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

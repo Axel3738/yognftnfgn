@@ -882,6 +882,11 @@ det som återstår står i `klaviyo/SISTA-STEGEN.md`.
   https://claude.ai/artifact/VdYq8VLTHqPW4kQm4gMKw1, flödena https://claude.ai/artifact/WLQKsyRR8soHCDusP8jtYx,
   mallarna https://claude.ai/artifact/1KEuzFEai52gahdbpvGShN, schemat https://claude.ai/artifact/Ljyv3Ye89ipdPNCZbNKKLh,
   galleriet ur `bygg.mjs` https://claude.ai/artifact/MYCFYWgVAcwugj1tPFrmgR — publiceras om på samma länkar.
+  ⚠️ **Bilderna i gallerierna måste bäddas in** (`klaviyo/bilder.mjs`, samma eftermiddag efter Axels
+  "WHATAHELL … fixa alla direkt"): artifact-visaren blockerar bilder från Shopifys CDN och butikens
+  domän, och telefonramarna (`srcdoc`) ärver spärren — första versionen visade trasiga bilder i varje
+  mejl. Nu hämtas varje bild en gång (cache `output/<brand>/bilder/`) och ligger EN gång per sida som
+  data-URI; sidorna väger cirka 1 MB. Regeln gäller varje sida som publiceras som artifact.
   ⛔ **Inget påslaget, inget schemalagt:** Axels villkor (postadress, plan, kundundantag,
   subscribed, renderat testmejl) — postadressen SAKNAS i kontot och planen syns inte via API:t;
   Cowork-prompten och villkoren står i `klaviyo/SISTA-STEGEN.md` → Matstrumpor. **Datan**
