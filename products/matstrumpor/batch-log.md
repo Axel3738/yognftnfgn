@@ -188,6 +188,16 @@ Lyft B mot A −21,4 % (p = 0,48). Snittorder +69 kr för B (p = 0,106).
 ~100 köp per variant (utan besökare per variant) — i butikens takt
 (146 ordrar/30 d) mitten–slutet av oktober.
 
+**Avläsning 3 — 2026-09-25 08:45 UTC (Axels fråga):** `#4786` → `#4913`,
+128 ordrar (4 ur rabattkoden, 0 okända, 0 tvingade). Takten sköt i höjden med
+budgeten: 27 köp 23/9, 59 köp 24/9. `analys.mjs`: **A 65 / 27 101 kr / snitt
+417 kr, B 63 / 29 176 kr / snitt 463 kr.** Antal köp p = 0,93 (lika),
+snittorder +46 kr för B p = 0,057 — nära men inte under 0,05. Beslut: **vet
+inte än** (63 av 100 köp per variant). Mixningen tog fart: 11 av 63 B-ordrar
+blandade sorter i paketet (1 av 22 vid avläsning 2), fyrpack B 8 / A 3,
+enstaka lådor B 5 / A 1 (B:s lucka på pizza-/hamburgare-/donutsidan står
+kvar). Båda når 100 köp inom ungefär ett och ett halvt dygn i den här takten.
+
 ---
 
 ## Format för kommande rader

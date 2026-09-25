@@ -831,6 +831,13 @@ varukorg med B-rabatt går fortfarande igenom. Produktfilerna bär
 ⚠️ Sett i samma kontroll, INTE orsakat av ändringen: engelska paketvalet
 skriver decimalkomma (`$169,15 per cover`) i stället för punkt.
 
+**`korgtrygg`, avläsning 2 — 2026-09-25 08:10 UTC (Axels fråga):** `#1181` →
+`#1361`, 181 ordrar, 17 utan stämpel, 0 tvingade. **a (blocket syns) 80 /
+137 694 kr / snitt 1 721 kr, b (som förut) 84 / 152 785 kr / snitt 1 819 kr.**
+p = 0,81 på antal köp, p = 0,36 på snittorder. Vet inte än (80 av 100 per
+variant) — hittills inget tecken på att blocket gör skillnad. Takt 29–59 köp
+per dygn ⇒ 100 per variant om ungefär ett dygn.
+
 **Omärkta ordrar:** 8 av 134 (`korgtrygg`) och 18 av 314 (`paket`, 1 härledd
 ur rabattkoden). CaraShells `ms-ab.js` är versionen från 2026-09-10 och saknar
 Matstrumpors efterstämpling (2026-09-19), som täppte samma hål där.
