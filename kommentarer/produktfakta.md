@@ -80,10 +80,13 @@ Läses av `/kommentarer` innan svaren skrivs.
 - CaraShells takskydd: "elastiska spännband" ändrat till "vävda spännband
   (inte gummi, töjs inte ut)" på sv/nb/en/fi/da i `factory/produkter/takskyddet.yaml`
   och `factory/output/carashell/oversattning-*.json` (Axels ja 2026-09-25).
-  ⚠️ INTE uppladdat än: sessionens miljö saknar CaraShells Shopify-nycklar
-  (`SHOPIFY_SHOP/CLIENT_ID/CLIENT_SECRET_YITRBK_M3`). Kör
-  `node factory/ops.mjs factory/butiker/carashell.yaml factory/produkter/takskyddet.yaml factory/produkter/termoskyddet.yaml --igen metafalt,oversatt`
-  i en session som har dem.
+  ✅ UPPLADDAT 2026-09-25 (`ops.mjs … --igen metafalt,oversatt`, nycklarna
+  heter `_yitrbk_m3` med små bokstäver). Bildens alt-text i Shopify sa
+  fortfarande "Elastiska spännband" på alla språk. Den är rättad till "Vävda
+  spännband" med `productUpdateMedia`, så den matchar produktfilen. Mätt som
+  kund samma dag på carashell.se (SE), carashell.com (US), /nb, /fi och /da:
+  vävda/webbing/vevde/kudotut/vævede syns 7 gånger per sida. "Elastisk" finns
+  bara kvar i "not elastic" (US).
 
 - Fiskespöhållare 4-pack (baverbutiken.se): texten "Monteras på vägg eller i
   båten" och "Monteras enkelt på vägg eller i båten" stämmer inte enligt
