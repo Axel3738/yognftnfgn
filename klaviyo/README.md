@@ -106,3 +106,16 @@ måste alla vara gröna först; postadressen saknas och planen går inte att lä
 - **Spårningsnumret finns bara i Fulfilled Order** (`event.extra.fulfillments.0.tracking_number`), inte i Placed Order. Därför triggas F04 och tipsflödena av Fulfilled Order.
 - **Klaviyos API kan inte skriva kontouppgifter** (`PATCH /api/accounts` → 404) och inte ändra ett flödes definition. Adressen är Axels klick, och ändrade flöden blir nya versioner.
 - **Ett flödesmejl går inte att ändra på plats** (`PATCH /api/templates/<flödets kopia>` → 404) och **flow-actions kräver hela `definition`** för att byta status. Ändrad text i ett flöde = ny `version` på mejlet, nya mallar, radera flödesutkastet och skapa om det (så gjordes 2026-09-25 när leveranstiden togs bort).
+
+## Varifrån kommer köpen? (`aterkop.mjs`, 2026-09-25)
+
+`node klaviyo/aterkop.mjs [--dagar 30]` svarar på Axels fråga: hur många köp kommer från nya respektive återkommande kunder, hur många av dem fick ett mejl, och hur det går för övergiven kassa. Rapporten är läs-bar.
+
+- **Mejlets köp** kommer ur Klaviyos Placed Order med `include=attributions` (klick, 5 dagar). Attributionen finns inte i `event_properties`.
+- **Återkommande** betyder att profilen har ett tidigare köp i Klaviyo. Historiken börjar 2025-11-30, så talet är ett golv.
+- **Kassan:** köp inom en timme räknas som direktköp. Utan köp inom en timme är kassan övergiven, och ett köp inom 5 dagar efter det räknas som återvunnet.
+  - ⚠️ Backfyllningen tog bara med de kassor som ledde till köp. Övergivna kassor finns därför bara från 2026-09-24, när kontot kopplades.
+  - Mätt 2026-09-25 över 30 dagar:
+    - 2 236 ordrar: 2 119 nya, 117 återkommande.
+    - 1 köp gavs ett mejl: F02, 849 kr.
+    - 6 övergivna kassor, varav 1 återvunnen.
