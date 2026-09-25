@@ -26,7 +26,7 @@
     "comment": "Vad som faktiskt ligger i Shopify. Skrivs av sparning/publicera.mjs efter att sidan lästs tillbaka i kundens vy — aldrig för hand, och aldrig ur en chatt.",
     "sida_publicerad": "2026-09-25",
     "sida_url": "https://baverbutiken.se/pages/spara",
-    "sida_matt": "1499 paket, 15696 händelser, 487 kB",
+    "sida_matt": "1498 paket, 15693 händelser, 487 kB",
     "sida_matt_comment": "Vad som mättes vid senaste lyckade publicering: antal paket, antal händelser och sidans storlek. null = sidan har aldrig publicerats av skriptet."
   }
 }
