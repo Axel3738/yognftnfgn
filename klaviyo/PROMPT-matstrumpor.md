@@ -60,7 +60,7 @@ Blanda den aldrig med Bäverbutiken. Kontot, butiken, pixeln och kunderna är se
 8. **Cowork-prompt för det API:t inte kan göra.** Lägg den i `klaviyo/SISTA-STEGEN.md` under en Matstrumpor-rubrik:
    - postadressen (Settings → Account → Contact information, renderat mejl som kontroll)
    - attributionen: bara klick, 5 dagar, utan Apples öppningar
-   - avsändardomänen, och vem som har DNS för matstrumpor.se (ta reda på det med DNS-uppslag)
+   - avsändardomänen. matstrumpor.se ligger hos **Loopia** (ns1/ns2.loopia.se, MX mailcluster.loopia.se, mätt 2026-09-25). Se järnregeln om namnservrar nedan.
    - DMARC
 9. **Dokumentera** i `klaviyo/README.md`, `CLAUDE.md` (Klaviyo-avsnittet) och `matstrumpor/README.md`. Committa, pusha, öppna en PR och merga till `main`.
 
@@ -70,6 +70,11 @@ Blanda den aldrig med Bäverbutiken. Kontot, butiken, pixeln och kunderna är se
 - Inga schemalagda rutiner för Klaviyo förrän jag säger till.
 - Inget får skickas innan kontot har en postadress (MFL 20 §).
 - OpenSend och anonyma mejl är förbjudna.
+- ⛔ **Byt ALDRIG namnservrar för matstrumpor.se.** Den 2026-09-25 lade Loopia in Klaviyos namnservrar (Amazon 205.251.x.x) på HELA baverbutiken.se i stället för bara på `send`. Sajten, mejlen och kundtjänstboten slutade fungera. Därför gäller:
+  - Klaviyos poster läggs bara på underdomänen (`send.matstrumpor.se`), som vanliga poster i Loopias DNS-editor.
+  - Går det inte, använd Klaviyos alternativ utan NS: CNAME/TXT. Står det inget sådant alternativ i Klaviyo, stoppa och fråga mig.
+  - Skriv aldrig en text till Loopia som ber dem "byta namnservrar".
+  - Mät efter varje DNS-ändring med `dns.google/resolve?name=matstrumpor.se&type=NS`. Svaret ska vara `ns1.loopia.se`/`ns2.loopia.se`, med A-posten `23.227.38.65` och MX hos Loopia.
 
 ## Lärdomar som kostade tid (upprepa dem inte)
 - Ändrad text kräver att `version` höjs i mejlet. Mallen heter `TPL_<id>_v<version>` och återanvänds annars.
