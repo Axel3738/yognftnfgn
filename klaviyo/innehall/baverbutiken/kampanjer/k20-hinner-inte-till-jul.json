@@ -1,0 +1,114 @@
+{
+  "id": "k20-hinner-inte-till-jul",
+  "namn": "MAIL_20261208_Vinterprylar_S_1_engagerade90d_solution_hinner-inte-till-jul_v1",
+  "memo": "Hypotes: ärlighet om att paketet inte hinner fram som julklapp (KALENDER-2026.md rad K20) bygger förtroende i stället för att pressa en falsk deadline, och riktar om köpet till 'används hela vintern'.",
+  "taggar": {
+    "typ": "S",
+    "_typ": "N=nytt koncept, I=iteration av annonsvinnare, IM=imitation, M=mejlspecifikt, S=säsong",
+    "kalla": "egen-data",
+    "_kalla": "egen-data | winning-line | voc | swipe | gissning",
+    "kalla_ref": "klaviyo/innehall/baverbutiken/KALENDER-2026.md:33",
+    "lardom": null,
+    "avatar": "den som fortfarande handlar julklappar men förstår att vissa saker inte hinner fram",
+    "begar": "köpa något som används hela vintern, utan att sikta på julmorgon",
+    "awareness": "solution",
+    "_awareness": "unaware | problem | solution | product | promo",
+    "urgency": "ingen",
+    "_urgency": "sasong | lager | pris | konsekvens | ingen",
+    "confidence": "medium",
+    "_confidence": "high | medium | low (low = gissning)",
+    "prefix": "Vinterprylar",
+    "kod": "S"
+  },
+  "amnesrader": [
+    {
+      "text": "Hinner inte till jul, men behövs hela vintern",
+      "begar": "förstå ärligt att paketet inte är en julklapp i tid"
+    },
+    {
+      "text": "Sota, skydda rutan eller kranen i vinter",
+      "begar": "se tre olika vinterbehov att välja mellan"
+    },
+    {
+      "text": "Köp dem nu, använd dem i januari",
+      "begar": "planera för användning efter jul, inte till jul"
+    }
+  ],
+  "forhandstext": "Ärligt: de här tre hinner inte fram som julklapp. Men de används hela vintern.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "De hinner inte fram till jul, men behövs hela vintern",
+      "text": "Hej {{fornamn}},\n\nDe här tre hinner ärligt talat inte fram som julklapp den 24 december. Men de används lika mycket i januari som i december.",
+      "bild": "produkt:termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+      "knapp": {
+        "text": "Se vinterprylarna",
+        "lank": "kollektion:alla-produkter"
+      }
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Tre saker för resten av vintern",
+      "handles": [
+        "sotarset-med-bojliga-stanger-rensar-rokkanal-och-kaminror",
+        "termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+        "kranskydd-frost-420d-skyddar-utekranen-i-vinter"
+      ]
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Sotarsetet rensar röret mellan sotarens besök, termoskyddet håller imman borta från vindrutan, och kranskyddet håller frosten ute från kranen. Inget av det är bundet till just jul."
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    {
+      "rad": "Hinner inte till jul, men behövs hela vintern",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Sota, skydda rutan eller kranen i vinter",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Köp dem nu, använd dem i januari",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Ärligt: de här tre hinner inte fram som julklapp. Men de används hela vintern.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Tre saker för resten av vintern",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Se vinterprylarna",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    }
+  ],
+  "planerad": "2026-12-08T18:00:00+01:00",
+  "segment": [
+    "SEG_engagerade_90d"
+  ],
+  "exkludera": [
+    "SEG_oengagerade_180d"
+  ],
+  "status_plan": "klar",
+  "kraver_axel": null
+}

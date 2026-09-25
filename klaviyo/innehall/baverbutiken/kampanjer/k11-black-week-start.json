@@ -22,9 +22,18 @@
     "kod": "CS"
   },
   "amnesrader": [
-    { "text": "Tre varor i kundvagnen ger automatiskt mest rabatt", "begar": "veta att fler varor ger mer rabatt utan att göra något extra" },
-    { "text": "10, 20 eller 30 procent, kassan räknar själv", "begar": "se exakt vilken rabattnivå de hamnar på" },
-    { "text": "Ingen kod, rabatten dyker upp när du lägger till en vara till", "begar": "konkret bevis på att rabatten syns direkt i kundvagnen" }
+    {
+      "text": "Tre varor i kundvagnen ger automatiskt mest rabatt",
+      "begar": "veta att fler varor ger mer rabatt utan att göra något extra"
+    },
+    {
+      "text": "10, 20 eller 30 procent, kassan räknar själv",
+      "begar": "se exakt vilken rabattnivå de hamnar på"
+    },
+    {
+      "text": "Ingen kod, rabatten syns direkt i kassan",
+      "begar": "konkret bevis på att rabatten syns direkt i kundvagnen"
+    }
   ],
   "forhandstext": "1 vara ger 10 procent, 2 ger 20, 3 eller fler ger 30. Ingen kod behövs.",
   "block": [
@@ -33,12 +42,19 @@
       "rubrik": "Rabatten trappar upp av sig själv, hela veckan",
       "text": "{{fornamn}}, från i dag till och med nästa måndag räknar kassan ut din rabatt automatiskt. En vara ger 10 procent, två ger 20, tre eller fler ger 30. Ingen kod, ingen anmälan. Lägg det du behöver i kundvagnen och se procenten ändras när nästa vara läggs till.",
       "bild": "produkt:takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
-      "knapp": { "text": "Se alla produkter", "lank": "kollektion:alla-produkter" }
+      "knapp": {
+        "text": "Se alla produkter",
+        "lank": "kollektion:alla-produkter"
+      }
     },
     {
       "typ": "punkter",
       "rubrik": "Så funkar trappan",
-      "punkter": ["1 vara: 10 % rabatt", "2 varor: 20 % rabatt", "3 varor eller fler: 30 % rabatt"]
+      "punkter": [
+        "1 vara: 10 % rabatt",
+        "2 varor: 20 % rabatt",
+        "3 varor eller fler: 30 % rabatt"
+      ]
     },
     {
       "typ": "produktrad",
@@ -53,21 +69,67 @@
         "fiskespohallare-4-pack-kraftig-forvaring"
       ]
     },
-    { "typ": "fakta" }
+    {
+      "typ": "fakta"
+    }
   ],
   "tretest": [
-    { "rad": "Tre varor i kundvagnen ger automatiskt mest rabatt", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "10, 20 eller 30 procent, kassan räknar själv", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Ingen kod, rabatten dyker upp när du lägger till en vara till", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "1 vara ger 10 procent, 2 ger 20, 3 eller fler ger 30. Ingen kod behövs.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Rabatten trappar upp av sig själv, hela veckan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Så funkar trappan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Kombinera för nästa nivå", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Se alla produkter", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+    {
+      "rad": "Tre varor i kundvagnen ger automatiskt mest rabatt",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "10, 20 eller 30 procent, kassan räknar själv",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Ingen kod, rabatten syns direkt i kassan",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "1 vara ger 10 procent, 2 ger 20, 3 eller fler ger 30. Ingen kod behövs.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Rabatten trappar upp av sig själv, hela veckan",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Så funkar trappan",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Kombinera för nästa nivå",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Se alla produkter",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    }
   ],
   "planerad": "2026-11-23T18:00:00+01:00",
-  "segment": ["SEG_engagerade_90d"],
-  "exkludera": ["SEG_oengagerade_180d"],
+  "segment": [
+    "SEG_engagerade_90d"
+  ],
+  "exkludera": [
+    "SEG_oengagerade_180d"
+  ],
   "status_plan": "klar",
   "kraver_axel": null
 }

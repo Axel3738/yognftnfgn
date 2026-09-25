@@ -1,0 +1,66 @@
+{
+  "id": "k22-nyarskoll",
+  "namn": "MAIL_20261229_Sasongskoll_S_1_engagerade90d_solution_nyarskoll-sasongen_v1",
+  "memo": "Hypotes: mellandagarna (KALENDER-2026.md rad K22) är rätt läge för en påminnelse om att kolla skydden medan båten och vagnen ändå står uppställda, inte ett köp-nu-utskick. Ingen brådska, ingen deadline.",
+  "taggar": {
+    "typ": "S",
+    "_typ": "N=nytt koncept, I=iteration av annonsvinnare, IM=imitation, M=mejlspecifikt, S=säsong",
+    "kalla": "egen-data",
+    "_kalla": "egen-data | winning-line | voc | swipe | gissning",
+    "kalla_ref": "klaviyo/innehall/baverbutiken/KALENDER-2026.md:36",
+    "lardom": null,
+    "avatar": "den vars båt och husvagn står uppställda för vintern och inte tänkt på skydden sedan de sattes på",
+    "begar": "kolla att skydden sitter kvar innan säsongen börjar, medan det ändå är enkelt",
+    "awareness": "solution",
+    "_awareness": "unaware | problem | solution | product | promo",
+    "urgency": "ingen",
+    "_urgency": "sasong | lager | pris | konsekvens | ingen",
+    "confidence": "medium",
+    "_confidence": "high | medium | low (low = gissning)",
+    "prefix": "Sasongskoll",
+    "kod": "S"
+  },
+  "amnesrader": [
+    { "text": "En koll innan säsongen börjar", "begar": "påminnas om en enkel handling innan säsongsstarten" },
+    { "text": "Sitter skydden still som de ska", "begar": "kontrollera ett konkret tillstånd på det man redan köpt" },
+    { "text": "Båten och vagnen står redan still, kolla nu", "begar": "agera medan det är enkelt, de står redan uppställda" }
+  ],
+  "forhandstext": "Båten och vagnen står redan uppställda. Enklaste tiden att kolla skydden är nu, inte i april.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "En koll innan säsongen börjar",
+      "text": "Hej {{fornamn}},\n\nBåten och husvagnen står redan uppställda för vintern. Det är den enklaste tiden att kolla att skydden sitter som de ska.",
+      "bild": "produkt:marin-motorholje-420d-universellt-skydd",
+      "knapp": { "text": "Se skydden", "lank": "kollektion:alla-produkter" }
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Tre skydd värda en koll nu",
+      "handles": [
+        "batmotorskydd-420d-heltackande-for-utombordare",
+        "marin-motorholje-420d-universellt-skydd",
+        "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+      ]
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Ett skydd som glidit snett eller en rem som lossat gör ingen skada i december, men det gör det i mars."
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "En koll innan säsongen börjar", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sitter skydden still som de ska", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Båten och vagnen står redan still, kolla nu", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Båten och vagnen står redan uppställda. Enklaste tiden att kolla skydden är nu, inte i april.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Tre skydd värda en koll nu", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se skydden", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-12-29T18:00:00+01:00",
+  "segment": ["SEG_engagerade_90d"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "klar",
+  "kraver_axel": null
+}

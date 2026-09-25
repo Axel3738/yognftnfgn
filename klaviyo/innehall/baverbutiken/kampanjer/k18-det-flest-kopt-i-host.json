@@ -1,0 +1,66 @@
+{
+  "id": "k18-det-flest-kopt-i-host",
+  "namn": "MAIL_20261117_Popularast_SP_1_engagerade90d_product_flest-kopt-i-host_v1",
+  "memo": "Hypotes: social proof ur riktiga ordersiffror (Shopify, mätt 2026-09-25: motorhölje 571, taköverdrag 476, fiskespöhållare 467 ordrar senaste 60 dagarna) slår ett påhittat argument. Siffrorna nämns bara kvalitativt i copyn, aldrig exakta tal.",
+  "taggar": {
+    "typ": "N",
+    "_typ": "N=nytt koncept, I=iteration av annonsvinnare, IM=imitation, M=mejlspecifikt, S=säsong",
+    "kalla": "egen-data",
+    "_kalla": "egen-data | winning-line | voc | swipe | gissning",
+    "kalla_ref": "Shopify ordrar 60 dagar, mätt 2026-09-25; klaviyo/innehall/baverbutiken/KALENDER-2026.md:27",
+    "lardom": null,
+    "avatar": "den som är osäker på vilken produkt att välja och litar på vad andra redan valt",
+    "begar": "se vad flest andra kunder redan bestämt sig för",
+    "awareness": "product",
+    "_awareness": "unaware | problem | solution | product | promo",
+    "urgency": "ingen",
+    "_urgency": "sasong | lager | pris | konsekvens | ingen",
+    "confidence": "high",
+    "_confidence": "high | medium | low (low = gissning)",
+    "prefix": "Popularast",
+    "kod": "SP"
+  },
+  "amnesrader": [
+    { "text": "Det här har flest köpt i höst", "begar": "se vad andra kunder redan valt" },
+    { "text": "Tre produkter, flest köpt sedan augusti", "begar": "förstå tidsramen bakom siffran" },
+    { "text": "Motorhölje, tak eller spöhållare, vad andra valde", "begar": "jämföra tre specifika produkter mot varandra" }
+  ],
+  "forhandstext": "Tre produkter som flest kunder valt de senaste två månaderna.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Det här har flest köpt i höst",
+      "text": "Hej {{fornamn}},\n\nDe senaste två månaderna har fler kunder valt de här tre produkterna än något annat i butiken.",
+      "bild": "produkt:marin-motorholje-420d-universellt-skydd",
+      "knapp": { "text": "Se de tre", "lank": "kollektion:alla-produkter" }
+    },
+    {
+      "typ": "citat",
+      "handle": "marin-motorholje-420d-universellt-skydd",
+      "antal": 2
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "De tre mest köpta i höst",
+      "handles": [
+        "marin-motorholje-420d-universellt-skydd",
+        "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+        "fiskespohallare-4-pack-kraftig-forvaring"
+      ]
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "Det här har flest köpt i höst", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Tre produkter, flest köpt sedan augusti", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Motorhölje, tak eller spöhållare, vad andra valde", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Tre produkter som flest kunder valt de senaste två månaderna.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "De tre mest köpta i höst", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se de tre", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-11-17T18:00:00+01:00",
+  "segment": ["SEG_engagerade_90d"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "klar",
+  "kraver_axel": null
+}

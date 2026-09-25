@@ -1,0 +1,62 @@
+{
+  "id": "k19-sista-dagen-jul",
+  "namn": "MAIL_20261203_Julklapp_GT_5_engagerade90d_promo_sista-dagen-idag_v1",
+  "memo": "Hypotes: K14 (2 dagar tidigare, samma produkter) satte upp brådskan. Det här mejlet skickas på själva deadline-morgonen (KALENDER-2026.md rad K19) med tre nya ämnesrader som säger 'i dag', inte 'på torsdag'. Samma fyra produkter som K14, ingen ny copy om produkterna själva krävs utöver det K14 redan skrev.",
+  "taggar": {
+    "typ": "I",
+    "_typ": "N=nytt koncept, I=iteration av annonsvinnare, IM=imitation, M=mejlspecifikt, S=säsong",
+    "kalla": "egen-data",
+    "_kalla": "egen-data | winning-line | voc | swipe | gissning",
+    "kalla_ref": "klaviyo/innehall/baverbutiken/kampanjer/k14-sista-bestallningsdag-jul.json",
+    "lardom": null,
+    "avatar": "den som ännu inte bestämt julklappen och vaknar på själva sista beställningsdagen",
+    "begar": "hinna beställa innan dagen är slut, utan att missa datumet",
+    "awareness": "promo",
+    "_awareness": "unaware | problem | solution | product | promo",
+    "urgency": "konsekvens",
+    "_urgency": "sasong | lager | pris | konsekvens | ingen",
+    "confidence": "medium",
+    "_confidence": "high | medium | low (low = gissning)",
+    "prefix": "Julklapp",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    { "text": "I dag är sista dagen för jul", "begar": "veta att deadline är i dag, inte snart" },
+    { "text": "Efter i dag hinner paketet inte fram", "begar": "förstå konsekvensen av att vänta till i morgon" },
+    { "text": "Fyra sista förslag om julklappen inte är klar", "begar": "få snabb hjälp att välja, utan att behöva leta" }
+  ],
+  "forhandstext": "Torsdag 3 december. Beställer du i morgon räknar vi inte med att det hinner fram.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "I dag är sista dagen för jul",
+      "text": "{{fornamn}}, i dag torsdag 3 december är sista dagen vi räknar med att paketet hinner fram till jul.",
+      "bild": "produkt:takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+      "knapp": { "text": "Beställ i dag", "lank": "kollektion:alla-produkter" }
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Fyra sista förslag",
+      "handles": [
+        "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+        "fiskespohallare-4-pack-kraftig-forvaring",
+        "balteslipmaskin-mini-3-i-1-knivslip-polerare",
+        "overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+      ]
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "I dag är sista dagen för jul", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Efter i dag hinner paketet inte fram", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fyra sista förslag om julklappen inte är klar", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Torsdag 3 december. Beställer du i morgon räknar vi inte med att det hinner fram.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fyra sista förslag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Beställ i dag", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-12-03T09:00:00+01:00",
+  "segment": ["SEG_engagerade_90d"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "klar",
+  "kraver_axel": null
+}

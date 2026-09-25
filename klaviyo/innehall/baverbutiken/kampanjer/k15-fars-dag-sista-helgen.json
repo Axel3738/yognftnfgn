@@ -1,0 +1,76 @@
+{
+  "id": "k15-fars-dag-sista-helgen",
+  "namn": "MAIL_20261016_Farsdagshelg_GT_3_engagerade60d_product_sista-helgen-farsdag_v1",
+  "memo": "Hypotes: en sista-chansen-påminnelse (KALENDER-2026.md rad K15) fångar de som inte agerade på K05. Sex produkter i två grupper efter vad pappan faktiskt har (båt / tomt-verkstad-kamin), ingen upprepning av K05:s taköverdrags-vinkel.",
+  "taggar": {
+    "typ": "I",
+    "_typ": "N=nytt koncept, I=iteration av annonsvinnare, IM=imitation, M=mejlspecifikt, S=säsong",
+    "kalla": "egen-data",
+    "_kalla": "egen-data | winning-line | voc | swipe | gissning",
+    "kalla_ref": "klaviyo/innehall/baverbutiken/KALENDER-2026.md:20",
+    "lardom": null,
+    "avatar": "den som ännu inte bestämt fars dag-presenten och är nära sista beställningsdagen",
+    "begar": "hinna beställa en present som faktiskt används, till en pappa som redan har det mesta",
+    "awareness": "product",
+    "_awareness": "unaware | problem | solution | product | promo",
+    "urgency": "konsekvens",
+    "_urgency": "sasong | lager | pris | konsekvens | ingen",
+    "confidence": "medium",
+    "_confidence": "high | medium | low (low = gissning)",
+    "prefix": "Farsdagshelg",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    { "text": "Sista helgen innan fars dag", "begar": "veta att helgen är sista chansen att beställa" },
+    { "text": "Sex presenter för honom som redan har allt", "begar": "hitta en present till en pappa som redan har det mesta" },
+    { "text": "En present för båten, tomten eller kaminen", "begar": "välja present efter vad han faktiskt sysslar med" }
+  ],
+  "forhandstext": "Beställ senast måndag för att hinna fram till fars dag den 8 november.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Sista helgen innan fars dag",
+      "text": "Hej {{fornamn}},\n\nBeställer du efter måndag 19 oktober hinner paketet inte fram till fars dag den 8 november.",
+      "bild": "produkt:marin-motorholje-420d-universellt-skydd",
+      "knapp": { "text": "Se presenterna", "lank": "kollektion:alla-produkter" }
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Om han har en båt",
+      "handles": [
+        "marin-motorholje-420d-universellt-skydd",
+        "batmotorskydd-420d-heltackande-for-utombordare"
+      ]
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Om han har en tomt, en gräsklippare eller en kamin",
+      "handles": [
+        "axelbalte-for-trimmer-justerbart-nylonbalte",
+        "satesoverdrag-for-akgrasklippare-slittaligt-600d-oxford",
+        "sotarset-med-bojliga-stanger-rensar-rokkanal-och-kaminror",
+        "balteslipmaskin-mini-3-i-1-knivslip-polerare"
+      ]
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Ett skydd för motorn i alla väder, en sele som tar vikten av axlarna, en slipmaskin för kniven som legat slö i lådan. Sex saker han inte köper själv, men använder varje gång."
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "Sista helgen innan fars dag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sex presenter för honom som redan har allt", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En present för båten, tomten eller kaminen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Beställ senast måndag för att hinna fram till fars dag den 8 november.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Om han har en båt", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Om han har en tomt, en gräsklippare eller en kamin", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se presenterna", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-10-16T18:00:00+02:00",
+  "segment": ["SEG_engagerade_60d"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "klar",
+  "kraver_axel": null
+}

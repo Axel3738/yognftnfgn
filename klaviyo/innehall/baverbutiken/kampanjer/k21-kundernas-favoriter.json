@@ -1,0 +1,76 @@
+{
+  "id": "k21-kundernas-favoriter",
+  "namn": "MAIL_20261215_Kundfavoriter_SP_1_engagerade90d_product_kundernas-favoriter_v1",
+  "memo": "Hypotes: årets sista mejl innan julveckan (KALENDER-2026.md rad K21) bär bara riktiga kundröster (citat-blocket hämtar Judge.me själv) för tre produkter, i stället för ett nytt påstående från oss. Finns inga recensioner för en produkt vid sändning försvinner det citat-blocket, aldrig en påhittad recension.",
+  "taggar": {
+    "typ": "N",
+    "_typ": "N=nytt koncept, I=iteration av annonsvinnare, IM=imitation, M=mejlspecifikt, S=säsong",
+    "kalla": "egen-data",
+    "_kalla": "egen-data | winning-line | voc | swipe | gissning",
+    "kalla_ref": "Judge.me recensioner (hämtas live av citat-blocket); klaviyo/innehall/baverbutiken/KALENDER-2026.md:34",
+    "lardom": null,
+    "avatar": "den som läser recensioner innan den bestämmer sig",
+    "begar": "se vad andra kunder faktiskt skrivit, inte vårt eget påstående",
+    "awareness": "product",
+    "_awareness": "unaware | problem | solution | product | promo",
+    "urgency": "ingen",
+    "_urgency": "sasong | lager | pris | konsekvens | ingen",
+    "confidence": "high",
+    "_confidence": "high | medium | low (low = gissning)",
+    "prefix": "Kundfavoriter",
+    "kod": "SP"
+  },
+  "amnesrader": [
+    { "text": "Vad kunderna tyckte om i år", "begar": "se andras omdöme innan man själv väljer" },
+    { "text": "Tre produkter, tre riktiga recensioner", "begar": "läsa faktiska kundröster, inte vårt påstående" },
+    { "text": "Det kunderna nämnde mest i år", "begar": "se vad som återkommer i omdömena" }
+  ],
+  "forhandstext": "Tre av årets mest omtalade produkter, i kundernas egna ord.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Vad kunderna tyckte om i år",
+      "text": "Hej {{fornamn}},\n\nInnan året är slut, här är tre produkter kunderna själva skrivit mest om.",
+      "bild": "produkt:takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+      "knapp": { "text": "Läs recensionerna", "lank": "kollektion:alla-produkter" }
+    },
+    {
+      "typ": "citat",
+      "handle": "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+      "antal": 2
+    },
+    {
+      "typ": "citat",
+      "handle": "satesoverdrag-for-akgrasklippare-slittaligt-600d-oxford",
+      "antal": 2
+    },
+    {
+      "typ": "citat",
+      "handle": "balteslipmaskin-mini-3-i-1-knivslip-polerare",
+      "antal": 2
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Samma tre, om du vill se dem",
+      "handles": [
+        "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+        "satesoverdrag-for-akgrasklippare-slittaligt-600d-oxford",
+        "balteslipmaskin-mini-3-i-1-knivslip-polerare"
+      ]
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "Vad kunderna tyckte om i år", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Tre produkter, tre riktiga recensioner", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Det kunderna nämnde mest i år", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Tre av årets mest omtalade produkter, i kundernas egna ord.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Samma tre, om du vill se dem", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Läs recensionerna", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-12-15T18:00:00+01:00",
+  "segment": ["SEG_engagerade_90d"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "klar",
+  "kraver_axel": null
+}

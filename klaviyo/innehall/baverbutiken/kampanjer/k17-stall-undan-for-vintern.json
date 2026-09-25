@@ -1,0 +1,66 @@
+{
+  "id": "k17-stall-undan-for-vintern",
+  "namn": "MAIL_20261110_Vinterforvaring_S_1_engagerade90d_solution_stall-undan-for-vintern_v1",
+  "memo": "Hypotes: säsongsmomentet 'ställa undan för vintern' (KALENDER-2026.md rad K17) samlar tre olika maskiner (hoj, gräsklippare, båtmotor) under en gemensam handling, i stället för tre separata mejl.",
+  "taggar": {
+    "typ": "S",
+    "_typ": "N=nytt koncept, I=iteration av annonsvinnare, IM=imitation, M=mejlspecifikt, S=säsong",
+    "kalla": "egen-data",
+    "_kalla": "egen-data | winning-line | voc | swipe | gissning",
+    "kalla_ref": "klaviyo/innehall/baverbutiken/KALENDER-2026.md:26",
+    "lardom": null,
+    "avatar": "den som just ställt undan eller är på väg att ställa undan hoj, klippare och båt för vintern",
+    "begar": "skydda tre olika maskiner utan att lägga ner tid på varje",
+    "awareness": "solution",
+    "_awareness": "unaware | problem | solution | product | promo",
+    "urgency": "sasong",
+    "_urgency": "sasong | lager | pris | konsekvens | ingen",
+    "confidence": "medium",
+    "_confidence": "high | medium | low (low = gissning)",
+    "prefix": "Vinterforvaring",
+    "kod": "S"
+  },
+  "amnesrader": [
+    { "text": "Tre maskiner som ställs undan nu", "begar": "se helheten, tre saker som ska undan samtidigt" },
+    { "text": "Båtmotorn står oskyddad hela vintern annars", "begar": "förstå konsekvensen för just en av maskinerna" },
+    { "text": "En minut per maskin innan de ställs undan", "begar": "veta att skyddet går snabbt att sätta på" }
+  ],
+  "forhandstext": "Hojen, klipparen och båtmotorn ställs undan snart. Skyddet tar en minut per maskin.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Tre maskiner som ställs undan nu",
+      "text": "Hej {{fornamn}},\n\nHojen, gräsklipparen och båtmotorn ställs undan för vintern snart, och det är precis då oskyddade ytor tar mest stryk.",
+      "bild": "produkt:batmotorskydd-420d-heltackande-for-utombordare",
+      "knapp": { "text": "Se vinterskydden", "lank": "kollektion:alla-produkter" }
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Tre skydd för det som ställs undan",
+      "handles": [
+        "mc-kapell-220-120-regn-damm-uv",
+        "satesoverdrag-for-akgrasklippare-slittaligt-600d-oxford",
+        "batmotorskydd-420d-heltackande-for-utombordare"
+      ]
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Kapellet dras över hojen på en minut, sätesöverdraget träs på gräsklipparen på under 60 sekunder, och båtmotorskyddet spänns fast innan båten ens är surrad."
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "Tre maskiner som ställs undan nu", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Båtmotorn står oskyddad hela vintern annars", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En minut per maskin innan de ställs undan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Hojen, klipparen och båtmotorn ställs undan snart. Skyddet tar en minut per maskin.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Tre skydd för det som ställs undan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se vinterskydden", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-11-10T18:00:00+01:00",
+  "segment": ["SEG_engagerade_90d"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "klar",
+  "kraver_axel": null
+}

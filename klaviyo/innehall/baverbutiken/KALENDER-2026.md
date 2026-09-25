@@ -3,8 +3,7 @@
 Skrivet 2026-09-25 på Axels beställning: "ett tydligt framlagt schema för vilka
 kampanjer vi kör, för vilka produkter och när". Rytmen är minst en kampanj i
 veckan, tisdag 18:00, plus en extra torsdag när en högtid eller en säsong kräver det.
-K01–K14 finns i Klaviyo som utkast. K15–K22 är nya luckor i schemat och har
-ingen copy än.
+Alla 22 finns i Klaviyo som utkast (K15–K22 byggda och uppladdade 2026-09-25, copy av sonnet mot copy-reglerna). Inget är schemalagt.
 
 **Datum som styr** (brandfilens `kalender`, sista beställning = dagen − 20 dygn, p90 för leveransen):
 fars dag 8/11 (sista beställning **19/10**), Black Week 23–30/11, jul (sista beställning **3/12**).
@@ -17,23 +16,23 @@ fars dag 8/11 (sista beställning **19/10**), Black Week 23–30/11, jul (sista 
 | 41 | tor 8/10 | K04 | Sotarset | Innan eldningssäsongen | utkast, klar |
 | 42 | tis 13/10 | K05 | Bälteslipmaskin, fiskespöhållare, kamera, taköverdrag | **Fars dag** | utkast |
 | 42 | tor 15/10 | K06 | Övervakningskamera | Mörkret, larm på personer | utkast |
-| 42 | **fre 16/10** | **K15 ny** | Bälteslipmaskin, axelbälte, motorhölje, båtmotorskydd, sätesöverdrag, sotarset | **Fars dag, sista helgen** (beställ senast mån 19/10) | ska byggas |
+| 42 | **fre 16/10** | K15 | Bälteslipmaskin, axelbälte, motorhölje, båtmotorskydd, sätesöverdrag, sotarset | **Fars dag, sista helgen** (beställ senast mån 19/10) | utkast |
 | 43 | tis 20/10 | K07 | Damasker | Höstlovet | utkast |
 | 43 | tor 22/10 | K08 | Bäverlampa, solcellslampa m.fl. | Mörkret kommer | utkast |
 | 44 | tis 27/10 | K09 | Adventskalendrar | Beställ senast 11/11 för lucka 1 | utkast |
 | 44 | tor 29/10 | K10 | Taköverdrag | Iteration på K01 (efter lärdom) | utkast |
-| 45 | tis 3/11 | **K16 ny** | IBC-tanköverdrag, kranskydd | Första frostnatten | ska byggas |
-| 46 | tis 10/11 | **K17 ny** | MC-kapell, sätesöverdrag, båtmotorskydd | Ställ undan maskinerna för vintern | ska byggas |
-| 47 | tis 17/11 | **K18 ny** | Motorhölje, taköverdrag, fiskespöhållare | Det flest köpt i höst (topp 3, 60 dagar) | ska byggas |
+| 45 | tis 3/11 | K16 | IBC-tanköverdrag, kranskydd | Första frostnatten | utkast |
+| 46 | tis 10/11 | K17 | MC-kapell, sätesöverdrag, båtmotorskydd | Ställ undan maskinerna för vintern | utkast |
+| 47 | tis 17/11 | K18 | Motorhölje, taköverdrag, fiskespöhållare | Det flest köpt i höst (topp 3, 60 dagar) | utkast |
 | 47 | tor 19/11 | K13 | Julklappsguide | Presenter som löser ett problem | utkast |
 | 48 | mån 23/11 | K11 | Sju storsäljare | Black Week, trappa 10/20/30 % | utkast |
 | 48 | fre 27/11 | K12 | Fyra storsäljare | Black Friday, trappa 10/20/30 % | utkast |
 | 49 | tis 1/12 | K14 | Bälteslip, fiskespöhållare, kamera, taköverdrag | Torsdag är sista dagen för jul | utkast |
-| 49 | **tor 3/12** | **K19 ny** | Samma som K14 | Sista dagen i dag för jul | ska byggas |
-| 50 | tis 8/12 | **K20 ny** | Sotarset, termoskydd, kranskydd | Hinner inte till jul, men används hela vintern | ska byggas |
-| 51 | tis 15/12 | **K21 ny** | Recensionernas favoriter (Judge.me) | Vad kunderna tyckte om i år | ska byggas |
+| 49 | **tor 3/12** | K19 | Samma som K14 | Sista dagen i dag för jul | utkast |
+| 50 | tis 8/12 | K20 | Sotarset, termoskydd, kranskydd | Hinner inte till jul, men används hela vintern | utkast |
+| 51 | tis 15/12 | K21 | Recensionernas favoriter (Judge.me) | Vad kunderna tyckte om i år | utkast |
 | 52 | — | — | — | Ingen kampanj julveckan | — |
-| 53 | tis 29/12 | **K22 ny** | Båtmotorskydd, motorhölje, taköverdrag | Nyårskoll inför säsongen | ska byggas |
+| 53 | tis 29/12 | K22 | Båtmotorskydd, motorhölje, taköverdrag | Nyårskoll inför säsongen | utkast |
 
 **Totalt:** 22 kampanjer på 14 veckor, i snitt 1,6 i veckan.
 
