@@ -86,3 +86,7 @@ ingen dom förrän 3 köp — och CS_3_H1 testar prisvinkeln på video i ställe
 - Är det skeptiker-hooken eller närbilden som bär SP_1_H2?
 - Konverterar 50 %-ankaret på video när den statiska (CS_2_1) inte gjorde det?
 - Fungerar ärlighetsraden "Inte för snön" (TR_1_1) utan att tappa klick?
+
+## ⛔ RÄTTELSE 2026-09-25 — de tio recensionerna är launchimport, inte kunder
+
+Drive-arket `Fodrade Inomhustofflor_REVIEWS` (id 1ixNspytk-E2S3UIVAahmfV8n3VnFow5xTI0tLoNQ2rk, läst 2026-09-25) är källan till Judge.me-raderna: alla tio har e-post `@example.com`, samma svar "Tack för din recension!", datum jämnt fördelade varannan dag 1–17 september och samma `picture_urls`. Det är samma mönster som ATV-Kapellets och Taköverdragets seedade recensioner (backlog.md resp. komponentkartan SP_4_H1). **Inget av citaten får presenteras som en kunds** — RV_1_1 och RV_2_1 (batch #1) bär Thomas Berg/Mats Johansson som riktiga citat och är fel på samma sätt som SP_1_H2:s "Bästa tofflorna jag ägt"; de är live och rörs inte (stoppregeln gäller före uppladdning), men ingen ny brief får ärva dem. Lärdomen L-120250268524830291 namngav `Inomhustofflor_SP_1_H4` (ny hook ur en "riktig" recension) på den gamla premissen — platsen är STRUKEN 2026-09-25 tills en riktig recension finns. Raden "10 recensioner … (Judge.me, server-renderade)" under Verifierade fakta ovan ska läsas med den här rättelsen.

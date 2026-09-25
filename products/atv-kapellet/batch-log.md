@@ -55,3 +55,6 @@ Kontroller gjorda 2026-09-24 inför batchen: kampanjen ACTIVE (läst 05:55
 UTC), Annonsidéer 0 rader "Ny", ingen Notion-hub (ingen Feedback-rad att
 läsa — skapas ur MALL först när briefer finns, aldrig tom i förväg),
 Drive-mappen är Joshs `ATV-Kapell` (Batch #1 läggs INUTI den).
+
+**2026-09-25:** `forsta_batch` flaggat igen (3 391 kr, 29,1 % vinst, VANTA_KADENS efter höjningen 24/9 — CPA 👀 två stigningar 128 → 266 → 739 kr). Fortfarande 0 etiketter (annonserna 3 dygn), 0 lärdomar ⇒ inga briefer (samma regel som 24/9). Första möjliga dag oförändrad: 2026-09-29. Annonsidéer: 0 rader Ny.
+

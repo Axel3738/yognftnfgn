@@ -443,3 +443,7 @@ Fönster 2026-09-16..22 (annonsernas egen första vecka). Hook rate okänd — A
 |---|---|---|---|---|---|---|---|---|---|
 | Beltgrinder_REV_2_1 | — | — | **INGEN_DATA** | — | 0 kr | 0 | 0,00 / 1,68 | nej | ingen data |
 
+## Brief-runda 2026-09-25 — INTE byggd (`/rond-auto` steg 4b)
+
+`annonsbehov` sa `brief_runda` med rundaAntal 2 (budget 4, brieftak 1 + 1 namngiven plats `Beltgrinder_PD_21_H1`). Byggdes inte, av tre skäl som står i minnet: (1) den namngivna platsen är redan utförd — lärdomen L-120250148322650291 döpte om PD_21_H1 till `Beltgrinder_PD_33_H1` 2026-09-22 (numret var upptaget) och den ligger i hubben sedan dess (Creative strat review); loggens LARDOM-rad bär fortfarande det gamla namnet, därför räknar ronden platsen som ledig — regel (b) säger struken. (2) Den enda lärdomen sedan förra batchen (BOF_3_1, L-120250242513620291) slutar i `SLÄPP` och ger ingen brief att peka på. (3) Kampanjen går −5,2 % (ROAS 1,61 mot break-even 1,76, VANTA_KADENS efter halveringen 24/9) och spendtjuven flaggade breakthrough-annonsen `Beltgrinder_PD_19_1` som TROTT_VINNARE (1 331 kr, 1 köp, ROAS 0,68 på 3 d) — ersättarna PD_32_1/PD_33_H1/CS_6_1 ligger redan i hubben. Ingen `CS_BATCH_KLAR` loggad: behovet står kvar i kön tills en ny lärdom (nästa etiketter dag 7) ger något att bygga på. Invändningsmatrisen: 5 kommentarer, "Temu?"/"vilket skräp" 1 st var (< 3 ⇒ inget `kalla=voc`).
+
