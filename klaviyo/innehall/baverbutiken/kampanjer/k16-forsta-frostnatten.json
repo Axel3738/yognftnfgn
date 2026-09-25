@@ -1,0 +1,65 @@
+{
+  "id": "k16-forsta-frostnatten",
+  "namn": "MAIL_20261103_Frostnatten_S_1_engagerade90d_solution_forsta-frostnatten_v1",
+  "memo": "Hypotes: den första riktiga köldknäppen (KALENDER-2026.md rad K16) är den mest konkreta trigger-punkten för kranskyddet. Tanköverdraget hänger på samma säsongsmoment men skyddar mot alger/UV, inte frost, och copyn påstår aldrig att tyget skyddar mot is.",
+  "taggar": {
+    "typ": "S",
+    "_typ": "N=nytt koncept, I=iteration av annonsvinnare, IM=imitation, M=mejlspecifikt, S=säsong",
+    "kalla": "egen-data",
+    "_kalla": "egen-data | winning-line | voc | swipe | gissning",
+    "kalla_ref": "klaviyo/innehall/baverbutiken/KALENDER-2026.md:25",
+    "lardom": null,
+    "avatar": "den som just känt första frosten och tänker på vad som står oskyddat utomhus",
+    "begar": "skydda kranen innan den fryser sönder, och tanken innan vintern",
+    "awareness": "solution",
+    "_awareness": "unaware | problem | solution | product | promo",
+    "urgency": "sasong",
+    "_urgency": "sasong | lager | pris | konsekvens | ingen",
+    "confidence": "medium",
+    "_confidence": "high | medium | low (low = gissning)",
+    "prefix": "Frostnatten",
+    "kod": "S"
+  },
+  "amnesrader": [
+    { "text": "Första frostnatten kom", "begar": "koppla en verklig händelse (första frosten) till att agera nu" },
+    { "text": "En kran som fryser säger inte till i förväg", "begar": "förstå konsekvensen av att inte skydda kranen" },
+    { "text": "Tanken som grönskar i vår", "begar": "koppla dagens agerande till vårens resultat" }
+  ],
+  "forhandstext": "Isen spränger det du inte skyddat i tid.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Första frostnatten kom",
+      "text": "Hej {{fornamn}},\n\nFörsta riktiga köldknäppen fryser vattnet i en oskyddad utekran, och skadan syns först när det tinar och läcker.",
+      "bild": "produkt:kranskydd-frost-420d-skyddar-utekranen-i-vinter",
+      "knapp": { "text": "Skydda kranen", "lank": "produkt:kranskydd-frost-420d-skyddar-utekranen-i-vinter" }
+    },
+    {
+      "typ": "produkt",
+      "handle": "kranskydd-frost-420d-skyddar-utekranen-i-vinter",
+      "text": "Skyddet träs över kranen och dras åt. Det isolerande fodret håller frosten borta hela vintern, och 420D-tyget utanpå tål snö, regn och is.",
+      "knapp": "Se kranskyddet"
+    },
+    {
+      "typ": "produkt",
+      "handle": "ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+      "text": "Samma köldknäpp är också läge att stänga in regnvattentanken för vintern. Det gröna 210D-tyget stänger ute ljuset så algerna aldrig kommer igång.",
+      "knapp": "Se tanköverdraget"
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "Första frostnatten kom", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En kran som fryser säger inte till i förväg", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Tanken som grönskar i vår", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Isen spränger det du inte skyddat i tid.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Skydda kranen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se kranskyddet", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se tanköverdraget", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-11-03T18:00:00+01:00",
+  "segment": ["SEG_engagerade_90d"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "klar",
+  "kraver_axel": null
+}
