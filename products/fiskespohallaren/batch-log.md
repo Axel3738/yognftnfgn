@@ -579,3 +579,16 @@ ur Brief review 2026-09-18 i Belt/Boat/Termo. **Annonsidéer:** inga rader för 
 Copy av sonnet-subagent (regel 6), tre-frågorstest per rad.
 ⚠️ Regitabell + komponenttaggar (rond-auto 2.9/2.12, `f1bbba1` 06:04 UTC samma morgon) saknas —
 kravet kom efter att subagenten fått sin brief, och spärren `--manifest` finns inte på `main`.
+
+## Feedbackloop + batch #8 — 2026-09-25 eftermiddag (`/rond-auto` steg 4b, brief-runda efter 101 nya lärdomar — Axels order "det finns fortfarande inga lediga briefs")
+
+Rundan låg på 0 i morse (0 lärdomar sedan batch #7, 104 etiketterade utan lärdom). Lärdomarna skrivna: 101 (11 bedömbara); 3 `ZZ_GAMMAL_…(fel pris)`-annonser kan inte valideras (mellanslag i namnet — `agent/lardom.mjs` läser namnet med `\S+`; ifyllda block ligger i scratchpad, inte i loggen). Brieftak 101 + 5 namngivna. Fyra briefer, alla på namngivna platser (regel a), EN variabel var. Kampanjen läst ACTIVE 14:3x UTC (750 kr/dag efter halveringen i morse, ROAS 3d 1,32 mot 1,50 — livstid 2,13, CPA stiger: fixet är nya creatives). Ingen Feedback-rad i hubben; IBC/Belt-reglerna följda (engelska = svenska, förälderns namn i parent-taggen, inga lösa rader). Priset läst live 2026-09-25: 289 kr / 482 kr (spara 193 kr, 40 %). Copy av sonnet, regi av huvudsessionen (PD_15_H1, PD_EXTRA, CS_1_H1 lästa 1 frame/s ur Meta; Drive-id:n för PD_EXTRA/CS_1_H1/PD_1_H1 slagna upp). Spärrar: briefgranskning ✅ 4/4 (regi 7/7, 7/7, 6/6, 6/6), `lardom --brief` ✅ 4 BRIEF-rader. Hub `Fish rod holder`, Status Draft.
+
+| Annons | Format | Typ | Parent | Variabel | Hypotes | Förväntan | rev | brief → live |
+|---|---|---|---|---|---|---|---|---|
+| Rodholder_PD_65_H1 | video | I | Rodholder_PD_15_H1 | kroppen efter hooken: PD_15:s "Skaka-testet"-öppning (0:00–0:03, hook 52 %) + PD_EXTRA:s demokropp | hooken bär, kroppen konverterar (PD_15 CVR 3,5 % mot PD_EXTRA 4,1–4,7 %) | hook rate ≥ 45 %, CVR ≥ 4 % | okänd | — |
+| Rodholder_PD_66_H1 | video | I | Fiskespöhållare_PD_EXTRA (…844270) | problemdelens längd: 3–4 s trassel i båten före klämman (NEW FOOTAGE om PD_1_H1 saknar klippet) | köparen behöver se trasslet före fixen; kompletterar PD_63_H1 (ordlös start) | CPA ≤ 170 kr (förälderns första vecka) | okänd | — |
+| Rodholder_PD_67_H1 | video | I | Fiskespöhållare_PD_EXTRA (…099190) | hook-typen: negation "Sluta trassla in fiskelinorna i båten." i stället för frågan | uppmaningen sållar bättre än frågan på samma kropp | CVR ≥ 4,7 % | okänd | — |
+| Rodholder_CS_11_H1 | video | I | Fiskespöhållare_CS_1_H1 | rabatten som siffra utan tidsbrådska: "Spara 193 kr — 289 kr i stället för 482 kr."; urgency- och policyrader strukna | CS-effekten sitter i rabatten, inte i "idag endast"; CS_10_H1 testar överstrykningen i bild | CVR ≥ 5 %, CPA < 291 kr | okänd | — |
+
+Kvar av de namngivna: Rodholder_PD_68_1 (rubriken på PD_6_1 — körs när PD_38/41/62 lästs). `Fiskespöhållare_SO_1_H3` bär fortfarande 149 kr i copyn utan ZZ_GAMMAL-namn (pausad) — flaggat för omdöpning.

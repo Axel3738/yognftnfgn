@@ -510,6 +510,7 @@
   "dod_data": "Hubbar utan produkt i produktkartan och kampanjer utan hub redovisas i leveransen. Kartan fick MC-Kapellets hub inskriven 2026-09-15.",
   "arbetsfordelning": {
     "redigerarna": "Plockar Draft → In progress → To be Reviewed. 88 drafts ligger och väntar totalt (34 bild Fiskespöhållaren + 17 Termoskyddet + 15 Taköverdraget + 11 IBC + 11 Adventskalendern).",
-    "rutinerna": "/notionkorning 13:20 tar 'To be Reviewed' upp i Meta. /bildannonser 20:00 tar Draft-bildrader till kie.ai."
+    "rutinerna": "/notionkorning 13:20 tar 'To be Reviewed' upp i Meta. /bildannonser 20:00 tar Draft-bildrader till kie.ai.",
+    "svep_2026_09_25_eftermiddag": "Eftermiddagsronden 2026-09-25 (Axel: \"det finns fortfarande inga lediga briefs\"): 203 lärdomar (IBC 66, Fisk 101, Bält 36) → 10 nya briefer i Draft: BÄVER IBC-Tanköverdraget ×4 (IBC_PD_15_H1, CS_10_H1, SP_6_H1, OB_1_H1), Fish rod holder ×4 (Rodholder_PD_65_H1, PD_66_H1, PD_67_H1, CS_11_H1), Belt grinder creative hub ×2 (Beltgrinder_PD_34_H1, PD_35_1). ⚠️ MÄTT 14:39 UTC: databasen Fish rod holder (3c3270ab-908c-80f8-824d-eed3c4aa94e1) är ARKIVERAD — is_archived: true på databasen och varje rad; redigerarna ser inga av dess 58 drafts. Kräver Axels återställning i Notion (ingen API-väg). Fish rod holder NO creative hub är också arkiverad (avsiktligt, Norge briefas aldrig)."
   }
 }

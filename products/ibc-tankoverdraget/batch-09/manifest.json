@@ -1,0 +1,30 @@
+[
+  {
+    "namn": "IBC_PD_15_H1",
+    "typ": "video",
+    "notion_typ": "Video - Pending Approval",
+    "brief": "video-ads-briefs/IBC_PD_15_H1/brief.md",
+    "format": "video"
+  },
+  {
+    "namn": "IBC_CS_10_H1",
+    "typ": "video",
+    "notion_typ": "Video - Pending Approval",
+    "brief": "video-ads-briefs/IBC_CS_10_H1/brief.md",
+    "format": "video"
+  },
+  {
+    "namn": "IBC_SP_6_H1",
+    "typ": "video",
+    "notion_typ": "Video - Pending Approval",
+    "brief": "video-ads-briefs/IBC_SP_6_H1/brief.md",
+    "format": "video"
+  },
+  {
+    "namn": "IBC_OB_1_H1",
+    "typ": "video",
+    "notion_typ": "Video - Pending Approval",
+    "brief": "video-ads-briefs/IBC_OB_1_H1/brief.md",
+    "format": "video"
+  }
+]

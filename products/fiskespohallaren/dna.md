@@ -569,3 +569,14 @@ Feedbackloopen och batchtabellen står i `batch-log.md` under samma datum. Det d
 3. **HYPOTES — jämförelsen är otestad.** `JF_6_H1` är första konflikt-typ-A-annonsen.
 
 Priset avläst live 2026-09-21: 289 kr, jämförpris 482 kr.
+
+## Uppdatering 2026-09-25 eftermiddag (`/rond-auto` steg 4b, 101 lärdomar + batch #8)
+
+Batchtabellen står i `batch-log.md` under samma datum. Det datan flyttade:
+
+1. **BEVISAD — hook och kropp sitter i olika annonser.** PD_15_H1 har högst hook rate (52 %) men CVR 3,5 %; PD_EXTRA-kroppen konverterar 4,1–4,7 % på samma copy. `PD_65_H1` sätter ihop dem.
+2. **BEVISAD — CS_1_H1:s CVR 6,3 % är produktens högsta**, men hooken är en falsk deadline. `CS_11_H1` (siffran "spara 193 kr", ärlig sedan 15/9) och `CS_10_H1` (överstrykningen, batch #7) isolerar om det är rabatten eller brådskan som bär.
+3. **HYPOTES — problemdelens längd och hooktypen** på PD_EXTRA-kroppen (`PD_66_H1` trassel i bild, `PD_67_H1` negation) — kompletterar PD_63_H1 (ordlös start).
+4. ⚠️ **Hubben "Fish rod holder" är ARKIVERAD i Notion** (mätt 2026-09-25 14:39 UTC: `is_archived: true` på databasen och varje rad, även de fyra nya). Redigerarna ser inga av hubbens 54 + 4 drafts förrän Axel återställer den. Produktkartan sa "återställd 2026-09-06" — det gäller inte längre.
+
+Priset avläst live 2026-09-25: 289 kr, jämförpris 482 kr (spara 193 kr, 40 %).

@@ -541,3 +541,13 @@ förlorare), PD_2_1 (618 kr, 0), PD_1_H2 (396 kr, 0), CS_2_1 (144 kr, 0).
 | `villaagare-med-ibc-tank` | Villaägaren med en IBC-tank i trädgården som blir grön av alger och spricker av UV | PD_1_H1 (83 köp, CPA 225,65 kr mot BE 323,84), lärdom L-120250005818370291, "smutsig tank"-öppningen | bevisad |
 | `odlare-med-flera-tankar` | Odlaren/kolonisten med två–tre tankar i rad | Produktsidan (bevattning), BOF-vinklarna i batch #4 (investering/UV-åldrande) | gissning — aldrig isolerad i en annons |
 | `partner-eller-barn-som-koper-present` | Gåvoköparen (GT-vinkeln) | GT_1/GT_3_H1/GT_4_H1/GT_5_H1 — svält, aldrig riktig budget (dna 2026-09-10) | obevisad |
+
+## Uppdatering 2026-09-25 eftermiddag (`/rond-auto` steg 4b, 66 lärdomar + batch #9)
+
+Batchtabellen står i `batch-log.md` under samma datum. Det datan flyttade:
+
+1. **BEVISAD (oförändrad) — PD_1_H1 är benchmark** (livstid 2,39 på kampanjen; PD_12_H1–H3 ligger i `SE-ACTIVE to be translated`, dag 7 kommer). Ingen ny breakthrough.
+2. **Lärdomarna (66) gav tre fel i live-annonser, inga nya vinnare:** SP_3_H1/GT_3_H1 bär recensionsaggregatet 4,5/4,4 (verifierat 4,7 av 5 på 10), CS_7_1 lovar en 2-pack som inte finns, PD_4_H3/PD_8_H1/PD_3_H1 bär pris i PD-annonser. Inget pausas (live rörs aldrig i efterhand); nästa version rättar.
+3. **HYPOTES — de fyra KPI-vinnarna utan spend (PD_Extra, CS_1_H3, PD_9_1, SP_3_H1) testas nu var för sig med EN variabel:** kort klippning med påståendehook (PD_15_H1), prisfaktum utan brådska (CS_10_H1), citat + mekanism (SP_6_H1). OB_1_H1 svarar på presenningsinvändningen ur kommentarerna (kalla=voc) — första OB-annonsen på produkten.
+
+Priset avläst live 2026-09-25: 489 kr, jämförpris 636 kr (spara 147 kr, 23 %).

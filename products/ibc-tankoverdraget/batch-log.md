@@ -615,3 +615,16 @@ Etiketten är ingen dom (`bedombar` står bredvid). Annonsens egna första vecka
 | IBC_RV_10_1 | 6 | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 2,56 | nej | hooken föll — logga och släpp, aldrig ABO |
 | IBC_BOF_14_1 | 6 | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 2,56 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
 
+
+## Batch #9 — 2026-09-25 eftermiddag (`/rond-auto` steg 4b, brief-runda efter 66 nya lärdomar — Axels order "det finns fortfarande inga lediga briefs")
+
+Rundan låg på 0 i morse (0 lärdomar sedan batch #8). Efter lärdomarna (66 st: 5 KPI_WINNER, 32 LOSER, 29 INGEN_LEVERANS, 0 bedömbara) stod brieftaket på 66 + 7 namngivna platser. Fyra briefer, alla på namngivna platser (regel a), var och en med en lärdom bakom och EN variabel. Kampanjen läst ACTIVE 14:3x UTC (500 kr/dag efter SANK i morse, ROAS 3d 1,44 mot break-even 1,53 — livstid 2,39, CPA-trend 👀). Feedback-raden "Brief review 2026-09-22" läst: `[TID]` har en ägare (redigeraren kommenterar, uppladdaren kopierar), det nya konceptet (OB_1_H1) släpper `idag` i CTA:n, inga lösa rader efter COPY CARD. Priset läst live 2026-09-25: 489 kr / 636 kr (spara 147 kr, 23 %). Recensionsaggregatet rättat till det verifierade 4,7 av 5 (SP_3_H1/GT_3_H1 live bär 4,5/4,4 — fel, flaggat). Copy av sonnet, regi av huvudsessionen (PD_Extra, CS_1_H3, SP_3_H1, CO_2_H1 lästa 1 frame/s ur Meta). Spärrar: briefgranskning ✅ 4/4 (regi 5/5, 7/7, 6/6, 6/6), `lardom --brief` ✅ 4 BRIEF-rader. Hub `BÄVER IBC-Tanköverdraget`, Status Draft.
+
+| Annons | Format | Typ | Parent | Variabel | Hypotes | Förväntan | rev | brief → live |
+|---|---|---|---|---|---|---|---|---|
+| IBC_PD_15_H1 | video 10–12 s | I | IBC_PD_Extra | hookraden på den korta klippningen: påståendet "Grönt vatten i en IBC-tank utan UV-skydd." (= PD_12_H1:s rad) i stället för frågan | kort/lång går att jämföra på samma hook — PD_Extra:s CPA 191–197 kr sitter i klippningen | CPA ≤ 197 kr; jämförs mot PD_12_H1 | okänd | — |
+| IBC_CS_10_H1 | video | I | IBC_CS_1_H3 | hooken utan fabricerad brådska: prisfaktumet "489 kr i stället för 636 kr — 147 kr mindre"; alla "IDAG ENDAST"/"lagret krymper"-rader och butikstexten 0:27–0:29 strukna | CVR 7,7 % sitter i det verifierbara priset, inte i brådskan | CVR ≥ 5 %, CPA < 441 kr | okänd | — |
+| IBC_SP_6_H1 | video | I | IBC_SP_3_H1 | mekanismraden ("blockerar solljus och UV helt") mellan hook och citat + rubriken rättad till 4,7 av 5 | SP föll på hold (5 % mot 15 %) för att mekanismen saknades | hold rate > 10 %, ROAS > 1,51 | okänd | — |
+| IBC_OB_1_H1 | video | I | IBC_CO_2_H1 | öppningen: kundens invändning ordagrant som fråga ("En grön presenning med ett par spännband duger väl?") i stället för vindpåståendet; inget pris; CTA utan "idag" | invändningen är den kunderna faktiskt skriver (kalla=voc) — CO_2_H1 fick aldrig spend | ≥ 300 kr spend innan dom; svar på rutan "Fungerar det / presenning" | okänd | — |
+
+`invandning=`-taggen togs bort ur OB_1_H1: invändningen "Fungerar det" ligger på 1 av 16 kommentarer (6 %, under matrisens 10 %-gräns) så `lardom --brief` vägrade taggen; briefen räknas som vanlig plats mot taket, inte som fri. Kvar av de namngivna: IBC_PD_13_1, IBC_PD_14_H1, IBC_CS_11_H1 — nästa runda.

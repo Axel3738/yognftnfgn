@@ -1,0 +1,30 @@
+[
+  {
+    "namn": "Rodholder_PD_65_H1",
+    "typ": "video",
+    "notion_typ": "Video - Pending Approval",
+    "brief": "video-ads-briefs/Rodholder_PD_65_H1/brief.md",
+    "format": "video"
+  },
+  {
+    "namn": "Rodholder_PD_66_H1",
+    "typ": "video",
+    "notion_typ": "Video - Pending Approval",
+    "brief": "video-ads-briefs/Rodholder_PD_66_H1/brief.md",
+    "format": "video"
+  },
+  {
+    "namn": "Rodholder_PD_67_H1",
+    "typ": "video",
+    "notion_typ": "Video - Pending Approval",
+    "brief": "video-ads-briefs/Rodholder_PD_67_H1/brief.md",
+    "format": "video"
+  },
+  {
+    "namn": "Rodholder_CS_11_H1",
+    "typ": "video",
+    "notion_typ": "Video - Pending Approval",
+    "brief": "video-ads-briefs/Rodholder_CS_11_H1/brief.md",
+    "format": "video"
+  }
+]
