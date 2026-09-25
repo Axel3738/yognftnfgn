@@ -26,6 +26,12 @@ Läses av `/kommentarer` innan svaren skrivs.
   annat parti) — svara vänligt, säg inte emot, be köpare om ordernumret.
 - **Vattentät och tål sol.** Leverantören 2026-09-25 ("waterproof and
   sunproof").
+- **Rutorna: kanten täcker bara övre delen, nedre halvan av glaset täcks
+  aldrig.** Leverantören 2026-09-25 (med bild på en husbil där kanten hänger
+  över överkanten av vindrutan och sidorutorna): *"Due to the product design,
+  it's inherently the lower half of the glass and cannot provide any cover."*
+  Svar till den som vill skydda rutorna: överdraget skyddar taket och övre
+  delen av rutorna, inte hela rutorna.
 - **Hur långt ner på sidorna:** beror på husvagnens/husbilens bredd
   (överdraget är 3 m brett). Axel 2026-09-25.
 - **Fifth wheel (US):** en släpvagn som kopplas i flaket på en pickup, med
@@ -60,11 +66,6 @@ Läses av `/kommentarer` innan svaren skrivs.
 
 ## Termoskydd husbil (`Termoskydd`)
 
-- **Täcker inte nederkanten av vindrutan — så är den byggd.** Leverantören
-  2026-09-25: *"Due to the product design, it's inherently the lower half of
-  the glass and cannot provide any cover."* Kunden som skrev "täcker inte
-  nederdelen av vindrutan" har alltså inget fel exemplar. Svara att skyddet
-  är byggt så, inte att något är fel.
 - **Smårutorna:** det finns en egen produkt för smårutorna, nyss upplagd i
   butiken (Axel 2026-09-25). Länken/namnet saknas här — hämta ur butiken
   innan den nämns.
