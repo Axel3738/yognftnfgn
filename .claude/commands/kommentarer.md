@@ -161,6 +161,18 @@ annons, inte i kommentarsfältet. Skriptet stoppar ett svar på något annat.
    när produktsidan säger det. Be den också om en engelsk översättning (`en`).
 3. `fakta` säger exakt var svaret kommer ifrån, `en` vad det betyder. Utan dem
    stoppar skriptet svaret.
+4. **Axels facit gäller före allt ovan:** ge subagenten också
+   `kommentarer/svarsregler.md` (hur Axel vill att det låter — aldrig osäker om
+   egna produkter, hoppa hellre än "vi vet inte", ångerrätten vid fel storlek)
+   och `kommentarer/produktfakta.md` (svar som inte står på produktsidan; säger
+   filen emot sidan gäller filen). `fakta` får peka på `produktfakta.md`.
+
+**d) Frågor till leverantören** — varje köpfråga eller produktklagomål som
+varken produktsidan eller `produktfakta.md` svarar på blir en rad i
+rapportens svar till Axel under rubriken "Frågor till leverantören" (svenska,
+en fråga per rad, produkten först). Axel skickar dem på WhatsApp och svaret
+förs in i `produktfakta.md`. Upprepa inte en fråga som redan står som okänd
+där — skriv den bara om den fortfarande är obesvarad, med antal kommentarer.
 
 Rutinen svarar aldrig själv — VA:n klistrar in från sidan.
 
