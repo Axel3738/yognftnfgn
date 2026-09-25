@@ -15,7 +15,7 @@ This is the only brief that needs new footage of a person, and it must be a real
 
 ## 2. Hypothesis
 A reaction film with the function told in three captions beats a narrated demo for the giver audience, because the giver buys the reaction and reads the function.
-**Hook (H1):** «SV H1»
+**Hook (H1):** Han gissade strumpor. Det var en Mastern.
 
 ## 3. Format
 | | |
@@ -35,14 +35,14 @@ Swedish is what runs in the ad. The right column is meaning only, for the editor
 
 | Time | Swedish (use this) | English meaning |
 |---|---|---|
-| 0–3 s · HOOK H1 | «SV H1» | «EN H1» — INTENT: He guessed socks. Object: the wrapped box on the table, his hands reaching in. |
-| 0–3 s · HOOK H2 | «SV H2» | «EN H2» — INTENT: Sixty seconds after he opened it he was already out at the grill. Object: the opened box, packaging still on the table, the terrace door ajar. |
-| 0–3 s · HOOK H3 | «SV H3» | «EN H3» — INTENT: My dad does not say much. Watch his face at twelve seconds. Object: his reading glasses on the box. |
-| 3–10 s · UNWRAP | «SV 4» | «EN 4» — INTENT: No VO. Natural sound: paper, his voice, the family. Caption: what he says when he reads the box — or NO TEXT if he says nothing usable. |
-| 10–16 s · OUT TO THE GRILL | «SV 5» | «EN 5» — INTENT: Giver VO: he did not wait for spring. Out to the grill in his jacket; the lid comes off, the cold grate. |
-| 16–22 s · FIRST PASS | «SV 6» | «EN 6» — INTENT: Giver VO: one button, the head spins down into the gaps, sixty seconds — that is the whole routine. Natural sound of the motor under. |
-| 22–26 s · THE FACE | «SV 7» | «EN 7» — INTENT: No VO. His reaction — whatever it is. Caption: two heads, nothing comes loose, works on his grill. |
-| 26–30 s · LOCK + CTA | «SV 8» | «EN 8» — INTENT: Giver VO: 999 kr, thirty days open purchase, lifetime warranty. Then the giver's line from §6. |
+| 0–3 s · HOOK H1 | Han gissade strumpor. Det var en Mastern. | He guessed socks. It was a Mastern. |
+| 0–3 s · HOOK H2 | Sextio sekunder efter att lådan öppnades var han redan ute vid grillen. | Sixty seconds after the box was opened, he was already out at the grill. |
+| 0–3 s · HOOK H3 | Pappa säger inte mycket. Se hans min när Mastern dyker upp. | Dad doesn't say much. Watch his face when the Mastern appears. |
+| 3–10 s · UNWRAP | NO TEXT | No VO, no caption — natural sound only; his reaction is real and unscripted. |
+| 10–16 s · OUT TO THE GRILL | Han väntade inte till våren. Sextio sekunder är allt som krävs, även i november. | He didn't wait for spring. Sixty seconds is all it takes, even in November. |
+| 16–22 s · FIRST PASS | En knapp. Huvudet snurrar ner i springorna. Sextio sekunder, sen är det klart. | One button. The head spins down into the gaps. Sixty seconds, then it's done. |
+| 22–26 s · THE FACE | Två huvuden. Ingenting lossnar. Funkar på hans galler. | Two heads. Nothing comes loose. Works on his grill. |
+| 26–30 s · LOCK + CTA | Nu slipper du stålborsten, för det här tar bara sextio sekunder. | Now you don't need the wire brush anymore, because this only takes sixty seconds. |
 
 ## 5. Direction — one row per script line (docs/os/BRIEF-REGI.md)
 **Assets:** Drive "Content for all markets. B-roll etc" (id 1Q9-TFnhQI3QV0z80Lw1iOOB7Wk_RWJ-r) — sub-folders: home-recorded product macro (1gLEJU2bdzXWU-w2eHoxo9XD2jImMv_Zr), problem agitation / dirty grates / scrubbing (1YY7Y_DuaPAszwF4jM70g0xue1N_hUsq6), mid clips + grillers (1K2B_qE8jVlKng6k1Cpcw_GRsEOXD0aXZ), CTA / end card (1K8LjlcndXuWdWI2ic7a0A4JDJqcnLaFe), brush-safe heads (1QU-V7oD19egsbS90cKC6BCIYH84JJlih), old methods: onion, foil, wire brush (1ZoRoDhf07RKXvKa-FMEx5zypdQwr3s90), brushes normal stores sell (10srWqlx7x_MXiJO0MLtR8pDP_JkaR39B), expensive new grills (1k5VjErDXeW4RZz1zQEbFWry1Vo6QzXu1), broken grills thrown away (1VggaPZ1X7VDSbSR8jmTBpBvH2Zq0sIGW), UGC Rickard Jenders (1NMTQHuODyqFUMrPoiG69vRR8LtJZa_-T), Beerhansson UGC (1ucL6wrOSre-h9m038xMZwjuWHLrYaeWN), Gilz content (1gZua5tjAFUfuzH9xFWry91q7sRELGAbO) · product photos Aug 2026 (14xo1cnBbNMhv-i0d7WUbtgfMXVVcvlWf) · CDN: https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Namnlosdesign-2026-07-06T113034.467.png, https://cdn.shopify.com/s/files/1/0947/0174/8548/files/WhatsAppImage2026-04-13at10.08.29.jpg, https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260423_053932_274855d0-6200-477e-b94d-9253bb51021a.png, https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260423_053920_89553003-6fbe-4990-ac4a-75b8cfe135b2.png, https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260423_062233_5b01b9d2-7444-4824-b577-a781dd3f0193.png
@@ -51,31 +51,46 @@ Swedish is what runs in the ad. The right column is meaning only, for the editor
 
 | # | Time | Script line (Swedish) | Audio | On-screen text | Picture | Effect + length | Source | Reference | Latitude |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 | 0:00–0:03 (H1) | «SV H1» | VO | «SV H1» | Macro of the Mastern box on a kitchen table, ribbon in frame, a November window behind (dark, a lamp). Hands enter only after the first frame. **First frame:** the wrapped box and the ribbon. | zoom-in 1 s | NEW FOOTAGE: a real wrapped Mastern box on a kitchen table, filmed by the giver (UGC creator Beerhansson, folder 1ucL6wrOSre-h9m038xMZwjuWHLrYaeWN, or Rickard Jenders, folder 1NMTQHuODyqFUMrPoiG69vRR8LtJZa_-T) | — | none |
-| 2 | 0:00–0:03 (H2) | «SV H2» | VO | «SV H2» | Macro of the opened box on the table, tissue paper, the terrace door open in the background with cold light. **First frame:** the opened box, door ajar behind. | cut-in | NEW FOOTAGE: the opened box with the terrace door in the background, same shoot | — | none |
-| 3 | 0:00–0:03 (H3) | «SV H3» | VO | «SV H3» | Macro of reading glasses resting on the Mastern box lid. **First frame:** the glasses on the box. | freeze 0.5 s | NEW FOOTAGE: reading glasses on the box lid, same shoot | — | none |
-| 4 | 0:03–0:10 | «SV 4» | NO VO | NO TEXT | He unwraps at the table, reads the box, turns it over. Uncut, one take. | cut-in | NEW FOOTAGE: the real unwrapping, one take, filmed by the giver | — | none |
-| 5 | 0:10–0:16 | «SV 5» | VO | «SV 5» | He walks out in a jacket, opens the grill, the grate with last season's grease; the terrace lamp lights the grate. | cut-in | NEW FOOTAGE: the walk to the grill and the lid opening, same shoot | — | b-roll order free |
-| 6 | 0:16–0:22 | «SV 6» | VO | «SV 6» | His hand on the button, the head spinning in the gaps, black flakes lifting, his face watching. | slow-mo 0.5× 2 s on the flakes | NEW FOOTAGE: the first pass on his own grate, same shoot; if the light fails, insert DRIVE 1gLEJU2bdzXWU-w2eHoxo9XD2jImMv_Zr [EDITOR PICKS: coarse head spinning in a gap] for two seconds | — | b-roll order free |
-| 7 | 0:22–0:26 | «SV 7» | NO VO | «SV 7» | His face, then the clean bars. Hold two seconds on the face. | freeze 0.5 s on the face | NEW FOOTAGE: his reaction, uncut, same shoot | — | none |
-| 8 | 0:26–0:30 | «SV 8» | VO | «SV 8» | End card: Mastern on the grill edge, price, the two promises, button. | none | DRIVE 1K8LjlcndXuWdWI2ic7a0A4JDJqcnLaFe [EDITOR PICKS: the end card plate] | — | none |
+| 1 | 0:00–0:03 (H1) | Han gissade strumpor. Det var en Mastern. | VO | Han gissade strumpor. Det var en Mastern. | Macro of the Mastern box on a kitchen table, ribbon in frame, a November window behind (dark, a lamp). Hands enter only after the first frame. **First frame:** the wrapped box and the ribbon. | zoom-in 1 s | NEW FOOTAGE: a real wrapped Mastern box on a kitchen table, filmed by the giver (UGC creator Beerhansson, folder 1ucL6wrOSre-h9m038xMZwjuWHLrYaeWN, or Rickard Jenders, folder 1NMTQHuODyqFUMrPoiG69vRR8LtJZa_-T) | — | none |
+| 2 | 0:00–0:03 (H2) | Sextio sekunder efter att lådan öppnades var han redan ute vid grillen. | VO | Sextio sekunder efter att lådan öppnades var han redan ute vid grillen. | Macro of the opened box on the table, tissue paper, the terrace door open in the background with cold light. **First frame:** the opened box, door ajar behind. | cut-in | NEW FOOTAGE: the opened box with the terrace door in the background, same shoot | — | none |
+| 3 | 0:00–0:03 (H3) | Pappa säger inte mycket. Se hans min när Mastern dyker upp. | VO | Pappa säger inte mycket. Se hans min när Mastern dyker upp. | Macro of reading glasses resting on the Mastern box lid. **First frame:** the glasses on the box. | freeze 0.5 s | NEW FOOTAGE: reading glasses on the box lid, same shoot | — | none |
+| 4 | 0:03–0:10 | NO TEXT | NO VO | NO TEXT | He unwraps at the table, reads the box, turns it over. Uncut, one take. | cut-in | NEW FOOTAGE: the real unwrapping, one take, filmed by the giver | — | none |
+| 5 | 0:10–0:16 | Han väntade inte till våren. Sextio sekunder är allt som krävs, även i november. | VO | Han väntade inte till våren. Sextio sekunder är allt som krävs, även i november. | He walks out in a jacket, opens the grill, the grate with last season's grease; the terrace lamp lights the grate. | cut-in | NEW FOOTAGE: the walk to the grill and the lid opening, same shoot | — | b-roll order free |
+| 6 | 0:16–0:22 | En knapp. Huvudet snurrar ner i springorna. Sextio sekunder, sen är det klart. | VO | En knapp. Huvudet snurrar ner i springorna. Sextio sekunder, sen är det klart. | His hand on the button, the head spinning in the gaps, black flakes lifting, his face watching. | slow-mo 0.5× 2 s on the flakes | NEW FOOTAGE: the first pass on his own grate, same shoot; if the light fails, insert DRIVE 1gLEJU2bdzXWU-w2eHoxo9XD2jImMv_Zr [EDITOR PICKS: coarse head spinning in a gap] for two seconds | — | b-roll order free |
+| 7 | 0:22–0:26 | Två huvuden. Ingenting lossnar. Funkar på hans galler. | NO VO | Två huvuden. Ingenting lossnar. Funkar på hans galler. | His face, then the clean bars. Hold two seconds on the face. | freeze 0.5 s on the face | NEW FOOTAGE: his reaction, uncut, same shoot | — | none |
+| 8 | 0:26–0:30 | Nu slipper du stålborsten, för det här tar bara sextio sekunder. | VO | Nu slipper du stålborsten, för det här tar bara sextio sekunder. | End card: Mastern on the grill edge, price, the two promises, button. | none | DRIVE 1K8LjlcndXuWdWI2ic7a0A4JDJqcnLaFe [EDITOR PICKS: the end card plate] | — | none |
 
 ## 6. What the giver says when the box opens
-«SV giver line — one spoken sentence the giver can say at the table; it is the last caption before the end card» — «EN meaning». For this brief the giver's line is what she/he actually said on the day — write the intended line, replace with the real one after the shoot.
+"Nu slipper du stålborsten, för det här tar bara sextio sekunder." — "Now you don't need the wire brush anymore, because this only takes sixty seconds." For this brief the giver's line is what she/he actually said on the day — write the intended line, replace with the real one after the shoot.
 
 ## 7. COPY CARD (goes in Ads Manager, not in the creative)
 **Primary text:**
-> «SV primary text — four to six short lines, each its own line; opens with the giver's scene, then what he stops doing, then the lock: 999 kr, 30 dagars öppet köp, livstidsgaranti, fri frakt inom Sverige»
+> Han öppnade lådan och stod vid grillen sextio sekunder senare.
+> Nu slipper han stålborsten som aldrig når ner i springorna.
+> 999 kr. Trettio dagars öppet köp.
+> Livstidsgaranti. Går den sönder får han en ny. Fri frakt inom Sverige.
 
-**Headline:** `«SV headline, max 40 characters, carries Mastern or the price»`
-**Description:** `«SV description, max 60 characters: two facts + 30 dagars öppet köp»`
+**Headline:** `Mastern. Rent galler på sextio sekunder.`
+**Description:** `Två huvuden. Ingenting lossnar. Trettio dagars öppet köp.`
 **CTA button:** `Handla nu` (Shop Now)
 **Destination:** https://grillkliniken.se/pages/landing-page-blank-jul-3-09-12-32
 
 ## 8. Three-question test (docs/copy-regler.md) — every delivered line
 | Line | Visualise? | Falsifiable? | Only we can say it? |
 |---|---|---|---|
-«ONE ROW PER DELIVERED SWEDISH LINE — every hook, every script line, the giver's line, the headline, the description and each primary-text line. Every cell must be ✅ with a five-to-fifteen-word reason. A line that earns a ❌ anywhere is rewritten until it passes or dropped; it never stays in the brief with a ❌. Rows are plain table rows: | line | ✅ reason | ✅ reason | ✅ reason |»
+| Han gissade strumpor. Det var en Mastern. (Hook H1) | ✅ hands reaching into the wrapped box | ✅ his guess was wrong, verifiable on camera | ✅ names "Mastern" directly |
+| Sextio sekunder efter att lådan öppnades var han redan ute vid grillen. (Hook H2) | ✅ opened box, him walking to the grill | ✅ a timed, checkable claim | ✅ "sextio sekunder" is Mastern's own speed claim |
+| Pappa säger inte mycket. Se hans min när Mastern dyker upp. (Hook H3) | ✅ glasses on the box, his face | ✅ his real, filmable reaction | ✅ names "Mastern" directly |
+| Han väntade inte till våren. Sextio sekunder är allt som krävs, även i november. (script line 5) | ✅ jacket, November, walking to the grill | ✅ a timed, checkable claim | ✅ "sextio sekunder" is Mastern's own claim |
+| En knapp. Huvudet snurrar ner i springorna. Sextio sekunder, sen är det klart. (script line 6) | ✅ button press, head spinning in a gap | ✅ each clause is a specific, checkable claim | ✅ "springorna" and "sextio sekunder" are Mastern-only claims |
+| Två huvuden. Ingenting lossnar. Funkar på hans galler. (script line 7, caption) | ✅ the two heads shown, his own grill | ✅ literal, checkable claims | ✅ "två huvuden" and "ingenting lossnar" are named product facts |
+| Nu slipper du stålborsten, för det här tar bara sextio sekunder. (script line 8 / giver's line) | ✅ him free of the wire brush at the grill | ✅ a timed, checkable claim | ✅ "sextio sekunder" replacing the wire brush is Mastern's own claim |
+| Mastern. Rent galler på sextio sekunder. (headline) | ✅ a clean grate, concrete | ✅ a timed, checkable claim | ✅ "Mastern" and "sextio sekunder" are named facts |
+| Två huvuden. Ingenting lossnar. Trettio dagars öppet köp. (description) | ✅ two heads, demoable on screen | ✅ literal, checkable claims | ✅ "två huvuden" and "ingenting lossnar" are Mastern-only facts |
+| Han öppnade lådan och stod vid grillen sextio sekunder senare. (primary text, line 1) | ✅ box opening, him at the grill | ✅ a timed, checkable claim | ✅ "sextio sekunder" is Mastern's own claim |
+| Nu slipper han stålborsten som aldrig når ner i springorna. (primary text, line 2) | ✅ him free of the old brush | ✅ a checkable claim about the brush | ✅ "springorna" ties to Mastern's mechanism |
+| 999 kr. Trettio dagars öppet köp. (primary text, line 3) | ✅ the price and the policy, concrete | ✅ exact, checkable terms | ✅ "999 kr" is the named store-specific price |
+| Livstidsgaranti. Går den sönder får han en ny. Fri frakt inom Sverige. (primary text, line 4) | ✅ a replacement product, a concrete outcome | ✅ a checkable promise | ✅ "livstidsgaranti — går den sönder får han en ny" is the named qualifying phrase |
 
 ## 9. Rules
 - **Price exactly 999 kr** (ord. 1 600 kr) — on the end card and in the copy. Never a percentage (not "35 %", not "40 %"), never a countdown, never a second price. Verified live 2026-09-25 on grillkliniken.se/products/elektrisk-grillborste (999 / 1 600). Numbers other than the price are written in words in Swedish (femton tusen, trettio dagar, sextio sekunder).

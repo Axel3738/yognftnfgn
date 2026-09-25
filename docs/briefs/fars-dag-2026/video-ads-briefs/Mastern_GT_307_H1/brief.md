@@ -15,7 +15,7 @@ The giver is not a griller. She/he needs someone who is. The technician persona 
 
 ## 2. Hypothesis
 The proven authority hook transfers to the gift job (L-198: hooks that work across bodies are robust) and the technician's recommendation is the giver's permission to spend 999 kr.
-**Hook (H1):** «SV H1»
+**Hook (H1):** Jag har öppnat tusentals grillar. Ge bort det jag velat ha, verktyget för springorna.
 
 ## 3. Format
 | | |
@@ -35,14 +35,14 @@ Swedish is what runs in the ad. The right column is meaning only, for the editor
 
 | Time | Swedish (use this) | English meaning |
 |---|---|---|
-| 0–3 s · HOOK H1 | «SV H1» | «EN H1» — INTENT: I have opened thousands of grills. If you want to give him something for Father's Day, give him what I wanted for thirty years. Object: the grate being flipped, macro into the gap. |
-| 0–3 s · HOOK H2 | «SV H2» | «EN H2» — INTENT: Comment reply: "What do you give a dad who already has everything for the grill?" — This. And I will show you why. Object: the comment screenshot. |
-| 0–3 s · HOOK H3 | «SV H3» | «EN H3» — INTENT: The owner always says: "it is clean, I look after it." Then I flip the grate. Object: the underside of the grate. |
-| 3–9 s · WHAT I SEE | «SV 4» | «EN 4» — INTENT: Black is not the problem — a smooth even black surface is seasoning. Black that flakes and builds in the gaps is old carbonised grease. It reheats every time he grills and blocks the contact that makes the sear. He cannot see the difference; I can. |
-| 9–15 s · THE WIRE BRUSH | «SV 5» | «EN 5» — INTENT: His wire brush flattens and loses grip, and the harder he presses the more bristles it sheds onto the grate. Weber and Nexgrill recalled over thirteen million of them in the USA this year. It is not his fault — it is the tool. |
-| 15–23 s · THE TOOL | «SV 6» | «EN 6» — INTENT: So give him the tool. Mastern: the head spins four hundred revolutions a minute, round the whole bar and down into the gaps, sixty seconds while the grate is still warm. Two heads: the coarse one locks the metal in, the polish one has no metal at all. Nothing comes loose. |
-| 23–29 s · FIFTEEN OR SEVEN | «SV 7» | «EN 7» — INTENT: A grill for fifteen thousand should last fifteen years. With a dirty grate it lasts maybe seven. It is decided in sixty seconds after every cookout — that is what you are giving him. |
-| 29–34 s · LOCK + CTA | «SV 8» | «EN 8» — INTENT: 999 kr, thirty days open purchase, lifetime warranty — if it breaks he gets a new one. Then the giver's line from §6 (the technician gives the giver the sentence to say). |
+| 0–3 s · HOOK H1 | Jag har öppnat tusentals grillar. Ge bort det jag velat ha, verktyget för springorna. | I've opened thousands of grills. Give away what I've wanted, the tool for the gaps. |
+| 0–3 s · HOOK H2 | Vad ger man pappan som redan har allt? Det här, det som rensar springorna. | What do you give the dad who already has everything? This, the thing that clears the gaps. |
+| 0–3 s · HOOK H3 | Han säger alltid: 'den är ren, jag sköter den.' Jag vänder och ser springorna. | He always says: it's clean, I take care of it. I turn it over and see the gaps. |
+| 3–9 s · WHAT I SEE | Svart är bara seasoning. Fett som flagar i springorna stänger ute stekytan. Han ser det inte, jag gör. | Black is just seasoning, completely normal. But grease that flakes in the gaps blocks the sear. He can't see it. I can. |
+| 9–15 s · THE WIRE BRUSH | Hans stålborste plattas ut och tappar strån. Weber och Nexgrill återkallade över tretton miljoner stålborstar i USA i år. | His wire brush flattens and sheds bristles. Weber and Nexgrill recalled over thirteen million wire brushes in the USA this year. |
+| 15–23 s · THE TOOL | Mastern snurrar fyrahundra varv i minuten, ner i springorna, sextio sekunder medan gallret är varmt. Grovhuvud och polerhuvud, ingenting lossnar. | Mastern spins four hundred RPM down into the gaps, sixty seconds while the grate is warm. Coarse and polish heads — nothing comes loose. |
+| 23–29 s · FIFTEEN OR SEVEN | Grillen för femton tusen ska hålla femton år. Med smutsigt galler kanske sju. | A grill for fifteen thousand should last fifteen years. With a dirty grate, maybe seven. |
+| 29–34 s · LOCK + CTA | 999 kr, trettio dagars öppet köp, livstidsgaranti. Går den sönder får han en ny. | 999 kr, thirty days open purchase, lifetime warranty. If it breaks he gets a new one. |
 
 ## 5. Direction — one row per script line (docs/os/BRIEF-REGI.md)
 **Assets:** Drive "Content for all markets. B-roll etc" (id 1Q9-TFnhQI3QV0z80Lw1iOOB7Wk_RWJ-r) — sub-folders: home-recorded product macro (1gLEJU2bdzXWU-w2eHoxo9XD2jImMv_Zr), problem agitation / dirty grates / scrubbing (1YY7Y_DuaPAszwF4jM70g0xue1N_hUsq6), mid clips + grillers (1K2B_qE8jVlKng6k1Cpcw_GRsEOXD0aXZ), CTA / end card (1K8LjlcndXuWdWI2ic7a0A4JDJqcnLaFe), brush-safe heads (1QU-V7oD19egsbS90cKC6BCIYH84JJlih), old methods: onion, foil, wire brush (1ZoRoDhf07RKXvKa-FMEx5zypdQwr3s90), brushes normal stores sell (10srWqlx7x_MXiJO0MLtR8pDP_JkaR39B), expensive new grills (1k5VjErDXeW4RZz1zQEbFWry1Vo6QzXu1), broken grills thrown away (1VggaPZ1X7VDSbSR8jmTBpBvH2Zq0sIGW), UGC Rickard Jenders (1NMTQHuODyqFUMrPoiG69vRR8LtJZa_-T), Beerhansson UGC (1ucL6wrOSre-h9m038xMZwjuWHLrYaeWN), Gilz content (1gZua5tjAFUfuzH9xFWry91q7sRELGAbO) · product photos Aug 2026 (14xo1cnBbNMhv-i0d7WUbtgfMXVVcvlWf) · CDN: https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Namnlosdesign-2026-07-06T113034.467.png, https://cdn.shopify.com/s/files/1/0947/0174/8548/files/WhatsAppImage2026-04-13at10.08.29.jpg, https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260423_053932_274855d0-6200-477e-b94d-9253bb51021a.png, https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260423_053920_89553003-6fbe-4990-ac4a-75b8cfe135b2.png, https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260423_062233_5b01b9d2-7444-4824-b577-a781dd3f0193.png
@@ -51,31 +51,50 @@ Swedish is what runs in the ad. The right column is meaning only, for the editor
 
 | # | Time | Script line (Swedish) | Audio | On-screen text | Picture | Effect + length | Source | Reference | Latitude |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 | 0:00–0:03 (H1) | «SV H1» | VO | «SV H1» | Macro of gloved hands flipping a "clean-looking" grate, camera into the gap: black crust. The technician's face is not in the first three seconds. **First frame:** the flipped grate, the gap. | cut-in | DRIVE 1YY7Y_DuaPAszwF4jM70g0xue1N_hUsq6 [EDITOR PICKS: a grate flipped over, macro into the gaps] | 110 B2 hook 1 structure | none |
-| 2 | 0:00–0:03 (H2) | «SV H2» | VO | «SV H2» | A real-looking Swedish comment screenshot (name blurred) shown 1.5 s, then cut to the technician's hands at the grill. **First frame:** the comment screenshot. | freeze 1.5 s then cut-in | NEW FOOTAGE: a staged comment screenshot, name blurred, built by the editor | 110 B2 hook 2 (comment reply) | none |
-| 3 | 0:00–0:03 (H3) | «SV H3» | VO | «SV H3» | Macro of the underside of a grate coming into view, crust in every gap. **First frame:** the underside of the grate. | zoom-in 1 s | DRIVE 1YY7Y_DuaPAszwF4jM70g0xue1N_hUsq6 [EDITOR PICKS: underside of a grate, crust in the gaps] | 110 hook-lab #9 | none |
-| 4 | 0:03–0:09 | «SV 4» | VO | «SV 4» | Two macros side by side: smooth black surface stroked by a thumb vs flaking crust in a gap with a fingernail lifting a flake. | slider before/after 2 s | DRIVE 1YY7Y_DuaPAszwF4jM70g0xue1N_hUsq6 [EDITOR PICKS: smooth seasoning surface vs flaking crust in a gap] | 110 B2 seasoning comparison (mandatory shot) | b-roll order free |
-| 5 | 0:09–0:15 | «SV 5» | VO | «SV 5» | Macro of a wire brush flattening under pressure, then shed bristles on a dark grate. | slow-mo 0.5× 2 s on the shed bristles | DRIVE 1ZoRoDhf07RKXvKa-FMEx5zypdQwr3s90 [EDITOR PICKS: wire brush under pressure, shed bristles on a dark grate] | — | b-roll order free |
-| 6 | 0:15–0:23 | «SV 6» | VO | «SV 6» | The technician's hand presses the button; macro of the head spinning in a gap with steam; the two heads side by side. | slow-mo 0.5× 2 s on the spinning head | DRIVE 1gLEJU2bdzXWU-w2eHoxo9XD2jImMv_Zr [EDITOR PICKS: head spinning in a gap with steam; two heads side by side] | — | b-roll order free |
-| 7 | 0:23–0:29 | «SV 7» | VO | «SV 7» | A Napoleon in frame, the technician closes the lid; a rusted grate from the broken-grills folder for one second. | cut-in | DRIVE 1k5VjErDXeW4RZz1zQEbFWry1Vo6QzXu1 [EDITOR PICKS: a premium grill, lid closing] + DRIVE 1VggaPZ1X7VDSbSR8jmTBpBvH2Zq0sIGW [EDITOR PICKS: rusted grate, one second] | 128 H3 close | b-roll order free |
-| 8 | 0:29–0:34 | «SV 8» | VO | «SV 8» | End card: Mastern on the grill edge, price, the two promises, button. | none | DRIVE 1K8LjlcndXuWdWI2ic7a0A4JDJqcnLaFe [EDITOR PICKS: the end card plate] | — | none |
+| 1 | 0:00–0:03 (H1) | Jag har öppnat tusentals grillar. Ge bort det jag velat ha, verktyget för springorna. | VO | Jag har öppnat tusentals grillar. Ge bort det jag velat ha, verktyget för springorna. | Macro of gloved hands flipping a "clean-looking" grate, camera into the gap: black crust. The technician's face is not in the first three seconds. **First frame:** the flipped grate, the gap. | cut-in | DRIVE 1YY7Y_DuaPAszwF4jM70g0xue1N_hUsq6 [EDITOR PICKS: a grate flipped over, macro into the gaps] | 110 B2 hook 1 structure | none |
+| 2 | 0:00–0:03 (H2) | Vad ger man pappan som redan har allt? Det här, det som rensar springorna. | VO | Vad ger man pappan som redan har allt? Det här, det som rensar springorna. | A real-looking Swedish comment screenshot (name blurred) shown 1.5 s, then cut to the technician's hands at the grill. **First frame:** the comment screenshot. | freeze 1.5 s then cut-in | NEW FOOTAGE: a staged comment screenshot, name blurred, built by the editor | 110 B2 hook 2 (comment reply) | none |
+| 3 | 0:00–0:03 (H3) | Han säger alltid: 'den är ren, jag sköter den.' Jag vänder och ser springorna. | VO | Han säger alltid: 'den är ren, jag sköter den.' Jag vänder och ser springorna. | Macro of the underside of a grate coming into view, crust in every gap. **First frame:** the underside of the grate. | zoom-in 1 s | DRIVE 1YY7Y_DuaPAszwF4jM70g0xue1N_hUsq6 [EDITOR PICKS: underside of a grate, crust in the gaps] | 110 hook-lab #9 | none |
+| 4 | 0:03–0:09 | Svart är bara seasoning. Fett som flagar i springorna stänger ute stekytan. Han ser det inte, jag gör. | VO | Svart är bara seasoning. Fett som flagar i springorna stänger ute stekytan. Han ser det inte, jag gör. | Two macros side by side: smooth black surface stroked by a thumb vs flaking crust in a gap with a fingernail lifting a flake. | slider before/after 2 s | DRIVE 1YY7Y_DuaPAszwF4jM70g0xue1N_hUsq6 [EDITOR PICKS: smooth seasoning surface vs flaking crust in a gap] | 110 B2 seasoning comparison (mandatory shot) | b-roll order free |
+| 5 | 0:09–0:15 | Hans stålborste plattas ut och tappar strån. Weber och Nexgrill återkallade över tretton miljoner stålborstar i USA i år. | VO | Hans stålborste plattas ut och tappar strån. Weber och Nexgrill återkallade över tretton miljoner stålborstar i USA i år. | Macro of a wire brush flattening under pressure, then shed bristles on a dark grate. | slow-mo 0.5× 2 s on the shed bristles | DRIVE 1ZoRoDhf07RKXvKa-FMEx5zypdQwr3s90 [EDITOR PICKS: wire brush under pressure, shed bristles on a dark grate] | — | b-roll order free |
+| 6 | 0:15–0:23 | Mastern snurrar fyrahundra varv i minuten, ner i springorna, sextio sekunder medan gallret är varmt. Grovhuvud och polerhuvud, ingenting lossnar. | VO | Mastern snurrar fyrahundra varv i minuten, ner i springorna, sextio sekunder medan gallret är varmt. Grovhuvud och polerhuvud, ingenting lossnar. | The technician's hand presses the button; macro of the head spinning in a gap with steam; the two heads side by side. | slow-mo 0.5× 2 s on the spinning head | DRIVE 1gLEJU2bdzXWU-w2eHoxo9XD2jImMv_Zr [EDITOR PICKS: head spinning in a gap with steam; two heads side by side] | — | b-roll order free |
+| 7 | 0:23–0:29 | Grillen för femton tusen ska hålla femton år. Med smutsigt galler kanske sju. | VO | Grillen för femton tusen ska hålla femton år. Med smutsigt galler kanske sju. | A Napoleon in frame, the technician closes the lid; a rusted grate from the broken-grills folder for one second. | cut-in | DRIVE 1k5VjErDXeW4RZz1zQEbFWry1Vo6QzXu1 [EDITOR PICKS: a premium grill, lid closing] + DRIVE 1VggaPZ1X7VDSbSR8jmTBpBvH2Zq0sIGW [EDITOR PICKS: rusted grate, one second] | 128 H3 close | b-roll order free |
+| 8 | 0:29–0:34 | 999 kr, trettio dagars öppet köp, livstidsgaranti. Går den sönder får han en ny. | VO | 999 kr, trettio dagars öppet köp, livstidsgaranti. Går den sönder får han en ny. | End card: Mastern on the grill edge, price, the two promises, button. | none | DRIVE 1K8LjlcndXuWdWI2ic7a0A4JDJqcnLaFe [EDITOR PICKS: the end card plate] | — | none |
 
 ## 6. What the giver says when the box opens
-«SV giver line — one spoken sentence the giver can say at the table; it is the last caption before the end card» — «EN meaning». 
+Du sköter den perfekt. Det här kommer åt springorna. — You take care of it perfectly. This one reaches the gaps.
 
 ## 7. COPY CARD (goes in Ads Manager, not in the creative)
 **Primary text:**
-> «SV primary text — four to six short lines, each its own line; opens with the giver's scene, then what he stops doing, then the lock: 999 kr, 30 dagars öppet köp, livstidsgaranti, fri frakt inom Sverige»
+> En grilltekniker har öppnat tusentals grillar.
+> Han vet vad pappan som redan har allt egentligen vill ha.
+> Nu slipper han stålborsten som tappar strån i maten.
+> 999 kr. Trettio dagars öppet köp.
+> Livstidsgaranti och fri frakt inom Sverige.
 
-**Headline:** `«SV headline, max 40 characters, carries Mastern or the price»`
-**Description:** `«SV description, max 60 characters: two facts + 30 dagars öppet köp»`
+**Headline:** `Mastern. Det pappor faktiskt vill ha.`
+**Description:** `999 kr · Livstidsgaranti · Trettio dagars öppet köp.`
 **CTA button:** `Handla nu` (Shop Now)
 **Destination:** https://grillkliniken.se/products/elektrisk-grillborste
 
 ## 8. Three-question test (docs/copy-regler.md) — every delivered line
 | Line | Visualise? | Falsifiable? | Only we can say it? |
 |---|---|---|---|
-«ONE ROW PER DELIVERED SWEDISH LINE — every hook, every script line, the giver's line, the headline, the description and each primary-text line. Every cell must be ✅ with a five-to-fifteen-word reason. A line that earns a ❌ anywhere is rewritten until it passes or dropped; it never stays in the brief with a ❌. Rows are plain table rows: | line | ✅ reason | ✅ reason | ✅ reason |»
+| Jag har öppnat tusentals grillar. Ge bort det jag velat ha, verktyget för springorna. | ✅ grate flip, hands, a named tool for the gaps | ✅ a checkable claim: thousands of grills, a specific tool | ✅ names springorna, the gaps no generic gift brand owns |
+| Vad ger man pappan som redan har allt? Det här, det som rensar springorna. | ✅ a comment reply, then the product cleaning gaps | ✅ answers a real question with a specific object | ✅ "det som rensar springorna" is Mastern's own mechanism |
+| Han säger alltid: 'den är ren, jag sköter den.' Jag vänder och ser springorna. | ✅ flipping the grate, looking into the gaps | ✅ a scene that either happens or does not | ✅ only the technician who flips grates sees the gaps |
+| Svart är bara seasoning. Fett som flagar i springorna stänger ute stekytan. Han ser det inte, jag gör. | ✅ flaking crust in a gap, blocked contact | ✅ true or false, checkable against the grate | ✅ the seasoning-vs-crust distinction is the technician's own claim |
+| Hans stålborste plattas ut och tappar strån. Weber och Nexgrill återkallade över tretton miljoner stålborstar i USA i år. | ✅ a flattened brush shedding bristles on a grate | ✅ a verified recall, named companies, named country | ✅ no generic brush ad can cite this recall for itself |
+| Mastern snurrar fyrahundra varv i minuten, ner i springorna, sextio sekunder medan gallret är varmt. Grovhuvud och polerhuvud, ingenting lossnar. | ✅ the head spinning into a gap, two heads shown | ✅ exact RPM, exact seconds, a checkable spec | ✅ 400 varv, sextio sekunder and two named heads are Mastern's own |
+| Grillen för femton tusen ska hålla femton år. Med smutsigt galler kanske sju. | ✅ two grills side by side, new versus worn | ✅ a stated lifespan claim, true or false over time | ✅ "femton år eller sju" is the account's own proven line |
+| 999 kr, trettio dagars öppet köp, livstidsgaranti. Går den sönder får han en ny. | ✅ the end card with price and the two promises | ✅ a fixed price and a written guarantee, checkable | ✅ 999 kr and Mastern's own guarantee wording |
+| Du sköter den perfekt. Det här kommer åt springorna. | ✅ the giver speaking at the table, the box open | ✅ a specific claim about what the tool reaches | ✅ names springorna, the exact gap no brush reaches |
+| Mastern. Det pappor faktiskt vill ha. | ✅ the product name on the end card | ✅ a claim about what dads actually want, testable by sales | ✅ names Mastern directly |
+| 999 kr · Livstidsgaranti · Trettio dagars öppet köp. | ✅ price and guarantee on the end card | ✅ three fixed, checkable terms | ✅ Mastern's exact price and guarantee wording |
+| En grilltekniker har öppnat tusentals grillar. | ✅ the technician at a grill, gloved hands | ✅ a role and a number, checkable | ✅ the account's own authority figure, not a generic claim |
+| Han vet vad pappan som redan har allt egentligen vill ha. | ✅ the technician naming what dad actually wants | ✅ a claim that can be judged against sales | ✅ tied to the technician who inspects grills for a living |
+| Nu slipper han stålborsten som tappar strån i maten. | ✅ the old brush shedding bristles into food | ✅ a checkable defect, not an opinion | ✅ "tappar strån i maten" is the specific recall-linked defect |
+| 999 kr. Trettio dagars öppet köp. | ✅ the price line on the end card | ✅ a fixed price and a fixed return window | ✅ Mastern's own price and return terms |
+| Livstidsgaranti och fri frakt inom Sverige. | ✅ the guarantee line on the end card | ✅ a written guarantee and a shipping promise | ✅ Mastern's own lifetime guarantee wording |
 
 ## 9. Rules
 - **Price exactly 999 kr** (ord. 1 600 kr) — on the end card and in the copy. Never a percentage (not "35 %", not "40 %"), never a countdown, never a second price. Verified live 2026-09-25 on grillkliniken.se/products/elektrisk-grillborste (999 / 1 600). Numbers other than the price are written in words in Swedish (femton tusen, trettio dagar, sextio sekunder).

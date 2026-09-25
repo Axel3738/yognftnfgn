@@ -14,7 +14,7 @@ Left half: a "VÄRLDENS BÄSTA PAPPA" mug at the back of a cupboard, dusty light
 
 ## 2. Hypothesis
 The cupboard/grill split converts adult children on recognition alone, at B020's qualifying CTR.
-**Headline:** «SV headline»
+**Headline:** Muggen står i skåpet. Den här står vid grillen.
 
 ## 3. Format
 | | |
@@ -27,11 +27,11 @@ The cupboard/grill split converts adult children on recognition alone, at B020's
 ## 4. Exact text (Swedish word for word, do not re-translate)
 | Element | Swedish (use this) | English meaning |
 |---|---|---|
-| Headline left half | «SV HL» | «EN HL» — INTENT: The mug stands in the cupboard. — over the mug |
-| Headline right half | «SV HR» | «EN HR» — INTENT: This one stands by the grill. — over Mastern |
-| Sub-line | «SV S» | «EN S» — INTENT: One father in six says the mug is the gift he wants least — in words, no percent sign |
-| Price line | «SV P» | «EN P» — INTENT: 999 kr |
-| Footer | «SV F» | «EN F» — INTENT: 30 dagars öppet köp · livstidsgaranti · fri frakt inom Sverige |
+| Headline left half | Muggen står i skåpet. | The mug stands in the cupboard. |
+| Headline right half | Den här står vid grillen. | This one stands by the grill. |
+| Sub-line | Var sjätte pappa vill helst slippa muggen som present. | One father in six says the mug is the gift he wants least. |
+| Price line | 999 kr (ord. 1 600 kr) | 999 kr (list price 1 600 kr) |
+| Footer | 30 dagars öppet köp · Livstidsgaranti · Fri frakt inom Sverige | 30 days open purchase · Lifetime warranty · Free shipping within Sweden |
 
 ## 5. Design brief
 - The mug must be a generic "världens bästa pappa" print — no brand, no shop.
@@ -42,17 +42,30 @@ The cupboard/grill split converts adult children on recognition alone, at B020's
 
 ## 7. COPY CARD (goes in Ads Manager, not in the creative)
 **Primary text:**
-> «SV primary text — four to six short lines, each its own line; opens with the giver's scene, then what he stops doing, then the lock: 999 kr, 30 dagars öppet köp, livstidsgaranti, fri frakt inom Sverige»
+> Muggen hamnar i skåpet. Mastern hamnar vid grillen.
+> Var sjätte pappa vill helst slippa muggen som present.
+> 999 kr. Trettio dagars öppet köp.
+> Livstidsgaranti och fri frakt inom Sverige.
 
-**Headline:** `«SV headline, max 40 characters, carries Mastern or the price»`
-**Description:** `«SV description, max 60 characters: two facts + 30 dagars öppet köp»`
+**Headline:** `Mastern. Inte en mugg till i skåpet.`
+**Description:** `999 kr · Livstidsgaranti · Trettio dagars öppet köp.`
 **CTA button:** `Handla nu` (Shop Now)
 **Destination:** https://grillkliniken.se/pages/landing-page-blank-jul-3-09-12-32
 
 ## 8. Three-question test (docs/copy-regler.md) — every delivered line
 | Line | Visualise? | Falsifiable? | Only we can say it? |
 |---|---|---|---|
-«ONE ROW PER DELIVERED SWEDISH LINE — every hook, every script line, the giver's line, the headline, the description and each primary-text line. Every cell must be ✅ with a five-to-fifteen-word reason. A line that earns a ❌ anywhere is rewritten until it passes or dropped; it never stays in the brief with a ❌. Rows are plain table rows: | line | ✅ reason | ✅ reason | ✅ reason |»
+| Muggen står i skåpet. | ✅ a printed mug at the back of a dusty cupboard | ✅ a checkable claim about where the mug ends up | ✅ paired with the split, names the cliché gift directly |
+| Den här står vid grillen. | ✅ Mastern on its hook by the grill | ✅ a checkable claim about where Mastern actually hangs | ✅ names Mastern's own place, by the grill, not a shelf |
+| Var sjätte pappa vill helst slippa muggen som present. | ✅ a ratio the split image already shows | ✅ a measured finding, one in six, checkable against the source | ✅ a specific measured ratio no generic gift brand can cite |
+| 999 kr (ord. 1 600 kr) | ✅ a price tag on the photo | ✅ a fixed, checkable price against the product page | ✅ Mastern's own verified price and compare-at |
+| 30 dagars öppet köp · Livstidsgaranti · Fri frakt inom Sverige | ✅ a footer line across the split | ✅ three written, checkable terms | ✅ Mastern's own return, guarantee and shipping wording |
+| Muggen hamnar i skåpet. Mastern hamnar vid grillen. | ✅ the same split shown in the image | ✅ a checkable claim about where each object ends up | ✅ names Mastern directly against the cliché gift |
+| Var sjätte pappa vill helst slippa muggen som present. | ✅ a ratio the split image already shows | ✅ a measured finding, one in six, checkable against the source | ✅ a specific measured ratio no generic gift brand can cite |
+| 999 kr. Trettio dagars öppet köp. | ✅ the price line under the split | ✅ a fixed price and a fixed return window | ✅ Mastern's own price and return terms |
+| Livstidsgaranti och fri frakt inom Sverige. | ✅ the guarantee line under the split | ✅ a written guarantee and a shipping promise | ✅ Mastern's own lifetime guarantee wording |
+| Mastern. Inte en mugg till i skåpet. | ✅ the product name against the mug in the cupboard | ✅ a comparison claim, checkable against the split image | ✅ names Mastern directly against the cliché gift |
+| 999 kr · Livstidsgaranti · Trettio dagars öppet köp. | ✅ price and guarantee under the split | ✅ three fixed, checkable terms | ✅ Mastern's exact price and guarantee wording |
 
 ## 9. Rules
 - **Price exactly 999 kr** (ord. 1 600 kr) — on the end card and in the copy. Never a percentage (not "35 %", not "40 %"), never a countdown, never a second price. Verified live 2026-09-25 on grillkliniken.se/products/elektrisk-grillborste (999 / 1 600). Numbers other than the price are written in words in Swedish (femton tusen, trettio dagar, sextio sekunder).

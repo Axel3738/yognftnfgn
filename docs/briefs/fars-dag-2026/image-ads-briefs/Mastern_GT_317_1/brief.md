@@ -14,7 +14,7 @@ Product big, the date small. Headline: order by the 19th of October and it is on
 
 ## 2. Hypothesis
 An honest delivery deadline is the one urgency line that converts a giver without the discount penalty — the season is the reason.
-**Headline:** «SV headline»
+**Headline:** Beställ senast 19 oktober. Den 8 november står den på bordet.
 
 ## 3. Format
 | | |
@@ -27,10 +27,10 @@ An honest delivery deadline is the one urgency line that converts a giver withou
 ## 4. Exact text (Swedish word for word, do not re-translate)
 | Element | Swedish (use this) | English meaning |
 |---|---|---|
-| On-image headline | «SV H» | «EN H» — INTENT: Order by the 19th of October, and it is on the table on the 8th of November. — the date is the confirmed field, written as "19 oktober" |
-| Date line | «SV D» | «EN D» — INTENT: Fri frakt inom Sverige, fem till nio arbetsdagar — the store's own words |
-| Price line | «SV P» | «EN P» — INTENT: 999 kr |
-| Footer | «SV F» | «EN F» — INTENT: 30 dagars öppet köp · livstidsgaranti |
+| On-image headline | Beställ senast 19 oktober. Den 8 november står den på bordet. | Order by the 19th of October. On the 8th of November it's standing on the table. |
+| Date line | Fri frakt inom Sverige. Fem till nio arbetsdagar. | Free shipping within Sweden. Five to nine business days. |
+| Price line | 999 kr (ord. 1 600 kr) | 999 kr (list price 1 600 kr) |
+| Footer | 30 dagars öppet köp · Livstidsgaranti | 30 days open purchase · Lifetime warranty |
 
 ## 5. Design brief
 - The date is small. If it reads as a sale banner, it is wrong.
@@ -41,17 +41,29 @@ An honest delivery deadline is the one urgency line that converts a giver withou
 
 ## 7. COPY CARD (goes in Ads Manager, not in the creative)
 **Primary text:**
-> «SV primary text — four to six short lines, each its own line; opens with the giver's scene, then what he stops doing, then the lock: 999 kr, 30 dagars öppet köp, livstidsgaranti, fri frakt inom Sverige»
+> Beställ nu och den hinner fram till fars dag.
+> Han slutar skrapa och börjar snurra ner i springorna.
+> 999 kr. Trettio dagars öppet köp.
+> Livstidsgaranti och fri frakt inom Sverige.
 
-**Headline:** `«SV headline, max 40 characters, carries Mastern or the price»`
-**Description:** `«SV description, max 60 characters: two facts + 30 dagars öppet köp»`
+**Headline:** `Mastern. Beställ senast 19 oktober.`
+**Description:** `999 kr · Fem till nio arbetsdagar · Öppet köp i 30 dagar.`
 **CTA button:** `Handla nu` (Shop Now)
 **Destination:** https://grillkliniken.se/products/elektrisk-grillborste
 
 ## 8. Three-question test (docs/copy-regler.md) — every delivered line
 | Line | Visualise? | Falsifiable? | Only we can say it? |
 |---|---|---|---|
-«ONE ROW PER DELIVERED SWEDISH LINE — every hook, every script line, the giver's line, the headline, the description and each primary-text line. Every cell must be ✅ with a five-to-fifteen-word reason. A line that earns a ❌ anywhere is rewritten until it passes or dropped; it never stays in the brief with a ❌. Rows are plain table rows: | line | ✅ reason | ✅ reason | ✅ reason |»
+| Beställ senast 19 oktober. Den 8 november står den på bordet. | ✅ the product on a table, a date printed small | ✅ a checkable deadline, tied to the store's own delivery window | ✅ "fem till nio arbetsdagar" ties the date to Mastern's own promise |
+| Fri frakt inom Sverige. Fem till nio arbetsdagar. | ✅ a shipping line under the headline | ✅ a checkable, verified promise from the product page | ✅ "fem till nio arbetsdagar" is the store's exact wording |
+| 999 kr (ord. 1 600 kr) | ✅ a price tag on the photo | ✅ a fixed, checkable price against the product page | ✅ Mastern's own verified price and compare-at |
+| 30 dagars öppet köp · Livstidsgaranti | ✅ a footer line under the product | ✅ two written, checkable terms | ✅ Mastern's own return and guarantee wording |
+| Beställ nu och den hinner fram till fars dag. | ✅ the box on a table with a calendar page | ✅ a checkable delivery-window claim, tied to a date | ✅ ties the order to the store's own verified shipping window |
+| Han slutar skrapa och börjar snurra ner i springorna. | ✅ a hand pressing a button, the head in a gap | ✅ a mechanism claim, checkable against the product | ✅ names springorna, the exact place the tool works |
+| 999 kr. Trettio dagars öppet köp. | ✅ the price line under the product | ✅ a fixed price and a fixed return window | ✅ Mastern's own price and return terms |
+| Livstidsgaranti och fri frakt inom Sverige. | ✅ the guarantee line under the product | ✅ a written guarantee and a shipping promise | ✅ Mastern's own lifetime guarantee wording |
+| Mastern. Beställ senast 19 oktober. | ✅ the product name with a printed date | ✅ a fixed order deadline, checkable against the calendar | ✅ names Mastern and its own verified deadline |
+| 999 kr · Fem till nio arbetsdagar · Öppet köp i 30 dagar. | ✅ a three-line footer under the product | ✅ three fixed, checkable terms from the store | ✅ Mastern's exact price and delivery-window wording |
 
 ## 9. Rules
 - **Price exactly 999 kr** (ord. 1 600 kr) — on the end card and in the copy. Never a percentage (not "35 %", not "40 %"), never a countdown, never a second price. Verified live 2026-09-25 on grillkliniken.se/products/elektrisk-grillborste (999 / 1 600). Numbers other than the price are written in words in Swedish (femton tusen, trettio dagar, sextio sekunder).
