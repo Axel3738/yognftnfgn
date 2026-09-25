@@ -24,41 +24,61 @@ frakt. Kostar tilläggslådan 60 kr i stället för 80 blir 279-varianten neutra
 på ROAS och ger +15 kr per order. Agentens pris per extra låda i samma paket är
 alltså det tal som avgör hur djup rabatten får vara.
 
-## Så testas det
+## Evolve-botens svar (2026-09-25), kondenserat
 
-**Mekanik.** Shopify post-purchase-sida (efter betalning, före tack-sidan): ett
-klick, dras på samma kort, läggs på samma order och går i samma paket. Kräver en
-app (AfterSell, ReConvert eller Zipify OCU — alla har inbyggd A/B-delning och
-gratis provperiod) och Shopify Payments, som 229 av 239 ordrar betalar med.
-Utan app återstår en kod i orderbekräftelsen, och då blir det ett nytt paket
-med ny tull — det testet är inte värt att köra.
+Samma produkt slår kompletterande produkter post-purchase. AfterSell på nuvarande
+plan, Shopify Payments krävs (229 av 239 ordrar har det), show-up 50–60 %.
+Rabattdjup: börja på 20 %, testa 15 mot 30; framingen väger lika tungt som
+procenten, och en sann, tidsbunden anledning höjer LTV i stället för att urholka.
+Upsell 1 ska vara 50–70 % av ordervärdet (200–280 kr vid 399), upsell 2 30–50 %
+(120–200 kr). Kill/scale räknas om på blandad marginal, CPA eller ROAS kvittar
+bara det kommer ur marginalen. Ingen i källorna vet om tilläggets intäkt går in i
+Metas köpvärde. Minst 1 500 exponeringar per test, en variabel i taget, tratten
+testas varje vecka. Om återaktivering av julköpare fanns inget.
 
-**Hypotes.** Minst 10 % av Köp 1 Få 1-köparna lägger till fler lådor när
-erbjudandet kommer direkt efter köpet. Grund: 98 kunder gjorde det på egen hand
-inom sju dagar förra året, till fullpris.
+## Testet, slutgiltig design
 
-**Armar.** A: +2 lådor för 279 kr (Axels idé). B: +2 lådor för 349 kr. Samma
-sida, samma bild, bara priset skiljer. 349-armen behöver bara 62 % av 279-armens
-andel för att ge lika många kronor — det är den frågan testet svarar på. Ett
-1-låds-alternativ testas i omgång två, inte nu.
+**Erbjudandet:** två lådor till, i samma paket, ett klick på samma kort. Det är
+"ett Köp 1 Få 1 till", samma struktur som duplicerar rakt av till andra marknader.
+**A = 319 kr** (20 % på 399, botens startpunkt). **B = 279 kr** (30 %, Axels
+idé). Samma text, bara priset. Inte +1 låda (samma produkt i samma paketstorlek
+är renare, och 199 kr ligger i botten av upsell 1-spannet). Inte 349 kr (87 %
+av ordervärdet, över spannet).
 
-**Mått.** Andel som tar tillägget per arm, TB-tillskott per exponerad order i
-kronor, avbokningar/återbetalningar på ordrar med tillägg. Baskonverteringen
-kan inte påverkas eftersom sidan visas efter betalningen.
+| Arm | TB per tillägg (låda 80 kr) | Ratio | TB per tillägg (låda 60 kr) | Ratio |
+|---|---|---|---|---|
+| A 319 kr | 150 kr | 2,13 | 190 kr | 1,68 |
+| B 279 kr | 111 kr | 2,51 | 151 kr | 1,84 |
 
-**Storlek.** 400–500 exponerade ordrar per arm för att skilja 10 % från 5 %
-(2–3 veckor på ~60 ordrar/dag). Ingen dom under 25 tillköp per arm — samma
-regel som `/abtest`.
+B måste konvertera **35 % bättre** än A för att ge lika många kronor (26 % om
+tilläggslådan kostar 60 kr). Tar 10 % av de exponerade tillägget ger A +15 kr
+och B +11 kr per exponerad order. Med show-up 55 % är det 5,5 % av alla ordrar,
+alltså +4 % intäkt, inte +7 %. Sju procent kräver 10 % av alla ordrar.
 
-**Beslut.** Den arm som ger flest kronor TB per exponerad order vinner, inte den
-med högst andel. Under 5 % andel i båda armarna: erbjudandet är fel, inte priset
-— testa +1 låda eller en annan sort (pizza till sushiköparen).
+**Mekanik.** AfterSell, post-purchase, appens egen 50/50-delning. ~30
+exponeringar per dag på dagens 55 ordrar. 1 500 exponeringar (botens golv) är
+~7 veckor i dagens takt; 400 per arm räcker för att skilja 10 % från 5 % och
+tar ~4 veckor. Snabbare när julen drar igång. Ingen dom under 25 tillköp per arm.
 
-**Ärlighet.** Priset på sidan är priset som dras. Ingen nedräkning som startar
-om. Erbjudandet visas en gång.
+**Mått.** Andel som tar tillägget per arm. TB i kronor per exponerad order (det
+som avgör). Avbokningar och återbetalningar på ordrar med tillägg, från dag 1.
+Metas köpvärde mot Shopify per dag under dag 1–3: skiljer sig talen med
+tilläggens intäkt går de inte in i pixeln, och då styrs kontot på CPA.
 
-**Kopplat till break-even.** Ta agentens pris per extra låda i samma paket
-innan appen slås på — det avgör om 279 kr ens är tillåtet.
+**Kontoregler under testet.** Max-CPA = TB per order inklusive tillägg
+= 225 kr + andel × TB per tillägg. Vid 10 % tillköp: **240 kr (A)** eller
+**236 kr (B)**. Kill under max-CPA, rangordning på (max-CPA − CPA) × köp som
+vanligt. Break-even-ROAS blir missvisande så länge pixeln inte ser tillägget.
+
+**Ärlighet.** Priset på sidan är priset som dras. Ingen nedräkning. Visas en
+gång. Anledningen är sann: bara i den här ordern, innan paketet packas.
+
+**Innan appen slås på.** Agentens pris för extra lådor i samma paket (action
+item 1 i ekonomidokumentet). Vid 80 kr per låda är B:s ratio 2,51 mot basens
+1,78, alltså ett rent kronbeslut; vid 60 kr är A nästan neutral på ROAS.
+
+**Omgång två, efter vinnaren.** Downsell "+1 låda 179 kr" (upsell 2-spannet
+120–200 kr) till dem som avböjer. Sedan 15 % mot vinnaren, sedan framing.
 
 ## Tio procent som kommer tillbaka
 
