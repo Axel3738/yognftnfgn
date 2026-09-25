@@ -184,5 +184,9 @@
   "en: the shipment is too large for the mailbox and will therefore be delivered to a pickup point. this may add 1–2 business days to the delivery time. the recipient will be notified when the shipment is ready for collection": "Paketet är för stort för brevlådan och skickas därför till ett ombud. Det kan ta 1-2 arbetsdagar extra, och du får besked när det går att hämta",
   "the parcel has been registered with us": "Paketet är registrerat hos fraktbolaget",
   "communication failed": "Aviseringen till dig gick inte fram",
-  "fallback shipment solution was triggered": "Fraktbolaget har bytt till en annan leveranslösning"
+  "fallback shipment solution was triggered": "Fraktbolaget har bytt till en annan leveranslösning",
+  "tracking number allocated & order ready": "Fraktetiketten är skapad",
+  "shipping order created": "Ordern är registrerad hos fraktbolaget",
+  "shipping label created, usps awaiting item": "Avsändaren har bokat leveransen och fraktbolaget väntar på paketet",
+  "the shipment has arrived at terminal and will be forwarded": "Paketet har kommit till terminalen och är klart att skickas vidare"
 }

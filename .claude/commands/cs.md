@@ -33,6 +33,12 @@ källan. Bygg aldrig en analys på gissningar när materialet står längre upp.
   --kampanj <kampanj-id> --ord "<produktord,produktord>"` (kommentarerna via
   `tools/annonskommentarer.mjs`, mejlen via `kundtjanst/mail.mjs`, formaten ur
   kontots annonsnamn). Läs täckningsraden: **tomma rutor är nästa brief.**
+- **`kommentarer/leads.md` — leads ur den dagliga kommentarsgranskningen**
+  (`/kommentarer`, Axels beställning 2026-09-24): läs raderna för produktens
+  prefix med status `väntar`. De är kundens egna ord med belägg (kommentars-id
+  i `kommentarer/logg/`) och räknas som backlog-items i steg 3 (`kalla=voc`).
+  Alla annonsers kommentarer för produkten, inte bara top spenderns:
+  `node kommentarer/kor.mjs --lista <prefix> [--dagar 30]`.
 - Kör `node pipeline/quota.mjs` — kvoten bestämmer batchstorleken.
 
 ### 1b. Saknas underlaget helt? (varken i chatten eller i `products/<id>/`)
@@ -88,7 +94,7 @@ har dödat vinnare två gånger. Kortversion av kraven:
 
 ### 3. Bygg nästa batch
 - Antal = minst kvoten per 3-dagarscykel för produkten.
-- Mix: iterationer på vinnarna (isolerad variabel per iteration) + nya koncept från Losing DNA-lärdomar + **alla väntande items i backlog.md** (markera dem `[använd i batch #N]`) + det jag skickade med i argumenten ovan.
+- Mix: iterationer på vinnarna (isolerad variabel per iteration) + nya koncept från Losing DNA-lärdomar + **alla väntande items i backlog.md** (markera dem `[använd i batch #N]`) + **väntande leads för produktens prefix i `kommentarer/leads.md`** (bocka av: `- [x] … status: använd i batch #N`) + det jag skickade med i argumenten ovan.
 - **Invändningsmatrisen går före (Axels beslut 2026-09-22).** En tom ruta i
   `products/<id>/invandningar.md` — en invändning som ingen annons svarar på i
   det formatet — tar en briefplats FÖRE ett nytt koncept ur en lärdom och före

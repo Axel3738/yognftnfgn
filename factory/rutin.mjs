@@ -504,6 +504,7 @@ function lista() {
   const kanda = [
     ['04:15', '/translate-no', 'Daglig NO-videobatch'],
     ['05:30', '/no-recensioner', 'Norska recensioner'],
+    ['05:40', '/kommentarer', 'Kommentarsgranskningen (allvarligt, köpfrågor, invändningar, leads → #ad-comments)'],
     ['06:00', '/commission', 'Commission (skriptet avgör kördag)'],
     ['13:20', '/notionkorning', 'Leveransrundan'],
     ['15:00', '/oversatt NO', 'Översättning till Norge'],

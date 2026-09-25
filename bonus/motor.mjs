@@ -318,6 +318,17 @@ function commissionrader(uppdrag, personer, matningar) {
   return { rader, otilldelat };
 }
 
+/**
+ * Vilken halva av månaden en rad hör till: 'forsta' (1–15), 'andra' (16–sista)
+ * eller 'manad' (commission och rader utan datum — de går inte att dela ärligt).
+ */
+export function halvaFor(rad, uppdrag = {}) {
+  if (rad.redanRaknad || uppdrag.kalla === 'commission') return 'manad';
+  const m = /^\d{4}-\d{2}-(\d{2})/.exec(String(rad.bevis?.datum ?? ''));
+  if (!m) return 'manad';
+  return Number(m[1]) <= 15 ? 'forsta' : 'andra';
+}
+
 // ------------------------------------------------------------ huvudräkningen
 
 /**
@@ -330,7 +341,7 @@ function commissionrader(uppdrag, personer, matningar) {
 export function raknaUt({ regler, personer = [], matningar = {}, insatser = [], period }) {
   const perPerson = new Map(personer.map((p) => [p.id, {
     id: p.id, namn: p.namn, roll: p.roll, extraRoller: p.extraRoller ?? [], valuta: regler.valuta ?? 'USD',
-    summa: 0, rader: [], program: null, programs: [],
+    summa: 0, rader: [], program: null, programs: [], halvor: { forsta: 0, andra: 0, manad: 0 },
   }]));
   const otilldelat = [];
   let recensionsTraffar = [];
@@ -380,6 +391,14 @@ export function raknaUt({ regler, personer = [], matningar = {}, insatser = [], 
         const post = fanns ?? { uppdrag: u.id, namn: u.namn, enhet: u.enhet, antal: 0, summa: 0, bevis: [] };
         post.antal += 1;
         post.summa += Number(r.belopp) || 0;
+        // Halvmånaderna (Josh 2026-09-24: "our pay cycle is bi-weekly — 1st–15th
+        // and 16th–31st"). En rad hamnar i den halva dess bevisdatum ligger i.
+        // Commission är en andel av HELA månadens spend och har inget eget
+        // datum per annons — den delas aldrig, den står som 'manad'.
+        const halva = halvaFor(r, u);
+        post.halvor = post.halvor ?? { forsta: 0, andra: 0, manad: 0 };
+        post.halvor[halva] += Number(r.belopp) || 0;
+        person.halvor[halva] += Number(r.belopp) || 0;
         if (post.bevis.length < 25) post.bevis.push(r.bevis);
         if (!fanns) person.rader.push(post);
         person.summa += Number(r.belopp) || 0;
@@ -404,12 +423,14 @@ export function raknaUt({ regler, personer = [], matningar = {}, insatser = [], 
           bevis: team.filter((p) => p.summa > 0).map((p) => ({ vad: p.namn, text: `tjänade ${p.summa.toFixed(2)}`, datum: '', lank: '' })),
         });
         chef.summa += summa;
+        chef.halvor.manad += summa;
       }
     }
   }
 
+  const avrunda = (h) => Object.fromEntries(Object.entries(h).map(([k, v]) => [k, Math.round(v * 100) / 100]));
   const ut = [...perPerson.values()]
-    .map((p) => ({ ...p, summa: Math.round(p.summa * 100) / 100 }))
+    .map((p) => ({ ...p, summa: Math.round(p.summa * 100) / 100, halvor: avrunda(p.halvor) }))
     .sort((a, b) => b.summa - a.summa);
 
   return {

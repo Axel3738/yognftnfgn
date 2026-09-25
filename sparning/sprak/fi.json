@@ -192,6 +192,7 @@
     "Aviseringen till dig gick inte fram": "Ilmoitus ei mennyt perille sinulle",
     "Fraktbolaget har bytt till en annan leveranslösning": "Kuljetusyhtiö on vaihtanut toiseen toimitustapaan",
     "Paketet är för stort för brevlådan och skickas därför till ett ombud. Det kan ta 1-2 arbetsdagar extra, och du får besked när det går att hämta": "Paketti on liian suuri postilaatikkoon ja lähetetään siksi noutopisteeseen. Se voi viedä 1-2 arkipäivää ylimääräistä, ja saat ilmoituksen kun sen voi noutaa",
-    "Paketet är registrerat hos fraktbolaget": "Paketti on rekisteröity kuljetusyhtiölle"
+    "Paketet är registrerat hos fraktbolaget": "Paketti on rekisteröity kuljetusyhtiölle",
+    "Paketet har kommit till terminalen och är klart att skickas vidare": "Paketti on saapunut terminaaliin ja on valmis lähetettäväksi eteenpäin"
   }
 }

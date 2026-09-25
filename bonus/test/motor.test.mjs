@@ -291,3 +291,19 @@ test('reglerna är hela: varje uppdrag har id, namn, belopp och förklaring', ()
     }
   }
 });
+
+test('halvmånaderna: 1–15 och 16–slut, commission delas aldrig (Josh 2026-09-24)', () => {
+  const tvaRoller = personer.map((p) => (p.id === 'josh' ? { ...p, extraRoller: ['produkttest'] } : p));
+  const matningar = {
+    produkttest: [
+      { produkt: 'A', ansvarig: 'Josh Naelga', status: 'Ads review', datum: '2026-09-15', steg: ['produkt_godkand'] },
+      { produkt: 'B', ansvarig: 'Josh Naelga', status: 'Ads review', datum: '2026-09-16', steg: ['produkt_godkand'] },
+      { produkt: 'C', ansvarig: 'Josh Naelga', status: 'Ads review', datum: '2026-09-29', steg: ['produkt_godkand'] },
+    ],
+    commission: [{ personId: 'josh', namn: 'Josh Naelga', usd: 50.94, annonser: 263, datum: '2026-09-21' }],
+  };
+  const u = raknaUt({ regler, personer: tvaRoller, matningar, period });
+  const josh = u.personer.find((p) => p.id === 'josh');
+  assert.deepEqual(josh.halvor, { forsta: 15, andra: 30, manad: 50.94 }, 'den 15:e hör till första halvan, den 16:e till andra');
+  assert.equal(josh.halvor.forsta + josh.halvor.andra + josh.halvor.manad, josh.summa, 'halvorna går alltid jämnt ut med summan');
+});

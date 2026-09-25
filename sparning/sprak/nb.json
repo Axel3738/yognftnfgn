@@ -192,6 +192,7 @@
     "Aviseringen till dig gick inte fram": "Varselet til deg kom ikke fram",
     "Fraktbolaget har bytt till en annan leveranslösning": "Transportøren har byttet til en annen leveringsløsning",
     "Paketet är för stort för brevlådan och skickas därför till ett ombud. Det kan ta 1-2 arbetsdagar extra, och du får besked när det går att hämta": "Pakken er for stor for postkassen og sendes derfor til et hentested. Det kan ta 1-2 virkedager ekstra, og du får beskjed når den kan hentes",
-    "Paketet är registrerat hos fraktbolaget": "Pakken er registrert hos transportøren"
+    "Paketet är registrerat hos fraktbolaget": "Pakken er registrert hos transportøren",
+    "Paketet har kommit till terminalen och är klart att skickas vidare": "Pakken har kommet til terminalen og er klar til å sendes videre"
   }
 }

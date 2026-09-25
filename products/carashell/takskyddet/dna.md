@@ -985,3 +985,18 @@ huvudkampanjen står kvar på 9 600 en natt till på kadensspärren och sänks 9
 6 720 kr nästa natt om den inte återhämtar sig. Ronden går alltså åt rätt håll av
 sig själv — det här är regler som fungerar, inte en produkt som dör: 108 köp på
 7 dygn, vinstbidrag 36 911 kr.
+
+**Uppdatering 2026-09-25 — mönster 14 bekräftat åt BÅDA hållen.** Ett dygn till
+av data gjorde mönstret till en bevisad mekanism, inte en observation:
+
+- **Uppåt:** 2026-09-24 spenderade huvudkampanjen 9 011 kr och gav **ROAS 0,93**
+  (under break-even 1,63) på 6 köp. Tre dygn i rad över 9 000 kr gav 13, 14 och
+  6 köp — mot 10–13 köp på dygnen som kostade 3 000–5 000 kr. Vinst 3d föll till
+  **−3,7 %** och ronden sänkte 9 600 → 6 750 kr.
+- **Nedåt:** LISTICLE sänktes 2 850 → 2 000 kr 2026-09-24 och var **tillbaka i
+  hållbandet inom ett dygn** (vinst 3d 11,1 % → 23,8 %, ROAS 1,99 → 2,66).
+
+Taket är alltså inte en engångsförsämring utan en nivå: över den köper pengarna
+sämre trafik, under den kommer vinsten tillbaka. Det gör sänkningen till rätt
+verktyg och gör om-höjning till något som ska mätas mot FAKTISK spend, aldrig mot
+budgeten (se instruktionen i mönstret ovan).
