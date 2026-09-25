@@ -310,16 +310,22 @@ Alla mejl laddas upp som utkast. Inga `grundare`-, `rentext`- eller `erbjudande`
 ### F01 Välkomst: `floden/f01-valkomst.json`, `FLOW_lista_valkomst_v2`
 - Trigger `{ typ: lista, lista: "Email List" }` (Shopify-synkens lista i kontot, 2 891
   profiler). Filter `samtycke`, `ej_kopt_sedan_start`. Återinträde aldrig (alltime).
-- **E1 direkt, v2 = klubbvälkomsten** (`f01-valkomst-e1`,
-  `FLOW_prenumerant_E1_M_valkommen-till-klubben_v2`, 2026-09-25 eftermiddag): hero
-  "Välkommen till Matstrumpor-klubben" (du är med nu, vad butiken säljer, vad som kommer i
-  mejlen; knapp "Se alla lådorna" → kollektion `alla-produkter`) → punkter "Det här får du
-  som medlem" (fyra sanna saker: sista beställningsdag inför fars dag och jul, kundernas
-  riktiga recensioner, vad som ligger i lådan, Black Week-mejlet) → produktrad "De tre
-  mest köpta" (sushi 460 enheter, donut 22, pizza 13 senaste 60 d, mätt 2026-09-25) →
-  fakta. Ingen rabattkod (ingen lovas på sajten). Copy av Sonnet; huvudsessionen strök
-  "Enkelt som så: du står på vår mejllista, inget mer" — sant men det undergräver
-  medlemskänslan. v1 (`…_ser-ut-som-sushi-ar-strumpor_v1`) var en ren produktförklaring.
+- **E1 direkt, v3 = den exklusiva medlemskänslan** (`f01-valkomst-e1`,
+  `FLOW_prenumerant_E1_M_du-ar-invald-i-klubben_v3`, 2026-09-25 kväll, Axel: "det ska
+  kännas som ett exklusivt medlemskap"): hero "Du är invald i klubben" (din plats är klar,
+  du gick med så den är din; vad butiken säljer; mejlen går bara till medlemmar; knapp "Se
+  alla lådorna" → kollektion `alla-produkter`) → **medlemskort** (blocket `medlemskort`:
+  mörkt kort, "MEDLEMSKORT", förnamnet eller "Medlem", "Medlem i Matstrumpor-klubben",
+  fotnot "Ingen kassapersonal frågar efter det här kortet.") → punkter "Det här får bara
+  medlemmar" (sista beställningsdagen inför fars dag och jul bara till medlemmar, Black
+  Week-mejlet bara för medlemmar, kundernas riktiga ord utan att leta, lådans innehåll visat
+  innan köp) → produktrad "Sushi, donut och pizza" → fakta. Ingen rabattkod. Copy av Sonnet;
+  huvudsessionen strök "bara här"/"bara i mejl" på två punkter (recensionerna och lådans
+  innehåll syns även på produktsidan). v2 (`…_valkommen-till-klubben_v2`) var vänlig men
+  slätstruken; v1 (`…_ser-ut-som-sushi-ar-strumpor_v1`) en ren produktförklaring.
+  **Alla mejl** bär sedan v3 eyebrow-raden "Klubbpost. Inte för alla." under klubbnamnet och
+  sidfoten "Du anmälde dig själv till Matstrumpor-klubben, och mejlen går bara till
+  medlemmar." (`brands/matstrumpor.json` → `klubb.eyebrow`, `sidfot_varfor`).
 - **E2 +2 dagar** (`f01-valkomst-e2`, `FLOW_prenumerant_E2_SP_det-har-skrev-kunderna_v1`):
   citat (sushi, 2) → produkt (sushi) → produktrad (pizza, hamburgare, donut) → fakta.
 - **E3 +3 dagar** (`f01-valkomst-e3`, `FLOW_prenumerant_E3_M_sa-funkar-det-nar-du-handlar_v1`):

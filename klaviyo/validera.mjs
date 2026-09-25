@@ -51,6 +51,10 @@ export function kundtexter(mejl) {
       ['rubrik', b.rubrik],
       ['text', b.text],
       ['knapp', typeof b.knapp === 'string' ? b.knapp : b.knapp?.text],
+      // Medlemskortet (klubben): etiketten, raden under namnet och fotnoten är kundtext.
+      ['etikett', b.etikett],
+      ['rad_under_namnet', b.rad_under_namnet],
+      ['fotnot', b.fotnot],
     ]) {
       if (varde) ut.push({ var: `${var_} ${nyckel}`, text: String(varde) });
     }

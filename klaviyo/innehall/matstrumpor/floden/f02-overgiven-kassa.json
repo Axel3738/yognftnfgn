@@ -1,6 +1,6 @@
 {
   "id": "f02-overgiven-kassa",
-  "namn": "FLOW_checkout_overgiven_v2",
+  "namn": "FLOW_checkout_overgiven_v3",
   "memo": "Shopifys egen notis om övergiven kassa stängs av när det här flödet går live (Axels klick), annars får kunden två mejl. Tre steg: en mjuk påminnelse, sedan svar på de tre vanligaste stoppen för en ovanlig produkt (storlek, ånger, support), sedan en sista påminnelse utan påtryckning.",
   "trigger": {
     "typ": "metrik",

@@ -1,6 +1,6 @@
 {
   "id": "f04-efter-kop",
-  "namn": "FLOW_order_efterkop_v2",
+  "namn": "FLOW_order_efterkop_v3",
   "memo": "Första versionen för Matstrumpor (BRIEFER.md → F04). Matstrumpor har inget gratisprodukt-erbjudande som Bäverbutikens TACKIGEN, så flödet har bara ett jobb: hjälpa kunden hitta sitt eget paket innan hen hinner mejla och fråga. Trigger är Fulfilled Order, inte Placed Order, eftersom spårningsnumret bara finns i den händelsen (lank: sparning: läser fulfillmentets spårningsnummer). E1 går 3 dagar efter att paketet skickats, E2 dag 16, precis efter att p90-leveransen (15 dygn, klaviyo/brands/matstrumpor.json#leverans_p90_dygn) rimligen passerat, och byter då fokus till de andra sorterna som nästa present.",
   "trigger": {
     "typ": "metrik",

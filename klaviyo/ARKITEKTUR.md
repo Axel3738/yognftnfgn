@@ -120,7 +120,7 @@ Saknas de gäller Bäverbutikens beteende, så Bäverbutiken är oförändrad:
 | `break_even_roas` | vinstbidraget i `rapport.mjs` = konverteringsvärde ÷ talet | 1,498 (utan moms) |
 | `metrik_val` | vilket id som gäller när ett metriknamn finns två gånger | `Viewed Product: R9yPAm` |
 | `erbjudande_fran: null` | brandet har inget erbjudande-block | null |
-| `klubb` | `{ namn, sajt: { rubrik, knapp, bekraftelse } }` — listan som ett medlemskap (Axels beslut 2026-09-25: "det måste vara som ett medlemskap att vara med i Matstrumpors klubb"). `namn` skrivs som en rad under loggan i varje mejl; `sajt` är texterna i butikens anmälningsruta, som `klubb-sajt.mjs` skriver in i temat | `Matstrumpor-klubben` |
+| `klubb` | `{ namn, eyebrow, sajt: { rubrik, knapp, bekraftelse } }` — listan som ett medlemskap (Axels beslut 2026-09-25: "det måste vara som ett medlemskap att vara med i Matstrumpors klubb", och samma kväll: "det ska kännas som ett exklusivt medlemskap"). `namn` skrivs som en rad under loggan i varje mejl, `eyebrow` som en liten versalrad under den (t.ex. att mejlet bara går till medlemmar); `sajt` är texterna i butikens anmälningsruta, som `klubb-sajt.mjs` skriver in i temat. Blocket `medlemskort` (nedan) hör ihop med klubben. ⛔ Inget popup- eller anmälningsformulär i Klaviyo (Axels beslut samma kväll: sänker konverteringen, testat) | `Matstrumpor-klubben` |
 | `sidfot_varfor` | sidfotens "varför får du det här"-mening (MFL: att mottagaren själv sagt ja ska framgå); standard "Du får det här för att du har sagt ja till nyhetsbrev från <namn>." | klubbens mening |
 
 Stilen (`stil_fran`) får bära `sidhuvud_farg`, `rubrik_versaler` och `rubrik_fet`,
@@ -172,6 +172,7 @@ produktens **handle**; byggaren hämtar resten ur Shopify.
     { "typ": "produktrad", "rubrik": "…", "handles": ["<h1>", "<h2>", "<h3>"] },
     { "typ": "citat", "handle": "<handle>", "antal": 2 },
     { "typ": "knapp", "text": "…", "lank": "produkt:<handle> | kollektion:<handle> | sida:<path> | url:https://…" },
+    { "typ": "medlemskort", "etikett": "…", "rad_under_namnet": "…", "fotnot": "…" },
     { "typ": "grundare", "text": "…" },
     { "typ": "fakta" },
     { "typ": "erbjudande", "text": "…" },
@@ -197,6 +198,11 @@ Regler för blocken:
 - `text` får innehålla `{{fornamn}}` (byggaren gör om det till
   `{{ first_name|default:'' }}`) och radbrytningar `\n\n` (nytt stycke). Inget annat
   mallspråk i copyn; mallspråket är byggarens sak.
+- `medlemskort` (klubben, 2026-09-25 kväll): ett mörkt kort med orange ram — etiketten i
+  versaler, mottagarens förnamn stort (Klaviyo: `first_name`, reserv "Medlem"; exempel:
+  Anna), `rad_under_namnet` (standard "Medlem i <klubb.namn>") och `fotnot`. Bara text
+  och färg, inga bilder, så det ser likadant ut i alla klienter. Texterna går genom samma
+  kundtextkontroll som rubriker och punkter (`validera.mjs kundtexter`).
 - `citat` hämtar RIKTIGA recensioner ur Judge.me för produkten (4–5 stjärnor, ordagrant,
   förnamn + initial). Finns inga: blocket försvinner och byggaren säger det. Copyn får
   aldrig hitta på en recension.

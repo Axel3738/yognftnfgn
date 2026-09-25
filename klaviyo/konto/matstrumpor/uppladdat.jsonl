@@ -164,3 +164,89 @@
 {"tid":"2026-09-25T14:36:47.628Z","brand":"matstrumpor","typ":"mall","namn":"TPL_f01-valkomst-e1_v1","id":"WRqJUD","atgard":"raderad","orsak":"ersatt av TPL_f01-valkomst-e1_v2"}
 {"tid":"2026-09-25T14:36:49.793Z","brand":"matstrumpor","typ":"mall","namn":"TPL_f06-sunset-e1_v1","id":"UWkAUf","atgard":"raderad","orsak":"ersatt av TPL_f06-sunset-e1_v2"}
 {"tid":"2026-09-25T14:36:50.126Z","brand":"matstrumpor","typ":"mall","namn":"TPL_f06-sunset-e2_v1","id":"Ysz7zP","atgard":"raderad","orsak":"ersatt av TPL_f06-sunset-e2_v2"}
+{"tid":"2026-09-25T16:12:32.247Z","brand":"matstrumpor","typ":"mall","namn":"TPL_k01-de-tror-att-det-ar-sushi_v1","id":"UyC5hs","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:12:35.593Z","brand":"matstrumpor","typ":"mall","namn":"TPL_k02-ingen-jublar-at-tvattmedel_v1","id":"QT93V6","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:12:36.902Z","brand":"matstrumpor","typ":"mall","namn":"TPL_k03-kundernas-ord_v1","id":"XrPxkp","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:12:38.234Z","brand":"matstrumpor","typ":"mall","namn":"TPL_k04-fars-dag-bestall-senast-24-okt_v1","id":"RXUCty","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:12:39.807Z","brand":"matstrumpor","typ":"mall","namn":"TPL_k05-julstrumpan_v1","id":"RkTzQV","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:12:41.115Z","brand":"matstrumpor","typ":"mall","namn":"TPL_k06-slut-i-november-forra-aret_v1","id":"SrFapp","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:12:42.611Z","brand":"matstrumpor","typ":"mall","namn":"TPL_k07-tva-lador-tva-personer_v1","id":"XbVLid","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:12:43.920Z","brand":"matstrumpor","typ":"mall","namn":"TPL_k08-julklappsguide_v1","id":"SY4WEC","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:12:45.246Z","brand":"matstrumpor","typ":"mall","namn":"TPL_k09-black-week-start_v1","id":"RJ2Rrn","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:12:46.598Z","brand":"matstrumpor","typ":"mall","namn":"TPL_k10-black-friday_v1","id":"YgHkQF","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:12:47.884Z","brand":"matstrumpor","typ":"mall","namn":"TPL_k11-bestall-senast-8-dec_v1","id":"TrPuAt","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:12:49.170Z","brand":"matstrumpor","typ":"mall","namn":"TPL_k12-sista-dagen-idag_v1","id":"TYdgRG","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:12:50.522Z","brand":"matstrumpor","typ":"mall","namn":"TPL_k13-presentkortet_v1","id":"WW3Zg3","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:12:51.812Z","brand":"matstrumpor","typ":"mall","namn":"TPL_k14-vem-har-fodelsedag-harnast_v1","id":"S7a8ZP","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:12:53.356Z","brand":"matstrumpor","typ":"mall","namn":"TPL_f01-valkomst-e1_v3","id":"UQmNus","atgard":"skapad"}
+{"tid":"2026-09-25T16:12:54.697Z","brand":"matstrumpor","typ":"mall","namn":"TPL_f01-valkomst-e2_v1","id":"S2wSEr","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:12:56.036Z","brand":"matstrumpor","typ":"mall","namn":"TPL_f01-valkomst-e3_v1","id":"XWcjt7","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:12:57.326Z","brand":"matstrumpor","typ":"mall","namn":"TPL_f02-overgiven-kassa-e1_v1","id":"RiSzGq","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:12:58.660Z","brand":"matstrumpor","typ":"mall","namn":"TPL_f02-overgiven-kassa-e2_v1","id":"RLD7Cf","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:12:59.940Z","brand":"matstrumpor","typ":"mall","namn":"TPL_f02-overgiven-kassa-e3_v1","id":"VgRChP","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:13:01.215Z","brand":"matstrumpor","typ":"mall","namn":"TPL_f03-webbhistorik-e1_v1","id":"U2Px4z","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:13:02.523Z","brand":"matstrumpor","typ":"mall","namn":"TPL_f03-webbhistorik-e2_v1","id":"QYmyiQ","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:13:03.792Z","brand":"matstrumpor","typ":"mall","namn":"TPL_f04-efter-kop-e1_v1","id":"Tjbe6y","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:13:06.458Z","brand":"matstrumpor","typ":"mall","namn":"TPL_f04-efter-kop-e2_v1","id":"TRz2mM","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:13:09.166Z","brand":"matstrumpor","typ":"mall","namn":"TPL_f05-vinback-e1_v1","id":"V2XRfD","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:13:10.494Z","brand":"matstrumpor","typ":"mall","namn":"TPL_f05-vinback-e2_v1","id":"WcnG9v","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:13:11.755Z","brand":"matstrumpor","typ":"mall","namn":"TPL_f06-sunset-e1_v2","id":"Xn9ZKM","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:13:13.063Z","brand":"matstrumpor","typ":"mall","namn":"TPL_f06-sunset-e2_v2","id":"W87Uwx","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:13:14.345Z","brand":"matstrumpor","typ":"mall","namn":"TPL_f07-aterkop-sushi-e1_v1","id":"Xcx2kz","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:13:16.548Z","brand":"matstrumpor","typ":"kampanj","namn":"MAIL_20260929_Sushi_PD_1_uppvarmning_product_de-tror-att-det-ar-sushi_v1","id":"01M3C3DJH14KHBCB358C5ZVGMV","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:13:17.862Z","brand":"matstrumpor","typ":"kampanjmeddelande","namn":"MAIL_20260929_Sushi_PD_1_uppvarmning_product_de-tror-att-det-ar-sushi_v1","id":"01M3C3DJHDKG6987NDJTHT3T77","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:13:20.065Z","brand":"matstrumpor","typ":"kampanjmall","namn":"MAIL_20260929_Sushi_PD_1_uppvarmning_product_de-tror-att-det-ar-sushi_v1","id":"01M3C3DJHDKG6987NDJTHT3T77","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:13:22.196Z","brand":"matstrumpor","typ":"kampanj","namn":"MAIL_20261006_Sushi_PD_2_uppvarmning_problem_ingen-jublar-at-tvattmedel_v1","id":"01M3C3DP5DAX2QSEGP6QYZMTMG","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:13:23.514Z","brand":"matstrumpor","typ":"kampanjmeddelande","namn":"MAIL_20261006_Sushi_PD_2_uppvarmning_problem_ingen-jublar-at-tvattmedel_v1","id":"01M3C3DP5QG3X49TQEKBPQ84GQ","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:13:25.351Z","brand":"matstrumpor","typ":"kampanjmall","namn":"MAIL_20261006_Sushi_PD_2_uppvarmning_problem_ingen-jublar-at-tvattmedel_v1","id":"01M3C3DP5QG3X49TQEKBPQ84GQ","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:13:27.327Z","brand":"matstrumpor","typ":"kampanj","namn":"MAIL_20261013_Sushi_SP_1_engagerade60d_product_kundernas-ord_v1","id":"01M3C3DSV9E6KY6E6CV01NJQJX","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:13:28.677Z","brand":"matstrumpor","typ":"kampanjmeddelande","namn":"MAIL_20261013_Sushi_SP_1_engagerade60d_product_kundernas-ord_v1","id":"01M3C3DSVM7KYZ2ZW0ZJ0H2ME0","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:13:30.339Z","brand":"matstrumpor","typ":"kampanjmall","namn":"MAIL_20261013_Sushi_SP_1_engagerade60d_product_kundernas-ord_v1","id":"01M3C3DSVM7KYZ2ZW0ZJ0H2ME0","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:13:32.457Z","brand":"matstrumpor","typ":"kampanj","namn":"MAIL_20261020_Mix_GT_1_engagerade60d_solution_fars-dag-24-okt_v1","id":"01M3C3DXFJEW34392R04BDSK7G","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:13:33.824Z","brand":"matstrumpor","typ":"kampanjmeddelande","namn":"MAIL_20261020_Mix_GT_1_engagerade60d_solution_fars-dag-24-okt_v1","id":"01M3C3DXFT94YW062W0SSN23EC","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:13:35.509Z","brand":"matstrumpor","typ":"kampanjmall","namn":"MAIL_20261020_Mix_GT_1_engagerade60d_solution_fars-dag-24-okt_v1","id":"01M3C3DXFT94YW062W0SSN23EC","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:13:37.636Z","brand":"matstrumpor","typ":"kampanj","namn":"MAIL_20261027_Sushi_S_1_engagerade90d_solution_gissa-vad-jag-la-i-julstrumpan_v1","id":"01M3C3E13DCV0WJEH3PMXDM3S2","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:13:38.976Z","brand":"matstrumpor","typ":"kampanjmeddelande","namn":"MAIL_20261027_Sushi_S_1_engagerade90d_solution_gissa-vad-jag-la-i-julstrumpan_v1","id":"01M3C3E13QPJ4GKP4R6P3H5KPR","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:13:40.605Z","brand":"matstrumpor","typ":"kampanjmall","namn":"MAIL_20261027_Sushi_S_1_engagerade90d_solution_gissa-vad-jag-la-i-julstrumpan_v1","id":"01M3C3E13QPJ4GKP4R6P3H5KPR","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:13:42.649Z","brand":"matstrumpor","typ":"kampanj","namn":"MAIL_20261103_Sushi_CS_1_engagerade90d_product_slut-i-november-forra-aret_v1","id":"01M3C3E4XSY234E0W92QNPBYEF","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:13:44.032Z","brand":"matstrumpor","typ":"kampanjmeddelande","namn":"MAIL_20261103_Sushi_CS_1_engagerade90d_product_slut-i-november-forra-aret_v1","id":"01M3C3E4Y4TZSDACHRD0NDT78N","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:13:46.279Z","brand":"matstrumpor","typ":"kampanjmall","namn":"MAIL_20261103_Sushi_CS_1_engagerade90d_product_slut-i-november-forra-aret_v1","id":"01M3C3E4Y4TZSDACHRD0NDT78N","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:13:48.669Z","brand":"matstrumpor","typ":"kampanj","namn":"MAIL_20261110_Sushi_CS_2_samtycke_promo_tva-lador-tva-personer_v1","id":"01M3C3E8QAHRHD49AXWRX65WV3","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:13:50.011Z","brand":"matstrumpor","typ":"kampanjmeddelande","namn":"MAIL_20261110_Sushi_CS_2_samtycke_promo_tva-lador-tva-personer_v1","id":"01M3C3E8QJRKTGPBS2581DFH9H","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:13:51.608Z","brand":"matstrumpor","typ":"kampanjmall","namn":"MAIL_20261110_Sushi_CS_2_samtycke_promo_tva-lador-tva-personer_v1","id":"01M3C3E8QJRKTGPBS2581DFH9H","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:13:55.126Z","brand":"matstrumpor","typ":"kampanj","namn":"MAIL_20261117_Mix_GT_2_samtycke_solution_julklappsguide_v1","id":"01M3C3ECB78H7ZT7QNY57QXG0Y","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:13:56.440Z","brand":"matstrumpor","typ":"kampanjmeddelande","namn":"MAIL_20261117_Mix_GT_2_samtycke_solution_julklappsguide_v1","id":"01M3C3ECBGMKEETFK728EMXVMC","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:13:58.035Z","brand":"matstrumpor","typ":"kampanjmall","namn":"MAIL_20261117_Mix_GT_2_samtycke_solution_julklappsguide_v1","id":"01M3C3ECBGMKEETFK728EMXVMC","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:14:00.112Z","brand":"matstrumpor","typ":"kampanj","namn":"MAIL_20261123_Mix_CS_3_samtycke_promo_black-week-trappan_v1","id":"01M3C3EFYHBD1GGF9C06FP6FP4","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:14:01.495Z","brand":"matstrumpor","typ":"kampanjmeddelande","namn":"MAIL_20261123_Mix_CS_3_samtycke_promo_black-week-trappan_v1","id":"01M3C3EFYS4R731P90HGRKDJWS","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:14:03.890Z","brand":"matstrumpor","typ":"kampanjmall","namn":"MAIL_20261123_Mix_CS_3_samtycke_promo_black-week-trappan_v1","id":"01M3C3EFYS4R731P90HGRKDJWS","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:14:08.010Z","brand":"matstrumpor","typ":"kampanj","namn":"MAIL_20261127_Mix_CS_4_samtycke_promo_black-friday-till-mandag_v1","id":"01M3C3EKJGQNYRZ7KGJMA805HF","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:14:09.371Z","brand":"matstrumpor","typ":"kampanjmeddelande","namn":"MAIL_20261127_Mix_CS_4_samtycke_promo_black-friday-till-mandag_v1","id":"01M3C3EKJRCEG6CV9J5S8KN5SV","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:14:11.634Z","brand":"matstrumpor","typ":"kampanjmall","namn":"MAIL_20261127_Mix_CS_4_samtycke_promo_black-friday-till-mandag_v1","id":"01M3C3EKJRCEG6CV9J5S8KN5SV","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:14:13.737Z","brand":"matstrumpor","typ":"kampanj","namn":"MAIL_20261201_Julklapp_GT_3_samtycke_promo_bestall-senast-8-dec_v1","id":"01M3C3EQ477NCRG0VCET2JT79M","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:14:15.083Z","brand":"matstrumpor","typ":"kampanjmeddelande","namn":"MAIL_20261201_Julklapp_GT_3_samtycke_promo_bestall-senast-8-dec_v1","id":"01M3C3EQ4HWWDE21PW6X89EQB1","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:14:17.330Z","brand":"matstrumpor","typ":"kampanjmall","namn":"MAIL_20261201_Julklapp_GT_3_samtycke_promo_bestall-senast-8-dec_v1","id":"01M3C3EQ4HWWDE21PW6X89EQB1","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:14:19.405Z","brand":"matstrumpor","typ":"kampanj","namn":"MAIL_20261208_Julklapp_GT_4_samtycke_promo_sista-dagen-i-dag_v1","id":"01M3C3ETPP72N1FGVAY51QMPAF","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:14:22.982Z","brand":"matstrumpor","typ":"kampanjmeddelande","namn":"MAIL_20261208_Julklapp_GT_4_samtycke_promo_sista-dagen-i-dag_v1","id":"01M3C3ETPZ9BT0MA6ZJ714TZZS","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:14:24.591Z","brand":"matstrumpor","typ":"kampanjmall","namn":"MAIL_20261208_Julklapp_GT_4_samtycke_promo_sista-dagen-i-dag_v1","id":"01M3C3ETPZ9BT0MA6ZJ714TZZS","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:14:26.662Z","brand":"matstrumpor","typ":"kampanj","namn":"MAIL_20261215_Presentkort_M_1_samtycke_solution_julklappen-som-kommer-i-mejlen_v1","id":"01M3C3EYBAYJMJJXG18FTSABH0","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:14:28.009Z","brand":"matstrumpor","typ":"kampanjmeddelande","namn":"MAIL_20261215_Presentkort_M_1_samtycke_solution_julklappen-som-kommer-i-mejlen_v1","id":"01M3C3EYBM9ZA99XGSB51P6K0B","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:14:30.464Z","brand":"matstrumpor","typ":"kampanjmall","namn":"MAIL_20261215_Presentkort_M_1_samtycke_solution_julklappen-som-kommer-i-mejlen_v1","id":"01M3C3EYBM9ZA99XGSB51P6K0B","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:14:32.504Z","brand":"matstrumpor","typ":"kampanj","namn":"MAIL_20261229_Mix_GT_5_samtycke_solution_vem-har-fodelsedag-harnast_v1","id":"01M3C3F1TJEQFK0E3GKPMA9C0K","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:14:33.871Z","brand":"matstrumpor","typ":"kampanjmeddelande","namn":"MAIL_20261229_Mix_GT_5_samtycke_solution_vem-har-fodelsedag-harnast_v1","id":"01M3C3F1TW7D5YVHT9N9FF0QZK","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:14:35.607Z","brand":"matstrumpor","typ":"kampanjmall","namn":"MAIL_20261229_Mix_GT_5_samtycke_solution_vem-har-fodelsedag-harnast_v1","id":"01M3C3F1TW7D5YVHT9N9FF0QZK","atgard":"uppdaterad"}
+{"tid":"2026-09-25T16:14:45.094Z","brand":"matstrumpor","typ":"flode","namn":"FLOW_lista_valkomst_v3","id":"XdyurA","atgard":"skapad"}
+{"tid":"2026-09-25T16:14:49.507Z","brand":"matstrumpor","typ":"flode","namn":"FLOW_checkout_overgiven_v3","id":"RAp4RX","atgard":"skapad"}
+{"tid":"2026-09-25T16:14:53.591Z","brand":"matstrumpor","typ":"flode","namn":"FLOW_visad-produkt_webbhistorik_v3","id":"XXP3Au","atgard":"skapad"}
+{"tid":"2026-09-25T16:14:56.740Z","brand":"matstrumpor","typ":"flode","namn":"FLOW_order_efterkop_v3","id":"TAFHg7","atgard":"skapad"}
+{"tid":"2026-09-25T16:15:01.018Z","brand":"matstrumpor","typ":"flode","namn":"FLOW_order_vinback_v3","id":"RCZj4Q","atgard":"skapad"}
+{"tid":"2026-09-25T16:15:04.623Z","brand":"matstrumpor","typ":"flode","namn":"FLOW_segment_sunset_v3","id":"WFKWcH","atgard":"skapad"}
+{"tid":"2026-09-25T16:15:07.744Z","brand":"matstrumpor","typ":"flode","namn":"FLOW_order_aterkop-sushi_v3","id":"RAYiUj","atgard":"skapad"}
+{"tid":"2026-09-25T16:15:12.143Z","brand":"matstrumpor","typ":"flode","namn":"FLOW_order_efterkop_v2","id":"R6ixrV","atgard":"raderad","orsak":"ersatt av FLOW_order_efterkop_v3"}
+{"tid":"2026-09-25T16:15:13.053Z","brand":"matstrumpor","typ":"flode","namn":"FLOW_order_aterkop-sushi_v2","id":"XgsZj9","atgard":"raderad","orsak":"ersatt av FLOW_order_aterkop-sushi_v3"}
+{"tid":"2026-09-25T16:15:14.320Z","brand":"matstrumpor","typ":"flode","namn":"FLOW_checkout_overgiven_v2","id":"YdpPgY","atgard":"raderad","orsak":"ersatt av FLOW_checkout_overgiven_v3"}
+{"tid":"2026-09-25T16:15:15.547Z","brand":"matstrumpor","typ":"flode","namn":"FLOW_order_vinback_v2","id":"WFsWR3","atgard":"raderad","orsak":"ersatt av FLOW_order_vinback_v3"}
+{"tid":"2026-09-25T16:15:17.980Z","brand":"matstrumpor","typ":"flode","namn":"FLOW_lista_valkomst_v2","id":"TCpJ4W","atgard":"raderad","orsak":"ersatt av FLOW_lista_valkomst_v3"}
+{"tid":"2026-09-25T16:15:19.257Z","brand":"matstrumpor","typ":"flode","namn":"FLOW_visad-produkt_webbhistorik_v2","id":"TEZYfP","atgard":"raderad","orsak":"ersatt av FLOW_visad-produkt_webbhistorik_v3"}
+{"tid":"2026-09-25T16:15:20.630Z","brand":"matstrumpor","typ":"flode","namn":"FLOW_segment_sunset_v2","id":"Vbx6zB","atgard":"raderad","orsak":"ersatt av FLOW_segment_sunset_v3"}
+{"tid":"2026-09-25T16:15:21.826Z","brand":"matstrumpor","typ":"mall","namn":"TPL_f01-valkomst-e1_v2","id":"Vjf7aL","atgard":"raderad","orsak":"ersatt av TPL_f01-valkomst-e1_v3"}

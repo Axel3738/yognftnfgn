@@ -467,6 +467,31 @@ const BLOCK = {
   knapp(b, ctx) {
     return rad(knappHtml(ctx.s, b.text, esk(lank(b.lank, ctx))), '20px 32px 12px');
   },
+  // Medlemskortet (Axels order 2026-09-25: "det ska kännas som ett exklusivt
+  // medlemskap"): ett mörkt kort med etikett, mottagarens förnamn (eller
+  // "Medlem" när namnet saknas), raden under namnet och en torr fotnot. Bara
+  // text och färg, inga bilder — ser likadant ut i alla klienter.
+  medlemskort(b, ctx) {
+    const { s, lage, brand } = ctx;
+    const namn = lage === 'klaviyo'
+      ? "{% if first_name %}{{ first_name|default:'' }}{% else %}Medlem{% endif %}"
+      : esk(EXEMPEL_FORNAMN);
+    const klubb = brand.klubb?.namn ?? brand.namn;
+    return rad(`
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${s.svart}" style="border-radius: 14px; border: 2px solid ${s.rod};">
+                <tr>
+                  <td style="padding: 22px 26px 20px;">
+                    <p style="${s.rubrik} font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: ${s.rod}; margin: 0 0 14px;">${kundtext(b.etikett ?? 'Medlemskort', lage)}</p>
+                    <p style="${s.rubrik} font-size: 28px; line-height: 1.15; color: #ffffff; margin: 0;">${namn}</p>
+                    <p style="${s.brod} font-size: 14px; line-height: 1.5; color: #f3ede2; margin: 6px 0 0;">${kundtext(b.rad_under_namnet ?? `Medlem i ${klubb}`, lage)}</p>
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top: 16px;">
+                      <tr><td style="border-top: 1px solid ${s.rod}; font-size: 0; line-height: 0;">&nbsp;</td></tr>
+                    </table>
+                    <p style="${s.brod} font-size: 12px; line-height: 1.5; color: #bdb4a6; margin: 12px 0 0;">${kundtext(b.fotnot ?? klubb, lage)}</p>
+                  </td>
+                </tr>
+              </table>`, '20px 32px 12px');
+  },
   // Fem klickbara stjärnor. ALLA stjärnor går till SAMMA ställe (stjarnLankar)
   // — review gating (nöjda till ett ställe, missnöjda till ett annat) är
   // förbjudet enligt Trustpilots regler och vilseledande (Axels skiss
@@ -757,7 +782,7 @@ function dokument(ctx, { titel, forhandstext, rader }) {
   // det kommer från — Matstrumpor-klubben, Axels beslut 2026-09-25 ("det måste
   // vara som ett medlemskap att vara med i Matstrumpors klubb").
   const klubb = brand.klubb?.namn
-    ? `<p style="${s.rubrik} font-size: 14px; letter-spacing: 1px; color: ${ljus ? s.rod : '#ffffff'}; margin: 10px 0 0;">${esk(brand.klubb.namn)}</p>`
+    ? `<p style="${s.rubrik} font-size: 14px; letter-spacing: 1px; color: ${ljus ? s.rod : '#ffffff'}; margin: 10px 0 0;">${esk(brand.klubb.namn)}</p>${brand.klubb.eyebrow ? `<p style="${s.brod} font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: ${ljus ? s.gra : '#d9d9d9'}; margin: 4px 0 0;">${esk(brand.klubb.eyebrow)}</p>` : ''}`
     : '';
   // Webbfonten laddas i huvudet: <link> för de klienter som följer den och
   // @import för dem som bara läser <style>. Länken står oeskapad i @import —
@@ -817,6 +842,11 @@ function textversion(mejl, ctx) {
         if (b.rubrik) ut.push(t(b.rubrik).toUpperCase());
         ut.push(t(b.text));
         break;
+      case 'medlemskort': {
+        const namn = lage === 'klaviyo' ? "{% if first_name %}{{ first_name|default:'' }}{% else %}Medlem{% endif %}" : EXEMPEL_FORNAMN;
+        ut.push([String(b.etikett ?? 'Medlemskort').toUpperCase(), namn, t(b.rad_under_namnet ?? `Medlem i ${brand.klubb?.namn ?? brand.namn}`), b.fotnot ? t(b.fotnot) : null].filter(Boolean).join('\n'));
+        break;
+      }
       case 'punkter':
         if (b.rubrik) ut.push(t(b.rubrik).toUpperCase());
         ut.push((b.punkter ?? []).map((x) => `* ${t(x)}`).join('\n'));

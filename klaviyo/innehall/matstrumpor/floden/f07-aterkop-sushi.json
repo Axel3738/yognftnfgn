@@ -1,6 +1,6 @@
 {
   "id": "f07-aterkop-sushi",
-  "namn": "FLOW_order_aterkop-sushi_v2",
+  "namn": "FLOW_order_aterkop-sushi_v3",
   "memo": "Det enda mönstret återköpsanalysen ger stöd för (klaviyo/evolve/ATERKOP-ANALYS-matstrumpor.md#2): 38 av 44 riktiga återköpare köpte exakt samma sushilåda igen, median 19 dagar (#1), flest i hinken 14 till 30 dagar. 21 dagar ligger mitt i den hinken. Ett enda mejl, inte en serie: urvalet på 44 kunder är för litet för att bygga flera steg på.",
   "trigger": {
     "typ": "metrik",

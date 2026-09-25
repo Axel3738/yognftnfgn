@@ -1,6 +1,6 @@
 {
   "brand": "matstrumpor",
-  "hamtad": "2026-09-25T14:36:50.887Z",
+  "hamtad": "2026-09-25T16:15:22.588Z",
   "konto": {
     "id": "UV6Rqg",
     "public_api_key": "UV6Rqg",
@@ -96,6 +96,11 @@
         "integration": "Shopify"
       },
       {
+        "id": "Uu2htv",
+        "namn": "Confirmed Shipment",
+        "integration": "Shopify"
+      },
+      {
         "id": "V4zRVt",
         "namn": "Fulfilled Partial Order",
         "integration": "Shopify"
@@ -180,7 +185,7 @@
       "id": "VzTE9X",
       "namn": "Email List",
       "opt_in": "double_opt_in",
-      "profiler": 2891
+      "profiler": 2892
     }
   ],
   "segment": [
@@ -302,52 +307,52 @@
   ],
   "floden": [
     {
-      "id": "R6ixrV",
-      "namn": "FLOW_order_efterkop_v2",
+      "id": "RAYiUj",
+      "namn": "FLOW_order_aterkop-sushi_v3",
       "status": "draft",
       "trigger_type": "Metric",
       "arkiverad": false
     },
     {
-      "id": "TCpJ4W",
-      "namn": "FLOW_lista_valkomst_v2",
+      "id": "RAp4RX",
+      "namn": "FLOW_checkout_overgiven_v3",
+      "status": "draft",
+      "trigger_type": "Metric",
+      "arkiverad": false
+    },
+    {
+      "id": "RCZj4Q",
+      "namn": "FLOW_order_vinback_v3",
+      "status": "draft",
+      "trigger_type": "Metric",
+      "arkiverad": false
+    },
+    {
+      "id": "TAFHg7",
+      "namn": "FLOW_order_efterkop_v3",
+      "status": "draft",
+      "trigger_type": "Metric",
+      "arkiverad": false
+    },
+    {
+      "id": "WFKWcH",
+      "namn": "FLOW_segment_sunset_v3",
       "status": "draft",
       "trigger_type": "Added to List",
       "arkiverad": false
     },
     {
-      "id": "TEZYfP",
-      "namn": "FLOW_visad-produkt_webbhistorik_v2",
+      "id": "XXP3Au",
+      "namn": "FLOW_visad-produkt_webbhistorik_v3",
       "status": "draft",
       "trigger_type": "Metric",
       "arkiverad": false
     },
     {
-      "id": "Vbx6zB",
-      "namn": "FLOW_segment_sunset_v2",
+      "id": "XdyurA",
+      "namn": "FLOW_lista_valkomst_v3",
       "status": "draft",
       "trigger_type": "Added to List",
-      "arkiverad": false
-    },
-    {
-      "id": "WFsWR3",
-      "namn": "FLOW_order_vinback_v2",
-      "status": "draft",
-      "trigger_type": "Metric",
-      "arkiverad": false
-    },
-    {
-      "id": "XgsZj9",
-      "namn": "FLOW_order_aterkop-sushi_v2",
-      "status": "draft",
-      "trigger_type": "Metric",
-      "arkiverad": false
-    },
-    {
-      "id": "YdpPgY",
-      "namn": "FLOW_checkout_overgiven_v2",
-      "status": "draft",
-      "trigger_type": "Metric",
       "arkiverad": false
     }
   ],
@@ -355,8 +360,8 @@
     "antal": 29,
     "motorns": [
       {
-        "id": "Vjf7aL",
-        "namn": "TPL_f01-valkomst-e1_v2"
+        "id": "UQmNus",
+        "namn": "TPL_f01-valkomst-e1_v3"
       },
       {
         "id": "S2wSEr",
@@ -562,10 +567,10 @@
     "Kontot saknar postadress — {{ organization.full_address }} blir tom i sidfoten (MFL 20 §). Fyll i Settings → Brand."
   ],
   "senaste_uppladdning": {
-    "tid": "2026-09-25T14:35:32.955Z",
+    "tid": "2026-09-25T16:15:07.744Z",
     "bara": null,
-    "skapade": 10,
-    "uppdaterade": 68,
+    "skapade": 8,
+    "uppdaterade": 70,
     "hoppade": 14,
     "stopp": []
   }
