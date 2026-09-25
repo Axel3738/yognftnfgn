@@ -312,3 +312,15 @@ test('svar föreslås på allt utom tomma kommentarer, taggade vänner och spam,
   const m = kontrolleraDom({ svar: manga.map((r) => svar(r.id)) }, { kandaIds: new Set(manga.map((r) => r.id)), nyaIds: new Set(manga.map((r) => r.id)), raderPerId: new Map(manga.map((r) => [r.id, r])), maxSvar: 6 });
   assert.equal(m.dom.svar.length, 6);
 });
+
+test('svar postas bara från sidan som äger annonsen och hör till verksamheten', async () => {
+  const { felSida } = await import('../sida.mjs');
+  const sidor = { '678639638662543': 'Bäverbutiken', '1381171778405935': 'CaraShell' };
+  const bra = { sida: '1381171778405935', verksamhet: 'CaraShell', kanal: 'facebook', post: '1381171778405935_1' };
+  assert.equal(felSida(bra, sidor), null);
+  assert.match(felSida({ ...bra, verksamhet: 'Bäverbutiken' }, sidor), /hör till CaraShell/);
+  assert.match(felSida({ ...bra, post: '678639638662543_1' }, sidor), /ägs inte/);
+  assert.match(felSida({ ...bra, konflikt: 'länk baverbutiken.se' }, sidor), /olika verksamhet/);
+  assert.match(felSida({ ...bra, sida: '999' }, sidor), /okänd verksamhet/);
+  assert.equal(felSida({ ...bra, kanal: 'instagram', post: 'x' }, sidor), null);
+});

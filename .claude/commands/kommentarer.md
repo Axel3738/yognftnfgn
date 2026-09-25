@@ -196,7 +196,23 @@ Instagram förrän Axel uttryckligen säger till. När han gör det: bygg listan
 aldrig "(Inget svar …)"), kör `node kommentarer/publicera.mjs --svar <fil>`
 torrt, sedan `--skarpt`. Skriptet svarar som sidan, hoppar allt som redan står
 i `kommentarer/svar-publicerade.jsonl` eller där sidan redan svarat, och
-committa loggen efteråt. Mätt 2026-09-25: 41 svar postade på Facebook;
+committa loggen efteråt.
+
+**Två spärrar som sitter i `publicera.mjs` (Axels krav 2026-09-25):**
+- **Rätt sida på rätt annons.** CaraShells kommentarer besvaras från
+  CaraShells sida (`1381171778405935`), Bäverbutikens från Bäverbutikens
+  (`678639638662543`, Norge `879054088633562`). Skriptet postar bara om sidan
+  äger annonsinlägget, sidan hör till radens verksamhet i `konfig.json` →
+  `sidor` och raden saknar `konflikt` (`kommentarer/sida.mjs`). Torrkörningen
+  skriver sidans NAMN per svar — visa Axel den listan. Efter varje post läses
+  avsändaren tillbaka; är den fel stannar skriptet helt.
+- **Första svarsrundan någonsin på en sida är alltid test + granskning.** En
+  sida utan rad i `svar-publicerade.jsonl` postas inte skarpt utan
+  `--granskad`, och flaggan får bara sättas när Axel gått igenom just den
+  rundan på granskningssidan (Ja/Nej/Ändra) och sett torrkörningens
+  sidlista. Ny sida, ny verksamhet eller ny marknad = ny första runda.
+
+Mätt 2026-09-25: 41 svar postade på Facebook;
 Instagram nekades `(#100) Missing Permission` — token:en saknar
 `instagram_manage_comments`, så IG-svar klistras in för hand tills den finns.
 
