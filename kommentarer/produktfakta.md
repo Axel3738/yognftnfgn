@@ -16,7 +16,16 @@ Läses av `/kommentarer` innan svaren skrivs.
   *"de täcker ju solcellerna, tyvärr. Men man kan ju sätta solcellerna
   ovanför dem."* Oklart vad "ovanför" betyder — fråga Axel innan det citeras.
 - **Banden skaver inte på lacken:** de är gjorda av ett mjukt material.
-  Axel 2026-09-25.
+  Axel 2026-09-25. **Leverantören 2026-09-25:** "will not damage the car
+  paint".
+- **Banden är vävda remmar (webbing), INTE elastiska.** Leverantören
+  2026-09-25: *"We use webbing, not elastic band. Elastic band tends to lose
+  its elasticity over time and becomes impractical."* Skriv aldrig
+  "elastiska band"/"strikk". Kunder som skriver att gummibanden töjs ut och
+  plastkrokarna går sönder beskriver alltså en annan produkt (eller ett
+  annat parti) — svara vänligt, säg inte emot, be köpare om ordernumret.
+- **Vattentät och tål sol.** Leverantören 2026-09-25 ("waterproof and
+  sunproof").
 - **Hur långt ner på sidorna:** beror på husvagnens/husbilens bredd
   (överdraget är 3 m brett). Axel 2026-09-25.
 - **Fifth wheel (US):** en släpvagn som kopplas i flaket på en pickup, med
@@ -51,6 +60,11 @@ Läses av `/kommentarer` innan svaren skrivs.
 
 ## Termoskydd husbil (`Termoskydd`)
 
+- **Täcker inte nederkanten av vindrutan — så är den byggd.** Leverantören
+  2026-09-25: *"Due to the product design, it's inherently the lower half of
+  the glass and cannot provide any cover."* Kunden som skrev "täcker inte
+  nederdelen av vindrutan" har alltså inget fel exemplar. Svara att skyddet
+  är byggt så, inte att något är fel.
 - **Smårutorna:** det finns en egen produkt för smårutorna, nyss upplagd i
   butiken (Axel 2026-09-25). Länken/namnet saknas här — hämta ur butiken
   innan den nämns.
@@ -61,6 +75,11 @@ Läses av `/kommentarer` innan svaren skrivs.
   säger "Monteras på vägg eller i båten" — se "Rätta på sidan".
 
 ## Rätta på sidan
+
+- CaraShells takskydd (`factory/produkter/takskyddet.yaml`, rad 5, 276, 290,
+  318, 434, 436, och därmed produktsidan och FAQ:n): säger "elastiska
+  spännband" — leverantören säger vävda remmar, inte elastiska
+  (2026-09-25). Axels beslut om sidan ska skrivas om.
 
 - Fiskespöhållare 4-pack (baverbutiken.se): texten "Monteras på vägg eller i
   båten" och "Monteras enkelt på vägg eller i båten" stämmer inte enligt
