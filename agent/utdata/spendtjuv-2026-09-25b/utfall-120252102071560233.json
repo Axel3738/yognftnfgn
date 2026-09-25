@@ -1,0 +1,55 @@
+{
+  "tjuvar": [
+    {
+      "id": "120252102136330233",
+      "namn": "Arbeidslampe_NO_PD_1_H1",
+      "status": "ACTIVE",
+      "spend": 1778.02,
+      "roas": 0.859169,
+      "kop": 3,
+      "alder_dagar": 18,
+      "spend_7d": 5350.53,
+      "roas_7d": 2.208557,
+      "backdagar_i_rad": null,
+      "etikett": "SPEND_WINNER",
+      "etikett_datum": "2026-09-21",
+      "roas_livstid": 2.115908,
+      "intakt": 1527.61966538,
+      "trott_vinnare": true,
+      "orsak": "TROTT_VINNARE"
+    },
+    {
+      "id": "120252102136790233",
+      "namn": "Arbeidslampe_NO_PD_1_H2",
+      "status": "ACTIVE",
+      "spend": 881.27,
+      "roas": 0.680711,
+      "kop": 1,
+      "alder_dagar": 18,
+      "spend_7d": 1000,
+      "roas_7d": 0.59989,
+      "backdagar_i_rad": null,
+      "etikett": "SPEND_WINNER",
+      "etikett_datum": "2026-09-21",
+      "roas_livstid": 1.119911,
+      "intakt": 599.89018297,
+      "trott_vinnare": false,
+      "orsak": "UNDER_BE"
+    }
+  ],
+  "raddade": [],
+  "rest": {
+    "spend": 178.6,
+    "intakt": 0,
+    "kop": 0,
+    "roas": 0
+  },
+  "break_even": 1.63,
+  "kampanj_spend": 2837.13,
+  "tjuvSpend": 2659.29,
+  "tjuvAndel": 0.9373169364815852,
+  "dom": "STANG_AV",
+  "motivering": "Resten av kampanjen är inte bedömbar utan tjuvarna: 179 kr och 0 köp (grinden går vid 300 kr och 1 köp). Det finns ingen bevisat lönsam kärna att rädda.",
+  "kampanj_id": "120252102071560233",
+  "kampanj_namn": "Arbeidslampe NO | BE-ROAS 1,63 | 2026-09-06"
+}

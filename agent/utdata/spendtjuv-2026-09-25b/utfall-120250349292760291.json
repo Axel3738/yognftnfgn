@@ -1,0 +1,37 @@
+{
+  "tjuvar": [
+    {
+      "id": "120250349312390291",
+      "namn": "Motorlas_SP_2",
+      "status": "ACTIVE",
+      "spend": 632.35,
+      "roas": 0,
+      "kop": 0,
+      "alder_dagar": 0,
+      "spend_7d": 632.35,
+      "roas_7d": null,
+      "backdagar_i_rad": null,
+      "etikett": null,
+      "etikett_datum": null,
+      "roas_livstid": null,
+      "intakt": 0,
+      "trott_vinnare": false,
+      "orsak": "NOLL_KOP"
+    }
+  ],
+  "raddade": [],
+  "rest": {
+    "spend": 266.72999999999996,
+    "intakt": 0,
+    "kop": 0,
+    "roas": 0
+  },
+  "break_even": 1.5226482622211366,
+  "kampanj_spend": 899.08,
+  "tjuvSpend": 632.35,
+  "tjuvAndel": 0.7033300707389776,
+  "dom": "STANG_AV",
+  "motivering": "Resten av kampanjen är inte bedömbar utan tjuvarna: 267 kr och 0 köp (grinden går vid 300 kr och 1 köp). Det finns ingen bevisat lönsam kärna att rädda.",
+  "kampanj_id": "120250349292760291",
+  "kampanj_namn": "Motorlåset i Rostfritt Stål | BE ROAS 1.64 | Launch 2026-09-24"
+}

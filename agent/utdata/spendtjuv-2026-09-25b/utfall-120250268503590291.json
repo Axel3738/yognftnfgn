@@ -1,0 +1,37 @@
+{
+  "tjuvar": [
+    {
+      "id": "120250268523560291",
+      "namn": "Inomhustofflor_SP_1_H1",
+      "status": "ACTIVE",
+      "spend": 1608.33,
+      "roas": 0.912126,
+      "kop": 3,
+      "alder_dagar": 6,
+      "spend_7d": 2374.8,
+      "roas_7d": 1.729661,
+      "backdagar_i_rad": null,
+      "etikett": "SPEND_WINNER",
+      "etikett_datum": "2026-09-25",
+      "roas_livstid": 1.904458,
+      "intakt": 1466.99960958,
+      "trott_vinnare": true,
+      "orsak": "TROTT_VINNARE"
+    }
+  ],
+  "raddade": [],
+  "rest": {
+    "spend": 746.8599999999999,
+    "intakt": 0,
+    "kop": 0,
+    "roas": 0
+  },
+  "break_even": 1.5104536364866294,
+  "kampanj_spend": 2534.61,
+  "tjuvSpend": 1608.33,
+  "tjuvAndel": 0.6345473268076744,
+  "dom": "STANG_AV",
+  "motivering": "Resten av kampanjen är inte bedömbar utan tjuvarna: 747 kr och 0 köp (grinden går vid 300 kr och 1 köp). Det finns ingen bevisat lönsam kärna att rädda.",
+  "kampanj_id": "120250268503590291",
+  "kampanj_namn": "Inomhustofflorna i Kamouflage | BE ROAS 1.61 | Launch 2026-09-18"
+}
