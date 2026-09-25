@@ -78,7 +78,20 @@ Swedish is what runs in the ad. The right column is meaning only, for the editor
 ## 8. Three-question test (docs/copy-regler.md) — every delivered line
 | Line | Visualise? | Falsifiable? | Only we can say it? |
 |---|---|---|---|
-«ONE ROW PER DELIVERED SWEDISH LINE — every hook, every script line, the giver's line, the headline, the description and each primary-text line. Every cell must be ✅ with a five-to-fifteen-word reason. A line that earns a ❌ anywhere is rewritten until it passes or dropped; it never stays in the brief with a ❌. Rows are plain table rows: | line | ✅ reason | ✅ reason | ✅ reason |»
+| Förra året fick pappa en mugg. I år får han en Mastern. (Hook H1) | ✅ the mug, then the product | ✅ a concrete, checkable claim about the two years | ✅ names "Mastern" directly |
+| Slipsen ligger kvar i sin ask sen förra fars dag. I år: en Mastern. (Hook H2) | ✅ the boxed tie in a drawer | ✅ checkable — the tie is still unopened | ✅ names "Mastern" directly |
+| Tre presenter på fem år. Bara Mastern hänger kvar vid gallret. (Hook H3) | ✅ three gifts, Mastern hanging by the grill | ✅ a checkable claim shown on screen | ✅ names "Mastern" directly |
+| Muggen. Slipsen. Tröjan. Ingen av dem används. I år är det en Mastern. (script line 4) | ✅ three named objects, unused | ✅ a concrete, checkable claim | ✅ ends on "Mastern" by name |
+| Det han faktiskt gör varje helg är att grilla. Sen knäböjer han med en borste som missar springorna. (script line 5) | ✅ him grilling, then kneeling with the brush | ✅ a checkable claim about the brush | ✅ "springorna" ties to Mastern's mechanism |
+| I år: Mastern. En knapp, huvudet ner i springorna, sextio sekunder medan gallret är varmt. Två huvuden, ingenting lossnar. Allt finns i lådan: handskar, USB-kabeln. (script line 6) | ✅ button, head in the gap, box contents laid out | ✅ every clause is a specific, checkable claim | ✅ "springorna", "sextio sekunder", "två huvuden", "USB-kabeln" are Mastern-only facts |
+| Varje helg, hela nästa säsong. Johan E. skriver: "Köpte en till storebror och en till svärfar inför Fars dag. Alla nöjda." (script line 7) | ✅ him using it, the quote as a caption card | ✅ a named customer's real, checkable words | ✅ a verbatim, named review no competitor can borrow |
+| I år ger vi dig något du använder varje helg, på sextio sekunder. (script line 8 / giver's line) | ✅ a scene of ongoing weekend use | ✅ a timed, checkable claim | ✅ "sextio sekunder" is Mastern's own claim |
+| Mastern. Den han faktiskt använder. (headline) | ✅ the product in ongoing use | ✅ a concrete, checkable claim | ✅ names "Mastern" directly |
+| Två huvuden. Ingenting lossnar. Trettio dagars öppet köp. (description) | ✅ two heads, demoable on screen | ✅ literal, checkable claims | ✅ "två huvuden" and "ingenting lossnar" are Mastern-only facts |
+| Förra året: muggen. I år: en Mastern. (primary text, line 1) | ✅ the mug, then the product | ✅ a concrete, checkable contrast | ✅ names "Mastern" directly |
+| Han slipper stålborsten som aldrig når springorna. (primary text, line 2) | ✅ him free of the old brush | ✅ a checkable claim about the brush | ✅ "springorna" ties to Mastern's mechanism |
+| 999 kr. Trettio dagars öppet köp. (primary text, line 3) | ✅ the price and the policy, concrete | ✅ exact, checkable terms | ✅ "999 kr" is the named store-specific price |
+| Livstidsgaranti. Går den sönder får han en ny. Fri frakt inom Sverige. (primary text, line 4) | ✅ a replacement product, a concrete outcome | ✅ a checkable promise | ✅ "livstidsgaranti — går den sönder får han en ny" is the named qualifying phrase |
 
 ## 9. Rules
 - **Price exactly 999 kr** (ord. 1 600 kr) — on the end card and in the copy. Never a percentage (not "35 %", not "40 %"), never a countdown, never a second price. Verified live 2026-09-25 on grillkliniken.se/products/elektrisk-grillborste (999 / 1 600). Numbers other than the price are written in words in Swedish (femton tusen, trettio dagar, sextio sekunder).

@@ -14,7 +14,7 @@ One image: the Mastern box on a table with three gift tags (three first names wr
 
 ## 2. Hypothesis
 Saying the pooled price converts adult children who would not spend 999 kr alone — and the open price keeps B020's qualifying CTR.
-**Headline:** «SV headline»
+**Headline:** Tre syskon. En Mastern.
 
 ## 3. Format
 | | |
@@ -27,10 +27,10 @@ Saying the pooled price converts adult children who would not spend 999 kr alone
 ## 4. Exact text (Swedish word for word, do not re-translate)
 | Element | Swedish (use this) | English meaning |
 |---|---|---|
-| On-image headline | «SV H» | «EN H» — INTENT: Three siblings. One gift. — short, declarative |
-| Sub-line | «SV S» | «EN S» — INTENT: 333 kr each — and dad gets the thing he uses every weekend (the arithmetic 999 ÷ 3 written as "333 kr var") |
-| Price line | «SV P» | «EN P» — INTENT: 999 kr (open price, no compare-at on this one) |
-| Footer | «SV F» | «EN F» — INTENT: 30 dagars öppet köp · livstidsgaranti · fri frakt inom Sverige |
+| On-image headline | Tre syskon. En Mastern. | Three siblings. One Mastern. |
+| Sub-line | 333 kr var. Han får något han faktiskt använder varje helg. | 333 kr each. He gets something he'll actually use every weekend. |
+| Price line | 999 kr | 999 kr |
+| Footer | Trettio dagars öppet köp · Livstidsgaranti · Fri frakt inom Sverige | Thirty days open purchase · Lifetime warranty · Free shipping within Sweden |
 
 ## 5. Design brief
 - The three tags are the visual hook: hand-written, slightly different handwriting, tied with string.
@@ -41,17 +41,31 @@ Saying the pooled price converts adult children who would not spend 999 kr alone
 
 ## 7. COPY CARD (goes in Ads Manager, not in the creative)
 **Primary text:**
-> «SV primary text — four to six short lines, each its own line; opens with the giver's scene, then what he stops doing, then the lock: 999 kr, 30 dagars öppet köp, livstidsgaranti, fri frakt inom Sverige»
+> Tre syskon som går ihop blir 333 kr var.
+> Han får ändå hela Mastern: två huvuden, ingenting lossnar.
+> Rent på sextio sekunder, medan gallret fortfarande är varmt.
+> 999 kr. Trettio dagars öppet köp.
+> Livstidsgaranti. Går den sönder får han en ny. Fri frakt inom Sverige.
 
-**Headline:** `«SV headline, max 40 characters, carries Mastern or the price»`
-**Description:** `«SV description, max 60 characters: two facts + 30 dagars öppet köp»`
+**Headline:** `Mastern. 333 kr var.`
+**Description:** `Två huvuden. Ingenting lossnar. Trettio dagars öppet köp.`
 **CTA button:** `Handla nu` (Shop Now)
 **Destination:** https://grillkliniken.se/pages/landing-page-blank-jul-3-09-12-32
 
 ## 8. Three-question test (docs/copy-regler.md) — every delivered line
 | Line | Visualise? | Falsifiable? | Only we can say it? |
 |---|---|---|---|
-«ONE ROW PER DELIVERED SWEDISH LINE — every hook, every script line, the giver's line, the headline, the description and each primary-text line. Every cell must be ✅ with a five-to-fifteen-word reason. A line that earns a ❌ anywhere is rewritten until it passes or dropped; it never stays in the brief with a ❌. Rows are plain table rows: | line | ✅ reason | ✅ reason | ✅ reason |»
+| Tre syskon. En Mastern. (on-image headline) | ✅ three siblings, one box | ✅ a literal, checkable count | ✅ names "Mastern" directly |
+| 333 kr var. Han får något han faktiskt använder varje helg. (sub-line) | ✅ the split cost, pointable | ✅ exact arithmetic on the live price, checkable | ✅ "333 kr var" is this brief's own named split of Mastern's price |
+| 999 kr (price line) | ✅ a price tag, concrete | ✅ an exact, checkable price | ✅ "999 kr" is the named store-specific price |
+| Trettio dagars öppet köp · Livstidsgaranti · Fri frakt inom Sverige (footer) | ✅ the box ready to send, no strings attached | ✅ real, checkable store policies (verified live) | ✅ this exact three-part promise matches only this store's stated terms |
+| Tre syskon som går ihop blir 333 kr var. (primary text, line 1) | ✅ three siblings splitting one gift | ✅ exact, checkable arithmetic | ✅ "333 kr var" is tied to Mastern's own 999 kr price |
+| Han får ändå hela Mastern: två huvuden, ingenting lossnar. (primary text, line 2) | ✅ the whole kit, two heads | ✅ literal, checkable product facts | ✅ "Mastern", "två huvuden" and "ingenting lossnar" are named facts |
+| Rent på sextio sekunder, medan gallret fortfarande är varmt. (primary text, line 3) | ✅ a timed cleaning, warm grate | ✅ a timed, checkable claim | ✅ "sextio sekunder" while warm is Mastern's own claim |
+| 999 kr. Trettio dagars öppet köp. (primary text, line 4) | ✅ the price and the policy, concrete | ✅ exact, checkable terms | ✅ "999 kr" is the named store-specific price |
+| Livstidsgaranti. Går den sönder får han en ny. Fri frakt inom Sverige. (primary text, line 5) | ✅ a replacement product, a concrete outcome | ✅ a checkable promise | ✅ "livstidsgaranti — går den sönder får han en ny" is the named qualifying phrase |
+| Mastern. 333 kr var. (headline) | ✅ the product and the split cost | ✅ exact, checkable arithmetic | ✅ "Mastern" and "333 kr var" are named, price-tied facts |
+| Två huvuden. Ingenting lossnar. Trettio dagars öppet köp. (description) | ✅ two heads, demoable on screen | ✅ literal, checkable claims | ✅ "två huvuden" and "ingenting lossnar" are Mastern-only facts |
 
 ## 9. Rules
 - **Price exactly 999 kr** (ord. 1 600 kr) — on the end card and in the copy. Never a percentage (not "35 %", not "40 %"), never a countdown, never a second price. Verified live 2026-09-25 on grillkliniken.se/products/elektrisk-grillborste (999 / 1 600). Numbers other than the price are written in words in Swedish (femton tusen, trettio dagar, sextio sekunder).

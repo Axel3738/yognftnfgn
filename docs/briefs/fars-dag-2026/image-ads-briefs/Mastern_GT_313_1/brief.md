@@ -14,7 +14,7 @@ Knolling: the box open, every part laid out and labelled — Mastern, grovhuvud,
 
 ## 2. Hypothesis
 The proven knolling format with a gift headline out-converts the same knolling with a discount headline for a giver audience (L-B061 vs L-B066).
-**Headline:** «SV headline»
+**Headline:** Allt till Mastern ligger redan i lådan. Slå in den som den är.
 
 ## 3. Format
 | | |
@@ -27,14 +27,14 @@ The proven knolling format with a gift headline out-converts the same knolling w
 ## 4. Exact text (Swedish word for word, do not re-translate)
 | Element | Swedish (use this) | English meaning |
 |---|---|---|
-| On-image headline | «SV H» | «EN H» — INTENT: Everything he needs is in the box. Wrap it as it is. — two short lines; no "present" as the first word. |
-| Label 1 | «SV L1» | «EN L1» — INTENT: Mastern (the brush itself) |
-| Label 2 | «SV L2» | «EN L2» — INTENT: the coarse head that locks the metal in — three words max |
-| Label 3 | «SV L3» | «EN L3» — INTENT: the polish head without metal — three words max |
-| Label 4 | «SV L4» | «EN L4» — INTENT: protective gloves |
-| Label 5 | «SV L5» | «EN L5» — INTENT: USB cable — no charger to find |
-| Price line | «SV P» | «EN P» — INTENT: 999 kr · ord. 1 600 kr (the compare-at struck with a drawn line, not the word) |
-| Footer | «SV F» | «EN F» — INTENT: 30 dagars öppet köp · livstidsgaranti · fri frakt inom Sverige |
+| On-image headline | Allt till Mastern ligger redan i lådan. Slå in den som den är. | Everything for Mastern is already in the box. Wrap it as it is. |
+| Label 1 | Mastern | Mastern |
+| Label 2 | Grovhuvudet, låser metallen | Coarse head, locks the metal |
+| Label 3 | Polerhuvudet, ingen metall | Polish head, no metal |
+| Label 4 | Skyddshandskar | Protective gloves |
+| Label 5 | USB-kabel | USB cable |
+| Price line | 999 kr (ord. 1 600 kr) | 999 kr (compare-at 1,600 SEK) |
+| Footer | Trettio dagars öppet köp · Livstidsgaranti · Fri frakt inom Sverige | Thirty days open purchase · Lifetime warranty · Free shipping within Sweden |
 
 ## 5. Design brief
 - Knolling on dark slate, one light source from top-left, no props except the ribbon.
@@ -46,17 +46,35 @@ The proven knolling format with a gift headline out-converts the same knolling w
 
 ## 7. COPY CARD (goes in Ads Manager, not in the creative)
 **Primary text:**
-> «SV primary text — four to six short lines, each its own line; opens with the giver's scene, then what he stops doing, then the lock: 999 kr, 30 dagars öppet köp, livstidsgaranti, fri frakt inom Sverige»
+> Allt till Mastern ligger i en enda låda.
+> Han slipper leta efter en laddare. USB-kabeln följer med.
+> Grovhuvud, polerhuvud, handskar, allt redo att slå in.
+> 999 kr. Trettio dagars öppet köp.
+> Livstidsgaranti. Går den sönder får han en ny. Fri frakt inom Sverige.
 
-**Headline:** `«SV headline, max 40 characters, carries Mastern or the price»`
-**Description:** `«SV description, max 60 characters: two facts + 30 dagars öppet köp»`
+**Headline:** `Mastern. Allt i en låda.`
+**Description:** `Grovhuvud, polerhuvud, USB-kabel. Trettio dagars öppet köp.`
 **CTA button:** `Handla nu` (Shop Now)
 **Destination:** https://grillkliniken.se/pages/landing-page-blank-jul-3-09-12-32
 
 ## 8. Three-question test (docs/copy-regler.md) — every delivered line
 | Line | Visualise? | Falsifiable? | Only we can say it? |
 |---|---|---|---|
-«ONE ROW PER DELIVERED SWEDISH LINE — every hook, every script line, the giver's line, the headline, the description and each primary-text line. Every cell must be ✅ with a five-to-fifteen-word reason. A line that earns a ❌ anywhere is rewritten until it passes or dropped; it never stays in the brief with a ❌. Rows are plain table rows: | line | ✅ reason | ✅ reason | ✅ reason |»
+| Allt till Mastern ligger redan i lådan. Slå in den som den är. (on-image headline) | ✅ the open box, ready to wrap | ✅ a checkable claim against the labelled photo | ✅ names "Mastern" directly |
+| Mastern (label 1) | ✅ points straight at the brush in the photo | ✅ literal, checkable | ✅ the product's own name |
+| Grovhuvudet, låser metallen (label 2) | ✅ points at the coarse head in the photo | ✅ a literal, checkable product fact | ✅ "grovhuvud" is a named Mastern part |
+| Polerhuvudet, ingen metall (label 3) | ✅ points at the polish head in the photo | ✅ a literal, checkable product fact | ✅ "polerhuvud" is a named Mastern part |
+| Skyddshandskar (label 4) | ✅ points at the gloves in the photo | ✅ literal, checkable | ✅ names an exact item in Mastern's own kit |
+| USB-kabel (label 5) | ✅ points at the cable in the photo | ✅ literal, checkable | ✅ the USB cable is a named allowed fact |
+| 999 kr (ord. 1 600 kr) (price line) | ✅ a price tag, concrete | ✅ an exact, checkable price | ✅ "999 kr" is the named store-specific price |
+| Trettio dagars öppet köp · Livstidsgaranti · Fri frakt inom Sverige (footer) | ✅ the box ready to send, no strings attached | ✅ real, checkable store policies (verified live) | ✅ this exact three-part promise matches only this store's stated terms |
+| Allt till Mastern ligger i en enda låda. (primary text, line 1) | ✅ one box, everything inside | ✅ a checkable claim against the photo | ✅ names "Mastern" directly |
+| Han slipper leta efter en laddare. USB-kabeln följer med. (primary text, line 2) | ✅ searching a drawer for a charger, then the cable in hand | ✅ a checkable claim | ✅ "USB-kabeln" is a named allowed fact |
+| Grovhuvud, polerhuvud, handskar, allt redo att slå in. (primary text, line 3) | ✅ the labelled kit, ready to wrap | ✅ literal, checkable contents | ✅ "grovhuvud" and "polerhuvud" are named Mastern parts |
+| 999 kr. Trettio dagars öppet köp. (primary text, line 4) | ✅ the price and the policy, concrete | ✅ exact, checkable terms | ✅ "999 kr" is the named store-specific price |
+| Livstidsgaranti. Går den sönder får han en ny. Fri frakt inom Sverige. (primary text, line 5) | ✅ a replacement product, a concrete outcome | ✅ a checkable promise | ✅ "livstidsgaranti — går den sönder får han en ny" is the named qualifying phrase |
+| Mastern. Allt i en låda. (headline) | ✅ the product, the whole kit | ✅ a checkable claim against the photo | ✅ names "Mastern" directly |
+| Grovhuvud, polerhuvud, USB-kabel. Trettio dagars öppet köp. (description) | ✅ three named, visible items | ✅ literal, checkable contents | ✅ "grovhuvud", "polerhuvud" and "USB-kabel" are named Mastern parts |
 
 ## 9. Rules
 - **Price exactly 999 kr** (ord. 1 600 kr) — on the end card and in the copy. Never a percentage (not "35 %", not "40 %"), never a countdown, never a second price. Verified live 2026-09-25 on grillkliniken.se/products/elektrisk-grillborste (999 / 1 600). Numbers other than the price are written in words in Swedish (femton tusen, trettio dagar, sextio sekunder).
