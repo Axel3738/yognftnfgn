@@ -8,6 +8,8 @@
 // Fältnamn: på KONTOT heter det `amount_spent`, i INSIGHTS heter det `spend`.
 // Att blanda ihop dem ger "(#100) ... is not valid for fields param".
 
+import { readFileSync } from 'node:fs';
+
 const STANDARDVERSION = 'v23.0';
 
 export class MetaFel extends Error {}
@@ -47,18 +49,60 @@ async function alla(sokvag, params, opt = {}) {
 }
 
 /** Varje annonskonto token:en når. Valutan följer med — SEK och USD får
- *  ALDRIG summeras ihop, och NYC Grill-kontot är i USD. */
+ *  ALDRIG summeras ihop, och NYC Grill-kontot är i USD.
+ *
+ *  ⚠️ `me/adaccounts` listar INTE allt token:en får läsa. Mätt 2026-09-25:
+ *  listan gav 5 konton, men ett direktanrop mot `act_730973156224390`
+ *  ("nya kungen", Matstrumpor) svarade 200 med namn och valuta. Kontot hade
+ *  alltså aldrig kommit med i en enda commission-körning — inte för att
+ *  behörigheten saknades, utan för att listningen är snävare än åtkomsten.
+ *  (Axel gav Meta-användaren rättigheten 2026-09-22; se CLAUDE.md.) Därför
+ *  frågas varje känt konto som listan missade direkt, ett i taget: svarar det
+ *  200 räknas det med, svarar det 403 är det verkligen nekat och
+ *  kontospärren i run.mjs fyrar på just det. */
 export async function hamtaKonton(opt = {}) {
   const konton = await alla('me/adaccounts', {
     fields: 'account_id,name,currency,account_status',
     limit: 100,
   }, opt);
-  return konton.map((k) => ({
+  const ut = konton.map((k) => ({
     id: k.account_id,
     namn: k.name,
     valuta: k.currency,
     aktiv: k.account_status === 1,
   }));
+  const listade = new Set(ut.map((k) => String(k.id)));
+  for (const kant of kandaKonton(opt)) {
+    if (listade.has(String(kant.id))) continue;
+    try {
+      const k = await api(`act_${kant.id}`, {
+        fields: 'account_id,name,currency,account_status',
+      }, opt);
+      ut.push({
+        id: k.account_id ?? String(kant.id),
+        namn: k.name ?? kant.namn,
+        valuta: k.currency,
+        aktiv: k.account_status === 1,
+        utanforListan: true,
+      });
+    } catch {
+      // Nekat eller borta — kontospärren i run.mjs rapporterar det med namn.
+    }
+  }
+  return ut;
+}
+
+/** Kontona token:en brukar nå (commission/kanda-konton.json). Saknas filen
+ *  eller går den inte att läsa blir det inga extra anrop — listan är en
+ *  komplettering, aldrig ett krav. */
+function kandaKonton({ kandaKontonFil } = {}) {
+  try {
+    const fil = kandaKontonFil
+      ?? new URL('./kanda-konton.json', import.meta.url);
+    return JSON.parse(readFileSync(fil, 'utf8')).konton ?? [];
+  } catch {
+    return [];
+  }
 }
 
 /**

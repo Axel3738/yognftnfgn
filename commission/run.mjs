@@ -308,11 +308,26 @@ async function main() {
   // Ad account owner has NOT grant ads_management or ads_read permission", och
   // Gilz föll 36,62 → 6,80 kr mitt i månaden eftersom hans spend ligger på
   // Mastern. Utan den här spärren hade rapporten sparats som ett riktigt kvitto.)*
+  //
+  // ⚠️ Spärren skiljer på två sorters saknat konto (2026-09-25). Ett konto i
+  // UTLANDSKA_KONTON filtreras bort av `arSvensk` ändå, så att det saknas kan
+  // inte ändra en enda krona — det rapporteras, men stoppar inte. Ett SVENSKT
+  // konto som saknas ändrar utbetalningen och stoppar körningen. Utan den
+  // skillnaden höll fem utlandskonton (NYC Grill, SNarklös FI, Norge,
+  // Finland DK, Snark mexico) rapporten gisslan i tre dygn för ingenting.
   const kandaKonton = JSON.parse(readFileSync(`${ROT}/commission/kanda-konton.json`, 'utf8')).konton;
   const nadda = new Set(konton.map((k) => String(k.id)));
-  const saknadeKonton = kandaKonton.filter((k) => !nadda.has(String(k.id)));
+  const onadda = kandaKonton.filter((k) => !nadda.has(String(k.id)));
+  const saknadeUtlandska = onadda.filter((k) => UTLANDSKA_KONTON.has(String(k.id)));
+  const saknadeKonton = onadda.filter((k) => !UTLANDSKA_KONTON.has(String(k.id)));
+  if (saknadeUtlandska.length) {
+    console.log(`⚠ Utlandskonton som inte gick att läsa: `
+      + `${saknadeUtlandska.map((k) => `${k.namn} (${k.id})`).join(', ')}.\n`
+      + `  De filtreras bort ur commission ändå (bara svenska annonser betalas),\n`
+      + `  så utbetalningen påverkas inte. Körningen fortsätter.`);
+  }
   if (saknadeKonton.length && !finns('utan-kontospärr')) {
-    do_(`Annonskonton som token:en brukar nå saknas i körningen: `
+    do_(`Annonskonton som PÅVERKAR utbetalningen saknas i körningen: `
       + `${saknadeKonton.map((k) => `${k.namn} (${k.id})`).join(', ')}.\n`
       + `  Nådde ${konton.length} av ${kandaKonton.length} kända konton.\n`
       + `  Ett konto försvinner ur me/adaccounts när appen tappat ads_read — spenden finns,\n`
