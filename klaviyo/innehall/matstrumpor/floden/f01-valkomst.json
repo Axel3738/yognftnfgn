@@ -1,0 +1,306 @@
+{
+  "id": "f01-valkomst",
+  "namn": "FLOW_lista_valkomst_v1",
+  "memo": "Kontot har inga signup-formulär med rabatt, och listan 'Email List' bär redan 2 891 profiler från Shopify-synken som aldrig fått ett mejl. Välkomstflödet ska göra en ny prenumerant till köpare utan rabattkod: förklara vad butiken är, visa bevis (riktiga recensioner) och ta bort osäkerheten kring leverans, spårning och retur innan första köpet.",
+  "trigger": {
+    "typ": "lista",
+    "lista": "Email List"
+  },
+  "filter": [
+    "samtycke",
+    "ej_kopt_sedan_start"
+  ],
+  "ateintrade": {
+    "varaktighet": null,
+    "enhet": "alltime"
+  },
+  "steg": [
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f01-valkomst-e1",
+        "namn": "FLOW_prenumerant_E1_M_ser-ut-som-sushi-ar-strumpor_v1",
+        "memo": "Nya prenumeranter vet inte vad butiken faktiskt säljer förrän de öppnar det här mejlet. Hypotes: att förklara konceptet rakt ut (strumpor förpackade som mat) och visa de mest köpta sorterna får fler att handla än att tiga och hoppas de fattar av en produktbild i flödet.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "klaviyo/innehall/matstrumpor/BRIEFER.md:303-306",
+          "lardom": null,
+          "avatar": "nyanmäld prenumerant utan känd köphistorik",
+          "begar": "njutning",
+          "awareness": "solution",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "Valkomst",
+          "kod": "M"
+        },
+        "amnesrader": [
+          {
+            "text": "Det här är inte sushi",
+            "begar": "nyfikenhet på vad som är i lådan"
+          },
+          {
+            "text": "Strumpor som ser ut som mat",
+            "begar": "veta vad butiken faktiskt säljer"
+          },
+          {
+            "text": "En present som får folk att skratta",
+            "begar": "ge en present som får en reaktion"
+          }
+        ],
+        "forhandstext": "Fem par strumpor, ätpinnar och lite skratt.",
+        "block": [
+          {
+            "typ": "hero",
+            "rubrik": "Det ser ut som sushi",
+            "text": "Men det är strumpor. Vi säljer dem förpackade som sushi, pizza, hamburgare och donuts, så presenten ser ut som mat tills lådan öppnas.",
+            "bild": "produkt:sushi-strumpor"
+          },
+          {
+            "typ": "produktrad",
+            "rubrik": "Mest köpt just nu",
+            "handles": [
+              "sushi-strumpor",
+              "donut-strumpor",
+              "pizza-strumpor"
+            ]
+          },
+          {
+            "typ": "fakta"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Det här är inte sushi",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Strumpor som ser ut som mat",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "En present som får folk att skratta",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Fem par strumpor, ätpinnar och lite skratt.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Det ser ut som sushi",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Mest köpt just nu",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 1
+      }
+    },
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 2
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f01-valkomst-e2",
+        "namn": "FLOW_prenumerant_E2_SP_det-har-skrev-kunderna_v1",
+        "memo": "Åtta riktiga recensioner finns men har aldrig visats för en prenumerant som inte redan är inne på produktsidan. Hypotes: verifierade kundord, ordagrant, gör en mottagare som tycker produkten är udda tryggare att handla än produktbeskrivning ensam.",
+        "taggar": {
+          "typ": "I",
+          "kalla": "egen-data",
+          "kalla_ref": "klaviyo/innehall/matstrumpor/BRIEFER.md:307-308",
+          "lardom": null,
+          "avatar": "nyanmäld prenumerant utan känd köphistorik",
+          "begar": "trygghet",
+          "awareness": "solution",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "Valkomst",
+          "kod": "SP"
+        },
+        "amnesrader": [
+          {
+            "text": "Det här skrev kunderna",
+            "begar": "se vad andra kunder tyckte"
+          },
+          {
+            "text": "Recensionerna, ordagrant",
+            "begar": "veta att recensionerna är riktiga"
+          },
+          {
+            "text": "Tre andra sorter att ge bort",
+            "begar": "hitta fler presenter att ge"
+          }
+        ],
+        "forhandstext": "Åtta recensioner, snitt 4,5. Ingen är skriven av oss.",
+        "block": [
+          {
+            "typ": "citat",
+            "handle": "sushi-strumpor",
+            "antal": 2
+          },
+          {
+            "typ": "produkt",
+            "handle": "sushi-strumpor"
+          },
+          {
+            "typ": "produktrad",
+            "rubrik": "Andra sorter att ge bort",
+            "handles": [
+              "pizza-strumpor",
+              "hamburger-strumpor",
+              "donut-strumpor"
+            ]
+          },
+          {
+            "typ": "fakta"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Det här skrev kunderna",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Recensionerna, ordagrant",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Tre andra sorter att ge bort",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Åtta recensioner, snitt 4,5. Ingen är skriven av oss.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Andra sorter att ge bort",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 1
+      }
+    },
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 3
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f01-valkomst-e3",
+        "namn": "FLOW_prenumerant_E3_M_sa-funkar-det-nar-du-handlar_v1",
+        "memo": "Innan första köpet vet mottagaren inget om leverans, spårning eller retur, och det är precis den osäkerheten som stoppar ett första köp hos en okänd butik. Hypotes: att svara på det rakt ut, utan att nämna leveranstid i dagar (spårningssidan visar den), sänker tröskeln till första köpet.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "klaviyo/innehall/matstrumpor/BRIEFER.md:309-311",
+          "lardom": null,
+          "avatar": "nyanmäld prenumerant som ännu inte handlat",
+          "begar": "trygghet",
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "Valkomst",
+          "kod": "M"
+        },
+        "amnesrader": [
+          {
+            "text": "Så funkar det när du beställer",
+            "begar": "veta hela processen innan köp"
+          },
+          {
+            "text": "Paket med nummer som börjar på MS",
+            "begar": "konkret bevis på att paketet går att spåra"
+          },
+          {
+            "text": "Retur finns, om du ångrar dig",
+            "begar": "veta att man kan ångra sig"
+          }
+        ],
+        "forhandstext": "Leverans, spårning och retur, kort och tydligt.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Så funkar det när du beställer",
+            "text": "Ditt paket får ett eget nummer som börjar på MS. Du hittar det på spårningssidan, tillsammans med var paketet är på vägen.\n\nÅngrar du dig finns retur, det står i rutan här nedanför. Har du en fråga, mejla kundsupport@matstrumpor.se så får du svar."
+          },
+          {
+            "typ": "fakta"
+          },
+          {
+            "typ": "knapp",
+            "text": "Se allt vi säljer",
+            "lank": "kollektion:alla-produkter"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Så funkar det när du beställer",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Paket med nummer som börjar på MS",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Retur finns, om du ångrar dig",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Leverans, spårning och retur, kort och tydligt.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Så funkar det när du beställer",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Se allt vi säljer",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 1
+      }
+    }
+  ]
+}

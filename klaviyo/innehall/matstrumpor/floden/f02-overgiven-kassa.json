@@ -1,0 +1,273 @@
+{
+  "id": "f02-overgiven-kassa",
+  "namn": "FLOW_checkout_overgiven_v1",
+  "memo": "Shopifys egen notis om övergiven kassa stängs av när det här flödet går live (Axels klick), annars får kunden två mejl. Tre steg: en mjuk påminnelse, sedan svar på de tre vanligaste stoppen för en ovanlig produkt (storlek, ånger, support), sedan en sista påminnelse utan påtryckning.",
+  "trigger": {
+    "typ": "metrik",
+    "metrik": [
+      "Checkout Started"
+    ]
+  },
+  "filter": [
+    "samtycke",
+    "ej_kopt_sedan_start"
+  ],
+  "ateintrade": {
+    "varaktighet": 7,
+    "enhet": "day"
+  },
+  "steg": [
+    {
+      "typ": "vanta",
+      "enhet": "hours",
+      "varde": 3
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f02-overgiven-kassa-e1",
+        "namn": "FLOW_checkout_E1_M_din-varukorg-ar-kvar_v1",
+        "memo": "Flödets första steg, samma logik som en vanlig kassapåminnelse. Hypotes: en snabb, mjuk påminnelse inom timmar fångar dem som bara blev avbrutna, utan att behöva svara på någon invändning än.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "klaviyo/innehall/matstrumpor/BRIEFER.md:316",
+          "lardom": null,
+          "avatar": "kunden som lade en låda i kassan men inte betalade",
+          "begar": "slippa-krangel",
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "Kassan",
+          "kod": "M"
+        },
+        "amnesrader": [
+          {
+            "text": "Något ligger kvar i din kassa",
+            "begar": "hitta tillbaka till det man valt"
+          },
+          {
+            "text": "Du hann inte klicka klart",
+            "begar": "slutföra det man redan bestämt sig för"
+          },
+          {
+            "text": "Ingenting är borttaget",
+            "begar": "veta att inget försvunnit"
+          }
+        ],
+        "forhandstext": "Klicka dig tillbaka, allt ligger redo.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Din varukorg är kvar",
+            "text": "Allt du la i kassan ligger kvar. Inget är borttaget."
+          },
+          {
+            "typ": "dynamisk",
+            "kalla": "checkout_rader"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Något ligger kvar i din kassa",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Du hann inte klicka klart",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Ingenting är borttaget",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Klicka dig tillbaka, allt ligger redo.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Din varukorg är kvar",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 1
+      }
+    },
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 1
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f02-overgiven-kassa-e2",
+        "namn": "FLOW_checkout_E2_OB_tre-fragor-innan-du-betalar_v1",
+        "memo": "De tre vanligaste stoppen innan betalning för en ovanlig produkt är storlek (passar de?), ånger (sitter jag fast?) och support (finns det någon?). Hypotes: att svara på alla tre i samma mejl, dagen efter, tar bort just de invändningarna innan kunden hinner glömma varukorgen.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "klaviyo/innehall/matstrumpor/BRIEFER.md:317-319",
+          "lardom": null,
+          "avatar": "kunden som lade en låda i kassan men inte betalade",
+          "begar": "trygghet",
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "Kassan",
+          "kod": "OB"
+        },
+        "amnesrader": [
+          {
+            "text": "Tre saker du kanske undrar",
+            "begar": "få svar innan man bestämmer sig"
+          },
+          {
+            "text": "Passar de verkligen?",
+            "begar": "veta att storleken funkar"
+          },
+          {
+            "text": "Vad händer om du ångrar dig",
+            "begar": "veta att man inte sitter fast med köpet"
+          }
+        ],
+        "forhandstext": "Storlek, retur och vem du kan fråga. Kort svarat.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Tre frågor innan du betalar",
+            "text": "Passar de? Ja, onesize, alltså 36-44.\n\nÅngrar du dig? Det finns retur, det står i rutan här nedanför.\n\nVem svarar om något strular? Mejla kundsupport@matstrumpor.se, du får svar."
+          },
+          {
+            "typ": "dynamisk",
+            "kalla": "checkout_rader"
+          },
+          {
+            "typ": "fakta"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Tre saker du kanske undrar",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Passar de verkligen?",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Vad händer om du ångrar dig",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Storlek, retur och vem du kan fråga. Kort svarat.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Tre frågor innan du betalar",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 1
+      }
+    },
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 2
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f02-overgiven-kassa-e3",
+        "namn": "FLOW_checkout_E3_M_sista-paminnelsen_v1",
+        "memo": "Sista steget i flödet, ingen ny invändning, bara en sista påminnelse utan påtryckning. Hypotes: att säga rakt ut att det är sista mejlet, utan nedräkning eller att korgen töms, känns ärligt snarare än pressande och fångar dem som bara väntat på ett sista nudge.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "klaviyo/innehall/matstrumpor/BRIEFER.md:320-321",
+          "lardom": null,
+          "avatar": "kunden som lade en låda i kassan men inte betalade",
+          "begar": "kontroll",
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "Kassan",
+          "kod": "M"
+        },
+        "amnesrader": [
+          {
+            "text": "Sista påminnelsen",
+            "begar": "veta att detta är sista mejlet om kassan"
+          },
+          {
+            "text": "Vi hör inte av oss igen om den här",
+            "begar": "slippa fler påminnelser man inte bett om"
+          },
+          {
+            "text": "Allt ligger fortfarande kvar",
+            "begar": "veta att inget försvunnit innan man bestämmer sig"
+          }
+        ],
+        "forhandstext": "Efter det här mejlar vi inte om kassan igen.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Sista påminnelsen",
+            "text": "Sista påminnelsen om det här. Vi mejlar inte om den här kassan igen.\n\nVill du handla klart, allt ligger kvar precis där du la det."
+          },
+          {
+            "typ": "dynamisk",
+            "kalla": "checkout_rader"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Sista påminnelsen",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Vi hör inte av oss igen om den här",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Allt ligger fortfarande kvar",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Efter det här mejlar vi inte om kassan igen.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 1
+      }
+    }
+  ]
+}
