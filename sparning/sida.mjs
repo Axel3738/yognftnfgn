@@ -499,6 +499,7 @@ function starta() {
   // Kunden kommer från mejlet med ?nummer=YT…. Numret läses också ur
   // #-delen (#nummer=YT… eller bara #YT…) — en del mejlklienter och
   // omdirigeringar tappar frågesträngen men behåller ankaret.
+  var kodad = false;
   function nummerUrAdressen() {
     // decodeURIComponent KASTAR på trasig procentkodning ("?nummer=YT1%").
     // En mejlklient eller en omdirigering kan kapa adressen mitt i, och ett
@@ -510,6 +511,13 @@ function starta() {
       if (m) return avkoda(m[1]);
       return '';
     };
+    // ?k= är paketnumret base64-kodat. Klaviyos mejl kan inte räkna fram
+    // bävernumret (mallspråket saknar sha256, mätt 2026-09-25) men kan koda
+    // fraktbolagets nummer, så länken bär inte YT-numret i klartext.
+    var kod = /(?:^|[?&#])k=([^&#]+)/.exec(String(location.search || '') + String(location.hash || ''));
+    if (kod) {
+      try { var avk = atob(avkoda(kod[1]).replace(/-/g, '+').replace(/_/g, '/')); if (avk) { kodad = true; return avk; } } catch (e) {}
+    }
     var q = ur(location.search) || ur(location.hash);
     if (q) return q;
     var h = String(location.hash || '').replace(/^#/, '');
@@ -523,7 +531,7 @@ function starta() {
   function skrivAdress(n) {
     try {
       var delar = String(location.search || '').replace(/^\?/, '').split('&').filter(function (d) {
-        return d && !/^(?:nummer|tracking|n)=/i.test(d);
+        return d && !/^(?:nummer|tracking|n|k)=/i.test(d);
       });
       delar.push('nummer=' + encodeURIComponent(n));
       history.replaceState(null, '', location.pathname + '?' + delar.join('&'));
@@ -916,7 +924,9 @@ function starta() {
       if (!p) { visaSok(n, true, ''); return; }
       visaPaket(p);
     } catch (e) { visaSok(n, true, ''); return; }
-    if (!franAdressen) skrivAdress(n);
+    // Kom kunden via en kodad länk skrivs bävernumret i adressen, aldrig
+    // fraktbolagets nummer.
+    if (!franAdressen) skrivAdress(n); else if (kodad) skrivAdress(p.baver || n);
     try { rot.scrollIntoView({ block: 'start' }); } catch (e) {}
   }
 
