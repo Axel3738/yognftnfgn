@@ -228,6 +228,7 @@ Filternycklarna översätts av `segment.mjs` till Klaviyos villkor:
 | `ej_checkout_sedan_start` | `profile-metric` kassametriken, count `equals 0`, `flow-start` |
 | `ej_i_flodet_7d` / `_14d` / `_30d` | `profile-not-in-flow`, `in-the-last` N `day` |
 | `kopt_minst_en_gang` | Placed Order count `>= 1`, `alltime` |
+| `kundundantag` | `profile-marketing-consent`, `can_receive_marketing: true`, `subscription: "any"`: alla som kan ta emot reklam, aldrig avregistrerade. Ersätter `samtycke` BARA i flöden som triggas av Placed Order (MFL 19 § andra stycket, Axels beslut B 2026-09-25). Aldrig ihop med `samtycke`, aldrig i en kampanj. |
 
 Flödena är linjära (vänta → mejl → vänta → mejl). Flödets filter prövas före varje
 steg, så "har köpt sedan start" stoppar resten av flödet utan en split.
@@ -307,3 +308,6 @@ morgon (metrikerna 05:31 UTC), så Shopify-historiken kan fortfarande synkas.
 13. ⚠️ Kontot saknar postadress (`organization.full_address` blir tom i sidfoten, MFL 20 §) och
     standardavsändare. Mejlen bär `kundsupport@baverbutiken.se` själva; adressen fylls i under
     Settings → Brand (Axels klick) innan något skickas.
+
+
+⚠️ **Klaviyos API kan inte ändra ett befintligt flödes filter** (mätt 2026-09-25: `PATCH /api/flows/<id>` svarar 400 "'definition' is not a valid field" och kräver `status`). Ändrat filter = ny version av flödet (nytt namn), den gamla ligger kvar som utkast.

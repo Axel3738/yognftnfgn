@@ -1,7 +1,7 @@
 {
   "id": "f05-vinback",
-  "namn": "FLOW_order_vinback_v2",
-  "memo": "Omgjort 2026-09-24 (BRIEFER.md → F05). Väntan flyttad 75 → 120 dagar: 47 tvåorderskunder köpte igen efter mer än 120 dagar (klaviyo/evolve/ATERKOP-ANALYS.md). Bävertratten (bavertratt-tanka-utan-spill) är den vanligaste andra produkten efter en lång paus (14 av 69) och står först i E1:s produktrad. Inget erbjudande i något av mejlen: TACKIGEN gäller 7 dagar från en order, och den här kunden har ingen ny.",
+  "namn": "FLOW_order_vinback_v3",
+  "memo": "Omgjort 2026-09-24 (BRIEFER.md → F05). Väntan flyttad 75 → 120 dagar: 47 tvåorderskunder köpte igen efter mer än 120 dagar (klaviyo/evolve/ATERKOP-ANALYS.md). Bävertratten (bavertratt-tanka-utan-spill) är den vanligaste andra produkten efter en lång paus (14 av 69) och står först i E1:s produktrad. Inget erbjudande i något av mejlen: TACKIGEN gäller 7 dagar från en order, och den här kunden har ingen ny. Beslut B 2026-09-25: filtret är \"kundundantag\" (alla köpare som inte tackat nej), inte bara de som sagt ja — MFL 19 § andra stycket. Ny version eftersom Klaviyos API inte kan ändra ett befintligt flödes filter.",
   "trigger": {
     "typ": "metrik",
     "metrik": [
@@ -9,7 +9,7 @@
     ]
   },
   "filter": [
-    "samtycke",
+    "kundundantag",
     "ej_kopt_sedan_start"
   ],
   "ateintrade": {

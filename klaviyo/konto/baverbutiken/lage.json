@@ -1,6 +1,6 @@
 {
   "brand": "baverbutiken",
-  "hamtad": "2026-09-25T05:49:47.991Z",
+  "hamtad": "2026-09-25T06:39:52.729Z",
   "konto": {
     "id": "QZ4jLG",
     "public_api_key": "QZ4jLG",
@@ -86,6 +86,11 @@
         "integration": "Klaviyo"
       },
       {
+        "id": "UeFzhe",
+        "namn": "Manually Suppressed from Email Marketing",
+        "integration": "Klaviyo"
+      },
+      {
         "id": "V6gSUn",
         "namn": "Viewed Product",
         "integration": "API"
@@ -104,6 +109,11 @@
         "id": "WDqfr3",
         "namn": "Bounced Email",
         "integration": "Klaviyo"
+      },
+      {
+        "id": "WLZZVG",
+        "namn": "Viewed Collection",
+        "integration": "Shopify"
       },
       {
         "id": "WN5w5t",
@@ -128,6 +138,11 @@
       {
         "id": "XaR3Au",
         "namn": "Fulfilled Partial Order",
+        "integration": "Shopify"
+      },
+      {
+        "id": "Xgs3U7",
+        "namn": "Delivered Shipment",
         "integration": "Shopify"
       },
       {
@@ -562,11 +577,11 @@
     "Metriken \"Viewed Product\" finns 2 gånger i kontot (V6gSUn från API, WXk2Lf från Shopify). Motorn väljer inte själv — säg vilken som gäller."
   ],
   "senaste_uppladdning": {
-    "tid": "2026-09-25T05:49:44.483Z",
-    "bara": null,
-    "skapade": 4,
+    "tid": "2026-09-25T06:41:30.109Z",
+    "bara": "floden",
+    "skapade": 3,
     "uppdaterade": 0,
-    "hoppade": 60,
+    "hoppade": 3,
     "stopp": [
       "flode Webbhistorik: Metriken \"Viewed Product\" finns 2 gånger i kontot (V6gSUn från API, WXk2Lf från Shopify). Motorn väljer inte själv — säg vilken som gäller."
     ]

@@ -16,7 +16,7 @@ Id:n står i `konto/baverbutiken/uppladdat.jsonl`.
 | Del | Status |
 |---|---|
 | Kampanjer K01–K14 (29 sep–1 dec) | ✅ Draft i Klaviyo. Ämnesrad B och C ska läggas in som A/B-test för hand. |
-| Flöden | ✅ F01 Välkomst, F02 Övergiven kassa, F04 efter köp, F05 vinback, F06 sunset, F07 motorhölje → båtmotorskydd: draft. ❌ **F03 Webbhistorik inte uppladdat**: `Viewed Product` finns två gånger i kontot (Klaviyos onsite + Shopify), båda med 0 händelser; motorn väljer inte själv. |
+| Flöden | ✅ F01 Välkomst (XY5QXa), F02 Övergiven kassa (XgrxZ9), F06 sunset (TTsxRQ): draft, bara de som sagt ja. **Köparflödena med kundundantaget (beslut B 2026-09-25, alla köpare som inte tackat nej):** F04 efter köp `FLOW_order_efterkop_v3` (TyH2jg), F05 vinback `_v3` (VgvDum), F07 motorhölje → båtmotorskydd `_v2` (QXZzvn): draft. De gamla versionerna (YgzScd, XyVzec, WLDZUM, bara samtycke) ligger kvar som utkast och ska aldrig slås på. ❌ **F03 Webbhistorik inte uppladdat**: `Viewed Product` finns två gånger i kontot (Klaviyos onsite + Shopify), båda med 0 händelser; motorn väljer inte själv. |
 | Segment | ✅ 14 st. `SEG_samtycke` 1 552 profiler, `SEG_uppvarmning_steg1` 216 (mätt 2026-09-25, synken pågår troligen, se EPOST-STRATEGI §4). |
 | Motorn | ✅ Körd mot riktiga kontot. Tre gissningar rättade: `Items` (inte `ItemNames`) på Placed Order, `Name` (inte `ProductName`) på Ordered Product, väntan när Klaviyo bearbetar 5 segment. 96 tester gröna. Se ARKITEKTUR → "mätt 2026-09-25". |
 | Kontot | ⚠️ Saknar postadress (sidfoten blir utan adress, MFL 20 §) och standardavsändare. Settings → Brand. |

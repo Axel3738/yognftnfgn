@@ -175,6 +175,21 @@ test('flöde utan samtycke i filtret stoppas', async () => {
   assert.ok(r.stopp.some((s) => s.typ === 'flode' && s.kod === 'SAMTYCKE_SAKNAS'));
 });
 
+test('kundundantag: bara i ett Placed Order-flöde och aldrig ihop med samtycke', async () => {
+  for (const [trigger, filter, ok] of [
+    [{ typ: 'metrik', metrik: ['Placed Order'] }, ['kundundantag', 'ej_kopt_sedan_start'], true],
+    [{ typ: 'metrik', metrik: ['Started Checkout'] }, ['kundundantag'], false],
+    [{ typ: 'lista', lista: 'LISTA_nyhetsbrev' }, ['kundundantag'], false],
+    [{ typ: 'metrik', metrik: ['Placed Order'] }, ['kundundantag', 'samtycke'], false],
+  ]) {
+    const m = MANIFEST();
+    m.floden[0].trigger = trigger;
+    m.floden[0].filter = filter;
+    const r = await laddaUpp({ brand: BRAND, manifest: m, klient: null, kontoDir: tmp(), nu: NU });
+    assert.equal(r.stopp.some((s) => s.typ === 'flode' && s.kod === 'UNDANTAG_FEL'), !ok, JSON.stringify({ trigger, filter }));
+  }
+});
+
 test('fel public_api_key stoppar allt innan något skrivs', async () => {
   const { k, f } = ny({ publik: 'XXXXXX' });
   await assert.rejects(laddaUpp({ brand: BRAND, manifest: MANIFEST(), klient: k, skarpt: true, kontoDir: tmp(), nu: NU }), (e) => e.kod === 'FEL_KONTO');

@@ -52,6 +52,24 @@ export function samtyckeVillkor() {
   };
 }
 
+/**
+ * Kundundantaget (MFL 19 § andra stycket, Axels beslut B 2026-09-25): den som KÖPT
+ * får mejl om butikens egna liknande produkter utan uttryckligt ja, så länge hen
+ * inte tackat nej. "any" släpper in de som aldrig prenumererat men aldrig de
+ * avregistrerade eller spärrade (can_receive_marketing: true). Bara i flöden som
+ * triggas av ett köp — aldrig i en kampanj (ladda-upp.mjs stoppar det).
+ */
+export function kundundantagVillkor() {
+  return {
+    type: 'profile-marketing-consent',
+    consent: {
+      channel: 'email',
+      can_receive_marketing: true,
+      consent_status: { subscription: 'any', filters: null },
+    },
+  };
+}
+
 const OPERATOR = { '>=': 'greater-than-or-equal', '=': 'equals', '>': 'greater-than', '<': 'less-than', '<=': 'less-than-or-equal', '!=': 'not-equals' };
 
 /** tid: 'alltid' | 'flodesstart' | { dagar: N } */
@@ -186,18 +204,19 @@ export function segmentPaNamn(namn) {
 export function filterVillkor(nyckel, metrikIds) {
   switch (nyckel) {
     case 'samtycke': return samtyckeVillkor();
+    case 'kundundantag': return kundundantagVillkor();
     case 'ej_kopt_sedan_start': return metrikVillkor(metrikIds, 'placed_order', '=', 0, 'flodesstart');
     case 'ej_checkout_sedan_start': return metrikVillkor(metrikIds, 'started_checkout', '=', 0, 'flodesstart');
     case 'kopt_minst_en_gang': return metrikVillkor(metrikIds, 'placed_order', '>=', 1, 'alltid');
     default: {
       const m = /^ej_i_flodet_(\d+)d$/.exec(nyckel);
       if (m) return { type: 'profile-not-in-flow', timeframe_filter: { type: 'date', operator: 'in-the-last', unit: 'day', quantity: Number(m[1]) } };
-      throw new Error(`Okänd filternyckel "${nyckel}". Kända: samtycke, ej_kopt_sedan_start, ej_checkout_sedan_start, ej_i_flodet_7d/_14d/_30d, kopt_minst_en_gang.`);
+      throw new Error(`Okänd filternyckel "${nyckel}". Kända: samtycke, kundundantag, ej_kopt_sedan_start, ej_checkout_sedan_start, ej_i_flodet_7d/_14d/_30d, kopt_minst_en_gang.`);
     }
   }
 }
 
-export const FILTERNYCKLAR = ['samtycke', 'ej_kopt_sedan_start', 'ej_checkout_sedan_start', 'ej_i_flodet_7d', 'ej_i_flodet_14d', 'ej_i_flodet_30d', 'kopt_minst_en_gang'];
+export const FILTERNYCKLAR = ['samtycke', 'kundundantag', 'ej_kopt_sedan_start', 'ej_checkout_sedan_start', 'ej_i_flodet_7d', 'ej_i_flodet_14d', 'ej_i_flodet_30d', 'kopt_minst_en_gang'];
 
 /** Flödets profile_filter ur filternycklarna, eller null om listan är tom. */
 export function profilFilter(nycklar, metrikIds) {
