@@ -47,11 +47,11 @@ support address is on **Store facts**.
 
 ## 3. Suggested replies
 
-Some lines carry a suggested reply: the text to paste is in `backticks`, in the
-customer's language, and **means:** tells you what it says in English. Every fact in
-it comes from the product page. Paste it as written — do not add or change facts.
-No suggestion? Answer only if the answer is on the product page; otherwise leave it
-for the next report.
+We are training the reply drafts right now. The owner approves every draft
+before it is used, so the report only says how many drafts are waiting. Do not
+reply to those comments yourself until you are told a reply is approved.
+Buying questions without a draft: answer only if the answer is on the product
+page; otherwise leave it for the next report.
 
 ---
 

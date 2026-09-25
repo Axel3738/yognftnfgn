@@ -62,5 +62,5 @@
     "_om": "OPS-brand utan rad i servrar letas upp på brandnamnet (valjButiksServer: 'CaraShell' → 'CaraShell — OPS'). Hittas ingen ENTYDIG server blir det ett fel (exit 4) — aldrig en annan verksamhets server."
   },
   "fonster": { "forsta_korning_timmar": 72, "max_dagar": 7, "overlapp_timmar": 3, "annonser_spend_dagar": 3, "trend_dagar": 14, "minne_dagar": 21 },
-  "rapport": { "max_allvarliga": 25, "max_fragor": 15, "max_citat_per_invandning": 3, "max_svarsforslag": 6, "resonans_likes": 3 }
+  "rapport": { "max_allvarliga": 25, "max_fragor": 15, "max_citat_per_invandning": 3, "max_svarsforslag": 30, "resonans_likes": 3 }
 }

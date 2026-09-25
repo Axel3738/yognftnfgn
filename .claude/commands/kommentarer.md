@@ -142,12 +142,15 @@ creative-loopen. En lead är kundens egna ord som pekar på en brief:
   finns. En tanke utan kundens ord är en gissning — den hör hemma i `/koncept`.
 - Hellre tre riktiga leads än tio. Inga leads en lugn dag är ett giltigt svar.
 
-**c) Förslag på svar (`svar`)** — max 6, bara för obesvarade 🔵 köpfrågor och
-🔴 kundärenden (ej levererat, missnöjd köpare), och bara när svaret finns på
-produktsidan. ⛔ **Aldrig svar på invändningar, skepsis, "skräp", troll, beröm,
-bluff från förbipasserande eller spam** (Axels order 2026-09-24: "jag vill inte
-att du ska svara allt möjligt på alla") — invändningarna besvaras i nästa
-annons, inte i kommentarsfältet. Skriptet stoppar ett svar på något annat.
+**c) Förslag på svar (`svar`)** — på **varje** ny kommentar utom tomma, bara
+taggade vänner och spam (tak 30 per körning, `konfig.json` →
+`rapport.max_svarsforslag`). Axels beslut 2026-09-25: *"ta bort den jävla
+dumma regeln … jag vill kunna svara på alla frågor i framtiden"* — den gamla
+spärren (bara köpfrågor och kundärenden, 2026-09-24) är borttagen i
+`samla.mjs` (`SVARBARA`). Invändningar, skeptiker, skämt och beröm får alltså
+förslag också. Kan ett svar inte skrivas säkert enligt `svarsregler.md`:
+inget förslag, frågan går till leverantören (d). Vi är i **träningsfasen**:
+förslagen läggs på granskningssidan (e) och Axel dömer dem i sin takt.
 1. Hämta produktens fakta: `NODE_USE_ENV_PROXY=1 node -e "fetch('<länk-utan-frågeparametrar>.json').then(r=>r.json()).then(j=>console.log(JSON.stringify({titel:j.product.title,pris:j.product.variants.map(v=>[v.title,v.price]),text:j.product.body_html.replace(/<[^>]+>/g,' ').slice(0,4000)})))"`
    (länken står i raden som `lank`; `/pages/`-länkar har ingen .json — hoppa).
 2. Svaren skrivs av en subagent: Agent-verktyget med `model: "sonnet"` (CLAUDE.md
@@ -169,12 +172,26 @@ annons, inte i kommentarsfältet. Skriptet stoppar ett svar på något annat.
 
 **d) Frågor till leverantören** — varje köpfråga eller produktklagomål som
 varken produktsidan eller `produktfakta.md` svarar på blir en rad i
-rapportens svar till Axel under rubriken "Frågor till leverantören" (svenska,
-en fråga per rad, produkten först). Axel skickar dem på WhatsApp och svaret
+rapportens svar till Axel under rubriken "Frågor till leverantören" — **alltid
+på engelska** (Axels order 2026-09-25; leverantören läser engelska), en fråga
+per rad, produkten först, i ett kodblock så att Axel kopierar allt på en gång. Axel skickar dem på WhatsApp och svaret
 förs in i `produktfakta.md`. Upprepa inte en fråga som redan står som okänd
 där — skriv den bara om den fortfarande är obesvarad, med antal kommentarer.
 
-Rutinen svarar aldrig själv — VA:n klistrar in från sidan.
+**e) Granskningssidan** (träningen, Axels beslut 2026-09-25):
+https://claude.ai/artifact/JjZm9G4vJD2MEWCMSBeZeU — samlingen `kommentarer`
+(en dok per kommentars-id: `ordning`, `verksamhet`, `marknad`, `kanal`,
+`annons`, `text`, `likes`, `permalink`, `svar`, `en`, `fakta`, `saknar_fakta`,
+`rekommendation`, `varfor`, `version: 1`) och `beslut` (Axels Ja/Nej/Ändra).
+Efter steg 3 (inte vid `--torr`): lägg dagens svarsförslag som nya dokument
+med ArtifactData `batch` (`op: set`), `ordning` = högsta befintliga + 1 och
+uppåt. Läs först `beslut`: varje `andra` sedan förra körningen → skriv om
+svaret (sonnet, samma regler) och `update` dokumentet med `version` + 1; ny
+fakta ur Axels text förs in i `produktfakta.md`, ny stilregel i
+`svarsregler.md`. Skriv i svaret till Axel hur många som väntar på honom.
+
+Rutinen svarar aldrig själv — ingenting publiceras på Facebook eller
+Instagram förrän Axel uttryckligen säger till.
 
 ### 3. Rapportera
 

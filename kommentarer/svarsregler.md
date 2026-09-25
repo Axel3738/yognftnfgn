@@ -18,8 +18,9 @@ skriver svaren får båda filerna.
    svar (#11: *"du behöver inte svara på de här frågorna om du inte kan
    svaret"*). Frågan hamnar i stället på listan till leverantören (regel 3).
 3. **Varje okänd produktfråga blir en fråga till leverantören.** Varje
-   körning skriver en lista "Frågor till leverantören" i rapporten. Axel
-   skickar den vidare på WhatsApp. Svaret förs in i `produktfakta.md`.
+   körning skriver en lista "Frågor till leverantören" i rapporten, **alltid
+   på engelska** (Axel 2026-09-25), i ett kodblock som går att kopiera rakt av.
+   Axel skickar den vidare på WhatsApp. Svaret förs in i `produktfakta.md`.
 4. **Produktproblem från köpare går till leverantören.** En köpare som
    beskriver ett fel på varan (#31: banden och plastkrokarna) svaras vänligt
    i kommentaren, och felet står i rapporten under frågorna till
@@ -36,6 +37,10 @@ skriver svaren får båda filerna.
    Ja (#12, #33, #35, #44, #46, #47, #48).
 9. **Skeptiker utan köp: fråga vad som fick dem att tveka.** "Vad är det som
    gjort dig skeptisk? Hör gärna av dig om något är fel" fick Ja (#1, #3, #42).
-10. **Nej betydde "inget bra svar finns"**, inte "svara aldrig på sådana":
+10. **Svara på allt som går att svara på** (Axel 2026-09-25: *"jag vill
+    kunna svara på alla frågor i framtiden … jävlar vad det kommer boosta
+    adsen"*). Invändningar, skeptiker, skämt och beröm får förslag.
+    Undantag: tomma kommentarer, bara taggade vänner, spam.
+11. **Nej betydde "inget bra svar finns"**, inte "svara aldrig på sådana":
     de fem Nej (#13, #36, #37, #40, #41) var alla svar som antingen var
     tomma ("vi vet inte") eller argumenterade emot kunden.

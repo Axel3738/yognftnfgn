@@ -28,8 +28,10 @@ Läses av `/kommentarer` innan svaren skrivs.
 
 ## Sotarset / Feiesett (`Sotarset`)
 
-- **Fungerar i fyrkantiga skorstenar/rör.** Axel 2026-09-25: *"det är ju
-  klart att den funkar till fyrkantiga skorstenar också"*.
+- **Den runda borsten fungerar i fyrkantiga skorstenar/rör.** Det finns
+  ingen fyrkantig borste — borsten snurrar och är därför rund. Axel
+  2026-09-25: *"det är klart att den runda borsten funkar till fyrkantiga
+  rör. Det är ju bara att köra"*. Nämn aldrig en "fyrkantig borste".
 - **150 mm rör:** borsthuvudet är 100 mm (produktsidan). Om det räcker för
   150 mm är okänt — fråga leverantören.
 

@@ -137,8 +137,16 @@ export function sammanstall({ nya, trend, annonser = [], konfig }) {
   return ut;
 }
 
-/** Får en kommentar ett svarsförslag? Köpfråga eller kundärende — inget annat. Ren. */
-export const SVARBARA = (r) => r.niva === NIVA.FRAGA || (r.niva === NIVA.ALLVARLIGT && ['ej levererat', 'missnöjd köpare'].includes(r.kategori));
+/**
+ * Får en kommentar ett svarsförslag? Allt utom tomma kommentarer, bara taggade
+ * vänner och spam (spam döljs av VA:n, besvaras aldrig). Ren.
+ * Axels beslut 2026-09-25 ("ta bort den jävla dumma regeln … jag vill kunna
+ * svara på alla frågor i framtiden"): den gamla spärren (bara köpfrågor och
+ * kundärenden, 2026-09-24) togs bort efter att han sagt Ja till 12 svar på
+ * invändningar i testgranskningen. Hur svaren ska låta: kommentarer/svarsregler.md.
+ */
+export const EJ_SVARBARA = ['tom', 'tagg/vän', 'spam/länk'];
+export const SVARBARA = (r) => !EJ_SVARBARA.includes(r.kategori);
 
 /**
  * Kontrollerar sessionens dom innan den skrivs någonstans. Ren.
@@ -175,7 +183,7 @@ export function kontrolleraDom(dom, { kandaIds, nyaIds, verkPerId = new Map(), h
     // Svar föreslås BARA på en köpfråga, eller på en köpare som inte fått eller är
     // missnöjd med sin vara — aldrig på en invändning, skepsis, troll, beröm eller spam.
     const rad = raderPerId.get(String(s.id));
-    if (rad && !SVARBARA(rad)) { fel.push(`svar ${i + 1}: ${s.id} är ${rad.niva}/${rad.kategori} — svar föreslås bara på köpfrågor och kundärenden (ej levererat, missnöjd köpare)`); continue; }
+    if (rad && !SVARBARA(rad)) { fel.push(`svar ${i + 1}: ${s.id} är ${rad.niva}/${rad.kategori} — tomma kommentarer, taggade vänner och spam får inget svarsförslag`); continue; }
     if (svar.length >= maxSvar) { fel.push(`svar ${i + 1}: fler än ${maxSvar} svarsförslag — välj de viktigaste`); continue; }
     svar.push({ ...s, id: String(s.id) });
   }

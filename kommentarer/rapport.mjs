@@ -169,14 +169,13 @@ export function rapportEn(v, { datum, dom = null, va = [] } = {}) {
     ut.push('🟢 **New leads for the next briefs**');
     for (const l of leads) ut.push(`• ${l.typ_en ?? l.typ} · \`${l.prefix ?? ''}\` — ${l.lead_en}`);
   }
+  // Träningsfasen (Axels beslut 2026-09-25): förslagen granskas av Axel på
+  // granskningssidan först. Discord får bara antalet — aldrig texten — så att
+  // ingen klistrar in ett svar som ägaren inte godkänt.
   const svar = (dom?.svar ?? []).filter((x) => (v.rader ?? []).some((r) => r.id === x.id));
   if (svar.length) {
     ut.push('');
-    ut.push('✍️ **Suggested replies** — paste as-is from the page (the routine never replies itself)');
-    for (const x of svar) {
-      const r = (v.rader ?? []).find((y) => y.id === x.id);
-      ut.push(`• \`${r?.annons ?? ''}\` → \`${citat(x.text, 400)}\` (means: ${citat(x.en, 300)})${r ? lank(r) : ''}`);
-    }
+    ut.push(`✍️ **${svar.length} suggested repl${svar.length === 1 ? 'y is' : 'ies are'} waiting for the owner's approval** — do not reply to those comments yet.`);
   }
   return ut.join('\n');
 }
