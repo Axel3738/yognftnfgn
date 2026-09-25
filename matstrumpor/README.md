@@ -77,3 +77,20 @@ linjerna får domen `BEROR_PA_MOMS` och rörs inte förrän
 
 Produktminnet ligger i `products/matstrumpor/` (`dna.md`, `batch-log.md`,
 `lardomar.md`) — som alla andra produkter i repot.
+
+## Omslagsbild utan Shopify-skrivning (mätt 2026-09-25)
+
+Meta kräver en omslagsbild på varje videoannons. `thumbnails.mjs` lägger den på
+butikens Shopify-CDN, men i en miljö där Matstrumpors nycklar heter
+`SHOPIFY_*_MATSTRUMPOR` hör de till appen "Claude koppling", som saknar
+`write_files` — `fileCreate` svarar ACCESS_DENIED. Och `META_ACCESS_TOKEN` får
+bara läsa kontot (`adimages` svarar "Ingen skrivbehörighet").
+
+Vägen som fungerade: ladda upp videon via Adsmanager-MCP:n, vänta tills den är
+`ready`, läs `GET /<video-id>?fields=thumbnails{uri,is_preferred}` med token
+(1080×1920, Metas egna bildrutor) och skicka den föredragna `uri` som
+`image_url` till `ads_create_creative`. Titta på bilderna innan — de ska visa
+produkten, inte en svart ruta. Inget hamnar i någon annan butik.
+
+Obs: `ads_create_ad` skapar annonsen PAUSED; slå på den med
+`ads_activate_entity` (bara annonser körningen själv skapat) och läs tillbaka.
