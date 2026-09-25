@@ -90,3 +90,11 @@ test('platshållar-id:n räcker för att bygga alla segment torrt', () => {
   const ids = platshallarIds();
   for (const s of SEGMENT) assert.ok(s.bygg(ids));
 });
+
+test('kundundantaget: alla som kan ta emot reklam, aldrig de avregistrerade, och räknas inte som samtycke', async () => {
+  const { kundundantagVillkor } = await import('../segment.mjs');
+  assert.deepEqual(filterVillkor('kundundantag', {}), kundundantagVillkor());
+  assert.equal(kundundantagVillkor().consent.can_receive_marketing, true);
+  assert.equal(kundundantagVillkor().consent.consent_status.subscription, 'any');
+  assert.equal(harSamtycke({ condition_groups: [{ conditions: [kundundantagVillkor()] }] }), false);
+});

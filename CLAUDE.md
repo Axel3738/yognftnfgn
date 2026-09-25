@@ -842,7 +842,7 @@ det som återstår står i `klaviyo/SISTA-STEGEN.md`.
 
 - **Allt laddas upp som utkast.** Klienten vägrar send-jobs, kampanjer som skickas direkt
   och flöden med annan status än `draft` (testat). Att skicka eller slå på något är Axels beslut.
-- **Bara `subscription: "subscribed"`** får kampanjer (MFL 19–20 §). Mätt 2026-09-24:
+- **Bara `subscription: "subscribed"`** får kampanjer (MFL 19–20 §). Undantag, Axels beslut B 2026-09-25: köparflödena F04/F05/F07 (trigger Placed Order) går till alla köpare som inte tackat nej (filternyckeln `kundundantag`, MFL 19 § andra stycket) — nya versioner TyH2jg/VgvDum/QXZzvn, de gamla får aldrig slås på. Kampanjer: fortfarande bara subscribed. Mätt 2026-09-24:
   6 186 av 8 367 kunder har samtycke.
 - **Inga schemalagda rutiner** för Klaviyo förrän Axel säger till. Han kör det för hand
   först, enligt Arvids princip: flytta ett steg till VA:n när det gått rätt i tre veckor.

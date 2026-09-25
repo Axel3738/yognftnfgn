@@ -534,7 +534,14 @@ export async function laddaUpp({ brand, manifest, klient = null, skarpt = false,
   if (kor('floden')) {
     for (const fl of manifest.floden ?? []) {
       try {
-        if (!(fl.filter ?? []).includes('samtycke')) {
+        const filt = fl.filter ?? [];
+        if (filt.includes('kundundantag')) {
+          // Kundundantaget gäller bara den som köpt: triggern måste vara Placed Order och inget annat.
+          const tm = fl.trigger?.typ === 'metrik' ? [fl.trigger.metrik].flat() : [];
+          if (filt.includes('samtycke') || tm.length === 0 || tm.some((x) => x !== 'Placed Order')) {
+            throw Object.assign(new Error('"kundundantag" går bara i ett flöde som triggas av Placed Order, och aldrig tillsammans med "samtycke" (MFL 19 § andra stycket)'), { kod: 'UNDANTAG_FEL' });
+          }
+        } else if (!filt.includes('samtycke')) {
           throw Object.assign(new Error('flödets filter saknar "samtycke" — varje marknadsflöde kräver samtyckesvillkoret i profile_filter (järnregel 2)'), { kod: 'SAMTYCKE_SAKNAS' });
         }
         const f = await finns('flow', fl.namn);
