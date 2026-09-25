@@ -40,6 +40,9 @@ export function kontrolleraPaket(offer, ekonomi) {
   if (paket.test !== undefined && paket.test !== null && typeof paket.test !== 'string') {
     fel.push('offer.paket.test måste vara text (A/B-test-id) eller tom');
   }
+  if (paket.test_aktivt !== undefined && paket.test_aktivt !== null && typeof paket.test_aktivt !== 'boolean') {
+    fel.push('offer.paket.test_aktivt måste vara true eller false (utan värde är testet av)');
+  }
   const nivaer = lista(paket.nivaer);
   if (paket.nivaer !== undefined && paket.nivaer !== null && !Array.isArray(paket.nivaer)) {
     fel.push('offer.paket.nivaer måste vara en lista');

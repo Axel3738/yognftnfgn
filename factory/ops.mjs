@@ -381,7 +381,7 @@ export const STEG = [
     torrt: (ctx) => [
       ...brandRader(ctx.butik?.branding),
       'config/settings_data.json: sociala länkar tömda, brand_description ur positioneringen, app-inbäddningar = Judge.me' +
-        (text(ctx.p?.offer?.paket?.test) ? `, A/B-test "${ctx.p.offer.paket.test}"` : ''),
+        (text(ctx.p?.offer?.paket?.test) ? `, A/B-test "${ctx.p.offer.paket.test}"${ctx.p.offer.paket.test_aktivt === true ? '' : ' (avstängt: skrivs #, A för alla)'}` : ''),
       'config/settings_schema.json får gruppen OPS A/B-test (skrivs först, eget anrop)',
     ],
     async kor(ctx) {
@@ -670,7 +670,7 @@ export const STEG = [
     torrt(ctx, pk) {
       try {
         const plan = byggPaketplan(pk.p, ctx.butik);
-        return [`nivåer ur ${plan.kalla}${plan.test ? `, A/B-test "${plan.test}"` : ''}, valuta ${plan.valuta}`, ...paketRader(plan)];
+        return [`nivåer ur ${plan.kalla}${plan.test ? `, A/B-test "${plan.test}"${pk.p?.offer?.paket?.test_aktivt === true ? '' : ' (avstängt — B byggs men visas aldrig)'}` : ''}, valuta ${plan.valuta}`, ...paketRader(plan)];
       } catch (e) {
         return [`🖐 paketplanen går inte att bygga: ${e.message}`];
       }

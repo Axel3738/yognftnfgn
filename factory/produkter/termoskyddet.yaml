@@ -148,6 +148,12 @@ offer:
   # källans nivåer för takskyddet (output/takskyddet/kalla-kaching-paket.json).
   paket:
     test: "paket"
+    # AV sedan 2026-09-24 (Axels beslut: "vi ab testar inte rabatter" — A
+    # mot B gav 152 mot 144 köp, ingen skillnad). Temat skriver "#paket":
+    # A syns i alla marknader, B-nivåerna och B-koderna står kvar dolda.
+    # Ta inte bort id:t — då renderar paketblocket noll nivåer (tema.mjs
+    # paketTest). true slår på testet igen.
+    test_aktivt: false
   # Q4-ramverket: korg-upsellen är butikens ANDRA produkt, och den ligger på
   # takskyddets fil (offer.bonus_produkt → termoskyddet). Temat bär EN
   # korg-upsell per butik (tema.mjs byggKorgUpsell tar första ifyllda handlet

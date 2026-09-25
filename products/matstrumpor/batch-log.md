@@ -142,6 +142,64 @@ laddas upp av `/matstrumpor` när redigerarna satt dem i `To be Reviewed`.
 
 ---
 
+## 2026-09-24 — A/B-testet `sortval`, avläsning 2 (Axels fråga)
+
+**Testet** (inte en annonsbatch — ett test i butikens tema): paketkorten på
+produktsidan. **A** = som förut, en sort per paket (`SUSHI-K1F1` …). **B** =
+mixa och matcha, en sort-dropdown per låda (`STRUMPOR-K1F1-P*` /
+`STRUMPOR-K2F2-P*`). 50/50 per besökare, stämpeln `AB sortval` på ordern.
+⚠️ Testet och dess verktyg finns INTE på `main`: temat är
+`Matstrumpor CRO + storleksrad 2026-09-17` (MAIN i `1r46tp-qx`, inställningen
+`ms_ab_tests` = `sortval`), och `/abtest` + `theme-matstrumpor/ab/analys.mjs`
+ligger på grenen `claude/build-shrinepro-like-theme-pfalsx`. Avläsning 1
+(2026-09-21, A 9 / B 7, för få köp) står i den grenens
+`docs/matstrumpor-batch-log.md`.
+
+**Fönster:** `#4786` 2026-09-18 07:31 UTC → `#4835` 2026-09-24 00:20 UTC,
+50 ordrar, 0 annullerade, 0 återbetalda, 0 tvingade besök. `#4788` (A) och
+`#4790`/`#4791` (B) saknar stämpel och lästes ur rabattkoden; 0 okända. Alla
+43 ordrar efter efterstämplingen (2026-09-19 20:06 UTC) har stämpel.
+Trafik (ShopifyQL, sedan 2026-09-18 i butikens dygn): 958 sessioner,
+51 ordrar, 5,3 %. Sessioner per variant mäts inte.
+
+| `analys.mjs`, oförändrat | A | B |
+|---|---|---|
+| Ordrar | 28 | 22 |
+| Intäkt | 11 311 kr | 10 413 kr |
+| Snittorder | 404 kr | 473 kr |
+
+Lyft B mot A −21,4 % (p = 0,48). Snittorder +69 kr för B (p = 0,106).
+**Beslut: för få köp — 22 av 25 per variant. Ingen dom.** Bara sushiköp
+(45 ordrar): A 26 / B 19, p = 0,37 — samma bild.
+
+**Värt att veta till nästa avläsning:**
+- B:s högre snittorder är fyrpacken: 3 `STRUMPOR-K2F2-P4` i B, 0 fyrpack i A.
+- **Mixningen används nästan inte:** 1 av 22 B-ordrar blandade sorter i
+  paketet (`#4789`, 1 donut + 1 sushi).
+- ⚠️ **B visar inget paketerbjudande alls på pizza-, hamburgare- och
+  donutsidan.** Mix-nivåerna finns bara för `sushi-strumpor`, och mixläget
+  döljer sortens egna nivåer. Mätt i butikens HTML 2026-09-24: A-blocket har
+  2 paketval på alla fyra sidorna, B-blocket 0 på de tre andra. `#4834` (B)
+  köpte 1 donutlåda för 299 kr — samma pris ger 2 lådor i A. Påverkar få köp
+  (45 av 50 bara sushi) och ändras inte mitt i testet (`/abtest`: rör inte
+  temat), men **måste rättas innan B någonsin görs permanent**.
+
+**Nästa:** B når golvet 25 inom ett par dagar. Verktyget ger "vet inte" tills
+~100 köp per variant (utan besökare per variant) — i butikens takt
+(146 ordrar/30 d) mitten–slutet av oktober.
+
+**Avläsning 3 — 2026-09-25 08:45 UTC (Axels fråga):** `#4786` → `#4913`,
+128 ordrar (4 ur rabattkoden, 0 okända, 0 tvingade). Takten sköt i höjden med
+budgeten: 27 köp 23/9, 59 köp 24/9. `analys.mjs`: **A 65 / 27 101 kr / snitt
+417 kr, B 63 / 29 176 kr / snitt 463 kr.** Antal köp p = 0,93 (lika),
+snittorder +46 kr för B p = 0,057 — nära men inte under 0,05. Beslut: **vet
+inte än** (63 av 100 köp per variant). Mixningen tog fart: 11 av 63 B-ordrar
+blandade sorter i paketet (1 av 22 vid avläsning 2), fyrpack B 8 / A 3,
+enstaka lådor B 5 / A 1 (B:s lucka på pizza-/hamburgare-/donutsidan står
+kvar). Båda når 100 köp inom ungefär ett och ett halvt dygn i den här takten.
+
+---
+
 ## Format för kommande rader
 
 ```

@@ -1342,12 +1342,22 @@ export function rensaSettings(settingsData, { butik = null, produkt = null, logg
   if (favicon) c.favicon = favicon;
 
   const test = abTest !== undefined ? abTest : produkt?.offer?.paket?.test;
+  // Paketvalets A/B (rabattnivåerna) är AV om inte produktfilen säger
+  // `offer.paket.test_aktivt: true` — Axels beslut 2026-09-24: "vi ab testar
+  // inte rabatter". Raden skrivs med # (ms-head hoppar över den), så A syns
+  // för alla och B står kvar dold. Id:t får ALDRIG tas bort ur produktfilen
+  // för att stänga testet: tomt test ger mallen ett paketblock utan variant,
+  // och det renderar noll nivåer (paketTest). Ett uttryckligt `abTest` skrivs
+  // som det står.
+  const paketAv = abTest === undefined && produkt?.offer?.paket?.test_aktivt !== true;
   // `extraTester` läggs OVANPÅ det beräknade värdet i stället för att ersätta
   // det: inställningen är en textarea med ett test per rad, och paketvalets
   // test ligger redan där. Skriver man rakt över den försvinner
   // paketväljarens varianter tyst (ms-paket renderar noll nivåer).
   if (test !== undefined && test !== null) {
-    c.ms_ab_tests = slaIhopTester(String(text(test) ?? ''), ...lista(extraTester));
+    const id = text(test);
+    const rad = id && paketAv ? `#${id.replace(/^#/, '')}` : String(id ?? '');
+    c.ms_ab_tests = slaIhopTester(rad, ...lista(extraTester));
     c.ms_ab_cookie_days = Number(c.ms_ab_cookie_days) > 0 ? c.ms_ab_cookie_days : 30;
   } else if (lista(extraTester).length > 0) {
     c.ms_ab_tests = slaIhopTester(c.ms_ab_tests, ...lista(extraTester));
