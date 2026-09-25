@@ -1,6 +1,6 @@
 {
   "brand": "baverbutiken",
-  "hamtad": "2026-09-25T06:39:52.729Z",
+  "hamtad": "2026-09-25T06:43:52.001Z",
   "konto": {
     "id": "QZ4jLG",
     "public_api_key": "QZ4jLG",
@@ -318,10 +318,31 @@
   ],
   "floden": [
     {
+      "id": "QXZzvn",
+      "namn": "FLOW_order_motorholje-batmotorskydd_v2",
+      "status": "draft",
+      "trigger_type": "Metric",
+      "arkiverad": false
+    },
+    {
       "id": "TTsxRQ",
       "namn": "FLOW_segment_sunset_v1",
       "status": "draft",
       "trigger_type": "Added to List",
+      "arkiverad": false
+    },
+    {
+      "id": "TyH2jg",
+      "namn": "FLOW_order_efterkop_v3",
+      "status": "draft",
+      "trigger_type": "Metric",
+      "arkiverad": false
+    },
+    {
+      "id": "VgvDum",
+      "namn": "FLOW_order_vinback_v3",
+      "status": "draft",
+      "trigger_type": "Metric",
       "arkiverad": false
     },
     {
