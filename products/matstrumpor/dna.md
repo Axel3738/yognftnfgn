@@ -27,6 +27,19 @@ Uppladdaren: `/matstrumpor`. Ronden: `/matstrumporkungen`. Facit för tal:
 ⚠️ **Kostnaden saknar tre poster:** fraktkostnaden till kund, betalväxelns
 avgift och svinn/returer. Break-even ovan är alltså i bästa fall.
 
+### Produktsidan mot invändningarna (mätt 2026-09-25)
+
+Hela mätningen står i `products/matstrumpor/produktsida.md`. Det viktigaste:
+**8 recensioner** (7 via Shop-appen, 1 via Judge.me-inbjudan ⇒ förfrågningarna
+har troligen inte gått ut under säsongen; 3 776 kunder har köpt), **4 av 9
+bilder är AI/CGI** och beskrivningen bär raden "Soffbilden är en AI-genererad
+illustration" fast ingen soffbild finns, **leveranslöftet 5–10 arbetsdagar
+bryts i 16 % av fallen** (76 levererade sedan 1/8: median 11,6 dygn, p90 15,0,
+0 under 5 arbetsdagar), **materialet står ingenstans** (tre kunder frågade på
+30 dagar, ingen fick svar), och "Älskad av tusentals svenskar" står på
+startsidan utan bevis. Annonsens bevis (riktig kreatör, "sålde slut i
+november") finns inte på sidan.
+
 ---
 
 ## Läget i kontot (14 dagar till 2026-09-23, läst 2026-09-24)
