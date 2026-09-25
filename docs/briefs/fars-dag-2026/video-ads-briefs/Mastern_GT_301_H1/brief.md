@@ -61,7 +61,7 @@ Swedish is what runs in the ad. The right column is meaning only, for the editor
 | 8 | 0:27–0:32 | 999 kr, trettio dagars öppet köp, livstidsgaranti. Nu får du sitta kvar med oss. | VO | 999 kr, trettio dagars öppet köp, livstidsgaranti. Nu får du sitta kvar med oss. | End card: Mastern on the grill edge, price, the two promises, button. | none | DRIVE 1K8LjlcndXuWdWI2ic7a0A4JDJqcnLaFe [EDITOR PICKS: the end card plate with Mastern on the grill edge] | — | none |
 
 ## 6. What the giver says when the box opens
-"Nu får du sitta kvar med oss, medan gallret fortfarande är varmt." — "Now you get to stay and sit with us, while the grate is still warm."
+"Nu får du sitta kvar med oss." — "Now you get to stay and sit with us."
 
 ## 7. COPY CARD (goes in Ads Manager, not in the creative)
 **Primary text:**
@@ -85,7 +85,7 @@ Swedish is what runs in the ad. The right column is meaning only, for the editor
 | I år ger jag honom det han aldrig skulle köpa själv. Mastern, två huvuden, handskar, USB-kabeln. (script line 5) | ✅ the box opening, items laid out | ✅ literal kit contents, checkable against the real box | ✅ "Mastern", "två huvuden", "USB-kabeln" are named product facts |
 | En knapp. Huvudet snurrar ner i springorna medan gallret fortfarande är varmt. Sextio sekunder. (script line 6) | ✅ button press, head spinning into the gap | ✅ every clause is a specific, checkable mechanism claim | ✅ "springorna", "medan gallret fortfarande är varmt" and "sextio sekunder" are Mastern-only claims |
 | Varje helg sitter han med oss nu. Christer F. skriver: "Normalt ett jobb jag skjuter upp i en halvtimme. Nu tar det knappt en minut." (script line 7) | ✅ him sitting down, the quote as a caption card | ✅ a named customer's real, checkable words | ✅ a verbatim, named review no competitor can borrow |
-| 999 kr, trettio dagars öppet köp, livstidsgaranti. Nu får du sitta kvar med oss. (script line 8) | ✅ the price spoken over him sitting down at the table | ✅ exact, checkable price and policy terms | ✅ "999 kr" and "livstidsgaranti — går den sönder får han en ny" are named, store-specific facts |
+| 999 kr, trettio dagars öppet köp, livstidsgaranti. Nu får du sitta kvar med oss. (script line 8 / giver's line) | ✅ the price spoken over him sitting down at the table | ✅ exact, checkable price and policy terms | ✅ "999 kr" and "livstidsgaranti — går den sönder får han en ny" are named, store-specific facts |
 | Mastern. Hans present, 999 kr. (headline) | ✅ the product and its price tag | ✅ an exact, checkable price | ✅ "Mastern" and "999 kr" are named, store-specific facts |
 | Två huvuden. Ingenting lossnar. Trettio dagars öppet köp. (description) | ✅ two heads, demoable on screen | ✅ literal, checkable claims | ✅ "två huvuden" and "ingenting lossnar" are Mastern-only facts |
 | Han grillar åt alla. Sen knäböjer han ensam med en stålborste som aldrig når springorna. (primary text, line 1) | ✅ him grilling, then kneeling alone at the grate | ✅ a checkable claim about the brush | ✅ "springorna" ties to Mastern's mechanism |
