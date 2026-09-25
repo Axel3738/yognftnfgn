@@ -1,6 +1,6 @@
 # Batch-log — Taköverdraget för Husvagn
 
-Breakthrough-frekvens: 1/31 (3 %)
+Breakthrough-frekvens: 1/31 (3 %) (etikett.mjs --frekvens 2026-09-25)
 
 ## Batch #1 — 2026-09-14 (`/forsta-batch`, på Axels begäran)
 
@@ -374,3 +374,61 @@ för rad, spärren `briefgranskning.mjs` exit 0, `lardom.mjs --brief` 4 BRIEF-ra
 **Kvar obyggt av de namngivna:** `SP_6_1` och `CS_14_1` (typ IM ur äldre lärdomar) — nästa rond.
 **Fatigue-testet** (2026-09-22) står: de fem färska annonserna från i går har inte dag-7-etikett än;
 dagens fyra läggs till som testets andra våg (start-CPA i dag 549 kr).
+
+## Etiketter dag 7 (2026-09-25) — Taköverdraget LISTICLE LAGERRENSNING
+
+Etiketten är ingen dom (`bedombar` står bredvid). Annonsens egna första vecka, 7d_click. Källa: `agent/utdata/etiketter-backfill-2026-09-25.md`.
+
+| Annons | Batch | Typ | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Bedömbar | Playbook |
+|---|---|---|---|---|---|---|---|---|---|
+| Takoverdrag_PD_8_1 | 2 | okänd | **BREAKTHROUGH** | 37 % | 3425 kr | 7 | 2,35 / 2,69 | ja | 80 % vidarebygg på denna: I1 tre hookar → I2 problemdel → I3 in media res |
+| Takoverdrag_SP_4_H1 | 1 | okänd | **KPI_WINNER** | 14 % | 1108 kr | 6 | 6,26 / 2,82 | ja | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Takoverdrag_SP_2_1 | 3 | okänd | **LOSER** | 6 % | 471 kr | 1 | 2,40 / 2,82 | nej | släpp |
+| Takoverdrag_RI_3_H1 | 2 | okänd | **KPI_WINNER** | 3 % | 319 kr | 2 | 8,09 / 2,69 | nej | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Takoverdrag_CS_2_H1 | 3 | okänd | **KPI_WINNER** | 3 % | 265 kr | 1 | 4,26 / 2,82 | nej | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Takoverdrag_BOF_4_1 | 2 | okänd | **LOSER** | 2 % | 207 kr | 0 | 0,00 / 2,69 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
+| Takoverdrag_GT_3_H1 | 3 | okänd | **LOSER** | 2 % | 176 kr | 0 | 0,00 / 2,82 | nej | släpp |
+| Takoverdrag_BOF_2_1 | 1 | okänd | **LOSER** | 2 % | 164 kr | 0 | 0,00 / 2,82 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
+| Takoverdrag_GT_2_H1 | 3 | okänd | **LOSER** | 2 % | 128 kr | 0 | 0,00 / 2,82 | nej | släpp |
+| Takoverdrag_TR_2_1 | 2 | okänd | **LOSER** | 1 % | 114 kr | 0 | 0,00 / 2,69 | nej | släpp |
+| Takoverdrag_RI_1_H1 | 1 | okänd | **LOSER** | 1 % | 101 kr | 0 | 0,00 / 2,82 | nej | släpp |
+| Takoverdrag_GT_2_1 | 3 | okänd | **LOSER** | 1 % | 70 kr | 0 | 0,00 / 2,82 | nej | släpp |
+| Takoverdrag_SP_2_H1 | 3 | okänd | **LOSER** | 1 % | 67 kr | 0 | 0,00 / 2,82 | nej | släpp |
+| Takoverdrag_CS_11_1 | 2 | okänd | **LOSER** | 1 % | 67 kr | 0 | 0,00 / 2,69 | nej | släpp |
+| Takoverdrag_PD_2_H1 | 3 | okänd | **LOSER** | 1 % | 59 kr | 0 | 0,00 / 2,82 | nej | släpp |
+| Takoverdrag_OB_1_H1 | 2 | okänd | **LOSER** | 0 % | 49 kr | 0 | 0,00 / 2,69 | nej | släpp |
+| Takoverdrag_SP_3_H1 | 3 | okänd | **LOSER** | 1 % | 48 kr | 0 | 0,00 / 2,82 | nej | släpp |
+| Takoverdrag_PD_6_H1 | 2 | okänd | **LOSER** | 0 % | 46 kr | 0 | 0,00 / 2,69 | nej | släpp |
+| Takoverdrag_PD_2_1 | 3 | okänd | **KPI_WINNER** | 1 % | 43 kr | 1 | 26,01 / 2,82 | nej | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Takoverdrag_PD_7_H1 | 2 | okänd | **LOSER** | 0 % | 42 kr | 0 | 0,00 / 2,69 | nej | släpp |
+| Takoverdrag_CS_2_1 | 3 | okänd | **LOSER** | 0 % | 37 kr | 0 | 0,00 / 2,82 | nej | släpp |
+| Takoverdrag_CO_1_H1 | 1 | okänd | **LOSER** | 0 % | 37 kr | 0 | 0,00 / 2,82 | nej | släpp |
+| Takoverdrag_PD_4_H1 | 1 | okänd | **LOSER** | 0 % | 34 kr | 0 | 0,00 / 2,82 | nej | släpp |
+| Takoverdrag_SP_1_H1 | 3 | okänd | **LOSER** | 0 % | 31 kr | 0 | 0,00 / 2,82 | nej | släpp |
+| Takoverdrag_CS_3_H1 | 3 | okänd | **LOSER** | 0 % | 30 kr | 0 | 0,00 / 2,82 | nej | släpp |
+| Takoverdrag_BOF_1_1 | 1 | okänd | **LOSER** | 0 % | 29 kr | 0 | 0,00 / 2,82 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
+| Takoverdrag_LI_2_1 | 2 | okänd | **LOSER** | 0 % | 29 kr | 0 | 0,00 / 2,69 | nej | släpp |
+| Takoverdrag_CS_10_1 | 2 | okänd | **LOSER** | 0 % | 27 kr | 0 | 0,00 / 2,69 | nej | släpp |
+| Takoverdrag_PD_5_1 | 1 | okänd | **LOSER** | 0 % | 23 kr | 0 | 0,00 / 2,82 | nej | släpp |
+| Takoverdrag_UG_1_H1 | 1 | okänd | **LOSER** | 0 % | 19 kr | 0 | 0,00 / 2,82 | nej | släpp |
+| Takoverdrag_CS_4_1 | 1 | okänd | **LOSER** | 0 % | 19 kr | 0 | 0,00 / 2,82 | nej | släpp |
+| Takoverdrag_CO_4_1 | 2 | okänd | **LOSER** | 0 % | 15 kr | 0 | 0,00 / 2,69 | nej | släpp |
+| Takoverdrag_GT_6_1 | 1 | okänd | **LOSER** | 0 % | 14 kr | 0 | 0,00 / 2,82 | nej | släpp |
+| Takoverdrag_PD_3_H1 | 3 | okänd | **LOSER** | 0 % | 13 kr | 0 | 0,00 / 2,82 | nej | släpp |
+| Takoverdrag_CS_6_1 | 1 | okänd | **LOSER** | 0 % | 12 kr | 0 | 0,00 / 2,82 | nej | släpp |
+| Takoverdrag_TR_1_1 | 1 | okänd | **LOSER** | 0 % | 11 kr | 0 | 0,00 / 2,82 | nej | släpp |
+| Takoverdrag_LI_1_1 | 1 | okänd | **LOSER** | 0 % | 10 kr | 0 | 0,00 / 2,82 | nej | släpp |
+| Takoverdrag_GT_5_H1 | 1 | okänd | **INGEN_LEVERANS** | — | 10 kr | 0 | 0,00 / 2,82 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Takoverdrag_RI_4_1 | 2 | okänd | **INGEN_LEVERANS** | — | 8 kr | 0 | 0,00 / 2,69 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Takoverdrag_PD_9_1 | 2 | okänd | **INGEN_LEVERANS** | — | 7 kr | 0 | 0,00 / 2,69 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Takoverdrag_CO_2_1 | 1 | okänd | **INGEN_LEVERANS** | — | 7 kr | 0 | 0,00 / 2,82 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Takoverdrag_BOF_6_1 | 2 | okänd | **INGEN_LEVERANS** | — | 5 kr | 0 | 0,00 / 2,69 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
+| Takoverdrag_BOF_3_1 | 1 | okänd | **INGEN_LEVERANS** | — | 5 kr | 0 | 0,00 / 2,82 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
+| Takoverdrag_GT_9_1 | 2 | okänd | **INGEN_LEVERANS** | — | 5 kr | 0 | 0,00 / 2,69 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Takoverdrag_PD_1_H1 | 3 | okänd | **INGEN_LEVERANS** | — | 4 kr | 0 | 0,00 / 2,82 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Takoverdrag_GT_1_H1 | 3 | okänd | **INGEN_LEVERANS** | — | 3 kr | 0 | 0,00 / 2,82 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Takoverdrag_GT_4_H1 | 1 | okänd | **INGEN_LEVERANS** | — | 3 kr | 0 | 0,00 / 2,82 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Takoverdrag_BOF_5_1 | 2 | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 2,69 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
+| Takoverdrag_CS_1_H1 | 3 | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 2,82 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Takoverdrag_SP_5_1 | 1 | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 2,82 | nej | hooken föll — logga och släpp, aldrig ABO |
+

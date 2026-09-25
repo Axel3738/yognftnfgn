@@ -1,5 +1,7 @@
 # Batch-logg — Biltvättborsten med Teleskopskaft
 
+Breakthrough-frekvens: 0/15 (0 %) (etikett.mjs --frekvens 2026-09-25)
+
 ## Batch #1 (förstabatch) — 2026-09-20 (`/rond-auto` steg 4b)
 
 **Trigger:** `annonsbehov` flaggade `forsta_batch`: 1 943 kr total spend
@@ -70,3 +72,26 @@ Notion-radens fält Landing page och svarade 200 vid kontroll.
   "skonar lacken" — obelagda.
 - `SP_1_H2`: "Hundratals nöjda bilägare" + citat som inte finns bland de 10
   recensionerna.
+
+## Etiketter dag 7 (2026-09-25) — Biltvättborsten med Teleskopskaft
+
+Etiketten är ingen dom (`bedombar` står bredvid). Annonsens egna första vecka, 7d_click. Källa: `agent/utdata/etiketter-backfill-2026-09-25.md`.
+
+| Annons | Batch | Typ | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Bedömbar | Playbook |
+|---|---|---|---|---|---|---|---|---|---|
+| Biltvattborste_PD_1_H2 | — | okänd | **SPEND_WINNER** | 51 % | 2458 kr | 5 | 1,63 / 1,16 | ja | KPI-fix: LP-byte, proof, kostnad-av-att-vänta — utförandet, inte idén |
+| Biltvattborste_SP_1_H2 | — | okänd | **SPEND_WINNER** | 34 % | 1634 kr | 2 | 0,98 / 1,16 | nej | KPI-fix: LP-byte, proof, kostnad-av-att-vänta — utförandet, inte idén |
+| Biltvattborste_CS_1_H3 | — | okänd | **LOSER** | 5 % | 249 kr | 0 | 0,00 / 1,16 | nej | släpp |
+| Biltvattborste_SP_1_H3 | — | okänd | **LOSER** | 5 % | 229 kr | 0 | 0,00 / 1,16 | nej | släpp |
+| Biltvattborste_PD_1_H3 | — | okänd | **LOSER** | 2 % | 84 kr | 0 | 0,00 / 1,16 | nej | släpp |
+| Biltvattborste_PD_1_H1 | — | okänd | **LOSER** | 1 % | 51 kr | 0 | 0,00 / 1,16 | nej | släpp |
+| Biltvattborste_SP_1_H1 | — | okänd | **LOSER** | 1 % | 35 kr | 0 | 0,00 / 1,16 | nej | släpp |
+| Biltvattborste_CS_1_H2 | — | okänd | **LOSER** | 0 % | 19 kr | 0 | 0,00 / 1,16 | nej | släpp |
+| Biltvattborste_SP_2_1 | — | okänd | **LOSER** | 0 % | 15 kr | 0 | 0,00 / 1,16 | nej | släpp |
+| Biltvattborste_CS_1_H1 | — | okänd | **LOSER** | 0 % | 13 kr | 0 | 0,00 / 1,16 | nej | släpp |
+| Biltvattborste_CS_2_1 | — | okänd | **LOSER** | 0 % | 10 kr | 0 | 0,00 / 1,16 | nej | släpp |
+| Biltvattborste_G_1_H3 | — | okänd | **INGEN_LEVERANS** | — | 9 kr | 0 | 0,00 / 1,16 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Biltvattborste_PD_2_1 | — | okänd | **INGEN_LEVERANS** | — | 7 kr | 0 | 0,00 / 1,16 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Biltvattborste_G_1_H1 | — | okänd | **INGEN_LEVERANS** | — | 5 kr | 0 | 0,00 / 1,16 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Biltvattborste_G_1_H2 | — | okänd | **INGEN_LEVERANS** | — | 3 kr | 0 | 0,00 / 1,16 | nej | hooken föll — logga och släpp, aldrig ABO |
+

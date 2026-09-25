@@ -288,3 +288,16 @@ Läst ur den live annonsen 2026-09-23 (primärtext, rubrik, första frame via Ad
 | CTA | "5,0 av 5 på 10 recensioner. 1 129 kr i stället för 1 469 kr." · rubrik "En person räcker. 210D-väv." · Handla nu | positiv | produktmedveten | samma |
 
 **Bärande komponent = hypotes (gissning):** HOOK-bilden — beviset för "en person räcker" syns i sekund 0 (personen ensam på stegen). UG_1_H1 påstår samma sak med en tom vagn i första bilden och fick 755 kr; SP_4_H1 fick 34 750 kr. Det är den enda variabeln som skiljer de två öppningarna, och det är den I1–I3 (SP_4_H2/H3/H4) byggs på. ⚠️ Recensionsraden i CTA:n är seedade recensioner — iterationerna bär den inte.
+
+## Komponentkarta Takoverdrag_PD_8_1 (BREAKTHROUGH 2026-09-25, ANALYSMETOD 6b)
+
+Läst ur den live annonsen 2026-09-25 (primärtext, rubrik via Graph API; bilden ej avläst — thumbnail 64 px, ffmpeg saknas i rutinens container) — briefen finns inte i repot, så raderna är lästa ur annonsen, inte ur brief. Kampanjen är **Taköverdraget LISTICLE LAGERRENSNING** (ägarens, AGARENS — inga briefer från ronden). Fönstret 17–23 sep: 3 425 kr (37 % av kampanjen), 7 köp, ROAS 2,35 / CPA 489 kr mot break-even-CPA 715 kr, konverteringsgrad 1,5 %. Lärdom L-120250260542980291.
+
+| Komponent | Exakt rad / bild (läst ur annonsen, inte ur brief) | Valens | Awareness | Avatar |
+|---|---|---|---|---|
+| HOOK | Rubrik: "6,5 × 3 meter – hela taket" · primärtext rad 1: "6,5 × 3 meter – hela taket, inget mer." | neutral → positiv (ett mått att pröva mot) | lösningsmedveten | husvagnsagare-infor-vintern |
+| BRIDGE | "210D-väv som tål en hel vintersäsong ute." | positiv | lösningsmedveten | samma |
+| HOLD | Bilden (statisk, produktfoto — ej avläst) + "19,5 m², hanteras av en person." | positiv | lösningsmedveten | samma |
+| CTA | Ingen pris- eller rea-rad i annonsen — listicle-sidan bär rean · Handla nu | neutral | produktmedveten | samma |
+
+**Bärande komponent = hypotes (gissning):** HOOK-raden — måttet "6,5 × 3 meter – hela taket, inget mer" låter läsaren mäta sitt eget tak innan klicket; det är den enda raden som skiljer PD_8_1 från PD_9_1 (INGEN_LEVERANS, 7 kr) i samma kampanj, och den I1–I3 (PD_8_2 / PD_8_3 / PD_8_H1) byggs på om Axel vill ha briefer i listicle-kampanjen.

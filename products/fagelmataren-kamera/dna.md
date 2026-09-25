@@ -81,3 +81,16 @@ Inget bevisat än.
   `OB_1_H1` och `BOF_2_1` testar den i två format.
 - Fungerar ärlighetsvinkeln (produkten känner **inte** igen arter åt dig)?
   `TR_1_1`. Den är den enda raden i batchen ingen konkurrent kan signera.
+
+## Komponentkarta Fagelmatare_G_2 (BREAKTHROUGH 2026-09-25, ANALYSMETOD 6b)
+
+Läst ur den live annonsen 2026-09-25 (primärtext, rubrik, beskrivning via Graph API; första frame ej avläst — thumbnail 64 px, ffmpeg saknas) — briefen finns inte i repot, så raderna är lästa ur annonsen, inte ur brief. Kampanjen är **avstängd** (STANG_AV 2026-09-21, trappan). Fönstret 17–23 sep: 2 052 kr (48 % av kampanjen), 2 köp, ROAS 2,18 / CPA 1 026 kr (pris 1 659 kr), konverteringsgrad 0,8 %, hook rate 39 %, hold rate 14 %. **Inte bedömbar** (2 köp) — etiketten kommer av budgethöjningen i fönstret. Lärdom L-120250253876770291.
+
+| Komponent | Exakt rad / bild (läst ur annonsen, inte ur brief) | Valens | Awareness | Avatar |
+|---|---|---|---|---|
+| HOOK | Primärtext rad 1: "Letar du efter presenten som faktiskt används? 🎁" · rubrik "Den perfekta presenten till fågelälskaren" | positiv (presenten som används) | lösningsmedveten (letar present) | presentköparen till en fågelälskare |
+| BRIDGE | "Ge bort en fågelmatare med kamera och app – så de kan se varje fågel som landar, direkt i mobilen." | positiv | lösningsmedveten | samma |
+| HOLD | "Föreställ dig deras ansikte när de ser den första fågeln på skärmen." (video, ej transkriberad) | positiv | — | samma |
+| CTA | "En present som ger glädje, dag efter dag. 👉 Hitta den perfekta presenten idag." · beskrivning "En gåva de faktiskt kommer använda – varje dag." | positiv | produktmedveten | samma |
+
+**Bärande komponent = hypotes (gissning):** HOOK-raden — att tala till köparen ("presenten som faktiskt används") i stället för till fågelskådaren gav 48 % av spenden, men utan högtid att rama in köpet stannade det vid klick (0,8 % konverteringsgrad). I1 (G_4) byter bara hooken mot en riktig datumram (Fars dag 8 nov / jul) — byggs bara om Axel startar om kampanjen.

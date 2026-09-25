@@ -1,5 +1,7 @@
 # Batch-logg — MC-Kapellet
 
+Breakthrough-frekvens: 1/39 (3 %) (etikett.mjs --frekvens 2026-09-25)
+
 ## Batch #0 — originaladsen (launch 2026-08-27, före OS:et)
 16 annonser i kampanjen (`PD`, `SP`, `CS`, `G`-serier), en gemensam CBO-kampanj
 (1 000 kr/dag). Utfall t.o.m. 2026-09-02 (livstid, `maximum`): 5 020,09 kr
@@ -404,3 +406,23 @@ Tre-frågorstestet står i varje brief, rad för rad.
   "Fri frakt inom Sverige".
 - `PD_10_H1`:s `Why` sa att PD_3 fallit till ROAS 1,34 — det talet är från
   2026-09-08. Rättat till dagens: livstids-ROAS 1,12 och −661 kr vinstbidrag.
+
+## Etiketter dag 7 (2026-09-25) — MC-Kapellet
+
+Etiketten är ingen dom (`bedombar` står bredvid). Annonsens egna första vecka, 7d_click. Källa: `agent/utdata/etiketter-backfill-2026-09-25.md`.
+
+| Annons | Batch | Typ | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Bedömbar | Playbook |
+|---|---|---|---|---|---|---|---|---|---|
+| MC-Kapell_CS_7_1 | — | okänd | **KPI_WINNER** | 4 % | 114 kr | 1 | 5,21 / 1,83 | nej | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| MC-Kapell_PD_8_H1 | — | okänd | **LOSER** | 2 % | 48 kr | 0 | 0,00 / 1,83 | nej | släpp |
+| MC-Kapell_FT_1_H1 | — | okänd | **LOSER** | 1 % | 19 kr | 0 | 0,00 / 1,83 | nej | släpp |
+| MC-Kapell_UV_1_1 | — | okänd | **LOSER** | 0 % | 10 kr | 0 | 0,00 / 1,83 | nej | släpp |
+| MC-Kapell_OB_4_1 | — | okänd | **INGEN_LEVERANS** | — | 6 kr | 0 | 0,00 / 1,83 | nej | hooken föll — logga och släpp, aldrig ABO |
+| MC-Kapell_OF_4_1 | — | okänd | **INGEN_LEVERANS** | — | 4 kr | 0 | 0,00 / 1,83 | nej | hooken föll — logga och släpp, aldrig ABO |
+| MC-Kapell_OF_3_1 | — | okänd | **INGEN_LEVERANS** | — | 4 kr | 0 | 0,00 / 1,83 | nej | hooken föll — logga och släpp, aldrig ABO |
+| MC-Kapell_OB_3_1 | — | okänd | **INGEN_LEVERANS** | — | 4 kr | 0 | 0,00 / 1,83 | nej | hooken föll — logga och släpp, aldrig ABO |
+| MC-Kapell_RE_6_1 | — | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 1,83 | nej | hooken föll — logga och släpp, aldrig ABO |
+| MC-Kapell_GA_3_1 | — | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 1,83 | nej | hooken föll — logga och släpp, aldrig ABO |
+| MC-Kapell_GA_4_1 | — | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 1,83 | nej | hooken föll — logga och släpp, aldrig ABO |
+| MC-Kapell_DE_3_H1 | — | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 1,83 | nej | hooken föll — logga och släpp, aldrig ABO |
+

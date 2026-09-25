@@ -1,6 +1,6 @@
 # Batch-log — Termoskyddet för Husbil
 
-Breakthrough-frekvens: 2/16 (13 %) (uppdaterad 2026-09-21, backfill av hela bakkatalogen)
+Breakthrough-frekvens: 2/16 (13 %) (etikett.mjs --frekvens 2026-09-25)
 
 ## Batch #1 — 2026-09-14 (`/forsta-batch`, på Axels begäran)
 
@@ -321,3 +321,40 @@ Butiksneutralt (speglas till CaraShell): inget butiksnamn, inga policyrader, ing
 aldrig sommar, ingen brådska. Copy av sonnet-subagent (regel 6); `## Avatarer` tillagt i dna.md.
 ⚠️ `lardom.mjs` räknar iterationerna 1–4 på konceptet `cs-pris-utan-bradska` (loggen vinner);
 briefarnas taggar säger parent-relativt 2/3/1/3 — samma sak sedd från två håll.
+
+## Etiketter dag 7 (2026-09-25) — Termoskyddet LISTICLE LAGERRENSNING
+
+Etiketten är ingen dom (`bedombar` står bredvid). Annonsens egna första vecka, 7d_click. Källa: `agent/utdata/etiketter-backfill-2026-09-25.md`.
+
+| Annons | Batch | Typ | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Bedömbar | Playbook |
+|---|---|---|---|---|---|---|---|---|---|
+| Termoskydd_CS_2 | 2 | okänd | **SPEND_WINNER** | 57 % | 1145 kr | 1 | 0,49 / 1,11 | nej | KPI-fix: LP-byte, proof, kostnad-av-att-vänta — utförandet, inte idén |
+| Termoskydd_CS_3 | 2 | okänd | **KPI_WINNER** | 17 % | 336 kr | 2 | 3,33 / 1,11 | nej | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Termoskydd_MT_1_1 | 1 | okänd | **KPI_WINNER** | 17 % | 336 kr | 1 | 1,67 / 1,13 | nej | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Termoskydd_CS_1 | 2 | okänd | **LOSER** | 2 % | 46 kr | 0 | 0,00 / 1,11 | nej | släpp |
+| Termoskydd_SP_2_1 | 2 | okänd | **LOSER** | 1 % | 29 kr | 0 | 0,00 / 1,11 | nej | släpp |
+| Termoskydd_CS_5_1 | 1 | okänd | **LOSER** | 1 % | 23 kr | 0 | 0,00 / 1,13 | nej | släpp |
+| Termoskydd_CS_2_1 | 2 | okänd | **LOSER** | 1 % | 15 kr | 0 | 0,00 / 1,11 | nej | släpp |
+| Termoskydd_SP_2 | 2 | okänd | **LOSER** | 1 % | 14 kr | 0 | 0,00 / 1,11 | nej | släpp |
+| Termoskydd_BOF_6_1 | 2 | okänd | **LOSER** | 1 % | 12 kr | 0 | 0,00 / 1,13 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
+| Termoskydd_LI_1_1 | 1 | okänd | **LOSER** | 1 % | 11 kr | 0 | 0,00 / 1,13 | nej | släpp |
+| Termoskydd_PR_2_1 | 1 | okänd | **INGEN_LEVERANS** | — | 9 kr | 0 | 0,00 / 1,13 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Termoskydd_BOF_2_1 | 1 | okänd | **INGEN_LEVERANS** | — | 9 kr | 0 | 0,00 / 1,13 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
+| Termoskydd_SP_7_1 | 2 | okänd | **INGEN_LEVERANS** | — | 4 kr | 0 | 0,00 / 1,13 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Termoskydd_PD_2_1 | 2 | okänd | **INGEN_LEVERANS** | — | 4 kr | 0 | 0,00 / 1,11 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Termoskydd_SP_5_1 | 1 | okänd | **INGEN_LEVERANS** | — | 3 kr | 0 | 0,00 / 1,13 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Termoskydd_SP_3 | 2 | okänd | **INGEN_LEVERANS** | — | 3 kr | 0 | 0,00 / 1,11 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Termoskydd_BOF_3_1 | 1 | okänd | **INGEN_LEVERANS** | — | 3 kr | 0 | 0,00 / 1,13 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
+| Termoskydd_CS_6_1 | 2 | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 1,13 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Termoskydd_G_2_1 | 2 | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 1,11 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Termoskydd_BOF_5_1 | 2 | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 1,13 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
+| Termoskydd_CS_4_1 | 1 | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 1,13 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Termoskydd_BOF_4_1 | 2 | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 1,13 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
+| Termoskydd_G_2 | 2 | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 1,11 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Termoskydd_CO_2_1 | 1 | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 1,13 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Termoskydd_SP_1 | 2 | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 1,11 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Termoskydd_BOF_1_1 | 1 | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 1,13 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
+| Termoskydd_G_3 | 2 | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 1,11 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Termoskydd_G_1 | 2 | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 1,11 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Termoskydd_PD_2 | 2 | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 1,11 | nej | hooken föll — logga och släpp, aldrig ABO |
+

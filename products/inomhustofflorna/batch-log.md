@@ -1,5 +1,7 @@
 # Batch-logg — Inomhustofflorna i Kamouflage
 
+Breakthrough-frekvens: 0/15 (0 %) (etikett.mjs --frekvens 2026-09-25)
+
 ## Batch #1 (förstabatch) — 2026-09-20 (`/rond-auto` steg 4b)
 
 **Trigger:** `annonsbehov` flaggade `forsta_batch`: 1 912 kr total spend
@@ -63,3 +65,26 @@ page, kontrollerad 200.
 ### Kvalitetsflaggor på LIVE-annonser (rörs inte, flaggade till Axel)
 - `SP_1_H2`: citat som inte finns bland recensionerna, "många köper ett par till".
 - `PD_1_H2`: "funkar även utanför dörren" mot inomhusregeln.
+
+## Etiketter dag 7 (2026-09-25) — Inomhustofflorna i Kamouflage
+
+Etiketten är ingen dom (`bedombar` står bredvid). Annonsens egna första vecka, 7d_click. Källa: `agent/utdata/etiketter-backfill-2026-09-25.md`.
+
+| Annons | Batch | Typ | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Bedömbar | Playbook |
+|---|---|---|---|---|---|---|---|---|---|
+| Inomhustofflor_SP_1_H1 | — | okänd | **SPEND_WINNER** | 36 % | 2375 kr | 7 | 1,73 / 1,67 | ja | KPI-fix: LP-byte, proof, kostnad-av-att-vänta — utförandet, inte idén |
+| Inomhustofflor_SP_1_H2 | — | okänd | **KPI_WINNER** ⚠ nära 30 % | 30 % | 1977 kr | 10 | 2,99 / 1,67 | ja | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Inomhustofflor_CS_2_1 | — | okänd | **LOSER** | 16 % | 1060 kr | 1 | 0,46 / 1,67 | nej | släpp |
+| Inomhustofflor_PD_1_H3 | — | okänd | **LOSER** | 6 % | 399 kr | 0 | 0,00 / 1,67 | nej | släpp |
+| Inomhustofflor_SP_1_H3 | — | okänd | **LOSER** | 3 % | 226 kr | 0 | 0,00 / 1,67 | nej | släpp |
+| Inomhustofflor_CS_1_H3 | — | okänd | **LOSER** | 2 % | 118 kr | 0 | 0,00 / 1,67 | nej | släpp |
+| Inomhustofflor_CS_1_H1 | — | okänd | **KPI_WINNER** | 1 % | 96 kr | 1 | 5,10 / 1,67 | nej | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Inomhustofflor_CS_1_H2 | — | okänd | **LOSER** | 1 % | 69 kr | 0 | 0,00 / 1,67 | nej | släpp |
+| Inomhustofflor_PD_2_1 | — | okänd | **LOSER** | 1 % | 43 kr | 0 | 0,00 / 1,67 | nej | släpp |
+| Inomhustofflor_SP_2_1 | — | okänd | **LOSER** | 0 % | 29 kr | 0 | 0,00 / 1,67 | nej | släpp |
+| Inomhustofflor_GT_1_H3 | — | okänd | **LOSER** | 0 % | 14 kr | 0 | 0,00 / 1,67 | nej | släpp |
+| Inomhustofflor_GT_1_H2 | — | okänd | **INGEN_LEVERANS** | — | 10 kr | 0 | 0,00 / 1,67 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Inomhustofflor_PD_1_H2 | — | okänd | **INGEN_LEVERANS** | — | 9 kr | 0 | 0,00 / 1,67 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Inomhustofflor_GT_1_H1 | — | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 1,67 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Inomhustofflor_GT_2_1 | — | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 1,67 | nej | hooken föll — logga och släpp, aldrig ABO |
+

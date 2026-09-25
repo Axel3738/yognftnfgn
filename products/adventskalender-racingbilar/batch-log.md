@@ -1,6 +1,6 @@
 # Batch-log — Adventskalender Racingbilar
 
-Breakthrough-frekvens: 1/23 (4 %)
+Breakthrough-frekvens: 1/33 (3 %) (etikett.mjs --frekvens 2026-09-25)
 
 ## Batch #1 — 2026-09-10 (`/forsta-batch`, automatisk körning via `/rond-auto` steg 4b)
 
@@ -310,3 +310,21 @@ Annonser skapade 2026-09-15, egna första veckan 2026-09-15 – 2026-09-21 (7d_c
 | Adventskalender_BF_6_1 | 2 | okänd | **KPI_WINNER** | 6 % | 227 kr | 1 | 3,74 / 1,83 | nej | 3 nya hookar, allt annat lika — den säljer men får inte spend |
 | Adventskalender_BF_5_1 | 2 | okänd | **LOSER** | 0 % | 16 kr | 0 | 0,00 / 1,83 | nej | släpp |
 | Adventskalender_BF_4_1 | 2 | okänd | **LOSER** | 2 % | 80 kr | 0 | 0,00 / 1,83 | nej | släpp |
+
+## Etiketter dag 7 (2026-09-25) — Adventskalendern Racingbilar
+
+Etiketten är ingen dom (`bedombar` står bredvid). Annonsens egna första vecka, 7d_click. Källa: `agent/utdata/etiketter-backfill-2026-09-25.md`.
+
+| Annons | Batch | Typ | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Bedömbar | Playbook |
+|---|---|---|---|---|---|---|---|---|---|
+| Adventskalender_UG_2_H1 | 2 | okänd | **KPI_WINNER** | 18 % | 560 kr | 2 | 2,41 / 1,65 | nej | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Adventskalender_PD_9_H1 | 2 | okänd | **KPI_WINNER** | 18 % | 485 kr | 1 | 1,75 / 1,19 | nej | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Adventskalender_FM_2_H1 | 2 | okänd | **LOSER** | 3 % | 83 kr | 0 | 0,00 / 1,19 | nej | släpp |
+| Adventskalender_CO_3_H1 | 2 | okänd | **LOSER** | 2 % | 67 kr | 0 | 0,00 / 1,65 | nej | släpp |
+| Adventskalender_PD_10_1 | 3 | okänd | **LOSER** | 1 % | 22 kr | 0 | 0,00 / 1,19 | nej | släpp |
+| Adventskalender_BF_9_1 | 3 | okänd | **LOSER** | 0 % | 11 kr | 0 | 0,00 / 1,19 | nej | släpp |
+| Adventskalender_BF_8_1 | 3 | okänd | **INGEN_LEVERANS** | — | 9 kr | 0 | 0,00 / 1,19 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Adventskalender_BF_7_1 | 3 | okänd | **INGEN_LEVERANS** | — | 3 kr | 0 | 0,00 / 1,19 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Adventskalender_RV_6_1 | 3 | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 1,19 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Adventskalender_RV_5_1 | 3 | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 1,19 | nej | hooken föll — logga och släpp, aldrig ABO |
+

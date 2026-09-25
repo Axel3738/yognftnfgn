@@ -1,6 +1,6 @@
 # Batch-log — IBC-Tanköverdraget
 
-Breakthrough-frekvens: 1/48 (2 %)
+Breakthrough-frekvens: 1/52 (2 %) (etikett.mjs --frekvens 2026-09-25)
 
 ## Batch #1 — 2026-09-01 (`/forsta-batch`, automatisk rutinkörning)
 
@@ -600,4 +600,18 @@ Efter dessa tre är PD_1_H1:s tre iterationer förbrukade (deadline 2026-10-05).
 | IBC_PD_8_H1 | — | — | **LOSER** | 1 % | 55 kr | 0 | 0,00 / 2,69 | nej | släpp |
 | IBC_CS_7_1 | — | — | **LOSER** | 1 % | 38 kr | 0 | 0,00 / 2,69 | nej | släpp |
 | IBC_SP_5_H1 | — | — | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 2,69 | nej | hooken föll — logga och släpp, aldrig ABO |
+
+## Etiketter dag 7 (2026-09-25) — IBC-Tanköverdraget
+
+Etiketten är ingen dom (`bedombar` står bredvid). Annonsens egna första vecka, 7d_click. Källa: `agent/utdata/etiketter-backfill-2026-09-25.md`.
+
+| Annons | Batch | Typ | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Bedömbar | Playbook |
+|---|---|---|---|---|---|---|---|---|---|
+| IBC_PD_10_1 | 6 | okänd | **LOSER** | 1 % | 47 kr | 0 | 0,00 / 2,56 | nej | släpp |
+| IBC_CO_2_H1 | 5 | okänd | **LOSER** | 1 % | 25 kr | 0 | 0,00 / 2,56 | nej | släpp |
+| IBC_RV_9_1 | 6 | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 2,56 | nej | hooken föll — logga och släpp, aldrig ABO |
+| IBC_BOF_15_1 | 6 | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 2,56 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
+| IBC_BOF_13_1 | 6 | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 2,56 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
+| IBC_RV_10_1 | 6 | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 2,56 | nej | hooken föll — logga och släpp, aldrig ABO |
+| IBC_BOF_14_1 | 6 | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 2,56 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
 

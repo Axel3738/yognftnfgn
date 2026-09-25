@@ -1,5 +1,7 @@
 # Batch-logg — Fågelmataren med Kamera
 
+Breakthrough-frekvens: 1/16 (6 %) (etikett.mjs --frekvens 2026-09-25)
+
 ## Batch #1 (förstabatch) — 2026-09-19 (`/rond-auto` steg 4b)
 
 **Trigger:** `annonsbehov` flaggade `forsta_batch`: produkten har passerat
@@ -69,3 +71,27 @@ går inte ut igen.
 startskottet är räknade ur Metas egna tal (spend × ROAS / köp), inte gissade —
 men med 3 köp rör sig AOV:n mycket på nästa order. Läs om siffran innan den
 används till något större än larmet.
+
+## Etiketter dag 7 (2026-09-25) — Fågelmataren med Kamera
+
+Etiketten är ingen dom (`bedombar` står bredvid). Annonsens egna första vecka, 7d_click. Källa: `agent/utdata/etiketter-backfill-2026-09-25.md`.
+
+| Annons | Batch | Typ | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Bedömbar | Playbook |
+|---|---|---|---|---|---|---|---|---|---|
+| Fagelmatare_G_2 | — | okänd | **BREAKTHROUGH** | 48 % | 2052 kr | 2 | 2,18 / 1,71 | nej | 80 % vidarebygg på denna: I1 tre hookar → I2 problemdel → I3 in media res |
+| Fagelmatare_PD_1 | — | okänd | **LOSER** | 11 % | 488 kr | 0 | 0,00 / 1,71 | nej | släpp |
+| Fagelmatare_SP_2_1 | — | okänd | **LOSER** | 11 % | 475 kr | 0 | 0,00 / 1,71 | nej | släpp |
+| Fagelmatare_CS_2_1 | — | okänd | **LOSER** | 8 % | 326 kr | 0 | 0,00 / 1,71 | nej | släpp |
+| Fagelmatare_SP_3 | — | okänd | **LOSER** | 7 % | 285 kr | 0 | 0,00 / 1,71 | nej | släpp |
+| Fagelmatare_PD_2 | — | okänd | **KPI_WINNER** | 4 % | 171 kr | 1 | 16,46 / 1,71 | nej | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Fagelmatare_G_3 | — | okänd | **LOSER** | 3 % | 137 kr | 0 | 0,00 / 1,71 | nej | släpp |
+| Fagelmatare_G_1 | — | okänd | **LOSER** | 2 % | 84 kr | 0 | 0,00 / 1,71 | nej | släpp |
+| Fagelmatare_CS_3 | — | okänd | **LOSER** | 1 % | 39 kr | 0 | 0,00 / 1,71 | nej | släpp |
+| Fagelmatare_PD_3 | — | okänd | **LOSER** | 1 % | 37 kr | 0 | 0,00 / 1,71 | nej | släpp |
+| Fagelmatare_CS_1 | — | okänd | **LOSER** | 1 % | 33 kr | 0 | 0,00 / 1,71 | nej | släpp |
+| Fagelmatare_SP_1 | — | okänd | **LOSER** | 1 % | 32 kr | 0 | 0,00 / 1,71 | nej | släpp |
+| Fagelmatare_SP_2 | — | okänd | **LOSER** | 1 % | 32 kr | 0 | 0,00 / 1,71 | nej | släpp |
+| Fagelmatare_PD_2_1 | — | okänd | **LOSER** | 1 % | 31 kr | 0 | 0,00 / 1,71 | nej | släpp |
+| Fagelmatare_CS_2 | — | okänd | **LOSER** | 1 % | 29 kr | 0 | 0,00 / 1,71 | nej | släpp |
+| Fagelmatare_G_2_1 | — | okänd | **LOSER** | 0 % | 14 kr | 0 | 0,00 / 1,71 | nej | släpp |
+
