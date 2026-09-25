@@ -358,3 +358,16 @@ Etiketten är ingen dom (`bedombar` står bredvid). Annonsens egna första vecka
 | Termoskydd_G_1 | 2 | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 1,11 | nej | hooken föll — logga och släpp, aldrig ABO |
 | Termoskydd_PD_2 | 2 | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 1,11 | nej | hooken föll — logga och släpp, aldrig ABO |
 
+## Brief-runda + batch #5 — 2026-09-25 (`/rond-auto` steg 4b, namngivna platser)
+
+**Läget (3 d, avläst 2026-09-25):** LAT_VARA (budget 2 300 kr, ROAS 2,41, 24 köp, +24,5 % — CPA-trend 👀 två stigningar 181 → 264 → 388 kr). Brieftaket: 0 fria (0 etiketterade utan lärdom) + 3 namngivna platser ur lärdomarna för SP_2 (KPI_WINNER, CPA 169 kr mot break-even-CPA 347 kr, hook rate 46 %) och SP_2_1 (KPI_WINNER, CPA 126 kr). Feedback-raden Brief review 2026-09-23 läst (CPA med break-even i samma mening, hook aldrig en uppmaning, förälderns Meta-id i Why, ingen dubbel Variables-rad). Annonsidéer: 0 rader Ny. Priset läst live: 559 kr / 932 kr (spara 373 kr, 40 %). Vidarebygget för CS_3/CS_2 var redan komplett (VIDAREBYGG_KLAR 2026-09-24).
+
+### Batch #5 — 2 video, alla i Notion som Draft (BÄVER Termoskyddet för Husbil)
+
+| Annons | Format | Parent · iteration | Hypotes (en variabel) | Hookrad | Notion |
+|---|---|---|---|---|---|
+| `Termoskydd_SP_2_H2` | video 10 s | SP_2 · ny hook (scen) | klockan fyra-scenen (kondens på insidan, inget skydd) i sekund 0 lyfter hook rate över 46 % | "Fyra på morgonen. Kondensen rinner nerför insidan." | `3e6270ab908c814aa357d5abb3cb75c3` |
+| `Termoskydd_SP_2_H3` | video 10 s | SP_2 · ny hook (mekanism) | fliken som kläms i dörrkarmen i sekund 0 (zoom-in) lyfter hook rate bättre än problemscenen | "Flikarna kläms i dörrkarmen. Dörren öppnas aldrig." | `3e6270ab908c813d8713df772e4e50bf` |
+
+Rad 2–4 identiska mellan de två (211×171 utanpå glaset · mörkt över framvagnen · två minuter + pris), så bara hooken skiljer. `Termoskydd_SP_2_2` (SP_2_1:s komposition med rubrik ur en RIKTIG recension) **struken**: produkten har noll recensioner — byggs när en riktig finns. Förälderns förbjudna rader (stjärnor, "tusentals husbilsägare", sommar, "beställ nu") ärvs inte. Regitabell rad för rad, spärren `briefgranskning.mjs` (main) exit 0 efter tre rättningar (NEW FOOTAGE-format, "or" i Picture, `begar` ur fasta listan), `lardom.mjs --brief` 2 BRIEF-rader, ett item öppnat och kontrollerat. Butiksneutralt (speglas till CaraShell). Copy av sonnet-subagent (regel 6). ⚠️ ffmpeg saknas i rutinens container — källorna är `DRIVE <id> [EDITOR PICKS: …]`, aldrig påhittade sekunder.
+
