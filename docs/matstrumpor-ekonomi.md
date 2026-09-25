@@ -96,3 +96,57 @@ environmentet 2026-09-25 (bara id och hemlighet fanns). Kör därför:
 ```bash
 SHOPIFY_SHOP_MATSTRUMPOR= SHOPIFY_SHOP_1r46tp_qx=1r46tp-qx.myshopify.com node theme-matstrumpor/tools/ekonomi.mjs
 ```
+
+---
+
+## Tullen (verifierad 2026-09-25)
+
+Sedan 1 juli 2026 tar EU ut en **fast tull på 3 euro per varuslag och försändelse**
+på paket under 150 euro från länder utanför EU (rådets förordning (EU) 2026/382,
+gäller till 1 juli 2028). Det är den "tull på 2,7–2,8 euro" som agenten
+fakturerar, ca 30–33 kr per paket. Källor: [EU-kommissionen](https://taxation-customs.ec.europa.eu/news/guidance-and-legal-text-temporary-flat-fee-low-value-imports-which-will-apply-until-1-july-2028-2026-06-08_en),
+[Avalara](https://www.avalara.com/blog/en/europe/2025/11/eu-end-150-customs-duty-exemption-2026.html),
+[vatcalc](https://www.vatcalc.com/eu/eu-e3-levy-low-value-e-commerce-import-package-july-2026/).
+
+Tre konsekvenser:
+
+1. **Den går inte att förhandla bort** — den är lag, inte agentens påslag. Det
+   som går att kontrollera är att agenten inte lägger marginal på den.
+2. **Den är per paket, inte per låda.** Fyra lådor i ett paket betalar samma 3 euro
+   som två. Köp 2 Få 2 bär alltså hälften så mycket tull per låda.
+3. **Per varuslag.** Deklareras ätpinnarna som en egen varupost kan de utlösa
+   ytterligare 3 euro per paket. Kontrollera agentens faktura.
+
+Enda vägen runt den per paket är bulkimport till Sverige (vanlig tullsats på
+fakturavärdet i stället för 3 euro per paket) plus svensk 3PL och inrikesfrakt.
+Det är ett projekt för efter julen, men offerterna kan tas in nu.
+
+## Vägen till 1,51 utan att röra 399 kr
+
+En kostnadssänkning väger ~2,5× mer än en intäktsökning av samma storlek, för
+intäkten höjer även täljaren. Vid 399 kr måste kostnaden per order ner från 174
+till 135 kr (−39 kr) om allt tas på kostnadssidan.
+
+| Kombination | Break-even |
+|---|---|
+| Lådan 80 → 60 kr, inget annat | 1,51 |
+| Lådan 80 → 65 kr + 29 kr frakt på Köp 1 Få 1 | 1,51 |
+| Lådan 80 → 70 kr + 39 kr frakt på Köp 1 Få 1 | 1,55 |
+| Lådan 80 → 70 kr + 29 kr frakt + tillval "+1 låda 249 kr" som 10 % tar | ~1,54 |
+
+Action items i ordning: (1) mejla agenten: uppdelning av 12,3 USD i produkt,
+pack, frakt och tull; pris per **paket** med 2/3/4 lådor; volympris vid 5 000 /
+10 000 / 20 000 lådor (fjolåret 15 000, nu ~130 lådor/dag); om ätpinnarna
+deklareras separat. Mål: 65–70 kr per låda landat. (2) Fraktavgift 29–39 kr på
+Köp 1 Få 1, fri frakt kvar på Köp 2 Få 2 — Shopify → Inställningar → Frakt.
+(3) Ätpinnar: ett par per order i stället för ett per låda, om de kostar mer än
+~3 kr paret. (4) Inköpspris på pizza/hamburgare/donut i Shopify. (5) Revisorn:
+momsfrågan, se ovan. (6) Offert från en svensk 3PL för jämförelse efter jul.
+
+## Återköp (12 månader bakåt, Shopify)
+
+3 658 kunder, 3 792 ordrar. **118 kunder (3,2 %) köpte två gånger**, 98 av
+återköpen kom inom sju dagar (kunden gick tillbaka och la en order till, med
+nytt paket och ny tull), 17 inom 7–30 dagar, 19 senare. Av de senaste 30
+dagarnas 239 ordrar kom 6 från kunder som fanns före 26 augusti. Basen från
+förra julen: 1 617 ordrar i december, 799 i januari, 655 i februari.
