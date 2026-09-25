@@ -129,13 +129,31 @@ export function lank(spec, ctx) {
 // (Arial bold i gemener), och en butik med mörk logga på transparent sätter
 // `sidhuvud_farg: "#ffffff"` och får en ljus topp med linje under (Matstrumpor:
 // orange bokstäver runt en sushi, mejl/butiker/matstrumpor.json, 2026-09-25).
+// Butikens webbfont (Google Fonts) ur stilfilen, `font_webb: { namn, css, fet }`.
+// Mejlklienter som laddar webbfonter (Apple Mail, iOS Mail, Samsung Mail) visar
+// den; Gmail och Outlook faller tillbaka på font_rubrik respektive Arial.
+// Gallerierna laddar samma länk. `fet: false` = fonten är tung i sig (en enda
+// vikt), så rubrikerna får ingen syntetisk fetstil. Matstrumpor: Mochiy Pop P One,
+// temats font på både rubriker och brödtext (mätt live 2026-09-25, Axels order
+// samma dag: "Du har ju inte ens applyat våran font").
+export function webbfont(stil) {
+  const f = stil?.font_webb;
+  if (!f?.namn || !f?.css) return null;
+  return { namn: f.namn, css: f.css, fet: f.fet ?? true };
+}
+
 export function stilFran(butik) {
   const versaler = butik.rubrik_versaler ?? true;
-  const fet = butik.rubrik_fet ?? false;
+  const wf = webbfont(butik);
+  const fet = (butik.rubrik_fet ?? false) && (wf ? wf.fet : true);
   const svart = butik.farg_svart ?? '#000000';
+  const forst = wf ? `'${wf.namn}',` : '';
   return {
-    rubrik: `font-family: ${butik.font_rubrik};${versaler ? ' text-transform: uppercase;' : ''}${fet ? ' font-weight: bold;' : ''}`,
-    brod: 'font-family: Arial,Helvetica,sans-serif;',
+    rubrik: `font-family: ${forst}${butik.font_rubrik};${versaler ? ' text-transform: uppercase;' : ''}${fet ? ' font-weight: bold;' : ''}`,
+    brod: `font-family: ${forst}Arial,Helvetica,sans-serif;`,
+    // Finstilt (sidfotens 12 px) står alltid i Arial — läsbart oavsett webbfont.
+    fin: 'font-family: Arial,Helvetica,sans-serif;',
+    webbfont: wf,
     rod: butik.farg_rod ?? '#dd1d1d',
     svart,
     ram: butik.farg_ram ?? '#e8e8e1',
@@ -708,9 +726,9 @@ function sidfot(ctx) {
     underKortet: `
     <tr>
       <td align="center" style="padding: 4px 24px 28px;">
-        <p style="${s.brod} font-size: 12px; line-height: 1.7; color: ${s.gra}; margin: 0;">${esk(varforText(brand))}</p>
-        <p style="${s.brod} font-size: 12px; line-height: 1.7; color: ${s.gra}; margin: 4px 0 0;">${avreg} &nbsp;&middot;&nbsp; ${inst}</p>
-        <p style="${s.brod} font-size: 12px; line-height: 1.7; color: ${s.gra}; margin: 4px 0 0;">${org}</p>
+        <p style="${s.fin ?? s.brod} font-size: 12px; line-height: 1.7; color: ${s.gra}; margin: 0;">${esk(varforText(brand))}</p>
+        <p style="${s.fin ?? s.brod} font-size: 12px; line-height: 1.7; color: ${s.gra}; margin: 4px 0 0;">${avreg} &nbsp;&middot;&nbsp; ${inst}</p>
+        <p style="${s.fin ?? s.brod} font-size: 12px; line-height: 1.7; color: ${s.gra}; margin: 4px 0 0;">${org}</p>
       </td>
     </tr>`,
   };
@@ -735,6 +753,18 @@ function dokument(ctx, { titel, forhandstext, rader }) {
     ? `<img src="${esk(stil.logga_url)}" alt="${esk(brand.namn)}" width="${stil.logga_bredd ?? 240}" height="${stil.logga_hojd ?? 80}" style="display: block; margin: 0 auto; max-width: 100%; height: auto; border: 0;">`
     : `<span style="${s.rubrik} font-size: 26px; color: ${ljus ? s.svart : '#ffffff'};">${esk(brand.namn)}</span>`;
   const huvudStil = ljus ? `padding: 20px 24px 16px; border-bottom: 1px solid ${s.ram};` : 'padding: 16px 24px;';
+  // Klubbraden under loggan (brand.klubb.namn): varje mejl säger vilken klubb
+  // det kommer från — Matstrumpor-klubben, Axels beslut 2026-09-25 ("det måste
+  // vara som ett medlemskap att vara med i Matstrumpors klubb").
+  const klubb = brand.klubb?.namn
+    ? `<p style="${s.rubrik} font-size: 14px; letter-spacing: 1px; color: ${ljus ? s.rod : '#ffffff'}; margin: 10px 0 0;">${esk(brand.klubb.namn)}</p>`
+    : '';
+  // Webbfonten laddas i huvudet: <link> för de klienter som följer den och
+  // @import för dem som bara läser <style>. Länken står oeskapad i @import —
+  // <style> är råtext i HTML, så ett & är ett &.
+  const fontHuvud = s.webbfont ? `
+  <link rel="stylesheet" href="${esk(s.webbfont.css)}">
+  <style>@import url('${s.webbfont.css}');</style>` : '';
   const fot = sidfot(ctx);
   // Utfyllnaden efter förhandstexten hindrar Gmail/Apple Mail från att dra in
   // mejlets första rader i förhandsvisningen när förhandstexten är kort.
@@ -745,7 +775,7 @@ function dokument(ctx, { titel, forhandstext, rader }) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="x-apple-disable-message-reformatting">
-  <title>${kundtext(titel, ctx.lage)}</title>
+  <title>${kundtext(titel, ctx.lage)}</title>${fontHuvud}
   <style>${mobilStil()}</style>
 </head>
 <body style="margin: 0; padding: 0; background-color: #f2f2f2;">
@@ -756,7 +786,7 @@ function dokument(ctx, { titel, forhandstext, rader }) {
         <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="max-width: 600px; width: 100%; border: 1px solid ${s.ram};">
           <tr>
             <td align="center" bgcolor="${s.huvud}" style="${huvudStil}">
-              <a href="${esk(brand.butik_url)}" target="_blank" style="text-decoration: none;">${logga}</a>
+              <a href="${esk(brand.butik_url)}" target="_blank" style="text-decoration: none;">${logga}</a>${klubb}
             </td>
           </tr>${rader}
           <tr><td style="padding: 0 0 12px;"></td></tr>${fot.iKortet}

@@ -311,8 +311,9 @@ export async function laddaUpp({ brand, manifest, klient = null, skarpt = false,
   };
   const finns = async (typ, namn) => {
     if (klient) return klient.hittaPaNamn(typ, namn);
+    // Senaste raden om namnet vinner: "raderad" (stada.mjs) betyder borta.
     const kant = [...minne].reverse().find((m) => m.namn === namn && m.id);
-    return kant ? { id: kant.id, attributes: { name: namn }, franMinnet: true } : null;
+    return kant && kant.atgard !== 'raderad' ? { id: kant.id, attributes: { name: namn }, franMinnet: true } : null;
   };
   /**
    * Ett objekt med motorns namn som motorn inte skapat (saknas i uppladdat.jsonl):

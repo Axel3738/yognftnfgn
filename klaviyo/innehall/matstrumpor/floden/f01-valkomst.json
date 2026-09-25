@@ -1,7 +1,7 @@
 {
   "id": "f01-valkomst",
-  "namn": "FLOW_lista_valkomst_v1",
-  "memo": "Kontot har inga signup-formulär med rabatt, och listan 'Email List' bär redan 2 891 profiler från Shopify-synken som aldrig fått ett mejl. Välkomstflödet ska göra en ny prenumerant till köpare utan rabattkod: förklara vad butiken är, visa bevis (riktiga recensioner) och ta bort osäkerheten kring leverans, spårning och retur innan första köpet.",
+  "namn": "FLOW_lista_valkomst_v2",
+  "memo": "Kontot har inga signup-formulär med rabatt, och listan 'Email List' bär redan 2 891 profiler från Shopify-synken som aldrig fått ett mejl. Välkomstflödet är klubbens dörr (Axels beslut 2026-09-25: listan är ett medlemskap, Matstrumpor-klubben): E1 säger att man är med och vad medlemmen får, sedan bevis (riktiga recensioner) och tryggheten kring leverans, spårning och retur innan första köpet. Ingen rabattkod, inga medlemsförmåner som inte finns.",
   "trigger": {
     "typ": "lista",
     "lista": "Email List"
@@ -19,15 +19,15 @@
       "typ": "mejl",
       "mejl": {
         "id": "f01-valkomst-e1",
-        "namn": "FLOW_prenumerant_E1_M_ser-ut-som-sushi-ar-strumpor_v1",
-        "memo": "Nya prenumeranter vet inte vad butiken faktiskt säljer förrän de öppnar det här mejlet. Hypotes: att förklara konceptet rakt ut (strumpor förpackade som mat) och visa de mest köpta sorterna får fler att handla än att tiga och hoppas de fattar av en produktbild i flödet.",
+        "namn": "FLOW_prenumerant_E1_M_valkommen-till-klubben_v2",
+        "memo": "Den som går med vet varken vad butiken säljer eller vad klubben är. Hypotes: en välkomst som säger \"du är med nu\", vad medlemmen får (fyra sanna saker) och vad lådorna är får fler att handla än ett tyst första mejl med en produktbild. Version 2 (2026-09-25): klubbvälkomst i stället för ren produktförklaring, efter Axels beslut att listan är ett medlemskap. Copy av Sonnet mot copy-reglerna; huvudsessionen strök en mening som sa \"inget mer\" om medlemskapet.",
         "taggar": {
           "typ": "M",
           "kalla": "egen-data",
-          "kalla_ref": "klaviyo/innehall/matstrumpor/BRIEFER.md:303-306",
+          "kalla_ref": "klaviyo/innehall/matstrumpor/BRIEFER.md → F01 Välkomst (v2, klubben)",
           "lardom": null,
-          "avatar": "nyanmäld prenumerant utan känd köphistorik",
-          "begar": "njutning",
+          "avatar": "ny medlem i Matstrumpor-klubben utan känd köphistorik",
+          "begar": "tillhorighet",
           "awareness": "solution",
           "urgency": "ingen",
           "confidence": "medium",
@@ -36,29 +36,43 @@
         },
         "amnesrader": [
           {
-            "text": "Det här är inte sushi",
-            "begar": "nyfikenhet på vad som är i lådan"
+            "text": "Du är med i Matstrumpor-klubben",
+            "begar": "tillhörighet: känna att man är med nu"
           },
           {
-            "text": "Strumpor som ser ut som mat",
-            "begar": "veta vad butiken faktiskt säljer"
+            "text": "Lådorna, recensionerna och mer",
+            "begar": "nyfikenhet: vad klubben faktiskt handlar om"
           },
           {
-            "text": "En present som får folk att skratta",
-            "begar": "ge en present som får en reaktion"
+            "text": "Skrattet när lådan öppnas",
+            "begar": "njutning: skrattet när lådan öppnas"
           }
         ],
-        "forhandstext": "Fem par strumpor, ätpinnar och lite skratt.",
+        "forhandstext": "Sushi, pizza och skratt väntar i mejlet.",
         "block": [
           {
             "typ": "hero",
-            "rubrik": "Det ser ut som sushi",
-            "text": "Men det är strumpor. Vi säljer dem förpackade som sushi, pizza, hamburgare och donuts, så presenten ser ut som mat tills lådan öppnas.",
-            "bild": "produkt:sushi-strumpor"
+            "rubrik": "Välkommen till Matstrumpor-klubben",
+            "text": "Du är med i Matstrumpor-klubben nu.\n\nVi säljer strumpor förpackade som sushi, pizza, hamburgare och donuts.\n\nFramöver mejlar vi sista beställningsdagar, riktiga recensioner och vad som ligger i lådan.",
+            "bild": "produkt:sushi-strumpor",
+            "knapp": {
+              "text": "Se alla lådorna",
+              "lank": "kollektion:alla-produkter"
+            }
+          },
+          {
+            "typ": "punkter",
+            "rubrik": "Det här får du som medlem",
+            "punkter": [
+              "Vi mejlar sista beställningsdag i god tid, inför fars dag och jul.",
+              "Vi visar kundernas riktiga recensioner, ordagrant.",
+              "Vi visar vad som ligger i lådan, innan du bestämmer dig.",
+              "Vi mejlar om Black Week, när vi kör den."
+            ]
           },
           {
             "typ": "produktrad",
-            "rubrik": "Mest köpt just nu",
+            "rubrik": "De tre mest köpta",
             "handles": [
               "sushi-strumpor",
               "donut-strumpor",
@@ -71,43 +85,79 @@
         ],
         "tretest": [
           {
-            "rad": "Det här är inte sushi",
+            "rad": "Du är med i Matstrumpor-klubben",
             "visualisera": true,
             "falsifiera": true,
             "ingen_annan": true
           },
           {
-            "rad": "Strumpor som ser ut som mat",
+            "rad": "Lådorna, recensionerna och mer",
             "visualisera": true,
             "falsifiera": true,
             "ingen_annan": true
           },
           {
-            "rad": "En present som får folk att skratta",
+            "rad": "Skrattet när lådan öppnas",
             "visualisera": true,
             "falsifiera": true,
             "ingen_annan": true
           },
           {
-            "rad": "Fem par strumpor, ätpinnar och lite skratt.",
+            "rad": "Sushi, pizza och skratt väntar i mejlet.",
             "visualisera": true,
             "falsifiera": true,
             "ingen_annan": true
           },
           {
-            "rad": "Det ser ut som sushi",
+            "rad": "Välkommen till Matstrumpor-klubben",
             "visualisera": true,
             "falsifiera": true,
             "ingen_annan": true
           },
           {
-            "rad": "Mest köpt just nu",
+            "rad": "Se alla lådorna",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Det här får du som medlem",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Vi mejlar sista beställningsdag i god tid, inför fars dag och jul.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Vi visar kundernas riktiga recensioner, ordagrant.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Vi visar vad som ligger i lådan, innan du bestämmer dig.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Vi mejlar om Black Week, när vi kör den.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "De tre mest köpta",
             "visualisera": true,
             "falsifiera": true,
             "ingen_annan": true
           }
         ],
-        "version": 1
+        "version": 2
       }
     },
     {

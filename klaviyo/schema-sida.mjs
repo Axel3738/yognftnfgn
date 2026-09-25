@@ -12,7 +12,7 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { esk, ROT } from './mallar.mjs';
+import { esk, ROT, webbfont, laddaBrandResurser } from './mallar.mjs';
 import { lasInnehall } from './bygg.mjs';
 
 const DAGAR = ['söndag', 'måndag', 'tisdag', 'onsdag', 'torsdag', 'fredag', 'lördag'];
@@ -38,8 +38,12 @@ export function triggerText(t) {
   return JSON.stringify(t);
 }
 
-export function schemaHtml({ brand, kampanjer, floden, villkor = null, nu = new Date() }) {
+export function schemaHtml({ brand, kampanjer, floden, villkor = null, nu = new Date(), stil = null }) {
   const tz = brand.tidszon ?? 'Europe/Stockholm';
+  // Butikens webbfont (stilfilens font_webb) på rubrikerna och datumen, som i mejlen.
+  const wf = webbfont(stil);
+  const RUB = wf ? `"${wf.namn}", Fredoka, "Trebuchet MS", Verdana, sans-serif` : 'Fredoka, "Trebuchet MS", Verdana, sans-serif';
+  const vikt = wf && !wf.fet ? 400 : 600;
   const kal = brand.kalender ?? {};
   const markorer = [
     kal.fars_dag_sista_bestallning && { iso: kal.fars_dag_sista_bestallning, text: 'Sista beställningsdag för fars dag' },
@@ -77,7 +81,7 @@ export function schemaHtml({ brand, kampanjer, floden, villkor = null, nu = new 
   const byggd = delar(nu.toISOString(), tz);
   const antal = kampanjer.length;
   return `<title>${esk(brand.namn)} mejlschema</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">${wf ? `\n<link rel="stylesheet" href="${esk(wf.css)}">` : ''}
 <style>
   :root { --grund: #f7f2e8; --kort: #fffdf8; --text: #1b1611; --svag: #6a6156; --linje: #e4dbc9; --accent: #dd821d; --accent-text: #8a4d0a; --ok: #1d7a3a; --varn: #8a6100; --stopp: #b3261e; --ok-bg: #e4f2e8; --varn-bg: #f6ecd2; --stopp-bg: #f8e1df; }
   @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { color-scheme: dark; --grund: #1a1612; --kort: #24201b; --text: #f4ede2; --svag: #b3a999; --linje: #3d362e; --accent: #f09a3a; --accent-text: #f7c48a; --ok: #6fd28e; --varn: #f0c050; --stopp: #ff7a70; --ok-bg: #1e3326; --varn-bg: #3a3012; --stopp-bg: #43201d; } }
@@ -85,7 +89,7 @@ export function schemaHtml({ brand, kampanjer, floden, villkor = null, nu = new 
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--grund); color: var(--text); font: 19px/1.55 "Atkinson Hyperlegible", "Segoe UI", Arial, sans-serif; }
   main { max-width: 860px; margin: 0 auto; padding-block: 28px 80px; padding-inline: 16px; }
-  h1, h2, h3 { font-family: Fredoka, "Trebuchet MS", Verdana, sans-serif; font-weight: 600; text-wrap: balance; margin: 0; }
+  h1, h2, h3 { font-family: ${RUB}; font-weight: ${vikt}; text-wrap: balance; margin: 0; }
   h1 { font-size: 40px; line-height: 1.1; color: var(--accent-text); }
   h2 { font-size: 26px; margin: 44px 0 14px; }
   h3 { font-size: 20px; }
@@ -97,7 +101,7 @@ export function schemaHtml({ brand, kampanjer, floden, villkor = null, nu = new 
   .rad { display: grid; grid-template-columns: 76px 1fr; gap: 14px; align-items: start; background: var(--kort); border: 1px solid var(--linje); border-radius: 14px; padding: 14px 16px; }
   .rad.markor { background: transparent; border-style: dashed; }
   .datum { display: grid; justify-items: center; align-content: start; padding: 4px 0; border-right: 2px solid var(--accent); }
-  .dag { font-family: Fredoka, "Trebuchet MS", sans-serif; font-size: 34px; font-weight: 600; line-height: 1; font-variant-numeric: tabular-nums; }
+  .dag { font-family: ${RUB}; font-size: 34px; font-weight: ${vikt}; line-height: 1; font-variant-numeric: tabular-nums; }
   .man { font-size: 14px; text-transform: uppercase; letter-spacing: .08em; color: var(--svag); }
   .inre { display: grid; gap: 4px; min-width: 0; }
   .titel { font-size: 21px; font-weight: 700; line-height: 1.3; overflow-wrap: anywhere; }
@@ -150,7 +154,8 @@ async function main() {
   const villkor = villkorFil && existsSync(villkorFil) ? JSON.parse(readFileSync(villkorFil, 'utf8')) : null;
   const ut = arg('--ut') ?? join(ROT, 'klaviyo', 'output', brandId, 'schema.html');
   mkdirSync(join(ut, '..'), { recursive: true });
-  writeFileSync(ut, schemaHtml({ brand, kampanjer: innehall.kampanjer, floden: innehall.floden, villkor }));
+  const { stil } = laddaBrandResurser(brand);
+  writeFileSync(ut, schemaHtml({ brand, kampanjer: innehall.kampanjer, floden: innehall.floden, villkor, stil }));
   console.log(`${innehall.kampanjer.length} kampanjer, ${innehall.floden.length} flöden → ${ut}`);
 }
 

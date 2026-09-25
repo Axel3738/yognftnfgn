@@ -1,7 +1,7 @@
 {
   "id": "f06-sunset",
-  "namn": "FLOW_segment_sunset_v1",
-  "memo": "Klaviyos sunset-mönster: den som fått minst fem mejl men inte öppnat eller klickat på 180 dagar får en ärlig fråga i stället för att tystnaden bara fortsätter. Klickar hen inte heller nu märker VA:n profilen som avslutad enligt SOP E06, tills motorn själv kan göra det. Samma form som Bäverbutikens beprövade sunset-mejl: en rubrik, två korta meningar, en tydlig knapp, i stället för ren text. Ingen skuldbeläggning, mejlen är en fråga, inte ett argument.",
+  "namn": "FLOW_segment_sunset_v2",
+  "memo": "Klaviyos sunset-mönster: den som fått minst fem mejl men inte öppnat eller klickat på 180 dagar får en ärlig fråga i stället för att tystnaden bara fortsätter. Klickar hen inte heller nu märker VA:n profilen som avslutad enligt SOP E06, tills motorn själv kan göra det. Samma form som Bäverbutikens beprövade sunset-mejl: en rubrik, två korta meningar, en tydlig knapp, i stället för ren text. Ingen skuldbeläggning, mejlen är en fråga, inte ett argument. Version 2 (2026-09-25): frågan gäller platsen i Matstrumpor-klubben, inte 'listan' (Axels beslut om medlemskap).",
   "trigger": {
     "typ": "segment",
     "segment": "SEG_oengagerade_180d"
@@ -13,8 +13,8 @@
       "typ": "mejl",
       "mejl": {
         "id": "f06-sunset-e1",
-        "namn": "FLOW_segment_E1_M_vill-du-ha-mejl-fran-oss_v1",
-        "memo": "Första mejlet i sunset-flödet: en ärlig fråga, inte ett argument. Rubrik, två korta meningar och en knapp, samma form som Bäverbutikens beprövade sunset-mejl.",
+        "namn": "FLOW_segment_E1_M_vill-du-vara-kvar-i-klubben_v2",
+        "memo": "Första mejlet i sunset-flödet: en ärlig fråga, inte ett argument. Rubrik, två korta meningar och en knapp, samma form som Bäverbutikens beprövade sunset-mejl. v2: frågan gäller platsen i Matstrumpor-klubben.",
         "taggar": {
           "typ": "M",
           "kalla": "egen-data",
@@ -29,31 +29,32 @@
           "kod": "M"
         },
         "amnesrader": [
-          { "text": "Vill du fortfarande ha mejl från oss?", "begar": "en direkt, ärlig fråga att svara på" },
-          { "text": "Du väljer, vi lyssnar", "begar": "känna att det är ett val, inte ett krav" },
-          { "text": "Ett klick, sen vet vi", "begar": "en enkel handling, inget att fundera över" }
+          { "text": "Vill du vara kvar i klubben?", "begar": "en direkt fråga att svara på" },
+          { "text": "Du bestämmer om du stannar", "begar": "känna att det är ett val, inte ett krav" },
+          { "text": "Ett klick håller dig i klubben", "begar": "en enkel handling, inget att fundera över" }
         ],
-        "forhandstext": "Ett klick räcker om du vill stanna kvar på listan.",
+        "forhandstext": "Svaret tar ett klick, inget mer.",
         "block": [
           {
             "typ": "text",
-            "rubrik": "Vill du fortfarande ha mejl från oss?",
-            "text": "{{fornamn}}, det har gått ett tag sen du öppnade något härifrån. Ett klick håller dig kvar på listan."
+            "rubrik": "Vill du vara kvar i Matstrumpor-klubben?",
+            "text": "{{fornamn}}, det har varit tyst mellan oss ett tag. Ett klick håller dig kvar i Matstrumpor-klubben."
           },
           {
             "typ": "knapp",
-            "text": "Ja, fortsätt skicka",
+            "text": "Ja, håll mig kvar",
             "lank": "kollektion:alla-produkter"
           }
         ],
         "tretest": [
-          { "rad": "Vill du fortfarande ha mejl från oss?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-          { "rad": "Du väljer, vi lyssnar", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-          { "rad": "Ett klick, sen vet vi", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-          { "rad": "Ett klick räcker om du vill stanna kvar på listan.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-          { "rad": "Ja, fortsätt skicka", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+          { "rad": "Vill du vara kvar i klubben?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Du bestämmer om du stannar", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Ett klick håller dig i klubben", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Svaret tar ett klick, inget mer.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Vill du vara kvar i Matstrumpor-klubben?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Ja, håll mig kvar", "visualisera": true, "falsifiera": true, "ingen_annan": true }
         ],
-        "version": 1
+        "version": 2
       }
     },
     { "typ": "vanta", "enhet": "days", "varde": 5 },
@@ -61,8 +62,8 @@
       "typ": "mejl",
       "mejl": {
         "id": "f06-sunset-e2",
-        "namn": "FLOW_segment_E2_M_sista-mejlet_v1",
-        "memo": "Sista, tydliga valet fem dagar senare, innan profilen märks avslutad. Samma redesign som E1: rubrik, två korta meningar, en knapp.",
+        "namn": "FLOW_segment_E2_M_sista-mejlet-fran-klubben_v2",
+        "memo": "Sista, tydliga valet fem dagar senare, innan profilen märks avslutad. Samma redesign som E1: rubrik, två korta meningar, en knapp. v2: konsekvensen är att lämna Matstrumpor-klubben.",
         "taggar": {
           "typ": "M",
           "kalla": "egen-data",
@@ -77,16 +78,16 @@
           "kod": "M"
         },
         "amnesrader": [
-          { "text": "Det här är sista mejlet", "begar": "veta exakt var man står" },
-          { "text": "Hör vi inget, slutar vi skicka", "begar": "förstå den verkliga konsekvensen av tystnad" },
-          { "text": "Ett sista klick, om du vill stanna", "begar": "en sista enkel möjlighet att välja kvar" }
+          { "text": "Sista mejlet om din plats i klubben", "begar": "veta exakt var man står" },
+          { "text": "Hör vi inget, är du inte kvar", "begar": "förstå den verkliga konsekvensen av tystnad" },
+          { "text": "Sista klicket, om du vill stanna", "begar": "en sista enkel möjlighet att välja kvar" }
         ],
-        "forhandstext": "Efter det här hör du inget mer, om vi inte hör något från dig.",
+        "forhandstext": "Efter det här mejlet plockar vi bort dig, om vi inte hör något.",
         "block": [
           {
             "typ": "text",
-            "rubrik": "Det här är sista mejlet",
-            "text": "{{fornamn}}, hör vi inget nu tar vi bort dig från listan. Ett klick håller dig kvar."
+            "rubrik": "Det här är sista mejlet från klubben",
+            "text": "{{fornamn}}, hör vi inget nu tar vi bort dig från Matstrumpor-klubben. Ett sista klick håller dig kvar."
           },
           {
             "typ": "knapp",
@@ -95,13 +96,14 @@
           }
         ],
         "tretest": [
-          { "rad": "Det här är sista mejlet", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-          { "rad": "Hör vi inget, slutar vi skicka", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-          { "rad": "Ett sista klick, om du vill stanna", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-          { "rad": "Efter det här hör du inget mer, om vi inte hör något från dig.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Sista mejlet om din plats i klubben", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Hör vi inget, är du inte kvar", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Sista klicket, om du vill stanna", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Efter det här mejlet plockar vi bort dig, om vi inte hör något.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Det här är sista mejlet från klubben", "visualisera": true, "falsifiera": true, "ingen_annan": true },
           { "rad": "Ja, ha kvar mig", "visualisera": true, "falsifiera": true, "ingen_annan": true }
         ],
-        "version": 1
+        "version": 2
       }
     }
   ]

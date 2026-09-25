@@ -13,10 +13,11 @@
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync } from 'node:fs';
 import { join, basename } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { byggMejl, laddaBrandResurser, esk, ROT } from './mallar.mjs';
+import { byggMejl, laddaBrandResurser, esk, ROT, webbfont } from './mallar.mjs';
 import { validera } from './validera.mjs';
 import { hamtaProdukterCache } from './produkter.mjs';
 import { hamtaRecensionerCache } from './recensioner.mjs';
+import { nyttRegister, medPlatshallare, bildSkript } from './bilder.mjs';
 
 const STATUS_PLAN = new Set(['klar', 'utkast-skrivs-om-efter-lardom', 'kraver-axel']);
 
@@ -211,7 +212,7 @@ export async function bygg({
     varningar: allaVarningar,
   };
   writeFileSync(join(ut, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n');
-  writeFileSync(join(ut, 'index.html'), galleri({ brand, manifest, mejlUt, toppFel, toppVarningar, nu }));
+  writeFileSync(join(ut, 'index.html'), galleri({ brand, manifest, mejlUt, toppFel, toppVarningar, nu, stil }));
   return { manifest, mejlUt, utDir: ut };
 }
 
@@ -246,7 +247,9 @@ function triggerText(t) {
   return JSON.stringify(t);
 }
 
-function mejlKort(x) {
+// Med `reg` (bilder inbäddade, klaviyo/bilder.mjs) skrivs ramarna som data-srcdoc
+// med platshållare; utan skrivs srcdoc rakt av, som när bygg.mjs själv skriver galleriet.
+function mejlKort(x, reg = null) {
   const p = x.post;
   const status = x.fel.length ? `<span class="bricka fel">${x.fel.length} fel</span>` : '<span class="bricka ok">Inga fel</span>';
   const amnen = p.amnesrader
@@ -257,7 +260,8 @@ function mejlKort(x) {
     .map(([k, v]) => `<span class="tagg">${esk(k)}: ${esk(v)}</span>`)
     .join(' ');
   const lista = (rader, klass) => (rader.length ? `<ul class="${klass}">${rader.map((r) => `<li>${esk(r)}</li>`).join('')}</ul>` : '');
-  const src = esk(x.exempelHtml);
+  const src = reg ? esk(medPlatshallare(x.exempelHtml, reg)) : esk(x.exempelHtml);
+  const attr = reg ? 'data-srcdoc' : 'srcdoc';
   return `
     <article class="mejl" id="m-${esk(p.id)}">
       <header>
@@ -279,13 +283,16 @@ function mejlKort(x) {
         </div>
       </div>
       <div class="vyer">
-        <figure><figcaption>Mobil (390 px)</figcaption><div class="ram"><iframe title="${esk(p.id)} mobil" width="390" height="900" srcdoc="${src}" loading="lazy"></iframe></div></figure>
-        <figure><figcaption>Dator (600 px)</figcaption><div class="ram"><iframe title="${esk(p.id)} dator" width="640" height="900" srcdoc="${src}" loading="lazy"></iframe></div></figure>
+        <figure><figcaption>Mobil (390 px)</figcaption><div class="ram"><iframe title="${esk(p.id)} mobil" width="390" height="900" ${attr}="${src}" loading="lazy"></iframe></div></figure>
+        <figure><figcaption>Dator (600 px)</figcaption><div class="ram"><iframe title="${esk(p.id)} dator" width="640" height="900" ${attr}="${src}" loading="lazy"></iframe></div></figure>
       </div>
     </article>`;
 }
 
-export function galleri({ brand, manifest, mejlUt, toppFel = [], toppVarningar = [], nu = new Date() }) {
+export function galleri({ brand, manifest, mejlUt, toppFel = [], toppVarningar = [], nu = new Date(), bilder = null, stil = null }) {
+  const reg = bilder ? nyttRegister() : null;
+  // Butikens webbfont på sidans rubriker (samma länk som mejlen laddar).
+  const wf = webbfont(stil);
   const perId = new Map(mejlUt.map((x) => [x.post.id, x]));
   const kampanjer = [...manifest.kampanjer].sort((a, b) => String(a.planerad).localeCompare(String(b.planerad)));
   const tidslinje = kampanjer
@@ -322,17 +329,17 @@ export function galleri({ brand, manifest, mejlUt, toppFel = [], toppVarningar =
       </section>`;
     })
     .join('');
-  const kampanjMejl = mejlUt.filter((x) => x.post.kalla === 'kampanj').map(mejlKort).join('');
-  const flodesMejl = mejlUt.filter((x) => x.post.kalla === 'flode').map(mejlKort).join('');
+  const kampanjMejl = mejlUt.filter((x) => x.post.kalla === 'kampanj').map((x) => mejlKort(x, reg)).join('');
+  const flodesMejl = mejlUt.filter((x) => x.post.kalla === 'flode').map((x) => mejlKort(x, reg)).join('');
   const antalFel = manifest.fel.length;
   return `<!DOCTYPE html>
 <html lang="sv">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${esk(brand.namn)} mejlplan</title>
+<title>${esk(brand.namn)} mejlplan</title>${wf ? `\n<link rel="stylesheet" href="${esk(wf.css)}">` : ''}
 <style>
-  :root { --bg: #f4f4f1; --kort: #ffffff; --text: #111111; --svag: #5d5d5d; --ram: #dcdcd4; --rod: #c8161b; --gron: #1d7a3a; --gul: #8a6100; }
+  :root { --bg: #f4f4f1; --kort: #ffffff; --text: #111111; --svag: #5d5d5d; --ram: #dcdcd4; --rod: #c8161b; --gron: #1d7a3a; --gul: #8a6100; }${wf ? `\n  h1, h2, h3 { font-family: "${wf.namn}", Arial, Helvetica, sans-serif; font-weight: ${wf.fet ? 'bold' : 400}; }` : ''}
   @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #141414; --kort: #1f1f1f; --text: #f1f1f1; --svag: #a9a9a9; --ram: #3a3a3a; --rod: #ff5a5f; --gron: #5ed283; --gul: #f0c050; } }
   :root[data-theme="dark"] { --bg: #141414; --kort: #1f1f1f; --text: #f1f1f1; --svag: #a9a9a9; --ram: #3a3a3a; --rod: #ff5a5f; --gron: #5ed283; --gul: #f0c050; }
   * { box-sizing: border-box; }
@@ -390,6 +397,7 @@ export function galleri({ brand, manifest, mejlUt, toppFel = [], toppVarningar =
   <h2>Flödesmejlen</h2>
   ${flodesMejl || '<p class="svag">Inga.</p>'}
 </main>
+${reg ? bildSkript(reg, bilder) : ''}
 <script>
   // Ramarna får mejlets höjd, så inget behöver skrollas inuti.
   for (const f of document.querySelectorAll('iframe')) {

@@ -7,17 +7,24 @@
 //
 // Läser output/<brand>/manifest.json + <id>.exempel.html (skrivna av bygg.mjs) och
 // innehall/<brand>/. Skriver output/<brand>/galleri-kampanjer.html, galleri-floden.html
-// och galleri-mallar.html (gitignorerade). Publiceras som Artifacts av sessionen; med
-// `--lankar` ({ kampanjer, floden, mallar, schema, galleri }) får sidorna en meny
-// som pekar på varandra. Varje mejl visas i en telefonram (iframe srcdoc), som
-// bygg.mjs galleri, men sidan är byggd för att titta på, inte för att felsöka.
+// och galleri-mallar.html (gitignorerade) — och bygger om index.html (bygg.mjs galleri)
+// med bilderna inbäddade. Publiceras som Artifacts av sessionen; med `--lankar`
+// ({ kampanjer, floden, mallar, schema, galleri }) får sidorna en meny som pekar på
+// varandra. Varje mejl visas i en telefonram (iframe), som bygg.mjs galleri, men
+// sidan är byggd för att titta på, inte för att felsöka.
+//
+// ⚠️ Bilderna bäddas in (klaviyo/bilder.mjs): artifact-visaren blockerar bilder från
+// Shopifys CDN, så mejlen visade trasiga bilder 2026-09-25. Varje bild hämtas en
+// gång (cache output/<brand>/bilder/) och ligger EN gång per sida som data-URI;
+// ramarna fylls vid laddning. Kräver nät första gången — sedan går cachen.
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { esk, ROT } from './mallar.mjs';
-import { lasInnehall } from './bygg.mjs';
+import { esk, ROT, webbfont, laddaBrandResurser } from './mallar.mjs';
+import { lasInnehall, galleri as byggGalleri } from './bygg.mjs';
 import { delar, STATUS, SEGMENT_ORD, ENHET, triggerText } from './schema-sida.mjs';
+import { nyttRegister, medPlatshallare, bildSkript, bildUrlar, hamtaBilder } from './bilder.mjs';
 
 const FLODESNAMN = { f01: 'Välkomst', f02: 'Övergiven kassa', f03: 'Webbhistorik', f04: 'Efter köp', f05: 'Vinna tillbaka', f06: 'Sunset', f07: 'Återköp' };
 const FILTER_ORD = { samtycke: 'bara den som sagt ja till mejl', kundundantag: 'alla köpare som inte tackat nej', ej_kopt_sedan_start: 'stannar om personen köper', ej_checkout_sedan_start: 'stannar om personen går till kassan', ej_i_flodet_7d: 'inte i flödet senaste 7 dagarna', ej_i_flodet_14d: 'inte i flödet senaste 14 dagarna', ej_i_flodet_30d: 'inte i flödet senaste 30 dagarna', kopt_minst_en_gang: 'har köpt minst en gång' };
@@ -28,8 +35,10 @@ function flodesNamn(id, namn) {
   return FLODESNAMN[k] ? `${k.toUpperCase()} ${FLODESNAMN[k]}` : namn;
 }
 
-function telefon(html, titel) {
-  return `<figure class="telefon"><div class="skarm"><iframe title="${esk(titel)}" srcdoc="${esk(html)}" loading="lazy" scrolling="no"></iframe></div></figure>`;
+// Ramen skrivs med data-srcdoc + platshållare (bild:N); skriptet från bildSkript()
+// sätter in bilderna och gör den till en riktig srcdoc vid laddning.
+function telefon(html, titel, reg) {
+  return `<figure class="telefon"><div class="skarm"><iframe title="${esk(titel)}" data-srcdoc="${esk(medPlatshallare(html, reg))}" loading="lazy" scrolling="no"></iframe></div></figure>`;
 }
 
 function huvud({ brand, sida, titel, ingress, lankar }) {
@@ -45,9 +54,16 @@ function huvud({ brand, sida, titel, ingress, lankar }) {
 </header>`;
 }
 
+// Sidans egen stil. Butikens webbfont (stilfilens font_webb, samma som mejlen
+// laddar) sätts först på rubriker, meny och kedjans etiketter — så galleriet
+// ser ut som butiken, inte som ett generiskt verktyg. Brödtexten är Atkinson
+// Hyperlegible för läsbarheten.
 function stil(brand, s) {
   const accent = s.farg_rod ?? '#dd821d';
-  return `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+  const wf = webbfont(s);
+  const RUB = wf ? `"${wf.namn}", Fredoka, "Trebuchet MS", Verdana, sans-serif` : 'Fredoka, "Trebuchet MS", Verdana, sans-serif';
+  const vikt = wf && !wf.fet ? 400 : 600;
+  return `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">${wf ? `\n<link rel="stylesheet" href="${esk(wf.css)}">` : ''}
 <style>
   :root { --grund: #f7f2e8; --kort: #fffdf8; --text: #1b1611; --svag: #6a6156; --linje: #e4dbc9; --accent: ${accent}; --accent-text: #8a4d0a; --ok: #1d7a3a; --varn: #8a6100; --ok-bg: #e4f2e8; --varn-bg: #f6ecd2; --ram: #1b1611; --skarm: #f2f2f2; }
   @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { color-scheme: dark; --grund: #1a1612; --kort: #24201b; --text: #f4ede2; --svag: #b3a999; --linje: #3d362e; --accent: #f09a3a; --accent-text: #f7c48a; --ok: #6fd28e; --varn: #f0c050; --ok-bg: #1e3326; --varn-bg: #3a3012; --ram: #0e0c0a; --skarm: #2a2622; } }
@@ -55,7 +71,7 @@ function stil(brand, s) {
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--grund); color: var(--text); font: 18px/1.55 "Atkinson Hyperlegible", "Segoe UI", Arial, sans-serif; }
   main { max-width: 1120px; margin: 0 auto; padding-block: 24px 80px; padding-inline: 16px; }
-  h1, h2, h3 { font-family: Fredoka, "Trebuchet MS", Verdana, sans-serif; font-weight: 600; text-wrap: balance; margin: 0; }
+  h1, h2, h3 { font-family: ${RUB}; font-weight: ${vikt}; text-wrap: balance; margin: 0; }
   h1 { font-size: 40px; line-height: 1.1; color: var(--accent-text); }
   h2 { font-size: 26px; }
   h3 { font-size: 21px; }
@@ -65,7 +81,7 @@ function stil(brand, s) {
   .ingress { font-size: 19px; max-width: 65ch; margin-top: 8px; }
   .topp { display: grid; gap: 6px; padding-bottom: 20px; border-bottom: 2px solid var(--accent); margin-bottom: 26px; }
   .meny { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-  .meny a, .meny .nu { font-family: Fredoka, sans-serif; font-weight: 600; font-size: 16px; padding: 8px 16px; border-radius: 999px; border: 2px solid var(--accent); color: var(--accent-text); text-decoration: none; }
+  .meny a, .meny .nu { font-family: ${RUB}; font-weight: ${vikt}; font-size: 16px; padding: 8px 16px; border-radius: 999px; border: 2px solid var(--accent); color: var(--accent-text); text-decoration: none; }
   .meny .nu { background: var(--accent); color: #fff; border-color: var(--accent); }
   .meny a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
   .hopp { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 24px; padding: 0; list-style: none; }
@@ -73,7 +89,7 @@ function stil(brand, s) {
   .kort { display: grid; grid-template-columns: minmax(0, 1fr) 420px; gap: 24px; align-items: start; background: var(--kort); border: 1px solid var(--linje); border-radius: 18px; padding: 22px 24px; margin-bottom: 22px; }
   .kort.enkel { grid-template-columns: minmax(0, 1fr); }
   .meta { display: grid; gap: 10px; min-width: 0; }
-  .datum { display: inline-flex; align-items: baseline; gap: 8px; font-family: Fredoka, sans-serif; color: var(--accent-text); }
+  .datum { display: inline-flex; align-items: baseline; gap: 8px; font-family: ${RUB}; color: var(--accent-text); }
   .datum b { font-size: 34px; line-height: 1; }
   .datum span { font-size: 16px; text-transform: uppercase; letter-spacing: .06em; }
   .amne { font-size: 24px; font-weight: 700; line-height: 1.25; overflow-wrap: anywhere; }
@@ -95,10 +111,10 @@ function stil(brand, s) {
   .kedja > * { flex: 0 0 auto; scroll-snap-align: start; }
   .steg { width: min(420px, 86vw); display: grid; gap: 10px; }
   .steg .amne { font-size: 20px; }
-  .vanta { align-self: center; display: grid; justify-items: center; gap: 6px; width: 120px; text-align: center; font-family: Fredoka, sans-serif; font-size: 16px; color: var(--accent-text); }
+  .vanta { align-self: center; display: grid; justify-items: center; gap: 6px; width: 120px; text-align: center; font-family: ${RUB}; font-size: 16px; color: var(--accent-text); }
   .vanta .pil { width: 100%; height: 3px; background: var(--accent); border-radius: 2px; position: relative; }
   .vanta .pil::after { content: ""; position: absolute; right: -2px; top: -5px; border: 6px solid transparent; border-left: 10px solid var(--accent); }
-  .start { align-self: center; width: 200px; padding: 14px 16px; border-radius: 14px; background: var(--accent); color: #fff; font-family: Fredoka, sans-serif; font-weight: 600; line-height: 1.3; }
+  .start { align-self: center; width: 200px; padding: 14px 16px; border-radius: 14px; background: var(--accent); color: #fff; font-family: ${RUB}; font-weight: ${vikt}; line-height: 1.3; }
   .start small { display: block; font-family: "Atkinson Hyperlegible", sans-serif; font-weight: 400; font-size: 14px; margin-top: 4px; color: #fff3e2; }
   .rutnat { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 22px; }
   .rutnat .kort { grid-template-columns: minmax(0, 1fr); padding: 16px; margin: 0; }
@@ -110,13 +126,7 @@ function stil(brand, s) {
 </style>`;
 }
 
-const AUTOSIZE = `<script>
-  for (const f of document.querySelectorAll('iframe')) {
-    f.addEventListener('load', () => { try { const h = f.contentDocument.documentElement.scrollHeight; if (h > 200) f.style.height = h + 'px'; } catch (e) {} });
-  }
-</script>`;
-
-function kampanjKort({ k, mejl, html, brand }) {
+function kampanjKort({ k, mejl, html, brand, reg }) {
   const d = delar(k.planerad, brand.tidszon ?? 'Europe/Stockholm');
   const [st, kl] = STATUS[k.status_plan] ?? [k.status_plan ?? 'Utkast', 'sen'];
   const kod = (k.id.match(/^k(\d+)/i) ? `K${k.id.match(/^k(\d+)/i)[1]}` : k.id);
@@ -134,12 +144,17 @@ function kampanjKort({ k, mejl, html, brand }) {
     <dl class="rad"><dt>Hypotes</dt><dd class="svag">${esk(String(mejl.memo ?? '').replace(/^\s*hypotes:\s*/i, ''))}</dd></dl>
     <p class="svag">${esk(k.namn)}</p>
   </div>
-  ${telefon(html, `${kod} i mobilen`)}
+  ${telefon(html, `${kod} i mobilen`, reg)}
 </article>`;
 }
 
-export function galleriKampanjer({ brand, kampanjer, htmlFor, lankar }) {
-  const s = STIL_FALLBACK;
+// Sidorna tar butikens stilfil (`stil`, mejl/butiker/<id>.json) bara för webbfonten;
+// färgerna är galleriets egna.
+const sidStil = (st) => ({ ...STIL_FALLBACK, font_webb: st?.font_webb ?? null });
+
+export function galleriKampanjer({ brand, kampanjer, htmlFor, lankar, bilder = new Map(), stil: st = null }) {
+  const s = sidStil(st);
+  const reg = nyttRegister();
   const sorterade = [...kampanjer].sort((a, b) => String(a.planerad).localeCompare(String(b.planerad)));
   const hopp = sorterade.map((k) => { const d = delar(k.planerad, brand.tidszon); const kod = k.id.match(/^k(\d+)/i) ? `K${k.id.match(/^k(\d+)/i)[1]}` : k.id; return `<li><a href="#${esk(k.id)}">${esk(kod)} · ${d ? `${d.dag} ${esk(d.man)}` : ''}</a></li>`; }).join('');
   return `<title>${esk(brand.namn)} kampanjer</title>
@@ -147,14 +162,15 @@ ${stil(brand, s)}
 <main>
 ${huvud({ brand, sida: 'kampanjer', titel: 'Alla kampanjer, färdiga', ingress: `${sorterade.length} kampanjer i datumordning, renderade som de ser ut i mobilen. Ämnesrad A är den som står överst; B och C testas mot den. Allt ligger som utkast i Klaviyo tills du säger till.`, lankar })}
 <ul class="hopp">${hopp}</ul>
-${sorterade.map((k) => kampanjKort({ k, mejl: k, html: htmlFor(k.id), brand })).join('\n')}
+${sorterade.map((k) => kampanjKort({ k, mejl: k, html: htmlFor(k.id), brand, reg })).join('\n')}
 </main>
-${AUTOSIZE}
+${bildSkript(reg, bilder)}
 `;
 }
 
-export function galleriFloden({ brand, floden, htmlFor, lankar }) {
-  const s = STIL_FALLBACK;
+export function galleriFloden({ brand, floden, htmlFor, lankar, bilder = new Map(), stil: st = null }) {
+  const s = sidStil(st);
+  const reg = nyttRegister();
   const hopp = floden.map((f) => `<li><a href="#${esk(f.id)}">${esk(flodesNamn(f.id, f.namn))}</a></li>`).join('');
   const sektioner = floden.map((f) => {
     let n = 0;
@@ -165,7 +181,7 @@ export function galleriFloden({ brand, floden, htmlFor, lankar }) {
       n += 1;
       const m = st.mejl ?? {};
       const id = m.id ?? `${f.id}-e${n}`;
-      return `<div class="steg"><p class="eyebrow">Mejl ${n}</p><p class="amne">${esk(m.amnesrader?.[0]?.text ?? id)}</p><p class="fht">${esk(m.forhandstext ?? '')}</p>${telefon(htmlFor(id), `${id} i mobilen`)}</div>`;
+      return `<div class="steg"><p class="eyebrow">Mejl ${n}</p><p class="amne">${esk(m.amnesrader?.[0]?.text ?? id)}</p><p class="fht">${esk(m.forhandstext ?? '')}</p>${telefon(htmlFor(id), `${id} i mobilen`, reg)}</div>`;
     }).join('');
     return `<section class="flode" id="${esk(f.id)}">
   <div class="flode-huvud">
@@ -183,18 +199,19 @@ ${huvud({ brand, sida: 'floden', titel: 'Alla flöden, steg för steg', ingress:
 <ul class="hopp">${hopp}</ul>
 ${sektioner}
 </main>
-${AUTOSIZE}
+${bildSkript(reg, bilder)}
 `;
 }
 
-export function galleriMallar({ brand, manifest, htmlFor, lankar }) {
-  const s = STIL_FALLBACK;
+export function galleriMallar({ brand, manifest, htmlFor, lankar, bilder = new Map(), stil: st = null }) {
+  const s = sidStil(st);
+  const reg = nyttRegister();
   const mejl = manifest.mejl ?? [];
   const kort = mejl.map((m) => `<article class="kort" id="${esk(m.id)}">
   <p class="eyebrow">${m.kalla === 'kampanj' ? 'Kampanj' : `Flöde · ${esk(flodesNamn(m.flode_id ?? '', m.flode_id ?? ''))}`}</p>
   <p class="amne" style="font-size:19px">${esk(m.amnesrader?.[0]?.text ?? m.id)}</p>
   <p class="namn svag">TPL_${esk(m.id)}_v${esk(m.version ?? 1)}</p>
-  ${telefon(htmlFor(m.id), `${m.id} i mobilen`)}
+  ${telefon(htmlFor(m.id), `${m.id} i mobilen`, reg)}
 </article>`).join('\n');
   return `<title>${esk(brand.namn)} mallar</title>
 ${stil(brand, s)}
@@ -202,8 +219,21 @@ ${stil(brand, s)}
 ${huvud({ brand, sida: 'mallar', titel: 'Alla mallar, renderade', ingress: `${mejl.length} mallar i Klaviyo, som de ser ut i mobilen. Namnet under varje mall är mallens namn i Klaviyo (Content → Templates).`, lankar })}
 <div class="rutnat">${kort}</div>
 </main>
-${AUTOSIZE}
+${bildSkript(reg, bilder)}
 `;
+}
+
+// bygg.mjs galleri() vill ha mejlUt (post + fel + varningar + exempelHtml); ur
+// manifestet går det att återskapa: felen står där som "<id>: <fel>".
+export function mejlUtUrManifest(manifest, htmlFor) {
+  const ids = (manifest.mejl ?? []).map((m) => m.id);
+  const egna = (lista, id) => (lista ?? []).filter((r) => r.startsWith(`${id}: `)).map((r) => r.slice(id.length + 2));
+  const topp = (lista) => (lista ?? []).filter((r) => !ids.some((id) => r.startsWith(`${id}: `)));
+  return {
+    mejlUt: (manifest.mejl ?? []).map((post) => ({ post, fel: egna(manifest.fel, post.id), varningar: egna(manifest.varningar, post.id), exempelHtml: htmlFor(post.id), mejl: null })),
+    toppFel: topp(manifest.fel),
+    toppVarningar: topp(manifest.varningar),
+  };
 }
 
 function arg(namn) {
@@ -212,6 +242,8 @@ function arg(namn) {
 }
 
 async function main() {
+  // Undici läser inte HTTPS_PROXY själv; samma knep som bygg.mjs (bilderna hämtas).
+  (await import('../mejl/shopify.mjs')).kravProxy();
   const brandId = arg('--brand') ?? 'baverbutiken';
   const brand = JSON.parse(readFileSync(join(ROT, 'klaviyo', 'brands', `${brandId}.json`), 'utf8'));
   const ut = join(ROT, 'klaviyo', 'output', brandId);
@@ -228,15 +260,21 @@ async function main() {
     return readFileSync(fil, 'utf8');
   };
   mkdirSync(ut, { recursive: true });
+  const urlar = [...new Set(manifest.mejl.flatMap((m) => bildUrlar(htmlFor(m.id))))];
+  const { bilder, saknas } = await hamtaBilder({ urlar, cacheDir: join(ut, 'bilder'), logg: (t) => console.log(t) });
+  const ur = mejlUtUrManifest(manifest, htmlFor);
+  const { stil: st } = laddaBrandResurser(brand);
   const filer = {
-    'galleri-kampanjer.html': galleriKampanjer({ brand, kampanjer: innehall.kampanjer, htmlFor, lankar }),
-    'galleri-floden.html': galleriFloden({ brand, floden: innehall.floden, htmlFor, lankar }),
-    'galleri-mallar.html': galleriMallar({ brand, manifest, htmlFor, lankar }),
+    'galleri-kampanjer.html': galleriKampanjer({ brand, kampanjer: innehall.kampanjer, htmlFor, lankar, bilder, stil: st }),
+    'galleri-floden.html': galleriFloden({ brand, floden: innehall.floden, htmlFor, lankar, bilder, stil: st }),
+    'galleri-mallar.html': galleriMallar({ brand, manifest, htmlFor, lankar, bilder, stil: st }),
+    'index.html': byggGalleri({ brand, manifest, mejlUt: ur.mejlUt, toppFel: ur.toppFel, toppVarningar: ur.toppVarningar, bilder, stil: st }),
   };
   for (const [namn, html] of Object.entries(filer)) {
     writeFileSync(join(ut, namn), html);
     console.log(`${namn}: ${Math.round(Buffer.byteLength(html, 'utf8') / 1024)} kB`);
   }
+  if (saknas.length) console.log(`⚠️  ${saknas.length} bilder saknas (behåller sina URL:er i sidorna): ${saknas.map((s) => s.url).join(', ')}`);
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
