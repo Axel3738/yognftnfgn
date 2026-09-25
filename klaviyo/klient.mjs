@@ -70,8 +70,15 @@ export function citera(varde) {
  * Spärren mot att skicka. Kastar om anropet skulle starta ett utskick eller
  * sätta något live. Returnerar inget annars.
  */
-export function sparrSkicka(metod, sokvag, kropp) {
+export function sparrSkicka(metod, sokvag, kropp, tillatLive = null) {
   const s = String(sokvag).replace(/^https?:\/\/[^/]+/, '').split('?')[0];
+  // Undantaget: klaviyo/sla-pa.mjs slår på NAMNGIVNA flöden på Axels ord.
+  // Bara exakt de flödes- och action-id:n som står i mängden, bara PATCH av
+  // status, och aldrig något kampanjutskick.
+  const liveId = /^\/api\/(?:flows|flow-actions)\/([^/]+)$/.exec(s)?.[1];
+  const at = kropp?.data?.attributes ?? {};
+  const baraLive = Object.keys(at).length === 1 && (at.status === 'live' || at.definition?.data?.status === 'live');
+  if (tillatLive?.has?.(liveId) && metod === 'PATCH' && baraLive) return;
   const stopp = (varfor) => {
     throw new KlaviyoFel({ status: 0, metod, sokvag: s, kod: 'SPARR_SKICKA', meddelande: `Spärrat: ${varfor}. Motorn skapar bara utkast (ARKITEKTUR.md järnregel 1) — ett utskick är Axels beslut, i Klaviyo.` });
   };
@@ -112,7 +119,8 @@ export class KlaviyoKlient {
    * @param {Function} [o.logg]
    * @param {Function} [o.sov]     sömnen (injiceras i testerna så 429 inte tar tid)
    */
-  constructor({ nyckel, fetchFn = fetch, bas = BAS, revision = REVISION, paus = 1000, logg = () => {}, sov = vila } = {}) {
+  constructor({ nyckel, fetchFn = fetch, bas = BAS, revision = REVISION, paus = 1000, logg = () => {}, sov = vila, tillatLive = null } = {}) {
+    this.tillatLive = tillatLive ? new Set(tillatLive) : null;
     if (!nyckel) throw new Error('KlaviyoKlient: nyckel saknas.');
     this.nyckel = nyckel;
     this.fetchFn = fetchFn;
@@ -141,7 +149,7 @@ export class KlaviyoKlient {
   }
 
   async anrop(metod, sokvag, { params = null, kropp = null, headers = {} } = {}) {
-    sparrSkicka(metod, sokvag, kropp);
+    sparrSkicka(metod, sokvag, kropp, this.tillatLive);
     const url = this.url(sokvag, params);
     const kort = url.replace(this.bas, '').split('?')[0];
     if (metod !== 'GET' && this.paus) {

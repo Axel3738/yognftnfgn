@@ -433,7 +433,8 @@ const BLOCK = {
   fakta(b, ctx) {
     const { s, brand } = ctx;
     const celler = [
-      ['Leverans', brand.leverans_text, null],
+      // Leveranstiden står aldrig i ett mejl som bär spårningslänken — sidan
+      // visar beräknad leverans själv (CLAUDE.md, Axels order 2026-09-21 + 2026-09-25).
       ['Ångerrätt', brand.angerratt_text, null],
       ['Spåra paketet', 'Följ det hela vägen', brand.sparningssida],
     ]
@@ -552,7 +553,6 @@ const RENTEXT = {
   fakta(b, ctx) {
     const { s, brand } = ctx;
     const rader = [
-      brand.leverans_text ? `Leverans: ${esk(brand.leverans_text)}` : null,
       brand.angerratt_text ? `Ångerrätt: ${esk(brand.angerratt_text)}` : null,
       brand.sparningssida ? `Spåra paketet: <a href="${esk(brand.sparningssida)}" target="_blank" style="color: ${s.svart};">${esk(brand.sparningssida.replace(/^https:\/\//, ''))}</a>` : null,
     ].filter(Boolean);
@@ -755,7 +755,7 @@ function textversion(mejl, ctx) {
         ut.push(mejl.format === 'rentext' ? t(b.text) : `${t(b.text)}\n${ctx.stil.grundare ?? 'Axel'}, grundare`);
         break;
       case 'fakta':
-        ut.push(`Leverans: ${brand.leverans_text}\nÅngerrätt: ${brand.angerratt_text}\nSpåra paketet: ${brand.sparningssida}`);
+        ut.push(`Ångerrätt: ${brand.angerratt_text}\nSpåra paketet: ${brand.sparningssida}`);
         break;
       case 'erbjudande': {
         const e = ctx.erbjudande;

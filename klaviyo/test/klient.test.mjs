@@ -135,3 +135,17 @@ test('spärren: kampanj utan send_strategy eller med "immediate" skapas aldrig',
   // campaign-messages och assign-template berörs inte
   assert.doesNotThrow(() => sparrSkicka('PATCH', '/api/campaign-messages/M1', { data: { attributes: { definition: {} } } }));
 });
+
+test('spärren: bara namngivna flöden får status live, och aldrig ett kampanjutskick', async () => {
+  const { sparrSkicka } = await import('../klient.mjs');
+  const live = (id, typ = 'flow') => ({ data: { type: typ, id, attributes: { status: 'live' } } });
+  const tillat = new Set(['F1', 'A1']);
+  assert.throws(() => sparrSkicka('PATCH', '/api/flows/F1', live('F1')), (e) => e.kod === 'SPARR_SKICKA');
+  assert.doesNotThrow(() => sparrSkicka('PATCH', '/api/flows/F1', live('F1'), tillat));
+  assert.doesNotThrow(() => sparrSkicka('PATCH', '/api/flow-actions/A1', live('A1', 'flow-action'), tillat));
+  assert.doesNotThrow(() => sparrSkicka('PATCH', '/api/flow-actions/A1', { data: { attributes: { definition: { type: 'send-email', data: { status: 'live' } } } } }, tillat));
+  assert.throws(() => sparrSkicka('PATCH', '/api/flow-actions/A2', { data: { attributes: { definition: { type: 'send-email', data: { status: 'live' } } } } }, tillat), (e) => e.kod === 'SPARR_SKICKA');
+  assert.throws(() => sparrSkicka('PATCH', '/api/flows/F2', live('F2'), tillat), (e) => e.kod === 'SPARR_SKICKA');
+  assert.throws(() => sparrSkicka('PATCH', '/api/flows/F1', { data: { attributes: { status: 'live', name: 'x' } } }, tillat), (e) => e.kod === 'SPARR_SKICKA');
+  assert.throws(() => sparrSkicka('POST', '/api/campaign-send-jobs', { data: {} }, tillat), (e) => e.kod === 'SPARR_SKICKA');
+});

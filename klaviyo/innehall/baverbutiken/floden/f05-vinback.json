@@ -113,7 +113,8 @@
             "falsifiera": true,
             "ingen_annan": true
           }
-        ]
+        ],
+        "version": 2
       }
     },
     {
@@ -205,7 +206,8 @@
             "falsifiera": true,
             "ingen_annan": true
           }
-        ]
+        ],
+        "version": 2
       }
     }
   ]
