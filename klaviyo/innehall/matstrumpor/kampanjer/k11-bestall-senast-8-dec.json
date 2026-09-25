@@ -1,0 +1,58 @@
+{
+  "id": "k11-bestall-senast-8-dec",
+  "namn": "MAIL_20261201_Julklapp_GT_3_samtycke_promo_bestall-senast-8-dec_v1",
+  "memo": "Riktig brådska: efter tisdag 8 december (23 december minus p90 15 dygn) räknar vi inte med att paketet hinner fram till jul. Mejlet säger datumet rakt ut och lovar inget efter det. Ingen leveranstid i dagar.",
+  "taggar": {
+    "typ": "M",
+    "_typ": "N=nytt koncept, I=iteration av annonsvinnare, IM=imitation, M=mejlspecifikt, S=säsong",
+    "kalla": "egen-data",
+    "_kalla": "egen-data | winning-line | voc | swipe | gissning",
+    "kalla_ref": "klaviyo/brands/matstrumpor.json#kalender",
+    "lardom": null,
+    "avatar": "presentkoparen som ännu inte beställt julklappen",
+    "begar": "kontroll",
+    "awareness": "promo",
+    "_awareness": "unaware | problem | solution | product | promo",
+    "urgency": "konsekvens",
+    "_urgency": "sasong | lager | pris | konsekvens | ingen",
+    "confidence": "medium",
+    "_confidence": "high | medium | low (low = gissning)",
+    "prefix": "Julklapp",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    { "text": "Tisdag 8 december är sista dagen", "begar": "veta det verkliga, konkreta datumet" },
+    { "text": "Efter tisdag hinner det inte fram till jul", "begar": "förstå konsekvensen av att vänta" },
+    { "text": "Fyra förslag, om du inte bestämt dig", "begar": "få hjälp att bestämma snabbt" }
+  ],
+  "forhandstext": "8 december. Efter det räknar vi inte med att paketet hinner fram till jul.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Beställ senast tisdag 8 december",
+      "text": "{{fornamn}}, beställer du senast tisdag 8 december hinner paketet fram innan julafton. Efter det datumet räknar vi inte med att det gör det.",
+      "bild": "produkt:sushi-strumpor",
+      "knapp": { "text": "Beställ innan tisdag", "lank": "kollektion:alla-produkter" }
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Fyra förslag, redo direkt",
+      "handles": ["sushi-strumpor", "pizza-strumpor", "hamburger-strumpor", "donut-strumpor"]
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "Tisdag 8 december är sista dagen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Efter tisdag hinner det inte fram till jul", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fyra förslag, om du inte bestämt dig", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "8 december. Efter det räknar vi inte med att paketet hinner fram till jul.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Beställ senast tisdag 8 december", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fyra förslag, redo direkt", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Beställ innan tisdag", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-12-01T18:00:00+01:00",
+  "segment": ["SEG_samtycke"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

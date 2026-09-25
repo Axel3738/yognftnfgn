@@ -1,0 +1,65 @@
+{
+  "id": "k12-sista-dagen-idag",
+  "namn": "MAIL_20261208_Julklapp_GT_4_samtycke_promo_sista-dagen-i-dag_v1",
+  "memo": "Samma orsak som K11, sista dagen. Egna krokar: i dag, inte om några dagar. Produktraden är sushin i eget block plus de tre andra sorterna.",
+  "taggar": {
+    "typ": "M",
+    "_typ": "N=nytt koncept, I=iteration av annonsvinnare, IM=imitation, M=mejlspecifikt, S=säsong",
+    "kalla": "egen-data",
+    "_kalla": "egen-data | winning-line | voc | swipe | gissning",
+    "kalla_ref": "klaviyo/brands/matstrumpor.json#kalender",
+    "lardom": null,
+    "avatar": "presentkoparen som ännu inte beställt julklappen",
+    "begar": "kontroll",
+    "awareness": "promo",
+    "_awareness": "unaware | problem | solution | product | promo",
+    "urgency": "konsekvens",
+    "_urgency": "sasong | lager | pris | konsekvens | ingen",
+    "confidence": "medium",
+    "_confidence": "high | medium | low (low = gissning)",
+    "prefix": "Julklapp",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    { "text": "I dag är sista dagen för jul", "begar": "veta det verkliga, konkreta datumet" },
+    { "text": "I morgon hinner det inte längre fram", "begar": "förstå konsekvensen av att vänta" },
+    { "text": "Fyra förslag, om du bestämmer nu", "begar": "få hjälp att bestämma snabbt" }
+  ],
+  "forhandstext": "Beställer du i dag hinner det fram till julafton.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "I dag är sista dagen att beställa till jul",
+      "text": "{{fornamn}}, beställer du i dag hinner paketet fram innan julafton. I morgon räknar vi inte längre med det.",
+      "bild": "produkt:sushi-strumpor",
+      "knapp": { "text": "Beställ i dag", "lank": "kollektion:alla-produkter" }
+    },
+    {
+      "typ": "produkt",
+      "handle": "sushi-strumpor",
+      "text": "Fem par i en låda som ser ut som taget rakt från restaurangen.",
+      "knapp": "Till sushilådan"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Eller en av de andra tre",
+      "handles": ["pizza-strumpor", "hamburger-strumpor", "donut-strumpor"]
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "I dag är sista dagen för jul", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "I morgon hinner det inte längre fram", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fyra förslag, om du bestämmer nu", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Beställer du i dag hinner det fram till julafton.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "I dag är sista dagen att beställa till jul", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Eller en av de andra tre", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Beställ i dag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Till sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-12-08T18:00:00+01:00",
+  "segment": ["SEG_samtycke"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

@@ -1,0 +1,211 @@
+{
+  "id": "f05-vinback",
+  "namn": "FLOW_order_vinback_v1",
+  "memo": "Första versionen för Matstrumpor (BRIEFER.md → F05, data ur klaviyo/evolve/ATERKOP-ANALYS-matstrumpor.md#1). 90 dagars väntan: nästan inga återköp sker inom 60 dagar, men 86 % av alla återköp (38 av 44) sker december till mars oavsett när köp 1 lades, så en höstköpare möter E1 mitt i säsongen. E1 pekar inte ut en specifik produkt, för inget korsförsäljningspar har stöd i datan (#2), utan pratar om nästa mottagare. E2 stänger flödet med kundernas egna ord, det enda Matstrumpor har som Bäverbutiken inte redan fått i E1.",
+  "trigger": {
+    "typ": "metrik",
+    "metrik": [
+      "Placed Order"
+    ]
+  },
+  "filter": [
+    "kundundantag",
+    "ej_kopt_sedan_start"
+  ],
+  "ateintrade": {
+    "varaktighet": 90,
+    "enhet": "day"
+  },
+  "steg": [
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 90
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f05-vinback-e1",
+        "namn": "FLOW_order_E1_GT_vem-star-pa-tur_v1",
+        "memo": "90 dagar utan nytt köp. Ingen produkt pekas ut, för inget korsförsäljningspar finns i datan, så mejlet pratar om nästa mottagare i stället för en specifik vara: alla fyra sorter i produktraden.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "klaviyo/evolve/ATERKOP-ANALYS-matstrumpor.md#1",
+          "lardom": null,
+          "avatar": "köpare som inte handlat på över tre månader",
+          "begar": "vara den som kommer ihåg att ge en present igen, utan att behöva komma på något nytt",
+          "awareness": "solution",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "Vinback",
+          "kod": "GT"
+        },
+        "amnesrader": [
+          {
+            "text": "Vem står på tur för en låda?",
+            "begar": "identifiera nästa mottagare, vara den som ger igen"
+          },
+          {
+            "text": "Samma låda funkar igen",
+            "begar": "slippa fundera på något nytt, det som funkade förra gången funkar igen"
+          },
+          {
+            "text": "Fyra sorter, inte bara sushi",
+            "begar": "upptäcka alternativ man kanske missade förra gången"
+          }
+        ],
+        "forhandstext": "Ingen kampanj, bara en påminnelse: listan med mottagare tar sällan slut.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Vem står på tur?",
+            "text": "Du gav bort en låda sist. Den funkar lika bra en gång till, till någon annan på listan."
+          },
+          {
+            "typ": "produktrad",
+            "rubrik": "Fyra sorter att välja bland",
+            "handles": [
+              "sushi-strumpor",
+              "pizza-strumpor",
+              "hamburger-strumpor",
+              "donut-strumpor"
+            ]
+          },
+          {
+            "typ": "fakta"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Vem står på tur för en låda?",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Samma låda funkar igen",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Fyra sorter, inte bara sushi",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Ingen kampanj, bara en påminnelse: listan med mottagare tar sällan slut.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Vem står på tur?",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Fyra sorter att välja bland",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 1
+      }
+    },
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 14
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f05-vinback-e2",
+        "namn": "FLOW_order_E2_SP_kundernas-ord_v1",
+        "memo": "Sista mejlet i flödet, två veckor efter E1. Bara sushin har riktiga recensioner (8 st, Judge.me), så citatet gäller den produkten. Ingen upprepning av föregående mejls vinkel.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "klaviyo/output/matstrumpor/recensioner.json",
+          "lardom": null,
+          "avatar": "samma köpare som i E1, två veckor senare, utan ett nytt köp",
+          "begar": "se bevis från riktiga kunder innan man bestämmer sig, och veta att det här är sista mejlet",
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "Vinback",
+          "kod": "SP"
+        },
+        "amnesrader": [
+          {
+            "text": "Det här skrev riktiga kunder",
+            "begar": "se bevis innan man bestämmer sig"
+          },
+          {
+            "text": "Två kunder om lådan, ordagrant",
+            "begar": "höra vad andra tyckte, i deras egna ord"
+          },
+          {
+            "text": "Sista mejlet den här gången",
+            "begar": "veta att det här är sista påminnelsen"
+          }
+        ],
+        "forhandstext": "Två röster, sen hör du inget mer om det här från oss.",
+        "block": [
+          {
+            "typ": "citat",
+            "handle": "sushi-strumpor",
+            "antal": 2
+          },
+          {
+            "typ": "produkt",
+            "handle": "sushi-strumpor",
+            "text": "Fem par rullade som sushibitar, i en låda som ser ut som takeaway tills den öppnas. Ätpinnarna följer med.",
+            "knapp": "Se sushilådan"
+          },
+          {
+            "typ": "fakta"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Det här skrev riktiga kunder",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Två kunder om lådan, ordagrant",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Sista mejlet den här gången",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Två röster, sen hör du inget mer om det här från oss.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Se sushilådan",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 1
+      }
+    }
+  ]
+}

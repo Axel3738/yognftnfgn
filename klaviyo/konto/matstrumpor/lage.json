@@ -1,0 +1,572 @@
+{
+  "brand": "matstrumpor",
+  "hamtad": "2026-09-25T10:59:26.724Z",
+  "konto": {
+    "id": "UV6Rqg",
+    "public_api_key": "UV6Rqg",
+    "test_account": false,
+    "tidszon": "Europe/Stockholm",
+    "valuta": "SEK",
+    "organisation": "Matstrumpor",
+    "adress": {
+      "address1": null,
+      "address2": null,
+      "city": null,
+      "region": null,
+      "country": "United States",
+      "zip": null
+    }
+  },
+  "avsandare": {
+    "konto_standard": {
+      "email": "",
+      "namn": "Matstrumpor"
+    },
+    "brandfilen": {
+      "from_email": "kundsupport@matstrumpor.se",
+      "from_label": "Matstrumpor",
+      "reply_to_email": "kundsupport@matstrumpor.se"
+    }
+  },
+  "metriker": {
+    "alla": [
+      {
+        "id": "R9yPAm",
+        "namn": "Viewed Product",
+        "integration": "API"
+      },
+      {
+        "id": "Rjbki4",
+        "namn": "Manually Suppressed from Email Marketing",
+        "integration": "Klaviyo"
+      },
+      {
+        "id": "RyABhk",
+        "namn": "Unsubscribed from Email Marketing",
+        "integration": "Klaviyo"
+      },
+      {
+        "id": "SuebaZ",
+        "namn": "Checkout Started",
+        "integration": "Shopify"
+      },
+      {
+        "id": "T7fdMC",
+        "namn": "Fulfilled Order",
+        "integration": "Shopify"
+      },
+      {
+        "id": "T8Jdj4",
+        "namn": "Delivered Shipment",
+        "integration": "Shopify"
+      },
+      {
+        "id": "TJggqf",
+        "namn": "Placed Order",
+        "integration": "Shopify"
+      },
+      {
+        "id": "TpKf2F",
+        "namn": "Opened Email",
+        "integration": "Klaviyo"
+      },
+      {
+        "id": "Tqkv53",
+        "namn": "Bounced Email",
+        "integration": "Klaviyo"
+      },
+      {
+        "id": "TyZKHt",
+        "namn": "Active on Site",
+        "integration": "API"
+      },
+      {
+        "id": "U3mxFE",
+        "namn": "Skipped Send",
+        "integration": "Klaviyo"
+      },
+      {
+        "id": "UTF7i7",
+        "namn": "Refunded Order",
+        "integration": "Shopify"
+      },
+      {
+        "id": "UgE4Fu",
+        "namn": "Added to Cart",
+        "integration": "Shopify"
+      },
+      {
+        "id": "V4zRVt",
+        "namn": "Fulfilled Partial Order",
+        "integration": "Shopify"
+      },
+      {
+        "id": "V6885B",
+        "namn": "Subscribed to Email Marketing",
+        "integration": "Klaviyo"
+      },
+      {
+        "id": "VPMrc9",
+        "namn": "Clicked email to unsubscribe",
+        "integration": "Klaviyo"
+      },
+      {
+        "id": "VcLnzw",
+        "namn": "Dropped Email",
+        "integration": "Klaviyo"
+      },
+      {
+        "id": "VwG9UJ",
+        "namn": "Cancelled Order",
+        "integration": "Shopify"
+      },
+      {
+        "id": "W55WbX",
+        "namn": "Viewed Product",
+        "integration": "Shopify"
+      },
+      {
+        "id": "WYB23D",
+        "namn": "Received Email",
+        "integration": "Klaviyo"
+      },
+      {
+        "id": "X9RwJr",
+        "namn": "Clicked Email",
+        "integration": "Klaviyo"
+      },
+      {
+        "id": "XCdiGC",
+        "namn": "Marked Email as Spam",
+        "integration": "Klaviyo"
+      },
+      {
+        "id": "XRvPGs",
+        "namn": "Subscribed to Back in Stock",
+        "integration": "Klaviyo"
+      },
+      {
+        "id": "XW963Q",
+        "namn": "Ordered Product",
+        "integration": "Shopify"
+      },
+      {
+        "id": "Xvz4cH",
+        "namn": "Subscribed to List",
+        "integration": "Klaviyo"
+      }
+    ],
+    "kanda": {
+      "placed_order": "TJggqf",
+      "started_checkout": "SuebaZ",
+      "viewed_product": "R9yPAm",
+      "active_on_site": "TyZKHt",
+      "added_to_cart": "UgE4Fu",
+      "ordered_product": "XW963Q",
+      "opened_email": "TpKf2F",
+      "clicked_email": "X9RwJr",
+      "received_email": "WYB23D"
+    },
+    "saknas": []
+  },
+  "listor": [
+    {
+      "id": "UWSBxk",
+      "namn": "Preview List",
+      "opt_in": "double_opt_in",
+      "profiler": 1
+    },
+    {
+      "id": "VzTE9X",
+      "namn": "Email List",
+      "opt_in": "double_opt_in",
+      "profiler": 2891
+    }
+  ],
+  "segment": [
+    {
+      "id": "QYiiTz",
+      "namn": "Churn Risks (Shopify)",
+      "aktiv": true
+    },
+    {
+      "id": "RFWBRA",
+      "namn": "Repeat Buyers (Shopify)",
+      "aktiv": true
+    },
+    {
+      "id": "RJg7sP",
+      "namn": "SEG_uppvarmning_steg1",
+      "aktiv": true
+    },
+    {
+      "id": "RUqCMB",
+      "namn": "New Subscribers",
+      "aktiv": true
+    },
+    {
+      "id": "RuXAsZ",
+      "namn": "SEG_vinback_90d",
+      "aktiv": true
+    },
+    {
+      "id": "SPCW3D",
+      "namn": "SEG_ej_kopt",
+      "aktiv": true
+    },
+    {
+      "id": "SUgcp3",
+      "namn": "SEG_kopare_30d",
+      "aktiv": true
+    },
+    {
+      "id": "SVYH6Q",
+      "namn": "Potential Purchasers (Shopify)",
+      "aktiv": true
+    },
+    {
+      "id": "TDD24R",
+      "namn": "VIP Customers (Shopify)",
+      "aktiv": true
+    },
+    {
+      "id": "UDfjCQ",
+      "namn": "SEG_kategori_hamburgare",
+      "aktiv": true
+    },
+    {
+      "id": "Uue4Xv",
+      "namn": "SEG_samtycke",
+      "aktiv": true
+    },
+    {
+      "id": "UxrzcJ",
+      "namn": "SEG_flerkopare",
+      "aktiv": true
+    },
+    {
+      "id": "VRvEK2",
+      "namn": "SEG_engagerade_60d",
+      "aktiv": true
+    },
+    {
+      "id": "VqD9tb",
+      "namn": "Engaged (90 Days)",
+      "aktiv": true
+    },
+    {
+      "id": "W3Ec5N",
+      "namn": "Engaged (60 Days)",
+      "aktiv": true
+    },
+    {
+      "id": "WwituH",
+      "namn": "SEG_kategori_pizza",
+      "aktiv": true
+    },
+    {
+      "id": "X5egp3",
+      "namn": "Win-Back Opportunities (Shopify)",
+      "aktiv": true
+    },
+    {
+      "id": "XB643b",
+      "namn": "SEG_kategori_donut",
+      "aktiv": true
+    },
+    {
+      "id": "XX2PwU",
+      "namn": "SEG_oengagerade_180d",
+      "aktiv": true
+    },
+    {
+      "id": "XzihU7",
+      "namn": "SEG_engagerade_90d",
+      "aktiv": true
+    },
+    {
+      "id": "Y7G6bk",
+      "namn": "SEG_kopare",
+      "aktiv": true
+    },
+    {
+      "id": "YpmBkA",
+      "namn": "SEG_kategori_sushi",
+      "aktiv": true
+    },
+    {
+      "id": "Yt78cU",
+      "namn": "Engaged (30 Days)",
+      "aktiv": true
+    }
+  ],
+  "floden": [
+    {
+      "id": "R29irU",
+      "namn": "FLOW_segment_sunset_v1",
+      "status": "draft",
+      "trigger_type": "Added to List",
+      "arkiverad": false
+    },
+    {
+      "id": "S8VT8T",
+      "namn": "FLOW_checkout_overgiven_v1",
+      "status": "draft",
+      "trigger_type": "Metric",
+      "arkiverad": false
+    },
+    {
+      "id": "SVdssi",
+      "namn": "FLOW_lista_valkomst_v1",
+      "status": "draft",
+      "trigger_type": "Added to List",
+      "arkiverad": false
+    },
+    {
+      "id": "U9exx3",
+      "namn": "FLOW_order_vinback_v1",
+      "status": "draft",
+      "trigger_type": "Metric",
+      "arkiverad": false
+    },
+    {
+      "id": "V4KBnH",
+      "namn": "FLOW_order_aterkop-sushi_v1",
+      "status": "draft",
+      "trigger_type": "Metric",
+      "arkiverad": false
+    },
+    {
+      "id": "VtTT7F",
+      "namn": "FLOW_order_efterkop_v1",
+      "status": "draft",
+      "trigger_type": "Metric",
+      "arkiverad": false
+    },
+    {
+      "id": "YAZ8cN",
+      "namn": "FLOW_visad-produkt_webbhistorik_v1",
+      "status": "draft",
+      "trigger_type": "Metric",
+      "arkiverad": false
+    }
+  ],
+  "mallar": {
+    "antal": 29,
+    "motorns": [
+      {
+        "id": "WRqJUD",
+        "namn": "TPL_f01-valkomst-e1_v1"
+      },
+      {
+        "id": "S2wSEr",
+        "namn": "TPL_f01-valkomst-e2_v1"
+      },
+      {
+        "id": "XWcjt7",
+        "namn": "TPL_f01-valkomst-e3_v1"
+      },
+      {
+        "id": "RiSzGq",
+        "namn": "TPL_f02-overgiven-kassa-e1_v1"
+      },
+      {
+        "id": "RLD7Cf",
+        "namn": "TPL_f02-overgiven-kassa-e2_v1"
+      },
+      {
+        "id": "VgRChP",
+        "namn": "TPL_f02-overgiven-kassa-e3_v1"
+      },
+      {
+        "id": "U2Px4z",
+        "namn": "TPL_f03-webbhistorik-e1_v1"
+      },
+      {
+        "id": "QYmyiQ",
+        "namn": "TPL_f03-webbhistorik-e2_v1"
+      },
+      {
+        "id": "Tjbe6y",
+        "namn": "TPL_f04-efter-kop-e1_v1"
+      },
+      {
+        "id": "TRz2mM",
+        "namn": "TPL_f04-efter-kop-e2_v1"
+      },
+      {
+        "id": "V2XRfD",
+        "namn": "TPL_f05-vinback-e1_v1"
+      },
+      {
+        "id": "WcnG9v",
+        "namn": "TPL_f05-vinback-e2_v1"
+      },
+      {
+        "id": "UWkAUf",
+        "namn": "TPL_f06-sunset-e1_v1"
+      },
+      {
+        "id": "Ysz7zP",
+        "namn": "TPL_f06-sunset-e2_v1"
+      },
+      {
+        "id": "Xcx2kz",
+        "namn": "TPL_f07-aterkop-sushi-e1_v1"
+      },
+      {
+        "id": "UyC5hs",
+        "namn": "TPL_k01-de-tror-att-det-ar-sushi_v1"
+      },
+      {
+        "id": "QT93V6",
+        "namn": "TPL_k02-ingen-jublar-at-tvattmedel_v1"
+      },
+      {
+        "id": "XrPxkp",
+        "namn": "TPL_k03-kundernas-ord_v1"
+      },
+      {
+        "id": "RXUCty",
+        "namn": "TPL_k04-fars-dag-bestall-senast-24-okt_v1"
+      },
+      {
+        "id": "RkTzQV",
+        "namn": "TPL_k05-julstrumpan_v1"
+      },
+      {
+        "id": "SrFapp",
+        "namn": "TPL_k06-slut-i-november-forra-aret_v1"
+      },
+      {
+        "id": "XbVLid",
+        "namn": "TPL_k07-tva-lador-tva-personer_v1"
+      },
+      {
+        "id": "SY4WEC",
+        "namn": "TPL_k08-julklappsguide_v1"
+      },
+      {
+        "id": "RJ2Rrn",
+        "namn": "TPL_k09-black-week-start_v1"
+      },
+      {
+        "id": "YgHkQF",
+        "namn": "TPL_k10-black-friday_v1"
+      },
+      {
+        "id": "TrPuAt",
+        "namn": "TPL_k11-bestall-senast-8-dec_v1"
+      },
+      {
+        "id": "TYdgRG",
+        "namn": "TPL_k12-sista-dagen-idag_v1"
+      },
+      {
+        "id": "WW3Zg3",
+        "namn": "TPL_k13-presentkortet_v1"
+      },
+      {
+        "id": "S7a8ZP",
+        "namn": "TPL_k14-vem-har-fodelsedag-harnast_v1"
+      }
+    ]
+  },
+  "kampanjer": [
+    {
+      "id": "01M3C3F1TJEQFK0E3GKPMA9C0K",
+      "namn": "MAIL_20261229_Mix_GT_5_samtycke_solution_vem-har-fodelsedag-harnast_v1",
+      "status": "Draft",
+      "planerad": null
+    },
+    {
+      "id": "01M3C3EYBAYJMJJXG18FTSABH0",
+      "namn": "MAIL_20261215_Presentkort_M_1_samtycke_solution_julklappen-som-kommer-i-mejlen_v1",
+      "status": "Draft",
+      "planerad": null
+    },
+    {
+      "id": "01M3C3ETPP72N1FGVAY51QMPAF",
+      "namn": "MAIL_20261208_Julklapp_GT_4_samtycke_promo_sista-dagen-i-dag_v1",
+      "status": "Draft",
+      "planerad": null
+    },
+    {
+      "id": "01M3C3EQ477NCRG0VCET2JT79M",
+      "namn": "MAIL_20261201_Julklapp_GT_3_samtycke_promo_bestall-senast-8-dec_v1",
+      "status": "Draft",
+      "planerad": null
+    },
+    {
+      "id": "01M3C3EKJGQNYRZ7KGJMA805HF",
+      "namn": "MAIL_20261127_Mix_CS_4_samtycke_promo_black-friday-till-mandag_v1",
+      "status": "Draft",
+      "planerad": null
+    },
+    {
+      "id": "01M3C3EFYHBD1GGF9C06FP6FP4",
+      "namn": "MAIL_20261123_Mix_CS_3_samtycke_promo_black-week-trappan_v1",
+      "status": "Draft",
+      "planerad": null
+    },
+    {
+      "id": "01M3C3ECB78H7ZT7QNY57QXG0Y",
+      "namn": "MAIL_20261117_Mix_GT_2_samtycke_solution_julklappsguide_v1",
+      "status": "Draft",
+      "planerad": null
+    },
+    {
+      "id": "01M3C3E8QAHRHD49AXWRX65WV3",
+      "namn": "MAIL_20261110_Sushi_CS_2_samtycke_promo_tva-lador-tva-personer_v1",
+      "status": "Draft",
+      "planerad": null
+    },
+    {
+      "id": "01M3C3E4XSY234E0W92QNPBYEF",
+      "namn": "MAIL_20261103_Sushi_CS_1_engagerade90d_product_slut-i-november-forra-aret_v1",
+      "status": "Draft",
+      "planerad": null
+    },
+    {
+      "id": "01M3C3E13DCV0WJEH3PMXDM3S2",
+      "namn": "MAIL_20261027_Sushi_S_1_engagerade90d_solution_gissa-vad-jag-la-i-julstrumpan_v1",
+      "status": "Draft",
+      "planerad": null
+    },
+    {
+      "id": "01M3C3DXFJEW34392R04BDSK7G",
+      "namn": "MAIL_20261020_Mix_GT_1_engagerade60d_solution_fars-dag-24-okt_v1",
+      "status": "Draft",
+      "planerad": null
+    },
+    {
+      "id": "01M3C3DSV9E6KY6E6CV01NJQJX",
+      "namn": "MAIL_20261013_Sushi_SP_1_engagerade60d_product_kundernas-ord_v1",
+      "status": "Draft",
+      "planerad": null
+    },
+    {
+      "id": "01M3C3DP5DAX2QSEGP6QYZMTMG",
+      "namn": "MAIL_20261006_Sushi_PD_2_uppvarmning_problem_ingen-jublar-at-tvattmedel_v1",
+      "status": "Draft",
+      "planerad": null
+    },
+    {
+      "id": "01M3C3DJH14KHBCB358C5ZVGMV",
+      "namn": "MAIL_20260929_Sushi_PD_1_uppvarmning_product_de-tror-att-det-ar-sushi_v1",
+      "status": "Draft",
+      "planerad": null
+    }
+  ],
+  "varningar": [
+    "Kontot saknar postadress — {{ organization.full_address }} blir tom i sidfoten (MFL 20 §). Fyll i Settings → Brand."
+  ],
+  "senaste_uppladdning": {
+    "tid": "2026-09-25T10:58:59.555Z",
+    "bara": null,
+    "skapade": 64,
+    "uppdaterade": 14,
+    "hoppade": 0,
+    "stopp": []
+  }
+}

@@ -101,7 +101,91 @@ A) Be Loopias support lägga in de fyra NS-posterna för `send` + TXT @ (de kan 
 B) Låt Cowork byta routing i Klaviyo från Dynamic till Static och se om Klaviyo då ger CNAME-poster, som Loopias editor klarar.
 Tills domänen är verifierad skickar Klaviyo från sin delade domän. Det fungerar, men sämre leveransbarhet; inga utskick innan den är klar.
 
-## Läget 2026-09-25 förmiddag: det som återstår är Axels
+---
+
+# Matstrumpor (kontot UV6Rqg), skrivet 2026-09-25
+
+Motorn är brand-parametriserad och allt för Matstrumpor ligger i Klaviyo som utkast
+(`klaviyo/README.md` → Matstrumpor). Tre saker kan API:t inte göra, och en fjärde
+(DNS) gör vi i en SEPARAT körning på Axels ord. Ordningen: **Cowork** gör klicken i
+Klaviyo, **Axel** läser av resultatet, och **en Claude Code-session** slår på flödena
+och schemalägger K01 när villkoren nedan är uppfyllda.
+
+## Villkoren för att slå på något (Axels beslut 2026-09-25)
+
+Flödena får slås på (`node klaviyo/sla-pa.mjs --brand matstrumpor <namn …> --ja`) och
+K01 schemaläggas (`node klaviyo/schemalagg.mjs --brand matstrumpor K01 --ja`) BARA om
+alla fem stämmer. Mätt 2026-09-25 av sessionen som byggde:
+
+| Villkor | Läge 2026-09-25 | Vad som löser det |
+|---|---|---|
+| Kontot har postadress | ❌ **Saknas**: `contact_information.street_address` är tom, landet står på "United States" | Cowork-prompten steg 4 |
+| Planen rymmer volymen | ❓ **Går inte att läsa via API:t.** Kontot har 4 357 profiler; november kräver cirka 20 000 mejl (`innehall/matstrumpor/KALENDER-2026.md`) | Cowork-prompten steg 2 läser Billing och skriver in planen |
+| Köparflödena har kundundantag | ✅ F04, F05, F07 bär `kundundantag` (Fulfilled/Placed Order), uppladdaren stoppar annat | — |
+| Kampanjerna går bara till subscribed | ✅ Alla 14 går till `SEG_*`-segment med samtyckesvillkoret; uppladdaren stoppar annat | — |
+| Ett renderat testmejl ser rätt ut | ❌ Kan inte mätas förrän adressen finns (`template-render` fyller inte `organization.full_address`) | Cowork-prompten steg 5 |
+
+**Allt ligger därför som utkast.** Ingenting är påslaget, ingenting schemalagt.
+
+## 1. Prompten till Cowork (klistra in hela rutan)
+
+```
+You are setting up the Klaviyo account for the Swedish web shop Matstrumpor (matstrumpor.se). Klaviyo account public ID: UV6Rqg. Do ONLY the steps below, in order. Never send an email, never turn on a flow, never schedule a campaign, never delete anything, never touch DNS in this run. Do not type or copy any API key or password — if a step needs one, stop and tell Axel. After each step, write one line: done / not done + why.
+
+1. Log in to Klaviyo (klaviyo.com) and check that the account's public API key / site ID is UV6Rqg (Settings → API keys, "Public API key"). If it is not UV6Rqg: STOP and report. Never touch the account QZ4jLG (that is another shop).
+
+2. Billing: open Settings → Billing and write down the plan name, the profile limit, the monthly email limit and the current number of active profiles. Change nothing. Note for Axel: the account has 4 357 profiles and November needs about 20 000 emails, so the plan must cover at least 4 357 profiles (the 4 001–5 000 tier gives 50 000 emails/month).
+
+3. Attribution: Settings → Attribution (search "attribution" in Settings if the menu differs). For EMAIL set: conversions count on CLICKS only, window 5 days; opens do NOT count; turn ON "exclude Apple Mail Privacy Protection opens" (or equivalent). Save. Write down the old and new values.
+
+4. Contact information and sender: Settings → Account → Contact information (or Settings → Brand). Organization name "Matstrumpor". Street address: Sjöhed 160, postal code 442 74, city Harestad, country Sweden (this is the company address in Shopify; the field currently says United States). Default sender name "Matstrumpor", sender email "kundsupport@matstrumpor.se", reply-to "kundsupport@matstrumpor.se". Save. If Klaviyo asks to verify the address, trigger the verification email and tell Axel it is waiting in the kundsupport@matstrumpor.se inbox (Loopia webmail).
+
+5. Check the address in a real email: Content → Templates → open the template named TPL_k01-de-tror-att-det-ar-sushi_v1 → Preview → Send test email to Axel's address. Open the email and confirm the footer shows "Matstrumpor, Sjöhed 160, 442 74 Harestad, Sweden" (or the same address in Klaviyo's format) and an unsubscribe link. Write down exactly what the footer says.
+
+6. Shopify integration: Integrations → Shopify. Confirm it shows "Connected" and that "Sync email subscribers to Klaviyo" points to the list "Email List". Write down the date of the last sync. Change nothing.
+
+7. Sending domain, READ ONLY in this run: Settings → Domains. Write down whether a branded sending domain exists. If not, open "Add sending domain", type subdomain "send" and domain "matstrumpor.se", and copy every DNS record Klaviyo shows (type, host/name, value) into your report — then CANCEL without saving if Klaviyo would start a verification, or leave it pending. Do NOT log in to Loopia and do NOT change any DNS record in this run.
+
+8. Report back in one table: step, done/not done, values written down (plan, limits, active profiles, old/new attribution, the footer text from step 5, last Shopify sync, the DNS records from step 7).
+```
+
+## 2. DNS för send.matstrumpor.se och DMARC (SEPARAT körning, bara på Axels ord)
+
+Mätt 2026-09-25 med dns.google: `matstrumpor.se` NS = **ns1.loopia.se / ns2.loopia.se**,
+A = **23.227.38.65** (Shopify), MX = **10 mailcluster.loopia.se / 20 mail2.loopia.se**,
+SPF `v=spf1 include:spf.loopia.se -all`, **DMARC saknas** (`_dmarc.matstrumpor.se` NXDOMAIN),
+`send.matstrumpor.se` finns inte.
+
+⛔ **Byt ALDRIG namnservrar för matstrumpor.se.** 2026-09-25 lade Loopia in Klaviyos
+namnservrar på HELA baverbutiken.se i stället för bara på `send`, och sajten, mejlen och
+kundtjänstboten slutade fungera. Därför:
+
+- Klaviyos poster läggs bara på underdomänen `send.matstrumpor.se`, som vanliga poster i
+  Loopias DNS-editor (NS-poster med namnet `send`, eller CNAME/TXT om Klaviyo erbjuder det).
+- Skriv aldrig en text till Loopia som ber dem "byta namnservrar". Går inte posterna in i
+  editorn: stoppa och fråga Axel, aldrig en support-begäran som kan misstolkas.
+- DMARC: host `_dmarc`, typ TXT, värde `v=DMARC1; p=none;` på matstrumpor.se. Rör inte MX,
+  SPF, A eller CNAME www.
+- **Mät efter varje ändring:** `https://dns.google/resolve?name=matstrumpor.se&type=NS`
+  ska svara ns1.loopia.se/ns2.loopia.se, `type=A` 23.227.38.65 och `type=MX` Loopia.
+  Svarar NS något annat: ring Loopia direkt och återställ.
+- Tills domänen är verifierad skickar Klaviyo från sin delade domän. Det fungerar, men
+  sämre leveransbarhet.
+
+## 3. Prompten till en ny Claude Code-session när villkoren är gröna (klistra in hela rutan)
+
+```
+Klaviyo för Matstrumpor: slå på flödena och schemalägg K01. Läs klaviyo/README.md (Matstrumpor-avsnittet), klaviyo/SISTA-STEGEN.md (Matstrumpor) och .claude/commands/klaviyo.md först.
+
+1. node klaviyo/kolla.mjs --brand matstrumpor --profiler. public_api_key måste vara UV6Rqg. Kontrollera att kontot nu HAR postadress (varningen "saknar postadress" ska vara borta) — annars STOPP, ingenting slås på.
+2. Kontrollera planen som Cowork skrev in i klaviyo/innehall/matstrumpor/KALENDER-2026.md: rymmer den 4 357 profiler och cirka 20 000 mejl i november? Annars STOPP.
+3. node klaviyo/sla-pa.mjs --brand matstrumpor FLOW_checkout_overgiven_v1 FLOW_order_efterkop_v1 FLOW_order_aterkop-sushi_v1 FLOW_order_vinback_v1 FLOW_segment_sunset_v1 FLOW_lista_valkomst_v1 FLOW_visad-produkt_webbhistorik_v1 (torrt), läs planen, sedan samma med --ja. Samma dag: stäng av Shopifys egen notis om övergiven kassa i Matstrumpors admin (Inställningar → Aviseringar → Övergiven kassa) — det är Axels klick, säg det.
+4. node klaviyo/schemalagg.mjs --brand matstrumpor K01 (torrt) och sedan --ja. Är 29/9 passerat: flytta K01:s "planerad" i kampanjfilen till nästa tisdag 18:00, bygg om, ladda upp med --uppdatera, och skriv det i klaviyo/logg/matstrumpor/kampanjlogg.md.
+5. Läs tillbaka med kolla, uppdatera klaviyo/README.md (Matstrumpor-läget), committa och pusha.
+Slå aldrig på något om steg 1 eller 2 är rött. Bygg inga schemalagda rutiner.
+```
+
+## Läget 2026-09-25 förmiddag: det som återstår är Axels (Bäverbutiken)
 
 Allt som går att göra utan Axel är gjort. I Klaviyo ligger 14 kampanjer (Draft), 7 flöden (draft) och 14 segment.
 Flödena är F01 XY5QXa, F02 XgrxZ9, F03 XMi5Wa, F04 TyH2jg, F05 VgvDum, F06 TTsxRQ och F07 QXZzvn.

@@ -1,8 +1,18 @@
-# /klaviyo – E-postmarknadsföringen i Klaviyo (Bäverbutiken först)
+# /klaviyo – E-postmarknadsföringen i Klaviyo (Bäverbutiken och Matstrumpor)
 
 Argument: `$ARGUMENTS` — ett underkommando, valfritt `--brand <id>`
 (standard `baverbutiken`). Exempel: `/klaviyo kolla` · `/klaviyo cs` ·
-`/klaviyo ladda-upp --brand baverbutiken`
+`/klaviyo ladda-upp --brand matstrumpor`
+
+| Brand | Konto | Nyckel | Innehåll |
+|---|---|---|---|
+| `baverbutiken` (standard) | `QZ4jLG` | `KLAVIYO_API_KEY_BAVERBUTIKEN` | `klaviyo/innehall/baverbutiken/` |
+| `matstrumpor` | `UV6Rqg` | `KLAVIYO_API_KEY_MATSTRUMPOR` | `klaviyo/innehall/matstrumpor/` (byggt 2026-09-25) |
+
+Alla skript tar `--brand <id>`, även `sla-pa.mjs` och `schemalagg.mjs`. Brandfilen
+`klaviyo/brands/<id>.json` bär allt som skiljer (konto, nyckel, Shopify-modul,
+recensionskälla, kategorier, kalender). Kör aldrig ett brands kommando mot ett annat
+brands konto — `kontrolleraKonto` stoppar det, men läs ändå brandet i utskriften.
 
 | Underkommando | Vad |
 |---|---|
@@ -24,7 +34,7 @@ etiketterna, copyreglerna för mejl, kalendern) och `klaviyo/ARKITEKTUR.md`
    `subscription: "subscribed"`; `any` och `never_subscribed` är förbjudna
    (MFL 19–20 §, EPOST-STRATEGI §3). Uppladdaren vägrar — kör aldrig runt den.
 3. **Blandar butiker.** Nyckeln är `KLAVIYO_API_KEY_<BRAND>`, kontot ska svara
-   med brandfilens `public_id` (Bäverbutiken `QZ4jLG`). Ingen Grillkliniken-,
+   med brandfilens `public_id` (Bäverbutiken `QZ4jLG`, Matstrumpor `UV6Rqg`). Ingen Grillkliniken-,
    Mastern- eller SnarkLös-rad i copyn, inga rader ur `docs/playbook.md`,
    `docs/winning-lines.md` eller `docs/swipes/` (de är Grillklinikens).
 

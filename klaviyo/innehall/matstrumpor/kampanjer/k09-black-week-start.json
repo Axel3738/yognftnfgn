@@ -1,0 +1,68 @@
+{
+  "id": "k09-black-week-start",
+  "namn": "MAIL_20261123_Mix_CS_3_samtycke_promo_black-week-trappan_v1",
+  "memo": "Axels beslut 2026-09-25: hela sajten har en rabattrappa 23 till 30 november, 10 procent för 1 vara, 20 för 2, 30 för 3 eller fler, ingen kod behövs, den dras automatiskt i kassan. K09 öppnar veckan och förklarar trappan konkret så mottagaren förstår den på fem sekunder.",
+  "taggar": {
+    "typ": "S",
+    "_typ": "N=nytt koncept, I=iteration av annonsvinnare, IM=imitation, M=mejlspecifikt, S=säsong",
+    "kalla": "egen-data",
+    "_kalla": "egen-data | winning-line | voc | swipe | gissning",
+    "kalla_ref": "Axels beslut 2026-09-25 (Black Week 10/20/30)",
+    "lardom": null,
+    "avatar": "presentkoparen som ändå ska handla till jul",
+    "begar": "spara-pengar",
+    "awareness": "promo",
+    "_awareness": "unaware | problem | solution | product | promo",
+    "urgency": "pris",
+    "_urgency": "sasong | lager | pris | konsekvens | ingen",
+    "confidence": "high",
+    "_confidence": "high | medium | low (low = gissning)",
+    "prefix": "Mix",
+    "kod": "CS"
+  },
+  "amnesrader": [
+    { "text": "Din rabatt räknas ut automatiskt i kassan", "begar": "veta att fler varor ger mer rabatt utan att göra något extra" },
+    { "text": "Upp till 30 % rabatt den här veckan", "begar": "spara pengar på det man ändå ska köpa till jul" },
+    { "text": "Ingen kod. Rabatten syns direkt i kassan.", "begar": "konkret bevis på att rabatten syns direkt i kundvagnen" }
+  ],
+  "forhandstext": "10, 20 eller 30 procent. Beror bara på hur mycket som ligger i kundvagnen.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Fler varor i kundvagnen ger mer rabatt, hela veckan",
+      "text": "{{fornamn}}, fram till och med måndag 30 november räknar kassan ut din rabatt automatiskt, utifrån hur många varor som ligger i kundvagnen. En vara ger 10 %, två varor ger 20 %, tre eller fler ger 30 %. Ingen kod behövs, den dras direkt i kassan.",
+      "bild": "produkt:pizza-strumpor",
+      "knapp": { "text": "Se hela sortimentet", "lank": "kollektion:alla-produkter" }
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "Så funkar trappan",
+      "punkter": [
+        "1 vara: 10 % rabatt",
+        "2 varor: 20 % rabatt",
+        "3 varor eller fler: 30 % rabatt"
+      ]
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Kombinera för nästa nivå",
+      "handles": ["sushi-strumpor", "pizza-strumpor", "hamburger-strumpor", "donut-strumpor"]
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "Din rabatt räknas ut automatiskt i kassan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Upp till 30 % rabatt den här veckan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Ingen kod. Rabatten syns direkt i kassan.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "10, 20 eller 30 procent. Beror bara på hur mycket som ligger i kundvagnen.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fler varor i kundvagnen ger mer rabatt, hela veckan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Så funkar trappan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Kombinera för nästa nivå", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se hela sortimentet", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-11-23T18:00:00+01:00",
+  "segment": ["SEG_samtycke"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "klar",
+  "kraver_axel": null
+}

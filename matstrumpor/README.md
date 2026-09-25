@@ -77,3 +77,28 @@ linjerna får domen `BEROR_PA_MOMS` och rörs inte förrän
 
 Produktminnet ligger i `products/matstrumpor/` (`dna.md`, `batch-log.md`,
 `lardomar.md`) — som alla andra produkter i repot.
+
+## E-posten (Klaviyo, byggd 2026-09-25)
+
+Matstrumpor har ett eget Klaviyo-konto, **`UV6Rqg`** (nyckeln
+`KLAVIYO_API_KEY_MATSTRUMPOR`), och samma motor som Bäverbutiken med `--brand
+matstrumpor`. Brandfilen är `klaviyo/brands/matstrumpor.json`, innehållet
+`klaviyo/innehall/matstrumpor/` (14 kampanjer K01–K14 + 7 flöden), analysen
+`klaviyo/evolve/ATERKOP-ANALYS-matstrumpor.md`, läget i `klaviyo/README.md`.
+
+```bash
+node klaviyo/kolla.mjs --brand matstrumpor --profiler   # konto, metriker, samtycke
+node klaviyo/bygg.mjs --brand matstrumpor               # mejlen ur innehållet + live-priser
+node klaviyo/ladda-upp.mjs --brand matstrumpor          # torrt; --skarpt laddar upp som utkast
+node klaviyo/sla-pa.mjs --brand matstrumpor <flöde …>   # bara på Axels ord, --ja
+node klaviyo/schemalagg.mjs --brand matstrumpor K01     # bara på Axels ord, --ja
+node klaviyo/rapport.mjs --brand matstrumpor            # vinstbidrag mot break-even 1,498
+```
+
+Det datan säger (hela orderhistoriken, 3 911 ordrar): **julprodukt** (dec 2025
+1 613 ordrar, april–juli nästan noll), 1,2 % återköp och då **samma sushilåda
+igen** (38 av 44), inget produktpar med stöd, leverans p90 15 dygn ⇒ sista
+beställning fars dag 24/10 och jul 8/12. Black Week-trappan 10/20/30 % ligger i
+Shopify som tre schemalagda automatiska rabatter 23–30/11 (Axels beslut).
+⚠️ Kontot saknade postadress 2026-09-25, så inget är påslaget: villkoren och
+Cowork-prompten står i `klaviyo/SISTA-STEGEN.md` → Matstrumpor.

@@ -1,0 +1,193 @@
+{
+  "id": "f03-webbhistorik",
+  "namn": "FLOW_visad-produkt_webbhistorik_v1",
+  "memo": "Den som tittat på en produktsida utan att lägga något i kassan är intresserad men obeslutsam. Två steg: en kort påminnelse om exakt den produkten, sedan samma produkt igen plus trygghet och tre alternativ för den som inte var säker på sorten.",
+  "trigger": {
+    "typ": "metrik",
+    "metrik": [
+      "Viewed Product"
+    ]
+  },
+  "filter": [
+    "samtycke",
+    "ej_kopt_sedan_start",
+    "ej_checkout_sedan_start"
+  ],
+  "ateintrade": {
+    "varaktighet": 14,
+    "enhet": "day"
+  },
+  "steg": [
+    {
+      "typ": "vanta",
+      "enhet": "hours",
+      "varde": 4
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f03-webbhistorik-e1",
+        "namn": "FLOW_visad-produkt_E1_M_den-har-kikade-du-pa_v1",
+        "memo": "Den som tittat på en produktsida utan att gå vidare är intresserad men inte redo. Hypotes: en kort påminnelse om exakt den produkten, utan säljprat, räcker för dem som bara glömde bort fliken.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "klaviyo/innehall/matstrumpor/BRIEFER.md:326",
+          "lardom": null,
+          "avatar": "den som tittat på en produktsida men inte gått vidare",
+          "begar": "slippa-krangel",
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "Visadprodukt",
+          "kod": "M"
+        },
+        "amnesrader": [
+          {
+            "text": "Den här kikade du på",
+            "begar": "minnas vad man var intresserad av"
+          },
+          {
+            "text": "Fortfarande där du lämnade den",
+            "begar": "veta att inget ändrats"
+          },
+          {
+            "text": "En sak du nästan la i kassan",
+            "begar": "känna igen sitt eget beteende"
+          }
+        ],
+        "forhandstext": "Ingen försäljningsprat. Bara den här.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": null,
+            "text": "Den här kikade du på för ett tag sen."
+          },
+          {
+            "typ": "dynamisk",
+            "kalla": "visad_produkt"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Den här kikade du på",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Fortfarande där du lämnade den",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "En sak du nästan la i kassan",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Ingen försäljningsprat. Bara den här.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 1
+      }
+    },
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 1
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f03-webbhistorik-e2",
+        "namn": "FLOW_visad-produkt_E2_M_fortfarande-intresserad_v1",
+        "memo": "Andra och sista mejlet i flödet, för dem som inte klickade på det första. Hypotes: att lägga till tryggheten (retur, spårning) och tre alternativ täcker de två vanligaste skälen till att någon inte går vidare, osäkerhet om köpet eller fel sort.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "klaviyo/innehall/matstrumpor/BRIEFER.md:327",
+          "lardom": null,
+          "avatar": "den som tittat på en produktsida men inte gått vidare",
+          "begar": "kontroll",
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "Visadprodukt",
+          "kod": "M"
+        },
+        "amnesrader": [
+          {
+            "text": "Du var intresserad av den här",
+            "begar": "bekräfta sitt eget intresse"
+          },
+          {
+            "text": "Kanske inte rätt sort",
+            "begar": "hitta ett bättre alternativ om det behövs"
+          },
+          {
+            "text": "Tre andra lådor att välja bland",
+            "begar": "se fler alternativ"
+          }
+        ],
+        "forhandstext": "Den, och tre andra om den inte kändes rätt.",
+        "block": [
+          {
+            "typ": "dynamisk",
+            "kalla": "visad_produkt"
+          },
+          {
+            "typ": "fakta"
+          },
+          {
+            "typ": "produktrad",
+            "rubrik": "Tre andra sorter att välja bland",
+            "handles": [
+              "pizza-strumpor",
+              "hamburger-strumpor",
+              "donut-strumpor"
+            ]
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Du var intresserad av den här",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Kanske inte rätt sort",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Tre andra lådor att välja bland",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Den, och tre andra om den inte kändes rätt.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Tre andra sorter att välja bland",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 1
+      }
+    }
+  ]
+}

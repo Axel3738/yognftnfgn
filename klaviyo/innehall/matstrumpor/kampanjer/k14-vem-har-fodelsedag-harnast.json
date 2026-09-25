@@ -1,0 +1,64 @@
+{
+  "id": "k14-vem-har-fodelsedag-harnast",
+  "namn": "MAIL_20261229_Mix_GT_5_samtycke_solution_vem-har-fodelsedag-harnast_v1",
+  "memo": "Januari 2026 hade 799 ordrar och februari 655 (Shopify), så eftersäsongen är inte död, men orsaken (annonser eller presentkort) är okänd: gissning. Hypotes: presenten är inte bunden till jul, nästa födelsedag är alltid nära.",
+  "taggar": {
+    "typ": "N",
+    "_typ": "N=nytt koncept, I=iteration av annonsvinnare, IM=imitation, M=mejlspecifikt, S=säsong",
+    "kalla": "gissning",
+    "_kalla": "egen-data | winning-line | voc | swipe | gissning",
+    "kalla_ref": null,
+    "lardom": null,
+    "avatar": "presentkoparen",
+    "begar": "slippa-krangel",
+    "awareness": "solution",
+    "_awareness": "unaware | problem | solution | product | promo",
+    "urgency": "ingen",
+    "_urgency": "sasong | lager | pris | konsekvens | ingen",
+    "confidence": "low",
+    "_confidence": "high | medium | low (low = gissning)",
+    "prefix": "Mix",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    { "text": "Vem fyller år näst på listan?", "begar": "tänka på nästa tillfälle i stället för jul" },
+    { "text": "En present som inte är bunden till jul", "begar": "förstå att lådan funkar året runt" },
+    { "text": "Fortfarande fyra sorter att välja mellan", "begar": "veta att sortimentet fortfarande finns kvar" }
+  ],
+  "forhandstext": "Julen är över. Nästa tillfälle är inte långt borta.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Vem har födelsedag härnäst?",
+      "text": "{{fornamn}}, julen är över, men presenterna behöver inte vara det. Nästa födelsedag på listan är alltid närmare än du tror.",
+      "bild": "produkt:sushi-strumpor",
+      "knapp": { "text": "Se alla sorter", "lank": "kollektion:alla-produkter" }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "En låda som ser ut som mat funkar lika bra i januari som i december."
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Fyra sorter, redo när som helst",
+      "handles": ["sushi-strumpor", "pizza-strumpor", "hamburger-strumpor", "donut-strumpor"]
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "Vem fyller år näst på listan?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En present som inte är bunden till jul", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fortfarande fyra sorter att välja mellan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Julen är över. Nästa tillfälle är inte långt borta.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Vem har födelsedag härnäst?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fyra sorter, redo när som helst", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se alla sorter", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En låda som ser ut som mat funkar lika bra i januari som i december.", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-12-29T18:00:00+01:00",
+  "segment": ["SEG_samtycke"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

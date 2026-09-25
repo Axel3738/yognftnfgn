@@ -1,0 +1,65 @@
+{
+  "id": "k04-fars-dag-bestall-senast-24-okt",
+  "namn": "MAIL_20261020_Mix_GT_1_engagerade60d_solution_fars-dag-24-okt_v1",
+  "memo": "Hypotes: fars dag den 8 november är den första riktiga presentdagen, och sista beställningsdag lördag 24 oktober är räknad med p90 15 dygn (brandfilen) och är brådskan, med riktig orsak. Ingen data säger vilken sort pappor faktiskt får, så sushin, storsäljaren, står som hero.",
+  "taggar": {
+    "typ": "S",
+    "kalla": "egen-data",
+    "kalla_ref": "klaviyo/brands/matstrumpor.json#kalender",
+    "lardom": null,
+    "avatar": "presentkoparen (till pappa)",
+    "begar": "ha presenten klar i tid",
+    "awareness": "solution",
+    "urgency": "konsekvens",
+    "confidence": "medium",
+    "prefix": "Mix",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    { "text": "Sista dagen till fars dag: 24 oktober", "begar": "hinna beställa i tid till fars dag" },
+    { "text": "En present pappa faktiskt bär, inte glömmer", "begar": "ge pappa en present han faktiskt använder" },
+    { "text": "Slipp leta efter en presentidé till pappa", "begar": "slippa leta efter vad pappa ska få" }
+  ],
+  "forhandstext": "Fars dag är den 8 november. Beställ i tid.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Beställ senast 24 oktober till fars dag",
+      "text": "Hej {{fornamn}},\n\nFör att paketet ska hinna fram till fars dag den 8 november behöver ordern läggas senast 24 oktober.",
+      "bild": "produkt:sushi-strumpor",
+      "knapp": { "text": "Se presenten", "lank": "produkt:sushi-strumpor" }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "24 oktober är sista dagen vi räknar med att paketet hinner fram till fars dag den 8 november. Beställer du senare kan det komma efteråt."
+    },
+    {
+      "typ": "produkt",
+      "handle": "sushi-strumpor",
+      "text": "Fem par som gör presenten svår att gissa i förväg.",
+      "knapp": "Till sushilådan"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Om han hellre vill ha något annat",
+      "handles": ["hamburger-strumpor", "pizza-strumpor", "donut-strumpor"]
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "Sista dagen till fars dag: 24 oktober", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En present pappa faktiskt bär, inte glömmer", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Slipp leta efter en presentidé till pappa", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fars dag är den 8 november. Beställ i tid.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Beställ senast 24 oktober till fars dag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se presenten", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Om han hellre vill ha något annat", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Till sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-10-20T18:00:00+02:00",
+  "segment": ["SEG_engagerade_60d"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "klar",
+  "kraver_axel": null
+}

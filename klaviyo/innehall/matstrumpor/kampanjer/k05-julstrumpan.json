@@ -1,0 +1,70 @@
+{
+  "id": "k05-julstrumpan",
+  "namn": "MAIL_20261027_Sushi_S_1_engagerade90d_solution_gissa-vad-jag-la-i-julstrumpan_v1",
+  "memo": "Hypotes: julstrumpan är avataren julstrumpefyllarens egna ord (Nathalie: spara till julstrumpan, Sofie H2: den enda sushin som hör hemma i en julstrumpa, Gilz 024: Gissa vad jag la i julstrumpan?). Julstrumpan gör lådan till en självklar julsak redan i oktober, före Black Week-bruset.",
+  "taggar": {
+    "typ": "I",
+    "kalla": "egen-data",
+    "kalla_ref": "products/matstrumpor/dna.md:117",
+    "lardom": null,
+    "avatar": "julstrumpefyllaren",
+    "begar": "dubbeltitten på julafton",
+    "awareness": "solution",
+    "urgency": "sasong",
+    "confidence": "medium",
+    "prefix": "Sushi",
+    "kod": "S"
+  },
+  "amnesrader": [
+    { "text": "Gissa vad jag la i julstrumpan", "begar": "nyfikenheten och dubbeltitten på julafton" },
+    { "text": "Liten nog för julstrumpan, stor nog för skratt", "begar": "veta att den faktiskt får plats i strumpan" },
+    { "text": "En julklapp du kan bocka av i oktober", "begar": "vara klar med en julklapp före december" }
+  ],
+  "forhandstext": "Liten låda. Stor gissning.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Den får plats i julstrumpan",
+      "text": "Hej {{fornamn}},\n\nEn liten låda. Fem par strumpor och ätpinnar inuti.\n\nPrecis den storleken en julstrumpa är gjord för.",
+      "bild": "produkt:sushi-strumpor",
+      "knapp": { "text": "Se sushilådan", "lank": "produkt:sushi-strumpor" }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Den ser ut som takeaway. Ingen gissar rätt förrän den öppnas."
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "Varför den får plats",
+      "punkter": [
+        "Lådan är liten nog för en julstrumpa.",
+        "Fem par strumpor, rullade som sushi.",
+        "Ätpinnar av trä följer med."
+      ]
+    },
+    {
+      "typ": "produkt",
+      "handle": "sushi-strumpor",
+      "text": "Samma låda, nu i julstrumpan.",
+      "knapp": "Till sushilådan"
+    },
+    { "typ": "citat", "handle": "sushi-strumpor", "antal": 2 },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "Gissa vad jag la i julstrumpan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Liten nog för julstrumpan, stor nog för skratt", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En julklapp du kan bocka av i oktober", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Liten låda. Stor gissning.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Den får plats i julstrumpan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Varför den får plats", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Till sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-10-27T18:00:00+01:00",
+  "segment": ["SEG_engagerade_90d"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

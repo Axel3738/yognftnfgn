@@ -1,0 +1,70 @@
+{
+  "id": "k07-tva-lador-tva-personer",
+  "namn": "MAIL_20261110_Sushi_CS_2_samtycke_promo_tva-lador-tva-personer_v1",
+  "memo": "Hypotes: 84 % av ordrarna bär två lådor, och bildannonsen med erbjudandet (offer_static_d3, Köp 2, få 2) gav 6,7 % köp per visning (dna.md mönster 3). Att säga rakt ut att den andra lådan är till nästa person på listan borde lyfta ordervärdet, med erbjudandet nämnt i sajtens egna ord, utan mekanik.",
+  "taggar": {
+    "typ": "I",
+    "kalla": "egen-data",
+    "kalla_ref": "products/matstrumpor/dna.md:69-71 + klaviyo/evolve/ATERKOP-ANALYS-matstrumpor.md",
+    "lardom": null,
+    "avatar": "presentkoparen",
+    "begar": "två presenter i ett köp",
+    "awareness": "promo",
+    "urgency": "ingen",
+    "confidence": "medium",
+    "prefix": "Sushi",
+    "kod": "CS"
+  },
+  "amnesrader": [
+    { "text": "Köp 1, få 1, till två olika personer", "begar": "se att erbjudandet gäller för två olika mottagare" },
+    { "text": "En till mamma, en till brorsan", "begar": "få ett konkret exempel på vem man kan ge till" },
+    { "text": "Två presenter, ett enda köp", "begar": "spara tid genom att ordna två presenter i ett köp" }
+  ],
+  "forhandstext": "Två mottagare, ett köp, noll krångel.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Två lådor, två personer på listan",
+      "text": "Hej {{fornamn}},\n\nDe flesta beställningar innehåller två lådor. En till mamma, en till brorsan. En till dig, en till någon annan.\n\nKöp 1, få 1, det står på produktsidan.",
+      "bild": "produkt:sushi-strumpor",
+      "knapp": { "text": "Se sushilådan", "lank": "produkt:sushi-strumpor" }
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "Två personer på listan",
+      "punkter": [
+        "Mamma och brorsan.",
+        "Kollegan och partnern.",
+        "Barnen och farfar."
+      ]
+    },
+    {
+      "typ": "produkt",
+      "handle": "sushi-strumpor",
+      "text": "En låda till på köpet, som det står på produktsidan.",
+      "knapp": "Till sushilådan"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Andra sorter, samma erbjudande på produktsidan",
+      "handles": ["pizza-strumpor", "hamburger-strumpor", "donut-strumpor"]
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "Köp 1, få 1, till två olika personer", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En till mamma, en till brorsan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Två presenter, ett enda köp", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Två mottagare, ett köp, noll krångel.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Två lådor, två personer på listan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Två personer på listan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Till sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Andra sorter, samma erbjudande på produktsidan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-11-10T18:00:00+01:00",
+  "segment": ["SEG_samtycke"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

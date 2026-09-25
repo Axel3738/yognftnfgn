@@ -143,8 +143,8 @@ function kategoriSegment(namn, ord) {
   };
 }
 
-/** Segmenten i ARKITEKTUR.md-tabellen. `metriker` = vilka metriker bygget kräver. */
-export const SEGMENT = [
+/** Segmenten i ARKITEKTUR.md-tabellen utom kategorierna. `metriker` = vilka metriker bygget kräver. */
+export const SEGMENT_BAS = [
   { namn: 'SEG_samtycke', kampanjOk: true, metriker: [], bygg: () => ({ condition_groups: [SAMTYCKE()] }) },
   {
     namn: 'SEG_uppvarmning_steg1', kampanjOk: true, metriker: ['placed_order', 'active_on_site', 'opened_email', 'clicked_email'],
@@ -188,11 +188,28 @@ export const SEGMENT = [
       ],
     }),
   },
-  ...Object.entries(KATEGORIER).map(([namn, ord]) => kategoriSegment(namn, ord)),
 ];
 
-export function segmentPaNamn(namn) {
-  return SEGMENT.find((s) => s.namn === namn) ?? null;
+/** Kategorisegmenten ur en ordtabell ({ kategori: [ord…] }). */
+export function kategoriSegmentFor(kategorier) {
+  return Object.entries(kategorier ?? {}).map(([namn, ord]) => kategoriSegment(namn, ord));
+}
+
+/**
+ * Hela segmentlistan för ett brand: basen + brandets kategorier. Utan `kategorier`
+ * i brandfilen gäller KATEGORIER (Bäverbutikens ord), så Bäverbutiken beter sig
+ * som förut. Matstrumpor bär sina egna ord (sushi, pizza …) — Bäverbutikens
+ * ord hade gett fyra segment som aldrig matchar i det kontot (2026-09-25).
+ */
+export function segmentLista(brand = null) {
+  return [...SEGMENT_BAS, ...kategoriSegmentFor(brand?.kategorier ?? KATEGORIER)];
+}
+
+/** Bäverbutikens lista (standardkategorierna), samma som segmentLista(null). */
+export const SEGMENT = segmentLista(null);
+
+export function segmentPaNamn(namn, brand = null) {
+  return segmentLista(brand).find((s) => s.namn === namn) ?? null;
 }
 
 // ------------------------------------------------------------------ flödesfilter

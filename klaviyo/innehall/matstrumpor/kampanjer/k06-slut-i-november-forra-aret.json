@@ -1,0 +1,122 @@
+{
+  "id": "k06-slut-i-november-forra-aret",
+  "namn": "MAIL_20261103_Sushi_CS_1_engagerade90d_product_slut-i-november-forra-aret_v1",
+  "memo": "Hypotes: \"de sålde slut i november förra året\" är den enda brådskan i hela annonskontot och sitter i den enda annonsen över break-even med volym (dna.md mönster 2, bekräftat av Axel 2026-09-24; Shopify: 52 ordrar i november 2025 mot 1 613 i december). Faktumet, rakt berättat utan löfte om att det upprepas, borde få den som ändå ska köpa till jul att göra det nu.",
+  "taggar": {
+    "typ": "I",
+    "kalla": "egen-data",
+    "kalla_ref": "products/matstrumpor/dna.md:64-68",
+    "lardom": null,
+    "avatar": "julstrumpefyllaren",
+    "begar": "ha julklappen klar innan det är sent",
+    "awareness": "product",
+    "urgency": "konsekvens",
+    "confidence": "medium",
+    "prefix": "Sushi",
+    "kod": "CS"
+  },
+  "amnesrader": [
+    {
+      "text": "Sushilådan sålde slut i november förra året",
+      "begar": "veta vad som hände förra året"
+    },
+    {
+      "text": "Förra året tog de slut före december",
+      "begar": "ha julklappen klar innan det är sent, utan löfte om att det tar slut i år"
+    },
+    {
+      "text": "Bocka av julklappen innan december",
+      "begar": "ha julklappen klar i god tid"
+    }
+  ],
+  "forhandstext": "Lådorna tog slut i november, innan julhandeln kommit igång.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "I november förra året sålde vi slut",
+      "text": "Hej {{fornamn}},\n\nI november 2025 sålde sushilådan slut. Vi vet inte om det händer igen, men om du ändå tänkte köpa till jul kan det vara läge att göra det nu.",
+      "bild": "produkt:sushi-strumpor",
+      "knapp": {
+        "text": "Se sushilådan",
+        "lank": "produkt:sushi-strumpor"
+      }
+    },
+    {
+      "typ": "produkt",
+      "handle": "sushi-strumpor",
+      "text": "Samma låda som sålde slut förra november.",
+      "knapp": "Till sushilådan"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Om du vill ha en annan sort",
+      "handles": [
+        "pizza-strumpor",
+        "hamburger-strumpor",
+        "donut-strumpor"
+      ]
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    {
+      "rad": "Sushilådan sålde slut i november förra året",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Förra året tog de slut före december",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Bocka av julklappen innan december",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Lådorna tog slut i november, innan julhandeln kommit igång.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "I november förra året sålde vi slut",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Se sushilådan",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Om du vill ha en annan sort",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Till sushilådan",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    }
+  ],
+  "planerad": "2026-11-03T18:00:00+01:00",
+  "segment": [
+    "SEG_engagerade_90d"
+  ],
+  "exkludera": [
+    "SEG_oengagerade_180d"
+  ],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

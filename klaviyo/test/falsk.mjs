@@ -24,6 +24,7 @@ export function falskKlaviyo({
   listor = [],
   rapport = null,
   segmentko = 0,
+  profiler = [],
 } = {}) {
   const anrop = [];
   let nr = 0;
@@ -32,12 +33,15 @@ export function falskKlaviyo({
   const tillstand = {
     konto: res('account', 'ACC1', { public_api_key: publik, timezone: 'Europe/Stockholm', preferred_currency: 'SEK', contact_information: { default_sender_email: avsandare, default_sender_name: 'Bäverbutiken', organization_name: 'Stonebite Ecom AB', street_address: { address1: 'Gatan 1', city: 'Stockholm', country: 'SE', zip: '11111' } } }),
     metriker: metriker.map(([id, name]) => res('metric', id, { name, integration: { name: 'Shopify' } })),
-    listor: listor.map((l) => res('list', l.id, { name: l.name, opt_in_process: 'single_opt_in' })),
+    listor: listor.map((l) => res('list', l.id, { name: l.name, opt_in_process: l.opt_in_process ?? 'single_opt_in', profile_count: l.profile_count ?? 0 })),
     segment: segment.map((s) => res('segment', s.id, { name: s.name, definition: s.definition ?? { condition_groups: [] }, is_active: true })),
     mallar: mallar.map((m) => res('template', m.id, { name: m.name, editor_type: 'CODE', html: m.html ?? '' })),
-    kampanjer: kampanjer.map((k) => res('campaign', k.id, { name: k.name, status: k.status ?? 'Draft' })),
+    // Sådda kampanjer får bära send_strategy och audiences (schemalagg.mjs läser dem).
+    kampanjer: kampanjer.map((k) => res('campaign', k.id, { name: k.name, status: k.status ?? 'Draft', ...(k.send_strategy ? { send_strategy: k.send_strategy } : {}), ...(k.audiences ? { audiences: k.audiences } : {}) })),
     meddelanden: Object.fromEntries(kampanjer.map((k) => [`MSG_${k.id}`, { kampanj: k.id, definition: {}, mall: null }])),
-    floden: floden.map((f) => res('flow', f.id, { name: f.name, status: f.status ?? 'draft', trigger_type: f.trigger_type ?? 'Metric', archived: false })),
+    // Sådda flöden får bära definition (sla-pa.mjs läser actions ur den).
+    floden: floden.map((f) => res('flow', f.id, { name: f.name, status: f.status ?? 'draft', trigger_type: f.trigger_type ?? 'Metric', archived: false, ...(f.definition ? { definition: f.definition } : {}) })),
+    profiler: profiler.map((p) => res('profile', p.id, { email: p.email ?? null, subscriptions: { email: { marketing: { consent: p.consent ?? 'NEVER_SUBSCRIBED' } } } })),
     sendJobs: [],
     segmentko,
     raderade: [],
@@ -100,8 +104,11 @@ export function falskKlaviyo({
 
     if (p === '/api/lists') {
       if (metod === 'GET') return lista(tillstand.listor, q, 10);
-      if (metod === 'POST') { const x = nekaSaknas(a.name, '/data/attributes/name'); if (x) return x; const r = res('list', nyttId('L'), { name: a.name, opt_in_process: a.opt_in_process }); tillstand.listor.push(r); return svar(201, { data: r }); }
+      if (metod === 'POST') { const x = nekaSaknas(a.name, '/data/attributes/name'); if (x) return x; const r = res('list', nyttId('L'), { name: a.name, opt_in_process: a.opt_in_process, profile_count: 0 }); tillstand.listor.push(r); return svar(201, { data: r }); }
     }
+    m = /^\/api\/lists\/([^/]+)$/.exec(p);
+    if (m && metod === 'GET') { const r = tillstand.listor.find((l) => l.id === m[1]); return r ? svar(200, { data: r }) : svar(404, { errors: [{ code: 'not_found', detail: 'nope' }] }); }
+    if (p === '/api/profiles' && metod === 'GET') return lista(tillstand.profiler, q, 100);
     if (p === '/api/segments') {
       if (metod === 'GET') return lista(tillstand.segment, q, 10);
       if (metod === 'POST') {
@@ -153,6 +160,7 @@ export function falskKlaviyo({
     if (m) {
       const k = tillstand.kampanjer.find((x) => x.id === m[1]);
       if (!k) return svar(404, { errors: [{ code: 'not_found', detail: 'nope' }] });
+      if (!m[2] && metod === 'GET') return svar(200, { data: k });
       if (m[2] && metod === 'GET') {
         const mall = tillstand.meddelanden[`MSG_${k.id}`]?.mall;
         return svar(200, { data: [res('campaign-message', `MSG_${k.id}`, {}, { relationships: { template: { data: mall ? { type: 'template', id: mall } : null } } })] });
@@ -168,7 +176,12 @@ export function falskKlaviyo({
       tillstand.meddelanden[d.id].mall = tid;
       return svar(200, { data: res('campaign-message', d.id, {}) });
     }
-    if (p.startsWith('/api/campaign-send-jobs')) { tillstand.sendJobs.push(kropp); return svar(202, { data: {} }); }
+    if (p.startsWith('/api/campaign-send-jobs')) {
+      tillstand.sendJobs.push(kropp);
+      const k = tillstand.kampanjer.find((x) => x.id === kropp?.data?.id);
+      if (k) k.attributes.status = 'Scheduled';
+      return svar(202, { data: {} });
+    }
 
     if (p === '/api/flows') {
       if (metod === 'GET') return lista(tillstand.floden, q, 50);
@@ -181,7 +194,18 @@ export function falskKlaviyo({
         return svar(201, { data: r });
       }
     }
+    m = /^\/api\/flows\/([^/]+)$/.exec(p);
+    if (m && metod === 'GET') { const f = tillstand.floden.find((x) => x.id === m[1]); return f ? svar(200, { data: f }) : svar(404, { errors: [{ code: 'not_found', detail: 'nope' }] }); }
     if (/^\/api\/flows\//.test(p) && metod === 'PATCH') { const f = tillstand.floden.find((x) => p.endsWith(x.id)); if (f) Object.assign(f.attributes, a); return svar(200, { data: f }); }
+    // flow-actions: PATCH med hela definitionen (som sla-pa.mjs skickar) byter status på actionen i flödet.
+    m = /^\/api\/flow-actions\/([^/]+)$/.exec(p);
+    if (m && metod === 'PATCH') {
+      for (const f of tillstand.floden) {
+        const act = (f.attributes.definition?.actions ?? []).find((x) => String(x.id) === m[1]);
+        if (act) { act.data = { ...(act.data ?? {}), status: a.definition?.data?.status ?? act.data?.status }; return svar(200, { data: res('flow-action', m[1], { definition: act }) }); }
+      }
+      return svar(404, { errors: [{ code: 'not_found', detail: 'action' }] });
+    }
 
     if ((p === '/api/campaign-values-reports' || p === '/api/flow-values-reports') && metod === 'POST') {
       const x = nekaSaknas(a.conversion_metric_id, '/data/attributes/conversion_metric_id') ?? nekaSaknas(a.timeframe, '/data/attributes/timeframe'); if (x) return x;

@@ -1,0 +1,62 @@
+{
+  "id": "k13-presentkortet",
+  "namn": "MAIL_20261215_Presentkort_M_1_samtycke_solution_julklappen-som-kommer-i-mejlen_v1",
+  "memo": "Efter 8 december lovar vi ingen leverans före jul. Presentkortet är ett riktigt Shopify-presentkort (isGiftCard) och levereras digitalt via mejl; mottagaren väljer sort själv efter jul. Hypotes: det räddar den sena köparen.",
+  "taggar": {
+    "typ": "M",
+    "_typ": "N=nytt koncept, I=iteration av annonsvinnare, IM=imitation, M=mejlspecifikt, S=säsong",
+    "kalla": "egen-data",
+    "_kalla": "egen-data | winning-line | voc | swipe | gissning",
+    "kalla_ref": "Shopify (isGiftCard, avläst 2026-09-25)",
+    "lardom": null,
+    "avatar": "presentkoparen som är sen",
+    "begar": "slippa-krangel",
+    "awareness": "solution",
+    "_awareness": "unaware | problem | solution | product | promo",
+    "urgency": "konsekvens",
+    "_urgency": "sasong | lager | pris | konsekvens | ingen",
+    "confidence": "low",
+    "_confidence": "high | medium | low (low = gissning)",
+    "prefix": "Presentkort",
+    "kod": "M"
+  },
+  "amnesrader": [
+    { "text": "En present som hinner fram ändå", "begar": "hitta en lösning trots att man är sen" },
+    { "text": "Skickas direkt som ett mejl", "begar": "veta konkret hur presenten kommer fram" },
+    { "text": "Mottagaren väljer sin egen present", "begar": "slippa gissa fel sort" }
+  ],
+  "forhandstext": "Ett presentkort som kommer fram även om strumporna inte hinner.",
+  "block": [
+    {
+      "typ": "text",
+      "rubrik": "Missade du sista dagen?",
+      "text": "Strumporna hinner inte fram till julafton längre, men en present som skickas direkt via mejl gör det."
+    },
+    {
+      "typ": "produkt",
+      "handle": "presentkort",
+      "text": "Mottagaren väljer själv vad den vill ha, i hela butiken.",
+      "knapp": "Köp presentkortet"
+    },
+    {
+      "typ": "text",
+      "rubrik": "Så funkar det",
+      "text": "Presentkortet skickas digitalt, som ett mejl, med en kod mottagaren löser in i butiken. Ingen kö, inget paket som ska hinna fram."
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "En present som hinner fram ändå", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Skickas direkt som ett mejl", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Mottagaren väljer sin egen present", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Ett presentkort som kommer fram även om strumporna inte hinner.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Missade du sista dagen?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Så funkar det", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Köp presentkortet", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-12-15T18:00:00+01:00",
+  "segment": ["SEG_samtycke"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}
