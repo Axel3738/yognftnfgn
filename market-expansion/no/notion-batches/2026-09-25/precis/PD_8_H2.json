@@ -1,0 +1,26 @@
+{
+ "in": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-25/out/ibctank_PD_8_H2.mp4",
+ "ut": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-25/no-video/IBC-tanktrekk_NO_PD_8_H2.mp4",
+ "srt": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-25/srt-no/ibctank_PD_8_H2.srt",
+ "captions": {
+  "zon": [905, 1015],
+  "standard_cy": 963,
+  "font_px": 42,
+  "max_chars": 26,
+  "x0": 0,
+  "x1": 720,
+  "bredd_max": 660,
+  "pad_x": 34,
+  "pad_y": 8,
+  "h_min": 70,
+  "h_max": 105,
+  "av": [[8.0, 14.0]]
+ },
+ "blur": [
+  { "rect": [25, 868, 697, 963], "t": [8.55, 13.7] }
+ ],
+ "lager": [
+  { "png": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-25/lager/PD_8_H2_pris.png", "t": [8.55, 13.7] }
+ ],
+ "qa": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-25/qa"
+}

@@ -61,6 +61,7 @@ MAX_TALTAPP = 0.40           # översättningen får tappa max 40 % av källans 
 SLUTMARGINAL_S = 0.15        # sista repliken närmare slutet än så = värd att mäta i ljudet
 MAX_SLUTENERGI_DIFF_DB = 3.0 # dubben får låta 3 dB högre än källan i sista 100 ms
 KALLA_SLUTAR_HOGT_DB = 5.0   # över detta slutar källan själv på full volym → omätbart
+KALLA_TYST_DB = -100.0       # under detta är källans svans bit-exakt noll → differensen omätbar
 SLUT_TYST_DB = -6.0          # under detta har ljudet tonat ut → kan inte vara avhugget
 
 
@@ -229,6 +230,22 @@ def kolla(kalla, ny, srt=None, kall_srt=None, omtajmad=False):
                 noter.append(f"källan slutar själv på full volym ({slut_k:.1f} dB mot egen median) "
                              f"— avhugget slut går INTE att mäta på den här filmen. Lyssna på "
                              f"slutet innan den laddas upp")
+            elif slut_k < KALLA_TYST_DB:
+                # Spegelbilden av fallet ovan: källans sista 100 ms är BIT-EXAKT tystnad
+                # (rms 0, klämd till 1e-6), så differensen blir hundratals dB hur tyst
+                # dubben än är och MAX_SLUTENERGI_DIFF_DB kan ALDRIG hållas. Mät dubben
+                # absolut i stället, med samma tröskel som när källa saknas — en film som
+                # tonat ut djupt under sin egen median kan inte vara avhuggen.
+                # (IBC_PD_8_H2 2026-09-25: källan -182,9 dB, dubben -10,4 dB mot egen
+                # median och talet slut 0,11 s före filens slut — ändå röd på 168,8 dB.)
+                if slut_ny < SLUT_TYST_DB:
+                    noter.append(f"källans sista 100 ms är bit-exakt tystnad ({slut_k:.1f} dB mot "
+                                 f"egen median) — differensen är omätbar, men dubben tonar själv "
+                                 f"ut i tystnad ({slut_ny:.1f} dB mot egen median), inte avhugget")
+                else:
+                    fel.append(f"källan slutar i bit-exakt tystnad men dubben låter fortfarande "
+                               f"vid slutet ({slut_ny:.1f} dB mot egen median) — rösten hinner "
+                               f"inte tala klart")
             elif slut_ny - slut_k > MAX_SLUTENERGI_DIFF_DB:
                 fel.append(f"dubben låter {slut_ny - slut_k:.1f} dB högre än källan i sina sista "
                            f"100 ms ({slut_ny:.1f} mot {slut_k:.1f} dB mot egen median) — "

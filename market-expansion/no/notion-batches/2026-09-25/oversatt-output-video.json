@@ -1,0 +1,23 @@
+{
+  "PD_8_H2": {
+    "malnamn": "IBC-tanktrekk_NO_PD_8_H2",
+    "srt_no": "1\n00:00:00,160 --> 00:00:07,280\n210D Oxford-stoff blokkerer sollyset helt. Algene får ingen sjanse. Åpning i toppen, kom til lokket uten å ta av trekket.\n\n2\n00:00:08,889 --> 00:00:13,453\nFire hundre og trettini kroner. Førpris fem hundre og åttiseks kroner. Fri frakt.\n",
+    "copy": {
+      "message": "210D Oxford-stoff blokkerer sollyset helt.\nAlgene får ingen sjanse.\n439 kr. Førpris 586 kr – spar 147 kr.\nFri frakt.",
+      "headline": "IBC-tanktrekk blokkerer algevekst",
+      "description": ""
+    },
+    "andringar": [
+      "489 kr → 439 kr (pris verifierat live i beverbutikken.no 2026-09-25)",
+      "Jämförpris 636 kr → 586 kr (samma verifiering)",
+      "Lade till \"spar 147 kr\" i annonstexten (25 %) — inte i SRT:n, för att inte förlänga ljudspåret",
+      "SRT-block 2: beloppen skrivna med bokstäver för talsyntesen (fire hundre og trettini / fem hundre og åttiseks), aldrig siffror",
+      "'Jämförpris' → 'Førpris' (kortare, vedertaget norskt e-handelsord) i stället för HeyGens 'Sammenligningspris' — krymper block 2 så det får plats i 4,564 s",
+      "'Öppning upptill, kom åt locket utan att ta av skynket' → 'Åpning i toppen, kom til lokket uten å ta av trekket' (naturlig norsk bokmål, inte HeyGens 'toppåpning gir tilgang til' som låter som en produktbeskrivning, inte tal)",
+      "'Alger får ingen chans' → 'Algene får ingen sjanse' (naturlig norsk, samma betydelse)",
+      "Inget butiksnamn eller domän i copy eller SRT",
+      "Tidkoderna oförändrade (00:00:00,160-->00:00:07,280 och 00:00:08,889-->00:00:13,453)",
+      "200D → 210D (KÄLLFEL i det svenska voiceoveret: videons egen första bildruta säger 210D och produktsidan beverbutikken.no säger 210D två gånger — rättat i översättningen, sessionens beslut 2026-09-25)"
+    ]
+  }
+}

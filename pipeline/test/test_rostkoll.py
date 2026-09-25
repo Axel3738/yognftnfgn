@@ -111,6 +111,25 @@ def main():
         fel, _, _ = rostkoll.kolla(kalla, kapad, srt)
         pastar(any("tala klart" in f for f in fel), "det avhuggna slutet fångades")
 
+        # Källor som slutar i BIT-EXAKT tystnad (rms 0) gör differensen degenererad:
+        # 20*log10(0/median) kläms till −180 dB och något ovanför är per definition
+        # mer än 3 dB "högre än källan". IBC_PD_8_H2 2026-09-25 föll på just det —
+        # 168,8 dB röd fast talet tog slut 0,11 s före sista bildrutan.
+        tyst_slut = t / "tyst-slut.mp4"
+        ffmpeg("-i", str(kalla), "-af", f"volume=enable='gte(t,{d - 0.3:.2f})':volume=0",
+               "-c:v", "copy", str(tyst_slut))
+
+        print("\nkälla med bit-exakt tyst svans + dubb som tonar ut — ska bli GRÖNT:")
+        tonar_ut = t / "tonar-ut.mp4"
+        ffmpeg("-i", str(kalla), "-af", f"volume=enable='gte(t,{d - 0.3:.2f})':volume=0.0001",
+               "-c:v", "copy", str(tonar_ut))
+        fel, _, matt = rostkoll.kolla(tyst_slut, tonar_ut, srt)
+        pastar(not fel, f"inte fälld på källans nollor{'' if not fel else ': ' + '; '.join(fel)}")
+
+        print("\nsamma källa, men dubben kapad mitt i ett ljud — ska ändå bli RÖTT:")
+        fel, _, _ = rostkoll.kolla(tyst_slut, kapad, srt)
+        pastar(any("tala klart" in f for f in fel), "det avhuggna slutet fångades ändå")
+
         print("\növersättning som tappat 90 % av talet ska bli RÖTT:")
         kort = t / "kort.srt"; lang = t / "lang.srt"
         kort.write_text("1\n00:00:01,000 --> 00:00:02,000\nkort\n", encoding="utf-8")
