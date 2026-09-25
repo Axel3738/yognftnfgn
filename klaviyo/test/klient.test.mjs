@@ -4,7 +4,7 @@ import { KlaviyoKlient, KlaviyoFel, nyckelFranEnv, kontrolleraKonto, frageStrang
 import { hamtaMetriker, metrikId, metrikIds } from '../metriker.mjs';
 import { falskKlaviyo } from './falsk.mjs';
 
-const BRAND = { id: 'baverbutiken', namn: 'Bäverbutiken', public_id: 'TMFt7M', nyckel_env: ['KLAVIYO_API_KEY_BAVERBUTIKEN'] };
+const BRAND = { id: 'baverbutiken', namn: 'Bäverbutiken', public_id: 'QZ4jLG', nyckel_env: ['KLAVIYO_API_KEY_BAVERBUTIKEN'] };
 const ny = (o = {}) => {
   const f = falskKlaviyo(o);
   const sovningar = [];
@@ -30,7 +30,7 @@ test('frågesträngen: arrayer kommaseparerade, null hoppas', () => {
 test('429: väntar Retry-After sekunder och lyckas sedan', async () => {
   const { k, f, sovningar } = ny({ rateLimit: 2, retryAfter: '3' });
   const svar = await k.get('/api/accounts');
-  assert.equal(svar.data[0].attributes.public_api_key, 'TMFt7M');
+  assert.equal(svar.data[0].attributes.public_api_key, 'QZ4jLG');
   assert.deepEqual(sovningar, [3000, 3000]);
   assert.equal(f.anrop.length, 3);
 });
@@ -104,7 +104,7 @@ test('nyckelFranEnv: bara brandets egna variabler, i ordning', () => {
 
 test('kontrolleraKonto: fel public_api_key stoppar', async () => {
   const { k } = ny({ publik: 'ANNAT1' });
-  await assert.rejects(kontrolleraKonto(k, BRAND), (e) => e.kod === 'FEL_KONTO' && /ANNAT1/.test(e.message) && /TMFt7M/.test(e.message));
+  await assert.rejects(kontrolleraKonto(k, BRAND), (e) => e.kod === 'FEL_KONTO' && /ANNAT1/.test(e.message) && /QZ4jLG/.test(e.message));
   const { k: k2 } = ny();
   assert.equal((await kontrolleraKonto(k2, BRAND)).id, 'ACC1');
 });

@@ -35,7 +35,7 @@ node --test klaviyo/test/*.test.mjs
 
 - **Skickar.** Klienten vägrar varje anrop till `/api/campaign-send-jobs` och varje flödesstatus utom `draft`. Ett test bevisar det.
 - **Mejlar utan samtycke.** Varje kampanjsegment måste ha `subscription: "subscribed"`, annars stoppas det.
-- **Tar en annan butiks konto.** `public_api_key` måste vara `TMFt7M` innan något skrivs.
+- **Tar en annan butiks konto.** `public_api_key` måste vara `QZ4jLG` innan något skrivs.
 
 ## Filerna
 

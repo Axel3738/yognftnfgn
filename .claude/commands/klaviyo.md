@@ -24,7 +24,7 @@ etiketterna, copyreglerna för mejl, kalendern) och `klaviyo/ARKITEKTUR.md`
    `subscription: "subscribed"`; `any` och `never_subscribed` är förbjudna
    (MFL 19–20 §, EPOST-STRATEGI §3). Uppladdaren vägrar — kör aldrig runt den.
 3. **Blandar butiker.** Nyckeln är `KLAVIYO_API_KEY_<BRAND>`, kontot ska svara
-   med brandfilens `public_id` (Bäverbutiken `TMFt7M`). Ingen Grillkliniken-,
+   med brandfilens `public_id` (Bäverbutiken `QZ4jLG`). Ingen Grillkliniken-,
    Mastern- eller SnarkLös-rad i copyn, inga rader ur `docs/playbook.md`,
    `docs/winning-lines.md` eller `docs/swipes/` (de är Grillklinikens).
 

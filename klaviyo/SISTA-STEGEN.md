@@ -9,15 +9,15 @@ lägger in nyckeln, och **en Claude Code-session** laddar upp allt som utkast.
 ## 1. Prompten till Cowork (klistra in hela rutan)
 
 ```
-You are setting up the Klaviyo account for the Swedish web shop Bäverbutiken (baverbutiken.se). Klaviyo account public ID: TMFt7M. Do ONLY the steps below, in order. Never send an email, never turn on a flow, never schedule a campaign, never delete anything, never touch MX, SPF or DKIM records that already exist. Do not type or copy any API key or password — if a step needs one, stop and tell Axel. After each step, write one line: done / not done + why.
+You are setting up the Klaviyo account for the Swedish web shop Bäverbutiken (baverbutiken.se). Klaviyo account public ID: QZ4jLG. Do ONLY the steps below, in order. Never send an email, never turn on a flow, never schedule a campaign, never delete anything, never touch MX, SPF or DKIM records that already exist. Do not type or copy any API key or password — if a step needs one, stop and tell Axel. After each step, write one line: done / not done + why.
 
-1. Log in to Klaviyo (klaviyo.com) and check that the account's public API key / site ID is TMFt7M (Settings → API keys, "Public API key"). If it is not TMFt7M: STOP and report.
+1. Log in to Klaviyo (klaviyo.com) and check that the account's public API key / site ID is QZ4jLG (Settings → API keys, "Public API key"). If it is not QZ4jLG: STOP and report.
 
 2. Billing: open Settings → Billing and write down the plan name, the profile limit and the current number of active profiles. Change nothing.
 
 3. Attribution: Settings → Attribution (search "attribution" in Settings if the menu differs). For EMAIL set: conversions count on CLICKS only, window 5 days; opens do NOT count; turn ON "exclude Apple Mail Privacy Protection opens" (or equivalent). Save. Write down the old and new values.
 
-4. Default sender: Settings → Brand / Account → Contact information (the place that says "default sender"). Set sender name "Bäverbutiken", sender email "kundsupport@baverbutiken.se", reply-to "kundsupport@baverbutiken.se". The old value is probably kundsupport@baverkoppling.se — that domain has no mail server, so it must go. Save. If Klaviyo asks to verify the address, trigger the verification email and tell Axel it is waiting in the kundsupport@baverbutiken.se inbox (Loopia webmail).
+4. Default sender: Settings → Brand / Account → Contact information (the place that says "default sender"). Set sender name "Bäverbutiken", sender email "kundsupport@baverbutiken.se", reply-to "kundsupport@baverbutiken.se". The sender is probably empty in this account. Never use kundsupport@baverkoppling.se — that domain has no mail server. Save. If Klaviyo asks to verify the address, trigger the verification email and tell Axel it is waiting in the kundsupport@baverbutiken.se inbox (Loopia webmail).
 
 5. Branded sending domain: Settings → Domains (or "Sending domains") → Add sending domain → subdomain "send", domain "baverbutiken.se" (send.baverbutiken.se). If Klaviyo offers both "NS records" and "CNAME records", choose CNAME. Copy every DNS record Klaviyo shows (type, host/name, value) into your report.
 
@@ -47,7 +47,7 @@ Klaviyo för Bäverbutiken: ladda upp allt som utkast. Allt är byggt och testat
 
 1. git fetch origin claude/bold-hopper-a95yg9 och checka ut grenen. Kör node --test klaviyo/test/*.test.mjs, allt ska vara grönt.
 2. Kontrollera att miljövariabeln KLAVIYO_API_KEY_BAVERBUTIKEN finns (bara namnet, skriv aldrig ut värdet). Saknas den: stoppa och säg exakt var Axel lägger in den (klaviyo/SISTA-STEGEN.md steg 2).
-3. node klaviyo/kolla.mjs och sedan node klaviyo/kolla.mjs --prov. public_api_key måste vara TMFt7M, annars STOPP. Skriv in varje mätt punkt under "Obekräftat" i klaviyo/ARKITEKTUR.md med datum. Rätta motorn om en mätning visar att den gissat fel (t.ex. kassametrikens namn, content-type, send_strategy, fältet ItemNames för F07:s produktfilter i placed_order_egenskaper), med test.
+3. node klaviyo/kolla.mjs och sedan node klaviyo/kolla.mjs --prov. public_api_key måste vara QZ4jLG, annars STOPP. Skriv in varje mätt punkt under "Obekräftat" i klaviyo/ARKITEKTUR.md med datum. Rätta motorn om en mätning visar att den gissat fel (t.ex. kassametrikens namn, content-type, send_strategy, fältet ItemNames för F07:s produktfilter i placed_order_egenskaper), med test.
 4. node klaviyo/bygg.mjs (live-priser + Judge.me). Måste gå ut med 0 fel.
 5. node klaviyo/ladda-upp.mjs (torrt). Läs planen. Kampanjer vars planerade datum redan passerat: flytta datumet i kampanjfilen till nästa lediga tisdag eller torsdag 18:00, i samma ordning, bygg om, och notera det i klaviyo/logg/baverbutiken/kampanjlogg.md.
 6. node klaviyo/ladda-upp.mjs --skarpt. Allt ska bli utkast: kampanjer Draft, flödesmejl draft. Inget send-job, inget live. Kör om vid avbrott; motorn är idempotent (konto/baverbutiken/uppladdat.jsonl).

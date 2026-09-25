@@ -1,10 +1,14 @@
 {
-  "comment": "Bäverbutikens Klaviyo-inställningar. Kontot TMFt7M syns i sajtens HTML (mätt 2026-09-24). Avsändaren står i Klaviyo på kundsupport@baverkoppling.se, en domän utan MX-post — här står den adress motorn ska använda, och Axel byter i Klaviyo (Settings → Brand → Email sender). Nyckeln skapas i Klaviyo → Settings → API keys → Create Private API Key (Full access) och läggs in på claude.ai som KLAVIYO_API_KEY_BAVERBUTIKEN.",
+  "comment": "Bäverbutikens Klaviyo-inställningar. Kontot QZ4jLG syns i sajtens HTML (mätt 2026-09-24). Avsändaren står i Klaviyo på kundsupport@baverkoppling.se, en domän utan MX-post — här står den adress motorn ska använda, och Axel byter i Klaviyo (Settings → Brand → Email sender). Nyckeln skapas i Klaviyo → Settings → API keys → Create Private API Key (Full access) och läggs in på claude.ai som KLAVIYO_API_KEY_BAVERBUTIKEN.",
   "id": "baverbutiken",
   "namn": "Bäverbutiken",
-  "public_id": "TMFt7M",
-  "nyckel_env": ["KLAVIYO_API_KEY_BAVERBUTIKEN"],
-  "shopify": { "modul": "mejl/shopify.mjs" },
+  "public_id": "QZ4jLG",
+  "nyckel_env": [
+    "KLAVIYO_API_KEY_BAVERBUTIKEN"
+  ],
+  "shopify": {
+    "modul": "mejl/shopify.mjs"
+  },
   "butik_url": "https://baverbutiken.se",
   "avsandare": {
     "from_email": "kundsupport@baverbutiken.se",
@@ -21,12 +25,19 @@
   "returfonster_fran": "kundtjanst/brands/baverbutiken.yaml#tvister.returfonster_dagar",
   "sparningssida": "https://baverbutiken.se/pages/spara",
   "erbjudande_fran": "mejl/konfig.json#erbjudande",
-  "utm": { "utm_source": "klaviyo", "utm_medium": "email" },
+  "utm": {
+    "utm_source": "klaviyo",
+    "utm_medium": "email"
+  },
   "kalender": {
     "fars_dag": "2026-11-08",
     "fars_dag_sista_bestallning": "2026-10-19",
-    "black_week": ["2026-11-23", "2026-11-30"],
+    "black_week": [
+      "2026-11-23",
+      "2026-11-30"
+    ],
     "jul_sista_bestallning": "2026-12-03",
     "kalender_comment": "Sista beställningsdagarna = högtiden minus leverans_p90_dygn (20). Huvudsessionens beslut 2026-09-24, Axel kan ändra: jul 23/12 − 20 = 3/12, fars dag 8/11 − 20 = 19/10."
-  }
+  },
+  "public_id_comment": "Mätt 2026-09-25: sajten laddar klaviyo.js?company_id=QZ4jLG, och Cowork såg samma id i Klaviyo → Settings → API keys (företaget 'Bäverbutiken'). Till och med 2026-09-24 laddade sajten TMFt7M, ett äldre konto (avsändare kundsupport@baverkoppling.se). Kontot byttes mellan mätningarna. TMFt7M rörs aldrig."
 }

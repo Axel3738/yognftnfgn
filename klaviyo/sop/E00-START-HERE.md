@@ -31,7 +31,7 @@ step at a time, starting with QA (E03). The order is in the README the owner has
 
 | Value | Bäverbutiken |
 |---|---|
-| Klaviyo account | `TMFt7M` (shown in Settings → Account) |
+| Klaviyo account | `QZ4jLG` (shown in Settings → Account) |
 | Sender name | Bäverbutiken |
 | Sender and reply-to address | `kundsupport@baverbutiken.se` — **never** `@baverkoppling.se` (that domain cannot receive mail) |
 | Sending domain | `send.baverbutiken.se` ⚠️ OWNER: not set up yet (2026-09-24). No campaign is sent before it is |
@@ -114,7 +114,7 @@ path so the page gets fixed.
 
 ## Definition of done (first day)
 
-- [ ] You can open Klaviyo and see account `TMFt7M`
+- [ ] You can open Klaviyo and see account `QZ4jLG`
 - [ ] You have read E00–E07 once
 - [ ] You can say, without looking, the four things you never do (send without OK, touch consent, add contacts, make codes)
 - [ ] You know where to escalate (section 2)

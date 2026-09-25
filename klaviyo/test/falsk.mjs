@@ -2,7 +2,7 @@
 // kundtjanst/test/webmail-skriv.test.mjs: returnerar { fetchFn, anrop, tillstand }.
 // Kontrollerar de fält som specen 2026-07-15 kräver, så fel form ger 400 som på riktigt.
 
-export const PUBLIK = 'TMFt7M';
+export const PUBLIK = 'QZ4jLG';
 
 const METRIKER_STANDARD = [
   ['M_PO', 'Placed Order'], ['M_SC', 'Started Checkout'], ['M_VP', 'Viewed Product'], ['M_AOS', 'Active on Site'],

@@ -47,7 +47,7 @@ lärdomen.** Ett utskick utan hypotes skickas inte.
 | **Kampanjer = rytmen** | 3–5 koncept i veckan till ett segment, planerade | Där Evolve-loopen körs: hypotes → utskick → lärdom | Externt: placed order rate kampanj/flöde — hem & trädgård 1,34 % / 2,17 %, järnhandel 1,28 % / 1,96 %, fordon 1,03 % / 1,7 % (samma källa) |
 | **Listan = tillgången** | 6 186 SUBSCRIBED, uppvärmning, sunset | Allt annat står på den. En bränd lista går inte att köpa tillbaka | Shopify-räkningen ovan |
 
-⚠️ Klaviyo-kontot `TMFt7M` har **inga signup-formulär och formulären är
+⚠️ Klaviyo-kontot `QZ4jLG` har **inga signup-formulär och formulären är
 avstängda** (`form_settings.enabled: false`, mätt 2026-09-24). Enda vägen in
 på listan i dag är samtycket i kassan och sajtens två Shopify-formulär
 ("Gå med i våran kundklubb"). Välkomstflödet får alltså låg volym tills ett

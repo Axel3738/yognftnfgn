@@ -7,7 +7,7 @@ import { KlaviyoKlient } from '../klient.mjs';
 import { dom, doma, median, rapport, rapportKropp, tabell, tidsram, GRIND, STATISTIK } from '../rapport.mjs';
 import { falskKlaviyo } from './falsk.mjs';
 
-const BRAND = { id: 'baverbutiken', namn: 'Bäverbutiken', public_id: 'TMFt7M', nyckel_env: ['KLAVIYO_API_KEY_BAVERBUTIKEN'] };
+const BRAND = { id: 'baverbutiken', namn: 'Bäverbutiken', public_id: 'QZ4jLG', nyckel_env: ['KLAVIYO_API_KEY_BAVERBUTIKEN'] };
 const NU = () => new Date('2026-09-24T12:00:00Z');
 
 const rad = (o) => ({ typ: 'kampanj', delivered: 1000, conversions: 5, conversion_value: 3000, revenue_per_recipient: 3, unsubscribe_rate: 0.002, spam_complaint_rate: 0.0001, open_rate: 0.9, ...o });

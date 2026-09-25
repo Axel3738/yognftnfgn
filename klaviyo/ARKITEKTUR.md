@@ -41,7 +41,7 @@ för ingen nyckel fanns 2026-09-24. Allt som bara går att mäta med nyckel stå
 8. **Butiker blandas aldrig.** Allt är per brand (`brands/<id>.json`). Nyckeln för
    Bäverbutiken heter `KLAVIYO_API_KEY_BAVERBUTIKEN`; motorn tar aldrig en annan
    brands nyckel, och `kolla.mjs` kontrollerar att kontots `public_api_key` är
-   brandets `public_id` (`TMFt7M`) innan något skrivs.
+   brandets `public_id` (`QZ4jLG`) innan något skrivs.
 9. **Noll npm-beroenden.** Node ≥20, ESM, inbyggd `fetch`. Klienten tar
    `fetchFn` i konstruktorn så testerna kan köra mot en falsk Klaviyo utan nät.
 
@@ -82,7 +82,7 @@ klaviyo/
 {
   "id": "baverbutiken",
   "namn": "Bäverbutiken",
-  "public_id": "TMFt7M",
+  "public_id": "QZ4jLG",
   "nyckel_env": ["KLAVIYO_API_KEY_BAVERBUTIKEN"],
   "shopify": { "modul": "mejl/shopify.mjs" },
   "butik_url": "https://baverbutiken.se",
