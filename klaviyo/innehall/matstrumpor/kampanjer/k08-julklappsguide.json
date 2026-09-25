@@ -1,0 +1,92 @@
+{
+  "id": "k08-julklappsguide",
+  "namn": "MAIL_20261117_Mix_GT_2_samtycke_solution_julklappsguide_v1",
+  "memo": "Bäverbutikens guide grupperar per mottagare. Här är fyra sorter, en per person: sushi till den som älskar sushi eller aldrig skulle gissa, pizza till familjen, burgare till brorsan eller pappan, donut till barnen. Hypotes: en tydlig \"till vem\" per låda säljer fler sorter än sushin ensam, som i dag är 92 procent av strumpenheterna. Julens sista beställningsdag 8 december nämns en gång.",
+  "taggar": {
+    "typ": "N",
+    "_typ": "N=nytt koncept, I=iteration av annonsvinnare, IM=imitation, M=mejlspecifikt, S=säsong",
+    "kalla": "egen-data",
+    "_kalla": "egen-data | winning-line | voc | swipe | gissning",
+    "kalla_ref": "produktsidorna på matstrumpor.se (sushi-strumpor, pizza-strumpor, hamburger-strumpor, donut-strumpor) + klaviyo/evolve/ATERKOP-ANALYS-matstrumpor.md (92 % av strumpenheterna är sushi)",
+    "lardom": null,
+    "avatar": "presentkoparen",
+    "begar": "slippa-krangel",
+    "awareness": "solution",
+    "_awareness": "unaware | problem | solution | product | promo",
+    "urgency": "sasong",
+    "_urgency": "sasong | lager | pris | konsekvens | ingen",
+    "confidence": "low",
+    "_confidence": "high | medium | low (low = gissning)",
+    "prefix": "Mix",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    { "text": "Sushi, pizza, burgare, donut. En lista.", "begar": "slippa leta i evigheten efter fyra olika presenter" },
+    { "text": "Till brorsan som redan har allt", "begar": "hitta en present som passar en specifik, svår mottagare" },
+    { "text": "Sista dagen för julklappar: 8 december", "begar": "veta det verkliga datumet i god tid" }
+  ],
+  "forhandstext": "Fyra sorter, fyra mottagare, allt på ett ställe.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Sushi till en, pizza till en annan",
+      "text": "{{fornamn}}, fyra sorter i lådan, fyra olika personer att ge bort till. Sushi till den som gillar sushi, eller aldrig skulle gissa vad som är i lådan. Pizza till den som delar med sig av allt. Burgare till brorsan eller pappan. Donut till barnen.",
+      "bild": "produkt:sushi-strumpor",
+      "knapp": { "text": "Se hela guiden", "lank": "kollektion:alla-produkter" }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Ingen behöver leta i evigheter. Här är fyra förslag, ett för varje typ av person på listan."
+    },
+    {
+      "typ": "produkt",
+      "handle": "sushi-strumpor",
+      "text": "Till den som älskar sushi, eller till den som aldrig skulle gissa vad som är i lådan.",
+      "knapp": "Till sushilådan"
+    },
+    {
+      "typ": "produkt",
+      "handle": "pizza-strumpor",
+      "text": "Fyra par i en pizzakartong, till den som delar med sig av allt.",
+      "knapp": "Till pizzalådan"
+    },
+    {
+      "typ": "produkt",
+      "handle": "hamburger-strumpor",
+      "text": "Två par i en burgerbox, till brorsan eller pappan.",
+      "knapp": "Till burgarlådan"
+    },
+    {
+      "typ": "produkt",
+      "handle": "donut-strumpor",
+      "text": "Tre par rullade som donuts, till barnen.",
+      "knapp": "Till donutlådan"
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Beställ senast 8 december så hinner den fram till julafton."
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "Sushi, pizza, burgare, donut. En lista.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Till brorsan som redan har allt", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sista dagen för julklappar: 8 december", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fyra sorter, fyra mottagare, allt på ett ställe.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sushi till en, pizza till en annan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se hela guiden", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Till sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Till pizzalådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Till burgarlådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Till donutlådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Ingen behöver leta i evigheter. Här är fyra förslag, ett för varje typ av person på listan.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Beställ senast 8 december så hinner den fram till julafton.", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-11-17T18:00:00+01:00",
+  "segment": ["SEG_samtycke"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

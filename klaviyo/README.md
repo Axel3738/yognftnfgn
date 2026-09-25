@@ -1,4 +1,9 @@
-# klaviyo/: Bäverbutikens e-postmarknadsföring (byggt 2026-09-24)
+# klaviyo/: Bäverbutikens och Matstrumpors e-postmarknadsföring (byggt 2026-09-24, Matstrumpor 2026-09-25)
+
+Två butiker, två Klaviyo-konton, EN motor med `--brand <id>`: `baverbutiken` (`QZ4jLG`, standard)
+och `matstrumpor` (`UV6Rqg`). Brandfilen `brands/<id>.json` bär allt som skiljer. Butiker blandas
+aldrig: `kontrolleraKonto` stoppar en nyckel som hör till fel konto. Matstrumpors läge står i ett
+eget avsnitt längre ner.
 
 Axels beställning 2026-09-24: "Börja fixa email MARKETING på riktigt … köra claude
 med klaviyo och börja köra massa kampanjer", kopplat till creative strategy och
@@ -31,13 +36,16 @@ Id:n står i `konto/baverbutiken/uppladdat.jsonl`.
 ## Så körs det
 
 ```bash
-node klaviyo/kolla.mjs              # nyckel, konto, metriker → konto/baverbutiken/lage.json
+node klaviyo/kolla.mjs [--brand matstrumpor] [--profiler]   # nyckel, konto, metriker (+ samtycket) → konto/<brand>/lage.json
 node klaviyo/kolla.mjs --prov       # första gången: mäter det obekräftade i ARKITEKTUR
-node klaviyo/bygg.mjs               # innehåll + Shopify → output/baverbutiken/ (+ galleri index.html)
-node klaviyo/ladda-upp.mjs          # torrt: planen och exakta request-kroppar
-node klaviyo/ladda-upp.mjs --skarpt # skapar segment, mallar, kampanjer och flöden, ALLT som utkast
-node klaviyo/rapport.mjs            # resultat → logg/baverbutiken/utfall.jsonl
-node --test klaviyo/test/*.test.mjs
+node klaviyo/bygg.mjs [--brand …]   # innehåll + Shopify → output/<brand>/ (+ galleri index.html)
+node klaviyo/schema-sida.mjs --brand matstrumpor --villkor <fil.json>   # schemasidan → output/<brand>/schema.html
+node klaviyo/ladda-upp.mjs [--brand …]          # torrt: planen och exakta request-kroppar
+node klaviyo/ladda-upp.mjs --brand … --skarpt   # skapar segment, mallar, kampanjer och flöden, ALLT som utkast
+node klaviyo/sla-pa.mjs --brand … <flöde …> [--ja]      # bara på Axels ord
+node klaviyo/schemalagg.mjs --brand … K01 [--ja]        # bara på Axels ord
+node klaviyo/rapport.mjs [--brand …]            # resultat → logg/<brand>/utfall.jsonl
+node --test klaviyo/test/*.test.mjs             # 119 tester
 ```
 
 ## Det motorn aldrig gör
@@ -51,7 +59,37 @@ node --test klaviyo/test/*.test.mjs
 Se `ARKITEKTUR.md` (kontraktet), `innehall/baverbutiken/BRIEFER.md` (strategin per
 mejl) och `logg/baverbutiken/kampanjlogg.md` (hypotes → utfall → lärdom).
 
-## Lärdomar 2026-09-25
+## Matstrumpor (kontot `UV6Rqg`, byggt och uppladdat 2026-09-25)
+
+**Allt ligger i kontot `UV6Rqg` som utkast. Inget är påslaget, inget schemalagt, inget skickat**
+(Axels villkor 2026-09-25: postadress, plan, kundundantag, subscribed och ett renderat testmejl
+måste alla vara gröna först; postadressen saknas och planen går inte att läsa via API:t, se
+`SISTA-STEGEN.md` → Matstrumpor). Mätt med tillbakaläsning 2026-09-25 ~13:15 CEST:
+
+| Del | Status |
+|---|---|
+| Kontot | `UV6Rqg` (sajten laddar `klaviyo.js?company_id=UV6Rqg`), Europe/Stockholm, SEK. 4 357 profiler, **2 890 subscribed**, 81 unsubscribed, 1 386 aldrig. Shopify-synken klar (Shopify: 2 892 av 4 362). ❌ **Postadress saknas** (landet står "United States"), avsändarmejl tomt. Planen syns inte via API:t. |
+| Kampanjer K01–K14 (29 sep–29 dec) | ✅ 14 st `Draft`, `send_strategy static`, `scheduled_at` tomt. Id:n i `konto/matstrumpor/uppladdat.jsonl`. Schemat: `innehall/matstrumpor/KALENDER-2026.md`, sidan https://claude.ai/artifact/Ljyv3Ye89ipdPNCZbNKKLh. Ämnesrad B och C läggs in som A/B-test för hand. |
+| Flöden | ✅ 7 st `draft` med alla mejl `draft` (tillbakalästa per action): F01 Välkomst `SVdssi` (listan Email List), F02 Övergiven kassa `S8VT8T` (Checkout Started), F03 Webbhistorik `YAZ8cN` (Viewed Product `R9yPAm`), F04 Efter köp `VtTT7F` (Fulfilled Order, egen spårningslänk `?k=`, kundundantag), F05 Vinback `U9exx3` (Placed Order + 90 d, kundundantag), F06 Sunset `R29irU` (SEG_oengagerade_180d), F07 Återköp sushi `V4KBnH` (Placed Order med `Items` ∋ "Sushi-Strumpor", 21 d, kundundantag). Inga tipsflöden: inget produktpar har stöd i datan. |
+| Segment | ✅ 14 st: `SEG_samtycke` **2 890**, `SEG_uppvarmning_steg1` 175, `SEG_engagerade_60d` 175, `_90d` 176, `SEG_kopare` 2 596, `SEG_kopare_30d` 175, `SEG_flerkopare` 112, `SEG_ej_kopt` 294, `SEG_vinback_90d` 2 420, `SEG_oengagerade_180d` 0, kategorierna sushi 2 583 / donut 81 / pizza 10 / hamburgare 5 (mätt direkt efter skapandet). |
+| Mallar | ✅ 29 `TPL_*_v1`. K01 renderad via `template-render`: förnamnet in, avregistreringslänk med, inget mallspråk kvar, adressraden tom (kontot saknar adress). |
+| Gallerierna (Axels beställning 2026-09-25: "massa gallerier … jävligt nice") | **Kampanjerna** https://claude.ai/artifact/VdYq8VLTHqPW4kQm4gMKw1 · **Flödena** https://claude.ai/artifact/WLQKsyRR8soHCDusP8jtYx · **Mallarna** https://claude.ai/artifact/1KEuzFEai52gahdbpvGShN · **Schemat** https://claude.ai/artifact/Ljyv3Ye89ipdPNCZbNKKLh · **Galleriet ur `bygg.mjs`** https://claude.ai/artifact/MYCFYWgVAcwugj1tPFrmgR. Byggs av `node klaviyo/gallerier.mjs --brand matstrumpor --lankar <fil>` (telefonram per mejl, Fredoka + Atkinson Hyperlegible, Matstrumpors orange) och `schema-sida.mjs`; publiceras om på SAMMA länkar (`url`) vid varje ombygge. |
+| Innehåll | `innehall/matstrumpor/` — briefer (`BRIEFER.md`), 14 kampanjer, 7 flöden. Copyn skrevs av fyra Sonnet-subagenter mot `docs/copy-regler.md`; huvudsessionen skrev om K06:s ämnesrad B och förhandstext (tillverkad osäkerhet, fel ordning på "slut") och F05 E2:s ämnesrad B (ej falsifierbar). |
+| Data | `evolve/ATERKOP-ANALYS-matstrumpor.md` (hela orderhistoriken: julprodukt, 1,2 % återköp, samma sushi igen, leverans p90 15 dygn) |
+| Black Week | ✅ Tre schemalagda automatiska rabatter i Matstrumpors Shopify, exakt Bäverbutikens: `DiscountAutomaticNode` 1840765501779 (10 % vid 1 vara), 1840765534547 (20 % vid 2), 1840765567315 (30 % vid 3+), 2026-11-22T23:00Z–2026-11-30T23:00Z, kombineras bara med fraktrabatter. ⚠️ Matstrumpors vanliga erbjudande "Köp 1, få 1" är RABATTKODER (`SUSHI-K1F1` m.fl., 135 av 227 ordrar), och en kod som inte får kombineras med en automatisk rabatt stoppas i kassan under Black Week. Axels beslut: låt vara (trappan ersätter koderna den veckan) eller tillåt kombination (Shopify admin → Rabatter → varje Black Week-rabatt → Kombinationer → Produktrabatter). |
+| Kvar | Cowork-prompten i `SISTA-STEGEN.md` (postadress, attribution, plan, testmejl), DNS separat (aldrig namnservrar), sedan sessionsprompten som slår på flödena och schemalägger K01. |
+
+## Lärdomar 2026-09-25 (Matstrumpor)
+
+- **`lage.json`:s `senast` är rutinens kontrolltid, inte skanningens.** 60 av 71 levererade paket stod på 2026-09-21 (första körningen); räknat på det blev p90 25,6 dygn. Rätt källa är Shopifys `fulfillments.deliveredAt`, som spårningsrutinen skriver ur skanningen: p90 14,9 ⇒ 15.
+- **`event.Price` på Viewed Product är text med valuta** i båda kontona ("1,129 kr", "299 kr"). `floatformat` gav tomt. Rättat i `mallar.mjs`; Bäverbutikens live F03 bär den gamla mallen och behöver en ny version.
+- **Judge.me utan API-nyckel:** widgetens publika JSON (`reviews_for_widget`) ger produktsidans recensioner per Shopify-id. Brandfilen väljer källa (`recensioner.kalla`).
+- **Reservfilen `mejl/produkter.json` är Bäverbutikens.** Utan den spärren hade Matstrumpors mejl byggts med Bäverbutikens produkter när Shopify inte svarade. Nu bara för det brand som har en reserv.
+- **Bäverbutikens kategoriord hade gett fyra tomma segment** i Matstrumpors konto. Kategorierna kommer nu ur brandfilen.
+- **Shopify-synkens lista heter "Email List"** i det nya kontot (2 891 profiler); brandfilen pekar dit så ingen tom `LISTA_nyhetsbrev` skapas.
+- **`additional-fields[list]=profile_count` ger 400 på listningen** — bara per lista.
+
+## Lärdomar 2026-09-25 (Bäverbutiken)
 
 - **Ändrad text i ett uppladdat mejl kräver `version` i mejlet.** Mallnamnet är `TPL_<id>_v<version>`, och med samma version återanvänder motorn den gamla mallen. Tre nya flöden fick den gamla texten innan det här upptäcktes. Nu bär manifestet `version`.
 - **Klaviyos mallspråk saknar sha256** (mätt: `sha256`, `hash_sha256`, `hash`, `md5` ger renderfel, `base64_encode` och `urlencode` fungerar). Bävernumret kan därför inte räknas i Klaviyo. Länken `sparning:` skickar fraktbolagets nummer base64-kodat som `?k=`, och spårningssidan byter det mot bävernumret i adressen.

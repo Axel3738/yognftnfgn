@@ -2,8 +2,13 @@
 
 Skrivet 2026-09-25, samma form som Bäverbutikens. Rytmen är en kampanj i veckan,
 tisdag 18:00, plus Black Weeks måndag och fredag. Alla 14 ligger i Klaviyo-kontot
-UV6Rqg som utkast (se `klaviyo/README.md` för läget). Inget är schemalagt förrän
-villkoren i `klaviyo/SISTA-STEGEN.md` → Matstrumpor är uppfyllda.
+UV6Rqg som utkast sedan 2026-09-25 ~13:10 CEST (se `klaviyo/README.md` för läget).
+Inget är schemalagt förrän villkoren i `klaviyo/SISTA-STEGEN.md` → Matstrumpor är
+uppfyllda. Sidan: https://claude.ai/artifact/Ljyv3Ye89ipdPNCZbNKKLh. Gallerierna:
+kampanjerna https://claude.ai/artifact/VdYq8VLTHqPW4kQm4gMKw1, flödena
+https://claude.ai/artifact/WLQKsyRR8soHCDusP8jtYx, mallarna
+https://claude.ai/artifact/1KEuzFEai52gahdbpvGShN, galleriet ur `bygg.mjs`
+https://claude.ai/artifact/MYCFYWgVAcwugj1tPFrmgR.
 
 **Datum som styr** (brandfilens `kalender`, sista beställning = dagen − 15 dygn, p90 för
 leveransen mätt 2026-09-25): fars dag 8/11 (sista beställning **lör 24/10**), Black Week

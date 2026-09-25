@@ -1,0 +1,68 @@
+{
+  "id": "k10-black-friday",
+  "namn": "MAIL_20261127_Mix_CS_4_samtycke_promo_black-friday-till-mandag_v1",
+  "memo": "Samma trappa som K09, egna krokar: sista helgen, trappan gäller till och med måndag 30 november. Inte en upprepning av K09, ny hero (hamburgare i stället för pizza) och ny blockordning.",
+  "taggar": {
+    "typ": "S",
+    "_typ": "N=nytt koncept, I=iteration av annonsvinnare, IM=imitation, M=mejlspecifikt, S=säsong",
+    "kalla": "egen-data",
+    "_kalla": "egen-data | winning-line | voc | swipe | gissning",
+    "kalla_ref": "Axels beslut 2026-09-25 (Black Week 10/20/30)",
+    "lardom": null,
+    "avatar": "presentkoparen som ändå ska handla till jul",
+    "begar": "spara-pengar",
+    "awareness": "promo",
+    "_awareness": "unaware | problem | solution | product | promo",
+    "urgency": "pris",
+    "_urgency": "sasong | lager | pris | konsekvens | ingen",
+    "confidence": "high",
+    "_confidence": "high | medium | low (low = gissning)",
+    "prefix": "Mix",
+    "kod": "CS"
+  },
+  "amnesrader": [
+    { "text": "Black Friday: rabatten gäller ännu", "begar": "veta att erbjudandet inte redan är över" },
+    { "text": "Sista helgen med 10, 20 eller 30 % rabatt", "begar": "spara pengar innan fönstret stänger" },
+    { "text": "Trappan gäller till och med måndag", "begar": "veta exakt hur länge det finns tid kvar" }
+  ],
+  "forhandstext": "Black Friday i dag, men trappan håller i sig till måndag.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Black Friday. Trappan gäller till och med måndag.",
+      "text": "{{fornamn}}, i dag är det Black Friday, och rabattrappan gäller ända till och med måndag 30 november. En vara ger 10 %, två ger 20 %, tre eller fler ger 30 %, och kassan räknar ut det åt dig.",
+      "bild": "produkt:hamburger-strumpor",
+      "knapp": { "text": "Till sortimentet", "lank": "kollektion:alla-produkter" }
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Fyll kundvagnen för nästa nivå",
+      "handles": ["sushi-strumpor", "pizza-strumpor", "hamburger-strumpor", "donut-strumpor"]
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "Kom ihåg: så funkar trappan",
+      "punkter": [
+        "1 vara: 10 % rabatt",
+        "2 varor: 20 % rabatt",
+        "3 varor eller fler: 30 % rabatt"
+      ]
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "Black Friday: rabatten gäller ännu", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sista helgen med 10, 20 eller 30 % rabatt", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Trappan gäller till och med måndag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Black Friday i dag, men trappan håller i sig till måndag.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Black Friday. Trappan gäller till och med måndag.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fyll kundvagnen för nästa nivå", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Kom ihåg: så funkar trappan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Till sortimentet", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-11-27T18:00:00+01:00",
+  "segment": ["SEG_samtycke"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "klar",
+  "kraver_axel": null
+}

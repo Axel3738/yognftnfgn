@@ -1,0 +1,71 @@
+{
+  "id": "k01-de-tror-att-det-ar-sushi",
+  "namn": "MAIL_20260929_Sushi_PD_1_uppvarmning_product_de-tror-att-det-ar-sushi_v1",
+  "memo": "Hypotes: det enda som bevisats i annonserna är avslöjandet, en riktig mottagare öppnar lådan, tror att det är sushi och skrattar (Nathalie, 29 köp, +3 078 kr vinstbidrag, 3,4 % köp per landningssidevisning, dna.md mönster 1). Samma ögonblick i text, till dem som nyss kom in på listan, borde sälja en låda till, eftersom 38 av 44 återköpare köpte just samma sushi igen.",
+  "taggar": {
+    "typ": "I",
+    "kalla": "egen-data",
+    "kalla_ref": "products/matstrumpor/dna.md:56-63 + klaviyo/evolve/ATERKOP-ANALYS-matstrumpor.md",
+    "lardom": null,
+    "avatar": "presentkoparen",
+    "begar": "att vara den som ger presenten alla pratar om",
+    "awareness": "product",
+    "urgency": "ingen",
+    "confidence": "medium",
+    "prefix": "Sushi",
+    "kod": "PD"
+  },
+  "amnesrader": [
+    { "text": "De tittar två gånger, sen skrattar de", "begar": "skrattet och dubbeltiten när mottagaren öppnar lådan" },
+    { "text": "En present du har på fötterna i morgon", "begar": "att ge en present som faktiskt används" },
+    { "text": "Lådan ser ut som sushi. Det är den inte.", "begar": "nyfikenhet på vad som egentligen ligger i lådan" }
+  ],
+  "forhandstext": "Fem par strumpor ligger där sushibitarna borde vara.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Ser ut som sushi. Är strumpor.",
+      "text": "Hej {{fornamn}},\n\nLådan öppnas som en sushibeställning. Fem par strumpor ligger rullade som sushibitar, med ätpinnar bredvid.",
+      "bild": "produkt:sushi-strumpor",
+      "knapp": { "text": "Se sushilådan", "lank": "produkt:sushi-strumpor" }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Den som öppnar lådan tror först att det är riktig sushi.\n\nSen inser den vad det egentligen är, och tittar en gång till."
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "Det här ligger i lådan",
+      "punkter": [
+        "Fem par strumpor, rullade som sushibitar.",
+        "Lådan ser ut som takeaway, tills den öppnas.",
+        "Ätpinnar av trä ingår.",
+        "Onesize 36-44."
+      ]
+    },
+    { "typ": "citat", "handle": "sushi-strumpor", "antal": 2 },
+    {
+      "typ": "produkt",
+      "handle": "sushi-strumpor",
+      "text": "Fem par i en låda gjord för att lura ögat.",
+      "knapp": "Till sushilådan"
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "De tittar två gånger, sen skrattar de", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En present du har på fötterna i morgon", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Lådan ser ut som sushi. Det är den inte.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fem par strumpor ligger där sushibitarna borde vara.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Ser ut som sushi. Är strumpor.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Det här ligger i lådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Till sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-09-29T18:00:00+02:00",
+  "segment": ["SEG_uppvarmning_steg1"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "klar",
+  "kraver_axel": null
+}

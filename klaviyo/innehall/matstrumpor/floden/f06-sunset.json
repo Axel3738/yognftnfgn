@@ -1,0 +1,108 @@
+{
+  "id": "f06-sunset",
+  "namn": "FLOW_segment_sunset_v1",
+  "memo": "Klaviyos sunset-mönster: den som fått minst fem mejl men inte öppnat eller klickat på 180 dagar får en ärlig fråga i stället för att tystnaden bara fortsätter. Klickar hen inte heller nu märker VA:n profilen som avslutad enligt SOP E06, tills motorn själv kan göra det. Samma form som Bäverbutikens beprövade sunset-mejl: en rubrik, två korta meningar, en tydlig knapp, i stället för ren text. Ingen skuldbeläggning, mejlen är en fråga, inte ett argument.",
+  "trigger": {
+    "typ": "segment",
+    "segment": "SEG_oengagerade_180d"
+  },
+  "filter": ["samtycke"],
+  "ateintrade": { "varaktighet": null, "enhet": "alltime" },
+  "steg": [
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f06-sunset-e1",
+        "namn": "FLOW_segment_E1_M_vill-du-ha-mejl-fran-oss_v1",
+        "memo": "Första mejlet i sunset-flödet: en ärlig fråga, inte ett argument. Rubrik, två korta meningar och en knapp, samma form som Bäverbutikens beprövade sunset-mejl.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": null,
+          "lardom": null,
+          "avatar": "prenumeranten som inte öppnat eller klickat på ett mejl på 180 dagar",
+          "begar": "veta att det är okej att inte längre vilja ha mejl, och kunna välja det med ett klick",
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "high",
+          "prefix": "Sunset",
+          "kod": "M"
+        },
+        "amnesrader": [
+          { "text": "Vill du fortfarande ha mejl från oss?", "begar": "en direkt, ärlig fråga att svara på" },
+          { "text": "Du väljer, vi lyssnar", "begar": "känna att det är ett val, inte ett krav" },
+          { "text": "Ett klick, sen vet vi", "begar": "en enkel handling, inget att fundera över" }
+        ],
+        "forhandstext": "Ett klick räcker om du vill stanna kvar på listan.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Vill du fortfarande ha mejl från oss?",
+            "text": "{{fornamn}}, det har gått ett tag sen du öppnade något härifrån. Ett klick håller dig kvar på listan."
+          },
+          {
+            "typ": "knapp",
+            "text": "Ja, fortsätt skicka",
+            "lank": "kollektion:alla-produkter"
+          }
+        ],
+        "tretest": [
+          { "rad": "Vill du fortfarande ha mejl från oss?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Du väljer, vi lyssnar", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Ett klick, sen vet vi", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Ett klick räcker om du vill stanna kvar på listan.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Ja, fortsätt skicka", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+        ],
+        "version": 1
+      }
+    },
+    { "typ": "vanta", "enhet": "days", "varde": 5 },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f06-sunset-e2",
+        "namn": "FLOW_segment_E2_M_sista-mejlet_v1",
+        "memo": "Sista, tydliga valet fem dagar senare, innan profilen märks avslutad. Samma redesign som E1: rubrik, två korta meningar, en knapp.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": null,
+          "lardom": null,
+          "avatar": "samma prenumerant som i E1, fem dagar senare, utan att ha klickat",
+          "begar": "en tydlig avslutning, utan att bli mejlad om och om igen",
+          "awareness": "product",
+          "urgency": "konsekvens",
+          "confidence": "high",
+          "prefix": "Sunset",
+          "kod": "M"
+        },
+        "amnesrader": [
+          { "text": "Det här är sista mejlet", "begar": "veta exakt var man står" },
+          { "text": "Hör vi inget, slutar vi skicka", "begar": "förstå den verkliga konsekvensen av tystnad" },
+          { "text": "Ett sista klick, om du vill stanna", "begar": "en sista enkel möjlighet att välja kvar" }
+        ],
+        "forhandstext": "Efter det här hör du inget mer, om vi inte hör något från dig.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Det här är sista mejlet",
+            "text": "{{fornamn}}, hör vi inget nu tar vi bort dig från listan. Ett klick håller dig kvar."
+          },
+          {
+            "typ": "knapp",
+            "text": "Ja, ha kvar mig",
+            "lank": "kollektion:alla-produkter"
+          }
+        ],
+        "tretest": [
+          { "rad": "Det här är sista mejlet", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Hör vi inget, slutar vi skicka", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Ett sista klick, om du vill stanna", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Efter det här hör du inget mer, om vi inte hör något från dig.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Ja, ha kvar mig", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+        ],
+        "version": 1
+      }
+    }
+  ]
+}

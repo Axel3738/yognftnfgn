@@ -1,0 +1,70 @@
+{
+  "id": "f07-aterkop-sushi",
+  "namn": "FLOW_order_aterkop-sushi_v1",
+  "memo": "Det enda mönstret återköpsanalysen ger stöd för (klaviyo/evolve/ATERKOP-ANALYS-matstrumpor.md#2): 38 av 44 riktiga återköpare köpte exakt samma sushilåda igen, median 19 dagar (#1), flest i hinken 14 till 30 dagar. 21 dagar ligger mitt i den hinken. Ett enda mejl, inte en serie: urvalet på 44 kunder är för litet för att bygga flera steg på.",
+  "trigger": {
+    "typ": "metrik",
+    "metrik": ["Placed Order"],
+    "produkt_innehaller": ["Sushi-Strumpor"]
+  },
+  "filter": ["kundundantag", "ej_kopt_sedan_start"],
+  "ateintrade": { "varaktighet": 60, "enhet": "day" },
+  "steg": [
+    { "typ": "vanta", "enhet": "days", "varde": 21 },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f07-aterkop-sushi-e1",
+        "namn": "FLOW_order_E1_M_en-lada-till-till-nasta-person_v1",
+        "memo": "21 dagar efter köp av sushilådan, mitt i hinken där flest återköp sker (14 till 30 dagar, #1). Mönstret i datan är entydigt: den som köper igen väljer nästan alltid exakt samma låda, till en annan mottagare, inte en ny sort (#2). Mejlet säljer därför en till, med de andra tre sorterna som alternativ sist.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "klaviyo/evolve/ATERKOP-ANALYS-matstrumpor.md#2",
+          "lardom": null,
+          "avatar": "presentkoparen",
+          "begar": "ge en till present utan att behöva komma på något nytt",
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "Sushi",
+          "kod": "M"
+        },
+        "amnesrader": [
+          { "text": "En låda till, till nästa person", "begar": "ge en till present, snabbt och utan att fundera" },
+          { "text": "Samma låda, ny mottagare", "begar": "återanvända något man redan vet funkar" },
+          { "text": "Eller testa en annan sort den här gången", "begar": "nyfikenhet, variation" }
+        ],
+        "forhandstext": "De flesta som köper en gång till väljer exakt samma låda igen.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "En låda till, till nästa person",
+            "text": "De flesta som handlar en gång till väljer exakt samma sushilåda, till någon annan på listan."
+          },
+          {
+            "typ": "produkt",
+            "handle": "sushi-strumpor",
+            "text": "Fem par, rullade som sushibitar, i en låda som ser ut som takeaway tills den öppnas. Ätpinnarna följer med.",
+            "knapp": "Se sushilådan"
+          },
+          {
+            "typ": "produktrad",
+            "rubrik": "Eller en annan sort",
+            "handles": ["pizza-strumpor", "hamburger-strumpor", "donut-strumpor"]
+          },
+          { "typ": "fakta" }
+        ],
+        "tretest": [
+          { "rad": "En låda till, till nästa person", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Samma låda, ny mottagare", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Eller testa en annan sort den här gången", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "De flesta som köper en gång till väljer exakt samma låda igen.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Se sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Eller en annan sort", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+        ],
+        "version": 1
+      }
+    }
+  ]
+}

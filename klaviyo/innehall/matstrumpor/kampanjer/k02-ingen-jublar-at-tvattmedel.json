@@ -1,0 +1,65 @@
+{
+  "id": "k02-ingen-jublar-at-tvattmedel",
+  "namn": "MAIL_20261006_Sushi_PD_2_uppvarmning_problem_ingen-jublar-at-tvattmedel_v1",
+  "memo": "Hypotes: produktsidans eget motsatspar, en rolig present som hamnar i en byrålåda mot en praktisk present som rivs upp i tystnad, är butikens tydligaste problemformulering och har aldrig testats som mejl. Problemet \"presenten som glöms bort\" borde sälja bättre än en ren produktbeskrivning till den som redan känner lådan.",
+  "taggar": {
+    "typ": "N",
+    "kalla": "egen-data",
+    "kalla_ref": "https://matstrumpor.se/products/sushi-strumpor",
+    "lardom": null,
+    "avatar": "presentkoparen",
+    "begar": "att ge en present som varken är tråkig eller onödig",
+    "awareness": "problem",
+    "urgency": "ingen",
+    "confidence": "medium",
+    "prefix": "Sushi",
+    "kod": "PD"
+  },
+  "amnesrader": [
+    { "text": "Ingen jublar åt tvättmedel", "begar": "slippa ge en present som känns som en pliktgåva" },
+    { "text": "Den roliga hamnar i en låda i morgon", "begar": "slippa ge något som glöms bort direkt" },
+    { "text": "Den här hamnar på fötterna, inte i en låda", "begar": "vara den som ger presenten som faktiskt används" }
+  ],
+  "forhandstext": "Rolig när den öppnas. Användbar dagen efter.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Den tråkiga funkar. Den roliga glöms.",
+      "text": "Hej {{fornamn}},\n\nEn praktisk gåva rivs upp i tystnad. En skämtpryl ligger i en låda redan i morgon.",
+      "bild": "produkt:sushi-strumpor",
+      "knapp": { "text": "Se lådan", "lank": "produkt:sushi-strumpor" }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Den här är rolig i kväll och på fötterna i morgon."
+    },
+    {
+      "typ": "produkt",
+      "handle": "sushi-strumpor",
+      "text": "Fem par i en låda som ser ut som riktig sushi.",
+      "knapp": "Till sushilådan"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Till nästa person",
+      "handles": ["pizza-strumpor", "hamburger-strumpor", "donut-strumpor"]
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "Ingen jublar åt tvättmedel", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Den roliga hamnar i en låda i morgon", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Den här hamnar på fötterna, inte i en låda", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Rolig när den öppnas. Användbar dagen efter.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Den tråkiga funkar. Den roliga glöms.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se lådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Till nästa person", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Till sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-10-06T18:00:00+02:00",
+  "segment": ["SEG_uppvarmning_steg1"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "klar",
+  "kraver_axel": null
+}

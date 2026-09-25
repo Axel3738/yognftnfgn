@@ -1,0 +1,116 @@
+{
+  "id": "f04-efter-kop",
+  "namn": "FLOW_order_efterkop_v1",
+  "memo": "Första versionen för Matstrumpor (BRIEFER.md → F04). Matstrumpor har inget gratisprodukt-erbjudande som Bäverbutikens TACKIGEN, så flödet har bara ett jobb: hjälpa kunden hitta sitt eget paket innan hen hinner mejla och fråga. Trigger är Fulfilled Order, inte Placed Order, eftersom spårningsnumret bara finns i den händelsen (lank: sparning: läser fulfillmentets spårningsnummer). E1 går 3 dagar efter att paketet skickats, E2 dag 16, precis efter att p90-leveransen (15 dygn, klaviyo/brands/matstrumpor.json#leverans_p90_dygn) rimligen passerat, och byter då fokus till de andra sorterna som nästa present.",
+  "trigger": {
+    "typ": "metrik",
+    "metrik": ["Fulfilled Order"]
+  },
+  "filter": ["kundundantag"],
+  "ateintrade": { "varaktighet": 30, "enhet": "day" },
+  "steg": [
+    { "typ": "vanta", "enhet": "days", "varde": 3 },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f04-efter-kop-e1",
+        "namn": "FLOW_order_E1_M_din-bestallning-ar-pa-vag_v1",
+        "memo": "Ingen leveranstid, inget erbjudande (BRIEFER.md → F04 E1). Enda syftet är att kunden ska hitta sitt eget paket med ett klick, innan hen hinner mejla kundtjänst och fråga var det är.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "klaviyo/brands/matstrumpor.json#sparningssida",
+          "lardom": null,
+          "avatar": "kunden vars paket precis skickats och som inte hört något sen ordern",
+          "begar": "veta att paketet är på väg och kunna se var det är utan att mejla",
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "Efterkop",
+          "kod": "M"
+        },
+        "amnesrader": [
+          { "text": "Din beställning är på väg", "begar": "lugn bekräftelse på att allt rullar" },
+          { "text": "Se var paketet är, utan att mejla", "begar": "kunna kolla själv i stället för att vänta på svar" },
+          { "text": "Snart dags att öppna lådan", "begar": "nyfikenhet på vad som väntar" }
+        ],
+        "forhandstext": "En knapp, och du ser precis var det befinner sig just nu.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Din beställning är på väg",
+            "text": "Tryck på knappen så ser du exakt var paketet är just nu."
+          },
+          {
+            "typ": "knapp",
+            "text": "Följ ditt paket",
+            "lank": "sparning:"
+          },
+          {
+            "typ": "text",
+            "rubrik": null,
+            "text": "Frågor innan det landar? Mejla kundsupport@matstrumpor.se, vi svarar."
+          }
+        ],
+        "tretest": [
+          { "rad": "Din beställning är på väg", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Se var paketet är, utan att mejla", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Snart dags att öppna lådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "En knapp, och du ser precis var det befinner sig just nu.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Följ ditt paket", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+        ],
+        "version": 1
+      }
+    },
+    { "typ": "vanta", "enhet": "days", "varde": 13 },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f04-efter-kop-e2",
+        "namn": "FLOW_order_E2_M_kom-allt-fram_v1",
+        "memo": "Dag 16 efter att paketet skickades, strax efter p90-leveransen (15 dygn). Matstrumpor har inget erbjudande kvar att påminna om, så uppmärksamheten flyttas i stället till de tre andra sorterna som nästa present, samma idé som BRIEFER.md → F04 E2 'Till nästa person'.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "klaviyo/brands/matstrumpor.json#leverans_p90_dygn",
+          "lardom": null,
+          "avatar": "kunden vars paket rimligen kommit fram nu, sexton dagar efter att det skickades",
+          "begar": "bekräfta att leveransen gick bra, och se andra sorter till en till present",
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "Efterkop",
+          "kod": "M"
+        },
+        "amnesrader": [
+          { "text": "Kom allt fram som det ska?", "begar": "bekräfta att leveransen gick bra" },
+          { "text": "Säg till om något saknas", "begar": "få hjälp om något är fel" },
+          { "text": "Fler sorter till nästa person", "begar": "se andra sorter för en till present" }
+        ],
+        "forhandstext": "Vid det här laget brukar paketet ha landat.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Kom allt fram?",
+            "text": "Vid det här laget brukar paketet ha kommit fram. Saknas något eller ser något konstigt ut? Mejla kundsupport@matstrumpor.se, vi löser det."
+          },
+          {
+            "typ": "produktrad",
+            "rubrik": "Till nästa person",
+            "handles": ["pizza-strumpor", "hamburger-strumpor", "donut-strumpor"]
+          },
+          { "typ": "fakta" }
+        ],
+        "tretest": [
+          { "rad": "Kom allt fram som det ska?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Säg till om något saknas", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Fler sorter till nästa person", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Vid det här laget brukar paketet ha landat.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Kom allt fram?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Till nästa person", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+        ],
+        "version": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "k03-kundernas-ord",
+  "namn": "MAIL_20261013_Sushi_SP_1_engagerade60d_product_kundernas-ord_v1",
+  "memo": "Hypotes: åtta recensioner med snitt 4,5 finns, men i annonserna förlorade klippkompilationer med påstått socialt bevis som i själva verket var AI-klipp, inte riktiga kunders ord (dna.md, döda koncept). Riktiga recensioner ordagrant, med mottagarens egen reaktion i kundens egna ord, borde konvertera bättre hos dem som ännu inte köpt.",
+  "taggar": {
+    "typ": "I",
+    "kalla": "egen-data",
+    "kalla_ref": "klaviyo/output/matstrumpor/recensioner.json",
+    "lardom": null,
+    "avatar": "presentkoparen",
+    "begar": "att presenten landar rätt",
+    "awareness": "product",
+    "urgency": "ingen",
+    "confidence": "medium",
+    "prefix": "Sushi",
+    "kod": "SP"
+  },
+  "amnesrader": [
+    { "text": "Recensionerna säger att mottagaren blev glad", "begar": "veta att mottagaren av presenten blir glad" },
+    { "text": "Åtta recensioner, noll påhittade", "begar": "veta att det inte är en bluff eller påhittat" },
+    { "text": "Läs vad riktiga köpare skrev", "begar": "se bevis innan köpet" }
+  ],
+  "forhandstext": "4,5 av 5 i snittbetyg, inte ett påhittat ord.",
+  "block": [
+    {
+      "typ": "text",
+      "rubrik": "Det här skrev kunderna",
+      "text": "Riktiga köpare, riktiga ord. Ingenting här är påhittat."
+    },
+    { "typ": "citat", "handle": "sushi-strumpor", "antal": 2 },
+    {
+      "typ": "produkt",
+      "handle": "sushi-strumpor",
+      "text": "Fem par strumpor, rullade som sushi, i en låda som lurar ögat.",
+      "knapp": "Till sushilådan"
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "Recensionerna säger att mottagaren blev glad", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Åtta recensioner, noll påhittade", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Läs vad riktiga köpare skrev", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "4,5 av 5 i snittbetyg, inte ett påhittat ord.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Det här skrev kunderna", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Till sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-10-13T18:00:00+02:00",
+  "segment": ["SEG_engagerade_60d"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "klar",
+  "kraver_axel": null
+}

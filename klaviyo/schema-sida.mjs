@@ -18,7 +18,7 @@ import { lasInnehall } from './bygg.mjs';
 const DAGAR = ['söndag', 'måndag', 'tisdag', 'onsdag', 'torsdag', 'fredag', 'lördag'];
 const MAN = ['jan', 'feb', 'mars', 'april', 'maj', 'juni', 'juli', 'aug', 'sep', 'okt', 'nov', 'dec'];
 
-function delar(iso, tidszon) {
+export function delar(iso, tidszon) {
   const d = new Date(iso);
   if (Number.isNaN(d.getTime())) return null;
   const p = Object.fromEntries(new Intl.DateTimeFormat('sv-SE', { timeZone: tidszon, year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(d).map((x) => [x.type, x.value]));
@@ -26,11 +26,11 @@ function delar(iso, tidszon) {
   return { dag: +p.day, man: MAN[+p.month - 1], veckodag: DAGAR[vd], tid: `${p.hour}:${p.minute}`, iso: `${p.year}-${p.month.padStart(2, '0')}-${p.day.padStart(2, '0')}` };
 }
 
-const STATUS = { klar: ['Klar', 'ok'], 'utkast-skrivs-om-efter-lardom': ['Skrivs om efter lärdom', 'sen'], 'kraver-axel': ['Kräver Axel', 'varn'] };
-const SEGMENT_ORD = { SEG_uppvarmning_steg1: 'uppvärmning: aktiva senaste 30 dagarna', SEG_engagerade_60d: 'engagerade 60 dagar', SEG_engagerade_90d: 'engagerade 90 dagar', SEG_samtycke: 'alla som sagt ja', SEG_kopare: 'alla köpare som sagt ja' };
-const ENHET = { minutes: 'minuter', hours: 'timmar', days: 'dagar', weeks: 'veckor' };
+export const STATUS = { klar: ['Klar', 'ok'], 'utkast-skrivs-om-efter-lardom': ['Skrivs om efter lärdom', 'sen'], 'kraver-axel': ['Kräver Axel', 'varn'] };
+export const SEGMENT_ORD = { SEG_uppvarmning_steg1: 'uppvärmning: aktiva senaste 30 dagarna', SEG_engagerade_60d: 'engagerade 60 dagar', SEG_engagerade_90d: 'engagerade 90 dagar', SEG_samtycke: 'alla som sagt ja', SEG_kopare: 'alla köpare som sagt ja' };
+export const ENHET = { minutes: 'minuter', hours: 'timmar', days: 'dagar', weeks: 'veckor' };
 
-function triggerText(t) {
+export function triggerText(t) {
   if (!t) return 'ingen trigger';
   if (t.typ === 'metrik') return `när någon gör: ${[].concat(t.metrik).join(' / ')}${t.produkt_innehaller ? ` med ${[].concat(t.produkt_innehaller).join(', ')} i ordern` : ''}`;
   if (t.typ === 'lista') return `när någon hamnar på listan ${t.lista}`;

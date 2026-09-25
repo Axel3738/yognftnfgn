@@ -867,6 +867,36 @@ det som återstår står i `klaviyo/SISTA-STEGEN.md`.
 - ✅ **Omgång 2 efter Axels granskning 2026-09-25:** 13 flöden. F04 och sex tipsflöden (bälteslip, taköverdrag, termoskydd, båtmotorskydd, IBC, sätesöverdrag) triggas av **Fulfilled Order**, eftersom bara den händelsen bär spårningsnumret. F04:s knapp går till kundens eget paket (`sparning:` → `?k=` base64, sidan byter till bävernumret, för Klaviyo saknar sha256). Ändrad text kräver `version` i mejlet, annars återanvänds den gamla mallen (`TPL_<id>_v<version>`). Förhandsvisning: https://claude.ai/artifact/CMT1xEfoqLqm23AS6WxqAT. Id:n och lärdomar i `klaviyo/README.md`.
 - ⛔ **OpenSend (anonyma mejl) får inte användas i Sverige**: att mejla reklam utan samtycke
   bryter mot MFL 19 §. Axels beslut 2026-09-24: ingen popup än.
+- ✅ **Matstrumpor har samma system sedan 2026-09-25, i ett EGET konto `UV6Rqg`** (sajten laddar
+  `klaviyo.js?company_id=UV6Rqg`, nyckeln `KLAVIYO_API_KEY_MATSTRUMPOR`, brandfilen
+  `klaviyo/brands/matstrumpor.json`). Motorn är brand-parametriserad: alla skript, även
+  `sla-pa.mjs` och `schemalagg.mjs`, tar `--brand matstrumpor` (standard `baverbutiken`,
+  oförändrat). Produkterna läses via `klaviyo/shopify-butik.mjs` (`sparning/butiker.json`, appen
+  Fabriken med `read_all_orders`), recensionerna via Judge.me:s publika widget (ingen API-nyckel
+  för butiken), kategorisegmenten ur brandfilen (sushi/pizza/hamburgare/donut), prenumerantlistan
+  är Shopify-synkens "Email List". **Uppladdat som utkast 2026-09-25:** 14 kampanjer K01–K14
+  (tisdagar 18:00 29/9–29/12 + Black Week mån 23/11 och fre 27/11, `innehall/matstrumpor/KALENDER-2026.md`),
+  7 flöden (F01 `SVdssi`, F02 `S8VT8T`, F03 `YAZ8cN`, F04 `VtTT7F`, F05 `U9exx3`, F06 `R29irU`,
+  F07 `V4KBnH`), 29 mallar, 14 segment (`SEG_samtycke` 2 890 av 4 357 profiler). **Gallerierna**
+  (Axels ord samma dag: "massa gallerier … jävligt nice", `klaviyo/gallerier.mjs`): kampanjerna
+  https://claude.ai/artifact/VdYq8VLTHqPW4kQm4gMKw1, flödena https://claude.ai/artifact/WLQKsyRR8soHCDusP8jtYx,
+  mallarna https://claude.ai/artifact/1KEuzFEai52gahdbpvGShN, schemat https://claude.ai/artifact/Ljyv3Ye89ipdPNCZbNKKLh,
+  galleriet ur `bygg.mjs` https://claude.ai/artifact/MYCFYWgVAcwugj1tPFrmgR — publiceras om på samma länkar.
+  ⛔ **Inget påslaget, inget schemalagt:** Axels villkor (postadress, plan, kundundantag,
+  subscribed, renderat testmejl) — postadressen SAKNAS i kontot och planen syns inte via API:t;
+  Cowork-prompten och villkoren står i `klaviyo/SISTA-STEGEN.md` → Matstrumpor. **Datan**
+  (`klaviyo/evolve/ATERKOP-ANALYS-matstrumpor.md`, hela orderhistorien 3 911 ordrar): julprodukt
+  (dec 2025 1 613 ordrar, april–juli nästan noll, sushilådan tog slut i november 2025), 1,2 %
+  återköp och då samma sushilåda igen (38 av 44), inget produktpar med stöd ⇒ inga tipsflöden,
+  F07 är "en låda till" dag 21. Leverans p90 **15 dygn** (Shopifys `deliveredAt`, INTE
+  `lage.json`:s `senast` som är rutinens kontrolltid) ⇒ sista beställning fars dag lör 24/10,
+  jul tis 8/12. Black Week-trappan 10/20/30 % ligger i Matstrumpors Shopify som tre schemalagda
+  automatiska rabatter 23–30/11 (samma som Bäverbutikens; ⚠️ "Köp 1, få 1"-koderna kombineras
+  inte med dem — Axels beslut). ⛔ **DNS för matstrumpor.se rörs aldrig i en Klaviyo-körning och
+  namnservrarna byts ALDRIG** (Loopia-incidenten på baverbutiken.se 2026-09-25); Klaviyos poster
+  bara på `send.matstrumpor.se`, DMARC saknas (mätt 2026-09-25), mät med dns.google efter varje ändring.
+  ⚠️ Mätt i båda kontona: Viewed Product-priset är text ("299 kr"), så `floatformat` i det dynamiska
+  blocket gav tomt — rättat; Bäverbutikens live F03 bär den gamla mallen.
 
 ## `bonus/` — alla i bolaget ska kunna tjäna pengar (NY 2026-09-21)
 
