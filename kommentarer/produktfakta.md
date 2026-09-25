@@ -75,6 +75,15 @@ Läses av `/kommentarer` innan svaren skrivs.
 - **Inte byggda för vägg eller båt.** Axel 2026-09-25. ⚠️ Produktsidan
   säger "Monteras på vägg eller i båten" — se "Rätta på sidan".
 
+## Båtmotorskydd (`Batmotor`)
+
+- **Leverantören 2026-09-25:** skickade en 23 s video (svart skydd, hopvikt i
+  plastpåse) med texten *"This is the version currently being shipped … It
+  appears to be well-ventilated in the picture."* Axel tycker den ser bra ut.
+  ⚠️ Inte ett svar på frågorna: tyget (420D Oxford eller tunnare?), om det
+  finns ventilationshål, och om remmar/spänne följer med är fortfarande okänt.
+  Svara aldrig kunder "den är ventilerad" förrän leverantören sagt det rakt ut.
+
 ## Rätta på sidan
 
 - CaraShells takskydd: "elastiska spännband" ändrat till "vävda spännband
