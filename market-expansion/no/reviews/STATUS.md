@@ -3,6 +3,30 @@
 Kör `/no-recensioner` (`.claude/commands/no-recensioner.md`). Den här filen är
 bara lägesrapporten.
 
+## Läget 2026-09-25 — 0 nya, allt redan klart, 38 i `sources.json`
+
+Inga nya mappar i MAKE TO NORWAY (38 produktmappar + WINNERS med 5). Bygget gav
+identiska filer — `git status` tomt — och `--dry` mot gårdagens Kajakkholder
+svarade "redan 10 synliga, hoppar över".
+
+Butikens feed har växt till **234 produkter** (223 i går). Nya produkter i
+butiken betyder inte nya recensionsark; det är Drive som styr kön.
+
+### ⚠️ Google Sheets svarade 429 på första byggförsöket
+
+Att hämta 38 ark i rad räcker för att Google ska strypa. Andra försöket gick
+igenom utan ändring. **Ett 429 här är inte ett trasigt ark** — kör om innan du
+rapporterar något som saknat. Blir det vanligare behöver bygget en paus mellan
+arken.
+
+### Kajakkholders titlar är fortfarande identiska
+
+Alla tio rader säger `Bra och stabila`, oförändrat sedan importen i går.
+Flaggat till Axel igen. Rättas i arket, sedan om-import med `--anda` på hans
+begäran — aldrig egna rubriker.
+
+De fyra andra arken är oförändrade sjunde dygnet.
+
 ## Läget 2026-09-24 — 10 nya på Kajakkholder, 38 i `sources.json`
 
 En ny mapp i MAKE TO NORWAY: `NO Kajakhållare`. Arket `Kajakhållare_REVIEWS`
