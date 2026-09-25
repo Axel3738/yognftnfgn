@@ -61,6 +61,16 @@ som utkast med `status_plan: utkast-skrivs-om-efter-lardom` (Black Week K09–K1
   du-tilltal, korta stycken, inga utropsteckenkaskader. Ingen grundarsignatur (Axel
   är inte butikens ansikte här; kundtjänst skriver under som "Kundtjänst Matstrumpor").
   **Använd inga `grundare`- eller `rentext`-block**, inga `erbjudande`-block (finns inte).
+- **Klubben (Axels beslut 2026-09-25: "det måste vara som ett medlemskap att vara med i
+  Matstrumpors klubb"):** listan är ett medlemskap, **Matstrumpor-klubben**
+  (`brands/matstrumpor.json` → `klubb`). Namnet står under loggan i varje mejl, och
+  sidfoten säger "Du får det här för att du själv anmälde dig till Matstrumpor-klubben."
+  Att vara medlem = att stå på listan. **Inga medlemsrabatter, koder, poäng, medlemsnummer
+  eller "först av alla"** — det finns inte och lovas aldrig; det medlemmen får är mejlen
+  (sista beställningsdagarna, kundernas ord, vad som ligger i lådan, Black Week-mejlet).
+  Copyn får kalla mottagaren medlem och nämna klubben; butikens namn är ändå inte
+  budskapet. Sajtens anmälningsruta säger "Gå med i Matstrumpor-klubben" / "Gå med"
+  (`klaviyo/klubb-sajt.mjs`).
 - **Ämnesraderna:** tre stycken, varje mot ett EGET begär (Evolve: tre varianter). Max 50
   tecken när det går. Förhandstexten fortsätter ämnesraden och upprepar den inte.
 - **Tre-frågorstestet** redovisas i `tretest` för ämnesraderna, förhandstexten, varje
@@ -297,13 +307,19 @@ Underlag: `klaviyo/evolve/FLODESRESEARCH.md` (Klaviyos guider), analysen ovan oc
 Bäverbutikens omgång 2 (`klaviyo/innehall/baverbutiken/floden/`, facit för formen).
 Alla mejl laddas upp som utkast. Inga `grundare`-, `rentext`- eller `erbjudande`-block.
 
-### F01 Välkomst: `floden/f01-valkomst.json`, `FLOW_lista_valkomst_v1`
+### F01 Välkomst: `floden/f01-valkomst.json`, `FLOW_lista_valkomst_v2`
 - Trigger `{ typ: lista, lista: "Email List" }` (Shopify-synkens lista i kontot, 2 891
   profiler). Filter `samtycke`, `ej_kopt_sedan_start`. Återinträde aldrig (alltime).
-- **E1 direkt** (`f01-valkomst-e1`, `FLOW_prenumerant_E1_M_ser-ut-som-sushi-ar-strumpor_v1`):
-  hero (sushi) med vad butiken är i två meningar; produktrad = de tre sorterna flest
-  köpt senaste 60 d i ordning (sushi 460 enheter, donut 22, pizza 13, mätt 2026-09-25) →
-  fakta. Ingen rabattkod (ingen lovas på sajten).
+- **E1 direkt, v2 = klubbvälkomsten** (`f01-valkomst-e1`,
+  `FLOW_prenumerant_E1_M_valkommen-till-klubben_v2`, 2026-09-25 eftermiddag): hero
+  "Välkommen till Matstrumpor-klubben" (du är med nu, vad butiken säljer, vad som kommer i
+  mejlen; knapp "Se alla lådorna" → kollektion `alla-produkter`) → punkter "Det här får du
+  som medlem" (fyra sanna saker: sista beställningsdag inför fars dag och jul, kundernas
+  riktiga recensioner, vad som ligger i lådan, Black Week-mejlet) → produktrad "De tre
+  mest köpta" (sushi 460 enheter, donut 22, pizza 13 senaste 60 d, mätt 2026-09-25) →
+  fakta. Ingen rabattkod (ingen lovas på sajten). Copy av Sonnet; huvudsessionen strök
+  "Enkelt som så: du står på vår mejllista, inget mer" — sant men det undergräver
+  medlemskänslan. v1 (`…_ser-ut-som-sushi-ar-strumpor_v1`) var en ren produktförklaring.
 - **E2 +2 dagar** (`f01-valkomst-e2`, `FLOW_prenumerant_E2_SP_det-har-skrev-kunderna_v1`):
   citat (sushi, 2) → produkt (sushi) → produktrad (pizza, hamburgare, donut) → fakta.
 - **E3 +3 dagar** (`f01-valkomst-e3`, `FLOW_prenumerant_E3_M_sa-funkar-det-nar-du-handlar_v1`):
@@ -346,10 +362,17 @@ Alla mejl laddas upp som utkast. Inga `grundare`-, `rentext`- eller `erbjudande`
 - **E2 +14 dagar** (`FLOW_order_E2_SP_kundernas-ord_v1`): citat (sushi, 2) → produkt
   (sushi) → fakta. Sista mejlet i flödet.
 
-### F06 Sunset: `floden/f06-sunset.json`, `FLOW_segment_sunset_v1`
+### F06 Sunset: `floden/f06-sunset.json`, `FLOW_segment_sunset_v2`
 - Trigger segment `SEG_oengagerade_180d`. Filter `samtycke`. Återinträde aldrig.
   Samma två mejl som Bäverbutikens v2 (rubrik, två meningar, stor knapp), E2 +5 dagar.
-  Knappen pekar på kollektion `alla-produkter`.
+  Knappen pekar på kollektion `alla-produkter`. **v2 (2026-09-25): frågan gäller platsen i
+  Matstrumpor-klubben** — E1 "Vill du vara kvar i Matstrumpor-klubben?" (knapp "Ja, håll
+  mig kvar"), E2 "Det här är sista mejlet från klubben" (hör vi inget tar vi bort dig från
+  klubben, knapp "Ja, ha kvar mig"). Inte "listan".
+
+**Alla sju flödena är v2 sedan 2026-09-25 eftermiddag:** fonten Mochiy Pop P One ligger i
+varje mall, och en flödesmall kopieras in i flödet när det skapas — så ett nytt flöde
+krävdes för varje. F02–F05 och F07 har oförändrad copy; bara namnet bytte version.
 
 ### F07 Återköp: `floden/f07-aterkop-sushi.json`, `FLOW_order_aterkop-sushi_v1`
 - Trigger metrik `["Placed Order"]` med `produkt_innehaller: ["Sushi-Strumpor"]`.

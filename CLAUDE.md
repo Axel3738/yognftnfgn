@@ -887,6 +887,26 @@ det som återstår står i `klaviyo/SISTA-STEGEN.md`.
   domän, och telefonramarna (`srcdoc`) ärver spärren — första versionen visade trasiga bilder i varje
   mejl. Nu hämtas varje bild en gång (cache `output/<brand>/bilder/`) och ligger EN gång per sida som
   data-URI; sidorna väger cirka 1 MB. Regeln gäller varje sida som publiceras som artifact.
+  ✅ **Fonten och klubben (samma eftermiddag, Axels två order: "Du har ju inte ens applyat
+  våran font som är Mochiy Pop P One" och "det måste vara som ett medlemskap att vara med i
+  Matstrumpors klubb"):** alla 29 mallar bär **Mochiy Pop P One** (temats font på både
+  rubriker och brödtext; `mejl/butiker/matstrumpor.json` → `font_webb`, `klaviyo/mallar.mjs
+  webbfont()`: `<link>` + `@import` i huvudet, fonten först på rubriker, brödtext och knappar,
+  finstilt i Arial, ingen syntetisk fetstil — Gmail/Outlook faller tillbaka på Trebuchet/Arial,
+  det är klienten, inte ett fel). Gallerierna och schemat laddar samma font. Listan är
+  **Matstrumpor-klubben** (sessionens namnval, `klaviyo/brands/matstrumpor.json` → `klubb`):
+  klubbraden under loggan i varje mejl, sidfoten "Du får det här för att du själv anmälde dig
+  till Matstrumpor-klubben.", F01 E1 v2 = klubbvälkomsten med fyra SANNA medlemspunkter
+  (sista beställningsdag, kundernas ord, lådans innehåll, Black Week-mejlet — inga rabatter,
+  koder eller poäng, de finns inte), F06 v2 i klubbton. **Alla sju flöden är v2** (`TCpJ4W`
+  `YdpPgY` `TEZYfP` `R6ixrV` `WFsWR3` `Vbx6zB` `XgsZj9`): en flödesmall kopieras in i flödet
+  när det skapas, så en ändrad mall kräver ett nytt flöde — v1-utkasten raderade med
+  `klaviyo/stada.mjs --ja` (bara draft-flöden och mallar med nyare version, bara motorns).
+  Kampanjerna patchade med `ladda-upp --skarpt --uppdatera`. **Sajten:** `klaviyo/klubb-sajt.mjs
+  --skarpt` bytte anmälningsrutan i sidfoten på matstrumpor.se till "Gå med i
+  Matstrumpor-klubben" / "Gå med" / "Välkommen till Matstrumpor-klubben" (`sections/
+  footer-group.json` + `locales/sv.json` via `themeFilesUpsert`, läst tillbaka, publika sidan
+  kollad 16:35 CEST). Ett Klaviyo-formulär för klubben är Axels beslut (`SISTA-STEGEN.md`).
   ⛔ **Inget påslaget, inget schemalagt:** Axels villkor (postadress, plan, kundundantag,
   subscribed, renderat testmejl) — postadressen SAKNAS i kontot och planen syns inte via API:t;
   Cowork-prompten och villkoren står i `klaviyo/SISTA-STEGEN.md` → Matstrumpor. **Datan**

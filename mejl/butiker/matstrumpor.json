@@ -6,7 +6,13 @@
   "farg_ram": "#e4dbc9",
   "farg_ram_comment": "Temats cream-bakgrund (243,237,226) ett steg mörkare, så ramen syns mot vitt.",
   "font_rubrik": "'Trebuchet MS',Verdana,Arial,sans-serif",
-  "font_rubrik_comment": "Temats egen rubrikfont är Mochiy Pop P One (Google Fonts) — den finns inte i mejlklienter, så närmaste rundade systemfont används i stället.",
+  "font_rubrik_comment": "Reservstacken när webbfonten inte laddas (Gmail, Outlook): närmaste rundade systemfont. Fraktmejlen (mejl/) och spårningssidan använder bara den här raden.",
+  "font_webb": {
+    "namn": "Mochiy Pop P One",
+    "css": "https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap",
+    "fet": false,
+    "comment": "Temats font på matstrumpor.se, både --font-heading-family och --font-body-family (mätt live 2026-09-25). Klaviyo-mejlen (klaviyo/mallar.mjs webbfont) laddar den från Google Fonts, länk + @import i huvudet, och sätter den först i font-family för rubriker, brödtext och knappar; finstilt i sidfoten är Arial. Gallerierna laddar samma länk. fet: false = fonten har bara vikten 400 och är tung i sig, så rubrikerna får ingen syntetisk fetstil. Axels order 2026-09-25: 'Du har ju inte ens applyat våran font som är Mochiy Pop P One'."
+  },
   "rubrik_versaler": false,
   "rubrik_fet": true,
   "sidhuvud_farg": "#ffffff",

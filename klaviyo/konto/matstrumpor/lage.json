@@ -1,6 +1,6 @@
 {
   "brand": "matstrumpor",
-  "hamtad": "2026-09-25T10:59:26.724Z",
+  "hamtad": "2026-09-25T14:36:50.887Z",
   "konto": {
     "id": "UV6Rqg",
     "public_api_key": "UV6Rqg",
@@ -302,50 +302,50 @@
   ],
   "floden": [
     {
-      "id": "R29irU",
-      "namn": "FLOW_segment_sunset_v1",
+      "id": "R6ixrV",
+      "namn": "FLOW_order_efterkop_v2",
+      "status": "draft",
+      "trigger_type": "Metric",
+      "arkiverad": false
+    },
+    {
+      "id": "TCpJ4W",
+      "namn": "FLOW_lista_valkomst_v2",
       "status": "draft",
       "trigger_type": "Added to List",
       "arkiverad": false
     },
     {
-      "id": "S8VT8T",
-      "namn": "FLOW_checkout_overgiven_v1",
+      "id": "TEZYfP",
+      "namn": "FLOW_visad-produkt_webbhistorik_v2",
       "status": "draft",
       "trigger_type": "Metric",
       "arkiverad": false
     },
     {
-      "id": "SVdssi",
-      "namn": "FLOW_lista_valkomst_v1",
+      "id": "Vbx6zB",
+      "namn": "FLOW_segment_sunset_v2",
       "status": "draft",
       "trigger_type": "Added to List",
       "arkiverad": false
     },
     {
-      "id": "U9exx3",
-      "namn": "FLOW_order_vinback_v1",
+      "id": "WFsWR3",
+      "namn": "FLOW_order_vinback_v2",
       "status": "draft",
       "trigger_type": "Metric",
       "arkiverad": false
     },
     {
-      "id": "V4KBnH",
-      "namn": "FLOW_order_aterkop-sushi_v1",
+      "id": "XgsZj9",
+      "namn": "FLOW_order_aterkop-sushi_v2",
       "status": "draft",
       "trigger_type": "Metric",
       "arkiverad": false
     },
     {
-      "id": "VtTT7F",
-      "namn": "FLOW_order_efterkop_v1",
-      "status": "draft",
-      "trigger_type": "Metric",
-      "arkiverad": false
-    },
-    {
-      "id": "YAZ8cN",
-      "namn": "FLOW_visad-produkt_webbhistorik_v1",
+      "id": "YdpPgY",
+      "namn": "FLOW_checkout_overgiven_v2",
       "status": "draft",
       "trigger_type": "Metric",
       "arkiverad": false
@@ -355,8 +355,8 @@
     "antal": 29,
     "motorns": [
       {
-        "id": "WRqJUD",
-        "namn": "TPL_f01-valkomst-e1_v1"
+        "id": "Vjf7aL",
+        "namn": "TPL_f01-valkomst-e1_v2"
       },
       {
         "id": "S2wSEr",
@@ -403,12 +403,12 @@
         "namn": "TPL_f05-vinback-e2_v1"
       },
       {
-        "id": "UWkAUf",
-        "namn": "TPL_f06-sunset-e1_v1"
+        "id": "Xn9ZKM",
+        "namn": "TPL_f06-sunset-e1_v2"
       },
       {
-        "id": "Ysz7zP",
-        "namn": "TPL_f06-sunset-e2_v1"
+        "id": "W87Uwx",
+        "namn": "TPL_f06-sunset-e2_v2"
       },
       {
         "id": "Xcx2kz",
@@ -562,11 +562,11 @@
     "Kontot saknar postadress — {{ organization.full_address }} blir tom i sidfoten (MFL 20 §). Fyll i Settings → Brand."
   ],
   "senaste_uppladdning": {
-    "tid": "2026-09-25T10:58:59.555Z",
+    "tid": "2026-09-25T14:35:32.955Z",
     "bara": null,
-    "skapade": 64,
-    "uppdaterade": 14,
-    "hoppade": 0,
+    "skapade": 10,
+    "uppdaterade": 68,
+    "hoppade": 14,
     "stopp": []
   }
 }

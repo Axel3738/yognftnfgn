@@ -245,14 +245,18 @@ test('ladda-upp: brandets kategorisegment skapas, inte Bäverbutikens, och brand
 test('mallar: Matstrumpors stil ger vitt sidhuvud med linje, fet rubrik i gemener och brandets adress', () => {
   const s = stilFran(STIL_MS);
   assert.equal(s.huvud, '#ffffff');
-  assert.match(s.rubrik, /font-weight: bold/);
+  // Webbfonten först (Mochiy Pop P One, en enda vikt ⇒ ingen syntetisk fetstil), reservstacken efter.
+  assert.match(s.rubrik, /^font-family: 'Mochiy Pop P One','Trebuchet MS'/);
+  assert.doesNotMatch(s.rubrik, /font-weight: bold/);
   assert.doesNotMatch(s.rubrik, /uppercase/);
   const { html, text } = byggMejl(KAMPANJ, { brand: MATSTRUMPOR, stil: STIL_MS, erbjudande: null, produkter: PRODUKTER, recensioner: RECENSIONER, lage: 'klaviyo' });
   assert.match(html, /bgcolor="#ffffff" style="padding: 20px 24px 16px; border-bottom: 1px solid #e4dbc9;"/);
   // Loggans adress eskapas i HTML (& → &amp;), så filnamnet räcker som bevis.
   assert.ok(html.includes(STIL_MS.logga_url.split('?')[0]));
   assert.match(html, /kundsupport@matstrumpor\.se/);
-  assert.match(html, /nyhetsbrev från Matstrumpor/);
+  // Sidfotens "varför" är brandfilens (klubben sedan 2026-09-25), inte standardraden.
+  assert.match(html, /själv anmälde dig till Matstrumpor-klubben/);
+  assert.doesNotMatch(html, /nyhetsbrev från Matstrumpor/);
   // Sidfoten och avsändaren är brandets, inte Bäverbutikens (fixturens produktlänkar är testdata).
   for (const s of [html, text]) {
     assert.doesNotMatch(s, /kundsupport@baverbutiken\.se/);
@@ -262,6 +266,37 @@ test('mallar: Matstrumpors stil ger vitt sidhuvud med linje, fet rubrik i gemene
   const bb = byggMejl(KAMPANJ, { brand: BRAND, produkter: PRODUKTER, recensioner: RECENSIONER, lage: 'klaviyo' });
   assert.match(bb.html, /bgcolor="#000000" style="padding: 16px 24px;"/);
   assert.match(stilFran({ font_rubrik: 'Impact' }).rubrik, /uppercase/);
+});
+
+test('mallar: webbfonten laddas i huvudet och står först på rubrik, brödtext och knapp; finstilt är Arial; utan font_webb som förut', () => {
+  const s = stilFran(STIL_MS);
+  assert.equal(s.webbfont.namn, 'Mochiy Pop P One');
+  assert.match(s.brod, /^font-family: 'Mochiy Pop P One',Arial,Helvetica,sans-serif;$/);
+  assert.equal(s.fin, 'font-family: Arial,Helvetica,sans-serif;');
+  const { html } = byggMejl(KAMPANJ, { brand: MATSTRUMPOR, stil: STIL_MS, erbjudande: null, produkter: PRODUKTER, recensioner: RECENSIONER, lage: 'klaviyo' });
+  assert.ok(html.includes('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&amp;display=swap">'), 'länken i huvudet');
+  assert.ok(html.includes("<style>@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');</style>"), '@import oeskapad');
+  // Knappen bär rubrikstilen, alltså webbfonten.
+  assert.match(html, /<a href="[^"]*" target="_blank" style="display: inline-block; font-family: 'Mochiy Pop P One'/);
+  // Sidfotens finstilta rader är Arial, inte webbfonten.
+  assert.match(html, /<p style="font-family: Arial,Helvetica,sans-serif; font-size: 12px; line-height: 1\.7; color: #6b6b6b; margin: 0;">Du får det här/);
+  // Utan font_webb: exakt de gamla strängarna (Bäverbutikens mallar ändras inte).
+  const utan = stilFran({ ...STIL_MS, font_webb: undefined });
+  assert.equal(utan.rubrik, "font-family: 'Trebuchet MS',Verdana,Arial,sans-serif; font-weight: bold;");
+  assert.equal(utan.brod, 'font-family: Arial,Helvetica,sans-serif;');
+  assert.equal(utan.webbfont, null);
+  const bb = byggMejl(KAMPANJ, { brand: BRAND, produkter: PRODUKTER, recensioner: RECENSIONER, lage: 'klaviyo' });
+  assert.doesNotMatch(bb.html, /fonts\.googleapis|@import/);
+});
+
+test('mallar: klubben — raden under loggan och sidfotens "varför" följer brandfilen, utan klubb ingen rad', () => {
+  const brand = { ...MATSTRUMPOR, klubb: { namn: 'Matstrumpor-klubben' }, sidfot_varfor: 'Du får det här för att du gått med i Matstrumpor-klubben.' };
+  const { html } = byggMejl(KAMPANJ, { brand, stil: STIL_MS, erbjudande: null, produkter: PRODUKTER, recensioner: RECENSIONER, lage: 'klaviyo' });
+  assert.match(html, /<\/a><p style="font-family: 'Mochiy Pop P One'[^>]*color: #dd821d; margin: 10px 0 0;">Matstrumpor-klubben<\/p>/, 'klubbraden direkt under loggan, i accentfärgen');
+  assert.match(html, /Du får det här för att du gått med i Matstrumpor-klubben\./);
+  assert.doesNotMatch(html, /nyhetsbrev från Matstrumpor/);
+  const { html: utan } = byggMejl(KAMPANJ, { brand: { ...MATSTRUMPOR, klubb: undefined, sidfot_varfor: undefined }, stil: STIL_MS, erbjudande: null, produkter: PRODUKTER, recensioner: RECENSIONER, lage: 'klaviyo' });
+  assert.doesNotMatch(utan, /margin: 10px 0 0;">[^<]*klubb/i);
 });
 
 test('mallar: Viewed Product-priset skrivs som det kommer (text med kr, mätt i båda kontona), aldrig floatformat', () => {

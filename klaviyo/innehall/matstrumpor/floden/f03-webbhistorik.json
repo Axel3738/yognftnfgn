@@ -1,6 +1,6 @@
 {
   "id": "f03-webbhistorik",
-  "namn": "FLOW_visad-produkt_webbhistorik_v1",
+  "namn": "FLOW_visad-produkt_webbhistorik_v2",
   "memo": "Den som tittat på en produktsida utan att lägga något i kassan är intresserad men obeslutsam. Två steg: en kort påminnelse om exakt den produkten, sedan samma produkt igen plus trygghet och tre alternativ för den som inte var säker på sorten.",
   "trigger": {
     "typ": "metrik",

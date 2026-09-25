@@ -63,6 +63,8 @@ klaviyo/
   bygg.mjs                 CLI: innehåll + produkter → output/<brand>/ (html, text, galleri)
   gallerier.mjs            CLI: kampanj-, flödes- och mallgalleriet (+ index.html) för Axel, telefonram per mejl
   bilder.mjs               bilderna i gallerierna: hämtas en gång, cachas, ligger en gång per sida som data-URI (artifact-visaren blockerar CDN-bilder)
+  klubb-sajt.mjs           CLI: butikens anmälningsruta (rubrik, knapp, bekräftelse) → klubben, ur brandfilens klubb.sajt; themeFilesUpsert på det publicerade temat, tillbakaläst + publika sidan kollad
+  stada.mjs                CLI: tar bort motorns ERSATTA utkast (äldre versioner av draft-flöden och av mallar) när en nyare version finns; --ja, loggar "raderad"
   kolla.mjs                CLI: nyckel, konto, inventering (--profiler räknar samtycket) → konto/<brand>/lage.json
   ladda-upp.mjs            CLI: segment, mallar, kampanjer, flöden → Klaviyo (utkast)
   sla-pa.mjs               CLI: namngivna flöden → live, bara på Axels ord, --ja, --brand
@@ -118,10 +120,20 @@ Saknas de gäller Bäverbutikens beteende, så Bäverbutiken är oförändrad:
 | `break_even_roas` | vinstbidraget i `rapport.mjs` = konverteringsvärde ÷ talet | 1,498 (utan moms) |
 | `metrik_val` | vilket id som gäller när ett metriknamn finns två gånger | `Viewed Product: R9yPAm` |
 | `erbjudande_fran: null` | brandet har inget erbjudande-block | null |
+| `klubb` | `{ namn, sajt: { rubrik, knapp, bekraftelse } }` — listan som ett medlemskap (Axels beslut 2026-09-25: "det måste vara som ett medlemskap att vara med i Matstrumpors klubb"). `namn` skrivs som en rad under loggan i varje mejl; `sajt` är texterna i butikens anmälningsruta, som `klubb-sajt.mjs` skriver in i temat | `Matstrumpor-klubben` |
+| `sidfot_varfor` | sidfotens "varför får du det här"-mening (MFL: att mottagaren själv sagt ja ska framgå); standard "Du får det här för att du har sagt ja till nyhetsbrev från <namn>." | klubbens mening |
 
 Stilen (`stil_fran`) får bära `sidhuvud_farg`, `rubrik_versaler` och `rubrik_fet`,
 samma nycklar som `mejl/mallar.mjs`: Matstrumpor har vitt sidhuvud med linje under
-(orange logga på transparent) och fet rubrik i gemener.
+(orange logga på transparent) och rubrik i gemener. **`font_webb`** `{ namn, css, fet }`
+är butikens webbfont (Google Fonts): `mallar.mjs webbfont()` laddar den i mejlets huvud
+(`<link>` + `@import`) och sätter den först i font-family för rubriker, brödtext och
+knappar — finstilt i sidfoten är alltid Arial; utan fältet är strängarna exakt de gamla.
+`fet: false` betyder att fonten är tung i sig (en vikt) och rubrikerna får ingen
+syntetisk fetstil. Gallerierna, schemasidan och `bygg.mjs galleri` laddar samma länk.
+Matstrumpor: Mochiy Pop P One, temats font på både rubriker och brödtext (mätt
+2026-09-25). Gmail och Outlook laddar inga webbfonter och faller tillbaka på
+`font_rubrik`/Arial — det är inte ett fel, det är mejlklienten.
 
 ## Innehållsformatet (ett mejl)
 

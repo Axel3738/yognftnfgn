@@ -13,7 +13,7 @@
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync } from 'node:fs';
 import { join, basename } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { byggMejl, laddaBrandResurser, esk, ROT } from './mallar.mjs';
+import { byggMejl, laddaBrandResurser, esk, ROT, webbfont } from './mallar.mjs';
 import { validera } from './validera.mjs';
 import { hamtaProdukterCache } from './produkter.mjs';
 import { hamtaRecensionerCache } from './recensioner.mjs';
@@ -212,7 +212,7 @@ export async function bygg({
     varningar: allaVarningar,
   };
   writeFileSync(join(ut, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n');
-  writeFileSync(join(ut, 'index.html'), galleri({ brand, manifest, mejlUt, toppFel, toppVarningar, nu }));
+  writeFileSync(join(ut, 'index.html'), galleri({ brand, manifest, mejlUt, toppFel, toppVarningar, nu, stil }));
   return { manifest, mejlUt, utDir: ut };
 }
 
@@ -289,8 +289,10 @@ function mejlKort(x, reg = null) {
     </article>`;
 }
 
-export function galleri({ brand, manifest, mejlUt, toppFel = [], toppVarningar = [], nu = new Date(), bilder = null }) {
+export function galleri({ brand, manifest, mejlUt, toppFel = [], toppVarningar = [], nu = new Date(), bilder = null, stil = null }) {
   const reg = bilder ? nyttRegister() : null;
+  // Butikens webbfont på sidans rubriker (samma länk som mejlen laddar).
+  const wf = webbfont(stil);
   const perId = new Map(mejlUt.map((x) => [x.post.id, x]));
   const kampanjer = [...manifest.kampanjer].sort((a, b) => String(a.planerad).localeCompare(String(b.planerad)));
   const tidslinje = kampanjer
@@ -335,9 +337,9 @@ export function galleri({ brand, manifest, mejlUt, toppFel = [], toppVarningar =
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${esk(brand.namn)} mejlplan</title>
+<title>${esk(brand.namn)} mejlplan</title>${wf ? `\n<link rel="stylesheet" href="${esk(wf.css)}">` : ''}
 <style>
-  :root { --bg: #f4f4f1; --kort: #ffffff; --text: #111111; --svag: #5d5d5d; --ram: #dcdcd4; --rod: #c8161b; --gron: #1d7a3a; --gul: #8a6100; }
+  :root { --bg: #f4f4f1; --kort: #ffffff; --text: #111111; --svag: #5d5d5d; --ram: #dcdcd4; --rod: #c8161b; --gron: #1d7a3a; --gul: #8a6100; }${wf ? `\n  h1, h2, h3 { font-family: "${wf.namn}", Arial, Helvetica, sans-serif; font-weight: ${wf.fet ? 'bold' : 400}; }` : ''}
   @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #141414; --kort: #1f1f1f; --text: #f1f1f1; --svag: #a9a9a9; --ram: #3a3a3a; --rod: #ff5a5f; --gron: #5ed283; --gul: #f0c050; } }
   :root[data-theme="dark"] { --bg: #141414; --kort: #1f1f1f; --text: #f1f1f1; --svag: #a9a9a9; --ram: #3a3a3a; --rod: #ff5a5f; --gron: #5ed283; --gul: #f0c050; }
   * { box-sizing: border-box; }
