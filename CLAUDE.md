@@ -898,15 +898,21 @@ det som återstår står i `klaviyo/SISTA-STEGEN.md`.
   klubbraden under loggan i varje mejl, sidfoten "Du får det här för att du själv anmälde dig
   till Matstrumpor-klubben.", F01 E1 v2 = klubbvälkomsten med fyra SANNA medlemspunkter
   (sista beställningsdag, kundernas ord, lådans innehåll, Black Week-mejlet — inga rabatter,
-  koder eller poäng, de finns inte), F06 v2 i klubbton. **Alla sju flöden är v2** (`TCpJ4W`
-  `YdpPgY` `TEZYfP` `R6ixrV` `WFsWR3` `Vbx6zB` `XgsZj9`): en flödesmall kopieras in i flödet
-  när det skapas, så en ändrad mall kräver ett nytt flöde — v1-utkasten raderade med
-  `klaviyo/stada.mjs --ja` (bara draft-flöden och mallar med nyare version, bara motorns).
+  koder eller poäng, de finns inte), F06 v2 i klubbton. **Alla sju flöden är v3** (`XdyurA`
+  `RAp4RX` `XXP3Au` `TAFHg7` `RCZj4Q` `WFKWcH` `RAYiUj`): en flödesmall kopieras in i flödet
+  när det skapas, så varje ändrad mall kräver ett nytt flöde — v1- och v2-utkasten raderade
+  med `klaviyo/stada.mjs --ja` (bara draft-flöden och mallar med nyare version, bara motorns).
   Kampanjerna patchade med `ladda-upp --skarpt --uppdatera`. **Sajten:** `klaviyo/klubb-sajt.mjs
   --skarpt` bytte anmälningsrutan i sidfoten på matstrumpor.se till "Gå med i
   Matstrumpor-klubben" / "Gå med" / "Välkommen till Matstrumpor-klubben" (`sections/
   footer-group.json` + `locales/sv.json` via `themeFilesUpsert`, läst tillbaka, publika sidan
-  kollad 16:35 CEST). Ett Klaviyo-formulär för klubben är Axels beslut (`SISTA-STEGEN.md`).
+  kollad 16:35 CEST). ⛔ **Inget popup- eller anmälningsformulär i Klaviyo** (Axels beslut
+  samma kväll: "det brukar alltid påverka konverteringsgraden negativt, vilket vi har testat
+  innan") — sidfotens Shopify-ruta är enda dörren in. **Känslan ska vara ett exklusivt
+  medlemskap** (Axel samma kväll): medlemskort i välkomstmejlet (`mallar.mjs` block
+  `medlemskort`: mörkt kort, förnamnet eller "Medlem", klubbnamnet), en eyebrow under
+  klubbnamnet i varje mejl (`klubb.eyebrow`), sidfot och sajt i samma ton — alla flöden v3.
+  Inga påhittade förmåner: det medlemmen får är mejlen, och de går bara till medlemmar.
   ⛔ **Inget påslaget, inget schemalagt:** Axels villkor (postadress, plan, kundundantag,
   subscribed, renderat testmejl) — postadressen SAKNAS i kontot och planen syns inte via API:t;
   Cowork-prompten och villkoren står i `klaviyo/SISTA-STEGEN.md` → Matstrumpor. **Datan**
@@ -917,7 +923,11 @@ det som återstår står i `klaviyo/SISTA-STEGEN.md`.
   `lage.json`:s `senast` som är rutinens kontrolltid) ⇒ sista beställning fars dag lör 24/10,
   jul tis 8/12. Black Week-trappan 10/20/30 % ligger i Matstrumpors Shopify som tre schemalagda
   automatiska rabatter 23–30/11 (samma som Bäverbutikens; ⚠️ "Köp 1, få 1"-koderna kombineras
-  inte med dem — Axels beslut). ⛔ **DNS för matstrumpor.se rörs aldrig i en Klaviyo-körning och
+  inte med dem — men Shopifys regel är att den BÄSTA rabatten för kunden vinner när två inte
+  får kombineras (mätt mot help.shopify.com 2026-09-25 kväll), så Köp 1, få 1 slår trappan på
+  varje par och trappan ger bara 10 % på en ensam låda. Trappan är alltså Bäverbutikens och
+  passar inte Matstrumpor; frågan A/B/C ställd till Axel, inga rabatter rörs innan svar —
+  `klaviyo/README.md` → Black Week). ⛔ **DNS för matstrumpor.se rörs aldrig i en Klaviyo-körning och
   namnservrarna byts ALDRIG** (Loopia-incidenten på baverbutiken.se 2026-09-25); Klaviyos poster
   bara på `send.matstrumpor.se`, DMARC saknas (mätt 2026-09-25), mät med dns.google efter varje ändring.
   ⚠️ Mätt i båda kontona: Viewed Product-priset är text ("299 kr"), så `floatformat` i det dynamiska

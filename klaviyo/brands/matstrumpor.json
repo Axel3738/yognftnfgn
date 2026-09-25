@@ -35,14 +35,15 @@
   "lista_nyhetsbrev_comment": "Shopify-synkens lista i kontot UV6Rqg heter 'Email List' (VzTE9X, double opt-in, 2 891 profiler mätt 2026-09-25) — den bär redan alla prenumeranter, så motorn skapar ingen tom LISTA_nyhetsbrev. F01 Välkomst triggas på den.",
   "klubb": {
     "namn": "Matstrumpor-klubben",
+    "eyebrow": "Klubbpost. Inte för alla.",
     "sajt": {
-      "rubrik": "Gå med i Matstrumpor-klubben",
-      "knapp": "Gå med",
-      "bekraftelse": "Välkommen till Matstrumpor-klubben"
+      "rubrik": "Din plats i klubben väntar",
+      "knapp": "Ta platsen",
+      "bekraftelse": "Din plats är klar"
     },
-    "comment": "Axels beslut 2026-09-25: 'det måste vara som ett medlemskap att vara med i Matstrumpors klubb'. Namnet är huvudsessionens val, Axel kan döpa om. Att vara medlem = att stå på listan Email List. Inga medlemsrabatter, koder eller poäng finns, och inget sådant lovas i något mejl. Namnet står under loggan i varje mejl (mallar.mjs dokument), sidfoten säger varför mottagaren får mejlet (sidfot_varfor), F01 E1 v2 är klubbvälkomsten och F06 v2 frågar om medlemmen vill vara kvar. sajt = butikens anmälningsruta i sidfoten på matstrumpor.se (hette 'Missa inga nyheter' / 'Prenumerera' / 'Tack för att du prenumererar', mätt i temat 2026-09-25): klubb-sajt.mjs skriver rubrik, knapp och bekräftelse i temat. Copyn skrevs av en Sonnet-subagent mot docs/copy-regler.md."
+    "comment": "Axels beslut 2026-09-25: 'det måste vara som ett medlemskap att vara med i Matstrumpors klubb', och samma kväll: namnet 'klubben' godkänt, men 'det ska kännas som ett exklusivt medlemskap. Det är den känslan jag vill förmedla.' Att vara medlem = att stå på listan Email List. Inga medlemsrabatter, koder eller poäng finns, och inget sådant lovas i något mejl (koden KLUBB10, 'E-postklubben 10 % (skrapkortet)', ligger i Shopify med 0 användningar och används inte: sämre än Köp 1, få 1 och kombineras inte med den). Namnet står under loggan i varje mejl och eyebrow som versalrad under namnet (mallar.mjs dokument), sidfoten säger varför mottagaren får mejlet (sidfot_varfor), F01 E1 v3 är klubbvälkomsten med medlemskortet (blocket medlemskort) och F06 v2 frågar om medlemmen vill vara kvar. sajt = butikens anmälningsruta i sidfoten på matstrumpor.se (hette 'Missa inga nyheter' / 'Prenumerera' / 'Tack för att du prenumererar', mätt i temat 2026-09-25; v2 'Gå med i Matstrumpor-klubben' / 'Gå med' / 'Välkommen till Matstrumpor-klubben'): klubb-sajt.mjs skriver rubrik, knapp och bekräftelse i temat. ⛔ Inget popup- eller anmälningsformulär i Klaviyo (Axels beslut samma kväll: sänker konverteringen, testat). Copyn skrevs av Sonnet-subagenter mot docs/copy-regler.md; huvudsessionen strök 'bara här'/'bara i mejl' på två punkter (recensionerna och lådans innehåll syns även på produktsidan)."
   },
-  "sidfot_varfor": "Du får det här för att du själv anmälde dig till Matstrumpor-klubben.",
+  "sidfot_varfor": "Du anmälde dig själv till Matstrumpor-klubben, och mejlen går bara till medlemmar.",
   "recensioner": {
     "kalla": "judgeme-widget",
     "shop_domain": "1r46tp-qx.myshopify.com",

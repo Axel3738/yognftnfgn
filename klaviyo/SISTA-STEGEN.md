@@ -129,21 +129,20 @@ alla fem stämmer. Mätt 2026-09-25 av sessionen som byggde:
 
 ## Klubben och fonten (2026-09-25 eftermiddag, Axels två order)
 
-Listan är **Matstrumpor-klubben** och alla mallar bär butikens font Mochiy Pop P One
-(`klaviyo/README.md` → Matstrumpor, raderna Fonten och Klubben). Alla sju flöden är
-**v2** (v1-utkasten raderade), kampanjerna patchade på plats. Sajtens anmälningsruta i
-sidfoten säger "Gå med i Matstrumpor-klubben" / "Gå med" sedan 16:35 CEST (live, läst
-tillbaka). Två saker är Axels, inte byggda:
+Listan är **Matstrumpor-klubben** (namnet godkänt av Axel samma kväll: "det ska heta
+klubben") och alla mallar bär butikens font Mochiy Pop P One (`klaviyo/README.md` →
+Matstrumpor, raderna Fonten och Klubben). Sajtens anmälningsruta i sidfoten är klubbens
+enda dörr in — den som fyller i den hamnar på Email List och får F01 när flödet är på.
 
-- **Namnet.** "Matstrumpor-klubben" är sessionens val. Vill Axel ha ett annat: byt
-  `klubb.namn` + `klubb.sajt` + `sidfot_varfor` i `brands/matstrumpor.json`, skriv om
-  F01 E1/F06 (`_v3`), bygg om, `ladda-upp --skarpt --uppdatera`, `stada.mjs --ja`,
-  `klubb-sajt.mjs --skarpt`.
-- **Ett anmälningsformulär i Klaviyo** (popup eller inbäddat "Gå med i klubben"). Klaviyos
-  Forms API kan inte skapa formulär, så det är ett klick i Klaviyo (Sign-up forms → Create
-  form). Axels beslut för Bäverbutiken 2026-09-24 var "ingen popup än"; för Matstrumpor
-  finns inget beslut. Sidfotens Shopify-formulär räcker tills vidare: den som fyller i det
-  hamnar på Email List och får F01 när flödet är på.
+- ⛔ **Inget popup- eller anmälningsformulär i Klaviyo.** Axels beslut 2026-09-25 kväll:
+  "det brukar alltid påverka konverteringsgraden negativt, vilket vi har testat innan".
+  Bygg aldrig ett. (Koden `KLUBB10`, "E-postklubben 10 % (skrapkortet)", ligger kvar i
+  Shopify med 0 användningar och används inte i mejlen.)
+- **Känslan är ett exklusivt medlemskap** (Axel samma kväll: "det ska kännas som ett
+  exklusivt medlemskap, det är den känslan jag vill förmedla"). Version 3: medlemskort
+  i välkomstmejlet (mörkt kort med förnamnet och klubbnamnet), en eyebrow under
+  klubbnamnet i varje mejl, sidfot och sajtens ruta i samma ton. Inga påhittade
+  förmåner — det medlemmen får är mejlen, och de går bara till medlemmar.
 
 ## 1. Prompten till Cowork (klistra in hela rutan)
 
@@ -197,7 +196,7 @@ Klaviyo för Matstrumpor: slå på flödena och schemalägg K01. Läs klaviyo/RE
 
 1. node klaviyo/kolla.mjs --brand matstrumpor --profiler. public_api_key måste vara UV6Rqg. Kontrollera att kontot nu HAR postadress (varningen "saknar postadress" ska vara borta) — annars STOPP, ingenting slås på.
 2. Kontrollera planen som Cowork skrev in i klaviyo/innehall/matstrumpor/KALENDER-2026.md: rymmer den 4 357 profiler och cirka 20 000 mejl i november? Annars STOPP.
-3. node klaviyo/sla-pa.mjs --brand matstrumpor FLOW_checkout_overgiven_v2 FLOW_order_efterkop_v2 FLOW_order_aterkop-sushi_v2 FLOW_order_vinback_v2 FLOW_segment_sunset_v2 FLOW_lista_valkomst_v2 FLOW_visad-produkt_webbhistorik_v2 (torrt — det är v2-flödena, v1-utkasten är raderade), läs planen, sedan samma med --ja. Samma dag: stäng av Shopifys egen notis om övergiven kassa i Matstrumpors admin (Inställningar → Aviseringar → Övergiven kassa) — det är Axels klick, säg det.
+3. node klaviyo/sla-pa.mjs --brand matstrumpor FLOW_checkout_overgiven_v3 FLOW_order_efterkop_v3 FLOW_order_aterkop-sushi_v3 FLOW_order_vinback_v3 FLOW_segment_sunset_v3 FLOW_lista_valkomst_v3 FLOW_visad-produkt_webbhistorik_v3 (torrt — det är v3-flödena, v1 och v2 är raderade; kontrollera namnen mot node klaviyo/kolla.mjs --brand matstrumpor först), läs planen, sedan samma med --ja. Samma dag: stäng av Shopifys egen notis om övergiven kassa i Matstrumpors admin (Inställningar → Aviseringar → Övergiven kassa) — det är Axels klick, säg det.
 4. node klaviyo/schemalagg.mjs --brand matstrumpor K01 (torrt) och sedan --ja. Är 29/9 passerat: flytta K01:s "planerad" i kampanjfilen till nästa tisdag 18:00, bygg om, ladda upp med --uppdatera, och skriv det i klaviyo/logg/matstrumpor/kampanjlogg.md.
 5. Läs tillbaka med kolla, uppdatera klaviyo/README.md (Matstrumpor-läget), committa och pusha.
 Slå aldrig på något om steg 1 eller 2 är rött. Bygg inga schemalagda rutiner.

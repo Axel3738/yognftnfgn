@@ -1,7 +1,7 @@
 {
   "id": "f01-valkomst",
-  "namn": "FLOW_lista_valkomst_v2",
-  "memo": "Kontot har inga signup-formulär med rabatt, och listan 'Email List' bär redan 2 891 profiler från Shopify-synken som aldrig fått ett mejl. Välkomstflödet är klubbens dörr (Axels beslut 2026-09-25: listan är ett medlemskap, Matstrumpor-klubben): E1 säger att man är med och vad medlemmen får, sedan bevis (riktiga recensioner) och tryggheten kring leverans, spårning och retur innan första köpet. Ingen rabattkod, inga medlemsförmåner som inte finns.",
+  "namn": "FLOW_lista_valkomst_v3",
+  "memo": "Kontot har inga signup-formulär med rabatt, och listan 'Email List' bär redan 2 891 profiler från Shopify-synken som aldrig fått ett mejl. Välkomstflödet är klubbens dörr (Axels beslut 2026-09-25: listan är ett medlemskap, Matstrumpor-klubben, och det ska kännas som ett exklusivt medlemskap): E1 säger att platsen är hens, visar medlemskortet och vad bara medlemmar får, sedan bevis (riktiga recensioner) och tryggheten kring leverans, spårning och retur innan första köpet. Ingen rabattkod, inga medlemsförmåner som inte finns.",
   "trigger": {
     "typ": "lista",
     "lista": "Email List"
@@ -19,12 +19,12 @@
       "typ": "mejl",
       "mejl": {
         "id": "f01-valkomst-e1",
-        "namn": "FLOW_prenumerant_E1_M_valkommen-till-klubben_v2",
-        "memo": "Den som går med vet varken vad butiken säljer eller vad klubben är. Hypotes: en välkomst som säger \"du är med nu\", vad medlemmen får (fyra sanna saker) och vad lådorna är får fler att handla än ett tyst första mejl med en produktbild. Version 2 (2026-09-25): klubbvälkomst i stället för ren produktförklaring, efter Axels beslut att listan är ett medlemskap. Copy av Sonnet mot copy-reglerna; huvudsessionen strök en mening som sa \"inget mer\" om medlemskapet.",
+        "namn": "FLOW_prenumerant_E1_M_du-ar-invald-i-klubben_v3",
+        "memo": "Den som går med ska känna sig invald, inte tillagd på en lista (Axel 2026-09-25 kväll: \"det ska kännas som ett exklusivt medlemskap\"). Hypotes: en välkomst med medlemskort, \"din plats är klar\" och fyra saker bara medlemmar får (sanna: mejlen går bara till medlemmar) får fler att handla än v2:s vänliga men slätstrukna välkomst. Copy av Sonnet mot copy-reglerna; huvudsessionen strök \"bara här\"/\"bara i mejl\" på två punkter som även syns på produktsidan.",
         "taggar": {
           "typ": "M",
           "kalla": "egen-data",
-          "kalla_ref": "klaviyo/innehall/matstrumpor/BRIEFER.md → F01 Välkomst (v2, klubben)",
+          "kalla_ref": "klaviyo/innehall/matstrumpor/BRIEFER.md → F01 Välkomst (v3, exklusiv medlemskänsla)",
           "lardom": null,
           "avatar": "ny medlem i Matstrumpor-klubben utan känd köphistorik",
           "begar": "tillhorighet",
@@ -36,24 +36,24 @@
         },
         "amnesrader": [
           {
-            "text": "Du är med i Matstrumpor-klubben",
-            "begar": "tillhörighet: känna att man är med nu"
+            "text": "Du är invald i Matstrumpor-klubben",
+            "begar": "tillhörighet: du är invald"
           },
           {
-            "text": "Lådorna, recensionerna och mer",
-            "begar": "nyfikenhet: vad klubben faktiskt handlar om"
+            "text": "Det här mejlet går bara till medlemmar",
+            "begar": "nyfikenhet: vad medlemmar får som andra inte får"
           },
           {
             "text": "Skrattet när lådan öppnas",
             "begar": "njutning: skrattet när lådan öppnas"
           }
         ],
-        "forhandstext": "Sushi, pizza och skratt väntar i mejlet.",
+        "forhandstext": "Din plats och ditt kort väntar här inne.",
         "block": [
           {
             "typ": "hero",
-            "rubrik": "Välkommen till Matstrumpor-klubben",
-            "text": "Du är med i Matstrumpor-klubben nu.\n\nVi säljer strumpor förpackade som sushi, pizza, hamburgare och donuts.\n\nFramöver mejlar vi sista beställningsdagar, riktiga recensioner och vad som ligger i lådan.",
+            "rubrik": "Du är invald i klubben",
+            "text": "Din plats i Matstrumpor-klubben är klar. Du gick med, så den är din.\n\nVi säljer strumpor som ser ut som sushi, pizza, hamburgare och donuts.\n\nDe här mejlen går bara till medlemmar i klubben.",
             "bild": "produkt:sushi-strumpor",
             "knapp": {
               "text": "Se alla lådorna",
@@ -61,18 +61,24 @@
             }
           },
           {
+            "typ": "medlemskort",
+            "etikett": "MEDLEMSKORT",
+            "rad_under_namnet": "Medlem i Matstrumpor-klubben",
+            "fotnot": "Ingen kassapersonal frågar efter det här kortet."
+          },
+          {
             "typ": "punkter",
-            "rubrik": "Det här får du som medlem",
+            "rubrik": "Det här får bara medlemmar",
             "punkter": [
-              "Vi mejlar sista beställningsdag i god tid, inför fars dag och jul.",
-              "Vi visar kundernas riktiga recensioner, ordagrant.",
-              "Vi visar vad som ligger i lådan, innan du bestämmer dig.",
-              "Vi mejlar om Black Week, när vi kör den."
+              "Sista beställningsdagen inför fars dag och jul, bara till medlemmar.",
+              "Ett mejl om Black Week, bara för medlemmar.",
+              "Kundernas riktiga ord, ordagrant, utan att du behöver leta.",
+              "Vad som ligger i lådan, visat innan du bestämmer dig."
             ]
           },
           {
             "typ": "produktrad",
-            "rubrik": "De tre mest köpta",
+            "rubrik": "Sushi, donut och pizza",
             "handles": [
               "sushi-strumpor",
               "donut-strumpor",
@@ -85,13 +91,13 @@
         ],
         "tretest": [
           {
-            "rad": "Du är med i Matstrumpor-klubben",
+            "rad": "Du är invald i Matstrumpor-klubben",
             "visualisera": true,
             "falsifiera": true,
             "ingen_annan": true
           },
           {
-            "rad": "Lådorna, recensionerna och mer",
+            "rad": "Det här mejlet går bara till medlemmar",
             "visualisera": true,
             "falsifiera": true,
             "ingen_annan": true
@@ -103,13 +109,13 @@
             "ingen_annan": true
           },
           {
-            "rad": "Sushi, pizza och skratt väntar i mejlet.",
+            "rad": "Din plats och ditt kort väntar här inne.",
             "visualisera": true,
             "falsifiera": true,
             "ingen_annan": true
           },
           {
-            "rad": "Välkommen till Matstrumpor-klubben",
+            "rad": "Du är invald i klubben",
             "visualisera": true,
             "falsifiera": true,
             "ingen_annan": true
@@ -121,43 +127,61 @@
             "ingen_annan": true
           },
           {
-            "rad": "Det här får du som medlem",
+            "rad": "MEDLEMSKORT",
             "visualisera": true,
             "falsifiera": true,
             "ingen_annan": true
           },
           {
-            "rad": "Vi mejlar sista beställningsdag i god tid, inför fars dag och jul.",
+            "rad": "Medlem i Matstrumpor-klubben",
             "visualisera": true,
             "falsifiera": true,
             "ingen_annan": true
           },
           {
-            "rad": "Vi visar kundernas riktiga recensioner, ordagrant.",
+            "rad": "Ingen kassapersonal frågar efter det här kortet.",
             "visualisera": true,
             "falsifiera": true,
             "ingen_annan": true
           },
           {
-            "rad": "Vi visar vad som ligger i lådan, innan du bestämmer dig.",
+            "rad": "Det här får bara medlemmar",
             "visualisera": true,
             "falsifiera": true,
             "ingen_annan": true
           },
           {
-            "rad": "Vi mejlar om Black Week, när vi kör den.",
+            "rad": "Sista beställningsdagen inför fars dag och jul, bara till medlemmar.",
             "visualisera": true,
             "falsifiera": true,
             "ingen_annan": true
           },
           {
-            "rad": "De tre mest köpta",
+            "rad": "Ett mejl om Black Week, bara för medlemmar.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Kundernas riktiga ord, ordagrant, utan att du behöver leta.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Vad som ligger i lådan, visat innan du bestämmer dig.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Sushi, donut och pizza",
             "visualisera": true,
             "falsifiera": true,
             "ingen_annan": true
           }
         ],
-        "version": 2
+        "version": 3
       }
     },
     {

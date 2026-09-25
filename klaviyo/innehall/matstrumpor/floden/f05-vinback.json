@@ -1,6 +1,6 @@
 {
   "id": "f05-vinback",
-  "namn": "FLOW_order_vinback_v2",
+  "namn": "FLOW_order_vinback_v3",
   "memo": "Första versionen för Matstrumpor (BRIEFER.md → F05, data ur klaviyo/evolve/ATERKOP-ANALYS-matstrumpor.md#1). 90 dagars väntan: nästan inga återköp sker inom 60 dagar, men 86 % av alla återköp (38 av 44) sker december till mars oavsett när köp 1 lades, så en höstköpare möter E1 mitt i säsongen. E1 pekar inte ut en specifik produkt, för inget korsförsäljningspar har stöd i datan (#2), utan pratar om nästa mottagare. E2 stänger flödet med kundernas egna ord, det enda Matstrumpor har som Bäverbutiken inte redan fått i E1.",
   "trigger": {
     "typ": "metrik",

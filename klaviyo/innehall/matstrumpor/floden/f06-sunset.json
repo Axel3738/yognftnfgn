@@ -1,6 +1,6 @@
 {
   "id": "f06-sunset",
-  "namn": "FLOW_segment_sunset_v2",
+  "namn": "FLOW_segment_sunset_v3",
   "memo": "Klaviyos sunset-mönster: den som fått minst fem mejl men inte öppnat eller klickat på 180 dagar får en ärlig fråga i stället för att tystnaden bara fortsätter. Klickar hen inte heller nu märker VA:n profilen som avslutad enligt SOP E06, tills motorn själv kan göra det. Samma form som Bäverbutikens beprövade sunset-mejl: en rubrik, två korta meningar, en tydlig knapp, i stället för ren text. Ingen skuldbeläggning, mejlen är en fråga, inte ett argument. Version 2 (2026-09-25): frågan gäller platsen i Matstrumpor-klubben, inte 'listan' (Axels beslut om medlemskap).",
   "trigger": {
     "typ": "segment",

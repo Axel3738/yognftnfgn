@@ -255,7 +255,7 @@ test('mallar: Matstrumpors stil ger vitt sidhuvud med linje, fet rubrik i gemene
   assert.ok(html.includes(STIL_MS.logga_url.split('?')[0]));
   assert.match(html, /kundsupport@matstrumpor\.se/);
   // Sidfotens "varför" är brandfilens (klubben sedan 2026-09-25), inte standardraden.
-  assert.match(html, /själv anmälde dig till Matstrumpor-klubben/);
+  assert.match(html, /anmälde dig själv till Matstrumpor-klubben/);
   assert.doesNotMatch(html, /nyhetsbrev från Matstrumpor/);
   // Sidfoten och avsändaren är brandets, inte Bäverbutikens (fixturens produktlänkar är testdata).
   for (const s of [html, text]) {
@@ -279,7 +279,7 @@ test('mallar: webbfonten laddas i huvudet och står först på rubrik, brödtext
   // Knappen bär rubrikstilen, alltså webbfonten.
   assert.match(html, /<a href="[^"]*" target="_blank" style="display: inline-block; font-family: 'Mochiy Pop P One'/);
   // Sidfotens finstilta rader är Arial, inte webbfonten.
-  assert.match(html, /<p style="font-family: Arial,Helvetica,sans-serif; font-size: 12px; line-height: 1\.7; color: #6b6b6b; margin: 0;">Du får det här/);
+  assert.match(html, /<p style="font-family: Arial,Helvetica,sans-serif; font-size: 12px; line-height: 1\.7; color: #6b6b6b; margin: 0;">Du anmälde dig själv/);
   // Utan font_webb: exakt de gamla strängarna (Bäverbutikens mallar ändras inte).
   const utan = stilFran({ ...STIL_MS, font_webb: undefined });
   assert.equal(utan.rubrik, "font-family: 'Trebuchet MS',Verdana,Arial,sans-serif; font-weight: bold;");
@@ -287,6 +287,26 @@ test('mallar: webbfonten laddas i huvudet och står först på rubrik, brödtext
   assert.equal(utan.webbfont, null);
   const bb = byggMejl(KAMPANJ, { brand: BRAND, produkter: PRODUKTER, recensioner: RECENSIONER, lage: 'klaviyo' });
   assert.doesNotMatch(bb.html, /fonts\.googleapis|@import/);
+});
+
+test('mallar: medlemskortet och klubbens eyebrow — förnamnet med "Medlem" som reserv, klubbnamnet, mörkt kort med orange ram', () => {
+  const brand = { ...MATSTRUMPOR, klubb: { namn: 'Matstrumpor-klubben', eyebrow: 'Bara för medlemmar' } };
+  const m = mejl({ block: [{ typ: 'medlemskort', etikett: 'Medlemskort', rad_under_namnet: 'Medlem i Matstrumpor-klubben', fotnot: 'Behöver aldrig visas upp.' }] });
+  const { html, text } = byggMejl(m, { brand, stil: STIL_MS, erbjudande: null, produkter: PRODUKTER, recensioner: {}, lage: 'klaviyo' });
+  assert.ok(html.includes("{% if first_name %}{{ first_name|default:'' }}{% else %}Medlem{% endif %}"), 'namnet med reserv i Klaviyo-läget');
+  assert.match(html, /bgcolor="#121212" style="border-radius: 14px; border: 2px solid #dd821d;"/);
+  assert.match(html, /letter-spacing: 3px; text-transform: uppercase; color: #dd821d[^>]*>Medlemskort</);
+  assert.match(html, /Medlem i Matstrumpor-klubben/);
+  assert.match(html, /Behöver aldrig visas upp\./);
+  // Eyebrow under klubbnamnet i sidhuvudet, i versaler.
+  assert.match(html, /Matstrumpor-klubben<\/p><p style="font-family: 'Mochiy Pop P One',Arial[^>]*text-transform: uppercase; color: #6b6b6b[^>]*>Bara för medlemmar<\/p>/);
+  // Textversionen bär kortet i klartext.
+  assert.match(text, /MEDLEMSKORT/);
+  assert.match(text, /Medlem i Matstrumpor-klubben/);
+  // Exempelläget: förnamnet Anna, inget mallspråk.
+  const ex = byggMejl(m, { brand, stil: STIL_MS, erbjudande: null, produkter: PRODUKTER, recensioner: {}, lage: 'exempel' });
+  assert.match(ex.html, />Anna<\/p>/);
+  assert.doesNotMatch(ex.html, /\{%/);
 });
 
 test('mallar: klubben — raden under loggan och sidfotens "varför" följer brandfilen, utan klubb ingen rad', () => {
