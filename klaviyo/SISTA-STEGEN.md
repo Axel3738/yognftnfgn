@@ -60,3 +60,29 @@ Klaviyo för Bäverbutiken: ladda upp allt som utkast. Allt är byggt och testat
    d) godkänn K01 (29 sep eller nästa lediga dag) för schemaläggning.
 Skicka ingenting och slå inte på något själv. Bygg inga schemalagda rutiner.
 ```
+
+---
+
+## Utfall, Cowork 2026-09-25 (steg 1–5 klara, stopp vid Loopia-inloggningen)
+
+| Steg | Resultat |
+|---|---|
+| 1 | Kontot är **QZ4jLG** (företaget "Bäverbutiken"), inte TMFt7M. Sajten laddar också QZ4jLG sedan 2026-09-25, så QZ4jLG är rätt konto. |
+| 2 | ⚠️ **Gratisplanen: gräns 250 profiler, 0 aktiva profiler.** Shopify-kunderna (6 186 med samtycke) finns alltså inte i kontot än, och gratisplanen rymmer dem inte. En betald plan är Axels beslut. |
+| 3 | ✅ Attributionen är ändrad från öppning 5 d / klick 5 d till **bara klick, 5 dagar**, med Apple MPP-öppningarna uteslutna. Klaviyo låser inställningen i upp till 36 h. |
+| 4 | ✅ Avsändaren var redan "Bäverbutiken" / kundsupport@baverbutiken.se. Kontot har ingen global reply-to, så svaren går till avsändaren. |
+| 5 | ✅ Sändardomänen send.baverbutiken.se är vald, med typen Marketing och routingen Dynamic. Klaviyo erbjöd **bara NS-poster**, inte CNAME. Klaviyos egen DMARC är avslagen, eftersom vi lägger in vår egen. |
+| 6 | ❌ Loopia kräver inloggning, och Cowork skriver inte lösenord. |
+
+**Posterna som ska in hos Loopia** (domänen baverbutiken.se):
+
+| Typ | Namn | Värde |
+|---|---|---|
+| NS | send | ns1.klaviyo.com |
+| NS | send | ns2.klaviyo.com |
+| NS | send | ns3.klaviyo.com |
+| NS | send | ns4.klaviyo.com |
+| TXT | @ | klaviyo-site-verification=QZ4jLG |
+| TXT | _dmarc | v=DMARC1; p=none; |
+
+MX, SPF, A och www rörs inte. TXT-posten på @ läggs bredvid SPF-posten och ersätter den inte.
