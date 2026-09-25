@@ -2,81 +2,192 @@
   "id": "f03-webbhistorik",
   "namn": "Webbhistorik",
   "memo": "Den som tittat men inte gått till kassan är på nivån product. En enkel påminnelse om exakt produkten, och trygghet i andra mejlet.",
-  "trigger": { "typ": "metrik", "metrik": ["Viewed Product"] },
-  "filter": ["samtycke", "ej_kopt_sedan_start", "ej_checkout_sedan_start"],
-  "ateintrade": { "varaktighet": 14, "enhet": "day" },
+  "trigger": {
+    "typ": "metrik",
+    "metrik": [
+      "Viewed Product"
+    ]
+  },
+  "filter": [
+    "samtycke",
+    "ej_kopt_sedan_start",
+    "ej_checkout_sedan_start"
+  ],
+  "ateintrade": {
+    "varaktighet": 14,
+    "enhet": "day"
+  },
   "steg": [
-    { "typ": "vanta", "enhet": "hours", "varde": 4 },
-    { "typ": "mejl", "mejl": {
-      "id": "f03-webbhistorik-e1",
-      "namn": "FLOW_visad-produkt_E1_M_den-har-tittade-du-pa_v1",
-      "memo": "Kort, en produkt, en mening. Ingen övertalning, bara en påminnelse om att den finns.",
-      "taggar": {
-        "typ": "M",
-        "kalla": "egen-data",
-        "kalla_ref": "klaviyo/innehall/baverbutiken/BRIEFER.md:303-304",
-        "lardom": null,
-        "avatar": "den som tittat på en produktsida men inte gått vidare",
-        "begar": "komma tillbaka till det man redan var intresserad av",
-        "awareness": "product",
-        "urgency": "ingen",
-        "confidence": "medium",
-        "prefix": "Visadprodukt",
-        "kod": "M"
-      },
-      "amnesrader": [
-        { "text": "Den här kikade du på", "begar": "minnas vad man tittade på" },
-        { "text": "Fortfarande där du lämnade den", "begar": "veta att inget ändrats" },
-        { "text": "En sak du var nära att köpa", "begar": "känna igen sitt eget beteende" }
-      ],
-      "forhandstext": "En produkt, inget mer. Du vet redan vilken.",
-      "block": [
-        { "typ": "text", "rubrik": null, "text": "Den här tittade du på för inte så länge sen." },
-        { "typ": "dynamisk", "kalla": "visad_produkt" }
-      ],
-      "tretest": [
-        { "rad": "Den här kikade du på", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-        { "rad": "Fortfarande där du lämnade den", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-        { "rad": "En sak du var nära att köpa", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-        { "rad": "En produkt, inget mer. Du vet redan vilken.", "visualisera": true, "falsifiera": true, "ingen_annan": true }
-      ]
-    } },
-    { "typ": "vanta", "enhet": "days", "varde": 1 },
-    { "typ": "mejl", "mejl": {
-      "id": "f03-webbhistorik-e2",
-      "namn": "FLOW_visad-produkt_E2_M_fortfarande-intresserad_v1",
-      "memo": "Andra och sista mejlet. Produkten igen, sen tryggheten, sen tre storsäljare ifall produkten inte var rätt trots allt.",
-      "taggar": {
-        "typ": "M",
-        "kalla": "egen-data",
-        "kalla_ref": null,
-        "lardom": null,
-        "avatar": "den som tittat på en produktsida men inte gått vidare",
-        "begar": "avgöra om produkten är rätt, eller hitta ett bättre alternativ",
-        "awareness": "product",
-        "urgency": "ingen",
-        "confidence": "medium",
-        "prefix": "Visadprodukt",
-        "kod": "M"
-      },
-      "amnesrader": [
-        { "text": "Fortfarande på din lista", "begar": "bekräfta pågående intresse" },
-        { "text": "Om du undrade hur leveransen funkar", "begar": "undanröja osäkerhet om leverans" },
-        { "text": "Tre andra som säljer bäst just nu", "begar": "hitta ett alternativ om produkten inte var rätt" }
-      ],
-      "forhandstext": "Produkten, leveransen, och tre andra ifall det inte var den rätta.",
-      "block": [
-        { "typ": "dynamisk", "kalla": "visad_produkt" },
-        { "typ": "fakta" },
-        { "typ": "produktrad", "rubrik": "Om det inte var den rätta", "handles": ["takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan", "batmotorskydd-420d-heltackande-for-utombordare", "overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"] }
-      ],
-      "tretest": [
-        { "rad": "Fortfarande på din lista", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-        { "rad": "Om du undrade hur leveransen funkar", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-        { "rad": "Tre andra som säljer bäst just nu", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-        { "rad": "Produkten, leveransen, och tre andra ifall det inte var den rätta.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-        { "rad": "Om det inte var den rätta", "visualisera": true, "falsifiera": true, "ingen_annan": true }
-      ]
-    } }
+    {
+      "typ": "vanta",
+      "enhet": "hours",
+      "varde": 4
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f03-webbhistorik-e1",
+        "namn": "FLOW_visad-produkt_E1_M_den-har-tittade-du-pa_v1",
+        "memo": "Kort, en produkt, en mening. Ingen övertalning, bara en påminnelse om att den finns.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "klaviyo/innehall/baverbutiken/BRIEFER.md:303-304",
+          "lardom": null,
+          "avatar": "den som tittat på en produktsida men inte gått vidare",
+          "begar": "komma tillbaka till det man redan var intresserad av",
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "Visadprodukt",
+          "kod": "M"
+        },
+        "amnesrader": [
+          {
+            "text": "Den här kikade du på",
+            "begar": "minnas vad man tittade på"
+          },
+          {
+            "text": "Fortfarande där du lämnade den",
+            "begar": "veta att inget ändrats"
+          },
+          {
+            "text": "En sak du var nära att köpa",
+            "begar": "känna igen sitt eget beteende"
+          }
+        ],
+        "forhandstext": "En produkt, inget mer. Du vet redan vilken.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": null,
+            "text": "Den här tittade du på för inte så länge sen."
+          },
+          {
+            "typ": "dynamisk",
+            "kalla": "visad_produkt"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Den här kikade du på",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Fortfarande där du lämnade den",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "En sak du var nära att köpa",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "En produkt, inget mer. Du vet redan vilken.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 2
+      }
+    },
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 1
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f03-webbhistorik-e2",
+        "namn": "FLOW_visad-produkt_E2_M_fortfarande-intresserad_v1",
+        "memo": "Andra och sista mejlet. Produkten igen, sen tryggheten, sen tre storsäljare ifall produkten inte var rätt trots allt.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": null,
+          "lardom": null,
+          "avatar": "den som tittat på en produktsida men inte gått vidare",
+          "begar": "avgöra om produkten är rätt, eller hitta ett bättre alternativ",
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "Visadprodukt",
+          "kod": "M"
+        },
+        "amnesrader": [
+          {
+            "text": "Fortfarande på din lista",
+            "begar": "bekräfta pågående intresse"
+          },
+          {
+            "text": "Om du undrade hur leveransen funkar",
+            "begar": "undanröja osäkerhet om leverans"
+          },
+          {
+            "text": "Tre andra som säljer bäst just nu",
+            "begar": "hitta ett alternativ om produkten inte var rätt"
+          }
+        ],
+        "forhandstext": "Produkten, leveransen, och tre andra ifall det inte var den rätta.",
+        "block": [
+          {
+            "typ": "dynamisk",
+            "kalla": "visad_produkt"
+          },
+          {
+            "typ": "fakta"
+          },
+          {
+            "typ": "produktrad",
+            "rubrik": "Om det inte var den rätta",
+            "handles": [
+              "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+              "batmotorskydd-420d-heltackande-for-utombordare",
+              "overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+            ]
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Fortfarande på din lista",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Om du undrade hur leveransen funkar",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Tre andra som säljer bäst just nu",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Produkten, leveransen, och tre andra ifall det inte var den rätta.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Om det inte var den rätta",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 2
+      }
+    }
   ]
 }

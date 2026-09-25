@@ -59,7 +59,7 @@
           {
             "typ": "text",
             "rubrik": "Din beställning är på väg",
-            "text": "Leveransen tar normalt 5-10 arbetsdagar. Tryck på knappen så ser du exakt var ditt paket är just nu."
+            "text": "Tryck på knappen så ser du exakt var ditt paket är just nu."
           },
           {
             "typ": "knapp",
@@ -107,7 +107,7 @@
             "ingen_annan": true
           }
         ],
-        "version": 2
+        "version": 3
       }
     },
     {
@@ -205,7 +205,8 @@
             "falsifiera": true,
             "ingen_annan": true
           }
-        ]
+        ],
+        "version": 2
       }
     }
   ]

@@ -62,9 +62,11 @@ test('citat: riktig recension med namn, annars utgår blocket med varning', () =
   assert.ok(utan.varningar.some((v) => /Inga riktiga recensioner/.test(v)));
 });
 
-test('fakta-blocket tar texterna ur brandfilen', () => {
-  const { html } = bygg(mejl({ block: [{ typ: 'fakta' }] }));
-  assert.match(html, /5-10 arbetsdagar/);
+test('fakta-blocket tar texterna ur brandfilen, men aldrig leveranstiden bredvid spårningslänken', () => {
+  const { html, text } = bygg(mejl({ block: [{ typ: 'fakta' }] }));
+  // Axels order 2026-09-21 och 2026-09-25: spårningssidan visar beräknad leverans själv.
+  assert.doesNotMatch(html, /arbetsdagar/);
+  assert.doesNotMatch(text ?? '', /arbetsdagar/);
   assert.match(html, /14 dagars ångerrätt/);
   assert.match(html, /https:\/\/baverbutiken\.se\/pages\/spara/);
 });

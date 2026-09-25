@@ -20,7 +20,7 @@
       "mejl": {
         "id": "f01-valkomst-e1",
         "namn": "FLOW_prenumerant_E1_M_axel-har-jag-driver-baverbutiken_v2",
-        "memo": "v2: Axels dom 'jättetorrt och obrandat' - byter från rentext till ett hero-block med storsäljarna synliga (taköverdrag, båtmotorskydd, övervakningskamera) och en tydlig knapp till hela sortimentet. Fortfarande Axel som hälsar, men kortare.",
+        "memo": "v2: Axels dom 'jättetorrt och obrandat' - byter från rentext till ett hero-block med storsäljarna synliga (taköverdrag, båtmotorskydd, övervakningskamera) och en tydlig knapp till hela sortimentet. Fortfarande Axel som hälsar, men kortare. 2026-09-25: produktraden = de tre som flest kunder köpt senaste 60 dagarna (Shopify: motorhöljet 571, taköverdraget 476, fiskespöhållaren 467 ordrar).",
         "taggar": {
           "typ": "M",
           "kalla": "egen-data",
@@ -64,9 +64,9 @@
             "typ": "produktrad",
             "rubrik": "Det här köper flest kunder",
             "handles": [
+              "marin-motorholje-420d-universellt-skydd",
               "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
-              "batmotorskydd-420d-heltackande-for-utombordare",
-              "overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+              "fiskespohallare-4-pack-kraftig-forvaring"
             ]
           },
           {
@@ -111,7 +111,7 @@
             "ingen_annan": true
           }
         ],
-        "version": 2
+        "version": 3
       }
     },
     {
@@ -204,7 +204,8 @@
             "falsifiera": true,
             "ingen_annan": true
           }
-        ]
+        ],
+        "version": 2
       }
     },
     {
@@ -302,7 +303,8 @@
             "falsifiera": true,
             "ingen_annan": true
           }
-        ]
+        ],
+        "version": 2
       }
     }
   ]
