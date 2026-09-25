@@ -104,3 +104,40 @@ I want a post-purchase (one-click, same order, same parcel) offer: the same 2 bo
 5. Any downside you've seen: refund rates on upsold orders, or customers learning to wait for the post-purchase deal?
 6. For the repeat side: what's worked for gift brands to get last year's Christmas buyers (3,000 of them) to buy again — email/SMS timing, new-variant angle, gift cards?
 ```
+
+## Texten på sidan (skriven 2026-09-25 enligt `docs/copy-regler.md`, alla fyra tester ✅)
+
+`{{pris}}`/`{{rabatt}}` fylls med **319 kr / 20 %** i arm A och **279 kr / 30 %**
+i arm B. Samma text i båda armarna. Rekommenderad variant är V2: givarvinkeln
+står i rubriken och "dubbeltitt" är ett av VOC:ns tre kärndesires.
+
+**V2 — Redo att ge bort** (kör denna)
+Rubrik: *Två presenter till, redo att ge bort*
+Underrad: *Två lådor till för {{pris}} kr i samma paket — så nästa dubbeltitt finns redan hemma. {{rabatt}} rabatt, bara i den här beställningen.*
+Knapp: *Ja, lägg till – {{pris}} kr*
+Avböj: *Nej tack, gå vidare*
+
+**V1 — Lurar ögat** (reserv)
+Rubrik: *Två lådor till för {{pris}} kr*
+Underrad: *Fler lådor som lurar ögat, redo hemma. De kommer i samma paket, på samma kort — bara innan det packas. {{rabatt}} rabatt.*
+Knapp: *Lägg till – {{pris}} kr* · Avböj: *Nej tack, fortsätt till bekräftelsen*
+
+**V3 — Innan paketet packas** (reserv, framing-testet i omgång två)
+Rubrik: *Två till att ge bort, innan paketet packas*
+Underrad: *Två lådor till för {{pris}} kr, i samma paket och på samma kort — ett klick räcker. {{rabatt}} rabatt.*
+Knapp: *Lägg till nu – {{pris}} kr* · Avböj: *Nej tack, till bekräftelsen*
+
+⚠️ "Bara i den här beställningen" är sant bara så länge samma erbjudande inte
+skickas i orderbekräftelsen eller ett Klaviyo-flöde efteråt. Gör det inte.
+
+## Så sätts det upp i AfterSell (Axel, ~20 minuter)
+
+1. Installera AfterSell från App Store, välj post-purchase (inte thank-you-page-widgeten).
+2. Ny funnel: trigger = ordrar som innehåller Sushi-Strumpor. Erbjudande =
+   Sushi-Strumpor 5-par, antal 2, pris 319 kr. Text enligt V2 med 319 kr / 20 %.
+3. Duplicera funneln som arm B: pris 279 kr, text med 279 kr / 30 %. Slå på
+   appens split test 50/50 mellan de två.
+4. Visa en gång, ingen timer, ingen downsell i omgång ett.
+5. Säg till när det är live, så jämför jag Metas köpvärde mot Shopify dag 1–3 och
+   läser av testet efter 400 exponeringar per arm (`node theme-matstrumpor/tools/ekonomi.mjs`
+   plus ordrarnas post-purchase-rader).
