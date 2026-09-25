@@ -62,6 +62,7 @@ import {
 import { dagarKvar, kontoId, VARNA_DAGAR, type Annonskonto } from "../lib/meta-login";
 import {
   googleAvailable,
+  googleSaknar,
   GOOGLE_TOMT,
   glomKontolista,
   hamtaGoogleKonton,
@@ -190,6 +191,8 @@ export async function loader({ request }: LoaderFunctionArgs) {
       }
       return {
         uppsatt,
+        /* Bara NAMN på det som fattas — aldrig värden. */
+        saknas: uppsatt ? [] : googleSaknar(),
         kopplat,
         epost: s.googleEmail,
         valda: valda.map((k) => ({ customerId: k.customerId, name: k.name ?? k.customerId, currency: k.currency })),
@@ -1422,6 +1425,7 @@ function GoogleKort({
 }: {
   google: {
     uppsatt: boolean;
+    saknas: string[];
     kopplat: boolean;
     epost: string | null;
     valda: { customerId: string; name: string; currency: string | null }[];
@@ -1501,7 +1505,9 @@ function GoogleKort({
         <Text as="p" tone="subdued">{T.settings.googleIntro}</Text>
 
         {!google.uppsatt ? (
-          <Banner tone="info">{T.settings.googleNotConfigured}</Banner>
+          <Banner tone="info">
+            {`${T.settings.googleNotConfigured}${google.saknas.length ? ` (${google.saknas.join(", ")})` : ""}`}
+          </Banner>
         ) : (
           <BlockStack gap="400">
             <InlineStack gap="300" blockAlign="center" wrap>

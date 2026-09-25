@@ -71,6 +71,22 @@ export function googleConfig(): GoogleConfig | null {
 
 export const googleAvailable = (): boolean => googleConfig() !== null;
 
+/**
+ * Vad som fattas för att knappen ska finnas, med NAMN — aldrig värden.
+ *
+ * Finns för att "inte uppsatt på den här servern" inte går att felsöka när
+ * sex Railway-tjänster delar en kodbas: en variabel som ligger på fel
+ * tjänst, eller stavad fel, ser ut exakt som ingen variabel alls. Raden
+ * namnger den som saknas, och namnen är inte hemliga.
+ */
+export function googleSaknar(): string[] {
+  const saknas: string[] = [];
+  if (!process.env.GOOGLE_ADS_CLIENT_ID?.trim()) saknas.push("GOOGLE_ADS_CLIENT_ID");
+  if (!process.env.GOOGLE_ADS_CLIENT_SECRET?.trim()) saknas.push("GOOGLE_ADS_CLIENT_SECRET");
+  if (!encryptionAvailable()) saknas.push("TOKEN_ENCRYPTION_KEY");
+  return saknas;
+}
+
 export class GoogleError extends Error {
   /** True när kopplingen är död och handlaren måste koppla om. */
   readonly behoverOmkoppling: boolean;
