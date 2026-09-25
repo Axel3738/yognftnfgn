@@ -42,7 +42,7 @@ node --test klaviyo/test/*.test.mjs
 
 ## Det motorn aldrig gör
 
-- **Skickar kampanjer.** Klienten vägrar varje anrop till `/api/campaign-send-jobs`. Flöden sätts bara live av `sla-pa.mjs`, med `--ja`, för exakt de flödes- och mejl-id:n den läst ur kontot — klienten släpper inget annat (`tillatLive`, testat).
+- **Skickar kampanjer på eget initiativ.** Klienten vägrar varje anrop till `/api/campaign-send-jobs` utom från `schemalagg.mjs` (`node klaviyo/schemalagg.mjs K01 --ja`), som bara tar namngivna kampanjer som är Draft, har ett fast datum minst en timme fram och bara går till segment med samtycke (testat). K01 schemalagd 2026-09-25 på Axels ord: tis 29/9 18:00, 1 884 profiler. Flöden sätts bara live av `sla-pa.mjs`, med `--ja`, för exakt de flödes- och mejl-id:n den läst ur kontot — klienten släpper inget annat (`tillatLive`, testat).
 - **Mejlar utan samtycke.** Varje kampanjsegment måste ha `subscription: "subscribed"`, annars stoppas det.
 - **Tar en annan butiks konto.** `public_api_key` måste vara `QZ4jLG` innan något skrivs.
 

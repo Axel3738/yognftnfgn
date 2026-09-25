@@ -82,6 +82,10 @@ export function sparrSkicka(metod, sokvag, kropp, tillatLive = null) {
   const stopp = (varfor) => {
     throw new KlaviyoFel({ status: 0, metod, sokvag: s, kod: 'SPARR_SKICKA', meddelande: `Spärrat: ${varfor}. Motorn skapar bara utkast (ARKITEKTUR.md järnregel 1) — ett utskick är Axels beslut, i Klaviyo.` });
   };
+  // Undantaget: klaviyo/schemalagg.mjs schemalägger NAMNGIVNA kampanjer på Axels ord.
+  // Bara POST av ett send-job för exakt de kampanj-id:n som står i mängden;
+  // skriptet har redan kontrollerat fast datum i framtiden och samtycke.
+  if (/^\/api\/campaign-send-jobs\/?$/.test(s) && metod === 'POST' && tillatLive?.has?.(`kampanj:${kropp?.data?.id}`)) return;
   if (/^\/api\/campaign-send-jobs/.test(s)) stopp(`${metod} ${s} startar ett kampanjutskick`);
   if (/^\/api\/(flow-send|send-)/.test(s)) stopp(`${metod} ${s} skickar`);
   if (metod === 'GET' || !kropp) return;

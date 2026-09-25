@@ -10,7 +10,7 @@ fars dag 8/11 (sista beställning **19/10**), Black Week 23–30/11, jul (sista 
 
 | Vecka | Dag | Kampanj | Produkter | Vinkel | Läge |
 |---|---|---|---|---|---|
-| 40 | tis 29/9 | K01 | Taköverdrag | Vinterförvaring av vagnen | utkast, klar |
+| 40 | tis 29/9 | K01 | Taköverdrag | Vinterförvaring av vagnen | ✅ **SCHEMALAGD** 29/9 18:00 till SEG_uppvarmning_steg1 (1 884 profiler), Axels ord 2026-09-25 |
 | 40 | tor 1/10 | K02 | Motorhölje, båtsitsöverdrag, fiskespöhållare | Båten ska upp | utkast, klar |
 | 41 | tis 6/10 | K03 | Termoskydd | Kundernas ord, immig ruta | utkast, klar |
 | 41 | tor 8/10 | K04 | Sotarset | Innan eldningssäsongen | utkast, klar |
