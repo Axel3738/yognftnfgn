@@ -15,7 +15,7 @@ Emotional act: dad's workbench, the plane he has had for forty years, the knife 
 
 ## 2. Hypothesis
 A calm, build-quality, identity-affirming frame converts the 65+ recipient's adult child better than the sixty-second promise does — the one brief in the batch that tests the 296 insight with delivery.
-**Hook (H1):** «SV H1»
+**Hook (H1):** Pappa har skött samma hyvel i fyrtio år. Ett verktyg sköter han aldrig likadant.
 
 ## 3. Format
 | | |
@@ -35,14 +35,14 @@ Swedish is what runs in the ad. The right column is meaning only, for the editor
 
 | Time | Swedish (use this) | English meaning |
 |---|---|---|
-| 0–3 s · HOOK H1 | «SV H1» | «EN H1» — INTENT: Dad has had the same plane for forty years. He looks after his tools. Object: an old hand plane on a workbench. |
-| 0–3 s · HOOK H2 | «SV H2» | «EN H2» — INTENT: The only tool dad does not look after is the one that looks after the grill. Object: a worn wire brush beside the grill. |
-| 0–3 s · HOOK H3 | «SV H3» | «EN H3» — INTENT: Dad does not want help at the grill. He wants a better tool. Object: Mastern laid on the workbench among his tools. |
-| 3–9 s · HIS PRINCIPLE | «SV 4» | «EN 4» — INTENT: His rule with everything: look after it right after you use it, and it lasts a lifetime. The plane, the knife, the boat. It is how grandpa did it too. |
-| 9–15 s · THE ONE EXCEPTION | «SV 5» | «EN 5» — INTENT: The wire brush breaks his own rule: it cannot reach the gaps where the grease sits, and it sheds bristles — Weber and Nexgrill recalled over thirteen million of them in the USA this year. Not his fault. Not a tool worth keeping. |
-| 15–23 s · A TOOL BUILT LIKE HIS OTHERS | «SV 6» | «EN 6» — INTENT: Mastern is built the way he keeps things: two heads — the coarse one locks the metal in, the polish one has no metal at all; the heads come off and go in the dishwasher; charged with a USB cable; if it ever breaks he gets a new one, for life. |
-| 23–29 s · THE RITUAL | «SV 7» | «EN 7» — INTENT: Warm grate. Wet head. Slow passes over the bars. Then he sits down. The last thing he does before he sits — done the way he does everything else. |
-| 29–33 s · LOCK + CTA | «SV 8» | «EN 8» — INTENT: 999 kr, thirty days open purchase, lifetime warranty. Then the giver's line from §6: this one is for the toolbox. |
+| 0–3 s · HOOK H1 | Pappa har skött samma hyvel i fyrtio år. Ett verktyg sköter han aldrig likadant. | Dad has looked after the same plane for forty years. There's one tool he never treats the same way. |
+| 0–3 s · HOOK H2 | Det enda verktyget han inte sköter är stålborsten. Den tappar strån. | The one tool dad doesn't look after is the wire brush. It sheds bristles. |
+| 0–3 s · HOOK H3 | Pappa vill inte ha hjälp vid grillen, han vill ha ett bättre verktyg. Mastern. | Dad doesn't want help at the grill, he wants a better tool. Mastern. |
+| 3–9 s · HIS PRINCIPLE | Hans regel: sköt om det direkt, så håller det livet ut. Hyveln, kniven, båten. Som hos farfar. | His rule: look after it right away, and it lasts a lifetime. The plane, the knife, the boat. Just like grandpa. |
+| 9–15 s · THE ONE EXCEPTION | Stålborsten är undantaget: den tappar strån. Weber och Nexgrill återkallade över tretton miljoner i USA i år. Inte hans fel. | The wire brush is the exception: it sheds bristles. Weber and Nexgrill recalled over thirteen million in the USA this year. Not his fault. |
+| 15–23 s · A TOOL BUILT LIKE HIS OTHERS | Mastern är byggd som hans andra verktyg: grovhuvud som låser metallen, polerhuvud utan metall. Huvudena går i diskmaskinen, laddas via USB. | Mastern is built like his other tools: a coarse head that locks the metal, a polish head with no metal. The heads go in the dishwasher, charged by USB. |
+| 23–29 s · THE RITUAL | Varmt galler. Vått huvud. Lugna drag över gallret, sedan sätter han sig. Sista sysslan, gjord som allt annat han gör. | Warm grate. Wet head. Slow passes over the bars, then he sits down. The last chore, done the way he does everything else. |
+| 29–33 s · LOCK + CTA | 999 kr, trettio dagars öppet köp, livstidsgaranti. Går den sönder får han en ny. | 999 kr, thirty days open purchase, lifetime warranty. If it breaks he gets a new one. |
 
 ## 5. Direction — one row per script line (docs/os/BRIEF-REGI.md)
 **Assets:** Drive "Content for all markets. B-roll etc" (id 1Q9-TFnhQI3QV0z80Lw1iOOB7Wk_RWJ-r) — sub-folders: home-recorded product macro (1gLEJU2bdzXWU-w2eHoxo9XD2jImMv_Zr), problem agitation / dirty grates / scrubbing (1YY7Y_DuaPAszwF4jM70g0xue1N_hUsq6), mid clips + grillers (1K2B_qE8jVlKng6k1Cpcw_GRsEOXD0aXZ), CTA / end card (1K8LjlcndXuWdWI2ic7a0A4JDJqcnLaFe), brush-safe heads (1QU-V7oD19egsbS90cKC6BCIYH84JJlih), old methods: onion, foil, wire brush (1ZoRoDhf07RKXvKa-FMEx5zypdQwr3s90), brushes normal stores sell (10srWqlx7x_MXiJO0MLtR8pDP_JkaR39B), expensive new grills (1k5VjErDXeW4RZz1zQEbFWry1Vo6QzXu1), broken grills thrown away (1VggaPZ1X7VDSbSR8jmTBpBvH2Zq0sIGW), UGC Rickard Jenders (1NMTQHuODyqFUMrPoiG69vRR8LtJZa_-T), Beerhansson UGC (1ucL6wrOSre-h9m038xMZwjuWHLrYaeWN), Gilz content (1gZua5tjAFUfuzH9xFWry91q7sRELGAbO) · product photos Aug 2026 (14xo1cnBbNMhv-i0d7WUbtgfMXVVcvlWf) · CDN: https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Namnlosdesign-2026-07-06T113034.467.png, https://cdn.shopify.com/s/files/1/0947/0174/8548/files/WhatsAppImage2026-04-13at10.08.29.jpg, https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260423_053932_274855d0-6200-477e-b94d-9253bb51021a.png, https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260423_053920_89553003-6fbe-4990-ac4a-75b8cfe135b2.png, https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260423_062233_5b01b9d2-7444-4824-b577-a781dd3f0193.png
@@ -51,31 +51,50 @@ Swedish is what runs in the ad. The right column is meaning only, for the editor
 
 | # | Time | Script line (Swedish) | Audio | On-screen text | Picture | Effect + length | Source | Reference | Latitude |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 | 0:00–0:03 (H1) | «SV H1» | VO | «SV H1» | Macro of an old wooden hand plane on a workbench, oiled, a hand resting on it; garage light. **First frame:** the plane on the bench. | cut-in | NEW FOOTAGE: a real old hand plane on a workbench, filmed by Axel | — | none |
-| 2 | 0:00–0:03 (H2) | «SV H2» | VO | «SV H2» | Macro of a worn, flattened wire brush hanging by the grill, bristles bent, rust on the handle. **First frame:** the worn wire brush. | zoom-in 1 s | DRIVE 1ZoRoDhf07RKXvKa-FMEx5zypdQwr3s90 [EDITOR PICKS: a worn, flattened wire brush by the grill] | — | none |
-| 3 | 0:00–0:03 (H3) | «SV H3» | VO | «SV H3» | Macro of Mastern laid on the workbench between the plane and a sharpened knife. **First frame:** Mastern among his tools. | freeze 0.5 s then cut-in | NEW FOOTAGE: Mastern on a workbench between real hand tools, filmed by Axel | — | none |
-| 4 | 0:03–0:09 | «SV 4» | VO | «SV 4» | His hands oiling the plane, wiping a knife, hanging a tool on its hook. | cut-in | NEW FOOTAGE: hands caring for hand tools in a garage, filmed by Axel | T8 in `docs/tof-idea-bank.md` | b-roll order free |
-| 5 | 0:09–0:15 | «SV 5» | VO | «SV 5» | Macro of the wire brush on the top of the bars, the untouched gap, shed bristles on the dark grate. | slow-mo 0.5× 2 s on the shed bristles | DRIVE 1ZoRoDhf07RKXvKa-FMEx5zypdQwr3s90 [EDITOR PICKS: wire brush on the bars, shed bristles on a dark grate] | — | b-roll order free |
-| 6 | 0:15–0:23 | «SV 6» | VO | «SV 6» | Macro of the coarse head's locked bristles, the polish head, a head twisted off and set in a dishwasher rack, the USB cable in the box. | cut-in | DRIVE 1QU-V7oD19egsbS90cKC6BCIYH84JJlih [EDITOR PICKS: coarse head close-up, polish head, head twisted off] + NEW FOOTAGE: a head in a dishwasher rack and the USB cable, filmed by Axel | — | b-roll order free |
-| 7 | 0:23–0:29 | «SV 7» | VO | «SV 7» | His hand wets the head, slow passes over a warm grate with steam, he hangs it on its hook, sits down in the garden chair in November light. | none | DRIVE 1gLEJU2bdzXWU-w2eHoxo9XD2jImMv_Zr [EDITOR PICKS: wet head, slow passes with steam] then DRIVE 1K2B_qE8jVlKng6k1Cpcw_GRsEOXD0aXZ [EDITOR PICKS: the griller sitting down] | 299 "sista sysslan" beat (branch) | b-roll order free |
-| 8 | 0:29–0:33 | «SV 8» | VO | «SV 8» | End card: Mastern on the grill edge, price, the two promises, button. | none | DRIVE 1K8LjlcndXuWdWI2ic7a0A4JDJqcnLaFe [EDITOR PICKS: the end card plate] | — | none |
+| 1 | 0:00–0:03 (H1) | Pappa har skött samma hyvel i fyrtio år. Ett verktyg sköter han aldrig likadant. | VO | Pappa har skött samma hyvel i fyrtio år. Ett verktyg sköter han aldrig likadant. | Macro of an old wooden hand plane on a workbench, oiled, a hand resting on it; garage light. **First frame:** the plane on the bench. | cut-in | NEW FOOTAGE: a real old hand plane on a workbench, filmed by Axel | — | none |
+| 2 | 0:00–0:03 (H2) | Det enda verktyget han inte sköter är stålborsten. Den tappar strån. | VO | Det enda verktyget han inte sköter är stålborsten. Den tappar strån. | Macro of a worn, flattened wire brush hanging by the grill, bristles bent, rust on the handle. **First frame:** the worn wire brush. | zoom-in 1 s | DRIVE 1ZoRoDhf07RKXvKa-FMEx5zypdQwr3s90 [EDITOR PICKS: a worn, flattened wire brush by the grill] | — | none |
+| 3 | 0:00–0:03 (H3) | Pappa vill inte ha hjälp vid grillen, han vill ha ett bättre verktyg. Mastern. | VO | Pappa vill inte ha hjälp vid grillen, han vill ha ett bättre verktyg. Mastern. | Macro of Mastern laid on the workbench between the plane and a sharpened knife. **First frame:** Mastern among his tools. | freeze 0.5 s then cut-in | NEW FOOTAGE: Mastern on a workbench between real hand tools, filmed by Axel | — | none |
+| 4 | 0:03–0:09 | Hans regel: sköt om det direkt, så håller det livet ut. Hyveln, kniven, båten. Som hos farfar. | VO | Hans regel: sköt om det direkt, så håller det livet ut. Hyveln, kniven, båten. Som hos farfar. | His hands oiling the plane, wiping a knife, hanging a tool on its hook. | cut-in | NEW FOOTAGE: hands caring for hand tools in a garage, filmed by Axel | T8 in `docs/tof-idea-bank.md` | b-roll order free |
+| 5 | 0:09–0:15 | Stålborsten är undantaget: den tappar strån. Weber och Nexgrill återkallade över tretton miljoner i USA i år. Inte hans fel. | VO | Stålborsten är undantaget: den tappar strån. Weber och Nexgrill återkallade över tretton miljoner i USA i år. Inte hans fel. | Macro of the wire brush on the top of the bars, the untouched gap, shed bristles on the dark grate. | slow-mo 0.5× 2 s on the shed bristles | DRIVE 1ZoRoDhf07RKXvKa-FMEx5zypdQwr3s90 [EDITOR PICKS: wire brush on the bars, shed bristles on a dark grate] | — | b-roll order free |
+| 6 | 0:15–0:23 | Mastern är byggd som hans andra verktyg: grovhuvud som låser metallen, polerhuvud utan metall. Huvudena går i diskmaskinen, laddas via USB. | VO | Mastern är byggd som hans andra verktyg: grovhuvud som låser metallen, polerhuvud utan metall. Huvudena går i diskmaskinen, laddas via USB. | Macro of the coarse head's locked bristles, the polish head, a head twisted off and set in a dishwasher rack, the USB cable in the box. | cut-in | DRIVE 1QU-V7oD19egsbS90cKC6BCIYH84JJlih [EDITOR PICKS: coarse head close-up, polish head, head twisted off] + NEW FOOTAGE: a head in a dishwasher rack and the USB cable, filmed by Axel | — | b-roll order free |
+| 7 | 0:23–0:29 | Varmt galler. Vått huvud. Lugna drag över gallret, sedan sätter han sig. Sista sysslan, gjord som allt annat han gör. | VO | Varmt galler. Vått huvud. Lugna drag över gallret, sedan sätter han sig. Sista sysslan, gjord som allt annat han gör. | His hand wets the head, slow passes over a warm grate with steam, he hangs it on its hook, sits down in the garden chair in November light. | none | DRIVE 1gLEJU2bdzXWU-w2eHoxo9XD2jImMv_Zr [EDITOR PICKS: wet head, slow passes with steam] then DRIVE 1K2B_qE8jVlKng6k1Cpcw_GRsEOXD0aXZ [EDITOR PICKS: the griller sitting down] | 299 "sista sysslan" beat (branch) | b-roll order free |
+| 8 | 0:29–0:33 | 999 kr, trettio dagars öppet köp, livstidsgaranti. Går den sönder får han en ny. | VO | 999 kr, trettio dagars öppet köp, livstidsgaranti. Går den sönder får han en ny. | End card: Mastern on the grill edge, price, the two promises, button. | none | DRIVE 1K8LjlcndXuWdWI2ic7a0A4JDJqcnLaFe [EDITOR PICKS: the end card plate] | — | none |
 
 ## 6. What the giver says when the box opens
-«SV giver line — one spoken sentence the giver can say at the table; it is the last caption before the end card» — «EN meaning». 
+Den här är till verktygslådan. — This one is for the toolbox. 
 
 ## 7. COPY CARD (goes in Ads Manager, not in the creative)
 **Primary text:**
-> «SV primary text — four to six short lines, each its own line; opens with the giver's scene, then what he stops doing, then the lock: 999 kr, 30 dagars öppet köp, livstidsgaranti, fri frakt inom Sverige»
+> Pappa sköter alla sina verktyg i fyrtio år.
+> Utom stålborsten, den enda som tappar strån och aldrig når springorna.
+> I år får han Mastern, byggd för att hålla precis som hans andra verktyg.
+> 999 kr. Trettio dagars öppet köp.
+> Livstidsgaranti och fri frakt inom Sverige.
 
-**Headline:** `«SV headline, max 40 characters, carries Mastern or the price»`
-**Description:** `«SV description, max 60 characters: two facts + 30 dagars öppet köp»`
+**Headline:** `Mastern. Byggd som hans andra verktyg.`
+**Description:** `999 kr · Livstidsgaranti · Trettio dagars öppet köp.`
 **CTA button:** `Handla nu` (Shop Now)
 **Destination:** https://grillkliniken.se/products/elektrisk-grillborste
 
 ## 8. Three-question test (docs/copy-regler.md) — every delivered line
 | Line | Visualise? | Falsifiable? | Only we can say it? |
 |---|---|---|---|
-«ONE ROW PER DELIVERED SWEDISH LINE — every hook, every script line, the giver's line, the headline, the description and each primary-text line. Every cell must be ✅ with a five-to-fifteen-word reason. A line that earns a ❌ anywhere is rewritten until it passes or dropped; it never stays in the brief with a ❌. Rows are plain table rows: | line | ✅ reason | ✅ reason | ✅ reason |»
+| Pappa har skött samma hyvel i fyrtio år. Ett verktyg sköter han aldrig likadant. | ✅ an old oiled hand plane on a workbench | ✅ a claim about forty years of consistent care, checkable | ✅ sets up the one specific exception this ad resolves |
+| Det enda verktyget han inte sköter är stålborsten. Den tappar strån. | ✅ a worn, flattened wire brush by the grill | ✅ a checkable claim about which tool he neglects and why | ✅ names stålborsten and its shedding as the specific fault |
+| Pappa vill inte ha hjälp vid grillen, han vill ha ett bättre verktyg. Mastern. | ✅ Mastern laid on the workbench among real tools | ✅ a stated want, checkable against what follows | ✅ names Mastern as the specific tool, not generic help |
+| Hans regel: sköt om det direkt, så håller det livet ut. Hyveln, kniven, båten. Som hos farfar. | ✅ hands oiling a plane, wiping a knife | ✅ a claim about his own maintenance rule, checkable | ✅ names his specific tools and his own inherited rule |
+| Stålborsten är undantaget: den tappar strån. Weber och Nexgrill återkallade över tretton miljoner i USA i år. Inte hans fel. | ✅ shed bristles on a dark grate, the worn brush | ✅ a named, dated recall figure, checkable | ✅ Weber and Nexgrill's own recall, not a generic warning |
+| Mastern är byggd som hans andra verktyg: grovhuvud som låser metallen, polerhuvud utan metall. Huvudena går i diskmaskinen, laddas via USB. | ✅ the coarse head, the polish head, a head in a dishwasher rack | ✅ two named heads and two named features, checkable | ✅ grovhuvud, polerhuvud, dishwasher and USB are Mastern's own build |
+| Varmt galler. Vått huvud. Lugna drag över gallret, sedan sätter han sig. Sista sysslan, gjord som allt annat han gör. | ✅ a wet head making slow passes over a warm grate | ✅ a claim about his last chore before sitting, checkable | ✅ names his own ritual, not a generic cleaning claim |
+| 999 kr, trettio dagars öppet köp, livstidsgaranti. Går den sönder får han en ny. | ✅ the end card with price and the two promises | ✅ a fixed price and a written guarantee, checkable | ✅ 999 kr and Mastern's own guarantee wording |
+| Den här är till verktygslådan. | ✅ the box set down among his other tools | ✅ a specific claim about where this gift belongs | ✅ ties the gift to this exact toolbox, not a generic gift |
+| Mastern. Byggd som hans andra verktyg. | ✅ the product name on the end card | ✅ a build-quality claim, testable over years of use | ✅ names Mastern and compares it to his own kept tools |
+| 999 kr · Livstidsgaranti · Trettio dagars öppet köp. | ✅ price and guarantee on the end card | ✅ three fixed, checkable terms | ✅ Mastern's exact price and guarantee wording |
+| Pappa sköter alla sina verktyg i fyrtio år. | ✅ him at the workbench with kept tools | ✅ a claim about forty years of care, checkable | ✅ describes this specific father's own habit |
+| Utom stålborsten, den enda som tappar strån och aldrig når springorna. | ✅ the worn brush, shed bristles, the untouched gap | ✅ a checkable claim about the one exception and its two faults | ✅ names stålborsten, strån and springorna as the specific gaps |
+| I år får han Mastern, byggd för att hålla precis som hans andra verktyg. | ✅ the box handed over among his tools | ✅ a build claim, testable against his own kept tools | ✅ names Mastern as built to the same standard as his tools |
+| 999 kr. Trettio dagars öppet köp. | ✅ the price line on the end card | ✅ a fixed price and a fixed return window | ✅ Mastern's own price and return terms |
+| Livstidsgaranti och fri frakt inom Sverige. | ✅ the guarantee line on the end card | ✅ a written guarantee and a shipping promise | ✅ Mastern's own lifetime guarantee wording |
 
 ## 9. Rules
 - **Price exactly 999 kr** (ord. 1 600 kr) — on the end card and in the copy. Never a percentage (not "35 %", not "40 %"), never a countdown, never a second price. Verified live 2026-09-25 on grillkliniken.se/products/elektrisk-grillborste (999 / 1 600). Numbers other than the price are written in words in Swedish (femton tusen, trettio dagar, sextio sekunder).

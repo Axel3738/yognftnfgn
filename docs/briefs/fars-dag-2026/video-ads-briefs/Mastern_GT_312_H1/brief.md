@@ -15,7 +15,7 @@ Emotional act: she serves the family too. She has seen the recall headlines, she
 
 ## 2. Hypothesis
 Safety told as the giver's relief in customers' words converts Maria where safety as a scare hook is saturated — and the trust lock is what closes her.
-**Hook (H1):** «SV H1»
+**Hook (H1):** Rickard B.: Frun är nöjd att stålborsten försvann.
 
 ## 3. Format
 | | |
@@ -35,14 +35,14 @@ Swedish is what runs in the ad. The right column is meaning only, for the editor
 
 | Time | Swedish (use this) | English meaning |
 |---|---|---|
-| 0–3 s · HOOK H1 | «SV H1» | «EN H1» — INTENT: Rickard B.: "The wife is happy the wire brush is gone." Object: the review on the product page on a phone. |
-| 0–3 s · HOOK H2 | «SV H2» | «EN H2» — INTENT: This is what a customer found in his burger last summer. Object: a single steel bristle on a dark grate, macro. |
-| 0–3 s · HOOK H3 | «SV H3» | «EN H3» — INTENT: The old brush was recalled in the USA this spring. At ours it went in the bin on Father's Day. Object: the wire brush dropped into a bin. |
-| 3–9 s · HER RELIEF | «SV 4» | «EN 4» — INTENT: I serve the family too. I read about the recalls — Weber and Nexgrill, over thirteen million wire brushes in the USA this year — and I never said anything, because it sounds like nagging. He cannot see a bristle against a dark grate. Nobody can. |
-| 9–15 s · THE GIFT | «SV 5» | «EN 5» — INTENT: So this Father's Day he gets the one that cannot shed. Mastern: the coarse head locks the metal in, the polish head has no metal at all. Nothing comes loose, nothing ends up in the food. |
-| 15–21 s · THE PART HE CARES ABOUT | «SV 6» | «EN 6» — INTENT: And the part he cares about: one button, the head spins down into the gaps while the grate is still warm, sixty seconds, and he sits down with us. |
-| 21–26 s · IN THEIR WORDS | «SV 7» | «EN 7» — INTENT: Mikael T.: found a bristle in the burger last summer. Stefan M.: read about the Weber recall in February and threw the old brush away. Verbatim, with names. |
-| 26–31 s · LOCK + CTA | «SV 8» | «EN 8» — INTENT: Swedish company, 999 kr, thirty days open purchase, lifetime warranty — the gift cannot go wrong. Then the giver's line from §6. |
+| 0–3 s · HOOK H1 | Rickard B.: Frun är nöjd att stålborsten försvann. | Rickard B.: the wife is happy the wire brush is gone. |
+| 0–3 s · HOOK H2 | Det här hittade en kund i sin hamburgare förra sommaren. | This is what a customer found in his burger last summer. |
+| 0–3 s · HOOK H3 | Den borsten återkallades i USA. Hos oss åkte den i soporna på fars dag. | That brush was recalled in the USA. At ours it went in the bin on Father's Day. |
+| 3–9 s · HER RELIEF | Jag serverar familjen. Weber och Nexgrill återkallade över tretton miljoner stålborstar i USA i år. Ingen ser ett strå mot mörkt galler. | I serve the family. Weber and Nexgrill recalled over thirteen million wire brushes in the USA this year. Nobody can see a bristle against a dark grate. |
+| 9–15 s · THE GIFT | Så i år: Mastern. Grovhuvudet låser metallen, polerhuvudet har ingen metall. Ingenting lossnar, ingenting hamnar i maten. | So this year: Mastern. The coarse head locks the metal, the polish head has no metal. Nothing comes loose, nothing ends up in the food. |
+| 15–21 s · THE PART HE CARES ABOUT | Det han bryr sig om: en knapp, huvudet i springorna, varmt och sextio sekunder. Sedan sätter han sig med oss. | The part he cares about: one button, the head into the gaps, warm and sixty seconds. Then he sits down with us. |
+| 21–26 s · IN THEIR WORDS | Mikael T.: Hittade ett borststrå i hamburgaren förra sommaren. Stefan M.: Läste om Weber-återkallelsen i februari och slängde den gamla borsten. | Mikael T.: found a bristle in the burger last summer. Stefan M.: read about the Weber recall in February and threw the old brush away. |
+| 26–31 s · LOCK + CTA | Svenskt företag, 999 kr, trettio dagars öppet köp, livstidsgaranti. Presenten kan inte bli fel. | Swedish company, 999 kr, thirty days open purchase, lifetime warranty. The gift can't go wrong. |
 
 ## 5. Direction — one row per script line (docs/os/BRIEF-REGI.md)
 **Assets:** Drive "Content for all markets. B-roll etc" (id 1Q9-TFnhQI3QV0z80Lw1iOOB7Wk_RWJ-r) — sub-folders: home-recorded product macro (1gLEJU2bdzXWU-w2eHoxo9XD2jImMv_Zr), problem agitation / dirty grates / scrubbing (1YY7Y_DuaPAszwF4jM70g0xue1N_hUsq6), mid clips + grillers (1K2B_qE8jVlKng6k1Cpcw_GRsEOXD0aXZ), CTA / end card (1K8LjlcndXuWdWI2ic7a0A4JDJqcnLaFe), brush-safe heads (1QU-V7oD19egsbS90cKC6BCIYH84JJlih), old methods: onion, foil, wire brush (1ZoRoDhf07RKXvKa-FMEx5zypdQwr3s90), brushes normal stores sell (10srWqlx7x_MXiJO0MLtR8pDP_JkaR39B), expensive new grills (1k5VjErDXeW4RZz1zQEbFWry1Vo6QzXu1), broken grills thrown away (1VggaPZ1X7VDSbSR8jmTBpBvH2Zq0sIGW), UGC Rickard Jenders (1NMTQHuODyqFUMrPoiG69vRR8LtJZa_-T), Beerhansson UGC (1ucL6wrOSre-h9m038xMZwjuWHLrYaeWN), Gilz content (1gZua5tjAFUfuzH9xFWry91q7sRELGAbO) · product photos Aug 2026 (14xo1cnBbNMhv-i0d7WUbtgfMXVVcvlWf) · CDN: https://cdn.shopify.com/s/files/1/0947/0174/8548/files/Namnlosdesign-2026-07-06T113034.467.png, https://cdn.shopify.com/s/files/1/0947/0174/8548/files/WhatsAppImage2026-04-13at10.08.29.jpg, https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260423_053932_274855d0-6200-477e-b94d-9253bb51021a.png, https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260423_053920_89553003-6fbe-4990-ac4a-75b8cfe135b2.png, https://cdn.shopify.com/s/files/1/0947/0174/8548/files/hf_20260423_062233_5b01b9d2-7444-4824-b577-a781dd3f0193.png
@@ -51,31 +51,50 @@ Swedish is what runs in the ad. The right column is meaning only, for the editor
 
 | # | Time | Script line (Swedish) | Audio | On-screen text | Picture | Effect + length | Source | Reference | Latitude |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 | 0:00–0:03 (H1) | «SV H1» | VO | «SV H1» | Macro of a phone showing Rickard B.'s four-star review, thumb pausing on the line. **First frame:** the review on the phone. | zoom-in 1 s | NEW FOOTAGE: screen recording of Rickard B.'s review on the product page | — | none |
-| 2 | 0:00–0:03 (H2) | «SV H2» | VO | «SV H2» | Macro of one thin steel bristle lying across a dark grate bar, barely visible until the light catches it. **First frame:** the bristle on the dark bar. | cut-in | DRIVE 1ZoRoDhf07RKXvKa-FMEx5zypdQwr3s90 [EDITOR PICKS: a single shed bristle on a dark grate, macro] | — | none |
-| 3 | 0:00–0:03 (H3) | «SV H3» | VO | «SV H3» | Macro of a wire brush dropped into a kitchen bin, lid closing. **First frame:** the brush going into the bin. | freeze 0.5 s then cut-in | NEW FOOTAGE: a wire brush dropped into a bin, filmed by Axel | — | none |
-| 4 | 0:03–0:09 | «SV 4» | VO | «SV 4» | Her hands setting plates; the bristle macro again; the wire brush on the grill edge. | cut-in | NEW FOOTAGE: hands setting a family table, filmed by Axel + DRIVE 1ZoRoDhf07RKXvKa-FMEx5zypdQwr3s90 [EDITOR PICKS: shed bristles on a dark grate] | — | b-roll order free |
-| 5 | 0:09–0:15 | «SV 5» | VO | «SV 5» | The box opened; macro of the coarse head's locked bristles, the polish head held up to the lamp. | cut-in | NEW FOOTAGE: unboxing on a kitchen table, filmed by Axel then DRIVE 1QU-V7oD19egsbS90cKC6BCIYH84JJlih [EDITOR PICKS: coarse head close-up, polish head to the light] | — | b-roll order free |
-| 6 | 0:15–0:21 | «SV 6» | VO | «SV 6» | His hand on the button, the head spinning in a gap with steam, flakes lifting, he sits down at the table. | slow-mo 0.5× 2 s on the spinning head | DRIVE 1gLEJU2bdzXWU-w2eHoxo9XD2jImMv_Zr [EDITOR PICKS: head spinning in a gap with steam] then DRIVE 1K2B_qE8jVlKng6k1Cpcw_GRsEOXD0aXZ [EDITOR PICKS: the griller sitting down] | — | b-roll order free |
-| 7 | 0:21–0:26 | «SV 7» | VO | «SV 7» | Two review cards over the clean grate, names visible. | none | CDN https://cdn.shopify.com/s/files/1/0947/0174/8548/files/WhatsAppImage2026-04-13at10.08.29.jpg | 050 quote-card style | b-roll order free |
-| 8 | 0:26–0:31 | «SV 8» | VO | «SV 8» | End card: Mastern on the grill edge, price, the two promises, button. | none | DRIVE 1K8LjlcndXuWdWI2ic7a0A4JDJqcnLaFe [EDITOR PICKS: the end card plate] | — | none |
+| 1 | 0:00–0:03 (H1) | Rickard B.: Frun är nöjd att stålborsten försvann. | VO | Rickard B.: Frun är nöjd att stålborsten försvann. | Macro of a phone showing Rickard B.'s four-star review, thumb pausing on the line. **First frame:** the review on the phone. | zoom-in 1 s | NEW FOOTAGE: screen recording of Rickard B.'s review on the product page | — | none |
+| 2 | 0:00–0:03 (H2) | Det här hittade en kund i sin hamburgare förra sommaren. | VO | Det här hittade en kund i sin hamburgare förra sommaren. | Macro of one thin steel bristle lying across a dark grate bar, barely visible until the light catches it. **First frame:** the bristle on the dark bar. | cut-in | DRIVE 1ZoRoDhf07RKXvKa-FMEx5zypdQwr3s90 [EDITOR PICKS: a single shed bristle on a dark grate, macro] | — | none |
+| 3 | 0:00–0:03 (H3) | Den borsten återkallades i USA. Hos oss åkte den i soporna på fars dag. | VO | Den borsten återkallades i USA. Hos oss åkte den i soporna på fars dag. | Macro of a wire brush dropped into a kitchen bin, lid closing. **First frame:** the brush going into the bin. | freeze 0.5 s then cut-in | NEW FOOTAGE: a wire brush dropped into a bin, filmed by Axel | — | none |
+| 4 | 0:03–0:09 | Jag serverar familjen. Weber och Nexgrill återkallade över tretton miljoner stålborstar i USA i år. Ingen ser ett strå mot mörkt galler. | VO | Jag serverar familjen. Weber och Nexgrill återkallade över tretton miljoner stålborstar i USA i år. Ingen ser ett strå mot mörkt galler. | Her hands setting plates; the bristle macro again; the wire brush on the grill edge. | cut-in | NEW FOOTAGE: hands setting a family table, filmed by Axel + DRIVE 1ZoRoDhf07RKXvKa-FMEx5zypdQwr3s90 [EDITOR PICKS: shed bristles on a dark grate] | — | b-roll order free |
+| 5 | 0:09–0:15 | Så i år: Mastern. Grovhuvudet låser metallen, polerhuvudet har ingen metall. Ingenting lossnar, ingenting hamnar i maten. | VO | Så i år: Mastern. Grovhuvudet låser metallen, polerhuvudet har ingen metall. Ingenting lossnar, ingenting hamnar i maten. | The box opened; macro of the coarse head's locked bristles, the polish head held up to the lamp. | cut-in | NEW FOOTAGE: unboxing on a kitchen table, filmed by Axel then DRIVE 1QU-V7oD19egsbS90cKC6BCIYH84JJlih [EDITOR PICKS: coarse head close-up, polish head to the light] | — | b-roll order free |
+| 6 | 0:15–0:21 | Det han bryr sig om: en knapp, huvudet i springorna, varmt och sextio sekunder. Sedan sätter han sig med oss. | VO | Det han bryr sig om: en knapp, huvudet i springorna, varmt och sextio sekunder. Sedan sätter han sig med oss. | His hand on the button, the head spinning in a gap with steam, flakes lifting, he sits down at the table. | slow-mo 0.5× 2 s on the spinning head | DRIVE 1gLEJU2bdzXWU-w2eHoxo9XD2jImMv_Zr [EDITOR PICKS: head spinning in a gap with steam] then DRIVE 1K2B_qE8jVlKng6k1Cpcw_GRsEOXD0aXZ [EDITOR PICKS: the griller sitting down] | — | b-roll order free |
+| 7 | 0:21–0:26 | Mikael T.: Hittade ett borststrå i hamburgaren förra sommaren. Stefan M.: Läste om Weber-återkallelsen i februari och slängde den gamla borsten. | VO | Mikael T.: Hittade ett borststrå i hamburgaren förra sommaren. Stefan M.: Läste om Weber-återkallelsen i februari och slängde den gamla borsten. | Two review cards over the clean grate, names visible. | none | CDN https://cdn.shopify.com/s/files/1/0947/0174/8548/files/WhatsAppImage2026-04-13at10.08.29.jpg | 050 quote-card style | b-roll order free |
+| 8 | 0:26–0:31 | Svenskt företag, 999 kr, trettio dagars öppet köp, livstidsgaranti. Presenten kan inte bli fel. | VO | Svenskt företag, 999 kr, trettio dagars öppet köp, livstidsgaranti. Presenten kan inte bli fel. | End card: Mastern on the grill edge, price, the two promises, button. | none | DRIVE 1K8LjlcndXuWdWI2ic7a0A4JDJqcnLaFe [EDITOR PICKS: the end card plate] | — | none |
 
 ## 6. What the giver says when the box opens
-«SV giver line — one spoken sentence the giver can say at the table; it is the last caption before the end card» — «EN meaning». 
+Nu slipper jag oroa mig för borsten. — Now I don't have to worry about the brush anymore. 
 
 ## 7. COPY CARD (goes in Ads Manager, not in the creative)
 **Primary text:**
-> «SV primary text — four to six short lines, each its own line; opens with the giver's scene, then what he stops doing, then the lock: 999 kr, 30 dagars öppet köp, livstidsgaranti, fri frakt inom Sverige»
+> Jag serverar familjen också, och jag har läst om återkallelserna.
+> Med Mastern låser grovhuvudet metallen, polerhuvudet har ingen metall alls.
+> Ingenting lossnar, ingenting hamnar i maten.
+> 999 kr. Trettio dagars öppet köp.
+> Livstidsgaranti och fri frakt inom Sverige.
 
-**Headline:** `«SV headline, max 40 characters, carries Mastern or the price»`
-**Description:** `«SV description, max 60 characters: two facts + 30 dagars öppet köp»`
+**Headline:** `Mastern. Ingenting lossnar i maten.`
+**Description:** `999 kr · Livstidsgaranti · Trettio dagars öppet köp.`
 **CTA button:** `Handla nu` (Shop Now)
 **Destination:** https://grillkliniken.se/pages/landing-page-blank-jul-3-09-12-32
 
 ## 8. Three-question test (docs/copy-regler.md) — every delivered line
 | Line | Visualise? | Falsifiable? | Only we can say it? |
 |---|---|---|---|
-«ONE ROW PER DELIVERED SWEDISH LINE — every hook, every script line, the giver's line, the headline, the description and each primary-text line. Every cell must be ✅ with a five-to-fifteen-word reason. A line that earns a ❌ anywhere is rewritten until it passes or dropped; it never stays in the brief with a ❌. Rows are plain table rows: | line | ✅ reason | ✅ reason | ✅ reason |»
+| Rickard B.: Frun är nöjd att stålborsten försvann. | ✅ his review, the wire brush gone from the kitchen | ✅ a named customer's own household claim, checkable | ✅ a real, named review only this account can quote |
+| Det här hittade en kund i sin hamburgare förra sommaren. | ✅ a single steel bristle on a dark grate | ✅ a specific, sourced customer incident, checkable | ✅ a real customer's own bristle-in-food story, not a generic warning |
+| Den borsten återkallades i USA. Hos oss åkte den i soporna på fars dag. | ✅ the wire brush dropped into a bin | ✅ a dated recall claim and a specific household action, checkable | ✅ names the USA recall and this household's own Father's Day |
+| Jag serverar familjen. Weber och Nexgrill återkallade över tretton miljoner stålborstar i USA i år. Ingen ser ett strå mot mörkt galler. | ✅ her setting the table, a bristle on a dark grate | ✅ a named, dated recall figure and a visibility claim, checkable | ✅ Weber and Nexgrill's own recall, not a generic scare |
+| Så i år: Mastern. Grovhuvudet låser metallen, polerhuvudet har ingen metall. Ingenting lossnar, ingenting hamnar i maten. | ✅ the coarse head, the polish head held to the light | ✅ two named heads and a shedding claim, checkable | ✅ grovhuvud and polerhuvud are Mastern's own named parts |
+| Det han bryr sig om: en knapp, huvudet i springorna, varmt och sextio sekunder. Sedan sätter han sig med oss. | ✅ his hand on the button, the head spinning with steam | ✅ an exact time and a specific location, checkable | ✅ sextio sekunder and springorna are Mastern's own spec |
+| Mikael T.: Hittade ett borststrå i hamburgaren förra sommaren. Stefan M.: Läste om Weber-återkallelsen i februari och slängde den gamla borsten. | ✅ two review cards over a clean grate, names visible | ✅ two named customers' own dated stories, checkable | ✅ real, named reviews only this account can quote |
+| Svenskt företag, 999 kr, trettio dagars öppet köp, livstidsgaranti. Presenten kan inte bli fel. | ✅ the end card with price and the two promises | ✅ a fixed price and a written guarantee, checkable | ✅ 999 kr and Mastern's own guarantee wording |
+| Nu slipper jag oroa mig för borsten. | ✅ her handing over the box at the table | ✅ a specific claim about what worry ends, checkable against the gift | ✅ ties the relief to this exact worry about this exact brush |
+| Mastern. Ingenting lossnar i maten. | ✅ the product name on the end card | ✅ a shedding claim, testable at the next meal | ✅ names Mastern as the specific fix for what a wire brush sheds |
+| 999 kr · Livstidsgaranti · Trettio dagars öppet köp. | ✅ price and guarantee on the end card | ✅ three fixed, checkable terms | ✅ Mastern's exact price and guarantee wording |
+| Jag serverar familjen också, och jag har läst om återkallelserna. | ✅ her at the table, aware of the recall news | ✅ a knowledge claim, either true or false | ✅ ties the recall knowledge to this specific server of the meal |
+| Med Mastern låser grovhuvudet metallen, polerhuvudet har ingen metall alls. | ✅ the coarse head's locked bristles, the polish head | ✅ a checkable claim about two named heads | ✅ grovhuvud and polerhuvud are Mastern's own named build |
+| Ingenting lossnar, ingenting hamnar i maten. | ✅ clean bars, no bristle in sight | ✅ a shedding claim, testable against the old brush | ✅ names the exact failure mode Mastern removes |
+| 999 kr. Trettio dagars öppet köp. | ✅ the price line on the end card | ✅ a fixed price and a fixed return window | ✅ Mastern's own price and return terms |
+| Livstidsgaranti och fri frakt inom Sverige. | ✅ the guarantee line on the end card | ✅ a written guarantee and a shipping promise | ✅ Mastern's own lifetime guarantee wording |
 
 ## 9. Rules
 - **Price exactly 999 kr** (ord. 1 600 kr) — on the end card and in the copy. Never a percentage (not "35 %", not "40 %"), never a countdown, never a second price. Verified live 2026-09-25 on grillkliniken.se/products/elektrisk-grillborste (999 / 1 600). Numbers other than the price are written in words in Swedish (femton tusen, trettio dagar, sextio sekunder).
