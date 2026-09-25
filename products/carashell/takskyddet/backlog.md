@@ -50,3 +50,17 @@ Plockas ett item: märk raden `[använd i batch #N]` i stället för att radera 
 som video och aldrig blev gjorda — **#4 "En person, en minut"** och **#5
 "Husbilen, inte husvagnen"** — är omgjorda till bild i batch #3 (`PD_7_1` och
 `SP_7_1`) och ligger nu live-kön, inte här.
+
+## Tillbehör: takdistanser (Axels idé 2026-09-25, ur kommentarerna)
+
+Kommentarsfältet är fullt av "kondens/mögel/ventilationen täpps till". Svar:
+sälj takdistanser som håller överdraget uppe från takluckorna.
+
+- **Förlaga:** Hindermann gavelprofiler / "Takdistans till överdrag" — V-formad
+  profil i PE-skum, 210 cm lång, 21–26 cm hög, 4 fötter, 2 st per meter tak.
+  Säljs i Sverige för 1 209 kr/2-pack (campingvaruhuset.se), 107 €/2-pack
+  (getcamping.eu). Källa: produktsidorna, lästa 2026-09-25.
+- **Syskon:** "Distanser för husvagnsöverdrag" 4-pack, 289 kr — håller banden
+  från sidorna, skyddar lacken. Svarar på invändningen "banden skaver".
+- **Status:** Axel ber leverantören om offert. Ingen påhittad fakta om att
+  produkten "andas" — distansen ger luftspalt, det är allt som får sägas.
