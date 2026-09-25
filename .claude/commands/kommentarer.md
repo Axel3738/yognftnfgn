@@ -191,7 +191,14 @@ fakta ur Axels text förs in i `produktfakta.md`, ny stilregel i
 `svarsregler.md`. Skriv i svaret till Axel hur många som väntar på honom.
 
 Rutinen svarar aldrig själv — ingenting publiceras på Facebook eller
-Instagram förrän Axel uttryckligen säger till.
+Instagram förrän Axel uttryckligen säger till. När han gör det: bygg listan
+`[{id, svar}]` ur granskningssidan (bara `beslut: ja` på AKTUELL version,
+aldrig "(Inget svar …)"), kör `node kommentarer/publicera.mjs --svar <fil>`
+torrt, sedan `--skarpt`. Skriptet svarar som sidan, hoppar allt som redan står
+i `kommentarer/svar-publicerade.jsonl` eller där sidan redan svarat, och
+committa loggen efteråt. Mätt 2026-09-25: 41 svar postade på Facebook;
+Instagram nekades `(#100) Missing Permission` — token:en saknar
+`instagram_manage_comments`, så IG-svar klistras in för hand tills den finns.
 
 ### 3. Rapportera
 
