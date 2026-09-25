@@ -31,12 +31,15 @@ export async function hamtaMetriker(klient) {
 /**
  * Provar namnen i ordning. Första namnet med EXAKT en träff vinner.
  * Kastar vid flera träffar på ett namn (vet inte vilken) och när inget namn träffar.
+ * `valda` ({ "Viewed Product": "V6gSUn" }, brandets `metrik_val`) avgör en dubblett —
+ * bara om id:t faktiskt finns bland träffarna, annars kastar den som förut.
  */
-export function metrikId(metriker, namnLista) {
+export function metrikId(metriker, namnLista, valda = {}) {
   const namn = Array.isArray(namnLista) ? namnLista : [namnLista];
   for (const n of namn) {
     const traffar = metriker.filter((m) => m.namn === n);
     if (traffar.length === 1) return traffar[0].id;
+    if (traffar.length > 1 && valda?.[n] && traffar.some((t) => t.id === valda[n])) return valda[n];
     if (traffar.length > 1) {
       const e = new Error(`Metriken "${n}" finns ${traffar.length} gånger i kontot (${traffar.map((t) => `${t.id}${t.integration ? ' från ' + t.integration : ''}`).join(', ')}). Motorn väljer inte själv — säg vilken som gäller.`);
       e.kod = 'METRIK_FLERA';
@@ -52,12 +55,12 @@ export function metrikId(metriker, namnLista) {
  * Alla kända metriker på en gång: { ids: { nyckel: id }, saknas: [{ nyckel, orsak }] }.
  * Kastar inte — den som behöver en saknad metrik stoppar själv med orsaken.
  */
-export function metrikIds(metriker) {
+export function metrikIds(metriker, valda = {}) {
   const ids = {};
   const saknas = [];
   const tvetydiga = [];
   for (const [nyckel, namn] of Object.entries(KANDA_METRIKER)) {
-    try { ids[nyckel] = metrikId(metriker, namn); } catch (e) { saknas.push({ nyckel, namn, orsak: e.message, kod: e.kod }); }
+    try { ids[nyckel] = metrikId(metriker, namn, valda); } catch (e) { saknas.push({ nyckel, namn, orsak: e.message, kod: e.kod }); }
     // Båda kassanamnen i kontot (gammal och ny Shopify-integration): första namnet
     // väljs, men det kan vara den döda metriken — ett flöde på den triggar aldrig.
     const finns = namn.filter((n) => metriker.some((m) => m.namn === n));

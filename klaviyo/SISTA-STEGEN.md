@@ -100,3 +100,16 @@ MX, SPF, A och www rörs inte. TXT-posten på @ läggs bredvid SPF-posten och er
 A) Be Loopias support lägga in de fyra NS-posterna för `send` + TXT @ (de kan göra det som editorn inte kan).
 B) Låt Cowork byta routing i Klaviyo från Dynamic till Static och se om Klaviyo då ger CNAME-poster, som Loopias editor klarar.
 Tills domänen är verifierad skickar Klaviyo från sin delade domän. Det fungerar, men sämre leveransbarhet; inga utskick innan den är klar.
+
+## Läget 2026-09-25 förmiddag: det som återstår är Axels
+
+Allt som går att göra utan Axel är gjort. I Klaviyo ligger 14 kampanjer (Draft), 7 flöden (draft) och 14 segment.
+Flödena är F01 XY5QXa, F02 XgrxZ9, F03 XMi5Wa, F04 TyH2jg, F05 VgvDum, F06 TTsxRQ och F07 QXZzvn.
+De gamla köparflödena YgzScd, XyVzec och WLDZUM får aldrig slås på.
+
+Kvar, i ordning:
+1. **Postadress + avsändare sparade** (Settings → Account → Contact information, land Sweden, Save). Kontroll: rendera en mall (`POST /api/template-render`) och läs sidfoten. API:t `contact_information` var tomt även när fälten syntes ifyllda.
+2. **Sändardomänen:** Loopia lägger in NS för `send` (Axel har begärt det). TXT @ och DMARC finns (mätt i DNS). Därefter Klaviyo → Settings → Domains → Verify.
+3. **Betald plan** (Axel valde en 2026-09-25). Mät `SEG_samtycke` igen när Shopify-importen är klar.
+4. **Axels ok** på att flödena slås på i ordningen F02, F04, F07, F05, F06, F01, F03. Samma dag som F02 går live stängs Shopifys egen notis om övergiven kassa av.
+5. **Axels ok** på K01 för schemaläggning. B- och C-ämnesraderna läggs in som A/B-test för hand.

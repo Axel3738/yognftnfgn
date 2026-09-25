@@ -98,3 +98,11 @@ test('kundundantaget: alla som kan ta emot reklam, aldrig de avregistrerade, och
   assert.equal(kundundantagVillkor().consent.consent_status.subscription, 'any');
   assert.equal(harSamtycke({ condition_groups: [{ conditions: [kundundantagVillkor()] }] }), false);
 });
+
+test('metrikId: brandets metrik_val avgör en dubblett, men bara med ett id som finns', async () => {
+  const { metrikId } = await import('../metriker.mjs');
+  const m = [{ id: 'V6gSUn', namn: 'Viewed Product', integration: 'API' }, { id: 'WXk2Lf', namn: 'Viewed Product', integration: 'Shopify' }];
+  assert.throws(() => metrikId(m, ['Viewed Product']), (e) => e.kod === 'METRIK_FLERA');
+  assert.equal(metrikId(m, ['Viewed Product'], { 'Viewed Product': 'V6gSUn' }), 'V6gSUn');
+  assert.throws(() => metrikId(m, ['Viewed Product'], { 'Viewed Product': 'FINNSEJ' }), (e) => e.kod === 'METRIK_FLERA');
+});
