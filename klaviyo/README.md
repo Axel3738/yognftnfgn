@@ -16,10 +16,10 @@ Id:n står i `konto/baverbutiken/uppladdat.jsonl`.
 | Del | Status |
 |---|---|
 | Kampanjer K01–K14 (29 sep–1 dec) | ✅ Draft i Klaviyo. Ämnesrad B och C ska läggas in som A/B-test för hand. |
-| Flöden | ✅ F01 Välkomst (XY5QXa), F02 Övergiven kassa (XgrxZ9), F06 sunset (TTsxRQ): draft, bara de som sagt ja. **Köparflödena med kundundantaget (beslut B 2026-09-25, alla köpare som inte tackat nej):** F04 efter köp `FLOW_order_efterkop_v3` (TyH2jg), F05 vinback `_v3` (VgvDum), F07 motorhölje → båtmotorskydd `_v2` (QXZzvn): draft. De gamla versionerna (YgzScd, XyVzec, WLDZUM, bara samtycke) ligger kvar som utkast och ska aldrig slås på. ❌ **F03 Webbhistorik inte uppladdat**: `Viewed Product` finns två gånger i kontot (Klaviyos onsite + Shopify), båda med 0 händelser; motorn väljer inte själv. |
+| Flöden | ✅ F01 Välkomst (XY5QXa), F02 Övergiven kassa (XgrxZ9), F06 sunset (TTsxRQ): draft, bara de som sagt ja. **Köparflödena med kundundantaget (beslut B 2026-09-25, alla köpare som inte tackat nej):** F04 efter köp `FLOW_order_efterkop_v3` (TyH2jg), F05 vinback `_v3` (VgvDum), F07 motorhölje → båtmotorskydd `_v2` (QXZzvn): draft. De gamla versionerna (YgzScd, XyVzec, WLDZUM, bara samtycke) ligger kvar som utkast och ska aldrig slås på. ✅ **F03 Webbhistorik (XMi5Wa) uppladdad 2026-09-25 som draft**, bara samtycke: `Viewed Product` finns två gånger i kontot, och brandets `metrik_val` väljer `V6gSUn` (butikens spårningskod, händelser från samma morgon; Shopifys `WXk2Lf` hade 0). |
 | Segment | ✅ 14 st. `SEG_samtycke` 1 552 profiler, `SEG_uppvarmning_steg1` 216 (mätt 2026-09-25, synken pågår troligen, se EPOST-STRATEGI §4). |
 | Motorn | ✅ Körd mot riktiga kontot. Tre gissningar rättade: `Items` (inte `ItemNames`) på Placed Order, `Name` (inte `ProductName`) på Ordered Product, väntan när Klaviyo bearbetar 5 segment. 96 tester gröna. Se ARKITEKTUR → "mätt 2026-09-25". |
-| Kontot | ⚠️ Saknar postadress (sidfoten blir utan adress, MFL 20 §) och standardavsändare. Settings → Brand. |
+| Kontot | ⚠️ Postadress och avsändaradress är inte sparade (mätt 2026-09-25 09:10: API:t ger tomt och land United States, och ett renderat mejl slutar med ett tomt komma där adressen ska stå). Settings → **Account** → Contact information: land Sweden, Save. Inget får skickas förrän ett renderat mejl visar adressen. |
 | Innehåll | 14 kampanjer och 7 flöden. Copyn skrevs av Sonnet enligt `docs/copy-regler.md`. |
 | Strategi | `docs/os/EPOST-STRATEGI.md` |
 | VA-SOP:er | `klaviyo/sop/` (engelska, E00–E07) |

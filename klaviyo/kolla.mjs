@@ -80,7 +80,7 @@ export async function kolla({ brand, klient, prov = false, nu = () => new Date()
 
   // Metriker
   const metriker = await hamtaMetriker(klient);
-  const { ids, saknas, tvetydiga } = metrikIds(metriker);
+  const { ids, saknas, tvetydiga } = metrikIds(metriker, brand.metrik_val);
   varningar.push(...tvetydiga);
   lage.metriker = { alla: metriker, kanda: ids, saknas };
   const shopifySaknas = saknas.filter((s) => SHOPIFY_METRIKER.includes(s.nyckel));

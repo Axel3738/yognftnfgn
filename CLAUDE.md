@@ -855,14 +855,14 @@ det som återstår står i `klaviyo/SISTA-STEGEN.md`.
 - ⚠️ Klaviyos avsändare stod 2026-09-24 på `kundsupport@baverkoppling.se`, en domän utan MX,
   och `baverbutiken.se` saknade DMARC. Cowork-prompten i SISTA-STEGEN rättar båda.
 - ✅ **Uppladdat 2026-09-25 som utkast** (mätt med tillbakaläsning): 14 kampanjer Draft utan
-  schema, 6 flöden draft (14 flödesmejl draft), 30 mallar, 14 segment. **F03 Webbhistorik saknas
-  med flit:** `Viewed Product` finns två gånger i kontot (`V6gSUn` onsite, `WXk2Lf` Shopify, båda
-  0 händelser) och motorn väljer inte. `SEG_samtycke` 1 552 profiler och `SEG_uppvarmning_steg1`
+  schema, 6 flöden draft (14 flödesmejl draft), 30 mallar, 14 segment. **F03 Webbhistorik** (XMi5Wa, draft) laddades upp
+  samma dag på `V6gSUn`: `Viewed Product` finns två gånger i kontot, och bara butikens spårningskod
+  (`V6gSUn`) fick händelser. Shopifys `WXk2Lf` hade 0. Valet står i brandets `metrik_val`. `SEG_samtycke` 1 552 profiler och `SEG_uppvarmning_steg1`
   216 vid mätningen, kontot skapat samma morgon — mät om före K01. Tre gissningar rättade mot
   kontot: Placed Order-fältet heter `Items` (inte `ItemNames`, F07 hade aldrig triggat), Ordered
   Product-fältet `Name`, och Klaviyo tar max 5 segment i bearbetning åt gången. Flödesmallar
   **kopieras** in i flödet, så en ändrad mall slår inte igenom i ett befintligt flöde. Kontot saknar
-  postadress (Settings → Brand) — inget får skickas förrän den finns.
+  postadress (Settings → **Account** → Contact information; mätt med ett renderat mejl, inte bara API:t) — inget får skickas förrän den finns.
 - ⛔ **OpenSend (anonyma mejl) får inte användas i Sverige**: att mejla reklam utan samtycke
   bryter mot MFL 19 §. Axels beslut 2026-09-24: ingen popup än.
 

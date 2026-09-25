@@ -335,7 +335,7 @@ export async function laddaUpp({ brand, manifest, klient = null, skarpt = false,
     const konto = await kontrolleraKonto(klient, brand); // kastar FEL_KONTO → inget skrivs
     r.konto = { id: konto.id, public_api_key: konto.attributes?.public_api_key };
     metriker = await hamtaMetriker(klient);
-    const u = metrikIdsUr(metriker);
+    const u = metrikIdsUr(metriker, brand.metrik_val);
     ids = u.ids;
     for (const s of u.saknas) r.varningar.push(`Metrik ${s.nyckel}: ${s.orsak}`);
     for (const t of u.tvetydiga ?? []) r.varningar.push(t);
@@ -552,7 +552,7 @@ export async function laddaUpp({ brand, manifest, klient = null, skarpt = false,
         if (t.produkt_innehaller && t.typ !== 'metrik') throw Object.assign(new Error('produkt_innehaller går bara på en metrik-trigger'), { kod: 'TRIGGER_OKAND' });
         if (t.typ === 'metrik') {
           const namn = Array.isArray(t.metrik) ? t.metrik : [t.metrik];
-          trigger = { type: 'metric', id: metriker ? metrikId(metriker, namn) : `<metrik:${namn[0]}>` };
+          trigger = { type: 'metric', id: metriker ? metrikId(metriker, namn, brand.metrik_val) : `<metrik:${namn[0]}>` };
           if (t.produkt_innehaller) {
             const pf = produktTriggerFilter({ metricId: trigger.id, ord: t.produkt_innehaller, produkter });
             trigger.trigger_filter = pf.trigger_filter;
