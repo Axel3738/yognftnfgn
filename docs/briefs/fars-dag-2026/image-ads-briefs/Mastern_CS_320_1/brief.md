@@ -14,7 +14,7 @@ Left half: a clean grate bar in macro. Right half: a rusted, flaking bar. Headli
 
 ## 2. Hypothesis
 The investment angle converts as a static at 128's level, and the giver frame ("you decide what he gets") turns it into a gift ad without a scene.
-**Headline:** «SV headline»
+**Headline:** Femton år. Eller sju.
 
 ## 3. Format
 | | |
@@ -27,11 +27,11 @@ The investment angle converts as a static at 128's level, and the giver frame ("
 ## 4. Exact text (Swedish word for word, do not re-translate)
 | Element | Swedish (use this) | English meaning |
 |---|---|---|
-| Headline left half | «SV HL» | «EN HL» — INTENT: Fifteen years. — over the clean bar |
-| Headline right half | «SV HR» | «EN HR» — INTENT: Or seven. — over the rusted bar |
-| Sub-line | «SV S» | «EN S» — INTENT: Grease left in the gaps is corrosive. This year you decide what he gets. — two short sentences |
-| Price line | «SV P» | «EN P» — INTENT: 999 kr — cheaper than one new grate (in words, no amount) |
-| Footer | «SV F» | «EN F» — INTENT: 30 dagars öppet köp · livstidsgaranti · fri frakt inom Sverige |
+| Headline left half | Femton år. | Fifteen years. |
+| Headline right half | Eller sju. | Or seven. |
+| Sub-line | Fettet som blir kvar i springorna är frätande. I år bestämmer du vad han får. | The grease left in the gaps is corrosive. This year you decide what he gets. |
+| Price line | 999 kr. Billigare än ett nytt galler. | 999 kr. Cheaper than one new grate. |
+| Footer | Trettio dagars öppet köp · Livstidsgaranti · Fri frakt inom Sverige | Thirty days open purchase · Lifetime warranty · Free shipping within Sweden |
 
 ## 5. Design brief
 - The two bars must read as the same bar six years apart — same framing, same light.
@@ -42,17 +42,30 @@ The investment angle converts as a static at 128's level, and the giver frame ("
 
 ## 7. COPY CARD (goes in Ads Manager, not in the creative)
 **Primary text:**
-> «SV primary text — four to six short lines, each its own line; opens with the giver's scene, then what he stops doing, then the lock: 999 kr, 30 dagars öppet köp, livstidsgaranti, fri frakt inom Sverige»
+> En grill ska kunna hålla i femton år. Med fett kvar i springorna håller den kanske sju.
+> Ge honom femton år i stället för sju.
+> Mastern snurrar ner i springorna och rensar dem på sextio sekunder, medan gallret fortfarande är varmt.
+> 999 kr. Billigare än ett nytt galler. Trettio dagars öppet köp. Livstidsgaranti, går den sönder får han en ny. Fri frakt inom Sverige.
 
-**Headline:** `«SV headline, max 40 characters, carries Mastern or the price»`
-**Description:** `«SV description, max 60 characters: two facts + 30 dagars öppet köp»`
+**Headline:** `Mastern. Femton år i stället för sju.`
+**Description:** `Femton år eller sju, du väljer. Trettio dagars öppet köp.`
 **CTA button:** `Handla nu` (Shop Now)
 **Destination:** https://grillkliniken.se/products/elektrisk-grillborste
 
 ## 8. Three-question test (docs/copy-regler.md) — every delivered line
 | Line | Visualise? | Falsifiable? | Only we can say it? |
 |---|---|---|---|
-«ONE ROW PER DELIVERED SWEDISH LINE — every hook, every script line, the giver's line, the headline, the description and each primary-text line. Every cell must be ✅ with a five-to-fifteen-word reason. A line that earns a ❌ anywhere is rewritten until it passes or dropped; it never stays in the brief with a ❌. Rows are plain table rows: | line | ✅ reason | ✅ reason | ✅ reason |»
+| Femton år. | ✅ det blanka gallret till vänster, ett tal man ser | ✅ knuten till det blanka gallret precis intill | ✅ halva Masterns egen, bevisade rad "femton år eller sju" |
+| Eller sju. | ✅ det rostiga, spjälkade gallret till höger | ✅ knuten till det rostiga gallret precis intill | ✅ fullbordar Masterns egen, bevisade rad "femton år eller sju" |
+| Fettet som blir kvar i springorna är frätande. I år bestämmer du vad han får. | ✅ fett som ligger kvar i springorna och äter sig in i metallen | ✅ ett mekaniskt påstående plus ett kontrollerbart val | ✅ springorna är Masterns eget, ingen stålborste når dit |
+| 999 kr. Billigare än ett nytt galler. | ✅ en prislapp bredvid ett helt nytt galler | ✅ det exakta priset, kontrollerbart mot ett nytt galler | ✅ 999 kr är Masterns exakta, verifierade pris |
+| Trettio dagars öppet köp · Livstidsgaranti · Fri frakt inom Sverige | ✅ ett paket, en ny borste, en leverans går att se | ✅ butikens egna, kontrollerbara villkor | ✅ den exakta livstidsgaranti-formuleringen är Masterns egen |
+| En grill ska kunna hålla i femton år. Med fett kvar i springorna håller den kanske sju. | ✅ samma femton mot sju år som splitbilden visar | ✅ ett kontrollerbart påstående om år som går förlorade i springorna | ✅ springorna plus "femton år eller sju", Masterns egen rad |
+| Ge honom femton år i stället för sju. | ✅ givaren som väljer det blanka gallrets femton år | ✅ ett löfte kopplat till splitbilden ovanför | ✅ återanvänder "femton år eller sju", Masterns egen rad |
+| Mastern snurrar ner i springorna och rensar dem på sextio sekunder, medan gallret fortfarande är varmt. | ✅ huvudet som snurrar ner i springorna medan gallret ångar | ✅ en tidsatt, testbar mekanisk process | ✅ Masterns egen sextio-sekundersmetod i springorna |
+| 999 kr. Billigare än ett nytt galler. Trettio dagars öppet köp. Livstidsgaranti, går den sönder får han en ny. Fri frakt inom Sverige. | ✅ pris, ett helt galler och en ny borste går att se | ✅ butikens egna, kontrollerbara pris och villkor | ✅ 999 kr och Masterns exakta livstidsgaranti-formulering |
+| Mastern. Femton år i stället för sju. | ✅ Mastern ställt mot det blanka gallrets femton år | ✅ samma kontrollerbara splitpåstående som bilden | ✅ nämner Mastern plus "femton år eller sju" |
+| Femton år eller sju, du väljer. Trettio dagars öppet köp. | ✅ samma split som redan syns i bilden | ✅ samma kontrollerbara påstående plus ett fast returfönster | ✅ "femton år eller sju" plus Masterns egna returvillkor |
 
 ## 9. Rules
 - **Price exactly 999 kr** (ord. 1 600 kr) — on the end card and in the copy. Never a percentage (not "35 %", not "40 %"), never a countdown, never a second price. Verified live 2026-09-25 on grillkliniken.se/products/elektrisk-grillborste (999 / 1 600). Numbers other than the price are written in words in Swedish (femton tusen, trettio dagar, sextio sekunder).

@@ -14,7 +14,7 @@ Quote card: the review large, the name, five stars. Two Mastern boxes in the cor
 
 ## 2. Hypothesis
 A giver's review converts gift buyers better than a user's review, because it answers "will it be appreciated" instead of "does it work".
-**Headline:** «SV headline»
+**Headline:** Svärfar och storebror. Samma present.
 
 ## 3. Format
 | | |
@@ -27,10 +27,10 @@ A giver's review converts gift buyers better than a user's review, because it an
 ## 4. Exact text (Swedish word for word, do not re-translate)
 | Element | Swedish (use this) | English meaning |
 |---|---|---|
-| Quote (verbatim) | «SV Q» | «EN Q» — INTENT: Köpte en till storebror och en till svärfar inför Fars dag. Alla nöjda. — exactly as on the product page, with the name "Johan E." and five stars |
-| On-image headline | «SV H» | «EN H» — INTENT: Two dads in the family. One gift. — or a variant that keeps "svärfar" |
-| Price line | «SV P» | «EN P» — INTENT: 999 kr |
-| Footer | «SV F» | «EN F» — INTENT: 30 dagars öppet köp · livstidsgaranti · fri frakt inom Sverige |
+| Quote (verbatim) | Köpte en till storebror och en till svärfar inför Fars dag. Alla nöjda. | Bought one for my big brother and one for my father-in-law ahead of Father's Day. Everyone happy. |
+| On-image headline | Svärfar och storebror. Samma present. | Father-in-law and big brother. The same gift. |
+| Price line | 999 kr | 999 kr |
+| Footer | Trettio dagars öppet köp · Livstidsgaranti · Fri frakt inom Sverige | Thirty days open purchase · Lifetime warranty · Free shipping within Sweden |
 
 ## 5. Design brief
 - Typography-led like 316; the two boxes are the only image.
@@ -40,17 +40,29 @@ A giver's review converts gift buyers better than a user's review, because it an
 
 ## 7. COPY CARD (goes in Ads Manager, not in the creative)
 **Primary text:**
-> «SV primary text — four to six short lines, each its own line; opens with the giver's scene, then what he stops doing, then the lock: 999 kr, 30 dagars öppet köp, livstidsgaranti, fri frakt inom Sverige»
+> Johan E. skrev: "Köpte en till storebror och en till svärfar inför Fars dag. Alla nöjda."
+> Ge samma Mastern till båda papporna i familjen.
+> Mastern rensar springorna på sextio sekunder, medan gallret fortfarande är varmt.
+> 999 kr. Trettio dagars öppet köp. Livstidsgaranti, går den sönder får han en ny. Fri frakt inom Sverige.
 
-**Headline:** `«SV headline, max 40 characters, carries Mastern or the price»`
-**Description:** `«SV description, max 60 characters: two facts + 30 dagars öppet köp»`
+**Headline:** `Mastern till svärfar och storebror.`
+**Description:** `Två huvuden, ner i springorna. Trettio dagars öppet köp.`
 **CTA button:** `Handla nu` (Shop Now)
 **Destination:** https://grillkliniken.se/pages/landing-page-blank-jul-3-09-12-32
 
 ## 8. Three-question test (docs/copy-regler.md) — every delivered line
 | Line | Visualise? | Falsifiable? | Only we can say it? |
 |---|---|---|---|
-«ONE ROW PER DELIVERED SWEDISH LINE — every hook, every script line, the giver's line, the headline, the description and each primary-text line. Every cell must be ✅ with a five-to-fifteen-word reason. A line that earns a ❌ anywhere is rewritten until it passes or dropped; it never stays in the brief with a ❌. Rows are plain table rows: | line | ✅ reason | ✅ reason | ✅ reason |»
+| Svärfar och storebror. Samma present. | ✅ två namngivna släktingar, en inslagen låda, lätt att se framför sig | ✅ speglar Johan E:s riktiga köp, citerat direkt under | ✅ svärfar och storebror är Johans egna, verifierade ord |
+| Köpte en till storebror och en till svärfar inför Fars dag. Alla nöjda. | ✅ två mottagare och ett köp inför en högtid, en tydlig bild | ✅ en riktig recension, går att slå upp ordagrant | ✅ en namngiven, riktig recension ingen konkurrent kan låna |
+| 999 kr | ✅ ett pris man ser direkt på bilden | ✅ det exakta, verifierade priset | ✅ 999 kr är Masterns exakta pris |
+| Trettio dagars öppet köp · Livstidsgaranti · Fri frakt inom Sverige | ✅ ett paket, en ny borste, en leverans går att se | ✅ butikens egna, kontrollerbara villkor | ✅ den exakta livstidsgaranti-formuleringen är Masterns egen |
+| Johan E. skrev: "Köpte en till storebror och en till svärfar inför Fars dag. Alla nöjda." | ✅ Johan som namnger två riktiga mottagare inför en högtid | ✅ en riktig, ordagrann recension, går att slå upp | ✅ en namngiven, riktig kundrecension bara Mastern äger |
+| Ge samma Mastern till båda papporna i familjen. | ✅ en och samma present given till två pappor | ✅ ett påstående kopplat direkt till Johans citat ovan | ✅ nämner Mastern vid namn mot ett verifierat citat |
+| Mastern rensar springorna på sextio sekunder, medan gallret fortfarande är varmt. | ✅ huvudet som snurrar ner i springorna medan gallret ångar | ✅ en tidsatt, testbar mekanisk process | ✅ Masterns egen sextio-sekundersmetod på ett varmt galler |
+| 999 kr. Trettio dagars öppet köp. Livstidsgaranti, går den sönder får han en ny. Fri frakt inom Sverige. | ✅ pris, en ny borste och en leverans går att se | ✅ butikens egna, kontrollerbara villkor | ✅ 999 kr är Masterns exakta, verifierade pris |
+| Mastern till svärfar och storebror. | ✅ Mastern som ges till två namngivna släktingar | ✅ speglar den riktiga recensionen i annonsen | ✅ nämner Mastern plus Johans egna, verifierade släktingar |
+| Två huvuden, ner i springorna. Trettio dagars öppet köp. | ✅ två huvuden, ett som snurrar ner i en springa | ✅ två kontrollerbara mekaniska fakta plus returfönstret | ✅ Masterns egna två huvuden och exakta returvillkor |
 
 ## 9. Rules
 - **Price exactly 999 kr** (ord. 1 600 kr) — on the end card and in the copy. Never a percentage (not "35 %", not "40 %"), never a countdown, never a second price. Verified live 2026-09-25 on grillkliniken.se/products/elektrisk-grillborste (999 / 1 600). Numbers other than the price are written in words in Swedish (femton tusen, trettio dagar, sextio sekunder).
