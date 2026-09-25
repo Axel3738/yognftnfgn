@@ -1,0 +1,20 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-25",
+  "lage": "oversatt",
+  "marknad": "NO",
+  "server": "CaraShell",
+  "gjort": [
+    "Six rows in SE-ACTIVE to be translated, and all six already carry their Norwegian ad - today's mirroring round put them live. Each one was read back from Meta as ACTIVE in an ACTIVE ad set, so nothing was translated, rendered or uploaded.",
+    "CS_109_H1, PD_110_H1, CO_105_H1, OB_103_H1, OB_104_H1 (video) and OB_105_1 (image) -> CaraShellRoof_NO_<name> in CARASHELL_NO_Takovertrekket.",
+    "All six stay in SE-ACTIVE to be translated on purpose: they move to Approved once the US round carries them too. No Notion status was touched.",
+    "The Approved queue was checked as well: 58 rows, every one of them live in Norway, nothing lagging.",
+    "The campaign is ACTIVE with 12 ad sets, the inherited link is carashell.se/nb/products/takskyddet?country=NO, and the store price reads 1 106 NOK. HeyGen credits used: 0 before -> 0 after."
+  ],
+  "varningar": [
+    "Still open with the owner since 2026-09-23, unchanged: the gift angle runs in two ad sets in the same CBO (- G and - GT). Nothing touched, no ping - the decision is already with him."
+  ],
+  "action_axel": [],
+  "nasta_korning": "2026-09-26"
+}

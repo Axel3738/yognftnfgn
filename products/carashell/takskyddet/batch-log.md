@@ -2101,3 +2101,17 @@ med tillbaka? Det är den sista biten i beviset.
 Samma två rader, samma md5, samma slutkort med `carashell.se`. Inget
 uppladdat, ingen status ändrad. Kontot 748 → 760 annonser sedan i går
 (spegling och översättning rullar).
+
+## 2026-09-25 — NO-rundan: sex rader, alla redan live
+
+6 rader i `SE-ACTIVE to be translated` (dagens spegling): `CS_109_H1`,
+`PD_110_H1`, `CO_105_H1`, `OB_103_H1`, `OB_104_H1` (video) och `OB_105_1`
+(bild). **Alla sex bär redan sin norska annons** — tillbakalästa ur Meta som
+ACTIVE i ACTIVE adset (`120249251181710172`, `120249251068280172`,
+`120249250978490172`, `120249250960120172`, `120249250842220172`,
+`120249250712380172`). Inget renderat, inget uppladdat, 0 HeyGen-krediter,
+ingen Notion-status rörd — raderna står kvar tills US-rundan bär dem.
+
+Approved-passet: **58 rader, 0 utan NO-annons.** Kampanjen ACTIVE med 12
+adsets, pris 1 106 NOK läst live. GT/G-splitten står kvar orörd; frågan ligger
+hos Axel sedan 2026-09-23.
