@@ -4,6 +4,9 @@
 //   node klaviyo/kolla.mjs --prov                        mäter dessutom det obekräftade
 //                                                        i ARKITEKTUR.md (skapar och tar
 //                                                        bort mallen TPL_prov_v1)
+//   node klaviyo/kolla.mjs --profiler                    räknar dessutom profilerna per
+//                                                        samtycke (subscribed / unsubscribed /
+//                                                        aldrig) — en sida per 100 profiler
 //
 // Skriver klaviyo/konto/<brand>/lage.json. Exit 1 = nyckeln saknas, 2 = fel konto
 // eller Klaviyo nekade, 0 = allt läst (varningar kan finnas).
@@ -46,7 +49,26 @@ function domanen(epost) {
  * Inventeringen. Kastar KlaviyoFel FEL_KONTO om kontot inte är brandets.
  * @returns {Promise<{lage: object, varningar: string[]}>}
  */
-export async function kolla({ brand, klient, prov = false, nu = () => new Date() }) {
+/** Profilerna per e-postsamtycke. Läser hela kontot sidvis (100 per sida). */
+export async function raknaProfiler(klient) {
+  const ut = { totalt: 0, subscribed: 0, unsubscribed: 0, aldrig: 0 };
+  let svar = await klient.get('/api/profiles', { 'page[size]': 100, 'additional-fields[profile]': 'subscriptions' });
+  for (let varv = 0; ; varv++) {
+    for (const p of svar?.data ?? []) {
+      ut.totalt++;
+      const c = p.attributes?.subscriptions?.email?.marketing?.consent;
+      if (c === 'SUBSCRIBED') ut.subscribed++;
+      else if (c === 'UNSUBSCRIBED') ut.unsubscribed++;
+      else ut.aldrig++;
+    }
+    const nasta = svar?.links?.next;
+    if (!nasta || varv > 5000) break;
+    svar = await klient.get(nasta);
+  }
+  return ut;
+}
+
+export async function kolla({ brand, klient, prov = false, profiler = false, nu = () => new Date() }) {
   const varningar = [];
   const konto = await kontrolleraKonto(klient, brand);
   const ci = konto.attributes?.contact_information ?? {};
@@ -89,7 +111,14 @@ export async function kolla({ brand, klient, prov = false, nu = () => new Date()
 
   // Listor, segment, flöden, mallar, kampanjer
   const listor = await klient.allaSidor('/api/lists', { 'page[size]': 10 });
-  lage.listor = listor.map((l) => ({ id: l.id, namn: l.attributes?.name, opt_in: l.attributes?.opt_in_process ?? null }));
+  lage.listor = [];
+  for (const l of listor) {
+    // profile_count går bara att be om per lista (additional-fields på listningen ger 400, mätt 2026-09-25).
+    let antal = null;
+    try { antal = (await klient.get(`/api/lists/${l.id}`, { 'additional-fields[list]': 'profile_count' })).data?.attributes?.profile_count ?? null; } catch { antal = null; }
+    lage.listor.push({ id: l.id, namn: l.attributes?.name, opt_in: l.attributes?.opt_in_process ?? null, profiler: antal });
+  }
+  if (profiler) lage.profiler = await raknaProfiler(klient);
   const segment = await klient.allaSidor('/api/segments', { 'page[size]': 10 });
   lage.segment = segment.map((s) => ({ id: s.id, namn: s.attributes?.name, aktiv: s.attributes?.is_active ?? null }));
   const floden = await klient.allaSidor('/api/flows', { 'page[size]': 50 });
@@ -171,7 +200,8 @@ export function lageText(lage, varningar) {
   rad.push(`Klaviyo ${lage.brand}: kontot ${lage.konto.public_api_key} ✅ (${lage.konto.organisation ?? 'namn saknas'}, ${lage.konto.tidszon ?? '?'}, ${lage.konto.valuta ?? '?'})`);
   rad.push(`Avsändare i kontot: ${lage.avsandare.konto_standard.email ?? '(ingen)'} · motorn använder ${lage.avsandare.brandfilen?.from_email}`);
   rad.push(`Metriker: ${lage.metriker.alla.length} st, kända ${Object.keys(lage.metriker.kanda).length} av ${Object.keys(KANDA_METRIKER).length}${lage.metriker.saknas.length ? ` (saknas: ${lage.metriker.saknas.map((s) => s.nyckel).join(', ')})` : ''}`);
-  rad.push(`Listor (${lage.listor.length}): ${lage.listor.map((l) => l.namn).join(', ') || '—'}`);
+  rad.push(`Listor (${lage.listor.length}): ${lage.listor.map((l) => `${l.namn}${l.profiler !== null && l.profiler !== undefined ? ` (${l.profiler} profiler)` : ''}`).join(', ') || '—'}`);
+  if (lage.profiler) rad.push(`Profiler: ${lage.profiler.totalt} st — subscribed ${lage.profiler.subscribed}, unsubscribed ${lage.profiler.unsubscribed}, aldrig prenumererat ${lage.profiler.aldrig}. Kampanjer går bara till subscribed.`);
   rad.push(`Segment (${lage.segment.length}): ${lage.segment.map((s) => s.namn).join(', ') || '—'}`);
   rad.push(`Flöden (${lage.floden.length}):`);
   for (const f of lage.floden) rad.push(`  ${f.status ?? '?'}\t${f.trigger_type ?? '?'}\t${f.namn}`);
@@ -188,9 +218,11 @@ async function main() {
   const argv = process.argv.slice(2);
   let brandId = 'baverbutiken';
   let prov = false;
+  let profiler = false;
   for (let i = 0; i < argv.length; i++) {
     if (argv[i] === '--brand') brandId = argv[++i];
     else if (argv[i] === '--prov') prov = true;
+    else if (argv[i] === '--profiler') profiler = true;
     else { console.error(`Okänt argument: ${argv[i]}`); process.exit(1); }
   }
   const brand = lasBrand(brandId);
@@ -200,7 +232,7 @@ async function main() {
   const klient = new KlaviyoKlient({ nyckel: nyckel.nyckel, logg: (t) => console.error(t) });
   let res;
   try {
-    res = await kolla({ brand, klient, prov });
+    res = await kolla({ brand, klient, prov, profiler });
   } catch (e) {
     console.error(e instanceof KlaviyoFel ? e.message : e.stack);
     process.exit(2);

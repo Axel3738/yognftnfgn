@@ -1,0 +1,68 @@
+{
+  "comment": "Matstrumpors Klaviyo-inställningar, skrivna 2026-09-25. Kontot UV6Rqg syns i sajtens HTML (klaviyo.js?company_id=UV6Rqg, mätt samma dag) och GET /api/accounts med KLAVIYO_API_KEY_MATSTRUMPOR svarar public_api_key UV6Rqg, tidszon Europe/Stockholm, SEK. Allt är AVLÄST, inget kopierat från Bäverbutiken: varje fält bär var det lästes. Butiker blandas aldrig (ARKITEKTUR järnregel 8).",
+  "id": "matstrumpor",
+  "namn": "Matstrumpor",
+  "public_id": "UV6Rqg",
+  "nyckel_env": [
+    "KLAVIYO_API_KEY_MATSTRUMPOR"
+  ],
+  "shopify": {
+    "modul": "klaviyo/shopify-butik.mjs",
+    "butik": "matstrumpor",
+    "comment": "Butiken i sparning/butiker.json (1r46tp-qx.myshopify.com, nycklarna SHOPIFY_CLIENT_ID/SECRET_1r46tp_qx, appen Fabriken med read_all_orders — mätt 2026-09-25). Ingen reservfil: mejl/produkter.json är Bäverbutikens och används aldrig här."
+  },
+  "butik_url": "https://matstrumpor.se",
+  "avsandare": {
+    "from_email": "kundsupport@matstrumpor.se",
+    "from_label": "Matstrumpor",
+    "reply_to_email": "kundsupport@matstrumpor.se"
+  },
+  "avsandare_comment": "kundsupport@matstrumpor.se är Shopifys shop.contactEmail (läst live 2026-09-25) och brevlådan kundtjänstboten läser (kundtjanst/brands/matstrumpor.yaml). Kontots standardavsändare i Klaviyo var TOM 2026-09-25 (default_sender_name 'Matstrumpor', default_sender_email ''), så motorn sätter avsändaren på varje mejl och Cowork fyller i kontots.",
+  "stil_fran": "mejl/butiker/matstrumpor.json",
+  "sprak": "sv",
+  "tidszon": "Europe/Stockholm",
+  "leverans_text": "5-10 arbetsdagar",
+  "leverans_p90_dygn": 15,
+  "leverans_p90_comment": "Mätt 2026-09-25 på 71 levererade paket (ordrar 2026-08-29 till 2026-09-15): order lagd → leveransskanning p25 10,0 / median 11,4 / p75 13,1 / p90 14,9 / max 19,7 dygn ⇒ 15. Datumen: sparning/butiker/matstrumpor/lage.json pekar ut vilka paket som är DELIVERED (71 av 204), och tidsstämpeln är Shopifys fulfillments.deliveredAt, som spårningsrutinen själv skriver ur 17TRACK-skanningens klockslag. ⚠️ lage.json:s eget fält `senast` duger INTE som leveranstid: det är rutinens kontrolltid (sparning/kor.mjs rad 195), och 60 av de 71 står på 2026-09-21, rutinens första körning — räknat på det blir p90 25,6, vilket är fel. Order → skickad är samma dygn (median 0,4). Jämför Bäverbutiken 20 dygn. Mät om när fler paket levererats; talet styr sista beställningsdagarna nedan.",
+  "angerratt_text": "30 dagars returrätt",
+  "angerratt_comment": "Matstrumpors publicerade returpolicy (matstrumpor.se/policies/refund-policy, läst 2026-09-25): '30 dagars returpolicy … från det att du mottog artikeln'. Kunden betalar returfrakten (Axels beslut 2026-09-23, kundtjanst/brands/matstrumpor.yaml). Den lagstadgade ångerrätten är 14 dagar därutöver. Texten här står i fakta-blocket; copyn skriver aldrig ett returfönster själv.",
+  "returfonster_fran": "kundtjanst/brands/matstrumpor.yaml#tvister.returfonster_dagar",
+  "sparningssida": "https://matstrumpor.se/pages/spara",
+  "sparningssida_comment": "Prefix MS-, sidan tar ?k= (base64 av fraktbolagets nummer) precis som Bäverbutikens, så länktypen sparning: fungerar i Fulfilled Order-flöden (F04).",
+  "erbjudande_fran": null,
+  "erbjudande_comment": "Matstrumpor har inget gratisprodukt-erbjudande (TACKIGEN/lyckohjulet är Bäverbutikens). Sajtens erbjudande är 'Köp 1 – Få 1 GRATIS' / 'Köp 2 – få 2' som rabattkoder (SUSHI-K1F1 på 135 av 227 ordrar senaste 60 d, mätt 2026-09-25) — det står på produktsidan och skrivs aldrig som siffra i ett mejl. Nya rabatter är Axels beslut.",
+  "lista_nyhetsbrev": "Email List",
+  "lista_nyhetsbrev_comment": "Shopify-synkens lista i kontot UV6Rqg heter 'Email List' (VzTE9X, double opt-in, 2 891 profiler mätt 2026-09-25) — den bär redan alla prenumeranter, så motorn skapar ingen tom LISTA_nyhetsbrev. F01 Välkomst triggas på den.",
+  "recensioner": {
+    "kalla": "judgeme-widget",
+    "shop_domain": "1r46tp-qx.myshopify.com",
+    "comment": "Judge.me finns på matstrumpor.se (Core + Recensionsmedaljer, mätt 2026-09-25) men ingen JUDGEME_API_TOKEN för butiken i miljön. Widgetens publika JSON (judge.me/reviews/reviews_for_widget) ger samma recensioner som produktsidan visar: sushi-strumpor 8 st (5★ ×5, 4★ ×2, 3★ ×1, snitt 4,5), pizza/hamburgare/donut 0. Citatblock bara på sushi."
+  },
+  "kategorier": {
+    "sushi": ["sushi"],
+    "pizza": ["pizza"],
+    "hamburgare": ["hamburgare"],
+    "donut": ["donut"]
+  },
+  "kategorier_comment": "Ordered Product bär titeln i Name ('Sushi-Strumpor', 'Pizza-Strumpor', 'Hamburgare-Strumpor', 'Donut-strumpor' — mätt 2026-09-25). Ett kategorisegment per sort, så en kampanj kan gå till dem som köpt en viss sort. Bäverbutikens ord (taköverdrag …) hade gett tomma segment här.",
+  "utm": {
+    "utm_source": "klaviyo",
+    "utm_medium": "email"
+  },
+  "break_even_roas": 1.498,
+  "break_even_comment": "matstrumpor/konfig.json (Axel 2026-09-21: Matstrumpor säljer utan moms; 2-parsorder 120,92 kr + 2,9 EUR tull mot AOV 462,10 kr). rapport.mjs räknar vinstbidrag = konverteringsvärde ÷ 1,498. Räkna aldrig om i huvudet — kör node matstrumpor/kor.mjs --ekonomi.",
+  "kalender": {
+    "fars_dag": "2026-11-08",
+    "fars_dag_sista_bestallning": "2026-10-24",
+    "black_week": [
+      "2026-11-23",
+      "2026-11-30"
+    ],
+    "jul_sista_bestallning": "2026-12-08",
+    "kalender_comment": "Sista beställningsdagarna = högtiden minus leverans_p90_dygn (15): fars dag 8/11 − 15 = lör 24/10, jul 23/12 − 15 = tis 8/12. Huvudsessionens räkning 2026-09-25, Axel kan ändra. Säsongen är mätt i Shopify: dec 2025 1 613 ordrar, jan 799, feb 655, mars 280, april–juli under 10 per månad, sep 197 — Matstrumpor är en julprodukt, och sushilådan tog slut i november 2025 (Axel 2026-09-24)."
+  },
+  "metrik_val": {
+    "Viewed Product": "R9yPAm"
+  },
+  "metrik_val_kommentar": "Mätt 2026-09-25: Viewed Product finns två gånger i UV6Rqg. R9yPAm (integration API = butikens Klaviyo-spårningskod klaviyo.js) hade 4 händelser samma dag (Name, Price '299 kr', URL, ImageURL), W55WbX (Shopify) 0. F03 triggar på R9yPAm."
+}

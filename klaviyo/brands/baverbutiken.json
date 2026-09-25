@@ -7,7 +7,8 @@
     "KLAVIYO_API_KEY_BAVERBUTIKEN"
   ],
   "shopify": {
-    "modul": "mejl/shopify.mjs"
+    "modul": "mejl/shopify.mjs",
+    "reserv": "mejl/produkter.json"
   },
   "butik_url": "https://baverbutiken.se",
   "avsandare": {

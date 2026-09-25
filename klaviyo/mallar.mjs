@@ -123,14 +123,24 @@ export function lank(spec, ctx) {
 // Stil (samma strängar som mejl/mallar.mjs stil())
 // ---------------------------------------------------------------------------
 
+// Rubrikstilen och sidhuvudet följer mejl/mallar.mjs stil(): Bäverbutiken har
+// Impact i versaler på svart sidhuvud (standardvärdena ger exakt den strängen).
+// En butik med lugnare ton sätter `rubrik_versaler: false` + `rubrik_fet: true`
+// (Arial bold i gemener), och en butik med mörk logga på transparent sätter
+// `sidhuvud_farg: "#ffffff"` och får en ljus topp med linje under (Matstrumpor:
+// orange bokstäver runt en sushi, mejl/butiker/matstrumpor.json, 2026-09-25).
 export function stilFran(butik) {
+  const versaler = butik.rubrik_versaler ?? true;
+  const fet = butik.rubrik_fet ?? false;
+  const svart = butik.farg_svart ?? '#000000';
   return {
-    rubrik: `font-family: ${butik.font_rubrik}; text-transform: uppercase;`,
+    rubrik: `font-family: ${butik.font_rubrik};${versaler ? ' text-transform: uppercase;' : ''}${fet ? ' font-weight: bold;' : ''}`,
     brod: 'font-family: Arial,Helvetica,sans-serif;',
     rod: butik.farg_rod ?? '#dd1d1d',
-    svart: butik.farg_svart ?? '#000000',
+    svart,
     ram: butik.farg_ram ?? '#e8e8e1',
     gra: '#6b6b6b',
+    huvud: butik.sidhuvud_farg ?? svart,
   };
 }
 
@@ -257,11 +267,14 @@ function dynamiskBlock(b, ctx) {
   if (b.kalla === 'visad_produkt') {
     if (lage === 'klaviyo') {
       const namn = '{% if event.ProductName %}{{ event.ProductName }}{% else %}{{ event.Name }}{% endif %}';
+      // event.Price är TEXT med valuta från Klaviyos onsite-skript — mätt 2026-09-25 i
+      // båda kontona: Bäverbutiken "1,129 kr", Matstrumpor "299 kr". Skrivs därför ut
+      // som den är; floatformat på en sådan sträng ger tomt och lämnade bara " kr".
       return rad(`
               <a href="{{ event.URL }}" target="_blank" style="text-decoration: none;">
                 {% if event.ImageURL %}<img src="{{ event.ImageURL }}" alt="" width="300" style="display: block; width: 100%; max-width: 300px; height: auto; border: 1px solid ${s.ram}; margin: 0 auto;">{% endif %}
                 <p align="center" style="${s.brod} font-size: 16px; font-weight: bold; color: ${s.svart}; margin: 12px 0 0;">${namn}</p>
-                {% if event.Price %}<p align="center" style="${s.brod} font-size: 15px; font-weight: bold; color: ${s.rod}; margin: 6px 0 0;">{{ event.Price|floatformat:0 }} kr</p>{% endif %}
+                {% if event.Price %}<p align="center" style="${s.brod} font-size: 15px; font-weight: bold; color: ${s.rod}; margin: 6px 0 0;">{{ event.Price }}</p>{% endif %}
               </a>${knappHtml(s, 'Titta igen', '{{ event.URL }}')}`, '16px 32px 16px');
     }
     const p = exempelProdukter(ctx)[0];
@@ -678,9 +691,11 @@ function mobilStil() {
 
 function dokument(ctx, { titel, forhandstext, rader }) {
   const { s, brand, stil } = ctx;
+  const ljus = String(s.huvud).toLowerCase() === '#ffffff';
   const logga = stil.logga_url
     ? `<img src="${esk(stil.logga_url)}" alt="${esk(brand.namn)}" width="${stil.logga_bredd ?? 240}" height="${stil.logga_hojd ?? 80}" style="display: block; margin: 0 auto; max-width: 100%; height: auto; border: 0;">`
-    : `<span style="${s.rubrik} font-size: 26px; color: #ffffff;">${esk(brand.namn)}</span>`;
+    : `<span style="${s.rubrik} font-size: 26px; color: ${ljus ? s.svart : '#ffffff'};">${esk(brand.namn)}</span>`;
+  const huvudStil = ljus ? `padding: 20px 24px 16px; border-bottom: 1px solid ${s.ram};` : 'padding: 16px 24px;';
   const fot = sidfot(ctx);
   // Utfyllnaden efter förhandstexten hindrar Gmail/Apple Mail från att dra in
   // mejlets första rader i förhandsvisningen när förhandstexten är kort.
@@ -701,7 +716,7 @@ function dokument(ctx, { titel, forhandstext, rader }) {
       <td align="center" class="kl-yttre" style="padding: 24px 12px 12px;">
         <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="max-width: 600px; width: 100%; border: 1px solid ${s.ram};">
           <tr>
-            <td align="center" bgcolor="${s.svart}" style="padding: 16px 24px;">
+            <td align="center" bgcolor="${s.huvud}" style="${huvudStil}">
               <a href="${esk(brand.butik_url)}" target="_blank" style="text-decoration: none;">${logga}</a>
             </td>
           </tr>${rader}

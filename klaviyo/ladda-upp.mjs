@@ -26,7 +26,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { KlaviyoKlient, KlaviyoFel, nyckelFranEnv, kontrolleraKonto } from './klient.mjs';
 import { hamtaMetriker, metrikIds as metrikIdsUr, metrikId, platshallarIds, KANDA_METRIKER } from './metriker.mjs';
-import { SEGMENT, segmentPaNamn, profilFilter, kravSamtycke } from './segment.mjs';
+import { segmentLista, segmentPaNamn, profilFilter, kravSamtycke } from './segment.mjs';
 
 const HAR = path.dirname(fileURLToPath(import.meta.url));
 
@@ -348,6 +348,10 @@ export async function laddaUpp({ brand, manifest, klient = null, skarpt = false,
   }
 
   // 2. listor ------------------------------------------------------------------
+  // Prenumerantlistan heter LISTA_nyhetsbrev om brandfilen inte säger annat.
+  // Matstrumpor (2026-09-25) bär `lista_nyhetsbrev: "Email List"` — Shopify-synkens
+  // egen lista i det kontot, 2 891 profiler — så motorn skapar ingen tom dubblett.
+  const listaNyhetsbrev = brand.lista_nyhetsbrev ?? LISTA_NYHETSBREV;
   const listIds = {};
   const sakraLista = async (namn) => {
     if (listIds[namn]) return listIds[namn];
@@ -359,7 +363,7 @@ export async function laddaUpp({ brand, manifest, klient = null, skarpt = false,
     return svar.data.id;
   };
   if (!bara) {
-    try { await sakraLista(LISTA_NYHETSBREV); } catch (e) { stoppa('lista', LISTA_NYHETSBREV, e); }
+    try { await sakraLista(listaNyhetsbrev); } catch (e) { stoppa('lista', listaNyhetsbrev, e); }
   }
 
   // 3. segment -----------------------------------------------------------------
@@ -367,7 +371,7 @@ export async function laddaUpp({ brand, manifest, klient = null, skarpt = false,
   const segSkapadeNu = new Set();
   const segVerifierade = new Set();
   if (kor('segment')) {
-    for (const s of SEGMENT) {
+    for (const s of segmentLista(brand)) {
       try {
         const saknade = s.metriker.filter((k) => !ids[k]);
         if (saknade.length) { hoppa('segment', s.namn, `metriken ${saknade.map((k) => KANDA_METRIKER[k].join('/')).join(', ')} saknas i kontot`); continue; }
@@ -405,7 +409,7 @@ export async function laddaUpp({ brand, manifest, klient = null, skarpt = false,
       }
       return sakraLista(namn);
     }
-    const bib = segmentPaNamn(namn);
+    const bib = segmentPaNamn(namn, brand);
     if (inkludera && bib && !bib.kampanjOk) {
       const e = new Error(`segmentet "${namn}" är bara för exkludering och sunset, aldrig en kampanjpublik.`);
       e.kod = 'SEGMENT_EJ_KAMPANJ';

@@ -51,17 +51,20 @@ för ingen nyckel fanns 2026-09-24. Allt som bara går att mäta med nyckel stå
 klaviyo/
   ARKITEKTUR.md            detta kontrakt
   README.md                för Axel och nästa session (svenska)
-  brands/baverbutiken.json brandets inställningar (se nedan)
+  brands/<id>.json         brandets inställningar (baverbutiken, matstrumpor; se nedan)
   klient.mjs               KlaviyoKlient: headers, paginering, 429, fel
   metriker.mjs             slå upp metrik-id på namn
-  segment.mjs              segment som kod → Klaviyo-definition, samtyckesspärr
-  mallar.mjs               e-post-HTML ur block (byggstenar), Klaviyo-mallspråk
+  segment.mjs              segment som kod → Klaviyo-definition, samtyckesspärr; kategorierna per brand
+  mallar.mjs               e-post-HTML ur block (byggstenar), Klaviyo-mallspråk; sidhuvud/rubrik per brand
   validera.mjs             kontroller på varje byggt mejl (copy, pris, taggar)
-  produkter.mjs            produktdata ur Shopify (återanvänder mejl/shopify.mjs) + cache
-  recensioner.mjs          riktiga Judge.me-recensioner för citatblock (valfritt)
+  produkter.mjs            produktdata ur brandets Shopify-modul + cache; reservfil bara för brandet som har en
+  shopify-butik.mjs        Shopify-modul för butiker i sparning/butiker.json (Matstrumpor), samma form som mejl/shopify.mjs
+  recensioner.mjs          riktiga Judge.me-recensioner för citatblock: API (Bäverbutiken) eller widget (Matstrumpor)
   bygg.mjs                 CLI: innehåll + produkter → output/<brand>/ (html, text, galleri)
-  kolla.mjs                CLI: nyckel, konto, inventering → konto/<brand>/lage.json
+  kolla.mjs                CLI: nyckel, konto, inventering (--profiler räknar samtycket) → konto/<brand>/lage.json
   ladda-upp.mjs            CLI: segment, mallar, kampanjer, flöden → Klaviyo (utkast)
+  sla-pa.mjs               CLI: namngivna flöden → live, bara på Axels ord, --ja, --brand
+  schemalagg.mjs           CLI: namngivna kampanjer → send-job, bara på Axels ord, --ja, --brand
   rapport.mjs              CLI: kampanj- och flödesrapporter → logg/<brand>/
   innehall/<brand>/
     BRIEFER.md             huvudsessionens briefer (strategi) — copyn skrivs ur dem
@@ -99,6 +102,24 @@ klaviyo/
   "utm": { "utm_source": "klaviyo", "utm_medium": "email" }
 }
 ```
+
+Valfria fält per brand (införda 2026-09-25 med Matstrumpor, `brands/matstrumpor.json`).
+Saknas de gäller Bäverbutikens beteende, så Bäverbutiken är oförändrad:
+
+| Fält | Vad | Matstrumpor |
+|---|---|---|
+| `shopify.butik` | butikens id i `sparning/butiker.json` när modulen är `klaviyo/shopify-butik.mjs` (modulens `hamtaProdukter()` får hela `shopify`-objektet) | `matstrumpor` |
+| `shopify.reserv` | reservfil med produktdata när varken Shopify eller cachen svarar. Utan fältet finns ingen reserv (utom Bäverbutikens `mejl/produkter.json`) — ett annat brands produkter används aldrig | ingen |
+| `recensioner` | `{ kalla: "judgeme-api" }` (standard, delade `JUDGEME_*`-variabler), `{ kalla: "judgeme-widget", shop_domain }` (widgetens publika JSON, en fråga per produkt) eller `{ kalla: "ingen" }` | widget, `1r46tp-qx.myshopify.com` |
+| `kategorier` | `{ namn: [ord…] }` för `SEG_kategori_<namn>`; utan fältet gäller `KATEGORIER` i segment.mjs (Bäverbutikens ord) | sushi, pizza, hamburgare, donut |
+| `lista_nyhetsbrev` | namnet på prenumerantlistan (skapas om den saknas); standard `LISTA_nyhetsbrev` | `Email List` (Shopify-synkens lista) |
+| `break_even_roas` | vinstbidraget i `rapport.mjs` = konverteringsvärde ÷ talet | 1,498 (utan moms) |
+| `metrik_val` | vilket id som gäller när ett metriknamn finns två gånger | `Viewed Product: R9yPAm` |
+| `erbjudande_fran: null` | brandet har inget erbjudande-block | null |
+
+Stilen (`stil_fran`) får bära `sidhuvud_farg`, `rubrik_versaler` och `rubrik_fet`,
+samma nycklar som `mejl/mallar.mjs`: Matstrumpor har vitt sidhuvud med linje under
+(orange logga på transparent) och fet rubrik i gemener.
 
 ## Innehållsformatet (ett mejl)
 
@@ -308,6 +329,25 @@ morgon (metrikerna 05:31 UTC), så Shopify-historiken kan fortfarande synkas.
 13. ⚠️ Kontot saknar postadress (`organization.full_address` blir tom i sidfoten, MFL 20 §) och
     standardavsändare. Mejlen bär `kundsupport@baverbutiken.se` själva; adressen fylls i under
     Settings → Brand (Axels klick) innan något skickas.
+14. ✅ **Mätt 2026-09-25 i BÅDA kontona (QZ4jLG och UV6Rqg): `event.Price` på Viewed Product är TEXT
+    med valuta** ("1,129 kr" respektive "299 kr"), skickad av Klaviyos onsite-skript. Det dynamiska
+    blocket `visad_produkt` skrev `{{ event.Price|floatformat:0 }} kr`, som på en sådan sträng ger
+    tomt och lämnar " kr". Rättat i `mallar.mjs`: priset skrivs som det kommer. ⚠️ Bäverbutikens
+    live F03 (`YwY8V9`) bär den gamla mallen (flödesmallar kopieras) och behöver en ny version.
+
+## Mätt 2026-09-25 i kontot UV6Rqg (Matstrumpor)
+
+Kontot är skapat samma dag (alla 24 metriker 2026-09-25), Shopify-synken klar: 4 357
+profiler (2 890 subscribed, 81 unsubscribed, 1 386 aldrig) mot Shopifys 4 362 kunder
+(2 892 SUBSCRIBED). `Placed Order` bär `Items` (hela titlar, t.ex. `["Äkta ätpinnar i
+trä","Sushi-Strumpor","Sushi-Strumpor"]`), `Fulfilled Order` bär `Items` och
+`$extra.fulfillments[0].tracking_number` (`YT…`), `Ordered Product` bär `Name`
+(`Sushi-Strumpor`) — samma som Bäverbutiken, så motorn behövde inga nya fältnamn.
+`Viewed Product` finns två gånger: `R9yPAm` (API, 4 händelser) och `W55WbX` (Shopify,
+0). `Checkout Started` (`SuebaZ`) finns. `Active on Site`: 0 händelser vid mätningen.
+Listorna `Email List` (`VzTE9X`, double opt-in, 2 891 profiler) och `Preview List`;
+nio av Klaviyos standardsegment; 0 flöden, 0 kampanjer, 0 mallar, 0 formulär.
+Postadress saknas (landet står "United States"), avsändarmejl tomt.
 
 
 ⚠️ **Klaviyos API kan inte ändra ett befintligt flödes filter** (mätt 2026-09-25: `PATCH /api/flows/<id>` svarar 400 "'definition' is not a valid field" och kräver `status`). Ändrat filter = ny version av flödet (nytt namn), den gamla ligger kvar som utkast.

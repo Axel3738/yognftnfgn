@@ -1,0 +1,243 @@
+{
+  "brand": "matstrumpor",
+  "hamtad": "2026-09-25T10:27:58.006Z",
+  "konto": {
+    "id": "UV6Rqg",
+    "public_api_key": "UV6Rqg",
+    "test_account": false,
+    "tidszon": "Europe/Stockholm",
+    "valuta": "SEK",
+    "organisation": "Matstrumpor",
+    "adress": {
+      "address1": null,
+      "address2": null,
+      "city": null,
+      "region": null,
+      "country": "United States",
+      "zip": null
+    }
+  },
+  "avsandare": {
+    "konto_standard": {
+      "email": "",
+      "namn": "Matstrumpor"
+    },
+    "brandfilen": {
+      "from_email": "kundsupport@matstrumpor.se",
+      "from_label": "Matstrumpor",
+      "reply_to_email": "kundsupport@matstrumpor.se"
+    }
+  },
+  "metriker": {
+    "alla": [
+      {
+        "id": "R9yPAm",
+        "namn": "Viewed Product",
+        "integration": "API"
+      },
+      {
+        "id": "Rjbki4",
+        "namn": "Manually Suppressed from Email Marketing",
+        "integration": "Klaviyo"
+      },
+      {
+        "id": "RyABhk",
+        "namn": "Unsubscribed from Email Marketing",
+        "integration": "Klaviyo"
+      },
+      {
+        "id": "SuebaZ",
+        "namn": "Checkout Started",
+        "integration": "Shopify"
+      },
+      {
+        "id": "T7fdMC",
+        "namn": "Fulfilled Order",
+        "integration": "Shopify"
+      },
+      {
+        "id": "TJggqf",
+        "namn": "Placed Order",
+        "integration": "Shopify"
+      },
+      {
+        "id": "TpKf2F",
+        "namn": "Opened Email",
+        "integration": "Klaviyo"
+      },
+      {
+        "id": "Tqkv53",
+        "namn": "Bounced Email",
+        "integration": "Klaviyo"
+      },
+      {
+        "id": "TyZKHt",
+        "namn": "Active on Site",
+        "integration": "API"
+      },
+      {
+        "id": "U3mxFE",
+        "namn": "Skipped Send",
+        "integration": "Klaviyo"
+      },
+      {
+        "id": "UTF7i7",
+        "namn": "Refunded Order",
+        "integration": "Shopify"
+      },
+      {
+        "id": "UgE4Fu",
+        "namn": "Added to Cart",
+        "integration": "Shopify"
+      },
+      {
+        "id": "V4zRVt",
+        "namn": "Fulfilled Partial Order",
+        "integration": "Shopify"
+      },
+      {
+        "id": "V6885B",
+        "namn": "Subscribed to Email Marketing",
+        "integration": "Klaviyo"
+      },
+      {
+        "id": "VPMrc9",
+        "namn": "Clicked email to unsubscribe",
+        "integration": "Klaviyo"
+      },
+      {
+        "id": "VcLnzw",
+        "namn": "Dropped Email",
+        "integration": "Klaviyo"
+      },
+      {
+        "id": "VwG9UJ",
+        "namn": "Cancelled Order",
+        "integration": "Shopify"
+      },
+      {
+        "id": "W55WbX",
+        "namn": "Viewed Product",
+        "integration": "Shopify"
+      },
+      {
+        "id": "WYB23D",
+        "namn": "Received Email",
+        "integration": "Klaviyo"
+      },
+      {
+        "id": "X9RwJr",
+        "namn": "Clicked Email",
+        "integration": "Klaviyo"
+      },
+      {
+        "id": "XCdiGC",
+        "namn": "Marked Email as Spam",
+        "integration": "Klaviyo"
+      },
+      {
+        "id": "XRvPGs",
+        "namn": "Subscribed to Back in Stock",
+        "integration": "Klaviyo"
+      },
+      {
+        "id": "XW963Q",
+        "namn": "Ordered Product",
+        "integration": "Shopify"
+      },
+      {
+        "id": "Xvz4cH",
+        "namn": "Subscribed to List",
+        "integration": "Klaviyo"
+      }
+    ],
+    "kanda": {
+      "placed_order": "TJggqf",
+      "started_checkout": "SuebaZ",
+      "viewed_product": "R9yPAm",
+      "active_on_site": "TyZKHt",
+      "added_to_cart": "UgE4Fu",
+      "ordered_product": "XW963Q",
+      "opened_email": "TpKf2F",
+      "clicked_email": "X9RwJr",
+      "received_email": "WYB23D"
+    },
+    "saknas": []
+  },
+  "listor": [
+    {
+      "id": "UWSBxk",
+      "namn": "Preview List",
+      "opt_in": "double_opt_in",
+      "profiler": 1
+    },
+    {
+      "id": "VzTE9X",
+      "namn": "Email List",
+      "opt_in": "double_opt_in",
+      "profiler": 2891
+    }
+  ],
+  "profiler": {
+    "totalt": 4357,
+    "subscribed": 2890,
+    "unsubscribed": 81,
+    "aldrig": 1386
+  },
+  "segment": [
+    {
+      "id": "QYiiTz",
+      "namn": "Churn Risks (Shopify)",
+      "aktiv": true
+    },
+    {
+      "id": "RFWBRA",
+      "namn": "Repeat Buyers (Shopify)",
+      "aktiv": true
+    },
+    {
+      "id": "RUqCMB",
+      "namn": "New Subscribers",
+      "aktiv": true
+    },
+    {
+      "id": "SVYH6Q",
+      "namn": "Potential Purchasers (Shopify)",
+      "aktiv": true
+    },
+    {
+      "id": "TDD24R",
+      "namn": "VIP Customers (Shopify)",
+      "aktiv": true
+    },
+    {
+      "id": "VqD9tb",
+      "namn": "Engaged (90 Days)",
+      "aktiv": true
+    },
+    {
+      "id": "W3Ec5N",
+      "namn": "Engaged (60 Days)",
+      "aktiv": true
+    },
+    {
+      "id": "X5egp3",
+      "namn": "Win-Back Opportunities (Shopify)",
+      "aktiv": true
+    },
+    {
+      "id": "Yt78cU",
+      "namn": "Engaged (30 Days)",
+      "aktiv": true
+    }
+  ],
+  "floden": [],
+  "mallar": {
+    "antal": 0,
+    "motorns": []
+  },
+  "kampanjer": [],
+  "varningar": [
+    "Kontot saknar postadress — {{ organization.full_address }} blir tom i sidfoten (MFL 20 §). Fyll i Settings → Brand."
+  ]
+}

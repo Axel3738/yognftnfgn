@@ -3,12 +3,19 @@
 // 4-5 stjärnor, publicerad, inte dold, inte spam, ordagrant (kortad vid
 // ordgräns till högst 220 tecken), namnet som förnamn + initial.
 //
-// API:t: https://api.judge.me/api/v1/reviews med api_token + shop_domain
-// (JUDGEME_API_TOKEN, JUDGEME_SHOP_DOMAIN — samma som bonus/kallor.mjs och
-// tools/judgeme-import.mjs). /reviews filtrerar på Judge.me:s EGET produkt-id,
-// inte Shopifys (mätt 2026-08-30, tools/judgeme-import.mjs), så butikens
-// recensioner läses sidvis och kopplas till handle via `product_external_id`
-// = Shopifys produkt-id (produkternas `id`).
+// Två källor, valda per brand (`brand.recensioner.kalla`):
+//   'judgeme-api'    (standard, Bäverbutiken): https://api.judge.me/api/v1/reviews
+//                    med api_token + shop_domain (JUDGEME_API_TOKEN, JUDGEME_SHOP_DOMAIN
+//                    — samma som bonus/kallor.mjs). /reviews filtrerar på Judge.me:s
+//                    EGET produkt-id, så butikens recensioner läses sidvis och kopplas
+//                    till handle via `product_external_id` = Shopifys produkt-id.
+//   'judgeme-widget' (Matstrumpor, 2026-09-25): butiken har Judge.me men ingen egen
+//                    API-nyckel i miljön. Widgetens publika JSON
+//                    https://judge.me/reviews/reviews_for_widget?…&product_id=<Shopify-id>
+//                    ger samma recensioner som visas på produktsidan (body_html, rating,
+//                    reviewer_name, verified_buyer, created_at), en fråga per produkt.
+//                    Mätt 2026-09-25: sushi-strumpor 8 recensioner, snitt 4,5.
+//   'ingen'          citatblocken utgår med en varning.
 //
 // Cache: klaviyo/output/<brand>/recensioner.json. `offline` läser bara den.
 
@@ -18,9 +25,19 @@ import { ROT } from './mallar.mjs';
 
 export const MAX_TECKEN = 220;
 export const PER_HANDLE = 5;
+export const WIDGET_URL = 'https://judge.me/reviews/reviews_for_widget';
 
 export function cacheSokvag(brandId, rot = ROT) {
   return join(rot, 'klaviyo', 'output', brandId, 'recensioner.json');
+}
+
+/** Källan för ett brand. Utan `recensioner` i brandfilen: Judge.me:s API med de delade miljövariablerna. */
+export function recensionsKalla(brand) {
+  const r = typeof brand === 'object' ? brand?.recensioner : null;
+  if (!r) return { kalla: 'judgeme-api', token_env: 'JUDGEME_API_TOKEN', domain_env: 'JUDGEME_SHOP_DOMAIN' };
+  if (r.kalla === 'ingen') return { kalla: 'ingen' };
+  if (r.kalla === 'judgeme-widget') return { kalla: 'judgeme-widget', shop_domain: r.shop_domain ?? null };
+  return { kalla: 'judgeme-api', token_env: r.token_env ?? 'JUDGEME_API_TOKEN', domain_env: r.domain_env ?? 'JUDGEME_SHOP_DOMAIN' };
 }
 
 // "Anna Berg" → "Anna B.", "anna" → "Anna". Tomt → "Verifierad kund".
@@ -40,6 +57,31 @@ export function kortaText(text, max = MAX_TECKEN) {
   const klipp = t.slice(0, max - 1);
   const sista = klipp.lastIndexOf(' ');
   return `${(sista > max * 0.5 ? klipp.slice(0, sista) : klipp).replace(/[,.;:!?\s]+$/, '')}…`;
+}
+
+/** Widgetens body_html → ren text (taggar bort, entiteter tillbaka). */
+export function avHtml(html) {
+  return String(html ?? '')
+    .replace(/<br\s*\/?>/gi, ' ')
+    .replace(/<\/p>/gi, ' ')
+    .replace(/<[^>]+>/g, '')
+    .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;|&apos;/g, "'").replace(/&nbsp;/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/** Widgetens recensioner → samma rader som Judge.me:s API ger (så sorteraRecensioner tar båda). */
+export function widgetTillRader(svar, produktId) {
+  return (svar?.reviews ?? []).map((r) => ({
+    product_external_id: svar.product_external_id ?? produktId,
+    rating: r.rating,
+    body: avHtml(r.body_html ?? r.body),
+    reviewer: { name: r.reviewer_name },
+    published: true,
+    hidden: false,
+    verified_buyer: r.verified_buyer ?? null,
+    created_at: r.created_at ?? null,
+  }));
 }
 
 // Judge.me-rader → { handle: [{ namn, betyg, text, datum }] }, bästa först
@@ -81,25 +123,54 @@ async function hamtaAlla({ token, shop, fetchFn, maxSidor }) {
   return rader;
 }
 
+// En fråga per produkt mot widgetens publika JSON. Produkter utan Shopify-id hoppas.
+export async function hamtaViaWidget({ shop, produkter, fetchFn, perProdukt = 10 }) {
+  if (!shop) throw new Error('recensioner.shop_domain saknas i brandfilen (myshopify-domänen).');
+  const rader = [];
+  for (const p of produkter) {
+    if (!p?.id) continue;
+    const u = new URL(WIDGET_URL);
+    u.searchParams.set('url', shop);
+    u.searchParams.set('shop_domain', shop);
+    u.searchParams.set('platform', 'shopify');
+    u.searchParams.set('per_page', String(perProdukt));
+    u.searchParams.set('product_id', String(p.id));
+    const r = await fetchFn(u);
+    if (!r.ok) throw new Error(`Judge.me-widgeten svarade ${r.status} för ${p.handle}`);
+    rader.push(...widgetTillRader(await r.json(), p.id));
+  }
+  return rader;
+}
+
 // → { recensioner: { handle: [...] }, kalla: 'live'|'cache'|'saknas', varningar }
 export async function hamtaRecensionerCache({ brand, produkter = [], offline = false, rot = ROT, env = process.env, fetchFn = fetch, maxSidor = 40 } = {}) {
   const id = typeof brand === 'string' ? brand : brand.id;
   const cache = cacheSokvag(id, rot);
   const varningar = [];
-  const token = env.JUDGEME_API_TOKEN;
-  const shop = env.JUDGEME_SHOP_DOMAIN;
+  const k = recensionsKalla(brand);
+  if (k.kalla === 'ingen') {
+    varningar.push('Brandet har inga recensioner att hämta (recensioner.kalla: ingen): citatblocken utgår.');
+    return { recensioner: {}, kalla: 'saknas', varningar };
+  }
   if (!offline) {
-    if (!token || !shop) varningar.push('JUDGEME_API_TOKEN eller JUDGEME_SHOP_DOMAIN saknas, recensionerna läses ur cachen.');
-    else {
-      try {
-        const rader = await hamtaAlla({ token, shop, fetchFn, maxSidor });
+    try {
+      let rader = null;
+      if (k.kalla === 'judgeme-widget') {
+        rader = await hamtaViaWidget({ shop: k.shop_domain, produkter, fetchFn });
+      } else {
+        const token = env[k.token_env];
+        const shop = env[k.domain_env];
+        if (!token || !shop) varningar.push(`${k.token_env} eller ${k.domain_env} saknas, recensionerna läses ur cachen.`);
+        else rader = await hamtaAlla({ token, shop, fetchFn, maxSidor });
+      }
+      if (rader) {
         const recensioner = sorteraRecensioner(rader, produkter);
         mkdirSync(dirname(cache), { recursive: true });
-        writeFileSync(cache, JSON.stringify({ hamtad: new Date().toISOString(), lasta: rader.length, recensioner }, null, 1) + '\n');
+        writeFileSync(cache, JSON.stringify({ hamtad: new Date().toISOString(), kalla: k.kalla, lasta: rader.length, recensioner }, null, 1) + '\n');
         return { recensioner, kalla: 'live', varningar };
-      } catch (e) {
-        varningar.push(`Judge.me gick inte att läsa (${e.message}), recensionerna läses ur cachen.`);
       }
+    } catch (e) {
+      varningar.push(`Judge.me gick inte att läsa (${e.message}), recensionerna läses ur cachen.`);
     }
   }
   if (existsSync(cache)) {
