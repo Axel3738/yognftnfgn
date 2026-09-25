@@ -1,0 +1,29 @@
+{
+ "rader": [
+  [
+   "Yes, it's sealed.",
+   0.99
+  ],
+  [
+   "Just the roof, though.",
+   0.99
+  ],
+  [
+   "It only covers the roof. Sides stay open.",
+   0.99
+  ],
+  [
+   "$199",
+   1.0
+  ],
+  [
+   "9 (was $249)",
+   0.96
+  ],
+  [
+   "Order Your Roof Cover",
+   0.99
+  ]
+ ],
+ "traffar": []
+}

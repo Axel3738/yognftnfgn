@@ -2115,3 +2115,56 @@ ingen Notion-status rörd — raderna står kvar tills US-rundan bär dem.
 Approved-passet: **58 rader, 0 utan NO-annons.** Kampanjen ACTIVE med 12
 adsets, pris 1 106 NOK läst live. GT/G-splitten står kvar orörd; frågan ligger
 hos Axel sedan 2026-09-23.
+
+---
+
+## USA-runda 12 — 2026-09-25 (`/ops-oversatt carashell/takskyddet --marknad US`)
+
+**6 rader i kön: 1 bild live, 5 videor HÅLLNA — HeyGen har slut på API-credits.**
+
+| Kö | Rader | Utfall |
+|---|---|---|
+| `SE-ACTIVE to be translated` | 6 (1 bild + 5 video) | 1 live och `Approved`, 5 hållna med kommentar |
+| `Approved` (eftersläpningskollen) | 58 | 0 utan US-annons |
+
+### Bilden som gick live
+
+| Spegel (US) | Adset | US-annons | Svenska kvar |
+|---|---|---|---|
+| `CaraShellRoof_US_OB_105_1` | `CARASHELL_US_OB` | `120251609594670435` | ✅ inget (OCR) |
+
+Invändningsvinkeln behölls ärlig som i svenskan: `Ja, det blir tätt. / Fast bara taket.`
+→ **`Yes, it's sealed.` / `Just the roof, though.`** Raden vinner förtroende genom att
+säga vad produkten INTE gör, och det är hela poängen med annonsen — den får inte skrivas
+om till ett rent löfte. Underraden ändrades i andra vändan: subagentens första version
+upprepade rubriken ordagrant ("Just the roof." två gånger), vilket svenskan inte gör.
+
+**Textstorlekarna är kalibrerade per bild, inte ärvda.** Bilden är **1080 × 1350** — högre
+än OPS-textlagrets kvadrat — och prisraden är **89 px**, nästan tre gånger underradens 32.
+Rubrikerna 77 och 76, knappen 41. Alla fem mätta mot de svenska radernas bläckbredd i
+Liberation Sans.
+
+### ⛔ HeyGen: 6 credits kvar — fem videor kan inte dubbas
+
+`CS_109_H1`, `PD_110_H1`, `CO_105_H1`, `OB_103_H1`, `OB_104_H1` (13–27 s styck).
+Proofread-steget svarar **`Insufficient credit. This operation requires 'api' credits.`**
+på alla fem. Saldot var **1 440 den 23/9** och gick åt på den rundans tretton videor
+(4 minuter film); i dag står det på 6.
+
+⚠️ **`plan_credit: 2000` räknas inte.** API:t kräver `api`-credits, som köps separat i
+HeyGen-panelen — de två posterna är olika pengar, och saldot ser fullt ut om man bara
+läser den ena. Kolla `api`-raden, aldrig `plan_credit`.
+
+Raderna ligger kvar i `SE-ACTIVE to be translated` med **en kommentar var om varför**;
+ingen status rörd, inget renderat, de svenska och norska versionerna orörda. Nästa
+körning tar dem av sig själv så snart saldot är påfyllt — ingen behöver köa om dem.
+
+⚠️ `OB_103_H1` och `OB_104_H1` bär dessutom Bäverbutikens slutkort. Det är normalläget
+(pipelinen bygger om kortet före uppladdning) och **inte** skälet till att de hålls.
+
+**Kvarstår oförändrat, ingen åtgärd:** originalkampanjen PAUSED med 2 246 kr spend;
+dubbeladsetet `CARASHELL_US_GT` / `_G`; den ärvda lagerrensningslänken som gör att priset
+läses för hand ur de amerikanska sidorna.
+
+**Discord:** engelsk rapport i `#annons-uppladdning`, meddelande `1553062840158388285`,
+**med ACTION NEEDED** (HeyGen-saldot).

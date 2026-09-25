@@ -1,0 +1,86 @@
+[
+ {
+  "box": [
+   240,
+   62,
+   840,
+   160
+  ],
+  "rader": 1,
+  "storlek": 77,
+  "fet": true,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "Yes, it's sealed."
+ },
+ {
+  "box": [
+   240,
+   185,
+   840,
+   272
+  ],
+  "rader": 1,
+  "storlek": 76,
+  "fet": true,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "Just the roof, though."
+ },
+ {
+  "box": [
+   205,
+   318,
+   875,
+   376
+  ],
+  "rader": 1,
+  "storlek": 32,
+  "farg": [
+   21,
+   21,
+   19
+  ],
+  "text": "It only covers the roof. Sides stay open."
+ },
+ {
+  "box": [
+   50,
+   974,
+   1032,
+   1112
+  ],
+  "rader": 1,
+  "storlek": 89,
+  "fet": true,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "$199 (was $249)"
+ },
+ {
+  "box": [
+   288,
+   1224,
+   792,
+   1294
+  ],
+  "rader": 1,
+  "storlek": 41,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Order Your Roof Cover"
+ }
+]

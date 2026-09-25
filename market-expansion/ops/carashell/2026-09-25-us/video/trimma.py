@@ -1,0 +1,24 @@
+#!/usr/bin/env python3
+"""trimma.py — klipper us/CaraShellRoof_US_<n>.mp4 till ljudspårets längd (paddningen i
+forbehandla.py ger ett videospår som är längre än ljudet efter no-precis). -c copy, klipp
+på utnivå; rapporterar frames före/efter.
+    python3 trimma.py [--bara <n>]
+
+⚠️ Listan av videor läses ur cap/*.json, aldrig ur en handskriven lista. En kopierad
+lista från en äldre runda trimmar bara den rundans filer och lämnar resten med en
+klonad slutframe — tyst, för de andra nämns aldrig i utskriften (hände 2026-09-21
+och igen 2026-09-23).
+"""
+import glob, os, subprocess, sys, shutil
+HÄR=os.path.dirname(os.path.abspath(__file__)); US=os.path.join(HÄR,"..","us")
+bara=sys.argv[sys.argv.index("--bara")+1] if "--bara" in sys.argv else None
+def probe(f,sel,ent):
+    return subprocess.run(["ffprobe","-v","error","-select_streams",sel,"-show_entries",ent,"-of","csv=p=0",f],capture_output=True,text=True).stdout.strip().split("\n")[0]
+for n in sorted(os.path.basename(k)[:-5] for k in glob.glob(os.path.join(HÄR,"cap","*.json"))):
+    if bara and n!=bara: continue
+    f=os.path.join(US,f"CaraShellRoof_US_{n}.mp4"); a=float(probe(f,"a","stream=duration")); v=float(probe(f,"v","stream=duration"))
+    if v<=a+0.05: print(n,"video",v,"ljud",a,"— ingen trimning"); continue
+    tmp=f+".trim.mp4"
+    r=subprocess.run(["ffmpeg","-y","-nostdin","-v","error","-i",f,"-t",f"{a:.3f}","-c","copy","-movflags","+faststart",tmp],capture_output=True,text=True)
+    if r.returncode: print(n,"FEL",r.stderr[-200:]); continue
+    shutil.move(tmp,f); print(n,"video",v,"→",probe(f,"v","stream=duration"),"ljud",a)

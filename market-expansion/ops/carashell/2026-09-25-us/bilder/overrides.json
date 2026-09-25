@@ -1,0 +1,56 @@
+{
+ "_kalla": "Rutor mätta 2026-09-25 ur SE-bilden med matrader.py (textradernas y/x) och oversatt-bild.py --analys (plattan och knappen). Bilden är 1080×1350, alltså HÖGRE än OPS-textlagrets 1080×1080 — storlekarna nedan gäller bara den här mallen. Textstorlekarna är KALIBRERADE mot de svenska radernas uppmätta bläckbredd i Liberation Sans: rubrik 77 och 76, underrad 32, pris 89, knapp 41. ⚠️ Prisraden är 89 px — nästan tre gånger underradens. Skriv aldrig av en storlek från en annan batch; mät per bild.",
+ "CaraShellRoof_OB_105_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [240, 62, 840, 160],
+     "post": 0,
+     "rader": 1,
+     "storlek": 77,
+     "fet": true,
+     "farg": [19, 18, 16]
+    }
+   ],
+   "1": [
+    {
+     "box": [240, 185, 840, 272],
+     "post": 0,
+     "rader": 1,
+     "storlek": 76,
+     "fet": true,
+     "farg": [19, 18, 16]
+    }
+   ],
+   "2": [
+    {
+     "box": [205, 318, 875, 376],
+     "post": 0,
+     "rader": 1,
+     "storlek": 32,
+     "farg": [21, 21, 19]
+    }
+   ],
+   "3": [
+    {
+     "box": [50, 974, 1032, 1112],
+     "post": 0,
+     "rader": 1,
+     "storlek": 89,
+     "fet": true,
+     "farg": [19, 18, 16]
+    }
+   ],
+   "4": [
+    {
+     "box": [288, 1224, 792, 1294],
+     "post": 0,
+     "rader": 1,
+     "storlek": 41,
+     "fet": true,
+     "farg": [255, 255, 255]
+    }
+   ]
+  }
+ }
+}

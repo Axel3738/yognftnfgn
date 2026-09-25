@@ -1,0 +1,26 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-25",
+  "lage": "oversatt",
+  "marknad": "US",
+  "server": "CaraShell",
+  "kanal": "annons-uppladdning",
+  "gjort": [
+    "US round for the roof cover: 6 rows in the queue - 1 image and 5 videos. The image is live; the five videos are HELD, see below.",
+    "Image CaraShellRoof_US_OB_105_1 -> ad 120251609594670435 in ad set CARASHELL_US_OB, ACTIVE. The objection angle is kept honest the way the Swedish one is: 'Yes, it's sealed. Just the roof, though.' - it says what the product does NOT do. Prices swapped to $199 (was $249), 21 by 10 feet instead of metres, no store name anywhere. Read back by OCR after rendering: no Swedish word and no kr price survives.",
+    "The Approved queue was checked as well: 58 rows, every one of them already carries a US ad. Nothing is lagging behind.",
+    "Store readiness for the US confirmed: the American product page and the landing page both answer 200 as an American visitor, $199 from $249.",
+    "The five video rows stay in SE-ACTIVE to be translated and each one got a comment explaining why. Nothing was rendered, no Notion status was changed on them, and the Swedish and Norwegian versions are untouched."
+  ],
+  "varningar": [
+    "Two of the five videos (OB_103_H1, OB_104_H1) also end on a BAVERBUTIKEN card. That is the usual case and the pipeline rebuilds the end card before upload - it is not why they are held.",
+    "The campaign still has two ad sets for the same angle, CARASHELL_US_GT and CARASHELL_US_G, splitting that angle's budget in the CBO. Nothing was touched - the owner decides which one counts.",
+    "The queue still cannot read the price automatically, because the campaign's inherited link is the listicle page rather than a product page. The price was read directly from both American pages instead: $199 from $249. Known carry-over, not a fault.",
+    "Meta shows PENDING_REVIEW / IN_PROCESS on a fresh ad for a while - normal."
+  ],
+  "action_axel": [
+    "HeyGen is out of API credits: 6 left, and one video of this length needs far more. Five finished Swedish videos are waiting for their English dub and cannot be translated until the balance is topped up. The plan credits (2000) do not count - the API asks for 'api' credits specifically, which are bought separately in the HeyGen panel. Nothing else in the round is blocked: images cost nothing and went out as usual. The moment the credits are there, the next daily round picks the five rows up on its own - no one has to re-queue them."
+  ],
+  "nasta_korning": "2026-09-26 17:05"
+}

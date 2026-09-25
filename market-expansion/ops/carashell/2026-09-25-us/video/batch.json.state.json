@@ -1,0 +1,47 @@
+{
+ "carashell_CS_109_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/b1883ae5b5ca4d8888f56d1ed6ae692b/original.mp4",
+  "proofreadId": "47ed5d436dfd4d75bff3ac27841b16c6-en-en-US",
+  "sprak": "English (United States)",
+  "marknad": "US",
+  "output_language": "English (United States)",
+  "srtDone": "failed",
+  "error": "Insufficient credit. This operation requires 'api' credits."
+ },
+ "carashell_PD_110_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/6273ef12ebfe4388b36fb8c1149dcc0a/original.mp4",
+  "proofreadId": "188607094a4b4c09b2e9c7bcaa362c64-en-en-US",
+  "sprak": "English (United States)",
+  "marknad": "US",
+  "output_language": "English (United States)",
+  "srtDone": "failed",
+  "error": "Insufficient credit. This operation requires 'api' credits."
+ },
+ "carashell_CO_105_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/feaaab008641447bbc205e12b569d245/original.mp4",
+  "proofreadId": "76e9b5bd3c3e4001ad0c77cd188279ff-en-en-US",
+  "sprak": "English (United States)",
+  "marknad": "US",
+  "output_language": "English (United States)",
+  "srtDone": "failed",
+  "error": "Insufficient credit. This operation requires 'api' credits."
+ },
+ "carashell_OB_103_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/86eac582d71f40109b74c0f44979a3e7/original.mp4",
+  "proofreadId": "30db8d50be7e43759244a9672a4b12eb-en-en-US",
+  "sprak": "English (United States)",
+  "marknad": "US",
+  "output_language": "English (United States)",
+  "srtDone": "failed",
+  "error": "Insufficient credit. This operation requires 'api' credits."
+ },
+ "carashell_OB_104_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/df3a4bd192b044ebbaec6e395051e5f0/original.mp4",
+  "proofreadId": "d3998448d0844d9e91b6b46fc15cb624-en-en-US",
+  "sprak": "English (United States)",
+  "marknad": "US",
+  "output_language": "English (United States)",
+  "srtDone": "failed",
+  "error": "Insufficient credit. This operation requires 'api' credits."
+ }
+}
