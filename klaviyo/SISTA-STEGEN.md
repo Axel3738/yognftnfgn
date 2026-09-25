@@ -101,6 +101,25 @@ A) Be Loopias support lägga in de fyra NS-posterna för `send` + TXT @ (de kan 
 B) Låt Cowork byta routing i Klaviyo från Dynamic till Static och se om Klaviyo då ger CNAME-poster, som Loopias editor klarar.
 Tills domänen är verifierad skickar Klaviyo från sin delade domän. Det fungerar, men sämre leveransbarhet; inga utskick innan den är klar.
 
+## ⛔ Incident 2026-09-25 ~11:20 CEST: hela baverbutiken.se nere efter namnserverbytet
+
+Mätt från en session (Cloudflare och Google DNS över HTTPS): .se-registret delegerar
+**hela domänen** baverbutiken.se till ns1–ns4.klaviyo.com, och de svarar REFUSED på
+allt (A, NS, MX, www). Alltså är sajten, spårningssidan, mejlen till
+kundsupport@baverbutiken.se och Klaviyo-verifieringen nere på en gång; webbläsaren
+visar `DNS_PROBE_FINISHED_NXDOMAIN`. Shopify är orört (`4snrw0-mg.myshopify.com`
+svarar 301 → https://baverbutiken.se/), och alla Axels andra Loopia-domäner
+(baverkoppling.se, grillkliniken.se, matstrumpor.se, carashell.se) står kvar på
+`ns1.loopia.se` + `ns2.loopia.se`. Spårningsrutinen läste sidan publikt kl 10:18
+CEST, så bytet skedde mellan 10:18 och 11:20.
+
+Klaviyo ville ha NS-poster på **underdomänen `send`** (tabellen ovan), aldrig ett
+byte av domänens egna namnservrar. Rättningen: Loopia Kundzon → Domännamn →
+baverbutiken.se → Namnservrar → tillbaka till `ns1.loopia.se` + `ns2.loopia.se`.
+Först när domänen svarar igen läggs `send`-delegeringen in: av Loopias support, i
+zonen, eller via alternativ B (CNAME). **Säg det ordagrant till Loopia: "NS-poster
+på underdomänen send i zonen, rör inte domänens namnservrar."**
+
 ## Läget 2026-09-25 förmiddag: det som återstår är Axels
 
 Allt som går att göra utan Axel är gjort. I Klaviyo ligger 14 kampanjer (Draft), 7 flöden (draft) och 14 segment.
