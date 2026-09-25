@@ -152,3 +152,14 @@ test('länken sparning: bär kundens paketnummer base64-kodat, och bara ett exem
   assert.equal(lank('sparning:', ctx('exempel')), 'https://baverbutiken.se/pages/spara?k=WVQyNjI2MTAwNzA4Njc0Njkw');
   assert.equal(Buffer.from('WVQyNjI2MTAwNzA4Njc0Njkw', 'base64').toString(), 'YT2626100708674690');
 });
+
+test('stjärnblocket: alla fem stjärnor går till SAMMA ställe (ingen review gating)', async () => {
+  const { stjarnLankar } = await import('../mallar.mjs');
+  const ctx = { brand: { butik_url: 'https://baverbutiken.se' }, lage: 'exempel', varningar: [], produkt: () => null };
+  const l = stjarnLankar({ lank: 'url:https://se.trustpilot.com/evaluate/baverbutiken.se' }, ctx);
+  assert.equal(l.length, 5);
+  assert.equal(new Set(l.map((x) => x.replace(/[?&]stars=\d$/, ''))).size, 1, 'en destination för alla betyg');
+  assert.deepEqual(l.map((x) => x.match(/stars=(\d)$/)[1]), ['1', '2', '3', '4', '5']);
+  const html = bygg(mejl({ block: [{ typ: 'stjarnor', lank: 'url:https://se.trustpilot.com/evaluate/baverbutiken.se' }] })).html;
+  assert.equal((html.match(/evaluate\/baverbutiken\.se\?stars=/g) ?? []).length, 5);
+});
