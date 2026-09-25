@@ -186,5 +186,7 @@
   "communication failed": "Aviseringen till dig gick inte fram",
   "fallback shipment solution was triggered": "Fraktbolaget har bytt till en annan leveranslösning",
   "tracking number allocated & order ready": "Fraktetiketten är skapad",
-  "shipping order created": "Ordern är registrerad hos fraktbolaget"
+  "shipping order created": "Ordern är registrerad hos fraktbolaget",
+  "shipping label created, usps awaiting item": "Avsändaren har bokat leveransen och fraktbolaget väntar på paketet",
+  "the shipment has arrived at terminal and will be forwarded": "Paketet har kommit till terminalen och är klart att skickas vidare"
 }
