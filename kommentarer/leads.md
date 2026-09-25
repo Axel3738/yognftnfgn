@@ -2,6 +2,11 @@
 
 Skrivs av `/kommentarer` (nyaste överst). Varje lead pekar på kommentarer i `kommentarer/logg/` — kundens egna ord är källan (`kalla=voc`). `/cs` läser raderna för sin produkts prefix och bockar av dem den använder: `- [x] … status: använd i batch #N`.
 
+## 2026-09-25
+
+- [ ] **CaraShell · CaraShellRoof** · produktfeedback — Storleksvalet syns inte: en amerikansk kund med 32 fot ser "bara 18 × 10", en svensk med 7,2 m hittar "bara 6,5 m". Alla nio storlekar är köpbara (mätt 25 sep i butikens .js), så det är sidan som döljer valet. På US-sidan står också "16 recensioner" på svenska och recensionerna är norska; en kommentar kallar det ett stavfel och säger "run from this company". → Axel: gör storleksvalet tydligt överst på produktsidan och översätt "recensioner" + recensionerna på den engelska sidan. Ingen brief förrän sidan är rättad.
+  - Källa: kommentarer på CaraShellRoof_US_GT_105_H1, US_SP_2_1 och SE-annonsen, 3 st, 24–25 sep · `kalla=voc` · belägg: 122109041217473983_1073012978907028, 122106596169473983_1970419020303685, 122107043547473983_1786958545895838, 122109041217473983_1070088882579143 · status: väntar
+
 ## 2026-09-24
 
 - [ ] **Bäverbutiken · Takoverdrag** · invändning — Fukt, kondens och täckta takventiler är det i särklass vanligaste skälet att inte köpa (12 av 19 invändningar), trots fem OB-annonser live. Kunderna frågar rakt ut om väven andas och om ventilerna täcks. → Axel: ta fram svaret (andas väven? hur går det med takluckor och ventilhattar?) och lägg det på produktsidan. Först då en OB-annons som visar det svaret, inte ett nytt påstående.
