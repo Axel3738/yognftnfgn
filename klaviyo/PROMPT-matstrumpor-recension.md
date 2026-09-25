@@ -8,7 +8,7 @@ Allt under strecket är prompten.
 
 Bygg recensionsflödet för **Matstrumpor** (Klaviyo-kontot UV6Rqg), på samma
 sätt som Bäverbutikens F14 (`klaviyo/innehall/baverbutiken/floden/f14-recension-trustpilot.json`,
-flödet `UAKPrr`). Läs `klaviyo/README.md` (raden om F14) först.
+flödet `TaadnG`). Läs `klaviyo/README.md` (raden om F14) först.
 
 1. Kopiera F14 till `klaviyo/innehall/matstrumpor/floden/f14-recension-trustpilot.json`. Trigger Fulfilled Order, 14 dagar, filter `kundundantag`, blocket `stjarnor`.
 2. Trustpilot-länken: `https://se.trustpilot.com/evaluate/matstrumpor.se`. Om det inte går att verifiera att profilen finns, skriv det i memot och i rapporten.

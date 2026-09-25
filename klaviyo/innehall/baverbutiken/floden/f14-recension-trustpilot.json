@@ -1,7 +1,7 @@
 {
   "id": "f14-recension-trustpilot",
-  "namn": "FLOW_recension_trustpilot_v1",
-  "memo": "UTKAST, slås aldrig på utan Axels ord. Axels skiss 2026-09-25: 'Vad tycker du?' med fem stjärnor. Skissen skickade 1-3 stjärnor till Judge.me och 4-5 till Trustpilot, men det är review gating: förbjudet enligt Trustpilots regler (corporate.trustpilot.com → Guidelines for businesses) och vilseledande. Byggt därför med ALLA stjärnor till Trustpilot (?stars=N förväljer betyget) plus en rad om att svara på mejlet om något blivit fel. Trustpilot-adressen se.trustpilot.com/evaluate/baverbutiken.se är inte verifierad (Trustpilot svarar 403 till maskiner), kontrollera den innan flödet slås på. Triggas av Fulfilled Order, 14 dagar efter att ordern skickats. Kundundantaget: frågan gäller ett köp kunden gjort.",
+  "namn": "FLOW_recension_trustpilot_v2",
+  "memo": "UTKAST, slås aldrig på utan Axels ord. Axels skiss 2026-09-25: 'Vad tycker du?' med fem stjärnor. Skissen skickade 1-3 stjärnor till Judge.me och 4-5 till Trustpilot, men det är review gating: förbjudet enligt Trustpilots regler (corporate.trustpilot.com → Guidelines for businesses) och vilseledande. Byggt därför med ALLA stjärnor till Trustpilot (?stars=N förväljer betyget) plus en rad om att svara på mejlet om något blivit fel. Trustpilot-adressen se.trustpilot.com/evaluate/baverbutiken.se är inte verifierad (Trustpilot svarar 403 till maskiner), kontrollera den innan flödet slås på. Triggas av Fulfilled Order, 14 dagar efter att ordern skickats. Kundundantaget: frågan gäller ett köp kunden gjort. v2 2026-09-25 (Axel: 'gör den brandad'): hero-rubrik, kundens egna varor ur ordern (utan pris), stjärnorna i svart panel med butikens rubrikstil, och hjälpraden som Axels egen rad. v1 (UAKPrr) raderas.",
   "trigger": {
     "typ": "metrik",
     "metrik": [
@@ -25,7 +25,7 @@
       "typ": "mejl",
       "mejl": {
         "id": "f14-recension-trustpilot-e1",
-        "namn": "FLOW_recension_E1_M_vad-tycker-du_v1",
+        "namn": "FLOW_recension_E1_M_vad-tycker-du_v2",
         "memo": "Copy skriven av sonnet-subagent 2026-09-25. Raden '2 minuter av din tid' struken (påhittad tidsangivelse). Transaktionell förfrågan: tre-frågorstestets 'ingen annan kan säga det' är ärligt ❌ och redovisat. Rubrikerna skärpta av huvudsessionen så de pekar på kundens eget paket (samma bedömning som F04 E2 'Kom allt fram?').",
         "taggar": {
           "typ": "M",
@@ -57,18 +57,22 @@
         "forhandstext": "Paketet har hunnit fram. Välj en stjärna och säg vad du tycker.",
         "block": [
           {
-            "typ": "text",
+            "typ": "hero",
             "rubrik": "Vad tyckte du om det som kom?",
-            "text": "Hej {{fornamn}}! Paketet från oss har hunnit fram vid det här laget. Klicka på en stjärna nedan för att lämna ditt betyg på Trustpilot."
+            "text": "Hej {{fornamn}}! Paketet från oss har hunnit fram vid det här laget. Klicka på en stjärna och lämna ditt betyg på Trustpilot."
+          },
+          {
+            "typ": "dynamisk",
+            "kalla": "skickade_rader"
           },
           {
             "typ": "stjarnor",
+            "rubrik": "Ge ditt betyg",
             "lank": "url:https://se.trustpilot.com/evaluate/baverbutiken.se",
             "text": "Alla omdömen, positiva som negativa, hjälper oss lika mycket."
           },
           {
-            "typ": "text",
-            "rubrik": null,
+            "typ": "grundare",
             "text": "Blev något inte som det skulle? Svara på det här mejlet, så hjälper vi dig."
           }
         ],
@@ -104,7 +108,7 @@
             "ingen_annan": true
           }
         ],
-        "version": 1
+        "version": 2
       }
     }
   ]
