@@ -54,6 +54,13 @@ Läses av `/kommentarer` innan svaren skrivs.
 
 - **Vinkeln går inte att ändra** (fast 15°). Axel 2026-09-25.
 - **Flera olika slipband följer med** — se produktbilderna. Axel 2026-09-25.
+- **Slipbandens mått: 330 × 30 mm** (leverantörens specbild 2026-09-25).
+  Varvtal 4 000–9 000 varv/min, 7 hastigheter. ⚠️ Specbilden säger
+  "input voltage 110V" — den är amerikansk; kontrollera att vi skickar
+  adapter för 230 V innan det sägs något om ström.
+- **Påfyllningskit (offert från leverantören 2026-09-25, USD utan moms, frakt
+  inräknad):** Sverige 1 st $10,33 · 2 st $17,19 · 3 st $22,92; Norge 1 st
+  $12,88 · 2 st $19,72 · 3 st $26,78. Vad kitet innehåller står inte i offerten.
 - **Reservdelar:** ett kit med nya slipband och slipskivor är på väg från
   leverantören. Det får sägas att vi håller på att lansera ett kit med
   förslitningsdelarna. Axel 2026-09-25.
