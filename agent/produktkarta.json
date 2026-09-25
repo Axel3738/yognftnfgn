@@ -9,7 +9,7 @@
     "Magiborsten NO (NO)"
   ],
   "lage_regel": "drift = minst 30 köp sedan start OCH livstids-ROAS över break-even (produkten har bevisat sig). Allt annat = test. Skillnaden spelar roll bara vid förlust: en testprodukt går åtgärdstrappan, en driftprodukt halveras ner mot 500 kr.",
-  "uppdaterad": "2026-09-24",
+  "uppdaterad": "2026-09-25",
   "kampanjer": [
     {
       "campaign_id": "120250333936950291",
@@ -1297,6 +1297,54 @@
         "sek": 0,
         "kalla": "Axels prissheet (Google Sheet 10VrOx…, CSV-export 2026-09-24, BATCH 10: \"Täljsetet 30 delar i väska\"), 1 st till Sverige: produkt + frakt 13,08 + 13,86 = 26,94 USD, plus 2,9 EUR EU-avgift per order. Priset 869 kr läst ur baverbutiken.se/products.json (se lage_motivering).",
         "datum": "2026-09-24"
+      }
+    },
+    {
+      "campaign_id": "120250365281490291",
+      "produkt": "Radiostyrda Driftbilen 1:24",
+      "lage": "test",
+      "lage_motivering": "ny kampanj startad 2026-09-25, under 110 kr spend och noll köp vid morgonens rond — tillagd av /rond-auto 2026-09-25. Break-even står i kampanjnamnet (1.63). Priset i butiken 689 kr (jämförpris 899) läst ur baverbutiken.se/products.json 2026-09-25 (handle radiostyrd-driftbil-1-24-4wd-bana-och-extra-dack-ingar). Kostnadsblocket fyllt 2026-09-25 ur prissheetets CSV-export (export?format=csv).",
+      "break_even_roas": null,
+      "break_even_kalla": "uträknad ur kostnadsblocket (Axels prissheet)",
+      "kostnad": {
+        "pris_sek": 689,
+        "usd": 20.75,
+        "eur": 2.9,
+        "sek": 0,
+        "kalla": "Axels prissheet (Google Sheet 10VrOx…, CSV-export 2026-09-25, raden \"Radiostyrd drifting bil 1:24\" (1 st)), 1 st till Sverige (kolumnen SWEDEN): produkt + frakt 7,08 + 13,67 = 20.75 USD, plus 2,9 EUR EU-avgift per order. Priset 689 kr läst ur baverbutiken.se/products.json 2026-09-25.",
+        "datum": "2026-09-25"
+      }
+    },
+    {
+      "campaign_id": "120250365247300291",
+      "produkt": "Maskinhyllan för 4 Elverktyg",
+      "lage": "test",
+      "lage_motivering": "ny kampanj startad 2026-09-25, under 110 kr spend och noll köp vid morgonens rond — tillagd av /rond-auto 2026-09-25. Break-even står i kampanjnamnet (1.64). Priset i butiken 1039 kr (jämförpris 2078) läst ur baverbutiken.se/products.json 2026-09-25 (handle vaggmonterad-maskinhylla-plats-for-4-elverktyg). Kostnadsblocket fyllt 2026-09-25 ur prissheetets CSV-export (export?format=csv).",
+      "break_even_roas": null,
+      "break_even_kalla": "uträknad ur kostnadsblocket (Axels prissheet)",
+      "kostnad": {
+        "pris_sek": 1039,
+        "usd": 32.94,
+        "eur": 2.9,
+        "sek": 0,
+        "kalla": "Axels prissheet (Google Sheet 10VrOx…, CSV-export 2026-09-25, raden \"Maskinhyllan för 4 elverktyg\"), 1 st till Sverige (kolumnen SWEDEN): produkt + frakt 10,46 + 22,48 = 32.94 USD, plus 2,9 EUR EU-avgift per order. Priset 1039 kr läst ur baverbutiken.se/products.json 2026-09-25.",
+        "datum": "2026-09-25"
+      }
+    },
+    {
+      "campaign_id": "120250365205900291",
+      "produkt": "Värmesitsen 45 × 90 cm",
+      "lage": "test",
+      "lage_motivering": "ny kampanj startad 2026-09-25, under 110 kr spend och noll köp vid morgonens rond — tillagd av /rond-auto 2026-09-25. Break-even står i kampanjnamnet (1.63). Priset i butiken 599 kr (jämförpris 779) läst ur baverbutiken.se/products.json 2026-09-25 (handle varmesits-45-90-cm-4-varmezoner-usb-driven). Kostnadsblocket fyllt 2026-09-25 ur prissheetets CSV-export (export?format=csv).",
+      "break_even_roas": null,
+      "break_even_kalla": "uträknad ur kostnadsblocket (Axels prissheet)",
+      "kostnad": {
+        "pris_sek": 599,
+        "usd": 17.68,
+        "eur": 2.9,
+        "sek": 0,
+        "kalla": "Axels prissheet (Google Sheet 10VrOx…, CSV-export 2026-09-25, raden \"Värmesitsen för älgpasset\"), 1 st till Sverige (kolumnen SWEDEN): produkt + frakt 8,62 + 9,06 = 17.68 USD, plus 2,9 EUR EU-avgift per order. Priset 599 kr läst ur baverbutiken.se/products.json 2026-09-25.",
+        "datum": "2026-09-25"
       }
     }
   ],
