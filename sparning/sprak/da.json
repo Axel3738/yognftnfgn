@@ -192,6 +192,8 @@
     "Aviseringen till dig gick inte fram": "Beskeden til dig kom ikke frem",
     "Fraktbolaget har bytt till en annan leveranslösning": "Fragtfirmaet har skiftet til en anden leveringsløsning",
     "Paketet är för stort för brevlådan och skickas därför till ett ombud. Det kan ta 1-2 arbetsdagar extra, och du får besked när det går att hämta": "Pakken er for stor til postkassen og sendes derfor til et afhentningssted. Det kan tage 1-2 hverdage ekstra, og du får besked, når den kan hentes",
-    "Paketet är registrerat hos fraktbolaget": "Pakken er registreret hos fragtfirmaet"
+    "Paketet är registrerat hos fraktbolaget": "Pakken er registreret hos fragtfirmaet",
+    "Paketet har kommit till terminalen och är klart att skickas vidare": "Pakken er ankommet til terminalen og er klar til at blive sendt videre",
+    "Paketet har skickats till ett ombud eftersom dörren inte hittades. Du får besked när det kan hämtas, och namn på dörren gör nästa leverans enklare": "Pakken er sendt til et afhentningssted, fordi døren ikke blev fundet. Du får besked, når den kan hentes, og navn på døren gør næste levering lettere"
   }
 }

@@ -188,5 +188,6 @@
   "tracking number allocated & order ready": "Fraktetiketten är skapad",
   "shipping order created": "Ordern är registrerad hos fraktbolaget",
   "shipping label created, usps awaiting item": "Avsändaren har bokat leveransen och fraktbolaget väntar på paketet",
-  "the shipment has arrived at terminal and will be forwarded": "Paketet har kommit till terminalen och är klart att skickas vidare"
+  "the shipment has arrived at terminal and will be forwarded": "Paketet har kommit till terminalen och är klart att skickas vidare",
+  "the parcel has been forwarded to a pickup point because the recipient's door wasn't found. please ensure the door is clearly labelled with a name and provide delivery instructions whenever possible": "Paketet har skickats till ett ombud eftersom dörren inte hittades. Du får besked när det kan hämtas, och namn på dörren gör nästa leverans enklare"
 }
