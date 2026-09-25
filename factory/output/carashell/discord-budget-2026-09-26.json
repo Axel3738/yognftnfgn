@@ -1,0 +1,28 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-26",
+  "lage": "budget",
+  "server": "CaraShell — OPS",
+  "gjort": [
+    "Budget round: no budget changes tonight. Both campaigns are under the 16 % profit floor and both would be cut, but the cadence lock holds them — the main campaign was cut yesterday (1 of 3 days), the LISTICLE the day before (2 of 3). The main campaign can next be cut on 28 September",
+    "Yesterday's cut did work on spend: the main campaign went 9 198 → 6 632 kr, right at its new 6 750 budget. Meta respects the ceiling",
+    "But the profit did not come back with it. ROAS went 0.91 → 1.28, still under break-even 1.63, and purchases stayed at 6 for the second day running",
+    "Paused two ads: CaraShellRoof_PD_110_1 (12 067 kr, 17 purchases, CPA 710 kr) and CaraShellRoof_PD_105_1 (1 649 kr, 1 purchase, CPA 1 649 kr)",
+    "103 purchases over 7 days on 66 355 kr at ROAS 2.19. Profit contribution 22 733 kr, down from 31 253 last night and 36 911 the night before"
+  ],
+  "siffror": { "spend_7d": 66355, "kop_7d": 103, "roas_7d": 2.19, "vinstbidrag_7d": 22733 },
+  "briefer": [],
+  "action_axel": [
+    "The main campaign is running at a loss and the round cannot touch it for two more nights. Three-day profit is -10.8 % at ROAS 1.39 against break-even 1.63, and the cadence lock (3 days between budget changes) blocks another cut until 28 September. At roughly 6 700 kr a day that is about 13 400 kr spent below break-even before the routine gets its next turn. If you want it lower sooner, that is a manual change: Ads Manager, account MagiBorsten DK, campaign CARASHELL_SE_Taköverdraget BE-ROAS 1,51, set the daily budget from 6 750 kr to 4 725 kr. Or tell me to do it and I will"
+  ],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-27",
+  "varningar": [
+    "The delivery-ceiling explanation is now half confirmed and half not. Cutting the LISTICLE fixed it: 2.00 → 3.03 ROAS, and its 3-day profit is back to 14.8 % from 11.1 %. Cutting the main campaign brought the spend down but not the ROAS, so something beyond the budget is wrong there. Purchases fell from 13-14 a day to 6 a day on 24 September and have not moved since",
+    "I checked whether the round's own pausing could be the cause and it cannot: 75 ads are still ACTIVE in that campaign against 5 paused, so the pool is not what shrank. Eight ads have been paused there in six nights, but they were the losers, not the volume",
+    "PD_110_1, paused tonight, is the biggest ad the round has stopped: 12 067 kr and 17 purchases over 14 days, killed on a CPA of 710 kr against break-even 693 kr. That is 2.5 % over the line. It was losing money, but only just, and it carried real volume. Worth knowing if tomorrow's purchase count drops again",
+    "Norway and Denmark still run unwatched on 4 000 kr/day each, reported 23 September, unchanged",
+    "Briefs stay paused by owner decision from 18 September"
+  ]
+}

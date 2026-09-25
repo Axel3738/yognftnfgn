@@ -2168,3 +2168,40 @@ läses för hand ur de amerikanska sidorna.
 
 **Discord:** engelsk rapport i `#annons-uppladdning`, meddelande `1553062840158388285`,
 **med ACTION NEEDED** (HeyGen-saldot).
+
+---
+
+## Nattvakten 2026-09-26 — sänkningen bet på spenden men inte på ROAS
+
+**Budget:** inga ändringar. Båda kampanjerna ligger under vinstgolvet 16 % och
+båda skulle sänkas, men kadensspärren håller dem — huvudkampanjen sänktes i går
+(1 av 3 dygn), LISTICLE i förrgår (2 av 3). **Nästa möjliga sänkning av
+huvudkampanjen: 2026-09-28.**
+
+**Pausade:** `CaraShellRoof_PD_110_1` (12 067 kr, 17 köp, CPA 710 kr) och
+`CaraShellRoof_PD_105_1` (1 649 kr, 1 köp, CPA 1 649 kr).
+
+**7 dygn SE:** 66 355 kr, 103 köp, ROAS 2,19, vinstbidrag 22 733 kr —
+36 911 → 31 253 → 22 733 på tre nätter.
+
+### Mönster 14 är halvt bekräftat, halvt motbevisat
+
+| | LISTICLE | Huvudkampanjen |
+|---|---|---|
+| Sänkt | 2 850 → 2 000 (24/9) | 9 600 → 6 750 (25/9) |
+| Spenden följde? | ja | **ja** — 9 198 → 6 632 kr, precis på taket |
+| ROAS följde? | **ja** — 2,00 → 3,03 | **NEJ** — 0,91 → 1,28, fortfarande under break-even |
+
+Sänkningen fungerar alltså som verktyg på spenden i båda kampanjerna, och på
+vinsten i LISTICLE. **Men huvudkampanjen har ett problem som inte är budgeten.**
+Köpen föll från 13–14/dygn till **6/dygn den 24/9** och har legat kvar där två
+dygn, oavsett spendnivå.
+
+**Kollat och avfärdat: rondens egna pausningar är inte orsaken.** 75 annonser är
+fortfarande ACTIVE i kampanjen mot 5 pausade — åtta annonser på sex nätter är
+förlorarna, inte volymen.
+
+⚠️ `PD_110_1` är den största annons ronden dödat: 12 067 kr och 17 köp på
+14 dygn, pausad på CPA 710 kr mot break-even 693 kr — **2,5 % över linjen.**
+Den gick med förlust, men knappt, och bar riktig volym. Läs morgondagens
+köpsiffra mot den här raden.

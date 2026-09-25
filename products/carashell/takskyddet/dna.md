@@ -1067,3 +1067,32 @@ Taket är alltså inte en engångsförsämring utan en nivå: över den köper p
 sämre trafik, under den kommer vinsten tillbaka. Det gör sänkningen till rätt
 verktyg och gör om-höjning till något som ska mätas mot FAKTISK spend, aldrig mot
 budgeten (se instruktionen i mönstret ovan).
+
+**Rättelse 2026-09-26 — mönster 14 gäller LISTICLE, inte huvudkampanjen.**
+Gårdagens formulering ("taket går åt båda hållen") höll inte ett dygn till.
+Mätt efter sänkningarna:
+
+- **LISTICLE:** sänkt 2 850 → 2 000 kr ⇒ ROAS 2,00 → 3,03, vinst 3d 11,1 → 14,8 %.
+  Mönstret stämmer.
+- **Huvudkampanjen:** sänkt 9 600 → 6 750 kr ⇒ spenden följde exakt
+  (9 198 → 6 632 kr) men **ROAS bara 0,91 → 1,28**, fortfarande under break-even
+  1,63, och köpen låg kvar på 6/dygn andra dygnet i rad.
+
+**Köpen är det som faktiskt bröts.** 13–14 köp/dygn t.o.m. 23/9, sedan 6/dygn
+från 24/9 — oberoende av om kampanjen spenderade 9 200 eller 6 600 kr. Ett
+leveranstak förklarar sämre ROAS vid högre spend; det förklarar INTE att köpen
+halveras och ligger kvar när spenden sänks.
+
+**Avfärdat samma natt:** rondens egna pausningar är inte orsaken. 75 annonser
+ACTIVE mot 5 pausade i kampanjen — åtta pausade på sex nätter är förlorarna,
+inte volymen.
+
+→ **Instruktion:** skriv inte om orsaken förrän köpen rört sig. Två hypoteser
+står öppna och ingen av dem är mätt än: (a) de två dygnen på 9 600–11 800 kr
+brände publiken/inlärningen och kampanjen kryper tillbaka, (b) något utanför
+budgeten ändrades den 24/9 (creative fatigue brett, säsong, konkurrens).
+Mät köp/dygn i tre dygn till innan något av det skrivs som orsak.
+
+⚠️ **Och den här filen är själv exemplet på repots regel:** i går skrevs
+"bevisad mekanism" om något som var mätt i EN riktning på EN kampanj. Ett dygn
+senare var hälften fel. Skriv aldrig en mätning som en evig lag.
