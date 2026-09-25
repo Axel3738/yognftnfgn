@@ -1,0 +1,111 @@
+{
+  "id": "f14-recension-trustpilot",
+  "namn": "FLOW_recension_trustpilot_v1",
+  "memo": "UTKAST, slås aldrig på utan Axels ord. Axels skiss 2026-09-25: 'Vad tycker du?' med fem stjärnor. Skissen skickade 1-3 stjärnor till Judge.me och 4-5 till Trustpilot, men det är review gating: förbjudet enligt Trustpilots regler (corporate.trustpilot.com → Guidelines for businesses) och vilseledande. Byggt därför med ALLA stjärnor till Trustpilot (?stars=N förväljer betyget) plus en rad om att svara på mejlet om något blivit fel. Trustpilot-adressen se.trustpilot.com/evaluate/baverbutiken.se är inte verifierad (Trustpilot svarar 403 till maskiner), kontrollera den innan flödet slås på. Triggas av Fulfilled Order, 14 dagar efter att ordern skickats. Kundundantaget: frågan gäller ett köp kunden gjort.",
+  "trigger": {
+    "typ": "metrik",
+    "metrik": [
+      "Fulfilled Order"
+    ]
+  },
+  "filter": [
+    "kundundantag"
+  ],
+  "ateintrade": {
+    "varaktighet": null,
+    "enhet": "alltime"
+  },
+  "steg": [
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 14
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f14-recension-trustpilot-e1",
+        "namn": "FLOW_recension_E1_M_vad-tycker-du_v1",
+        "memo": "Copy skriven av sonnet-subagent 2026-09-25. Raden '2 minuter av din tid' struken (påhittad tidsangivelse). Transaktionell förfrågan: tre-frågorstestets 'ingen annan kan säga det' är ärligt ❌ och redovisat. Rubrikerna skärpta av huvudsessionen så de pekar på kundens eget paket (samma bedömning som F04 E2 'Kom allt fram?').",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "Axels skiss 2026-09-25",
+          "lardom": null,
+          "avatar": "köparen vars paket har hunnit fram",
+          "begar": "säga vad man tyckte",
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "low",
+          "prefix": "Recension",
+          "kod": "M"
+        },
+        "amnesrader": [
+          {
+            "text": "Vad tyckte du om det som kom i paketet?",
+            "begar": "säga vad man tyckte"
+          },
+          {
+            "text": "Hur blev det, {{fornamn}}?",
+            "begar": "säga vad man tyckte"
+          },
+          {
+            "text": "Ett klick räcker för ditt betyg",
+            "begar": "göra det enkelt"
+          }
+        ],
+        "forhandstext": "Paketet har hunnit fram. Välj en stjärna och säg vad du tycker.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Vad tyckte du om det som kom?",
+            "text": "Hej {{fornamn}}! Paketet från oss har hunnit fram vid det här laget. Klicka på en stjärna nedan för att lämna ditt betyg på Trustpilot."
+          },
+          {
+            "typ": "stjarnor",
+            "lank": "url:https://se.trustpilot.com/evaluate/baverbutiken.se",
+            "text": "Alla omdömen, positiva som negativa, hjälper oss lika mycket."
+          },
+          {
+            "typ": "text",
+            "rubrik": null,
+            "text": "Blev något inte som det skulle? Svara på det här mejlet, så hjälper vi dig."
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Vad tyckte du om det som kom i paketet?",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Hur blev det, {{fornamn}}?",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Ett klick räcker för ditt betyg",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Paketet har hunnit fram. Välj en stjärna och säg vad du tycker.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Vad tyckte du om det som kom?",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 1
+      }
+    }
+  ]
+}

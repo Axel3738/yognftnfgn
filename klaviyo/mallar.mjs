@@ -155,6 +155,14 @@ function knappHtml(s, text, href, { liten = false } = {}) {
               </table>`;
 }
 
+// En länk per stjärna, 1–5, alltid till samma destination. Trustpilots
+// evaluate-sida tar ?stars=N (förvalt betyg); okänd parameter ignoreras.
+export function stjarnLankar(b, ctx) {
+  const bas = lank(b.lank, ctx);
+  const sep = bas.includes('?') ? '&' : '?';
+  return [1, 2, 3, 4, 5].map((n) => `${bas}${sep}stars=${n}`);
+}
+
 function rubrikHtml(s, text, lage, { storlek = 30, farg = null, align = 'center' } = {}) {
   return `<p class="kl-rubrik" align="${align}" style="${s.rubrik} font-size: ${storlek}px; line-height: 1.15; color: ${farg ?? s.svart}; margin: 0;">${kundtext(text, lage)}</p>`;
 }
@@ -416,6 +424,19 @@ const BLOCK = {
   },
   knapp(b, ctx) {
     return rad(knappHtml(ctx.s, b.text, esk(lank(b.lank, ctx))), '20px 32px 12px');
+  },
+  // Fem klickbara stjärnor. ALLA stjärnor går till SAMMA ställe (stjarnLankar)
+  // — review gating (nöjda till ett ställe, missnöjda till ett annat) är
+  // förbjudet enligt Trustpilots regler och vilseledande (Axels skiss
+  // 2026-09-25 byggdes därför med en destination för alla).
+  stjarnor(b, ctx) {
+    const { s } = ctx;
+    const celler = stjarnLankar(b, ctx)
+      .map((href, i) => `<td align="center" style="padding: 0 4px;"><a href="${esk(href)}" target="_blank" title="${i + 1} av 5" style="${s.brod} font-size: 40px; line-height: 1; color: #f5b301; text-decoration: none;">&#9733;</a></td>`)
+      .join('');
+    return rad(`
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr>${celler}</tr></table>${b.text ? `
+              <p align="center" style="${s.brod} font-size: 13px; color: ${s.gra}; margin: 10px 0 0;">${esk(b.text)}</p>` : ''}`, '12px 32px 16px');
   },
   grundare(b, ctx) {
     const { s, lage } = ctx;
@@ -750,6 +771,9 @@ function textversion(mejl, ctx) {
         break;
       case 'knapp':
         ut.push(`${b.text}: ${lank(b.lank, { ...ctx, varningar: [] })}`);
+        break;
+      case 'stjarnor':
+        ut.push(`Ge ditt betyg: ${lank(b.lank, { ...ctx, varningar: [] })}`);
         break;
       case 'grundare':
         ut.push(mejl.format === 'rentext' ? t(b.text) : `${t(b.text)}\n${ctx.stil.grundare ?? 'Axel'}, grundare`);
