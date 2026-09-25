@@ -205,4 +205,10 @@ förbättringen rakt av i stället.
   sessionens behörighetsläge stoppar skrivning dit. Ladda upp den innan
   avläsningen litar på stämpeln. Gamla ordrar läses via rabattkoden
   (`STRUMPOR-*-P*` = B, övriga = A), se `.claude/commands/abtest.md`.
+- **Ekonomi och break-even** (2026-09-25): `tools/ekonomi.mjs` läser inköpspris,
+  ordermix och break-even per paketnivå ur Shopify. Läget och de öppna frågorna
+  står i `docs/matstrumpor-ekonomi.md`. ⚠️ `SHOPIFY_SHOP_1r46tp_qx` saknades i
+  environmentet den dagen — då faller `tools/shopify.mjs` tillbaka på
+  `MATSTRUMPOR`-appen, som bara har produkter öppna. Sätt variabeln till
+  `1r46tp-qx.myshopify.com` i kommandot (exakt rad i ekonomi-dokumentet).
 - Klaviyo är installerat. Rör inte dess kod.

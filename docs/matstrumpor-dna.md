@@ -13,10 +13,12 @@ Skriven 2026-08-25 (körning 1 — nollrunda samma dag som launch, 0 köp).
   s006, s007), 17 UGC-annonser, live sedan 2026-08-25.
 - **Priser (verifierade på sajten):** Sushi 399 kr (3-par 369) · Pizza 449 ·
   Hamburgare 299 · Donut 299 · presentkort 150. Köp 1 Få 1 på alla fyra.
-- ⚠️ **Break-even-ROAS/CPA SAKNAS FORTFARANDE** — COGS är inte dokumenterad
-  någonstans. Vid avläsning 1 (2026-08-28) blockerade det vinstbidragstabellen
-  helt: ingen ranking kunde göras. **Det är nu den enskilt viktigaste luckan i
-  hela produktminnet, och riktiga pengar rör sig.** Fråga Axel — gissa aldrig.
+- **Break-even-ROAS: 1,74 blandat, 1,76–1,78 på Köp 1 Få 1 à 399 kr** (verifierat
+  2026-09-25 ur Shopifys inköpspris 80,23 kr/låda och 239 ordrar; ingen moms tas ut,
+  ätpinnarna saknar inköpspris). Hela räkningen, scenarierna och de fem öppna
+  frågorna till Axel: `docs/matstrumpor-ekonomi.md`. Kör om med
+  `theme-matstrumpor/tools/ekonomi.mjs`. Ska moms redovisas är break-even 2,75 —
+  fråga innan du dömer något mot 1,7.
 - **Avläsningshistorik:** avläsning 1 gjord 2026-08-28, se
   `docs/matstrumpor-batch-log.md`. Snapshot 1 av marginal-CPA-serien.
 
