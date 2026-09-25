@@ -79,6 +79,22 @@ export const googleAvailable = (): boolean => googleConfig() !== null;
  * tjänst, eller stavad fel, ser ut exakt som ingen variabel alls. Raden
  * namnger den som saknas, och namnen är inte hemliga.
  */
+/**
+ * Vilken Railway-tjänst som svarar just nu.
+ *
+ * Sex tjänster delar en kodbas och en databas. En variabel som ligger på
+ * fel tjänst ser ut EXAKT som ingen variabel alls, och den som ska rätta
+ * det har ingen chans att veta vilken av de sex som saknar den. Namnet
+ * står därför i rutan. Det är inte hemligt.
+ */
+export function tjanstensNamn(): string {
+  return (
+    process.env.RAILWAY_SERVICE_NAME?.trim() ||
+    process.env.RAILWAY_PUBLIC_DOMAIN?.trim() ||
+    ""
+  );
+}
+
 export function googleSaknar(): string[] {
   const saknas: string[] = [];
   if (!process.env.GOOGLE_ADS_CLIENT_ID?.trim()) saknas.push("GOOGLE_ADS_CLIENT_ID");
