@@ -47,8 +47,9 @@ Läses av `/kommentarer` innan svaren skrivs.
   ingen fyrkantig borste — borsten snurrar och är därför rund. Axel
   2026-09-25: *"det är klart att den runda borsten funkar till fyrkantiga
   rör. Det är ju bara att köra"*. Nämn aldrig en "fyrkantig borste".
-- **150 mm rör:** borsthuvudet är 100 mm (produktsidan). Om det räcker för
-  150 mm är okänt — fråga leverantören.
+- **150 mm rör: räcker INTE.** Leverantören 2026-09-25: *"A 100mm brush head
+  is too small for a 150mm pipe, and the cleaning effect may not be ideal."*
+  Säg det rakt ut till den som frågar; borsthuvudet är 100 mm.
 
 ## Bälteslipmaskin (`Beltgrinder` / `Balteslipmaskin`)
 
@@ -66,6 +67,10 @@ Läses av `/kommentarer` innan svaren skrivs.
   förslitningsdelarna. Axel 2026-09-25.
 
 ## Solcellslampa (`Solcellslampa`)
+
+- **Batteritid:** 6–8 timmar i vanligt läge, 3–4 timmar med ljuset konstant
+  på. Leverantören 2026-09-25. (Hur länge lampan lyser efter att sensorn
+  löst ut är fortfarande obesvarat.)
 
 - **Ingen fjärrkontroll.** En av videorna visade av misstag en fjärrkontroll
   (fel variant i videon). Svaret: det var fel i videon, lampan har ingen
