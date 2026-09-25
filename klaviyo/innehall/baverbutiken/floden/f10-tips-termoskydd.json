@@ -1,0 +1,116 @@
+{
+  "id": "f10-tips-termoskydd",
+  "namn": "FLOW_tips_termoskydd_v1",
+  "memo": "Tipsmejl när termoskyddet är framme (Axels önskan 2026-09-25: \"custom tips på produkter\"). Triggas av Fulfilled Order med produkten i ordern, 12 dagar efter att den skickats (leverans 5-10 arbetsdagar). Tipsen kommer bara ur produktsidan och kommentarer/produktfakta.md. Kundundantaget: tips om en vara kunden köpt.",
+  "trigger": {
+    "typ": "metrik",
+    "metrik": [
+      "Fulfilled Order"
+    ],
+    "produkt_innehaller": [
+      "Termoskydd Husbil"
+    ]
+  },
+  "filter": [
+    "kundundantag"
+  ],
+  "ateintrade": {
+    "varaktighet": null,
+    "enhet": "alltime"
+  },
+  "steg": [
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 12
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f10-tips-termoskydd-e1",
+        "namn": "FLOW_tips_E1_M_sa-far-du-ut-mest-av-termoskyddet_v1",
+        "memo": "Tipsmejl vid leverans. Smårutornas egen produkt nämns inte, Axel sa 2026-09-25 att länk/namn saknas och att det ska hämtas ur butiken först.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "produktsida",
+          "kalla_ref": "scratchpad/prod/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande.txt",
+          "lardom": null,
+          "avatar": "kunden som just fått termoskyddet",
+          "begar": "veta hur man sätter på det så imman och morgonsolen försvinner",
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "high",
+          "prefix": "Termoskydd",
+          "kod": "M"
+        },
+        "amnesrader": [
+          {
+            "text": "Kläm fast flikarna så här",
+            "begar": "veta hur man monterar det säkert"
+          },
+          {
+            "text": "Så slipper du imma på morgonen",
+            "begar": "lösa ett konkret irritationsmoment"
+          },
+          {
+            "text": "Ingen ser in på rastplatsen",
+            "begar": "förstå mörkläggningseffekten"
+          }
+        ],
+        "forhandstext": "Fyra saker som gör skillnad morgonen efter.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Så får du ut mest av termoskyddet",
+            "text": "Rätt montering gör skillnaden mellan en immig ruta och en torr morgon."
+          },
+          {
+            "typ": "punkter",
+            "rubrik": null,
+            "punkter": [
+              "Kläm flikarna ordentligt i dörrkarmen, det håller skyddet på plats även i blåst.",
+              "Sätt på skyddet innan kvällen så imman inte får fäste på insidan av rutan över natten.",
+              "Skyddet mörklägger hela framvagnen, perfekt om du vill sova längre på en ljus morgon.",
+              "Låt skyddet torka innan du viker ihop det för förvaring."
+            ]
+          },
+          {
+            "typ": "fakta"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Kläm fast flikarna så här",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Så slipper du imma på morgonen",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Ingen ser in på rastplatsen",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Så får du ut mest av termoskyddet",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Fyra saker som gör skillnad morgonen efter.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ]
+      }
+    }
+  ]
+}

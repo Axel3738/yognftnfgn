@@ -165,7 +165,7 @@ export function validera(mejl, { html = null, text = null, produkter = [], brand
       }
       if (kalla === 'flode') {
         const namn = [].concat(trigger?.metrik ?? []);
-        if (trigger?.typ !== 'metrik' || !namn.some((n) => /placed order/i.test(n))) varningar.push(`Block ${i + 1}: erbjudandet gäller bara köpare, men flödet startas inte av Placed Order.`);
+        if (trigger?.typ !== 'metrik' || !namn.some((n) => /placed order|fulfilled order/i.test(n))) varningar.push(`Block ${i + 1}: erbjudandet gäller bara köpare, men flödet startas inte av ett köp (Placed Order eller Fulfilled Order).`);
       }
     }
     if (b.typ === 'citat' && !b.handle) fel.push(`Block ${i + 1} (citat) saknar handle.`);

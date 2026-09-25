@@ -863,6 +863,7 @@ det som återstår står i `klaviyo/SISTA-STEGEN.md`.
   Product-fältet `Name`, och Klaviyo tar max 5 segment i bearbetning åt gången. Flödesmallar
   **kopieras** in i flödet, så en ändrad mall slår inte igenom i ett befintligt flöde. Kontot saknar
   postadress (Settings → **Account** → Contact information; mätt med ett renderat mejl, inte bara API:t) — inget får skickas förrän den finns.
+- ✅ **Omgång 2 efter Axels granskning 2026-09-25:** 13 flöden som utkast. F04 och sex tipsflöden (bälteslip, taköverdrag, termoskydd, båtmotorskydd, IBC, sätesöverdrag) triggas av **Fulfilled Order**, eftersom bara den händelsen bär spårningsnumret. F04:s knapp går till kundens eget paket (`sparning:` → `?k=` base64, sidan byter till bävernumret, för Klaviyo saknar sha256). Ändrad text kräver `version` i mejlet, annars återanvänds den gamla mallen (`TPL_<id>_v<version>`). Förhandsvisning: https://claude.ai/artifact/CMT1xEfoqLqm23AS6WxqAT. Id:n och lärdomar i `klaviyo/README.md`.
 - ⛔ **OpenSend (anonyma mejl) får inte användas i Sverige**: att mejla reklam utan samtycke
   bryter mot MFL 19 §. Axels beslut 2026-09-24: ingen popup än.
 

@@ -139,6 +139,9 @@ export async function bygg({
       post: {
         id,
         namn: m.namn ?? id,
+        // Mallnamnet är TPL_<id>_v<version>: ändrad text i ett mejl som redan
+        // laddats upp måste få en högre version, annars återanvänds den gamla mallen.
+        ...(m.version ? { version: m.version } : {}),
         amnesrader: (m.amnesrader ?? []).map((a) => ({ text: a.text, begar: a.begar ?? null })),
         forhandstext: m.forhandstext ?? '',
         html: `${id}.html`,

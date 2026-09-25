@@ -1,7 +1,7 @@
 {
   "id": "f01-valkomst",
-  "namn": "Välkomst",
-  "memo": "Kontot har inga signup-formulär (mätt 2026-09-24), och sajtens två Shopify-formulär lovar 'exklusiva rabatter' utan att någon finns. Välkomstflödet ska göra nya prenumeranter till köpare utan rabatt, genom storsäljarna och tryggheten (leverans, spårning, ångerrätt). Om en välkomstrabatt ska finnas är Axels beslut.",
+  "namn": "FLOW_lista_valkomst_v2",
+  "memo": "Kontot har inga signup-formulär (mätt 2026-09-24), och sajtens två Shopify-formulär lovar 'exklusiva rabatter' utan att någon finns. Välkomstflödet ska göra nya prenumeranter till köpare utan rabatt, genom storsäljarna och tryggheten (leverans, spårning, ångerrätt). Om en välkomstrabatt ska finnas är Axels beslut. Axels feedback 2026-09-25: ren text såg obrandad ut och \"man kan inte knappa\" — nu brandad med knapp. Ny version eftersom Klaviyos API inte kan ändra ett befintligt flöde.",
   "trigger": {
     "typ": "lista",
     "lista": "LISTA_nyhetsbrev"
@@ -19,23 +19,18 @@
       "typ": "mejl",
       "mejl": {
         "id": "f01-valkomst-e1",
-        "namn": "FLOW_prenumerant_E1_M_axel-har-jag-driver-baverbutiken_v1",
-        "memo": "Första kontakten. Ingen rabatt att luta sig mot, så mejlet visar vem som står bakom butiken och vad den faktiskt säljer innan storsäljarna kommer.",
+        "namn": "FLOW_prenumerant_E1_M_axel-har-jag-driver-baverbutiken_v2",
+        "memo": "v2: Axels dom 'jättetorrt och obrandat' - byter från rentext till ett hero-block med storsäljarna synliga (taköverdrag, båtmotorskydd, övervakningskamera) och en tydlig knapp till hela sortimentet. Fortfarande Axel som hälsar, men kortare.",
         "taggar": {
           "typ": "M",
-          "_typ": "N=nytt koncept, I=iteration av annonsvinnare, IM=imitation, M=mejlspecifikt, S=säsong",
           "kalla": "egen-data",
-          "_kalla": "egen-data | winning-line | voc | swipe | gissning",
           "kalla_ref": "klaviyo/innehall/baverbutiken/BRIEFER.md:275-278",
           "lardom": null,
           "avatar": "nyanmäld prenumerant utan känd köphistorik",
           "begar": "veta vad butiken faktiskt är innan man handlar något",
           "awareness": "solution",
-          "_awareness": "unaware | problem | solution | product | promo",
           "urgency": "ingen",
-          "_urgency": "sasong | lager | pris | konsekvens | ingen",
           "confidence": "medium",
-          "_confidence": "high | medium | low (low = gissning)",
           "prefix": "Valkomst",
           "kod": "M"
         },
@@ -49,21 +44,30 @@
             "begar": "veta vad sortimentet faktiskt är"
           },
           {
-            "text": "Taköverdraget är vår mest köpta pryl",
-            "begar": "se vad andra kunder redan valt"
+            "text": "Tre prylar folk köper mest just nu",
+            "begar": "se vilka produkter som redan är populära"
           }
         ],
         "forhandstext": "Ingen rabattkod i det här mejlet. Bara vem jag är och vad du kan handla här.",
         "block": [
           {
-            "typ": "text",
+            "typ": "hero",
             "rubrik": "Jag heter Axel",
-            "text": "Jag driver Bäverbutiken. Det du hittar här är prylar för båten, husvagnen, husbilen, trädgården och huset, sånt som löser ett konkret problem.\n\nInga prylar som bara ser bra ut i en annons."
+            "text": "Jag driver Bäverbutiken. Det du hittar här är prylar för båten, husvagnen, husbilen, trädgården och huset, sånt som löser ett konkret problem. Inga prylar som bara ser bra ut i en annons.",
+            "bild": "produkt:takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+            "knapp": {
+              "text": "Se allt vi säljer",
+              "lank": "kollektion:alla-produkter"
+            }
           },
           {
-            "typ": "text",
-            "rubrik": "Det här säljer vi mest av",
-            "text": "Taköverdraget till husvagnen är det vi säljer mest av. Efter det kommer båtmotorskyddet, och sen övervakningskameran."
+            "typ": "produktrad",
+            "rubrik": "Det här köper flest kunder",
+            "handles": [
+              "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+              "batmotorskydd-420d-heltackande-for-utombordare",
+              "overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+            ]
           },
           {
             "typ": "fakta"
@@ -83,13 +87,7 @@
             "ingen_annan": true
           },
           {
-            "rad": "Taköverdraget är vår mest köpta pryl",
-            "visualisera": true,
-            "falsifiera": true,
-            "ingen_annan": true
-          },
-          {
-            "rad": "Ingen rabattkod i det här mejlet. Bara vem jag är och vad du kan handla här.",
+            "rad": "Tre prylar folk köper mest just nu",
             "visualisera": true,
             "falsifiera": true,
             "ingen_annan": true
@@ -101,13 +99,19 @@
             "ingen_annan": true
           },
           {
-            "rad": "Det här säljer vi mest av",
+            "rad": "Det här köper flest kunder",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Ingen rabattkod i det här mejlet. Bara vem jag är och vad du kan handla här.",
             "visualisera": true,
             "falsifiera": true,
             "ingen_annan": true
           }
         ],
-        "format": "rentext"
+        "version": 2
       }
     },
     {

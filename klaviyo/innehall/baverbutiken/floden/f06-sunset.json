@@ -1,7 +1,7 @@
 {
   "id": "f06-sunset",
-  "namn": "FLOW_segment_sunset_v1",
-  "memo": "Klaviyos sunset-mönster: den som inte öppnat eller klickat på 180 dagar trots minst fem mottagna mejl får två ärliga, vänliga mejl i stället för att tystnaden bara fortsätter. Klickar hen inte heller nu slutar vi skicka, vilket skyddar leveransbarheten för alla andra prenumeranter. Steget 'sluta skicka' (märka profilen som avslutad) görs i Klaviyo av VA:n enligt SOP E06 tills motorn själv kan skapa update-profile-anrop. Ingen skuldbeläggning: mejlen är en ärlig fråga, inte ett argument.",
+  "namn": "FLOW_segment_sunset_v2",
+  "memo": "Klaviyos sunset-mönster: den som inte öppnat eller klickat på 180 dagar trots minst fem mottagna mejl får två ärliga, vänliga mejl i stället för att tystnaden bara fortsätter. Klickar hen inte heller nu slutar vi skicka, vilket skyddar leveransbarheten för alla andra prenumeranter. Steget 'sluta skicka' (märka profilen som avslutad) görs i Klaviyo av VA:n enligt SOP E06 tills motorn själv kan skapa update-profile-anrop. Ingen skuldbeläggning: mejlen är en ärlig fråga, inte ett argument. Axels feedback 2026-09-25: ren text såg obrandad ut och \"man kan inte knappa\" — nu brandad med knapp. Ny version eftersom Klaviyos API inte kan ändra ett befintligt flöde.",
   "trigger": {
     "typ": "segment",
     "segment": "SEG_oengagerade_180d"
@@ -18,23 +18,18 @@
       "typ": "mejl",
       "mejl": {
         "id": "f06-sunset-e1",
-        "namn": "FLOW_segment_E1_M_vill-du-ha-mejl_v1",
-        "memo": "Direkt, ärlig fråga utan skuld. Konsekvensen (vi slutar skicka) är sann och sägs rakt ut, som orsak, inte som hot.",
+        "namn": "FLOW_segment_E1_M_vill-du-ha-mejl_v2",
+        "memo": "v2: Axels dom 'fula' - byter från rentext till en rubrik, två korta meningar och en stor, tydlig knapp. Samma ärliga fråga utan skuld, bara kortare.",
         "taggar": {
           "typ": "M",
-          "_typ": "N=nytt koncept, I=iteration av annonsvinnare, IM=imitation, M=mejlspecifikt, S=säsong",
           "kalla": "egen-data",
-          "_kalla": "egen-data | winning-line | voc | swipe | gissning",
           "kalla_ref": null,
           "lardom": null,
           "avatar": "prenumeranten som inte öppnat eller klickat på ett mejl från oss på 180 dagar",
           "begar": "veta att det är okej att inte längre vilja ha mejl, och kunna säga det med ett klick",
           "awareness": "product",
-          "_awareness": "unaware | problem | solution | product | promo (sunset-mejl mäter listrelation, ingen sålt produkt)",
           "urgency": "ingen",
-          "_urgency": "sasong | lager | pris | konsekvens | ingen",
           "confidence": "high",
-          "_confidence": "high | medium | low (low = gissning; hög eftersom mönstret är Klaviyos etablerade sunset-flöde)",
           "prefix": "Sunset",
           "kod": "M"
         },
@@ -57,7 +52,7 @@
           {
             "typ": "text",
             "rubrik": "Vill du fortfarande ha våra mejl?",
-            "text": "{{fornamn}}, det har gått en tid sedan du öppnade eller klickade i ett mejl från oss.\n\nDet är helt okej. Vi skickar bara till dig om du faktiskt vill ha dem.\n\nHör vi inget nu slutar vi skicka till dig, så du inte får mejl du ändå inte läser."
+            "text": "{{fornamn}}, det har gått en tid sen du öppnade ett mejl från oss. Ett klick håller dig kvar på listan, annars slutar vi skicka."
           },
           {
             "typ": "knapp",
@@ -97,7 +92,7 @@
             "ingen_annan": true
           }
         ],
-        "format": "rentext"
+        "version": 2
       }
     },
     {
@@ -109,23 +104,18 @@
       "typ": "mejl",
       "mejl": {
         "id": "f06-sunset-e2",
-        "namn": "FLOW_segment_E2_M_sista-mejlet_v1",
-        "memo": "Kort och vänligt sista mejl. Ingen upprepning av argument, bara ett sista, tydligt val innan vi tar bort profilen från listan (VA:ns SOP E06).",
+        "namn": "FLOW_segment_E2_M_sista-mejlet_v2",
+        "memo": "v2: samma redesign som e1 - en rubrik, två korta meningar, en stor knapp. Sista, tydliga valet innan profilen märks avslutad.",
         "taggar": {
           "typ": "M",
-          "_typ": "N=nytt koncept, I=iteration av annonsvinnare, IM=imitation, M=mejlspecifikt, S=säsong",
           "kalla": "egen-data",
-          "_kalla": "egen-data | winning-line | voc | swipe | gissning",
           "kalla_ref": null,
           "lardom": null,
-          "avatar": "samma prenumerant som E1, fem dagar senare, utan att ha klickat",
+          "avatar": "samma prenumerant som e1, fem dagar senare, utan att ha klickat",
           "begar": "en tydlig avslutning, utan att bli tillmejlad igen och igen",
           "awareness": "product",
-          "_awareness": "unaware | problem | solution | product | promo (sunset-mejl mäter listrelation, ingen sålt produkt)",
           "urgency": "konsekvens",
-          "_urgency": "sasong | lager | pris | konsekvens | ingen",
           "confidence": "high",
-          "_confidence": "high | medium | low (low = gissning; hög eftersom mönstret är Klaviyos etablerade sunset-flöde)",
           "prefix": "Sunset",
           "kod": "M"
         },
@@ -148,11 +138,11 @@
           {
             "typ": "text",
             "rubrik": "Det här är sista mejlet",
-            "text": "{{fornamn}}, det här är sista mejlet du får från oss om vi inte hör något.\n\nHör vi inget nu tar vi bort dig från listan. Vill du ha kvar mejlen är det bara att klicka."
+            "text": "{{fornamn}}, det här är sista mejlet om vi inte hör något. Ett klick håller dig kvar, annars tar vi bort dig från listan."
           },
           {
             "typ": "knapp",
-            "text": "Ja, ha kvar mig på listan",
+            "text": "Ja, ha kvar mig",
             "lank": "kollektion:alla-produkter"
           }
         ],
@@ -182,13 +172,13 @@
             "ingen_annan": true
           },
           {
-            "rad": "Ja, ha kvar mig på listan",
+            "rad": "Ja, ha kvar mig",
             "visualisera": true,
             "falsifiera": true,
             "ingen_annan": true
           }
         ],
-        "format": "rentext"
+        "version": 2
       }
     }
   ]

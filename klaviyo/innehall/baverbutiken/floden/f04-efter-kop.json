@@ -1,11 +1,11 @@
 {
   "id": "f04-efter-kop",
-  "namn": "FLOW_order_efterkop_v3",
-  "memo": "Omgjort 2026-09-24 (BRIEFER.md → F04). Förra versionen påminde om erbjudandet dag 20, men TACKIGEN gäller bara 7 dagar från ordern, så påminnelsen kom efter att löftet gått ut. Nu introduceras erbjudandet redan i E1 (dag 4, medan det fortfarande gäller) och E2 (dag 18, efter leveransen) säljer vidare utan erbjudande. Beslut B 2026-09-25: filtret är \"kundundantag\" (alla köpare som inte tackat nej), inte bara de som sagt ja — MFL 19 § andra stycket. Ny version eftersom Klaviyos API inte kan ändra ett befintligt flödes filter.",
+  "namn": "FLOW_order_efterkop_v4",
+  "memo": "Omgjort 2026-09-24 (BRIEFER.md → F04). Förra versionen påminde om erbjudandet dag 20, men TACKIGEN gäller bara 7 dagar från ordern, så påminnelsen kom efter att löftet gått ut. Nu introduceras erbjudandet redan i E1 (dag 4, medan det fortfarande gäller) och E2 (dag 18, efter leveransen) säljer vidare utan erbjudande. Beslut B 2026-09-25: filtret är \"kundundantag\" (alla köpare som inte tackat nej), inte bara de som sagt ja — MFL 19 § andra stycket. Ny version eftersom Klaviyos API inte kan ändra ett befintligt flödes filter. v4 2026-09-25 (Axels feedback): triggas av Fulfilled Order i stället för Placed Order, så att knappen \"Följ ditt paket\" går till kundens EGET paket (spårningsnumret finns bara i den händelsen). E1 3 dagar efter att ordern skickats (ordern skickas normalt inom timmar, alltså ungefär dag 3-4 som förut), E2 \"Kom allt fram?\" 16 dagar efter E1 (Axel: vänta 16, inte 14).",
   "trigger": {
     "typ": "metrik",
     "metrik": [
-      "Placed Order"
+      "Fulfilled Order"
     ]
   },
   "filter": [
@@ -19,14 +19,14 @@
     {
       "typ": "vanta",
       "enhet": "days",
-      "varde": 4
+      "varde": 3
     },
     {
       "typ": "mejl",
       "mejl": {
         "id": "f04-efter-kop-e1",
-        "namn": "FLOW_order_E1_M_din-bestallning-ar-pa-vag_v1",
-        "memo": "Dag 4: paketet är inte framme än, men avsändaren är känd nu och det är rätt läge att förklara leveransen innan kunden hör av sig och undrar. TACKIGEN gäller 7 dagar från ordern (mejl/konfig.json), så erbjudandet måste introduceras nu för att hinna nyttjas, inte dag 20 som förut.",
+        "namn": "FLOW_order_E1_M_din-bestallning-ar-pa-vag_v2",
+        "memo": "v2: Axels dom 'obrandat, man kan inte knappa, folk orkar inte läsa' - byter från rentext till branded mejl med en tydlig knapp 'Följ ditt paket' högt upp, länkad till kundens eget paket (lank: sparning:) i stället för en generisk sida. Kortare text, erbjudandet kvar sist.",
         "taggar": {
           "typ": "M",
           "kalla": "egen-data",
@@ -59,16 +59,16 @@
           {
             "typ": "text",
             "rubrik": "Din beställning är på väg",
-            "text": "Leveransen tar normalt 5-10 arbetsdagar. Du behöver inte gissa, paketnumret börjar på BB- och du hittar det i orderbekräftelsen, sedan kan du se exakt var det är just nu."
-          },
-          {
-            "typ": "grundare",
-            "text": "Ser det konstigt ut eller känns det för långsamt, mejla kundsupport@baverbutiken.se och jag svarar själv."
+            "text": "Leveransen tar normalt 5-10 arbetsdagar. Tryck på knappen så ser du exakt var ditt paket är just nu."
           },
           {
             "typ": "knapp",
             "text": "Följ ditt paket",
-            "lank": "url:https://baverbutiken.se/pages/spara"
+            "lank": "sparning:"
+          },
+          {
+            "typ": "grundare",
+            "text": "Känns det för långsamt? Mejla kundsupport@baverbutiken.se, jag svarar själv."
           },
           {
             "typ": "erbjudande",
@@ -101,19 +101,19 @@
             "ingen_annan": true
           },
           {
-            "rad": "Din beställning är på väg (rubrik)",
+            "rad": "Följ ditt paket",
             "visualisera": true,
             "falsifiera": true,
             "ingen_annan": true
           }
         ],
-        "format": "rentext"
+        "version": 2
       }
     },
     {
       "typ": "vanta",
       "enhet": "days",
-      "varde": 14
+      "varde": 16
     },
     {
       "typ": "mejl",
