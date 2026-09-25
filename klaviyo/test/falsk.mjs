@@ -23,6 +23,7 @@ export function falskKlaviyo({
   kampanjer = [],
   listor = [],
   rapport = null,
+  segmentko = 0,
 } = {}) {
   const anrop = [];
   let nr = 0;
@@ -38,6 +39,7 @@ export function falskKlaviyo({
     meddelanden: Object.fromEntries(kampanjer.map((k) => [`MSG_${k.id}`, { kampanj: k.id, definition: {}, mall: null }])),
     floden: floden.map((f) => res('flow', f.id, { name: f.name, status: f.status ?? 'draft', trigger_type: f.trigger_type ?? 'Metric', archived: false })),
     sendJobs: [],
+    segmentko,
     raderade: [],
     rateKvar: rateLimit,
     serverKvar: serverfel,
@@ -85,7 +87,16 @@ export function falskKlaviyo({
     if (p === '/api/accounts' && metod === 'GET') return svar(200, { data: [tillstand.konto], links: { self: 'x' } });
     if (p === '/api/metrics' && metod === 'GET') return lista(tillstand.metriker, q, sidstorlekMetriker);
     let m = /^\/api\/metrics\/([^/]+)\/metric-properties$/.exec(p);
-    if (m) return svar(200, { data: [res('metric-property', 'P1', { property: 'ProductName', label: 'ProductName' }), res('metric-property', 'P2', { property: 'Quantity' })] });
+    // Egenskaperna som kontot QZ4jLG svarade med 2026-09-25: Ordered Product bär
+    // `Name`, Placed Order bär `Items` (lista med produkttitlar). Frågar anropet efter
+    // sample_values utan additional-fields svarar Klaviyo 400, som i verkligheten.
+    if (m) {
+      const q = u.searchParams;
+      if ((q.get('fields[metric-property]') ?? '').includes('sample_values') && !(q.get('additional-fields[metric-property]') ?? '').includes('sample_values')) {
+        return svar(400, { errors: [{ code: 'invalid', detail: "'sample_values' must be requested via additional-fields in order to be included as a sparse fieldset" }] });
+      }
+      return svar(200, { data: [res('metric-property', 'P1', { property: 'Name', label: 'Name' }), res('metric-property', 'P2', { property: 'Items', label: 'Items', inferred_type: 'list' }), res('metric-property', 'P3', { property: 'Quantity' })] });
+    }
 
     if (p === '/api/lists') {
       if (metod === 'GET') return lista(tillstand.listor, q, 10);
@@ -95,6 +106,8 @@ export function falskKlaviyo({
       if (metod === 'GET') return lista(tillstand.segment, q, 10);
       if (metod === 'POST') {
         const x = nekaSaknas(a.name, '/data/attributes/name') ?? nekaSaknas(a.definition?.condition_groups, '/data/attributes/definition/condition_groups'); if (x) return x;
+        // Segmentkön (mätt 2026-09-25): de första `segmentko` försöken nekas med 400.
+        if (tillstand.segmentko > 0) { tillstand.segmentko--; return svar(400, { errors: [{ code: 'invalid', detail: 'The segment processing limit (5) has been reached. Please wait for the current segments to finish and try again.', source: { pointer: '/data/attributes/definition' } }] }); }
         const r = res('segment', nyttId('S'), { name: a.name, definition: a.definition, is_active: true }); tillstand.segment.push(r); return svar(201, { data: r });
       }
     }

@@ -152,7 +152,7 @@ export async function provmatningar({ klient, metriker, ids }) {
   // Placed Orders egenskaper: fältet produkt_innehaller filtrerar på (ladda-upp.mjs ORDER_PRODUKTFALT).
   if (ids.placed_order) {
     try {
-      const e = await klient.get(`/api/metrics/${ids.placed_order}/metric-properties`, { 'fields[metric-property]': 'property,label,inferred_type,sample_values' });
+      const e = await klient.get(`/api/metrics/${ids.placed_order}/metric-properties`, { 'fields[metric-property]': 'property,label,inferred_type,sample_values', 'additional-fields[metric-property]': 'sample_values' });
       const egen = (e?.data ?? []).map((x) => ({ egenskap: x.attributes?.property ?? x.attributes?.label, typ: x.attributes?.inferred_type ?? null, exempel: (x.attributes?.sample_values ?? []).slice(0, 3) }));
       p.placed_order_egenskaper = { egenskaper: egen, produktfalt_finns: egen.some((x) => x.egenskap === ORDER_PRODUKTFALT), ladda_upp_anvander: ORDER_PRODUKTFALT };
     } catch (err) { p.placed_order_egenskaper = { fel: err.message }; }

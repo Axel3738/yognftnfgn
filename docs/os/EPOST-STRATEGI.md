@@ -102,6 +102,21 @@ inte förrän han sagt det.
 **Inget utskick innan DMARC och avsändaren är rättade.** Det är Axels två klick
 (Loopia + Klaviyo), inte något en session kan göra.
 
+**Mätt i Klaviyo 2026-09-25 ~06:00 UTC** (segmenten nyss skapade, `profile_count`,
+kontot QZ4jLG skapat samma morgon — Shopify-synken kan fortfarande pågå):
+
+| Segment | Profiler |
+|---|---|
+| `SEG_samtycke` | **1 552** |
+| `SEG_uppvarmning_steg1` | **216** |
+| `SEG_engagerade_60d` / `_90d` | 216 / 216 |
+| `SEG_kopare` | 216 |
+
+⚠️ 1 552 är långt under de 6 186 med samtycke som Shopify visade 2026-09-24, och att
+köpare = engagerade 30 d = 216 tyder på att bara den senaste månadens ordrar kommit in.
+Mät om före K01; är talen oförändrade är synken inte klar eller fel lista vald i
+Integrations → Shopify.
+
 **Uppvärmningstrappan** (Klaviyos riktlinjer, help.klaviyo.com artikel
 20413890435355). Räknas från dagen för **första utskicket från den nya
 domänen**, inte från ett kalenderdatum:

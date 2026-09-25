@@ -132,12 +132,17 @@ export function aterintrade(flode) {
 }
 
 /**
- * Placed Orders egenskap med produktnamnen (Shopify-integrationen skickar en lista
- * med hela produkttitlar). ⚠️ OBEKRÄFTAT: specen säger bara att `field` är en
- * sträng. `kolla.mjs --prov` listar Placed Orders egenskaper — står inte ItemNames
- * där är det här fel namn, och flödet triggar aldrig.
+ * Placed Orders egenskap med produktnamnen. Mätt 2026-09-25 i kontot QZ4jLG
+ * (`kolla.mjs --prov` + tre riktiga händelser): Shopify-integrationen skickar
+ * `Items`, en lista med hela produkttitlar ("Taköverdrag Husvagn – Skyddar Den
+ * Dyraste Ytan"). `ItemNames`, som stod här förut, finns inte i kontot — ett flöde
+ * på det fältet hade aldrig triggat.
  */
-export const ORDER_PRODUKTFALT = 'ItemNames';
+export const ORDER_PRODUKTFALT = 'Items';
+
+/** Segmentkön (mätt 2026-09-25): 5 åt gången i Klaviyo, sedan 400. */
+export const SEGMENTKO_FORSOK = 10;
+export const SEGMENTKO_PAUS_MS = 30_000;
 
 /**
  * `trigger.produkt_innehaller` → MetricTrigger.trigger_filter (spec 2026-07-15):
@@ -262,7 +267,7 @@ export function raknaSenasteDygn(minne, typ, nu) {
  * @param {boolean} [o.uppdatera]
  * @param {string} o.kontoDir    konto/<brand>/
  */
-export async function laddaUpp({ brand, manifest, klient = null, skarpt = false, bara = null, uppdatera = false, kontoDir, produkter = null, nu = () => new Date(), logg = () => {} }) {
+export async function laddaUpp({ brand, manifest, klient = null, skarpt = false, bara = null, uppdatera = false, kontoDir, produkter = null, nu = () => new Date(), logg = () => {}, sov = (ms) => new Promise((ok) => setTimeout(ok, ms)) }) {
   if (skarpt && !klient) throw new Error('Skarp uppladdning kräver en nyckel.');
   if (bara && !['segment', 'mallar', 'kampanjer', 'floden'].includes(bara)) throw new Error(`--bara ${bara}: välj segment, mallar, kampanjer eller floden.`);
   if (manifest?.brand && manifest.brand !== brand.id) throw new Error(`Manifestet är byggt för "${manifest.brand}", inte ${brand.id}. Butiker blandas aldrig.`);
@@ -367,7 +372,20 @@ export async function laddaUpp({ brand, manifest, klient = null, skarpt = false,
         if (s.kampanjOk) kravSamtycke(definition, s.namn);
         const f = await finns('segment', s.namn);
         if (f) { frammande('segment', s.namn, f); segIds[s.namn] = f.id; hoppa('segment', s.namn, `finns redan (${f.id})`); continue; }
-        const svar = await skriv('segment', s.namn, 'POST', '/api/segments', { data: { type: 'segment', attributes: { name: s.namn, definition } } });
+        // Mätt 2026-09-25 i kontot QZ4jLG: Klaviyo bearbetar högst 5 nya segment åt
+        // gången och svarar 400 "segment processing limit (5)" på det sjätte. Vänta
+        // på att de förra blir klara och försök igen, i stället för att stoppa.
+        let svar;
+        for (let forsok = 1; ; forsok++) {
+          try {
+            svar = await skriv('segment', s.namn, 'POST', '/api/segments', { data: { type: 'segment', attributes: { name: s.namn, definition } } });
+            break;
+          } catch (e) {
+            if (!(e.status === 400 && /segment processing limit/i.test(e.message)) || forsok >= SEGMENTKO_FORSOK) throw e;
+            logg(`Klaviyo bearbetar redan 5 segment — väntar ${SEGMENTKO_PAUS_MS / 1000} s innan ${s.namn} (försök ${forsok} av ${SEGMENTKO_FORSOK}).`);
+            await sov(SEGMENTKO_PAUS_MS);
+          }
+        }
         segIds[s.namn] = svar.data.id;
         segSkapadeNu.add(s.namn);
       } catch (e) { stoppa('segment', s.namn, e); }
@@ -532,7 +550,7 @@ export async function laddaUpp({ brand, manifest, klient = null, skarpt = false,
             const pf = produktTriggerFilter({ metricId: trigger.id, ord: t.produkt_innehaller, produkter });
             trigger.trigger_filter = pf.trigger_filter;
             for (const v of pf.varningar) r.varningar.push(`${fl.namn}: ${v}`);
-            r.varningar.push(`${fl.namn}: triggar bara på ordrar där ${ORDER_PRODUKTFALT} innehåller ${pf.titlar.map((x) => `"${x}"`).join(' eller ')}. Fältnamnet ${ORDER_PRODUKTFALT} är obekräftat — kör node klaviyo/kolla.mjs --prov och läs placed_order_egenskaper innan flödet slås på.`);
+            r.varningar.push(`${fl.namn}: triggar bara på ordrar där ${ORDER_PRODUKTFALT} innehåller ${pf.titlar.map((x) => `"${x}"`).join(' eller ')}. Fältnamnet ${ORDER_PRODUKTFALT} är mätt i kontot 2026-09-25; titeln måste matcha Shopify-titeln exakt, så byts produktens namn i Shopify triggar flödet inte längre.`);
           }
         } else if (t.typ === 'lista') {
           trigger = { type: 'list', id: await sakraLista(t.lista) };

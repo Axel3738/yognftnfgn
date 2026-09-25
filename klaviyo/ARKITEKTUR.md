@@ -273,17 +273,37 @@ steg, så "har köpt sedan start" stoppar resten av flödet utan en split.
 - Skriver `logg/<brand>/utfall.jsonl` och föreslår lärdomsrader i
   `logg/<brand>/kampanjlogg.md` (huvudsessionen skriver lärdomen, inte skriptet).
 
-## Obekräftat (mäts av `kolla.mjs --prov` första gången nyckeln finns)
+## Obekräftat → mätt 2026-09-25 i kontot QZ4jLG
 
-1. `editor_type: "CODE"` på revision 2026-07-15.
-2. Om `accept: application/json` godtas eller om `application/vnd.api+json` krävs
-   (klienten skickar det senare).
-3. Kassametrikens namn i kontot.
-4. Om `template_id` i ett flöde kopieras eller länkas.
-5. Vad `measurement: "sum"` summerar (VIP-segment väntar tills det är mätt).
-6. Formen på `send_strategy` i 2026-07-15 (felsvaret vid första kampanjen avgör).
-7. Händelsevariablerna i flödesmallarna (`event.extra.line_items` m.fl.):
-   kontrolleras med `POST /api/template-render` mot en riktig händelse.
-8. Fältet för `produkt_innehaller`: `ItemNames` på Placed Order, med listfiltret
-   `contains` (matchar ett HELT element, därför slås orden upp mot Shopify-titlarna).
-   `kolla.mjs --prov` listar Placed Orders egenskaper (`placed_order_egenskaper`).
+Mätt av huvudsessionen med `kolla.mjs --prov`, riktiga händelser (`GET /api/events`)
+och tillbakaläsning efter den första skarpa uppladdningen. Kontot skapades samma
+morgon (metrikerna 05:31 UTC), så Shopify-historiken kan fortfarande synkas.
+
+1. ✅ `editor_type: "CODE"` godtas på 2026-07-15 (provmall `ShWbbK` skapad, renderad och borttagen).
+2. ✅ `accept: application/json` godtas (`GET /api/accounts` svarade 200).
+3. ✅ Kassametriken heter **`Checkout Started`** (`TnufKh`, Shopify). `Started Checkout` finns inte.
+4. ✅ `template_id` i ett flöde **kopieras**: flödesmejlets mall (`XuiiSN`, namn `TPL_f06-sunset-e1_v1`)
+   finns inte i mallbiblioteket. En ändrad mall slår alltså inte igenom i ett befintligt flöde; flödet
+   måste byggas om (nytt `_v<N>`) eller mejlet redigeras i Klaviyo.
+5. ⬜ `measurement: "sum"`: inte mätt. Inget VIP-segment byggs förrän det är mätt.
+6. ✅ `send_strategy` `{ method: "static", datetime, options: { is_local: false } }` godtas: 14 kampanjer
+   skapades och läses tillbaka som Draft med exakt den formen, `scheduled_at` tomt.
+7. ✅ (via riktiga händelser, inte `template-render`) Placed Order och Checkout Started bär
+   `$extra.line_items[]` med `title`, `quantity`, `line_price`, `product.title`, `product.images[0].src`;
+   Checkout Started bär `$extra.responsive_checkout_url` och `checkout_url`. Viewed Product: inga
+   händelser än i någon av de två metrikerna, alltså omätt.
+8. ✅ **Rättat:** fältet för `produkt_innehaller` heter **`Items`** på Placed Order (lista med hela
+   produkttitlar, t.ex. `["Taköverdrag Husvagn – Skyddar Den Dyraste Ytan"]`). `ItemNames`, som motorn
+   gissade, finns inte; F07 hade aldrig triggat. `ORDER_PRODUKTFALT = 'Items'`, test i `kolla.test.mjs`.
+9. ✅ **Rättat:** Ordered Product bär produkttiteln i **`Name`**, inte `ProductName`
+   (`PRODUKTNAMN_EGENSKAP = 'Name'` i `segment.mjs`). Kategorisegmenten byggdes med `Name`.
+10. ✅ **Nytt:** `sample_values` på `metric-properties` kräver `additional-fields[metric-property]=sample_values`,
+    annars 400. `kolla.mjs` skickar det.
+11. ✅ **Nytt:** Klaviyo bearbetar **högst 5 nya segment åt gången** och svarar 400 "segment processing
+    limit (5)" på det sjätte. `ladda-upp.mjs` väntar 30 s och försöker igen (högst 10 gånger), testat.
+12. ⚠️ **Öppet:** `Viewed Product` finns två gånger (`V6gSUn` från API = Klaviyos onsite-skript,
+    `WXk2Lf` från Shopify), båda med 0 händelser. Motorn väljer inte, så F03 Webbhistorik är INTE
+    uppladdat. Avgörs när en av dem fått händelser (Analytics → Metrics), eller av Axel.
+13. ⚠️ Kontot saknar postadress (`organization.full_address` blir tom i sidfoten, MFL 20 §) och
+    standardavsändare. Mejlen bär `kundsupport@baverbutiken.se` själva; adressen fylls i under
+    Settings → Brand (Axels klick) innan något skickas.

@@ -35,7 +35,9 @@ export const KATEGORIER = {
   hus_hem: ['sotarset', 'övervakningskamera', 'solcellslampa'],
 };
 
-export const PRODUKTNAMN_EGENSKAP = 'ProductName';
+// Mätt 2026-09-25 i kontot QZ4jLG: Ordered Product bär produkttiteln i `Name`
+// (ingen `ProductName` finns bland egenskaperna).
+export const PRODUKTNAMN_EGENSKAP = 'Name';
 
 // ------------------------------------------------------------------ byggstenar
 

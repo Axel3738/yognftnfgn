@@ -331,7 +331,7 @@ test('produkt_innehaller: trigger_filter med metric-property på hela produkttit
   assert.equal(def.triggers[0].id, 'M_PO');
   assert.equal(def.triggers[0].trigger_filter.condition_groups[0].conditions[0].value, undefined);
   assert.equal(def.triggers[0].trigger_filter.condition_groups[0].conditions[0].filter.value, 'Marin Motorhölje 420D – Universellt Skydd');
-  assert.ok(r.varningar.some((v) => /obekräftat.*kolla\.mjs --prov/.test(v)));
+  assert.ok(r.varningar.some((v) => /mätt i kontot 2026-09-25.*Shopify-titeln exakt/.test(v)));
   // Produktfilter på en listtrigger är fel.
   const m2 = MANIFEST();
   m2.floden[1].trigger = { typ: 'lista', lista: 'LISTA_nyhetsbrev', produkt_innehaller: ['x'] };
@@ -347,4 +347,14 @@ test('segment som inte kan byggas (metrik saknas): kampanjens stopp säger vilke
   assert.match(s.orsak, /active_on_site/);
   // Listan skapades ny ⇒ påminnelse om Shopify-synken.
   assert.ok(r.varningar.some((v) => /LISTA_nyhetsbrev är ny och tom/.test(v)));
+});
+
+test('segmentkön (mätt 2026-09-25): 400 "segment processing limit" väntas ut, segmentet skapas ändå', async () => {
+  const { k, f } = ny({ segmentko: 2 });
+  const pauser = [];
+  const r = await laddaUpp({ brand: BRAND, manifest: MANIFEST(), klient: k, skarpt: true, kontoDir: tmp(), nu: NU, sov: async (ms) => { pauser.push(ms); } });
+  assert.equal(pauser.length, 2);
+  assert.ok(!r.stopp.some((s) => s.typ === 'segment'), JSON.stringify(r.stopp));
+  const skapade = inget(f, /^\/api\/segments$/, 'POST').length;
+  assert.equal(skapade, SEGMENT.length + 2);
 });

@@ -6,13 +6,21 @@ Evolve-metoden. Bygget sker först med Claude, och utförandet flyttas till en V
 när rutinen fungerar (Arvids princip). Inga schemalagda rutiner byggs förrän Axel
 säger till.
 
-## Läget (2026-09-24 natt)
+## Läget (2026-09-25 morgon, uppladdat till Klaviyo)
+
+**Allt ligger i kontot `QZ4jLG` som utkast. Inget är schemalagt, inget är live, inget har skickats.**
+Mätt med tillbakaläsning 2026-09-25: 14 kampanjer `Draft` utan `scheduled_at`, 6 flöden `draft`
+med alla 14 flödesmejl `draft`, 30 mallar, 14 segment, listan `LISTA_nyhetsbrev`.
+Id:n står i `konto/baverbutiken/uppladdat.jsonl`.
 
 | Del | Status |
 |---|---|
-| Motorn (`klient`, `metriker`, `segment`, `kolla`, `ladda-upp`, `rapport`) | Klar och testad mot en falsk Klaviyo. **Aldrig körd mot kontot:** ingen nyckel fanns. |
-| Mallbyggaren (`mallar`, `validera`, `produkter`, `recensioner`, `bygg`) | Klar. Bygger med live-priser ur Shopify och riktiga Judge.me-recensioner. |
-| Innehåll | 14 kampanjer (K01–K14, 29 sep–1 dec) och 7 flöden (F01–F07). Copyn skrevs av Sonnet enligt `docs/copy-regler.md`. |
+| Kampanjer K01–K14 (29 sep–1 dec) | ✅ Draft i Klaviyo. Ämnesrad B och C ska läggas in som A/B-test för hand. |
+| Flöden | ✅ F01 Välkomst, F02 Övergiven kassa, F04 efter köp, F05 vinback, F06 sunset, F07 motorhölje → båtmotorskydd: draft. ❌ **F03 Webbhistorik inte uppladdat**: `Viewed Product` finns två gånger i kontot (Klaviyos onsite + Shopify), båda med 0 händelser; motorn väljer inte själv. |
+| Segment | ✅ 14 st. `SEG_samtycke` 1 552 profiler, `SEG_uppvarmning_steg1` 216 (mätt 2026-09-25, synken pågår troligen, se EPOST-STRATEGI §4). |
+| Motorn | ✅ Körd mot riktiga kontot. Tre gissningar rättade: `Items` (inte `ItemNames`) på Placed Order, `Name` (inte `ProductName`) på Ordered Product, väntan när Klaviyo bearbetar 5 segment. 96 tester gröna. Se ARKITEKTUR → "mätt 2026-09-25". |
+| Kontot | ⚠️ Saknar postadress (sidfoten blir utan adress, MFL 20 §) och standardavsändare. Settings → Brand. |
+| Innehåll | 14 kampanjer och 7 flöden. Copyn skrevs av Sonnet enligt `docs/copy-regler.md`. |
 | Strategi | `docs/os/EPOST-STRATEGI.md` |
 | VA-SOP:er | `klaviyo/sop/` (engelska, E00–E07) |
 | Kommandot | `/klaviyo kolla|bygg|ladda-upp|rapport|cs` (`.claude/commands/klaviyo.md`) |

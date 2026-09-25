@@ -24,3 +24,15 @@ test('kolla varnar när båda kassametrikerna finns', async () => {
   const { varningar } = await kolla({ brand: BRAND, klient: k });
   assert.ok(varningar.some((v) => /Started Checkout", "Checkout Started/.test(v)));
 });
+
+test('mätt 2026-09-25: Placed Order-fältet är Items, Ordered Product-fältet är Name, provet klarar additional-fields', async () => {
+  const { PRODUKTNAMN_EGENSKAP } = await import('../segment.mjs');
+  assert.equal(ORDER_PRODUKTFALT, 'Items');
+  assert.equal(PRODUKTNAMN_EGENSKAP, 'Name');
+  const f = falskKlaviyo();
+  const k = new KlaviyoKlient({ nyckel: 'pk_test', fetchFn: f.fetchFn, paus: 0, sov: async () => {} });
+  const { lage } = await kolla({ brand: BRAND, klient: k, prov: true });
+  assert.equal(lage.prov.placed_order_egenskaper.fel, undefined);
+  assert.equal(lage.prov.placed_order_egenskaper.produktfalt_finns, true);
+  assert.equal(lage.prov.ordered_product_egenskaper.produktnamn_finns, true);
+});
