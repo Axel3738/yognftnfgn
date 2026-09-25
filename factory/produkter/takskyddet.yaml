@@ -2,7 +2,7 @@
 # Källa: baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan
 # Specs, pris och recensioner lästa ur källan 2026-09-10. Bilderna är facit
 # (leverantörens): helintegrerad husbil med svart överdrag över taket, kanten
-# hänger 30–40 cm ner över sidorna, elastiska spännband med plastkrokar som
+# hänger 30–40 cm ner över sidorna, vävda spännband (inte gummi) med plastkrokar som
 # hakar under karossens kant. Källtexten säger "husvagn", bilderna visar en
 # husbil — produkten passar båda och copyn säger båda.
 # Okänt och därför aldrig påstått: förvaringspåse (nämns i källtexten, syns
@@ -273,7 +273,7 @@ media:
     - url: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-hopvikt.jpg"
       alt: "CaraShell taköverdrag hopvikt med spännband och tygdetalj synlig"
     - url: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-spanne.jpg"
-      alt: "Elastiska spännband med plastkrokar som håller fast taköverdraget"
+      alt: "Vävda spännband med plastkrokar som håller fast taköverdraget"
   videor:
   # ⚠️ Demot ska vara en MP4 (Axel 2026-09-09), men Shopify Files tar inga
   # videor på trial (API-GRANSER.md, mätt 2026-09-10). Källans GIF (över-
@@ -287,7 +287,7 @@ beskrivning:
   problem_rubrik: "Regnet står kvar vid takluckan"
   problem_text: "Husvagnen eller husbilen står ute över vintern. Regnvatten samlas kring takluckor och skarvar, och ingen går upp och kollar förrän våren – då avgör fukttestet om tätningarna höll."
   losning_rubrik: "CaraShell täcker bara taket"
-  losning_text: "CaraShell täcker takytan, med kanten hängande 30–40 cm ner över sidorna, så regnvatten inte blir stående vid takluckorna. Elastiska spännband med plastkrokar hakar under karossens kant och sitter kvar i blåst. En person sätter på det själv."
+  losning_text: "CaraShell täcker takytan, med kanten hängande 30–40 cm ner över sidorna, så regnvatten inte blir stående vid takluckorna. Vävda spännband med plastkrokar hakar under karossens kant och sitter kvar i blåst. En person sätter på det själv."
 
 vinkel:
   huvudvinkel: "Taket är ytan du aldrig ser — och den som kostar mest att laga. Konflikt typ A mot helöverdraget (tungt, två personer, skaver mot lacken) och före/efter (vattenpöl vid takluckan hela vintern mot torrt tak). Källa: källkampanjen 'Taköverdraget för Husvagn 6,5 × 3 m' i MagiBorsten (16 annonser, 15 köp på 2 563 kr, ROAS 6,61 de första två dygnen 2026-09-09–10; vinnaren Takoverdrag_PD_2_H1 är problem-driven) och källsidans egen rubrik 'Taket är det du aldrig ser'."
@@ -315,7 +315,7 @@ features:
   # två 10,5 m förstärkta band medföljer, storlekar 3×5,5 till 3×13,5 m.
   - "Nio storlekar: 5,5 till 13,5 m långt, 3 m brett – välj efter ditt tak"
   - "Svart 210D Oxford-väv, vattentät och tål sol"
-  - "Elastiska spännband på alla fyra sidor, justerbara, med plastkrokar som hakar under karossens kant"
+  - "Vävda spännband (inte gummi, töjs inte ut) på alla fyra sidor, justerbara, med plastkrokar som hakar under karossens kant"
   - "Två extra förstärkta band på 10,5 m följer med"
   - "Sätts på av en person"
   - "Kanten hänger ner ca 30–40 cm över sidorna"
@@ -437,9 +437,9 @@ faq:
   - fraga: "Vilken storlek ska jag välja?"
     svar: "Taköverdraget finns i nio längder, 5,5 till 13,5 meter, alla 3 meter breda. Mät taket från front till bakkant och välj närmaste längd uppåt. Passar både husvagn och husbil."
   - fraga: "Hur fäster jag överdraget?"
-    svar: "Elastiska spännband med plastkrokar hakar under karossens kant, längs sidorna."
+    svar: "Vävda spännband med plastkrokar hakar under karossens kant, längs sidorna."
   - fraga: "Sitter det kvar i blåst?"
-    svar: "Ja, de elastiska spännbanden håller det på plats i blåst."
+    svar: "Ja, de vävda spännbanden håller det på plats i blåst. De är inte av gummi, så de töjs inte ut."
   - fraga: "Hur många behövs för att lägga på det?"
     svar: "En person räcker, eftersom överdraget bara täcker taket."
   - fraga: "Vad gäller om jag ångrar mig?"
