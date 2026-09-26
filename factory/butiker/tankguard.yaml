@@ -15,14 +15,15 @@
 # Ändras något visuellt ska den här filen vara källan — då blir den beslutet.
 #
 # Bolaget är samma AB som driver Matstrumpor.se och HeimGuard.
-# Adress ur allabolag.se: Sjöhed 160, 442 74 Harestad.
+# Adress ur allabolag.se: Sjöhed 160, 442 74 Harestad. Sedan 2026-09-26 kontoret
+# (Axels order: allt kunderna får ska bära den nya adressen).
 
 butik:
   id: tankguard
   brand: "TankGuard"
   bolagsnamn: "STONEBITE ECOM AB"
   orgnr: "559576-2401"
-  adress: "Sjöhed 160, 442 74 Harestad"
+  adress: "Stenkolsgatan 1B, 417 07 Göteborg"
   supportmail: "hello@tankguard.se"
   land: SE
   huvudmarknad: Sverige

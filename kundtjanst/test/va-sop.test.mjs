@@ -8,6 +8,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { fyll, butiksvarden, domanFor, brandFor, HÄR as SOPMAPP } from '../sop/fyll.mjs';
+import { upptackBrands } from '../brands.mjs';
 import { tillBlock, bytFilnamnMotTitlar, kallText, rentText } from '../va-sop/skriv.mjs';
 
 const KONF = JSON.parse(readFileSync(new URL('../va-sop/notion.json', import.meta.url), 'utf8'));
@@ -81,4 +82,23 @@ test('kodblockets text är rå — ** och länkar rörs inte', () => {
 test('handbokens källfiler bär kvar sina platshållare — portabiliteten är intakt', () => {
   const rå = readFileSync(join(SOPMAPP, '10-NOT-RECEIVED.md'), 'utf8');
   assert.match(rå, /\{\{STORE_ID\}\}/, 'källfilen har blivit ifylld — då är den inte portabel längre');
+});
+
+// Adressbytet 2026-09-26: boten och tvisthandboken läser brandfilen, VA:n läser
+// Store facts och företags-SOP:en. Byts adressen bara på ena stället säger
+// kunden och VA:n olika saker — det här testet gör det omöjligt.
+test('Store facts och företags-SOP:en bär samma adress som brandfilerna', () => {
+  const fakta = readFileSync(new URL('../va-sop/00-STORE-FACTS.md', import.meta.url), 'utf8');
+  const foretagSop = readFileSync(new URL('../va-sop/company-information-requests.md', import.meta.url), 'utf8');
+  const brands = upptackBrands();
+  const medReturadress = brands.filter((b) => String(b.tvister?.returadress ?? '').trim());
+  assert.ok(medReturadress.length > 0, 'inget brand bär en returadress');
+  for (const b of medReturadress) {
+    // "BOLAG, Gata 1, 123 45 Ort, Land": gata och postort ska stå i Store facts (landet står där på VA:ns språk).
+    const [, gata, postort] = b.tvister.returadress.split(/\s*,\s*/);
+    assert.ok(fakta.includes(gata) && fakta.includes(postort), `Store facts saknar ${b.id}s returadress (${gata}, ${postort})`);
+  }
+  for (const b of brands.filter((x) => x.svar?.foretag?.adress)) {
+    assert.ok(foretagSop.includes(b.svar.foretag.adress), `company-information-requests.md saknar ${b.id}s företagsadress`);
+  }
 });

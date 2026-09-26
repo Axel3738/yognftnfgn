@@ -14,7 +14,7 @@
         "colors": { "background": "#F1F2EF", "onBackground": "#1B2026", "surface": "#FFFFFF", "onSurface": "#1B2026", "primary": "#1F6F8E", "onPrimary": "#FFFFFF", "header": "#22282E", "onHeader": "#F1F2EF", "footer": "#22282E", "onFooter": "#F1F2EF", "link": "#1F6F8E", "titleText": "#1B2026" },
         "typography": { "regularWebSafeFontFamily": "Arial", "regularGoogleFontFamily": "Source Sans 3", "headerWebSafeFontFamily": "Arial", "headerGoogleFontFamily": "Barlow", "headerGoogleFontWeight": 700 },
         "postHeader": { "logoUrl": "https://carashell.se/cdn/shop/files/carashell-logga-c.png?v=1789078262&width=200", "isLogoHidden": false, "logoLinkUrl": "https://carashell.se", "logoWidth": 96, "alignment": "center", "isAnnouncementBarEnabled": false },
-        "postFooter": { "alignment": "center", "text": "CaraShell · STONEBITE ECOM AB · Sjöhed 160, 442 74 Harestad, Sverige · hello@carashell.com", "unsubscribeText": "Avregistrera · Meld av · Unsubscribe" }
+        "postFooter": { "alignment": "center", "text": "CaraShell · STONEBITE ECOM AB · Stenkolsgatan 1B, 417 07 Göteborg, Sverige · hello@carashell.com", "unsubscribeText": "Avregistrera · Meld av · Unsubscribe" }
       }
     },
     "installningar_comment": "Läggs in med update_settings av uppladdningssessionen och kontrolleras med get_settings. Spoks har EN sidfot och EN avregistreringstext per workspace (get_settings på Bäverbutiken 2026-09-26), inte per språk — därför språkneutral sidfot (bolag, adress enligt MFL 20 §, mejl) och tre ord på avregistreringslänken. Färger, logga och typsnitt ur factory/butiker/carashell.yaml → branding och mejl/butiker/carashell.json. Fältnamnen är get_settings-svarets form; update_settings-schemat läses innan anropet."

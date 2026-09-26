@@ -1,5 +1,8 @@
 # SOP: Return address and return instructions
 
+**The PDF attached to this row is an older version with an old address.** Where it
+differs from this page, follow this page and take the address from Store facts.
+
 **Use this when** the owner has approved a return and the customer needs to know
 where to send it. Approval comes first — see "Customer wants to return product".
 
