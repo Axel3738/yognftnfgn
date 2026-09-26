@@ -441,4 +441,12 @@ plattformens egen.
   brandfält, "Öppet köp" för Matstrumpor, och rätta utkasten K02–K14 med
   `update_draft_campaign_blocks`. Flödesmejlen är live och ändras inte utan att stängas av.
 - `isOptOutEnabled: true` på K01 (försöket stoppades av rate limit) — onödigt om förhandsvisningen
-  redan visar "Avregistrera dig".
+  redan visar "Avregistrera dig". **Mätt samma eftermiddag i Axels skärmdump av F06 E2** (byggd av
+  samma motor, utan `isOptOutEnabled`): sidfoten visar "Avregistrera dig" + klubbtexten, och
+  rubrikerna ritas i Mochiy Pop P One. Sidfoten kommer alltså från workspacens inställning.
+- F06 E2 (`662420f3`, källan `innehall/matstrumpor/floden/f06-sunset.json:90`) saknar ett
+  kommatecken: "hör vi inget nu tar vi bort dig" ska vara "hör vi inget nu, tar vi bort dig".
+  Rätta källan och Spoks-utkastet i samma körning (inte medan Axel har utkastet öppet i appen).
+- ⚠️ Axel öppnade F06 E2 i tron att det var K01. Direktlänken är rätt (`get_links` →
+  `send_campaign`: `https://app.spoks.com/matstrumpor/post/{postId}/edit`). Beskriv alltid hur
+  mejlet ser ut (K01: stor bild på sushilådan, rubriken "Ser ut som sushi. Är strumpor.").
