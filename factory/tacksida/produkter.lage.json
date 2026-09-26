@@ -1,0 +1,70 @@
+{
+  "butik": "carashell",
+  "doman": "carashell.se",
+  "mall": "tillagg",
+  "uppdaterad": "2026-09-26T05:22:33.249Z",
+  "produkter": {
+    "fonstertermomatta": {
+      "handle": "fonstertermomatta-2-pack",
+      "produkt_id": "gid://shopify/Product/16142790197580",
+      "produkt_legacy_id": "16142790197580",
+      "variant_id": "gid://shopify/ProductVariant/58952055619916",
+      "variant_legacy_id": "58952055619916",
+      "pris": "539.00",
+      "jamforpris": null,
+      "sku": "TEMU-B12-FONSTERTERMOMATTA",
+      "status": "ACTIVE",
+      "mall": "tillagg",
+      "kanaler": [
+        "Online Store",
+        "Shop"
+      ],
+      "bilder": 4,
+      "oversatt": {
+        "nb": "4 fält (title,body_html,meta_title,meta_description)",
+        "en": "4 fält (title,body_html,meta_title,meta_description)",
+        "fi": "4 fält (title,body_html,meta_title,meta_description)",
+        "da": "4 fält (title,body_html,meta_title,meta_description)"
+      },
+      "kundvy": {
+        "url": "https://carashell.se/products/fonstertermomatta-2-pack?country=SE",
+        "status": 200,
+        "titelSyns": true,
+        "paketblock": false,
+        "butiksnamnIText": false,
+        "langd": 265632
+      }
+    },
+    "husbilskalendern": {
+      "handle": "adventskalender-retrobussar",
+      "produkt_id": "gid://shopify/Product/16142790328652",
+      "produkt_legacy_id": "16142790328652",
+      "variant_id": "gid://shopify/ProductVariant/58952055750988",
+      "variant_legacy_id": "58952055750988",
+      "pris": "379.00",
+      "jamforpris": null,
+      "sku": "TEMU-B13-HUSBILSKALENDER",
+      "status": "ACTIVE",
+      "mall": "tillagg",
+      "kanaler": [
+        "Online Store",
+        "Shop"
+      ],
+      "bilder": 5,
+      "oversatt": {
+        "nb": "4 fält (title,body_html,meta_title,meta_description)",
+        "en": "4 fält (title,body_html,meta_title,meta_description)",
+        "fi": "4 fält (title,body_html,meta_title,meta_description)",
+        "da": "4 fält (title,body_html,meta_title,meta_description)"
+      },
+      "kundvy": {
+        "url": "https://carashell.se/products/adventskalender-retrobussar?country=SE",
+        "status": 200,
+        "titelSyns": true,
+        "paketblock": false,
+        "butiksnamnIText": false,
+        "langd": 271124
+      }
+    }
+  }
+}

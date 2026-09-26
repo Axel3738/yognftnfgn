@@ -1,0 +1,93 @@
+# Tacksides-erbjudandet — checkout UI extension för OPS Factory.
+# Visas på tacksidan direkt efter köpet och på kundens orderstatussida.
+# Byggd 2026-09-26 för CaraShell (Axels beställning). Dokumentation:
+# https://shopify.dev/docs/api/checkout-ui-extensions/2026-07/targets/thank-you/block
+api_version = "2026-07"
+
+[[extensions]]
+name = "Tacksidan: erbjudande efter köp"
+handle = "tacksida-erbjudande"
+type = "ui_extension"
+uid = "9f3b2fb1-254f-425a-bd79-672bc7e62ebb"
+description = "Två tilläggsprodukter till rabatterat pris efter köpet, med förifylld kassa och rabattkoden pålagd."
+
+# Tacksidan (direkt efter betalningen)
+[[extensions.targeting]]
+target = "purchase.thank-you.block.render"
+module = "./src/Tack.jsx"
+
+# Orderstatussidan (kunden kommer tillbaka via mejlet)
+[[extensions.targeting]]
+target = "customer-account.order-status.block.render"
+module = "./src/Order.jsx"
+
+[extensions.capabilities]
+# Storefront API (produkt, pris i kundens valuta, bild) via shopify.query
+api_access = true
+network_access = false
+block_progress = false
+
+# Inställningarna redigeras i kassaredigeraren (Inställningar → Kassa →
+# Anpassa → Tacksida → blocket). Tomt fält = koden använder standardvärdet
+# i src/Erbjudande.jsx (CaraShells).
+[extensions.settings]
+
+[[extensions.settings.fields]]
+key = "produkt_1"
+type = "single_line_text_field"
+name = "Produkt 1 (handle)"
+description = "Handle på tilläggsprodukten som visas först, t.ex. fonstertermomatta-2-pack"
+
+[[extensions.settings.fields]]
+key = "produkt_2"
+type = "single_line_text_field"
+name = "Produkt 2 (handle)"
+description = "Handle på den andra tilläggsprodukten. Tomt = bara en produkt visas."
+
+[[extensions.settings.fields]]
+key = "kod_1"
+type = "single_line_text_field"
+name = "Rabattkod produkt 1"
+description = "Koden som läggs på automatiskt i kassan för produkt 1. Måste finnas i Rabatter och gälla exakt den produkten."
+
+[[extensions.settings.fields]]
+key = "procent_1"
+type = "single_line_text_field"
+name = "Rabatt produkt 1 (procent, t.ex. 35.25)"
+description = "Exakt samma procent som koden ger — kortet räknar sitt pris med den. Decimaler med punkt."
+
+[[extensions.settings.fields]]
+key = "kod_2"
+type = "single_line_text_field"
+name = "Rabattkod produkt 2"
+description = "Koden för produkt 2."
+
+[[extensions.settings.fields]]
+key = "procent_2"
+type = "single_line_text_field"
+name = "Rabatt produkt 2 (procent, t.ex. 34.3)"
+description = "Exakt samma procent som koden för produkt 2 ger."
+
+[[extensions.settings.fields]]
+key = "visa_ordinarie_pris"
+type = "boolean"
+name = "Visa ordinarie pris överstruket + 'Du sparar'"
+description = "AV tills produkten sålts till ordinarie pris i 30 dagar (prisinformationslagen 7 a §: ett överstruket pris måste vara det lägsta priset de senaste 30 dagarna). Se factory/tacksida/README.md."
+
+[[extensions.settings.fields]]
+key = "giltig_timmar"
+type = "number_integer"
+name = "Visas på orderstatussidan i timmar"
+description = "Hur länge efter köpet erbjudandet står kvar på orderstatussidan (tacksidan visar det alltid). Standard 48."
+
+[[extensions.settings.fields]]
+key = "marknadsdomaner"
+type = "single_line_text_field"
+name = "Marknadsdomäner"
+description = "handle=https://domän|språk, kommaseparerat. Standard: us=https://carashell.com|en"
+
+[[extensions.settings.fields]]
+key = "standard_sprak"
+type = "single_line_text_field"
+name = "Butikens standardspråk"
+description = "Språkkoden som INTE får prefix i adressen (sv för carashell.se)."

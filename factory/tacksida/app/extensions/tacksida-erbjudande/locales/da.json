@@ -1,0 +1,14 @@
+{
+  "rubrik": "Til dig, der lige har bestilt",
+  "underrubrik": "To ting, der passer til samme campingvogn eller autocamper. Tilføjes som en separat bestilling til samme adresse, med fri fragt og 14 dages fortrydelsesret som sædvanlig.",
+  "spar": "Du sparer {belopp}",
+  "knapp": "Tilføj for {pris}",
+  "villkor": "Prisen gælder dig, der lige har bestilt hos os, og tilføjes automatisk i kassen. Betalingen sker i kassen, ligesom lige før.",
+  "produkt": {
+    "fonstertermomatta-2-pack": "To termomåtter med sugekopper holder kulden ude om natten og solen ude om dagen.",
+    "adventskalender-retrobussar": "24 låger skjuler en lille retrobus i egen farve bag næsten hver dag i december."
+  },
+  "pris_for_dig": "{pris} for dig, der lige har bestilt",
+  "ord_pris": "Normalpris {pris}",
+  "laddar": "Henter …"
+}

@@ -1,0 +1,24 @@
+{
+  "_om": "Erbjudandet på CaraShells tacksida. EN rabattkod per produkt (kortet länkar en produkt i taget). Samma procent står i extensionens inställningar (kortet räknar sitt pris med den) — rabatter.mjs skriver ut raden. Nivån är Axels beslut: alternativen och marginalräkningen står i factory/tacksida/README.md. Ändra här, kör rabatter.mjs, uppdatera inställningarna i kassaredigeraren. ⚠️ Shopify lagrar procenten med TVÅ decimaler och TRUNKERAR rabattbeloppet till hela ören (mätt i kassan 2026-09-26: 35,25 % på 539 gav 189,99 → 349,01; 34,30 % på 379 gav 129,99 → 249,01). Välj därför bara procent där (pris × procent × 100) mod 10000 < 50 — då blir kronorna jämna. Listan för 539/379 står i README.",
+  "butik": "carashell",
+  "startar": "2026-09-26T00:00:00Z",
+  "en_gang_per_kund": true,
+  "erbjudanden": [
+    {
+      "produkt": "fonstertermomatta",
+      "rabattkod": "TACKMATTA",
+      "rabatt_procent": 34.88,
+      "visad_procent": 35,
+      "pris_mal_sek": 351,
+      "titel": "Tacksidan: Fönstertermomatta 539 → 351 kr (TACKMATTA)"
+    },
+    {
+      "produkt": "husbilskalendern",
+      "rabattkod": "TACKKALENDER",
+      "rabatt_procent": 36.94,
+      "visad_procent": 37,
+      "pris_mal_sek": 239,
+      "titel": "Tacksidan: Adventskalendern 379 → 239 kr (TACKKALENDER)"
+    }
+  ]
+}
