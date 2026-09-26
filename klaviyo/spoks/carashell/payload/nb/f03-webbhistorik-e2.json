@@ -1,0 +1,77 @@
+{
+  "id": "f03-webbhistorik-e2",
+  "sprak": "nb",
+  "emailTitle": "Finnes det i din størrelse?",
+  "emailDescription": "Slik finner du riktig lengde på under et minutt.",
+  "amnesrader": [
+    "Finnes det i din størrelse?",
+    "Ni lengder, fra 5,5 til 13,5 meter",
+    "Mål taket, så vet du svaret"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Størrelsen avgjør"
+    },
+    {
+      "type": "regular",
+      "text": "Trekket finnes i ni lengder, fra 5,5 til 13,5 meter, alle 3 meter brede. Mål taket fra front til bakkant, og velg nærmeste lengde oppover.",
+      "alignment": "left"
+    },
+    {
+      "type": "products",
+      "selectionMode": "dynamic",
+      "dynamicProductsCount": 1,
+      "dynamicCriteria": "recently_viewed",
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": false,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": false
+      },
+      "buttonText": "Se igjen",
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Angrerett**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagers angrerett",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spor pakken**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Følg den hele veien](https://carashell.se/nb/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

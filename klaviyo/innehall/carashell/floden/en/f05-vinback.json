@@ -1,0 +1,196 @@
+{
+  "id": "f05-vinback",
+  "namn": "FLOW_order_vinback_EN_v1",
+  "sprak": "en",
+  "memo": "GISSNING, märkt så: CaraShell har 0 återköp på 90 dagar (butiken är 15 dagar gammal). Produkternas säsonger ligger ett halvår isär (taket på hösten, rutan på resorna), så 180 dagar efter ett köp är den andra produktens tid. E1: vad som finns nu. E2: en fråga tillbaka (vad saknar du för vagnen) — kundens egna ord till nästa produkt.",
+  "spoks": {
+    "event": "order_created",
+    "filter": [
+      "ej_avregistrerad",
+      "sprak",
+      "ej_kopt_sedan_start"
+    ],
+    "reenroll": true,
+    "reenrollEfter": null
+  },
+  "steg": [
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 180
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f05-vinback-e1",
+        "namn": "FLOW_order_vinback_EN_E1_S_ett-halvar-senare_v1",
+        "sprak": "en",
+        "memo": "Säsongsneutralt (kan landa i mars eller december): ett halvår efter köpet, det här har vi nu. Produktrad med de tre skydden.",
+        "brief": "Rubrik + 2 stycken som fungerar oavsett årstid (en: aldrig winter/summer). Produktrad + fakta.",
+        "taggar": {
+          "typ": "S",
+          "kalla": "gissning",
+          "kalla_ref": null,
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "sasong",
+          "confidence": "low",
+          "prefix": "CaraShellRoof",
+          "kod": "S",
+          "avatar": "kunden som köpte för ett halvår sedan",
+          "begar": "skydda-det-jag-ager"
+        },
+        "amnesrader": [
+          {
+            "text": "It's been a while since your order",
+            "begar": "reconnect with a low-key check-in"
+          },
+          {
+            "text": "Here's what else we make now",
+            "begar": "curiosity about other products"
+          },
+          {
+            "text": "Still happy with the cover, {{fornamn}}?",
+            "begar": "invite feedback and engagement"
+          }
+        ],
+        "forhandstext": "No news, just a look at what else is in the shop.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "It's been a while",
+            "text": "Your order went out a while back. By now the cover's had time to prove itself.\n\nSince then, we've kept building covers for the parts of a caravan or motorhome that take the most weather while it's parked."
+          },
+          {
+            "typ": "produktrad",
+            "rubrik": "What's in the shop now",
+            "handles": [
+              "takskyddet",
+              "termoskyddet",
+              "fonstertermomatta-2-pack"
+            ]
+          },
+          {
+            "typ": "fakta"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "It's been a while since your order",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Here's what else we make now",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Still happy with the cover, {{fornamn}}?",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "No news, just a look at what else is in the shop.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "It's been a while",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "What's in the shop now",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 1
+      }
+    },
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 14
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f05-vinback-e2",
+        "namn": "FLOW_order_vinback_EN_E2_M_vad-saknar-du_v1",
+        "sprak": "en",
+        "memo": "Frågan: vad saknar du för vagnen? Svara med en rad. Kundens ord blir underlag till nästa produkt (Evolve: kundens egna ord).",
+        "brief": "Grundare-blocket: 3–4 meningar, en fråga, svara på mejlet. Inget annat.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "gissning",
+          "kalla_ref": null,
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "low",
+          "prefix": "CaraShellRoof",
+          "kod": "M",
+          "avatar": "kunden som köpte för ett halvår sedan",
+          "begar": "bli lyssnad på"
+        },
+        "format": "rentext",
+        "amnesrader": [
+          {
+            "text": "What's missing for yours?",
+            "begar": "feel personally asked"
+          },
+          {
+            "text": "A quick question about your setup",
+            "begar": "curiosity, low commitment ask"
+          },
+          {
+            "text": "What would you want us to build next?",
+            "begar": "feel like their input shapes the product line"
+          }
+        ],
+        "forhandstext": "One line back is all it takes, and I read every reply myself.",
+        "block": [
+          {
+            "typ": "grundare",
+            "text": "Hi {{fornamn}},\n\nI keep wondering what else a caravan or motorhome owner actually needs once the obvious things are covered.\n\nWhat's missing for yours? Reply and tell me, even one line. I read every one myself."
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "What's missing for yours?",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "A quick question about your setup",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "What would you want us to build next?",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "One line back is all it takes, and I read every reply myself.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "id": "f03-webbhistorik",
+  "namn": "FLOW_visning_webbhistorik_EN_v1",
+  "sprak": "en",
+  "memo": "Den som tittat på en produkt utan att lägga i korgen. Bara identifierade besökare med samtycke — få, och det är väntat. sv/nb visar den visade produkten dynamiskt; en visar båda skydden som bilder eftersom katalogens titlar är svenska.",
+  "spoks": {
+    "event": "product_viewed",
+    "filter": [
+      "ej_kassa_sedan_start",
+      "ej_kopt_sedan_start",
+      "samtycke",
+      "sprak"
+    ],
+    "reenroll": true,
+    "reenrollEfter": "P30D"
+  },
+  "steg": [
+    {
+      "typ": "vanta",
+      "enhet": "hours",
+      "varde": 4
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f03-webbhistorik-e1",
+        "namn": "FLOW_visning_webbhistorik_EN_E1_M_den-har-kikade-du-pa_v1",
+        "sprak": "en",
+        "memo": "Kort: den här tittade du på, här är den igen.",
+        "brief": "Rubrik + en mening. Inget säljande.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": null,
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "CaraShellRoof",
+          "kod": "M",
+          "avatar": "besökaren som tittade på ett skydd och gick",
+          "begar": "hitta tillbaka"
+        },
+        "amnesrader": [
+          {
+            "text": "That cover you were looking at",
+            "begar": "recall what they viewed"
+          },
+          {
+            "text": "Still there, if you want another look",
+            "begar": "low-pressure reminder it's still available"
+          },
+          {
+            "text": "Picking a cover? Here's a second look",
+            "begar": "help with decision by revisiting options"
+          }
+        ],
+        "forhandstext": "No pressure. Just a link back to it, in case you want another look.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "One more look at what you viewed",
+            "text": "Here it is again, in case you want a closer look before deciding."
+          },
+          {
+            "typ": "produktrad",
+            "rubrik": null,
+            "handles": [
+              "takskyddet",
+              "termoskyddet"
+            ]
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "That cover you were looking at",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Still there, if you want another look",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Picking a cover? Here's a second look",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "No pressure. Just a link back to it, in case you want another look.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "One more look at what you viewed",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 1
+      }
+    },
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 1
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f03-webbhistorik-e2",
+        "namn": "FLOW_visning_webbhistorik_EN_E2_OB_storleken-avgor_v1",
+        "sprak": "en",
+        "memo": "Den fråga som oftast stoppar köpet i kommentarerna: finns min storlek? Svaret: nio längder 5,5–13,5 m, mät taket front till bakkant, närmaste längd uppåt.",
+        "brief": "Rubrik + 2 meningar om storlekarna + produkten igen + fakta.",
+        "taggar": {
+          "typ": "I",
+          "kalla": "voc",
+          "kalla_ref": "kommentarer/leads.md 2026-09-25 (storleksvalet syns inte)",
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "CaraShellRoof",
+          "kod": "OB",
+          "avatar": "besökaren som inte hittade sin storlek",
+          "begar": "veta att det finns en storlek som passar"
+        },
+        "amnesrader": [
+          {
+            "text": "Nine lengths, one probably fits",
+            "begar": "reassurance on size availability"
+          },
+          {
+            "text": "How to measure before you pick a length",
+            "begar": "want practical measuring instructions"
+          },
+          {
+            "text": "18 to 44 ft, all covered",
+            "begar": "see the full size range at a glance"
+          }
+        ],
+        "forhandstext": "Measure front to back, round up, and you've got your size.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "About the sizing",
+            "text": "It comes in nine lengths, 18 to 44 ft (5.5 to 13.5 m), all 10 ft (3 m) wide. Measure your roof front to back and pick the next length up."
+          },
+          {
+            "typ": "produktrad",
+            "rubrik": null,
+            "handles": [
+              "takskyddet",
+              "termoskyddet"
+            ]
+          },
+          {
+            "typ": "fakta"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Nine lengths, one probably fits",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "How to measure before you pick a length",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "18 to 44 ft, all covered",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Measure front to back, round up, and you've got your size.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "About the sizing",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 1
+      }
+    }
+  ]
+}

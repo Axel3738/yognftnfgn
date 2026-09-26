@@ -1,0 +1,38 @@
+{
+  "id": "f04-efter-kop-e1",
+  "sprak": "en",
+  "emailTitle": "You can already track it",
+  "emailDescription": "Your shipping email has the parcel number. The button below shows the rest.",
+  "amnesrader": [
+    "You can already track it",
+    "Your order's moving",
+    "Look for the number starting with CS-"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Here's what happens now"
+    },
+    {
+      "type": "regular",
+      "text": "By now you should have an order confirmation, and a shipping email with a parcel number starting with CS-.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "The button below shows exactly where that parcel is right now.",
+      "alignment": "left"
+    },
+    {
+      "type": "link",
+      "text": "Track your parcel",
+      "url": "https://carashell.com/pages/spara",
+      "style": "button"
+    },
+    {
+      "type": "quote",
+      "text": "If it feels slow, reply to this email. I read it myself.\nAxel, founder"
+    }
+  ],
+  "varningar": []
+}

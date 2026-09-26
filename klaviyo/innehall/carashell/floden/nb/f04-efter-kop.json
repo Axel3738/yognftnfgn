@@ -1,0 +1,212 @@
+{
+  "id": "f04-efter-kop",
+  "namn": "FLOW_order_efterkop_NB_v1",
+  "sprak": "nb",
+  "memo": "Köparflöde (alla som inte tackat nej). E1 dag 2: vad som händer nu, spårningssidan på kundens språk, svara på mejlet — supportmejlet innan kunden hinner bli orolig (WISMO-andelen i autosvarets logg mäter det). E2 dag 16: kom allt fram, och exakt vad man gör om något är fel — mejlet som förebygger tvister (Bäverbutiken har 58, CaraShell 0).",
+  "spoks": {
+    "event": "order_created",
+    "filter": [
+      "ej_avregistrerad",
+      "sprak"
+    ],
+    "reenroll": true,
+    "reenrollEfter": null
+  },
+  "steg": [
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 2
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f04-efter-kop-e1",
+        "namn": "FLOW_order_efterkop_NB_E1_M_det-har-hander-nu_v1",
+        "sprak": "nb",
+        "memo": "Branded med tydlig knapp till spårningssidan (Axels dom på Bäverbutikens rentext-version: \"man kan inte knappa, folk orkar inte läsa\"). Ingen leveranstid. Paketnumret börjar på CS- och står i fraktmejlet.",
+        "brief": "Rubrik + 2 korta stycken: bekräftelsen och fraktmejlet med paketnumret (CS-…), knappen visar var paketet är. Grundare-raden: svara på mejlet om det känns långsamt. INGEN leveranstid, inga dagar.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "sparning/butiker.json#carashell (prefix CS-, sidor per språk)",
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "konsekvens",
+          "confidence": "medium",
+          "prefix": "CaraShellRoof",
+          "kod": "M",
+          "avatar": "kunden som just beställt och inte hört något sen dess",
+          "begar": "kunna se paketet själv utan att mejla"
+        },
+        "amnesrader": [
+          {
+            "text": "Bestillingen din er på vei",
+            "begar": "en rask bekreftelse på at alt ruller"
+          },
+          {
+            "text": "Sånn finner du pakken med en gang",
+            "begar": "kunne spore selv uten å sende e-post"
+          },
+          {
+            "text": "Pakkenummeret ditt starter på CS-",
+            "begar": "et konkret nummer å følge"
+          }
+        ],
+        "forhandstext": "Trykk på knappen, så ser du nøyaktig hvor pakken er nå.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Bestillingen din er på vei",
+            "text": "Du har fått en bekreftelse på e-post, og du får en egen e-post når pakken sendes, med et pakkenummer som starter på CS-. Trykk på knappen under, så ser du nøyaktig hvor pakken er akkurat nå."
+          },
+          {
+            "typ": "knapp",
+            "text": "Spor pakken",
+            "lank": "sparning:"
+          },
+          {
+            "typ": "grundare",
+            "text": "Føles det tregt? Svar på denne e-posten, så svarer jeg selv."
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Bestillingen din er på vei",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Sånn finner du pakken med en gang",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Pakkenummeret ditt starter på CS-",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Trykk på knappen, så ser du nøyaktig hvor pakken er nå.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Bestillingen din er på vei",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Spor pakken",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 1
+      }
+    },
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 14
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f04-efter-kop-e2",
+        "namn": "FLOW_order_efterkop_NB_E2_M_kom-allt-fram_v1",
+        "sprak": "nb",
+        "memo": "Dag 16. Kom allt fram? Om inte: spårningssidan. Om något är fel: ångerrätt/garanti exakt som policyn, reklamation 3 år, mejla hello@carashell.com med ordernumret. Inga produktkort — det här är servicemejlet.",
+        "brief": "Rubrik + tre korta stycken (kom det fram; inte än → knappen; fel → policyn för språket + ordernumret + adressen). Fakta-blocket sist.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "brands/carashell.json#per_sprak.*.angerratt_fran",
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "CaraShellRoof",
+          "kod": "M",
+          "avatar": "kunden vars paket rimligen kommit fram",
+          "begar": "trygghet"
+        },
+        "amnesrader": [
+          {
+            "text": "Kom pakken frem som den skulle?",
+            "begar": "bekrefte at leveringen gikk bra"
+          },
+          {
+            "text": "Sånn gjør du om noe er feil",
+            "begar": "vite hva man gjør ved feil"
+          },
+          {
+            "text": "Slik returnerer du, om nødvendig",
+            "begar": "vite fremgangsmåten ved retur"
+          }
+        ],
+        "forhandstext": "Kom alt frem i hel stand? Her er hva du gjør hvis ikke.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Kom alt frem?",
+            "text": "Pakken din skal ha kommet frem for lengst. Trykk på knappen under, så ser du nøyaktig hvor den er, hvis den fortsatt er underveis.\n\nEr noe feil, eller vil du returnere trekket, har du 14 dagers angrerett fra den dagen du mottok varen. Du betaler returfrakten selv.\n\nSend en e-post til hello@carashell.com med ordrenummeret ditt, så får du en returinstruksjon, og pengene tilbake innen 14 dager etter at returen er mottatt. Reklamasjon gjelder i opptil 3 år."
+          },
+          {
+            "typ": "knapp",
+            "text": "Spor pakken",
+            "lank": "sparning:"
+          },
+          {
+            "typ": "fakta"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Kom pakken frem som den skulle?",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Sånn gjør du om noe er feil",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Slik returnerer du, om nødvendig",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Kom alt frem i hel stand? Her er hva du gjør hvis ikke.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Kom alt frem?",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Spor pakken",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 1
+      }
+    }
+  ]
+}

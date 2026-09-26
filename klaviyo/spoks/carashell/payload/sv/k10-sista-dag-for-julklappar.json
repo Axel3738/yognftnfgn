@@ -1,0 +1,131 @@
+{
+  "id": "k10-sista-dag-for-julklappar",
+  "sprak": "sv",
+  "emailTitle": "Beställ senast måndag 7 december",
+  "emailDescription": "Annars hinner den inte fram till jul.",
+  "amnesrader": [
+    "Beställ senast måndag 7 december",
+    "En julklapp för vagnen, inte bara ägaren",
+    "Sista dagen för julklappar till vagnen"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Beställ senast måndag 7 december",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Så hinner paketet fram till jul, oavsett vilket av skydden du väljer.",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "{{spoks:id:takskyddet}}",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Se hela sortimentet",
+      "url": "https://carashell.se/collections/sortimentet",
+      "style": "button"
+    },
+    {
+      "type": "h2",
+      "text": "Tre sätt att skydda vagnen i vinter",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "{{spoks:id:takskyddet}}",
+          "button": "Se produkten"
+        },
+        {
+          "id": "{{spoks:id:termoskyddet}}",
+          "button": "Se produkten"
+        },
+        {
+          "id": "{{spoks:id:fonstertermomatta-2-pack}}",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://carashell.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": [
+    "Produkten takskyddet finns inte i Spoks.",
+    "Produkten takskyddet finns inte i Spoks.",
+    "Produkten termoskyddet finns inte i Spoks.",
+    "Produkten fonstertermomatta-2-pack finns inte i Spoks."
+  ]
+}

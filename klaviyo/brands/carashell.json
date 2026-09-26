@@ -1,0 +1,145 @@
+{
+  "comment": "CaraShells mejlinställningar för Spoks (byggda 2026-09-26). CaraShell är en EGEN verksamhet: inget härifrån delas med Bäverbutiken eller Matstrumpor (ARKITEKTUR järnregel 8). Allt nedan är AVLÄST — varje fält säger var. Spoks-workspacen fanns INTE under MCP-användaren kundsupport@baverbutiken.se vid bygget (whoami 2026-09-26: bara Bäverbutiken.se och Matstrumpor.se), men appen Spoks ÄR installerad på yitrbk-m3 (Shopify appInstallations, mätt samma dag) — workspacen ligger alltså under ett annat Spoks-konto och MCP-användaren måste bjudas in (klaviyo/spoks/README.md → CaraShell).",
+  "id": "carashell",
+  "namn": "CaraShell",
+  "system": "spoks",
+  "spoks": {
+    "workspace": null,
+    "workspace_comment": "Fylls i av uppladdningssessionen ur whoami när workspacen syns. Hitta aldrig på ett storeId.",
+    "installningar": {
+      "generalSettings": { "locale": { "country": "SE", "language": "sv", "timezone": "Europe/Stockholm" }, "url": "https://carashell.se" },
+      "emailSettings": { "senderName": "CaraShell", "senderEmail": "hello@carashell.com", "replyToEmail": "hello@carashell.com" },
+      "looks": {
+        "layout": { "imagesBorderRadius": 10, "areImagesFullWidth": true, "sectionBorderRadius": 10, "areSectionsFullWidth": false, "buttonBorderRadius": 6, "areButtonsFullWidth": false, "surfaceBorderRadius": 10 },
+        "colors": { "background": "#F1F2EF", "onBackground": "#1B2026", "surface": "#FFFFFF", "onSurface": "#1B2026", "primary": "#1F6F8E", "onPrimary": "#FFFFFF", "header": "#22282E", "onHeader": "#F1F2EF", "footer": "#22282E", "onFooter": "#F1F2EF", "link": "#1F6F8E", "titleText": "#1B2026" },
+        "typography": { "regularWebSafeFontFamily": "Arial", "regularGoogleFontFamily": "Source Sans 3", "headerWebSafeFontFamily": "Arial", "headerGoogleFontFamily": "Barlow", "headerGoogleFontWeight": 700 },
+        "postHeader": { "logoUrl": "https://carashell.se/cdn/shop/files/carashell-logga-c.png?v=1789078262&width=200", "isLogoHidden": false, "logoLinkUrl": "https://carashell.se", "logoWidth": 96, "alignment": "center", "isAnnouncementBarEnabled": false },
+        "postFooter": { "alignment": "center", "text": "CaraShell · STONEBITE ECOM AB · Sjöhed 160, 442 74 Harestad, Sverige · hello@carashell.com", "unsubscribeText": "Avregistrera · Meld av · Unsubscribe" }
+      }
+    },
+    "installningar_comment": "Läggs in med update_settings av uppladdningssessionen och kontrolleras med get_settings. Spoks har EN sidfot och EN avregistreringstext per workspace (get_settings på Bäverbutiken 2026-09-26), inte per språk — därför språkneutral sidfot (bolag, adress enligt MFL 20 §, mejl) och tre ord på avregistreringslänken. Färger, logga och typsnitt ur factory/butiker/carashell.yaml → branding och mejl/butiker/carashell.json. Fältnamnen är get_settings-svarets form; update_settings-schemat läses innan anropet."
+  },
+  "shopify": {
+    "modul": "klaviyo/shopify-butik.mjs",
+    "butik": "carashell",
+    "comment": "sparning/butiker.json → carashell (yitrbk-m3.myshopify.com, ops: true ⇒ fabrikens nycklar SHOPIFY_CLIENT_ID/SECRET_yitrbk_m3, appen Factory med read_all_orders — mätt 2026-09-26). Ingen reservfil."
+  },
+  "butik_url": "https://carashell.se",
+  "avsandare": {
+    "from_email": "hello@carashell.com",
+    "from_label": "CaraShell",
+    "reply_to_email": "hello@carashell.com"
+  },
+  "avsandare_comment": "hello@carashell.com är Shopifys shop.contactEmail (läst live 2026-09-26) och adressen kunderna ser i policyer, sidfot och FAQ (Axels beslut 2026-09-23). Brevlådan ligger på Loopia (MX mätt), autosvaret läser den (kundtjanst/brands/carashell.yaml).",
+  "stil_fran": "mejl/butiker/carashell.json",
+  "sprak": "sv",
+  "tidszon": "Europe/Stockholm",
+  "flersprakig": true,
+  "sprak_grupper": {
+    "sv": { "lander": ["Sweden", "Denmark"], "utan_land": true, "comment": "Sverige 173 ordrar/90 d (12 subscribed), Danmark 23 (3) — danska kunder får svenska mejl, precis som fraktmejlen (sparning/butiker.json mejl_marknader saknar DK). Kontakter utan land (30 st, nästan alla sv-locale) hamnar här." },
+    "nb": { "lander": ["Norway"], "comment": "Norge 82 ordrar/90 d (4 subscribed). Orderns customerLocale: 67 nb-NO, 14 sv-NO." },
+    "en": { "lander": ["United States", "United Kingdom", "Canada", "Australia", "New Zealand", "Finland"], "comment": "USA 59 ordrar/90 d (54 subscribed — 90 %), Australien 29 (2), Storbritannien 6 (1), Nya Zeeland 3, Kanada 2, Finland 7 (0 subscribed). Finland får engelska: 7 ordrar på 90 dagar bär inte ett eget finskt mejlsystem, och engelska är säkrare än svenska för finska kunder. Landsnamnen är Spoks form (contact.country = engelskt landsnamn, mätt 2026-09-26 med preview_segment: 'Sweden'); de andra namnen är Shopifys engelska namn (mätt i marknadernas regioner) och kontrolleras med preview_segment i CaraShells workspace innan något slås på." }
+  },
+  "sprak_grupper_comment": "Språkstyrningen: Spoks har inget språkfält på kontakten (get_settings: customFieldTokens tom; contact.country är det enda geografiska fältet, som engelskt landsnamn). Därför ETT FLÖDE PER SPRÅK med landsfiltret i triggerns kontaktfilter, och ett segment per språk för kampanjerna. Ordrarnas customerLocale (sv-SE/nb-NO/en-US …) bekräftar att land ⇒ språk håller: SE 173/173 sv, NO 67/82 nb, US 59/59 en, DK 22/23 da, FI 7/7 fi.",
+  "per_sprak": {
+    "sv": {
+      "butik_url": "https://carashell.se",
+      "lank_suffix": "",
+      "sparningssida": "https://carashell.se/pages/spara",
+      "angerratt_text": "14 dagars ångerrätt",
+      "angerratt_fran": "carashell.se/policies/refund-policy (läst 2026-09-26): 14 dagars ångerrätt från mottagandet, kunden betalar returfrakten, återbetalning inom 14 dagar, reklamation 3 år",
+      "fornamn_reserv": "där",
+      "grundare": "grundare",
+      "verifierad": "Verifierad kund",
+      "knapp_produkt": "Se produkten",
+      "knapp_kassa": "Tillbaka till kassan",
+      "knapp_titta": "Titta igen",
+      "fakta_anger_rubrik": "Ångerrätt",
+      "fakta_sparning_rubrik": "Spåra paketet",
+      "fakta_sparning_text": "Följ det hela vägen",
+      "trustpilot": "https://se.trustpilot.com/evaluate/carashell.se",
+      "produktkort": "products"
+    },
+    "nb": {
+      "butik_url": "https://carashell.se/nb",
+      "lank_suffix": "?country=NO",
+      "sparningssida": "https://carashell.se/nb/pages/spara",
+      "angerratt_text": "14 dagers angrerett",
+      "angerratt_fran": "carashell.se/nb/policies/refund-policy (läst 2026-09-26): 14 dagers angrerett fra mottak, kunden betaler returfrakten, refusjon innen 14 dager, reklamasjon 3 år",
+      "fornamn_reserv": "der",
+      "grundare": "grunnlegger",
+      "verifierad": "Verifisert kunde",
+      "knapp_produkt": "Se produktet",
+      "knapp_kassa": "Tilbake til kassen",
+      "knapp_titta": "Se igjen",
+      "fakta_anger_rubrik": "Angrerett",
+      "fakta_sparning_rubrik": "Spor pakken",
+      "fakta_sparning_text": "Følg den hele veien",
+      "trustpilot": "https://no.trustpilot.com/evaluate/carashell.se",
+      "produktkort": "bild",
+      "produktkort_comment": "Spoks produktkort visar katalogens svenska titel och SEK-priset (products_search: en valuta per workspace). Norska mejl får därför bild + egen rubrik + knapp i stället för produktkort; länkarna bär ?country=NO så sidan visar NOK (products/carashell/takskyddet/dna.md, Norge-runda 2026-09-14)."
+    },
+    "en": {
+      "butik_url": "https://carashell.com",
+      "lank_suffix": "",
+      "sparningssida": "https://carashell.com/pages/spara",
+      "angerratt_text": "90-day guarantee",
+      "angerratt_fran": "carashell.com/policies/refund-policy (läst 2026-09-26, samma text för ?country=US och ?country=GB): 90-day guarantee from the day you receive the item, email hello@carashell.com before sending anything back, refund within 14 days, right to complain 3 years. Ingen rad om vem som betalar returfrakten.",
+      "fornamn_reserv": "there",
+      "grundare": "founder",
+      "verifierad": "Verified customer",
+      "knapp_produkt": "See the cover",
+      "knapp_kassa": "Back to checkout",
+      "knapp_titta": "Take another look",
+      "fakta_anger_rubrik": "Guarantee",
+      "fakta_sparning_rubrik": "Track your parcel",
+      "fakta_sparning_text": "Follow it all the way",
+      "trustpilot": "https://www.trustpilot.com/evaluate/carashell.se",
+      "citat": false,
+      "citat_comment": "Bara svenska recensioner finns (Judge.me-widgeten svarar 0, importerade texter). Inga citat i engelska mejl.",
+      "produktkort": "bild",
+      "produktkort_comment": "Samma skäl som nb: katalogen är svensk. carashell.com bär USA-marknaden med GB/CA/AU/NZ som länder med lokal valuta (Shopify markets, mätt 2026-09-26), så länken utan landkod visar kundens egen valuta."
+    }
+  },
+  "produkttitlar": {
+    "takskyddet": { "sv": "Taköverdrag Husvagn & Husbil 5,5–13,5 m", "nb": "Taktrekk campingvogn & bobil 5,5–13,5 m", "en": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft" },
+    "termoskyddet": { "sv": "Termoskydd Husbil 211 × 171 cm", "nb": "Frontrutetrekk til bobil 211 × 171 cm", "en": "Windshield Thermal Cover for Motorhome 211 × 171 cm" },
+    "fonstertermomatta-2-pack": { "sv": "Fönstertermomatta 2-pack 70 × 80 cm", "nb": "Vindu-termomatte 2-pk 70 × 80 cm", "en": "Window Thermal Mat, 2-Pack, 70 × 80 cm" },
+    "adventskalender-retrobussar": { "sv": "Adventskalender med retrobussar, 24 luckor", "nb": "Adventskalender med retrobusser, 24 luker", "en": "Advent Calendar with Retro Campervans, 24 Doors" }
+  },
+  "produkttitlar_comment": "Shopifys produkttitlar per locale, lästa live 2026-09-26 (translations). Används i bild-varianten av produktkorten (nb/en). Priser står ALDRIG här: de kommer ur Shopify per marknad (contextualPricing) och skrivs aldrig i ett mejl.",
+  "produktbilder": {
+    "takskyddet": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/image4.png?v=1789078112",
+    "termoskyddet": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/b6-termoskydd-se.jpg?v=1789531955",
+    "fonstertermomatta-2-pack": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/09_3aac9f84-3b78-46f2-8176-36ac3618389e.jpg?v=1790398875",
+    "adventskalender-retrobussar": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/05h.jpg?v=1790398881"
+  },
+  "produktbilder_comment": "featuredImage per produkt ur Shopify 2026-09-26. Uppladdningssessionen laddar upp dem en gång med upload_media och skriver fileId i klaviyo/spoks/carashell/produkter.json.",
+  "leverans_text": null,
+  "leverans_comment": "Leveranstiden står ALDRIG i ett mejl (Axels order 2026-09-21 och prompten 2026-09-26). Butikens löfte är 5–10 arbetsdagar (shipping policy, läst 2026-09-26). Mätt i Shopify 2026-09-26: order → skickad median 0,5 dygn (n=365); order → levererad bara 4 paket med deliveredAt (7,0–9,9 dygn, alla NO) — butiken är 15 dagar gammal, så p90 går inte att mäta än. Sista beställningsdagarna nedan räknas på löftets 10 arbetsdagar med två dagars marginal; mät om p90 i sparning/butiker/carashell/lage.json (Shopifys deliveredAt, aldrig lage.json:s 'senast') när 30 paket levererats.",
+  "angerratt_text": "14 dagars ångerrätt",
+  "returfonster_fran": "kundtjanst/brands/carashell.yaml#tvister.returfonster_dagar",
+  "sparningssida": "https://carashell.se/pages/spara",
+  "erbjudande_fran": null,
+  "erbjudande_comment": "CaraShell har inget gratisprodukt-erbjudande och inga rabattkoder i mejlen. Paketrabatten 2 st −15 % / 3 st −20 % står på produktsidan och skrivs aldrig som siffra i ett mejl. Black Week och alla rabatter är Axels beslut (A/B/C i rapporten 2026-09-26).",
+  "recensioner": {
+    "kalla": "produktfil",
+    "comment": "Judge.me:s widget-JSON svarar 0 recensioner för alla fyra produkter (mätt 2026-09-26 med tre parameterset) fast produktsidan skriver '16 recensioner' — de importerade recensionerna syns inte i widget-API:t. Citatblocken tar därför butikens EGNA publicerade recensioner ur factory/produkter/<id>.yaml → reviews (10 per produkt, samma som carashell.se visar). De är svenska: citat bara i sv- och nb-mejl (norrmän läser svenska), aldrig i engelska. Inga påhittade recensioner."
+  },
+  "sidfot_varfor": "Du får det här för att du sa ja till mejl från CaraShell.",
+  "utm": {
+    "utm_source": "spoks",
+    "utm_medium": "email"
+  },
+  "break_even_roas": 1.63,
+  "break_even_comment": "factory/produkter/takskyddet.yaml (BE ROAS 1,63 ur källkampanjens namn — HÄRLEDD, inte kvitterad). Termoskyddet 1,61. Räknas UTAN moms.",
+  "kalender": {
+    "fars_dag": "2026-11-08",
+    "fars_dag_sista_bestallning": "2026-10-26",
+    "adventskalender_lucka1": "2026-12-01",
+    "adventskalender_sista_bestallning": "2026-11-13",
+    "black_week": ["2026-11-23", "2026-11-30"],
+    "jul_sista_bestallning": "2026-12-07",
+    "kalender_comment": "Fars dag 8/11 gäller Sverige och Norge (andra söndagen i november i båda länderna); Danmark har farsdag 5 juni, USA/UK i juni resp. mars — därför ingen farsdagskampanj på engelska. Sista beställningsdag = 10 arbetsdagar (butikens löfte) + 2 dagars marginal: fars dag mån 26/10, lucka 1 fre 13/11, jul mån 7/12. Huvudsessionens räkning 2026-09-26 — Axel kan ändra."
+  }
+}

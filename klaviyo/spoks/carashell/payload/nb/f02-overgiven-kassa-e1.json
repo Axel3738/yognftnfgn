@@ -1,0 +1,28 @@
+{
+  "id": "f02-overgiven-kassa-e1",
+  "sprak": "nb",
+  "emailTitle": "Handlekurven din venter fortsatt",
+  "emailDescription": "Varene ligger akkurat der du la dem.",
+  "amnesrader": [
+    "Handlekurven din venter fortsatt",
+    "Du kom halvveis gjennom kassen",
+    "Ingenting er borte fra kurven"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Handlekurven din er her"
+    },
+    {
+      "type": "regular",
+      "text": "Vi har spart alt du la i kassen. Ingenting er fjernet.",
+      "alignment": "left"
+    },
+    {
+      "type": "abandonedCart",
+      "buttonText": "Tilbake til kassen",
+      "isProductPriceVisible": false
+    }
+  ],
+  "varningar": []
+}

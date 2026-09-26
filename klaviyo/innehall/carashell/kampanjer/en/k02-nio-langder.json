@@ -1,0 +1,83 @@
+{
+  "id": "k02-nio-langder",
+  "namn": "MAIL_20261006_CaraShellRoof_EN_OB_2_samtycke_product_nio-langder_v1",
+  "sprak": "en",
+  "memo": "Kundernas egna ord i kommentarerna (25 sep, alla marknader): \"bara 6,5 m\", \"only one size\", \"looking for 12×40\". Storleksvalet syns inte för dem. Mejlet gör valet till huvudsaken: nio längder 5,5–13,5 m, alla 3 m breda, mät front till bakkant, välj närmaste längd uppåt.",
+  "brief": "Hero: storleken är huvudsaken. Punkter: hur man mäter, längderna, bredden, husvagn och husbil. Produktkort, fakta. Mått i fot OCH meter som faktabladet skriver dem (18–44 ft, 10 ft). Engelskan gäller USA, Storbritannien, Kanada, Australien och Nya Zeeland samtidigt: inga årstider (winter/summer/spring/autumn/fall), ingen snö — skriv \"while it is parked\", \"between trips\", \"off the road\". Säg caravan där det passar (GB/AU/NZ), motorhome, och RV en gång som amerikansk synonym.",
+  "taggar": {
+    "typ": "I",
+    "kalla": "voc",
+    "kalla_ref": "kommentarer/leads.md 2026-09-25 + 2026-09-26 (storleksvalet syns inte)",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "ingen",
+    "confidence": "medium",
+    "prefix": "CaraShellRoof",
+    "kod": "OB",
+    "avatar": "ägaren som tror att överdraget bara finns i en storlek",
+    "begar": "veta att det finns en storlek som passar"
+  },
+  "amnesrader": [
+    {
+      "text": "Nine lengths. Yours is one of them",
+      "begar": "know that a size exists that fits their roof"
+    },
+    {
+      "text": "How to measure your roof in one step",
+      "begar": "learn how to measure before ordering"
+    },
+    {
+      "text": "18 to 44 ft, one width: 10 ft",
+      "begar": "see the exact size range at a glance"
+    }
+  ],
+  "forhandstext": "Measure front to back, then pick the size above it.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Nine lengths. Which one is yours?",
+      "text": "Hi {{fornamn}},\n\nThe roof cover comes in nine lengths, 18 to 44 ft (5.5 to 13.5 m), all 10 ft (3 m) wide. Measure your roof front to back, then pick the next length up.",
+      "bild": "produkt:takskyddet",
+      "knapp": {
+        "text": "See all nine lengths",
+        "lank": "produkt:takskyddet"
+      }
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "How to choose",
+      "punkter": [
+        "Measure the roof from front to back.",
+        "Nine lengths, 18 to 44 ft (5.5 to 13.5 m), all 10 ft (3 m) wide.",
+        "Fits both travel trailers and motorhomes."
+      ]
+    },
+    {
+      "typ": "produkt",
+      "handle": "takskyddet",
+      "text": "Pick the next length up from your measurement.",
+      "knapp": "Find your length"
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    { "rad": "Nine lengths. Yours is one of them", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "How to measure your roof in one step", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "18 to 44 ft, one width: 10 ft", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Measure front to back, then pick the size above it.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Nine lengths. Which one is yours?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "How to choose", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "See all nine lengths", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Find your length", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "version": 1,
+  "planerad": "2026-10-06T16:00:00+02:00",
+  "segment": [
+    "SEG_samtycke_en"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

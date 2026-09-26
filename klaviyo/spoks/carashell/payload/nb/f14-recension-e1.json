@@ -1,0 +1,42 @@
+{
+  "id": "f14-recension-e1",
+  "sprak": "nb",
+  "emailTitle": "Hva syntes du om den?",
+  "emailDescription": "Pakken har hatt tid til å komme frem. Velg en stjerne og si hva du synes.",
+  "amnesrader": [
+    "Hva syntes du om den?",
+    "Hvordan gikk det?",
+    "Ett klikk, det er alt"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Hva syntes du om den?"
+    },
+    {
+      "type": "regular",
+      "text": "Pakken fra oss skal ha kommet frem for lengst. Ett klikk holder for å gi din vurdering.",
+      "alignment": "left"
+    },
+    {
+      "type": "h2",
+      "text": "Gi din vurdering",
+      "alignment": "center"
+    },
+    {
+      "type": "h1",
+      "text": "[★](https://no.trustpilot.com/evaluate/carashell.se?stars=1) [★](https://no.trustpilot.com/evaluate/carashell.se?stars=2) [★](https://no.trustpilot.com/evaluate/carashell.se?stars=3) [★](https://no.trustpilot.com/evaluate/carashell.se?stars=4) [★](https://no.trustpilot.com/evaluate/carashell.se?stars=5)",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Alle vurderinger, positive som negative, hjelper oss like mye.",
+      "alignment": "center"
+    },
+    {
+      "type": "quote",
+      "text": "Ble noe ikke som det skulle? Svar på denne e-posten først, så ordner vi det.\nAxel, grunnlegger"
+    }
+  ],
+  "varningar": []
+}

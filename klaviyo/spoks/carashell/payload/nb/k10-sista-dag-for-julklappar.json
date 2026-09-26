@@ -1,0 +1,166 @@
+{
+  "id": "k10-sista-dag-for-julklappar",
+  "sprak": "nb",
+  "emailTitle": "Bestill senest mandag 7. desember",
+  "emailDescription": "Etter det rekker ikke pakken fram til julaften.",
+  "amnesrader": [
+    "Bestill senest mandag 7. desember",
+    "Siste frist før jul",
+    "Tre gaver til noen med campingvogn"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Bestill senest mandag 7. desember",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hei {{ contact.first_name | default: 'der' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Skal gaven være pakket inn til jul, er mandag 7. desember siste frist.",
+      "alignment": "center"
+    },
+    {
+      "type": "image",
+      "fileId": "{{spoks:media:takskyddet}}",
+      "altText": "Taktrekk campingvogn & bobil 5,5–13,5 m",
+      "urlRedirect": "https://carashell.se/nb/products/takskyddet?country=NO"
+    },
+    {
+      "type": "h2",
+      "text": "Taktrekk campingvogn & bobil 5,5–13,5 m",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Se julegavene",
+      "url": "https://carashell.se/nb/collections/sortimentet?country=NO",
+      "style": "button"
+    },
+    {
+      "type": "h2",
+      "text": "Tre gaver til noen med campingvogn eller bobil",
+      "alignment": "center"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "image",
+              "fileId": "{{spoks:media:takskyddet}}",
+              "altText": "Taktrekk campingvogn & bobil 5,5–13,5 m",
+              "urlRedirect": "https://carashell.se/nb/products/takskyddet?country=NO"
+            },
+            {
+              "type": "h2",
+              "text": "Taktrekk campingvogn & bobil 5,5–13,5 m",
+              "alignment": "center"
+            },
+            {
+              "type": "link",
+              "text": "Se produktet",
+              "url": "https://carashell.se/nb/products/takskyddet?country=NO",
+              "style": "button"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "image",
+              "fileId": "{{spoks:media:termoskyddet}}",
+              "altText": "Frontrutetrekk til bobil 211 × 171 cm",
+              "urlRedirect": "https://carashell.se/nb/products/termoskyddet?country=NO"
+            },
+            {
+              "type": "h2",
+              "text": "Frontrutetrekk til bobil 211 × 171 cm",
+              "alignment": "center"
+            },
+            {
+              "type": "link",
+              "text": "Se produktet",
+              "url": "https://carashell.se/nb/products/termoskyddet?country=NO",
+              "style": "button"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "image",
+              "fileId": "{{spoks:media:fonstertermomatta-2-pack}}",
+              "altText": "Vindu-termomatte 2-pk 70 × 80 cm",
+              "urlRedirect": "https://carashell.se/nb/products/fonstertermomatta-2-pack?country=NO"
+            },
+            {
+              "type": "h2",
+              "text": "Vindu-termomatte 2-pk 70 × 80 cm",
+              "alignment": "center"
+            },
+            {
+              "type": "link",
+              "text": "Se produktet",
+              "url": "https://carashell.se/nb/products/fonstertermomatta-2-pack?country=NO",
+              "style": "button"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Angrerett**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagers angrerett",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spor pakken**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Følg den hele veien](https://carashell.se/nb/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": [
+    "Bilden för takskyddet saknar fileId i Spoks (produkter.json → bild).",
+    "Bilden för takskyddet saknar fileId i Spoks (produkter.json → bild).",
+    "Bilden för termoskyddet saknar fileId i Spoks (produkter.json → bild).",
+    "Bilden för fonstertermomatta-2-pack saknar fileId i Spoks (produkter.json → bild)."
+  ]
+}

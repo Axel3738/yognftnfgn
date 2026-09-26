@@ -1,0 +1,212 @@
+{
+  "id": "f04-efter-kop",
+  "namn": "FLOW_order_efterkop_EN_v1",
+  "sprak": "en",
+  "memo": "Köparflöde (alla som inte tackat nej). E1 dag 2: vad som händer nu, spårningssidan på kundens språk, svara på mejlet — supportmejlet innan kunden hinner bli orolig (WISMO-andelen i autosvarets logg mäter det). E2 dag 16: kom allt fram, och exakt vad man gör om något är fel — mejlet som förebygger tvister (Bäverbutiken har 58, CaraShell 0).",
+  "spoks": {
+    "event": "order_created",
+    "filter": [
+      "ej_avregistrerad",
+      "sprak"
+    ],
+    "reenroll": true,
+    "reenrollEfter": null
+  },
+  "steg": [
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 2
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f04-efter-kop-e1",
+        "namn": "FLOW_order_efterkop_EN_E1_M_det-har-hander-nu_v1",
+        "sprak": "en",
+        "memo": "Branded med tydlig knapp till spårningssidan (Axels dom på Bäverbutikens rentext-version: \"man kan inte knappa, folk orkar inte läsa\"). Ingen leveranstid. Paketnumret börjar på CS- och står i fraktmejlet.",
+        "brief": "Rubrik + 2 korta stycken: bekräftelsen och fraktmejlet med paketnumret (CS-…), knappen visar var paketet är. Grundare-raden: svara på mejlet om det känns långsamt. INGEN leveranstid, inga dagar.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "sparning/butiker.json#carashell (prefix CS-, sidor per språk)",
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "konsekvens",
+          "confidence": "medium",
+          "prefix": "CaraShellRoof",
+          "kod": "M",
+          "avatar": "kunden som just beställt och inte hört något sen dess",
+          "begar": "kunna se paketet själv utan att mejla"
+        },
+        "amnesrader": [
+          {
+            "text": "You can already track it",
+            "begar": "reassurance they can check status themselves"
+          },
+          {
+            "text": "Your order's moving",
+            "begar": "confirmation something is happening"
+          },
+          {
+            "text": "Look for the number starting with CS-",
+            "begar": "practical help finding the parcel number"
+          }
+        ],
+        "forhandstext": "Your shipping email has the parcel number. The button below shows the rest.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Here's what happens now",
+            "text": "By now you should have an order confirmation, and a shipping email with a parcel number starting with CS-.\n\nThe button below shows exactly where that parcel is right now."
+          },
+          {
+            "typ": "knapp",
+            "text": "Track your parcel",
+            "lank": "sparning:"
+          },
+          {
+            "typ": "grundare",
+            "text": "If it feels slow, reply to this email. I read it myself."
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "You can already track it",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Your order's moving",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Look for the number starting with CS-",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Your shipping email has the parcel number. The button below shows the rest.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Here's what happens now",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Track your parcel",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 1
+      }
+    },
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 14
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f04-efter-kop-e2",
+        "namn": "FLOW_order_efterkop_EN_E2_M_kom-allt-fram_v1",
+        "sprak": "en",
+        "memo": "Dag 16. Kom allt fram? Om inte: spårningssidan. Om något är fel: ångerrätt/garanti exakt som policyn, reklamation 3 år, mejla hello@carashell.com med ordernumret. Inga produktkort — det här är servicemejlet.",
+        "brief": "Rubrik + tre korta stycken (kom det fram; inte än → knappen; fel → policyn för språket + ordernumret + adressen). Fakta-blocket sist.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "brands/carashell.json#per_sprak.*.angerratt_fran",
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "CaraShellRoof",
+          "kod": "M",
+          "avatar": "kunden vars paket rimligen kommit fram",
+          "begar": "trygghet"
+        },
+        "amnesrader": [
+          {
+            "text": "Did it all arrive okay?",
+            "begar": "check-in prompts a response if there's an issue"
+          },
+          {
+            "text": "Still waiting? Track it here",
+            "begar": "practical help if delayed"
+          },
+          {
+            "text": "If something's wrong, here's what to do",
+            "begar": "know the process for problems"
+          }
+        ],
+        "forhandstext": "If everything showed up fine, you don't need to do anything. If not, here's what to do.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Did everything arrive?",
+            "text": "By now your order should have reached you.\n\nIf it hasn't, the button below shows exactly where it is.\n\nIf something arrived wrong or damaged, you're covered by a 90-day guarantee. Email hello@carashell.com with your order number before sending anything back, and we'll tell you where to send it."
+          },
+          {
+            "typ": "knapp",
+            "text": "Track your parcel",
+            "lank": "sparning:"
+          },
+          {
+            "typ": "fakta"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Did it all arrive okay?",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Still waiting? Track it here",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "If something's wrong, here's what to do",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "If everything showed up fine, you don't need to do anything. If not, here's what to do.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Did everything arrive?",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Track your parcel",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 1
+      }
+    }
+  ]
+}

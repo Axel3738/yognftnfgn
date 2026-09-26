@@ -1,0 +1,22 @@
+{
+  "id": "f02-overgiven-kassa-e3",
+  "sprak": "sv",
+  "emailTitle": "Sista mejlet om den här kassan",
+  "emailDescription": "Ingen nedräkning. Bara en sista fråga: undrar du något?",
+  "amnesrader": [
+    "Sista mejlet om den här kassan",
+    "Har du en fråga? Svara bara",
+    "Jag hör inget mer om detta sen"
+  ],
+  "blocks": [
+    {
+      "type": "quote",
+      "text": "Det här är sista mejlet om kassan du lämnade. Undrar du över något, storlek, montering eller något annat, svara bara på det här mejlet så svarar jag. Annars hör du inget mer om den här kassan från mig.\nAxel, grundare"
+    },
+    {
+      "type": "abandonedCart",
+      "buttonText": "Tillbaka till kassan"
+    }
+  ],
+  "varningar": []
+}

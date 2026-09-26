@@ -1,0 +1,83 @@
+{
+  "id": "k06-vecka-45",
+  "namn": "MAIL_20261103_CaraShellRoof_NB_OB_3_samtycke_product_sitter-det-fast-i-vind_v1",
+  "sprak": "nb",
+  "memo": "Samma som svenskan, norska kommentarer: \"forsvant med nordvest kulingen\", \"svake strikk\". Svaret: vevde bånd, ikke strikk.",
+  "brief": "Hero: frågan om vinden. Punkter: banden (vävda, inte gummi), krokarna på fyra sidor, de två extra banden. Produktkort, fakta. Inget om lacken utöver faktabladet.",
+  "taggar": {
+    "typ": "I",
+    "kalla": "voc",
+    "kalla_ref": "kommentarer/rapporter/2026-09-26.md (Takovertrekk)",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "ingen",
+    "confidence": "medium",
+    "prefix": "CaraShellRoof",
+    "kod": "OB",
+    "avatar": "eieren som lurer på om det blåser av",
+    "begar": "trygghet"
+  },
+  "amnesrader": [
+    {
+      "text": "Sitter det fast når det blåser?",
+      "begar": "vite at trekket ikke blåser av"
+    },
+    {
+      "text": "Vevde bånd, ikke strikk",
+      "begar": "forstå hvorfor båndene holder"
+    },
+    {
+      "text": "To ekstra bånd følger med",
+      "begar": "føle seg trygg i kraftig vind"
+    }
+  ],
+  "forhandstext": "Plastkroker under kanten holder det på plass, på alle fire sider.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Sitter det fast når det blåser?",
+      "text": "Hei {{fornamn}},\n\nVevde strekkbånd med plastkroker holder taktrekket på plass i vind, ikke strikk som gir etter.",
+      "bild": "produkt:takskyddet",
+      "knapp": {
+        "text": "Se hvordan det festes",
+        "lank": "produkt:takskyddet"
+      }
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "Det som holder det på plass",
+      "punkter": [
+        "Vevde strekkbånd, ikke strikk som strekker seg ut.",
+        "Plastkroker hekter under karosseriets kant, på alle fire sider.",
+        "To ekstra forsterkede bånd på 10,5 meter følger med."
+      ]
+    },
+    {
+      "typ": "produkt",
+      "handle": "takskyddet",
+      "text": "Justerbare bånd på alle fire sider holder trekket der det skal være.",
+      "knapp": "Se taktrekket"
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    { "rad": "Sitter det fast når det blåser?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Vevde bånd, ikke strikk", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "To ekstra bånd følger med", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Plastkroker under kanten holder det på plass, på alle fire sider.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sitter det fast når det blåser?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se hvordan det festes", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Det som holder det på plass", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se taktrekket", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "version": 1,
+  "planerad": "2026-11-03T18:00:00+01:00",
+  "segment": [
+    "SEG_samtycke_nb"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

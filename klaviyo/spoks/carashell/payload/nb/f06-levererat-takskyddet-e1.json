@@ -1,0 +1,80 @@
+{
+  "id": "f06-levererat-takskyddet-e1",
+  "sprak": "nb",
+  "emailTitle": "Sånn setter du på taktrekket",
+  "emailDescription": "Legg det over taket, fest krokene, dra til stroppene.",
+  "amnesrader": [
+    "Sånn setter du på taktrekket",
+    "Fire steg, i riktig rekkefølge",
+    "Krokene fester under kanten"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Sånn setter du på taktrekket"
+    },
+    {
+      "type": "regular",
+      "text": "Fire steg, i riktig rekkefølge.",
+      "alignment": "left"
+    },
+    {
+      "type": "list",
+      "text": "Legg trekket over taket, med kanten hengende ned over sidene."
+    },
+    {
+      "type": "list",
+      "text": "Hekt plasthakene under kanten på karosseriet, på alle fire sider."
+    },
+    {
+      "type": "list",
+      "text": "Dra til de justerbare stroppene."
+    },
+    {
+      "type": "list",
+      "text": "De to ekstra stroppene på 10,5 meter følger med i pakken."
+    },
+    {
+      "type": "quote",
+      "text": "Ble noe ikke som det skulle? Svar på denne e-posten, så hjelper jeg deg.\nAxel, grunnlegger"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Angrerett**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagers angrerett",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spor pakken**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Følg den hele veien](https://carashell.se/nb/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

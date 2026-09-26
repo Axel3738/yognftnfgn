@@ -1,0 +1,76 @@
+{
+  "id": "f04-efter-kop-e2",
+  "sprak": "nb",
+  "emailTitle": "Kom pakken frem som den skulle?",
+  "emailDescription": "Kom alt frem i hel stand? Her er hva du gjør hvis ikke.",
+  "amnesrader": [
+    "Kom pakken frem som den skulle?",
+    "Sånn gjør du om noe er feil",
+    "Slik returnerer du, om nødvendig"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Kom alt frem?"
+    },
+    {
+      "type": "regular",
+      "text": "Pakken din skal ha kommet frem for lengst. Trykk på knappen under, så ser du nøyaktig hvor den er, hvis den fortsatt er underveis.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Er noe feil, eller vil du returnere trekket, har du 14 dagers angrerett fra den dagen du mottok varen. Du betaler returfrakten selv.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Send en e-post til hello@carashell.com med ordrenummeret ditt, så får du en returinstruksjon, og pengene tilbake innen 14 dager etter at returen er mottatt. Reklamasjon gjelder i opptil 3 år.",
+      "alignment": "left"
+    },
+    {
+      "type": "link",
+      "text": "Spor pakken",
+      "url": "https://carashell.se/nb/pages/spara",
+      "style": "button"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Angrerett**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagers angrerett",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spor pakken**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Følg den hele veien](https://carashell.se/nb/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

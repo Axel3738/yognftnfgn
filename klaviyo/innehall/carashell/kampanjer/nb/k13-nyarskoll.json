@@ -1,0 +1,70 @@
+{
+  "id": "k13-nyarskoll",
+  "namn": "MAIL_20261229_CaraShellMix_NB_S_2_samtycke_solution_en-koll-innan-sasongen_v1",
+  "sprak": "nb",
+  "memo": "Mellandagarna: gå ut och titta på vagnen. sv/nb: står taket torrt, är rutan täckt. en: the start of the year check. Produktrad med alla tre.",
+  "brief": "Rubrik + två stycken. Produktrad med alla tre. Fakta. ",
+  "taggar": {
+    "typ": "S",
+    "kalla": "gissning",
+    "kalla_ref": null,
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "sasong",
+    "confidence": "low",
+    "prefix": "CaraShellMix",
+    "kod": "S",
+    "avatar": "ägaren som inte tittat på vagnen sedan hösten",
+    "begar": "kontroll"
+  },
+  "amnesrader": [
+    {
+      "text": "En sjekk i romjulen",
+      "begar": "ta seg tid midt i høytiden"
+    },
+    {
+      "text": "Står taket fortsatt tørt?",
+      "begar": "bekrefte at taket har holdt"
+    },
+    {
+      "text": "Et blikk er nok, utenfra",
+      "begar": "vite at det ikke tar lang tid"
+    }
+  ],
+  "forhandstext": "Vogna har stått ute siden høsten, verdt et blikk.",
+  "block": [
+    {
+      "typ": "text",
+      "rubrik": "En sjekk i romjulen",
+      "text": "Hei {{fornamn}},\n\nI romjulen er det lett å glemme vogna som står ute. En rask sjekk nå sparer deg for overraskelser til våren.\n\nStår taket tørt? Er frontruta dekket? Et blikk utenfra er nok."
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Beskyttelse for resten av vinteren",
+      "handles": [
+        "takskyddet",
+        "termoskyddet",
+        "fonstertermomatta-2-pack"
+      ]
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    { "rad": "En sjekk i romjulen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Står taket fortsatt tørt?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Et blikk er nok, utenfra", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Vogna har stått ute siden høsten, verdt et blikk.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En sjekk i romjulen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Beskyttelse for resten av vinteren", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "version": 1,
+  "planerad": "2026-12-29T18:00:00+01:00",
+  "segment": [
+    "SEG_samtycke_nb"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

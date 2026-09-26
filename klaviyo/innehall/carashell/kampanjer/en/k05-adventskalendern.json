@@ -1,0 +1,78 @@
+{
+  "id": "k05-adventskalendern",
+  "namn": "MAIL_20261027_CaraShellCal_EN_GT_2_samtycke_product_retrobussar-24-luckor_v1",
+  "sprak": "en",
+  "memo": "Ny produkt i butiken: adventskalender med retrobussar, 24 luckor (läst i Shopify 2026-09-26). Presenten till husvagnsfolket. Sista beställningsdag för lucka 1: fredag 13 november. Om kalenderns innehåll är BARA titeln känd (24 luckor, retrobussar) — inget mer får påstås.",
+  "brief": "Hero (bild adventskalendern). Text: 24 luckor, retrobussar, datumet fredag 13 november skrivet ut. Produktkort, fakta. Inget om vad som finns bakom luckorna. Engelskan gäller USA, Storbritannien, Kanada, Australien och Nya Zeeland samtidigt: inga årstider (winter/summer/spring/autumn/fall), ingen snö — skriv \"while it is parked\", \"between trips\", \"off the road\". Säg caravan där det passar (GB/AU/NZ), motorhome, och RV en gång som amerikansk synonym.",
+  "taggar": {
+    "typ": "N",
+    "kalla": "gissning",
+    "kalla_ref": null,
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "konsekvens",
+    "confidence": "low",
+    "prefix": "CaraShellCal",
+    "kod": "GT",
+    "avatar": "den som ger en kalender till någon med husvagn eller husbil",
+    "begar": "en present som passar just den personen"
+  },
+  "amnesrader": [
+    {
+      "text": "A 24-door calendar, retro campervan theme",
+      "begar": "discover the new calendar exists"
+    },
+    {
+      "text": "The gift for the one with the caravan",
+      "begar": "find a gift that fits someone specific"
+    },
+    {
+      "text": "Order by Friday, 13 November for door one",
+      "begar": "know the deadline to order by"
+    }
+  ],
+  "forhandstext": "Order by Friday the 13th so the first door is ready.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "24 doors, one retro campervan theme",
+      "text": "Hi {{fornamn}},\n\nA new advent calendar for the caravan or motorhome crowd: 24 doors, a retro campervan theme.",
+      "bild": "produkt:adventskalender-retrobussar",
+      "knapp": {
+        "text": "See the calendar",
+        "lank": "produkt:adventskalender-retrobussar"
+      }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Order by Friday, 13 November if you want the first door ready to open."
+    },
+    {
+      "typ": "produkt",
+      "handle": "adventskalender-retrobussar",
+      "text": "24 doors, a retro campervan theme, one early gift.",
+      "knapp": "Get it before 13 November"
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    { "rad": "A 24-door calendar, retro campervan theme", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "The gift for the one with the caravan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Order by Friday, 13 November for door one", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Order by Friday the 13th so the first door is ready.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "24 doors, one retro campervan theme", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "See the calendar", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Get it before 13 November", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "version": 1,
+  "planerad": "2026-10-27T16:00:00+01:00",
+  "segment": [
+    "SEG_samtycke_en"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

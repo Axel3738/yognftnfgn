@@ -1,0 +1,121 @@
+{
+  "id": "f06-levererat-termoskyddet",
+  "namn": "FLOW_levererat_termoskyddet_EN_v1",
+  "sprak": "en",
+  "memo": "Samma som takskyddets leveransflöde, för termoskyddet: spänns utvändigt över vindrutan och båda sidorutorna, flikarna kläms fast i dörrkarmen utan att dörrarna öppnas, håller i blåst.",
+  "spoks": {
+    "event": "order_delivered",
+    "filter": [
+      "ej_avregistrerad",
+      "sprak"
+    ],
+    "triggerFilter": {
+      "externalId": [
+        "termoskyddet"
+      ]
+    },
+    "reenroll": true,
+    "reenrollEfter": null
+  },
+  "steg": [
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 1
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f06-levererat-termoskyddet-e1",
+        "namn": "FLOW_levererat_termoskyddet_EN_E1_M_sa-monterar-du-termoskyddet_v1",
+        "sprak": "en",
+        "memo": "Monteringen med faktabladets ord, tre punkter.",
+        "brief": "Rubrik + en mening + tre punkter + grundare-rad + fakta.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "factory/produkter/termoskyddet.yaml#features, #faq",
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "CaraShellFront",
+          "kod": "M",
+          "avatar": "husbilsägaren som just fått termoskyddet",
+          "begar": "slippa-krangel"
+        },
+        "amnesrader": [
+          {
+            "text": "How to fit the windshield cover",
+            "begar": "practical installation clarity"
+          },
+          {
+            "text": "No need to open the doors",
+            "begar": "convenience and ease reassurance"
+          },
+          {
+            "text": "It stays on, even in wind",
+            "begar": "confidence it will hold"
+          }
+        ],
+        "forhandstext": "Three steps, and the doors stay shut the whole time.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "How to fit the windshield cover",
+            "text": "Three steps, and you never have to open the doors."
+          },
+          {
+            "typ": "punkter",
+            "rubrik": null,
+            "punkter": [
+              "Strap it on over the outside of the windshield and both side windows.",
+              "Clip the side flaps into the door frame. The doors stay closed the whole time.",
+              "It stays on in wind."
+            ]
+          },
+          {
+            "typ": "grundare",
+            "text": "If something doesn't add up, reply to this email and I'll help sort it out."
+          },
+          {
+            "typ": "fakta"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "How to fit the windshield cover",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "No need to open the doors",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "It stays on, even in wind",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Three steps, and the doors stay shut the whole time.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "How to fit the windshield cover",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "f03-webbhistorik-e1",
+  "sprak": "nb",
+  "emailTitle": "Dette kikket du på",
+  "emailDescription": "Vi viser den igjen, i tilfelle du vil ta en ny titt.",
+  "amnesrader": [
+    "Dette kikket du på",
+    "Den er fortsatt her",
+    "Tilbake til det du så på sist"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Dette kikket du på"
+    },
+    {
+      "type": "regular",
+      "text": "Her er den igjen, i tilfelle du vil se nærmere på den.",
+      "alignment": "left"
+    },
+    {
+      "type": "products",
+      "selectionMode": "dynamic",
+      "dynamicProductsCount": 1,
+      "dynamicCriteria": "recently_viewed",
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": false,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": false
+      },
+      "buttonText": "Se igjen",
+      "alignment": "center",
+      "productsPerRow": 1
+    }
+  ],
+  "varningar": []
+}

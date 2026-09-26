@@ -1,0 +1,113 @@
+{
+  "id": "k05-adventskalendern",
+  "sprak": "en",
+  "emailTitle": "A 24-door calendar, retro campervan theme",
+  "emailDescription": "Order by Friday the 13th so the first door is ready.",
+  "amnesrader": [
+    "A 24-door calendar, retro campervan theme",
+    "The gift for the one with the caravan",
+    "Order by Friday, 13 November for door one"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "24 doors, one retro campervan theme",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hi {{ contact.first_name | default: 'there' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "A new advent calendar for the caravan or motorhome crowd: 24 doors, a retro campervan theme.",
+      "alignment": "center"
+    },
+    {
+      "type": "image",
+      "fileId": "{{spoks:media:adventskalender-retrobussar}}",
+      "altText": "Advent Calendar with Retro Campervans, 24 Doors",
+      "urlRedirect": "https://carashell.com/products/adventskalender-retrobussar"
+    },
+    {
+      "type": "h2",
+      "text": "Advent Calendar with Retro Campervans, 24 Doors",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "See the calendar",
+      "url": "https://carashell.com/products/adventskalender-retrobussar",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "Order by Friday, 13 November if you want the first door ready to open.",
+      "alignment": "left"
+    },
+    {
+      "type": "image",
+      "fileId": "{{spoks:media:adventskalender-retrobussar}}",
+      "altText": "Advent Calendar with Retro Campervans, 24 Doors",
+      "urlRedirect": "https://carashell.com/products/adventskalender-retrobussar"
+    },
+    {
+      "type": "h2",
+      "text": "Advent Calendar with Retro Campervans, 24 Doors",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Get it before 13 November",
+      "url": "https://carashell.com/products/adventskalender-retrobussar",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "24 doors, a retro campervan theme, one early gift.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Guarantee**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "90-day guarantee",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Track your parcel**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Follow it all the way](https://carashell.com/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": [
+    "Bilden för adventskalender-retrobussar saknar fileId i Spoks (produkter.json → bild).",
+    "Bilden för adventskalender-retrobussar saknar fileId i Spoks (produkter.json → bild)."
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "id": "k13-nyarskoll",
+  "sprak": "nb",
+  "emailTitle": "En sjekk i romjulen",
+  "emailDescription": "Vogna har stått ute siden høsten, verdt et blikk.",
+  "amnesrader": [
+    "En sjekk i romjulen",
+    "Står taket fortsatt tørt?",
+    "Et blikk er nok, utenfra"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "En sjekk i romjulen"
+    },
+    {
+      "type": "regular",
+      "text": "Hei {{ contact.first_name | default: 'der' }},",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "I romjulen er det lett å glemme vogna som står ute. En rask sjekk nå sparer deg for overraskelser til våren.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Står taket tørt? Er frontruta dekket? Et blikk utenfra er nok.",
+      "alignment": "left"
+    },
+    {
+      "type": "h2",
+      "text": "Beskyttelse for resten av vinteren",
+      "alignment": "center"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "image",
+              "fileId": "{{spoks:media:takskyddet}}",
+              "altText": "Taktrekk campingvogn & bobil 5,5–13,5 m",
+              "urlRedirect": "https://carashell.se/nb/products/takskyddet?country=NO"
+            },
+            {
+              "type": "h2",
+              "text": "Taktrekk campingvogn & bobil 5,5–13,5 m",
+              "alignment": "center"
+            },
+            {
+              "type": "link",
+              "text": "Se produktet",
+              "url": "https://carashell.se/nb/products/takskyddet?country=NO",
+              "style": "button"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "image",
+              "fileId": "{{spoks:media:termoskyddet}}",
+              "altText": "Frontrutetrekk til bobil 211 × 171 cm",
+              "urlRedirect": "https://carashell.se/nb/products/termoskyddet?country=NO"
+            },
+            {
+              "type": "h2",
+              "text": "Frontrutetrekk til bobil 211 × 171 cm",
+              "alignment": "center"
+            },
+            {
+              "type": "link",
+              "text": "Se produktet",
+              "url": "https://carashell.se/nb/products/termoskyddet?country=NO",
+              "style": "button"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "image",
+              "fileId": "{{spoks:media:fonstertermomatta-2-pack}}",
+              "altText": "Vindu-termomatte 2-pk 70 × 80 cm",
+              "urlRedirect": "https://carashell.se/nb/products/fonstertermomatta-2-pack?country=NO"
+            },
+            {
+              "type": "h2",
+              "text": "Vindu-termomatte 2-pk 70 × 80 cm",
+              "alignment": "center"
+            },
+            {
+              "type": "link",
+              "text": "Se produktet",
+              "url": "https://carashell.se/nb/products/fonstertermomatta-2-pack?country=NO",
+              "style": "button"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Angrerett**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagers angrerett",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spor pakken**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Følg den hele veien](https://carashell.se/nb/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": [
+    "Bilden för takskyddet saknar fileId i Spoks (produkter.json → bild).",
+    "Bilden för termoskyddet saknar fileId i Spoks (produkter.json → bild).",
+    "Bilden för fonstertermomatta-2-pack saknar fileId i Spoks (produkter.json → bild)."
+  ]
+}

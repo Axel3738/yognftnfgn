@@ -1,0 +1,38 @@
+{
+  "id": "f04-efter-kop-e1",
+  "sprak": "sv",
+  "emailTitle": "Bekräftelse, sen paketnumret",
+  "emailDescription": "Bekräftelse, paketnummer, och en sida där du ser resten.",
+  "amnesrader": [
+    "Bekräftelse, sen paketnumret",
+    "Ditt paketnummer börjar på CS",
+    "Se var paketet är, när du vill"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Bekräftelse, sen paketnumret"
+    },
+    {
+      "type": "regular",
+      "text": "Du har fått en bekräftelse på mejl. När paketet skickas kommer ett nytt mejl med paketnumret, som börjar på CS.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Med det numret ser du själv var paketet befinner sig, utan att behöva fråga oss.",
+      "alignment": "left"
+    },
+    {
+      "type": "link",
+      "text": "Följ ditt paket",
+      "url": "https://carashell.se/pages/spara",
+      "style": "button"
+    },
+    {
+      "type": "quote",
+      "text": "Känns det långsamt, svara bara på det här mejlet. Jag kollar upp det.\nAxel, grundare"
+    }
+  ],
+  "varningar": []
+}

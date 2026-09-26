@@ -1,0 +1,76 @@
+{
+  "id": "f04-efter-kop-e2",
+  "sprak": "sv",
+  "emailTitle": "Kom allt fram som det skulle?",
+  "emailDescription": "Var paketet är, och vad du gör om något är fel.",
+  "amnesrader": [
+    "Kom allt fram som det skulle?",
+    "Fel vara, eller ångrar du dig?",
+    "14 dagars ångerrätt, bara så du vet"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Kom allt fram som det skulle?"
+    },
+    {
+      "type": "regular",
+      "text": "Vid det här laget bör paketet ha kommit fram.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Har det inte kommit fram än ser du exakt var det är på vår spårningssida.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Är något fel med varan, eller ångrar du dig, har du 14 dagars ångerrätt från den dag du tog emot den. Du betalar returfrakten själv, och mejlar hello@carashell.com med ordernumret för en returinstruktion. Återbetalningen sker inom 14 dagar från att returen tagits emot. Går något sönder senare gäller reklamation i upp till tre år enligt konsumentköplagen.",
+      "alignment": "left"
+    },
+    {
+      "type": "link",
+      "text": "Följ ditt paket",
+      "url": "https://carashell.se/pages/spara",
+      "style": "button"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://carashell.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

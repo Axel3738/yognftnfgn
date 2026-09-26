@@ -1,0 +1,81 @@
+{
+  "id": "f01-valkomst-e3",
+  "sprak": "sv",
+  "emailTitle": "Så går en retur till, om det behövs",
+  "emailDescription": "Från beställning till en eventuell retur, i klartext.",
+  "amnesrader": [
+    "Så går en retur till, om det behövs",
+    "Paketnummer, spårning, en riktig adress",
+    "14 dagars ångerrätt, om det inte passar"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Beställning, spårning, och om du ångrar dig"
+    },
+    {
+      "type": "regular",
+      "text": "Du får en bekräftelse på mejl direkt när du beställer, och ett nytt mejl med paketnumret så snart paketet skickas. Numret börjar på CS.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Paketnumret tar dig till vår egen spårningssida, där du ser var paketet är just nu.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Ångrar du dig har du 14 dagars ångerrätt från den dag du tog emot varan. Du betalar returfrakten själv, och mejlar hello@carashell.com med ordernumret för en returinstruktion. Återbetalningen sker inom 14 dagar från att returen tagits emot. Går något sönder senare gäller reklamation i upp till tre år enligt konsumentköplagen.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Frågor av alla slag går till samma adress: hello@carashell.com.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://carashell.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "link",
+      "text": "Se taköverdraget",
+      "url": "https://carashell.se/products/takskyddet",
+      "style": "button"
+    }
+  ],
+  "varningar": []
+}

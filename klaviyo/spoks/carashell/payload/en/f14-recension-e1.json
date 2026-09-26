@@ -1,0 +1,42 @@
+{
+  "id": "f14-recension-e1",
+  "sprak": "en",
+  "emailTitle": "Your parcel's had a few days now",
+  "emailDescription": "Your parcel's had time to settle in. Pick a star, and tell us what you think.",
+  "amnesrader": [
+    "Your parcel's had a few days now",
+    "One click sets your rating",
+    "What did you think of the cover?"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "How did the cover work out?"
+    },
+    {
+      "type": "regular",
+      "text": "Your parcel's had a few days to settle in. A star only takes a click.",
+      "alignment": "left"
+    },
+    {
+      "type": "h2",
+      "text": "Pick a star",
+      "alignment": "center"
+    },
+    {
+      "type": "h1",
+      "text": "[★](https://www.trustpilot.com/evaluate/carashell.se?stars=1) [★](https://www.trustpilot.com/evaluate/carashell.se?stars=2) [★](https://www.trustpilot.com/evaluate/carashell.se?stars=3) [★](https://www.trustpilot.com/evaluate/carashell.se?stars=4) [★](https://www.trustpilot.com/evaluate/carashell.se?stars=5)",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Every rating helps, good or not so good.",
+      "alignment": "center"
+    },
+    {
+      "type": "quote",
+      "text": "If something wasn't right, reply to this email first, before you rate us. I'll sort it out.\nAxel, founder"
+    }
+  ],
+  "varningar": []
+}

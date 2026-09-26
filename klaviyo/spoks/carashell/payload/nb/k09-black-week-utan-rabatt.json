@@ -1,0 +1,116 @@
+{
+  "id": "k09-black-week-utan-rabatt",
+  "sprak": "nb",
+  "emailTitle": "Det kundene selv sier om taket",
+  "emailDescription": "Ekte tilbakemeldinger fra folk som allerede har det på vogna.",
+  "amnesrader": [
+    "Det kundene selv sier om taket",
+    "Ni lengder, valgt av andre med vogn",
+    "Derfor stoler de på taktrekket"
+  ],
+  "blocks": [
+    {
+      "type": "quote",
+      "text": "\"Bra skydd för taket och lätt att använda.\"\nKarin, verifisert kunde"
+    },
+    {
+      "type": "quote",
+      "text": "\"Jag är nöjd med överdraget. Rekommenderas.\"\nErik, verifisert kunde"
+    },
+    {
+      "type": "h1",
+      "text": "Det kundene selv sier",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hei {{ contact.first_name | default: 'der' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Dette er ord fra folk som allerede har taktrekket på vogna si.",
+      "alignment": "center"
+    },
+    {
+      "type": "image",
+      "fileId": "{{spoks:media:takskyddet}}",
+      "altText": "Taktrekk campingvogn & bobil 5,5–13,5 m",
+      "urlRedirect": "https://carashell.se/nb/products/takskyddet?country=NO"
+    },
+    {
+      "type": "h2",
+      "text": "Taktrekk campingvogn & bobil 5,5–13,5 m",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Se taktrekket",
+      "url": "https://carashell.se/nb/products/takskyddet?country=NO",
+      "style": "button"
+    },
+    {
+      "type": "image",
+      "fileId": "{{spoks:media:takskyddet}}",
+      "altText": "Taktrekk campingvogn & bobil 5,5–13,5 m",
+      "urlRedirect": "https://carashell.se/nb/products/takskyddet?country=NO"
+    },
+    {
+      "type": "h2",
+      "text": "Taktrekk campingvogn & bobil 5,5–13,5 m",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Se produktet",
+      "url": "https://carashell.se/nb/products/takskyddet?country=NO",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "Ni lengder, som passer både campingvogn og bobil.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Angrerett**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagers angrerett",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spor pakken**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Følg den hele veien](https://carashell.se/nb/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": [
+    "Bilden för takskyddet saknar fileId i Spoks (produkter.json → bild).",
+    "Bilden för takskyddet saknar fileId i Spoks (produkter.json → bild)."
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "id": "k10-sista-dag-for-julklappar",
+  "sprak": "en",
+  "emailTitle": "Order by Monday for it to arrive by Christmas",
+  "emailDescription": "After Monday, we can't promise Christmas.",
+  "amnesrader": [
+    "Order by Monday for it to arrive by Christmas",
+    "December 7: the last day for Christmas orders",
+    "Three gifts, one deadline: Monday"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Order by Monday, 7 December",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Order by Monday, 7 December if you want it to arrive in time for Christmas. After that day, we can't promise it will.",
+      "alignment": "center"
+    },
+    {
+      "type": "image",
+      "fileId": "{{spoks:media:takskyddet}}",
+      "altText": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft",
+      "urlRedirect": "https://carashell.com/products/takskyddet"
+    },
+    {
+      "type": "h2",
+      "text": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Shop before Monday",
+      "url": "https://carashell.com/collections/sortimentet",
+      "style": "button"
+    },
+    {
+      "type": "h2",
+      "text": "Order any of these by Monday",
+      "alignment": "center"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "image",
+              "fileId": "{{spoks:media:takskyddet}}",
+              "altText": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft",
+              "urlRedirect": "https://carashell.com/products/takskyddet"
+            },
+            {
+              "type": "h2",
+              "text": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft",
+              "alignment": "center"
+            },
+            {
+              "type": "link",
+              "text": "See the cover",
+              "url": "https://carashell.com/products/takskyddet",
+              "style": "button"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "image",
+              "fileId": "{{spoks:media:termoskyddet}}",
+              "altText": "Windshield Thermal Cover for Motorhome 211 × 171 cm",
+              "urlRedirect": "https://carashell.com/products/termoskyddet"
+            },
+            {
+              "type": "h2",
+              "text": "Windshield Thermal Cover for Motorhome 211 × 171 cm",
+              "alignment": "center"
+            },
+            {
+              "type": "link",
+              "text": "See the cover",
+              "url": "https://carashell.com/products/termoskyddet",
+              "style": "button"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "image",
+              "fileId": "{{spoks:media:fonstertermomatta-2-pack}}",
+              "altText": "Window Thermal Mat, 2-Pack, 70 × 80 cm",
+              "urlRedirect": "https://carashell.com/products/fonstertermomatta-2-pack"
+            },
+            {
+              "type": "h2",
+              "text": "Window Thermal Mat, 2-Pack, 70 × 80 cm",
+              "alignment": "center"
+            },
+            {
+              "type": "link",
+              "text": "See the cover",
+              "url": "https://carashell.com/products/fonstertermomatta-2-pack",
+              "style": "button"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Guarantee**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "90-day guarantee",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Track your parcel**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Follow it all the way](https://carashell.com/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": [
+    "Bilden för takskyddet saknar fileId i Spoks (produkter.json → bild).",
+    "Bilden för takskyddet saknar fileId i Spoks (produkter.json → bild).",
+    "Bilden för termoskyddet saknar fileId i Spoks (produkter.json → bild).",
+    "Bilden för fonstertermomatta-2-pack saknar fileId i Spoks (produkter.json → bild)."
+  ]
+}

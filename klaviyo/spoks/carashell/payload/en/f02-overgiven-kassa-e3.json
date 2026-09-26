@@ -1,0 +1,23 @@
+{
+  "id": "f02-overgiven-kassa-e3",
+  "sprak": "en",
+  "emailTitle": "One last note about your cart",
+  "emailDescription": "Reply if something's unclear. Otherwise, this is where I leave it.",
+  "amnesrader": [
+    "One last note about your cart",
+    "Any questions before you decide?",
+    "I won't email about this cart again"
+  ],
+  "blocks": [
+    {
+      "type": "quote",
+      "text": "This is the last note I'll send about this cart.\n\nIf you've got a question about sizing, fitting or anything else, just reply and I'll answer myself. If not, you won't hear more about it from me.\nAxel, founder"
+    },
+    {
+      "type": "abandonedCart",
+      "buttonText": "Back to checkout",
+      "isProductPriceVisible": false
+    }
+  ],
+  "varningar": []
+}
