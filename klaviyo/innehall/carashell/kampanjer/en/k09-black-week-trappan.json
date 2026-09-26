@@ -1,0 +1,82 @@
+{
+  "id": "k09-black-week-trappan",
+  "namn": "MAIL_20261124_CaraShellMix_EN_S_2_samtycke_promo_trappan-10-20-30_v1",
+  "sprak": "en",
+  "memo": "Axels beslut B 2026-09-26: samma rabattrappa som Bäverbutiken, tre automatiska rabatter i CaraShells Shopify (Black Week 10/20/30 %, måndag 23/11 till och med måndag 30/11, alla produkter, ingen kod, kombineras bara med fri frakt). K09 öppnar veckan och förklarar trappan så att den går att förstå på fem sekunder, med de tre skydden som kan kombineras till nästa nivå (Bäverbutikens K11 är förlagan, egen copy). Adventskalendern är inte med: lucka 1 hinns inte (sista beställning fre 13/11).",
+  "brief": "Hero: trappan på en rad (rubrik) och 1–2 meningar: rabatten dras automatiskt i kassan, ingen kod, den gäller till och med måndag 30 november och räknas på antalet varor i varukorgen. Punkter: exakt tre rader, 1 vara 10 %, 2 varor 20 %, 3 varor eller fler 30 % (siffrorna exakt så, inga andra procent, inga belopp). Produktrad med taköverdraget, termoskyddet och fönstertermomattan: rubriken säger att två skydd ger nästa nivå. Inget citat. Engelskan gäller USA, Storbritannien, Kanada, Australien och Nya Zeeland samtidigt: inga årstider (winter/summer/spring/autumn/fall), ingen snö — skriv \"while it is parked\", \"between trips\", \"off the road\". Säg caravan där det passar (GB/AU/NZ), motorhome, och RV en gång som amerikansk synonym. Black Week och Black Friday är ok. Fakta. Förbjudet: sista chansen, bara idag, belopp, leveranstid, butikens namn.",
+  "taggar": {
+    "typ": "S",
+    "kalla": "egen-data",
+    "kalla_ref": "Axels beslut B 2026-09-26; brands/carashell.json#black_week; klaviyo/innehall/baverbutiken/kampanjer/k11-black-week-start.json",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "pris",
+    "confidence": "medium",
+    "prefix": "CaraShellMix",
+    "kod": "S",
+    "avatar": "prenumeranten som ändå tänkt skydda vagnen och väntat på rätt tillfälle",
+    "begar": "spara-pengar"
+  },
+  "rabatt": "black_week",
+  "amnesrader": [
+    {
+      "text": "Add a second item, the discount jumps to 20 %",
+      "begar": "förstå att fler varor ger mer rabatt"
+    },
+    {
+      "text": "One item is 10 %, two is 20 %, three or more is 30 %",
+      "begar": "se alla rabattnivåerna direkt"
+    },
+    {
+      "text": "The ladder runs through Monday, November 30",
+      "begar": "veta exakt sista dagen"
+    }
+  ],
+  "forhandstext": "Three or more takes it to 30 %, and checkout does the math.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "The discount climbs on its own, all week",
+      "text": "I set up checkout to count what's in your cart and take the discount off automatically, whether that's for a caravan, a motorhome, or an RV. It runs through Monday, November 30, no code needed.",
+      "bild": "produkt:takskyddet",
+      "knapp": {
+        "text": "Shop the collection",
+        "lank": "kollektion:sortimentet"
+      }
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "How the ladder works",
+      "punkter": [
+        "1 item in the cart: 10 % off",
+        "2 items in the cart: 20 % off",
+        "3 items or more in the cart: 30 % off"
+      ]
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Two covers, the next level",
+      "handles": [
+        "takskyddet",
+        "termoskyddet",
+        "fonstertermomatta-2-pack"
+      ]
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    { "rad": "Add a second item, the discount jumps to 20 %", "visualisera": true, "falsifiera": true, "ingen_annan": true, "varfor": "Konkret handling (en vara till i kundvagnen) och en exakt siffra som bara gäller den här trappan." },
+    { "rad": "One item is 10 %, two is 20 %, three or more is 30 %", "visualisera": true, "falsifiera": true, "ingen_annan": true, "varfor": "Tre konkreta, kontrollerbara nivåer i rätt ordning som ingen annan butik kan påstå om sin egen trappa." },
+    { "rad": "The ladder runs through Monday, November 30", "visualisera": true, "falsifiera": true, "ingen_annan": true, "varfor": "Ett exakt, sant slutdatum för just den här kampanjen, inte en påhittad brådska." }
+  ],
+  "version": 1,
+  "planerad": "2026-11-24T16:00:00+01:00",
+  "segment": [
+    "SEG_samtycke_en"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

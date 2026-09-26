@@ -7,14 +7,63 @@
     "workspace": "38f3d430-690c-4c0b-8419-8ec2e5272148",
     "workspace_comment": "Ur whoami 2026-09-26 (namn Carashell, shopifyStore yitrbk-m3.myshopify.com). Hitta aldrig på ett storeId.",
     "installningar": {
-      "generalSettings": { "locale": { "country": "SE", "language": "sv", "timezone": "Europe/Stockholm" }, "url": "https://carashell.se" },
-      "emailSettings": { "senderName": "CaraShell", "senderEmail": "hello@carashell.com", "replyToEmail": "hello@carashell.com" },
+      "generalSettings": {
+        "locale": {
+          "country": "SE",
+          "language": "sv",
+          "timezone": "Europe/Stockholm"
+        },
+        "url": "https://carashell.se"
+      },
+      "emailSettings": {
+        "senderName": "CaraShell",
+        "senderEmail": "hello@carashell.com",
+        "replyToEmail": "hello@carashell.com"
+      },
       "looks": {
-        "layout": { "imagesBorderRadius": 10, "areImagesFullWidth": true, "sectionBorderRadius": 10, "areSectionsFullWidth": false, "buttonBorderRadius": 6, "areButtonsFullWidth": false, "surfaceBorderRadius": 10 },
-        "colors": { "background": "#F1F2EF", "onBackground": "#1B2026", "surface": "#FFFFFF", "onSurface": "#1B2026", "primary": "#1F6F8E", "onPrimary": "#FFFFFF", "header": "#22282E", "onHeader": "#F1F2EF", "footer": "#22282E", "onFooter": "#F1F2EF", "link": "#1F6F8E", "titleText": "#1B2026" },
-        "typography": { "regularWebSafeFontFamily": "Arial", "regularGoogleFontFamily": "Source Sans 3", "headerWebSafeFontFamily": "Arial", "headerGoogleFontFamily": "Barlow", "headerGoogleFontWeight": 700 },
-        "postHeader": { "logoUrl": "https://carashell.se/cdn/shop/files/carashell-logga-c.png?v=1789078262&width=200", "isLogoHidden": false, "logoLinkUrl": "https://carashell.se", "logoWidth": 96, "alignment": "center", "isAnnouncementBarEnabled": false },
-        "postFooter": { "alignment": "center", "text": "CaraShell · STONEBITE ECOM AB · Stenkolsgatan 1B, 417 07 Göteborg, Sverige · hello@carashell.com", "unsubscribeText": "Avregistrera · Meld av · Unsubscribe" }
+        "layout": {
+          "imagesBorderRadius": 10,
+          "areImagesFullWidth": true,
+          "sectionBorderRadius": 10,
+          "areSectionsFullWidth": false,
+          "buttonBorderRadius": 6,
+          "areButtonsFullWidth": false,
+          "surfaceBorderRadius": 10
+        },
+        "colors": {
+          "background": "#F1F2EF",
+          "onBackground": "#1B2026",
+          "surface": "#FFFFFF",
+          "onSurface": "#1B2026",
+          "primary": "#1F6F8E",
+          "onPrimary": "#FFFFFF",
+          "header": "#22282E",
+          "onHeader": "#F1F2EF",
+          "footer": "#22282E",
+          "onFooter": "#F1F2EF",
+          "link": "#1F6F8E",
+          "titleText": "#1B2026"
+        },
+        "typography": {
+          "regularWebSafeFontFamily": "Arial",
+          "regularGoogleFontFamily": "Source Sans 3",
+          "headerWebSafeFontFamily": "Arial",
+          "headerGoogleFontFamily": "Barlow",
+          "headerGoogleFontWeight": 700
+        },
+        "postHeader": {
+          "logoUrl": "https://carashell.se/cdn/shop/files/carashell-logga-c.png?v=1789078262&width=200",
+          "isLogoHidden": false,
+          "logoLinkUrl": "https://carashell.se",
+          "logoWidth": 96,
+          "alignment": "center",
+          "isAnnouncementBarEnabled": false
+        },
+        "postFooter": {
+          "alignment": "center",
+          "text": "CaraShell · STONEBITE ECOM AB · Stenkolsgatan 1B, 417 07 Göteborg, Sverige · hello@carashell.com",
+          "unsubscribeText": "Avregistrera · Meld av · Unsubscribe"
+        }
       }
     },
     "installningar_comment": "Läggs in med update_settings av uppladdningssessionen och kontrolleras med get_settings. Spoks har EN sidfot och EN avregistreringstext per workspace (get_settings på Bäverbutiken 2026-09-26), inte per språk — därför språkneutral sidfot (bolag, adress enligt MFL 20 §, mejl) och tre ord på avregistreringslänken. Färger, logga och typsnitt ur factory/butiker/carashell.yaml → branding och mejl/butiker/carashell.json. Fältnamnen är get_settings-svarets form; update_settings-schemat läses innan anropet."
@@ -36,9 +85,31 @@
   "tidszon": "Europe/Stockholm",
   "flersprakig": true,
   "sprak_grupper": {
-    "sv": { "lander": ["Sweden", "Denmark"], "utan_land": true, "comment": "Sverige 173 ordrar/90 d (12 subscribed), Danmark 23 (3) — danska kunder får svenska mejl, precis som fraktmejlen (sparning/butiker.json mejl_marknader saknar DK). Kontakter utan land (30 st, nästan alla sv-locale) hamnar här." },
-    "nb": { "lander": ["Norway"], "comment": "Norge 82 ordrar/90 d (4 subscribed). Orderns customerLocale: 67 nb-NO, 14 sv-NO." },
-    "en": { "lander": ["United States", "United Kingdom", "Canada", "Australia", "New Zealand", "Finland"], "comment": "USA 59 ordrar/90 d (54 subscribed — 90 %), Australien 29 (2), Storbritannien 6 (1), Nya Zeeland 3, Kanada 2, Finland 7 (0 subscribed). Finland får engelska: 7 ordrar på 90 dagar bär inte ett eget finskt mejlsystem, och engelska är säkrare än svenska för finska kunder. Landsnamnen är Spoks form (contact.country = engelskt landsnamn, mätt 2026-09-26 med preview_segment: 'Sweden'); de andra namnen är Shopifys engelska namn (mätt i marknadernas regioner) och kontrolleras med preview_segment i CaraShells workspace innan något slås på." }
+    "sv": {
+      "lander": [
+        "Sweden",
+        "Denmark"
+      ],
+      "utan_land": true,
+      "comment": "Sverige 173 ordrar/90 d (12 subscribed), Danmark 23 (3) — danska kunder får svenska mejl, precis som fraktmejlen (sparning/butiker.json mejl_marknader saknar DK). Kontakter utan land (30 st, nästan alla sv-locale) hamnar här."
+    },
+    "nb": {
+      "lander": [
+        "Norway"
+      ],
+      "comment": "Norge 82 ordrar/90 d (4 subscribed). Orderns customerLocale: 67 nb-NO, 14 sv-NO."
+    },
+    "en": {
+      "lander": [
+        "United States",
+        "United Kingdom",
+        "Canada",
+        "Australia",
+        "New Zealand",
+        "Finland"
+      ],
+      "comment": "USA 59 ordrar/90 d (54 subscribed — 90 %), Australien 29 (2), Storbritannien 6 (1), Nya Zeeland 3, Kanada 2, Finland 7 (0 subscribed). Finland får engelska: 7 ordrar på 90 dagar bär inte ett eget finskt mejlsystem, och engelska är säkrare än svenska för finska kunder. Landsnamnen är Spoks form (contact.country = engelskt landsnamn, mätt 2026-09-26 med preview_segment: 'Sweden'); de andra namnen är Shopifys engelska namn (mätt i marknadernas regioner) och kontrolleras med preview_segment i CaraShells workspace innan något slås på."
+    }
   },
   "sprak_grupper_comment": "Språkstyrningen: Spoks har inget språkfält på kontakten (get_settings: customFieldTokens tom; contact.country är det enda geografiska fältet, som engelskt landsnamn). Därför ETT FLÖDE PER SPRÅK med landsfiltret i triggerns kontaktfilter, och ett segment per språk för kampanjerna. Ordrarnas customerLocale (sv-SE/nb-NO/en-US …) bekräftar att land ⇒ språk håller: SE 173/173 sv, NO 67/82 nb, US 59/59 en, DK 22/23 da, FI 7/7 fi.",
   "per_sprak": {
@@ -102,10 +173,26 @@
     }
   },
   "produkttitlar": {
-    "takskyddet": { "sv": "Taköverdrag Husvagn & Husbil 5,5–13,5 m", "nb": "Taktrekk campingvogn & bobil 5,5–13,5 m", "en": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft" },
-    "termoskyddet": { "sv": "Termoskydd Husbil 211 × 171 cm", "nb": "Frontrutetrekk til bobil 211 × 171 cm", "en": "Windshield Thermal Cover for Motorhome 211 × 171 cm" },
-    "fonstertermomatta-2-pack": { "sv": "Fönstertermomatta 2-pack 70 × 80 cm", "nb": "Vindu-termomatte 2-pk 70 × 80 cm", "en": "Window Thermal Mat, 2-Pack, 70 × 80 cm" },
-    "adventskalender-retrobussar": { "sv": "Adventskalender med retrobussar, 24 luckor", "nb": "Adventskalender med retrobusser, 24 luker", "en": "Advent Calendar with Retro Campervans, 24 Doors" }
+    "takskyddet": {
+      "sv": "Taköverdrag Husvagn & Husbil 5,5–13,5 m",
+      "nb": "Taktrekk campingvogn & bobil 5,5–13,5 m",
+      "en": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft"
+    },
+    "termoskyddet": {
+      "sv": "Termoskydd Husbil 211 × 171 cm",
+      "nb": "Frontrutetrekk til bobil 211 × 171 cm",
+      "en": "Windshield Thermal Cover for Motorhome 211 × 171 cm"
+    },
+    "fonstertermomatta-2-pack": {
+      "sv": "Fönstertermomatta 2-pack 70 × 80 cm",
+      "nb": "Vindu-termomatte 2-pk 70 × 80 cm",
+      "en": "Window Thermal Mat, 2-Pack, 70 × 80 cm"
+    },
+    "adventskalender-retrobussar": {
+      "sv": "Adventskalender med retrobussar, 24 luckor",
+      "nb": "Adventskalender med retrobusser, 24 luker",
+      "en": "Advent Calendar with Retro Campervans, 24 Doors"
+    }
   },
   "produkttitlar_comment": "Shopifys produkttitlar per locale, lästa live 2026-09-26 (translations). Används i bild-varianten av produktkorten (nb/en). Priser står ALDRIG här: de kommer ur Shopify per marknad (contextualPricing) och skrivs aldrig i ett mejl.",
   "produktbilder": {
@@ -121,7 +208,7 @@
   "returfonster_fran": "kundtjanst/brands/carashell.yaml#tvister.returfonster_dagar",
   "sparningssida": "https://carashell.se/pages/spara",
   "erbjudande_fran": null,
-  "erbjudande_comment": "CaraShell har inget gratisprodukt-erbjudande och inga rabattkoder i mejlen. Paketrabatten 2 st −15 % / 3 st −20 % står på produktsidan och skrivs aldrig som siffra i ett mejl. Black Week och alla rabatter är Axels beslut (A/B/C i rapporten 2026-09-26).",
+  "erbjudande_comment": "CaraShell har inget gratisprodukt-erbjudande och inga rabattkoder i mejlen. Paketrabatten 2 st / 3 st står på produktsidan och skrivs aldrig som siffra i ett mejl. Enda rabatten i mejlen är Black Week-trappan nedan (Axels beslut B 2026-09-26), och bara i de två mejl som bär rabatt: \"black_week\".",
   "recensioner": {
     "kalla": "produktfil",
     "comment": "Judge.me:s widget-JSON svarar 0 recensioner för alla fyra produkter (mätt 2026-09-26 med tre parameterset) fast produktsidan skriver '16 recensioner' — de importerade recensionerna syns inte i widget-API:t. Citatblocken tar därför butikens EGNA publicerade recensioner ur factory/produkter/<id>.yaml → reviews (10 per produkt, samma som carashell.se visar). De är svenska: citat bara i sv- och nb-mejl (norrmän läser svenska), aldrig i engelska. Inga påhittade recensioner."
@@ -138,8 +225,42 @@
     "fars_dag_sista_bestallning": "2026-10-26",
     "adventskalender_lucka1": "2026-12-01",
     "adventskalender_sista_bestallning": "2026-11-13",
-    "black_week": ["2026-11-23", "2026-11-30"],
+    "black_week": [
+      "2026-11-23",
+      "2026-11-30"
+    ],
     "jul_sista_bestallning": "2026-12-07",
     "kalender_comment": "Fars dag 8/11 gäller Sverige och Norge (andra söndagen i november i båda länderna); Danmark har farsdag 5 juni, USA/UK i juni resp. mars — därför ingen farsdagskampanj på engelska. Sista beställningsdag = 10 arbetsdagar (butikens löfte) + 2 dagars marginal: fars dag mån 26/10, lucka 1 fre 13/11, jul mån 7/12. Huvudsessionens räkning 2026-09-26 — Axel kan ändra."
+  },
+  "black_week": {
+    "beslut": "Axels beslut B 2026-09-26: samma trappa som Bäverbutiken och Matstrumpor",
+    "procent": [
+      10,
+      20,
+      30
+    ],
+    "trappa": [
+      {
+        "antal": 1,
+        "procent": 10
+      },
+      {
+        "antal": 2,
+        "procent": 20
+      },
+      {
+        "antal": 3,
+        "procent": 30
+      }
+    ],
+    "fran": "2026-11-23",
+    "till_och_med": "2026-11-30",
+    "shopify": [
+      "gid://shopify/DiscountAutomaticNode/2284800868684",
+      "gid://shopify/DiscountAutomaticNode/2284800901452",
+      "gid://shopify/DiscountAutomaticNode/2284800934220"
+    ],
+    "comment": "Tre automatiska rabatter i CaraShells Shopify, skapade 2026-09-26 med node klaviyo/black-week-trappa.mjs --butik carashell --ja och lästa tillbaka på id: titlarna Black Week 10 % / 20 % / 30 % (utan svenska ord, kassan visar titeln på alla språk), minst 1/2/3 varor, alla produkter, bara engångsköp, kombineras bara med fraktrabatter. Start 2026-11-22T23:00Z (måndag 23/11 00:00 svensk tid). Slut 2026-12-01T08:00Z = midnatt natten mot tisdag i Kalifornien (sessionens beslut samma dag): Bäverbutikens slut 00:00 svensk tid hade tagit bort rabatten måndag kl 18 i New York, och 54 av 57 engelska prenumeranter är i USA medan mejlen lovar \"through Monday, November 30\". De kombineras inte med varandra eller med paketkoderna (CARASHELLROO2A m.fl., 15–25 %): Shopify ger kunden den bästa, och trappan är alltid minst lika bra. Gäller alla marknader (procent, ingen valuta). konvertera.mjs släpper igenom exakt dessa procentsatser i mejl med rabatt: \"black_week\", inga andra.",
+    "slut_utc": "2026-12-01T08:00:00Z"
   }
 }

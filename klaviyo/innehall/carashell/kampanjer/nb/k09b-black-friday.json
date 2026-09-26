@@ -1,0 +1,100 @@
+{
+  "id": "k09b-black-friday",
+  "namn": "MAIL_20261127_CaraShellMix_NB_S_3_samtycke_promo_black-friday-till-mandag_v1",
+  "sprak": "nb",
+  "memo": "Black Friday-mejlet som K09:s memo lovade om Axel valde en rabatt (beslut B 2026-09-26). Påminner om trappan på fredagen, med det riktiga slutdatumet (måndag 30 november) som enda brådska. Samma tre skydd, en ny vinkel: rutan och taket på en gång.",
+  "brief": "Kort mejl. Hero: Black Friday och att trappan gäller till och med måndag 30 november (det är den enda brådskan, den är sann). Punkter: samma tre rader som K09 (1 vara 10 %, 2 varor 20 %, 3 varor eller fler 30 %). Produktrad med de tre skydden och en rubrik om att taket och rutan tillsammans ger 20 %. Fakta.  Förbjudet: sista chansen, bara idag, belopp, leveranstid, butikens namn, andra procent än 10/20/30.",
+  "taggar": {
+    "typ": "S",
+    "kalla": "egen-data",
+    "kalla_ref": "Axels beslut B 2026-09-26; brands/carashell.json#black_week; klaviyo/innehall/baverbutiken/kampanjer/k12-black-friday.json",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "pris",
+    "confidence": "medium",
+    "prefix": "CaraShellMix",
+    "kod": "S",
+    "avatar": "den som öppnade K09 men inte beställt",
+    "begar": "spara-pengar"
+  },
+  "rabatt": "black_week",
+  "amnesrader": [
+    {
+      "text": "Black Friday, rabattrappen gjelder fortsatt",
+      "begar": "veta att erbjudandet från tisdagen fortfarande gäller på Black Friday"
+    },
+    {
+      "text": "Kombiner taket og frontruta for 20 %",
+      "begar": "se konkret vilka två produkter tillsammans ger nästa rabattnivå"
+    },
+    {
+      "text": "Rabattrappen varer til og med mandag",
+      "begar": "förstå att måndag 30 november är sista dagen"
+    }
+  ],
+  "forhandstext": "Til og med mandag 30. november, uten kode.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Black Friday, rabatten gjelder til mandag 30. november",
+      "text": "Hei {{fornamn}},\n\nI dag er det Black Friday, og rabattrappen fra tidligere i uken gjelder fortsatt. Den varer helt til mandag 30. november.",
+      "bild": "produkt:termoskyddet",
+      "knapp": {
+        "text": "Se hele utvalget",
+        "lank": "kollektion:sortimentet"
+      }
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "Rabattrappen",
+      "punkter": [
+        "1 vare: 10 % rabatt",
+        "2 varer: 20 % rabatt",
+        "3 varer eller flere: 30 % rabatt"
+      ]
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Taket og frontruta sammen gir 20 % rabatt",
+      "handles": [
+        "takskyddet",
+        "termoskyddet",
+        "fonstertermomatta-2-pack"
+      ]
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    {
+      "rad": "Black Friday, rabattrappen gjelder fortsatt",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true,
+      "varfor": "Sant eller falskt att kontrollera just på Black Friday, och det är den här butikens egen rabattrappa som fortsätter, inte ett allmänt Black Friday-påstående."
+    },
+    {
+      "rad": "Kombiner taket og frontruta for 20 %",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true,
+      "varfor": "Pekar på två namngivna produkter och en exakt procentsats som går att räkna efter i kassan."
+    },
+    {
+      "rad": "Rabattrappen varer til og med mandag",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true,
+      "varfor": "Ett sant, kontrollerbart slutdatum för just den här butikens rabatt, inte en påhittad brådska."
+    }
+  ],
+  "version": 1,
+  "planerad": "2026-11-27T18:00:00+01:00",
+  "segment": [
+    "SEG_samtycke_nb"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

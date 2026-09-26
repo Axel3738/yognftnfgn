@@ -1,0 +1,82 @@
+{
+  "id": "k09b-black-friday",
+  "namn": "MAIL_20261127_CaraShellMix_EN_S_3_samtycke_promo_black-friday-till-mandag_v1",
+  "sprak": "en",
+  "memo": "Black Friday-mejlet som K09:s memo lovade om Axel valde en rabatt (beslut B 2026-09-26). Påminner om trappan på fredagen, med det riktiga slutdatumet (måndag 30 november) som enda brådska. Samma tre skydd, en ny vinkel: rutan och taket på en gång.",
+  "brief": "Kort mejl. Hero: Black Friday och att trappan gäller till och med måndag 30 november (det är den enda brådskan, den är sann). Punkter: samma tre rader som K09 (1 vara 10 %, 2 varor 20 %, 3 varor eller fler 30 %). Produktrad med de tre skydden och en rubrik om att taket och rutan tillsammans ger 20 %. Fakta. Engelskan gäller USA, Storbritannien, Kanada, Australien och Nya Zeeland samtidigt: inga årstider (winter/summer/spring/autumn/fall), ingen snö — skriv \"while it is parked\", \"between trips\", \"off the road\". Säg caravan där det passar (GB/AU/NZ), motorhome, och RV en gång som amerikansk synonym. Black Friday är ok. Förbjudet: sista chansen, bara idag, belopp, leveranstid, butikens namn, andra procent än 10/20/30.",
+  "taggar": {
+    "typ": "S",
+    "kalla": "egen-data",
+    "kalla_ref": "Axels beslut B 2026-09-26; brands/carashell.json#black_week; klaviyo/innehall/baverbutiken/kampanjer/k12-black-friday.json",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "pris",
+    "confidence": "medium",
+    "prefix": "CaraShellMix",
+    "kod": "S",
+    "avatar": "den som öppnade K09 men inte beställt",
+    "begar": "spara-pengar"
+  },
+  "rabatt": "black_week",
+  "amnesrader": [
+    {
+      "text": "It's Black Friday, and the ladder is still climbing",
+      "begar": "koppla ihop Black Friday med att trappan fortfarande gäller"
+    },
+    {
+      "text": "Roof cover plus windshield cover equals 20 % off",
+      "begar": "se en konkret kombination som ger nästa nivå"
+    },
+    {
+      "text": "Black Friday ends today, the ladder doesn't",
+      "begar": "förstå att rabatten inte tar slut i kväll"
+    }
+  ],
+  "forhandstext": "It runs through Monday, November 30, no code needed.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Black Friday: the ladder runs through Monday",
+      "text": "It's Black Friday, but the discount doesn't stop tonight. The same automatic ladder, for caravans, motorhomes, and RVs alike, runs through Monday, November 30, no code needed.",
+      "bild": "produkt:termoskyddet",
+      "knapp": {
+        "text": "Shop before Monday",
+        "lank": "kollektion:sortimentet"
+      }
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "The ladder",
+      "punkter": [
+        "1 item in the cart: 10 % off",
+        "2 items in the cart: 20 % off",
+        "3 items or more in the cart: 30 % off"
+      ]
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Roof and windshield together: 20 %",
+      "handles": [
+        "takskyddet",
+        "termoskyddet",
+        "fonstertermomatta-2-pack"
+      ]
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    { "rad": "It's Black Friday, and the ladder is still climbing", "visualisera": true, "falsifiera": true, "ingen_annan": true, "varfor": "Konkret kontrast (en dag mot en hel trappa) och sant just för att vår rabatt inte tar slut med Black Friday." },
+    { "rad": "Roof cover plus windshield cover equals 20 % off", "visualisera": true, "falsifiera": true, "ingen_annan": true, "varfor": "Två namngivna produkter och en exakt procentsats som bara stämmer i den här trappan." },
+    { "rad": "Black Friday ends today, the ladder doesn't", "visualisera": true, "falsifiera": true, "ingen_annan": true, "varfor": "En verifierbar skillnad mot vanliga engångs-Black Friday-rabatter, sann bara för vår trappa till måndag." }
+  ],
+  "version": 1,
+  "planerad": "2026-11-27T16:00:00+01:00",
+  "segment": [
+    "SEG_samtycke_en"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}
