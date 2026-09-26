@@ -3,7 +3,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 
-const { compute, skalningsBeslut, skalningsKvoter, bidragsBand } = await import("../app/lib/pnl.server.ts");
+const { compute, skalningsBeslut, skalningsKvoter, bidragsBand, beslutsText } = await import("../app/lib/pnl.server.ts");
 const { evaluateTips } = await import("../app/lib/tips.server.ts");
 
 /** Underlag med break-even 2,0× och mål 4,0× (bruttovinst 50 %, mål 25 %). */
@@ -54,12 +54,16 @@ test("en dag säger aldrig push — kort period markeras", () => {
   const b = skalningsBeslut(underlag(10), flaggor({ dagar: 1 }));
   assert.equal(b.niva, "hold");
   assert.equal(b.kortPeriod, true);
+  // Texten får aldrig vara hold-texten "under målet" — MER är ju över målet.
+  assert.equal(beslutsText(b), "holdShort");
+  assert.equal(beslutsText(skalningsBeslut(underlag(3), flaggor({ dagar: 1 }))), "hold");
   assert.equal(skalningsBeslut(underlag(10), flaggor({ dagar: 6 })).niva, "hold");
   assert.equal(skalningsBeslut(underlag(10), flaggor({ dagar: 7 })).niva, "push");
   // Dra ner på en dag är fortfarande dra ner — det är ingen skalning.
   const pull = skalningsBeslut(underlag(1.5), flaggor({ dagar: 1 }));
   assert.equal(pull.niva, "pull");
   assert.equal(pull.kortPeriod, false);
+  assert.equal(beslutsText(pull), "pull");
 });
 
 test("okvitterad tull följer med som förbehåll", () => {

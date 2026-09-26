@@ -48,6 +48,7 @@ import { klampaFonster } from "../lib/historik";
 import { klockslag } from "../lib/returkoll";
 import { andelUtan, arKostnadOsaker } from "../lib/kostnadstackning";
 import {
+  beslutsText,
   bidragsBand,
   skalningsBeslut,
   skalningsKvoter,
@@ -1094,18 +1095,20 @@ const BAND_BADGE: Record<BidragsBand, "critical" | "warning" | "success"> = {
 };
 
 /**
- * Skalningsbeslutet som badge plus förbehållen: kort period ("läs 7+ dagar")
- * och okvitterad tull ("räknat på standardtull"). Samma komponent i MER-
+ * Skalningsbeslutet som badge plus förbehållen: kort period (i badgens egen
+ * text, "läs 7+ dagar") och okvitterad tull ("räknat på standardtull"). Samma komponent i MER-
  * rutan och annonsrutan — ett beslut, två enheter, aldrig två formuleringar.
  */
 function BeslutsBadge({ b, dagar, T }: { b: SkalningsBeslut; dagar: number; T: Texts }) {
-  const forbehall = [
-    b.kortPeriod ? T.dashboard.verdict.shortPeriod(dagar) : null,
-    b.standardTull ? T.dashboard.verdict.defaultDuty : null,
-  ].filter(Boolean).join(" · ");
+  /* En kort period bär sitt förbehåll i själva badgen ("över målet på en dag
+     — läs 7+ dagar"), aldrig hold-texten "under målet" som MER-rutan bredvid
+     motsäger. Därför ingen extra kort-period-rad under den. */
+  const nyckel = beslutsText(b);
+  const text = nyckel === "holdShort" ? T.dashboard.verdict.holdShort(dagar) : T.dashboard.verdict[nyckel];
+  const forbehall = b.standardTull ? T.dashboard.verdict.defaultDuty : "";
   return (
     <BlockStack gap="050" inlineAlign="start">
-      <Badge tone={BESLUT_BADGE[b.niva]}>{T.dashboard.verdict[b.niva]}</Badge>
+      <Badge tone={BESLUT_BADGE[b.niva]}>{text}</Badge>
       {forbehall ? <Text as="span" variant="bodySm" tone="subdued">{forbehall}</Text> : null}
     </BlockStack>
   );

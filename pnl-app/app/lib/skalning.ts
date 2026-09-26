@@ -125,6 +125,20 @@ export function skalningsBeslut(t: BeslutsUnderlag, q: BeslutsFlaggor): Skalning
 }
 
 /**
+ * Vilken beslutstext badgen ska visa. En kort period som annars sagt "skala"
+ * har nivån "hold" (tonen och grupptabellens "Håll"), men får ALDRIG den
+ * fulla hold-texten "Lönsamt, under målet": MER-rutan står då på t.ex. 5,00×
+ * med "mål 3,31×" bredvid, och en badge som påstår motsatsen gör att
+ * handlaren slutar lita på båda. "holdShort" säger det som är sant — över
+ * målet, men för få dagar för att skala på.
+ */
+export type BeslutsText = Beslut | "holdShort";
+
+export function beslutsText(b: SkalningsBeslut): BeslutsText {
+  return b.kortPeriod ? "holdShort" : b.niva;
+}
+
+/**
  * Bidraget efter annonser som andel av omsättningen, i Evolves band
  * (10–20 % är sunt). Gränserna: under 0 förlorar annonserna pengar, [0, 10 %)
  * tunt, [10 %, 20 %] sunt, över 20 % starkt.
@@ -168,10 +182,18 @@ export interface CacTrosklar {
  * tillbaka". LTV90 600 kr, TB-LTV90 240 kr ⇒ max-CPA 90 kr; vid CAC 180 kr
  * ger varje kund +60 kr inom 90 dagar. Rådet "pausa" kastade ~30 000 kr/mån
  * vid 500 nya kunder i månaden.
- * Null utan CAC, utan kundvärde, eller när intervallet är för brett.
+ * Null utan CAC, utan kundvärde, när intervallet är för brett, eller under
+ * 3 nya kunder (husregeln, samma MIN_ORDRAR_BESLUT som panelen). En CAC på
+ * en eller två kunder är brus: en ny butik eller en nyss återkopplad Meta
+ * hade annars fått ett rött "dra ner" på en enda kund.
  */
-export function cacBeslut(cpaNew: number | null | undefined, mc: CacTrosklar | null | undefined): Beslut | null {
+export function cacBeslut(
+  cpaNew: number | null | undefined,
+  mc: CacTrosklar | null | undefined,
+  nyaKunder: number,
+): Beslut | null {
   if (cpaNew == null || !Number.isFinite(cpaNew) || !mc) return null;
+  if (!(nyaKunder >= MIN_ORDRAR_BESLUT)) return null;
   if (mc.konfidens === "hidden") return null;
   if (cpaNew <= mc.maxCpa.mid) return "push";
   if (cpaNew <= mc.breakEven.mid) return "hold";

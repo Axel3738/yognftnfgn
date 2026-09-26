@@ -17,6 +17,7 @@ import { malUtrymmeFor, skalningsKvoter } from "./skalning.ts";
 /* Skalningsbeslutet bor i skalning.ts (får importeras av klienten); motorn
    exporterar det vidare så att alla räknar med samma funktion. */
 export {
+  beslutsText,
   bidragsBand,
   skalningsBeslut,
   skalningsKvoter,

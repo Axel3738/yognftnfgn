@@ -432,8 +432,11 @@ Byggt:
   ordrar, break-even saknas eller `kostnadOsaker`. Annars pull under
   break-even, hold mellan break-even och målet (eller när målet inte går att
   nå), push på/över målet. Under 7 säljdagar blir push hold med
-  `kortPeriod` ("en dag — läs 7+ dagar innan du skalar"); okvitterad tull ger
-  `standardTull` ("räknat på standardtull").
+  `kortPeriod`; badgen visar då `beslutsText` = `holdShort` ("◆ Över målet
+  på en dag — läs 7+ dagar innan du skalar"), ALDRIG hold-texten "Lönsamt,
+  under målet" — MER-rutan bredvid står ju över målet, och två rutor som
+  motsäger varandra gör att handlaren slutar lita på båda. Okvitterad tull
+  ger `standardTull` ("räknat på standardtull").
 - **Panelen:** MER-rutan "break-even X× · mål Y× (25 %)", värdet färgat
   (röd/`caution`/grön), badge med tecken + text (▼ dra ner / ◆ håll /
   ▲ skala) och en dämpad rad "Evolves tumregel: BE + 1 = Z×". Annonsrutan
@@ -452,8 +455,11 @@ Byggt:
   Förbehållen (kort period, vilka butiker som går på standardtull) står en
   gång under tabellen. Inget beslut för en butik över 2 % utan kostnad eller
   utan annonskonto.
-- **LTV-sidan:** `cacBeslut(cpaNew, mc)` i tre band — ≤ max-CPA skala
-  (grön), ≤ break-even håll (gul), annars dra ner (röd). Ny ruta
+- **LTV-sidan:** `cacBeslut(cpaNew, mc, nyaKunder)` i tre band — ≤ max-CPA
+  skala (grön), ≤ break-even håll (gul), annars dra ner (röd). Null under 3
+  nya kunder på 30 dagar (`MIN_ORDRAR_BESLUT`, husregeln): en CAC på en kund
+  gav annars ett rött "dra ner" till en ny butik; bannern säger då "För lite
+  data än". Ny ruta
   **Break-even-CAC (h d)**. `verdictUnder`/`verdictOver` omskrivna, ny
   `verdictHold`. Tipsen: `break_even_cpa` = `mc.breakEven.mid` och
   `cpa_over_max` mäts mot den; `cpa_near_max` säger "mål-max-CPA";
@@ -504,6 +510,7 @@ Fällor:
   panelexemplet, null-fallen, en dag, standardtull, banden, egenskapstest
   över 2 000 slumpade perioder, tipsens bidragsmarginal) och
   `test/ltv.test.mjs` (`cacBeslut` 180/90/240 ⇒ håll, gränserna, hidden,
+  under 3 nya kunder ⇒ null,
   LTV-tipsen på täckningsbidrag).
 
 ### Saknade kostnader och tullens startvärde syns överallt (2026-09-26)

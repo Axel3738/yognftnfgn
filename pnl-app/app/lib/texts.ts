@@ -239,6 +239,8 @@ const en = {
     verdict: {
       pull: "▼ Below break-even — pull back",
       hold: "◆ Profitable, under target — hold",
+      holdShort: (days: number) =>
+        `◆ Above target on ${days === 1 ? "one day" : `${days} days`} — read 7+ days before scaling`,
       push: "▲ Above target — room to scale",
       short: { pull: "▼ Pull back", hold: "◆ Hold", push: "▲ Scale" },
       shortPeriod: (days: number) =>
@@ -1228,6 +1230,8 @@ const sv: Texts = {
     verdict: {
       pull: "▼ Under break-even — dra ner",
       hold: "◆ Lönsamt, under målet — håll",
+      holdShort: (days: number) =>
+        `◆ Över målet på ${days === 1 ? "en dag" : `${days} dagar`} — läs 7+ dagar innan du skalar`,
       push: "▲ Över målet — utrymme att skala",
       short: { pull: "▼ Dra ner", hold: "◆ Håll", push: "▲ Skala" },
       shortPeriod: (days: number) =>

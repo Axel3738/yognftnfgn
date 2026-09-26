@@ -350,7 +350,7 @@ function LtvVy({ s }: { s: Sida }) {
      målmarginalen rött och "betalar inte tillbaka" — även en CAC som gav
      +60 kr per kund inom 90 dagar. "Dra ner" gäller nu bara över
      break-even (kundens täckningsbidrag inom horisonten). */
-  const beslut = cacBeslut(s.cpaNew, mc);
+  const beslut = cacBeslut(s.cpaNew, mc, s.newCustomers30);
   const verdikt = !mc
     ? T.ltv.notEnough
     : s.cpaNew == null
