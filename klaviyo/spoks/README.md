@@ -447,6 +447,21 @@ plattformens egen.
 - F06 E2 (`662420f3`, källan `innehall/matstrumpor/floden/f06-sunset.json:90`) saknar ett
   kommatecken: "hör vi inget nu tar vi bort dig" ska vara "hör vi inget nu, tar vi bort dig".
   Rätta källan och Spoks-utkastet i samma körning (inte medan Axel har utkastet öppet i appen).
+- ⛔ **F06 E2 SCHEMALAGD AV MISSTAG 2026-09-26 11:14 CEST** (mätt med `get_campaign` +
+  `search_campaigns publishedAfter` 11:2x): `status: waiting_to_be_published`,
+  `publishDate 2026-09-29T16:00Z` (= tis 18:00), `notify: true` — "Sista mejlet om din plats i
+  klubben" i stället för K01, som fortfarande är utkast. Inget annat var schemalagt. **MCP:n kan
+  inte ta bort en schemaläggning** (`update_draft_campaign` kräver `draft`, inget verktyg för
+  unschedule); Axel ombedd att ta bort den i appen (hjälpartikeln *Scheduling an email campaign*:
+  schemalagda ligger under Campaigns → fliken **Planned**; hur man avbryter står inte där).
+  Kontroller schemalagda i den här sessionen: `trig_013G65e8CvGdpybAJctqjCMc` mån 28/9 09:00
+  och `trig_019jHo4yKekS39zXBqZtkfmq` tis 29/9 12:00 CEST (`send_later`).
+- **Recensionsflödet:** Matstrumpor HAR INGET (aldrig byggt — flödena är F01–F05, F07; F06 som
+  utkast). Det enda är Bäverbutikens **F14 Recension Trustpilot** `23d2710c-…` i workspacen
+  Bäverbutiken.se, mätt `isActive: true`, 24 inrullade (https://app.spoks.com/baverbutiken/flows/23d2710c-1a33-44c3-bb25-df1f691b6161).
+  ⚠️ Samma mätning: ALLA Bäverbutikens flöden är live sedan 07:02–07:05, plus "F04 Efter köp v2
+  (kredit)" `bfc5beee-…` — beskrivet av en annan session i commit `20dfe3d7` (ej på `main` vid
+  mätningen); tabellen överst i den här filen säger fortfarande "Allt är INAKTIVT".
 - ⚠️ Axel öppnade F06 E2 i tron att det var K01. Direktlänken är rätt (`get_links` →
   `send_campaign`: `https://app.spoks.com/matstrumpor/post/{postId}/edit`). Beskriv alltid hur
   mejlet ser ut (K01: stor bild på sushilådan, rubriken "Ser ut som sushi. Är strumpor.").
