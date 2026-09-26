@@ -326,13 +326,15 @@ header `accept: application/dns-json`) när Google nyss frågats. Verify i Spoks
 `custom_domain_not_valid: Feed does not have valid custom domain set` (`senderEmail` står
 kvar `null`, reply-to är satt). Ordningen är alltså: DNS in → Verify i Spoks (Axels klick)
 → sedan sätts avsändaren via MCP:n eller i Settings → Email & SMS.
+✅ **Domänen verifierad och avsändaren satt 2026-09-26** (Axel klickade Verify, sedan
+`update_settings` → `applied: true`, läst tillbaka: `senderEmail` och `replyToEmail` båda
+`kundsupport@matstrumpor.se`, `senderName` Matstrumpor). Spoks skickar alltså från
+butikens egen domän när något slås på. Inget är påslaget.
 
 ## Axels klick (i ordning, allt i https://app.spoks.com/matstrumpor)
 
-1. **Settings → Email & SMS:** avsändaradressen. Vill han skicka från `@matstrumpor.se` krävs
-   en verifierad domän (Settings → Custom domain) = DNS-posterna i tabellen ovan, som
-   vanliga poster i Loopias editor, aldrig namnservrarna. Annars skickar Spoks från sin
-   delade domän.
+1. ✅ **Klart 2026-09-26:** DNS-posterna i Loopia (tabellen ovan), domänen verifierad i
+   Spoks, avsändaren `kundsupport@matstrumpor.se` satt via MCP:n.
 2. **Flows → F02 Övergiven kassa:** öppna varje sändsteg (E1, E2, E3) → slå på steget →
    aktivera flödet. Samma dag: stäng av Shopifys egen notis om övergiven kassa
    (Matstrumpors admin → Inställningar → Aviseringar → Övergiven kassa).
