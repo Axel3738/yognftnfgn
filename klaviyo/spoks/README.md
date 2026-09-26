@@ -44,6 +44,25 @@ Kampanjerna K01–K22 ligger som utkast (Spoks: status draft, avregistreringslä
 `node klaviyo/stang-av.mjs --ja`: 13 flöden till draft, K01 återkallad till utkast. Inget raderat.
 Spoks: plan Paid (inget månadstak), avsändaradress ej satt vid mätningen.
 
+## Uppvärmningen (Spoks segment, genererade av Axel 2026-09-26)
+
+Mätt med `get_segments` samma dag, alla taggbaserade:
+
+| Segment | Id | Kontakter |
+|---|---|---|
+| Warmup tier 1 | `c3d021c1-4cfd-423f-9d56-db2b3d0f9f4d` | 2 500 |
+| Warmup tier 2 | `9c219ca9-fa16-4a58-af8a-2b2828b29cd1` | 5 000 |
+| Warmup tier 3 | `d3308bc6-2b3e-43ee-9157-7ac5bd719fca` | 6 180 |
+| All subscribed | `9902d9ef-0ea3-4077-bbd5-032851b37143` | 6 267 |
+
+`preview_segment` på tier 1 OCH inte subscribed gav 0: tier 1 får kampanjer.
+Mottagarna går INTE att sätta via MCP:n (`update_draft_campaign` har inget fält för
+segment), så Axel väljer segmentet när han schemalägger.
+
+Plan: vecka 1 (K01) tier 1, vecka 2 tier 1, vecka 3 tier 2, vecka 4 tier 2,
+vecka 5 tier 3, därefter All subscribed. Titta på öppning och klagomål i Spoks
+efter varje utskick; stiger klagomålen, stanna kvar ett steg till.
+
 ## Skillnader mot Klaviyo (Spoks kan inte)
 
 - **Inget ordernummer i mejlet.** Spoks personalisering har bara kontaktfält,
