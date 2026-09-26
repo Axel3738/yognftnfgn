@@ -177,9 +177,28 @@ Orderstatussidan: samma kort, gömt efter giltig_timmar (Storage API).
 ## Vad som INTE är gjort, och varför
 
 - **Deployen.** Shopify CLI behöver ett App Automation Token från Dev
-  Dashboard (`SHOPIFY_APP_AUTOMATION_TOKEN`); det finns inget i miljön och kan
-  bara skapas av en inloggad människa. Allt annat är klart: `deploy.sh` kör
-  hela vägen så fort variabeln finns.
+  Dashboard (`SHOPIFY_APP_AUTOMATION_TOKEN`); det kan bara skapas av en
+  inloggad människa. Allt annat är klart: `deploy.sh` kör hela vägen så fort
+  rätt token finns.
+  ⚠️ **Första försöket 2026-09-26 06:14 UTC stoppade på 403 "You are not a
+  member of the requested organization".** Token fanns (69 tecken, `atkn_…`),
+  Identity godtog den (token exchange 200), men App Management-API:t nekade
+  uppslaget av appen `ca709d…`. **Token är per APP, och det finns en app som
+  heter "Factory" i varje butiks egen Dev Dashboard-organisation** — den
+  rätta här är organisationen **Carashell**, appen **Factory** (handle
+  `factory-60`, client id `ca709d…`, 154 scopes; avläst 2026-09-26 med
+  `currentAppInstallation { app { title handle developerName } }`). En token
+  skapad på en annan butiks "Factory" ser exakt ut som den rätta och ger
+  precis det här felet. Kontrollera client id i appens Settings mot
+  `SHOPIFY_CLIENT_ID_yitrbk_m3` innan den läggs in.
+  ⚠️ CLI-fälla i samma körning: `SHOPIFY_FLAG_APP_CONFIG` får inte vara satt
+  när `config link --client-id --file-name` körs (CLI:n läser den som
+  `--config` och vägrar). `deploy.sh` kör länkningen med `env -u`.
+  ⚠️ Oprövat: om `config link` alls fungerar med en automation-token.
+  Shopifys CI-guide kör länkningen lokalt med inloggad användare och bara
+  `deploy` med token. Ger rätt token samma 403 är det den vägen som fattas —
+  då är alternativet att tomlen hämtas i en inloggad CLI på Axels dator
+  och committas.
 - **Blocket på sidan.** Det finns inget API som lägger in ett extension-block
   på tacksidan — kassaredigeraren är enda vägen (Shopify-staff, feb 2026).
 - **One-click i samma order** för svenska kortkunder. Kräver en publik
@@ -209,13 +228,16 @@ Orderstatussidan: samma kort, gömt efter giltig_timmar (Storage API).
 
 ## Axels klick (i ordning)
 
-1. **App Automation Token.** Dev Dashboard (dev.shopify.com) → appen
-   **Factory (Carashell)** → **Settings** → **App Automation Token** →
-   **Generate**. Kopiera.
-2. **Lägg in den i Environments** på claude.ai som
-   `SHOPIFY_APP_AUTOMATION_TOKEN` (samma miljö som `SHOPIFY_CLIENT_ID_yitrbk_m3`).
-   Skriv "deploya tacksidan" i chatten — sessionen kör `deploy.sh` och
-   rapporterar.
+1. **App Automation Token — på RÄTT app.** Dev Dashboard (dev.shopify.com)
+   → byt organisation uppe till vänster till **Carashell** → **Apps** →
+   appen **Factory** → **Settings**. Kontrollera att **Client ID börjar på
+   `ca709d`** (annars är det en annan butiks Factory-app). Sedan **App
+   Automation Token** → **Generate**. Kopiera.
+2. **Byt värdet i Environments** på claude.ai: variabeln
+   `SHOPIFY_APP_AUTOMATION_TOKEN` finns redan (samma miljö som
+   `SHOPIFY_CLIENT_ID_yitrbk_m3`) — klistra in den nya token i stället för
+   den gamla. Skriv "deploya tacksidan" i chatten — sessionen kör
+   `deploy.sh` och rapporterar.
 3. **Lägg in blocket på tacksidan.** Shopify admin (CaraShell) →
    **Inställningar** → **Kassa** → knappen **Anpassa** → sidväljaren uppe till
    vänster → **Tacksida** → i vänsterspalten **Lägg till appblock** → välj

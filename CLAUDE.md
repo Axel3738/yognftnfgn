@@ -208,7 +208,11 @@ brick by brick och **varje lyckat steg dokumenteras direkt**:
   (fel butik) — slå alltid upp via butiksfilens domän (`suffixForDoman`);
   `codeDiscountNodes(query:)` släpar efter nyss skapade koder — läs med
   `codeDiscountNodeByCode`. **Deployen kräver `SHOPIFY_APP_AUTOMATION_TOKEN`**
-  (Dev Dashboard → appen → Settings → App Automation Token, Axels klick) —
+  (Dev Dashboard → appen → Settings → App Automation Token, Axels klick;
+  ⚠️ token är per APP och varje butik har en egen app som heter "Factory" i
+  sin egen organisation — CaraShells är org **Carashell**, client id
+  `ca709d…`; fel butiks Factory ger 403 "not a member of the requested
+  organization", mätt 2026-09-26) —
   `bash factory/tacksida/deploy.sh carashell` hämtar appens konfig först och
   vägrar om scopes saknas (en handskriven toml skriver över appens
   rättigheter vid deploy). Blocket läggs in i kassaredigeraren för hand —

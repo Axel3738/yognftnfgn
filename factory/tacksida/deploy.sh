@@ -60,11 +60,12 @@ if [[ ! -d node_modules/@shopify/cli ]]; then
 fi
 
 export SHOPIFY_CLI_NO_ANALYTICS=1
-export SHOPIFY_FLAG_APP_CONFIG="$BUTIK"
 KONFIG="shopify.app.$BUTIK.toml"
 
+# Obs: SHOPIFY_FLAG_APP_CONFIG får INTE vara satt här — CLI:n läser den som
+# --config och vägrar då kombinera med --client-id/--file-name (mätt 2026-09-26).
 echo "1. Hämtar appens konfig från Dev Dashboard → $KONFIG"
-node_modules/.bin/shopify app config link --client-id "$CLIENT_ID" --file-name "$KONFIG" --force
+env -u SHOPIFY_FLAG_APP_CONFIG node_modules/.bin/shopify app config link --client-id "$CLIENT_ID" --file-name "$KONFIG" --force
 
 if ! grep -qE '^\s*scopes\s*=' "$KONFIG"; then
   echo "STOPP: $KONFIG saknar [access_scopes].scopes — deploy hade skrivit över appens rättigheter. Rör ingenting." >&2
