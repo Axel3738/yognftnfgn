@@ -2205,3 +2205,8 @@ förlorarna, inte volymen.
 14 dygn, pausad på CPA 710 kr mot break-even 693 kr — **2,5 % över linjen.**
 Den gick med förlust, men knappt, och bar riktig volym. Läs morgondagens
 köpsiffra mot den här raden.
+
+## 2026-09-26 — leveransrundan: sjätte dygnet, oförändrat
+
+Samma två rader, samma md5, samma slutkort med `carashell.se`. Inget
+uppladdat, ingen status ändrad. Kontot står kvar på 760 annonser.
