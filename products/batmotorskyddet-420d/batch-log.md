@@ -1,6 +1,6 @@
 # Batch-log — Båtmotorskyddet 420D
 
-Breakthrough-frekvens: 1/52 (2 %)
+Breakthrough-frekvens: 1/56 (2 %)
 
 ## Batch #1 — 2026-09-02 (`/forsta-batch`, automatisk rutinkörning)
 
@@ -517,3 +517,17 @@ stjärnor. Regitabell rad för rad, spärren `briefgranskning.mjs` exit 0, `lard
 4 BRIEF-rader. Copy av sonnet-subagent (regel 6), regi av huvudsessionen.
 **Tom ruta kvar:** fukt/kondens (43 %) — namngiven `Batmotor_OB_2_1` i lärdomen, byggs inte förrän
 produktsidan ger en mekanism att svara med (sidan säger inget om ventilation).
+
+## Etiketter dag 7 (2026-09-26)
+
+Annonser skapade 2026-09-19, egna första veckan 2026-09-19 – 2026-09-25 (7d_click). Etiketten är ingen dom: bedömbar = ≥ 300 kr OCH ≥ 3 köp. Rådata: ETIKETT-raderna i agent/budgetlogg.jsonl; rapporten `agent/utdata/etiketter-backfill-2026-09-26.md`.
+
+| Annons | Batch | Typ | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Bedömbar | Playbook |
+|---|---|---|---|---|---|---|---|---|---|
+| Batmotor_BF_13_1 | 3 | okänd | **KPI_WINNER** | 0 % | 103 kr | 1 | 9,54 / 2,04 | nej | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Batmotor_BOF_1_1 | 3 | okänd | **LOSER** | 0 % | 41 kr | 0 | 0,00 / 2,04 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
+| Batmotor_CS_10_1 | 3 | okänd | **INGEN_LEVERANS** | — | 4 kr | 0 | 0,00 / 2,04 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Batmotor_RV_11_1 | 3 | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 2,04 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Batmotor_RV_10_1 | 3 | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 2,04 | nej | hooken föll — logga och släpp, aldrig ABO |
+
+Lärdomar skrivna samma dag för alla 55 etiketterade annonser utan lärdom (`products/batmotorskyddet-420d/lardomar.md`, LARDOM-rader i `agent/budgetlogg.jsonl`). Två nya annonser namngivna: `Batmotor_CS_5_H2` (ny hook på det ärliga erbjudandet, parent CS_5_H1) och `Batmotor_OB_3_H1` (storleksinvändningen som video, parent BF_3_1). Två regler ur datan: recensioner briefas bara som video (8 av 8 review-bilder under 30 kr, review-videon KPI_WINNER), och pris-/garanti-BOF utan brådska levereras inte (11 bilder, 4–314 kr).

@@ -1267,7 +1267,8 @@
         "sek": 0,
         "kalla": "Axels prissheet (Google Sheet 10VrOx…, CSV-export 2026-09-24, BATCH 13: \"Golf advent calendar\"), 1 st till Sverige: produkt + frakt 9,08 + 8,11 = 17,19 USD, plus 2,9 EUR EU-avgift per order. Priset 549 kr läst ur baverbutiken.se/products.json (se lage_motivering).",
         "datum": "2026-09-24"
-      }
+      },
+      "produkt_mapp": "golf-adventskalendern"
     },
     {
       "campaign_id": "120250349224920291",
@@ -1299,7 +1300,8 @@
         "sek": 0,
         "kalla": "Axels prissheet (Google Sheet 10VrOx…, CSV-export 2026-09-24, BATCH 10: \"Täljsetet 30 delar i väska\"), 1 st till Sverige: produkt + frakt 13,08 + 13,86 = 26,94 USD, plus 2,9 EUR EU-avgift per order. Priset 869 kr läst ur baverbutiken.se/products.json (se lage_motivering).",
         "datum": "2026-09-24"
-      }
+      },
+      "produkt_mapp": "taljsetet"
     },
     {
       "campaign_id": "120250365281490291",
