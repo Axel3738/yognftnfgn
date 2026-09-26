@@ -351,8 +351,12 @@ butikens egen domän när något slås på. Inget är påslaget.
 1. ✅ **Klart 2026-09-26:** DNS-posterna i Loopia (tabellen ovan), domänen verifierad i
    Spoks, avsändaren `kundsupport@matstrumpor.se` satt via MCP:n.
 2. ✅ **Klart 2026-09-26 07:51:** F02 Övergiven kassa live med alla tre sändsteg på.
-   ⚠️ Kvar: stäng av Shopifys egen notis om övergiven kassa (Matstrumpors admin →
-   Inställningar → Aviseringar → Övergiven kassa), annars får kunden två mejl.
+   ✅ **Shopifys egna automatiseringar avstängda samma förmiddag** (Axels klick, avläst
+   ur hans skärmdump: Marknadsföring → Automatiseringar, alla sju arbetsflöden
+   "Inaktiv", däribland tre "Återställ övergiven varukorg") — kunden får bara F02.
+   ⚠️ Lärdom: mejlet om övergiven kassa ligger under **Marknadsföring →
+   Automatiseringar**, inte under Inställningar → Aviseringar (där finns bara
+   kassasystemets "Övergiven betalning i kassasystemet", som är den fysiska kassan).
 3. ✅ **Klart 2026-09-26 07:56–07:57:** F01, F03, F04, F05 och F07 live. (Spoks vägrar
    aktivera ett flöde vars sändsteg är av — rutan "Detta flöde har inga aktiva åtgärder";
    stegen slås på ett i taget i flödesredigeraren, sedan flödet.)
