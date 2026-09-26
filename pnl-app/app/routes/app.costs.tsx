@@ -48,6 +48,7 @@ import { hemlandAv, marknadskod, marknadsnamn } from "../lib/marknad";
 import { fingeravtryck, hittaSummaspalt } from "../lib/prisspalter";
 import { asLang, localeOf, t } from "../lib/texts";
 import { JUICY_TACKNING, tackningEfterOmsattning } from "../lib/kostnadstackning";
+import { blandadSats } from "../lib/avgifter";
 
 /**
  * Valutan AI:n rapporterar → en ISO-kod appen kan hämta kurs för.
@@ -142,12 +143,22 @@ export async function loader({ request }: LoaderFunctionArgs) {
      helt olika tull, och break-even ska räkna med den som gäller där. */
   const tariffEff = tariffFor(raknesettings, market);
   /* Hellre det Shopify Payments FAKTISKT tog (ur ordrarna, 90 dagar) än en
-     sats någon skrivit in: den mätta satsen för marknaden när underlaget
-     finns, annars Inställningars sats. */
+     sats någon skrivit in — men bara på den omsättning som gick genom
+     Shopify Payments. Resten (PayPal, direkt-Klarna, manuellt) får
+     Inställningars sats plus Shopifys tredjepartsavgift. Förut fick hela
+     omsättningen den uppmätta satsen, som dessutom var ett snitt med
+     PayPal-ordrarnas nollor: break-even 1,80× i stället för 1,92×. */
   const uppmatt = await uppmattaAvgifter(session.shop).catch(() => ({}) as Record<string, never>);
   const matt = uppmatt[market] ?? (market ? undefined : uppmatt[""]);
-  const feeRateEff = matt && matt.sales > 0 ? matt.rate : feeRateFor(raknesettings, market);
   const feeMatt = Boolean(matt && matt.sales > 0);
+  /* Även utan Shopify Payments alls går blandningen: då är det satsen på
+     allt, plus tredjepartsavgiften på det som bevisligen gick externt. */
+  const feeRateEff = matt && matt.totalSales > 0
+    ? blandadSats(matt, feeRateFor(raknesettings, market), Number(settings.thirdPartyFeeRate ?? 0))
+    : feeRateFor(raknesettings, market);
+  /* Andel av omsättningen med faktiska avgifter, hela procent nedåt — texten
+     säger "faktiskt tagit" om allt bara när det är sant. */
+  const feeFaktiskPct = matt && matt.totalSales > 0 ? Math.floor((matt.sales / matt.totalSales) * 100 + 1e-9) : 100;
   /* Kostnaderna för VARJE känd marknad läses, inte bara den valda: tabellen
      längst ner visar hela upplägget på en gång — standard i en kolumn och
      varje land i sin — så man ser vad som är inlagt utan att byta i listan. */
@@ -271,6 +282,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
     tariffPerOrder: tariffEff,
     feeRate: feeRateEff,
     feeMatt,
+    feeFaktiskPct,
     currency: settings.currency,
     costCurrency,
     kurs,
@@ -988,7 +1000,7 @@ export async function action({ request }: ActionFunctionArgs) {
 }
 
 export default function Costs() {
-  const { lang, market, marknader, saljMarknader, costCurrency, kurs, rows, missing, total, tackningOms, saknasAndelOms, nollor, tariffPerOrder, feeRate, feeMatt, currency, juicyDismissed, cogsEstimatePct, aiEnabled } = useLoaderData<typeof loader>();
+  const { lang, market, marknader, saljMarknader, costCurrency, kurs, rows, missing, total, tackningOms, saknasAndelOms, nollor, tariffPerOrder, feeRate, feeMatt, feeFaktiskPct, currency, juicyDismissed, cogsEstimatePct, aiEnabled } = useLoaderData<typeof loader>();
   const friFetcher = useFetcher<typeof action>();
   const [params, setParams] = useSearchParams();
   const fetcher = useFetcher<typeof action>();
@@ -1846,7 +1858,7 @@ export default function Costs() {
               <BlockStack gap="100">
                 {marknader.length ? <Text as="p" variant="bodySm" tone="subdued">{T.costs.market.tableNote}</Text> : null}
                 <Text as="p" variant="bodySm" tone="subdued">
-                  {feeMatt ? T.costs.be.feeMeasured((feeRate * 100).toFixed(2)) : T.costs.be.feeSetting((feeRate * 100).toFixed(2))}
+                  {feeMatt ? T.costs.be.feeMeasured((feeRate * 100).toFixed(2), feeFaktiskPct) : T.costs.be.feeSetting((feeRate * 100).toFixed(2))}
                 </Text>
               </BlockStack>
             </div>

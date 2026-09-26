@@ -13,6 +13,7 @@
  * behöver exportera eller bara summera.
  */
 
+import { Prisma } from "@prisma/client";
 import prisma from "../db.server";
 import { dayInTz, fetchOrderData, harFullOrderhistorik, mergeProductRows } from "./shopify-data.server";
 import type { MarknadsDel, ProductRow, SalesDay } from "./pnl.server";
@@ -20,6 +21,7 @@ import { decrypt } from "./crypto.server";
 import { butikensScope, ersattKundOrdrar, harKundScope, tillKundOrderRader } from "./kundorder.server";
 import { marknadskod, sorteraMarknader } from "./marknad";
 import { harAllaOrdrar, historikHorisont, klampaFonster, klassaDag } from "./historik";
+import { betalvagar, uppmattAvgift, type Betalvag, type UppmattAvgift, type UppmattRad } from "./avgifter";
 
 const API_VERSION = "2026-07";
 
@@ -130,6 +132,12 @@ export async function refreshDaily(
         shippingCharges: s.shippingCharges,
         /* Faktiska avgifter; null när Shopify inte lämnade ut dem. */
         fees: s.fees ?? null,
+        /* Omsättningen avgifterna TÄCKER (Shopify Payments-ordrar) och
+           omsättning per betalväxel. Null när avgifterna nekades. Ett
+           JSON-fält tar inte ett rått null i Prisma — det måste vara DbNull,
+           annars fäller det hela transaktionen och ingen dag skrivs. */
+        feesCoveredSales: s.feesCoveredSales ?? null,
+        gatewaySales: s.gatewaySales ? (s.gatewaySales as any) : Prisma.DbNull,
         products,
         /* Uppdelningen per marknad skrivs bredvid totalen. Gick landet inte
            att läsa lämnas fältet orört — en gammal uppdelning är bättre än
@@ -172,6 +180,7 @@ export async function refreshDaily(
           totalSales: v.totalSales,
           shippingCharges: v.shippingCharges,
           fees: v.fees ?? null,
+          feesCoveredSales: v.feesCoveredSales ?? null,
         })),
     ),
   );
@@ -462,6 +471,8 @@ export async function readDaily(
       totalSales: r.totalSales,
       shippingCharges: r.shippingCharges,
       fees: r.fees ?? null,
+      feesCoveredSales: r.feesCoveredSales ?? null,
+      gatewaySales: (r.gatewaySales as Record<string, number> | null) ?? null,
     })),
     products: mergeProductRows(products),
     missingDays,
@@ -720,46 +731,34 @@ export async function refreshShopDaily(
   }
 }
 
-export interface UppmattAvgift {
-  /** Avgifter ÷ omsättning, de senaste 90 dagarna. */
-  rate: number;
-  /** Omsättning underlaget bygger på (för att bedöma om talet betyder något). */
-  sales: number;
-  days: number;
-}
+export type { UppmattAvgift, Betalvag };
 
 /**
  * Vad Shopify Payments FAKTISKT tog, per marknad, de senaste 90 dagarna —
- * ur dagsradernas `fees`. Nyckeln "" är hela butiken. Marknader utan
- * uppdelning eller utan avgiftsdata saknas i svaret. Det här är svaret på
- * "jag vet ju inte avgifterna": ingen behöver slå upp dem, de står i
- * ordrarna.
+ * ur dagsradernas `fees`, delat med den omsättning avgifterna TÄCKER
+ * (`uppmattAvgift` i avgifter.ts, testad). Nyckeln "" är hela butiken.
+ * Förut delades de med all omsättning, och varje PayPal-order drog ner
+ * "faktiskt taget" mot noll — Kostnader räknade break-even på den nollan.
  */
 export async function uppmattaAvgifter(shop: string): Promise<Record<string, UppmattAvgift>> {
   const sedan = shiftIso(new Date().toISOString().slice(0, 10), -90);
   const rader = await prisma.dailyPnl.findMany({
     where: { shop, day: { gte: sedan }, fees: { not: null } },
-    select: { fees: true, totalSales: true, markets: true },
+    select: { fees: true, totalSales: true, feesCoveredSales: true, markets: true },
   });
-  const summa: Record<string, { fees: number; sales: number; days: number }> = {};
-  const lagg = (m: string, fees: number, sales: number) => {
-    const a = (summa[m] ??= { fees: 0, sales: 0, days: 0 });
-    a.fees += fees;
-    a.sales += sales;
-    a.days++;
-  };
-  for (const r of rader) {
-    lagg("", r.fees ?? 0, r.totalSales);
-    const per = r.markets as unknown as Record<string, MarknadsDel> | null;
-    if (!per) continue;
-    for (const [m, del] of Object.entries(per)) {
-      if (!m || del.fees == null || !(del.totalSales > 0)) continue;
-      lagg(m, del.fees, del.totalSales);
-    }
-  }
-  const ut: Record<string, UppmattAvgift> = {};
-  for (const [m, a] of Object.entries(summa)) {
-    if (a.sales > 0) ut[m] = { rate: a.fees / a.sales, sales: a.sales, days: a.days };
-  }
-  return ut;
+  return uppmattAvgift(rader as unknown as UppmattRad[]);
+}
+
+/**
+ * Betalväxlarna butiken fått betalt genom de senaste 90 dagarna, med andel
+ * av omsättningen. Visas bredvid avgiftsfälten i Inställningar: den som ser
+ * "paypal 30 %" vet att satsen i fältet gäller på riktigt.
+ */
+export async function betalvagar90(shop: string): Promise<Betalvag[]> {
+  const sedan = shiftIso(new Date().toISOString().slice(0, 10), -90);
+  const rader = await prisma.dailyPnl.findMany({
+    where: { shop, day: { gte: sedan } },
+    select: { gatewaySales: true },
+  });
+  return betalvagar(rader as unknown as { gatewaySales: Record<string, number> | null }[]);
 }

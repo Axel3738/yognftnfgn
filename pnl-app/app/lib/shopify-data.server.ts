@@ -204,9 +204,13 @@ const kundFalt = (kund: boolean) => (kund ? "customer { id }" : "");
 const landFalt = (land: boolean) =>
   land ? "shippingAddress { countryCodeV2 } billingAddress { countryCodeV2 }" : "";
 /* Faktiska avgifter per transaktion: det Shopify Payments drog — kortavgift,
-   växlingsavgift, utländskt kort. Det enda talet som stämmer. */
+   växlingsavgift, utländskt kort. Det enda talet som stämmer. `gateway` säger
+   vilken betalväxel pengarna gick genom: bara Shopify Payments skriver fees,
+   så en PayPal-order utan fees är INTE en order utan avgift — dess omsättning
+   ska räknas med satsen (summeraAvgifter i orderrader.ts). Samma fält i den
+   paginerade vägen och i bulk-exporten, via den här enda strängen. */
 const avgiftFalt = (avgifter: boolean) =>
-  avgifter ? "transactions(first: 20) { status kind fees { amount { amount } type rateName } }" : "";
+  avgifter ? "transactions(first: 20) { status kind gateway fees { amount { amount } type rateName } }" : "";
 
 interface Orderfalt {
   kund: boolean;

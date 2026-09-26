@@ -41,8 +41,14 @@ model ShopSettings {
   /// påhittat tal i alla andra valutor. afterAuth sätter 27,50 vid SKAPANDET
   /// av en SEK-butik (`startTull`), aldrig vid uppdatering.
   tariffPerOrder  Decimal  @default(0) @db.Decimal(10, 2)
-  /// Transaktionsavgift som andel av totalt ordervärde.
+  /// Transaktionsavgift som andel av totalt ordervärde. Sedan 2026-09-26
+  /// gäller den omsättning UTAN faktiska avgifter: ordrar som inte gick genom
+  /// Shopify Payments (PayPal, direkt-Klarna, manuellt) och dagar utan data.
   feeRate         Decimal  @default(0.029) @db.Decimal(6, 4)
+  /// Shopifys egen avgift på ordrar som inte betalats med Shopify Payments
+  /// (planens tredjepartsavgift), andel. Tas på omsättning som bevisligen
+  /// gick via en annan betalväxel, ovanpå feeRate. 0 = ingen.
+  thirdPartyFeeRate Decimal @default(0) @db.Decimal(6, 4)
   /// Målmarginal som max-CPA räknas mot.
   targetMargin    Decimal  @default(0.25) @db.Decimal(6, 4)
   /// ⚠ LEGACY sedan 2026-09-17: annonskontona bor i MetaAdAccount, en rad per
@@ -405,6 +411,14 @@ model DailyPnl {
   /// Null = raden skrevs innan avgifterna hämtades, eller Shopify lämnade
   /// inte ut dem — då räknar motorn med procentsatsen i Inställningar.
   fees            Float?
+  /// Omsättning i ordrar betalda genom Shopify Payments — den del av
+  /// totalSales som `fees` täcker (bara Shopify Payments skriver fees).
+  /// Resten räknas med satsen. Null = raden skrevs före 2026-09-26: hela
+  /// omsättningen räknas som täckt tills dagen hämtas om.
+  feesCoveredSales Float?
+  /// Omsättning per betalväxel: { "shopify_payments": 6000, "paypal": 4000 }.
+  /// "" = ordrar utan transaktion. Underlaget för listan i Inställningar.
+  gatewaySales    Json?
   /// Dagens produktmix: [{productGid, variantGid, title, variantTitle, units, netSales, unitCost}]
   products        Json
   /// Samma dag uppdelad per marknad (ISO-landskod ur leveransadressen):
@@ -449,6 +463,8 @@ model HourlyPnl {
   totalSales      Float  @default(0)
   shippingCharges Float  @default(0)
   fees            Float?
+  /// Som DailyPnl.feesCoveredSales, för timmen.
+  feesCoveredSales Float?
 
   @@id([shop, day, hour, market])
   @@index([shop, day])

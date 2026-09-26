@@ -13,6 +13,7 @@
 import type { MarknadsDel, ProductRow, SalesDay } from "./pnl.server.ts";
 import { marknadskod } from "./marknad.ts";
 import { hourInTz } from "./timmar.ts";
+import { INGEN_GATEWAY, SP_GATEWAY } from "./avgifter.ts";
 
 export const num = (v: unknown): number => {
   if (v == null || v === "") return 0;
@@ -106,8 +107,11 @@ export function parseOrderLines(
       day: d, orders: 0, grossSales: 0, discounts: 0, returns: 0,
       netSales: 0, totalSales: 0, shippingCharges: 0,
       /* Noll när avgifterna hämtas (en dag utan ordrar har noll avgift);
-         null när fältet nekades — då ska motorn räkna med satsen. */
+         null när fältet nekades — då ska motorn räkna med satsen. Samma
+         sak för den täckta omsättningen: utan avgifter täcker de ingenting. */
       fees: medAvgifter ? 0 : null,
+      feesCoveredSales: medAvgifter ? 0 : null,
+      gatewaySales: medAvgifter ? {} : null,
     });
   }
 
@@ -129,6 +133,7 @@ export function parseOrderLines(
     const hink = perLand.get(land) ?? {
       day, orders: 0, grossSales: 0, discounts: 0, returns: 0,
       netSales: 0, totalSales: 0, shippingCharges: 0, fees: medAvgifter ? 0 : null,
+      feesCoveredSales: medAvgifter ? 0 : null, gatewaySales: medAvgifter ? {} : null,
     };
     perLand.set(land, hink);
     return hink;
@@ -146,6 +151,7 @@ export function parseOrderLines(
     const hink = perLand.get(land) ?? {
       day, orders: 0, grossSales: 0, discounts: 0, returns: 0,
       netSales: 0, totalSales: 0, shippingCharges: 0, fees: medAvgifter ? 0 : null,
+      feesCoveredSales: medAvgifter ? 0 : null, gatewaySales: medAvgifter ? {} : null,
     };
     perLand.set(land, hink);
     return hink;
@@ -197,8 +203,12 @@ export function parseOrderLines(
       const frakt = num(line.totalShippingPriceSet?.shopMoney?.amount);
       /* Orderns faktiska avgifter: summan av fees på alla lyckade
          transaktioner (försäljning, capture; en återbetalning kan bära en
-         negativ avgift när Shopify återför den). */
-      const avgift = medAvgifter ? summeraAvgifter(line.transactions) : 0;
+         negativ avgift när Shopify återför den). `sp` säger om ordern gick
+         genom Shopify Payments — bara då täcker avgiften orderns omsättning.
+         En PayPal-order har inga fees, och räknades den som täckt blev dess
+         avgift 0 i stället för handlarens sats. */
+      const betalning = medAvgifter ? summeraAvgifter(line.transactions) : null;
+      const avgift = betalning?.avgift ?? 0;
       const fyll = (b: SalesDay) => {
         b.orders += 1;
         b.grossSales += subtotal + discounts;
@@ -208,6 +218,10 @@ export function parseOrderLines(
         b.totalSales += total;
         b.shippingCharges += frakt;
         if (b.fees != null) b.fees += avgift;
+        if (b.feesCoveredSales != null && betalning?.sp) b.feesCoveredSales += total;
+        if (b.gatewaySales && betalning) {
+          b.gatewaySales[betalning.gateway] = (b.gatewaySales[betalning.gateway] ?? 0) + total;
+        }
       };
       fyll(bucket);
       const land = medLand
@@ -295,12 +309,32 @@ export function parseOrderLines(
   };
 }
 
+/** Orderns betalning: faktiska avgifter, Shopify Payments eller ej, betalväg. */
+export interface Betalning {
+  avgift: number;
+  /**
+   * Ordern betalades genom Shopify Payments: en lyckad SALE/CAPTURE med
+   * gateway `shopify_payments` — eller som bär `fees` (bara Shopify Payments
+   * skriver dem, så en avgift bevisar det även om gatewaynamnet skulle
+   * skilja sig). Då täcker `avgift` orderns omsättning.
+   */
+  sp: boolean;
+  /** Betalvägen omsättningen bokförs på i `gatewaySales` ("" = ingen). */
+  gateway: string;
+}
+
+/* Transaktionstyper där pengarna faktiskt dras. AUTHORIZATION räknas INTE som
+   täckt: en reservation som ännu inte dragits har inga avgifter än, och en
+   täckt order med avgift 0 är exakt den nolla fixen finns för. Den räknas med
+   satsen tills capture kommer (returkollen hämtar om 45 dagar var 6:e timme). */
+const DRAGNING = new Set(["SALE", "CAPTURE"]);
+
 /**
  * Summerar `fees` på en orders transaktioner. Bulk-exporten ger dem som
  * `transactions` (lista) på orderraden; pagineringen likaså. Bara lyckade
  * transaktioner räknas — en nekad betalning har ingen avgift som drogs.
  */
-export function summeraAvgifter(transaktioner: unknown): number {
+export function summeraAvgifter(transaktioner: unknown): Betalning {
   const lista: any[] = Array.isArray(transaktioner)
     ? transaktioner
     : Array.isArray((transaktioner as any)?.nodes)
@@ -309,11 +343,29 @@ export function summeraAvgifter(transaktioner: unknown): number {
         ? (transaktioner as any).edges.map((e: any) => e?.node)
         : [];
   let summa = 0;
+  let sp = false;
+  let dragVag: string | null = null;
+  let reservVag: string | null = null;
+  let nagonVag: string | null = null;
   for (const t of lista) {
-    if (!t || (t.status && t.status !== "SUCCESS")) continue;
-    for (const f of t.fees ?? []) summa += num(f?.amount?.amount);
+    if (!t) continue;
+    const vag = typeof t.gateway === "string" ? t.gateway.toLowerCase() : null;
+    nagonVag ??= vag;
+    if (t.status && t.status !== "SUCCESS") continue;
+    const avgifter: any[] = Array.isArray(t.fees) ? t.fees : [];
+    for (const f of avgifter) summa += num(f?.amount?.amount);
+    /* Saknas kind (äldre testfixturer) räknas transaktionen som en dragning,
+       samma milda regel som för status ovan. */
+    const drar = !t.kind || DRAGNING.has(String(t.kind).toUpperCase());
+    if (drar && (vag === SP_GATEWAY || avgifter.length > 0)) sp = true;
+    if (drar) dragVag ??= vag;
+    else if (String(t.kind).toUpperCase() === "AUTHORIZATION") reservVag ??= vag;
   }
-  return summa;
+  return {
+    avgift: summa,
+    sp,
+    gateway: sp ? SP_GATEWAY : (dragVag ?? reservVag ?? nagonVag ?? INGEN_GATEWAY),
+  };
 }
 
 /**

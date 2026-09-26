@@ -322,6 +322,7 @@ async function summeraButik(
       feeRate: Number(m.feeRate),
       targetMargin: Number(m.targetMargin),
       marketFees: stadaAvgifter(m.marketFees),
+      thirdPartyFeeRate: Number(m.thirdPartyFeeRate ?? 0),
     },
     salesByMarket: daily.salesByMarket,
     ordersByMarket: daily.ordersByMarket,

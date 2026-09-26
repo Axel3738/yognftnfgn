@@ -61,12 +61,15 @@ const en = {
     unknownError: "unknown error",
     fatalHelp: "Send a screenshot of this message — it points out exactly where it stops.",
     refresh: "Refresh",
-    feesNote: (fees: string, pct: string, known: number, days: number) =>
-      known >= days
-        ? `Payment fees ${fees} (${pct} %) — actual amounts from Shopify Payments.`
-        : known > 0
-          ? `Payment fees ${fees} (${pct} %) — actual for ${known} of ${days} days, the rest at your settings rate.`
-          : `Payment fees ${fees} (${pct} %) — from your settings rate; actual fees are read as new days are fetched.`,
+    /* Andelen är OMSÄTTNING med faktiska avgifter (Shopify Payments), inte
+       dagar: en PayPal-order har inga avgifter att läsa, och "faktiska belopp"
+       om den vore en lögn. `actual` = hela procent, avrundat nedåt. */
+    feesNote: (fees: string, pct: string, known: number, days: number, actual: number, others: string, thirdParty: string | null) =>
+      known === 0
+        ? `Payment fees ${fees} (${pct} %) — from your settings rate; actual fees are read as new days are fetched.`
+        : known >= days && actual >= 100
+          ? `Payment fees ${fees} (${pct} %) — actual amounts from Shopify Payments.`
+          : `Payment fees ${fees} (${pct} %) — actual for ${actual} % of revenue (Shopify Payments), your rate for ${100 - actual} % (${others || "days without fee data"})${thirdParty ? `, incl. Shopify's third-party fee ${thirdParty}` : ""}.`,
     /* Shopifys 60-dagarsgräns. Dagarna är UTE ur perioden, annonskostnaden
        med — annars delas hela periodens spend med halva omsättningen. */
     outsideHistory: (n: number, date: string) =>
@@ -324,7 +327,10 @@ const en = {
       thShare: "Share of orders",
       mixRow: "Actual mix (90 days)",
       noSales: "No sales in the last 90 days — 1 pc per order assumed.",
-      feeMeasured: (pct: string) => `CM and BE ROAS use the payment fee Shopify Payments actually charged: ${pct} % of sales (last 90 days).`,
+      feeMeasured: (pct: string, actual: number) =>
+        actual >= 100
+          ? `CM and BE ROAS use the payment fee Shopify Payments actually charged: ${pct} % of sales (last 90 days).`
+          : `CM and BE ROAS use ${pct} % in payment fees: what Shopify Payments actually charged on ${actual} % of sales, and your rate from Settings on the ${100 - actual} % paid another way (last 90 days).`,
       feeSetting: (pct: string) => `CM and BE ROAS use the fee rate from Settings: ${pct} %. Actual fees are read as orders are fetched.`,
     },
     market: {
@@ -630,7 +636,19 @@ const en = {
       "Tick this if the duty above (and per market) is right as it stands. Changing an amount confirms it too. Until then the dashboard marks duty as not confirmed.",
     tariffConfirmedNote: (day: string) => `Duty confirmed ${day}.`,
     feeLabel: "Transaction fee (%)",
-    feeHelp: "Share of total order value. Shopify Payments is typically around 2.9 %.",
+    feeHelp:
+      "Share of total order value. Used for orders not paid through Shopify Payments (PayPal, Klarna direct, manual) and for days without fee data — Shopify Payments' own fees are read from your orders.",
+    thirdPartyLabel: "Shopify fee on orders not paid with Shopify Payments (%)",
+    thirdPartyHelp:
+      "Your Shopify plan's third-party transaction fee (Basic 2 %, Shopify 1 %, Advanced 0.5 %). Charged by Shopify on top of PayPal's or Klarna's own fee. Leave 0 if you only use Shopify Payments.",
+    gateways: {
+      title: "Payment methods, last 90 days",
+      share: (name: string, pct: string) => `${name}: ${pct} % of sales`,
+      none: "No payment recorded",
+      empty: "Shown once orders have been fetched with payment details.",
+      explain:
+        "Only Shopify Payments reports its fees on the order. Sales paid any other way are charged at the transaction fee above.",
+    },
     claude: {
       title: "Connect Claude",
       body: "The app can read your supplier price lists and answer questions about your numbers. Paste your own Claude key and it runs on your account.",
@@ -668,8 +686,8 @@ const en = {
       tariffLabel: "Duty per order",
       hint: "Leave a field empty to use the standard values above. Typical Shopify Payments: +1 % for international cards, 1.5–2 % conversion. Duty is an amount per order, not a percentage.",
       measuredAll: (pct: string, days: number) =>
-        `You don't need to look these up: the dashboard reads the fees Shopify Payments actually charged from your orders — ${pct} % of sales over the last ${days} days. The fields below only matter for days without that data.`,
-      measured: (pct: string) => `Actually charged: ${pct} % (last 90 days)`,
+        `The dashboard reads the fees Shopify Payments actually charged from your orders — ${pct} % of the sales paid through Shopify Payments over the last ${days} days. The fields below are used for sales paid another way and for days without that data.`,
+      measured: (pct: string) => `Shopify Payments charged: ${pct} % (last 90 days)`,
     },
     marginLabel: "Target margin (%)",
     marginHelp: "Max CPA on the dashboard is calculated against this margin.",
@@ -1056,12 +1074,12 @@ const sv: Texts = {
     unknownError: "okänt fel",
     fatalHelp: "Skicka en skärmbild av det här meddelandet — det pekar ut exakt var det stannar.",
     refresh: "Uppdatera",
-    feesNote: (fees: string, pct: string, known: number, days: number) =>
-      known >= days
-        ? `Betalavgifter ${fees} (${pct} %) — faktiska belopp från Shopify Payments.`
-        : known > 0
-          ? `Betalavgifter ${fees} (${pct} %) — faktiska för ${known} av ${days} dagar, resten med satsen i Inställningar.`
-          : `Betalavgifter ${fees} (${pct} %) — enligt satsen i Inställningar; faktiska avgifter läses in när nya dagar hämtas.`,
+    feesNote: (fees: string, pct: string, known: number, days: number, actual: number, others: string, thirdParty: string | null) =>
+      known === 0
+        ? `Betalavgifter ${fees} (${pct} %) — enligt satsen i Inställningar; faktiska avgifter läses in när nya dagar hämtas.`
+        : known >= days && actual >= 100
+          ? `Betalavgifter ${fees} (${pct} %) — faktiska belopp från Shopify Payments.`
+          : `Betalavgifter ${fees} (${pct} %) — faktiska för ${actual} % av omsättningen (Shopify Payments), din sats för ${100 - actual} % (${others || "dagar utan avgiftsdata"})${thirdParty ? `, inkl. Shopifys tredjepartsavgift ${thirdParty}` : ""}.`,
     outsideHistory: (n: number, date: string) =>
       `Shopify ger appar bara de senaste 60 dagarnas ordrar. ${n} ${n === 1 ? "dag" : "dagar"} före ${date} saknar orderdata och är utelämnade ur perioden, annonskostnaden också.`,
     market: {
@@ -1315,7 +1333,10 @@ const sv: Texts = {
       thShare: "Andel av ordrar",
       mixRow: "Faktisk mix (90 dagar)",
       noSales: "Ingen försäljning de senaste 90 dagarna — 1 st per order antas.",
-      feeMeasured: (pct: string) => `TB och BE ROAS räknar med den avgift Shopify Payments faktiskt tog: ${pct} % av omsättningen (senaste 90 dagarna).`,
+      feeMeasured: (pct: string, actual: number) =>
+        actual >= 100
+          ? `TB och BE ROAS räknar med den avgift Shopify Payments faktiskt tog: ${pct} % av omsättningen (senaste 90 dagarna).`
+          : `TB och BE ROAS räknar med ${pct} % i betalavgifter: det Shopify Payments faktiskt tog på ${actual} % av omsättningen, och din sats från Inställningar på de ${100 - actual} % som betalades på annat sätt (senaste 90 dagarna).`,
       feeSetting: (pct: string) => `TB och BE ROAS räknar med satsen i Inställningar: ${pct} %. Faktiska avgifter läses in när ordrar hämtas.`,
     },
     market: {
@@ -1621,7 +1642,19 @@ const sv: Texts = {
       "Kryssa i om tullen ovan (och per marknad) stämmer som den står. Att ändra ett belopp bekräftar också. Tills dess märker panelen tullen som inte bekräftad.",
     tariffConfirmedNote: (day: string) => `Tullen bekräftad ${day}.`,
     feeLabel: "Transaktionsavgift (%)",
-    feeHelp: "Andel av totalt ordervärde. Shopify Payments ligger typiskt kring 2,9 %.",
+    feeHelp:
+      "Andel av totalt ordervärde. Används för ordrar som inte betalats genom Shopify Payments (PayPal, direkt-Klarna, manuellt) och för dagar utan avgiftsdata — Shopify Payments egna avgifter läses ur ordrarna.",
+    thirdPartyLabel: "Shopifys avgift på ordrar som inte betalats med Shopify Payments (%)",
+    thirdPartyHelp:
+      "Din Shopify-plans tredjepartsavgift (Basic 2 %, Shopify 1 %, Advanced 0,5 %). Shopify tar den ovanpå PayPals eller Klarnas egen avgift. Lämna 0 om du bara använder Shopify Payments.",
+    gateways: {
+      title: "Betalsätt, senaste 90 dagarna",
+      share: (name: string, pct: string) => `${name}: ${pct} % av omsättningen`,
+      none: "Ingen betalning registrerad",
+      empty: "Visas när ordrar hämtats med betaluppgifter.",
+      explain:
+        "Bara Shopify Payments redovisar sina avgifter på ordern. Omsättning som betalats på annat sätt räknas med transaktionsavgiften ovan.",
+    },
     claude: {
       title: "Koppla Claude",
       body: "Appen kan läsa dina leverantörsprislistor och svara på frågor om dina siffror. Klistra in din egen Claude-nyckel så kör den på ditt konto.",
@@ -1659,8 +1692,8 @@ const sv: Texts = {
       tariffLabel: "Tull per order",
       hint: "Tomt fält = standardvärdena ovan. Typiskt för Shopify Payments: +1 % för utländska kort, 1,5–2 % växling. Tullen är ett belopp per order, inte en procentsats.",
       measuredAll: (pct: string, days: number) =>
-        `Du behöver inte slå upp dem: panelen läser de avgifter Shopify Payments faktiskt tog ur dina ordrar — ${pct} % av omsättningen de senaste ${days} dagarna. Fälten nedan används bara för dagar utan den datan.`,
-      measured: (pct: string) => `Faktiskt taget: ${pct} % (senaste 90 dagarna)`,
+        `Panelen läser de avgifter Shopify Payments faktiskt tog ur dina ordrar — ${pct} % av omsättningen som betalades genom Shopify Payments de senaste ${days} dagarna. Fälten nedan används för omsättning som betalats på annat sätt och för dagar utan den datan.`,
+      measured: (pct: string) => `Shopify Payments tog: ${pct} % (senaste 90 dagarna)`,
     },
     marginLabel: "Målmarginal (%)",
     marginHelp: "Max-CPA på panelen räknas mot den här marginalen.",

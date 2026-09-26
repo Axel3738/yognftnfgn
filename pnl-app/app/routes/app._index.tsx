@@ -47,6 +47,7 @@ import { hemlandAv, marknadskod, marknadsnamn, stadaAvgifter } from "../lib/mark
 import { klampaFonster } from "../lib/historik";
 import { klockslag } from "../lib/returkoll";
 import { andelUtan, arKostnadOsaker } from "../lib/kostnadstackning";
+import { betalvagNamn } from "../lib/avgifter";
 import {
   beslutsText,
   bidragsBand,
@@ -308,6 +309,8 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
     feeRate: Number(settings.feeRate),
     targetMargin: Number(settings.targetMargin),
     marketFees: stadaAvgifter(settings.marketFees),
+    /* Shopifys avgift på ordrar som inte gått genom Shopify Payments. */
+    thirdPartyFeeRate: Number(settings.thirdPartyFeeRate ?? 0),
   };
   const costChangeRows = costChanges.map((c) => ({
     productGid: c.productGid,
@@ -1836,10 +1839,20 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
             ) : null}
             {/* Avgifterna: faktiska ur ordrarna där de finns, annars satsen.
                 Sägs rakt ut — det är skillnaden mellan "det Shopify tog" och
-                "det någon skrev in". */}
+                "det någon skrev in". Andelen är OMSÄTTNING genom Shopify
+                Payments, avrundad NEDÅT: 99,6 % får aldrig läsas som "allt
+                faktiskt" när en PayPal-order räknats med satsen. */}
             {t2.orders > 0 ? (
               <Text as="span" variant="bodySm" tone="subdued">
-                {T.dashboard.feesNote(money(t2.fees), (t2.effFeeRate * 100).toFixed(2), t2.feesKnownDays, result.days.length)}
+                {T.dashboard.feesNote(
+                  money(t2.fees),
+                  (t2.effFeeRate * 100).toFixed(2),
+                  t2.feesKnownDays,
+                  result.days.length,
+                  Math.floor((t2.feesActualShare ?? 1) * 100 + 1e-9),
+                  t2.feesOtherGateways.slice(0, 3).map((g) => betalvagNamn(g, "")).filter(Boolean).join(", "),
+                  t2.feesThirdParty > 0 ? money(t2.feesThirdParty) : null,
+                )}
               </Text>
             ) : null}
 

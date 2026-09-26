@@ -398,9 +398,119 @@ i hans ordning:
   alla 30 varianter har värsta-falls-kostnad; verklig marginal något bättre.
 - "Inside comfy slippers": ingen offert (MOQ 3000) — ingen COGS.
 - Danmarks Railway-domän okänd — hälsokontrollen kan inte verifiera DK.
-- Exakta betalväxel-avgifter (feeRate är schablon).
+- Exakta betalväxel-avgifter utanför Shopify Payments (feeRate är schablon
+  för PayPal/Klarna/manuellt; ingen sats per betalväxel än — se avsnittet
+  om betalavgifterna nedan).
 - Grillkliniken: Axel vill klona hela upplägget till en annan butik.
 - App Store-granskningssvaret: åtgärda när mejlet kommer.
+
+### Betalavgifter: faktiska bara för Shopify Payments (2026-09-26)
+
+Shopify skriver `fees` på transaktionerna BARA för Shopify Payments. Varje
+dag startade ändå med `fees: 0` (inte null) så fort fältet frågades efter,
+och `compute()` räknade hela dagens omsättning som "faktisk" — så satsen i
+Inställningar gällde aldrig PayPal-, direkt-Klarna- eller manuella ordrar
+(`okandAndel` blev 0). `uppmattaAvgifter` delade avgifterna med ALL
+omsättning, så varje PayPal-order drog ner "faktiskt taget" mot noll, och
+Kostnader räknade break-even på den nollan. Panelen sa samtidigt "faktiska
+belopp från Shopify Payments". Räkneexempel: 100 000 kr/mån med 40 % via
+PayPal/Klarna à ~3,4 % = 1 360 kr/mån avgifter som saknades. Pris 400, COGS
+150, tull 27,50, verklig avgift 3,5 %: Kostnader visade break-even 1,80× i
+stället för 1,92×, så en produkt på 1,85× såg lönsam ut. En butik helt utan
+Shopify Payments hade avgift 0 överallt.
+
+Byggt:
+- **Frågan** (`avgiftFalt` i shopify-data.server, EN sträng för både
+  pagineringen och bulk-exporten): `transactions(first: 20) { status kind
+  gateway fees {...} }`.
+- **`summeraAvgifter`** (`orderrader.ts`) returnerar `{ avgift, sp, gateway }`.
+  `sp` = en lyckad SALE/CAPTURE med gateway `shopify_payments` (`SP_GATEWAY`)
+  ELLER som bär `fees`. `gateway` = betalvägen omsättningen bokförs på ("" =
+  ingen transaktion).
+- **Dag, marknad och timme** (samma `fyll`) får `feesCoveredSales` = Σ
+  orderns totalpris (efter återbetalning) där `sp`, och dag/marknad
+  `gatewaySales` = { betalväxel: omsättning }. Null när avgiftsfältet nekades.
+  Migration `20260926170000_avgifter_betalvag`: `DailyPnl.feesCoveredSales`,
+  `DailyPnl.gatewaySales`, `HourlyPnl.feesCoveredSales`, och
+  `ShopSettings.thirdPartyFeeRate` (DEFAULT 0). Marknadsdelen i
+  `markets`-JSON bär samma två nycklar.
+- **`app/lib/avgifter.ts`** (ren, testad, får importeras av klienten):
+  `tacktOms` (= `feesCoveredSales ?? totalSales` på dagar med kända avgifter),
+  `kandExtern`, `raknaAvgifter` (det `compute()` nu anropar),
+  `uppmattAvgift` (delar med TÄCKT omsättning; `uppmattaAvgifter` i
+  daily.server är bara DB-läsningen runt den), `blandadSats`, `betalvagar`,
+  `betalvagNamn`.
+- **`compute()`**: faktiska avgifter + satsen per marknad på den otäckta
+  andelen + `thirdPartyFeeRate` på omsättning som BEVISLIGEN gick externt.
+  Totals får `feesActualShare`, `feesOtherGateways`, `feesThirdParty`.
+- **Panelen**: avgiftsraden säger "faktiska för X % av omsättningen (Shopify
+  Payments), din sats för Y % (paypal, klarna)" — andelen är omsättning, inte
+  dagar. "Faktiska belopp från Shopify Payments" bara när ALLA dagar har data
+  och andelen är 100 % (avrundat nedåt).
+- **Kostnader**: break-even räknar med `blandadSats` — Shopify Payments-
+  satsen på täckt del, Inställningars sats (per marknad) plus
+  tredjepartsavgiften på resten. Texten säger hur stor andel som är faktisk.
+- **Inställningar**: nytt fält "Shopifys avgift på ordrar som inte betalats
+  med Shopify Payments (%)" (default 0), listan "Betalsätt, senaste 90
+  dagarna" med andel per betalväxel (`betalvagar90`), och omskrivna hjälp-
+  texter: transaktionsavgiften gäller omsättning utanför Shopify Payments och
+  dagar utan data, inte "bara dagar utan data". Uppmätt sats visas bara för
+  marknader med omsättning genom Shopify Payments.
+
+Medvetna beslut:
+- **AUTHORIZATION räknas INTE som täckt** (planen sa SALE, CAPTURE eller
+  AUTHORIZATION). En reservation som inte dragits har inga avgifter än; som
+  täckt hade den gett exakt den nolla fixen finns för. Den räknas med satsen
+  tills capture kommer, och returkollen hämtar om 45 dagar var 6:e timme.
+- **`fees` på en SALE/CAPTURE bevisar Shopify Payments** även om gateway-
+  strängen skulle vara en annan än `shopify_payments`. Planens steg 0
+  (verifiera strängen på en riktig order i stonepnl-test) gick inte att göra
+  från sessionen — den regeln gör att en avvikande sträng bara påverkar
+  ordrar med avgift 0, inte alla Shopify Payments-ordrar.
+- **Ingen sats per betalväxel.** Satsen per marknad (`feeRateFor`) gäller den
+  otäckta delen, som planen sa. Listan i Inställningar visar vilka växlar det
+  gäller.
+- **Tredjepartsavgiften tas bara på omsättning som bevisligen gick externt**
+  (`kandExtern`: avgifterna hämtade OCH `feesCoveredSales` satt). En äldre dag
+  utan uppdelning, eller en dag vars avgifter nekades, kan lika gärna vara
+  Shopify Payments — där hade avgiften varit påhittad.
+- **Kostnader blandar satserna** i stället för att använda den uppmätta
+  satsen rakt av (planens steg 5 ensamt). Med 60 % Shopify Payments hade
+  Shopify Payments-satsen annars gällt PayPal-delen också.
+- **En order med flera betalvägar** (presentkort + kort) räknas som täckt om
+  någon dragning är Shopify Payments — hela ordern. Presentkortsdelen har
+  ingen avgift hos någon, så det är rätt åt rätt håll.
+
+Fällor:
+- ⚠ **Äldre dagsrader (utan `feesCoveredSales`) räknas fortfarande som helt
+  täckta** tills de hämtas om. Returkollen skriver om de senaste 45 dagarna
+  inom ett par timmar efter deploy; äldre dagar bara när panelen exporterar
+  om dem. En butik utan Shopify Payments ser därför avgifterna stiga i
+  omgångar.
+- ⚠ **Gateway-strängarna är inte uppmätta skarpt.** `formattedGateway` skiljer
+  sig från `gateway`; Klarna och Apple Pay genom Shopify Payments rapporterar
+  `shopify_payments`. Kontrollera efter deploy: lägg en Shopify Payments-order
+  och en manuell order i stonepnl-test ⇒ `DailyPnl.gatewaySales` ska ha
+  `shopify_payments` och `manual`, `feesCoveredSales` bara den förra, och
+  avgiftsraden säga "din sats för Y % (manual)".
+- ⚠ **Manuella betalningar (bank, postförskott) får satsen** — de har oftast
+  ingen avgift. Handlaren ser dem i listan i Inställningar; ingen egen sats
+  per växel än.
+- ⚠ **LTV (`kundorder.server`) räknar fortfarande `feeRate` × totalpris per
+  order**, oberoende av betalväxel. Ej ändrat här.
+- ⚠ **`gatewaySales` skrivs som `Prisma.DbNull` när den saknas**, aldrig som
+  rått `null` — Prisma vägrar null i ett Json-fält, och felet hade fällt hela
+  dagsradstransaktionen (inga dagar skrivna alls). Typkontrollen fångar det
+  inte bakom `as any`.
+- ⚠ **`HourlyPnl.fees`/`feesCoveredSales` läses inte av någon** (timgrafen
+  visar bara omsättning); de skrivs för att timmar och dag ska kunna jämföras.
+- Tester: `test/orderrader.test.mjs` (Shopify Payments fees 12 ⇒ {12, sp};
+  PayPal utan fees ⇒ {0, inte sp}; misslyckade ignoreras; AUTHORIZATION;
+  fees som bevis; dagens/marknadens/timmens täckta omsättning och
+  `gatewaySales`) och `test/avgifter.test.mjs` (compute: 1000/600/18 à 3 % ⇒
+  30; dag utan `feesCoveredSales` som förut; butik utan Shopify Payments;
+  planens break-even 1,80 → 1,92; sats per marknad; tredjepartsavgiften;
+  `uppmattAvgift` delar med täckt omsättning; `blandadSats`; `betalvagar`).
 
 ### Ett skalningsbeslut överallt: dra ner, håll, skala (2026-09-26)
 

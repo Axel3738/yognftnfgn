@@ -193,10 +193,73 @@ test("utan avgiftsfältet är avgiften okänd (null), inte noll", () => {
 
 test("summeraAvgifter läser lista, nodes och edges, och hoppar över misslyckade", () => {
   const t = (status, n) => ({ status, fees: [{ amount: { amount: String(n) } }] });
-  assert.equal(summeraAvgifter([t("SUCCESS", 2), t("ERROR", 5)]), 2);
-  assert.equal(summeraAvgifter({ nodes: [t("SUCCESS", 3)] }), 3);
-  assert.equal(summeraAvgifter({ edges: [{ node: t("SUCCESS", 4) }] }), 4);
-  assert.equal(summeraAvgifter(null), 0);
+  assert.equal(summeraAvgifter([t("SUCCESS", 2), t("ERROR", 5)]).avgift, 2);
+  assert.equal(summeraAvgifter({ nodes: [t("SUCCESS", 3)] }).avgift, 3);
+  assert.equal(summeraAvgifter({ edges: [{ node: t("SUCCESS", 4) }] }).avgift, 4);
+  assert.deepEqual(summeraAvgifter(null), { avgift: 0, sp: false, gateway: "" });
+});
+
+/* ---- Betalväxeln: bara Shopify Payments täcker omsättningen ---- */
+
+const spSale = (fee) => ({ status: "SUCCESS", kind: "SALE", gateway: "shopify_payments", fees: [{ amount: { amount: String(fee) } }] });
+const paypalSale = { status: "SUCCESS", kind: "SALE", gateway: "paypal", fees: [] };
+
+test("summeraAvgifter: Shopify Payments med avgift 12 ⇒ {12, sp}", () => {
+  const b = summeraAvgifter([spSale(12)]);
+  assert.equal(b.avgift, 12);
+  assert.equal(b.sp, true);
+  assert.equal(b.gateway, "shopify_payments");
+});
+
+test("summeraAvgifter: PayPal utan fees ⇒ {0, inte sp} — ingen avgift att läsa, inte noll avgift", () => {
+  const b = summeraAvgifter([paypalSale]);
+  assert.equal(b.avgift, 0);
+  assert.equal(b.sp, false);
+  assert.equal(b.gateway, "paypal");
+});
+
+test("summeraAvgifter: misslyckade transaktioner ignoreras, även en misslyckad Shopify Payments", () => {
+  const nekad = { ...spSale(40), status: "FAILURE" };
+  const b = summeraAvgifter([nekad, paypalSale]);
+  assert.equal(b.avgift, 0);
+  assert.equal(b.sp, false);
+  assert.equal(b.gateway, "paypal");
+});
+
+test("summeraAvgifter: en reservation (AUTHORIZATION) täcker inte — avgiften kommer först vid capture", () => {
+  const auth = { status: "SUCCESS", kind: "AUTHORIZATION", gateway: "shopify_payments", fees: [] };
+  const b = summeraAvgifter([auth]);
+  assert.equal(b.sp, false);
+  assert.equal(b.gateway, "shopify_payments");
+  const fangad = summeraAvgifter([auth, { ...spSale(8), kind: "CAPTURE" }]);
+  assert.equal(fangad.sp, true);
+  assert.equal(fangad.avgift, 8);
+});
+
+test("summeraAvgifter: fees bevisar Shopify Payments även om gatewaynamnet skulle skilja sig", () => {
+  const b = summeraAvgifter([{ status: "SUCCESS", kind: "SALE", gateway: "Shopify Payments", fees: [{ amount: { amount: "5" } }] }]);
+  assert.equal(b.sp, true);
+});
+
+test("dagen bär täckt omsättning och omsättning per betalväxel", () => {
+  const sp = { ...orderD, id: "SP", transactions: [spSale(9)] };
+  const pp = { ...orderD, id: "PP", totalPriceSet: pengar(200), subtotalPriceSet: pengar(200), transactions: [paypalSale] };
+  const d = parseOrderLines([sp, pp], "2026-09-11", "2026-09-11", TZ, true, true);
+  const s = d.sales[0];
+  assert.equal(s.totalSales, 500);
+  assert.equal(s.fees, 9);
+  assert.equal(s.feesCoveredSales, 300);
+  assert.deepEqual(s.gatewaySales, { shopify_payments: 300, paypal: 200 });
+  /* Marknaden och timmen får samma uppdelning — samma `fyll`. */
+  assert.equal(d.marketsByDay["2026-09-11"].NO.feesCoveredSales, 300);
+  const timme = Object.values(d.hoursByDay["2026-09-11"])[0][""];
+  assert.equal(timme.feesCoveredSales, 300);
+});
+
+test("utan avgiftsfältet är även den täckta omsättningen okänd (null)", () => {
+  const utan = parseOrderLines(jsonl, "2026-09-10", "2026-09-12", TZ, true, false);
+  assert.equal(utan.sales[0].feesCoveredSales, null);
+  assert.equal(utan.sales[0].gatewaySales, null);
 });
 
 test("mergeProductRows håller isär marknader men slår ihop dagar", () => {

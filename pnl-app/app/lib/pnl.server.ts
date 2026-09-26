@@ -13,6 +13,7 @@
 
 import { andelUtan, arKostnadOsaker } from "./kostnadstackning.ts";
 import { malUtrymmeFor, skalningsKvoter } from "./skalning.ts";
+import { raknaAvgifter } from "./avgifter.ts";
 
 /* Skalningsbeslutet bor i skalning.ts (får importeras av klienten); motorn
    exporterar det vidare så att alla räknar med samma funktion. */
@@ -42,6 +43,15 @@ export interface SalesDay {
    * Null/saknas = okänt för dagen → motorn räknar den dagen med procentsatsen.
    */
   fees?: number | null;
+  /**
+   * Omsättning i ordrar betalda genom Shopify Payments — den del av
+   * `totalSales` som `fees` faktiskt täcker. Resten (PayPal, direkt-Klarna,
+   * manuellt) räknas med satsen. Null/saknas = äldre rad: hela omsättningen
+   * räknas som täckt, som förut, tills dagen hämtas om.
+   */
+  feesCoveredSales?: number | null;
+  /** Omsättning per betalväxel ({ shopify_payments: 6000, paypal: 4000 }). */
+  gatewaySales?: Record<string, number> | null;
 }
 
 export interface SessionDay {
@@ -73,6 +83,9 @@ export interface MarknadsDel {
   shippingCharges: number;
   /** Faktiska avgifter för marknadens ordrar den dagen. Null = okänt. */
   fees?: number | null;
+  /** Som SalesDay.feesCoveredSales, för marknadens ordrar. */
+  feesCoveredSales?: number | null;
+  gatewaySales?: Record<string, number> | null;
   products: ProductRow[];
 }
 
@@ -185,6 +198,12 @@ export interface Settings {
     string,
     { feeRate?: number | null; fxFeeRate?: number | null; tariffPerOrder?: number | null }
   >;
+  /**
+   * Shopifys egen avgift på ordrar som INTE betalats med Shopify Payments
+   * (planens tredjepartsavgift, 0,5–2 %). Tas på den omsättning som
+   * bevisligen gick via en annan betalväxel, ovanpå satsen. Saknas = 0.
+   */
+  thirdPartyFeeRate?: number;
 }
 
 /** Effektiv avgiftsandel för en marknad: egen post om den finns, annars standard. */
@@ -353,8 +372,18 @@ export interface Totals {
   /** Dagar med försäljning men utan annonsdata. TB blir för högt när den inte är tom. */
   missingSpendDays: string[];
   spendComplete: boolean;
-  /** Dagar vars avgifter är FAKTISKA (ur ordertransaktionerna), av periodens dagar. */
+  /** Dagar vars avgifter är hämtade ur ordertransaktionerna, av periodens dagar. */
   feesKnownDays: number;
+  /**
+   * Andel av omsättningen vars avgifter är FAKTISKA (Shopify Payments). Null
+   * utan omsättning. Resten räknades med satsen — det är den andelen
+   * avgiftsraden på panelen redovisar, inte ett antal dagar.
+   */
+  feesActualShare: number | null;
+  /** Betalväxlar utanför Shopify Payments i perioden, störst först. */
+  feesOtherGateways: string[];
+  /** Shopifys tredjepartsavgift (ingår i `fees`). */
+  feesThirdParty: number;
   /** Avgifter som andel av omsättningen, faktiskt + sats för resten. */
   effFeeRate: number;
 }
@@ -539,22 +568,15 @@ export function compute(input: ComputeInput): ComputeResult {
     ordrarFordelade += antal;
   }
   tariff += Math.max(0, orders - ordrarFordelade) * settings.tariffPerOrder;
-  /* Avgifterna. Först det som FAKTISKT drogs: dagar med `fees` ur
-     ordertransaktionerna räknas rakt av — kortavgift, växlingsavgift,
-     utländskt kort, allt Shopify Payments tog. Dagar utan känd avgift
-     (äldre rader, eller Shopify lämnade inte ut fältet) räknas med satsen
-     per marknad: USA-ordrar bär USA:s kortavgift plus växlingsavgiften,
-     svenska ordrar standarden. Omsättning som inte är fördelad på marknad
-     tar standardsatsen. */
-  let faktiska = 0;
-  let omsMedFaktiska = 0;
-  let feesKnownDays = 0;
-  for (const s of sales) {
-    if (s.fees == null) continue;
-    faktiska += s.fees;
-    omsMedFaktiska += s.totalSales;
-    feesKnownDays++;
-  }
+  /* Avgifterna. Först det som FAKTISKT drogs: `fees` ur ordertransaktionerna
+     räknas rakt av — kortavgift, växlingsavgift, utländskt kort, allt
+     Shopify Payments tog. Men de täcker bara omsättningen i ordrar som gick
+     genom Shopify Payments (`feesCoveredSales`). Resten — PayPal, direkt-
+     Klarna, manuellt, och dagar utan känd avgift — räknas med satsen per
+     marknad: USA-ordrar bär USA:s kortavgift plus växlingsavgiften, svenska
+     ordrar standarden. Omsättning som inte är fördelad på marknad tar
+     standardsatsen. Förut räknades hela dagen som faktisk, och en butik utan
+     Shopify Payments fick avgift 0 överallt. */
   let satsBaserat = 0;
   let fordelad = 0;
   for (const [m, belopp] of Object.entries(input.salesByMarket ?? {})) {
@@ -562,9 +584,10 @@ export function compute(input: ComputeInput): ComputeResult {
     fordelad += belopp;
   }
   satsBaserat += Math.max(0, totalSales - fordelad) * settings.feeRate;
-  /* Satsen gäller bara den del av omsättningen som saknar faktisk avgift. */
-  const okandAndel = totalSales > 0 ? Math.max(0, totalSales - omsMedFaktiska) / totalSales : 0;
-  const fees = faktiska + satsBaserat * okandAndel;
+  /* Satsen gäller bara den del av omsättningen som saknar faktisk avgift
+     (avgifter.ts, testad). */
+  const avg = raknaAvgifter({ sales, totalSales, satsBaserat, thirdPartyFeeRate: settings.thirdPartyFeeRate });
+  const fees = avg.fees;
   /* Den blandade satsen — det break-even och max-CPA ska räkna med. */
   const effFeeRate = totalSales > 0 ? fees / totalSales : settings.feeRate;
   const contribution = totalSales - cogs - tariff - spend;
@@ -640,7 +663,10 @@ export function compute(input: ComputeInput): ComputeResult {
     kostnadOsaker: arKostnadOsaker(andelUtanKostnad),
     missingSpendDays,
     spendComplete: missingSpendDays.length === 0,
-    feesKnownDays,
+    feesKnownDays: avg.kandaDagar,
+    feesActualShare: avg.faktiskAndel,
+    feesOtherGateways: avg.andraBetalvagar,
+    feesThirdParty: avg.tredjepart,
     effFeeRate,
   };
 
