@@ -141,6 +141,15 @@ model ShopSettings {
   anthropicApiKey String?
   /// När nyckeln sparades — visas som "kopplad sedan" i Inställningar.
   anthropicKeySavedAt DateTime?
+  /// Ser butiken ordrar äldre än 60 dagar? Utan read_all_orders svarar
+  /// Shopify TOMT för dem — inte med fel — och en tom hämtning får aldrig
+  /// skriva nollor över riktiga dagar. Sätts av sonden `harFullOrderhistorik`
+  /// (en order äldre än idag − 61 syns = true). Null = aldrig sonderad, då
+  /// gäller horisonten idag − 59. Se app/lib/historik.ts.
+  fullOrderHistory Boolean?
+  /// När sonden senast kördes. Kontrolleras om varje vecka — en butik som
+  /// var för ny för att ha gamla ordrar kan ha fått några sedan dess.
+  fullOrderHistoryCheckedAt DateTime?
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
 

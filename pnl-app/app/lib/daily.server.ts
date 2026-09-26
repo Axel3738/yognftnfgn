@@ -14,11 +14,12 @@
  */
 
 import prisma from "../db.server";
-import { fetchOrderData, mergeProductRows } from "./shopify-data.server";
+import { dayInTz, fetchOrderData, harFullOrderhistorik, mergeProductRows } from "./shopify-data.server";
 import type { MarknadsDel, ProductRow, SalesDay } from "./pnl.server";
 import { decrypt } from "./crypto.server";
 import { butikensScope, harKundScope, skrivKundOrdrar, tillKundOrderRader } from "./kundorder.server";
 import { marknadskod, sorteraMarknader } from "./marknad";
+import { harAllaOrdrar, historikHorisont, klampaFonster, klassaDag } from "./historik";
 
 const API_VERSION = "2026-07";
 
@@ -39,7 +40,66 @@ export function farStartaBakgrund(shop: string): boolean {
   return true;
 }
 
-/** Exporterar ordrar för fönstret och skriver om dagsraderna. */
+/* Sonden körs högst en gång i veckan per butik, och två samtidiga
+   hämtningar delar på samma anrop. */
+const SOND_MS = 7 * 24 * 60 * 60 * 1000;
+const sondPagar = new Map<string, Promise<boolean>>();
+
+/**
+ * Butikens orderhorisont: äldsta dag (butikens tid) som Shopify visar helt.
+ * Null = ingen gräns. Se `historikHorisont` i historik.ts.
+ *
+ * Med `admin` sonderas butiken (`harFullOrderhistorik`) när den aldrig
+ * sonderats eller senaste sonderingen är över en vecka gammal. Utan `admin`
+ * (panelens läsning, gruppsumman) används det sparade svaret — en läsning
+ * får aldrig vänta på ett externt API. Misslyckas sonden skrivs ingenting:
+ * det gamla svaret gäller, och saknas det gäller den konservativa gränsen.
+ */
+export async function butikensHorisont(
+  shop: string,
+  timezone: string,
+  opts: { admin?: any; scope?: string | null } = {},
+): Promise<string | null> {
+  const [scope, s] = await Promise.all([
+    opts.scope !== undefined ? Promise.resolve(opts.scope) : butikensScope(shop),
+    prisma.shopSettings.findUnique({
+      where: { shop },
+      select: { fullOrderHistory: true, fullOrderHistoryCheckedAt: true },
+    }),
+  ]);
+  const idag = dayInTz(new Date(), timezone);
+  let full = s?.fullOrderHistory ?? null;
+  const gammal = !s?.fullOrderHistoryCheckedAt || Date.now() - s.fullOrderHistoryCheckedAt.getTime() > SOND_MS;
+  if (opts.admin && s && gammal && !harAllaOrdrar(scope)) {
+    let p = sondPagar.get(shop);
+    if (!p) {
+      p = harFullOrderhistorik(opts.admin, idag).finally(() => sondPagar.delete(shop));
+      sondPagar.set(shop, p);
+    }
+    try {
+      full = await p;
+      await prisma.shopSettings.updateMany({
+        where: { shop },
+        data: { fullOrderHistory: full, fullOrderHistoryCheckedAt: new Date() },
+      });
+    } catch (e) {
+      console.error(`Historiksonden för ${shop} misslyckades — behåller tidigare svar:`, (e as Error).message);
+    }
+  }
+  return historikHorisont({ scope, fullHistory: full, today: idag });
+}
+
+/**
+ * Exporterar ordrar för fönstret och skriver om dagsraderna.
+ *
+ * ⚠ Fönstret kläms mot butikens orderhorisont FÖRST. Utan read_all_orders
+ * svarar Shopify tomt för ordrar äldre än 60 dagar, och `parseOrderLines`
+ * startar varje dag på noll — så en 90-dagarsvy, jämförelseperioden och
+ * LTV-bakfyllnaden skrev nollor över riktiga gamla dagar medan deras
+ * annonskostnad låg kvar. Klämningen här täcker alla anropare på en gång.
+ * Ligger hela fönstret före horisonten skrivs INGENTING: ingen DailyPnl,
+ * ingen HourlyPnl raderas, ingen KundOrder.
+ */
 export async function refreshDaily(
   admin: any,
   shop: string,
@@ -49,7 +109,11 @@ export async function refreshDaily(
 ): Promise<void> {
   /* Kundfältet följer bara med när butiken faktiskt gett read_customers —
      annars nekar Shopify hela frågan och dagsraderna slutar uppdateras. */
-  const kund = harKundScope(await butikensScope(shop));
+  const scope = await butikensScope(shop);
+  const kund = harKundScope(scope);
+  const fonster = klampaFonster(from, to, await butikensHorisont(shop, timezone, { admin, scope }));
+  if (!fonster) return;
+  [from, to] = fonster;
   const data = await fetchOrderData(admin, from, to, timezone, shop, { kund });
   const now = new Date();
   /* En transaktion per dag vore 90 rundresor; en enda med alla upserts är en. */
@@ -158,6 +222,16 @@ export interface DailyReadResult {
    */
   daysWithoutMarkets: number;
   /**
+   * Dagar som ligger utanför Shopifys 60-dagarsgräns och saknar riktiga
+   * siffror: äldre än horisonten utan rad, eller en rad som hämtades när
+   * dagen redan var osynlig (tom av konstruktion). De är varken `missingDays`
+   * (går inte att hämta — de hade exporterats på varje sidladdning) eller
+   * `sales` (en nolla som betyder "ingen åtkomst" är ingen försäljning).
+   * Anroparen ska ta bort samma dagar ur annonskostnaden. Alltid tom när
+   * `horisont` inte skickades in.
+   */
+  outsideHistory: string[];
+  /**
    * Omsättning (totalSales) per marknad i intervallet, ur dagsradernas
    * uppdelning. Dagar utan uppdelning hamnar under "". Underlaget för
    * avgifter per marknad i räknemotorn.
@@ -250,6 +324,14 @@ export interface ReadDailyOpts {
    * gruppsumman sätter den; andra läsare får den gamla, sammanslagna listan.
    */
   perMarknad?: boolean;
+  /**
+   * Butikens orderhorisont (`butikensHorisont`). Satt = dagar utanför
+   * Shopifys 60 dygn sorteras till `outsideHistory`. Null = full historik.
+   * Utelämnad = ingen sortering (läsare som inte räknar vinst på perioden).
+   */
+  horisont?: string | null;
+  /** Butikens tidszon — avgör om en rads hämtning såg hela dagen. */
+  tidszon?: string;
 }
 
 const tomDel = (): MarknadsDel => ({
@@ -264,16 +346,39 @@ export async function readDaily(
   opts: ReadDailyOpts = {},
 ): Promise<DailyReadResult> {
   const market = marknadskod(opts.market);
-  const rows = await prisma.dailyPnl.findMany({
+  const allaRader = await prisma.dailyPnl.findMany({
     where: { shop, day: { gte: from, lte: to } },
     orderBy: { day: "asc" },
   });
-  const have = new Set(rows.map((r) => r.day));
+  /* Horisonten: `klassaDag` avgör per dag. Utan horisont (undefined) är
+     allt som förut — ingen dag är utanför. */
+  const sortera = opts.horisont !== undefined;
+  const horisont = opts.horisont ?? null;
+  const tz = opts.tidszon ?? "UTC";
+  const outsideHistory: string[] = [];
+  const rows = sortera
+    ? allaRader.filter((r) => {
+        if (klassaDag(r.day, r, horisont, tz) !== "outsideHistory") return true;
+        outsideHistory.push(r.day);
+        return false;
+      })
+    : allaRader;
+  const have = new Set(allaRader.map((r) => r.day));
   const missingDays: string[] = [];
-  for (let d = from; d <= to; d = shiftIso(d, 1)) if (!have.has(d)) missingDays.push(d);
+  for (let d = from; d <= to; d = shiftIso(d, 1)) {
+    if (have.has(d)) continue;
+    if (sortera && klassaDag(d, null, horisont, tz) === "outsideHistory") outsideHistory.push(d);
+    else missingDays.push(d);
+  }
 
+  /* Äldsta hämtning bara bland dagar som GÅR att hämta om. En riktig rad
+     före horisonten skrivs aldrig om — räknades den med här hade panelens
+     6-timmarsomexport startat på varje besök, och klämts bort till ingenting. */
   let oldest: Date | null = null;
-  for (const r of rows) if (!oldest || r.fetchedAt < oldest) oldest = r.fetchedAt;
+  for (const r of rows) {
+    if (horisont != null && r.day < horisont) continue;
+    if (!oldest || r.fetchedAt < oldest) oldest = r.fetchedAt;
+  }
 
   const uppdelning = (r: (typeof rows)[number]) =>
     (r.markets as unknown as Record<string, MarknadsDel> | null) ?? null;
@@ -293,7 +398,10 @@ export async function readDaily(
     for (const r of rows) {
       const per = uppdelning(r);
       if (per == null) {
-        if (Date.now() - r.fetchedAt.getTime() > NYSS_MS) missingDays.push(r.day);
+        /* Före horisonten går uppdelningen aldrig att hämta — en omexport
+           kläms bort till ingenting. Dagen har ingen data för marknaden. */
+        if (sortera && horisont != null && r.day < horisont) outsideHistory.push(r.day);
+        else if (Date.now() - r.fetchedAt.getTime() > NYSS_MS) missingDays.push(r.day);
         else utanUppdelning++;
         continue;
       }
@@ -302,10 +410,12 @@ export async function readDaily(
       products.push(...del.products.map((p) => ({ ...p, market })));
     }
     missingDays.sort();
+    outsideHistory.sort();
     return {
       sales,
       products: mergeProductRows(products),
       missingDays,
+      outsideHistory,
       oldestFetchedAt: oldest,
       lastDayFetchedAt: rows.length ? rows[rows.length - 1].fetchedAt : null,
       daysWithoutMarkets: utanUppdelning,
@@ -349,6 +459,7 @@ export async function readDaily(
     })),
     products: mergeProductRows(products),
     missingDays,
+    outsideHistory: outsideHistory.sort(),
     oldestFetchedAt: oldest,
     lastDayFetchedAt: rows.length ? rows[rows.length - 1].fetchedAt : null,
     daysWithoutMarkets: 0,

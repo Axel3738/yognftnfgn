@@ -19,7 +19,7 @@
 import prisma from "../db.server";
 import { compute, type SalesDay, type SpendDay } from "./pnl.server";
 import { dailyRates, latestRateDay, rateOn, type DailyRates } from "./fx.server";
-import { fyllButiksnamn, readDaily, refreshShopDaily, shiftIso } from "./daily.server";
+import { butikensHorisont, fyllButiksnamn, readDaily, refreshShopDaily, shiftIso } from "./daily.server";
 import { getSpend } from "./meta.server";
 import { hamtaKonton, konfigurationer } from "./meta-konton.server";
 import { dayInTz } from "./shopify-data.server";
@@ -50,6 +50,12 @@ export interface GroupResult {
    *  Facebook där, innan dess annonskostnad försvinner ur summan. Bara den
    *  butik man står i visar annars sin egen varning. */
   notes: { shop: string; name: string | null; text: string }[];
+  /**
+   * Butiker där dagar utanför Shopifys 60-dagarsgräns lämnats utanför summan
+   * (försäljning OCH annonskostnad). Egen lista, inte `notes`: det är inget
+   * ägaren behöver göra, bara något summan inte kan innehålla.
+   */
+  historyNotes: { shop: string; name: string | null; text: string }[];
   /**
    * Senaste ECB-dag vars kurs användes (den äldsta bland butikerna, så att
    * datumet aldrig lovar mer än vad summan håller). Null när ingen butik
@@ -147,17 +153,22 @@ async function summeraButik(
   visaValuta: string,
   T: ReturnType<typeof t>,
 ): Promise<
-  | { ok: true; shop: string; currency: string; totals: GroupTotals; fxDate: string | null; note?: string }
+  | { ok: true; shop: string; currency: string; totals: GroupTotals; fxDate: string | null; note?: string; historyNote?: string }
   | { ok: false; shop: string; reason: string }
 > {
   /* "Idag" i BUTIKENS tidszon. UTC-dagen släpar efter mellan midnatt och
      02:00 svensk tid, vilket gjorde både färskhetsfönstret och Metas
      dagsklassning en dag för generösa. */
   const idag = dayInTz(new Date(), m.timezone ?? "UTC");
+  /* Medlemmens EGEN orderhorisont — butikerna kan ha olika (en kan ha full
+     historik). Bara det sparade svaret: summan väntar inte på en sond. */
+  const tidszon = m.timezone ?? "UTC";
+  const horisont = await butikensHorisont(m.shop, tidszon);
   /* perMarknad: COGS räknas med marknadens egen kostnad per rad även i
      summan — en USA-order ska inte räknas på svensk frakt bara för att den
      summeras ihop med andra butiker. */
-  let daily = await readDaily(m.shop, from, to, { perMarknad: true });
+  const las = () => readDaily(m.shop, from, to, { perMarknad: true, horisont, tidszon });
+  let daily = await las();
   if (daily.missingDays.length) {
     const first = daily.missingDays[0];
     const last = daily.missingDays[daily.missingDays.length - 1];
@@ -171,7 +182,7 @@ async function summeraButik(
     let hamtningOk = true;
     if (spann <= 7) {
       hamtningOk = await refreshShopDaily(m.shop, first, last, { force: true });
-      if (hamtningOk) daily = await readDaily(m.shop, from, to, { perMarknad: true });
+      if (hamtningOk) daily = await las();
     } else {
       /* Lång lucka: sondera nyckeln synkront med luckans sista dagar
          (pagineringsvägen, ett par sekunder) innan resten lovas bort till
@@ -181,7 +192,7 @@ async function summeraButik(
       hamtningOk = await refreshShopDaily(m.shop, probeFrom, last, { force: true });
       if (hamtningOk) {
         void refreshShopDaily(m.shop, first, last);
-        daily = await readDaily(m.shop, from, to, { perMarknad: true });
+        daily = await las();
       }
     }
     /* Skillnaden syns i UI:t: "hämtas just nu" är sant bara när en hämtning
@@ -208,7 +219,7 @@ async function summeraButik(
       const senasteFrom = from > shiftIso(to, -2) ? from : shiftIso(to, -2);
       const ok = await refreshShopDaily(m.shop, senasteFrom, to, { force: true });
       if (ok) {
-        daily = await readDaily(m.shop, from, to, { perMarknad: true });
+        daily = await las();
       } else {
         /* Misslyckad uppdatering av den dag som fortfarande rör sig får INTE
            serveras tyst. Raden som ligger kvar är antingen morgongammal eller
@@ -303,13 +314,22 @@ async function summeraButik(
         : T.group.loginExpiresSoon(dagar)
       : undefined;
 
+  /* Dagar utanför orderhistoriken tas bort ur annonskostnaden också — annars
+     delas hela periodens spend med den del av omsättningen som går att se,
+     och butiken drar ner summan med en förlust som inte finns. */
+  const utanfor = new Set(daily.outsideHistory);
+  const spendDagar = utanfor.size ? spendData.days.filter((d) => !utanfor.has(d.day)) : spendData.days;
+  const historyNote = daily.outsideHistory.length
+    ? T.group.outsideHistory(daily.outsideHistory.length, horisont ?? daily.outsideHistory[daily.outsideHistory.length - 1])
+    : undefined;
+
   const r = compute({
     from, to,
     spendReliable: Boolean(!metaKonton.length || !spendData.error),
     fixedMonthlyTotal: fixedRows.reduce((a, x) => a + Number(x.monthlyAmount), 0),
     sales: daily.sales,
     sessions: [],
-    spend: spendData.days,
+    spend: spendDagar,
     products: daily.products,
     costChanges: costChanges.map((c) => ({
       productGid: c.productGid,
@@ -330,14 +350,14 @@ async function summeraButik(
     ordersByMarket: daily.ordersByMarket,
   });
 
-  const totals = convertTotalsPerDay(r.totals, daily.sales, spendData.days, kurser, from, to);
+  const totals = convertTotalsPerDay(r.totals, daily.sales, spendDagar, kurser, from, to);
   if (!totals) {
     /* En dag utan kurs inom tio dagar bakåt: kartan täcker inte intervallet
        (ett trunkerat svar, eller nödfallscachen räckte inte). Gissa inte. */
     return { ok: false, shop: m.shop, reason: T.group.fxUnavailable(m.currency, visaValuta) };
   }
   const fxDate = m.currency === visaValuta ? null : (latestRateDay(kurser, to) ?? null);
-  return { ok: true, shop: m.shop, currency: m.currency, totals, fxDate, note };
+  return { ok: true, shop: m.shop, currency: m.currency, totals, fxDate, note, historyNote };
 }
 
 export async function summeraGrupp(
@@ -396,6 +416,7 @@ export async function summeraGrupp(
   const rows: GroupResult["rows"] = [];
   const missing: GroupResult["missing"] = [];
   const notes: GroupResult["notes"] = [];
+  const historyNotes: GroupResult["historyNotes"] = [];
   let fxDate: string | null = null;
 
   for (const u of utfall) {
@@ -404,6 +425,7 @@ export async function summeraGrupp(
       continue;
     }
     if (u.note) notes.push({ shop: u.shop, name: namnFor(u.shop), text: u.note });
+    if (u.historyNote) historyNotes.push({ shop: u.shop, name: namnFor(u.shop), text: u.historyNote });
     /* Redan omräknat per dag till betraktarens valuta i summeraButik. */
     const tt = u.totals;
     totals.totalSales += tt.totalSales;
@@ -426,5 +448,5 @@ export async function summeraGrupp(
     });
   }
 
-  return { currency: visaValuta, totals, rows, missing, notes, fxDate };
+  return { currency: visaValuta, totals, rows, missing, notes, historyNotes, fxDate };
 }

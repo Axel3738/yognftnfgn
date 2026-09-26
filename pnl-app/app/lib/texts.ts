@@ -66,6 +66,10 @@ const en = {
         : known > 0
           ? `Payment fees ${fees} (${pct} %) — actual for ${known} of ${days} days, the rest at your settings rate.`
           : `Payment fees ${fees} (${pct} %) — from your settings rate; actual fees are read as new days are fetched.`,
+    /* Shopifys 60-dagarsgräns. Dagarna är UTE ur perioden, annonskostnaden
+       med — annars delas hela periodens spend med halva omsättningen. */
+    outsideHistory: (n: number, date: string) =>
+      `Shopify only gives apps the last 60 days of orders. ${n} ${n === 1 ? "day" : "days"} before ${date} ${n === 1 ? "has" : "have"} no order data and ${n === 1 ? "is" : "are"} left out of this period, ad spend included.`,
     market: {
       label: "Market",
       all: "All markets",
@@ -816,6 +820,8 @@ const en = {
       days <= 0
         ? "the Facebook login expires today — open that store's Settings and log in again"
         : `the Facebook login expires in ${days} ${days === 1 ? "day" : "days"} — open that store's Settings and log in again`,
+    outsideHistory: (n: number, date: string) =>
+      `Shopify only gives apps 60 days of orders: ${n} ${n === 1 ? "day" : "days"} before ${date} ${n === 1 ? "is" : "are"} left out of this store's figures, ad spend included`,
     notesTitle: "Needs attention in another store",
     fxUnavailable: (from: string, to: string) => `exchange rate ${from}→${to} could not be fetched`,
     fxNote: (day: string) =>
@@ -980,6 +986,8 @@ const sv: Texts = {
         : known > 0
           ? `Betalavgifter ${fees} (${pct} %) — faktiska för ${known} av ${days} dagar, resten med satsen i Inställningar.`
           : `Betalavgifter ${fees} (${pct} %) — enligt satsen i Inställningar; faktiska avgifter läses in när nya dagar hämtas.`,
+    outsideHistory: (n: number, date: string) =>
+      `Shopify ger appar bara de senaste 60 dagarnas ordrar. ${n} ${n === 1 ? "dag" : "dagar"} före ${date} saknar orderdata och är utelämnade ur perioden, annonskostnaden också.`,
     market: {
       label: "Marknad",
       all: "Alla marknader",
@@ -1730,6 +1738,8 @@ const sv: Texts = {
       days <= 0
         ? "Facebook-inloggningen går ut idag — öppna den butikens Inställningar och logga in igen"
         : `Facebook-inloggningen går ut om ${days} ${days === 1 ? "dag" : "dagar"} — öppna den butikens Inställningar och logga in igen`,
+    outsideHistory: (n: number, date: string) =>
+      `Shopify ger appar bara 60 dagars ordrar: ${n} ${n === 1 ? "dag" : "dagar"} före ${date} är utelämnade ur butikens siffror, annonskostnaden också`,
     notesTitle: "Behöver göras i en annan butik",
     fxUnavailable: (from: string, to: string) => `växelkurs ${from}→${to} kunde inte hämtas`,
     fxNote: (day: string) =>

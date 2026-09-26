@@ -33,6 +33,7 @@ import { compute, rangeWindow, slaIhopMarknader } from "../lib/pnl.server";
 import { applyCurrentCosts, dayInTz, fetchShopInfo, loadCatalog } from "../lib/shopify-data.server";
 import {
   bakgrundPagar,
+  butikensHorisont,
   farStartaBakgrund,
   kandaMarknader,
   markeraPagaende,
@@ -43,6 +44,7 @@ import {
   shiftIso,
 } from "../lib/daily.server";
 import { hemlandAv, marknadskod, marknadsnamn, stadaAvgifter } from "../lib/marknad";
+import { klampaFonster } from "../lib/historik";
 import { getSpend, TIMFONSTER_DAGAR, timvisSpend } from "../lib/meta.server";
 import { hamtaKonton, konfigurationer } from "../lib/meta-konton.server";
 import { dagarKvar, VARNA_DAGAR } from "../lib/meta-login";
@@ -100,7 +102,15 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
      och kampanjerna märkta Norge. Tom = hela butiken, där COGS ändå räknas
      per marknad när uppdelningen finns (perMarknad). */
   const market = marknadskod(url.searchParams.get("market"));
-  const lasDagar = (f: string, tt: string) => readDaily(shop, f, tt, { market, perMarknad: true });
+  /* Orderhorisonten: utan read_all_orders ser appen bara 60 dagars ordrar.
+     Dagar före den hamnar i `outsideHistory` — aldrig i `missingDays` (de
+     hade exporterats på varje besök, till ingen nytta) och aldrig som
+     nollor i försäljningen. Bara det sparade sondsvaret — sonden körs i
+     refreshDaily, som har admin ändå. Samma horisont gäller hela laddningen,
+     så huvudperiod och jämförelse sorteras likadant. */
+  const horisont = await butikensHorisont(shop, timezone);
+  const lasDagar = (f: string, tt: string) =>
+    readDaily(shop, f, tt, { market, perMarknad: true, horisont, tidszon: timezone });
 
   /* Dagslagret: intervallet läses som färdiga dagsrader ur databasen —
      millisekunder oavsett datumval, det är hela snabbhetsmodellen. Bara dagar
@@ -149,8 +159,12 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
     }
   } else if (forAldrad && farStartaBakgrund(shop)) {
     refreshBg(from > shiftIso(today, -2) ? from : shiftIso(today, -2), today);
-  } else if (Date.now() - oldestAt > 6 * 60 * 60 * 1000 && farStartaBakgrund(shop)) {
-    refreshBg(from, to);
+  } else if (daily.oldestFetchedAt && Date.now() - oldestAt > 6 * 60 * 60 * 1000 && farStartaBakgrund(shop)) {
+    /* Bara dagarna innanför horisonten — resten skulle refreshDaily ändå
+       klämma bort, och `refreshing` hade fått panelen att polla i onödan.
+       `oldestFetchedAt` är null när inga dagar går att hämta om. */
+    const fonster = klampaFonster(from, to, horisont);
+    if (fonster) refreshBg(fonster[0], fonster[1]);
   }
   /* Allt nedan är oberoende av varandra — sekventiellt blev det fyra
      väntningar i rad där en räcker. */
@@ -211,6 +225,15 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
     settings.currency,
     { tokenExpired, market },
   );
+  /* Dagar utan orderdata (utanför Shopifys 60 dygn) tas bort ur
+     annonskostnaden också. Försäljningen saknar dem redan, och compute()
+     räknar de fasta kostnaderna per säljdag — så intäkt, annonser och fasta
+     täcker exakt samma dagar. Annars delas hela periodens spend med halva
+     omsättningen: ett lönsamt kvartal ser ut som förlust. */
+  const utanforHistorik = new Set(daily.outsideHistory);
+  const spendDagar = utanforHistorik.size
+    ? spend.days.filter((d) => !utanforHistorik.has(d.day))
+    : spend.days;
 
   const metaConfigured = metaKonton.length > 0;
   /* Under ett marknadsfilter måste minst en kampanj vara märkt med landet —
@@ -274,7 +297,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
     fixedMonthlyTotal,
     sales,
     sessions,
-    spend: spend.days,
+    spend: spendDagar,
     products,
     costChanges: costChangeRows,
     costTiers,
@@ -295,6 +318,10 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
     const prevTo = shiftIso(from, -1);
     const prevFrom = shiftIso(prevTo, -(dayCount - 1));
     const prevData = await lasDagar(prevFrom, prevTo);
+    /* En jämförelseperiod med dagar utan orderdata ger inga pilar alls. En
+       ▼ mot en period vars omsättning är halv (eller noll) är en lögn åt
+       andra hållet — och de dagarna ska heller aldrig hämtas i bakgrunden. */
+    if (prevData.outsideHistory.length) throw new Error("jämförelsen ligger utanför orderhistoriken");
     /* Bara databasen — saknas jämförelsedagar fylls de i bakgrunden och syns
        vid nästa besök. De får aldrig kosta en synlig sekund. */
     if (prevData.missingDays.length) {
@@ -385,6 +412,11 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
     /* Dagar i fönstret som saknar uppdelning per marknad (landet nekades av
        Shopify). Bara under filter — då är marknadens siffror för låga. */
     daysWithoutMarkets: daily.daysWithoutMarkets,
+    /* Dagar utelämnade för att Shopify inte visar så gamla ordrar. `fran` är
+       horisonten — första dagen med orderdata. */
+    outsideHistory: daily.outsideHistory.length && horisont
+      ? { dagar: daily.outsideHistory.length, fran: horisont }
+      : null,
     currency: settings.currency,
     /* Dagar kvar på Meta-token (null = okänd). Visas som varning i god tid —
        en token som dör tyst ger saknad annonskostnad och en vinst som ser
@@ -434,6 +466,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
       market: "",
       marknader: [] as string[],
       daysWithoutMarkets: 0,
+      outsideHistory: null as { dagar: number; fran: string } | null,
       currency: "SEK",
       metaTokenDagar: null as number | null,
       spendError: null as string | null,
@@ -1142,7 +1175,7 @@ function SetupChecklist({
 }
 
 function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
-  const { fatal, result, timvis, rangeKey, idag, market, marknader, daysWithoutMarkets, currency, spendError, spendCurrencyMismatch, spendConverted, targetMargin, tariffPerOrder, comparison, setup, dataAgeMin, refreshing, groupSize, group, metaTokenDagar, tips, monthlyGoal, estimate } = d;
+  const { fatal, result, timvis, rangeKey, idag, market, marknader, daysWithoutMarkets, outsideHistory, currency, spendError, spendCurrencyMismatch, spendConverted, targetMargin, tariffPerOrder, comparison, setup, dataAgeMin, refreshing, groupSize, group, metaTokenDagar, tips, monthlyGoal, estimate } = d;
   const [params, setParams] = useSearchParams();
   const revalidator = useRevalidator();
   const T = t(lang);
@@ -1456,6 +1489,16 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
                         </Banner>
                       ) : null}
 
+                      {group.historyNotes?.length ? (
+                        <Banner tone="info">
+                          {group.historyNotes.map((n) => (
+                            <p key={n.shop}>
+                              {n.name || n.shop.replace(/\.myshopify\.com$/, "")}: {n.text}
+                            </p>
+                          ))}
+                        </Banner>
+                      ) : null}
+
                       {group.missing.length ? (
                         <Banner tone="warning" title={T.dashboard.missingStores(group.missing.length)}>
                           {group.missing.map((m) => (
@@ -1487,6 +1530,13 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
 
             {market && daysWithoutMarkets > 0 ? (
               <Banner tone="warning">{T.dashboard.market.daysWithout(daysWithoutMarkets)}</Banner>
+            ) : null}
+
+            {/* Shopifys 60-dagarsgräns: dagarna är utelämnade ur perioden,
+                annonskostnaden med. Sägs rakt ut — annars ser en 90-dagarsvy
+                ut att täcka 90 dagar. */}
+            {outsideHistory ? (
+              <Banner tone="warning">{T.dashboard.outsideHistory(outsideHistory.dagar, outsideHistory.fran)}</Banner>
             ) : null}
 
             {setup && !setup.dismissed && !setupAllDone ? (

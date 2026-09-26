@@ -12,17 +12,23 @@
  */
 
 import type { AdminApiContext } from "@shopify/shopify-app-remix/server";
-import type { MarknadsDel, ProductRow, SalesDay } from "./pnl.server";
-import { marknadskod } from "./marknad";
+import type { ProductRow } from "./pnl.server";
 import { hourInTz } from "./timmar";
+import {
+  dayInTz,
+  mergeProductRows,
+  num,
+  paginera,
+  parseOrderLines,
+  summeraAvgifter,
+  type KundOrderRa,
+  type OrderData,
+} from "./orderrader";
 
-export { hourInTz };
-
-const num = (v: unknown): number => {
-  if (v == null || v === "") return 0;
-  const n = parseFloat(String(v).replace(",", "."));
-  return Number.isNaN(n) ? 0 : n;
-};
+/* Parsern och sidbläddringen bor i orderrader.ts (testbar utan databas och
+   SDK). De exporteras vidare härifrån så att ingen anropare behövde ändras. */
+export { dayInTz, hourInTz, mergeProductRows, paginera, parseOrderLines, summeraAvgifter };
+export type { KundOrderRa, OrderData };
 
 export interface ShopInfo {
   today: string; // YYYY-MM-DD i butikens tidszon
@@ -39,76 +45,11 @@ export async function fetchShopInfo(admin: AdminApiContext): Promise<ShopInfo> {
   return { today: dayInTz(new Date(), timezone), timezone, currency };
 }
 
-export const dayInTz = (d: Date, tz: string): string =>
-  // sv-SE ger ISO-format (ÅÅÅÅ-MM-DD) direkt.
-  new Intl.DateTimeFormat("sv-SE", { timeZone: tz, dateStyle: "short" }).format(d);
-
 const shiftIso = (iso: string, days: number): string => {
   const d = new Date(iso + "T12:00:00Z");
   d.setUTCDate(d.getUTCDate() + days);
   return d.toISOString().slice(0, 10);
 };
-
-interface OrderNode {
-  createdAt: string;
-  cancelledAt: string | null;
-  test: boolean;
-  totalPriceSet: { shopMoney: { amount: string } };
-  subtotalPriceSet: { shopMoney: { amount: string } };
-  totalDiscountsSet: { shopMoney: { amount: string } };
-  totalShippingPriceSet: { shopMoney: { amount: string } };
-  totalRefundedSet: { shopMoney: { amount: string } };
-  lineItems: {
-    nodes: {
-      title: string;
-      variantTitle: string | null;
-      quantity: number;
-      discountedTotalSet: { shopMoney: { amount: string } };
-      product: { id: string } | null;
-      variant: { id: string } | null;
-    }[];
-  };
-}
-
-/**
- * En order med sin kund (som GID, hashas i kundorder.server innan lagring)
- * och sina rader med nuvarande inköpspris — underlaget för kundvärdet.
- * Fylls BARA när frågan ställdes med kund (scopen read_customers), annars tom.
- */
-export interface KundOrderRa {
-  orderId: string;
-  customerGid: string | null;
-  dag: string;
-  /** Subtotal − återbetalning, som SalesDay.netSales. */
-  netto: number;
-  /** Totalpris efter återbetalning — det avgiften räknas på. */
-  totalPrice: number;
-  lines: { variantGid: string | null; quantity: number; unitCost: number | null }[];
-}
-
-export interface OrderData {
-  sales: SalesDay[];
-  products: ProductRow[];
-  /** Mixen per dag — grunden för dagsraderna i DailyPnl. */
-  productsByDay: Record<string, ProductRow[]>;
-  /**
-   * Samma dagar uppdelade per marknad (landskod ur leveransadressen):
-   * { "2026-09-17": { "SE": {...}, "NO": {...} } }. Ordrar utan land ligger
-   * under "". Null när landet inte gick att läsa (fältet nekades) — då
-   * skrivs ingen uppdelning, hellre än en där allt ligger under "okänt".
-   */
-  marketsByDay: Record<string, Record<string, MarknadsDel>> | null;
-  /**
-   * Samma dagar uppdelade per TIMME på dygnet (0–23) i butikens tidszon, och
-   * per marknad inom timmen: { "2026-09-17": { "14": { "": {...}, "SE": {...} } } }.
-   * Marknaden "" är alltid hela timmen — den finns även när landet är okänt.
-   * Aldrig null: timmen kommer ur createdAt och kan alltid räknas ut.
-   * Bara skalärer, ingen produktmix — se HourlyPnl i schemat.
-   */
-  hoursByDay: Record<string, Record<string, Record<string, Omit<MarknadsDel, "products">>>>;
-  /** Per order med kund — tom när frågan ställdes utan kundfältet. */
-  kundOrdrar: KundOrderRa[];
-}
 
 /**
  * Ordrarna hämtas via Shopifys bulk-export (bulkOperationRunQuery) — den
@@ -173,10 +114,25 @@ async function doFetchOrderData(
   for (let forsok = 0; forsok < 3 && jsonl == null; forsok++) {
     try {
       const falt = { kund, land: medLand, avgifter: medAvgifter };
-      jsonl =
-        dayCount <= 7
-          ? await runOrdersPaginated(admin, shiftIso(from, -1), shiftIso(to, 1), falt)
-          : await runOrdersBulk(admin, shiftIso(from, -1), shiftIso(to, 1), falt);
+      if (dayCount <= 7) {
+        const sidor = await runOrdersPaginated(admin, shiftIso(from, -1), shiftIso(to, 1), falt);
+        /* Sidtaket nått (eller en order med fler rader än frågan tog): det
+           halva resultatet får ALDRIG skrivas — det var så en butik med 150
+           ordrar/dag tyst tappade en fjärdedel av 7d-vyns ordrar medan
+           annonskostnaden var komplett. Samma fönster tas om via bulk-
+           exporten, som saknar tak. Taket i sig kastar inte: den synkrona
+           fyllningen awaitas i panelens loader, och ett kast där hade gett
+           varje högvolymsbutik felsidan varje gång. Bara om bulk-exporten
+           själv misslyckas kastas felet vidare. */
+        jsonl = sidor.trunkerad
+          ? await runOrdersBulk(admin, shiftIso(from, -1), shiftIso(to, 1), falt)
+          : sidor.lines;
+        if (sidor.trunkerad) {
+          console.log(`Sidtaket nåddes för ${shopKey || "butiken"} (${from}–${to}) — hämtade via bulk-exporten.`);
+        }
+      } else {
+        jsonl = await runOrdersBulk(admin, shiftIso(from, -1), shiftIso(to, 1), falt);
+      }
     } catch (e) {
       if (medAvgifter && arAvgiftNekad(e)) {
         console.error(`Transaktionsavgifterna nekades för ${shopKey || "butiken"} — hämtar utan:`, (e as Error).message);
@@ -232,255 +188,7 @@ const arAdressNekad = (e: unknown) =>
 /** Shopify nekade eller känner inte fältet `fees` på transaktionerna. */
 const arAvgiftNekad = (e: unknown) => /\bfees\b|transactions|TransactionFee/i.test(String((e as Error)?.message ?? e));
 
-/** Bygger dags- och produktaggregat ur JSONL-rader (ordrar + radartiklar). */
-function parseOrderLines(
-  jsonl: any[],
-  from: string,
-  to: string,
-  timezone: string,
-  medLand = true,
-  medAvgifter = true,
-): OrderData {
-  const salesBy = new Map<string, SalesDay>();
-  for (let d = from; d <= to; d = shiftIso(d, 1)) {
-    salesBy.set(d, {
-      day: d, orders: 0, grossSales: 0, discounts: 0, returns: 0,
-      netSales: 0, totalSales: 0, shippingCharges: 0,
-      /* Noll när avgifterna hämtas (en dag utan ordrar har noll avgift);
-         null när fältet nekades — då ska motorn räkna med satsen. */
-      fees: medAvgifter ? 0 : null,
-    });
-  }
 
-  interface Agg { productGid: string; variantGid: string | null; title: string;
-    variantTitle: string | null; units: number; netSales: number; lines: Record<string, number>; }
-  /* Ordrar som räknas, med sin dag — radrader vars förälder skippats
-     (avbruten/test/utanför fönstret) ska inte in i mixen. */
-  const counted = new Map<string, string>();
-  /* Timmen på dygnet per order. Ligger UTANFÖR landsspärren med flit:
-     timmen kommer ur createdAt och har inget med leveransadressen att göra,
-     så en butik utan adressbehörighet ska ändå få sin timgraf. */
-  const timmePerOrder = new Map<string, number>();
-  const salesByTimme = new Map<string, Map<number, Map<string, SalesDay>>>();
-  const timHink = (day: string, timme: number, land: string): SalesDay => {
-    const perTimme = salesByTimme.get(day) ?? new Map<number, Map<string, SalesDay>>();
-    salesByTimme.set(day, perTimme);
-    const perLand = perTimme.get(timme) ?? new Map<string, SalesDay>();
-    perTimme.set(timme, perLand);
-    const hink = perLand.get(land) ?? {
-      day, orders: 0, grossSales: 0, discounts: 0, returns: 0,
-      netSales: 0, totalSales: 0, shippingCharges: 0, fees: medAvgifter ? 0 : null,
-    };
-    perLand.set(land, hink);
-    return hink;
-  };
-  const productByDay = new Map<string, Map<string, Agg>>();
-  /* Per marknad: samma aggregat en gång till, nyckel dag → land. Landet är
-     leveransadressens; saknas den (digital vara, upphämtning) tas fakturans.
-     Ordrar utan något land alls hamnar under "". */
-  const landPerOrder = new Map<string, string>();
-  const salesByMarknad = new Map<string, Map<string, SalesDay>>();
-  const productByDayMarknad = new Map<string, Map<string, Map<string, Agg>>>();
-  const marknadsHink = (day: string, land: string): SalesDay => {
-    const perLand = salesByMarknad.get(day) ?? new Map<string, SalesDay>();
-    salesByMarknad.set(day, perLand);
-    const hink = perLand.get(land) ?? {
-      day, orders: 0, grossSales: 0, discounts: 0, returns: 0,
-      netSales: 0, totalSales: 0, shippingCharges: 0, fees: medAvgifter ? 0 : null,
-    };
-    perLand.set(land, hink);
-    return hink;
-  };
-  const laggPaMix = (dayMap: Map<string, Agg>, key: string, line: any) => {
-    const agg = dayMap.get(key) ?? {
-      productGid: line.product?.id ?? "",
-      variantGid: line.variant?.id ?? null,
-      title: line.title,
-      variantTitle: line.variantTitle === "Default Title" ? null : line.variantTitle,
-      units: 0,
-      netSales: 0,
-      lines: {} as Record<string, number>,
-    };
-    agg.units += line.quantity ?? 0;
-    /* Hur många stycken låg i just den här raden? Det avgör flerpacks-
-       kostnaden — tre i en rad delar frakten, tre i tre ordrar gör det inte. */
-    if (line.quantity > 0) agg.lines[String(line.quantity)] = (agg.lines[String(line.quantity)] ?? 0) + 1;
-    agg.netSales += num(line.discountedTotalSet?.shopMoney?.amount);
-    dayMap.set(key, agg);
-  };
-  /* Per order, för kundvärdet. Fylls för alla räknade ordrar; anroparen
-     avgör om kundfältet fanns med i frågan (customer saknas ⇒ gästorder). */
-  const kundOrdrar = new Map<string, KundOrderRa>();
-
-  for (const line of jsonl) {
-    if (!line.__parentId) {
-      // Orderrad
-      if (line.cancelledAt || line.test) continue;
-      const day = dayInTz(new Date(line.createdAt), timezone);
-      const bucket = salesBy.get(day);
-      if (!bucket) continue;
-      counted.set(line.id, day);
-
-      const subtotal = num(line.subtotalPriceSet?.shopMoney?.amount);
-      const discounts = num(line.totalDiscountsSet?.shopMoney?.amount);
-      const refunded = num(line.totalRefundedSet?.shopMoney?.amount);
-
-      kundOrdrar.set(line.id, {
-        orderId: String(line.id),
-        customerGid: line.customer?.id ? String(line.customer.id) : null,
-        dag: day,
-        netto: subtotal - refunded,
-        totalPrice: num(line.totalPriceSet?.shopMoney?.amount) - refunded,
-        lines: [],
-      });
-
-      const total = num(line.totalPriceSet?.shopMoney?.amount) - refunded;
-      const frakt = num(line.totalShippingPriceSet?.shopMoney?.amount);
-      /* Orderns faktiska avgifter: summan av fees på alla lyckade
-         transaktioner (försäljning, capture; en återbetalning kan bära en
-         negativ avgift när Shopify återför den). */
-      const avgift = medAvgifter ? summeraAvgifter(line.transactions) : 0;
-      const fyll = (b: SalesDay) => {
-        b.orders += 1;
-        b.grossSales += subtotal + discounts;
-        b.discounts += -discounts;
-        b.returns += -refunded;
-        b.netSales += subtotal - refunded;
-        b.totalSales += total;
-        b.shippingCharges += frakt;
-        if (b.fees != null) b.fees += avgift;
-      };
-      fyll(bucket);
-      const land = medLand
-        ? marknadskod(line.shippingAddress?.countryCodeV2 ?? line.billingAddress?.countryCodeV2)
-        : "";
-      if (medLand) {
-        landPerOrder.set(line.id, land);
-        fyll(marknadsHink(day, land));
-      }
-      /* Samma `fyll` som dagen och marknaden — då kan timmarna inte summera
-         till något annat än dagen, för det är samma aritmetik. Marknaden ""
-         är alltid med, så totalen finns även när landet är okänt. */
-      const timme = hourInTz(new Date(line.createdAt), timezone);
-      timmePerOrder.set(line.id, timme);
-      fyll(timHink(day, timme, ""));
-      if (medLand && land) fyll(timHink(day, timme, land));
-    } else {
-      // Orderrad-artikel
-      const day = counted.get(line.__parentId);
-      if (!day) continue;
-      const key = line.variant?.id ?? `${line.title}|${line.variantTitle ?? ""}`;
-      const dayMap = productByDay.get(day) ?? new Map<string, Agg>();
-      laggPaMix(dayMap, key, line);
-      productByDay.set(day, dayMap);
-      if (medLand) {
-        const land = landPerOrder.get(line.__parentId) ?? "";
-        const perLand = productByDayMarknad.get(day) ?? new Map<string, Map<string, Agg>>();
-        const landMap = perLand.get(land) ?? new Map<string, Agg>();
-        laggPaMix(landMap, key, line);
-        perLand.set(land, landMap);
-        productByDayMarknad.set(day, perLand);
-      }
-      kundOrdrar.get(line.__parentId)?.lines.push({
-        variantGid: line.variant?.id ?? null,
-        quantity: line.quantity ?? 0,
-        unitCost: null,
-      });
-    }
-  }
-
-  const productsByDay: Record<string, ProductRow[]> = {};
-  for (const [day, m] of productByDay) productsByDay[day] = [...m.values()] as ProductRow[];
-
-  /* Uppdelningen per marknad. Dagar utan ordrar får ett tomt objekt — det
-     skiljer "uppdelad, men inget sålt" från "aldrig uppdelad" (null). */
-  let marketsByDay: OrderData["marketsByDay"] = null;
-  if (medLand) {
-    marketsByDay = {};
-    for (const d of salesBy.keys()) {
-      const perLand: Record<string, MarknadsDel> = {};
-      for (const [land, s] of salesByMarknad.get(d) ?? []) {
-        const { day: _dag, ...rest } = s;
-        perLand[land] = {
-          ...rest,
-          products: [...(productByDayMarknad.get(d)?.get(land)?.values() ?? [])] as ProductRow[],
-        };
-      }
-      marketsByDay[d] = perLand;
-    }
-  }
-
-  /* Timmarna. Varje dag i fönstret får ett objekt även när inget såldes —
-     det skiljer "hämtad, tom timme" från "dagen är inte timuppdelad än". */
-  const hoursByDay: OrderData["hoursByDay"] = {};
-  for (const d of salesBy.keys()) {
-    const perTimme: Record<string, Record<string, Omit<MarknadsDel, "products">>> = {};
-    for (const [timme, perLand] of salesByTimme.get(d) ?? []) {
-      const rader: Record<string, Omit<MarknadsDel, "products">> = {};
-      for (const [land, sd] of perLand) {
-        const { day: _dag, ...rest } = sd;
-        rader[land] = rest;
-      }
-      perTimme[String(timme)] = rader;
-    }
-    hoursByDay[d] = perTimme;
-  }
-
-  return {
-    sales: [...salesBy.values()],
-    products: mergeProductRows(Object.values(productsByDay).flat()),
-    productsByDay,
-    marketsByDay,
-    hoursByDay,
-    kundOrdrar: [...kundOrdrar.values()],
-  };
-}
-
-/**
- * Slår ihop produktrader (samma variant över flera dagar) till en per variant.
- * Bär raderna en marknad hålls marknaderna isär — samma variant såld till
- * Sverige och Norge blir två rader, för de ska räknas på olika kostnad.
- */
-/**
- * Summerar `fees` på en orders transaktioner. Bulk-exporten ger dem som
- * `transactions` (lista) på orderraden; pagineringen likaså. Bara lyckade
- * transaktioner räknas — en nekad betalning har ingen avgift som drogs.
- */
-function summeraAvgifter(transaktioner: unknown): number {
-  const lista: any[] = Array.isArray(transaktioner)
-    ? transaktioner
-    : Array.isArray((transaktioner as any)?.nodes)
-      ? (transaktioner as any).nodes
-      : Array.isArray((transaktioner as any)?.edges)
-        ? (transaktioner as any).edges.map((e: any) => e?.node)
-        : [];
-  let summa = 0;
-  for (const t of lista) {
-    if (!t || (t.status && t.status !== "SUCCESS")) continue;
-    for (const f of t.fees ?? []) summa += num(f?.amount?.amount);
-  }
-  return summa;
-}
-
-export function mergeProductRows(rows: ProductRow[]): ProductRow[] {
-  const by = new Map<string, ProductRow>();
-  for (const r of rows) {
-    const key = `${r.market ?? ""} ${r.variantGid ?? `${r.title}|${r.variantTitle ?? ""}`}`;
-    const agg = by.get(key);
-    if (agg) {
-      agg.units += r.units;
-      agg.netSales += r.netSales;
-      if (agg.unitCost == null) agg.unitCost = r.unitCost;
-      if (r.lines) {
-        agg.lines = { ...(agg.lines ?? {}) };
-        for (const [q, n] of Object.entries(r.lines)) agg.lines[q] = (agg.lines[q] ?? 0) + n;
-      }
-    } else {
-      by.set(key, { ...r, lines: r.lines ? { ...r.lines } : undefined });
-    }
-  }
-  return [...by.values()];
-}
 
 /**
  * Hämtar korta fönster via vanlig paginering och returnerar samma radformat
@@ -511,69 +219,88 @@ async function runOrdersPaginated(
   fromExclusive: string,
   toInclusive: string,
   falt: Orderfalt,
-): Promise<any[]> {
+): Promise<{ lines: any[]; trunkerad: boolean }> {
   const { kund, land, avgifter } = falt;
-  const lines: any[] = [];
-  let after: string | null = null;
-  for (let page = 0; page < 20; page++) {
-    const res: Response = await admin.graphql(
-      `#graphql
-       query Orders($after: String, $q: String!) {
-         orders(first: 50, after: $after, query: $q) {
-           pageInfo { hasNextPage endCursor }
-           nodes {
-             id createdAt cancelledAt test
-             ${kundFalt(kund)}
-             ${landFalt(land)}
-             ${avgiftFalt(avgifter)}
-             totalPriceSet { shopMoney { amount } }
-             subtotalPriceSet { shopMoney { amount } }
-             totalDiscountsSet { shopMoney { amount } }
-             totalShippingPriceSet { shopMoney { amount } }
-             totalRefundedSet { shopMoney { amount } }
-             lineItems(first: 25) {
-               nodes {
-                 title variantTitle quantity
-                 discountedTotalSet { shopMoney { amount } }
-                 product { id }
-                 variant { id }
+  return paginera(async (after) => {
+    for (;;) {
+      const res: Response = await admin.graphql(
+        `#graphql
+         query Orders($after: String, $q: String!) {
+           orders(first: 50, after: $after, query: $q) {
+             pageInfo { hasNextPage endCursor }
+             nodes {
+               id createdAt cancelledAt test
+               ${kundFalt(kund)}
+               ${landFalt(land)}
+               ${avgiftFalt(avgifter)}
+               totalPriceSet { shopMoney { amount } }
+               subtotalPriceSet { shopMoney { amount } }
+               totalDiscountsSet { shopMoney { amount } }
+               totalShippingPriceSet { shopMoney { amount } }
+               totalRefundedSet { shopMoney { amount } }
+               lineItems(first: 25) {
+                 pageInfo { hasNextPage }
+                 nodes {
+                   title variantTitle quantity
+                   discountedTotalSet { shopMoney { amount } }
+                   product { id }
+                   variant { id }
+                 }
                }
              }
            }
-         }
-       }`,
-      { variables: { after, q: `created_at:>='${fromExclusive}' AND created_at:<='${toInclusive}'` } },
-    );
-    const body = await res.json();
-    const throttled = (body?.errors ?? []).some(
-      (e: any) => e?.extensions?.code === "THROTTLED",
-    );
-    if (throttled) { await sleep(2000); page--; continue; }
-    /* Ett fel här FÅR inte bli en tom lista. Det var precis vad som hände:
-       saknad orderbehörighet (ACCESS_DENIED) eller en död nyckel gav
-       `data.orders === null`, loopen bröt, och noll rader skrevs ner som
-       "butiken sålde ingenting idag" — med annonskostnaden kvar. Gruppvyn
-       visade då 0 kr försäljning och ren förlust för friska butiker.
-       Ett fel ska kastas: då skrivs ingenting, och den som frågade får
-       säga ifrån istället för att visa en nolla som ser äkta ut. */
-    if (body?.errors?.length) {
-      const msg = body.errors.map((e: any) => e?.message ?? String(e)).join("; ");
-      throw new Error(`Order query failed: ${msg}`);
-    }
-    const conn = body?.data?.orders;
-    if (!conn) {
-      throw new Error(
-        `Order query returned no data (HTTP ${res.status}) — the access token may lack read_orders.`,
+         }`,
+        { variables: { after, q: `created_at:>='${fromExclusive}' AND created_at:<='${toInclusive}'` } },
       );
+      const body = await res.json();
+      const throttled = (body?.errors ?? []).some(
+        (e: any) => e?.extensions?.code === "THROTTLED",
+      );
+      if (throttled) { await sleep(2000); continue; }
+      /* Ett fel här FÅR inte bli en tom lista. Det var precis vad som hände:
+         saknad orderbehörighet (ACCESS_DENIED) eller en död nyckel gav
+         `data.orders === null`, loopen bröt, och noll rader skrevs ner som
+         "butiken sålde ingenting idag" — med annonskostnaden kvar. Gruppvyn
+         visade då 0 kr försäljning och ren förlust för friska butiker.
+         Ett fel ska kastas: då skrivs ingenting, och den som frågade får
+         säga ifrån istället för att visa en nolla som ser äkta ut. */
+      if (body?.errors?.length) {
+        const msg = body.errors.map((e: any) => e?.message ?? String(e)).join("; ");
+        throw new Error(`Order query failed: ${msg}`);
+      }
+      const conn = body?.data?.orders;
+      if (!conn) {
+        throw new Error(
+          `Order query returned no data (HTTP ${res.status}) — the access token may lack read_orders.`,
+        );
+      }
+      return conn;
     }
-    for (const o of conn.nodes ?? []) {
-      lines.push({ ...o, lineItems: undefined });
-      for (const li of o.lineItems?.nodes ?? []) lines.push({ ...li, __parentId: o.id });
-    }
-    if (!conn.pageInfo?.hasNextPage) break;
-    after = conn.pageInfo.endCursor;
+  }, 20);
+}
+
+/**
+ * Ser butiken ordrar äldre än 60 dagar? En order skapad före idag − 61 som
+ * faktiskt kommer tillbaka bevisar det (read_all_orders, eller en äldre
+ * registrering som Shopify låtit behålla full historik). Ett tomt svar är
+ * säkert åt båda håll: antingen ingen åtkomst, eller inget äldre att hämta —
+ * i båda fallen finns inget bortom horisonten som en hämtning kunde skriva.
+ * Fel kastas; anroparen skriver då ingenting (ingen gissning sparas).
+ */
+export async function harFullOrderhistorik(admin: AdminApiContext, idag: string): Promise<boolean> {
+  const grans = shiftIso(idag, -61);
+  const res: Response = await admin.graphql(
+    `#graphql
+     query Historik($q: String!) { orders(first: 1, query: $q) { nodes { id } } }`,
+    { variables: { q: `created_at:<'${grans}'` } },
+  );
+  const body = await res.json();
+  if (body?.errors?.length) {
+    throw new Error(`Order history probe failed: ${body.errors.map((e: any) => e?.message ?? String(e)).join("; ")}`);
   }
-  return lines;
+  const conn = body?.data?.orders;
+  if (!conn) throw new Error(`Order history probe returned no data (HTTP ${res.status}).`);
+  return (conn.nodes ?? []).length > 0;
 }
 
 /**

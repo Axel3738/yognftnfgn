@@ -74,6 +74,8 @@ myshopify-domänen). Butikerna är ihopkopplade i en grupp i appen
 - `app/lib/shopify-data.server.ts` — orderhämtning: bulk-export för långa
   fönster (>7 dagar), vanlig paginering för korta (sekunder i stället för
   halvminut). Katalog med inköpspriser, cache i minne + DB (CatalogCache).
+  Parsern och sidbläddringen bor i `orderrader.ts` (testbar); orderhistorikens
+  60-dagarsgräns i `historik.ts` — se avsnittet om 60-dagarsgränsen nedan.
 - `app/lib/pnl.server.ts` — ren räknemotor utan I/O. TB = försäljning − COGS −
   tull − annonser. Tull per ORDER (poängen med bundles). Kostnadsändringar
   viktas per omsättningsandel efter brytdatum.
@@ -397,6 +399,108 @@ i hans ordning:
 - Grillkliniken: Axel vill klona hela upplägget till en annan butik.
 - App Store-granskningssvaret: åtgärda när mejlet kommer.
 
+### Orderhistorikens 60-dagarsgräns och sidtaket (2026-09-26)
+
+Två hål i samma regel — **en misslyckad datahämtning får aldrig skriva ett
+värde** — som båda gav nollor bredvid full annonskostnad.
+
+**1. Shopifys 60 dygn.** Utan scopen `read_all_orders` ser en app bara de
+senaste 60 dagarnas ordrar, och Shopify svarar **tomt, inte med fel**, för
+äldre. Ingen av våra registreringar har scopen (`shopify.app.toml`,
+`scopesForService`). `parseOrderLines` startar varje dag i fönstret på noll
+och `refreshDaily` skrev alla — så 90d-vyn (6-timmarsomexporten av hela
+intervallet), egna datum upp till 364 dagar, 90d-jämförelsen och
+LTV-bakfyllnaden (400 dagar) skrev noll omsättning över riktiga gamla dagar
+medan annonskostnaden låg kvar. Räkneexempel: 9 000 kr/dag, 45 % brutto,
+3 000 kr/dag i spend ger +94,5 k på kvartalet; med 30 nollade dagar visade
+panelen −27 k.
+
+Byggt:
+- `app/lib/historik.ts` (ren, testad): `historikHorisont` = idag − 59 i
+  butikens tid, eller null med `read_all_orders`/bevisad full historik.
+  `klampaFonster` klämmer ett hämtfönster (null = hela före gränsen).
+  `klassaDag` sorterar en dag i `sales` / `missing` / `outsideHistory`.
+- **Sonden** `harFullOrderhistorik` (shopify-data.server): `orders(first: 1)`
+  skapade före idag − 61. En träff = full historik. Sparas i
+  `ShopSettings.fullOrderHistory` + `fullOrderHistoryCheckedAt`, körs om
+  varje vecka. Körs BARA där admin redan finns (`refreshDaily`,
+  bakfyllnaden) — panelens och gruppens läsning använder det sparade
+  svaret och väntar aldrig på den. Fel ⇒ ingenting skrivs.
+- **`refreshDaily` kläms först** (`butikensHorisont` + `klampaFonster`). Ligger
+  hela fönstret före gränsen returnerar den innan hämtningen: ingen
+  DailyPnl-upsert, ingen HourlyPnl-radering, ingen KundOrder. Det täcker
+  alla anropare på en gång: panelens synkrona fyllning och bakgrund,
+  jämförelsen, `refreshShopDaily`/gruppen och bakfyllnaden.
+- **`readDaily` tar `horisont` + `tidszon`.** Dagar före gränsen utan rad, och
+  rader vars hämtning inte såg hela dagen, hamnar i `outsideHistory` —
+  varken `missingDays` (hade exporterats på varje besök) eller `sales`.
+  `oldestFetchedAt` räknas bara över dagar innanför gränsen, annars hade
+  6-timmarsomexporten startat på varje besök.
+- **Panelen** tar bort `outsideHistory`-dagarna ur annonskostnaden före
+  `compute()` och visar en varningsbanner (båda språken). Fasta kostnader
+  följer av sig själv — `compute()` räknar dem per säljdag. Jämförelsen
+  blir `null` (inga ▲▼) när den föregående perioden har sådana dagar.
+- **Gruppen** gör samma sak per medlem med medlemmens EGEN gräns och visar
+  en info-ruta som namnger butiken (`historyNotes`, egen lista — det är
+  inget ägaren ska göra, så den hör inte hemma under "Behöver göras").
+- **Bakfyllnaden** stannar vid `max(idag − dagar, horisont)`.
+
+**2. Sidtaket.** Korta fönster (≤ 7 dagar) paginerar `orders(first: 50)` i
+högst 20 sidor, och radartiklarna tas med `lineItems(first: 25)`. Nåddes
+taket returnerades det halva resultatet utan flagga. En butik med 150
+ordrar/dag som öppnade 7d (nio dagar med marginalen) tappade en fjärdedel.
+Nu: `paginera()` (ren, i `app/lib/orderrader.ts`) returnerar
+`{ lines, trunkerad }` — trunkerad när `hasNextPage` fortfarande är sant
+efter sida 20, eller när någon order har `lineItems.pageInfo.hasNextPage`.
+Då tar `doFetchOrderData` om SAMMA fönster via bulk-exporten (inget tak).
+
+Medvetna beslut:
+- **Sidtaket kastar inte.** Den synkrona fyllningen awaitas i panelens
+  loader — ett kast hade gett varje högvolymsbutik felsidan varje gång, och
+  i gruppen hade `refreshShopDaily` uteslutit den för gott. Bara om bulk-
+  exporten själv felar kastas det.
+- **Radtrunkering avbryter bläddringen direkt** — resultatet kastas ändå, och
+  varje sida kostar API-budget.
+- **`klassaDag` är tidszonsexakt, inte "61 dagar".** Planen sa "fetchedAt mer
+  än 61 dagar efter dagen". Regeln här: raden är hel bara om gränsen vid
+  hämtningen (fetchedAt − 60 dygn), uttryckt som dag i butikens tid, ligger
+  FÖRE dagen. Hamnade gränsen inne i dagen var raden halv — och en halv dag
+  som visas som hel är samma för låga omsättning. 61-dagarsregeln hade
+  släppt igenom rader hämtade mellan 60 och 61 dygn efter dagens början.
+- **Under marknadsfilter** räknas en rad före gränsen som saknar uppdelning
+  per marknad som `outsideHistory` — en omexport kan aldrig ge den en.
+- **`readDaily` utan `horisont` sorterar ingenting.** Chatten (30 dagar) och
+  Kostnader (produktmixen över 90 dagar) läser som förut — de räknar ingen
+  vinst mot annonskostnad per dag.
+- **Parsern flyttades** till `app/lib/orderrader.ts` med explicita
+  `.ts`-importer (`parseOrderLines`, `summeraAvgifter`, `mergeProductRows`,
+  `paginera`, `dayInTz`, typerna `OrderData`/`KundOrderRa`).
+  `shopify-data.server.ts` exporterar dem vidare, så ingen anropare ändrades.
+  Förut gick den inte att testa: testkörningen (`--experimental-strip-types`)
+  kan inte lösa upp `./marknad` utan filändelse.
+
+Fällor:
+- ⚠ **60-dagarsbeteendet är inte uppmätt skarpt** — det kommer ur Shopifys
+  dokumentation och appens egen kommentar. Sonden gör spärren rätt åt båda
+  håll. Kontrollera efter deploy: öppna 90d på SE-butiken; DailyPnl-rader
+  äldre än idag − 59 ska behålla sin `fetchedAt` och sitt orderantal, och
+  bannerns dagantal ska stämma.
+- ⚠ **Redan nollade dagar går inte att få tillbaka** utan `read_all_orders`.
+  Spärren gör bara att de inte längre visas som riktiga nollor.
+- ⚠ **Horisonten får aldrig räknas om mitt i en laddning.** Panelen läser den
+  en gång; sonden kan ändra svaret under `refreshDaily`, och då plockar
+  NÄSTA laddning upp de nya dagarna. Byts den mitt i hamnar dagar varken i
+  `missingDays`-fyllningen eller i bannern.
+- ⚠ **Bulk-reserven håller butikens enda bulk-plats** (~30 s) under en
+  7d-uppdatering hos högvolymsbutiker. `runOrdersBulk` väntar redan ut
+  "already in progress" upp till sex gånger.
+- `mergeProductRows` nyckel har en NUL-separator; i nya filen står den som
+  `\u0000` så att grep inte ser filen som binär.
+- Nya tester: `test/historik.test.mjs` (gränsen, klämningen, `klassaDag`,
+  och att filtrerad spend ger samma MER som en period från gränsen) och
+  `test/orderrader.test.mjs` (21 sidor ⇒ trunkerad med alla 20, radtrunkering,
+  och fixturer som låser dagens intäktsräkning).
+
 ### AI-rutan ger VAL, inte frågor (2026-09-18, build valj-prisspalt-v96)
 
 Axel: rutan *"funkade aaaaasbra när jag la in UK-costs"*, men på den
@@ -549,7 +653,8 @@ butiken utanför i fem minuter till. **En full ruta direkt efter en deploy
 betyder därför inte att något är trasigt** — kontrollera `/healthz` och
 ladda om efter några minuter innan du felsöker något annat.
 Gruppsumman rör inte produktkatalogen: `daily.server.ts` importerar bara
-`fetchOrderData` och `mergeProductRows` ur `shopify-data.server.ts`.
+`fetchOrderData`, `mergeProductRows`, `dayInTz` och `harFullOrderhistorik`
+ur `shopify-data.server.ts`.
 
 **Skilj "gick inte" från "försöker igen" (v100).** `getSpend` skiljer redan
 på `retrying` (Meta svarade inte den här gången — nästa laddning har den
