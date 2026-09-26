@@ -1,10 +1,6 @@
-# Lärdomar att skriva — 2026-09-26
+# Lärdomar — Sotarsetet med Böjliga Stänger
 
-11 etiketterade annonser utan lärdom (SE). Fyll varje [FYLL I], spara, kör `node agent/lardom.mjs --skriv <fil>`. En annons är inte klar förrän raden LARDOM finns.
-
-Läst 2026-09-26 ur Graph API v21.0 (`creative{body,title,object_story_spec,video_id}` + `/{video_id}/thumbnails`, 19–20 rutor per video). ⚠️ Metas thumbnail-rad är INTE tidsordnad (samma ögonblick återkommer i flera rutor: "med böjliga stänger." i ruta 5, 11 och 18 på PD_1_H2), så hooken 0–3 s går inte att slå fast ur dem — det som står som "troligen öppningen" är en gissning ur den ruta utan inbränd text som bara finns i den videon. ffmpeg saknas i containern, ingen video är transkriberad. Alla tre PD-videorna (20,4–22,0 s) bär samma kropp: amerikansk källfilm av torktumlarrör/ventilation ("Dryer Vent Cleaner", kartong "30 FEET"), en tegelskorsten sedd uppifrån, en braskamin, en man som skruvar ihop stängerna, en man i bil som håller borsten, kameran inne i röret. Inbränd text i Hormozi-stil (vitt block, ett ord i taget).
-
-## Sotarsetet med Böjliga Stänger (120250284693380291)
+En per etiketterad annons (docs/os/CS-KLART.md punkt 1–5). Skrivs av `node agent/lardom.mjs --skriv`; varje brief pekar på ett id här (`lardom=L-…`).
 
 ### Lärdom L-120250284711040291 — Sotarset_PD_1_H2 (BREAKTHROUGH, etikett 2026-09-26)
 
@@ -469,3 +465,4 @@ Läst 2026-09-26 ur Graph API v21.0 (`creative{body,title,object_story_spec,vide
 
 **Nästa annonser:**
 - `SLÄPP` `Sotarset_SP_1_H2` — INGEN_LEVERANS (0 kr), Metas dom; se SP_1_H1.
+

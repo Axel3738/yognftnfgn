@@ -1,5 +1,7 @@
 # Batch-log — Sotarsetet med Böjliga Stänger
 
+Breakthrough-frekvens: 2/11 (18 %) — `node agent/etikett.mjs --frekvens` 2026-09-26 (spend winners 0, KPI winners 1, losers 2, ej levererade 6).
+
 ## Batch #1 — 2026-09-19 (Joshs testbatch, före OS:et)
 
 11 annonser launchade 2026-09-19 i kampanj `120250284693380291`, 1 800 kr/dag:
@@ -66,3 +68,25 @@ bära dem.
 
 **Mät från dag 1:** `rev` och `brief → live` per annons fylls i när raderna
 lästs / annonserna gått live.
+
+## Etiketter dag 7 (2026-09-26)
+
+Ur `agent/utdata/etiketter-backfill-2026-09-26.md` (fönster 2026-09-19 – 2026-09-25, annonsens första vecka, 7d_click; kampanjens spend 16 433 kr, ROAS 2,88). Lärdom per rad i `lardomar.md` (11 LARDOM-rader skrivna samma dag).
+
+| Annons | Batch | Typ | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Bedömbar | Playbook |
+|---|---|---|---|---|---|---|---|---|---|
+| Sotarset_PD_1_H2 | — | okänd | **BREAKTHROUGH** | 53 % | 8744 kr | 48 | 2,92 / 2,88 | ja | 80 % vidarebygg på denna: I1 tre hookar → I2 problemdel → I3 in media res |
+| Sotarset_PD_1_H3 | — | okänd | **BREAKTHROUGH** ⚠ nära 30 % | 30 % | 4894 kr | 26 | 2,59 / 2,88 | ja | 80 % vidarebygg på denna: I1 tre hookar → I2 problemdel → I3 in media res |
+| Sotarset_PD_1_H1 | 1 | okänd | **LOSER** | 13 % | 2059 kr | 11 | 2,76 / 2,88 | ja | släpp |
+| Sotarset_G_1_H2 | — | okänd | **KPI_WINNER** | 1 % | 196 kr | 3 | 7,03 / 2,88 | nej | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Sotarset_G_1_H3 | — | okänd | **LOSER** | 1 % | 111 kr | 0 | 0,00 / 2,88 | nej | släpp |
+| Sotarset_CS_1_H2 | — | okänd | **INGEN_LEVERANS** | — | 6 kr | 0 | 0,00 / 2,88 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Sotarset_G_1_H1 | — | okänd | **INGEN_LEVERANS** | — | 6 kr | 0 | 0,00 / 2,88 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Sotarset_SP_1_H1 | — | okänd | **INGEN_LEVERANS** | — | 4 kr | 0 | 0,00 / 2,88 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Sotarset_SP_1_H3 | — | okänd | **INGEN_LEVERANS** | — | 3 kr | 0 | 0,00 / 2,88 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Sotarset_CS_1_H3 | — | okänd | **INGEN_LEVERANS** | — | 3 kr | 0 | 0,00 / 2,88 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Sotarset_SP_1_H2 | — | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 2,88 | nej | hooken föll — logga och släpp, aldrig ABO |
+
+**Det lärdomarna namngav (vidarebyggen, deadline 2026-10-10):** `Sotarset_PD_1_H6` (I1 på H2: symptom-hook), `Sotarset_PD_7_H1` (I2 på H2: längre problemdel), `Sotarset_PD_8_H1` (I3 på H2: in media res), `Sotarset_PD_1_H7` (I1 på H3: kameran inne i röret), `Sotarset_PD_8_H2` (I3 på H3: H3:s öppning på PD_8-kroppen); I2 på H3 SLÄPPT som dubblett av PD_7_H1. PD_1_H4/H5 (hubben, batch #2) räknas som redan utförda iterationer på PD_1_H2. Alla åtta småannonser SLÄPPTA (INGEN_LEVERANS = Metas dom, aldrig ABO; G_1_H2 under 300 kr, gåvan lever i G_2_1).
+
+⚠️ Läst ur de live annonserna 2026-09-26: alla tre PD-videor delar kropp (amerikansk torktumlarfilm, kartong "30 FEET", "Dryer Vent Cleaner"), captionen stavar produkten "sotarsätt", SP-copyn bär ⭐⭐⭐⭐⭐ + "30 dagars öppet köp", CS-copyn "lagret är begränsat" + "Fri frakt över 300 kr", G-beskrivningen "perfekt julklapp" — inget av det står på sidan. Live rörs inte (regeln 2026-09-15); inget av det går in i en ny brief. Voiceovern är fortfarande oläst (ingen transkribering) — den öppna frågan i `backlog.md` står kvar.
