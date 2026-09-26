@@ -344,6 +344,6 @@ Grillkliniken/CaraShell/Matstrumpor (ingen brandfil). Bank, kort och
 
 Axel vill veta vad de bästa e-handlarna trackar i sina dashboards och med sina anställda,
 var team misslyckas och hur det ska synas, och hur dashboarden kan bygga teamet.
-17 frågor till Evolve-boten står i `stonebite/evolve/FRAGOR.md` (engelska, en per meddelande,
+17 frågor till Evolve-boten, var och en delad i två meddelanden under 600 tecken, står i `stonebite/evolve/FRAGOR.md` (engelska,
 utan butiks- och personnamn). Luckorna bakom dem, med datakälla och byggplan per lucka, står i
 `stonebite/evolve/LUCKOR.md`. Svaren sparas i `stonebite/evolve/SVAR.md` när de kommer.
