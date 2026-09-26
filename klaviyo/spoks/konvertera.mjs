@@ -361,7 +361,20 @@ export function skapaKonverterare({ brand, produktIds = {}, recCache = {}, erbju
     const s = sprakFor(m);
     const fel = [];
     const regler = [...FORBJUDET.alla, ...(FORBJUDET[s] ?? [])];
-    for (const [var_, t] of texterI(m)) for (const [re, vad] of regler) if (re.test(t)) fel.push(`${m.id} ${var_}: ${vad} — "${t.slice(0, 80)}"`);
+    // Ett mejl med rabatt: "black_week" får nämna brandets trappa (brand.black_week.procent,
+    // CaraShell 10/20/30, Axels beslut B 2026-09-26) — bara de talen, och bara i det mejlet.
+    const tillatna = m.rabatt && Array.isArray(brand[m.rabatt]?.procent) ? new Set(brand[m.rabatt].procent.map(Number)) : null;
+    if (m.rabatt && !tillatna) fel.push(`${m.id}: rabatt "${m.rabatt}" saknas i brandfilen (procent-listan)`);
+    for (const [var_, t] of texterI(m)) {
+      for (const [re, vad] of regler) {
+        if (vad === 'procent' && tillatna) {
+          const utanfor = [...t.matchAll(/(\d+)\s?(?:%|procent|prosent|percent)/gi)].map((x) => Number(x[1])).filter((n) => !tillatna.has(n));
+          if (utanfor.length) fel.push(`${m.id} ${var_}: procent utanför trappan (${[...tillatna].join('/')}): ${utanfor.join(', ')} — "${t.slice(0, 80)}"`);
+          continue;
+        }
+        if (re.test(t)) fel.push(`${m.id} ${var_}: ${vad} — "${t.slice(0, 80)}"`);
+      }
+    }
     if (!Array.isArray(m.tretest) || !m.tretest.length) fel.push(`${m.id}: tretest saknas`);
     for (const r of m.tretest ?? []) {
       const ok = r.visualisera && r.falsifiera && (r.ingen_annan || /recension/.test(m.id));

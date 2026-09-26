@@ -11,7 +11,7 @@ Svenska, norska och engelska skrevs var för sig på det egna språket, aldrig �
 
 **Det här är en KALLSTART.** Butiken är 15 dagar gammal, 0 återköp, 76 kontakter med
 samtycke. Inga mejl-lärdomar finns, så alla kampanjer är `utkast-skrivs-om-efter-lardom`
-(Evolve: inga fler nya koncept än skrivna lärdomar) utom K09 som är `kraver-axel`
+(Evolve: inga fler nya koncept än skrivna lärdomar); K09 och K09b bär Black Week-trappan (Axels beslut B 2026-09-26)
 (Black Week). Flödena är motorn, inte ett test av ett koncept.
 
 ## Gemensamt för alla mejl
@@ -40,7 +40,8 @@ samtycke. Inga mejl-lärdomar finns, så alla kampanjer är `utkast-skrivs-om-ef
 | K05, K07 | ny produkt i butiken (adventskalendern, läst 2026-09-26); lucka 1 kräver order senast fre 13/11 | GT |
 | K04 en, K06 sv/nb | kommentarerna: "sönderblåst", "Sebra", "straps break off"; leverantören: webbing, not elastic | OB, `kalla=voc` |
 | K03, K11 | termoskyddets faktablad; källans CS-manus (falsk brådska) används aldrig | PD |
-| K09 | dna.md mönster 11 (SP_2_1 är butikens vinnare) + butikens egna recensioner; en: policyn | SP / CS |
+| K09 | Axels beslut B 2026-09-26: trappan 10/20/30 % (brands/carashell.json#black_week), Bäverbutikens K11 som förlaga; sv/nb ett citat ur butikens egna recensioner | S |
+| K09b | samma trappa, Black Friday fre 27/11, slutdatumet måndag 30/11 som enda brådska; Bäverbutikens K12 som förlaga | S |
 | K12 | kommentarerna: "sönderblåst efter stormen" | M, service |
 | F05, K08, K13 | gissning (0 återköp, säsongslogik) | S, `confidence low` |
 | F14 | Axels skiss för Bäverbutiken (samma konstruktion, egen copy) | M |
