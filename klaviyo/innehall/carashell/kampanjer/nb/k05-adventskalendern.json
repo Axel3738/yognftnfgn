@@ -1,0 +1,70 @@
+{
+  "id": "k05-adventskalendern",
+  "namn": "MAIL_20261027_CaraShellCal_NB_GT_2_samtycke_product_retrobussar-24-luckor_v1",
+  "sprak": "nb",
+  "memo": "Ny produkt i butiken: adventskalender med retrobussar, 24 luckor (läst i Shopify 2026-09-26). Presenten till husvagnsfolket. Sista beställningsdag för lucka 1: fredag 13 november. Om kalenderns innehåll är BARA titeln känd (24 luckor, retrobussar) — inget mer får påstås.",
+  "brief": "Hero (bild adventskalendern). Text: 24 luckor, retrobussar, datumet fredag 13 november skrivet ut. Produktkort, fakta. Inget om vad som finns bakom luckorna. ",
+  "taggar": {
+    "typ": "N",
+    "kalla": "gissning",
+    "kalla_ref": null,
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "konsekvens",
+    "confidence": "low",
+    "prefix": "CaraShellCal",
+    "kod": "GT",
+    "avatar": "den som ger en kalender till någon med husvagn eller husbil",
+    "begar": "en present som passar just den personen"
+  },
+  "amnesrader": [
+    {
+      "text": "__COPY__: ämnesrad A, eget begär",
+      "begar": "__COPY__: begäret"
+    },
+    {
+      "text": "__COPY__: ämnesrad B, eget begär",
+      "begar": "__COPY__: begäret"
+    },
+    {
+      "text": "__COPY__: ämnesrad C, eget begär",
+      "begar": "__COPY__: begäret"
+    }
+  ],
+  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "__COPY__: rubrik: adventskalendern",
+      "text": "__COPY__: 1–2 meningar",
+      "bild": "produkt:adventskalender-retrobussar",
+      "knapp": {
+        "text": "__COPY__: knapp",
+        "lank": "produkt:adventskalender-retrobussar"
+      }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "__COPY__: datumet fredag 13 november för lucka 1"
+    },
+    {
+      "typ": "produkt",
+      "handle": "adventskalender-retrobussar",
+      "text": "__COPY__: en mening",
+      "knapp": "__COPY__: knapp"
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [],
+  "version": 1,
+  "planerad": "2026-10-27T18:00:00+01:00",
+  "segment": [
+    "SEG_samtycke_nb"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

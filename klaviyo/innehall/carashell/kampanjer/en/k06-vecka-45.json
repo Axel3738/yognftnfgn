@@ -1,0 +1,72 @@
+{
+  "id": "k06-vecka-45",
+  "namn": "MAIL_20261103_CaraShellRoof_EN_GT_1_samtycke_solution_the-gift-for-the-one-with-the-caravan_v1",
+  "sprak": "en",
+  "memo": "Presenten till den som har vagnen: julen närmar sig, och överdraget är en present som används. Ingen farsdag på engelska (USA juni, UK mars). Sista beställningsdag för jul kommer i K10.",
+  "brief": "Hero: presenten. Text: varför ett skydd är en present som används (bara faktabladets fakta). Produktrad: takskyddet + termoskyddet. Fakta. Engelskan gäller USA, Storbritannien, Kanada, Australien och Nya Zeeland samtidigt: inga årstider (winter/summer/spring/autumn/fall), ingen snö — skriv \"while it is parked\", \"between trips\", \"off the road\". Säg caravan där det passar (GB/AU/NZ), motorhome, och RV en gång som amerikansk synonym.",
+  "taggar": {
+    "typ": "I",
+    "kalla": "gissning",
+    "kalla_ref": null,
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "ingen",
+    "confidence": "low",
+    "prefix": "CaraShellRoof",
+    "kod": "GT",
+    "avatar": "den som letar present till någon med husvagn eller husbil",
+    "begar": "en present som används"
+  },
+  "amnesrader": [
+    {
+      "text": "__COPY__: ämnesrad A, eget begär",
+      "begar": "__COPY__: begäret"
+    },
+    {
+      "text": "__COPY__: ämnesrad B, eget begär",
+      "begar": "__COPY__: begäret"
+    },
+    {
+      "text": "__COPY__: ämnesrad C, eget begär",
+      "begar": "__COPY__: begäret"
+    }
+  ],
+  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "__COPY__: rubrik: the gift",
+      "text": "__COPY__: 1–2 meningar",
+      "bild": "produkt:takskyddet",
+      "knapp": {
+        "text": "__COPY__: knapp",
+        "lank": "produkt:takskyddet"
+      }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "__COPY__: varför det är en present som används"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "__COPY__: rubrik",
+      "handles": [
+        "takskyddet",
+        "termoskyddet"
+      ]
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [],
+  "version": 1,
+  "planerad": "2026-11-03T16:00:00+01:00",
+  "segment": [
+    "SEG_samtycke_en"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

@@ -1,0 +1,77 @@
+{
+  "id": "k08-checklistan",
+  "namn": "MAIL_20261117_CaraShellMix_EN_S_1_samtycke_solution_innan-vagnen-stalls-undan_v1",
+  "sprak": "en",
+  "memo": "Säsongslistan (Bäverbutikens K02 gav idén om en checklista per produkt, egen copy): taket, rutan, smårutorna. sv/nb: innan vagnen ställs undan för vintern. en: before it sits for a while / between trips.",
+  "brief": "Hero utan produktbild-krav (använd taköverdraget). Punkter: tre saker, en per produkt, med faktabladets ord. Produktrad med alla tre. Fakta. Engelskan gäller USA, Storbritannien, Kanada, Australien och Nya Zeeland samtidigt: inga årstider (winter/summer/spring/autumn/fall), ingen snö — skriv \"while it is parked\", \"between trips\", \"off the road\". Säg caravan där det passar (GB/AU/NZ), motorhome, och RV en gång som amerikansk synonym.",
+  "taggar": {
+    "typ": "S",
+    "kalla": "egen-data",
+    "kalla_ref": "factory/produkter/*.yaml",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "sasong",
+    "confidence": "low",
+    "prefix": "CaraShellMix",
+    "kod": "S",
+    "avatar": "ägaren som ska ställa undan vagnen",
+    "begar": "skydda-det-jag-ager"
+  },
+  "amnesrader": [
+    {
+      "text": "__COPY__: ämnesrad A, eget begär",
+      "begar": "__COPY__: begäret"
+    },
+    {
+      "text": "__COPY__: ämnesrad B, eget begär",
+      "begar": "__COPY__: begäret"
+    },
+    {
+      "text": "__COPY__: ämnesrad C, eget begär",
+      "begar": "__COPY__: begäret"
+    }
+  ],
+  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "__COPY__: rubrik: innan vagnen ställs undan",
+      "text": "__COPY__: 1–2 meningar",
+      "bild": "produkt:takskyddet",
+      "knapp": {
+        "text": "__COPY__: knapp",
+        "lank": "kollektion:sortimentet"
+      }
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "__COPY__: rubrik: tre saker",
+      "punkter": [
+        "__COPY__: taket",
+        "__COPY__: rutan",
+        "__COPY__: smårutorna"
+      ]
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": null,
+      "handles": [
+        "takskyddet",
+        "termoskyddet",
+        "fonstertermomatta-2-pack"
+      ]
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [],
+  "version": 1,
+  "planerad": "2026-11-17T16:00:00+01:00",
+  "segment": [
+    "SEG_samtycke_en"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

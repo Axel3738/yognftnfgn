@@ -1,0 +1,72 @@
+{
+  "id": "k04-vecka-43",
+  "namn": "MAIL_20261020_CaraShellRoof_NB_GT_1_samtycke_solution_farsdag-26-okt_v1",
+  "sprak": "nb",
+  "memo": "Samma som svenskan: farsdag 8/11 i Norge, siste bestillingsdag man 26. oktober.",
+  "brief": "Hero: presenten. Text med datumet skrivet ut (\"beställ senast måndag 26 oktober\") och varför (så att paketet hinner fram till fars dag) — utan leveranstid i dagar. Produktrad: taköverdraget + termoskyddet. Fakta.",
+  "taggar": {
+    "typ": "I",
+    "kalla": "egen-data",
+    "kalla_ref": "brands/carashell.json#kalender",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "konsekvens",
+    "confidence": "low",
+    "prefix": "CaraShellRoof",
+    "kod": "GT",
+    "avatar": "den som leter etter gave til en pappa med campingvogn eller bobil",
+    "begar": "en present han faktiskt använder"
+  },
+  "amnesrader": [
+    {
+      "text": "__COPY__: ämnesrad A, eget begär",
+      "begar": "__COPY__: begäret"
+    },
+    {
+      "text": "__COPY__: ämnesrad B, eget begär",
+      "begar": "__COPY__: begäret"
+    },
+    {
+      "text": "__COPY__: ämnesrad C, eget begär",
+      "begar": "__COPY__: begäret"
+    }
+  ],
+  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "__COPY__: rubrik: presenten till honom med vagnen",
+      "text": "__COPY__: 1–2 meningar",
+      "bild": "produkt:takskyddet",
+      "knapp": {
+        "text": "__COPY__: knapp",
+        "lank": "produkt:takskyddet"
+      }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "__COPY__: datumet: beställ senast måndag 26 oktober"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "__COPY__: rubrik",
+      "handles": [
+        "takskyddet",
+        "termoskyddet"
+      ]
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [],
+  "version": 1,
+  "planerad": "2026-10-20T18:00:00+02:00",
+  "segment": [
+    "SEG_samtycke_nb"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

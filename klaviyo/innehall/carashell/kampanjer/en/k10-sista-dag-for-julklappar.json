@@ -1,0 +1,68 @@
+{
+  "id": "k10-sista-dag-for-julklappar",
+  "namn": "MAIL_20261201_CaraShellMix_EN_GT_4_samtycke_promo_bestall-senast-mandag-7-dec_v1",
+  "sprak": "en",
+  "memo": "Riktig brådska: måndag 7 december är sista beställningsdag för att paketet ska hinna fram till jul (10 arbetsdagar + 2). Efter det lovar ingen text något om jul.",
+  "brief": "Hero med datumet måndag 7 december. Produktrad med de tre skydden. Fakta. Engelskan gäller USA, Storbritannien, Kanada, Australien och Nya Zeeland samtidigt: inga årstider (winter/summer/spring/autumn/fall), ingen snö — skriv \"while it is parked\", \"between trips\", \"off the road\". Säg caravan där det passar (GB/AU/NZ), motorhome, och RV en gång som amerikansk synonym. Christmas är ok, det är en högtid, inte en årstid.",
+  "taggar": {
+    "typ": "S",
+    "kalla": "egen-data",
+    "kalla_ref": "brands/carashell.json#kalender",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "konsekvens",
+    "confidence": "medium",
+    "prefix": "CaraShellMix",
+    "kod": "GT",
+    "avatar": "den som letar julklapp till någon med husvagn eller husbil",
+    "begar": "hinna"
+  },
+  "amnesrader": [
+    {
+      "text": "__COPY__: ämnesrad A, eget begär",
+      "begar": "__COPY__: begäret"
+    },
+    {
+      "text": "__COPY__: ämnesrad B, eget begär",
+      "begar": "__COPY__: begäret"
+    },
+    {
+      "text": "__COPY__: ämnesrad C, eget begär",
+      "begar": "__COPY__: begäret"
+    }
+  ],
+  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "__COPY__: rubrik: beställ senast måndag 7 december",
+      "text": "__COPY__: 1–2 meningar",
+      "bild": "produkt:takskyddet",
+      "knapp": {
+        "text": "__COPY__: knapp",
+        "lank": "kollektion:sortimentet"
+      }
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "__COPY__: rubrik",
+      "handles": [
+        "takskyddet",
+        "termoskyddet",
+        "fonstertermomatta-2-pack"
+      ]
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [],
+  "version": 1,
+  "planerad": "2026-12-01T16:00:00+01:00",
+  "segment": [
+    "SEG_samtycke_en"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

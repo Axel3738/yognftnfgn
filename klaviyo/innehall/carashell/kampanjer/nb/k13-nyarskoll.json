@@ -1,0 +1,63 @@
+{
+  "id": "k13-nyarskoll",
+  "namn": "MAIL_20261229_CaraShellMix_NB_S_2_samtycke_solution_en-koll-innan-sasongen_v1",
+  "sprak": "nb",
+  "memo": "Mellandagarna: gå ut och titta på vagnen. sv/nb: står taket torrt, är rutan täckt. en: the start of the year check. Produktrad med alla tre.",
+  "brief": "Rubrik + två stycken. Produktrad med alla tre. Fakta. ",
+  "taggar": {
+    "typ": "S",
+    "kalla": "gissning",
+    "kalla_ref": null,
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "sasong",
+    "confidence": "low",
+    "prefix": "CaraShellMix",
+    "kod": "S",
+    "avatar": "ägaren som inte tittat på vagnen sedan hösten",
+    "begar": "kontroll"
+  },
+  "amnesrader": [
+    {
+      "text": "__COPY__: ämnesrad A, eget begär",
+      "begar": "__COPY__: begäret"
+    },
+    {
+      "text": "__COPY__: ämnesrad B, eget begär",
+      "begar": "__COPY__: begäret"
+    },
+    {
+      "text": "__COPY__: ämnesrad C, eget begär",
+      "begar": "__COPY__: begäret"
+    }
+  ],
+  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "block": [
+    {
+      "typ": "text",
+      "rubrik": "__COPY__: rubrik: en koll i mellandagarna / at the start of the year",
+      "text": "__COPY__: två stycken"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "__COPY__: rubrik",
+      "handles": [
+        "takskyddet",
+        "termoskyddet",
+        "fonstertermomatta-2-pack"
+      ]
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [],
+  "version": 1,
+  "planerad": "2026-12-29T18:00:00+01:00",
+  "segment": [
+    "SEG_samtycke_nb"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

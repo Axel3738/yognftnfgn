@@ -1,0 +1,90 @@
+{
+  "id": "f06-levererat-termoskyddet",
+  "namn": "FLOW_levererat_termoskyddet_EN_v1",
+  "sprak": "en",
+  "memo": "Samma som takskyddets leveransflöde, för termoskyddet: spänns utvändigt över vindrutan och båda sidorutorna, flikarna kläms fast i dörrkarmen utan att dörrarna öppnas, håller i blåst.",
+  "spoks": {
+    "event": "order_delivered",
+    "filter": [
+      "ej_avregistrerad",
+      "sprak"
+    ],
+    "triggerFilter": {
+      "externalId": [
+        "termoskyddet"
+      ]
+    },
+    "reenroll": true,
+    "reenrollEfter": null
+  },
+  "steg": [
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 1
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f06-levererat-termoskyddet-e1",
+        "namn": "FLOW_levererat_termoskyddet_EN_E1_M_sa-monterar-du-termoskyddet_v1",
+        "sprak": "en",
+        "memo": "Monteringen med faktabladets ord, tre punkter.",
+        "brief": "Rubrik + en mening + tre punkter + grundare-rad + fakta.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "factory/produkter/termoskyddet.yaml#features, #faq",
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "CaraShellFront",
+          "kod": "M",
+          "avatar": "husbilsägaren som just fått termoskyddet",
+          "begar": "slippa-krangel"
+        },
+        "amnesrader": [
+          {
+            "text": "__COPY__: ämnesrad A, eget begär",
+            "begar": "__COPY__: begäret"
+          },
+          {
+            "text": "__COPY__: ämnesrad B, eget begär",
+            "begar": "__COPY__: begäret"
+          },
+          {
+            "text": "__COPY__: ämnesrad C, eget begär",
+            "begar": "__COPY__: begäret"
+          }
+        ],
+        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "__COPY__: rubrik: så monterar du termoskyddet",
+            "text": "__COPY__: en mening"
+          },
+          {
+            "typ": "punkter",
+            "rubrik": null,
+            "punkter": [
+              "__COPY__: utvändigt över vindrutan och båda sidorutorna",
+              "__COPY__: flikarna i dörrkarmen, dörrarna stängda",
+              "__COPY__: håller i blåst"
+            ]
+          },
+          {
+            "typ": "grundare",
+            "text": "__COPY__: blev något inte som det skulle, svara på mejlet"
+          },
+          {
+            "typ": "fakta"
+          }
+        ],
+        "tretest": [],
+        "version": 1
+      }
+    }
+  ]
+}

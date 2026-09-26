@@ -1,0 +1,64 @@
+{
+  "id": "k12-efter-blasten",
+  "namn": "MAIL_20261215_CaraShellRoof_NB_M_1_samtycke_product_kolla-banden-efter-blasten_v1",
+  "sprak": "nb",
+  "memo": "Servicemejl utan produktkort: efter en storm, gå ut och kolla att krokarna sitter under kanten och att banden är åtdragna. Skälet: ett överdrag som sitter rätt håller (faktabladet: håller i blåst), och kunden ska höra av sig om något gått sönder. Ingen försäljning.",
+  "brief": "Rubrik + en mening. Punkter: tre saker att kolla (krokarna under kanten, banden åtdragna, de två extra banden). Grundare-rad: gick något sönder, svara på mejlet. Inga produktkort, ingen knapp. ",
+  "taggar": {
+    "typ": "M",
+    "kalla": "voc",
+    "kalla_ref": "kommentarer/rapporter/2026-09-26.md (sönderblåst efter stormen)",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "ingen",
+    "confidence": "medium",
+    "prefix": "CaraShellRoof",
+    "kod": "M",
+    "avatar": "kunden som har överdraget på vagnen",
+    "begar": "kontroll"
+  },
+  "amnesrader": [
+    {
+      "text": "__COPY__: ämnesrad A, eget begär",
+      "begar": "__COPY__: begäret"
+    },
+    {
+      "text": "__COPY__: ämnesrad B, eget begär",
+      "begar": "__COPY__: begäret"
+    },
+    {
+      "text": "__COPY__: ämnesrad C, eget begär",
+      "begar": "__COPY__: begäret"
+    }
+  ],
+  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "block": [
+    {
+      "typ": "text",
+      "rubrik": "__COPY__: rubrik: efter blåsten",
+      "text": "__COPY__: en mening"
+    },
+    {
+      "typ": "punkter",
+      "rubrik": null,
+      "punkter": [
+        "__COPY__: krokarna under kanten",
+        "__COPY__: banden åtdragna",
+        "__COPY__: de extra banden"
+      ]
+    },
+    {
+      "typ": "grundare",
+      "text": "__COPY__: gick något sönder, svara på mejlet"
+    }
+  ],
+  "tretest": [],
+  "version": 1,
+  "planerad": "2026-12-15T18:00:00+01:00",
+  "segment": [
+    "SEG_samtycke_nb"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

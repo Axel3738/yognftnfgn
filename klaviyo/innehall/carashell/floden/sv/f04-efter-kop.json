@@ -1,0 +1,138 @@
+{
+  "id": "f04-efter-kop",
+  "namn": "FLOW_order_efterkop_SV_v1",
+  "sprak": "sv",
+  "memo": "Köparflöde (alla som inte tackat nej). E1 dag 2: vad som händer nu, spårningssidan på kundens språk, svara på mejlet — supportmejlet innan kunden hinner bli orolig (WISMO-andelen i autosvarets logg mäter det). E2 dag 16: kom allt fram, och exakt vad man gör om något är fel — mejlet som förebygger tvister (Bäverbutiken har 58, CaraShell 0).",
+  "spoks": {
+    "event": "order_created",
+    "filter": [
+      "ej_avregistrerad",
+      "sprak"
+    ],
+    "reenroll": true,
+    "reenrollEfter": null
+  },
+  "steg": [
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 2
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f04-efter-kop-e1",
+        "namn": "FLOW_order_efterkop_SV_E1_M_det-har-hander-nu_v1",
+        "sprak": "sv",
+        "memo": "Branded med tydlig knapp till spårningssidan (Axels dom på Bäverbutikens rentext-version: \"man kan inte knappa, folk orkar inte läsa\"). Ingen leveranstid. Paketnumret börjar på CS- och står i fraktmejlet.",
+        "brief": "Rubrik + 2 korta stycken: bekräftelsen och fraktmejlet med paketnumret (CS-…), knappen visar var paketet är. Grundare-raden: svara på mejlet om det känns långsamt. INGEN leveranstid, inga dagar.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "sparning/butiker.json#carashell (prefix CS-, sidor per språk)",
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "konsekvens",
+          "confidence": "medium",
+          "prefix": "CaraShellRoof",
+          "kod": "M",
+          "avatar": "kunden som just beställt och inte hört något sen dess",
+          "begar": "kunna se paketet själv utan att mejla"
+        },
+        "amnesrader": [
+          {
+            "text": "__COPY__: ämnesrad A, eget begär",
+            "begar": "__COPY__: begäret"
+          },
+          {
+            "text": "__COPY__: ämnesrad B, eget begär",
+            "begar": "__COPY__: begäret"
+          },
+          {
+            "text": "__COPY__: ämnesrad C, eget begär",
+            "begar": "__COPY__: begäret"
+          }
+        ],
+        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "__COPY__: rubrik",
+            "text": "__COPY__: två stycken"
+          },
+          {
+            "typ": "knapp",
+            "text": "__COPY__: knapp: följ ditt paket",
+            "lank": "sparning:"
+          },
+          {
+            "typ": "grundare",
+            "text": "__COPY__: en rad: svara på mejlet, jag läser själv"
+          }
+        ],
+        "tretest": [],
+        "version": 1
+      }
+    },
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 14
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f04-efter-kop-e2",
+        "namn": "FLOW_order_efterkop_SV_E2_M_kom-allt-fram_v1",
+        "sprak": "sv",
+        "memo": "Dag 16. Kom allt fram? Om inte: spårningssidan. Om något är fel: ångerrätt/garanti exakt som policyn, reklamation 3 år, mejla hello@carashell.com med ordernumret. Inga produktkort — det här är servicemejlet.",
+        "brief": "Rubrik + tre korta stycken (kom det fram; inte än → knappen; fel → policyn för språket + ordernumret + adressen). Fakta-blocket sist.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "brands/carashell.json#per_sprak.*.angerratt_fran",
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "CaraShellRoof",
+          "kod": "M",
+          "avatar": "kunden vars paket rimligen kommit fram",
+          "begar": "trygghet"
+        },
+        "amnesrader": [
+          {
+            "text": "__COPY__: ämnesrad A, eget begär",
+            "begar": "__COPY__: begäret"
+          },
+          {
+            "text": "__COPY__: ämnesrad B, eget begär",
+            "begar": "__COPY__: begäret"
+          },
+          {
+            "text": "__COPY__: ämnesrad C, eget begär",
+            "begar": "__COPY__: begäret"
+          }
+        ],
+        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "__COPY__: rubrik: kom allt fram?",
+            "text": "__COPY__: tre stycken"
+          },
+          {
+            "typ": "knapp",
+            "text": "__COPY__: knapp: följ ditt paket",
+            "lank": "sparning:"
+          },
+          {
+            "typ": "fakta"
+          }
+        ],
+        "tretest": [],
+        "version": 1
+      }
+    }
+  ]
+}

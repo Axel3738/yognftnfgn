@@ -1,0 +1,80 @@
+{
+  "id": "k04-vecka-43",
+  "namn": "MAIL_20261020_CaraShellRoof_SV_GT_1_samtycke_solution_fars-dag-26-okt_v1",
+  "sprak": "sv",
+  "memo": "Presenten till honom som ställer undan vagnen: fars dag 8/11, sista beställningsdag mån 26 oktober (10 arbetsdagar + 2). Riktig brådska med datum. Presentvinkeln är dödvikt i annonserna hos CaraShell (dna.md mönster 12) men i mejl går den till folk som redan känner butiken — hypotesen är att datumet, inte vinkeln, säljer.",
+  "brief": "Hero: presenten. Text med datumet skrivet ut (\"beställ senast måndag 26 oktober\") och varför (så att paketet hinner fram till fars dag) — utan leveranstid i dagar. Produktrad: taköverdraget + termoskyddet. Fakta.",
+  "taggar": {
+    "typ": "I",
+    "kalla": "egen-data",
+    "kalla_ref": "products/carashell/takskyddet/dna.md mönster 12; brands/carashell.json#kalender",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "konsekvens",
+    "confidence": "low",
+    "prefix": "CaraShellRoof",
+    "kod": "GT",
+    "avatar": "den som letar present till en pappa med husvagn eller husbil",
+    "begar": "en present han faktiskt använder"
+  },
+  "amnesrader": [
+    {
+      "text": "En present till honom med vagnen",
+      "begar": "hitta en present som verkligen används"
+    },
+    {
+      "text": "Beställ senast måndag 26 oktober",
+      "begar": "hinna i tid till ett bestämt datum"
+    },
+    {
+      "text": "Något han tar fram varje höst",
+      "begar": "ge något med återkommande värde, inte en engångspryl"
+    }
+  ],
+  "forhandstext": "Något som används varje höst, inte en pryl i en låda.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "En present till honom med vagnen",
+      "text": "Ett skydd för vagnen han redan är rädd om, till en present han faktiskt tar fram varje höst.",
+      "bild": "produkt:takskyddet",
+      "knapp": {
+        "text": "Se presenten",
+        "lank": "produkt:takskyddet"
+      }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Beställ senast måndag 26 oktober, så är paketet framme till fars dag, söndag 8 november."
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Två sätt att skydda vagnen",
+      "handles": [
+        "takskyddet",
+        "termoskyddet"
+      ]
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    { "rad": "En present till honom med vagnen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Beställ senast måndag 26 oktober", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Något han tar fram varje höst", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Något som används varje höst, inte en pryl i en låda.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En present till honom med vagnen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se presenten", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Två sätt att skydda vagnen", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "version": 1,
+  "planerad": "2026-10-20T18:00:00+02:00",
+  "segment": [
+    "SEG_samtycke_sv"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

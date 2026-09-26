@@ -1,0 +1,196 @@
+{
+  "id": "f05-vinback",
+  "namn": "FLOW_order_vinback_NB_v1",
+  "sprak": "nb",
+  "memo": "GISSNING, märkt så: CaraShell har 0 återköp på 90 dagar (butiken är 15 dagar gammal). Produkternas säsonger ligger ett halvår isär (taket på hösten, rutan på resorna), så 180 dagar efter ett köp är den andra produktens tid. E1: vad som finns nu. E2: en fråga tillbaka (vad saknar du för vagnen) — kundens egna ord till nästa produkt.",
+  "spoks": {
+    "event": "order_created",
+    "filter": [
+      "ej_avregistrerad",
+      "sprak",
+      "ej_kopt_sedan_start"
+    ],
+    "reenroll": true,
+    "reenrollEfter": null
+  },
+  "steg": [
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 180
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f05-vinback-e1",
+        "namn": "FLOW_order_vinback_NB_E1_S_ett-halvar-senare_v1",
+        "sprak": "nb",
+        "memo": "Säsongsneutralt (kan landa i mars eller december): ett halvår efter köpet, det här har vi nu. Produktrad med de tre skydden.",
+        "brief": "Rubrik + 2 stycken som fungerar oavsett årstid (en: aldrig winter/summer). Produktrad + fakta.",
+        "taggar": {
+          "typ": "S",
+          "kalla": "gissning",
+          "kalla_ref": null,
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "sasong",
+          "confidence": "low",
+          "prefix": "CaraShellRoof",
+          "kod": "S",
+          "avatar": "kunden som köpte för ett halvår sedan",
+          "begar": "skydda-det-jag-ager"
+        },
+        "amnesrader": [
+          {
+            "text": "Et halvår siden sist",
+            "begar": "bli minnet på butikken uten press"
+          },
+          {
+            "text": "Dette har vi nå",
+            "begar": "se hva som finnes i dag"
+          },
+          {
+            "text": "Mangler vogna di noe mer?",
+            "begar": "vurdere om det trengs noe mer"
+          }
+        ],
+        "forhandstext": "Litt tid har gått. Her er det vi tilbyr nå.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Et halvt år siden sist",
+            "text": "Det er en stund siden du handlet hos oss.\n\nHer er det vi tilbyr for campingvogna og bobilen i dag, uansett hvor på året du leser dette."
+          },
+          {
+            "typ": "produktrad",
+            "rubrik": "Det vi tilbyr nå",
+            "handles": [
+              "takskyddet",
+              "termoskyddet",
+              "fonstertermomatta-2-pack"
+            ]
+          },
+          {
+            "typ": "fakta"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Et halvår siden sist",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Dette har vi nå",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Mangler vogna di noe mer?",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Litt tid har gått. Her er det vi tilbyr nå.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Et halvt år siden sist",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Det vi tilbyr nå",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 1
+      }
+    },
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 14
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f05-vinback-e2",
+        "namn": "FLOW_order_vinback_NB_E2_M_vad-saknar-du_v1",
+        "sprak": "nb",
+        "memo": "Frågan: vad saknar du för vagnen? Svara med en rad. Kundens ord blir underlag till nästa produkt (Evolve: kundens egna ord).",
+        "brief": "Grundare-blocket: 3–4 meningar, en fråga, svara på mejlet. Inget annat.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "gissning",
+          "kalla_ref": null,
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "low",
+          "prefix": "CaraShellRoof",
+          "kod": "M",
+          "avatar": "kunden som köpte för ett halvår sedan",
+          "begar": "bli lyssnad på"
+        },
+        "format": "rentext",
+        "amnesrader": [
+          {
+            "text": "Hva mangler du til vogna?",
+            "begar": "bli spurt, ikke bare solgt til"
+          },
+          {
+            "text": "Ett spørsmål fra meg",
+            "begar": "en personlig henvendelse"
+          },
+          {
+            "text": "Svar med to ord, det holder",
+            "begar": "vite at det er lett å svare"
+          }
+        ],
+        "forhandstext": "Jeg lurer på noe, og et kort svar holder.",
+        "block": [
+          {
+            "typ": "grundare",
+            "text": "Jeg lurer på noe. Er det noe du savner til campingvogna eller bobilen, som vi ikke selger i dag? Svar på denne e-posten med noen få ord, jeg leser alt selv, og det hjelper oss å velge hva vi lager videre."
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Hva mangler du til vogna?",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Ett spørsmål fra meg",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Svar med to ord, det holder",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Jeg lurer på noe, og et kort svar holder.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 1
+      }
+    }
+  ]
+}

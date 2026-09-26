@@ -1,0 +1,89 @@
+{
+  "id": "k01-regnet-vid-takluckan",
+  "namn": "MAIL_20260929_CaraShellRoof_NB_PD_1_samtycke_problem_regnet-vid-takluckan_v1",
+  "sprak": "nb",
+  "memo": "Problemvinkeln bär butikens egen data: PD/SP är de vinklar som köper hos CaraShell (dna.md mönster 11). Regnet står kvar vid takluckan, tätmassan mjuknar, fukttestet till våren. sv/nb: inför vinteruppställningen. en: vagnen står parkerad — ingen årstid.",
+  "brief": "Hero (bild taköverdraget) med problemet ur faktabladet (regnet vid takluckan, tätmassan, fukttestet). Text: vad överdraget täcker (taket, kanten 30–40 cm ner) och inte täcker. Punkter: nio längder, banden, en person. Produktkort, två citat, fakta, knapp. Vintern får nämnas: uppställningen är riktig säsong (urgency sasong).",
+  "taggar": {
+    "typ": "I",
+    "kalla": "egen-data",
+    "kalla_ref": "products/carashell/takskyddet/dna.md mönster 11; factory/produkter/takskyddet.yaml#beskrivning",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "sasong",
+    "confidence": "medium",
+    "prefix": "CaraShellRoof",
+    "kod": "PD",
+    "avatar": "husvagns- eller husbilsägaren som ställer upp fordonet utomhus",
+    "begar": "skydda-det-jag-ager"
+  },
+  "amnesrader": [
+    {
+      "text": "__COPY__: ämnesrad A, eget begär",
+      "begar": "__COPY__: begäret"
+    },
+    {
+      "text": "__COPY__: ämnesrad B, eget begär",
+      "begar": "__COPY__: begäret"
+    },
+    {
+      "text": "__COPY__: ämnesrad C, eget begär",
+      "begar": "__COPY__: begäret"
+    }
+  ],
+  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "__COPY__: rubrik: regnet vid takluckan",
+      "text": "__COPY__: 1–2 meningar",
+      "bild": "produkt:takskyddet",
+      "knapp": {
+        "text": "__COPY__: knapp",
+        "lank": "produkt:takskyddet"
+      }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "__COPY__: vad täcks och vad täcks inte"
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "__COPY__: rubrik för tre punkter",
+      "punkter": [
+        "__COPY__: nio längder",
+        "__COPY__: banden och krokarna",
+        "__COPY__: en person"
+      ]
+    },
+    {
+      "typ": "produkt",
+      "handle": "takskyddet",
+      "text": "__COPY__: en mening under produktkortet",
+      "knapp": "__COPY__: knapp"
+    },
+    {
+      "typ": "citat",
+      "handle": "takskyddet",
+      "antal": 2
+    },
+    {
+      "typ": "fakta"
+    },
+    {
+      "typ": "knapp",
+      "text": "__COPY__: avslutande knapp",
+      "lank": "produkt:takskyddet"
+    }
+  ],
+  "tretest": [],
+  "version": 1,
+  "planerad": "2026-09-29T18:00:00+02:00",
+  "segment": [
+    "SEG_samtycke_nb"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

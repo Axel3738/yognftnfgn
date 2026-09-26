@@ -1,0 +1,70 @@
+{
+  "id": "k13-nyarskoll",
+  "namn": "MAIL_20261229_CaraShellMix_SV_S_2_samtycke_solution_en-koll-innan-sasongen_v1",
+  "sprak": "sv",
+  "memo": "Mellandagarna: gå ut och titta på vagnen. sv/nb: står taket torrt, är rutan täckt. en: the start of the year check. Produktrad med alla tre.",
+  "brief": "Rubrik + två stycken. Produktrad med alla tre. Fakta. ",
+  "taggar": {
+    "typ": "S",
+    "kalla": "gissning",
+    "kalla_ref": null,
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "sasong",
+    "confidence": "low",
+    "prefix": "CaraShellMix",
+    "kod": "S",
+    "avatar": "ägaren som inte tittat på vagnen sedan hösten",
+    "begar": "kontroll"
+  },
+  "amnesrader": [
+    {
+      "text": "En koll i mellandagarna",
+      "begar": "en enkel påminnelse i en lugn stund"
+    },
+    {
+      "text": "Står taket fortfarande torrt?",
+      "begar": "en kontrollfråga"
+    },
+    {
+      "text": "Innan säsongen drar igång igen",
+      "begar": "förbereda inför nästa fas"
+    }
+  ],
+  "forhandstext": "Två minuter, tre saker att titta på.",
+  "block": [
+    {
+      "typ": "text",
+      "rubrik": "En koll i mellandagarna",
+      "text": "Vagnen har stått still ett tag nu. Det är ett bra tillfälle att gå ut och titta på den: står taket torrt, sitter skyddet som det ska, är rutan fortfarande täckt.\n\nSkydden ska sitta som de gjorde när du satte på dem. Ser något annorlunda ut är det bra att veta i tid, innan säsongen drar igång igen."
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Tre skydd, en koll",
+      "handles": [
+        "takskyddet",
+        "termoskyddet",
+        "fonstertermomatta-2-pack"
+      ]
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    { "rad": "En koll i mellandagarna", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Står taket fortfarande torrt?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Innan säsongen drar igång igen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Två minuter, tre saker att titta på.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En koll i mellandagarna", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Tre skydd, en koll", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "version": 1,
+  "planerad": "2026-12-29T18:00:00+01:00",
+  "segment": [
+    "SEG_samtycke_sv"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

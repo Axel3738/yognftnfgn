@@ -1,0 +1,80 @@
+{
+  "id": "f14-recension",
+  "namn": "FLOW_levererat_recension_SV_v1",
+  "sprak": "sv",
+  "memo": "Tio dagar efter leveransen, klockan 18: vad tyckte du? Fem stjärnor som ALLA går till samma Trustpilot-sida (?stars=N förväljer betyget) — aldrig review gating. Plus grundarens rad: blev något fel, svara på mejlet först. ⚠️ Trustpilot har ingen profil för carashell.se (evaluate-sidan svarar 404, mätt 2026-09-26) — Axel gör anspråk på profilen innan flödet slås på.",
+  "spoks": {
+    "event": "order_delivered",
+    "filter": [
+      "ej_avregistrerad",
+      "sprak"
+    ],
+    "reenroll": true,
+    "reenrollEfter": "P90D",
+    "tilHour": "18:00"
+  },
+  "steg": [
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 10
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f14-recension-e1",
+        "namn": "FLOW_levererat_recension_SV_E1_M_vad-tyckte-du_v1",
+        "sprak": "sv",
+        "memo": "Transaktionell förfrågan: tre-frågorstestets \"ingen annan kan säga det\" får vara ❌ och redovisas.",
+        "brief": "Rubrik + en mening (paketet har hunnit fram, ett klick räcker). Stjärnblocket: rubrik + rad om att alla omdömen hjälper lika mycket. Grundare: blev något fel, svara på mejlet.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "klaviyo/innehall/baverbutiken/floden/f14-recension-trustpilot.json (samma konstruktion, egen copy)",
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "low",
+          "prefix": "CaraShellRoof",
+          "kod": "M",
+          "avatar": "köparen vars paket har hunnit fram",
+          "begar": "säga vad man tyckte"
+        },
+        "amnesrader": [
+          {
+            "text": "__COPY__: ämnesrad A, eget begär",
+            "begar": "__COPY__: begäret"
+          },
+          {
+            "text": "__COPY__: ämnesrad B, eget begär",
+            "begar": "__COPY__: begäret"
+          },
+          {
+            "text": "__COPY__: ämnesrad C, eget begär",
+            "begar": "__COPY__: begäret"
+          }
+        ],
+        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "__COPY__: rubrik: vad tyckte du?",
+            "text": "__COPY__: en mening"
+          },
+          {
+            "typ": "stjarnor",
+            "rubrik": "__COPY__: rubrik över stjärnorna",
+            "lank": "trustpilot:",
+            "text": "__COPY__: en rad: alla omdömen hjälper lika mycket"
+          },
+          {
+            "typ": "grundare",
+            "text": "__COPY__: blev något inte som det skulle, svara på mejlet först"
+          }
+        ],
+        "tretest": [],
+        "version": 1
+      }
+    }
+  ]
+}

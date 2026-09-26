@@ -1,0 +1,76 @@
+{
+  "id": "k03-imman-pa-rutan",
+  "namn": "MAIL_20261013_CaraShellFront_NB_PD_1_samtycke_problem_imman-mellan-gardin-och-glas_v1",
+  "sprak": "nb",
+  "memo": "Termoskyddet med sin egen problemrad ur faktabladet (imman sitter kvar mellan gardin och glas, trettio grader före frukost, insyn på rastplatsen) och nyheten fönstertermomatta 2-pack för smårutorna. Källans CS-manus (falsk brådska) används aldrig; PD är odömd hos CaraShell (dna.md mönster 2) — det här är testet.",
+  "brief": "Hero (bild termoskyddet) med imman. Punkter: utvändigt över vindrutan och sidorutorna, flikarna i dörrkarmen, mörklägger hela framvagnen. Produktrad med termoskyddet och fönstertermomattan (nyhet — säg bara namnet och måtten 70 × 80 cm, 2-pack; inget annat är känt om den). Fakta. Höst- och vinterresor får nämnas.",
+  "taggar": {
+    "typ": "N",
+    "kalla": "egen-data",
+    "kalla_ref": "products/carashell/termoskyddet/dna.md mönster 1–2; factory/produkter/termoskyddet.yaml#beskrivning",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "ingen",
+    "confidence": "low",
+    "prefix": "CaraShellFront",
+    "kod": "PD",
+    "avatar": "husbilsägaren som sover i bilen på ställplatser och rastplatser",
+    "begar": "slippa-krangel"
+  },
+  "amnesrader": [
+    {
+      "text": "__COPY__: ämnesrad A, eget begär",
+      "begar": "__COPY__: begäret"
+    },
+    {
+      "text": "__COPY__: ämnesrad B, eget begär",
+      "begar": "__COPY__: begäret"
+    },
+    {
+      "text": "__COPY__: ämnesrad C, eget begär",
+      "begar": "__COPY__: begäret"
+    }
+  ],
+  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "__COPY__: rubrik: imman",
+      "text": "__COPY__: 1–2 meningar",
+      "bild": "produkt:termoskyddet",
+      "knapp": {
+        "text": "__COPY__: knapp",
+        "lank": "produkt:termoskyddet"
+      }
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "__COPY__: rubrik",
+      "punkter": [
+        "__COPY__: utvändigt",
+        "__COPY__: dörrkarmen",
+        "__COPY__: mörklägger"
+      ]
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "__COPY__: rubrik: rutan och smårutorna",
+      "handles": [
+        "termoskyddet",
+        "fonstertermomatta-2-pack"
+      ]
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [],
+  "version": 1,
+  "planerad": "2026-10-13T18:00:00+02:00",
+  "segment": [
+    "SEG_samtycke_nb"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

@@ -1,0 +1,122 @@
+{
+  "id": "f06-levererat-takskyddet",
+  "namn": "FLOW_levererat_takskyddet_NB_v1",
+  "sprak": "nb",
+  "memo": "Triggas när Shopify säger levererat (spårningsrutinen skriver leveransskanningen i Shopify varje timme). Dagen efter: så sätter du på taköverdraget. Skälet: en kund som sätter på det rätt ringer inte om vind och lack. ⚠️ Triggern order_delivered är inte mätt i CaraShells workspace: mät att flödet får inskrivningar första veckan, annars byt till order_created + 12 dagar.",
+  "spoks": {
+    "event": "order_delivered",
+    "filter": [
+      "ej_avregistrerad",
+      "sprak"
+    ],
+    "triggerFilter": {
+      "externalId": [
+        "takskyddet"
+      ]
+    },
+    "reenroll": true,
+    "reenrollEfter": null
+  },
+  "steg": [
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 1
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f06-levererat-takskyddet-e1",
+        "namn": "FLOW_levererat_takskyddet_NB_E1_M_sa-satter-du-pa-det_v1",
+        "sprak": "nb",
+        "memo": "Monteringen med faktabladets ord: lägg det över taket med kanten 30–40 cm ner över sidorna, haka plastkrokarna under karossens kant längs sidorna (alla fyra sidor), dra åt de justerbara banden, de två extra banden på 10,5 m följer med för extra fäste. Inget om hur de extra banden dras (står inte i faktabladet).",
+        "brief": "Rubrik + en mening + fyra punkter i ordning + grundare-rad (blev något fel, svara på mejlet) + fakta.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "factory/produkter/takskyddet.yaml#features, #faq",
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "CaraShellRoof",
+          "kod": "M",
+          "avatar": "kunden som just fått paketet",
+          "begar": "slippa-krangel"
+        },
+        "amnesrader": [
+          {
+            "text": "Sånn setter du på taktrekket",
+            "begar": "vite nøyaktig hvordan man gjør det"
+          },
+          {
+            "text": "Fire steg, i riktig rekkefølge",
+            "begar": "en enkel oppskrift å følge"
+          },
+          {
+            "text": "Krokene fester under kanten",
+            "begar": "forstå festepunktet"
+          }
+        ],
+        "forhandstext": "Legg det over taket, fest krokene, dra til stroppene.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Sånn setter du på taktrekket",
+            "text": "Fire steg, i riktig rekkefølge."
+          },
+          {
+            "typ": "punkter",
+            "rubrik": null,
+            "punkter": [
+              "Legg trekket over taket, med kanten hengende ned over sidene.",
+              "Hekt plasthakene under kanten på karosseriet, på alle fire sider.",
+              "Dra til de justerbare stroppene.",
+              "De to ekstra stroppene på 10,5 meter følger med i pakken."
+            ]
+          },
+          {
+            "typ": "grundare",
+            "text": "Ble noe ikke som det skulle? Svar på denne e-posten, så hjelper jeg deg."
+          },
+          {
+            "typ": "fakta"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Sånn setter du på taktrekket",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Fire steg, i riktig rekkefølge",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Krokene fester under kanten",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Legg det over taket, fest krokene, dra til stroppene.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Sånn setter du på taktrekket",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 1
+      }
+    }
+  ]
+}

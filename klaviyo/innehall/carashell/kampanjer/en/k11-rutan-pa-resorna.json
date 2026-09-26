@@ -1,0 +1,67 @@
+{
+  "id": "k11-rutan-pa-resorna",
+  "namn": "MAIL_20261208_CaraShellFront_EN_PD_2_samtycke_solution_kylan-borta-fran-rutan_v1",
+  "sprak": "en",
+  "memo": "Termoskyddet och fönstertermomattan för den som reser: håller kylan och solen borta från vindrutan och sidorutorna, mörklägger. sv/nb: vinterresor, fjällen får nämnas som plats men inga påståenden om isolervärde. en: the trips ahead — ingen årstid.",
+  "brief": "Hero (bild termoskyddet). Text: kylan och solen borta från rutan, ingen imma, mörkt när du sover. Produktrad: termoskyddet + fönstertermomattan. Fakta. Aldrig isolervärde, material eller vikt. Engelskan gäller USA, Storbritannien, Kanada, Australien och Nya Zeeland samtidigt: inga årstider (winter/summer/spring/autumn/fall), ingen snö — skriv \"while it is parked\", \"between trips\", \"off the road\". Säg caravan där det passar (GB/AU/NZ), motorhome, och RV en gång som amerikansk synonym.",
+  "taggar": {
+    "typ": "N",
+    "kalla": "egen-data",
+    "kalla_ref": "factory/produkter/termoskyddet.yaml#beskrivning",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "ingen",
+    "confidence": "low",
+    "prefix": "CaraShellFront",
+    "kod": "PD",
+    "avatar": "husbilsägaren som reser även när det är kallt",
+    "begar": "njutning"
+  },
+  "amnesrader": [
+    {
+      "text": "__COPY__: ämnesrad A, eget begär",
+      "begar": "__COPY__: begäret"
+    },
+    {
+      "text": "__COPY__: ämnesrad B, eget begär",
+      "begar": "__COPY__: begäret"
+    },
+    {
+      "text": "__COPY__: ämnesrad C, eget begär",
+      "begar": "__COPY__: begäret"
+    }
+  ],
+  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "__COPY__: rubrik: rutan på resorna",
+      "text": "__COPY__: 1–2 meningar",
+      "bild": "produkt:termoskyddet",
+      "knapp": {
+        "text": "__COPY__: knapp",
+        "lank": "produkt:termoskyddet"
+      }
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "__COPY__: rubrik",
+      "handles": [
+        "termoskyddet",
+        "fonstertermomatta-2-pack"
+      ]
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [],
+  "version": 1,
+  "planerad": "2026-12-08T16:00:00+01:00",
+  "segment": [
+    "SEG_samtycke_en"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}
