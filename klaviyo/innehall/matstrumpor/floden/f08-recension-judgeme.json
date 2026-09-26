@@ -1,0 +1,77 @@
+{
+  "id": "f08-recension-judgeme",
+  "namn": "FLOW_segment_recension_v1",
+  "memo": "Recensionsflödet (Axels beslut B 2026-09-26, svar på frågan 'vilka gamla köpare får recensionsmejlet?'): alla köpare som inte tackat nej. Bakgrund i products/matstrumpor/produktsida.md: produktsidan visar 8 recensioner fast 3 776 kunder har köpt, och 7 av de 8 kom via Shop-appen, bara 1 via en butiksinbjudan, så recensionsförfrågningarna har troligen aldrig gått ut under säsongen. Recensionerna ska landa där sidan visar dem, alltså i Judge.me på produktsidan (inte Trustpilot): knappen och länkraden går till produktsidornas recensionsdel (#judgeme_product_reviews), där Judge.me ber om bild och verifierar köpet mot mejladressen. Triggern är segmentet SEG_recension_kopare (köpt någon gång, inget köp senaste 16 dagarna, alltså paketet rimligen framme vid p90 15 dygn), filtret kundundantag (MFL 19 § andra stycket) i stället för samtycke, precis som köparflödena F04/F05/F07. Gamla köpare läggs in med Klaviyos 'Add past profiles' på triggerkortet när flödet är live (Axels klick); nya köpare kommer in av sig själva 16 dagar efter ordern. Ett mejl, inga påminnelser, inga belöningar (en belöning måste märkas i recensionen och skruvar betyget). Sidfoten säger sanningen: mottagaren får mejlet för att hen handlat, inte för att hen är medlem.",
+  "trigger": {
+    "typ": "segment",
+    "segment": "SEG_recension_kopare"
+  },
+  "filter": ["kundundantag"],
+  "ateintrade": { "varaktighet": null, "enhet": "alltime" },
+  "steg": [
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f08-recension-e1",
+        "namn": "FLOW_recension_E1_M_hur-blev-det-nar-ladan-oppnades_v1",
+        "memo": "Enda mejlet i flödet. Två saker nästa presentköpare är rädd för och som bara en kund kan svara på: vad som hände när lådan öppnades, och om strumporna används i vardagen (rädsla 1 och 5 i Axels strategidokument). Knappen går till sushilådans recensionsdel (92 % av enheterna är sushi); länkraden fångar de som fick pizza, hamburgare eller donut. Inget löfte om något i utbyte, inget krav på betyg. Copyn av en Sonnet-subagent mot docs/copy-regler.md 2026-09-26, tre-frågorstestet nedan; huvudsessionen valde ordningen på ämnesraderna (reaktionen först).",
+        "sidfot_varfor": "Du får det här mejlet för att du har handlat hos Matstrumpor.",
+        "utan_klubbrad": true,
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "products/matstrumpor/produktsida.md (8 recensioner av 3 776 köpare, 7 av 8 via Shop-appen, mätt 2026-09-25)",
+          "lardom": null,
+          "avatar": "köparen som gav bort lådan för ett tag sedan",
+          "begar": "att någon vill höra hur det blev, och att hjälpa nästa presentköpare välja rätt",
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "Recension",
+          "kod": "M"
+        },
+        "amnesrader": [
+          { "text": "Minns du reaktionen när lådan öppnades?", "begar": "minnas skrattet och reaktionen hos den som öppnade lådan" },
+          { "text": "Ligger de i en byrålåda, eller på fötterna?", "begar": "nyfikenhet på om den roliga presenten faktiskt används" },
+          { "text": "Ett foto av lådan hjälper nästa köpare", "begar": "vilja bidra, hjälpa nästa som ska välja present" }
+        ],
+        "forhandstext": "En bild av lådan och några ord om hur det blev.",
+        "block": [
+          {
+            "typ": "hero",
+            "rubrik": "Hur blev det när lådan öppnades?",
+            "text": "Hej {{fornamn}},\n\nDet har gått ett tag sen du köpte en låda hos oss. Vi är nyfikna på hur det blev: reaktionen när den öppnades, och hur strumporna funkar i vardagen nu.",
+            "bild": "produkt:sushi-strumpor",
+            "knapp": { "text": "Skriv om din låda", "lank": "url:https://matstrumpor.se/products/sushi-strumpor#judgeme_product_reviews" }
+          },
+          {
+            "typ": "lankrad",
+            "rubrik": "Blev det pizza, hamburgare eller donut?",
+            "lankar": [
+              { "text": "Skriv om pizzan", "lank": "url:https://matstrumpor.se/products/pizza-strumpor#judgeme_product_reviews" },
+              { "text": "Skriv om burgaren", "lank": "url:https://matstrumpor.se/products/hamburger-strumpor#judgeme_product_reviews" },
+              { "text": "Skriv om donuten", "lank": "url:https://matstrumpor.se/products/donut-strumpor#judgeme_product_reviews" }
+            ]
+          },
+          {
+            "typ": "text",
+            "rubrik": null,
+            "text": "Din recension hjälper någon som fortfarande funderar på om det är rätt present. Blev något fel, går det bra att svara direkt på det här mejlet."
+          }
+        ],
+        "tretest": [
+          { "rad": "Minns du reaktionen när lådan öppnades?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Ligger de i en byrålåda, eller på fötterna?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Ett foto av lådan hjälper nästa köpare", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "En bild av lådan och några ord om hur det blev.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Hur blev det när lådan öppnades?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Det har gått ett tag sen du köpte en låda hos oss. Vi är nyfikna på hur det blev: reaktionen när den öppnades, och hur strumporna funkar i vardagen nu.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Skriv om din låda", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Blev det pizza, hamburgare eller donut?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Din recension hjälper någon som fortfarande funderar på om det är rätt present. Blev något fel, går det bra att svara direkt på det här mejlet.", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+        ],
+        "version": 1
+      }
+    }
+  ]
+}

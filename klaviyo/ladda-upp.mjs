@@ -544,10 +544,14 @@ export async function laddaUpp({ brand, manifest, klient = null, skarpt = false,
       try {
         const filt = fl.filter ?? [];
         if (filt.includes('kundundantag')) {
-          // Kundundantaget gäller bara den som köpt: triggern måste vara ett köp (lagd eller skickad order).
+          // Kundundantaget gäller bara den som köpt: triggern måste vara ett köp (lagd eller
+          // skickad order) — eller ett köparsegment (`kopare: true` i segment.mjs), där varje
+          // medlem per definition har köpt (recensionsflödet, Axels beslut B 2026-09-26).
           const tm = fl.trigger?.typ === 'metrik' ? [fl.trigger.metrik].flat() : [];
-          if (filt.includes('samtycke') || tm.length === 0 || tm.some((x) => !KOPTRIGGRAR.includes(x))) {
-            throw Object.assign(new Error('"kundundantag" går bara i ett flöde som triggas av ett köp (Placed Order eller Fulfilled Order), och aldrig tillsammans med "samtycke" (MFL 19 § andra stycket)'), { kod: 'UNDANTAG_FEL' });
+          const koptrigger = tm.length > 0 && tm.every((x) => KOPTRIGGRAR.includes(x));
+          const koparsegment = fl.trigger?.typ === 'segment' && segmentPaNamn(fl.trigger.segment, brand)?.kopare === true;
+          if (filt.includes('samtycke') || !(koptrigger || koparsegment)) {
+            throw Object.assign(new Error('"kundundantag" går bara i ett flöde som triggas av ett köp (Placed Order eller Fulfilled Order) eller av ett köparsegment (kopare: true i segment.mjs), och aldrig tillsammans med "samtycke" (MFL 19 § andra stycket)'), { kod: 'UNDANTAG_FEL' });
           }
         } else if (!filt.includes('samtycke')) {
           throw Object.assign(new Error('flödets filter saknar "samtycke" — varje marknadsflöde kräver samtyckesvillkoret i profile_filter (järnregel 2)'), { kod: 'SAMTYCKE_SAKNAS' });

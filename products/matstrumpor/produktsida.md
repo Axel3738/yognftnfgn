@@ -66,6 +66,33 @@ garanti.
 | Önskan 4: vinna presentleken | "Förra året tog sushilådan slut i november" (sant) + riktigt antal köpare i stället för "tusentals" | Sant tal ur Shopify vid varje ändring |
 | Önskan 5: "jag vet vad du älskar" | Mix-blocket (sushi/pizza/hamburgare/donut) med rubrik om favoriträtten | Copy |
 
+## Gjort 2026-09-26 (Axels svar B på recensionsfrågan)
+
+- **Sidan, live och tillbakaläst samma dag:** AI-soffbilden (`matstrumpor_52_alla_fotter_soffan.jpg`,
+  inbäddad i beskrivningen — den visade dessutom strumpor som inte är våra) och raden
+  "Soffbilden är en AI-genererad illustration" borta; **fyra AI/CGI-bilder borta ur
+  galleriet** (media-id 57670893666643 `openart-f0afefca…_2.png`, 57670894158163
+  `b9c28ae5…_2.avif`, 57670894485843 `openart-bc64e45b…_1.png`, 57670894616915
+  `5c8d5bd4…_3.avif` — filnamnen står här så de går att lägga tillbaka), kvar är fem
+  riktiga foton; raden **"Förra året tog sushilådan slut i november."** i beskrivningen
+  (sant, Axel 2026-09-24); ny snippet `snippets/ms-sista-dag.liquid` + blocket
+  `ms_sista_dag` efter leveransestimatet: **"Beställ senast 24 oktober så är paketet
+  framme till fars dag."** till och med 24/10, sedan "8 december … till jul" till och med
+  8/12, sedan inget (datumen = högtiden minus p90 15 dygn, samma som
+  `klaviyo/brands/matstrumpor.json`); startsidans "Älskad av tusentals svenskar" →
+  **"Över 3 700 kunder har beställt"** (3 776 kunder, Shopify 2026-09-25) i `ms_usp`
+  och `ms_marquee`. Allt i det publicerade temat "Matstrumpor CRO + storleksrad
+  2026-09-17" via `themeFilesUpsert`. Kvar i beskrivningen: öppnings-GIF:en
+  `ezgif-5d1844bc3a0df8.webp` — **15 MB** animerad GIF; ett riktigt klipp, men tung på
+  mobil, byt mot en kort mp4 (redigerarna).
+- **Recensionsflödet F08** `FLOW_segment_recension_v1` byggt och uppladdat som utkast
+  (se `klaviyo/README.md` → Matstrumpor): alla köpare som inte tackat nej, Judge.me på
+  produktsidan, ett mejl, ingen belöning.
+- **Sidkollen** `matstrumpor/sida-koll.mjs` + `leverans.mjs` byggda och inlagda i
+  `/matstrumporkungen` steg 0 (varje dag, även utan rond). Första mätningen: 4 röda,
+  alla Axels (material, leveranslöfte, valutaformat, prisformat) — se
+  `matstrumpor/README.md` → Sidkollen.
+
 ## Så garanteras det (förslag)
 
 1. **Sidkoll varje dag** i `/matstrumporkungen`: ett skript läser den publika

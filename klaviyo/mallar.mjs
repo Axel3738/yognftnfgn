@@ -512,6 +512,27 @@ const BLOCK = {
                 </tr>
               </table>`, '16px 32px 16px');
   },
+  // Länkrad (recensionsflödet 2026-09-26): en liten rubrikrad och några
+  // textlänkar sida vid sida, för "fick du en annan låda?" — i stället för
+  // fyra stora knappar. Bara text, ser likadant ut i alla klienter. Länkarna
+  // följer samma länkspråk som knapparna (produkt:, sida:, url:, https://).
+  lankrad(b, ctx) {
+    const { s, lage } = ctx;
+    const lankar = (b.lankar ?? []).filter((l) => l?.text && l?.lank);
+    if (!lankar.length) {
+      ctx.varningar.push('Länkraden saknar länkar, blocket utgår.');
+      return '';
+    }
+    const skilj = `<span style="${s.brod} font-size: 14px; color: ${s.gra};">&nbsp;&middot;&nbsp;</span>`;
+    const celler = lankar
+      .map((l) => `<a href="${esk(lank(l.lank, ctx))}" target="_blank" style="${s.brod} font-size: 14px; color: ${s.svart}; text-decoration: underline; white-space: nowrap;">${kundtext(l.text, lage)}</a>`)
+      .join(skilj);
+    return rad(
+      (b.rubrik ? `<p style="${s.brod} font-size: 14px; line-height: 1.6; color: ${s.gra}; margin: 0 0 6px; text-align: center;">${kundtext(b.rubrik, lage)}</p>` : '') +
+      `<p style="margin: 0; text-align: center; line-height: 1.9;">${celler}</p>`,
+      '4px 32px 12px'
+    );
+  },
   grundare(b, ctx) {
     const { s, lage } = ctx;
     const namn = ctx.stil.grundare ?? 'Axel';
@@ -701,7 +722,7 @@ function rentextDokument(ctx, { titel, forhandstext, rader }) {
           </tr>
           <tr>
             <td style="padding: 16px 32px 28px; border-top: 1px solid ${s.ram};">
-              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 12px; line-height: 1.7; color: ${s.gra}; margin: 0;">${esk(varforText(brand))}</p>
+              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 12px; line-height: 1.7; color: ${s.gra}; margin: 0;">${esk(varforText(brand, ctx.mejl))}</p>
               <p style="font-family: Arial,Helvetica,sans-serif; font-size: 12px; line-height: 1.7; color: ${s.gra}; margin: 4px 0 0;">${avreg}</p>
               <p style="font-family: Arial,Helvetica,sans-serif; font-size: 12px; line-height: 1.7; color: ${s.gra}; margin: 4px 0 0;">${org}</p>
             </td>
@@ -731,8 +752,12 @@ export function erbjudandeVillkor(e, maxVarde = null) {
 // Sidfot, dokument, textversion
 // ---------------------------------------------------------------------------
 
-export function varforText(brand) {
-  return brand.sidfot_varfor ?? `Du får det här för att du har sagt ja till nyhetsbrev från ${brand.namn}.`;
+// Raden i sidfoten som säger varför mottagaren får mejlet. Brandets rad gäller
+// prenumeranterna; ett mejl som går på kundundantaget (till köpare som aldrig
+// sagt ja) sätter sin egen `sidfot_varfor`, annars påstår sidfoten ett
+// medlemskap som inte finns (recensionsflödet 2026-09-26).
+export function varforText(brand, mejl = null) {
+  return mejl?.sidfot_varfor ?? brand.sidfot_varfor ?? `Du får det här för att du har sagt ja till nyhetsbrev från ${brand.namn}.`;
 }
 
 function sidfot(ctx) {
@@ -751,7 +776,7 @@ function sidfot(ctx) {
     underKortet: `
     <tr>
       <td align="center" style="padding: 4px 24px 28px;">
-        <p style="${s.fin ?? s.brod} font-size: 12px; line-height: 1.7; color: ${s.gra}; margin: 0;">${esk(varforText(brand))}</p>
+        <p style="${s.fin ?? s.brod} font-size: 12px; line-height: 1.7; color: ${s.gra}; margin: 0;">${esk(varforText(brand, ctx.mejl))}</p>
         <p style="${s.fin ?? s.brod} font-size: 12px; line-height: 1.7; color: ${s.gra}; margin: 4px 0 0;">${avreg} &nbsp;&middot;&nbsp; ${inst}</p>
         <p style="${s.fin ?? s.brod} font-size: 12px; line-height: 1.7; color: ${s.gra}; margin: 4px 0 0;">${org}</p>
       </td>
@@ -781,7 +806,10 @@ function dokument(ctx, { titel, forhandstext, rader }) {
   // Klubbraden under loggan (brand.klubb.namn): varje mejl säger vilken klubb
   // det kommer från — Matstrumpor-klubben, Axels beslut 2026-09-25 ("det måste
   // vara som ett medlemskap att vara med i Matstrumpors klubb").
-  const klubb = brand.klubb?.namn
+  // Ett mejl som går på kundundantaget till köpare utanför klubben sätter
+  // `utan_klubbrad: true` — "Klubbpost. Inte för alla." vore osant där
+  // (recensionsflödet 2026-09-26).
+  const klubb = brand.klubb?.namn && !ctx.mejl?.utan_klubbrad
     ? `<p style="${s.rubrik} font-size: 14px; letter-spacing: 1px; color: ${ljus ? s.rod : '#ffffff'}; margin: 10px 0 0;">${esk(brand.klubb.namn)}</p>${brand.klubb.eyebrow ? `<p style="${s.brod} font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: ${ljus ? s.gra : '#d9d9d9'}; margin: 4px 0 0;">${esk(brand.klubb.eyebrow)}</p>` : ''}`
     : '';
   // Webbfonten laddas i huvudet: <link> för de klienter som följer den och
@@ -865,6 +893,9 @@ function textversion(mejl, ctx) {
       case 'knapp':
         ut.push(`${b.text}: ${lank(b.lank, { ...ctx, varningar: [] })}`);
         break;
+      case 'lankrad':
+        ut.push([b.rubrik ? t(b.rubrik) : null, ...(b.lankar ?? []).filter((l) => l?.text && l?.lank).map((l) => `${l.text}: ${lank(l.lank, { ...ctx, varningar: [] })}`)].filter(Boolean).join('\n'));
+        break;
       case 'stjarnor':
         ut.push(`Ge ditt betyg: ${lank(b.lank, { ...ctx, varningar: [] })}`);
         break;
@@ -897,7 +928,7 @@ function textversion(mejl, ctx) {
   }
   if (mejl.format === 'rentext') ut.push(signatur(ctx));
   ut.push('--');
-  ut.push(varforText(brand));
+  ut.push(varforText(brand, mejl));
   ut.push(lage === 'klaviyo' ? 'Avregistrera dig: {% unsubscribe_link %}' : 'Avregistrera dig: (länken sätts av Klaviyo)');
   ut.push(lage === 'klaviyo' ? '{{ organization.name }}, {{ organization.full_address }}' : `${brand.namn}, (adressen hämtas ur Klaviyo)`);
   return ut.filter((x) => x && String(x).trim()).join('\n\n') + '\n';
@@ -935,6 +966,7 @@ export function byggMejl(mejl, { brand, stil = null, erbjudande = undefined, pro
     produkt: (h) => perHandle.get(h) ?? null,
     handles: handlesI(mejl),
     varningar,
+    mejl,
   };
   const rentext = mejl.format === 'rentext';
   if (mejl.format && !rentext) varningar.push(`Okänt format "${mejl.format}", mejlet byggs som vanligt.`);

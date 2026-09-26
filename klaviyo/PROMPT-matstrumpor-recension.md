@@ -1,5 +1,15 @@
 # Prompt: recensionsmejlet (Trustpilot) för Matstrumpor
 
+⛔ **Ersatt 2026-09-26 — kör inte den här.** Recensionsflödet för Matstrumpor
+byggdes som **F08 `FLOW_segment_recension_v1`** mot **Judge.me på
+produktsidan**, inte Trustpilot: sidan visar Judge.me-recensionerna (8 st av
+3 776 köpare), så det är där recensionerna ska landa. Trigger: segmentet
+`SEG_recension_kopare` (köpt någon gång, inget köp senaste 16 dagarna),
+filter `kundundantag` (Axels beslut B 2026-09-26: alla köpare som inte
+tackat nej), gamla köpare via Klaviyos "Add past profiles". Filen:
+`klaviyo/innehall/matstrumpor/floden/f08-recension-judgeme.json`, läget i
+`klaviyo/README.md` → Matstrumpor. Prompten nedan står kvar som historik.
+
 Skriven 2026-09-25 efter att Bäverbutikens F14 byggdes. Kör den först när
 Matstrumpor-sessionen (`klaviyo/PROMPT-matstrumpor.md`) är klar och mergad.
 Allt under strecket är prompten.

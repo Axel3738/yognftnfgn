@@ -163,3 +163,35 @@ test('stjärnblocket: alla fem stjärnor går till SAMMA ställe (ingen review g
   const html = bygg(mejl({ block: [{ typ: 'stjarnor', lank: 'url:https://se.trustpilot.com/evaluate/baverbutiken.se' }] })).html;
   assert.equal((html.match(/evaluate\/baverbutiken\.se\?stars=/g) ?? []).length, 5);
 });
+
+test('lankrad: textlänkar sida vid sida i HTML och textversion, tom rad utgår med varning', () => {
+  const handle = PRODUKTER[0].handle;
+  const m = mejl({ block: [{ typ: 'lankrad', rubrik: 'Fick du en annan låda?', lankar: [{ text: 'Pizza', lank: 'url:https://exempel.se/products/pizza#judgeme_product_reviews' }, { text: 'Donut', lank: `produkt:${handle}` }] }] });
+  const { html, text, varningar } = bygg(m);
+  assert.match(html, /Fick du en annan låda\?/);
+  assert.match(html, /href="https:\/\/exempel\.se\/products\/pizza#judgeme_product_reviews"[^>]*>Pizza<\/a>/);
+  assert.match(html, />Donut<\/a>/);
+  assert.match(text, /Pizza: https:\/\/exempel\.se\/products\/pizza#judgeme_product_reviews/);
+  assert.deepEqual(varningar, []);
+  const tom = bygg(mejl({ block: [{ typ: 'lankrad', rubrik: 'x', lankar: [] }] }));
+  assert.ok(tom.varningar.some((v) => /Länkraden saknar länkar/.test(v)));
+});
+
+test('sidfot_varfor på mejlet slår brandets rad, i kortet, rentext och textversionen', () => {
+  const egen = 'Du får det här för att du har handlat hos oss.';
+  const vanlig = bygg(mejl());
+  assert.doesNotMatch(vanlig.html, new RegExp(egen));
+  const med = bygg(mejl({ sidfot_varfor: egen }));
+  assert.match(med.html, new RegExp(egen));
+  assert.match(med.text, new RegExp(egen));
+  const rentext = bygg(mejl({ sidfot_varfor: egen, format: 'rentext' }));
+  assert.match(rentext.html, new RegExp(egen));
+});
+
+test('utan_klubbrad tar bort klubbnamnet och eyebrown ur sidhuvudet', () => {
+  const brand = { ...BRAND, klubb: { namn: 'Testklubben', eyebrow: 'Klubbpost. Inte för alla.' } };
+  const med = byggMejl(mejl(), { brand, produkter: PRODUKTER, recensioner: RECENSIONER });
+  assert.match(med.html, /Testklubben/);
+  const utan = byggMejl(mejl({ utan_klubbrad: true }), { brand, produkter: PRODUKTER, recensioner: RECENSIONER });
+  assert.doesNotMatch(utan.html, /Testklubben|Inte för alla/);
+});

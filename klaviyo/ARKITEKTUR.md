@@ -172,6 +172,7 @@ produktens **handle**; byggaren hämtar resten ur Shopify.
     { "typ": "produktrad", "rubrik": "…", "handles": ["<h1>", "<h2>", "<h3>"] },
     { "typ": "citat", "handle": "<handle>", "antal": 2 },
     { "typ": "knapp", "text": "…", "lank": "produkt:<handle> | kollektion:<handle> | sida:<path> | url:https://…" },
+    { "typ": "lankrad", "rubrik": "…", "lankar": [{ "text": "…", "lank": "produkt:<handle> | url:https://…" }] },
     { "typ": "medlemskort", "etikett": "…", "rad_under_namnet": "…", "fotnot": "…" },
     { "typ": "grundare", "text": "…" },
     { "typ": "fakta" },
@@ -183,6 +184,14 @@ produktens **handle**; byggaren hämtar resten ur Shopify.
   ]
 }
 ```
+
+Mejlnivå, valfritt: `"sidfot_varfor": "…"` = raden i sidfoten som säger varför mottagaren får
+mejlet. Brandets rad gäller prenumeranterna; ett mejl som går på `kundundantag` (till köpare som
+aldrig sagt ja) MÅSTE sätta sin egen, annars påstår sidfoten ett medlemskap som inte finns
+(recensionsflödet 2026-09-26). Samma mejl sätter `"utan_klubbrad": true`, så sidhuvudet
+inte säger "Klubbpost. Inte för alla." till någon som aldrig gått med. `lankrad` = små
+textlänkar sida vid sida under en rubrikrad, för "fick du en annan låda?" utan fyra stora
+knappar.
 
 Mejlnivå, valfritt: `"format": "rentext"` = personligt mejl från Axel. Inget hero, inga
 produktkort. Tillåtna block: `text`, `knapp` (högst en), `grundare`, `fakta`, `erbjudande`.
@@ -269,7 +278,7 @@ Filternycklarna översätts av `segment.mjs` till Klaviyos villkor:
 | `ej_checkout_sedan_start` | `profile-metric` kassametriken, count `equals 0`, `flow-start` |
 | `ej_i_flodet_7d` / `_14d` / `_30d` | `profile-not-in-flow`, `in-the-last` N `day` |
 | `kopt_minst_en_gang` | Placed Order count `>= 1`, `alltime` |
-| `kundundantag` | `profile-marketing-consent`, `can_receive_marketing: true`, `subscription: "any"`: alla som kan ta emot reklam, aldrig avregistrerade. Ersätter `samtycke` BARA i flöden som triggas av Placed Order (MFL 19 § andra stycket, Axels beslut B 2026-09-25). Aldrig ihop med `samtycke`, aldrig i en kampanj. |
+| `kundundantag` | `profile-marketing-consent`, `can_receive_marketing: true`, `subscription: "any"`: alla som kan ta emot reklam, aldrig avregistrerade. Ersätter `samtycke` BARA i flöden som triggas av ett köp (Placed Order eller Fulfilled Order — MFL 19 § andra stycket, Axels beslut B 2026-09-25) **eller av ett köparsegment** (`kopare: true` i `segment.mjs`, i dag bara `SEG_recension_kopare` — recensionsflödet, Axels beslut B 2026-09-26: alla köpare som inte tackat nej). Aldrig ihop med `samtycke`, aldrig i en kampanj. Ett sådant mejl sätter sin egen `sidfot_varfor` (se blocken), annars påstår sidfoten ett medlemskap. |
 
 Flödena är linjära (vänta → mejl → vänta → mejl). Flödets filter prövas före varje
 steg, så "har köpt sedan start" stoppar resten av flödet utan en split.
@@ -289,6 +298,7 @@ steg, så "har köpt sedan start" stoppar resten av flödet utan en split.
 | `SEG_vinback_90d` | samtycke AND Placed Order ≥1 alltime AND Placed Order =0 senaste 90 d | ja |
 | `SEG_oengagerade_180d` | samtycke AND Received Email ≥5 alltime AND Opened =0 180 d AND Clicked =0 180 d | nej (bara exkludering + sunset) |
 | `SEG_kategori_<namn>` | samtycke AND Ordered Product ≥1 alltime med produktfilter (se `segment.mjs`) | ja |
+| `SEG_recension_kopare` | Placed Order ≥1 alltime AND Placed Order =0 senaste 16 d — **utan samtyckesgrupp** (`kopare: true`): triggern för recensionsflödet, som själv filtrerar på `kundundantag`. 16 dagar = paketet är rimligen framme (p90 15 dygn). Lägg aldrig till en kampanjpublik här | nej (bara flödestrigger) |
 
 ## Uppladdningens ordning (`ladda-upp.mjs`)
 

@@ -1,6 +1,6 @@
 {
   "brand": "matstrumpor",
-  "hamtad": "2026-09-25T16:15:22.588Z",
+  "hamtad": "2026-09-26T04:38:21.711Z",
   "konto": {
     "id": "UV6Rqg",
     "public_api_key": "UV6Rqg",
@@ -185,7 +185,7 @@
       "id": "VzTE9X",
       "namn": "Email List",
       "opt_in": "double_opt_in",
-      "profiler": 2892
+      "profiler": 2893
     }
   ],
   "segment": [
@@ -227,6 +227,11 @@
     {
       "id": "SVYH6Q",
       "namn": "Potential Purchasers (Shopify)",
+      "aktiv": true
+    },
+    {
+      "id": "T9SCW8",
+      "namn": "SEG_recension_kopare",
       "aktiv": true
     },
     {
@@ -342,6 +347,13 @@
       "arkiverad": false
     },
     {
+      "id": "XPvYvy",
+      "namn": "FLOW_segment_recension_v1",
+      "status": "draft",
+      "trigger_type": "Added to List",
+      "arkiverad": false
+    },
+    {
       "id": "XXP3Au",
       "namn": "FLOW_visad-produkt_webbhistorik_v3",
       "status": "draft",
@@ -357,7 +369,7 @@
     }
   ],
   "mallar": {
-    "antal": 29,
+    "antal": 30,
     "motorns": [
       {
         "id": "UQmNus",
@@ -418,6 +430,10 @@
       {
         "id": "Xcx2kz",
         "namn": "TPL_f07-aterkop-sushi-e1_v1"
+      },
+      {
+        "id": "Xh8cej",
+        "namn": "TPL_f08-recension-e1_v1"
       },
       {
         "id": "UyC5hs",
@@ -567,11 +583,11 @@
     "Kontot saknar postadress — {{ organization.full_address }} blir tom i sidfoten (MFL 20 §). Fyll i Settings → Brand."
   ],
   "senaste_uppladdning": {
-    "tid": "2026-09-25T16:15:07.744Z",
-    "bara": null,
-    "skapade": 8,
-    "uppdaterade": 70,
-    "hoppade": 14,
+    "tid": "2026-09-26T04:38:21.059Z",
+    "bara": "floden",
+    "skapade": 1,
+    "uppdaterade": 0,
+    "hoppade": 7,
     "stopp": []
   }
 }

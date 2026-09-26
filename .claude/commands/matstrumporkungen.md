@@ -56,17 +56,28 @@ räkna aldrig om i huvudet.
 Ett kommando per Bash-anrop, kedja aldrig med skaloperatorer —
 behörighetsreglerna matchar på första ordet.
 
-0. **Repot och kördagen.**
+0. **Repot, sidkollen och kördagen.**
    ```bash
    git pull --rebase origin main
+   node matstrumpor/sida-koll.mjs
    node matstrumpor/kor.mjs --kordag
    ```
    Rutinens session lever kvar mellan körningarna — utan pull kör den förra
    veckans kod och ser aldrig en rättad konfig. Misslyckas pullen (konflikt):
    `git rebase --abort`, skriv det i rapporten och fortsätt med den kod som
    finns.
+   **Sidkollen går varje dag, även när det inte är rond** (Axels fråga
+   2026-09-25: "hur kan vi garantera att vi dödar invändningarna på
+   produktsidan?" — svaret är den här kollen, inte copy). Den läser
+   produktsidan som kunden ser den och Shopify (leveranstid mot löftet, pris)
+   och skriver en tabell: ❌ = ett bevis mot köparens invändningar saknas och
+   raden säger vilket, 🟡 = under mål, ⚪ = gick inte att mäta (Cloudflare,
+   nät) — aldrig grönt av sig självt. **Rör aldrig sidan från ronden.** Röda
+   rader går till Axel under "Väntar på en människa" med vad som saknas.
+   Bakgrund och kartan invändning → bevis: `products/matstrumpor/produktsida.md`.
    `--kordag`: **exit 0 = rond i dag. Exit 2 = ingen rond:** skriv EN rad
-   ("Ingen rond i dag — nästa <datum>") och sluta. Inga anrop, ingen rapport.
+   ("Ingen rond i dag — nästa <datum>") plus sidkollens röda rader om det
+   finns några, och sluta. Inga fler anrop, ingen rapport.
    Kadensen (`kadens.rond_var_n_dag` i konfigen) räknas från förra rondens
    `ROND_KLAR` i loggen — inte från ett kalenderrutnät, så en missad morgon
    ger rond nästa morgon i stället för tre dagar senare. Skrev Axel `nu` som
@@ -231,14 +242,16 @@ behörighetsreglerna matchar på första ordet.
 9. **Rapportera.** Två listor: "Gjort av mig" / "Väntar på en människa".
    Rapporten ska alltid innehålla: **breakthrough-frekvensen som bråk och
    procent** ("2 av 14, alltså 14 %"), hur många lärdomar som skrevs, och hur
-   många briefer som byggde på en lärdom. Tipstabellen (steg 7) står med i
-   sin helhet. Axels uppgifter sist, numrerade.
+   många briefer som byggde på en lärdom. Tipstabellen (steg 7) och
+   sidkollens tabell (steg 0) står med i sin helhet. Axels uppgifter sist,
+   numrerade.
 
 ---
 
 ## DEFINITION OF DONE
 
 - [ ] Repot pullat och `--kordag` kontrollerad (exit 0, eller `nu` som argument)
+- [ ] Sidkollen körd (`node matstrumpor/sida-koll.mjs`); tabellen i rapporten, röda rader under "Väntar på en människa" med vad som saknas — sidan orörd
 - [ ] `ad_account_id` verifierat = `730973156224390`
 - [ ] Båda momslinjerna utskrivna; antagandet sagt rakt ut
 - [ ] Avläsningen gjord med `--hamta` (token) — eller reserven namngiven och skälet utskrivet

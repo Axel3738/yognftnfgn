@@ -14,14 +14,33 @@ test('samtycke: specens form (HasEmailMarketingConsent + HasEmailMarketingSubscr
 
 test('alla segment i ARKITEKTUR-tabellen finns, och varje kampanjsegment har samtycke', () => {
   const namn = SEGMENT.map((s) => s.namn);
-  for (const n of ['SEG_samtycke', 'SEG_uppvarmning_steg1', 'SEG_engagerade_60d', 'SEG_engagerade_90d', 'SEG_kopare', 'SEG_kopare_30d', 'SEG_ej_kopt', 'SEG_flerkopare', 'SEG_vinback_90d', 'SEG_oengagerade_180d']) assert.ok(namn.includes(n), n);
+  for (const n of ['SEG_samtycke', 'SEG_uppvarmning_steg1', 'SEG_engagerade_60d', 'SEG_engagerade_90d', 'SEG_kopare', 'SEG_kopare_30d', 'SEG_ej_kopt', 'SEG_flerkopare', 'SEG_vinback_90d', 'SEG_oengagerade_180d', 'SEG_recension_kopare']) assert.ok(namn.includes(n), n);
   for (const k of Object.keys(KATEGORIER)) assert.ok(namn.includes(`SEG_kategori_${k}`));
   for (const s of SEGMENT) {
     const def = s.bygg(IDS);
+    if (s.kopare) {
+      // Köparsegment bär inget samtycke (flödets kundundantag avgör) — och får därför aldrig vara kampanjpublik.
+      assert.equal(s.kampanjOk, false, s.namn);
+      assert.throws(() => kravSamtycke(def, s.namn), (e) => e.kod === 'SAMTYCKE_SAKNAS', s.namn);
+      continue;
+    }
     assert.ok(harSamtycke(def), s.namn);
     assert.doesNotThrow(() => kravSamtycke(def, s.namn));
   }
   assert.equal(segmentPaNamn('SEG_oengagerade_180d').kampanjOk, false);
+});
+
+test('recensionssegmentet: köpt någon gång AND inte senaste 16 dagar, utan samtyckesgrupp, aldrig kampanj', () => {
+  const s = segmentPaNamn('SEG_recension_kopare');
+  assert.equal(s.kopare, true);
+  assert.equal(s.kampanjOk, false);
+  const def = s.bygg(IDS);
+  assert.equal(def.condition_groups.length, 2);
+  assert.deepEqual(def.condition_groups[0].conditions[0].timeframe_filter, { type: 'date', operator: 'alltime' });
+  assert.deepEqual(def.condition_groups[0].conditions[0].measurement_filter, { type: 'numeric', operator: 'greater-than-or-equal', value: 1 });
+  assert.deepEqual(def.condition_groups[1].conditions[0].measurement_filter, { type: 'numeric', operator: 'equals', value: 0 });
+  assert.deepEqual(def.condition_groups[1].conditions[0].timeframe_filter, { type: 'date', operator: 'in-the-last', unit: 'day', quantity: 16 });
+  assert.equal(harSamtycke(def), false);
 });
 
 test('uppvärmning steg 1: samtycke AND (fyra metriker OR) senaste 30 dagar', () => {

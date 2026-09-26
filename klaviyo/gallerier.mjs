@@ -26,7 +26,7 @@ import { lasInnehall, galleri as byggGalleri } from './bygg.mjs';
 import { delar, STATUS, SEGMENT_ORD, ENHET, triggerText } from './schema-sida.mjs';
 import { nyttRegister, medPlatshallare, bildSkript, bildUrlar, hamtaBilder } from './bilder.mjs';
 
-const FLODESNAMN = { f01: 'Välkomst', f02: 'Övergiven kassa', f03: 'Webbhistorik', f04: 'Efter köp', f05: 'Vinna tillbaka', f06: 'Sunset', f07: 'Återköp' };
+const FLODESNAMN = { f01: 'Välkomst', f02: 'Övergiven kassa', f03: 'Webbhistorik', f04: 'Efter köp', f05: 'Vinna tillbaka', f06: 'Sunset', f07: 'Återköp', f08: 'Recension' };
 const FILTER_ORD = { samtycke: 'bara den som sagt ja till mejl', kundundantag: 'alla köpare som inte tackat nej', ej_kopt_sedan_start: 'stannar om personen köper', ej_checkout_sedan_start: 'stannar om personen går till kassan', ej_i_flodet_7d: 'inte i flödet senaste 7 dagarna', ej_i_flodet_14d: 'inte i flödet senaste 14 dagarna', ej_i_flodet_30d: 'inte i flödet senaste 30 dagarna', kopt_minst_en_gang: 'har köpt minst en gång' };
 const STIL_FALLBACK = { farg_rod: '#dd821d', farg_svart: '#1b1611', farg_ram: '#e4dbc9' };
 

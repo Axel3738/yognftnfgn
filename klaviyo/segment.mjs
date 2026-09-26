@@ -188,6 +188,24 @@ export const SEGMENT_BAS = [
       ],
     }),
   },
+  {
+    // Köparsegmentet bakom recensionsflödet (Axels beslut B 2026-09-26: alla som
+    // köpt och inte tackat nej får recensionsmejlet). INGET samtyckesvillkor:
+    // segmentet är bara "har köpt", och flödets eget filter `kundundantag`
+    // (MFL 19 § andra stycket) avgör vem som får mejl — aldrig avregistrerade,
+    // aldrig spärrade. Därför `kampanjOk: false` (en kampanj får aldrig gå hit)
+    // och `kopare: true`, som är det ladda-upp.mjs kräver för att släppa igenom
+    // "kundundantag" i ett segmenttriggat flöde. Placed Order = 0 senaste 16
+    // dagarna: en ny köpare kommer in i segmentet, och flödet, först när paketet
+    // rimligen är framme (p90 15 dygn, brands/matstrumpor.json).
+    namn: 'SEG_recension_kopare', kampanjOk: false, kopare: true, metriker: ['placed_order'],
+    bygg: (ids) => ({
+      condition_groups: [
+        grupp(metrikVillkor(ids, 'placed_order', '>=', 1, 'alltid')),
+        grupp(metrikVillkor(ids, 'placed_order', '=', 0, { dagar: 16 })),
+      ],
+    }),
+  },
 ];
 
 /** Kategorisegmenten ur en ordtabell ({ kategori: [ord…] }). */

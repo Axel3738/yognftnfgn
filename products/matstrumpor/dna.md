@@ -39,6 +39,12 @@ bryts i 16 % av fallen** (76 levererade sedan 1/8: median 11,6 dygn, p90 15,0,
 30 dagar, ingen fick svar), och "Älskad av tusentals svenskar" står på
 startsidan utan bevis. Annonsens bevis (riktig kreatör, "sålde slut i
 november") finns inte på sidan.
+**2026-09-26, Axels beslut B:** AI-bilderna och AI-raden borta, novemberraden
+och "Beställ senast …"-raden inne, startsidan säger "Över 3 700 kunder har
+beställt"; recensionsflödet F08 (Judge.me, alla köpare via kundundantaget)
+uppladdat som utkast; sidkollen `matstrumpor/sida-koll.mjs` går varje dag i
+`/matstrumporkungen`. Kvar hos Axel: materialet, leveranslöftet, valutaformatet,
+Klaviyos postadress. Allt i `produktsida.md` → "Gjort 2026-09-26".
 
 ---
 

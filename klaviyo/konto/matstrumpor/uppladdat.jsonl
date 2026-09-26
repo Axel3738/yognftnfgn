@@ -250,3 +250,6 @@
 {"tid":"2026-09-25T16:15:19.257Z","brand":"matstrumpor","typ":"flode","namn":"FLOW_visad-produkt_webbhistorik_v2","id":"TEZYfP","atgard":"raderad","orsak":"ersatt av FLOW_visad-produkt_webbhistorik_v3"}
 {"tid":"2026-09-25T16:15:20.630Z","brand":"matstrumpor","typ":"flode","namn":"FLOW_segment_sunset_v2","id":"Vbx6zB","atgard":"raderad","orsak":"ersatt av FLOW_segment_sunset_v3"}
 {"tid":"2026-09-25T16:15:21.826Z","brand":"matstrumpor","typ":"mall","namn":"TPL_f01-valkomst-e1_v2","id":"Vjf7aL","atgard":"raderad","orsak":"ersatt av TPL_f01-valkomst-e1_v3"}
+{"tid":"2026-09-26T04:38:08.351Z","brand":"matstrumpor","typ":"segment","namn":"SEG_recension_kopare","id":"T9SCW8","atgard":"skapad"}
+{"tid":"2026-09-26T04:38:15.769Z","brand":"matstrumpor","typ":"mall","namn":"TPL_f08-recension-e1_v1","id":"Xh8cej","atgard":"skapad"}
+{"tid":"2026-09-26T04:38:21.059Z","brand":"matstrumpor","typ":"flode","namn":"FLOW_segment_recension_v1","id":"XPvYvy","atgard":"skapad"}

@@ -36,8 +36,24 @@ node matstrumpor/kor.mjs --namn jul ugc 3        # nästa lediga namn
 node matstrumpor/kor.mjs --dop <sid-id> <namn>   # döp en odöpt rad i Notion
 node matstrumpor/kor.mjs --dom <jobb.json>       # vinstbidrag + etiketter ur en avläsning
 node matstrumpor/kor.mjs --status                # lärdomar, briefer, brieftak, mix
-node --test matstrumpor/test/*.test.mjs          # 46 tester
+node matstrumpor/sida-koll.mjs [--json]          # sidkollen: produktsidan mot invändningarna (exit 1 = röd rad)
+node matstrumpor/leverans.mjs [--dagar 45]       # leveranstiden mätt ur Shopify
+node --test matstrumpor/test/*.test.mjs          # 79 tester
 ```
+
+## Sidkollen (2026-09-26)
+
+Axels fråga 2026-09-25: "hur kan vi garantera att vi dödar invändningarna på
+produktsidan och i funneln?" Svaret är inte copy utan en mätning varje dag:
+`sida-koll.mjs` läser https://matstrumpor.se/products/sushi-strumpor som kunden
+ser den, mäter leveranstiden ur Shopify och skriver en tabell (❌ bevis saknas,
+🟡 under mål, ⚪ går inte att mäta — aldrig grönt av sig självt). Kartan
+invändning → bevis → ägare står i `products/matstrumpor/produktsida.md`.
+Första mätningen 2026-09-26, efter sidfixarna: 4 röda — materialet saknas,
+leveranslöftet 5–10 arbetsdagar mot mätt p90 12 arbetsdagar (16 % av 76 paket
+senare än löftet), "1,796 kr" (butikens valutaformat), och priset (rättat i
+kollen samma dag: bara den valda variantens pris syns). Alla fyra är Axels:
+materialet från leverantören, löftet hans beslut, valutaformatet ett klick.
 
 Inga npm-beroenden. Node ≥ 20.
 
@@ -72,6 +88,8 @@ linjerna får domen `BEROR_PA_MOMS` och rörs inte förrän
 | `namn.mjs` | Namnmönstret, nästa lediga nummer, adset-routingen |
 | `kon.mjs` | Notion-kön → uppladdningsplan med stoppskäl |
 | `kor.mjs` | CLI:n |
+| `sida-koll.mjs` | **Sidkollen** (2026-09-26): läser produktsidan som kunden ser den + Shopify och felar när ett bevis mot köparens invändningar saknas — recensioner, AI-märkt bild, material, leveranslöftet mot mätt p90, sista beställningsdag i säsong, prisformat, pris, Köp 1 – Få 1, öppet köp, tull. Körs varje dag i `/matstrumporkungen` steg 0. Ändrar aldrig sidan |
+| `leverans.mjs` | Leveranstiden mätt ur Shopify (`fulfillments.deliveredAt`): median/p90 i dygn och arbetsdagar, andel över löftet. Sidkollen jämför sidans löfte med det här, aldrig med minnet |
 | `logg.jsonl` | Minnet: `UPPLADDAD`, `ETIKETT`, `LARDOM`, `BRIEF`, `BUDGET`, `ROND_KLAR` |
 | `kanda-namn.json` | Ögonblicksbild av upptagna annonsnamn, så `--namn` fungerar utan nät |
 
