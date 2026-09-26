@@ -63,8 +63,12 @@ kopplat än" + "kör". Samma innehåll som Klaviyo (`klaviyo/innehall/matstrumpo
 konverterat till Spoks-block av **`klaviyo/spoks-paket.mjs`** (brand-parametriserad;
 facit `klaviyo/konto/matstrumpor/spoks.json`, logg `klaviyo/konto/matstrumpor/spoks-uppladdat.jsonl`,
 utdata gitignorerad i `klaviyo/output/matstrumpor/spoks/`) och uppladdat av sessionen via
-Spoks-MCP:n. **Allt är INAKTIVT**: flöden av, alla sändsteg avstängda, kampanjerna utkast
-utan publik och utan schema. Klaviyo-kontot `UV6Rqg` lämnades orört (utkast där också).
+Spoks-MCP:n. Bygget lämnades inaktivt; ⛔ **ALLA SEX FLÖDEN ÄR LIVE sedan 2026-09-26
+07:51–07:57 CEST** — Axels egna klick i appen (sändstegen på, flödena aktiverade), mätt med
+`get_flows` 08:0x: `isActive: true` på F01–F05 och F07, F02:s tre sändsteg `isEnabled: true`,
+och F01/F04/F05/F07 hade redan varsin kontakt inrullad. Kampanjerna är utkast utan publik
+och utan schema tills Axel schemalägger dem. Klaviyo-kontot `UV6Rqg` lämnades orört
+(utkast där också, inget påslaget).
 
 ```bash
 node klaviyo/spoks-paket.mjs --brand matstrumpor --offline   # innehåll → output/matstrumpor/spoks/<mejl>.json + floden.json + PAKET.json
@@ -87,7 +91,7 @@ verifierad egen domän i Spoks — det är DNS och Axels beslut (⛔ aldrig namn
 
 ## Läget 2026-09-26 (mätt med get_flows, get_flow och search_campaigns)
 
-| Flöde | Spoks-id | Startar på | Väntan | Mejl (alla sändsteg AV) |
+| Flöde | Spoks-id | Startar på | Väntan | Mejl (sändstegen PÅ och flödet LIVE sedan 2026-09-26) |
 |---|---|---|---|---|
 | F01 Välkomst (Matstrumpor-klubben) | `4e8a9b59-4192-4bb4-8829-785e6af01f7c` | ny kontakt (`contact_created`), samtycke | 0, 2 d, 3 d | E1 med medlemskortet, E2, E3 (E2/E3 bara om inget köp sedan start) |
 | F02 Övergiven kassa | `7e1dab93-5aba-4f69-b497-66636df338e2` | `checkout_created`, samtycke | 3 h, 1 d, 2 d | E1–E3 med kassablocket, bara om inget köp sedan start |
@@ -213,11 +217,12 @@ butikens egen domän när något slås på. Inget är påslaget.
 
 1. ✅ **Klart 2026-09-26:** DNS-posterna i Loopia (tabellen ovan), domänen verifierad i
    Spoks, avsändaren `kundsupport@matstrumpor.se` satt via MCP:n.
-2. **Flows → F02 Övergiven kassa:** öppna varje sändsteg (E1, E2, E3) → slå på steget →
-   aktivera flödet. Samma dag: stäng av Shopifys egen notis om övergiven kassa
-   (Matstrumpors admin → Inställningar → Aviseringar → Övergiven kassa).
-3. **Flows → F04, F07, F05, F01, F03:** samma sak — sändstegen på, sedan flödet.
-   (Ordningen är Klaviyo-planens: köparflödena först, välkomst och webbhistorik sist.)
+2. ✅ **Klart 2026-09-26 07:51:** F02 Övergiven kassa live med alla tre sändsteg på.
+   ⚠️ Kvar: stäng av Shopifys egen notis om övergiven kassa (Matstrumpors admin →
+   Inställningar → Aviseringar → Övergiven kassa), annars får kunden två mejl.
+3. ✅ **Klart 2026-09-26 07:56–07:57:** F01, F03, F04, F05 och F07 live. (Spoks vägrar
+   aktivera ett flöde vars sändsteg är av — rutan "Detta flöde har inga aktiva åtgärder";
+   stegen slås på ett i taget i flödesredigeraren, sedan flödet.)
 4. **Flows → F01 E1:** öppna mejlet → medlemskortet (sektionen med "MEDLEMSKORT") → mörk
    bakgrund, ljus text, orange ram — stilen går inte att sätta via MCP:n.
 5. **Campaigns → K01:** publik `SEG_samtycke` (inte `uppvarmning_steg1`, den är tom) →

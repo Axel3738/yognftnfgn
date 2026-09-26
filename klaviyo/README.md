@@ -68,7 +68,7 @@ mejl) och `logg/baverbutiken/kampanjlogg.md` (hypotes → utfall → lärdom).
 ⛔ **Matstrumpor körs i Spoks sedan 2026-09-26, inte i Klaviyo** (Axels order samma dag:
 "FÖRBERED BARA FÖR MATSTRUMPOR TILL SPOKS"). Tabellen nedan är läget i Klaviyo-kontot
 `UV6Rqg` som det lämnades: allt utkast, inget påslaget, inget schemalagt — och så ska det
-förbli. Spoks-bygget (workspace `71c2d4c8-…`: 6 flöden inaktiva, 16 utkast, 14 segment),
+förbli. Spoks-bygget (workspace `71c2d4c8-…`: 6 flöden — live sedan 2026-09-26 genom Axels klick — 16 utkast, 14 segment),
 motorn `spoks-paket.mjs` och Axels klick står i **`klaviyo/spoks/README.md` → Matstrumpor**.
 
 **Allt ligger i kontot `UV6Rqg` som utkast. Inget är påslaget, inget schemalagt, inget skickat**
