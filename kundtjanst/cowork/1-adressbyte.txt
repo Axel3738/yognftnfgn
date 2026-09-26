@@ -1,0 +1,89 @@
+Jag har flyttat bolaget till ett kontor. Från och med i dag ska kunderna bara se
+den nya adressen. Resten är redan bytt via API (sidor, köpvillkor, mejl, SOP:er).
+Kvar är det som bara går att ändra med klick i Shopify-admin. Gör allt i Chrome
+med mitt inloggade konto och fråga mig om inloggning när du behöver den.
+
+NY ADRESS, exakt så här:
+  Företag:     STONEBITE ECOM AB (behåll det som redan står i fältet)
+  Gatuadress:  Stenkolsgatan 1B
+  Postnummer:  417 07
+  Ort:         Göteborg
+  Land:        Sverige (Sweden)
+
+GAMLA ADRESSEN, som ska bort överallt: Sjöhed 160, 442 74 Harestad
+(står ibland med små bokstäver: "sjöhed 160", "44274", "harestad").
+
+⛔ DET VIKTIGASTE: RÖR ALDRIG BETALNINGAR.
+Öppna inte Inställningar → Betalningar (Settings → Payments), Shopify Payments,
+"Uppgifter för kundens kontoutdrag", bankkonto eller företagets juridiska
+uppgifter där. Ändras bolagsadressen där kan Shopify pausa utbetalningarna.
+Du ändrar BARA butikens adress under Inställningar → Allmänt, lagerplatser och
+texterna nedan. Rör inga andra fält: inte butiksnamn, e-post, telefon, valuta,
+tidszon eller något annat.
+
+------------------------------------------------------------------------------
+BUTIKERNA
+------------------------------------------------------------------------------
+
+| Butik                  | Admin                                  | Sajt                  |
+|------------------------|----------------------------------------|-----------------------|
+| Bäverbutiken           | admin.shopify.com/store/4snrw0-mg      | baverbutiken.se       |
+| Beverbutikken (Norge)  | admin.shopify.com/store/1acuam-s5      | beverbutikken.no      |
+| Bæverbutiken (Danmark) | admin.shopify.com/store/v0xqtk-tx      | baeverbutiken.dk      |
+| Majavakauppa (Finland) | admin.shopify.com/store/q0uthu-xq      | majavakauppa.fi       |
+| CaraShell              | admin.shopify.com/store/yitrbk-m3      | carashell.se          |
+| Matstrumpor            | admin.shopify.com/store/1r46tp-qx      | matstrumpor.se        |
+| Grillkliniken          | leta upp den i butikslistan            | grillkliniken.se      |
+
+------------------------------------------------------------------------------
+I VARJE BUTIK (alla sju)
+------------------------------------------------------------------------------
+
+1. Inställningar → Allmänt (Settings → General). Leta upp butikens adress. Den
+   kan heta "Butiksadress", "Store address", "Faktureringsadress" eller
+   "Billing address". Byt till den nya adressen ovan och spara.
+
+2. Inställningar → Platser (Settings → Locations). Öppna varje plats. Står
+   "sjöhed 160" eller "Harestad" i namnet eller adressen: byt adressen till den
+   nya. Var namnet själva adressen: byt namnet till "Stenkolsgatan 1B". Spara.
+   Ta aldrig bort eller inaktivera en plats. (Matstrumpors plats är redan
+   bytt: den heter "Stenkolsgatan 1B". Rör den inte.)
+
+3. Kontrollera integritetspolicyn: öppna https://<sajt>/policies/privacy-policy
+   och sök (Ctrl+F) efter "Sjöhed". Shopify skriver den texten själv utifrån
+   butikens adress, så efter steg 1 ska den visa Stenkolsgatan 1B. Det kan ta
+   några minuter. Står det fortfarande Sjöhed efter 10 minuter: gå till
+   Inställningar → Policyer → Integritetspolicy. Om texten går att redigera,
+   byt BARA adressen i texten och spara. Om den inte går att redigera: skriv
+   ner det i rapporten och gå vidare.
+
+------------------------------------------------------------------------------
+TEXTER I TVÅ BUTIKER
+------------------------------------------------------------------------------
+
+4. Bäverbutiken: Inställningar → Policyer → Användarvillkor (Terms of service).
+   Byt "Adress: Sjöhed 160" mot "Adress: Stenkolsgatan 1B, 417 07 Göteborg".
+   Rör inget annat i texten. Spara.
+
+5. Grillkliniken: Inställningar → Policyer.
+   a) Återbetalningspolicy (Refund policy): byt VARJE "Sjöhed 160" (och
+      "[sjöhed 160]" om det står så) mot
+      "STONEBITE ECOM AB, Stenkolsgatan 1B, 417 07 Göteborg".
+   b) Användarvillkor (Terms of service): byt "Sjöhed 160" mot
+      "Stenkolsgatan 1B, 417 07 Göteborg".
+   Rör inget annat. Spara.
+
+------------------------------------------------------------------------------
+SLUTKONTROLL: gör den i varje butik, och rapportera resultatet
+------------------------------------------------------------------------------
+
+Öppna de här sidorna för varje sajt och sök efter "Sjöhed" med Ctrl+F:
+  https://<sajt>/policies/privacy-policy
+  https://<sajt>/policies/terms-of-service
+  https://<sajt>/policies/refund-policy
+  https://<sajt>/pages/contact
+(En sida som svarar 404 finns inte i den butiken. Det är okej, skriv det.)
+
+Rapportera till mig som en tabell: butik | adressen i Allmänt bytt (ja/nej) |
+plats bytt (ja/nej/fanns ingen) | sidor som fortfarande visar Sjöhed.
+Säg aldrig "klart" för en butik där någon sida fortfarande visar Sjöhed 160.
