@@ -2257,3 +2257,56 @@ dygnet i rad. Källradens status orörd; verktyget skrev ingen ny kommentar
 
 **1 källrad → `Approved`:** `Takoverdrag_OB_5_1`, vars US-annons
 (`120251609594670435`) kom upp i natt. Fem rader väntar fortfarande på USA.
+### USA-runda 13 — 2026-09-26
+
+Kön: 6 rader (1 bild, 5 videor). **Bilden live, videorna hålls andra dygnet** —
+HeyGen har inga pengar kvar.
+
+| SE-rad | US-annons | Adset | Ad-ID | Läge |
+|---|---|---|---|---|
+| `CaraShellRoof_OB_112_1` | `CaraShellRoof_US_OB_112_1` | `CARASHELL_US_OB` | `120251624621420435` | ACTIVE |
+
+Approved-kön: 59 rader, **0 eftersläpande** — varje Approved-rad bär en US-annons.
+Butiken redo: produktsidan och landningssidan svarar 200 som amerikansk kund,
+$199 från $249 (samma som `ekonomi.marknadspriser` USD).
+
+**Bilden.** OB-vinkeln (invändningen "täcker för lite"). Medgivandet överlevde
+översättningen: primärtexten börjar fortfarande med att ge helöverdragsägaren
+rätt innan den svarar med taket. Etiketten säger `ROOF COVER, NOT FULL COVERAGE`.
+Priset $199 (was $249), besparingen $50 / 20 % är de två talens egen differens.
+Måttet i fot (21 × 10 ft). OCR på den färdiga bilden: inget svenskt ord, inget
+kr-pris, inget butiksnamn, och bara de fyra tillåtna talen.
+
+**HeyGen: saldot är en PLÅNBOK, inte ett kreditpaket.** `v2/user/remaining_quota`
+säger `api: 6` / `plan_credit: 2000`, och det lästes i går som "slut på
+API-credits". `v3/users/me` säger vad som faktiskt gäller: `billing_type:
+wallet`, `remaining_balance: 0.10 USD`, `auto_reload.enabled: false`.
+Krediterna köps alltså ur plånboken — det är den som är tom, och
+auto-påfyllningen är avstängd, så den fyller aldrig på sig själv.
+⚠️ `v2`-endpointen är dessutom **legacy och tas bort 2026-10-31** (HeyGens egen
+varning i svaret). Pipelinen anropar inte den endpointen själv, bara
+`translate-batch.mjs` kvotvakt — men den som läser saldot efter 31 oktober ska
+använda `v3/users/me`.
+
+**Prisradens spöke — mät QA-bilden, lita aldrig på ett ögonkast.** Prisraden
+ligger på en grå gradient, och den svenska radens antialias-gloria blev kvar som
+ett läsbart spöke ovanför den nya texten. `utvidga: 6` räckte inte: glorian är
+ljusgrå mot grått och ligger under standardtröskeln 60. `forsudda.py` med
+`troskel: 25` tog den. Samma lärdom som BOF_108_1 2026-09-21 — en ruta på en
+gradient behöver försuddning, inte en större mask.
+
+**Rutorna för pill och knapp ligger i formens MITTBAND.** Suddningen fyller
+avvikande pixlar med rutans median, så en ruta som tar med de rundade hörnen
+målar fotot svart och fyrkantar pillret. Mittbandet (y 704–750 av pillets
+698–768) ligger helt innanför formen och rör aldrig hörnen.
+
+**Storlekarna är inte gårdagens.** Samma koncept (OB), samma butik, samma
+1080×1350 — men en annan mall: rubriken går i TRE rader, underraden är 40 px
+(gårdagens 32) och prisraden 32 px (gårdagens 89). Kalibrerat mot de svenska
+radernas uppmätta bläckbredd med `kalibrera.py`. Skriv aldrig av en storlek
+från en annan batch.
+
+Kvar i `SE-ACTIVE to be translated`: `CaraShellRoof_CS_109_H1`, `PD_110_H1`,
+`CO_105_H1`, `OB_103_H1`, `OB_104_H1`. De bär gårdagens kommentar om varför —
+ingen ny skrevs, ingenting har ändrats. Nästa körning tar dem av sig själv
+första dagen efter att plånboken fyllts på.

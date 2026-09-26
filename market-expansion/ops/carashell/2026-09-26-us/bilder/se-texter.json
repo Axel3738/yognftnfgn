@@ -1,0 +1,13 @@
+{
+ "_kalla": "Avläst ur SE-bilden 2026-09-26 med matrader.py (textradernas y/x) och oversatt-bild.py --analys (pillret och knappen). Fem textelement: rubrik i TRE rader (fet svart direkt på vit bakgrund), underrad i två rader (normal svart), etikett i vit fet versal på svart pill över fotot, prisrad (normal svart) och vit fet text i den blå CTA-knappen. Rutorna står i overrides.json — mätta, inte gissade.",
+ "CaraShellRoof_OB_112_1": {
+  "mall": "OPS",
+  "former": [
+   { "typ": "fri",    "roll": "rubrik",   "rader": ["Vårt överdrag ligger bara på taket, den dyraste ytan."] },
+   { "typ": "fri",    "roll": "underrad", "rader": ["Taket är det du aldrig ser, och det som kostar mest att laga."] },
+   { "typ": "platta", "roll": "etikett",  "rader": ["TAKÖVERDRAG, INTE HELTÄCKANDE"] },
+   { "typ": "fri",    "roll": "pris",     "rader": ["1 129 kr (ord. 1 469 kr), spara 340 kr (23 %)"] },
+   { "typ": "knapp",  "roll": "cta",      "rader": ["Beställ ditt taköverdrag"] }
+  ]
+ }
+}

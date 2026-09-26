@@ -1,0 +1,89 @@
+[
+ {
+  "box": [
+   20,
+   52,
+   1060,
+   400
+  ],
+  "rader": 3,
+  "storlek": 78,
+  "fet": true,
+  "radavstand": 1.6,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "Our cover sits on the roof only, the priciest surface."
+ },
+ {
+  "box": [
+   40,
+   440,
+   1040,
+   560
+  ],
+  "rader": 2,
+  "storlek": 40,
+  "radavstand": 1.7,
+  "farg": [
+   20,
+   19,
+   17
+  ],
+  "text": "The roof is what you never see, and what costs the most to repair."
+ },
+ {
+  "box": [
+   54,
+   704,
+   550,
+   750
+  ],
+  "rader": 1,
+  "storlek": 24,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "ROOF COVER, NOT FULL COVERAGE"
+ },
+ {
+  "box": [
+   60,
+   1074,
+   1020,
+   1140
+  ],
+  "rader": 1,
+  "storlek": 32,
+  "utvidga": 6,
+  "farg": [
+   23,
+   22,
+   21
+  ],
+  "troskel": 25,
+  "text": "$199 (was $249), save $50 (20% off)"
+ },
+ {
+  "box": [
+   274,
+   1230,
+   806,
+   1290
+  ],
+  "rader": 1,
+  "storlek": 41,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Order your roof cover"
+ }
+]
