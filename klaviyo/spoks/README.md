@@ -242,7 +242,13 @@ K02 6/10 `b7acd85c`, K03 13/10 `920afd93`, K04 20/10 `6f1e2e50`, K05 27/10 `c6b1
 K06 3/11 `eeec137e`, K07 10/11 `f914fe1f`, K08 17/11 `960a9002`, K09 23/11 `34c4f671`,
 K10 27/11 `eca0a6db`, K11 1/12 `2457c8d7`, K12 8/12 `3a072256`, K13 15/12 `45bd1681`,
 K14 29/12 `5637c25a` — datum och tänkt segment står i titeln (`K01 · 29/9 · uppvarmning_steg1 · …`),
-schemat i `klaviyo/innehall/matstrumpor/KALENDER-2026.md`. **F06 Sunset** finns inte som
+schemat i `klaviyo/innehall/matstrumpor/KALENDER-2026.md`. ⚠️ **Appens kampanjlista visar
+INTE titeln** utan ämnesraden (`customizedNotification.emailTitle`), nyast överst — mätt
+2026-09-26 när Axel letade efter "K01" och fick upp "Vem fyller år näst på listan?" (K14).
+K01 står längst ner som "De tittar två gånger, sen skrattar de". Ge Axel alltid
+direktlänken `https://app.spoks.com/matstrumpor/post/<hela id:t>/edit` (ur `get_links` →
+`send_campaign`; hela id:n i `klaviyo/konto/matstrumpor/spoks-uppladdat.jsonl`) i stället
+för ett namn att leta efter. **F06 Sunset** finns inte som
 flöde (Spoks saknar segmenttrigger) utan som två utkast: `F06 E1 · för hand till
 oengagerade_180d` `4fccb750` och `F06 E2 …` `662420f3` — skickas för hand till
 `SEG_oengagerade_180d` när det segmentet fått medlemmar, E2 tidigast 7 dagar efter E1.
@@ -362,8 +368,9 @@ butikens egen domän när något slås på. Inget är påslaget.
    stegen slås på ett i taget i flödesredigeraren, sedan flödet.)
 4. **Flows → F01 E1:** öppna mejlet → medlemskortet (sektionen med "MEDLEMSKORT") → mörk
    bakgrund, ljus text, orange ram — stilen går inte att sätta via MCP:n.
-5. **Campaigns → K01:** publik `SEG_samtycke` (inte `uppvarmning_steg1`, den är tom) →
-   schemalägg tisdag 29/9 18:00. Sedan en kampanj i taget enligt
+5. **K01** (https://app.spoks.com/matstrumpor/post/9aa10213-3bf1-42bc-b23e-315e088d92be/edit,
+   i listan "De tittar två gånger, sen skrattar de"): publik `SEG_samtycke` (inte
+   `uppvarmning_steg1`, den är tom) → schemalägg tisdag 29/9 18:00. Sedan en kampanj i taget enligt
    `klaviyo/innehall/matstrumpor/KALENDER-2026.md`; F06 E1/E2 ligger kvar tills
    `SEG_oengagerade_180d` har medlemmar.
 6. **Planen:** Free räcker till september–oktober (K01/K02 till alla = 2 × 2 911, K03–K06
