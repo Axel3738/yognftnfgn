@@ -1,0 +1,148 @@
+{
+  "id": "k06-vecka-45",
+  "sprak": "en",
+  "emailTitle": "A Christmas gift that actually gets used",
+  "emailDescription": "Not the kind of gift that waits in a drawer.",
+  "amnesrader": [
+    "A Christmas gift that actually gets used",
+    "The gift for the one with the caravan",
+    "Two covers, one for the roof, one for the glass"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "The gift that gets used",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hi {{ contact.first_name | default: 'there' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Christmas is coming, and a cover is the kind of gift that gets used the same week it arrives.",
+      "alignment": "center"
+    },
+    {
+      "type": "image",
+      "fileId": "{{spoks:media:takskyddet}}",
+      "altText": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft",
+      "urlRedirect": "https://carashell.com/products/takskyddet"
+    },
+    {
+      "type": "h2",
+      "text": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "See the gift",
+      "url": "https://carashell.com/products/takskyddet",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "It goes on the roof or the windshield as soon as it's unwrapped, and it goes back on every time the rig is parked again. Not a gift that waits in a drawer.",
+      "alignment": "left"
+    },
+    {
+      "type": "h2",
+      "text": "The roof, and the windshield",
+      "alignment": "center"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "image",
+              "fileId": "{{spoks:media:takskyddet}}",
+              "altText": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft",
+              "urlRedirect": "https://carashell.com/products/takskyddet"
+            },
+            {
+              "type": "h2",
+              "text": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft",
+              "alignment": "center"
+            },
+            {
+              "type": "link",
+              "text": "See the cover",
+              "url": "https://carashell.com/products/takskyddet",
+              "style": "button"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "image",
+              "fileId": "{{spoks:media:termoskyddet}}",
+              "altText": "Windshield Thermal Cover for Motorhome 211 × 171 cm",
+              "urlRedirect": "https://carashell.com/products/termoskyddet"
+            },
+            {
+              "type": "h2",
+              "text": "Windshield Thermal Cover for Motorhome 211 × 171 cm",
+              "alignment": "center"
+            },
+            {
+              "type": "link",
+              "text": "See the cover",
+              "url": "https://carashell.com/products/termoskyddet",
+              "style": "button"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Guarantee**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "90-day guarantee",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Track your parcel**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Follow it all the way](https://carashell.com/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": [
+    "Bilden för takskyddet saknar fileId i Spoks (produkter.json → bild).",
+    "Bilden för takskyddet saknar fileId i Spoks (produkter.json → bild).",
+    "Bilden för termoskyddet saknar fileId i Spoks (produkter.json → bild)."
+  ]
+}

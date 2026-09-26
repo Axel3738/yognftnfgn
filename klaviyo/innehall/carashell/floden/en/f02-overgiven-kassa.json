@@ -1,0 +1,286 @@
+{
+  "id": "f02-overgiven-kassa",
+  "namn": "FLOW_checkout_overgiven_EN_v1",
+  "sprak": "en",
+  "memo": "Här ligger mest pengar: 73 övergivna kassor på 90 dagar mot 384 ordrar. Tre mejl: påminnelse, svaren på köparens tvekan (passar det min vagn, hur fäster det, klarar det vinden), sista mejlet från grundaren. Bara till subscribed (MFL 19 §): kassan är inget köp. Shopifys egen notis om övergiven kassa ska stängas av samma dag flödet slås på.",
+  "spoks": {
+    "event": "checkout_created",
+    "filter": [
+      "ej_kopt_sedan_start",
+      "samtycke",
+      "sprak"
+    ],
+    "reenroll": true,
+    "reenrollEfter": "P7D"
+  },
+  "steg": [
+    {
+      "typ": "vanta",
+      "enhet": "hours",
+      "varde": 3
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f02-overgiven-kassa-e1",
+        "namn": "FLOW_checkout_overgiven_EN_E1_M_kassan-ar-kvar_v1",
+        "sprak": "en",
+        "memo": "Kort påminnelse, inga invändningar än. Varorna finns kvar, en väg tillbaka.",
+        "brief": "Två meningar och kassablocket. Ingen brådska, ingen rabatt.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": null,
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "CaraShellRoof",
+          "kod": "M",
+          "avatar": "kunden som lade överdraget i kassan men inte betalade",
+          "begar": "hitta tillbaka till det man redan valt"
+        },
+        "amnesrader": [
+          {
+            "text": "Still in your cart, nothing's changed",
+            "begar": "know nothing was lost, can pick up where they left off"
+          },
+          {
+            "text": "You left before checking out",
+            "begar": "recognize what happened without feeling judged"
+          },
+          {
+            "text": "No rush, it's just sitting there",
+            "begar": "feel no pressure to act immediately"
+          }
+        ],
+        "forhandstext": "No discount code, no countdown. Just a way back to where you left off.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Still in your cart",
+            "text": "Everything you picked out is exactly where you left it. Pick up where you stopped whenever you're ready."
+          },
+          {
+            "typ": "dynamisk",
+            "kalla": "checkout_rader"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Still in your cart, nothing's changed",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "You left before checking out",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "No rush, it's just sitting there",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "No discount code, no countdown. Just a way back to where you left off.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Still in your cart",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 1
+      }
+    },
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 1
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f02-overgiven-kassa-e2",
+        "namn": "FLOW_checkout_overgiven_EN_E2_OB_passar-det-min-vagn_v1",
+        "sprak": "en",
+        "memo": "Det riktiga svaret på tvekan, ur kommentarsfälten (kommentarer/leads.md 2026-09-24–26: storleken syns inte, klarar det vinden, remmarna): passar det min vagn (nio längder, mät front till bakkant, närmaste längd uppåt, husvagn och husbil), hur fäster det (vävda spännband med plastkrokar under karossens kant, alla fyra sidor, justerbara, två extra band 10,5 m), klarar det vinden (ja, banden håller det på plats, inte gummi, töjs inte ut). En rad för termoskyddet sist (mät framrutan: 211 cm bred, 171 över mitten, 90 cm flikar, kläms i dörrkarmen).",
+        "brief": "Rubrik + tre punkter som var och en är fråga → svar. Bara faktabladets ord. Ventilation/kondens får INTE besvaras (leverantören har inte svarat). Fakta-blocket sist bär ångerrätt/garanti.",
+        "taggar": {
+          "typ": "I",
+          "kalla": "voc",
+          "kalla_ref": "kommentarer/leads.md 2026-09-24 (storlek, vind, remmar); factory/produkter/takskyddet.yaml#faq",
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "CaraShellRoof",
+          "kod": "OB",
+          "avatar": "kunden som stannade i kassan för att den inte vet om det passar",
+          "begar": "veta att det passar innan man betalar"
+        },
+        "amnesrader": [
+          {
+            "text": "Nine lengths, so yours is in there",
+            "begar": "reassurance their size is covered"
+          },
+          {
+            "text": "How the straps actually hold it on",
+            "begar": "understand the attachment before buying"
+          },
+          {
+            "text": "It's built to stay on in wind",
+            "begar": "confidence it won't blow off"
+          }
+        ],
+        "forhandstext": "Measure the roof, match the length, and the rest takes care of itself.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Three things before you check out",
+            "text": "Here's what usually holds people up."
+          },
+          {
+            "typ": "punkter",
+            "rubrik": null,
+            "punkter": [
+              "Will it fit? Nine lengths, 18 to 44 ft (5.5 to 13.5 m), for caravans, travel trailers and motorhomes. Measure your roof front to back and pick the next length up.",
+              "How does it stay on? Woven webbing straps with plastic hooks latch under the edge of the body, adjustable, on all four sides.",
+              "Does it hold in wind? Yes. The straps aren't elastic, so they don't stretch out or work loose.",
+              "Ordering the windshield cover instead? It's 211 cm (83 in) wide, and the side flaps clip straight into the door frame."
+            ]
+          },
+          {
+            "typ": "dynamisk",
+            "kalla": "checkout_rader"
+          },
+          {
+            "typ": "fakta"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Nine lengths, so yours is in there",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "How the straps actually hold it on",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "It's built to stay on in wind",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Measure the roof, match the length, and the rest takes care of itself.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Three things before you check out",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 1
+      }
+    },
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 2
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f02-overgiven-kassa-e3",
+        "namn": "FLOW_checkout_overgiven_EN_E3_M_sista-mejlet-fran-axel_v1",
+        "sprak": "en",
+        "memo": "Sista mejlet. Ingen nedräkning, ingen \"kassan töms\". Grundaren: har du en fråga, svara på mejlet; annars hör du inget mer om den här kassan.",
+        "brief": "Grundare-blocket bär hela texten (3–4 meningar). Kassablocket under.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": null,
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "CaraShellRoof",
+          "kod": "M",
+          "avatar": "kunden som lade överdraget i kassan men inte betalade",
+          "begar": "en sista möjlighet att fråga innan man bestämmer sig"
+        },
+        "format": "rentext",
+        "amnesrader": [
+          {
+            "text": "One last note about your cart",
+            "begar": "know this is the final email, no pressure"
+          },
+          {
+            "text": "Any questions before you decide?",
+            "begar": "feel invited to ask before deciding"
+          },
+          {
+            "text": "I won't email about this cart again",
+            "begar": "confidence there won't be repeated nagging"
+          }
+        ],
+        "forhandstext": "Reply if something's unclear. Otherwise, this is where I leave it.",
+        "block": [
+          {
+            "typ": "grundare",
+            "text": "This is the last note I'll send about this cart.\n\nIf you've got a question about sizing, fitting or anything else, just reply and I'll answer myself. If not, you won't hear more about it from me."
+          },
+          {
+            "typ": "dynamisk",
+            "kalla": "checkout_rader"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "One last note about your cart",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Any questions before you decide?",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "I won't email about this cart again",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Reply if something's unclear. Otherwise, this is where I leave it.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 1
+      }
+    }
+  ]
+}

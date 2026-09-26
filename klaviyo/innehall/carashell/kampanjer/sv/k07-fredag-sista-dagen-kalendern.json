@@ -1,0 +1,73 @@
+{
+  "id": "k07-fredag-sista-dagen-kalendern",
+  "namn": "MAIL_20261110_CaraShellCal_SV_GT_3_samtycke_promo_fredag-sista-dagen_v1",
+  "sprak": "sv",
+  "memo": "Riktig brådska: fredag 13 november är sista beställningsdag för att kalendern ska vara hemma till lucka 1. Efter fredagen lovar ingen text något om 1 december.",
+  "brief": "Hero med datumet. En mening om varför (lucka 1 är 1 december). Produktkort, fakta. Inga dagar-siffror om leverans.",
+  "taggar": {
+    "typ": "S",
+    "kalla": "egen-data",
+    "kalla_ref": "brands/carashell.json#kalender",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "konsekvens",
+    "confidence": "medium",
+    "prefix": "CaraShellCal",
+    "kod": "GT",
+    "avatar": "den som tänkt ge kalendern men inte beställt",
+    "begar": "hinna"
+  },
+  "amnesrader": [
+    {
+      "text": "Fredag är sista dagen",
+      "begar": "agera innan det är för sent"
+    },
+    {
+      "text": "Adventskalendern, sista beställningsdag",
+      "begar": "en tydlig deadline att förhålla sig till"
+    },
+    {
+      "text": "24 luckor, en deadline: 13 november",
+      "begar": "kombinera fakta och datum i ett svep"
+    }
+  ],
+  "forhandstext": "Sista dagen att beställa till lucka 1.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Fredag är sista dagen att beställa",
+      "text": "Beställ senast fredag 13 november, så att kalendern är hemma till lucka 1 den 1 december.",
+      "bild": "produkt:adventskalender-retrobussar",
+      "knapp": {
+        "text": "Se adventskalendern",
+        "lank": "produkt:adventskalender-retrobussar"
+      }
+    },
+    {
+      "typ": "produkt",
+      "handle": "adventskalender-retrobussar",
+      "text": "24 luckor, retrobussar. Sista beställningsdag är fredag 13 november.",
+      "knapp": "Beställ innan fredag"
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    { "rad": "Fredag är sista dagen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Adventskalendern, sista beställningsdag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "24 luckor, en deadline: 13 november", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sista dagen att beställa till lucka 1.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fredag är sista dagen att beställa", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se adventskalendern", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Beställ innan fredag", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "version": 1,
+  "planerad": "2026-11-10T18:00:00+01:00",
+  "segment": [
+    "SEG_samtycke_sv"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

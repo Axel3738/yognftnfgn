@@ -1,0 +1,129 @@
+{
+  "id": "k09-black-week-utan-rabatt",
+  "sprak": "sv",
+  "emailTitle": "Det kunderna säger om taket",
+  "emailDescription": "Ord från de som redan har det på taket.",
+  "amnesrader": [
+    "Det kunderna säger om taket",
+    "Skydd som redan bevisat sig",
+    "Innan du bestämmer dig, läs det här"
+  ],
+  "blocks": [
+    {
+      "type": "quote",
+      "text": "\"Bra skydd för taket och lätt att använda.\"\nKarin, verifierad kund"
+    },
+    {
+      "type": "quote",
+      "text": "\"Jag är nöjd med överdraget. Rekommenderas.\"\nErik, verifierad kund"
+    },
+    {
+      "type": "h1",
+      "text": "Orden är deras, inte våra",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Skyddet har redan suttit på taken en vinter. Här är vad ägarna själva säger om det.",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "{{spoks:id:takskyddet}}",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Se taköverdraget",
+      "url": "https://carashell.se/products/takskyddet",
+      "style": "button"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "{{spoks:id:takskyddet}}",
+          "button": "Beställ taköverdraget"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "regular",
+      "text": "14 dagars ångerrätt om det ändå inte passar.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://carashell.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": [
+    "Produkten takskyddet finns inte i Spoks.",
+    "Produkten takskyddet finns inte i Spoks."
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "id": "k08-checklistan",
+  "namn": "MAIL_20261117_CaraShellMix_SV_S_1_samtycke_solution_innan-vagnen-stalls-undan_v1",
+  "sprak": "sv",
+  "memo": "Säsongslistan (Bäverbutikens K02 gav idén om en checklista per produkt, egen copy): taket, rutan, smårutorna. sv/nb: innan vagnen ställs undan för vintern. en: before it sits for a while / between trips.",
+  "brief": "Hero utan produktbild-krav (använd taköverdraget). Punkter: tre saker, en per produkt, med faktabladets ord. Produktrad med alla tre. Fakta. ",
+  "taggar": {
+    "typ": "S",
+    "kalla": "egen-data",
+    "kalla_ref": "factory/produkter/*.yaml",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "sasong",
+    "confidence": "low",
+    "prefix": "CaraShellMix",
+    "kod": "S",
+    "avatar": "ägaren som ska ställa undan vagnen",
+    "begar": "skydda-det-jag-ager"
+  },
+  "amnesrader": [
+    {
+      "text": "Tre saker innan vagnen ställs undan",
+      "begar": "en tydlig checklista att följa"
+    },
+    {
+      "text": "Taket, rutan, de små rutorna",
+      "begar": "se helheten i tre delar"
+    },
+    {
+      "text": "En genomgång innan vintern",
+      "begar": "göra rätt inför säsongen"
+    }
+  ],
+  "forhandstext": "Taket, rutan och de små rutorna, i den ordningen.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Innan vagnen ställs undan för vintern",
+      "text": "Tre ytor att tänka på innan säsongen är slut: taket, vindrutan och de små rutorna.",
+      "bild": "produkt:takskyddet",
+      "knapp": {
+        "text": "Se hela sortimentet",
+        "lank": "kollektion:sortimentet"
+      }
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "Tre saker att kolla",
+      "punkter": [
+        "Taket: regnvatten som blir stående vid takluckorna",
+        "Rutan: imma mellan gardin och glas",
+        "De små rutorna: fönstertermomatta 2-pack, 70 × 80 cm"
+      ]
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": null,
+      "handles": [
+        "takskyddet",
+        "termoskyddet",
+        "fonstertermomatta-2-pack"
+      ]
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    { "rad": "Tre saker innan vagnen ställs undan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Taket, rutan, de små rutorna", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En genomgång innan vintern", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Taket, rutan och de små rutorna, i den ordningen.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Innan vagnen ställs undan för vintern", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se hela sortimentet", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Tre saker att kolla", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "version": 1,
+  "planerad": "2026-11-17T18:00:00+01:00",
+  "segment": [
+    "SEG_samtycke_sv"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

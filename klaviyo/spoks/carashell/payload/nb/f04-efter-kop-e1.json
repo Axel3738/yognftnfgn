@@ -1,0 +1,33 @@
+{
+  "id": "f04-efter-kop-e1",
+  "sprak": "nb",
+  "emailTitle": "Bestillingen din er på vei",
+  "emailDescription": "Trykk på knappen, så ser du nøyaktig hvor pakken er nå.",
+  "amnesrader": [
+    "Bestillingen din er på vei",
+    "Sånn finner du pakken med en gang",
+    "Pakkenummeret ditt starter på CS-"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Bestillingen din er på vei"
+    },
+    {
+      "type": "regular",
+      "text": "Du har fått en bekreftelse på e-post, og du får en egen e-post når pakken sendes, med et pakkenummer som starter på CS-. Trykk på knappen under, så ser du nøyaktig hvor pakken er akkurat nå.",
+      "alignment": "left"
+    },
+    {
+      "type": "link",
+      "text": "Spor pakken",
+      "url": "https://carashell.se/nb/pages/spara",
+      "style": "button"
+    },
+    {
+      "type": "quote",
+      "text": "Føles det tregt? Svar på denne e-posten, så svarer jeg selv.\nAxel, grunnlegger"
+    }
+  ],
+  "varningar": []
+}

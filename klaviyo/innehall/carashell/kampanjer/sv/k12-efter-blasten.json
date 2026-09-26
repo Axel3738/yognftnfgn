@@ -1,0 +1,70 @@
+{
+  "id": "k12-efter-blasten",
+  "namn": "MAIL_20261215_CaraShellRoof_SV_M_1_samtycke_product_kolla-banden-efter-blasten_v1",
+  "sprak": "sv",
+  "memo": "Servicemejl utan produktkort: efter en storm, gå ut och kolla att krokarna sitter under kanten och att banden är åtdragna. Skälet: ett överdrag som sitter rätt håller (faktabladet: håller i blåst), och kunden ska höra av sig om något gått sönder. Ingen försäljning.",
+  "brief": "Rubrik + en mening. Punkter: tre saker att kolla (krokarna under kanten, banden åtdragna, de två extra banden). Grundare-rad: gick något sönder, svara på mejlet. Inga produktkort, ingen knapp. ",
+  "taggar": {
+    "typ": "M",
+    "kalla": "voc",
+    "kalla_ref": "kommentarer/rapporter/2026-09-26.md (sönderblåst efter stormen)",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "ingen",
+    "confidence": "medium",
+    "prefix": "CaraShellRoof",
+    "kod": "M",
+    "avatar": "kunden som har överdraget på vagnen",
+    "begar": "kontroll"
+  },
+  "amnesrader": [
+    {
+      "text": "Kolla skyddet efter blåsten",
+      "begar": "en omtänksam påminnelse"
+    },
+    {
+      "text": "Tre saker värda två minuter",
+      "begar": "en snabb, enkel åtgärd"
+    },
+    {
+      "text": "Har allt suttit kvar?",
+      "begar": "en kontrollfråga som väcker nyfikenhet"
+    }
+  ],
+  "forhandstext": "Krokarna, banden, och de två extra.",
+  "block": [
+    {
+      "typ": "text",
+      "rubrik": "Efter blåsten",
+      "text": "Har det blåst mycket där du står den senaste tiden, är det värt två minuter att gå ut och kolla skyddet."
+    },
+    {
+      "typ": "punkter",
+      "rubrik": null,
+      "punkter": [
+        "Krokarna sitter kvar under kanten",
+        "Banden är åtdragna, inte slaka",
+        "Kolla även de två extra banden på 10,5 meter som följde med"
+      ]
+    },
+    {
+      "typ": "grundare",
+      "text": "Gick något sönder ändå? Svara på det här mejlet, så tittar jag på det själv."
+    }
+  ],
+  "tretest": [
+    { "rad": "Kolla skyddet efter blåsten", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Tre saker värda två minuter", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Har allt suttit kvar?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Krokarna, banden, och de två extra.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Efter blåsten", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "version": 1,
+  "planerad": "2026-12-15T18:00:00+01:00",
+  "segment": [
+    "SEG_samtycke_sv"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

@@ -1,0 +1,80 @@
+{
+  "id": "k04-vecka-43",
+  "namn": "MAIL_20261020_CaraShellRoof_NB_GT_1_samtycke_solution_farsdag-26-okt_v1",
+  "sprak": "nb",
+  "memo": "Samma som svenskan: farsdag 8/11 i Norge, siste bestillingsdag man 26. oktober.",
+  "brief": "Hero: presenten. Text med datumet skrivet ut (\"beställ senast måndag 26 oktober\") och varför (så att paketet hinner fram till fars dag) — utan leveranstid i dagar. Produktrad: taköverdraget + termoskyddet. Fakta.",
+  "taggar": {
+    "typ": "I",
+    "kalla": "egen-data",
+    "kalla_ref": "brands/carashell.json#kalender",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "konsekvens",
+    "confidence": "low",
+    "prefix": "CaraShellRoof",
+    "kod": "GT",
+    "avatar": "den som leter etter gave til en pappa med campingvogn eller bobil",
+    "begar": "en present han faktiskt använder"
+  },
+  "amnesrader": [
+    {
+      "text": "Gaven til pappa med campingvogn",
+      "begar": "se for seg farens campingvogn eller bobil"
+    },
+    {
+      "text": "Bestill senest mandag 26. oktober",
+      "begar": "få med seg fristen i tide"
+    },
+    {
+      "text": "En gave han bruker hver vinter",
+      "begar": "vite at gaven faktisk blir brukt"
+    }
+  ],
+  "forhandstext": "Bestill i tide, så er den pakket inn før farsdag.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Gaven til pappa med campingvogn eller bobil",
+      "text": "Hei {{fornamn}},\n\nFarsdag er søndag 8. november. Et taktrekk er en gave han faktisk bruker, hver eneste vinter.",
+      "bild": "produkt:takskyddet",
+      "knapp": {
+        "text": "Se gaven",
+        "lank": "produkt:takskyddet"
+      }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Bestill senest mandag 26. oktober, så rekker gaven fram til farsdag."
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "To gaver å velge mellom",
+      "handles": [
+        "takskyddet",
+        "termoskyddet"
+      ]
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    { "rad": "Gaven til pappa med campingvogn", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Bestill senest mandag 26. oktober", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En gave han bruker hver vinter", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Bestill i tide, så er den pakket inn før farsdag.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Gaven til pappa med campingvogn eller bobil", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se gaven", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "To gaver å velge mellom", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "version": 1,
+  "planerad": "2026-10-20T18:00:00+02:00",
+  "segment": [
+    "SEG_samtycke_nb"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

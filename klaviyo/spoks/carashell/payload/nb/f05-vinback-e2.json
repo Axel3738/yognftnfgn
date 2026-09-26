@@ -1,0 +1,18 @@
+{
+  "id": "f05-vinback-e2",
+  "sprak": "nb",
+  "emailTitle": "Hva mangler du til vogna?",
+  "emailDescription": "Jeg lurer på noe, og et kort svar holder.",
+  "amnesrader": [
+    "Hva mangler du til vogna?",
+    "Ett spørsmål fra meg",
+    "Svar med to ord, det holder"
+  ],
+  "blocks": [
+    {
+      "type": "quote",
+      "text": "Jeg lurer på noe. Er det noe du savner til campingvogna eller bobilen, som vi ikke selger i dag? Svar på denne e-posten med noen få ord, jeg leser alt selv, og det hjelper oss å velge hva vi lager videre.\nAxel, grunnlegger"
+    }
+  ],
+  "varningar": []
+}

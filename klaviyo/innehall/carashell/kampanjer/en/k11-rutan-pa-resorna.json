@@ -1,0 +1,75 @@
+{
+  "id": "k11-rutan-pa-resorna",
+  "namn": "MAIL_20261208_CaraShellFront_EN_PD_2_samtycke_solution_kylan-borta-fran-rutan_v1",
+  "sprak": "en",
+  "memo": "Termoskyddet och fönstertermomattan för den som reser: håller kylan och solen borta från vindrutan och sidorutorna, mörklägger. sv/nb: vinterresor, fjällen får nämnas som plats men inga påståenden om isolervärde. en: the trips ahead — ingen årstid.",
+  "brief": "Hero (bild termoskyddet). Text: kylan och solen borta från rutan, ingen imma, mörkt när du sover. Produktrad: termoskyddet + fönstertermomattan. Fakta. Aldrig isolervärde, material eller vikt. Engelskan gäller USA, Storbritannien, Kanada, Australien och Nya Zeeland samtidigt: inga årstider (winter/summer/spring/autumn/fall), ingen snö — skriv \"while it is parked\", \"between trips\", \"off the road\". Säg caravan där det passar (GB/AU/NZ), motorhome, och RV en gång som amerikansk synonym.",
+  "taggar": {
+    "typ": "N",
+    "kalla": "egen-data",
+    "kalla_ref": "factory/produkter/termoskyddet.yaml#beskrivning",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "ingen",
+    "confidence": "low",
+    "prefix": "CaraShellFront",
+    "kod": "PD",
+    "avatar": "husbilsägaren som reser även när det är kallt",
+    "begar": "njutning"
+  },
+  "amnesrader": [
+    {
+      "text": "The glass, covered before the next trip",
+      "begar": "prepare the glass before setting off"
+    },
+    {
+      "text": "No fog, no glare, no one looking in",
+      "begar": "picture a clear, private windshield"
+    },
+    {
+      "text": "Dark enough to sleep in, whatever's outside",
+      "begar": "sleep undisturbed on the road"
+    }
+  ],
+  "forhandstext": "The cover sits on the outside, so the inside stays clear.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "The glass on the trips ahead",
+      "text": "Hi {{fornamn}},\n\nThis cover straps onto the outside of the windshield and both side windows before you set off. No fog on the inside, and the cab stays dark when you're ready to sleep.",
+      "bild": "produkt:termoskyddet",
+      "knapp": {
+        "text": "See the thermal cover",
+        "lank": "produkt:termoskyddet"
+      }
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "For the big window, and the small ones",
+      "handles": [
+        "termoskyddet",
+        "fonstertermomatta-2-pack"
+      ]
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    { "rad": "The glass, covered before the next trip", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "No fog, no glare, no one looking in", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Dark enough to sleep in, whatever's outside", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "The cover sits on the outside, so the inside stays clear.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "The glass on the trips ahead", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "See the thermal cover", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "For the big window, and the small ones", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "version": 1,
+  "planerad": "2026-12-08T16:00:00+01:00",
+  "segment": [
+    "SEG_samtycke_en"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

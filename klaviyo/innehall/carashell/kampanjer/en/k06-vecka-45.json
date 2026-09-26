@@ -1,0 +1,80 @@
+{
+  "id": "k06-vecka-45",
+  "namn": "MAIL_20261103_CaraShellRoof_EN_GT_1_samtycke_solution_the-gift-for-the-one-with-the-caravan_v1",
+  "sprak": "en",
+  "memo": "Presenten till den som har vagnen: julen närmar sig, och överdraget är en present som används. Ingen farsdag på engelska (USA juni, UK mars). Sista beställningsdag för jul kommer i K10.",
+  "brief": "Hero: presenten. Text: varför ett skydd är en present som används (bara faktabladets fakta). Produktrad: takskyddet + termoskyddet. Fakta. Engelskan gäller USA, Storbritannien, Kanada, Australien och Nya Zeeland samtidigt: inga årstider (winter/summer/spring/autumn/fall), ingen snö — skriv \"while it is parked\", \"between trips\", \"off the road\". Säg caravan där det passar (GB/AU/NZ), motorhome, och RV en gång som amerikansk synonym.",
+  "taggar": {
+    "typ": "I",
+    "kalla": "gissning",
+    "kalla_ref": null,
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "ingen",
+    "confidence": "low",
+    "prefix": "CaraShellRoof",
+    "kod": "GT",
+    "avatar": "den som letar present till någon med husvagn eller husbil",
+    "begar": "en present som används"
+  },
+  "amnesrader": [
+    {
+      "text": "A Christmas gift that actually gets used",
+      "begar": "find a gift that won't go to waste"
+    },
+    {
+      "text": "The gift for the one with the caravan",
+      "begar": "find a gift for someone with a caravan or motorhome"
+    },
+    {
+      "text": "Two covers, one for the roof, one for the glass",
+      "begar": "see the options at a glance"
+    }
+  ],
+  "forhandstext": "Not the kind of gift that waits in a drawer.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "The gift that gets used",
+      "text": "Hi {{fornamn}},\n\nChristmas is coming, and a cover is the kind of gift that gets used the same week it arrives.",
+      "bild": "produkt:takskyddet",
+      "knapp": {
+        "text": "See the gift",
+        "lank": "produkt:takskyddet"
+      }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "It goes on the roof or the windshield as soon as it's unwrapped, and it goes back on every time the rig is parked again. Not a gift that waits in a drawer."
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "The roof, and the windshield",
+      "handles": [
+        "takskyddet",
+        "termoskyddet"
+      ]
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    { "rad": "A Christmas gift that actually gets used", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "The gift for the one with the caravan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Two covers, one for the roof, one for the glass", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Not the kind of gift that waits in a drawer.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "The gift that gets used", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "See the gift", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "The roof, and the windshield", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "version": 1,
+  "planerad": "2026-11-03T16:00:00+01:00",
+  "segment": [
+    "SEG_samtycke_en"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

@@ -1,0 +1,96 @@
+{
+  "id": "f06-levererat-termoskyddet",
+  "namn": "FLOW_levererat_termoskyddet_SV_v1",
+  "sprak": "sv",
+  "memo": "Samma som takskyddets leveransflöde, för termoskyddet: spänns utvändigt över vindrutan och båda sidorutorna, flikarna kläms fast i dörrkarmen utan att dörrarna öppnas, håller i blåst.",
+  "spoks": {
+    "event": "order_delivered",
+    "filter": [
+      "ej_avregistrerad",
+      "sprak"
+    ],
+    "triggerFilter": {
+      "externalId": [
+        "termoskyddet"
+      ]
+    },
+    "reenroll": true,
+    "reenrollEfter": null
+  },
+  "steg": [
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 1
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f06-levererat-termoskyddet-e1",
+        "namn": "FLOW_levererat_termoskyddet_SV_E1_M_sa-monterar-du-termoskyddet_v1",
+        "sprak": "sv",
+        "memo": "Monteringen med faktabladets ord, tre punkter.",
+        "brief": "Rubrik + en mening + tre punkter + grundare-rad + fakta.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "factory/produkter/termoskyddet.yaml#features, #faq",
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "CaraShellFront",
+          "kod": "M",
+          "avatar": "husbilsägaren som just fått termoskyddet",
+          "begar": "slippa-krangel"
+        },
+        "amnesrader": [
+          {
+            "text": "Så monterar du termoskyddet",
+            "begar": "veta exakt hur man gör"
+          },
+          {
+            "text": "Utanpå rutan, dörrarna stängda",
+            "begar": "förstå att dörrarna inte behöver öppnas"
+          },
+          {
+            "text": "Tre steg, klart på utsidan",
+            "begar": "veta att det går snabbt"
+          }
+        ],
+        "forhandstext": "Tre steg, och du behöver inte öppna en enda dörr.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Så monterar du termoskyddet",
+            "text": "Paketet har kommit fram. Så här monterar du det."
+          },
+          {
+            "typ": "punkter",
+            "rubrik": null,
+            "punkter": [
+              "Spänn skyddet utvändigt över vindrutan och båda sidorutorna.",
+              "Kläm fast flikarna i dörrkarmen. Dörrarna behöver inte öppnas.",
+              "Klart. Skyddet håller kvar i blåst."
+            ]
+          },
+          {
+            "typ": "grundare",
+            "text": "Blev något inte som det skulle, svara bara på det här mejlet."
+          },
+          {
+            "typ": "fakta"
+          }
+        ],
+        "tretest": [
+          {"rad": "Så monterar du termoskyddet", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Utanpå rutan, dörrarna stängda", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Tre steg, klart på utsidan", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Tre steg, och du behöver inte öppna en enda dörr.", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Så monterar du termoskyddet", "visualisera": true, "falsifiera": true, "ingen_annan": true}
+        ],
+        "version": 1
+      }
+    }
+  ]
+}

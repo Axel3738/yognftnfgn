@@ -1,0 +1,124 @@
+{
+  "id": "k02-nio-langder",
+  "sprak": "nb",
+  "emailTitle": "Ni lengder, ikke bare én",
+  "emailDescription": "Mål taket, så vet du hvilken som er din.",
+  "amnesrader": [
+    "Ni lengder, ikke bare én",
+    "Slik finner du riktig lengde",
+    "Passer både campingvogn og bobil"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Ni lengder, hvilken passer vognen din?",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hei {{ contact.first_name | default: 'der' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Taktrekket finnes i ni lengder, fra 5,5 til 13,5 meter. Du velger selv hvilken som passer taket ditt.",
+      "alignment": "center"
+    },
+    {
+      "type": "image",
+      "fileId": "{{spoks:media:takskyddet}}",
+      "altText": "Taktrekk campingvogn & bobil 5,5–13,5 m",
+      "urlRedirect": "https://carashell.se/nb/products/takskyddet?country=NO"
+    },
+    {
+      "type": "h2",
+      "text": "Taktrekk campingvogn & bobil 5,5–13,5 m",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Finn din lengde",
+      "url": "https://carashell.se/nb/products/takskyddet?country=NO",
+      "style": "button"
+    },
+    {
+      "type": "h2",
+      "text": "Slik velger du riktig lengde"
+    },
+    {
+      "type": "list",
+      "text": "Mål taket fra front til bakkant."
+    },
+    {
+      "type": "list",
+      "text": "Ni lengder fra 5,5 til 13,5 meter, alle 3 meter brede."
+    },
+    {
+      "type": "list",
+      "text": "Passer både campingvogn og bobil."
+    },
+    {
+      "type": "image",
+      "fileId": "{{spoks:media:takskyddet}}",
+      "altText": "Taktrekk campingvogn & bobil 5,5–13,5 m",
+      "urlRedirect": "https://carashell.se/nb/products/takskyddet?country=NO"
+    },
+    {
+      "type": "h2",
+      "text": "Taktrekk campingvogn & bobil 5,5–13,5 m",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Se de ni lengdene",
+      "url": "https://carashell.se/nb/products/takskyddet?country=NO",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "Velg nærmeste lengde oppover, så sitter trekket riktig.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Angrerett**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagers angrerett",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spor pakken**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Følg den hele veien](https://carashell.se/nb/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": [
+    "Bilden för takskyddet saknar fileId i Spoks (produkter.json → bild).",
+    "Bilden för takskyddet saknar fileId i Spoks (produkter.json → bild)."
+  ]
+}

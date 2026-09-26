@@ -83,3 +83,25 @@ alltså bara från kryssrutan i kassan och de två Shopify-formulären i sidfote
 startsidan. Följden för flödena: välkomstflödet (F01) får få mottagare, och de flesta
 som kommer in i listan har redan köpt. Pengarna i e-posten ligger därför i flödena för
 kassa, efter köp och vinback. Beslutet prövas igen när flödena går.
+
+---
+
+## Svar 9–14, 2026-09-26 (omgång 2 i `FRAGOR.md`, ställd som EN fråga, klistrad av Axel)
+
+Återkommande kunder i en general store. Botens egna ord i sammandrag, `[Cn]`/`[D1]` är botens källor.
+
+| Del | Vad Evolve säger | Källa |
+|---|---|---|
+| Vad ger köp nummer två | Yuval A (hobbynisch, 20+ produkter, $200k/mån): 30 % av intäkten från e-post/SMS, **85 % av det från flöden**, 15 % från kampanjer. Ny kompletterande produkt till gamla köpare: "just email blast them" (Shaun). | [C5][C3] |
+| Korsförsälja per ägartyp eller bästsäljare | Inget i källorna. Testa själv. | – |
+| Trigger leverans eller order | Ankit P: korsförsälj **0–3 dagar efter ordern**, inte efter leverans, om erbjudandet är starkt. Ingen källa jämför triggrarna. | [C2] |
+| Erbjudandet för köp två | Grayson: **butikskredit via presentkort** är billigast. Cirka 30 % används, så 100 $ kredit kostar ungefär 5–7 $ med 25 % COGS. Hur och i vilket mejl: inget i källorna. Befintliga köpare svarar på volym (BOGO), nya på procent (BFCM-anteckningar). | [C6][D1] |
+| Vinback utan cykel | Inget i källorna. | – |
+| Kampanjer per vecka, riktmärke | Billy: 3–5 kampanjer i veckan, rea blandat med värdemejl, men för prospektlistor. Inget riktmärke för 90 dagars återköp. | [C4] |
+
+### Vad vi gör med svaret
+- **Flödena är huvudspåret**, inte kampanjerna. Stämmer med planen.
+- **Tipsmejlen går efter leverans** (Axels beslut 2026-09-26: leverans + 1 dag). De är instruktioner, inte försäljning. Evolves 0–3 dagar gäller korsförsäljning.
+- **Ett korsförsäljningsmejl dag 1–3 efter ordern** är värt ett test i F04. Vår egen data pekar åt två håll: 14 av 16 snabba återköp skedde inom första timmen, men riktiga återköp har median 18 dagar (`ATERKOP-ANALYS.md`).
+- **Butikskredit** är Axels beslut (pengar). Frågan är ställd.
+- **Nya produkter mejlas som kampanj till köparna** (Shaun).

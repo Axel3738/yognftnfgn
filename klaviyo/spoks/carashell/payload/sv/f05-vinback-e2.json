@@ -1,0 +1,18 @@
+{
+  "id": "f05-vinback-e2",
+  "sprak": "sv",
+  "emailTitle": "Vad saknar du för vagnen?",
+  "emailDescription": "Jag undrar helt enkelt. Svara med ett par ord.",
+  "amnesrader": [
+    "Vad saknar du för vagnen?",
+    "En fråga från mig",
+    "Svara bara, jag läser allt"
+  ],
+  "blocks": [
+    {
+      "type": "quote",
+      "text": "Jag undrar en sak. Vad saknar du för husvagnen eller husbilen, något vi borde bygga ett skydd för? Svara bara på det här mejlet med ett par ord, jag läser varje svar själv.\nAxel, grundare"
+    }
+  ],
+  "varningar": []
+}

@@ -1,0 +1,99 @@
+{
+  "id": "k01-regnet-vid-takluckan",
+  "namn": "MAIL_20260929_CaraShellRoof_SV_PD_1_samtycke_problem_regnet-vid-takluckan_v1",
+  "sprak": "sv",
+  "memo": "Problemvinkeln bär butikens egen data: PD/SP är de vinklar som köper hos CaraShell (dna.md mönster 11). Regnet står kvar vid takluckan, tätmassan mjuknar, fukttestet till våren. sv/nb: inför vinteruppställningen. en: vagnen står parkerad — ingen årstid.",
+  "brief": "Hero (bild taköverdraget) med problemet ur faktabladet (regnet vid takluckan, tätmassan, fukttestet). Text: vad överdraget täcker (taket, kanten 30–40 cm ner) och inte täcker. Punkter: nio längder, banden, en person. Produktkort, två citat, fakta, knapp. Vintern får nämnas: uppställningen är riktig säsong (urgency sasong).",
+  "taggar": {
+    "typ": "I",
+    "kalla": "egen-data",
+    "kalla_ref": "products/carashell/takskyddet/dna.md mönster 11; factory/produkter/takskyddet.yaml#beskrivning",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "sasong",
+    "confidence": "medium",
+    "prefix": "CaraShellRoof",
+    "kod": "PD",
+    "avatar": "husvagns- eller husbilsägaren som ställer upp fordonet utomhus",
+    "begar": "skydda-det-jag-ager"
+  },
+  "amnesrader": [
+    {
+      "text": "Vattnet som blir kvar vid takluckan",
+      "begar": "vetskap om vad som faktiskt pågår på taket"
+    },
+    {
+      "text": "Syns inte förrän fukttestet i vår",
+      "begar": "slippa en obehaglig överraskning i vår"
+    },
+    {
+      "text": "Ett tak. Ett överdrag. En person.",
+      "begar": "en lösning man klarar själv, utan hjälp"
+    }
+  ],
+  "forhandstext": "Tätmassan mjuknar innan någon går och kollar.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Vattnet som blir stående vid takluckan",
+      "text": "Regnvatten samlar sig kring takluckor och skarvar hela vintern. Ingen går upp och kollar förrän våren.",
+      "bild": "produkt:takskyddet",
+      "knapp": {
+        "text": "Se taköverdraget",
+        "lank": "produkt:takskyddet"
+      }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Skyddet täcker bara taket, med kanten hängande 30 till 40 cm ner över sidorna, så vattnet inte blir stående vid takluckorna. Lacken slipper skava mot ett tungt helöverdrag."
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "Så är skyddet byggt",
+      "punkter": [
+        "Nio längder, 5,5 till 13,5 meter, alla 3 meter breda",
+        "Vävda spännband med plastkrokar som hakar under kanten",
+        "En person sätter på det, ensam"
+      ]
+    },
+    {
+      "typ": "produkt",
+      "handle": "takskyddet",
+      "text": "Mät taket från front till bakkant och välj närmaste längd uppåt.",
+      "knapp": "Välj din storlek"
+    },
+    {
+      "typ": "citat",
+      "handle": "takskyddet",
+      "antal": 2
+    },
+    {
+      "typ": "fakta"
+    },
+    {
+      "typ": "knapp",
+      "text": "Skydda taket",
+      "lank": "produkt:takskyddet"
+    }
+  ],
+  "tretest": [
+    { "rad": "Vattnet som blir kvar vid takluckan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Syns inte förrän fukttestet i vår", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Ett tak. Ett överdrag. En person.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Tätmassan mjuknar innan någon går och kollar.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Vattnet som blir stående vid takluckan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se taköverdraget", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Så är skyddet byggt", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Välj din storlek", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Skydda taket", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "version": 1,
+  "planerad": "2026-09-29T18:00:00+02:00",
+  "segment": [
+    "SEG_samtycke_sv"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

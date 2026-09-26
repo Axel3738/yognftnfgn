@@ -1,0 +1,146 @@
+{
+  "id": "f05-vinback",
+  "namn": "FLOW_order_vinback_SV_v1",
+  "sprak": "sv",
+  "memo": "GISSNING, märkt så: CaraShell har 0 återköp på 90 dagar (butiken är 15 dagar gammal). Produkternas säsonger ligger ett halvår isär (taket på hösten, rutan på resorna), så 180 dagar efter ett köp är den andra produktens tid. E1: vad som finns nu. E2: en fråga tillbaka (vad saknar du för vagnen) — kundens egna ord till nästa produkt.",
+  "spoks": {
+    "event": "order_created",
+    "filter": [
+      "ej_avregistrerad",
+      "sprak",
+      "ej_kopt_sedan_start"
+    ],
+    "reenroll": true,
+    "reenrollEfter": null
+  },
+  "steg": [
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 180
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f05-vinback-e1",
+        "namn": "FLOW_order_vinback_SV_E1_S_ett-halvar-senare_v1",
+        "sprak": "sv",
+        "memo": "Säsongsneutralt (kan landa i mars eller december): ett halvår efter köpet, det här har vi nu. Produktrad med de tre skydden.",
+        "brief": "Rubrik + 2 stycken som fungerar oavsett årstid (en: aldrig winter/summer). Produktrad + fakta.",
+        "taggar": {
+          "typ": "S",
+          "kalla": "gissning",
+          "kalla_ref": null,
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "sasong",
+          "confidence": "low",
+          "prefix": "CaraShellRoof",
+          "kod": "S",
+          "avatar": "kunden som köpte för ett halvår sedan",
+          "begar": "skydda-det-jag-ager"
+        },
+        "amnesrader": [
+          {
+            "text": "Sex månader sedan du handlade",
+            "begar": "återknyta kontakt, väcka nyfikenhet"
+          },
+          {
+            "text": "Taket. Rutan. Fönstren.",
+            "begar": "se vad som finns att skydda"
+          },
+          {
+            "text": "{{fornamn}}, dags att kolla vagnen?",
+            "begar": "bli personligt påmind om att se över sitt fordon"
+          }
+        ],
+        "forhandstext": "Här är vad vi bygger på just nu, oavsett årstid.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Sex månader sedan du handlade",
+            "text": "Det är sex månader sedan du handlade hos oss. Vi fortsätter bygga skydd för husvagnen och husbilen, för taket och för rutan.\n\nTa gärna en titt på vagnen då och då, oavsett årstid."
+          },
+          {
+            "typ": "produktrad",
+            "rubrik": "Taket. Rutan. Fönstren.",
+            "handles": [
+              "takskyddet",
+              "termoskyddet",
+              "fonstertermomatta-2-pack"
+            ]
+          },
+          {
+            "typ": "fakta"
+          }
+        ],
+        "tretest": [
+          {"rad": "Sex månader sedan du handlade", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Taket. Rutan. Fönstren.", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "{{fornamn}}, dags att kolla vagnen?", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Här är vad vi bygger på just nu, oavsett årstid.", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Sex månader sedan du handlade", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Taket. Rutan. Fönstren.", "visualisera": true, "falsifiera": true, "ingen_annan": true}
+        ],
+        "version": 1
+      }
+    },
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 14
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f05-vinback-e2",
+        "namn": "FLOW_order_vinback_SV_E2_M_vad-saknar-du_v1",
+        "sprak": "sv",
+        "memo": "Frågan: vad saknar du för vagnen? Svara med en rad. Kundens ord blir underlag till nästa produkt (Evolve: kundens egna ord).",
+        "brief": "Grundare-blocket: 3–4 meningar, en fråga, svara på mejlet. Inget annat.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "gissning",
+          "kalla_ref": null,
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "low",
+          "prefix": "CaraShellRoof",
+          "kod": "M",
+          "avatar": "kunden som köpte för ett halvår sedan",
+          "begar": "bli lyssnad på"
+        },
+        "format": "rentext",
+        "amnesrader": [
+          {
+            "text": "Vad saknar du för vagnen?",
+            "begar": "bli tillfrågad, bli lyssnad på"
+          },
+          {
+            "text": "En fråga från mig",
+            "begar": "få en personlig fråga, inte ett nyhetsbrev"
+          },
+          {
+            "text": "Svara bara, jag läser allt",
+            "begar": "veta att svaret faktiskt når fram"
+          }
+        ],
+        "forhandstext": "Jag undrar helt enkelt. Svara med ett par ord.",
+        "block": [
+          {
+            "typ": "grundare",
+            "text": "Jag undrar en sak. Vad saknar du för husvagnen eller husbilen, något vi borde bygga ett skydd för? Svara bara på det här mejlet med ett par ord, jag läser varje svar själv."
+          }
+        ],
+        "tretest": [
+          {"rad": "Vad saknar du för vagnen?", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "En fråga från mig", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Svara bara, jag läser allt", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Jag undrar helt enkelt. Svara med ett par ord.", "visualisera": true, "falsifiera": true, "ingen_annan": true}
+        ],
+        "version": 1
+      }
+    }
+  ]
+}

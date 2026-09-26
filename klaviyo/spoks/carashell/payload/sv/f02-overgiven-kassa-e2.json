@@ -1,0 +1,80 @@
+{
+  "id": "f02-overgiven-kassa-e2",
+  "sprak": "sv",
+  "emailTitle": "Tre frågor innan du betalar",
+  "emailDescription": "Storlek, fäste och blåst, i tre korta svar.",
+  "amnesrader": [
+    "Tre frågor innan du betalar",
+    "Passar det verkligen min vagn?",
+    "Håller det i blåst? Ja."
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Storlek. Fäste. Blåst."
+    },
+    {
+      "type": "regular",
+      "text": "Vi ser vilka frågor som kommer innan ett köp. Här är svaren.",
+      "alignment": "left"
+    },
+    {
+      "type": "list",
+      "text": "Passar det min vagn? Taköverdraget finns i nio längder, 5,5 till 13,5 meter. Mät taket från front till bakkant och välj närmaste längd uppåt. Passar både husvagn och husbil."
+    },
+    {
+      "type": "list",
+      "text": "Hur fäster det? Vävda spännband med plastkrokar hakar under karossens kant, på alla fyra sidor, justerbara."
+    },
+    {
+      "type": "list",
+      "text": "Klarar det vinden? Ja. Banden är vävda, inte gummi, så de töjs inte ut och håller överdraget på plats."
+    },
+    {
+      "type": "list",
+      "text": "Termoskyddet: 211 cm brett och 171 cm över mitten, med flikar som kläms fast i dörrkarmen."
+    },
+    {
+      "type": "abandonedCart",
+      "buttonText": "Tillbaka till kassan"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://carashell.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

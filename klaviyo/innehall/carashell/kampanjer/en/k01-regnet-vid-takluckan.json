@@ -1,0 +1,94 @@
+{
+  "id": "k01-regnet-vid-takluckan",
+  "namn": "MAIL_20260929_CaraShellRoof_EN_PD_1_samtycke_problem_regnet-vid-takluckan_v1",
+  "sprak": "en",
+  "memo": "Problemvinkeln bär butikens egen data: PD/SP är de vinklar som köper hos CaraShell (dna.md mönster 11). Regnet står kvar vid takluckan, tätmassan mjuknar, fukttestet till våren. sv/nb: inför vinteruppställningen. en: vagnen står parkerad — ingen årstid.",
+  "brief": "Hero (bild taköverdraget) med problemet ur faktabladet (regnet vid takluckan, tätmassan, fukttestet). Text: vad överdraget täcker (taket, kanten 30–40 cm ner) och inte täcker. Punkter: nio längder, banden, en person. Produktkort, ingen citat, fakta, knapp. Engelskan gäller USA, Storbritannien, Kanada, Australien och Nya Zeeland samtidigt: inga årstider (winter/summer/spring/autumn/fall), ingen snö — skriv \"while it is parked\", \"between trips\", \"off the road\". Säg caravan där det passar (GB/AU/NZ), motorhome, och RV en gång som amerikansk synonym.",
+  "taggar": {
+    "typ": "I",
+    "kalla": "egen-data",
+    "kalla_ref": "products/carashell/takskyddet/dna.md mönster 11; factory/produkter/takskyddet.yaml#beskrivning",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "sasong",
+    "confidence": "medium",
+    "prefix": "CaraShellRoof",
+    "kod": "PD",
+    "avatar": "husvagns- eller husbilsägaren som ställer upp fordonet utomhus",
+    "begar": "skydda-det-jag-ager"
+  },
+  "amnesrader": [
+    {
+      "text": "The roof you never climb up to check",
+      "begar": "understand what actually wears out on the rig"
+    },
+    {
+      "text": "Only the roof gets covered, not the whole rig",
+      "begar": "understand why only the roof needs a cover"
+    },
+    {
+      "text": "One person puts this on, not two",
+      "begar": "put the cover on without asking for help"
+    }
+  ],
+  "forhandstext": "Rain settles right where the hatches and seams are.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "The rain sits right at the roof hatch",
+      "text": "Hi {{fornamn}},\n\nRain collects around the roof hatches and seams while the rig sits outside. Nobody finds out until the next moisture check.",
+      "bild": "produkt:takskyddet",
+      "knapp": {
+        "text": "See the roof cover",
+        "lank": "produkt:takskyddet"
+      }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "The cover only goes over the roof surface, with the edge hanging about 30 to 40 cm (12 to 16 in) down the sides so rainwater doesn't sit at the hatches. It doesn't wrap the walls or windows."
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "What's covered, and what isn't",
+      "punkter": [
+        "Nine lengths, 18 to 44 ft (5.5 to 13.5 m), so there's one for your roof.",
+        "Woven webbing straps with plastic hooks, latched under the edge of the body on all four sides.",
+        "Goes on with one person, no second pair of hands needed."
+      ]
+    },
+    {
+      "typ": "produkt",
+      "handle": "takskyddet",
+      "text": "Pick the length that matches your roof, front to back.",
+      "knapp": "Check sizes"
+    },
+    {
+      "typ": "fakta"
+    },
+    {
+      "typ": "knapp",
+      "text": "Protect the roof",
+      "lank": "produkt:takskyddet"
+    }
+  ],
+  "tretest": [
+    { "rad": "The roof you never climb up to check", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Only the roof gets covered, not the whole rig", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "One person puts this on, not two", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Rain settles right where the hatches and seams are.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "The rain sits right at the roof hatch", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "What's covered, and what isn't", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "See the roof cover", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Check sizes", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Protect the roof", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "version": 1,
+  "planerad": "2026-09-29T16:00:00+02:00",
+  "segment": [
+    "SEG_samtycke_en"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

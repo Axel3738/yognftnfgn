@@ -1,0 +1,177 @@
+{
+  "id": "k08-checklistan",
+  "sprak": "en",
+  "emailTitle": "Three things before it sits for a while",
+  "emailDescription": "Three parts of the rig, three ways to cover them.",
+  "amnesrader": [
+    "Three things before it sits for a while",
+    "The roof, the windshield, the small windows",
+    "One checklist before it's parked for a while"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Before it sits for a while",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hi {{ contact.first_name | default: 'there' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "A caravan or motorhome that's parked for a while collects rain at the roof and cold at the glass. Three parts, three covers.",
+      "alignment": "center"
+    },
+    {
+      "type": "image",
+      "fileId": "{{spoks:media:takskyddet}}",
+      "altText": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft",
+      "urlRedirect": "https://carashell.com/products/takskyddet"
+    },
+    {
+      "type": "h2",
+      "text": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Shop the checklist",
+      "url": "https://carashell.com/collections/sortimentet",
+      "style": "button"
+    },
+    {
+      "type": "h2",
+      "text": "Three things to check"
+    },
+    {
+      "type": "list",
+      "text": "The roof: a cover that keeps rain off the hatches and seams."
+    },
+    {
+      "type": "list",
+      "text": "The windshield: an outside cover that keeps the glass clear and blacks out the cab."
+    },
+    {
+      "type": "list",
+      "text": "The small side windows: a thermal mat, 70 × 80 cm, sold as a 2-pack."
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "image",
+              "fileId": "{{spoks:media:takskyddet}}",
+              "altText": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft",
+              "urlRedirect": "https://carashell.com/products/takskyddet"
+            },
+            {
+              "type": "h2",
+              "text": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft",
+              "alignment": "center"
+            },
+            {
+              "type": "link",
+              "text": "See the cover",
+              "url": "https://carashell.com/products/takskyddet",
+              "style": "button"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "image",
+              "fileId": "{{spoks:media:termoskyddet}}",
+              "altText": "Windshield Thermal Cover for Motorhome 211 × 171 cm",
+              "urlRedirect": "https://carashell.com/products/termoskyddet"
+            },
+            {
+              "type": "h2",
+              "text": "Windshield Thermal Cover for Motorhome 211 × 171 cm",
+              "alignment": "center"
+            },
+            {
+              "type": "link",
+              "text": "See the cover",
+              "url": "https://carashell.com/products/termoskyddet",
+              "style": "button"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "image",
+              "fileId": "{{spoks:media:fonstertermomatta-2-pack}}",
+              "altText": "Window Thermal Mat, 2-Pack, 70 × 80 cm",
+              "urlRedirect": "https://carashell.com/products/fonstertermomatta-2-pack"
+            },
+            {
+              "type": "h2",
+              "text": "Window Thermal Mat, 2-Pack, 70 × 80 cm",
+              "alignment": "center"
+            },
+            {
+              "type": "link",
+              "text": "See the cover",
+              "url": "https://carashell.com/products/fonstertermomatta-2-pack",
+              "style": "button"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Guarantee**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "90-day guarantee",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Track your parcel**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Follow it all the way](https://carashell.com/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": [
+    "Bilden för takskyddet saknar fileId i Spoks (produkter.json → bild).",
+    "Bilden för takskyddet saknar fileId i Spoks (produkter.json → bild).",
+    "Bilden för termoskyddet saknar fileId i Spoks (produkter.json → bild).",
+    "Bilden för fonstertermomatta-2-pack saknar fileId i Spoks (produkter.json → bild)."
+  ]
+}

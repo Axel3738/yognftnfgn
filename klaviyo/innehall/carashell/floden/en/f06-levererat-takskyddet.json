@@ -1,0 +1,122 @@
+{
+  "id": "f06-levererat-takskyddet",
+  "namn": "FLOW_levererat_takskyddet_EN_v1",
+  "sprak": "en",
+  "memo": "Triggas när Shopify säger levererat (spårningsrutinen skriver leveransskanningen i Shopify varje timme). Dagen efter: så sätter du på taköverdraget. Skälet: en kund som sätter på det rätt ringer inte om vind och lack. ⚠️ Triggern order_delivered är inte mätt i CaraShells workspace: mät att flödet får inskrivningar första veckan, annars byt till order_created + 12 dagar.",
+  "spoks": {
+    "event": "order_delivered",
+    "filter": [
+      "ej_avregistrerad",
+      "sprak"
+    ],
+    "triggerFilter": {
+      "externalId": [
+        "takskyddet"
+      ]
+    },
+    "reenroll": true,
+    "reenrollEfter": null
+  },
+  "steg": [
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 1
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f06-levererat-takskyddet-e1",
+        "namn": "FLOW_levererat_takskyddet_EN_E1_M_sa-satter-du-pa-det_v1",
+        "sprak": "en",
+        "memo": "Monteringen med faktabladets ord: lägg det över taket med kanten 30–40 cm ner över sidorna, haka plastkrokarna under karossens kant längs sidorna (alla fyra sidor), dra åt de justerbara banden, de två extra banden på 10,5 m följer med för extra fäste. Inget om hur de extra banden dras (står inte i faktabladet).",
+        "brief": "Rubrik + en mening + fyra punkter i ordning + grundare-rad (blev något fel, svara på mejlet) + fakta.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "factory/produkter/takskyddet.yaml#features, #faq",
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "CaraShellRoof",
+          "kod": "M",
+          "avatar": "kunden som just fått paketet",
+          "begar": "slippa-krangel"
+        },
+        "amnesrader": [
+          {
+            "text": "How to put the roof cover on",
+            "begar": "practical clarity on installation"
+          },
+          {
+            "text": "Four steps, one person",
+            "begar": "reassurance it's quick and doable alone"
+          },
+          {
+            "text": "Get it on right, the first time",
+            "begar": "avoid mistakes on the first attempt"
+          }
+        ],
+        "forhandstext": "Four steps, and one person is enough to do it.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "How to put the roof cover on",
+            "text": "It only takes one person, and these four steps in order."
+          },
+          {
+            "typ": "punkter",
+            "rubrik": null,
+            "punkter": [
+              "Lay it over the roof, with the edge hanging down over the sides.",
+              "Hook the straps under the edge of the body, on all four sides.",
+              "Pull the straps tight.",
+              "Use the two extra reinforced straps for extra hold."
+            ]
+          },
+          {
+            "typ": "grundare",
+            "text": "If something doesn't add up, reply to this email and I'll help sort it out."
+          },
+          {
+            "typ": "fakta"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "How to put the roof cover on",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Four steps, one person",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Get it on right, the first time",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Four steps, and one person is enough to do it.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "How to put the roof cover on",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 1
+      }
+    }
+  ]
+}

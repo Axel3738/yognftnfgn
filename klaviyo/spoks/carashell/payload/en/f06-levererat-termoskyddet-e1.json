@@ -1,0 +1,76 @@
+{
+  "id": "f06-levererat-termoskyddet-e1",
+  "sprak": "en",
+  "emailTitle": "How to fit the windshield cover",
+  "emailDescription": "Three steps, and the doors stay shut the whole time.",
+  "amnesrader": [
+    "How to fit the windshield cover",
+    "No need to open the doors",
+    "It stays on, even in wind"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "How to fit the windshield cover"
+    },
+    {
+      "type": "regular",
+      "text": "Three steps, and you never have to open the doors.",
+      "alignment": "left"
+    },
+    {
+      "type": "list",
+      "text": "Strap it on over the outside of the windshield and both side windows."
+    },
+    {
+      "type": "list",
+      "text": "Clip the side flaps into the door frame. The doors stay closed the whole time."
+    },
+    {
+      "type": "list",
+      "text": "It stays on in wind."
+    },
+    {
+      "type": "quote",
+      "text": "If something doesn't add up, reply to this email and I'll help sort it out.\nAxel, founder"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Guarantee**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "90-day guarantee",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Track your parcel**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Follow it all the way](https://carashell.com/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

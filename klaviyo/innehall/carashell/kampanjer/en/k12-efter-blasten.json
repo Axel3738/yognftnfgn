@@ -1,0 +1,70 @@
+{
+  "id": "k12-efter-blasten",
+  "namn": "MAIL_20261215_CaraShellRoof_EN_M_1_samtycke_product_kolla-banden-efter-blasten_v1",
+  "sprak": "en",
+  "memo": "Servicemejl utan produktkort: efter en storm, gå ut och kolla att krokarna sitter under kanten och att banden är åtdragna. Skälet: ett överdrag som sitter rätt håller (faktabladet: håller i blåst), och kunden ska höra av sig om något gått sönder. Ingen försäljning.",
+  "brief": "Rubrik + en mening. Punkter: tre saker att kolla (krokarna under kanten, banden åtdragna, de två extra banden). Grundare-rad: gick något sönder, svara på mejlet. Inga produktkort, ingen knapp. Engelskan gäller USA, Storbritannien, Kanada, Australien och Nya Zeeland samtidigt: inga årstider (winter/summer/spring/autumn/fall), ingen snö — skriv \"while it is parked\", \"between trips\", \"off the road\". Säg caravan där det passar (GB/AU/NZ), motorhome, och RV en gång som amerikansk synonym. \"After strong wind\" räcker.",
+  "taggar": {
+    "typ": "M",
+    "kalla": "voc",
+    "kalla_ref": "kommentarer/rapporter/2026-09-26.md (sönderblåst efter stormen)",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "ingen",
+    "confidence": "medium",
+    "prefix": "CaraShellRoof",
+    "kod": "M",
+    "avatar": "kunden som har överdraget på vagnen",
+    "begar": "kontroll"
+  },
+  "amnesrader": [
+    {
+      "text": "After strong wind, check these three things",
+      "begar": "know what to check after wind"
+    },
+    {
+      "text": "The hooks, the straps, five minutes",
+      "begar": "do a quick check without much effort"
+    },
+    {
+      "text": "Sitting right is what keeps it on",
+      "begar": "understand why it stays on"
+    }
+  ],
+  "forhandstext": "A cover that's fitted right stays put in wind.",
+  "block": [
+    {
+      "typ": "text",
+      "rubrik": "After strong wind",
+      "text": "If it's been blowing hard where the rig is parked, it's worth a quick look before you trust it again."
+    },
+    {
+      "typ": "punkter",
+      "rubrik": null,
+      "punkter": [
+        "Check that the hooks are still latched under the edge of the body.",
+        "Check that the straps are still snug, not loose.",
+        "Check the two extra straps too, front and back."
+      ]
+    },
+    {
+      "typ": "grundare",
+      "text": "If something came loose or tore, reply to this email and tell me what happened."
+    }
+  ],
+  "tretest": [
+    { "rad": "After strong wind, check these three things", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "The hooks, the straps, five minutes", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sitting right is what keeps it on", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "A cover that's fitted right stays put in wind.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "After strong wind", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "version": 1,
+  "planerad": "2026-12-15T16:00:00+01:00",
+  "segment": [
+    "SEG_samtycke_en"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

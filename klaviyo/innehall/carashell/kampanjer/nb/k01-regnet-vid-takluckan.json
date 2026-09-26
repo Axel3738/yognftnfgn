@@ -1,0 +1,99 @@
+{
+  "id": "k01-regnet-vid-takluckan",
+  "namn": "MAIL_20260929_CaraShellRoof_NB_PD_1_samtycke_problem_regnet-vid-takluckan_v1",
+  "sprak": "nb",
+  "memo": "Problemvinkeln bär butikens egen data: PD/SP är de vinklar som köper hos CaraShell (dna.md mönster 11). Regnet står kvar vid takluckan, tätmassan mjuknar, fukttestet till våren. sv/nb: inför vinteruppställningen. en: vagnen står parkerad — ingen årstid.",
+  "brief": "Hero (bild taköverdraget) med problemet ur faktabladet (regnet vid takluckan, tätmassan, fukttestet). Text: vad överdraget täcker (taket, kanten 30–40 cm ner) och inte täcker. Punkter: nio längder, banden, en person. Produktkort, två citat, fakta, knapp. Vintern får nämnas: uppställningen är riktig säsong (urgency sasong).",
+  "taggar": {
+    "typ": "I",
+    "kalla": "egen-data",
+    "kalla_ref": "products/carashell/takskyddet/dna.md mönster 11; factory/produkter/takskyddet.yaml#beskrivning",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "sasong",
+    "confidence": "medium",
+    "prefix": "CaraShellRoof",
+    "kod": "PD",
+    "avatar": "husvagns- eller husbilsägaren som ställer upp fordonet utomhus",
+    "begar": "skydda-det-jag-ager"
+  },
+  "amnesrader": [
+    {
+      "text": "Regnet som blir stående ved takluken",
+      "begar": "forstå hvor skaden faktisk oppstår"
+    },
+    {
+      "text": "Bare taket trenger å dekkes",
+      "begar": "forstå hvorfor bare taket trenger dekke"
+    },
+    {
+      "text": "Satt på alene, av én person",
+      "begar": "vite at det går an å gjøre det selv"
+    }
+  ],
+  "forhandstext": "Ingen går opp og sjekker før fukttesten avgjør det til våren.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Regnet blir stående ved takluken",
+      "text": "Hei {{fornamn}},\n\nRegnvann samler seg rundt takluker og skjøter gjennom vinteren. Ingen sjekker før fukttesten til våren.",
+      "bild": "produkt:takskyddet",
+      "knapp": {
+        "text": "Se taktrekket",
+        "lank": "produkt:takskyddet"
+      }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Taktrekket dekker takflaten, og kanten henger cirka 30 til 40 cm ned over sidene, slik at regnvannet ikke blir stående ved takluken. Resten av vogna er ikke dekket, bare taket."
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "Tre ting som gjør jobben",
+      "punkter": [
+        "Ni lengder, fra 5,5 til 13,5 meter, alle 3 meter brede.",
+        "Vevde strekkbånd med plastkroker hekter under karosseriets kant.",
+        "Én person setter det på selv."
+      ]
+    },
+    {
+      "typ": "produkt",
+      "handle": "takskyddet",
+      "text": "Ni lengder å velge mellom, fra 5,5 til 13,5 meter.",
+      "knapp": "Beskytt taket i vinter"
+    },
+    {
+      "typ": "citat",
+      "handle": "takskyddet",
+      "antal": 2
+    },
+    {
+      "typ": "fakta"
+    },
+    {
+      "typ": "knapp",
+      "text": "Beskytt taket før vinteren",
+      "lank": "produkt:takskyddet"
+    }
+  ],
+  "tretest": [
+    { "rad": "Regnet som blir stående ved takluken", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Bare taket trenger å dekkes", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Satt på alene, av én person", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Ingen går opp og sjekker før fukttesten avgjør det til våren.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Regnet blir stående ved takluken", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se taktrekket", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Tre ting som gjør jobben", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Beskytt taket i vinter", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Beskytt taket før vinteren", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "version": 1,
+  "planerad": "2026-09-29T18:00:00+02:00",
+  "segment": [
+    "SEG_samtycke_nb"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

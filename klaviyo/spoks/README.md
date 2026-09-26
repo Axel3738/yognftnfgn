@@ -9,7 +9,8 @@ Axels order 2026-09-25/26: "bygg i spoks". Samma innehåll som Klaviyo
 så uppladdningen görs av en session, inte av ett skript.
 
 ```bash
-node klaviyo/spoks/konvertera.mjs   # innehall → baverbutiken/payload/*.json + plan.json
+node klaviyo/spoks/konvertera.mjs                    # innehall → baverbutiken/payload/*.json + plan.json (oförändrat sedan 2026-09-26)
+node klaviyo/spoks/konvertera.mjs --brand carashell  # flerspråkigt: payload/<sprak>/ + plan.json med Spoks-filter, segment, inställningar
 ```
 
 Workspace: Bäverbutiken `f716ae36-68ae-4f1c-a45e-96c35d5637a0` (Shopify 4snrw0-mg).
@@ -43,6 +44,25 @@ Kampanjerna K01–K22 ligger som utkast (Spoks: status draft, avregistreringslä
 `node klaviyo/stang-av.mjs --ja`: 13 flöden till draft, K01 återkallad till utkast. Inget raderat.
 Spoks: plan Paid (inget månadstak), avsändaradress ej satt vid mätningen.
 
+## Uppvärmningen (Spoks segment, genererade av Axel 2026-09-26)
+
+Mätt med `get_segments` samma dag, alla taggbaserade:
+
+| Segment | Id | Kontakter |
+|---|---|---|
+| Warmup tier 1 | `c3d021c1-4cfd-423f-9d56-db2b3d0f9f4d` | 2 500 |
+| Warmup tier 2 | `9c219ca9-fa16-4a58-af8a-2b2828b29cd1` | 5 000 |
+| Warmup tier 3 | `d3308bc6-2b3e-43ee-9157-7ac5bd719fca` | 6 180 |
+| All subscribed | `9902d9ef-0ea3-4077-bbd5-032851b37143` | 6 267 |
+
+`preview_segment` på tier 1 OCH inte subscribed gav 0: tier 1 får kampanjer.
+Mottagarna går INTE att sätta via MCP:n (`update_draft_campaign` har inget fält för
+segment), så Axel väljer segmentet när han schemalägger.
+
+Plan: vecka 1 (K01) tier 1, vecka 2 tier 1, vecka 3 tier 2, vecka 4 tier 2,
+vecka 5 tier 3, därefter All subscribed. Titta på öppning och klagomål i Spoks
+efter varje utskick; stiger klagomålen, stanna kvar ett steg till.
+
 ## Skillnader mot Klaviyo (Spoks kan inte)
 
 - **Inget ordernummer i mejlet.** Spoks personalisering har bara kontaktfält,
@@ -53,6 +73,118 @@ Spoks: plan Paid (inget månadstak), avsändaradress ej satt vid mätningen.
 - **Ingen segmenttrigger.** F06 Sunset finns inte i Spoks. Den som inte öppnat
   på länge får fortfarande kampanjer tills Spoks egen suppression tar dem.
 - Anonyma recensenter står som "Verifierad kund", aldrig "Anonymous".
+
+## CaraShell (byggt 2026-09-26, INTE uppladdat — workspacen syns inte för MCP:n)
+
+Axels order 2026-09-26 (`PROMPT-carashell.md`): hela mejlsystemet för CaraShell i
+Spoks, alla marknader och språk, allt som utkast. CaraShell är en egen verksamhet:
+inget delas med Bäverbutiken (egen brandfil, eget innehåll, egna produkter, egen copy).
+
+```bash
+node klaviyo/innehall/carashell/skelett.mjs          # strukturen → innehall/carashell/{floden,kampanjer}/<sprak>/
+node klaviyo/spoks/konvertera.mjs --brand carashell  # copykontroll + payload/<sprak>/ + plan.json (stoppar på copyfel)
+node --test klaviyo/test/konvertera.test.mjs         # 9 tester: Bäverbutiken oförändrad, CaraShells språk och Spoks-form
+```
+
+**Steg 0 stoppade:** `whoami` visar bara Bäverbutiken.se (`f716ae36-…`) och
+Matstrumpor.se (`71c2d4c8-…`) under MCP-användaren `kundsupport@baverbutiken.se`
+(mätt två gånger 2026-09-26). Appen **Spoks står som installerad på CaraShells
+Shopify** (yitrbk-m3, `appInstallations` läst med Admin API samma dag: Factory,
+Dianxiaomi, Judge.me, wetracked, Messaging, StonePNL, **Spoks**) — men **Axel
+bekräftade samma förmiddag att han aldrig skapat något Spoks-konto för CaraShell**,
+så installationen avbröts innan onboardingen kördes och ingen workspace finns.
+Inget storeId gissas; inget laddades upp i fel workspace. Uppladdningen är en egen
+session: `PROMPT-carashell-upp.md`.
+
+**Så skapas workspacen (Spoks egna hjälpartiklar, lästa 2026-09-26:**
+*Introduction: how to get started*, *How do I run several Shopify stores from one
+Spoks login*, *Set up your domain*): Spoks installeras per butik från Shopify, och
+varje butik blir en egen workspace. **Under installationen föreslår Spoks en
+mejladress — den ska ÄNDRAS till `kundsupport@baverbutiken.se`**, samma adress som
+Bäverbutikens och Matstrumpors workspaces, för då hamnar CaraShell under samma
+inloggning och MCP-användaren ser den direkt (ingen team member-inbjudan behövs).
+Första inloggningen måste göras **på en dator, genom att öppna Spoks från Shopify
+admin** (Spoks ord: "Your first login must be done on a desktop computer, by opening
+Spoks from your Shopify admin"). Onboardingen frågar om migrering från Klaviyo —
+CaraShell har inget Klaviyo, hoppa över. Ser Axel "No Shop found" är han inloggad
+med en annan adress än den han skrev in vid installationen. Blev den installerad
+med fel adress: Spoks support gör `kundsupport@baverbutiken.se` till admin på
+butiken om man skickar butiks-URL + adress (artikelns egen lösning).
+Domänen kopplas i **Settings → Domain Settings → "Generate DNS records"** (Spoks
+skickar via SendGrid: SPF:en ska få `include:sendgrid.net` **före** `-all`, alltså
+`v=spf1 include:spf.loopia.se include:sendgrid.net -all` på carashell.com — läggs
+till, ersätts aldrig). De exakta CNAME/TXT-posterna finns först när workspacen
+finns; uppladdningssessionen läser dem med `get_settings` och skriver dem i rapporten.
+
+**Mätt 2026-09-26 i Shopify (90 dagar):** 384 ordrar — SE 173, NO 82, US 59, AU 29,
+DK 23, FI 7, GB 6, NZ 3, CA 2. 457 kunder, **76 med samtycke** (US 54, SE 12, NO 4,
+DK 3, AU 2, GB 1; FI 0). **0 återköp** (2 kunder med två ordrar, båda inom en timme)
+⇒ inget korsförsäljningsflöde. 73 övergivna kassor. Order → skickad median 0,5 dygn;
+levererat bara 4 paket med `deliveredAt` (butiken är 15 dagar gammal). Fyra aktiva
+produkter: takskyddet (9 storlekar), termoskyddet, fönstertermomatta 2-pack (ny),
+adventskalender med retrobussar (ny). Priser per marknad lästa med `contextualPricing`
+(SEK 1 129 / NOK 1 106 / USD 199 / GBP 154 / CAD 288 / AUD 289 / NZD 359 / EUR 126,90 /
+DKK 819 för takskyddet 5,5–6,5 m) — de står ALDRIG i copyn.
+
+**Språkstyrningen och hur den mättes:** Spoks har inget språkfält på kontakten.
+`get_settings` (Bäverbutiken) visar `customFieldTokens: []`; `preview_segment` med
+`{country is}` gav 7 766 kontakter och sampeln `country: "Sweden"` — landet lagras
+som engelskt namn. Därför **ett flöde per språk** (landsfiltret i triggerns
+kontaktfilter, återprövas före varje utskick) och ett segment per språk för
+kampanjerna. sv = Sweden + Denmark + kontakter utan land; nb = Norway; en = United
+States, United Kingdom, Canada, Australia, New Zealand, Finland (7 ordrar bär inte
+ett finskt system). Ordrarnas `customerLocale` bekräftar att land ⇒ språk håller
+(SE 173/173 sv, NO 67/82 nb, US 59/59 en). ⚠️ Landsnamnen för de andra länderna är
+Shopifys engelska namn och ska kontrolleras med `preview_segment` i CaraShells
+workspace innan något slås på (uppladdningsprompten steg 1).
+
+**Byggt i repot:** `klaviyo/brands/carashell.json` (per språk: länkbas, spårningssida,
+villkorstext, förnamnsreserv, knappar, Trustpilot; landsgrupperna; Spoks-inställningarna),
+`klaviyo/innehall/carashell/` (skelett.mjs, faktablad per språk ur Shopifys egna
+översättningar, 24 flödesfiler + 39 kampanjfiler med copy, BRIEFER.md),
+`klaviyo/spoks/carashell/` (PLAN.md, produkter.json, plan.json, payload/<sprak>/).
+Planen i korthet står i `carashell/PLAN.md`: 8 flöden per språk (välkomst, övergiven
+kassa med de tre frågorna, webbhistorik, efter köp, vinna tillbaka, levererat ×2 med
+monteringen, recension) och 13 kampanjer per språk (tisdagar 29/9–29/12).
+**Copyn är ifylld och konverteraren grön 2026-09-26:** 84 payloadfiler (28 per språk:
+15 flödesmejl + 13 kampanjer), 0 copyfel, `node --test klaviyo/test/konvertera.test.mjs`
+9 av 9. De 8 varningarna "produkt-id/bilder saknas i Spoks" är väntade — id:n och
+`fileId` finns först när workspacen finns (uppladdningsprompten steg 2). Den enda
+regelrättningen under copyfasen: nb-faktabladets egen formulering "ikke strikk" släpps
+igenom (negationen), medan ett påstående om elastiska band fortfarande stoppar.
+
+**Spoks-fynd som styrde bygget:**
+- Katalogen har EN valuta och ETT språk (products_search: `price, currency`), så
+  produktkort i nb/en hade visat svensk titel och SEK. nb/en får bild + rubrik på
+  språket + knapp (`per_sprak.*.produktkort: "bild"`); kassablocket döljer priset.
+- Sidfoten och avregistreringstexten är EN per workspace (`get_settings`), inte per
+  språk ⇒ språkneutral sidfot med bolag, adress (MFL 20 §) och mejl, tre ord på länken.
+- `order_delivered` finns som trigger (blueprintlistan använder den inte). CaraShells
+  spårningsrutin skriver leveransskanningen i Shopify varje timme, så F06 (montering)
+  och F14 (recension) triggas på leverans — **omätt i CaraShells workspace**, se PLAN.md.
+- Trustpilot har ingen profil för carashell.se (`evaluate`-sidan 404, Bäverbutikens 308).
+  F14 slås inte på förrän profilen finns.
+- Kassaflödet kräver subscribed (MFL 19 §) och når därför bara 7 % av svenska
+  kassor. Det är lagen, inte ett fel.
+
+⚠️ **Läget ändrades samma förmiddag:** Axel råkade skapa CaraShells workspace under
+ett **eget, nytt Spoks-konto** (annan inloggning än `kundsupport@baverbutiken.se`),
+så workspacen finns men syns varken i hans vanliga hubb (skärmdump: bytaren visar bara
+Bäverbutiken.se och Matstrumpor.se) eller för MCP:n. **Lösningen är Spoks egen för
+"redan installerad med fel adress":** logga in på det nya kontot → CaraShells workspace
+→ **Settings → Team → "Invite team member"** → `kundsupport@baverbutiken.se` → rollen
+**Admin** → skicka (hjälpartikeln *Managing team members*: inbjudan går på mejladress,
+Admin = "Full access … and other team members"). Går det inte: Spoks support med
+butiks-URL + adressen, "we will make the address you want an admin on all of them"
+(artikeln *How do I run several Shopify stores from one Spoks login*). Sedan ska
+`whoami` visa tre workspaces, och uppladdningssessionen (`PROMPT-carashell-upp.md`,
+steg 0) kan gå vidare. Det extra kontot rörs inte av någon session.
+
+**Axels klick** (upprepas i `PROMPT-carashell-upp.md`): bjud in
+`kundsupport@baverbutiken.se` som Admin i CaraShells workspace enligt ovan, kontrollera
+i app.spoks.com (inloggad som kundsupport) att CaraShell syns bredvid Bäverbutiken.se
+och Matstrumpor.se, kör sedan uppladdningsprompten i en ny session — steg 0 där
+vägrar gå vidare tills `whoami` visar workspacen.
 
 ---
 
@@ -76,7 +208,8 @@ node --test klaviyo/test/spoks-paket.test.mjs                 # 15 tester
 ```
 
 ⚠️ **Två konverterare finns sedan 2026-09-26**, byggda av två sessioner samma dag utan att
-se varandra: `klaviyo/spoks/konvertera.mjs` (Bäverbutiken, skriver `baverbutiken/payload/`)
+se varandra: `klaviyo/spoks/konvertera.mjs` (Bäverbutiken, skriver `baverbutiken/payload/`;
+sedan samma dag även **CaraShell** med `--brand carashell`, flerspråkigt, se rubriken ovan)
 och `klaviyo/spoks-paket.mjs` (Matstrumpor, brand-parametriserad). De ska slås ihop till en;
 tills dess kör var och en bara sin butik — Bäverbutikens yta `f716ae36-…` rörs aldrig från
 `spoks-paket.mjs`, och `konvertera.mjs` rör aldrig Matstrumpor.

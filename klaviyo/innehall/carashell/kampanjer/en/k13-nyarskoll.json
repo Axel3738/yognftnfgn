@@ -1,0 +1,70 @@
+{
+  "id": "k13-nyarskoll",
+  "namn": "MAIL_20261229_CaraShellMix_EN_S_2_samtycke_solution_en-koll-innan-sasongen_v1",
+  "sprak": "en",
+  "memo": "Mellandagarna: gå ut och titta på vagnen. sv/nb: står taket torrt, är rutan täckt. en: the start of the year check. Produktrad med alla tre.",
+  "brief": "Rubrik + två stycken. Produktrad med alla tre. Fakta. Engelskan gäller USA, Storbritannien, Kanada, Australien och Nya Zeeland samtidigt: inga årstider (winter/summer/spring/autumn/fall), ingen snö — skriv \"while it is parked\", \"between trips\", \"off the road\". Säg caravan där det passar (GB/AU/NZ), motorhome, och RV en gång som amerikansk synonym. Nyår är ok.",
+  "taggar": {
+    "typ": "S",
+    "kalla": "gissning",
+    "kalla_ref": null,
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "sasong",
+    "confidence": "low",
+    "prefix": "CaraShellMix",
+    "kod": "S",
+    "avatar": "ägaren som inte tittat på vagnen sedan hösten",
+    "begar": "kontroll"
+  },
+  "amnesrader": [
+    {
+      "text": "The first look of the new year",
+      "begar": "get a nudge to check on the rig"
+    },
+    {
+      "text": "Is the roof dry, is the glass still covered",
+      "begar": "verify nothing slipped over the break"
+    },
+    {
+      "text": "One quick check before the year gets going",
+      "begar": "do a fast check before getting busy"
+    }
+  ],
+  "forhandstext": "Five minutes, three things to look at.",
+  "block": [
+    {
+      "typ": "text",
+      "rubrik": "At the start of the year",
+      "text": "If it's been a while since you checked on the caravan or motorhome, the new year is a good time to do it.\n\nCheck that the roof is still dry around the hatches, and that the glass is still covered. A cover that's slipped is easier to fix now than to find out about later."
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "All three, in one place",
+      "handles": [
+        "takskyddet",
+        "termoskyddet",
+        "fonstertermomatta-2-pack"
+      ]
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    { "rad": "The first look of the new year", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Is the roof dry, is the glass still covered", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "One quick check before the year gets going", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Five minutes, three things to look at.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "At the start of the year", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "All three, in one place", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "version": 1,
+  "planerad": "2026-12-29T16:00:00+01:00",
+  "segment": [
+    "SEG_samtycke_en"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

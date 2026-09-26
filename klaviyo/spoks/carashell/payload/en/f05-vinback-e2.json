@@ -1,0 +1,18 @@
+{
+  "id": "f05-vinback-e2",
+  "sprak": "en",
+  "emailTitle": "What's missing for yours?",
+  "emailDescription": "One line back is all it takes, and I read every reply myself.",
+  "amnesrader": [
+    "What's missing for yours?",
+    "A quick question about your setup",
+    "What would you want us to build next?"
+  ],
+  "blocks": [
+    {
+      "type": "quote",
+      "text": "Hi {{ contact.first_name | default: 'there' }},\n\nI keep wondering what else a caravan or motorhome owner actually needs once the obvious things are covered.\n\nWhat's missing for yours? Reply and tell me, even one line. I read every one myself.\nAxel, founder"
+    }
+  ],
+  "varningar": []
+}

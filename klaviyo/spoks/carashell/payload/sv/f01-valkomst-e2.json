@@ -1,0 +1,108 @@
+{
+  "id": "f01-valkomst-e2",
+  "sprak": "sv",
+  "emailTitle": "Taket, inte hela vagnen",
+  "emailDescription": "Vi täcker den ytan som faktiskt tar stryk av vädret.",
+  "amnesrader": [
+    "Taket, inte hela vagnen",
+    "Krokar under kanten, på alla fyra sidor",
+    "Nio längder. En passar ditt tak."
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Ett skydd för taket, inte hela vagnen",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Överdraget lägger sig över takytan, med kanten hängande 30 till 40 centimeter ner över sidorna. Det täcker inte hela vagnen, bara taket och kanten runt om.",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "{{spoks:id:takskyddet}}",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Se taköverdraget",
+      "url": "https://carashell.se/products/takskyddet",
+      "style": "button"
+    },
+    {
+      "type": "h2",
+      "text": "Storlek. Fäste. Montering."
+    },
+    {
+      "type": "list",
+      "text": "Nio längder, 5,5 till 13,5 meter. Mät taket från front till bakkant, välj närmaste längd uppåt."
+    },
+    {
+      "type": "list",
+      "text": "Vävda spännband med plastkrokar under karossens kant, på alla fyra sidor. Inte gummi, töjs inte ut."
+    },
+    {
+      "type": "list",
+      "text": "En person sätter på det själv, med två extra band på 10,5 meter som följer med."
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://carashell.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": [
+    "Produkten takskyddet finns inte i Spoks."
+  ]
+}

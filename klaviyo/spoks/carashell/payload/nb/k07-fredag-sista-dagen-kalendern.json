@@ -1,0 +1,108 @@
+{
+  "id": "k07-fredag-sista-dagen-kalendern",
+  "sprak": "nb",
+  "emailTitle": "Fredag er siste dag for luke 1",
+  "emailDescription": "Etter det rekker ikke kalenderen fram til første luke.",
+  "amnesrader": [
+    "Fredag er siste dag for luke 1",
+    "Luke 1 åpnes 1. desember",
+    "Bestill før fredag 13. november"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Fredag er siste dag for luke 1",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hei {{ contact.first_name | default: 'der' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Luke 1 åpnes 1. desember. Bestill innen fredag 13. november for å rekke det.",
+      "alignment": "center"
+    },
+    {
+      "type": "image",
+      "fileId": "{{spoks:media:adventskalender-retrobussar}}",
+      "altText": "Adventskalender med retrobusser, 24 luker",
+      "urlRedirect": "https://carashell.se/nb/products/adventskalender-retrobussar?country=NO"
+    },
+    {
+      "type": "h2",
+      "text": "Adventskalender med retrobusser, 24 luker",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Bestill adventskalenderen",
+      "url": "https://carashell.se/nb/products/adventskalender-retrobussar?country=NO",
+      "style": "button"
+    },
+    {
+      "type": "image",
+      "fileId": "{{spoks:media:adventskalender-retrobussar}}",
+      "altText": "Adventskalender med retrobusser, 24 luker",
+      "urlRedirect": "https://carashell.se/nb/products/adventskalender-retrobussar?country=NO"
+    },
+    {
+      "type": "h2",
+      "text": "Adventskalender med retrobusser, 24 luker",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Bestill kalenderen",
+      "url": "https://carashell.se/nb/products/adventskalender-retrobussar?country=NO",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "24 luker med retrobusser, én for hver dag i desember.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Angrerett**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagers angrerett",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spor pakken**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Følg den hele veien](https://carashell.se/nb/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": [
+    "Bilden för adventskalender-retrobussar saknar fileId i Spoks (produkter.json → bild).",
+    "Bilden för adventskalender-retrobussar saknar fileId i Spoks (produkter.json → bild)."
+  ]
+}
