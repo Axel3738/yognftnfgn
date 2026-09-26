@@ -223,6 +223,9 @@ const en = {
     donutAria: "Revenue breakdown",
     profitPerDay: "Profit per day",
     profitPerDayNote: "COGS, fees and duty allocated by each day's revenue — an estimate, not bookkeeping.",
+    refundCheck: (tid: string | null) =>
+      "Refunds are booked on the order's day. The last 45 days are re-checked every 6 h " +
+      (tid ? `(last check ${tid}).` : "(first check pending)."),
     tipSales: "Sales",
     tipAds: "Ads",
     tipProfit: "Profit",
@@ -826,6 +829,11 @@ const en = {
     fxUnavailable: (from: string, to: string) => `exchange rate ${from}→${to} could not be fetched`,
     fxNote: (day: string) =>
       `Each day is converted at that day's ECB exchange rate. Latest rate: ${day}.`,
+    refundCheck: (tid: string | null, saknas: number) =>
+      "Refunds are booked on the order's day. Each store's last 45 days are re-checked every 6 h" +
+      (tid ? ` (oldest check among the stores: ${tid})` : "") +
+      (saknas > 0 ? `; not yet checked in ${saknas} ${saknas === 1 ? "store" : "stores"}` : "") +
+      ".",
   },
 
   tips: {
@@ -1141,6 +1149,9 @@ const sv: Texts = {
     donutAria: "Fördelning av omsättningen",
     profitPerDay: "Vinst per dag",
     profitPerDayNote: "COGS, avgifter och tull fördelade per dags omsättning — uppskattning, inte bokföring.",
+    refundCheck: (tid: string | null) =>
+      "Returer bokas på orderns dag. De senaste 45 dagarna kollas om var 6:e timme " +
+      (tid ? `(senaste koll ${tid}).` : "(första kollen väntar)."),
     tipSales: "Försäljning",
     tipAds: "Annonser",
     tipProfit: "Vinst",
@@ -1744,6 +1755,11 @@ const sv: Texts = {
     fxUnavailable: (from: string, to: string) => `växelkurs ${from}→${to} kunde inte hämtas`,
     fxNote: (day: string) =>
       `Varje dag räknas om med den dagens ECB-kurs. Senaste kurs: ${day}.`,
+    refundCheck: (tid: string | null, saknas: number) =>
+      "Returer bokas på orderns dag. Varje butiks senaste 45 dagar kollas om var 6:e timme" +
+      (tid ? ` (äldsta kollen bland butikerna: ${tid})` : "") +
+      (saknas > 0 ? `; ännu inte kollad i ${saknas} ${saknas === 1 ? "butik" : "butiker"}` : "") +
+      ".",
   },
 
   tips: {

@@ -96,3 +96,19 @@ export function klassaDag(
   const grans = dagI(new Date(row.fetchedAt.getTime() - 60 * DAG_MS), tidszon);
   return grans >= day ? "outsideHistory" : "sales";
 }
+
+/** Hur många dagar bakåt returkollen går om (idag inräknat). */
+export const RESYNC_DAGAR = 45;
+
+/**
+ * Returkollens fönster: de senaste 45 dagarna (idag − 44 … idag), klämt mot
+ * orderhorisonten. Återbetalningar och avbokningar bokas på ORDERNS dag och
+ * syns bara när den dagen exporteras om — i dropshipping kommer de 1–3 veckor
+ * efter ordern, alltså långt utanför de tre dagar panelen och gruppen håller
+ * färska. Fönstret kläms mot horisonten av samma skäl som `klampaFonster`:
+ * en tom export bortom Shopifys 60 dygn hade skrivit nollor.
+ */
+export function resyncFonster(today: string, horisont: string | null): [string, string] {
+  const start = flytta(today, -(RESYNC_DAGAR - 1));
+  return [horisont != null && horisont > start ? horisont : start, today];
+}

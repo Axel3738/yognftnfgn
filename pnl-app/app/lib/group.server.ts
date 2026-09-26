@@ -27,6 +27,7 @@ import { decrypt } from "./crypto.server";
 import { dagarKvar, VARNA_DAGAR } from "./meta-login";
 import { stadaAvgifter } from "./marknad";
 import { t, type Lang } from "./texts";
+import { aldstaKoll, klockslag } from "./returkoll";
 
 export interface GroupTotals {
   totalSales: number;
@@ -62,6 +63,13 @@ export interface GroupResult {
    * behövde räknas om.
    */
   fxDate: string | null;
+  /**
+   * Returkollen för gruppen: den ÄLDSTA senaste kollen bland medlemmarna,
+   * som klockslag i betraktarens tid (null = ingen medlem kollad än), och hur
+   * många medlemmar som aldrig kollats. Summan är aldrig färskare än sin
+   * äldsta del — därför den äldsta, inte den senaste.
+   */
+  returkoll: { tid: string | null; saknas: number };
 }
 
 const noll = (): GroupTotals => ({
@@ -366,6 +374,8 @@ export async function summeraGrupp(
   to: string,
   visaValuta: string,
   lang: Lang = "en",
+  /** Betraktarens tidszon — returkollens klockslag visas i den. */
+  tidszon = "UTC",
 ): Promise<GroupResult> {
   // Skälen i `missing` visas i UI:t — de följer den betraktande butikens språk.
   const T = t(lang);
@@ -448,5 +458,13 @@ export async function summeraGrupp(
     });
   }
 
-  return { currency: visaValuta, totals, rows, missing, notes, historyNotes, fxDate };
+  /* Returkollen över ALLA medlemmar, även de som föll bort ur summan — en
+     butik som inte kunde räknas har heller inte fått sina returer kollade. */
+  const koll = aldstaKoll(medlemmar);
+  const returkoll = {
+    tid: koll.aldsta ? klockslag(koll.aldsta, tidszon, dayInTz(new Date(), tidszon)) : null,
+    saknas: koll.saknas,
+  };
+
+  return { currency: visaValuta, totals, rows, missing, notes, historyNotes, fxDate, returkoll };
 }

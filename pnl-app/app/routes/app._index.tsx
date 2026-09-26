@@ -45,6 +45,7 @@ import {
 } from "../lib/daily.server";
 import { hemlandAv, marknadskod, marknadsnamn, stadaAvgifter } from "../lib/marknad";
 import { klampaFonster } from "../lib/historik";
+import { klockslag } from "../lib/returkoll";
 import { getSpend, TIMFONSTER_DAGAR, timvisSpend } from "../lib/meta.server";
 import { hamtaKonton, konfigurationer } from "../lib/meta-konton.server";
 import { dagarKvar, VARNA_DAGAR } from "../lib/meta-login";
@@ -365,7 +366,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
      när det faktiskt finns något att summera. */
   const visaAlla = gruppvy && groupSize > 1 && !market;
   const group = visaAlla
-    ? await summeraGrupp(settings.groupId!, from, to, settings.currency, lang)
+    ? await summeraGrupp(settings.groupId!, from, to, settings.currency, lang, timezone)
     : null;
 
   /* Tips för det som lackar — ur periodens egna tal. Regler vars underlag
@@ -427,6 +428,10 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
     spendConverted: spend.converted ?? null,
     targetMargin: Number(settings.targetMargin),
     tariffPerOrder: Number(settings.tariffPerOrder),
+    /* Returkollens senaste körning som klockslag i butikens tid (null = inte
+       kollad än). Formaterad här, inte i webbläsaren: butikens tid är den som
+       gäller, och servern och klienten hade annars kunnat rendera olika. */
+    returkoll: settings.refundResyncAt ? klockslag(settings.refundResyncAt, timezone, today) : null,
   };
   } catch (e) {
     /* Remix maskerar kastade fel i produktion till "Application Error" utan
@@ -474,6 +479,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
       spendConverted: null as { from: string; to: string } | null,
       targetMargin: 0.25,
       tariffPerOrder: 27.5,
+      returkoll: null as string | null,
     };
   }
 }
@@ -1175,7 +1181,7 @@ function SetupChecklist({
 }
 
 function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
-  const { fatal, result, timvis, rangeKey, idag, market, marknader, daysWithoutMarkets, outsideHistory, currency, spendError, spendCurrencyMismatch, spendConverted, targetMargin, tariffPerOrder, comparison, setup, dataAgeMin, refreshing, groupSize, group, metaTokenDagar, tips, monthlyGoal, estimate } = d;
+  const { fatal, result, timvis, rangeKey, idag, market, marknader, daysWithoutMarkets, outsideHistory, currency, spendError, spendCurrencyMismatch, spendConverted, targetMargin, tariffPerOrder, comparison, setup, dataAgeMin, refreshing, groupSize, group, metaTokenDagar, tips, monthlyGoal, estimate, returkoll } = d;
   const [params, setParams] = useSearchParams();
   const revalidator = useRevalidator();
   const T = t(lang);
@@ -1479,6 +1485,12 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
                         </Text>
                       ) : null}
 
+                      {group.returkoll ? (
+                        <Text as="span" variant="bodySm" tone="subdued">
+                          {T.group.refundCheck(group.returkoll.tid, group.returkoll.saknas)}
+                        </Text>
+                      ) : null}
+
                       {group.notes?.length ? (
                         <Banner tone="warning" title={T.group.notesTitle}>
                           {group.notes.map((n) => (
@@ -1686,6 +1698,9 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
                   <Text as="h2" variant="headingMd">{T.dashboard.profitPerDay}</Text>
                   <Text as="span" variant="bodySm" tone="subdued">
                     {T.dashboard.profitPerDayNote}
+                  </Text>
+                  <Text as="span" variant="bodySm" tone="subdued">
+                    {T.dashboard.refundCheck(returkoll)}
                   </Text>
                   <ProfitBars result={result} money={money} T={T} />
                 </BlockStack>

@@ -87,6 +87,9 @@ myshopify-domänen). Butikerna är ihopkopplade i en grupp i appen
   engångsrad `MetaLoginState` + cookie, long-lived token, kontolista via
   `/me/adaccounts`). Hela flödet står i `docs/meta-token.md`.
   `meta-login-sida.server.ts` är fönstrets HTML (resursrutter, ingen Polaris).
+- `app/lib/token-keeper.server.ts` — tokenvakten, var 15:e minut i alla sex
+  tjänster: förnyar Shopify- och Meta-nycklar, och kör **returkollen**
+  (butikens senaste 45 dagar om var 6:e timme — se avsnittet nedan).
 - `app/lib/group.server.ts` — gruppsumman: alla medlemmar parallellt, FX per
   butik till betraktarens valuta, korta dataluckor fylls synkront,
   långa i bakgrunden.
@@ -398,6 +401,107 @@ i hans ordning:
 - Exakta betalväxel-avgifter (feeRate är schablon).
 - Grillkliniken: Axel vill klona hela upplägget till en annan butik.
 - App Store-granskningssvaret: åtgärda när mejlet kommer.
+
+### Returkollen: sena returer och avbokningar (2026-09-26)
+
+En återbetalning eller avbokning bokas på **orderns** dag (`totalRefundedSet`
+och `cancelledAt` läses vid hämtningen) och når siffrorna bara när den dagen
+exporteras om. Ingenting gjorde det på schema: tokenvakten förnyade bara
+nycklar, inga order-/refund-webhooks prenumereras, gruppen håller bara sina
+tre senaste dagar färska, och panelens omexport av hela intervallet förlorar
+mot 3-dagarsgrenen så fort vyn innehåller idag. I dropshipping kommer
+returerna 1–3 veckor efter ordern. Räkneexempel: 500 000 kr/mån i gruppen med
+6 % returer = upp till 30 000 kr som aldrig lämnade gruppens 30-dagarsvinst.
+MER, break-even och LTV-kohorterna (KundOrder kommer ur samma `refreshDaily`)
+var uppblåsta på samma sätt, och ▲▼ jämförde en delvis färsk period med en
+gammal.
+
+Byggt:
+- `ShopSettings.refundResyncAt` (migration `20260926120000_returkoll`).
+- **`resyncRunda()` i `token-keeper.server.ts`**, i samma 15-minuterstick som
+  nyckelrundan (efter den — då används nyss förnyade nycklar), alltså i alla
+  sex tjänsterna. Installerade butiker (offline-session finns) med känd
+  tidszon vars koll är null eller äldre än 6 h; aldrig kollade först, sedan
+  äldst först, högst 3 per tick, en i taget. Varje butik stämplas atomiskt
+  (`UPDATE … WHERE refundResyncAt IS NOT DISTINCT FROM <läst värde>`), bara
+  den som får `count === 1` exporterar.
+- **Fönstret** `resyncFonster(idag, horisont)` i `historik.ts`: idag − 44 …
+  idag i butikens tid, klämt mot orderhorisonten. `refreshShopDaily` UTAN
+  force — minutspärren och 5-minuters felpausen gäller.
+- **Lyckas** den flyttas stämpeln till klartiden (det panelen visar).
+  **Misslyckas** den skrivs det förra värdet tillbaka, villkorat på vår egen
+  stämpel: en tjänst som inte kan förnya en annan registrerings nyckel får
+  inte hålla butiken i 6 h.
+- **KundOrder ersätts per fönster** i stället för upsert
+  (`ersattKundOrdrar` i kundorder.server, planen `kundOrderErsattning` i
+  `returkoll.ts`): radera fönstrets rader + radernas order-ID, `createMany` i
+  bitar om 2 000, allt i en transaktion. En order som avbokats efter att den
+  cachades faller nu ur kohorterna och CAC i stället för att ligga kvar med
+  sitt gamla netto. Fortfarande: kastar hämtningen skrivs och raderas inget.
+- **UI**: en dämpad rad under "Vinst per dag" — "Returer bokas på orderns dag.
+  De senaste 45 dagarna kollas om var 6:e timme (senaste koll HH:MM)." — och
+  i gruppvyn den ÄLDSTA kollen bland medlemmarna plus hur många som aldrig
+  kollats (`GroupResult.returkoll`). Klockslaget formateras i loadern, i
+  butikens tid, med datum framför när kollen inte var i dag.
+
+Medvetna beslut:
+- **Returer bokas fortfarande på orderns dag** (rätt för ROAS per kohort,
+  dokumenterat i shopify-data.server). Kollen ser bara till att dagen hämtas
+  igen. Ingen avsättning för väntade returer, ingen växel orderdag/returdag.
+- **Ingen synkron omexport i gruppvyn.** 45 dagar är bulk-vägen (~30 s per
+  butik); gruppen väntar redan in sina tre senaste dagar och får inte bli
+  långsammare än så.
+- **Rå SQL för stämplarna, inte `prisma.update`.** ShopSettings har
+  `updatedAt @updatedAt`, och panelens loader läser om butikens valuta och
+  tidszon när `updatedAt` är över ett dygn gammal. En Prisma-stämpel var 6:e
+  timme hade hållit `updatedAt` färsk för alltid, och en ändrad butiksvaluta
+  hade aldrig nått appen. Tiderna skickas som text med
+  `CAST(… AS TIMESTAMP(3))` (`sqlTid`) — prövat mot en riktig Postgres med
+  sessionstidszon America/New_York: exakt träff, `updatedAt` orörd.
+- **Tillägg till planen: lokal paus 1 h per butik efter ett misslyckande**
+  (`resyncPaus`). Planens tillbakarullning gör att en butik med död nyckel
+  förblir äldst — utan pausen hade tre sådana butiker tagit alla tre platser
+  på varje tick och ingen annan butik kollats. Andra tjänster ser den
+  fortfarande som äldst, och den som kan förnya nyckeln tar den.
+- **Tillägg: order-ID:n raderas även utanför fönstret** innan de skrivs. En
+  order vars dag flyttats (butikens tidszon ändrad) hade annars krockat med
+  primärnyckeln `(shop, orderId)` och fällt hela transaktionen — efter att
+  dagsraderna redan skrivits.
+- **En lyckad tom hämtning tömmer KundOrder-fönstret.** Förut hoppades
+  skrivningen över när listan var tom; nu betyder tom att fönstret inte har
+  några räknade ordrar kvar (alla avbokade), och då ska raderna bort.
+- **Butiker utan känd tidszon hoppas över** — dagarna skrivs i butikens tid,
+  och en gissad UTC-dag hade hamnat på fel datum.
+- Exporten körs i `markeraPagaende`, så en panel som öppnas under tiden
+  pollar tills de nya siffrorna finns.
+
+Fällor:
+- ⚠ **Minutspärren och felpausen är per PROCESS.** Kollen kan köras i en
+  annan tjänst än den som serverar butikens panel, och då kan två bulk-
+  exporter mot samma butik starta samtidigt. `runOrdersBulk` väntar redan ut
+  "already in progress" upp till sex gånger — det är skyddet, inte spärren.
+- ⚠ **Andra tjänsters butiker funkar bara så länge nyckeln lever.**
+  `giltigToken` använder en giltig nyckel från vilken tjänst som helst, men
+  en utgången kan bara förnyas av butikens egen registrering. Då rullas
+  stämpeln tillbaka och egen tjänst tar den (dess tokenvakt förnyar först).
+- ⚠ **Returer på dagar äldre än 45 dagar (eller 60-dagarsgränsen) missas
+  fortfarande.** Raden på skärmen säger "de senaste 45 dagarna".
+- ⚠ **Kostnaden:** ~4 bulk-exporter per butik och dygn, ~36 för 9 butiker.
+  Bulk-exporter har inget kostnadstak i API-budgeten.
+- ⚠ **customers/redact-webhooken raderar KundOrder-rader per order-ID** —
+  ligger ordern inom 45 dagar skriver nästa koll tillbaka en rad för den
+  (med `kundHash`, aldrig klartext). Så var det redan med panelens egna
+  omexporter; kollen gör det bara oftare. Ej åtgärdat här.
+- ⚠ **Inte prövat skarpt.** Kontrollera efter deploy på stonepnl-test:
+  återbetala en 20 dagar gammal order, vänta ett tick (≤ 15 min + exporten),
+  och se att `DailyPnl.returns` och `totalSales` för den dagen ändrats; avboka
+  en order och se att dess KundOrder-rad är borta. `refundResyncAt` ska vara
+  satt på alla installerade butiker inom ett par timmar.
+- Tester: `test/historik.test.mjs` (fönstret: 45 dagar, klämning, årsskifte)
+  och `test/returkoll.test.mjs` (butiksvalet: null först, äldst först, tre,
+  pausen; klockslaget; gruppens äldsta; och att en avbokad order saknas i det
+  som skrivs och i tabellen efteråt, att fönstret töms vid tom hämtning, att
+  flyttad dag inte krockar, och bitarna).
 
 ### Orderhistorikens 60-dagarsgräns och sidtaket (2026-09-26)
 

@@ -8,7 +8,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 
-const { historikHorisont, klampaFonster, klassaDag, harAllaOrdrar } = await import("../app/lib/historik.ts");
+const { historikHorisont, klampaFonster, klassaDag, harAllaOrdrar, resyncFonster, RESYNC_DAGAR } = await import("../app/lib/historik.ts");
 const { compute } = await import("../app/lib/pnl.server.ts");
 
 const IDAG = "2026-09-26";
@@ -136,4 +136,24 @@ test("spend filtrerad till täckta dagar ger samma MER som en period från horis
   const ofiltrerad = compute({ ...bas, from: dagar[0], sales: tackta.map(salj), spend });
   assert.ok(ofiltrerad.totals.mer < facit.totals.mer);
   assert.ok(ofiltrerad.totals.netProfit < facit.totals.netProfit);
+});
+
+/* ------------------------------------------------------------ returkollen */
+
+test("returkollens fönster är idag − 44 … idag — 45 dagar", () => {
+  assert.equal(RESYNC_DAGAR, 45);
+  assert.deepEqual(resyncFonster(IDAG, HORISONT), ["2026-08-13", IDAG]);
+  assert.deepEqual(resyncFonster(IDAG, null), ["2026-08-13", IDAG]);
+});
+
+test("returkollens fönster kläms mot horisonten", () => {
+  // En horisont närmare än 45 dagar (tänkt fall) får aldrig passeras — en
+  // export bortom den hade skrivit nollor över riktiga dagar.
+  assert.deepEqual(resyncFonster(IDAG, "2026-09-01"), ["2026-09-01", IDAG]);
+  // Den vanliga horisonten (idag − 59) ligger bortom fönstret och ändrar inget.
+  assert.deepEqual(resyncFonster(IDAG, historikHorisont({ scope: "", fullHistory: null, today: IDAG })), ["2026-08-13", IDAG]);
+});
+
+test("returkollens fönster går över månads- och årsskiftet", () => {
+  assert.deepEqual(resyncFonster("2026-01-10", null), ["2025-11-27", "2026-01-10"]);
 });

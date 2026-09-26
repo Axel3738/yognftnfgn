@@ -150,6 +150,12 @@ model ShopSettings {
   /// När sonden senast kördes. Kontrolleras om varje vecka — en butik som
   /// var för ny för att ha gamla ordrar kan ha fått några sedan dess.
   fullOrderHistoryCheckedAt DateTime?
+  /// Returkollen: när butikens senaste 45 dagar senast exporterades om för
+  /// att fånga sena återbetalningar och avbokningar (de bokas på orderns dag).
+  /// Tokenvakten tar butiker där värdet är null eller äldre än 6 h och
+  /// stämplar atomiskt. Skrivs med rå SQL så att `updatedAt` inte rörs — se
+  /// `resyncRunda` i token-keeper.server.ts.
+  refundResyncAt DateTime?
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
 

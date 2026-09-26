@@ -17,7 +17,7 @@ import prisma from "../db.server";
 import { dayInTz, fetchOrderData, harFullOrderhistorik, mergeProductRows } from "./shopify-data.server";
 import type { MarknadsDel, ProductRow, SalesDay } from "./pnl.server";
 import { decrypt } from "./crypto.server";
-import { butikensScope, harKundScope, skrivKundOrdrar, tillKundOrderRader } from "./kundorder.server";
+import { butikensScope, ersattKundOrdrar, harKundScope, tillKundOrderRader } from "./kundorder.server";
 import { marknadskod, sorteraMarknader } from "./marknad";
 import { harAllaOrdrar, historikHorisont, klampaFonster, klassaDag } from "./historik";
 
@@ -187,8 +187,14 @@ export async function refreshDaily(
   }
 
   /* KundOrder-raderna EFTER dagsraderna, ur samma hämtning: misslyckas
-     hämtningen har vi redan kastat, och ingenting skrivs någonstans. */
-  if (kund && data.kundOrdrar.length) {
+     hämtningen har vi redan kastat, och ingenting skrivs någonstans.
+
+     Fönstret ERSÄTTS, även när hämtningen gav noll ordrar: en order som
+     avbokats sedan förra hämtningen kommer inte med (parsern hoppar över
+     `cancelledAt`), och dess gamla rad måste bort ur kohorterna och CAC.
+     Fönstret är det klämda [from, to] — orderfrågan hämtar en dag extra åt
+     båda hållen, så varje dag i det är helt sedd. */
+  if (kund) {
     /* Kundvärdet räknas på standardkostnaden — bara standardens steg. Ett
        norskt tvåpackspris i den här listan hade prissatt svenska ordrar. */
     const [settings, tierRows] = await Promise.all([
@@ -201,7 +207,7 @@ export async function refreshDaily(
       tierRows.map((c) => ({ variantGid: c.variantGid, units: c.units, totalCost: Number(c.totalCost) })),
       { tariffPerOrder: Number(settings?.tariffPerOrder ?? 0), feeRate: Number(settings?.feeRate ?? 0) },
     );
-    await skrivKundOrdrar(shop, rader);
+    await ersattKundOrdrar(shop, from, to, rader);
   }
 }
 
