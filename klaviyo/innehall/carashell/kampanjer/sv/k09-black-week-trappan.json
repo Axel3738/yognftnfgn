@@ -20,42 +20,42 @@
   "rabatt": "black_week",
   "amnesrader": [
     {
-      "text": "__COPY__: ämnesrad A, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "1 skydd ger 10 %, 2 skydd ger 20 %, 3 eller fler ger 30 %",
+      "begar": "förstå exakt hur rabatten stiger med fler skydd i beställningen"
     },
     {
-      "text": "__COPY__: ämnesrad B, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Ingen kod, bara 10 %, 20 % eller 30 % i kassan",
+      "begar": "lita på att rabatten dyker upp av sig själv, utan kod att leta efter"
     },
     {
-      "text": "__COPY__: ämnesrad C, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Taket och rutan i samma beställning ger 20 %",
+      "begar": "se att just taket och rutan tillsammans ger nästa rabattnivå"
     }
   ],
-  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "forhandstext": "Rabatten dras automatiskt i kassan, till och med måndag 30 november.",
   "block": [
     {
       "typ": "hero",
-      "rubrik": "__COPY__: rubrik: trappan på en rad",
-      "text": "__COPY__: 1–2 meningar: kassan drar rabatten själv, ingen kod, till och med måndag 30 november",
+      "rubrik": "Fler skydd, större rabatt",
+      "text": "Ju fler skydd du lägger i varukorgen, desto mer rabatt räknar kassan ut åt dig, helt automatiskt och utan kod. Gäller till och med måndag 30 november.",
       "bild": "produkt:takskyddet",
       "knapp": {
-        "text": "__COPY__: knapp",
+        "text": "Se sortimentet",
         "lank": "kollektion:sortimentet"
       }
     },
     {
       "typ": "punkter",
-      "rubrik": "__COPY__: rubrik: så funkar trappan",
+      "rubrik": "Så trappar rabatten upp",
       "punkter": [
-        "__COPY__: 1 vara: 10 %",
-        "__COPY__: 2 varor: 20 %",
-        "__COPY__: 3 varor eller fler: 30 %"
+        "1 vara ger 10 % rabatt",
+        "2 varor ger 20 % rabatt",
+        "3 varor eller fler ger 30 % rabatt"
       ]
     },
     {
       "typ": "produktrad",
-      "rubrik": "__COPY__: rubrik: två skydd ger nästa nivå",
+      "rubrik": "Två skydd, nästa nivå",
       "handles": [
         "takskyddet",
         "termoskyddet",
@@ -71,7 +71,29 @@
       "typ": "fakta"
     }
   ],
-  "tretest": [],
+  "tretest": [
+    {
+      "rad": "1 skydd ger 10 %, 2 skydd ger 20 %, 3 eller fler ger 30 %",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true,
+      "varfor": "Siffrorna går att räkna efter i kassan, är sanna eller falska att kontrollera, och beskriver just den här butikens egen trappa."
+    },
+    {
+      "rad": "Ingen kod, bara 10 %, 20 % eller 30 % i kassan",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true,
+      "varfor": "Man ser framför sig siffrorna som dyker upp i kassan utan kod, ett påstående som går att testa och som pekar på precis den här trappan."
+    },
+    {
+      "rad": "Taket och rutan i samma beställning ger 20 %",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true,
+      "varfor": "Det namnger två egna produkter och en kontrollerbar rabatt, en kombination bara den här butiken har."
+    }
+  ],
   "version": 1,
   "planerad": "2026-11-24T18:00:00+01:00",
   "segment": [

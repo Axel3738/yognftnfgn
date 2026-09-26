@@ -20,42 +20,42 @@
   "rabatt": "black_week",
   "amnesrader": [
     {
-      "text": "__COPY__: ämnesrad A, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Black Friday, rabattrappen gjelder fortsatt",
+      "begar": "veta att erbjudandet från tisdagen fortfarande gäller på Black Friday"
     },
     {
-      "text": "__COPY__: ämnesrad B, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Kombiner taket og frontruta for 20 %",
+      "begar": "se konkret vilka två produkter tillsammans ger nästa rabattnivå"
     },
     {
-      "text": "__COPY__: ämnesrad C, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Rabattrappen varer til og med mandag",
+      "begar": "förstå att måndag 30 november är sista dagen"
     }
   ],
-  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "forhandstext": "Til og med mandag 30. november, uten kode.",
   "block": [
     {
       "typ": "hero",
-      "rubrik": "__COPY__: rubrik: Black Friday, trappan gäller till och med måndag",
-      "text": "__COPY__: 1–2 meningar",
+      "rubrik": "Black Friday, rabatten gjelder til mandag 30. november",
+      "text": "Hei {{fornamn}},\n\nI dag er det Black Friday, og rabattrappen fra tidligere i uken gjelder fortsatt. Den varer helt til mandag 30. november.",
       "bild": "produkt:termoskyddet",
       "knapp": {
-        "text": "__COPY__: knapp",
+        "text": "Se hele utvalget",
         "lank": "kollektion:sortimentet"
       }
     },
     {
       "typ": "punkter",
-      "rubrik": "__COPY__: rubrik: trappan",
+      "rubrik": "Rabattrappen",
       "punkter": [
-        "__COPY__: 1 vara: 10 %",
-        "__COPY__: 2 varor: 20 %",
-        "__COPY__: 3 varor eller fler: 30 %"
+        "1 vare: 10 % rabatt",
+        "2 varer: 20 % rabatt",
+        "3 varer eller flere: 30 % rabatt"
       ]
     },
     {
       "typ": "produktrad",
-      "rubrik": "__COPY__: rubrik: taket och rutan ger 20 %",
+      "rubrik": "Taket og frontruta sammen gir 20 % rabatt",
       "handles": [
         "takskyddet",
         "termoskyddet",
@@ -66,7 +66,29 @@
       "typ": "fakta"
     }
   ],
-  "tretest": [],
+  "tretest": [
+    {
+      "rad": "Black Friday, rabattrappen gjelder fortsatt",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true,
+      "varfor": "Sant eller falskt att kontrollera just på Black Friday, och det är den här butikens egen rabattrappa som fortsätter, inte ett allmänt Black Friday-påstående."
+    },
+    {
+      "rad": "Kombiner taket og frontruta for 20 %",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true,
+      "varfor": "Pekar på två namngivna produkter och en exakt procentsats som går att räkna efter i kassan."
+    },
+    {
+      "rad": "Rabattrappen varer til og med mandag",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true,
+      "varfor": "Ett sant, kontrollerbart slutdatum för just den här butikens rabatt, inte en påhittad brådska."
+    }
+  ],
   "version": 1,
   "planerad": "2026-11-27T18:00:00+01:00",
   "segment": [

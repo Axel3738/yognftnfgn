@@ -20,42 +20,42 @@
   "rabatt": "black_week",
   "amnesrader": [
     {
-      "text": "__COPY__: ämnesrad A, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Rabatten trappes opp for hver vare du legger i kurven",
+      "begar": "förstå att fler varor i kundvagnen automatiskt ger mer rabatt"
     },
     {
-      "text": "__COPY__: ämnesrad B, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "1 vare gir 10 %, 2 gir 20 %, 3 eller flere gir 30 %",
+      "begar": "se exakt vilken rabattnivå varje antal varor ger"
     },
     {
-      "text": "__COPY__: ämnesrad C, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Ingen kode, rabatten vises rett i kassen",
+      "begar": "veta att ingen kod krävs och att rabatten syns direkt i kassan"
     }
   ],
-  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "forhandstext": "Automatisk i kassen, uten kode, til og med mandag 30. november.",
   "block": [
     {
       "typ": "hero",
-      "rubrik": "__COPY__: rubrik: trappan på en rad",
-      "text": "__COPY__: 1–2 meningar: kassan drar rabatten själv, ingen kod, till och med måndag 30 november",
+      "rubrik": "Rabatten trappes opp av seg selv",
+      "text": "Hei {{fornamn}},\n\nJeg holder det enkelt: rabatten regnes ut fra antall varer i handlekurven og trekkes automatisk i kassen, uten kode. Den gjelder til og med mandag 30. november.",
       "bild": "produkt:takskyddet",
       "knapp": {
-        "text": "__COPY__: knapp",
+        "text": "Se hele utvalget",
         "lank": "kollektion:sortimentet"
       }
     },
     {
       "typ": "punkter",
-      "rubrik": "__COPY__: rubrik: så funkar trappan",
+      "rubrik": "Slik virker rabattrappen",
       "punkter": [
-        "__COPY__: 1 vara: 10 %",
-        "__COPY__: 2 varor: 20 %",
-        "__COPY__: 3 varor eller fler: 30 %"
+        "1 vare: 10 % rabatt",
+        "2 varer: 20 % rabatt",
+        "3 varer eller flere: 30 % rabatt"
       ]
     },
     {
       "typ": "produktrad",
-      "rubrik": "__COPY__: rubrik: två skydd ger nästa nivå",
+      "rubrik": "To av disse gir deg 20 % rabatt",
       "handles": [
         "takskyddet",
         "termoskyddet",
@@ -71,7 +71,29 @@
       "typ": "fakta"
     }
   ],
-  "tretest": [],
+  "tretest": [
+    {
+      "rad": "Rabatten trappes opp for hver vare du legger i kurven",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true,
+      "varfor": "Går att visualisera (varor läggs i korgen en efter en), går att kontrollera sant/falskt i kassan, och beskriver butikens egen verkliga rabattrappa just den här veckan."
+    },
+    {
+      "rad": "1 vare gir 10 %, 2 gir 20 %, 3 eller flere gir 30 %",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true,
+      "varfor": "Konkreta tal som går att räkna efter i kassan, och de här exakta procentsatserna är just den här butikens Black Week, inte en allmän utfästelse."
+    },
+    {
+      "rad": "Ingen kode, rabatten vises rett i kassen",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true,
+      "varfor": "Går att se med egna ögon i kassan om det stämmer, och beskriver butikens egen kassalösning den här veckan, inte ett generellt löfte."
+    }
+  ],
   "version": 1,
   "planerad": "2026-11-24T18:00:00+01:00",
   "segment": [
