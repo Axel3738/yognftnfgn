@@ -215,7 +215,8 @@ tills dess kör var och en bara sin butik — Bäverbutikens yta `f716ae36-…` 
 `spoks-paket.mjs`, och `konvertera.mjs` rör aldrig Matstrumpor.
 
 **Ytan** (mätt med whoami/get_settings 2026-09-26): Matstrumpor.se, Shopify
-`1r46tp-qx.myshopify.com`, tidszon Europe/Stockholm, **plan Free = 5 000 mejl per månad**,
+`1r46tp-qx.myshopify.com`, tidszon Europe/Stockholm, plan Free = 5 000 mejl per månad vid
+bygget (**betald och obegränsad sedan samma eftermiddag**, se Axels klick punkt 6),
 4 370 kontakter varav **2 911 med samtycke**. Inställningarna satta via MCP:n: avsändare
 "Matstrumpor", reply-to `kundsupport@matstrumpor.se`, loggan, färgerna (`#dd821d` på
 `#f3ede2`, vitt sidhuvud), fonten **Tilt Warp + Nunito Sans** (Mochiy Pop P One finns inte i
@@ -280,7 +281,8 @@ engagemangs- och kategorisegmenten fylls på i takt med att Spoks registrerar eg
 öppningar, klick, visningar och köp. I Klaviyo hade samma definitioner 175 (uppvärmning),
 2 583 (sushi) och 81 (donut). **K01 och K02 går därför till `SEG_samtycke`** tills
 `SEG_uppvarmning_steg1` har medlemmar; K03–K06 (engagerade) blir små utskick de första
-veckorna, vilket också håller Free-planens 5 000 mejl per månad.
+veckorna (Free-planens tak på 5 000 mejl per månad gällde vid bygget; planen är betald
+sedan samma eftermiddag).
 
 ## Skillnader mot Klaviyo för Matstrumpor (Spoks kan inte)
 
@@ -373,6 +375,23 @@ butikens egen domän när något slås på. Inget är påslaget.
    `uppvarmning_steg1`, den är tom) → schemalägg tisdag 29/9 18:00. Sedan en kampanj i taget enligt
    `klaviyo/innehall/matstrumpor/KALENDER-2026.md`; F06 E1/E2 ligger kvar tills
    `SEG_oengagerade_180d` har medlemmar.
-6. **Planen:** Free räcker till september–oktober (K01/K02 till alla = 2 × 2 911, K03–K06
-   små). **November har fyra utskick till alla (K07–K10 ≈ 11 600 mejl) + flödena — det
-   kräver ett planbyte före 10/11.** Pengar = Axels beslut.
+6. ✅ **Planen är betald sedan 2026-09-26** (mätt med `whoami` samma eftermiddag: `plan: Paid`,
+   `monthlyEmailsLimit: 0` = obegränsat, 5 mejl skickade i september). November-toppen
+   (K07–K10 ≈ 11 600 mejl) kräver alltså inget planbyte längre.
+
+## Mätt 2026-09-26 eftermiddag (session på ett annat Claude-konto, samma Spoks-användare)
+
+Spoks-connectorn fungerar från vilket Claude-konto som helst där den är kopplad: `whoami`
+svarar samma MCP-användare `kundsupport@baverbutiken.se` och samma två workspaces.
+
+- **Flödena:** alla sex `isActive: true`. Inrullade: F01 3, F04 5, F05 5, F07 5, F02 0, F03 0,
+  inga avslutade än.
+- **K01:** fortfarande `status: draft`, `publishDate: null` — inte schemalagd.
+- **SEG_samtycke:** 2 930 (`preview_segment` med segmentets filter: alla i sampeln
+  `emailMarketingConsent: subscribed`, `emailMarketingCanReceive: true`). 39 till har samtycke
+  men kan inte ta emot (`emailMarketingCanReceive: false`, spärrade eller studsade) — de är
+  redan utanför segmentet eller hoppas av Spoks själv.
+- ⚠️ **Fältet `subscriptionStatus` i Spoks sampel är INTE mejlsamtycket.** Samma kontakter
+  som har `emailMarketingConsent: subscribed` står som `subscriptionStatus: not_subscribed`
+  (det är Spoks eget följarfält). Döm aldrig ett segment som fel på `subscriptionStatus` —
+  läs `emailMarketingConsent` och `emailMarketingCanReceive`.
