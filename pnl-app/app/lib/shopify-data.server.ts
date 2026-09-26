@@ -60,7 +60,12 @@ const shiftIso = (iso: string, days: number): string => {
  *
  * Approximationer, medvetna och synliga:
  * - Returer bokförs på ORDERNS dag, inte återbetalningsdagen.
- * - Radrabatter ingår i discountedTotal; orderrabatter fördelas inte per rad.
+ * - Radrabatter ingår i discountedTotal; orderrabatter fördelas inte per rad
+ *   i `netSales`. `discountedUnitPriceAfterAllDiscountsSet` (styckpris efter
+ *   ALLA rabatter, även ordernivåns koder) ger `netRevenue`/`linesRevenue` —
+ *   det produkttabellen och break-even per produkt räknar på. Shopify
+ *   beskriver fältet som en approximation (öresavrundningen sprids över
+ *   raderna).
  */
 const inflight = new Map<string, Promise<OrderData>>();
 
@@ -247,6 +252,7 @@ async function runOrdersPaginated(
                  nodes {
                    title variantTitle quantity
                    discountedTotalSet { shopMoney { amount } }
+                   discountedUnitPriceAfterAllDiscountsSet { shopMoney { amount } }
                    product { id }
                    variant { id }
                  }
@@ -350,6 +356,7 @@ async function runOrdersBulk(
           edges { node {
             id title variantTitle quantity
             discountedTotalSet { shopMoney { amount } }
+            discountedUnitPriceAfterAllDiscountsSet { shopMoney { amount } }
             product { id }
             variant { id }
           } }

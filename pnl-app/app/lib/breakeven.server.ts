@@ -7,6 +7,14 @@
  * Här vägs orderraderna efter mixen (hur många rader med 1, 2, 3 … st) från de
  * senaste 90 dagarna, så att talet speglar butikens riktiga ordrar.
  *
+ * Omsättningen per packstorlek är det kunderna FAKTISKT betalade för den
+ * storleken (styckpris efter alla rabatter × antal, `linesRevenue`) — inte
+ * listpris × antal. Mängdrabatter ("2 för 499"), rabattkoder och automatiska
+ * rabatter syntes förut inte alls, och tvåpacket fick break-even 1,41× där
+ * verkligheten var 1,52×. Listpriset används bara för storlekar utan
+ * försäljning, och det märks (`listpris`, `delvisListpris`). Debiterad frakt
+ * räknas inte som produktens intäkt: talet blir försiktigt, aldrig för snällt.
+ *
  * Ren modul: inga databas- eller nätverksanrop, så den går att testa. Heter
  * .server för att den drar in pnl.server — texthjälparen som klienten behöver
  * bor i breakeven-text.ts.
@@ -19,7 +27,10 @@ export interface RadUtfall {
   qty: number;
   /** Andel av orderraderna med det här antalet, 0–1. */
   share: number;
+  /** Omsättning per orderrad: realiserad när storleken sålts, annars listpris × antal. */
   revenue: number;
+  /** Omsättningen är listpris × antal — storleken har ingen såld rad med pris. */
+  listpris: boolean;
   cogs: number;
   /** TB efter tull och avgift. */
   tb: number;
@@ -42,6 +53,12 @@ export interface MixBreakEven {
   antagen: boolean;
   /** Olönsam på minst en av de sålda packstorlekarna. */
   olonsamNagon: boolean;
+  /**
+   * Någon såld packstorlek saknar realiserat pris (bara äldre dagsrader utan
+   * pris efter rabatter) och räknades på listpris. Aldrig satt när `antagen`
+   * — då är allt listpris och det säger `antagen` redan.
+   */
+  delvisListpris: boolean;
 }
 
 export interface BreakEvenIndata {
@@ -51,6 +68,13 @@ export interface BreakEvenIndata {
   tiers: CostTierRow[];
   /** Orderrader per antal: { "1": 40, "2": 6 }. Tom/saknas = antag 1 st. */
   lines?: Record<string, number> | null;
+  /**
+   * Vad kunderna betalade per antal, efter alla rabatter: { "2": 499 }.
+   * Delas med `linesPriced[q]` (orderraderna som bär priset) — eller med
+   * `lines[q]` när `linesPriced` saknas. Saknas en storlek här: listpris.
+   */
+  linesRevenue?: Record<string, number> | null;
+  linesPriced?: Record<string, number> | null;
   tariffPerOrder: number;
   feeRate: number;
 }
@@ -58,12 +82,20 @@ export interface BreakEvenIndata {
 /** En orderrad med `qty` stycken: omsättning, kostnad, TB och break-even. */
 export function radUtfall(qty: number, d: BreakEvenIndata, share = 1): RadUtfall | null {
   if (d.unitCost == null || !(qty > 0)) return null;
-  const revenue = d.price * qty;
+  /* Realiserat pris per orderrad när storleken sålts med pris, annars
+     listpris × antal (märkt). Räkningen är orderraderna som BÄR priset —
+     inte alla rader: en äldre dag utan pris hade annars dragit ner snittet
+     och gjort break-even för hög. */
+  const q = String(qty);
+  const betalt = d.linesRevenue?.[q];
+  const antal = d.linesPriced ? d.linesPriced[q] : d.lines?.[q];
+  const realiserad = betalt != null && Number.isFinite(betalt) && antal != null && antal > 0;
+  const revenue = realiserad ? betalt / antal : d.price * qty;
   const cogs = tierCost(qty, d.unitCost, d.tiers);
   /* Tullen tas ut per ORDER, en gång oavsett antal — det är hela poängen med
      flerpack. Avgiften följer omsättningen. */
   const tb = revenue - cogs - d.tariffPerOrder - revenue * d.feeRate;
-  return { qty, share, revenue, cogs, tb, beRoas: tb > 0 ? revenue / tb : null };
+  return { qty, share, revenue, listpris: !realiserad, cogs, tb, beRoas: tb > 0 && revenue > 0 ? revenue / tb : null };
 }
 
 /**
@@ -73,7 +105,7 @@ export function radUtfall(qty: number, d: BreakEvenIndata, share = 1): RadUtfall
  */
 export function mixBreakEven(d: BreakEvenIndata): MixBreakEven {
   const tomt: MixBreakEven = {
-    beRoas: null, tb: null, revenue: null, mix: [], lines: 0, antagen: true, olonsamNagon: false,
+    beRoas: null, tb: null, revenue: null, mix: [], lines: 0, antagen: true, olonsamNagon: false, delvisListpris: false,
   };
   if (d.unitCost == null) return tomt;
 
@@ -84,7 +116,7 @@ export function mixBreakEven(d: BreakEvenIndata): MixBreakEven {
 
   if (!totalt) {
     const en = radUtfall(1, d, 1)!;
-    return { beRoas: en.beRoas, tb: en.tb, revenue: en.revenue, mix: [en], lines: 0, antagen: true, olonsamNagon: en.beRoas == null };
+    return { beRoas: en.beRoas, tb: en.tb, revenue: en.revenue, mix: [en], lines: 0, antagen: true, olonsamNagon: en.beRoas == null, delvisListpris: false };
   }
 
   const mix = rader
@@ -100,6 +132,7 @@ export function mixBreakEven(d: BreakEvenIndata): MixBreakEven {
     lines: totalt,
     antagen: false,
     olonsamNagon: mix.some((r) => r.beRoas == null),
+    delvisListpris: mix.some((r) => r.listpris),
   };
 }
 

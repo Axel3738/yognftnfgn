@@ -76,6 +76,9 @@ myshopify-domänen). Butikerna är ihopkopplade i en grupp i appen
   halvminut). Katalog med inköpspriser, cache i minne + DB (CatalogCache).
   Parsern och sidbläddringen bor i `orderrader.ts` (testbar); orderhistorikens
   60-dagarsgräns i `historik.ts` — se avsnittet om 60-dagarsgränsen nedan.
+  Produktintäkten efter ALLA rabatter (`netRevenue`, `linesRevenue`) och
+  break-even per produkt: `produktintakt.ts` — se avsnittet om break-even
+  per produkt nedan.
 - `app/lib/pnl.server.ts` — ren räknemotor utan I/O. TB = försäljning − COGS −
   tull − annonser. Tull per ORDER (poängen med bundles). Kostnadsändringar
   viktas per omsättningsandel efter brytdatum.
@@ -403,6 +406,118 @@ i hans ordning:
   om betalavgifterna nedan).
 - Grillkliniken: Axel vill klona hela upplägget till en annan butik.
 - App Store-granskningssvaret: åtgärda när mejlet kommer.
+
+### Break-even per produkt på det kunderna betalade (2026-09-26)
+
+Kostnader-sidan presenterar break-even per produkt som "talet annonserna måste
+slå", och Axel bad om att det skulle följa paketen kunderna faktiskt köper.
+Mixen var riktig (90 dagars orderrader, stegpriser, uppmätt avgift) — men
+omsättningen var **listpris × antal** (`radUtfall`: `d.price * qty`, anropat
+med Shopifys variantpris). Mängdrabatter ("2 för 499"), rabattkoder och
+automatiska rabatter syntes inte. Panelens produkttabell tog radens
+`discountedTotalSet`, som bara drar radrabatter — ordernivåns koder drogs
+aldrig. I SE-butiken har 402 av 1 834 orderrader 2+ av samma variant, precis
+mängdrabattens mönster. Räkneexempel: 299 kr sålt som 2 för 499, COGS 134 för
+två, tull 27,50, avgift 2 %. Sidan räknade omsättning 598, TB 424,50 och
+break-even 1,41×. Verkligheten: 499 − 134 − 27,50 − 10 = 327,50, alltså
+1,52×. Produkten sköts på 1,45× och förlorade ~5 % av annonspengarna, och
+sidan sa emot panelens break-even (som räknar på det kunderna betalat).
+
+Byggt:
+- **Orderfrågorna** (paginering och bulk) läser
+  `discountedUnitPriceAfterAllDiscountsSet` på varje radartikel — styckpris
+  efter ALLA rabatter, även ordernivåns. Bara `read_orders`.
+- **`laggPaMix`** (`orderrader.ts`) lämnar `lines` exakt som den var och
+  lägger till syskonen `netRevenue` (Σ pris efter rabatter × antal),
+  `linesRevenue` (samma per antal i raden) och `linesPriced` (orderraderna
+  bakom `linesRevenue` per antal). `tillRad` skriver fälten bara när de finns
+  — en rad utan dem ser ut som en äldre dagsrad. Ingen migration: fälten
+  bor i `DailyPnl.products`/`markets`-JSON.
+- **`app/lib/produktintakt.ts`** (ren, testad, får importeras av klienten):
+  `radIntakt` (`netRevenue ?? netSales`), `laggTillIntakt` + `kopieraIntakt`
+  (EN hopslagningsregel för `mergeProductRows` OCH `slaIhopMarknader`),
+  `radLinjer`, `fordelaProdukter` (panelens BE per produkt), `merUrDagar`,
+  `beTon`, `MIN_RADER_BE = 3`.
+- **`breakeven.server.ts`**: `BreakEvenIndata` får `linesRevenue` och
+  `linesPriced`. `radUtfall` räknar realiserat pris per orderrad för storlekar
+  med sålda rader med pris, annars listpris × antal med `listpris: true`.
+  `mixBreakEven` sätter `delvisListpris` när någon såld storlek föll tillbaka
+  på listpris.
+- **Kostnader och produktsidan** summerar `linesRevenue`/`linesPriced` ur
+  `mix90` bredvid `lines` (under ett marknadsfilter blir det landets pris).
+  Undertexten säger "faktiskt pris, 90 dagar", "faktiskt pris där det finns,
+  listpris för äldre ordrar" eller "listpris (ingen försäljning)";
+  produktsidans rad märks "· listpris" för osålda storlekar. Cellen färgas
+  mot **butikens MER, 30 stängda dagar** (`butikensMer` i daily.server →
+  `merUrDagar`), inte mot fasta ≤ 2 / ≤ 3: grönt minst 10 % under MER, gult
+  upp till MER, rött över. En rad under sidhuvudet säger vilken MER som
+  gäller eller varför färgerna saknas.
+- **Panelens produkttabell**: Netto = `netRevenue` när den finns. Bruttovinst,
+  marginal och multipel räknas på samma tal (`compute()` och
+  `slaIhopMarknader` via `radIntakt`), och tabellen sorteras på det. Ny
+  kolumn **BE ROAS** = intäkt / (intäkt − COGS − tull fördelad efter
+  orderradsandel − `effFeeRate` × intäkt). Två rader sist: **Alla produkter**
+  (COGS = rutans COGS) och **Inte fördelat: frakt, returer, moms** =
+  Försäljning-rutan − produkterna, så att summan går ihop med rutan.
+
+Medvetna beslut:
+- **`linesPriced` finns, fast planen bara sa `linesRevenue`.** En 90-dagarsmix
+  blandar gamla dagsrader (utan pris) med nya. Delat med `lines[q]` hade en
+  gammal dag dragit ner priset per rad — 2 prissatta tvåpack à 499 bland 5
+  tvåpacksrader hade gett 199,60 per rad och break-even skyhögt. Allt-eller-
+  inget hade i stället låst mixen på listpris i 90 dagar, eftersom dagar före
+  60-dagarsgränsen aldrig skrivs om.
+- **`netRevenue` är allt-eller-inget** vid hopslagning: saknar en del fältet
+  hade tabellen visat en bit av produktens intäkt. Raden faller då tillbaka på
+  `netSales` (hel, men före ordernivåns rabatter).
+- **Styckfallback på listpris visas inte när mixen är olönsam.** Förut föll
+  Kostnader-cellen tillbaka på styckräkningen på listpris när mixen var
+  olönsam — den kunde se lönsam ut just när mängdrabatten var problemet. Nu
+  står "Olönsam".
+- **Ingen färg utan MER, på listpris utan försäljning, eller under tre
+  orderrader** (husregeln om tunn data). MER kräver 7+ säljdagar, 3+ ordrar
+  och en spendrad för varje säljdag i fönstret — annars är MER för hög och
+  break-even hade sett för grön ut.
+- **Panelens BE ROAS färgas aldrig.** Det är en tröskel, inte ett utfall;
+  panelen har ingen annons-ROAS per produkt att jämföra med. "Olönsam" står
+  i röd text när raden bär 3+ orderrader.
+- **Täckningen (`productNetSales`, `kostnadOsaker`) räknas fortfarande på
+  `netSales`.** Samma underlag i täljare och nämnare som förut; en byte hade
+  flyttat gränsen på 2 % utan att något blivit bättre.
+- **Frakt och returer ligger utanför produktintäkten** (texterna säger det).
+  Frakten gör break-even försiktig. Returer per produkt (`currentQuantity`) är
+  ett senare steg.
+- **Totalraden visar rutans COGS**, inte summan av raderna: `slaIhopMarknader`
+  nollar en hopslagen rads COGS om en marknad saknar kostnad, så radsumman
+  kan vara lägre än rutan.
+
+Fällor:
+- ⚠ **Shopify kallar fältet en approximation** — öresavrundningen sprids över
+  raderna. Kontrollera efter deploy på EN order med ordernivåkod i
+  stonepnl-test: `DailyPnl.products[].netRevenue` ska vara radernas summa
+  efter koden, och `lines` oförändrad.
+- ⚠ **I ~45 dagar blandas två sorters produktintäkt.** Returkollen skriver om
+  de senaste 45 dagarna; äldre dagar bär bara `netSales`. En 30-dagarsvy blir
+  hel inom ett par timmar efter deploy, 90-dagarsmixen visar "delvis
+  listpris" tills de gamla dagarna åldrats ut.
+- ⚠ **Produkternas Netto sjunker för produkter som köps med rabattkoder.** Det
+  är rätt, men syns — och bruttovinsten per produkt följer med ner.
+- ⚠ **`butikensMer` ser inte döda annonskonton.** Den kräver EN spendrad per
+  säljdag, inte en per konto: en butik med två konton där det ena slutat
+  hämtas får för hög MER. Kontrollera i panelen att annonskostnaden är hel
+  om färgerna ser för gröna ut.
+- ⚠ **Produktsidan räknar fortfarande med Inställningars `feeRate`**, inte den
+  blandade satsen som Kostnader-tabellen använder. Ej ändrat här.
+- ⚠ **Pagineringens `lineItems(first: 25)`-tak gäller fortfarande** — en order
+  med fler rader skickas till bulk-exporten (`trunkerad`), som saknar tak.
+- Tester: `test/breakeven.test.mjs` (2 för 499 ⇒ 499 och 1,52×, listpris
+  1,41×; osåld storlek ⇒ listpris + `delvisListpris`; viktning på betalda
+  priser; delning med `linesPriced`; antagen), `test/marknad.test.mjs`
+  (`slaIhopMarknader` summerar intäkten utan att röra `lines`; en marknad
+  utan fältet ⇒ `netSales`), `test/orderrader.test.mjs` (10 %-kod ⇒
+  `netRevenue` 10 % under `netSales`; äldre fixtur utan fält;
+  `mergeProductRows` gammal + ny dag) och `test/produktintakt.test.mjs`
+  (fördelningen, "—"-fallen, `merUrDagar`, `beTon`).
 
 ### Betalavgifter: faktiska bara för Shopify Payments (2026-09-26)
 

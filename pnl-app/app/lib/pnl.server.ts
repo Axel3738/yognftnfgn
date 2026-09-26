@@ -14,6 +14,7 @@
 import { andelUtan, arKostnadOsaker } from "./kostnadstackning.ts";
 import { malUtrymmeFor, skalningsKvoter } from "./skalning.ts";
 import { raknaAvgifter } from "./avgifter.ts";
+import { kopieraIntakt, laggTillIntakt, radIntakt } from "./produktintakt.ts";
 
 /* Skalningsbeslutet bor i skalning.ts (får importeras av klienten); motorn
    exporterar det vidare så att alla räknar med samma funktion. */
@@ -111,6 +112,22 @@ export interface ProductRow {
    * enheter som styckköp.
    */
   lines?: Record<string, number>;
+  /**
+   * Det kunderna faktiskt betalade för varan: Σ styckpris efter ALLA rabatter
+   * (även ordernivåns koder) × antal. `netSales` ovan är radens
+   * discountedTotal och drar bara radrabatter. Saknas på äldre dagsrader —
+   * och på en hopslagen rad där någon del saknar det (se produktintakt.ts).
+   */
+  netRevenue?: number;
+  /**
+   * Samma intäkt per antal i raden, syskon till `lines`: { "2": 1497 }.
+   * `lines` får ALDRIG byta form — rowCost och mergeProductRows räknar dess
+   * värden som tal, och ett objekt där hade kostat varje enhet som styck.
+   */
+  linesRevenue?: Record<string, number>;
+  /** Orderrader bakom `linesRevenue` per antal (färre än `lines` så länge
+   *  äldre dagsrader utan pris ingår). Break-even delar med den. */
+  linesPriced?: Record<string, number>;
   /**
    * Kostnaden är panelens UPPSKATTNING (X % av priset), inte ett inköpspris.
    * Sätts i panelens loader när butiken valt uppskattad COGS; bärs hela vägen
@@ -538,21 +555,26 @@ export function compute(input: ComputeInput): ComputeResult {
         unitsZeroCost += row.units;
       }
 
-      const contribution = rowCogs != null ? row.netSales - rowCogs : null;
+      /* Bruttovinst, marginal och multipel på det kunden BETALADE (efter
+         ordernivåns rabatter) när raden bär det — samma tal som tabellens
+         omsättningskolumn. Annars hade en produkt som mest säljs med en
+         10 %-kod visat ~30 kr för hög vinst per styck. Äldre rader: netSales. */
+      const betalt = radIntakt(row);
+      const contribution = rowCogs != null ? betalt - rowCogs : null;
       return {
         ...row,
         effectiveCost: cost,
         cogs: rowCogs,
         contribution,
-        margin: rowCogs != null && row.netSales > 0 ? (contribution as number) / row.netSales : null,
+        margin: rowCogs != null && betalt > 0 ? (contribution as number) / betalt : null,
         multiple:
-          cost != null && cost > 0 && row.units > 0 ? row.netSales / row.units / cost : null,
+          cost != null && cost > 0 && row.units > 0 ? betalt / row.units / cost : null,
         blend,
         blendNote,
         zeroCost,
       };
     })
-    .sort((a, b) => b.netSales - a.netSales);
+    .sort((a, b) => radIntakt(b) - radIntakt(a));
 
   const andelUtanKostnad = andelUtan(netSalesWithoutCost + netSalesZeroCost, underlag);
 
@@ -718,7 +740,7 @@ export function slaIhopMarknader(rows: ProductResult[]): ProductResult[] {
     const key = r.variantGid ?? `${r.title}|${r.variantTitle ?? ""}`;
     const a = by.get(key);
     if (!a) {
-      by.set(key, { ...r, market: undefined, lines: r.lines ? { ...r.lines } : undefined });
+      by.set(key, { ...r, market: undefined, lines: r.lines ? { ...r.lines } : undefined, ...kopieraIntakt(r) });
       continue;
     }
     a.units += r.units;
@@ -727,13 +749,17 @@ export function slaIhopMarknader(rows: ProductResult[]): ProductResult[] {
       a.lines = { ...(a.lines ?? {}) };
       for (const [q, n] of Object.entries(r.lines)) a.lines[q] = (a.lines[q] ?? 0) + n;
     }
+    /* Intäkten efter alla rabatter: samma regler som dagarnas hopslagning
+       (produktintakt.ts). `lines` rörs inte av den. */
+    laggTillIntakt(a, r);
     /* Saknar någon del kostnad saknar summan det — en halv COGS är ingen COGS. */
     a.cogs = a.cogs != null && r.cogs != null ? a.cogs + r.cogs : null;
-    a.contribution = a.cogs != null ? a.netSales - a.cogs : null;
-    a.margin = a.cogs != null && a.netSales > 0 ? (a.contribution as number) / a.netSales : null;
+    const oms = radIntakt(a);
+    a.contribution = a.cogs != null ? oms - a.cogs : null;
+    a.margin = a.cogs != null && oms > 0 ? (a.contribution as number) / oms : null;
     a.effectiveCost = a.cogs != null && a.units > 0 ? a.cogs / a.units : null;
     a.multiple =
-      a.effectiveCost != null && a.effectiveCost > 0 && a.units > 0 ? a.netSales / a.units / a.effectiveCost : null;
+      a.effectiveCost != null && a.effectiveCost > 0 && a.units > 0 ? oms / a.units / a.effectiveCost : null;
     if (a.unitCost == null) a.unitCost = r.unitCost;
     /* En enda uppskattad eller misstänkt nollad del märker hela raden —
        annars försvinner märkningen i vyn "alla marknader". */
@@ -744,7 +770,7 @@ export function slaIhopMarknader(rows: ProductResult[]): ProductResult[] {
       a.blendNote = null;
     }
   }
-  return [...by.values()].sort((a, b) => b.netSales - a.netSales);
+  return [...by.values()].sort((a, b) => radIntakt(b) - radIntakt(a));
 }
 
 /** Datumfönster för de förvalda intervallen, relativt en ankardag. */

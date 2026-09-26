@@ -22,6 +22,8 @@ import { butikensScope, ersattKundOrdrar, harKundScope, tillKundOrderRader } fro
 import { marknadskod, sorteraMarknader } from "./marknad";
 import { harAllaOrdrar, historikHorisont, klampaFonster, klassaDag } from "./historik";
 import { betalvagar, tacktOms, uppmattAvgift, type Betalvag, type UppmattAvgift, type UppmattRad } from "./avgifter";
+import { merUrDagar } from "./produktintakt";
+import { MIN_DAGAR_SKALA, MIN_ORDRAR_BESLUT } from "./skalning";
 
 const API_VERSION = "2026-07";
 
@@ -772,4 +774,33 @@ export async function betalvagar90(shop: string): Promise<Betalvag[]> {
     select: { gatewaySales: true },
   });
   return betalvagar(rader as unknown as { gatewaySales: Record<string, number> | null }[]);
+}
+
+/**
+ * Butikens MER de senaste 30 STÄNGDA dagarna (i dag är med först när dagen är
+ * slut — dess annonskostnad rör sig fortfarande). Det Kostnader-sidan färgar
+ * break-even per produkt mot, i stället för de fasta gränserna ≤ 2 / ≤ 3.
+ * Bara databasläsning: panelen har redan hämtat spend och dagar. Null när
+ * underlaget är tunt eller en säljdag saknar spendrad (`merUrDagar`) — då
+ * står cellen ofärgad, aldrig färgad på en gissning.
+ */
+export async function butikensMer(shop: string, idag: string): Promise<{ mer: number | null; from: string; to: string }> {
+  const to = shiftIso(idag, -1);
+  const from = shiftIso(idag, -30);
+  const [dagar, spend] = await Promise.all([
+    prisma.dailyPnl.findMany({
+      where: { shop, day: { gte: from, lte: to } },
+      select: { day: true, totalSales: true, orders: true },
+    }),
+    prisma.dailySpend.findMany({
+      where: { shop, day: { gte: new Date(from), lte: new Date(to) } },
+      select: { day: true, spend: true },
+    }),
+  ]);
+  const mer = merUrDagar(
+    dagar.map((d) => ({ day: d.day, totalSales: Number(d.totalSales), orders: d.orders })),
+    spend.map((s) => ({ day: s.day.toISOString().slice(0, 10), spend: Number(s.spend) })),
+    { minOrdrar: MIN_ORDRAR_BESLUT, minDagar: MIN_DAGAR_SKALA },
+  );
+  return { mer, from, to };
 }

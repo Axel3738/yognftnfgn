@@ -33,7 +33,8 @@ import {
 import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
 import { loadCatalog, patchaKostnader, setUnitCost } from "../lib/shopify-data.server";
-import { kandaMarknader, readDaily, shiftIso } from "../lib/daily.server";
+import { butikensMer, kandaMarknader, readDaily, shiftIso } from "../lib/daily.server";
+import { beTon } from "../lib/produktintakt";
 import { hemlandAv, marknadskod, marknadsnamn } from "../lib/marknad";
 import { mixBreakEven, radUtfall } from "../lib/breakeven.server";
 import { rate as fxRate } from "../lib/fx.server";
@@ -69,15 +70,26 @@ export async function loader({ request, params }: LoaderFunctionArgs) {
      gång och får packpriset — därför skiljer sig raderna, och därför är
      mixraden det tal annonserna faktiskt måste slå. */
   const idag = dayInTz(new Date(), settings?.timezone ?? "UTC");
-  const mix90 = await readDaily(session.shop, shiftIso(idag, -89), idag).catch(() => null);
+  const [mix90, merLas] = await Promise.all([
+    readDaily(session.shop, shiftIso(idag, -89), idag).catch(() => null),
+    /* Butikens MER (30 stängda dagar) — färgen på break-even. Ingen = ingen färg. */
+    butikensMer(session.shop, idag).catch(() => ({ mer: null, from: "", to: "" })),
+  ]);
   const tariffPerOrder = Number(settings?.tariffPerOrder ?? 0);
   const feeRate = Number(settings?.feeRate ?? 0);
   const breakEven = variants.map((v) => {
     const egnaSteg = tierRows
       .filter((r) => r.variantGid === v.variantGid && (r.market ?? "") === "")
       .map((r) => ({ variantGid: v.variantGid, units: r.units, totalCost: Number(r.totalCost) }));
-    const lines = mix90?.products.find((p) => p.variantGid === v.variantGid)?.lines ?? null;
-    const indata = { price: v.price, unitCost: v.unitCost, tiers: egnaSteg, lines, tariffPerOrder, feeRate };
+    /* Utan marknadsfilter är det en rad per variant (marknad ""). Priset
+       per antal är det kunderna betalade efter alla rabatter; storlekar utan
+       sålda rader med pris räknas på listpris och märks. */
+    const rad = mix90?.products.find((p) => p.variantGid === v.variantGid);
+    const indata = {
+      price: v.price, unitCost: v.unitCost, tiers: egnaSteg, lines: rad?.lines ?? null,
+      linesRevenue: rad?.linesRevenue ?? null, linesPriced: rad?.linesPriced ?? null,
+      tariffPerOrder, feeRate,
+    };
     const storlekar = [1, ...egnaSteg.map((t) => t.units)].sort((a, b) => a - b);
     return {
       variantGid: v.variantGid,
@@ -95,6 +107,7 @@ export async function loader({ request, params }: LoaderFunctionArgs) {
     lang: asLang(settings?.language),
     marknader,
     breakEven,
+    storeMer: merLas.mer,
     currency: butiksValuta,
     costCurrency,
     kurs,
@@ -237,7 +250,7 @@ export async function action({ request, params }: ActionFunctionArgs) {
 }
 
 export default function ProductCost() {
-  const { lang, marknader, breakEven, currency, costCurrency, kurs, title, variants, history, tiers } = useLoaderData<typeof loader>();
+  const { lang, marknader, breakEven, storeMer, currency, costCurrency, kurs, title, variants, history, tiers } = useLoaderData<typeof loader>();
   const fetcher = useFetcher<typeof action>();
   const tierFetcher = useFetcher<typeof action>();
   const [tier, setTier] = useState({ units: "2", totalCost: "", variantGid: "", market: "" });
@@ -376,6 +389,10 @@ export default function ProductCost() {
             <BlockStack gap="300">
               <Text as="h2" variant="headingMd">{T.costs.be.title}</Text>
               <Text as="p" tone="subdued">{T.costs.be.body}</Text>
+              <Text as="p" variant="bodySm" tone="subdued">{T.costs.be.revenueNote}</Text>
+              <Text as="p" variant="bodySm" tone="subdued">
+                {storeMer != null ? T.costs.be.merNote(dec(storeMer.toFixed(2))) : T.costs.be.merNone}
+              </Text>
               {breakEven.map((b) => (
                 <BlockStack key={b.variantGid} gap="100">
                   {variants.length > 1 ? <Text as="h3" variant="headingSm">{b.variantTitle}</Text> : null}
@@ -386,15 +403,17 @@ export default function ProductCost() {
                       rows={[
                         ...b.rader.map((r) => {
                           const andel = b.mix.mix.find((m) => m.qty === r.qty)?.share;
+                          /* Orderrader bakom storleken — färg bara på tre eller fler. */
+                          const antal = b.mix.antagen || andel == null ? 0 : Math.round(andel * b.mix.lines);
                           return [
-                            `${r.qty} ${T.costs.be.unit}`,
+                            r.listpris ? `${r.qty} ${T.costs.be.unit} · ${T.costs.be.listShort}` : `${r.qty} ${T.costs.be.unit}`,
                             b.mix.antagen || andel == null ? "—" : `${Math.round(andel * 100)} %`,
                             nf.format(r.revenue),
                             nf.format(r.cogs),
                             <Text key={`tb${r.qty}`} as="span" tone={r.tb > 0 ? undefined : "critical"}>{nf.format(r.tb)}</Text>,
                             r.beRoas == null
                               ? <Badge key={`be${r.qty}`} tone="critical">{T.costs.unprofitable}</Badge>
-                              : <Text key={`be${r.qty}`} as="span" tone={r.beRoas <= 2 ? "success" : r.beRoas <= 3 ? undefined : "critical"}>{dec2(r.beRoas)}</Text>,
+                              : <Text key={`be${r.qty}`} as="span" tone={r.listpris ? undefined : beTon(r.beRoas, storeMer, antal)}>{dec2(r.beRoas)}</Text>,
                           ];
                         }),
                         [
@@ -405,7 +424,7 @@ export default function ProductCost() {
                           b.mix.tb == null ? "—" : <Text key="mixtb" as="span" fontWeight="semibold" tone={b.mix.tb > 0 ? undefined : "critical"}>{nf.format(b.mix.tb)}</Text>,
                           b.mix.beRoas == null
                             ? <Badge key="mixbe" tone="critical">{T.costs.unprofitable}</Badge>
-                            : <Text key="mixbe" as="span" fontWeight="semibold" tone={b.mix.beRoas <= 2 ? "success" : b.mix.beRoas <= 3 ? undefined : "critical"}>{dec2(b.mix.beRoas)}</Text>,
+                            : <Text key="mixbe" as="span" fontWeight="semibold" tone={beTon(b.mix.beRoas, storeMer, b.mix.antagen ? 0 : b.mix.lines)}>{dec2(b.mix.beRoas)}</Text>,
                         ],
                       ]}
                     />
@@ -413,6 +432,11 @@ export default function ProductCost() {
                     <Text as="p" tone="subdued">{T.costDetail.missingBadge}</Text>
                   )}
                   {b.mix.antagen && b.rader.length ? <Text as="p" variant="bodySm" tone="subdued">{T.costs.be.noSales}</Text> : null}
+                  {b.rader.length ? (
+                    <Text as="p" variant="bodySm" tone="subdued">
+                      {b.mix.antagen ? T.costs.be.priceList : b.mix.delvisListpris ? T.costs.be.pricePartly : T.costs.be.priceRealized}
+                    </Text>
+                  ) : null}
                 </BlockStack>
               ))}
             </BlockStack>

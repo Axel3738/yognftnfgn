@@ -279,7 +279,13 @@ const en = {
     thCm: "Gross profit",
     thMargin: "Gross margin",
     thMultiple: "Multiple",
+    thBeRoas: "BE ROAS",
     missing: "missing",
+    productsTotal: "All products",
+    productsUnallocated: "Not allocated: shipping, refunds, taxes",
+    productsUnprofitable: "unprofitable",
+    productsNote:
+      "Net = what customers paid for the items after all discounts. BE ROAS = the ROAS this product's ads must beat: duty split by order lines, fees at the period's rate, shipping charged not counted (so the number is on the safe side). — = no cost, or fewer than 3 order lines. Products plus the last row add up to Sales.",
   },
 
   costs: {
@@ -332,6 +338,16 @@ const en = {
           ? `CM and BE ROAS use the payment fee Shopify Payments actually charged: ${pct} % of sales (last 90 days).`
           : `CM and BE ROAS use ${pct} % in payment fees: what Shopify Payments actually charged on ${actual} % of sales, and your rate from Settings on the ${100 - actual} % paid another way (last 90 days).`,
       feeSetting: (pct: string) => `CM and BE ROAS use the fee rate from Settings: ${pct} %. Actual fees are read as orders are fetched.`,
+      revenueNote:
+        "BE ROAS uses what customers actually paid per pack size over the last 90 days, after quantity breaks and discount codes. Shipping charged is not counted, so the number is on the safe side.",
+      merNote: (mer: string) =>
+        `Colours compare with your store's MER over the last 30 full days: ${mer}×. Green = at least 10 % below it, yellow = just below, red = above.`,
+      merNone:
+        "No colours yet: they need your store's MER from 30 full days with ad spend fetched (7+ days with sales, 3+ orders). Open the dashboard once to fetch it.",
+      priceRealized: "realized price, 90 days",
+      pricePartly: "realized price where known, list price for older orders",
+      priceList: "list price (no sales)",
+      listShort: "list price",
     },
     market: {
       title: "Market",
@@ -1285,7 +1301,13 @@ const sv: Texts = {
     thCm: "Bruttovinst",
     thMargin: "Bruttomarginal",
     thMultiple: "Multipel",
+    thBeRoas: "BE ROAS",
     missing: "saknas",
+    productsTotal: "Alla produkter",
+    productsUnallocated: "Inte fördelat: frakt, returer, moms",
+    productsUnprofitable: "olönsam",
+    productsNote:
+      "Netto = vad kunderna betalade för varorna efter alla rabatter. BE ROAS = den ROAS produktens annonser måste slå: tullen fördelad efter orderrader, avgifter med periodens sats, debiterad frakt inte medräknad (talet ligger på den säkra sidan). — = kostnad saknas eller färre än 3 orderrader. Produkterna plus sista raden blir Försäljning.",
   },
 
   costs: {
@@ -1338,6 +1360,16 @@ const sv: Texts = {
           ? `TB och BE ROAS räknar med den avgift Shopify Payments faktiskt tog: ${pct} % av omsättningen (senaste 90 dagarna).`
           : `TB och BE ROAS räknar med ${pct} % i betalavgifter: det Shopify Payments faktiskt tog på ${actual} % av omsättningen, och din sats från Inställningar på de ${100 - actual} % som betalades på annat sätt (senaste 90 dagarna).`,
       feeSetting: (pct: string) => `TB och BE ROAS räknar med satsen i Inställningar: ${pct} %. Faktiska avgifter läses in när ordrar hämtas.`,
+      revenueNote:
+        "BE ROAS räknar med vad kunderna faktiskt betalade per packstorlek de senaste 90 dagarna, efter mängdrabatter och rabattkoder. Debiterad frakt räknas inte, så talet ligger på den säkra sidan.",
+      merNote: (mer: string) =>
+        `Färgerna jämförs med butikens MER de senaste 30 hela dagarna: ${mer}×. Grönt = minst 10 % under, gult = strax under, rött = över.`,
+      merNone:
+        "Inga färger än: de behöver butikens MER ur 30 hela dagar med hämtad annonskostnad (7+ dagar med försäljning, 3+ ordrar). Öppna panelen en gång så hämtas den.",
+      priceRealized: "faktiskt pris, 90 dagar",
+      pricePartly: "faktiskt pris där det finns, listpris för äldre ordrar",
+      priceList: "listpris (ingen försäljning)",
+      listShort: "listpris",
     },
     market: {
       title: "Marknad",

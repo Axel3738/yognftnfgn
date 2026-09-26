@@ -132,3 +132,49 @@ test("slaIhopMarknader: en rad per variant, COGS summerad, kostnad per styck omr
   assert.equal(ihop[0].effectiveCost, 80);
   assert.equal(ihop[0].contribution, 1260);
 });
+
+test("slaIhopMarknader summerar intäkten efter rabatter över marknader utan att röra lines", () => {
+  const r = compute({
+    from: "2026-09-01",
+    to: "2026-09-01",
+    spendReliable: true,
+    sales: [dag("2026-09-01", 1500, 3)],
+    sessions: [],
+    spend: [],
+    products: [
+      { ...rad("SE", 2, 1000), lines: { "2": 1 }, netRevenue: 900, linesRevenue: { "2": 900 }, linesPriced: { "2": 1 } },
+      { ...rad("NO", 1, 500), netRevenue: 450, linesRevenue: { "1": 450 }, linesPriced: { "1": 1 } },
+    ],
+    costChanges: [],
+    costTiers: [],
+    settings,
+  });
+  const [ihop] = slaIhopMarknader(r.products);
+  assert.deepEqual(ihop.lines, { "1": 1, "2": 1 });
+  assert.deepEqual(ihop.linesRevenue, { "1": 450, "2": 900 });
+  assert.deepEqual(ihop.linesPriced, { "1": 1, "2": 1 });
+  assert.equal(ihop.netRevenue, 1350);
+  assert.equal(ihop.netSales, 1500);
+  // Bruttovinsten räknas på det kunderna betalade: 1350 − 3 × 50.
+  assert.equal(ihop.contribution, 1200);
+  // Källraderna muterades inte.
+  assert.deepEqual(r.products.find((p) => p.market === "SE").linesRevenue, { "2": 900 });
+});
+
+test("slaIhopMarknader: saknar en marknad intäkten efter rabatter faller raden tillbaka på netSales", () => {
+  const r = compute({
+    from: "2026-09-01",
+    to: "2026-09-01",
+    spendReliable: true,
+    sales: [dag("2026-09-01", 1500, 3)],
+    sessions: [],
+    spend: [],
+    products: [{ ...rad("SE", 2, 1000), netRevenue: 900 }, rad("NO", 1, 500)],
+    costChanges: [],
+    costTiers: [],
+    settings,
+  });
+  const [ihop] = slaIhopMarknader(r.products);
+  assert.equal(ihop.netRevenue, undefined);
+  assert.equal(ihop.contribution, 1500 - 150);
+});

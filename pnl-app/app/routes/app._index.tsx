@@ -48,6 +48,7 @@ import { klampaFonster } from "../lib/historik";
 import { klockslag } from "../lib/returkoll";
 import { andelUtan, arKostnadOsaker } from "../lib/kostnadstackning";
 import { betalvagNamn } from "../lib/avgifter";
+import { fordelaProdukter } from "../lib/produktintakt";
 import {
   beslutsText,
   bidragsBand,
@@ -2073,34 +2074,85 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
 
         <Layout.Section>
           <Card padding="0">
-            <DataTable
-              columnContentTypes={["text", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric"]}
-              headings={[
-                T.dashboard.thProduct,
-                T.dashboard.thUnits,
-                T.dashboard.thNet,
-                T.dashboard.thCogs,
-                T.dashboard.thCm,
-                T.dashboard.thMargin,
-                T.dashboard.thMultiple,
-              ]}
-              rows={result.products.map((p) => [
-                p.variantTitle ? `${p.title} · ${p.variantTitle}` : p.title,
-                nf.format(p.units),
-                money(p.netSales),
-                /* "0?" = kostnad 0 som ingen sagt är gratis; "≈" = panelens
-                   uppskattning, inte ett inköpspris. Marginal och multipel på
-                   en misstänkt nolla hade visat 100 % — de står som "—". */
-                p.cogs == null
-                  ? T.dashboard.missing
-                  : p.zeroCost
-                    ? "0?"
-                    : (p.estimated ? "≈ " : "") + money(p.cogs) + (p.blend ? " ✦" : ""),
-                p.contribution == null || p.zeroCost ? "—" : money(p.contribution),
-                p.margin == null || p.zeroCost ? "—" : pct(p.margin),
-                p.multiple == null || p.zeroCost ? "—" : mult(p.multiple),
-              ])}
-            />
+            {/* Produktraderna på det kunderna BETALADE (efter ordernivåns
+                rabatter), med en break-even per produkt och två rader sist:
+                summan och det som inte går att fördela. Produkterna plus
+                "Inte fördelat" är exakt Försäljning-rutan — tal som inte går
+                ihop med totalen gör att handlaren slutar lita på båda. */}
+            <div style={{ padding: "12px 16px 0" }}>
+              <Text as="p" variant="bodySm" tone="subdued">{T.dashboard.productsNote}</Text>
+            </div>
+            {(() => {
+              const f = fordelaProdukter(result.products, {
+                tariff: t2.tariff,
+                effFeeRate: t2.effFeeRate,
+                totalSales: t2.totalSales,
+              });
+              const enheter = result.products.reduce((a, p) => a + p.units, 0);
+              const bruttoSumma = f.intakt - t2.cogs;
+              return (
+                <DataTable
+                  columnContentTypes={["text", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric"]}
+                  headings={[
+                    T.dashboard.thProduct,
+                    T.dashboard.thUnits,
+                    T.dashboard.thNet,
+                    T.dashboard.thCogs,
+                    T.dashboard.thCm,
+                    T.dashboard.thMargin,
+                    T.dashboard.thMultiple,
+                    T.dashboard.thBeRoas,
+                  ]}
+                  rows={[
+                    ...result.products.map((p, i) => {
+                      const fr = f.rader[i];
+                      return [
+                        p.variantTitle ? `${p.title} · ${p.variantTitle}` : p.title,
+                        nf.format(p.units),
+                        money(fr.intakt),
+                        /* "0?" = kostnad 0 som ingen sagt är gratis; "≈" = panelens
+                           uppskattning, inte ett inköpspris. Marginal och multipel på
+                           en misstänkt nolla hade visat 100 % — de står som "—". */
+                        p.cogs == null
+                          ? T.dashboard.missing
+                          : p.zeroCost
+                            ? "0?"
+                            : (p.estimated ? "≈ " : "") + money(p.cogs) + (p.blend ? " ✦" : ""),
+                        p.contribution == null || p.zeroCost ? "—" : money(p.contribution),
+                        p.margin == null || p.zeroCost ? "—" : pct(p.margin),
+                        p.multiple == null || p.zeroCost ? "—" : mult(p.multiple),
+                        /* Ingen färg: talet är en tröskel, inte ett utfall — annonsernas
+                           ROAS per produkt finns inte i panelen att jämföra med. */
+                        fr.status === "ok"
+                          ? (p.estimated ? "≈ " : "") + mult(fr.beRoas)
+                          : fr.status === "olonsam"
+                            ? <Text key={`be${i}`} as="span" tone="critical">{T.dashboard.productsUnprofitable}</Text>
+                            : "—",
+                      ];
+                    }),
+                    [
+                      <Text key="summa" as="span" fontWeight="semibold">{T.dashboard.productsTotal}</Text>,
+                      nf.format(enheter),
+                      money(f.intakt),
+                      /* COGS-summan är rutans COGS — samma tal, inte summan av
+                         raderna (en hopslagen rad utan kostnad på en marknad
+                         står som "saknas" men har kostnad på de andra). */
+                      money(t2.cogs),
+                      t2.kostnadOsaker ? "—" : money(bruttoSumma),
+                      t2.kostnadOsaker || !(f.intakt > 0) ? "—" : pct(bruttoSumma / f.intakt),
+                      "",
+                      "",
+                    ],
+                    [
+                      <Text key="ofordelat" as="span" tone="subdued">{T.dashboard.productsUnallocated}</Text>,
+                      "",
+                      money(f.oallokerat),
+                      "", "", "", "", "",
+                    ],
+                  ]}
+                />
+              );
+            })()}
           </Card>
         </Layout.Section>
       </Layout>

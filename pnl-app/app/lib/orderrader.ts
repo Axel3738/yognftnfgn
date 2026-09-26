@@ -14,6 +14,7 @@ import type { MarknadsDel, ProductRow, SalesDay } from "./pnl.server.ts";
 import { marknadskod } from "./marknad.ts";
 import { hourInTz } from "./timmar.ts";
 import { INGEN_GATEWAY, SP_GATEWAY } from "./avgifter.ts";
+import { kopieraIntakt, laggTillIntakt } from "./produktintakt.ts";
 
 export const num = (v: unknown): number => {
   if (v == null || v === "") return 0;
@@ -46,6 +47,9 @@ export interface OrderNode {
       variantTitle: string | null;
       quantity: number;
       discountedTotalSet: { shopMoney: { amount: string } };
+      /** Styckpris efter ALLA rabatter, även ordernivåns. Saknas i äldre
+       *  fixturer och i en export från före fältet lades till. */
+      discountedUnitPriceAfterAllDiscountsSet?: { shopMoney: { amount: string } };
       product: { id: string } | null;
       variant: { id: string } | null;
     }[];
@@ -116,7 +120,10 @@ export function parseOrderLines(
   }
 
   interface Agg { productGid: string; variantGid: string | null; title: string;
-    variantTitle: string | null; units: number; netSales: number; lines: Record<string, number>; }
+    variantTitle: string | null; units: number; netSales: number; lines: Record<string, number>;
+    netRevenue: number; linesRevenue: Record<string, number>; linesPriced: Record<string, number>;
+    /** Någon rad saknade priset efter alla rabatter ⇒ netRevenue är inte hel. */
+    utanPris: boolean; }
   /* Ordrar som räknas, med sin dag — radrader vars förälder skippats
      (avbruten/test/utanför fönstret) ska inte in i mixen. */
   const counted = new Map<string, string>();
@@ -165,13 +172,45 @@ export function parseOrderLines(
       units: 0,
       netSales: 0,
       lines: {} as Record<string, number>,
+      netRevenue: 0,
+      linesRevenue: {} as Record<string, number>,
+      linesPriced: {} as Record<string, number>,
+      utanPris: false,
     };
     agg.units += line.quantity ?? 0;
     /* Hur många stycken låg i just den här raden? Det avgör flerpacks-
        kostnaden — tre i en rad delar frakten, tre i tre ordrar gör det inte. */
     if (line.quantity > 0) agg.lines[String(line.quantity)] = (agg.lines[String(line.quantity)] ?? 0) + 1;
     agg.netSales += num(line.discountedTotalSet?.shopMoney?.amount);
+    /* Vad kunden BETALADE: styckpriset efter alla rabatter (även ordernivåns
+       kod och mängdrabatten "2 för 499") × antal, per antal i raden. Det är
+       break-even per produkt räknat på — listpris × antal gav 1,41× där
+       verkligheten var 1,52×. `lines` ovan behåller sin form (rowCost). */
+    const efterRabatt = line.discountedUnitPriceAfterAllDiscountsSet?.shopMoney?.amount;
+    if (efterRabatt == null) agg.utanPris = true;
+    else {
+      const belopp = num(efterRabatt) * (line.quantity ?? 0);
+      agg.netRevenue += belopp;
+      if (line.quantity > 0) {
+        const q = String(line.quantity);
+        agg.linesRevenue[q] = (agg.linesRevenue[q] ?? 0) + belopp;
+        agg.linesPriced[q] = (agg.linesPriced[q] ?? 0) + 1;
+      }
+    }
     dayMap.set(key, agg);
+  };
+  /* Aggregatet → produktrad. Hjälpflaggan följer inte med ut, och fälten
+     efter alla rabatter skrivs bara när de finns — en rad utan dem ska se ut
+     exakt som en äldre dagsrad, så att läsarna faller tillbaka på listpris
+     och netSales i stället för att räkna på nollor. */
+  const tillRad = (a: Agg): ProductRow => {
+    const { utanPris, netRevenue, linesRevenue, linesPriced, ...rest } = a;
+    const harPris = Object.keys(linesPriced).length > 0;
+    return {
+      ...rest,
+      ...(utanPris ? {} : { netRevenue }),
+      ...(harPris ? { linesRevenue, linesPriced } : {}),
+    } as ProductRow;
   };
   /* Per order, för kundvärdet. Fylls för alla räknade ordrar; anroparen
      avgör om kundfältet fanns med i frågan (customer saknas ⇒ gästorder). */
@@ -263,7 +302,7 @@ export function parseOrderLines(
   }
 
   const productsByDay: Record<string, ProductRow[]> = {};
-  for (const [day, m] of productByDay) productsByDay[day] = [...m.values()] as ProductRow[];
+  for (const [day, m] of productByDay) productsByDay[day] = [...m.values()].map(tillRad);
 
   /* Uppdelningen per marknad. Dagar utan ordrar får ett tomt objekt — det
      skiljer "uppdelad, men inget sålt" från "aldrig uppdelad" (null). */
@@ -276,7 +315,7 @@ export function parseOrderLines(
         const { day: _dag, ...rest } = s;
         perLand[land] = {
           ...rest,
-          products: [...(productByDayMarknad.get(d)?.get(land)?.values() ?? [])] as ProductRow[],
+          products: [...(productByDayMarknad.get(d)?.get(land)?.values() ?? [])].map(tillRad),
         };
       }
       marketsByDay[d] = perLand;
@@ -386,8 +425,11 @@ export function mergeProductRows(rows: ProductRow[]): ProductRow[] {
         agg.lines = { ...(agg.lines ?? {}) };
         for (const [q, n] of Object.entries(r.lines)) agg.lines[q] = (agg.lines[q] ?? 0) + n;
       }
+      /* Intäkten efter alla rabatter (produktintakt.ts): netRevenue bara om
+         varje dag har den, linesRevenue med sin egen radräkning. */
+      laggTillIntakt(agg, r);
     } else {
-      by.set(key, { ...r, lines: r.lines ? { ...r.lines } : undefined });
+      by.set(key, { ...r, lines: r.lines ? { ...r.lines } : undefined, ...kopieraIntakt(r) });
     }
   }
   return [...by.values()];

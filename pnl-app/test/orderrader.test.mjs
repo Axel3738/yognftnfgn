@@ -270,3 +270,48 @@ test("mergeProductRows håller isär marknader men slår ihop dagar", () => {
   assert.equal(se.units, 3);
   assert.deepEqual(se.lines, { 1: 3 });
 });
+
+/* ---------------------------------------- intäkt efter ALLA rabatter per rad */
+
+test("laggPaMix: en 10 %-kod på ordernivå ger netRevenue 10 % under netSales", () => {
+  const order = {
+    id: "R", createdAt: "2026-09-10T10:00:00Z", cancelledAt: null, test: false,
+    totalPriceSet: pengar(807.3), subtotalPriceSet: pengar(807.3), totalDiscountsSet: pengar(89.7),
+    totalShippingPriceSet: pengar(0), totalRefundedSet: pengar(0), transactions: [],
+  };
+  const rader = [
+    // Radens discountedTotal (598) vet inget om koden; styckpriset efter alla rabatter gör det.
+    { __parentId: "R", title: "Borste", variantTitle: null, quantity: 2, discountedTotalSet: pengar(598),
+      discountedUnitPriceAfterAllDiscountsSet: pengar(269.1), product: { id: "P1" }, variant: { id: "V1" } },
+    { __parentId: "R", title: "Borste", variantTitle: null, quantity: 1, discountedTotalSet: pengar(299),
+      discountedUnitPriceAfterAllDiscountsSet: pengar(269.1), product: { id: "P1" }, variant: { id: "V1" } },
+  ];
+  const d = parseOrderLines([order, ...rader], "2026-09-10", "2026-09-10", TZ, true, true);
+  const [p] = d.productsByDay["2026-09-10"];
+  assert.equal(p.netSales, 897);
+  assert.ok(Math.abs(p.netRevenue - 897 * 0.9) < 1e-9);
+  assert.deepEqual(p.lines, { 1: 1, 2: 1 }); // formen orörd — rowCost räknar på den
+  assert.ok(Math.abs(p.linesRevenue["2"] - 538.2) < 1e-9);
+  assert.ok(Math.abs(p.linesRevenue["1"] - 269.1) < 1e-9);
+  assert.deepEqual(p.linesPriced, { 1: 1, 2: 1 });
+  assert.equal("utanPris" in p, false); // hjälpflaggan följer inte med ut
+  // Marknadsdelen bär samma fält.
+  assert.ok(Math.abs(d.marketsByDay["2026-09-10"][""].products[0].netRevenue - 807.3) < 1e-9);
+});
+
+test("utan fältet (äldre fixtur/export) finns ingen netRevenue — läsarna faller tillbaka på netSales", () => {
+  const borste = data.productsByDay["2026-09-10"].find((p) => p.variantGid === "V1");
+  assert.equal(borste.netRevenue, undefined);
+  assert.equal(borste.linesRevenue, undefined);
+});
+
+test("mergeProductRows: gammal dag utan pris + ny dag med pris — linesPriced räknar bara den nya", () => {
+  const gammal = { productGid: "P", variantGid: "V", title: "T", variantTitle: null, units: 6, netSales: 1794, unitCost: null, lines: { 2: 3 } };
+  const ny = { ...gammal, units: 4, netSales: 1196, lines: { 2: 2 }, netRevenue: 998, linesRevenue: { 2: 998 }, linesPriced: { 2: 2 } };
+  const [ut] = mergeProductRows([ny, gammal]);
+  assert.deepEqual(ut.lines, { 2: 5 });
+  assert.deepEqual(ut.linesRevenue, { 2: 998 });
+  assert.deepEqual(ut.linesPriced, { 2: 2 });
+  assert.equal(ut.netRevenue, undefined); // inte hel — tabellen tar netSales
+  assert.deepEqual(ny.linesRevenue, { 2: 998 }); // källraden orörd
+});

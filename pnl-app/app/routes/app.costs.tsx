@@ -37,7 +37,7 @@ import { importCostCsv, normTitel, variantTraffar } from "../lib/cost-import.ser
 import { lasKostnaderMedAi, lasOffertMedAi, tillCsv, tolkaInmatningMedAi, type Bild } from "../lib/ai-kostnad.server";
 import { hamtaKoppling } from "../lib/ai-nyckel.server";
 import { rate as fxRate } from "../lib/fx.server";
-import { kandaMarknader, marknaderMedOrdrar, readDaily, shiftIso, uppmattaAvgifter } from "../lib/daily.server";
+import { butikensMer, kandaMarknader, marknaderMedOrdrar, readDaily, shiftIso, uppmattaAvgifter } from "../lib/daily.server";
 import { mixBreakEven, type MixBreakEven } from "../lib/breakeven.server";
 import { mixText } from "../lib/breakeven-text";
 import { feeRateFor, tariffFor, type CostTierRow } from "../lib/pnl.server";
@@ -49,6 +49,7 @@ import { fingeravtryck, hittaSummaspalt } from "../lib/prisspalter";
 import { asLang, localeOf, t } from "../lib/texts";
 import { JUICY_TACKNING, tackningEfterOmsattning } from "../lib/kostnadstackning";
 import { blandadSats } from "../lib/avgifter";
+import { beTon } from "../lib/produktintakt";
 
 /**
  * Valutan AI:n rapporterar → en ISO-kod appen kan hämta kurs för.
@@ -111,8 +112,19 @@ export async function loader({ request }: LoaderFunctionArgs) {
      tvåpack betalar tullen en gång och får packpriset, så break-even ligger
      lägre än styckräkningen säger. Under en marknad: bara det landets ordrar. */
   const idag = dayInTz(new Date(), settings.timezone ?? "UTC");
-  const mix90 = await readDaily(session.shop, shiftIso(idag, -89), idag, { market }).catch(() => null);
+  const [mix90, merLas] = await Promise.all([
+    readDaily(session.shop, shiftIso(idag, -89), idag, { market }).catch(() => null),
+    /* Butikens MER (30 stängda dagar) — break-even-cellen färgas mot den i
+       stället för fasta gränser. Misslyckas läsningen: ingen färg. */
+    butikensMer(session.shop, idag).catch(() => ({ mer: null, from: "", to: "" })),
+  ]);
   const linesPerVariant = new Map<string, Record<string, number>>();
+  /* Vad kunderna BETALADE per antal (efter alla rabatter) och hur många
+     orderrader som bär det priset. Under ett marknadsfilter blir det
+     automatiskt det landets pris. Äldre dagsrader saknar fälten och räknas
+     bara i `lines` — break-even delar med `linesPriced`, inte med `lines`. */
+  const revenuePerVariant = new Map<string, Record<string, number>>();
+  const pricedPerVariant = new Map<string, Record<string, number>>();
   /* Samma 90 dagar ger också täckningens vikt: hur mycket varje variant
      sålt för. Tre bästsäljare utan kostnad är ett större hål än hundra
      varianter som aldrig säljer. */
@@ -126,11 +138,18 @@ export async function loader({ request }: LoaderFunctionArgs) {
       ? (settings.freeVariants as unknown[]).filter((v): v is string => typeof v === "string")
       : [],
   );
+  const lagg = (karta: Map<string, Record<string, number>>, gid: string, rad: Record<string, number>) => {
+    const agg = karta.get(gid) ?? {};
+    for (const [q, n] of Object.entries(rad)) agg[q] = (agg[q] ?? 0) + (Number(n) || 0);
+    karta.set(gid, agg);
+  };
   for (const p of mix90?.products ?? []) {
     if (!p.variantGid || !p.lines) continue;
-    const agg = linesPerVariant.get(p.variantGid) ?? {};
-    for (const [q, n] of Object.entries(p.lines)) agg[q] = (agg[q] ?? 0) + n;
-    linesPerVariant.set(p.variantGid, agg);
+    lagg(linesPerVariant, p.variantGid, p.lines);
+    if (p.linesRevenue && p.linesPriced) {
+      lagg(revenuePerVariant, p.variantGid, p.linesRevenue);
+      lagg(pricedPerVariant, p.variantGid, p.linesPriced);
+    }
   }
   /* Avgiften för vald marknad (kortavgift + växlingsavgift), annars standard. */
   const raknesettings = {
@@ -217,6 +236,8 @@ export async function loader({ request }: LoaderFunctionArgs) {
       unitCost,
       tiers: tiers.map((t): CostTierRow => ({ variantGid: v.variantGid, units: t.units, totalCost: t.totalCost })),
       lines: linesPerVariant.get(v.variantGid) ?? null,
+      linesRevenue: revenuePerVariant.get(v.variantGid) ?? null,
+      linesPriced: pricedPerVariant.get(v.variantGid) ?? null,
       tariffPerOrder: tariffEff,
       feeRate: feeRateEff,
     });
@@ -230,7 +251,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
       /* Nettoförsäljning senaste 90 dagarna — sorteringen och täckningen. */
       oms90: omsPerVariant.get(v.variantGid) ?? 0,
       unitCost,
-      be: { beRoas: be.beRoas, tb: be.tb, revenue: be.revenue, lines: be.lines, antagen: be.antagen, olonsamNagon: be.olonsamNagon, mix: be.mix.map((m) => ({ qty: m.qty, share: m.share })) },
+      be: { beRoas: be.beRoas, tb: be.tb, revenue: be.revenue, lines: be.lines, antagen: be.antagen, olonsamNagon: be.olonsamNagon, delvisListpris: be.delvisListpris, mix: be.mix.map((m) => ({ qty: m.qty, share: m.share })) },
       egen: mk ? egen != null : v.unitCost != null,
       arvd: Boolean(mk) && egen == null && v.unitCost != null,
       perMarknad,
@@ -283,6 +304,8 @@ export async function loader({ request }: LoaderFunctionArgs) {
     feeRate: feeRateEff,
     feeMatt,
     feeFaktiskPct,
+    /* Butikens MER, 30 stängda dagar. Null = ingen färg på break-even. */
+    storeMer: merLas.mer,
     currency: settings.currency,
     costCurrency,
     kurs,
@@ -1000,7 +1023,7 @@ export async function action({ request }: ActionFunctionArgs) {
 }
 
 export default function Costs() {
-  const { lang, market, marknader, saljMarknader, costCurrency, kurs, rows, missing, total, tackningOms, saknasAndelOms, nollor, tariffPerOrder, feeRate, feeMatt, feeFaktiskPct, currency, juicyDismissed, cogsEstimatePct, aiEnabled } = useLoaderData<typeof loader>();
+  const { lang, market, marknader, saljMarknader, costCurrency, kurs, rows, missing, total, tackningOms, saknasAndelOms, nollor, tariffPerOrder, feeRate, feeMatt, feeFaktiskPct, storeMer, currency, juicyDismissed, cogsEstimatePct, aiEnabled } = useLoaderData<typeof loader>();
   const friFetcher = useFetcher<typeof action>();
   const [params, setParams] = useSearchParams();
   const fetcher = useFetcher<typeof action>();
@@ -1860,6 +1883,12 @@ export default function Costs() {
                 <Text as="p" variant="bodySm" tone="subdued">
                   {feeMatt ? T.costs.be.feeMeasured((feeRate * 100).toFixed(2), feeFaktiskPct) : T.costs.be.feeSetting((feeRate * 100).toFixed(2))}
                 </Text>
+                {/* Vad break-even räknas på, och vad färgen jämförs mot. Frakten
+                    står utanför med flit — det gör talet försiktigt. */}
+                <Text as="p" variant="bodySm" tone="subdued">{T.costs.be.revenueNote}</Text>
+                <Text as="p" variant="bodySm" tone="subdued">
+                  {storeMer != null ? T.costs.be.merNote(dec(storeMer.toFixed(2))) : T.costs.be.merNone}
+                </Text>
               </BlockStack>
             </div>
             <DataTable
@@ -1917,27 +1946,41 @@ export default function Costs() {
                     if (a == null || b == null) return <Badge key={`be${r.variantGid}`} tone="critical">{T.costs.unprofitable}</Badge>;
                     return <Text key={`be${r.variantGid}`} as="span">{a === b ? `${dec(a.toFixed(2))}×` : `${dec(a.toFixed(2))}–${dec(b.toFixed(2))}×`}</Text>;
                   }
+                  /* Vilket pris talet vilar på: det kunderna betalat (90 dagar),
+                     delvis listpris (äldre rader utan pris), eller listpris när
+                     inget sålts. */
+                  const prisText = (x: NonNullable<typeof r.be>) =>
+                    x.antagen ? T.costs.be.priceList : x.delvisListpris ? T.costs.be.pricePartly : T.costs.be.priceRealized;
                   /* Break-even på den FAKTISKA mixen (tvåpack betalar tullen en
                      gång, får packpriset). Utan försäljning: styckantagande, märkt. */
                   const be = r.be;
                   if (be && be.beRoas != null) {
+                    /* Färgen mot butikens MER (30 stängda dagar), inte mot fasta
+                       2/3 — och ingen färg utan MER, på listpris utan
+                       försäljning eller under tre orderrader. */
                     return (
                       <span key={`be${r.variantGid}`}>
-                        <Text as="span" tone={be.beRoas <= 2 ? "success" : be.beRoas <= 3 ? undefined : "critical"}>
+                        <Text as="span" tone={beTon(be.beRoas, storeMer, be.antagen ? 0 : be.lines)}>
                           {`${dec(be.beRoas.toFixed(2))}×`}
                         </Text>
                         <br />
                         <Text as="span" variant="bodySm" tone="subdued">
                           {be.antagen ? T.costs.be.assumed : mixText(be.mix, T.costs.be.unit)}
                         </Text>
+                        <br />
+                        <Text as="span" variant="bodySm" tone="subdued">{prisText(be)}</Text>
                       </span>
                     );
                   }
-                  if (k.beRoas == null)
+                  /* Mixen olönsam på det kunderna betalat: säg det. Förut föll
+                     cellen då tillbaka på styckräkningen på LISTPRIS, som kunde
+                     se lönsam ut just när mängdrabatten var problemet. */
+                  if (k.beRoas == null || (be && !be.antagen))
                     return <Badge key={`be${r.variantGid}`} tone="critical">{T.costs.unprofitable}</Badge>;
+                  /* Styckräkning på listpris (mixen gick inte att räkna) — ett
+                     antagande, alltså ingen färg. */
                   return (
-                    <Text key={`be${r.variantGid}`} as="span"
-                      tone={k.beRoas <= 2 ? "success" : k.beRoas <= 3 ? undefined : "critical"}>
+                    <Text key={`be${r.variantGid}`} as="span">
                       {`${dec(k.beRoas.toFixed(2))}×`}
                     </Text>
                   );
@@ -2019,6 +2062,8 @@ type Rad = {
   /** Break-even på den faktiska flerpacksmixen (90 dagar). */
   be?: {
     beRoas: number | null; tb: number | null; revenue: number | null; lines: number; antagen: boolean; olonsamNagon: boolean;
+    /** Någon såld packstorlek räknades på listpris (äldre rader utan pris). */
+    delvisListpris?: boolean;
     mix: { qty: number; share: number }[];
   };
 };
