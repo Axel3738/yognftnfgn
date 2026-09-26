@@ -56,8 +56,8 @@ if (offline && alla.some((p) => p.kollektioner === undefined)) {
 
 const produkter = valjProdukter(alla, konfig);
 const km = produkter.komplement;
-console.log('\nGratisprodukter (välj en):');
-for (const p of produkter.gratis) console.log(`  • ${p.kortnamn} — ${p.pris} kr`);
+const kd = konfig.kredit;
+console.log(`\nButikskredit i mejlen: ${kd.kod}, ${kd.belopp_sek} kr av vid köp från ${kd.minsta_kop_sek} kr, knappen landar på ${kd.landning}`);
 console.log(`Komplement (en till + ${km.antal} som passar ihop): ${km.karta.size} produkter med egen lista, ${km.katalog.size} i katalogen`);
 console.log(`  källor: ${km.kallor.per_handle} per handle, ${km.kallor.per_kollektion} per kollektion, ${km.kallor.fallback} fallback`);
 console.log(`  fallback: ${km.fallback.map((h) => km.katalog.get(h).kortnamn).join(', ')}`);
@@ -91,10 +91,9 @@ writeFileSync(join(UT, 'index.html'), byggSida({ liquid, exempel, konfig, produk
 const status = [
   `# Mejlmallarna — byggda ${byggd} UTC`,
   '',
-  `Rabattkod: **${konfig.erbjudande.kod}** · minst ${konfig.erbjudande.minsta_kop_sek} kr · 1 gratis ur /collections/${konfig.erbjudande.kollektion_handle}`,
+  `Butikskredit: **${kd.kod}** · ${kd.belopp_sek} kr av · minst ${kd.minsta_kop_sek} kr · en gång per kund · knappen → ${konfig.butik.url}/discount/${kd.kod}?redirect=${encodeURIComponent(kd.landning)}`,
   '',
-  '## Gratisprodukter',
-  ...produkter.gratis.map((p) => `- ${p.titel} — ${p.pris} kr (${p.handle})`),
+  'Lyckohjulet (TACKIGEN, /pages/din-gratisprodukt) är borta ur mejlen sedan 2026-09-26 (Axels beslut). Koden och sidan ligger kvar i Shopify för kunder som redan fått mejlen.',
   '',
   '## Komplement (en till + tre som passar ihop)',
   `- ${km.karta.size} produkter med egen lista (${km.kallor.per_handle} per handle, ${km.kallor.per_kollektion} per kollektion), ${km.kallor.fallback} utan — de får storsäljarna`,

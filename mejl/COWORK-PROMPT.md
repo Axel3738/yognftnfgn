@@ -20,11 +20,11 @@ en flik.
 order). Bygger en gren om mallarna: byt till grenens namn i länkarna tills
 den mergats, annars klistrar Cowork in en gammal version.
 
-Teckentalen nedan är från bygget 2026-09-20 (**v11: bävernumret
-"Ditt paketnummer: BB-…" i klartext under knappen, och knappen bär samma
-nummer** — fraktbolagets YT-nummer står inte längre någonstans i mejlet).
-Levererad är oförändrad sedan v8 och orderbekräftelsen sedan v6; de står
-inte i tabellen. Bygger du om mallarna, räkna om dem i TECKEN
+Teckentalen nedan är från bygget 2026-09-26 (**v13: butikskrediten KREDIT100
+ersätter lyckohjulet** i Orderbekräftelse, Leveransbekräftelse och Levererad,
+Axels beslut samma dag: hjulet gav 0 köp). Leveransuppdatering, Ute för
+leverans, Återbetalning och Order annullerad är byte för byte oförändrade och
+står inte i tabellen. Bygger du om mallarna, räkna om dem i TECKEN
 (`python3 -c "print(len(open('mejl/output/fraktbekraftelse.liquid',encoding='utf-8').read()))"`),
 inte byte — Cowork mätte 2026-09-18 att `wc -c` gav byte och stämde inte.
 
@@ -71,146 +71,96 @@ att först jämföra mot butikens egna produktnamn.
 leverans") är en ANNAN mall och ska inte röras. Samma fallgrop som CaraShell
 2026-09-21.
 
+**v13 byggd 2026-09-26, väntar på inklistring** (prompten nedan). Menylänken
+"Spåra paket" gjordes i v11 och ingår inte längre.
+
 ---
 
 ## Kopiera allt nedanför linjen till Cowork
 
 Du jobbar i Chrome i min inloggade Shopify-admin för butiken
 **Bäverbutiken.se**. Två uppgifter: **A.** byta ut koden i **tre
-kundnotiser**, **B.** lägga in länken **Spåra paket** i butikens huvudmeny
-och sidfotsmeny. Sedan **C.** ett testmejl. Rör ingenting annat i Shopify:
+kundnotiser**, **C.** ett testmejl. Rör ingenting annat i Shopify:
 inga andra mallar, inga inställningar, inga rabatter, inga produkter, inga
-andra menyrader.
+sidor, inga menyer. Rabattkoden KREDIT100 finns redan och ska inte röras.
+Rabattkoden TACKIGEN och sidan /pages/din-gratisprodukt ska inte heller
+röras (kunder har redan fått mejl med dem).
 
-En av mallarna är stor (~77 500 tecken). Det tar några sekunder att
-klistra in. Vänta ut det. **Klistra aldrig in en halv mall** — går något
+Mallarna är stora (~62 000 till ~74 000 tecken). Det tar några sekunder att
+klistra in. Vänta ut det. **Klistra aldrig in en halv mall**: går något
 fel, stoppa och berätta vad som hände.
 
-⚠️ **Datorn är en Windows-dator, inte en Mac** (Axels besked 2026-09-20).
-Klicka alltid först inne i kodfältet innan du markerar eller kopierar —
-kortkommandon som når Shopifys sida i stället för fältet öppnar dialoger som
-"Lägg till produktserie" och "Lägg till sida" (hände 2026-09-13). Öppnas en
-sådan dialog: stäng den utan att spara, och skapa aldrig något.
+⚠️ **Datorn är en Windows-dator, inte en Mac.** Klicka alltid först inne i
+kodfältet innan du markerar eller kopierar. Kortkommandon som når Shopifys
+sida i stället för fältet öppnar dialoger som "Lägg till produktserie" och
+"Lägg till sida" (hände 2026-09-13). Öppnas en sådan dialog: stäng den utan
+att spara, och skapa aldrig något.
 
-⚠️ **Urklippet är inte att lita på.** Flera gånger har det innehållit något
-annat än det som nyss kopierades (förra mallen, ett telefonnummer, en
-anteckning från en annan app). **Kontrollera alltid vad du klistrat in INNAN
-du sparar**: rätt längd (se tabellens teckenantal) och rätt innehåll.
-Stämmer det inte: kopiera om, spara inte. Slutar tangentbordet nå fliken
-med källfilen (Cmd+A markerar inget, hände 2026-09-18): hämta filen direkt
-i Shopify-sidan i stället för via urklippet, och jämför det inklistrade mot
-källfilen tecken för tecken före sparning. Det fungerade.
+⚠️ **Urklippet är inte att lita på.** Kontrollera alltid vad du klistrat in
+INNAN du sparar: rätt längd (se tabellens teckenantal) och rätt innehåll.
+Metoden som fungerat flera körningar i rad: hämta filen direkt i
+Shopify-sidan, skriv in den via kodrutans eget API och jämför mot källfilen
+tecken för tecken före sparning.
 
-### A. Mallarna
+### A. Mallarna (v13: butikskrediten i stället för hjulet)
 
-⚠️ **Den här körningen (v12, 2026-09-21) gäller EN mall: Orderbekräftelsen.**
-Den enda ändringen är leveranstiden i FAQ-raden "Hur lång är leveranstiden?":
-den sa `7–14 dagar` och ska säga `5–10 arbetsdagar` (ägarens beslut samma dag —
-det är vad butikens egen fraktsida alltid sagt). De tre fraktmallarna är
-**oförändrade sedan v11** och ska inte röras om de redan är inne.
+Ändringen: den svarta rutan överst som sa **"Snurra hjulet, vinn en gratis
+produkt"** med koden TACKIGEN och raden med tio produktbilder är borta. I
+stället står **"100 kr rabatt på nästa köp"** med knappen **HÄMTA MIN
+RABATT**, som går till
+`https://baverbutiken.se/discount/KREDIT100?redirect=%2Fcollections%2Fall`.
+Allt annat i mallarna är oförändrat.
 
-**Börja med att kolla vad som redan sitter — per mall.** Öppna varje mall i
-tabellen → Redigera kod.
-- **Orderbekräftelsen (rad 0):** står `5–10 arbetsdagar` redan i brödtexten är
-  den klar — hoppa över. Står `7–14 dagar` där: klistra in enligt stegen.
-- **De tre fraktmallarna (rad 1–3):** saknar brödtexten texten
-  `Ditt paketnummer` är det en gammal version: klistra in enligt stegen. Finns
-  `Ditt paketnummer` redan är den nya versionen inne: hoppa över den mallen.
-
-Är alla fyra redan klara: gå direkt till **B**.
+**Börja med att kolla vad som redan sitter — per mall.** Öppna mallen →
+Redigera kod. Står `KREDIT100` redan i brödtexten och inte `TACKIGEN` är den
+klar: hoppa över den. Annars: klistra in enligt stegen.
 
 Gör så här för en mall i taget, uppifrån och ner i tabellen:
 
-1. Öppna mallens kodlänk i en **ny flik**. Det är en ren textfil. Klicka i
-   texten, tryck **Ctrl+A**, sedan **Ctrl+C** (Windows-dator, se varningen ovan).
-   Går urklippet inte att lita på: hämta filen direkt i Shopify-sidan och skriv
-   in den via kodrutans eget API — det är metoden som fungerat två körningar i rad.
+1. Öppna mallens kodlänk i en **ny flik**. Det är en ren textfil.
 2. Gå tillbaka till Shopify-admin → **Inställningar** → **Notiser** →
    **Kundaviseringar** → klicka på mallens namn.
 3. Klicka **Redigera kod** (Edit code).
 4. Fältet **E-postämne** (Email subject): jämför med ämnesraden i tabellen,
-   tecken för tecken. Står den redan exakt rätt: **rör den inte**. Skiljer
-   den sig: markera allt, ta bort, klistra in tabellens rad.
-5. Rutan **E-postbrödtext (HTML)** (Email body HTML): klicka i rutan, tryck
-   **Ctrl+A**, tryck **Delete**, tryck **Ctrl+V**.
-6. **Innan du sparar:** kontrollera att det inklistrade är rätt mall — rätt
-   teckenantal och att textbiten i kolumnen "Kontrollera" finns.
-   Fel innehåll: kopiera om från fliken och klistra in igen.
+   tecken för tecken. Står den redan exakt rätt: **rör den inte**.
+5. Rutan **E-postbrödtext (HTML)** (Email body HTML): ersätt ALLT innehåll
+   med filens innehåll.
+6. **Innan du sparar:** kontrollera teckenantalet och att texten i kolumnen
+   "Kontrollera" finns och att `TACKIGEN` INTE finns. Fel innehåll: gör om.
 7. Klicka **Spara**.
-8. **Kontrollera mot servern, inte mot redigeraren.** Shopify sparar
-   osparade utkast i webbläsaren och lägger tillbaka dem efter F5, så
-   redigeraren kan visa den nya koden fast servern har den gamla (hände
-   2026-09-18 på Levererad). Läs därför mallens innehåll och `updatedAt`
-   ur Shopifys egen mall-data för sidan (samma väg som du hämtar filen)
-   och jämför med källfilen. Stämmer det inte: säg till, klistra inte om
-   i blindo. Klicka aldrig "Ignorera" på raden "Osparade ändringar" utan
-   att först ha läst vad servern har — Ignorera kastade 2026-09-18 tillbaka
-   redigeraren till den gamla versionen.
+8. **Kontrollera mot servern, inte mot redigeraren.** Läs mallens innehåll
+   och `updatedAt` ur Shopifys egen mall-data och jämför med källfilen.
+   Klicka aldrig "Ignorera" på raden "Osparade ändringar" utan att först ha
+   läst vad servern har.
 
 | # | Mall i Shopify | Ämnesrad | Kontrollera | Tecken | Mallens kod |
 |---|---|---|---|---|---|
-| 0 | **Orderbekräftelse** (Order confirmation) | `{% if customer.first_name != blank %}{{ customer.first_name }}, {% endif %}{{ name }} är mottagen – vi packar` | `5–10 arbetsdagar` (INTE `7–14 dagar`) | **84 138** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/orderbekraftelse.liquid |
-| 1 | **Leveransbekräftelse** (Shipping confirmation) | `Ditt paket är på väg` | `Ditt paketnummer` och `sha256` och `Beräknad leverans` | **77 552** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/fraktbekraftelse.liquid |
-| 2 | **Leveransuppdatering** (Shipping update) | `Ny info om ditt paket` | `Ditt paketnummer` och `sha256` | **6 245** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/fraktuppdatering.liquid |
-| 3 | **Ute för leverans** (Out for delivery) | `Paketet kommer idag` | `Ditt paketnummer` och `sha256` | **6 234** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/ute_for_leverans.liquid |
+| 1 | **Orderbekräftelse** (Order confirmation) | `{% if customer.first_name != blank %}{{ customer.first_name }}, {% endif %}{{ name }} är mottagen – vi packar` | `KREDIT100` och `HÄMTA MIN RABATT` och `5–10 arbetsdagar` | **74 222** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/orderbekraftelse.liquid |
+| 2 | **Leveransbekräftelse** (Shipping confirmation) | `Ditt paket är på väg` | `KREDIT100` och `Ditt paketnummer` och `Beräknad leverans` | **66 922** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/fraktbekraftelse.liquid |
+| 3 | **Levererad** (Delivered) | `Paketet är levererat` | `KREDIT100` och `HÄMTA MIN RABATT` | **62 577** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/levererad.liquid |
 
-⚠️ Bredvid "Ute för leverans" ligger syskonet "Order ute för lokal
-leverans" — ta INTE det. Rör inte heller "Levererad": den är redan rätt.
+⚠️ Rör inte Leveransuppdatering, Ute för leverans, Återbetalning eller Order
+annullerad: de är oförändrade. Bredvid "Ute för leverans" ligger syskonet
+"Order ute för lokal leverans", ta INTE det heller.
 
-⚠️ **De fyra butikerna CaraShell, Beverbutikken, Bæverbutiken och Majavakauppa
-berörs INTE av v12** — deras mallar är byte för byte oförändrade (mätt
-2026-09-21: de skrev aldrig ut något dagfönster i text, bara datumen). Kör
-aldrig om dem "för säkerhets skull".
+⚠️ **CaraShell, Beverbutikken, Bæverbutiken och Majavakauppa berörs INTE.**
+Deras mallar hade aldrig hjulet.
 
 Talen i kolumnen Tecken är tecken, inte byte. Shopifys redigerare räknar i
-byte, alltså högre tal — varje å/ä/ö väger två byte. Skiljer det mycket mer
-än så är det fel innehåll i urklippet. (Vid v9-inklistringen 2026-09-18
-sparade Shopify hela filen inklusive den avslutande radbrytningen, så
-serverns teckenantal stämde exakt med tabellen.)
-
-Logga och accentfärg under **Anpassa e-postmallar** är redan gjorda
-(2026-09-13) — rör dem inte.
-
-### B. Menylänken "Spåra paket"
-
-Butiken har en egen spårningssida: **Spåra ditt paket**, adress
-`/pages/spara` (hela adressen https://baverbutiken.se/pages/spara). Den ska
-gå att hitta från menyn.
-
-1. Gå till **Onlinebutik** (Online Store) → **Navigering** (Navigation).
-2. Öppna menyn **Huvudmeny** (Main menu).
-3. Titta först: finns det redan en rad som länkar till `/pages/spara`?
-   Då är den klar — rör den inte, gå till sidfoten.
-4. Klicka **Lägg till menyalternativ** (Add menu item).
-5. **Namn:** `Spåra paket` (exakt så, versalt S, inget mer).
-6. **Länk:** skriv `/pages/spara` i länkfältet — eller välj **Sidor** och
-   sidan **Spåra ditt paket**, det ger samma adress. Kontrollera att raden
-   visar `/pages/spara`.
-7. Klicka **Lägg till**, sedan **Spara menyn** uppe till höger.
-8. Gör samma sak (steg 3–7) i menyn **Sidfotsmeny** (Footer menu). Heter
-   sidfotsmenyn något annat (t.ex. "Snabblänkar" / "Quick links"): ta den
-   meny som butikens sidfot faktiskt visar — öppna baverbutiken.se i en
-   flik och jämför raderna.
-9. Lägg raden **sist** i båda menyerna. Flytta inga andra rader.
-10. Kontrollera i kundens vy: öppna https://baverbutiken.se i en ny flik,
-    ladda om, och se att **Spåra paket** syns i huvudmenyn och i sidfoten
-    och att klicket landar på sidan med rubriken "Spåra ditt paket".
-
-Skapa aldrig en ny meny, ta aldrig bort en rad, ändra inga andra namn.
+byte, alltså högre tal (varje å/ä/ö väger två byte).
 
 ### C. Testmejlet
 
-Gå in på **Leveransbekräftelse** och klicka **Skicka testmejl** (Send test
-email) uppe till höger på förhandsgranskningssidan. Bara den mallen.
+Gå in på **Orderbekräftelse** och klicka **Skicka testmejl** (Send test
+email) uppe till höger. Bara den mallen.
 
 ### Rapportera tillbaka
 
 1. Vilka av de tre mallarna som sparades och verifierades mot servern.
-2. Tecknantalet du såg per mall.
-3. Om kontrolltexten saknades, och i vilken mall.
-4. Menyerna: vilka två menyer som fick raden, och vad du såg i kundens vy.
-5. Om testmejlet gick iväg, och till vilken adress Shopify sa att det gick.
-6. Allt som såg konstigt ut, även småsaker.
+2. Teckenantalet du såg per mall.
+3. Om kontrolltexten saknades, eller om `TACKIGEN` fanns kvar, och i vilken mall.
+4. Om testmejlet gick iväg, och till vilken adress Shopify sa att det gick.
+5. Allt som såg konstigt ut, även småsaker.
 
 Om Shopify vägrar spara (för stor mall, felmeddelande, snurrande knapp):
 spara inte om, utan skriv exakt vad felmeddelandet sa.

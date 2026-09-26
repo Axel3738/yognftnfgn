@@ -1,5 +1,4 @@
 {% assign fornamn = customer.first_name | default: billing_address.first_name | default: shipping_address.first_name %}
-{% assign start_ts = 'now' | date: '%s' %}{% assign tz_a = 'now' | date: '%H' | plus: 0 %}{% assign tz_b = start_ts | date: '%H' | plus: 0 %}{% assign tz_skift = tz_a | minus: tz_b %}{% if tz_skift > 12 %}{% assign tz_skift = tz_skift | minus: 24 %}{% elsif tz_skift < -12 %}{% assign tz_skift = tz_skift | plus: 24 %}{% endif %}{% assign tz_sek = tz_skift | times: 3600 %}{% assign start_ts = start_ts | plus: tz_sek %}{% assign slut_ts = start_ts | plus: 604800 %}{% assign slut_dag = slut_ts | date: '%-d' %}{% assign slut_mm = slut_ts | date: '%m' %}{% case slut_mm %}{% when '01' %}{% assign slut_man = 'januari' %}{% when '02' %}{% assign slut_man = 'februari' %}{% when '03' %}{% assign slut_man = 'mars' %}{% when '04' %}{% assign slut_man = 'april' %}{% when '05' %}{% assign slut_man = 'maj' %}{% when '06' %}{% assign slut_man = 'juni' %}{% when '07' %}{% assign slut_man = 'juli' %}{% when '08' %}{% assign slut_man = 'augusti' %}{% when '09' %}{% assign slut_man = 'september' %}{% when '10' %}{% assign slut_man = 'oktober' %}{% when '11' %}{% assign slut_man = 'november' %}{% when '12' %}{% assign slut_man = 'december' %}{% else %}{% assign slut_man = '' %}{% endcase %}{% assign slut_datum = slut_dag | append: ' ' | append: slut_man %}{% assign slutdatum = slut_datum %}{% assign nu_ts = 'now' | date: '%s' | plus: tz_sek %}{% if slut_ts < nu_ts %}{% assign slut_passerat = true %}{% else %}{% assign slut_passerat = false %}{% endif %}
 <!DOCTYPE html>
 <html lang="sv">
 <head>
@@ -44,110 +43,22 @@
               <p style="font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.6; color: #000000; margin: 0;">Är något fel eller trasigt, mejla <a href="mailto:kundsupport@baverbutiken.se" style="color: #dd1d1d;">kundsupport@baverbutiken.se</a> inom 30 dagar så löser vi det.</p>
             </td>
           </tr>
-          <!-- Erbjudandet: köp igen → välj en gratisprodukt -->
+          <!-- Erbjudandet: butikskredit på nästa köp -->
           <tr>
             <td style="padding: 20px 32px 0;">
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#000000">
                 <tr>
-                  <td align="center" style="padding: 26px 24px 8px;">
-                    <p style="font-family: Arial,Helvetica,sans-serif; font-size: 12px; font-weight: bold; color: #dd1d1d; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 8px;">Din kundgåva</p>
-                    <p class="bb-rubrik" style="font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 32px; line-height: 1.1; color: #ffffff; letter-spacing: 0.5px; margin: 0;">Snurra hjulet, vinn en gratis produkt</p>
-                    <p style="font-family: Arial,Helvetica,sans-serif; font-size: 15px; line-height: 1.6; color: #d9d9d9; margin: 12px 0 18px;">Snurra hjulet och vinn en produkt gratis, värde upp till 279 kr, som blir din vid nästa köp på minst 299 kr. Knappen tar dig dit.</p>
-                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin: 0 auto 18px;">
-                      <tr>
-                        <td style="border: 2px dashed #ffffff; padding: 10px 22px;">
-                          <span style="font-family: Arial,Helvetica,sans-serif; font-size: 12px; color: #d9d9d9; letter-spacing: 1px; text-transform: uppercase;">Din gåvokod:</span>
-                          <span style="font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 24px; color: #ffffff; letter-spacing: 3px; padding-left: 8px;">TACKIGEN</span>
-                        </td>
-                      </tr>
-                    </table>
+                  <td align="center" style="padding: 26px 24px 26px;">
+                    <p style="font-family: Arial,Helvetica,sans-serif; font-size: 12px; font-weight: bold; color: #dd1d1d; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 8px;">Din rabatt väntar</p>
+                    <p class="bb-rubrik" style="font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 32px; line-height: 1.1; color: #ffffff; letter-spacing: 0.5px; margin: 0;">100 kr rabatt på nästa köp</p>
+                    <p style="font-family: Arial,Helvetica,sans-serif; font-size: 15px; line-height: 1.6; color: #d9d9d9; margin: 12px 0 18px;">Handla för minst 299 kr och dra av 100 kr. Rabatten gäller en gång per kund.</p>
               <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="bb-knapp">
                 <tr>
                   <td align="center" bgcolor="#dd1d1d">
-                    <a href="https://baverbutiken.se/pages/din-gratisprodukt?utm_source=mejl&amp;utm_medium=levererad&amp;utm_campaign=tackigen{% for line in fulfillment.fulfillment_line_items limit: 1 %}{% if line.line_item.product.handle != blank %}&amp;produkt={{ line.line_item.product.handle }}{% endif %}{% endfor %}" target="_blank" style="display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;">Snurra hjulet</a>
+                    <a href="https://baverbutiken.se/discount/KREDIT100?redirect=%2Fcollections%2Fall" target="_blank" style="display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;">HÄMTA MIN RABATT</a>
                   </td>
                 </tr>
               </table>
-                  </td>
-                </tr>
-                {% if slut_passerat == false %}<tr>
-                  <td align="center" bgcolor="#dd1d1d" style="padding: 12px 24px; margin-top: 20px;">
-                    <p style="font-family: Arial,Helvetica,sans-serif; font-size: 14px; font-weight: bold; line-height: 1.5; color: #ffffff; margin: 0;">&#9203; Gäller i 7 dagar, till {{ slutdatum }} — vissa produkter finns bara i begränsat antal.</p>
-                  </td>
-                </tr>{% endif %}
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding: 20px 32px 8px;">
-              <span style="font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 16px; color: #000000; letter-spacing: 0.5px;">Det här kan du vinna</span>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding: 0 28px 8px;">
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-                <tr>
-                  <td class="bb-vinst" width="20%" valign="top" align="center" style="padding: 6px 3px;">
-                    <a href="https://baverbutiken.se/products/baverlampa-pro" style="text-decoration: none;">
-                      <img src="https://cdn.shopify.com/s/files/1/1013/0322/2621/files/3XKraftfulltLEDLjus_240x240.png?v=1772518783" alt="" width="72" height="72" style="display: block; border: 1px solid #e8e8e1; margin: 0 auto;">
-                      <p style="font-family: Arial,Helvetica,sans-serif; font-size: 11px; line-height: 1.3; color: #6b6b6b; margin: 5px 0 0;">Bäverlampa Pro</p>
-                    </a>
-                  </td>
-                  <td class="bb-vinst" width="20%" valign="top" align="center" style="padding: 6px 3px;">
-                    <a href="https://baverbutiken.se/products/kepslampa-300-lumen-clip-on-led-pannlampa" style="text-decoration: none;">
-                      <img src="https://cdn.shopify.com/s/files/1/1013/0322/2621/files/bf853be8-3fb7-4687-ba89-aedbbc3ae574_240x240.jpg?v=1782034744" alt="" width="72" height="72" style="display: block; border: 1px solid #e8e8e1; margin: 0 auto;">
-                      <p style="font-family: Arial,Helvetica,sans-serif; font-size: 11px; line-height: 1.3; color: #6b6b6b; margin: 5px 0 0;">Kepslampa 300 Lumen</p>
-                    </a>
-                  </td>
-                  <td class="bb-vinst" width="20%" valign="top" align="center" style="padding: 6px 3px;">
-                    <a href="https://baverbutiken.se/products/digital-dackdjupsmatare-lcd-display" style="text-decoration: none;">
-                      <img src="https://cdn.shopify.com/s/files/1/1013/0322/2621/files/e635b363-7588-4381-b5ee-564b5db736fe_240x240.jpg?v=1782033732" alt="" width="72" height="72" style="display: block; border: 1px solid #e8e8e1; margin: 0 auto;">
-                      <p style="font-family: Arial,Helvetica,sans-serif; font-size: 11px; line-height: 1.3; color: #6b6b6b; margin: 5px 0 0;">Digital Däckdjupsmätare</p>
-                    </a>
-                  </td>
-                  <td class="bb-vinst" width="20%" valign="top" align="center" style="padding: 6px 3px;">
-                    <a href="https://baverbutiken.se/products/nano-coating-vax-keramiskt-skydd-for-bil-bat" style="text-decoration: none;">
-                      <img src="https://cdn.shopify.com/s/files/1/1013/0322/2621/files/11c4b17a-8942-408a-bbf3-182635519e41_240x240.jpg?v=1782033027" alt="" width="72" height="72" style="display: block; border: 1px solid #e8e8e1; margin: 0 auto;">
-                      <p style="font-family: Arial,Helvetica,sans-serif; font-size: 11px; line-height: 1.3; color: #6b6b6b; margin: 5px 0 0;">Nano Coating Vax</p>
-                    </a>
-                  </td>
-                  <td class="bb-vinst" width="20%" valign="top" align="center" style="padding: 6px 3px;">
-                    <a href="https://baverbutiken.se/products/solcellslampa-cob-barbar-med-usb-laddning" style="text-decoration: none;">
-                      <img src="https://cdn.shopify.com/s/files/1/1013/0322/2621/files/bbc7c63f-8e55-48de-879f-19347807be54_240x240.jpg?v=1782035049" alt="" width="72" height="72" style="display: block; border: 1px solid #e8e8e1; margin: 0 auto;">
-                      <p style="font-family: Arial,Helvetica,sans-serif; font-size: 11px; line-height: 1.3; color: #6b6b6b; margin: 5px 0 0;">Solcellslampa COB</p>
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="bb-vinst" width="20%" valign="top" align="center" style="padding: 6px 3px;">
-                    <a href="https://baverbutiken.se/products/fickkedjesag-barbar-handsag-med-halkfritt-handtag" style="text-decoration: none;">
-                      <img src="https://cdn.shopify.com/s/files/1/1013/0322/2621/files/295cd1066dd2d541e61567e80285f253_240x240.jpg?v=1782031922" alt="" width="72" height="72" style="display: block; border: 1px solid #e8e8e1; margin: 0 auto;">
-                      <p style="font-family: Arial,Helvetica,sans-serif; font-size: 11px; line-height: 1.3; color: #6b6b6b; margin: 5px 0 0;">Fickkedjesåg</p>
-                    </a>
-                  </td>
-                  <td class="bb-vinst" width="20%" valign="top" align="center" style="padding: 6px 3px;">
-                    <a href="https://baverbutiken.se/products/magnetfiskesats-320lb-neodymmagnet-med-10m-rep" style="text-decoration: none;">
-                      <img src="https://cdn.shopify.com/s/files/1/1013/0322/2621/files/740baad3a413478fbd645c2618dec9e7-goods_240x240.jpg?v=1785594059" alt="" width="72" height="72" style="display: block; border: 1px solid #e8e8e1; margin: 0 auto;">
-                      <p style="font-family: Arial,Helvetica,sans-serif; font-size: 11px; line-height: 1.3; color: #6b6b6b; margin: 5px 0 0;">Magnetfiskesats 320lb</p>
-                    </a>
-                  </td>
-                  <td class="bb-vinst" width="20%" valign="top" align="center" style="padding: 6px 3px;">
-                    <a href="https://baverbutiken.se/products/hopfallbar-sag-industriell-med-halkfritt-grepp" style="text-decoration: none;">
-                      <img src="https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu2-sag_240x240.webp?v=1786982540" alt="" width="72" height="72" style="display: block; border: 1px solid #e8e8e1; margin: 0 auto;">
-                      <p style="font-family: Arial,Helvetica,sans-serif; font-size: 11px; line-height: 1.3; color: #6b6b6b; margin: 5px 0 0;">Hopfällbar Såg</p>
-                    </a>
-                  </td>
-                  <td class="bb-vinst" width="20%" valign="top" align="center" style="padding: 6px 3px;">
-                    <a href="https://baverbutiken.se/products/3d-snickarvinkel-vinkellinjal-med-ritskrapa" style="text-decoration: none;">
-                      <img src="https://cdn.shopify.com/s/files/1/1013/0322/2621/files/1723182130984-5e54b7e2c64f4198be878ed62d63eb5e-goods_240x240.jpg?v=1782031571" alt="" width="72" height="72" style="display: block; border: 1px solid #e8e8e1; margin: 0 auto;">
-                      <p style="font-family: Arial,Helvetica,sans-serif; font-size: 11px; line-height: 1.3; color: #6b6b6b; margin: 5px 0 0;">3D Snickarvinkel</p>
-                    </a>
-                  </td>
-                  <td class="bb-vinst" width="20%" valign="top" align="center" style="padding: 6px 3px;">
-                    <a href="https://baverbutiken.se/products/nodregnjacka-latt-packbar-regnskydd" style="text-decoration: none;">
-                      <img src="https://cdn.shopify.com/s/files/1/1013/0322/2621/files/76a6dbbc-90bf-49e2-9f8f-dfb3acae73c8_240x240.jpg?v=1782034944" alt="" width="72" height="72" style="display: block; border: 1px solid #e8e8e1; margin: 0 auto;">
-                      <p style="font-family: Arial,Helvetica,sans-serif; font-size: 11px; line-height: 1.3; color: #6b6b6b; margin: 5px 0 0;">Nödregnjacka</p>
-                    </a>
                   </td>
                 </tr>
               </table>
@@ -160,7 +71,7 @@
           </tr>
           <tr>
             <td style="padding: 0px 32px 8px;">
-              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 13px; line-height: 1.6; color: #6b6b6b; margin: 0;">En av de här i korgen räcker för att nå 299 kr. Då får du din gratisprodukt på köpet.</p>
+              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 13px; line-height: 1.6; color: #6b6b6b; margin: 0;">En av de här i korgen räcker för att nå 299 kr. Då drar du av 100 kr.</p>
             </td>
           </tr>
           <tr>
@@ -189,7 +100,7 @@
           </tr>
           <tr>
             <td style="padding: 4px 32px 8px;">
-              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 11px; line-height: 1.6; color: #6b6b6b; margin: 0;">Gäller vid nästa köp på minst 299 kr, ett snurr per kund, och kombineras inte med andra koder.</p>
+              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 11px; line-height: 1.6; color: #6b6b6b; margin: 0;">Gäller köp från 299 kr, en gång per kund. Koden KREDIT100 läggs på automatiskt eller skrivs in i kassan.</p>
             </td>
           </tr>
           <tr><td style="padding: 0 0 12px;"></td></tr>

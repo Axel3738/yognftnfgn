@@ -148,7 +148,7 @@ export function leveransLiquid(frakt, packdagar = 0, sprak = null) {
 // leveransdagen (Axel 2026-09-18) — annars vore erbjudandet redan "slut"
 // när kunden först ser det.
 export function slutdatumLiquid(dagar, paketTimmar = 0, bas = 'created_at') {
-  const sek = dagar * 86400;
+  const sek = (dagar ?? 0) * 86400;
   const kalla = bas === 'now' ? "'now'" : 'created_at';
   return (
     (bas === 'now'
@@ -165,15 +165,15 @@ export function slutdatumLiquid(dagar, paketTimmar = 0, bas = 'created_at') {
     `{% if tz_skift > 12 %}{% assign tz_skift = tz_skift | minus: 24 %}{% elsif tz_skift < -12 %}{% assign tz_skift = tz_skift | plus: 24 %}{% endif %}` +
     `{% assign tz_sek = tz_skift | times: 3600 %}` +
     `{% assign start_ts = start_ts | plus: tz_sek %}` +
-    `{% assign slut_ts = start_ts | plus: ${sek} %}` +
-    datumLiquid('slut_ts', 'slut') +
-    `{% assign slutdatum = slut_datum %}` +
+    (dagar == null
+      ? ''
+      : `{% assign slut_ts = start_ts | plus: ${sek} %}` + datumLiquid('slut_ts', 'slut') + `{% assign slutdatum = slut_datum %}`) +
     // Har sista dagen redan passerat när mejlet skickas (leverans från
     // utländskt lager tar 5–10 arbetsdagar, fönstret är 7 dagar) döljs
     // urgency-raden — ett passerat datum i ett färskt mejl ser trasigt ut.
     // Koden i Shopify fungerar ändå, så kunden förlorar inget.
     `{% assign nu_ts = 'now' | date: '%s' | plus: tz_sek %}` +
-    `{% if slut_ts < nu_ts %}{% assign slut_passerat = true %}{% else %}{% assign slut_passerat = false %}{% endif %}` +
+    (dagar == null ? '' : `{% if slut_ts < nu_ts %}{% assign slut_passerat = true %}{% else %}{% assign slut_passerat = false %}{% endif %}`) +
     // Samma-paket-raden (Axels idé 2026-09-13): nästa order inom N timmar
     // packas ihop med den här. Döljs när timmarna gått — i fraktmejlet har
     // de nästan alltid gått, i leveransmejlet alltid.
@@ -656,7 +656,7 @@ export function komplementBlock(k, s, copy, komplement, lage = 'liquid', kalla =
         .join('');
     rubrik = esk(post ? c.rubrik : c.fallback_rubrik);
   }
-  return `${forst}${litenRubrik(s, rubrik, { topp: 16 })}${stycke(k, s, c.text, { farg: s.gra, storlek: 13 })}
+  return `${forst}${litenRubrik(s, rubrik, { topp: 16 })}${stycke(k, s, kreditErsatt(c.text, k), { farg: s.gra, storlek: 13 })}
           <tr>
             <td style="padding: 0 28px 8px;">
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
@@ -667,106 +667,62 @@ export function komplementBlock(k, s, copy, komplement, lage = 'liquid', kalla =
           </tr>`;
 }
 
-// Erbjudandet: svart box med koden + knappen, sedan de fyra gratisprodukterna
-// och komplementen till det kunden köpte. Statisk HTML utom komplementen —
-// Shopifys notis-Liquid når inte butikens produkter, så bygg.mjs bakar in
-// dem vid varje körning.
-export function erbjudandeBlock(k, s, copy, produkter, lage = 'liquid', kalla = 'order', mallId = kalla) {
-  const e = k.erbjudande;
-  const u = {
-    ...copy.upsell,
-    urgency: ersatt(copy.upsell.urgency, lage),
-    finstilt: ersatt(copy.upsell.finstilt, lage),
-    samma_paket: ersatt(copy.upsell.samma_paket, lage),
-  };
-  // Knappen går till hjulet, med produkten kunden köpte som parameter så
-  // sidan kan visa "en till" + komplement. Rabattkoden läggs INTE på här:
-  // /discount/…?redirect= med en egen frågesträng inuti redirect är
-  // odokumenterat, och hjulets kassaknapp lägger på koden när den behövs.
-  const radNyckel = kalla === 'order' ? 'line' : 'line.line_item';
-  const loop = kalla === 'order' ? 'line_items' : 'fulfillment.fulfillment_line_items';
-  // UTM på länken (2026-09-17): Shopify sparar kundresan per order
-  // (utm_source/medium/campaign), så mejl/matning.mjs kan räkna ordrar som
-  // kom från mejlet — och per mall, via utm_medium. Utan UTM syns bara
-  // landningssidan, som inte skiljer orderbekräftelsen från fraktmejlet.
-  const hjulUrl = `${k.butik.url}/pages/${k.hjul.handle}?utm_source=mejl&amp;utm_medium=${mallId}&amp;utm_campaign=${encodeURIComponent(e.kod.toLowerCase())}`;
-  const lank =
-    lage === 'liquid'
-      ? `${hjulUrl}{% for line in ${loop} limit: 1 %}{% if ${radNyckel}.product.handle != blank %}&amp;produkt={{ ${radNyckel}.product.handle }}{% endif %}{% endfor %}`
-      : `${hjulUrl}&amp;produkt=${EXEMPEL.rader[0].handle}`;
+// Butikskrediten byter ut ÖVERALLT platshållarna {{kredit_belopp}},
+// {{kredit_minsta}} och {{kredit_kod}} mot konfig.json → kredit. Beloppen
+// står bara i konfigen, aldrig i copyn eller mallarna.
+export function kreditErsatt(text, k) {
+  const kd = k?.kredit;
+  let ut = String(text ?? '');
+  if (!kd) return ut;
+  return ut
+    .split('{{kredit_belopp}}').join(kr(kd.belopp_sek))
+    .split('{{kredit_minsta}}').join(kr(kd.minsta_kop_sek))
+    .split('{{kredit_kod}}').join(kd.kod);
+}
+
+// Knappen lägger på koden själv och landar i konfigens `landning`
+// (Shopifys /discount/<kod>?redirect=…).
+export function kreditUrl(k) {
+  const kd = k.kredit;
+  return `${k.butik.url}/discount/${encodeURIComponent(kd.kod)}?redirect=${encodeURIComponent(kd.landning ?? '/collections/all')}`;
+}
+
+// Erbjudandet: butikskrediten (Axels beslut 2026-09-26, ersätter lyckohjulet
+// som gav 0 köp). Svart box med etikett, rubrik, text och knapp, sedan
+// komplementen till det kunden köpte. Ingen tidsgräns på krediten. Samma-
+// paket-raden står kvar i orderbekräftelsen: den gäller logistiken, inte
+// hjulet.
+export function kreditBlock(k, s, copy, produkter, lage = 'liquid', kalla = 'order', mallId = kalla) {
+  const e = k.erbjudande ?? {};
+  const c = Object.fromEntries(Object.entries(copy.kredit).map(([n, t]) => [n, kreditErsatt(t, k)]));
   // Samma-paket-raden: bara när konfigen har timmar > 0 och copyn en rad.
   // I Liquid döljs den när deadline passerat (paket_passerat).
   // Bara i orderbekräftelsen: i frakt- och levererat-mejlen har de 18
   // timmarna alltid gått (Axel 2026-09-18 såg raden i testmejlet, som
   // bygger på en färsk låtsasorder).
   const paketRad =
-    mallId === 'orderbekraftelse' && (e.samma_paket_timmar ?? 0) > 0 && copy.upsell.samma_paket
-      ? `<p style="${s.brod} font-size: 14px; line-height: 1.5; color: #ffffff; margin: 0 0 18px;">&#128230; ${esk(u.samma_paket)}</p>`
+    mallId === 'orderbekraftelse' && (e.samma_paket_timmar ?? 0) > 0 && copy.kredit.samma_paket
+      ? `<p style="${s.brod} font-size: 14px; line-height: 1.5; color: #ffffff; margin: 0 0 18px;">&#128230; ${esk(ersatt(c.samma_paket, lage))}</p>`
       : '';
   const paket = lage === 'liquid' && paketRad ? `{% if paket_passerat == false %}${paketRad}{% endif %}` : paketRad;
-  // Vinsterna på hjulet: bild + namn, fem i bredd. Inga priser — hjulet
-  // avgör vilken kunden får, mejlet visar bara vad som kan komma upp.
-  const perRad = 5;
-  const vinstrader = [];
-  for (let i = 0; i < produkter.gratis.length; i += perRad) vinstrader.push(produkter.gratis.slice(i, i + perRad));
-  const gratis = vinstrader
-    .map(
-      (rad) => `
-                <tr>${rad
-                  .map(
-                    (p) => `
-                  <td class="bb-vinst" width="20%" valign="top" align="center" style="padding: 6px 3px;">
-                    <a href="${p.url}" style="text-decoration: none;">
-                      <img src="${bildLiten(p.bild)}" alt="" width="72" height="72" style="display: block; border: 1px solid ${s.ram}; margin: 0 auto;">
-                      <p style="${s.brod} font-size: 11px; line-height: 1.3; color: ${s.gra}; margin: 5px 0 0;">${esk(p.kortnamn)}</p>
-                    </a>
-                  </td>`
-                  )
-                  .join('')}${'<td width="20%"></td>'.repeat(perRad - rad.length)}
-                </tr>`
-    )
-    .join('');
-  const komplement = komplementBlock(k, s, copy, produkter.komplement, lage, kalla);
-  // Urgency-raden bär sista datumet och döljs i Liquid när datumet passerat.
-  const urgency = u.urgency
-    ? `<tr>
-                  <td align="center" bgcolor="${s.rod}" style="padding: 12px 24px; margin-top: 20px;">
-                    <p style="${s.brod} font-size: 14px; font-weight: bold; line-height: 1.5; color: #ffffff; margin: 0;">&#9203; ${esk(u.urgency)}</p>
-                  </td>
-                </tr>`
-    : '';
+  const komplement = komplementBlock(k, s, copy, produkter?.komplement, lage, kalla);
   // Blocket ligger ÖVERST i mejlet (Axels beslut 2026-09-12: "man ska bli
-  // catchad direkt"), med en röd urgency-rad som bär sista datumet.
+  // catchad direkt").
   return `
-          <!-- Erbjudandet: köp igen → välj en gratisprodukt -->
+          <!-- Erbjudandet: butikskredit på nästa köp -->
           <tr>
             <td style="padding: 20px 32px 0;">
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${s.svart}">
                 <tr>
-                  <td align="center" style="padding: 26px 24px 8px;">
-                    ${u.forrubrik ? `<p style="${s.brod} font-size: 12px; font-weight: bold; color: ${s.rod}; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 8px;">${esk(u.forrubrik)}</p>` : ''}
-                    <p class="bb-rubrik" style="${s.rubrik} font-size: 32px; line-height: 1.1; color: #ffffff; letter-spacing: 0.5px; margin: 0;">${esk(u.rubrik)}</p>
-                    <p style="${s.brod} font-size: 15px; line-height: 1.6; color: #d9d9d9; margin: 12px 0 18px;">${esk(u.text)}</p>
-                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin: 0 auto 18px;">
-                      <tr>
-                        <td style="border: 2px dashed #ffffff; padding: 10px 22px;">
-                          <span style="${s.brod} font-size: 12px; color: #d9d9d9; letter-spacing: 1px; text-transform: uppercase;">${esk(u.kod_etikett)}</span>
-                          <span style="${s.rubrik} font-size: 24px; color: #ffffff; letter-spacing: 3px; padding-left: 8px;">${esk(e.kod)}</span>
-                        </td>
-                      </tr>
-                    </table>${paket}${knapp(s, u.knapp, lank)}
+                  <td align="center" style="padding: 26px 24px 26px;">
+                    ${c.etikett ? `<p style="${s.brod} font-size: 12px; font-weight: bold; color: ${s.rod}; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 8px;">${esk(c.etikett)}</p>` : ''}
+                    <p class="bb-rubrik" style="${s.rubrik} font-size: 32px; line-height: 1.1; color: #ffffff; letter-spacing: 0.5px; margin: 0;">${esk(c.rubrik)}</p>
+                    <p style="${s.brod} font-size: 15px; line-height: 1.6; color: #d9d9d9; margin: 12px 0 18px;">${esk(c.text)}</p>${paket}${knapp(s, c.knapp, kreditUrl(k))}
                   </td>
                 </tr>
-                ${lage === 'liquid' && urgency ? `{% if slut_passerat == false %}${urgency}{% endif %}` : urgency}
               </table>
             </td>
-          </tr>${litenRubrik(s, u.valj_rubrik, { topp: 20 })}
-          <tr>
-            <td style="padding: 0 28px 8px;">
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">${gratis}
-              </table>
-            </td>
-          </tr>${komplement}${stycke(k, s, u.finstilt, { farg: s.gra, storlek: 11, topp: 4 })}
+          </tr>${komplement}${stycke(k, s, c.finstilt, { farg: s.gra, storlek: 11, topp: 4 })}
           <tr><td style="padding: 0 0 12px;"></td></tr>${avdelare(s)}`;
 }
 
@@ -784,7 +740,9 @@ function sidfot(k, s, copy) {
 // media query går bara att skriva i <style> — och Shopifys redigerare
 // behåller media queries när den inlinear resten (docs, läst 2026-09-13).
 // Gmail (webb och app) läser <style> i <head> med klass-selektorer. Under
-// 480 px: fyra kort i bredd blir två, fem vinster i bredd blir tre, knapparna
+// 480 px: fyra kort i bredd blir två, knapparna (klassen .bb-vinst är kvar
+// från hjulets vinstrad bara för att de fem mallar som inte bar hjulet ska
+// förbli byte för byte oförändrade och slippa klistras om)
 // fyller bredden, sidmarginalen krymper. Håll blocket litet och enkelt: Gmail
 // slänger HELA <style> om något i det inte parsar.
 function mobilStil() {
@@ -798,15 +756,15 @@ function mobilStil() {
     }`;
 }
 
-// Hela dokumentet runt innehållsraderna. `erbjudande` styr om datum-assignen
-// ska med — mallar utan erbjudandeblock använder aldrig {{ slutdatum }}, och
-// mallar utan order (lösenord, kontoinbjudan) har inget created_at att räkna
-// ur, så assignen vore bara död kod i deras HTML.
-function dokument(k, s, lage, { titel, preheader, rader, erbjudande = false, leverans = null }) {
+// Hela dokumentet runt innehållsraderna. `paket` (timmar) styr om tids-
+// assignen för samma-paket-raden ska med — bara orderbekräftelsen bär den.
+// Krediten har ingen tidsgräns, så inget slutdatum räknas längre
+// (lyckohjulets "gäller till <datum>" togs bort 2026-09-26).
+function dokument(k, s, lage, { titel, preheader, rader, paket = 0, leverans = null }) {
   const assign =
     lage === 'liquid'
       ? `{% assign fornamn = customer.first_name | default: billing_address.first_name | default: shipping_address.first_name %}\n${
-          erbjudande ? `${slutdatumLiquid(k.erbjudande.giltig_dagar ?? 30, erbjudande.paket ? k.erbjudande.samma_paket_timmar ?? 0 : 0, erbjudande.bas)}\n` : ''
+          paket ? `${slutdatumLiquid(null, paket)}\n` : ''
         }${leverans ? `${leveransLiquid(k.frakt, leverans.packdagar ?? 0, k.sprak)}\n` : ''}`
       : '';
   return `${assign}<!DOCTYPE html>
@@ -837,7 +795,7 @@ function dokument(k, s, lage, { titel, preheader, rader, erbjudande = false, lev
 // ---------------------------------------------------------------------------
 
 // id = filnamn, shopify = notisens namn i admin (svenska / engelska), var = var
-// den ligger, erbjudande = om gratisprodukt-blocket ska med.
+// den ligger, erbjudande = om kreditblocket ska med.
 export const MALLAR = [
   { id: 'orderbekraftelse', shopify: 'Orderbekräftelse / Order confirmation', erbjudande: true },
   { id: 'fraktbekraftelse', shopify: 'Leveransbekräftelse / Shipping confirmation', erbjudande: true },
@@ -921,15 +879,16 @@ export function byggMall(id, { konfig: k, copy, produkter, lage }) {
   const c = copy[id];
   const meta = MALLAR.find((m) => m.id === id);
   if (!c || !meta) throw new Error(`Okänd mall: ${id}`);
-  // Erbjudandet (gratisprodukten) finns bara i Bäverbutiken. En butik utan
-  // `erbjudande` i konfigen bygger samma mallar utan blocket (Axels beslut
-  // 2026-09-20: "skippa gratis produkt / spin the wheel på de andra").
-  const medErbjudande = Boolean(meta.erbjudande && k.erbjudande);
-  EXEMPEL.slutdatum = exempelSlutdatum(k.erbjudande?.giltig_dagar ?? 30);
+  // Erbjudandet (butikskrediten sedan 2026-09-26, före dess lyckohjulet)
+  // finns bara i Bäverbutiken. En butik utan `kredit` i konfigen bygger
+  // samma mallar utan blocket (Axels beslut 2026-09-20: "skippa gratis
+  // produkt / spin the wheel på de andra").
+  const medErbjudande = Boolean(meta.erbjudande && k.kredit);
+  const paketTimmar = medErbjudande && id === 'orderbekraftelse' && copy.kredit?.samma_paket ? (k.erbjudande?.samma_paket_timmar ?? 0) : 0;
   EXEMPEL.paketdeadline = exempelPaketdeadline(k.erbjudande?.samma_paket_timmar ?? 18);
   // Komplementen läser orderns rader i orderbekräftelsen, fraktens rader i
   // frakt- och leveransmejlen (där heter produkten line.line_item).
-  const erbj = medErbjudande ? erbjudandeBlock(k, s, copy, produkter, lage, id === 'orderbekraftelse' ? 'order' : 'frakt', id) : '';
+  const erbj = medErbjudande ? kreditBlock(k, s, copy, produkter, lage, id === 'orderbekraftelse' ? 'order' : 'frakt', id) : '';
   const sp = sparningFor(k);
   const ordUrl = lage === 'liquid' ? '{{ order_status_url }}' : sp.lankExempel;
   const sparUrl = lage === 'liquid' ? sp.lankLiquid : sp.lankExempel;
@@ -1021,7 +980,7 @@ export function byggMall(id, { konfig: k, copy, produkter, lage }) {
   // (lägg på packtiden), fraktmejlet när paketet skickas (ingen packtid).
   const leverans =
     id === 'orderbekraftelse' ? { packdagar: k.frakt.packas_dagar ?? 2 } : id === 'fraktbekraftelse' ? { packdagar: 0 } : null;
-  const html = dokument(k, s, lage, { titel: c.rubrik, preheader: c.preheader[0], rader, erbjudande: medErbjudande ? { bas: id === 'levererad' ? 'now' : 'created_at', paket: id === 'orderbekraftelse' } : false, leverans });
+  const html = dokument(k, s, lage, { titel: c.rubrik, preheader: c.preheader[0], rader, paket: paketTimmar, leverans });
   return {
     id,
     shopify: meta.shopify,
@@ -1076,7 +1035,7 @@ export function valjKomplement(alla, konfig) {
   // Mejlets text lovar "en av de här räcker för att nå 299 kr" — då måste
   // varje förslag kosta minst det (Axel 2026-09-14: spöhållaren för 289 kr
   // stod där). Gränsen är erbjudandets, inte en egen siffra.
-  const minPris = km.min_pris === 'erbjudande' ? konfig.erbjudande.minsta_kop_sek : (km.min_pris ?? 0);
+  const minPris = km.min_pris === 'erbjudande' ? (konfig.kredit?.minsta_kop_sek ?? konfig.erbjudande.minsta_kop_sek) : (km.min_pris ?? 0);
   const saljbar = (p) => Boolean(p && p.bild && (p.lagerpolicy === 'CONTINUE' || p.lager > 0) && Number(p.pris) >= minPris);
   const okanda = new Set();
   const valj = (kandidater, sjalv, max = antal) => {
