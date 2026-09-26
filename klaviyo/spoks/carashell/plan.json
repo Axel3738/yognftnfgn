@@ -2425,16 +2425,28 @@
       "status_plan": "utkast-skrivs-om-efter-lardom"
     },
     {
-      "id": "k09-black-week-utan-rabatt",
-      "namn": "MAIL_20261124_CaraShellRoof_EN_SP_1_samtycke_product_kundernas-ord_v1",
+      "id": "k09-black-week-trappan",
+      "namn": "MAIL_20261124_CaraShellMix_EN_S_2_samtycke_promo_trappan-10-20-30_v1",
       "sprak": "en",
-      "titel": "K09 EN No discount here. Just the guarantee",
+      "titel": "K09 EN Add a second item, the discount jumps to 20 %",
       "planerad": "2026-11-24T16:00:00+01:00",
       "segment": [
         "SEG_samtycke_en"
       ],
-      "mejl": "k09-black-week-utan-rabatt",
-      "status_plan": "kraver-axel"
+      "mejl": "k09-black-week-trappan",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k09b-black-friday",
+      "namn": "MAIL_20261127_CaraShellMix_EN_S_3_samtycke_promo_black-friday-till-mandag_v1",
+      "sprak": "en",
+      "titel": "K09B EN It's Black Friday, and the ladder is still climbing",
+      "planerad": "2026-11-27T16:00:00+01:00",
+      "segment": [
+        "SEG_samtycke_en"
+      ],
+      "mejl": "k09b-black-friday",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
     },
     {
       "id": "k10-sista-dag-for-julklappar",
@@ -2581,16 +2593,28 @@
       "status_plan": "utkast-skrivs-om-efter-lardom"
     },
     {
-      "id": "k09-black-week-utan-rabatt",
-      "namn": "MAIL_20261124_CaraShellRoof_NB_SP_1_samtycke_product_kundernas-ord_v1",
+      "id": "k09-black-week-trappan",
+      "namn": "MAIL_20261124_CaraShellMix_NB_S_2_samtycke_promo_trappan-10-20-30_v1",
       "sprak": "nb",
-      "titel": "K09 NB Det kundene selv sier om taket",
+      "titel": "K09 NB Rabatten trappes opp for hver vare du legger i kurven",
       "planerad": "2026-11-24T18:00:00+01:00",
       "segment": [
         "SEG_samtycke_nb"
       ],
-      "mejl": "k09-black-week-utan-rabatt",
-      "status_plan": "kraver-axel"
+      "mejl": "k09-black-week-trappan",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k09b-black-friday",
+      "namn": "MAIL_20261127_CaraShellMix_NB_S_3_samtycke_promo_black-friday-till-mandag_v1",
+      "sprak": "nb",
+      "titel": "K09B NB Black Friday, rabattrappen gjelder fortsatt",
+      "planerad": "2026-11-27T18:00:00+01:00",
+      "segment": [
+        "SEG_samtycke_nb"
+      ],
+      "mejl": "k09b-black-friday",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
     },
     {
       "id": "k10-sista-dag-for-julklappar",
@@ -2737,16 +2761,28 @@
       "status_plan": "utkast-skrivs-om-efter-lardom"
     },
     {
-      "id": "k09-black-week-utan-rabatt",
-      "namn": "MAIL_20261124_CaraShellRoof_SV_SP_1_samtycke_product_kundernas-ord_v1",
+      "id": "k09-black-week-trappan",
+      "namn": "MAIL_20261124_CaraShellMix_SV_S_2_samtycke_promo_trappan-10-20-30_v1",
       "sprak": "sv",
-      "titel": "K09 SV Det kunderna säger om taket",
+      "titel": "K09 SV 1 skydd ger 10 %, 2 skydd ger 20 %, 3 eller fler ger 30 %",
       "planerad": "2026-11-24T18:00:00+01:00",
       "segment": [
         "SEG_samtycke_sv"
       ],
-      "mejl": "k09-black-week-utan-rabatt",
-      "status_plan": "kraver-axel"
+      "mejl": "k09-black-week-trappan",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k09b-black-friday",
+      "namn": "MAIL_20261127_CaraShellMix_SV_S_3_samtycke_promo_black-friday-till-mandag_v1",
+      "sprak": "sv",
+      "titel": "K09B SV Black Friday: trappan gäller till och med måndag",
+      "planerad": "2026-11-27T18:00:00+01:00",
+      "segment": [
+        "SEG_samtycke_sv"
+      ],
+      "mejl": "k09b-black-friday",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
     },
     {
       "id": "k10-sista-dag-for-julklappar",

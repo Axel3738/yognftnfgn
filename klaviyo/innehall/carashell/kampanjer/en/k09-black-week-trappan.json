@@ -20,42 +20,42 @@
   "rabatt": "black_week",
   "amnesrader": [
     {
-      "text": "__COPY__: ämnesrad A, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Add a second item, the discount jumps to 20 %",
+      "begar": "förstå att fler varor ger mer rabatt"
     },
     {
-      "text": "__COPY__: ämnesrad B, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "One item is 10 %, two is 20 %, three or more is 30 %",
+      "begar": "se alla rabattnivåerna direkt"
     },
     {
-      "text": "__COPY__: ämnesrad C, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "The ladder runs through Monday, November 30",
+      "begar": "veta exakt sista dagen"
     }
   ],
-  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "forhandstext": "Three or more takes it to 30 %, and checkout does the math.",
   "block": [
     {
       "typ": "hero",
-      "rubrik": "__COPY__: rubrik: trappan på en rad",
-      "text": "__COPY__: 1–2 meningar: kassan drar rabatten själv, ingen kod, till och med måndag 30 november",
+      "rubrik": "The discount climbs on its own, all week",
+      "text": "I set up checkout to count what's in your cart and take the discount off automatically, whether that's for a caravan, a motorhome, or an RV. It runs through Monday, November 30, no code needed.",
       "bild": "produkt:takskyddet",
       "knapp": {
-        "text": "__COPY__: knapp",
+        "text": "Shop the collection",
         "lank": "kollektion:sortimentet"
       }
     },
     {
       "typ": "punkter",
-      "rubrik": "__COPY__: rubrik: så funkar trappan",
+      "rubrik": "How the ladder works",
       "punkter": [
-        "__COPY__: 1 vara: 10 %",
-        "__COPY__: 2 varor: 20 %",
-        "__COPY__: 3 varor eller fler: 30 %"
+        "1 item in the cart: 10 % off",
+        "2 items in the cart: 20 % off",
+        "3 items or more in the cart: 30 % off"
       ]
     },
     {
       "typ": "produktrad",
-      "rubrik": "__COPY__: rubrik: två skydd ger nästa nivå",
+      "rubrik": "Two covers, the next level",
       "handles": [
         "takskyddet",
         "termoskyddet",
@@ -66,7 +66,11 @@
       "typ": "fakta"
     }
   ],
-  "tretest": [],
+  "tretest": [
+    { "rad": "Add a second item, the discount jumps to 20 %", "visualisera": true, "falsifiera": true, "ingen_annan": true, "varfor": "Konkret handling (en vara till i kundvagnen) och en exakt siffra som bara gäller den här trappan." },
+    { "rad": "One item is 10 %, two is 20 %, three or more is 30 %", "visualisera": true, "falsifiera": true, "ingen_annan": true, "varfor": "Tre konkreta, kontrollerbara nivåer i rätt ordning som ingen annan butik kan påstå om sin egen trappa." },
+    { "rad": "The ladder runs through Monday, November 30", "visualisera": true, "falsifiera": true, "ingen_annan": true, "varfor": "Ett exakt, sant slutdatum för just den här kampanjen, inte en påhittad brådska." }
+  ],
   "version": 1,
   "planerad": "2026-11-24T16:00:00+01:00",
   "segment": [
