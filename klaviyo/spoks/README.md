@@ -98,7 +98,8 @@ Shopify `yitrbk-m3`, plan **Free = 5 000 mejl/mån**). Facit med varje id:
   Helvetica/Arial Black (ändras inte via MCP:n, syns bara om Google Fonts inte laddar).
 - **13 segment** (`SEG_samtycke_sv/nb/en` 15/4/57 …, `SEG_oengagerade_180d` inte valbart i kampanjer).
 - **24 flöden, 45 mejl** (8 per språk), alla `isActive: false`, alla sändsteg `isEnabled: false`.
-- **39 kampanjutkast** (13 per språk), status draft, ingen publik, inget datum, `isOptOutEnabled`.
+- **42 kampanjutkast** (14 per språk: 39 vid uppladdningen + K09B efter Black Week-beslutet),
+  status draft, ingen publik, inget datum, `isOptOutEnabled`.
 - **Kontroll:** tre oberoende granskare (en per språk) läste tillbaka varje flöde och varje mejl
   mot `plan.json` och `payload/`: 8/8 + 13/13 per språk, inga dubbletter. En rättning: F01 SV E1
   skapades före länkdomänen och hade spårningslänken `r.spoksmail.com` — omsparad, nu
@@ -110,11 +111,24 @@ Shopify `yitrbk-m3`, plan **Free = 5 000 mejl/mån**). Facit med varje id:
   (namn/titlar lästes först, halvfärdiga flöden byggdes klart) och inget blev dubbelt, men
   räkna alltid efter en omstart. Spoks svarade "Rate limit exceeded" ett par gånger med två
   agenter samtidigt; läs tillbaka och försök en gång till räckte.
+- **Black Week = B** (Axels svar samma eftermiddag: Bäverbutikens trappa). I CaraShells Shopify
+  ligger tre automatiska rabatter, **"Black Week 10 %" / "20 %" / "30 %"** vid minst 1/2/3 varor,
+  alla produkter, kombineras bara med fraktrabatter, schemalagda **2026-11-22T23:00Z →
+  2026-12-01T08:00Z**. Titlarna saknar svenska ord för att kassan visar dem på alla språk. Slutet
+  är sessionens beslut: tisdag 1/12 09:00 svensk tid = midnatt natten mot tisdag i Kalifornien.
+  Engelska mejl lovar "through Monday, November 30", och med Bäverbutikens slut (00:00 svensk tid)
+  hade rabatten försvunnit måndag 18:00 i New York — 54 av 57 engelska prenumeranter bor i USA.
+  Skapade med `node klaviyo/black-week-trappa.mjs --butik carashell --ja` och lästa tillbaka på
+  id (brandfilen `black_week.shopify`, `spoks-id.json → black_week`). Paketkoderna (15–25 %)
+  kombineras inte med trappan; Shopify ger kunden den bästa, och trappan är alltid minst lika bra.
+  I Spoks: **K09 omskriven på tre språk** (samma postId, nu om trappan) och **K09B Black Friday
+  fredag 27/11 ny** på tre språk. `konvertera.mjs` släpper igenom 10/20/30 % bara i mejl med
+  `rabatt: "black_week"` (testat), och `kolla-mejl.mjs` kör kontrollen på enstaka innehållsfiler.
+  Efter uppdateringen räknat: 42 utkast, titlar och id stämmer mot `plan.json`, inga dubbletter.
 
 **Inget är påslaget.** Att slå på ett flöde = sändstegen på ett i taget i flödesredigeraren,
 sedan flödet (samma som Matstrumpor). F14 (recension) får inte slås på förrän Trustpilot-profilen
-för carashell.se finns (evaluate-sidan svarade 404 2026-09-26 11:40). K09 (Black Week) väntar på
-Axels A/B/C.
+för carashell.se finns (evaluate-sidan svarade 404 2026-09-26 11:40; Axel skapar den).
 
 Axels order 2026-09-26 (`PROMPT-carashell.md`): hela mejlsystemet för CaraShell i
 Spoks, alla marknader och språk, allt som utkast. CaraShell är en egen verksamhet:
@@ -181,11 +195,12 @@ workspace innan något slås på (uppladdningsprompten steg 1).
 **Byggt i repot:** `klaviyo/brands/carashell.json` (per språk: länkbas, spårningssida,
 villkorstext, förnamnsreserv, knappar, Trustpilot; landsgrupperna; Spoks-inställningarna),
 `klaviyo/innehall/carashell/` (skelett.mjs, faktablad per språk ur Shopifys egna
-översättningar, 24 flödesfiler + 39 kampanjfiler med copy, BRIEFER.md),
+översättningar, 24 flödesfiler + 42 kampanjfiler med copy, BRIEFER.md),
 `klaviyo/spoks/carashell/` (PLAN.md, produkter.json, plan.json, payload/<sprak>/).
 Planen i korthet står i `carashell/PLAN.md`: 8 flöden per språk (välkomst, övergiven
 kassa med de tre frågorna, webbhistorik, efter köp, vinna tillbaka, levererat ×2 med
-monteringen, recension) och 13 kampanjer per språk (tisdagar 29/9–29/12).
+monteringen, recension) och 14 kampanjer per språk (tisdagar 29/9–29/12 plus Black Friday
+fredag 27/11).
 **Copyn är ifylld och konverteraren grön 2026-09-26:** 84 payloadfiler (28 per språk:
 15 flödesmejl + 13 kampanjer), 0 copyfel, `node --test klaviyo/test/konvertera.test.mjs`
 9 av 9. De 8 varningarna "produkt-id/bilder saknas i Spoks" är väntade — id:n och
@@ -223,9 +238,9 @@ steg 0) kan gå vidare. Det extra kontot rörs inte av någon session.
 **Axels klick efter uppladdningen** (allt i https://app.spoks.com/carashell):
 1. ✅ Inbjudan av `kundsupport@baverbutiken.se` som Admin (gjord 2026-09-26 förmiddag).
 2. ✅ Domänen carashell.com kopplad och verifierad (DNS-posterna ovan fanns 11:35).
-3. Black Week: A (ingen rabatt, som byggt), B (Bäverbutikens trappa 10/20/30 % i Shopify, K09
-   skrivs om + ett fredagsmejl) eller C (egen siffra). Rabatten gäller hela butiken, inte bara mejlen.
-4. Trustpilot-profil för carashell.se, sedan F14.
+3. ✅ Black Week: B (svar 2026-09-26). Trappan ligger i Shopify, K09 är omskriven och K09B tillagd.
+   Rabatten gäller hela butiken, även för den som kommer från en annons.
+4. Trustpilot-profil för carashell.se (Axel gör den), sedan F14.
 5. Slå på flödena ett språk i taget (sändstegen först, sedan flödet); stäng först Shopifys egna
    automatiseringar för övergiven kassa (Marknadsföring → Automatiseringar), annars får kunden två mejl.
 6. Kampanjerna: publik `SEG_samtycke_<sprak>` och tiden i `spoks-id.json → kampanjer.*.planerad`,
