@@ -225,7 +225,9 @@ brick by brick och **varje lyckat steg dokumenteras direkt**:
   konton — den ligger i jobb-Gmailens Dev Dashboard-org (VA-CHECKLIST rad
   101). Vägen utan den: egen app i Axels org via
   `factory/tacksida/cowork/2-egen-app.txt` (Axel skapar den själv samma kväll,
-  inga scopes) + **`TACKSIDA_CLIENT_ID_CARASHELL`** och
+  inga scopes; ✅ **deployad och releasad 2026-09-26 16:08 UTC** som
+  `carashell-tacksida-2` i appen "CaraShell Tacksida" — kvar är blocket i
+  kassaredigeraren, Axels klick) + **`TACKSIDA_CLIENT_ID_CARASHELL`** och
   **`SHOPIFY_APP_AUTOMATION_TOKEN_CARASHELL`** i Environments — token är per
   app, så `deploy.sh` läser `_<BUTIK>` först och det delade namnet som reserv.
 - **Annonskontot för ALLA OPS-butiker (SE och NO) är "MagiBorsten DK"
