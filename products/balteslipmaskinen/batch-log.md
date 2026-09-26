@@ -1,6 +1,6 @@
 # Batch-logg — Bälteslipmaskinen
 
-Breakthrough-frekvens: 1/35 (3 %)
+Breakthrough-frekvens: 1/36 (3 %) (etikett.mjs --frekvens 2026-09-26)
 
 ## Batch #1 — originaladsen (launch 2026-08-21, före OS:et)
 16 annonser i CBO (PD/SP/CS/G-serier). Utfall t.o.m. 2026-08-29: se dna.md.
@@ -458,3 +458,14 @@ Rundan låg på 0 i morse (0 lärdomar sedan förra batchen). Efter lärdomarna 
 | Beltgrinder_PD_35_1 | bild | I | Balteslipmaskin_PD_2_1 | rubriken: räknad siffra `[ANTAL] knivar vässade på [TID]` på b020-layouten (enda hooktypen layouten inte fått) | siffran prekvalificerar som 10-sek-löftet gjorde | CVR ≥ 2,2 %, CPA ≤ 249 kr | okänd | — |
 
 `[ANTAL]`/`[TID]` når aldrig Meta: redigeraren räknar och tar tiden (PD_28_H1:s tagning eller egen), kommenterar på raden, uppladdaren kopierar in. Nästa fria plats på produkten kräver en lärdom som inte slutar i SLÄPP — närmast: etiketterna dag 7 på batch #7 (PD_32_1/PD_33_H1/CS_6_1/GT_1_H1) när de gått live.
+
+## Etiketter dag 7 (2026-09-26)
+
+Batch #5:s fyra sista statiska (skapade 2026-09-19), egna första veckan 2026-09-19 – 2026-09-25 (7d_click). Etiketten är ingen dom (bedömbar = ≥ 300 kr OCH ≥ 3 köp). Kampanjen 10 768 kr / ROAS 2,34 i fönstret. Källa: `agent/utdata/etiketter-backfill-2026-09-26.md`; lärdomarna (alla fyra, bilderna öppnade och lästa ur Meta) i `lardomar.md`. Alla fyra SLÄPP: SO_7_1 var en batch-logg-hypotes utan research-källa (0 köp på 83 LPV), och BOF_4_1/5_1/6_1 saknar KPI_WINNER ⇒ **nästa batch får 0 BOF-bilder** (regeln 2026-09-20). Anmärkning till redigeraren: BOF_5_1:s underrad "Fungerar den inte på Bälteslipmaskin Mini?" hackar — annonsen rörs inte.
+
+| Annons | Batch | Typ | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Bedömbar | Playbook |
+|---|---|---|---|---|---|---|---|---|---|
+| Beltgrinder_SO_7_1 | 5 | okänd | **LOSER** | 5 % | 512 kr | 0 | 0,00 / 2,34 | nej | släpp |
+| Beltgrinder_BOF_4_1 | 5 | okänd | **LOSER** | 3 % | 280 kr | 0 | 0,00 / 2,34 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
+| Beltgrinder_BOF_5_1 | 5 | okänd | **LOSER** | 0 % | 26 kr | 0 | 0,00 / 2,34 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
+| Beltgrinder_BOF_6_1 | 5 | okänd | **INGEN_LEVERANS** | — | 8 kr | 0 | 0,00 / 2,34 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |

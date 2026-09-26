@@ -1,6 +1,6 @@
 # Batch-log — Termoskyddet för Husbil
 
-Breakthrough-frekvens: 2/16 (13 %) (etikett.mjs --frekvens 2026-09-25)
+Breakthrough-frekvens: 2/18 (11 %) (etikett.mjs --frekvens 2026-09-26)
 
 ## Batch #1 — 2026-09-14 (`/forsta-batch`, på Axels begäran)
 
@@ -371,3 +371,14 @@ Etiketten är ingen dom (`bedombar` står bredvid). Annonsens egna första vecka
 
 Rad 2–4 identiska mellan de två (211×171 utanpå glaset · mörkt över framvagnen · två minuter + pris), så bara hooken skiljer. `Termoskydd_SP_2_2` (SP_2_1:s komposition med rubrik ur en RIKTIG recension) **struken**: produkten har noll recensioner — byggs när en riktig finns. Förälderns förbjudna rader (stjärnor, "tusentals husbilsägare", sommar, "beställ nu") ärvs inte. Regitabell rad för rad, spärren `briefgranskning.mjs` (main) exit 0 efter tre rättningar (NEW FOOTAGE-format, "or" i Picture, `begar` ur fasta listan), `lardom.mjs --brief` 2 BRIEF-rader, ett item öppnat och kontrollerat. Butiksneutralt (speglas till CaraShell). Copy av sonnet-subagent (regel 6). ⚠️ ffmpeg saknas i rutinens container — källorna är `DRIVE <id> [EDITOR PICKS: …]`, aldrig påhittade sekunder.
 
+## Etiketter dag 7 (2026-09-26)
+
+Batch #2:s fem statiska (skapade 2026-09-19), egna första veckan 2026-09-19 – 2026-09-25 (7d_click). Etiketten är ingen dom (bedömbar = ≥ 300 kr OCH ≥ 3 köp). Kampanjen 15 905 kr / ROAS 2,08 i fönstret. Källa: `agent/utdata/etiketter-backfill-2026-09-26.md`; lärdomarna (alla fem, bilderna öppnade och lästa ur Meta) i `lardomar.md`. Enda namngivna nästa annons: `Termoskydd_BOF_10_1` (mängdrabatten som rubrik på BOF_7_1:s komposition — tillåten för att BOF_7_1 är KPI_WINNER); resten SLÄPP.
+
+| Annons | Batch | Typ | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Bedömbar | Playbook |
+|---|---|---|---|---|---|---|---|---|---|
+| Termoskydd_BOF_7_1 | 2 | okänd | **KPI_WINNER** | 3 % | 515 kr | 3 | 4,36 / 2,08 | ja (prel.) | BOF — ingen spend-fix, räknas inte i frekvensen |
+| Termoskydd_BOF_8_1 | 2 | okänd | **LOSER** | 1 % | 185 kr | 0 | 0,00 / 2,08 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
+| Termoskydd_CS_8_1 | 2 | okänd | **LOSER** | 0 % | 19 kr | 0 | 0,00 / 2,08 | nej | släpp |
+| Termoskydd_BOF_9_1 | 2 | okänd | **LOSER** | 0 % | 16 kr | 0 | 0,00 / 2,08 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
+| Termoskydd_SP_9_1 | 2 | okänd | **INGEN_LEVERANS** | — | 9 kr | 0 | 0,00 / 2,08 | nej | hooken föll — logga och släpp, aldrig ABO |
