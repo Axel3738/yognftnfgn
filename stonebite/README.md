@@ -369,3 +369,23 @@ reklam**, 7 hela dygn till och med i går, per verksamhet ur `varumarken.json`. 
 - Matstrumpors konto "nya kungen" svarar på `act_<id>` men listas inte av `me/adaccounts`.
   `hamtaAllt({ extraIds })` hämtar kontona ur `varumarken.json` uttryckligen.
 - 11 tester i `test/mer.test.mjs`.
+
+## Riktig vinst per verksamhet (2026-09-26, steg 1b)
+
+Tabellen "Riktig vinst per verksamhet, 7 dagar" och kortet "Vinstbidrag 7 dagar" på Översikt,
+bara för ägare och chef. Evolve-kursens formel: **vinstbidrag = försäljning utan moms −
+varukostnad − betalavgifter − reklam**.
+
+- `kallor/vinst.mjs` hämtar per butik och dag (8 dygn, bara dagssummor i snapshoten):
+  netto utan moms (Shopifys "current"-belopp, återbetalningar redan avdragna), varukostnad =
+  **"Cost per item"** i Shopify × sålt antal, och Shopify Payments avgifter per transaktion.
+- Två appar kan behövas per butik: Bäverbutikens kundtjänstapp får läsa ordrar men inte
+  produkter, fabrikens tvärtom. Kostnaden kopplas då via SKU och i sista hand namn (`kostnadFor`).
+- En verksamhet räknas inte om **mer än 1 %** av försäljningen saknar Cost per item
+  (`TAK_UTAN_KOSTNAD`). Sidan skriver vilka produkter som ska fyllas i.
+- Betalt utan avgiftsdata (PayPal m.fl.) syns som belopp under tabellen: där är vinsten något för hög.
+- ⚠️ Frakten från leverantören ingår bara om den ligger i Cost per item. Fasta kostnader
+  (löner, appar) är inte avdragna.
+- Mätt 2026-09-26 (7 dygn): Bäverbutiken 228 365 kr (26,1 %), CaraShell 62 343 kr (13,7 %),
+  Matstrumpor räknas inte (39 % av försäljningen saknar Cost per item: ätpinnar och strumporna).
+- 11 tester i `test/vinst.test.mjs`.

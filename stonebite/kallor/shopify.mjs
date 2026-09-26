@@ -196,7 +196,7 @@ export function forklaraNyckelfel(butik, provade, env = process.env) {
   return `Shopify-appen bakom ${appar} får inte läsa ordrar (403: merchant approval for read_orders saknas). ${atgard}${rest}`;
 }
 
-async function mintaToken(butik, { env = process.env, fetchFn = fetch, nycklar = null } = {}) {
+export async function mintaToken(butik, { env = process.env, fetchFn = fetch, nycklar = null } = {}) {
   const k = nycklar ?? await losNycklar(butik, env);
   if (!k.shop || !k.clientId || !k.clientSecret) {
     const suffix = butik.suffix || butik.env_suffix || '<suffix>';

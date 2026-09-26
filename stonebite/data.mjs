@@ -361,8 +361,55 @@ export function verksamheter(snapshot, { nu = new Date() } = {}) {
       mer,
       merForra,
       kvar: komplett ? forsaljning - reklam : null,
+      vinst: vinstFor(vm, butiker, { snapshot, vecka, sekPer, komplett, reklam, saknas }),
     };
   });
+}
+
+/** Så stor del av försäljningen som får sakna varukostnad innan vinsten inte räknas. */
+export const TAK_UTAN_KOSTNAD = 0.01;
+
+/**
+ * Riktig vinst för en verksamhet, 7 hela dygn (Evolve-kursens formel, svar 1):
+ *   vinstbidrag = försäljning utan moms − varukostnad − betalavgifter − reklam
+ * Varukostnaden är Shopifys "Cost per item". Frakten från leverantören ingår
+ * bara om den ligger i det talet — sidan säger det.
+ * null + orsak när MER inte går att räkna, när en butik saknar underlag, eller
+ * när mer än 1 % av försäljningen säljs på varianter utan Cost per item.
+ */
+function vinstFor(vm, butiker, { snapshot, vecka, sekPer, komplett, reklam, saknas }) {
+  if (!komplett) return { status: 'saknas', orsak: saknas[0] ? `${saknas[0].vad}: ${saknas[0].orsak}` : 'MER går inte att räkna', saknarKostnad: [] };
+  const underlag = snapshot?.vinst;
+  if (!underlag) return { status: 'saknas', orsak: 'vinstunderlaget hämtades inte (kallor/vinst.mjs körs från och med nästa timhämtning)', saknarKostnad: [] };
+
+  let netto = 0; let varukostnad = 0; let avgifter = 0; let utanKostnad = 0; let utanAvgift = 0;
+  const saknarKostnad = [];
+  for (const b of butiker) {
+    const v = underlag.find((x) => x.id === b.id);
+    if (!v || v.status !== 'ok') return { status: 'saknas', orsak: `${b.namn}: ${v?.orsak ?? 'inget vinstunderlag'}`, saknarKostnad: [] };
+    const kurs = sekPer[v.valuta ?? b.valuta];
+    for (const d of v.dagar ?? []) {
+      if (!vecka.has(d.datum)) continue;
+      netto += d.netto * kurs;
+      varukostnad += d.varukostnad * kurs;
+      avgifter += d.avgifter * kurs;
+      for (const [valuta, belopp] of Object.entries(d.avgifterAnnanValuta ?? {})) {
+        if (sekPer[valuta] === undefined) return { status: 'saknas', orsak: `ingen växelkurs för avgifter i ${valuta}`, saknarKostnad: [] };
+        avgifter += belopp * sekPer[valuta];
+      }
+      utanKostnad += d.utanKostnad * kurs;
+      utanAvgift += d.utanAvgift * kurs;
+    }
+    for (const s of v.saknarKostnad ?? []) saknarKostnad.push({ ...s, butik: b.namn, sek: s.intakt * kurs });
+  }
+  saknarKostnad.sort((a, b) => b.sek - a.sek);
+  const utanKostnadAndel = netto > 0 ? utanKostnad / netto : 0;
+  const bas = { netto, varukostnad, avgifter, reklam, utanKostnad, utanKostnadAndel, utanAvgift, saknarKostnad: saknarKostnad.slice(0, 5) };
+  if (utanKostnadAndel > TAK_UTAN_KOSTNAD) {
+    return { ...bas, status: 'saknas', orsak: `${Math.round(utanKostnadAndel * 100)} % av försäljningen är varianter utan Cost per item i Shopify` };
+  }
+  const bidrag = netto - varukostnad - avgifter - reklam;
+  return { ...bas, status: 'ok', orsak: null, bidrag, marginal: netto > 0 ? bidrag / netto : null };
 }
 
 /**
@@ -375,7 +422,12 @@ export function merTotalt(rader) {
   const utan = rader.filter((r) => !r.komplett && ((r.reklam ?? 0) > 0 || (r.forsaljning ?? 0) > 0 || r.konton.some((k) => k.spend > 0)));
   const forsaljning = med.reduce((s, r) => s + r.forsaljning, 0);
   const reklam = med.reduce((s, r) => s + r.reklam, 0);
-  return { mer: reklam > 0 ? forsaljning / reklam : null, forsaljning, reklam, med, utan };
+  // Vinsten bara över verksamheter där den gick att räkna — vilka följer med.
+  const vinstMed = rader.filter((r) => r.vinst?.status === 'ok');
+  const vinstUtan = rader.filter((r) => r.vinst?.status !== 'ok' && ((r.reklam ?? 0) > 0 || (r.forsaljning ?? 0) > 0 || r.konton.some((k) => k.spend > 0)));
+  const bidrag = vinstMed.length ? vinstMed.reduce((s, r) => s + r.vinst.bidrag, 0) : null;
+  const netto = vinstMed.reduce((s, r) => s + r.vinst.netto, 0);
+  return { mer: reklam > 0 ? forsaljning / reklam : null, forsaljning, reklam, med, utan, bidrag, marginal: bidrag !== null && netto > 0 ? bidrag / netto : null, vinstMed, vinstUtan };
 }
 
 // -------------------------------------------------------------- hälsa

@@ -20,6 +20,7 @@ import { fileURLToPath } from 'node:url';
 import { upptackButiker, hamtaAlla as hamtaButiker, hamtaAllaTvister } from './kallor/shopify.mjs';
 import { hamtaAllt as hamtaMeta } from './kallor/meta.mjs';
 import { hamtaKurser } from './kallor/valuta.mjs';
+import { hamtaAllVinst } from './kallor/vinst.mjs';
 import { samlaRepo, lasProfil, lasSystem } from './kallor/repo.mjs';
 import { rutinlage } from './kallor/rutiner.mjs';
 import { hamtaEskalering } from './kallor/discord.mjs';
@@ -63,6 +64,7 @@ export async function byggSnapshot({
   let butiker = [];
   let annonskonton = [];
   let tvisterLive = null;
+  let vinst = null;
 
   if (utanNat) {
     anteckna('shopify', 'hoppad', 'kördes med --utan-nat');
@@ -79,6 +81,18 @@ export async function byggSnapshot({
     anteckna('shopify', trasiga.length === aktiva.length && aktiva.length ? 'fel' : 'ok',
       trasiga.length ? `${trasiga.length} av ${aktiva.length} butiker gick inte att läsa` : null,
       { butiker: aktiva.length, avstangda: avstangda.length });
+
+    // Underlaget för riktig vinst: netto utan moms, varukostnad (Cost per
+    // item), betalavgifter — 8 dygn, bara dagssummor (kallor/vinst.mjs).
+    logg('Vinstunderlag …');
+    try {
+      vinst = await hamtaAllVinst(upptackta, butiker, { dagar: 8, env, nu, logg });
+      const felV = vinst.filter((v) => v.status !== 'ok');
+      anteckna('shopify:vinst', felV.length === vinst.length && vinst.length ? 'fel' : 'ok',
+        felV.length ? `${felV.length} av ${vinst.length} butiker gav inget vinstunderlag` : null, { butiker: vinst.length });
+    } catch (e) {
+      anteckna('shopify:vinst', 'fel', e.message);
+    }
 
     // Tvisterna direkt ur Shopify, varje hämtning. Veckorapporten är bara
     // reserv för en butik Shopify inte svarar för (bonus/kallor.mjs
@@ -181,6 +195,7 @@ export async function byggSnapshot({
     butiker,
     annonskonton,
     valutakurser,
+    vinst,
     bonus,
     bonusProgram: (() => { try { return lasRegler(join(rot, 'bonus', 'regler.json')); } catch { return null; } })(),
     personer: (() => { try { return lasPersoner(join(rot, 'bonus', 'personer.json')); } catch { return []; } })(),

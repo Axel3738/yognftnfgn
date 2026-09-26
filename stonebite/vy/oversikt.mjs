@@ -24,7 +24,7 @@
 
 import { esc, hjalte, kort, panel, tabell, tomt, block, spark, status, tal, pengar } from './delar.mjs';
 import { sidhuvud, fornamn } from './layout.mjs';
-import { oversikt as raknaOversikt, allaKampanjer, kallolage, produktlista, verksamheter, merTotalt } from '../data.mjs';
+import { oversikt as raknaOversikt, allaKampanjer, kallolage, produktlista, verksamheter, merTotalt, TAK_UTAN_KOSTNAD } from '../data.mjs';
 import { forandring, sedan, DAG } from '../berakna.mjs';
 import { harRatt } from '../roller.mjs';
 import { forklaraFel, kallnamn, kortMotivering, atgardsnamn, tvisttyp } from '../forklaring.mjs';
@@ -161,6 +161,34 @@ function merrad(v) {
   </tr>`;
 }
 
+const procentText = (v) => (v === null || v === undefined ? '–' : `${(v * 100).toLocaleString('sv-SE', { maximumFractionDigits: 1 })} %`);
+
+/** En verksamhets rad i vinsttabellen. Saknas vinsten står orsaken, och vad som ska fyllas i. */
+function vinstrad(v) {
+  const w = v.vinst ?? { status: 'saknas', orsak: 'inget underlag', saknarKostnad: [] };
+  const ok = w.status === 'ok';
+  const fyll = (w.saknarKostnad ?? []).slice(0, 3).map((x) => x.titel.split(' – ')[0].split(' · ')[0]).join(', ');
+  const bi = ok
+    ? (w.utanKostnad > 0 ? `Cost per item saknas för ${pengar(Math.round(w.utanKostnad), HUVUDVALUTA)}` : 'Varukostnad finns för allt')
+    : w.utanKostnadAndel > TAK_UTAN_KOSTNAD
+      ? `${Math.round(w.utanKostnadAndel * 100)} % saknar Cost per item. Fyll i: ${fyll}`
+      : `Räknas inte: ${kortOrsak(w.orsak)}`;
+  const kr = (x) => (x === null || x === undefined ? '–' : pengar(Math.round(x), HUVUDVALUTA));
+  return `<tr>
+    <td>
+      <span class="namn">${esc(v.namn)}</span>
+      <span class="bi">${esc(bi)}</span>
+    </td>
+    <td class="tal"><b>${ok ? kr(w.bidrag) : '–'}</b></td>
+    <td class="tal">${ok ? procentText(w.marginal) : '–'}</td>
+    <td class="tal">${kr(w.netto)}</td>
+    <td class="tal">${w.varukostnad !== undefined ? `−${kr(w.varukostnad)}` : '–'}</td>
+    <td class="tal">${w.avgifter !== undefined ? `−${kr(w.avgifter)}` : '–'}</td>
+    <td class="tal">${w.reklam !== undefined && w.reklam !== null ? `−${kr(w.reklam)}` : '–'}</td>
+    <td>${ok ? status(w.bidrag >= 0 ? 'bra' : 'kritisk', w.bidrag >= 0 ? 'vinst' : 'förlust') : status('neutral', 'saknar data')}</td>
+  </tr>`;
+}
+
 /** "1 NOK = 1,04 kr · …" för de valutor som faktiskt räknades om. */
 function kurstext(rader, kurser) {
   if (kurser?.status !== 'ok') return '';
@@ -222,12 +250,6 @@ export function oversiktSida({ snapshot, anvandare, kalender = [], nu = new Date
   const vrader = serRatt && serSpend ? verksamheter(snapshot, { nu }) : [];
   const mer = merTotalt(vrader);
   const korten = [
-    kort({
-      etikett: 'Ordrar i dag',
-      varde: huvud?.idag ? tal(huvud.idag.ordrar) : '–',
-      forklaring: huvud?.igar ? `Hela gårdagen blev det ${tal(huvud.igar.ordrar)} stycken.` : 'Ingen jämförelse att göra än.',
-      fot: huvud ? `7 dagar: ${tal(huvud.vecka.ordrar)} ordrar` : '',
-    }),
     serSpend ? kort({
       etikett: 'Reklam i dag',
       varde: spend ? pengar(Math.round(spend.idag), HUVUDVALUTA) : '–',
@@ -240,6 +262,15 @@ export function oversiktSida({ snapshot, anvandare, kalender = [], nu = new Date
       forklaring: 'Metas eget mått: så många kronor in för varje krona vi lägger på reklam. 2,00 = dubbla pengarna tillbaka.',
       status: roas7 ? status(roas7 >= 2 ? 'bra' : roas7 >= 1.5 ? 'varning' : 'kritisk', roas7 >= 2 ? 'stabilt' : roas7 >= 1.5 ? 'tunt' : 'lågt') : null,
       fot: spend ? `${pengar(Math.round(spend.vecka), HUVUDVALUTA)} reklam · ${tal(spend.kop7)} köp` : '',
+    }) : null,
+    serRatt && serSpend ? kort({
+      etikett: 'Vinstbidrag 7 dagar',
+      varde: mer.bidrag !== null ? pengar(Math.round(mer.bidrag), HUVUDVALUTA) : '–',
+      forklaring: mer.bidrag !== null
+        ? `Det som blev kvar efter varor, betalavgifter och reklam: ${procentText(mer.marginal)} av försäljningen.`
+        : 'Går inte att räkna ännu — se tabellen Riktig vinst nedan.',
+      status: mer.bidrag !== null ? status(mer.bidrag >= 0 ? 'bra' : 'kritisk', mer.bidrag >= 0 ? 'vinst' : 'förlust') : null,
+      fot: mer.vinstMed.length ? `Räknat på ${ochLista(mer.vinstMed.map((v) => v.namn))}${mer.vinstUtan.length ? `. Saknas: ${ochLista(mer.vinstUtan.map((v) => v.namn))}` : ''}.` : '',
     }) : null,
     serRatt && serSpend ? kort({
       etikett: 'MER 7 dagar',
@@ -263,6 +294,20 @@ export function oversiktSida({ snapshot, anvandare, kalender = [], nu = new Date
         synliga.sort((a, b) => (b.reklam ?? 0) - (a.reklam ?? 0)).map(merrad),
       ),
       fot: `7 hela dygn till och med i går. Varje annonskonto hör till sina egna butiker (varumarken.json).${kurstext(vrader, snapshot?.valutakurser)} Veckan innan saknas där ett annonskonto delas med en annan verksamhet (Meta ger bara sju dagar per kampanj). Kvar efter reklam är inte vinst: varor, frakt och avgifter är inte avdragna.${tysta.length ? ` Ingen försäljning och ingen reklam: ${tysta.map((v) => v.namn).join(', ')}.` : ''}`,
+    }),
+  }) : '';
+
+  // ----------------------------------------------------- riktig vinst
+  const utanAvgift = synliga.reduce((x, v) => x + (v.vinst?.status === 'ok' ? v.vinst.utanAvgift : 0), 0);
+  const vinstdel = vrader.length ? block({
+    titel: 'Riktig vinst per verksamhet, 7 dagar',
+    under: 'Vinstbidrag = försäljning utan moms − varukostnad − betalavgifter − reklam. Evolve-kursens formel.',
+    innehall: panel({
+      innehall: tabell(
+        [{ titel: 'Verksamhet' }, { titel: 'Vinstbidrag', tal: true }, { titel: 'Av försäljningen', tal: true }, { titel: 'Sålt utan moms', tal: true }, { titel: 'Varukostnad', tal: true }, { titel: 'Avgifter', tal: true }, { titel: 'Reklam', tal: true }, { titel: 'Läge' }],
+        [...synliga].sort((a, b) => (b.vinst?.bidrag ?? -Infinity) - (a.vinst?.bidrag ?? -Infinity)).map(vinstrad),
+      ),
+      fot: `Varukostnaden är "Cost per item" i Shopify gånger sålt antal. Frakten från leverantören ingår bara om den ligger i det talet. Betalavgifterna är Shopify Payments egna${utanAvgift > 0 ? `; för ${pengar(Math.round(utanAvgift), HUVUDVALUTA)} betalt på annat sätt (till exempel PayPal) saknas avgiften, så vinsten är där något för hög` : ''}. Löner, appar och andra fasta kostnader är inte avdragna. En verksamhet räknas inte om mer än 1 % av försäljningen saknar Cost per item.`,
     }),
   }) : '';
 
@@ -414,6 +459,7 @@ export function oversiktSida({ snapshot, anvandare, kalender = [], nu = new Date
     ${hjaltedel}
     <div class="kort-rad">${korten}</div>
     ${kraverdel}
+    ${vinstdel}
     ${merdel}
     ${valutadel}
     ${butiksdel}
