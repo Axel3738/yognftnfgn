@@ -1,5 +1,10 @@
 # Prompt: ladda upp CaraShells mejlsystem i Spoks (klistra in i en NY session)
 
+✅ **KÖRD 2026-09-26** — allt uppladdat i workspace `38f3d430-690c-4c0b-8419-8ec2e5272148`,
+facit i `klaviyo/spoks/carashell/spoks-id.json`, läget i `klaviyo/spoks/README.md` → CaraShell.
+Kör den INTE igen: steg 0 hittar då allt som redan finns, men en ny uppladdning är aldrig
+rätt väg — ändringar görs med `update_draft_campaign` på de befintliga id:na.
+
 Skriven 2026-09-26. Förutsättning: CaraShells workspace syns i `whoami` för
 Spoks-MCP:n. 2026-09-26 låg den under ett eget Spoks-konto som Axel råkade skapa
 (hans klick: i det kontot, CaraShells workspace → Settings → Team → "Invite team
