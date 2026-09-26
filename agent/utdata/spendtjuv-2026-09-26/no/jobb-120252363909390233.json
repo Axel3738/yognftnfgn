@@ -1,0 +1,57 @@
+{
+  "kampanj_id": "120252363909390233",
+  "kampanj_namn": "Kajakkholder NO | BE-ROAS 1,62 | 2026-09-24",
+  "break_even": 1.62,
+  "spend_3d": "1568.44 kr (SEK)",
+  "attribution_annonsrader": "kontots standard (MCP-verktyget tar inte action_attribution_windows)",
+  "annonser": [
+    {
+      "id": "120252363914040233",
+      "namn": "Kajakkholder_NO_GT_1_H1",
+      "spend": "786.15 kr (SEK)",
+      "kop": 1,
+      "roas": 2.576735,
+      "status": "ACTIVE",
+      "roas_livstid": 2.247481,
+      "spend_livstid": "901.32 kr (SEK)",
+      "kop_livstid": 1
+    },
+    {
+      "id": "120252363912070233",
+      "namn": "Kajakkholder_NO_PD_1_H1",
+      "spend": "145.26 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "146.74 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120252363913280233",
+      "namn": "Kajakkholder_NO_CS_1_H2",
+      "spend": "565.56 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "585.01 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120252363914130233",
+      "namn": "Kajakkholder_NO_GT_1_H3",
+      "spend": "72.08 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "75.63 kr (SEK)",
+      "kop_livstid": 0
+    }
+  ],
+  "raddningar_14d": 0,
+  "agarbeslut_idag": false,
+  "forlangning_idag": false,
+  "lage_info": "trappa"
+}

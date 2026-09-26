@@ -1,0 +1,145 @@
+{
+  "kampanj_id": "120252102071560233",
+  "kampanj_namn": "Arbeidslampe NO | BE-ROAS 1,63 | 2026-09-06",
+  "break_even": 1.63,
+  "spend_3d": "2185.73 kr (SEK)",
+  "attribution_annonsrader": "kontots standard (MCP-verktyget tar inte action_attribution_windows)",
+  "annonser": [
+    {
+      "id": "120252102159360233",
+      "namn": "Arbeidslampe_NO_SP_1_H2",
+      "spend": "0.21 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "34.18 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120252102159210233",
+      "namn": "Arbeidslampe_NO_SP_1_H1",
+      "spend": "0.00 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "7.51 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120252102159450233",
+      "namn": "Arbeidslampe_NO_SP_1_H3",
+      "spend": "0.98 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "31.37 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120252102136790233",
+      "namn": "Arbeidslampe_NO_PD_1_H2",
+      "spend": "651 kr (SEK)",
+      "kop": 1,
+      "roas": 0.92149,
+      "status": "ACTIVE",
+      "roas_livstid": 1.098748,
+      "spend_livstid": "3581.44 kr (SEK)",
+      "kop_livstid": 7
+    },
+    {
+      "id": "120252102136330233",
+      "namn": "Arbeidslampe_NO_PD_1_H1",
+      "spend": "1378.45 kr (SEK)",
+      "kop": 4,
+      "roas": 1.683035,
+      "status": "ACTIVE",
+      "roas_livstid": 2.183663,
+      "spend_livstid": "13483.63 kr (SEK)",
+      "kop_livstid": 63
+    },
+    {
+      "id": "120252102137550233",
+      "namn": "Arbeidslampe_NO_PD_1_H3",
+      "spend": "95.76 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0.535369,
+      "spend_livstid": "660.89 kr (SEK)",
+      "kop_livstid": 1
+    },
+    {
+      "id": "120252102111350233",
+      "namn": "Arbeidslampe_NO_GT_1_H3",
+      "spend": "0.00 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "0.00 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120252102110930233",
+      "namn": "Arbeidslampe_NO_GT_1_H1",
+      "spend": "0.00 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "1.66 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120252102111150233",
+      "namn": "Arbeidslampe_NO_GT_1_H2",
+      "spend": "0.27 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "0.75 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120252102097880233",
+      "namn": "Arbeidslampe_NO_CS_1_H3",
+      "spend": "58.7 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 2.803135,
+      "spend_livstid": "1167.3 kr (SEK)",
+      "kop_livstid": 5
+    },
+    {
+      "id": "120252102097700233",
+      "namn": "Arbeidslampe_NO_CS_1_H1",
+      "spend": "1.54 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "42.33 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120252102097810233",
+      "namn": "Arbeidslampe_NO_CS_1_H2",
+      "spend": "0.08 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "49.62 kr (SEK)",
+      "kop_livstid": 0
+    }
+  ],
+  "raddningar_14d": 0,
+  "agarbeslut_idag": false,
+  "forlangning_idag": false,
+  "lage_info": "info"
+}

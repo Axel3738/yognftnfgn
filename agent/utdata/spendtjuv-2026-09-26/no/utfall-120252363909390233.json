@@ -1,0 +1,54 @@
+{
+  "tjuvar": [
+    {
+      "id": "120252363913280233",
+      "namn": "Kajakkholder_NO_CS_1_H2",
+      "status": "ACTIVE",
+      "spend": 565.56,
+      "roas": 0,
+      "kop": 0,
+      "alder_dagar": null,
+      "spend_7d": null,
+      "roas_7d": null,
+      "backdagar_i_rad": null,
+      "etikett": null,
+      "etikett_datum": null,
+      "roas_livstid": 0,
+      "intakt": 0,
+      "trott_vinnare": false,
+      "orsak": "NOLL_KOP"
+    }
+  ],
+  "raddade": [
+    {
+      "id": "120252363914040233",
+      "namn": "Kajakkholder_NO_GT_1_H1",
+      "status": "ACTIVE",
+      "spend": 786.15,
+      "roas": 2.576735,
+      "kop": 1,
+      "alder_dagar": null,
+      "spend_7d": null,
+      "roas_7d": null,
+      "backdagar_i_rad": null,
+      "etikett": null,
+      "etikett_datum": null,
+      "roas_livstid": 2.247481,
+      "intakt": 2025.70022025
+    }
+  ],
+  "rest": {
+    "spend": 1003.49,
+    "intakt": 2025.70022025,
+    "kop": 1,
+    "roas": 2.01865511390248
+  },
+  "break_even": 1.62,
+  "kampanj_spend": 1568.44,
+  "tjuvSpend": 565.56,
+  "tjuvAndel": 0.3605875902170309,
+  "dom": "PAUSA_TJUVAR",
+  "motivering": "1 spendtjuv tog 36 % av spenden under break-even 1,62: Kajakkholder_NO_CS_1_H2 (566 kr, ROAS 0,00). Resten av kampanjen ligger på ROAS 2,02 (1 003 kr, 1 köp) — över break-even. Pausa tjuvarna, låt kampanjen stå kvar.",
+  "kampanj_id": "120252363909390233",
+  "kampanj_namn": "Kajakkholder NO | BE-ROAS 1,62 | 2026-09-24"
+}
