@@ -1,7 +1,33 @@
-## Order #4446 — 1 262,20 SEK — inquiry — due 2026-09-23
+## Order #4446 — 1 262,20 SEK — 🔴 **CHARGEBACK** — due **2026-10-07**
 
-**Decision: FIGHT — medium. The evidence must state, not hide, that the customer
-asked for a return on 2026-08-25 and got no answer for 22 days.**
+> ⛔ **It escalated. This is no longer an inquiry** (measured 2026-09-26). We
+> answered it in time — evidence went in before the 2026-09-23 deadline and the
+> dispute sat `under_review` on 2026-09-24 — and the bank turned it into a
+> chargeback anyway. **The 1 262,20 SEK is already taken from us and a loss is now
+> final.** Same dispute, same id `17587110379869`, same filing date 2026-09-04: the
+> type changed in place, which is why it never appeared as a second row.
+> ⚠️ Shopify no longer returns an order NAME on it, so the alarm and the dashboard
+> call it **"order 17587110379869"**. That is this order. Do not look for a second
+> case.
+> ⛔ **Never refund this order.** The money is gone to the bank; a refund pays the
+> customer twice out of our own pocket.
+
+**Decision: FIGHT again — same argument, and it is still the honest one. The
+evidence must state, not hide, that the customer asked for a return on 2026-08-25
+and got no answer for 22 days.**
+
+**What is different now**
+
+- New deadline **2026-10-07**. Same rule as before: build it and press **Save**;
+  press *Submit* on 2026-10-06.
+- **Re-read the mailbox first.** He may have replied to the return email since
+  2026-09-23, and a reply changes the case in either direction: if he has returned
+  the goods or says he will, that belongs in the evidence — and if the goods have
+  actually arrived, stop and accept instead of fighting.
+  `node kundtjanst/mail.mjs sok "lindqvist" --brand baverbutiken --sidor 40`
+- Losing costs the amount **plus the chargeback fee**. Below, "if it fails" is no
+  longer hypothetical: it is the likely outcome, and that is fine — the evidence is
+  cheap and the alternative is conceding 1 262 kr without an argument.
 
 > ⚠️ **This sheet was wrong until 2026-09-22 and the version before it must not be
 > used.** It said "no return request, no cancellation request and no contact of any
@@ -52,7 +78,7 @@ What we cannot argue: that he never contacted us, or that we handled it well.
    to a parcel shop, and does **not** ask him to drop the case. Send it, then save
    it as PDF for the evidence pack.
 2. **Then build the evidence** (Shopify admin → Orders → #4446 → dispute panel →
-   **Add evidence** → **Save**, never *Submit now* before 2026-09-22 — see
+   **Add evidence** → **Save**, never *Submit now* before **2026-10-06** — see
    `START-HERE.md` RULE 3).
 
 **Evidence to attach**
