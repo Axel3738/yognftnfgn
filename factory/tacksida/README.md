@@ -191,6 +191,16 @@ Orderstatussidan: samma kort, gömt efter giltig_timmar (Storage API).
   skapad på en annan butiks "Factory" ser exakt ut som den rätta och ger
   precis det här felet. Kontrollera client id i appens Settings mot
   `SHOPIFY_CLIENT_ID_yitrbk_m3` innan den läggs in.
+  **Coworks mätning 2026-09-26 (prompten `cowork/1-automation-token.txt`):**
+  inloggad som `axelodhner.business@gmail.com` finns appen INTE i någon
+  organisation — "Utveckla appar" i CaraShells admin öppnar en tom, nyskapad
+  org "Carashell" (235001191), och de fyra org:ar kontot ser (Carashell,
+  Matstrumpor.se, Bäverbutiken.se, Grillkliniken) bär åtta appar, ingen med
+  `ca709dfb`. Förklaringen står i fabrikens egen checklista: VA:n skapar
+  butiken OCH appen från **jobb-Gmailen** (`VA-CHECKLIST.md` rad 101), och
+  butiken förs sedan över till Axel — men appen stannar i skaparens Dev
+  Dashboard-organisation. Token måste alltså genereras inloggad med
+  jobb-Gmailen. Cowork får inte skriva in token i Environments; Axel klistrar.
   ⚠️ CLI-fälla i samma körning: `SHOPIFY_FLAG_APP_CONFIG` får inte vara satt
   när `config link --client-id --file-name` körs (CLI:n läser den som
   `--config` och vägrar). `deploy.sh` kör länkningen med `env -u`.
