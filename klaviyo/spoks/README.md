@@ -93,8 +93,10 @@ Shopify `yitrbk-m3`, plan **Free = 5 000 mejl/mån**). Facit med varje id:
   domänen var då verifierad: carashell.com bär Spoks poster (`link` → `t7pzafpu.link.spoks.com`,
   `feed` → `0mjnbqxx.feed.spoks.com`, `kps`/`kps2._domainkey` → `u115622048.wl049.sendgrid.net`,
   `_dmarc` `v=DMARC1; p=none;`), mätt med Cloudflare DoH; NS/MX/A orörda (Loopia, Shopify).
-  Rot-SPF:en saknar fortfarande `include:sendgrid.net` (SendGrids egen `em…`-CNAME bär SPF för
-  avsändarvägen, och Spoks godkände domänen ändå). Webbsäkra reservtypsnitt står kvar på
+  Rot-SPF:en saknade `include:sendgrid.net` vid uppladdningen (Spoks godkände domänen ändå, SendGrids
+  egen `em…`-CNAME bär SPF för avsändarvägen); mätt 18:50 samma dag bär den
+  `v=spf1 include:spf.loopia.se include:sendgrid.net -all`. carashell.se saknar DMARC, men mejlen
+  går från carashell.com, som har den. Webbsäkra reservtypsnitt står kvar på
   Helvetica/Arial Black (ändras inte via MCP:n, syns bara om Google Fonts inte laddar).
 - **13 segment** (`SEG_samtycke_sv/nb/en` 15/4/57 …, `SEG_oengagerade_180d` inte valbart i kampanjer).
 - **24 flöden, 45 mejl** (8 per språk), alla `isActive: false`, alla sändsteg `isEnabled: false`.
@@ -127,8 +129,10 @@ Shopify `yitrbk-m3`, plan **Free = 5 000 mejl/mån**). Facit med varje id:
   Efter uppdateringen räknat: 42 utkast, titlar och id stämmer mot `plan.json`, inga dubbletter.
 
 **Inget är påslaget.** Att slå på ett flöde = sändstegen på ett i taget i flödesredigeraren,
-sedan flödet (samma som Matstrumpor). F14 (recension) får inte slås på förrän Trustpilot-profilen
-för carashell.se finns (evaluate-sidan svarade 404 2026-09-26 11:40; Axel skapar den).
+sedan flödet (samma som Matstrumpor). F14 (recension) väntade på Trustpilot: evaluate-sidan för
+carashell.se svarade 404 2026-09-26 11:40 och **200 kl 18:50** ("Rate Carashell", Axel skapade
+profilen), och alla 15 stjärnlänkar i F14 (3 språk × 5) svarade 200. F14 kan alltså slås på som
+de andra.
 
 Axels order 2026-09-26 (`PROMPT-carashell.md`): hela mejlsystemet för CaraShell i
 Spoks, alla marknader och språk, allt som utkast. CaraShell är en egen verksamhet:
@@ -217,8 +221,8 @@ igenom (negationen), medan ett påstående om elastiska band fortfarande stoppar
 - `order_delivered` finns som trigger (blueprintlistan använder den inte). CaraShells
   spårningsrutin skriver leveransskanningen i Shopify varje timme, så F06 (montering)
   och F14 (recension) triggas på leverans — **omätt i CaraShells workspace**, se PLAN.md.
-- Trustpilot har ingen profil för carashell.se (`evaluate`-sidan 404, Bäverbutikens 308).
-  F14 slås inte på förrän profilen finns.
+- Trustpilot hade ingen profil för carashell.se vid bygget (`evaluate`-sidan 404, Bäverbutikens
+  308). Profilen finns sedan 2026-09-26 eftermiddag (200, se ovan).
 - Kassaflödet kräver subscribed (MFL 19 §) och når därför bara 7 % av svenska
   kassor. Det är lagen, inte ett fel.
 
@@ -240,7 +244,7 @@ steg 0) kan gå vidare. Det extra kontot rörs inte av någon session.
 2. ✅ Domänen carashell.com kopplad och verifierad (DNS-posterna ovan fanns 11:35).
 3. ✅ Black Week: B (svar 2026-09-26). Trappan ligger i Shopify, K09 är omskriven och K09B tillagd.
    Rabatten gäller hela butiken, även för den som kommer från en annons.
-4. Trustpilot-profil för carashell.se (Axel gör den), sedan F14.
+4. ✅ Trustpilot-profil för carashell.se (sidan svarade 200 kl 18:50, stjärnlänkarna fungerar).
 5. Slå på flödena ett språk i taget (sändstegen först, sedan flödet); stäng först Shopifys egna
    automatiseringar för övergiven kassa (Marknadsföring → Automatiseringar), annars får kunden två mejl.
 6. Kampanjerna: publik `SEG_samtycke_<sprak>` och tiden i `spoks-id.json → kampanjer.*.planerad`,
