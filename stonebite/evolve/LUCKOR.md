@@ -79,6 +79,7 @@ i `stonebite/test` med första utökningen.
 ## Byggordningen efter Evolve (2026-09-26, alla tre svaren i `SVAR.md`)
 
 1. **Ägarens dagskort:** MER per verksamhet i rätt valuta, NCPA och vinstbidrag per butik med kursens formel (nettoomsättning − varukostnad − frakt − avgifter − reklam). Svar 1.
+   ✅ **1a byggt 2026-09-26:** MER per verksamhet på Översikt (tabell + kortet "MER 7 dagar"), ECB-kurser i hämtningen, Matstrumpors konto läses. Kvar: 1b riktig vinst (kräver varukostnad per produkt för CaraShell och Matstrumpor).
 2. **Creative-tavlan för hela laget:** batcher planerade/klara/försenade, tid brief → live, andel vinnare och breakthroughs, mix nya idéer/iterationer, annonser äldre än 10 dagar utan leverans. Utan kronor. Ur Notion-hubbarna och etiketterna. Svar 3 (D1).
 3. **Privat scorecard per person på Min sida:** redigerarens fem tal (Karlo), kundtjänstens fem tal (Shaun), avstämning dag 30 för nya, självskattning en gång i månaden. Svar 2 och 3.
 4. **Leverans som arbetslista, tvistratio, larm när en källa blir gammal.** Kursen saknar dem, vår data räcker. Egen design.

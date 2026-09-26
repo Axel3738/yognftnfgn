@@ -90,7 +90,6 @@
           "hela": true
         }
       ],
-      "konton_saknas": "META_ACCESS_TOKEN nådde inte SnarkLös vid senaste hämtningen — bara Magiborsten-kontona lästes. Kontot står här så det syns att det saknas.",
       "kundtjanst": [],
       "kundtjanst_saknas": "Ingen brandfil i kundtjanst/brands/ — veckorapporten läser inte Grillklinikens brevlåda än (KUNDTJANST_MAIL_PASS_GRILLKLINIKEN saknas).",
       "leverans": [],
@@ -123,7 +122,6 @@
           "hela": true
         }
       ],
-      "konton_saknas": "META_ACCESS_TOKEN nekas på kontot 'nya kungen' — allt som skriver i Meta går via Adsmanager-MCP:n, och siffrorna kan inte hämtas av rutinen förrän appen fått åtkomst.",
       "kundtjanst": [
         "matstrumpor"
       ],

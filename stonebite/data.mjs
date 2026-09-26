@@ -9,7 +9,7 @@
 //   • Ett tal som saknas är null hela vägen ut, så vyn kan skriva orsaken.
 
 import { readFileSync, existsSync, statSync } from 'node:fs';
-import { dagnyckel, forandring, vinstbidragRoas, breakEvenUrNamn, cpa, motBreakEven, bedombar } from './berakna.mjs';
+import { dagnyckel, sistaDagarna, forandring, vinstbidragRoas, breakEvenUrNamn, cpa, motBreakEven, bedombar } from './berakna.mjs';
 
 let cache = { fil: null, mtime: 0, data: null };
 
@@ -100,18 +100,26 @@ export function butikerPerValuta(lagen) {
 
 // ------------------------------------------------------------- annonser
 
+/**
+ * Dagarna i ett fönster som slutar i GÅR (Meta och butikerna jämförs på hela
+ * dygn). `hopp` flyttar fönstret bakåt: hopp 7 = veckan innan.
+ */
+export function fonsterDagar(antal, { nu = new Date(), hopp = 0 } = {}) {
+  return new Set(sistaDagarna(antal + 1 + hopp, { nu }).slice(0, antal));
+}
+
 /** Ett annonskontos läge, samma perioder som butikerna. */
-export function kontoLage(konto) {
+export function kontoLage(konto, { nu = new Date() } = {}) {
   const dagar = konto?.dagar ?? [];
-  const sista = (antal, hopp = 0) => {
-    const slut = dagar.length - hopp;
-    return dagar.slice(Math.max(0, slut - antal), Math.max(0, slut));
-  };
-  // Metas dagsserie slutar i går (date presets utesluter innevarande dag).
-  const igar = dagar[dagar.length - 1] ?? null;
-  const vecka = sista(7);
-  const forraVeckan = sista(7, 7);
-  const manad = sista(30);
+  // ⚠️ Metas dagsserie HOPPAR ÖVER dagar utan spend (mätt 2026-09-26: FI-kontot
+  // hade 12 rader på 30 dagar, 08-31 följt av 09-18). "De sju sista raderna" kan
+  // alltså spänna över flera veckor — fönstret väljs därför på DATUM.
+  const i = (fonster) => dagar.filter((d) => fonster.has(d.datum));
+  const igarNyckel = dagnyckel(new Date(nu.getTime() - 86_400_000));
+  const igar = dagar.find((d) => d.datum === igarNyckel) ?? null;
+  const vecka = i(fonsterDagar(7, { nu }));
+  const forraVeckan = i(fonsterDagar(7, { nu, hopp: 7 }));
+  const manad = i(fonsterDagar(30, { nu }));
   const roasFor = (rader) => {
     const s = summa(rader, 'spend');
     const intakt = rader.reduce((x, r) => x + (r.roas !== null && r.roas !== undefined ? r.spend * r.roas : 0), 0);
@@ -137,8 +145,8 @@ export function kontoLage(konto) {
   };
 }
 
-export function allaKontolagen(snapshot) {
-  return (snapshot?.annonskonton ?? []).map(kontoLage);
+export function allaKontolagen(snapshot, { nu = new Date() } = {}) {
+  return (snapshot?.annonskonton ?? []).map((k) => kontoLage(k, { nu }));
 }
 
 /**
@@ -186,7 +194,7 @@ export function allaKampanjer(snapshot, produkter = []) {
 export function oversikt(snapshot, { nu = new Date() } = {}) {
   const lagen = allaButikslagen(snapshot, { nu });
   const valutor = butikerPerValuta(lagen);
-  const konton = allaKontolagen(snapshot).filter((k) => k.status === 'ok');
+  const konton = allaKontolagen(snapshot, { nu }).filter((k) => k.status === 'ok');
 
   const spendPerValuta = new Map();
   for (const k of konton) {
@@ -228,6 +236,146 @@ export function oversikt(snapshot, { nu = new Date() } = {}) {
     olasbara: lagen.filter((b) => b.status !== 'ok' && b.status !== 'av'),
     avstangda: lagen.filter((b) => b.status === 'av'),
   };
+}
+
+// ---------------------------------------------------- MER per verksamhet
+
+/**
+ * Hör kampanjen till varumärkets del av ett delat konto? `prefix`/`utom` i
+ * varumarken.json matchas som ORD I NAMNET, inte som början.
+ * ⚠️ Mätt 2026-09-26: CaraShells kampanjer i Magiborsten UK heter bland annat
+ * "AU LISTICLE Taköverdrag CARASHELL" och "1 CARASHELL_US_…". Med startsWith
+ * räknades ~107 000 kr av CaraShells reklam på sju dagar som Bäverbutikens.
+ */
+export function kampanjTillhor(post, namn) {
+  const n = String(namn ?? '').toUpperCase();
+  const finns = (p) => n.includes(String(p).replace(/_+$/, '').toUpperCase());
+  if (post?.prefix) return post.prefix.some(finns);
+  if (post?.utom) return !post.utom.some(finns);
+  return true;
+}
+
+/**
+ * Är snapshot-butiken den som varumarken.json pekar på? Id:t, eller
+ * myshopify-namnet (Matstrumpor står som "1r46tp-qx" i registret men heter
+ * "matstrumpor" i hämtningen — mätt 2026-09-26).
+ */
+export function butikenAr(id, butik) {
+  return butik?.id === id || butik?.shop === `${id}.myshopify.com`;
+}
+
+/**
+ * All försäljning mot all reklam, per verksamhet, de senaste 7 hela dygnen.
+ * MER = försäljning ÷ reklam. Till skillnad från ROAS (Metas egen gissning om
+ * vad annonserna sålde) räknas här det som faktiskt kom in i butikerna.
+ * Evolve-kursens första tal för ägaren (stonebite/evolve/SVAR.md, svar 1).
+ *
+ * Varumärkena och vilka butiker och konton som hör till dem står i
+ * varumarken.json. Delade konton delas på kampanjprefix (7-dagarsfönstret
+ * last_7d, samma dygn som butikernas vecka).
+ *
+ * Reglerna:
+ *   • Försäljningen räknas om till kronor med ECB-kursen, eftersom reklamen
+ *     betalas i kronor. Varje butik står kvar i sin egen valuta bredvid.
+ *   • MER räknas BARA när alla butiker och alla konton i verksamheten gick att
+ *     läsa. Annars null + orsak — en halv försäljning mot hela reklamen ger
+ *     ett tal som ser dåligt ut av fel skäl.
+ *   • "Kvar efter reklam" är inte vinst: varor, frakt och avgifter är inte
+ *     avdragna.
+ */
+export function verksamheter(snapshot, { nu = new Date() } = {}) {
+  const kurser = snapshot?.valutakurser?.status === 'ok' ? snapshot.valutakurser : null;
+  const sekPer = kurser?.sekPer ?? { SEK: 1 };
+  const vecka = fonsterDagar(7, { nu });
+  const forraVeckan = fonsterDagar(7, { nu, hopp: 7 });
+  const butikerIn = snapshot?.butiker ?? [];
+  const kontonIn = snapshot?.annonskonton ?? [];
+
+  const saljer = (butik, fonster) => (butik.dagar ?? []).filter((d) => fonster.has(d.datum))
+    .reduce((s, d) => ({ omsattning: s.omsattning + (Number(d.omsattning) || 0), ordrar: s.ordrar + (Number(d.ordrar) || 0) }), { omsattning: 0, ordrar: 0 });
+
+  return (snapshot?.varumarken ?? []).map((vm) => {
+    const saknas = [];
+
+    // ---------------------------------------------------------- butikerna
+    const butiker = [];
+    for (const id of vm.butiker ?? []) {
+      const b = butikerIn.find((x) => butikenAr(id, x));
+      if (!b) { saknas.push({ vad: id, orsak: 'butiken finns inte i hämtningen' }); continue; }
+      if (b.status === 'av') continue; // avstängd med flit (butiker-av.json)
+      if (b.status !== 'ok') { saknas.push({ vad: b.namn ?? id, orsak: b.orsak ?? 'butiken gick inte att läsa' }); continue; }
+      const v = saljer(b, vecka);
+      const f = saljer(b, forraVeckan);
+      const kurs = sekPer[b.valuta] ?? null;
+      if (kurs === null) saknas.push({ vad: b.namn, orsak: `ingen växelkurs för ${b.valuta}` });
+      butiker.push({ id: b.id, namn: b.namn, valuta: b.valuta, omsattning: v.omsattning, ordrar: v.ordrar, sek: kurs === null ? null : v.omsattning * kurs, sekForra: kurs === null ? null : f.omsattning * kurs });
+    }
+    if (!(vm.butiker ?? []).length) saknas.push({ vad: 'butiken', orsak: vm.butiker_saknas ?? 'ingen butik registrerad' });
+
+    // ----------------------------------------------------------- reklamen
+    const konton = [];
+    for (const post of vm.konton ?? []) {
+      const raa = kontonIn.find((k) => String(k.id) === String(post.id));
+      if (!raa || raa.status !== 'ok') { saknas.push({ vad: post.namn ?? post.id, orsak: raa?.orsak ?? vm.konton_saknas ?? 'annonskontot lästes inte' }); continue; }
+      const delat = !post.hela;
+      let spend;
+      let spendForra = null;
+      if (delat) {
+        spend = (raa.kampanjer ?? []).filter((k) => kampanjTillhor(post, k.namn)).reduce((s, k) => s + (Number(k.spend) || 0), 0);
+      } else {
+        spend = (raa.dagar ?? []).filter((d) => vecka.has(d.datum)).reduce((s, d) => s + (Number(d.spend) || 0), 0);
+        spendForra = (raa.dagar ?? []).filter((d) => forraVeckan.has(d.datum)).reduce((s, d) => s + (Number(d.spend) || 0), 0);
+      }
+      const kurs = sekPer[raa.valuta] ?? null;
+      if (kurs === null) saknas.push({ vad: post.namn ?? raa.namn, orsak: `ingen växelkurs för ${raa.valuta}` });
+      konton.push({ id: raa.id, namn: post.namn ?? raa.namn, valuta: raa.valuta, delat, spend, sek: kurs === null ? null : spend * kurs, sekForra: kurs === null || spendForra === null ? null : spendForra * kurs });
+    }
+    if (!(vm.konton ?? []).length) saknas.push({ vad: 'annonskontot', orsak: 'inget annonskonto registrerat' });
+
+    const behoverKurs = [...butiker, ...konton].some((x) => x.valuta && x.valuta !== 'SEK');
+    if (behoverKurs && !kurser) saknas.push({ vad: 'växelkursen', orsak: snapshot?.valutakurser?.orsak ?? 'växelkurserna hämtades inte' });
+
+    // En delsumma är ingen summa: saknas en butik eller ett konto blir talet null.
+    const butikSaknas = !(vm.butiker ?? []).length || butiker.length < (vm.butiker ?? []).filter((id) => butikerIn.find((x) => butikenAr(id, x))?.status !== 'av').length;
+    const kontoSaknas = !(vm.konton ?? []).length || konton.length < (vm.konton ?? []).length;
+    const forsaljning = !butikSaknas && butiker.every((b) => b.sek !== null) ? butiker.reduce((s, b) => s + b.sek, 0) : null;
+    const reklam = !kontoSaknas && konton.every((k) => k.sek !== null) ? konton.reduce((s, k) => s + k.sek, 0) : null;
+    const komplett = saknas.length === 0 && forsaljning !== null && reklam !== null;
+    const mer = komplett && reklam > 0 ? forsaljning / reklam : null;
+
+    // Veckan innan — bara när varje konto har en dagsserie (delade konton har bara 7 dagar).
+    const forraKomplett = komplett && konton.every((k) => k.sekForra !== null);
+    const forsaljningForra = forraKomplett ? butiker.reduce((s, b) => s + b.sekForra, 0) : null;
+    const reklamForra = forraKomplett ? konton.reduce((s, k) => s + k.sekForra, 0) : null;
+    const merForra = forraKomplett && reklamForra > 0 ? forsaljningForra / reklamForra : null;
+
+    return {
+      id: vm.id,
+      namn: vm.namn,
+      butiker,
+      konton,
+      saknas,
+      komplett,
+      forsaljning,
+      reklam,
+      mer,
+      merForra,
+      kvar: komplett ? forsaljning - reklam : null,
+    };
+  });
+}
+
+/**
+ * Hela bolagets MER över de verksamheter som gick att läsa helt. Vilka som
+ * räknades och vilka som saknas följer med, så sidan kan säga det.
+ */
+export function merTotalt(rader) {
+  const med = rader.filter((r) => r.komplett && r.reklam > 0);
+  // Bara verksamheter där något faktiskt rör sig — nedlagda butiker utan reklam saknas inte.
+  const utan = rader.filter((r) => !r.komplett && ((r.reklam ?? 0) > 0 || (r.forsaljning ?? 0) > 0 || r.konton.some((k) => k.spend > 0)));
+  const forsaljning = med.reduce((s, r) => s + r.forsaljning, 0);
+  const reklam = med.reduce((s, r) => s + r.reklam, 0);
+  return { mer: reklam > 0 ? forsaljning / reklam : null, forsaljning, reklam, med, utan };
 }
 
 // -------------------------------------------------------------- hälsa

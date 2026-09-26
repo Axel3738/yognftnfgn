@@ -128,8 +128,20 @@ export async function hamtaKampanjer(kontoId, { preset = 'last_7d', ...opt } = {
  * Allt vi visar om annonserna: konton med dagsserie + kampanjer per konto.
  * Ett konto som strypts eller nekats rapporteras med orsak, aldrig som noll.
  */
-export async function hamtaAllt({ dagar = 30, preset = 'last_7d', logg = () => {}, ...opt } = {}) {
+export async function hamtaAllt({ dagar = 30, preset = 'last_7d', logg = () => {}, extraIds = [], ...opt } = {}) {
   const konton = await hamtaKonton(opt);
+  // Konton som token:en når men som `me/adaccounts` inte listar (mätt
+  // 2026-09-26: Matstrumpors "nya kungen" 730973156224390 svarar på
+  // act_<id> men saknas i listan). Id:na kommer ur varumarken.json.
+  for (const id of extraIds.map(String)) {
+    if (konton.some((k) => String(k.id) === id)) continue;
+    try {
+      const k = await api(`act_${id}`, { fields: 'account_id,name,currency,account_status' }, opt);
+      konton.push({ id: k.account_id, namn: k.name, valuta: k.currency, aktiv: k.account_status === 1, ...(KONTOKARTA[k.account_id] ?? { verksamhet: 'Övrigt', etikett: k.name }) });
+    } catch (e) {
+      logg(`  ${id}: ${e.message}`);
+    }
+  }
   const ut = [];
   for (const konto of konton) {
     if (!konto.aktiv && !KONTOKARTA[konto.id]) continue; // avstängda sidokonton

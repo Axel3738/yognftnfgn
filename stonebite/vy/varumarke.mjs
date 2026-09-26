@@ -14,7 +14,7 @@
 
 import { esc, attr, kort, panel, tabell, tomt, block, spark, status, tal, pengar, t, sprak } from './delar.mjs';
 import { sidhuvud } from './layout.mjs';
-import { butiksLage, kontoLage, kampanjrader, butikerPerValuta, produktlista } from '../data.mjs';
+import { butiksLage, kontoLage, kampanjrader, butikerPerValuta, produktlista, kampanjTillhor, butikenAr } from '../data.mjs';
 import { forandring, pengarKort, sedan, datum as datumtext, DAG } from '../berakna.mjs';
 import { forklaraFel, kategorinamn, tvisttyp } from '../forklaring.mjs';
 import { harleddaHandelser, brandForKundtjanst, idag, plusDagar } from '../kalender.mjs';
@@ -45,22 +45,16 @@ function roasText(v) {
 
 /** Allt ett varumärke består av, plockat ur snapshoten. Ren funktion. */
 export function brandData(vm, snapshot, { nu = new Date(), kalender = [], kontakter = [] } = {}) {
-  const butiker = (snapshot?.butiker ?? []).filter((b) => (vm.butiker ?? []).includes(b.id)).map((b) => butiksLage(b, { nu }));
+  const butiker = (snapshot?.butiker ?? []).filter((b) => (vm.butiker ?? []).some((id) => butikenAr(id, b))).map((b) => butiksLage(b, { nu }));
   const perValuta = butikerPerValuta(butiker);
   const produkter = produktlista(snapshot);
 
   const konton = (vm.konton ?? []).map((post) => {
     const raa = (snapshot?.annonskonton ?? []).find((k) => String(k.id) === String(post.id));
     if (!raa) return { ...post, status: 'saknas', orsak: 'kontot lästes inte vid senaste hämtningen', kampanjer: [], delat: !post.hela };
-    const lage = kontoLage(raa);
+    const lage = kontoLage(raa, { nu });
     const alla = kampanjrader(lage, produkter);
-    const matchar = (k) => {
-      const namn = String(k.namn ?? '').toUpperCase();
-      if (post.prefix) return post.prefix.some((p) => namn.startsWith(p.toUpperCase()));
-      if (post.utom) return !post.utom.some((p) => namn.startsWith(p.toUpperCase()));
-      return true;
-    };
-    const kampanjer = alla.filter(matchar);
+    const kampanjer = alla.filter((k) => kampanjTillhor(post, k.namn));
     const delat = !post.hela;
     // Delat konto: kontots dagsserie är hela kontots — då räknas bara kampanjerna.
     const spend = delat ? kampanjer.reduce((s, k) => s + (Number(k.spend) || 0), 0) : lage.vecka.spend;
@@ -344,7 +338,7 @@ function flikAnnonser(d) {
   return `${ok.length ? `<div class="kort-rad">${ok.map((k) => kort({
     etikett: k.namn,
     varde: pengarKort(k.vecka.spend, k.valuta),
-    forklaring: `Reklam 7 dagar. ${tal(k.vecka.kop)} köp, ROAS ${roasText(k.vecka.roas)}.${k.delat ? ` Delat konto (${k.prefix ? `kampanjer som börjar på ${k.prefix.join(', ')}` : `utom ${k.utom.join(', ')}`}).` : ''}`,
+    forklaring: `Reklam 7 dagar. ${tal(k.vecka.kop)} köp, ROAS ${roasText(k.vecka.roas)}.${k.delat ? ` Delat konto (${k.prefix ? `kampanjer med ${k.prefix.map((p) => p.replace(/_+$/, '')).join(', ')} i namnet` : `utom kampanjer med ${k.utom.map((p) => p.replace(/_+$/, '')).join(', ')} i namnet`}).` : ''}`,
     serie: k.delat ? null : k.lage.serie,
     fot: k.not ?? '',
   })).join('')}</div>` : ''}

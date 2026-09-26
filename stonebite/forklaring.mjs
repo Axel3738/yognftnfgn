@@ -90,6 +90,7 @@ const KALLNAMN = {
   discord: 'Eskaleringskanalerna (Discord)',
   bonus: 'Bonusen (Judge.me + Notion)',
   autosvar: 'Autosvaret (kundtjänstbotens logg)',
+  valuta: 'Växelkurserna (ECB)',
 };
 
 export function kallnamn(id) {

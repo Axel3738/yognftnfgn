@@ -347,3 +347,25 @@ var team misslyckas och hur det ska synas, och hur dashboarden kan bygga teamet.
 Frågorna till Evolve-boten, tre meddelanden under 2 000 tecken, står i `stonebite/evolve/FRAGOR.md` (engelska,
 utan butiks- och personnamn). Luckorna bakom dem, med datakälla och byggplan per lucka, står i
 `stonebite/evolve/LUCKOR.md`. Svaren sparas i `stonebite/evolve/SVAR.md` när de kommer.
+
+## MER per verksamhet på Översikt (2026-09-26)
+
+Evolve-kursens första tal för ägaren (`stonebite/evolve/SVAR.md`): **MER = all försäljning ÷ all
+reklam**, 7 hela dygn till och med i går, per verksamhet ur `varumarken.json`. Räknas i
+`data.mjs` → `verksamheter()` och `merTotalt()`, visas i `vy/oversikt.mjs` (tabellen
+"Försäljning mot reklam, per verksamhet" och kortet "MER 7 dagar"), bara för ägare och chef.
+
+- Försäljning i NOK, DKK och EUR räknas om till kronor med **ECB:s dagskurs**
+  (`kallor/valuta.mjs`, `snapshot.valutakurser`). Kursen och datumet står under tabellen.
+  Frankfurter svarade 520/522 från containern 2026-09-26, ECB svarade.
+- MER räknas bara när **alla** butiker och konton i verksamheten gick att läsa. Annars "–"
+  med orsak. Kortet räknar bara verksamheter som är kompletta och säger vilka som saknas.
+- Tre fel rättade samma dag: (1) "Kvar efter reklam i dag" drog ALLA SEK-konton från de
+  svenska butikerna, också Norges, Grillklinikens och CaraShells reklam; (2) delade konton
+  matchade `prefix`/`utom` med startsWith, så CaraShells UK-kampanjer ("AU LISTICLE Taköverdrag
+  CARASHELL") räknades som Bäverbutikens, ~107 000 kr på sju dagar (`kampanjTillhor`, också i
+  varumärkesflikarna); (3) kontots vecka var "de sju sista raderna", men Metas serie hoppar
+  över dagar utan spend (`kontoLage` väljer nu på datum).
+- Matstrumpors konto "nya kungen" svarar på `act_<id>` men listas inte av `me/adaccounts`.
+  `hamtaAllt({ extraIds })` hämtar kontona ur `varumarken.json` uttryckligen.
+- 11 tester i `test/mer.test.mjs`.
