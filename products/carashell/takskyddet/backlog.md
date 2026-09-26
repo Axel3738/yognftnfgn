@@ -46,6 +46,13 @@ Plockas ett item: märk raden `[använd i batch #N]` i stället för att radera 
 | **"Sebra till sommaren"** — OB som tar rädslan att remmarna nöter lacken i vind | Dagens starkaste kommentar (6 likes) + "straps break off", "svake strikk". Samma tråd bär motsvaret (rörisolering på banden, "aldrig märken"). Bara det produktsidan säger om remmarna. Hookraden skrivs i `/cs`. | kommentarer på CaraShellRoof_PD_2_1 m.fl., 5 belägg, 24 sep, `kalla=voc`, se `kommentarer/leads.md` | **väntar** |
 | **"Nio storlekar – välj din"** — bild/OB som visar storleksvalet (18–44 ft / 5,5–13,5 m) | Kunder tror att bara en storlek finns ("only choice is 18 x 10", "hittar bara 6,5 m") fast alla nio är köpbara (mätt 25 sep). Produktfeedback först: sidan måste visa valet tydligt. | kommentarer på CaraShellRoof_US_GT_105_H1 m.fl., 4 belägg, 24–25 sep, `kalla=voc`, se `kommentarer/leads.md` | **väntar** — Axels sidfix först |
 
+## Nytt i backloggen 2026-09-26 (`/kommentarer`, kundens egna ord)
+
+| Koncept | Varför just detta | Källa | Status |
+|---|---|---|---|
+| **"Vad händer med takluckan?"** — OB som visar takluckan under skyddet, gärna med takdistanserna nedan | Ventilation/kondens är största invändningen samma natt i SE, NO, DK och US ("Is it breathable? Don't want mold to grow", "Hva med kondens mellom trekk og vogn?"). Inget får påstås om att väven andas förrän leverantören svarat. | kommentarer på CaraShellRoof_PD_2_1, SP_5_1, US_SP_2_1, NO_BOF_107_1, DK_SP_104_H1, 5 belägg, 25–26 sep, `kalla=voc`, se `kommentarer/leads.md` | **väntar** — leverantörens svar om väven först |
+| **"Samma skydd, två namn"** — förtroende i US: SP med riktiga engelska recensioner | Två US-kommentarer drar slutsatsen att sajten inte är äkta eftersom samma skydd syns under ett annat namn (1 like). Kräver att storleksvalet och recensionerna på den engelska sidan är rättade först. | kommentarer på CaraShellRoof_US_GT_105_H1, 2 belägg, 25–26 sep, `kalla=voc`, se `kommentarer/leads.md` | **väntar** — Axels sidfix först |
+
 ⚠️ De fem ursprungliga koncepten är alla plockade (batch #2). De två som briefades
 som video och aldrig blev gjorda — **#4 "En person, en minut"** och **#5
 "Husbilen, inte husvagnen"** — är omgjorda till bild i batch #3 (`PD_7_1` och
