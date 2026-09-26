@@ -1,0 +1,54 @@
+{
+  "tjuvar": [
+    {
+      "id": "120250349312390291",
+      "namn": "Motorlas_SP_2",
+      "status": "ACTIVE",
+      "spend": 1058.55,
+      "roas": 0,
+      "kop": 0,
+      "alder_dagar": null,
+      "spend_7d": null,
+      "roas_7d": null,
+      "backdagar_i_rad": null,
+      "etikett": null,
+      "etikett_datum": null,
+      "roas_livstid": 0,
+      "intakt": 0,
+      "trott_vinnare": false,
+      "orsak": "NOLL_KOP"
+    }
+  ],
+  "raddade": [
+    {
+      "id": "120250349298460291",
+      "namn": "Motorlas_CS_2",
+      "status": "ACTIVE",
+      "spend": 45.24,
+      "roas": 20.092838,
+      "kop": 1,
+      "alder_dagar": null,
+      "spend_7d": null,
+      "roas_7d": null,
+      "backdagar_i_rad": null,
+      "etikett": null,
+      "etikett_datum": null,
+      "roas_livstid": 19.808237,
+      "intakt": 908.99999112
+    }
+  ],
+  "rest": {
+    "spend": 486.4,
+    "intakt": 908.99999112,
+    "kop": 1,
+    "roas": 1.8688322185855264
+  },
+  "break_even": 1.5226482622211366,
+  "kampanj_spend": 1544.95,
+  "tjuvSpend": 1058.55,
+  "tjuvAndel": 0.6851678047833263,
+  "dom": "PAUSA_TJUVAR",
+  "motivering": "1 spendtjuv tog 69 % av spenden under break-even 1,52: Motorlas_SP_2 (1 059 kr, ROAS 0,00). Resten av kampanjen ligger på ROAS 1,87 (486 kr, 1 köp) — över break-even. Pausa tjuvarna, låt kampanjen stå kvar.",
+  "kampanj_id": "120250349292760291",
+  "kampanj_namn": "Motorlåset i Rostfritt Stål | BE ROAS 1.64 | Launch 2026-09-24"
+}

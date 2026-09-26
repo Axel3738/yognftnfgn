@@ -1,0 +1,188 @@
+{
+  "kampanj_id": "120250349224920291",
+  "kampanj_namn": "Dörr- och Fönsterlarmet 110 dB | BE ROAS 1.61 | Launch 2026-09-24",
+  "break_even": 1.5158548628050068,
+  "spend_3d": "2057.49 kr (SEK)",
+  "annonser": [
+    {
+      "id": "120250349254630291",
+      "namn": "Dorrlarm_SP_3",
+      "spend": "9.78 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "9.78 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349253770291",
+      "namn": "Dorrlarm_SP_2",
+      "spend": "218.13 kr (SEK)",
+      "kop": 1,
+      "roas": 2.058406,
+      "status": "ACTIVE",
+      "roas_livstid": 2.025625,
+      "spend_livstid": "221.66 kr (SEK)",
+      "kop_livstid": 1
+    },
+    {
+      "id": "120250349250970291",
+      "namn": "Dorrlarm_SP_1",
+      "spend": "2.02 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "2.02 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349254710291",
+      "namn": "Dorrlarm_SP_2_1",
+      "spend": "2.21 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "2.21 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349229050291",
+      "namn": "Dorrlarm_CS_1",
+      "spend": "18.38 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "18.38 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349233230291",
+      "namn": "Dorrlarm_CS_2",
+      "spend": "15.74 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "15.74 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349246190291",
+      "namn": "Dorrlarm_PD_2",
+      "spend": "14.20 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "14.20 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349248630291",
+      "namn": "Dorrlarm_PD_3",
+      "spend": "169.91 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "170.38 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349236090291",
+      "namn": "Dorrlarm_G_1",
+      "spend": "82.16 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "83.03 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349234470291",
+      "namn": "Dorrlarm_CS_2_1",
+      "spend": "94.96 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "97.64 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349243860291",
+      "namn": "Dorrlarm_PD_1",
+      "spend": "1308.91 kr (SEK)",
+      "kop": 3,
+      "roas": 1.749471,
+      "status": "ACTIVE",
+      "roas_livstid": 1.524405,
+      "spend_livstid": "1502.16 kr (SEK)",
+      "kop_livstid": 3
+    },
+    {
+      "id": "120250349249120291",
+      "namn": "Dorrlarm_PD_2_1",
+      "spend": "69.03 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "70.35 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349237600291",
+      "namn": "Dorrlarm_G_2",
+      "spend": "5.18 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "5.48 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349238910291",
+      "namn": "Dorrlarm_G_3",
+      "spend": "34.63 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "34.63 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349240250291",
+      "namn": "Dorrlarm_G_2_1",
+      "spend": "2.81 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "2.81 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349234390291",
+      "namn": "Dorrlarm_CS_3",
+      "spend": "9.57 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "9.57 kr (SEK)",
+      "kop_livstid": 0
+    }
+  ],
+  "raddningar_14d": 0,
+  "agarbeslut_idag": false,
+  "forlangning_idag": false,
+  "lage_info": "trappa"
+}

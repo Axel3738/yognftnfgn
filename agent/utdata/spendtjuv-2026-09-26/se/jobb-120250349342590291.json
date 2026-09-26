@@ -1,0 +1,188 @@
+{
+  "kampanj_id": "120250349342590291",
+  "kampanj_namn": "Solcellsladdaren 10 W MPPT | BE ROAS 1.61 | Launch 2026-09-24",
+  "break_even": 1.5115976586731366,
+  "spend_3d": "1614.15 kr (SEK)",
+  "annonser": [
+    {
+      "id": "120250349365540291",
+      "namn": "Solcellsladdare_SP_3",
+      "spend": "28.13 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "28.13 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349364420291",
+      "namn": "Solcellsladdare_SP_2",
+      "spend": "10.40 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "10.40 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349345560291",
+      "namn": "Solcellsladdare_CS_1",
+      "spend": "22.52 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "22.52 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349348550291",
+      "namn": "Solcellsladdare_CS_3",
+      "spend": "2.35 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "2.35 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349366140291",
+      "namn": "Solcellsladdare_SP_2_1",
+      "spend": "5.45 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "5.45 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349362290291",
+      "namn": "Solcellsladdare_SP_1",
+      "spend": "559.65 kr (SEK)",
+      "kop": 1,
+      "roas": 0.998839,
+      "status": "ACTIVE",
+      "roas_livstid": 0.973969,
+      "spend_livstid": "573.94 kr (SEK)",
+      "kop_livstid": 1
+    },
+    {
+      "id": "120250349347420291",
+      "namn": "Solcellsladdare_CS_2",
+      "spend": "3.57 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "3.57 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349360710291",
+      "namn": "Solcellsladdare_PD_3",
+      "spend": "39.98 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "40.39 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349359780291",
+      "namn": "Solcellsladdare_PD_2",
+      "spend": "467.67 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "494.48 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349357680291",
+      "namn": "Solcellsladdare_PD_1",
+      "spend": "7.10 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "7.10 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349352640291",
+      "namn": "Solcellsladdare_GT_2",
+      "spend": "0.00 kr (SEK)",
+      "kop": 0,
+      "roas": null,
+      "status": "ACTIVE",
+      "roas_livstid": null,
+      "spend_livstid": "0.00 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349354290291",
+      "namn": "Solcellsladdare_GT_3",
+      "spend": "0.00 kr (SEK)",
+      "kop": 0,
+      "roas": null,
+      "status": "ACTIVE",
+      "roas_livstid": null,
+      "spend_livstid": "0.00 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349361350291",
+      "namn": "Solcellsladdare_PD_2_1",
+      "spend": "363.77 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "364.03 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349354780291",
+      "namn": "Solcellsladdare_GT_2_1",
+      "spend": "1.09 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "1.09 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349350440291",
+      "namn": "Solcellsladdare_GT_1",
+      "spend": "5.94 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "5.94 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349349340291",
+      "namn": "Solcellsladdare_CS_2_1",
+      "spend": "96.58 kr (SEK)",
+      "kop": 1,
+      "roas": 5.787948,
+      "status": "ACTIVE",
+      "roas_livstid": 4.575217,
+      "spend_livstid": "122.18 kr (SEK)",
+      "kop_livstid": 1
+    }
+  ],
+  "raddningar_14d": 0,
+  "agarbeslut_idag": false,
+  "forlangning_idag": false,
+  "lage_info": "trappa"
+}

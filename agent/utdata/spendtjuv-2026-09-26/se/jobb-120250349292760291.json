@@ -1,0 +1,188 @@
+{
+  "kampanj_id": "120250349292760291",
+  "kampanj_namn": "Motorlåset i Rostfritt Stål | BE ROAS 1.64 | Launch 2026-09-24",
+  "break_even": 1.5226482622211366,
+  "spend_3d": "1544.95 kr (SEK)",
+  "annonser": [
+    {
+      "id": "120250349304370291",
+      "namn": "Motorlas_GT_2",
+      "spend": "2.99 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "2.99 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349308350291",
+      "namn": "Motorlas_PD_2",
+      "spend": "14.12 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "14.12 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349306550291",
+      "namn": "Motorlas_GT_2_1",
+      "spend": "46.11 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "48.49 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349313560291",
+      "namn": "Motorlas_SP_3",
+      "spend": "79.02 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "79.65 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349312390291",
+      "namn": "Motorlas_SP_2",
+      "spend": "1058.55 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "1072.04 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349300140291",
+      "namn": "Motorlas_CS_3",
+      "spend": "13.98 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "13.98 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349298460291",
+      "namn": "Motorlas_CS_2",
+      "spend": "45.24 kr (SEK)",
+      "kop": 1,
+      "roas": 20.092838,
+      "status": "ACTIVE",
+      "roas_livstid": 19.808237,
+      "spend_livstid": "45.89 kr (SEK)",
+      "kop_livstid": 1
+    },
+    {
+      "id": "120250349313660291",
+      "namn": "Motorlas_SP_2_1",
+      "spend": "13.32 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "13.32 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349296210291",
+      "namn": "Motorlas_CS_1",
+      "spend": "14.30 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "14.30 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349311440291",
+      "namn": "Motorlas_SP_1",
+      "spend": "32.74 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "32.93 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349300850291",
+      "namn": "Motorlas_CS_2_1",
+      "spend": "3.92 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "3.92 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349309000291",
+      "namn": "Motorlas_PD_3",
+      "spend": "105.68 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "105.68 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349307330291",
+      "namn": "Motorlas_PD_1",
+      "spend": "3.71 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "3.77 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349309730291",
+      "namn": "Motorlas_PD_2_1",
+      "spend": "107.46 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "110.18 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349305820291",
+      "namn": "Motorlas_GT_3",
+      "spend": "3.27 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "3.27 kr (SEK)",
+      "kop_livstid": 0
+    },
+    {
+      "id": "120250349302930291",
+      "namn": "Motorlas_GT_1",
+      "spend": "0.54 kr (SEK)",
+      "kop": 0,
+      "roas": 0,
+      "status": "ACTIVE",
+      "roas_livstid": 0,
+      "spend_livstid": "0.54 kr (SEK)",
+      "kop_livstid": 0
+    }
+  ],
+  "raddningar_14d": 0,
+  "agarbeslut_idag": false,
+  "forlangning_idag": false,
+  "lage_info": "trappa"
+}
