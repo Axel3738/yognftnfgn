@@ -1,0 +1,38 @@
+{
+  "comment": "Facit för Spoks-ytan Matstrumpor.se — allt AVLÄST med Spoks MCP 2026-09-26 (whoami, products_search, search_media, get_links), inget gissat. Axels order samma dag: 'FÖRBERED BARA FÖR MATSTRUMPOR TILL SPOKS' + 'Jag har inte kopplat än' — ytan finns och Shopify-synken är på (4 370 kontakter, 2 911 med samtycke, 3 799 kunder), men inget ska aktiveras eller skickas. Bäverbutikens Spoks-yta (f716ae36-…, 4snrw0-mg) rörs aldrig från den här motorn. spoks-paket.mjs läser produkt-id:na härifrån; bild_id är produktbildens fil-id i Spoks mediebibliotek (samma uuid som i imageUrl:s filnamn, kontrollerat mot search_media för donut-strumpor 29f26dca).",
+  "arbetsyta": {
+    "id": "71c2d4c8-b9ec-488a-b15c-5dfe8dbd2226",
+    "namn": "Matstrumpor.se",
+    "shopify": "1r46tp-qx.myshopify.com",
+    "tidszon": "Europe/Stockholm",
+    "plan": "Free",
+    "plan_comment": "Mätt 2026-09-26: Free, 5 000 mejl per månad (monthlyEmailsLimit 5000), 2 skickade i september. Med 2 911 prenumeranter räcker det till ett kampanjutskick plus flödena per månad — Black Week-veckan har två kampanjer och julveckorna tre. Planbyte är Axels beslut (pengar).",
+    "app": "https://app.spoks.com/matstrumpor",
+    "lankar": {
+      "kampanjer": "https://app.spoks.com/matstrumpor/campaigns",
+      "flode": "https://app.spoks.com/matstrumpor/flows/{flowId}",
+      "kampanj": "https://app.spoks.com/matstrumpor/post/{postId}/edit",
+      "installningar": "https://app.spoks.com/matstrumpor/settings/general",
+      "utseende": "https://app.spoks.com/matstrumpor/settings/look",
+      "epost": "https://app.spoks.com/matstrumpor/settings/email-sms",
+      "egen_doman": "https://app.spoks.com/matstrumpor/settings/custom-domain",
+      "integrationer": "https://app.spoks.com/matstrumpor/settings/integrations"
+    }
+  },
+  "kontakter_matt_2026_09_26": {
+    "alla": 4370,
+    "samtycke": 2911,
+    "kunder": 3799,
+    "aterkopare": 121,
+    "vip_3_kop": 10,
+    "comment": "Spoks inbyggda segment All contacts / All subscribed / All customers / All repeat customers / VIP customers. Klaviyo UV6Rqg hade 2 890 subscribed av 4 357 profiler 2026-09-25 — samma kundbas, en dags tillväxt."
+  },
+  "produkter": {
+    "sushi-strumpor": { "id": "2b2d6bcd-dce7-411f-92f9-936a77a1c64f", "externalId": "gid://shopify/Product/10286130889043", "bild_id": "572aba92-105a-4a4b-ae80-e9bd48ecbbaa", "status": "active", "pris_i_spoks": 399 },
+    "pizza-strumpor": { "id": "a70729cd-9bba-4eb7-af6e-f37206b20cde", "externalId": "gid://shopify/Product/10314752852307", "bild_id": "dcd8eed9-1e12-41c4-8200-e45067ab2fa3", "status": "ACTIVE", "pris_i_spoks": 449 },
+    "hamburger-strumpor": { "id": "63825879-0d6a-4cc8-8f47-6f502122478f", "externalId": "gid://shopify/Product/10314753769811", "bild_id": "ad6de937-312c-4ee5-a257-2eb513b0c15a", "status": "ACTIVE", "pris_i_spoks": 299 },
+    "donut-strumpor": { "id": "18da3b76-d190-4b9f-b07e-0c6008f2bb37", "externalId": "gid://shopify/Product/10286979449171", "bild_id": "29f26dca-3cb2-4251-915b-22fb23ca1564", "status": "ACTIVE", "pris_i_spoks": 299 },
+    "presentkort": { "id": "669771bd-12cc-4468-812a-fdfb41c77fe1", "externalId": "gid://shopify/Product/10286156513619", "bild_id": "6e778f80-2aac-40da-8b6c-56543676d9ea", "status": "ACTIVE", "pris_i_spoks": 150 }
+  },
+  "produkter_comment": "Fem produkter som mejlen pekar på. Spoks katalog bär dessutom 18 arkiverade/olistade produkter från butikens tidigare sortiment (FotRullen, Sömnplåster, 'Sushistrumpor' 6fe4158e ARCHIVED = gammal dubblett) — de används aldrig. Priserna hydreras av Spoks vid sparning; motorn skriver aldrig ett pris i text."
+}

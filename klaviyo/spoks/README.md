@@ -1,4 +1,7 @@
-# Spoks: Bäverbutikens mejl i Spoks i stället för Klaviyo
+# Spoks: Bäverbutikens och Matstrumpors mejl i Spoks i stället för Klaviyo
+
+Två butiker, två workspaces, två konverterare (se ⚠️ under Matstrumpor). Bäverbutiken
+först i den här filen, Matstrumpor efter strecket.
 
 Axels order 2026-09-25/26: "bygg i spoks". Samma innehåll som Klaviyo
 (`klaviyo/innehall/baverbutiken/`), konverterat till Spoks-block av
@@ -50,3 +53,134 @@ Spoks: plan Paid (inget månadstak), avsändaradress ej satt vid mätningen.
 - **Ingen segmenttrigger.** F06 Sunset finns inte i Spoks. Den som inte öppnat
   på länge får fortfarande kampanjer tills Spoks egen suppression tar dem.
 - Anonyma recensenter står som "Verifierad kund", aldrig "Anonymous".
+
+---
+
+# Matstrumpor i Spoks (workspace `71c2d4c8-b9ec-488a-b15c-5dfe8dbd2226`, byggt 2026-09-26)
+
+Axels order 2026-09-26: "FÖRBERED BARA FÖR MATSTRUMPOR TILL SPOKS" + "Jag har inte
+kopplat än" + "kör". Samma innehåll som Klaviyo (`klaviyo/innehall/matstrumpor/`),
+konverterat till Spoks-block av **`klaviyo/spoks-paket.mjs`** (brand-parametriserad;
+facit `klaviyo/konto/matstrumpor/spoks.json`, logg `klaviyo/konto/matstrumpor/spoks-uppladdat.jsonl`,
+utdata gitignorerad i `klaviyo/output/matstrumpor/spoks/`) och uppladdat av sessionen via
+Spoks-MCP:n. **Allt är INAKTIVT**: flöden av, alla sändsteg avstängda, kampanjerna utkast
+utan publik och utan schema. Klaviyo-kontot `UV6Rqg` lämnades orört (utkast där också).
+
+```bash
+node klaviyo/spoks-paket.mjs --brand matstrumpor --offline   # innehåll → output/matstrumpor/spoks/<mejl>.json + floden.json + PAKET.json
+node --test klaviyo/test/spoks-paket.test.mjs                 # 15 tester
+```
+
+⚠️ **Två konverterare finns sedan 2026-09-26**, byggda av två sessioner samma dag utan att
+se varandra: `klaviyo/spoks/konvertera.mjs` (Bäverbutiken, skriver `baverbutiken/payload/`)
+och `klaviyo/spoks-paket.mjs` (Matstrumpor, brand-parametriserad). De ska slås ihop till en;
+tills dess kör var och en bara sin butik — Bäverbutikens yta `f716ae36-…` rörs aldrig från
+`spoks-paket.mjs`, och `konvertera.mjs` rör aldrig Matstrumpor.
+
+**Ytan** (mätt med whoami/get_settings 2026-09-26): Matstrumpor.se, Shopify
+`1r46tp-qx.myshopify.com`, tidszon Europe/Stockholm, **plan Free = 5 000 mejl per månad**,
+4 370 kontakter varav **2 911 med samtycke**. Inställningarna satta via MCP:n: avsändare
+"Matstrumpor", reply-to `kundsupport@matstrumpor.se`, loggan, färgerna (`#dd821d` på
+`#f3ede2`, vitt sidhuvud), fonten **Tilt Warp + Nunito Sans** (Mochiy Pop P One finns inte i
+Spoks lista), sidfoten Matstrumpor-klubben + "Avregistrera dig". `senderEmail` kräver en
+verifierad egen domän i Spoks — det är DNS och Axels beslut (⛔ aldrig namnservrarna).
+
+## Läget 2026-09-26 (mätt med get_flows, get_flow och search_campaigns)
+
+| Flöde | Spoks-id | Startar på | Väntan | Mejl (alla sändsteg AV) |
+|---|---|---|---|---|
+| F01 Välkomst (Matstrumpor-klubben) | `4e8a9b59-4192-4bb4-8829-785e6af01f7c` | ny kontakt (`contact_created`), samtycke | 0, 2 d, 3 d | E1 med medlemskortet, E2, E3 (E2/E3 bara om inget köp sedan start) |
+| F02 Övergiven kassa | `7e1dab93-5aba-4f69-b497-66636df338e2` | `checkout_created`, samtycke | 3 h, 1 d, 2 d | E1–E3 med kassablocket, bara om inget köp sedan start |
+| F03 Webbhistorik | `dafa3c59-7a47-4a9e-a5cc-80eba2716612` | `product_viewed`, samtycke | 4 h, 1 d | E1, E2 (senast visade produkten; E2 bara om varken köp eller kassa sedan start) |
+| F04 Efter köp | `d9f24905-8dab-43f3-a427-d8478701f315` | `order_created`, kundundantag (återinträde 30 d) | 3 d, 13 d | E1 spårningssidan + MS-raden, E2 |
+| F05 Vinna tillbaka | `6728bb3b-fa5d-402b-8a66-f0f6ac360fca` | `order_created`, kundundantag (återinträde 90 d) | 90 d, 14 d | E1, E2 — bara om inget köp sedan start |
+| F07 En låda till (sushi, dag 21) | `615a6e65-9a43-4a29-8af8-afc82ee7cd23` | `order_created` med Sushi-Strumpor (`triggerFilter externalId`), kundundantag (återinträde 60 d) | 21 d | E1 — bara om inget köp sedan start |
+
+Flödesmejlens post-id:n och stegens id:n står i `spoks-uppladdat.jsonl` (rader `flodessteg`
+och `flodesmejl`). Sändstegen skapas alltid avstängda av MCP:n och kan bara slås på i
+flödesredigeraren i appen.
+
+**Kampanjutkast (16, `status draft`, ingen publik vald, inget schema):** K01 29/9 `9aa10213`,
+K02 6/10 `b7acd85c`, K03 13/10 `920afd93`, K04 20/10 `6f1e2e50`, K05 27/10 `c6b1d0b0`,
+K06 3/11 `eeec137e`, K07 10/11 `f914fe1f`, K08 17/11 `960a9002`, K09 23/11 `34c4f671`,
+K10 27/11 `eca0a6db`, K11 1/12 `2457c8d7`, K12 8/12 `3a072256`, K13 15/12 `45bd1681`,
+K14 29/12 `5637c25a` — datum och tänkt segment står i titeln (`K01 · 29/9 · uppvarmning_steg1 · …`),
+schemat i `klaviyo/innehall/matstrumpor/KALENDER-2026.md`. **F06 Sunset** finns inte som
+flöde (Spoks saknar segmenttrigger) utan som två utkast: `F06 E1 · för hand till
+oengagerade_180d` `4fccb750` och `F06 E2 …` `662420f3` — skickas för hand till
+`SEG_oengagerade_180d` när det segmentet fått medlemmar, E2 tidigast 7 dagar efter E1.
+Fulla id:n i loggen.
+
+**Segment (14, antal vid skapandet 2026-09-26):**
+
+| Segment | Spoks-id | Antal | Not |
+|---|---|---|---|
+| SEG_samtycke | `6e67fe0f-6ff3-4c13-91f2-a41e08e61dfe` | 2 911 | kampanjernas grundpublik (subscribed, ej spärrad) |
+| SEG_uppvarmning_steg1 | `e8f5a0ee-268e-4644-bcdc-d537eaf93f63` | 0 | aktiv 30 d — händelser i Spoks |
+| SEG_engagerade_60d | `5acab85e-bbb8-4db8-af5a-3958dc5b4316` | 2 | aktiv 60 d |
+| SEG_engagerade_90d | `f1411bd5-d67f-4740-82e9-7da3204d4876` | 2 | aktiv 90 d |
+| SEG_kopare | `b20d55df-861b-4536-bdc8-aa341e717dfe` | 2 617 | `totalOrders ≥ 1` (kontaktfältet, funkar för importerade) |
+| SEG_kopare_30d | `8f8fe8cf-5947-4a1c-bf45-5c6b7cff9d9f` | 2 | köp registrerat i Spoks senaste 30 d |
+| SEG_ej_kopt | `b8ceaedb-257b-4aa1-93dd-bfd55c6113c6` | 295 | `totalOrders = 0` |
+| SEG_flerkopare | `b1824090-b73f-49af-9a29-fefd65f70b9b` | 112 | `totalOrders ≥ 2` |
+| SEG_vinback_90d | `89e02399-7016-4239-a656-70e85ebbc5af` | 2 616 | köpare utan Spoks-registrerat köp på 90 d — brett tills historiken finns |
+| SEG_oengagerade_180d | `a34a23ab-03ab-4d6e-9f51-366796b8fe15` | 0 | bara exkludering + F06 |
+| SEG_kategori_sushi | `1eae539b-f1c7-439e-8410-78d743f124ad` | 3 | köpt "sushi" (händelse) |
+| SEG_kategori_pizza | `e25e8691-122a-4ecd-bde1-74d9742efff2` | 0 | köpt "pizza" |
+| SEG_kategori_hamburgare | `d2668dde-f5dc-4244-92d9-d81d6529fdd0` | 0 | köpt "hamburgare" |
+| SEG_kategori_donut | `586997f9-e2c8-45ca-85c0-ba08ca4763b9` | 1 | köpt "donut" |
+
+⚠️ **Spoks har ingen händelsehistorik för importerade kontakter** (mätt 2026-09-26:
+`orderedProducts ≥ 1` gav 0 av 4 370, och periodnotation på kontaktfält som `lastPurchase`
+ger "Internal error"). Därför bygger köparsegmenten på kontaktfältet `totalOrders`, medan
+engagemangs- och kategorisegmenten fylls på i takt med att Spoks registrerar egna
+öppningar, klick, visningar och köp. I Klaviyo hade samma definitioner 175 (uppvärmning),
+2 583 (sushi) och 81 (donut). **K01 och K02 går därför till `SEG_samtycke`** tills
+`SEG_uppvarmning_steg1` har medlemmar; K03–K06 (engagerade) blir små utskick de första
+veckorna, vilket också håller Free-planens 5 000 mejl per månad.
+
+## Skillnader mot Klaviyo för Matstrumpor (Spoks kan inte)
+
+- **Ingen "Fulfilled Order"-trigger** ⇒ F04 startar på `order_created`; Matstrumpor skickar
+  samma dygn (median 0,4 dygn, brandfilen), så väntan är oförändrad.
+- **Inget spårningsnummer i mejlet** (bara kontaktfält i personaliseringen) ⇒ F04 E1:s knapp
+  går till `https://matstrumpor.se/pages/spara` och en rad säger att numret börjar på MS.
+- **Ingen segmenttrigger** ⇒ F06 Sunset är två kampanjutkast för hand (ovan).
+- **Fonten Mochiy Pop P One finns inte** ⇒ Tilt Warp (rubriker) + Nunito Sans (brödtext).
+- **Ingen blockstil via MCP:n** ⇒ medlemskortet i F01 E1 ligger som en `section` med
+  etikett, förnamn (`{{ contact.first_name | default: 'Medlem' }}`), rad, avdelare och
+  fotnot — det mörka kortet ställs in i redigeraren.
+- **Bara `{{ contact.first_name | default: '…' }}`** som personalisering; Klaviyos taggar
+  stoppas av konverteraren (test 9).
+- **Ett citat per quote-block**, max två ur Judge.me (sushi har 8 recensioner, resten 0).
+- **Publik och schema väljs i appen**, inte via MCP:n — kampanjtitlarna bär datum + segment
+  så att det går att välja rätt utan att öppna kalendern.
+- **Spoks vägrar en konjunktion med en nod** — ett ensamt filter skickas bart
+  (`eller()` i `spoks-paket.mjs` rättad 2026-09-26, kategorisegmenten skapades för hand med rätt form).
+
+## Behörigheterna (Axels krav 2026-09-26: "jag pallar inte godkänna")
+
+Connector-verktygen frågade om lov per anrop även med `mcp__Spoks__*` i
+`.claude/settings.json` (listan gäller rutinerna, inte connector-prompterna i en interaktiv
+session). Det som tog bort prompterna var Axels klick på **https://claude.ai/customize/connectors →
+Spoks → verktygen på "Tillåt alltid"**. Därefter gick hela bygget utan en enda fråga.
+
+## Axels klick (i ordning, allt i https://app.spoks.com/matstrumpor)
+
+1. **Settings → Email & SMS:** avsändaradressen. Vill han skicka från `@matstrumpor.se` krävs
+   en verifierad domän (Settings → Custom domain) = DNS-poster hos Loopia, bara på en
+   underdomän, aldrig namnservrarna. Annars skickar Spoks från sin delade domän.
+2. **Flows → F02 Övergiven kassa:** öppna varje sändsteg (E1, E2, E3) → slå på steget →
+   aktivera flödet. Samma dag: stäng av Shopifys egen notis om övergiven kassa
+   (Matstrumpors admin → Inställningar → Aviseringar → Övergiven kassa).
+3. **Flows → F04, F07, F05, F01, F03:** samma sak — sändstegen på, sedan flödet.
+   (Ordningen är Klaviyo-planens: köparflödena först, välkomst och webbhistorik sist.)
+4. **Flows → F01 E1:** öppna mejlet → medlemskortet (sektionen med "MEDLEMSKORT") → mörk
+   bakgrund, ljus text, orange ram — stilen går inte att sätta via MCP:n.
+5. **Campaigns → K01:** publik `SEG_samtycke` (inte `uppvarmning_steg1`, den är tom) →
+   schemalägg tisdag 29/9 18:00. Sedan en kampanj i taget enligt
+   `klaviyo/innehall/matstrumpor/KALENDER-2026.md`; F06 E1/E2 ligger kvar tills
+   `SEG_oengagerade_180d` har medlemmar.
+6. **Planen:** Free räcker till september–oktober (K01/K02 till alla = 2 × 2 911, K03–K06
+   små). **November har fyra utskick till alla (K07–K10 ≈ 11 600 mejl) + flödena — det
+   kräver ett planbyte före 10/11.** Pengar = Axels beslut.
