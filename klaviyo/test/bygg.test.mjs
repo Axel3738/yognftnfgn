@@ -90,7 +90,7 @@ test('ett mejl med fel hamnar i manifestets fel med mejl-id', async () => {
 // ---- produkter.mjs och recensioner.mjs (falsk fetch, temp-rot) ----
 import { mkdirSync } from 'node:fs';
 import { hamtaProdukterCache } from '../produkter.mjs';
-import { hamtaRecensionerCache, kortNamn, kortaText, sorteraRecensioner } from '../recensioner.mjs';
+import { hamtaRecensionerCache, kortNamn, kortaText, sorteraRecensioner, citatSignatur, arVerifieratKop } from '../recensioner.mjs';
 
 test('recensioner: bara publicerade 4-5 stjärnor, förnamn + initial, kortad vid ordgräns', () => {
   assert.equal(kortNamn('anna berg'), 'Anna B.');
@@ -100,7 +100,9 @@ test('recensioner: bara publicerade 4-5 stjärnor, förnamn + initial, kortad vi
   const k = kortaText(lang);
   assert.ok(k.length <= 220 && k.endsWith('ord…'));
   const rader = [
-    { product_external_id: 1001, rating: 5, body: 'Riktigt bra hölje, sitter kvar i blåsten.', reviewer: { name: 'Anna Berg' }, published: true, created_at: '2026-09-01' },
+    { product_external_id: 1001, rating: 5, body: 'Riktigt bra hölje, sitter kvar i blåsten.', reviewer: { name: 'Anna Berg' }, published: true, verified: 'verified-purchase', created_at: '2026-09-01' },
+    { product_external_id: 1001, rating: 5, body: 'Importerad recension som aldrig var ett köp.', reviewer: { name: 'Karin' }, published: true, verified: 'nothing', created_at: '2026-09-08' },
+    { product_external_id: 1001, rating: 5, body: 'Wizard-import, inte verifierad heller.', reviewer: { name: 'Erik' }, published: true, verified: 'not-yet', created_at: '2026-09-08' },
     { product_external_id: 1001, rating: 3, body: 'Helt okej men inget mer än så.', reviewer: { name: 'Bo' }, published: true },
     { product_external_id: 1001, rating: 5, body: 'Dold recension som inte ska synas.', reviewer: { name: 'C' }, published: true, hidden: true },
     { product_external_id: 1001, rating: 5, body: 'Spam som inte ska synas alls här.', reviewer: { name: 'D' }, published: false, curated: 'spam' },
@@ -109,7 +111,33 @@ test('recensioner: bara publicerade 4-5 stjärnor, förnamn + initial, kortad vi
   const ut = sorteraRecensioner(rader, PRODUKTER);
   assert.deepEqual(Object.keys(ut), ['motorholje-test']);
   assert.equal(ut['motorholje-test'].length, 1);
-  assert.equal(ut['motorholje-test'][0].namn, 'Anna B.');
+  // API:t säger inget om anonymitet ⇒ inget namn, bara "Verifierad kund".
+  assert.equal(ut['motorholje-test'][0].namn, null);
+  assert.equal(ut['motorholje-test'][0].verifierad, true);
+  assert.equal(ut['motorholje-test'][0].text, 'Riktigt bra hölje, sitter kvar i blåsten.');
+});
+
+test('recensioner: citatSignatur visar namn bara när det får visas', () => {
+  assert.equal(citatSignatur({ namn: 'Anna B.' }), 'Anna B., verifierad kund');
+  assert.equal(citatSignatur({ namn: null }), 'Verifierad kund');
+  assert.equal(citatSignatur({ namn: 'Anonym' }), 'Verifierad kund');
+  assert.equal(citatSignatur({ namn: 'Verifierad kund' }), 'Verifierad kund');
+  assert.equal(arVerifieratKop({ verified: 'buyer' }), true);
+  assert.equal(arVerifieratKop({ verified: 'verified-purchase' }), true);
+  assert.equal(arVerifieratKop({ verified: 'nothing' }), false);
+  assert.equal(arVerifieratKop({ verified: 'not-yet' }), false);
+  assert.equal(arVerifieratKop({ verified: 'unconfirmed-buyer' }), false);
+  assert.equal(arVerifieratKop({ verified_buyer: true }), true);
+  assert.equal(arVerifieratKop({ verified_buyer: false }), false);
+});
+
+test('recensioner: en gammal cache utan verifierad-flaggan släpper inga citat', async () => {
+  const rot = mkdtempSync(join(tmpdir(), 'klaviyo-rot-'));
+  mkdirSync(join(rot, 'klaviyo', 'output', 'baverbutiken'), { recursive: true });
+  writeFileSync(join(rot, 'klaviyo', 'output', 'baverbutiken', 'recensioner.json'), JSON.stringify({ recensioner: { 'motorholje-test': [{ namn: 'Karin', betyg: 5, text: 'Bra skydd för taket och lätt att använda.' }] } }));
+  const off = await hamtaRecensionerCache({ brand: 'baverbutiken', produkter: PRODUKTER, rot, offline: true, env: {} });
+  assert.deepEqual(off.recensioner, {});
+  assert.ok(off.varningar.some((v) => /utan verifierat köp/.test(v)));
 });
 
 test('recensioner: live via Judge.me skriver cache, offline läser den', async () => {
@@ -117,7 +145,7 @@ test('recensioner: live via Judge.me skriver cache, offline läser den', async (
   const anrop = [];
   const fetchFn = async (u) => {
     anrop.push(String(u));
-    return { ok: true, json: async () => ({ reviews: [{ product_external_id: 1001, rating: 5, body: 'Håller tätt, bra passform på motorn.', reviewer: { name: 'Eva K' }, published: true }] }) };
+    return { ok: true, json: async () => ({ reviews: [{ product_external_id: 1001, rating: 5, body: 'Håller tätt, bra passform på motorn.', reviewer: { name: 'Eva K' }, published: true, verified: 'buyer' }] }) };
   };
   const env = { JUDGEME_API_TOKEN: 't', JUDGEME_SHOP_DOMAIN: 'x.myshopify.com' };
   const live = await hamtaRecensionerCache({ brand: 'baverbutiken', produkter: PRODUKTER, rot, env, fetchFn });
@@ -125,7 +153,8 @@ test('recensioner: live via Judge.me skriver cache, offline läser den', async (
   assert.match(anrop[0], /^https:\/\/api\.judge\.me\/api\/v1\/reviews\?/);
   const off = await hamtaRecensionerCache({ brand: 'baverbutiken', produkter: PRODUKTER, rot, offline: true, env: {} });
   assert.equal(off.kalla, 'cache');
-  assert.equal(off.recensioner['motorholje-test'][0].namn, 'Eva K.');
+  assert.equal(off.recensioner['motorholje-test'][0].text, 'Håller tätt, bra passform på motorn.');
+  assert.equal(off.recensioner['motorholje-test'][0].namn, null);
 });
 
 test('produkter: live skriver cache, offline läser den, annars mejl/produkter.json', async () => {

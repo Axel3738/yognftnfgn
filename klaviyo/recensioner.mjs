@@ -3,6 +3,19 @@
 // 4-5 stjärnor, publicerad, inte dold, inte spam, ordagrant (kortad vid
 // ordgräns till högst 220 tecken), namnet som förnamn + initial.
 //
+// ⛔ BARA VERIFIERADE KÖP (2026-09-26). Mejlen signerar varje citat "verifierad
+// kund", så en recension som inte är ett verifierat köp får aldrig bli ett citat.
+// Mätt samma dag på Bäverbutikens 1 102 recensioner: `verified` var 'not-yet'
+// (485, importerade via wizard), 'nothing' (482, bl.a. taköverdragets tio med
+// @example.com-adresser, skapade inom elva sekunder), 'verified-purchase' (93),
+// 'buyer' (41) och 'unconfirmed-buyer' (1). Utan spärren gick de importerade
+// ut som "Karin, verifierad kund" i Spoks F01 E2 och K01. Widgeten (Matstrumpor)
+// säger samma sak med `verified_buyer: true`.
+// Namnet visas bara när källan säger att recensenten INTE är anonym. API:t bär
+// ingen anonymitetsflagga (en anonym recensent står där med hela namnet, mätt
+// 2026-09-26 på "Gert N." som visas som "Anonym" i butiken), så API-citat
+// signeras bara "Verifierad kund". Widgeten bär `is_anonymous_reviewer`.
+//
 // Två källor, valda per brand (`brand.recensioner.kalla`):
 //   'judgeme-api'    (standard, Bäverbutiken): https://api.judge.me/api/v1/reviews
 //                    med api_token + shop_domain (JUDGEME_API_TOKEN, JUDGEME_SHOP_DOMAIN
@@ -80,29 +93,62 @@ export function widgetTillRader(svar, produktId) {
     published: true,
     hidden: false,
     verified_buyer: r.verified_buyer ?? null,
+    anonym: r.is_anonymous_reviewer === true || /^anonym/i.test(String(r.reviewer_name ?? '').trim()),
     created_at: r.created_at ?? null,
   }));
 }
 
-// Judge.me-rader → { handle: [{ namn, betyg, text, datum }] }, bästa först
-// (5 stjärnor före 4, sedan nyast), högst PER_HANDLE per produkt.
+// Judge.me:s API: `verified` = 'verified-purchase' | 'buyer' är ett köp; widgeten: verified_buyer true.
+const VERIFIERAT_KOP = new Set(['verified-purchase', 'buyer']);
+export function arVerifieratKop(r) {
+  return VERIFIERAT_KOP.has(String(r?.verified ?? '')) || r?.verified_buyer === true;
+}
+
+// Namnet bara när källan uttryckligen säger att recensenten inte är anonym (widgeten).
+// Annars null — renderarna skriver då bara "Verifierad kund".
+function visatNamn(r) {
+  if (r?.anonym !== false) return null;
+  const namn = String(r.reviewer?.name ?? '').trim();
+  return namn ? kortNamn(namn) : null;
+}
+
+// Judge.me-rader → { handle: [{ namn, betyg, text, datum, verifierad }] }, bästa
+// först (5 stjärnor före 4, sedan nyast), högst PER_HANDLE per produkt. Bara
+// verifierade köp; `namn` är null när namnet inte får visas.
 export function sorteraRecensioner(rader, produkter) {
   const perId = new Map(produkter.map((p) => [String(p.id), p.handle]));
   const ut = {};
   for (const r of rader) {
     if (!r || r.published === false || r.hidden || r.curated === 'spam') continue;
+    if (!arVerifieratKop(r)) continue;
     const betyg = Number(r.rating) || 0;
     if (betyg < 4) continue;
     const text = String(r.body ?? '').trim();
     if (text.length < 15) continue;
     const handle = perId.get(String(r.product_external_id)) ?? r.product_handle ?? null;
     if (!handle) continue;
-    (ut[handle] ??= []).push({ namn: kortNamn(r.reviewer?.name), betyg, text: kortaText(text), datum: r.created_at ?? null });
+    (ut[handle] ??= []).push({ namn: visatNamn(r), betyg, text: kortaText(text), datum: r.created_at ?? null, verifierad: true });
   }
   for (const h of Object.keys(ut)) {
     ut[h] = ut[h].sort((a, b) => b.betyg - a.betyg || String(b.datum).localeCompare(String(a.datum))).slice(0, PER_HANDLE);
   }
   return ut;
+}
+
+/** En cache skriven före 2026-09-26 saknar `verifierad` — de citaten släpps aldrig igenom. */
+export function baraVerifierade(recensioner) {
+  const ut = {};
+  for (const [h, lista] of Object.entries(recensioner ?? {})) {
+    const ok = (lista ?? []).filter((r) => r?.verifierad === true);
+    if (ok.length) ut[h] = ok;
+  }
+  return ut;
+}
+
+/** Signaturen under ett citat: "Anna B., verifierad kund" eller bara "Verifierad kund". */
+export function citatSignatur(r) {
+  const namn = String(r?.namn ?? '').trim();
+  return namn && !/^(anonym|verifierad kund)/i.test(namn) ? `${namn}, verifierad kund` : 'Verifierad kund';
 }
 
 async function hamtaAlla({ token, shop, fetchFn, maxSidor }) {
@@ -175,7 +221,11 @@ export async function hamtaRecensionerCache({ brand, produkter = [], offline = f
   }
   if (existsSync(cache)) {
     const d = JSON.parse(readFileSync(cache, 'utf8'));
-    return { recensioner: d.recensioner ?? {}, kalla: 'cache', varningar };
+    const alla = Object.values(d.recensioner ?? {}).flat().length;
+    const recensioner = baraVerifierade(d.recensioner);
+    const kvar = Object.values(recensioner).flat().length;
+    if (kvar < alla) varningar.push(`Cachen bar ${alla - kvar} citat utan verifierat köp, de släpps inte igenom (hämta om recensionerna).`);
+    return { recensioner, kalla: 'cache', varningar };
   }
   varningar.push('Inga recensioner (ingen cache): citatblocken utgår.');
   return { recensioner: {}, kalla: 'saknas', varningar };

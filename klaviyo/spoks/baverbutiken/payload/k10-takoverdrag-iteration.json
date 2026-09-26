@@ -1,7 +1,7 @@
 {
   "id": "k10-takoverdrag-iteration",
   "emailTitle": "Silverskikt mot sol, oxfordväv mot regn",
-  "emailDescription": "Kunden skrev det under en av våra annonser.",
+  "emailDescription": "Någon frågade om fukt under en av våra annonser. Här är svaret.",
   "amnesrader": [
     "Silverskikt mot sol, oxfordväv mot regn",
     "Det täcker taket, inte hela vagnen",
@@ -15,7 +15,7 @@
     },
     {
       "type": "regular",
-      "text": "Det skrev en kund under en av våra annonser. Rimlig fråga: blir det inte fuktigt att lägga något över taket?",
+      "text": "Det skrev någon under en av våra annonser. Rimlig fråga: blir det inte fuktigt att lägga något över taket?",
       "alignment": "center"
     },
     {
@@ -86,14 +86,6 @@
       "alignment": "left"
     },
     {
-      "type": "quote",
-      "text": "\"Bra skydd för taket och lätt att använda.\"\nKarin, verifierad kund"
-    },
-    {
-      "type": "quote",
-      "text": "\"Jag är nöjd med överdraget. Rekommenderas.\"\nErik, verifierad kund"
-    },
-    {
       "type": "columns",
       "stackedOnMobile": true,
       "verticalAlignment": "top",
@@ -131,5 +123,7 @@
       ]
     }
   ],
-  "varningar": []
+  "varningar": [
+    "Inga recensioner för takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan, citatet utgår."
+  ]
 }

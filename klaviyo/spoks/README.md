@@ -15,29 +15,52 @@ node klaviyo/spoks/konvertera.mjs --brand carashell  # flerspråkigt: payload/<s
 
 Workspace: Bäverbutiken `f716ae36-68ae-4f1c-a45e-96c35d5637a0` (Shopify 4snrw0-mg).
 
-## Läget 2026-09-26 (mätt med get_flows / draft_campaign)
+## ⛔ LIVE sedan 2026-09-26 09:02–09:05 CEST (mätt med get_flows/get_flow 10:26 CEST)
 
-Allt är INAKTIVT. Spoks-MCP:n kan inte slå på flöden, aktivera mejlsteg eller
-skicka kampanjer. Det görs bara i appen, av Axel.
+**Alla 13 flöden är påslagna genom Axels egna klick i appen** (`activated` 07:02:13–07:05:05
+UTC), och F04 är ersatt av en ny version med butikskrediten. Spoks-MCP:n kan inte slå på
+flöden, aktivera mejlsteg eller skicka kampanjer; det görs bara i appen, av Axel. Den kan
+däremot stänga av ett sändsteg (`isEnabled: false`) och bara ändra ett flöde som är inaktivt.
 
-| Flöde | Spoks-id | Startar på | Väntan |
-|---|---|---|---|
-| F01 Välkomst | `b8165fed-50a2-42e4-a275-494433d3f7f0` | ny kontakt, subscribed | 1 min, 2 d, 3 d |
-| F02 Övergiven kassa | `df764d97-2fb0-4469-8675-6337edcb7b1b` | checkout, inget köp sedan | 3 h, 1 d, 2 d |
-| F03 Webbhistorik | `f9001da7-60cb-4742-bd5a-8d4397cfb0e6` | produktvisning | 4 h, 1 d |
-| F04 Efter köp | `786d2580-b0e1-4e98-bc3d-404c435db62a` | order skapad | 3 d, 16 d |
-| F05 Vinna tillbaka | `d27ea9f1-a609-425a-a7f5-8d900fecc366` | order, inget köp sedan | 120 d, 14 d |
-| F07 Motorhölje → båtmotorskydd | `84cd7589-d549-4ad7-ab9d-c711384a4396` | order med Marin Motorhölje | 21 d, 7 d (hoppar den som redan köpt båtmotorskyddet) |
-| F08–F13 Tips (bälteslip, taköverdrag, termoskydd, båtmotorskydd, IBC, sätesöverdrag) | `c7dc0fb1…`, `de6d925c…`, `e09a5094…`, `a94ef839…`, `74c973b4…`, `f6186338…` | order med produkten | 14 d |
-| F14 Recension Trustpilot | `23d2710c-1a33-44c3-bb25-df1f691b6161` | order skapad (max var 90:e dag) | 16 d, 18:00 |
-| Dubblett, tom | `e2ff6c1d-f0fa-4659-bb97-2c9d8fdb8c46` | heter "RADERA dubblett (tom)" | raderas i appen |
+| Flöde | Spoks-id | Startar på | Väntan | Läge 10:26 |
+|---|---|---|---|---|
+| F01 Välkomst | `b8165fed-50a2-42e4-a275-494433d3f7f0` | ny kontakt, subscribed | 1 min, 2 d, 3 d | live, 11 inrullade |
+| F02 Övergiven kassa | `df764d97-2fb0-4469-8675-6337edcb7b1b` | checkout, inget köp sedan | 3 h, 1 d, 2 d | live, 2 |
+| F03 Webbhistorik | `f9001da7-60cb-4742-bd5a-8d4397cfb0e6` | produktvisning | 4 h, 1 d | live, 1 |
+| **F04 Efter köp v2 (kredit)** | `bfc5beee-5ef6-40ee-8a80-634c59a7d695` | order skapad | 3 d, 16 d | live sedan 10:16, 2 |
+| F04 Efter köp (gamla) | `786d2580-b0e1-4e98-bc3d-404c435db62a` | order skapad | 3 d, 16 d | **båda sändstegen AV, triggern inaktiv** sedan 10:17 |
+| F05 Vinna tillbaka | `d27ea9f1-a609-425a-a7f5-8d900fecc366` | order, inget köp sedan | 120 d, 14 d | live, 14 |
+| F07 Motorhölje → båtmotorskydd | `84cd7589-d549-4ad7-ab9d-c711384a4396` | order med Marin Motorhölje | 21 d, 7 d (hoppar den som redan köpt båtmotorskyddet) | live, 0 |
+| F08–F13 Tips (bälteslip, taköverdrag, termoskydd, båtmotorskydd, IBC, sätesöverdrag) | `c7dc0fb1…`, `de6d925c…`, `e09a5094…`, `a94ef839…`, `74c973b4…`, `f6186338…` | order med produkten | 14 d, **utom F11 båtmotorskydd 21 d** (Axels ändring i appen 10:17) | live, 0/3/2/1/0/0 |
+| F14 Recension Trustpilot | `23d2710c-1a33-44c3-bb25-df1f691b6161` | order skapad (max var 90:e dag) | 16 d, 18:00 | live, 14 |
+
+Dubbletten `e2ff6c1d-…` ("RADERA dubblett (tom)") finns inte längre i `get_flows`.
+
+**Varför F04 byttes (2026-09-26):** gamla F04 E1 bar lyckohjulet ("Snurra hjulet, vinn en
+gratis produkt", knappen till `/pages/din-gratisprodukt`) och en trasig importrad från Klaviyo,
+**"ADD COUPON HERE: TACKIGEN"**, i klartext. Hjulet ersattes samma morgon av butikskrediten
+(Axels beslut, hjulet gav 0 köp), så en ny version byggdes: **v2 E1** "Din beställning är på
+väg" med spårningsknappen och blocket "100 kr rabatt på nästa köp" → knappen HÄMTA MIN RABATT
+till `https://baverbutiken.se/discount/KREDIT100?redirect=%2Fcollections%2Fall`; **v2 E2** "Kom
+allt fram som det ska". Gamla E1 hann aldrig gå ut: första inrullningen var 09:02 och väntan
+är 3 dagar, stegen stängdes av 10:17. ⚠️ De 11 som beställde 09:02–10:16 ligger kvar i gamla
+F04 och får alltså inget F04-mejl alls (båda stegen av) — Shopifys egna ordermejl når dem ändå.
+
+**KREDIT100 i Shopify** (mätt med Spoks `discounts_search`, källa shopify): 100 kr av, köp från
+299 kr, en gång per kund, kombineras bara med fraktrabatter, aktiv sedan 2026-09-26 08:03 UTC,
+inget slutdatum.
+
+**Avsändaren** (mätt med `get_settings`): Bäverbutiken `kundsupport@baverbutiken.se`, reply-to
+samma. **K01 är schemalagd** (`waiting_to_be_published`, 2026-09-29 16:00 UTC = tisdag 18:00);
+K02–K22 är utkast.
 
 Flödena F01–F13 fanns redan: Spoks importerade dem själv från Klaviyo med
 innehållet. Sessionen rättade det importen missade: tipsflödena och F07 hade
 ingen trigger alls, väntan 12 dagar i stället för 14, och F07 filtrerade på
 "totalt antal ordrar" i stället för om kunden redan köpt båtmotorskyddet.
 
-Kampanjerna K01–K22 ligger som utkast (Spoks: status draft, avregistreringslänk på).
+Kampanjerna K01–K22 byggdes som utkast (Spoks: status draft, avregistreringslänk på).
+K01 schemalades av Axel i appen till tisdag 29/9 18:00 (mätt 2026-09-26 10:26).
 
 ## Klaviyo avstängt 2026-09-26
 

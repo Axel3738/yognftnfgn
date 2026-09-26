@@ -1,7 +1,7 @@
 {
   "id": "k02-baten-ska-upp",
   "emailTitle": "Motorn står ute i sex månader",
-  "emailDescription": "En blank motor är det första en tjuv ser från vägen.",
+  "emailDescription": "Regn, snö och frost jobbar på motorn hela vintern.",
   "amnesrader": [
     "Motorn står ute i sex månader",
     "Klart innan båten är surrad",
@@ -114,7 +114,7 @@
     },
     {
       "type": "regular",
-      "text": "Fyra kraftiga hållare håller varje spö på sin egen plats, i båten eller på väggen i garaget. Ingen mer hopplock av trassliga linor.",
+      "text": "Fyra kraftiga hållare håller varje spö på sin egen plats. Ingen mer hopplock av trassliga linor.",
       "alignment": "left"
     },
     {
