@@ -98,7 +98,9 @@ tvistordrar svarade *"does not register, please register first"* — de var
 
 ## Två saker du måste bestämma
 
-1. ✅ **Returadressen — löst 2026-09-20.** `Sjöhed 160`, och den publiceras
+1. ✅ **Returadressen — löst 2026-09-20, flyttad 2026-09-26.** Kontoret,
+   `STONEBITE ECOM AB, Stenkolsgatan 1B, 417 07 Göteborg` (till och med
+   2026-09-25 `Sjöhed 160, 442 74 Harestad`). Den publiceras
    aldrig: kunden måste mejla kundtjänst för att få den
    (`returadress_pa_forfragan: true`). Det ger färre returer, men villkoret står
    i SOP:erna: **svar inom 24 timmar.** Ett missat returmejl blir en tvist, och

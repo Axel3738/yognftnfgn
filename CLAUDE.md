@@ -72,6 +72,40 @@ felmeddelande, bara som konstig data.
 i `docs/` och `pipeline/` (utom `pipeline/quota.mjs`) är legacy referens och ska
 inte röras utan att Axel ber om det.
 
+## Bolagets adress: kontoret sedan 2026-09-26
+
+Axels order: "allt vi skickar ut från och med idag till kunderna ska vara min
+nya adress". **STONEBITE ECOM AB, Stenkolsgatan 1B, 417 07 Göteborg** är både
+returadress och företagsadress i alla butiker. Sjöhed 160, 442 74 Harestad
+gällde till och med 2026-09-25. Skriv den aldrig i något nytt.
+
+- **Källorna i repot:** `tvister.returadress` i `kundtjanst/brands/*.yaml`
+  (autosvaret + tvisthandboken i Notion), `svar.foretag.adress`,
+  `factory/butiker/*.yaml` → `foretag.adress`, `stonebite/profil.json`. Store
+  facts och `company-information-requests.md` bär samma adress. Testet
+  "Store facts och företags-SOP:en bär samma adress som brandfilerna"
+  (`kundtjanst/test/va-sop.test.mjs`) stoppar om de glider isär.
+- **Bytt 2026-09-26:** 31 texter i Shopify via API (sidor, köpvillkor och deras
+  översättningar i CaraShell, Bäverbutiken, Norge, Matstrumpor, HeimGuard och
+  AdventLane), Matstrumpors lagerplats, 16 SOP-sidor i Notion, en röd
+  varningsruta med nya adressen på 5 gamla PDF-SOP:er (Bäverkoppling.se-basen
+  och Grillklinikens bas), CaraShells mejlsidfot i Spoks och ett meddelande
+  till Mechile i #customer-service. Norska retursidan visar ingen adress längre:
+  den lämnas ut på förfrågan, som i Bäverbutiken.
+- **Går inte via API:** butikens egen adress i Shopify (det finns ingen
+  mutation för den). Integritetspolicyerna är `autoManaged` (mätt) och byts av
+  sig själva när adressen byts. Bäverbutikens användarvillkor-policy går inte
+  heller, eftersom appen saknar `read_legal_policies`. Grillkliniken har inga
+  nycklar alls. Allt det står i Cowork-prompten
+  `kundtjanst/cowork/1-adressbyte.txt`. Rör aldrig Shopify Payments eller
+  Bolagsverket i samband med ett adressbyte.
+- **Övergången:** minst 28 kunder fick Sjöhed 160 i ett mejl de nio sista
+  dagarna före bytet (Bäverbutikens Skickat). Paket till gamla adressen måste
+  därför tas emot en tid till. Store facts säger åt VA:n att inte be dem skicka
+  om.
+- Klaviyo `QZ4jLG` (avstängt) bär fortfarande gamla postadressen. Byt den
+  först om Klaviyo slås på igen.
+
 ---
 
 ## Regler för varje session
