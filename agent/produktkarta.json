@@ -9,7 +9,7 @@
     "Magiborsten NO (NO)"
   ],
   "lage_regel": "drift = minst 30 köp sedan start OCH livstids-ROAS över break-even (produkten har bevisat sig). Allt annat = test. Skillnaden spelar roll bara vid förlust: en testprodukt går åtgärdstrappan, en driftprodukt halveras ner mot 500 kr.",
-  "uppdaterad": "2026-09-25",
+  "uppdaterad": "2026-09-26",
   "kampanjer": [
     {
       "campaign_id": "120250333936950291",
@@ -1347,6 +1347,38 @@
         "sek": 0,
         "kalla": "Axels prissheet (Google Sheet 10VrOx…, CSV-export 2026-09-25, raden \"Värmesitsen för älgpasset\"), 1 st till Sverige (kolumnen SWEDEN): produkt + frakt 8,62 + 9,06 = 17.68 USD, plus 2,9 EUR EU-avgift per order. Priset 599 kr läst ur baverbutiken.se/products.json 2026-09-25.",
         "datum": "2026-09-25"
+      }
+    },
+    {
+      "campaign_id": "120250377860080291",
+      "produkt": "Rullknivslipen i Trä 20°",
+      "lage": "test",
+      "lage_motivering": "ny kampanj startad 2026-09-26, 78 kr spend och noll köp vid morgonens rond — tillagd av /rond-auto 2026-09-26. Break-even står i kampanjnamnet (1.63). Priset i butiken 579 kr (jämförpris 759) läst ur baverbutiken.se/products.json 2026-09-26 (handle rullknivslipen-i-tra-20-vinkeln-ar-redan-bestamd). Kostnadsblocket fyllt 2026-09-26 ur prissheetets CSV-export (export?format=csv).",
+      "break_even_roas": null,
+      "break_even_kalla": "uträknad ur kostnadsblocket (Axels prissheet)",
+      "kostnad": {
+        "pris_sek": 579,
+        "usd": 16.85,
+        "eur": 2.9,
+        "sek": 0,
+        "kalla": "Axels prissheet (Google Sheet 10VrOx…, CSV-export 2026-09-26, raden \"Rullknivslipen i trä, 2 diamantskivor (09-13)\" (1 st)), 1 st till Sverige (kolumnen SWEDEN): produkt + frakt 5,85 + 11,00 = 16.85 USD, plus 2,9 EUR EU-avgift per order. Priset 579 kr läst ur baverbutiken.se/products.json 2026-09-26.",
+        "datum": "2026-09-26"
+      }
+    },
+    {
+      "campaign_id": "120250377836130291",
+      "produkt": "Värmesulorna med Fjärrkontroll",
+      "lage": "test",
+      "lage_motivering": "ny kampanj startad 2026-09-26, 79 kr spend och noll köp vid morgonens rond — tillagd av /rond-auto 2026-09-26. Break-even står i kampanjnamnet (1.64). Priset i butiken 869 kr (jämförpris 1 139) läst ur baverbutiken.se/products.json 2026-09-26 (handle varmesulor-med-fjarrkontroll-varma-fotter-pa-passet). Kostnadsblocket fyllt 2026-09-26 ur prissheetets CSV-export (export?format=csv).",
+      "break_even_roas": null,
+      "break_even_kalla": "uträknad ur kostnadsblocket (Axels prissheet)",
+      "kostnad": {
+        "pris_sek": 869,
+        "usd": 27.14,
+        "eur": 2.9,
+        "sek": 0,
+        "kalla": "Axels prissheet (Google Sheet 10VrOx…, CSV-export 2026-09-26, raden \"Värmesulorna för älgpasset\" (1 st)), 1 st till Sverige (kolumnen SWEDEN): produkt + frakt 16,62 + 10,52 = 27.14 USD, plus 2,9 EUR EU-avgift per order. Priset 869 kr läst ur baverbutiken.se/products.json 2026-09-26.",
+        "datum": "2026-09-26"
       }
     }
   ],
