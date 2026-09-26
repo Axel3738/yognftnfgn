@@ -1,11 +1,11 @@
 {
-  "comment": "CaraShells mejlinställningar för Spoks (byggda 2026-09-26). CaraShell är en EGEN verksamhet: inget härifrån delas med Bäverbutiken eller Matstrumpor (ARKITEKTUR järnregel 8). Allt nedan är AVLÄST — varje fält säger var. Spoks-workspacen fanns INTE under MCP-användaren kundsupport@baverbutiken.se vid bygget (whoami 2026-09-26: bara Bäverbutiken.se och Matstrumpor.se), men appen Spoks ÄR installerad på yitrbk-m3 (Shopify appInstallations, mätt samma dag) — workspacen ligger alltså under ett annat Spoks-konto och MCP-användaren måste bjudas in (klaviyo/spoks/README.md → CaraShell).",
+  "comment": "CaraShells mejlinställningar för Spoks (byggda 2026-09-26). CaraShell är en EGEN verksamhet: inget härifrån delas med Bäverbutiken eller Matstrumpor (ARKITEKTUR järnregel 8). Allt nedan är AVLÄST — varje fält säger var. Workspacen Carashell (spoks.workspace) skapades av Axel under ett extra Spoks-konto och delades med MCP-användaren kundsupport@baverbutiken.se som Admin 2026-09-26; uppladdad samma dag, facit i klaviyo/spoks/carashell/spoks-id.json.",
   "id": "carashell",
   "namn": "CaraShell",
   "system": "spoks",
   "spoks": {
-    "workspace": null,
-    "workspace_comment": "Fylls i av uppladdningssessionen ur whoami när workspacen syns. Hitta aldrig på ett storeId.",
+    "workspace": "38f3d430-690c-4c0b-8419-8ec2e5272148",
+    "workspace_comment": "Ur whoami 2026-09-26 (namn Carashell, shopifyStore yitrbk-m3.myshopify.com). Hitta aldrig på ett storeId.",
     "installningar": {
       "generalSettings": { "locale": { "country": "SE", "language": "sv", "timezone": "Europe/Stockholm" }, "url": "https://carashell.se" },
       "emailSettings": { "senderName": "CaraShell", "senderEmail": "hello@carashell.com", "replyToEmail": "hello@carashell.com" },

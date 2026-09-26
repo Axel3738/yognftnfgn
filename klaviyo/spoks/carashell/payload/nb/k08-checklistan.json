@@ -26,7 +26,7 @@
     },
     {
       "type": "image",
-      "fileId": "{{spoks:media:takskyddet}}",
+      "fileId": "6830b5d9-7f36-4ff3-a0c4-f3aa4a05b62e",
       "altText": "Taktrekk campingvogn & bobil 5,5–13,5 m",
       "urlRedirect": "https://carashell.se/nb/products/takskyddet?country=NO"
     },
@@ -67,7 +67,7 @@
           "blocks": [
             {
               "type": "image",
-              "fileId": "{{spoks:media:takskyddet}}",
+              "fileId": "6830b5d9-7f36-4ff3-a0c4-f3aa4a05b62e",
               "altText": "Taktrekk campingvogn & bobil 5,5–13,5 m",
               "urlRedirect": "https://carashell.se/nb/products/takskyddet?country=NO"
             },
@@ -89,7 +89,7 @@
           "blocks": [
             {
               "type": "image",
-              "fileId": "{{spoks:media:termoskyddet}}",
+              "fileId": "295e18f4-1bba-4ee1-a32e-b06f3b5d7f92",
               "altText": "Frontrutetrekk til bobil 211 × 171 cm",
               "urlRedirect": "https://carashell.se/nb/products/termoskyddet?country=NO"
             },
@@ -111,7 +111,7 @@
           "blocks": [
             {
               "type": "image",
-              "fileId": "{{spoks:media:fonstertermomatta-2-pack}}",
+              "fileId": "e389d84e-2027-4b88-9e80-c92a3ce603d5",
               "altText": "Vindu-termomatte 2-pk 70 × 80 cm",
               "urlRedirect": "https://carashell.se/nb/products/fonstertermomatta-2-pack?country=NO"
             },
@@ -168,10 +168,5 @@
       ]
     }
   ],
-  "varningar": [
-    "Bilden för takskyddet saknar fileId i Spoks (produkter.json → bild).",
-    "Bilden för takskyddet saknar fileId i Spoks (produkter.json → bild).",
-    "Bilden för termoskyddet saknar fileId i Spoks (produkter.json → bild).",
-    "Bilden för fonstertermomatta-2-pack saknar fileId i Spoks (produkter.json → bild)."
-  ]
+  "varningar": []
 }

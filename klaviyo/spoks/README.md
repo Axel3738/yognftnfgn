@@ -74,7 +74,47 @@ efter varje utskick; stiger klagomålen, stanna kvar ett steg till.
   på länge får fortfarande kampanjer tills Spoks egen suppression tar dem.
 - Anonyma recensenter står som "Verifierad kund", aldrig "Anonymous".
 
-## CaraShell (byggt 2026-09-26, INTE uppladdat — workspacen syns inte för MCP:n)
+## CaraShell (workspace `38f3d430-690c-4c0b-8419-8ec2e5272148`, UPPLADDAT 2026-09-26, allt avstängt)
+
+✅ **Uppladdat 2026-09-26 10:45–11:36 CEST** (Axel bjöd in `kundsupport@baverbutiken.se` som
+Admin i workspacen "Carashell" under sitt extra Spoks-konto; `whoami` visade den direkt efter,
+Shopify `yitrbk-m3`, plan **Free = 5 000 mejl/mån**). Facit med varje id:
+**`klaviyo/spoks/carashell/spoks-id.json`**. Mätt och byggt, i ordning:
+
+- **Språkstyrningen håller:** 463 kontakter; Sweden + Denmark 219, utan land 30, Norway 94,
+  US/UK/CA/AU/NZ/FI 120 (219 + 94 + 120 = alla 433 med land). Landsnamnen i Spoks är exakt
+  brandfilens. Samtycke: **sv 15, nb 4, en 57** (76 totalt, samma som Shopify).
+- **Produkterna:** Spoks-id och `fileId` för de fyra bilderna i `produkter.json`; katalogens
+  SEK-priser (1 129 / 559 / 539 / 379 kr) stämde med carashell.se. Payloads omgenererade utan
+  platshållare (`konvertera.mjs --brand carashell`, klaviyo-testerna 166/166).
+- **Inställningarna:** avsändare **CaraShell <hello@carashell.com>** (reply-to samma), färger,
+  layout, logga, Barlow + Source Sans 3, sidfoten med bolag och adress, avregistrering på tre
+  språk. Avsändaradressen gick först inte (`custom_domain_not_valid`) men gick igenom 11:35 —
+  domänen var då verifierad: carashell.com bär Spoks poster (`link` → `t7pzafpu.link.spoks.com`,
+  `feed` → `0mjnbqxx.feed.spoks.com`, `kps`/`kps2._domainkey` → `u115622048.wl049.sendgrid.net`,
+  `_dmarc` `v=DMARC1; p=none;`), mätt med Cloudflare DoH; NS/MX/A orörda (Loopia, Shopify).
+  Rot-SPF:en saknar fortfarande `include:sendgrid.net` (SendGrids egen `em…`-CNAME bär SPF för
+  avsändarvägen, och Spoks godkände domänen ändå). Webbsäkra reservtypsnitt står kvar på
+  Helvetica/Arial Black (ändras inte via MCP:n, syns bara om Google Fonts inte laddar).
+- **13 segment** (`SEG_samtycke_sv/nb/en` 15/4/57 …, `SEG_oengagerade_180d` inte valbart i kampanjer).
+- **24 flöden, 45 mejl** (8 per språk), alla `isActive: false`, alla sändsteg `isEnabled: false`.
+- **39 kampanjutkast** (13 per språk), status draft, ingen publik, inget datum, `isOptOutEnabled`.
+- **Kontroll:** tre oberoende granskare (en per språk) läste tillbaka varje flöde och varje mejl
+  mot `plan.json` och `payload/`: 8/8 + 13/13 per språk, inga dubbletter. En rättning: F01 SV E1
+  skapades före länkdomänen och hade spårningslänken `r.spoksmail.com` — omsparad, nu
+  `link.carashell.com` som de andra 44. Går inte att läsa tillbaka via MCP:n: produktblockens
+  knapptext och visningsinställningar (dolt pris i nb/en) — skickade exakt som payloaden,
+  syns i appens förhandsvisning.
+- ⚠️ Uppladdningen gjordes av en workflow med en agent per språk. **Ett avbrott i huvudsessionen
+  (Axel skrev medan den körde, 11:16) dödade agenterna mitt i** — omstarten var idempotent
+  (namn/titlar lästes först, halvfärdiga flöden byggdes klart) och inget blev dubbelt, men
+  räkna alltid efter en omstart. Spoks svarade "Rate limit exceeded" ett par gånger med två
+  agenter samtidigt; läs tillbaka och försök en gång till räckte.
+
+**Inget är påslaget.** Att slå på ett flöde = sändstegen på ett i taget i flödesredigeraren,
+sedan flödet (samma som Matstrumpor). F14 (recension) får inte slås på förrän Trustpilot-profilen
+för carashell.se finns (evaluate-sidan svarade 404 2026-09-26 11:40). K09 (Black Week) väntar på
+Axels A/B/C.
 
 Axels order 2026-09-26 (`PROMPT-carashell.md`): hela mejlsystemet för CaraShell i
 Spoks, alla marknader och språk, allt som utkast. CaraShell är en egen verksamhet:
@@ -86,7 +126,7 @@ node klaviyo/spoks/konvertera.mjs --brand carashell  # copykontroll + payload/<s
 node --test klaviyo/test/konvertera.test.mjs         # 9 tester: Bäverbutiken oförändrad, CaraShells språk och Spoks-form
 ```
 
-**Steg 0 stoppade:** `whoami` visar bara Bäverbutiken.se (`f716ae36-…`) och
+**Historik — steg 0 stoppade först (löst samma dag, se ovan):** `whoami` visade bara Bäverbutiken.se (`f716ae36-…`) och
 Matstrumpor.se (`71c2d4c8-…`) under MCP-användaren `kundsupport@baverbutiken.se`
 (mätt två gånger 2026-09-26). Appen **Spoks står som installerad på CaraShells
 Shopify** (yitrbk-m3, `appInstallations` läst med Admin API samma dag: Factory,
@@ -180,11 +220,16 @@ butiks-URL + adressen, "we will make the address you want an admin on all of the
 `whoami` visa tre workspaces, och uppladdningssessionen (`PROMPT-carashell-upp.md`,
 steg 0) kan gå vidare. Det extra kontot rörs inte av någon session.
 
-**Axels klick** (upprepas i `PROMPT-carashell-upp.md`): bjud in
-`kundsupport@baverbutiken.se` som Admin i CaraShells workspace enligt ovan, kontrollera
-i app.spoks.com (inloggad som kundsupport) att CaraShell syns bredvid Bäverbutiken.se
-och Matstrumpor.se, kör sedan uppladdningsprompten i en ny session — steg 0 där
-vägrar gå vidare tills `whoami` visar workspacen.
+**Axels klick efter uppladdningen** (allt i https://app.spoks.com/carashell):
+1. ✅ Inbjudan av `kundsupport@baverbutiken.se` som Admin (gjord 2026-09-26 förmiddag).
+2. ✅ Domänen carashell.com kopplad och verifierad (DNS-posterna ovan fanns 11:35).
+3. Black Week: A (ingen rabatt, som byggt), B (Bäverbutikens trappa 10/20/30 % i Shopify, K09
+   skrivs om + ett fredagsmejl) eller C (egen siffra). Rabatten gäller hela butiken, inte bara mejlen.
+4. Trustpilot-profil för carashell.se, sedan F14.
+5. Slå på flödena ett språk i taget (sändstegen först, sedan flödet); stäng först Shopifys egna
+   automatiseringar för övergiven kassa (Marknadsföring → Automatiseringar), annars får kunden två mejl.
+6. Kampanjerna: publik `SEG_samtycke_<sprak>` och tiden i `spoks-id.json → kampanjer.*.planerad`,
+   en i taget, K01 tisdag 29/9.
 
 ---
 

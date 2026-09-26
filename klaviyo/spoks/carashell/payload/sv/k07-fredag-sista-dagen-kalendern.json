@@ -24,7 +24,7 @@
       "selectionMode": "manual",
       "products": [
         {
-          "id": "{{spoks:id:adventskalender-retrobussar}}",
+          "id": "582482ad-89d1-4d40-805a-e1886d4ced9b",
           "button": "Se produkten"
         }
       ],
@@ -53,7 +53,7 @@
       "selectionMode": "manual",
       "products": [
         {
-          "id": "{{spoks:id:adventskalender-retrobussar}}",
+          "id": "582482ad-89d1-4d40-805a-e1886d4ced9b",
           "button": "Beställ innan fredag"
         }
       ],
@@ -114,8 +114,5 @@
       ]
     }
   ],
-  "varningar": [
-    "Produkten adventskalender-retrobussar finns inte i Spoks.",
-    "Produkten adventskalender-retrobussar finns inte i Spoks."
-  ]
+  "varningar": []
 }
