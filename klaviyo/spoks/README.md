@@ -190,6 +190,15 @@ slutar fungera. **Mät efter:** `https://dns.google/resolve?name=matstrumpor.se&
 ska fortfarande svara ns1/ns2.loopia.se, och `type=TXT` ska ge exakt EN spf-rad. Sedan
 Spoks → Settings → Custom domain → Verify (kan dröja upp till en timme, Loopias TTL).
 
+✅ **Inlagt av Axel 2026-09-26, mätt av sessionen samma dag (Cloudflare DoH, TTL 3600 =
+färskt från Loopias servrar):** alla fem CNAME pekar exakt rätt, `_dmarc` =
+`v=DMARC1; p=none;`, roten har EN TXT `v=spf1 include:spf.loopia.se include:sendgrid.net -all`,
+och NS (ns1/ns2.loopia.se), A (23.227.38.65) och MX (Loopia) är oförändrade. ⚠️ Google-
+resolvern visade upp till en timme efteråt gamla svar (den gamla SPF-raden, "finns inte"
+på `_dmarc`/`feed`/`kps*`) — det är resolverns cache från mätningen FÖRE inläggningen,
+inte Loopia. Mät med Cloudflare (`https://cloudflare-dns.com/dns-query?name=…&type=…`,
+header `accept: application/dns-json`) när Google nyss frågats. Verify i Spoks = Axels klick.
+
 ## Axels klick (i ordning, allt i https://app.spoks.com/matstrumpor)
 
 1. **Settings → Email & SMS:** avsändaradressen. Vill han skicka från `@matstrumpor.se` krävs
