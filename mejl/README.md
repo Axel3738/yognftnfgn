@@ -9,6 +9,23 @@ hjulet: **en till av det kunden köpte + tre som passar ihop med det**
 mejlet"), omgjort 2026-09-13 två gånger efter hans feedback — först
 komplement i stället för dyraste produkter (v3), sedan hjulet (v4).
 
+⛔ **Hjulet är borta ur mejlen sedan 2026-09-26 (Axels beslut: det gav 0
+köp).** Orderbekräftelse, Leveransbekräftelse och Levererad bär i stället
+**butikskrediten**: "100 kr rabatt på nästa köp", minsta köp 299 kr, en gång
+per kund, bara tidigare köpare, ingen tidsgräns. Knappen **HÄMTA MIN RABATT**
+går till `/discount/KREDIT100?redirect=%2Fcollections%2Fall` och lägger på
+koden själv. Koden skapades i Shopify samma dag
+(`gid://shopify/DiscountCodeNode/2304016646493`). Beloppen står bara i
+`konfig.json → kredit` och texten i `copy.json → kredit` (platshållare
+`{{kredit_belopp}}`, `{{kredit_minsta}}`, `{{kredit_kod}}`); mallen är
+`kreditBlock` i `mallar.mjs`. Vinstraden, "Din gåvokod: TACKIGEN" och
+"gäller till <datum>" är borta; samma-paket-raden och komplementen står kvar.
+Ett test vaktar att inget byggt mejl säger hjul, snurra, vinn, TACKIGEN
+eller din-gratisprodukt. **TACKIGEN, kollektionen och sidan
+`/pages/din-gratisprodukt` ligger kvar orörda i Shopify** (kunder har redan
+fått mejl med dem), och avsnitten om hjulet nedan gäller bara sidan.
+Inklistringen: `mejl/COWORK-PROMPT.md` (v13, tre mallar).
+
 Noll beroenden. Kör från repo-roten:
 
 ```bash
@@ -58,7 +75,7 @@ kan förhandsvisningen aldrig visa något annat än det som skickas.
 
 ### Mallarna
 
-| Fil | Notis i Shopify | Erbjudandet med? |
+| Fil | Notis i Shopify | Butikskrediten med? |
 |---|---|---|
 | `orderbekraftelse` | Orderbekräftelse / Order confirmation | ✅ |
 | `fraktbekraftelse` | Leveransbekräftelse / Shipping confirmation | ✅ |
