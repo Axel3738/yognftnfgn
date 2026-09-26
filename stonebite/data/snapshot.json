@@ -1,8 +1,8 @@
 {
- "byggd": "2026-09-26T00:06:17.607Z",
+ "byggd": "2026-09-26T01:06:08.343Z",
  "fonster": {
   "dagar": 30,
-  "till": "2026-09-26T00:05:15.907Z"
+  "till": "2026-09-26T01:05:06.659Z"
  },
  "profil": {
   "kommentar": "Företagsfakta och texten på den publika sidan. Ändra här — sidan läser filen vid varje visning, ingen ombyggnad behövs. Tomma fält visas inte alls (hellre tomt än påhittat).",
@@ -937,7 +937,7 @@
   "status": "ok",
   "orsak": null,
   "historikFran": "2026-09-11T02:29:10+00:00",
-  "matt": "2026-09-26T00:05:15.907Z",
+  "matt": "2026-09-26T01:05:06.659Z",
   "dagar": 14,
   "rutiner": [
    {
@@ -951,9 +951,9 @@
     },
     "schematext": "varje timme :16",
     "vad": "Skanningar in i Shopify + kundens spårningssida",
-    "senast": "2026-09-25T23:22:32+00:00",
-    "antal": 180,
-    "nasta": "2026-09-26T00:16:00.000Z",
+    "senast": "2026-09-26T00:22:30+00:00",
+    "antal": 181,
+    "nasta": "2026-09-26T01:16:00.000Z",
     "avstangd": false,
     "status": "ok",
     "ord": "körde för 1 h sedan"
@@ -969,9 +969,9 @@
     },
     "schematext": "varje timme :32",
     "vad": "Samma som Bäverbutikens, norsk kedja",
-    "senast": "2026-09-25T23:33:21+00:00",
-    "antal": 123,
-    "nasta": "2026-09-26T00:32:00.000Z",
+    "senast": "2026-09-26T00:33:38+00:00",
+    "antal": 124,
+    "nasta": "2026-09-26T01:32:00.000Z",
     "avstangd": false,
     "status": "ok",
     "ord": "körde för 1 h sedan"
@@ -987,9 +987,9 @@
     },
     "schematext": "varje timme :40",
     "vad": "Finsk kedja",
-    "senast": "2026-09-25T23:41:30+00:00",
-    "antal": 122,
-    "nasta": "2026-09-26T00:40:00.000Z",
+    "senast": "2026-09-26T00:41:08+00:00",
+    "antal": 123,
+    "nasta": "2026-09-26T01:40:00.000Z",
     "avstangd": false,
     "status": "ok",
     "ord": "körde för mindre än en timme sedan"
@@ -1005,9 +1005,9 @@
     },
     "schematext": "varje timme :48",
     "vad": "Dansk kedja",
-    "senast": "2026-09-25T23:49:17+00:00",
-    "antal": 122,
-    "nasta": "2026-09-26T00:48:00.000Z",
+    "senast": "2026-09-26T00:49:23+00:00",
+    "antal": 123,
+    "nasta": "2026-09-26T01:48:00.000Z",
     "avstangd": false,
     "status": "ok",
     "ord": "körde för mindre än en timme sedan"
@@ -1023,9 +1023,9 @@
     },
     "schematext": "varje timme :24",
     "vad": "Fyrspråkig kedja (sv/nb/en/fi)",
-    "senast": "2026-09-25T23:25:38+00:00",
-    "antal": 125,
-    "nasta": "2026-09-26T00:24:00.000Z",
+    "senast": "2026-09-26T00:25:30+00:00",
+    "antal": 126,
+    "nasta": "2026-09-26T01:24:00.000Z",
     "avstangd": false,
     "status": "ok",
     "ord": "körde för 1 h sedan"
@@ -1041,9 +1041,9 @@
     },
     "schematext": "varje timme :56",
     "vad": "Prefix MS-",
-    "senast": "2026-09-25T23:57:24+00:00",
-    "antal": 109,
-    "nasta": "2026-09-26T00:56:00.000Z",
+    "senast": "2026-09-26T00:57:43+00:00",
+    "antal": 110,
+    "nasta": "2026-09-26T01:56:00.000Z",
     "avstangd": false,
     "status": "ok",
     "ord": "körde för mindre än en timme sedan"
@@ -1059,9 +1059,9 @@
     },
     "schematext": "varje timme :04",
     "vad": "Shopify + Meta + Discord + rutinvakten + bonus → snapshot.json → main → Railway. Byggd 2026-09-22 på Barkås-kontot (trig_01QwKgfZP3JdhZX6tbGo1LJb)",
-    "senast": "2026-09-25T23:06:22+00:00",
-    "antal": 77,
-    "nasta": "2026-09-26T01:04:00.000Z",
+    "senast": "2026-09-26T00:06:35+00:00",
+    "antal": 78,
+    "nasta": "2026-09-26T02:04:00.000Z",
     "avstangd": false,
     "status": "ok",
     "ord": "körde för 1 h sedan"
@@ -1082,7 +1082,7 @@
     "nasta": "2026-09-26T02:15:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 22 h sedan"
+    "ord": "körde för 23 h sedan"
    },
    {
     "id": "no-recensioner",
@@ -1100,7 +1100,7 @@
     "nasta": "2026-09-26T03:30:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 20 h sedan"
+    "ord": "körde för 21 h sedan"
    },
    {
     "id": "commission",
@@ -1118,7 +1118,7 @@
     "nasta": "2026-09-26T04:00:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 20 h sedan"
+    "ord": "körde för 21 h sedan"
    },
    {
     "id": "tvistkoll",
@@ -1154,7 +1154,7 @@
     "nasta": "2026-09-26T03:40:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 10 h sedan"
+    "ord": "körde för 11 h sedan"
    },
    {
     "id": "kundtjanst",
@@ -1197,7 +1197,7 @@
     "nasta": "2026-09-28T05:00:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 43 h sedan"
+    "ord": "körde för 44 h sedan"
    },
    {
     "id": "notionkorning",
@@ -1233,7 +1233,7 @@
     "nasta": "2026-09-26T13:00:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 10 h sedan"
+    "ord": "körde för 11 h sedan"
    },
    {
     "id": "bildannonser",
@@ -1269,7 +1269,7 @@
     "nasta": "2026-09-26T22:41:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 1 h sedan"
+    "ord": "körde för 2 h sedan"
    },
    {
     "id": "nattvakt-carashell-termoskyddet",
@@ -1305,7 +1305,7 @@
     "nasta": "2026-09-26T12:05:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 12 h sedan"
+    "ord": "körde för 13 h sedan"
    },
    {
     "id": "leverans-carashell-termoskyddet",
@@ -1341,7 +1341,7 @@
     "nasta": "2026-09-26T14:05:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 10 h sedan"
+    "ord": "körde för 11 h sedan"
    },
    {
     "id": "no-carashell-termoskyddet",
@@ -1377,7 +1377,7 @@
     "nasta": "2026-09-26T14:45:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 32 h sedan"
+    "ord": "körde för 33 h sedan"
    },
    {
     "id": "spegla-carashell-termoskyddet",
@@ -1413,7 +1413,7 @@
     "nasta": "2026-09-26T15:05:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 9 h sedan"
+    "ord": "körde för 10 h sedan"
    },
    {
     "id": "us-carashell-termoskyddet",
@@ -1695,6 +1695,55 @@
    "ny": 0
   },
   "handelser": [
+   {
+    "tid": "2026-09-26T00:57:43+00:00",
+    "rutin": "sparning-matstrumpor",
+    "namn": "Spårningen Matstrumpor",
+    "brand": "matstrumpor",
+    "rubrik": "sparning matstrumpor: 2026-09-26 — 0 event, 236 paket, 2523 händelser"
+   },
+   {
+    "tid": "2026-09-26T00:49:23+00:00",
+    "rutin": "sparning-baeverbutiken",
+    "namn": "Spårningen Bæverbutiken (DK)",
+    "brand": "baverbutiken",
+    "rubrik": "Spårning Bæverbutiken: rond 02:50 (1 paket, 23 händelser)"
+   },
+   {
+    "tid": "2026-09-26T00:41:08+00:00",
+    "rutin": "sparning-majavakauppa",
+    "namn": "Spårningen Majavakauppa (FI)",
+    "brand": "baverbutiken",
+    "rubrik": "sparning majavakauppa: 2026-09-26 02:41 — 0 event, 0 registrerade, sidan publicerad (44 paket, 424 händelser)"
+   },
+   {
+    "tid": "2026-09-26T00:33:38+00:00",
+    "rutin": "sparning-beverbutikken",
+    "namn": "Spårningen Beverbutikken (NO)",
+    "brand": "baverbutiken",
+    "rubrik": "sparning beverbutikken 2026-09-26 02:32: 979 paket, 10514 händelser, 0 event"
+   },
+   {
+    "tid": "2026-09-26T00:25:30+00:00",
+    "rutin": "sparning-carashell",
+    "namn": "Spårningen CaraShell",
+    "brand": "carashell",
+    "rubrik": "sparning carashell 2026-09-26 02:24: 367 paket, 1271 händelser, 0 nyregistrerade"
+   },
+   {
+    "tid": "2026-09-26T00:22:30+00:00",
+    "rutin": "sparning-baverbutiken",
+    "namn": "Spårningen Bäverbutiken",
+    "brand": "baverbutiken",
+    "rubrik": "sparning baverbutiken: 2026-09-26 — 0 event, 0 registrerade, sidan publicerad (1 516 paket)"
+   },
+   {
+    "tid": "2026-09-26T00:06:35+00:00",
+    "rutin": "stonebite",
+    "namn": "Stonebite: färsk data till sajten",
+    "brand": "bolaget",
+    "rubrik": "Stonebite: färsk data 2026-09-26 02:06"
+   },
    {
     "tid": "2026-09-25T23:57:24+00:00",
     "rutin": "sparning-matstrumpor",
@@ -4445,62 +4494,13 @@
     "namn": "Spårningen Bæverbutiken (DK)",
     "brand": "baverbutiken",
     "rubrik": "Spårning Bæverbutiken: rond 22:50 (1 paket, 21 händelser)"
-   },
-   {
-    "tid": "2026-09-23T20:41:29+00:00",
-    "rutin": "sparning-majavakauppa",
-    "namn": "Spårningen Majavakauppa (FI)",
-    "brand": "baverbutiken",
-    "rubrik": "sparning majavakauppa: 2026-09-23 22:41 — 0 event, 0 registrerade, sidan publicerad (32 paket)"
-   },
-   {
-    "tid": "2026-09-23T20:33:47+00:00",
-    "rutin": "sparning-beverbutikken",
-    "namn": "Spårningen Beverbutikken (NO)",
-    "brand": "baverbutiken",
-    "rubrik": "sparning beverbutikken: 2026-09-23 22:32 — 927 paket, 9476 händelser, 0 event"
-   },
-   {
-    "tid": "2026-09-23T20:25:07+00:00",
-    "rutin": "sparning-carashell",
-    "namn": "Spårningen CaraShell",
-    "brand": "carashell",
-    "rubrik": "sparning carashell: 2026-09-23 22:24 — 274 paket, 645 händelser, 0 registrerade"
-   },
-   {
-    "tid": "2026-09-23T20:22:47+00:00",
-    "rutin": "sparning-baverbutiken",
-    "namn": "Spårningen Bäverbutiken",
-    "brand": "baverbutiken",
-    "rubrik": "sparning baverbutiken: 2026-09-23 — 4 event, 0 registrerade, sidan publicerad (1 449 paket)"
-   },
-   {
-    "tid": "2026-09-23T20:06:26+00:00",
-    "rutin": "stonebite",
-    "namn": "Stonebite: färsk data till sajten",
-    "brand": "bolaget",
-    "rubrik": "Stonebite: färsk data 2026-09-23 22:06"
-   },
-   {
-    "tid": "2026-09-23T19:57:22+00:00",
-    "rutin": "sparning-matstrumpor",
-    "namn": "Spårningen Matstrumpor",
-    "brand": "matstrumpor",
-    "rubrik": "sparning matstrumpor: 2026-09-23 — 0 event, 121 paket"
-   },
-   {
-    "tid": "2026-09-23T19:49:25+00:00",
-    "rutin": "sparning-baeverbutiken",
-    "namn": "Spårningen Bæverbutiken (DK)",
-    "brand": "baverbutiken",
-    "rubrik": "Spårning Bæverbutiken: rond 21:50 (1 paket, 21 händelser)"
    }
   ]
  },
  "eskalering": {
   "status": "ok",
-  "orsak": null,
-  "hamtad": "2026-09-26T00:06:01.293Z",
+  "orsak": "Övriga OPS-butiker #ads: Discord 503 på /channels/1547547743688589354/messages?limit=12",
+  "hamtad": "2026-09-26T01:05:52.194Z",
   "kanaler": [
    {
     "brand": "baverbutiken",
@@ -5561,35 +5561,6 @@
    },
    {
     "brand": "ops",
-    "server": "AdventLane",
-    "serverId": "1547541533476257803",
-    "kanal": "ads",
-    "kanalId": "1547547743688589354",
-    "roll": "annonser",
-    "lank": "https://discord.com/channels/1547541533476257803/1547547743688589354",
-    "meddelanden": [
-     {
-      "id": "1549185126527672351",
-      "tid": "2026-09-14T22:28:36.632000+00:00",
-      "av": "Bävern",
-      "avId": "1543628123289952277",
-      "bot": true,
-      "text": "🌙 ADVENTLANE night watch — 2026-09-15\n\n**Numbers (7 days)**\nSpend: 2 835 SEK\nPurchases: 5\nROAS: 1.18\nProfit contribution: -1 185 SEK\n\n**Done automatically**\n• Budget round: campaign still PAUSED by Axel (since Sept 13) — nothing touched, nothing activated, 0 changes\n• Brief round PAUSED in the register from tonight: no new briefs will be ordered on Wednesday. Reason: the store is not advertising and 36 briefs already sit as Draft — every answer to the open question (A/B/C) means no new briefs. Release with: node factory/register.mjs briefantal kalender/adventskalender-racingbilar auto\n• The b",
-      "bilagor": 0
-     },
-     {
-      "id": "1548822530792497173",
-      "tid": "2026-09-13T22:27:47.072000+00:00",
-      "av": "Bävern",
-      "avId": "1543628123289952277",
-      "bot": true,
-      "text": "🌙 ADVENTLANE night watch — 2026-09-14\n\n**Numbers (7 days)**\nSpend: 2 834 SEK\nPurchases: 5\nROAS: 1.18\nProfit contribution: -1 185 SEK\n\n**Done automatically**\n• Budget round: both campaigns are PAUSED by Axel since Sept 13, 11:05 — a decision, nothing touched, nothing activated\n• No brief day (Monday). Next brief day is Wednesday Sept 16 — the night watch will order 21 more briefs then unless told otherwise\n• Lifetime SE: 2 799 SEK, 5 purchases, CPA 560 SEK (break-even 323). No single ad ever passed the ad gate — the 7 videos that went live Sept 12 are untested, not failed\n\n**⚠️ Warnings**\n• 36",
-      "bilagor": 0
-     }
-    ]
-   },
-   {
-    "brand": "ops",
     "server": "TackleBay — OPS",
     "serverId": "1547600929057144892",
     "kanal": "customer-support",
@@ -5673,31 +5644,31 @@
    "id": "repo:redigerare",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-26T00:05:15.957Z"
+   "tid": "2026-09-26T01:05:06.704Z"
   },
   {
    "id": "repo:kundtjanst",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-26T00:05:15.957Z"
+   "tid": "2026-09-26T01:05:06.704Z"
   },
   {
    "id": "repo:leverans",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-26T00:05:15.957Z"
+   "tid": "2026-09-26T01:05:06.704Z"
   },
   {
    "id": "repo:nattvakten",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-26T00:05:15.957Z"
+   "tid": "2026-09-26T01:05:06.704Z"
   },
   {
    "id": "shopify",
    "status": "ok",
    "orsak": "4 av 12 butiker gick inte att läsa",
-   "tid": "2026-09-26T00:05:35.318Z",
+   "tid": "2026-09-26T01:05:23.985Z",
    "butiker": 12,
    "avstangda": 1
   },
@@ -5705,7 +5676,7 @@
    "id": "shopify:tvister",
    "status": "delvis",
    "orsak": "4 av 12 butiker gick inte att läsa tvisterna för",
-   "tid": "2026-09-26T00:05:43.473Z",
+   "tid": "2026-09-26T01:05:32.984Z",
    "butiker": 12,
    "oppna": 21
   },
@@ -5713,14 +5684,14 @@
    "id": "meta",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-26T00:05:52.229Z",
+   "tid": "2026-09-26T01:05:41.562Z",
    "konton": 5
   },
   {
    "id": "rutiner",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-26T00:05:53.850Z",
+   "tid": "2026-09-26T01:05:43.078Z",
    "ok": 18,
    "sen": 0,
    "saknas": 0,
@@ -5731,22 +5702,22 @@
   {
    "id": "discord",
    "status": "ok",
-   "orsak": null,
-   "tid": "2026-09-26T00:06:01.293Z",
-   "kanaler": 26
+   "orsak": "Övriga OPS-butiker #ads: Discord 503 på /channels/1547547743688589354/messages?limit=12",
+   "tid": "2026-09-26T01:05:52.194Z",
+   "kanaler": 25
   },
   {
    "id": "bonus",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-26T00:06:17.594Z",
+   "tid": "2026-09-26T01:06:08.332Z",
    "personer": 6
   },
   {
    "id": "autosvar",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-26T00:06:17.607Z",
+   "tid": "2026-09-26T01:06:08.343Z",
    "butiker": 3
   }
  ],
@@ -7309,89 +7280,89 @@
     },
     {
      "datum": "2026-09-25",
-     "spend": 36085.83,
+     "spend": 36096.43,
      "kop": 63,
-     "roas": 1.35552
+     "roas": 1.355122
     }
    ],
    "idag": {
-    "spend": 401.73,
-    "kop": 2,
-    "roas": 4.525428,
+    "spend": 501.46,
+    "kop": 3,
+    "roas": 4.600566,
     "tomt": false
    },
    "kampanjer": [
     {
      "id": "120250147343350291",
      "namn": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
-     "spend": 108432.86,
+     "spend": 108436.11,
      "kop": 200,
-     "roas": 2.388054,
-     "cpa": 542.1643,
-     "intakt": 258943.52505444
+     "roas": 2.387982,
+     "cpa": 542.18055,
+     "intakt": 258943.47883002
     },
     {
      "id": "120250009325850291",
      "namn": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
-     "spend": 25385.7,
+     "spend": 25385.8,
      "kop": 94,
-     "roas": 2.193528,
-     "cpa": 270.06063829787234,
-     "intakt": 55684.243749600006
+     "roas": 2.19352,
+     "cpa": 270.06170212765954,
+     "intakt": 55684.26001599999
     },
     {
      "id": "120250284693380291",
      "namn": "Sotarsetet med Böjliga Stänger | BE ROAS 1.61 | Launch 2026-09-19",
-     "spend": 16425.14,
+     "spend": 16425.74,
      "kop": 91,
-     "roas": 2.880396,
-     "cpa": 180.49604395604396,
-     "intakt": 47310.907555440004
+     "roas": 2.880291,
+     "cpa": 180.5026373626374,
+     "intakt": 47310.91109034001
     },
     {
      "id": "120250175763810291",
      "namn": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
-     "spend": 15903.52,
+     "spend": 15903.78,
      "kop": 52,
-     "roas": 2.079435,
-     "cpa": 305.8369230769231,
-     "intakt": 33070.336111200006
+     "roas": 2.079401,
+     "cpa": 305.8419230769231,
+     "intakt": 33070.33603578
     },
     {
      "id": "120250252311730291",
      "namn": "Taköverdraget LISTICLE LAGERRENSNING",
-     "spend": 11295.67,
+     "spend": 11295.99,
      "kop": 25,
-     "roas": 2.709445,
-     "cpa": 451.8268,
-     "intakt": 30604.99660315
+     "roas": 2.709369,
+     "cpa": 451.8396,
+     "intakt": 30605.00513031
     },
     {
      "id": "120249902177470291",
      "namn": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
-     "spend": 10759.1,
+     "spend": 10759.29,
      "kop": 27,
-     "roas": 2.431082,
-     "cpa": 398.4851851851852,
-     "intakt": 26156.2543462
+     "roas": 2.431039,
+     "cpa": 398.49222222222227,
+     "intakt": 26156.253602310004
     },
     {
      "id": "120249850522830291",
      "namn": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-     "spend": 9612.06,
+     "spend": 9612.26,
      "kop": 37,
-     "roas": 1.7166,
-     "cpa": 259.7854054054054,
-     "intakt": 16500.062196
+     "roas": 1.716564,
+     "cpa": 259.7908108108108,
+     "intakt": 16500.05947464
     },
     {
      "id": "120250253948980291",
      "namn": "Solcellslampan med Rörelsesensor 210 LED | BE ROAS 1.62 | Launch 2026-09-17",
-     "spend": 8313.25,
+     "spend": 8313.3,
      "kop": 19,
-     "roas": 1.860319,
-     "cpa": 437.5394736842105,
-     "intakt": 15465.296926750001
+     "roas": 1.860308,
+     "cpa": 437.54210526315785,
+     "intakt": 15465.298496399999
     },
     {
      "id": "120250268503590291",
@@ -7414,20 +7385,20 @@
     {
      "id": "120250314107930291",
      "namn": "Katalog",
-     "spend": 4533.27,
+     "spend": 4533.34,
      "kop": 14,
-     "roas": 1.702788,
-     "cpa": 323.805,
-     "intakt": 7719.197756760001
+     "roas": 1.702762,
+     "cpa": 323.81,
+     "intakt": 7719.199085080001
     },
     {
      "id": "120250320718080291",
      "namn": "ATV-Kapellet 3XL 256 × 110 × 120 cm | BE ROAS 1.62 | Launch 2026-09-22",
-     "spend": 4503.09,
+     "spend": 4503.36,
      "kop": 16,
-     "roas": 2.597283,
-     "cpa": 281.443125,
-     "intakt": 11695.799104470001
+     "roas": 2.597127,
+     "cpa": 281.46,
+     "intakt": 11695.79784672
     },
     {
      "id": "120250268474110291",
@@ -7459,11 +7430,11 @@
     {
      "id": "120250349257210291",
      "namn": "Golf Adventskalendern | BE ROAS 1.70 | Launch 2026-09-24",
-     "spend": 2090.5,
+     "spend": 2090.58,
      "kop": 9,
-     "roas": 3.282707,
-     "cpa": 232.27777777777777,
-     "intakt": 6862.4989835
+     "roas": 3.282582,
+     "cpa": 232.28666666666666,
+     "intakt": 6862.50027756
     },
     {
      "id": "120250333936950291",
@@ -7477,29 +7448,29 @@
     {
      "id": "120250349224920291",
      "namn": "Dörr- och Fönsterlarmet 110 dB | BE ROAS 1.61 | Launch 2026-09-24",
-     "spend": 2055.77,
+     "spend": 2055.99,
      "kop": 4,
-     "roas": 1.332299,
-     "cpa": 513.9425,
-     "intakt": 2738.9003152299997
+     "roas": 1.332156,
+     "cpa": 513.9975,
+     "intakt": 2738.8994144399994
     },
     {
      "id": "120250349169940291",
      "namn": "Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24",
-     "spend": 1807.19,
+     "spend": 1808.07,
      "kop": 12,
-     "roas": 6.37747,
-     "cpa": 150.59916666666666,
-     "intakt": 11525.3000093
+     "roas": 6.374366,
+     "cpa": 150.67249999999999,
+     "intakt": 11525.29993362
     },
     {
      "id": "120250349317190291",
      "namn": "Pussel Adventskalendern | BE ROAS 1.78 | Launch 2026-09-24",
-     "spend": 1762.44,
+     "spend": 1762.69,
      "kop": 3,
-     "roas": 0.942614,
-     "cpa": 587.48,
-     "intakt": 1661.3006181599999
+     "roas": 0.94248,
+     "cpa": 587.5633333333334,
+     "intakt": 1661.3000712
     },
     {
      "id": "120250320735920291",
@@ -7603,7 +7574,7 @@
     {
      "id": "120250365247300291",
      "namn": "Maskinhyllan för 4 Elverktyg | BE ROAS 1.64 | Launch 2026-09-25",
-     "spend": 842.21,
+     "spend": 846.07,
      "kop": 0,
      "roas": null,
      "cpa": null,
@@ -7755,13 +7726,13 @@
     },
     {
      "datum": "2026-09-25",
-     "spend": 14141.22,
+     "spend": 14143.75,
      "kop": 21,
-     "roas": 2.110228
+     "roas": 2.109851
     }
    ],
    "idag": {
-    "spend": 96.23,
+    "spend": 117.09,
     "kop": 0,
     "roas": null,
     "tomt": false
@@ -7770,38 +7741,38 @@
     {
      "id": "120249050544990172",
      "namn": "CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11",
-     "spend": 49676.62,
+     "spend": 49677.75,
      "kop": 70,
-     "roas": 2.023404,
-     "cpa": 709.666,
-     "intakt": 100515.87161448001
+     "roas": 2.023358,
+     "cpa": 709.6821428571428,
+     "intakt": 100515.8728845
     },
     {
      "id": "120249050596730172",
      "namn": "CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11",
-     "spend": 22274.04,
+     "spend": 22275.02,
      "kop": 39,
-     "roas": 2.353557,
-     "cpa": 571.1292307692308,
-     "intakt": 52423.22276028
+     "roas": 2.353454,
+     "cpa": 571.154358974359,
+     "intakt": 52423.23491908
     },
     {
      "id": "120249183405560172",
      "namn": "CARASHELL_DK_Taköverdrag Husvagn & Husbil 5,5 | BE-ROAS 1.63 | 2026-09-20",
-     "spend": 17477.65,
+     "spend": 17477.67,
      "kop": 20,
-     "roas": 1.611631,
-     "cpa": 873.8825,
-     "intakt": 28167.52254715
+     "roas": 1.61163,
+     "cpa": 873.8834999999999,
+     "intakt": 28167.537302099994
     },
     {
      "id": "120249121867590172",
      "namn": "CARASHELL_SE_Taköverdraget LISTICLE",
-     "spend": 16682.42,
+     "spend": 16682.82,
      "kop": 33,
-     "roas": 2.679371,
-     "cpa": 505.52787878787876,
-     "intakt": 44698.39235782
+     "roas": 2.679307,
+     "cpa": 505.53999999999996,
+     "intakt": 44698.39640574
     },
     {
      "id": "120249115382210172",
@@ -7880,13 +7851,13 @@
     },
     {
      "datum": "2026-09-25",
-     "spend": 19209.57,
+     "spend": 19320.24,
      "kop": 11,
-     "roas": 1.349801
+     "roas": 1.342069
     }
    ],
    "idag": {
-    "spend": 1302.83,
+    "spend": 2366.95,
     "kop": 0,
     "roas": null,
     "tomt": false
@@ -7895,20 +7866,20 @@
     {
      "id": "120251451415500435",
      "namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
-     "spend": 66050.21,
+     "spend": 66150.12,
      "kop": 49,
-     "roas": 1.910364,
-     "cpa": 1347.9634693877551,
-     "intakt": 126179.94337644
+     "roas": 1.907479,
+     "cpa": 1350.0024489795917,
+     "intakt": 126179.96474747999
     },
     {
      "id": "120251471312320435",
      "namn": "AU LISTICLE Taköverdrag CARASHELL",
-     "spend": 26242.79,
+     "spend": 26253.55,
      "kop": 25,
-     "roas": 2.10121,
-     "cpa": 1049.7116,
-     "intakt": 55141.6127759
+     "roas": 2.100348,
+     "cpa": 1050.142,
+     "intakt": 55141.591235399996
     },
     {
      "id": "120251471243740435",
@@ -8017,13 +7988,13 @@
     },
     {
      "datum": "2026-09-25",
-     "spend": 2419.98,
+     "spend": 2420.1,
      "kop": 7,
-     "roas": 5.481582
+     "roas": 5.481311
     }
    ],
    "idag": {
-    "spend": 32.32,
+    "spend": 40.53,
     "kop": 0,
     "roas": null,
     "tomt": false
@@ -8032,11 +8003,11 @@
     {
      "id": "120251780248980199",
      "namn": "Kattopeite Asuntovaunu | FI | Launch 2026-09-18",
-     "spend": 13966.7,
+     "spend": 13966.82,
      "kop": 19,
-     "roas": 2.281278,
-     "cpa": 735.0894736842106,
-     "intakt": 31861.9254426
+     "roas": 2.281259,
+     "cpa": 735.0957894736842,
+     "intakt": 31861.93382638
     },
     {
      "id": "120251784514940199",
@@ -8235,13 +8206,13 @@
     },
     {
      "datum": "2026-09-25",
-     "spend": 6456.02,
+     "spend": 6457.1,
      "kop": 22,
-     "roas": 3.3185
+     "roas": 3.317945
     }
    ],
    "idag": {
-    "spend": 87.23,
+    "spend": 113.23,
     "kop": 0,
     "roas": null,
     "tomt": false
@@ -8250,11 +8221,11 @@
     {
      "id": "120252183519570233",
      "namn": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
-     "spend": 31056.77,
+     "spend": 31057.52,
      "kop": 69,
-     "roas": 3.191633,
-     "cpa": 450.098115942029,
-     "intakt": 99121.81200541
+     "roas": 3.191556,
+     "cpa": 450.10898550724636,
+     "intakt": 99121.81430112
     },
     {
      "id": "120252183673160233",
@@ -8268,11 +8239,11 @@
     {
      "id": "120251996323340233",
      "namn": "IBC-tanktrekk NO | BE-ROAS 1,63 | 2026-08-29",
-     "spend": 10036.73,
+     "spend": 10036.75,
      "kop": 27,
-     "roas": 1.755744,
-     "cpa": 371.7307407407407,
-     "intakt": 17621.92847712
+     "roas": 1.755741,
+     "cpa": 371.73148148148147,
+     "intakt": 17621.93348175
     },
     {
      "id": "120252102071560233",
@@ -8286,11 +8257,11 @@
     {
      "id": "120252321093160233",
      "namn": "Feiesett NO | BE-ROAS 1,62 | 2026-09-21",
-     "spend": 5651.3,
+     "spend": 5651.61,
      "kop": 42,
-     "roas": 3.260657,
-     "cpa": 134.5547619047619,
-     "intakt": 18426.950904100002
+     "roas": 3.260478,
+     "cpa": 134.56214285714285,
+     "intakt": 18426.950069579998
     },
     {
      "id": "120252299777560233",
@@ -8990,6 +8961,318 @@
   ],
   "summa": 692.23,
   "otilldelat": [
+   {
+    "uppdrag": "recension_med_namn",
+    "orsak": "inget (eller flera) namn i texten",
+    "bevis": {
+     "vad": "5★ Judge.me · Bäverbutiken",
+     "av": "Peter Berg",
+     "datum": "2026-09-26",
+     "text": "Rekommenderas Väldigt enkla att sätta på och de fungerar bra.",
+     "lank": "https://judge.me/reviews/1352311343"
+    },
+    "program": "va"
+   },
+   {
+    "uppdrag": "recension_med_namn",
+    "orsak": "inget (eller flera) namn i texten",
+    "bevis": {
+     "vad": "5★ Judge.me · Bäverbutiken",
+     "av": "Sara Lindberg",
+     "datum": "2026-09-26",
+     "text": "Toppen Bra och enkel produkt. Gör jobbet bra.",
+     "lank": "https://judge.me/reviews/1352311281"
+    },
+    "program": "va"
+   },
+   {
+    "uppdrag": "recension_med_namn",
+    "orsak": "inget (eller flera) namn i texten",
+    "bevis": {
+     "vad": "5★ Judge.me · Bäverbutiken",
+     "av": "Anders Larsson",
+     "datum": "2026-09-26",
+     "text": "Enkla att använda Snabb montering och nu slipper jag mycket löv i röret.",
+     "lank": "https://judge.me/reviews/1352311235"
+    },
+    "program": "va"
+   },
+   {
+    "uppdrag": "recension_med_namn",
+    "orsak": "inget (eller flera) namn i texten",
+    "bevis": {
+     "vad": "5★ Judge.me · Bäverbutiken",
+     "av": "Lina Svensson",
+     "datum": "2026-09-26",
+     "text": "Bra köp Fungerar som beskrivet och känns praktiska.",
+     "lank": "https://judge.me/reviews/1352311192"
+    },
+    "program": "va"
+   },
+   {
+    "uppdrag": "recension_med_namn",
+    "orsak": "inget (eller flera) namn i texten",
+    "bevis": {
+     "vad": "5★ Judge.me · Bäverbutiken",
+     "av": "Erik Johansson",
+     "datum": "2026-09-26",
+     "text": "Praktiska Bra lösning mot löv i stupröret. Lätta att montera.",
+     "lank": "https://judge.me/reviews/1352311160"
+    },
+    "program": "va"
+   },
+   {
+    "uppdrag": "recension_med_namn",
+    "orsak": "inget (eller flera) namn i texten",
+    "bevis": {
+     "vad": "5★ Judge.me · Bäverbutiken",
+     "av": "Maria Nilsson",
+     "datum": "2026-09-26",
+     "text": "Mycket nöjd Smidiga och enkla att använda. Rekommenderas.",
+     "lank": "https://judge.me/reviews/1352311132"
+    },
+    "program": "va"
+   },
+   {
+    "uppdrag": "recension_med_namn",
+    "orsak": "inget (eller flera) namn i texten",
+    "bevis": {
+     "vad": "5★ Judge.me · Bäverbutiken",
+     "av": "Johan Andersson",
+     "datum": "2026-09-26",
+     "text": "Fungerar bra De fungerar bra och gör att stupröret håller sig renare.",
+     "lank": "https://judge.me/reviews/1352311099"
+    },
+    "program": "va"
+   },
+   {
+    "uppdrag": "recension_med_namn",
+    "orsak": "inget (eller flera) namn i texten",
+    "bevis": {
+     "vad": "5★ Judge.me · Bäverbutiken",
+     "av": "Anna Karlsson",
+     "datum": "2026-09-26",
+     "text": "Bra produkt Enkla att sätta dit och löven fastnar som de ska.",
+     "lank": "https://judge.me/reviews/1352311048"
+    },
+    "program": "va"
+   },
+   {
+    "uppdrag": "recension_med_namn",
+    "orsak": "inget (eller flera) namn i texten",
+    "bevis": {
+     "vad": "4★ Judge.me · Bäverbutiken",
+     "av": "Elin Blomqvist",
+     "datum": "2026-09-26",
+     "text": "Bra köp Mycket lättare än vanligt bryne eller slipsten. Nöjd!",
+     "lank": "https://judge.me/reviews/1352310162"
+    },
+    "program": "va"
+   },
+   {
+    "uppdrag": "recension_med_namn",
+    "orsak": "inget (eller flera) namn i texten",
+    "bevis": {
+     "vad": "5★ Judge.me · Bäverbutiken",
+     "av": "Viktor Fransson",
+     "datum": "2026-09-26",
+     "text": "Toppenprodukt Väldigt enkel att rulla och knivarna blir knivskarpa.",
+     "lank": "https://judge.me/reviews/1352310136"
+    },
+    "program": "va"
+   },
+   {
+    "uppdrag": "recension_med_namn",
+    "orsak": "inget (eller flera) namn i texten",
+    "bevis": {
+     "vad": "5★ Judge.me · Bäverbutiken",
+     "av": "Henrik Persson",
+     "datum": "2026-09-26",
+     "text": "Kanonfin slip Fungerar perfekt och ser fin ut att ha stående på bänken.",
+     "lank": "https://judge.me/reviews/1352310106"
+    },
+    "program": "va"
+   },
+   {
+    "uppdrag": "recension_med_namn",
+    "orsak": "inget (eller flera) namn i texten",
+    "bevis": {
+     "vad": "5★ Judge.me · Bäverbutiken",
+     "av": "Sara Lund",
+     "datum": "2026-09-26",
+     "text": "Slut på slöa knivar Äntligen en slip som faktiskt är lätt att använda utan krångel.",
+     "lank": "https://judge.me/reviews/1352310076"
+    },
+    "program": "va"
+   },
+   {
+    "uppdrag": "recension_med_namn",
+    "orsak": "inget (eller flera) namn i texten",
+    "bevis": {
+     "vad": "4★ Judge.me · Bäverbutiken",
+     "av": "Mattias Ekström",
+     "datum": "2026-09-26",
+     "text": "Supernöjd Riktigt bra resultat på kockkniven. Rejäl kvalitet i träet.",
+     "lank": "https://judge.me/reviews/1352310038"
+    },
+    "program": "va"
+   },
+   {
+    "uppdrag": "recension_med_namn",
+    "orsak": "inget (eller flera) namn i texten",
+    "bevis": {
+     "vad": "5★ Judge.me · Bäverbutiken",
+     "av": "Magnus Wallin",
+     "datum": "2026-09-26",
+     "text": "Prisvärd knivslip Funkar över förväntan. Enkel att använda även för en nybörjare.",
+     "lank": "https://judge.me/reviews/1352309994"
+    },
+    "program": "va"
+   },
+   {
+    "uppdrag": "recension_med_namn",
+    "orsak": "inget (eller flera) namn i texten",
+    "bevis": {
+     "vad": "5★ Judge.me · Bäverbutiken",
+     "av": "Karin Sjögren",
+     "datum": "2026-09-26",
+     "text": "Lätt att använda Skönt att vinkeln redan är inställd. Alla mina köksknivar blev som nya.",
+     "lank": "https://judge.me/reviews/1352309956"
+    },
+    "program": "va"
+   },
+   {
+    "uppdrag": "recension_med_namn",
+    "orsak": "inget (eller flera) namn i texten",
+    "bevis": {
+     "vad": "5★ Judge.me · Bäverbutiken",
+     "av": "Daniel Holm",
+     "datum": "2026-09-26",
+     "text": "Smidig och bra! Gör knivarna riktigt vassa snabbt och enkelt. Snygg i trä också.",
+     "lank": "https://judge.me/reviews/1352309925"
+    },
+    "program": "va"
+   },
+   {
+    "uppdrag": "recension_med_namn",
+    "orsak": "inget (eller flera) namn i texten",
+    "bevis": {
+     "vad": "5★ Judge.me · Bäverbutiken",
+     "av": "Magnus Lind",
+     "datum": "2026-09-26",
+     "text": "Bra sulor Jag är väldigt nöjd. Fötterna håller sig varma.",
+     "lank": "https://judge.me/reviews/1352308872"
+    },
+    "program": "va"
+   },
+   {
+    "uppdrag": "recension_med_namn",
+    "orsak": "inget (eller flera) namn i texten",
+    "bevis": {
+     "vad": "5★ Judge.me · Bäverbutiken",
+     "av": "Emma Berg",
+     "datum": "2026-09-26",
+     "text": "Rekommenderas Bra värme och enkla att styra.",
+     "lank": "https://judge.me/reviews/1352308833"
+    },
+    "program": "va"
+   },
+   {
+    "uppdrag": "recension_med_namn",
+    "orsak": "inget (eller flera) namn i texten",
+    "bevis": {
+     "vad": "5★ Judge.me · Bäverbutiken",
+     "av": "Anders Olsson",
+     "datum": "2026-09-26",
+     "text": "Värmer bra Perfekta när man är ute i kylan.",
+     "lank": "https://judge.me/reviews/1352308783"
+    },
+    "program": "va"
+   },
+   {
+    "uppdrag": "recension_med_namn",
+    "orsak": "inget (eller flera) namn i texten",
+    "bevis": {
+     "vad": "5★ Judge.me · Bäverbutiken",
+     "av": "Sara Eriksson",
+     "datum": "2026-09-26",
+     "text": "Nöjd med köpet Smidiga och lätta att använda.",
+     "lank": "https://judge.me/reviews/1352308768"
+    },
+    "program": "va"
+   },
+   {
+    "uppdrag": "recension_med_namn",
+    "orsak": "inget (eller flera) namn i texten",
+    "bevis": {
+     "vad": "5★ Judge.me · Bäverbutiken",
+     "av": "Per Larsson",
+     "datum": "2026-09-26",
+     "text": "Så sköna Mina fötter blir inte kalla längre.",
+     "lank": "https://judge.me/reviews/1352308720"
+    },
+    "program": "va"
+   },
+   {
+    "uppdrag": "recension_med_namn",
+    "orsak": "inget (eller flera) namn i texten",
+    "bevis": {
+     "vad": "5★ Judge.me · Bäverbutiken",
+     "av": "Linda Johansson",
+     "datum": "2026-09-26",
+     "text": "Bra köp Värmer fötterna riktigt bra.",
+     "lank": "https://judge.me/reviews/1352308647"
+    },
+    "program": "va"
+   },
+   {
+    "uppdrag": "recension_med_namn",
+    "orsak": "inget (eller flera) namn i texten",
+    "bevis": {
+     "vad": "5★ Judge.me · Bäverbutiken",
+     "av": "Johan Svensson",
+     "datum": "2026-09-26",
+     "text": "Fungerar bra Jag använder dem på kalla dagar och är väldigt nöjd.",
+     "lank": "https://judge.me/reviews/1352308584"
+    },
+    "program": "va"
+   },
+   {
+    "uppdrag": "recension_med_namn",
+    "orsak": "inget (eller flera) namn i texten",
+    "bevis": {
+     "vad": "5★ Judge.me · Bäverbutiken",
+     "av": "Maria Nilsson",
+     "datum": "2026-09-26",
+     "text": "Mycket nöjd Sköna sulor och fötterna håller sig varma.",
+     "lank": "https://judge.me/reviews/1352308555"
+    },
+    "program": "va"
+   },
+   {
+    "uppdrag": "recension_med_namn",
+    "orsak": "inget (eller flera) namn i texten",
+    "bevis": {
+     "vad": "5★ Judge.me · Bäverbutiken",
+     "av": "Erik Andersson",
+     "datum": "2026-09-26",
+     "text": "Superbra Enkla att använda och värmer bra.",
+     "lank": "https://judge.me/reviews/1352308500"
+    },
+    "program": "va"
+   },
+   {
+    "uppdrag": "recension_med_namn",
+    "orsak": "inget (eller flera) namn i texten",
+    "bevis": {
+     "vad": "5★ Judge.me · Bäverbutiken",
+     "av": "Anna Karlsson",
+     "datum": "2026-09-26",
+     "text": "Varma fötter Håller fötterna varma när jag är ute.",
+     "lank": "https://judge.me/reviews/1352308424"
+    },
+    "program": "va"
+   },
    {
     "uppdrag": "recension_med_namn",
     "orsak": "inget (eller flera) namn i texten",
@@ -17882,7 +18165,7 @@
     "program": "produkttest"
    }
   ],
-  "raknat": "2026-09-26T00:06:17.572Z",
+  "raknat": "2026-09-26T01:06:08.310Z",
   "kallor": [
    {
     "id": "kundtjanst",
@@ -17900,7 +18183,7 @@
     "id": "judge.me",
     "status": "ok",
     "orsak": null,
-    "antal": 1319
+    "antal": 1345
    },
    {
     "id": "trustpilot",
@@ -17916,7 +18199,7 @@
    }
   ],
   "matningar": {
-   "recensioner": 1319,
+   "recensioner": 1345,
    "tvister": 67,
    "veckor": 4,
    "produkttest": 72
@@ -18313,21 +18596,21 @@
   }
  ],
  "recensioner": {
-  "antal": 1319,
-  "fyraFem": 1187,
+  "antal": 1345,
+  "fyraFem": 1213,
   "medNamn": 2,
-  "snitt": 4.558756633813495,
+  "snitt": 4.565799256505576,
   "butiker": [
    {
     "butik": "Bäverbutiken",
-    "antal": 825,
-    "summaBetyg": 3701,
-    "fyraFem": 724,
+    "antal": 851,
+    "summaBetyg": 3829,
+    "fyraFem": 750,
     "medNamn": 2,
     "kallor": [
      "Judge.me"
     ],
-    "snitt": 4.486060606060606
+    "snitt": 4.499412455934195
    },
    {
     "butik": "Beverbutikken",
@@ -18354,11 +18637,271 @@
    },
    {
     "manad": "2026-09",
-    "antal": 792,
+    "antal": 818,
     "medNamn": 2
    }
   ],
   "senaste": [
+   {
+    "butik": "Bäverbutiken",
+    "kalla": "Judge.me",
+    "betyg": 5,
+    "kund": "Peter Berg",
+    "text": "Rekommenderas Väldigt enkla att sätta på och de fungerar bra.",
+    "datum": "2026-09-26T00:21:45+00:00",
+    "lank": "https://judge.me/reviews/1352311343",
+    "personer": []
+   },
+   {
+    "butik": "Bäverbutiken",
+    "kalla": "Judge.me",
+    "betyg": 5,
+    "kund": "Sara Lindberg",
+    "text": "Toppen Bra och enkel produkt. Gör jobbet bra.",
+    "datum": "2026-09-26T00:21:44+00:00",
+    "lank": "https://judge.me/reviews/1352311281",
+    "personer": []
+   },
+   {
+    "butik": "Bäverbutiken",
+    "kalla": "Judge.me",
+    "betyg": 5,
+    "kund": "Anders Larsson",
+    "text": "Enkla att använda Snabb montering och nu slipper jag mycket löv i röret.",
+    "datum": "2026-09-26T00:21:42+00:00",
+    "lank": "https://judge.me/reviews/1352311235",
+    "personer": []
+   },
+   {
+    "butik": "Bäverbutiken",
+    "kalla": "Judge.me",
+    "betyg": 5,
+    "kund": "Lina Svensson",
+    "text": "Bra köp Fungerar som beskrivet och känns praktiska.",
+    "datum": "2026-09-26T00:21:41+00:00",
+    "lank": "https://judge.me/reviews/1352311192",
+    "personer": []
+   },
+   {
+    "butik": "Bäverbutiken",
+    "kalla": "Judge.me",
+    "betyg": 5,
+    "kund": "Erik Johansson",
+    "text": "Praktiska Bra lösning mot löv i stupröret. Lätta att montera.",
+    "datum": "2026-09-26T00:21:40+00:00",
+    "lank": "https://judge.me/reviews/1352311160",
+    "personer": []
+   },
+   {
+    "butik": "Bäverbutiken",
+    "kalla": "Judge.me",
+    "betyg": 5,
+    "kund": "Maria Nilsson",
+    "text": "Mycket nöjd Smidiga och enkla att använda. Rekommenderas.",
+    "datum": "2026-09-26T00:21:39+00:00",
+    "lank": "https://judge.me/reviews/1352311132",
+    "personer": []
+   },
+   {
+    "butik": "Bäverbutiken",
+    "kalla": "Judge.me",
+    "betyg": 5,
+    "kund": "Johan Andersson",
+    "text": "Fungerar bra De fungerar bra och gör att stupröret håller sig renare.",
+    "datum": "2026-09-26T00:21:37+00:00",
+    "lank": "https://judge.me/reviews/1352311099",
+    "personer": []
+   },
+   {
+    "butik": "Bäverbutiken",
+    "kalla": "Judge.me",
+    "betyg": 5,
+    "kund": "Anna Karlsson",
+    "text": "Bra produkt Enkla att sätta dit och löven fastnar som de ska.",
+    "datum": "2026-09-26T00:21:36+00:00",
+    "lank": "https://judge.me/reviews/1352311048",
+    "personer": []
+   },
+   {
+    "butik": "Bäverbutiken",
+    "kalla": "Judge.me",
+    "betyg": 4,
+    "kund": "Elin Blomqvist",
+    "text": "Bra köp Mycket lättare än vanligt bryne eller slipsten. Nöjd!",
+    "datum": "2026-09-26T00:21:11+00:00",
+    "lank": "https://judge.me/reviews/1352310162",
+    "personer": []
+   },
+   {
+    "butik": "Bäverbutiken",
+    "kalla": "Judge.me",
+    "betyg": 5,
+    "kund": "Viktor Fransson",
+    "text": "Toppenprodukt Väldigt enkel att rulla och knivarna blir knivskarpa.",
+    "datum": "2026-09-26T00:21:10+00:00",
+    "lank": "https://judge.me/reviews/1352310136",
+    "personer": []
+   },
+   {
+    "butik": "Bäverbutiken",
+    "kalla": "Judge.me",
+    "betyg": 5,
+    "kund": "Henrik Persson",
+    "text": "Kanonfin slip Fungerar perfekt och ser fin ut att ha stående på bänken.",
+    "datum": "2026-09-26T00:21:09+00:00",
+    "lank": "https://judge.me/reviews/1352310106",
+    "personer": []
+   },
+   {
+    "butik": "Bäverbutiken",
+    "kalla": "Judge.me",
+    "betyg": 5,
+    "kund": "Sara Lund",
+    "text": "Slut på slöa knivar Äntligen en slip som faktiskt är lätt att använda utan krångel.",
+    "datum": "2026-09-26T00:21:07+00:00",
+    "lank": "https://judge.me/reviews/1352310076",
+    "personer": []
+   },
+   {
+    "butik": "Bäverbutiken",
+    "kalla": "Judge.me",
+    "betyg": 4,
+    "kund": "Mattias Ekström",
+    "text": "Supernöjd Riktigt bra resultat på kockkniven. Rejäl kvalitet i träet.",
+    "datum": "2026-09-26T00:21:06+00:00",
+    "lank": "https://judge.me/reviews/1352310038",
+    "personer": []
+   },
+   {
+    "butik": "Bäverbutiken",
+    "kalla": "Judge.me",
+    "betyg": 5,
+    "kund": "Magnus Wallin",
+    "text": "Prisvärd knivslip Funkar över förväntan. Enkel att använda även för en nybörjare.",
+    "datum": "2026-09-26T00:21:05+00:00",
+    "lank": "https://judge.me/reviews/1352309994",
+    "personer": []
+   },
+   {
+    "butik": "Bäverbutiken",
+    "kalla": "Judge.me",
+    "betyg": 5,
+    "kund": "Karin Sjögren",
+    "text": "Lätt att använda Skönt att vinkeln redan är inställd. Alla mina köksknivar blev som nya.",
+    "datum": "2026-09-26T00:21:03+00:00",
+    "lank": "https://judge.me/reviews/1352309956",
+    "personer": []
+   },
+   {
+    "butik": "Bäverbutiken",
+    "kalla": "Judge.me",
+    "betyg": 5,
+    "kund": "Daniel Holm",
+    "text": "Smidig och bra! Gör knivarna riktigt vassa snabbt och enkelt. Snygg i trä också.",
+    "datum": "2026-09-26T00:21:02+00:00",
+    "lank": "https://judge.me/reviews/1352309925",
+    "personer": []
+   },
+   {
+    "butik": "Bäverbutiken",
+    "kalla": "Judge.me",
+    "betyg": 5,
+    "kund": "Magnus Lind",
+    "text": "Bra sulor Jag är väldigt nöjd. Fötterna håller sig varma.",
+    "datum": "2026-09-26T00:20:30+00:00",
+    "lank": "https://judge.me/reviews/1352308872",
+    "personer": []
+   },
+   {
+    "butik": "Bäverbutiken",
+    "kalla": "Judge.me",
+    "betyg": 5,
+    "kund": "Emma Berg",
+    "text": "Rekommenderas Bra värme och enkla att styra.",
+    "datum": "2026-09-26T00:20:28+00:00",
+    "lank": "https://judge.me/reviews/1352308833",
+    "personer": []
+   },
+   {
+    "butik": "Bäverbutiken",
+    "kalla": "Judge.me",
+    "betyg": 5,
+    "kund": "Anders Olsson",
+    "text": "Värmer bra Perfekta när man är ute i kylan.",
+    "datum": "2026-09-26T00:20:27+00:00",
+    "lank": "https://judge.me/reviews/1352308783",
+    "personer": []
+   },
+   {
+    "butik": "Bäverbutiken",
+    "kalla": "Judge.me",
+    "betyg": 5,
+    "kund": "Sara Eriksson",
+    "text": "Nöjd med köpet Smidiga och lätta att använda.",
+    "datum": "2026-09-26T00:20:25+00:00",
+    "lank": "https://judge.me/reviews/1352308768",
+    "personer": []
+   },
+   {
+    "butik": "Bäverbutiken",
+    "kalla": "Judge.me",
+    "betyg": 5,
+    "kund": "Per Larsson",
+    "text": "Så sköna Mina fötter blir inte kalla längre.",
+    "datum": "2026-09-26T00:20:24+00:00",
+    "lank": "https://judge.me/reviews/1352308720",
+    "personer": []
+   },
+   {
+    "butik": "Bäverbutiken",
+    "kalla": "Judge.me",
+    "betyg": 5,
+    "kund": "Linda Johansson",
+    "text": "Bra köp Värmer fötterna riktigt bra.",
+    "datum": "2026-09-26T00:20:22+00:00",
+    "lank": "https://judge.me/reviews/1352308647",
+    "personer": []
+   },
+   {
+    "butik": "Bäverbutiken",
+    "kalla": "Judge.me",
+    "betyg": 5,
+    "kund": "Johan Svensson",
+    "text": "Fungerar bra Jag använder dem på kalla dagar och är väldigt nöjd.",
+    "datum": "2026-09-26T00:20:21+00:00",
+    "lank": "https://judge.me/reviews/1352308584",
+    "personer": []
+   },
+   {
+    "butik": "Bäverbutiken",
+    "kalla": "Judge.me",
+    "betyg": 5,
+    "kund": "Maria Nilsson",
+    "text": "Mycket nöjd Sköna sulor och fötterna håller sig varma.",
+    "datum": "2026-09-26T00:20:20+00:00",
+    "lank": "https://judge.me/reviews/1352308555",
+    "personer": []
+   },
+   {
+    "butik": "Bäverbutiken",
+    "kalla": "Judge.me",
+    "betyg": 5,
+    "kund": "Erik Andersson",
+    "text": "Superbra Enkla att använda och värmer bra.",
+    "datum": "2026-09-26T00:20:18+00:00",
+    "lank": "https://judge.me/reviews/1352308500",
+    "personer": []
+   },
+   {
+    "butik": "Bäverbutiken",
+    "kalla": "Judge.me",
+    "betyg": 5,
+    "kund": "Anna Karlsson",
+    "text": "Varma fötter Håller fötterna varma när jag är ute.",
+    "datum": "2026-09-26T00:20:17+00:00",
+    "lank": "https://judge.me/reviews/1352308424",
+    "personer": []
+   },
    {
     "butik": "Bäverbutiken",
     "kalla": "Judge.me",
@@ -18697,266 +19240,6 @@
     "text": "Bra og stabile Bra kvalitet og enkel montering.",
     "datum": "2026-09-24T03:38:34+00:00",
     "lank": "https://judge.me/reviews/1349367916",
-    "personer": []
-   },
-   {
-    "butik": "Beverbutikken",
-    "kalla": "Judge.me",
-    "betyg": 5,
-    "kund": "Lars Vik",
-    "text": "Bra og stabile Stabile kroker, og lette å bruke.",
-    "datum": "2026-09-24T03:38:32+00:00",
-    "lank": "https://judge.me/reviews/1349367833",
-    "personer": []
-   },
-   {
-    "butik": "Beverbutikken",
-    "kalla": "Judge.me",
-    "betyg": 5,
-    "kund": "Emma Lien",
-    "text": "Bra og stabile Perfekt for å oppbevare kajakken hjemme.",
-    "datum": "2026-09-24T03:38:31+00:00",
-    "lank": "https://judge.me/reviews/1349367801",
-    "personer": []
-   },
-   {
-    "butik": "Beverbutikken",
-    "kalla": "Judge.me",
-    "betyg": 5,
-    "kund": "Johan Rud",
-    "text": "Bra og stabile Enkle å sette opp på veggen. Jeg er fornøyd.",
-    "datum": "2026-09-24T03:38:30+00:00",
-    "lank": "https://judge.me/reviews/1349367768",
-    "personer": []
-   },
-   {
-    "butik": "Beverbutikken",
-    "kalla": "Judge.me",
-    "betyg": 5,
-    "kund": "Marit Lunde",
-    "text": "Bra og stabile Fungerer veldig bra og føles stabile.",
-    "datum": "2026-09-24T03:38:29+00:00",
-    "lank": "https://judge.me/reviews/1349367720",
-    "personer": []
-   },
-   {
-    "butik": "Beverbutikken",
-    "kalla": "Judge.me",
-    "betyg": 5,
-    "kund": "Anders Moen",
-    "text": "Bra og stabile Bra kroker som holder kajakken på plass. Enkle å montere.",
-    "datum": "2026-09-24T03:38:27+00:00",
-    "lank": "https://judge.me/reviews/1349367676",
-    "personer": []
-   },
-   {
-    "butik": "Bäverbutiken",
-    "kalla": "Judge.me",
-    "betyg": 5,
-    "kund": "Karin Eriksson",
-    "text": "Rekommenderas Enkel att använda och fungerar väldigt bra.",
-    "datum": "2026-09-24T00:28:31+00:00",
-    "lank": "https://judge.me/reviews/1349261235",
-    "personer": []
-   },
-   {
-    "butik": "Bäverbutiken",
-    "kalla": "Judge.me",
-    "betyg": 4,
-    "kund": "Mikael Berg",
-    "text": "Praktisk Bra att kunna hålla batteriet laddat med solenergi.",
-    "datum": "2026-09-24T00:28:30+00:00",
-    "lank": "https://judge.me/reviews/1349261220",
-    "personer": []
-   },
-   {
-    "butik": "Bäverbutiken",
-    "kalla": "Judge.me",
-    "betyg": 5,
-    "kund": "Emma Lindberg",
-    "text": "Fungerar fint Smidig laddare som gör det den ska.",
-    "datum": "2026-09-24T00:28:29+00:00",
-    "lank": "https://judge.me/reviews/1349261188",
-    "personer": []
-   },
-   {
-    "butik": "Bäverbutiken",
-    "kalla": "Judge.me",
-    "betyg": 5,
-    "kund": "Erik Persson",
-    "text": "Bra produkt Jag är nöjd med laddaren. Den fungerar bra.",
-    "datum": "2026-09-24T00:28:27+00:00",
-    "lank": "https://judge.me/reviews/1349261164",
-    "personer": []
-   },
-   {
-    "butik": "Bäverbutiken",
-    "kalla": "Judge.me",
-    "betyg": 5,
-    "kund": "Sofia Larsson",
-    "text": "Väldigt nöjd Enkel och praktisk. Fungerar fint.",
-    "datum": "2026-09-24T00:28:25+00:00",
-    "lank": "https://judge.me/reviews/1349261149",
-    "personer": []
-   },
-   {
-    "butik": "Bäverbutiken",
-    "kalla": "Judge.me",
-    "betyg": 4,
-    "kund": "Lars Nilsson",
-    "text": "Enkel lösning Bra för att hålla batteriet laddat när bilen står.",
-    "datum": "2026-09-24T00:28:20+00:00",
-    "lank": "https://judge.me/reviews/1349261081",
-    "personer": []
-   },
-   {
-    "butik": "Bäverbutiken",
-    "kalla": "Judge.me",
-    "betyg": 5,
-    "kund": "Maria Svensson",
-    "text": "Bra köp Fungerar som den ska. Bra produkt.",
-    "datum": "2026-09-24T00:28:19+00:00",
-    "lank": "https://judge.me/reviews/1349261076",
-    "personer": []
-   },
-   {
-    "butik": "Bäverbutiken",
-    "kalla": "Judge.me",
-    "betyg": 5,
-    "kund": "Peter Johansson",
-    "text": "Mycket smidig Lätt att installera och väldigt smidig.",
-    "datum": "2026-09-24T00:28:18+00:00",
-    "lank": "https://judge.me/reviews/1349261062",
-    "personer": []
-   },
-   {
-    "butik": "Bäverbutiken",
-    "kalla": "Judge.me",
-    "betyg": 5,
-    "kund": "Anna Karlsson",
-    "text": "Fungerar bra Den fungerar bra och håller batteriet laddat.",
-    "datum": "2026-09-24T00:28:16+00:00",
-    "lank": "https://judge.me/reviews/1349261027",
-    "personer": []
-   },
-   {
-    "butik": "Bäverbutiken",
-    "kalla": "Judge.me",
-    "betyg": 5,
-    "kund": "Johan Andersson",
-    "text": "Bra och enkel Enkel att använda och fungerar bra. Jag är nöjd.",
-    "datum": "2026-09-24T00:28:15+00:00",
-    "lank": "https://judge.me/reviews/1349261012",
-    "personer": []
-   },
-   {
-    "butik": "Bäverbutiken",
-    "kalla": "Judge.me",
-    "betyg": 5,
-    "kund": "Emma",
-    "text": "Roligt varje kväll Lagom många bitar varje dag. Mysigt och enkelt.",
-    "datum": "2026-09-24T00:27:42+00:00",
-    "lank": "https://judge.me/reviews/1349260657",
-    "personer": []
-   },
-   {
-    "butik": "Bäverbutiken",
-    "kalla": "Judge.me",
-    "betyg": 5,
-    "kund": "Anders",
-    "text": "Bra julklapp En fin present till någon som gillar pussel.",
-    "datum": "2026-09-24T00:27:41+00:00",
-    "lank": "https://judge.me/reviews/1349260608",
-    "personer": []
-   },
-   {
-    "butik": "Bäverbutiken",
-    "kalla": "Judge.me",
-    "betyg": 5,
-    "kund": "Lina",
-    "text": "Fin adventskalender Mycket roligare än en vanlig kalender. Vi gillar den.",
-    "datum": "2026-09-24T00:27:39+00:00",
-    "lank": "https://judge.me/reviews/1349260587",
-    "personer": []
-   },
-   {
-    "butik": "Bäverbutiken",
-    "kalla": "Judge.me",
-    "betyg": 5,
-    "kund": "Sofia",
-    "text": "Supermysigt Vi pusslar tillsammans varje kväll. Jättekul.",
-    "datum": "2026-09-24T00:27:38+00:00",
-    "lank": "https://judge.me/reviews/1349260563",
-    "personer": []
-   },
-   {
-    "butik": "Bäverbutiken",
-    "kalla": "Judge.me",
-    "betyg": 5,
-    "kund": "Johan",
-    "text": "Perfekt julmys Roligt att se bilden växa fram varje dag.",
-    "datum": "2026-09-24T00:27:37+00:00",
-    "lank": "https://judge.me/reviews/1349260519",
-    "personer": []
-   },
-   {
-    "butik": "Bäverbutiken",
-    "kalla": "Judge.me",
-    "betyg": 5,
-    "kund": "Maria",
-    "text": "Kul julpussel En enkel och mysig idé för december.",
-    "datum": "2026-09-24T00:27:35+00:00",
-    "lank": "https://judge.me/reviews/1349260501",
-    "personer": []
-   },
-   {
-    "butik": "Bäverbutiken",
-    "kalla": "Judge.me",
-    "betyg": 5,
-    "kund": "Erik",
-    "text": "Rolig kalender Vi tycker mycket om den. Perfekt kvällsaktivitet.",
-    "datum": "2026-09-24T00:27:34+00:00",
-    "lank": "https://judge.me/reviews/1349260479",
-    "personer": []
-   },
-   {
-    "butik": "Bäverbutiken",
-    "kalla": "Judge.me",
-    "betyg": 5,
-    "kund": "Anna",
-    "text": "Mysigt i december Jättefint pussel. Roligt att lägga en bit varje kväll.",
-    "datum": "2026-09-24T00:27:33+00:00",
-    "lank": "https://judge.me/reviews/1349260474",
-    "personer": []
-   },
-   {
-    "butik": "Bäverbutiken",
-    "kalla": "Judge.me",
-    "betyg": 5,
-    "kund": "Karin Eriksson",
-    "text": "Rekommenderas Enkel och praktisk. Jag är nöjd.",
-    "datum": "2026-09-24T00:24:07+00:00",
-    "lank": "https://judge.me/reviews/1349258063",
-    "personer": []
-   },
-   {
-    "butik": "Bäverbutiken",
-    "kalla": "Judge.me",
-    "betyg": 4,
-    "kund": "Mikael Berg",
-    "text": "Fungerar fint Bra lås som sitter ordentligt.",
-    "datum": "2026-09-24T00:24:05+00:00",
-    "lank": "https://judge.me/reviews/1349258060",
-    "personer": []
-   },
-   {
-    "butik": "Bäverbutiken",
-    "kalla": "Judge.me",
-    "betyg": 5,
-    "kund": "Emma Lindberg",
-    "text": "Smidig lösning Lätt att montera och känns säker.",
-    "datum": "2026-09-24T00:24:04+00:00",
-    "lank": "https://judge.me/reviews/1349258057",
     "personer": []
    }
   ],
@@ -19911,7 +20194,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-26T00:05:15.907Z"
+   "hamtad": "2026-09-26T01:05:06.659Z"
   },
   {
    "tvistId": "17773723997",
@@ -19929,7 +20212,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-26T00:05:15.907Z"
+   "hamtad": "2026-09-26T01:05:06.659Z"
   },
   {
    "tvistId": "17663131997",
@@ -19947,7 +20230,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-26T00:05:15.907Z"
+   "hamtad": "2026-09-26T01:05:06.659Z"
   },
   {
    "tvistId": "17816387933",
@@ -19965,7 +20248,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-26T00:05:15.907Z"
+   "hamtad": "2026-09-26T01:05:06.659Z"
   },
   {
    "tvistId": "17815961949",
@@ -19983,7 +20266,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-26T00:05:15.907Z"
+   "hamtad": "2026-09-26T01:05:06.659Z"
   },
   {
    "tvistId": "17684595037",
@@ -20001,7 +20284,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-26T00:05:15.907Z"
+   "hamtad": "2026-09-26T01:05:06.659Z"
   },
   {
    "tvistId": "17705992541",
@@ -20019,7 +20302,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-26T00:05:15.907Z"
+   "hamtad": "2026-09-26T01:05:06.659Z"
   },
   {
    "tvistId": "16768893303",
@@ -20037,7 +20320,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-26T00:05:15.907Z"
+   "hamtad": "2026-09-26T01:05:06.659Z"
   },
   {
    "tvistId": "17857872221",
@@ -20055,7 +20338,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-26T00:05:15.907Z"
+   "hamtad": "2026-09-26T01:05:06.659Z"
   },
   {
    "tvistId": "17731354973",
@@ -20073,7 +20356,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-26T00:05:15.907Z"
+   "hamtad": "2026-09-26T01:05:06.659Z"
   },
   {
    "tvistId": "17863377245",
@@ -20091,7 +20374,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-26T00:05:15.907Z"
+   "hamtad": "2026-09-26T01:05:06.659Z"
   },
   {
    "tvistId": "17862787421",
@@ -20109,7 +20392,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-26T00:05:15.907Z"
+   "hamtad": "2026-09-26T01:05:06.659Z"
   },
   {
    "tvistId": "17862558045",
@@ -20127,7 +20410,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-26T00:05:15.907Z"
+   "hamtad": "2026-09-26T01:05:06.659Z"
   },
   {
    "tvistId": "17861968221",
@@ -20145,7 +20428,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-26T00:05:15.907Z"
+   "hamtad": "2026-09-26T01:05:06.659Z"
   },
   {
    "tvistId": "17876353373",
@@ -20163,7 +20446,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-26T00:05:15.907Z"
+   "hamtad": "2026-09-26T01:05:06.659Z"
   },
   {
    "tvistId": "17873207645",
@@ -20181,7 +20464,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-26T00:05:15.907Z"
+   "hamtad": "2026-09-26T01:05:06.659Z"
   },
   {
    "tvistId": "17884250461",
@@ -20199,7 +20482,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-26T00:05:15.907Z"
+   "hamtad": "2026-09-26T01:05:06.659Z"
   },
   {
    "tvistId": "17894736221",
@@ -20217,7 +20500,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-26T00:05:15.907Z"
+   "hamtad": "2026-09-26T01:05:06.659Z"
   },
   {
    "tvistId": "17888313693",
@@ -20235,7 +20518,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-26T00:05:15.907Z"
+   "hamtad": "2026-09-26T01:05:06.659Z"
   },
   {
    "tvistId": "17904992605",
@@ -20253,7 +20536,7 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-26T00:05:15.907Z"
+   "hamtad": "2026-09-26T01:05:06.659Z"
   },
   {
    "tvistId": "17751572829",
@@ -20271,13 +20554,13 @@
    "utfall": null,
    "oppen": true,
    "kalla": "shopify",
-   "hamtad": "2026-09-26T00:05:15.907Z"
+   "hamtad": "2026-09-26T01:05:06.659Z"
   }
  ],
  "tvister": {
   "status": "delvis",
   "orsak": "4 av 12 butiker gick inte att läsa tvisterna för",
-  "hamtad": "2026-09-26T00:05:15.907Z",
+  "hamtad": "2026-09-26T01:05:06.659Z",
   "fonsterDagar": 180,
   "butiker": [
    {
@@ -20289,7 +20572,7 @@
     "antal": 60,
     "oppna": 20,
     "behoverSvar": 19,
-    "hamtad": "2026-09-26T00:05:15.907Z"
+    "hamtad": "2026-09-26T01:05:06.659Z"
    },
    {
     "id": "carashell",
@@ -20300,7 +20583,7 @@
     "antal": 0,
     "oppna": 0,
     "behoverSvar": 0,
-    "hamtad": "2026-09-26T00:05:15.907Z"
+    "hamtad": "2026-09-26T01:05:06.659Z"
    },
    {
     "id": "beverbutikken",
@@ -20311,7 +20594,7 @@
     "antal": 4,
     "oppna": 1,
     "behoverSvar": 1,
-    "hamtad": "2026-09-26T00:05:15.907Z"
+    "hamtad": "2026-09-26T01:05:06.659Z"
    },
    {
     "id": "baeverbutiken",
@@ -20322,7 +20605,7 @@
     "antal": 0,
     "oppna": 0,
     "behoverSvar": 0,
-    "hamtad": "2026-09-26T00:05:15.907Z"
+    "hamtad": "2026-09-26T01:05:06.659Z"
    },
    {
     "id": "majavakauppa",
@@ -20333,7 +20616,7 @@
     "antal": 0,
     "oppna": 0,
     "behoverSvar": 0,
-    "hamtad": "2026-09-26T00:05:15.907Z"
+    "hamtad": "2026-09-26T01:05:06.659Z"
    },
    {
     "id": "matstrumpor",
@@ -20344,7 +20627,7 @@
     "antal": 3,
     "oppna": 0,
     "behoverSvar": 0,
-    "hamtad": "2026-09-26T00:05:15.907Z"
+    "hamtad": "2026-09-26T01:05:06.659Z"
    },
    {
     "id": "catcabin",
@@ -20355,7 +20638,7 @@
     "antal": 0,
     "oppna": 0,
     "behoverSvar": 0,
-    "hamtad": "2026-09-26T00:05:15.907Z"
+    "hamtad": "2026-09-26T01:05:06.659Z"
    },
    {
     "id": "pzjagy-mz",
@@ -20366,7 +20649,7 @@
     "antal": 0,
     "oppna": 0,
     "behoverSvar": 0,
-    "hamtad": "2026-09-26T00:05:15.907Z"
+    "hamtad": "2026-09-26T01:05:06.659Z"
    },
    {
     "id": "kalender",
@@ -20377,7 +20660,7 @@
     "antal": 0,
     "oppna": 0,
     "behoverSvar": 0,
-    "hamtad": "2026-09-26T00:05:15.907Z"
+    "hamtad": "2026-09-26T01:05:06.659Z"
    },
    {
     "id": "j0p8qz-kp",
@@ -20388,7 +20671,7 @@
     "antal": 0,
     "oppna": 0,
     "behoverSvar": 0,
-    "hamtad": "2026-09-26T00:05:15.907Z"
+    "hamtad": "2026-09-26T01:05:06.659Z"
    },
    {
     "id": "tacklebay",
@@ -20399,7 +20682,7 @@
     "antal": 0,
     "oppna": 0,
     "behoverSvar": 0,
-    "hamtad": "2026-09-26T00:05:15.907Z"
+    "hamtad": "2026-09-26T01:05:06.659Z"
    },
    {
     "id": "aphkky-ke",
@@ -20410,7 +20693,7 @@
     "antal": 0,
     "oppna": 0,
     "behoverSvar": 0,
-    "hamtad": "2026-09-26T00:05:15.907Z"
+    "hamtad": "2026-09-26T01:05:06.659Z"
    }
   ]
  },
@@ -20564,7 +20847,7 @@
  },
  "autosvar": {
   "dagar": 30,
-  "hamtad": "2026-09-26T00:05:15.907Z",
+  "hamtad": "2026-09-26T01:05:06.659Z",
   "etiketter": {
    "x": {
     "som_pa_bilden": "looks nothing like the picture",
@@ -20592,8 +20875,8 @@
    "baverbutiken": {
     "brand": "baverbutiken",
     "period": {
-     "fran": "2026-08-27T00:05:15.907Z",
-     "till": "2026-09-26T00:05:15.907Z",
+     "fran": "2026-08-27T01:05:06.659Z",
+     "till": "2026-09-26T01:05:06.659Z",
      "dagar": 30
     },
     "senasteKorning": "2026-09-22T21:30:08.320Z",
@@ -22727,8 +23010,8 @@
    "carashell": {
     "brand": "carashell",
     "period": {
-     "fran": "2026-08-27T00:05:15.907Z",
-     "till": "2026-09-26T00:05:15.907Z",
+     "fran": "2026-08-27T01:05:06.659Z",
+     "till": "2026-09-26T01:05:06.659Z",
      "dagar": 30
     },
     "senasteKorning": "2026-09-23T13:44:44.754Z",
@@ -23477,8 +23760,8 @@
    "matstrumpor": {
     "brand": "matstrumpor",
     "period": {
-     "fran": "2026-08-27T00:05:15.907Z",
-     "till": "2026-09-26T00:05:15.907Z",
+     "fran": "2026-08-27T01:05:06.659Z",
+     "till": "2026-09-26T01:05:06.659Z",
      "dagar": 30
     },
     "senasteKorning": "2026-09-23T17:17:59.091Z",
@@ -24896,11 +25179,11 @@
     "paVag": 1223,
     "utanSkanning": 0,
     "senasteKorning": {
-     "datum": "2026-09-25T23:18:32.197Z",
-     "ordrar": 2239,
-     "paket": 1237,
+     "datum": "2026-09-26T00:18:33.112Z",
+     "ordrar": 2199,
+     "paket": 1235,
      "registrerade": 0,
-     "skrivna": 3,
+     "skrivna": 0,
      "fel": 0,
      "torr": false
     }
@@ -24915,7 +25198,7 @@
     "paVag": 363,
     "utanSkanning": 0,
     "senasteKorning": {
-     "datum": "2026-09-25T23:25:28.351Z",
+     "datum": "2026-09-26T00:25:20.873Z",
      "ordrar": 365,
      "paket": 363,
      "registrerade": 0,
@@ -24934,11 +25217,11 @@
     "paVag": 421,
     "utanSkanning": 0,
     "senasteKorning": {
-     "datum": "2026-09-25T23:33:09.383Z",
-     "ordrar": 930,
-     "paket": 422,
+     "datum": "2026-09-26T00:33:25.735Z",
+     "ordrar": 921,
+     "paket": 421,
      "registrerade": 0,
-     "skrivna": 1,
+     "skrivna": 0,
      "fel": 0,
      "torr": false
     }
@@ -24953,7 +25236,7 @@
     "paVag": 0,
     "utanSkanning": 0,
     "senasteKorning": {
-     "datum": "2026-09-25T23:49:03.669Z",
+     "datum": "2026-09-26T00:49:13.293Z",
      "ordrar": 1,
      "paket": 0,
      "registrerade": 0,
@@ -24972,8 +25255,8 @@
     "paVag": 25,
     "utanSkanning": 0,
     "senasteKorning": {
-     "datum": "2026-09-25T23:41:20.753Z",
-     "ordrar": 30,
+     "datum": "2026-09-26T00:40:58.414Z",
+     "ordrar": 29,
      "paket": 26,
      "registrerade": 0,
      "skrivna": 0,
@@ -24991,8 +25274,8 @@
     "paVag": 158,
     "utanSkanning": 0,
     "senasteKorning": {
-     "datum": "2026-09-25T23:57:13.388Z",
-     "ordrar": 236,
+     "datum": "2026-09-26T00:57:31.066Z",
+     "ordrar": 232,
      "paket": 160,
      "registrerade": 0,
      "skrivna": 0,
