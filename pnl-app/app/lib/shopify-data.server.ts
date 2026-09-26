@@ -68,6 +68,8 @@ const shiftIso = (iso: string, days: number): string => {
  *   raderna).
  */
 const inflight = new Map<string, Promise<OrderData>>();
+/** Bulk-exportens tidsgräns för interaktiva anropare (panel, grupp). */
+const BULK_TIMEOUT_MS = 90_000;
 
 export function fetchOrderData(
   admin: AdminApiContext,
@@ -79,17 +81,27 @@ export function fetchOrderData(
    * `kund: true` lägger till `customer { id }` i orderfrågan. Får BARA sättas
    * när butikens scope innehåller read_customers — annars nekar Shopify hela
    * frågan (ACCESS_DENIED) och panelen dör för den butiken.
+   *
+   * `bulkTimeoutMs`: hur länge bulk-exporten får ta. 90 s för interaktiva
+   * anropare (en panel ska hellre visa fel än hänga); returkollen i
+   * bakgrunden ger 10 min — en stor butiks 45 dagar tar längre än 90 s, och
+   * med det interaktiva taket misslyckades den på varje försök.
    */
-  opts: { kund?: boolean } = {},
+  opts: { kund?: boolean; bulkTimeoutMs?: number } = {},
 ): Promise<OrderData> {
   /* Shopify tillåter EN bulk-operation per butik. Utan samordning krockar två
      samtidiga sidladdningar (t.ex. 30d-vyn som fortfarande exporterar när
      användaren klickar 90d) med "already in progress". Samma intervall delar
-     promise; olika intervall köar via retry-logiken i runOrdersBulk. */
+     promise; olika intervall köar via retry-logiken i runOrdersBulk.
+     Tidsgränsen ingår medvetet INTE i nyckeln: hade en panel med samma
+     fönster som returkollen startat en egen export hade den bara fått
+     "already in progress" och väntat ut returkollens export ändå. */
   const key = `${shopKey}:${from}:${to}:${opts.kund ? "k" : ""}`;
   const existing = inflight.get(key);
   if (existing) return existing;
-  const p = doFetchOrderData(admin, from, to, timezone, shopKey, Boolean(opts.kund)).finally(() => inflight.delete(key));
+  const p = doFetchOrderData(admin, from, to, timezone, shopKey, Boolean(opts.kund), opts.bulkTimeoutMs).finally(() =>
+    inflight.delete(key),
+  );
   inflight.set(key, p);
   return p;
 }
@@ -101,6 +113,7 @@ async function doFetchOrderData(
   timezone: string,
   shopKey = "",
   kund = false,
+  bulkTimeoutMs = BULK_TIMEOUT_MS,
 ): Promise<OrderData> {
   /* Korta fönster (dagens siffror, morgonens nya dagar) går via vanlig
      paginering: 1–2 sekunder istället för bulk-exportens halvminut, och de
@@ -130,13 +143,13 @@ async function doFetchOrderData(
            varje högvolymsbutik felsidan varje gång. Bara om bulk-exporten
            själv misslyckas kastas felet vidare. */
         jsonl = sidor.trunkerad
-          ? await runOrdersBulk(admin, shiftIso(from, -1), shiftIso(to, 1), falt)
+          ? await runOrdersBulk(admin, shiftIso(from, -1), shiftIso(to, 1), falt, bulkTimeoutMs)
           : sidor.lines;
         if (sidor.trunkerad) {
           console.log(`Sidtaket nåddes för ${shopKey || "butiken"} (${from}–${to}) — hämtade via bulk-exporten.`);
         }
       } else {
-        jsonl = await runOrdersBulk(admin, shiftIso(from, -1), shiftIso(to, 1), falt);
+        jsonl = await runOrdersBulk(admin, shiftIso(from, -1), shiftIso(to, 1), falt, bulkTimeoutMs);
       }
     } catch (e) {
       if (medAvgifter && arAvgiftNekad(e)) {
@@ -338,6 +351,7 @@ async function runOrdersBulk(
   fromExclusive: string,
   toInclusive: string,
   falt: Orderfalt,
+  timeoutMs: number = BULK_TIMEOUT_MS,
 ): Promise<any[]> {
   const { kund, land, avgifter } = falt;
   const inner = `{
@@ -409,7 +423,7 @@ async function runOrdersBulk(
     );
   }
 
-  const url = await waitForBulk(admin, egetId!, 90_000);
+  const url = await waitForBulk(admin, egetId!, timeoutMs);
   if (!url) return []; // export klar men noll objekt
 
   const dl = await fetch(url);

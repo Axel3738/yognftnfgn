@@ -759,8 +759,15 @@ Fällor:
   vägd kurs) — promilleskillnad mot butikens egen panel är väntad. Och
   uppskattad COGS appliceras inte i gruppen, så en butik som vilar på
   uppskattning får för låg BE där.
-- ⚠ **`mer_over_margin` kräver fortfarande `fixed_share`** — utan fasta
-  kostnader inmatade tiger den. Beslutsbadgen täcker det fallet.
+- ⚠ **`mer_over_margin` är exakt dra ner-linjen** (`mer >
+  contribution_margin`, alltså MER under break-even) — rättat efter
+  slutgranskningen. Förut stod `mer > contribution_margin − fixed_share`
+  (nettovinst < 0), och i håll-läget (panelexemplet: annonser 153 800 mot
+  bidrag 165 700) sa ett kritiskt tips "annonserna kostar mer än hela
+  täckningsbidraget" bredvid badgen ◆ håll. `mer_above_median` är
+  komplementet på samma gräns. Gapet mot de fasta kostnaderna bärs av
+  `margin_squeeze` och `fixed_high`/`fixed_critical` — lägg aldrig tillbaka
+  `fixed_share` i MER-reglerna.
 - ⚠ **Inte prövat skarpt.** Kontrollera efter deploy: 30d på SE-butiken ⇒
   MER-rutan har badge och mål; ändra målmarginalen i Inställningar ⇒ målet
   och ev. badgen flyttar sig, max-CPA följer med; Idag ⇒ aldrig "skala".
@@ -914,16 +921,22 @@ Byggt:
   (`UPDATE … WHERE refundResyncAt IS NOT DISTINCT FROM <läst värde>`), bara
   den som får `count === 1` exporterar.
 - **Fönstret** `resyncFonster(idag, horisont)` i `historik.ts`: idag − 44 …
-  idag i butikens tid, klämt mot orderhorisonten. `refreshShopDaily` UTAN
-  force — minutspärren och 5-minuters felpausen gäller.
+  idag i butikens tid, klämt mot orderhorisonten. `returkollHamtning` (samma
+  väg som `refreshShopDaily`) UTAN force — minutspärren och 5-minuters
+  felpausen gäller — men med bulk-gränsen `RESYNC_BULK_TIMEOUT_MS` (10 min i
+  stället för panelens 90 s), och ett exportfel sätter INTE felpausen.
 - **Lyckas** den flyttas stämpeln till klartiden och samma tid skrivs i
   `refundResyncOkAt` (migration `20260926130000_returkoll_klar`) — det ENDA
   fältet panelen och gruppen visar. `refundResyncAt` är låset: det stämplas
   när exporten startar, och visades det sa panelen "senaste koll 14:00"
   medan exporten pågick eller skulle misslyckas (rättat efter granskning).
-  **Misslyckas** den skrivs det förra värdet tillbaka, villkorat på vår egen
-  stämpel: en tjänst som inte kan förnya en annan registrerings nyckel får
-  inte hålla butiken i 6 h.
+  **Misslyckas** den på nyckeln (`nyckel`) eller hoppas över (`hoppad`)
+  skrivs det förra värdet tillbaka, villkorat på vår egen stämpel: en tjänst
+  som inte kan förnya en annan registrerings nyckel får inte hålla butiken i
+  6 h. **Misslyckas exporten** (`fel`) skrivs i stället en gemensam paus i
+  låset (`felLas` i `returkoll.ts`): 1 h efter ett lyckat varv, sedan
+  ungefär dubbelt per fel (1, 1, 2, 4, 6 h), och hela intervallet för en
+  butik som aldrig lyckats.
 - **KundOrder ersätts per fönster** i stället för upsert
   (`ersattKundOrdrar` i kundorder.server, planen `kundOrderErsattning` i
   `returkoll.ts`): radera fönstrets rader + radernas order-ID, `createMany` i
@@ -988,6 +1001,17 @@ Fällor:
   fortfarande.** Raden på skärmen säger "de senaste 45 dagarna".
 - ⚠ **Kostnaden:** ~4 bulk-exporter per butik och dygn, ~36 för 9 butiker.
   Bulk-exporter har inget kostnadstak i API-budgeten.
+- ⚠ **Ett exportfel får aldrig rulla tillbaka låset** (rättat efter
+  slutgranskningen). En stor butiks 45 dagar tog längre än panelens 90 s;
+  med tillbakarullning låg butiken kvar som äldst, nästa tjänst körde samma
+  dömda export på nästa tick (upp mot sex i timmen i stället för fyra om
+  dygnet), `refundResyncOkAt` sattes aldrig — och varje fel satte
+  `senasteFel`, så gruppens force-hämtning i den processen nekades i 5 min
+  och visade en frisk butik som "kunde inte uppdateras". Nu: 10 min
+  bulk-gräns för kollen, gemensam paus vid exportfel, och felpausen sätts
+  bara av nyckelfel (401) när det är kollen som kör. Tidsgränsen ingår inte
+  i `fetchOrderData`s inflight-nyckel — en panel med exakt samma fönster
+  delar kollens export och kan då vänta längre än 90 s.
 - ⚠ **customers/redact-webhooken raderar KundOrder-rader per order-ID** —
   ligger ordern inom 45 dagar skriver nästa koll tillbaka en rad för den
   (med `kundHash`, aldrig klartext). Så var det redan med panelens egna

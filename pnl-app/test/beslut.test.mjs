@@ -154,6 +154,36 @@ test("tips: mer_over_margin tänds vid bidragsmarginal 0,44 med annonsandel 0,50
   assert.ok(!evaluateTips(utan, "sv").some((t) => t.id === "mer_over_margin"));
 });
 
+test("tips: håll-läget (annonserna går plus, de fasta saknas) ger inget kritiskt annonstips", () => {
+  // Panelexemplet i CLAUDE.md: oms 300 000, bruttovinst 165 700, annonser 153 800, fasta 20 000, 30 dagar.
+  const kv = skalningsKvoter({ totalSales: 300_000, spend: 153_800, grossProfit: 165_700, targetMargin: 0.25 });
+  const beslut = skalningsBeslut({ spendComplete: true, spend: 153_800, orders: 100, ...kv }, flaggor());
+  assert.equal(beslut.niva, "hold");
+  const m = {
+    contribution_margin: 165_700 / 300_000,
+    mer: 153_800 / 300_000,
+    fixed_share: 20_000 / 300_000,
+    days: 30,
+    orders: 100,
+  };
+  const tips = evaluateTips(m, "sv", 10);
+  assert.ok(!tips.some((t) => t.id === "mer_over_margin"), "annonserna kostar 153 800 < bidraget 165 700");
+  assert.ok(!tips.some((t) => t.severity === "critical" && t.metric === "mer"));
+  // Gapet mot de fasta kostnaderna syns ändå: under 10 % kvar efter annons och fasta.
+  assert.ok(tips.some((t) => t.id === "margin_squeeze"));
+  // Komplementet: annonsandelen 51 % är över 40 % och under bidragsmarginalen.
+  assert.ok(tips.some((t) => t.id === "mer_above_median"));
+});
+
+test("tips: mer_over_margin följer dra ner-linjen exakt (MER under break-even)", () => {
+  const cm = 0.5;
+  const ovan = evaluateTips({ contribution_margin: cm, mer: 0.5001, days: 30 }, "sv", 10);
+  assert.ok(ovan.some((t) => t.id === "mer_over_margin"));
+  const exakt = evaluateTips({ contribution_margin: cm, mer: 0.5, days: 30 }, "sv", 10);
+  assert.ok(!exakt.some((t) => t.id === "mer_over_margin"));
+  // Tänds utan fasta kostnader inmatade — fixed_share saknas i påsen ovan.
+});
+
 test("tips: margin_squeeze räknar på bidragsmarginalen, margin_low behåller bruttomarginalen", () => {
   // 0,40 − 0,25 − 0,06 = 0,09 < 0,10 ⇒ klämman. På bruttomarginalen 0,55 hade det varit 0,24.
   const klamd = evaluateTips({ gross_margin: 0.55, contribution_margin: 0.40, mer: 0.25, fixed_share: 0.06, days: 30 }, "en", 10);

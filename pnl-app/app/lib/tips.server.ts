@@ -155,13 +155,20 @@ export const RULES: Rule[] = [
     tip_en: "Fixed costs above 15% of revenue. Shopify Email is free to 10,000 emails/month—check paid tools.",
     tip_sv: "Fasta kostnader över 15 % av omsättningen. Shopify Email är gratis upp till 10 000 mejl/mån — se över betalverktygen.",
     source: "Dreamlit/MercadoKit pricing; Eightx" },
-  { id: "mer_over_margin", metric: "mer", needs: ["mer", "contribution_margin", "fixed_share", "days"], when: (m) => m.mer > m.contribution_margin - m.fixed_share && m.days >= 14, severity: "critical",
+  /* Villkoret är exakt texten: annonsandelen över bidragsmarginalen, alltså
+     MER under break-even — samma linje som "dra ner" i skalningsBeslut.
+     Förut stod `mer > contribution_margin − fixed_share` (nettovinst < 0):
+     i håll-läget, där annonserna går plus och det är de fasta kostnaderna som
+     saknas, sa ett kritiskt tips "annonserna kostar mer än hela
+     täckningsbidraget" bredvid badgen ◆ håll. Gapet mot de fasta kostnaderna
+     täcks av margin_squeeze och fixed_high/fixed_critical. */
+  { id: "mer_over_margin", metric: "mer", needs: ["mer", "contribution_margin", "days"], when: (m) => m.mer > m.contribution_margin && m.days >= 14, severity: "critical",
     tip_en: "Ads cost more than your full contribution margin. Scale only ads with positive profit contribution.",
     tip_sv: "Annonserna kostar mer än hela täckningsbidraget. Skala bara annonser med positivt vinstbidrag.",
     source: "ANALYSMETOD; Shopify median ROAS 2.04" },
-  /* Samma bas som mer_over_margin — de två är varandras komplement och får
+  /* Samma gräns som mer_over_margin — de två är varandras komplement och får
      inte räkna på olika marginaler. */
-  { id: "mer_above_median", metric: "mer", needs: ["mer", "contribution_margin", "fixed_share", "days"], when: (m) => m.mer > 0.4 && m.mer <= m.contribution_margin - m.fixed_share && m.days >= 14, severity: "warning",
+  { id: "mer_above_median", metric: "mer", needs: ["mer", "contribution_margin", "days"], when: (m) => m.mer > 0.4 && m.mer <= m.contribution_margin && m.days >= 14, severity: "warning",
     tip_en: "Ads take over 40% of revenue—above the 41% median. Grow email/SMS revenue; flows earn 18× per recipient.",
     tip_sv: "Annons tar över 40 % av omsättningen — över medianen 41 %. Öka mejl/SMS-intäkten; flöden ger 18× per mottagare.",
     source: "Triple Whale 2025; Klaviyo Benchmark" },

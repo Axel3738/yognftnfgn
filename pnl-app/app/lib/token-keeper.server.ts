@@ -20,10 +20,17 @@
  */
 
 import prisma from "../db.server";
-import { butikensHorisont, giltigToken, markeraPagaende, refreshShopDaily } from "./daily.server";
+import { butikensHorisont, giltigToken, markeraPagaende, returkollHamtning, type HamtUtfall } from "./daily.server";
 import { dayInTz } from "./shopify-data.server";
 import { resyncFonster } from "./historik";
-import { RESYNC_INTERVALL_MS, RESYNC_PER_TICK, sqlTid, valjResyncButiker } from "./returkoll";
+import {
+  RESYNC_BULK_TIMEOUT_MS,
+  RESYNC_INTERVALL_MS,
+  RESYNC_PER_TICK,
+  felLas,
+  sqlTid,
+  valjResyncButiker,
+} from "./returkoll";
 import { decrypt, encrypt } from "./crypto.server";
 import { bestamUtgang, forlangToken, metaLoginConfig } from "./meta-login.server";
 
@@ -202,10 +209,11 @@ export async function resyncRunda(): Promise<void> {
         timezone: { not: null },
         OR: [{ refundResyncAt: null }, { refundResyncAt: { lt: new Date(nu - RESYNC_INTERVALL_MS) } }],
       },
-      select: { shop: true, refundResyncAt: true, timezone: true },
+      select: { shop: true, refundResyncAt: true, refundResyncOkAt: true, timezone: true },
     });
     const tur = valjResyncButiker(rader, nu, RESYNC_PER_TICK, new Set(resyncPaus.keys()));
     const tidszon = new Map(rader.map((r) => [r.shop, r.timezone ?? "UTC"]));
+    const senasteOk = new Map(rader.map((r) => [r.shop, r.refundResyncOkAt]));
 
     /* En i taget: butikerna delar ingen bulk-plats, men tjänsten gör det
        inte heller bättre av att elda tre exporter samtidigt. */
@@ -217,7 +225,9 @@ export async function resyncRunda(): Promise<void> {
          som flyttar stämpeln från exakt det värde den läste gör exporten. */
       if ((await stampla(shop, stampel, forra)) !== 1) continue;
 
-      let ok = false;
+      /* Ett kast innan hämtningen ens startat (horisonten, tidszonen) räknas
+         som exportfel: det beror inte på vilken tjänst som kör. */
+      let utfall: HamtUtfall = "fel";
       try {
         const tz = tidszon.get(shop) ?? "UTC";
         const idag = dayInTz(new Date(), tz);
@@ -225,23 +235,32 @@ export async function resyncRunda(): Promise<void> {
         /* Utan force: minutspärren (farStartaBakgrund) och felpausen gäller,
            så kollen krockar aldrig med en panels egen export i den här
            processen. markeraPagaende gör att en panel som öppnas under
-           exporten pollar tills de nya siffrorna finns. */
-        ok = await markeraPagaende(shop, refreshShopDaily(shop, from, to));
+           exporten pollar tills de nya siffrorna finns. Längre bulk-gräns än
+           panelens 90 s, och ett exportfel här sätter inte felpausen som
+           panelen och gruppen läser. */
+        utfall = await markeraPagaende(shop, returkollHamtning(shop, from, to, RESYNC_BULK_TIMEOUT_MS));
       } catch (e) {
         console.error(`Returkollen för ${shop} kastade:`, (e as Error).message);
       }
 
-      if (ok) {
+      if (utfall === "ok") {
         /* Stämpeln flyttas till NÄR hämtningen blev klar och skrivs i
            `refundResyncOkAt` — det är den tid panelen visar ("senaste koll
            HH:MM"), och siffrorna är minst så färska. */
         await stamplaKlar(shop, new Date(), stampel);
         resyncPaus.delete(shop);
+      } else if (utfall === "fel") {
+        /* Exportfel: detsamma i alla tjänster. Gemensam paus i databasen i
+           stället för tillbakarullning — annars tog nästa tjänst samma dömda
+           export på nästa tick, om och om igen (`felLas`). Villkorat på vår
+           egen stämpel. */
+        await stampla(shop, felLas(Date.now(), senasteOk.get(shop) ?? null), stampel);
+        resyncPaus.set(shop, Date.now());
       } else {
-        /* Tillbaka till förra värdet: en tjänst som inte kan förnya en annan
-           registrerings nyckel får inte hålla butiken i 6 timmar — den som
-           kan ska ta den på nästa tick. Villkorat på vår egen stämpel, så en
-           annan tjänsts senare koll aldrig skrivs över. */
+        /* Nyckel eller hoppad: tillbaka till förra värdet. En tjänst som inte
+           kan förnya en annan registrerings nyckel får inte hålla butiken i 6
+           timmar — den som kan ska ta den på nästa tick. Villkorat på vår
+           egen stämpel, så en annan tjänsts senare koll aldrig skrivs över. */
         await stampla(shop, forra, stampel);
         resyncPaus.set(shop, Date.now());
       }

@@ -18,6 +18,38 @@
 export const RESYNC_INTERVALL_MS = 6 * 60 * 60 * 1000;
 /** Högst så här många butiker per tick och tjänst — en bulk-export var. */
 export const RESYNC_PER_TICK = 3;
+/**
+ * Returkollens bulk-tidsgräns. Den interaktiva är 90 s, och en stor butiks
+ * 45 dagar tar längre: med 90 s misslyckades kollen på varje försök, i varje
+ * tjänst, och butiken fick aldrig sina returer dragna.
+ */
+export const RESYNC_BULK_TIMEOUT_MS = 10 * 60 * 1000;
+/** Kortaste gemensamma paus efter ett exportfel. */
+export const RESYNC_FEL_PAUS_MIN_MS = 60 * 60 * 1000;
+
+/**
+ * Låsvärdet att skriva när exporten MISSLYCKADES (inte "inte min nyckel" —
+ * då rullas låset tillbaka så att rätt tjänst tar butiken).
+ *
+ * Varför inte tillbakarullning även här: ett exportfel är detsamma i alla
+ * tjänster. Rullades låset tillbaka låg butiken kvar som äldst, och nästa
+ * tjänst körde samma dömda 45-dagarsexport på nästa tick — upp mot sex
+ * exporter i timmen i stället för fyra om dygnet. Låset sätts så att
+ * butiken står på tur igen efter en paus, för ALLA tjänster.
+ *
+ * Pausen växer med tiden sedan senaste lyckade koll: den första efter ett
+ * lyckat varv är 1 h, sedan ungefär dubbel för varje nytt fel (1, 1, 2, 4 h),
+ * aldrig över det vanliga intervallet på 6 h. En butik som aldrig lyckats
+ * får hela intervallet direkt — högst fyra försök om dygnet, samma budget
+ * som en frisk butik.
+ */
+export function felLas(nu: number, senasteOk: Date | null): Date {
+  const sedanOk = senasteOk ? nu - senasteOk.getTime() : Infinity;
+  const paus = Math.min(RESYNC_INTERVALL_MS, Math.max(RESYNC_FEL_PAUS_MIN_MS, sedanOk - RESYNC_INTERVALL_MS));
+  /* Butiken står på tur när låset är äldre än intervallet: låset = nu −
+     intervallet + pausen ger tur igen om exakt `paus`. */
+  return new Date(nu - RESYNC_INTERVALL_MS + paus);
+}
 
 export interface ResyncKandidat {
   shop: string;
@@ -30,7 +62,8 @@ export interface ResyncKandidat {
  *
  * `pausade` är butiker som DEN HÄR tjänsten nyss misslyckades med. Utan den
  * hade en butik med död nyckel legat kvar som äldst (stämpeln rullas
- * tillbaka vid fel) och tagit en av tre platser på varje tick — tre sådana
+ * tillbaka vid nyckelfel — ett exportfel får i stället en gemensam paus,
+ * se `felLas`) och tagit en av tre platser på varje tick — tre sådana
  * butiker och ingen annan butik kollades någonsin. Andra tjänster ser den
  * fortfarande som äldst, och den som faktiskt kan förnya nyckeln tar den.
  */

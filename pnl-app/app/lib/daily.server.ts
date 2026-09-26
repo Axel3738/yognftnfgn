@@ -110,6 +110,8 @@ export async function refreshDaily(
   timezone: string,
   from: string,
   to: string,
+  /** Bulk-exportens tidsgräns — se `fetchOrderData`. Utelämnad = 90 s. */
+  opts: { bulkTimeoutMs?: number } = {},
 ): Promise<void> {
   /* Kundfältet följer bara med när butiken faktiskt gett read_customers —
      annars nekar Shopify hela frågan och dagsraderna slutar uppdateras. */
@@ -118,7 +120,7 @@ export async function refreshDaily(
   const fonster = klampaFonster(from, to, await butikensHorisont(shop, timezone, { admin, scope }));
   if (!fonster) return;
   [from, to] = fonster;
-  const data = await fetchOrderData(admin, from, to, timezone, shop, { kund });
+  const data = await fetchOrderData(admin, from, to, timezone, shop, { kund, bulkTimeoutMs: opts.bulkTimeoutMs });
   const now = new Date();
   /* En transaktion per dag vore 90 rundresor; en enda med alla upserts är en. */
   await prisma.$transaction(
@@ -709,23 +711,36 @@ const senasteFornyelseFel = new Map<string, string>();
 
 const arObehorig = (e: unknown) => /\b401\b|Invalid API key or access token/i.test(String(e));
 
-export async function refreshShopDaily(
+/**
+ * Utfallet av en bakgrundshämtning:
+ * - `ok`: hämtad och skriven.
+ * - `hoppad`: aldrig försökt — minutspärren eller felpausen i den här
+ *   processen.
+ * - `nyckel`: ingen giltig nyckel, eller 401 som en ny nyckel inte lagade —
+ *   nästan alltid "inte den här tjänstens registrering".
+ * - `fel`: nyckeln funkade men hämtningen misslyckades (exporten tog för
+ *   lång tid, Shopify svarade fel). Samma fel i vilken tjänst som helst.
+ */
+export type HamtUtfall = "ok" | "hoppad" | "nyckel" | "fel";
+
+async function hamtaShopDaily(
   shop: string,
   from: string,
   to: string,
-  opts?: { force?: boolean },
-): Promise<boolean> {
-  if (Date.now() - (senasteFel.get(shop) ?? 0) < 5 * 60 * 1000) return false;
-  if (!opts?.force && !farStartaBakgrund(shop)) return false;
+  opts: { force?: boolean; bulkTimeoutMs?: number; felPausVidExportfel: boolean },
+): Promise<HamtUtfall> {
+  if (Date.now() - (senasteFel.get(shop) ?? 0) < 5 * 60 * 1000) return "hoppad";
+  if (!opts.force && !farStartaBakgrund(shop)) return "hoppad";
+  const radOpts = { bulkTimeoutMs: opts.bulkTimeoutMs };
   try {
     const [token, settings] = await Promise.all([
       giltigToken(shop),
       prisma.shopSettings.findUnique({ where: { shop } }),
     ]);
-    if (!token) return false;
+    if (!token) return "nyckel";
     const tz = settings?.timezone ?? "UTC";
     try {
-      await refreshDaily(adminFromToken(shop, token), shop, tz, from, to);
+      await refreshDaily(adminFromToken(shop, token), shop, tz, from, to, radOpts);
     } catch (e) {
       /* 401 kan komma före utgångsdatumet. Tvinga fram en ny nyckel och gör
          ett försök till — annars krävs ett manuellt besök i butikens admin
@@ -733,15 +748,39 @@ export async function refreshShopDaily(
       if (!arObehorig(e)) throw e;
       const ny = await giltigToken(shop, true);
       if (!ny || ny === token) throw e;
-      await refreshDaily(adminFromToken(shop, ny), shop, tz, from, to);
+      await refreshDaily(adminFromToken(shop, ny), shop, tz, from, to, radOpts);
     }
     senasteFel.delete(shop);
-    return true;
+    return "ok";
   } catch (e) {
-    senasteFel.set(shop, Date.now());
+    const nyckel = arObehorig(e);
+    /* Felpausen är till för döda nycklar. Returkollens exportfel (en stor
+       butiks 45 dagar som inte hann klart) sätter den inte: då hade panelens
+       och gruppens force-hämtningar för en frisk butik nekats i fem minuter,
+       och gruppen visat den som "kunde inte uppdateras". */
+    if (nyckel || opts.felPausVidExportfel) senasteFel.set(shop, Date.now());
     console.error(`Bakgrundshämtning för ${shop} misslyckades:`, e);
-    return false;
+    return nyckel ? "nyckel" : "fel";
   }
+}
+
+export async function refreshShopDaily(
+  shop: string,
+  from: string,
+  to: string,
+  opts?: { force?: boolean },
+): Promise<boolean> {
+  return (await hamtaShopDaily(shop, from, to, { force: opts?.force, felPausVidExportfel: true })) === "ok";
+}
+
+/**
+ * Returkollens hämtning: utan force (minutspärren och felpausen gäller),
+ * med returkollens längre bulk-tidsgräns, och med utfallet i klartext så att
+ * `resyncRunda` kan skilja "inte min nyckel" (lämna butiken åt den tjänst som
+ * kan) från ett exportfel (backa av för alla tjänster).
+ */
+export function returkollHamtning(shop: string, from: string, to: string, bulkTimeoutMs: number): Promise<HamtUtfall> {
+  return hamtaShopDaily(shop, from, to, { bulkTimeoutMs, felPausVidExportfel: false });
 }
 
 export type { UppmattAvgift, Betalvag };

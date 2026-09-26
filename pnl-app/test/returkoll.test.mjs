@@ -8,8 +8,17 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 
-const { valjResyncButiker, klockslag, aldstaKoll, sqlTid, kundOrderErsattning, RESYNC_INTERVALL_MS, RESYNC_PER_TICK } =
-  await import("../app/lib/returkoll.ts");
+const {
+  valjResyncButiker,
+  klockslag,
+  aldstaKoll,
+  sqlTid,
+  kundOrderErsattning,
+  felLas,
+  RESYNC_INTERVALL_MS,
+  RESYNC_PER_TICK,
+  RESYNC_BULK_TIMEOUT_MS,
+} = await import("../app/lib/returkoll.ts");
 const { parseOrderLines } = await import("../app/lib/orderrader.ts");
 
 const NU = Date.parse("2026-09-26T12:00:00Z");
@@ -187,4 +196,48 @@ test("skrivningen delas i bitar under Postgres parametertak", () => {
   assert.deepEqual(plan.orderIdBitar.map((b) => b.length), [2000, 2000, 500]);
   assert.ok(plan.bitar.flat().every((r) => r.shop === "s"));
   assert.deepEqual(kundOrderErsattning("s", "2026-09-10", "2026-09-10", []).bitar, []);
+});
+
+/* ------------------------------------------------ exportfel: gemensam paus */
+
+const H = 60 * 60 * 1000;
+/** Timmar tills butiken står på tur igen, för alla tjänster, efter ett låsvärde. */
+const timmarTillTur = (las, nu) => (las.getTime() + RESYNC_INTERVALL_MS - nu) / H;
+
+test("exportfel: butiken står INTE på tur för nästa tjänst på nästa tick", () => {
+  // Senaste lyckade koll för 6 h sedan, exporten tog för lång tid nu.
+  const las = felLas(NU, timmarSedan(6));
+  const nastaTick = NU + 15 * 60 * 1000;
+  assert.deepEqual(valjResyncButiker([{ shop: "stor", refundResyncAt: las }], nastaTick), []);
+  assert.equal(timmarTillTur(las, NU), 1);
+  // Efter pausen står den på tur igen — i vilken tjänst som helst, utan lokal paus.
+  assert.deepEqual(
+    valjResyncButiker([{ shop: "stor", refundResyncAt: las }], NU + H + 1).map((r) => r.shop),
+    ["stor"],
+  );
+});
+
+test("exportfel: pausen växer ungefär dubbelt per fel, aldrig över 6 h", () => {
+  // Simulera en butik som fallerar varje gång den står på tur.
+  const ok = timmarSedan(6);
+  let nu = NU;
+  const pauser = [];
+  for (let i = 0; i < 7; i++) {
+    const las = felLas(nu, ok);
+    const paus = timmarTillTur(las, nu);
+    pauser.push(paus);
+    nu += paus * H;
+  }
+  assert.deepEqual(pauser, [1, 1, 2, 4, 6, 6, 6]);
+  // Högst fyra försök om dygnet när det väl planat ut — samma budget som en frisk butik.
+  assert.ok(24 / pauser.at(-1) <= 4);
+});
+
+test("exportfel: en butik som aldrig lyckats pausas hela intervallet", () => {
+  assert.equal(timmarTillTur(felLas(NU, null), NU), 6);
+});
+
+test("returkollens bulk-gräns är längre än panelens 90 s", () => {
+  assert.ok(RESYNC_BULK_TIMEOUT_MS > 90_000);
+  assert.ok(RESYNC_BULK_TIMEOUT_MS < 15 * 60 * 1000, "ska hinna klart före nästa tick");
 });
