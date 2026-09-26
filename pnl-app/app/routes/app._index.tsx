@@ -46,6 +46,7 @@ import {
 import { hemlandAv, marknadskod, marknadsnamn, stadaAvgifter } from "../lib/marknad";
 import { klampaFonster } from "../lib/historik";
 import { klockslag } from "../lib/returkoll";
+import { andelUtan, arKostnadOsaker } from "../lib/kostnadstackning";
 import { getSpend, TIMFONSTER_DAGAR, timvisSpend } from "../lib/meta.server";
 import { hamtaKonton, konfigurationer } from "../lib/meta-konton.server";
 import { dagarKvar, VARNA_DAGAR } from "../lib/meta-login";
@@ -191,14 +192,27 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
   /* Uppskattad COGS: varianter utan inköpspris får X % av priset när butiken
      valt det (Kostnader-sidan). Alltid märkt "uppskattad" — aldrig tyst. */
   const estimatePct = settings.cogsEstimatePct ?? null;
-  let estimatedUnits = 0;
-  const products = applyCurrentCosts(daily.products, catalog).map((p) => {
-    if (p.unitCost != null || !estimatePct) return p;
-    const price = p.variantGid ? catalog.byGid.get(p.variantGid)?.price : undefined;
-    if (!(price != null && price > 0)) return p;
-    estimatedUnits += p.units;
-    return { ...p, unitCost: Math.round(price * (estimatePct / 100) * 100) / 100 };
-  });
+  /* Samma uppskattning för huvudperioden OCH jämförelsen. Fick bara den
+     ena den blev ▼ på nettovinsten en ren artefakt: 35 % på 20 000 kr
+     okostnadssatt försäljning är 7 000 kr mer COGS i den ena perioden.
+     Raden märks `estimated` så att tabellen kan visa "≈". */
+  const uppskatta = (rader: typeof daily.products) => {
+    let units = 0;
+    const ut = applyCurrentCosts(rader, catalog).map((p) => {
+      if (p.unitCost != null || !estimatePct) return p;
+      const price = p.variantGid ? catalog.byGid.get(p.variantGid)?.price : undefined;
+      if (!(price != null && price > 0)) return p;
+      units += p.units;
+      return { ...p, unitCost: Math.round(price * (estimatePct / 100) * 100) / 100, estimated: true };
+    });
+    return { products: ut, units };
+  };
+  const { products, units: estimatedUnits } = uppskatta(daily.products);
+  /* Varianter handlaren sagt är gratis — bara för dem räknas 0 som en
+     riktig kostnad. Json-kolumnen städas: bara strängar går vidare. */
+  const freeVariants = Array.isArray(settings.freeVariants)
+    ? (settings.freeVariants as unknown[]).filter((v): v is string => typeof v === "string")
+    : [];
   /* Sessioner/CVR finns inte i det publika Admin-API:t — analytics-ytan är
      intern hos Shopify. Tom serie => "—" i panelen. */
   const sessions: never[] = [];
@@ -272,7 +286,10 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
     /* Kopplad (token + konto) men hämtningen misslyckas — inte "koppla". */
     metaBroken: metaConfigured && Boolean(spend.error),
     fixed: fixedRows.length > 0,
-    settings: Boolean(settings.settingsSavedAt),
+    /* Tullsteget klaras bara av en uttrycklig kvittens av TULLEN — inte av
+       vilken sparning som helst. Att byta språk eller klistra in en
+       Meta-nyckel stämplade förut 27,50 i tull som granskad. */
+    settings: Boolean(settings.tariffConfirmedAt),
   };
 
   /* Avgifter per marknad: USA-ordrar bär USA:s kortavgift och växlingsavgift,
@@ -305,6 +322,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
     settings: raknesettings,
     salesByMarket: daily.salesByMarket,
     ordersByMarket: daily.ordersByMarket,
+    freeVariants,
   });
   /* Raderna är räknade per marknad (rätt kostnad per land) men visas per
      variant — tabellen ska inte ha tre rader för samma motorhölje. */
@@ -313,7 +331,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
   /* Jämförelse: samma antal dagar direkt före perioden. Hämtas EFTER huvud-
      perioden (bulk-kön är en i taget) och får misslyckas tyst — en panel utan
      jämförelsesiffror är bättre än en som inte laddar. */
-  let comparison: { totalSales: number; orders: number; spend: number; netProfit: number } | null = null;
+  let comparison: Jamforelse | null = null;
   try {
     const dayCount = result.days.length;
     const prevTo = shiftIso(from, -1);
@@ -343,17 +361,23 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
       spendReliable: metaConfigured && !prevSpend.error && marknadMarkt,
       fixedMonthlyTotal,
       sales: prevData.sales, sessions: [], spend: prevSpend.days,
-      products: applyCurrentCosts(prevData.products, catalog),
+      products: uppskatta(prevData.products).products,
       costChanges: costChangeRows,
       costTiers,
       settings: raknesettings,
       salesByMarket: prevData.salesByMarket,
       ordersByMarket: prevData.ordersByMarket,
+      freeVariants,
     });
     if (prev.totals.orders > 0) {
       comparison = {
         totalSales: prev.totals.totalSales, orders: prev.totals.orders,
         spend: prev.totals.spend, netProfit: prev.totals.netProfit,
+        /* Hur pålitlig den föregående periodens vinst är. En ▲ mot en period
+           där annonskostnad saknades eller varor räknades som gratis mäter
+           dataluckan, inte butiken — då visas "—" i stället. */
+        spendComplete: prev.totals.spendComplete,
+        kostnadOsaker: prev.totals.kostnadOsaker,
       };
     }
   } catch (e) {
@@ -374,10 +398,13 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
   const tt = result.totals;
   const grossSalesSum = sales.reduce((a, s) => a + s.grossSales, 0);
   const returnsSum = sales.reduce((a, s) => a + Math.abs(s.returns), 0);
+  /* Marginal och annonsandel döms inte på gratisvaror: med COGS som saknas
+     på mer än 2 % av försäljningen hade marginaltipset berömt en marginal
+     som inte finns. */
   const tips = evaluateTips(
     {
-      gross_margin: tt.grossMargin ?? undefined,
-      mer: tt.spendComplete && tt.totalSales > 0 ? tt.spend / tt.totalSales : undefined,
+      gross_margin: tt.kostnadOsaker ? undefined : (tt.grossMargin ?? undefined),
+      mer: !tt.kostnadOsaker && tt.spendComplete && tt.totalSales > 0 ? tt.spend / tt.totalSales : undefined,
       fixed_share: tt.totalSales > 0 && fixedMonthlyTotal > 0 ? tt.fixedCosts / tt.totalSales : undefined,
       refund_rate: grossSalesSum > 0 ? returnsSum / grossSalesSum : undefined,
       orders: tt.orders,
@@ -428,6 +455,10 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
     spendConverted: spend.converted ?? null,
     targetMargin: Number(settings.targetMargin),
     tariffPerOrder: Number(settings.tariffPerOrder),
+    /* Tullen kvitterad av handlaren? Nej ⇒ tullrutan säger "standard — inte
+       bekräftad". Egen stämpel, inte settingsSavedAt (se Inställningar). */
+    tariffConfirmed: Boolean(settings.tariffConfirmedAt),
+    feeRate: Number(settings.feeRate),
     /* Returkollens senaste LYCKADE körning som klockslag i butikens tid
        (null = inte kollad än). Aldrig `refundResyncAt` — det är låset, som
        stämplas innan exporten ens körts. Formaterad här, inte i webbläsaren:
@@ -459,7 +490,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
       tips: [] as Tip[],
       monthlyGoal: null as number | null,
       estimate: null as { pct: number; units: number } | null,
-      comparison: null as { totalSales: number; orders: number; spend: number; netProfit: number } | null,
+      comparison: null as Jamforelse | null,
       groupSize: 1,
       group: null as Awaited<ReturnType<typeof summeraGrupp>> | null,
       setup: null as { dismissed: boolean; meta: boolean; metaPending: boolean; metaLoginSource: boolean; metaBroken: boolean; fixed: boolean; settings: boolean } | null,
@@ -480,13 +511,25 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
       spendCurrencyMismatch: null as { spend: string; shop: string } | null,
       spendConverted: null as { from: string; to: string } | null,
       targetMargin: 0.25,
-      tariffPerOrder: 27.5,
+      tariffPerOrder: 0,
+      tariffConfirmed: false,
+      feeRate: 0.029,
       returkoll: null as string | null,
     };
   }
 }
 
 type PageData = Awaited<ReturnType<typeof loadPage>>;
+
+/** Föregående period, för ▲▼ i KPI-rutorna. */
+type Jamforelse = {
+  totalSales: number;
+  orders: number;
+  spend: number;
+  netProfit: number;
+  spendComplete: boolean;
+  kostnadOsaker: boolean;
+};
 
 /**
  * Timmarna på dygnet: försäljning ur HourlyPnl, annonskostnad ur HourlySpend.
@@ -766,7 +809,9 @@ function AnimatedNumber({ value, format }: { value: number; format: (v: number) 
 /**
  * Hero-kortet: den stora vinstsiffran, ring mot vinstmålet, svit och bästa
  * dag. Det här är dopaminet — men aldrig på bekostnad av sanningen: saknas
- * annonskostnad står det i kortet, och siffran är röd, inte grön.
+ * annonskostnad står det i kortet, och siffran är röd, inte grön. Samma sak
+ * när mer än 2 % av försäljningen saknar riktig kostnad: då är vinsten en
+ * övre gräns, och en grön hjälte med konfetti hade firat gratisvaror.
  */
 function Hero({
   result, money, T, lang, currency, monthlyGoal,
@@ -784,8 +829,11 @@ function Hero({
   const t = result.totals;
   const rows = vinstPerDag(result);
   const days = rows.length;
-  const complete = t.spendComplete;
+  /* Komplett = annonskostnaden finns OCH varukostnaden täcker försäljningen.
+     Allt firande nedan (grönt, konfetti, rekord, svit) hänger på den här. */
+  const complete = t.spendComplete && !t.kostnadOsaker;
   const positive = t.netProfit >= 0 && complete;
+  const andelUtanKostnad = t.cogsCoverage == null ? 0 : 1 - t.cogsCoverage;
 
   /* Svit: dagar på plus i rad, räknat bakåt från periodens sista dag. */
   let streak = 0;
@@ -850,10 +898,17 @@ function Hero({
           </div>
           <Text as="p" tone="subdued">{days ? T.dashboard.hero.perDay(money(t.netProfit / days)) : ""}</Text>
           <div style={{ marginTop: 10, display: "flex", gap: 8, flexWrap: "wrap" }}>
-            {!complete ? <Badge tone="critical">{T.dashboard.hero.incomplete}</Badge> : null}
+            {!t.spendComplete ? <Badge tone="critical">{T.dashboard.hero.incomplete}</Badge> : null}
+            {t.kostnadOsaker ? (
+              <Badge tone="warning">{T.dashboard.hero.costMissing(Math.max(1, Math.round(andelUtanKostnad * 100)))}</Badge>
+            ) : null}
             {reached ? <Badge tone="success">{T.dashboard.hero.goalReached}</Badge> : null}
-            {bestIsLast ? <Badge tone="success">{T.dashboard.hero.newRecord}</Badge> : null}
-            <Badge tone={streak > 0 ? "success" : undefined}>{streak > 0 ? `🔥 ${T.dashboard.hero.streak(streak)}` : T.dashboard.hero.noStreak}</Badge>
+            {bestIsLast && complete ? <Badge tone="success">{T.dashboard.hero.newRecord}</Badge> : null}
+            {/* Svit och rekord räknas på vinster som kan vara för höga — de
+                visas bara när underlaget är komplett. */}
+            {complete ? (
+              <Badge tone={streak > 0 ? "success" : undefined}>{streak > 0 ? `🔥 ${T.dashboard.hero.streak(streak)}` : T.dashboard.hero.noStreak}</Badge>
+            ) : null}
             {best ? <Badge>{T.dashboard.hero.bestDay(lbl(best.day), money(best.profit))}</Badge> : null}
           </div>
         </div>
@@ -1056,6 +1111,7 @@ function SetupChecklist({
   costsHint,
   currency,
   tariffPerOrder,
+  feeRate,
   T,
   dec,
 }: {
@@ -1064,6 +1120,9 @@ function SetupChecklist({
   costsHint: string;
   currency: string;
   tariffPerOrder: number;
+  /** Den sparade avgiften. Tullsteget kan stå okvitterat efter att avgiften
+   *  ändrats — ett hårdkodat "2,9 %" hade då varit fel. */
+  feeRate: number;
   T: Texts;
   dec: (s: string) => string;
 }) {
@@ -1107,7 +1166,7 @@ function SetupChecklist({
       title: T.dashboard.setup.stepSettings,
       hint: setup.settings
         ? T.dashboard.setup.settingsHintDone
-        : T.dashboard.setup.settingsHintTodo(dec(tariffPerOrder.toFixed(2)), currency),
+        : T.dashboard.setup.settingsHintTodo(dec(tariffPerOrder.toFixed(2)), currency, dec((feeRate * 100).toFixed(1))),
       to: "/app/settings",
       cta: T.dashboard.setup.ctaSettings,
     },
@@ -1183,7 +1242,7 @@ function SetupChecklist({
 }
 
 function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
-  const { fatal, result, timvis, rangeKey, idag, market, marknader, daysWithoutMarkets, outsideHistory, currency, spendError, spendCurrencyMismatch, spendConverted, targetMargin, tariffPerOrder, comparison, setup, dataAgeMin, refreshing, groupSize, group, metaTokenDagar, tips, monthlyGoal, estimate, returkoll } = d;
+  const { fatal, result, timvis, rangeKey, idag, market, marknader, daysWithoutMarkets, outsideHistory, currency, spendError, spendCurrencyMismatch, spendConverted, targetMargin, tariffPerOrder, tariffConfirmed, feeRate, comparison, setup, dataAgeMin, refreshing, groupSize, group, metaTokenDagar, tips, monthlyGoal, estimate, returkoll } = d;
   const [params, setParams] = useSearchParams();
   const revalidator = useRevalidator();
   const T = t(lang);
@@ -1247,16 +1306,29 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
     );
   }
   const t2 = result.totals;
+  /* Gruppsummans vinstruta blir inte grön när mer än 2 % av gruppens
+     försäljning saknar riktig kostnad — samma gräns som butikens egen. */
+  const gruppOsaker = group
+    ? arKostnadOsaker(
+        andelUtan(group.totals.netSalesWithoutCost + group.totals.netSalesZeroCost, group.totals.productNetSales),
+      )
+    : false;
 
   /* Kostnadssteget kan bara bedömas mot faktiskt sålda enheter — en butik utan
-     ordrar i perioden har inget att stämma av mot, och kvitteras inte. */
-  const costsDone = t2.orders > 0 && t2.unitsWithoutCost === 0;
+     ordrar i perioden har inget att stämma av mot, och kvitteras inte. En
+     kostnad på 0 som inte kvitterats som gratis klarar inte steget heller:
+     ett 0,00 från en import är oftare ett tomt fält än en gratis vara. */
+  const costsDone = t2.orders > 0 && t2.unitsWithoutCost === 0 && t2.unitsZeroCost === 0;
   const costsHint =
     t2.orders === 0
       ? T.dashboard.setup.costsHintNoOrders
       : t2.unitsWithoutCost > 0
         ? T.dashboard.setup.costsHintMissing(t2.unitsWithoutCost)
-        : T.dashboard.setup.costsHintDone;
+        : t2.unitsZeroCost > 0
+          ? T.dashboard.setup.costsHintZero(t2.unitsZeroCost)
+          : estimate && estimate.units > 0
+            ? T.dashboard.setup.costsHintEstimated(estimate.units, estimate.pct)
+            : T.dashboard.setup.costsHintDone;
   const setupAllDone =
     Boolean(setup) && costsDone && setup!.meta && setup!.fixed && setup!.settings;
 
@@ -1265,9 +1337,18 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
   const pct = (v: number | null) =>
     v == null ? "—" : `${dec((v * 100).toFixed(1))} %`;
   const mult = (v: number | null) => (v == null ? "—" : `${dec(v.toFixed(2))}×`);
-  /* Delta mot föregående period, som text i KPI-undertexten. */
-  const delta = (now: number, prev: number | undefined) => {
-    if (prev == null || Math.abs(prev) < 0.5) return "";
+  /* Andel av försäljningen utan riktig kostnad, i hela procent (minst 1 när
+     den är över noll — "0 %" bredvid en varning läses som att allt är väl). */
+  const andelUtanKostnad = t2.cogsCoverage == null ? 0 : 1 - t2.cogsCoverage;
+  const utanPct = andelUtanKostnad > 0 ? Math.max(1, Math.round(andelUtanKostnad * 100)) : 0;
+  const osakraEnheter = t2.unitsWithoutCost + t2.unitsZeroCost;
+  /* Delta mot föregående period, som text i KPI-undertexten. `jamforbar`
+     falskt ⇒ "—": någon av perioderna har en vinst som är för hög (saknad
+     annonskostnad eller gratisvaror), och pilen hade mätt dataluckan. */
+  const delta = (now: number, prev: number | undefined, jamforbar = true) => {
+    if (prev == null) return "";
+    if (!jamforbar) return ` · — ${T.dashboard.kpi.vsPrev}`;
+    if (Math.abs(prev) < 0.5) return "";
     const ch = (now - prev) / Math.abs(prev);
     const arrow = ch >= 0 ? "▲" : "▼";
     return ` · ${arrow} ${Math.abs(ch * 100).toFixed(0)} % ${T.dashboard.kpi.vsPrev}`;
@@ -1289,19 +1370,22 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
       label: T.dashboard.kpi.adSpend,
       value: money(t2.spend),
       sub: t2.spendComplete
-        ? `${T.dashboard.kpi.cpa(money(t2.cpa))}${delta(t2.spend, comparison?.spend)}`
+        ? `${T.dashboard.kpi.cpa(money(t2.cpa))}${delta(t2.spend, comparison?.spend, comparison?.spendComplete !== false)}`
         : T.dashboard.kpi.missingDays(t2.missingSpendDays.length),
       tone: t2.spendComplete ? undefined : "critical",
     },
     {
       label: T.dashboard.kpi.cogs,
       value: money(t2.cogs),
-      sub: t2.unitsWithoutCost
-        ? T.dashboard.kpi.unitsNoCost(t2.unitsWithoutCost)
+      /* Andelen av FÖRSÄLJNINGEN, inte bara antalet enheter: tre billiga
+         tillbehör utan kostnad och en bästsäljare utan kostnad är helt
+         olika stora hål i vinsten. */
+      sub: osakraEnheter
+        ? T.dashboard.kpi.missingOnShare(utanPct, osakraEnheter)
         : estimate && estimate.units > 0
           ? `≈ ${T.costs.quick.estimated} (${estimate.units})`
           : T.dashboard.kpi.allUnitsCovered,
-      tone: t2.unitsWithoutCost ? "critical" : undefined,
+      tone: osakraEnheter ? "critical" : undefined,
     },
     {
       /* Snittet per order gör tullen kontrollerbar: står butikens standard
@@ -1310,19 +1394,47 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
          faktiskt användes. */
       label: T.dashboard.kpi.duty,
       value: money(t2.tariff),
+      /* Okvitterad tull sägs rakt ut: ett startvärde ingen tittat på är
+         inte en kostnad handlaren har. */
       sub:
-        t2.orders > 0
+        (t2.orders > 0
           ? T.dashboard.kpi.dutyPerOrder(nf.format(t2.orders), money(t2.tariff / t2.orders))
-          : T.dashboard.kpi.ordersCount(nf.format(t2.orders)),
+          : T.dashboard.kpi.ordersCount(nf.format(t2.orders))) +
+        (tariffConfirmed ? "" : ` · ${T.dashboard.kpi.dutyNotConfirmed}`),
     },
-    { label: T.dashboard.kpi.mer, value: mult(t2.mer), sub: T.dashboard.kpi.breakEven(mult(t2.breakEvenMer)) },
     {
+      /* Saknad COGS gör break-even till en UNDRE gräns — det verkliga talet
+         är högre. Visat som exakt var det panelens farligaste tal: kampanjer
+         på 1,8× skalades medan break-even i själva verket var 2,0×.
+         Uppskattad COGS ger "≈": talet vilar på en procentsats. */
+      label: T.dashboard.kpi.mer,
+      value: mult(t2.mer),
+      sub: t2.kostnadOsaker
+        ? T.dashboard.kpi.breakEvenAtLeast(mult(t2.breakEvenMer), utanPct)
+        : estimate && estimate.units > 0
+          ? T.dashboard.kpi.breakEvenEstimated(mult(t2.breakEvenMer))
+          : T.dashboard.kpi.breakEven(mult(t2.breakEvenMer)),
+    },
+    {
+      /* Grönt bara när båda halvorna av kalkylen finns: annonskostnaden och
+         varukostnaden. Med gratisvaror i siffran är vinsten ett tak. */
       label: T.dashboard.kpi.netProfit,
       value: money(t2.netProfit),
-      sub: t2.spendComplete
-        ? `${T.dashboard.kpi.maxCpa(Math.round(targetMargin * 100), money(t2.maxCpaAtTarget))}${delta(t2.netProfit, comparison?.netProfit)}`
-        : T.dashboard.kpi.profitTooHigh,
-      tone: t2.spendComplete && t2.netProfit >= 0 ? "success" : "critical",
+      sub: !t2.spendComplete
+        ? T.dashboard.kpi.profitTooHigh
+        : t2.kostnadOsaker
+          ? `${T.dashboard.kpi.profitAtMost(money(t2.netProfit), utanPct)}${delta(t2.netProfit, comparison?.netProfit, false)}`
+          : `${T.dashboard.kpi.maxCpa(Math.round(targetMargin * 100), money(t2.maxCpaAtTarget))}${delta(
+              t2.netProfit,
+              comparison?.netProfit,
+              comparison ? comparison.spendComplete && !comparison.kostnadOsaker : true,
+            )}`,
+      tone:
+        t2.spendComplete && !t2.kostnadOsaker && t2.netProfit >= 0
+          ? "success"
+          : t2.spendComplete && t2.kostnadOsaker && t2.netProfit >= 0
+            ? undefined
+            : "critical",
     },
   ];
 
@@ -1458,7 +1570,13 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
                             <BlockStack gap="100">
                               <Text as="span" variant="bodySm" tone="subdued">{k.label}</Text>
                               <Text as="span" variant="headingLg"
-                                tone={k.key === "profit" ? (group.totals.netProfit >= 0 ? "success" : "critical") : undefined}>
+                                tone={k.key === "profit"
+                                  ? group.totals.netProfit < 0
+                                    ? "critical"
+                                    : gruppOsaker
+                                      ? undefined
+                                      : "success"
+                                  : undefined}>
                                 {k.value}
                               </Text>
                             </BlockStack>
@@ -1475,9 +1593,11 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
                             r.currency,
                             money(r.totalSales),
                             money(r.spend),
-                            money(r.netProfit),
+                            /* "≤" = butikens vinst är ett tak: mer än 2 % av
+                               dess försäljning saknar riktig kostnad. */
+                            (arKostnadOsaker(r.uncostedShare) ? "≤ " : "") + money(r.netProfit),
                           ])}
-                          totals={["", "", money(group.totals.totalSales), money(group.totals.spend), money(group.totals.netProfit)]}
+                          totals={["", "", money(group.totals.totalSales), money(group.totals.spend), (gruppOsaker ? "≤ " : "") + money(group.totals.netProfit)]}
                         />
                       </Card>
 
@@ -1497,6 +1617,20 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
                         <Banner tone="warning" title={T.group.notesTitle}>
                           {group.notes.map((n) => (
                             <p key={n.shop}>
+                              {n.name || n.shop.replace(/\.myshopify\.com$/, "")}: {n.text}
+                            </p>
+                          ))}
+                        </Banner>
+                      ) : null}
+
+                      {/* Summor som är för höga: butiker med gratisvaror i
+                          siffran eller utan annonskonto. Summeras ändå —
+                          en butik med äkta organisk försäljning hade annars
+                          tappat riktig vinst — men namnges. */}
+                      {group.qualityNotes?.length ? (
+                        <Banner tone="warning" title={T.group.qualityTitle}>
+                          {group.qualityNotes.map((n, i) => (
+                            <p key={`${n.shop}-${i}`}>
                               {n.name || n.shop.replace(/\.myshopify\.com$/, "")}: {n.text}
                             </p>
                           ))}
@@ -1560,6 +1694,7 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
                 costsHint={costsHint}
                 currency={currency}
                 tariffPerOrder={tariffPerOrder}
+                feeRate={feeRate}
                 T={T}
                 dec={dec}
               />
@@ -1635,6 +1770,15 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
             {t2.unitsWithoutCost > 0 ? (
               <Banner tone="warning" title={T.dashboard.costMissingTitle}>
                 {T.dashboard.costMissingBody(t2.unitsWithoutCost)}
+              </Banner>
+            ) : null}
+
+            {/* Kostnad 0,00 i Shopify: räknas som saknad tills handlaren sagt
+                att varan faktiskt är gratis (en knapp per variant på
+                Kostnader). */}
+            {t2.unitsZeroCost > 0 ? (
+              <Banner tone="warning" title={T.dashboard.zeroCostTitle} action={{ content: T.dashboard.setup.ctaCosts, url: "/app/costs" }}>
+                {T.dashboard.zeroCostBody(t2.unitsZeroCost)}
               </Banner>
             ) : null}
 
@@ -1741,10 +1885,17 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
                 p.variantTitle ? `${p.title} · ${p.variantTitle}` : p.title,
                 nf.format(p.units),
                 money(p.netSales),
-                p.cogs == null ? T.dashboard.missing : money(p.cogs) + (p.blend ? " ✦" : ""),
-                p.contribution == null ? "—" : money(p.contribution),
-                p.margin == null ? "—" : pct(p.margin),
-                p.multiple == null ? "—" : mult(p.multiple),
+                /* "0?" = kostnad 0 som ingen sagt är gratis; "≈" = panelens
+                   uppskattning, inte ett inköpspris. Marginal och multipel på
+                   en misstänkt nolla hade visat 100 % — de står som "—". */
+                p.cogs == null
+                  ? T.dashboard.missing
+                  : p.zeroCost
+                    ? "0?"
+                    : (p.estimated ? "≈ " : "") + money(p.cogs) + (p.blend ? " ✦" : ""),
+                p.contribution == null || p.zeroCost ? "—" : money(p.contribution),
+                p.margin == null || p.zeroCost ? "—" : pct(p.margin),
+                p.multiple == null || p.zeroCost ? "—" : mult(p.multiple),
               ])}
             />
           </Card>

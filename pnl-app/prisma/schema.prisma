@@ -36,8 +36,11 @@ model Session {
 /// Per-butiksinställningar. Skapas med defaults vid installation.
 model ShopSettings {
   shop            String   @id
-  /// Tull per ORDER (inte per styck) i butikens valuta.
-  tariffPerOrder  Decimal  @default(27.50) @db.Decimal(10, 2)
+  /// Tull per ORDER (inte per styck) i butikens valuta. Databasens default
+  /// är 0 sedan 2026-09-26: 27,50 är Axels EU-tull i KRONOR och blev ett
+  /// påhittat tal i alla andra valutor. afterAuth sätter 27,50 vid SKAPANDET
+  /// av en SEK-butik (`startTull`), aldrig vid uppdatering.
+  tariffPerOrder  Decimal  @default(0) @db.Decimal(10, 2)
   /// Transaktionsavgift som andel av totalt ordervärde.
   feeRate         Decimal  @default(0.029) @db.Decimal(6, 4)
   /// Målmarginal som max-CPA räknas mot.
@@ -92,6 +95,17 @@ model ShopSettings {
   /// Sätts när handlaren sparat inställningarna minst en gång. Skiljer
   /// "har granskat tull och avgifter" från "kör fortfarande på defaults".
   settingsSavedAt DateTime?
+  /// Sätts när handlaren KVITTERAT tullen: ett tullbelopp ändrades i
+  /// Inställningar, eller rutan "Tullbeloppen stämmer" kryssades i. Inte
+  /// vid vilken sparning som helst — språkbyte eller en inklistrad
+  /// Meta-nyckel stämplade förut tullen som granskad. Null = tullen är ett
+  /// startvärde ingen tittat på.
+  tariffConfirmedAt DateTime?
+  /// Varianter (variantGid) handlaren sagt är GRATIS (gåvor, prover). Bara
+  /// för dem räknas ett inköpspris på 0 som riktigt; alla andra nollor räknas
+  /// som saknad kostnad i täckningen. Kolumn på ShopSettings, så shop/redact
+  /// raderar den med raden.
+  freeVariants    Json?
   /// Sätts när kom igång-checklistan dolts manuellt.
   setupDismissedAt DateTime?
   /// Butiker med samma groupId hör till samma ägare och får summeras ihop.

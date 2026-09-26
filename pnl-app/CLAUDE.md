@@ -402,6 +402,125 @@ i hans ordning:
 - Grillkliniken: Axel vill klona hela upplägget till en annan butik.
 - App Store-granskningssvaret: åtgärda när mejlet kommer.
 
+### Saknade kostnader och tullens startvärde syns överallt (2026-09-26)
+
+Tre indata gjorde vinsten för hög och break-even för låg utan att något såg
+trasigt ut. (1) En variant utan inköpspris lade 0 till COGS — och ett
+uttryckligt 0,00 i Shopify lästes som 0 och räknades som täckt. Ändå blev
+hjälten grön med konfetti på `spendComplete` ensam, vinstrutan grön, och
+MER-rutan visade "break-even X×" som exakt. Räkneexempel: 300 000 kr, verklig
+COGS 40 %, 30 % av enheterna utan kostnad ⇒ COGS 28 %, vinsten 36 000 kr för
+hög, break-even 1,45× i stället för 1,75× — annonser på 1,5–1,7× såg lönsamma
+ut. Gruppsumman teg helt. (2) Kostnader mätte täckning i ANTAL varianter:
+tre bästsäljare utan kostnad bland 200 varianter gav "Inget att importera"
+vid 60 % av omsättningen. (3) Varje ny installation fick tull 27,50 i sin
+EGEN valuta (DB-default): en USD-butik med 45 $ snittorder fick 0,40 $ kvar
+före annonser och break-even ~112×. Tullsteget i checklistan kvitterades av
+VILKEN sparning som helst — språkbyte eller inklistrad Meta-nyckel.
+
+Byggt:
+- **`app/lib/kostnadstackning.ts`** (ren, testad, får importeras av
+  klienten): `KOSTNAD_TROSKEL = 0.02`, `arKostnadOsaker(andel)`,
+  `andelUtan`, `tackningEfterOmsattning` + `JUICY_TACKNING = 0.98`,
+  `startTull(currency)`, `tullKvitterad(lagrat, postat, kryssad)`.
+- **`compute()`** (`pnl.server.ts`) lägger till i Totals:
+  `netSalesWithoutCost` (rader med cost null), `netSalesZeroCost` +
+  `unitsZeroCost` (kostnad exakt 0 och varianten inte i `freeVariants`),
+  `productNetSales` (nämnaren), `cogsCoverage` och flaggan `kostnadOsaker`.
+  `ProductResult.zeroCost`, och `ProductRow.estimated` bärs genom
+  `slaIhopMarknader` (en märkt del märker hela raden). Ny input
+  `freeVariants`.
+- **Panelen:** hjälten är komplett bara om `spendComplete && !kostnadOsaker`
+  — annars gul, badge "Inköpspris saknas på X % av försäljningen", ingen
+  konfetti, inget rekord, ingen svit. Vinstrutan är grön bara när båda
+  finns; med osäker kostnad "högst X — …", neutral ton. MER-rutan "break-even
+  ≥ X×" (osäker) eller "≈ X×" (uppskattning i spel). COGS-rutan "saknas på X %
+  av försäljningen (N enheter)". Tullrutan "· standard — inte bekräftad" tills
+  tullen kvitterats. Produkttabellen: "0?" för misstänkta nollor (TB, marginal
+  och multipel "—"), "≈" för uppskattade rader. Ny banner för nollor.
+  Checklistans kostnadssteg klaras inte av nollor; egen text för nollor och
+  för uppskattning; tullsteget läser `tariffConfirmedAt` och visar den
+  SPARADE avgiften, inte ett hårdkodat "2,9 %".
+- **Jämförelsen** får samma uppskattning som huvudperioden (`uppskatta()` i
+  loadern) och bär `spendComplete`/`kostnadOsaker`. Vinst-deltat blir "—"
+  när någon av perioderna är osäker; spend-deltat när föregående periods
+  spend saknas.
+- **Tipsen** får `gross_margin` och `mer` = undefined när `kostnadOsaker`.
+- **Gruppen:** `convertTotalsPerDay` + `GroupTotals` bor nu i
+  `app/lib/gruppvaluta.ts` (testbar; `group.server.ts` exporterar dem
+  vidare). `GroupTotals` bär `netSalesWithoutCost`, `netSalesZeroCost`,
+  `productNetSales`, omräknade med försäljningens dagsvägda kurs — kvoten
+  blir exakt densamma som i butikens egen panel. Raderna får
+  `uncostedShare` ("≤" framför vinsten i tabellen), och en ny lista
+  `qualityNotes` (egen gul ruta "Med i summan, men vinsten är för hög")
+  namnger butiker över gränsen och butiker med försäljning men **utan
+  annonskonto** (varken Meta-token/konto eller Google-konto) — "annonskostnaden
+  räknas som 0". Gruppens vinstruta är inte grön när gruppens andel är över
+  gränsen.
+- **Kostnader:** täckningen vägs efter 90 dagars nettoförsäljning (`mix90`,
+  samma läsning som flerpacksmixen). Saknade först, sedan misstänkta nollor,
+  inom grupperna störst försäljning först. Kortet "N varianter har
+  inköpspris 0 — stämmer det?" med en knapp per variant, **Ja, varan är
+  gratis** (`intent=free-variant`, bara variant-ID:n ur butikens katalog).
+  Juicy-kortets läge A kräver ≥ 98 % av försäljningen (utan försäljning på
+  90 dagar: 98 % av varianterna).
+- **Tullen:** migration `20260926150000_kostnadstackning` sätter
+  `tariffPerOrder DEFAULT 0` (befintliga rader orörda), lägger till
+  `tariffConfirmedAt` (fylls i från `settingsSavedAt` — Axels butiker får
+  ingen ny fråga) och `freeVariants JSONB`. `afterAuth` skapar raden med
+  `startTull(currency)`: 27,50 för SEK, annars 0 — bara i `create`, aldrig
+  `update`. Inställningar stämplar `tariffConfirmedAt` bara när standardtullen
+  eller någon marknadstull ändrats, eller när rutan **Tullbeloppen stämmer**
+  kryssats (visas tills tullen kvitterats, sedan bara datumet).
+
+Medvetna beslut:
+- **Täckningen räknas på produktradernas egen nettoförsäljning**, inte på
+  `Totals.netSales` som planen sa. Produktraderna är `discountedTotal` per
+  rad; dagsradernas netSales drar även av returer. Samma underlag i täljare
+  och nämnare, annars hade andelen glidit med returgraden.
+- **Gränsen dras på andelen, inte på `1 − täckning`**: 1 − 0,98 är
+  0,020000000000000018 i flyttal och exakt 2 % hade slagit om.
+- **Uppskattad COGS räknas som täckt.** Den är handlarens eget val och märkt
+  "≈" överallt (tabell, MER, COGS-ruta, checklista). Räknades den som saknad
+  hade uppskattningen aldrig kunnat få hjälten grön — då vore den meningslös.
+- **En nolla med riktiga flerpackspriser är ingen misstänkt nolla** (hela
+  radens COGS måste bli 0).
+- **"Inget annonskonto" utesluter inte butiken** — en butik med äkta organisk
+  försäljning hade då tappat riktig vinst. Den namnges.
+- **Sälj- och ordrar-deltan rörs inte** av kostnadsluckor: de är sanna
+  oavsett COGS.
+- **`freeVariants` är per variant, inte per marknad**, och går inte att ångra i
+  UI:t. En gåva som senare får ett riktigt pris räknas med det priset —
+  listan gäller bara nollor.
+- **Backfillen läser bara `settingsSavedAt`.** En regel som "tullen är inte
+  27,50" hade vid en omkörning kvitterat nya butiker med startvärdet 0.
+
+Fällor:
+- ⚠ **Fler butiker får gul hjälte.** Avsiktligt, men handlare märker det.
+  Gränsen är EN konstant (`KOSTNAD_TROSKEL`).
+- ⚠ **Kostnader-sidans täckning och panelens mäter olika saker**: sidan
+  räknar katalogens nuvarande kostnad mot 90 dagars mix; panelen räknar
+  periodens rader med kostnadsändringar viktade. Små skillnader är väntade.
+- ⚠ **Uppskattningen appliceras fortfarande INTE i gruppsumman** (se "Kostnader
+  utan fil" nedan). Gruppen läser `daily.products` utan `applyCurrentCosts`
+  — en nyss inlagd kostnad syns i gruppen först när dagarna hämtats om.
+  Dess täckning kan därför skilja sig från butikens panel samma minut.
+- ⚠ **Google Ads utan GOOGLE_ADS_*-variabler** i en tjänst: `getSpend`
+  tappar medlemmens Google-spend tyst och gruppen räknar den som pålitlig.
+  Noten "inget annonskonto" räddar inte det fallet (kontot finns i DB). Ej
+  åtgärdat här.
+- ⚠ **En ny SEK-butik med EU-lager** startar på 27,50 — men tullsteget och
+  tullrutan står okvitterade tills handlaren tittat.
+- ⚠ **Inte prövat skarpt.** Kontrollera efter deploy: sätt kostnad 0 på en
+  såld variant i stonepnl-test ⇒ "0?" i tabellen, bannern, och gul hjälte om
+  den är över 2 % av försäljningen; tryck **Ja, varan är gratis** på
+  Kostnader ⇒ allt grönt igen. Installera på en USD-testbutik ⇒ tull 0 och
+  "standard — inte bekräftad".
+- Tester: `test/kostnadstackning.test.mjs` (saknad rad, nolla, kvitterad
+  gåva, flerpacksnolla, 2 %-gränsen, ingen försäljning, negativa rader,
+  märkningar genom hopslagningen, gruppens omräkning, omsättningsvägd
+  täckning, `startTull`, `tullKvitterad`).
+
 ### Returkollen: sena returer och avbokningar (2026-09-26)
 
 En återbetalning eller avbokning bokas på **orderns** dag (`totalRefundedSet`

@@ -17,8 +17,10 @@
  */
 
 import prisma from "../db.server";
-import { compute, type SalesDay, type SpendDay } from "./pnl.server";
-import { dailyRates, latestRateDay, rateOn, type DailyRates } from "./fx.server";
+import { compute } from "./pnl.server";
+import { dailyRates, latestRateDay } from "./fx.server";
+import { convertTotalsPerDay, nollTotaler, type GroupTotals } from "./gruppvaluta";
+import { andelUtan, arKostnadOsaker } from "./kostnadstackning";
 import { butikensHorisont, fyllButiksnamn, readDaily, refreshShopDaily, shiftIso } from "./daily.server";
 import { getSpend } from "./meta.server";
 import { hamtaKonton, konfigurationer } from "./meta-konton.server";
@@ -29,22 +31,24 @@ import { stadaAvgifter } from "./marknad";
 import { t, type Lang } from "./texts";
 import { aldstaKoll, klockslag } from "./returkoll";
 
-export interface GroupTotals {
-  totalSales: number;
-  orders: number;
-  cogs: number;
-  tariff: number;
-  fees: number;
-  spend: number;
-  fixedCosts: number;
-  netProfit: number;
-}
+/* Omräkningen per dag bor i gruppvaluta.ts (testbar utan databas). */
+export { convertTotalsPerDay, type GroupTotals };
+
 
 export interface GroupResult {
   currency: string;
   totals: GroupTotals;
   /** En rad per butik, för tabellen under hjulet. */
-  rows: { shop: string; name: string | null; currency: string; totalSales: number; netProfit: number; spend: number }[];
+  rows: {
+    shop: string;
+    name: string | null;
+    currency: string;
+    totalSales: number;
+    netProfit: number;
+    spend: number;
+    /** Andel av butikens försäljning utan riktig kostnad (null = ingen försäljning). */
+    uncostedShare: number | null;
+  }[];
   /** Butiker vars siffror inte gick att räkna in, med skäl. */
   missing: { shop: string; name: string | null; reason: string }[];
   /** Saker ägaren behöver göra i en ANNAN butik — t.ex. logga in igen på
@@ -57,6 +61,14 @@ export interface GroupResult {
    * ägaren behöver göra, bara något summan inte kan innehålla.
    */
   historyNotes: { shop: string; name: string | null; text: string }[];
+  /**
+   * Butiker som ÄR med i summan men vars vinst är för hög: mer än 2 % av
+   * försäljningen utan riktig kostnad, eller försäljning utan något
+   * annonskonto kopplat (annonskostnaden räknas då som noll). Egen lista och
+   * egen rubrik — det är inte "gör något i en annan butik" och inte heller
+   * "utanför summan"; siffran är med, men den är ett tak.
+   */
+  qualityNotes: { shop: string; name: string | null; text: string }[];
   /**
    * Senaste ECB-dag vars kurs användes (den äldsta bland butikerna, så att
    * datumet aldrig lovar mer än vad summan håller). Null när ingen butik
@@ -72,87 +84,8 @@ export interface GroupResult {
   returkoll: { tid: string | null; saknas: number };
 }
 
-const noll = (): GroupTotals => ({
-  totalSales: 0, orders: 0, cogs: 0, tariff: 0, fees: 0, spend: 0, fixedCosts: 0, netProfit: 0,
-});
 
 type Medlem = Awaited<ReturnType<typeof prisma.shopSettings.findMany>>[number];
-
-/**
- * Räknar om en butiks periodsumma till betraktarens valuta, dag för dag.
- *
- * Varför inte inne i `compute()`: motorn får produktmixen aggregerad för hela
- * perioden (dagsradernas `products` slås ihop i `readDaily`), så COGS finns
- * inte per dag utan att motorn byggs om. Det som FINNS per dag — försäljning,
- * ordrar och annonskostnad — räknas om exakt med den dagens kurs. Resten
- * följer den post den är proportionell mot:
- *   - avgifter = feeRate × försäljning → försäljningens dagsvägda kurs (exakt)
- *   - tull     = ordrar × tull/order   → ordrarnas dagsvägda kurs (exakt)
- *   - fasta    = samma belopp varje dag → medelkurs över dagarna (exakt)
- *   - COGS     → försäljningens dagsvägda kurs (approximation: antar att
- *                marginalen är ungefär lika från dag till dag; felet är
- *                kursens spridning inom perioden gånger marginalens spridning,
- *                i praktiken promille av COGS — mot de procent som en enda
- *                dagsaktuell kurs på en 30-dagarsperiod gav)
- * Butikens egen panel i butikens valuta påverkas inte alls.
- *
- * undefined = någon dag saknade kurs även efter bakåtsökning; butiken ska då
- * uteslutas och namnges, aldrig räknas med en gissad kurs.
- */
-export function convertTotalsPerDay(
-  tt: GroupTotals,
-  sales: SalesDay[],
-  spend: SpendDay[],
-  rates: DailyRates,
-  from: string,
-  to: string,
-): GroupTotals | undefined {
-  const dagar = sales.filter((s) => s.day >= from && s.day <= to);
-
-  let omsKr = 0, oms = 0, orderKr = 0, ordrar = 0, kursSumma = 0;
-  for (const s of dagar) {
-    const k = rateOn(rates, s.day);
-    if (k == null) return undefined;
-    omsKr += s.totalSales * k;
-    oms += s.totalSales;
-    orderKr += s.orders * k;
-    ordrar += s.orders;
-    kursSumma += k;
-  }
-  /* Utan säljdagar är alla säljposter (och de fasta, som räknas per säljdag)
-     noll i compute() — bara annonskostnaden nedan kan ha ett belopp. */
-  const medel = dagar.length ? kursSumma / dagar.length : 0;
-  /* Vägd kurs; utan underlag (noll försäljning / noll ordrar) är posten noll
-     och vilken kurs som helst ger noll — medelkursen håller det ärligt. */
-  const kursOms = oms > 0 ? omsKr / oms : medel;
-  const kursOrder = ordrar > 0 ? orderKr / ordrar : medel;
-
-  let spendKr = 0;
-  for (const d of spend) {
-    if (d.day < from || d.day > to) continue;
-    const k = rateOn(rates, d.day);
-    if (k == null) return undefined;
-    spendKr += d.spend * k;
-  }
-
-  const totalSales = tt.totalSales * kursOms;
-  const cogs = tt.cogs * kursOms;
-  const tariff = tt.tariff * kursOrder;
-  const fees = tt.fees * kursOms;
-  const fixedCosts = tt.fixedCosts * medel;
-  return {
-    totalSales,
-    orders: tt.orders, // antal, ingen omräkning
-    cogs,
-    tariff,
-    fees,
-    spend: spendKr,
-    fixedCosts,
-    /* Samma ekvation som i compute(): bruttovinst − annonser − fasta. Räknas
-       ur de omräknade delarna så summan alltid går ihop med sina delposter. */
-    netProfit: totalSales - cogs - tariff - fees - spendKr - fixedCosts,
-  };
-}
 
 async function summeraButik(
   m: Medlem,
@@ -161,7 +94,18 @@ async function summeraButik(
   visaValuta: string,
   T: ReturnType<typeof t>,
 ): Promise<
-  | { ok: true; shop: string; currency: string; totals: GroupTotals; fxDate: string | null; note?: string; historyNote?: string }
+  | {
+      ok: true;
+      shop: string;
+      currency: string;
+      totals: GroupTotals;
+      fxDate: string | null;
+      note?: string;
+      historyNote?: string;
+      /** Varför butikens vinst är för hög (gratisvaror, inget annonskonto). */
+      qualityNotes: string[];
+      uncostedShare: number | null;
+    }
   | { ok: false; shop: string; reason: string }
 > {
   /* "Idag" i BUTIKENS tidszon. UTC-dagen släpar efter mellan midnatt och
@@ -268,10 +212,13 @@ async function summeraButik(
   /* Känd utgång (inloggning eller inklistrad token med känt datum): getSpend
      gör då inget dömt anrop och serverar inte den rörliga dagen som färdig. */
   const utgangsDagar = dagarKvar(m.metaTokenExpiresAt);
-  const [costChanges, costTiers, fixedRows, spendData] = await Promise.all([
+  const [costChanges, costTiers, fixedRows, googleAntal, spendData] = await Promise.all([
     prisma.costChange.findMany({ where: { shop: m.shop } }),
     prisma.costTier.findMany({ where: { shop: m.shop } }),
     prisma.fixedCost.findMany({ where: { shop: m.shop } }),
+    /* Google Ads räknas som annonskonto: en butik som bara annonserar där är
+       inte "utan annonskonto". */
+    prisma.googleAdsAccount.count({ where: { shop: m.shop } }),
     /* syncFresh: även annonskostnadens färskhet väntas in — dagens spend är
        halva vinstkalkylen, och en bakgrundshämtning hade lämnat samma lucka
        som dagssiffrorna nyss hade. */
@@ -356,7 +303,29 @@ async function summeraButik(
     },
     salesByMarket: daily.salesByMarket,
     ordersByMarket: daily.ordersByMarket,
+    /* Samma kvitterade gratisvaror som i butikens egen panel — annars hade
+       summan flaggat en gåva som panelen godtar. */
+    freeVariants: Array.isArray(m.freeVariants)
+      ? (m.freeVariants as unknown[]).filter((v): v is string => typeof v === "string")
+      : [],
   });
+
+  /* Vinster som är för höga, med butikens namn. Förut såg gruppen ut som
+     helt pålitlig när en medlem saknade kostnader eller aldrig kopplat ett
+     annonskonto — den egna panelen sa "för hög", summan teg. */
+  /* Andelen räknas direkt ur beloppen, inte som 1 − täckning (flyttal vid
+     exakt 2 %) — raden i tabellen och noten ska döma likadant. */
+  const andelUtanKostnad = andelUtan(r.totals.netSalesWithoutCost + r.totals.netSalesZeroCost, r.totals.productNetSales);
+  const qualityNotes: string[] = [];
+  if (arKostnadOsaker(andelUtanKostnad)) {
+    qualityNotes.push(T.group.costMissing(Math.max(1, Math.round((andelUtanKostnad ?? 0) * 100))));
+  }
+  /* Ingen annonskoppling alls men försäljning: annonskostnaden räknas som
+     noll. Utesluts INTE — en butik med äkta organisk försäljning hade då
+     tappat riktig vinst ur summan — men sägs rakt ut. */
+  if (!metaKonton.length && !m.metaAccessToken && googleAntal === 0 && r.totals.totalSales > 0) {
+    qualityNotes.push(T.group.noAdAccount);
+  }
 
   const totals = convertTotalsPerDay(r.totals, daily.sales, spendDagar, kurser, from, to);
   if (!totals) {
@@ -365,7 +334,10 @@ async function summeraButik(
     return { ok: false, shop: m.shop, reason: T.group.fxUnavailable(m.currency, visaValuta) };
   }
   const fxDate = m.currency === visaValuta ? null : (latestRateDay(kurser, to) ?? null);
-  return { ok: true, shop: m.shop, currency: m.currency, totals, fxDate, note, historyNote };
+  return {
+    ok: true, shop: m.shop, currency: m.currency, totals, fxDate, note, historyNote,
+    qualityNotes, uncostedShare: andelUtanKostnad,
+  };
 }
 
 export async function summeraGrupp(
@@ -422,11 +394,12 @@ export async function summeraGrupp(
     return { ok: false as const, shop: medlemmar[i].shop, reason: T.group.refreshFailed };
   });
 
-  const totals = noll();
+  const totals = nollTotaler();
   const rows: GroupResult["rows"] = [];
   const missing: GroupResult["missing"] = [];
   const notes: GroupResult["notes"] = [];
   const historyNotes: GroupResult["historyNotes"] = [];
+  const qualityNotes: GroupResult["qualityNotes"] = [];
   let fxDate: string | null = null;
 
   for (const u of utfall) {
@@ -436,6 +409,7 @@ export async function summeraGrupp(
     }
     if (u.note) notes.push({ shop: u.shop, name: namnFor(u.shop), text: u.note });
     if (u.historyNote) historyNotes.push({ shop: u.shop, name: namnFor(u.shop), text: u.historyNote });
+    for (const text of u.qualityNotes) qualityNotes.push({ shop: u.shop, name: namnFor(u.shop), text });
     /* Redan omräknat per dag till betraktarens valuta i summeraButik. */
     const tt = u.totals;
     totals.totalSales += tt.totalSales;
@@ -446,6 +420,9 @@ export async function summeraGrupp(
     totals.spend += tt.spend;
     totals.fixedCosts += tt.fixedCosts;
     totals.netProfit += tt.netProfit;
+    totals.netSalesWithoutCost += tt.netSalesWithoutCost;
+    totals.netSalesZeroCost += tt.netSalesZeroCost;
+    totals.productNetSales += tt.productNetSales;
     if (u.fxDate && (!fxDate || u.fxDate < fxDate)) fxDate = u.fxDate;
 
     rows.push({
@@ -455,6 +432,7 @@ export async function summeraGrupp(
       totalSales: tt.totalSales,
       netProfit: tt.netProfit,
       spend: tt.spend,
+      uncostedShare: u.uncostedShare,
     });
   }
 
@@ -468,5 +446,5 @@ export async function summeraGrupp(
     saknas: koll.saknas,
   };
 
-  return { currency: visaValuta, totals, rows, missing, notes, historyNotes, fxDate, returkoll };
+  return { currency: visaValuta, totals, rows, missing, notes, historyNotes, qualityNotes, fxDate, returkoll };
 }

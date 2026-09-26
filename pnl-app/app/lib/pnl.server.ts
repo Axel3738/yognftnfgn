@@ -11,6 +11,8 @@
  * 3-pack betalar tullen en gång.
  */
 
+import { andelUtan, arKostnadOsaker } from "./kostnadstackning.ts";
+
 export interface SalesDay {
   day: string; // YYYY-MM-DD
   orders: number;
@@ -81,6 +83,13 @@ export interface ProductRow {
    * enheter som styckköp.
    */
   lines?: Record<string, number>;
+  /**
+   * Kostnaden är panelens UPPSKATTNING (X % av priset), inte ett inköpspris.
+   * Sätts i panelens loader när butiken valt uppskattad COGS; bärs hela vägen
+   * till produkttabellen så att raden visas med "≈" och aldrig läses som
+   * riktig.
+   */
+  estimated?: boolean;
 }
 
 /** Totalkostnad för `units` stycken i samma orderrad. Antal 1 = unitCost. */
@@ -212,6 +221,13 @@ export interface ComputeInput {
    * på omsättningen. Ordrar utan marknad tar butikens standardtull.
    */
   ordersByMarket?: Record<string, number>;
+  /**
+   * Varianter handlaren uttryckligen sagt är gratis (gåvor, prover). En
+   * kostnad på 0 räknas då som riktig. Alla andra nollor räknas som saknad
+   * kostnad i täckningen — ett 0,00 från en dropship-app eller en CSV är
+   * mycket oftare ett tomt fält än en gratis vara.
+   */
+  freeVariants?: string[];
 }
 
 export interface ProductResult extends ProductRow {
@@ -229,6 +245,11 @@ export interface ProductResult extends ProductRow {
    */
   blend: number | null;
   blendNote: string | null;
+  /**
+   * Kostnaden är exakt 0 och varianten är inte kvitterad som gratis.
+   * Visas som "0?" i produkttabellen och räknas som saknad i täckningen.
+   */
+  zeroCost: boolean;
 }
 
 export interface Totals {
@@ -278,6 +299,30 @@ export interface Totals {
   netProfit: number;
 
   unitsWithoutCost: number;
+  /**
+   * Nettoförsäljning på rader UTAN kostnad (null). De bidrar 0 till COGS, så
+   * vinsten är för hög med hela deras verkliga varukostnad.
+   */
+  netSalesWithoutCost: number;
+  /** Nettoförsäljning och enheter på rader med kostnad exakt 0 som inte är
+   *  kvitterade som gratis (`freeVariants`). Samma effekt som saknad kostnad. */
+  netSalesZeroCost: number;
+  unitsZeroCost: number;
+  /** Summan av produktradernas (positiva) nettoförsäljning — nämnaren i
+   *  täckningen. Gruppsumman behöver den för att väga ihop butikerna. */
+  productNetSales: number;
+  /**
+   * Andel av produktraderna nettoförsäljning som har en riktig kostnad:
+   * 1 − (utan kostnad + otillåtna nollor) / nettoförsäljning. Null när
+   * nettoförsäljningen är noll — då finns inget att döma.
+   */
+  cogsCoverage: number | null;
+  /**
+   * Mer än KOSTNAD_TROSKEL (2 %) av nettoförsäljningen saknar riktig kostnad.
+   * Då är vinsten en ÖVRE gräns och break-even en UNDRE — ingen grön hjälte,
+   * ingen konfetti, ingen grön vinstruta.
+   */
+  kostnadOsaker: boolean;
   /** Dagar med försäljning men utan annonsdata. TB blir för högt när den inte är tom. */
   missingSpendDays: string[];
   spendComplete: boolean;
@@ -383,8 +428,16 @@ export function compute(input: ComputeInput): ComputeResult {
 
   const appliedNotes = new Map<string, number>();
   const allaTiers = input.costTiers ?? [];
+  const fria = new Set(input.freeVariants ?? []);
   let cogs = 0;
   let unitsWithoutCost = 0;
+  /* Täckningen räknas på produktradernas EGEN nettoförsäljning — samma
+     underlag i täljare och nämnare. Dagsradernas netSales drar dessutom av
+     returer, som produktraderna inte gör; blandas de hade andelen glidit. */
+  let underlag = 0;
+  let netSalesWithoutCost = 0;
+  let netSalesZeroCost = 0;
+  let unitsZeroCost = 0;
 
   const products: ProductResult[] = input.products
     .map((row): ProductResult => {
@@ -408,6 +461,20 @@ export function compute(input: ComputeInput): ComputeResult {
       if (rowCogs != null) cogs += rowCogs;
       else unitsWithoutCost += row.units;
 
+      /* Negativa rader (en order som krediterats mer än den sålde) får inte
+         dra ner underlaget och ge täckning över 100 %. */
+      const oms = Math.max(0, row.netSales);
+      underlag += oms;
+      /* En nolla är bara misstänkt om hela radens COGS blev noll: ett
+         styckpris 0 med riktiga flerpackspriser har en kostnad inlagd. */
+      const zeroCost =
+        rowCogs === 0 && cost === 0 && !(row.variantGid != null && fria.has(row.variantGid));
+      if (rowCogs == null) netSalesWithoutCost += oms;
+      else if (zeroCost) {
+        netSalesZeroCost += oms;
+        unitsZeroCost += row.units;
+      }
+
       const contribution = rowCogs != null ? row.netSales - rowCogs : null;
       return {
         ...row,
@@ -419,9 +486,12 @@ export function compute(input: ComputeInput): ComputeResult {
           cost != null && cost > 0 && row.units > 0 ? row.netSales / row.units / cost : null,
         blend,
         blendNote,
+        zeroCost,
       };
     })
     .sort((a, b) => b.netSales - a.netSales);
+
+  const andelUtanKostnad = andelUtan(netSalesWithoutCost + netSalesZeroCost, underlag);
 
   const orders = sum(sales, (s) => s.orders);
   const totalSales = sum(sales, (s) => s.totalSales);
@@ -526,6 +596,12 @@ export function compute(input: ComputeInput): ComputeResult {
     netProfit: grossProfit - spend - fixedCosts,
 
     unitsWithoutCost,
+    netSalesWithoutCost,
+    netSalesZeroCost,
+    unitsZeroCost,
+    productNetSales: underlag,
+    cogsCoverage: andelUtanKostnad == null ? null : 1 - andelUtanKostnad,
+    kostnadOsaker: arKostnadOsaker(andelUtanKostnad),
     missingSpendDays,
     spendComplete: missingSpendDays.length === 0,
     feesKnownDays,
@@ -575,6 +651,10 @@ export function slaIhopMarknader(rows: ProductResult[]): ProductResult[] {
     a.multiple =
       a.effectiveCost != null && a.effectiveCost > 0 && a.units > 0 ? a.netSales / a.units / a.effectiveCost : null;
     if (a.unitCost == null) a.unitCost = r.unitCost;
+    /* En enda uppskattad eller misstänkt nollad del märker hela raden —
+       annars försvinner märkningen i vyn "alla marknader". */
+    a.estimated = Boolean(a.estimated || r.estimated) || undefined;
+    a.zeroCost = a.zeroCost || r.zeroCost;
     if (a.blendNote !== r.blendNote) {
       a.blend = null;
       a.blendNote = null;

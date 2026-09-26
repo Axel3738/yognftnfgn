@@ -78,6 +78,7 @@ import { kandaMarknader, uppmattaAvgifter } from "../lib/daily.server";
 import { hemlandAv, marknadskod, marknadsnamn, sorteraMarknader, stadaAvgifter } from "../lib/marknad";
 import { hamtaKoppling, provaNyckel, serNyckelUt } from "../lib/ai-nyckel.server";
 import { asLang, localeOf, t, type Lang } from "../lib/texts";
+import { tullKvitterad } from "../lib/kostnadstackning";
 
 /** En kampanj som kryssrutorna visar den. Formen speglar MetaKampanj i
     meta.server.ts — typen får inte importeras hit, en klientkomponent som
@@ -160,6 +161,9 @@ export async function loader({ request }: LoaderFunctionArgs) {
     })(),
     lang: asLang(s.language),
     tariffPerOrder: Number(s.tariffPerOrder),
+    /* När tullen senast kvitterades (null = aldrig). Rutan "Tullbeloppen
+       stämmer" visas bara tills dess. */
+    tariffConfirmedAt: s.tariffConfirmedAt ? s.tariffConfirmedAt.toISOString().slice(0, 10) : null,
     feeRate: Number(s.feeRate),
     targetMargin: Number(s.targetMargin),
     kopplade,
@@ -408,6 +412,19 @@ export async function action({ request }: ActionFunctionArgs) {
   const cfg = metaLoginConfig();
   const manuellUtgang = token && cfg ? await bestamUtgang(cfg, token, null) : null;
 
+  /* Tullen kvitteras bara när den faktiskt granskats: ett tullbelopp har
+     ändrats (standard eller per marknad), eller rutan "Tullbeloppen stämmer"
+     är ikryssad. En sparning som bara bytte språk eller klistrade in en
+     Meta-nyckel stämplade förut 27,50 i tull som granskad. */
+  const tullPer = (k: Record<string, { tariffPerOrder: number | null }>) =>
+    Object.fromEntries(Object.entries(k).map(([m, a]) => [m, a.tariffPerOrder]));
+  const nyaAvgifter = stadaAvgifter(marketFees);
+  const kvitterad = tullKvitterad(
+    { tariffPerOrder: Number(s?.tariffPerOrder ?? 0), perMarknad: tullPer(stadaAvgifter(s?.marketFees)) },
+    { tariffPerOrder: dec("tariffPerOrder"), perMarknad: tullPer(nyaAvgifter) },
+    String(f.get("tariffConfirm") ?? "") === "true",
+  );
+
   await prisma.shopSettings.update({
     where: { shop: session.shop },
     data: {
@@ -415,7 +432,7 @@ export async function action({ request }: ActionFunctionArgs) {
       tariffPerOrder: dec("tariffPerOrder"),
       feeRate: dec("feeRate") / 100,
       targetMargin: dec("targetMargin") / 100,
-      marketFees: stadaAvgifter(marketFees) as object,
+      marketFees: nyaAvgifter as object,
       // Tomt fält = behåll befintlig token, radera den inte av misstag.
       ...(token
         ? {
@@ -429,8 +446,10 @@ export async function action({ request }: ActionFunctionArgs) {
             metaAppId: null,
           }
         : {}),
-      // Kvitterar kom igång-checklistans steg om tull och avgifter.
+      /* Sparad minst en gång. Kvitterar INTE längre tullsteget — det gör
+         `tariffConfirmedAt` nedan, och bara vid en riktig granskning. */
       settingsSavedAt: new Date(),
+      ...(kvitterad ? { tariffConfirmedAt: new Date() } : {}),
     },
   });
   if (token) glomMetaFel(session.shop);
@@ -451,6 +470,9 @@ export default function Settings() {
     feeRate: String((d.feeRate * 100).toFixed(2)),
     targetMargin: String(Math.round(d.targetMargin * 100)),
     metaAccessToken: "",
+    /* Rutan "Tullbeloppen stämmer". Skickas som "true"/"false" — ikryssad
+       kvitterar tullen även när inget belopp ändrats. */
+    tariffConfirm: "false",
   });
   const set = (k: keyof typeof v) => (val: string) => setV((s) => ({ ...s, [k]: val }));
   const T = t(d.lang);
@@ -737,6 +759,18 @@ export default function Settings() {
                 autoComplete="off"
                 helpText={T.settings.tariffHelp}
               />
+              {/* Kvittensen av tullen. Visas tills den gjorts — sedan bara
+                  datumet. Att ändra ett tullbelopp kvitterar också. */}
+              {d.tariffConfirmedAt ? (
+                <Text as="p" variant="bodySm" tone="subdued">{T.settings.tariffConfirmedNote(d.tariffConfirmedAt)}</Text>
+              ) : (
+                <Checkbox
+                  label={T.settings.tariffConfirm}
+                  helpText={T.settings.tariffConfirmHelp}
+                  checked={v.tariffConfirm === "true"}
+                  onChange={(c) => setV((x) => ({ ...x, tariffConfirm: c ? "true" : "false" }))}
+                />
+              )}
               <TextField
                 label={T.settings.feeLabel}
                 value={v.feeRate}
