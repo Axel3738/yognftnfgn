@@ -1,0 +1,7 @@
+{
+  "comment": "CaraShells produkter i Spoks. `externalId` är Shopifys produkt-GID (läst live 2026-09-26 med Admin API, samma form som Spoks products_search returnerar i externalId — kontrolleras mot products_search när workspacen finns). `id` (Spoks eget uuid, används i produktblock och productId-filter) och `bild` (fileId från upload_media för nb/en-mejlens bildkort) är null tills uppladdningssessionen fyllt i dem ur workspacen. Hitta aldrig på ett id.",
+  "takskyddet": { "id": null, "externalId": "gid://shopify/Product/16084174242124", "bild": null, "bild_url": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/image4.png?v=1789078112" },
+  "termoskyddet": { "id": null, "externalId": "gid://shopify/Product/16108121489740", "bild": null, "bild_url": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/b6-termoskydd-se.jpg?v=1789531955" },
+  "fonstertermomatta-2-pack": { "id": null, "externalId": "gid://shopify/Product/16142790197580", "bild": null, "bild_url": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/09_3aac9f84-3b78-46f2-8176-36ac3618389e.jpg?v=1790398875" },
+  "adventskalender-retrobussar": { "id": null, "externalId": "gid://shopify/Product/16142790328652", "bild": null, "bild_url": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/05h.jpg?v=1790398881" }
+}
