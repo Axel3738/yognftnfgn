@@ -19,12 +19,13 @@
 // självtestet: en tyst överhoppning är samma sak som ett falskt grönt.)
 
 import { spawnSync } from 'node:child_process';
-import { existsSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { dirname, join } from 'node:path';
 import { upptackOps } from './register.mjs';
-import { losNycklar } from './token.mjs';
+import { losNycklar, suffixForDoman } from './token.mjs';
 import { laddaEnv } from './env.mjs';
+import { lasYaml } from './yaml.mjs';
 
 const ROT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -40,7 +41,7 @@ export function butikerAttRusta(poster = upptackOps(ROT)) {
   const per = new Map();
   for (const p of poster) {
     if (!per.has(p.butik)) {
-      per.set(p.butik, { id: p.butik, brand: p.brand, butiksfil: p.butiksfil, produktfiler: [], byggd: false });
+      per.set(p.butik, { id: p.butik, brand: p.brand, butiksfil: p.butiksfil, doman: butiksdoman(p.butiksfil), produktfiler: [], byggd: false });
     }
     const rad = per.get(p.butik);
     rad.produktfiler.push(p.produktfil);
@@ -49,13 +50,28 @@ export function butikerAttRusta(poster = upptackOps(ROT)) {
   return [...per.values()];
 }
 
+/** Butikens myshopify-adress ur butiksfilen — samma fält som ops.mjs
+ *  `onskadDomanUr` läser, så läget och körningen pekar på samma butik. */
+function butiksdoman(butiksfil) {
+  const fil = butiksfil ? join(ROT, butiksfil) : null;
+  if (!fil || !existsSync(fil)) return null;
+  const y = lasYaml(readFileSync(fil, 'utf8'));
+  const d = String(y?.butik?.myshopify ?? y?.butik?.myshopify_doman ?? y?.judgeme?.shop_domain ?? '').trim();
+  return d === '' ? null : d;
+}
+
 /**
  * Går butiken att köra? Ren funktion över ett env-objekt så den går att testa
  * utan att röra miljön.
  */
 export function lage(rad, env = process.env) {
   if (!rad.byggd) return { kor: false, skal: 'butiken är inte byggd än — knappen kommer med i första bygget' };
-  const n = losNycklar(rad.id, env);
+  // Butiksfilens adress först: nycklarna ligger ofta under butikens
+  // myshopify-suffix (CaraShell: `_yitrbk_m3`), inte under id:t. Utan det
+  // föll uppslaget tillbaka på den allmänna SHOPIFY_SHOP och visade en ANNAN
+  // butik (mätt 2026-09-26: "carashell → y1sj1i-3d", TankGuards butik).
+  const suffix = rad.doman ? suffixForDoman(rad.doman, env) : null;
+  const n = losNycklar(suffix ?? rad.id, env);
   const saknas = [!n.shop && 'SHOPIFY_SHOP', !n.clientId && 'SHOPIFY_CLIENT_ID', !n.clientSecret && 'SHOPIFY_CLIENT_SECRET']
     .filter(Boolean);
   if (saknas.length > 0) {

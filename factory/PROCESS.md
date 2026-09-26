@@ -1406,6 +1406,16 @@ Varje regel en gång, med datum. Koden bär dem; det här är varför.
   inte får behöva logga in, men direktivet kräver bara att det inte är
   krångligare än att köpa. Utan knappen kan ångerfristen förlängas från 14
   dagar till 12 månader och 14 dagar, och böterna når 4 % av årsomsättningen.
+  ⚠️ **Läs sidfoten på VARJE språk som är en EU-marknad** (mätt 2026-09-26 på
+  CaraShell): sv/nb/fi stod rätt, men den danska översättningen av raden
+  "Ångra köp" var **"Kontakt"**. Länken gick rätt, men danska kunder såg ingen
+  ångerknapp, medan den danska policyn lovade "Fortryd køb" längst ner på varje
+  sida. Rättat med `translationsRegister` på menyraden (resurs
+  `gid://shopify/Link/<id>`), inte med `skrivMeny`: den ersätter hela menyn,
+  och då följer varken senare tillagda rader ("Spåra paket") eller
+  översättningarna med. `angerratt.mjs` visade dessutom fel butik för CaraShell
+  (TankGuards `y1sj1i-3d`, via den allmänna `SHOPIFY_SHOP`). Nu läser den
+  butiksfilens `myshopify` precis som `ops.mjs`.
 - **Loggan visas i chatten innan den sätts** — tre varianter, Axel väljer
   (första TankGuard-loggan underkändes 2026-09-08). Bytet är ett API-anrop.
 - **Widgeten stylas aldrig från temat** (2026-09-07) — Judge.mes egna

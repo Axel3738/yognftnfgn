@@ -48,6 +48,22 @@ test('med nycklar i miljön går butiken att köra', () => {
   assert.equal(l.doman, 'alfa-test.myshopify.com');
 });
 
+test('nycklarna slås upp på butiksfilens adress, aldrig på grannens allmänna', () => {
+  // CaraShells nycklar ligger under myshopify-suffixet, och den allmänna
+  // SHOPIFY_SHOP pekade på en annan butik — läget visade fel butik.
+  const rad = { id: 'alfa', brand: 'Alfa', doman: 'alfa-x1.myshopify.com', produktfiler: [], byggd: true };
+  const l = lage(rad, {
+    SHOPIFY_SHOP: 'granne.myshopify.com',
+    SHOPIFY_CLIENT_ID: 'fel',
+    SHOPIFY_CLIENT_SECRET: 'fel',
+    SHOPIFY_SHOP_alfa_x1: 'alfa-x1.myshopify.com',
+    SHOPIFY_CLIENT_ID_alfa_x1: 'id',
+    SHOPIFY_CLIENT_SECRET_alfa_x1: 'hemlis',
+  });
+  assert.equal(l.kor, true);
+  assert.equal(l.doman, 'alfa-x1.myshopify.com');
+});
+
 test('efterrustningen kör om policyn OCH menyn OCH checklistan', () => {
   // Bara policyn räcker inte: knappen ska gå att hitta i sidfoten, och VA:n
   // ska få avsnitt 5b i sin checklista.
