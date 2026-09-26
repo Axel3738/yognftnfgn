@@ -1,14 +1,17 @@
 #!/usr/bin/env bash
 # Deployar tacksides-extensionen till EN OPS-butiks Fabriken-app med Shopify CLI.
 #
-#   SHOPIFY_APP_AUTOMATION_TOKEN=… bash factory/tacksida/deploy.sh carashell [--torr]
+#   bash factory/tacksida/deploy.sh carashell [--torr]
 #
-# Kräver:
-#   • SHOPIFY_APP_AUTOMATION_TOKEN — Dev Dashboard → appen "Factory (Carashell)"
-#     → Settings → App Automation Token (Shopifys dokumenterade väg för CI:
+# Kräver (i Environments på claude.ai; syns i en redan körande session):
+#   • SHOPIFY_APP_AUTOMATION_TOKEN_<BUTIK> (t.ex. _CARASHELL) — Dev Dashboard →
+#     appen → Settings → App Automation Token (Shopifys dokumenterade väg för CI:
 #     https://shopify.dev/docs/apps/launch/deployment/deploy-in-ci-cd-pipeline).
-#     Läggs in i Environments på claude.ai; syns i en redan körande session.
-#   • SHOPIFY_CLIENT_ID_<suffix> för butiken (samma nyckel som fabriken).
+#     Token är PER APP, därför ett namn per butik. Delad
+#     SHOPIFY_APP_AUTOMATION_TOKEN är reserv.
+#   • Appen: TACKSIDA_CLIENT_ID_<BUTIK> (eller TACKSIDA_CLIENT_ID) för en egen
+#     tacksides-app utan scopes — annars butikens Factory-app via
+#     SHOPIFY_CLIENT_ID_<suffix> (samma nyckel som fabriken).
 #
 # Ordningen är Shopifys egen och den är inte förhandlingsbar:
 #   1. `shopify app config link --client-id <id>` HÄMTAR appens riktiga konfig
@@ -32,10 +35,26 @@ HAR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 APP="$HAR/app"
 ROT="$(cd "$HAR/../.." && pwd)"
 
-if [[ -z "${SHOPIFY_APP_AUTOMATION_TOKEN:-}" ]]; then
-  echo "STOPP: SHOPIFY_APP_AUTOMATION_TOKEN saknas i miljön." >&2
+# Token per BUTIK vinner: SHOPIFY_APP_AUTOMATION_TOKEN_CARASHELL (Axels fråga
+# 2026-09-26 — token är per app och varje butik har sin egen app, så ett namn
+# per butik är det rätta). Den delade SHOPIFY_APP_AUTOMATION_TOKEN är reserv.
+BUTIK_UPPER="$(echo "$BUTIK" | tr '[:lower:]-' '[:upper:]_')"
+TOKEN_NAMN="SHOPIFY_APP_AUTOMATION_TOKEN_${BUTIK_UPPER}"
+if [[ -n "${!TOKEN_NAMN:-}" ]]; then
+  export SHOPIFY_APP_AUTOMATION_TOKEN="${!TOKEN_NAMN}"
+  echo "Token: $TOKEN_NAMN"
+elif [[ -n "${SHOPIFY_APP_AUTOMATION_TOKEN:-}" ]]; then
+  echo "Token: SHOPIFY_APP_AUTOMATION_TOKEN (delad — sätt hellre $TOKEN_NAMN)"
+else
+  echo "STOPP: $TOKEN_NAMN (eller SHOPIFY_APP_AUTOMATION_TOKEN) saknas i miljön." >&2
   echo "Skapas i Dev Dashboard → appen → Settings → App Automation Token, läggs i Environments." >&2
   exit 2
+fi
+
+# Samma per butik för den egna tacksides-appens client id.
+CLIENT_NAMN="TACKSIDA_CLIENT_ID_${BUTIK_UPPER}"
+if [[ -n "${!CLIENT_NAMN:-}" ]]; then
+  export TACKSIDA_CLIENT_ID="${!CLIENT_NAMN}"
 fi
 
 # Appen extensionen deployas till. Standard: butikens Factory-app (samma
@@ -44,8 +63,10 @@ fi
 # skapas en EGEN app i Axels org "Carashell" (cowork/2-egen-app.txt) och dess
 # client id sätts som TACKSIDA_CLIENT_ID i Environments. Den appen behöver
 # inga scopes: kortet läser via Storefront-API:t (api_access i extensionen).
+EGEN_APP=0
 if [[ -n "${TACKSIDA_CLIENT_ID:-}" ]]; then
   CLIENT_ID="$TACKSIDA_CLIENT_ID"
+  EGEN_APP=1
   echo "Deployar till den egna tacksides-appen (TACKSIDA_CLIENT_ID), inte Factory-appen."
 else
 CLIENT_ID="$(node --input-type=module -e "
@@ -77,11 +98,16 @@ KONFIG="shopify.app.$BUTIK.toml"
 echo "1. Hämtar appens konfig från Dev Dashboard → $KONFIG"
 env -u SHOPIFY_FLAG_APP_CONFIG node_modules/.bin/shopify app config link --client-id "$CLIENT_ID" --file-name "$KONFIG" --force
 
-if ! grep -qE '^\s*scopes\s*=' "$KONFIG"; then
+# Spärren gäller Factory-appen (154 scopes som rutinerna lever på). Den egna
+# tacksides-appen HAR inga scopes med flit — då är en tom rad det rätta.
+if [[ "$EGEN_APP" == "1" ]]; then
+  echo "   egen app: inga scopes förväntas ($(grep -E '^\s*scopes\s*=' "$KONFIG" | head -1 | tr -d '\n' | cut -c1-80 || echo 'ingen scopes-rad'))"
+elif ! grep -qE '^\s*scopes\s*=' "$KONFIG"; then
   echo "STOPP: $KONFIG saknar [access_scopes].scopes — deploy hade skrivit över appens rättigheter. Rör ingenting." >&2
   exit 4
+else
+  echo "   scopes i konfigen: $(grep -E '^\s*scopes\s*=' "$KONFIG" | head -1 | tr -d '\n' | cut -c1-120)…"
 fi
-echo "   scopes i konfigen: $(grep -E '^\s*scopes\s*=' "$KONFIG" | head -1 | tr -d '\n' | cut -c1-120)…"
 
 if [[ "$TORR" == "1" ]]; then
   echo "2. (torrt) hade kört: shopify app deploy -c $BUTIK --allow-updates --message 'tacksida <datum>'"

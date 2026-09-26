@@ -168,7 +168,9 @@ Orderstatussidan: samma kort, gömt efter giltig_timmar (Storage API).
    id. `node factory/tacksida/produkter.mjs --torr`, sedan skarpt.
 2. `erbjudande.json`: koder + procent ur listan ovan (eller räkna med regeln).
    `node factory/tacksida/rabatter.mjs --torr`, sedan skarpt.
-3. `SHOPIFY_APP_AUTOMATION_TOKEN` för den butikens Fabriken-app →
+3. `SHOPIFY_APP_AUTOMATION_TOKEN_<BUTIK>` (token är per app ⇒ ett namn per
+   butik; delad `SHOPIFY_APP_AUTOMATION_TOKEN` är reserv) och, för en egen
+   app utan scopes, `TACKSIDA_CLIENT_ID_<BUTIK>` →
    `bash factory/tacksida/deploy.sh <butik>`.
 4. Blocket in i kassaredigeraren (klicken nedan), inställningarna ur
    `rabatter.mjs`-raden. `standard_sprak` och `marknadsdomaner` efter butiken.
@@ -184,10 +186,13 @@ på med `true`. Avsnittet nedan beskriver hur det såg ut medan det låg uppe.
 **Vägen till tacksidan utan jobb-Gmailen: en EGEN app i Axels org.** Cowork-
 prompten `cowork/2-egen-app.txt` skapar appen "CaraShell Tacksida" i
 organisationen Carashell (235001191, den Axels konto ser), installerar den i
-butiken och genererar token; Axel lägger `TACKSIDA_CLIENT_ID` +
-`SHOPIFY_APP_AUTOMATION_TOKEN` i Environments, och `deploy.sh` deployar dit i
-stället för till Factory-appen. Extensionen behöver inga scopes (Storefront
-via `api_access`). ⚠️ Oprövat om `shopify app config link` fungerar med en
+butiken och genererar token; Axel lägger `TACKSIDA_CLIENT_ID_CARASHELL` +
+`SHOPIFY_APP_AUTOMATION_TOKEN_CARASHELL` i Environments (Axels fråga
+2026-09-26: per-butiksnamn, eftersom token är per app — skriptet läser
+`_<BUTIK>` först, det delade namnet som reserv), och `deploy.sh` deployar dit
+i stället för till Factory-appen. Extensionen behöver inga scopes (Storefront
+via `api_access`), och scopes-spärren i skriptet hoppas för den egna appen.
+Axel skapar appen själv 2026-09-26 kväll (utan Cowork). ⚠️ Oprövat om `shopify app config link` fungerar med en
 automation-token — se raden under "Vad som INTE är gjort".
 
 ## Så såg det ut på spårningssidan 2026-09-26 12:40–16:35 UTC (avstängt nu)
