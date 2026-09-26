@@ -19,40 +19,46 @@
   },
   "amnesrader": [
     {
-      "text": "__COPY__: ämnesrad A, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Etter kraftig vind, verdt en sjekk",
+      "begar": "vite om trekket tålte vinden"
     },
     {
-      "text": "__COPY__: ämnesrad B, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Sitter krokene fortsatt under kanten?",
+      "begar": "dobbeltsjekke festet selv"
     },
     {
-      "text": "__COPY__: ämnesrad C, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Gikk noe i stykker hos deg?",
+      "begar": "få hjelp hvis noe faktisk røk"
     }
   ],
-  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "forhandstext": "Tre ting er verdt å sjekke på utsiden.",
   "block": [
     {
       "typ": "text",
-      "rubrik": "__COPY__: rubrik: efter blåsten",
-      "text": "__COPY__: en mening"
+      "rubrik": "Etter kraftig vind",
+      "text": "Etter kraftig vind kan det være lurt å sjekke at taktrekket fortsatt sitter som det skal."
     },
     {
       "typ": "punkter",
       "rubrik": null,
       "punkter": [
-        "__COPY__: krokarna under kanten",
-        "__COPY__: banden åtdragna",
-        "__COPY__: de extra banden"
+        "Sjekk at plastkrokene fortsatt sitter under kanten.",
+        "Sjekk at de vevde strekkbåndene er stramme.",
+        "Sjekk at de to ekstra båndene sitter der de skal."
       ]
     },
     {
       "typ": "grundare",
-      "text": "__COPY__: gick något sönder, svara på mejlet"
+      "text": "Har noe gått i stykker? Bare svar på denne e-posten, jeg leser den selv."
     }
   ],
-  "tretest": [],
+  "tretest": [
+    { "rad": "Etter kraftig vind, verdt en sjekk", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sitter krokene fortsatt under kanten?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Gikk noe i stykker hos deg?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Tre ting er verdt å sjekke på utsiden.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Etter kraftig vind", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
   "version": 1,
   "planerad": "2026-12-15T18:00:00+01:00",
   "segment": [

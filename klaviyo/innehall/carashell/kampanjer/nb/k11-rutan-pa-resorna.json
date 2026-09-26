@@ -19,33 +19,33 @@
   },
   "amnesrader": [
     {
-      "text": "__COPY__: ämnesrad A, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Ingen dugg å tørke bort om morgenen",
+      "begar": "slippe å tørke dugg hver morgen"
     },
     {
-      "text": "__COPY__: ämnesrad B, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Mørklagt og uten innsyn på rasteplassen",
+      "begar": "sove uten at noen ser inn"
     },
     {
-      "text": "__COPY__: ämnesrad C, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Frontruta beskyttet, uansett hvor turen går",
+      "begar": "vite at ruta er dekket på hver stopp"
     }
   ],
-  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "forhandstext": "Trekket sitter utenpå, så duggen aldri får feste.",
   "block": [
     {
       "typ": "hero",
-      "rubrik": "__COPY__: rubrik: rutan på resorna",
-      "text": "__COPY__: 1–2 meningar",
+      "rubrik": "Frontruta på vinterturene",
+      "text": "Hei {{fornamn}},\n\nFrontrutetrekket mørklegger fronten og holder duggen borte om morgenen, også på vinterturer til fjells.",
       "bild": "produkt:termoskyddet",
       "knapp": {
-        "text": "__COPY__: knapp",
+        "text": "Se frontrutetrekket",
         "lank": "produkt:termoskyddet"
       }
     },
     {
       "typ": "produktrad",
-      "rubrik": "__COPY__: rubrik",
+      "rubrik": "Frontruta og de små vinduene på tur",
       "handles": [
         "termoskyddet",
         "fonstertermomatta-2-pack"
@@ -55,7 +55,15 @@
       "typ": "fakta"
     }
   ],
-  "tretest": [],
+  "tretest": [
+    { "rad": "Ingen dugg å tørke bort om morgenen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Mørklagt og uten innsyn på rasteplassen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Frontruta beskyttet, uansett hvor turen går", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Trekket sitter utenpå, så duggen aldri får feste.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Frontruta på vinterturene", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se frontrutetrekket", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Frontruta og de små vinduene på tur", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
   "version": 1,
   "planerad": "2026-12-08T18:00:00+01:00",
   "segment": [

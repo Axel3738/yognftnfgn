@@ -19,28 +19,28 @@
   },
   "amnesrader": [
     {
-      "text": "__COPY__: ämnesrad A, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "En sjekk i romjulen",
+      "begar": "ta seg tid midt i høytiden"
     },
     {
-      "text": "__COPY__: ämnesrad B, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Står taket fortsatt tørt?",
+      "begar": "bekrefte at taket har holdt"
     },
     {
-      "text": "__COPY__: ämnesrad C, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Et blikk er nok, utenfra",
+      "begar": "vite at det ikke tar lang tid"
     }
   ],
-  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "forhandstext": "Vogna har stått ute siden høsten, verdt et blikk.",
   "block": [
     {
       "typ": "text",
-      "rubrik": "__COPY__: rubrik: en koll i mellandagarna / at the start of the year",
-      "text": "__COPY__: två stycken"
+      "rubrik": "En sjekk i romjulen",
+      "text": "Hei {{fornamn}},\n\nI romjulen er det lett å glemme vogna som står ute. En rask sjekk nå sparer deg for overraskelser til våren.\n\nStår taket tørt? Er frontruta dekket? Et blikk utenfra er nok."
     },
     {
       "typ": "produktrad",
-      "rubrik": "__COPY__: rubrik",
+      "rubrik": "Beskyttelse for resten av vinteren",
       "handles": [
         "takskyddet",
         "termoskyddet",
@@ -51,7 +51,14 @@
       "typ": "fakta"
     }
   ],
-  "tretest": [],
+  "tretest": [
+    { "rad": "En sjekk i romjulen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Står taket fortsatt tørt?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Et blikk er nok, utenfra", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Vogna har stått ute siden høsten, verdt et blikk.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En sjekk i romjulen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Beskyttelse for resten av vinteren", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
   "version": 1,
   "planerad": "2026-12-29T18:00:00+01:00",
   "segment": [

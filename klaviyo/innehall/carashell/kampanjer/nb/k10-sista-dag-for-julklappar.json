@@ -19,33 +19,33 @@
   },
   "amnesrader": [
     {
-      "text": "__COPY__: ämnesrad A, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Bestill senest mandag 7. desember",
+      "begar": "få med seg akkurat denne datoen"
     },
     {
-      "text": "__COPY__: ämnesrad B, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Siste frist før jul",
+      "begar": "unngå å bestille for sent til jul"
     },
     {
-      "text": "__COPY__: ämnesrad C, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Tre gaver til noen med campingvogn",
+      "begar": "finne riktig gave blant flere"
     }
   ],
-  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "forhandstext": "Etter det rekker ikke pakken fram til julaften.",
   "block": [
     {
       "typ": "hero",
-      "rubrik": "__COPY__: rubrik: beställ senast måndag 7 december",
-      "text": "__COPY__: 1–2 meningar",
+      "rubrik": "Bestill senest mandag 7. desember",
+      "text": "Hei {{fornamn}},\n\nSkal gaven være pakket inn til jul, er mandag 7. desember siste frist.",
       "bild": "produkt:takskyddet",
       "knapp": {
-        "text": "__COPY__: knapp",
+        "text": "Se julegavene",
         "lank": "kollektion:sortimentet"
       }
     },
     {
       "typ": "produktrad",
-      "rubrik": "__COPY__: rubrik",
+      "rubrik": "Tre gaver til noen med campingvogn eller bobil",
       "handles": [
         "takskyddet",
         "termoskyddet",
@@ -56,7 +56,15 @@
       "typ": "fakta"
     }
   ],
-  "tretest": [],
+  "tretest": [
+    { "rad": "Bestill senest mandag 7. desember", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Siste frist før jul", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Tre gaver til noen med campingvogn", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Etter det rekker ikke pakken fram til julaften.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Bestill senest mandag 7. desember", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se julegavene", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Tre gaver til noen med campingvogn eller bobil", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
   "version": 1,
   "planerad": "2026-12-01T18:00:00+01:00",
   "segment": [

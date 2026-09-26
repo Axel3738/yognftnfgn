@@ -19,41 +19,49 @@
   },
   "amnesrader": [
     {
-      "text": "__COPY__: ämnesrad A, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Fredag er siste dag for luke 1",
+      "begar": "få med seg akkurat denne fristen"
     },
     {
-      "text": "__COPY__: ämnesrad B, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Luke 1 åpnes 1. desember",
+      "begar": "vite hva fristen faktisk gjelder"
     },
     {
-      "text": "__COPY__: ämnesrad C, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Bestill før fredag 13. november",
+      "begar": "unngå å bestille for sent"
     }
   ],
-  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "forhandstext": "Etter det rekker ikke kalenderen fram til første luke.",
   "block": [
     {
       "typ": "hero",
-      "rubrik": "__COPY__: rubrik: fredag är sista dagen",
-      "text": "__COPY__: 1–2 meningar",
+      "rubrik": "Fredag er siste dag for luke 1",
+      "text": "Hei {{fornamn}},\n\nLuke 1 åpnes 1. desember. Bestill innen fredag 13. november for å rekke det.",
       "bild": "produkt:adventskalender-retrobussar",
       "knapp": {
-        "text": "__COPY__: knapp",
+        "text": "Bestill adventskalenderen",
         "lank": "produkt:adventskalender-retrobussar"
       }
     },
     {
       "typ": "produkt",
       "handle": "adventskalender-retrobussar",
-      "text": "__COPY__: en mening",
-      "knapp": "__COPY__: knapp"
+      "text": "24 luker med retrobusser, én for hver dag i desember.",
+      "knapp": "Bestill kalenderen"
     },
     {
       "typ": "fakta"
     }
   ],
-  "tretest": [],
+  "tretest": [
+    { "rad": "Fredag er siste dag for luke 1", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Luke 1 åpnes 1. desember", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Bestill før fredag 13. november", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Etter det rekker ikke kalenderen fram til første luke.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fredag er siste dag for luke 1", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Bestill adventskalenderen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Bestill kalenderen", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
   "version": 1,
   "planerad": "2026-11-10T18:00:00+01:00",
   "segment": [

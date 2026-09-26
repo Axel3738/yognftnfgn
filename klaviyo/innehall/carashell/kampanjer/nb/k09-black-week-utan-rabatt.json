@@ -19,19 +19,19 @@
   },
   "amnesrader": [
     {
-      "text": "__COPY__: ämnesrad A, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Det kundene selv sier om taket",
+      "begar": "høre andres erfaring før man kjøper"
     },
     {
-      "text": "__COPY__: ämnesrad B, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Ni lengder, valgt av andre med vogn",
+      "begar": "se at andre med lignende kjøretøy har valgt det"
     },
     {
-      "text": "__COPY__: ämnesrad C, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Derfor stoler de på taktrekket",
+      "begar": "få bekreftet at valget er trygt"
     }
   ],
-  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "forhandstext": "Ekte tilbakemeldinger fra folk som allerede har det på vogna.",
   "block": [
     {
       "typ": "citat",
@@ -40,25 +40,33 @@
     },
     {
       "typ": "hero",
-      "rubrik": "__COPY__: rubrik: kundernas ord",
-      "text": "__COPY__: 1–2 meningar",
+      "rubrik": "Det kundene selv sier",
+      "text": "Hei {{fornamn}},\n\nDette er ord fra folk som allerede har taktrekket på vogna si.",
       "bild": "produkt:takskyddet",
       "knapp": {
-        "text": "__COPY__: knapp",
+        "text": "Se taktrekket",
         "lank": "produkt:takskyddet"
       }
     },
     {
       "typ": "produkt",
       "handle": "takskyddet",
-      "text": "__COPY__: en mening",
-      "knapp": "__COPY__: knapp"
+      "text": "Ni lengder, som passer både campingvogn og bobil.",
+      "knapp": "Se produktet"
     },
     {
       "typ": "fakta"
     }
   ],
-  "tretest": [],
+  "tretest": [
+    { "rad": "Det kundene selv sier om taket", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Ni lengder, valgt av andre med vogn", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Derfor stoler de på taktrekket", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Ekte tilbakemeldinger fra folk som allerede har det på vogna.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Det kundene selv sier", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se taktrekket", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se produktet", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
   "version": 1,
   "planerad": "2026-11-24T18:00:00+01:00",
   "segment": [
