@@ -17,8 +17,8 @@ och allt Axel behöver klicka står längst ner.
 |---|---|---|
 | Två tilläggsprodukter i CaraShell | `produkter.json` → `produkter.mjs` → `produkter.lage.json` | ✅ live: `/products/fonstertermomatta-2-pack` 539 kr, `/products/adventskalender-retrobussar` 379 kr — **utan jämförpris** (se punkt 7 nedan). ACTIVE, Online Store + Shop, egen lättmall `product.tillagg`, titel + beskrivning + SEO på nb/en/fi/da. Inte i Sortimentet eller menyn. |
 | Två rabattkoder | `erbjudande.json` → `rabatter.mjs` → `rabatter.lage.json` | ✅ live: **TACKMATTA** 34,88 % ⇒ 351 kr (spar 188) · **TACKKALENDER** 36,94 % ⇒ 239 kr (spar 140). Låsta till exakt sin produkt, en gång per kund, kombineras med produktrabatter (paketkoderna gäller andra produkter), inget slutdatum. |
-| Erbjudandekortet (checkout UI extension) | `app/extensions/tacksida-erbjudande/` | ✅ byggd och kompilerad lokalt (`shopify app build`, 28 kB). Två mål: tacksidan (`purchase.thank-you.block.render`) och orderstatussidan (`customer-account.order-status.block.render`). **Inte deployad** — kräver App Automation Token (Axels klick 1). |
-| Deploy | `deploy.sh <butik> [--torr]` | Väntar på token. Skriptet hämtar appens riktiga konfig först och vägrar deploya om scopes saknas i den. |
+| Erbjudandekortet (checkout UI extension) | `app/extensions/tacksida-erbjudande/` | ✅ **deployad och releasad 2026-09-26 16:08 UTC** i den egna appen "CaraShell Tacksida" (28,8 kB). Två mål: tacksidan (`purchase.thank-you.block.render`) och orderstatussidan (`customer-account.order-status.block.render`). Syns för kunden först när blocket lagts in i kassaredigeraren (Axels klick 3–4). |
+| Deploy | `deploy.sh <butik> [--torr]` | ✅ körd skarpt 2026-09-26 (se "Deployen" nedan). Skriptet hämtar appens riktiga konfig först och vägrar deploya om scopes saknas i den. |
 | Mätning | `rapport.mjs [--dagar 14] [--json]` | ✅ körd: 384 kandidatordrar, 0 tillägg (kortet syns inte förrän det lagts in). Ingen dom under 200 kandidatordrar. |
 | Evolve-frågorna | `EVOLVE-FRAGOR.md` / `EVOLVE-SVAR.md` | ✅ åtta frågor på engelska utan brand, klara att klistra in. |
 | Researchen | `RESEARCH.md` | Sammanfattningen av sex researchspår (plattform, one-click, appar, erbjudandedesign, svensk lag, CLI) med källor. |
@@ -214,9 +214,22 @@ ligger kvar bara om koden finns på `main`. Tacksidan i kassan är fortfarande
 nästa steg när token finns: den ser varenda köpare, spårningssidan bara de
 som kollar paketet.
 
+## ✅ Deployen — GJORD 2026-09-26
+
+Körd av sessionen 2026-09-26 ~18:08 CEST mot den **egna appen** (inte
+jobb-Gmailens Factory): `TACKSIDA_CLIENT_ID_CARASHELL` (`34817e…`) +
+`SHOPIFY_APP_AUTOMATION_TOKEN_CARASHELL` i Environments.
+`deploy.sh carashell --torr` först: `config link` fungerade med
+automation-token (frågan nedan är alltså besvarad — ja), tomlen länkad till
+**"CaraShell Tacksida"** i org **Carashell** (235001191), `scopes = ""`,
+bygget 28,8 kB. Sedan skarpt: CLI:n skrev **"New version released to
+users. carashell-tacksida-2 — tacksida 2026-09-26T16:08Z"**
+(dev.shopify.com/dashboard/235001191/apps/428458639361/versions/1145109184513).
+Kvar: blocket in i kassaredigeraren (Axels klick 3–4) — inget API gör det.
+
 ## Vad som INTE är gjort, och varför
 
-- **Deployen.** Shopify CLI behöver ett App Automation Token från Dev
+- ~~**Deployen.**~~ Gjord 2026-09-26, se ovan. Historiken: Shopify CLI behöver ett App Automation Token från Dev
   Dashboard (`SHOPIFY_APP_AUTOMATION_TOKEN`); det kan bara skapas av en
   inloggad människa. Allt annat är klart: `deploy.sh` kör hela vägen så fort
   rätt token finns.
@@ -278,7 +291,9 @@ som kollar paketet.
 
 ## Axels klick (i ordning)
 
-1. **App Automation Token — på RÄTT app.** Dev Dashboard (dev.shopify.com)
+1. ✅ ~~**App Automation Token**~~ — gjort 2026-09-26 med den egna appen
+   "CaraShell Tacksida" (klick 1–2 behövs inte längre).
+   Historiken: **App Automation Token — på RÄTT app.** Dev Dashboard (dev.shopify.com)
    → byt organisation uppe till vänster till **Carashell** → **Apps** →
    appen **Factory** → **Settings**. Kontrollera att **Client ID börjar på
    `ca709d`** (annars är det en annan butiks Factory-app). Sedan **App
