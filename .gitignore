@@ -22,3 +22,7 @@ produktjakt/korningar/*/v3/bilder/
 
 # produktjakt: rådumpen från artefaktens db (feedback.json är facit)
 produktjakt/feedback/db/
+# Linsernas egna hjälpskript och arbetsmappar i körningsmappen (ska ligga i scratchpaden, inte i repot)
+produktjakt/korningar/*/v3/*-pricerunner.py
+produktjakt/korningar/*/v3/*-golv.py
+produktjakt/korningar/*/v3/[A-Z][A-Z]/
