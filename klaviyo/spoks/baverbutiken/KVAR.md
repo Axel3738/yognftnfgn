@@ -13,6 +13,14 @@ Granskningen läste alla live-flöden och alla kampanjer i Spoks (`f716ae36-68ae
 
 ⚠️ **K18 får inte schemaläggas** förrän topp 3 mätts om på Shopifys ordrar de senaste 60 dagarna (veckan före 17/11).
 
+## Kontrollen av utkasten (omläsning 2026-09-26 ~13:30 CEST)
+
+- K02, K03, K06, K08, K10, K13, K14, K15, K16, K18, K21 och K01 v2: **OK**, alla `draft`, alla kvarvarande citat är verifierade köp (kollade mot Judge.me:s API). Gamla K01 är orörd och schemalagd MED de falska citaten.
+- **F01 E2: 37 kontakter väntar** (get_flow), inte 17 som ett fynd nedan säger.
+- **Repot:** payload-filerna för K03, K18 och K21 är inte omgenererade (gammal text kvar). Kör `node klaviyo/spoks/konvertera.mjs` med en färsk recensionscache innan något laddas upp ur repot. Byggs K18 om ur repot blir det två citat; sätt källfilens `antal: 1` om bara Thore K. ska stå kvar.
+- K14-knappen `e7235624` saknar spårningslänk (`urlRedirect`), adressen är rätt.
+- Konverteraren gör fortfarande dubblettkort (hero med produktbild + samma produkt längre ner). Nästa ombyggnad av payloads ger dem tillbaka tills koden rättas.
+
 ## KVAR i LIVE-flödena (MCP:n kan inte ändra ett live-flöde med inrullade kontakter)
 
 Två vägar, båda prövade 2026-09-26: (1) Axel ändrar i appen (han gjorde det i F14 07:46 och F11 10:17), eller (2) sessionen bygger en rättad kopia `… v2` som inaktivt flöde via MCP och Axel slår på sändstegen + flödet och stänger av den gamlas sändsteg (så gjordes F04 v2, och Axel klarade det). Väg 2 kräver inget skrivande av Axel. Ge alltid Axel stegets namn EXAKT som `get_flow` → `parameters.name` visar, aldrig "mejl 2" (han hittade inte "mejl 2").
