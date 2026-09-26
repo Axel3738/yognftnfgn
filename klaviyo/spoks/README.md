@@ -165,11 +165,37 @@ Connector-verktygen frågade om lov per anrop även med `mcp__Spoks__*` i
 session). Det som tog bort prompterna var Axels klick på **https://claude.ai/customize/connectors →
 Spoks → verktygen på "Tillåt alltid"**. Därefter gick hela bygget utan en enda fråga.
 
+## DNS för Spoks avsändardomän — Axels klick i Loopia (2026-09-26)
+
+Spoks (SendGrid under huven) bad om sju poster på matstrumpor.se. **Mätt med dns.google
+2026-09-26 innan något lades in:** NS ns1/ns2.loopia.se, A 23.227.38.65 (Shopify), MX
+Loopia, EN SPF-TXT `v=spf1 include:spf.loopia.se -all`, ingen DMARC, ingen av de fem
+underdomänerna fanns, inget `send.matstrumpor.se` (Klaviyos poster lades aldrig in).
+Alla sju är alltså rätt att lägga in, och Axel gör det själv i Loopias DNS-editor
+(Kundzon → matstrumpor.se → DNS-inställningar → "Add subdomain"; TTL 3600).
+
+| Underdomän (före `.matstrumpor.se`) | Typ | Data |
+|---|---|---|
+| `em7588` | CNAME | `u115603739.wl240.sendgrid.net` |
+| `kps._domainkey` | CNAME | `kps.domainkey.u115603739.wl240.sendgrid.net` |
+| `kps2._domainkey` | CNAME | `kps2.domainkey.u115603739.wl240.sendgrid.net` |
+| `link` | CNAME | `s0nrk5ox.link.spoks.com` |
+| `feed` | CNAME | `ttc8rvuf.feed.spoks.com` |
+| `_dmarc` | TXT | `v=DMARC1; p=none;` |
+| *(roten, ingen underdomän)* | TXT, **ändra den som finns** | `v=spf1 include:spf.loopia.se include:sendgrid.net -all` |
+
+⛔ Aldrig namnservrarna, aldrig A, MX eller CNAME www (Loopia-incidenten på
+baverbutiken.se 2026-09-25). SPF:en ÄNDRAS — en andra `v=spf1`-post gör att all SPF
+slutar fungera. **Mät efter:** `https://dns.google/resolve?name=matstrumpor.se&type=NS`
+ska fortfarande svara ns1/ns2.loopia.se, och `type=TXT` ska ge exakt EN spf-rad. Sedan
+Spoks → Settings → Custom domain → Verify (kan dröja upp till en timme, Loopias TTL).
+
 ## Axels klick (i ordning, allt i https://app.spoks.com/matstrumpor)
 
 1. **Settings → Email & SMS:** avsändaradressen. Vill han skicka från `@matstrumpor.se` krävs
-   en verifierad domän (Settings → Custom domain) = DNS-poster hos Loopia, bara på en
-   underdomän, aldrig namnservrarna. Annars skickar Spoks från sin delade domän.
+   en verifierad domän (Settings → Custom domain) = DNS-posterna i tabellen ovan, som
+   vanliga poster i Loopias editor, aldrig namnservrarna. Annars skickar Spoks från sin
+   delade domän.
 2. **Flows → F02 Övergiven kassa:** öppna varje sändsteg (E1, E2, E3) → slå på steget →
    aktivera flödet. Samma dag: stäng av Shopifys egen notis om övergiven kassa
    (Matstrumpors admin → Inställningar → Aviseringar → Övergiven kassa).
