@@ -1,0 +1,375 @@
+{
+ "agent": "AF — skyddet inför datumet 2–4 v bort",
+ "datum": "2026-09-26",
+ "sammanfattning": "Linsen sökte NYA delar hos ägarna som har ett hårt datum inom 2–4 veckor (uppställning husvagn/husbil 2,0 v, båtupptagning 2,0 v, MC-avställning 2,7 v, första frost 2,7 v) — inte fler kapell. Golvet lästes FÖRE AliExpress (PriceRunner via curl, getcamping, watski, hjertmans, campingshopen; Biltema/Jula/campingvaruhuset/camping4u/kamafritid svarade 404 = oläst). 22 objekt prövade, 3 levererade: två i formen STÖD (motorstödet till utombordaren vid upptagningen, däckvaggorna under husvagnens/husbilens/båttrailerns hjul) och en LÅG-märkt mjuk topphuv till luftvärmepumpens utedel (H01:s egen lista, asymmetrisk på efterfrågan + säsong). Endast en skyddsform av tre. MC-/mopedavställningen gav noll — allt nytt där är kedjeform eller redan i katalogen.",
+ "kandidater": [
+  {
+   "koncept_id": null,
+   "namn_sv": "Motorstödet till utombordaren på trailern",
+   "objekt": "Utombordare — kåpan, hela motorn, nästa fas",
+   "form": "annat",
+   "form_kommentar": "stöd (transom saver) — ingen skyddsform; stag mellan trailerns akterrulle och motorns rigg",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploitation",
+   "hypotes_id": "H06",
+   "vinnarlikhet": {
+    "likast": "Båtmotorskyddet 420D",
+    "delade_variabler": [
+     "samma ägare och samma objekt (utombordare 20–100 tkr, båt 100 tkr+) som Båtmotorskyddet (54 150 / 236 / 2,67) och Motorhöljet",
+     "objekt_ute = ja",
+     "deadline uppställning/upptagning 2,0 v (4 av 4 dömda vann på 'uppställning')",
+     "prisband 500–999",
+     "ankare ≥ 1,6× (Attwood Transom Saver HD 1 049 kr)",
+     "ägare 55+ småhus"
+    ],
+    "avvikelser": [
+     "form stöd i stället för överdrag (form = annat är kontots starkaste förlorarsignal — men det är metall som bär motorn, inte en pryl på hyllan)",
+     "old way = ingenting / träkloss under riggen, inte en svikande presenning",
+     "montering: fästet bultas på trailerns akterrulle (2 bultar) och remmar hakas i motorn — 10 minuter, men det är montering",
+     "kräver att trailern har en akterrulle (svenska rullbåttrailers har det; bunktrailers utan rulle passar inte)"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "batupptagning",
+    "deadline_typ": "upptagning",
+    "veckor_kvar": 2.0,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005008665548777",
+    "url": "https://www.aliexpress.com/item/1005008665548777.html",
+    "pris_usd": 22.35,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-26T04:45:35Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-26/v3/bilder/1005008665548777.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant, justerbar längd 28–59 tum (71–150 cm), 'up to 150 HP'; syskon: 1005010651436834 (24,89 USD, samma titel, textfri packshot på vitt, LIVE 04:45:41Z) och 1005008798129069 (18,48 USD, fjädrad version med kompositgaffel, 'MR HELLO'-logga, LIVE 04:45:38Z)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron har packshot upptill och ett kontextfoto nedtill (stödet monterat mellan akterrullen och riggen på grus) — 'Dyno Racing'-loggan uppe till vänster måste beskäras; syskonet 1005010651436834 är helt textfritt men saknar kontext"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "VEVOR via PriceRunner (marknadsplats, en kopia)",
+     "pris_sek": 364,
+     "url": "https://www.pricerunner.se/pl/630-3394285235/Baattillbehoer/VEVOR-Adjustable-Boat-Transom-Saver-23-35-in-priser",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Attwood Transom Saver HD 61–92 cm (PriceRunner 2026-09-26); Attwood SP-400-RB justerbar 557 kr",
+     "pris_sek": 1049,
+     "url": "https://www.pricerunner.se/pl/643-3204739668/Musiktillbehoer/Attwood-Transom-Saver-HD-61-92cm-priser",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.62,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se ('transom saver' 12 träffar: VEVOR 364, Attwood SP-400 557, Attwood HD 1 049; 'motorstöd utombordare' 1 träff = en motor; 'motorstöd båtmotor' bara trollingmotorfästen)",
+     "watski.se ('transom saver' och 'motorstöd' — inga träffar i formen, bara Crewsaver-västar och ankarspel)",
+     "hjertmans.se ('motorstöd', 'transom' — inga träffar)",
+     "biltema.se (404 — oläst)",
+     "jula.se / fyndiq / cdon / amazon.se (oläst)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [291, 355],
+    "pris_sek": 649,
+    "brutto_sek": [294, 358],
+    "be_cpa_sek": [294, 358],
+    "be_roas": 1.99,
+    "flerkop": false,
+    "returrisk": "medel — passar bara trailers med akterrulle; justerbar längd 71–150 cm täcker de flesta motorer 8–150 hk"
+   },
+   "meta_tanke": {
+    "hook": "Hänger motorn i tiltlåset hela vintern?",
+    "objekt_i_bild": "utombordaren tippad på trailern, stödet mellan akterrullen och riggen",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "riggen vilar på gaffeln — motorn kan inte studsa mot akterspegeln på vägen hem från rampen"
+   },
+   "varfor": "Samma ägare, samma dyra objekt och samma datum (upptagning 2,0 v) som Båtmotorskyddet och Motorhöljet, men i formen STÖD: 40 000–100 000-kronorsmotorn hänger i tiltlåset på trailern hem från rampen och hela vintern, och akterspegeln tar stötarna. Ingen svensk fackhandel har formen (Watski/Hjertmans noll), bara Attwood 557–1 049 kr och en VEVOR-kopia på PriceRunner — ankare 1,62× (H06).",
+   "huvudrisk": "Form = annat/stöd (0 av 13 dömda 'annat' vann) och kräver 10 minuters bultning på akterrullen — trailers utan akterrulle passar inte.",
+   "konfidens": "MEDEL",
+   "poang": {"vinnarlikhet": 3, "meta_creative": 2, "efterfragan": 2, "lucka": 2, "ekonomi": 2, "sasong": 2, "leverantor": 2, "nyhet": 2, "hypotesvarde": 2},
+   "per_kriterium": {"K0": "ok", "K1": 14, "K2": 12, "K3": 8, "K4": 9, "K5": 7, "K6": 10, "K7": 7, "K8": 7, "K9": 4, "K10": 2, "K11": 1, "K12": 1},
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (grep transom/motorstöd/ramp: bara ljusramper och Tak-AC-huven — Motorlås 909 och Spolklämma 359 är andra former på samma motor)",
+     "koncept.py sok 'transom' → K0023 kandidat (SOKTRAFF 09-09, annan listning 1005011971582314, aldrig levererad, inget svar) — samma sak, ny listning och första leverans",
+     "kontot 7 d: ej läst (linsen rör inte Meta)"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005008665548777.html",
+    "https://www.aliexpress.com/item/1005010651436834.html",
+    "https://www.pricerunner.se/search?q=transom%20saver",
+    "https://www.watski.se/search?q=transom+saver",
+    "https://www.hjertmans.se/search?q=motorst%C3%B6d"
+   ]
+  },
+  {
+   "koncept_id": null,
+   "namn_sv": "Däckvaggorna under det uppställda hjulet, 2-pack",
+   "objekt": "Husvagn/husbil — hjulen och däcken",
+   "form": "annat",
+   "form_kommentar": "stöd (tyre saver / däckvagga) — ingen skyddsform; hjulet rullas upp på en böjd HDPE-platta så däcket inte plattställs under 6 månader",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "I_FLERKOP",
+   "slot": "exploitation",
+   "hypotes_id": "H08",
+   "vinnarlikhet": {
+    "likast": "Taköverdraget för Husvagn 6,5 × 3 m",
+    "delade_variabler": [
+     "samma ägare (283 840 husvagnar, 116 344 avställda ute — Trafikanalys 2024 via objekt.json) och samma datum: uppställning 2,0 v (4 av 4 dömda vann)",
+     "objekt_ute = ja, objekt dyr > 10 tkr (vagn 100–400 tkr; ett par husvagnsdäck 2 000–3 000 kr att byta)",
+     "old way = improvisation (flytta vagnen en halvmeter i månaden, pumpa hårt) eller ingenting",
+     "ägare 55+ småhus",
+     "flerköp inbyggt: 2-pack per axel — husbil och boggievagn behöver två pack, båttrailern och andrabilen på uppfarten ett till (H08)"
+    ],
+    "avvikelser": [
+     "form stöd, inte överdrag — och den LIKNAR en uppkörningsramp, som Axel sagt nej till 09-10 ('varenda campare har dem', K0225 nej). Creativen måste visa vaggan UNDER hjulet i vila, inte en ramp man kör upp på",
+     "ankare saknas i svensk handel (Fiamma Tyre Saver finns i Europa men hittades inte hos getcamping/campingshopen/PriceRunner) — priset sätts på landad × 2,4",
+     "latent behov: plattställning märks först på våren (vibration i 80 km/h) — inte en skada man ser i oktober"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "uppstallning_husvagn",
+    "deadline_typ": "uppställning",
+    "veckor_kvar": 2.0,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005012302238679",
+    "url": "https://www.aliexpress.com/item/1005012302238679.html",
+    "pris_usd": 15.45,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-26T04:45:44Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-26/v3/bilder/1005012302238679.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "set om 2, färg gul eller svart; däckbredd står inte i titeln (ej mätt); syskon: 1005012443831296 (15,75 USD, samma form, LIVE 04:45:47Z) och 1005011883630076 (17,94 USD, ABKM, 'TYRE SAVER' präglat i plasten, LIVE 04:45:50Z)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron är en fyrdelad collage: två svartvita kontextfoton (en Sprinter-husbil och ett personbilshjul som vilar i vaggan) + packshot av gult och svart 2-pack — textfri, men collaget måste delas upp; husbilsbilden är den som ska bära annonsen"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen hittad i formen — PriceRunner 'tyre saver' / 'tire saver' / 'däckavlastare husvagn' / 'däckavlastning' / 'däckskydd ramp husbil' ger däck, däckglans och 4-pack däckskydd (445 kr, annan form)",
+     "pris_sek": null,
+     "url": "https://www.pricerunner.se/search?q=tyre%20saver",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "saknas — Kegel däckskydd husvagn/husbil 195 kr och 'Bil Däckskydd 4 st' 445 kr (PriceRunner) är ÖVERDRAG, inte vaggor; Fiamma Tyre Saver ej hittad i svensk handel 2026-09-26",
+     "pris_sek": null,
+     "url": "https://www.pricerunner.se/search?q=d%C3%A4ckskydd%20husvagn",
+     "i_sortiment": false
+    },
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se (5 sökningar, 0 träffar i formen)",
+     "getcamping.se ('tyre saver', 'däckavlastare', 'fiamma tyre' — sidor lästa, inga produktträffar)",
+     "campingshopen.se ('tyre saver' — inga träffar)",
+     "campingvaruhuset.se, camping4u.se, kamafritid.se (sök-URL 404 — oläst)",
+     "biltema.se (404 — oläst), jula.se (oläst)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [201, 246],
+    "pris_sek": 549,
+    "brutto_sek": [303, 348],
+    "be_cpa_sek": [303, 348],
+    "be_roas": 1.68,
+    "flerkop": true,
+    "returrisk": "medel — vaggans bredd står inte i listningen; husvagnsdäck 185–225 mm måste rymmas (be leverantören om måttet före launch)"
+   },
+   "meta_tanke": {
+    "hook": "Står husvagnen på samma fläck till april?",
+    "objekt_i_bild": "husbilens hjul i vila i vaggan på gräset",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "däcket ligger runt i vaggan i stället för platt mot marken — bilden av ett plattställt däck bredvid"
+   },
+   "varfor": "Nästa del på vinnarens objekt (husvagnen/husbilen vid uppställningen 2,0 v) i en annan form än överdrag: hjulen bär 1,5–3,5 ton stilla i sex månader och plattställs; ingen svensk kedja eller campingbutik hittades med formen (PriceRunner 0 träffar på fem sökningar, getcamping/campingshopen 0), och samma pack passar båttrailern, släpkärran och andrabilen — flerköp enligt H08.",
+   "huvudrisk": "Ser ut som en uppkörningsramp (Axels nej 09-10, 'varenda campare har dem') och ankare saknas — priset 549 kr för två plastplattor vilar helt på upplevt värde i creativen.",
+   "konfidens": "MEDEL",
+   "poang": {"vinnarlikhet": 3, "meta_creative": 2, "efterfragan": 3, "lucka": 2, "ekonomi": 2, "sasong": 2, "leverantor": 2, "nyhet": 2, "hypotesvarde": 2},
+   "per_kriterium": {"K0": "ok", "K1": 14, "K2": 12, "K3": 7, "K4": 8, "K5": 8, "K6": 10, "K7": 5, "K8": 5, "K9": 5, "K10": 2, "K11": 1, "K12": 1},
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (grep ramp/däck/avlast: Digital Däckdjupsmätare 169 och Trådlös Däckpump 519 — andra former)",
+     "koncept.py sok 'ramp' → K0085/K0095/K0096/K0102 kandidater (SOKTRAFF 09-10, aldrig levererade); K0225 NEJ = uppkörningsramper (annan sak: nivellering, inte plattställning); K0235 kanske = hjulskydd (överdrag, annan form på samma objekt)",
+     "kontot 7 d: ej läst (linsen rör inte Meta)"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012302238679.html",
+    "https://www.aliexpress.com/item/1005012443831296.html",
+    "https://www.pricerunner.se/search?q=tyre%20saver",
+    "https://www.pricerunner.se/search?q=d%C3%A4ckskydd%20husvagn",
+    "https://www.getcamping.se/search?q=tyre+saver"
+   ]
+  },
+  {
+   "koncept_id": null,
+   "namn_sv": "Luftvärmepumpens topphuv med remmar",
+   "objekt": "Luftvärmepumpens utedel",
+   "form": "huv",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploitation",
+   "hypotes_id": "H01",
+   "vinnarlikhet": {
+    "likast": "Termoskyddet för Husbil 211 × 171 cm",
+    "delade_variabler": [
+     "H01:s egen testlista nämner luftvärmepumpen som nytt objekt för 'formsydd form över dyrt objekt ute'",
+     "objekt_ute = ja, dyr > 10 tkr (installerad luft-luft-pump 20–35 tkr; ~1,8 miljoner i villor)",
+     "old way = ingenting / plywoodskiva (Axel nej 09-11 på den styva 1 499-kronorslådan med skruvar — den här är mjuk, utan montering, < 700 kr som han bad om)",
+     "ägare 55+ småhus"
+    ],
+    "avvikelser": [
+     "väderdatumet är första snö (Norrland 4,1 v, Svealand 7,9 v) — utanför linsens 2–4 v; första frost 2,7 v ger bara takdropp/is, inte snölast",
+     "4,51 USD bubbelfolie ser billig ut — lågt upplevt värde (K8) och ankaret (Skotte Garden plåttak 990) är en annan form",
+     "kedjegolvet är OLÄST: Jula/Biltema 404; PriceRunner har bara plåt-/trähus 795–4 490 och ingen mjuk huv",
+     "en topphuv bär inte snölast från taket — den skyddar mot is och dropp, vilket är svårare att visa på 3 s"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "forsta_sno_norr",
+    "deadline_typ": "första snö",
+    "veckor_kvar": 4.1,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005012717493238",
+    "url": "https://www.aliexpress.com/item/1005012717493238.html",
+    "pris_usd": 4.51,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-26T04:46:50Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-26/v3/bilder/1005012717493238.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "storlek står inte i titeln (ej mätt); syskon 1005011995463604 (6,95 USD, 47 × 95 cm) och 1005005928485410 (6,29 USD, 46 × 95 cm) anger måttet; 1005013125202467 (5,79 USD, LIVE 04:46:53Z) är HELTÄCKANDE och stryks — pumpen kan inte gå under den",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron visar topphuven på en utedel mot en vit vägg, remmarna genom gallret markerade med en röd ring (måste beskäras); bubbelfolieytan syns tydligt — ser ut som sitt pris"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen mjuk huv hittad — PriceRunner 'luftvärmepump överdrag' 0 träffar; 'värmepumpsskydd tyg' ger bara plåt/trä (Lyfco plåt 795, Skotte Garden 990–1 389, Jabo 2 263, Eden Wood 3 232)",
+     "pris_sek": null,
+     "url": "https://www.pricerunner.se/search?q=luftv%C3%A4rmepump%20%C3%B6verdrag",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "Skotte Garden Värna Värmepumpskydd Smart (plåttak, annan form) — PriceRunner 2026-09-26; LuftX värmepumpstak 2 668",
+     "pris_sek": 990,
+     "url": "https://www.pricerunner.se/pl/693-3554243705/Vaermepumpar/Skotte-Garden-Vaerna-Vaermepumpskydd-Smart-priser",
+     "i_sortiment": true
+    },
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se (3 sökningar: 0 mjuka huvar, 20+ styva hus/tak 795–6 207)",
+     "jula.se / biltema.se / clasohlson.se (oläst — 404/blockerat; objekt.json anger Clas Ohlson plåttak 2 499 mätt 09-11)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [59, 72],
+    "pris_sek": 299,
+    "brutto_sek": [227, 240],
+    "be_cpa_sek": [227, 240],
+    "be_roas": 1.28,
+    "flerkop": false,
+    "returrisk": "låg–medel — 47 × 95 cm täcker de vanligaste utedelarna (80–90 cm breda); större pumpar (Mitsubishi Kirigamine 100 cm) sticker ut"
+   },
+   "meta_tanke": {
+    "hook": "Droppar taket på värmepumpen i vinter?",
+    "objekt_i_bild": "utedelen på husväggen med huven på och istappar ovanför",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "isklumpen ligger på huven, inte i fläkten"
+   },
+   "varfor": "H01:s egen lista pekar på luftvärmepumpen och Axel bad 09-11 om just 'mjuk huv utan montering under 700 kr'; ingen mjuk huv finns i svensk handel (PriceRunner 0, bara plåthus 795–4 490 som ankare) och 1,8 miljoner villor har objektet ute. Levereras LÅG med flit: 4,51 USD bubbelfolie, datumet 4–8 v bort och golvet hos Jula/Biltema oläst.",
+   "huvudrisk": "Ser billig ut och löser inte snölast — bara is och dropp — så upplevt värde och 3-sekundersbeviset är svaga; Jula/Biltema kan ha exakt formen (oläst).",
+   "konfidens": "LÅG",
+   "poang": {"vinnarlikhet": 2, "meta_creative": 2, "efterfragan": 3, "lucka": 2, "ekonomi": 1, "sasong": 3, "leverantor": 2, "nyhet": 1, "hypotesvarde": 2},
+   "per_kriterium": {"K0": "ok", "K1": 14, "K2": 14, "K3": 6, "K4": 6, "K5": 7, "K6": 10, "K7": 6, "K8": 3, "K9": 4, "K10": 2, "K11": 1, "K12": 0},
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (grep värmepump: bara Poolvärmepumpens Vinterhuv 539 — annat objekt)",
+     "koncept.py sok 'värmepump' / 'Air Conditioner' → K0206–K0215 kandidater (SOKTRAFF, aldrig levererade, inget svar); K0230 NEJ = styv aluminiumlåda 1 499 med montering (annan form); K0258 ja = poolvärmepumpen (annat objekt)",
+     "kontot 7 d: ej läst (linsen rör inte Meta)"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012717493238.html",
+    "https://www.aliexpress.com/item/1005011995463604.html",
+    "https://www.pricerunner.se/search?q=v%C3%A4rmepumpsskydd%20tyg",
+    "https://www.pricerunner.se/search?q=luftv%C3%A4rmepump%20%C3%B6verdrag"
+   ]
+  }
+ ],
+ "strukna": [
+  {"namn": "Hjulskydden 4-pack husvagn/husbil (uppställning 2,0 v)", "skal": "K0235 levererad 09-11, Axel 'kanske' utan orsak — ingen ny listning eller nytt bevis i aterupptas_om; golv Kegel 195 kr / 'Bil Däckskydd 4 st' 445 kr på PriceRunner 2026-09-26. Inte omlevererad."},
+  {"namn": "Husbilens hyttkapell (cab cover Ducato) / backspegelskydd", "skal": "Fler kapell på samma objekt som Termoskyddet (K0227 vinnare) — uppdraget bad om en annan DEL, inte ett större överdrag; hyttkapell 40–60 USD landar 580–870 → 1 299+. Backspegelskydd: lågt upplevt värde, ingen skada att visa. Inte sökt."},
+  {"namn": "Husvagnens gasolflaskeskydd (isolerat, 11 kg)", "skal": "objekt.json: Landmann 600D 399 kr (grilltorget) gör landad 275 till K7-kill; dessutom fel datum — vid uppställningen kopplas gasolen bort. K0071/K0081 kandidater kvar. Inte sökt."},
+  {"namn": "Husvagnens dragkulehuv / kopplingslås / stödbensplattor", "skal": "Kulskydd = sett innan (SIGNALER §sett innan), lås = kedjeform, stödbensplattor nej 09-15 ('för dyr') och lösa plattor golv 130–152 kr (Campingvaruhuset, lins R 09-14). Inte sökt."},
+  {"namn": "Husvagnens gnagarnät i ventiler / kylventilens vintertäckning", "skal": "Struken 09-24 (Dometic/Thetford-original i fackhandeln = sett innan; AliExpress bara clips 3 USD) och nätformen föll 09-13; PriceRunner 'musnät husvagn' ger barnvagnsnät. Inte sökt igen."},
+  {"namn": "Båtens dynor — förvaringspåse", "skal": "Struken 09-14 (Båtsitsöverdrag 269 kr ACTIVE i katalogen; dynväskan är hammockobjektets form). PriceRunner 'dynväska båt' ger rep och gummibåtar. Ägaren bär hem dynorna i en IKEA-kasse — lågt upplevt värde."},
+  {"namn": "Utombordarens propeller-/riggväska", "skal": "Struken 09-24 (Flicker 32–70 USD landar 470–1 010; svensk fackhandel säljer propellerburar 1 869–4 019 = annan form). Motorlåset 909 kr finns i katalogen. Inte sökt igen."},
+  {"namn": "Båttrailerns bunkglid (bunk slides, 10-pack)", "skal": "Ali 42,99–54,89 USD (1005010345827135, 1005011881318739, 1005007692583619) → landad 620–800 → pris ≥ 1 499 utan H04-täckning; skruvas fast i bunkarna (montering) och PriceRunner 'bunk slides båttrailer' / 'båttrailer glid' ger bara stödhjul och Superclamp glidplatta 2 245. Sökt, ej öppnad."},
+  {"namn": "Båttrailerns styrpålar (guide-ons) / trailerlampor / vinschöverdrag", "skal": "Guide-ons: VEVOR 518–1 048 kr på PriceRunner (sortiment 8 varianter) och 1,5 m-stolpar väger > 4 kg. Trailerlampor: kedjesortiment (Biltema/Jula, oläst 404). Vinschrem 629 kr redan ACTIVE i katalogen. Inte sökt på AliExpress."},
+  {"namn": "Utombordarvagn / motorstativ på land", "skal": "K0270 nej 09-15 ('kedjan har den'; Kayoba Båtmotorkärra 999 kr på PriceRunner). Inte sökt."},
+  {"namn": "MC:ns hjulstöd / däckvagga för vinterförvaring", "skal": "Golv i formen: Homcom hjulkloss 487 kr, vidaXL hjulställ 898, Proplus 944, VEVOR 961 (PriceRunner 2026-09-26); Ali plastkloss 16,51 USD (1005012073326204, sökträff). Avställd MC står på sidostödet — klossen behövs för transport, inte för vintern. Lågt upplevt värde."},
+  {"namn": "MC:ns dammskydd inomhus (tank/sadel), mopedens/skoterns sadelöverdrag", "skal": "MC-Kapell 349 kr + MC Sätesöverdrag Camo 289 kr + Scooterkapell 569 kr ligger ACTIVE i katalogen — K0 på sak; inomhuskapell är dessutom kedjesortiment (Biltema/Jula, oläst). MC-avfuktarpåse struken 09-14. Inte sökt."},
+  {"namn": "MC:ns batteri — underhållsladdare", "skal": "Kedjeform (Biltema/Jula/CTEK-sortiment) och Solcellsladdaren 10 W (K0173) launchad 09-24 för samma behov. Inte sökt."},
+  {"namn": "Elverkets huv", "skal": "objekt.json: Biltema Skyddsöverdrag för elverk = K4-kill (mätt 09-10, pris oläst 403); PriceRunner 'elverk överdrag' 0 träffar i formen (bara elartiklar); elverket står oftast inne. Inte sökt."},
+  {"namn": "Robotgräsklipparens laddstationsgarage (indockning 4,1 v)", "skal": "AliExpress 'robot lawn mower garage canopy' ger 60–200 USD (1005012076668670 75,39; 1005011938531728 60,39; 1005012281848938 199,59) — inget under objekt.json:s krav < 15 USD; Jula Ventura-tak 499 är samma form och Grimsholm regnhuv 99 kr föll 09-24. Sökt, ej öppnad."},
+  {"namn": "Luftvärmepumpens styva tak i aluminium (utan skruv)", "skal": "AliExpress 40–53 USD (1005012322200421 40,19; 1005012681649167 53,09) → landad 580–770 → 1 299+ kr, över ankaret Skotte Garden 990 och Lyfco plåt 795; Axel nej 09-11 på styvt tak med montering (K0230). Sökt, ej öppnad. Den mjuka topphuven levererad i stället (LÅG)."},
+  {"namn": "Vedstapelns formsydda tak", "skal": "Vedställskapell Med Fönster Och Ventil 529 kr ACTIVE i katalogen och K0135 (överdrag 8 ft, uppfällbar front) fick ja 09-10 — K0 på sak. Inte sökt."},
+  {"namn": "Pizzaugnens huv (första frost 2,7 v)", "skal": "Struken 09-24 på golvregeln (Bauhaus Napoli 133, Cozze 269–399, 'Pizzaugn Cover' 455–595 på PriceRunner 2026-09-26 = 20 träffar, sortiment); Ooni Karu 16 511 kr ger ankare < 1,6× mot ett pris ≥ 349. Uppdragets villkor (ankare ≥ 1,6×) uppfylls inte. Inte sökt igen."},
+  {"namn": "Utekranens frostskydd, IBC-överdraget, regntunnehuven, poolvärmepumpshuven, slangboxhuven, vedklyvshuven", "skal": "Alla ACTIVE i katalogen (Kranskydd 309, IBC-tanköverdrag 489, Regntunnehuv 349, Poolvärmepumpens Vinterhuv 539, Slangboxhuv 389, Vedklyvshuv 459) — K0 på sak. Inte sökt."},
+  {"namn": "Spabadets trappa / locklyft, släpkärrans kapell, elcykeln hel", "skal": "Spabad: REAL_LOSER (2 075 / 0) — objektet hoppas över enligt uppdraget. Släpkärra: Axel nej 09-12 'nöjd med det han har' (sett_innan i objekt.json). Elcykel: batteriskyddet 349 kr ACTIVE (K0) och cykelkapell är kedjesortiment (20+); cykelgarage struket 09-15. Inte sökt."},
+  {"namn": "Solcellsventilator till båtens vinterkapell (mögel under kapellet)", "skal": "Ankare finns (Seatec solcellsventilator 1 089 kr på PriceRunner; Nicro hos Watski) men formen kräver håltagning i däck/kapell — montering = ja är förlorarsignal och inte ett 55+-klick. Inte sökt på AliExpress."}
+ ]
+}
