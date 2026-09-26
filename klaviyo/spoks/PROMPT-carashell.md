@@ -29,6 +29,14 @@ det är mejl från butiken och inte annonser.
 
 0. **Workspace.** Kör `whoami` i Spoks. Finns ingen CaraShell-workspace, stoppa och skriv exakt hur jag installerar Spoks på CaraShells Shopify: vilken knapp, i vilken ordning. Hitta aldrig på ett storeId. Finns den: skriv ut plan, tidszon, antal kontakter och månadsgräns. Kör sedan `get_flows` och `search_campaigns`. Spoks kan ha importerat saker på egen hand, och det som redan finns ska rättas, inte dupliceras.
 
+0b. **Spoks "Kom igång"-listan, alla sex punkterna, före allt annat.** Spoks startsida har en checklista. Varje punkt ska vara klar eller förberedd innan flödena byggs:
+   1. *Anslut till Shopify:* kontrollera med `whoami` att rätt butik är ansluten.
+   2. *Anpassa utseendet:* sätt logga, färger, typsnitt, sidhuvud och sidfot med `update_settings`, hämtat ur `mejl/butiker/carashell.json` och butikens tema. Hitta aldrig på en färg. Kör först utan `acknowledgeWarnings`, läs varningarna, kör sedan med. Läs tillbaka med `get_settings`. Sidfoten ska ha avregistreringstext på varje språk.
+   3. *Lägg till domäner:* se steg 6. Mät vad som redan finns innan du ber mig om något.
+   4. *Planera din uppvärmning:* en ny avsändardomän som skickar till tusentals direkt hamnar i skräpposten. Skriv en uppvärmningsplan i `klaviyo/spoks/carashell/UPPVARMNING.md`: vecka för vecka, hur många mottagare per utskick, och att de mest engagerade går först (köpt eller klickat senaste 30 dagarna, sedan 60, sedan 90). Bygg segmenten för varje steg med `create_segment`, efter att ha kontrollerat storleken med `preview_segment`. Flödena räknas in i volymen. Gå igenom varje val i Spoks egen uppvärmningsguide i appen och skriv ner vad jag ska välja där.
+   5. *Skapa kampanj:* den första kampanjen byggs som utkast mot uppvärmningens första segment, inte mot hela listan.
+   6. *Aktivera flöde:* förbered, men aktivera inte. Skriv i vilken ordning jag ska slå på flödena (övergiven kassa först) och exakt vilka knappar jag trycker på.
+
 1. **Mät innan du bygger.** Allt nedan ska läsas ur datan, inte antas:
    - **Marknaderna.** Vilka länder och språk som finns, och var kunderna faktiskt kommer ifrån. Räkna ordrar per land 90 dagar bakåt ur Shopify. En marknad utan ordrar får inga egna flöden. Det skrivs ut med siffran.
    - **Språket i Spoks.** Ta reda på hur Spoks vet en kontakts språk eller land (kontaktfält, `contact.country`, filter på land och så vidare). Testa med `preview_segment` på ett land. Bygg språkstyrningen på det som faktiskt fungerar och skriv ner hur du mätte det.
