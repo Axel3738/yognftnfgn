@@ -3,6 +3,25 @@
 Kör `/no-recensioner` (`.claude/commands/no-recensioner.md`). Den här filen är
 bara lägesrapporten.
 
+## Läget 2026-09-26 — 0 nya, allt redan klart, 38 i `sources.json`
+
+Inga nya mappar i MAKE TO NORWAY (38 produktmappar + WINNERS med 5). Bygget gav
+identiska filer — `git status` tomt — och `--dry` mot Kajakkholder svarade
+"redan 10 synliga, hoppar över". Feeden står kvar på 234 produkter.
+
+Inget 429 från Google i dag; gårdagens strypning var tillfällig.
+
+### Discord svarade 503 på första skicket
+
+`upstream connect error … immediate connect error`, alltså nätet mellan
+containern och Discord, inte något i rapporten. **Andra försöket gick igenom
+oförändrat.** Ett 503 här är värt ett omförsök innan det rapporteras som ett
+misslyckat skick — men rapporten får aldrig hoppas över.
+
+Kajakkholders tio identiska titlar (`Bra och stabila`) är fortfarande orättade,
+flaggat till Axel tredje dygnet. De fyra andra arken är oförändrade sedan
+2026-09-18.
+
 ## Läget 2026-09-25 — 0 nya, allt redan klart, 38 i `sources.json`
 
 Inga nya mappar i MAKE TO NORWAY (38 produktmappar + WINNERS med 5). Bygget gav
