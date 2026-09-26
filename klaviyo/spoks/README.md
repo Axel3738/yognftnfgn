@@ -465,6 +465,19 @@ plattformens egen.
   **Publiken för K01 är SEG_samtycke** (sessionens beslut samma dag): Spoks tog emot en
   schemaläggning till 2 942 utan uppvärmningsspärr, och SEG_samtycke är det enda segmentet som
   är mätt att bara innehålla samtycke — "Warmup tier 1" är omätt i Matstrumpors workspace.
+- ✅ **K01 SCHEMALAGD 2026-09-26 12:49 CEST av Axel, kontrollerad av sessionen:**
+  `search_campaigns publishedAfter` → K01 `waiting_to_be_published`, `publishDate
+  2026-09-29T16:00Z` (tis 18:00), och ingen annan kampanj schemalagd (F06 E2 `draft`).
+  **Publiken mätt** med `update_segment` på SEG_samtycke UTAN `acknowledgeWarnings` och med
+  identisk beskrivning (`applied: false`, inget ändrat): `postsUsingSegment` = K01 (schemalagd)
+  + F06 E2 (utkast). Det är det enda sättet via MCP:n att se vilken publik en kampanj har —
+  `get_campaign` visar den inte. Bäverbutikens K01 "Taket du aldrig går upp och kollar"
+  `51c37c20-…` står också schemalagd till samma tid (mätt samma minut).
+- **Nästa steg (påminnelse `trig_01AoYRfSaHJzbEicy2x49r9h`, ons 30/9 10:00 CEST):** K01:s
+  statistik i båda butikerna, rätta "Ångerrätt" + F06 E2:s kommatecken (ovan), förbered
+  Bäverbutikens K02 (tor 1/10) och Matstrumpors K02 (tis 6/10) med länk, utseende och publik.
+  Kvar som Axels beslut/klick utan datum: CaraShells Spoks-inbjudan (rubriken CaraShell ovan)
+  och Matstrumpors Black Week A/B/C (`klaviyo/README.md` → Black Week).
 - **Recensionsflödet:** Matstrumpor HAR INGET (aldrig byggt — flödena är F01–F05, F07; F06 som
   utkast). Det enda är Bäverbutikens **F14 Recension Trustpilot** `23d2710c-…` i workspacen
   Bäverbutiken.se, mätt `isActive: true`, 24 inrullade (https://app.spoks.com/baverbutiken/flows/23d2710c-1a33-44c3-bb25-df1f691b6161).
