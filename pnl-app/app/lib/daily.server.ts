@@ -13,6 +13,7 @@
  * behöver exportera eller bara summera.
  */
 
+import { delaPaMarknader, type MarknadsDelar } from "./marknadsoversikt";
 import { Prisma } from "@prisma/client";
 import prisma from "../db.server";
 import { dayInTz, fetchOrderData, harFullOrderhistorik, mergeProductRows } from "./shopify-data.server";
@@ -256,6 +257,8 @@ export interface DailyReadResult {
    * avgifter per marknad i räknemotorn.
    */
   salesByMarket: Record<string, number>;
+  /** Med `delaMarknader`: perioden delad per land (se marknadsoversikt.ts). */
+  marknadsdelar?: MarknadsDelar;
   /**
    * Omsättning med faktiska avgifter (Shopify Payments) per marknad, samma
    * nycklar som `salesByMarket`. Räknemotorn lägger satsen på skillnaden,
@@ -349,6 +352,12 @@ export interface ReadDailyOpts {
    * gruppsumman sätter den; andra läsare får den gamla, sammanslagna listan.
    */
   perMarknad?: boolean;
+  /**
+   * Utan filter: lämna dessutom perioden delad per land (`marknadsdelar`),
+   * ur SAMMA rader — ingen extra databasfråga. Underlaget för panelens
+   * marknadsöversikt (break-even och bidrag per land).
+   */
+  delaMarknader?: boolean;
   /**
    * Butikens orderhorisont (`butikensHorisont`). Satt = dagar utanför
    * Shopifys 60 dygn sorteras till `outsideHistory`. Null = full historik.
@@ -497,6 +506,9 @@ export async function readDaily(
     salesByMarket,
     coveredByMarket,
     ordersByMarket,
+    ...(opts.delaMarknader
+      ? { marknadsdelar: delaPaMarknader(rows.map((r) => ({ day: r.day, markets: uppdelning(r) }))) }
+      : {}),
   };
 }
 

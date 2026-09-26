@@ -49,6 +49,7 @@ import { klockslag } from "../lib/returkoll";
 import { andelUtan, arKostnadOsaker } from "../lib/kostnadstackning";
 import { betalvagNamn } from "../lib/avgifter";
 import { fordelaProdukter } from "../lib/produktintakt";
+import { raknaMarknader, type Marknadsrad } from "../lib/marknadsoversikt";
 import {
   beslutsText,
   bidragsBand,
@@ -123,7 +124,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
      så huvudperiod och jämförelse sorteras likadant. */
   const horisont = await butikensHorisont(shop, timezone);
   const lasDagar = (f: string, tt: string) =>
-    readDaily(shop, f, tt, { market, perMarknad: true, horisont, tidszon: timezone });
+    readDaily(shop, f, tt, { market, perMarknad: true, delaMarknader: !market, horisont, tidszon: timezone });
 
   /* Dagslagret: intervallet läses som färdiga dagsrader ur databasen —
      millisekunder oavsett datumval, det är hela snabbhetsmodellen. Bara dagar
@@ -249,7 +250,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
     to,
     today,
     settings.currency,
-    { tokenExpired, market },
+    { tokenExpired, market, perMarknad: true },
   );
   /* Dagar utan orderdata (utanför Shopifys 60 dygn) tas bort ur
      annonskostnaden också. Försäljningen saknar dem redan, och compute()
@@ -341,6 +342,45 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
   /* Raderna är räknade per marknad (rätt kostnad per land) men visas per
      variant — tabellen ska inte ha tre rader för samma motorhölje. */
   result.products = slaIhopMarknader(result.products);
+
+  /* Marknadsöversikten: break-even och bidrag per land på samma skärm, utan
+     att filtrera land för land. Bara i butikens hela vy och bara när mer än
+     ett land sålt — ur samma dagsrader och samma annonsrader som rutorna
+     ovan, alltså inga extra anrop mot Shopify eller Meta. */
+  const md = daily.marknadsdelar;
+  let perMarknad: Marknadsrad[] | null = null;
+  let omarktSpend = 0;
+  if (!market && md && Object.keys(md.delar).length > 1) {
+    const markta = new Set(
+      metaKonton.flatMap((k) => Object.values(k.campaignMarkets ?? {}).map((v) => marknadskod(v))).filter(Boolean),
+    );
+    const byMarket = spend.byMarket
+      ? Object.fromEntries(
+          Object.entries(spend.byMarket).map(([m, d]) => [m, d.filter((x) => !utanforHistorik.has(x.day))]),
+        )
+      : undefined;
+    omarktSpend = (byMarket?.[""] ?? []).reduce((a, d) => a + d.spend, 0);
+    perMarknad = raknaMarknader({
+      delar: md.delar,
+      from,
+      to,
+      dagar: result.days.length,
+      spendPerMarknad: byMarket,
+      spendOk: metaConfigured && !spend.error,
+      markta,
+      egnaKostnader: new Set([
+        ...costChangeRows.map((c) => c.market).filter(Boolean),
+        ...costTiers.map((c) => c.market).filter(Boolean),
+      ]),
+      egenTull: new Set(
+        Object.entries(raknesettings.marketFees)
+          .filter(([, v]) => v.tariffPerOrder != null)
+          .map(([m]) => m),
+      ),
+      forbered: (rader) => uppskatta(rader).products,
+      bas: { costChanges: costChangeRows, costTiers, settings: raknesettings, freeVariants },
+    });
+  }
 
   /* Jämförelse: samma antal dagar direkt före perioden. Hämtas EFTER huvud-
      perioden (bulk-kön är en i taget) och får misslyckas tyst — en panel utan
@@ -483,6 +523,10 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
        butikens tid är den som gäller, och servern och klienten hade annars
        kunnat rendera olika. */
     returkoll: settings.refundResyncOkAt ? klockslag(settings.refundResyncOkAt, timezone, today) : null,
+    /* Marknadsöversikten (null = ett land, eller ett filter valt). */
+    perMarknad,
+    omarktSpend,
+    dagarUtanMarknad: md?.dagarUtan ?? 0,
   };
   } catch (e) {
     /* Remix maskerar kastade fel i produktion till "Application Error" utan
@@ -533,6 +577,9 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
       tariffConfirmed: false,
       feeRate: 0.029,
       returkoll: null as string | null,
+      perMarknad: null as Marknadsrad[] | null,
+      omarktSpend: 0,
+      dagarUtanMarknad: 0,
     };
   }
 }
@@ -1047,6 +1094,93 @@ function ProfitBars({
   );
 }
 
+/**
+ * En rad per land: försäljning, snittorder, annonser, MER, break-even-MER och
+ * bidrag per dag. Break-even står även när annonskostnaden är okänd — den
+ * räknas utan den. "*" = landet räknas på butikens standardkostnad, "≥" =
+ * kostnad saknas på mer än 2 % av landets försäljning.
+ */
+function Marknadsoversikt({ rader, omarktSpend, dagarUtan, money, mult, nf, lang, T, onValj }: {
+  rader: Marknadsrad[];
+  omarktSpend: number;
+  dagarUtan: number;
+  money: (v: number | null) => string;
+  mult: (v: number | null) => string;
+  nf: Intl.NumberFormat;
+  lang: Lang;
+  T: Texts;
+  onValj: (market: string) => void;
+}) {
+  const O = T.dashboard.overview;
+  const namn = (m: string) => (m ? marknadsnamn(m, lang, m) : T.dashboard.market.unknown);
+  const standard = rader.filter((r) => r.market && !r.egenKostnad).map((r) => namn(r.market));
+  const standardTull = rader.filter((r) => r.market && !r.egenTull).map((r) => namn(r.market));
+  const saknas = rader.filter((r) => r.kostnadOsaker);
+  return (
+    <Card padding="0">
+      <div style={{ padding: "16px 16px 0" }}>
+        <BlockStack gap="100">
+          <Text as="h2" variant="headingMd">{O.title}</Text>
+          <Text as="p" variant="bodySm" tone="subdued">{O.body}</Text>
+        </BlockStack>
+      </div>
+      <DataTable
+        columnContentTypes={["text", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric"]}
+        headings={[O.thMarket, O.thSales, O.thOrders, O.thAov, O.thAds, O.thMer, O.thBe, O.thContribution, O.thPerDay]}
+        rows={rader.map((r) => {
+          /* Grönt/rött bara när båda talen finns och kostnaden är säker —
+             samma regel som panelens beslut: ingen dom på osäkert underlag. */
+          const ton =
+            r.mer != null && r.breakEvenMer != null && !r.kostnadOsaker
+              ? r.mer >= r.breakEvenMer ? "success" : "critical"
+              : undefined;
+          const bidragTon = r.bidrag == null || r.kostnadOsaker ? undefined : r.bidrag >= 0 ? "success" : "critical";
+          const tak = r.kostnadOsaker ? "≤ " : "";
+          return [
+            r.market ? (
+              <Button key={`m-${r.market}`} variant="plain" onClick={() => onValj(r.market)}>
+                {`${namn(r.market)} (${r.market})`}
+              </Button>
+            ) : (
+              namn(r.market)
+            ),
+            money(r.totalSales),
+            nf.format(r.orders),
+            money(r.aov),
+            r.spend == null ? (
+              <Text key={`s-${r.market}`} as="span" tone="subdued">{O.noCampaigns}</Text>
+            ) : (
+              money(r.spend)
+            ),
+            <Text key={`mer-${r.market}`} as="span" tone={ton}>{mult(r.mer)}</Text>,
+            <Text key={`be-${r.market}`} as="span" fontWeight="semibold">
+              {r.breakEvenMer == null
+                ? "—"
+                : `${r.kostnadOsaker ? "≥ " : ""}${mult(r.breakEvenMer)}${r.market && !r.egenKostnad ? " *" : ""}`}
+            </Text>,
+            <Text key={`b-${r.market}`} as="span" tone={bidragTon}>{r.bidrag == null ? "—" : tak + money(r.bidrag)}</Text>,
+            <Text key={`d-${r.market}`} as="span" tone={bidragTon}>{r.bidragPerDag == null ? "—" : tak + money(r.bidragPerDag)}</Text>,
+          ];
+        })}
+      />
+      <div style={{ padding: "0 16px 16px" }}>
+        <BlockStack gap="100">
+          <Text as="p" variant="bodySm" tone="subdued">{O.openHint}</Text>
+          {standard.length ? <Text as="p" variant="bodySm" tone="caution">{O.standardCost(standard.join(", "))}</Text> : null}
+          {saknas.map((r) => (
+            <Text key={`saknas-${r.market}`} as="p" variant="bodySm" tone="caution">
+              {O.missingCost(namn(r.market), Math.max(1, Math.round(r.andelUtanKostnad * 100)))}
+            </Text>
+          ))}
+          {standardTull.length ? <Text as="p" variant="bodySm" tone="subdued">{O.defaultDuty(standardTull.join(", "))}</Text> : null}
+          {omarktSpend > 0.5 ? <Text as="p" variant="bodySm" tone="subdued">{O.unmarked(money(omarktSpend))}</Text> : null}
+          {dagarUtan > 0 ? <Text as="p" variant="bodySm" tone="subdued">{O.daysWithout(dagarUtan)}</Text> : null}
+        </BlockStack>
+      </div>
+    </Card>
+  );
+}
+
 function BreakdownRow({ label, value, bold, colorKey, money, ofRevenue, dec, badge }: {
   label: string; value: number; bold?: boolean;
   /** Bandmärkning bredvid etiketten (bidrag efter annonser). */
@@ -1497,6 +1631,17 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
   }[] = [
     { label: T.dashboard.kpi.sales, value: money(t2.totalSales), sub: `${T.dashboard.kpi.shippingOfWhich(money(t2.shipping))}${delta(t2.totalSales, comparison?.totalSales)}` },
     { label: T.dashboard.kpi.orders, value: nf.format(t2.orders), sub: `${T.dashboard.kpi.avgOrder(money(t2.aov))}${delta(t2.orders, comparison?.orders)}` },
+    /* Snittordern som egen ruta — förut bara en grå rad under Ordrar, och
+       Axel trodde att den saknades. */
+    {
+      label: T.dashboard.kpi.aov,
+      value: money(t2.aov),
+      sub: `${T.dashboard.kpi.aovSub(nf.format(t2.orders))}${
+        comparison && comparison.orders > 0
+          ? delta(t2.aov ?? 0, comparison.totalSales / comparison.orders)
+          : ""
+      }`,
+    },
     { label: T.dashboard.kpi.fixedCosts, value: money(t2.fixedCosts), sub: T.dashboard.kpi.perDay },
     {
       label: T.dashboard.kpi.adSpend,
@@ -1576,7 +1721,27 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
             ? undefined
             : "critical",
     },
+    /* Vinsten per dag rakt ut — samma tal som hjälteraden, men där
+       rutorna läses. Samma färgregel som nettovinsten. */
+    {
+      label: T.dashboard.kpi.profitPerDay,
+      value: dagar > 0 ? (t2.kostnadOsaker ? "≤ " : "") + money(t2.netProfit / dagar) : "—",
+      sub: !t2.spendComplete ? T.dashboard.kpi.profitTooHigh : T.dashboard.kpi.profitPerDaySub(dagar),
+      tone:
+        t2.spendComplete && !t2.kostnadOsaker && t2.netProfit >= 0
+          ? "success"
+          : t2.spendComplete && t2.kostnadOsaker && t2.netProfit >= 0
+            ? undefined
+            : "critical",
+    },
   ];
+  /* Två rader om fem: det som händer (försäljning → annonser → MER) överst,
+     kostnaderna och vad som blev kvar under. */
+  const kpiOrdning = [
+    T.dashboard.kpi.sales, T.dashboard.kpi.orders, T.dashboard.kpi.aov, T.dashboard.kpi.adSpend, T.dashboard.kpi.mer,
+    T.dashboard.kpi.cogs, T.dashboard.kpi.duty, T.dashboard.kpi.fixedCosts, T.dashboard.kpi.netProfit, T.dashboard.kpi.profitPerDay,
+  ];
+  kpis.sort((a, b) => kpiOrdning.indexOf(a.label) - kpiOrdning.indexOf(b.label));
 
   return (
     <Page
@@ -1981,7 +2146,7 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
 
             <Hero result={result} money={money} T={T} lang={lang} currency={currency} monthlyGoal={monthlyGoal} />
 
-            <InlineGrid columns={{ xs: 2, md: 4 }} gap="300">
+            <InlineGrid columns={{ xs: 2, md: 3, lg: 5 }} gap="300">
               {kpis.map((k) => (
                 <Card key={k.label}>
                   <BlockStack gap="100">
@@ -2004,6 +2169,25 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
                 </Card>
               ))}
             </InlineGrid>
+
+            {d.perMarknad && d.perMarknad.length > 1 ? (
+              <Marknadsoversikt
+                rader={d.perMarknad}
+                omarktSpend={d.omarktSpend}
+                dagarUtan={d.dagarUtanMarknad}
+                money={money}
+                mult={mult}
+                nf={nf}
+                lang={lang}
+                T={T}
+                onValj={(m) => {
+                  const nya = new URLSearchParams(params);
+                  nya.set("market", m);
+                  nya.delete("all");
+                  setParams(nya);
+                }}
+              />
+            ) : null}
 
             <InlineGrid columns={{ xs: 1, md: 2 }} gap="300">
               <Card>

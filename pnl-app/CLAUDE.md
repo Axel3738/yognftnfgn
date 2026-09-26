@@ -1354,6 +1354,34 @@ slår ihop **två** källor: `BILLING_EXEMPT_SHOPS` i miljön (som förut) och
 att fylla på med en push — Axel ska inte behöva klicka i Railways
 miljövariabler. Lägg till hela `.myshopify.com`-adressen i små bokstäver.
 
+### Per marknad, AOV-ruta och vinst per dag (2026-09-26, build marknadsoversikt-v116)
+Axel: *"jag behöver veta exakt vad min breakeven roas är [i USA] … och hur
+mycket vinst jag ligger på varje dag … AOV på dashboarden men man kanske
+redan gör det?"* AOV fanns — som grå text under Ordrar, och han såg den
+inte. Break-even per land fanns — bakom filtret ?market=US, ett land i taget.
+- **Tio rutor i två rader** (`kpiOrdning`): Försäljning, Ordrar, **Snittorder
+  (AOV)**, Annonser, MER / COGS, Tull, Fasta, Nettovinst, **Vinst per dag**
+  (nettovinst ÷ periodens dagar, samma färgregel och "≤" som nettovinsten).
+  AOV-rutans pil jämför mot föregående periods totalSales ÷ orders.
+- **Kortet "Per marknad"** (`lib/marknadsoversikt.ts`, 5 tester): en rad per
+  land, bara i hela butikens vy och bara när fler än ett land sålt. Ur
+  SAMMA dagsrader (`readDaily` → `delaMarknader` → `marknadsdelar`) och
+  SAMMA annonsrader (`getSpend` → `perMarknad` → `byMarket`) — inga extra
+  anrop mot Shopify eller Meta. Varje land räknas med `compute()` med
+  `fixedMonthlyTotal: 0`: **bidraget är före fasta kostnader**, de hör till
+  butiken. Tre regler som sitter i koden:
+  1. **Break-even räknas utan annonskostnad** (omsättning ÷ bruttovinst), så
+     den står även för ett land utan märkta kampanjer. Annonser, MER och
+     bidrag blir då "inga kampanjer märkta"/"—", aldrig 0.
+  2. **"*" = landet har ingen egen kostnadspost** (CostChange/CostTier med
+     market) och räknas på butikens standardkostnad — texten under tabellen
+     säger det med namn. Frakten till USA är inte frakten till Sverige.
+  3. **"≥" på break-even / "≤" på bidraget** när > 2 % av landets försäljning
+     saknar kostnad, samma gräns som panelen. Ingen färg då.
+  Under tabellen: länder på standardtull, annonskostnad på omärkta kampanjer
+  (`omarktSpend`, i butikens summa men i inget land), dagar utan uppdelning.
+  Klick på landet sätter ?market=.
+
 ### Enhet på varje belopp (2026-09-26, build enheter-v115)
 Axels ask: *"fixa enheter på varje metric … det är fett jobbigt att vi inte
 kan se det så jävla tydligt"*. Panelen (`app._index.tsx`) hade redan valuta,
