@@ -76,6 +76,18 @@ i `stonebite/test` med första utökningen.
 
 ---
 
+## Byggordningen efter Evolve (2026-09-26, alla tre svaren i `SVAR.md`)
+
+1. **Ägarens dagskort:** MER per verksamhet i rätt valuta, NCPA och vinstbidrag per butik med kursens formel (nettoomsättning − varukostnad − frakt − avgifter − reklam). Svar 1.
+2. **Creative-tavlan för hela laget:** batcher planerade/klara/försenade, tid brief → live, andel vinnare och breakthroughs, mix nya idéer/iterationer, annonser äldre än 10 dagar utan leverans. Utan kronor. Ur Notion-hubbarna och etiketterna. Svar 3 (D1).
+3. **Privat scorecard per person på Min sida:** redigerarens fem tal (Karlo), kundtjänstens fem tal (Shaun), avstämning dag 30 för nya, självskattning en gång i månaden. Svar 2 och 3.
+4. **Leverans som arbetslista, tvistratio, larm när en källa blir gammal.** Kursen saknar dem, vår data räcker. Egen design.
+5. **Missloggen och larmmatrisen.** Kursen saknar dem. Egen design, efter att punkt 1–3 ger oss talen att larma på.
+
+Två lager är svaret på teambuilding-frågan: lagets tavla visar gemensamt arbete och vinster, individens tal syns bara för personen och chefen.
+
+---
+
 ## Det här kan jag bygga direkt, utan att vänta på Evolve
 
 1. Rätta två buggar: "okänt" på Leverans (`vy/drift.mjs:509/516/547`) och ROAS-kortet mot break-even i stället för 2,0 (`vy/oversikt.mjs:198`).

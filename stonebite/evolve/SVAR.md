@@ -234,6 +234,117 @@ redigerare ser sitt resultat utan att se spend. Boten igen: vår timvisa spårni
 
 ---
 
-## Svar 3
+## Svar 3, 2026-09-26: teamet (meddelande 3)
 
-Väntar. Axel klistrar in det när boten svarat.
+### Kort, på svenska
+
+**Det här säger kursen:**
+
+| Punkt | Svar | Källa |
+|---|---|---|
+| Upplärning | En veckas uppstart med veckomål. 30 dagars prövotid inne i en riktig anställning: fast lön, KPI:er nedskrivna, avstämning dag 30 där båda kan gå. Provjobb före anställning. | D2, C4 |
+| Creative-tavlan (ClickUp-mastermind) | Batcher planerade / klara / skickade / försenade, interna revisioner per vecka, tid brief → live, tid godkänd → live, andel vinnare och "super winners", mix ideation/iteration/imitation, fel vid launch (fel landningssida), flagga för annonser > 10 dagar och < 3 dagar, kapacitet 7–14 videor per redigerare och vecka. | D1 |
+| Månadsscorecard | Självskattning av skicklighet och motivation varje månad. Leveranser och träffsäkerhet kollas varje vecka. | D2 |
+| Bonus till redigerare | Belöna vinnare, aldrig fart (Spencer). % av spend på annonser de gjort (Shaun, konsensus). Nicolò: träffsäkerhet går att fuska med (iterationer på en gammal vinnare), % av spend gör det inte, för "spend only goes where ads work". Hans modell: stark grundlön + % av spend på allt utom BOF-annonser. | C1, C2, C3 |
+| Andra bonusmodeller | 5 % av spend på topp 3–5 vinnare, 20–30 % av vinsten över prognos, fast belopp per vinnare ($500–1 000), titlar som karriärsteg, lönehöjning 10 % var sjätte månad för roller utan intäkt. | D2 |
+| Tävling och insyn | "Competition motivates (top ads); dashboards for transparency." Gemensam tavla med lagets tal (batcher, ledtid, träffsäkerhet), individens tal i ett eget ark för 1:1. **Två lager.** | D2, D1 |
+| Verktyg | ClickUp, Google Sheets, Milanote, Notion. ClickUp-systemet tog 30–40 timmar + månader av justeringar. Inga vinstverktyg nämns. | D1 |
+
+**Det här har kursen INTE:** mötesrytm, EOD-format, tidrapportering, kvittens på ändrade SOP:er,
+en upplärningsplan dag för dag, bonus till VA och produkttestare, om en topplista med pengar
+hjälper eller stjälper, gemensamma mål och veckans vinster, och köpa eller bygga.
+
+### Vad det betyder för oss
+
+| Råd | Hos oss i dag | Vad vi gör |
+|---|---|---|
+| Två lager: lagets tavla + individens scorecard | Topplistan visar allas pengar. Ingen lagtavla. | Detta är svaret på teambuilding-frågan. Bygga: lagtavla för alla (utan kronor) + privat scorecard på Min sida. |
+| ClickUp-tavlans mått | Notion-hubbarna har datan (status, datum, Ansvarig). Etiketterna har vinnarna. | Bygga creative-tavlan ur Notion + etiketterna. |
+| % av spend, inte fart eller träffsäkerhet | Redigerarna får 0,4 % av spenden på sina annonser. | Kursen stöder vår modell. Nicolòs undantag (inte BOF) är Axels beslut. Träffsäkerhet visas men betalas inte. |
+| 30 dagars prövotid med KPI:er nedskrivna | `docs/os/EDITOR-SOP.md` har "How you are measured". Ingen avstämning dag 30. | Dag 30-kortet på Min sida för nya personer. |
+| Månadens självskattning | Inget. | Enkelt formulär på Min sida, en gång i månaden. |
+| VA-bonus, mötesrytm, EOD, tidrapport | Kursen har inget. | Vi designar själva. |
+
+### Botens svar, ordagrant
+
+> The sources cover editor incentives, hiring/onboarding frameworks, and ClickUp dashboard metrics well — but meeting rhythms, EOD formats, hour tracking, VA-specific bonuses, leaderboard psychology, and profit tool comparisons are largely uncovered.
+>
+> **1. Meeting rhythm, scorecard management, EOD format, hours, 30-day onboarding**
+>
+> The sources give you pieces, not a complete system:
+>
+> Onboarding: The Evolve mastermind session specifies a 1-week ramp-up with weekly KPIs and clear expectations, plus a 30-day probation period where both sides can walk away [D2]. Nicolò adds detail: the 30 days isn't a trial gig — it's a probation inside a full-time hire. "Full-time contract, salary he can live on, KPIs written down, and a defined check-in at day 30 where you either confirm or part ways." Frame it two-way: the 30 days is also their window to evaluate you [C4]. Spencer uses 30-day probation with an assessment edit before hiring [C4]. Shaun says don't pay for assessment briefs — if editors refuse a free 30-second test, "may mean they not hungry enough" [C4].
+>
+> Scorecard metrics (from ClickUp mastermind) [D1]:
+> * Batches: planned vs completed vs shipped vs overdue
+> * Internal revisions per week
+> * Time to ship (avg days, brief → launched)
+> * Time to launch (approved → launched)
+> * Hit rates: % winners, % super winners
+> * Ad format/type breakdown (ideation vs iteration vs imitation)
+> * Errors tagged at launch (wrong LP/ad)
+> * Ads >10 days / <3 days flags
+> * Editor capacity: 7-14 videos/week; unaware ads 3-4 hrs, normal 1-2 hrs
+>
+> Monthly scorecards: The mastermind session mentions monthly scorecards using skill/motivation self-assessments [D2]. Performance tracking is weekly via ClickUp, with deliverables and hit rates checked weekly [D2].
+>
+> What's NOT covered: No source specifies a daily/weekly/1:1 meeting rhythm. No source covers EOD report format. No source covers hour tracking for remote teams. No source covers SOP change-acknowledgement systems. No source covers a step-by-step 30-day onboarding curriculum. Your situation — EOD reports that exist as templates but not as data, no 1:1 routine — is ahead of what the sources document in terms of self-awareness but the sources don't give you the fix.
+>
+> **2. Bonus structures that change behavior**
+>
+> Editors: Spencer is clear: don't incentivize speed — "just because you finish fast doesn't mean that's good. You should be incentivizing winning ads. Incentives reinforce the outcomes that you want" [C1]. The consensus across sources is % of ad spend on winning ads [C1]. Shaun's model: editors get salary bumps when performing at their role, plus incentive % of ad spend for ads they make [C3].
+>
+> Creative strategist/senior roles: Nicolò draws a sharp distinction: "output is how you pay editors. You want winners, not volume. Hit rate sounds smart but it's easy to trick — current winner can have multiple iterations while nothing completely new ever scales." His structure: strong base (non-negotiable), % of spend on everything they produce except BOF ads [C2]. For hiring a senior strategist: $10k+/mo + % of spend on winners [C4].
+>
+> Specific incentive models from the mastermind [D2]:
+> * Ad spend % on top 3-5 winning ads (5%; multi-five figures/month)
+> * Profit share above projection (20-30% of excess; win-win)
+> * Flat per winner ($500-1K)
+> * Titles as progression (copywriter → strategist; junior → senior)
+> * Equity for key roles (COO, creative director)
+> * Non-revenue roles: salary bumps (10% every 6 months), flat bonuses, appreciation
+>
+> Where bonus systems go wrong: Nicolò's key insight is that hit rate is gameable — "current winner can have multiple iterations, and they can influence your hit rate, while nothing completely new ever scales. It's also a pain to define: what counts as a hit, at what spend, over what window" [C2]. % of spend is harder to game because "spend only goes where ads work" [C2].
+>
+> VAs and product researchers: No source covers VA-specific bonus structures. Your $5-per-review bonus earning zero because only 2 of ~1,300 reviews named anyone — that's a design problem the sources don't address. No source covers product researcher compensation models either. No source.
+>
+> **3. Dashboards for morale vs. surveillance, leaderboards, privacy**
+>
+> The sources lean toward transparency and competition as motivators, but don't address the surveillance concern directly.
+>
+> What the sources support: The mastermind session states "competition motivates (top ads); dashboards for transparency" [D2]. The ClickUp setup tracks individual KPIs in Google Sheets (moving to ClickUp), with workload visible via assignees [D1]. Incentives (ad spend bonuses) are tracked in sheets/ClickUp [D1].
+>
+> Editor leaderboard: Your current model — editors see a commission leaderboard — aligns with the "competition motivates" principle [D2]. But the sources don't address whether a pure money leaderboard helps or hurts, or what the right balance is. Nicolò's point about % of spend being the right metric [C2] suggests the leaderboard should show spend-on-their-ads (or commission derived from it), not raw output metrics that could feel like surveillance.
+>
+> What should stay private: The ClickUp mastermind shows individual KPIs in a separate Google Sheet, not on the shared board — the team board shows aggregate metrics (batches completed, time to ship, hit rates), while individual performance lives in a sheet [D1]. This suggests a two-layer model: team-level dashboards for shared visibility, individual scorecards for 1:1 conversations.
+>
+> Shared team board content: The ClickUp setup shows queue status, planned vs completed batches, overdue tasks, and weekly hit rates at the team level [D1]. No source covers team SLAs, shared goals, or "weekly wins" displays. No source addresses the gap you're seeing — "dashboard shows money, not teamwork."
+>
+> **4. Dashboard and profit tools — build vs buy**
+>
+> The only tools mentioned in the sources are operational/creative tracking tools, not profit dashboards:
+> * ClickUp — the primary tool Spencer's agency uses for creative production tracking, built over 30-40 hours plus months of tweaking [D1]
+> * Google Sheets — for individual KPIs and incentive tracking [D1]
+> * Milanote — visual planning [D1]
+> * Notion — media buyer use [D1]
+>
+> No source mentions Triple Whale, TrueProfit, Polar, or any profit-tracking/attribution tool. No source covers the build-vs-buy decision or when building with AI is better than buying. No source.
+>
+> Your approach of building your own dashboard with Claude is not addressed in the sources. The ClickUp mastermind notes their system was "built over 30-40 hours + months tweaking" with formulas and automations — suggesting even off-the-shelf tools require significant customization [D1]. But there's no source comparing that to buying a dedicated profit tool.
+>
+> **Bottom line:** The strongest coverage is on editor/strategist compensation (% of spend on winners, not speed or output [C1]), the 30-day probation model [C4][D2], and ClickUp dashboard metrics [D1]. Meeting rhythms, EOD formats, hour tracking, VA bonuses, leaderboard psychology, and profit tool comparisons are gaps — worth asking the community directly, especially other operators running remote Philippines teams.
+
+---
+
+## Alla tre svaren ihop
+
+**Kursen har svar på:** ägarens KPI-trappa (MER → NCPA → LTV → CM), vinstformeln,
+vinnaretiketterna, redigerarnas mått och ersättning, prövotiden och creative-tavlan med två lager
+(lagets tavla + individens scorecard).
+
+**Kursen har INTE svar på:** kundtjänstens mål, leverans, tvistgränser, produkttestets ekonomi,
+larm, missloggen, mötesrytm, EOD, VA-bonus, valutor, plan mot utfall och köpa eller bygga. Där
+bygger vi efter egen data. Boten sa tre gånger att vi ligger före källorna (nattreglerna,
+spårningen, självinsikten om EOD).
+
+Byggordningen står i `LUCKOR.md` → "Byggordningen efter Evolve".
