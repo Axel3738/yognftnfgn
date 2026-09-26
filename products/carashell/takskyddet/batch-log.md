@@ -2210,3 +2210,12 @@ köpsiffra mot den här raden.
 
 Samma två rader, samma md5, samma slutkort med `carashell.se`. Inget
 uppladdat, ingen status ändrad. Kontot står kvar på 760 annonser.
+
+## 2026-09-26 — NO-rundan: samma fem rader, alla live
+
+5 rader i `SE-ACTIVE to be translated` (gårdagens sex minus `OB_105_1`, som
+US-rundan tagit vidare till `Approved`). Alla fem redan live och tillbakalästa
+som ACTIVE i ACTIVE adset. Inget renderat, inget uppladdat, 0 HeyGen-krediter,
+ingen status rörd. Approved-passet: **59 rader, 0 utan NO-annons.** Kampanjen
+ACTIVE med 12 adsets, pris 1 106 NOK läst live. GT/G-splitten orörd, frågan
+ligger hos Axel sedan 2026-09-23.
