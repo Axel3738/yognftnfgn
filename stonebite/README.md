@@ -337,3 +337,13 @@ Grillkliniken/CaraShell/Matstrumpor (ingen brandfil). Bank, kort och
 - Bäverbutikens försäljning saknas i sajten tills Shopify-appen fått
   godkännande för kunddata (`read_orders`). Sidan säger det rakt ut i stället
   för att visa noll.
+
+---
+
+## Evolve-frågorna om baksidan (2026-09-26)
+
+Axel vill veta vad de bästa e-handlarna trackar i sina dashboards och med sina anställda,
+var team misslyckas och hur det ska synas, och hur dashboarden kan bygga teamet.
+17 frågor till Evolve-boten står i `stonebite/evolve/FRAGOR.md` (engelska, en per meddelande,
+utan butiks- och personnamn). Luckorna bakom dem, med datakälla och byggplan per lucka, står i
+`stonebite/evolve/LUCKOR.md`. Svaren sparas i `stonebite/evolve/SVAR.md` när de kommer.
