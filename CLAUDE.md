@@ -933,7 +933,7 @@ det som återstår står i `klaviyo/SISTA-STEGEN.md`.
   ⚠️ Mätt i båda kontona: Viewed Product-priset är text ("299 kr"), så `floatformat` i det dynamiska
   blocket gav tomt — rättat; Bäverbutikens live F03 bär den gamla mallen.
 
-- ✅ **Spoks byggt 2026-09-26 (Axels order "bygg i spoks")**: 13 flöden + F14 och 22 kampanjutkast i Spoks workspace Bäverbutiken `f716ae36-…`, allt INAKTIVT — flöden, mejlsteg och utskick slås på bara i Spoks-appen. Id:n, triggers och skillnaderna mot Klaviyo (inget ordernummer, ingen Fulfilled Order-trigger, ingen sunset) i `klaviyo/spoks/README.md`. Klaviyo skickar fortfarande tills Axel byter; kör aldrig båda samtidigt.
+- ✅ **Spoks byggt 2026-09-26 (Axels order "bygg i spoks")**: 13 flöden + F14 och 22 kampanjutkast i Spoks workspace Bäverbutiken `f716ae36-…`, allt INAKTIVT — flöden, mejlsteg och utskick slås på bara i Spoks-appen. Id:n, triggers och skillnaderna mot Klaviyo (inget ordernummer, ingen Fulfilled Order-trigger, ingen sunset) i `klaviyo/spoks/README.md`. ⛔ **Klaviyo AVSTÄNGT 2026-09-26** (Axels order: "jag vill inte ha Klaviyo, jag vill bara köra Spoks"): alla 13 flöden i `QZ4jLG` satta till draft och K01 återkallad till utkast med `node klaviyo/stang-av.mjs --ja` (logg `klaviyo/konto/baverbutiken/avstangt.jsonl`, tillbakaläst: 0 igång). Slå aldrig på något i Klaviyo igen utan Axels ord. Spoks-planen är Paid (obegränsat, mätt med whoami); avsändaradressen saknades (senderEmail null).
 
 ## `bonus/` — alla i bolaget ska kunna tjäna pengar (NY 2026-09-21)
 
