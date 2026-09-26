@@ -101,6 +101,9 @@ const en = {
     thSales: "Sales",
     thAds: "Ads",
     thNetProfit: "Net profit",
+    thMer: "MER",
+    thBe: "BE",
+    thVerdict: "Verdict",
     hourly: {
       title: "By hour of day",
       sales: "Revenue",
@@ -189,6 +192,12 @@ const en = {
       dutyPerOrder: (orders: string, each: string) => `${orders} orders · ${each} each on average`,
       breakEven: (s: string) => `break-even ${s}`,
       maxCpa: (pct: number, s: string) => `max CPA @ ${pct} %: ${s}`,
+      targetMer: (s: string, pct: number) => `target ${s} (${pct} %)`,
+      targetOutOfReach: (pct: number) => `target ${pct} % out of reach`,
+      evolveRef: (s: string) => `Evolve's rule of thumb: BE + 1 = ${s}`,
+      breakEvenCpa: (s: string) => `break-even CPA ${s}`,
+      breakEvenCpaAtMost: (s: string) => `break-even CPA ≤ ${s}`,
+      breakEvenLabel: "Break-even MER",
       profitTooHigh: "too high — ad data missing",
       vsPrev: "vs prev",
     },
@@ -225,6 +234,21 @@ const en = {
     cogsChangeWeighted: (note: string, newPct: number, oldPct: number) =>
       `COGS: ${note} — the period spans the change date, the cost is weighted ${newPct} % new / ${oldPct} % old by revenue per day.`,
 
+    /* Skalningsbeslutet. Tecknet först är ikonen — status bärs av tecken OCH
+       text, aldrig av färgen ensam. "Dra ner" knyts bara till break-even. */
+    verdict: {
+      pull: "▼ Below break-even — pull back",
+      hold: "◆ Profitable, under target — hold",
+      push: "▲ Above target — room to scale",
+      short: { pull: "▼ Pull back", hold: "◆ Hold", push: "▲ Scale" },
+      shortPeriod: (days: number) =>
+        `${days === 1 ? "one day" : `${days} days`} — read 7+ days before scaling`,
+      defaultDuty: "based on default duty",
+    },
+    contributionAfterAds: "Contribution after ads",
+    band: { forlust: "ads lose money", tunt: "thin", sunt: "healthy", starkt: "strong" },
+    bandSource: "Evolve: 10–20 % of revenue after ads is healthy",
+
     visualTitle: "Visual breakdown",
     detailTitle: "Detailed breakdown",
     revenue: "Revenue",
@@ -247,8 +271,8 @@ const en = {
     thUnits: "Units",
     thNet: "Net",
     thCogs: "COGS",
-    thCm: "CM",
-    thMargin: "Margin",
+    thCm: "Gross profit",
+    thMargin: "Gross margin",
     thMultiple: "Multiple",
     missing: "missing",
   },
@@ -853,6 +877,7 @@ const en = {
         : `the Facebook login expires in ${days} ${days === 1 ? "day" : "days"} — open that store's Settings and log in again`,
     outsideHistory: (n: number, date: string) =>
       `Shopify only gives apps 60 days of orders: ${n} ${n === 1 ? "day" : "days"} before ${date} ${n === 1 ? "is" : "are"} left out of this store's figures, ad spend included`,
+    verdictDefaultDuty: (names: string) => `Verdict based on default duty (not confirmed): ${names}`,
     notesTitle: "Needs attention in another store",
     qualityTitle: "Included in the total, but profit reads too high",
     costMissing: (pct: number) =>
@@ -935,8 +960,14 @@ const en = {
     range: (low: string, high: string) => `${low}–${high}`,
     confidence: { good: "● Good confidence", low: "◐ Low confidence", hidden: "○ Too uncertain to show" },
     notEnough: "Not enough data yet",
-    verdictUnder: (cpa: string, max: string, h: number) => `Your CPA (${cpa}) is under the ${h}-day max CPA (${max}): profitable within ${h} days.`,
-    verdictOver: (cpa: string, max: string, h: number) => `Your CPA (${cpa}) is over the ${h}-day max CPA (${max}): customers do not pay back within ${h} days.`,
+    kpiBreakEven: (h: number) => `Break-even CAC (${h} d)`,
+    kpiBreakEvenSub: (h: number) => `contribution per customer within ${h} days`,
+    verdictUnder: (cpa: string, max: string, h: number) =>
+      `Your CAC (${cpa}) is under the ${h}-day max CPA at your target margin (${max}): above your target — room to scale.`,
+    verdictHold: (cpa: string, max: string, be: string, h: number) =>
+      `Your CAC (${cpa}) is over your target max CPA (${max}) but under the ${h}-day break-even (${be}): profitable within ${h} days, below your target margin — hold.`,
+    verdictOver: (cpa: string, be: string, h: number) =>
+      `Your CAC (${cpa}) is over the ${h}-day break-even (${be}): each new customer loses money within ${h} days — pull back.`,
     verdictNoCpa: "Connect Meta and fetch 30 days of ad spend to compare CPA against customer value.",
     horizonLabel: "Horizon that drives max CPA",
     horizonHelp: "Days after the first order. 90 is the default for dropshipping.",
@@ -1061,6 +1092,9 @@ const sv: Texts = {
     thSales: "Försäljning",
     thAds: "Annonser",
     thNetProfit: "Nettovinst",
+    thMer: "MER",
+    thBe: "BE",
+    thVerdict: "Besked",
     hourly: {
       title: "Per timme på dygnet",
       sales: "Omsättning",
@@ -1149,6 +1183,12 @@ const sv: Texts = {
       dutyPerOrder: (orders: string, each: string) => `${orders} ordrar · ${each} styck i snitt`,
       breakEven: (s: string) => `break-even ${s}`,
       maxCpa: (pct: number, s: string) => `max CPA @ ${pct} %: ${s}`,
+      targetMer: (s: string, pct: number) => `mål ${s} (${pct} %)`,
+      targetOutOfReach: (pct: number) => `målet ${pct} % går inte att nå`,
+      evolveRef: (s: string) => `Evolves tumregel: BE + 1 = ${s}`,
+      breakEvenCpa: (s: string) => `break-even-CPA ${s}`,
+      breakEvenCpaAtMost: (s: string) => `break-even-CPA ≤ ${s}`,
+      breakEvenLabel: "Break-even-MER",
       profitTooHigh: "för hög — annonsdata saknas",
       vsPrev: "vs förra",
     },
@@ -1185,6 +1225,19 @@ const sv: Texts = {
     cogsChangeWeighted: (note: string, newPct: number, oldPct: number) =>
       `COGS: ${note} — perioden spänner över brytdatumet, kostnaden är vägd ${newPct} % ny / ${oldPct} % gammal efter omsättning per dag.`,
 
+    verdict: {
+      pull: "▼ Under break-even — dra ner",
+      hold: "◆ Lönsamt, under målet — håll",
+      push: "▲ Över målet — utrymme att skala",
+      short: { pull: "▼ Dra ner", hold: "◆ Håll", push: "▲ Skala" },
+      shortPeriod: (days: number) =>
+        `${days === 1 ? "en dag" : `${days} dagar`} — läs 7+ dagar innan du skalar`,
+      defaultDuty: "räknat på standardtull",
+    },
+    contributionAfterAds: "Bidrag efter annonser",
+    band: { forlust: "annonserna förlorar pengar", tunt: "tunt", sunt: "sunt", starkt: "starkt" },
+    bandSource: "Evolve: 10–20 % av omsättningen efter annonser är sunt",
+
     visualTitle: "Visuell uppdelning",
     detailTitle: "Detaljerad uppdelning",
     revenue: "Omsättning",
@@ -1207,8 +1260,8 @@ const sv: Texts = {
     thUnits: "Enheter",
     thNet: "Netto",
     thCogs: "COGS",
-    thCm: "TB",
-    thMargin: "Marginal",
+    thCm: "Bruttovinst",
+    thMargin: "Bruttomarginal",
     thMultiple: "Multipel",
     missing: "saknas",
   },
@@ -1813,6 +1866,7 @@ const sv: Texts = {
         : `Facebook-inloggningen går ut om ${days} ${days === 1 ? "dag" : "dagar"} — öppna den butikens Inställningar och logga in igen`,
     outsideHistory: (n: number, date: string) =>
       `Shopify ger appar bara 60 dagars ordrar: ${n} ${n === 1 ? "dag" : "dagar"} före ${date} är utelämnade ur butikens siffror, annonskostnaden också`,
+    verdictDefaultDuty: (names: string) => `Beskedet räknat på standardtull (inte bekräftad): ${names}`,
     notesTitle: "Behöver göras i en annan butik",
     qualityTitle: "Med i summan, men vinsten är för hög",
     costMissing: (pct: number) =>
@@ -1892,8 +1946,14 @@ const sv: Texts = {
     range: (low: string, high: string) => `${low}–${high}`,
     confidence: { good: "● God säkerhet", low: "◐ Låg säkerhet", hidden: "○ För osäkert att visa" },
     notEnough: "För lite data än",
-    verdictUnder: (cpa: string, max: string, h: number) => `Din CPA (${cpa}) är under ${h}-dagars max-CPA (${max}): lönsamt inom ${h} dagar.`,
-    verdictOver: (cpa: string, max: string, h: number) => `Din CPA (${cpa}) är över ${h}-dagars max-CPA (${max}): kunderna betalar inte tillbaka inom ${h} dagar.`,
+    kpiBreakEven: (h: number) => `Break-even-CAC (${h} d)`,
+    kpiBreakEvenSub: (h: number) => `täckningsbidrag per kund inom ${h} dagar`,
+    verdictUnder: (cpa: string, max: string, h: number) =>
+      `Din CAC (${cpa}) är under ${h}-dagars max-CPA vid din målmarginal (${max}): över målet — utrymme att skala.`,
+    verdictHold: (cpa: string, max: string, be: string, h: number) =>
+      `Din CAC (${cpa}) är över din mål-max-CPA (${max}) men under ${h}-dagars break-even (${be}): lönsamt inom ${h} dagar, under din målmarginal — håll.`,
+    verdictOver: (cpa: string, be: string, h: number) =>
+      `Din CAC (${cpa}) är över ${h}-dagars break-even (${be}): varje ny kund förlorar pengar inom ${h} dagar — dra ner.`,
     verdictNoCpa: "Koppla Meta och hämta 30 dagars annonskostnad för att jämföra CPA mot kundvärdet.",
     horizonLabel: "Horisont som styr max-CPA",
     horizonHelp: "Dagar efter första ordern. 90 är standard för dropshipping.",

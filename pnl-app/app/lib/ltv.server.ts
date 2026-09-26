@@ -32,6 +32,10 @@ import {
 
 export { HORISONTER };
 
+/* CAC-beslutet (tre band: skala / håll / dra ner) bor i skalning.ts så att
+   LTV-sidans klientdel kan använda det; exporteras vidare härifrån. */
+export { cacBeslut } from "./skalning.ts";
+
 export interface LtvOrder {
   kundHash: string | null;
   dag: string; // YYYY-MM-DD i butikens tidszon

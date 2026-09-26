@@ -137,3 +137,38 @@ test("tom indata ger tomt resultat utan krasch", () => {
   assert.equal(r.aterkopsgrad, null);
   assert.equal(r.dataFrom, null);
 });
+
+/* ------------------------------------------------------------------------ */
+/* CAC-beslutet: tre band mot max-CPA (mål) och break-even (bidrag).          */
+
+const { cacBeslut } = await import("../app/lib/ltv.server.ts");
+
+test("cacBeslut: CAC 180 mot max-CPA 90 och break-even 240 ⇒ håll, inte dra ner", () => {
+  const mc = { maxCpa: { mid: 90 }, breakEven: { mid: 240 }, konfidens: "good" };
+  assert.equal(cacBeslut(180, mc), "hold");
+});
+
+test("cacBeslut: gränserna — exakt max-CPA ⇒ skala, exakt break-even ⇒ håll, över ⇒ dra ner", () => {
+  const mc = { maxCpa: { mid: 90 }, breakEven: { mid: 240 } };
+  assert.equal(cacBeslut(90, mc), "push");
+  assert.equal(cacBeslut(240, mc), "hold");
+  assert.equal(cacBeslut(240.01, mc), "pull");
+});
+
+test("cacBeslut: inget beslut utan CAC, utan kundvärde eller när intervallet är för brett", () => {
+  const mc = { maxCpa: { mid: 90 }, breakEven: { mid: 240 } };
+  assert.equal(cacBeslut(null, mc), null);
+  assert.equal(cacBeslut(180, null), null);
+  assert.equal(cacBeslut(180, { ...mc, konfidens: "hidden" }), null);
+});
+
+test("LTV-tipsen: återbetalning på täckningsbidrag, dra ner bara över break-even", async () => {
+  const { evaluateTips } = await import("../app/lib/tips.server.ts");
+  // LTV 600 i omsättning, 240 i bidrag, CAC 250: har INTE betalat tillbaka.
+  const ids = evaluateTips({ ltv_tb_90: 240, cpa_new: 250, cohort_customers: 200 }, "sv", 10).map((t) => t.id);
+  assert.ok(ids.includes("ltv90_below_cpa"));
+  // CAC 180 mot mål 90 och break-even 240: inget "pausa".
+  const m = { cpa_new: 180, max_cpa: 90, break_even_cpa: 240, days: 30, new_customers: 500 };
+  assert.ok(!evaluateTips(m, "sv", 10).some((t) => t.id === "cpa_over_max"));
+  assert.ok(evaluateTips({ ...m, cpa_new: 260 }, "sv", 10).some((t) => t.id === "cpa_over_max"));
+});

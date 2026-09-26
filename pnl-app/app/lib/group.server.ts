@@ -48,6 +48,26 @@ export interface GroupResult {
     spend: number;
     /** Andel av butikens försäljning utan riktig kostnad (null = ingen försäljning). */
     uncostedShare: number | null;
+    /**
+     * Underlaget för MER, break-even och skalningsbeslutet per butik — redan
+     * omräknat till betraktarens valuta. Kvoterna är valutaneutrala, så de
+     * räknas ur samma omräknade belopp som summan. Utan dem såg ägaren
+     * "+2 000 kr" för en butik på MER 1,72× mot break-even 1,70× — en dålig
+     * dag från förlust — och fick öppna nio paneler för att se det.
+     */
+    orders: number;
+    cogs: number;
+    tariff: number;
+    fees: number;
+    /** Butikens egen målmarginal — målet är butikens, inte betraktarens. */
+    targetMargin: number;
+    /** Säljdagar i perioden (beslutet säger aldrig "skala" under 7). */
+    dagar: number;
+    spendComplete: boolean;
+    /** Inget annonskonto alls — annonskostnaden är 0 och inget beslut ges. */
+    noAdAccount: boolean;
+    /** Butikens tull är startvärdet, aldrig bekräftat. */
+    tullOkvitterad: boolean;
   }[];
   /** Butiker vars siffror inte gick att räkna in, med skäl. */
   missing: { shop: string; name: string | null; reason: string }[];
@@ -105,6 +125,8 @@ async function summeraButik(
       /** Varför butikens vinst är för hög (gratisvaror, inget annonskonto). */
       qualityNotes: string[];
       uncostedShare: number | null;
+      /** För skalningsbeslutet per rad — se GroupResult.rows. */
+      beslut: { targetMargin: number; dagar: number; spendComplete: boolean; noAdAccount: boolean; tullOkvitterad: boolean };
     }
   | { ok: false; shop: string; reason: string }
 > {
@@ -323,7 +345,8 @@ async function summeraButik(
   /* Ingen annonskoppling alls men försäljning: annonskostnaden räknas som
      noll. Utesluts INTE — en butik med äkta organisk försäljning hade då
      tappat riktig vinst ur summan — men sägs rakt ut. */
-  if (!metaKonton.length && !m.metaAccessToken && googleAntal === 0 && r.totals.totalSales > 0) {
+  const noAdAccount = !metaKonton.length && !m.metaAccessToken && googleAntal === 0;
+  if (noAdAccount && r.totals.totalSales > 0) {
     qualityNotes.push(T.group.noAdAccount);
   }
 
@@ -337,6 +360,13 @@ async function summeraButik(
   return {
     ok: true, shop: m.shop, currency: m.currency, totals, fxDate, note, historyNote,
     qualityNotes, uncostedShare: andelUtanKostnad,
+    beslut: {
+      targetMargin: Number(m.targetMargin),
+      dagar: r.days.length,
+      spendComplete: r.totals.spendComplete,
+      noAdAccount,
+      tullOkvitterad: !m.tariffConfirmedAt,
+    },
   };
 }
 
@@ -433,6 +463,11 @@ export async function summeraGrupp(
       netProfit: tt.netProfit,
       spend: tt.spend,
       uncostedShare: u.uncostedShare,
+      orders: tt.orders,
+      cogs: tt.cogs,
+      tariff: tt.tariff,
+      fees: tt.fees,
+      ...u.beslut,
     });
   }
 

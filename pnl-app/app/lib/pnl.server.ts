@@ -12,6 +12,20 @@
  */
 
 import { andelUtan, arKostnadOsaker } from "./kostnadstackning.ts";
+import { malUtrymmeFor, skalningsKvoter } from "./skalning.ts";
+
+/* Skalningsbeslutet bor i skalning.ts (får importeras av klienten); motorn
+   exporterar det vidare så att alla räknar med samma funktion. */
+export {
+  bidragsBand,
+  skalningsBeslut,
+  skalningsKvoter,
+  MIN_DAGAR_SKALA,
+  MIN_ORDRAR_BESLUT,
+  type Beslut,
+  type BidragsBand,
+  type SkalningsBeslut,
+} from "./skalning.ts";
 
 export interface SalesDay {
   day: string; // YYYY-MM-DD
@@ -290,6 +304,18 @@ export interface Totals {
   breakEvenRoas: number | null;
   /** Max CPA för att nå målmarginalen. */
   maxCpaAtTarget: number | null;
+  /**
+   * MER som krävs för målmarginalen: omsättning / (bruttovinst − målmarginal
+   * × omsättning). Samma tröskel som `maxCpaAtTarget` i MER-form — CPA ≤
+   * max-CPA gäller precis när MER ≥ targetMer. Null när målet inte går att nå
+   * ens utan annonser.
+   */
+  targetMer: number | null;
+  /** CPA där annonserna äter hela bruttovinsten: bruttovinst / ordrar. Null
+   *  när bruttovinsten är ≤ 0 (då finns ingen break-even, precis som MER). */
+  breakEvenCpa: number | null;
+  /** Evolves tumregel break-even + 1. Bara referens, aldrig beslutsgrund. */
+  evolveScaling: number | null;
 
   /** Fasta kostnader för perioden: (månadssumma × 12 / 365) × antal dagar. */
   fixedCosts: number;
@@ -550,6 +576,15 @@ export function compute(input: ComputeInput): ComputeResult {
   const fixedCosts = ((input.fixedMonthlyTotal ?? 0) * 12 / 365) * dayCount;
   const grossProfit = totalSales - cogs - tariff - fees;
 
+  /* Skalningskvoterna ur EN funktion (skalning.ts) — gruppens rader räknar
+     med samma, så MER-rutan och tabellen kan inte döma olika. */
+  const kvoter = skalningsKvoter({ totalSales, spend, grossProfit, targetMargin: settings.targetMargin });
+  /* Max-CPA och targetMer delar täljare. Förut stod max-CPA som
+     omsättning × (1 − mål − avgiftssats) − COGS − tull: matematiskt samma
+     sak, men flyttalen kunde skilja sig på sista decimalen, och då hade
+     CPA-rutan och MER-rutan kunnat säga olika precis på gränsen. */
+  const malUtrymme = malUtrymmeFor(grossProfit, settings.targetMargin, totalSales);
+
   const missingSpendDays = input.spendReliable
     ? []
     : sales.filter((s) => s.totalSales > 0 && !spendByDay[s.day]).map((s) => s.day);
@@ -584,12 +619,12 @@ export function compute(input: ComputeInput): ComputeResult {
     contribution,
     netContribution: contribution - fees,
 
-    breakEvenMer: grossContribution > 0 ? totalSales / grossContribution : null,
+    breakEvenMer: kvoter.breakEvenMer,
     breakEvenRoas: grossContribution > 0 ? totalSales / grossContribution : null,
-    maxCpaAtTarget:
-      orders > 0
-        ? (totalSales * (1 - settings.targetMargin - effFeeRate) - cogs - tariff) / orders
-        : null,
+    maxCpaAtTarget: orders > 0 ? malUtrymme / orders : null,
+    targetMer: kvoter.targetMer,
+    breakEvenCpa: orders > 0 && grossProfit > 0 ? grossProfit / orders : null,
+    evolveScaling: kvoter.evolveScaling,
 
     fixedCosts,
     grossProfit,

@@ -47,6 +47,14 @@ import { hemlandAv, marknadskod, marknadsnamn, stadaAvgifter } from "../lib/mark
 import { klampaFonster } from "../lib/historik";
 import { klockslag } from "../lib/returkoll";
 import { andelUtan, arKostnadOsaker } from "../lib/kostnadstackning";
+import {
+  bidragsBand,
+  skalningsBeslut,
+  skalningsKvoter,
+  type Beslut,
+  type BidragsBand,
+  type SkalningsBeslut,
+} from "../lib/skalning";
 import { getSpend, TIMFONSTER_DAGAR, timvisSpend } from "../lib/meta.server";
 import { hamtaKonton, konfigurationer } from "../lib/meta-konton.server";
 import { dagarKvar, VARNA_DAGAR } from "../lib/meta-login";
@@ -404,6 +412,9 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
   const tips = evaluateTips(
     {
       gross_margin: tt.kostnadOsaker ? undefined : (tt.grossMargin ?? undefined),
+      /* Bidragsmarginalen (tull och avgifter dragna) på samma bas som
+         annonsandelen — det MER-reglerna och klämman ska jämföra mot. */
+      contribution_margin: !tt.kostnadOsaker && tt.totalSales > 0 ? tt.grossProfit / tt.totalSales : undefined,
       mer: !tt.kostnadOsaker && tt.spendComplete && tt.totalSales > 0 ? tt.spend / tt.totalSales : undefined,
       fixed_share: tt.totalSales > 0 && fixedMonthlyTotal > 0 ? tt.fixedCosts / tt.totalSales : undefined,
       refund_rate: grossSalesSum > 0 ? returnsSum / grossSalesSum : undefined,
@@ -1029,8 +1040,10 @@ function ProfitBars({
   );
 }
 
-function BreakdownRow({ label, value, bold, colorKey, money, ofRevenue, dec }: {
+function BreakdownRow({ label, value, bold, colorKey, money, ofRevenue, dec, badge }: {
   label: string; value: number; bold?: boolean;
+  /** Bandmärkning bredvid etiketten (bidrag efter annonser). */
+  badge?: React.ReactNode;
   colorKey?: keyof typeof SLICE_COLORS;
   money: (v: number | null) => string;
   /** Andel av omsättningen — visas dämpat efter beloppet. */
@@ -1045,6 +1058,7 @@ function BreakdownRow({ label, value, bold, colorKey, money, ofRevenue, dec }: {
           <span style={{ width: 8, height: 8, borderRadius: 4, background: SLICE_COLORS[colorKey], display: "inline-block" }} />
         ) : null}
         <Text as="span" variant={bold ? "headingSm" : "bodyMd"}>{label}</Text>
+        {badge}
       </InlineStack>
       <InlineStack gap="150" blockAlign="center">
         {ofRevenue != null ? (
@@ -1060,6 +1074,42 @@ function BreakdownRow({ label, value, bold, colorKey, money, ofRevenue, dec }: {
   );
 }
 
+/* Skalningsbeslutets färg. Färgen är aldrig ensam: texten börjar med ett
+   tecken (▼ ◆ ▲) och säger beslutet i ord — samma regel som diagrammen. */
+const BESLUT_BADGE: Record<Beslut, "critical" | "warning" | "success"> = {
+  pull: "critical",
+  hold: "warning",
+  push: "success",
+};
+const BESLUT_TEXT_TON: Record<Beslut, "critical" | "caution" | "success"> = {
+  pull: "critical",
+  hold: "caution",
+  push: "success",
+};
+const BAND_BADGE: Record<BidragsBand, "critical" | "warning" | "success"> = {
+  forlust: "critical",
+  tunt: "warning",
+  sunt: "success",
+  starkt: "success",
+};
+
+/**
+ * Skalningsbeslutet som badge plus förbehållen: kort period ("läs 7+ dagar")
+ * och okvitterad tull ("räknat på standardtull"). Samma komponent i MER-
+ * rutan och annonsrutan — ett beslut, två enheter, aldrig två formuleringar.
+ */
+function BeslutsBadge({ b, dagar, T }: { b: SkalningsBeslut; dagar: number; T: Texts }) {
+  const forbehall = [
+    b.kortPeriod ? T.dashboard.verdict.shortPeriod(dagar) : null,
+    b.standardTull ? T.dashboard.verdict.defaultDuty : null,
+  ].filter(Boolean).join(" · ");
+  return (
+    <BlockStack gap="050" inlineAlign="start">
+      <Badge tone={BESLUT_BADGE[b.niva]}>{T.dashboard.verdict[b.niva]}</Badge>
+      {forbehall ? <Text as="span" variant="bodySm" tone="subdued">{forbehall}</Text> : null}
+    </BlockStack>
+  );
+}
 
 /**
  * Frågar efter månadskostnaderna direkt på förstasidan tills minst en finns.
@@ -1354,6 +1404,38 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
     return ` · ${arrow} ${Math.abs(ch * 100).toFixed(0)} % ${T.dashboard.kpi.vsPrev}`;
   };
 
+  /* Gruppens MER och break-even — kvoter, så de behöver ingen valuta-
+     omräkning utöver den summan redan gjort. Samma funktion som motorn. */
+  const gruppKvoter = group
+    ? skalningsKvoter({
+        totalSales: group.totals.totalSales,
+        spend: group.totals.spend,
+        grossProfit: group.totals.totalSales - group.totals.cogs - group.totals.tariff - group.totals.fees,
+        targetMargin,
+      })
+    : null;
+  /* Per butik: MER, break-even och beslutet, på butikens EGEN målmarginal.
+     Inget beslut för en butik med gratisvaror i siffran eller utan
+     annonskonto — dess vinst är ett tak och annonskostnaden kanske noll. */
+  const gruppRader = (group?.rows ?? []).map((r) => {
+    const kv = skalningsKvoter({
+      totalSales: r.totalSales,
+      spend: r.spend,
+      grossProfit: r.totalSales - r.cogs - r.tariff - r.fees,
+      targetMargin: r.targetMargin,
+    });
+    const osaker = arKostnadOsaker(r.uncostedShare);
+    const b = skalningsBeslut(
+      { spendComplete: r.spendComplete, spend: r.spend, orders: r.orders, ...kv },
+      { kostnadOsaker: osaker || r.noAdAccount, tullOkvitterad: r.tullOkvitterad, dagar: r.dagar },
+    );
+    return { r, kv, osaker, b };
+  });
+  const gruppKortPeriod = gruppRader.find((g) => g.b?.kortPeriod);
+  const gruppStandardTull = gruppRader
+    .filter((g) => g.b?.standardTull)
+    .map((g) => g.r.name || g.r.shop.replace(/\.myshopify\.com$/, ""));
+
   const ranges: [string, string][] = [
     ["today", T.dashboard.ranges.today],
     ["yesterday", T.dashboard.ranges.yesterday],
@@ -1362,7 +1444,48 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
     ["90d", T.dashboard.ranges.d90],
   ];
 
-  const kpis: { label: string; value: string; sub: string; tone?: "critical" | "success" }[] = [
+  /* Skalningsbeslutet — ETT beslut för hela panelen, på exakt de tal rutorna
+     visar. Null på tunt eller osäkert underlag: ofullständig annonskostnad,
+     under 3 ordrar, kostnad saknas på mer än 2 %. Aldrig "skala" på under 7
+     dagar. "Dra ner" bara under break-even, aldrig för att målet inte nås. */
+  const dagar = result.days.length;
+  const beslut = skalningsBeslut(t2, {
+    kostnadOsaker: t2.kostnadOsaker,
+    tullOkvitterad: !tariffConfirmed,
+    dagar,
+  });
+  const malPct = Math.round(targetMargin * 100);
+  /* Målet i MER-form. Utelämnat när kostnaden är osäker — då är även målet
+     en undre gräns, och break-even-texten säger redan varför. */
+  const malText = t2.kostnadOsaker
+    ? ""
+    : t2.targetMer != null
+      ? ` · ${T.dashboard.kpi.targetMer(mult(t2.targetMer), malPct)}`
+      : t2.breakEvenMer != null
+        ? ` · ${T.dashboard.kpi.targetOutOfReach(malPct)}`
+        : "";
+  /* Break-even i CPA-form. Saknad kostnad gör den till ett TAK — verklig
+     COGS är högre, bruttovinsten lägre, break-even-CPA lägre. */
+  const beCpaText =
+    t2.breakEvenCpa == null
+      ? ""
+      : ` · ${t2.kostnadOsaker ? T.dashboard.kpi.breakEvenCpaAtMost(money(t2.breakEvenCpa)) : T.dashboard.kpi.breakEvenCpa(money(t2.breakEvenCpa))}`;
+  /* Bidrag efter annonser (bruttovinst − annonser) som andel av omsättningen,
+     i Evolves band — bara när beslutet står, så att bandet aldrig syns utan
+     det. */
+  const bidragAndel = t2.totalSales > 0 ? t2.netContribution / t2.totalSales : null;
+  const band = beslut && bidragAndel != null ? bidragsBand(bidragAndel) : null;
+
+  const kpis: {
+    label: string;
+    value: string;
+    sub: string;
+    tone?: "critical" | "success" | "caution";
+    /** Skalningsbeslutet under undertexten. */
+    beslut?: SkalningsBeslut | null;
+    /** Dämpad referensrad längst ner (Evolves tumregel). */
+    note?: string;
+  }[] = [
     { label: T.dashboard.kpi.sales, value: money(t2.totalSales), sub: `${T.dashboard.kpi.shippingOfWhich(money(t2.shipping))}${delta(t2.totalSales, comparison?.totalSales)}` },
     { label: T.dashboard.kpi.orders, value: nf.format(t2.orders), sub: `${T.dashboard.kpi.avgOrder(money(t2.aov))}${delta(t2.orders, comparison?.orders)}` },
     { label: T.dashboard.kpi.fixedCosts, value: money(t2.fixedCosts), sub: T.dashboard.kpi.perDay },
@@ -1370,9 +1493,12 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
       label: T.dashboard.kpi.adSpend,
       value: money(t2.spend),
       sub: t2.spendComplete
-        ? `${T.dashboard.kpi.cpa(money(t2.cpa))}${delta(t2.spend, comparison?.spend, comparison?.spendComplete !== false)}`
+        ? `${T.dashboard.kpi.cpa(money(t2.cpa))}${beCpaText}${delta(t2.spend, comparison?.spend, comparison?.spendComplete !== false)}`
         : T.dashboard.kpi.missingDays(t2.missingSpendDays.length),
       tone: t2.spendComplete ? undefined : "critical",
+      /* Samma beslut i CPA-enheter: CPA < break-even-CPA gäller precis när
+         MER > break-even, och CPA ≤ max-CPA precis när MER ≥ målet. */
+      beslut,
     },
     {
       label: T.dashboard.kpi.cogs,
@@ -1409,11 +1535,16 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
          Uppskattad COGS ger "≈": talet vilar på en procentsats. */
       label: T.dashboard.kpi.mer,
       value: mult(t2.mer),
-      sub: t2.kostnadOsaker
+      sub: (t2.kostnadOsaker
         ? T.dashboard.kpi.breakEvenAtLeast(mult(t2.breakEvenMer), utanPct)
         : estimate && estimate.units > 0
           ? T.dashboard.kpi.breakEvenEstimated(mult(t2.breakEvenMer))
-          : T.dashboard.kpi.breakEven(mult(t2.breakEvenMer)),
+          : T.dashboard.kpi.breakEven(mult(t2.breakEvenMer))) + malText,
+      tone: beslut ? BESLUT_TEXT_TON[beslut.niva] : undefined,
+      beslut,
+      /* Evolves "break-even + 1" som dämpad referens tills ägaren valt
+         skalningslinje. Beslutet går på målmarginalen, inte på den här. */
+      note: !t2.kostnadOsaker && t2.evolveScaling != null ? T.dashboard.kpi.evolveRef(mult(t2.evolveScaling)) : undefined,
     },
     {
       /* Grönt bara när båda halvorna av kalkylen finns: annonskostnaden och
@@ -1559,11 +1690,15 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
 
                   {group ? (
                     <BlockStack gap="300">
-                      <InlineGrid columns={{ xs: 2, sm: 4 }} gap="300">
+                      <InlineGrid columns={{ xs: 2, sm: 3, lg: 6 }} gap="300">
                         {[
                           { key: "sales", label: T.dashboard.kpi.sales, value: money(group.totals.totalSales) },
                           { key: "orders", label: T.dashboard.kpi.orders, value: nf.format(group.totals.orders) },
                           { key: "spend", label: T.dashboard.kpi.adSpend, value: money(group.totals.spend) },
+                          { key: "mer", label: T.dashboard.kpi.mer, value: mult(gruppKvoter?.mer ?? null) },
+                          /* "≥" när gruppens kostnadsandel är över gränsen — då är
+                             break-even en undre gräns, precis som i butikens panel. */
+                          { key: "be", label: T.dashboard.kpi.breakEvenLabel, value: (gruppOsaker && gruppKvoter?.breakEvenMer != null ? "≥ " : "") + mult(gruppKvoter?.breakEvenMer ?? null) },
                           { key: "profit", label: T.dashboard.kpi.netProfit, value: money(group.totals.netProfit) },
                         ].map((k) => (
                           <Card key={k.key}>
@@ -1585,21 +1720,50 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
                       </InlineGrid>
 
                       <Card padding="0">
+                        {/* MER och BE hålls korta ("1,95×") — tabellen ska gå att läsa
+                            på en telefon med åtta kolumner. */}
                         <DataTable
-                          columnContentTypes={["text", "text", "numeric", "numeric", "numeric"]}
-                          headings={[T.dashboard.thStore, T.dashboard.thCurrency, T.dashboard.thSales, T.dashboard.thAds, T.dashboard.thNetProfit]}
-                          rows={group.rows.map((r) => [
+                          columnContentTypes={["text", "text", "numeric", "numeric", "numeric", "numeric", "text", "numeric"]}
+                          headings={[
+                            T.dashboard.thStore, T.dashboard.thCurrency, T.dashboard.thSales, T.dashboard.thAds,
+                            T.dashboard.thMer, T.dashboard.thBe, T.dashboard.thVerdict, T.dashboard.thNetProfit,
+                          ]}
+                          rows={gruppRader.map(({ r, kv, osaker, b }) => [
                             r.name || r.shop.replace(/\.myshopify\.com$/, ""),
                             r.currency,
                             money(r.totalSales),
                             money(r.spend),
+                            mult(kv.mer),
+                            (osaker && kv.breakEvenMer != null ? "≥ " : "") + mult(kv.breakEvenMer),
+                            b ? (
+                              <Badge key={`${r.shop}-beslut`} tone={BESLUT_BADGE[b.niva]}>{T.dashboard.verdict.short[b.niva]}</Badge>
+                            ) : "—",
                             /* "≤" = butikens vinst är ett tak: mer än 2 % av
                                dess försäljning saknar riktig kostnad. */
-                            (arKostnadOsaker(r.uncostedShare) ? "≤ " : "") + money(r.netProfit),
+                            (osaker ? "≤ " : "") + money(r.netProfit),
                           ])}
-                          totals={["", "", money(group.totals.totalSales), money(group.totals.spend), (gruppOsaker ? "≤ " : "") + money(group.totals.netProfit)]}
+                          totals={[
+                            "", "", money(group.totals.totalSales), money(group.totals.spend),
+                            mult(gruppKvoter?.mer ?? null),
+                            (gruppOsaker && gruppKvoter?.breakEvenMer != null ? "≥ " : "") + mult(gruppKvoter?.breakEvenMer ?? null),
+                            "",
+                            (gruppOsaker ? "≤ " : "") + money(group.totals.netProfit),
+                          ]}
                         />
                       </Card>
+
+                      {/* Beskedets förbehåll en gång under tabellen i stället
+                          för i varje cell — cellerna ska rymmas på en telefon. */}
+                      {gruppKortPeriod ? (
+                        <Text as="span" variant="bodySm" tone="subdued">
+                          {`${T.dashboard.thVerdict}: ${T.dashboard.verdict.shortPeriod(gruppKortPeriod.r.dagar)}`}
+                        </Text>
+                      ) : null}
+                      {gruppStandardTull.length ? (
+                        <Text as="span" variant="bodySm" tone="subdued">
+                          {T.group.verdictDefaultDuty(gruppStandardTull.join(", "))}
+                        </Text>
+                      ) : null}
 
                       {group.fxDate ? (
                         <Text as="span" variant="bodySm" tone="subdued">
@@ -1811,6 +1975,12 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
                     <Text as="span" variant="bodySm" tone="subdued">
                       {k.sub}
                     </Text>
+                    {k.beslut ? <BeslutsBadge b={k.beslut} dagar={dagar} T={T} /> : null}
+                    {k.note ? (
+                      <Text as="span" variant="bodySm" tone="subdued">
+                        {k.note}
+                      </Text>
+                    ) : null}
                   </BlockStack>
                 </Card>
               ))}
@@ -1832,6 +2002,21 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
                   <BreakdownRow label={T.dashboard.txFees} value={-t2.fees} colorKey="fees" money={money} dec={dec} ofRevenue={t2.totalSales > 0 ? t2.fees / t2.totalSales : undefined} />
                   <BreakdownRow label={T.dashboard.grossProfit} value={t2.grossProfit} bold money={money} dec={dec} ofRevenue={t2.totalSales > 0 ? t2.grossProfit / t2.totalSales : undefined} />
                   <BreakdownRow label={T.dashboard.ads} value={-t2.spend} colorKey="spend" money={money} dec={dec} ofRevenue={t2.totalSales > 0 ? t2.spend / t2.totalSales : undefined} />
+                  {/* Bidrag efter annonser, före fasta. Raden som skiljer "annonserna
+                      förlorar pengar" från "de fasta kostnaderna är gapet": −8 100 kr
+                      i nettovinst kan dölja +11 900 kr från annonserna. */}
+                  <BreakdownRow
+                    label={T.dashboard.contributionAfterAds}
+                    value={t2.netContribution}
+                    bold
+                    money={money}
+                    dec={dec}
+                    ofRevenue={bidragAndel ?? undefined}
+                    badge={band ? <Badge tone={BAND_BADGE[band]}>{T.dashboard.band[band]}</Badge> : undefined}
+                  />
+                  {band ? (
+                    <Text as="span" variant="bodySm" tone="subdued">{T.dashboard.bandSource}</Text>
+                  ) : null}
                   <BreakdownRow label={T.dashboard.kpi.fixedCosts} value={-t2.fixedCosts} colorKey="fixed" money={money} dec={dec} ofRevenue={t2.totalSales > 0 ? t2.fixedCosts / t2.totalSales : undefined} />
                   <BreakdownRow label={T.dashboard.kpi.netProfit} value={t2.netProfit} bold colorKey="profit" money={money} dec={dec} ofRevenue={t2.totalSales > 0 ? t2.netProfit / t2.totalSales : undefined} />
                 </BlockStack>

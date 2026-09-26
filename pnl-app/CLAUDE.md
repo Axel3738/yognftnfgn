@@ -402,6 +402,110 @@ i hans ordning:
 - Grillkliniken: Axel vill klona hela upplägget till en annan butik.
 - App Store-granskningssvaret: åtgärda när mejlet kommer.
 
+### Ett skalningsbeslut överallt: dra ner, håll, skala (2026-09-26)
+
+Varje tal ett skalningsbeslut behöver fanns redan — ingen skärm gjorde ett
+beslut av dem, och den enda som gjorde det (LTV) jämförde mot fel linje.
+MER-rutan visade "break-even X×" utan färg; målmarginalen fanns bara som
+max-CPA under en annan ruta; bidraget efter annonser (`netContribution`)
+visades aldrig; gruppens nio butiker hade ingen MER eller break-even.
+Räkneexempel: 300 000 kr, break-even 1,81× (bruttovinst 165 700 kr), MER
+1,95× (153 800 kr), fasta 20 000 kr. Nettovinsten −8 100 kr är röd — men
+annonserna ger +11 900 kr. Den som drar ner annonserna "för att stoppa
+förlusten" landar på −20 000 kr. Rätt besked: håll. På LTV-sidan var CAC 180
+kr mot max-CPA 90 kr (målmarginal) röd med "betalar inte tillbaka" och tipset
+"pausa" — fast varje kund gav +60 kr inom 90 dagar (bidrag 240 kr). Vid 500
+nya kunder/mån kastade rådet ~30 000 kr/mån.
+
+Byggt:
+- **`app/lib/skalning.ts`** (ren, testad, får importeras av klienten;
+  `pnl.server.ts` och `ltv.server.ts` exporterar vidare):
+  `skalningsKvoter` (MER, break-even, `targetMer`, Evolves BE + 1 — EN formel
+  för panel, grupp och motor), `malUtrymmeFor`, `skalningsBeslut(t, q)`,
+  `bidragsBand`, `cacBeslut`, `MIN_ORDRAR_BESLUT = 3`, `MIN_DAGAR_SKALA = 7`.
+- **Totals** får `targetMer` = omsättning / (bruttovinst − mål × omsättning),
+  `breakEvenCpa` = bruttovinst / ordrar (null när bruttovinsten ≤ 0, precis
+  som break-even-MER) och `evolveScaling` = break-even + 1. `maxCpaAtTarget`
+  räknas nu ur SAMMA täljare som `targetMer` (`malUtrymmeFor`) — förut en
+  annan, matematiskt lika, uppställning.
+- **Beslutet** är null när annonskostnaden är ofullständig, spend ≤ 0, under 3
+  ordrar, break-even saknas eller `kostnadOsaker`. Annars pull under
+  break-even, hold mellan break-even och målet (eller när målet inte går att
+  nå), push på/över målet. Under 7 säljdagar blir push hold med
+  `kortPeriod` ("en dag — läs 7+ dagar innan du skalar"); okvitterad tull ger
+  `standardTull` ("räknat på standardtull").
+- **Panelen:** MER-rutan "break-even X× · mål Y× (25 %)", värdet färgat
+  (röd/`caution`/grön), badge med tecken + text (▼ dra ner / ◆ håll /
+  ▲ skala) och en dämpad rad "Evolves tumregel: BE + 1 = Z×". Annonsrutan
+  "CPA X · break-even-CPA Y" (≤ Y när kostnaden är osäker) och samma badge.
+  Uppdelningen fick raden **Bidrag efter annonser** mellan Annonser och
+  Fasta, med % av omsättningen och — bara när beslutet står — ett band med
+  källan "Evolve: 10–20 % … är sunt".
+- **Tipsen:** ny `contribution_margin` = bruttovinst / omsättning.
+  `mer_over_margin`, `mer_above_median` och `margin_squeeze` räknar på den;
+  `margin_critical`/`margin_low` behåller bruttomarginalen (källsatta
+  bruttomarginaler).
+- **Gruppen:** raderna bär `orders`, `cogs`, `tariff`, `fees` (omräknade),
+  butikens egen `targetMargin`, `dagar`, `spendComplete`, `noAdAccount`,
+  `tullOkvitterad`. Tabellen fick MER, BE ("≥" vid osäker kostnad) och
+  beslutet som kort badge; rutorna gruppens MER och break-even-MER.
+  Förbehållen (kort period, vilka butiker som går på standardtull) står en
+  gång under tabellen. Inget beslut för en butik över 2 % utan kostnad eller
+  utan annonskonto.
+- **LTV-sidan:** `cacBeslut(cpaNew, mc)` i tre band — ≤ max-CPA skala
+  (grön), ≤ break-even håll (gul), annars dra ner (röd). Ny ruta
+  **Break-even-CAC (h d)**. `verdictUnder`/`verdictOver` omskrivna, ny
+  `verdictHold`. Tipsen: `break_even_cpa` = `mc.breakEven.mid` och
+  `cpa_over_max` mäts mot den; `cpa_near_max` säger "mål-max-CPA";
+  `ltv90_below_cpa`, `ltv180_thin`, `cpa_headroom` (och `mer_headroom`) läser
+  `ltv_tb_90`/`ltv_tb_180` — täckningsbidrag, inte omsättning. `ltv60_flat`
+  jämför fortfarande omsättning med AOV.
+- **Produkttabellen:** "CM"/"TB" heter nu **Gross profit/Bruttovinst** och
+  marginalen **Gross margin/Bruttomarginal** — kolumnen är netto − COGS,
+  inget annat dras.
+
+Medvetna beslut:
+- **Skalningslinjen är målmarginalen**, inte Evolves BE + 1. Ägaren har inte
+  valt (öppen fråga); BE + 1 visas bara dämpat. Byts linjen: ändra i
+  `skalningsBeslut`, ingen annanstans.
+- **Bidrag efter annonser ≥ målmarginalen är exakt villkoret för push.**
+  Därför heter det översta bandet "starkt", inte "utrymme att skala" som
+  planen sa: med mål 25 % hade bandet sagt "skala" vid 22 % bredvid en badge
+  som säger "håll". Skala-ordet bor bara i beslutet. Bandet "annonserna
+  förlorar pengar" (< 0 %) sammanfaller exakt med pull.
+- **Ikonen är ett tecken i texten** (▼ ◆ ▲), inte en Polaris-ikon:
+  `@shopify/polaris-icons` är inte ett deklarerat beroende.
+- **Beslutet räknas i klienten** ur tal som redan skickas — därför bor det i
+  en fil utan `.server`. Samma funktion i panel och grupp.
+- **Uppskattad COGS ger fortfarande beslut** (den räknas som täckt, se
+  kostnadstäckningen nedan) — MER-rutan säger "≈".
+- **LTV: inget beslut och inga tröskeltips när konfidensen är "hidden"** —
+  intervallet är för brett för att visa max-CPA, alltså också för brett för
+  att säga "dra ner".
+- **Dra ner på en dag är fortfarande dra ner.** Bara push kapas av 7-dagars-
+  regeln — att sluta förlora pengar är ingen skalning.
+- **Gruppen ger inget gruppbeslut**, bara per butik. En summa över nio
+  butiker döljer den butik som ska dras ner.
+
+Fällor:
+- ⚠ **`targetMer` och `maxCpaAtTarget` måste dela täljare.** Räknas de om var
+  för sig kan flyttalen skilja sig på gränsen, och då säger CPA-rutan och
+  MER-rutan olika. Egenskapstestet låser det.
+- ⚠ **Gruppens kvoter räknas på omräknade belopp** (COGS med försäljnings-
+  vägd kurs) — promilleskillnad mot butikens egen panel är väntad. Och
+  uppskattad COGS appliceras inte i gruppen, så en butik som vilar på
+  uppskattning får för låg BE där.
+- ⚠ **`mer_over_margin` kräver fortfarande `fixed_share`** — utan fasta
+  kostnader inmatade tiger den. Beslutsbadgen täcker det fallet.
+- ⚠ **Inte prövat skarpt.** Kontrollera efter deploy: 30d på SE-butiken ⇒
+  MER-rutan har badge och mål; ändra målmarginalen i Inställningar ⇒ målet
+  och ev. badgen flyttar sig, max-CPA följer med; Idag ⇒ aldrig "skala".
+- Tester: `test/beslut.test.mjs` (gränserna vid break-even och mål,
+  panelexemplet, null-fallen, en dag, standardtull, banden, egenskapstest
+  över 2 000 slumpade perioder, tipsens bidragsmarginal) och
+  `test/ltv.test.mjs` (`cacBeslut` 180/90/240 ⇒ håll, gränserna, hidden,
+  LTV-tipsen på täckningsbidrag).
+
 ### Saknade kostnader och tullens startvärde syns överallt (2026-09-26)
 
 Tre indata gjorde vinsten för hög och break-even för låg utan att något såg
