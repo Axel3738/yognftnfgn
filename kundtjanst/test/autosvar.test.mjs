@@ -434,7 +434,7 @@ test('flödet (--torr): ENKEL blir utkast med fakta, ARG blir utkast + flagga + 
   // ENKEL retur (Disa "vill returnera … hur gör jag?"): returinformationen ur brandfilen, flagga + VA-PRIO (VA:n tar emot returen), ingen order ⇒ inget ordernummer i raden.
   assert.deepEqual([per[15].hink, per[15].typ, per[15].atgard, per[15].flaggad, per[15].flyttad], ['ENKEL', 'retur', 'utkast', true, 'VA-PRIO']);
   const utkastDisa = b.utkast().find((u) => /disa@x\.se/.test(u.ra)).text;
-  assert.match(utkastDisa, /^Hej Disa!\n\nTack för ditt mejl\.\nSå här gör du returen:\n1\. Packa varan i originalförpackningen och i samma skick som du fick den\.\n2\. Skriv ditt namn och ordernummer tydligt på utsidan av paketet, och lägg med en kopia av orderbekräftelsen inuti\.\n3\. Skicka paketet till:\nSTONEBITE ECOM AB\nSjöhed 160\n442 74 Harestad\nSverige\nSkicka det som brev eller paket direkt till adressen ovan, inte till ett ombud\. Vi hämtar inte ut paket från ombud\.\n4\. Använd gärna en spårbar frakttjänst/);
+  assert.match(utkastDisa, /^Hej Disa!\n\nTack för ditt mejl\.\nSå här gör du returen:\n1\. Packa varan i originalförpackningen och i samma skick som du fick den\.\n2\. Skriv ditt namn och ordernummer tydligt på utsidan av paketet, och lägg med en kopia av orderbekräftelsen inuti\.\n3\. Skicka paketet till:\nSTONEBITE ECOM AB\nStenkolsgatan 1B\n417 07 Göteborg\nSverige\nSkicka det som brev eller paket direkt till adressen ovan, inte till ett ombud\. Vi hämtar inte ut paket från ombud\.\n4\. Använd gärna en spårbar frakttjänst/);
   // Axels beslut 2026-09-22 (B): 14 dagar från mottagandet, ur brandfilens tvister.returfonster_dagar.
   assert.match(utkastDisa, /\nReturen ska skickas inom 14 dagar från att du tog emot varan\.\nHela returpolicyn: https:\/\/baverbutiken\.se\/policies\/refund-policy\n/);
   // Brandfilen säger returfrakt_betalas_av: kund sedan 2026-09-21 (retur-SOP:en, commit 9cfa779a) ⇒ fraktraden står med. Aldrig ordet återbetalning.
@@ -977,7 +977,7 @@ test('SOP 38: företagsuppgifter besvaras direkt ur brandfilen — bara de godk�
   const r = await kor(b);
   assert.deepEqual([r.rader[0].hink, r.rader[0].typ, r.rader[0].atgard, Boolean(r.rader[0].flaggad)], ['ENKEL', 'foretag', 'utkast', false]);
   const t = b.utkast()[0].text;
-  assert.match(t, /Här är företagsuppgifterna: Stonebite Ecom AB, organisationsnummer 559576-2401, Sjöhed 160, 442 74 Harestad\. Företaget är momsregistrerat\./);
+  assert.match(t, /Här är företagsuppgifterna: Stonebite Ecom AB, organisationsnummer 559576-2401, Stenkolsgatan 1B, 417 07 Göteborg\. Företaget är momsregistrerat\./);
   assert.equal(/axel|odhner/i.test(t), false, 'aldrig ett personnamn (SOP 38)');
   // Utan foretag-blocket: SVÅR med orsak.
   const utan = { ...BRAND, svar: { ...(BRAND.svar ?? {}), foretag: null } };
@@ -1086,7 +1086,7 @@ test('Axels feedback 2026-09-22: arg + "hur gör vi en retur" ⇒ empati + retur
   const t1 = b1.utkast()[0].text;
   assert.match(t1, /^Hej Peter!\n\nJag förstår helt din frustration\. En produkt som inte alls ser ut som på bilden är helt oacceptabelt/);
   assert.match(t1, /\n\nSå här gör du returen:\n1\. Packa varan/);
-  assert.match(t1, /\nSTONEBITE ECOM AB\nSjöhed 160\n442 74 Harestad\nSverige\n/);
+  assert.match(t1, /\nSTONEBITE ECOM AB\nStenkolsgatan 1B\n417 07 Göteborg\nSverige\n/);
   assert.match(t1, /skicka gärna en bild på varan/);
   assert.equal(harForbjudet(t1), false);
   // Opostad order 13 dagar + arg ⇒ "legat opostad i 13 dagar"; faktan är spärrad (staltFakta) så inget läge-stycke.
@@ -1109,7 +1109,7 @@ test('Axels feedback 2026-09-22: arg + "hur gör vi en retur" ⇒ empati + retur
   // Returtexten på alla språk: adressen rad för rad, fönstret, policyn, inga löften; "kund" ⇒ fraktraden.
   for (const s of SPRAK) {
     const r = returText({ sprak: s, brand: KONFIG, ordernummer: '#6600' });
-    assert.match(r, /STONEBITE ECOM AB\nSjöhed 160\n442 74 Harestad\nSverige/);
+    assert.match(r, /STONEBITE ECOM AB\nStenkolsgatan 1B\n417 07 Göteborg\nSverige/);
     assert.match(r, /#6600/);
     assert.match(r, /\b14\b/, `Axels beslut 2026-09-22 (B): 14 dagar ur brandfilen, på ${s}`);
     assert.equal(/\b30\b/.test(r), false, `aldrig 30 dagar kvar i returtexten på ${s}`);

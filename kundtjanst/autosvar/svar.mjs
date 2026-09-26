@@ -481,7 +481,7 @@ export const STILLA_DAGAR = 3;   // äldre senaste skanning än så ⇒ "spårni
  * returfrakt_betalas_av, policy_url) som text på kundens språk, eller null
  * när butiken inte har någon returadress inskriven (då är returen VA:ns).
  * `ordernummer` = "#6600" eller tomt. Adressen skrivs på en rad per
- * kommadel ("STONEBITE ECOM AB, Sjöhed 160, 442 74 Harestad, Sverige").
+ * kommadel ("STONEBITE ECOM AB, Stenkolsgatan 1B, 417 07 Göteborg, Sverige").
  * Vem som betalar frakten sägs BARA när brandfilen säger det (kund/butik)
  * — tomt fält ⇒ ingen rad, aldrig en gissning. Ren.
  */
