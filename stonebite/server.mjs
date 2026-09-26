@@ -31,6 +31,7 @@ import { oversiktSida } from './vy/oversikt.mjs';
 import { butikerSida } from './vy/butiker.mjs';
 import { annonserSida } from './vy/annonser.mjs';
 import { redigerareSida, migSida, kontonSida } from './vy/team.mjs';
+import { lagetSida } from './vy/laget.mjs';
 import { kundtjanstSida, leveransSida } from './vy/drift.mjs';
 import { produkttestSida, recensionerSida } from './vy/produkter.mjs';
 import { bonusSida } from './vy/bonus.mjs';
@@ -286,6 +287,7 @@ function renderaApp({ nyckel, anvandare, extra = {} }) {
     case 'butiker': return butikerSida({ snapshot: snap });
     case 'annonser': return annonserSida({ snapshot: snap });
     case 'redigerare': return redigerareSida({ snapshot: snap, anvandare });
+    case 'laget': return lagetSida({ snapshot: snap, anvandare });
     case 'kundtjanst': return kundtjanstSida({ snapshot: snap, csrf: extra.csrf ?? '' });
     case 'leverans': return leveransSida({ snapshot: snap });
     case 'produkttest': return produkttestSida({ snapshot: snap, anvandare });

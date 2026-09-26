@@ -389,3 +389,22 @@ varukostnad − betalavgifter − reklam**.
 - Mätt 2026-09-26 (7 dygn): Bäverbutiken 228 365 kr (26,1 %), CaraShell 62 343 kr (13,7 %),
   Matstrumpor räknas inte (39 % av försäljningen saknar Cost per item: ätpinnar och strumporna).
 - 11 tester i `test/vinst.test.mjs`.
+
+## Laget — lagets tavla (2026-09-26, steg 2)
+
+Sidan **Laget** (`/app/laget`, `vy/laget.mjs`) ser alla roller. Den visar inga kronor. Det är Evolves två lager
+(`stonebite/evolve/SVAR.md`, svar 3): lagets tavla med gemensamt arbete och vinster, och individens tal privat.
+
+- **Veckans vinnare:** ny annons (senaste 35 dagarna) som tar minst 20 % av sin kampanjs reklam senaste 7
+  dagarna, i en kampanj med minst 1 000 kr på 7 dagar. Visas med redigerarens namn och andelen, aldrig beloppet.
+- **Lagets tal:** live senaste 7 dagarna, brief till live (median, Notion-radens skapelsedag → annonsens
+  created_time), andel vinnare, antal som legat över 10 dagar.
+- **Vem äger vad:** kön per redigerare (pågår, revision, granskas), live 7 d, vinnare. Ledtid och andel vinnare
+  per person ser bara ägare och chef (steg 3 blir det privata scorecardet).
+- Källa `kallor/tavla.mjs`: Notion via `commission/notion.mjs` (+ OPS-hubbarna, som commission), Meta via
+  `kallor/meta.mjs` `api`. Kopplingen annons → person är commission's `kopplaAnnons`, bara via hubbraden;
+  Matstrumpors "021"-rader kopplas på numret, bara inom Matstrumpors hubb. Bara svenska originalannonser (`arSvensk`).
+- Notion sparar ingen statushistorik: "över 10 dagar" räknas från radens skapelsedag, och sidan säger det.
+- Mätt 2026-09-26: 46 live på 7 dagar, brief till live 3,7 dygn, 4 vinnare av 150 nya annonser, 4 rader över
+  10 dagar (Carl). Jasper har 95 rader i granskning. Josh, Annabelle och Jerzee har inga annonsrader på 35 dagar.
+- 8 tester i `test/tavla.test.mjs` (bland annat: ingen krona för en redigerare, startsidan oförändrad).

@@ -91,6 +91,7 @@ const KALLNAMN = {
   bonus: 'Bonusen (Judge.me + Notion)',
   autosvar: 'Autosvaret (kundtjänstbotens logg)',
   valuta: 'Växelkurserna (ECB)',
+  tavla: 'Lagets tavla (Notion + Meta)',
   'shopify:vinst': 'Vinstunderlaget (varukostnad + avgifter, Shopify)',
 };
 

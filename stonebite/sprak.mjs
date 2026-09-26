@@ -28,6 +28,7 @@ const ORDBOK = {
   'Annonser': 'Ads',
   'Produkttest': 'Product testing',
   'Redigerare': 'Editors',
+  'Laget': 'The team',
   'Kundtjänst': 'Customer support',
   'Recensioner': 'Reviews',
   'Leverans': 'Delivery',

@@ -72,6 +72,7 @@ function las(sida) {
     godkand: godkand?.date?.start ?? null,
     url: sida.url,
     skapad: sida.created_time,
+    andrad: sida.last_edited_time,
   };
 }
 
