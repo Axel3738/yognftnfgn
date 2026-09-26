@@ -16,7 +16,7 @@ Price: 459 kr (jämförpris 599 kr, spara 140 kr / 23 %). Read live 2026-09-26 f
 
 **AI content:** none
 
-**Isolated variable:** the opening shot — PD_1_H3's rod going up through the stove (customer's own view) instead of PD_8_H1's camera inside the pipe; script, clips from 0:03 and captions are PD_8_H1's word for word.
+**Isolated variable:** the opening shot. PD_1_H3's rod going up through the stove (customer's own view) replaces PD_8_H1's camera inside the pipe; script, clips from 0:03 and captions are PD_8_H1's word for word.
 
 ## Hook
 

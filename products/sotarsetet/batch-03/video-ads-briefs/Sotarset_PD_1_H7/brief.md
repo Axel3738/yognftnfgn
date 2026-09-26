@@ -16,7 +16,7 @@ Price: 459 kr (jämförpris 599 kr, spara 140 kr / 23 %). Read live 2026-09-26 f
 
 **AI content:** none
 
-**Isolated variable:** the first 3–4 seconds — the camera inside the flue pipe as the brush comes down, instead of the rod going up through the stove; everything from 0:03 is the parent as delivered.
+**Isolated variable:** the opening shot. The camera inside the flue pipe as the brush comes down replaces the rod going up through the stove; everything from 0:03 is the parent as delivered.
 
 ## Hook
 

@@ -16,7 +16,7 @@ Price: 459 kr (jämförpris 599 kr, spara 140 kr / 23 %). Read live 2026-09-26 f
 
 **AI content:** none
 
-**Isolated variable:** the length of the problem section — 7 new seconds (0:03–0:10) inside the pipe before the rods are shown; opening and body are the parent's as delivered.
+**Isolated variable:** the length of the problem section. Seven new seconds (0:03–0:10) inside the pipe before the rods are shown; opening and body are the parent's as delivered.
 
 ## Hook
 

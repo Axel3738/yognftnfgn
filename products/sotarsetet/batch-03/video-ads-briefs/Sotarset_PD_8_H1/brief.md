@@ -16,7 +16,7 @@ Price: 459 kr (jämförpris 599 kr, spara 140 kr / 23 %). Read live 2026-09-26 f
 
 **AI content:** none
 
-**Isolated variable:** the order — the cleaning is already under way at second 0 (proof first), no problem build-up; clips and claims are the parent's.
+**Isolated variable:** the order of the beats. The cleaning is already under way at second 0 (proof first), no problem build-up; clips and claims are the parent's.
 
 ## Hook
 
