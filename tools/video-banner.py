@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Bränner in en svart banner med vit text överst i en video (eller bild).
+"""Bränner in en svart banner med vit text överst i en video eller bild (jpg/png).
 
 Byggd 2026-09-26 för Grillklinikens fars dag-test ("Roliga duken": samma sex
 videor, ett duplicerat adset med bannern "Farsdag 8 november"). Texten sätts
@@ -39,16 +39,16 @@ def matt(ff, fil):
     if rot and abs(int(rot.group(1))) in (90, 270): w, h = h, w
     return w, h
 
-def banner(w, h, text):
+def banner(w, h, text, yandel=None):
     """Returnerar (png-bild i videons storlek, genomskinlig utom bannern)."""
     lager = Image.new('RGBA', (w, h), (0, 0, 0, 0)); d = ImageDraw.Draw(lager)
     typs = next(t for t in TYPSNITT if os.path.exists(t))
-    px = round(w * 0.058)
+    px = round(min(w * 0.058, h * 0.07))
     f = ImageFont.truetype(typs, px)
     while d.textlength(text, font=f) > w * 0.80: px -= 2; f = ImageFont.truetype(typs, px)
     tw = d.textlength(text, font=f); pad_x, pad_y = round(px * 0.9), round(px * 0.55)
     bw, bh = tw + 2 * pad_x, px + 2 * pad_y
-    y = round(h * (0.16 if h / w > 1.6 else 0.06)); x = round((w - bw) / 2)
+    y = round(h * (yandel if yandel is not None else (0.16 if h / w > 1.6 else 0.06))); x = round((w - bw) / 2)
     d.rounded_rectangle([x, y, x + bw, y + bh], radius=round(bh * 0.18), fill=(0, 0, 0, 255))
     top = f.getbbox(text)[1]
     d.text((x + pad_x, y + pad_y - top * 0.5), text, font=f, fill=(255, 255, 255, 255))
@@ -58,10 +58,17 @@ def main():
     a = argparse.ArgumentParser()
     a.add_argument('infil'); a.add_argument('utfil'); a.add_argument('--text', required=True)
     a.add_argument('--stillbild', type=float, default=None, help='sekund att ta en stillbild på (ger jpg)')
-    g = a.parse_args(); ff = ffmpeg()
+    a.add_argument('--y', type=float, default=None, help='bannerns överkant som andel av höjden (när videon har egen text där)')
+    g = a.parse_args()
+    if g.infil.lower().endswith(('.jpg', '.jpeg', '.png', '.webp')):
+        im = Image.open(g.infil).convert('RGBA'); w, h = im.size
+        im.alpha_composite(banner(w, h, g.text, g.y))
+        im = im.convert('RGB'); im.save(g.utfil, quality=95) if g.utfil.lower().endswith(('.jpg', '.jpeg')) else im.save(g.utfil)
+        print(json.dumps({'ut': g.utfil, 'bredd': w, 'hojd': h, 'text': g.text}, ensure_ascii=False)); return
+    ff = ffmpeg()
     w, h = matt(ff, g.infil)
     with tempfile.TemporaryDirectory() as tmp:
-        png = os.path.join(tmp, 'banner.png'); banner(w, h, g.text).save(png)
+        png = os.path.join(tmp, 'banner.png'); banner(w, h, g.text, g.y).save(png)
         if g.stillbild is not None:
             cmd = [ff, '-loglevel', 'error', '-y', '-ss', str(g.stillbild), '-i', g.infil, '-i', png,
                    '-filter_complex', f'[0:v]scale={w}:{h}[v];[v][1:v]overlay=0:0', '-frames:v', '1', '-q:v', '2', g.utfil]
