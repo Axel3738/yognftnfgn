@@ -8,7 +8,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 
 const { compute } = await import("../app/lib/pnl.server.ts");
-const { raknaAvgifter, uppmattAvgift, blandadSats, betalvagar, betalvagNamn, tacktOms, kandExtern } =
+const { raknaAvgifter, uppmattAvgift, blandadSats, betalvagar, betalvagNamn, tacktOms, kandExtern, satsPaOtackt, arExternBetalvag } =
   await import("../app/lib/avgifter.ts");
 
 const nara = (a, b, eps = 1e-9) => assert.ok(Math.abs(a - b) < eps, `${a} ≠ ${b}`);
@@ -76,9 +76,31 @@ test("compute: satsen per marknad gäller den otäckta delen", () => {
   nara(r.totals.fees, 500 * 0.03 + 500 * 0.05);
 });
 
+test("compute: med täckt omsättning per marknad får den otäckta delen sin egen marknads sats", () => {
+  // SE 500 helt via Shopify Payments (avgift 15), US 500 helt PayPal à 5 % + 2 % växling.
+  const r = compute({
+    from: "2026-09-20", to: "2026-09-20",
+    sales: [dag({ fees: 15, feesCoveredSales: 500 })], sessions: [], spend: [], products: [], costChanges: [], costTiers: [],
+    settings: { tariffPerOrder: 0, feeRate: 0.03, targetMargin: 0.25, marketFees: { US: { feeRate: 0.05, fxFeeRate: 0.02 } } },
+    salesByMarket: { SE: 500, US: 500 },
+    coveredByMarket: { SE: 500, US: 0 },
+  });
+  // 15 faktiskt + 500 × 7 % = 50. Förut: 15 + 0,5 × (500·3 % + 500·7 %) = 40.
+  nara(r.totals.fees, 15 + 35);
+});
+
+test("satsPaOtackt: otäckt utan marknad tar standard, för stor summa skalas ner", () => {
+  const m = { oms: { SE: 600, US: 400 }, tackt: { SE: 600 }, satsFor: (x) => (x === "US" ? 0.07 : 0.03), standard: 0.03 };
+  // 400 otäckt i US + 100 utan marknad.
+  nara(satsPaOtackt(500, m), 400 * 0.07 + 100 * 0.03);
+  // Bara 200 otäckt enligt dagarna ⇒ US-delen skalas till 200.
+  nara(satsPaOtackt(200, m), 200 * 0.07);
+  assert.equal(satsPaOtackt(0, m), 0);
+});
+
 test("compute: tredjepartsavgiften tas bara på omsättning som bevisligen gick externt", () => {
   // 400 externt × 2 % = 8, ovanpå satsen på de 400.
-  const r = bas([dag({ fees: 18, feesCoveredSales: 600 })], { thirdPartyFeeRate: 0.02 });
+  const r = bas([dag({ fees: 18, feesCoveredSales: 600, gatewaySales: { shopify_payments: 600, paypal: 400 } })], { thirdPartyFeeRate: 0.02 });
   nara(r.totals.fees, 30 + 8);
   nara(r.totals.feesThirdParty, 8);
   // En äldre dag (ingen uppdelning) eller en dag utan avgiftsdata får ingen.
@@ -100,13 +122,33 @@ test("tacktOms och kandExtern", () => {
   assert.equal(tacktOms({ totalSales: 100, fees: 2 }), 100);
   assert.equal(tacktOms({ totalSales: 100, fees: 2, feesCoveredSales: 60 }), 60);
   assert.equal(kandExtern({ totalSales: 100, fees: 2 }), 0);
-  assert.equal(kandExtern({ totalSales: 100, fees: 2, feesCoveredSales: 60 }), 40);
+  // Utan betalväg per order vet dagen inte att det gick externt ⇒ 0.
+  assert.equal(kandExtern({ totalSales: 100, fees: 2, feesCoveredSales: 60 }), 0);
+  assert.equal(kandExtern({ totalSales: 100, fees: 2, feesCoveredSales: 60, gatewaySales: { shopify_payments: 60, paypal: 40 } }), 40);
+});
+
+test("kandExtern: reserverad Shopify Payments-order, manuellt, postförskott och ingen betalning är inte externt", () => {
+  // 1000 otäckt: 400 reserverad SP (bokförd på shopify_payments), 100 manuellt,
+  // 100 postförskott, 50 ingen betalning, 350 PayPal. Bara PayPal är externt.
+  const d = {
+    totalSales: 1000, fees: 0, feesCoveredSales: 0,
+    gatewaySales: { shopify_payments: 400, manual: 100, "Cash on Delivery (COD)": 100, "": 50, paypal: 350 },
+  };
+  assert.equal(kandExtern(d), 350);
+  // Tredjepartsavgiften i motorn följer med: 350 × 2 % = 7, inte 1000 × 2 % = 20.
+  const r = bas([dag(d)], { thirdPartyFeeRate: 0.02 });
+  nara(r.totals.feesThirdParty, 7);
+  assert.equal(arExternBetalvag("shopify_payments"), false);
+  assert.equal(arExternBetalvag("bank_deposit"), false);
+  assert.equal(arExternBetalvag("Money Order"), false);
+  assert.equal(arExternBetalvag("gift_card"), false);
+  assert.equal(arExternBetalvag("klarna"), true);
 });
 
 test("uppmattAvgift delar med täckt omsättning — PayPal-dagarnas nollor drar inte ner satsen", () => {
   const rader = [
     { fees: 29, totalSales: 1000, feesCoveredSales: 1000 },
-    { fees: 0, totalSales: 1000, feesCoveredSales: 0 },
+    { fees: 0, totalSales: 1000, feesCoveredSales: 0, gatewaySales: { paypal: 1000 } },
   ];
   const u = uppmattAvgift(rader);
   // Förut: 29 / 2000 = 1,45 %. Nu: 29 / 1000 = 2,9 %.
@@ -140,6 +182,24 @@ test("uppmattAvgift: marknad utan täckt omsättning har ingen sats (sales 0), d
 test("uppmattAvgift: äldre rader utan feesCoveredSales räknas som helt täckta (som förut)", () => {
   const u = uppmattAvgift([{ fees: 30, totalSales: 1000 }]);
   nara(u[""].rate, 0.03);
+});
+
+test("uppmattAvgift: finns en rad med uppdelning räknas inte de äldre raderna (deras PayPal-nollor)", () => {
+  // En ny rad: 2,9 % på 1000 täckt. En äldre rad: 1000 där hälften var PayPal
+  // med avgift 0 — 14,5 i avgift men hela 1000 räknat som täckt.
+  const rader = [
+    { fees: 29, totalSales: 1000, feesCoveredSales: 1000, markets: { SE: { fees: 29, totalSales: 1000, feesCoveredSales: 1000 } } },
+    { fees: 14.5, totalSales: 1000, markets: { SE: { fees: 14.5, totalSales: 1000 } } },
+  ];
+  const u = uppmattAvgift(rader);
+  // Förut: 43,5 / 2000 = 2,18 %. Nu: bara den nya raden ⇒ 2,9 %.
+  nara(u[""].rate, 0.029);
+  assert.equal(u[""].totalSales, 1000);
+  assert.equal(u[""].days, 1);
+  nara(u.SE.rate, 0.029);
+  assert.equal(u.SE.days, 1);
+  // Bara äldre rader ⇒ de används (hellre en gammal mätning än ingen).
+  nara(uppmattAvgift([rader[1]])[""].rate, 0.0145);
 });
 
 test("blandadSats: Shopify Payments-satsen på täckt del, satsen + tredjepart på resten", () => {

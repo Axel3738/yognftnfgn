@@ -46,14 +46,68 @@ export function tacktOms(d: AvgiftsDag): number {
 }
 
 /**
- * Omsättning som BEVISLIGEN gick utanför Shopify Payments — avgifterna
- * hämtades och dagen vet vad som var täckt. Bara den får Shopifys avgift för
- * externa betalväxlar: en äldre dag utan uppdelning, eller en dag vars
- * avgifter nekades, kan lika gärna vara Shopify Payments.
+ * Betalvägar Shopify INTE tar tredjepartsavgift på: manuella betalsätt
+ * (postförskott, bankinsättning, postanvisning), presentkort och Shopifys
+ * egna delbetalningar. Nycklarna är normaliserade (gemener, allt utom a–z/0–9
+ * blir "_"), så "Cash on Delivery (COD)" och "cash_on_delivery" träffar båda.
+ * En egen manuell betalmetod med påhittat namn ("Faktura") känns inte igen
+ * och räknas som extern — ett känt glapp åt det försiktiga hållet.
+ */
+const INTE_TREDJEPART = new Set([
+  "manual",
+  "cash_on_delivery",
+  "cash_on_delivery_cod",
+  "cod",
+  "bank_deposit",
+  "money_order",
+  "gift_card",
+  "shopify_installments",
+]);
+
+const normVag = (g: string) => g.toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "");
+
+/**
+ * Går pengarna genom en EXTERN betalväxel som Shopify tar tredjepartsavgift
+ * på? Shopify Payments nej (även en order som bara är reserverad hittills
+ * bokförs där), ingen betalning nej, manuella betalsätt nej.
+ */
+export function arExternBetalvag(gateway: string): boolean {
+  if (gateway === SP_GATEWAY || gateway === INGEN_GATEWAY) return false;
+  const n = normVag(gateway);
+  return n !== "" && n !== SP_GATEWAY && !INTE_TREDJEPART.has(n);
+}
+
+/**
+ * Omsättning som BEVISLIGEN gick via en extern betalväxel — avgifterna
+ * hämtades, dagen vet vad som var täckt, och betalvägen per order finns.
+ * Bara den får Shopifys avgift för externa betalväxlar. Förut räknades all
+ * otäckt omsättning dit, och då fick en reserverad-men-inte-dragen Shopify
+ * Payments-order, en postförskottsorder och en order utan betalning en
+ * påhittad Shopify-avgift. En äldre dag utan uppdelning, eller en dag vars
+ * avgifter nekades, kan lika gärna vara Shopify Payments och ger 0.
  */
 export function kandExtern(d: AvgiftsDag): number {
-  if (d.fees == null || d.feesCoveredSales == null) return 0;
-  return Math.max(0, d.totalSales - d.feesCoveredSales);
+  if (d.fees == null || d.feesCoveredSales == null || !d.gatewaySales) return 0;
+  let extern = 0;
+  for (const [g, belopp] of Object.entries(d.gatewaySales)) {
+    if (arExternBetalvag(g) && belopp > 0) extern += belopp;
+  }
+  /* Aldrig mer än det otäckta: en order som både är täckt och bokförd på en
+     extern väg kan inte finnas, men ett tak kostar inget. */
+  return Math.min(extern, Math.max(0, d.totalSales - d.feesCoveredSales));
+}
+
+/**
+ * Omsättningen och den täckta omsättningen per marknad, så att den otäckta
+ * delen får satsen för den marknad den faktiskt kom ifrån.
+ */
+export interface MarknadsUnderlag {
+  oms: Record<string, number>;
+  tackt: Record<string, number>;
+  /** Satsen för en marknad (egen post, annars standard). */
+  satsFor: (marknad: string) => number;
+  /** Standardsatsen, för otäckt omsättning utan marknad. */
+  standard: number;
 }
 
 export interface AvgiftsUnderlag {
@@ -61,9 +115,16 @@ export interface AvgiftsUnderlag {
   totalSales: number;
   /**
    * Avgiften för HELA omsättningen om allt räknats med satsen (per marknad).
-   * Motorn räknar ut den; här tas bara den okända andelen av den.
+   * Motorn räknar ut den; här tas bara den okända andelen av den. Används
+   * bara när `perMarknad` saknas.
    */
   satsBaserat: number;
+  /**
+   * Finns den räknas satsen per marknad på just den marknadens otäckta
+   * omsättning (`satsPaOtackt`), i stället för periodens marknadsmix gånger
+   * den okända andelen.
+   */
+  perMarknad?: MarknadsUnderlag;
   /** Shopifys avgift på ordrar som inte betalats med Shopify Payments. */
   thirdPartyFeeRate?: number;
 }
@@ -108,10 +169,15 @@ export function raknaAvgifter(u: AvgiftsUnderlag): AvgiftsResultat {
   }
   const { totalSales } = u;
   /* Satsen gäller bara den del av omsättningen som saknar faktisk avgift. */
-  const okandAndel = totalSales > 0 ? Math.max(0, totalSales - omsMedFaktiska) / totalSales : 0;
+  const otackt = Math.max(0, totalSales - omsMedFaktiska);
+  const satsDel = u.perMarknad
+    ? satsPaOtackt(otackt, u.perMarknad)
+    : totalSales > 0
+      ? u.satsBaserat * (otackt / totalSales)
+      : 0;
   const tredjepart = extern * (u.thirdPartyFeeRate ?? 0);
   return {
-    fees: faktiska + u.satsBaserat * okandAndel + tredjepart,
+    fees: faktiska + satsDel + tredjepart,
     faktiska,
     omsMedFaktiska,
     tredjepart,
@@ -122,6 +188,35 @@ export function raknaAvgifter(u: AvgiftsUnderlag): AvgiftsResultat {
       .sort((a, b) => b[1] - a[1])
       .map(([g]) => g),
   };
+}
+
+/**
+ * Satsen på den otäckta omsättningen, marknad för marknad. Förut fick den
+ * otäckta delen periodens SNITTSATS: Sverige helt via Shopify Payments och
+ * USA helt via PayPal gav USA-omsättningen halva USA-satsen och halva den
+ * svenska — en procentenhet för lite i avgifter och ett för lågt break-even.
+ *
+ * Den otäckta omsättningen per marknad är oms − täckt. Summan stäms av mot
+ * periodens otäckta omsättning (`otackt`, räknad ur dagarna): blir den för
+ * stor — en äldre marknadsdel utan avgiftsdata på en dag som har det —
+ * skalas den ner, och det som blir över (omsättning utan marknad) tar
+ * standardsatsen. Satsen läggs alltså aldrig på mer eller mindre omsättning
+ * än den som saknar faktisk avgift.
+ */
+export function satsPaOtackt(otackt: number, m: MarknadsUnderlag): number {
+  if (!(otackt > 0)) return 0;
+  const perMarknad: [string, number][] = [];
+  let summa = 0;
+  for (const [marknad, oms] of Object.entries(m.oms)) {
+    const u = Math.max(0, oms - (m.tackt[marknad] ?? 0));
+    if (!(u > 0)) continue;
+    perMarknad.push([marknad, u]);
+    summa += u;
+  }
+  const k = summa > otackt ? otackt / summa : 1;
+  let avgift = 0;
+  for (const [marknad, u] of perMarknad) avgift += u * k * m.satsFor(marknad);
+  return avgift + Math.max(0, otackt - summa * k) * m.standard;
 }
 
 /** En dagsrad som den ligger i DailyPnl, för den uppmätta satsen. */
@@ -152,10 +247,19 @@ export interface UppmattAvgift {
  * `sales` 0, så att Kostnader kan räkna den med satsen.
  */
 export function uppmattAvgift(rader: UppmattRad[]): Record<string, UppmattAvgift> {
-  const summa: Record<string, { fees: number; sales: number; total: number; extern: number; days: number }> = {};
+  type Summa = { fees: number; sales: number; total: number; extern: number; days: number };
+  const tom = (): Summa => ({ fees: 0, sales: 0, total: 0, extern: 0, days: 0 });
+  /* Två högar per marknad: rader med uppdelning (vet vad som var täckt) och
+     äldre rader utan (räknar hela omsättningen som täckt). En äldre rad med
+     PayPal-omsättning bär avgift 0 på den — blandas den in blir satsen ett
+     snitt med nollor igen, och 90-dagarsfönstret behåller sådana rader länge
+     (rader före 60-dagarsgränsen skrivs aldrig om). Så fort det finns EN rad
+     med uppdelning räknas bara de; de äldre används bara när inget annat finns. */
+  const summa: Record<string, { ny: Summa; aldre: Summa }> = {};
   const lagg = (m: string, d: AvgiftsDag) => {
     if (d.fees == null || !(d.totalSales > 0)) return;
-    const a = (summa[m] ??= { fees: 0, sales: 0, total: 0, extern: 0, days: 0 });
+    const hog = (summa[m] ??= { ny: tom(), aldre: tom() });
+    const a = d.feesCoveredSales != null ? hog.ny : hog.aldre;
     a.fees += d.fees;
     a.sales += tacktOms(d);
     a.total += d.totalSales;
@@ -167,7 +271,8 @@ export function uppmattAvgift(rader: UppmattRad[]): Record<string, UppmattAvgift
     for (const [m, del] of Object.entries(r.markets ?? {})) if (m) lagg(m, del);
   }
   const ut: Record<string, UppmattAvgift> = {};
-  for (const [m, a] of Object.entries(summa)) {
+  for (const [m, hog] of Object.entries(summa)) {
+    const a = hog.ny.days > 0 ? hog.ny : hog.aldre;
     if (!(a.total > 0)) continue;
     ut[m] = { rate: a.sales > 0 ? a.fees / a.sales : 0, sales: a.sales, totalSales: a.total, extern: a.extern, days: a.days };
   }

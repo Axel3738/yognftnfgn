@@ -21,7 +21,7 @@ import { decrypt } from "./crypto.server";
 import { butikensScope, ersattKundOrdrar, harKundScope, tillKundOrderRader } from "./kundorder.server";
 import { marknadskod, sorteraMarknader } from "./marknad";
 import { harAllaOrdrar, historikHorisont, klampaFonster, klassaDag } from "./historik";
-import { betalvagar, uppmattAvgift, type Betalvag, type UppmattAvgift, type UppmattRad } from "./avgifter";
+import { betalvagar, tacktOms, uppmattAvgift, type Betalvag, type UppmattAvgift, type UppmattRad } from "./avgifter";
 
 const API_VERSION = "2026-07";
 
@@ -253,6 +253,12 @@ export interface DailyReadResult {
    */
   salesByMarket: Record<string, number>;
   /**
+   * Omsättning med faktiska avgifter (Shopify Payments) per marknad, samma
+   * nycklar som `salesByMarket`. Räknemotorn lägger satsen på skillnaden,
+   * marknad för marknad.
+   */
+  coveredByMarket: Record<string, number>;
+  /**
    * Antal ordrar per marknad i intervallet. Tullen är ett belopp per order,
    * så den kan inte räknas ur omsättningen — den behöver ordrarna.
    */
@@ -435,22 +441,26 @@ export async function readDaily(
       lastDayFetchedAt: rows.length ? rows[rows.length - 1].fetchedAt : null,
       daysWithoutMarkets: utanUppdelning,
       salesByMarket: { [market]: sales.reduce((a, s) => a + s.totalSales, 0) },
+      coveredByMarket: { [market]: sales.reduce((a, s) => a + tacktOms(s), 0) },
       ordersByMarket: { [market]: sales.reduce((a, s) => a + s.orders, 0) },
     };
   }
 
   const products: ProductRow[] = [];
   const salesByMarket: Record<string, number> = {};
+  const coveredByMarket: Record<string, number> = {};
   const ordersByMarket: Record<string, number> = {};
   for (const r of rows) {
     const per = uppdelning(r);
     if (per) {
       for (const [m, del] of Object.entries(per)) {
         salesByMarket[m] = (salesByMarket[m] ?? 0) + del.totalSales;
+        coveredByMarket[m] = (coveredByMarket[m] ?? 0) + tacktOms(del);
         ordersByMarket[m] = (ordersByMarket[m] ?? 0) + del.orders;
       }
     } else {
       salesByMarket[""] = (salesByMarket[""] ?? 0) + r.totalSales;
+      coveredByMarket[""] = (coveredByMarket[""] ?? 0) + tacktOms({ totalSales: r.totalSales, fees: r.fees, feesCoveredSales: r.feesCoveredSales });
       ordersByMarket[""] = (ordersByMarket[""] ?? 0) + r.orders;
     }
     if (per && opts.perMarknad) {
@@ -481,6 +491,7 @@ export async function readDaily(
     lastDayFetchedAt: rows.length ? rows[rows.length - 1].fetchedAt : null,
     daysWithoutMarkets: 0,
     salesByMarket,
+    coveredByMarket,
     ordersByMarket,
   };
 }

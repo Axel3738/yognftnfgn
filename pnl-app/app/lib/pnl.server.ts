@@ -250,6 +250,13 @@ export interface ComputeInput {
    */
   salesByMarket?: Record<string, number>;
   /**
+   * Omsättning med FAKTISKA avgifter (Shopify Payments) per marknad, samma
+   * nycklar som `salesByMarket`. Finns den får den otäckta omsättningen
+   * satsen för den marknad den kom ifrån; saknas den skalas periodens
+   * marknadsmix med den otäckta andelen (som förut).
+   */
+  coveredByMarket?: Record<string, number>;
+  /**
    * Antal ordrar per marknad i intervallet. Underlaget för tull per marknad:
    * tullen är ett belopp per order, så den måste räknas på ordrarna och inte
    * på omsättningen. Ordrar utan marknad tar butikens standardtull.
@@ -585,8 +592,23 @@ export function compute(input: ComputeInput): ComputeResult {
   }
   satsBaserat += Math.max(0, totalSales - fordelad) * settings.feeRate;
   /* Satsen gäller bara den del av omsättningen som saknar faktisk avgift
-     (avgifter.ts, testad). */
-  const avg = raknaAvgifter({ sales, totalSales, satsBaserat, thirdPartyFeeRate: settings.thirdPartyFeeRate });
+     (avgifter.ts, testad). Med täckt omsättning per marknad räknas den
+     marknad för marknad: en PayPal-order från USA ska bära USA:s sats, inte
+     periodens snitt där svenska Shopify Payments-ordrar drar ner den. */
+  const avg = raknaAvgifter({
+    sales,
+    totalSales,
+    satsBaserat,
+    thirdPartyFeeRate: settings.thirdPartyFeeRate,
+    perMarknad: input.coveredByMarket
+      ? {
+          oms: input.salesByMarket ?? {},
+          tackt: input.coveredByMarket,
+          satsFor: (m) => feeRateFor(settings, m),
+          standard: settings.feeRate,
+        }
+      : undefined,
+  });
   const fees = avg.fees;
   /* Den blandade satsen — det break-even och max-CPA ska räkna med. */
   const effFeeRate = totalSales > 0 ? fees / totalSales : settings.feeRate;

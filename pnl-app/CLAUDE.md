@@ -471,9 +471,26 @@ Medvetna beslut:
   otäckta delen, som planen sa. Listan i Inställningar visar vilka växlar det
   gäller.
 - **Tredjepartsavgiften tas bara på omsättning som bevisligen gick externt**
-  (`kandExtern`: avgifterna hämtade OCH `feesCoveredSales` satt). En äldre dag
+  (`kandExtern`: avgifterna hämtade, `feesCoveredSales` satt OCH betalvägen
+  i `gatewaySales` är en extern växel, `arExternBetalvag`). En äldre dag
   utan uppdelning, eller en dag vars avgifter nekades, kan lika gärna vara
-  Shopify Payments — där hade avgiften varit påhittad.
+  Shopify Payments — där hade avgiften varit påhittad. Rättat efter
+  granskning: först räknades ALL otäckt omsättning som extern, så en
+  reserverad-men-inte-dragen Shopify Payments-order (bokförd på
+  `shopify_payments`), postförskott/bankinsättning/manuellt, presentkort och
+  ordrar utan betalning fick en påhittad Shopify-avgift. En egen manuell
+  metod med påhittat namn känns inte igen och räknas som extern.
+- **Satsen på den otäckta delen räknas per marknad** (`satsPaOtackt`, via
+  `coveredByMarket` ur `readDaily` → `compute()`). Rättat efter granskning:
+  först fick den otäckta omsättningen periodens SNITTSATS (marknadsmixen ×
+  otäckt andel), så SE helt via Shopify Payments + US helt via PayPal gav
+  US-omsättningen halva US-satsen. Summan stäms av mot den otäckta
+  omsättningen ur dagarna och skalas ner om marknadsdelarna säger mer.
+- **Den uppmätta satsen hoppar över äldre rader så fort EN rad med
+  uppdelning finns** i 90-dagarsfönstret (per marknad). Äldre rader bär
+  PayPal-omsättning med avgift 0 och skulle annars göra satsen till ett snitt
+  med nollor igen — och rader före 60-dagarsgränsen skrivs aldrig om.
+  Bara äldre rader ⇒ de används, som förut.
 - **Kostnader blandar satserna** i stället för att använda den uppmätta
   satsen rakt av (planens steg 5 ensamt). Med 60 % Shopify Payments hade
   Shopify Payments-satsen annars gällt PayPal-delen också.
@@ -509,8 +526,10 @@ Fällor:
   fees som bevis; dagens/marknadens/timmens täckta omsättning och
   `gatewaySales`) och `test/avgifter.test.mjs` (compute: 1000/600/18 à 3 % ⇒
   30; dag utan `feesCoveredSales` som förut; butik utan Shopify Payments;
-  planens break-even 1,80 → 1,92; sats per marknad; tredjepartsavgiften;
-  `uppmattAvgift` delar med täckt omsättning; `blandadSats`; `betalvagar`).
+  planens break-even 1,80 → 1,92; sats per marknad; sats per marknad på
+  otäckt del med `coveredByMarket`; `satsPaOtackt`; tredjepartsavgiften;
+  `kandExtern` utan reserverade/manuella/tomma; `uppmattAvgift` delar med
+  täckt omsättning och hoppar över äldre rader; `blandadSats`; `betalvagar`).
 
 ### Ett skalningsbeslut överallt: dra ner, håll, skala (2026-09-26)
 

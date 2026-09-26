@@ -333,6 +333,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
     costTiers,
     settings: raknesettings,
     salesByMarket: daily.salesByMarket,
+    coveredByMarket: daily.coveredByMarket,
     ordersByMarket: daily.ordersByMarket,
     freeVariants,
   });
@@ -378,6 +379,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
       costTiers,
       settings: raknesettings,
       salesByMarket: prevData.salesByMarket,
+      coveredByMarket: prevData.coveredByMarket,
       ordersByMarket: prevData.ordersByMarket,
       freeVariants,
     });

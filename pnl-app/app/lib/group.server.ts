@@ -325,6 +325,7 @@ async function summeraButik(
       thirdPartyFeeRate: Number(m.thirdPartyFeeRate ?? 0),
     },
     salesByMarket: daily.salesByMarket,
+    coveredByMarket: daily.coveredByMarket,
     ordersByMarket: daily.ordersByMarket,
     /* Samma kvitterade gratisvaror som i butikens egen panel — annars hade
        summan flaggat en gåva som panelen godtar. */
