@@ -25,19 +25,14 @@
     { "text": "Tre produkter, tre riktiga recensioner", "begar": "läsa faktiska kundröster, inte vårt påstående" },
     { "text": "Det kunderna nämnde mest i år", "begar": "se vad som återkommer i omdömena" }
   ],
-  "forhandstext": "Tre av årets mest omtalade produkter, i kundernas egna ord.",
+  "forhandstext": "Tre produkter, i kundernas egna ord.",
   "block": [
     {
       "typ": "hero",
       "rubrik": "Vad kunderna tyckte om i år",
-      "text": "Hej {{fornamn}},\n\nInnan året är slut, här är tre produkter kunderna själva skrivit mest om.",
-      "bild": "produkt:takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
-      "knapp": { "text": "Läs recensionerna", "lank": "kollektion:alla-produkter" }
-    },
-    {
-      "typ": "citat",
-      "handle": "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
-      "antal": 2
+      "text": "Hej {{fornamn}},\n\nInnan året är slut, här är vad kunder skrivit om tre av våra produkter.",
+      "bild": "produkt:satesoverdrag-for-akgrasklippare-slittaligt-600d-oxford",
+      "knapp": { "text": "Se hela sortimentet", "lank": "kollektion:alla-produkter" }
     },
     {
       "typ": "citat",
@@ -46,16 +41,21 @@
     },
     {
       "typ": "citat",
-      "handle": "balteslipmaskin-mini-3-i-1-knivslip-polerare",
+      "handle": "fiskespohallare-4-pack-kraftig-forvaring",
+      "antal": 2
+    },
+    {
+      "typ": "citat",
+      "handle": "axelbalte-for-trimmer-justerbart-nylonbalte",
       "antal": 2
     },
     {
       "typ": "produktrad",
       "rubrik": "Samma tre, om du vill se dem",
       "handles": [
-        "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
         "satesoverdrag-for-akgrasklippare-slittaligt-600d-oxford",
-        "balteslipmaskin-mini-3-i-1-knivslip-polerare"
+        "fiskespohallare-4-pack-kraftig-forvaring",
+        "axelbalte-for-trimmer-justerbart-nylonbalte"
       ]
     },
     { "typ": "fakta" }

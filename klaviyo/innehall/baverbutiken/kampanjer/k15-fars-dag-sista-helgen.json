@@ -21,7 +21,7 @@
     "kod": "GT"
   },
   "amnesrader": [
-    { "text": "Sista helgen innan fars dag", "begar": "veta att helgen är sista chansen att beställa" },
+    { "text": "Sista helgen att beställa till fars dag", "begar": "veta att helgen är sista chansen att beställa" },
     { "text": "Sex presenter för honom som redan har allt", "begar": "hitta en present till en pappa som redan har det mesta" },
     { "text": "En present för båten, tomten eller kaminen", "begar": "välja present efter vad han faktiskt sysslar med" }
   ],
@@ -29,8 +29,8 @@
   "block": [
     {
       "typ": "hero",
-      "rubrik": "Sista helgen innan fars dag",
-      "text": "Hej {{fornamn}},\n\nBeställer du efter måndag 19 oktober hinner paketet inte fram till fars dag den 8 november.",
+      "rubrik": "Sista helgen att beställa till fars dag",
+      "text": "Hej {{fornamn}},\n\nBeställ senast måndag 19 oktober, så hinner paketet fram till fars dag den 8 november. Efter det kan vi inte lova det.",
       "bild": "produkt:marin-motorholje-420d-universellt-skydd",
       "knapp": { "text": "Se presenterna", "lank": "kollektion:alla-produkter" }
     },

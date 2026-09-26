@@ -31,14 +31,14 @@
       "typ": "hero",
       "rubrik": "En guide till julklappar, sorterade efter person",
       "text": "{{fornamn}}, tre sorters mottagare, tre förslag var. Inget att fundera på länge.",
-      "bild": "produkt:whisky-adventskalender-24-dekorflaskor",
+      "bild": "produkt:baverlampa-pro",
       "knapp": { "text": "Se alla förslag", "lank": "kollektion:alla-produkter" }
     },
     {
       "typ": "produktrad",
       "rubrik": "Till den som har allt",
       "handles": [
-        "whisky-adventskalender-24-dekorflaskor",
+        "tandvedsklyv-i-gjutjarn-klyv-utan-yxa-i-handen",
         "baverlampa-pro",
         "kepslampa-300-lumen-clip-on-led-pannlampa"
       ]
@@ -64,7 +64,7 @@
     {
       "typ": "text",
       "rubrik": null,
-      "text": "Sista dag för att beställa och få paketet i tid till jul är torsdag 3 december. Efter det hinner det inte fram."
+      "text": "Sista dag för att beställa och få paketet i tid till jul är torsdag 3 december. Efter det kan vi inte lova att det hinner fram."
     },
     { "typ": "fakta" }
   ],

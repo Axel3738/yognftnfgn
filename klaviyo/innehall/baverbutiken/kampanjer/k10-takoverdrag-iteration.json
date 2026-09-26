@@ -20,12 +20,12 @@
     { "text": "Det täcker taket, inte hela vagnen", "begar": "förstå skillnaden mot ett helöverdrag" },
     { "text": "Vad en kund frågade om fukt", "begar": "nyfikenhet på vad andra undrar" }
   ],
-  "forhandstext": "Kunden skrev det under en av våra annonser.",
+  "forhandstext": "Någon frågade om fukt under en av våra annonser. Här är svaret.",
   "block": [
     {
       "typ": "hero",
       "rubrik": "\"Att täcka så där välkomnar du kondens och fukt.\"",
-      "text": "Det skrev en kund under en av våra annonser. Rimlig fråga: blir det inte fuktigt att lägga något över taket?",
+      "text": "Det skrev någon under en av våra annonser. Rimlig fråga: blir det inte fuktigt att lägga något över taket?",
       "bild": "produkt:takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
       "knapp": { "text": "Se hur det sitter", "lank": "produkt:takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan" }
     },
