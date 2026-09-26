@@ -469,11 +469,25 @@ Medvetna beslut:
   60-dagarsgränsen aldrig skrivs om.
 - **`netRevenue` är allt-eller-inget** vid hopslagning: saknar en del fältet
   hade tabellen visat en bit av produktens intäkt. Raden faller då tillbaka på
-  `netSales` (hel, men före ordernivåns rabatter).
+  `netSales` (hel, men före ordernivåns rabatter). Sådana rader märks med
+  "*" på Netto och BE ROAS i panelen (`foreOrderrabatt`), med en fotnot och
+  "rabattkoder på *-rader" i Inte fördelat-raden — dagar bortom omsynken
+  skrivs aldrig om, så ett kvartal/år står på gamla grunden länge, och utan
+  märkning läste handlaren en för snäll break-even som "efter alla rabatter".
 - **Styckfallback på listpris visas inte när mixen är olönsam.** Förut föll
   Kostnader-cellen tillbaka på styckräkningen på listpris när mixen var
   olönsam — den kunde se lönsam ut just när mängdrabatten var problemet. Nu
-  står "Olönsam".
+  står "Olönsam" — men bara när minst tre orderrader bär det realiserade
+  priset (`prisade`, `tunntPris`). *(Granskning 2026-09-26: en enda
+  influencerorder med 100 %-kod gav röd "Olönsam" på en variant som var
+  lönsam på varje riktig order — den starkaste domen på en rad, medan färgen
+  noga hölls borta under tre.)* Under tre: styckräkningen på listpris, märkt
+  och ofärgad; på produktsidan "—" och ingen röd TB för storleken/mixen.
+- **En storleks realiserade pris gäller bara när minst tre rader bär det,
+  eller när det är ALLA storlekens rader.** En prisad rad av 40 (resten äldre
+  dagar) sätter annars priset för alla 40. Då listpris, märkt
+  (`delvisListpris`). Färgen på mixen räknar `beUnderlag` = prisade rader när
+  mixen vilar på realiserat pris, inte alla rader.
 - **Ingen färg utan MER, på listpris utan försäljning, eller under tre
   orderrader** (husregeln om tunn data). MER kräver 7+ säljdagar, 3+ ordrar
   och en spendrad för varje säljdag i fönstret — annars är MER för hög och

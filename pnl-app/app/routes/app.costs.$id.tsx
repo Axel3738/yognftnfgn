@@ -34,7 +34,7 @@ import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
 import { loadCatalog, patchaKostnader, setUnitCost } from "../lib/shopify-data.server";
 import { butikensMer, kandaMarknader, readDaily, shiftIso } from "../lib/daily.server";
-import { beTon } from "../lib/produktintakt";
+import { beTon, beUnderlag, tunntPris } from "../lib/produktintakt";
 import { hemlandAv, marknadskod, marknadsnamn } from "../lib/marknad";
 import { mixBreakEven, radUtfall } from "../lib/breakeven.server";
 import { rate as fxRate } from "../lib/fx.server";
@@ -403,17 +403,23 @@ export default function ProductCost() {
                       rows={[
                         ...b.rader.map((r) => {
                           const andel = b.mix.mix.find((m) => m.qty === r.qty)?.share;
-                          /* Orderrader bakom storleken — färg bara på tre eller fler. */
+                          /* Orderrader bakom storleken — färg bara på tre eller fler.
+                             På realiserat pris räknas raderna som BÄR priset. */
                           const antal = b.mix.antagen || andel == null ? 0 : Math.round(andel * b.mix.lines);
+                          /* Realiserat pris på under tre rader (en giveaway med
+                             100 %-kod räcker för att TB ska gå minus): talet visas,
+                             men ingen röd TB och ingen "olönsam" — ingen dom på
+                             tunn data. Listpris är kostnadsstrukturens dom, som förut. */
+                          const tunn = !r.listpris && tunntPris(r.prisade);
                           return [
                             r.listpris ? `${r.qty} ${T.costs.be.unit} · ${T.costs.be.listShort}` : `${r.qty} ${T.costs.be.unit}`,
                             b.mix.antagen || andel == null ? "—" : `${Math.round(andel * 100)} %`,
                             nf.format(r.revenue),
                             nf.format(r.cogs),
-                            <Text key={`tb${r.qty}`} as="span" tone={r.tb > 0 ? undefined : "critical"}>{nf.format(r.tb)}</Text>,
+                            <Text key={`tb${r.qty}`} as="span" tone={r.tb > 0 || tunn ? undefined : "critical"}>{nf.format(r.tb)}</Text>,
                             r.beRoas == null
-                              ? <Badge key={`be${r.qty}`} tone="critical">{T.costs.unprofitable}</Badge>
-                              : <Text key={`be${r.qty}`} as="span" tone={r.listpris ? undefined : beTon(r.beRoas, storeMer, antal)}>{dec2(r.beRoas)}</Text>,
+                              ? tunn ? "—" : <Badge key={`be${r.qty}`} tone="critical">{T.costs.unprofitable}</Badge>
+                              : <Text key={`be${r.qty}`} as="span" tone={r.listpris ? undefined : beTon(r.beRoas, storeMer, Math.min(antal, r.prisade))}>{dec2(r.beRoas)}</Text>,
                           ];
                         }),
                         [
@@ -421,10 +427,10 @@ export default function ProductCost() {
                           b.mix.antagen ? "—" : `${b.mix.lines}`,
                           b.mix.revenue == null ? "—" : nf.format(b.mix.revenue),
                           "",
-                          b.mix.tb == null ? "—" : <Text key="mixtb" as="span" fontWeight="semibold" tone={b.mix.tb > 0 ? undefined : "critical"}>{nf.format(b.mix.tb)}</Text>,
+                          b.mix.tb == null ? "—" : <Text key="mixtb" as="span" fontWeight="semibold" tone={b.mix.tb > 0 || tunntPris(b.mix.prisade) ? undefined : "critical"}>{nf.format(b.mix.tb)}</Text>,
                           b.mix.beRoas == null
-                            ? <Badge key="mixbe" tone="critical">{T.costs.unprofitable}</Badge>
-                            : <Text key="mixbe" as="span" fontWeight="semibold" tone={beTon(b.mix.beRoas, storeMer, b.mix.antagen ? 0 : b.mix.lines)}>{dec2(b.mix.beRoas)}</Text>,
+                            ? tunntPris(b.mix.prisade) ? "—" : <Badge key="mixbe" tone="critical">{T.costs.unprofitable}</Badge>
+                            : <Text key="mixbe" as="span" fontWeight="semibold" tone={beTon(b.mix.beRoas, storeMer, beUnderlag(b.mix))}>{dec2(b.mix.beRoas)}</Text>,
                         ],
                       ]}
                     />
@@ -436,6 +442,10 @@ export default function ProductCost() {
                     <Text as="p" variant="bodySm" tone="subdued">
                       {b.mix.antagen ? T.costs.be.priceList : b.mix.delvisListpris ? T.costs.be.pricePartly : T.costs.be.priceRealized}
                     </Text>
+                  ) : null}
+                  {/* Varför en olönsam storlek står som "—" i stället för rött. */}
+                  {b.rader.some((r) => !r.listpris && tunntPris(r.prisade)) ? (
+                    <Text as="p" variant="bodySm" tone="subdued">{T.costs.be.thinPrice}</Text>
                   ) : null}
                 </BlockStack>
               ))}

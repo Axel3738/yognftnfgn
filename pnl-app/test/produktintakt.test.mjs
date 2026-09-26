@@ -3,7 +3,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 
-const { fordelaProdukter, merUrDagar, beTon, radIntakt, radLinjer, MIN_RADER_BE } = await import("../app/lib/produktintakt.ts");
+const { fordelaProdukter, merUrDagar, beTon, beUnderlag, tunntPris, radIntakt, radLinjer, MIN_RADER_BE } = await import("../app/lib/produktintakt.ts");
 
 const rad = (x) => ({ units: 1, netSales: 0, cogs: 0, lines: { 1: 1 }, ...x });
 
@@ -30,6 +30,20 @@ test("fordelaProdukter: tull efter orderrader, avgift efter intäkt, produkter +
   assert.equal(f.intakt, 1400);
   assert.equal(f.oallokerat, 100);
   assert.equal(f.intakt + f.oallokerat, 1500);
+  // Rad två saknar intäkt efter ordernivåns rabatter — märks.
+  assert.deepEqual(f.rader.map((r) => r.foreOrderrabatt), [false, true]);
+  assert.equal(f.nagonForeOrderrabatt, true);
+  assert.equal(fordelaProdukter([rows[0]], { tariff: 0, effFeeRate: 0, totalSales: 900 }).nagonForeOrderrabatt, false);
+});
+
+test("beUnderlag/tunntPris: domen vilar på raderna som bär priset", () => {
+  assert.equal(beUnderlag({ antagen: true, lines: 50, prisade: 50 }), 0);
+  assert.equal(beUnderlag({ antagen: false, lines: 50, prisade: 1 }), 1);
+  assert.equal(beUnderlag({ antagen: false, lines: 50, prisade: 0 }), 50);
+  assert.equal(beUnderlag({ antagen: false, lines: 50 }), 50);
+  assert.equal(tunntPris(0), false);
+  assert.equal(tunntPris(1), true);
+  assert.equal(tunntPris(MIN_RADER_BE), false);
 });
 
 test("fordelaProdukter: '—' utan kostnad, på misstänkt nolla och under tre orderrader", () => {

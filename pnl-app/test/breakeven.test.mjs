@@ -118,11 +118,41 @@ test("mixBreakEven viktar storlekarna på det kunderna betalade", () => {
 });
 
 test("priset delas med raderna som BÄR det, inte med alla rader (äldre dagar utan pris)", () => {
-  // 5 tvåpacksrader, men bara 2 från dagar med pris (998 kr). Delat med 5
-  // hade gett 199,60 per rad — break-even skyhögt och fel.
-  const m = mixBreakEven({ ...tvaFor499, lines: { "2": 5 }, linesRevenue: { "2": 998 }, linesPriced: { "2": 2 } });
+  // 5 tvåpacksrader, men bara 3 från dagar med pris (1497 kr). Delat med 5
+  // hade gett 299,40 per rad — break-even för hög och fel.
+  const m = mixBreakEven({ ...tvaFor499, lines: { "2": 5 }, linesRevenue: { "2": 1497 }, linesPriced: { "2": 3 } });
   assert.equal(m.mix[0].revenue, 499);
   assert.equal(m.mix[0].share, 1);
+  assert.equal(m.prisade, 3);
+});
+
+/* ---------------------------------------- ingen dom på tunt realiserat pris */
+
+test("en prisad rad av 40 (en giveaway, resten äldre dagar) sätter inte priset — listpris", () => {
+  const m = mixBreakEven({ ...tvaFor499, lines: { "1": 40 }, linesRevenue: { "1": 0 }, linesPriced: { "1": 1 } });
+  assert.equal(m.mix[0].listpris, true);
+  assert.equal(m.mix[0].revenue, 299);
+  assert.equal(m.mix[0].prisade, 0);
+  assert.ok(m.beRoas != null, "listpriset är lönsamt — ingen röd dom på en order");
+  assert.equal(m.delvisListpris, true);
+});
+
+test("en enda såld rad med 100 %-kod: talet räknas, men prisade = 1 — tunt, ingen dom", async () => {
+  const { tunntPris, beUnderlag } = await import("../app/lib/produktintakt.ts");
+  const m = mixBreakEven({ ...tvaFor499, lines: { "1": 1 }, linesRevenue: { "1": 0 }, linesPriced: { "1": 1 } });
+  assert.equal(m.mix[0].listpris, false);
+  assert.equal(m.beRoas, null);
+  assert.equal(m.prisade, 1);
+  assert.equal(tunntPris(m.prisade), true);
+  assert.equal(beUnderlag(m), 1);
+  // Halva priset på en rad: samma sak.
+  const halv = radUtfall(1, { ...tvaFor499, lines: { "1": 1 }, linesRevenue: { "1": 149.5 }, linesPriced: { "1": 1 } });
+  assert.equal(halv.prisade, 1);
+  assert.equal(tunntPris(halv.prisade), true);
+  // Tre prisade rader räcker för en dom.
+  const tre = mixBreakEven({ ...tvaFor499, lines: { "1": 3 }, linesRevenue: { "1": 0 }, linesPriced: { "1": 3 } });
+  assert.equal(tre.beRoas, null);
+  assert.equal(tunntPris(tre.prisade), false);
 });
 
 test("utan försäljning: listpris, antagen — och delvisListpris sätts inte", () => {

@@ -83,6 +83,27 @@ export function radLinjer(r: Pick<Intaktsfalt, "lines" | "units">): number {
  *  Samma golv som skalningsbeslutet (MIN_ORDRAR_BESLUT i skalning.ts). */
 export const MIN_RADER_BE = 3;
 
+/**
+ * Realiserat pris på för få orderrader för att döma på: minst en storlek
+ * räknas på det kunderna betalade, men färre än MIN_RADER_BE rader bär priset.
+ * En enda influencerorder med 100 %-kod ger annars "olönsam" i rött på en
+ * variant som är lönsam på varje riktig order. Talet får visas, domen inte.
+ * 0 prisade rader = allt listpris: då är domen kostnadsstrukturens, som förut.
+ */
+export const tunntPris = (prisade: number): boolean => prisade > 0 && prisade < MIN_RADER_BE;
+
+/**
+ * Orderrader en break-even-färg på mixen vilar på. Vilar talet på realiserade
+ * priser är det raderna som BÄR priserna som räknas — 50 rader i mixen men en
+ * enda med pris (resten äldre dagar) är ett snitt på en order, inte på 50.
+ * Antagen mix (ingen försäljning) = 0, alltså aldrig färg.
+ */
+export function beUnderlag(x: { antagen: boolean; lines: number; prisade?: number }): number {
+  if (x.antagen) return 0;
+  const p = x.prisade ?? 0;
+  return p > 0 ? Math.min(p, x.lines) : x.lines;
+}
+
 export type BeStatus = "ok" | "olonsam" | "tunn" | "saknas";
 
 export interface FordeladRad {
@@ -93,6 +114,13 @@ export interface FordeladRad {
   /** Break-even ROAS för produktens annonser. Null utom när status är "ok". */
   beRoas: number | null;
   status: BeStatus;
+  /**
+   * Raden saknar intäkt efter ordernivåns rabatter (minst en dag i perioden
+   * skrevs innan fältet fanns — dagar bortom 45-dagarsomsynken skrivs aldrig
+   * om). Netto och break-even står då FÖRE koder som WELCOME och popupens
+   * 10 %, och break-even blir för snäll. Tabellen märker cellerna.
+   */
+  foreOrderrabatt: boolean;
 }
 
 export interface Fordelning {
@@ -102,6 +130,8 @@ export interface Fordelning {
   /** Omsättningsrutan minus produkterna: frakt, returer, moms och — för
    *  äldre dagsrader — ordernivåns rabatter. Produkter + detta = rutan. */
   oallokerat: number;
+  /** Minst en rad står före ordernivåns rabatter — de ligger då i `oallokerat`. */
+  nagonForeOrderrabatt: boolean;
 }
 
 /**
@@ -126,14 +156,14 @@ export function fordelaProdukter(
     const linjer = radLinjer(r);
     const tull = allaLinjer > 0 ? x.tariff * (linjer / allaLinjer) : 0;
     const avgifter = oms * x.effFeeRate;
-    const bas = { intakt: oms, linjer, tull, avgifter };
+    const bas = { intakt: oms, linjer, tull, avgifter, foreOrderrabatt: r.netRevenue == null };
     if (r.cogs == null || r.zeroCost) return { ...bas, beRoas: null, status: "saknas" };
     if (linjer < MIN_RADER_BE) return { ...bas, beRoas: null, status: "tunn" };
     const tb = oms - r.cogs - tull - avgifter;
     if (!(tb > 0) || !(oms > 0)) return { ...bas, beRoas: null, status: "olonsam" };
     return { ...bas, beRoas: oms / tb, status: "ok" };
   });
-  return { rader, intakt, oallokerat: x.totalSales - intakt };
+  return { rader, intakt, oallokerat: x.totalSales - intakt, nagonForeOrderrabatt: rader.some((r) => r.foreOrderrabatt) };
 }
 
 /**

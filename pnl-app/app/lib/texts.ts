@@ -283,6 +283,9 @@ const en = {
     missing: "missing",
     productsTotal: "All products",
     productsUnallocated: "Not allocated: shipping, refunds, taxes",
+    productsUnallocatedOld: "Not allocated: shipping, refunds, taxes, order discount codes on * rows",
+    productsBeforeOrderDiscounts:
+      "* = before order-level discount codes (part of the period was fetched before those were measured), so Net and BE ROAS on these rows are somewhat too kind. Those codes sit in the last row.",
     productsUnprofitable: "unprofitable",
     productsNote:
       "Net = what customers paid for the items after all discounts. BE ROAS = the ROAS this product's ads must beat: duty split by order lines, fees at the period's rate, shipping charged not counted (so the number is on the safe side). — = no cost, or fewer than 3 order lines. Products plus the last row add up to Sales.",
@@ -345,9 +348,11 @@ const en = {
       merNone:
         "No colours yet: they need your store's MER from 30 full days with ad spend fetched (7+ days with sales, 3+ orders). Open the dashboard once to fetch it.",
       priceRealized: "realized price, 90 days",
-      pricePartly: "realized price where known, list price for older orders",
+      pricePartly: "realized price where known, list price where older orders make up most of a pack size",
       priceList: "list price (no sales)",
       listShort: "list price",
+      thinPrice: "— = unprofitable at the price paid, but fewer than 3 orders carry that price: no verdict yet.",
+      thinFallback: "list price, 1 pc: fewer than 3 orders with a known price",
     },
     market: {
       title: "Market",
@@ -1305,6 +1310,9 @@ const sv: Texts = {
     missing: "saknas",
     productsTotal: "Alla produkter",
     productsUnallocated: "Inte fördelat: frakt, returer, moms",
+    productsUnallocatedOld: "Inte fördelat: frakt, returer, moms, rabattkoder på *-rader",
+    productsBeforeOrderDiscounts:
+      "* = före rabattkoder på ordernivå (en del av perioden hämtades innan de mättes), så Netto och BE ROAS på de raderna är något för snälla. Koderna ligger i sista raden.",
     productsUnprofitable: "olönsam",
     productsNote:
       "Netto = vad kunderna betalade för varorna efter alla rabatter. BE ROAS = den ROAS produktens annonser måste slå: tullen fördelad efter orderrader, avgifter med periodens sats, debiterad frakt inte medräknad (talet ligger på den säkra sidan). — = kostnad saknas eller färre än 3 orderrader. Produkterna plus sista raden blir Försäljning.",
@@ -1367,9 +1375,11 @@ const sv: Texts = {
       merNone:
         "Inga färger än: de behöver butikens MER ur 30 hela dagar med hämtad annonskostnad (7+ dagar med försäljning, 3+ ordrar). Öppna panelen en gång så hämtas den.",
       priceRealized: "faktiskt pris, 90 dagar",
-      pricePartly: "faktiskt pris där det finns, listpris för äldre ordrar",
+      pricePartly: "faktiskt pris där det finns, listpris där äldre ordrar dominerar en packstorlek",
       priceList: "listpris (ingen försäljning)",
       listShort: "listpris",
+      thinPrice: "— = olönsam på det som betalats, men färre än 3 ordrar bär det priset: ingen dom än.",
+      thinFallback: "listpris, 1 st: färre än 3 ordrar med känt pris",
     },
     market: {
       title: "Marknad",

@@ -49,7 +49,7 @@ import { fingeravtryck, hittaSummaspalt } from "../lib/prisspalter";
 import { asLang, localeOf, t } from "../lib/texts";
 import { JUICY_TACKNING, tackningEfterOmsattning } from "../lib/kostnadstackning";
 import { blandadSats } from "../lib/avgifter";
-import { beTon } from "../lib/produktintakt";
+import { beTon, beUnderlag, tunntPris } from "../lib/produktintakt";
 
 /**
  * Valutan AI:n rapporterar → en ISO-kod appen kan hämta kurs för.
@@ -251,7 +251,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
       /* Nettoförsäljning senaste 90 dagarna — sorteringen och täckningen. */
       oms90: omsPerVariant.get(v.variantGid) ?? 0,
       unitCost,
-      be: { beRoas: be.beRoas, tb: be.tb, revenue: be.revenue, lines: be.lines, antagen: be.antagen, olonsamNagon: be.olonsamNagon, delvisListpris: be.delvisListpris, mix: be.mix.map((m) => ({ qty: m.qty, share: m.share })) },
+      be: { beRoas: be.beRoas, tb: be.tb, revenue: be.revenue, lines: be.lines, antagen: be.antagen, olonsamNagon: be.olonsamNagon, delvisListpris: be.delvisListpris, prisade: be.prisade, mix: be.mix.map((m) => ({ qty: m.qty, share: m.share })) },
       egen: mk ? egen != null : v.unitCost != null,
       arvd: Boolean(mk) && egen == null && v.unitCost != null,
       perMarknad,
@@ -1960,7 +1960,7 @@ export default function Costs() {
                        försäljning eller under tre orderrader. */
                     return (
                       <span key={`be${r.variantGid}`}>
-                        <Text as="span" tone={beTon(be.beRoas, storeMer, be.antagen ? 0 : be.lines)}>
+                        <Text as="span" tone={beTon(be.beRoas, storeMer, beUnderlag(be))}>
                           {`${dec(be.beRoas.toFixed(2))}×`}
                         </Text>
                         <br />
@@ -1974,15 +1974,25 @@ export default function Costs() {
                   }
                   /* Mixen olönsam på det kunderna betalat: säg det. Förut föll
                      cellen då tillbaka på styckräkningen på LISTPRIS, som kunde
-                     se lönsam ut just när mängdrabatten var problemet. */
-                  if (k.beRoas == null || (be && !be.antagen))
+                     se lönsam ut just när mängdrabatten var problemet. Men bara
+                     när minst tre orderrader bär priset — en enda giveaway med
+                     100 %-kod är ingen dom över varianten. Då: styckräkningen på
+                     listpris, märkt och utan färg. */
+                  const tunt = be != null && !be.antagen && tunntPris(be.prisade ?? 0);
+                  if (k.beRoas == null || (be && !be.antagen && !tunt))
                     return <Badge key={`be${r.variantGid}`} tone="critical">{T.costs.unprofitable}</Badge>;
-                  /* Styckräkning på listpris (mixen gick inte att räkna) — ett
-                     antagande, alltså ingen färg. */
+                  /* Styckräkning på listpris (mixen gick inte att räkna eller
+                     vilar på för få ordrar) — ett antagande, alltså ingen färg. */
                   return (
-                    <Text key={`be${r.variantGid}`} as="span">
-                      {`${dec(k.beRoas.toFixed(2))}×`}
-                    </Text>
+                    <span key={`be${r.variantGid}`}>
+                      <Text as="span">{`${dec(k.beRoas.toFixed(2))}×`}</Text>
+                      {tunt ? (
+                        <>
+                          <br />
+                          <Text as="span" variant="bodySm" tone="subdued">{T.costs.be.thinFallback}</Text>
+                        </>
+                      ) : null}
+                    </span>
                   );
                 })(),
               ])}
@@ -2064,6 +2074,8 @@ type Rad = {
     beRoas: number | null; tb: number | null; revenue: number | null; lines: number; antagen: boolean; olonsamNagon: boolean;
     /** Någon såld packstorlek räknades på listpris (äldre rader utan pris). */
     delvisListpris?: boolean;
+    /** Orderrader bakom de realiserade priserna. Under tre: ingen dom. */
+    prisade?: number;
     mix: { qty: number; share: number }[];
   };
 };

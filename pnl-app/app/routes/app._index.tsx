@@ -2088,9 +2088,15 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
                 effFeeRate: t2.effFeeRate,
                 totalSales: t2.totalSales,
               });
+              /* "*" = raden står före ordernivåns rabattkoder (en dag i perioden
+                 skrevs innan fältet fanns och skrivs aldrig om bortom omsynken).
+                 Utan märkning hade ett kvartal eller år visat en för snäll
+                 break-even under anteckningen "efter alla rabatter". */
+              const stj = (i: number) => (f.rader[i].foreOrderrabatt ? " *" : "");
               const enheter = result.products.reduce((a, p) => a + p.units, 0);
               const bruttoSumma = f.intakt - t2.cogs;
               return (
+                <>
                 <DataTable
                   columnContentTypes={["text", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric"]}
                   headings={[
@@ -2109,7 +2115,7 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
                       return [
                         p.variantTitle ? `${p.title} · ${p.variantTitle}` : p.title,
                         nf.format(p.units),
-                        money(fr.intakt),
+                        money(fr.intakt) + stj(i),
                         /* "0?" = kostnad 0 som ingen sagt är gratis; "≈" = panelens
                            uppskattning, inte ett inköpspris. Marginal och multipel på
                            en misstänkt nolla hade visat 100 % — de står som "—". */
@@ -2124,7 +2130,7 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
                         /* Ingen färg: talet är en tröskel, inte ett utfall — annonsernas
                            ROAS per produkt finns inte i panelen att jämföra med. */
                         fr.status === "ok"
-                          ? (p.estimated ? "≈ " : "") + mult(fr.beRoas)
+                          ? (p.estimated ? "≈ " : "") + mult(fr.beRoas) + stj(i)
                           : fr.status === "olonsam"
                             ? <Text key={`be${i}`} as="span" tone="critical">{T.dashboard.productsUnprofitable}</Text>
                             : "—",
@@ -2144,13 +2150,21 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
                       "",
                     ],
                     [
-                      <Text key="ofordelat" as="span" tone="subdued">{T.dashboard.productsUnallocated}</Text>,
+                      <Text key="ofordelat" as="span" tone="subdued">
+                        {f.nagonForeOrderrabatt ? T.dashboard.productsUnallocatedOld : T.dashboard.productsUnallocated}
+                      </Text>,
                       "",
                       money(f.oallokerat),
                       "", "", "", "", "",
                     ],
                   ]}
                 />
+                {f.nagonForeOrderrabatt ? (
+                  <div style={{ padding: "0 16px 12px" }}>
+                    <Text as="p" variant="bodySm" tone="subdued">{T.dashboard.productsBeforeOrderDiscounts}</Text>
+                  </div>
+                ) : null}
+                </>
               );
             })()}
           </Card>
