@@ -198,6 +198,11 @@
     "Paketet är för stort för brevlådan och skickas därför till ett ombud. Det kan ta 1-2 arbetsdagar extra, och du får besked när det går att hämta": "Paketti on liian suuri postilaatikkoon ja lähetetään siksi noutopisteeseen. Se voi viedä 1-2 arkipäivää ylimääräistä, ja saat ilmoituksen kun sen voi noutaa",
     "Paketet är registrerat hos fraktbolaget": "Paketti on rekisteröity kuljetusyhtiölle",
     "Paketet har kommit till terminalen och är klart att skickas vidare": "Paketti on saapunut terminaaliin ja on valmis lähetettäväksi eteenpäin",
-    "Paketet har skickats till ett ombud eftersom dörren inte hittades. Du får besked när det kan hämtas, och namn på dörren gör nästa leverans enklare": "Paketti on lähetetty noutopisteeseen, koska ovea ei löytynyt. Saat ilmoituksen kun sen voi noutaa, ja nimi ovessa helpottaa seuraavaa toimitusta"
+    "Paketet har skickats till ett ombud eftersom dörren inte hittades. Du får besked när det kan hämtas, och namn på dörren gör nästa leverans enklare": "Paketti on lähetetty noutopisteeseen, koska ovea ei löytynyt. Saat ilmoituksen kun sen voi noutaa, ja nimi ovessa helpottaa seuraavaa toimitusta",
+    "Till dig som beställt hos oss": "Sinulle, joka tilasit meiltä",
+    "Två saker som passar samma husvagn eller husbil. Skickas som en egen beställning, med fri frakt och 14 dagars ångerrätt som vanligt.": "Kaksi tuotetta, jotka sopivat samaan matkailuvaunuun tai matkailuautoon. Lähetetään omana tilauksena, mukana ilmainen toimitus ja tavanomainen 14 päivän peruutusoikeus.",
+    "{{pris}} för dig som beställt hos oss": "{{pris}} sinulle, joka tilasit meiltä",
+    "Lägg till för {{pris}}": "Lisää hintaan {{pris}}",
+    "Priset gäller dig som beställt hos oss och läggs på av sig själv i kassan.": "Hinta koskee sinua, joka tilasit meiltä, ja se lisätään automaattisesti kassalla."
   }
 }

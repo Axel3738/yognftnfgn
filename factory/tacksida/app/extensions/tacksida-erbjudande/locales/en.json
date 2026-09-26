@@ -1,0 +1,14 @@
+{
+  "rubrik": "For you who just ordered",
+  "underrubrik": "Two items that suit the same caravan or motorhome. Added as a separate order to the same address, with free delivery and the usual 14-day right of withdrawal.",
+  "spar": "You save {belopp}",
+  "knapp": "Add for {pris}",
+  "villkor": "This price applies to you as someone who has just ordered from us, and is added automatically at checkout. Payment is taken at checkout, just as before.",
+  "produkt": {
+    "fonstertermomatta-2-pack": "Two suction-cup thermal mats keep the cold out at night and the sun out by day.",
+    "adventskalender-retrobussar": "24 doors each hide a small retro campervan in its own colour, almost every day."
+  },
+  "pris_for_dig": "{pris} for you who just ordered",
+  "ord_pris": "Regular price {pris}",
+  "laddar": "Loading …"
+}

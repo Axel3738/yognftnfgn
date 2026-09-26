@@ -1,0 +1,279 @@
+{
+  "_om": "Tilläggsprodukterna som erbjuds efter köp på CaraShells tacksida (Axels beställning 2026-09-26). Källorna är två Bäverbutiks-produkter (lästa ur /products/<handle>.json 2026-09-26); copyn är omskriven i CaraShells ton av en subagent (sonnet) mot docs/copy-regler.md. Butikens namn står aldrig i texten. Priserna är källans tills Axel säger annat. Skrivs in i butiken av factory/tacksida/produkter.mjs. ⚠️ INGET jämförpris på de här produkterna (2026-09-26, efter lagresearchen): ett överstruket pris måste vara det lägsta priset butiken tillämpat de senaste 30 dagarna (PIL 7 a §), och produkterna är nya i butiken. Källans jämförpris står kvar som `kalla_jamforpris` för minnet; Axel slår på det med `jamforpris` när det är lagligt.",
+  "butik": "carashell",
+  "mall": "tillagg",
+  "vendor": "CaraShell",
+  "taggar": [
+    "tacksida",
+    "tillagg"
+  ],
+  "angerratt_text_sv": "14 dagars ångerrätt enligt svensk lag. Mejla hello@carashell.com så hjälper vi dig.",
+  "produkter": [
+    {
+      "id": "fonstertermomatta",
+      "handle": "fonstertermomatta-2-pack",
+      "sku": "TEMU-B12-FONSTERTERMOMATTA",
+      "pris": 539,
+      "kalla_url": "https://baverbutiken.se/products/fonstertermomatta-2-pack-70-80-cm-isolering-mot-kyla-och-sol",
+      "kalla_produkt_id": "16584530821469",
+      "titel_sv": "Fönstertermomatta 2-pack 70 × 80 cm",
+      "titel": {
+        "nb": "Vindu-termomatte 2-pk 70 × 80 cm",
+        "en": "Window Thermal Mat, 2-Pack, 70 × 80 cm",
+        "fi": "Ikkunan lämpömatto 2 kpl, 70 × 80 cm",
+        "da": "Vinduestermomåtte 2-pak 70 × 80 cm"
+      },
+      "kortnamn": {
+        "sv": "Termomattor till fönstren",
+        "nb": "Termomatter til vinduene",
+        "en": "Thermal mats for windows",
+        "fi": "Lämpömatot ikkunoihin",
+        "da": "Termomåtter til vinduerne"
+      },
+      "en_mening": {
+        "sv": "Två termomattor med sugproppar håller kylan ute på natten och solen ute på dagen.",
+        "nb": "To termomatter med sugekopper holder kulden ute om natten og solen ute om dagen.",
+        "en": "Two suction-cup thermal mats keep the cold out at night and the sun out by day.",
+        "fi": "Kaksi imukupeilla kiinnittyvää lämpömattoa pitää kylmän ja auringon loitolla.",
+        "da": "To termomåtter med sugekopper holder kulden ude om natten og solen ude om dagen."
+      },
+      "problem_rubrik": "Kylan från rutan når ända in i sovsäcken",
+      "problem_text": "Glaset kyls snabbt när natten blir kall, och kylan strålar in i vagnen även med täcket uppdraget. På dagen är det tvärtom: samma ruta släpper in solen tills kupén blir kvav långt innan lunch.",
+      "losning_rubrik": "Mattan läggs mot insidan av rutan",
+      "losning_text": "Två silverfärgade mattor, 70 × 80 cm styck, läggs mot insidan av varje fönster och hålls på plats med sugproppar – ingen tejp, ingen skruv. När säsongen är över rullas mattan ihop och läggs undan.",
+      "features": [
+        "2 mattor i paketet – en till varje fönster, 70 × 80 cm styck.",
+        "Silverfärgad isolermatta mot glaset håller kylan och solen ute.",
+        "Sugproppar håller mattan på plats, utan tejp eller skruv.",
+        "Rullas ihop och tar ingen plats när den inte används."
+      ],
+      "ai_rad": "Livsstilsbilderna är AI-genererade illustrationer.",
+      "seo_beskrivning": "2-pack termomattor, 70 × 80 cm, till husvagnens fönster. Sugproppar håller mattan på plats – kylan ute, solen ute.",
+      "bilder": [
+        {
+          "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/09_3aac9f84-3b78-46f2-8176-36ac3618389e.jpg",
+          "alt": "Termomattan med sugproppar"
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/08_6b95d2c9-762d-4003-96af-0bb5cbf625b9.jpg",
+          "alt": "Mattan på husvagnens fönster"
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/07_8031cff3-59d2-4318-ae24-101b6ebd6776.jpg",
+          "alt": "Mattan ihoprullad med rem vid husvagnsfönstret"
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/05_8fa2ec0e-43c5-4fba-9403-c78f1237cfdb.jpg",
+          "alt": "Mattan i en takluckas öppning"
+        }
+      ],
+      "oversattningar": {
+        "nb": {
+          "problem_rubrik": "Kulden fra ruten når helt inn i soveposen",
+          "problem_text": "Glasset kjøles raskt ned når natten blir kald, og kulden stråler inn i vogna selv med dyna trukket opp. Om dagen er det motsatt: samme rute slipper inn solen til kupeen blir tett lenge før lunsj.",
+          "losning_rubrik": "Matten legges mot innsiden av ruten",
+          "losning_text": "To sølvfargede matter, 70 × 80 cm hver, legges mot innsiden av hvert vindu og holdes på plass med sugekopper – ingen tape, ingen skrue. Når sesongen er over, rulles matten sammen og legges bort.",
+          "features": [
+            "2 matter i pakken – en til hvert vindu, 70 × 80 cm hver.",
+            "Sølvfarget isolasjonsmatte mot glasset holder kulden og solen ute.",
+            "Sugekopper holder matten på plass, uten tape eller skrue.",
+            "Rulles sammen og tar ingen plass når den ikke er i bruk."
+          ],
+          "ai_rad": "Livsstilsbildene er AI-genererte illustrasjoner.",
+          "funktioner_rubrik": "Funksjoner",
+          "angerratt_rubrik": "Angrerett",
+          "angerratt_text": "14 dagers angrerett i henhold til svensk lov. Send e-post til hello@carashell.com, så hjelper vi deg.",
+          "seo_beskrivning": "2-pack termomatter, 70 × 80 cm, til husvognens vinduer. Sugekopper holder matten på plass – kulden ute, solen ute."
+        },
+        "en": {
+          "problem_rubrik": "The cold from the window reaches right into the sleeping bag",
+          "problem_text": "The glass cools quickly as the night turns cold, and the cold radiates into the caravan even with the duvet pulled up. During the day it's the opposite: the same window lets in the sun until the cabin turns stuffy long before lunch.",
+          "losning_rubrik": "The mat is fitted against the inside of the window",
+          "losning_text": "Two silver-coloured mats, 70 × 80 cm each, are fitted against the inside of each window and held in place with suction cups – no tape, no screws. When the season is over, the mat is rolled up and put away.",
+          "features": [
+            "2 mats per pack – one for each window, 70 × 80 cm each.",
+            "Silver-coloured insulating mat against the glass keeps the cold and the sun out.",
+            "Suction cups hold the mat in place, without tape or screws.",
+            "Rolls up and takes no space when not in use."
+          ],
+          "ai_rad": "The lifestyle images are AI-generated illustrations.",
+          "funktioner_rubrik": "Features",
+          "angerratt_rubrik": "Right of withdrawal",
+          "angerratt_text": "14-day right of withdrawal under Swedish law. Email hello@carashell.com and we'll help you.",
+          "seo_beskrivning": "2-pack thermal mats, 70 × 80 cm, for the caravan's windows. Suction cups hold the mat in place – cold out, sun out."
+        },
+        "fi": {
+          "problem_rubrik": "Ikkunan kylmyys tuntuu aina makuupussiin asti",
+          "problem_text": "Lasi jäähtyy nopeasti yön viilentyessä, ja kylmyys säteilee vaunuun sisään, vaikka peitto olisi vedetty ylös. Päivällä tilanne on päinvastainen: sama ikkuna päästää auringon sisään, kunnes matkailuvaunun sisätila muuttuu tunkkaiseksi jo kauan ennen lounasta.",
+          "losning_rubrik": "Matto asetetaan ikkunan sisäpuolelle",
+          "losning_text": "Kaksi hopeanväristä mattoa, kumpikin 70 × 80 cm, asetetaan jokaisen ikkunan sisäpuolelle ja kiinnitetään imukupeilla – ei teippiä, ei ruuveja. Kauden päätyttyä matto rullataan kokoon ja laitetaan säilöön.",
+          "features": [
+            "2 mattoa pakkauksessa – yksi jokaiseen ikkunaan, kumpikin 70 × 80 cm.",
+            "Hopeanvärinen eristematto lasia vasten pitää kylmyyden ja auringon loitolla.",
+            "Imukupit pitävät maton paikallaan ilman teippiä tai ruuveja.",
+            "Rullautuu kokoon eikä vie tilaa, kun se ei ole käytössä."
+          ],
+          "ai_rad": "Tunnelmakuvat ovat tekoälyllä luotuja kuvituksia.",
+          "funktioner_rubrik": "Ominaisuudet",
+          "angerratt_rubrik": "Peruutusoikeus",
+          "angerratt_text": "14 päivän peruutusoikeus Ruotsin lain mukaisesti. Lähetä sähköpostia osoitteeseen hello@carashell.com, niin autamme sinua.",
+          "seo_beskrivning": "2 kpl termomattoja, 70 × 80 cm, matkailuvaunun ikkunoihin. Imukupit pitävät maton paikallaan – kylmyys ja aurinko pysyvät ulkona."
+        },
+        "da": {
+          "problem_rubrik": "Kulden fra ruden når helt ind i soveposen",
+          "problem_text": "Glasset køles hurtigt ned, når natten bliver kold, og kulden stråler ind i vognen, selv med dynen trukket op. Om dagen er det omvendt: samme rude lukker solen ind, til kabinen bliver kvalm længe før frokost.",
+          "losning_rubrik": "Måtten lægges mod indersiden af ruden",
+          "losning_text": "To sølvfarvede måtter, 70 × 80 cm hver, lægges mod indersiden af hvert vindue og holdes på plads med sugekopper – ingen tape, ingen skruer. Når sæsonen er slut, rulles måtten sammen og lægges væk.",
+          "features": [
+            "2 måtter i pakken – en til hvert vindue, 70 × 80 cm hver.",
+            "Sølvfarvet isoleringsmåtte mod glasset holder kulden og solen ude.",
+            "Sugekopper holder måtten på plads, uden tape eller skruer.",
+            "Rulles sammen og fylder ingenting, når den ikke er i brug."
+          ],
+          "ai_rad": "Livsstilsbillederne er AI-genererede illustrationer.",
+          "funktioner_rubrik": "Funktioner",
+          "angerratt_rubrik": "Fortrydelsesret",
+          "angerratt_text": "14 dages fortrydelsesret i henhold til svensk lov. Send en mail til hello@carashell.com, så hjælper vi dig.",
+          "seo_beskrivning": "2-pack termomåtter, 70 × 80 cm, til campingvognens vinduer. Sugekopper holder måtten på plads – kulden ude, solen ude."
+        }
+      },
+      "kalla_jamforpris": 709,
+      "jamforpris": null
+    },
+    {
+      "id": "husbilskalendern",
+      "handle": "adventskalender-retrobussar",
+      "sku": "TEMU-B13-HUSBILSKALENDER",
+      "pris": 379,
+      "kalla_url": "https://baverbutiken.se/products/husbilskalendern-24-luckor-retrobussar-och-campingprylar",
+      "kalla_produkt_id": "16584372388189",
+      "titel_sv": "Adventskalender med retrobussar, 24 luckor",
+      "titel": {
+        "nb": "Adventskalender med retrobusser, 24 luker",
+        "en": "Advent Calendar with Retro Campervans, 24 Doors",
+        "fi": "Retrobussi-joulukalenteri, 24 luukkua",
+        "da": "Adventskalender med retrobusser, 24 låger"
+      },
+      "kortnamn": {
+        "sv": "Adventskalender med retrobussar",
+        "nb": "Adventskalender med retrobusser",
+        "en": "Advent calendar, retro campervans",
+        "fi": "Joulukalenteri ja retrobussit",
+        "da": "Adventskalender med retrobusser"
+      },
+      "en_mening": {
+        "sv": "24 luckor döljer en liten retrobuss i egen färg bakom nästan varje dag i december.",
+        "nb": "24 luker skjuler en liten retrobuss i egen farge bak nesten hver dag i desember.",
+        "en": "24 doors each hide a small retro campervan in its own colour, almost every day.",
+        "fi": "24 luukun takana odottaa oma pieni retrobussi lähes joka päivä joulukuussa.",
+        "da": "24 låger skjuler en lille retrobus i egen farve bag næsten hver dag i december."
+      },
+      "problem_rubrik": "Husvagnen står avställd hela vintern",
+      "problem_text": "Husvagnen eller husbilen står avställd sedan hösten, och december är den månad som ligger längst från nästa resa. En vanlig julkalender med choklad smakar likadant för alla och säger ingenting om resfebern som redan väntar till våren.",
+      "losning_rubrik": "En liten retrobuss bakom nästan varje lucka",
+      "losning_text": "24 numrerade luckor döljer en miniatyrbuss i olika färger – några blommålade, andra blå, gröna eller tvåfärgade. Ett par luckor bjuder på campingprylar i stället, som en liten campingstol och ett bord. Asken är orange, tryckt med texten 'CAMPER ADVENT CALENDAR – HOLIDAY ROAD TRIP' och en blommålad retrobuss i hippiestil.",
+      "features": [
+        "24 numrerade luckor, en liten retrobuss bakom nästan varenda en.",
+        "Bussarna varierar i färg och mönster – blommålat, blått, grönt och tvåfärgat.",
+        "Ett par luckor gömmer campingprylar i stället – en campingstol och ett litet bord.",
+        "Orange ask tryckt med 'CAMPER ADVENT CALENDAR – HOLIDAY ROAD TRIP'."
+      ],
+      "ai_rad": "Livsstilsbilderna är AI-genererade illustrationer.",
+      "seo_beskrivning": "Adventskalender med 24 luckor och en liten retrobuss bakom nästan varje lucka. Orange ask, hippiemönster.",
+      "bilder": [
+        {
+          "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/05h.jpg",
+          "alt": "Kalendern öppen: 24 luckor med retrobussar"
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/06_c3d353a4-1eff-4ae4-9381-7b8008a23f25.jpg",
+          "alt": "Retrobussarna i närbild"
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/husbilskalender-hero.jpg",
+          "alt": "Plastfacken med retrobussar bredvid den orange asken"
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/04_8bbb7cce-abf4-4935-b0d8-d1e4680f5001.jpg",
+          "alt": "Retrobussarna uppradade"
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/10_26e8b6d5-13b0-41e8-99d3-9a152433720e.jpg",
+          "alt": "Retrobussar hängda i en julgran (AI-genererad illustration)"
+        }
+      ],
+      "oversattningar": {
+        "nb": {
+          "problem_rubrik": "Campingvogna står avskiltet hele vinteren",
+          "problem_text": "Campingvogna eller bobilen har stått avskiltet siden høsten, og desember er måneden som ligger lengst unna neste tur. En vanlig julekalender med sjokolade smaker likt for alle og sier ingenting om reisefeberen som allerede venter til våren.",
+          "losning_rubrik": "En liten retrobuss bak nesten hver luke",
+          "losning_text": "24 nummererte luker skjuler en miniatyrbuss i ulike farger – noen blomstermalte, andre blå, grønne eller tofargede. Et par luker byr på campingutstyr i stedet, som en liten campingstol og et bord. Esken er oransje, trykt med teksten 'CAMPER ADVENT CALENDAR – HOLIDAY ROAD TRIP' og en blomstermalt retrobuss i hippiestil.",
+          "features": [
+            "24 nummererte luker, en liten retrobuss bak nesten hver eneste en.",
+            "Bussene varierer i farge og mønster – blomstermalt, blått, grønt og tofarget.",
+            "Et par luker skjuler campingutstyr i stedet – en campingstol og et lite bord.",
+            "Oransje eske trykt med 'CAMPER ADVENT CALENDAR – HOLIDAY ROAD TRIP'."
+          ],
+          "ai_rad": "Livsstilsbildene er AI-genererte illustrasjoner.",
+          "funktioner_rubrik": "Funksjoner",
+          "angerratt_rubrik": "Angrerett",
+          "angerratt_text": "14 dagers angrerett i henhold til svensk lov. Send e-post til hello@carashell.com, så hjelper vi deg.",
+          "seo_beskrivning": "Adventskalender med 24 luker og en liten retrobuss bak nesten hver luke. Oransje eske, hippiemønster."
+        },
+        "en": {
+          "problem_rubrik": "The caravan sits off the road all winter",
+          "problem_text": "The caravan or motorhome has been off the road since autumn, and December is the month furthest from the next trip. An ordinary chocolate advent calendar tastes the same for everyone and says nothing about the travel fever already waiting for spring.",
+          "losning_rubrik": "A little retro camper behind almost every door",
+          "losning_text": "24 numbered doors hide a miniature camper van in different colours – some painted with flowers, others blue, green or two-toned. A couple of doors offer camping gear instead, such as a small camping chair and table. The box is orange, printed with the text 'CAMPER ADVENT CALENDAR – HOLIDAY ROAD TRIP' and a flower-painted retro camper in hippie style.",
+          "features": [
+            "24 numbered doors, a little retro camper behind almost every single one.",
+            "The campers vary in colour and pattern – flower-painted, blue, green and two-toned.",
+            "A couple of doors hide camping gear instead – a camping chair and a small table.",
+            "Orange box printed with 'CAMPER ADVENT CALENDAR – HOLIDAY ROAD TRIP'."
+          ],
+          "ai_rad": "The lifestyle images are AI-generated illustrations.",
+          "funktioner_rubrik": "Features",
+          "angerratt_rubrik": "Right of withdrawal",
+          "angerratt_text": "14-day right of withdrawal under Swedish law. Email hello@carashell.com and we'll help you.",
+          "seo_beskrivning": "Advent calendar with 24 doors and a little retro camper behind almost every door. Orange box, hippie pattern."
+        },
+        "fi": {
+          "problem_rubrik": "Matkailuvaunu seisoo käyttämättömänä koko talven",
+          "problem_text": "Asuntovaunu tai matkailuauto on seisonut käyttämättömänä syksystä lähtien, ja joulukuu on kuukausista se, joka on kauimpana seuraavasta matkasta. Tavallinen suklaajoulukalenteri maistuu samalta kaikille eikä kerro mitään matkakuumeesta, joka odottaa jo kevättä.",
+          "losning_rubrik": "Pieni retrobussi lähes jokaisen luukun takana",
+          "losning_text": "24 numeroitua luukkua kätkee sisäänsä pienoiskoossa olevan matkailuauton eri väreissä – osa kukkakuvioituja, osa sinisiä, vihreitä tai kaksivärisiä. Pari luukkua tarjoaa sen sijaan retkeilytarvikkeita, kuten pienen retkeilytuolin ja pöydän. Rasia on oranssi, ja siihen on painettu teksti 'CAMPER ADVENT CALENDAR – HOLIDAY ROAD TRIP' sekä kukkakuvioitu retrobussi hippityyliin.",
+          "features": [
+            "24 numeroitua luukkua, pieni retrobussi lähes jokaisen takana.",
+            "Bussit vaihtelevat väriltään ja kuvioinniltaan – kukkakuvioitu, sininen, vihreä ja kaksivärinen.",
+            "Pari luukkua kätkee sen sijaan retkeilytarvikkeita – retkeilytuolin ja pienen pöydän.",
+            "Oranssi rasia, jossa teksti 'CAMPER ADVENT CALENDAR – HOLIDAY ROAD TRIP'."
+          ],
+          "ai_rad": "Tunnelmakuvat ovat tekoälyllä luotuja kuvituksia.",
+          "funktioner_rubrik": "Ominaisuudet",
+          "angerratt_rubrik": "Peruutusoikeus",
+          "angerratt_text": "14 päivän peruutusoikeus Ruotsin lain mukaisesti. Lähetä sähköpostia osoitteeseen hello@carashell.com, niin autamme sinua.",
+          "seo_beskrivning": "Joulukalenteri, jossa 24 luukkua ja pieni retrobussi lähes jokaisen luukun takana. Oranssi rasia, hippikuvio."
+        },
+        "da": {
+          "problem_rubrik": "Campingvognen står afmeldt hele vinteren",
+          "problem_text": "Campingvognen eller autocamperen har stået afmeldt siden efteråret, og december er den måned, der ligger længst fra næste tur. En almindelig julekalender med chokolade smager ens for alle og siger ingenting om rejsefeberen, der allerede venter til foråret.",
+          "losning_rubrik": "En lille retrobus bag næsten hver låge",
+          "losning_text": "24 nummererede låger gemmer på en miniaturebus i forskellige farver – nogle blomstermalede, andre blå, grønne eller tofarvede. Et par låger byder i stedet på campingudstyr, som en lille campingstol og et bord. Æsken er orange, trykt med teksten 'CAMPER ADVENT CALENDAR – HOLIDAY ROAD TRIP' og en blomstermalet retrobus i hippiestil.",
+          "features": [
+            "24 nummererede låger, en lille retrobus bag næsten hver eneste en.",
+            "Busserne varierer i farve og mønster – blomstermalet, blå, grøn og tofarvet.",
+            "Et par låger gemmer i stedet på campingudstyr – en campingstol og et lille bord.",
+            "Orange æske trykt med 'CAMPER ADVENT CALENDAR – HOLIDAY ROAD TRIP'."
+          ],
+          "ai_rad": "Livsstilsbillederne er AI-genererede illustrationer.",
+          "funktioner_rubrik": "Funktioner",
+          "angerratt_rubrik": "Fortrydelsesret",
+          "angerratt_text": "14 dages fortrydelsesret i henhold til svensk lov. Send en mail til hello@carashell.com, så hjælper vi dig.",
+          "seo_beskrivning": "Julekalender med 24 låger og en lille retrobus bag næsten hver låge. Orange æske, hippiemønster."
+        }
+      },
+      "kalla_jamforpris": 499,
+      "jamforpris": null
+    }
+  ]
+}

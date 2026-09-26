@@ -188,6 +188,42 @@ brick by brick och **varje lyckat steg dokumenteras direkt**:
 - **Q4-ramverket är standard för varje ny OPS:** gratis bonusprodukt i
   paketnivåerna + betald upsell i varukorgen (`offer.bonus_produkt` i
   produktfilen, `byggKorgUpsell` i `factory/tema.mjs`).
+- **Tacksidan — erbjudandet EFTER köpet (`factory/tacksida/`, byggt
+  2026-09-26 för CaraShell, Axels beställning: Fönstertermomattan +
+  Husbilskalendern som upsell "på taxsidan").** Läs `factory/tacksida/README.md`
+  först. Två tilläggsprodukter live i CaraShell (`fonstertermomatta-2-pack`
+  539 kr, `adventskalender-retrobussar` 379 kr, egen lättmall
+  `product.tillagg`, inte i Sortimentet), två rabattkoder (**TACKMATTA** 34,88 %
+  ⇒ 351 kr, **TACKKALENDER** 36,94 % ⇒ 239 kr, låsta till sin produkt, en gång
+  per kund), och en checkout UI extension (Preact, api 2026-07) för tacksidan
+  + orderstatussidan som visar kortet i kundens språk/valuta och länkar till en
+  förifylld kassa med koden pålagd (`attributes[kalla]=tacksida` märker ordern;
+  `rapport.mjs` mäter take-raten). **Inte Shopifys one-click-sida** — den
+  visas inte för Klarna/Apple Pay/Google Pay eller ordrar i annan valuta än
+  SEK, och en egen app får bara använda den på Plus (CaraShell är Grow):
+  hade nått var femte order. ⚠️ Tre mätta fällor: Shopify lagrar rabattprocent
+  med två decimaler och **trunkerar** beloppet till hela ören (35,25 % på 539
+  gav 349,01 — välj procent där `(pris×procent×100) mod 10000 < 50`);
+  `losNycklar('carashell')` faller tillbaka på den allmänna `SHOPIFY_SHOP`
+  (fel butik) — slå alltid upp via butiksfilens domän (`suffixForDoman`);
+  `codeDiscountNodes(query:)` släpar efter nyss skapade koder — läs med
+  `codeDiscountNodeByCode`. **Deployen kräver `SHOPIFY_APP_AUTOMATION_TOKEN`**
+  (Dev Dashboard → appen → Settings → App Automation Token, Axels klick;
+  ⚠️ token är per APP och varje butik har en egen app som heter "Factory" i
+  sin egen organisation — CaraShells är org **Carashell**, client id
+  `ca709d…`; fel butiks Factory ger 403 "not a member of the requested
+  organization", mätt 2026-09-26) —
+  `bash factory/tacksida/deploy.sh carashell` hämtar appens konfig först och
+  vägrar om scopes saknas (en handskriven toml skriver över appens
+  rättigheter vid deploy). Blocket läggs in i kassaredigeraren för hand —
+  inget API gör det. Evolve-frågorna (utan brand) i `EVOLVE-FRAGOR.md`.
+  ✅ **Live utan app sedan 2026-09-26: samma två kort under paketet på
+  carashell.se/pages/spara** (`sparning/tillagg.mjs`, registret
+  `sparning/butiker.json` → `carashell.tillagg: true`, facit fortfarande
+  `factory/tacksida/`; priset hämtas i kundens valuta i webbläsaren, fyra
+  språk, `plats=sparningssida` i rapporten). Mechile/Cowork mätte samma dag
+  att Factory-appen `ca709dfb` inte finns i något av Axels konton — den
+  ligger i jobb-Gmailens Dev Dashboard-org (VA-CHECKLIST rad 101).
 - **Annonskontot för ALLA OPS-butiker (SE och NO) är "MagiBorsten DK"
   `915422744950975`** (Axels beslut 2026-09-07). Ett gemensamt konto —
   kampanjnamn prefixas alltid med brandet så datan går att skära per

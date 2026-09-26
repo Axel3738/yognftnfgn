@@ -1,0 +1,15 @@
+{
+  "name": "carashell-tacksida",
+  "private": true,
+  "description": "Tacksides-erbjudandet (checkout UI extension) för OPS-butikerna. Deployas till butikens egen Fabriken-app med Shopify CLI — se factory/tacksida/README.md.",
+  "workspaces": [
+    "extensions/*"
+  ],
+  "scripts": {
+    "build": "shopify app build --skip-dependencies-installation",
+    "deploy": "shopify app deploy --allow-updates"
+  },
+  "devDependencies": {
+    "@shopify/cli": "^4.8.2"
+  }
+}

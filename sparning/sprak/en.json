@@ -189,6 +189,11 @@
     "Budet hittade inte fram. Du får ett sms eller mejl där du kan fylla i adressuppgifterna, så gör vi ett nytt försök. Svarar du inte skickas paketet till närmaste ombud": "The courier could not find the address. You will get a text or email where you can fill in the address details, and we will try again. If you do not reply, the parcel will be sent to the nearest pickup point",
     "Paketet är för stort för brevlådan och skickas därför till ett ombud. Det kan ta 1-2 arbetsdagar extra, och du får besked när det går att hämta": "The parcel is too large for your mailbox and is being sent to a pickup point instead. This can add 1-2 business days, and you will be notified when it is ready to collect",
     "Paketet är registrerat hos fraktbolaget": "The parcel has been registered with the carrier",
-    "Paketet har kommit till terminalen och är klart att skickas vidare": "The parcel has arrived at the facility and is ready to be forwarded"
+    "Paketet har kommit till terminalen och är klart att skickas vidare": "The parcel has arrived at the facility and is ready to be forwarded",
+    "Till dig som beställt hos oss": "For you who ordered from us",
+    "Två saker som passar samma husvagn eller husbil. Skickas som en egen beställning, med fri frakt och 14 dagars ångerrätt som vanligt.": "Two items that suit the same caravan or motorhome. Sent as a separate order, with free delivery and the usual 14-day right of withdrawal.",
+    "{{pris}} för dig som beställt hos oss": "{{pris}} for you who ordered from us",
+    "Lägg till för {{pris}}": "Add for {{pris}}",
+    "Priset gäller dig som beställt hos oss och läggs på av sig själv i kassan.": "This price applies to you as a customer of ours and is added automatically at checkout."
   }
 }
