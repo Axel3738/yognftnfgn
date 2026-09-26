@@ -747,3 +747,18 @@ test('beräknad leverans: bokningen som ankare läggs på det mätta dröjsmåle
   assert.match(bokat, /26/, `bokat skulle ge 26 sep, gav "${bokat}"`);
   assert.match(bokat, /3/, `bokat skulle ge 3 okt, gav "${bokat}"`);
 });
+
+test('butikskrediten ersätter hjulet under paketet (Axels beslut 2026-09-26)', () => {
+  const med = { ...KONFIG, erbjudande: { kod: 'TACKIGEN', minsta_kop_sek: 299 }, hjul: { handle: 'din-gratisprodukt' },
+    kredit: { kod: 'KREDIT100', belopp_sek: 100, minsta_kop_sek: 299, landning: '/collections/all' } };
+  const kropp = byggSidkropp(fixtur(), med);
+  assert.ok(kropp.includes('100 kr på ditt nästa köp'));
+  assert.ok(kropp.includes('minst 299 kr'));
+  assert.ok(kropp.includes('href="/discount/KREDIT100?redirect=%2Fcollections%2Fall"'), 'knappen lägger på koden själv');
+  assert.ok(!kropp.includes('din-gratisprodukt'), 'hjulet ska vara borta när krediten finns');
+  assert.ok(!kropp.includes('lyckohjul'));
+  assert.ok(!/[—–]/.test(kropp.slice(kropp.indexOf('bbs-erbjudande"'), kropp.indexOf('id="bbs-annat"'))), 'inga tankstreck i blocket');
+  // Halv kredit (utan belopp) faller tillbaka på det gamla, hittar aldrig på.
+  const halv = byggSidkropp(fixtur(), { ...KONFIG, kredit: { kod: 'KREDIT100' } });
+  assert.ok(!halv.includes('KREDIT100'));
+});

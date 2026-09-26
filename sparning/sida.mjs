@@ -168,6 +168,19 @@ function lasKonfig(konfig) {
 }
 
 function erbjudandeUr(k) {
+  // Butikskrediten vinner över hjulet (Axels beslut 2026-09-26: "spin the
+  // wheel … har ju legit gett 0 köp", i stället 100 kr kredit på köp över
+  // 299 kr, koden KREDIT100 i Shopify). Länken /discount/<kod> lägger på
+  // koden själv (Evolve, Zack TTA).
+  const kr = k.kredit ?? null;
+  if (kr?.kod) {
+    const belopp = Number(kr.belopp_sek);
+    const minsta = Number(kr.minsta_kop_sek);
+    if (Number.isFinite(belopp) && belopp > 0 && Number.isFinite(minsta) && minsta > 0) {
+      const mal = String(kr.landning ?? '/collections/all');
+      return { kredit: true, kod: String(kr.kod), belopp, minsta, sida: `/discount/${encodeURIComponent(kr.kod)}?redirect=${encodeURIComponent(mal)}` };
+    }
+  }
   const e = k.erbjudande ?? null;
   const handle = k.hjul?.handle ?? null;
   if (!e || !handle) return null;
@@ -193,6 +206,13 @@ function tomtext(vaknar, T = (x) => x) {
 function erbjudandeBlock(c) {
   const e = c.erbjudande;
   if (!e) return '';
+  if (e.kredit) return `  <div class="bbs-erbjudande">
+    <p class="bbs-etikett bbs-etikett--ljus">Tack för din beställning</p>
+    <h2>${esk(String(e.belopp))} kr på ditt nästa köp</h2>
+    <p>Handla för minst ${esk(String(e.minsta))} kr så dras ${esk(String(e.belopp))} kr av i kassan. Koden ${esk(e.kod)} läggs på när du trycker på knappen. Den gäller en gång.</p>
+    <a class="bbs-knapp bbs-knapp--stor" href="${esk(e.sida)}">Använd mina ${esk(String(e.belopp))} kr</a>
+  </div>
+`;
   return `  <div class="bbs-erbjudande">
     <p class="bbs-etikett bbs-etikett--ljus">Tack för din beställning</p>
     <h2>Vinn en gratisprodukt</h2>

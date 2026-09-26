@@ -374,6 +374,7 @@ const sidkonfig = {
   // beloppet och hjulets adress får aldrig bli en andra sanning här.
   erbjudande: BUTIK.erbjudande ? (mejlkonfig?.erbjudande ?? null) : null,
   hjul: BUTIK.erbjudande ? (mejlkonfig?.hjul ?? null) : null,
+  kredit: BUTIK.erbjudande ? (mejlkonfig?.kredit ?? null) : null,
 };
 
 // --- 3b. Kontrollen ---------------------------------------------------------
