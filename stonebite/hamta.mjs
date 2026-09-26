@@ -19,6 +19,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { upptackButiker, hamtaAlla as hamtaButiker, hamtaAllaTvister } from './kallor/shopify.mjs';
 import { hamtaAllt as hamtaMeta } from './kallor/meta.mjs';
+import { hamtaKurser } from './kallor/valuta.mjs';
 import { samlaRepo, lasProfil, lasSystem } from './kallor/repo.mjs';
 import { rutinlage } from './kallor/rutiner.mjs';
 import { hamtaEskalering } from './kallor/discord.mjs';
@@ -96,7 +97,7 @@ export async function byggSnapshot({
       anteckna('meta', 'saknas', 'META_ACCESS_TOKEN saknas i miljön');
     } else {
       try {
-        annonskonton = await hamtaMeta({ dagar, preset: 'last_7d', env, logg });
+        annonskonton = await hamtaMeta({ dagar, preset: 'last_7d', env, logg, extraIds: lasVarumarken(rot).flatMap((v) => (v.konton ?? []).map((k) => k.id)) });
         const trasigaKonton = annonskonton.filter((k) => k.status !== 'ok');
         anteckna('meta', trasigaKonton.length === annonskonton.length && annonskonton.length ? 'fel' : 'ok',
           trasigaKonton.length ? `${trasigaKonton.length} av ${annonskonton.length} konton gick inte att läsa` : null,
@@ -105,6 +106,18 @@ export async function byggSnapshot({
         anteckna('meta', 'fel', e.message);
       }
     }
+  }
+
+  // Växelkurserna (ECB) — bara för MER per verksamhet, där försäljning i
+  // NOK/DKK/EUR ställs mot reklam i SEK. Sidan visar kursens datum.
+  let valutakurser = { status: 'hoppad', orsak: 'kördes med --utan-nat' };
+  if (!utanNat) {
+    logg('Växelkurser …');
+    valutakurser = await hamtaKurser({ nu });
+    anteckna('valuta', valutakurser.status, valutakurser.orsak, { datum: valutakurser.datum ?? null });
+    if (valutakurser.status === 'ok') logg(`  ECB ${valutakurser.datum}: 1 EUR = ${valutakurser.sekPer.EUR} SEK · 1 NOK = ${valutakurser.sekPer.NOK} SEK · 1 DKK = ${valutakurser.sekPer.DKK} SEK`);
+  } else {
+    anteckna('valuta', 'hoppad', 'kördes med --utan-nat');
   }
 
   // Rutinvakten: git-loggen mot schemat. Inget nät — bara spåren.
@@ -167,6 +180,7 @@ export async function byggSnapshot({
     kallor,
     butiker,
     annonskonton,
+    valutakurser,
     bonus,
     bonusProgram: (() => { try { return lasRegler(join(rot, 'bonus', 'regler.json')); } catch { return null; } })(),
     personer: (() => { try { return lasPersoner(join(rot, 'bonus', 'personer.json')); } catch { return []; } })(),

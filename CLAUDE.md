@@ -761,6 +761,7 @@ tasks". Full beskrivning: `stonebite/README.md` → "Baksidan".
   Samma dag: Shopify ger 50 tvister per sida — `kundtjanst/shopify.mjs`
   läste bara 50 av Bäverbutikens 68, nu paginerat. `under review` (bevisen
   redan inne) pingas, kalenderförs och räknas som brådskande aldrig.
+- **MER per verksamhet på Översikt (2026-09-26, byggordningen efter Evolve steg 1a):** all försäljning ÷ all reklam, 7 dygn, per varumärke ur `varumarken.json`, NOK/DKK/EUR omräknat med ECB:s kurs (`stonebite/kallor/valuta.mjs`). Mätt samma dag: Bäverbutiken 2,49, Matstrumpor 2,37, CaraShell 2,12. ⚠️ Tre fel hittade och rättade: "Kvar efter reklam i dag" drog alla SEK-konton från de svenska butikerna; delade konton matchade kampanjprefix med startsWith, så ~107 000 kr av CaraShells reklam i UK-kontot räknades som Bäverbutikens (`kampanjTillhor`, prefixet är ett ord i namnet); och kontots vecka var "sju sista raderna" fast Metas serie hoppar över dagar utan spend. `me/adaccounts` listar inte "nya kungen" — kontona i `varumarken.json` hämtas uttryckligen (`extraIds`). Detaljer: `stonebite/README.md`.
 - ⚠️ **Bank, spärrade kort och överföringar har ingen datakälla.** De läggs in
   för hand som Larm i kalendern. Sidan påstår aldrig något om banken.
 

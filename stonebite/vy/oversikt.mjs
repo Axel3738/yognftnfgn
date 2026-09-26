@@ -24,7 +24,7 @@
 
 import { esc, hjalte, kort, panel, tabell, tomt, block, spark, status, tal, pengar } from './delar.mjs';
 import { sidhuvud, fornamn } from './layout.mjs';
-import { oversikt as raknaOversikt, allaKampanjer, kallolage, produktlista } from '../data.mjs';
+import { oversikt as raknaOversikt, allaKampanjer, kallolage, produktlista, verksamheter, merTotalt } from '../data.mjs';
 import { forandring, sedan, DAG } from '../berakna.mjs';
 import { harRatt } from '../roller.mjs';
 import { forklaraFel, kallnamn, kortMotivering, atgardsnamn, tvisttyp } from '../forklaring.mjs';
@@ -132,6 +132,44 @@ function kraverDig({ snapshot, kalender = [], nu, brandnamn }) {
   return rader.sort((a, b) => ordning[a.ton] - ordning[b.ton]).slice(0, 14);
 }
 
+const ochLista = (lista) => (lista.length < 2 ? lista.join('') : `${lista.slice(0, -1).join(', ')} och ${lista[lista.length - 1]}`);
+
+/** Orsaken i en rad: första ledet, utan variabelnamnen. Hela texten står på sidan Drift. */
+const kortOrsak = (orsak) => {
+  const t = forklaraFel(orsak).text.split(' — ')[0].replace(/\s*\([A-Z_/*]+[^)]*\)/g, '').trim();
+  return t.length > 90 ? `${t.slice(0, 87)}…` : t;
+};
+
+const merText = (v) => (v === null || v === undefined ? '–' : v.toLocaleString('sv-SE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }));
+
+/** En verksamhets rad i MER-tabellen. Butikerna står i sin egen valuta under namnet. */
+function merrad(v) {
+  const egna = v.butiker.filter((b) => b.omsattning > 0).map((b) => `${b.namn} ${pengar(Math.round(b.omsattning), b.valuta)}`).join(' · ');
+  const orsak = v.komplett ? '' : `Räknas inte: ${v.saknas.map((x) => kortOrsak(x.orsak)).join('; ')}`;
+  const j = v.mer !== null && v.merForra !== null ? forandring(v.mer, v.merForra) : null;
+  return `<tr>
+    <td>
+      <span class="namn">${esc(v.namn)}</span>
+      <span class="bi">${esc(orsak || egna || 'ingen försäljning i veckan')}</span>
+    </td>
+    <td class="tal"><b>${merText(v.mer)}</b></td>
+    <td class="tal">${v.forsaljning !== null ? pengar(Math.round(v.forsaljning), HUVUDVALUTA) : '–'}</td>
+    <td class="tal">${v.reklam !== null ? pengar(Math.round(v.reklam), HUVUDVALUTA) : '–'}</td>
+    <td class="tal">${j ? `<span class="delta ${j.riktning === 'upp' ? 'upp' : j.riktning === 'ner' ? 'ner' : ''}">${j.riktning === 'upp' ? '↑' : j.riktning === 'ner' ? '↓' : '→'} ${esc(merText(v.merForra))}</span>` : '–'}</td>
+    <td class="tal">${v.kvar !== null ? pengar(Math.round(v.kvar), HUVUDVALUTA) : '–'}</td>
+    <td>${v.kvar === null ? status('neutral', 'saknar data') : status(v.kvar >= 0 ? 'bra' : 'kritisk', v.kvar >= 0 ? 'plus' : 'minus')}</td>
+  </tr>`;
+}
+
+/** "1 NOK = 1,04 kr · …" för de valutor som faktiskt räknades om. */
+function kurstext(rader, kurser) {
+  if (kurser?.status !== 'ok') return '';
+  const valutor = [...new Set(rader.flatMap((v) => [...v.butiker, ...v.konton].map((x) => x.valuta)))].filter((x) => x && x !== 'SEK').sort();
+  if (!valutor.length) return '';
+  const dag = new Date(`${kurser.datum}T12:00:00Z`).toLocaleDateString('sv-SE', { day: 'numeric', month: 'short' });
+  return ` Försäljning i ${valutor.join(', ')} är omräknad till kronor med ECB:s kurs den ${dag}: ${valutor.map((v) => `1 ${v} = ${kurser.sekPer[v].toLocaleString('sv-SE', { maximumFractionDigits: 2 })} kr`).join(', ')}.`;
+}
+
 export function oversiktSida({ snapshot, anvandare, kalender = [], nu = new Date() }) {
   const o = raknaOversikt(snapshot, { nu });
   const halsa = kallolage(snapshot);
@@ -177,7 +215,12 @@ export function oversiktSida({ snapshot, anvandare, kalender = [], nu = new Date
   // -------------------------------------------------------------- korten
   // "Kvar efter annonser" beräknas BARA när alla butiker gick att läsa.
   // Annars jämförs hela reklamkostnaden med en del av försäljningen.
-  const kvarGarAttRakna = serRatt && spend && huvud?.idag && olasbara.length === 0;
+  // ⚠️ Förut: "Kvar efter reklam i dag" = de svenska butikernas försäljning
+  // minus ALLA SEK-konton — även Norges, Finlands, Grillklinikens och
+  // CaraShells reklam (alla konton betalas i kronor). Ersatt 2026-09-26 av MER
+  // per verksamhet, där varje konto hör till sina egna butiker.
+  const vrader = serRatt && serSpend ? verksamheter(snapshot, { nu }) : [];
+  const mer = merTotalt(vrader);
   const korten = [
     kort({
       etikett: 'Ordrar i dag',
@@ -188,7 +231,7 @@ export function oversiktSida({ snapshot, anvandare, kalender = [], nu = new Date
     serSpend ? kort({
       etikett: 'Reklam i dag',
       varde: spend ? pengar(Math.round(spend.idag), HUVUDVALUTA) : '–',
-      forklaring: spend ? `Så mycket har vi lagt på annonser hittills i dag. Hela gårdagen: ${pengar(Math.round(spend.igar), HUVUDVALUTA)}.` : 'Meta gick inte att läsa.',
+      forklaring: spend ? `Så mycket har vi lagt på annonser hittills i dag, i alla konton och alla verksamheter. Hela gårdagen: ${pengar(Math.round(spend.igar), HUVUDVALUTA)}.` : 'Meta gick inte att läsa.',
       serie: spend?.serie,
     }) : null,
     serSpend ? kort({
@@ -198,19 +241,30 @@ export function oversiktSida({ snapshot, anvandare, kalender = [], nu = new Date
       status: roas7 ? status(roas7 >= 2 ? 'bra' : roas7 >= 1.5 ? 'varning' : 'kritisk', roas7 >= 2 ? 'stabilt' : roas7 >= 1.5 ? 'tunt' : 'lågt') : null,
       fot: spend ? `${pengar(Math.round(spend.vecka), HUVUDVALUTA)} reklam · ${tal(spend.kop7)} köp` : '',
     }) : null,
-    kvarGarAttRakna ? kort({
-      etikett: 'Kvar efter reklam i dag',
-      varde: pengar(Math.round(huvud.kvarIdag), HUVUDVALUTA),
-      forklaring: 'Försäljning minus reklam i dag. Detta är INTE vinst — varor, frakt och avgifter är inte avdragna.',
-      status: status(huvud.kvarIdag >= 0 ? 'bra' : 'kritisk', huvud.kvarIdag >= 0 ? 'plus' : 'minus'),
-    }) : (serRatt ? kort({
-      etikett: 'Kvar efter reklam',
-      text: true,
-      varde: 'Går inte att räkna',
-      forklaring: `Reklamen syns för alla konton, men ${tal(olasbara.length)} ${olasbara.length === 1 ? 'butik' : 'butiker'} går inte att läsa just nu. Då skulle siffran bli fel åt minus-hållet.`,
-      status: status('varning', 'väntar på butikerna'),
-    }) : null),
+    serRatt && serSpend ? kort({
+      etikett: 'MER 7 dagar',
+      varde: merText(mer.mer),
+      forklaring: mer.mer !== null
+        ? `All försäljning delat med all reklam. ${merText(mer.mer)} betyder ${pengar(Math.round(mer.mer * 100), HUVUDVALUTA)} in för varje 100 kr reklam.`
+        : 'Ingen verksamhet gick att läsa helt — se tabellen nedan.',
+      fot: mer.med.length ? `Räknat på ${ochLista(mer.med.map((v) => v.namn))}${mer.utan.length ? `. Saknas: ${ochLista(mer.utan.map((v) => v.namn))}` : ''}.` : '',
+    }) : null,
   ].filter(Boolean).join('');
+
+  // ------------------------------------------------- MER per verksamhet
+  const synliga = vrader.filter((v) => v.reklam > 0 || v.forsaljning > 0);
+  const tysta = vrader.filter((v) => !synliga.includes(v));
+  const merdel = vrader.length ? block({
+    titel: 'Försäljning mot reklam, per verksamhet',
+    under: 'MER = allt som kom in i butikerna delat med allt som lades på reklam. Metas ROAS är Metas egen gissning, MER är det som faktiskt såldes.',
+    innehall: panel({
+      innehall: tabell(
+        [{ titel: 'Verksamhet' }, { titel: 'MER', tal: true }, { titel: 'Sålt 7 d', tal: true }, { titel: 'Reklam 7 d', tal: true }, { titel: 'MER veckan innan', tal: true }, { titel: 'Kvar efter reklam', tal: true }, { titel: 'Läge' }],
+        synliga.sort((a, b) => (b.reklam ?? 0) - (a.reklam ?? 0)).map(merrad),
+      ),
+      fot: `7 hela dygn till och med i går. Varje annonskonto hör till sina egna butiker (varumarken.json).${kurstext(vrader, snapshot?.valutakurser)} Veckan innan saknas där ett annonskonto delas med en annan verksamhet (Meta ger bara sju dagar per kampanj). Kvar efter reklam är inte vinst: varor, frakt och avgifter är inte avdragna.${tysta.length ? ` Ingen försäljning och ingen reklam: ${tysta.map((v) => v.namn).join(', ')}.` : ''}`,
+    }),
+  }) : '';
 
   // ------------------------------------------------------- andra valutor
   const valutadel = ovriga.length ? block({
@@ -360,6 +414,7 @@ export function oversiktSida({ snapshot, anvandare, kalender = [], nu = new Date
     ${hjaltedel}
     <div class="kort-rad">${korten}</div>
     ${kraverdel}
+    ${merdel}
     ${valutadel}
     ${butiksdel}
     ${annonsdel}
