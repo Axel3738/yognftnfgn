@@ -19,50 +19,59 @@
   },
   "amnesrader": [
     {
-      "text": "__COPY__: ämnesrad A, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Does it stay on in wind?",
+      "begar": "get reassurance it won't blow off"
     },
     {
-      "text": "__COPY__: ämnesrad B, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Woven straps, not elastic",
+      "begar": "know exactly what the straps are made of"
     },
     {
-      "text": "__COPY__: ämnesrad C, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Two extra straps come with every cover",
+      "begar": "know extra straps are already included"
     }
   ],
-  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "forhandstext": "The straps are woven webbing. They don't stretch out.",
   "block": [
     {
       "typ": "hero",
-      "rubrik": "__COPY__: rubrik: does it stay on in wind?",
-      "text": "__COPY__: 1–2 meningar",
+      "rubrik": "Does it stay on in wind?",
+      "text": "Hi {{fornamn}},\n\nThe straps are woven webbing, not elastic, so they don't stretch out and loosen. Plastic hooks latch under the edge of the body, on all four sides.",
       "bild": "produkt:takskyddet",
       "knapp": {
-        "text": "__COPY__: knapp",
+        "text": "See how it straps on",
         "lank": "produkt:takskyddet"
       }
     },
     {
       "typ": "punkter",
-      "rubrik": "__COPY__: rubrik",
+      "rubrik": "What keeps it on",
       "punkter": [
-        "__COPY__: webbing straps, not elastic",
-        "__COPY__: hooks under the edge, all four sides",
-        "__COPY__: two extra straps"
+        "Woven webbing straps, not elastic, so they don't stretch out.",
+        "Plastic hooks latch under the edge of the body, on all four sides.",
+        "Two extra reinforced 34 ft (10.5 m) straps are included."
       ]
     },
     {
       "typ": "produkt",
       "handle": "takskyddet",
-      "text": "__COPY__: en mening",
-      "knapp": "__COPY__: knapp"
+      "text": "Adjustable on all four sides, so it stays snug in wind.",
+      "knapp": "Check the straps"
     },
     {
       "typ": "fakta"
     }
   ],
-  "tretest": [],
+  "tretest": [
+    { "rad": "Does it stay on in wind?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Woven straps, not elastic", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Two extra straps come with every cover", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "The straps are woven webbing. They don't stretch out.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Does it stay on in wind?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "What keeps it on", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "See how it straps on", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Check the straps", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
   "version": 1,
   "planerad": "2026-10-20T16:00:00+02:00",
   "segment": [

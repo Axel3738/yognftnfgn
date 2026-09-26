@@ -19,41 +19,49 @@
   },
   "amnesrader": [
     {
-      "text": "__COPY__: ämnesrad A, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Friday is the last day to order the calendar",
+      "begar": "know exactly when time runs out"
     },
     {
-      "text": "__COPY__: ämnesrad B, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "After Friday, door one might not be ready",
+      "begar": "understand the consequence of waiting"
     },
     {
-      "text": "__COPY__: ämnesrad C, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "13 November: the cutoff for the calendar",
+      "begar": "see the cutoff date clearly"
     }
   ],
-  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "forhandstext": "December 1 is door one. Order before then.",
   "block": [
     {
       "typ": "hero",
-      "rubrik": "__COPY__: rubrik: fredag är sista dagen",
-      "text": "__COPY__: 1–2 meningar",
+      "rubrik": "Friday is the last day",
+      "text": "{{fornamn}}, order the advent calendar by Friday, 13 November if you want it in hand before the first door on 1 December. After Friday, we can't promise that.",
       "bild": "produkt:adventskalender-retrobussar",
       "knapp": {
-        "text": "__COPY__: knapp",
+        "text": "Order before Friday",
         "lank": "produkt:adventskalender-retrobussar"
       }
     },
     {
       "typ": "produkt",
       "handle": "adventskalender-retrobussar",
-      "text": "__COPY__: en mening",
-      "knapp": "__COPY__: knapp"
+      "text": "24 doors, order by Friday to be ready for the first one.",
+      "knapp": "Get it before Friday"
     },
     {
       "typ": "fakta"
     }
   ],
-  "tretest": [],
+  "tretest": [
+    { "rad": "Friday is the last day to order the calendar", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "After Friday, door one might not be ready", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "13 November: the cutoff for the calendar", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "December 1 is door one. Order before then.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Friday is the last day", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Order before Friday", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Get it before Friday", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
   "version": 1,
   "planerad": "2026-11-10T16:00:00+01:00",
   "segment": [

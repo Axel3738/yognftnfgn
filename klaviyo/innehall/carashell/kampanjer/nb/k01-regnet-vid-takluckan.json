@@ -19,49 +19,49 @@
   },
   "amnesrader": [
     {
-      "text": "__COPY__: ämnesrad A, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Regnet som blir stående ved takluken",
+      "begar": "forstå hvor skaden faktisk oppstår"
     },
     {
-      "text": "__COPY__: ämnesrad B, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Bare taket trenger å dekkes",
+      "begar": "forstå hvorfor bare taket trenger dekke"
     },
     {
-      "text": "__COPY__: ämnesrad C, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Satt på alene, av én person",
+      "begar": "vite at det går an å gjøre det selv"
     }
   ],
-  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "forhandstext": "Ingen går opp og sjekker før fukttesten avgjør det til våren.",
   "block": [
     {
       "typ": "hero",
-      "rubrik": "__COPY__: rubrik: regnet vid takluckan",
-      "text": "__COPY__: 1–2 meningar",
+      "rubrik": "Regnet blir stående ved takluken",
+      "text": "Hei {{fornamn}},\n\nRegnvann samler seg rundt takluker og skjøter gjennom vinteren. Ingen sjekker før fukttesten til våren.",
       "bild": "produkt:takskyddet",
       "knapp": {
-        "text": "__COPY__: knapp",
+        "text": "Se taktrekket",
         "lank": "produkt:takskyddet"
       }
     },
     {
       "typ": "text",
       "rubrik": null,
-      "text": "__COPY__: vad täcks och vad täcks inte"
+      "text": "Taktrekket dekker takflaten, og kanten henger cirka 30 til 40 cm ned over sidene, slik at regnvannet ikke blir stående ved takluken. Resten av vogna er ikke dekket, bare taket."
     },
     {
       "typ": "punkter",
-      "rubrik": "__COPY__: rubrik för tre punkter",
+      "rubrik": "Tre ting som gjør jobben",
       "punkter": [
-        "__COPY__: nio längder",
-        "__COPY__: banden och krokarna",
-        "__COPY__: en person"
+        "Ni lengder, fra 5,5 til 13,5 meter, alle 3 meter brede.",
+        "Vevde strekkbånd med plastkroker hekter under karosseriets kant.",
+        "Én person setter det på selv."
       ]
     },
     {
       "typ": "produkt",
       "handle": "takskyddet",
-      "text": "__COPY__: en mening under produktkortet",
-      "knapp": "__COPY__: knapp"
+      "text": "Ni lengder å velge mellom, fra 5,5 til 13,5 meter.",
+      "knapp": "Beskytt taket i vinter"
     },
     {
       "typ": "citat",
@@ -73,11 +73,21 @@
     },
     {
       "typ": "knapp",
-      "text": "__COPY__: avslutande knapp",
+      "text": "Beskytt taket før vinteren",
       "lank": "produkt:takskyddet"
     }
   ],
-  "tretest": [],
+  "tretest": [
+    { "rad": "Regnet som blir stående ved takluken", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Bare taket trenger å dekkes", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Satt på alene, av én person", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Ingen går opp og sjekker før fukttesten avgjør det til våren.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Regnet blir stående ved takluken", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se taktrekket", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Tre ting som gjør jobben", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Beskytt taket i vinter", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Beskytt taket før vinteren", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
   "version": 1,
   "planerad": "2026-09-29T18:00:00+02:00",
   "segment": [

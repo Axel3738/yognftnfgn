@@ -42,36 +42,73 @@
         "format": "rentext",
         "amnesrader": [
           {
-            "text": "__COPY__: ämnesrad A, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "It's Axel, and I read every reply",
+            "begar": "know a real person reads this"
           },
           {
-            "text": "__COPY__: ämnesrad B, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "A roof cover. A windshield cover. That's it.",
+            "begar": "understand what we actually sell"
           },
           {
-            "text": "__COPY__: ämnesrad C, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "We only write about the roof or the windshield",
+            "begar": "know we won't spam the inbox"
           }
         ],
-        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "forhandstext": "So say hello, or just keep reading to see what we make.",
         "block": [
           {
             "typ": "text",
-            "rubrik": "__COPY__: rubrik: Axel hälsar, t.ex. att det är han som skriver",
-            "text": "__COPY__: 2–4 korta stycken från Axel: vem, vad butiken gör, varför mejlen kommer"
+            "rubrik": "It's Axel, and I wrote this one myself",
+            "text": "Hi {{fornamn}},\n\nI'm Axel. I started this store to make one thing easier: protecting a caravan, motorhome or RV while it's parked.\n\nWe sell two things. A roof cover that keeps rainwater off the roof hatches and seams. A windshield cover that keeps the cold and sun off the glass and blacks out the cab.\n\nYou'll hear from us again, but only when there's something worth saying."
           },
           {
             "typ": "knapp",
-            "text": "__COPY__: knapp till sortimentet",
+            "text": "See the covers",
             "lank": "kollektion:sortimentet"
           },
           {
             "typ": "grundare",
-            "text": "__COPY__: en avslutande rad: svara på mejlet om du undrar något, jag läser själv"
+            "text": "Reply if you're wondering about anything. I read these myself."
           }
         ],
-        "tretest": [],
+        "tretest": [
+          {
+            "rad": "It's Axel, and I read every reply",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "A roof cover. A windshield cover. That's it.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "We only write about the roof or the windshield",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "So say hello, or just keep reading to see what we make.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "It's Axel, and I wrote this one myself",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "See the covers",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
         "version": 1
       }
     },
@@ -103,44 +140,87 @@
         },
         "amnesrader": [
           {
-            "text": "__COPY__: ämnesrad A, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Nine lengths, one that fits your roof",
+            "begar": "find the size that fits"
           },
           {
-            "text": "__COPY__: ämnesrad B, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Goes on with one person, not two",
+            "begar": "not need help to install it"
           },
           {
-            "text": "__COPY__: ämnesrad C, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Hooks that latch under the edge",
+            "begar": "know it actually stays attached"
           }
         ],
-        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "forhandstext": "Measure the roof, pick the next size up, and that's the hard part done.",
         "block": [
           {
             "typ": "hero",
-            "rubrik": "__COPY__: rubriken pekar på det som går att se: taket, kanten, banden",
-            "text": "__COPY__: 1–2 meningar: vad överdraget täcker och vad det inte täcker",
+            "rubrik": "It covers the roof. The edge hangs over the sides.",
+            "text": "It covers the roof surface, with the edge hanging 30 to 40 cm (12 to 16 in) down over the sides, so rainwater doesn't sit at the roof hatches. It doesn't wrap around the whole vehicle.",
             "bild": "produkt:takskyddet",
             "knapp": {
-              "text": "__COPY__: knapp",
+              "text": "See the roof cover",
               "lank": "produkt:takskyddet"
             }
           },
           {
             "typ": "punkter",
-            "rubrik": "__COPY__: rubrik för tre punkter",
+            "rubrik": "Size, fastening and one pair of hands",
             "punkter": [
-              "__COPY__: storleken: nio längder 5,5–13,5 m, mät taket",
-              "__COPY__: fästet: vävda spännband med plastkrokar under kanten, alla fyra sidor, två extra band",
-              "__COPY__: en person sätter på det"
+              "Nine lengths, 18 to 44 ft (5.5 to 13.5 m), for caravans, travel trailers and motorhomes. Measure your roof front to back and pick the next length up.",
+              "Woven webbing straps, not elastic, with plastic hooks that latch under the edge on all four sides.",
+              "One person can put it on alone."
             ]
           },
           {
             "typ": "fakta"
           }
         ],
-        "tretest": [],
+        "tretest": [
+          {
+            "rad": "Nine lengths, one that fits your roof",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Goes on with one person, not two",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Hooks that latch under the edge",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Measure the roof, pick the next size up, and that's the hard part done.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "It covers the roof. The edge hangs over the sides.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "See the roof cover",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Size, fastening and one pair of hands",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
         "version": 1
       }
     },
@@ -172,35 +252,72 @@
         },
         "amnesrader": [
           {
-            "text": "__COPY__: ämnesrad A, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "What happens right after you order",
+            "begar": "know the process before buying"
           },
           {
-            "text": "__COPY__: ämnesrad B, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "You're covered by a 90-day guarantee",
+            "begar": "feel safe about returns before buying"
           },
           {
-            "text": "__COPY__: ämnesrad C, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Watch your parcel the whole way there",
+            "begar": "know tracking is available"
           }
         ],
-        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "forhandstext": "Order confirmation, tracking, and a 90-day guarantee if it's not right.",
         "block": [
           {
             "typ": "text",
-            "rubrik": "__COPY__: rubrik",
-            "text": "__COPY__: stycken enligt briefen"
+            "rubrik": "What happens after you order",
+            "text": "You'll get an order confirmation right away, then a shipping email with your parcel number once it's on its way.\n\nFrom there, the tracking page below shows exactly where it is.\n\nIf it's not right for you, there's a 90-day guarantee from the day you receive it: email hello@carashell.com with your order number first, and we'll tell you where to send it back.\n\nAny question before then goes to the same address."
           },
           {
             "typ": "fakta"
           },
           {
             "typ": "knapp",
-            "text": "__COPY__: knapp till taköverdraget",
+            "text": "See the roof cover",
             "lank": "produkt:takskyddet"
           }
         ],
-        "tretest": [],
+        "tretest": [
+          {
+            "rad": "What happens right after you order",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "You're covered by a 90-day guarantee",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Watch your parcel the whole way there",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Order confirmation, tracking, and a 90-day guarantee if it's not right.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "What happens after you order",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "See the roof cover",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
         "version": 1
       }
     }

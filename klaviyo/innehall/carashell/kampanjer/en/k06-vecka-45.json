@@ -19,38 +19,38 @@
   },
   "amnesrader": [
     {
-      "text": "__COPY__: ämnesrad A, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "A Christmas gift that actually gets used",
+      "begar": "find a gift that won't go to waste"
     },
     {
-      "text": "__COPY__: ämnesrad B, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "The gift for the one with the caravan",
+      "begar": "find a gift for someone with a caravan or motorhome"
     },
     {
-      "text": "__COPY__: ämnesrad C, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Two covers, one for the roof, one for the glass",
+      "begar": "see the options at a glance"
     }
   ],
-  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "forhandstext": "Not the kind of gift that waits in a drawer.",
   "block": [
     {
       "typ": "hero",
-      "rubrik": "__COPY__: rubrik: the gift",
-      "text": "__COPY__: 1–2 meningar",
+      "rubrik": "The gift that gets used",
+      "text": "Hi {{fornamn}},\n\nChristmas is coming, and a cover is the kind of gift that gets used the same week it arrives.",
       "bild": "produkt:takskyddet",
       "knapp": {
-        "text": "__COPY__: knapp",
+        "text": "See the gift",
         "lank": "produkt:takskyddet"
       }
     },
     {
       "typ": "text",
       "rubrik": null,
-      "text": "__COPY__: varför det är en present som används"
+      "text": "It goes on the roof or the windshield as soon as it's unwrapped, and it goes back on every time the rig is parked again. Not a gift that waits in a drawer."
     },
     {
       "typ": "produktrad",
-      "rubrik": "__COPY__: rubrik",
+      "rubrik": "The roof, and the windshield",
       "handles": [
         "takskyddet",
         "termoskyddet"
@@ -60,7 +60,15 @@
       "typ": "fakta"
     }
   ],
-  "tretest": [],
+  "tretest": [
+    { "rad": "A Christmas gift that actually gets used", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "The gift for the one with the caravan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Two covers, one for the roof, one for the glass", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Not the kind of gift that waits in a drawer.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "The gift that gets used", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "See the gift", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "The roof, and the windshield", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
   "version": 1,
   "planerad": "2026-11-03T16:00:00+01:00",
   "segment": [

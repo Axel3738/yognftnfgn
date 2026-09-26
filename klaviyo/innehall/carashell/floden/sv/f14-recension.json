@@ -42,37 +42,44 @@
         },
         "amnesrader": [
           {
-            "text": "__COPY__: ämnesrad A, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Vad tyckte du?",
+            "begar": "få säga sin mening"
           },
           {
-            "text": "__COPY__: ämnesrad B, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Ett klick räcker",
+            "begar": "göra det utan krångel"
           },
           {
-            "text": "__COPY__: ämnesrad C, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "{{fornamn}}, hur blev det?",
+            "begar": "bli personligt tillfrågad"
           }
         ],
-        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "forhandstext": "Fem stjärnor, om det är vad du tycker, eller något annat.",
         "block": [
           {
             "typ": "text",
-            "rubrik": "__COPY__: rubrik: vad tyckte du?",
-            "text": "__COPY__: en mening"
+            "rubrik": "Vad tyckte du?",
+            "text": "Paketet har hunnit fram nu. Vi vill gärna veta hur det blev."
           },
           {
             "typ": "stjarnor",
-            "rubrik": "__COPY__: rubrik över stjärnorna",
+            "rubrik": "Sätt ett betyg",
             "lank": "trustpilot:",
-            "text": "__COPY__: en rad: alla omdömen hjälper lika mycket"
+            "text": "Alla omdömen hjälper lika mycket, oavsett hur många stjärnor."
           },
           {
             "typ": "grundare",
-            "text": "__COPY__: blev något inte som det skulle, svara på mejlet först"
+            "text": "Blev något fel, svara på det här mejlet först, så löser vi det innan du recenserar."
           }
         ],
-        "tretest": [],
+        "tretest": [
+          {"rad": "Vad tyckte du?", "visualisera": true, "falsifiera": true, "ingen_annan": false},
+          {"rad": "Ett klick räcker", "visualisera": true, "falsifiera": true, "ingen_annan": false},
+          {"rad": "{{fornamn}}, hur blev det?", "visualisera": true, "falsifiera": true, "ingen_annan": false},
+          {"rad": "Fem stjärnor, om det är vad du tycker, eller något annat.", "visualisera": true, "falsifiera": true, "ingen_annan": false},
+          {"rad": "Vad tyckte du?", "visualisera": true, "falsifiera": true, "ingen_annan": false},
+          {"rad": "Sätt ett betyg", "visualisera": true, "falsifiera": true, "ingen_annan": false}
+        ],
         "version": 1
       }
     }

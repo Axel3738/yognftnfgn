@@ -19,38 +19,38 @@
   },
   "amnesrader": [
     {
-      "text": "__COPY__: ämnesrad A, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Gaven til pappa med campingvogn",
+      "begar": "se for seg farens campingvogn eller bobil"
     },
     {
-      "text": "__COPY__: ämnesrad B, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Bestill senest mandag 26. oktober",
+      "begar": "få med seg fristen i tide"
     },
     {
-      "text": "__COPY__: ämnesrad C, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "En gave han bruker hver vinter",
+      "begar": "vite at gaven faktisk blir brukt"
     }
   ],
-  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "forhandstext": "Bestill i tide, så er den pakket inn før farsdag.",
   "block": [
     {
       "typ": "hero",
-      "rubrik": "__COPY__: rubrik: presenten till honom med vagnen",
-      "text": "__COPY__: 1–2 meningar",
+      "rubrik": "Gaven til pappa med campingvogn eller bobil",
+      "text": "Hei {{fornamn}},\n\nFarsdag er søndag 8. november. Et taktrekk er en gave han faktisk bruker, hver eneste vinter.",
       "bild": "produkt:takskyddet",
       "knapp": {
-        "text": "__COPY__: knapp",
+        "text": "Se gaven",
         "lank": "produkt:takskyddet"
       }
     },
     {
       "typ": "text",
       "rubrik": null,
-      "text": "__COPY__: datumet: beställ senast måndag 26 oktober"
+      "text": "Bestill senest mandag 26. oktober, så rekker gaven fram til farsdag."
     },
     {
       "typ": "produktrad",
-      "rubrik": "__COPY__: rubrik",
+      "rubrik": "To gaver å velge mellom",
       "handles": [
         "takskyddet",
         "termoskyddet"
@@ -60,7 +60,15 @@
       "typ": "fakta"
     }
   ],
-  "tretest": [],
+  "tretest": [
+    { "rad": "Gaven til pappa med campingvogn", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Bestill senest mandag 26. oktober", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En gave han bruker hver vinter", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Bestill i tide, så er den pakket inn før farsdag.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Gaven til pappa med campingvogn eller bobil", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se gaven", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "To gaver å velge mellom", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
   "version": 1,
   "planerad": "2026-10-20T18:00:00+02:00",
   "segment": [

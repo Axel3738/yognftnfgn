@@ -19,46 +19,54 @@
   },
   "amnesrader": [
     {
-      "text": "__COPY__: ämnesrad A, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Adventskalenderen med retrobusser",
+      "begar": "se for seg temaet på kalenderen"
     },
     {
-      "text": "__COPY__: ämnesrad B, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "24 luker fram mot jul",
+      "begar": "forstå at det er en luke per dag"
     },
     {
-      "text": "__COPY__: ämnesrad C, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Bestill innen fredag 13. november",
+      "begar": "få med seg fristen for luke 1"
     }
   ],
-  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "forhandstext": "Den passer godt til noen med campingvogn eller bobil.",
   "block": [
     {
       "typ": "hero",
-      "rubrik": "__COPY__: rubrik: adventskalendern",
-      "text": "__COPY__: 1–2 meningar",
+      "rubrik": "24 luker med retrobusser",
+      "text": "Hei {{fornamn}},\n\nAdventskalenderen har 24 luker og tema retrobusser, én luke for hver dag fram mot jul.",
       "bild": "produkt:adventskalender-retrobussar",
       "knapp": {
-        "text": "__COPY__: knapp",
+        "text": "Se adventskalenderen",
         "lank": "produkt:adventskalender-retrobussar"
       }
     },
     {
       "typ": "text",
       "rubrik": null,
-      "text": "__COPY__: datumet fredag 13 november för lucka 1"
+      "text": "Bestill innen fredag 13. november, så er kalenderen klar til luke 1."
     },
     {
       "typ": "produkt",
       "handle": "adventskalender-retrobussar",
-      "text": "__COPY__: en mening",
-      "knapp": "__COPY__: knapp"
+      "text": "24 luker, én for hver dag i desember.",
+      "knapp": "Se produktet"
     },
     {
       "typ": "fakta"
     }
   ],
-  "tretest": [],
+  "tretest": [
+    { "rad": "Adventskalenderen med retrobusser", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "24 luker fram mot jul", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Bestill innen fredag 13. november", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Den passer godt til noen med campingvogn eller bobil.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "24 luker med retrobusser", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se adventskalenderen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se produktet", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
   "version": 1,
   "planerad": "2026-10-27T18:00:00+01:00",
   "segment": [

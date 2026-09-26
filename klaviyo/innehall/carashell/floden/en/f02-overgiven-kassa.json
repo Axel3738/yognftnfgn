@@ -42,31 +42,62 @@
         },
         "amnesrader": [
           {
-            "text": "__COPY__: ämnesrad A, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Still in your cart, nothing's changed",
+            "begar": "know nothing was lost, can pick up where they left off"
           },
           {
-            "text": "__COPY__: ämnesrad B, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "You left before checking out",
+            "begar": "recognize what happened without feeling judged"
           },
           {
-            "text": "__COPY__: ämnesrad C, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "No rush, it's just sitting there",
+            "begar": "feel no pressure to act immediately"
           }
         ],
-        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "forhandstext": "No discount code, no countdown. Just a way back to where you left off.",
         "block": [
           {
             "typ": "text",
-            "rubrik": "__COPY__: rubrik: kassan är kvar",
-            "text": "__COPY__: 1–2 meningar"
+            "rubrik": "Still in your cart",
+            "text": "Everything you picked out is exactly where you left it. Pick up where you stopped whenever you're ready."
           },
           {
             "typ": "dynamisk",
             "kalla": "checkout_rader"
           }
         ],
-        "tretest": [],
+        "tretest": [
+          {
+            "rad": "Still in your cart, nothing's changed",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "You left before checking out",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "No rush, it's just sitting there",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "No discount code, no countdown. Just a way back to where you left off.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Still in your cart",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
         "version": 1
       }
     },
@@ -98,33 +129,33 @@
         },
         "amnesrader": [
           {
-            "text": "__COPY__: ämnesrad A, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Nine lengths, so yours is in there",
+            "begar": "reassurance their size is covered"
           },
           {
-            "text": "__COPY__: ämnesrad B, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "How the straps actually hold it on",
+            "begar": "understand the attachment before buying"
           },
           {
-            "text": "__COPY__: ämnesrad C, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "It's built to stay on in wind",
+            "begar": "confidence it won't blow off"
           }
         ],
-        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "forhandstext": "Measure the roof, match the length, and the rest takes care of itself.",
         "block": [
           {
             "typ": "text",
-            "rubrik": "__COPY__: rubrik: tre frågor innan du betalar",
-            "text": "__COPY__: en mening som öppnar"
+            "rubrik": "Three things before you check out",
+            "text": "Here's what usually holds people up."
           },
           {
             "typ": "punkter",
             "rubrik": null,
             "punkter": [
-              "__COPY__: passar det min vagn → storlek",
-              "__COPY__: hur fäster det → banden och krokarna",
-              "__COPY__: klarar det vinden → ja, med faktabladets ord",
-              "__COPY__: termoskyddet: måtten och dörrkarmen, en rad"
+              "Will it fit? Nine lengths, 18 to 44 ft (5.5 to 13.5 m), for caravans, travel trailers and motorhomes. Measure your roof front to back and pick the next length up.",
+              "How does it stay on? Woven webbing straps with plastic hooks latch under the edge of the body, adjustable, on all four sides.",
+              "Does it hold in wind? Yes. The straps aren't elastic, so they don't stretch out or work loose.",
+              "Ordering the windshield cover instead? It's 211 cm (83 in) wide, and the side flaps clip straight into the door frame."
             ]
           },
           {
@@ -135,7 +166,38 @@
             "typ": "fakta"
           }
         ],
-        "tretest": [],
+        "tretest": [
+          {
+            "rad": "Nine lengths, so yours is in there",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "How the straps actually hold it on",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "It's built to stay on in wind",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Measure the roof, match the length, and the rest takes care of itself.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Three things before you check out",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
         "version": 1
       }
     },
@@ -168,30 +230,55 @@
         "format": "rentext",
         "amnesrader": [
           {
-            "text": "__COPY__: ämnesrad A, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "One last note about your cart",
+            "begar": "know this is the final email, no pressure"
           },
           {
-            "text": "__COPY__: ämnesrad B, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Any questions before you decide?",
+            "begar": "feel invited to ask before deciding"
           },
           {
-            "text": "__COPY__: ämnesrad C, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "I won't email about this cart again",
+            "begar": "confidence there won't be repeated nagging"
           }
         ],
-        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "forhandstext": "Reply if something's unclear. Otherwise, this is where I leave it.",
         "block": [
           {
             "typ": "grundare",
-            "text": "__COPY__: sista mejlet, svara på mejlet med frågor, annars inget mer om kassan"
+            "text": "This is the last note I'll send about this cart.\n\nIf you've got a question about sizing, fitting or anything else, just reply and I'll answer myself. If not, you won't hear more about it from me."
           },
           {
             "typ": "dynamisk",
             "kalla": "checkout_rader"
           }
         ],
-        "tretest": [],
+        "tretest": [
+          {
+            "rad": "One last note about your cart",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Any questions before you decide?",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "I won't email about this cart again",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Reply if something's unclear. Otherwise, this is where I leave it.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
         "version": 1
       }
     }

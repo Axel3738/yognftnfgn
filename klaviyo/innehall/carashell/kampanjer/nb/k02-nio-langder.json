@@ -19,50 +19,59 @@
   },
   "amnesrader": [
     {
-      "text": "__COPY__: ämnesrad A, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Ni lengder, ikke bare én",
+      "begar": "oppdage at flere lengder finnes"
     },
     {
-      "text": "__COPY__: ämnesrad B, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Slik finner du riktig lengde",
+      "begar": "vite hvordan man måler riktig"
     },
     {
-      "text": "__COPY__: ämnesrad C, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Passer både campingvogn og bobil",
+      "begar": "bekrefte at trekket passer kjøretøyet"
     }
   ],
-  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "forhandstext": "Mål taket, så vet du hvilken som er din.",
   "block": [
     {
       "typ": "hero",
-      "rubrik": "__COPY__: rubrik: nio längder / vilken passar din?",
-      "text": "__COPY__: 1–2 meningar",
+      "rubrik": "Ni lengder, hvilken passer vognen din?",
+      "text": "Hei {{fornamn}},\n\nTaktrekket finnes i ni lengder, fra 5,5 til 13,5 meter. Du velger selv hvilken som passer taket ditt.",
       "bild": "produkt:takskyddet",
       "knapp": {
-        "text": "__COPY__: knapp",
+        "text": "Finn din lengde",
         "lank": "produkt:takskyddet"
       }
     },
     {
       "typ": "punkter",
-      "rubrik": "__COPY__: rubrik: så väljer du",
+      "rubrik": "Slik velger du riktig lengde",
       "punkter": [
-        "__COPY__: mät taket front till bakkant",
-        "__COPY__: längderna och bredden",
-        "__COPY__: husvagn och husbil"
+        "Mål taket fra front til bakkant.",
+        "Ni lengder fra 5,5 til 13,5 meter, alle 3 meter brede.",
+        "Passer både campingvogn og bobil."
       ]
     },
     {
       "typ": "produkt",
       "handle": "takskyddet",
-      "text": "__COPY__: en mening",
-      "knapp": "__COPY__: knapp"
+      "text": "Velg nærmeste lengde oppover, så sitter trekket riktig.",
+      "knapp": "Se de ni lengdene"
     },
     {
       "typ": "fakta"
     }
   ],
-  "tretest": [],
+  "tretest": [
+    { "rad": "Ni lengder, ikke bare én", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Slik finner du riktig lengde", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Passer både campingvogn og bobil", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Mål taket, så vet du hvilken som er din.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Ni lengder, hvilken passer vognen din?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Finn din lengde", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Slik velger du riktig lengde", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se de ni lengdene", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
   "version": 1,
   "planerad": "2026-10-06T18:00:00+02:00",
   "segment": [

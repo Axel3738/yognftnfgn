@@ -19,33 +19,33 @@
   },
   "amnesrader": [
     {
-      "text": "__COPY__: ämnesrad A, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "The glass, covered before the next trip",
+      "begar": "prepare the glass before setting off"
     },
     {
-      "text": "__COPY__: ämnesrad B, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "No fog, no glare, no one looking in",
+      "begar": "picture a clear, private windshield"
     },
     {
-      "text": "__COPY__: ämnesrad C, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Dark enough to sleep in, whatever's outside",
+      "begar": "sleep undisturbed on the road"
     }
   ],
-  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "forhandstext": "The cover sits on the outside, so the inside stays clear.",
   "block": [
     {
       "typ": "hero",
-      "rubrik": "__COPY__: rubrik: rutan på resorna",
-      "text": "__COPY__: 1–2 meningar",
+      "rubrik": "The glass on the trips ahead",
+      "text": "Hi {{fornamn}},\n\nThis cover straps onto the outside of the windshield and both side windows before you set off. No fog on the inside, and the cab stays dark when you're ready to sleep.",
       "bild": "produkt:termoskyddet",
       "knapp": {
-        "text": "__COPY__: knapp",
+        "text": "See the thermal cover",
         "lank": "produkt:termoskyddet"
       }
     },
     {
       "typ": "produktrad",
-      "rubrik": "__COPY__: rubrik",
+      "rubrik": "For the big window, and the small ones",
       "handles": [
         "termoskyddet",
         "fonstertermomatta-2-pack"
@@ -55,7 +55,15 @@
       "typ": "fakta"
     }
   ],
-  "tretest": [],
+  "tretest": [
+    { "rad": "The glass, covered before the next trip", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "No fog, no glare, no one looking in", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Dark enough to sleep in, whatever's outside", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "The cover sits on the outside, so the inside stays clear.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "The glass on the trips ahead", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "See the thermal cover", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "For the big window, and the small ones", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
   "version": 1,
   "planerad": "2026-12-08T16:00:00+01:00",
   "segment": [

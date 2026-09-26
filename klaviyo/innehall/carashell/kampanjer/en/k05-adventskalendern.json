@@ -19,46 +19,54 @@
   },
   "amnesrader": [
     {
-      "text": "__COPY__: ämnesrad A, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "A 24-door calendar, retro campervan theme",
+      "begar": "discover the new calendar exists"
     },
     {
-      "text": "__COPY__: ämnesrad B, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "The gift for the one with the caravan",
+      "begar": "find a gift that fits someone specific"
     },
     {
-      "text": "__COPY__: ämnesrad C, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Order by Friday, 13 November for door one",
+      "begar": "know the deadline to order by"
     }
   ],
-  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "forhandstext": "Order by Friday the 13th so the first door is ready.",
   "block": [
     {
       "typ": "hero",
-      "rubrik": "__COPY__: rubrik: adventskalendern",
-      "text": "__COPY__: 1–2 meningar",
+      "rubrik": "24 doors, one retro campervan theme",
+      "text": "Hi {{fornamn}},\n\nA new advent calendar for the caravan or motorhome crowd: 24 doors, a retro campervan theme.",
       "bild": "produkt:adventskalender-retrobussar",
       "knapp": {
-        "text": "__COPY__: knapp",
+        "text": "See the calendar",
         "lank": "produkt:adventskalender-retrobussar"
       }
     },
     {
       "typ": "text",
       "rubrik": null,
-      "text": "__COPY__: datumet fredag 13 november för lucka 1"
+      "text": "Order by Friday, 13 November if you want the first door ready to open."
     },
     {
       "typ": "produkt",
       "handle": "adventskalender-retrobussar",
-      "text": "__COPY__: en mening",
-      "knapp": "__COPY__: knapp"
+      "text": "24 doors, a retro campervan theme, one early gift.",
+      "knapp": "Get it before 13 November"
     },
     {
       "typ": "fakta"
     }
   ],
-  "tretest": [],
+  "tretest": [
+    { "rad": "A 24-door calendar, retro campervan theme", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "The gift for the one with the caravan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Order by Friday, 13 November for door one", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Order by Friday the 13th so the first door is ready.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "24 doors, one retro campervan theme", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "See the calendar", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Get it before 13 November", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
   "version": 1,
   "planerad": "2026-10-27T16:00:00+01:00",
   "segment": [

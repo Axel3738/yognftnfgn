@@ -19,33 +19,33 @@
   },
   "amnesrader": [
     {
-      "text": "__COPY__: ämnesrad A, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Order by Monday for it to arrive by Christmas",
+      "begar": "know the deadline for a Christmas gift"
     },
     {
-      "text": "__COPY__: ämnesrad B, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "December 7: the last day for Christmas orders",
+      "begar": "see the exact cutoff date"
     },
     {
-      "text": "__COPY__: ämnesrad C, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Three gifts, one deadline: Monday",
+      "begar": "pick from a few options before time runs out"
     }
   ],
-  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "forhandstext": "After Monday, we can't promise Christmas.",
   "block": [
     {
       "typ": "hero",
-      "rubrik": "__COPY__: rubrik: beställ senast måndag 7 december",
-      "text": "__COPY__: 1–2 meningar",
+      "rubrik": "Order by Monday, 7 December",
+      "text": "{{fornamn}}, order by Monday, 7 December if you want it to arrive in time for Christmas. After that day, we can't promise it will.",
       "bild": "produkt:takskyddet",
       "knapp": {
-        "text": "__COPY__: knapp",
+        "text": "Shop before Monday",
         "lank": "kollektion:sortimentet"
       }
     },
     {
       "typ": "produktrad",
-      "rubrik": "__COPY__: rubrik",
+      "rubrik": "Order any of these by Monday",
       "handles": [
         "takskyddet",
         "termoskyddet",
@@ -56,7 +56,15 @@
       "typ": "fakta"
     }
   ],
-  "tretest": [],
+  "tretest": [
+    { "rad": "Order by Monday for it to arrive by Christmas", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "December 7: the last day for Christmas orders", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Three gifts, one deadline: Monday", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "After Monday, we can't promise Christmas.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Order by Monday, 7 December", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Shop before Monday", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Order any of these by Monday", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
   "version": 1,
   "planerad": "2026-12-01T16:00:00+01:00",
   "segment": [

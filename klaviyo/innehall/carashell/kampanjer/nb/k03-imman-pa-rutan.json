@@ -19,42 +19,42 @@
   },
   "amnesrader": [
     {
-      "text": "__COPY__: ämnesrad A, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Duggen blir sittende mellom gardin og glass",
+      "begar": "forstå hvorfor gardin ikke er nok"
     },
     {
-      "text": "__COPY__: ämnesrad B, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Ingen ser inn på rasteplassen",
+      "begar": "slippe innsyn når man sover ute"
     },
     {
-      "text": "__COPY__: ämnesrad C, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Morgensolen vekker deg ikke klokka fire",
+      "begar": "sove uforstyrret til normal tid"
     }
   ],
-  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "forhandstext": "Trekket sitter utenpå, så glasset aldri blir kaldt innenfra.",
   "block": [
     {
       "typ": "hero",
-      "rubrik": "__COPY__: rubrik: imman",
-      "text": "__COPY__: 1–2 meningar",
+      "rubrik": "Duggen blir sittende mellom gardin og glass",
+      "text": "Hei {{fornamn}},\n\nFukten fra natten legger seg på frontruta. En gardin gjør bare at den blir sittende der.",
       "bild": "produkt:termoskyddet",
       "knapp": {
-        "text": "__COPY__: knapp",
+        "text": "Se frontrutetrekket",
         "lank": "produkt:termoskyddet"
       }
     },
     {
       "typ": "punkter",
-      "rubrik": "__COPY__: rubrik",
+      "rubrik": "Slik løser trekket det",
       "punkter": [
-        "__COPY__: utvändigt",
-        "__COPY__: dörrkarmen",
-        "__COPY__: mörklägger"
+        "Strammes utvendig over frontruta og begge sidevinduene.",
+        "Klaffene klemmes fast i dørkarmen, uten at dørene må åpnes.",
+        "Mørklegger hele fronten på bobilen."
       ]
     },
     {
       "typ": "produktrad",
-      "rubrik": "__COPY__: rubrik: rutan och smårutorna",
+      "rubrik": "Frontruta og de små vinduene",
       "handles": [
         "termoskyddet",
         "fonstertermomatta-2-pack"
@@ -64,7 +64,16 @@
       "typ": "fakta"
     }
   ],
-  "tretest": [],
+  "tretest": [
+    { "rad": "Duggen blir sittende mellom gardin og glass", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Ingen ser inn på rasteplassen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Morgensolen vekker deg ikke klokka fire", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Trekket sitter utenpå, så glasset aldri blir kaldt innenfra.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Duggen blir sittende mellom gardin og glass", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se frontrutetrekket", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Slik løser trekket det", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Frontruta og de små vinduene", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
   "version": 1,
   "planerad": "2026-10-13T18:00:00+02:00",
   "segment": [

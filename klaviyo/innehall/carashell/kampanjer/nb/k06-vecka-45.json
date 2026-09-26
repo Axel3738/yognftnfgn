@@ -19,50 +19,59 @@
   },
   "amnesrader": [
     {
-      "text": "__COPY__: ämnesrad A, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Sitter det fast når det blåser?",
+      "begar": "vite at trekket ikke blåser av"
     },
     {
-      "text": "__COPY__: ämnesrad B, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Vevde bånd, ikke strikk",
+      "begar": "forstå hvorfor båndene holder"
     },
     {
-      "text": "__COPY__: ämnesrad C, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "To ekstra bånd følger med",
+      "begar": "føle seg trygg i kraftig vind"
     }
   ],
-  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "forhandstext": "Plastkroker under kanten holder det på plass, på alle fire sider.",
   "block": [
     {
       "typ": "hero",
-      "rubrik": "__COPY__: rubrik: sitter det kvar i blåst?",
-      "text": "__COPY__: 1–2 meningar",
+      "rubrik": "Sitter det fast når det blåser?",
+      "text": "Hei {{fornamn}},\n\nVevde strekkbånd med plastkroker holder taktrekket på plass i vind, ikke strikk som gir etter.",
       "bild": "produkt:takskyddet",
       "knapp": {
-        "text": "__COPY__: knapp",
+        "text": "Se hvordan det festes",
         "lank": "produkt:takskyddet"
       }
     },
     {
       "typ": "punkter",
-      "rubrik": "__COPY__: rubrik",
+      "rubrik": "Det som holder det på plass",
       "punkter": [
-        "__COPY__: vävda band, inte gummi",
-        "__COPY__: krokar under kanten, fyra sidor",
-        "__COPY__: två extra band"
+        "Vevde strekkbånd, ikke strikk som strekker seg ut.",
+        "Plastkroker hekter under karosseriets kant, på alle fire sider.",
+        "To ekstra forsterkede bånd på 10,5 meter følger med."
       ]
     },
     {
       "typ": "produkt",
       "handle": "takskyddet",
-      "text": "__COPY__: en mening",
-      "knapp": "__COPY__: knapp"
+      "text": "Justerbare bånd på alle fire sider holder trekket der det skal være.",
+      "knapp": "Se taktrekket"
     },
     {
       "typ": "fakta"
     }
   ],
-  "tretest": [],
+  "tretest": [
+    { "rad": "Sitter det fast når det blåser?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Vevde bånd, ikke strikk", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "To ekstra bånd følger med", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Plastkroker under kanten holder det på plass, på alle fire sider.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sitter det fast når det blåser?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se hvordan det festes", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Det som holder det på plass", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se taktrekket", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
   "version": 1,
   "planerad": "2026-11-03T18:00:00+01:00",
   "segment": [

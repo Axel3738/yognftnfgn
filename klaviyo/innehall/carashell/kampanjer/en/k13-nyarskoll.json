@@ -19,28 +19,28 @@
   },
   "amnesrader": [
     {
-      "text": "__COPY__: ämnesrad A, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "The first look of the new year",
+      "begar": "get a nudge to check on the rig"
     },
     {
-      "text": "__COPY__: ämnesrad B, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Is the roof dry, is the glass still covered",
+      "begar": "verify nothing slipped over the break"
     },
     {
-      "text": "__COPY__: ämnesrad C, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "One quick check before the year gets going",
+      "begar": "do a fast check before getting busy"
     }
   ],
-  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "forhandstext": "Five minutes, three things to look at.",
   "block": [
     {
       "typ": "text",
-      "rubrik": "__COPY__: rubrik: en koll i mellandagarna / at the start of the year",
-      "text": "__COPY__: två stycken"
+      "rubrik": "At the start of the year",
+      "text": "If it's been a while since you checked on the caravan or motorhome, the new year is a good time to do it.\n\nCheck that the roof is still dry around the hatches, and that the glass is still covered. A cover that's slipped is easier to fix now than to find out about later."
     },
     {
       "typ": "produktrad",
-      "rubrik": "__COPY__: rubrik",
+      "rubrik": "All three, in one place",
       "handles": [
         "takskyddet",
         "termoskyddet",
@@ -51,7 +51,14 @@
       "typ": "fakta"
     }
   ],
-  "tretest": [],
+  "tretest": [
+    { "rad": "The first look of the new year", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Is the roof dry, is the glass still covered", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "One quick check before the year gets going", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Five minutes, three things to look at.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "At the start of the year", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "All three, in one place", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
   "version": 1,
   "planerad": "2026-12-29T16:00:00+01:00",
   "segment": [

@@ -43,24 +43,24 @@
         },
         "amnesrader": [
           {
-            "text": "__COPY__: ämnesrad A, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "That cover you were looking at",
+            "begar": "recall what they viewed"
           },
           {
-            "text": "__COPY__: ämnesrad B, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Still there, if you want another look",
+            "begar": "low-pressure reminder it's still available"
           },
           {
-            "text": "__COPY__: ämnesrad C, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Picking a cover? Here's a second look",
+            "begar": "help with decision by revisiting options"
           }
         ],
-        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "forhandstext": "No pressure. Just a link back to it, in case you want another look.",
         "block": [
           {
             "typ": "text",
-            "rubrik": "__COPY__: rubrik",
-            "text": "__COPY__: en mening"
+            "rubrik": "One more look at what you viewed",
+            "text": "Here it is again, in case you want a closer look before deciding."
           },
           {
             "typ": "produktrad",
@@ -71,7 +71,38 @@
             ]
           }
         ],
-        "tretest": [],
+        "tretest": [
+          {
+            "rad": "That cover you were looking at",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Still there, if you want another look",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Picking a cover? Here's a second look",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "No pressure. Just a link back to it, in case you want another look.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "One more look at what you viewed",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
         "version": 1
       }
     },
@@ -103,24 +134,24 @@
         },
         "amnesrader": [
           {
-            "text": "__COPY__: ämnesrad A, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Nine lengths, one probably fits",
+            "begar": "reassurance on size availability"
           },
           {
-            "text": "__COPY__: ämnesrad B, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "How to measure before you pick a length",
+            "begar": "want practical measuring instructions"
           },
           {
-            "text": "__COPY__: ämnesrad C, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "18 to 44 ft, all covered",
+            "begar": "see the full size range at a glance"
           }
         ],
-        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "forhandstext": "Measure front to back, round up, and you've got your size.",
         "block": [
           {
             "typ": "text",
-            "rubrik": "__COPY__: rubrik: storleken",
-            "text": "__COPY__: två meningar: nio längder, hur man mäter"
+            "rubrik": "About the sizing",
+            "text": "It comes in nine lengths, 18 to 44 ft (5.5 to 13.5 m), all 10 ft (3 m) wide. Measure your roof front to back and pick the next length up."
           },
           {
             "typ": "produktrad",
@@ -134,7 +165,38 @@
             "typ": "fakta"
           }
         ],
-        "tretest": [],
+        "tretest": [
+          {
+            "rad": "Nine lengths, one probably fits",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "How to measure before you pick a length",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "18 to 44 ft, all covered",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Measure front to back, round up, and you've got your size.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "About the sizing",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
         "version": 1
       }
     }

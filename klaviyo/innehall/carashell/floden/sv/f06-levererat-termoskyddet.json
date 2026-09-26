@@ -46,43 +46,49 @@
         },
         "amnesrader": [
           {
-            "text": "__COPY__: ämnesrad A, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Så monterar du termoskyddet",
+            "begar": "veta exakt hur man gör"
           },
           {
-            "text": "__COPY__: ämnesrad B, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Utanpå rutan, dörrarna stängda",
+            "begar": "förstå att dörrarna inte behöver öppnas"
           },
           {
-            "text": "__COPY__: ämnesrad C, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Tre steg, klart på utsidan",
+            "begar": "veta att det går snabbt"
           }
         ],
-        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "forhandstext": "Tre steg, och du behöver inte öppna en enda dörr.",
         "block": [
           {
             "typ": "text",
-            "rubrik": "__COPY__: rubrik: så monterar du termoskyddet",
-            "text": "__COPY__: en mening"
+            "rubrik": "Så monterar du termoskyddet",
+            "text": "Paketet har kommit fram. Så här monterar du det."
           },
           {
             "typ": "punkter",
             "rubrik": null,
             "punkter": [
-              "__COPY__: utvändigt över vindrutan och båda sidorutorna",
-              "__COPY__: flikarna i dörrkarmen, dörrarna stängda",
-              "__COPY__: håller i blåst"
+              "Spänn skyddet utvändigt över vindrutan och båda sidorutorna.",
+              "Kläm fast flikarna i dörrkarmen. Dörrarna behöver inte öppnas.",
+              "Klart. Skyddet håller kvar i blåst."
             ]
           },
           {
             "typ": "grundare",
-            "text": "__COPY__: blev något inte som det skulle, svara på mejlet"
+            "text": "Blev något inte som det skulle, svara bara på det här mejlet."
           },
           {
             "typ": "fakta"
           }
         ],
-        "tretest": [],
+        "tretest": [
+          {"rad": "Så monterar du termoskyddet", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Utanpå rutan, dörrarna stängda", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Tre steg, klart på utsidan", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Tre steg, och du behöver inte öppna en enda dörr.", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Så monterar du termoskyddet", "visualisera": true, "falsifiera": true, "ingen_annan": true}
+        ],
         "version": 1
       }
     }
