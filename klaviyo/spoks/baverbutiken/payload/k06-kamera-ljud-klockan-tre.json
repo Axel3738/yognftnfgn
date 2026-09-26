@@ -1,0 +1,155 @@
+{
+  "id": "k06-kamera-ljud-klockan-tre",
+  "emailTitle": "Larmar på personer, inte på katter",
+  "emailDescription": "AI:n vet skillnaden mellan en gren och en människa.",
+  "amnesrader": [
+    "Larmar på personer, inte på katter",
+    "Ett ljud på tomten klockan tre",
+    "Kameran vänder sig efter det som rör sig"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "En gren rör sig. Kameran vet skillnaden.",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Du ligger vaken och gissar: katten, vinden eller något annat. Att gå ut och kolla är det sista du vill.",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "c4fdb786-0a7d-4499-b1db-f81ad5272edd",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Se vad som rör sig",
+      "url": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "En kamera med två linser täcker 355 grader med panorering och zoom. AI:n skiljer människor från grenar och katter, så den larmar på rätt saker.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Rör sig något på tomten följer kameran automatiskt, och mobilen säger till direkt.",
+      "alignment": "left"
+    },
+    {
+      "type": "quote",
+      "text": "\"Lätt att sätta upp och fungerar som den ska.\"\nEmma, verifierad kund"
+    },
+    {
+      "type": "quote",
+      "text": "\"Mycket nöjd med köpet. Enkel och praktisk.\"\nSara, verifierad kund"
+    },
+    {
+      "type": "h2",
+      "text": "Vad kameran gör"
+    },
+    {
+      "type": "list",
+      "text": "Inga döda vinklar, dubbla linser och PTZ 355 grader"
+    },
+    {
+      "type": "list",
+      "text": "Larmar på personer, inte på katter, med AI-detektering"
+    },
+    {
+      "type": "list",
+      "text": "Följer rörelsen automatiskt och skickar direktnotis i mobilen"
+    },
+    {
+      "type": "list",
+      "text": "Tål utomhusbruk året om"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "c4fdb786-0a7d-4499-b1db-f81ad5272edd",
+          "button": "Se kameran"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "regular",
+      "text": "Övervakningskamera Trådlös, med AI som vet skillnaden mellan en gren och en person.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

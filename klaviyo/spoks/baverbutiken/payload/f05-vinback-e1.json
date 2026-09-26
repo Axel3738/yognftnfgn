@@ -1,0 +1,99 @@
+{
+  "id": "f05-vinback-e1",
+  "emailTitle": "Det har hänt en del sedan sist",
+  "emailDescription": "En liten pryl de flesta väntar för länge med, och tre till.",
+  "amnesrader": [
+    "Det har hänt en del sedan sist",
+    "Den här köper folk oftast efter ett uppehåll",
+    "Fyra prylar du inte såg förra gången"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Det har hänt en del sedan sist"
+    },
+    {
+      "type": "regular",
+      "text": "Det är ett tag sen du handlade hos oss. Här är vad andra kunder som varit borta lika länge brukar handla när de kommer tillbaka.",
+      "alignment": "left"
+    },
+    {
+      "type": "h2",
+      "text": "Det här handlar man ofta efter ett uppehåll",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "0772f985-3223-4cd2-8a1f-b04422bdf905",
+          "button": "Se produkten"
+        },
+        {
+          "id": "f3c26650-bf9b-49b4-a411-b11fb25392c8",
+          "button": "Se produkten"
+        },
+        {
+          "id": "6f01ed7d-90e1-45a9-bb43-f0fbbc8c2285",
+          "button": "Se produkten"
+        },
+        {
+          "id": "c4fdb786-0a7d-4499-b1db-f81ad5272edd",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

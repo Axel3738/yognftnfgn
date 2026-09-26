@@ -1,0 +1,103 @@
+{
+  "id": "f03-webbhistorik-e2",
+  "emailTitle": "Fortfarande på din lista",
+  "emailDescription": "Produkten, leveransen, och tre andra ifall det inte var den rätta.",
+  "amnesrader": [
+    "Fortfarande på din lista",
+    "Om du undrade hur leveransen funkar",
+    "Tre andra som säljer bäst just nu"
+  ],
+  "blocks": [
+    {
+      "type": "products",
+      "selectionMode": "dynamic",
+      "dynamicProductsCount": 1,
+      "dynamicCriteria": "recently_viewed",
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": "Titta igen",
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Om det inte var den rätta",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "f3c26650-bf9b-49b4-a411-b11fb25392c8",
+          "button": "Se produkten"
+        },
+        {
+          "id": "6f01ed7d-90e1-45a9-bb43-f0fbbc8c2285",
+          "button": "Se produkten"
+        },
+        {
+          "id": "c4fdb786-0a7d-4499-b1db-f81ad5272edd",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    }
+  ],
+  "varningar": []
+}

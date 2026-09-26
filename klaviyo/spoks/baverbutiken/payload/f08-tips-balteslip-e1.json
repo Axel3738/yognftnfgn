@@ -1,0 +1,75 @@
+{
+  "id": "f08-tips-balteslip-e1",
+  "emailTitle": "Vinkeln på slipmaskinen är fast med flit",
+  "emailDescription": "Fyra saker som gör skillnad när du använder den.",
+  "amnesrader": [
+    "Vinkeln på slipmaskinen är fast med flit",
+    "Så väljer du rätt slipband",
+    "Ett reservkit är på väg"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Så får du ut mest av bälteslipmaskinen"
+    },
+    {
+      "type": "regular",
+      "text": "Maskinen är gjord för att du ska slippa gissa dig fram. Här är vad som gör skillnad.",
+      "alignment": "left"
+    },
+    {
+      "type": "list",
+      "text": "Vinkeln är fast på 15°, med flit, så du slipper ställa in den för hand varje gång."
+    },
+    {
+      "type": "list",
+      "text": "Flera olika slipband följer med i olika grovlekar, välj grövre för att forma om eggen och finare för sista polityren."
+    },
+    {
+      "type": "list",
+      "text": "Testa dig fram bland de 7 hastigheterna, lägre fart för tunna eggar, högre för att forma metall eller trä."
+    },
+    {
+      "type": "list",
+      "text": "Vi håller på att lansera ett kit med fler slipband och slipskivor, för den dagen de som följer med är slitna."
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

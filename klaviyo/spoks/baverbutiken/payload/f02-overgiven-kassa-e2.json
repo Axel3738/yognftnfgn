@@ -1,0 +1,63 @@
+{
+  "id": "f02-overgiven-kassa-e2",
+  "emailTitle": "Tre frågor du kanske har innan du betalar",
+  "emailDescription": "Leverans, ångerrätt och vem du kan fråga, kort svarat.",
+  "amnesrader": [
+    "Tre frågor du kanske har innan du betalar",
+    "Hur lång tid tar leveransen egentligen",
+    "Kan jag ångra mig om jag ändrar mig"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Tre frågor innan du betalar"
+    },
+    {
+      "type": "regular",
+      "text": "Hur lång tid tar det. Kan jag ångra mig. Och vem svarar om något strular. Här är svaren.",
+      "alignment": "left"
+    },
+    {
+      "type": "abandonedCart",
+      "buttonText": "Tillbaka till kassan"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

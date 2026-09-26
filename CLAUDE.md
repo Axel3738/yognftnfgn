@@ -933,6 +933,8 @@ det som återstår står i `klaviyo/SISTA-STEGEN.md`.
   ⚠️ Mätt i båda kontona: Viewed Product-priset är text ("299 kr"), så `floatformat` i det dynamiska
   blocket gav tomt — rättat; Bäverbutikens live F03 bär den gamla mallen.
 
+- ✅ **Spoks byggt 2026-09-26 (Axels order "bygg i spoks")**: 13 flöden + F14 och 22 kampanjutkast i Spoks workspace Bäverbutiken `f716ae36-…`, allt INAKTIVT — flöden, mejlsteg och utskick slås på bara i Spoks-appen. Id:n, triggers och skillnaderna mot Klaviyo (inget ordernummer, ingen Fulfilled Order-trigger, ingen sunset) i `klaviyo/spoks/README.md`. Klaviyo skickar fortfarande tills Axel byter; kör aldrig båda samtidigt.
+
 ## `bonus/` — alla i bolaget ska kunna tjäna pengar (NY 2026-09-21)
 
 Axels uppdrag: "vi behöver verkligen något system för VA:erna". De hade fem

@@ -1,0 +1,142 @@
+{
+  "id": "k09-adventskalendrar",
+  "emailTitle": "Beställ senast 11 november för lucka 1",
+  "emailDescription": "Sex kalendrar, en för varje sorts person i huset.",
+  "amnesrader": [
+    "Beställ senast 11 november för lucka 1",
+    "24 bilar, varje sin egen färg och modell",
+    "En för racingbilar, en för fiske, en för hockey"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Den tjugofjärde bilen ställer sig bredvid de tjugotre andra",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Kalendern öppnas på trettio sekunder, chokladen är uppäten före frukost, och resten av dagen finns inget kvar. Bakom varje lucka i den här står i stället en bil att leka med.",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "2e0ade4f-dd9f-41d3-89f0-af530993d0ad",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Se racingbilskalendern",
+      "url": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+      "style": "button"
+    },
+    {
+      "type": "h2",
+      "text": "En för varje sorts person"
+    },
+    {
+      "type": "regular",
+      "text": "Racingbilar, fiskedrag, golf, dinosaurier, pussel eller hockey. Sex kalendrar med 24 numrerade luckor, en sak att öppna varje morgon i december, ingen choklad.",
+      "alignment": "left"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "353d688f-de6b-4d74-8b9e-b3c23ac9b9db",
+          "button": "Se produkten"
+        },
+        {
+          "id": "9901201d-8100-4ec0-87c9-f025065d2702",
+          "button": "Se produkten"
+        },
+        {
+          "id": "f81164f9-c69b-471e-9be1-ca881fd0a3e5",
+          "button": "Se produkten"
+        },
+        {
+          "id": "77226311-7415-4264-8ae3-5d0275caa409",
+          "button": "Se produkten"
+        },
+        {
+          "id": "94255ff9-c650-46e3-b6c9-4cbae2b84d16",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "regular",
+      "text": "Beställ senast 11 november så hinner kalendern fram före den första december.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

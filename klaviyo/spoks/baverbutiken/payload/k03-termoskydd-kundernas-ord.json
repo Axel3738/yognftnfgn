@@ -1,0 +1,135 @@
+{
+  "id": "k03-termoskydd-kundernas-ord",
+  "emailTitle": "Immig ruta varje morgon",
+  "emailDescription": "Skyddet sitter utanpå glaset, inte innanför.",
+  "amnesrader": [
+    "Immig ruta varje morgon",
+    "Alla på rastplatsen ser rakt in",
+    "Sätts fast utan att öppna en dörr"
+  ],
+  "blocks": [
+    {
+      "type": "quote",
+      "text": "\"Praktiskt skydd mot sol och värme.\"\nVerifierad kund"
+    },
+    {
+      "type": "quote",
+      "text": "\"Bra passform och känns stabilt.\"\nVerifierad kund"
+    },
+    {
+      "type": "h1",
+      "text": "Imma inifrån, varje morgon",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hej {{ contact.first_name | default: 'där' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Fukten från natten lägger sig på insidan av rutan. Gardiner gör bara att den stannar kvar mellan glaset och tyget.",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "12d5933e-635f-4c23-91d4-ef061dad82ab",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Se termoskyddet",
+      "url": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "Skyddet spänns utanpå rutan i stället för innanför, så kylan aldrig får kontakt med glaset från insidan. Det mörklägger samtidigt hela framvagnen, och ingen ser in på rastplatsen.",
+      "alignment": "left"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "12d5933e-635f-4c23-91d4-ef061dad82ab",
+          "button": "Se termoskyddet"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "regular",
+      "text": "Täcker vindrutan och båda sidorutorna, 211 cm bred och 171 cm över mitten.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

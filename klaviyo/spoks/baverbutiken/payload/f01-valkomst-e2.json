@@ -1,0 +1,98 @@
+{
+  "id": "f01-valkomst-e2",
+  "emailTitle": "Tanköverdraget, slipmaskinen och två till",
+  "emailDescription": "Fyra fler prylar, plus vad kunderna säger om taköverdraget.",
+  "amnesrader": [
+    "Tanköverdraget, slipmaskinen och två till",
+    "IBC-tanköverdraget stoppar algerna",
+    "Recensionerna på taköverdraget, ordagrant"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Fler prylar folk handlar",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "e28684fe-d25a-44fb-abd9-a39bda1c34e5",
+          "button": "Se produkten"
+        },
+        {
+          "id": "e5b2eb1f-3eba-4603-a09c-1c9692e4ae66",
+          "button": "Se produkten"
+        },
+        {
+          "id": "d0832750-b091-43b4-9d92-e2889d5b5a0a",
+          "button": "Se produkten"
+        },
+        {
+          "id": "12d5933e-635f-4c23-91d4-ef061dad82ab",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "quote",
+      "text": "\"Bra skydd för taket och lätt att använda.\"\nKarin, verifierad kund"
+    },
+    {
+      "type": "quote",
+      "text": "\"Jag är nöjd med överdraget. Rekommenderas.\"\nErik, verifierad kund"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

@@ -1,0 +1,123 @@
+{
+  "id": "f07-motorholje-till-batmotorskydd-e2",
+  "emailTitle": "Fortfarande något som saknas på båten?",
+  "emailDescription": "Motorn är en sak, sittdyna, förtöjning och spöhållare tre till.",
+  "amnesrader": [
+    "Fortfarande något som saknas på båten?",
+    "Tre saker till innan den ställs undan",
+    "Sista påminnelsen om vinterförvaringen"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Innan båten ställs undan"
+    },
+    {
+      "type": "regular",
+      "text": "Motorn är en sak. Här är tre till som andra båtägare tar med sig innan säsongen är slut.",
+      "alignment": "left"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "6f01ed7d-90e1-45a9-bb43-f0fbbc8c2285",
+          "button": "Se båtmotorskyddet"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "regular",
+      "text": "Passar nio storlekar, från de minsta utombordarna till de riktigt stora.",
+      "alignment": "left"
+    },
+    {
+      "type": "h2",
+      "text": "Tre till för båten",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "7bf6c493-5400-43da-b1d3-59bddc991db1",
+          "button": "Se produkten"
+        },
+        {
+          "id": "d0832750-b091-43b4-9d92-e2889d5b5a0a",
+          "button": "Se produkten"
+        },
+        {
+          "id": "407d54bf-6cdd-4b6e-9b11-82b90ade1786",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

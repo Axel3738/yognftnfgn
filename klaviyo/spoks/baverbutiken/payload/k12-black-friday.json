@@ -1,0 +1,145 @@
+{
+  "id": "k12-black-friday",
+  "emailTitle": "Två varor i kundvagnen räcker för 20 procent",
+  "emailDescription": "1 vara ger 10 procent, 2 ger 20, 3 eller fler ger 30. Till och med måndag.",
+  "amnesrader": [
+    "Två varor i kundvagnen räcker för 20 procent",
+    "Rabattrappan gäller till och med måndag",
+    "En vara till, en nivå högre"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Fredagen mitt i rabattrappan",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "I dag är det fredag och rabattrappan gäller fortfarande hela sajten. En vara ger 10 procent, två ger 20, tre eller fler ger 30. Den gäller till och med måndag, sen är den borta. Lägg till en vara till i kundvagnen och se procenten stiga direkt.",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "c4fdb786-0a7d-4499-b1db-f81ad5272edd",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Se alla produkter",
+      "url": "https://baverbutiken.se/collections/alla-produkter",
+      "style": "button"
+    },
+    {
+      "type": "h2",
+      "text": "Så funkar trappan"
+    },
+    {
+      "type": "list",
+      "text": "1 vara: 10 % rabatt"
+    },
+    {
+      "type": "list",
+      "text": "2 varor: 20 % rabatt"
+    },
+    {
+      "type": "list",
+      "text": "3 varor eller fler: 30 % rabatt"
+    },
+    {
+      "type": "h2",
+      "text": "En vara till, en nivå högre",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "f3c26650-bf9b-49b4-a411-b11fb25392c8",
+          "button": "Se produkten"
+        },
+        {
+          "id": "12d5933e-635f-4c23-91d4-ef061dad82ab",
+          "button": "Se produkten"
+        },
+        {
+          "id": "c4fdb786-0a7d-4499-b1db-f81ad5272edd",
+          "button": "Se produkten"
+        },
+        {
+          "id": "e5b2eb1f-3eba-4603-a09c-1c9692e4ae66",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

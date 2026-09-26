@@ -1,0 +1,125 @@
+{
+  "id": "f01-valkomst-e1",
+  "emailTitle": "Axel här. Jag driver Bäverbutiken.",
+  "emailDescription": "Ingen rabattkod i det här mejlet. Bara vem jag är och vad du kan handla här.",
+  "amnesrader": [
+    "Axel här. Jag driver Bäverbutiken.",
+    "Det här säljer vi. Inget annat.",
+    "Tre prylar folk köper mest just nu"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Jag heter Axel",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Jag driver Bäverbutiken. Det du hittar här är prylar för båten, husvagnen, husbilen, trädgården och huset, sånt som löser ett konkret problem. Inga prylar som bara ser bra ut i en annons.",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "f3c26650-bf9b-49b4-a411-b11fb25392c8",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Se allt vi säljer",
+      "url": "https://baverbutiken.se/collections/alla-produkter",
+      "style": "button"
+    },
+    {
+      "type": "h2",
+      "text": "Det här köper flest kunder",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "d01d20c5-a2cf-40fa-894d-3149ff871b81",
+          "button": "Se produkten"
+        },
+        {
+          "id": "f3c26650-bf9b-49b4-a411-b11fb25392c8",
+          "button": "Se produkten"
+        },
+        {
+          "id": "d0832750-b091-43b4-9d92-e2889d5b5a0a",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

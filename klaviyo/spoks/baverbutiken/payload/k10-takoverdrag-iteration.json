@@ -1,0 +1,135 @@
+{
+  "id": "k10-takoverdrag-iteration",
+  "emailTitle": "Silverskikt mot sol, oxfordväv mot regn",
+  "emailDescription": "Kunden skrev det under en av våra annonser.",
+  "amnesrader": [
+    "Silverskikt mot sol, oxfordväv mot regn",
+    "Det täcker taket, inte hela vagnen",
+    "Vad en kund frågade om fukt"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "\"Att täcka så där välkomnar du kondens och fukt.\"",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Det skrev en kund under en av våra annonser. Rimlig fråga: blir det inte fuktigt att lägga något över taket?",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "f3c26650-bf9b-49b4-a411-b11fb25392c8",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Se hur det sitter",
+      "url": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "Överdraget täcker bara taket, inte väggarna eller hela vagnen. Det hakas fast med remmar på alla fyra sidor i en krok i nederkant, det är inget helöverdrag som sluter runt vagnen.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Silverskiktet gör att solen tar på ytan i stället för på taket, och regnet rinner av den belagda 210D-oxfordväven i stället för att bli stående.",
+      "alignment": "left"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "f3c26650-bf9b-49b4-a411-b11fb25392c8",
+          "button": "Se taköverdraget"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "regular",
+      "text": "Taköverdrag Husvagn, bara taket, inte hela vagnen.",
+      "alignment": "left"
+    },
+    {
+      "type": "quote",
+      "text": "\"Bra skydd för taket och lätt att använda.\"\nKarin, verifierad kund"
+    },
+    {
+      "type": "quote",
+      "text": "\"Jag är nöjd med överdraget. Rekommenderas.\"\nErik, verifierad kund"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

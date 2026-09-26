@@ -1,0 +1,202 @@
+{
+  "id": "k13-julklappsguide",
+  "emailTitle": "En guide, inte fler val än du behöver",
+  "emailDescription": "Tre sorters mottagare, tre förslag var. Klart innan du hunnit tänka efter.",
+  "amnesrader": [
+    "En guide, inte fler val än du behöver",
+    "Till den som redan har allt",
+    "Sista dag att beställa: 3 december"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "En guide till julklappar, sorterade efter person",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Tre sorters mottagare, tre förslag var. Inget att fundera på länge.",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "23456c03-9621-493f-a4df-57b6cdff0e3d",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Se alla förslag",
+      "url": "https://baverbutiken.se/collections/alla-produkter",
+      "style": "button"
+    },
+    {
+      "type": "h2",
+      "text": "Till den som har allt",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "23456c03-9621-493f-a4df-57b6cdff0e3d",
+          "button": "Se produkten"
+        },
+        {
+          "id": "c14d6b41-f0f6-4da1-9171-5f47bac617c0",
+          "button": "Se produkten"
+        },
+        {
+          "id": "6c54cf0f-4f5d-4237-b8f0-31262b0fad90",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "h2",
+      "text": "Till båten och stugan",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "d0832750-b091-43b4-9d92-e2889d5b5a0a",
+          "button": "Se produkten"
+        },
+        {
+          "id": "4be2e797-74d3-43c3-8232-169ab5d856a3",
+          "button": "Se produkten"
+        },
+        {
+          "id": "7bf6c493-5400-43da-b1d3-59bddc991db1",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "h2",
+      "text": "Till den som pysslar",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "e5b2eb1f-3eba-4603-a09c-1c9692e4ae66",
+          "button": "Se produkten"
+        },
+        {
+          "id": "8e7d71b3-e2d8-4ce1-b8eb-7edbf327df24",
+          "button": "Se produkten"
+        },
+        {
+          "id": "c4fdb786-0a7d-4499-b1db-f81ad5272edd",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "regular",
+      "text": "Sista dag för att beställa och få paketet i tid till jul är torsdag 3 december. Efter det hinner det inte fram.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

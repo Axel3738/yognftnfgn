@@ -1,0 +1,135 @@
+{
+  "id": "k20-hinner-inte-till-jul",
+  "emailTitle": "Hinner inte till jul, men behövs hela vintern",
+  "emailDescription": "Ärligt: de här tre hinner inte fram som julklapp. Men de används hela vintern.",
+  "amnesrader": [
+    "Hinner inte till jul, men behövs hela vintern",
+    "Sota, skydda rutan eller kranen i vinter",
+    "Köp dem nu, använd dem i januari"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "De hinner inte fram till jul, men behövs hela vintern",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hej {{ contact.first_name | default: 'där' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "De här tre hinner ärligt talat inte fram som julklapp den 24 december. Men de används lika mycket i januari som i december.",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "12d5933e-635f-4c23-91d4-ef061dad82ab",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Se vinterprylarna",
+      "url": "https://baverbutiken.se/collections/alla-produkter",
+      "style": "button"
+    },
+    {
+      "type": "h2",
+      "text": "Tre saker för resten av vintern",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "b1d4717b-d737-46ad-a9c2-be85081a15ac",
+          "button": "Se produkten"
+        },
+        {
+          "id": "12d5933e-635f-4c23-91d4-ef061dad82ab",
+          "button": "Se produkten"
+        },
+        {
+          "id": "ca232636-6a2f-496a-9a77-c8a7d0d19aab",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "regular",
+      "text": "Sotarsetet rensar röret mellan sotarens besök, termoskyddet håller imman borta från vindrutan, och kranskyddet håller frosten ute från kranen. Inget av det är bundet till just jul.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}
