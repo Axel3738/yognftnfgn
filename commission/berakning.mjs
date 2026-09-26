@@ -45,12 +45,18 @@ export const UTLANDSKA_KONTON = new Map([
 /** Marknadskod i annonsnamnet — en översatt annons kan ligga i ett svenskt konto. */
 const FRAMMANDE_MARKNAD = /(^|[_\s-])(NO|DK|FI|UK|GB|DE|NL|US|MX|ES|FR|PL)([_\s-]|$)/i;
 
+/** Lockannonser (Axels beslut 2026-09-26): engagemang i Indien med gamla
+ *  svenska creatives, för att lura kopierare i Ad Library. Ingen redigerare
+ *  gjorde något nytt, och Indien är inte den svenska marknaden. */
+const LOCKANNONS = /^LOCK[_\s-]/i;
+
 /**
- * Är annonsen svensk? Två spärrar: kontot får inte vara ett marknadskonto, och
- * namnet får inte bära en marknadskod. Båda måste hålla.
+ * Är annonsen svensk? Tre spärrar: kontot får inte vara ett marknadskonto,
+ * namnet får inte bära en marknadskod och annonsen får inte vara en lockannons.
  */
 export function arSvensk(annons) {
   if (UTLANDSKA_KONTON.has(String(annons.konto?.id))) return false;
+  if (LOCKANNONS.test(annons.adNamn ?? '')) return false;
   return !FRAMMANDE_MARKNAD.test(annons.adNamn ?? '');
 }
 
