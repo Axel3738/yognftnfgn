@@ -1,0 +1,81 @@
+{
+  "id": "f02-overgiven-kassa-e2",
+  "sprak": "nb",
+  "emailTitle": "Ni lengder. En av dem passer vogna di.",
+  "emailDescription": "Mål taket, så vet du hvilken lengde du trenger.",
+  "amnesrader": [
+    "Ni lengder. En av dem passer vogna di.",
+    "Sånn sitter det fast i vind",
+    "Slik fester du det, uten hjelp"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Tre spørsmål før du bestiller"
+    },
+    {
+      "type": "regular",
+      "text": "Her er svarene på det flest lurer på før de bestiller.",
+      "alignment": "left"
+    },
+    {
+      "type": "list",
+      "text": "Passer det vogna di? Trekket finnes i ni lengder, fra 5,5 til 13,5 meter. Mål taket fra front til bakkant, og velg nærmeste lengde oppover."
+    },
+    {
+      "type": "list",
+      "text": "Hvordan fester det? Vevde stropper med plasthaker hektes under kanten på karosseriet, på alle fire sider. Stroppene er justerbare."
+    },
+    {
+      "type": "list",
+      "text": "Holder det i vind? Ja. Stroppene er vevd, ikke strikk, så de tøyer seg ikke ut, og holder trekket på plass."
+    },
+    {
+      "type": "list",
+      "text": "Har du bobil? Frontrutetrekket måler 211 centimeter i bredden og 171 over midten, med klaffer som klemmes fast i dørkarmen."
+    },
+    {
+      "type": "abandonedCart",
+      "buttonText": "Tilbake til kassen",
+      "isProductPriceVisible": false
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Angrerett**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagers angrerett",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spor pakken**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Følg den hele veien](https://carashell.se/nb/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

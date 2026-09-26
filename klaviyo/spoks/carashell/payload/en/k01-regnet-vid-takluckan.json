@@ -1,0 +1,135 @@
+{
+  "id": "k01-regnet-vid-takluckan",
+  "sprak": "en",
+  "emailTitle": "The roof you never climb up to check",
+  "emailDescription": "Rain settles right where the hatches and seams are.",
+  "amnesrader": [
+    "The roof you never climb up to check",
+    "Only the roof gets covered, not the whole rig",
+    "One person puts this on, not two"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "The rain sits right at the roof hatch",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hi {{ contact.first_name | default: 'there' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Rain collects around the roof hatches and seams while the rig sits outside. Nobody finds out until the next moisture check.",
+      "alignment": "center"
+    },
+    {
+      "type": "image",
+      "fileId": "{{spoks:media:takskyddet}}",
+      "altText": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft",
+      "urlRedirect": "https://carashell.com/products/takskyddet"
+    },
+    {
+      "type": "h2",
+      "text": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "See the roof cover",
+      "url": "https://carashell.com/products/takskyddet",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "The cover only goes over the roof surface, with the edge hanging about 30 to 40 cm (12 to 16 in) down the sides so rainwater doesn't sit at the hatches. It doesn't wrap the walls or windows.",
+      "alignment": "left"
+    },
+    {
+      "type": "h2",
+      "text": "What's covered, and what isn't"
+    },
+    {
+      "type": "list",
+      "text": "Nine lengths, 18 to 44 ft (5.5 to 13.5 m), so there's one for your roof."
+    },
+    {
+      "type": "list",
+      "text": "Woven webbing straps with plastic hooks, latched under the edge of the body on all four sides."
+    },
+    {
+      "type": "list",
+      "text": "Goes on with one person, no second pair of hands needed."
+    },
+    {
+      "type": "image",
+      "fileId": "{{spoks:media:takskyddet}}",
+      "altText": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft",
+      "urlRedirect": "https://carashell.com/products/takskyddet"
+    },
+    {
+      "type": "h2",
+      "text": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Check sizes",
+      "url": "https://carashell.com/products/takskyddet",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "Pick the length that matches your roof, front to back.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Guarantee**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "90-day guarantee",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Track your parcel**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Follow it all the way](https://carashell.com/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "link",
+      "text": "Protect the roof",
+      "url": "https://carashell.com/products/takskyddet",
+      "style": "button"
+    }
+  ],
+  "varningar": [
+    "Bilden för takskyddet saknar fileId i Spoks (produkter.json → bild).",
+    "Bilden för takskyddet saknar fileId i Spoks (produkter.json → bild)."
+  ]
+}

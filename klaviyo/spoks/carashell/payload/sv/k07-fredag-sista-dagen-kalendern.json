@@ -1,0 +1,121 @@
+{
+  "id": "k07-fredag-sista-dagen-kalendern",
+  "sprak": "sv",
+  "emailTitle": "Fredag är sista dagen",
+  "emailDescription": "Sista dagen att beställa till lucka 1.",
+  "amnesrader": [
+    "Fredag är sista dagen",
+    "Adventskalendern, sista beställningsdag",
+    "24 luckor, en deadline: 13 november"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Fredag är sista dagen att beställa",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Beställ senast fredag 13 november, så att kalendern är hemma till lucka 1 den 1 december.",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "{{spoks:id:adventskalender-retrobussar}}",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Se adventskalendern",
+      "url": "https://carashell.se/products/adventskalender-retrobussar",
+      "style": "button"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "{{spoks:id:adventskalender-retrobussar}}",
+          "button": "Beställ innan fredag"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "regular",
+      "text": "24 luckor, retrobussar. Sista beställningsdag är fredag 13 november.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://carashell.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": [
+    "Produkten adventskalender-retrobussar finns inte i Spoks.",
+    "Produkten adventskalender-retrobussar finns inte i Spoks."
+  ]
+}

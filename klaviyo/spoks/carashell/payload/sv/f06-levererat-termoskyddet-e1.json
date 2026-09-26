@@ -1,0 +1,76 @@
+{
+  "id": "f06-levererat-termoskyddet-e1",
+  "sprak": "sv",
+  "emailTitle": "Så monterar du termoskyddet",
+  "emailDescription": "Tre steg, och du behöver inte öppna en enda dörr.",
+  "amnesrader": [
+    "Så monterar du termoskyddet",
+    "Utanpå rutan, dörrarna stängda",
+    "Tre steg, klart på utsidan"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Så monterar du termoskyddet"
+    },
+    {
+      "type": "regular",
+      "text": "Paketet har kommit fram. Så här monterar du det.",
+      "alignment": "left"
+    },
+    {
+      "type": "list",
+      "text": "Spänn skyddet utvändigt över vindrutan och båda sidorutorna."
+    },
+    {
+      "type": "list",
+      "text": "Kläm fast flikarna i dörrkarmen. Dörrarna behöver inte öppnas."
+    },
+    {
+      "type": "list",
+      "text": "Klart. Skyddet håller kvar i blåst."
+    },
+    {
+      "type": "quote",
+      "text": "Blev något inte som det skulle, svara bara på det här mejlet.\nAxel, grundare"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://carashell.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

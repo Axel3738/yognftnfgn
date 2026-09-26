@@ -1,0 +1,43 @@
+{
+  "id": "f01-valkomst-e1",
+  "sprak": "nb",
+  "emailTitle": "Axel her. Jeg skriver e-postene selv.",
+  "emailDescription": "Jeg driver alt selv, og her er grunnen til at du får e-post fra meg.",
+  "amnesrader": [
+    "Axel her. Jeg skriver e-postene selv.",
+    "Et dekke til taket. Et til ruta.",
+    "Ingen unødvendig reklame i innboksen din"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Hei, det er Axel"
+    },
+    {
+      "type": "regular",
+      "text": "Jeg står bak butikken selv. Vi lager beskyttelse for campingvogna og bobilen når den står stille: et takovertrekk som legger seg over taket, og et frontrutetrekk som strammes over frontruta og sidevinduene.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Ingen av delene tas med inn. De blir liggende på kjøretøyet så lenge det trengs.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Du hører fra meg når det er noe konkret å si, om produktene eller om ordren din. Lurer du på noe før det, svarer jeg selv på denne e-posten.",
+      "alignment": "left"
+    },
+    {
+      "type": "link",
+      "text": "Se hele utvalget",
+      "url": "https://carashell.se/nb/collections/sortimentet?country=NO",
+      "style": "button"
+    },
+    {
+      "type": "quote",
+      "text": "Har du spørsmål, svar på denne e-posten. Jeg leser alt selv.\nAxel, grunnlegger"
+    }
+  ],
+  "varningar": []
+}

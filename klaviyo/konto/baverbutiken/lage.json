@@ -1,6 +1,6 @@
 {
   "brand": "baverbutiken",
-  "hamtad": "2026-09-25T06:43:52.001Z",
+  "hamtad": "2026-09-26T04:28:34.481Z",
   "konto": {
     "id": "QZ4jLG",
     "public_api_key": "QZ4jLG",
@@ -9,17 +9,17 @@
     "valuta": "SEK",
     "organisation": "Bäverbutiken",
     "adress": {
-      "address1": null,
+      "address1": "sjöhed 160",
       "address2": null,
-      "city": null,
-      "region": null,
-      "country": "United States",
-      "zip": null
+      "city": "Harestad",
+      "region": "Harestad",
+      "country": "Sweden",
+      "zip": "44274"
     }
   },
   "avsandare": {
     "konto_standard": {
-      "email": "",
+      "email": "kundsupport@baverbutiken.se",
       "namn": "Bäverbutiken"
     },
     "brandfilen": {
@@ -61,6 +61,11 @@
         "integration": "Klaviyo"
       },
       {
+        "id": "T6Bd3w",
+        "namn": "Confirmed Shipment",
+        "integration": "Shopify"
+      },
+      {
         "id": "TZvimU",
         "namn": "Placed Order",
         "integration": "Shopify"
@@ -73,6 +78,11 @@
       {
         "id": "TnufKh",
         "namn": "Checkout Started",
+        "integration": "Shopify"
+      },
+      {
+        "id": "UDiki5",
+        "namn": "Submitted Search",
         "integration": "Shopify"
       },
       {
@@ -164,6 +174,7 @@
     "kanda": {
       "placed_order": "TZvimU",
       "started_checkout": "TnufKh",
+      "viewed_product": "V6gSUn",
       "active_on_site": "Rvr7Tq",
       "added_to_cart": "VaU9fL",
       "ordered_product": "Ydn7Zv",
@@ -171,32 +182,26 @@
       "clicked_email": "ThQZpT",
       "received_email": "WN5w5t"
     },
-    "saknas": [
-      {
-        "nyckel": "viewed_product",
-        "namn": [
-          "Viewed Product"
-        ],
-        "orsak": "Metriken \"Viewed Product\" finns 2 gånger i kontot (V6gSUn från API, WXk2Lf från Shopify). Motorn väljer inte själv — säg vilken som gäller.",
-        "kod": "METRIK_FLERA"
-      }
-    ]
+    "saknas": []
   },
   "listor": [
     {
       "id": "ThfZj2",
       "namn": "LISTA_nyhetsbrev",
-      "opt_in": "single_opt_in"
+      "opt_in": "single_opt_in",
+      "profiler": 2643
     },
     {
       "id": "UwtkwY",
       "namn": "Email List",
-      "opt_in": "single_opt_in"
+      "opt_in": "single_opt_in",
+      "profiler": 3612
     },
     {
       "id": "WiTe3t",
       "namn": "Preview List",
-      "opt_in": "single_opt_in"
+      "opt_in": "single_opt_in",
+      "profiler": 1
     }
   ],
   "segment": [
@@ -318,135 +323,306 @@
   ],
   "floden": [
     {
-      "id": "QXZzvn",
+      "id": "QU7iZJ",
+      "namn": "FLOW_tips_ibc_v1",
+      "status": "live",
+      "trigger_type": "Metric",
+      "arkiverad": false
+    },
+    {
+      "id": "RGnSj9",
+      "namn": "FLOW_tips_takoverdrag_v1",
+      "status": "live",
+      "trigger_type": "Metric",
+      "arkiverad": false
+    },
+    {
+      "id": "RM28Ex",
+      "namn": "FLOW_tips_balteslip_v1",
+      "status": "live",
+      "trigger_type": "Metric",
+      "arkiverad": false
+    },
+    {
+      "id": "Ruw7ru",
+      "namn": "FLOW_segment_sunset_v2",
+      "status": "live",
+      "trigger_type": "Added to List",
+      "arkiverad": false
+    },
+    {
+      "id": "SMasRB",
+      "namn": "FLOW_tips_batmotorskydd_v1",
+      "status": "live",
+      "trigger_type": "Metric",
+      "arkiverad": false
+    },
+    {
+      "id": "TaadnG",
+      "namn": "FLOW_recension_trustpilot_v2",
+      "status": "draft",
+      "trigger_type": "Metric",
+      "arkiverad": false
+    },
+    {
+      "id": "U3cy6R",
+      "namn": "FLOW_tips_termoskydd_v1",
+      "status": "live",
+      "trigger_type": "Metric",
+      "arkiverad": false
+    },
+    {
+      "id": "Vx8qnh",
       "namn": "FLOW_order_motorholje-batmotorskydd_v2",
-      "status": "draft",
+      "status": "live",
       "trigger_type": "Metric",
       "arkiverad": false
     },
     {
-      "id": "TTsxRQ",
-      "namn": "FLOW_segment_sunset_v1",
-      "status": "draft",
+      "id": "XG6jqR",
+      "namn": "FLOW_lista_valkomst_v2",
+      "status": "live",
       "trigger_type": "Added to List",
       "arkiverad": false
     },
     {
-      "id": "TyH2jg",
-      "namn": "FLOW_order_efterkop_v3",
-      "status": "draft",
+      "id": "XZbAGg",
+      "namn": "FLOW_tips_satesoverdrag_v1",
+      "status": "live",
       "trigger_type": "Metric",
       "arkiverad": false
     },
     {
-      "id": "VgvDum",
+      "id": "XciMkv",
+      "namn": "FLOW_order_efterkop_v4",
+      "status": "live",
+      "trigger_type": "Metric",
+      "arkiverad": false
+    },
+    {
+      "id": "Xzs4UW",
       "namn": "FLOW_order_vinback_v3",
-      "status": "draft",
+      "status": "live",
       "trigger_type": "Metric",
       "arkiverad": false
     },
     {
-      "id": "WLDZUM",
-      "namn": "FLOW_order_motorholje-batmotorskydd_v1",
-      "status": "draft",
-      "trigger_type": "Metric",
-      "arkiverad": false
-    },
-    {
-      "id": "XY5QXa",
-      "namn": "Välkomst",
-      "status": "draft",
-      "trigger_type": "Added to List",
-      "arkiverad": false
-    },
-    {
-      "id": "XgrxZ9",
+      "id": "Y9QRkG",
       "namn": "Övergiven kassa",
-      "status": "draft",
+      "status": "live",
       "trigger_type": "Metric",
       "arkiverad": false
     },
     {
-      "id": "XyVzec",
-      "namn": "FLOW_order_vinback_v2",
-      "status": "draft",
-      "trigger_type": "Metric",
-      "arkiverad": false
-    },
-    {
-      "id": "YgzScd",
-      "namn": "FLOW_order_efterkop_v2",
-      "status": "draft",
+      "id": "YwY8V9",
+      "namn": "Webbhistorik",
+      "status": "live",
       "trigger_type": "Metric",
       "arkiverad": false
     }
   ],
   "mallar": {
-    "antal": 30,
+    "antal": 74,
     "motorns": [
       {
         "id": "WvzJMT",
         "namn": "TPL_f01-valkomst-e1_v1"
       },
       {
+        "id": "X6QLXP",
+        "namn": "TPL_f01-valkomst-e1_v2"
+      },
+      {
+        "id": "UTa7Gp",
+        "namn": "TPL_f01-valkomst-e1_v3"
+      },
+      {
         "id": "VSyGbg",
         "namn": "TPL_f01-valkomst-e2_v1"
+      },
+      {
+        "id": "T26XQw",
+        "namn": "TPL_f01-valkomst-e2_v2"
       },
       {
         "id": "SQ6Hrx",
         "namn": "TPL_f01-valkomst-e3_v1"
       },
       {
+        "id": "VTirTt",
+        "namn": "TPL_f01-valkomst-e3_v2"
+      },
+      {
         "id": "RA4Cch",
         "namn": "TPL_f02-overgiven-kassa-e1_v1"
+      },
+      {
+        "id": "XB754y",
+        "namn": "TPL_f02-overgiven-kassa-e1_v2"
       },
       {
         "id": "SKtt69",
         "namn": "TPL_f02-overgiven-kassa-e2_v1"
       },
       {
+        "id": "TVC3Gc",
+        "namn": "TPL_f02-overgiven-kassa-e2_v2"
+      },
+      {
         "id": "UxTkAC",
         "namn": "TPL_f02-overgiven-kassa-e3_v1"
+      },
+      {
+        "id": "Y4RAYp",
+        "namn": "TPL_f02-overgiven-kassa-e3_v2"
       },
       {
         "id": "Y8K7BA",
         "namn": "TPL_f03-webbhistorik-e1_v1"
       },
       {
+        "id": "V2pCeE",
+        "namn": "TPL_f03-webbhistorik-e1_v2"
+      },
+      {
         "id": "V6h8RR",
         "namn": "TPL_f03-webbhistorik-e2_v1"
+      },
+      {
+        "id": "QNwNB5",
+        "namn": "TPL_f03-webbhistorik-e2_v2"
       },
       {
         "id": "Y47Rgc",
         "namn": "TPL_f04-efter-kop-e1_v1"
       },
       {
+        "id": "U4nNe6",
+        "namn": "TPL_f04-efter-kop-e1_v2"
+      },
+      {
+        "id": "Xmdi2n",
+        "namn": "TPL_f04-efter-kop-e1_v3"
+      },
+      {
         "id": "S3Pa88",
         "namn": "TPL_f04-efter-kop-e2_v1"
+      },
+      {
+        "id": "TFJgE2",
+        "namn": "TPL_f04-efter-kop-e2_v2"
       },
       {
         "id": "Xr6NDz",
         "namn": "TPL_f05-vinback-e1_v1"
       },
       {
+        "id": "SrGbqL",
+        "namn": "TPL_f05-vinback-e1_v2"
+      },
+      {
         "id": "SAcWpm",
         "namn": "TPL_f05-vinback-e2_v1"
+      },
+      {
+        "id": "SY5XFZ",
+        "namn": "TPL_f05-vinback-e2_v2"
       },
       {
         "id": "Xktyib",
         "namn": "TPL_f06-sunset-e1_v1"
       },
       {
+        "id": "SNkGYQ",
+        "namn": "TPL_f06-sunset-e1_v2"
+      },
+      {
+        "id": "TwtKXe",
+        "namn": "TPL_f06-sunset-e1_v3"
+      },
+      {
         "id": "WHsvFy",
         "namn": "TPL_f06-sunset-e2_v1"
+      },
+      {
+        "id": "V9anLy",
+        "namn": "TPL_f06-sunset-e2_v2"
+      },
+      {
+        "id": "Wuiumz",
+        "namn": "TPL_f06-sunset-e2_v3"
       },
       {
         "id": "RSyDrk",
         "namn": "TPL_f07-motorholje-till-batmotorskydd-e1_v1"
       },
       {
+        "id": "U4Ryet",
+        "namn": "TPL_f07-motorholje-till-batmotorskydd-e1_v2"
+      },
+      {
         "id": "Vtqqsi",
         "namn": "TPL_f07-motorholje-till-batmotorskydd-e2_v1"
+      },
+      {
+        "id": "WpFe2b",
+        "namn": "TPL_f07-motorholje-till-batmotorskydd-e2_v2"
+      },
+      {
+        "id": "S6Gq2P",
+        "namn": "TPL_f08-tips-balteslip-e1_v1"
+      },
+      {
+        "id": "S7ba3c",
+        "namn": "TPL_f08-tips-balteslip-e1_v2"
+      },
+      {
+        "id": "QQEiMz",
+        "namn": "TPL_f09-tips-takoverdrag-e1_v1"
+      },
+      {
+        "id": "RpwR5b",
+        "namn": "TPL_f09-tips-takoverdrag-e1_v2"
+      },
+      {
+        "id": "TbtYzh",
+        "namn": "TPL_f10-tips-termoskydd-e1_v1"
+      },
+      {
+        "id": "UYnC69",
+        "namn": "TPL_f10-tips-termoskydd-e1_v2"
+      },
+      {
+        "id": "T6QJdT",
+        "namn": "TPL_f11-tips-batmotorskydd-e1_v1"
+      },
+      {
+        "id": "UTKmJK",
+        "namn": "TPL_f11-tips-batmotorskydd-e1_v2"
+      },
+      {
+        "id": "UbCiLm",
+        "namn": "TPL_f12-tips-ibc-e1_v1"
+      },
+      {
+        "id": "YpXSqj",
+        "namn": "TPL_f12-tips-ibc-e1_v2"
+      },
+      {
+        "id": "SizaUu",
+        "namn": "TPL_f13-tips-satesoverdrag-e1_v1"
+      },
+      {
+        "id": "XLWPMG",
+        "namn": "TPL_f13-tips-satesoverdrag-e1_v2"
+      },
+      {
+        "id": "UdCxQY",
+        "namn": "TPL_f14-recension-trustpilot-e1_v1"
+      },
+      {
+        "id": "U3533v",
+        "namn": "TPL_f14-recension-trustpilot-e1_v2"
       },
       {
         "id": "Y68RqH",
@@ -493,8 +669,16 @@
         "namn": "TPL_k11-black-week-start_v1"
       },
       {
+        "id": "UkrP99",
+        "namn": "TPL_k11-black-week-start_v2"
+      },
+      {
         "id": "UaL52b",
         "namn": "TPL_k12-black-friday_v1"
+      },
+      {
+        "id": "VrdpFB",
+        "namn": "TPL_k12-black-friday_v2"
       },
       {
         "id": "XKBQ39",
@@ -503,10 +687,108 @@
       {
         "id": "R8i6gs",
         "namn": "TPL_k14-sista-bestallningsdag-jul_v1"
+      },
+      {
+        "id": "VXBbWQ",
+        "namn": "TPL_k15-fars-dag-sista-helgen_v1"
+      },
+      {
+        "id": "YiqRJy",
+        "namn": "TPL_k16-forsta-frostnatten_v1"
+      },
+      {
+        "id": "RF77XR",
+        "namn": "TPL_k17-stall-undan-for-vintern_v1"
+      },
+      {
+        "id": "UCVQnc",
+        "namn": "TPL_k18-det-flest-kopt-i-host_v1"
+      },
+      {
+        "id": "VbjCDr",
+        "namn": "TPL_k19-sista-dagen-jul_v1"
+      },
+      {
+        "id": "RvQBh5",
+        "namn": "TPL_k20-hinner-inte-till-jul_v1"
+      },
+      {
+        "id": "WNuZt8",
+        "namn": "TPL_k21-kundernas-favoriter_v1"
+      },
+      {
+        "id": "YwhCCd",
+        "namn": "TPL_k22-nyarskoll_v1"
       }
     ]
   },
   "kampanjer": [
+    {
+      "id": "01M3BHN6HKJ1NXVNW0JYG9ZM0G",
+      "namn": "MAIL_20260929_Takoverdrag_PD_1_uppvarmning_problem_taket-du-aldrig-kollar_v1",
+      "status": "Scheduled",
+      "planerad": "2026-09-25T08:37:29.764406+00:00"
+    },
+    {
+      "id": "01M3BV4BKRX2NB2SJMCF23X1MS",
+      "namn": "MAIL_20261229_Sasongskoll_S_1_engagerade90d_solution_nyarskoll-sasongen_v1",
+      "status": "Draft",
+      "planerad": null
+    },
+    {
+      "id": "01M3BV47XQNFVGJWKXXKGA15AN",
+      "namn": "MAIL_20261215_Kundfavoriter_SP_1_engagerade90d_product_kundernas-favoriter_v1",
+      "status": "Draft",
+      "planerad": null
+    },
+    {
+      "id": "01M3BV443EX0PG90CPW6M0PN4W",
+      "namn": "MAIL_20261208_Vinterprylar_S_1_engagerade90d_solution_hinner-inte-till-jul_v1",
+      "status": "Draft",
+      "planerad": null
+    },
+    {
+      "id": "01M3BV408XHNZ2RZCE6245YWVW",
+      "namn": "MAIL_20261203_Julklapp_GT_5_engagerade90d_promo_sista-dagen-idag_v1",
+      "status": "Draft",
+      "planerad": null
+    },
+    {
+      "id": "01M3BV3WMPA4Q6J63Z3KQQ5FDM",
+      "namn": "MAIL_20261117_Popularast_SP_1_engagerade90d_product_flest-kopt-i-host_v1",
+      "status": "Draft",
+      "planerad": null
+    },
+    {
+      "id": "01M3BV3RYT5PFYE13N0FCM64TG",
+      "namn": "MAIL_20261110_Vinterforvaring_S_1_engagerade90d_solution_stall-undan-for-vintern_v1",
+      "status": "Draft",
+      "planerad": null
+    },
+    {
+      "id": "01M3BV3N92Q9X332WYV4KE2G9S",
+      "namn": "MAIL_20261103_Frostnatten_S_1_engagerade90d_solution_forsta-frostnatten_v1",
+      "status": "Draft",
+      "planerad": null
+    },
+    {
+      "id": "01M3BV3ECZHTV0D19CC2WC7P7D",
+      "namn": "MAIL_20261016_Farsdagshelg_GT_3_engagerade60d_product_sista-helgen-farsdag_v1",
+      "status": "Draft",
+      "planerad": null
+    },
+    {
+      "id": "01M3BV39RWNM1R93AR1KEGK8JM",
+      "namn": "MAIL_20261127_Bastsaljare_CS_2_engagerade90d_promo_black-friday_v2",
+      "status": "Draft",
+      "planerad": null
+    },
+    {
+      "id": "01M3BV366AE3ZB52WMW7AHFD2V",
+      "namn": "MAIL_20261123_Bastsaljare_CS_1_engagerade90d_promo_black-week_v2",
+      "status": "Draft",
+      "planerad": null
+    },
     {
       "id": "01M3BHPWX2MBAP7MSM7JXX7FBR",
       "namn": "MAIL_20261201_Julklapp_GT_4_engagerade90d_promo_sista-dag-3-dec_v1",
@@ -516,18 +798,6 @@
     {
       "id": "01M3BHPRG1RAV5TW6TDMWMZBVQ",
       "namn": "MAIL_20261119_Julklapp_GT_3_engagerade90d_solution_julklappar-3-dec_v1",
-      "status": "Draft",
-      "planerad": null
-    },
-    {
-      "id": "01M3BHPMKTRZRSR566GNCXGGK5",
-      "namn": "MAIL_20261127_Bastsaljare_CS_2_engagerade90d_promo_black-friday_v1",
-      "status": "Draft",
-      "planerad": null
-    },
-    {
-      "id": "01M3BHPG4KA7PWZDAV63E3RJQS",
-      "namn": "MAIL_20261123_Bastsaljare_CS_1_engagerade90d_promo_black-week_v1",
       "status": "Draft",
       "planerad": null
     },
@@ -584,18 +854,11 @@
       "namn": "MAIL_20261001_Batmotorskydd_S_1_uppvarmning_solution_baten-ska-upp_v1",
       "status": "Draft",
       "planerad": null
-    },
-    {
-      "id": "01M3BHN6HKJ1NXVNW0JYG9ZM0G",
-      "namn": "MAIL_20260929_Takoverdrag_PD_1_uppvarmning_problem_taket-du-aldrig-kollar_v1",
-      "status": "Draft",
-      "planerad": null
     }
   ],
   "varningar": [
-    "Kontot saknar postadress — {{ organization.full_address }} blir tom i sidfoten (MFL 20 §). Fyll i Settings → Brand.",
-    "Shopify-metriker saknas: Viewed Product. Är Shopify-integrationen kopplad (Klaviyo → Integrations → Shopify)? Utan dem går flöden och köparsegment inte att bygga.",
-    "Metriken \"Viewed Product\" finns 2 gånger i kontot (V6gSUn från API, WXk2Lf från Shopify). Motorn väljer inte själv — säg vilken som gäller."
+    "Flödet \"FLOW_lista_valkomst_v2\" är LIVE (Added to List). Motorns flöde för samma sak blir en dubblett — kunden får två mejl. Stäng av det gamla i Klaviyo innan motorns slås på.",
+    "Flödet \"Övergiven kassa\" är LIVE (Metric). Motorns flöde för samma sak blir en dubblett — kunden får två mejl. Stäng av det gamla i Klaviyo innan motorns slås på."
   ],
   "senaste_uppladdning": {
     "tid": "2026-09-25T11:04:30.321Z",

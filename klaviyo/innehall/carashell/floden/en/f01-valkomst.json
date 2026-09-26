@@ -1,0 +1,325 @@
+{
+  "id": "f01-valkomst",
+  "namn": "FLOW_prenumerant_valkommen_EN_v1",
+  "sprak": "en",
+  "memo": "Välkomst till den som sagt ja i kassan eller i sidfoten. Tre mejl: grundaren hälsar, hur taköverdraget fungerar, hur det är att handla. Få mottagare utan popup (Axels beslut: ingen popup) — det är väntat.",
+  "spoks": {
+    "event": "contact_created",
+    "filter": [
+      "samtycke",
+      "sprak"
+    ],
+    "reenroll": false,
+    "reenrollEfter": null
+  },
+  "steg": [
+    {
+      "typ": "vanta",
+      "enhet": "minutes",
+      "varde": 0
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f01-valkomst-e1",
+        "namn": "FLOW_prenumerant_valkommen_EN_E1_M_axel-har_v1",
+        "sprak": "en",
+        "memo": "Grundaren presenterar sig kort: vem som skickar, vad butiken gör (skydd för husvagnen och husbilen när den står stilla: taköverdraget och termoskyddet), och att mejlen bara kommer när det finns ett skäl. Inga produktkort, ingen rea.",
+        "brief": "Kort, personligt, rakt. En mening om vad överdraget gör (taket, inte hela vagnen), en om termoskyddet (rutan). Signaturen är grundare-blocket. Ingen leveranstid, inga siffror.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "factory/butiker/carashell.yaml#branding.positionering",
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "CaraShellRoof",
+          "kod": "M",
+          "avatar": "ny prenumerant, oftast en köpare som just sagt ja i kassan",
+          "begar": "veta vem som skickar och varför"
+        },
+        "format": "rentext",
+        "amnesrader": [
+          {
+            "text": "It's Axel, and I read every reply",
+            "begar": "know a real person reads this"
+          },
+          {
+            "text": "A roof cover. A windshield cover. That's it.",
+            "begar": "understand what we actually sell"
+          },
+          {
+            "text": "We only write about the roof or the windshield",
+            "begar": "know we won't spam the inbox"
+          }
+        ],
+        "forhandstext": "So say hello, or just keep reading to see what we make.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "It's Axel, and I wrote this one myself",
+            "text": "Hi {{fornamn}},\n\nI'm Axel. I started this store to make one thing easier: protecting a caravan, motorhome or RV while it's parked.\n\nWe sell two things. A roof cover that keeps rainwater off the roof hatches and seams. A windshield cover that keeps the cold and sun off the glass and blacks out the cab.\n\nYou'll hear from us again, but only when there's something worth saying."
+          },
+          {
+            "typ": "knapp",
+            "text": "See the covers",
+            "lank": "kollektion:sortimentet"
+          },
+          {
+            "typ": "grundare",
+            "text": "Reply if you're wondering about anything. I read these myself."
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "It's Axel, and I read every reply",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "A roof cover. A windshield cover. That's it.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "We only write about the roof or the windshield",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "So say hello, or just keep reading to see what we make.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "It's Axel, and I wrote this one myself",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "See the covers",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 1
+      }
+    },
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 2
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f01-valkomst-e2",
+        "namn": "FLOW_prenumerant_valkommen_EN_E2_PD_bara-taket-en-person_v1",
+        "sprak": "en",
+        "memo": "Hur taköverdraget fungerar, med bara fakta ur faktabladet: nio längder, kanten 30–40 cm ner, vävda spännband med plastkrokar under karossens kant på alla fyra sidor, två extra band 10,5 m, en person. Konflikten mot helöverdraget (tungt, två personer) får bara sägas som vad VÅRT gör.",
+        "brief": "Hero med bild på taköverdraget. Tre punkter: storleken (mät taket front till bakkant, välj närmaste längd uppåt), fästet (banden, krokarna, alla fyra sidor), en person. Inga påståenden om att väven andas, ingen förvaringspåse, ingen dragsko.",
+        "taggar": {
+          "typ": "I",
+          "kalla": "egen-data",
+          "kalla_ref": "products/carashell/takskyddet/dna.md (SP/PD-mönster 7, 11); factory/produkter/takskyddet.yaml#features",
+          "lardom": null,
+          "awareness": "solution",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "CaraShellRoof",
+          "kod": "PD",
+          "avatar": "husvagns- eller husbilsägaren som ställer upp fordonet utomhus",
+          "begar": "skydda-det-jag-ager"
+        },
+        "amnesrader": [
+          {
+            "text": "Nine lengths, one that fits your roof",
+            "begar": "find the size that fits"
+          },
+          {
+            "text": "Goes on with one person, not two",
+            "begar": "not need help to install it"
+          },
+          {
+            "text": "Hooks that latch under the edge",
+            "begar": "know it actually stays attached"
+          }
+        ],
+        "forhandstext": "Measure the roof, pick the next size up, and that's the hard part done.",
+        "block": [
+          {
+            "typ": "hero",
+            "rubrik": "It covers the roof. The edge hangs over the sides.",
+            "text": "It covers the roof surface, with the edge hanging 30 to 40 cm (12 to 16 in) down over the sides, so rainwater doesn't sit at the roof hatches. It doesn't wrap around the whole vehicle.",
+            "bild": "produkt:takskyddet",
+            "knapp": {
+              "text": "See the roof cover",
+              "lank": "produkt:takskyddet"
+            }
+          },
+          {
+            "typ": "punkter",
+            "rubrik": "Size, fastening and one pair of hands",
+            "punkter": [
+              "Nine lengths, 18 to 44 ft (5.5 to 13.5 m), for caravans, travel trailers and motorhomes. Measure your roof front to back and pick the next length up.",
+              "Woven webbing straps, not elastic, with plastic hooks that latch under the edge on all four sides.",
+              "One person can put it on alone."
+            ]
+          },
+          {
+            "typ": "fakta"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Nine lengths, one that fits your roof",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Goes on with one person, not two",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Hooks that latch under the edge",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Measure the roof, pick the next size up, and that's the hard part done.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "It covers the roof. The edge hangs over the sides.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "See the roof cover",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Size, fastening and one pair of hands",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 1
+      }
+    },
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 3
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f01-valkomst-e3",
+        "namn": "FLOW_prenumerant_valkommen_EN_E3_M_sa-funkar-det-att-handla_v1",
+        "sprak": "en",
+        "memo": "Tryggheten: ångerrätten/garantin exakt som butikens policy säger för marknaden, spårningssidan, att hello@carashell.com svarar. Skälet att finnas: den som tvekar på ett nytt varumärke behöver veta hur en retur går till innan köpet.",
+        "brief": "Fyra korta stycken: beställningen (bekräftelse på mejl, fraktmejl med paketnummer), spårningssidan (länk i fakta-blocket), ångerrätt/garanti EXAKT som policyn för språket (sv/nb: 14 dagar från mottagandet, kunden betalar returfrakten; en: 90-day guarantee, mejla först), support (hello@carashell.com). Ingen leveranstid.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "brands/carashell.json#per_sprak.*.angerratt_fran",
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "CaraShellRoof",
+          "kod": "M",
+          "avatar": "prenumeranten som inte köpt än och undrar om butiken är seriös",
+          "begar": "trygghet"
+        },
+        "amnesrader": [
+          {
+            "text": "What happens right after you order",
+            "begar": "know the process before buying"
+          },
+          {
+            "text": "You're covered by a 90-day guarantee",
+            "begar": "feel safe about returns before buying"
+          },
+          {
+            "text": "Watch your parcel the whole way there",
+            "begar": "know tracking is available"
+          }
+        ],
+        "forhandstext": "Order confirmation, tracking, and a 90-day guarantee if it's not right.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "What happens after you order",
+            "text": "You'll get an order confirmation right away, then a shipping email with your parcel number once it's on its way.\n\nFrom there, the tracking page below shows exactly where it is.\n\nIf it's not right for you, there's a 90-day guarantee from the day you receive it: email hello@carashell.com with your order number first, and we'll tell you where to send it back.\n\nAny question before then goes to the same address."
+          },
+          {
+            "typ": "fakta"
+          },
+          {
+            "typ": "knapp",
+            "text": "See the roof cover",
+            "lank": "produkt:takskyddet"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "What happens right after you order",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "You're covered by a 90-day guarantee",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Watch your parcel the whole way there",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Order confirmation, tracking, and a 90-day guarantee if it's not right.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "What happens after you order",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "See the roof cover",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 1
+      }
+    }
+  ]
+}

@@ -192,6 +192,8 @@
       "mcp__Claude_Code_Remote__*",
       "mcp__loopia-mail",
       "mcp__loopia-mail__*",
+      "mcp__Spoks",
+      "mcp__Spoks__*",
       "Artifact",
       "Agent",
       "mcp__ADsmanagaer__ads_get_ad_accounts",

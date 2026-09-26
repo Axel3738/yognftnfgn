@@ -1,0 +1,325 @@
+{
+  "id": "f01-valkomst",
+  "namn": "FLOW_prenumerant_valkommen_NB_v1",
+  "sprak": "nb",
+  "memo": "Välkomst till den som sagt ja i kassan eller i sidfoten. Tre mejl: grundaren hälsar, hur taköverdraget fungerar, hur det är att handla. Få mottagare utan popup (Axels beslut: ingen popup) — det är väntat.",
+  "spoks": {
+    "event": "contact_created",
+    "filter": [
+      "samtycke",
+      "sprak"
+    ],
+    "reenroll": false,
+    "reenrollEfter": null
+  },
+  "steg": [
+    {
+      "typ": "vanta",
+      "enhet": "minutes",
+      "varde": 0
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f01-valkomst-e1",
+        "namn": "FLOW_prenumerant_valkommen_NB_E1_M_axel-har_v1",
+        "sprak": "nb",
+        "memo": "Grundaren presenterar sig kort: vem som skickar, vad butiken gör (skydd för husvagnen och husbilen när den står stilla: taköverdraget och termoskyddet), och att mejlen bara kommer när det finns ett skäl. Inga produktkort, ingen rea.",
+        "brief": "Kort, personligt, rakt. En mening om vad överdraget gör (taket, inte hela vagnen), en om termoskyddet (rutan). Signaturen är grundare-blocket. Ingen leveranstid, inga siffror.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "factory/butiker/carashell.yaml#branding.positionering",
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "CaraShellRoof",
+          "kod": "M",
+          "avatar": "ny prenumerant, oftast en köpare som just sagt ja i kassan",
+          "begar": "veta vem som skickar och varför"
+        },
+        "format": "rentext",
+        "amnesrader": [
+          {
+            "text": "Axel her. Jeg skriver e-postene selv.",
+            "begar": "vite hvem som står bak e-postene"
+          },
+          {
+            "text": "Et dekke til taket. Et til ruta.",
+            "begar": "vite nøyaktig hva vi lager"
+          },
+          {
+            "text": "Ingen unødvendig reklame i innboksen din",
+            "begar": "slippe unødvendig reklame"
+          }
+        ],
+        "forhandstext": "Jeg driver alt selv, og her er grunnen til at du får e-post fra meg.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Hei, det er Axel",
+            "text": "Jeg står bak butikken selv. Vi lager beskyttelse for campingvogna og bobilen når den står stille: et takovertrekk som legger seg over taket, og et frontrutetrekk som strammes over frontruta og sidevinduene.\n\nIngen av delene tas med inn. De blir liggende på kjøretøyet så lenge det trengs.\n\nDu hører fra meg når det er noe konkret å si, om produktene eller om ordren din. Lurer du på noe før det, svarer jeg selv på denne e-posten."
+          },
+          {
+            "typ": "knapp",
+            "text": "Se hele utvalget",
+            "lank": "kollektion:sortimentet"
+          },
+          {
+            "typ": "grundare",
+            "text": "Har du spørsmål, svar på denne e-posten. Jeg leser alt selv."
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Axel her. Jeg skriver e-postene selv.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Et dekke til taket. Et til ruta.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Ingen unødvendig reklame i innboksen din",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Jeg driver alt selv, og her er grunnen til at du får e-post fra meg.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Hei, det er Axel",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Se hele utvalget",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 1
+      }
+    },
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 2
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f01-valkomst-e2",
+        "namn": "FLOW_prenumerant_valkommen_NB_E2_PD_bara-taket-en-person_v1",
+        "sprak": "nb",
+        "memo": "Hur taköverdraget fungerar, med bara fakta ur faktabladet: nio längder, kanten 30–40 cm ner, vävda spännband med plastkrokar under karossens kant på alla fyra sidor, två extra band 10,5 m, en person. Konflikten mot helöverdraget (tungt, två personer) får bara sägas som vad VÅRT gör.",
+        "brief": "Hero med bild på taköverdraget. Tre punkter: storleken (mät taket front till bakkant, välj närmaste längd uppåt), fästet (banden, krokarna, alla fyra sidor), en person. Inga påståenden om att väven andas, ingen förvaringspåse, ingen dragsko.",
+        "taggar": {
+          "typ": "I",
+          "kalla": "egen-data",
+          "kalla_ref": "products/carashell/takskyddet/dna.md (SP/PD-mönster 7, 11); factory/produkter/takskyddet.yaml#features",
+          "lardom": null,
+          "awareness": "solution",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "CaraShellRoof",
+          "kod": "PD",
+          "avatar": "husvagns- eller husbilsägaren som ställer upp fordonet utomhus",
+          "begar": "skydda-det-jag-ager"
+        },
+        "amnesrader": [
+          {
+            "text": "Et dekke som bare tar taket",
+            "begar": "se at det ikke er et helt kjøretøytrekk"
+          },
+          {
+            "text": "Ni lengder, én for taket ditt",
+            "begar": "vite at riktig størrelse finnes"
+          },
+          {
+            "text": "Sett på alene, ingen hjelper trengs",
+            "begar": "vite at man klarer det selv"
+          }
+        ],
+        "forhandstext": "Kanten henger ned over sidene. Resten av vogna er din.",
+        "block": [
+          {
+            "typ": "hero",
+            "rubrik": "Bare taket. Ikke hele vogna.",
+            "text": "Trekket dekker takflaten, og kanten henger 30 til 40 centimeter ned over sidene, der regnvann ellers blir stående.",
+            "bild": "produkt:takskyddet",
+            "knapp": {
+              "text": "Se taktrekket",
+              "lank": "produkt:takskyddet"
+            }
+          },
+          {
+            "typ": "punkter",
+            "rubrik": "Tre ting å vite",
+            "punkter": [
+              "Ni lengder, fra 5,5 til 13,5 meter. Mål taket fra front til bakkant, og velg nærmeste lengde oppover.",
+              "Vevde stropper med plasthaker fester under kanten på alle fire sider. To ekstra stropper på 10,5 meter følger med.",
+              "Én person setter det på alene."
+            ]
+          },
+          {
+            "typ": "fakta"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Et dekke som bare tar taket",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Ni lengder, én for taket ditt",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Sett på alene, ingen hjelper trengs",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Kanten henger ned over sidene. Resten av vogna er din.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Bare taket. Ikke hele vogna.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Tre ting å vite",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Se taktrekket",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 1
+      }
+    },
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 3
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f01-valkomst-e3",
+        "namn": "FLOW_prenumerant_valkommen_NB_E3_M_sa-funkar-det-att-handla_v1",
+        "sprak": "nb",
+        "memo": "Tryggheten: ångerrätten/garantin exakt som butikens policy säger för marknaden, spårningssidan, att hello@carashell.com svarar. Skälet att finnas: den som tvekar på ett nytt varumärke behöver veta hur en retur går till innan köpet.",
+        "brief": "Fyra korta stycken: beställningen (bekräftelse på mejl, fraktmejl med paketnummer), spårningssidan (länk i fakta-blocket), ångerrätt/garanti EXAKT som policyn för språket (sv/nb: 14 dagar från mottagandet, kunden betalar returfrakten; en: 90-day guarantee, mejla först), support (hello@carashell.com). Ingen leveranstid.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "brands/carashell.json#per_sprak.*.angerratt_fran",
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "CaraShellRoof",
+          "kod": "M",
+          "avatar": "prenumeranten som inte köpt än och undrar om butiken är seriös",
+          "begar": "trygghet"
+        },
+        "amnesrader": [
+          {
+            "text": "Sånn ser det ut når du bestiller",
+            "begar": "vite hva som skjer etter kjøpet"
+          },
+          {
+            "text": "Pakken din, sporbar med et nummer",
+            "begar": "kunne følge pakken selv"
+          },
+          {
+            "text": "14 dagers angrerett, uansett",
+            "begar": "vite at man kan angre seg"
+          }
+        ],
+        "forhandstext": "Bekreftelse, sporing og angrerett, kort forklart.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Sånn er det å handle hos oss",
+            "text": "Du får en bekreftelse på e-post med en gang du bestiller, og en egen e-post når varen sendes, med et pakkenummer som starter på CS-.\n\nPakkenummeret tar deg rett til sporingssiden, der du ser hvor pakken er akkurat nå.\n\nAngrer du deg, har du 14 dagers angrerett fra den dagen du mottok varen. Du betaler returfrakten selv. Send en e-post til hello@carashell.com med ordrenummeret, så får du en returinstruksjon, og pengene tilbake innen 14 dager etter at returen er mottatt. Reklamasjon gjelder i opptil 3 år.\n\nLurer du på noe før eller etter kjøpet, svarer vi på hello@carashell.com."
+          },
+          {
+            "typ": "fakta"
+          },
+          {
+            "typ": "knapp",
+            "text": "Se taktrekket",
+            "lank": "produkt:takskyddet"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Sånn ser det ut når du bestiller",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Pakken din, sporbar med et nummer",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "14 dagers angrerett, uansett",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Bekreftelse, sporing og angrerett, kort forklart.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Sånn er det å handle hos oss",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Se taktrekket",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 1
+      }
+    }
+  ]
+}

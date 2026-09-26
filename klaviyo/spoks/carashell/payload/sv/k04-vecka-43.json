@@ -1,0 +1,131 @@
+{
+  "id": "k04-vecka-43",
+  "sprak": "sv",
+  "emailTitle": "En present till honom med vagnen",
+  "emailDescription": "Något som används varje höst, inte en pryl i en låda.",
+  "amnesrader": [
+    "En present till honom med vagnen",
+    "Beställ senast måndag 26 oktober",
+    "Något han tar fram varje höst"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Ett skydd för vagnen han redan är rädd om",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "En present han faktiskt tar fram varje höst, inte en pryl som hamnar i en låda.",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "{{spoks:id:takskyddet}}",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Se presenten",
+      "url": "https://carashell.se/products/takskyddet",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "Beställ senast måndag 26 oktober, så är paketet framme till fars dag, söndag 8 november.",
+      "alignment": "left"
+    },
+    {
+      "type": "h2",
+      "text": "Två sätt att skydda vagnen",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "{{spoks:id:takskyddet}}",
+          "button": "Se produkten"
+        },
+        {
+          "id": "{{spoks:id:termoskyddet}}",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 2
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://carashell.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": [
+    "Produkten takskyddet finns inte i Spoks.",
+    "Produkten takskyddet finns inte i Spoks.",
+    "Produkten termoskyddet finns inte i Spoks."
+  ]
+}

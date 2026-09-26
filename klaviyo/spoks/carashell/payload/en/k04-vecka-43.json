@@ -1,0 +1,124 @@
+{
+  "id": "k04-vecka-43",
+  "sprak": "en",
+  "emailTitle": "Does it stay on in wind?",
+  "emailDescription": "The straps are woven webbing. They don't stretch out.",
+  "amnesrader": [
+    "Does it stay on in wind?",
+    "Woven straps, not elastic",
+    "Two extra straps come with every cover"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Does it stay on in wind?",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hi {{ contact.first_name | default: 'there' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "The straps are woven webbing, not elastic, so they don't stretch out and loosen. Plastic hooks latch under the edge of the body, on all four sides.",
+      "alignment": "center"
+    },
+    {
+      "type": "image",
+      "fileId": "{{spoks:media:takskyddet}}",
+      "altText": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft",
+      "urlRedirect": "https://carashell.com/products/takskyddet"
+    },
+    {
+      "type": "h2",
+      "text": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "See how it straps on",
+      "url": "https://carashell.com/products/takskyddet",
+      "style": "button"
+    },
+    {
+      "type": "h2",
+      "text": "What keeps it on"
+    },
+    {
+      "type": "list",
+      "text": "Woven webbing straps, not elastic, so they don't stretch out."
+    },
+    {
+      "type": "list",
+      "text": "Plastic hooks latch under the edge of the body, on all four sides."
+    },
+    {
+      "type": "list",
+      "text": "Two extra reinforced 34 ft (10.5 m) straps are included."
+    },
+    {
+      "type": "image",
+      "fileId": "{{spoks:media:takskyddet}}",
+      "altText": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft",
+      "urlRedirect": "https://carashell.com/products/takskyddet"
+    },
+    {
+      "type": "h2",
+      "text": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Check the straps",
+      "url": "https://carashell.com/products/takskyddet",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "Adjustable on all four sides, so it stays snug in wind.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Guarantee**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "90-day guarantee",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Track your parcel**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Follow it all the way](https://carashell.com/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": [
+    "Bilden för takskyddet saknar fileId i Spoks (produkter.json → bild).",
+    "Bilden för takskyddet saknar fileId i Spoks (produkter.json → bild)."
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "id": "f04-efter-kop-e2",
+  "sprak": "en",
+  "emailTitle": "Did it all arrive okay?",
+  "emailDescription": "If everything showed up fine, you don't need to do anything. If not, here's what to do.",
+  "amnesrader": [
+    "Did it all arrive okay?",
+    "Still waiting? Track it here",
+    "If something's wrong, here's what to do"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Did everything arrive?"
+    },
+    {
+      "type": "regular",
+      "text": "By now your order should have reached you.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "If it hasn't, the button below shows exactly where it is.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "If something arrived wrong or damaged, you're covered by a 90-day guarantee. Email hello@carashell.com with your order number before sending anything back, and we'll tell you where to send it.",
+      "alignment": "left"
+    },
+    {
+      "type": "link",
+      "text": "Track your parcel",
+      "url": "https://carashell.com/pages/spara",
+      "style": "button"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Guarantee**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "90-day guarantee",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Track your parcel**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Follow it all the way](https://carashell.com/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

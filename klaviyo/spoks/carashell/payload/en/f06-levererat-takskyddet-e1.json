@@ -1,0 +1,80 @@
+{
+  "id": "f06-levererat-takskyddet-e1",
+  "sprak": "en",
+  "emailTitle": "How to put the roof cover on",
+  "emailDescription": "Four steps, and one person is enough to do it.",
+  "amnesrader": [
+    "How to put the roof cover on",
+    "Four steps, one person",
+    "Get it on right, the first time"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "How to put the roof cover on"
+    },
+    {
+      "type": "regular",
+      "text": "It only takes one person, and these four steps in order.",
+      "alignment": "left"
+    },
+    {
+      "type": "list",
+      "text": "Lay it over the roof, with the edge hanging down over the sides."
+    },
+    {
+      "type": "list",
+      "text": "Hook the straps under the edge of the body, on all four sides."
+    },
+    {
+      "type": "list",
+      "text": "Pull the straps tight."
+    },
+    {
+      "type": "list",
+      "text": "Use the two extra reinforced straps for extra hold."
+    },
+    {
+      "type": "quote",
+      "text": "If something doesn't add up, reply to this email and I'll help sort it out.\nAxel, founder"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Guarantee**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "90-day guarantee",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Track your parcel**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Follow it all the way](https://carashell.com/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

@@ -1,0 +1,83 @@
+{
+  "id": "k06-vecka-45",
+  "namn": "MAIL_20261103_CaraShellRoof_SV_OB_3_samtycke_product_sitter-det-kvar-i-blast_v1",
+  "sprak": "sv",
+  "memo": "Vinden och remmarna (kommentarerna 24–26 sep: \"sönderblåst\", \"Sebra\", \"skaver inte alla remmar\"). Svaret med faktabladets ord: vävda spännband, inte gummi, töjs inte ut, plastkrokar under karossens kant på alla fyra sidor, justerbara, två extra band 10,5 m, håller i blåst.",
+  "brief": "Hero: frågan om vinden. Punkter: banden (vävda, inte gummi), krokarna på fyra sidor, de två extra banden. Produktkort, fakta. Inget om lacken utöver faktabladet.",
+  "taggar": {
+    "typ": "I",
+    "kalla": "voc",
+    "kalla_ref": "kommentarer/leads.md 2026-09-24 (Sebra), 2026-09-26 (fungerar det)",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "ingen",
+    "confidence": "medium",
+    "prefix": "CaraShellRoof",
+    "kod": "OB",
+    "avatar": "ägaren som undrar om det blåser av",
+    "begar": "trygghet"
+  },
+  "amnesrader": [
+    {
+      "text": "Sitter skyddet kvar när det blåser?",
+      "begar": "få svar på en oro innan köp"
+    },
+    {
+      "text": "Vävda band, inte gummi",
+      "begar": "förstå vad som faktiskt håller det på plats"
+    },
+    {
+      "text": "Krokar under kanten, fyra sidor",
+      "begar": "se mekaniken, inte bara höra ett löfte"
+    }
+  ],
+  "forhandstext": "Banden är vävda, inte gummi. De töjs inte ut.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Sitter det kvar när det blåser?",
+      "text": "Banden är vävda spännband, inte gummi, så de töjs inte ut. Plastkrokar hakar under karossens kant på alla fyra sidor.",
+      "bild": "produkt:takskyddet",
+      "knapp": {
+        "text": "Se banden",
+        "lank": "produkt:takskyddet"
+      }
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "Det som håller det på plats",
+      "punkter": [
+        "Vävda spännband, inte gummi. De töjs inte ut",
+        "Plastkrokar under kanten, på alla fyra sidor, justerbara",
+        "Två extra förstärkta band på 10,5 meter följer med"
+      ]
+    },
+    {
+      "typ": "produkt",
+      "handle": "takskyddet",
+      "text": "Fyra sidor, krokar under kanten, banden är vävda.",
+      "knapp": "Se hur det sitter"
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    { "rad": "Sitter skyddet kvar när det blåser?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Vävda band, inte gummi", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Krokar under kanten, fyra sidor", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Banden är vävda, inte gummi. De töjs inte ut.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sitter det kvar när det blåser?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se banden", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Det som håller det på plats", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se hur det sitter", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "version": 1,
+  "planerad": "2026-11-03T18:00:00+01:00",
+  "segment": [
+    "SEG_samtycke_sv"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

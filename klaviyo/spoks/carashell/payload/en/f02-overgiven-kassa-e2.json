@@ -1,0 +1,81 @@
+{
+  "id": "f02-overgiven-kassa-e2",
+  "sprak": "en",
+  "emailTitle": "Nine lengths, so yours is in there",
+  "emailDescription": "Measure the roof, match the length, and the rest takes care of itself.",
+  "amnesrader": [
+    "Nine lengths, so yours is in there",
+    "How the straps actually hold it on",
+    "It's built to stay on in wind"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Three things before you check out"
+    },
+    {
+      "type": "regular",
+      "text": "Here's what usually holds people up.",
+      "alignment": "left"
+    },
+    {
+      "type": "list",
+      "text": "Will it fit? Nine lengths, 18 to 44 ft (5.5 to 13.5 m), for caravans, travel trailers and motorhomes. Measure your roof front to back and pick the next length up."
+    },
+    {
+      "type": "list",
+      "text": "How does it stay on? Woven webbing straps with plastic hooks latch under the edge of the body, adjustable, on all four sides."
+    },
+    {
+      "type": "list",
+      "text": "Does it hold in wind? Yes. The straps aren't elastic, so they don't stretch out or work loose."
+    },
+    {
+      "type": "list",
+      "text": "Ordering the windshield cover instead? It's 211 cm (83 in) wide, and the side flaps clip straight into the door frame."
+    },
+    {
+      "type": "abandonedCart",
+      "buttonText": "Back to checkout",
+      "isProductPriceVisible": false
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Guarantee**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "90-day guarantee",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Track your parcel**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Follow it all the way](https://carashell.com/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

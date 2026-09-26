@@ -1,0 +1,73 @@
+{
+  "id": "k07-fredag-sista-dagen-kalendern",
+  "namn": "MAIL_20261110_CaraShellCal_NB_GT_3_samtycke_promo_fredag-sista-dagen_v1",
+  "sprak": "nb",
+  "memo": "Riktig brådska: fredag 13 november är sista beställningsdag för att kalendern ska vara hemma till lucka 1. Efter fredagen lovar ingen text något om 1 december.",
+  "brief": "Hero med datumet. En mening om varför (lucka 1 är 1 december). Produktkort, fakta. Inga dagar-siffror om leverans.",
+  "taggar": {
+    "typ": "S",
+    "kalla": "egen-data",
+    "kalla_ref": "brands/carashell.json#kalender",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "konsekvens",
+    "confidence": "medium",
+    "prefix": "CaraShellCal",
+    "kod": "GT",
+    "avatar": "den som tänkt ge kalendern men inte beställt",
+    "begar": "hinna"
+  },
+  "amnesrader": [
+    {
+      "text": "Fredag er siste dag for luke 1",
+      "begar": "få med seg akkurat denne fristen"
+    },
+    {
+      "text": "Luke 1 åpnes 1. desember",
+      "begar": "vite hva fristen faktisk gjelder"
+    },
+    {
+      "text": "Bestill før fredag 13. november",
+      "begar": "unngå å bestille for sent"
+    }
+  ],
+  "forhandstext": "Etter det rekker ikke kalenderen fram til første luke.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Fredag er siste dag for luke 1",
+      "text": "Hei {{fornamn}},\n\nLuke 1 åpnes 1. desember. Bestill innen fredag 13. november for å rekke det.",
+      "bild": "produkt:adventskalender-retrobussar",
+      "knapp": {
+        "text": "Bestill adventskalenderen",
+        "lank": "produkt:adventskalender-retrobussar"
+      }
+    },
+    {
+      "typ": "produkt",
+      "handle": "adventskalender-retrobussar",
+      "text": "24 luker med retrobusser, én for hver dag i desember.",
+      "knapp": "Bestill kalenderen"
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    { "rad": "Fredag er siste dag for luke 1", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Luke 1 åpnes 1. desember", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Bestill før fredag 13. november", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Etter det rekker ikke kalenderen fram til første luke.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fredag er siste dag for luke 1", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Bestill adventskalenderen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Bestill kalenderen", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "version": 1,
+  "planerad": "2026-11-10T18:00:00+01:00",
+  "segment": [
+    "SEG_samtycke_nb"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

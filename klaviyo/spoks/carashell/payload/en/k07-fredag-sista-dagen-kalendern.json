@@ -1,0 +1,103 @@
+{
+  "id": "k07-fredag-sista-dagen-kalendern",
+  "sprak": "en",
+  "emailTitle": "Friday is the last day to order the calendar",
+  "emailDescription": "December 1 is door one. Order before then.",
+  "amnesrader": [
+    "Friday is the last day to order the calendar",
+    "After Friday, door one might not be ready",
+    "13 November: the cutoff for the calendar"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Friday is the last day",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Order the advent calendar by Friday, 13 November if you want it in hand before the first door on 1 December. After Friday, we can't promise that.",
+      "alignment": "center"
+    },
+    {
+      "type": "image",
+      "fileId": "{{spoks:media:adventskalender-retrobussar}}",
+      "altText": "Advent Calendar with Retro Campervans, 24 Doors",
+      "urlRedirect": "https://carashell.com/products/adventskalender-retrobussar"
+    },
+    {
+      "type": "h2",
+      "text": "Advent Calendar with Retro Campervans, 24 Doors",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Order before Friday",
+      "url": "https://carashell.com/products/adventskalender-retrobussar",
+      "style": "button"
+    },
+    {
+      "type": "image",
+      "fileId": "{{spoks:media:adventskalender-retrobussar}}",
+      "altText": "Advent Calendar with Retro Campervans, 24 Doors",
+      "urlRedirect": "https://carashell.com/products/adventskalender-retrobussar"
+    },
+    {
+      "type": "h2",
+      "text": "Advent Calendar with Retro Campervans, 24 Doors",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Get it before Friday",
+      "url": "https://carashell.com/products/adventskalender-retrobussar",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "24 doors, order by Friday to be ready for the first one.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Guarantee**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "90-day guarantee",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Track your parcel**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Follow it all the way](https://carashell.com/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": [
+    "Bilden för adventskalender-retrobussar saknar fileId i Spoks (produkter.json → bild).",
+    "Bilden för adventskalender-retrobussar saknar fileId i Spoks (produkter.json → bild)."
+  ]
+}

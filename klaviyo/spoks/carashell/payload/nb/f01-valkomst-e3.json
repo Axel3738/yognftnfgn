@@ -1,0 +1,81 @@
+{
+  "id": "f01-valkomst-e3",
+  "sprak": "nb",
+  "emailTitle": "Sånn ser det ut når du bestiller",
+  "emailDescription": "Bekreftelse, sporing og angrerett, kort forklart.",
+  "amnesrader": [
+    "Sånn ser det ut når du bestiller",
+    "Pakken din, sporbar med et nummer",
+    "14 dagers angrerett, uansett"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Sånn er det å handle hos oss"
+    },
+    {
+      "type": "regular",
+      "text": "Du får en bekreftelse på e-post med en gang du bestiller, og en egen e-post når varen sendes, med et pakkenummer som starter på CS-.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Pakkenummeret tar deg rett til sporingssiden, der du ser hvor pakken er akkurat nå.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Angrer du deg, har du 14 dagers angrerett fra den dagen du mottok varen. Du betaler returfrakten selv. Send en e-post til hello@carashell.com med ordrenummeret, så får du en returinstruksjon, og pengene tilbake innen 14 dager etter at returen er mottatt. Reklamasjon gjelder i opptil 3 år.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Lurer du på noe før eller etter kjøpet, svarer vi på hello@carashell.com.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Angrerett**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagers angrerett",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spor pakken**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Følg den hele veien](https://carashell.se/nb/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "link",
+      "text": "Se taktrekket",
+      "url": "https://carashell.se/nb/products/takskyddet?country=NO",
+      "style": "button"
+    }
+  ],
+  "varningar": []
+}

@@ -1,0 +1,70 @@
+{
+  "id": "k12-efter-blasten",
+  "namn": "MAIL_20261215_CaraShellRoof_NB_M_1_samtycke_product_kolla-banden-efter-blasten_v1",
+  "sprak": "nb",
+  "memo": "Servicemejl utan produktkort: efter en storm, gå ut och kolla att krokarna sitter under kanten och att banden är åtdragna. Skälet: ett överdrag som sitter rätt håller (faktabladet: håller i blåst), och kunden ska höra av sig om något gått sönder. Ingen försäljning.",
+  "brief": "Rubrik + en mening. Punkter: tre saker att kolla (krokarna under kanten, banden åtdragna, de två extra banden). Grundare-rad: gick något sönder, svara på mejlet. Inga produktkort, ingen knapp. ",
+  "taggar": {
+    "typ": "M",
+    "kalla": "voc",
+    "kalla_ref": "kommentarer/rapporter/2026-09-26.md (sönderblåst efter stormen)",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "ingen",
+    "confidence": "medium",
+    "prefix": "CaraShellRoof",
+    "kod": "M",
+    "avatar": "kunden som har överdraget på vagnen",
+    "begar": "kontroll"
+  },
+  "amnesrader": [
+    {
+      "text": "Etter kraftig vind, verdt en sjekk",
+      "begar": "vite om trekket tålte vinden"
+    },
+    {
+      "text": "Sitter krokene fortsatt under kanten?",
+      "begar": "dobbeltsjekke festet selv"
+    },
+    {
+      "text": "Gikk noe i stykker hos deg?",
+      "begar": "få hjelp hvis noe faktisk røk"
+    }
+  ],
+  "forhandstext": "Tre ting er verdt å sjekke på utsiden.",
+  "block": [
+    {
+      "typ": "text",
+      "rubrik": "Etter kraftig vind",
+      "text": "Etter kraftig vind kan det være lurt å sjekke at taktrekket fortsatt sitter som det skal."
+    },
+    {
+      "typ": "punkter",
+      "rubrik": null,
+      "punkter": [
+        "Sjekk at plastkrokene fortsatt sitter under kanten.",
+        "Sjekk at de vevde strekkbåndene er stramme.",
+        "Sjekk at de to ekstra båndene sitter der de skal."
+      ]
+    },
+    {
+      "typ": "grundare",
+      "text": "Har noe gått i stykker? Bare svar på denne e-posten, jeg leser den selv."
+    }
+  ],
+  "tretest": [
+    { "rad": "Etter kraftig vind, verdt en sjekk", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sitter krokene fortsatt under kanten?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Gikk noe i stykker hos deg?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Tre ting er verdt å sjekke på utsiden.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Etter kraftig vind", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "version": 1,
+  "planerad": "2026-12-15T18:00:00+01:00",
+  "segment": [
+    "SEG_samtycke_nb"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

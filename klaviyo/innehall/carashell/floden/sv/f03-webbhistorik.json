@@ -1,0 +1,146 @@
+{
+  "id": "f03-webbhistorik",
+  "namn": "FLOW_visning_webbhistorik_SV_v1",
+  "sprak": "sv",
+  "memo": "Den som tittat på en produkt utan att lägga i korgen. Bara identifierade besökare med samtycke — få, och det är väntat. sv/nb visar den visade produkten dynamiskt; en visar båda skydden som bilder eftersom katalogens titlar är svenska.",
+  "spoks": {
+    "event": "product_viewed",
+    "filter": [
+      "ej_kassa_sedan_start",
+      "ej_kopt_sedan_start",
+      "samtycke",
+      "sprak"
+    ],
+    "reenroll": true,
+    "reenrollEfter": "P30D"
+  },
+  "steg": [
+    {
+      "typ": "vanta",
+      "enhet": "hours",
+      "varde": 4
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f03-webbhistorik-e1",
+        "namn": "FLOW_visning_webbhistorik_SV_E1_M_den-har-kikade-du-pa_v1",
+        "sprak": "sv",
+        "memo": "Kort: den här tittade du på, här är den igen.",
+        "brief": "Rubrik + en mening. Inget säljande.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": null,
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "CaraShellRoof",
+          "kod": "M",
+          "avatar": "besökaren som tittade på ett skydd och gick",
+          "begar": "hitta tillbaka"
+        },
+        "amnesrader": [
+          {
+            "text": "Den här kikade du på",
+            "begar": "hitta tillbaka till det man tittade på"
+          },
+          {
+            "text": "Fortfarande där du lämnade den",
+            "begar": "bekräfta att varan finns kvar"
+          },
+          {
+            "text": "{{fornamn}}, ett skydd du redan sett",
+            "begar": "bli personligt igenkänd"
+          }
+        ],
+        "forhandstext": "Ingen press, bara en påminnelse om var du var.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Den här tittade du på",
+            "text": "Du kikade på den här för ett tag sedan. Här är den igen, om du vill titta en gång till."
+          },
+          {
+            "typ": "dynamisk",
+            "kalla": "visad_produkt"
+          }
+        ],
+        "tretest": [
+          {"rad": "Den här kikade du på", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Fortfarande där du lämnade den", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "{{fornamn}}, ett skydd du redan sett", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Ingen press, bara en påminnelse om var du var.", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Den här tittade du på", "visualisera": true, "falsifiera": true, "ingen_annan": true}
+        ],
+        "version": 1
+      }
+    },
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 1
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f03-webbhistorik-e2",
+        "namn": "FLOW_visning_webbhistorik_SV_E2_OB_storleken-avgor_v1",
+        "sprak": "sv",
+        "memo": "Den fråga som oftast stoppar köpet i kommentarerna: finns min storlek? Svaret: nio längder 5,5–13,5 m, mät taket front till bakkant, närmaste längd uppåt.",
+        "brief": "Rubrik + 2 meningar om storlekarna + produkten igen + fakta.",
+        "taggar": {
+          "typ": "I",
+          "kalla": "voc",
+          "kalla_ref": "kommentarer/leads.md 2026-09-25 (storleksvalet syns inte)",
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "CaraShellRoof",
+          "kod": "OB",
+          "avatar": "besökaren som inte hittade sin storlek",
+          "begar": "veta att det finns en storlek som passar"
+        },
+        "amnesrader": [
+          {
+            "text": "Finns min storlek?",
+            "begar": "veta att man inte är utanför måtten"
+          },
+          {
+            "text": "Nio längder, 5,5 till 13,5 meter",
+            "begar": "se hela utbudet av storlekar"
+          },
+          {
+            "text": "Mät taket, välj längd uppåt",
+            "begar": "veta hur man väljer rätt"
+          }
+        ],
+        "forhandstext": "Nio längder täcker det mesta. Så hittar du din.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Storleken, i klartext",
+            "text": "Taköverdraget finns i nio längder, 5,5 till 13,5 meter, alla 3 meter breda. Mät taket från front till bakkant och välj närmaste längd uppåt."
+          },
+          {
+            "typ": "dynamisk",
+            "kalla": "visad_produkt"
+          },
+          {
+            "typ": "fakta"
+          }
+        ],
+        "tretest": [
+          {"rad": "Finns min storlek?", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Nio längder, 5,5 till 13,5 meter", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Mät taket, välj längd uppåt", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Nio längder täcker det mesta. Så hittar du din.", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Storleken, i klartext", "visualisera": true, "falsifiera": true, "ingen_annan": true}
+        ],
+        "version": 1
+      }
+    }
+  ]
+}

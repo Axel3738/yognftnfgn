@@ -1,0 +1,27 @@
+{
+  "id": "f02-overgiven-kassa-e1",
+  "sprak": "sv",
+  "emailTitle": "Ingen rea. Bara en påminnelse.",
+  "emailDescription": "Varan ligger kvar i kassan, redo när du är redo.",
+  "amnesrader": [
+    "Ingen rea. Bara en påminnelse.",
+    "Du hann till kassan, inte hela vägen",
+    "Det du valde ligger kvar"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Den ligger kvar, precis som du lämnade den."
+    },
+    {
+      "type": "regular",
+      "text": "Du hann till kassan men inte hela vägen. Vi sparar den tills du är redo att gå vidare.",
+      "alignment": "left"
+    },
+    {
+      "type": "abandonedCart",
+      "buttonText": "Tillbaka till kassan"
+    }
+  ],
+  "varningar": []
+}
