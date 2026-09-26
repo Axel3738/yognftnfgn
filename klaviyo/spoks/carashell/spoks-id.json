@@ -1,0 +1,44 @@
+{
+  "comment": "Facit för CaraShells Spoks-workspace: allt uppladdningssessionen 2026-09-26 skapade, med id:n ur Spoks egna svar. Allt är avstängt/utkast. Skrivs av huvudsessionen, aldrig för hand.",
+  "workspace": {
+    "id": "38f3d430-690c-4c0b-8419-8ec2e5272148",
+    "namn": "Carashell",
+    "shopify": "yitrbk-m3.myshopify.com",
+    "plan": "Free (5 000 mejl/mån)",
+    "tidszon": "Europe/Stockholm",
+    "app": "https://app.spoks.com/carashell"
+  },
+  "matt_2026_09_26": {
+    "kontakter": 463,
+    "med_samtycke": 76,
+    "sprak_sv": { "Sweden_Denmark": 219, "utan_land": 30, "samtycke": 15 },
+    "sprak_nb": { "Norway": 94, "samtycke": 4 },
+    "sprak_en": { "US_UK_CA_AU_NZ_FI": 120, "samtycke": 57 },
+    "landsnamn": "Spoks form stämde med brandfilens (sampel: Sweden, Denmark, Norway, United States, Australia); 219 + 94 + 120 = 433 = alla med land"
+  },
+  "installningar": {
+    "satt": "senderName CaraShell, replyToEmail hello@carashell.com, url, färger, layout, logga, Google-typsnitten Barlow 700 + Source Sans 3, sidfot + avregistreringstext på tre språk",
+    "ej_satt": {
+      "senderEmail": "custom_domain_not_valid: Feed does not have valid custom domain set — kräver att carashell.com verifieras i Spoks (DNS i Loopia + Verify)",
+      "webbsakra_typsnitt": "regularWebSafeFontFamily/headerWebSafeFontFamily står kvar på Helvetica/Arial Black trots applied: true — reserv bakom Google-typsnitten, syns bara om Google Fonts inte laddar"
+    }
+  },
+  "segment": {
+    "SEG_samtycke_sv": { "id": "a97bfcf1-d887-401e-bd80-9b7bef997e7c", "medlemmar": 15 },
+    "SEG_kopare_sv": { "id": "4a4ec6e0-dd51-4719-944a-044d18d6844a", "medlemmar": 15 },
+    "SEG_ej_kopt_sv": { "id": "451700f8-ce5d-4e00-a6e7-be09b3241b39", "medlemmar": 0 },
+    "SEG_engagerade_60d_sv": { "id": "c8df61ce-a5ec-44ed-951d-f6b0023d3e2a", "medlemmar": 0 },
+    "SEG_samtycke_nb": { "id": "20fe7ebb-d6e2-4f72-8ee5-90ce1ed2e1c4", "medlemmar": 4 },
+    "SEG_kopare_nb": { "id": "d5365c1d-024d-407a-821d-6d261d9de631", "medlemmar": 3 },
+    "SEG_ej_kopt_nb": { "id": "205e8a96-a7b5-4ba8-ad76-0c737f1c1c3a", "medlemmar": 1 },
+    "SEG_engagerade_60d_nb": { "id": "39ea5a0a-6298-4672-a46a-90de98271c4c", "medlemmar": 0 },
+    "SEG_samtycke_en": { "id": "83d8a6de-5805-4786-8448-f6976e4247b6", "medlemmar": 57 },
+    "SEG_kopare_en": { "id": "7192eef4-a610-40df-b08c-939b827aaa16", "medlemmar": 55 },
+    "SEG_ej_kopt_en": { "id": "55f0c0e7-bd84-44bd-a253-8b12f85d775f", "medlemmar": 2 },
+    "SEG_engagerade_60d_en": { "id": "06946555-d37c-46d5-8755-cb8e2ac5e36d", "medlemmar": 0 },
+    "SEG_oengagerade_180d": { "id": "0d73b0f1-03f7-491f-99ac-2e4de60a666d", "medlemmar": 0, "kampanj_ok": false }
+  },
+  "produkter": "klaviyo/spoks/carashell/produkter.json",
+  "floden": {},
+  "kampanjer": {}
+}

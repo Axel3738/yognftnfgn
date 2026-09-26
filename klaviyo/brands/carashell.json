@@ -4,7 +4,7 @@
   "namn": "CaraShell",
   "system": "spoks",
   "spoks": {
-    "workspace": null,
+    "workspace": "38f3d430-690c-4c0b-8419-8ec2e5272148",
     "workspace_comment": "Fylls i av uppladdningssessionen ur whoami när workspacen syns. Hitta aldrig på ett storeId.",
     "installningar": {
       "generalSettings": { "locale": { "country": "SE", "language": "sv", "timezone": "Europe/Stockholm" }, "url": "https://carashell.se" },

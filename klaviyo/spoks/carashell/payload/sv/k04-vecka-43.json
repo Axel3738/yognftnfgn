@@ -24,7 +24,7 @@
       "selectionMode": "manual",
       "products": [
         {
-          "id": "{{spoks:id:takskyddet}}",
+          "id": "40a22a57-d0df-41b6-9202-2b22cc2e0d29",
           "button": "Se produkten"
         }
       ],
@@ -63,11 +63,11 @@
       "selectionMode": "manual",
       "products": [
         {
-          "id": "{{spoks:id:takskyddet}}",
+          "id": "40a22a57-d0df-41b6-9202-2b22cc2e0d29",
           "button": "Se produkten"
         },
         {
-          "id": "{{spoks:id:termoskyddet}}",
+          "id": "c38c04bb-fb13-4894-aa85-3b70c71b5891",
           "button": "Se produkten"
         }
       ],
@@ -123,9 +123,5 @@
       ]
     }
   ],
-  "varningar": [
-    "Produkten takskyddet finns inte i Spoks.",
-    "Produkten takskyddet finns inte i Spoks.",
-    "Produkten termoskyddet finns inte i Spoks."
-  ]
+  "varningar": []
 }

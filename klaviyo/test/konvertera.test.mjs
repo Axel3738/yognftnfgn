@@ -70,7 +70,8 @@ test('CaraShell: språket styr förnamnsreserv, länkbas, spårningssida och vil
 });
 
 test('CaraShell: produktkort blir bild + rubrik + knapp på nb/en, produktblock på sv', () => {
-  const { K } = caraKonverterare();
+  // Utan Spoks-id:n (före uppladdningen) blir platshållaren synlig.
+  const K = skapaKonverterare({ brand: lasBrand('carashell'), produktIds: {}, recCache: {}, erbjudande: null });
   const sv = K.konverteraMejl({ id: 'x', sprak: 'sv', amnesrader: [{ text: 'a' }], block: [{ typ: 'produkt', handle: 'takskyddet', knapp: 'Köp' }] });
   assert.equal(sv.blocks[0].type, 'products');
   assert.equal(sv.blocks[0].products[0].id, '{{spoks:id:takskyddet}}', 'Spoks-id saknas tills uppladdningen: synlig platshållare, inte ett tyst bortfall');
@@ -86,6 +87,17 @@ test('CaraShell: produktkort blir bild + rubrik + knapp på nb/en, produktblock 
   const kassa = K.konverteraBlock({ typ: 'dynamisk', kalla: 'checkout_rader' }, [], 'en')[0];
   assert.equal(kassa.isProductPriceVisible, false);
   assert.equal(kassa.buttonText, 'Back to checkout');
+});
+
+test('CaraShell: produkter.json:s Spoks-id och bild-fileId hamnar i blocken', () => {
+  const ids = lasProduktIds('carashell');
+  if (!ids.takskyddet?.id || !ids.takskyddet?.bild) return; // före uppladdningen: täckt av testet ovan
+  const { K } = caraKonverterare();
+  const sv = K.konverteraMejl({ id: 'x', sprak: 'sv', amnesrader: [{ text: 'a' }], block: [{ typ: 'produkt', handle: 'takskyddet', knapp: 'Köp' }] });
+  assert.equal(sv.blocks[0].products[0].id, ids.takskyddet.id);
+  assert.ok(!sv.varningar.some((v) => /finns inte i Spoks/.test(v)));
+  const en = K.konverteraMejl({ id: 'x', sprak: 'en', amnesrader: [{ text: 'a' }], block: [{ typ: 'produkt', handle: 'takskyddet', knapp: 'See it' }] });
+  assert.equal(en.blocks[0].fileId, ids.takskyddet.bild);
 });
 
 test('CaraShell: citat ur produktfilen på sv, aldrig på en; grundare på språket; stjärnorna till Trustpilot per språk', () => {
