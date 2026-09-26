@@ -2219,3 +2219,41 @@ som ACTIVE i ACTIVE adset. Inget renderat, inget uppladdat, 0 HeyGen-krediter,
 ingen status rörd. Approved-passet: **59 rader, 0 utan NO-annons.** Kampanjen
 ACTIVE med 12 adsets, pris 1 106 NOK läst live. GT/G-splitten orörd, frågan
 ligger hos Axel sedan 2026-09-23.
+
+---
+
+## 2026-09-26 — speglingen: 3 av 4 speglade, 5 av 6 annonser live (en NO föll på strypningen)
+
+Kön var 4 rader i `CaraShell SE ready to be active`: tre nya bildrader och den
+stoppade `GT_11_H1`. Pris SE 1 129 kr / NO 1 106 NOK lästa live; alla creatives
+bar 1 129 kr — 0 % avvikelse.
+
+| Källrad | Spegelnamn | SE-annons | NO-annons |
+|---|---|---|---|
+| `Takoverdrag_OB_12_1` (bild) | `CaraShellRoof_OB_112_1` | `120249278739320172` | `120249278809270172` |
+| `Takoverdrag_OB_10_1` (bild) | `CaraShellRoof_OB_110_1` | `120249278812820172` | `120249278929900172` |
+| `Takoverdrag_OB_8_1` (bild) | `CaraShellRoof_OB_108_1` | `120249279046290172` | ❌ **saknas** |
+
+⛔ **Sammanfattningen sa "3 speglade · 0 fel" — men bara 5 annonser av 6 finns.**
+`CaraShellRoof_NO_OB_108_1` föll på `Meta paging: User request limit reached`.
+Verktyget räknar en rad som speglad när SE går live och hubbraden skapas, så
+felet syns bara om man räknar annonserna. Exakt samma mönster som 2026-09-22
+(`NO_CS_108_H1` + `NO_CS_107_H1`). **Räkna alltid annonserna mot rader × 2 —
+sammanfattningen är inte ett bevis.** De fem skapade lästes tillbaka ur Meta:
+alla ACTIVE i konto `915422744950975`, SE i `CARASHELL_SE_Taköverdraget`, NO i
+`CARASHELL_NO_Takovertrekket`.
+
+Hubbraden `CaraShellRoof_OB_108_1` skapades med bara den svenska filen —
+den norska måste bifogas för hand när NO-annonsen är uppe
+(`node tools/notion-fil-upp.mjs <sid-id> --fil <fil>`).
+
+**Efterjustering:** `--fran "CaraShell EN ready to be active"`, torrt först.
+Idempotensen (`rad.finns_i_meta`, `= raden X finns redan i <hub>`) gör att bara
+den saknade NO-uppladdningen körs.
+
+**Stoppad (1):** `Takoverdrag_GT_11_H1` — copyn nämner Bäverbutiken, tredje
+dygnet i rad. Källradens status orörd; verktyget skrev ingen ny kommentar
+(stopp-kommentaren står redan på raden). Ligger hos Axel.
+
+**1 källrad → `Approved`:** `Takoverdrag_OB_5_1`, vars US-annons
+(`120251609594670435`) kom upp i natt. Fem rader väntar fortfarande på USA.
