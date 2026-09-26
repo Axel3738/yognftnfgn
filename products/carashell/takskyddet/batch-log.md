@@ -2257,6 +2257,29 @@ dygnet i rad. Källradens status orörd; verktyget skrev ingen ny kommentar
 
 **1 källrad → `Approved`:** `Takoverdrag_OB_5_1`, vars US-annons
 (`120251609594670435`) kom upp i natt. Fem rader väntar fortfarande på USA.
+
+**Efterjusteringen körd samma kväll — raden är hel.** `--fran "CaraShell EN
+ready to be active"`, torrt först: torrkörningen visade att ENDA uppladdningen
+skulle bli `CaraShellRoof_NO_OB_108_1`, allt annat "finns redan i kontot" /
+"raden finns redan i hubben". Skarpt: annonsen gick live som
+**`120249279329000172`** i `CARASHELL_NO_Takovertrekket`, tillbakaläst ACTIVE
+(`effective_status: IN_PROCESS` — Metas granskning). Den norska filen bifogades
+på hubbraden `CaraShellRoof_OB_108_1` med `tools/notion-fil-upp.mjs` (2 filer
+totalt). **6 av 6 annonser live.**
+
+Samma körning tog `Takoverdrag_OB_12_1` till `Approved` — dess US-annons
+(`120251624621420435`) kom upp medan efterjusteringen väntade ut strypningen.
+Dagens Approved blev alltså två, inte en.
+
+⚠️ **Discord-rapporten sa "Nothing for you to do" fast `GT_11_H1` är stoppad.**
+Verktyget skriver ingen ny ACTION NEEDED när stopp-kommentaren redan står på
+raden, och då faller raden ur rapportens åtgärdslista helt. Stoppet står kvar i
+rapportens egen lista över hoppade rader, men en läsare som bara ser den gröna
+slutraden tror att allt är klart. Axel fick ACTION NEEDED om samma rad
+2026-09-24 (meddelande `1552712016303489075`); den gäller fortfarande.
+
+---
+
 ### USA-runda 13 — 2026-09-26
 
 Kön: 6 rader (1 bild, 5 videor). **Bilden live, videorna hålls andra dygnet** —
