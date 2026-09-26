@@ -35,6 +35,11 @@ ingen trigger alls, väntan 12 dagar i stället för 14, och F07 filtrerade på
 
 Kampanjerna K01–K22 ligger som utkast (Spoks: status draft, avregistreringslänk på).
 
+## Klaviyo avstängt 2026-09-26
+
+`node klaviyo/stang-av.mjs --ja`: 13 flöden till draft, K01 återkallad till utkast. Inget raderat.
+Spoks: plan Paid (inget månadstak), avsändaradress ej satt vid mätningen.
+
 ## Skillnader mot Klaviyo (Spoks kan inte)
 
 - **Inget ordernummer i mejlet.** Spoks personalisering har bara kontaktfält,

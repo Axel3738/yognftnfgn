@@ -159,3 +159,11 @@ test('spärren: send-job bara för en namngiven kampanj, aldrig för någon anna
   // Ett flödes-id i mängden öppnar aldrig ett kampanjutskick.
   assert.throws(() => sparrSkicka('POST', '/api/campaign-send-jobs', job('C1'), new Set(['C1'])), (e) => e.kod === 'SPARR_SKICKA');
 });
+
+test('spärren släpper bara igenom revert av en schemalagd kampanj, aldrig cancel eller något annat', () => {
+  const rev = (a) => ({ data: { type: 'campaign-send-job', id: 'C1', attributes: a } });
+  assert.doesNotThrow(() => sparrSkicka('PATCH', '/api/campaign-send-jobs/C1', rev({ action: 'revert' })));
+  assert.throws(() => sparrSkicka('PATCH', '/api/campaign-send-jobs/C1', rev({ action: 'cancel' })), (e) => e.kod === 'SPARR_SKICKA');
+  assert.throws(() => sparrSkicka('PATCH', '/api/campaign-send-jobs/C1', rev({ action: 'revert', x: 1 })), (e) => e.kod === 'SPARR_SKICKA');
+  assert.throws(() => sparrSkicka('POST', '/api/campaign-send-jobs/C1', rev({ action: 'revert' })), (e) => e.kod === 'SPARR_SKICKA');
+});
