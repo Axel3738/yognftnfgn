@@ -1,0 +1,67 @@
+[
+ {
+  "box": [
+   40,
+   55,
+   1040,
+   400
+  ],
+  "rader": 3,
+  "fet": true,
+  "storlek": 99,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "text": "Vårt overtrekk ligger bare på taket, den dyreste flaten."
+ },
+ {
+  "box": [
+   50,
+   440,
+   1030,
+   565
+  ],
+  "rader": 2,
+  "fet": false,
+  "storlek": 40,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "Taket er det du aldri ser, og det som koster mest å fikse."
+ },
+ {
+  "form": 0,
+  "text": "TAKOVERTREKK, IKKE HELDEKKENDE",
+  "rad": 0,
+  "se": "TAKÖVERDRAG, INTE HELTÄCKANDE",
+  "vanster": false
+ },
+ {
+  "box": [
+   50,
+   1080,
+   1030,
+   1132
+  ],
+  "rader": 1,
+  "fet": false,
+  "storlek": 33,
+  "farg": [
+   19,
+   18,
+   17
+  ],
+  "text": "1 189 kr (ord. 1 549 kr), spar 360 kr (23 %)"
+ },
+ {
+  "form": 3,
+  "text": "Bestill ditt takovertrekk",
+  "rad": 0,
+  "se": "Beställ ditt taköverdrag",
+  "vanster": false
+ }
+]

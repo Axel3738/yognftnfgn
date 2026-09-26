@@ -1,0 +1,195 @@
+{
+ "Takoverdrag_OB_12_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1,
+       2
+      ],
+      "text": "Vårt overtrekk ligger bare på taket, den dyreste flaten."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "Taket er det du aldri ser, og det som koster mest å fikse."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "TAKOVERTREKK, IKKE HELDEKKENDE"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "1 189 kr (ord. 1 549 kr), spar 360 kr (23 %)"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Bestill ditt takovertrekk"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "Overtrekket ligger bare på taket, den dyreste flaten på campingvognen. Ikke en heldekkende presenning som skal passe over hele vognen. 210D oxfordvev med sølvbelegg, tåler en hel vintersesong ute. 1 189 kr (ord. 1 549 kr), spar 360 kr (23 %).",
+   "headline": "Dekker taket, ikke resten av vognen",
+   "description": ""
+  },
+  "andringar": [
+   "Prisraden erstattet med det verifiserte norske prise: 1 189 kr (ord. 1 549 kr), spar 360 kr (23 %) i stedet for å regne om det svenske.",
+   "'laga' oversatt til 'fikse' (ikke 'reparere') for at underraden skal holde samme lengde og radantall som den svenska",
+   "'spara' bytt til verbformen 'spar' som norsk salgstekst normalt bruker."
+  ]
+ },
+ "Takoverdrag_OB_10_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1,
+       2
+      ],
+      "text": "Regnet renner av vevens overflate i stedet for å bli stående."
+     },
+     {
+      "rader": [
+       3,
+       4
+      ],
+      "text": "Sølvbelagt 210D-oxfordvev, ikke en tynn presenning."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Sølvbelagt vev møter solen, ikke taket."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "1 189 kr (ord. 1 549 kr), spar 360 kr (23 %)"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Bestill ditt takovertrekk"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "Regnet renner av vevens overflate i stedet for å bli stående. Sølvbelagt 210D-oxfordvev, ikke en tynn presenning. Tåler en hel vintersesong ute og strammes med reim og snor i kanten. 1 189 kr (ord. 1 549 kr), spar 360 kr (23 %).",
+   "headline": "Sølvbelagt vev, ikke tynn presenning",
+   "description": ""
+  },
+  "andringar": [
+   "Prisraden erstattet med det verifiserte norske priset: 1 189 kr (ord. 1 549 kr), spar 360 kr (23 %).",
+   "'presenning' beholdt som samme ord på norsk (samme betydning og lengde som svensk).",
+   "Ingen andre innholdsendringer, ren oversettelse av fakta som allerede stod i den svenske teksten."
+  ]
+ },
+ "Takoverdrag_OB_8_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1,
+       2
+      ],
+      "text": "Reimen hektes i en krok, ikke i en knute du håper holder."
+     },
+     {
+      "rader": [
+       3,
+       4
+      ],
+      "text": "Stropper på alle fire sider, 2,5 m og justerbare, hektes fast i en krok i nederkant."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "2 ekstra strammestropper (10,5 m) inkludert"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "1 189 kr (ord. 1 549 kr), spar 360 kr (23 %)"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Bestill ditt takovertrekk"
+     }
+    ]
+   }
+  ],
+  "copy": {
+   "message": "Stroppene hektes fast i en krok i nederkant, ikke i en knute du håper holder. Justerbare stropper på alle fire sider, pluss to ekstra forsterkede strammestropper på 10,5 m inkludert. 1 189 kr (ord. 1 549 kr), spar 360 kr (23 %).",
+   "headline": "Reim i krok, ikke i en knute",
+   "description": ""
+  },
+  "andringar": [
+   "Prisraden erstattet med det verifiserte norske priset: 1 189 kr (ord. 1 549 kr), spar 360 kr (23 %).",
+   "'spännremmar' oversatt til 'strammestropper' (den norske faktateksten bruker nettopp det ordet om de to ekstra stroppene) i stedet for en direkte oversettelse ('spennreimer'), som er mer presist for produktet.",
+   "Etikett-raden ble 43 tegn mot 34 på svensk (ca. 26 % lengre) for at frasen skal bli naturlig norsk med riktig fagterm; fortsatt godt innenfor marginalen for én rad."
+  ]
+ }
+}

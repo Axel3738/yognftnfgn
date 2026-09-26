@@ -1,0 +1,214 @@
+{
+ "_kommentar": "Tre bilder ur samma mall (Takoverdraget OB). Mätt 2026-09-26 på källbilderna: rubriken är tre rader med bläckhöjd 81/81/67 px (y 70-150, 191-271, 326-392), underraden två rader med 37/30 px (y 455-491, 517-553) och prisraden 30 px (y 1092-1121). Tre saker tvingade fram handmätta rutor på alla tre, inte bara på dem som gav MISMATCH: (1) en 'OK' från batchdrivaren betyder att FORMERNA matchade, inte att texten fick rätt storlek — OB_10_1 kördes först utan override och underraden ritades i RUBRIKSTORLEK ut över fotot, för detektorns rad 4 hade smält ihop med plattans nederkant och rapporterade h=105 i stället för 30; (2) OB_12_1 har svart text direkt på vit bakgrund utan platta, så detektorn tog husbilens fönster och hjul för plattor; (3) OB_8_1:s översta platta når bildkanten, så detektorn räknar plattkanten som en extra TEXTRAD FÖRST — matchningen tillåter bara extrarader sist, och glidningen tog med sig pris och etikett. Storlekarna är justerade efter en mätning av den färdiga bilden mot källan, inte gissade: pris 40 gav 37 px mot källans 30 (23 % för stort) och sänktes till 33, underraden 44 gav 41 mot 37 och sänktes till 40. Rubriken på OB_10/OB_8 ligger på en ljus mallplatta över foto — där räcker inte radvis sampling (den svenska rubriken spökade igenom), så de får fyll ljus med alfa 255. OB_12_1 har ren vit bakgrund och ska INTE ha fyll: en platt ruta hade synts mot gradienten. Fyllrutorna går x 32-1048 (plattans MÄTTA kant, inte bildkanten: fullbredd målade grå flikar ut över fotot där plattan är smalare) och bär plattans egen medianfärg (fyllfarg), mätt per bild och zon: en smalare ruta gav synliga lodräta kanter, och standardfärgen 248,248,248 lyste mot plattans gradient (254 upptill, 233 nertill).",
+ "Takoverdrag_OB_12_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      40,
+      55,
+      1040,
+      400
+     ],
+     "post": 0,
+     "rader": 3,
+     "fet": true,
+     "storlek": 99,
+     "farg": [
+      18,
+      17,
+      15
+     ]
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      50,
+      440,
+      1030,
+      565
+     ],
+     "post": 0,
+     "rader": 2,
+     "fet": false,
+     "storlek": 40,
+     "farg": [
+      19,
+      18,
+      16
+     ]
+    }
+   ],
+   "3": [
+    {
+     "box": [
+      50,
+      1080,
+      1030,
+      1132
+     ],
+     "post": 0,
+     "rader": 1,
+     "fet": false,
+     "storlek": 33,
+     "farg": [
+      19,
+      18,
+      17
+     ]
+    }
+   ]
+  }
+ },
+ "Takoverdrag_OB_10_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      32,
+      62,
+      1048,
+      400
+     ],
+     "post": 0,
+     "rader": 3,
+     "fet": true,
+     "storlek": 99,
+     "farg": [
+      18,
+      17,
+      15
+     ],
+     "fyll": "ljus",
+     "alfa": 255,
+     "fyllfarg": [
+      250,
+      250,
+      252
+     ]
+    },
+    {
+     "box": [
+      32,
+      432,
+      1048,
+      562
+     ],
+     "post": 1,
+     "rader": 2,
+     "fet": false,
+     "storlek": 40,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "fyll": "ljus",
+     "alfa": 255,
+     "fyllfarg": [
+      241,
+      241,
+      241
+     ]
+    }
+   ]
+  }
+ },
+ "Takoverdrag_OB_8_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      32,
+      62,
+      1048,
+      400
+     ],
+     "post": 0,
+     "rader": 3,
+     "fet": true,
+     "storlek": 99,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "fyll": "ljus",
+     "alfa": 255,
+     "fyllfarg": [
+      230,
+      230,
+      230
+     ]
+    },
+    {
+     "box": [
+      32,
+      432,
+      1048,
+      562
+     ],
+     "post": 1,
+     "rader": 2,
+     "fet": false,
+     "storlek": 40,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "fyll": "ljus",
+     "alfa": 255,
+     "fyllfarg": [
+      231,
+      231,
+      230
+     ]
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      559,
+      948,
+      1059,
+      1030
+     ],
+     "post": 0,
+     "rader": 1,
+     "fet": true,
+     "storlek": 33,
+     "farg": [
+      254,
+      255,
+      255
+     ],
+     "fyll": "mork",
+     "alfa": 255
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      33,
+      1069,
+      1047,
+      1149
+     ],
+     "post": 0,
+     "rader": 1,
+     "fet": false,
+     "storlek": 33,
+     "farg": [
+      20,
+      18,
+      16
+     ],
+     "fyll": "ljus",
+     "alfa": 255
+    }
+   ]
+  }
+ }
+}
