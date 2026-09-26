@@ -43,6 +43,8 @@
     "Paketet är klart i tullen": "Pakken er klarert i tollen",
     "Paketet ligger hos tullombudet": "Pakken ligger hos tollagenten",
     "Paketet är anmält till tullen": "Pakken er meldt inn til tollen",
+    "Tulluppgifterna är behandlade och paketet är på väg": "Tollopplysningene er behandlet og pakken er på vei",
+    "Tulluppgifterna är mottagna och paketet är på väg": "Tollopplysningene er mottatt og pakken er på vei",
     "Paketet är hämtat på fraktterminalen": "Pakken er hentet på fraktterminalen",
     "Paketet är överlämnat till flygbolaget": "Pakken er overlevert til flyselskapet",
     "Paketet är lastat": "Pakken er lastet",
@@ -196,6 +198,11 @@
     "Paketet är för stort för brevlådan och skickas därför till ett ombud. Det kan ta 1-2 arbetsdagar extra, och du får besked när det går att hämta": "Pakken er for stor for postkassen og sendes derfor til et hentested. Det kan ta 1-2 virkedager ekstra, og du får beskjed når den kan hentes",
     "Paketet är registrerat hos fraktbolaget": "Pakken er registrert hos transportøren",
     "Paketet har kommit till terminalen och är klart att skickas vidare": "Pakken har kommet til terminalen og er klar til å sendes videre",
-    "Paketet har skickats till ett ombud eftersom dörren inte hittades. Du får besked när det kan hämtas, och namn på dörren gör nästa leverans enklare": "Pakken er sendt til et hentested fordi døren ikke ble funnet. Du får beskjed når den kan hentes, og navn på døren gjør neste levering enklere"
+    "Paketet har skickats till ett ombud eftersom dörren inte hittades. Du får besked när det kan hämtas, och namn på dörren gör nästa leverans enklare": "Pakken er sendt til et hentested fordi døren ikke ble funnet. Du får beskjed når den kan hentes, og navn på døren gjør neste levering enklere",
+    "Till dig som beställt hos oss": "Til deg som har bestilt hos oss",
+    "Två saker som passar samma husvagn eller husbil. Skickas som en egen beställning, med fri frakt och 14 dagars ångerrätt som vanligt.": "To ting som passer til samme campingvogn eller bobil. Sendes som en egen bestilling, med fri frakt og 14 dagers angrerett som vanlig.",
+    "{{pris}} för dig som beställt hos oss": "{{pris}} for deg som har bestilt hos oss",
+    "Lägg till för {{pris}}": "Legg til for {{pris}}",
+    "Priset gäller dig som beställt hos oss och läggs på av sig själv i kassan.": "Prisen gjelder deg som har bestilt hos oss, og legges på av seg selv i kassen."
   }
 }

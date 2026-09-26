@@ -1,0 +1,76 @@
+[
+ {
+  "box": [
+   32,
+   62,
+   1048,
+   400
+  ],
+  "rader": 3,
+  "fet": true,
+  "storlek": 99,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "fyll": "ljus",
+  "alfa": 255,
+  "fyllfarg": [
+   250,
+   250,
+   252
+  ],
+  "text": "Regnet renner av vevens overflate i stedet for å bli stående."
+ },
+ {
+  "box": [
+   32,
+   432,
+   1048,
+   562
+  ],
+  "rader": 2,
+  "fet": false,
+  "storlek": 40,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "fyll": "ljus",
+  "alfa": 255,
+  "fyllfarg": [
+   241,
+   241,
+   241
+  ],
+  "text": "Sølvbelagt 210D-oxfordvev, ikke en tynn presenning."
+ },
+ {
+  "form": 1,
+  "text": "Sølvbelagt vev møter solen, ikke taket.",
+  "rad": 0,
+  "se": "Silverbelagd väv möter solen, inte taket.",
+  "vanster": false
+ },
+ {
+  "form": 2,
+  "text": "1 189 kr (ord. 1 549 kr), spar 360 kr (23 %)",
+  "rad": 0,
+  "se": "1 129 kr (ord. 1 469 kr), spara 340 kr (23 %)",
+  "vanster": false
+ },
+ {
+  "form": 3,
+  "klipp_efter_rad": 0,
+  "rad": null
+ },
+ {
+  "form": 3,
+  "text": "Bestill ditt takovertrekk",
+  "rad": 0,
+  "se": "Beställ ditt taköverdrag",
+  "vanster": false
+ }
+]

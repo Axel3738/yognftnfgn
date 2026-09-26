@@ -1,0 +1,87 @@
+Jag behöver ett App Automation Token för EN specifik Shopify-app, så att min
+utvecklingsmiljö kan deploya en checkout-extension till min butik CaraShell.
+Jag genererade ett token i går men på FEL app — det finns flera appar som heter
+"Factory", en per butik, och de ligger i olika organisationer i Shopifys Dev
+Dashboard. Du ska hitta rätt app, generera ett nytt token där och ge mig det.
+Gör allt i Chrome med mitt inloggade konto och fråga mig om inloggning när du
+behöver den. Datorn är en Windows-dator.
+
+------------------------------------------------------------------------------
+FACIT — RÄTT APP (mätt via API 2026-09-26, så här ser den ut)
+------------------------------------------------------------------------------
+
+| Vad                     | Värde                                |
+|-------------------------|--------------------------------------|
+| Butik                   | Carashell — yitrbk-m3.myshopify.com  |
+| Appens namn             | Factory                              |
+| Appens handle           | factory-60                           |
+| Client ID börjar med    | ca709dfb                             |
+| Organisationens namn    | troligen "Carashell"                 |
+| Antal rättigheter       | 154                                  |
+
+Client ID är det enda som räknas. Namnet "Factory" finns på flera appar.
+Börjar Client ID inte på ca709dfb är det fel app — gå vidare.
+
+⛔ RÖR INGENTING I APPEN utom knappen som genererar token. Ändra inga
+rättigheter, inga URL:er, inga versioner, installera eller avinstallera inget.
+Ta inte bort något token som redan finns. Radera ingen app.
+
+------------------------------------------------------------------------------
+STEG 1 — HITTA APPEN VIA BUTIKEN (säkraste vägen)
+------------------------------------------------------------------------------
+
+1. Öppna https://admin.shopify.com/store/yitrbk-m3/settings/apps
+   (CaraShells admin → Inställningar → Appar och försäljningskanaler).
+2. Klicka "Utveckla appar" / "Develop apps" (knappen uppe till höger).
+   Finns inte knappen: leta på samma sida efter en länk till "Dev Dashboard"
+   eller "dev.shopify.com" och klicka den.
+3. I listan ska "Factory" stå. Klicka på den. Den ska öppnas i Dev Dashboard
+   (adressen börjar med https://dev.shopify.com/dashboard/...).
+4. Gå till appens Settings och läs av Client ID. Börjar det på ca709dfb är
+   det rätt. Gå till STEG 3.
+
+------------------------------------------------------------------------------
+STEG 2 — OM BUTIKSVÄGEN INTE FUNKAR: LETA I DEV DASHBOARD
+------------------------------------------------------------------------------
+
+1. Öppna https://dev.shopify.com/dashboard
+2. Uppe till vänster finns en organisationsväljare. Öppna den och läs upp för
+   mig VARJE organisation som står där, innan du klickar något.
+3. Gå igenom organisationerna en i taget. I varje: klicka Apps och läs varje
+   apps Client ID (i appens Settings). Du letar efter ca709dfb.
+4. Hittar du den inte i någon organisation: STANNA och säg det till mig.
+   Då är jag inloggad med fel Shopify-konto — appen skapades med mitt
+   jobb-Gmail-konto — och jag byter konto själv. Skapa ALDRIG en ny app.
+
+------------------------------------------------------------------------------
+STEG 3 — GENERERA TOKEN
+------------------------------------------------------------------------------
+
+1. I appen (Client ID ca709dfb…): Settings → avsnittet "App Automation Token"
+   (kan heta "Automation token" eller ligga under "CLI"/"Deployment").
+2. Klicka Generate / Generera. Finns ett token redan: generera ett NYTT, ta
+   inte bort det gamla.
+3. Kopiera hela token. Det börjar på "atkn_" och är ungefär 69 tecken.
+
+------------------------------------------------------------------------------
+STEG 4 — LÄGG IN DET I MIN CLAUDE-MILJÖ
+------------------------------------------------------------------------------
+
+1. Öppna https://claude.ai/code → Environments (kugghjulet / Settings).
+2. Öppna den miljö som redan har variabeln SHOPIFY_CLIENT_ID_yitrbk_m3 —
+   samma miljö har redan en variabel som heter SHOPIFY_APP_AUTOMATION_TOKEN.
+3. Byt värdet på SHOPIFY_APP_AUTOMATION_TOKEN till det nya token. Namnet ska
+   vara exakt så, inga mellanslag. Skapa ingen dubblett.
+4. Får du inte skriva in hemligheter: skriv token till mig i chatten i
+   stället, så klistrar jag in det själv. Säg då exakt: "Klistra in det här som
+   SHOPIFY_APP_AUTOMATION_TOKEN i miljön med SHOPIFY_CLIENT_ID_yitrbk_m3."
+
+------------------------------------------------------------------------------
+RAPPORTERA TILL SLUT, KORT
+------------------------------------------------------------------------------
+
+- Vilken väg som funkade (steg 1 eller steg 2) och vilken organisation appen
+  låg i.
+- Client ID:ts första 8 tecken (ska vara ca709dfb).
+- Om token ligger i miljön eller om jag ska klistra in det själv.
+- Allt du INTE gjorde och varför.

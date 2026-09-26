@@ -1,0 +1,14 @@
+{
+  "rubrik": "Sinulle, joka juuri tilasit",
+  "underrubrik": "Kaksi tuotetta, jotka sopivat samaan matkailuvaunuun tai matkailuautoon. Lisätään omana tilauksena samaan osoitteeseen, mukana ilmainen toimitus ja tavanomainen 14 päivän peruutusoikeus.",
+  "spar": "Säästät {belopp}",
+  "knapp": "Lisää hintaan {pris}",
+  "villkor": "Hinta koskee sinua, joka juuri tilasit meiltä, ja se lisätään automaattisesti kassalla. Maksu tapahtuu kassalla, aivan kuten äsken.",
+  "produkt": {
+    "fonstertermomatta-2-pack": "Kaksi imukupeilla kiinnittyvää lämpömattoa pitää kylmän ja auringon loitolla.",
+    "adventskalender-retrobussar": "24 luukun takana odottaa oma pieni retrobussi lähes joka päivä joulukuussa."
+  },
+  "pris_for_dig": "{pris} sinulle, joka juuri tilasit",
+  "ord_pris": "Normaalihinta {pris}",
+  "laddar": "Haetaan …"
+}

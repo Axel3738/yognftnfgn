@@ -1,0 +1,147 @@
+{
+ "Takoverdrag_OB_12_1": {
+  "former": [
+   {
+    "typ": "rubrik",
+    "rader": [
+     "Vårt överdrag ligger bara på",
+     "taket, den dyraste",
+     "ytan."
+    ],
+    "block": [
+     0,
+     1,
+     2
+    ],
+    "stil": "svart fet rubrik DIREKT på vit bakgrund, ingen platta, centrerad, tre rader som är EN mening"
+   },
+   {
+    "typ": "rubrik",
+    "rader": [
+     "Taket är det du aldrig ser, och det som kostar mest att",
+     "laga."
+    ],
+    "block": [
+     0,
+     1
+    ],
+    "stil": "svart normal underrad direkt på vit bakgrund, mindre, centrerad, två rader som är EN mening"
+   },
+   {
+    "typ": "etikett",
+    "rader": [
+     "TAKÖVERDRAG, INTE HELTÄCKANDE"
+    ],
+    "stil": "vit fet VERSALTEXT på svart platta över fotot, vänsterställd platta"
+   },
+   {
+    "typ": "platta",
+    "rader": [
+     "1 129 kr (ord. 1 469 kr), spara 340 kr (23 %)"
+    ],
+    "stil": "svart normal text direkt på ljus gradient, ingen platta, centrerad"
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Beställ ditt taköverdrag"
+    ],
+    "stil": "blå knapp, vit fet text, centrerad"
+   }
+  ]
+ },
+ "Takoverdrag_OB_10_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Regnet rinner av vävens",
+     "yta i stället för att bli",
+     "stående.",
+     "Silverbelagd 210D-oxfordväv, inte en tunn",
+     "presenning."
+    ],
+    "block": [
+     [
+      0,
+      1,
+      2
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    "stil": "ljus platta över fotot: tre rader fet svart rubrik (EN mening), sedan två rader normal svart underrad (EN mening), allt centrerat"
+   },
+   {
+    "typ": "etikett",
+    "rader": [
+     "Silverbelagd väv möter solen, inte taket."
+    ],
+    "stil": "vit fet text på svart platta över fotot, vänsterställd platta"
+   },
+   {
+    "typ": "platta",
+    "rader": [
+     "1 129 kr (ord. 1 469 kr), spara 340 kr (23 %)"
+    ],
+    "stil": "svart normal text på ljus platta i full bredd, centrerad"
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Beställ ditt taköverdrag"
+    ],
+    "stil": "blå knapp, vit fet text, centrerad"
+   }
+  ]
+ },
+ "Takoverdrag_OB_8_1": {
+  "former": [
+   {
+    "typ": "platta",
+    "rader": [
+     "Remmen hakar i en krok,",
+     "inte i en knut du hoppas",
+     "håller.",
+     "Remmar på alla fyra sidor, 2,5 m och justerbara,",
+     "hakas fast i en krok i nederkant."
+    ],
+    "block": [
+     [
+      0,
+      1,
+      2
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    "stil": "ljus platta överst: tre rader fet svart rubrik (EN mening), sedan två rader normal svart underrad (EN mening), allt centrerat"
+   },
+   {
+    "typ": "etikett",
+    "rader": [
+     "2 extra spännremmar (10,5 m) ingår"
+    ],
+    "stil": "vit fet text på svart platta över fotot, högerställd platta"
+   },
+   {
+    "typ": "platta",
+    "rader": [
+     "1 129 kr (ord. 1 469 kr), spara 340 kr (23 %)"
+    ],
+    "stil": "svart normal text på ljus platta i full bredd, centrerad"
+   },
+   {
+    "typ": "knapp",
+    "rader": [
+     "Beställ ditt taköverdrag"
+    ],
+    "stil": "blå knapp, vit fet text, centrerad"
+   }
+  ]
+ }
+}

@@ -1,7 +1,27 @@
 {
-  "comment": "CaraShells produkter i Spoks. `externalId` är Shopifys produkt-GID (läst live 2026-09-26 med Admin API, samma form som Spoks products_search returnerar i externalId — kontrolleras mot products_search när workspacen finns). `id` (Spoks eget uuid, används i produktblock och productId-filter) och `bild` (fileId från upload_media för nb/en-mejlens bildkort) är null tills uppladdningssessionen fyllt i dem ur workspacen. Hitta aldrig på ett id.",
-  "takskyddet": { "id": null, "externalId": "gid://shopify/Product/16084174242124", "bild": null, "bild_url": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/image4.png?v=1789078112" },
-  "termoskyddet": { "id": null, "externalId": "gid://shopify/Product/16108121489740", "bild": null, "bild_url": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/b6-termoskydd-se.jpg?v=1789531955" },
-  "fonstertermomatta-2-pack": { "id": null, "externalId": "gid://shopify/Product/16142790197580", "bild": null, "bild_url": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/09_3aac9f84-3b78-46f2-8176-36ac3618389e.jpg?v=1790398875" },
-  "adventskalender-retrobussar": { "id": null, "externalId": "gid://shopify/Product/16142790328652", "bild": null, "bild_url": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/05h.jpg?v=1790398881" }
+  "comment": "CaraShells produkter i Spoks-workspacen Carashell 38f3d430-690c-4c0b-8419-8ec2e5272148. id = Spoks eget uuid ur products_search 2026-09-26 (externalId = Shopifys GID, kontrollerat lika), bild = fileId ur upload_media samma dag (bildkorten i nb/en). Priserna i Spoks katalog (SEK) stämde med carashell.se samma dag: 1 129 / 559 / 539 / 379 kr. Hitta aldrig på ett id.",
+  "takskyddet": {
+    "id": "40a22a57-d0df-41b6-9202-2b22cc2e0d29",
+    "externalId": "gid://shopify/Product/16084174242124",
+    "bild": "6830b5d9-7f36-4ff3-a0c4-f3aa4a05b62e",
+    "bild_url": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/image4.png?v=1789078112"
+  },
+  "termoskyddet": {
+    "id": "c38c04bb-fb13-4894-aa85-3b70c71b5891",
+    "externalId": "gid://shopify/Product/16108121489740",
+    "bild": "295e18f4-1bba-4ee1-a32e-b06f3b5d7f92",
+    "bild_url": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/b6-termoskydd-se.jpg?v=1789531955"
+  },
+  "fonstertermomatta-2-pack": {
+    "id": "c4d0ddd4-298b-4703-9de0-646db8afb6c6",
+    "externalId": "gid://shopify/Product/16142790197580",
+    "bild": "e389d84e-2027-4b88-9e80-c92a3ce603d5",
+    "bild_url": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/09_3aac9f84-3b78-46f2-8176-36ac3618389e.jpg?v=1790398875"
+  },
+  "adventskalender-retrobussar": {
+    "id": "582482ad-89d1-4d40-805a-e1886d4ced9b",
+    "externalId": "gid://shopify/Product/16142790328652",
+    "bild": "2f01e972-730b-4683-9d9d-b385f3273e4a",
+    "bild_url": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/05h.jpg?v=1790398881"
+  }
 }

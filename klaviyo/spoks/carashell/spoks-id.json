@@ -1,0 +1,663 @@
+{
+  "comment": "Facit för CaraShells Spoks-workspace: allt uppladdningssessionen 2026-09-26 skapade, med id:n ur Spoks egna svar. Allt är avstängt/utkast. Skrivs av huvudsessionen, aldrig för hand.",
+  "workspace": {
+    "id": "38f3d430-690c-4c0b-8419-8ec2e5272148",
+    "namn": "Carashell",
+    "shopify": "yitrbk-m3.myshopify.com",
+    "plan": "Free (5 000 mejl/mån)",
+    "tidszon": "Europe/Stockholm",
+    "app": "https://app.spoks.com/carashell"
+  },
+  "matt_2026_09_26": {
+    "kontakter": 463,
+    "med_samtycke": 76,
+    "sprak_sv": {
+      "Sweden_Denmark": 219,
+      "utan_land": 30,
+      "samtycke": 15
+    },
+    "sprak_nb": {
+      "Norway": 94,
+      "samtycke": 4
+    },
+    "sprak_en": {
+      "US_UK_CA_AU_NZ_FI": 120,
+      "samtycke": 57
+    },
+    "landsnamn": "Spoks form stämde med brandfilens (sampel: Sweden, Denmark, Norway, United States, Australia); 219 + 94 + 120 = 433 = alla med land"
+  },
+  "installningar": {
+    "satt": "senderName CaraShell, replyToEmail hello@carashell.com, url, färger, layout, logga, Google-typsnitten Barlow 700 + Source Sans 3, sidfot + avregistreringstext på tre språk; senderEmail hello@carashell.com satt 2026-09-26 11:35 CEST när domänen visat sig verifierad (applied: true)",
+    "ej_satt": {
+      "webbsakra_typsnitt": "regularWebSafeFontFamily/headerWebSafeFontFamily står kvar på Helvetica/Arial Black trots applied: true — reserv bakom Google-typsnitten, syns bara om Google Fonts inte laddar"
+    }
+  },
+  "segment": {
+    "SEG_samtycke_sv": {
+      "id": "a97bfcf1-d887-401e-bd80-9b7bef997e7c",
+      "medlemmar": 15
+    },
+    "SEG_kopare_sv": {
+      "id": "4a4ec6e0-dd51-4719-944a-044d18d6844a",
+      "medlemmar": 15
+    },
+    "SEG_ej_kopt_sv": {
+      "id": "451700f8-ce5d-4e00-a6e7-be09b3241b39",
+      "medlemmar": 0
+    },
+    "SEG_engagerade_60d_sv": {
+      "id": "c8df61ce-a5ec-44ed-951d-f6b0023d3e2a",
+      "medlemmar": 0
+    },
+    "SEG_samtycke_nb": {
+      "id": "20fe7ebb-d6e2-4f72-8ee5-90ce1ed2e1c4",
+      "medlemmar": 4
+    },
+    "SEG_kopare_nb": {
+      "id": "d5365c1d-024d-407a-821d-6d261d9de631",
+      "medlemmar": 3
+    },
+    "SEG_ej_kopt_nb": {
+      "id": "205e8a96-a7b5-4ba8-ad76-0c737f1c1c3a",
+      "medlemmar": 1
+    },
+    "SEG_engagerade_60d_nb": {
+      "id": "39ea5a0a-6298-4672-a46a-90de98271c4c",
+      "medlemmar": 0
+    },
+    "SEG_samtycke_en": {
+      "id": "83d8a6de-5805-4786-8448-f6976e4247b6",
+      "medlemmar": 57
+    },
+    "SEG_kopare_en": {
+      "id": "7192eef4-a610-40df-b08c-939b827aaa16",
+      "medlemmar": 55
+    },
+    "SEG_ej_kopt_en": {
+      "id": "55f0c0e7-bd84-44bd-a253-8b12f85d775f",
+      "medlemmar": 2
+    },
+    "SEG_engagerade_60d_en": {
+      "id": "06946555-d37c-46d5-8755-cb8e2ac5e36d",
+      "medlemmar": 0
+    },
+    "SEG_oengagerade_180d": {
+      "id": "0d73b0f1-03f7-491f-99ac-2e4de60a666d",
+      "medlemmar": 0,
+      "kampanj_ok": false
+    }
+  },
+  "produkter": "klaviyo/spoks/carashell/produkter.json",
+  "floden": {
+    "sv": {
+      "f01-valkomst": {
+        "namn": "FLOW_prenumerant_valkommen_SV_v1",
+        "flowId": "165a134e-13c7-418a-9d97-2a7037099ae6",
+        "editor": "https://app.spoks.com/carashell/flows/165a134e-13c7-418a-9d97-2a7037099ae6",
+        "isActive": false,
+        "mejl": {
+          "f01-valkomst-e1": "fd2eead6-2ed5-48e2-be79-2218bfcbb20b",
+          "f01-valkomst-e2": "b7ec4d70-d1bb-4593-965d-4a6656cda266",
+          "f01-valkomst-e3": "0c556e26-e126-47b2-b948-d05f45f4e81f"
+        }
+      },
+      "f02-overgiven-kassa": {
+        "namn": "FLOW_checkout_overgiven_SV_v1",
+        "flowId": "e357e9e6-1041-4634-b0b5-6079bfc380bc",
+        "editor": "https://app.spoks.com/carashell/flows/e357e9e6-1041-4634-b0b5-6079bfc380bc",
+        "isActive": false,
+        "mejl": {
+          "f02-overgiven-kassa-e1": "7ddcd1c8-dade-4de5-97af-f0a1e45523b4",
+          "f02-overgiven-kassa-e2": "906c50d8-99f9-42f9-8b73-ad6eec2eb3d6",
+          "f02-overgiven-kassa-e3": "651a9043-ad5d-43c9-9aeb-7c0dd4663022"
+        }
+      },
+      "f03-webbhistorik": {
+        "namn": "FLOW_visning_webbhistorik_SV_v1",
+        "flowId": "e1f1584a-1963-458a-9ec0-b50b4d9235e1",
+        "editor": "https://app.spoks.com/carashell/flows/e1f1584a-1963-458a-9ec0-b50b4d9235e1",
+        "isActive": false,
+        "mejl": {
+          "f03-webbhistorik-e1": "f305f47b-fd3e-428f-8740-ce4e32ed5910",
+          "f03-webbhistorik-e2": "5c0ebb53-ca37-41cf-8335-67c9e07cbe82"
+        }
+      },
+      "f04-efter-kop": {
+        "namn": "FLOW_order_efterkop_SV_v1",
+        "flowId": "874c5979-28ba-4748-af39-13b78a212402",
+        "editor": "https://app.spoks.com/carashell/flows/874c5979-28ba-4748-af39-13b78a212402",
+        "isActive": false,
+        "mejl": {
+          "f04-efter-kop-e1": "b536c5aa-e76b-4c96-a309-731255bc66ee",
+          "f04-efter-kop-e2": "b5679b97-4fdd-45a1-a101-7b7f272462b9"
+        }
+      },
+      "f05-vinback": {
+        "namn": "FLOW_order_vinback_SV_v1",
+        "flowId": "85e6ddac-9653-48d3-885a-9ef04f771498",
+        "editor": "https://app.spoks.com/carashell/flows/85e6ddac-9653-48d3-885a-9ef04f771498",
+        "isActive": false,
+        "mejl": {
+          "f05-vinback-e1": "d9deac19-11f3-4449-bf71-a1c5a69ea105",
+          "f05-vinback-e2": "91d6ca71-9866-40e8-b893-826a325cec74"
+        }
+      },
+      "f06-levererat-takskyddet": {
+        "namn": "FLOW_levererat_takskyddet_SV_v1",
+        "flowId": "b310e7ef-ad58-4ba5-bfe4-98e0d81ca80f",
+        "editor": "https://app.spoks.com/carashell/flows/b310e7ef-ad58-4ba5-bfe4-98e0d81ca80f",
+        "isActive": false,
+        "mejl": {
+          "f06-levererat-takskyddet-e1": "ccf4875e-fbbe-44f8-874e-4a570f93ab9f"
+        }
+      },
+      "f06-levererat-termoskyddet": {
+        "namn": "FLOW_levererat_termoskyddet_SV_v1",
+        "flowId": "d7116250-5323-4f46-8a16-b1868594880d",
+        "editor": "https://app.spoks.com/carashell/flows/d7116250-5323-4f46-8a16-b1868594880d",
+        "isActive": false,
+        "mejl": {
+          "f06-levererat-termoskyddet-e1": "ab960f32-4b0e-4c7a-be8d-4d108bbeb5ff"
+        }
+      },
+      "f14-recension": {
+        "namn": "FLOW_levererat_recension_SV_v1",
+        "flowId": "b919fc37-4cb4-4931-9c2b-c14be3ecc629",
+        "editor": "https://app.spoks.com/carashell/flows/b919fc37-4cb4-4931-9c2b-c14be3ecc629",
+        "isActive": false,
+        "mejl": {
+          "f14-recension-e1": "7e4cb3a6-1385-4ab1-8b2e-d75a8844a83a"
+        }
+      }
+    },
+    "nb": {
+      "f01-valkomst": {
+        "namn": "FLOW_prenumerant_valkommen_NB_v1",
+        "flowId": "ed28ed1b-b82f-4199-b3a2-165dd608729a",
+        "editor": "https://app.spoks.com/carashell/flows/ed28ed1b-b82f-4199-b3a2-165dd608729a",
+        "isActive": false,
+        "mejl": {
+          "f01-valkomst-e1": "431beb2b-ae28-4489-a423-8a88832736a8",
+          "f01-valkomst-e2": "a6f71574-0d78-45ac-895d-b78e4deeb5b3",
+          "f01-valkomst-e3": "b46cba30-3ee8-42c7-9812-4158b7283d67"
+        }
+      },
+      "f02-overgiven-kassa": {
+        "namn": "FLOW_checkout_overgiven_NB_v1",
+        "flowId": "47d63ae5-f944-49db-930e-d3c69689a1c0",
+        "editor": "https://app.spoks.com/carashell/flows/47d63ae5-f944-49db-930e-d3c69689a1c0",
+        "isActive": false,
+        "mejl": {
+          "f02-overgiven-kassa-e1": "41d1184e-1599-453a-9499-6df66ad55559",
+          "f02-overgiven-kassa-e2": "c8fe2015-e8b5-4ef1-b044-be9625b24369",
+          "f02-overgiven-kassa-e3": "85bd49c9-7a2f-4776-a43c-1895ddfb955d"
+        }
+      },
+      "f03-webbhistorik": {
+        "namn": "FLOW_visning_webbhistorik_NB_v1",
+        "flowId": "e2fdcc63-fdcf-4361-8041-5276905aaf6f",
+        "editor": "https://app.spoks.com/carashell/flows/e2fdcc63-fdcf-4361-8041-5276905aaf6f",
+        "isActive": false,
+        "mejl": {
+          "f03-webbhistorik-e1": "7a289f05-fbff-42f3-883d-808989617140",
+          "f03-webbhistorik-e2": "17bc9bb2-52f2-470a-ade7-e215aab51807"
+        }
+      },
+      "f04-efter-kop": {
+        "namn": "FLOW_order_efterkop_NB_v1",
+        "flowId": "53b05021-6a0f-47fd-96ee-b0664d5b3be6",
+        "editor": "https://app.spoks.com/carashell/flows/53b05021-6a0f-47fd-96ee-b0664d5b3be6",
+        "isActive": false,
+        "mejl": {
+          "f04-efter-kop-e1": "207a1a67-0cf6-4b95-bba6-61df447671a0",
+          "f04-efter-kop-e2": "0f697c68-3b68-49ea-ab51-e52b61b28e70"
+        }
+      },
+      "f05-vinback": {
+        "namn": "FLOW_order_vinback_NB_v1",
+        "flowId": "da7f04fb-750c-42cc-92c9-46b9f17d6214",
+        "editor": "https://app.spoks.com/carashell/flows/da7f04fb-750c-42cc-92c9-46b9f17d6214",
+        "isActive": false,
+        "mejl": {
+          "f05-vinback-e1": "de411d4e-b110-45d5-9e25-3a899814046e",
+          "f05-vinback-e2": "6bbe1cbe-0111-4706-acb9-a208646e2fa1"
+        }
+      },
+      "f06-levererat-takskyddet": {
+        "namn": "FLOW_levererat_takskyddet_NB_v1",
+        "flowId": "e0500b09-09de-4e98-951f-8bcd352028b6",
+        "editor": "https://app.spoks.com/carashell/flows/e0500b09-09de-4e98-951f-8bcd352028b6",
+        "isActive": false,
+        "mejl": {
+          "f06-levererat-takskyddet-e1": "0e0c26b7-6beb-42f7-a233-a5bb348be70e"
+        }
+      },
+      "f06-levererat-termoskyddet": {
+        "namn": "FLOW_levererat_termoskyddet_NB_v1",
+        "flowId": "f9441871-b3d2-401c-ae03-04f6b1cceb08",
+        "editor": "https://app.spoks.com/carashell/flows/f9441871-b3d2-401c-ae03-04f6b1cceb08",
+        "isActive": false,
+        "mejl": {
+          "f06-levererat-termoskyddet-e1": "e69b7c6c-5b12-41eb-80e0-f4b837a36386"
+        }
+      },
+      "f14-recension": {
+        "namn": "FLOW_levererat_recension_NB_v1",
+        "flowId": "caad33b2-6f36-45af-b975-295c5cb20b09",
+        "editor": "https://app.spoks.com/carashell/flows/caad33b2-6f36-45af-b975-295c5cb20b09",
+        "isActive": false,
+        "mejl": {
+          "f14-recension-e1": "3fdcb7bb-fafa-4392-a610-17d13e5d4138"
+        }
+      }
+    },
+    "en": {
+      "f01-valkomst": {
+        "namn": "FLOW_prenumerant_valkommen_EN_v1",
+        "flowId": "96c39254-9261-4744-a2f6-b94e16476d24",
+        "editor": "https://app.spoks.com/carashell/flows/96c39254-9261-4744-a2f6-b94e16476d24",
+        "isActive": false,
+        "mejl": {
+          "f01-valkomst-e1": "c5872e60-6c55-4eda-9c85-2fc84a2b07a3",
+          "f01-valkomst-e2": "15d9ca1a-d578-4066-b638-2f20d57418e6",
+          "f01-valkomst-e3": "7e5bb5bd-6781-472a-9e97-c2439a81169e"
+        }
+      },
+      "f02-overgiven-kassa": {
+        "namn": "FLOW_checkout_overgiven_EN_v1",
+        "flowId": "93069cf1-1f12-4471-a353-8179c2cd1dc3",
+        "editor": "https://app.spoks.com/carashell/flows/93069cf1-1f12-4471-a353-8179c2cd1dc3",
+        "isActive": false,
+        "mejl": {
+          "f02-overgiven-kassa-e1": "ade9680b-b868-420e-b3a5-e6a48bf16ac7",
+          "f02-overgiven-kassa-e2": "ad382c0b-88cc-4132-8738-538df70d9234",
+          "f02-overgiven-kassa-e3": "28686c4e-cd98-498c-97d4-16fda61aad78"
+        }
+      },
+      "f03-webbhistorik": {
+        "namn": "FLOW_visning_webbhistorik_EN_v1",
+        "flowId": "2015e431-4e97-40b1-9291-8d3f272fd781",
+        "editor": "https://app.spoks.com/carashell/flows/2015e431-4e97-40b1-9291-8d3f272fd781",
+        "isActive": false,
+        "mejl": {
+          "f03-webbhistorik-e1": "e77bcd38-4fc6-4b64-9272-c54b87df9ca8",
+          "f03-webbhistorik-e2": "a4ddfaa3-8867-42b4-a12e-8122e07e4c75"
+        }
+      },
+      "f04-efter-kop": {
+        "namn": "FLOW_order_efterkop_EN_v1",
+        "flowId": "774f8be3-f18e-4cf1-8eda-478e3e30625c",
+        "editor": "https://app.spoks.com/carashell/flows/774f8be3-f18e-4cf1-8eda-478e3e30625c",
+        "isActive": false,
+        "mejl": {
+          "f04-efter-kop-e1": "d81971d9-d1d5-4db4-8904-95c6041ad180",
+          "f04-efter-kop-e2": "842a8ad9-386c-4a4f-969b-267214642d30"
+        }
+      },
+      "f05-vinback": {
+        "namn": "FLOW_order_vinback_EN_v1",
+        "flowId": "d7cb1918-e7b7-4dc3-ae26-a89b8b289280",
+        "editor": "https://app.spoks.com/carashell/flows/d7cb1918-e7b7-4dc3-ae26-a89b8b289280",
+        "isActive": false,
+        "mejl": {
+          "f05-vinback-e1": "0304d068-1721-452d-876a-9fe01b7bc388",
+          "f05-vinback-e2": "5106ed62-e6e1-4924-8cbe-ac12873d7636"
+        }
+      },
+      "f06-levererat-takskyddet": {
+        "namn": "FLOW_levererat_takskyddet_EN_v1",
+        "flowId": "fb9e9aac-f7ee-4719-8aee-b248aae19095",
+        "editor": "https://app.spoks.com/carashell/flows/fb9e9aac-f7ee-4719-8aee-b248aae19095",
+        "isActive": false,
+        "mejl": {
+          "f06-levererat-takskyddet-e1": "9f7b5ad5-65a7-4637-ab4e-c2ce5574d637"
+        }
+      },
+      "f06-levererat-termoskyddet": {
+        "namn": "FLOW_levererat_termoskyddet_EN_v1",
+        "flowId": "f7206e7a-856d-49cc-ba51-728e68f47c69",
+        "editor": "https://app.spoks.com/carashell/flows/f7206e7a-856d-49cc-ba51-728e68f47c69",
+        "isActive": false,
+        "mejl": {
+          "f06-levererat-termoskyddet-e1": "fbe5a62d-62b2-4322-96b4-0ce763144dfe"
+        }
+      },
+      "f14-recension": {
+        "namn": "FLOW_levererat_recension_EN_v1",
+        "flowId": "6731b786-eae6-4496-a28f-be580f0044ed",
+        "editor": "https://app.spoks.com/carashell/flows/6731b786-eae6-4496-a28f-be580f0044ed",
+        "isActive": false,
+        "mejl": {
+          "f14-recension-e1": "59974e8c-963a-48ba-ae3a-33211b9c19e9"
+        }
+      }
+    }
+  },
+  "kampanjer": {
+    "sv": {
+      "k01-regnet-vid-takluckan": {
+        "titel": "K01 SV Vattnet som blir kvar vid takluckan",
+        "postId": "52181edf-3829-46fb-8400-673168d8ac0f",
+        "editor": "https://app.spoks.com/carashell/post/52181edf-3829-46fb-8400-673168d8ac0f/edit",
+        "status": "draft",
+        "planerad": "2026-09-29T18:00:00+02:00",
+        "segment": "SEG_samtycke_sv"
+      },
+      "k02-nio-langder": {
+        "titel": "K02 SV Nio längder, en för ditt tak",
+        "postId": "7a60a6cf-ab51-4ee7-8b67-9ea8783beda4",
+        "editor": "https://app.spoks.com/carashell/post/7a60a6cf-ab51-4ee7-8b67-9ea8783beda4/edit",
+        "status": "draft",
+        "planerad": "2026-10-06T18:00:00+02:00",
+        "segment": "SEG_samtycke_sv"
+      },
+      "k03-imman-pa-rutan": {
+        "titel": "K03 SV Imman mellan gardin och glas",
+        "postId": "bdc2105d-2821-468d-8e15-5ede77957f3d",
+        "editor": "https://app.spoks.com/carashell/post/bdc2105d-2821-468d-8e15-5ede77957f3d/edit",
+        "status": "draft",
+        "planerad": "2026-10-13T18:00:00+02:00",
+        "segment": "SEG_samtycke_sv"
+      },
+      "k04-vecka-43": {
+        "titel": "K04 SV En present till honom med vagnen",
+        "postId": "775df828-3869-4740-9f7b-f04974844b3c",
+        "editor": "https://app.spoks.com/carashell/post/775df828-3869-4740-9f7b-f04974844b3c/edit",
+        "status": "draft",
+        "planerad": "2026-10-20T18:00:00+02:00",
+        "segment": "SEG_samtycke_sv"
+      },
+      "k05-adventskalendern": {
+        "titel": "K05 SV En adventskalender för husvagnsfolket",
+        "postId": "6a30f195-cc25-44e8-8472-f5190a6acea8",
+        "editor": "https://app.spoks.com/carashell/post/6a30f195-cc25-44e8-8472-f5190a6acea8/edit",
+        "status": "draft",
+        "planerad": "2026-10-27T18:00:00+01:00",
+        "segment": "SEG_samtycke_sv"
+      },
+      "k06-vecka-45": {
+        "titel": "K06 SV Sitter skyddet kvar när det blåser?",
+        "postId": "3679f834-c7ca-49f7-9e81-c45c3416afde",
+        "editor": "https://app.spoks.com/carashell/post/3679f834-c7ca-49f7-9e81-c45c3416afde/edit",
+        "status": "draft",
+        "planerad": "2026-11-03T18:00:00+01:00",
+        "segment": "SEG_samtycke_sv"
+      },
+      "k07-fredag-sista-dagen-kalendern": {
+        "titel": "K07 SV Fredag är sista dagen",
+        "postId": "de173c41-dd02-4db9-8970-9a948a7c706a",
+        "editor": "https://app.spoks.com/carashell/post/de173c41-dd02-4db9-8970-9a948a7c706a/edit",
+        "status": "draft",
+        "planerad": "2026-11-10T18:00:00+01:00",
+        "segment": "SEG_samtycke_sv"
+      },
+      "k08-checklistan": {
+        "titel": "K08 SV Tre saker innan vagnen ställs undan",
+        "postId": "3aadbe46-67ce-4293-bfc1-56425c2a21ee",
+        "editor": "https://app.spoks.com/carashell/post/3aadbe46-67ce-4293-bfc1-56425c2a21ee/edit",
+        "status": "draft",
+        "planerad": "2026-11-17T18:00:00+01:00",
+        "segment": "SEG_samtycke_sv"
+      },
+      "k09-black-week-utan-rabatt": {
+        "titel": "K09 SV Det kunderna säger om taket",
+        "postId": "eba4e395-6443-4c4f-9d47-4a7585bd4436",
+        "editor": "https://app.spoks.com/carashell/post/eba4e395-6443-4c4f-9d47-4a7585bd4436/edit",
+        "status": "draft",
+        "planerad": "2026-11-24T18:00:00+01:00",
+        "segment": "SEG_samtycke_sv"
+      },
+      "k10-sista-dag-for-julklappar": {
+        "titel": "K10 SV Beställ senast måndag 7 december",
+        "postId": "459f29d7-511b-43ad-b7cf-43c6896775e3",
+        "editor": "https://app.spoks.com/carashell/post/459f29d7-511b-43ad-b7cf-43c6896775e3/edit",
+        "status": "draft",
+        "planerad": "2026-12-01T18:00:00+01:00",
+        "segment": "SEG_samtycke_sv"
+      },
+      "k11-rutan-pa-resorna": {
+        "titel": "K11 SV Rutan på vinterresorna",
+        "postId": "6bb6ea05-b60b-41a3-9540-e611dac7186a",
+        "editor": "https://app.spoks.com/carashell/post/6bb6ea05-b60b-41a3-9540-e611dac7186a/edit",
+        "status": "draft",
+        "planerad": "2026-12-08T18:00:00+01:00",
+        "segment": "SEG_samtycke_sv"
+      },
+      "k12-efter-blasten": {
+        "titel": "K12 SV Kolla skyddet efter blåsten",
+        "postId": "84d8d1eb-6b54-487c-bc36-213e6b0e60af",
+        "editor": "https://app.spoks.com/carashell/post/84d8d1eb-6b54-487c-bc36-213e6b0e60af/edit",
+        "status": "draft",
+        "planerad": "2026-12-15T18:00:00+01:00",
+        "segment": "SEG_samtycke_sv"
+      },
+      "k13-nyarskoll": {
+        "titel": "K13 SV Ett par minuter i mellandagarna",
+        "postId": "03585471-7675-46f3-acd1-b46759bf1b6d",
+        "editor": "https://app.spoks.com/carashell/post/03585471-7675-46f3-acd1-b46759bf1b6d/edit",
+        "status": "draft",
+        "planerad": "2026-12-29T18:00:00+01:00",
+        "segment": "SEG_samtycke_sv"
+      }
+    },
+    "nb": {
+      "k01-regnet-vid-takluckan": {
+        "titel": "K01 NB Regnet som blir stående ved takluken",
+        "postId": "e2bc52fd-8a38-4534-8ad0-08efd3ccee32",
+        "editor": "https://app.spoks.com/carashell/post/e2bc52fd-8a38-4534-8ad0-08efd3ccee32/edit",
+        "status": "draft",
+        "planerad": "2026-09-29T18:00:00+02:00",
+        "segment": "SEG_samtycke_nb"
+      },
+      "k02-nio-langder": {
+        "titel": "K02 NB Ni lengder, ikke bare én",
+        "postId": "879c351d-e352-4515-8d11-36b4cc7b1a73",
+        "editor": "https://app.spoks.com/carashell/post/879c351d-e352-4515-8d11-36b4cc7b1a73/edit",
+        "status": "draft",
+        "planerad": "2026-10-06T18:00:00+02:00",
+        "segment": "SEG_samtycke_nb"
+      },
+      "k03-imman-pa-rutan": {
+        "titel": "K03 NB Duggen blir sittende mellom gardin og glass",
+        "postId": "a3093969-47b7-4bf9-934b-700159497cad",
+        "editor": "https://app.spoks.com/carashell/post/a3093969-47b7-4bf9-934b-700159497cad/edit",
+        "status": "draft",
+        "planerad": "2026-10-13T18:00:00+02:00",
+        "segment": "SEG_samtycke_nb"
+      },
+      "k04-vecka-43": {
+        "titel": "K04 NB Gaven til pappa med campingvogn",
+        "postId": "5535b423-7b42-4224-8bd4-67b1f6df10df",
+        "editor": "https://app.spoks.com/carashell/post/5535b423-7b42-4224-8bd4-67b1f6df10df/edit",
+        "status": "draft",
+        "planerad": "2026-10-20T18:00:00+02:00",
+        "segment": "SEG_samtycke_nb"
+      },
+      "k05-adventskalendern": {
+        "titel": "K05 NB Adventskalenderen med retrobusser",
+        "postId": "c237041e-09d2-47a5-a3e1-6098d36891ff",
+        "editor": "https://app.spoks.com/carashell/post/c237041e-09d2-47a5-a3e1-6098d36891ff/edit",
+        "status": "draft",
+        "planerad": "2026-10-27T18:00:00+01:00",
+        "segment": "SEG_samtycke_nb"
+      },
+      "k06-vecka-45": {
+        "titel": "K06 NB Sitter det fast når det blåser?",
+        "postId": "9c569b88-271d-4bf9-b274-3718c02bf033",
+        "editor": "https://app.spoks.com/carashell/post/9c569b88-271d-4bf9-b274-3718c02bf033/edit",
+        "status": "draft",
+        "planerad": "2026-11-03T18:00:00+01:00",
+        "segment": "SEG_samtycke_nb"
+      },
+      "k07-fredag-sista-dagen-kalendern": {
+        "titel": "K07 NB Fredag er siste dag for luke 1",
+        "postId": "1391e26c-85c8-47ca-b4ac-866246a879b1",
+        "editor": "https://app.spoks.com/carashell/post/1391e26c-85c8-47ca-b4ac-866246a879b1/edit",
+        "status": "draft",
+        "planerad": "2026-11-10T18:00:00+01:00",
+        "segment": "SEG_samtycke_nb"
+      },
+      "k08-checklistan": {
+        "titel": "K08 NB Før vogna settes bort for vinteren",
+        "postId": "c499f1a3-b5f8-4b30-8bc5-98f76a954db5",
+        "editor": "https://app.spoks.com/carashell/post/c499f1a3-b5f8-4b30-8bc5-98f76a954db5/edit",
+        "status": "draft",
+        "planerad": "2026-11-17T18:00:00+01:00",
+        "segment": "SEG_samtycke_nb"
+      },
+      "k09-black-week-utan-rabatt": {
+        "titel": "K09 NB Det kundene selv sier om taket",
+        "postId": "549ee8cb-83e2-4235-b447-27e4223d1cfd",
+        "editor": "https://app.spoks.com/carashell/post/549ee8cb-83e2-4235-b447-27e4223d1cfd/edit",
+        "status": "draft",
+        "planerad": "2026-11-24T18:00:00+01:00",
+        "segment": "SEG_samtycke_nb"
+      },
+      "k10-sista-dag-for-julklappar": {
+        "titel": "K10 NB Bestill senest mandag 7. desember",
+        "postId": "f26d13a0-da30-4c58-9eab-5f4280806a39",
+        "editor": "https://app.spoks.com/carashell/post/f26d13a0-da30-4c58-9eab-5f4280806a39/edit",
+        "status": "draft",
+        "planerad": "2026-12-01T18:00:00+01:00",
+        "segment": "SEG_samtycke_nb"
+      },
+      "k11-rutan-pa-resorna": {
+        "titel": "K11 NB Ingen dugg å tørke bort om morgenen",
+        "postId": "62d635d3-ace9-4970-9744-73f6e06ac6ec",
+        "editor": "https://app.spoks.com/carashell/post/62d635d3-ace9-4970-9744-73f6e06ac6ec/edit",
+        "status": "draft",
+        "planerad": "2026-12-08T18:00:00+01:00",
+        "segment": "SEG_samtycke_nb"
+      },
+      "k12-efter-blasten": {
+        "titel": "K12 NB Etter kraftig vind, verdt en sjekk",
+        "postId": "04b0788d-86bd-4320-a7df-147ace4bf0fa",
+        "editor": "https://app.spoks.com/carashell/post/04b0788d-86bd-4320-a7df-147ace4bf0fa/edit",
+        "status": "draft",
+        "planerad": "2026-12-15T18:00:00+01:00",
+        "segment": "SEG_samtycke_nb"
+      },
+      "k13-nyarskoll": {
+        "titel": "K13 NB En sjekk i romjulen",
+        "postId": "9cd5108b-23c6-48ae-bffe-041498337a60",
+        "editor": "https://app.spoks.com/carashell/post/9cd5108b-23c6-48ae-bffe-041498337a60/edit",
+        "status": "draft",
+        "planerad": "2026-12-29T18:00:00+01:00",
+        "segment": "SEG_samtycke_nb"
+      }
+    },
+    "en": {
+      "k01-regnet-vid-takluckan": {
+        "titel": "K01 EN The roof you never climb up to check",
+        "postId": "f2176bf0-3f0f-4fce-a2fe-7142398f94c2",
+        "editor": "https://app.spoks.com/carashell/post/f2176bf0-3f0f-4fce-a2fe-7142398f94c2/edit",
+        "status": "draft",
+        "planerad": "2026-09-29T16:00:00+02:00",
+        "segment": "SEG_samtycke_en"
+      },
+      "k02-nio-langder": {
+        "titel": "K02 EN Nine lengths. Yours is one of them",
+        "postId": "3a89c739-f231-47cc-8161-d2ae71f0b712",
+        "editor": "https://app.spoks.com/carashell/post/3a89c739-f231-47cc-8161-d2ae71f0b712/edit",
+        "status": "draft",
+        "planerad": "2026-10-06T16:00:00+02:00",
+        "segment": "SEG_samtycke_en"
+      },
+      "k03-imman-pa-rutan": {
+        "titel": "K03 EN The fog that sits on the glass overnight",
+        "postId": "8a89ba21-2fae-4479-90c8-701dc56c85cd",
+        "editor": "https://app.spoks.com/carashell/post/8a89ba21-2fae-4479-90c8-701dc56c85cd/edit",
+        "status": "draft",
+        "planerad": "2026-10-13T16:00:00+02:00",
+        "segment": "SEG_samtycke_en"
+      },
+      "k04-vecka-43": {
+        "titel": "K04 EN Does it stay on in wind?",
+        "postId": "188439c5-9214-41c9-901d-a60bca217f6b",
+        "editor": "https://app.spoks.com/carashell/post/188439c5-9214-41c9-901d-a60bca217f6b/edit",
+        "status": "draft",
+        "planerad": "2026-10-20T16:00:00+02:00",
+        "segment": "SEG_samtycke_en"
+      },
+      "k05-adventskalendern": {
+        "titel": "K05 EN A 24-door calendar, retro campervan theme",
+        "postId": "de99c961-56f1-44a3-8265-d6da8a86c088",
+        "editor": "https://app.spoks.com/carashell/post/de99c961-56f1-44a3-8265-d6da8a86c088/edit",
+        "status": "draft",
+        "planerad": "2026-10-27T16:00:00+01:00",
+        "segment": "SEG_samtycke_en"
+      },
+      "k06-vecka-45": {
+        "titel": "K06 EN A Christmas gift that actually gets used",
+        "postId": "23f83468-ae76-468b-9b41-a444f235f12a",
+        "editor": "https://app.spoks.com/carashell/post/23f83468-ae76-468b-9b41-a444f235f12a/edit",
+        "status": "draft",
+        "planerad": "2026-11-03T16:00:00+01:00",
+        "segment": "SEG_samtycke_en"
+      },
+      "k07-fredag-sista-dagen-kalendern": {
+        "titel": "K07 EN Friday is the last day to order the calendar",
+        "postId": "985a7d05-cbbe-48f8-8ed0-768106efae42",
+        "editor": "https://app.spoks.com/carashell/post/985a7d05-cbbe-48f8-8ed0-768106efae42/edit",
+        "status": "draft",
+        "planerad": "2026-11-10T16:00:00+01:00",
+        "segment": "SEG_samtycke_en"
+      },
+      "k08-checklistan": {
+        "titel": "K08 EN Three things before it sits for a while",
+        "postId": "9f7b1bde-a492-4d12-b075-85740dc5cd62",
+        "editor": "https://app.spoks.com/carashell/post/9f7b1bde-a492-4d12-b075-85740dc5cd62/edit",
+        "status": "draft",
+        "planerad": "2026-11-17T16:00:00+01:00",
+        "segment": "SEG_samtycke_en"
+      },
+      "k09-black-week-utan-rabatt": {
+        "titel": "K09 EN No discount here. Just the guarantee",
+        "postId": "68bbbf3c-c0f2-4f76-935c-f464253c3428",
+        "editor": "https://app.spoks.com/carashell/post/68bbbf3c-c0f2-4f76-935c-f464253c3428/edit",
+        "status": "draft",
+        "planerad": "2026-11-24T16:00:00+01:00",
+        "segment": "SEG_samtycke_en"
+      },
+      "k10-sista-dag-for-julklappar": {
+        "titel": "K10 EN Order by Monday for it to arrive by Christmas",
+        "postId": "19f1e72b-416d-4ef0-b19d-6cbf2b03d645",
+        "editor": "https://app.spoks.com/carashell/post/19f1e72b-416d-4ef0-b19d-6cbf2b03d645/edit",
+        "status": "draft",
+        "planerad": "2026-12-01T16:00:00+01:00",
+        "segment": "SEG_samtycke_en"
+      },
+      "k11-rutan-pa-resorna": {
+        "titel": "K11 EN The glass, covered before the next trip",
+        "postId": "8bd65269-f05b-4c61-9866-2672dc1df969",
+        "editor": "https://app.spoks.com/carashell/post/8bd65269-f05b-4c61-9866-2672dc1df969/edit",
+        "status": "draft",
+        "planerad": "2026-12-08T16:00:00+01:00",
+        "segment": "SEG_samtycke_en"
+      },
+      "k12-efter-blasten": {
+        "titel": "K12 EN After strong wind, check these three things",
+        "postId": "ffcb6bbb-d4fa-43f3-ac3b-c360032505d3",
+        "editor": "https://app.spoks.com/carashell/post/ffcb6bbb-d4fa-43f3-ac3b-c360032505d3/edit",
+        "status": "draft",
+        "planerad": "2026-12-15T16:00:00+01:00",
+        "segment": "SEG_samtycke_en"
+      },
+      "k13-nyarskoll": {
+        "titel": "K13 EN The first look of the new year",
+        "postId": "cce33b2b-a624-4993-a476-d81aeb089ac2",
+        "editor": "https://app.spoks.com/carashell/post/cce33b2b-a624-4993-a476-d81aeb089ac2/edit",
+        "status": "draft",
+        "planerad": "2026-12-29T16:00:00+01:00",
+        "segment": "SEG_samtycke_en"
+      }
+    }
+  },
+  "kontroll": {
+    "datum": "2026-09-26",
+    "metod": "tre oberoende granskare (en per språk) läste tillbaka varje flöde (get_flow) och varje mejl (get_campaign) mot plan.json och payload/",
+    "resultat": "sv 8/8 flöden 13/13 kampanjer, nb 8/8 och 13/13, en 8/8 och 13/13; get_flows 24 st alla isActive false, search_campaigns 39 utkast publishDate null, inga dubbletter",
+    "rattat": "F01 SV E1:s knapp hade spårningslänken r.spoksmail.com (skapad 08:45 UTC, före länkdomänen) — omsparad, nu link.carashell.com",
+    "ej_lasbart": "produktblockens knapptext och visningsinställningar (t.ex. dolt pris på nb/en) syns inte i get_campaign — skickade exakt som payloaden, kontrolleras i appens förhandsvisning"
+  }
+}

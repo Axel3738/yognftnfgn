@@ -26,7 +26,7 @@
     },
     {
       "type": "image",
-      "fileId": "{{spoks:media:adventskalender-retrobussar}}",
+      "fileId": "2f01e972-730b-4683-9d9d-b385f3273e4a",
       "altText": "Advent Calendar with Retro Campervans, 24 Doors",
       "urlRedirect": "https://carashell.com/products/adventskalender-retrobussar"
     },
@@ -48,7 +48,7 @@
     },
     {
       "type": "image",
-      "fileId": "{{spoks:media:adventskalender-retrobussar}}",
+      "fileId": "2f01e972-730b-4683-9d9d-b385f3273e4a",
       "altText": "Advent Calendar with Retro Campervans, 24 Doors",
       "urlRedirect": "https://carashell.com/products/adventskalender-retrobussar"
     },
@@ -106,8 +106,5 @@
       ]
     }
   ],
-  "varningar": [
-    "Bilden för adventskalender-retrobussar saknar fileId i Spoks (produkter.json → bild).",
-    "Bilden för adventskalender-retrobussar saknar fileId i Spoks (produkter.json → bild)."
-  ]
+  "varningar": []
 }

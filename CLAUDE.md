@@ -188,6 +188,46 @@ brick by brick och **varje lyckat steg dokumenteras direkt**:
 - **Q4-ramverket är standard för varje ny OPS:** gratis bonusprodukt i
   paketnivåerna + betald upsell i varukorgen (`offer.bonus_produkt` i
   produktfilen, `byggKorgUpsell` i `factory/tema.mjs`).
+- **Tacksidan — erbjudandet EFTER köpet (`factory/tacksida/`, byggt
+  2026-09-26 för CaraShell, Axels beställning: Fönstertermomattan +
+  Husbilskalendern som upsell "på taxsidan").** Läs `factory/tacksida/README.md`
+  först. Två tilläggsprodukter live i CaraShell (`fonstertermomatta-2-pack`
+  539 kr, `adventskalender-retrobussar` 379 kr, egen lättmall
+  `product.tillagg`, inte i Sortimentet), två rabattkoder (**TACKMATTA** 34,88 %
+  ⇒ 351 kr, **TACKKALENDER** 36,94 % ⇒ 239 kr, låsta till sin produkt, en gång
+  per kund), och en checkout UI extension (Preact, api 2026-07) för tacksidan
+  + orderstatussidan som visar kortet i kundens språk/valuta och länkar till en
+  förifylld kassa med koden pålagd (`attributes[kalla]=tacksida` märker ordern;
+  `rapport.mjs` mäter take-raten). **Inte Shopifys one-click-sida** — den
+  visas inte för Klarna/Apple Pay/Google Pay eller ordrar i annan valuta än
+  SEK, och en egen app får bara använda den på Plus (CaraShell är Grow):
+  hade nått var femte order. ⚠️ Tre mätta fällor: Shopify lagrar rabattprocent
+  med två decimaler och **trunkerar** beloppet till hela ören (35,25 % på 539
+  gav 349,01 — välj procent där `(pris×procent×100) mod 10000 < 50`);
+  `losNycklar('carashell')` faller tillbaka på den allmänna `SHOPIFY_SHOP`
+  (fel butik) — slå alltid upp via butiksfilens domän (`suffixForDoman`);
+  `codeDiscountNodes(query:)` släpar efter nyss skapade koder — läs med
+  `codeDiscountNodeByCode`. **Deployen kräver `SHOPIFY_APP_AUTOMATION_TOKEN`**
+  (Dev Dashboard → appen → Settings → App Automation Token, Axels klick;
+  ⚠️ token är per APP och varje butik har en egen app som heter "Factory" i
+  sin egen organisation — CaraShells är org **Carashell**, client id
+  `ca709d…`; fel butiks Factory ger 403 "not a member of the requested
+  organization", mätt 2026-09-26) —
+  `bash factory/tacksida/deploy.sh carashell` hämtar appens konfig först och
+  vägrar om scopes saknas (en handskriven toml skriver över appens
+  rättigheter vid deploy). Blocket läggs in i kassaredigeraren för hand —
+  inget API gör det. Evolve-frågorna (utan brand) i `EVOLVE-FRAGOR.md`.
+  ⛔ **Korten under paketet på carashell.se/pages/spara låg live 2026-09-26
+  12:40–16:35 UTC och är AV** (Axel: "Jag tycker inte vi ska ha dem där. Jag
+  tycker vi ska ha dem på tacksidan"; `sparning/tillagg.mjs` finns kvar,
+  registret `sparning/butiker.json` → `carashell.tillagg: false`). Cowork
+  mätte samma dag att Factory-appen `ca709dfb` inte finns i något av Axels
+  konton — den ligger i jobb-Gmailens Dev Dashboard-org (VA-CHECKLIST rad
+  101). Vägen utan den: egen app i Axels org via
+  `factory/tacksida/cowork/2-egen-app.txt` (Axel skapar den själv samma kväll,
+  inga scopes) + **`TACKSIDA_CLIENT_ID_CARASHELL`** och
+  **`SHOPIFY_APP_AUTOMATION_TOKEN_CARASHELL`** i Environments — token är per
+  app, så `deploy.sh` läser `_<BUTIK>` först och det delade namnet som reserv.
 - **Annonskontot för ALLA OPS-butiker (SE och NO) är "MagiBorsten DK"
   `915422744950975`** (Axels beslut 2026-09-07). Ett gemensamt konto —
   kampanjnamn prefixas alltid med brandet så datan går att skära per
@@ -934,7 +974,7 @@ det som återstår står i `klaviyo/SISTA-STEGEN.md`.
   blocket gav tomt — rättat; Bäverbutikens live F03 bär den gamla mallen.
 
 - ✅ **Spoks byggt 2026-09-26 (Axels order "bygg i spoks")**: 13 flöden + F14 och 22 kampanjutkast i Spoks workspace Bäverbutiken `f716ae36-…`, allt INAKTIVT — flöden, mejlsteg och utskick slås på bara i Spoks-appen. Id:n, triggers och skillnaderna mot Klaviyo (inget ordernummer, ingen Fulfilled Order-trigger, ingen sunset) i `klaviyo/spoks/README.md`. ⛔ **Klaviyo AVSTÄNGT 2026-09-26** (Axels order: "jag vill inte ha Klaviyo, jag vill bara köra Spoks"): alla 13 flöden i `QZ4jLG` satta till draft och K01 återkallad till utkast med `node klaviyo/stang-av.mjs --ja` (logg `klaviyo/konto/baverbutiken/avstangt.jsonl`, tillbakaläst: 0 igång). Slå aldrig på något i Klaviyo igen utan Axels ord. Spoks-planen är Paid (obegränsat, mätt med whoami); avsändaradressen saknades (senderEmail null).
-- ✅ **CaraShell byggt i repot 2026-09-26, INTE uppladdat** (Axels order "bygg hela e-postsystemet för CaraShell i Spoks"): `whoami` såg ingen CaraShell-workspace under MCP-användaren `kundsupport@baverbutiken.se`; appen Spoks står som installerad på yitrbk-m3 (Shopify `appInstallations`) men **Axel bekräftade samma dag att han aldrig skapat något Spoks-konto för CaraShell** — installationen avbröts före onboardingen. Samma förmiddag råkade Axel skapa workspacen under ett **eget nytt Spoks-konto** (annan inloggning), så den syns varken i hans vanliga hubb eller för MCP:n. **Axels klick: i det nya kontot, CaraShells workspace → Settings → Team → "Invite team member" → `kundsupport@baverbutiken.se` som Admin** (Spoks hjälpartiklar *Managing team members* + *How do I run several Shopify stores from one Spoks login*, lästa 2026-09-26; reserv: Spoks support gör adressen till admin). Då visar `whoami` tre workspaces och en ny session kör `klaviyo/spoks/PROMPT-carashell-upp.md`. Det extra kontot rörs aldrig av en session. Mätt i Shopify: 384 ordrar/90 d (SE 173, NO 82, US 59, AU 29, DK 23, FI 7, GB 6, NZ 3, CA 2), **76 av 457 kunder med samtycke** (54 i USA), **0 återköp** ⇒ inget korsförsäljningsflöde, 73 övergivna kassor. **Språkstyrningen är landet** (Spoks `contact.country` = engelskt landsnamn, inget språkfält): ett flöde per språk (sv = Sweden + Denmark + utan land, nb = Norway, en = US/GB/CA/AU/NZ + Finland) och ett segment per språk. 8 flöden × 3 språk (välkomst, kassa med de tre frågorna, webbhistorik, efter köp, vinback, levererat ×2 med monteringen på `order_delivered`, recension via Trustpilot — profilen saknas, 404) + 13 kampanjer × 3 (tisdagar 29/9–29/12, Black Week utan rabatt tills A/B/C). Copyn av sex Sonnet-subagenter mot faktabladen `klaviyo/innehall/carashell/fakta/<sprak>.json` (butikens egna översättningar); `konvertera.mjs --brand carashell` stoppar på tankstreck, leveranstid, belopp, butiksnamn, årstider (en) och tre-frågorstest med ❌. nb/en får bild + rubrik + knapp i stället för Spoks produktkort (katalogen är svensk och i SEK). Allt i `klaviyo/spoks/README.md` → CaraShell och `klaviyo/spoks/carashell/PLAN.md`.
+- ✅ **CaraShell i Spoks sedan 2026-09-26, UPPLADDAT och avstängt** (Axels order "bygg hela e-postsystemet för CaraShell i Spoks"): egen workspace **Carashell `38f3d430-690c-4c0b-8419-8ec2e5272148`** (Shopify yitrbk-m3, plan **Free = 5 000 mejl/mån**), skapad av Axel under ett **extra Spoks-konto** och delad med MCP-användaren `kundsupport@baverbutiken.se` som Admin (Settings → Team → "Invite team member"; det extra kontot rörs aldrig av en session). Uppladdat 10:45–11:36 CEST: **13 segment, 24 flöden (45 mejl), 39 kampanjutkast**, alla flöden `isActive: false`, alla sändsteg av, kampanjerna utan publik och datum; avsändare **CaraShell <hello@carashell.com>** (domänen carashell.com verifierad i Spoks: link/feed/DKIM/DMARC-poster i Loopia, NS/MX/A orörda). Tre oberoende granskare läste tillbaka allt: 8/8 + 13/13 per språk. Varje id i **`klaviyo/spoks/carashell/spoks-id.json`**. Samtycke i Spoks: sv 15, nb 4, en 57. Att slå på = Axels klick i appen (sändstegen först, sedan flödet); F14 väntar på Trustpilot-profilen (404 2026-09-26), K09 på Black Week A/B/C. Mätt i Shopify: 384 ordrar/90 d (SE 173, NO 82, US 59, AU 29, DK 23, FI 7, GB 6, NZ 3, CA 2), **76 av 457 kunder med samtycke** (54 i USA), **0 återköp** ⇒ inget korsförsäljningsflöde, 73 övergivna kassor. **Språkstyrningen är landet** (Spoks `contact.country` = engelskt landsnamn, inget språkfält): ett flöde per språk (sv = Sweden + Denmark + utan land, nb = Norway, en = US/GB/CA/AU/NZ + Finland) och ett segment per språk. 8 flöden × 3 språk (välkomst, kassa med de tre frågorna, webbhistorik, efter köp, vinback, levererat ×2 med monteringen på `order_delivered`, recension via Trustpilot — profilen saknas, 404) + 13 kampanjer × 3 (tisdagar 29/9–29/12, Black Week utan rabatt tills A/B/C). Copyn av sex Sonnet-subagenter mot faktabladen `klaviyo/innehall/carashell/fakta/<sprak>.json` (butikens egna översättningar); `konvertera.mjs --brand carashell` stoppar på tankstreck, leveranstid, belopp, butiksnamn, årstider (en) och tre-frågorstest med ❌. nb/en får bild + rubrik + knapp i stället för Spoks produktkort (katalogen är svensk och i SEK). Allt i `klaviyo/spoks/README.md` → CaraShell och `klaviyo/spoks/carashell/PLAN.md`.
 - ✅ **Matstrumpor i Spoks sedan 2026-09-26** (Axels order samma dag: "FÖRBERED BARA FÖR MATSTRUMPOR TILL SPOKS", sedan "kör" — förberett, inget påslaget): egen workspace **Matstrumpor.se `71c2d4c8-b9ec-488a-b15c-5dfe8dbd2226`** (Shopify 1r46tp-qx, plan **Free = 5 000 mejl/mån**), 6 flöden (F01–F05, F07) — byggda inaktiva, ⛔ **LIVE sedan 2026-09-26 ~07:57 CEST genom Axels egna klick i appen** (sändstegen på, flödena aktiverade; mätt med `get_flows`, kontakter inrullade direkt), 16 kampanjutkast (K01–K14 + F06 E1/E2 — F06 Sunset har ingen trigger i Spoks och skickas för hand till `SEG_oengagerade_180d`), 14 segment. Motorn är **`klaviyo/spoks-paket.mjs`** (Klaviyo-innehållet → Spoks-block, facit `klaviyo/konto/matstrumpor/spoks.json`, logg `spoks-uppladdat.jsonl`); uppladdningen sker via Spoks-MCP:n i en session, alla id:n och skillnaderna i `klaviyo/spoks/README.md` → Matstrumpor. ⛔ Bäverbutikens Spoks-yta `f716ae36-…` rörs aldrig från Matstrumpor-motorn, och Klaviyo-utkasten i `UV6Rqg` lämnas orörda (inget påslaget där heller). ⚠️ Spoks saknar Fulfilled Order (⇒ `order_created`), spårningsnummer i mejl (⇒ `/pages/spara` + MS-raden), segmenttrigger, fonten Mochiy Pop P One (⇒ Tilt Warp + Nunito Sans) och all händelsehistorik för importerade kontakter — engagemangssegmenten är nästan tomma tills Spoks registrerat egna händelser, så K01/K02 går till `SEG_samtycke` tills dess. Att slå på flöden, aktivera sändsteg, välja publik och schemalägga går bara i appen = Axels klick. ⚠️ **Behörigheterna:** Spoks-verktygen frågade om lov per anrop tills Axel satte dem på "Tillåt alltid" på https://claude.ai/customize/connectors (2026-09-26, "jag pallar inte godkänna") — `.claude/settings.json` bär `mcp__Spoks__*` för rutinerna, men den listan styr inte connector-prompterna i en interaktiv session.
 
 ## `bonus/` — alla i bolaget ska kunna tjäna pengar (NY 2026-09-21)

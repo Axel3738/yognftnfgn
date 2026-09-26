@@ -28,7 +28,7 @@
           "blocks": [
             {
               "type": "image",
-              "fileId": "{{spoks:media:takskyddet}}",
+              "fileId": "6830b5d9-7f36-4ff3-a0c4-f3aa4a05b62e",
               "altText": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft",
               "urlRedirect": "https://carashell.com/products/takskyddet"
             },
@@ -50,7 +50,7 @@
           "blocks": [
             {
               "type": "image",
-              "fileId": "{{spoks:media:termoskyddet}}",
+              "fileId": "295e18f4-1bba-4ee1-a32e-b06f3b5d7f92",
               "altText": "Windshield Thermal Cover for Motorhome 211 × 171 cm",
               "urlRedirect": "https://carashell.com/products/termoskyddet"
             },
@@ -70,8 +70,5 @@
       ]
     }
   ],
-  "varningar": [
-    "Bilden för takskyddet saknar fileId i Spoks (produkter.json → bild).",
-    "Bilden för termoskyddet saknar fileId i Spoks (produkter.json → bild)."
-  ]
+  "varningar": []
 }

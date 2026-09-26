@@ -28,7 +28,7 @@ const REPO = dirname(SPARNING);
 // 2026-09-19 med sammanfattningsvyn.
 // butik.mjs, oversatt.mjs, butiker.json och sprak/ lades till 2026-09-20 med
 // flerbutiksstödet (Axels order: samma system i alla butiker).
-const FILER = ['publicera.mjs', 'paketdata.mjs', 'sprak.mjs', 'status.mjs', 'sida.mjs', 'uppacka.mjs', 'steg.mjs', 'delsteg.mjs', 'bavernummer.mjs', 'sistabiten.mjs', 'kontroll.mjs', 'fraser.json', 'konfig.json', 'butik.mjs', 'oversatt.mjs', 'butiker.json'];
+const FILER = ['publicera.mjs', 'paketdata.mjs', 'sprak.mjs', 'status.mjs', 'sida.mjs', 'uppacka.mjs', 'steg.mjs', 'delsteg.mjs', 'bavernummer.mjs', 'sistabiten.mjs', 'kontroll.mjs', 'fraser.json', 'konfig.json', 'butik.mjs', 'oversatt.mjs', 'butiker.json', 'tillagg.mjs'];
 const SPRAKFILER = ['nb.json', 'da.json', 'fi.json'];
 
 // En kopia av sparning/ med egen lagefil. `konfigAndringar` skrivs ovanpå

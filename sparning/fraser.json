@@ -38,6 +38,8 @@
   "released from customs: customs cleared": "Paketet är klart i tullen",
   "arrived at the warehouse of customs broker": "Paketet ligger hos tullombudet",
   "noa received": "Paketet är anmält till tullen",
+  "customs data processed– shipment on route to destination country": "Tulluppgifterna är behandlade och paketet är på väg",
+  "customs data received – shipment on route to destination country": "Tulluppgifterna är mottagna och paketet är på väg",
   "collected at cargo terminal": "Paketet är hämtat på fraktterminalen",
   "hand over to airline": "Paketet är överlämnat till flygbolaget",
   "the shipment item has been loaded": "Paketet är lastat",

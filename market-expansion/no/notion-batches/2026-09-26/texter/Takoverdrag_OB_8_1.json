@@ -1,0 +1,95 @@
+[
+ {
+  "box": [
+   32,
+   62,
+   1048,
+   400
+  ],
+  "rader": 3,
+  "fet": true,
+  "storlek": 99,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "fyll": "ljus",
+  "alfa": 255,
+  "fyllfarg": [
+   230,
+   230,
+   230
+  ],
+  "text": "Reimen hektes i en krok, ikke i en knute du håper holder."
+ },
+ {
+  "box": [
+   32,
+   432,
+   1048,
+   562
+  ],
+  "rader": 2,
+  "fet": false,
+  "storlek": 40,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "fyll": "ljus",
+  "alfa": 255,
+  "fyllfarg": [
+   231,
+   231,
+   230
+  ],
+  "text": "Stropper på alle fire sider, 2,5 m og justerbare, hektes fast i en krok i nederkant."
+ },
+ {
+  "box": [
+   559,
+   948,
+   1059,
+   1030
+  ],
+  "rader": 1,
+  "fet": true,
+  "storlek": 33,
+  "farg": [
+   254,
+   255,
+   255
+  ],
+  "fyll": "mork",
+  "alfa": 255,
+  "text": "2 ekstra strammestropper (10,5 m) inkludert"
+ },
+ {
+  "box": [
+   33,
+   1069,
+   1047,
+   1149
+  ],
+  "rader": 1,
+  "fet": false,
+  "storlek": 33,
+  "farg": [
+   20,
+   18,
+   16
+  ],
+  "fyll": "ljus",
+  "alfa": 255,
+  "text": "1 189 kr (ord. 1 549 kr), spar 360 kr (23 %)"
+ },
+ {
+  "form": 3,
+  "text": "Bestill ditt takovertrekk",
+  "rad": 0,
+  "se": "Beställ ditt taköverdrag",
+  "vanster": false
+ }
+]

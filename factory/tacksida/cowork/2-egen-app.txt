@@ -1,0 +1,77 @@
+Jag vill ha en EGEN Shopify-app för min butik CaraShell, i den organisation
+jag själv kommer åt i Shopifys Dev Dashboard. Appen ska bara bära en
+checkout-extension (ett erbjudande på tacksidan efter köpet). Den behöver inga
+rättigheter alls. Du ska skapa appen, installera den i butiken, generera ett
+App Automation Token och ge mig Client ID + token. Gör allt i Chrome med mitt
+inloggade konto (axelodhner.business@gmail.com) och fråga mig om inloggning
+när du behöver den. Datorn är en Windows-dator.
+
+Bakgrund, så du förstår varför: butikens befintliga app "Factory" ligger i en
+annan organisation som mitt konto inte ser (mätt av dig tidigare i dag).
+Därför en ny, egen app. Rör INTE "Factory" och inga andra appar.
+
+------------------------------------------------------------------------------
+FAKTA
+------------------------------------------------------------------------------
+
+| Vad                          | Värde                                      |
+|------------------------------|--------------------------------------------|
+| Butik                        | Carashell — yitrbk-m3.myshopify.com        |
+| Organisationen jag kommer åt | Carashell (id 235001191) — den var tom     |
+| Appens namn                  | CaraShell Tacksida                         |
+| Rättigheter (scopes)         | INGA — lämna tomt                          |
+
+------------------------------------------------------------------------------
+STEG 1 — SKAPA APPEN I MIN EGEN ORGANISATION
+------------------------------------------------------------------------------
+
+1. Öppna https://admin.shopify.com/store/yitrbk-m3/settings/apps och klicka
+   "Utveckla appar" / "Develop apps". Det öppnar Dev Dashboard för
+   organisationen Carashell (235001191). Kontrollera att det står Carashell
+   uppe till vänster. Står det något annat: STANNA och säg till.
+2. Klicka "Create app" / "Skapa app". Namn: CaraShell Tacksida.
+   Väljer den mellan mallar/typer: ta den enklaste ("Start from scratch" /
+   "Build for a single store" om det finns). Ingen URL behövs; kräver
+   formuläret en, skriv https://carashell.se.
+3. När appen finns: gå till Settings och läs av Client ID. Skriv upp hela.
+4. Lägg INTE till några rättigheter (Access scopes ska vara tomt). Ändra inget
+   annat.
+
+------------------------------------------------------------------------------
+STEG 2 — INSTALLERA APPEN I BUTIKEN
+------------------------------------------------------------------------------
+
+1. I appen: leta efter "Install app" / "Installera" / "Test on development
+   store" / "Distribution". Välj butiken Carashell (yitrbk-m3) och installera.
+2. Blir det en godkännandesida i butikens admin: godkänn. Den ska inte be om
+   några rättigheter alls. Ber den om rättigheter: STANNA och säg vilka.
+3. Kontrollera: https://admin.shopify.com/store/yitrbk-m3/settings/apps ska
+   nu lista "CaraShell Tacksida" bland installerade appar.
+
+------------------------------------------------------------------------------
+STEG 3 — GENERERA TOKEN
+------------------------------------------------------------------------------
+
+1. I appen: Settings → "App Automation Token" → Generate. Kopiera hela token
+   (börjar på "atkn_", ungefär 69 tecken).
+
+------------------------------------------------------------------------------
+STEG 4 — GE MIG VÄRDENA
+------------------------------------------------------------------------------
+
+Du får inte skriva in hemligheter i fält, så skriv dem till mig i chatten,
+exakt så här, så klistrar jag in dem själv:
+
+  Lägg in två variabler i miljön på claude.ai/code → Environments, den miljö
+  som har SHOPIFY_CLIENT_ID_yitrbk_m3:
+    TACKSIDA_CLIENT_ID_CARASHELL = <client id>
+    SHOPIFY_APP_AUTOMATION_TOKEN_CARASHELL = <token>   (nytt namn, per butik)
+
+------------------------------------------------------------------------------
+RAPPORTERA TILL SLUT, KORT
+------------------------------------------------------------------------------
+
+- Organisationens namn där appen skapades (ska vara Carashell 235001191).
+- Appens namn och Client ID (första 8 tecken räcker i rapporten).
+- Att appen syns som installerad i butikens applista.
+- Allt du INTE gjorde och varför.

@@ -1,0 +1,14 @@
+{
+  "rubrik": "Till dig som just beställt",
+  "underrubrik": "Två saker som passar samma husvagn eller husbil. Läggs till som en egen beställning till samma adress, med fri frakt och 14 dagars ångerrätt som vanligt.",
+  "spar": "Du sparar {belopp}",
+  "knapp": "Lägg till för {pris}",
+  "villkor": "Priset gäller dig som just har beställt hos oss och läggs på av sig själv i kassan. Betalningen sker i kassan, precis som nyss.",
+  "produkt": {
+    "fonstertermomatta-2-pack": "Två termomattor med sugproppar håller kylan ute på natten och solen ute på dagen.",
+    "adventskalender-retrobussar": "24 luckor döljer en liten retrobuss i egen färg bakom nästan varje dag i december."
+  },
+  "pris_for_dig": "{pris} för dig som just beställt",
+  "ord_pris": "Ordinarie pris {pris}",
+  "laddar": "Hämtar …"
+}

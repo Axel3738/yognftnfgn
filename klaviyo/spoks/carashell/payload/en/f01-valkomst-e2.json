@@ -21,7 +21,7 @@
     },
     {
       "type": "image",
-      "fileId": "{{spoks:media:takskyddet}}",
+      "fileId": "6830b5d9-7f36-4ff3-a0c4-f3aa4a05b62e",
       "altText": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft",
       "urlRedirect": "https://carashell.com/products/takskyddet"
     },
@@ -90,7 +90,5 @@
       ]
     }
   ],
-  "varningar": [
-    "Bilden för takskyddet saknar fileId i Spoks (produkter.json → bild)."
-  ]
+  "varningar": []
 }

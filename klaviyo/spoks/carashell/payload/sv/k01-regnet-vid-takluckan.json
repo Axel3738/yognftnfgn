@@ -24,7 +24,7 @@
       "selectionMode": "manual",
       "products": [
         {
-          "id": "{{spoks:id:takskyddet}}",
+          "id": "40a22a57-d0df-41b6-9202-2b22cc2e0d29",
           "button": "Se produkten"
         }
       ],
@@ -74,7 +74,7 @@
       "selectionMode": "manual",
       "products": [
         {
-          "id": "{{spoks:id:takskyddet}}",
+          "id": "40a22a57-d0df-41b6-9202-2b22cc2e0d29",
           "button": "Välj din storlek"
         }
       ],
@@ -149,8 +149,5 @@
       "style": "button"
     }
   ],
-  "varningar": [
-    "Produkten takskyddet finns inte i Spoks.",
-    "Produkten takskyddet finns inte i Spoks."
-  ]
+  "varningar": []
 }

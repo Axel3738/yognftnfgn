@@ -1,0 +1,28 @@
+{
+  "butik": "carashell",
+  "uppdaterad": "2026-09-26T05:17:21.349Z",
+  "koder": {
+    "fonstertermomatta": {
+      "id": "gid://shopify/DiscountCodeNode/2284711182668",
+      "kod": "TACKMATTA",
+      "procent": 34.88,
+      "status": "ACTIVE",
+      "en_gang_per_kund": true,
+      "produkter": [
+        "fonstertermomatta-2-pack"
+      ],
+      "anvand": 0
+    },
+    "husbilskalendern": {
+      "id": "gid://shopify/DiscountCodeNode/2284711215436",
+      "kod": "TACKKALENDER",
+      "procent": 36.94,
+      "status": "ACTIVE",
+      "en_gang_per_kund": true,
+      "produkter": [
+        "adventskalender-retrobussar"
+      ],
+      "anvand": 0
+    }
+  }
+}
