@@ -1,0 +1,95 @@
+{
+  "id": "f05-vinback-e2",
+  "emailTitle": "Tre prylar för säsongen",
+  "emailDescription": "Tre prylar för säsongen, sen hör du inget mer om det här från oss.",
+  "amnesrader": [
+    "Tre prylar för säsongen",
+    "Fortfarande något du funderar på",
+    "Sista mejlet från oss den här gången"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Tre prylar för säsongen"
+    },
+    {
+      "type": "regular",
+      "text": "Kort och gott, det här säljer bäst just nu för den tid på året det är.",
+      "alignment": "left"
+    },
+    {
+      "type": "h2",
+      "text": "Säsongens mest köpta",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "b1d4717b-d737-46ad-a9c2-be85081a15ac",
+          "button": "Se produkten"
+        },
+        {
+          "id": "25febc20-e723-4f07-9e64-e0fd12754294",
+          "button": "Se produkten"
+        },
+        {
+          "id": "2e0ade4f-dd9f-41d3-89f0-af530993d0ad",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

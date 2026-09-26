@@ -1,0 +1,75 @@
+{
+  "id": "f10-tips-termoskydd-e1",
+  "emailTitle": "Kläm fast flikarna så här",
+  "emailDescription": "Fyra saker som gör skillnad morgonen efter.",
+  "amnesrader": [
+    "Kläm fast flikarna så här",
+    "Så slipper du imma på morgonen",
+    "Ingen ser in på rastplatsen"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Så får du ut mest av termoskyddet"
+    },
+    {
+      "type": "regular",
+      "text": "Rätt montering gör skillnaden mellan en immig ruta och en torr morgon.",
+      "alignment": "left"
+    },
+    {
+      "type": "list",
+      "text": "Kläm flikarna ordentligt i dörrkarmen, det håller skyddet på plats även i blåst."
+    },
+    {
+      "type": "list",
+      "text": "Sätt på skyddet innan kvällen så imman inte får fäste på insidan av rutan över natten."
+    },
+    {
+      "type": "list",
+      "text": "Skyddet mörklägger hela framvagnen, perfekt om du vill sova längre på en ljus morgon."
+    },
+    {
+      "type": "list",
+      "text": "Låt skyddet torka innan du viker ihop det för förvaring."
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

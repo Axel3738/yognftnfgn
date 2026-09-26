@@ -1,0 +1,69 @@
+{
+  "id": "f01-valkomst-e3",
+  "emailTitle": "Så funkar det när du handlar hos oss",
+  "emailDescription": "Leverans, spårning och ångerrätt, kort och tydligt.",
+  "amnesrader": [
+    "Så funkar det när du handlar hos oss",
+    "Paket med nummer som börjar på BB",
+    "14 dagars ångerrätt, ingen krånglig blankett"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Så funkar det när du handlar hos oss"
+    },
+    {
+      "type": "regular",
+      "text": "Inga överraskningar. Så ser det ut från beställning till dörren, och vad du kan göra om något strular.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "text": "Undrar du något innan du handlar, mejla kundsupport@baverbutiken.se och jag svarar själv.\nAxel, grundare"
+    },
+    {
+      "type": "link",
+      "text": "Se allt vi säljer",
+      "url": "https://baverbutiken.se/collections/alla-produkter",
+      "style": "button"
+    }
+  ],
+  "varningar": []
+}

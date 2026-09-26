@@ -1,0 +1,163 @@
+{
+  "id": "k08-morkret-kommer",
+  "emailTitle": "210 lysdioder, tre huvuden som vrids var för sig",
+  "emailDescription": "1200 mAh-batteriet laddas själv i solljus.",
+  "amnesrader": [
+    "210 lysdioder, tre huvuden som vrids var för sig",
+    "Söndag blir det mörkt en timme tidigare",
+    "Ljuset som tänds innan du hittar nyckelhålet"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Tre huvuden vrids var för sig, mot nyckelhålet",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Klockan ställs om på söndag, och det blir mörkt en timme tidigare. En fast monterad lampa hade krävt en elektriker, en sladdlampa fryser fast i snön till våren.",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "66ab4154-18a8-4fe9-aa81-2cd3846389da",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Se lampan",
+      "url": "https://baverbutiken.se/products/solcellslampa-med-rorelsesensor-tre-huvuden-210-led",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "Solcellslampan monteras på väggen utan en enda kabel. Solcellspanelen laddar det inbyggda 1200 mAh-batteriet under dagen, och rörelsesensorn tänder alla tre huvudena, 210 lysdioder, när du kommer gående.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Varje huvud vrids för sig, så du riktar ljuset mot uppfarten, trappan eller nyckelhålet, inte bara rakt fram.",
+      "alignment": "left"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "66ab4154-18a8-4fe9-aa81-2cd3846389da",
+          "button": "Se lampan"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "regular",
+      "text": "Ingen elektriker, ingen sladd. Bara solljus och en rörelsesensor.",
+      "alignment": "left"
+    },
+    {
+      "type": "h2",
+      "text": "Mer ljus",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "a806a583-cf56-43cf-b3f3-64f8d1205606",
+          "button": "Se produkten"
+        },
+        {
+          "id": "c14d6b41-f0f6-4da1-9171-5f47bac617c0",
+          "button": "Se produkten"
+        },
+        {
+          "id": "6c54cf0f-4f5d-4237-b8f0-31262b0fad90",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

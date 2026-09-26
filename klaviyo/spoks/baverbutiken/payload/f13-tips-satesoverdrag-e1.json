@@ -1,0 +1,75 @@
+{
+  "id": "f13-tips-satesoverdrag-e1",
+  "emailTitle": "60 sekunder till ett torrt säte",
+  "emailDescription": "Fyra saker som gör klippningen skönare.",
+  "amnesrader": [
+    "60 sekunder till ett torrt säte",
+    "Så håller remmarna sätet på plats",
+    "Fyra färger att välja mellan"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Så får du ut mest av sätesöverdraget"
+    },
+    {
+      "type": "regular",
+      "text": "Några sekunder extra vid monteringen gör hela skillnaden på sätet.",
+      "alignment": "left"
+    },
+    {
+      "type": "list",
+      "text": "Trä överdraget direkt över din befintliga dyna, det tar under 60 sekunder utan verktyg."
+    },
+    {
+      "type": "list",
+      "text": "Spänn de justerbara remmarna ordentligt så det sitter stadigt även på guppig mark."
+    },
+    {
+      "type": "list",
+      "text": "Den vattenavvisande ytan håller dig torr även efter morgondagg eller regn."
+    },
+    {
+      "type": "list",
+      "text": "Finns i fyra färger, grå, svart, grön och ljusgrå, om du vill matcha maskinen."
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

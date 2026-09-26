@@ -1,0 +1,28 @@
+{
+  "id": "f06-sunset-e2",
+  "emailTitle": "Det här är sista mejlet",
+  "emailDescription": "Efter det här hör du inte från oss igen, om vi inte hör från dig.",
+  "amnesrader": [
+    "Det här är sista mejlet",
+    "Vi hör inget, så vi slutar skicka",
+    "Ett sista klick, om du vill stanna kvar"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Det här är sista mejlet"
+    },
+    {
+      "type": "regular",
+      "text": "Det här är sista mejlet om vi inte hör något. Ett klick håller dig kvar, annars tar vi bort dig från listan.",
+      "alignment": "left"
+    },
+    {
+      "type": "link",
+      "text": "Ja, ha kvar mig",
+      "url": "https://baverbutiken.se/collections/alla-produkter",
+      "style": "button"
+    }
+  ],
+  "varningar": []
+}

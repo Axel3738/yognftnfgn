@@ -1,0 +1,159 @@
+{
+  "id": "k02-baten-ska-upp",
+  "emailTitle": "Motorn står ute i sex månader",
+  "emailDescription": "En blank motor är det första en tjuv ser från vägen.",
+  "amnesrader": [
+    "Motorn står ute i sex månader",
+    "Klart innan båten är surrad",
+    "Fyra saker innan båten ställs undan"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Motorn står ute i sex månader",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hej {{ contact.first_name | default: 'där' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Regn, snö och frost jobbar på utombordaren i sex månader efter att båten kommit upp på land.",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "6f01ed7d-90e1-45a9-bb43-f0fbbc8c2285",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Skydda motorn",
+      "url": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+      "style": "button"
+    },
+    {
+      "type": "h2",
+      "text": "Innan båten ställs undan"
+    },
+    {
+      "type": "list",
+      "text": "Utombordaren: skydd från kåpa till rigg, 420D-tyg mot regn, snö och UV."
+    },
+    {
+      "type": "list",
+      "text": "En annan motor ombord: samma typ av skydd, för motorer från 6 till 250 hk."
+    },
+    {
+      "type": "list",
+      "text": "Sitsarna: dras enkelt på och skyddar mot sol, regn och fågelsmuts."
+    },
+    {
+      "type": "list",
+      "text": "Spöna: fyra hållare så de inte trasslar in i varandra i garaget."
+    },
+    {
+      "type": "h2",
+      "text": "Mer som brukar följa med",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "d01d20c5-a2cf-40fa-894d-3149ff871b81",
+          "button": "Se produkten"
+        },
+        {
+          "id": "7bf6c493-5400-43da-b1d3-59bddc991db1",
+          "button": "Se produkten"
+        },
+        {
+          "id": "d0832750-b091-43b4-9d92-e2889d5b5a0a",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "h2",
+      "text": "Aldrig mer trassliga fiskespön"
+    },
+    {
+      "type": "regular",
+      "text": "Fyra kraftiga hållare håller varje spö på sin egen plats, i båten eller på väggen i garaget. Ingen mer hopplock av trassliga linor.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

@@ -1,0 +1,133 @@
+{
+  "id": "k07-damasker-hostlov",
+  "emailTitle": "44 cm skydd, tre grepp, klart",
+  "emailDescription": "Kroka fast, dra remmen, slut kardborren.",
+  "amnesrader": [
+    "44 cm skydd, tre grepp, klart",
+    "Kroken i snörningen håller den uppe hela dagen",
+    "Redo för älgpasset i gryningen"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Kardborren runt benet stänger ute gruset",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Snö nerifrån, blöt sly och grus som letar sig ner i kängan. Det är sällan vädret som stoppar turen, det är det som tar sig in nedtill.",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "25febc20-e723-4f07-9e64-e0fd12754294",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Se damaskerna",
+      "url": "https://baverbutiken.se/products/damasker-vandring-haller-sno-vata-grus-ute",
+      "style": "button"
+    },
+    {
+      "type": "h2",
+      "text": "Så sätter du på dem"
+    },
+    {
+      "type": "list",
+      "text": "Kroka fast i snörningen"
+    },
+    {
+      "type": "list",
+      "text": "Dra remmen under foten"
+    },
+    {
+      "type": "list",
+      "text": "Slut kardborren runt benet"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "25febc20-e723-4f07-9e64-e0fd12754294",
+          "button": "Se damaskerna"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "regular",
+      "text": "44 centimeter skydd i 100 % polyester, i en storlek som justeras efter benet.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

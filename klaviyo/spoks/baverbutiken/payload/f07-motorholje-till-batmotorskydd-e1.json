@@ -1,0 +1,87 @@
+{
+  "id": "f07-motorholje-till-batmotorskydd-e1",
+  "emailTitle": "Motorhöljet skyddar i vattnet. Och på land?",
+  "emailDescription": "Motorhöljet du redan har täcker en sak. Det här täcker en annan.",
+  "amnesrader": [
+    "Motorhöljet skyddar i vattnet. Och på land?",
+    "Båten tas snart upp för säsongen",
+    "Ett skydd till, för när motorn står still"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Motorhöljet skyddar i vattnet. Vad skyddar på land?"
+    },
+    {
+      "type": "regular",
+      "text": "Motorhöljet du köpte sitter på motorn medan båten ligger i. När båten tas upp för säsongen står motorn i stället still och oskyddad mot regn, snö och UV, ett annat läge än det höljet är gjort för.",
+      "alignment": "left"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "6f01ed7d-90e1-45a9-bb43-f0fbbc8c2285",
+          "button": "Se båtmotorskyddet"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "regular",
+      "text": "Båtmotorskyddet dras över hela motorn, från kåpan ner över riggen, och spänns fast utan verktyg. 420D Oxford-tyg håller regn, snö och UV ute under hela tiden båten står uppställd, och en övertäckt motor syns inte lika lätt från vägen.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

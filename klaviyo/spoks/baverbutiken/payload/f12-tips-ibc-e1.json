@@ -1,0 +1,75 @@
+{
+  "id": "f12-tips-ibc-e1",
+  "emailTitle": "Stäng dragkedjan hela vägen",
+  "emailDescription": "Fyra saker som håller vattnet klart hela säsongen.",
+  "amnesrader": [
+    "Stäng dragkedjan hela vägen",
+    "Kommer du åt locket utan att ta av allt?",
+    "Passar din tank måtten?"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Så får du ut mest av IBC-tanköverdraget"
+    },
+    {
+      "type": "regular",
+      "text": "Rätt användning håller vattnet klart och plasten hel hela säsongen.",
+      "alignment": "left"
+    },
+    {
+      "type": "list",
+      "text": "Dra överdraget helt över tanken och stäng dragkedjan ordentligt, annars kommer ljus in och algerna kan starta igen."
+    },
+    {
+      "type": "list",
+      "text": "Öppningen upptill gör att du kommer åt locket utan att ta av hela överdraget."
+    },
+    {
+      "type": "list",
+      "text": "Kontrollera att måtten stämmer, 120 × 100 × 116 cm är gjort för en standard 1000-liters IBC."
+    },
+    {
+      "type": "list",
+      "text": "Sätt på överdraget medan tanken är ren, så inga algrester ligger kvar under tyget."
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

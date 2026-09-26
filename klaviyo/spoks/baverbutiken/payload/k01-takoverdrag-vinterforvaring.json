@@ -1,0 +1,157 @@
+{
+  "id": "k01-takoverdrag-vinterforvaring",
+  "emailTitle": "Taket du aldrig går upp och kollar",
+  "emailDescription": "Regnet och löven hamnar där uppe, hela vintern.",
+  "amnesrader": [
+    "Taket du aldrig går upp och kollar",
+    "Bara taket täcks, inte hela vagnen",
+    "Den sätts på av en person, inte två"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Taket är ytan du aldrig kollar",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hej {{ contact.first_name | default: 'där' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Regnet, löven och fågelskiten hamnar på taket. Du ser det inte förrän det läcker.",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "f3c26650-bf9b-49b4-a411-b11fb25392c8",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Se taköverdraget",
+      "url": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "Vatten som stannar kvar kring takluckor och skarvar mjuknar tätmassan under vintern. Då krävs en reparation, inte en tvätt.",
+      "alignment": "left"
+    },
+    {
+      "type": "h2",
+      "text": "Vad täcks, och vad täcks inte"
+    },
+    {
+      "type": "list",
+      "text": "Bara taket täcks, inte väggarna eller fönstren."
+    },
+    {
+      "type": "list",
+      "text": "Remmar på alla fyra sidor i stället för ett helöverdrag som sluter runt hela vagnen."
+    },
+    {
+      "type": "list",
+      "text": "Vattnet rinner av den belagda väven i stället för att bli stående vid takluckorna."
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "f3c26650-bf9b-49b4-a411-b11fb25392c8",
+          "button": "Skydda taket i vinter"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "regular",
+      "text": "Sex och en halv gånger tre meter, gjort för en normalstor vagn.",
+      "alignment": "left"
+    },
+    {
+      "type": "quote",
+      "text": "\"Bra skydd för taket och lätt att använda.\"\nKarin, verifierad kund"
+    },
+    {
+      "type": "quote",
+      "text": "\"Jag är nöjd med överdraget. Rekommenderas.\"\nErik, verifierad kund"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "link",
+      "text": "Skydda taket innan vintern",
+      "url": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+      "style": "button"
+    }
+  ],
+  "varningar": []
+}

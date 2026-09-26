@@ -1,0 +1,44 @@
+{
+  "id": "f14-recension-trustpilot-e1",
+  "emailTitle": "Vad tyckte du om det som kom i paketet?",
+  "emailDescription": "Paketet har hunnit fram. Välj en stjärna och säg vad du tycker.",
+  "amnesrader": [
+    "Vad tyckte du om det som kom i paketet?",
+    "Hur blev det?",
+    "Ett klick räcker för ditt betyg"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Vad tyckte du om det som kom?",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hej {{ contact.first_name | default: 'där' }}! Paketet från oss har hunnit fram vid det här laget. Klicka på en stjärna och lämna ditt betyg på Trustpilot.",
+      "alignment": "center"
+    },
+    {
+      "type": "h2",
+      "text": "Ge ditt betyg",
+      "alignment": "center"
+    },
+    {
+      "type": "h1",
+      "text": "[★](https://se.trustpilot.com/evaluate/baverbutiken.se?stars=1) [★](https://se.trustpilot.com/evaluate/baverbutiken.se?stars=2) [★](https://se.trustpilot.com/evaluate/baverbutiken.se?stars=3) [★](https://se.trustpilot.com/evaluate/baverbutiken.se?stars=4) [★](https://se.trustpilot.com/evaluate/baverbutiken.se?stars=5)",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Alla omdömen, positiva som negativa, hjälper oss lika mycket.",
+      "alignment": "center"
+    },
+    {
+      "type": "quote",
+      "text": "Blev något inte som det skulle? Svara på det här mejlet, så hjälper vi dig.\nAxel, grundare"
+    }
+  ],
+  "varningar": [
+    "Dynamiskt block skickade_rader finns inte i Spoks, blocket utgår."
+  ]
+}
