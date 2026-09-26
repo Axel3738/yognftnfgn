@@ -5,10 +5,16 @@ kommande `/cs`-körningar.
 
 ## Väntande idéer
 
-- **Torktumlarvinkeln ensam.** Batch #2 bakar in torktumlaren i PD_2 (kamin
-  + torktumlare). Går PD_2 bra är "ludd i torktumlarröret" en egen avatar
-  (villaägare utan kamin). *Källa: sidraden "Når bakom kaminen eller
-  torktumlaren".*
+- ~~**Torktumlarvinkeln ensam.**~~ **Briefad 2026-09-26 som `Sotarset_PD_9_H1`**
+  (batch #3, typ N, avatar `villaagare-med-torktumlare-utan-kamin`, begär
+  slippa-krangel) — utan "ludd", brand eller torktid, som inte står på sidan.
+  Batch #2:s PD_2 bakar in torktumlaren med kaminen. *Källa: sidraden "Når
+  bakom kaminen eller torktumlaren" + "för trångt bakom … torktumlaren".*
+- **Infästningen ("dom lossar i infästningen").** 1 av 2 kommentarer på
+  PD_1_H2 (`invandningar.md`), obesvarad i alla live annonser. Kräver ett
+  faktum om skruvkopplingen som inte står på sidan (sidan säger bara "skruvas
+  ihop en och en") — briefas som OB-video först när Axel/Josh bekräftat hur
+  kopplingen håller, aldrig som påstående ur huvudet.
 - **Sotarens pris som konflikt.** "Rensa själv mellan sotarens besök" är
   sidans rad — men inga siffror om sotarbesök får hittas på. Kräver en
   verifierad källa (kommun/sotarförbund) innan den briefas.

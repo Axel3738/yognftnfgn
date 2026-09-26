@@ -78,8 +78,9 @@ Inget bevisat ännu. De sju utsvultna annonserna är inte förlorare.
 
 Prefix `Sotarset_`. Upptagna AD-ID i kontot 2026-09-21: PD 1, G 1, CS 1,
 SP 1 (alla med `_H1–H3`). Batch #2 börjar på PD_2, CS_2, G_2, UG_1.
-Efter lärdomarna 2026-09-26 är dessutom PD_1_H6/H7, PD_7_H1, PD_8_H1/H2
-namngivna (`lardomar.md`) — nästa lediga: PD_1_H8+, PD_9+, CS_3+, G_3+, UG_2+.
+Batch #3 (2026-09-26, i hubben): PD_1_H6/H7, PD_7_H1, PD_8_H1/H2 (vidarebyggen
+ur `lardomar.md`) + PD_9_H1 (ny vinkel, torktumlaren) — nästa lediga:
+PD_1_H8+, PD_10+, CS_3+, G_3+, UG_2+, OB_1+.
 
 ## Komponentkarta Sotarset_PD_1_H2 (BREAKTHROUGH 2026-09-26, ANALYSMETOD 6b)
 
