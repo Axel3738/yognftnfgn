@@ -217,13 +217,14 @@ brick by brick och **varje lyckat steg dokumenteras direkt**:
   vägrar om scopes saknas (en handskriven toml skriver över appens
   rättigheter vid deploy). Blocket läggs in i kassaredigeraren för hand —
   inget API gör det. Evolve-frågorna (utan brand) i `EVOLVE-FRAGOR.md`.
-  ✅ **Live utan app sedan 2026-09-26: samma två kort under paketet på
-  carashell.se/pages/spara** (`sparning/tillagg.mjs`, registret
-  `sparning/butiker.json` → `carashell.tillagg: true`, facit fortfarande
-  `factory/tacksida/`; priset hämtas i kundens valuta i webbläsaren, fyra
-  språk, `plats=sparningssida` i rapporten). Mechile/Cowork mätte samma dag
-  att Factory-appen `ca709dfb` inte finns i något av Axels konton — den
-  ligger i jobb-Gmailens Dev Dashboard-org (VA-CHECKLIST rad 101).
+  ⛔ **Korten under paketet på carashell.se/pages/spara låg live 2026-09-26
+  12:40–16:35 UTC och är AV** (Axel: "Jag tycker inte vi ska ha dem där. Jag
+  tycker vi ska ha dem på tacksidan"; `sparning/tillagg.mjs` finns kvar,
+  registret `sparning/butiker.json` → `carashell.tillagg: false`). Cowork
+  mätte samma dag att Factory-appen `ca709dfb` inte finns i något av Axels
+  konton — den ligger i jobb-Gmailens Dev Dashboard-org (VA-CHECKLIST rad
+  101). Vägen utan den: egen app i Axels org via
+  `factory/tacksida/cowork/2-egen-app.txt` + `TACKSIDA_CLIENT_ID`.
 - **Annonskontot för ALLA OPS-butiker (SE och NO) är "MagiBorsten DK"
   `915422744950975`** (Axels beslut 2026-09-07). Ett gemensamt konto —
   kampanjnamn prefixas alltid med brandet så datan går att skära per
