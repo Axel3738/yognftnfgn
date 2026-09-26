@@ -1,9 +1,11 @@
 # Prompt: ladda upp CaraShells mejlsystem i Spoks (klistra in i en NY session)
 
 Skriven 2026-09-26. Förutsättning: CaraShells workspace syns i `whoami` för
-Spoks-MCP:n (Axels klick: bjud in MCP-användaren i CaraShells Spoks-workspace,
-se `klaviyo/spoks/README.md` → CaraShell). Allt innehåll, planen och
-kontrollerna ligger redan i repot. Allt under strecket är prompten.
+Spoks-MCP:n. Den fanns inte 2026-09-26 — Axel hade inte skapat den (hans klick:
+installera Spoks på CaraShells Shopify från admin → Appar → Spoks, på en dator,
+med adressen `kundsupport@baverbutiken.se` i onboardingen, se
+`klaviyo/spoks/README.md` → CaraShell). Allt innehåll, planen och kontrollerna
+ligger redan i repot. Allt under strecket är prompten.
 
 ---
 
@@ -45,9 +47,13 @@ och `klaviyo/spoks/konvertera.mjs` (huvudkommentaren).
    `get_settings`: avsändare `CaraShell <hello@carashell.com>`, reply-to samma, sidfoten med
    bolagsnamn och adress, avregistreringstexten på tre språk. Säger Spoks att avsändardomänen
    (carashell.com) behöver DNS: skriv exakt vilka CNAME/TXT-poster som ska in, på vilka
-   underdomäner, i README och i rapporten. ⛔ Byt aldrig namnservrar. Ändra aldrig MX. SPF
+   underdomäner, i README och i rapporten. Posterna genereras i appen under
+   Settings → Domain Settings → "Generate DNS records" (Spoks hjälpartikel *Set up your
+   domain*, läst 2026-09-26); Spoks skickar via SendGrid, så SPF:en ska få
+   `include:sendgrid.net` före `-all`. ⛔ Byt aldrig namnservrar. Ändra aldrig MX. SPF
    ändras bara genom att lägga till, aldrig ersätta (i dag `v=spf1 include:spf.loopia.se -all`
-   på båda domänerna). Mät med dns.google efter varje ändring. DMARC saknas på carashell.se och
+   på båda domänerna ⇒ `v=spf1 include:spf.loopia.se include:sendgrid.net -all`).
+   Mät med dns.google efter varje ändring. DMARC saknas på carashell.se och
    carashell.com (mätt 2026-09-26): `_dmarc` TXT `v=DMARC1; p=none; rua=mailto:hello@carashell.com`
    är Axels klick hos Loopia, skriv det i rapporten.
 

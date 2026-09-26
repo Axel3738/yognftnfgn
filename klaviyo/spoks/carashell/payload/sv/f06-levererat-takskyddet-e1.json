@@ -1,0 +1,80 @@
+{
+  "id": "f06-levererat-takskyddet-e1",
+  "sprak": "sv",
+  "emailTitle": "Så sätter du på taköverdraget",
+  "emailDescription": "Fyra steg, ingen verktygslåda behövs.",
+  "amnesrader": [
+    "Så sätter du på taköverdraget",
+    "Fyra steg, en person",
+    "Kanten ska hänga ner, så här"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Så sätter du på taköverdraget"
+    },
+    {
+      "type": "regular",
+      "text": "Paketet har kommit fram. Så här sätter du på det.",
+      "alignment": "left"
+    },
+    {
+      "type": "list",
+      "text": "Lägg överdraget över taket, med kanten hängande 30 till 40 centimeter ner över sidorna."
+    },
+    {
+      "type": "list",
+      "text": "Haka plastkrokarna under karossens kant, längs alla fyra sidor."
+    },
+    {
+      "type": "list",
+      "text": "Dra åt de justerbara banden så överdraget sitter stramt."
+    },
+    {
+      "type": "list",
+      "text": "De två extra förstärkta banden på 10,5 meter följer med, för extra fäste."
+    },
+    {
+      "type": "quote",
+      "text": "Blev något inte som det skulle, eller sitter det konstigt, svara bara på det här mejlet.\nAxel, grundare"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://carashell.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

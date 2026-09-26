@@ -1,0 +1,39 @@
+{
+  "id": "k12-efter-blasten",
+  "sprak": "en",
+  "emailTitle": "After strong wind, check these three things",
+  "emailDescription": "A cover that's fitted right stays put in wind.",
+  "amnesrader": [
+    "After strong wind, check these three things",
+    "The hooks, the straps, five minutes",
+    "Sitting right is what keeps it on"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "After strong wind"
+    },
+    {
+      "type": "regular",
+      "text": "If it's been blowing hard where the rig is parked, it's worth a quick look before you trust it again.",
+      "alignment": "left"
+    },
+    {
+      "type": "list",
+      "text": "Check that the hooks are still latched under the edge of the body."
+    },
+    {
+      "type": "list",
+      "text": "Check that the straps are still snug, not loose."
+    },
+    {
+      "type": "list",
+      "text": "Check the two extra straps too, front and back."
+    },
+    {
+      "type": "quote",
+      "text": "If something came loose or tore, reply to this email and tell me what happened.\nAxel, founder"
+    }
+  ],
+  "varningar": []
+}

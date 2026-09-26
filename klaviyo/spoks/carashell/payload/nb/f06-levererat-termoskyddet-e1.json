@@ -1,0 +1,76 @@
+{
+  "id": "f06-levererat-termoskyddet-e1",
+  "sprak": "nb",
+  "emailTitle": "Sånn monterer du frontrutetrekket",
+  "emailDescription": "Strammes utenpå ruta, klaffene i dørkarmen, ferdig.",
+  "amnesrader": [
+    "Sånn monterer du frontrutetrekket",
+    "Tre steg, dørene forblir lukket",
+    "Klaffene i dørkarmen, det er alt"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Sånn monterer du frontrutetrekket"
+    },
+    {
+      "type": "regular",
+      "text": "Tre steg, og dørene trenger aldri å åpnes.",
+      "alignment": "left"
+    },
+    {
+      "type": "list",
+      "text": "Stram trekket utvendig over frontruta og begge sidevinduene."
+    },
+    {
+      "type": "list",
+      "text": "Klem flikene fast i dørkarmen. Dørene forblir lukket."
+    },
+    {
+      "type": "list",
+      "text": "Det sitter fast i vind."
+    },
+    {
+      "type": "quote",
+      "text": "Ble noe ikke som det skulle? Svar på denne e-posten, så hjelper jeg deg.\nAxel, grunnlegger"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Angrerett**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagers angrerett",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spor pakken**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Følg den hele veien](https://carashell.se/nb/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

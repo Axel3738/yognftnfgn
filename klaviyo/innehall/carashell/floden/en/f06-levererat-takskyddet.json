@@ -46,44 +46,75 @@
         },
         "amnesrader": [
           {
-            "text": "__COPY__: ämnesrad A, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "How to put the roof cover on",
+            "begar": "practical clarity on installation"
           },
           {
-            "text": "__COPY__: ämnesrad B, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Four steps, one person",
+            "begar": "reassurance it's quick and doable alone"
           },
           {
-            "text": "__COPY__: ämnesrad C, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Get it on right, the first time",
+            "begar": "avoid mistakes on the first attempt"
           }
         ],
-        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "forhandstext": "Four steps, and one person is enough to do it.",
         "block": [
           {
             "typ": "text",
-            "rubrik": "__COPY__: rubrik: så sätter du på taköverdraget",
-            "text": "__COPY__: en mening"
+            "rubrik": "How to put the roof cover on",
+            "text": "It only takes one person, and these four steps in order."
           },
           {
             "typ": "punkter",
             "rubrik": null,
             "punkter": [
-              "__COPY__: lägg det över taket, kanten ner över sidorna",
-              "__COPY__: haka krokarna under kanten, alla fyra sidor",
-              "__COPY__: dra åt banden",
-              "__COPY__: de två extra banden följer med"
+              "Lay it over the roof, with the edge hanging down over the sides.",
+              "Hook the straps under the edge of the body, on all four sides.",
+              "Pull the straps tight.",
+              "Use the two extra reinforced straps for extra hold."
             ]
           },
           {
             "typ": "grundare",
-            "text": "__COPY__: blev något inte som det skulle, svara på mejlet"
+            "text": "If something doesn't add up, reply to this email and I'll help sort it out."
           },
           {
             "typ": "fakta"
           }
         ],
-        "tretest": [],
+        "tretest": [
+          {
+            "rad": "How to put the roof cover on",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Four steps, one person",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Get it on right, the first time",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Four steps, and one person is enough to do it.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "How to put the roof cover on",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
         "version": 1
       }
     }

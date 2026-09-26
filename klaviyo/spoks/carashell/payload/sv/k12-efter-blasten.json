@@ -1,0 +1,39 @@
+{
+  "id": "k12-efter-blasten",
+  "sprak": "sv",
+  "emailTitle": "Kolla skyddet efter blåsten",
+  "emailDescription": "Krokarna, banden, och de två extra.",
+  "amnesrader": [
+    "Kolla skyddet efter blåsten",
+    "Tre saker värda två minuter",
+    "Har allt suttit kvar?"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Efter blåsten"
+    },
+    {
+      "type": "regular",
+      "text": "Har det blåst mycket där du står den senaste tiden, är det värt två minuter att gå ut och kolla skyddet.",
+      "alignment": "left"
+    },
+    {
+      "type": "list",
+      "text": "Krokarna sitter kvar under kanten"
+    },
+    {
+      "type": "list",
+      "text": "Banden är åtdragna, inte slaka"
+    },
+    {
+      "type": "list",
+      "text": "Kolla även de två extra banden på 10,5 meter som följde med"
+    },
+    {
+      "type": "quote",
+      "text": "Gick något sönder ändå? Svara på det här mejlet, så tittar jag på det själv.\nAxel, grundare"
+    }
+  ],
+  "varningar": []
+}

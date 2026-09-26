@@ -158,6 +158,8 @@ test('CaraShell: copykontrollen stoppar tankstreck, leveranstid, belopp, butiksn
   assert.match(fel({ sprak: 'en', forhandstext: 'Before winter' })[0], /årstid/);
   assert.match(fel({ block: [{ typ: 'text', text: '__COPY__: x' }] })[0], /ofylld/);
   assert.match(fel({ block: [{ typ: 'punkter', punkter: ['elastiska band'] }] })[0], /vävda/);
+  assert.deepEqual(fel({ sprak: 'nb', block: [{ typ: 'punkter', punkter: ['Vevde bånd, ikke strikk som strekker seg ut'] }] }), [], 'negationen är faktabladets egen text');
+  assert.match(fel({ sprak: 'nb', block: [{ typ: 'punkter', punkter: ['Bånd av strikk'] }] })[0], /vävda/);
   assert.match(fel({ tretest: [{ rad: 'a', visualisera: true, falsifiera: false, ingen_annan: true }] })[0], /klarar inte/);
   assert.deepEqual(K.kontrollera({ ...bas, id: 'f14-recension-e1', tretest: [{ rad: 'a', visualisera: true, falsifiera: true, ingen_annan: false }] }), [], 'recensionsmejlet får ha ingen_annan false');
 });

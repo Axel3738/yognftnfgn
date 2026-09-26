@@ -1,0 +1,96 @@
+{
+  "id": "f01-valkomst-e2",
+  "sprak": "nb",
+  "emailTitle": "Et dekke som bare tar taket",
+  "emailDescription": "Kanten henger ned over sidene. Resten av vogna er din.",
+  "amnesrader": [
+    "Et dekke som bare tar taket",
+    "Ni lengder, én for taket ditt",
+    "Sett på alene, ingen hjelper trengs"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Bare taket. Ikke hele vogna.",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Trekket dekker takflaten, og kanten henger 30 til 40 centimeter ned over sidene, der regnvann ellers blir stående.",
+      "alignment": "center"
+    },
+    {
+      "type": "image",
+      "fileId": "{{spoks:media:takskyddet}}",
+      "altText": "Taktrekk campingvogn & bobil 5,5–13,5 m",
+      "urlRedirect": "https://carashell.se/nb/products/takskyddet?country=NO"
+    },
+    {
+      "type": "h2",
+      "text": "Taktrekk campingvogn & bobil 5,5–13,5 m",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Se taktrekket",
+      "url": "https://carashell.se/nb/products/takskyddet?country=NO",
+      "style": "button"
+    },
+    {
+      "type": "h2",
+      "text": "Tre ting å vite"
+    },
+    {
+      "type": "list",
+      "text": "Ni lengder, fra 5,5 til 13,5 meter. Mål taket fra front til bakkant, og velg nærmeste lengde oppover."
+    },
+    {
+      "type": "list",
+      "text": "Vevde stropper med plasthaker fester under kanten på alle fire sider. To ekstra stropper på 10,5 meter følger med."
+    },
+    {
+      "type": "list",
+      "text": "Én person setter det på alene."
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Angrerett**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagers angrerett",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spor pakken**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Følg den hele veien](https://carashell.se/nb/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": [
+    "Bilden för takskyddet saknar fileId i Spoks (produkter.json → bild)."
+  ]
+}

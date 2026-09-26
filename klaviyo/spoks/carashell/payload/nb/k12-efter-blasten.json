@@ -1,0 +1,39 @@
+{
+  "id": "k12-efter-blasten",
+  "sprak": "nb",
+  "emailTitle": "Etter kraftig vind, verdt en sjekk",
+  "emailDescription": "Tre ting er verdt å sjekke på utsiden.",
+  "amnesrader": [
+    "Etter kraftig vind, verdt en sjekk",
+    "Sitter krokene fortsatt under kanten?",
+    "Gikk noe i stykker hos deg?"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Etter kraftig vind"
+    },
+    {
+      "type": "regular",
+      "text": "Etter kraftig vind kan det være lurt å sjekke at taktrekket fortsatt sitter som det skal.",
+      "alignment": "left"
+    },
+    {
+      "type": "list",
+      "text": "Sjekk at plastkrokene fortsatt sitter under kanten."
+    },
+    {
+      "type": "list",
+      "text": "Sjekk at de vevde strekkbåndene er stramme."
+    },
+    {
+      "type": "list",
+      "text": "Sjekk at de to ekstra båndene sitter der de skal."
+    },
+    {
+      "type": "quote",
+      "text": "Har noe gått i stykker? Bare svar på denne e-posten, jeg leser den selv.\nAxel, grunnlegger"
+    }
+  ],
+  "varningar": []
+}

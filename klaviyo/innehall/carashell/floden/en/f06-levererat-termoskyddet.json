@@ -46,43 +46,74 @@
         },
         "amnesrader": [
           {
-            "text": "__COPY__: ämnesrad A, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "How to fit the windshield cover",
+            "begar": "practical installation clarity"
           },
           {
-            "text": "__COPY__: ämnesrad B, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "No need to open the doors",
+            "begar": "convenience and ease reassurance"
           },
           {
-            "text": "__COPY__: ämnesrad C, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "It stays on, even in wind",
+            "begar": "confidence it will hold"
           }
         ],
-        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "forhandstext": "Three steps, and the doors stay shut the whole time.",
         "block": [
           {
             "typ": "text",
-            "rubrik": "__COPY__: rubrik: så monterar du termoskyddet",
-            "text": "__COPY__: en mening"
+            "rubrik": "How to fit the windshield cover",
+            "text": "Three steps, and you never have to open the doors."
           },
           {
             "typ": "punkter",
             "rubrik": null,
             "punkter": [
-              "__COPY__: utvändigt över vindrutan och båda sidorutorna",
-              "__COPY__: flikarna i dörrkarmen, dörrarna stängda",
-              "__COPY__: håller i blåst"
+              "Strap it on over the outside of the windshield and both side windows.",
+              "Clip the side flaps into the door frame. The doors stay closed the whole time.",
+              "It stays on in wind."
             ]
           },
           {
             "typ": "grundare",
-            "text": "__COPY__: blev något inte som det skulle, svara på mejlet"
+            "text": "If something doesn't add up, reply to this email and I'll help sort it out."
           },
           {
             "typ": "fakta"
           }
         ],
-        "tretest": [],
+        "tretest": [
+          {
+            "rad": "How to fit the windshield cover",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "No need to open the doors",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "It stays on, even in wind",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Three steps, and the doors stay shut the whole time.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "How to fit the windshield cover",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
         "version": 1
       }
     }

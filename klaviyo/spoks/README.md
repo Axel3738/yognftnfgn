@@ -65,12 +65,34 @@ node --test klaviyo/test/konvertera.test.mjs         # 9 tester: Bäverbutiken o
 ```
 
 **Steg 0 stoppade:** `whoami` visar bara Bäverbutiken.se (`f716ae36-…`) och
-Matstrumpor.se (`71c2d4c8-…`) under MCP-användaren `kundsupport@baverbutiken.se`.
-Men appen **Spoks ÄR installerad på CaraShells Shopify** (yitrbk-m3, `appInstallations`
-läst med Admin API samma dag: Factory, Dianxiaomi, Judge.me, wetracked, Messaging,
-StonePNL, **Spoks**). Workspacen ligger alltså under ett annat Spoks-konto, eller
-så avbröts installationen innan workspacen skapades. Inget storeId gissas; inget
-laddades upp i fel workspace. Uppladdningen är en egen session: `PROMPT-carashell-upp.md`.
+Matstrumpor.se (`71c2d4c8-…`) under MCP-användaren `kundsupport@baverbutiken.se`
+(mätt två gånger 2026-09-26). Appen **Spoks står som installerad på CaraShells
+Shopify** (yitrbk-m3, `appInstallations` läst med Admin API samma dag: Factory,
+Dianxiaomi, Judge.me, wetracked, Messaging, StonePNL, **Spoks**) — men **Axel
+bekräftade samma förmiddag att han aldrig skapat något Spoks-konto för CaraShell**,
+så installationen avbröts innan onboardingen kördes och ingen workspace finns.
+Inget storeId gissas; inget laddades upp i fel workspace. Uppladdningen är en egen
+session: `PROMPT-carashell-upp.md`.
+
+**Så skapas workspacen (Spoks egna hjälpartiklar, lästa 2026-09-26:**
+*Introduction: how to get started*, *How do I run several Shopify stores from one
+Spoks login*, *Set up your domain*): Spoks installeras per butik från Shopify, och
+varje butik blir en egen workspace. **Under installationen föreslår Spoks en
+mejladress — den ska ÄNDRAS till `kundsupport@baverbutiken.se`**, samma adress som
+Bäverbutikens och Matstrumpors workspaces, för då hamnar CaraShell under samma
+inloggning och MCP-användaren ser den direkt (ingen team member-inbjudan behövs).
+Första inloggningen måste göras **på en dator, genom att öppna Spoks från Shopify
+admin** (Spoks ord: "Your first login must be done on a desktop computer, by opening
+Spoks from your Shopify admin"). Onboardingen frågar om migrering från Klaviyo —
+CaraShell har inget Klaviyo, hoppa över. Ser Axel "No Shop found" är han inloggad
+med en annan adress än den han skrev in vid installationen. Blev den installerad
+med fel adress: Spoks support gör `kundsupport@baverbutiken.se` till admin på
+butiken om man skickar butiks-URL + adress (artikelns egen lösning).
+Domänen kopplas i **Settings → Domain Settings → "Generate DNS records"** (Spoks
+skickar via SendGrid: SPF:en ska få `include:sendgrid.net` **före** `-all`, alltså
+`v=spf1 include:spf.loopia.se include:sendgrid.net -all` på carashell.com — läggs
+till, ersätts aldrig). De exakta CNAME/TXT-posterna finns först när workspacen
+finns; uppladdningssessionen läser dem med `get_settings` och skriver dem i rapporten.
 
 **Mätt 2026-09-26 i Shopify (90 dagar):** 384 ordrar — SE 173, NO 82, US 59, AU 29,
 DK 23, FI 7, GB 6, NZ 3, CA 2. 457 kunder, **76 med samtycke** (US 54, SE 12, NO 4,
@@ -102,6 +124,12 @@ villkorstext, förnamnsreserv, knappar, Trustpilot; landsgrupperna; Spoks-instä
 Planen i korthet står i `carashell/PLAN.md`: 8 flöden per språk (välkomst, övergiven
 kassa med de tre frågorna, webbhistorik, efter köp, vinna tillbaka, levererat ×2 med
 monteringen, recension) och 13 kampanjer per språk (tisdagar 29/9–29/12).
+**Copyn är ifylld och konverteraren grön 2026-09-26:** 84 payloadfiler (28 per språk:
+15 flödesmejl + 13 kampanjer), 0 copyfel, `node --test klaviyo/test/konvertera.test.mjs`
+9 av 9. De 8 varningarna "produkt-id/bilder saknas i Spoks" är väntade — id:n och
+`fileId` finns först när workspacen finns (uppladdningsprompten steg 2). Den enda
+regelrättningen under copyfasen: nb-faktabladets egen formulering "ikke strikk" släpps
+igenom (negationen), medan ett påstående om elastiska band fortfarande stoppar.
 
 **Spoks-fynd som styrde bygget:**
 - Katalogen har EN valuta och ETT språk (products_search: `price, currency`), så
@@ -118,7 +146,9 @@ monteringen, recension) och 13 kampanjer per språk (tisdagar 29/9–29/12).
   kassor. Det är lagen, inte ett fel.
 
 **Axels klick** står i rapporten 2026-09-26 och upprepas i `PROMPT-carashell-upp.md`:
-bjud in `kundsupport@baverbutiken.se` som team member i CaraShells Spoks-workspace
-(Spoks → workspacen CaraShell → Settings → Team members), eller avsluta installationen
-från Shopify admin → Appar → Spoks om workspacen aldrig skapades. Sedan kör en ny
-session uppladdningsprompten.
+öppna CaraShells Shopify admin på en dator → Appar → Spoks (eller installera om från
+https://apps.shopify.com/spoks med butiken yitrbk-m3 vald), skriv in
+`kundsupport@baverbutiken.se` som adress i onboardingen, hoppa över Klaviyo-frågan,
+och kontrollera i app.spoks.com att CaraShell syns bredvid Bäverbutiken.se och
+Matstrumpor.se. Sedan kör en ny session uppladdningsprompten — steg 0 där vägrar
+gå vidare tills `whoami` visar workspacen.

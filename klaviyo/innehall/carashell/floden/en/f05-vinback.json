@@ -42,28 +42,28 @@
         },
         "amnesrader": [
           {
-            "text": "__COPY__: ämnesrad A, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "It's been a while since your order",
+            "begar": "reconnect with a low-key check-in"
           },
           {
-            "text": "__COPY__: ämnesrad B, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Here's what else we make now",
+            "begar": "curiosity about other products"
           },
           {
-            "text": "__COPY__: ämnesrad C, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Still happy with the cover, {{fornamn}}?",
+            "begar": "invite feedback and engagement"
           }
         ],
-        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "forhandstext": "No news, just a look at what else is in the shop.",
         "block": [
           {
             "typ": "text",
-            "rubrik": "__COPY__: rubrik: ett halvår senare",
-            "text": "__COPY__: två stycken"
+            "rubrik": "It's been a while",
+            "text": "Your order went out a while back. By now the cover's had time to prove itself.\n\nSince then, we've kept building covers for the parts of a caravan or motorhome that take the most weather while it's parked."
           },
           {
             "typ": "produktrad",
-            "rubrik": "__COPY__: rubrik för produktraden",
+            "rubrik": "What's in the shop now",
             "handles": [
               "takskyddet",
               "termoskyddet",
@@ -74,7 +74,44 @@
             "typ": "fakta"
           }
         ],
-        "tretest": [],
+        "tretest": [
+          {
+            "rad": "It's been a while since your order",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Here's what else we make now",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Still happy with the cover, {{fornamn}}?",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "No news, just a look at what else is in the shop.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "It's been a while",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "What's in the shop now",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
         "version": 1
       }
     },
@@ -107,26 +144,51 @@
         "format": "rentext",
         "amnesrader": [
           {
-            "text": "__COPY__: ämnesrad A, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "What's missing for yours?",
+            "begar": "feel personally asked"
           },
           {
-            "text": "__COPY__: ämnesrad B, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "A quick question about your setup",
+            "begar": "curiosity, low commitment ask"
           },
           {
-            "text": "__COPY__: ämnesrad C, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "What would you want us to build next?",
+            "begar": "feel like their input shapes the product line"
           }
         ],
-        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "forhandstext": "One line back is all it takes, and I read every reply myself.",
         "block": [
           {
             "typ": "grundare",
-            "text": "__COPY__: frågan från Axel"
+            "text": "Hi {{fornamn}},\n\nI keep wondering what else a caravan or motorhome owner actually needs once the obvious things are covered.\n\nWhat's missing for yours? Reply and tell me, even one line. I read every one myself."
           }
         ],
-        "tretest": [],
+        "tretest": [
+          {
+            "rad": "What's missing for yours?",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "A quick question about your setup",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "What would you want us to build next?",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "One line back is all it takes, and I read every reply myself.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
         "version": 1
       }
     }

@@ -1,0 +1,48 @@
+{
+  "id": "f01-valkomst-e1",
+  "sprak": "en",
+  "emailTitle": "It's Axel, and I read every reply",
+  "emailDescription": "So say hello, or just keep reading to see what we make.",
+  "amnesrader": [
+    "It's Axel, and I read every reply",
+    "A roof cover. A windshield cover. That's it.",
+    "We only write about the roof or the windshield"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "It's Axel, and I wrote this one myself"
+    },
+    {
+      "type": "regular",
+      "text": "Hi {{ contact.first_name | default: 'there' }},",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "I'm Axel. I started this store to make one thing easier: protecting a caravan, motorhome or RV while it's parked.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "We sell two things. A roof cover that keeps rainwater off the roof hatches and seams. A windshield cover that keeps the cold and sun off the glass and blacks out the cab.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "You'll hear from us again, but only when there's something worth saying.",
+      "alignment": "left"
+    },
+    {
+      "type": "link",
+      "text": "See the covers",
+      "url": "https://carashell.com/collections/sortimentet",
+      "style": "button"
+    },
+    {
+      "type": "quote",
+      "text": "Reply if you're wondering about anything. I read these myself.\nAxel, founder"
+    }
+  ],
+  "varningar": []
+}

@@ -1,0 +1,28 @@
+{
+  "id": "f02-overgiven-kassa-e1",
+  "sprak": "en",
+  "emailTitle": "Still in your cart, nothing's changed",
+  "emailDescription": "No discount code, no countdown. Just a way back to where you left off.",
+  "amnesrader": [
+    "Still in your cart, nothing's changed",
+    "You left before checking out",
+    "No rush, it's just sitting there"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Still in your cart"
+    },
+    {
+      "type": "regular",
+      "text": "Everything you picked out is exactly where you left it. Pick up where you stopped whenever you're ready.",
+      "alignment": "left"
+    },
+    {
+      "type": "abandonedCart",
+      "buttonText": "Back to checkout",
+      "isProductPriceVisible": false
+    }
+  ],
+  "varningar": []
+}

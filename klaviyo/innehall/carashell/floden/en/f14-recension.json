@@ -42,37 +42,74 @@
         },
         "amnesrader": [
           {
-            "text": "__COPY__: ämnesrad A, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Your parcel's had a few days now",
+            "begar": "check in after enough time to have an opinion"
           },
           {
-            "text": "__COPY__: ämnesrad B, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "One click sets your rating",
+            "begar": "make it feel like minimal effort"
           },
           {
-            "text": "__COPY__: ämnesrad C, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "What did you think of the cover?",
+            "begar": "direct, simple invitation for an opinion"
           }
         ],
-        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "forhandstext": "Your parcel's had time to settle in. Pick a star, and tell us what you think.",
         "block": [
           {
             "typ": "text",
-            "rubrik": "__COPY__: rubrik: vad tyckte du?",
-            "text": "__COPY__: en mening"
+            "rubrik": "How did the cover work out?",
+            "text": "Your parcel's had a few days to settle in. A star only takes a click."
           },
           {
             "typ": "stjarnor",
-            "rubrik": "__COPY__: rubrik över stjärnorna",
+            "rubrik": "Pick a star",
             "lank": "trustpilot:",
-            "text": "__COPY__: en rad: alla omdömen hjälper lika mycket"
+            "text": "Every rating helps, good or not so good."
           },
           {
             "typ": "grundare",
-            "text": "__COPY__: blev något inte som det skulle, svara på mejlet först"
+            "text": "If something wasn't right, reply to this email first, before you rate us. I'll sort it out."
           }
         ],
-        "tretest": [],
+        "tretest": [
+          {
+            "rad": "Your parcel's had a few days now",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": false
+          },
+          {
+            "rad": "One click sets your rating",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": false
+          },
+          {
+            "rad": "What did you think of the cover?",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": false
+          },
+          {
+            "rad": "Your parcel's had time to settle in. Pick a star, and tell us what you think.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": false
+          },
+          {
+            "rad": "How did the cover work out?",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": false
+          },
+          {
+            "rad": "Pick a star",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": false
+          }
+        ],
         "version": 1
       }
     }

@@ -1,0 +1,147 @@
+{
+  "id": "f05-vinback-e1",
+  "sprak": "en",
+  "emailTitle": "It's been a while since your order",
+  "emailDescription": "No news, just a look at what else is in the shop.",
+  "amnesrader": [
+    "It's been a while since your order",
+    "Here's what else we make now",
+    "Still happy with the cover?"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "It's been a while"
+    },
+    {
+      "type": "regular",
+      "text": "Your order went out a while back. By now the cover's had time to prove itself.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Since then, we've kept building covers for the parts of a caravan or motorhome that take the most weather while it's parked.",
+      "alignment": "left"
+    },
+    {
+      "type": "h2",
+      "text": "What's in the shop now",
+      "alignment": "center"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "image",
+              "fileId": "{{spoks:media:takskyddet}}",
+              "altText": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft",
+              "urlRedirect": "https://carashell.com/products/takskyddet"
+            },
+            {
+              "type": "h2",
+              "text": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft",
+              "alignment": "center"
+            },
+            {
+              "type": "link",
+              "text": "See the cover",
+              "url": "https://carashell.com/products/takskyddet",
+              "style": "button"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "image",
+              "fileId": "{{spoks:media:termoskyddet}}",
+              "altText": "Windshield Thermal Cover for Motorhome 211 × 171 cm",
+              "urlRedirect": "https://carashell.com/products/termoskyddet"
+            },
+            {
+              "type": "h2",
+              "text": "Windshield Thermal Cover for Motorhome 211 × 171 cm",
+              "alignment": "center"
+            },
+            {
+              "type": "link",
+              "text": "See the cover",
+              "url": "https://carashell.com/products/termoskyddet",
+              "style": "button"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "image",
+              "fileId": "{{spoks:media:fonstertermomatta-2-pack}}",
+              "altText": "Window Thermal Mat, 2-Pack, 70 × 80 cm",
+              "urlRedirect": "https://carashell.com/products/fonstertermomatta-2-pack"
+            },
+            {
+              "type": "h2",
+              "text": "Window Thermal Mat, 2-Pack, 70 × 80 cm",
+              "alignment": "center"
+            },
+            {
+              "type": "link",
+              "text": "See the cover",
+              "url": "https://carashell.com/products/fonstertermomatta-2-pack",
+              "style": "button"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Guarantee**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "90-day guarantee",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Track your parcel**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Follow it all the way](https://carashell.com/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": [
+    "Bilden för takskyddet saknar fileId i Spoks (produkter.json → bild).",
+    "Bilden för termoskyddet saknar fileId i Spoks (produkter.json → bild).",
+    "Bilden för fonstertermomatta-2-pack saknar fileId i Spoks (produkter.json → bild)."
+  ]
+}

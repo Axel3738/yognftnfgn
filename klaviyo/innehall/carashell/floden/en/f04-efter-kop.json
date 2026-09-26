@@ -41,36 +41,73 @@
         },
         "amnesrader": [
           {
-            "text": "__COPY__: ämnesrad A, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "You can already track it",
+            "begar": "reassurance they can check status themselves"
           },
           {
-            "text": "__COPY__: ämnesrad B, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Your order's moving",
+            "begar": "confirmation something is happening"
           },
           {
-            "text": "__COPY__: ämnesrad C, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Look for the number starting with CS-",
+            "begar": "practical help finding the parcel number"
           }
         ],
-        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "forhandstext": "Your shipping email has the parcel number. The button below shows the rest.",
         "block": [
           {
             "typ": "text",
-            "rubrik": "__COPY__: rubrik",
-            "text": "__COPY__: två stycken"
+            "rubrik": "Here's what happens now",
+            "text": "By now you should have an order confirmation, and a shipping email with a parcel number starting with CS-.\n\nThe button below shows exactly where that parcel is right now."
           },
           {
             "typ": "knapp",
-            "text": "__COPY__: knapp: följ ditt paket",
+            "text": "Track your parcel",
             "lank": "sparning:"
           },
           {
             "typ": "grundare",
-            "text": "__COPY__: en rad: svara på mejlet, jag läser själv"
+            "text": "If it feels slow, reply to this email. I read it myself."
           }
         ],
-        "tretest": [],
+        "tretest": [
+          {
+            "rad": "You can already track it",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Your order's moving",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Look for the number starting with CS-",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Your shipping email has the parcel number. The button below shows the rest.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Here's what happens now",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Track your parcel",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
         "version": 1
       }
     },
@@ -102,35 +139,72 @@
         },
         "amnesrader": [
           {
-            "text": "__COPY__: ämnesrad A, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Did it all arrive okay?",
+            "begar": "check-in prompts a response if there's an issue"
           },
           {
-            "text": "__COPY__: ämnesrad B, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Still waiting? Track it here",
+            "begar": "practical help if delayed"
           },
           {
-            "text": "__COPY__: ämnesrad C, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "If something's wrong, here's what to do",
+            "begar": "know the process for problems"
           }
         ],
-        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "forhandstext": "If everything showed up fine, you don't need to do anything. If not, here's what to do.",
         "block": [
           {
             "typ": "text",
-            "rubrik": "__COPY__: rubrik: kom allt fram?",
-            "text": "__COPY__: tre stycken"
+            "rubrik": "Did everything arrive?",
+            "text": "By now your order should have reached you.\n\nIf it hasn't, the button below shows exactly where it is.\n\nIf something arrived wrong or damaged, you're covered by a 90-day guarantee. Email hello@carashell.com with your order number before sending anything back, and we'll tell you where to send it."
           },
           {
             "typ": "knapp",
-            "text": "__COPY__: knapp: följ ditt paket",
+            "text": "Track your parcel",
             "lank": "sparning:"
           },
           {
             "typ": "fakta"
           }
         ],
-        "tretest": [],
+        "tretest": [
+          {
+            "rad": "Did it all arrive okay?",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Still waiting? Track it here",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "If something's wrong, here's what to do",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "If everything showed up fine, you don't need to do anything. If not, here's what to do.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Did everything arrive?",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Track your parcel",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
         "version": 1
       }
     }

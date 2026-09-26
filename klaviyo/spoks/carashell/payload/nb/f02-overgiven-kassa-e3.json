@@ -1,0 +1,23 @@
+{
+  "id": "f02-overgiven-kassa-e3",
+  "sprak": "nb",
+  "emailTitle": "Siste e-post om denne kassen",
+  "emailDescription": "Siste påminnelse. Spør du ikke noe, hører du ikke mer om denne kassen.",
+  "amnesrader": [
+    "Siste e-post om denne kassen",
+    "Lurer du på noe, så spør",
+    "Jeg tar kontakt en siste gang"
+  ],
+  "blocks": [
+    {
+      "type": "quote",
+      "text": "Dette er siste gangen jeg sender denne påminnelsen. Har du et spørsmål om trekket, om festet eller om noe annet, svar på denne e-posten, så svarer jeg selv. Sier du ikke ifra, hører du ikke mer om denne kassen fra meg.\nAxel, grunnlegger"
+    },
+    {
+      "type": "abandonedCart",
+      "buttonText": "Tilbake til kassen",
+      "isProductPriceVisible": false
+    }
+  ],
+  "varningar": []
+}

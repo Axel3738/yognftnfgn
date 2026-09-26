@@ -334,7 +334,8 @@ export function skapaKonverterare({ brand, produktIds = {}, recCache = {}, erbju
       [/\b\d[\d\s.,]*\s?(kr|sek|nok|dkk|usd|eur|gbp|aud|cad|nzd)\b/i, 'belopp'],
       [/[$£€]\s?\d/, 'belopp'],
       [/förvaringspåse|dragsko|oppbevaringspose|storage bag|drawstring/i, 'påstående som inte får göras (påse/dragsko)'],
-      [/elastisk|gummiband|\bstrikk\b|elastic strap|rubber strap/i, 'elastiska band (banden är vävda)'],
+      // Negationen är butikens egen text ("ikke strikk, strekker seg ikke ut" i nb-faktabladet) och släpps igenom.
+      [/(?<!\b(?:ikke|inte|not)\s)(?:elastisk|gummiband|\bstrikk\b|elastic strap|rubber strap)/i, 'elastiska band (banden är vävda)'],
       [/andas|ventilerad|puster|breathable|ventilated/i, 'andas/ventilerad (obesvarat av leverantören)'],
       [/tusentals|tusenvis|thousands of/i, 'tusentals'],
       [/bara idag|sista chansen|bare i dag|siste sjanse|today only|last chance/i, 'falsk brådska'],
