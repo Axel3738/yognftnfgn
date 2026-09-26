@@ -382,3 +382,51 @@ Batch #2:s fem statiska (skapade 2026-09-19), egna första veckan 2026-09-19 –
 | Termoskydd_CS_8_1 | 2 | okänd | **LOSER** | 0 % | 19 kr | 0 | 0,00 / 2,08 | nej | släpp |
 | Termoskydd_BOF_9_1 | 2 | okänd | **LOSER** | 0 % | 16 kr | 0 | 0,00 / 2,08 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
 | Termoskydd_SP_9_1 | 2 | okänd | **INGEN_LEVERANS** | — | 9 kr | 0 | 0,00 / 2,08 | nej | hooken föll — logga och släpp, aldrig ABO |
+
+## Batch #6 — 2026-09-26 (`/rond-auto` steg 4b, `annonsbehov: vidarebygg`, rundaAntal 2)
+
+**Läget (avläst 2026-09-26):** LAT_VARA (budget 2 300 kr/dag, kampanjen ACTIVE — läst live ur Graph API
+`effective_status` före första Notion-raden). CPA-trend ⛔ tre stigande dygn 181 → 264 → 389 → 396 kr
+(de två senaste över break-even-CPA 347 kr) — fixet är nya creatives, inte budget. Vidarebyggen på
+CS_3/CS_2 redan kompletta (VIDAREBYGG_KLAR i morse: CS_9_1, CS_10_1, CS_11_H1, CS_12_1, CS_12_H1 i
+hubben; I2 på CS_2 är SLÄPP) — inga fler iterationer där. Brieftak 5 fria + 1 namngiven
+(`Termoskydd_BOF_10_1`); rundan tog 2. Brief review 2026-09-23 följd (CPA med break-even i samma
+mening, hook aldrig en uppmaning, förälderns Meta-id i Why när Notion-rad saknas, ingen dubbel
+`Variables:`-rad). Annonsidéer: 0 rader Ny. Priset läst live: 559 kr / 932 kr (spara 373 kr, 40 %),
+mängdrabatt 2 st −15 % (förvald, "Mest populär", `discountValue 15` i sidans egen konfig), 3 st −20 %.
+
+### Batch #6 — 1 bild + 1 video, alla i Notion som Draft (BÄVER Termoskyddet för Husbil)
+
+| Annons | Format | Parent · iteration | Hypotes (en variabel) | Hookrad | Notion | rev | brief → live |
+|---|---|---|---|---|---|---|---|
+| `Termoskydd_BOF_10_1` | bild 4:5 + 1:1 | BOF_7_1 (KPI_WINNER, Meta 120250289497670291) · I1 | mängdrabatten som RUBRIK i stället för prisparet ger spend (andel > 3 %) med CPA ≤ 172 kr mot break-even-CPA 347 kr — komposition, foto, knapp låsta | "Köp två – ytterligare 15 % rabatt." | `3e7270ab908c81d381e3de618a7c7a2a` | okänd | okänd |
+| `Termoskydd_SP_2_H4` | video 10 s | SP_2 (KPI_WINNER, Meta 120250175789240291) · I3 (tredje hooken) | rastplatsscenen på natten (strålkastare som stannar på skyddets utsida) i sekund 0 lyfter hook rate över 46 % — rad 2–4 ordagrant som SP_2_H2/H3 | "Rastplats, klockan två. Strålkastarna stannar på utsidan." | `3e7270ab908c815ab853e431c7ec2185` | okänd | okänd |
+
+**Val av andra briefen:** lärdomen för SP_2_1 namngav `Termoskydd_SP_2_2` (rubrik ur en RIKTIG
+recension). Judge.me-widgeten visar nu **11 recensioner, 5,00** (mätt 2026-09-26; 0 vid varje tidigare
+mätning) — men texterna är generiska ("Praktiskt skydd mot sol och värme." står två gånger, "Bra
+kvalitet och lätt att använda.") och en är en ordagrann dubblett, alltså samma mönster som de 30
+seedade i Judge.me-API:t 2026-09-15. **Inte verifierade som riktiga ⇒ SP_2_2 struken igen**, och
+spärren "inga recensioner i copy" står kvar. I stället tredje hooken på SP_2: playbooken för en
+KPI_WINNER är tre nya hookar, lärdomen namngav två (H2 problem, H3 mekanism) — H4 tar den tredje
+linsen (integritet, avataren `paret-pa-rastplatsen-som-vill-vara-osedda`, verifierad ur sidans text)
+med annan `hook-mekanik` (slow-mo mot cut-in/zoom-in).
+
+**Bildens jobb:** svara på en invändning (pris) — tillåtet för att BOF_7_1 är KPI_WINNER (515 kr,
+3 köp, ROAS 4,36). Avataren `husbilsagaren-som-tvekar-pa-priset` tillagd i `dna.md` → Avatarer
+(fjärde raden, källa lärdomen).
+
+**Spärrar:** `lardom.mjs --brief --torr` ✅ 2 rader (BOF_10_1 iteration 1 på `bof-prisinvandning`,
+SP_2_H4 iteration 3 på `sp-natten-i-husbilen`); `briefgranskning.mjs` (main) ✅ BOF_10_1 typ I,
+SP_2_H4 regi 4/4, exit 0 — inga rättningar behövdes. Skarpt: 2 BRIEF-rader + `CS_BATCH_KLAR`.
+Raden SP_2_H4 öppnad med notion-fetch: alla tabeller (hook, tre-frågor, manus, regi) renderade.
+
+⚠️ **Modellpolicy avvek (regel 6):** copyn är skriven av huvudsessionen (`copy_model=fable`) — sessionen
+saknar Agent-verktyget och `ANTHROPIC_NYCKEL`, så ingen sonnet-subagent gick att starta. Raderna är
+till största delen sidans egna och förälderns live-rader; tre-frågorstestet står rad för rad.
+Butiksneutralt (speglas till CaraShell): inget butiksnamn, inga policyrader, ingen brådska, aldrig sommar.
+⚠️ BOF_10_1:s källa är Metas signerade CDN-länk (går ut) — fallback är förälderns Notion-rad
+`3df270ab908c81f08f89fa995ca30ed9` / annonsen i kontot, står i briefen.
+
+**Upptagna AD-ID efter batchen:** BOF 1–10, CS 1–12, SP 1–9 (+ SP_2_H2/H3/H4), PD 1–12, G 1–3,
+CO 1–2, LI 1, MT 1, OB 1–2, PR 1–2, RI 1, UG 1–2. Nästa lediga: BOF 11, CS 13, SP 10, PD 13, OB 3.

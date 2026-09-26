@@ -11,7 +11,9 @@ batch #1. Fylls på av `/koncept` och kommande `/cs`-körningar.
   Briefad som `Termoskydd_SP_8_H1`.
   *Källa: sidans kondensmekanik + säsongen.*
 - **Mängdrabatten som huvudbudskap i video.** `MT_1_1` i batch #1 testar den
-  statiskt. Bär den som rörlig är den en egen vinkel, inte bara ett erbjudande.
+  statiskt, och `Termoskydd_BOF_10_1` (batch #6) som rubrik på BOF_7_1:s
+  komposition. Bär den som rörlig är den en egen vinkel, inte bara ett
+  erbjudande — videon byggs när BOF_10_1 fått sin etikett.
   *Källa: produktsidans förvalda 2-pack (−15 %).*
 - **Sidoflikarna som eget bevis.** [använd i batch #2] "90 cm sidflikar" och
   "kläms i dörrkarmen" är det som skiljer produkten från en enkel frontmatta.
@@ -20,9 +22,14 @@ batch #1. Fylls på av `/koncept` och kommande `/cs`-körningar.
 
 ## Spärrar som gäller tills något ändras
 
-- **Noll recensioner.** Ingen proof-vinkel får bygga på kundröst förrän
-  produkten faktiskt har recensioner. Kolla Judge.me-widgeten vid varje
-  körning — den bär siffran i sina egna attribut.
+- **Inga verifierade recensioner.** Ingen proof-vinkel får bygga på kundröst
+  förrän produkten har riktiga recensioner. Kolla Judge.me-widgeten vid varje
+  körning — den bär siffran i sina egna attribut. ⚠️ 2026-09-26 visar den
+  11 st (5,00) — men texterna är generiska och en är en ordagrann dubblett
+  ("Praktiskt skydd mot sol och värme." två gånger), samma mönster som de 30
+  seedade i API:t 2026-09-15. Räknas inte som riktiga. `Termoskydd_SP_2_2`
+  (rubrik ur en riktig recension, lärdomen för SP_2_1) väntar tills en
+  unik, produktspecifik recension finns.
 - **Säsongen.** Skriv aldrig sommar. Kondens, imma, mörker och kyla gäller
   tills våren.
 
