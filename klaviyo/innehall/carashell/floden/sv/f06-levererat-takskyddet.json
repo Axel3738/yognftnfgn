@@ -46,44 +46,50 @@
         },
         "amnesrader": [
           {
-            "text": "__COPY__: ämnesrad A, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Så sätter du på taköverdraget",
+            "begar": "veta exakt hur man gör, utan gissning"
           },
           {
-            "text": "__COPY__: ämnesrad B, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Fyra steg, en person",
+            "begar": "veta att det inte kräver hjälp"
           },
           {
-            "text": "__COPY__: ämnesrad C, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Kanten ska hänga ner, så här",
+            "begar": "göra det rätt direkt"
           }
         ],
-        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "forhandstext": "Fyra steg, ingen verktygslåda behövs.",
         "block": [
           {
             "typ": "text",
-            "rubrik": "__COPY__: rubrik: så sätter du på taköverdraget",
-            "text": "__COPY__: en mening"
+            "rubrik": "Så sätter du på taköverdraget",
+            "text": "Paketet har kommit fram. Så här sätter du på det."
           },
           {
             "typ": "punkter",
             "rubrik": null,
             "punkter": [
-              "__COPY__: lägg det över taket, kanten ner över sidorna",
-              "__COPY__: haka krokarna under kanten, alla fyra sidor",
-              "__COPY__: dra åt banden",
-              "__COPY__: de två extra banden följer med"
+              "Lägg överdraget över taket, med kanten hängande 30 till 40 centimeter ner över sidorna.",
+              "Haka plastkrokarna under karossens kant, längs alla fyra sidor.",
+              "Dra åt de justerbara banden så överdraget sitter stramt.",
+              "De två extra förstärkta banden på 10,5 meter följer med, för extra fäste."
             ]
           },
           {
             "typ": "grundare",
-            "text": "__COPY__: blev något inte som det skulle, svara på mejlet"
+            "text": "Blev något inte som det skulle, eller sitter det konstigt, svara bara på det här mejlet."
           },
           {
             "typ": "fakta"
           }
         ],
-        "tretest": [],
+        "tretest": [
+          {"rad": "Så sätter du på taköverdraget", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Fyra steg, en person", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Kanten ska hänga ner, så här", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Fyra steg, ingen verktygslåda behövs.", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Så sätter du på taköverdraget", "visualisera": true, "falsifiera": true, "ingen_annan": true}
+        ],
         "version": 1
       }
     }
