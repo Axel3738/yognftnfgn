@@ -46,5 +46,23 @@ Koncept som väntar, inte briefade ännu.
   för tidigt att kalla det en nedåtgående trend (bara två datapunkter), men
   nästa `/cs` bör kolla om mönstret fortsätter innan video-filen prioriteras
   bort helt.
-- **2 recensionscitat kvar i banken**: Peter Andersson, Thomas Eriksson (se
-  dna.md/ovan för exakta citat) — redo för nästa runda.
+- ~~**2 recensionscitat kvar i banken**~~ — alla åtta förbrukade (batch #4, RV_10_1/RV_11_1),
+  och regeln sedan 2026-09-26: recensioner bara som video (8 av 8 review-bilder under 30 kr).
+
+## Nytt 2026-09-26 (batch #7, ej briefat)
+
+- **`Batmotor_OB_2_1` — fukt/kondens (43 % av kommentarerna), tom ruta i alla fyra format.**
+  Villkoret står i lärdomen L-120250125804850291: byggs först när produktsidan ger en mekanism
+  (ventilation, luftning) att svara med. Sidan läst live 2026-09-26: inget sådant. Två vägar,
+  båda ägarens: (a) Axel lägger in en verifierad rad om ventilation på produktsidan, eller
+  (b) svaret byggs som "medge och avgränsa" utan mekanism — sidan säger "håller väder och smuts
+  ute", inte "stänger inne"; en sådan brief är en gissning och ska märkas så. Fråga Axel innan
+  (b) byggs.
+- **Levererat men inte i kontot:** `FM_2_H1`, `SP_4_H1`, `CS_9_H1`, `PD_7_H1`, `SP_1_H7` står i
+  `Creative strat review` i hubben. Säsongsbrieferna (FM_2_H1, SP_4_H1) ska ut före nya — en
+  produktionsfråga till Axel/redigerarna, inte en brief.
+- **Nästa CS_5-steg** avgörs av H2/H3:s etiketter (dag 7 efter live): vinner problembilden ⇒
+  problemdel på prisbudet (som SP_1_H14); vinner mekanismen ⇒ in media res-variant (som SP_1_H15).
+  Inga fler CS_5-hookar förrän båda fått etikett.
+- **Storleksinvändningen som video** (`OB_3_H1`): får den KPI_WINNER ⇒ bild-formatet är stängt för
+  gott och nästa storleksbrief är en video med ny hook; LOSER ⇒ invändningen är mättad i alla format.

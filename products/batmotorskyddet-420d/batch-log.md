@@ -531,3 +531,60 @@ Annonser skapade 2026-09-19, egna första veckan 2026-09-19 – 2026-09-25 (7d_c
 | Batmotor_RV_10_1 | 3 | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 2,04 | nej | hooken föll — logga och släpp, aldrig ABO |
 
 Lärdomar skrivna samma dag för alla 55 etiketterade annonser utan lärdom (`products/batmotorskyddet-420d/lardomar.md`, LARDOM-rader i `agent/budgetlogg.jsonl`). Två nya annonser namngivna: `Batmotor_CS_5_H2` (ny hook på det ärliga erbjudandet, parent CS_5_H1) och `Batmotor_OB_3_H1` (storleksinvändningen som video, parent BF_3_1). Två regler ur datan: recensioner briefas bara som video (8 av 8 review-bilder under 30 kr, review-videon KPI_WINNER), och pris-/garanti-BOF utan brådska levereras inte (11 bilder, 4–314 kr).
+
+## Feedbackloop + batch #7 — 2026-09-26 (`/rond-auto` steg 4b, brief-runda)
+
+**Läget:** kampanjen ACTIVE (läst live ur Graph API före första Notion-raden), 4 000 kr/dag (LAT_VARA),
+ROAS 1,83 mot break-even 1,62. Behovsraden: `brief_runda`, rundaAntal 8 (tak 55 lärdomar), mix 80 %
+vidarebyggen / 20 % nya vinklar, levande BREAKTHROUGH `Batmotor_SP_1_H3`, fokus "mata vinnaren".
+Priset läst live: 579 kr / jämförpris 965 kr (spara 386 kr, 40 %), nio varianter 0–5 … 250–350 hk.
+Brief review 2026-09-23 läst: CPA alltid mot break-even 393 kr i samma mening, Source pekar på förälderns
+levererade fil före NEW FOOTAGE, `AI content:` säger sanningen om rösten. Annonsidéer: 0 rader Ny.
+
+**Rundans storlek: 3 briefer, inte 8 — och det är med flit.** Lärdomarna (57 st) namngav fyra platser:
+`SP_1_H11` (finns, Approved ⇒ struken), `OB_2_1` (villkorad), `OB_3_H1` och `CS_5_H2`. Allt annat i
+lärdomarna säger SLÄPP eller "ingår i redan namngiven" (sju SP_1-hookar i kön, PD_1-kroppen släppt,
+CS_2_1-familjen vid taket, recensionsbilder släppta för gott, GT parkerad till fars dag). Tredje briefen
+`CS_5_H3` är ett val: KPI_WINNER-playbooken säger tre nya hookar på allt annat lika, CS_5_H1 är
+hook-begränsad (26 % hook rate, hold 4 %) — två hook-armar (problembild ur SP_1_H1:s 52 %, mekanism ur
+SP_1_H5:s 37 %) svarar på VILKEN öppning prisbudet vill ha, en arm svarar bara OM. Fler briefer utan
+lärdom bakom hade varit spam.
+
+**`Batmotor_OB_2_1` byggdes INTE.** Produktsidan läst live 2026-09-26: "420D Oxford-tyg håller väder och
+smuts ute under hela uppläggningen", inget om ventilation, luftning eller andning. Fukt/kondens (43 % av
+kommentarerna) står kvar som tom ruta tills sidan ger en mekanism — en påhittad är förbjuden.
+`lardom.mjs` varnade (skepsis + fukt tomma, under 10 000 kr/dag en varning): skepsis är briefad
+(`OB_1_1` live 2026-09-24, matrisen räknar bara live-annonser med OB-kod ⇒ uppdateras när
+`tools/invandningsmatris.mjs` körs om), fukt kan inte byggas.
+
+**Anmärkning, inte brief:** `Batmotor_FM_2_H1` (batch #3) och `Batmotor_SP_4_H1` (batch #4) står i hubben
+som `Creative strat review` och finns inte i kontot — säsongen är nu; de ska levereras före nya
+säsongsbriefer. Även `CS_9_H1`, `PD_7_H1`, `SP_1_H7` ligger kvar i `Creative strat review`.
+
+### Batch #7 — 3 video + 0 bild, alla i Notion som Draft (Boat motor cover creative hub)
+
+| Annons | Format | Typ | Parent · iteration (loggen) | Hypotes | Isolerad variabel | Källa | Lärdom | rev | brief → live | Notion |
+|---|---|---|---|---|---|---|---|---|---|---|
+| `Batmotor_CS_5_H2` | video 20 s | I | CS_5_H1 · 1 | det ärliga prisbudet är hook-begränsat — bar kåpa i regn (SP_1_H1:s frame 0, 52 %) före samma kropp lyfter hook rate från 26 % | öppningsbilden (rad 1) | egen-data | L-120250126099880291 | okänd | — | `3e7270ab908c81959cc8ec3d31665995` |
+| `Batmotor_CS_5_H3` | video 19 s | I | CS_5_H1 · 2 | samma kropp med SP_1_H5:s mekanismhook "Dra över. Spänn remmen. Klart." (37 %) — H2/H3 säger vilken öppningstyp prisbudet vill ha | öppningsbilden (rad 1) | egen-data | L-120250126099880291 | okänd | — | `3e7270ab908c81e0af1fe7d02b5fc35a` |
+| `Batmotor_OB_3_H1` | video 20 s | I | BF_3_1 · 1 | storleksinvändningen (CPA 233 kr mot BE 393 kr på en grå still) bär som video: måttband, nio storlekar, kåpa till rigg | formatet | egen-data | L-120250065298370291 | okänd | — | `3e7270ab908c816aa093ec78525cdcc9` |
+
+**Källfiler (regel 2):** CS_5_H2 rad 1 → SP_1_H14:s levererade fil (Drive `1bC77ihMAZb98UziGSMPg52LZtEYz_pOo`,
+bar kåpa i regn), rad 2 → SP_1_H5 (`1IdL2RpOCyMhqae5hqenI9ii1mI4q5ltv`), rad 3–4 → CS_5_H1
+(`1Dluov4n3B9CEIk95cbGhGHrbdvhVW6O9`); CS_5_H3 rad 1 → SP_1_H5; OB_3_H1 rad 3 → SP_1_H5. Enda NEW FOOTAGE
+i rundan: måttbandet över kåpan (ingen levererad fil visar det — kontrollerat i tre mappar + BF_3_1:s still).
+Alla `DRIVE <id> [EDITOR PICKS: …]` — ffmpeg saknas, ingen påhittad sekund. `AI content: voice` på alla tre.
+
+**Spärrarna:** `briefgranskning.mjs --manifest … --pris 579 --jamforpris 965` ⇒ exit 0, regi 5/5 på alla
+tre, 0 anmärkningar efter rättning (iterationsnumret följer loggen: 1 och 2 på CS_5-konceptet).
+`lardom.mjs --brief … --torr --befintliga` ⇒ 3 BRIEF-rader validerade, "Briefkvot: 55 fria + 3 namngivna
+(OB_2_1, OB_3_H1, CS_5_H2), struket: OB_1_1, SP_1_H11". Skarpt: 3 BRIEF-rader i `agent/budgetlogg.jsonl` +
+`CS_BATCH_KLAR`.
+
+**Modellpolicy-avvikelse (som batch #1–#3):** inget Agent/Task-verktyg fanns i den här sessionen (sökt
+`Agent`, `subagent`) — huvudsessionen skrev de svenska raderna själv, taggade `copy_model=huvudsession`
+(aldrig `sonnet` när det inte är sant) och körde tre-frågorstestet rad för rad i varje brief. CS_5-kroppen
+är förälderns live-text ordagrant utom ett ord: "saltvatten" (inte på sidan, förbjudet) ⇒ "regn, snö, frost".
+
+**Upptagna AD-ID:n efter batch #7:** CS_5_H1–H3, OB_1_1, OB_3_H1 (OB_2_1 reserverat, ej byggt), SP_1_H1–H15,
+SP_3_H1, SP_4_H1 — läs alltid hubben OCH kontot före nästa numrering (`batch-07/befintliga.json`, 74 namn).
