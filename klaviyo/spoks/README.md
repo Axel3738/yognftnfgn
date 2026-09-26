@@ -371,10 +371,10 @@ butikens egen domän när något slås på. Inget är påslaget.
 4. **Flows → F01 E1:** öppna mejlet → medlemskortet (sektionen med "MEDLEMSKORT") → mörk
    bakgrund, ljus text, orange ram — stilen går inte att sätta via MCP:n.
 5. **K01** (https://app.spoks.com/matstrumpor/post/9aa10213-3bf1-42bc-b23e-315e088d92be/edit,
-   i listan "De tittar två gånger, sen skrattar de"): publik Spoks **"Warmup tier 1"** om den
-   finns bland mottagarvalen, annars `SEG_samtycke` (inte `SEG_uppvarmning_steg1`, 19 st) →
-   schemalägg tisdag 29/9 18:00 → skärmdump av förhandsvisningen ända ner till sidfoten
-   före sista klicket (se "Slutkollen av K01" ovan). Sedan en kampanj i taget enligt
+   i listan "De tittar två gånger, sen skrattar de"): fältet "Till:" → `SEG_samtycke` (inte
+   `SEG_uppvarmning_steg1`, 19 st; se F06 E2-incidenten ovan för varför inte Warmup tier 1) →
+   "TITTA IGENOM" → schemalägg tisdag 29/9 18:00. Sessionen kontrollerar efteråt med
+   `search_campaigns publishedAfter` att K01 och BARA K01 står schemalagd. Sedan en kampanj i taget enligt
    `klaviyo/innehall/matstrumpor/KALENDER-2026.md`; F06 E1/E2 ligger kvar tills
    `SEG_oengagerade_180d` har medlemmar.
 6. ✅ **Planen är betald sedan 2026-09-26** (mätt med `whoami` samma eftermiddag: `plan: Paid`,
@@ -456,6 +456,15 @@ plattformens egen.
   schemalagda ligger under Campaigns → fliken **Planned**; hur man avbryter står inte där).
   Kontroller schemalagda i den här sessionen: `trig_013G65e8CvGdpybAJctqjCMc` mån 28/9 09:00
   och `trig_019jHo4yKekS39zXBqZtkfmq` tis 29/9 12:00 CEST (`send_later`).
+  Axels skärmdump visade publiken: **SEG_samtycke (2 942)**. ✅ **Återställd 12:44 CEST samma dag**
+  (Axel: "Jag har flyttat till utkast", via menyn på den schemalagda kampanjen; mätt med
+  `search_campaigns publishedAfter`: `status: draft`). Utkastet bär nu publiken SEG_samtycke —
+  schemaläggs det igen av misstag går det till alla. Appens knappar på en schemalagd kampanj:
+  etiketten "Schemalagd kampanj", pillret "Kommer att publiceras tis. 29.09 kl 18:00 CEST
+  (UTC+2)" med penna, menyn "•••" och "TITTA IGENOM"; mottagarna väljs i fältet "Till:".
+  **Publiken för K01 är SEG_samtycke** (sessionens beslut samma dag): Spoks tog emot en
+  schemaläggning till 2 942 utan uppvärmningsspärr, och SEG_samtycke är det enda segmentet som
+  är mätt att bara innehålla samtycke — "Warmup tier 1" är omätt i Matstrumpors workspace.
 - **Recensionsflödet:** Matstrumpor HAR INGET (aldrig byggt — flödena är F01–F05, F07; F06 som
   utkast). Det enda är Bäverbutikens **F14 Recension Trustpilot** `23d2710c-…` i workspacen
   Bäverbutiken.se, mätt `isActive: true`, 24 inrullade (https://app.spoks.com/baverbutiken/flows/23d2710c-1a33-44c3-bb25-df1f691b6161).
