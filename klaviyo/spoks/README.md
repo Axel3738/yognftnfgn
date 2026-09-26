@@ -301,6 +301,12 @@ resolvern visade upp till en timme efteråt gamla svar (den gamla SPF-raden, "fi
 på `_dmarc`/`feed`/`kps*`) — det är resolverns cache från mätningen FÖRE inläggningen,
 inte Loopia. Mät med Cloudflare (`https://cloudflare-dns.com/dns-query?name=…&type=…`,
 header `accept: application/dns-json`) när Google nyss frågats. Verify i Spoks = Axels klick.
+⚠️ **Avsändaradressen går inte att sätta förrän domänen är verifierad i appen:** mätt
+2026-09-26 direkt efter DNS-mätningen — `update_settings` med
+`emailSettings.senderEmail: kundsupport@matstrumpor.se` svarade
+`custom_domain_not_valid: Feed does not have valid custom domain set` (`senderEmail` står
+kvar `null`, reply-to är satt). Ordningen är alltså: DNS in → Verify i Spoks (Axels klick)
+→ sedan sätts avsändaren via MCP:n eller i Settings → Email & SMS.
 
 ## Axels klick (i ordning, allt i https://app.spoks.com/matstrumpor)
 
