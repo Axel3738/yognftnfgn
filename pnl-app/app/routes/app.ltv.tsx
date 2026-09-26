@@ -345,7 +345,7 @@ function LtvVy({ s }: { s: Sida }) {
 
   /* --- Pro --- */
   const iv = (x: { mid: number; low: number; high: number } | null | undefined) =>
-    x ? `${money(x.mid)} (${T.ltv.range(nf0.format(Math.round(x.low)), nf0.format(Math.round(x.high)))})` : "—";
+    x ? `${money(x.mid)} (${T.ltv.range(nf0.format(Math.round(x.low)), money(x.high))})` : "—";
   /* Tre band i stället för två. Förut var allt över max-CPA vid
      målmarginalen rött och "betalar inte tillbaka" — även en CAC som gav
      +60 kr per kund inom 90 dagar. "Dra ner" gäller nu bara över
@@ -425,7 +425,7 @@ function LtvVy({ s }: { s: Sida }) {
                       const tb = m?.breakEven.mid ?? null;
                       return (
                         <div key={hh} style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: 4 }}>
-                          <span style={{ fontSize: 11 }}>{ltv == null ? "—" : nf0.format(ltv)}</span>
+                          <span style={{ fontSize: 11 }}>{money(ltv)}</span>
                           <div style={{ display: "flex", gap: 3, alignItems: "flex-end", width: "100%", height: 120 }}>
                             <div title={`${T.ltv.curveRevenue}: ${money(ltv)}`} style={{ flex: 1, height: ltv == null ? 2 : Math.max(2, (ltv / kurvMax) * 120), background: ltv == null ? "#e3e3e3" : "#005bd3", borderRadius: 3 }} />
                             <div title={`${T.ltv.curveTb}: ${money(tb)}`} style={{ flex: 1, height: tb == null ? 2 : Math.max(2, (Math.max(0, tb) / kurvMax) * 120), background: tb == null ? "#e3e3e3" : "repeating-linear-gradient(45deg,#1f8a4c 0 4px,#7dcf9a 4px 8px)", borderRadius: 3 }} />

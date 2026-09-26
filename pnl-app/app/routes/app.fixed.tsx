@@ -114,6 +114,9 @@ export default function FixedCosts() {
   const T = t(lang);
 
   const nf = new Intl.NumberFormat(localeOf(lang), { maximumFractionDigits: 0 });
+  /* Varje belopp bär sin valuta — en naken siffra i en tabell gick inte att
+     läsa, och rubriken sa "kr" även i en NOK- eller EUR-butik. */
+  const money = (v: number) => `${nf.format(v)} ${currency}`;
   const valj = (f: (typeof forslag)[number]) => {
     setName(f.namn);
     setAmount(String(f.belopp));
@@ -128,7 +131,7 @@ export default function FixedCosts() {
   return (
     <Page
       title={T.fixed.title}
-      subtitle={T.fixed.subtitle(nf.format(monthlyTotal), nf.format(dailyTotal))}
+      subtitle={T.fixed.subtitle(money(monthlyTotal), money(dailyTotal))}
     >
       <Layout>
         <Layout.Section>
@@ -222,8 +225,8 @@ export default function FixedCosts() {
                 headings={[T.fixed.thName, T.fixed.thMonthly, T.fixed.thDaily, ""]}
                 rows={rows.map((r) => [
                   r.name,
-                  nf.format(r.monthlyAmount),
-                  nf.format((r.monthlyAmount * 12) / 365),
+                  money(r.monthlyAmount),
+                  money((r.monthlyAmount * 12) / 365),
                   <Button
                     key={r.id}
                     variant="plain"
@@ -235,7 +238,7 @@ export default function FixedCosts() {
                     {T.fixed.remove}
                   </Button>,
                 ])}
-                totals={[T.fixed.totalRows(rows.length), nf.format(monthlyTotal), nf.format(dailyTotal), ""]}
+                totals={[T.fixed.totalRows(rows.length), money(monthlyTotal), money(dailyTotal), ""]}
               />
             ) : (
               <div style={{ padding: 16 }}>

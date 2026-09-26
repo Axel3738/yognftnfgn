@@ -431,7 +431,7 @@ const en = {
     thVariant: "Variant",
     thPrice: "Price",
     thCost: "Cost",
-    thCmPerUnit: (currency: string) => `CM/unit (${currency})`,
+    thCmPerUnit: "CM/unit",
     thBeRoas: "BE ROAS",
     missingBadge: "missing",
     unprofitable: "unprofitable",
@@ -1458,7 +1458,7 @@ const sv: Texts = {
     thVariant: "Variant",
     thPrice: "Pris",
     thCost: "Inköp",
-    thCmPerUnit: (currency: string) => `TB/st (${currency})`,
+    thCmPerUnit: "TB/st",
     thBeRoas: "BE ROAS",
     missingBadge: "saknas",
     unprofitable: "olönsam",
@@ -1605,7 +1605,7 @@ const sv: Texts = {
 
   fixed: {
     title: "Fasta kostnader",
-    subtitle: (monthly: string, daily: string) => `${monthly} kr/månad → ${daily} kr/dag i kalkylen`,
+    subtitle: (monthly: string, daily: string) => `${monthly}/månad → ${daily}/dag i kalkylen`,
     addTitle: "Lägg till kostnad",
     addBody:
       "Abonnemang, appar, anställda, bokföring — allt som kostar per månad oavsett försäljning. " +
@@ -1616,8 +1616,8 @@ const sv: Texts = {
     amountPlaceholder: "299",
     add: "Lägg till",
     thName: "Namn",
-    thMonthly: "Kr/månad",
-    thDaily: "Kr/dag",
+    thMonthly: "Per månad",
+    thDaily: "Per dag",
     remove: "Ta bort",
     totalRows: (n: number) => `${n} poster`,
     empty: "Inga fasta kostnader inlagda än. Nettovinsten räknas utan dem tills du lägger till några.",

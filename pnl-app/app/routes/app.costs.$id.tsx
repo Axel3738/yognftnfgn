@@ -176,7 +176,7 @@ export async function action({ request, params }: ActionFunctionArgs) {
         }),
       ),
     );
-    return json({ ok: true, message: T.costDetail.tierSaved(targets.length, units, totalCost.toFixed(2)) });
+    return json({ ok: true, message: T.costDetail.tierSaved(targets.length, units, `${totalCost.toFixed(2)} ${settings?.currency ?? "SEK"}`) });
   }
 
   if (String(form.get("intent")) === "delete") {
@@ -245,7 +245,7 @@ export async function action({ request, params }: ActionFunctionArgs) {
     ok: !failed.length,
     message: failed.length
       ? T.costDetail.savedPartial(failed.join(", "))
-      : T.costDetail.saved(targets.length, total.toFixed(2), effectiveFrom),
+      : T.costDetail.saved(targets.length, `${total.toFixed(2)} ${butiksValuta}`, effectiveFrom),
   });
 }
 
@@ -279,6 +279,8 @@ export default function ProductCost() {
   const f = parseFloat(v.shippingCost.replace(",", ".")) || 0;
   const busy = fetcher.state !== "idle";
   const dec2 = (n: number) => `${dec(n.toFixed(2))}×`;
+  /* Alla belopp med valuta — nakna tal i tabellerna gick inte att läsa. */
+  const kr = (n: number, valuta: string = currency) => `${nf.format(n)} ${valuta}`;
 
   return (
     <Page
@@ -346,7 +348,7 @@ export default function ProductCost() {
 
               <Banner tone={p + f > 0 ? "info" : undefined}>
                 {p + f > 0
-                  ? T.costDetail.totalBanner(nf.format(p + f), nf.format(p), nf.format(f))
+                  ? T.costDetail.totalBanner(kr(p + f, v.currency), kr(p, v.currency), kr(f, v.currency))
                   : T.costDetail.totalBannerEmpty}
               </Banner>
 
@@ -374,8 +376,8 @@ export default function ProductCost() {
               headings={[T.costDetail.thVariant, T.costDetail.thPrice, T.costDetail.thCost, T.costDetail.thMultiple]}
               rows={variants.map((x) => [
                 x.variantTitle,
-                nf.format(x.price),
-                x.unitCost == null ? "—" : nf.format(x.unitCost),
+                kr(x.price),
+                x.unitCost == null ? "—" : kr(x.unitCost),
                 x.unitCost == null || x.unitCost === 0
                   ? <Badge tone="critical">{T.costDetail.missingBadge}</Badge>
                   : `${dec((x.price / x.unitCost).toFixed(2))}×`,
@@ -414,9 +416,9 @@ export default function ProductCost() {
                           return [
                             r.listpris ? `${r.qty} ${T.costs.be.unit} · ${T.costs.be.listShort}` : `${r.qty} ${T.costs.be.unit}`,
                             b.mix.antagen || andel == null ? "—" : `${Math.round(andel * 100)} %`,
-                            nf.format(r.revenue),
-                            nf.format(r.cogs),
-                            <Text key={`tb${r.qty}`} as="span" tone={r.tb > 0 || tunn ? undefined : "critical"}>{nf.format(r.tb)}</Text>,
+                            kr(r.revenue),
+                            kr(r.cogs),
+                            <Text key={`tb${r.qty}`} as="span" tone={r.tb > 0 || tunn ? undefined : "critical"}>{kr(r.tb)}</Text>,
                             r.beRoas == null
                               ? tunn ? "—" : <Badge key={`be${r.qty}`} tone="critical">{T.costs.unprofitable}</Badge>
                               : <Text key={`be${r.qty}`} as="span" tone={r.listpris ? undefined : beTon(r.beRoas, storeMer, Math.min(antal, r.prisade))}>{dec2(r.beRoas)}</Text>,
@@ -425,9 +427,9 @@ export default function ProductCost() {
                         [
                           <Text key="mix" as="span" fontWeight="semibold">{T.costs.be.mixRow}</Text>,
                           b.mix.antagen ? "—" : `${b.mix.lines}`,
-                          b.mix.revenue == null ? "—" : nf.format(b.mix.revenue),
+                          b.mix.revenue == null ? "—" : kr(b.mix.revenue),
                           "",
-                          b.mix.tb == null ? "—" : <Text key="mixtb" as="span" fontWeight="semibold" tone={b.mix.tb > 0 || tunntPris(b.mix.prisade) ? undefined : "critical"}>{nf.format(b.mix.tb)}</Text>,
+                          b.mix.tb == null ? "—" : <Text key="mixtb" as="span" fontWeight="semibold" tone={b.mix.tb > 0 || tunntPris(b.mix.prisade) ? undefined : "critical"}>{kr(b.mix.tb)}</Text>,
                           b.mix.beRoas == null
                             ? tunntPris(b.mix.prisade) ? "—" : <Badge key="mixbe" tone="critical">{T.costs.unprofitable}</Badge>
                             : <Text key="mixbe" as="span" fontWeight="semibold" tone={beTon(b.mix.beRoas, storeMer, beUnderlag(b.mix))}>{dec2(b.mix.beRoas)}</Text>,
@@ -502,14 +504,14 @@ export default function ProductCost() {
                     const mine = tiers.filter((r) => r.variantGid === x.variantGid);
                     if (!mine.length) return [];
                     return [
-                      [x.variantTitle, T.costs.market.standardShort, T.costDetail.oneUnit, x.unitCost == null ? "—" : nf.format(x.unitCost),
-                        x.unitCost == null ? "—" : nf.format(x.unitCost), ""],
+                      [x.variantTitle, T.costs.market.standardShort, T.costDetail.oneUnit, x.unitCost == null ? "—" : kr(x.unitCost),
+                        x.unitCost == null ? "—" : kr(x.unitCost), ""],
                       ...mine.map((r) => [
                         x.variantTitle,
                         marknadsetikett(r.market),
                         String(r.units),
-                        nf.format(r.totalCost),
-                        nf.format(r.totalCost / r.units),
+                        kr(r.totalCost),
+                        kr(r.totalCost / r.units),
                         <Button key={r.id} variant="plain" tone="critical"
                           onClick={() => tierFetcher.submit({ intent: "tierDelete", id: r.id }, { method: "POST" })}>
                           {T.costDetail.remove}
@@ -548,9 +550,9 @@ export default function ProductCost() {
                     ? variants.find((x) => x.variantGid === h.variantGid)?.variantTitle ?? T.costDetail.aVariant
                     : T.costDetail.allVariantsShort,
                   marknadsetikett(h.market),
-                  h.productCost == null ? "—" : nf.format(h.productCost),
-                  h.shippingCost == null ? "—" : nf.format(h.shippingCost),
-                  nf.format(h.unitCost),
+                  h.productCost == null ? "—" : kr(h.productCost),
+                  h.shippingCost == null ? "—" : kr(h.shippingCost),
+                  kr(h.unitCost),
                   <Button key={h.id} variant="plain" tone="critical"
                     onClick={() => fetcher.submit({ intent: "delete", id: h.id }, { method: "POST" })}>
                     {T.costDetail.remove}

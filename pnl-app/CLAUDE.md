@@ -1354,6 +1354,25 @@ slår ihop **två** källor: `BILLING_EXEMPT_SHOPS` i miljön (som förut) och
 att fylla på med en push — Axel ska inte behöva klicka i Railways
 miljövariabler. Lägg till hela `.myshopify.com`-adressen i små bokstäver.
 
+### Enhet på varje belopp (2026-09-26, build enheter-v115)
+Axels ask: *"fixa enheter på varje metric … det är fett jobbigt att vi inte
+kan se det så jävla tydligt"*. Panelen (`app._index.tsx`) hade redan valuta,
+% och × överallt — hålen låg på undersidorna, där belopp stod som nakna tal:
+- **Kostnader** (`app.costs.tsx`): Pris, Inköp/Standard, varje marknads-
+  kolumn och TB/st bär nu valutan i cellen (`kr()`); rubriken "TB/st (SEK)"
+  blev "TB/st" så valutan inte står två gånger.
+- **En produkts kostnader** (`app.costs.$id.tsx`): nuvarande kostnad,
+  break-even-tabellen (omsättning, kostnad, TB, mixraden), flerpackstabellen,
+  historiken och bannern "Total inköpskostnad" (i FORMULÄRETS valuta — den
+  kan vara USD). Sparat-meddelandena säger valutan.
+- **Fasta kostnader** (`app.fixed.tsx`): tabellen och underrubriken. Den
+  svenska underrubriken och kolumnerna sa hårdkodat "kr" — fel i en NOK-,
+  EUR- eller GBP-butik. Nu "Per månad"/"Per dag" och valutan i talet.
+- **LTV**: kurvans stapeletiketter och spannet "(låg–hög VALUTA)".
+- **Timgrafen**: ROAS-läget skrev "2.31×" även på svenska — nu "2,31×".
+Regel framåt: **ett belopp skrivs aldrig utan valuta, en andel aldrig utan %,
+en kvot aldrig utan ×** — inte heller i en tabell med valutan i rubriken.
+
 ### Timmar på dygnet — datalagret (2026-09-23, build timdata-v108)
 
 Axel vill se omsättning, ordrar och **ROAS per timme**, per marknad, för att

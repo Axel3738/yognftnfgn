@@ -1283,6 +1283,9 @@ export default function Costs() {
 
   const nf = new Intl.NumberFormat(localeOf(lang), { minimumFractionDigits: 2 });
   const dec = (s: string) => (lang === "sv" ? s.replace(".", ",") : s);
+  /* Belopp i tabellen bär alltid valutan — pris, inköp och TB stod som nakna
+     tal, och det gick inte att se om 89,00 var kronor eller dollar. */
+  const kr = (v: number) => `${nf.format(v)} ${currency}`;
 
   /* Täckningsbidrag och break-even ROAS per styck.
      Tullen tas ut per ORDER, inte per styck — här räknas den som om ordern
@@ -1899,7 +1902,7 @@ export default function Costs() {
                 T.costs.thPrice,
                 marknader.length ? T.costs.market.standardCol : T.costs.thCost,
                 ...marknader.map((m) => (m === market ? `▸ ${marknadsnamn(m, lang, m)}` : marknadsnamn(m, lang, m))),
-                T.costs.thCmPerUnit(currency),
+                T.costs.thCmPerUnit,
                 T.costs.thBeRoas,
               ]}
               rows={rows.map((r) => [
@@ -1907,15 +1910,15 @@ export default function Costs() {
                   {r.productTitle}
                 </Link>,
                 r.variantTitle === "Default Title" ? "—" : r.variantTitle,
-                nf.format(r.price),
-                r.standardCost == null ? "—" : nf.format(r.standardCost),
+                kr(r.price),
+                r.standardCost == null ? "—" : kr(r.standardCost),
                 ...marknader.map((m) => {
                   const egen = r.perMarknad[m];
                   if (egen != null) {
-                    return <Text key={`${m}${r.variantGid}`} as="span" fontWeight="semibold">{nf.format(egen)}</Text>;
+                    return <Text key={`${m}${r.variantGid}`} as="span" fontWeight="semibold">{kr(egen)}</Text>;
                   }
                   if (r.standardCost == null) return "—";
-                  return <Text key={`${m}${r.variantGid}`} as="span" tone="subdued">{`${nf.format(r.standardCost)} *`}</Text>;
+                  return <Text key={`${m}${r.variantGid}`} as="span" tone="subdued">{`${kr(r.standardCost)} *`}</Text>;
                 }),
                 (() => {
                   const k = perStyck(r.price, r.unitCost);
@@ -1925,7 +1928,7 @@ export default function Costs() {
                       const hi = perStyck(r.price, sp.min)!, lo = perStyck(r.price, sp.max)!;
                       return (
                         <Text key={`tb${r.variantGid}`} as="span" tone={lo.tb > 0 ? undefined : "critical"}>
-                          {lo.tb === hi.tb ? nf.format(lo.tb) : `${nf.format(lo.tb)}–${nf.format(hi.tb)}`}
+                          {lo.tb === hi.tb ? kr(lo.tb) : `${nf.format(lo.tb)}–${kr(hi.tb)}`}
                         </Text>
                       );
                     }
@@ -1933,7 +1936,7 @@ export default function Costs() {
                   }
                   return (
                     <Text key={`tb${r.variantGid}`} as="span" tone={k.tb > 0 ? undefined : "critical"}>
-                      {nf.format(k.tb)}
+                      {kr(k.tb)}
                     </Text>
                   );
                 })(),
