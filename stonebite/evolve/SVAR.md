@@ -140,6 +140,100 @@ Grayson.
 
 ---
 
-## Svar 2 och 3
+## Svar 2, 2026-09-26: rollerna (meddelande 2)
 
-Väntar. Axel klistrar in dem när boten svarat.
+### Kort, på svenska
+
+**Det här säger kursen:**
+
+| Punkt | Svar | Källa |
+|---|---|---|
+| Kundtjänst-KPI:er | Svarstid, lösningstid, kundnöjdhet (NPS), löst vid första kontakten, antal ärenden. Ingen målnivå, ingen QA-metod. | C6, C5 |
+| Tvister | Hugo S (Skandinavien, Klarna, ~$40 AOV): chargebacks strax under 1 %, de flesta öppnade innan paketet kom fram, vann de flesta när spårningen uppdaterats. Grayson: att få Shopifys varning är ovanligt, de flesta butiker stängs bara av. Hans råd: låt kunden få återbetalning automatiskt. | C7 |
+| Vinnare | Spend Winner (10–30 %+ av kampanjens spend efter 7 dagar), Breakthrough (samma + budgeten kan höjas vecka mot vecka), KPI Winner (ROAS ≥ kampanjens snitt utan spendandelen), Loser. | D2 |
+| Redigerarnas KPI:er (Karlo) | Batcher per vecka, snittid brief → godkänd, revisionsgrad per batch, **träffsäkerhet (andel vinnare)**, **andel av kontots spend på deras annonser**. | C4 |
+| Svag redigerare | Visa datan, fråga hur du kan hjälpa, ge tid. Låt personen gå igenom sin process om ledtiden är lång. 5–7 dagars ledtid är ett tecken på slöhet (Meelod). | C4, C5 |
+| Nyanställd redigerare | 30 dagars prövotid och ett provjobb före anställning (Spencer). Provjobbet betalas inte (Shaun). | C2, C8 |
+| Creative-mix | "No golden ratio". Mer nya idéer, eftersom det är det som skalar. Kvalitet före volym. | C1, C3 |
+
+**Det här har kursen INTE:** mål för kundtjänsten, QA, att mäta per person utan övervakning,
+leveransmått, när man kontaktar kunden själv, normal kontaktgrad, chargeback-gräns att oroa sig
+vid, återbetalningsgrad som stoppar en produkt, hook rate/hold/CTR på dashboarden, antal nya
+annonser per vecka, produkttestets budget, dödstid och när en produkt får egen butik, och hur en
+redigerare ser sitt resultat utan att se spend. Boten igen: vår timvisa spårning ligger före kursen.
+
+### Vad det betyder för oss
+
+| Råd | Hos oss i dag | Vad vi gör |
+|---|---|---|
+| Vinnaretiketterna (D2) | Används redan: `matstrumpor/etikett.mjs`, `docs/os/CS-KLART.md`, `/cs`. | Bekräftar. Träffsäkerheten per redigerare kan räknas ur etiketterna vi redan sätter. |
+| Karlos fem redigerartal | Ledtid och revisioner finns i `dashboard/lib/kpi.mjs`, men datan dog i augusti. Träffsäkerhet och spendandel mäts inte. | Bygga: fem kort per redigerare på Min sida. Spendandel i PROCENT avslöjar inga kronor, men om redigerarna får se den är Axels beslut (regeln 2026-09-02 gäller spend). |
+| Visa datan, inte känslan (Karlo) | Topplistan visar bara pengar. | Stöder teamtavlan och scorecard per roll. |
+| Kundtjänstens fem tal | Svarstid och obesvarade per butik. Lösningstid, första-kontakt-lösning och NPS saknas. | Målen sätter vi själva, kursen har inga. |
+| Automatisk återbetalning mot tvister (Grayson) | Vi vinner 29 av 29 inquiries men förlorar chargebacks. | Ägarens beslut om pengar. Inte ändrat. |
+| Leverans, produkttest, creative-mått | Kursen har inget. | Vi bygger efter egen data (`LUCKOR.md`). |
+
+### Botens svar, ordagrant
+
+> The sources cover editor KPIs, winning ad definitions, and dispute/chargeback context well — but shipping metrics, product testing budgets, and most support VA targets are not covered. Here's what's grounded and what isn't.
+>
+> **1. Support VA KPIs and targets**
+>
+> Shaun lists the KPIs: Response time, Resolution speed, Customer satisfaction (NPS surveys), First-contact resolution, and Total # of tickets handled [C6]. Another member echoes monitoring "ticket first response and completion time in your CRM" [C5]. That's the full list from the sources — no specific targets (e.g., "under 4 hours"), no SLA thresholds, no backlog limits, no CSAT implementation method, and no QA framework for reviewing reply quality. The "how to measure per person without surveillance" angle is not addressed. No source.
+>
+> **2. Shipping metrics (stuck, lost, % on time, days without scan, normal contact rate)**
+>
+> No source covers any of this — no tracking scan gaps, no proactive customer contact timing, no benchmark WISMO contact rate for 1-2 week shipping windows. Given that 7 of 10 tickets are WISMO and you're already tracking parcels hourly, you're ahead of what the sources document. No source.
+>
+> **3. Disputes and refunds**
+>
+> The closest data point: Hugo S, also selling in Scandinavia with Klarna at ~$40 AOV, had a chargeback rate just under 1% — but most disputes were customers opening them before the order arrived. He still won the majority once tracking updated and the package delivered [C7]. Grayson noted that receiving a Shopify warning about dispute rate is "really uncommon" — most stores just get dropped, so getting the warning means Shopify is still working with you [C7]. His recommendation: "allow them to refund automatically" to reduce dispute volume [C7].
+>
+> No source gives a specific chargeback ratio threshold to start worrying, and no source gives a refund rate per product that should trigger stopping a scaling product. No source.
+>
+> **4. Video editors — winner definition, hit rate, turnaround, revisions, pay model**
+>
+> Winner definition: The course defines four categories [D2]:
+> * Spend Winner: Ad captures 10-30%+ of its initial campaign's total spend without triggering a week-over-week budget increase after 7 days
+> * Breakthrough: Meets spend threshold AND enables a week-over-week budget increase
+> * KPI Winner: Doesn't pull required spend % but achieves ROAS ≥ campaign baseline
+> * Loser: Below campaign ROAS and doesn't meet spend threshold
+>
+> For your scale ($0-$100K/month), target 60-70% of campaign spend; breakthroughs should double account spend (e.g., $1K/day → $2K/day) [D2].
+>
+> Francisco points to Spencer's definition: "You don't want volume, you want ads that are high intent and psychology research based. Ads that allow you to increase ad budget" [C3].
+>
+> Per-editor KPIs (from Karlo) [C4]:
+> * Batches per week/month per editor
+> * Average time to edit (brief assigned → approved to launch)
+> * Average revision rate per batch
+> * Winning ad hit rate %
+> * % of ad account spend allocated to their creatives
+>
+> Karlo's approach to underperformance: don't say "I feel like you're slacking" — show the data, then ask how you can support them to improve, give them time to apply it [C4]. If turnaround is slow, have them walk you through their process to find bottlenecks [C4].
+>
+> Probation: Spencer uses 30 days, with an assessment edit before hiring. He tracks % of ad spend as a key editor KPI [C2]. Shaun adds: don't pay for assessment briefs — if editors refuse a free 30-second test, "may mean they not hungry enough," especially if they've already passed a culture interview [C8].
+>
+> Hit rate vs % of spend for comp: Spencer tracks % of spend [C2]. Karlo tracks both hit rate and % of spend [C4]. No source explicitly recommends switching from % of spend to hit-rate-based comp. Your current model (% of ad spend, editors never see spend) isn't directly addressed — no source covers how to show editors their results without exposing total spend.
+>
+> Turnaround and revision targets: Karlo flags tracking them [C4], and Meelod mentions 5-7 day turnaround as a sign of an editor getting "lazy" [C5], but no healthy range is given. No source for specific revision count benchmarks.
+>
+> **5. Owner's creative dashboard — metrics and weekly volume**
+>
+> Shaun on creative output mix: "no golden ratio" — "based on your learnings do whatever you think has the highest likelihood of doing well. We focus on more ideations since that's what scales usually" [C1]. The principle from Francisco/Spencer is quality over volume [C3].
+>
+> The winning ad framework [D2] gives you the spend-based metrics to track per ad: Week 1 % of spend, week-over-week growth, ROAS delta vs campaign baseline, and cumulative growth through Week 3. At $0-$100K/month, a spend winner pulls 10-30%+ of campaign spend; a breakthrough enables scaling.
+>
+> Not covered in sources: Hook rate, hold rate, CTR as dashboard metrics, % of spend on new ads, ads that never spend, and a specific weekly ad count target for your store size. No source.
+>
+> **6. Product testing — spend per test, kill speed, when to spin up a store**
+>
+> No source covers test budget per product, cost per winner, kill timeline for losers, or criteria for graduating a product to its own store. No source.
+>
+> **Bottom line:** The strongest coverage is on editor KPIs (Karlo's tracking framework [C4], Spencer's 30-day probation + % of spend [C2], winning ad definitions [D2]) and dispute context (Hugo's Scandinavia/Klarna experience [C7]). Support VA targets, shipping metrics, product testing budgets, and creative dashboard specifics (hook rate, hold rate) are gaps — worth asking the community directly, especially other operators shipping from China with long delivery times.
+
+---
+
+## Svar 3
+
+Väntar. Axel klistrar in det när boten svarat.
