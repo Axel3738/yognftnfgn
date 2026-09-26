@@ -1,12 +1,12 @@
 {
   "_kommentar": "Metas facit per launchad forskningsprodukt. Skrivs av meta_facit.py utfall ur facit/kampanjer.json. utfall: launchad (2 ja) / >=BE (3 ja, bekräftad) / <BE (3 nej, bekräftad) / svalt (0). band+klass är V3-konfidensen; en dom väger 3 först när två snapshots ≥ 3 dygn isär säger samma sak (ANALYSMETOD 2b).",
-  "last": "2026-09-24",
+  "last": "2026-09-26",
   "utfall": {
     "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09": {
       "datum": "2026-09-09",
-      "spend": 135475.7,
-      "kop": 363,
-      "roas": 3.2675,
+      "spend": 164585.79,
+      "kop": 407,
+      "roas": 3.0384,
       "be": 1.63,
       "utfall": ">=BE",
       "kalla": "act_1867947880635861/campaigns created_time 2026-09-09, status ACTIVE",
@@ -76,20 +76,27 @@
           "kop": 363,
           "roas": 3.2675,
           "status": "ACTIVE"
+        },
+        {
+          "datum": "2026-09-26",
+          "spend": 164585.79,
+          "kop": 407,
+          "roas": 3.0384,
+          "status": "ACTIVE"
         }
       ],
       "preliminart": ">=BE (HIGH, 15166 kr, ROAS 5.3519 — bekräftas vid snapshot ≥ 3 dygn senare)",
-      "cpa": 373.21,
-      "aov": 1219.45,
-      "be_cpa": 748.13,
-      "vinstbidrag": 136095.96,
+      "cpa": 404.39,
+      "aov": 1228.68,
+      "be_cpa": 753.79,
+      "vinstbidrag": 142205.8,
       "band": "HIGH",
       "klass": "REAL_WINNER",
       "lutning": "positiv",
       "bekraftelse": "bekräftad (snapshot 2026-09-11)",
       "kampanj_id": "120250147343350291",
       "status": "ACTIVE",
-      "last": "2026-09-24"
+      "last": "2026-09-26"
     },
     "Isolerade Utekattkojan | BE ROAS 1.62 | Launch 2026-09-09": {
       "datum": "2026-09-09",
@@ -165,6 +172,13 @@
           "kop": 13,
           "roas": 1.6899,
           "status": "PAUSED"
+        },
+        {
+          "datum": "2026-09-26",
+          "spend": 6396.47,
+          "kop": 13,
+          "roas": 1.6899,
+          "status": "PAUSED"
         }
       ],
       "preliminart": ">=BE (HIGH, 6237 kr, ROAS 1.733 — bekräftas vid snapshot ≥ 3 dygn senare)",
@@ -178,11 +192,11 @@
       "bekraftelse": "bekräftad (snapshot 2026-09-11)",
       "kampanj_id": "120250147309170291",
       "status": "PAUSED",
-      "last": "2026-09-24"
+      "last": "2026-09-26"
     },
     "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08": {
       "datum": "2026-09-08",
-      "spend": 12352.52,
+      "spend": 12352.63,
       "kop": 37,
       "roas": 1.7514,
       "be": 1.62,
@@ -254,6 +268,13 @@
           "kop": 37,
           "roas": 1.7514,
           "status": "PAUSED"
+        },
+        {
+          "datum": "2026-09-26",
+          "spend": 12352.63,
+          "kop": 37,
+          "roas": 1.7514,
+          "status": "PAUSED"
         }
       ],
       "preliminart": ">=BE (HIGH, 7398 kr, ROAS 1.9058 — bekräftas vid snapshot ≥ 3 dygn senare)",
@@ -267,7 +288,7 @@
       "bekraftelse": "bekräftad (snapshot 2026-09-11)",
       "kampanj_id": "120250134672020291",
       "status": "PAUSED",
-      "last": "2026-09-24"
+      "last": "2026-09-26"
     },
     "Staketstolpslagaren 2-pack | BE ROAS 1.66 | Launch 2026-09-10": {
       "datum": "2026-09-10",
@@ -334,6 +355,13 @@
           "kop": 1,
           "roas": 0.9057,
           "status": "PAUSED"
+        },
+        {
+          "datum": "2026-09-26",
+          "spend": 1875.12,
+          "kop": 1,
+          "roas": 0.9057,
+          "status": "PAUSED"
         }
       ],
       "taggar": {
@@ -356,7 +384,7 @@
       "bekraftelse": "preliminär",
       "kampanj_id": "120250161984300291",
       "status": "PAUSED",
-      "last": "2026-09-24",
+      "last": "2026-09-26",
       "product_id_fel": "1005012448767856 (regnvattenuppsamlare — felkopplad 2026-09-11 av tidigare körning)",
       "product_id_kalla": "trolig: 'Heavy Duty Steel Fence Post Repair Kit - Anchor Brackets & Ground Spike' i korningar/2026-09-09/fynd-omgang3.json; Shopify 'Staketstolpsbygel 2-pack 999 kr'. Rättat 2026-09-11."
     },
@@ -425,6 +453,13 @@
           "kop": 3,
           "roas": 0.9706,
           "status": "PAUSED"
+        },
+        {
+          "datum": "2026-09-26",
+          "spend": 1976.41,
+          "kop": 3,
+          "roas": 0.9706,
+          "status": "PAUSED"
         }
       ],
       "taggar": {
@@ -447,7 +482,7 @@
       "bekraftelse": "preliminär",
       "kampanj_id": "120250161786230291",
       "status": "PAUSED",
-      "last": "2026-09-24"
+      "last": "2026-09-26"
     },
     "Solcellslarmet 2-pack | BE ROAS 1.63 | Launch 2026-09-11": {
       "datum": "2026-09-11",
@@ -514,6 +549,13 @@
           "kop": 1,
           "roas": 0.3859,
           "status": "PAUSED"
+        },
+        {
+          "datum": "2026-09-26",
+          "spend": 1992.58,
+          "kop": 1,
+          "roas": 0.3859,
+          "status": "PAUSED"
         }
       ],
       "taggar": {
@@ -536,13 +578,13 @@
       "bekraftelse": "preliminär",
       "kampanj_id": "120250175680140291",
       "status": "PAUSED",
-      "last": "2026-09-24"
+      "last": "2026-09-26"
     },
     "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11": {
       "datum": "2026-09-11",
-      "spend": 25453.31,
-      "kop": 110,
-      "roas": 2.6019,
+      "spend": 29250.78,
+      "kop": 120,
+      "roas": 2.4569,
       "be": 1.61,
       "utfall": ">=BE",
       "product_id": "1005011618553986",
@@ -603,6 +645,13 @@
           "kop": 110,
           "roas": 2.6019,
           "status": "ACTIVE"
+        },
+        {
+          "datum": "2026-09-26",
+          "spend": 29250.78,
+          "kop": 120,
+          "roas": 2.4569,
+          "status": "ACTIVE"
         }
       ],
       "taggar": {
@@ -615,17 +664,17 @@
         "ankare_kalla": "hindermann/getcamping",
         "prisband": "500–999"
       },
-      "cpa": 231.39,
-      "aov": 602.05,
-      "be_cpa": 373.94,
-      "vinstbidrag": 15680.5,
+      "cpa": 243.76,
+      "aov": 598.87,
+      "be_cpa": 371.97,
+      "vinstbidrag": 15385.2,
       "band": "HIGH",
       "klass": "REAL_WINNER",
       "lutning": "positiv",
       "bekraftelse": "bekräftad (snapshot 2026-09-12)",
       "kampanj_id": "120250175763810291",
       "status": "ACTIVE",
-      "last": "2026-09-24",
+      "last": "2026-09-26",
       "preliminart": ">=BE (HIGH, 3732 kr, ROAS 3.5498 — bekräftas vid snapshot ≥ 3 dygn senare)"
     }
   }

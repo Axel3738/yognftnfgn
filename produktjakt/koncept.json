@@ -51,18 +51,18 @@
     "datum": "2026-09-09"
    },
    "meta": {
-    "spend": 135475.7,
-    "kop": 363,
-    "roas": 3.2675,
-    "cpa": 373.21,
+    "spend": 164585.79,
+    "kop": 407,
+    "roas": 3.0384,
+    "cpa": 404.39,
     "be": 1.63,
-    "be_cpa": 748.13,
-    "vinstbidrag": 136095.96,
+    "be_cpa": 753.79,
+    "vinstbidrag": 142205.8,
     "band": "HIGH",
     "klass": "REAL_WINNER",
     "lutning": "positiv",
     "bekraftelse": "bekräftad (snapshot 2026-09-11)",
-    "last": "2026-09-24",
+    "last": "2026-09-26",
     "utfall": ">=BE"
    },
    "status": "vinnare",
@@ -146,7 +146,7 @@
     "klass": "REAL_WINNER",
     "lutning": "positiv (marginell, < 5 % från BE)",
     "bekraftelse": "bekräftad (snapshot 2026-09-11)",
-    "last": "2026-09-24",
+    "last": "2026-09-26",
     "utfall": ">=BE"
    },
    "status": "vinnare",
@@ -212,7 +212,7 @@
     "datum": "2026-09-08"
    },
    "meta": {
-    "spend": 12352.52,
+    "spend": 12352.63,
     "kop": 37,
     "roas": 1.7514,
     "cpa": 333.85,
@@ -223,7 +223,7 @@
     "klass": "REAL_WINNER",
     "lutning": "positiv",
     "bekraftelse": "bekräftad (snapshot 2026-09-11)",
-    "last": "2026-09-24",
+    "last": "2026-09-26",
     "utfall": ">=BE"
    },
    "status": "vinnare",
@@ -347,7 +347,7 @@
     "datum": "2026-09-18"
    },
    "meta": {
-    "spend": 4819.85,
+    "spend": 4819.87,
     "kop": 7,
     "roas": 1.1604,
     "cpa": 688.55,
@@ -357,8 +357,8 @@
     "band": "MEANINGFUL",
     "klass": "REAL_LOSER",
     "lutning": "negativ",
-    "bekraftelse": "preliminär",
-    "last": "2026-09-24"
+    "bekraftelse": "bekräftad (snapshot 2026-09-23)",
+    "last": "2026-09-26"
    },
    "status": "forlorare",
    "aterupptas_om": [],
@@ -886,7 +886,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-24"
+    "last": "2026-09-26"
    },
    "status": "launchad",
    "aterupptas_om": [],
@@ -1685,18 +1685,18 @@
     "datum": "2026-09-19"
    },
    "meta": {
-    "spend": 11513.51,
-    "kop": 72,
-    "roas": 3.2512,
-    "cpa": 159.91,
+    "spend": 16531.75,
+    "kop": 91,
+    "roas": 2.8618,
+    "cpa": 181.67,
     "be": 1.61,
     "be_cpa": 322.92,
-    "vinstbidrag": 11736.72,
+    "vinstbidrag": 12853.75,
     "band": "HIGH",
     "klass": "REAL_WINNER",
     "lutning": "positiv",
-    "bekraftelse": "preliminär",
-    "last": "2026-09-24"
+    "bekraftelse": "bekräftad (snapshot 2026-09-23)",
+    "last": "2026-09-26"
    },
    "status": "vinnare",
    "aterupptas_om": [],
@@ -2029,7 +2029,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-24",
+    "last": "2026-09-26",
     "utfall": "launchad"
    },
    "status": "launchad",
@@ -2429,7 +2429,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-24",
+    "last": "2026-09-26",
     "utfall": "launchad"
    },
    "status": "launchad",
@@ -2811,20 +2811,20 @@
     "datum": "2026-09-23"
    },
    "meta": {
-    "spend": 925.19,
+    "spend": 2075.32,
     "kop": 0,
     "roas": null,
     "cpa": null,
     "be": 1.63,
     "be_cpa": 379.75,
     "vinstbidrag": null,
-    "band": "EARLY_SIGNAL",
-    "klass": "INSUFFICIENT_DATA",
+    "band": "MEANINGFUL",
+    "klass": "REAL_LOSER",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-24"
+    "last": "2026-09-26"
    },
-   "status": "launchad",
+   "status": "forlorare",
    "aterupptas_om": [],
    "historik": [
     {
@@ -6334,8 +6334,8 @@
     "band": "MEANINGFUL",
     "klass": "REAL_LOSER",
     "lutning": "negativ",
-    "bekraftelse": "preliminär",
-    "last": "2026-09-24"
+    "bekraftelse": "bekräftad (snapshot 2026-09-23)",
+    "last": "2026-09-26"
    },
    "status": "forlorare",
    "aterupptas_om": [
@@ -8625,18 +8625,18 @@
     "datum": "2026-09-24"
    },
    "meta": {
-    "spend": 184.82,
-    "kop": 0,
-    "roas": null,
-    "cpa": null,
+    "spend": 1647.51,
+    "kop": 2,
+    "roas": 0.6786,
+    "cpa": 823.75,
     "be": 1.61,
     "be_cpa": 347.2,
-    "vinstbidrag": null,
-    "band": "UNTESTED",
-    "klass": "UNTESTED",
-    "lutning": null,
+    "vinstbidrag": -953.1,
+    "band": "EARLY_SIGNAL",
+    "klass": "INSUFFICIENT_DATA",
+    "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-24"
+    "last": "2026-09-26"
    },
    "status": "launchad",
    "aterupptas_om": [],
@@ -10228,8 +10228,8 @@
     "band": "MEANINGFUL",
     "klass": "REAL_LOSER",
     "lutning": "negativ",
-    "bekraftelse": "preliminär",
-    "last": "2026-09-24"
+    "bekraftelse": "bekräftad (snapshot 2026-09-23)",
+    "last": "2026-09-26"
    },
    "status": "forlorare",
    "aterupptas_om": [
@@ -11256,18 +11256,18 @@
     "datum": "2026-09-22"
    },
    "meta": {
-    "spend": 1684.23,
+    "spend": 1684.89,
     "kop": 2,
-    "roas": 0.5451,
-    "cpa": 842.12,
+    "roas": 0.5448,
+    "cpa": 842.45,
     "be": 1.62,
     "be_cpa": 283.33,
-    "vinstbidrag": -1117.58,
+    "vinstbidrag": -1118.24,
     "band": "MEANINGFUL",
     "klass": "REAL_LOSER",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-24"
+    "last": "2026-09-26"
    },
    "status": "forlorare",
    "aterupptas_om": [],
@@ -11397,7 +11397,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-24",
+    "last": "2026-09-26",
     "utfall": "launchad"
    },
    "status": "launchad",
@@ -11450,18 +11450,18 @@
     "datum": "2026-09-11"
    },
    "meta": {
-    "spend": 25453.31,
-    "kop": 110,
-    "roas": 2.6019,
-    "cpa": 231.39,
+    "spend": 29250.78,
+    "kop": 120,
+    "roas": 2.4569,
+    "cpa": 243.76,
     "be": 1.61,
-    "be_cpa": 373.94,
-    "vinstbidrag": 15680.5,
+    "be_cpa": 371.97,
+    "vinstbidrag": 15385.2,
     "band": "HIGH",
     "klass": "REAL_WINNER",
     "lutning": "positiv",
     "bekraftelse": "bekräftad (snapshot 2026-09-12)",
-    "last": "2026-09-24",
+    "last": "2026-09-26",
     "utfall": ">=BE"
    },
    "status": "vinnare",
@@ -12232,18 +12232,18 @@
     "datum": "2026-09-22"
    },
    "meta": {
-    "spend": 1970.78,
-    "kop": 11,
-    "roas": 4.0543,
-    "cpa": 179.16,
+    "spend": 4539.0,
+    "kop": 16,
+    "roas": 2.5767,
+    "cpa": 283.69,
     "be": 1.62,
-    "be_cpa": 448.38,
-    "vinstbidrag": 2961.42,
-    "band": "MEANINGFUL",
+    "be_cpa": 451.23,
+    "vinstbidrag": 2680.64,
+    "band": "HIGH",
     "klass": "REAL_WINNER",
     "lutning": "positiv",
     "bekraftelse": "preliminär",
-    "last": "2026-09-24"
+    "last": "2026-09-26"
    },
    "status": "vinnare",
    "aterupptas_om": [],
@@ -12485,18 +12485,18 @@
     "datum": "2026-09-24"
    },
    "meta": {
-    "spend": 158.71,
-    "kop": 0,
-    "roas": null,
-    "cpa": null,
+    "spend": 1550.88,
+    "kop": 1,
+    "roas": 0.5861,
+    "cpa": 1550.88,
     "be": 1.64,
     "be_cpa": 554.27,
-    "vinstbidrag": null,
-    "band": "UNTESTED",
-    "klass": "UNTESTED",
-    "lutning": null,
+    "vinstbidrag": -996.61,
+    "band": "EARLY_SIGNAL",
+    "klass": "INSUFFICIENT_DATA",
+    "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-24"
+    "last": "2026-09-26"
    },
    "status": "launchad",
    "aterupptas_om": [],
@@ -12623,7 +12623,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-24"
+    "last": "2026-09-26"
    },
    "status": "launchad",
    "aterupptas_om": [],
@@ -12764,7 +12764,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-24"
+    "last": "2026-09-26"
    },
    "status": "launchad",
    "aterupptas_om": [],
@@ -12894,18 +12894,18 @@
     "datum": "2026-09-22"
    },
    "meta": {
-    "spend": 1718.8,
+    "spend": 1719.36,
     "kop": 1,
-    "roas": 0.5924,
-    "cpa": 1718.8,
+    "roas": 0.5923,
+    "cpa": 1719.36,
     "be": 1.62,
     "be_cpa": 369.75,
-    "vinstbidrag": -1349.05,
+    "vinstbidrag": -1349.61,
     "band": "EARLY_SIGNAL",
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-24"
+    "last": "2026-09-26"
    },
    "status": "launchad",
    "aterupptas_om": [],
@@ -13015,9 +13015,26 @@
      "ts": "2026-09-11T09:13:52.481Z"
     }
    ],
-   "launch": null,
-   "meta": null,
-   "status": "ja",
+   "launch": {
+    "kampanj": "Värmesitsen 45 × 90 cm | BE ROAS 1.63 | Launch 2026-09-25",
+    "kampanj_id": "120250365205900291",
+    "datum": "2026-09-25"
+   },
+   "meta": {
+    "spend": 1245.15,
+    "kop": 2,
+    "roas": 1.2908,
+    "cpa": 622.58,
+    "be": 1.63,
+    "be_cpa": 367.48,
+    "vinstbidrag": -510.2,
+    "band": "EARLY_SIGNAL",
+    "klass": "INSUFFICIENT_DATA",
+    "lutning": "negativ",
+    "bekraftelse": "preliminär",
+    "last": "2026-09-26"
+   },
+   "status": "launchad",
    "aterupptas_om": [],
    "historik": [
     {
@@ -13035,6 +13052,10 @@
     {
      "datum": "2026-09-13",
      "handelse": "i butiken: Värmesits 45 × 90 cm 599 kr (kampanj ej sedd i kontot än)"
+    },
+    {
+     "datum": "2026-09-25",
+     "handelse": "launchad i kontot: Värmesitsen 45 × 90 cm | BE ROAS 1.63 | Launch 2026-09-25"
     }
    ],
    "namn_sv": "Värmesitsen för älgpasset",
@@ -13248,7 +13269,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "positiv",
     "bekraftelse": "preliminär",
-    "last": "2026-09-24"
+    "last": "2026-09-26"
    },
    "status": "launchad",
    "aterupptas_om": [],
@@ -13364,20 +13385,20 @@
     "datum": "2026-09-24"
    },
    "meta": {
-    "spend": 202.69,
-    "kop": 1,
-    "roas": 2.2152,
-    "cpa": 202.69,
+    "spend": 1847.61,
+    "kop": 12,
+    "roas": 6.238,
+    "cpa": 153.97,
     "be": 1.63,
-    "be_cpa": 533.13,
-    "vinstbidrag": 330.44,
-    "band": "UNTESTED",
-    "klass": "UNTESTED",
-    "lutning": null,
+    "be_cpa": 589.23,
+    "vinstbidrag": 5223.12,
+    "band": "MEANINGFUL",
+    "klass": "REAL_WINNER",
+    "lutning": "positiv",
     "bekraftelse": "preliminär",
-    "last": "2026-09-24"
+    "last": "2026-09-26"
    },
-   "status": "launchad",
+   "status": "vinnare",
    "aterupptas_om": [],
    "historik": [
     {
@@ -13503,7 +13524,13 @@
      "handelse": "Axel: ja "
     }
    ],
-   "namn_sv": "Båthuven 600D för trailerbåt 17–19 fot"
+   "namn_sv": "Båthuven 600D för trailerbåt 17–19 fot",
+   "butik": {
+    "titel": "Båthuv För Trailerbåt 17–19 Fot – 600 × 310 cm I 600D-Väv",
+    "pris_sek": 989.0,
+    "sedd": "2026-09-26",
+    "kalla": "katalog-live 2026-09-26"
+   }
   },
   "K0245": {
    "id": "K0245",
@@ -13599,7 +13626,13 @@
      "handelse": "Axel: ja "
     }
    ],
-   "namn_sv": "Kamadohuven 600D"
+   "namn_sv": "Kamadohuven 600D",
+   "butik": {
+    "titel": "Kamadohuv 80 × 102 cm – Skydd Med Förvaringspåse",
+    "pris_sek": 649.0,
+    "sedd": "2026-09-26",
+    "kalla": "katalog-live 2026-09-26"
+   }
   },
   "K0246": {
    "id": "K0246",
@@ -14459,7 +14492,13 @@
      "handelse": "Axel: kanske ['Lågt upplevt värde']"
     }
    ],
-   "namn_sv": "Maskinhyllan för 4 elverktyg"
+   "namn_sv": "Maskinhyllan för 4 elverktyg",
+   "butik": {
+    "titel": "Väggmonterad Maskinhylla – Plats För 4 Elverktyg",
+    "pris_sek": 1039.0,
+    "sedd": "2026-09-26",
+    "kalla": "katalog-live 2026-09-26"
+   }
   },
   "K0254": {
    "id": "K0254",
@@ -14949,7 +14988,13 @@
      "handelse": "Axel: kanske "
     }
    ],
-   "namn_sv": "Promenadscooterns regnkapell"
+   "namn_sv": "Promenadscooterns regnkapell",
+   "butik": {
+    "titel": "Scooterkapell 190 × 71 × 117 cm – Reflexremsor Och Spännen",
+    "pris_sek": 569.0,
+    "sedd": "2026-09-26",
+    "kalla": "katalog-live 2026-09-26"
+   }
   },
   "K0258": {
    "id": "K0258",
@@ -15185,7 +15230,13 @@
      "handelse": "Axel: ja "
     }
    ],
-   "namn_sv": "Trädansiktet — gubben i trädet"
+   "namn_sv": "Trädansiktet — gubben i trädet",
+   "butik": {
+    "titel": "Trädansiktet – Gubben i Trädet, 3 Delar, 5 Ansikten",
+    "pris_sek": 389.0,
+    "sedd": "2026-09-26",
+    "kalla": "katalog-live 2026-09-26"
+   }
   },
   "K0260": {
    "id": "K0260",
@@ -15735,9 +15786,26 @@
      "ts": "2026-09-16T04:44:11.639Z"
     }
    ],
-   "launch": null,
-   "meta": null,
-   "status": "kanske",
+   "launch": {
+    "kampanj": "Rullknivslipen i Trä 20° | BE ROAS 1.63 | Launch 2026-09-26",
+    "kampanj_id": "120250377860080291",
+    "datum": "2026-09-26"
+   },
+   "meta": {
+    "spend": 36.14,
+    "kop": 0,
+    "roas": null,
+    "cpa": null,
+    "be": 1.63,
+    "be_cpa": 355.21,
+    "vinstbidrag": null,
+    "band": "UNTESTED",
+    "klass": "UNTESTED",
+    "lutning": null,
+    "bekraftelse": "preliminär",
+    "last": "2026-09-26"
+   },
+   "status": "launchad",
    "aterupptas_om": [],
    "historik": [
     {
@@ -15755,6 +15823,10 @@
     {
      "datum": "2026-09-24",
      "handelse": "i butiken: Rullknivslipen i Trä, 20° – Vinkeln Är Redan Bestämd 579 kr (kampanj ej sedd)"
+    },
+    {
+     "datum": "2026-09-26",
+     "handelse": "launchad i kontot: Rullknivslipen i Trä 20° | BE ROAS 1.63 | Launch 2026-09-26"
     }
    ],
    "namn_sv": "Rullknivslipen i trä, 2 diamantskivor",
@@ -16105,7 +16177,13 @@
      "handelse": "Axel: ja "
     }
    ],
-   "namn_sv": "Fönstertermomattan för husvagn, 2-pack"
+   "namn_sv": "Fönstertermomattan för husvagn, 2-pack",
+   "butik": {
+    "titel": "Fönstertermomatta 2-Pack 70 × 80 cm – Isolering Mot Kyla Och Sol",
+    "pris_sek": 539.0,
+    "sedd": "2026-09-26",
+    "kalla": "katalog-live 2026-09-26"
+   }
   },
   "K0268": {
    "id": "K0268",
@@ -16325,7 +16403,13 @@
      "handelse": "Axel: ja "
     }
    ],
-   "namn_sv": "Läktarponchon med värme"
+   "namn_sv": "Läktarponchon med värme",
+   "butik": {
+    "titel": "Läktarponcho Med Värme – Tre Värmelägen Via USB",
+    "pris_sek": 849.0,
+    "sedd": "2026-09-26",
+    "kalla": "katalog-live 2026-09-26"
+   }
   },
   "K0270": {
    "id": "K0270",
@@ -17375,7 +17459,13 @@
      "handelse": "Axel: kanske ['Lågt upplevt värde']"
     }
    ],
-   "namn_sv": "Krukbärremmen — olivträdet in, 90 kg"
+   "namn_sv": "Krukbärremmen — olivträdet in, 90 kg",
+   "butik": {
+    "titel": "Krukbärrem 90 kg – Lyft Tunga Krukor Med Två Personer",
+    "pris_sek": 539.0,
+    "sedd": "2026-09-26",
+    "kalla": "katalog-live 2026-09-26"
+   }
   },
   "K0279": {
    "id": "K0279",
@@ -17591,7 +17681,13 @@
      "handelse": "Axel: ja "
     }
    ],
-   "namn_sv": "Sorkkorgarna i rostfritt, 15-pack"
+   "namn_sv": "Sorkkorgarna i rostfritt, 15-pack",
+   "butik": {
+    "titel": "Sorkkorgar I Rostfritt Nät 15-pack – Skydd Runt Rötterna",
+    "pris_sek": 569.0,
+    "sedd": "2026-09-26",
+    "kalla": "katalog-live 2026-09-26"
+   }
   },
   "K0281": {
    "id": "K0281",
@@ -18024,7 +18120,13 @@
      "handelse": "Axel: ja "
     }
    ],
-   "namn_sv": "Slangboxhuven isolerad 55 cm"
+   "namn_sv": "Slangboxhuven isolerad 55 cm",
+   "butik": {
+    "titel": "Isolerad Slangboxhuv 55 × 55 × 30 cm – Svart Med Dragsko",
+    "pris_sek": 389.0,
+    "sedd": "2026-09-26",
+    "kalla": "katalog-live 2026-09-26"
+   }
   },
   "K0285": {
    "id": "K0285",
@@ -18126,9 +18228,26 @@
      "ts": "2026-09-24T07:02:24.876Z"
     }
    ],
-   "launch": null,
-   "meta": null,
-   "status": "ja",
+   "launch": {
+    "kampanj": "Lövsilarna 6-pack | BE ROAS TBC | Launch 2026-09-26",
+    "kampanj_id": "120250377892590291",
+    "datum": "2026-09-26"
+   },
+   "meta": {
+    "spend": 0.0,
+    "kop": 0,
+    "roas": null,
+    "cpa": null,
+    "be": null,
+    "be_cpa": null,
+    "vinstbidrag": null,
+    "band": "UNTESTED",
+    "klass": "UNTESTED",
+    "lutning": null,
+    "bekraftelse": "preliminär",
+    "last": null
+   },
+   "status": "launchad",
    "aterupptas_om": [],
    "historik": [
     {
@@ -18146,6 +18265,10 @@
     {
      "datum": "2026-09-24",
      "handelse": "Axel: ja "
+    },
+    {
+     "datum": "2026-09-26",
+     "handelse": "launchad i kontot: Lövsilarna 6-pack | BE ROAS TBC | Launch 2026-09-26"
     }
    ],
    "namn_sv": "Lövsilarna för stuprören, 6-pack",
@@ -18486,7 +18609,13 @@
      "handelse": "Axel: ja "
     }
    ],
-   "namn_sv": "Regntunnehuven 200 L med dragsko"
+   "namn_sv": "Regntunnehuven 200 L med dragsko",
+   "butik": {
+    "titel": "Regntunnehuv 200 L I Svart 210D – Dras Över Tunnan",
+    "pris_sek": 349.0,
+    "sedd": "2026-09-26",
+    "kalla": "katalog-live 2026-09-26"
+   }
   },
   "K0289": {
    "id": "K0289",
@@ -21926,6 +22055,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-24T10:36:42Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-24-jul3",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-24-jul3/fynd-sida.json"
       }
      ]
     }
@@ -21974,10 +22108,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24-jul3",
+     "dom": "nej",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T18:10:17.789Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "nej",
    "aterupptas_om": [],
    "historik": [
     {
@@ -21987,6 +22129,10 @@
     {
      "datum": "2026-09-24-jul2",
      "handelse": "levererad på V3-arket (rank 7, sasong, konfidens LÅG)"
+    },
+    {
+     "datum": "2026-09-24-jul3",
+     "handelse": "Axel: nej "
     }
    ],
    "namn_sv": "Ringkrok-spelet i trä, 4 spelare"
@@ -22331,7 +22477,15 @@
    "arketyp": "G_Q4_GAVA",
    "arketyp_sekundar": "H_VISUELL_NYHET",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Träpusslet som blir en räv — mor och unge, A3, bitarna är små djur",
+    "form": "annat",
+    "arketyp": "G_Q4_GAVA",
+    "deadline_typ": "jul",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Unidragon Eternal Elephant 700 bitar 62 × 47 cm (PriceRunner, lägsta listning) / Unidragon Mandala 1 409"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -22394,10 +22548,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24-jul3",
+     "dom": "nej",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T18:09:57.558Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "nej",
    "aterupptas_om": [],
    "historik": [
     {
@@ -22407,6 +22569,10 @@
     {
      "datum": "2026-09-24-jul3",
      "handelse": "levererad på V3-arket (rank 1, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24-jul3",
+     "handelse": "Axel: nej "
     }
    ],
    "namn_sv": "Träpusslet som blir en räv, A3"
@@ -22421,7 +22587,15 @@
    "arketyp": "G_Q4_GAVA",
    "arketyp_sekundar": "H_VISUELL_NYHET",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Träpusslet som blir en varg — svart varg mot månen, galaxtryck, figurbitar",
+    "form": "annat",
+    "arketyp": "G_Q4_GAVA",
+    "deadline_typ": "jul",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Unidragon Eternal Elephant 700 bitar 62 × 47 cm (PriceRunner, lägsta listning) / Unidragon Mandala 1 409"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -22484,10 +22658,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24-jul3",
+     "dom": "nej",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T18:09:59.888Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "nej",
    "aterupptas_om": [],
    "historik": [
     {
@@ -22497,6 +22679,10 @@
     {
      "datum": "2026-09-24-jul3",
      "handelse": "levererad på V3-arket (rank 2, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24-jul3",
+     "handelse": "Axel: nej "
     }
    ],
    "namn_sv": "Träpusslet som blir en varg"
@@ -22511,7 +22697,15 @@
    "arketyp": "H_VISUELL_NYHET",
    "arketyp_sekundar": "G_Q4_GAVA",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Träpusslet i kattram — hundra små katter fyller en kattsiluett i trä",
+    "form": "annat",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "jul",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Unidragon (kategori, inte formen) — PriceRunner"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -22574,10 +22768,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24-jul3",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T18:10:00.995Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -22587,6 +22789,10 @@
     {
      "datum": "2026-09-24-jul3",
      "handelse": "levererad på V3-arket (rank 3, sasong, konfidens LÅG)"
+    },
+    {
+     "datum": "2026-09-24-jul3",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Katten full av katter, träpussel med ram"
@@ -22601,7 +22807,15 @@
    "arketyp": "G_Q4_GAVA",
    "arketyp_sekundar": "H_VISUELL_NYHET",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Bollkastaren som hunden laddar själv — kastar 3–9 m, tre bollar",
+    "form": "annat",
+    "arketyp": "G_Q4_GAVA",
+    "deadline_typ": "jul",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "PetSafe Automatic Ball Thrower"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -22664,10 +22878,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24-jul3",
+     "dom": "nej",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T18:10:02.959Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "nej",
    "aterupptas_om": [],
    "historik": [
     {
@@ -22677,6 +22899,10 @@
     {
      "datum": "2026-09-24-jul3",
      "handelse": "levererad på V3-arket (rank 4, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24-jul3",
+     "handelse": "Axel: nej "
     }
    ],
    "namn_sv": "Bollkastaren hunden laddar själv"
@@ -22691,7 +22917,15 @@
    "arketyp": "H_VISUELL_NYHET",
    "arketyp_sekundar": "G_Q4_GAVA",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Dragfjädern som hänger i trädet — hunden drar mot fjädern, 5 m rep och karbinhakar",
+    "form": "annat",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "jul",
+    "prisband": "500–999",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "ej mätt — ingen svensk listning i formen (Tether Tug/Spring pole saknas)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -22754,10 +22988,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24-jul3",
+     "dom": "nej",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T18:10:04.825Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "nej",
    "aterupptas_om": [],
    "historik": [
     {
@@ -22767,6 +23009,10 @@
     {
      "datum": "2026-09-24-jul3",
      "handelse": "levererad på V3-arket (rank 5, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24-jul3",
+     "handelse": "Axel: nej "
     }
    ],
    "namn_sv": "Dragfjädern i trädet, 5 m rep"
@@ -22781,7 +23027,15 @@
    "arketyp": "H_VISUELL_NYHET",
    "arketyp_sekundar": "G_Q4_GAVA",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Fäktningsdockorna på pinnar — motståndarens ballonghuvud ska spräckas",
+    "form": "annat",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "jul",
+    "prisband": "300–499",
+    "ankare_klass": "golv utan ankare",
+    "ankare_kalla": "Silverlit Robo Kombat Balloon Puncher Twin Pack (samma lek — spräck ballongen — i RC-robotform, annan SAK)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -22844,10 +23098,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24-jul3",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T18:10:07.181Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -22857,6 +23119,10 @@
     {
      "datum": "2026-09-24-jul3",
      "handelse": "levererad på V3-arket (rank 6, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24-jul3",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Ballongfäktningen, två trädockor"
@@ -22871,7 +23137,15 @@
    "arketyp": "H_VISUELL_NYHET",
    "arketyp_sekundar": "G_Q4_GAVA",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Väggkastaren för katten — motor på sugkopp som slänger ut och drar in snöret själv",
+    "form": "annat",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "jul",
+    "prisband": "300–499",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "ej mätt — ingen svensk listning i formen"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -22934,10 +23208,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24-jul3",
+     "dom": "nej",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T18:10:09.619Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "nej",
    "aterupptas_om": [],
    "historik": [
     {
@@ -22947,6 +23229,10 @@
     {
      "datum": "2026-09-24-jul3",
      "handelse": "levererad på V3-arket (rank 7, sasong, konfidens LÅG)"
+    },
+    {
+     "datum": "2026-09-24-jul3",
+     "handelse": "Axel: nej "
     }
    ],
    "namn_sv": "Väggkastaren som slänger snöret åt katten"
@@ -22961,7 +23247,15 @@
    "arketyp": "H_VISUELL_NYHET",
    "arketyp_sekundar": "G_Q4_GAVA",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Kaospendeln på skrivbordet — elektromagnetisk dubbelpendel som aldrig stannar (Swinging Sticks-form)",
+    "form": "annat",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "jul",
+    "prisband": "500–999",
+    "ankare_klass": "1,2–1,3×",
+    "ankare_kalla": "MikaMax Swinging Sticks"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -23024,10 +23318,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24-jul3",
+     "dom": "nej",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T18:10:11.505Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "nej",
    "aterupptas_om": [],
    "historik": [
     {
@@ -23037,6 +23339,10 @@
     {
      "datum": "2026-09-24-jul3",
      "handelse": "levererad på V3-arket (rank 8, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24-jul3",
+     "handelse": "Axel: nej "
     }
    ],
    "namn_sv": "Kaospendeln, dubbelpendel i metall"
@@ -23051,7 +23357,15 @@
    "arketyp": "H_VISUELL_NYHET",
    "arketyp_sekundar": "G_Q4_GAVA",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Ferrofluidflaskan — magnetvätska som reser sig i taggar när magneten närmar sig",
+    "form": "annat",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "jul",
+    "prisband": "300–499",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Ferrofluid Magnetvätska Flytande Display (PriceRunner, 2 listningar)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -23114,10 +23428,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24-jul3",
+     "dom": "nej",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T18:10:13.873Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "nej",
    "aterupptas_om": [],
    "historik": [
     {
@@ -23127,6 +23449,10 @@
     {
      "datum": "2026-09-24-jul3",
      "handelse": "levererad på V3-arket (rank 9, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-24-jul3",
+     "handelse": "Axel: nej "
     }
    ],
    "namn_sv": "Ferrofluidflaskan med magnet"
@@ -23141,7 +23467,15 @@
    "arketyp": "H_VISUELL_NYHET",
    "arketyp_sekundar": "G_Q4_GAVA",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Regnmolnslampan — vattendroppar som faller i en cirkel under molnet (luftfuktare)",
+    "form": "annat",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "jul",
+    "prisband": "500–999",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "ej mätt — Coolstuff/Teknikmagasinet oläst (JS)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -23204,10 +23538,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-24-jul3",
+     "dom": "nej",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-24T18:10:15.651Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "nej",
    "aterupptas_om": [],
    "historik": [
     {
@@ -23217,6 +23559,10 @@
     {
      "datum": "2026-09-24-jul3",
      "handelse": "levererad på V3-arket (rank 10, sasong, konfidens LÅG)"
+    },
+    {
+     "datum": "2026-09-24-jul3",
+     "handelse": "Axel: nej "
     }
    ],
    "namn_sv": "Regnmolnet — droppar i lampan"

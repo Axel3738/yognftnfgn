@@ -1,10 +1,10 @@
 {
- "datum": "2026-09-24",
- "antal_svar": 114,
+ "datum": "2026-09-26",
+ "antal_svar": 125,
  "per_dom": {
-  "ja": 71,
+  "ja": 73,
   "kanske": 16,
-  "nej": 27
+  "nej": 36
  },
  "antal_utfall": 7,
  "score_regel": "(ja + 0.5*kanske + 1) / (ja + kanske + nej + 2); 0.5 = inget svar; launchad = 2 ja, >=BE = 3 ja, <BE = 3 nej",
@@ -645,6 +645,72 @@
     "kanske": 0,
     "nej": 0,
     "score": 0.667
+   },
+   "NYTT: Dragfjädern som hänger i trädet — hunden drar mot fjädern, 5 m rep och karbinhakar": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Ferrofluidflaskan — magnetvätska som reser sig i taggar när magneten närmar sig": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Regnmolnslampan — vattendroppar som faller i en cirkel under molnet (luftfuktare)": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Träpusslet som blir en varg — svart varg mot månen, galaxtryck, figurbitar": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Träpusslet i kattram — hundra små katter fyller en kattsiluett i trä": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Ringen som ska på kroken — 4 spelare i trä": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Kaospendeln på skrivbordet — elektromagnetisk dubbelpendel som aldrig stannar (Swinging Sticks-form)": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Bollkastaren som hunden laddar själv — kastar 3–9 m, tre bollar": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Träpusslet som blir en räv — mor och unge, A3, bitarna är små djur": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Väggkastaren för katten — motor på sugkopp som slänger ut och drar in snöret själv": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Fäktningsdockorna på pinnar — motståndarens ballonghuvud ska spräckas": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
    }
   },
   "ankare_kalla": {
@@ -1260,6 +1326,66 @@
     "nej": 0,
     "score": 0.667
    },
+   "ej mätt — ingen svensk listning i formen (Tether Tug/Spring pole saknas)": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "Ferrofluid Magnetvätska Flytande Display (PriceRunner, 2 listningar)": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "ej mätt — Coolstuff/Teknikmagasinet oläst (JS)": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "Unidragon Eternal Elephant 700 bitar 62 × 47 cm (PriceRunner, lägsta listning) / Unidragon Mandala 1 409": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 2,
+    "score": 0.25
+   },
+   "Unidragon (kategori, inte formen) — PriceRunner": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "inget svenskt ankare i 4-spelarform hittat": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "MikaMax Swinging Sticks": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "PetSafe Automatic Ball Thrower": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "ej mätt — ingen svensk listning i formen": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "Silverlit Robo Kombat Balloon Puncher Twin Pack (samma lek — spräck ballongen — i RC-robotform, annan SAK)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
    "eurotrail/getcamping.se": {
     "ja": 3,
     "kanske": 0,
@@ -1305,10 +1431,10 @@
   },
   "ankare_klass": {
    "≥ 1,6×": {
-    "ja": 24,
+    "ja": 25,
     "kanske": 7,
-    "nej": 13,
-    "score": 0.62
+    "nej": 17,
+    "score": 0.578
    },
    "1,3–1,6×": {
     "ja": 23,
@@ -1317,22 +1443,22 @@
     "score": 0.806
    },
    "golv utan ankare": {
-    "ja": 17,
+    "ja": 18,
     "kanske": 2,
     "nej": 0,
-    "score": 0.905
+    "score": 0.909
    },
    "ej mätt": {
     "ja": 11,
     "kanske": 0,
-    "nej": 6,
-    "score": 0.632
+    "nej": 10,
+    "score": 0.522
    },
    "1,2–1,3×": {
     "ja": 7,
     "kanske": 1,
-    "nej": 1,
-    "score": 0.773
+    "nej": 2,
+    "score": 0.708
    },
    "ingen aktör": {
     "ja": 2,
@@ -1379,16 +1505,16 @@
     "score": 0.636
    },
    "H_VISUELL_NYHET": {
-    "ja": 9,
+    "ja": 11,
     "kanske": 2,
-    "nej": 5,
-    "score": 0.611
+    "nej": 11,
+    "score": 0.5
    },
    "G_Q4_GAVA": {
     "ja": 11,
     "kanske": 2,
-    "nej": 3,
-    "score": 0.722
+    "nej": 6,
+    "score": 0.619
    },
    "E_VADER_SASONG": {
     "ja": 14,
@@ -1557,10 +1683,10 @@
     "score": 0.667
    },
    "jul": {
-    "ja": 8,
+    "ja": 10,
     "kanske": 2,
-    "nej": 9,
-    "score": 0.476
+    "nej": 18,
+    "score": 0.375
    },
    "tjäle": {
     "ja": 2,
@@ -1601,10 +1727,10 @@
     "score": 0.667
    },
    "annat": {
-    "ja": 20,
+    "ja": 22,
     "kanske": 7,
-    "nej": 13,
-    "score": 0.583
+    "nej": 22,
+    "score": 0.5
    },
    "kalenderlåda": {
     "ja": 4,
@@ -2286,6 +2412,72 @@
     "nej": 0,
     "score": 0.667
    },
+   "NYTT: Dragfjädern som hänger i trädet — hunden drar mot fjädern, 5 m rep och karbinhakar": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Ferrofluidflaskan — magnetvätska som reser sig i taggar när magneten närmar sig": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Regnmolnslampan — vattendroppar som faller i en cirkel under molnet (luftfuktare)": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Träpusslet som blir en varg — svart varg mot månen, galaxtryck, figurbitar": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Träpusslet i kattram — hundra små katter fyller en kattsiluett i trä": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Ringen som ska på kroken — 4 spelare i trä": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Kaospendeln på skrivbordet — elektromagnetisk dubbelpendel som aldrig stannar (Swinging Sticks-form)": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Bollkastaren som hunden laddar själv — kastar 3–9 m, tre bollar": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Träpusslet som blir en räv — mor och unge, A3, bitarna är små djur": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Väggkastaren för katten — motor på sugkopp som slänger ut och drar in snöret själv": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Fäktningsdockorna på pinnar — motståndarens ballonghuvud ska spräckas": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
    "Staketet — stolpen": {
     "ja": 2,
     "kanske": 0,
@@ -2313,10 +2505,10 @@
   },
   "prisband": {
    "500–999": {
-    "ja": 50,
+    "ja": 51,
     "kanske": 8,
-    "nej": 18,
-    "score": 0.705
+    "nej": 25,
+    "score": 0.651
    },
    "≥ 1 000": {
     "ja": 12,
@@ -2325,10 +2517,10 @@
     "score": 0.722
    },
    "300–499": {
-    "ja": 22,
+    "ja": 23,
     "kanske": 4,
-    "nej": 2,
-    "score": 0.833
+    "nej": 4,
+    "score": 0.788
    }
   }
  },

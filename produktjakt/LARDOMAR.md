@@ -3,43 +3,43 @@
 Läses av `/produktjakt` INNAN sökningen. Auto-delen räknas av `feedback.py vikter`; skriv aldrig i den för hand.
 
 <!-- auto:start -->
-Uppdaterad 2026-09-24. **114 svar** — ja 71, kanske 16, nej 27.
+Uppdaterad 2026-09-26. **125 svar** — ja 73, kanske 16, nej 36.
 
 ## Det Axel säger ja till
 
-- prisband **500–999**: 50 ja, 8 kanske, 18 nej → score 0.705
-- ankare_klass **≥ 1,6×**: 24 ja, 7 kanske, 13 nej → score 0.62
+- prisband **500–999**: 51 ja, 8 kanske, 25 nej → score 0.651
+- ankare_klass **≥ 1,6×**: 25 ja, 7 kanske, 17 nej → score 0.578
 - ankare_klass **1,3–1,6×**: 23 ja, 2 kanske, 4 nej → score 0.806
+- prisband **300–499**: 23 ja, 4 kanske, 4 nej → score 0.788
 - form **överdrag**: 22 ja, 1 kanske, 2 nej → score 0.87
-- prisband **300–499**: 22 ja, 4 kanske, 2 nej → score 0.833
-- form **annat**: 20 ja, 7 kanske, 13 nej → score 0.583
-- ankare_klass **golv utan ankare**: 17 ja, 2 kanske, 0 nej → score 0.905
+- form **annat**: 22 ja, 7 kanske, 22 nej → score 0.5
+- ankare_klass **golv utan ankare**: 18 ja, 2 kanske, 0 nej → score 0.909
 - arketyp **B_SKYDDA_DYRT**: 16 ja, 1 kanske, 3 nej → score 0.795
 - arketyp **E_VADER_SASONG**: 14 ja, 1 kanske, 3 nej → score 0.775
 - deadline_typ **första frost**: 13 ja, 2 kanske, 3 nej → score 0.75
 - prisband **≥ 1 000**: 12 ja, 0 kanske, 4 nej → score 0.722
 - deadline_typ **uppställning**: 11 ja, 1 kanske, 1 nej → score 0.833
-- arketyp **G_Q4_GAVA**: 11 ja, 2 kanske, 3 nej → score 0.722
-- ankare_klass **ej mätt**: 11 ja, 0 kanske, 6 nej → score 0.632
-- deadline_klass **6–12 v**: 10 ja, 1 kanske, 0 nej → score 0.885
+- arketyp **G_Q4_GAVA**: 11 ja, 2 kanske, 6 nej → score 0.619
+- ankare_klass **ej mätt**: 11 ja, 0 kanske, 10 nej → score 0.522
+- arketyp **H_VISUELL_NYHET**: 11 ja, 2 kanske, 11 nej → score 0.5
 
 ## Det Axel säger nej till
 
-- prisband **500–999**: 18 nej, 50 ja → score 0.705
-- form **annat**: 13 nej, 20 ja → score 0.583
-- ankare_klass **≥ 1,6×**: 13 nej, 24 ja → score 0.62
-- deadline_typ **jul**: 9 nej, 8 ja → score 0.476
-- ankare_klass **ej mätt**: 6 nej, 11 ja → score 0.632
-- arketyp **H_VISUELL_NYHET**: 5 nej, 9 ja → score 0.611
+- prisband **500–999**: 25 nej, 51 ja → score 0.651
+- form **annat**: 22 nej, 22 ja → score 0.5
+- deadline_typ **jul**: 18 nej, 10 ja → score 0.375
+- ankare_klass **≥ 1,6×**: 17 nej, 25 ja → score 0.578
+- arketyp **H_VISUELL_NYHET**: 11 nej, 11 ja → score 0.5
+- ankare_klass **ej mätt**: 10 nej, 11 ja → score 0.522
+- arketyp **G_Q4_GAVA**: 6 nej, 11 ja → score 0.619
 - arketyp **A_AGARE_FRIKTION**: 4 nej, 4 ja → score 0.5
 - prisband **≥ 1 000**: 4 nej, 12 ja → score 0.722
 - ankare_klass **1,3–1,6×**: 4 nej, 23 ja → score 0.806
+- prisband **300–499**: 4 nej, 23 ja → score 0.788
 - arketyp **D_SNABBARE_METOD**: 3 nej, 6 ja → score 0.636
-- arketyp **G_Q4_GAVA**: 3 nej, 11 ja → score 0.722
 - deadline_typ **första frost**: 3 nej, 13 ja → score 0.75
 - arketyp **E_VADER_SASONG**: 3 nej, 14 ja → score 0.775
 - arketyp **B_SKYDDA_DYRT**: 3 nej, 16 ja → score 0.795
-- arketyp **F_HOBBY_IDENTITET**: 2 nej, 2 ja → score 0.5
 
 ## Orsakerna han anger
 
