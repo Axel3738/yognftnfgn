@@ -82,3 +82,45 @@ export function felText(body: any): string {
   const detalj = f?.details?.[0]?.errors?.[0]?.message;
   return String(detalj || f?.message || "");
 }
+
+export interface GoogleKonto {
+  customerId: string;
+  name: string;
+  currency: string;
+  timezone: string;
+  /** Chefskontot som anropen måste gå via, null när kontot nås direkt. */
+  loginCustomerId: string | null;
+}
+
+/**
+ * En GAQL-rad ur `customer` eller `customer_client` → ett valbart konto.
+ *
+ * Null för chefskonton: de har ingen egen annonskostnad, de är mappar, och
+ * en koppling till en mapp hade alltid rapporterat noll.
+ */
+export function kontoUrRad(c: any, reservId: string, loginCustomerId: string | null): GoogleKonto | null {
+  if (!c || c.manager === true) return null;
+  const id = String(c.id ?? reservId).replace(/\D/g, "");
+  if (!id) return null;
+  return {
+    customerId: id,
+    name: String(c.descriptiveName ?? c.descriptive_name ?? id),
+    currency: String(c.currencyCode ?? c.currency_code ?? ""),
+    timezone: String(c.timeZone ?? c.time_zone ?? ""),
+    loginCustomerId: loginCustomerId ? loginCustomerId.replace(/\D/g, "") : null,
+  };
+}
+
+/**
+ * Samma konto kan nås både direkt och via ett chefskonto. Den direkta vägen
+ * vinner: den kräver inget `login-customer-id` och slutar inte fungera om
+ * någon tar bort chefskontots länk.
+ */
+export function slaIhopKonton(konton: GoogleKonto[]): GoogleKonto[] {
+  const per = new Map<string, GoogleKonto>();
+  for (const k of konton) {
+    const fore = per.get(k.customerId);
+    if (!fore || (fore.loginCustomerId && !k.loginCustomerId)) per.set(k.customerId, k);
+  }
+  return [...per.values()];
+}

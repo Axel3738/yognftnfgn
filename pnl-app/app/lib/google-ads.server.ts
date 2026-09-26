@@ -28,9 +28,19 @@ import prisma from "../db.server";
 import { decrypt, encrypt, encryptionAvailable } from "./crypto.server";
 /* Den rena logiken (kontoprefix, miljondelar, batchar) bor i google-ads.ts
    så den går att testa utan databas. */
-import { felText, platta, PREFIX, somKonto, tolkaSpend, type GoogleSpendRad } from "./google-ads";
+import {
+  felText,
+  kontoUrRad,
+  platta,
+  PREFIX,
+  slaIhopKonton,
+  somKonto,
+  tolkaSpend,
+  type GoogleKonto,
+  type GoogleSpendRad,
+} from "./google-ads";
 
-export { arGoogle, PREFIX, somKonto, type GoogleSpendRad } from "./google-ads";
+export { arGoogle, PREFIX, somKonto, type GoogleKonto, type GoogleSpendRad } from "./google-ads";
 
 const OAUTH = "https://oauth2.googleapis.com/token";
 const AUTH = "https://accounts.google.com/o/oauth2/v2/auth";
@@ -319,20 +329,22 @@ function huvuden(cfg: GoogleConfig, accessToken: string, loginCustomerId?: strin
   };
 }
 
-export interface GoogleKonto {
-  customerId: string;
-  name: string;
-  currency: string;
-  timezone: string;
-  loginCustomerId: string | null;
-}
-
 /**
  * Kontona handlaren kommer åt.
  *
  * Två steg, och det andra är inte valfritt: `listAccessibleCustomers` ger
  * bara kundnummer. Utan namn, valuta och tidszon hade handlaren fått välja
  * mellan tio tiosiffriga tal, och valutan behövs för att räkna om beloppet.
+ *
+ * ⚠️ Chefskonton (MCC) öppnas. Den som sköter annonserna via ett chefskonto
+ * har ofta BARA chefskontot direkt, och underkontona syns inte i
+ * `listAccessibleCustomers`. Förut föll chefskontot bort och listan blev tom
+ * — "det här Google-kontot har inga Google Ads-konton" fast det hade det.
+ * Underkontona hämtas nu via chefen och bär chefens nummer som
+ * `loginCustomerId`, som varje senare anrop skickar med.
+ *
+ * ⚠️ Fel sväljs inte längre till en tom lista. Blir listan tom FÖR ATT
+ * Google nekade, är det Googles svar handlaren ska se, inte "inga konton".
  */
 export async function listaKonton(cfg: GoogleConfig, accessToken: string): Promise<GoogleKonto[]> {
   const res = await fetch(`${API}/customers:listAccessibleCustomers`, {
@@ -345,39 +357,49 @@ export async function listaKonton(cfg: GoogleConfig, accessToken: string): Promi
   }
   const ids: string[] = (body?.resourceNames ?? []).map((r: string) => r.split("/").pop() ?? "").filter(Boolean);
 
-  const ut: GoogleKonto[] = [];
+  const hittade: GoogleKonto[] = [];
+  const fel: string[] = [];
   for (const id of ids.slice(0, 50)) {
-    const k = await beskrivKonto(cfg, accessToken, id).catch(() => null);
-    if (k) ut.push(k);
+    let c: any;
+    try {
+      c = (await sok(cfg, accessToken, id, KUND_FRAGA, null))[0]?.customer;
+    } catch (e) {
+      fel.push((e as Error).message);
+      continue;
+    }
+    if (!c) continue;
+    if (c.manager !== true) {
+      const k = kontoUrRad(c, id, null);
+      if (k) hittade.push(k);
+      continue;
+    }
+    try {
+      for (const r of await sok(cfg, accessToken, id, KLIENT_FRAGA, id)) {
+        const k = kontoUrRad(r?.customerClient ?? r?.customer_client, "", id);
+        if (k) hittade.push(k);
+      }
+    } catch (e) {
+      fel.push((e as Error).message);
+    }
   }
-  return ut;
+
+  const konton = slaIhopKonton(hittade).slice(0, 200);
+  if (!konton.length && fel.length) throw new GoogleError(fel[0]);
+  return konton;
 }
 
-/** Namn, valuta och tidszon för ett kundnummer. */
-async function beskrivKonto(cfg: GoogleConfig, accessToken: string, customerId: string): Promise<GoogleKonto | null> {
-  const rader = await sok(
-    cfg,
-    accessToken,
-    customerId,
-    `SELECT customer.id, customer.descriptive_name, customer.currency_code, customer.time_zone,
-            customer.manager, customer.status
-     FROM customer
-     LIMIT 1`,
-    null,
-  );
-  const c = rader[0]?.customer;
-  if (!c) return null;
-  /* Chefskonton har ingen egen annonskostnad — de är mappar. Att lista dem
-     som valbara hade gett en koppling som alltid rapporterar noll. */
-  if (c.manager === true) return null;
-  return {
-    customerId: String(c.id ?? customerId),
-    name: String(c.descriptiveName ?? c.descriptive_name ?? customerId),
-    currency: String(c.currencyCode ?? c.currency_code ?? ""),
-    timezone: String(c.timeZone ?? c.time_zone ?? ""),
-    loginCustomerId: null,
-  };
-}
+const KUND_FRAGA = `SELECT customer.id, customer.descriptive_name, customer.currency_code, customer.time_zone,
+        customer.manager, customer.status
+ FROM customer
+ LIMIT 1`;
+
+/* Alla nivåer under chefen, inte bara närmaste: en byrå har ofta chef →
+   underchef → annonskonto. Bara aktiva annonskonton — stängda har ingen
+   kostnad att hämta. */
+const KLIENT_FRAGA = `SELECT customer_client.id, customer_client.descriptive_name,
+        customer_client.currency_code, customer_client.time_zone, customer_client.manager
+ FROM customer_client
+ WHERE customer_client.manager = false AND customer_client.status = 'ENABLED'`;
 
 /** En GAQL-fråga. Returnerar alla rader; `searchStream` paginerar inte. */
 export async function sok(

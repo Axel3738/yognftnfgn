@@ -247,12 +247,16 @@ export async function action({ request }: ActionFunctionArgs) {
     const id = String(f.get("customerId") ?? "").replace(/\D/g, "");
     if (!id) return json({ ok: false, message: T.settings.unknownError });
     const namn = String(f.get("name") ?? "").trim() || id;
+    /* Chefskontot läses ur serverns egen kontolista, aldrig ur formuläret:
+       ett underkonto som nås via ett chefskonto nekas utan det, och en
+       klient ska inte kunna välja vilket chefskonto anropen går via. */
+    const kand = (await tillgangligaKonton(session.shop).catch(() => [])).find((k) => k.customerId === id);
     await laggTillGoogleKonto(session.shop, {
       customerId: id,
       name: namn,
       currency: String(f.get("currency") ?? "").trim(),
       timezone: String(f.get("timezone") ?? "").trim(),
-      loginCustomerId: null,
+      loginCustomerId: kand?.loginCustomerId ?? null,
     });
     /* Nytt konto: en gammal backoff från ett dött konto får inte hindra
        hämtningen av det här. */
