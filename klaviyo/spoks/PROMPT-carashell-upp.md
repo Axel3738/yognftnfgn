@@ -1,11 +1,11 @@
 # Prompt: ladda upp CaraShells mejlsystem i Spoks (klistra in i en NY session)
 
 Skriven 2026-09-26. Förutsättning: CaraShells workspace syns i `whoami` för
-Spoks-MCP:n. Den fanns inte 2026-09-26 — Axel hade inte skapat den (hans klick:
-installera Spoks på CaraShells Shopify från admin → Appar → Spoks, på en dator,
-med adressen `kundsupport@baverbutiken.se` i onboardingen, se
-`klaviyo/spoks/README.md` → CaraShell). Allt innehåll, planen och kontrollerna
-ligger redan i repot. Allt under strecket är prompten.
+Spoks-MCP:n. 2026-09-26 låg den under ett eget Spoks-konto som Axel råkade skapa
+(hans klick: i det kontot, CaraShells workspace → Settings → Team → "Invite team
+member" → `kundsupport@baverbutiken.se` som Admin, se `klaviyo/spoks/README.md`
+→ CaraShell). Allt innehåll, planen och kontrollerna ligger redan i repot. Allt
+under strecket är prompten.
 
 ---
 

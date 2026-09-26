@@ -167,13 +167,24 @@ igenom (negationen), medan ett påstående om elastiska band fortfarande stoppar
 - Kassaflödet kräver subscribed (MFL 19 §) och når därför bara 7 % av svenska
   kassor. Det är lagen, inte ett fel.
 
-**Axels klick** står i rapporten 2026-09-26 och upprepas i `PROMPT-carashell-upp.md`:
-öppna CaraShells Shopify admin på en dator → Appar → Spoks (eller installera om från
-https://apps.shopify.com/spoks med butiken yitrbk-m3 vald), skriv in
-`kundsupport@baverbutiken.se` som adress i onboardingen, hoppa över Klaviyo-frågan,
-och kontrollera i app.spoks.com att CaraShell syns bredvid Bäverbutiken.se och
-Matstrumpor.se. Sedan kör en ny session uppladdningsprompten — steg 0 där vägrar
-gå vidare tills `whoami` visar workspacen.
+⚠️ **Läget ändrades samma förmiddag:** Axel råkade skapa CaraShells workspace under
+ett **eget, nytt Spoks-konto** (annan inloggning än `kundsupport@baverbutiken.se`),
+så workspacen finns men syns varken i hans vanliga hubb (skärmdump: bytaren visar bara
+Bäverbutiken.se och Matstrumpor.se) eller för MCP:n. **Lösningen är Spoks egen för
+"redan installerad med fel adress":** logga in på det nya kontot → CaraShells workspace
+→ **Settings → Team → "Invite team member"** → `kundsupport@baverbutiken.se` → rollen
+**Admin** → skicka (hjälpartikeln *Managing team members*: inbjudan går på mejladress,
+Admin = "Full access … and other team members"). Går det inte: Spoks support med
+butiks-URL + adressen, "we will make the address you want an admin on all of them"
+(artikeln *How do I run several Shopify stores from one Spoks login*). Sedan ska
+`whoami` visa tre workspaces, och uppladdningssessionen (`PROMPT-carashell-upp.md`,
+steg 0) kan gå vidare. Det extra kontot rörs inte av någon session.
+
+**Axels klick** (upprepas i `PROMPT-carashell-upp.md`): bjud in
+`kundsupport@baverbutiken.se` som Admin i CaraShells workspace enligt ovan, kontrollera
+i app.spoks.com (inloggad som kundsupport) att CaraShell syns bredvid Bäverbutiken.se
+och Matstrumpor.se, kör sedan uppladdningsprompten i en ny session — steg 0 där
+vägrar gå vidare tills `whoami` visar workspacen.
 
 ---
 
