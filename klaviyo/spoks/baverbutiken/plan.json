@@ -1,0 +1,637 @@
+{
+  "floden": [
+    {
+      "id": "f01-valkomst",
+      "namn": "FLOW_lista_valkomst_v2",
+      "trigger": {
+        "typ": "lista",
+        "lista": "LISTA_nyhetsbrev"
+      },
+      "filter": [
+        "samtycke",
+        "ej_kopt_sedan_start"
+      ],
+      "steg": [
+        {
+          "typ": "mejl",
+          "id": "f01-valkomst-e1",
+          "namn": "Axel här. Jag driver Bäverbutiken."
+        },
+        {
+          "typ": "vanta",
+          "dagar": 2
+        },
+        {
+          "typ": "mejl",
+          "id": "f01-valkomst-e2",
+          "namn": "Tanköverdraget, slipmaskinen och två till"
+        },
+        {
+          "typ": "vanta",
+          "dagar": 3
+        },
+        {
+          "typ": "mejl",
+          "id": "f01-valkomst-e3",
+          "namn": "Så funkar det när du handlar hos oss"
+        }
+      ]
+    },
+    {
+      "id": "f02-overgiven-kassa",
+      "namn": "Övergiven kassa",
+      "trigger": {
+        "typ": "metrik",
+        "metrik": [
+          "Started Checkout",
+          "Checkout Started"
+        ]
+      },
+      "filter": [
+        "samtycke",
+        "ej_kopt_sedan_start"
+      ],
+      "steg": [
+        {
+          "typ": "vanta",
+          "dagar": 0.125
+        },
+        {
+          "typ": "mejl",
+          "id": "f02-overgiven-kassa-e1",
+          "namn": "Din kundvagn är fortfarande packad"
+        },
+        {
+          "typ": "vanta",
+          "dagar": 1
+        },
+        {
+          "typ": "mejl",
+          "id": "f02-overgiven-kassa-e2",
+          "namn": "Tre frågor du kanske har innan du betalar"
+        },
+        {
+          "typ": "vanta",
+          "dagar": 2
+        },
+        {
+          "typ": "mejl",
+          "id": "f02-overgiven-kassa-e3",
+          "namn": "Sista mejlet om din kassa"
+        }
+      ]
+    },
+    {
+      "id": "f03-webbhistorik",
+      "namn": "Webbhistorik",
+      "trigger": {
+        "typ": "metrik",
+        "metrik": [
+          "Viewed Product"
+        ]
+      },
+      "filter": [
+        "samtycke",
+        "ej_kopt_sedan_start",
+        "ej_checkout_sedan_start"
+      ],
+      "steg": [
+        {
+          "typ": "vanta",
+          "dagar": 0.16666666666666666
+        },
+        {
+          "typ": "mejl",
+          "id": "f03-webbhistorik-e1",
+          "namn": "Den här kikade du på"
+        },
+        {
+          "typ": "vanta",
+          "dagar": 1
+        },
+        {
+          "typ": "mejl",
+          "id": "f03-webbhistorik-e2",
+          "namn": "Fortfarande på din lista"
+        }
+      ]
+    },
+    {
+      "id": "f04-efter-kop",
+      "namn": "FLOW_order_efterkop_v4",
+      "trigger": {
+        "typ": "metrik",
+        "metrik": [
+          "Fulfilled Order"
+        ]
+      },
+      "filter": [
+        "kundundantag"
+      ],
+      "steg": [
+        {
+          "typ": "vanta",
+          "dagar": 3
+        },
+        {
+          "typ": "mejl",
+          "id": "f04-efter-kop-e1",
+          "namn": "Din beställning är på väg"
+        },
+        {
+          "typ": "vanta",
+          "dagar": 16
+        },
+        {
+          "typ": "mejl",
+          "id": "f04-efter-kop-e2",
+          "namn": "Kom allt fram som det ska"
+        }
+      ]
+    },
+    {
+      "id": "f05-vinback",
+      "namn": "FLOW_order_vinback_v3",
+      "trigger": {
+        "typ": "metrik",
+        "metrik": [
+          "Placed Order"
+        ]
+      },
+      "filter": [
+        "kundundantag",
+        "ej_kopt_sedan_start"
+      ],
+      "steg": [
+        {
+          "typ": "vanta",
+          "dagar": 120
+        },
+        {
+          "typ": "mejl",
+          "id": "f05-vinback-e1",
+          "namn": "Det har hänt en del sedan sist"
+        },
+        {
+          "typ": "vanta",
+          "dagar": 14
+        },
+        {
+          "typ": "mejl",
+          "id": "f05-vinback-e2",
+          "namn": "Tre prylar för säsongen"
+        }
+      ]
+    },
+    {
+      "id": "f06-sunset",
+      "namn": "FLOW_segment_sunset_v2",
+      "trigger": {
+        "typ": "segment",
+        "segment": "SEG_oengagerade_180d"
+      },
+      "filter": [
+        "samtycke"
+      ],
+      "steg": [
+        {
+          "typ": "mejl",
+          "id": "f06-sunset-e1",
+          "namn": "Vill du fortfarande ha våra mejl?"
+        },
+        {
+          "typ": "vanta",
+          "dagar": 5
+        },
+        {
+          "typ": "mejl",
+          "id": "f06-sunset-e2",
+          "namn": "Det här är sista mejlet"
+        }
+      ]
+    },
+    {
+      "id": "f07-motorholje-till-batmotorskydd",
+      "namn": "FLOW_order_motorholje-batmotorskydd_v2",
+      "trigger": {
+        "typ": "metrik",
+        "metrik": [
+          "Placed Order"
+        ],
+        "produkt_innehaller": [
+          "Marin Motorhölje"
+        ]
+      },
+      "filter": [
+        "kundundantag",
+        "ej_kopt_sedan_start"
+      ],
+      "steg": [
+        {
+          "typ": "vanta",
+          "dagar": 21
+        },
+        {
+          "typ": "mejl",
+          "id": "f07-motorholje-till-batmotorskydd-e1",
+          "namn": "Motorhöljet skyddar i vattnet. Och på land?"
+        },
+        {
+          "typ": "vanta",
+          "dagar": 7
+        },
+        {
+          "typ": "mejl",
+          "id": "f07-motorholje-till-batmotorskydd-e2",
+          "namn": "Fortfarande något som saknas på båten?"
+        }
+      ]
+    },
+    {
+      "id": "f08-tips-balteslip",
+      "namn": "FLOW_tips_balteslip_v1",
+      "trigger": {
+        "typ": "metrik",
+        "metrik": [
+          "Fulfilled Order"
+        ],
+        "produkt_innehaller": [
+          "Bälteslipmaskin Mini"
+        ]
+      },
+      "filter": [
+        "kundundantag"
+      ],
+      "steg": [
+        {
+          "typ": "vanta",
+          "dagar": 12
+        },
+        {
+          "typ": "mejl",
+          "id": "f08-tips-balteslip-e1",
+          "namn": "Vinkeln på slipmaskinen är fast med flit"
+        }
+      ]
+    },
+    {
+      "id": "f09-tips-takoverdrag",
+      "namn": "FLOW_tips_takoverdrag_v1",
+      "trigger": {
+        "typ": "metrik",
+        "metrik": [
+          "Fulfilled Order"
+        ],
+        "produkt_innehaller": [
+          "Taköverdrag Husvagn"
+        ]
+      },
+      "filter": [
+        "kundundantag"
+      ],
+      "steg": [
+        {
+          "typ": "vanta",
+          "dagar": 12
+        },
+        {
+          "typ": "mejl",
+          "id": "f09-tips-takoverdrag-e1",
+          "namn": "Så spänner du taköverdraget rätt"
+        }
+      ]
+    },
+    {
+      "id": "f10-tips-termoskydd",
+      "namn": "FLOW_tips_termoskydd_v1",
+      "trigger": {
+        "typ": "metrik",
+        "metrik": [
+          "Fulfilled Order"
+        ],
+        "produkt_innehaller": [
+          "Termoskydd Husbil"
+        ]
+      },
+      "filter": [
+        "kundundantag"
+      ],
+      "steg": [
+        {
+          "typ": "vanta",
+          "dagar": 12
+        },
+        {
+          "typ": "mejl",
+          "id": "f10-tips-termoskydd-e1",
+          "namn": "Kläm fast flikarna så här"
+        }
+      ]
+    },
+    {
+      "id": "f11-tips-batmotorskydd",
+      "namn": "FLOW_tips_batmotorskydd_v1",
+      "trigger": {
+        "typ": "metrik",
+        "metrik": [
+          "Fulfilled Order"
+        ],
+        "produkt_innehaller": [
+          "Båtmotorskydd 420D"
+        ]
+      },
+      "filter": [
+        "kundundantag"
+      ],
+      "steg": [
+        {
+          "typ": "vanta",
+          "dagar": 12
+        },
+        {
+          "typ": "mejl",
+          "id": "f11-tips-batmotorskydd-e1",
+          "namn": "Så drar du på skyddet rätt"
+        }
+      ]
+    },
+    {
+      "id": "f12-tips-ibc",
+      "namn": "FLOW_tips_ibc_v1",
+      "trigger": {
+        "typ": "metrik",
+        "metrik": [
+          "Fulfilled Order"
+        ],
+        "produkt_innehaller": [
+          "IBC-tanköverdrag"
+        ]
+      },
+      "filter": [
+        "kundundantag"
+      ],
+      "steg": [
+        {
+          "typ": "vanta",
+          "dagar": 12
+        },
+        {
+          "typ": "mejl",
+          "id": "f12-tips-ibc-e1",
+          "namn": "Stäng dragkedjan hela vägen"
+        }
+      ]
+    },
+    {
+      "id": "f13-tips-satesoverdrag",
+      "namn": "FLOW_tips_satesoverdrag_v1",
+      "trigger": {
+        "typ": "metrik",
+        "metrik": [
+          "Fulfilled Order"
+        ],
+        "produkt_innehaller": [
+          "Sätesöverdrag för Åkgräsklippare"
+        ]
+      },
+      "filter": [
+        "kundundantag"
+      ],
+      "steg": [
+        {
+          "typ": "vanta",
+          "dagar": 12
+        },
+        {
+          "typ": "mejl",
+          "id": "f13-tips-satesoverdrag-e1",
+          "namn": "60 sekunder till ett torrt säte"
+        }
+      ]
+    },
+    {
+      "id": "f14-recension-trustpilot",
+      "namn": "FLOW_recension_trustpilot_v2",
+      "trigger": {
+        "typ": "metrik",
+        "metrik": [
+          "Fulfilled Order"
+        ]
+      },
+      "filter": [
+        "kundundantag"
+      ],
+      "steg": [
+        {
+          "typ": "vanta",
+          "dagar": 14
+        },
+        {
+          "typ": "mejl",
+          "id": "f14-recension-trustpilot-e1",
+          "namn": "Vad tyckte du om det som kom i paketet?"
+        }
+      ]
+    }
+  ],
+  "kampanjer": [
+    {
+      "id": "k01-takoverdrag-vinterforvaring",
+      "namn": "MAIL_20260929_Takoverdrag_PD_1_uppvarmning_problem_taket-du-aldrig-kollar_v1",
+      "planerad": "2026-09-29T18:00:00+02:00",
+      "segment": [
+        "SEG_uppvarmning_steg1"
+      ],
+      "mejl": "k01-takoverdrag-vinterforvaring"
+    },
+    {
+      "id": "k02-baten-ska-upp",
+      "namn": "MAIL_20261001_Batmotorskydd_S_1_uppvarmning_solution_baten-ska-upp_v1",
+      "planerad": "2026-10-01T18:00:00+02:00",
+      "segment": [
+        "SEG_uppvarmning_steg1"
+      ],
+      "mejl": "k02-baten-ska-upp"
+    },
+    {
+      "id": "k03-termoskydd-kundernas-ord",
+      "namn": "MAIL_20261006_Termoskydd_SP_2_uppvarmning_product_kundernas-ord_v1",
+      "planerad": "2026-10-06T18:00:00+02:00",
+      "segment": [
+        "SEG_uppvarmning_steg1"
+      ],
+      "mejl": "k03-termoskydd-kundernas-ord"
+    },
+    {
+      "id": "k04-sotarset-fore-eldning",
+      "namn": "MAIL_20261008_Sotarset_N_1_uppvarmning_problem_sota-innan-du-eldar_v1",
+      "planerad": "2026-10-08T18:00:00+02:00",
+      "segment": [
+        "SEG_uppvarmning_steg1"
+      ],
+      "mejl": "k04-sotarset-fore-eldning"
+    },
+    {
+      "id": "k05-fars-dag",
+      "namn": "MAIL_20261013_Takoverdrag_GT_2_engagerade60d_product_farsdag-19okt_v1",
+      "planerad": "2026-10-13T18:00:00+02:00",
+      "segment": [
+        "SEG_engagerade_60d"
+      ],
+      "mejl": "k05-fars-dag"
+    },
+    {
+      "id": "k06-kamera-ljud-klockan-tre",
+      "namn": "MAIL_20261015_Overvakningskamera_PD_2_engagerade60d_problem_ljud-klockan-tre_v1",
+      "planerad": "2026-10-15T18:00:00+02:00",
+      "segment": [
+        "SEG_engagerade_60d"
+      ],
+      "mejl": "k06-kamera-ljud-klockan-tre"
+    },
+    {
+      "id": "k07-damasker-hostlov",
+      "namn": "MAIL_20261020_Damasker_PD_1_engagerade60d_solution_torra-fotter_v1",
+      "planerad": "2026-10-20T18:00:00+02:00",
+      "segment": [
+        "SEG_engagerade_60d"
+      ],
+      "mejl": "k07-damasker-hostlov"
+    },
+    {
+      "id": "k08-morkret-kommer",
+      "namn": "MAIL_20261022_Solcellslampa_S_1_engagerade60d_problem_morkret-kommer_v1",
+      "planerad": "2026-10-22T18:00:00+02:00",
+      "segment": [
+        "SEG_engagerade_60d"
+      ],
+      "mejl": "k08-morkret-kommer"
+    },
+    {
+      "id": "k09-adventskalendrar",
+      "namn": "MAIL_20261027_Adventskalender_PD_2_engagerade90d_product_lucka-ett_v1",
+      "planerad": "2026-10-27T18:00:00+01:00",
+      "segment": [
+        "SEG_engagerade_90d"
+      ],
+      "mejl": "k09-adventskalendrar"
+    },
+    {
+      "id": "k10-takoverdrag-iteration",
+      "namn": "MAIL_20261029_Takoverdrag_OB_4_engagerade90d_product_fukten_v1",
+      "planerad": "2026-10-29T18:00:00+01:00",
+      "segment": [
+        "SEG_engagerade_90d"
+      ],
+      "mejl": "k10-takoverdrag-iteration"
+    },
+    {
+      "id": "k11-black-week-start",
+      "namn": "MAIL_20261123_Bastsaljare_CS_1_engagerade90d_promo_black-week_v2",
+      "planerad": "2026-11-23T18:00:00+01:00",
+      "segment": [
+        "SEG_engagerade_90d"
+      ],
+      "mejl": "k11-black-week-start"
+    },
+    {
+      "id": "k12-black-friday",
+      "namn": "MAIL_20261127_Bastsaljare_CS_2_engagerade90d_promo_black-friday_v2",
+      "planerad": "2026-11-27T18:00:00+01:00",
+      "segment": [
+        "SEG_engagerade_90d"
+      ],
+      "mejl": "k12-black-friday"
+    },
+    {
+      "id": "k13-julklappsguide",
+      "namn": "MAIL_20261119_Julklapp_GT_3_engagerade90d_solution_julklappar-3-dec_v1",
+      "planerad": "2026-11-19T18:00:00+01:00",
+      "segment": [
+        "SEG_engagerade_90d"
+      ],
+      "mejl": "k13-julklappsguide"
+    },
+    {
+      "id": "k14-sista-bestallningsdag-jul",
+      "namn": "MAIL_20261201_Julklapp_GT_4_engagerade90d_promo_sista-dag-3-dec_v1",
+      "planerad": "2026-12-01T18:00:00+01:00",
+      "segment": [
+        "SEG_engagerade_90d"
+      ],
+      "mejl": "k14-sista-bestallningsdag-jul"
+    },
+    {
+      "id": "k15-fars-dag-sista-helgen",
+      "namn": "MAIL_20261016_Farsdagshelg_GT_3_engagerade60d_product_sista-helgen-farsdag_v1",
+      "planerad": "2026-10-16T18:00:00+02:00",
+      "segment": [
+        "SEG_engagerade_60d"
+      ],
+      "mejl": "k15-fars-dag-sista-helgen"
+    },
+    {
+      "id": "k16-forsta-frostnatten",
+      "namn": "MAIL_20261103_Frostnatten_S_1_engagerade90d_solution_forsta-frostnatten_v1",
+      "planerad": "2026-11-03T18:00:00+01:00",
+      "segment": [
+        "SEG_engagerade_90d"
+      ],
+      "mejl": "k16-forsta-frostnatten"
+    },
+    {
+      "id": "k17-stall-undan-for-vintern",
+      "namn": "MAIL_20261110_Vinterforvaring_S_1_engagerade90d_solution_stall-undan-for-vintern_v1",
+      "planerad": "2026-11-10T18:00:00+01:00",
+      "segment": [
+        "SEG_engagerade_90d"
+      ],
+      "mejl": "k17-stall-undan-for-vintern"
+    },
+    {
+      "id": "k18-det-flest-kopt-i-host",
+      "namn": "MAIL_20261117_Popularast_SP_1_engagerade90d_product_flest-kopt-i-host_v1",
+      "planerad": "2026-11-17T18:00:00+01:00",
+      "segment": [
+        "SEG_engagerade_90d"
+      ],
+      "mejl": "k18-det-flest-kopt-i-host"
+    },
+    {
+      "id": "k19-sista-dagen-jul",
+      "namn": "MAIL_20261203_Julklapp_GT_5_engagerade90d_promo_sista-dagen-idag_v1",
+      "planerad": "2026-12-03T09:00:00+01:00",
+      "segment": [
+        "SEG_engagerade_90d"
+      ],
+      "mejl": "k19-sista-dagen-jul"
+    },
+    {
+      "id": "k20-hinner-inte-till-jul",
+      "namn": "MAIL_20261208_Vinterprylar_S_1_engagerade90d_solution_hinner-inte-till-jul_v1",
+      "planerad": "2026-12-08T18:00:00+01:00",
+      "segment": [
+        "SEG_engagerade_90d"
+      ],
+      "mejl": "k20-hinner-inte-till-jul"
+    },
+    {
+      "id": "k21-kundernas-favoriter",
+      "namn": "MAIL_20261215_Kundfavoriter_SP_1_engagerade90d_product_kundernas-favoriter_v1",
+      "planerad": "2026-12-15T18:00:00+01:00",
+      "segment": [
+        "SEG_engagerade_90d"
+      ],
+      "mejl": "k21-kundernas-favoriter"
+    },
+    {
+      "id": "k22-nyarskoll",
+      "namn": "MAIL_20261229_Sasongskoll_S_1_engagerade90d_solution_nyarskoll-sasongen_v1",
+      "planerad": "2026-12-29T18:00:00+01:00",
+      "segment": [
+        "SEG_engagerade_90d"
+      ],
+      "mejl": "k22-nyarskoll"
+    }
+  ]
+}

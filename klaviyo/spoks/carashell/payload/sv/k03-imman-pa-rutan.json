@@ -1,0 +1,138 @@
+{
+  "id": "k03-imman-pa-rutan",
+  "sprak": "sv",
+  "emailTitle": "Imman mellan gardin och glas",
+  "emailDescription": "En gardin ändrar inget, glaset blir kallt ändå.",
+  "amnesrader": [
+    "Imman mellan gardin och glas",
+    "Trettio grader innan frukost",
+    "Utanpå rutan, inte innanför"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Imman som sitter kvar mellan gardin och glas",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Fukten från natten lägger sig på insidan av rutan, och en gardin gör bara att den blir kvar mellan glaset och tyget. Ett skydd utanpå håller glaset varmare, så imman aldrig hinner bildas.",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "c38c04bb-fb13-4894-aa85-3b70c71b5891",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Se termoskyddet",
+      "url": "https://carashell.se/products/termoskyddet",
+      "style": "button"
+    },
+    {
+      "type": "h2",
+      "text": "Så sitter det"
+    },
+    {
+      "type": "list",
+      "text": "Spänns utvändigt över vindrutan och båda sidorutorna"
+    },
+    {
+      "type": "list",
+      "text": "Flikarna kläms fast i dörrkarmen, dörrarna behöver inte öppnas"
+    },
+    {
+      "type": "list",
+      "text": "Mörklägger hela framvagnen"
+    },
+    {
+      "type": "h2",
+      "text": "Vindrutan och de små rutorna",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "c38c04bb-fb13-4894-aa85-3b70c71b5891",
+          "button": "Se produkten"
+        },
+        {
+          "id": "c4d0ddd4-298b-4703-9de0-646db8afb6c6",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 2
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://carashell.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

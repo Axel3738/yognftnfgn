@@ -1,0 +1,152 @@
+{
+  "id": "f04-efter-kop",
+  "namn": "FLOW_order_efterkop_SV_v1",
+  "sprak": "sv",
+  "memo": "Köparflöde (alla som inte tackat nej). E1 dag 2: vad som händer nu, spårningssidan på kundens språk, svara på mejlet, supportmejlet innan kunden hinner bli orolig (WISMO-andelen i autosvarets logg mäter det). E2 dag 16: kom allt fram, och exakt vad man gör om något är fel, mejlet som förebygger tvister (Bäverbutiken har 58, CaraShell 0).",
+  "spoks": {
+    "event": "order_created",
+    "filter": [
+      "ej_avregistrerad",
+      "sprak"
+    ],
+    "reenroll": true,
+    "reenrollEfter": null
+  },
+  "steg": [
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 2
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f04-efter-kop-e1",
+        "namn": "FLOW_order_efterkop_SV_E1_M_det-har-hander-nu_v1",
+        "sprak": "sv",
+        "memo": "Branded med tydlig knapp till spårningssidan (Axels dom på Bäverbutikens rentext-version: \"man kan inte knappa, folk orkar inte läsa\"). Ingen leveranstid. Paketnumret börjar på CS- och står i fraktmejlet.",
+        "brief": "Rubrik + 2 korta stycken: bekräftelsen och fraktmejlet med paketnumret (CS-…), knappen visar var paketet är. Grundare-raden: svara på mejlet om det känns långsamt. INGEN leveranstid, inga dagar.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "sparning/butiker.json#carashell (prefix CS-, sidor per språk)",
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "konsekvens",
+          "confidence": "medium",
+          "prefix": "CaraShellRoof",
+          "kod": "M",
+          "avatar": "kunden som just beställt och inte hört något sen dess",
+          "begar": "kunna se paketet själv utan att mejla"
+        },
+        "amnesrader": [
+          {
+            "text": "Bekräftelse, sen paketnumret",
+            "begar": "veta vad som händer efter köpet"
+          },
+          {
+            "text": "Ditt paketnummer börjar på CS",
+            "begar": "ha ett konkret nummer att hålla koll på"
+          },
+          {
+            "text": "Se var paketet är, när du vill",
+            "begar": "slippa mejla för att fråga var det är"
+          }
+        ],
+        "forhandstext": "Bekräftelse, paketnummer, och en sida där du ser resten.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Bekräftelse, sen paketnumret",
+            "text": "Du har fått en bekräftelse på mejl. När paketet skickas kommer ett nytt mejl med paketnumret, som börjar på CS.\n\nMed det numret ser du själv var paketet befinner sig, utan att behöva fråga oss."
+          },
+          {
+            "typ": "knapp",
+            "text": "Följ ditt paket",
+            "lank": "sparning:"
+          },
+          {
+            "typ": "grundare",
+            "text": "Känns det långsamt, svara bara på det här mejlet. Jag kollar upp det."
+          }
+        ],
+        "tretest": [
+          {"rad": "Bekräftelse, sen paketnumret", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Ditt paketnummer börjar på CS", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Se var paketet är, när du vill", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Bekräftelse, paketnummer, och en sida där du ser resten.", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Bekräftelse, sen paketnumret", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Följ ditt paket", "visualisera": true, "falsifiera": true, "ingen_annan": true}
+        ],
+        "version": 1
+      }
+    },
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 14
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f04-efter-kop-e2",
+        "namn": "FLOW_order_efterkop_SV_E2_M_kom-allt-fram_v1",
+        "sprak": "sv",
+        "memo": "Dag 16. Kom allt fram? Om inte: spårningssidan. Om något är fel: ångerrätt/garanti exakt som policyn, reklamation 3 år, mejla hello@carashell.com med ordernumret. Inga produktkort, det här är servicemejlet.",
+        "brief": "Rubrik + tre korta stycken (kom det fram; inte än → knappen; fel → policyn för språket + ordernumret + adressen). Fakta-blocket sist.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "brands/carashell.json#per_sprak.*.angerratt_fran",
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "CaraShellRoof",
+          "kod": "M",
+          "avatar": "kunden vars paket rimligen kommit fram",
+          "begar": "trygghet"
+        },
+        "amnesrader": [
+          {
+            "text": "Kom allt fram som det skulle?",
+            "begar": "få bekräftat att allt är som det ska"
+          },
+          {
+            "text": "Fel vara, eller ångrar du dig?",
+            "begar": "veta vad man gör om något är fel"
+          },
+          {
+            "text": "14 dagars ångerrätt, bara så du vet",
+            "begar": "veta att man kan ångra sig"
+          }
+        ],
+        "forhandstext": "Var paketet är, och vad du gör om något är fel.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Kom allt fram som det skulle?",
+            "text": "Vid det här laget bör paketet ha kommit fram.\n\nHar det inte kommit fram än ser du exakt var det är på vår spårningssida.\n\nÄr något fel med varan, eller ångrar du dig, har du 14 dagars ångerrätt från den dag du tog emot den. Du betalar returfrakten själv, och mejlar hello@carashell.com med ordernumret för en returinstruktion. Återbetalningen sker inom 14 dagar från att returen tagits emot. Går något sönder senare gäller reklamation i upp till tre år enligt konsumentköplagen."
+          },
+          {
+            "typ": "knapp",
+            "text": "Följ ditt paket",
+            "lank": "sparning:"
+          },
+          {
+            "typ": "fakta"
+          }
+        ],
+        "tretest": [
+          {"rad": "Kom allt fram som det skulle?", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Fel vara, eller ångrar du dig?", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "14 dagars ångerrätt, bara så du vet", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Var paketet är, och vad du gör om något är fel.", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Kom allt fram som det skulle?", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Följ ditt paket", "visualisera": true, "falsifiera": true, "ingen_annan": true}
+        ],
+        "version": 1
+      }
+    }
+  ]
+}

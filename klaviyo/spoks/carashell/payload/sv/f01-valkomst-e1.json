@@ -1,0 +1,43 @@
+{
+  "id": "f01-valkomst-e1",
+  "sprak": "sv",
+  "emailTitle": "Vem skriver de här mejlen?",
+  "emailDescription": "Jag heter Axel, och jag svarar alltid själv.",
+  "amnesrader": [
+    "Vem skriver de här mejlen?",
+    "Ingen rea, bara en hälsning",
+    "Jag bygger skydd för taket och rutan"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Jag heter Axel"
+    },
+    {
+      "type": "regular",
+      "text": "Jag driver den här butiken. Vi bygger skydd för husvagnen och husbilen, för dagarna den bara står still.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Taköverdraget skyddar taket. Termoskyddet spänns över vindrutan och sidorutorna.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Du hör av mig igen när det finns ett skäl att skriva, inte för att det är torsdag.",
+      "alignment": "left"
+    },
+    {
+      "type": "link",
+      "text": "Se skydden",
+      "url": "https://carashell.se/collections/sortimentet",
+      "style": "button"
+    },
+    {
+      "type": "quote",
+      "text": "Undrar du något är det bara att svara på det här mejlet. Jag läser det själv.\nAxel, grundare"
+    }
+  ],
+  "varningar": []
+}

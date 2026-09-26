@@ -1,0 +1,101 @@
+{
+  "id": "k13-nyarskoll",
+  "sprak": "sv",
+  "emailTitle": "Ett par minuter i mellandagarna",
+  "emailDescription": "Två minuter, tre saker att titta på.",
+  "amnesrader": [
+    "Ett par minuter i mellandagarna",
+    "Står taket fortfarande torrt?",
+    "Innan säsongen drar igång igen"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "En koll i mellandagarna"
+    },
+    {
+      "type": "regular",
+      "text": "Vagnen har stått still ett tag nu. Det är ett bra tillfälle att gå ut och titta på den: står taket torrt, sitter skyddet som det ska, är rutan fortfarande täckt.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Skydden ska sitta som de gjorde när du satte på dem. Ser något annorlunda ut är det bra att veta i tid, innan säsongen drar igång igen.",
+      "alignment": "left"
+    },
+    {
+      "type": "h2",
+      "text": "Tre skydd, en koll",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "40a22a57-d0df-41b6-9202-2b22cc2e0d29",
+          "button": "Se produkten"
+        },
+        {
+          "id": "c38c04bb-fb13-4894-aa85-3b70c71b5891",
+          "button": "Se produkten"
+        },
+        {
+          "id": "c4d0ddd4-298b-4703-9de0-646db8afb6c6",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://carashell.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

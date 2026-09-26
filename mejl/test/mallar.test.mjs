@@ -143,63 +143,79 @@ test('exempel-läget innehåller ingen Liquid alls', () => {
   }
 });
 
-test('erbjudandet ligger i rätt mallar och bär hjullänk, vinsterna och komplementen', () => {
-  const e = konfig.erbjudande;
+test('krediten ligger i rätt mallar och bär KREDIT100-knappen och komplementen', () => {
+  const kd = konfig.kredit;
+  const url = `${konfig.butik.url}/discount/${kd.kod}?redirect=${encodeURIComponent(kd.landning)}`;
+  assert.equal(url, 'https://baverbutiken.se/discount/KREDIT100?redirect=%2Fcollections%2Fall');
   for (const meta of MALLAR) {
     const m = byggMall(meta.id, { ...indata, lage: 'liquid' });
-    // Knappen går till hjulet, med produkten kunden köpte som parameter.
-    const har = m.html.includes(`${konfig.butik.url}/pages/${konfig.hjul.handle}`);
-    assert.equal(har, meta.erbjudande, `${meta.id}: erbjudande ${meta.erbjudande ? 'saknas' : 'ska inte vara med'}`);
-    if (meta.erbjudande) {
-      const rad = meta.id === 'orderbekraftelse' ? 'line' : 'line.line_item';
-      assert.ok(m.html.includes(`&amp;produkt={{ ${rad}.product.handle }}`), `${meta.id}: produktparametern`);
-      // UTM per mall så mejl/matning.mjs kan räkna ordrar per mejl.
-      assert.ok(m.html.includes(`?utm_source=mejl&amp;utm_medium=${meta.id}&amp;utm_campaign=${e.kod.toLowerCase()}`), `${meta.id}: utm-parametrarna`);
-      assert.ok(!m.html.includes('redirect=%2Fcollections%2F'), `${meta.id}: gamla kollektionslänken kvar`);
-    }
+    assert.equal(m.html.includes(`href="${url}"`), meta.erbjudande, `${meta.id}: kreditknappen ${meta.erbjudande ? 'saknas' : 'ska inte vara med'}`);
     assert.equal(m.html.includes(copy.komplement.rubrik), meta.erbjudande, `${meta.id}: komplementblocket`);
     if (meta.erbjudande) {
-      for (const g of produkter.gratis) assert.ok(m.html.includes(g.url), `${meta.id}: gratis ${g.handle}`);
-      assert.ok(m.html.includes(String(e.minsta_kop_sek)), `${meta.id}: minsta köp`);
+      // Den godkända texten, med beloppen ur konfigen.
+      for (const t of ['Din rabatt väntar', '100 kr rabatt på nästa köp', 'Handla för minst 299 kr och dra av 100 kr. Rabatten gäller en gång per kund.', 'HÄMTA MIN RABATT', 'Gäller köp från 299 kr, en gång per kund. Koden KREDIT100 läggs på automatiskt eller skrivs in i kassan.']) {
+        assert.ok(m.html.includes(t), `${meta.id}: saknar "${t}"`);
+      }
+      assert.ok(!/\{\{kredit_/.test(m.html), `${meta.id}: kreditplatshållare kvar`);
+      // Ingen tidsgräns på krediten.
+      assert.ok(!m.html.includes('slut_passerat') && !m.html.includes('{{ slutdatum }}') && !m.html.includes('Gäller i 7 dagar'), `${meta.id}: tidsgräns kvar`);
       // Radkällan: orderns line_items i orderbekräftelsen, fraktens rader i de andra.
       const rad = meta.id === 'orderbekraftelse' ? 'line' : 'line.line_item';
       assert.ok(m.html.includes(`{% assign lh = ${rad}.product.handle | default: ${rad}.product.title %}`), `${meta.id}: produktnyckeln`);
       assert.ok(m.html.includes(`{{ ${rad} | img_url: 'compact_cropped' }}`), `${meta.id}: en till-kortets bild`);
       assert.ok(m.html.includes(copy.komplement.en_till), `${meta.id}: en till-etiketten`);
       assert.ok(m.html.includes(copy.komplement.fallback_rubrik), `${meta.id}: fallback-rubriken`);
-      // Kartan: bat-a har en egen gren med både handle och titel som nyckel.
       assert.ok(m.html.includes("{% when 'bat-a' or 'bat-a – Undertitel' %}"), `${meta.id}: bat-a i kartan`);
-      // Katalogen bär namn|bild|pris|handle för varje visbar produkt, och nummer i kartan.
       assert.ok(/\{% assign k = 'bat-b\|bat-b_240x240\.jpg\|269 kr\|bat-b' %\}/.test(m.html), `${meta.id}: katalogposten för bat-b`);
       assert.ok(m.html.includes("{% assign k_cdn = 'https://cdn/files/' %}"), `${meta.id}: CDN-prefixet`);
-      // Ingen gratisprodukt i katalogen.
-      for (const g of e.gratisprodukter) assert.ok(!m.html.includes(`|${g}' %}`), `${meta.id}: gratis ${g} i katalogen`);
-      // De tre dyraste är borta (Axels beslut 2026-09-13).
-      assert.ok(!m.html.includes('Passa på när du ändå får en gratis'), `${meta.id}: dyra-blocket finns kvar`);
     }
   }
 });
 
-test('erbjudandet ligger överst (före orderknappen) och bär sista datum, samma-paket-rad, logga och urgency', () => {
+test('lyckohjulet är borta ur alla byggda mejl, i båda lägena (Axels beslut 2026-09-26)', () => {
+  for (const lage of ['liquid', 'exempel']) {
+    for (const m of byggAlla({ ...indata, lage })) {
+      for (const ord of [/hjul/i, /snurr/i, /vinn/i, /TACKIGEN/i, /din-gratisprodukt/i, /gratisprodukt/i, /gåvokod/i]) {
+        assert.ok(!ord.test(m.html), `${lage}/${m.id}: "${ord.source}" finns kvar`);
+        assert.ok(!ord.test(m.amne), `${lage}/${m.id}: "${ord.source}" i ämnesraden`);
+      }
+    }
+  }
+  // Inga tankstreck i den nya kredittexten.
+  for (const [n, t] of Object.entries(copy.kredit)) {
+    if (n !== 'comment') assert.ok(!/[—–]/.test(t), `tankstreck i kredittexten: ${t}`);
+  }
+  // Knappen finns i exempelläget också.
+  const ex = byggMall('levererad', { ...indata, lage: 'exempel' });
+  assert.ok(ex.html.includes('https://baverbutiken.se/discount/KREDIT100?redirect=%2Fcollections%2Fall'), 'KREDIT100-knappen i förhandsvisningen');
+});
+
+test('krediten ligger överst (före orderknappen) och bär samma-paket-rad och logga', () => {
   const m = byggMall('orderbekraftelse', { ...indata, lage: 'liquid' });
   assert.ok(m.html.indexOf('Erbjudandet:') < m.html.indexOf('{{ order_status_url }}'), 'erbjudandet ska komma före Följ din order');
   assert.ok(m.html.indexOf('Erbjudandet:') < m.html.indexOf('Vad händer nu?'), 'erbjudandet ska komma före tidslinjen');
-  assert.ok(m.html.includes("{% assign start_ts = created_at | date: '%s' %}"), 'slutdatum utgår från orderns created_at, inte utskickstiden');
-  assert.ok(m.html.includes('{% assign slut_ts = start_ts | plus: 604800 %}'), 'slutdatum räknas ur orderdagen + 7 dagar');
-  assert.ok(!m.html.includes("{% assign slut_ts = 'now'"), "'now' får inte längre vara basen för slutdatumet");
-  assert.ok(m.html.includes('{{ slutdatum }}'), 'urgency-raden bär slutdatum');
-  assert.ok(m.html.includes('{% if slut_passerat == false %}'), 'urgency-raden döljs när datumet passerat');
+  assert.ok(m.html.includes("{% assign start_ts = created_at | date: '%s' %}"), 'samma paket utgår från orderns created_at');
   assert.ok(m.html.includes('{% assign paket_ts = start_ts | plus: 64800 %}'), 'samma paket: ordertid + 18 timmar');
   assert.ok(m.html.includes('{% if paket_passerat == false %}'), 'samma-paket-raden döljs när tiden gått');
   assert.ok(m.html.includes('kl {{ paket_tid }} den {{ paket_datum }}'), 'samma-paket-raden bär tid och datum');
   assert.ok(m.html.includes(`src="${konfig.butik.logga_url}"`), 'loggan i sidhuvudet');
   assert.ok(m.html.includes('Impact'), 'rubriktypsnitt som finns i mejlklienter');
+  // Frakt- och levererat-mejlen räknar ingen tid alls längre.
+  for (const id of ['fraktbekraftelse', 'levererad']) {
+    const f = byggMall(id, { ...indata, lage: 'liquid' });
+    assert.ok(!f.html.includes('paket_ts') && !f.html.includes('slut_ts'), `${id}: ingen tidslogik`);
+  }
   const ex = byggMall('orderbekraftelse', { ...indata, lage: 'exempel' });
-  assert.match(ex.html, /till \d{1,2} (januari|februari|mars|april|maj|juni|juli|augusti|september|oktober|november|december)/);
   assert.match(ex.html, /Beställ före kl \d{2}:\d{2} den \d{1,2} [a-zå]+/);
-  // Exempelläget visar en till + tre komplement till exempelordern.
   assert.ok(ex.html.includes(copy.komplement.en_till), 'en till-kortet i exempel');
   assert.ok(ex.html.includes(copy.komplement.rubrik) || ex.html.includes(copy.komplement.fallback_rubrik), 'komplementrubriken i exempel');
+});
+
+test('utan kredit i konfigen byggs mallarna utan blocket', () => {
+  const k = { ...KONFIG };
+  delete k.kredit;
+  const m = byggMall('orderbekraftelse', { ...indata, konfig: k, lage: 'liquid' });
+  assert.ok(!m.html.includes('Erbjudandet:') && !m.html.includes('paket_ts'));
 });
 
 test('samma_paket_timmar 0 tar bort raden, i båda lägena', () => {
@@ -230,6 +246,7 @@ test('exempelSlutdatum, exempelPaketdeadline och slutdatumLiquid: 7 dagar, svens
 
 test('rabattkoden följer namnregeln: versaler, inga å/ä/ö, inga mellanslag', () => {
   assert.match(konfig.erbjudande.kod, /^[A-Z0-9]+$/);
+  assert.match(konfig.kredit.kod, /^[A-Z0-9]+$/);
 });
 
 test('orderbekräftelsen använder Shopifys ordervariabler', () => {

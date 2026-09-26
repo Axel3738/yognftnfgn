@@ -1,0 +1,154 @@
+{
+  "id": "k21-kundernas-favoriter",
+  "emailTitle": "Vad kunderna tyckte om i år",
+  "emailDescription": "Tre av årets mest omtalade produkter, i kundernas egna ord.",
+  "amnesrader": [
+    "Vad kunderna tyckte om i år",
+    "Tre produkter, tre riktiga recensioner",
+    "Det kunderna nämnde mest i år"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Vad kunderna tyckte om i år",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hej {{ contact.first_name | default: 'där' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Innan året är slut, här är tre produkter kunderna själva skrivit mest om.",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "f3c26650-bf9b-49b4-a411-b11fb25392c8",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Läs recensionerna",
+      "url": "https://baverbutiken.se/collections/alla-produkter",
+      "style": "button"
+    },
+    {
+      "type": "quote",
+      "text": "\"Bra skydd för taket och lätt att använda.\"\nKarin, verifierad kund"
+    },
+    {
+      "type": "quote",
+      "text": "\"Jag är nöjd med överdraget. Rekommenderas.\"\nErik, verifierad kund"
+    },
+    {
+      "type": "quote",
+      "text": "\"Kanon bra sätesöverdrag man sitter stabilt när traktorn lutar åt sidorna.\"\nRoger E., verifierad kund"
+    },
+    {
+      "type": "quote",
+      "text": "\"Passar bra och skönt att sitta på.\"\nGert N., verifierad kund"
+    },
+    {
+      "type": "quote",
+      "text": "\"Jag är väldigt nöjd med slipmaskinen.\"\nVerifierad kund"
+    },
+    {
+      "type": "quote",
+      "text": "\"Gör det lättare att få knivarna vassa.\"\nVerifierad kund"
+    },
+    {
+      "type": "h2",
+      "text": "Samma tre, om du vill se dem",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "f3c26650-bf9b-49b4-a411-b11fb25392c8",
+          "button": "Se produkten"
+        },
+        {
+          "id": "3d9c25f8-0d98-4ec2-a6cf-a9256153dcae",
+          "button": "Se produkten"
+        },
+        {
+          "id": "e5b2eb1f-3eba-4603-a09c-1c9692e4ae66",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

@@ -1,0 +1,81 @@
+{
+  "id": "f01-valkomst-e3",
+  "sprak": "en",
+  "emailTitle": "What happens right after you order",
+  "emailDescription": "Order confirmation, tracking, and a 90-day guarantee if it's not right.",
+  "amnesrader": [
+    "What happens right after you order",
+    "You're covered by a 90-day guarantee",
+    "Watch your parcel the whole way there"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "What happens after you order"
+    },
+    {
+      "type": "regular",
+      "text": "You'll get an order confirmation right away, then a shipping email with your parcel number once it's on its way.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "From there, the tracking page below shows exactly where it is.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "If it's not right for you, there's a 90-day guarantee from the day you receive it: email hello@carashell.com with your order number first, and we'll tell you where to send it back.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Any question before then goes to the same address.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Guarantee**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "90-day guarantee",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Track your parcel**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Follow it all the way](https://carashell.com/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "link",
+      "text": "See the roof cover",
+      "url": "https://carashell.com/products/takskyddet",
+      "style": "button"
+    }
+  ],
+  "varningar": []
+}

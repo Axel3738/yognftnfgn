@@ -1,0 +1,73 @@
+{
+  "id": "k07-fredag-sista-dagen-kalendern",
+  "namn": "MAIL_20261110_CaraShellCal_EN_GT_3_samtycke_promo_fredag-sista-dagen_v1",
+  "sprak": "en",
+  "memo": "Riktig brådska: fredag 13 november är sista beställningsdag för att kalendern ska vara hemma till lucka 1. Efter fredagen lovar ingen text något om 1 december.",
+  "brief": "Hero med datumet. En mening om varför (lucka 1 är 1 december). Produktkort, fakta. Inga dagar-siffror om leverans.",
+  "taggar": {
+    "typ": "S",
+    "kalla": "egen-data",
+    "kalla_ref": "brands/carashell.json#kalender",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "konsekvens",
+    "confidence": "medium",
+    "prefix": "CaraShellCal",
+    "kod": "GT",
+    "avatar": "den som tänkt ge kalendern men inte beställt",
+    "begar": "hinna"
+  },
+  "amnesrader": [
+    {
+      "text": "Friday is the last day to order the calendar",
+      "begar": "know exactly when time runs out"
+    },
+    {
+      "text": "After Friday, door one might not be ready",
+      "begar": "understand the consequence of waiting"
+    },
+    {
+      "text": "13 November: the cutoff for the calendar",
+      "begar": "see the cutoff date clearly"
+    }
+  ],
+  "forhandstext": "December 1 is door one. Order before then.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Friday is the last day",
+      "text": "{{fornamn}}, order the advent calendar by Friday, 13 November if you want it in hand before the first door on 1 December. After Friday, we can't promise that.",
+      "bild": "produkt:adventskalender-retrobussar",
+      "knapp": {
+        "text": "Order before Friday",
+        "lank": "produkt:adventskalender-retrobussar"
+      }
+    },
+    {
+      "typ": "produkt",
+      "handle": "adventskalender-retrobussar",
+      "text": "24 doors, order by Friday to be ready for the first one.",
+      "knapp": "Get it before Friday"
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    { "rad": "Friday is the last day to order the calendar", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "After Friday, door one might not be ready", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "13 November: the cutoff for the calendar", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "December 1 is door one. Order before then.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Friday is the last day", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Order before Friday", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Get it before Friday", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "version": 1,
+  "planerad": "2026-11-10T16:00:00+01:00",
+  "segment": [
+    "SEG_samtycke_en"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

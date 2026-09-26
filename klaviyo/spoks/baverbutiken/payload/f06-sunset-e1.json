@@ -1,0 +1,28 @@
+{
+  "id": "f06-sunset-e1",
+  "emailTitle": "Vill du fortfarande ha våra mejl?",
+  "emailDescription": "Ett klick räcker. Annars slutar vi skicka till dig.",
+  "amnesrader": [
+    "Vill du fortfarande ha våra mejl?",
+    "Vi mejlar bara den som vill ha det",
+    "Säg till om du vill fortsätta"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Vill du fortfarande ha våra mejl?"
+    },
+    {
+      "type": "regular",
+      "text": "Det har gått en tid sen du öppnade ett mejl från oss. Ett klick håller dig kvar på listan, annars slutar vi skicka.",
+      "alignment": "left"
+    },
+    {
+      "type": "link",
+      "text": "Ja, fortsätt skicka",
+      "url": "https://baverbutiken.se/collections/alla-produkter",
+      "style": "button"
+    }
+  ],
+  "varningar": []
+}

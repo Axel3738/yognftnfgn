@@ -1,0 +1,121 @@
+{
+  "id": "k09-black-week-utan-rabatt",
+  "sprak": "en",
+  "emailTitle": "No discount here. Just the guarantee",
+  "emailDescription": "A 90-day guarantee, free shipping, and a real email address.",
+  "amnesrader": [
+    "No discount here. Just the guarantee",
+    "90 days to decide if it's right",
+    "Free shipping, and how returns work"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "No discount, just the guarantee",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hi {{ contact.first_name | default: 'there' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Other stores are cutting prices this week. We're not. Instead, there's a 90-day guarantee: try it, and if it's not right, email us before sending anything back.",
+      "alignment": "center"
+    },
+    {
+      "type": "image",
+      "fileId": "6830b5d9-7f36-4ff3-a0c4-f3aa4a05b62e",
+      "altText": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft",
+      "urlRedirect": "https://carashell.com/products/takskyddet"
+    },
+    {
+      "type": "h2",
+      "text": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "See the cover",
+      "url": "https://carashell.com/products/takskyddet",
+      "style": "button"
+    },
+    {
+      "type": "h2",
+      "text": "What you get instead"
+    },
+    {
+      "type": "list",
+      "text": "A 90-day guarantee from the day you receive it, and a right to complain for 3 years on top of that."
+    },
+    {
+      "type": "list",
+      "text": "Free shipping, wherever the order is going."
+    },
+    {
+      "type": "list",
+      "text": "Email hello@carashell.com with your order number before you send anything back. Refunds go out within 14 days of us receiving it."
+    },
+    {
+      "type": "image",
+      "fileId": "6830b5d9-7f36-4ff3-a0c4-f3aa4a05b62e",
+      "altText": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft",
+      "urlRedirect": "https://carashell.com/products/takskyddet"
+    },
+    {
+      "type": "h2",
+      "text": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Check the guarantee",
+      "url": "https://carashell.com/products/takskyddet",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "One less thing to decide before you buy it.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Guarantee**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "90-day guarantee",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Track your parcel**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Follow it all the way](https://carashell.com/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

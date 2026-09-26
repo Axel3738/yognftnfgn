@@ -1,0 +1,103 @@
+{
+  "id": "f11-tips-batmotorskydd-e1",
+  "emailTitle": "Så drar du på skyddet rätt",
+  "emailDescription": "Fyra saker som gör att skyddet sitter hela vintern, plus ett skydd till för när båten är i vattnet.",
+  "amnesrader": [
+    "Så drar du på skyddet rätt",
+    "Nio storlekar, en för din motor",
+    "Ett skydd till, för när båten är i vattnet"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Så får du ut mest av båtmotorskyddet"
+    },
+    {
+      "type": "regular",
+      "text": "Rätt montering gör att skyddet håller ute regn, snö och UV hela tiden båten står uppställd.",
+      "alignment": "left"
+    },
+    {
+      "type": "list",
+      "text": "Dra skyddet över hela motorn, från kåpan ner över riggen, innan du spänner remmen runt mitten."
+    },
+    {
+      "type": "list",
+      "text": "Dubbelkolla att du valt rätt storlek för din motors hästkraft, nio storlekar finns, från 0-5 hk till 250-350 hk."
+    },
+    {
+      "type": "list",
+      "text": "Inga verktyg behövs, skyddet går på innan båten är surrad."
+    },
+    {
+      "type": "list",
+      "text": "Låt motorn vara torr innan du drar på skyddet."
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "d01d20c5-a2cf-40fa-894d-3149ff871b81",
+          "button": "Se motorhöljet"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "regular",
+      "text": "Motorhöljet skyddar motorn medan båten ligger i vattnet. Båtmotorskyddet tar över när båten ställs på land för säsongen.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

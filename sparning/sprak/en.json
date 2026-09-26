@@ -43,6 +43,8 @@
     "Paketet är klart i tullen": "The parcel has cleared customs",
     "Paketet ligger hos tullombudet": "The parcel is with the customs broker",
     "Paketet är anmält till tullen": "The parcel has been declared to customs",
+    "Tulluppgifterna är behandlade och paketet är på väg": "The customs details have been processed and the parcel is on its way",
+    "Tulluppgifterna är mottagna och paketet är på väg": "The customs details have been received and the parcel is on its way",
     "Paketet är hämtat på fraktterminalen": "The parcel has been collected from the freight terminal",
     "Paketet är överlämnat till flygbolaget": "The parcel has been handed to the airline",
     "Paketet är lastat": "The parcel has been loaded",

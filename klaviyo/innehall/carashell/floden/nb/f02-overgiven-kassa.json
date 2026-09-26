@@ -1,0 +1,286 @@
+{
+  "id": "f02-overgiven-kassa",
+  "namn": "FLOW_checkout_overgiven_NB_v1",
+  "sprak": "nb",
+  "memo": "Här ligger mest pengar: 73 övergivna kassor på 90 dagar mot 384 ordrar. Tre mejl: påminnelse, svaren på köparens tvekan (passar det min vagn, hur fäster det, klarar det vinden), sista mejlet från grundaren. Bara till subscribed (MFL 19 §): kassan är inget köp. Shopifys egen notis om övergiven kassa ska stängas av samma dag flödet slås på.",
+  "spoks": {
+    "event": "checkout_created",
+    "filter": [
+      "ej_kopt_sedan_start",
+      "samtycke",
+      "sprak"
+    ],
+    "reenroll": true,
+    "reenrollEfter": "P7D"
+  },
+  "steg": [
+    {
+      "typ": "vanta",
+      "enhet": "hours",
+      "varde": 3
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f02-overgiven-kassa-e1",
+        "namn": "FLOW_checkout_overgiven_NB_E1_M_kassan-ar-kvar_v1",
+        "sprak": "nb",
+        "memo": "Kort påminnelse, inga invändningar än. Varorna finns kvar, en väg tillbaka.",
+        "brief": "Två meningar och kassablocket. Ingen brådska, ingen rabatt.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": null,
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "CaraShellRoof",
+          "kod": "M",
+          "avatar": "kunden som lade överdraget i kassan men inte betalade",
+          "begar": "hitta tillbaka till det man redan valt"
+        },
+        "amnesrader": [
+          {
+            "text": "Handlekurven din venter fortsatt",
+            "begar": "finne tilbake raskt"
+          },
+          {
+            "text": "Du kom halvveis gjennom kassen",
+            "begar": "huske hvor man var"
+          },
+          {
+            "text": "Ingenting er borte fra kurven",
+            "begar": "vite at varene er trygge"
+          }
+        ],
+        "forhandstext": "Varene ligger akkurat der du la dem.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Handlekurven din er her",
+            "text": "Vi har spart alt du la i kassen. Ingenting er fjernet."
+          },
+          {
+            "typ": "dynamisk",
+            "kalla": "checkout_rader"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Handlekurven din venter fortsatt",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Du kom halvveis gjennom kassen",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Ingenting er borte fra kurven",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Varene ligger akkurat der du la dem.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Handlekurven din er her",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 1
+      }
+    },
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 1
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f02-overgiven-kassa-e2",
+        "namn": "FLOW_checkout_overgiven_NB_E2_OB_passar-det-min-vagn_v1",
+        "sprak": "nb",
+        "memo": "Det riktiga svaret på tvekan, ur kommentarsfälten (kommentarer/leads.md 2026-09-24–26: storleken syns inte, klarar det vinden, remmarna): passar det min vagn (nio längder, mät front till bakkant, närmaste längd uppåt, husvagn och husbil), hur fäster det (vävda spännband med plastkrokar under karossens kant, alla fyra sidor, justerbara, två extra band 10,5 m), klarar det vinden (ja, banden håller det på plats, inte gummi, töjs inte ut). En rad för termoskyddet sist (mät framrutan: 211 cm bred, 171 över mitten, 90 cm flikar, kläms i dörrkarmen).",
+        "brief": "Rubrik + tre punkter som var och en är fråga → svar. Bara faktabladets ord. Ventilation/kondens får INTE besvaras (leverantören har inte svarat). Fakta-blocket sist bär ångerrätt/garanti.",
+        "taggar": {
+          "typ": "I",
+          "kalla": "voc",
+          "kalla_ref": "kommentarer/leads.md 2026-09-24 (storlek, vind, remmar); factory/produkter/takskyddet.yaml#faq",
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "CaraShellRoof",
+          "kod": "OB",
+          "avatar": "kunden som stannade i kassan för att den inte vet om det passar",
+          "begar": "veta att det passar innan man betalar"
+        },
+        "amnesrader": [
+          {
+            "text": "Ni lengder. En av dem passer vogna di.",
+            "begar": "vite at riktig størrelse finnes"
+          },
+          {
+            "text": "Sånn sitter det fast i vind",
+            "begar": "vite at det ikke blåser av"
+          },
+          {
+            "text": "Slik fester du det, uten hjelp",
+            "begar": "forstå festesystemet før man kjøper"
+          }
+        ],
+        "forhandstext": "Mål taket, så vet du hvilken lengde du trenger.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Tre spørsmål før du bestiller",
+            "text": "Her er svarene på det flest lurer på før de bestiller."
+          },
+          {
+            "typ": "punkter",
+            "rubrik": null,
+            "punkter": [
+              "Passer det vogna di? Trekket finnes i ni lengder, fra 5,5 til 13,5 meter. Mål taket fra front til bakkant, og velg nærmeste lengde oppover.",
+              "Hvordan fester det? Vevde stropper med plasthaker hektes under kanten på karosseriet, på alle fire sider. Stroppene er justerbare.",
+              "Holder det i vind? Ja. Stroppene er vevd, ikke strikk, så de tøyer seg ikke ut, og holder trekket på plass.",
+              "Har du bobil? Frontrutetrekket måler 211 centimeter i bredden og 171 over midten, med klaffer som klemmes fast i dørkarmen."
+            ]
+          },
+          {
+            "typ": "dynamisk",
+            "kalla": "checkout_rader"
+          },
+          {
+            "typ": "fakta"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Ni lengder. En av dem passer vogna di.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Sånn sitter det fast i vind",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Slik fester du det, uten hjelp",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Mål taket, så vet du hvilken lengde du trenger.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Tre spørsmål før du bestiller",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 1
+      }
+    },
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 2
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f02-overgiven-kassa-e3",
+        "namn": "FLOW_checkout_overgiven_NB_E3_M_sista-mejlet-fran-axel_v1",
+        "sprak": "nb",
+        "memo": "Sista mejlet. Ingen nedräkning, ingen \"kassan töms\". Grundaren: har du en fråga, svara på mejlet; annars hör du inget mer om den här kassan.",
+        "brief": "Grundare-blocket bär hela texten (3–4 meningar). Kassablocket under.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": null,
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "CaraShellRoof",
+          "kod": "M",
+          "avatar": "kunden som lade överdraget i kassan men inte betalade",
+          "begar": "en sista möjlighet att fråga innan man bestämmer sig"
+        },
+        "format": "rentext",
+        "amnesrader": [
+          {
+            "text": "Siste e-post om denne kassen",
+            "begar": "vite at dette er siste påminnelsen"
+          },
+          {
+            "text": "Lurer du på noe, så spør",
+            "begar": "en sjanse til å stille spørsmål"
+          },
+          {
+            "text": "Jeg tar kontakt en siste gang",
+            "begar": "personlig kontakt, ikke et system"
+          }
+        ],
+        "forhandstext": "Siste påminnelse. Spør du ikke noe, hører du ikke mer om denne kassen.",
+        "block": [
+          {
+            "typ": "grundare",
+            "text": "Dette er siste gangen jeg sender denne påminnelsen. Har du et spørsmål om trekket, om festet eller om noe annet, svar på denne e-posten, så svarer jeg selv. Sier du ikke ifra, hører du ikke mer om denne kassen fra meg."
+          },
+          {
+            "typ": "dynamisk",
+            "kalla": "checkout_rader"
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Siste e-post om denne kassen",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Lurer du på noe, så spør",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Jeg tar kontakt en siste gang",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          },
+          {
+            "rad": "Siste påminnelse. Spør du ikke noe, hører du ikke mer om denne kassen.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": true
+          }
+        ],
+        "version": 1
+      }
+    }
+  ]
+}

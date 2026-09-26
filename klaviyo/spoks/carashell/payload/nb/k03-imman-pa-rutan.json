@@ -1,0 +1,155 @@
+{
+  "id": "k03-imman-pa-rutan",
+  "sprak": "nb",
+  "emailTitle": "Duggen blir sittende mellom gardin og glass",
+  "emailDescription": "Trekket sitter utenpå, så glasset aldri blir kaldt innenfra.",
+  "amnesrader": [
+    "Duggen blir sittende mellom gardin og glass",
+    "Ingen ser inn på rasteplassen",
+    "Morgensolen vekker deg ikke klokka fire"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Duggen blir sittende mellom gardin og glass",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hei {{ contact.first_name | default: 'der' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Fukten fra natten legger seg på frontruta. En gardin gjør bare at den blir sittende der.",
+      "alignment": "center"
+    },
+    {
+      "type": "image",
+      "fileId": "295e18f4-1bba-4ee1-a32e-b06f3b5d7f92",
+      "altText": "Frontrutetrekk til bobil 211 × 171 cm",
+      "urlRedirect": "https://carashell.se/nb/products/termoskyddet?country=NO"
+    },
+    {
+      "type": "h2",
+      "text": "Frontrutetrekk til bobil 211 × 171 cm",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Se frontrutetrekket",
+      "url": "https://carashell.se/nb/products/termoskyddet?country=NO",
+      "style": "button"
+    },
+    {
+      "type": "h2",
+      "text": "Slik løser trekket det"
+    },
+    {
+      "type": "list",
+      "text": "Strammes utvendig over frontruta og begge sidevinduene."
+    },
+    {
+      "type": "list",
+      "text": "Klaffene klemmes fast i dørkarmen, uten at dørene må åpnes."
+    },
+    {
+      "type": "list",
+      "text": "Mørklegger hele fronten på bobilen."
+    },
+    {
+      "type": "h2",
+      "text": "Frontruta og de små vinduene",
+      "alignment": "center"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "image",
+              "fileId": "295e18f4-1bba-4ee1-a32e-b06f3b5d7f92",
+              "altText": "Frontrutetrekk til bobil 211 × 171 cm",
+              "urlRedirect": "https://carashell.se/nb/products/termoskyddet?country=NO"
+            },
+            {
+              "type": "h2",
+              "text": "Frontrutetrekk til bobil 211 × 171 cm",
+              "alignment": "center"
+            },
+            {
+              "type": "link",
+              "text": "Se produktet",
+              "url": "https://carashell.se/nb/products/termoskyddet?country=NO",
+              "style": "button"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "image",
+              "fileId": "e389d84e-2027-4b88-9e80-c92a3ce603d5",
+              "altText": "Vindu-termomatte 2-pk 70 × 80 cm",
+              "urlRedirect": "https://carashell.se/nb/products/fonstertermomatta-2-pack?country=NO"
+            },
+            {
+              "type": "h2",
+              "text": "Vindu-termomatte 2-pk 70 × 80 cm",
+              "alignment": "center"
+            },
+            {
+              "type": "link",
+              "text": "Se produktet",
+              "url": "https://carashell.se/nb/products/fonstertermomatta-2-pack?country=NO",
+              "style": "button"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Angrerett**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagers angrerett",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spor pakken**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Følg den hele veien](https://carashell.se/nb/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

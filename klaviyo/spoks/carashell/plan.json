@@ -1,0 +1,3509 @@
+{
+  "brand": "carashell",
+  "floden": [
+    {
+      "id": "f01-valkomst",
+      "namn": "FLOW_prenumerant_valkommen_EN_v1",
+      "trigger": "contact_created",
+      "filter": [
+        "samtycke",
+        "sprak"
+      ],
+      "steg": [
+        {
+          "typ": "vanta",
+          "dagar": 0
+        },
+        {
+          "typ": "mejl",
+          "id": "f01-valkomst-e1",
+          "namn": "It's Axel, and I read every reply"
+        },
+        {
+          "typ": "vanta",
+          "dagar": 2
+        },
+        {
+          "typ": "mejl",
+          "id": "f01-valkomst-e2",
+          "namn": "Nine lengths, one that fits your roof"
+        },
+        {
+          "typ": "vanta",
+          "dagar": 3
+        },
+        {
+          "typ": "mejl",
+          "id": "f01-valkomst-e3",
+          "namn": "What happens right after you order"
+        }
+      ],
+      "sprak": "en",
+      "spoks": {
+        "id": "f01-valkomst",
+        "namn": "FLOW_prenumerant_valkommen_EN_v1",
+        "sprak": "en",
+        "trigger": {
+          "event": "contact_created",
+          "filter": {
+            "type": "conjunction",
+            "operator": "and",
+            "isGrouped": true,
+            "filters": [
+              {
+                "type": "filter",
+                "field": "emailMarketingConsent",
+                "operator": "in",
+                "value": [
+                  "subscribed"
+                ]
+              },
+              {
+                "type": "filter",
+                "field": "country",
+                "operator": "in",
+                "value": [
+                  "United States",
+                  "United Kingdom",
+                  "Canada",
+                  "Australia",
+                  "New Zealand",
+                  "Finland"
+                ]
+              }
+            ]
+          },
+          "triggerFilter": null
+        },
+        "reenrollEnabled": false,
+        "allowReenrolmentAfter": null,
+        "steg": [
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 0
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f01-valkomst-e1",
+            "namn": "It's Axel, and I read every reply"
+          },
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 172800000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f01-valkomst-e2",
+            "namn": "Nine lengths, one that fits your roof"
+          },
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 259200000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f01-valkomst-e3",
+            "namn": "What happens right after you order"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f02-overgiven-kassa",
+      "namn": "FLOW_checkout_overgiven_EN_v1",
+      "trigger": "checkout_created",
+      "filter": [
+        "ej_kopt_sedan_start",
+        "samtycke",
+        "sprak"
+      ],
+      "steg": [
+        {
+          "typ": "vanta",
+          "dagar": 0.125
+        },
+        {
+          "typ": "mejl",
+          "id": "f02-overgiven-kassa-e1",
+          "namn": "Still in your cart, nothing's changed"
+        },
+        {
+          "typ": "vanta",
+          "dagar": 1
+        },
+        {
+          "typ": "mejl",
+          "id": "f02-overgiven-kassa-e2",
+          "namn": "Nine lengths, so yours is in there"
+        },
+        {
+          "typ": "vanta",
+          "dagar": 2
+        },
+        {
+          "typ": "mejl",
+          "id": "f02-overgiven-kassa-e3",
+          "namn": "One last note about your cart"
+        }
+      ],
+      "sprak": "en",
+      "spoks": {
+        "id": "f02-overgiven-kassa",
+        "namn": "FLOW_checkout_overgiven_EN_v1",
+        "sprak": "en",
+        "trigger": {
+          "event": "checkout_created",
+          "filter": {
+            "type": "conjunction",
+            "operator": "and",
+            "isGrouped": true,
+            "filters": [
+              {
+                "type": "filter",
+                "field": "lastPurchase",
+                "operator": "lt",
+                "value": "__flow_triggered__"
+              },
+              {
+                "type": "filter",
+                "field": "emailMarketingConsent",
+                "operator": "in",
+                "value": [
+                  "subscribed"
+                ]
+              },
+              {
+                "type": "filter",
+                "field": "country",
+                "operator": "in",
+                "value": [
+                  "United States",
+                  "United Kingdom",
+                  "Canada",
+                  "Australia",
+                  "New Zealand",
+                  "Finland"
+                ]
+              }
+            ]
+          },
+          "triggerFilter": null
+        },
+        "reenrollEnabled": true,
+        "allowReenrolmentAfter": "P7D",
+        "steg": [
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 10800000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f02-overgiven-kassa-e1",
+            "namn": "Still in your cart, nothing's changed"
+          },
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 86400000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f02-overgiven-kassa-e2",
+            "namn": "Nine lengths, so yours is in there"
+          },
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 172800000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f02-overgiven-kassa-e3",
+            "namn": "One last note about your cart"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f03-webbhistorik",
+      "namn": "FLOW_visning_webbhistorik_EN_v1",
+      "trigger": "product_viewed",
+      "filter": [
+        "ej_kassa_sedan_start",
+        "ej_kopt_sedan_start",
+        "samtycke",
+        "sprak"
+      ],
+      "steg": [
+        {
+          "typ": "vanta",
+          "dagar": 0.16666666666666666
+        },
+        {
+          "typ": "mejl",
+          "id": "f03-webbhistorik-e1",
+          "namn": "That cover you were looking at"
+        },
+        {
+          "typ": "vanta",
+          "dagar": 1
+        },
+        {
+          "typ": "mejl",
+          "id": "f03-webbhistorik-e2",
+          "namn": "Nine lengths, one probably fits"
+        }
+      ],
+      "sprak": "en",
+      "spoks": {
+        "id": "f03-webbhistorik",
+        "namn": "FLOW_visning_webbhistorik_EN_v1",
+        "sprak": "en",
+        "trigger": {
+          "event": "product_viewed",
+          "filter": {
+            "type": "conjunction",
+            "operator": "and",
+            "isGrouped": true,
+            "filters": [
+              {
+                "type": "filter",
+                "field": "lastCartUpdate",
+                "operator": "lt",
+                "value": "__flow_triggered__"
+              },
+              {
+                "type": "filter",
+                "field": "lastPurchase",
+                "operator": "lt",
+                "value": "__flow_triggered__"
+              },
+              {
+                "type": "filter",
+                "field": "emailMarketingConsent",
+                "operator": "in",
+                "value": [
+                  "subscribed"
+                ]
+              },
+              {
+                "type": "filter",
+                "field": "country",
+                "operator": "in",
+                "value": [
+                  "United States",
+                  "United Kingdom",
+                  "Canada",
+                  "Australia",
+                  "New Zealand",
+                  "Finland"
+                ]
+              }
+            ]
+          },
+          "triggerFilter": null
+        },
+        "reenrollEnabled": true,
+        "allowReenrolmentAfter": "P30D",
+        "steg": [
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 14400000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f03-webbhistorik-e1",
+            "namn": "That cover you were looking at"
+          },
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 86400000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f03-webbhistorik-e2",
+            "namn": "Nine lengths, one probably fits"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f04-efter-kop",
+      "namn": "FLOW_order_efterkop_EN_v1",
+      "trigger": "order_created",
+      "filter": [
+        "ej_avregistrerad",
+        "sprak"
+      ],
+      "steg": [
+        {
+          "typ": "vanta",
+          "dagar": 2
+        },
+        {
+          "typ": "mejl",
+          "id": "f04-efter-kop-e1",
+          "namn": "You can already track it"
+        },
+        {
+          "typ": "vanta",
+          "dagar": 14
+        },
+        {
+          "typ": "mejl",
+          "id": "f04-efter-kop-e2",
+          "namn": "Did it all arrive okay?"
+        }
+      ],
+      "sprak": "en",
+      "spoks": {
+        "id": "f04-efter-kop",
+        "namn": "FLOW_order_efterkop_EN_v1",
+        "sprak": "en",
+        "trigger": {
+          "event": "order_created",
+          "filter": {
+            "type": "conjunction",
+            "operator": "and",
+            "isGrouped": true,
+            "filters": [
+              {
+                "type": "filter",
+                "field": "emailMarketingConsent",
+                "operator": "nin",
+                "value": [
+                  "unsubscribed"
+                ]
+              },
+              {
+                "type": "filter",
+                "field": "country",
+                "operator": "in",
+                "value": [
+                  "United States",
+                  "United Kingdom",
+                  "Canada",
+                  "Australia",
+                  "New Zealand",
+                  "Finland"
+                ]
+              }
+            ]
+          },
+          "triggerFilter": null
+        },
+        "reenrollEnabled": true,
+        "allowReenrolmentAfter": null,
+        "steg": [
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 172800000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f04-efter-kop-e1",
+            "namn": "You can already track it"
+          },
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 1209600000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f04-efter-kop-e2",
+            "namn": "Did it all arrive okay?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f05-vinback",
+      "namn": "FLOW_order_vinback_EN_v1",
+      "trigger": "order_created",
+      "filter": [
+        "ej_avregistrerad",
+        "sprak",
+        "ej_kopt_sedan_start"
+      ],
+      "steg": [
+        {
+          "typ": "vanta",
+          "dagar": 180
+        },
+        {
+          "typ": "mejl",
+          "id": "f05-vinback-e1",
+          "namn": "It's been a while since your order"
+        },
+        {
+          "typ": "vanta",
+          "dagar": 14
+        },
+        {
+          "typ": "mejl",
+          "id": "f05-vinback-e2",
+          "namn": "What's missing for yours?"
+        }
+      ],
+      "sprak": "en",
+      "spoks": {
+        "id": "f05-vinback",
+        "namn": "FLOW_order_vinback_EN_v1",
+        "sprak": "en",
+        "trigger": {
+          "event": "order_created",
+          "filter": {
+            "type": "conjunction",
+            "operator": "and",
+            "isGrouped": true,
+            "filters": [
+              {
+                "type": "filter",
+                "field": "emailMarketingConsent",
+                "operator": "nin",
+                "value": [
+                  "unsubscribed"
+                ]
+              },
+              {
+                "type": "filter",
+                "field": "country",
+                "operator": "in",
+                "value": [
+                  "United States",
+                  "United Kingdom",
+                  "Canada",
+                  "Australia",
+                  "New Zealand",
+                  "Finland"
+                ]
+              },
+              {
+                "type": "filter",
+                "field": "lastPurchase",
+                "operator": "lt",
+                "value": "__flow_triggered__"
+              }
+            ]
+          },
+          "triggerFilter": null
+        },
+        "reenrollEnabled": true,
+        "allowReenrolmentAfter": null,
+        "steg": [
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 15552000000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f05-vinback-e1",
+            "namn": "It's been a while since your order"
+          },
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 1209600000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f05-vinback-e2",
+            "namn": "What's missing for yours?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f06-levererat-takskyddet",
+      "namn": "FLOW_levererat_takskyddet_EN_v1",
+      "trigger": "order_delivered",
+      "filter": [
+        "ej_avregistrerad",
+        "sprak"
+      ],
+      "steg": [
+        {
+          "typ": "vanta",
+          "dagar": 1
+        },
+        {
+          "typ": "mejl",
+          "id": "f06-levererat-takskyddet-e1",
+          "namn": "How to put the roof cover on"
+        }
+      ],
+      "sprak": "en",
+      "spoks": {
+        "id": "f06-levererat-takskyddet",
+        "namn": "FLOW_levererat_takskyddet_EN_v1",
+        "sprak": "en",
+        "trigger": {
+          "event": "order_delivered",
+          "filter": {
+            "type": "conjunction",
+            "operator": "and",
+            "isGrouped": true,
+            "filters": [
+              {
+                "type": "filter",
+                "field": "emailMarketingConsent",
+                "operator": "nin",
+                "value": [
+                  "unsubscribed"
+                ]
+              },
+              {
+                "type": "filter",
+                "field": "country",
+                "operator": "in",
+                "value": [
+                  "United States",
+                  "United Kingdom",
+                  "Canada",
+                  "Australia",
+                  "New Zealand",
+                  "Finland"
+                ]
+              }
+            ]
+          },
+          "triggerFilter": {
+            "type": "filter",
+            "field": "externalId",
+            "operator": "in",
+            "value": [
+              "gid://shopify/Product/16084174242124"
+            ]
+          }
+        },
+        "reenrollEnabled": true,
+        "allowReenrolmentAfter": null,
+        "steg": [
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 86400000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f06-levererat-takskyddet-e1",
+            "namn": "How to put the roof cover on"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f06-levererat-termoskyddet",
+      "namn": "FLOW_levererat_termoskyddet_EN_v1",
+      "trigger": "order_delivered",
+      "filter": [
+        "ej_avregistrerad",
+        "sprak"
+      ],
+      "steg": [
+        {
+          "typ": "vanta",
+          "dagar": 1
+        },
+        {
+          "typ": "mejl",
+          "id": "f06-levererat-termoskyddet-e1",
+          "namn": "How to fit the windshield cover"
+        }
+      ],
+      "sprak": "en",
+      "spoks": {
+        "id": "f06-levererat-termoskyddet",
+        "namn": "FLOW_levererat_termoskyddet_EN_v1",
+        "sprak": "en",
+        "trigger": {
+          "event": "order_delivered",
+          "filter": {
+            "type": "conjunction",
+            "operator": "and",
+            "isGrouped": true,
+            "filters": [
+              {
+                "type": "filter",
+                "field": "emailMarketingConsent",
+                "operator": "nin",
+                "value": [
+                  "unsubscribed"
+                ]
+              },
+              {
+                "type": "filter",
+                "field": "country",
+                "operator": "in",
+                "value": [
+                  "United States",
+                  "United Kingdom",
+                  "Canada",
+                  "Australia",
+                  "New Zealand",
+                  "Finland"
+                ]
+              }
+            ]
+          },
+          "triggerFilter": {
+            "type": "filter",
+            "field": "externalId",
+            "operator": "in",
+            "value": [
+              "gid://shopify/Product/16108121489740"
+            ]
+          }
+        },
+        "reenrollEnabled": true,
+        "allowReenrolmentAfter": null,
+        "steg": [
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 86400000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f06-levererat-termoskyddet-e1",
+            "namn": "How to fit the windshield cover"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f14-recension",
+      "namn": "FLOW_levererat_recension_EN_v1",
+      "trigger": "order_delivered",
+      "filter": [
+        "ej_avregistrerad",
+        "sprak"
+      ],
+      "steg": [
+        {
+          "typ": "vanta",
+          "dagar": 10
+        },
+        {
+          "typ": "mejl",
+          "id": "f14-recension-e1",
+          "namn": "Your parcel's had a few days now"
+        }
+      ],
+      "sprak": "en",
+      "spoks": {
+        "id": "f14-recension",
+        "namn": "FLOW_levererat_recension_EN_v1",
+        "sprak": "en",
+        "trigger": {
+          "event": "order_delivered",
+          "filter": {
+            "type": "conjunction",
+            "operator": "and",
+            "isGrouped": true,
+            "filters": [
+              {
+                "type": "filter",
+                "field": "emailMarketingConsent",
+                "operator": "nin",
+                "value": [
+                  "unsubscribed"
+                ]
+              },
+              {
+                "type": "filter",
+                "field": "country",
+                "operator": "in",
+                "value": [
+                  "United States",
+                  "United Kingdom",
+                  "Canada",
+                  "Australia",
+                  "New Zealand",
+                  "Finland"
+                ]
+              }
+            ]
+          },
+          "triggerFilter": null
+        },
+        "reenrollEnabled": true,
+        "allowReenrolmentAfter": "P90D",
+        "steg": [
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 864000000,
+              "tilHour": "18:00"
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f14-recension-e1",
+            "namn": "Your parcel's had a few days now"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f01-valkomst",
+      "namn": "FLOW_prenumerant_valkommen_NB_v1",
+      "trigger": "contact_created",
+      "filter": [
+        "samtycke",
+        "sprak"
+      ],
+      "steg": [
+        {
+          "typ": "vanta",
+          "dagar": 0
+        },
+        {
+          "typ": "mejl",
+          "id": "f01-valkomst-e1",
+          "namn": "Axel her. Jeg skriver e-postene selv."
+        },
+        {
+          "typ": "vanta",
+          "dagar": 2
+        },
+        {
+          "typ": "mejl",
+          "id": "f01-valkomst-e2",
+          "namn": "Et dekke som bare tar taket"
+        },
+        {
+          "typ": "vanta",
+          "dagar": 3
+        },
+        {
+          "typ": "mejl",
+          "id": "f01-valkomst-e3",
+          "namn": "Sånn ser det ut når du bestiller"
+        }
+      ],
+      "sprak": "nb",
+      "spoks": {
+        "id": "f01-valkomst",
+        "namn": "FLOW_prenumerant_valkommen_NB_v1",
+        "sprak": "nb",
+        "trigger": {
+          "event": "contact_created",
+          "filter": {
+            "type": "conjunction",
+            "operator": "and",
+            "isGrouped": true,
+            "filters": [
+              {
+                "type": "filter",
+                "field": "emailMarketingConsent",
+                "operator": "in",
+                "value": [
+                  "subscribed"
+                ]
+              },
+              {
+                "type": "filter",
+                "field": "country",
+                "operator": "in",
+                "value": [
+                  "Norway"
+                ]
+              }
+            ]
+          },
+          "triggerFilter": null
+        },
+        "reenrollEnabled": false,
+        "allowReenrolmentAfter": null,
+        "steg": [
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 0
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f01-valkomst-e1",
+            "namn": "Axel her. Jeg skriver e-postene selv."
+          },
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 172800000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f01-valkomst-e2",
+            "namn": "Et dekke som bare tar taket"
+          },
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 259200000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f01-valkomst-e3",
+            "namn": "Sånn ser det ut når du bestiller"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f02-overgiven-kassa",
+      "namn": "FLOW_checkout_overgiven_NB_v1",
+      "trigger": "checkout_created",
+      "filter": [
+        "ej_kopt_sedan_start",
+        "samtycke",
+        "sprak"
+      ],
+      "steg": [
+        {
+          "typ": "vanta",
+          "dagar": 0.125
+        },
+        {
+          "typ": "mejl",
+          "id": "f02-overgiven-kassa-e1",
+          "namn": "Handlekurven din venter fortsatt"
+        },
+        {
+          "typ": "vanta",
+          "dagar": 1
+        },
+        {
+          "typ": "mejl",
+          "id": "f02-overgiven-kassa-e2",
+          "namn": "Ni lengder. En av dem passer vogna di."
+        },
+        {
+          "typ": "vanta",
+          "dagar": 2
+        },
+        {
+          "typ": "mejl",
+          "id": "f02-overgiven-kassa-e3",
+          "namn": "Siste e-post om denne kassen"
+        }
+      ],
+      "sprak": "nb",
+      "spoks": {
+        "id": "f02-overgiven-kassa",
+        "namn": "FLOW_checkout_overgiven_NB_v1",
+        "sprak": "nb",
+        "trigger": {
+          "event": "checkout_created",
+          "filter": {
+            "type": "conjunction",
+            "operator": "and",
+            "isGrouped": true,
+            "filters": [
+              {
+                "type": "filter",
+                "field": "lastPurchase",
+                "operator": "lt",
+                "value": "__flow_triggered__"
+              },
+              {
+                "type": "filter",
+                "field": "emailMarketingConsent",
+                "operator": "in",
+                "value": [
+                  "subscribed"
+                ]
+              },
+              {
+                "type": "filter",
+                "field": "country",
+                "operator": "in",
+                "value": [
+                  "Norway"
+                ]
+              }
+            ]
+          },
+          "triggerFilter": null
+        },
+        "reenrollEnabled": true,
+        "allowReenrolmentAfter": "P7D",
+        "steg": [
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 10800000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f02-overgiven-kassa-e1",
+            "namn": "Handlekurven din venter fortsatt"
+          },
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 86400000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f02-overgiven-kassa-e2",
+            "namn": "Ni lengder. En av dem passer vogna di."
+          },
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 172800000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f02-overgiven-kassa-e3",
+            "namn": "Siste e-post om denne kassen"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f03-webbhistorik",
+      "namn": "FLOW_visning_webbhistorik_NB_v1",
+      "trigger": "product_viewed",
+      "filter": [
+        "ej_kassa_sedan_start",
+        "ej_kopt_sedan_start",
+        "samtycke",
+        "sprak"
+      ],
+      "steg": [
+        {
+          "typ": "vanta",
+          "dagar": 0.16666666666666666
+        },
+        {
+          "typ": "mejl",
+          "id": "f03-webbhistorik-e1",
+          "namn": "Dette kikket du på"
+        },
+        {
+          "typ": "vanta",
+          "dagar": 1
+        },
+        {
+          "typ": "mejl",
+          "id": "f03-webbhistorik-e2",
+          "namn": "Finnes det i din størrelse?"
+        }
+      ],
+      "sprak": "nb",
+      "spoks": {
+        "id": "f03-webbhistorik",
+        "namn": "FLOW_visning_webbhistorik_NB_v1",
+        "sprak": "nb",
+        "trigger": {
+          "event": "product_viewed",
+          "filter": {
+            "type": "conjunction",
+            "operator": "and",
+            "isGrouped": true,
+            "filters": [
+              {
+                "type": "filter",
+                "field": "lastCartUpdate",
+                "operator": "lt",
+                "value": "__flow_triggered__"
+              },
+              {
+                "type": "filter",
+                "field": "lastPurchase",
+                "operator": "lt",
+                "value": "__flow_triggered__"
+              },
+              {
+                "type": "filter",
+                "field": "emailMarketingConsent",
+                "operator": "in",
+                "value": [
+                  "subscribed"
+                ]
+              },
+              {
+                "type": "filter",
+                "field": "country",
+                "operator": "in",
+                "value": [
+                  "Norway"
+                ]
+              }
+            ]
+          },
+          "triggerFilter": null
+        },
+        "reenrollEnabled": true,
+        "allowReenrolmentAfter": "P30D",
+        "steg": [
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 14400000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f03-webbhistorik-e1",
+            "namn": "Dette kikket du på"
+          },
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 86400000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f03-webbhistorik-e2",
+            "namn": "Finnes det i din størrelse?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f04-efter-kop",
+      "namn": "FLOW_order_efterkop_NB_v1",
+      "trigger": "order_created",
+      "filter": [
+        "ej_avregistrerad",
+        "sprak"
+      ],
+      "steg": [
+        {
+          "typ": "vanta",
+          "dagar": 2
+        },
+        {
+          "typ": "mejl",
+          "id": "f04-efter-kop-e1",
+          "namn": "Bestillingen din er på vei"
+        },
+        {
+          "typ": "vanta",
+          "dagar": 14
+        },
+        {
+          "typ": "mejl",
+          "id": "f04-efter-kop-e2",
+          "namn": "Kom pakken frem som den skulle?"
+        }
+      ],
+      "sprak": "nb",
+      "spoks": {
+        "id": "f04-efter-kop",
+        "namn": "FLOW_order_efterkop_NB_v1",
+        "sprak": "nb",
+        "trigger": {
+          "event": "order_created",
+          "filter": {
+            "type": "conjunction",
+            "operator": "and",
+            "isGrouped": true,
+            "filters": [
+              {
+                "type": "filter",
+                "field": "emailMarketingConsent",
+                "operator": "nin",
+                "value": [
+                  "unsubscribed"
+                ]
+              },
+              {
+                "type": "filter",
+                "field": "country",
+                "operator": "in",
+                "value": [
+                  "Norway"
+                ]
+              }
+            ]
+          },
+          "triggerFilter": null
+        },
+        "reenrollEnabled": true,
+        "allowReenrolmentAfter": null,
+        "steg": [
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 172800000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f04-efter-kop-e1",
+            "namn": "Bestillingen din er på vei"
+          },
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 1209600000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f04-efter-kop-e2",
+            "namn": "Kom pakken frem som den skulle?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f05-vinback",
+      "namn": "FLOW_order_vinback_NB_v1",
+      "trigger": "order_created",
+      "filter": [
+        "ej_avregistrerad",
+        "sprak",
+        "ej_kopt_sedan_start"
+      ],
+      "steg": [
+        {
+          "typ": "vanta",
+          "dagar": 180
+        },
+        {
+          "typ": "mejl",
+          "id": "f05-vinback-e1",
+          "namn": "Et halvår siden sist"
+        },
+        {
+          "typ": "vanta",
+          "dagar": 14
+        },
+        {
+          "typ": "mejl",
+          "id": "f05-vinback-e2",
+          "namn": "Hva mangler du til vogna?"
+        }
+      ],
+      "sprak": "nb",
+      "spoks": {
+        "id": "f05-vinback",
+        "namn": "FLOW_order_vinback_NB_v1",
+        "sprak": "nb",
+        "trigger": {
+          "event": "order_created",
+          "filter": {
+            "type": "conjunction",
+            "operator": "and",
+            "isGrouped": true,
+            "filters": [
+              {
+                "type": "filter",
+                "field": "emailMarketingConsent",
+                "operator": "nin",
+                "value": [
+                  "unsubscribed"
+                ]
+              },
+              {
+                "type": "filter",
+                "field": "country",
+                "operator": "in",
+                "value": [
+                  "Norway"
+                ]
+              },
+              {
+                "type": "filter",
+                "field": "lastPurchase",
+                "operator": "lt",
+                "value": "__flow_triggered__"
+              }
+            ]
+          },
+          "triggerFilter": null
+        },
+        "reenrollEnabled": true,
+        "allowReenrolmentAfter": null,
+        "steg": [
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 15552000000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f05-vinback-e1",
+            "namn": "Et halvår siden sist"
+          },
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 1209600000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f05-vinback-e2",
+            "namn": "Hva mangler du til vogna?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f06-levererat-takskyddet",
+      "namn": "FLOW_levererat_takskyddet_NB_v1",
+      "trigger": "order_delivered",
+      "filter": [
+        "ej_avregistrerad",
+        "sprak"
+      ],
+      "steg": [
+        {
+          "typ": "vanta",
+          "dagar": 1
+        },
+        {
+          "typ": "mejl",
+          "id": "f06-levererat-takskyddet-e1",
+          "namn": "Sånn setter du på taktrekket"
+        }
+      ],
+      "sprak": "nb",
+      "spoks": {
+        "id": "f06-levererat-takskyddet",
+        "namn": "FLOW_levererat_takskyddet_NB_v1",
+        "sprak": "nb",
+        "trigger": {
+          "event": "order_delivered",
+          "filter": {
+            "type": "conjunction",
+            "operator": "and",
+            "isGrouped": true,
+            "filters": [
+              {
+                "type": "filter",
+                "field": "emailMarketingConsent",
+                "operator": "nin",
+                "value": [
+                  "unsubscribed"
+                ]
+              },
+              {
+                "type": "filter",
+                "field": "country",
+                "operator": "in",
+                "value": [
+                  "Norway"
+                ]
+              }
+            ]
+          },
+          "triggerFilter": {
+            "type": "filter",
+            "field": "externalId",
+            "operator": "in",
+            "value": [
+              "gid://shopify/Product/16084174242124"
+            ]
+          }
+        },
+        "reenrollEnabled": true,
+        "allowReenrolmentAfter": null,
+        "steg": [
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 86400000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f06-levererat-takskyddet-e1",
+            "namn": "Sånn setter du på taktrekket"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f06-levererat-termoskyddet",
+      "namn": "FLOW_levererat_termoskyddet_NB_v1",
+      "trigger": "order_delivered",
+      "filter": [
+        "ej_avregistrerad",
+        "sprak"
+      ],
+      "steg": [
+        {
+          "typ": "vanta",
+          "dagar": 1
+        },
+        {
+          "typ": "mejl",
+          "id": "f06-levererat-termoskyddet-e1",
+          "namn": "Sånn monterer du frontrutetrekket"
+        }
+      ],
+      "sprak": "nb",
+      "spoks": {
+        "id": "f06-levererat-termoskyddet",
+        "namn": "FLOW_levererat_termoskyddet_NB_v1",
+        "sprak": "nb",
+        "trigger": {
+          "event": "order_delivered",
+          "filter": {
+            "type": "conjunction",
+            "operator": "and",
+            "isGrouped": true,
+            "filters": [
+              {
+                "type": "filter",
+                "field": "emailMarketingConsent",
+                "operator": "nin",
+                "value": [
+                  "unsubscribed"
+                ]
+              },
+              {
+                "type": "filter",
+                "field": "country",
+                "operator": "in",
+                "value": [
+                  "Norway"
+                ]
+              }
+            ]
+          },
+          "triggerFilter": {
+            "type": "filter",
+            "field": "externalId",
+            "operator": "in",
+            "value": [
+              "gid://shopify/Product/16108121489740"
+            ]
+          }
+        },
+        "reenrollEnabled": true,
+        "allowReenrolmentAfter": null,
+        "steg": [
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 86400000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f06-levererat-termoskyddet-e1",
+            "namn": "Sånn monterer du frontrutetrekket"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f14-recension",
+      "namn": "FLOW_levererat_recension_NB_v1",
+      "trigger": "order_delivered",
+      "filter": [
+        "ej_avregistrerad",
+        "sprak"
+      ],
+      "steg": [
+        {
+          "typ": "vanta",
+          "dagar": 10
+        },
+        {
+          "typ": "mejl",
+          "id": "f14-recension-e1",
+          "namn": "Hva syntes du om den?"
+        }
+      ],
+      "sprak": "nb",
+      "spoks": {
+        "id": "f14-recension",
+        "namn": "FLOW_levererat_recension_NB_v1",
+        "sprak": "nb",
+        "trigger": {
+          "event": "order_delivered",
+          "filter": {
+            "type": "conjunction",
+            "operator": "and",
+            "isGrouped": true,
+            "filters": [
+              {
+                "type": "filter",
+                "field": "emailMarketingConsent",
+                "operator": "nin",
+                "value": [
+                  "unsubscribed"
+                ]
+              },
+              {
+                "type": "filter",
+                "field": "country",
+                "operator": "in",
+                "value": [
+                  "Norway"
+                ]
+              }
+            ]
+          },
+          "triggerFilter": null
+        },
+        "reenrollEnabled": true,
+        "allowReenrolmentAfter": "P90D",
+        "steg": [
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 864000000,
+              "tilHour": "18:00"
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f14-recension-e1",
+            "namn": "Hva syntes du om den?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f01-valkomst",
+      "namn": "FLOW_prenumerant_valkommen_SV_v1",
+      "trigger": "contact_created",
+      "filter": [
+        "samtycke",
+        "sprak"
+      ],
+      "steg": [
+        {
+          "typ": "vanta",
+          "dagar": 0
+        },
+        {
+          "typ": "mejl",
+          "id": "f01-valkomst-e1",
+          "namn": "Vem skriver de här mejlen?"
+        },
+        {
+          "typ": "vanta",
+          "dagar": 2
+        },
+        {
+          "typ": "mejl",
+          "id": "f01-valkomst-e2",
+          "namn": "Taket, inte hela vagnen"
+        },
+        {
+          "typ": "vanta",
+          "dagar": 3
+        },
+        {
+          "typ": "mejl",
+          "id": "f01-valkomst-e3",
+          "namn": "Så går en retur till, om det behövs"
+        }
+      ],
+      "sprak": "sv",
+      "spoks": {
+        "id": "f01-valkomst",
+        "namn": "FLOW_prenumerant_valkommen_SV_v1",
+        "sprak": "sv",
+        "trigger": {
+          "event": "contact_created",
+          "filter": {
+            "type": "conjunction",
+            "operator": "and",
+            "isGrouped": true,
+            "filters": [
+              {
+                "type": "filter",
+                "field": "emailMarketingConsent",
+                "operator": "in",
+                "value": [
+                  "subscribed"
+                ]
+              },
+              {
+                "type": "conjunction",
+                "operator": "or",
+                "isGrouped": true,
+                "filters": [
+                  {
+                    "type": "filter",
+                    "field": "country",
+                    "operator": "in",
+                    "value": [
+                      "Sweden",
+                      "Denmark"
+                    ]
+                  },
+                  {
+                    "type": "filter",
+                    "field": "country",
+                    "operator": "nis"
+                  }
+                ]
+              }
+            ]
+          },
+          "triggerFilter": null
+        },
+        "reenrollEnabled": false,
+        "allowReenrolmentAfter": null,
+        "steg": [
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 0
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f01-valkomst-e1",
+            "namn": "Vem skriver de här mejlen?"
+          },
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 172800000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f01-valkomst-e2",
+            "namn": "Taket, inte hela vagnen"
+          },
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 259200000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f01-valkomst-e3",
+            "namn": "Så går en retur till, om det behövs"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f02-overgiven-kassa",
+      "namn": "FLOW_checkout_overgiven_SV_v1",
+      "trigger": "checkout_created",
+      "filter": [
+        "ej_kopt_sedan_start",
+        "samtycke",
+        "sprak"
+      ],
+      "steg": [
+        {
+          "typ": "vanta",
+          "dagar": 0.125
+        },
+        {
+          "typ": "mejl",
+          "id": "f02-overgiven-kassa-e1",
+          "namn": "Ingen rea. Bara en påminnelse."
+        },
+        {
+          "typ": "vanta",
+          "dagar": 1
+        },
+        {
+          "typ": "mejl",
+          "id": "f02-overgiven-kassa-e2",
+          "namn": "Tre frågor innan du betalar"
+        },
+        {
+          "typ": "vanta",
+          "dagar": 2
+        },
+        {
+          "typ": "mejl",
+          "id": "f02-overgiven-kassa-e3",
+          "namn": "Sista mejlet om den här kassan"
+        }
+      ],
+      "sprak": "sv",
+      "spoks": {
+        "id": "f02-overgiven-kassa",
+        "namn": "FLOW_checkout_overgiven_SV_v1",
+        "sprak": "sv",
+        "trigger": {
+          "event": "checkout_created",
+          "filter": {
+            "type": "conjunction",
+            "operator": "and",
+            "isGrouped": true,
+            "filters": [
+              {
+                "type": "filter",
+                "field": "lastPurchase",
+                "operator": "lt",
+                "value": "__flow_triggered__"
+              },
+              {
+                "type": "filter",
+                "field": "emailMarketingConsent",
+                "operator": "in",
+                "value": [
+                  "subscribed"
+                ]
+              },
+              {
+                "type": "conjunction",
+                "operator": "or",
+                "isGrouped": true,
+                "filters": [
+                  {
+                    "type": "filter",
+                    "field": "country",
+                    "operator": "in",
+                    "value": [
+                      "Sweden",
+                      "Denmark"
+                    ]
+                  },
+                  {
+                    "type": "filter",
+                    "field": "country",
+                    "operator": "nis"
+                  }
+                ]
+              }
+            ]
+          },
+          "triggerFilter": null
+        },
+        "reenrollEnabled": true,
+        "allowReenrolmentAfter": "P7D",
+        "steg": [
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 10800000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f02-overgiven-kassa-e1",
+            "namn": "Ingen rea. Bara en påminnelse."
+          },
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 86400000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f02-overgiven-kassa-e2",
+            "namn": "Tre frågor innan du betalar"
+          },
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 172800000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f02-overgiven-kassa-e3",
+            "namn": "Sista mejlet om den här kassan"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f03-webbhistorik",
+      "namn": "FLOW_visning_webbhistorik_SV_v1",
+      "trigger": "product_viewed",
+      "filter": [
+        "ej_kassa_sedan_start",
+        "ej_kopt_sedan_start",
+        "samtycke",
+        "sprak"
+      ],
+      "steg": [
+        {
+          "typ": "vanta",
+          "dagar": 0.16666666666666666
+        },
+        {
+          "typ": "mejl",
+          "id": "f03-webbhistorik-e1",
+          "namn": "Den här kikade du på"
+        },
+        {
+          "typ": "vanta",
+          "dagar": 1
+        },
+        {
+          "typ": "mejl",
+          "id": "f03-webbhistorik-e2",
+          "namn": "Finns min storlek?"
+        }
+      ],
+      "sprak": "sv",
+      "spoks": {
+        "id": "f03-webbhistorik",
+        "namn": "FLOW_visning_webbhistorik_SV_v1",
+        "sprak": "sv",
+        "trigger": {
+          "event": "product_viewed",
+          "filter": {
+            "type": "conjunction",
+            "operator": "and",
+            "isGrouped": true,
+            "filters": [
+              {
+                "type": "filter",
+                "field": "lastCartUpdate",
+                "operator": "lt",
+                "value": "__flow_triggered__"
+              },
+              {
+                "type": "filter",
+                "field": "lastPurchase",
+                "operator": "lt",
+                "value": "__flow_triggered__"
+              },
+              {
+                "type": "filter",
+                "field": "emailMarketingConsent",
+                "operator": "in",
+                "value": [
+                  "subscribed"
+                ]
+              },
+              {
+                "type": "conjunction",
+                "operator": "or",
+                "isGrouped": true,
+                "filters": [
+                  {
+                    "type": "filter",
+                    "field": "country",
+                    "operator": "in",
+                    "value": [
+                      "Sweden",
+                      "Denmark"
+                    ]
+                  },
+                  {
+                    "type": "filter",
+                    "field": "country",
+                    "operator": "nis"
+                  }
+                ]
+              }
+            ]
+          },
+          "triggerFilter": null
+        },
+        "reenrollEnabled": true,
+        "allowReenrolmentAfter": "P30D",
+        "steg": [
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 14400000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f03-webbhistorik-e1",
+            "namn": "Den här kikade du på"
+          },
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 86400000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f03-webbhistorik-e2",
+            "namn": "Finns min storlek?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f04-efter-kop",
+      "namn": "FLOW_order_efterkop_SV_v1",
+      "trigger": "order_created",
+      "filter": [
+        "ej_avregistrerad",
+        "sprak"
+      ],
+      "steg": [
+        {
+          "typ": "vanta",
+          "dagar": 2
+        },
+        {
+          "typ": "mejl",
+          "id": "f04-efter-kop-e1",
+          "namn": "Bekräftelse, sen paketnumret"
+        },
+        {
+          "typ": "vanta",
+          "dagar": 14
+        },
+        {
+          "typ": "mejl",
+          "id": "f04-efter-kop-e2",
+          "namn": "Kom allt fram som det skulle?"
+        }
+      ],
+      "sprak": "sv",
+      "spoks": {
+        "id": "f04-efter-kop",
+        "namn": "FLOW_order_efterkop_SV_v1",
+        "sprak": "sv",
+        "trigger": {
+          "event": "order_created",
+          "filter": {
+            "type": "conjunction",
+            "operator": "and",
+            "isGrouped": true,
+            "filters": [
+              {
+                "type": "filter",
+                "field": "emailMarketingConsent",
+                "operator": "nin",
+                "value": [
+                  "unsubscribed"
+                ]
+              },
+              {
+                "type": "conjunction",
+                "operator": "or",
+                "isGrouped": true,
+                "filters": [
+                  {
+                    "type": "filter",
+                    "field": "country",
+                    "operator": "in",
+                    "value": [
+                      "Sweden",
+                      "Denmark"
+                    ]
+                  },
+                  {
+                    "type": "filter",
+                    "field": "country",
+                    "operator": "nis"
+                  }
+                ]
+              }
+            ]
+          },
+          "triggerFilter": null
+        },
+        "reenrollEnabled": true,
+        "allowReenrolmentAfter": null,
+        "steg": [
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 172800000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f04-efter-kop-e1",
+            "namn": "Bekräftelse, sen paketnumret"
+          },
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 1209600000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f04-efter-kop-e2",
+            "namn": "Kom allt fram som det skulle?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f05-vinback",
+      "namn": "FLOW_order_vinback_SV_v1",
+      "trigger": "order_created",
+      "filter": [
+        "ej_avregistrerad",
+        "sprak",
+        "ej_kopt_sedan_start"
+      ],
+      "steg": [
+        {
+          "typ": "vanta",
+          "dagar": 180
+        },
+        {
+          "typ": "mejl",
+          "id": "f05-vinback-e1",
+          "namn": "Sex månader sedan du handlade"
+        },
+        {
+          "typ": "vanta",
+          "dagar": 14
+        },
+        {
+          "typ": "mejl",
+          "id": "f05-vinback-e2",
+          "namn": "Vad saknar du för vagnen?"
+        }
+      ],
+      "sprak": "sv",
+      "spoks": {
+        "id": "f05-vinback",
+        "namn": "FLOW_order_vinback_SV_v1",
+        "sprak": "sv",
+        "trigger": {
+          "event": "order_created",
+          "filter": {
+            "type": "conjunction",
+            "operator": "and",
+            "isGrouped": true,
+            "filters": [
+              {
+                "type": "filter",
+                "field": "emailMarketingConsent",
+                "operator": "nin",
+                "value": [
+                  "unsubscribed"
+                ]
+              },
+              {
+                "type": "conjunction",
+                "operator": "or",
+                "isGrouped": true,
+                "filters": [
+                  {
+                    "type": "filter",
+                    "field": "country",
+                    "operator": "in",
+                    "value": [
+                      "Sweden",
+                      "Denmark"
+                    ]
+                  },
+                  {
+                    "type": "filter",
+                    "field": "country",
+                    "operator": "nis"
+                  }
+                ]
+              },
+              {
+                "type": "filter",
+                "field": "lastPurchase",
+                "operator": "lt",
+                "value": "__flow_triggered__"
+              }
+            ]
+          },
+          "triggerFilter": null
+        },
+        "reenrollEnabled": true,
+        "allowReenrolmentAfter": null,
+        "steg": [
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 15552000000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f05-vinback-e1",
+            "namn": "Sex månader sedan du handlade"
+          },
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 1209600000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f05-vinback-e2",
+            "namn": "Vad saknar du för vagnen?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f06-levererat-takskyddet",
+      "namn": "FLOW_levererat_takskyddet_SV_v1",
+      "trigger": "order_delivered",
+      "filter": [
+        "ej_avregistrerad",
+        "sprak"
+      ],
+      "steg": [
+        {
+          "typ": "vanta",
+          "dagar": 1
+        },
+        {
+          "typ": "mejl",
+          "id": "f06-levererat-takskyddet-e1",
+          "namn": "Så sätter du på taköverdraget"
+        }
+      ],
+      "sprak": "sv",
+      "spoks": {
+        "id": "f06-levererat-takskyddet",
+        "namn": "FLOW_levererat_takskyddet_SV_v1",
+        "sprak": "sv",
+        "trigger": {
+          "event": "order_delivered",
+          "filter": {
+            "type": "conjunction",
+            "operator": "and",
+            "isGrouped": true,
+            "filters": [
+              {
+                "type": "filter",
+                "field": "emailMarketingConsent",
+                "operator": "nin",
+                "value": [
+                  "unsubscribed"
+                ]
+              },
+              {
+                "type": "conjunction",
+                "operator": "or",
+                "isGrouped": true,
+                "filters": [
+                  {
+                    "type": "filter",
+                    "field": "country",
+                    "operator": "in",
+                    "value": [
+                      "Sweden",
+                      "Denmark"
+                    ]
+                  },
+                  {
+                    "type": "filter",
+                    "field": "country",
+                    "operator": "nis"
+                  }
+                ]
+              }
+            ]
+          },
+          "triggerFilter": {
+            "type": "filter",
+            "field": "externalId",
+            "operator": "in",
+            "value": [
+              "gid://shopify/Product/16084174242124"
+            ]
+          }
+        },
+        "reenrollEnabled": true,
+        "allowReenrolmentAfter": null,
+        "steg": [
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 86400000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f06-levererat-takskyddet-e1",
+            "namn": "Så sätter du på taköverdraget"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f06-levererat-termoskyddet",
+      "namn": "FLOW_levererat_termoskyddet_SV_v1",
+      "trigger": "order_delivered",
+      "filter": [
+        "ej_avregistrerad",
+        "sprak"
+      ],
+      "steg": [
+        {
+          "typ": "vanta",
+          "dagar": 1
+        },
+        {
+          "typ": "mejl",
+          "id": "f06-levererat-termoskyddet-e1",
+          "namn": "Så monterar du termoskyddet"
+        }
+      ],
+      "sprak": "sv",
+      "spoks": {
+        "id": "f06-levererat-termoskyddet",
+        "namn": "FLOW_levererat_termoskyddet_SV_v1",
+        "sprak": "sv",
+        "trigger": {
+          "event": "order_delivered",
+          "filter": {
+            "type": "conjunction",
+            "operator": "and",
+            "isGrouped": true,
+            "filters": [
+              {
+                "type": "filter",
+                "field": "emailMarketingConsent",
+                "operator": "nin",
+                "value": [
+                  "unsubscribed"
+                ]
+              },
+              {
+                "type": "conjunction",
+                "operator": "or",
+                "isGrouped": true,
+                "filters": [
+                  {
+                    "type": "filter",
+                    "field": "country",
+                    "operator": "in",
+                    "value": [
+                      "Sweden",
+                      "Denmark"
+                    ]
+                  },
+                  {
+                    "type": "filter",
+                    "field": "country",
+                    "operator": "nis"
+                  }
+                ]
+              }
+            ]
+          },
+          "triggerFilter": {
+            "type": "filter",
+            "field": "externalId",
+            "operator": "in",
+            "value": [
+              "gid://shopify/Product/16108121489740"
+            ]
+          }
+        },
+        "reenrollEnabled": true,
+        "allowReenrolmentAfter": null,
+        "steg": [
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 86400000
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f06-levererat-termoskyddet-e1",
+            "namn": "Så monterar du termoskyddet"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f14-recension",
+      "namn": "FLOW_levererat_recension_SV_v1",
+      "trigger": "order_delivered",
+      "filter": [
+        "ej_avregistrerad",
+        "sprak"
+      ],
+      "steg": [
+        {
+          "typ": "vanta",
+          "dagar": 10
+        },
+        {
+          "typ": "mejl",
+          "id": "f14-recension-e1",
+          "namn": "Vad tyckte du?"
+        }
+      ],
+      "sprak": "sv",
+      "spoks": {
+        "id": "f14-recension",
+        "namn": "FLOW_levererat_recension_SV_v1",
+        "sprak": "sv",
+        "trigger": {
+          "event": "order_delivered",
+          "filter": {
+            "type": "conjunction",
+            "operator": "and",
+            "isGrouped": true,
+            "filters": [
+              {
+                "type": "filter",
+                "field": "emailMarketingConsent",
+                "operator": "nin",
+                "value": [
+                  "unsubscribed"
+                ]
+              },
+              {
+                "type": "conjunction",
+                "operator": "or",
+                "isGrouped": true,
+                "filters": [
+                  {
+                    "type": "filter",
+                    "field": "country",
+                    "operator": "in",
+                    "value": [
+                      "Sweden",
+                      "Denmark"
+                    ]
+                  },
+                  {
+                    "type": "filter",
+                    "field": "country",
+                    "operator": "nis"
+                  }
+                ]
+              }
+            ]
+          },
+          "triggerFilter": null
+        },
+        "reenrollEnabled": true,
+        "allowReenrolmentAfter": "P90D",
+        "steg": [
+          {
+            "type": "delay",
+            "parameters": {
+              "delay": 864000000,
+              "tilHour": "18:00"
+            }
+          },
+          {
+            "type": "publish_flow_post_to_contact",
+            "mejl": "f14-recension-e1",
+            "namn": "Vad tyckte du?"
+          }
+        ]
+      }
+    }
+  ],
+  "kampanjer": [
+    {
+      "id": "k01-regnet-vid-takluckan",
+      "namn": "MAIL_20260929_CaraShellRoof_EN_PD_1_samtycke_problem_regnet-vid-takluckan_v1",
+      "sprak": "en",
+      "titel": "K01 EN The roof you never climb up to check",
+      "planerad": "2026-09-29T16:00:00+02:00",
+      "segment": [
+        "SEG_samtycke_en"
+      ],
+      "mejl": "k01-regnet-vid-takluckan",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k02-nio-langder",
+      "namn": "MAIL_20261006_CaraShellRoof_EN_OB_2_samtycke_product_nio-langder_v1",
+      "sprak": "en",
+      "titel": "K02 EN Nine lengths. Yours is one of them",
+      "planerad": "2026-10-06T16:00:00+02:00",
+      "segment": [
+        "SEG_samtycke_en"
+      ],
+      "mejl": "k02-nio-langder",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k03-imman-pa-rutan",
+      "namn": "MAIL_20261013_CaraShellFront_EN_PD_1_samtycke_problem_imman-mellan-gardin-och-glas_v1",
+      "sprak": "en",
+      "titel": "K03 EN The fog that sits on the glass overnight",
+      "planerad": "2026-10-13T16:00:00+02:00",
+      "segment": [
+        "SEG_samtycke_en"
+      ],
+      "mejl": "k03-imman-pa-rutan",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k04-vecka-43",
+      "namn": "MAIL_20261020_CaraShellRoof_EN_OB_3_samtycke_product_does-it-stay-on-in-wind_v1",
+      "sprak": "en",
+      "titel": "K04 EN Does it stay on in wind?",
+      "planerad": "2026-10-20T16:00:00+02:00",
+      "segment": [
+        "SEG_samtycke_en"
+      ],
+      "mejl": "k04-vecka-43",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k05-adventskalendern",
+      "namn": "MAIL_20261027_CaraShellCal_EN_GT_2_samtycke_product_retrobussar-24-luckor_v1",
+      "sprak": "en",
+      "titel": "K05 EN A 24-door calendar, retro campervan theme",
+      "planerad": "2026-10-27T16:00:00+01:00",
+      "segment": [
+        "SEG_samtycke_en"
+      ],
+      "mejl": "k05-adventskalendern",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k06-vecka-45",
+      "namn": "MAIL_20261103_CaraShellRoof_EN_GT_1_samtycke_solution_the-gift-for-the-one-with-the-caravan_v1",
+      "sprak": "en",
+      "titel": "K06 EN A Christmas gift that actually gets used",
+      "planerad": "2026-11-03T16:00:00+01:00",
+      "segment": [
+        "SEG_samtycke_en"
+      ],
+      "mejl": "k06-vecka-45",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k07-fredag-sista-dagen-kalendern",
+      "namn": "MAIL_20261110_CaraShellCal_EN_GT_3_samtycke_promo_fredag-sista-dagen_v1",
+      "sprak": "en",
+      "titel": "K07 EN Friday is the last day to order the calendar",
+      "planerad": "2026-11-10T16:00:00+01:00",
+      "segment": [
+        "SEG_samtycke_en"
+      ],
+      "mejl": "k07-fredag-sista-dagen-kalendern",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k08-checklistan",
+      "namn": "MAIL_20261117_CaraShellMix_EN_S_1_samtycke_solution_innan-vagnen-stalls-undan_v1",
+      "sprak": "en",
+      "titel": "K08 EN Three things before it sits for a while",
+      "planerad": "2026-11-17T16:00:00+01:00",
+      "segment": [
+        "SEG_samtycke_en"
+      ],
+      "mejl": "k08-checklistan",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k09-black-week-utan-rabatt",
+      "namn": "MAIL_20261124_CaraShellRoof_EN_SP_1_samtycke_product_kundernas-ord_v1",
+      "sprak": "en",
+      "titel": "K09 EN No discount here. Just the guarantee",
+      "planerad": "2026-11-24T16:00:00+01:00",
+      "segment": [
+        "SEG_samtycke_en"
+      ],
+      "mejl": "k09-black-week-utan-rabatt",
+      "status_plan": "kraver-axel"
+    },
+    {
+      "id": "k10-sista-dag-for-julklappar",
+      "namn": "MAIL_20261201_CaraShellMix_EN_GT_4_samtycke_promo_bestall-senast-mandag-7-dec_v1",
+      "sprak": "en",
+      "titel": "K10 EN Order by Monday for it to arrive by Christmas",
+      "planerad": "2026-12-01T16:00:00+01:00",
+      "segment": [
+        "SEG_samtycke_en"
+      ],
+      "mejl": "k10-sista-dag-for-julklappar",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k11-rutan-pa-resorna",
+      "namn": "MAIL_20261208_CaraShellFront_EN_PD_2_samtycke_solution_kylan-borta-fran-rutan_v1",
+      "sprak": "en",
+      "titel": "K11 EN The glass, covered before the next trip",
+      "planerad": "2026-12-08T16:00:00+01:00",
+      "segment": [
+        "SEG_samtycke_en"
+      ],
+      "mejl": "k11-rutan-pa-resorna",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k12-efter-blasten",
+      "namn": "MAIL_20261215_CaraShellRoof_EN_M_1_samtycke_product_kolla-banden-efter-blasten_v1",
+      "sprak": "en",
+      "titel": "K12 EN After strong wind, check these three things",
+      "planerad": "2026-12-15T16:00:00+01:00",
+      "segment": [
+        "SEG_samtycke_en"
+      ],
+      "mejl": "k12-efter-blasten",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k13-nyarskoll",
+      "namn": "MAIL_20261229_CaraShellMix_EN_S_2_samtycke_solution_en-koll-innan-sasongen_v1",
+      "sprak": "en",
+      "titel": "K13 EN The first look of the new year",
+      "planerad": "2026-12-29T16:00:00+01:00",
+      "segment": [
+        "SEG_samtycke_en"
+      ],
+      "mejl": "k13-nyarskoll",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k01-regnet-vid-takluckan",
+      "namn": "MAIL_20260929_CaraShellRoof_NB_PD_1_samtycke_problem_regnet-vid-takluckan_v1",
+      "sprak": "nb",
+      "titel": "K01 NB Regnet som blir stående ved takluken",
+      "planerad": "2026-09-29T18:00:00+02:00",
+      "segment": [
+        "SEG_samtycke_nb"
+      ],
+      "mejl": "k01-regnet-vid-takluckan",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k02-nio-langder",
+      "namn": "MAIL_20261006_CaraShellRoof_NB_OB_2_samtycke_product_nio-langder_v1",
+      "sprak": "nb",
+      "titel": "K02 NB Ni lengder, ikke bare én",
+      "planerad": "2026-10-06T18:00:00+02:00",
+      "segment": [
+        "SEG_samtycke_nb"
+      ],
+      "mejl": "k02-nio-langder",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k03-imman-pa-rutan",
+      "namn": "MAIL_20261013_CaraShellFront_NB_PD_1_samtycke_problem_imman-mellan-gardin-och-glas_v1",
+      "sprak": "nb",
+      "titel": "K03 NB Duggen blir sittende mellom gardin og glass",
+      "planerad": "2026-10-13T18:00:00+02:00",
+      "segment": [
+        "SEG_samtycke_nb"
+      ],
+      "mejl": "k03-imman-pa-rutan",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k04-vecka-43",
+      "namn": "MAIL_20261020_CaraShellRoof_NB_GT_1_samtycke_solution_farsdag-26-okt_v1",
+      "sprak": "nb",
+      "titel": "K04 NB Gaven til pappa med campingvogn",
+      "planerad": "2026-10-20T18:00:00+02:00",
+      "segment": [
+        "SEG_samtycke_nb"
+      ],
+      "mejl": "k04-vecka-43",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k05-adventskalendern",
+      "namn": "MAIL_20261027_CaraShellCal_NB_GT_2_samtycke_product_retrobussar-24-luckor_v1",
+      "sprak": "nb",
+      "titel": "K05 NB Adventskalenderen med retrobusser",
+      "planerad": "2026-10-27T18:00:00+01:00",
+      "segment": [
+        "SEG_samtycke_nb"
+      ],
+      "mejl": "k05-adventskalendern",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k06-vecka-45",
+      "namn": "MAIL_20261103_CaraShellRoof_NB_OB_3_samtycke_product_sitter-det-fast-i-vind_v1",
+      "sprak": "nb",
+      "titel": "K06 NB Sitter det fast når det blåser?",
+      "planerad": "2026-11-03T18:00:00+01:00",
+      "segment": [
+        "SEG_samtycke_nb"
+      ],
+      "mejl": "k06-vecka-45",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k07-fredag-sista-dagen-kalendern",
+      "namn": "MAIL_20261110_CaraShellCal_NB_GT_3_samtycke_promo_fredag-sista-dagen_v1",
+      "sprak": "nb",
+      "titel": "K07 NB Fredag er siste dag for luke 1",
+      "planerad": "2026-11-10T18:00:00+01:00",
+      "segment": [
+        "SEG_samtycke_nb"
+      ],
+      "mejl": "k07-fredag-sista-dagen-kalendern",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k08-checklistan",
+      "namn": "MAIL_20261117_CaraShellMix_NB_S_1_samtycke_solution_innan-vagnen-stalls-undan_v1",
+      "sprak": "nb",
+      "titel": "K08 NB Før vogna settes bort for vinteren",
+      "planerad": "2026-11-17T18:00:00+01:00",
+      "segment": [
+        "SEG_samtycke_nb"
+      ],
+      "mejl": "k08-checklistan",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k09-black-week-utan-rabatt",
+      "namn": "MAIL_20261124_CaraShellRoof_NB_SP_1_samtycke_product_kundernas-ord_v1",
+      "sprak": "nb",
+      "titel": "K09 NB Det kundene selv sier om taket",
+      "planerad": "2026-11-24T18:00:00+01:00",
+      "segment": [
+        "SEG_samtycke_nb"
+      ],
+      "mejl": "k09-black-week-utan-rabatt",
+      "status_plan": "kraver-axel"
+    },
+    {
+      "id": "k10-sista-dag-for-julklappar",
+      "namn": "MAIL_20261201_CaraShellMix_NB_GT_4_samtycke_promo_bestall-senast-mandag-7-dec_v1",
+      "sprak": "nb",
+      "titel": "K10 NB Bestill senest mandag 7. desember",
+      "planerad": "2026-12-01T18:00:00+01:00",
+      "segment": [
+        "SEG_samtycke_nb"
+      ],
+      "mejl": "k10-sista-dag-for-julklappar",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k11-rutan-pa-resorna",
+      "namn": "MAIL_20261208_CaraShellFront_NB_PD_2_samtycke_solution_kylan-borta-fran-rutan_v1",
+      "sprak": "nb",
+      "titel": "K11 NB Ingen dugg å tørke bort om morgenen",
+      "planerad": "2026-12-08T18:00:00+01:00",
+      "segment": [
+        "SEG_samtycke_nb"
+      ],
+      "mejl": "k11-rutan-pa-resorna",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k12-efter-blasten",
+      "namn": "MAIL_20261215_CaraShellRoof_NB_M_1_samtycke_product_kolla-banden-efter-blasten_v1",
+      "sprak": "nb",
+      "titel": "K12 NB Etter kraftig vind, verdt en sjekk",
+      "planerad": "2026-12-15T18:00:00+01:00",
+      "segment": [
+        "SEG_samtycke_nb"
+      ],
+      "mejl": "k12-efter-blasten",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k13-nyarskoll",
+      "namn": "MAIL_20261229_CaraShellMix_NB_S_2_samtycke_solution_en-koll-innan-sasongen_v1",
+      "sprak": "nb",
+      "titel": "K13 NB En sjekk i romjulen",
+      "planerad": "2026-12-29T18:00:00+01:00",
+      "segment": [
+        "SEG_samtycke_nb"
+      ],
+      "mejl": "k13-nyarskoll",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k01-regnet-vid-takluckan",
+      "namn": "MAIL_20260929_CaraShellRoof_SV_PD_1_samtycke_problem_regnet-vid-takluckan_v1",
+      "sprak": "sv",
+      "titel": "K01 SV Vattnet som blir kvar vid takluckan",
+      "planerad": "2026-09-29T18:00:00+02:00",
+      "segment": [
+        "SEG_samtycke_sv"
+      ],
+      "mejl": "k01-regnet-vid-takluckan",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k02-nio-langder",
+      "namn": "MAIL_20261006_CaraShellRoof_SV_OB_2_samtycke_product_nio-langder_v1",
+      "sprak": "sv",
+      "titel": "K02 SV Nio längder, en för ditt tak",
+      "planerad": "2026-10-06T18:00:00+02:00",
+      "segment": [
+        "SEG_samtycke_sv"
+      ],
+      "mejl": "k02-nio-langder",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k03-imman-pa-rutan",
+      "namn": "MAIL_20261013_CaraShellFront_SV_PD_1_samtycke_problem_imman-mellan-gardin-och-glas_v1",
+      "sprak": "sv",
+      "titel": "K03 SV Imman mellan gardin och glas",
+      "planerad": "2026-10-13T18:00:00+02:00",
+      "segment": [
+        "SEG_samtycke_sv"
+      ],
+      "mejl": "k03-imman-pa-rutan",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k04-vecka-43",
+      "namn": "MAIL_20261020_CaraShellRoof_SV_GT_1_samtycke_solution_fars-dag-26-okt_v1",
+      "sprak": "sv",
+      "titel": "K04 SV En present till honom med vagnen",
+      "planerad": "2026-10-20T18:00:00+02:00",
+      "segment": [
+        "SEG_samtycke_sv"
+      ],
+      "mejl": "k04-vecka-43",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k05-adventskalendern",
+      "namn": "MAIL_20261027_CaraShellCal_SV_GT_2_samtycke_product_retrobussar-24-luckor_v1",
+      "sprak": "sv",
+      "titel": "K05 SV En adventskalender för husvagnsfolket",
+      "planerad": "2026-10-27T18:00:00+01:00",
+      "segment": [
+        "SEG_samtycke_sv"
+      ],
+      "mejl": "k05-adventskalendern",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k06-vecka-45",
+      "namn": "MAIL_20261103_CaraShellRoof_SV_OB_3_samtycke_product_sitter-det-kvar-i-blast_v1",
+      "sprak": "sv",
+      "titel": "K06 SV Sitter skyddet kvar när det blåser?",
+      "planerad": "2026-11-03T18:00:00+01:00",
+      "segment": [
+        "SEG_samtycke_sv"
+      ],
+      "mejl": "k06-vecka-45",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k07-fredag-sista-dagen-kalendern",
+      "namn": "MAIL_20261110_CaraShellCal_SV_GT_3_samtycke_promo_fredag-sista-dagen_v1",
+      "sprak": "sv",
+      "titel": "K07 SV Fredag är sista dagen",
+      "planerad": "2026-11-10T18:00:00+01:00",
+      "segment": [
+        "SEG_samtycke_sv"
+      ],
+      "mejl": "k07-fredag-sista-dagen-kalendern",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k08-checklistan",
+      "namn": "MAIL_20261117_CaraShellMix_SV_S_1_samtycke_solution_innan-vagnen-stalls-undan_v1",
+      "sprak": "sv",
+      "titel": "K08 SV Tre saker innan vagnen ställs undan",
+      "planerad": "2026-11-17T18:00:00+01:00",
+      "segment": [
+        "SEG_samtycke_sv"
+      ],
+      "mejl": "k08-checklistan",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k09-black-week-utan-rabatt",
+      "namn": "MAIL_20261124_CaraShellRoof_SV_SP_1_samtycke_product_kundernas-ord_v1",
+      "sprak": "sv",
+      "titel": "K09 SV Det kunderna säger om taket",
+      "planerad": "2026-11-24T18:00:00+01:00",
+      "segment": [
+        "SEG_samtycke_sv"
+      ],
+      "mejl": "k09-black-week-utan-rabatt",
+      "status_plan": "kraver-axel"
+    },
+    {
+      "id": "k10-sista-dag-for-julklappar",
+      "namn": "MAIL_20261201_CaraShellMix_SV_GT_4_samtycke_promo_bestall-senast-mandag-7-dec_v1",
+      "sprak": "sv",
+      "titel": "K10 SV Beställ senast måndag 7 december",
+      "planerad": "2026-12-01T18:00:00+01:00",
+      "segment": [
+        "SEG_samtycke_sv"
+      ],
+      "mejl": "k10-sista-dag-for-julklappar",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k11-rutan-pa-resorna",
+      "namn": "MAIL_20261208_CaraShellFront_SV_PD_2_samtycke_solution_kylan-borta-fran-rutan_v1",
+      "sprak": "sv",
+      "titel": "K11 SV Rutan på vinterresorna",
+      "planerad": "2026-12-08T18:00:00+01:00",
+      "segment": [
+        "SEG_samtycke_sv"
+      ],
+      "mejl": "k11-rutan-pa-resorna",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k12-efter-blasten",
+      "namn": "MAIL_20261215_CaraShellRoof_SV_M_1_samtycke_product_kolla-banden-efter-blasten_v1",
+      "sprak": "sv",
+      "titel": "K12 SV Kolla skyddet efter blåsten",
+      "planerad": "2026-12-15T18:00:00+01:00",
+      "segment": [
+        "SEG_samtycke_sv"
+      ],
+      "mejl": "k12-efter-blasten",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    },
+    {
+      "id": "k13-nyarskoll",
+      "namn": "MAIL_20261229_CaraShellMix_SV_S_2_samtycke_solution_en-koll-innan-sasongen_v1",
+      "sprak": "sv",
+      "titel": "K13 SV Ett par minuter i mellandagarna",
+      "planerad": "2026-12-29T18:00:00+01:00",
+      "segment": [
+        "SEG_samtycke_sv"
+      ],
+      "mejl": "k13-nyarskoll",
+      "status_plan": "utkast-skrivs-om-efter-lardom"
+    }
+  ],
+  "segment": [
+    {
+      "namn": "SEG_samtycke_sv",
+      "kampanj_ok": true,
+      "beskrivning": "Samtycke (subscribed) och Sweden/Denmark eller utan land.",
+      "filter": {
+        "type": "conjunction",
+        "operator": "and",
+        "isGrouped": true,
+        "filters": [
+          {
+            "type": "filter",
+            "field": "emailMarketingConsent",
+            "operator": "in",
+            "value": [
+              "subscribed"
+            ]
+          },
+          {
+            "type": "conjunction",
+            "operator": "or",
+            "isGrouped": true,
+            "filters": [
+              {
+                "type": "filter",
+                "field": "country",
+                "operator": "in",
+                "value": [
+                  "Sweden",
+                  "Denmark"
+                ]
+              },
+              {
+                "type": "filter",
+                "field": "country",
+                "operator": "nis"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "namn": "SEG_kopare_sv",
+      "kampanj_ok": true,
+      "beskrivning": "Samtycke och minst en order.",
+      "filter": {
+        "type": "conjunction",
+        "operator": "and",
+        "isGrouped": true,
+        "filters": [
+          {
+            "type": "filter",
+            "field": "emailMarketingConsent",
+            "operator": "in",
+            "value": [
+              "subscribed"
+            ]
+          },
+          {
+            "type": "conjunction",
+            "operator": "or",
+            "isGrouped": true,
+            "filters": [
+              {
+                "type": "filter",
+                "field": "country",
+                "operator": "in",
+                "value": [
+                  "Sweden",
+                  "Denmark"
+                ]
+              },
+              {
+                "type": "filter",
+                "field": "country",
+                "operator": "nis"
+              }
+            ]
+          },
+          {
+            "type": "filter",
+            "field": "totalOrders",
+            "operator": "ge",
+            "value": "1"
+          }
+        ]
+      }
+    },
+    {
+      "namn": "SEG_ej_kopt_sv",
+      "kampanj_ok": true,
+      "beskrivning": "Samtycke och inget köp.",
+      "filter": {
+        "type": "conjunction",
+        "operator": "and",
+        "isGrouped": true,
+        "filters": [
+          {
+            "type": "filter",
+            "field": "emailMarketingConsent",
+            "operator": "in",
+            "value": [
+              "subscribed"
+            ]
+          },
+          {
+            "type": "conjunction",
+            "operator": "or",
+            "isGrouped": true,
+            "filters": [
+              {
+                "type": "filter",
+                "field": "country",
+                "operator": "in",
+                "value": [
+                  "Sweden",
+                  "Denmark"
+                ]
+              },
+              {
+                "type": "filter",
+                "field": "country",
+                "operator": "nis"
+              }
+            ]
+          },
+          {
+            "type": "filter",
+            "field": "purchasedProducts",
+            "operator": "nis"
+          }
+        ]
+      }
+    },
+    {
+      "namn": "SEG_engagerade_60d_sv",
+      "kampanj_ok": true,
+      "beskrivning": "Samtycke och öppnat, klickat eller köpt senaste 60 dagarna.",
+      "filter": {
+        "type": "conjunction",
+        "operator": "and",
+        "isGrouped": true,
+        "filters": [
+          {
+            "type": "filter",
+            "field": "emailMarketingConsent",
+            "operator": "in",
+            "value": [
+              "subscribed"
+            ]
+          },
+          {
+            "type": "conjunction",
+            "operator": "or",
+            "isGrouped": true,
+            "filters": [
+              {
+                "type": "filter",
+                "field": "country",
+                "operator": "in",
+                "value": [
+                  "Sweden",
+                  "Denmark"
+                ]
+              },
+              {
+                "type": "filter",
+                "field": "country",
+                "operator": "nis"
+              }
+            ]
+          },
+          {
+            "type": "conjunction",
+            "operator": "or",
+            "isGrouped": true,
+            "filters": [
+              {
+                "type": "eventFilter",
+                "field": "openedEmail",
+                "operator": "ge",
+                "value": "1",
+                "timeFilter": {
+                  "type": "filter",
+                  "field": "openedEmail",
+                  "operator": "ge",
+                  "value": "P60D"
+                }
+              },
+              {
+                "type": "eventFilter",
+                "field": "clickedEmail",
+                "operator": "ge",
+                "value": "1",
+                "timeFilter": {
+                  "type": "filter",
+                  "field": "clickedEmail",
+                  "operator": "ge",
+                  "value": "P60D"
+                }
+              },
+              {
+                "type": "eventFilter",
+                "field": "orderedProducts",
+                "operator": "ge",
+                "value": "1",
+                "timeFilter": {
+                  "type": "filter",
+                  "field": "orderedProducts",
+                  "operator": "ge",
+                  "value": "P60D"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "namn": "SEG_samtycke_nb",
+      "kampanj_ok": true,
+      "beskrivning": "Samtycke (subscribed) och Norway.",
+      "filter": {
+        "type": "conjunction",
+        "operator": "and",
+        "isGrouped": true,
+        "filters": [
+          {
+            "type": "filter",
+            "field": "emailMarketingConsent",
+            "operator": "in",
+            "value": [
+              "subscribed"
+            ]
+          },
+          {
+            "type": "filter",
+            "field": "country",
+            "operator": "in",
+            "value": [
+              "Norway"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "namn": "SEG_kopare_nb",
+      "kampanj_ok": true,
+      "beskrivning": "Samtycke och minst en order.",
+      "filter": {
+        "type": "conjunction",
+        "operator": "and",
+        "isGrouped": true,
+        "filters": [
+          {
+            "type": "filter",
+            "field": "emailMarketingConsent",
+            "operator": "in",
+            "value": [
+              "subscribed"
+            ]
+          },
+          {
+            "type": "filter",
+            "field": "country",
+            "operator": "in",
+            "value": [
+              "Norway"
+            ]
+          },
+          {
+            "type": "filter",
+            "field": "totalOrders",
+            "operator": "ge",
+            "value": "1"
+          }
+        ]
+      }
+    },
+    {
+      "namn": "SEG_ej_kopt_nb",
+      "kampanj_ok": true,
+      "beskrivning": "Samtycke och inget köp.",
+      "filter": {
+        "type": "conjunction",
+        "operator": "and",
+        "isGrouped": true,
+        "filters": [
+          {
+            "type": "filter",
+            "field": "emailMarketingConsent",
+            "operator": "in",
+            "value": [
+              "subscribed"
+            ]
+          },
+          {
+            "type": "filter",
+            "field": "country",
+            "operator": "in",
+            "value": [
+              "Norway"
+            ]
+          },
+          {
+            "type": "filter",
+            "field": "purchasedProducts",
+            "operator": "nis"
+          }
+        ]
+      }
+    },
+    {
+      "namn": "SEG_engagerade_60d_nb",
+      "kampanj_ok": true,
+      "beskrivning": "Samtycke och öppnat, klickat eller köpt senaste 60 dagarna.",
+      "filter": {
+        "type": "conjunction",
+        "operator": "and",
+        "isGrouped": true,
+        "filters": [
+          {
+            "type": "filter",
+            "field": "emailMarketingConsent",
+            "operator": "in",
+            "value": [
+              "subscribed"
+            ]
+          },
+          {
+            "type": "filter",
+            "field": "country",
+            "operator": "in",
+            "value": [
+              "Norway"
+            ]
+          },
+          {
+            "type": "conjunction",
+            "operator": "or",
+            "isGrouped": true,
+            "filters": [
+              {
+                "type": "eventFilter",
+                "field": "openedEmail",
+                "operator": "ge",
+                "value": "1",
+                "timeFilter": {
+                  "type": "filter",
+                  "field": "openedEmail",
+                  "operator": "ge",
+                  "value": "P60D"
+                }
+              },
+              {
+                "type": "eventFilter",
+                "field": "clickedEmail",
+                "operator": "ge",
+                "value": "1",
+                "timeFilter": {
+                  "type": "filter",
+                  "field": "clickedEmail",
+                  "operator": "ge",
+                  "value": "P60D"
+                }
+              },
+              {
+                "type": "eventFilter",
+                "field": "orderedProducts",
+                "operator": "ge",
+                "value": "1",
+                "timeFilter": {
+                  "type": "filter",
+                  "field": "orderedProducts",
+                  "operator": "ge",
+                  "value": "P60D"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "namn": "SEG_samtycke_en",
+      "kampanj_ok": true,
+      "beskrivning": "Samtycke (subscribed) och United States/United Kingdom/Canada/Australia/New Zealand/Finland.",
+      "filter": {
+        "type": "conjunction",
+        "operator": "and",
+        "isGrouped": true,
+        "filters": [
+          {
+            "type": "filter",
+            "field": "emailMarketingConsent",
+            "operator": "in",
+            "value": [
+              "subscribed"
+            ]
+          },
+          {
+            "type": "filter",
+            "field": "country",
+            "operator": "in",
+            "value": [
+              "United States",
+              "United Kingdom",
+              "Canada",
+              "Australia",
+              "New Zealand",
+              "Finland"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "namn": "SEG_kopare_en",
+      "kampanj_ok": true,
+      "beskrivning": "Samtycke och minst en order.",
+      "filter": {
+        "type": "conjunction",
+        "operator": "and",
+        "isGrouped": true,
+        "filters": [
+          {
+            "type": "filter",
+            "field": "emailMarketingConsent",
+            "operator": "in",
+            "value": [
+              "subscribed"
+            ]
+          },
+          {
+            "type": "filter",
+            "field": "country",
+            "operator": "in",
+            "value": [
+              "United States",
+              "United Kingdom",
+              "Canada",
+              "Australia",
+              "New Zealand",
+              "Finland"
+            ]
+          },
+          {
+            "type": "filter",
+            "field": "totalOrders",
+            "operator": "ge",
+            "value": "1"
+          }
+        ]
+      }
+    },
+    {
+      "namn": "SEG_ej_kopt_en",
+      "kampanj_ok": true,
+      "beskrivning": "Samtycke och inget köp.",
+      "filter": {
+        "type": "conjunction",
+        "operator": "and",
+        "isGrouped": true,
+        "filters": [
+          {
+            "type": "filter",
+            "field": "emailMarketingConsent",
+            "operator": "in",
+            "value": [
+              "subscribed"
+            ]
+          },
+          {
+            "type": "filter",
+            "field": "country",
+            "operator": "in",
+            "value": [
+              "United States",
+              "United Kingdom",
+              "Canada",
+              "Australia",
+              "New Zealand",
+              "Finland"
+            ]
+          },
+          {
+            "type": "filter",
+            "field": "purchasedProducts",
+            "operator": "nis"
+          }
+        ]
+      }
+    },
+    {
+      "namn": "SEG_engagerade_60d_en",
+      "kampanj_ok": true,
+      "beskrivning": "Samtycke och öppnat, klickat eller köpt senaste 60 dagarna.",
+      "filter": {
+        "type": "conjunction",
+        "operator": "and",
+        "isGrouped": true,
+        "filters": [
+          {
+            "type": "filter",
+            "field": "emailMarketingConsent",
+            "operator": "in",
+            "value": [
+              "subscribed"
+            ]
+          },
+          {
+            "type": "filter",
+            "field": "country",
+            "operator": "in",
+            "value": [
+              "United States",
+              "United Kingdom",
+              "Canada",
+              "Australia",
+              "New Zealand",
+              "Finland"
+            ]
+          },
+          {
+            "type": "conjunction",
+            "operator": "or",
+            "isGrouped": true,
+            "filters": [
+              {
+                "type": "eventFilter",
+                "field": "openedEmail",
+                "operator": "ge",
+                "value": "1",
+                "timeFilter": {
+                  "type": "filter",
+                  "field": "openedEmail",
+                  "operator": "ge",
+                  "value": "P60D"
+                }
+              },
+              {
+                "type": "eventFilter",
+                "field": "clickedEmail",
+                "operator": "ge",
+                "value": "1",
+                "timeFilter": {
+                  "type": "filter",
+                  "field": "clickedEmail",
+                  "operator": "ge",
+                  "value": "P60D"
+                }
+              },
+              {
+                "type": "eventFilter",
+                "field": "orderedProducts",
+                "operator": "ge",
+                "value": "1",
+                "timeFilter": {
+                  "type": "filter",
+                  "field": "orderedProducts",
+                  "operator": "ge",
+                  "value": "P60D"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "namn": "SEG_oengagerade_180d",
+      "kampanj_ok": false,
+      "beskrivning": "Fått minst 5 mejl, inte öppnat eller klickat på 180 dagar. Bara för att mäta, aldrig som målgrupp.",
+      "filter": {
+        "type": "conjunction",
+        "operator": "and",
+        "isGrouped": true,
+        "filters": [
+          {
+            "type": "filter",
+            "field": "emailMarketingConsent",
+            "operator": "in",
+            "value": [
+              "subscribed"
+            ]
+          },
+          {
+            "type": "eventFilter",
+            "field": "receivedEmail",
+            "operator": "ge",
+            "value": "5"
+          },
+          {
+            "type": "eventFilter",
+            "field": "openedEmail",
+            "operator": "eq",
+            "value": "0",
+            "timeFilter": {
+              "type": "filter",
+              "field": "openedEmail",
+              "operator": "ge",
+              "value": "P180D"
+            }
+          },
+          {
+            "type": "eventFilter",
+            "field": "clickedEmail",
+            "operator": "eq",
+            "value": "0",
+            "timeFilter": {
+              "type": "filter",
+              "field": "clickedEmail",
+              "operator": "ge",
+              "value": "P180D"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "installningar": {
+    "generalSettings": {
+      "locale": {
+        "country": "SE",
+        "language": "sv",
+        "timezone": "Europe/Stockholm"
+      },
+      "url": "https://carashell.se"
+    },
+    "emailSettings": {
+      "senderName": "CaraShell",
+      "senderEmail": "hello@carashell.com",
+      "replyToEmail": "hello@carashell.com"
+    },
+    "looks": {
+      "layout": {
+        "imagesBorderRadius": 10,
+        "areImagesFullWidth": true,
+        "sectionBorderRadius": 10,
+        "areSectionsFullWidth": false,
+        "buttonBorderRadius": 6,
+        "areButtonsFullWidth": false,
+        "surfaceBorderRadius": 10
+      },
+      "colors": {
+        "background": "#F1F2EF",
+        "onBackground": "#1B2026",
+        "surface": "#FFFFFF",
+        "onSurface": "#1B2026",
+        "primary": "#1F6F8E",
+        "onPrimary": "#FFFFFF",
+        "header": "#22282E",
+        "onHeader": "#F1F2EF",
+        "footer": "#22282E",
+        "onFooter": "#F1F2EF",
+        "link": "#1F6F8E",
+        "titleText": "#1B2026"
+      },
+      "typography": {
+        "regularWebSafeFontFamily": "Arial",
+        "regularGoogleFontFamily": "Source Sans 3",
+        "headerWebSafeFontFamily": "Arial",
+        "headerGoogleFontFamily": "Barlow",
+        "headerGoogleFontWeight": 700
+      },
+      "postHeader": {
+        "logoUrl": "https://carashell.se/cdn/shop/files/carashell-logga-c.png?v=1789078262&width=200",
+        "isLogoHidden": false,
+        "logoLinkUrl": "https://carashell.se",
+        "logoWidth": 96,
+        "alignment": "center",
+        "isAnnouncementBarEnabled": false
+      },
+      "postFooter": {
+        "alignment": "center",
+        "text": "CaraShell · STONEBITE ECOM AB · Sjöhed 160, 442 74 Harestad, Sverige · hello@carashell.com",
+        "unsubscribeText": "Avregistrera · Meld av · Unsubscribe"
+      }
+    }
+  },
+  "produkter": {
+    "comment": "CaraShells produkter i Spoks-workspacen Carashell 38f3d430-690c-4c0b-8419-8ec2e5272148. id = Spoks eget uuid ur products_search 2026-09-26 (externalId = Shopifys GID, kontrollerat lika), bild = fileId ur upload_media samma dag (bildkorten i nb/en). Priserna i Spoks katalog (SEK) stämde med carashell.se samma dag: 1 129 / 559 / 539 / 379 kr. Hitta aldrig på ett id.",
+    "takskyddet": {
+      "id": "40a22a57-d0df-41b6-9202-2b22cc2e0d29",
+      "externalId": "gid://shopify/Product/16084174242124",
+      "bild": "6830b5d9-7f36-4ff3-a0c4-f3aa4a05b62e",
+      "bild_url": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/image4.png?v=1789078112"
+    },
+    "termoskyddet": {
+      "id": "c38c04bb-fb13-4894-aa85-3b70c71b5891",
+      "externalId": "gid://shopify/Product/16108121489740",
+      "bild": "295e18f4-1bba-4ee1-a32e-b06f3b5d7f92",
+      "bild_url": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/b6-termoskydd-se.jpg?v=1789531955"
+    },
+    "fonstertermomatta-2-pack": {
+      "id": "c4d0ddd4-298b-4703-9de0-646db8afb6c6",
+      "externalId": "gid://shopify/Product/16142790197580",
+      "bild": "e389d84e-2027-4b88-9e80-c92a3ce603d5",
+      "bild_url": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/09_3aac9f84-3b78-46f2-8176-36ac3618389e.jpg?v=1790398875"
+    },
+    "adventskalender-retrobussar": {
+      "id": "582482ad-89d1-4d40-805a-e1886d4ced9b",
+      "externalId": "gid://shopify/Product/16142790328652",
+      "bild": "2f01e972-730b-4683-9d9d-b385f3273e4a",
+      "bild_url": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/05h.jpg?v=1790398881"
+    }
+  }
+}

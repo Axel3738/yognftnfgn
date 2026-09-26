@@ -1,0 +1,68 @@
+{
+  "id": "f04-efter-kop-e1",
+  "emailTitle": "Din beställning är på väg",
+  "emailDescription": "Så lång tid tar det, och var du ser paketet just nu.",
+  "amnesrader": [
+    "Din beställning är på väg",
+    "Så hittar du paketet med en gång",
+    "En gåva om du handlar igen den här veckan"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Din beställning är på väg"
+    },
+    {
+      "type": "regular",
+      "text": "Tryck på knappen så ser du exakt var ditt paket är just nu.",
+      "alignment": "left"
+    },
+    {
+      "type": "link",
+      "text": "Följ ditt paket",
+      "url": "https://baverbutiken.se/pages/spara",
+      "style": "button"
+    },
+    {
+      "type": "quote",
+      "text": "Känns det för långsamt? Mejla kundsupport@baverbutiken.se, jag svarar själv.\nAxel, grundare"
+    },
+    {
+      "type": "section",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "Din kundgåva",
+          "alignment": "center"
+        },
+        {
+          "type": "regular",
+          "text": "Redan sugen på nästa pryl? Snurra hjulet, det gäller bara en vecka från din beställning.",
+          "alignment": "center"
+        },
+        {
+          "type": "regular",
+          "text": "Snurra hjulet och vinn en produkt gratis, som blir din vid nästa köp på minst 299 kr.",
+          "alignment": "center"
+        },
+        {
+          "type": "regular",
+          "text": "Din gåvokod: **TACKIGEN**",
+          "alignment": "center"
+        },
+        {
+          "type": "link",
+          "text": "Snurra hjulet",
+          "url": "https://baverbutiken.se/pages/din-gratisprodukt",
+          "style": "button"
+        },
+        {
+          "type": "regular",
+          "text": "Gäller vid nästa köp på minst 299 kr, ett snurr per kund, och kombineras inte med andra koder.",
+          "alignment": "center"
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

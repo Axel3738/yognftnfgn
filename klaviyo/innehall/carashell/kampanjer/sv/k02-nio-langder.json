@@ -1,0 +1,83 @@
+{
+  "id": "k02-nio-langder",
+  "namn": "MAIL_20261006_CaraShellRoof_SV_OB_2_samtycke_product_nio-langder_v1",
+  "sprak": "sv",
+  "memo": "Kundernas egna ord i kommentarerna (25 sep, alla marknader): \"bara 6,5 m\", \"only one size\", \"looking for 12×40\". Storleksvalet syns inte för dem. Mejlet gör valet till huvudsaken: nio längder 5,5–13,5 m, alla 3 m breda, mät front till bakkant, välj närmaste längd uppåt.",
+  "brief": "Hero: storleken är huvudsaken. Punkter: hur man mäter, längderna, bredden, husvagn och husbil. Produktkort, fakta. ",
+  "taggar": {
+    "typ": "I",
+    "kalla": "voc",
+    "kalla_ref": "kommentarer/leads.md 2026-09-25 + 2026-09-26 (storleksvalet syns inte)",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "ingen",
+    "confidence": "medium",
+    "prefix": "CaraShellRoof",
+    "kod": "OB",
+    "avatar": "ägaren som tror att överdraget bara finns i en storlek",
+    "begar": "veta att det finns en storlek som passar"
+  },
+  "amnesrader": [
+    {
+      "text": "Nio längder, en för ditt tak",
+      "begar": "hitta rätt storlek"
+    },
+    {
+      "text": "5,5 till 13,5 meter, du väljer",
+      "begar": "se hela urvalet innan man antar något"
+    },
+    {
+      "text": "Mät taket, välj längden uppåt",
+      "begar": "en enkel metod att göra rätt direkt"
+    }
+  ],
+  "forhandstext": "Från 5,5 upp till 13,5 meter, alla 3 meter breda.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Nio längder. Vilken passar ditt tak?",
+      "text": "Taköverdraget finns i nio längder, 5,5 till 13,5 meter, alla 3 meter breda. Mät taket från front till bakkant och välj närmaste längd uppåt.",
+      "bild": "produkt:takskyddet",
+      "knapp": {
+        "text": "Se alla längder",
+        "lank": "produkt:takskyddet"
+      }
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "Så väljer du rätt",
+      "punkter": [
+        "Mät taket från front till bakkant",
+        "Nio längder, 5,5 till 13,5 meter, alla 3 meter breda",
+        "Passar både husvagn och husbil"
+      ]
+    },
+    {
+      "typ": "produkt",
+      "handle": "takskyddet",
+      "text": "Välj närmaste längd uppåt, aldrig neråt.",
+      "knapp": "Hitta din längd"
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    { "rad": "Nio längder, en för ditt tak", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "5,5 till 13,5 meter, du väljer", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Mät taket, välj längden uppåt", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Från 5,5 upp till 13,5 meter, alla 3 meter breda.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Nio längder. Vilken passar ditt tak?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se alla längder", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Så väljer du rätt", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Hitta din längd", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "version": 1,
+  "planerad": "2026-10-06T18:00:00+02:00",
+  "segment": [
+    "SEG_samtycke_sv"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

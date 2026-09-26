@@ -1,0 +1,74 @@
+{
+  "id": "f03-webbhistorik-e1",
+  "sprak": "en",
+  "emailTitle": "That cover you were looking at",
+  "emailDescription": "No pressure. Just a link back to it, in case you want another look.",
+  "amnesrader": [
+    "That cover you were looking at",
+    "Still there, if you want another look",
+    "Picking a cover? Here's a second look"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "One more look at what you viewed"
+    },
+    {
+      "type": "regular",
+      "text": "Here it is again, in case you want a closer look before deciding.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "image",
+              "fileId": "6830b5d9-7f36-4ff3-a0c4-f3aa4a05b62e",
+              "altText": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft",
+              "urlRedirect": "https://carashell.com/products/takskyddet"
+            },
+            {
+              "type": "h2",
+              "text": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft",
+              "alignment": "center"
+            },
+            {
+              "type": "link",
+              "text": "See the cover",
+              "url": "https://carashell.com/products/takskyddet",
+              "style": "button"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "image",
+              "fileId": "295e18f4-1bba-4ee1-a32e-b06f3b5d7f92",
+              "altText": "Windshield Thermal Cover for Motorhome 211 × 171 cm",
+              "urlRedirect": "https://carashell.com/products/termoskyddet"
+            },
+            {
+              "type": "h2",
+              "text": "Windshield Thermal Cover for Motorhome 211 × 171 cm",
+              "alignment": "center"
+            },
+            {
+              "type": "link",
+              "text": "See the cover",
+              "url": "https://carashell.com/products/termoskyddet",
+              "style": "button"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

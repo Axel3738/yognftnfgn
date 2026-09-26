@@ -1,0 +1,83 @@
+{
+  "id": "k04-vecka-43",
+  "namn": "MAIL_20261020_CaraShellRoof_EN_OB_3_samtycke_product_does-it-stay-on-in-wind_v1",
+  "sprak": "en",
+  "memo": "Vinden och remmarna är invändning nummer två i kommentarerna (sv/no/en/dk 24–26 sep: \"straps break off\", \"sönderblåst\", \"Sebra\"). Svaret med faktabladets ord: vävda spännband, inte elastiska, plastkrokar under karossens kant på alla fyra sidor, justerbara, två extra 10,5 m band, håller i blåst. Inget om lacken utöver faktabladet.",
+  "brief": "Hero: frågan om vinden. Punkter: banden (webbing, not elastic), krokarna på fyra sidor, de två extra banden. Produktkort, fakta. Engelskan gäller USA, Storbritannien, Kanada, Australien och Nya Zeeland samtidigt: inga årstider (winter/summer/spring/autumn/fall), ingen snö — skriv \"while it is parked\", \"between trips\", \"off the road\". Säg caravan där det passar (GB/AU/NZ), motorhome, och RV en gång som amerikansk synonym.",
+  "taggar": {
+    "typ": "I",
+    "kalla": "voc",
+    "kalla_ref": "kommentarer/leads.md 2026-09-24 (remmarna), 2026-09-26 (fungerar det)",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "ingen",
+    "confidence": "medium",
+    "prefix": "CaraShellRoof",
+    "kod": "OB",
+    "avatar": "ägaren som undrar om det blåser av",
+    "begar": "trygghet"
+  },
+  "amnesrader": [
+    {
+      "text": "Does it stay on in wind?",
+      "begar": "get reassurance it won't blow off"
+    },
+    {
+      "text": "Woven straps, not elastic",
+      "begar": "know exactly what the straps are made of"
+    },
+    {
+      "text": "Two extra straps come with every cover",
+      "begar": "know extra straps are already included"
+    }
+  ],
+  "forhandstext": "The straps are woven webbing. They don't stretch out.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Does it stay on in wind?",
+      "text": "Hi {{fornamn}},\n\nThe straps are woven webbing, not elastic, so they don't stretch out and loosen. Plastic hooks latch under the edge of the body, on all four sides.",
+      "bild": "produkt:takskyddet",
+      "knapp": {
+        "text": "See how it straps on",
+        "lank": "produkt:takskyddet"
+      }
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "What keeps it on",
+      "punkter": [
+        "Woven webbing straps, not elastic, so they don't stretch out.",
+        "Plastic hooks latch under the edge of the body, on all four sides.",
+        "Two extra reinforced 34 ft (10.5 m) straps are included."
+      ]
+    },
+    {
+      "typ": "produkt",
+      "handle": "takskyddet",
+      "text": "Adjustable on all four sides, so it stays snug in wind.",
+      "knapp": "Check the straps"
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    { "rad": "Does it stay on in wind?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Woven straps, not elastic", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Two extra straps come with every cover", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "The straps are woven webbing. They don't stretch out.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Does it stay on in wind?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "What keeps it on", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "See how it straps on", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Check the straps", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "version": 1,
+  "planerad": "2026-10-20T16:00:00+02:00",
+  "segment": [
+    "SEG_samtycke_en"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

@@ -1,0 +1,94 @@
+{
+  "id": "f01-valkomst-e2",
+  "sprak": "en",
+  "emailTitle": "Nine lengths, one that fits your roof",
+  "emailDescription": "Measure the roof, pick the next size up, and that's the hard part done.",
+  "amnesrader": [
+    "Nine lengths, one that fits your roof",
+    "Goes on with one person, not two",
+    "Hooks that latch under the edge"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "It covers the roof. The edge hangs over the sides.",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "It covers the roof surface, with the edge hanging 30 to 40 cm (12 to 16 in) down over the sides, so rainwater doesn't sit at the roof hatches. It doesn't wrap around the whole vehicle.",
+      "alignment": "center"
+    },
+    {
+      "type": "image",
+      "fileId": "6830b5d9-7f36-4ff3-a0c4-f3aa4a05b62e",
+      "altText": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft",
+      "urlRedirect": "https://carashell.com/products/takskyddet"
+    },
+    {
+      "type": "h2",
+      "text": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "See the roof cover",
+      "url": "https://carashell.com/products/takskyddet",
+      "style": "button"
+    },
+    {
+      "type": "h2",
+      "text": "Size, fastening and one pair of hands"
+    },
+    {
+      "type": "list",
+      "text": "Nine lengths, 18 to 44 ft (5.5 to 13.5 m), for caravans, travel trailers and motorhomes. Measure your roof front to back and pick the next length up."
+    },
+    {
+      "type": "list",
+      "text": "Woven webbing straps, not elastic, with plastic hooks that latch under the edge on all four sides."
+    },
+    {
+      "type": "list",
+      "text": "One person can put it on alone."
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Guarantee**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "90-day guarantee",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Track your parcel**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Follow it all the way](https://carashell.com/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

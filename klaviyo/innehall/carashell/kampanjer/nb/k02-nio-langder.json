@@ -1,0 +1,83 @@
+{
+  "id": "k02-nio-langder",
+  "namn": "MAIL_20261006_CaraShellRoof_NB_OB_2_samtycke_product_nio-langder_v1",
+  "sprak": "nb",
+  "memo": "Kundernas egna ord i kommentarerna (25 sep, alla marknader): \"bara 6,5 m\", \"only one size\", \"looking for 12×40\". Storleksvalet syns inte för dem. Mejlet gör valet till huvudsaken: nio längder 5,5–13,5 m, alla 3 m breda, mät front till bakkant, välj närmaste längd uppåt.",
+  "brief": "Hero: storleken är huvudsaken. Punkter: hur man mäter, längderna, bredden, husvagn och husbil. Produktkort, fakta. ",
+  "taggar": {
+    "typ": "I",
+    "kalla": "voc",
+    "kalla_ref": "kommentarer/leads.md 2026-09-25 + 2026-09-26 (storleksvalet syns inte)",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "ingen",
+    "confidence": "medium",
+    "prefix": "CaraShellRoof",
+    "kod": "OB",
+    "avatar": "ägaren som tror att överdraget bara finns i en storlek",
+    "begar": "veta att det finns en storlek som passar"
+  },
+  "amnesrader": [
+    {
+      "text": "Ni lengder, ikke bare én",
+      "begar": "oppdage at flere lengder finnes"
+    },
+    {
+      "text": "Slik finner du riktig lengde",
+      "begar": "vite hvordan man måler riktig"
+    },
+    {
+      "text": "Passer både campingvogn og bobil",
+      "begar": "bekrefte at trekket passer kjøretøyet"
+    }
+  ],
+  "forhandstext": "Mål taket, så vet du hvilken som er din.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Ni lengder, hvilken passer vognen din?",
+      "text": "Hei {{fornamn}},\n\nTaktrekket finnes i ni lengder, fra 5,5 til 13,5 meter. Du velger selv hvilken som passer taket ditt.",
+      "bild": "produkt:takskyddet",
+      "knapp": {
+        "text": "Finn din lengde",
+        "lank": "produkt:takskyddet"
+      }
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "Slik velger du riktig lengde",
+      "punkter": [
+        "Mål taket fra front til bakkant.",
+        "Ni lengder fra 5,5 til 13,5 meter, alle 3 meter brede.",
+        "Passer både campingvogn og bobil."
+      ]
+    },
+    {
+      "typ": "produkt",
+      "handle": "takskyddet",
+      "text": "Velg nærmeste lengde oppover, så sitter trekket riktig.",
+      "knapp": "Se de ni lengdene"
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    { "rad": "Ni lengder, ikke bare én", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Slik finner du riktig lengde", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Passer både campingvogn og bobil", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Mål taket, så vet du hvilken som er din.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Ni lengder, hvilken passer vognen din?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Finn din lengde", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Slik velger du riktig lengde", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se de ni lengdene", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "version": 1,
+  "planerad": "2026-10-06T18:00:00+02:00",
+  "segment": [
+    "SEG_samtycke_nb"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

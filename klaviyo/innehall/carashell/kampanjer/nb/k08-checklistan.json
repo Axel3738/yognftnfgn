@@ -1,0 +1,85 @@
+{
+  "id": "k08-checklistan",
+  "namn": "MAIL_20261117_CaraShellMix_NB_S_1_samtycke_solution_innan-vagnen-stalls-undan_v1",
+  "sprak": "nb",
+  "memo": "Säsongslistan (Bäverbutikens K02 gav idén om en checklista per produkt, egen copy): taket, rutan, smårutorna. sv/nb: innan vagnen ställs undan för vintern. en: before it sits for a while / between trips.",
+  "brief": "Hero utan produktbild-krav (använd taköverdraget). Punkter: tre saker, en per produkt, med faktabladets ord. Produktrad med alla tre. Fakta. ",
+  "taggar": {
+    "typ": "S",
+    "kalla": "egen-data",
+    "kalla_ref": "factory/produkter/*.yaml",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "sasong",
+    "confidence": "low",
+    "prefix": "CaraShellMix",
+    "kod": "S",
+    "avatar": "ägaren som ska ställa undan vagnen",
+    "begar": "skydda-det-jag-ager"
+  },
+  "amnesrader": [
+    {
+      "text": "Før vogna settes bort for vinteren",
+      "begar": "tenke gjennom hva som bør beskyttes"
+    },
+    {
+      "text": "Taket, ruta og de små vinduene",
+      "begar": "se de tre stedene som utsettes mest"
+    },
+    {
+      "text": "Sjekk før du dekker til for sesongen",
+      "begar": "huske det før vogna dekkes til"
+    }
+  ],
+  "forhandstext": "Taket, frontruta og de små vinduene er de tre stedene som utsettes mest.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Før vogna settes bort for vinteren",
+      "text": "Hei {{fornamn}},\n\nTre ting er verdt å sjekke før campingvogna eller bobilen settes bort for vinteren.",
+      "bild": "produkt:takskyddet",
+      "knapp": {
+        "text": "Se hele utvalget",
+        "lank": "kollektion:sortimentet"
+      }
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "Tre ting å sjekke",
+      "punkter": [
+        "Taket: et taktrekk holder regnvannet unna takluken gjennom vinteren.",
+        "Frontruta: frontrutetrekket mørklegger fronten og hindrer innsyn.",
+        "De små rutene: vindu-termomatte, 2-pk, 70 × 80 cm."
+      ]
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": null,
+      "handles": [
+        "takskyddet",
+        "termoskyddet",
+        "fonstertermomatta-2-pack"
+      ]
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    { "rad": "Før vogna settes bort for vinteren", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Taket, ruta og de små vinduene", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sjekk før du dekker til for sesongen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Taket, frontruta og de små vinduene er de tre stedene som utsettes mest.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Før vogna settes bort for vinteren", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se hele utvalget", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Tre ting å sjekke", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "version": 1,
+  "planerad": "2026-11-17T18:00:00+01:00",
+  "segment": [
+    "SEG_samtycke_nb"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

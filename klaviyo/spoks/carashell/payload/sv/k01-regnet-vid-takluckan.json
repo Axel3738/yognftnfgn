@@ -1,0 +1,153 @@
+{
+  "id": "k01-regnet-vid-takluckan",
+  "sprak": "sv",
+  "emailTitle": "Vattnet som blir kvar vid takluckan",
+  "emailDescription": "Tätmassan mjuknar innan någon går och kollar.",
+  "amnesrader": [
+    "Vattnet som blir kvar vid takluckan",
+    "Syns inte förrän fukttestet i vår",
+    "Ett tak. Ett överdrag. En person."
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Vattnet som blir stående vid takluckan",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Regnvatten samlar sig kring takluckor och skarvar hela vintern. Ingen går upp och kollar förrän våren.",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "40a22a57-d0df-41b6-9202-2b22cc2e0d29",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Se taköverdraget",
+      "url": "https://carashell.se/products/takskyddet",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "Skyddet täcker bara taket, med kanten hängande 30 till 40 cm ner över sidorna, så vattnet inte blir stående vid takluckorna. Lacken slipper skava mot ett tungt helöverdrag.",
+      "alignment": "left"
+    },
+    {
+      "type": "h2",
+      "text": "Så är skyddet byggt"
+    },
+    {
+      "type": "list",
+      "text": "Nio längder, 5,5 till 13,5 meter, alla 3 meter breda"
+    },
+    {
+      "type": "list",
+      "text": "Vävda spännband med plastkrokar som hakar under kanten"
+    },
+    {
+      "type": "list",
+      "text": "En person sätter på det, ensam"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "40a22a57-d0df-41b6-9202-2b22cc2e0d29",
+          "button": "Välj din storlek"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "regular",
+      "text": "Mät taket från front till bakkant och välj närmaste längd uppåt.",
+      "alignment": "left"
+    },
+    {
+      "type": "quote",
+      "text": "\"Bra skydd för taket och lätt att använda.\"\nKarin, verifierad kund"
+    },
+    {
+      "type": "quote",
+      "text": "\"Jag är nöjd med överdraget. Rekommenderas.\"\nErik, verifierad kund"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://carashell.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "link",
+      "text": "Skydda taket",
+      "url": "https://carashell.se/products/takskyddet",
+      "style": "button"
+    }
+  ],
+  "varningar": []
+}

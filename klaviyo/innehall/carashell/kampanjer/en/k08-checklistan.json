@@ -1,0 +1,85 @@
+{
+  "id": "k08-checklistan",
+  "namn": "MAIL_20261117_CaraShellMix_EN_S_1_samtycke_solution_innan-vagnen-stalls-undan_v1",
+  "sprak": "en",
+  "memo": "Säsongslistan (Bäverbutikens K02 gav idén om en checklista per produkt, egen copy): taket, rutan, smårutorna. sv/nb: innan vagnen ställs undan för vintern. en: before it sits for a while / between trips.",
+  "brief": "Hero utan produktbild-krav (använd taköverdraget). Punkter: tre saker, en per produkt, med faktabladets ord. Produktrad med alla tre. Fakta. Engelskan gäller USA, Storbritannien, Kanada, Australien och Nya Zeeland samtidigt: inga årstider (winter/summer/spring/autumn/fall), ingen snö — skriv \"while it is parked\", \"between trips\", \"off the road\". Säg caravan där det passar (GB/AU/NZ), motorhome, och RV en gång som amerikansk synonym.",
+  "taggar": {
+    "typ": "S",
+    "kalla": "egen-data",
+    "kalla_ref": "factory/produkter/*.yaml",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "sasong",
+    "confidence": "low",
+    "prefix": "CaraShellMix",
+    "kod": "S",
+    "avatar": "ägaren som ska ställa undan vagnen",
+    "begar": "skydda-det-jag-ager"
+  },
+  "amnesrader": [
+    {
+      "text": "Three things before it sits for a while",
+      "begar": "get a simple list to work through"
+    },
+    {
+      "text": "The roof, the windshield, the small windows",
+      "begar": "see which parts of the rig need attention"
+    },
+    {
+      "text": "One checklist before it's parked for a while",
+      "begar": "cover everything in one pass"
+    }
+  ],
+  "forhandstext": "Three parts of the rig, three ways to cover them.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Before it sits for a while",
+      "text": "Hi {{fornamn}},\n\nA caravan or motorhome that's parked for a while collects rain at the roof and cold at the glass. Three parts, three covers.",
+      "bild": "produkt:takskyddet",
+      "knapp": {
+        "text": "Shop the checklist",
+        "lank": "kollektion:sortimentet"
+      }
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "Three things to check",
+      "punkter": [
+        "The roof: a cover that keeps rain off the hatches and seams.",
+        "The windshield: an outside cover that keeps the glass clear and blacks out the cab.",
+        "The small side windows: a thermal mat, 70 × 80 cm, sold as a 2-pack."
+      ]
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": null,
+      "handles": [
+        "takskyddet",
+        "termoskyddet",
+        "fonstertermomatta-2-pack"
+      ]
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    { "rad": "Three things before it sits for a while", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "The roof, the windshield, the small windows", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "One checklist before it's parked for a while", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Three parts of the rig, three ways to cover them.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Before it sits for a while", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Three things to check", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Shop the checklist", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "version": 1,
+  "planerad": "2026-11-17T16:00:00+01:00",
+  "segment": [
+    "SEG_samtycke_en"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

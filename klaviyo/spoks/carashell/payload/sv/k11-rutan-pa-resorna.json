@@ -1,0 +1,122 @@
+{
+  "id": "k11-rutan-pa-resorna",
+  "sprak": "sv",
+  "emailTitle": "Rutan på vinterresorna",
+  "emailDescription": "Utanpå rutan, så glaset aldrig hinner bli kallt.",
+  "amnesrader": [
+    "Rutan på vinterresorna",
+    "Kylan och solen, borta från rutan",
+    "Mörkt när du sover, oavsett rastplats"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Kylan som stannar utanför rutan",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Skyddet spänns utvändigt över vindrutan och båda sidorutorna. Det mörklägger hela framvagnen, så ingen på rastplatsen ser in.",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "c38c04bb-fb13-4894-aa85-3b70c71b5891",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Se termoskyddet",
+      "url": "https://carashell.se/products/termoskyddet",
+      "style": "button"
+    },
+    {
+      "type": "h2",
+      "text": "Rutan och de små rutorna på resan",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "c38c04bb-fb13-4894-aa85-3b70c71b5891",
+          "button": "Se produkten"
+        },
+        {
+          "id": "c4d0ddd4-298b-4703-9de0-646db8afb6c6",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 2
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://carashell.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

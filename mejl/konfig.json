@@ -52,6 +52,13 @@
     "kop_kollektion_handle": "alla-produkter",
     "kop_kollektion_titel": "Alla produkter"
   },
+  "kredit": {
+    "comment": "Butikskrediten (Axels beslut 2026-09-26): 100 kr av på nästa köp över 299 kr, en gång per kund, bara kunder med minst en order (segmentet samma som TACKIGEN). Ersätter lyckohjulet på spårningssidan — hjulet gav 0 köp enligt Axel. Koden skapad i Shopify 2026-09-26: gid://shopify/DiscountCodeNode/2304016646493. Kombineras inte med andra rabatter, men med fri frakt.",
+    "kod": "KREDIT100",
+    "belopp_sek": 100,
+    "minsta_kop_sek": 299,
+    "landning": "/collections/all"
+  },
   "hjul": {
     "comment": "Lyckohjulet på sajten (Axels beslut 2026-09-13). En Shopify-sida (write_content) med inline HTML/CSS/JS, mall page.full-width — inga temafiler, överlever temabyten. Vinsterna = erbjudande.gratisprodukter; sidan läser dem levande ur /collections/<kollektion>/products.json och faller tillbaka på det inbakade. Vinsten sparas i localStorage (en per webbläsare). Mejlets knapp pekar hit med ?produkt=<handle> så sidan kan visa 'en till' + komplement.",
     "handle": "din-gratisprodukt",
@@ -775,16 +782,17 @@
     "rabattkod_skapad": "2026-09-12",
     "rabattkod_av": "Cowork (Claude i Chrome) i Axels inloggade Shopify admin",
     "inklistrade_comment": "Vad som ligger i Shopify just nu och stämmer med repot. v8 inklistrad av Cowork 2026-09-18 kväll i Leveransbekräftelse, Leveransuppdatering, Ute för leverans och Levererad — verifierade mot Shopifys mall-API på servern (inte redigeraren efter F5), identiska med källfilerna, byte 78 379 / 5 969 / 5 953 / 74 200. Orderbekräftelsen har v6 (oförändrad sedan dess). Återbetalning och Order annullerad har v2 (bara mobil-CSS skiljer, inte inklistrat). v9 (spårningsnumret utan länk) inklistrad av Cowork 2026-09-18 15:10–15:15 UTC i Leveransbekräftelse, Leveransuppdatering och Ute för leverans — verifierade mot servern, identiska med källfilerna, 77 150 / 5 823 / 5 812 tecken (Shopify sparade den här gången även den avslutande radbrytningen, så serverns tal = filens). Levererad kvar på v8. ⚠️ v10 (knappen Spåra paketet → butikens egna spårningssida /pages/spara) väntar på inklistring i samma tre mallar — COWORK-PROMPT.md.",
-    "inklistrade_aldre_comment": "Tom sedan 2026-09-18 kväll.",
-    "inklistrade_aldre": {},
+    "inklistrade_aldre_comment": "2026-09-26: v13 = butikskrediten KREDIT100 i stället för lyckohjulet (Axels beslut). Orderbekräftelse, Leveransbekräftelse och Levererad ska klistras om, mejl/COWORK-PROMPT.md",
+    "inklistrade_aldre": {
+      "orderbekraftelse": "2026-09-18 v6 (hjulet)",
+      "fraktbekraftelse": "2026-09-18 v9 (v10 byggd, väntar) (hjulet)",
+      "levererad": "2026-09-18 v8 (hjulet)"
+    },
     "inklistrade": {
       "aterbetalning": "2026-09-12 v2",
       "avbruten_order": "2026-09-12 v2",
-      "orderbekraftelse": "2026-09-18 v6",
-      "fraktbekraftelse": "2026-09-18 v9 (v10 byggd, väntar)",
       "fraktuppdatering": "2026-09-18 v9 (v10 byggd, väntar)",
-      "ute_for_leverans": "2026-09-18 v9 (v10 byggd, väntar)",
-      "levererad": "2026-09-18 v8"
+      "ute_for_leverans": "2026-09-18 v9 (v10 byggd, väntar)"
     },
     "inklistrade_v1": {
       "orderbekraftelse": "2026-09-12",
@@ -804,7 +812,7 @@
     "mallbranding_gjort": "Cowork 2026-09-13: sidan heter 'Anpassa e-postmallar' (knapp uppe till höger på Kundaviseringar). Logotyp = Namnlos_design_44_67839842-4d7e-4a47-bad7-edcdcd627348.png (samma fil som mallarna länkar), Logotypstorlek 180 → 240, Varumärkeshantering → Accentfärg #1990C6 → #dd1d1d. Bekräftat 'Inställningar sparade'.",
     "mallbranding_comment": "Datum när logga + accentfärg satts under Inställningar → Notiser → Kundnotiser → Anpassa e-postmall. Den inställningen gäller ALLA Shopifys standardmallar (orderfaktura, betalningsfel, kontomejl, returer, lokal leverans) — de vi klistrat in bär sin egen HTML och påverkas inte. null ⇒ sidan säger att det återstår.",
     "testmejl_skickat": "2026-09-12",
-    "testmejl_aktuell_version": "2026-09-18",
+    "testmejl_aktuell_version": null,
     "testmejl_aktuell_version_comment": "Sätt till datumet när testmejlet skickats på de mallar som ligger uppe NU. null ⇒ sidan säger att det återstår. v4-testmejlet 2026-09-14 gav Gmail-PDF:en som avslöjade fyra fel (se inklistrade_aldre_comment); v5-testmejlet är inte skickat. Testmejlet visar det som inte går att mäta någon annanstans: att line.product.handle finns i notis-Liquid (rätt komplement = ja), klockslaget (ska stämma med svensk tid) och hur mejlet ser ut på mobilen.",
     "hjul_url": "https://baverbutiken.se/pages/din-gratisprodukt",
     "testmejl_aktuell_version_gjort_v4": "Skickat av Cowork 2026-09-14 från Orderbekräftelse (v4) till axelodhner.business@gmail.com. Förhandsvisningen visade hjulet. Vad mejlet visade i inkorgen (komplement-rubrik, klockslag) läser Axel.",

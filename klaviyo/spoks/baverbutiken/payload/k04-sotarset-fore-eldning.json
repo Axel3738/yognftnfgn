@@ -1,0 +1,143 @@
+{
+  "id": "k04-sotarset-fore-eldning",
+  "emailTitle": "Draget blir sämre för varje eldning",
+  "emailDescription": "Nio böjliga stänger följer krökarna i röret.",
+  "amnesrader": [
+    "Draget blir sämre för varje eldning",
+    "Rensa själv mellan sotarens besök",
+    "Når bakom kaminen utan att krypa dit"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Draget blir sämre för varje eldning",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hej {{ contact.first_name | default: 'där' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Sotlagret växer tyst i bakgrunden. Kaminen drar sämre och lukten sitter i.",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "b1d4717b-d737-46ad-a9c2-be85081a15ac",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Se sotarsetet",
+      "url": "https://baverbutiken.se/products/sotarset-med-bojliga-stanger-rensar-rokkanal-och-kaminror",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "Nio böjliga stänger på 41 cm skruvas ihop till 3,69 meters räckvidd. De följer krökarna i röret i stället för att ta stopp i första kröken, och når bakom kaminen eller torktumlaren.",
+      "alignment": "left"
+    },
+    {
+      "type": "h2",
+      "text": "Tre saker settet gör"
+    },
+    {
+      "type": "list",
+      "text": "Rensar mellan sotarens besök, utan att boka någon."
+    },
+    {
+      "type": "list",
+      "text": "Böjer med i kröken där en stel stång fastnar."
+    },
+    {
+      "type": "list",
+      "text": "Borstar loss sotet med nylonstrån i stället för att skrapa."
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "b1d4717b-d737-46ad-a9c2-be85081a15ac",
+          "button": "Se sotarsetet"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "regular",
+      "text": "Byggs i den längd du behöver, en stång i taget.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

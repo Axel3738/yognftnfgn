@@ -105,6 +105,15 @@ Tills domänen är verifierad skickar Klaviyo från sin delade domän. Det funge
 
 # Matstrumpor (kontot UV6Rqg), skrivet 2026-09-25
 
+⛔ **ÖVERSPELAT 2026-09-26: Matstrumpor flyttar till Spoks.** Cowork-prompten (1), DNS-körningen
+för Klaviyo (2) och sessionsprompten (3) nedan gäller Klaviyo och körs INTE. Det var den här
+prompten Axel undrade över 2026-09-26 ("var det kanske en prompt för vad då?"): Klaviyo-
+inställningar för Matstrumpor (postadress, plan, attribution) — den behövs inte längre.
+Det som återstår för Matstrumpor är Axels klick i Spoks-appen, listade i
+`klaviyo/spoks/README.md` → Matstrumpor → "Axels klick". Klaviyo-utkasten i `UV6Rqg` lämnas
+orörda, inget slås på där. DNS för Spoks egen avsändardomän är ett eget beslut (aldrig
+namnservrarna, se punkt 2 nedan — samma regel gäller oavsett leverantör).
+
 Motorn är brand-parametriserad och allt för Matstrumpor ligger i Klaviyo som utkast
 (`klaviyo/README.md` → Matstrumpor). Tre saker kan API:t inte göra, och en fjärde
 (DNS) gör vi i en SEPARAT körning på Axels ord. Ordningen: **Cowork** gör klicken i

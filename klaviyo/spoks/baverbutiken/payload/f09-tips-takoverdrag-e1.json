@@ -1,0 +1,75 @@
+{
+  "id": "f09-tips-takoverdrag-e1",
+  "emailTitle": "Så spänner du taköverdraget rätt",
+  "emailDescription": "Fyra saker som gör att överdraget sitter kvar hela säsongen.",
+  "amnesrader": [
+    "Så spänner du taköverdraget rätt",
+    "Banden skaver inte mot lacken",
+    "Två extra remmar följer med"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Så får du ut mest av taköverdraget"
+    },
+    {
+      "type": "regular",
+      "text": "Ett par minuter extra vid monteringen gör att överdraget sitter kvar hela säsongen.",
+      "alignment": "left"
+    },
+    {
+      "type": "list",
+      "text": "Spänn remmarna på alla fyra sidor, de är 2,5 meter och justerbara efter din vagn."
+    },
+    {
+      "type": "list",
+      "text": "Använd de två extra 10,5 meter-spännremmarna som följer med för extra stadga i blåst."
+    },
+    {
+      "type": "list",
+      "text": "Banden är gjorda av ett mjukt material som inte skaver mot lacken."
+    },
+    {
+      "type": "list",
+      "text": "Efter säsongen, vik ihop överdraget och lägg det i den medföljande förvaringspåsen."
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

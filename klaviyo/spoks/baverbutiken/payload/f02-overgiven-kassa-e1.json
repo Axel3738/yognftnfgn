@@ -1,0 +1,26 @@
+{
+  "id": "f02-overgiven-kassa-e1",
+  "emailTitle": "Din kundvagn är fortfarande packad",
+  "emailDescription": "Varorna ligger kvar. Klicka dig tillbaka på en gång.",
+  "amnesrader": [
+    "Din kundvagn är fortfarande packad",
+    "Du kom halvvägs genom kassan",
+    "Vi sparade det du la i korgen"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Din varukorg är kvar"
+    },
+    {
+      "type": "regular",
+      "text": "Vi sparade allt du la i kassan. Ingenting är borttaget.",
+      "alignment": "left"
+    },
+    {
+      "type": "abandonedCart",
+      "buttonText": "Tillbaka till kassan"
+    }
+  ],
+  "varningar": []
+}

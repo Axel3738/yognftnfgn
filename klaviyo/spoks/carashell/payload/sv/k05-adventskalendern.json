@@ -1,0 +1,123 @@
+{
+  "id": "k05-adventskalendern",
+  "sprak": "sv",
+  "emailTitle": "En adventskalender för husvagnsfolket",
+  "emailDescription": "24 luckor med retrobussar som tema.",
+  "amnesrader": [
+    "En adventskalender för husvagnsfolket",
+    "24 luckor, retrobussar",
+    "Beställ senast fredag 13 november"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "En adventskalender med retrobussar",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "24 luckor, med retrobussar som tema. En present till den som redan har allt för vagnen.",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "582482ad-89d1-4d40-805a-e1886d4ced9b",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Se adventskalendern",
+      "url": "https://carashell.se/products/adventskalender-retrobussar",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "Beställ senast fredag 13 november om lucka 1 ska gå att öppna i tid.",
+      "alignment": "left"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "582482ad-89d1-4d40-805a-e1886d4ced9b",
+          "button": "Se kalendern"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "regular",
+      "text": "24 luckor. Retrobussar. En present som är klar att ge bort.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://carashell.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

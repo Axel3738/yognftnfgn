@@ -1,0 +1,137 @@
+{
+  "id": "k08-checklistan",
+  "sprak": "sv",
+  "emailTitle": "Tre saker innan vagnen ställs undan",
+  "emailDescription": "Taket, rutan och de små rutorna, i den ordningen.",
+  "amnesrader": [
+    "Tre saker innan vagnen ställs undan",
+    "Taket, rutan, de små rutorna",
+    "En genomgång innan vintern"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Innan vagnen ställs undan för vintern",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Tre ytor att tänka på innan säsongen är slut: taket, vindrutan och de små rutorna.",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "40a22a57-d0df-41b6-9202-2b22cc2e0d29",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Se hela sortimentet",
+      "url": "https://carashell.se/collections/sortimentet",
+      "style": "button"
+    },
+    {
+      "type": "h2",
+      "text": "Tre saker att kolla"
+    },
+    {
+      "type": "list",
+      "text": "Taket: regnvatten som blir stående vid takluckorna"
+    },
+    {
+      "type": "list",
+      "text": "Rutan: imma mellan gardin och glas"
+    },
+    {
+      "type": "list",
+      "text": "De små rutorna: fönstertermomatta 2-pack, 70 × 80 cm"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "40a22a57-d0df-41b6-9202-2b22cc2e0d29",
+          "button": "Se produkten"
+        },
+        {
+          "id": "c38c04bb-fb13-4894-aa85-3b70c71b5891",
+          "button": "Se produkten"
+        },
+        {
+          "id": "c4d0ddd4-298b-4703-9de0-646db8afb6c6",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://carashell.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

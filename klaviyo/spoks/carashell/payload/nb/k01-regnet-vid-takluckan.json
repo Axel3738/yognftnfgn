@@ -1,0 +1,140 @@
+{
+  "id": "k01-regnet-vid-takluckan",
+  "sprak": "nb",
+  "emailTitle": "Regnet som blir stående ved takluken",
+  "emailDescription": "Ingen går opp og sjekker før fukttesten avgjør det til våren.",
+  "amnesrader": [
+    "Regnet som blir stående ved takluken",
+    "Bare taket trenger å dekkes",
+    "Satt på alene, av én person"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Regnet blir stående ved takluken",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hei {{ contact.first_name | default: 'der' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Regnvann samler seg rundt takluker og skjøter gjennom vinteren. Ingen sjekker før fukttesten til våren.",
+      "alignment": "center"
+    },
+    {
+      "type": "image",
+      "fileId": "6830b5d9-7f36-4ff3-a0c4-f3aa4a05b62e",
+      "altText": "Taktrekk campingvogn & bobil 5,5–13,5 m",
+      "urlRedirect": "https://carashell.se/nb/products/takskyddet?country=NO"
+    },
+    {
+      "type": "h2",
+      "text": "Taktrekk campingvogn & bobil 5,5–13,5 m",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Se taktrekket",
+      "url": "https://carashell.se/nb/products/takskyddet?country=NO",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "Taktrekket dekker takflaten, og kanten henger cirka 30 til 40 cm ned over sidene, slik at regnvannet ikke blir stående ved takluken. Resten av vogna er ikke dekket, bare taket.",
+      "alignment": "left"
+    },
+    {
+      "type": "h2",
+      "text": "Tre ting som gjør jobben"
+    },
+    {
+      "type": "list",
+      "text": "Ni lengder, fra 5,5 til 13,5 meter, alle 3 meter brede."
+    },
+    {
+      "type": "list",
+      "text": "Vevde strekkbånd med plastkroker hekter under karosseriets kant."
+    },
+    {
+      "type": "list",
+      "text": "Én person setter det på selv."
+    },
+    {
+      "type": "image",
+      "fileId": "6830b5d9-7f36-4ff3-a0c4-f3aa4a05b62e",
+      "altText": "Taktrekk campingvogn & bobil 5,5–13,5 m",
+      "urlRedirect": "https://carashell.se/nb/products/takskyddet?country=NO"
+    },
+    {
+      "type": "h2",
+      "text": "Taktrekk campingvogn & bobil 5,5–13,5 m",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Beskytt taket i vinter",
+      "url": "https://carashell.se/nb/products/takskyddet?country=NO",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "Ni lengder å velge mellom, fra 5,5 til 13,5 meter.",
+      "alignment": "left"
+    },
+    {
+      "type": "quote",
+      "text": "\"Bra skydd för taket och lätt att använda.\"\nKarin, verifisert kunde"
+    },
+    {
+      "type": "quote",
+      "text": "\"Jag är nöjd med överdraget. Rekommenderas.\"\nErik, verifisert kunde"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Angrerett**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagers angrerett",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spor pakken**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Følg den hele veien](https://carashell.se/nb/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "link",
+      "text": "Beskytt taket før vinteren",
+      "url": "https://carashell.se/nb/products/takskyddet?country=NO",
+      "style": "button"
+    }
+  ],
+  "varningar": []
+}

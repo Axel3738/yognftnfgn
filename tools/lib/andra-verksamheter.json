@@ -6,6 +6,13 @@
       "namn": "Matstrumpor creative hub",
       "verksamhet": "Matstrumpor",
       "egen_rutin": "/matstrumpor (konto 730973156224390)"
+    },
+    {
+      "id": "36f270ab-908c-803b-8949-ff2326f4f76c",
+      "namn": "Creative Hub master",
+      "verksamhet": "Grillkliniken",
+      "egen_rutin": "ingen — Mastern styrs av pipeline/waves/ mot SnarkLös 1346450049878358",
+      "bakgrund": "Tillagd 2026-09-26 av Leveransrundan. Hubben är Grillklinikens: 246 rader med Masterns löpnummersystem (001, 101 H2, 235 …), och commission/hubbar.json har alltid sagt verksamhet: Grillkliniken. CLAUDE.md har räknat upp den bland 'andra verksamheters hubbar' sedan länge, men den stod aldrig i den här listan. Samma dag dök sju rader Mastern_* upp i To be Reviewed och hamnade i Bäverbutikens leveranskö; de räddades bara av att inget Mastern-prefix matchar någon kampanj i MagiBorsten — alltså av en slump, precis som Matstrumpor en gång. Ett prefix-alias eller en Mastern-kampanj i MagiBorsten hade räckt för att ladda upp Grillklinikens creatives på Bäverbutikens pixel."
     }
   ]
 }

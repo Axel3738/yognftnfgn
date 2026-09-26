@@ -375,6 +375,7 @@ const sidkonfig = {
   // beloppet och hjulets adress får aldrig bli en andra sanning här.
   erbjudande: BUTIK.erbjudande ? (mejlkonfig?.erbjudande ?? null) : null,
   hjul: BUTIK.erbjudande ? (mejlkonfig?.hjul ?? null) : null,
+  kredit: BUTIK.erbjudande ? (mejlkonfig?.kredit ?? null) : null,
   // Tilläggen under paketet (registret → tillagg: true): tacksidans två
   // produkter och koder ur factory/tacksida/ (sparning/tillagg.mjs). Går de
   // inte att läsa publiceras sidan UTAN rutan, med raden nedan — spårningen

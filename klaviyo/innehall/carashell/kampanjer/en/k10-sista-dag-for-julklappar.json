@@ -1,0 +1,76 @@
+{
+  "id": "k10-sista-dag-for-julklappar",
+  "namn": "MAIL_20261201_CaraShellMix_EN_GT_4_samtycke_promo_bestall-senast-mandag-7-dec_v1",
+  "sprak": "en",
+  "memo": "Riktig brådska: måndag 7 december är sista beställningsdag för att paketet ska hinna fram till jul (10 arbetsdagar + 2). Efter det lovar ingen text något om jul.",
+  "brief": "Hero med datumet måndag 7 december. Produktrad med de tre skydden. Fakta. Engelskan gäller USA, Storbritannien, Kanada, Australien och Nya Zeeland samtidigt: inga årstider (winter/summer/spring/autumn/fall), ingen snö — skriv \"while it is parked\", \"between trips\", \"off the road\". Säg caravan där det passar (GB/AU/NZ), motorhome, och RV en gång som amerikansk synonym. Christmas är ok, det är en högtid, inte en årstid.",
+  "taggar": {
+    "typ": "S",
+    "kalla": "egen-data",
+    "kalla_ref": "brands/carashell.json#kalender",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "konsekvens",
+    "confidence": "medium",
+    "prefix": "CaraShellMix",
+    "kod": "GT",
+    "avatar": "den som letar julklapp till någon med husvagn eller husbil",
+    "begar": "hinna"
+  },
+  "amnesrader": [
+    {
+      "text": "Order by Monday for it to arrive by Christmas",
+      "begar": "know the deadline for a Christmas gift"
+    },
+    {
+      "text": "December 7: the last day for Christmas orders",
+      "begar": "see the exact cutoff date"
+    },
+    {
+      "text": "Three gifts, one deadline: Monday",
+      "begar": "pick from a few options before time runs out"
+    }
+  ],
+  "forhandstext": "After Monday, we can't promise Christmas.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Order by Monday, 7 December",
+      "text": "{{fornamn}}, order by Monday, 7 December if you want it to arrive in time for Christmas. After that day, we can't promise it will.",
+      "bild": "produkt:takskyddet",
+      "knapp": {
+        "text": "Shop before Monday",
+        "lank": "kollektion:sortimentet"
+      }
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Order any of these by Monday",
+      "handles": [
+        "takskyddet",
+        "termoskyddet",
+        "fonstertermomatta-2-pack"
+      ]
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    { "rad": "Order by Monday for it to arrive by Christmas", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "December 7: the last day for Christmas orders", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Three gifts, one deadline: Monday", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "After Monday, we can't promise Christmas.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Order by Monday, 7 December", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Shop before Monday", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Order any of these by Monday", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "version": 1,
+  "planerad": "2026-12-01T16:00:00+01:00",
+  "segment": [
+    "SEG_samtycke_en"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

@@ -60,7 +60,19 @@ Read the reason code in Shopify, check column 2, take the decision in column 3. 
 | Money | Not taken yet | **Already taken from us, plus a fee** |
 | Can we refund to end it? | **Yes.** Shopify Help Center: *"If you issue a full refund, then the cardholder can't initiate a chargeback."* | **No.** Shopify Help Center: *"You can't issue a refund after a cardholder initiates a chargeback."* |
 | If we ignore it | It is not lost on the spot — but it can escalate into a chargeback. Measured: three unanswered inquiries escalated (#4914, #5044, #4706) | The loss becomes final |
-| Measured outcome (one store, 50 disputes, 2026-09-20) | **29 of 29 decided inquiries won** | **1 won of 4** — every loss we have ever had was a chargeback |
+| Measured outcome (one store, **66 disputes, 2026-09-26**) | **39 of 39 decided inquiries won** | **3 won of 7 decided** (was 1 of 4 on 2026-09-20) |
+
+⚠️ **"Inquiries are never lost" is partly true by construction — do not lean on it.**
+When an inquiry escalates, Shopify does not add a second row: **the same dispute
+changes type in place**, keeping its id and its filing date. It therefore leaves the
+inquiry column entirely, and the losses land under *chargeback*. So the perfect
+inquiry record cannot show an escalation even when one happens.
+**Measured on this store in one week: two answered inquiries escalated anyway** —
+**#5122** (2026-09-23, evidence was already in and the window was locked;
+`product_unacceptable`, new deadline 2026-10-05) and **#4446** (2026-09-26;
+`credit_not_processed`, 1 262,20 SEK, new deadline 2026-10-07). Answering an inquiry
+is still the right move and still cheap — but it is not a guarantee, and the number
+above is a record of what stayed an inquiry, never a forecast.
 
 **So:** an inquiry is cheap to win and cheap to end. A chargeback is where the money actually goes. That is why the daily alarm sorts chargebacks to the top even when an inquiry expires sooner (`bradskande` in `kundtjanst/tvistkoll.mjs`).
 

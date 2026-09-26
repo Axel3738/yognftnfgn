@@ -1,0 +1,134 @@
+{
+  "id": "k02-nio-langder",
+  "sprak": "sv",
+  "emailTitle": "Nio längder, en för ditt tak",
+  "emailDescription": "Från 5,5 upp till 13,5 meter, alla 3 meter breda.",
+  "amnesrader": [
+    "Nio längder, en för ditt tak",
+    "5,5 till 13,5 meter, du väljer",
+    "Mät taket, välj längden uppåt"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Nio längder. Vilken passar ditt tak?",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Taköverdraget finns i nio längder, 5,5 till 13,5 meter, alla 3 meter breda. Mät taket från front till bakkant och välj närmaste längd uppåt.",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "40a22a57-d0df-41b6-9202-2b22cc2e0d29",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Se alla längder",
+      "url": "https://carashell.se/products/takskyddet",
+      "style": "button"
+    },
+    {
+      "type": "h2",
+      "text": "Så väljer du rätt"
+    },
+    {
+      "type": "list",
+      "text": "Mät taket från front till bakkant"
+    },
+    {
+      "type": "list",
+      "text": "Nio längder, 5,5 till 13,5 meter, alla 3 meter breda"
+    },
+    {
+      "type": "list",
+      "text": "Passar både husvagn och husbil"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "40a22a57-d0df-41b6-9202-2b22cc2e0d29",
+          "button": "Hitta din längd"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "regular",
+      "text": "Välj närmaste längd uppåt, aldrig neråt.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://carashell.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

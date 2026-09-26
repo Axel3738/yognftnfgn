@@ -1,0 +1,134 @@
+{
+  "id": "k06-vecka-45",
+  "sprak": "sv",
+  "emailTitle": "Sitter skyddet kvar när det blåser?",
+  "emailDescription": "Banden är vävda, inte gummi. De töjs inte ut.",
+  "amnesrader": [
+    "Sitter skyddet kvar när det blåser?",
+    "Vävda band, inte gummi",
+    "Krokar under kanten, fyra sidor"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Sitter det kvar när det blåser?",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Banden är vävda spännband, inte gummi, så de töjs inte ut. Plastkrokar hakar under karossens kant på alla fyra sidor.",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "40a22a57-d0df-41b6-9202-2b22cc2e0d29",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Se banden",
+      "url": "https://carashell.se/products/takskyddet",
+      "style": "button"
+    },
+    {
+      "type": "h2",
+      "text": "Det som håller det på plats"
+    },
+    {
+      "type": "list",
+      "text": "Vävda spännband, inte gummi. De töjs inte ut"
+    },
+    {
+      "type": "list",
+      "text": "Plastkrokar under kanten, på alla fyra sidor, justerbara"
+    },
+    {
+      "type": "list",
+      "text": "Två extra förstärkta band på 10,5 meter följer med"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "40a22a57-d0df-41b6-9202-2b22cc2e0d29",
+          "button": "Se hur det sitter"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "regular",
+      "text": "Fyra sidor, krokar under kanten, banden är vävda.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://carashell.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

@@ -55,3 +55,47 @@ My site has no popup. In Sweden, what popup setup and welcome offer does the com
 ```
 Billy says to build email in-house with a designer + retention strategist. At my size (~$150k/month), should I first build the routine with AI (Claude) and then hand it to a VA from the Philippines? What should that person's job be, and what training does the community recommend?
 ```
+
+---
+
+## Omgång 2, 2026-09-26: återkommande kunder i en general store
+
+Axels fråga: "hur vi kan optimera flowsen mer eftersom vi har en general store. Jag vill ha
+återkommande kunder". Siffrorna i frågorna kommer ur `ATERKOP-ANALYS.md`. En fråga per
+meddelande, klistra in svaren i `SVAR.md`.
+
+**Fråga 9: general store och andra köpet**
+
+```
+I run a Swedish general store (~40 unrelated products: boat covers, caravan roof covers, garden tools, fishing gear). Only 3.3% of buyers ever order twice, and 2.4% buy again within 30 days. What do Evolve members with general stores (not single-niche brands) do to get the second order? Flows, new products to the same buyers, or something else? Any real examples with numbers?
+```
+
+**Fråga 10: korsförsälja efter köparens typ**
+
+```
+In a general store, buyers are "owner types": boat owners, caravan owners, garden owners. Is it better to cross-sell other products for the same owner type (boat cover buyer → boat products), or send everyone the store bestseller? How do members group products for this, and how many emails after the first purchase?
+```
+
+**Fråga 11: timing från leverans**
+
+```
+Our packages take 7-14 days to arrive (shipped from China). Do members trigger post-purchase and cross-sell flows on "delivered" or on "order placed"? How many days after delivery does the first cross-sell email work best?
+```
+
+**Fråga 12: erbjudandet för köp nummer två**
+
+```
+AOV is about 500 SEK (~$50). For the second purchase, what converts best: store credit, a free gift with the next order, or a % code? Grayson mentioned store credit gets used ~30% of the time. How was it set up, and in which email did it go out?
+```
+
+**Fråga 13: vinback utan naturlig återköpscykel**
+
+```
+Our products are not consumables, so there is no natural repurchase cycle. When should a win-back flow start for a general store, and what should the win-back emails offer or say?
+```
+
+**Fråga 14: kampanjer till köparlistan**
+
+```
+My subscribed list is ~6,000, mostly past buyers. For repeat purchases, how many campaigns per week do general stores send, and what works: "new product this week" drops, seasonal bundles, or bestseller emails? What repeat rate after 90 days would members call good for a general store?
+```

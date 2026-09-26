@@ -1,0 +1,35 @@
+{
+  "id": "f03-webbhistorik-e1",
+  "emailTitle": "Den här kikade du på",
+  "emailDescription": "En produkt, inget mer. Du vet redan vilken.",
+  "amnesrader": [
+    "Den här kikade du på",
+    "Fortfarande där du lämnade den",
+    "En sak du var nära att köpa"
+  ],
+  "blocks": [
+    {
+      "type": "regular",
+      "text": "Den här tittade du på för inte så länge sen.",
+      "alignment": "left"
+    },
+    {
+      "type": "products",
+      "selectionMode": "dynamic",
+      "dynamicProductsCount": 1,
+      "dynamicCriteria": "recently_viewed",
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": "Titta igen",
+      "alignment": "center",
+      "productsPerRow": 1
+    }
+  ],
+  "varningar": []
+}

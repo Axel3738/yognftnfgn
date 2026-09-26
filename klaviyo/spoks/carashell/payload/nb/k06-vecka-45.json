@@ -1,0 +1,121 @@
+{
+  "id": "k06-vecka-45",
+  "sprak": "nb",
+  "emailTitle": "Sitter det fast når det blåser?",
+  "emailDescription": "Plastkroker under kanten holder det på plass, på alle fire sider.",
+  "amnesrader": [
+    "Sitter det fast når det blåser?",
+    "Vevde bånd, ikke strikk",
+    "To ekstra bånd følger med"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Sitter det fast når det blåser?",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hei {{ contact.first_name | default: 'der' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Vevde strekkbånd med plastkroker holder taktrekket på plass i vind, ikke strikk som gir etter.",
+      "alignment": "center"
+    },
+    {
+      "type": "image",
+      "fileId": "6830b5d9-7f36-4ff3-a0c4-f3aa4a05b62e",
+      "altText": "Taktrekk campingvogn & bobil 5,5–13,5 m",
+      "urlRedirect": "https://carashell.se/nb/products/takskyddet?country=NO"
+    },
+    {
+      "type": "h2",
+      "text": "Taktrekk campingvogn & bobil 5,5–13,5 m",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Se hvordan det festes",
+      "url": "https://carashell.se/nb/products/takskyddet?country=NO",
+      "style": "button"
+    },
+    {
+      "type": "h2",
+      "text": "Det som holder det på plass"
+    },
+    {
+      "type": "list",
+      "text": "Vevde strekkbånd, ikke strikk som strekker seg ut."
+    },
+    {
+      "type": "list",
+      "text": "Plastkroker hekter under karosseriets kant, på alle fire sider."
+    },
+    {
+      "type": "list",
+      "text": "To ekstra forsterkede bånd på 10,5 meter følger med."
+    },
+    {
+      "type": "image",
+      "fileId": "6830b5d9-7f36-4ff3-a0c4-f3aa4a05b62e",
+      "altText": "Taktrekk campingvogn & bobil 5,5–13,5 m",
+      "urlRedirect": "https://carashell.se/nb/products/takskyddet?country=NO"
+    },
+    {
+      "type": "h2",
+      "text": "Taktrekk campingvogn & bobil 5,5–13,5 m",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Se taktrekket",
+      "url": "https://carashell.se/nb/products/takskyddet?country=NO",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "Justerbare bånd på alle fire sider holder trekket der det skal være.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Angrerett**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagers angrerett",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spor pakken**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Følg den hele veien](https://carashell.se/nb/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

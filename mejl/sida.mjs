@@ -1,5 +1,5 @@
 // Sidan Axel klistrar mallarna från: varje mall med ämnesrad, kopiera-knapp
-// och förhandsvisning, plus klickschemat för rabattkoden. Publiceras som
+// och förhandsvisning, plus klickschemat för inklistringen. Publiceras som
 // Artifact av /mejl. Självbärande HTML — förhandsvisningarna ligger inbakade
 // som srcdoc, inget laddas utifrån utom typsnitten.
 //
@@ -16,7 +16,9 @@ const esk = (s) =>
 const kr = (n) => `${Math.round(Number(n)).toLocaleString('sv-SE').replace(/ | /g, ' ')} kr`;
 
 export function byggSida({ liquid, exempel, konfig, produkter, byggd }) {
-  const e = konfig.erbjudande;
+  const e = konfig.erbjudande ?? {};
+  const kd = konfig.kredit;
+  const kreditLank = `${konfig.butik.url}/discount/${kd.kod}?redirect=${encodeURIComponent(kd.landning)}`;
   const lage = konfig.lage ?? {};
   const inklistrade = lage.inklistrade ?? {};
   const hoppade = lage.hoppade_over ?? {};
@@ -62,7 +64,6 @@ export function byggSida({ liquid, exempel, konfig, produkter, byggd }) {
     })
     .join('\n');
 
-  const gratisLista = produkter.gratis.map((p) => `<li>${esk(p.kortnamn)} <span class="dampad">(${kr(p.pris)})</span></li>`).join('');
   const km = produkter.komplement;
   const exempelKomp = km.karta.get('axelbalte-for-trimmer-justerbart-nylonbalte');
   const kompLista = [
@@ -159,16 +160,12 @@ export function byggSida({ liquid, exempel, konfig, produkter, byggd }) {
   <header class="topp">
     <p class="dampad">Bäverbutiken.se · byggd ${esk(byggd)} UTC</p>
     <h1>Bäverbutikens mejl</h1>
-    <p>Åtta kundmejl i butikens stil, med erbjudandet <strong>köp igen → välj en gratisprodukt</strong> i orderbekräftelsen, leveransbekräftelsen och leverans-klart-mejlet. Under gratisprodukterna: en till av det kunden köpte + tre som passar ihop.</p>
+    <p>Åtta kundmejl i butikens stil, med butikskrediten <strong>${kr(kd.belopp_sek)} rabatt på nästa köp</strong> (från ${kr(kd.minsta_kop_sek)}, koden ${esk(kd.kod)}) i orderbekräftelsen, leveransbekräftelsen och leverans-klart-mejlet. Under krediten: en till av det kunden köpte + tre som passar ihop.</p>
   </header>
 
   <section class="lage" aria-label="Läget">
-    <div class="lage-rad"><span class="ikon">✅</span><p>Klart via API: kollektionen <a href="${esk(konfig.butik.url)}/collections/${esk(e.kollektion_handle)}">${esk(konfig.butik.url)}/collections/${esk(e.kollektion_handle)}</a> är live med de fyra gratisprodukterna. Mallarna nedan är byggda på butikens riktiga produkter och priser.</p></div>
-    ${
-      lage.rabattkod_skapad
-        ? `<div class="lage-rad"><span class="ikon">✅</span><p>Rabattkoden <strong>${esk(e.kod)}</strong> är skapad och aktiv (${esk(lage.rabattkod_skapad)}, ${esk(lage.rabattkod_av ?? '')}). Köpvillkoret är kollektionen <strong>${esk(e.kop_kollektion_titel)}</strong> (automatisk, pris över 0 kr) eftersom Shopify inte tillåter "Alla produkter" i Köp X få Y.</p></div>`
-        : ''
-    }
+    <div class="lage-rad"><span class="ikon">✅</span><p>Rabattkoden <strong>${esk(kd.kod)}</strong> finns redan i Shopify (skapad 2026-09-26): ${kr(kd.belopp_sek)} av vid köp från ${kr(kd.minsta_kop_sek)}, en gång per kund, bara kunder som handlat förut. Mejlens knapp lägger på koden själv: <a href="${esk(kreditLank)}">${esk(kreditLank)}</a>. Mallarna nedan är byggda på butikens riktiga produkter och priser.</p></div>
+    <div class="lage-rad"><span class="ikon">ℹ️</span><p>Lyckohjulet är borta ur mejlen sedan 2026-09-26 (gav 0 köp). Koden ${esk(e.kod ?? 'TACKIGEN')} och sidan /pages/${esk(konfig.hjul?.handle ?? 'din-gratisprodukt')} ligger kvar i Shopify för kunder som redan fått de gamla mejlen. Rör dem inte.</p></div>
     ${
       Object.keys(inklistrade).length
         ? `<div class="lage-rad"><span class="ikon">✅</span><p>${Object.keys(inklistrade).length} av ${liquid.length} mallar inklistrade och sparade under Inställningar → Notiser.${lage.testmejl_skickat ? ` Testmejl på Orderbekräftelse skickat ${esk(lage.testmejl_skickat)}.` : ''}${Object.keys(hoppade).length ? ` Hoppades över: ${Object.keys(hoppade).map((id) => esk(liquid.find((m) => m.id === id)?.shopify.split(' / ')[0] ?? id)).join(', ')} (se mallen längst ner).` : ''}</p></div>`
@@ -182,7 +179,6 @@ export function byggSida({ liquid, exempel, konfig, produkter, byggd }) {
     <div class="lage-rad att-gora"><span class="ikon">👉</span><p>${
       (() => {
         const kvar = [
-          lage.rabattkod_skapad ? null : 'rabattkoden (steg 1)',
           Object.keys(inklistrade).length >= liquid.length - Object.keys(hoppade).length
             ? null
             : `${liquid.length - Object.keys(hoppade).length - Object.keys(inklistrade).length} inklistringar (steg 2)`,
@@ -193,7 +189,7 @@ export function byggSida({ liquid, exempel, konfig, produkter, byggd }) {
         ].filter(Boolean);
         return kvar.length
           ? `Kvar för dig: ${kvar.join(' och ')}. Shopify har inget API för det, så det är dina klick eller Coworks.`
-          : 'Kvar för dig: det riktiga köptestet under steg 1 — koden har 0 användningar än.';
+          : 'Inget kvar för dig här.';
       })()
     }</p></div>
   </section>
@@ -203,26 +199,10 @@ export function byggSida({ liquid, exempel, konfig, produkter, byggd }) {
 
     <article class="steg-kort">
       <span class="nr">1</span>
-      <h3>Skapa rabattkoden ${esk(e.kod)}</h3>
+      <h3>Rabattkoden ${esk(kd.kod)} finns redan</h3>
       <div class="inne">
-        <ol class="klick">
-          <li>Öppna Shopify admin → <strong>Rabatter</strong> → knappen <strong>Skapa rabatt</strong>.</li>
-          <li>Välj <strong>Köp X få Y</strong> (Buy X get Y).</li>
-          <li>Under "Metod": välj <strong>Rabattkod</strong> och skriv <span class="kodbit">${esk(e.kod)}</span>.</li>
-          <li>Fyll i fälten enligt tabellen nedan.</li>
-          <li>Klicka <strong>Spara rabatt</strong>.</li>
-        </ol>
-        <table class="falt">
-          <tr><th>Kunden köper</th><td><strong>Minsta inköpsbelopp</strong> ${e.minsta_kop_sek} kr · Valfria artiklar från <strong>Specifika kollektioner</strong> → <strong>${esk(e.kop_kollektion_titel)}</strong> (Shopify tillåter inte "Alla produkter" här; finns kollektionen inte: Produkter → Kollektioner → Skapa kollektion → Automatisk → villkor <em>Pris är större än 0</em>, döp den till ${esk(e.kop_kollektion_titel)})</td></tr>
-          <tr><th>Kunden får</th><td>Antal <strong>${e.gratis_antal}</strong> · Alla produkter från <strong>Specifika kollektioner</strong> → sök fram <strong>${esk(e.kollektion_titel)}</strong></td></tr>
-          <tr><th>Med rabatterat värde</th><td><strong>Gratis</strong></td></tr>
-          <tr><th>Max antal användningar per order</th><td>Bocka i, skriv <strong>1</strong></td></tr>
-          <tr><th>Kundberättigande</th><td><strong>Specifika kundsegment</strong> → välj <strong>Kunder som har köpt minst en gång</strong> (Shopifys standardsegment; finns det inte: Kunder → Segment → Skapa segment → <span class="kodbit">number_of_orders > 0</span>, döp det till "Har handlat")</td></tr>
-          <tr><th>Maximalt antal rabattanvändningar</th><td>Bocka i <strong>Begränsa till en användning per kund</strong></td></tr>
-          <tr><th>Kombinationer</th><td>Låt allt vara <strong>avbockat</strong></td></tr>
-          <tr><th>Aktiva datum</th><td>Startdatum <strong>idag</strong>, inget slutdatum</td></tr>
-        </table>
-        <p class="dampad">Testa: öppna <a href="${esk(konfig.butik.url)}/discount/${esk(e.kod)}?redirect=%2Fcollections%2F${esk(e.kollektion_handle)}">${esk(konfig.butik.url)}/discount/${esk(e.kod)}?redirect=/collections/${esk(e.kollektion_handle)}</a> inloggad som en kund som handlat förut, lägg valfri vara för minst ${e.minsta_kop_sek} kr plus en gratisprodukt i korgen — gratisproduktens pris ska bli 0 kr i kassan.</p>
+        <p>Inget att skapa. Koden gjordes i Shopify 2026-09-26. Rör den inte.</p>
+        <p class="dampad">Testa: öppna <a href="${esk(kreditLank)}">${esk(kreditLank)}</a> som en kund som handlat förut, lägg varor för minst ${kr(kd.minsta_kop_sek)} i korgen och gå till kassan. ${kr(kd.belopp_sek)} ska dras när du fyllt i din e-post.</p>
       </div>
     </article>
 
@@ -266,7 +246,7 @@ export function byggSida({ liquid, exempel, konfig, produkter, byggd }) {
       <div class="inne">
         <ol class="klick">
           <li>Inne på <strong>Orderbekräftelse</strong>: klicka <strong>Skicka testmejl</strong> (uppe till höger).</li>
-          <li>Öppna mejlet i din inkorg. Kolla att koden <span class="kodbit">${esk(e.kod)}</span> och de fyra gratisprodukterna syns, och att knappen öppnar kollektionen med koden pålagd.</li>
+          <li>Öppna mejlet i din inkorg. Kolla att rutan <strong>${esk(kr(kd.belopp_sek))} rabatt på nästa köp</strong> syns, och att knappen <strong>HÄMTA MIN RABATT</strong> öppnar butiken med koden ${esk(kd.kod)} pålagd.</li>
           <li>Kolla raden <strong>"Passar ihop med det du köpte"</strong>: står produkter som hör ihop med testorderns produkt fungerar uppslaget. Står det <strong>"Populärast just nu"</strong> med storsäljarna hittade Shopify inte produktens handle i mejlet — säg det till Claude.</li>
           <li>Kolla tiden i raden <strong>"Beställ före kl …"</strong>: den ska vara ordertiden plus ${e.samma_paket_timmar ?? 18} timmar, svensk tid. Stämmer inte klockslaget: säg det till Claude.</li>
         </ol>
@@ -286,7 +266,7 @@ export function byggSida({ liquid, exempel, konfig, produkter, byggd }) {
   </section>
 
   <section class="rutnat" aria-label="Produkterna i mejlen">
-    <div><h3>Välj en gratis</h3><ul>${gratisLista}</ul></div>
+    <div><h3>Butikskrediten</h3><ul><li>${esk(kd.kod)}: ${kr(kd.belopp_sek)} av</li><li>Minsta köp ${kr(kd.minsta_kop_sek)}</li><li>En gång per kund, ingen tidsgräns i mejlet</li></ul></div>
     <div><h3>Passar ihop med det du köpte</h3><ul>${kompLista}</ul></div>
   </section>
 
@@ -296,7 +276,7 @@ ${mallar}
   </section>
 
   <footer>
-    <p>Byggd av <span class="kodbit">node mejl/bygg.mjs</span> i repot. Byter en gratisprodukt eller ett pris: kör <span class="kodbit">/mejl</span> igen och klistra in på nytt — priserna i mejlet är inbakade, inte levande.</p>
+    <p>Byggd av <span class="kodbit">node mejl/bygg.mjs</span> i repot. Ändras krediten eller ett pris: kör <span class="kodbit">/mejl</span> igen och klistra in på nytt — priserna i mejlet är inbakade, inte levande.</p>
   </footer>
 </main>
 

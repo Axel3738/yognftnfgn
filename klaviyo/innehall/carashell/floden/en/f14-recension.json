@@ -1,0 +1,117 @@
+{
+  "id": "f14-recension",
+  "namn": "FLOW_levererat_recension_EN_v1",
+  "sprak": "en",
+  "memo": "Tio dagar efter leveransen, klockan 18: vad tyckte du? Fem stjärnor som ALLA går till samma Trustpilot-sida (?stars=N förväljer betyget) — aldrig review gating. Plus grundarens rad: blev något fel, svara på mejlet först. ⚠️ Trustpilot har ingen profil för carashell.se (evaluate-sidan svarar 404, mätt 2026-09-26) — Axel gör anspråk på profilen innan flödet slås på.",
+  "spoks": {
+    "event": "order_delivered",
+    "filter": [
+      "ej_avregistrerad",
+      "sprak"
+    ],
+    "reenroll": true,
+    "reenrollEfter": "P90D",
+    "tilHour": "18:00"
+  },
+  "steg": [
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 10
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f14-recension-e1",
+        "namn": "FLOW_levererat_recension_EN_E1_M_vad-tyckte-du_v1",
+        "sprak": "en",
+        "memo": "Transaktionell förfrågan: tre-frågorstestets \"ingen annan kan säga det\" får vara ❌ och redovisas.",
+        "brief": "Rubrik + en mening (paketet har hunnit fram, ett klick räcker). Stjärnblocket: rubrik + rad om att alla omdömen hjälper lika mycket. Grundare: blev något fel, svara på mejlet.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "klaviyo/innehall/baverbutiken/floden/f14-recension-trustpilot.json (samma konstruktion, egen copy)",
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "low",
+          "prefix": "CaraShellRoof",
+          "kod": "M",
+          "avatar": "köparen vars paket har hunnit fram",
+          "begar": "säga vad man tyckte"
+        },
+        "amnesrader": [
+          {
+            "text": "Your parcel's had a few days now",
+            "begar": "check in after enough time to have an opinion"
+          },
+          {
+            "text": "One click sets your rating",
+            "begar": "make it feel like minimal effort"
+          },
+          {
+            "text": "What did you think of the cover?",
+            "begar": "direct, simple invitation for an opinion"
+          }
+        ],
+        "forhandstext": "Your parcel's had time to settle in. Pick a star, and tell us what you think.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "How did the cover work out?",
+            "text": "Your parcel's had a few days to settle in. A star only takes a click."
+          },
+          {
+            "typ": "stjarnor",
+            "rubrik": "Pick a star",
+            "lank": "trustpilot:",
+            "text": "Every rating helps, good or not so good."
+          },
+          {
+            "typ": "grundare",
+            "text": "If something wasn't right, reply to this email first, before you rate us. I'll sort it out."
+          }
+        ],
+        "tretest": [
+          {
+            "rad": "Your parcel's had a few days now",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": false
+          },
+          {
+            "rad": "One click sets your rating",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": false
+          },
+          {
+            "rad": "What did you think of the cover?",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": false
+          },
+          {
+            "rad": "Your parcel's had time to settle in. Pick a star, and tell us what you think.",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": false
+          },
+          {
+            "rad": "How did the cover work out?",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": false
+          },
+          {
+            "rad": "Pick a star",
+            "visualisera": true,
+            "falsifiera": true,
+            "ingen_annan": false
+          }
+        ],
+        "version": 1
+      }
+    }
+  ]
+}

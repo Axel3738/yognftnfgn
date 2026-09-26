@@ -1,0 +1,143 @@
+{
+  "id": "f05-vinback-e1",
+  "sprak": "nb",
+  "emailTitle": "Et halvår siden sist",
+  "emailDescription": "Litt tid har gått. Her er det vi tilbyr nå.",
+  "amnesrader": [
+    "Et halvår siden sist",
+    "Dette har vi nå",
+    "Mangler vogna di noe mer?"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Et halvt år siden sist"
+    },
+    {
+      "type": "regular",
+      "text": "Det er en stund siden du handlet hos oss.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Her er det vi tilbyr for campingvogna og bobilen i dag, uansett hvor på året du leser dette.",
+      "alignment": "left"
+    },
+    {
+      "type": "h2",
+      "text": "Det vi tilbyr nå",
+      "alignment": "center"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "image",
+              "fileId": "6830b5d9-7f36-4ff3-a0c4-f3aa4a05b62e",
+              "altText": "Taktrekk campingvogn & bobil 5,5–13,5 m",
+              "urlRedirect": "https://carashell.se/nb/products/takskyddet?country=NO"
+            },
+            {
+              "type": "h2",
+              "text": "Taktrekk campingvogn & bobil 5,5–13,5 m",
+              "alignment": "center"
+            },
+            {
+              "type": "link",
+              "text": "Se produktet",
+              "url": "https://carashell.se/nb/products/takskyddet?country=NO",
+              "style": "button"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "image",
+              "fileId": "295e18f4-1bba-4ee1-a32e-b06f3b5d7f92",
+              "altText": "Frontrutetrekk til bobil 211 × 171 cm",
+              "urlRedirect": "https://carashell.se/nb/products/termoskyddet?country=NO"
+            },
+            {
+              "type": "h2",
+              "text": "Frontrutetrekk til bobil 211 × 171 cm",
+              "alignment": "center"
+            },
+            {
+              "type": "link",
+              "text": "Se produktet",
+              "url": "https://carashell.se/nb/products/termoskyddet?country=NO",
+              "style": "button"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "image",
+              "fileId": "e389d84e-2027-4b88-9e80-c92a3ce603d5",
+              "altText": "Vindu-termomatte 2-pk 70 × 80 cm",
+              "urlRedirect": "https://carashell.se/nb/products/fonstertermomatta-2-pack?country=NO"
+            },
+            {
+              "type": "h2",
+              "text": "Vindu-termomatte 2-pk 70 × 80 cm",
+              "alignment": "center"
+            },
+            {
+              "type": "link",
+              "text": "Se produktet",
+              "url": "https://carashell.se/nb/products/fonstertermomatta-2-pack?country=NO",
+              "style": "button"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Angrerett**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagers angrerett",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spor pakken**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Følg den hele veien](https://carashell.se/nb/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}
