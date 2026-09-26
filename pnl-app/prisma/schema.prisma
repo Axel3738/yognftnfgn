@@ -156,6 +156,10 @@ model ShopSettings {
   /// stämplar atomiskt. Skrivs med rå SQL så att `updatedAt` inte rörs — se
   /// `resyncRunda` i token-keeper.server.ts.
   refundResyncAt DateTime?
+  /// När returkollen senast LYCKADES. Skrivs bara efter en lyckad hämtning
+  /// (rå SQL, som låset ovan) och är det panelen och gruppen visar som
+  /// "senaste koll" — `refundResyncAt` är låset och stämplas innan exporten.
+  refundResyncOkAt DateTime?
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
 

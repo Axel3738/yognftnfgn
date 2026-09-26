@@ -428,10 +428,12 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
     spendConverted: spend.converted ?? null,
     targetMargin: Number(settings.targetMargin),
     tariffPerOrder: Number(settings.tariffPerOrder),
-    /* Returkollens senaste körning som klockslag i butikens tid (null = inte
-       kollad än). Formaterad här, inte i webbläsaren: butikens tid är den som
-       gäller, och servern och klienten hade annars kunnat rendera olika. */
-    returkoll: settings.refundResyncAt ? klockslag(settings.refundResyncAt, timezone, today) : null,
+    /* Returkollens senaste LYCKADE körning som klockslag i butikens tid
+       (null = inte kollad än). Aldrig `refundResyncAt` — det är låset, som
+       stämplas innan exporten ens körts. Formaterad här, inte i webbläsaren:
+       butikens tid är den som gäller, och servern och klienten hade annars
+       kunnat rendera olika. */
+    returkoll: settings.refundResyncOkAt ? klockslag(settings.refundResyncOkAt, timezone, today) : null,
   };
   } catch (e) {
     /* Remix maskerar kastade fel i produktion till "Application Error" utan

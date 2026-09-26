@@ -167,6 +167,22 @@ async function stampla(shop: string, ny: Date | null, om: Date | null): Promise<
        AND "refundResyncAt" IS NOT DISTINCT FROM CAST(${sqlTid(om)} AS TIMESTAMP(3))`;
 }
 
+/**
+ * Lyckad koll: flyttar låset till klartiden och skriver samma tid i
+ * `refundResyncOkAt` — det enda fältet panelen och gruppen visar. Låset
+ * stämplas redan när exporten STARTAR; visades det hade panelen sagt
+ * "senaste koll 14:00" medan exporten pågick eller skulle misslyckas.
+ * Villkorat på vår egen stämpel, som `stampla`.
+ */
+async function stamplaKlar(shop: string, ny: Date, om: Date): Promise<number> {
+  return prisma.$executeRaw`
+    UPDATE "ShopSettings"
+       SET "refundResyncAt" = CAST(${sqlTid(ny)} AS TIMESTAMP(3)),
+           "refundResyncOkAt" = CAST(${sqlTid(ny)} AS TIMESTAMP(3))
+     WHERE "shop" = ${shop}
+       AND "refundResyncAt" IS NOT DISTINCT FROM CAST(${sqlTid(om)} AS TIMESTAMP(3))`;
+}
+
 export async function resyncRunda(): Promise<void> {
   if (resyncPagar) return;
   resyncPagar = true;
@@ -216,10 +232,10 @@ export async function resyncRunda(): Promise<void> {
       }
 
       if (ok) {
-        /* Stämpeln flyttas till NÄR hämtningen blev klar — det är den tid
-           panelen visar ("senaste koll HH:MM"), och siffrorna är minst så
-           färska. */
-        await stampla(shop, new Date(), stampel);
+        /* Stämpeln flyttas till NÄR hämtningen blev klar och skrivs i
+           `refundResyncOkAt` — det är den tid panelen visar ("senaste koll
+           HH:MM"), och siffrorna är minst så färska. */
+        await stamplaKlar(shop, new Date(), stampel);
         resyncPaus.delete(shop);
       } else {
         /* Tillbaka till förra värdet: en tjänst som inte kan förnya en annan

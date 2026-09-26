@@ -428,7 +428,11 @@ Byggt:
 - **Fönstret** `resyncFonster(idag, horisont)` i `historik.ts`: idag − 44 …
   idag i butikens tid, klämt mot orderhorisonten. `refreshShopDaily` UTAN
   force — minutspärren och 5-minuters felpausen gäller.
-- **Lyckas** den flyttas stämpeln till klartiden (det panelen visar).
+- **Lyckas** den flyttas stämpeln till klartiden och samma tid skrivs i
+  `refundResyncOkAt` (migration `20260926130000_returkoll_klar`) — det ENDA
+  fältet panelen och gruppen visar. `refundResyncAt` är låset: det stämplas
+  när exporten startar, och visades det sa panelen "senaste koll 14:00"
+  medan exporten pågick eller skulle misslyckas (rättat efter granskning).
   **Misslyckas** den skrivs det förra värdet tillbaka, villkorat på vår egen
   stämpel: en tjänst som inte kan förnya en annan registrerings nyckel får
   inte hålla butiken i 6 h.
@@ -478,8 +482,16 @@ Medvetna beslut:
 Fällor:
 - ⚠ **Minutspärren och felpausen är per PROCESS.** Kollen kan köras i en
   annan tjänst än den som serverar butikens panel, och då kan två bulk-
-  exporter mot samma butik starta samtidigt. `runOrdersBulk` väntar redan ut
-  "already in progress" upp till sex gånger — det är skyddet, inte spärren.
+  exporter mot samma butik starta samtidigt. "already in progress"-väntan i
+  `runOrdersBulk` är INTE ett skydd i sig: den pollade `currentBulkOperation`,
+  och en annan process export kunde hinna starta mellan två pollningar — då
+  laddades DEN filen ner som vår. En 30-dagarsfil tolkad som returkollens 45
+  dagar nollfyllde 15 riktiga dagar i DailyPnl (med färsk `fetchedAt`) och
+  tömde deras KundOrder-rader. Rättat efter granskning: `waitForBulk` följer
+  nu ID:t som `bulkOperationRunQuery` returnerade (`node(id:)`) och kastar om
+  det inte hittas; väntan på en annans export (`vantaUtAnnanBulk`) läser
+  aldrig dess fil. Ändra aldrig tillbaka till `currentBulkOperation` för att
+  hämta URL:en.
 - ⚠ **Andra tjänsters butiker funkar bara så länge nyckeln lever.**
   `giltigToken` använder en giltig nyckel från vilken tjänst som helst, men
   en utgången kan bara förnyas av butikens egen registrering. Då rullas
@@ -596,8 +608,9 @@ Fällor:
   NÄSTA laddning upp de nya dagarna. Byts den mitt i hamnar dagar varken i
   `missingDays`-fyllningen eller i bannern.
 - ⚠ **Bulk-reserven håller butikens enda bulk-plats** (~30 s) under en
-  7d-uppdatering hos högvolymsbutiker. `runOrdersBulk` väntar redan ut
-  "already in progress" upp till sex gånger.
+  7d-uppdatering hos högvolymsbutiker. `runOrdersBulk` väntar ut
+  "already in progress" upp till sex gånger och följer sedan sin EGEN
+  exports ID (se returkollens fällor).
 - `mergeProductRows` nyckel har en NUL-separator; i nya filen står den som
   `\u0000` så att grep inte ser filen som binär.
 - Nya tester: `test/historik.test.mjs` (gränsen, klämningen, `klassaDag`,

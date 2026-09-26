@@ -356,6 +356,13 @@ async function runOrdersBulk(
 
   // En bulk-operation i taget per butik — vänta ut en pågående innan start.
   let lastErr = "";
+  /* ID:t på exporten VI startade. Vi följer den och ingen annan: pollades
+     `currentBulkOperation` kunde en annan export mot samma butik (panelen i
+     en annan tjänst, returkollen) hinna starta mellan två pollningar, och då
+     laddade vi ner DEN filen som vår. parseOrderLines nollfyller varje dag i
+     vårt fönster — en 30-dagarsfil tolkad som 45 dagar skrev 0 kr försäljning
+     på 15 riktiga dagar och raderade deras KundOrder-rader. */
+  let egetId: string | null = null;
   for (let attempt = 0; attempt < 6; attempt++) {
     const res = await admin.graphql(
       `#graphql
@@ -369,11 +376,18 @@ async function runOrdersBulk(
     );
     const body = await res.json();
     const errs = body?.data?.bulkOperationRunQuery?.userErrors ?? [];
-    if (!errs.length) { lastErr = ""; break; }
+    if (!errs.length) {
+      egetId = body?.data?.bulkOperationRunQuery?.bulkOperation?.id ?? null;
+      if (!egetId) throw new Error("The order export started without an id — reload the page.");
+      lastErr = "";
+      break;
+    }
     lastErr = errs.map((e: any) => e.message).join("; ");
     if (/already in progress/i.test(lastErr)) {
-      // Någon annans export (annat intervall) kör — vänta ut den och försök igen.
-      await waitForBulk(admin, 120_000).catch(() => {});
+      /* Någon annans export (annat intervall) kör — vänta ut den och försök
+         igen. Här räcker `currentBulkOperation`: vi läser aldrig dess fil,
+         vi väntar bara tills platsen är ledig. */
+      await vantaUtAnnanBulk(admin, 120_000).catch(() => {});
       continue;
     }
     throw new Error(`Could not start the order export: ${lastErr}`);
@@ -384,7 +398,7 @@ async function runOrdersBulk(
     );
   }
 
-  const url = await waitForBulk(admin, 90_000);
+  const url = await waitForBulk(admin, egetId!, 90_000);
   if (!url) return []; // export klar men noll objekt
 
   const dl = await fetch(url);
@@ -396,25 +410,50 @@ async function runOrdersBulk(
     .map((l) => JSON.parse(l));
 }
 
-/** Pollar tills bulk-operationen är klar. Returnerar nedladdnings-URL (null = tomt resultat). */
-async function waitForBulk(admin: AdminApiContext, timeoutMs: number): Promise<string | null> {
+/**
+ * Pollar VÅR egen bulk-operation (via `node(id:)`) tills den är klar.
+ * Returnerar nedladdnings-URL (null = tomt resultat). Följer aldrig
+ * `currentBulkOperation` — den kan vara en annan process export.
+ */
+async function waitForBulk(admin: AdminApiContext, id: string, timeoutMs: number): Promise<string | null> {
   const start = Date.now();
   for (;;) {
     await sleep(2500);
     const res = await admin.graphql(
       `#graphql
-       { currentBulkOperation { id status errorCode url objectCount } }`,
+       query Bulk($id: ID!) {
+         node(id: $id) { ... on BulkOperation { id status errorCode url objectCount } }
+       }`,
+      { variables: { id } },
     );
     const body = await res.json();
-    const op = body?.data?.currentBulkOperation;
-    if (!op) throw new Error("No bulk operation found.");
+    const op = body?.data?.node;
+    /* Fel eller främmande id ska kasta, aldrig ge en tom lista: en tom lista
+       nollfyller hela fönstret i DailyPnl och tömmer KundOrder. */
+    if (!op || op.id !== id) throw new Error("The order export could not be found — reload the page.");
     if (op.status === "COMPLETED") return op.url ?? null;
-    if (op.status === "FAILED" || op.status === "CANCELED") {
+    if (op.status === "FAILED" || op.status === "CANCELED" || op.status === "EXPIRED") {
       throw new Error(`The order export failed: ${op.errorCode ?? op.status}`);
     }
     if (Date.now() - start > timeoutMs) {
       throw new Error("The order export took too long — try reloading in a moment.");
     }
+  }
+}
+
+/** Väntar tills en ANNAN pågående bulk-operation mot butiken är klar. Läser aldrig dess fil. */
+async function vantaUtAnnanBulk(admin: AdminApiContext, timeoutMs: number): Promise<void> {
+  const start = Date.now();
+  for (;;) {
+    await sleep(2500);
+    const res = await admin.graphql(
+      `#graphql
+       { currentBulkOperation { id status } }`,
+    );
+    const body = await res.json();
+    const op = body?.data?.currentBulkOperation;
+    if (!op || (op.status !== "CREATED" && op.status !== "RUNNING" && op.status !== "CANCELING")) return;
+    if (Date.now() - start > timeoutMs) throw new Error("Another order export is still running.");
   }
 }
 

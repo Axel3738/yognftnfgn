@@ -459,8 +459,10 @@ export async function summeraGrupp(
   }
 
   /* Returkollen över ALLA medlemmar, även de som föll bort ur summan — en
-     butik som inte kunde räknas har heller inte fått sina returer kollade. */
-  const koll = aldstaKoll(medlemmar);
+     butik som inte kunde räknas har heller inte fått sina returer kollade.
+     Den LYCKADE kollen, inte låset: en medlem vars export pågår eller just
+     misslyckades hade annars sett nykollad ut och gömt den verkligt äldsta. */
+  const koll = aldstaKoll(medlemmar.map((m) => ({ refundResyncAt: m.refundResyncOkAt })));
   const returkoll = {
     tid: koll.aldsta ? klockslag(koll.aldsta, tidszon, dayInTz(new Date(), tidszon)) : null,
     saknas: koll.saknas,
