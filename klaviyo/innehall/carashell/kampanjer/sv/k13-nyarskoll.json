@@ -19,7 +19,7 @@
   },
   "amnesrader": [
     {
-      "text": "En koll i mellandagarna",
+      "text": "Ett par minuter i mellandagarna",
       "begar": "en enkel påminnelse i en lugn stund"
     },
     {
@@ -52,7 +52,7 @@
     }
   ],
   "tretest": [
-    { "rad": "En koll i mellandagarna", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Ett par minuter i mellandagarna", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Står taket fortfarande torrt?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Innan säsongen drar igång igen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Två minuter, tre saker att titta på.", "visualisera": true, "falsifiera": true, "ingen_annan": true },

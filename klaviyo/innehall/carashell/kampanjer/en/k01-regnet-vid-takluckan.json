@@ -19,60 +19,70 @@
   },
   "amnesrader": [
     {
-      "text": "__COPY__: ämnesrad A, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "The roof you never climb up to check",
+      "begar": "understand what actually wears out on the rig"
     },
     {
-      "text": "__COPY__: ämnesrad B, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Only the roof gets covered, not the whole rig",
+      "begar": "understand why only the roof needs a cover"
     },
     {
-      "text": "__COPY__: ämnesrad C, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "One person puts this on, not two",
+      "begar": "put the cover on without asking for help"
     }
   ],
-  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "forhandstext": "Rain settles right where the hatches and seams are.",
   "block": [
     {
       "typ": "hero",
-      "rubrik": "__COPY__: rubrik: regnet vid takluckan",
-      "text": "__COPY__: 1–2 meningar",
+      "rubrik": "The rain sits right at the roof hatch",
+      "text": "Hi {{fornamn}},\n\nRain collects around the roof hatches and seams while the rig sits outside. Nobody finds out until the next moisture check.",
       "bild": "produkt:takskyddet",
       "knapp": {
-        "text": "__COPY__: knapp",
+        "text": "See the roof cover",
         "lank": "produkt:takskyddet"
       }
     },
     {
       "typ": "text",
       "rubrik": null,
-      "text": "__COPY__: vad täcks och vad täcks inte"
+      "text": "The cover only goes over the roof surface, with the edge hanging about 30 to 40 cm (12 to 16 in) down the sides so rainwater doesn't sit at the hatches. It doesn't wrap the walls or windows."
     },
     {
       "typ": "punkter",
-      "rubrik": "__COPY__: rubrik för tre punkter",
+      "rubrik": "What's covered, and what isn't",
       "punkter": [
-        "__COPY__: nio längder",
-        "__COPY__: banden och krokarna",
-        "__COPY__: en person"
+        "Nine lengths, 18 to 44 ft (5.5 to 13.5 m), so there's one for your roof.",
+        "Woven webbing straps with plastic hooks, latched under the edge of the body on all four sides.",
+        "Goes on with one person, no second pair of hands needed."
       ]
     },
     {
       "typ": "produkt",
       "handle": "takskyddet",
-      "text": "__COPY__: en mening under produktkortet",
-      "knapp": "__COPY__: knapp"
+      "text": "Pick the length that matches your roof, front to back.",
+      "knapp": "Check sizes"
     },
     {
       "typ": "fakta"
     },
     {
       "typ": "knapp",
-      "text": "__COPY__: avslutande knapp",
+      "text": "Protect the roof",
       "lank": "produkt:takskyddet"
     }
   ],
-  "tretest": [],
+  "tretest": [
+    { "rad": "The roof you never climb up to check", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Only the roof gets covered, not the whole rig", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "One person puts this on, not two", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Rain settles right where the hatches and seams are.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "The rain sits right at the roof hatch", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "What's covered, and what isn't", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "See the roof cover", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Check sizes", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Protect the roof", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
   "version": 1,
   "planerad": "2026-09-29T16:00:00+02:00",
   "segment": [

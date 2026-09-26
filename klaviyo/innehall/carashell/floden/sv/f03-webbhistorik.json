@@ -43,31 +43,37 @@
         },
         "amnesrader": [
           {
-            "text": "__COPY__: ämnesrad A, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Den här kikade du på",
+            "begar": "hitta tillbaka till det man tittade på"
           },
           {
-            "text": "__COPY__: ämnesrad B, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Fortfarande där du lämnade den",
+            "begar": "bekräfta att varan finns kvar"
           },
           {
-            "text": "__COPY__: ämnesrad C, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "{{fornamn}}, ett skydd du redan sett",
+            "begar": "bli personligt igenkänd"
           }
         ],
-        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "forhandstext": "Ingen press, bara en påminnelse om var du var.",
         "block": [
           {
             "typ": "text",
-            "rubrik": "__COPY__: rubrik",
-            "text": "__COPY__: en mening"
+            "rubrik": "Den här tittade du på",
+            "text": "Du kikade på den här för ett tag sedan. Här är den igen, om du vill titta en gång till."
           },
           {
             "typ": "dynamisk",
             "kalla": "visad_produkt"
           }
         ],
-        "tretest": [],
+        "tretest": [
+          {"rad": "Den här kikade du på", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Fortfarande där du lämnade den", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "{{fornamn}}, ett skydd du redan sett", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Ingen press, bara en påminnelse om var du var.", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Den här tittade du på", "visualisera": true, "falsifiera": true, "ingen_annan": true}
+        ],
         "version": 1
       }
     },
@@ -99,24 +105,24 @@
         },
         "amnesrader": [
           {
-            "text": "__COPY__: ämnesrad A, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Finns min storlek?",
+            "begar": "veta att man inte är utanför måtten"
           },
           {
-            "text": "__COPY__: ämnesrad B, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Nio längder, 5,5 till 13,5 meter",
+            "begar": "se hela utbudet av storlekar"
           },
           {
-            "text": "__COPY__: ämnesrad C, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Mät taket, välj längd uppåt",
+            "begar": "veta hur man väljer rätt"
           }
         ],
-        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "forhandstext": "Nio längder täcker det mesta. Så hittar du din.",
         "block": [
           {
             "typ": "text",
-            "rubrik": "__COPY__: rubrik: storleken",
-            "text": "__COPY__: två meningar: nio längder, hur man mäter"
+            "rubrik": "Storleken, i klartext",
+            "text": "Taköverdraget finns i nio längder, 5,5 till 13,5 meter, alla 3 meter breda. Mät taket från front till bakkant och välj närmaste längd uppåt."
           },
           {
             "typ": "dynamisk",
@@ -126,7 +132,13 @@
             "typ": "fakta"
           }
         ],
-        "tretest": [],
+        "tretest": [
+          {"rad": "Finns min storlek?", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Nio längder, 5,5 till 13,5 meter", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Mät taket, välj längd uppåt", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Nio längder täcker det mesta. Så hittar du din.", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Storleken, i klartext", "visualisera": true, "falsifiera": true, "ingen_annan": true}
+        ],
         "version": 1
       }
     }

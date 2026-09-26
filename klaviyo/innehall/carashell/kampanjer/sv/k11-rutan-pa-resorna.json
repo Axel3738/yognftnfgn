@@ -35,7 +35,7 @@
   "block": [
     {
       "typ": "hero",
-      "rubrik": "Rutan på vinterresorna",
+      "rubrik": "Kylan som stannar utanför rutan",
       "text": "Skyddet spänns utvändigt över vindrutan och båda sidorutorna. Det mörklägger hela framvagnen, så ingen på rastplatsen ser in.",
       "bild": "produkt:termoskyddet",
       "knapp": {
@@ -60,7 +60,7 @@
     { "rad": "Kylan och solen, borta från rutan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Mörkt när du sover, oavsett rastplats", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Utanpå rutan, så glaset aldrig hinner bli kallt.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Rutan på vinterresorna", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Kylan som stannar utanför rutan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Se termoskyddet", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Rutan och de små rutorna på resan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
   ],

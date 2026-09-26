@@ -35,8 +35,8 @@
   "block": [
     {
       "typ": "hero",
-      "rubrik": "En present till honom med vagnen",
-      "text": "Ett skydd för vagnen han redan är rädd om, till en present han faktiskt tar fram varje höst.",
+      "rubrik": "Ett skydd för vagnen han redan är rädd om",
+      "text": "En present han faktiskt tar fram varje höst, inte en pryl som hamnar i en låda.",
       "bild": "produkt:takskyddet",
       "knapp": {
         "text": "Se presenten",
@@ -65,7 +65,7 @@
     { "rad": "Beställ senast måndag 26 oktober", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Något han tar fram varje höst", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Något som används varje höst, inte en pryl i en låda.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "En present till honom med vagnen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Ett skydd för vagnen han redan är rädd om", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Se presenten", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Två sätt att skydda vagnen", "visualisera": true, "falsifiera": true, "ingen_annan": true }
   ],

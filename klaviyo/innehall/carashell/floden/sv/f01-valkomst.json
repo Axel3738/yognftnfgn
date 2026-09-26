@@ -42,36 +42,43 @@
         "format": "rentext",
         "amnesrader": [
           {
-            "text": "__COPY__: ämnesrad A, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Vem skriver de här mejlen?",
+            "begar": "nyfikenhet på avsändaren"
           },
           {
-            "text": "__COPY__: ämnesrad B, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Ingen rea, bara en hälsning",
+            "begar": "slippa reklam man inte bad om"
           },
           {
-            "text": "__COPY__: ämnesrad C, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Jag bygger skydd för taket och rutan",
+            "begar": "veta vad butiken faktiskt gör"
           }
         ],
-        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "forhandstext": "Jag heter Axel, och jag svarar alltid själv.",
         "block": [
           {
             "typ": "text",
-            "rubrik": "__COPY__: rubrik: Axel hälsar, t.ex. att det är han som skriver",
-            "text": "__COPY__: 2–4 korta stycken från Axel: vem, vad butiken gör, varför mejlen kommer"
+            "rubrik": "Jag heter Axel",
+            "text": "Jag driver den här butiken. Vi bygger skydd för husvagnen och husbilen, för dagarna den bara står still.\n\nTaköverdraget skyddar taket. Termoskyddet spänns över vindrutan och sidorutorna.\n\nDu hör av mig igen när det finns ett skäl att skriva, inte för att det är torsdag."
           },
           {
             "typ": "knapp",
-            "text": "__COPY__: knapp till sortimentet",
+            "text": "Se skydden",
             "lank": "kollektion:sortimentet"
           },
           {
             "typ": "grundare",
-            "text": "__COPY__: en avslutande rad: svara på mejlet om du undrar något, jag läser själv"
+            "text": "Undrar du något är det bara att svara på det här mejlet. Jag läser det själv."
           }
         ],
-        "tretest": [],
+        "tretest": [
+          {"rad": "Vem skriver de här mejlen?", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Ingen rea, bara en hälsning", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Jag bygger skydd för taket och rutan", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Jag heter Axel, och jag svarar alltid själv.", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Jag heter Axel", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Se skydden", "visualisera": true, "falsifiera": true, "ingen_annan": true}
+        ],
         "version": 1
       }
     },
@@ -103,44 +110,52 @@
         },
         "amnesrader": [
           {
-            "text": "__COPY__: ämnesrad A, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Taket, inte hela vagnen",
+            "begar": "inte betala för mer skydd än man behöver"
           },
           {
-            "text": "__COPY__: ämnesrad B, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Krokar under kanten, på alla fyra sidor",
+            "begar": "veta att det sitter fast ordentligt"
           },
           {
-            "text": "__COPY__: ämnesrad C, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Nio längder. En passar ditt tak.",
+            "begar": "veta att storleken finns"
           }
         ],
-        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "forhandstext": "Vi täcker den ytan som faktiskt tar stryk av vädret.",
         "block": [
           {
             "typ": "hero",
-            "rubrik": "__COPY__: rubriken pekar på det som går att se: taket, kanten, banden",
-            "text": "__COPY__: 1–2 meningar: vad överdraget täcker och vad det inte täcker",
+            "rubrik": "Ett skydd för taket, inte hela vagnen",
+            "text": "Överdraget lägger sig över takytan, med kanten hängande 30 till 40 centimeter ner över sidorna. Det täcker inte hela vagnen, bara taket och kanten runt om.",
             "bild": "produkt:takskyddet",
             "knapp": {
-              "text": "__COPY__: knapp",
+              "text": "Se taköverdraget",
               "lank": "produkt:takskyddet"
             }
           },
           {
             "typ": "punkter",
-            "rubrik": "__COPY__: rubrik för tre punkter",
+            "rubrik": "Storlek. Fäste. Montering.",
             "punkter": [
-              "__COPY__: storleken: nio längder 5,5–13,5 m, mät taket",
-              "__COPY__: fästet: vävda spännband med plastkrokar under kanten, alla fyra sidor, två extra band",
-              "__COPY__: en person sätter på det"
+              "Nio längder, 5,5 till 13,5 meter. Mät taket från front till bakkant, välj närmaste längd uppåt.",
+              "Vävda spännband med plastkrokar under karossens kant, på alla fyra sidor. Inte gummi, töjs inte ut.",
+              "En person sätter på det själv, med två extra band på 10,5 meter som följer med."
             ]
           },
           {
             "typ": "fakta"
           }
         ],
-        "tretest": [],
+        "tretest": [
+          {"rad": "Taket, inte hela vagnen", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Krokar under kanten, på alla fyra sidor", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Nio längder. En passar ditt tak.", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Vi täcker den ytan som faktiskt tar stryk av vädret.", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Ett skydd för taket, inte hela vagnen", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Se taköverdraget", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Storlek. Fäste. Montering.", "visualisera": true, "falsifiera": true, "ingen_annan": true}
+        ],
         "version": 1
       }
     },
@@ -172,35 +187,42 @@
         },
         "amnesrader": [
           {
-            "text": "__COPY__: ämnesrad A, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Så går en retur till, om det behövs",
+            "begar": "veta hur en retur fungerar innan man köper"
           },
           {
-            "text": "__COPY__: ämnesrad B, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Paketnummer, spårning, en riktig adress",
+            "begar": "trygghet i att kunna följa sitt köp"
           },
           {
-            "text": "__COPY__: ämnesrad C, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "14 dagars ångerrätt, om det inte passar",
+            "begar": "veta att man kan ångra sig"
           }
         ],
-        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "forhandstext": "Från beställning till en eventuell retur, i klartext.",
         "block": [
           {
             "typ": "text",
-            "rubrik": "__COPY__: rubrik",
-            "text": "__COPY__: stycken enligt briefen"
+            "rubrik": "Beställning, spårning, och om du ångrar dig",
+            "text": "Du får en bekräftelse på mejl direkt när du beställer, och ett nytt mejl med paketnumret så snart paketet skickas. Numret börjar på CS.\n\nPaketnumret tar dig till vår egen spårningssida, där du ser var paketet är just nu.\n\nÅngrar du dig har du 14 dagars ångerrätt från den dag du tog emot varan. Du betalar returfrakten själv, och mejlar hello@carashell.com med ordernumret för en returinstruktion. Återbetalningen sker inom 14 dagar från att returen tagits emot. Går något sönder senare gäller reklamation i upp till tre år enligt konsumentköplagen.\n\nFrågor av alla slag går till samma adress: hello@carashell.com."
           },
           {
             "typ": "fakta"
           },
           {
             "typ": "knapp",
-            "text": "__COPY__: knapp till taköverdraget",
+            "text": "Se taköverdraget",
             "lank": "produkt:takskyddet"
           }
         ],
-        "tretest": [],
+        "tretest": [
+          {"rad": "Så går en retur till, om det behövs", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Paketnummer, spårning, en riktig adress", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "14 dagars ångerrätt, om det inte passar", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Från beställning till en eventuell retur, i klartext.", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Beställning, spårning, och om du ångrar dig", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Se taköverdraget", "visualisera": true, "falsifiera": true, "ingen_annan": true}
+        ],
         "version": 1
       }
     }

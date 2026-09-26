@@ -42,28 +42,28 @@
         },
         "amnesrader": [
           {
-            "text": "__COPY__: ämnesrad A, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Sex månader sedan du handlade",
+            "begar": "återknyta kontakt, väcka nyfikenhet"
           },
           {
-            "text": "__COPY__: ämnesrad B, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Taket. Rutan. Fönstren.",
+            "begar": "se vad som finns att skydda"
           },
           {
-            "text": "__COPY__: ämnesrad C, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "{{fornamn}}, dags att kolla vagnen?",
+            "begar": "bli personligt påmind om att se över sitt fordon"
           }
         ],
-        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "forhandstext": "Här är vad vi bygger på just nu, oavsett årstid.",
         "block": [
           {
             "typ": "text",
-            "rubrik": "__COPY__: rubrik: ett halvår senare",
-            "text": "__COPY__: två stycken"
+            "rubrik": "Sex månader sedan du handlade",
+            "text": "Det är sex månader sedan du handlade hos oss. Vi fortsätter bygga skydd för husvagnen och husbilen, för taket och för rutan.\n\nTa gärna en titt på vagnen då och då, oavsett årstid."
           },
           {
             "typ": "produktrad",
-            "rubrik": "__COPY__: rubrik för produktraden",
+            "rubrik": "Taket. Rutan. Fönstren.",
             "handles": [
               "takskyddet",
               "termoskyddet",
@@ -74,7 +74,14 @@
             "typ": "fakta"
           }
         ],
-        "tretest": [],
+        "tretest": [
+          {"rad": "Sex månader sedan du handlade", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Taket. Rutan. Fönstren.", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "{{fornamn}}, dags att kolla vagnen?", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Här är vad vi bygger på just nu, oavsett årstid.", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Sex månader sedan du handlade", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Taket. Rutan. Fönstren.", "visualisera": true, "falsifiera": true, "ingen_annan": true}
+        ],
         "version": 1
       }
     },
@@ -107,26 +114,31 @@
         "format": "rentext",
         "amnesrader": [
           {
-            "text": "__COPY__: ämnesrad A, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Vad saknar du för vagnen?",
+            "begar": "bli tillfrågad, bli lyssnad på"
           },
           {
-            "text": "__COPY__: ämnesrad B, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "En fråga från mig",
+            "begar": "få en personlig fråga, inte ett nyhetsbrev"
           },
           {
-            "text": "__COPY__: ämnesrad C, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Svara bara, jag läser allt",
+            "begar": "veta att svaret faktiskt når fram"
           }
         ],
-        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "forhandstext": "Jag undrar helt enkelt. Svara med ett par ord.",
         "block": [
           {
             "typ": "grundare",
-            "text": "__COPY__: frågan från Axel"
+            "text": "Jag undrar en sak. Vad saknar du för husvagnen eller husbilen, något vi borde bygga ett skydd för? Svara bara på det här mejlet med ett par ord, jag läser varje svar själv."
           }
         ],
-        "tretest": [],
+        "tretest": [
+          {"rad": "Vad saknar du för vagnen?", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "En fråga från mig", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Svara bara, jag läser allt", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Jag undrar helt enkelt. Svara med ett par ord.", "visualisera": true, "falsifiera": true, "ingen_annan": true}
+        ],
         "version": 1
       }
     }
