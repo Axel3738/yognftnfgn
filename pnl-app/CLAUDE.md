@@ -74,6 +74,11 @@ myshopify-domänen). Butikerna är ihopkopplade i en grupp i appen
 - `app/lib/shopify-data.server.ts` — orderhämtning: bulk-export för långa
   fönster (>7 dagar), vanlig paginering för korta (sekunder i stället för
   halvminut). Katalog med inköpspriser, cache i minne + DB (CatalogCache).
+  Parsern och sidbläddringen bor i `orderrader.ts` (testbar); orderhistorikens
+  60-dagarsgräns i `historik.ts` — se avsnittet om 60-dagarsgränsen nedan.
+  Produktintäkten efter ALLA rabatter (`netRevenue`, `linesRevenue`) och
+  break-even per produkt: `produktintakt.ts` — se avsnittet om break-even
+  per produkt nedan.
 - `app/lib/pnl.server.ts` — ren räknemotor utan I/O. TB = försäljning − COGS −
   tull − annonser. Tull per ORDER (poängen med bundles). Kostnadsändringar
   viktas per omsättningsandel efter brytdatum.
@@ -85,6 +90,9 @@ myshopify-domänen). Butikerna är ihopkopplade i en grupp i appen
   engångsrad `MetaLoginState` + cookie, long-lived token, kontolista via
   `/me/adaccounts`). Hela flödet står i `docs/meta-token.md`.
   `meta-login-sida.server.ts` är fönstrets HTML (resursrutter, ingen Polaris).
+- `app/lib/token-keeper.server.ts` — tokenvakten, var 15:e minut i alla sex
+  tjänster: förnyar Shopify- och Meta-nycklar, och kör **returkollen**
+  (butikens senaste 45 dagar om var 6:e timme — se avsnittet nedan).
 - `app/lib/group.server.ts` — gruppsumman: alla medlemmar parallellt, FX per
   butik till betraktarens valuta, korta dataluckor fylls synkront,
   långa i bakgrunden.
@@ -393,9 +401,734 @@ i hans ordning:
   alla 30 varianter har värsta-falls-kostnad; verklig marginal något bättre.
 - "Inside comfy slippers": ingen offert (MOQ 3000) — ingen COGS.
 - Danmarks Railway-domän okänd — hälsokontrollen kan inte verifiera DK.
-- Exakta betalväxel-avgifter (feeRate är schablon).
+- Exakta betalväxel-avgifter utanför Shopify Payments (feeRate är schablon
+  för PayPal/Klarna/manuellt; ingen sats per betalväxel än — se avsnittet
+  om betalavgifterna nedan).
 - Grillkliniken: Axel vill klona hela upplägget till en annan butik.
 - App Store-granskningssvaret: åtgärda när mejlet kommer.
+
+### Break-even per produkt på det kunderna betalade (2026-09-26)
+
+Kostnader-sidan presenterar break-even per produkt som "talet annonserna måste
+slå", och Axel bad om att det skulle följa paketen kunderna faktiskt köper.
+Mixen var riktig (90 dagars orderrader, stegpriser, uppmätt avgift) — men
+omsättningen var **listpris × antal** (`radUtfall`: `d.price * qty`, anropat
+med Shopifys variantpris). Mängdrabatter ("2 för 499"), rabattkoder och
+automatiska rabatter syntes inte. Panelens produkttabell tog radens
+`discountedTotalSet`, som bara drar radrabatter — ordernivåns koder drogs
+aldrig. I SE-butiken har 402 av 1 834 orderrader 2+ av samma variant, precis
+mängdrabattens mönster. Räkneexempel: 299 kr sålt som 2 för 499, COGS 134 för
+två, tull 27,50, avgift 2 %. Sidan räknade omsättning 598, TB 424,50 och
+break-even 1,41×. Verkligheten: 499 − 134 − 27,50 − 10 = 327,50, alltså
+1,52×. Produkten sköts på 1,45× och förlorade ~5 % av annonspengarna, och
+sidan sa emot panelens break-even (som räknar på det kunderna betalat).
+
+Byggt:
+- **Orderfrågorna** (paginering och bulk) läser
+  `discountedUnitPriceAfterAllDiscountsSet` på varje radartikel — styckpris
+  efter ALLA rabatter, även ordernivåns. Bara `read_orders`.
+- **`laggPaMix`** (`orderrader.ts`) lämnar `lines` exakt som den var och
+  lägger till syskonen `netRevenue` (Σ pris efter rabatter × antal),
+  `linesRevenue` (samma per antal i raden) och `linesPriced` (orderraderna
+  bakom `linesRevenue` per antal). `tillRad` skriver fälten bara när de finns
+  — en rad utan dem ser ut som en äldre dagsrad. Ingen migration: fälten
+  bor i `DailyPnl.products`/`markets`-JSON.
+- **`app/lib/produktintakt.ts`** (ren, testad, får importeras av klienten):
+  `radIntakt` (`netRevenue ?? netSales`), `laggTillIntakt` + `kopieraIntakt`
+  (EN hopslagningsregel för `mergeProductRows` OCH `slaIhopMarknader`),
+  `radLinjer`, `fordelaProdukter` (panelens BE per produkt), `merUrDagar`,
+  `beTon`, `MIN_RADER_BE = 3`.
+- **`breakeven.server.ts`**: `BreakEvenIndata` får `linesRevenue` och
+  `linesPriced`. `radUtfall` räknar realiserat pris per orderrad för storlekar
+  med sålda rader med pris, annars listpris × antal med `listpris: true`.
+  `mixBreakEven` sätter `delvisListpris` när någon såld storlek föll tillbaka
+  på listpris.
+- **Kostnader och produktsidan** summerar `linesRevenue`/`linesPriced` ur
+  `mix90` bredvid `lines` (under ett marknadsfilter blir det landets pris).
+  Undertexten säger "faktiskt pris, 90 dagar", "faktiskt pris där det finns,
+  listpris för äldre ordrar" eller "listpris (ingen försäljning)";
+  produktsidans rad märks "· listpris" för osålda storlekar. Cellen färgas
+  mot **butikens MER, 30 stängda dagar** (`butikensMer` i daily.server →
+  `merUrDagar`), inte mot fasta ≤ 2 / ≤ 3: grönt minst 10 % under MER, gult
+  upp till MER, rött över. En rad under sidhuvudet säger vilken MER som
+  gäller eller varför färgerna saknas.
+- **Panelens produkttabell**: Netto = `netRevenue` när den finns. Bruttovinst,
+  marginal och multipel räknas på samma tal (`compute()` och
+  `slaIhopMarknader` via `radIntakt`), och tabellen sorteras på det. Ny
+  kolumn **BE ROAS** = intäkt / (intäkt − COGS − tull fördelad efter
+  orderradsandel − `effFeeRate` × intäkt). Två rader sist: **Alla produkter**
+  (COGS = rutans COGS) och **Inte fördelat: frakt, returer, moms** =
+  Försäljning-rutan − produkterna, så att summan går ihop med rutan.
+
+Medvetna beslut:
+- **`linesPriced` finns, fast planen bara sa `linesRevenue`.** En 90-dagarsmix
+  blandar gamla dagsrader (utan pris) med nya. Delat med `lines[q]` hade en
+  gammal dag dragit ner priset per rad — 2 prissatta tvåpack à 499 bland 5
+  tvåpacksrader hade gett 199,60 per rad och break-even skyhögt. Allt-eller-
+  inget hade i stället låst mixen på listpris i 90 dagar, eftersom dagar före
+  60-dagarsgränsen aldrig skrivs om.
+- **`netRevenue` är allt-eller-inget** vid hopslagning: saknar en del fältet
+  hade tabellen visat en bit av produktens intäkt. Raden faller då tillbaka på
+  `netSales` (hel, men före ordernivåns rabatter). Sådana rader märks med
+  "*" på Netto och BE ROAS i panelen (`foreOrderrabatt`), med en fotnot och
+  "rabattkoder på *-rader" i Inte fördelat-raden — dagar bortom omsynken
+  skrivs aldrig om, så ett kvartal/år står på gamla grunden länge, och utan
+  märkning läste handlaren en för snäll break-even som "efter alla rabatter".
+- **Styckfallback på listpris visas inte när mixen är olönsam.** Förut föll
+  Kostnader-cellen tillbaka på styckräkningen på listpris när mixen var
+  olönsam — den kunde se lönsam ut just när mängdrabatten var problemet. Nu
+  står "Olönsam" — men bara när minst tre orderrader bär det realiserade
+  priset (`prisade`, `tunntPris`). *(Granskning 2026-09-26: en enda
+  influencerorder med 100 %-kod gav röd "Olönsam" på en variant som var
+  lönsam på varje riktig order — den starkaste domen på en rad, medan färgen
+  noga hölls borta under tre.)* Under tre: styckräkningen på listpris, märkt
+  och ofärgad; på produktsidan "—" och ingen röd TB för storleken/mixen.
+- **En storleks realiserade pris gäller bara när minst tre rader bär det,
+  eller när det är ALLA storlekens rader.** En prisad rad av 40 (resten äldre
+  dagar) sätter annars priset för alla 40. Då listpris, märkt
+  (`delvisListpris`). Färgen på mixen räknar `beUnderlag` = prisade rader när
+  mixen vilar på realiserat pris, inte alla rader.
+- **Ingen färg utan MER, på listpris utan försäljning, eller under tre
+  orderrader** (husregeln om tunn data). MER kräver 7+ säljdagar, 3+ ordrar
+  och en spendrad för varje säljdag i fönstret — annars är MER för hög och
+  break-even hade sett för grön ut.
+- **Panelens BE ROAS färgas aldrig.** Det är en tröskel, inte ett utfall;
+  panelen har ingen annons-ROAS per produkt att jämföra med. "Olönsam" står
+  i röd text när raden bär 3+ orderrader.
+- **Täckningen (`productNetSales`, `kostnadOsaker`) räknas fortfarande på
+  `netSales`.** Samma underlag i täljare och nämnare som förut; en byte hade
+  flyttat gränsen på 2 % utan att något blivit bättre.
+- **Frakt och returer ligger utanför produktintäkten** (texterna säger det).
+  Frakten gör break-even försiktig. Returer per produkt (`currentQuantity`) är
+  ett senare steg.
+- **Totalraden visar rutans COGS**, inte summan av raderna: `slaIhopMarknader`
+  nollar en hopslagen rads COGS om en marknad saknar kostnad, så radsumman
+  kan vara lägre än rutan.
+
+Fällor:
+- ⚠ **Shopify kallar fältet en approximation** — öresavrundningen sprids över
+  raderna. Kontrollera efter deploy på EN order med ordernivåkod i
+  stonepnl-test: `DailyPnl.products[].netRevenue` ska vara radernas summa
+  efter koden, och `lines` oförändrad.
+- ⚠ **I ~45 dagar blandas två sorters produktintäkt.** Returkollen skriver om
+  de senaste 45 dagarna; äldre dagar bär bara `netSales`. En 30-dagarsvy blir
+  hel inom ett par timmar efter deploy, 90-dagarsmixen visar "delvis
+  listpris" tills de gamla dagarna åldrats ut.
+- ⚠ **Produkternas Netto sjunker för produkter som köps med rabattkoder.** Det
+  är rätt, men syns — och bruttovinsten per produkt följer med ner.
+- ⚠ **`butikensMer` ser inte döda annonskonton.** Den kräver EN spendrad per
+  säljdag, inte en per konto: en butik med två konton där det ena slutat
+  hämtas får för hög MER. Kontrollera i panelen att annonskostnaden är hel
+  om färgerna ser för gröna ut.
+- ⚠ **Produktsidan räknar fortfarande med Inställningars `feeRate`**, inte den
+  blandade satsen som Kostnader-tabellen använder. Ej ändrat här.
+- ⚠ **Pagineringens `lineItems(first: 25)`-tak gäller fortfarande** — en order
+  med fler rader skickas till bulk-exporten (`trunkerad`), som saknar tak.
+- Tester: `test/breakeven.test.mjs` (2 för 499 ⇒ 499 och 1,52×, listpris
+  1,41×; osåld storlek ⇒ listpris + `delvisListpris`; viktning på betalda
+  priser; delning med `linesPriced`; antagen), `test/marknad.test.mjs`
+  (`slaIhopMarknader` summerar intäkten utan att röra `lines`; en marknad
+  utan fältet ⇒ `netSales`), `test/orderrader.test.mjs` (10 %-kod ⇒
+  `netRevenue` 10 % under `netSales`; äldre fixtur utan fält;
+  `mergeProductRows` gammal + ny dag) och `test/produktintakt.test.mjs`
+  (fördelningen, "—"-fallen, `merUrDagar`, `beTon`).
+
+### Betalavgifter: faktiska bara för Shopify Payments (2026-09-26)
+
+Shopify skriver `fees` på transaktionerna BARA för Shopify Payments. Varje
+dag startade ändå med `fees: 0` (inte null) så fort fältet frågades efter,
+och `compute()` räknade hela dagens omsättning som "faktisk" — så satsen i
+Inställningar gällde aldrig PayPal-, direkt-Klarna- eller manuella ordrar
+(`okandAndel` blev 0). `uppmattaAvgifter` delade avgifterna med ALL
+omsättning, så varje PayPal-order drog ner "faktiskt taget" mot noll, och
+Kostnader räknade break-even på den nollan. Panelen sa samtidigt "faktiska
+belopp från Shopify Payments". Räkneexempel: 100 000 kr/mån med 40 % via
+PayPal/Klarna à ~3,4 % = 1 360 kr/mån avgifter som saknades. Pris 400, COGS
+150, tull 27,50, verklig avgift 3,5 %: Kostnader visade break-even 1,80× i
+stället för 1,92×, så en produkt på 1,85× såg lönsam ut. En butik helt utan
+Shopify Payments hade avgift 0 överallt.
+
+Byggt:
+- **Frågan** (`avgiftFalt` i shopify-data.server, EN sträng för både
+  pagineringen och bulk-exporten): `transactions(first: 20) { status kind
+  gateway fees {...} }`.
+- **`summeraAvgifter`** (`orderrader.ts`) returnerar `{ avgift, sp, gateway }`.
+  `sp` = en lyckad SALE/CAPTURE med gateway `shopify_payments` (`SP_GATEWAY`)
+  ELLER som bär `fees`. `gateway` = betalvägen omsättningen bokförs på ("" =
+  ingen transaktion).
+- **Dag, marknad och timme** (samma `fyll`) får `feesCoveredSales` = Σ
+  orderns totalpris (efter återbetalning) där `sp`, och dag/marknad
+  `gatewaySales` = { betalväxel: omsättning }. Null när avgiftsfältet nekades.
+  Migration `20260926170000_avgifter_betalvag`: `DailyPnl.feesCoveredSales`,
+  `DailyPnl.gatewaySales`, `HourlyPnl.feesCoveredSales`, och
+  `ShopSettings.thirdPartyFeeRate` (DEFAULT 0). Marknadsdelen i
+  `markets`-JSON bär samma två nycklar.
+- **`app/lib/avgifter.ts`** (ren, testad, får importeras av klienten):
+  `tacktOms` (= `feesCoveredSales ?? totalSales` på dagar med kända avgifter),
+  `kandExtern`, `raknaAvgifter` (det `compute()` nu anropar),
+  `uppmattAvgift` (delar med TÄCKT omsättning; `uppmattaAvgifter` i
+  daily.server är bara DB-läsningen runt den), `blandadSats`, `betalvagar`,
+  `betalvagNamn`.
+- **`compute()`**: faktiska avgifter + satsen per marknad på den otäckta
+  andelen + `thirdPartyFeeRate` på omsättning som BEVISLIGEN gick externt.
+  Totals får `feesActualShare`, `feesOtherGateways`, `feesThirdParty`.
+- **Panelen**: avgiftsraden säger "faktiska för X % av omsättningen (Shopify
+  Payments), din sats för Y % (paypal, klarna)" — andelen är omsättning, inte
+  dagar. "Faktiska belopp från Shopify Payments" bara när ALLA dagar har data
+  och andelen är 100 % (avrundat nedåt).
+- **Kostnader**: break-even räknar med `blandadSats` — Shopify Payments-
+  satsen på täckt del, Inställningars sats (per marknad) plus
+  tredjepartsavgiften på resten. Texten säger hur stor andel som är faktisk.
+- **Inställningar**: nytt fält "Shopifys avgift på ordrar som inte betalats
+  med Shopify Payments (%)" (default 0), listan "Betalsätt, senaste 90
+  dagarna" med andel per betalväxel (`betalvagar90`), och omskrivna hjälp-
+  texter: transaktionsavgiften gäller omsättning utanför Shopify Payments och
+  dagar utan data, inte "bara dagar utan data". Uppmätt sats visas bara för
+  marknader med omsättning genom Shopify Payments.
+
+Medvetna beslut:
+- **AUTHORIZATION räknas INTE som täckt** (planen sa SALE, CAPTURE eller
+  AUTHORIZATION). En reservation som inte dragits har inga avgifter än; som
+  täckt hade den gett exakt den nolla fixen finns för. Den räknas med satsen
+  tills capture kommer, och returkollen hämtar om 45 dagar var 6:e timme.
+- **`fees` på en SALE/CAPTURE bevisar Shopify Payments** även om gateway-
+  strängen skulle vara en annan än `shopify_payments`. Planens steg 0
+  (verifiera strängen på en riktig order i stonepnl-test) gick inte att göra
+  från sessionen — den regeln gör att en avvikande sträng bara påverkar
+  ordrar med avgift 0, inte alla Shopify Payments-ordrar.
+- **Ingen sats per betalväxel.** Satsen per marknad (`feeRateFor`) gäller den
+  otäckta delen, som planen sa. Listan i Inställningar visar vilka växlar det
+  gäller.
+- **Tredjepartsavgiften tas bara på omsättning som bevisligen gick externt**
+  (`kandExtern`: avgifterna hämtade, `feesCoveredSales` satt OCH betalvägen
+  i `gatewaySales` är en extern växel, `arExternBetalvag`). En äldre dag
+  utan uppdelning, eller en dag vars avgifter nekades, kan lika gärna vara
+  Shopify Payments — där hade avgiften varit påhittad. Rättat efter
+  granskning: först räknades ALL otäckt omsättning som extern, så en
+  reserverad-men-inte-dragen Shopify Payments-order (bokförd på
+  `shopify_payments`), postförskott/bankinsättning/manuellt, presentkort och
+  ordrar utan betalning fick en påhittad Shopify-avgift. En egen manuell
+  metod med påhittat namn känns inte igen och räknas som extern.
+- **Satsen på den otäckta delen räknas per marknad** (`satsPaOtackt`, via
+  `coveredByMarket` ur `readDaily` → `compute()`). Rättat efter granskning:
+  först fick den otäckta omsättningen periodens SNITTSATS (marknadsmixen ×
+  otäckt andel), så SE helt via Shopify Payments + US helt via PayPal gav
+  US-omsättningen halva US-satsen. Summan stäms av mot den otäckta
+  omsättningen ur dagarna och skalas ner om marknadsdelarna säger mer.
+- **Den uppmätta satsen hoppar över äldre rader så fort EN rad med
+  uppdelning finns** i 90-dagarsfönstret (per marknad). Äldre rader bär
+  PayPal-omsättning med avgift 0 och skulle annars göra satsen till ett snitt
+  med nollor igen — och rader före 60-dagarsgränsen skrivs aldrig om.
+  Bara äldre rader ⇒ de används, som förut.
+- **Kostnader blandar satserna** i stället för att använda den uppmätta
+  satsen rakt av (planens steg 5 ensamt). Med 60 % Shopify Payments hade
+  Shopify Payments-satsen annars gällt PayPal-delen också.
+- **En order med flera betalvägar** (presentkort + kort) räknas som täckt om
+  någon dragning är Shopify Payments — hela ordern. Presentkortsdelen har
+  ingen avgift hos någon, så det är rätt åt rätt håll.
+
+Fällor:
+- ⚠ **Äldre dagsrader (utan `feesCoveredSales`) räknas fortfarande som helt
+  täckta** tills de hämtas om. Returkollen skriver om de senaste 45 dagarna
+  inom ett par timmar efter deploy; äldre dagar bara när panelen exporterar
+  om dem. En butik utan Shopify Payments ser därför avgifterna stiga i
+  omgångar.
+- ⚠ **Gateway-strängarna är inte uppmätta skarpt.** `formattedGateway` skiljer
+  sig från `gateway`; Klarna och Apple Pay genom Shopify Payments rapporterar
+  `shopify_payments`. Kontrollera efter deploy: lägg en Shopify Payments-order
+  och en manuell order i stonepnl-test ⇒ `DailyPnl.gatewaySales` ska ha
+  `shopify_payments` och `manual`, `feesCoveredSales` bara den förra, och
+  avgiftsraden säga "din sats för Y % (manual)".
+- ⚠ **Manuella betalningar (bank, postförskott) får satsen** — de har oftast
+  ingen avgift. Handlaren ser dem i listan i Inställningar; ingen egen sats
+  per växel än.
+- ⚠ **LTV (`kundorder.server`) räknar fortfarande `feeRate` × totalpris per
+  order**, oberoende av betalväxel. Ej ändrat här.
+- ⚠ **`gatewaySales` skrivs som `Prisma.DbNull` när den saknas**, aldrig som
+  rått `null` — Prisma vägrar null i ett Json-fält, och felet hade fällt hela
+  dagsradstransaktionen (inga dagar skrivna alls). Typkontrollen fångar det
+  inte bakom `as any`.
+- ⚠ **`HourlyPnl.fees`/`feesCoveredSales` läses inte av någon** (timgrafen
+  visar bara omsättning); de skrivs för att timmar och dag ska kunna jämföras.
+- Tester: `test/orderrader.test.mjs` (Shopify Payments fees 12 ⇒ {12, sp};
+  PayPal utan fees ⇒ {0, inte sp}; misslyckade ignoreras; AUTHORIZATION;
+  fees som bevis; dagens/marknadens/timmens täckta omsättning och
+  `gatewaySales`) och `test/avgifter.test.mjs` (compute: 1000/600/18 à 3 % ⇒
+  30; dag utan `feesCoveredSales` som förut; butik utan Shopify Payments;
+  planens break-even 1,80 → 1,92; sats per marknad; sats per marknad på
+  otäckt del med `coveredByMarket`; `satsPaOtackt`; tredjepartsavgiften;
+  `kandExtern` utan reserverade/manuella/tomma; `uppmattAvgift` delar med
+  täckt omsättning och hoppar över äldre rader; `blandadSats`; `betalvagar`).
+
+### Ett skalningsbeslut överallt: dra ner, håll, skala (2026-09-26)
+
+Varje tal ett skalningsbeslut behöver fanns redan — ingen skärm gjorde ett
+beslut av dem, och den enda som gjorde det (LTV) jämförde mot fel linje.
+MER-rutan visade "break-even X×" utan färg; målmarginalen fanns bara som
+max-CPA under en annan ruta; bidraget efter annonser (`netContribution`)
+visades aldrig; gruppens nio butiker hade ingen MER eller break-even.
+Räkneexempel: 300 000 kr, break-even 1,81× (bruttovinst 165 700 kr), MER
+1,95× (153 800 kr), fasta 20 000 kr. Nettovinsten −8 100 kr är röd — men
+annonserna ger +11 900 kr. Den som drar ner annonserna "för att stoppa
+förlusten" landar på −20 000 kr. Rätt besked: håll. På LTV-sidan var CAC 180
+kr mot max-CPA 90 kr (målmarginal) röd med "betalar inte tillbaka" och tipset
+"pausa" — fast varje kund gav +60 kr inom 90 dagar (bidrag 240 kr). Vid 500
+nya kunder/mån kastade rådet ~30 000 kr/mån.
+
+Byggt:
+- **`app/lib/skalning.ts`** (ren, testad, får importeras av klienten;
+  `pnl.server.ts` och `ltv.server.ts` exporterar vidare):
+  `skalningsKvoter` (MER, break-even, `targetMer`, Evolves BE + 1 — EN formel
+  för panel, grupp och motor), `malUtrymmeFor`, `skalningsBeslut(t, q)`,
+  `bidragsBand`, `cacBeslut`, `MIN_ORDRAR_BESLUT = 3`, `MIN_DAGAR_SKALA = 7`.
+- **Totals** får `targetMer` = omsättning / (bruttovinst − mål × omsättning),
+  `breakEvenCpa` = bruttovinst / ordrar (null när bruttovinsten ≤ 0, precis
+  som break-even-MER) och `evolveScaling` = break-even + 1. `maxCpaAtTarget`
+  räknas nu ur SAMMA täljare som `targetMer` (`malUtrymmeFor`) — förut en
+  annan, matematiskt lika, uppställning.
+- **Beslutet** är null när annonskostnaden är ofullständig, spend ≤ 0, under 3
+  ordrar, break-even saknas eller `kostnadOsaker`. Annars pull under
+  break-even, hold mellan break-even och målet (eller när målet inte går att
+  nå), push på/över målet. Under 7 säljdagar blir push hold med
+  `kortPeriod`; badgen visar då `beslutsText` = `holdShort` ("◆ Över målet
+  på en dag — läs 7+ dagar innan du skalar"), ALDRIG hold-texten "Lönsamt,
+  under målet" — MER-rutan bredvid står ju över målet, och två rutor som
+  motsäger varandra gör att handlaren slutar lita på båda. Okvitterad tull
+  ger `standardTull` ("räknat på standardtull").
+- **Panelen:** MER-rutan "break-even X× · mål Y× (25 %)", värdet färgat
+  (röd/`caution`/grön), badge med tecken + text (▼ dra ner / ◆ håll /
+  ▲ skala) och en dämpad rad "Evolves tumregel: BE + 1 = Z×". Annonsrutan
+  "CPA X · break-even-CPA Y" (≤ Y när kostnaden är osäker) och samma badge.
+  Uppdelningen fick raden **Bidrag efter annonser** mellan Annonser och
+  Fasta, med % av omsättningen och — bara när beslutet står — ett band med
+  källan "Evolve: 10–20 % … är sunt".
+- **Tipsen:** ny `contribution_margin` = bruttovinst / omsättning.
+  `mer_over_margin`, `mer_above_median` och `margin_squeeze` räknar på den;
+  `margin_critical`/`margin_low` behåller bruttomarginalen (källsatta
+  bruttomarginaler).
+- **Gruppen:** raderna bär `orders`, `cogs`, `tariff`, `fees` (omräknade),
+  butikens egen `targetMargin`, `dagar`, `spendComplete`, `noAdAccount`,
+  `tullOkvitterad`. Tabellen fick MER, BE ("≥" vid osäker kostnad) och
+  beslutet som kort badge; rutorna gruppens MER och break-even-MER.
+  Förbehållen (kort period, vilka butiker som går på standardtull) står en
+  gång under tabellen. Inget beslut för en butik över 2 % utan kostnad eller
+  utan annonskonto.
+- **LTV-sidan:** `cacBeslut(cpaNew, mc, nyaKunder)` i tre band — ≤ max-CPA
+  skala (grön), ≤ break-even håll (gul), annars dra ner (röd). Null under 3
+  nya kunder på 30 dagar (`MIN_ORDRAR_BESLUT`, husregeln): en CAC på en kund
+  gav annars ett rött "dra ner" till en ny butik; bannern säger då "För lite
+  data än". Ny ruta
+  **Break-even-CAC (h d)**. `verdictUnder`/`verdictOver` omskrivna, ny
+  `verdictHold`. Tipsen: `break_even_cpa` = `mc.breakEven.mid` och
+  `cpa_over_max` mäts mot den; `cpa_near_max` säger "mål-max-CPA";
+  `ltv90_below_cpa`, `ltv180_thin`, `cpa_headroom` (och `mer_headroom`) läser
+  `ltv_tb_90`/`ltv_tb_180` — täckningsbidrag, inte omsättning. `ltv60_flat`
+  jämför fortfarande omsättning med AOV.
+- **Produkttabellen:** "CM"/"TB" heter nu **Gross profit/Bruttovinst** och
+  marginalen **Gross margin/Bruttomarginal** — kolumnen är netto − COGS,
+  inget annat dras.
+
+Medvetna beslut:
+- **Skalningslinjen är målmarginalen**, inte Evolves BE + 1. Ägaren har inte
+  valt (öppen fråga); BE + 1 visas bara dämpat. Byts linjen: ändra i
+  `skalningsBeslut`, ingen annanstans.
+- **Bidrag efter annonser ≥ målmarginalen är exakt villkoret för push.**
+  Därför heter det översta bandet "starkt", inte "utrymme att skala" som
+  planen sa: med mål 25 % hade bandet sagt "skala" vid 22 % bredvid en badge
+  som säger "håll". Skala-ordet bor bara i beslutet. Bandet "annonserna
+  förlorar pengar" (< 0 %) sammanfaller exakt med pull.
+- **Ikonen är ett tecken i texten** (▼ ◆ ▲), inte en Polaris-ikon:
+  `@shopify/polaris-icons` är inte ett deklarerat beroende.
+- **Beslutet räknas i klienten** ur tal som redan skickas — därför bor det i
+  en fil utan `.server`. Samma funktion i panel och grupp.
+- **Uppskattad COGS ger fortfarande beslut** (den räknas som täckt, se
+  kostnadstäckningen nedan) — MER-rutan säger "≈".
+- **LTV: inget beslut och inga tröskeltips när konfidensen är "hidden"** —
+  intervallet är för brett för att visa max-CPA, alltså också för brett för
+  att säga "dra ner".
+- **Dra ner på en dag är fortfarande dra ner.** Bara push kapas av 7-dagars-
+  regeln — att sluta förlora pengar är ingen skalning.
+- **Gruppen ger inget gruppbeslut**, bara per butik. En summa över nio
+  butiker döljer den butik som ska dras ner.
+
+Fällor:
+- ⚠ **`targetMer` och `maxCpaAtTarget` måste dela täljare.** Räknas de om var
+  för sig kan flyttalen skilja sig på gränsen, och då säger CPA-rutan och
+  MER-rutan olika. Egenskapstestet låser det.
+- ⚠ **Gruppens kvoter räknas på omräknade belopp** (COGS med försäljnings-
+  vägd kurs) — promilleskillnad mot butikens egen panel är väntad. Och
+  uppskattad COGS appliceras inte i gruppen, så en butik som vilar på
+  uppskattning får för låg BE där.
+- ⚠ **`mer_over_margin` är exakt dra ner-linjen** (`mer >
+  contribution_margin`, alltså MER under break-even) — rättat efter
+  slutgranskningen. Förut stod `mer > contribution_margin − fixed_share`
+  (nettovinst < 0), och i håll-läget (panelexemplet: annonser 153 800 mot
+  bidrag 165 700) sa ett kritiskt tips "annonserna kostar mer än hela
+  täckningsbidraget" bredvid badgen ◆ håll. `mer_above_median` är
+  komplementet på samma gräns. Gapet mot de fasta kostnaderna bärs av
+  `margin_squeeze` och `fixed_high`/`fixed_critical` — lägg aldrig tillbaka
+  `fixed_share` i MER-reglerna.
+- ⚠ **Inte prövat skarpt.** Kontrollera efter deploy: 30d på SE-butiken ⇒
+  MER-rutan har badge och mål; ändra målmarginalen i Inställningar ⇒ målet
+  och ev. badgen flyttar sig, max-CPA följer med; Idag ⇒ aldrig "skala".
+- Tester: `test/beslut.test.mjs` (gränserna vid break-even och mål,
+  panelexemplet, null-fallen, en dag, standardtull, banden, egenskapstest
+  över 2 000 slumpade perioder, tipsens bidragsmarginal) och
+  `test/ltv.test.mjs` (`cacBeslut` 180/90/240 ⇒ håll, gränserna, hidden,
+  under 3 nya kunder ⇒ null,
+  LTV-tipsen på täckningsbidrag).
+
+### Saknade kostnader och tullens startvärde syns överallt (2026-09-26)
+
+Tre indata gjorde vinsten för hög och break-even för låg utan att något såg
+trasigt ut. (1) En variant utan inköpspris lade 0 till COGS — och ett
+uttryckligt 0,00 i Shopify lästes som 0 och räknades som täckt. Ändå blev
+hjälten grön med konfetti på `spendComplete` ensam, vinstrutan grön, och
+MER-rutan visade "break-even X×" som exakt. Räkneexempel: 300 000 kr, verklig
+COGS 40 %, 30 % av enheterna utan kostnad ⇒ COGS 28 %, vinsten 36 000 kr för
+hög, break-even 1,45× i stället för 1,75× — annonser på 1,5–1,7× såg lönsamma
+ut. Gruppsumman teg helt. (2) Kostnader mätte täckning i ANTAL varianter:
+tre bästsäljare utan kostnad bland 200 varianter gav "Inget att importera"
+vid 60 % av omsättningen. (3) Varje ny installation fick tull 27,50 i sin
+EGEN valuta (DB-default): en USD-butik med 45 $ snittorder fick 0,40 $ kvar
+före annonser och break-even ~112×. Tullsteget i checklistan kvitterades av
+VILKEN sparning som helst — språkbyte eller inklistrad Meta-nyckel.
+
+Byggt:
+- **`app/lib/kostnadstackning.ts`** (ren, testad, får importeras av
+  klienten): `KOSTNAD_TROSKEL = 0.02`, `arKostnadOsaker(andel)`,
+  `andelUtan`, `tackningEfterOmsattning` + `JUICY_TACKNING = 0.98`,
+  `startTull(currency)`, `tullKvitterad(lagrat, postat, kryssad)`.
+- **`compute()`** (`pnl.server.ts`) lägger till i Totals:
+  `netSalesWithoutCost` (rader med cost null), `netSalesZeroCost` +
+  `unitsZeroCost` (kostnad exakt 0 och varianten inte i `freeVariants`),
+  `productNetSales` (nämnaren), `cogsCoverage` och flaggan `kostnadOsaker`.
+  `ProductResult.zeroCost`, och `ProductRow.estimated` bärs genom
+  `slaIhopMarknader` (en märkt del märker hela raden). Ny input
+  `freeVariants`.
+- **Panelen:** hjälten är komplett bara om `spendComplete && !kostnadOsaker`
+  — annars gul, badge "Inköpspris saknas på X % av försäljningen", ingen
+  konfetti, inget rekord, ingen svit. Vinstrutan är grön bara när båda
+  finns; med osäker kostnad "högst X — …", neutral ton. MER-rutan "break-even
+  ≥ X×" (osäker) eller "≈ X×" (uppskattning i spel). COGS-rutan "saknas på X %
+  av försäljningen (N enheter)". Tullrutan "· standard — inte bekräftad" tills
+  tullen kvitterats. Produkttabellen: "0?" för misstänkta nollor (TB, marginal
+  och multipel "—"), "≈" för uppskattade rader. Ny banner för nollor.
+  Checklistans kostnadssteg klaras inte av nollor; egen text för nollor och
+  för uppskattning; tullsteget läser `tariffConfirmedAt` och visar den
+  SPARADE avgiften, inte ett hårdkodat "2,9 %".
+- **Jämförelsen** får samma uppskattning som huvudperioden (`uppskatta()` i
+  loadern) och bär `spendComplete`/`kostnadOsaker`. Vinst-deltat blir "—"
+  när någon av perioderna är osäker; spend-deltat när föregående periods
+  spend saknas.
+- **Tipsen** får `gross_margin` och `mer` = undefined när `kostnadOsaker`.
+- **Gruppen:** `convertTotalsPerDay` + `GroupTotals` bor nu i
+  `app/lib/gruppvaluta.ts` (testbar; `group.server.ts` exporterar dem
+  vidare). `GroupTotals` bär `netSalesWithoutCost`, `netSalesZeroCost`,
+  `productNetSales`, omräknade med försäljningens dagsvägda kurs — kvoten
+  blir exakt densamma som i butikens egen panel. Raderna får
+  `uncostedShare` ("≤" framför vinsten i tabellen), och en ny lista
+  `qualityNotes` (egen gul ruta "Med i summan, men vinsten är för hög")
+  namnger butiker över gränsen och butiker med försäljning men **utan
+  annonskonto** (varken Meta-token/konto eller Google-konto) — "annonskostnaden
+  räknas som 0". Gruppens vinstruta är inte grön när gruppens andel är över
+  gränsen.
+- **Kostnader:** täckningen vägs efter 90 dagars nettoförsäljning (`mix90`,
+  samma läsning som flerpacksmixen). Saknade först, sedan misstänkta nollor,
+  inom grupperna störst försäljning först. Kortet "N varianter har
+  inköpspris 0 — stämmer det?" med en knapp per variant, **Ja, varan är
+  gratis** (`intent=free-variant`, bara variant-ID:n ur butikens katalog).
+  Juicy-kortets läge A kräver ≥ 98 % av försäljningen (utan försäljning på
+  90 dagar: 98 % av varianterna).
+- **Tullen:** migration `20260926150000_kostnadstackning` sätter
+  `tariffPerOrder DEFAULT 0` (befintliga rader orörda), lägger till
+  `tariffConfirmedAt` (fylls i från `settingsSavedAt` — Axels butiker får
+  ingen ny fråga) och `freeVariants JSONB`. `afterAuth` skapar raden med
+  `startTull(currency)`: 27,50 för SEK, annars 0 — bara i `create`, aldrig
+  `update`. Inställningar stämplar `tariffConfirmedAt` bara när standardtullen
+  eller någon marknadstull ändrats, eller när rutan **Tullbeloppen stämmer**
+  kryssats (visas tills tullen kvitterats, sedan bara datumet).
+
+Medvetna beslut:
+- **Täckningen räknas på produktradernas egen nettoförsäljning**, inte på
+  `Totals.netSales` som planen sa. Produktraderna är `discountedTotal` per
+  rad; dagsradernas netSales drar även av returer. Samma underlag i täljare
+  och nämnare, annars hade andelen glidit med returgraden.
+- **Gränsen dras på andelen, inte på `1 − täckning`**: 1 − 0,98 är
+  0,020000000000000018 i flyttal och exakt 2 % hade slagit om.
+- **Uppskattad COGS räknas som täckt.** Den är handlarens eget val och märkt
+  "≈" överallt (tabell, MER, COGS-ruta, checklista). Räknades den som saknad
+  hade uppskattningen aldrig kunnat få hjälten grön — då vore den meningslös.
+- **En nolla med riktiga flerpackspriser är ingen misstänkt nolla** (hela
+  radens COGS måste bli 0).
+- **"Inget annonskonto" utesluter inte butiken** — en butik med äkta organisk
+  försäljning hade då tappat riktig vinst. Den namnges.
+- **Sälj- och ordrar-deltan rörs inte** av kostnadsluckor: de är sanna
+  oavsett COGS.
+- **`freeVariants` är per variant, inte per marknad**, och går inte att ångra i
+  UI:t. En gåva som senare får ett riktigt pris räknas med det priset —
+  listan gäller bara nollor.
+- **Backfillen läser bara `settingsSavedAt`.** En regel som "tullen är inte
+  27,50" hade vid en omkörning kvitterat nya butiker med startvärdet 0.
+
+Fällor:
+- ⚠ **Fler butiker får gul hjälte.** Avsiktligt, men handlare märker det.
+  Gränsen är EN konstant (`KOSTNAD_TROSKEL`).
+- ⚠ **Kostnader-sidans täckning och panelens mäter olika saker**: sidan
+  räknar katalogens nuvarande kostnad mot 90 dagars mix; panelen räknar
+  periodens rader med kostnadsändringar viktade. Små skillnader är väntade.
+- ⚠ **Uppskattningen appliceras fortfarande INTE i gruppsumman** (se "Kostnader
+  utan fil" nedan). Gruppen läser `daily.products` utan `applyCurrentCosts`
+  — en nyss inlagd kostnad syns i gruppen först när dagarna hämtats om.
+  Dess täckning kan därför skilja sig från butikens panel samma minut.
+- ⚠ **Google Ads utan GOOGLE_ADS_*-variabler** i en tjänst: `getSpend`
+  tappar medlemmens Google-spend tyst och gruppen räknar den som pålitlig.
+  Noten "inget annonskonto" räddar inte det fallet (kontot finns i DB). Ej
+  åtgärdat här.
+- ⚠ **En ny SEK-butik med EU-lager** startar på 27,50 — men tullsteget och
+  tullrutan står okvitterade tills handlaren tittat.
+- ⚠ **Inte prövat skarpt.** Kontrollera efter deploy: sätt kostnad 0 på en
+  såld variant i stonepnl-test ⇒ "0?" i tabellen, bannern, och gul hjälte om
+  den är över 2 % av försäljningen; tryck **Ja, varan är gratis** på
+  Kostnader ⇒ allt grönt igen. Installera på en USD-testbutik ⇒ tull 0 och
+  "standard — inte bekräftad".
+- Tester: `test/kostnadstackning.test.mjs` (saknad rad, nolla, kvitterad
+  gåva, flerpacksnolla, 2 %-gränsen, ingen försäljning, negativa rader,
+  märkningar genom hopslagningen, gruppens omräkning, omsättningsvägd
+  täckning, `startTull`, `tullKvitterad`).
+
+### Returkollen: sena returer och avbokningar (2026-09-26)
+
+En återbetalning eller avbokning bokas på **orderns** dag (`totalRefundedSet`
+och `cancelledAt` läses vid hämtningen) och når siffrorna bara när den dagen
+exporteras om. Ingenting gjorde det på schema: tokenvakten förnyade bara
+nycklar, inga order-/refund-webhooks prenumereras, gruppen håller bara sina
+tre senaste dagar färska, och panelens omexport av hela intervallet förlorar
+mot 3-dagarsgrenen så fort vyn innehåller idag. I dropshipping kommer
+returerna 1–3 veckor efter ordern. Räkneexempel: 500 000 kr/mån i gruppen med
+6 % returer = upp till 30 000 kr som aldrig lämnade gruppens 30-dagarsvinst.
+MER, break-even och LTV-kohorterna (KundOrder kommer ur samma `refreshDaily`)
+var uppblåsta på samma sätt, och ▲▼ jämförde en delvis färsk period med en
+gammal.
+
+Byggt:
+- `ShopSettings.refundResyncAt` (migration `20260926120000_returkoll`).
+- **`resyncRunda()` i `token-keeper.server.ts`**, i samma 15-minuterstick som
+  nyckelrundan (efter den — då används nyss förnyade nycklar), alltså i alla
+  sex tjänsterna. Installerade butiker (offline-session finns) med känd
+  tidszon vars koll är null eller äldre än 6 h; aldrig kollade först, sedan
+  äldst först, högst 3 per tick, en i taget. Varje butik stämplas atomiskt
+  (`UPDATE … WHERE refundResyncAt IS NOT DISTINCT FROM <läst värde>`), bara
+  den som får `count === 1` exporterar.
+- **Fönstret** `resyncFonster(idag, horisont)` i `historik.ts`: idag − 44 …
+  idag i butikens tid, klämt mot orderhorisonten. `returkollHamtning` (samma
+  väg som `refreshShopDaily`) UTAN force — minutspärren och 5-minuters
+  felpausen gäller — men med bulk-gränsen `RESYNC_BULK_TIMEOUT_MS` (10 min i
+  stället för panelens 90 s), och ett exportfel sätter INTE felpausen.
+- **Lyckas** den flyttas stämpeln till klartiden och samma tid skrivs i
+  `refundResyncOkAt` (migration `20260926130000_returkoll_klar`) — det ENDA
+  fältet panelen och gruppen visar. `refundResyncAt` är låset: det stämplas
+  när exporten startar, och visades det sa panelen "senaste koll 14:00"
+  medan exporten pågick eller skulle misslyckas (rättat efter granskning).
+  **Misslyckas** den på nyckeln (`nyckel`) eller hoppas över (`hoppad`)
+  skrivs det förra värdet tillbaka, villkorat på vår egen stämpel: en tjänst
+  som inte kan förnya en annan registrerings nyckel får inte hålla butiken i
+  6 h. **Misslyckas exporten** (`fel`) skrivs i stället en gemensam paus i
+  låset (`felLas` i `returkoll.ts`): 1 h efter ett lyckat varv, sedan
+  ungefär dubbelt per fel (1, 1, 2, 4, 6 h), och hela intervallet för en
+  butik som aldrig lyckats.
+- **KundOrder ersätts per fönster** i stället för upsert
+  (`ersattKundOrdrar` i kundorder.server, planen `kundOrderErsattning` i
+  `returkoll.ts`): radera fönstrets rader + radernas order-ID, `createMany` i
+  bitar om 2 000, allt i en transaktion. En order som avbokats efter att den
+  cachades faller nu ur kohorterna och CAC i stället för att ligga kvar med
+  sitt gamla netto. Fortfarande: kastar hämtningen skrivs och raderas inget.
+- **UI**: en dämpad rad under "Vinst per dag" — "Returer bokas på orderns dag.
+  De senaste 45 dagarna kollas om var 6:e timme (senaste koll HH:MM)." — och
+  i gruppvyn den ÄLDSTA kollen bland medlemmarna plus hur många som aldrig
+  kollats (`GroupResult.returkoll`). Klockslaget formateras i loadern, i
+  butikens tid, med datum framför när kollen inte var i dag.
+
+Medvetna beslut:
+- **Returer bokas fortfarande på orderns dag** (rätt för ROAS per kohort,
+  dokumenterat i shopify-data.server). Kollen ser bara till att dagen hämtas
+  igen. Ingen avsättning för väntade returer, ingen växel orderdag/returdag.
+- **Ingen synkron omexport i gruppvyn.** 45 dagar är bulk-vägen (~30 s per
+  butik); gruppen väntar redan in sina tre senaste dagar och får inte bli
+  långsammare än så.
+- **Rå SQL för stämplarna, inte `prisma.update`.** ShopSettings har
+  `updatedAt @updatedAt`, och panelens loader läser om butikens valuta och
+  tidszon när `updatedAt` är över ett dygn gammal. En Prisma-stämpel var 6:e
+  timme hade hållit `updatedAt` färsk för alltid, och en ändrad butiksvaluta
+  hade aldrig nått appen. Tiderna skickas som text med
+  `CAST(… AS TIMESTAMP(3))` (`sqlTid`) — prövat mot en riktig Postgres med
+  sessionstidszon America/New_York: exakt träff, `updatedAt` orörd.
+- **Tillägg till planen: lokal paus 1 h per butik efter ett misslyckande**
+  (`resyncPaus`). Planens tillbakarullning gör att en butik med död nyckel
+  förblir äldst — utan pausen hade tre sådana butiker tagit alla tre platser
+  på varje tick och ingen annan butik kollats. Andra tjänster ser den
+  fortfarande som äldst, och den som kan förnya nyckeln tar den.
+- **Tillägg: order-ID:n raderas även utanför fönstret** innan de skrivs. En
+  order vars dag flyttats (butikens tidszon ändrad) hade annars krockat med
+  primärnyckeln `(shop, orderId)` och fällt hela transaktionen — efter att
+  dagsraderna redan skrivits.
+- **En lyckad tom hämtning tömmer KundOrder-fönstret.** Förut hoppades
+  skrivningen över när listan var tom; nu betyder tom att fönstret inte har
+  några räknade ordrar kvar (alla avbokade), och då ska raderna bort.
+- **Butiker utan känd tidszon hoppas över** — dagarna skrivs i butikens tid,
+  och en gissad UTC-dag hade hamnat på fel datum.
+- Exporten körs i `markeraPagaende`, så en panel som öppnas under tiden
+  pollar tills de nya siffrorna finns.
+
+Fällor:
+- ⚠ **Minutspärren och felpausen är per PROCESS.** Kollen kan köras i en
+  annan tjänst än den som serverar butikens panel, och då kan två bulk-
+  exporter mot samma butik starta samtidigt. "already in progress"-väntan i
+  `runOrdersBulk` är INTE ett skydd i sig: den pollade `currentBulkOperation`,
+  och en annan process export kunde hinna starta mellan två pollningar — då
+  laddades DEN filen ner som vår. En 30-dagarsfil tolkad som returkollens 45
+  dagar nollfyllde 15 riktiga dagar i DailyPnl (med färsk `fetchedAt`) och
+  tömde deras KundOrder-rader. Rättat efter granskning: `waitForBulk` följer
+  nu ID:t som `bulkOperationRunQuery` returnerade (`node(id:)`) och kastar om
+  det inte hittas; väntan på en annans export (`vantaUtAnnanBulk`) läser
+  aldrig dess fil. Ändra aldrig tillbaka till `currentBulkOperation` för att
+  hämta URL:en.
+- ⚠ **Andra tjänsters butiker funkar bara så länge nyckeln lever.**
+  `giltigToken` använder en giltig nyckel från vilken tjänst som helst, men
+  en utgången kan bara förnyas av butikens egen registrering. Då rullas
+  stämpeln tillbaka och egen tjänst tar den (dess tokenvakt förnyar först).
+- ⚠ **Returer på dagar äldre än 45 dagar (eller 60-dagarsgränsen) missas
+  fortfarande.** Raden på skärmen säger "de senaste 45 dagarna".
+- ⚠ **Kostnaden:** ~4 bulk-exporter per butik och dygn, ~36 för 9 butiker.
+  Bulk-exporter har inget kostnadstak i API-budgeten.
+- ⚠ **Ett exportfel får aldrig rulla tillbaka låset** (rättat efter
+  slutgranskningen). En stor butiks 45 dagar tog längre än panelens 90 s;
+  med tillbakarullning låg butiken kvar som äldst, nästa tjänst körde samma
+  dömda export på nästa tick (upp mot sex i timmen i stället för fyra om
+  dygnet), `refundResyncOkAt` sattes aldrig — och varje fel satte
+  `senasteFel`, så gruppens force-hämtning i den processen nekades i 5 min
+  och visade en frisk butik som "kunde inte uppdateras". Nu: 10 min
+  bulk-gräns för kollen, gemensam paus vid exportfel, och felpausen sätts
+  bara av nyckelfel (401) när det är kollen som kör. Tidsgränsen ingår inte
+  i `fetchOrderData`s inflight-nyckel — en panel med exakt samma fönster
+  delar kollens export och kan då vänta längre än 90 s.
+- ⚠ **customers/redact-webhooken raderar KundOrder-rader per order-ID** —
+  ligger ordern inom 45 dagar skriver nästa koll tillbaka en rad för den
+  (med `kundHash`, aldrig klartext). Så var det redan med panelens egna
+  omexporter; kollen gör det bara oftare. Ej åtgärdat här.
+- ⚠ **Inte prövat skarpt.** Kontrollera efter deploy på stonepnl-test:
+  återbetala en 20 dagar gammal order, vänta ett tick (≤ 15 min + exporten),
+  och se att `DailyPnl.returns` och `totalSales` för den dagen ändrats; avboka
+  en order och se att dess KundOrder-rad är borta. `refundResyncAt` ska vara
+  satt på alla installerade butiker inom ett par timmar.
+- Tester: `test/historik.test.mjs` (fönstret: 45 dagar, klämning, årsskifte)
+  och `test/returkoll.test.mjs` (butiksvalet: null först, äldst först, tre,
+  pausen; klockslaget; gruppens äldsta; och att en avbokad order saknas i det
+  som skrivs och i tabellen efteråt, att fönstret töms vid tom hämtning, att
+  flyttad dag inte krockar, och bitarna).
+
+### Orderhistorikens 60-dagarsgräns och sidtaket (2026-09-26)
+
+Två hål i samma regel — **en misslyckad datahämtning får aldrig skriva ett
+värde** — som båda gav nollor bredvid full annonskostnad.
+
+**1. Shopifys 60 dygn.** Utan scopen `read_all_orders` ser en app bara de
+senaste 60 dagarnas ordrar, och Shopify svarar **tomt, inte med fel**, för
+äldre. Ingen av våra registreringar har scopen (`shopify.app.toml`,
+`scopesForService`). `parseOrderLines` startar varje dag i fönstret på noll
+och `refreshDaily` skrev alla — så 90d-vyn (6-timmarsomexporten av hela
+intervallet), egna datum upp till 364 dagar, 90d-jämförelsen och
+LTV-bakfyllnaden (400 dagar) skrev noll omsättning över riktiga gamla dagar
+medan annonskostnaden låg kvar. Räkneexempel: 9 000 kr/dag, 45 % brutto,
+3 000 kr/dag i spend ger +94,5 k på kvartalet; med 30 nollade dagar visade
+panelen −27 k.
+
+Byggt:
+- `app/lib/historik.ts` (ren, testad): `historikHorisont` = idag − 59 i
+  butikens tid, eller null med `read_all_orders`/bevisad full historik.
+  `klampaFonster` klämmer ett hämtfönster (null = hela före gränsen).
+  `klassaDag` sorterar en dag i `sales` / `missing` / `outsideHistory`.
+- **Sonden** `harFullOrderhistorik` (shopify-data.server): `orders(first: 1)`
+  skapade före idag − 61. En träff = full historik. Sparas i
+  `ShopSettings.fullOrderHistory` + `fullOrderHistoryCheckedAt`, körs om
+  varje vecka. Körs BARA där admin redan finns (`refreshDaily`,
+  bakfyllnaden) — panelens och gruppens läsning använder det sparade
+  svaret och väntar aldrig på den. Fel ⇒ ingenting skrivs.
+- **`refreshDaily` kläms först** (`butikensHorisont` + `klampaFonster`). Ligger
+  hela fönstret före gränsen returnerar den innan hämtningen: ingen
+  DailyPnl-upsert, ingen HourlyPnl-radering, ingen KundOrder. Det täcker
+  alla anropare på en gång: panelens synkrona fyllning och bakgrund,
+  jämförelsen, `refreshShopDaily`/gruppen och bakfyllnaden.
+- **`readDaily` tar `horisont` + `tidszon`.** Dagar före gränsen utan rad, och
+  rader vars hämtning inte såg hela dagen, hamnar i `outsideHistory` —
+  varken `missingDays` (hade exporterats på varje besök) eller `sales`.
+  `oldestFetchedAt` räknas bara över dagar innanför gränsen, annars hade
+  6-timmarsomexporten startat på varje besök.
+- **Panelen** tar bort `outsideHistory`-dagarna ur annonskostnaden före
+  `compute()` och visar en varningsbanner (båda språken). Fasta kostnader
+  följer av sig själv — `compute()` räknar dem per säljdag. Jämförelsen
+  blir `null` (inga ▲▼) när den föregående perioden har sådana dagar.
+- **Gruppen** gör samma sak per medlem med medlemmens EGEN gräns och visar
+  en info-ruta som namnger butiken (`historyNotes`, egen lista — det är
+  inget ägaren ska göra, så den hör inte hemma under "Behöver göras").
+- **Bakfyllnaden** stannar vid `max(idag − dagar, horisont)`.
+
+**2. Sidtaket.** Korta fönster (≤ 7 dagar) paginerar `orders(first: 50)` i
+högst 20 sidor, och radartiklarna tas med `lineItems(first: 25)`. Nåddes
+taket returnerades det halva resultatet utan flagga. En butik med 150
+ordrar/dag som öppnade 7d (nio dagar med marginalen) tappade en fjärdedel.
+Nu: `paginera()` (ren, i `app/lib/orderrader.ts`) returnerar
+`{ lines, trunkerad }` — trunkerad när `hasNextPage` fortfarande är sant
+efter sida 20, eller när någon order har `lineItems.pageInfo.hasNextPage`.
+Då tar `doFetchOrderData` om SAMMA fönster via bulk-exporten (inget tak).
+
+Medvetna beslut:
+- **Sidtaket kastar inte.** Den synkrona fyllningen awaitas i panelens
+  loader — ett kast hade gett varje högvolymsbutik felsidan varje gång, och
+  i gruppen hade `refreshShopDaily` uteslutit den för gott. Bara om bulk-
+  exporten själv felar kastas det.
+- **Radtrunkering avbryter bläddringen direkt** — resultatet kastas ändå, och
+  varje sida kostar API-budget.
+- **`klassaDag` är tidszonsexakt, inte "61 dagar".** Planen sa "fetchedAt mer
+  än 61 dagar efter dagen". Regeln här: raden är hel bara om gränsen vid
+  hämtningen (fetchedAt − 60 dygn), uttryckt som dag i butikens tid, ligger
+  FÖRE dagen. Hamnade gränsen inne i dagen var raden halv — och en halv dag
+  som visas som hel är samma för låga omsättning. 61-dagarsregeln hade
+  släppt igenom rader hämtade mellan 60 och 61 dygn efter dagens början.
+- **Under marknadsfilter** räknas en rad före gränsen som saknar uppdelning
+  per marknad som `outsideHistory` — en omexport kan aldrig ge den en.
+- **`readDaily` utan `horisont` sorterar ingenting.** Chatten (30 dagar) och
+  Kostnader (produktmixen över 90 dagar) läser som förut — de räknar ingen
+  vinst mot annonskostnad per dag.
+- **Parsern flyttades** till `app/lib/orderrader.ts` med explicita
+  `.ts`-importer (`parseOrderLines`, `summeraAvgifter`, `mergeProductRows`,
+  `paginera`, `dayInTz`, typerna `OrderData`/`KundOrderRa`).
+  `shopify-data.server.ts` exporterar dem vidare, så ingen anropare ändrades.
+  Förut gick den inte att testa: testkörningen (`--experimental-strip-types`)
+  kan inte lösa upp `./marknad` utan filändelse.
+
+Fällor:
+- ⚠ **60-dagarsbeteendet är inte uppmätt skarpt** — det kommer ur Shopifys
+  dokumentation och appens egen kommentar. Sonden gör spärren rätt åt båda
+  håll. Kontrollera efter deploy: öppna 90d på SE-butiken; DailyPnl-rader
+  äldre än idag − 59 ska behålla sin `fetchedAt` och sitt orderantal, och
+  bannerns dagantal ska stämma.
+- ⚠ **Redan nollade dagar går inte att få tillbaka** utan `read_all_orders`.
+  Spärren gör bara att de inte längre visas som riktiga nollor.
+- ⚠ **Horisonten får aldrig räknas om mitt i en laddning.** Panelen läser den
+  en gång; sonden kan ändra svaret under `refreshDaily`, och då plockar
+  NÄSTA laddning upp de nya dagarna. Byts den mitt i hamnar dagar varken i
+  `missingDays`-fyllningen eller i bannern.
+- ⚠ **Bulk-reserven håller butikens enda bulk-plats** (~30 s) under en
+  7d-uppdatering hos högvolymsbutiker. `runOrdersBulk` väntar ut
+  "already in progress" upp till sex gånger och följer sedan sin EGEN
+  exports ID (se returkollens fällor).
+- `mergeProductRows` nyckel har en NUL-separator; i nya filen står den som
+  `\u0000` så att grep inte ser filen som binär.
+- Nya tester: `test/historik.test.mjs` (gränsen, klämningen, `klassaDag`,
+  och att filtrerad spend ger samma MER som en period från gränsen) och
+  `test/orderrader.test.mjs` (21 sidor ⇒ trunkerad med alla 20, radtrunkering,
+  och fixturer som låser dagens intäktsräkning).
 
 ### AI-rutan ger VAL, inte frågor (2026-09-18, build valj-prisspalt-v96)
 
@@ -549,7 +1282,8 @@ butiken utanför i fem minuter till. **En full ruta direkt efter en deploy
 betyder därför inte att något är trasigt** — kontrollera `/healthz` och
 ladda om efter några minuter innan du felsöker något annat.
 Gruppsumman rör inte produktkatalogen: `daily.server.ts` importerar bara
-`fetchOrderData` och `mergeProductRows` ur `shopify-data.server.ts`.
+`fetchOrderData`, `mergeProductRows`, `dayInTz` och `harFullOrderhistorik`
+ur `shopify-data.server.ts`.
 
 **Skilj "gick inte" från "försöker igen" (v100).** `getSpend` skiljer redan
 på `retrying` (Meta svarade inte den här gången — nästa laddning har den
@@ -619,6 +1353,66 @@ slår ihop **två** källor: `BILLING_EXEMPT_SHOPS` i miljön (som förut) och
 **`pnl-app/gratis-butiker.json`** i repot. Filen finns för att listan ska gå
 att fylla på med en push — Axel ska inte behöva klicka i Railways
 miljövariabler. Lägg till hela `.myshopify.com`-adressen i små bokstäver.
+
+### Procenten syns (2026-09-26, build procent-v117)
+Axel (CaraShell säljer till USA): *"jag ser inte procentsatserna tillräckligt
+tydligt"*. Procenten fanns bara som liten grå text i uppdelningen.
+- **Varje kostnadsruta har en etikett** (Polaris `Badge`, fältet `andel` på
+  kpis): Annonser, COGS, Tull, Fasta = "X % av försäljningen";
+  Nettovinst = "marginal X %" (röd vid minus eller saknad annonskostnad,
+  blå/info med "≤" när kostnad saknas, grön annars).
+- **Uppdelningen** (`BreakdownRow`): procenten i fast bredd, normal färg,
+  halvfet, minustecken på negativ andel.
+- **Per marknad** fick två kolumner: **Varukostnad %** (COGS ÷ försäljning,
+  "≥" vid osäker kostnad) och **Bidrag %** (bidrag ÷ försäljning, samma färg
+  och "≤" som bidraget). `Marknadsrad.cogs` bär underlaget.
+
+### Per marknad, AOV-ruta och vinst per dag (2026-09-26, build marknadsoversikt-v116)
+Axel: *"jag behöver veta exakt vad min breakeven roas är [i USA] … och hur
+mycket vinst jag ligger på varje dag … AOV på dashboarden men man kanske
+redan gör det?"* AOV fanns — som grå text under Ordrar, och han såg den
+inte. Break-even per land fanns — bakom filtret ?market=US, ett land i taget.
+- **Tio rutor i två rader** (`kpiOrdning`): Försäljning, Ordrar, **Snittorder
+  (AOV)**, Annonser, MER / COGS, Tull, Fasta, Nettovinst, **Vinst per dag**
+  (nettovinst ÷ periodens dagar, samma färgregel och "≤" som nettovinsten).
+  AOV-rutans pil jämför mot föregående periods totalSales ÷ orders.
+- **Kortet "Per marknad"** (`lib/marknadsoversikt.ts`, 5 tester): en rad per
+  land, bara i hela butikens vy och bara när fler än ett land sålt. Ur
+  SAMMA dagsrader (`readDaily` → `delaMarknader` → `marknadsdelar`) och
+  SAMMA annonsrader (`getSpend` → `perMarknad` → `byMarket`) — inga extra
+  anrop mot Shopify eller Meta. Varje land räknas med `compute()` med
+  `fixedMonthlyTotal: 0`: **bidraget är före fasta kostnader**, de hör till
+  butiken. Tre regler som sitter i koden:
+  1. **Break-even räknas utan annonskostnad** (omsättning ÷ bruttovinst), så
+     den står även för ett land utan märkta kampanjer. Annonser, MER och
+     bidrag blir då "inga kampanjer märkta"/"—", aldrig 0.
+  2. **"*" = landet har ingen egen kostnadspost** (CostChange/CostTier med
+     market) och räknas på butikens standardkostnad — texten under tabellen
+     säger det med namn. Frakten till USA är inte frakten till Sverige.
+  3. **"≥" på break-even / "≤" på bidraget** när > 2 % av landets försäljning
+     saknar kostnad, samma gräns som panelen. Ingen färg då.
+  Under tabellen: länder på standardtull, annonskostnad på omärkta kampanjer
+  (`omarktSpend`, i butikens summa men i inget land), dagar utan uppdelning.
+  Klick på landet sätter ?market=.
+
+### Enhet på varje belopp (2026-09-26, build enheter-v115)
+Axels ask: *"fixa enheter på varje metric … det är fett jobbigt att vi inte
+kan se det så jävla tydligt"*. Panelen (`app._index.tsx`) hade redan valuta,
+% och × överallt — hålen låg på undersidorna, där belopp stod som nakna tal:
+- **Kostnader** (`app.costs.tsx`): Pris, Inköp/Standard, varje marknads-
+  kolumn och TB/st bär nu valutan i cellen (`kr()`); rubriken "TB/st (SEK)"
+  blev "TB/st" så valutan inte står två gånger.
+- **En produkts kostnader** (`app.costs.$id.tsx`): nuvarande kostnad,
+  break-even-tabellen (omsättning, kostnad, TB, mixraden), flerpackstabellen,
+  historiken och bannern "Total inköpskostnad" (i FORMULÄRETS valuta — den
+  kan vara USD). Sparat-meddelandena säger valutan.
+- **Fasta kostnader** (`app.fixed.tsx`): tabellen och underrubriken. Den
+  svenska underrubriken och kolumnerna sa hårdkodat "kr" — fel i en NOK-,
+  EUR- eller GBP-butik. Nu "Per månad"/"Per dag" och valutan i talet.
+- **LTV**: kurvans stapeletiketter och spannet "(låg–hög VALUTA)".
+- **Timgrafen**: ROAS-läget skrev "2.31×" även på svenska — nu "2,31×".
+Regel framåt: **ett belopp skrivs aldrig utan valuta, en andel aldrig utan %,
+en kvot aldrig utan ×** — inte heller i en tabell med valutan i rubriken.
 
 ### Timmar på dygnet — datalagret (2026-09-23, build timdata-v108)
 

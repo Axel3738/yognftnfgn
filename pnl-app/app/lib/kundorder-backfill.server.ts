@@ -9,11 +9,12 @@
  *
  * Skopet begränsar hur långt bakåt: utan read_all_orders ger Shopify bara
  * 60 dagar, och frågan för äldre fönster kommer tillbaka tom — inte fel.
- * Därför slutar loopen när ett fönster ger noll ordrar två gånger i rad.
+ * Därför går loopen aldrig bortom orderhorisonten (`butikensHorisont`), och
+ * den slutar även när ett fönster ger noll ordrar två gånger i rad.
  */
 
 import prisma from "../db.server";
-import { adminFromToken, giltigToken, refreshDaily, shiftIso } from "./daily.server";
+import { adminFromToken, butikensHorisont, giltigToken, refreshDaily, shiftIso } from "./daily.server";
 import { butikensScope, harKundScope } from "./kundorder.server";
 import { dayInTz } from "./shopify-data.server";
 
@@ -52,7 +53,16 @@ async function kor(shop: string, dagar: number): Promise<void> {
 
   let to = idag;
   let tomma = 0;
-  const stopp = shiftIso(idag, -dagar);
+  /* Aldrig längre bak än orderhorisonten. Förut gick loopen 400 dagar bakåt
+     och körde hela refreshDaily per fönster — och bortom Shopifys 60 dygn
+     kom svaret tomt tillbaka, så riktiga dagsrader skrevs över med noll
+     försäljning bredvid kvarliggande annonskostnad. refreshDaily kläms nu
+     själv, men att ens starta en export som bara kan ge noll är slöseri
+     med butikens enda bulk-plats. Sonden körs här (med admin) så att en
+     butik med full historik får gå hela vägen. */
+  const horisont = await butikensHorisont(shop, tz, { admin, scope });
+  const bakat = shiftIso(idag, -dagar);
+  const stopp = horisont != null && horisont > bakat ? horisont : bakat;
   try {
     while (to > stopp) {
       const from = shiftIso(to, -(FONSTER - 1)) > stopp ? shiftIso(to, -(FONSTER - 1)) : stopp;

@@ -11,6 +11,25 @@
  * 3-pack betalar tullen en gång.
  */
 
+import { andelUtan, arKostnadOsaker } from "./kostnadstackning.ts";
+import { malUtrymmeFor, skalningsKvoter } from "./skalning.ts";
+import { raknaAvgifter } from "./avgifter.ts";
+import { kopieraIntakt, laggTillIntakt, radIntakt } from "./produktintakt.ts";
+
+/* Skalningsbeslutet bor i skalning.ts (får importeras av klienten); motorn
+   exporterar det vidare så att alla räknar med samma funktion. */
+export {
+  beslutsText,
+  bidragsBand,
+  skalningsBeslut,
+  skalningsKvoter,
+  MIN_DAGAR_SKALA,
+  MIN_ORDRAR_BESLUT,
+  type Beslut,
+  type BidragsBand,
+  type SkalningsBeslut,
+} from "./skalning.ts";
+
 export interface SalesDay {
   day: string; // YYYY-MM-DD
   orders: number;
@@ -25,6 +44,15 @@ export interface SalesDay {
    * Null/saknas = okänt för dagen → motorn räknar den dagen med procentsatsen.
    */
   fees?: number | null;
+  /**
+   * Omsättning i ordrar betalda genom Shopify Payments — den del av
+   * `totalSales` som `fees` faktiskt täcker. Resten (PayPal, direkt-Klarna,
+   * manuellt) räknas med satsen. Null/saknas = äldre rad: hela omsättningen
+   * räknas som täckt, som förut, tills dagen hämtas om.
+   */
+  feesCoveredSales?: number | null;
+  /** Omsättning per betalväxel ({ shopify_payments: 6000, paypal: 4000 }). */
+  gatewaySales?: Record<string, number> | null;
 }
 
 export interface SessionDay {
@@ -56,6 +84,9 @@ export interface MarknadsDel {
   shippingCharges: number;
   /** Faktiska avgifter för marknadens ordrar den dagen. Null = okänt. */
   fees?: number | null;
+  /** Som SalesDay.feesCoveredSales, för marknadens ordrar. */
+  feesCoveredSales?: number | null;
+  gatewaySales?: Record<string, number> | null;
   products: ProductRow[];
 }
 
@@ -81,6 +112,29 @@ export interface ProductRow {
    * enheter som styckköp.
    */
   lines?: Record<string, number>;
+  /**
+   * Det kunderna faktiskt betalade för varan: Σ styckpris efter ALLA rabatter
+   * (även ordernivåns koder) × antal. `netSales` ovan är radens
+   * discountedTotal och drar bara radrabatter. Saknas på äldre dagsrader —
+   * och på en hopslagen rad där någon del saknar det (se produktintakt.ts).
+   */
+  netRevenue?: number;
+  /**
+   * Samma intäkt per antal i raden, syskon till `lines`: { "2": 1497 }.
+   * `lines` får ALDRIG byta form — rowCost och mergeProductRows räknar dess
+   * värden som tal, och ett objekt där hade kostat varje enhet som styck.
+   */
+  linesRevenue?: Record<string, number>;
+  /** Orderrader bakom `linesRevenue` per antal (färre än `lines` så länge
+   *  äldre dagsrader utan pris ingår). Break-even delar med den. */
+  linesPriced?: Record<string, number>;
+  /**
+   * Kostnaden är panelens UPPSKATTNING (X % av priset), inte ett inköpspris.
+   * Sätts i panelens loader när butiken valt uppskattad COGS; bärs hela vägen
+   * till produkttabellen så att raden visas med "≈" och aldrig läses som
+   * riktig.
+   */
+  estimated?: boolean;
 }
 
 /** Totalkostnad för `units` stycken i samma orderrad. Antal 1 = unitCost. */
@@ -161,6 +215,12 @@ export interface Settings {
     string,
     { feeRate?: number | null; fxFeeRate?: number | null; tariffPerOrder?: number | null }
   >;
+  /**
+   * Shopifys egen avgift på ordrar som INTE betalats med Shopify Payments
+   * (planens tredjepartsavgift, 0,5–2 %). Tas på den omsättning som
+   * bevisligen gick via en annan betalväxel, ovanpå satsen. Saknas = 0.
+   */
+  thirdPartyFeeRate?: number;
 }
 
 /** Effektiv avgiftsandel för en marknad: egen post om den finns, annars standard. */
@@ -207,11 +267,25 @@ export interface ComputeInput {
    */
   salesByMarket?: Record<string, number>;
   /**
+   * Omsättning med FAKTISKA avgifter (Shopify Payments) per marknad, samma
+   * nycklar som `salesByMarket`. Finns den får den otäckta omsättningen
+   * satsen för den marknad den kom ifrån; saknas den skalas periodens
+   * marknadsmix med den otäckta andelen (som förut).
+   */
+  coveredByMarket?: Record<string, number>;
+  /**
    * Antal ordrar per marknad i intervallet. Underlaget för tull per marknad:
    * tullen är ett belopp per order, så den måste räknas på ordrarna och inte
    * på omsättningen. Ordrar utan marknad tar butikens standardtull.
    */
   ordersByMarket?: Record<string, number>;
+  /**
+   * Varianter handlaren uttryckligen sagt är gratis (gåvor, prover). En
+   * kostnad på 0 räknas då som riktig. Alla andra nollor räknas som saknad
+   * kostnad i täckningen — ett 0,00 från en dropship-app eller en CSV är
+   * mycket oftare ett tomt fält än en gratis vara.
+   */
+  freeVariants?: string[];
 }
 
 export interface ProductResult extends ProductRow {
@@ -229,6 +303,11 @@ export interface ProductResult extends ProductRow {
    */
   blend: number | null;
   blendNote: string | null;
+  /**
+   * Kostnaden är exakt 0 och varianten är inte kvitterad som gratis.
+   * Visas som "0?" i produkttabellen och räknas som saknad i täckningen.
+   */
+  zeroCost: boolean;
 }
 
 export interface Totals {
@@ -269,6 +348,18 @@ export interface Totals {
   breakEvenRoas: number | null;
   /** Max CPA för att nå målmarginalen. */
   maxCpaAtTarget: number | null;
+  /**
+   * MER som krävs för målmarginalen: omsättning / (bruttovinst − målmarginal
+   * × omsättning). Samma tröskel som `maxCpaAtTarget` i MER-form — CPA ≤
+   * max-CPA gäller precis när MER ≥ targetMer. Null när målet inte går att nå
+   * ens utan annonser.
+   */
+  targetMer: number | null;
+  /** CPA där annonserna äter hela bruttovinsten: bruttovinst / ordrar. Null
+   *  när bruttovinsten är ≤ 0 (då finns ingen break-even, precis som MER). */
+  breakEvenCpa: number | null;
+  /** Evolves tumregel break-even + 1. Bara referens, aldrig beslutsgrund. */
+  evolveScaling: number | null;
 
   /** Fasta kostnader för perioden: (månadssumma × 12 / 365) × antal dagar. */
   fixedCosts: number;
@@ -278,11 +369,45 @@ export interface Totals {
   netProfit: number;
 
   unitsWithoutCost: number;
+  /**
+   * Nettoförsäljning på rader UTAN kostnad (null). De bidrar 0 till COGS, så
+   * vinsten är för hög med hela deras verkliga varukostnad.
+   */
+  netSalesWithoutCost: number;
+  /** Nettoförsäljning och enheter på rader med kostnad exakt 0 som inte är
+   *  kvitterade som gratis (`freeVariants`). Samma effekt som saknad kostnad. */
+  netSalesZeroCost: number;
+  unitsZeroCost: number;
+  /** Summan av produktradernas (positiva) nettoförsäljning — nämnaren i
+   *  täckningen. Gruppsumman behöver den för att väga ihop butikerna. */
+  productNetSales: number;
+  /**
+   * Andel av produktraderna nettoförsäljning som har en riktig kostnad:
+   * 1 − (utan kostnad + otillåtna nollor) / nettoförsäljning. Null när
+   * nettoförsäljningen är noll — då finns inget att döma.
+   */
+  cogsCoverage: number | null;
+  /**
+   * Mer än KOSTNAD_TROSKEL (2 %) av nettoförsäljningen saknar riktig kostnad.
+   * Då är vinsten en ÖVRE gräns och break-even en UNDRE — ingen grön hjälte,
+   * ingen konfetti, ingen grön vinstruta.
+   */
+  kostnadOsaker: boolean;
   /** Dagar med försäljning men utan annonsdata. TB blir för högt när den inte är tom. */
   missingSpendDays: string[];
   spendComplete: boolean;
-  /** Dagar vars avgifter är FAKTISKA (ur ordertransaktionerna), av periodens dagar. */
+  /** Dagar vars avgifter är hämtade ur ordertransaktionerna, av periodens dagar. */
   feesKnownDays: number;
+  /**
+   * Andel av omsättningen vars avgifter är FAKTISKA (Shopify Payments). Null
+   * utan omsättning. Resten räknades med satsen — det är den andelen
+   * avgiftsraden på panelen redovisar, inte ett antal dagar.
+   */
+  feesActualShare: number | null;
+  /** Betalväxlar utanför Shopify Payments i perioden, störst först. */
+  feesOtherGateways: string[];
+  /** Shopifys tredjepartsavgift (ingår i `fees`). */
+  feesThirdParty: number;
   /** Avgifter som andel av omsättningen, faktiskt + sats för resten. */
   effFeeRate: number;
 }
@@ -383,8 +508,16 @@ export function compute(input: ComputeInput): ComputeResult {
 
   const appliedNotes = new Map<string, number>();
   const allaTiers = input.costTiers ?? [];
+  const fria = new Set(input.freeVariants ?? []);
   let cogs = 0;
   let unitsWithoutCost = 0;
+  /* Täckningen räknas på produktradernas EGEN nettoförsäljning — samma
+     underlag i täljare och nämnare. Dagsradernas netSales drar dessutom av
+     returer, som produktraderna inte gör; blandas de hade andelen glidit. */
+  let underlag = 0;
+  let netSalesWithoutCost = 0;
+  let netSalesZeroCost = 0;
+  let unitsZeroCost = 0;
 
   const products: ProductResult[] = input.products
     .map((row): ProductResult => {
@@ -408,20 +541,42 @@ export function compute(input: ComputeInput): ComputeResult {
       if (rowCogs != null) cogs += rowCogs;
       else unitsWithoutCost += row.units;
 
-      const contribution = rowCogs != null ? row.netSales - rowCogs : null;
+      /* Negativa rader (en order som krediterats mer än den sålde) får inte
+         dra ner underlaget och ge täckning över 100 %. */
+      const oms = Math.max(0, row.netSales);
+      underlag += oms;
+      /* En nolla är bara misstänkt om hela radens COGS blev noll: ett
+         styckpris 0 med riktiga flerpackspriser har en kostnad inlagd. */
+      const zeroCost =
+        rowCogs === 0 && cost === 0 && !(row.variantGid != null && fria.has(row.variantGid));
+      if (rowCogs == null) netSalesWithoutCost += oms;
+      else if (zeroCost) {
+        netSalesZeroCost += oms;
+        unitsZeroCost += row.units;
+      }
+
+      /* Bruttovinst, marginal och multipel på det kunden BETALADE (efter
+         ordernivåns rabatter) när raden bär det — samma tal som tabellens
+         omsättningskolumn. Annars hade en produkt som mest säljs med en
+         10 %-kod visat ~30 kr för hög vinst per styck. Äldre rader: netSales. */
+      const betalt = radIntakt(row);
+      const contribution = rowCogs != null ? betalt - rowCogs : null;
       return {
         ...row,
         effectiveCost: cost,
         cogs: rowCogs,
         contribution,
-        margin: rowCogs != null && row.netSales > 0 ? (contribution as number) / row.netSales : null,
+        margin: rowCogs != null && betalt > 0 ? (contribution as number) / betalt : null,
         multiple:
-          cost != null && cost > 0 && row.units > 0 ? row.netSales / row.units / cost : null,
+          cost != null && cost > 0 && row.units > 0 ? betalt / row.units / cost : null,
         blend,
         blendNote,
+        zeroCost,
       };
     })
-    .sort((a, b) => b.netSales - a.netSales);
+    .sort((a, b) => radIntakt(b) - radIntakt(a));
+
+  const andelUtanKostnad = andelUtan(netSalesWithoutCost + netSalesZeroCost, underlag);
 
   const orders = sum(sales, (s) => s.orders);
   const totalSales = sum(sales, (s) => s.totalSales);
@@ -442,22 +597,15 @@ export function compute(input: ComputeInput): ComputeResult {
     ordrarFordelade += antal;
   }
   tariff += Math.max(0, orders - ordrarFordelade) * settings.tariffPerOrder;
-  /* Avgifterna. Först det som FAKTISKT drogs: dagar med `fees` ur
-     ordertransaktionerna räknas rakt av — kortavgift, växlingsavgift,
-     utländskt kort, allt Shopify Payments tog. Dagar utan känd avgift
-     (äldre rader, eller Shopify lämnade inte ut fältet) räknas med satsen
-     per marknad: USA-ordrar bär USA:s kortavgift plus växlingsavgiften,
-     svenska ordrar standarden. Omsättning som inte är fördelad på marknad
-     tar standardsatsen. */
-  let faktiska = 0;
-  let omsMedFaktiska = 0;
-  let feesKnownDays = 0;
-  for (const s of sales) {
-    if (s.fees == null) continue;
-    faktiska += s.fees;
-    omsMedFaktiska += s.totalSales;
-    feesKnownDays++;
-  }
+  /* Avgifterna. Först det som FAKTISKT drogs: `fees` ur ordertransaktionerna
+     räknas rakt av — kortavgift, växlingsavgift, utländskt kort, allt
+     Shopify Payments tog. Men de täcker bara omsättningen i ordrar som gick
+     genom Shopify Payments (`feesCoveredSales`). Resten — PayPal, direkt-
+     Klarna, manuellt, och dagar utan känd avgift — räknas med satsen per
+     marknad: USA-ordrar bär USA:s kortavgift plus växlingsavgiften, svenska
+     ordrar standarden. Omsättning som inte är fördelad på marknad tar
+     standardsatsen. Förut räknades hela dagen som faktisk, och en butik utan
+     Shopify Payments fick avgift 0 överallt. */
   let satsBaserat = 0;
   let fordelad = 0;
   for (const [m, belopp] of Object.entries(input.salesByMarket ?? {})) {
@@ -465,9 +613,25 @@ export function compute(input: ComputeInput): ComputeResult {
     fordelad += belopp;
   }
   satsBaserat += Math.max(0, totalSales - fordelad) * settings.feeRate;
-  /* Satsen gäller bara den del av omsättningen som saknar faktisk avgift. */
-  const okandAndel = totalSales > 0 ? Math.max(0, totalSales - omsMedFaktiska) / totalSales : 0;
-  const fees = faktiska + satsBaserat * okandAndel;
+  /* Satsen gäller bara den del av omsättningen som saknar faktisk avgift
+     (avgifter.ts, testad). Med täckt omsättning per marknad räknas den
+     marknad för marknad: en PayPal-order från USA ska bära USA:s sats, inte
+     periodens snitt där svenska Shopify Payments-ordrar drar ner den. */
+  const avg = raknaAvgifter({
+    sales,
+    totalSales,
+    satsBaserat,
+    thirdPartyFeeRate: settings.thirdPartyFeeRate,
+    perMarknad: input.coveredByMarket
+      ? {
+          oms: input.salesByMarket ?? {},
+          tackt: input.coveredByMarket,
+          satsFor: (m) => feeRateFor(settings, m),
+          standard: settings.feeRate,
+        }
+      : undefined,
+  });
+  const fees = avg.fees;
   /* Den blandade satsen — det break-even och max-CPA ska räkna med. */
   const effFeeRate = totalSales > 0 ? fees / totalSales : settings.feeRate;
   const contribution = totalSales - cogs - tariff - spend;
@@ -479,6 +643,15 @@ export function compute(input: ComputeInput): ComputeResult {
   const dayCount = sales.length;
   const fixedCosts = ((input.fixedMonthlyTotal ?? 0) * 12 / 365) * dayCount;
   const grossProfit = totalSales - cogs - tariff - fees;
+
+  /* Skalningskvoterna ur EN funktion (skalning.ts) — gruppens rader räknar
+     med samma, så MER-rutan och tabellen kan inte döma olika. */
+  const kvoter = skalningsKvoter({ totalSales, spend, grossProfit, targetMargin: settings.targetMargin });
+  /* Max-CPA och targetMer delar täljare. Förut stod max-CPA som
+     omsättning × (1 − mål − avgiftssats) − COGS − tull: matematiskt samma
+     sak, men flyttalen kunde skilja sig på sista decimalen, och då hade
+     CPA-rutan och MER-rutan kunnat säga olika precis på gränsen. */
+  const malUtrymme = malUtrymmeFor(grossProfit, settings.targetMargin, totalSales);
 
   const missingSpendDays = input.spendReliable
     ? []
@@ -514,21 +687,30 @@ export function compute(input: ComputeInput): ComputeResult {
     contribution,
     netContribution: contribution - fees,
 
-    breakEvenMer: grossContribution > 0 ? totalSales / grossContribution : null,
+    breakEvenMer: kvoter.breakEvenMer,
     breakEvenRoas: grossContribution > 0 ? totalSales / grossContribution : null,
-    maxCpaAtTarget:
-      orders > 0
-        ? (totalSales * (1 - settings.targetMargin - effFeeRate) - cogs - tariff) / orders
-        : null,
+    maxCpaAtTarget: orders > 0 ? malUtrymme / orders : null,
+    targetMer: kvoter.targetMer,
+    breakEvenCpa: orders > 0 && grossProfit > 0 ? grossProfit / orders : null,
+    evolveScaling: kvoter.evolveScaling,
 
     fixedCosts,
     grossProfit,
     netProfit: grossProfit - spend - fixedCosts,
 
     unitsWithoutCost,
+    netSalesWithoutCost,
+    netSalesZeroCost,
+    unitsZeroCost,
+    productNetSales: underlag,
+    cogsCoverage: andelUtanKostnad == null ? null : 1 - andelUtanKostnad,
+    kostnadOsaker: arKostnadOsaker(andelUtanKostnad),
     missingSpendDays,
     spendComplete: missingSpendDays.length === 0,
-    feesKnownDays,
+    feesKnownDays: avg.kandaDagar,
+    feesActualShare: avg.faktiskAndel,
+    feesOtherGateways: avg.andraBetalvagar,
+    feesThirdParty: avg.tredjepart,
     effFeeRate,
   };
 
@@ -558,7 +740,7 @@ export function slaIhopMarknader(rows: ProductResult[]): ProductResult[] {
     const key = r.variantGid ?? `${r.title}|${r.variantTitle ?? ""}`;
     const a = by.get(key);
     if (!a) {
-      by.set(key, { ...r, market: undefined, lines: r.lines ? { ...r.lines } : undefined });
+      by.set(key, { ...r, market: undefined, lines: r.lines ? { ...r.lines } : undefined, ...kopieraIntakt(r) });
       continue;
     }
     a.units += r.units;
@@ -567,20 +749,28 @@ export function slaIhopMarknader(rows: ProductResult[]): ProductResult[] {
       a.lines = { ...(a.lines ?? {}) };
       for (const [q, n] of Object.entries(r.lines)) a.lines[q] = (a.lines[q] ?? 0) + n;
     }
+    /* Intäkten efter alla rabatter: samma regler som dagarnas hopslagning
+       (produktintakt.ts). `lines` rörs inte av den. */
+    laggTillIntakt(a, r);
     /* Saknar någon del kostnad saknar summan det — en halv COGS är ingen COGS. */
     a.cogs = a.cogs != null && r.cogs != null ? a.cogs + r.cogs : null;
-    a.contribution = a.cogs != null ? a.netSales - a.cogs : null;
-    a.margin = a.cogs != null && a.netSales > 0 ? (a.contribution as number) / a.netSales : null;
+    const oms = radIntakt(a);
+    a.contribution = a.cogs != null ? oms - a.cogs : null;
+    a.margin = a.cogs != null && oms > 0 ? (a.contribution as number) / oms : null;
     a.effectiveCost = a.cogs != null && a.units > 0 ? a.cogs / a.units : null;
     a.multiple =
-      a.effectiveCost != null && a.effectiveCost > 0 && a.units > 0 ? a.netSales / a.units / a.effectiveCost : null;
+      a.effectiveCost != null && a.effectiveCost > 0 && a.units > 0 ? oms / a.units / a.effectiveCost : null;
     if (a.unitCost == null) a.unitCost = r.unitCost;
+    /* En enda uppskattad eller misstänkt nollad del märker hela raden —
+       annars försvinner märkningen i vyn "alla marknader". */
+    a.estimated = Boolean(a.estimated || r.estimated) || undefined;
+    a.zeroCost = a.zeroCost || r.zeroCost;
     if (a.blendNote !== r.blendNote) {
       a.blend = null;
       a.blendNote = null;
     }
   }
-  return [...by.values()].sort((a, b) => b.netSales - a.netSales);
+  return [...by.values()].sort((a, b) => radIntakt(b) - radIntakt(a));
 }
 
 /** Datumfönster för de förvalda intervallen, relativt en ankardag. */

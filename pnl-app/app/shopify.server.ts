@@ -8,6 +8,7 @@ import {
 } from "@shopify/shopify-app-remix/server";
 import { PrismaSessionStorage } from "@shopify/shopify-app-session-storage-prisma";
 import prisma from "./db.server";
+import { startTull } from "./lib/kostnadstackning";
 import gratisButiker from "../gratis-butiker.json";
 
 export const STANDARD_PLAN = "Standard";
@@ -105,9 +106,14 @@ const shopify = shopifyApp({
         console.error("Kunde inte läsa butikens valuta vid installation:", e);
       }
 
+      /* Tullens startvärde följer valutan (`startTull`): 27,50 i en svensk
+         butik (Axels EU-tull), 0 i alla andra — 27,50 dollar per order är en
+         påhittad kostnad som gör varje dag röd. Okänd valuta ⇒ 0, det säkra
+         hållet. Bara vid SKAPANDET: en ominstallation får aldrig skriva över
+         en tull handlaren redan satt, därför står den inte i `update`. */
       await prisma.shopSettings.upsert({
         where: { shop: session.shop },
-        create: { shop: session.shop, ...(currency ? { currency } : {}) },
+        create: { shop: session.shop, tariffPerOrder: startTull(currency), ...(currency ? { currency } : {}) },
         update: currency ? { currency } : {},
       });
     },

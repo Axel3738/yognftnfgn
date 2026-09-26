@@ -88,7 +88,8 @@ export function Timgraf({
     if (v == null) return "—";
     if (matt === "sales") return money(v);
     if (matt === "orders") return nf.format(v);
-    return `${v.toFixed(2)}×`;
+    /* Kvoten i handlarens språk ("2,31×" på svenska), inte alltid med punkt. */
+    return `${new Intl.NumberFormat(nf.resolvedOptions().locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(v)}×`;
   };
   const timEtikett = (h: number) => `${String(h).padStart(2, "0")}`;
 

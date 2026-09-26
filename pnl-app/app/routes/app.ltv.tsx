@@ -40,6 +40,7 @@ import { butikensScope, harKundScope, lasKundOrdrar, nyaKunderPerDag } from "../
 import { backfillPagar, startaBackfill } from "../lib/kundorder-backfill.server";
 import { lasPlan, planvalsUrl, type PlanLasning } from "../lib/plan.server";
 import { evaluateTips, type Tip } from "../lib/tips.server";
+import { cacBeslut, type Beslut } from "../lib/skalning";
 import { asLang, localeOf, t, type Lang } from "../lib/texts";
 
 const shiftIso = (iso: string, days: number) => {
@@ -110,17 +111,24 @@ async function laddaSida(admin: any, shop: string, url: URL): Promise<Sida> {
     const aov30 = ordrar30.length ? ordrar30.reduce((a, r) => a + r.netto, 0) / ordrar30.length : null;
 
     const mc = result.maxCpa[horizon];
+    /* Trösklarna går bara in när intervallet bär ett beslut — samma grind
+       som beslutsrutan. Ett "dra ner"-tips på ett kundvärde vars intervall är
+       för brett att visa är en dom på tunn data. */
+    const mcOk = mc && mc.konfidens !== "hidden" ? mc : undefined;
     const tips = evaluateTips(
       {
         repeat_rate: result.aterkopsgrad ?? undefined,
         customers: result.totalKunder,
         cohort_customers: result.pool[horizon]?.kunder,
+        /* ltv_60 jämförs med AOV (omsättning mot omsättning) och får vara
+           omsättnings-LTV. Återbetalning mäts på täckningsbidrag. */
         ltv_60: result.maxCpa[60]?.ltv.mid,
-        ltv_90: result.maxCpa[90]?.ltv.mid,
-        ltv_180: result.maxCpa[180]?.ltv.mid,
+        ltv_tb_90: result.maxCpa[90]?.breakEven.mid,
+        ltv_tb_180: result.maxCpa[180]?.breakEven.mid,
         aov: aov30 ?? undefined,
         cpa_new: cpaNew ?? undefined,
-        max_cpa: mc?.maxCpa.mid,
+        max_cpa: mcOk?.maxCpa.mid,
+        break_even_cpa: mcOk?.breakEven.mid,
         new_customers: newCustomers30,
         days: 30,
       },
@@ -337,14 +345,25 @@ function LtvVy({ s }: { s: Sida }) {
 
   /* --- Pro --- */
   const iv = (x: { mid: number; low: number; high: number } | null | undefined) =>
-    x ? `${money(x.mid)} (${T.ltv.range(nf0.format(Math.round(x.low)), nf0.format(Math.round(x.high)))})` : "—";
+    x ? `${money(x.mid)} (${T.ltv.range(nf0.format(Math.round(x.low)), money(x.high))})` : "—";
+  /* Tre band i stället för två. Förut var allt över max-CPA vid
+     målmarginalen rött och "betalar inte tillbaka" — även en CAC som gav
+     +60 kr per kund inom 90 dagar. "Dra ner" gäller nu bara över
+     break-even (kundens täckningsbidrag inom horisonten). */
+  const beslut = cacBeslut(s.cpaNew, mc, s.newCustomers30);
   const verdikt = !mc
     ? T.ltv.notEnough
     : s.cpaNew == null
       ? T.ltv.verdictNoCpa
-      : s.cpaNew <= mc.maxCpa.mid
+      : beslut === "push"
         ? T.ltv.verdictUnder(money(s.cpaNew), money(mc.maxCpa.mid), s.horizon)
-        : T.ltv.verdictOver(money(s.cpaNew), money(mc.maxCpa.mid), s.horizon);
+        : beslut === "hold"
+          ? T.ltv.verdictHold(money(s.cpaNew), money(mc.maxCpa.mid), money(mc.breakEven.mid), s.horizon)
+          : beslut === "pull"
+            ? T.ltv.verdictOver(money(s.cpaNew), money(mc.breakEven.mid), s.horizon)
+            : T.ltv.notEnough;
+  const bannerTon: Record<Beslut, "success" | "warning" | "critical"> = { push: "success", hold: "warning", pull: "critical" };
+  const kpiTon: Record<Beslut, "success" | "caution" | "critical"> = { push: "success", hold: "caution", pull: "critical" };
 
   const kurvMax = Math.max(1, ...HORISONTER.map((hh) => r.maxCpa[hh]?.ltv.high ?? r.pool[hh].aov1 ?? 0));
 
@@ -355,17 +374,24 @@ function LtvVy({ s }: { s: Sida }) {
           <BlockStack gap="400">
             {dataRad}
 
-            <InlineGrid columns={{ xs: 1, md: 3 }} gap="300">
+            <InlineGrid columns={{ xs: 1, sm: 2, lg: 4 }} gap="300">
               <Kpi label={T.ltv.kpiLtv(s.horizon)} value={mc ? money(mc.ltv.mid) : "—"} sub={mc ? `${T.ltv.range(money(mc.ltv.low), money(mc.ltv.high))} · ${T.ltv.confidence[mc.konfidens]}` : T.ltv.notEnough} />
               <Kpi
                 label={T.ltv.kpiMaxCpa(s.horizon)}
                 value={mc && mc.konfidens !== "hidden" ? money(mc.maxCpa.mid) : "—"}
                 sub={mc ? `${T.ltv.range(money(mc.maxCpa.low), money(mc.maxCpa.high))} · ${T.ltv.firstOrderMaxCpa(money(mc.firstOrderMaxCpa))}` : T.ltv.notEnough}
-                tone={mc && s.cpaNew != null ? (s.cpaNew <= mc.maxCpa.mid ? "success" : "critical") : undefined}
+                tone={beslut ? kpiTon[beslut] : undefined}
+              />
+              {/* Break-even-CAC: kundens täckningsbidrag inom horisonten. Det
+                  enda talet ett "dra ner" får mätas mot. */}
+              <Kpi
+                label={T.ltv.kpiBreakEven(s.horizon)}
+                value={mc && mc.konfidens !== "hidden" ? money(mc.breakEven.mid) : "—"}
+                sub={mc ? `${T.ltv.range(money(mc.breakEven.low), money(mc.breakEven.high))} · ${T.ltv.kpiBreakEvenSub(s.horizon)}` : T.ltv.notEnough}
               />
               <Kpi label={T.ltv.kpiCpaNew} value={money(s.cpaNew)} sub={`${money(s.spend30)} / ${nf0.format(s.newCustomers30)}`} />
             </InlineGrid>
-            <Banner tone={!mc ? "info" : s.cpaNew == null ? "info" : s.cpaNew <= mc.maxCpa.mid ? "success" : "critical"}>{verdikt}</Banner>
+            <Banner tone={beslut ? bannerTon[beslut] : "info"}>{verdikt}</Banner>
 
             {s.tips.length ? (
               <Card>
@@ -399,7 +425,7 @@ function LtvVy({ s }: { s: Sida }) {
                       const tb = m?.breakEven.mid ?? null;
                       return (
                         <div key={hh} style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: 4 }}>
-                          <span style={{ fontSize: 11 }}>{ltv == null ? "—" : nf0.format(ltv)}</span>
+                          <span style={{ fontSize: 11 }}>{money(ltv)}</span>
                           <div style={{ display: "flex", gap: 3, alignItems: "flex-end", width: "100%", height: 120 }}>
                             <div title={`${T.ltv.curveRevenue}: ${money(ltv)}`} style={{ flex: 1, height: ltv == null ? 2 : Math.max(2, (ltv / kurvMax) * 120), background: ltv == null ? "#e3e3e3" : "#005bd3", borderRadius: 3 }} />
                             <div title={`${T.ltv.curveTb}: ${money(tb)}`} style={{ flex: 1, height: tb == null ? 2 : Math.max(2, (Math.max(0, tb) / kurvMax) * 120), background: tb == null ? "#e3e3e3" : "repeating-linear-gradient(45deg,#1f8a4c 0 4px,#7dcf9a 4px 8px)", borderRadius: 3 }} />
@@ -495,7 +521,7 @@ function daysBetween(a: string, b: string) {
   return Math.round((Date.parse(b) - Date.parse(a)) / 86_400_000);
 }
 
-function Kpi({ label, value, sub, tone }: { label: string; value: string; sub: string; tone?: "success" | "critical" }) {
+function Kpi({ label, value, sub, tone }: { label: string; value: string; sub: string; tone?: "success" | "critical" | "caution" }) {
   return (
     <Card>
       <BlockStack gap="100">

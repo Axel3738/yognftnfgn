@@ -74,10 +74,12 @@ import {
   type GoogleKonto,
 } from "../lib/google-ads.server";
 import { glomGoogleFel } from "../lib/google-spend.server";
-import { kandaMarknader, uppmattaAvgifter } from "../lib/daily.server";
+import { betalvagar90, kandaMarknader, uppmattaAvgifter } from "../lib/daily.server";
 import { hemlandAv, marknadskod, marknadsnamn, sorteraMarknader, stadaAvgifter } from "../lib/marknad";
 import { hamtaKoppling, provaNyckel, serNyckelUt } from "../lib/ai-nyckel.server";
 import { asLang, localeOf, t, type Lang } from "../lib/texts";
+import { tullKvitterad } from "../lib/kostnadstackning";
+import { betalvagNamn } from "../lib/avgifter";
 
 /** En kampanj som kryssrutorna visar den. Formen speglar MetaKampanj i
     meta.server.ts — typen får inte importeras hit, en klientkomponent som
@@ -135,12 +137,22 @@ export async function loader({ request }: LoaderFunctionArgs) {
      ordrarna. Visas bredvid fälten så ingen behöver gissa — och panelen
      räknar redan med de faktiska avgifterna där de finns. */
   const uppmatt = await uppmattaAvgifter(session.shop).catch(() => ({}) as Record<string, never>);
+  /* Betalväxlarna de senaste 90 dagarna med sin andel. Ett fel ger tom lista
+     och texten "visas när ordrar hämtats" — aldrig ett påhittat "100 %
+     Shopify Payments". */
+  const vagar = await betalvagar90(session.shop).catch(() => []);
 
   return json({
     marknader,
+    /* Bara marknader med omsättning genom Shopify Payments har en uppmätt
+       sats — en sats ur noll kronor är ingen mätning. */
     uppmatt: Object.fromEntries(
-      Object.entries(uppmatt).map(([m, a]) => [m, { pct: (a.rate * 100).toFixed(2), days: a.days }]),
+      Object.entries(uppmatt)
+        .filter(([, a]) => a.sales > 0)
+        .map(([m, a]) => [m, { pct: (a.rate * 100).toFixed(2), days: a.days }]),
     ),
+    betalvagar: vagar.map((b) => ({ gateway: b.gateway, pct: (b.share * 100).toFixed(1) })),
+    thirdPartyFeeRate: Number(s.thirdPartyFeeRate ?? 0),
     /* Avgifter per marknad, i PROCENT som strängar — så som fälten visar dem. */
     marketFees: Object.fromEntries(
       Object.entries(stadaAvgifter(s.marketFees)).map(([m, a]) => [
@@ -160,6 +172,9 @@ export async function loader({ request }: LoaderFunctionArgs) {
     })(),
     lang: asLang(s.language),
     tariffPerOrder: Number(s.tariffPerOrder),
+    /* När tullen senast kvitterades (null = aldrig). Rutan "Tullbeloppen
+       stämmer" visas bara tills dess. */
+    tariffConfirmedAt: s.tariffConfirmedAt ? s.tariffConfirmedAt.toISOString().slice(0, 10) : null,
     feeRate: Number(s.feeRate),
     targetMargin: Number(s.targetMargin),
     kopplade,
@@ -412,14 +427,33 @@ export async function action({ request }: ActionFunctionArgs) {
   const cfg = metaLoginConfig();
   const manuellUtgang = token && cfg ? await bestamUtgang(cfg, token, null) : null;
 
+  /* Tullen kvitteras bara när den faktiskt granskats: ett tullbelopp har
+     ändrats (standard eller per marknad), eller rutan "Tullbeloppen stämmer"
+     är ikryssad. En sparning som bara bytte språk eller klistrade in en
+     Meta-nyckel stämplade förut 27,50 i tull som granskad. */
+  const tullPer = (k: Record<string, { tariffPerOrder: number | null }>) =>
+    Object.fromEntries(Object.entries(k).map(([m, a]) => [m, a.tariffPerOrder]));
+  const nyaAvgifter = stadaAvgifter(marketFees);
+  const kvitterad = tullKvitterad(
+    { tariffPerOrder: Number(s?.tariffPerOrder ?? 0), perMarknad: tullPer(stadaAvgifter(s?.marketFees)) },
+    { tariffPerOrder: dec("tariffPerOrder"), perMarknad: tullPer(nyaAvgifter) },
+    String(f.get("tariffConfirm") ?? "") === "true",
+  );
+
   await prisma.shopSettings.update({
     where: { shop: session.shop },
     data: {
       language: asLang(String(f.get("language") ?? "")),
       tariffPerOrder: dec("tariffPerOrder"),
       feeRate: dec("feeRate") / 100,
+      /* Tomt eller ogiltigt fält = 0 (ingen tredjepartsavgift), aldrig NaN
+         i databasen. Negativt vore en intäkt. */
+      thirdPartyFeeRate: (() => {
+        const n = dec("thirdPartyFeeRate");
+        return Number.isFinite(n) && n > 0 ? n / 100 : 0;
+      })(),
       targetMargin: dec("targetMargin") / 100,
-      marketFees: stadaAvgifter(marketFees) as object,
+      marketFees: nyaAvgifter as object,
       // Tomt fält = behåll befintlig token, radera den inte av misstag.
       ...(token
         ? {
@@ -433,8 +467,10 @@ export async function action({ request }: ActionFunctionArgs) {
             metaAppId: null,
           }
         : {}),
-      // Kvitterar kom igång-checklistans steg om tull och avgifter.
+      /* Sparad minst en gång. Kvitterar INTE längre tullsteget — det gör
+         `tariffConfirmedAt` nedan, och bara vid en riktig granskning. */
       settingsSavedAt: new Date(),
+      ...(kvitterad ? { tariffConfirmedAt: new Date() } : {}),
     },
   });
   if (token) glomMetaFel(session.shop);
@@ -453,8 +489,12 @@ export default function Settings() {
     language: d.lang as string,
     tariffPerOrder: String(d.tariffPerOrder),
     feeRate: String((d.feeRate * 100).toFixed(2)),
+    thirdPartyFeeRate: String((d.thirdPartyFeeRate * 100).toFixed(2)),
     targetMargin: String(Math.round(d.targetMargin * 100)),
     metaAccessToken: "",
+    /* Rutan "Tullbeloppen stämmer". Skickas som "true"/"false" — ikryssad
+       kvitterar tullen även när inget belopp ändrats. */
+    tariffConfirm: "false",
   });
   const set = (k: keyof typeof v) => (val: string) => setV((s) => ({ ...s, [k]: val }));
   const T = t(d.lang);
@@ -741,6 +781,18 @@ export default function Settings() {
                 autoComplete="off"
                 helpText={T.settings.tariffHelp}
               />
+              {/* Kvittensen av tullen. Visas tills den gjorts — sedan bara
+                  datumet. Att ändra ett tullbelopp kvitterar också. */}
+              {d.tariffConfirmedAt ? (
+                <Text as="p" variant="bodySm" tone="subdued">{T.settings.tariffConfirmedNote(d.tariffConfirmedAt)}</Text>
+              ) : (
+                <Checkbox
+                  label={T.settings.tariffConfirm}
+                  helpText={T.settings.tariffConfirmHelp}
+                  checked={v.tariffConfirm === "true"}
+                  onChange={(c) => setV((x) => ({ ...x, tariffConfirm: c ? "true" : "false" }))}
+                />
+              )}
               <TextField
                 label={T.settings.feeLabel}
                 value={v.feeRate}
@@ -748,6 +800,30 @@ export default function Settings() {
                 autoComplete="off"
                 helpText={T.settings.feeHelp}
               />
+              <TextField
+                label={T.settings.thirdPartyLabel}
+                value={v.thirdPartyFeeRate}
+                onChange={set("thirdPartyFeeRate")}
+                autoComplete="off"
+                helpText={T.settings.thirdPartyHelp}
+              />
+              {/* Betalsätten de senaste 90 dagarna. Står bredvid avgifts-
+                  fälten med flit: den som ser "paypal: 30 %" vet att satsen
+                  ovan gäller på riktigt, och att "faktiska avgifter" bara
+                  gäller Shopify Payments-delen. */}
+              <BlockStack gap="100">
+                <Text as="h3" variant="headingSm">{T.settings.gateways.title}</Text>
+                {d.betalvagar.length ? (
+                  d.betalvagar.map((b) => (
+                    <Text key={b.gateway} as="p" variant="bodySm">
+                      {T.settings.gateways.share(betalvagNamn(b.gateway, T.settings.gateways.none), b.pct)}
+                    </Text>
+                  ))
+                ) : (
+                  <Text as="p" variant="bodySm" tone="subdued">{T.settings.gateways.empty}</Text>
+                )}
+                <Text as="p" variant="bodySm" tone="subdued">{T.settings.gateways.explain}</Text>
+              </BlockStack>
               <TextField
                 label={T.settings.marginLabel}
                 value={v.targetMargin}

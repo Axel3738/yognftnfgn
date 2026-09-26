@@ -15,6 +15,7 @@ import prisma from "../db.server";
 import { kundHash } from "./crypto.server";
 import { tierCost, type CostTierRow } from "./pnl.server";
 import type { KundOrderRa } from "./shopify-data.server";
+import { kundOrderErsattning } from "./returkoll";
 
 /** Finns read_customers i en kommaseparerad scope-sträng? */
 export function harKundScope(scope: string | null | undefined): boolean {
@@ -71,21 +72,25 @@ export function tillKundOrderRader(
   }));
 }
 
-/** Idempotent upsert i batcher. Skriver aldrig något om listan är tom. */
-export async function skrivKundOrdrar(shop: string, rader: KundOrderRad[]): Promise<void> {
-  const STORLEK = 200;
-  for (let i = 0; i < rader.length; i += STORLEK) {
-    const del = rader.slice(i, i + STORLEK);
-    await prisma.$transaction(
-      del.map((r) =>
-        prisma.kundOrder.upsert({
-          where: { shop_orderId: { shop, orderId: r.orderId } },
-          create: { shop, ...r },
-          update: { kundHash: r.kundHash, dag: r.dag, netto: r.netto, tb: r.tb },
-        }),
-      ),
-    );
-  }
+/**
+ * Ersätter butikens KundOrder-rader för ett hämtat fönster [fran, till]:
+ * raderar fönstrets rader (och radernas order-ID var de än ligger) och skriver
+ * de nya, allt i EN transaktion. Förut var det en upsert — en order som
+ * avbokades efter att den cachades låg då kvar med sitt gamla netto i
+ * kohorterna och i CAC för alltid. Planen (vad som raderas, bitarna) byggs i
+ * `kundOrderErsattning` i returkoll.ts, där den är testad.
+ *
+ * Anropas bara efter en LYCKAD hämtning — kastade den kom vi aldrig hit, och
+ * ingenting raderas. En tom lista raderar fönstret: det är rätt, för en tom
+ * lyckad hämtning betyder att fönstret inte har några räknade ordrar kvar.
+ */
+export async function ersattKundOrdrar(shop: string, fran: string, till: string, rader: KundOrderRad[]): Promise<void> {
+  const plan = kundOrderErsattning(shop, fran, till, rader);
+  await prisma.$transaction([
+    prisma.kundOrder.deleteMany({ where: { shop, dag: { gte: plan.fran, lte: plan.till } } }),
+    ...plan.orderIdBitar.map((ids) => prisma.kundOrder.deleteMany({ where: { shop, orderId: { in: ids } } })),
+    ...plan.bitar.map((data) => prisma.kundOrder.createMany({ data })),
+  ]);
 }
 
 export interface KundOrderLasning {

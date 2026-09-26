@@ -24,11 +24,34 @@ export interface Metrics {
   ltv_60?: number;
   ltv_90?: number;
   ltv_180?: number;
+  /**
+   * Kundvärdet i TÄCKNINGSBIDRAG (LTVtb) vid 90 och 180 dagar. Återbetalning
+   * mäts på marginal, aldrig på omsättning: LTV90 600 kr i omsättning men
+   * 240 kr i bidrag mot CAC 250 kr har INTE betalat tillbaka — och tipset
+   * teg, för det jämförde 600 med 250.
+   */
+  ltv_tb_90?: number;
+  ltv_tb_180?: number;
   aov?: number;
   cpa_new?: number;
+  /** Max-CPA vid målmarginalen — målnivån. Bara för "skala"-språk. */
   max_cpa?: number;
+  /** Break-even-CPA: det en ny kund ger i bidrag inom horisonten. Det enda
+   *  talet ett "dra ner"-tips får mätas mot (rot-CLAUDE.md regel 4). */
+  break_even_cpa?: number;
   new_customers?: number;
+  /** Bruttomarginal (nettoförsäljning − COGS) / nettoförsäljning. Bara för
+   *  margin_critical/margin_low — deras källor är bruttomarginalsiffror. */
   gross_margin?: number;
+  /**
+   * Bidragsmarginal före annonser: bruttovinst / omsättning, där bruttovinsten
+   * redan dragit tull och avgifter. Samma bas som `mer` (annonser /
+   * omsättning), så att de två går att jämföra. Bruttomarginalen på
+   * nettoförsäljning glömde tull och avgifter: verklig marginal 44 % såg ut
+   * som 55 %, och ett företag som förlorade 9 % av omsättningen fick inget
+   * tips alls.
+   */
+  contribution_margin?: number;
   refund_rate?: number;
   fixed_share?: number;
   mer?: number;
@@ -69,13 +92,13 @@ export const RULES: Rule[] = [
     tip_en: "Repeat rate is above average. Protect it: keep support replies under one hour.",
     tip_sv: "Återköpsgraden är över snittet. Skydda den: svara kundtjänst inom en timme.",
     source: "Metrilo 28.2%; Satmetrix" },
-  { id: "ltv90_below_cpa", metric: "ltv_90", needs: ["ltv_90", "cpa_new", "cohort_customers"], when: (m) => m.ltv_90 < m.cpa_new && m.cohort_customers >= 100, severity: "critical",
-    tip_en: "Customers have not paid back their acquisition cost after 90 days. Add a second-order offer and cross-sell.",
-    tip_sv: "Kunderna har inte betalat sin anskaffning efter 90 dagar. Lägg in andra-köps-erbjudande och korsförsäljning.",
+  { id: "ltv90_below_cpa", metric: "ltv_90", needs: ["ltv_tb_90", "cpa_new", "cohort_customers"], when: (m) => m.ltv_tb_90 < m.cpa_new && m.cohort_customers >= 100, severity: "critical",
+    tip_en: "Customers' contribution has not paid back their acquisition cost after 90 days. Add a second-order offer and cross-sell.",
+    tip_sv: "Kundernas täckningsbidrag har inte betalat anskaffningen efter 90 dagar. Lägg in andra-köps-erbjudande och korsförsäljning.",
     source: "Eightx/Finsi payback benchmarks; Salesforce" },
-  { id: "ltv180_thin", metric: "ltv_180", needs: ["ltv_180", "cpa_new", "cohort_customers"], when: (m) => m.ltv_180 < 1.5 * m.cpa_new && m.cohort_customers >= 100, severity: "warning",
-    tip_en: "180-day LTV is under 1.5× CPA. Test a bundle or subscription; subscribers are worth ~3× one-time buyers.",
-    tip_sv: "180-dagars-LTV under 1,5× CPA. Testa bundle eller prenumeration; prenumeranter är värda ~3× engångskunder.",
+  { id: "ltv180_thin", metric: "ltv_180", needs: ["ltv_tb_180", "cpa_new", "cohort_customers"], when: (m) => m.ltv_tb_180 < 1.5 * m.cpa_new && m.cohort_customers >= 100, severity: "warning",
+    tip_en: "180-day contribution per customer is under 1.5× CPA. Test a bundle or subscription; subscribers are worth ~3× one-time buyers.",
+    tip_sv: "Täckningsbidraget per kund på 180 dagar är under 1,5× CPA. Testa bundle eller prenumeration; prenumeranter är värda ~3× engångskunder.",
     source: "Shopify LTV:CAC 3:1; Recharge Subscriber Trends" },
   { id: "ltv60_flat", metric: "ltv_60", needs: ["ltv_60", "aov", "cohort_customers"], when: (m) => m.ltv_60 < 1.05 * m.aov && m.cohort_customers >= 100, severity: "info",
     tip_en: "No second orders within 60 days. Half of all repeat buys happen in 30 days—send the reorder offer earlier.",
@@ -85,17 +108,20 @@ export const RULES: Rule[] = [
     tip_en: "Gross profit per order is below CPA. Make a 2-pack the default offer; bundles lift AOV 20–35%.",
     tip_sv: "Bruttovinsten per order är lägre än CPA. Gör 2-pack till standard; bundles höjer AOV 20–35 %.",
     source: "Growth Suite/Skailama bundle data; Shopify Bundles" },
-  { id: "cpa_over_max", metric: "cpa_new", needs: ["cpa_new", "max_cpa", "days", "new_customers"], when: (m) => m.cpa_new > m.max_cpa && m.days >= 7 && m.new_customers >= 30, severity: "critical",
-    tip_en: "You pay more per new customer than break-even. Pause ads below break-even; add reviews—5 reviews lift conversion 270%.",
-    tip_sv: "Du betalar mer per ny kund än break-even. Pausa annonser under break-even; lägg till recensioner — 5 st höjer konvertering 270 %.",
+  /* Mäts mot BREAK-EVEN (kundens bidrag inom horisonten), inte mot max-CPA
+     vid målmarginalen. Förut matades regeln med målnivån och kallade den
+     "break-even" — en CAC på 180 kr mot bidrag 240 kr fick rådet "pausa". */
+  { id: "cpa_over_max", metric: "cpa_new", needs: ["cpa_new", "break_even_cpa", "days", "new_customers"], when: (m) => m.cpa_new > m.break_even_cpa && m.days >= 7 && m.new_customers >= 30, severity: "critical",
+    tip_en: "You pay more per new customer than their contribution brings back (break-even). Pull back ads below break-even; add reviews—5 reviews lift conversion 270%.",
+    tip_sv: "Du betalar mer per ny kund än kundens täckningsbidrag ger tillbaka (break-even). Dra ner annonser under break-even; lägg till recensioner — 5 st höjer konvertering 270 %.",
     source: "Spiegel Research Center/PowerReviews; ANALYSMETOD" },
   { id: "cpa_near_max", metric: "cpa_new", needs: ["cpa_new", "max_cpa", "days", "new_customers"], when: (m) => m.cpa_new > 0.85 * m.max_cpa && m.cpa_new <= m.max_cpa && m.days >= 7 && m.new_customers >= 30, severity: "warning",
-    tip_en: "CPA is within 15% of break-even. Move repeat buyers to email so ads only buy new customers.",
-    tip_sv: "CPA ligger inom 15 % från break-even. Flytta återköpen till mejl så annonsen bara köper nya kunder.",
+    tip_en: "CPA is within 15% of your target max CPA. Move repeat buyers to email so ads only buy new customers.",
+    tip_sv: "CPA ligger inom 15 % från din mål-max-CPA. Flytta återköpen till mejl så annonsen bara köper nya kunder.",
     source: "Shopify blog email CAC; Klaviyo flows" },
-  { id: "cpa_headroom", metric: "cpa_new", needs: ["cpa_new", "max_cpa", "ltv_90", "cohort_customers"], when: (m) => m.cpa_new <= m.max_cpa && m.ltv_90 > 1.5 * m.cpa_new && m.cohort_customers >= 100, severity: "good",
-    tip_en: "90-day LTV is 1.5× CPA. You have room to raise the budget on ads with positive profit contribution.",
-    tip_sv: "90-dagars-LTV är 1,5× CPA. Du har utrymme att höja budgeten på annonser med positivt vinstbidrag.",
+  { id: "cpa_headroom", metric: "cpa_new", needs: ["cpa_new", "max_cpa", "ltv_tb_90", "cohort_customers"], when: (m) => m.cpa_new <= m.max_cpa && m.ltv_tb_90 > 1.5 * m.cpa_new && m.cohort_customers >= 100, severity: "good",
+    tip_en: "90-day contribution per customer is 1.5× CPA. You have room to raise the budget on ads with positive profit contribution.",
+    tip_sv: "Täckningsbidraget per kund på 90 dagar är 1,5× CPA. Du har utrymme att höja budgeten på annonser med positivt vinstbidrag.",
     source: "Eightx payback benchmarks; ANALYSMETOD" },
   { id: "margin_critical", metric: "gross_margin", needs: ["gross_margin", "orders"], when: (m) => m.gross_margin < 0.35 && m.orders >= 30, severity: "critical",
     tip_en: "Gross margin under 35% cannot fund ads at the 41% median MER. Renegotiate COGS or raise price.",
@@ -105,7 +131,11 @@ export const RULES: Rule[] = [
     tip_en: "Gross margin under 50%. Sell multipacks so shipping and pick cost spread over more units.",
     tip_sv: "Bruttomarginal under 50 %. Sälj flerpack så frakt och plock delas på fler enheter.",
     source: "Growth Suite bundle data; Opensend" },
-  { id: "margin_squeeze", metric: "gross_margin", needs: ["gross_margin", "mer", "fixed_share", "days"], when: (m) => m.gross_margin - m.mer - m.fixed_share < 0.1 && m.days >= 30, severity: "warning",
+  /* De tre MER-reglerna och klämman nedan jämför med annonsandelen av
+     omsättningen — alltså bidragsmarginalen på samma bas, med tull och
+     avgifter dragna. margin_critical/margin_low ovan behåller
+     bruttomarginalen: deras trösklar är källsatta bruttomarginaler. */
+  { id: "margin_squeeze", metric: "gross_margin", needs: ["contribution_margin", "mer", "fixed_share", "days"], when: (m) => m.contribution_margin - m.mer - m.fixed_share < 0.1 && m.days >= 30, severity: "warning",
     tip_en: "Less than 10% is left after ads and fixed costs. Cut discount depth; use loyalty points instead.",
     tip_sv: "Under 10 % blir kvar efter annons och fasta kostnader. Minska rabattdjupet; använd lojalitetspoäng i stället.",
     source: "Smile.io; Shopify median ROAS 2.04" },
@@ -125,15 +155,24 @@ export const RULES: Rule[] = [
     tip_en: "Fixed costs above 15% of revenue. Shopify Email is free to 10,000 emails/month—check paid tools.",
     tip_sv: "Fasta kostnader över 15 % av omsättningen. Shopify Email är gratis upp till 10 000 mejl/mån — se över betalverktygen.",
     source: "Dreamlit/MercadoKit pricing; Eightx" },
-  { id: "mer_over_margin", metric: "mer", needs: ["mer", "gross_margin", "fixed_share", "days"], when: (m) => m.mer > m.gross_margin - m.fixed_share && m.days >= 14, severity: "critical",
+  /* Villkoret är exakt texten: annonsandelen över bidragsmarginalen, alltså
+     MER under break-even — samma linje som "dra ner" i skalningsBeslut.
+     Förut stod `mer > contribution_margin − fixed_share` (nettovinst < 0):
+     i håll-läget, där annonserna går plus och det är de fasta kostnaderna som
+     saknas, sa ett kritiskt tips "annonserna kostar mer än hela
+     täckningsbidraget" bredvid badgen ◆ håll. Gapet mot de fasta kostnaderna
+     täcks av margin_squeeze och fixed_high/fixed_critical. */
+  { id: "mer_over_margin", metric: "mer", needs: ["mer", "contribution_margin", "days"], when: (m) => m.mer > m.contribution_margin && m.days >= 14, severity: "critical",
     tip_en: "Ads cost more than your full contribution margin. Scale only ads with positive profit contribution.",
     tip_sv: "Annonserna kostar mer än hela täckningsbidraget. Skala bara annonser med positivt vinstbidrag.",
     source: "ANALYSMETOD; Shopify median ROAS 2.04" },
-  { id: "mer_above_median", metric: "mer", needs: ["mer", "gross_margin", "fixed_share", "days"], when: (m) => m.mer > 0.4 && m.mer <= m.gross_margin - m.fixed_share && m.days >= 14, severity: "warning",
+  /* Samma gräns som mer_over_margin — de två är varandras komplement och får
+     inte räkna på olika marginaler. */
+  { id: "mer_above_median", metric: "mer", needs: ["mer", "contribution_margin", "days"], when: (m) => m.mer > 0.4 && m.mer <= m.contribution_margin && m.days >= 14, severity: "warning",
     tip_en: "Ads take over 40% of revenue—above the 41% median. Grow email/SMS revenue; flows earn 18× per recipient.",
     tip_sv: "Annons tar över 40 % av omsättningen — över medianen 41 %. Öka mejl/SMS-intäkten; flöden ger 18× per mottagare.",
     source: "Triple Whale 2025; Klaviyo Benchmark" },
-  { id: "mer_headroom", metric: "mer", needs: ["mer", "cpa_new", "max_cpa", "ltv_90", "cohort_customers"], when: (m) => m.mer < 0.25 && m.cpa_new < m.max_cpa && m.ltv_90 > 1.5 * m.cpa_new && m.cohort_customers >= 100, severity: "good",
+  { id: "mer_headroom", metric: "mer", needs: ["mer", "cpa_new", "max_cpa", "ltv_tb_90", "cohort_customers"], when: (m) => m.mer < 0.25 && m.cpa_new < m.max_cpa && m.ltv_tb_90 > 1.5 * m.cpa_new && m.cohort_customers >= 100, severity: "good",
     tip_en: "Ad share is well under the 41% median and profitable. Room to scale proven ads.",
     tip_sv: "Annonsandelen är långt under medianen 41 % och lönsam. Utrymme att skala bevisade annonser.",
     source: "Triple Whale 2025; CLAUDE.md regel 11" },

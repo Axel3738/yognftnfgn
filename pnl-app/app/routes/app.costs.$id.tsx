@@ -33,7 +33,8 @@ import {
 import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
 import { loadCatalog, patchaKostnader, setUnitCost } from "../lib/shopify-data.server";
-import { kandaMarknader, readDaily, shiftIso } from "../lib/daily.server";
+import { butikensMer, kandaMarknader, readDaily, shiftIso } from "../lib/daily.server";
+import { beTon, beUnderlag, tunntPris } from "../lib/produktintakt";
 import { hemlandAv, marknadskod, marknadsnamn } from "../lib/marknad";
 import { mixBreakEven, radUtfall } from "../lib/breakeven.server";
 import { rate as fxRate } from "../lib/fx.server";
@@ -69,15 +70,26 @@ export async function loader({ request, params }: LoaderFunctionArgs) {
      gång och får packpriset — därför skiljer sig raderna, och därför är
      mixraden det tal annonserna faktiskt måste slå. */
   const idag = dayInTz(new Date(), settings?.timezone ?? "UTC");
-  const mix90 = await readDaily(session.shop, shiftIso(idag, -89), idag).catch(() => null);
+  const [mix90, merLas] = await Promise.all([
+    readDaily(session.shop, shiftIso(idag, -89), idag).catch(() => null),
+    /* Butikens MER (30 stängda dagar) — färgen på break-even. Ingen = ingen färg. */
+    butikensMer(session.shop, idag).catch(() => ({ mer: null, from: "", to: "" })),
+  ]);
   const tariffPerOrder = Number(settings?.tariffPerOrder ?? 0);
   const feeRate = Number(settings?.feeRate ?? 0);
   const breakEven = variants.map((v) => {
     const egnaSteg = tierRows
       .filter((r) => r.variantGid === v.variantGid && (r.market ?? "") === "")
       .map((r) => ({ variantGid: v.variantGid, units: r.units, totalCost: Number(r.totalCost) }));
-    const lines = mix90?.products.find((p) => p.variantGid === v.variantGid)?.lines ?? null;
-    const indata = { price: v.price, unitCost: v.unitCost, tiers: egnaSteg, lines, tariffPerOrder, feeRate };
+    /* Utan marknadsfilter är det en rad per variant (marknad ""). Priset
+       per antal är det kunderna betalade efter alla rabatter; storlekar utan
+       sålda rader med pris räknas på listpris och märks. */
+    const rad = mix90?.products.find((p) => p.variantGid === v.variantGid);
+    const indata = {
+      price: v.price, unitCost: v.unitCost, tiers: egnaSteg, lines: rad?.lines ?? null,
+      linesRevenue: rad?.linesRevenue ?? null, linesPriced: rad?.linesPriced ?? null,
+      tariffPerOrder, feeRate,
+    };
     const storlekar = [1, ...egnaSteg.map((t) => t.units)].sort((a, b) => a - b);
     return {
       variantGid: v.variantGid,
@@ -95,6 +107,7 @@ export async function loader({ request, params }: LoaderFunctionArgs) {
     lang: asLang(settings?.language),
     marknader,
     breakEven,
+    storeMer: merLas.mer,
     currency: butiksValuta,
     costCurrency,
     kurs,
@@ -163,7 +176,7 @@ export async function action({ request, params }: ActionFunctionArgs) {
         }),
       ),
     );
-    return json({ ok: true, message: T.costDetail.tierSaved(targets.length, units, totalCost.toFixed(2)) });
+    return json({ ok: true, message: T.costDetail.tierSaved(targets.length, units, `${totalCost.toFixed(2)} ${settings?.currency ?? "SEK"}`) });
   }
 
   if (String(form.get("intent")) === "delete") {
@@ -232,12 +245,12 @@ export async function action({ request, params }: ActionFunctionArgs) {
     ok: !failed.length,
     message: failed.length
       ? T.costDetail.savedPartial(failed.join(", "))
-      : T.costDetail.saved(targets.length, total.toFixed(2), effectiveFrom),
+      : T.costDetail.saved(targets.length, `${total.toFixed(2)} ${butiksValuta}`, effectiveFrom),
   });
 }
 
 export default function ProductCost() {
-  const { lang, marknader, breakEven, currency, costCurrency, kurs, title, variants, history, tiers } = useLoaderData<typeof loader>();
+  const { lang, marknader, breakEven, storeMer, currency, costCurrency, kurs, title, variants, history, tiers } = useLoaderData<typeof loader>();
   const fetcher = useFetcher<typeof action>();
   const tierFetcher = useFetcher<typeof action>();
   const [tier, setTier] = useState({ units: "2", totalCost: "", variantGid: "", market: "" });
@@ -266,6 +279,8 @@ export default function ProductCost() {
   const f = parseFloat(v.shippingCost.replace(",", ".")) || 0;
   const busy = fetcher.state !== "idle";
   const dec2 = (n: number) => `${dec(n.toFixed(2))}×`;
+  /* Alla belopp med valuta — nakna tal i tabellerna gick inte att läsa. */
+  const kr = (n: number, valuta: string = currency) => `${nf.format(n)} ${valuta}`;
 
   return (
     <Page
@@ -333,7 +348,7 @@ export default function ProductCost() {
 
               <Banner tone={p + f > 0 ? "info" : undefined}>
                 {p + f > 0
-                  ? T.costDetail.totalBanner(nf.format(p + f), nf.format(p), nf.format(f))
+                  ? T.costDetail.totalBanner(kr(p + f, v.currency), kr(p, v.currency), kr(f, v.currency))
                   : T.costDetail.totalBannerEmpty}
               </Banner>
 
@@ -361,8 +376,8 @@ export default function ProductCost() {
               headings={[T.costDetail.thVariant, T.costDetail.thPrice, T.costDetail.thCost, T.costDetail.thMultiple]}
               rows={variants.map((x) => [
                 x.variantTitle,
-                nf.format(x.price),
-                x.unitCost == null ? "—" : nf.format(x.unitCost),
+                kr(x.price),
+                x.unitCost == null ? "—" : kr(x.unitCost),
                 x.unitCost == null || x.unitCost === 0
                   ? <Badge tone="critical">{T.costDetail.missingBadge}</Badge>
                   : `${dec((x.price / x.unitCost).toFixed(2))}×`,
@@ -376,6 +391,10 @@ export default function ProductCost() {
             <BlockStack gap="300">
               <Text as="h2" variant="headingMd">{T.costs.be.title}</Text>
               <Text as="p" tone="subdued">{T.costs.be.body}</Text>
+              <Text as="p" variant="bodySm" tone="subdued">{T.costs.be.revenueNote}</Text>
+              <Text as="p" variant="bodySm" tone="subdued">
+                {storeMer != null ? T.costs.be.merNote(dec(storeMer.toFixed(2))) : T.costs.be.merNone}
+              </Text>
               {breakEven.map((b) => (
                 <BlockStack key={b.variantGid} gap="100">
                   {variants.length > 1 ? <Text as="h3" variant="headingSm">{b.variantTitle}</Text> : null}
@@ -386,26 +405,34 @@ export default function ProductCost() {
                       rows={[
                         ...b.rader.map((r) => {
                           const andel = b.mix.mix.find((m) => m.qty === r.qty)?.share;
+                          /* Orderrader bakom storleken — färg bara på tre eller fler.
+                             På realiserat pris räknas raderna som BÄR priset. */
+                          const antal = b.mix.antagen || andel == null ? 0 : Math.round(andel * b.mix.lines);
+                          /* Realiserat pris på under tre rader (en giveaway med
+                             100 %-kod räcker för att TB ska gå minus): talet visas,
+                             men ingen röd TB och ingen "olönsam" — ingen dom på
+                             tunn data. Listpris är kostnadsstrukturens dom, som förut. */
+                          const tunn = !r.listpris && tunntPris(r.prisade);
                           return [
-                            `${r.qty} ${T.costs.be.unit}`,
+                            r.listpris ? `${r.qty} ${T.costs.be.unit} · ${T.costs.be.listShort}` : `${r.qty} ${T.costs.be.unit}`,
                             b.mix.antagen || andel == null ? "—" : `${Math.round(andel * 100)} %`,
-                            nf.format(r.revenue),
-                            nf.format(r.cogs),
-                            <Text key={`tb${r.qty}`} as="span" tone={r.tb > 0 ? undefined : "critical"}>{nf.format(r.tb)}</Text>,
+                            kr(r.revenue),
+                            kr(r.cogs),
+                            <Text key={`tb${r.qty}`} as="span" tone={r.tb > 0 || tunn ? undefined : "critical"}>{kr(r.tb)}</Text>,
                             r.beRoas == null
-                              ? <Badge key={`be${r.qty}`} tone="critical">{T.costs.unprofitable}</Badge>
-                              : <Text key={`be${r.qty}`} as="span" tone={r.beRoas <= 2 ? "success" : r.beRoas <= 3 ? undefined : "critical"}>{dec2(r.beRoas)}</Text>,
+                              ? tunn ? "—" : <Badge key={`be${r.qty}`} tone="critical">{T.costs.unprofitable}</Badge>
+                              : <Text key={`be${r.qty}`} as="span" tone={r.listpris ? undefined : beTon(r.beRoas, storeMer, Math.min(antal, r.prisade))}>{dec2(r.beRoas)}</Text>,
                           ];
                         }),
                         [
                           <Text key="mix" as="span" fontWeight="semibold">{T.costs.be.mixRow}</Text>,
                           b.mix.antagen ? "—" : `${b.mix.lines}`,
-                          b.mix.revenue == null ? "—" : nf.format(b.mix.revenue),
+                          b.mix.revenue == null ? "—" : kr(b.mix.revenue),
                           "",
-                          b.mix.tb == null ? "—" : <Text key="mixtb" as="span" fontWeight="semibold" tone={b.mix.tb > 0 ? undefined : "critical"}>{nf.format(b.mix.tb)}</Text>,
+                          b.mix.tb == null ? "—" : <Text key="mixtb" as="span" fontWeight="semibold" tone={b.mix.tb > 0 || tunntPris(b.mix.prisade) ? undefined : "critical"}>{kr(b.mix.tb)}</Text>,
                           b.mix.beRoas == null
-                            ? <Badge key="mixbe" tone="critical">{T.costs.unprofitable}</Badge>
-                            : <Text key="mixbe" as="span" fontWeight="semibold" tone={b.mix.beRoas <= 2 ? "success" : b.mix.beRoas <= 3 ? undefined : "critical"}>{dec2(b.mix.beRoas)}</Text>,
+                            ? tunntPris(b.mix.prisade) ? "—" : <Badge key="mixbe" tone="critical">{T.costs.unprofitable}</Badge>
+                            : <Text key="mixbe" as="span" fontWeight="semibold" tone={beTon(b.mix.beRoas, storeMer, beUnderlag(b.mix))}>{dec2(b.mix.beRoas)}</Text>,
                         ],
                       ]}
                     />
@@ -413,6 +440,15 @@ export default function ProductCost() {
                     <Text as="p" tone="subdued">{T.costDetail.missingBadge}</Text>
                   )}
                   {b.mix.antagen && b.rader.length ? <Text as="p" variant="bodySm" tone="subdued">{T.costs.be.noSales}</Text> : null}
+                  {b.rader.length ? (
+                    <Text as="p" variant="bodySm" tone="subdued">
+                      {b.mix.antagen ? T.costs.be.priceList : b.mix.delvisListpris ? T.costs.be.pricePartly : T.costs.be.priceRealized}
+                    </Text>
+                  ) : null}
+                  {/* Varför en olönsam storlek står som "—" i stället för rött. */}
+                  {b.rader.some((r) => !r.listpris && tunntPris(r.prisade)) ? (
+                    <Text as="p" variant="bodySm" tone="subdued">{T.costs.be.thinPrice}</Text>
+                  ) : null}
                 </BlockStack>
               ))}
             </BlockStack>
@@ -468,14 +504,14 @@ export default function ProductCost() {
                     const mine = tiers.filter((r) => r.variantGid === x.variantGid);
                     if (!mine.length) return [];
                     return [
-                      [x.variantTitle, T.costs.market.standardShort, T.costDetail.oneUnit, x.unitCost == null ? "—" : nf.format(x.unitCost),
-                        x.unitCost == null ? "—" : nf.format(x.unitCost), ""],
+                      [x.variantTitle, T.costs.market.standardShort, T.costDetail.oneUnit, x.unitCost == null ? "—" : kr(x.unitCost),
+                        x.unitCost == null ? "—" : kr(x.unitCost), ""],
                       ...mine.map((r) => [
                         x.variantTitle,
                         marknadsetikett(r.market),
                         String(r.units),
-                        nf.format(r.totalCost),
-                        nf.format(r.totalCost / r.units),
+                        kr(r.totalCost),
+                        kr(r.totalCost / r.units),
                         <Button key={r.id} variant="plain" tone="critical"
                           onClick={() => tierFetcher.submit({ intent: "tierDelete", id: r.id }, { method: "POST" })}>
                           {T.costDetail.remove}
@@ -514,9 +550,9 @@ export default function ProductCost() {
                     ? variants.find((x) => x.variantGid === h.variantGid)?.variantTitle ?? T.costDetail.aVariant
                     : T.costDetail.allVariantsShort,
                   marknadsetikett(h.market),
-                  h.productCost == null ? "—" : nf.format(h.productCost),
-                  h.shippingCost == null ? "—" : nf.format(h.shippingCost),
-                  nf.format(h.unitCost),
+                  h.productCost == null ? "—" : kr(h.productCost),
+                  h.shippingCost == null ? "—" : kr(h.shippingCost),
+                  kr(h.unitCost),
                   <Button key={h.id} variant="plain" tone="critical"
                     onClick={() => fetcher.submit({ intent: "delete", id: h.id }, { method: "POST" })}>
                     {T.costDetail.remove}

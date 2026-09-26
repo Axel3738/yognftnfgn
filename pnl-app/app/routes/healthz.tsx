@@ -20,5 +20,5 @@ export async function loader() {
      märket". 2026-09-22 stod bygget stilla i en halvtimme och det var
      precis den frågan som inte gick att svara på. */
   const commit = (process.env.RAILWAY_GIT_COMMIT_SHA ?? "").slice(0, 7);
-  return json({ ok: true, build: "google-tjanst-v113", commit, db });
+  return json({ ok: true, build: "procent-v117", commit, db });
 }

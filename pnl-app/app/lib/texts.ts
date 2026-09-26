@@ -52,6 +52,7 @@ const en = {
       bestDay: (day: string, v: string) => `Best day: ${day} · ${v}`,
       newRecord: "🔥 New best day in this period",
       incomplete: "Ad spend missing — profit reads too high",
+      costMissing: (pct: number) => `Cost missing on ${pct} % of sales — profit reads too high`,
     },
     loadingOrders: "Fetching orders",
     loadingText:
@@ -60,12 +61,43 @@ const en = {
     unknownError: "unknown error",
     fatalHelp: "Send a screenshot of this message — it points out exactly where it stops.",
     refresh: "Refresh",
-    feesNote: (fees: string, pct: string, known: number, days: number) =>
-      known >= days
-        ? `Payment fees ${fees} (${pct} %) — actual amounts from Shopify Payments.`
-        : known > 0
-          ? `Payment fees ${fees} (${pct} %) — actual for ${known} of ${days} days, the rest at your settings rate.`
-          : `Payment fees ${fees} (${pct} %) — from your settings rate; actual fees are read as new days are fetched.`,
+    /* Andelen är OMSÄTTNING med faktiska avgifter (Shopify Payments), inte
+       dagar: en PayPal-order har inga avgifter att läsa, och "faktiska belopp"
+       om den vore en lögn. `actual` = hela procent, avrundat nedåt. */
+    feesNote: (fees: string, pct: string, known: number, days: number, actual: number, others: string, thirdParty: string | null) =>
+      known === 0
+        ? `Payment fees ${fees} (${pct} %) — from your settings rate; actual fees are read as new days are fetched.`
+        : known >= days && actual >= 100
+          ? `Payment fees ${fees} (${pct} %) — actual amounts from Shopify Payments.`
+          : `Payment fees ${fees} (${pct} %) — actual for ${actual} % of revenue (Shopify Payments), your rate for ${100 - actual} % (${others || "days without fee data"})${thirdParty ? `, incl. Shopify's third-party fee ${thirdParty}` : ""}.`,
+    /* Shopifys 60-dagarsgräns. Dagarna är UTE ur perioden, annonskostnaden
+       med — annars delas hela periodens spend med halva omsättningen. */
+    outsideHistory: (n: number, date: string) =>
+      `Shopify only gives apps the last 60 days of orders. ${n} ${n === 1 ? "day" : "days"} before ${date} ${n === 1 ? "has" : "have"} no order data and ${n === 1 ? "is" : "are"} left out of this period, ad spend included.`,
+    overview: {
+      title: "Per market",
+      body: "Break-even MER is the MER (sales ÷ ad spend) a market has to reach to break even after COGS, duty and fees. Contribution is before fixed costs — they belong to the store, not to a country.",
+      thMarket: "Market",
+      thSales: "Sales",
+      thOrders: "Orders",
+      thAov: "AOV",
+      thAds: "Ad spend",
+      thMer: "MER",
+      thBe: "Break-even MER",
+      thCogsPct: "COGS %",
+      thContribution: "Contribution",
+      thContributionPct: "Contribution %",
+      thPerDay: "Contribution / day",
+      noCampaigns: "no campaigns marked",
+      standardCost: (names: string) =>
+        `* ${names}: counted on the store's standard cost (no cost of its own). Shipping to another country usually costs more — add the market's own cost under Costs → Market for an exact break-even.`,
+      defaultDuty: (names: string) => `Default duty used for: ${names}. Set duty per market under Settings → Costs per order.`,
+      missingCost: (name: string, pct: number) => `${name}: cost missing on ${pct} % of sales — break-even is at least the figure shown.`,
+      unmarked: (s: string) =>
+        `${s} of ad spend is on campaigns without a market. It is in the store's totals above, but in no country here. Mark campaigns under Settings → the ad account → Choose campaigns.`,
+      daysWithout: (n: number) => `${n} ${n === 1 ? "day" : "days"} in the period have no split by market and are left out of this table.`,
+      openHint: "Click a market for its full view.",
+    },
     market: {
       label: "Market",
       all: "All markets",
@@ -96,6 +128,9 @@ const en = {
     thSales: "Sales",
     thAds: "Ads",
     thNetProfit: "Net profit",
+    thMer: "MER",
+    thBe: "BE",
+    thVerdict: "Verdict",
     hourly: {
       title: "By hour of day",
       sales: "Revenue",
@@ -126,6 +161,10 @@ const en = {
       costsHintNoOrders: "No orders in the period yet. This step clears once sold products have a cost.",
       costsHintMissing: (n: number) => `${n} sold units are missing a cost and count as free.`,
       costsHintDone: "All sold units have a cost.",
+      costsHintZero: (n: number) =>
+        `${n} sold units have a cost of 0 in Shopify. They count as missing until you mark the item as free under Costs.`,
+      costsHintEstimated: (n: number, pct: number) =>
+        `${n} sold units use the estimate (${pct} % of price) — enter their real costs for an exact profit.`,
       ctaCosts: "Go to Costs",
       stepMeta: "Connect your ad account",
       metaHintDone: "Ad spend is fetched automatically every day.",
@@ -140,9 +179,9 @@ const en = {
       fixedHintTodo: "Subscriptions, apps, staff — everything that costs money regardless of sales.",
       ctaFixed: "View all",
       stepSettings: "Review duty and transaction fee",
-      settingsHintDone: "Saved for this store.",
-      settingsHintTodo: (tariff: string, currency: string) =>
-        `Still running on the defaults (${tariff} ${currency} per order, 2.9 %). Are they right for this store?`,
+      settingsHintDone: "Duty confirmed for this store.",
+      settingsHintTodo: (tariff: string, currency: string, fee: string) =>
+        `Duty ${tariff} ${currency} per order and fee ${fee} % have not been confirmed. Are they right for this store? Change the duty or tick "These duty amounts are correct" under Settings.`,
       dismiss: "Hide checklist",
     },
 
@@ -166,15 +205,32 @@ const en = {
       netProfit: "Net profit",
       shippingOfWhich: (s: string) => `of which shipping ${s}`,
       avgOrder: (s: string) => `avg order ${s}`,
+      aov: "Avg order value (AOV)",
+      aovSub: (orders: string) => `sales ÷ ${orders} orders`,
+      profitPerDay: "Profit per day",
+      ofSales: (pct: string) => `${pct} of sales`,
+      margin: (pct: string) => `margin ${pct}`,
+      profitPerDaySub: (days: number) => `net profit ÷ ${days} ${days === 1 ? "day" : "days"}`,
       perDay: "spread per day",
       cpa: (s: string) => `CPA ${s}`,
       missingDays: (n: number) => `⚠ missing ${n} days`,
-      unitsNoCost: (n: number) => `${n} units without cost`,
       allUnitsCovered: "all units covered",
+      missingOnShare: (pct: number, units: number) =>
+        `missing on ${pct} % of sales (${units} ${units === 1 ? "unit" : "units"})`,
+      dutyNotConfirmed: "default — not confirmed",
+      breakEvenAtLeast: (s: string, pct: number) => `break-even ≥ ${s} — cost missing on ${pct} % of sales`,
+      breakEvenEstimated: (s: string) => `break-even ≈ ${s} (estimated cost)`,
+      profitAtMost: (s: string, pct: number) => `at most ${s} — cost missing on ${pct} % of sales`,
       ordersCount: (s: string) => `${s} orders`,
       dutyPerOrder: (orders: string, each: string) => `${orders} orders · ${each} each on average`,
       breakEven: (s: string) => `break-even ${s}`,
       maxCpa: (pct: number, s: string) => `max CPA @ ${pct} %: ${s}`,
+      targetMer: (s: string, pct: number) => `target ${s} (${pct} %)`,
+      targetOutOfReach: (pct: number) => `target ${pct} % out of reach`,
+      evolveRef: (s: string) => `Evolve's rule of thumb: BE + 1 = ${s}`,
+      breakEvenCpa: (s: string) => `break-even CPA ${s}`,
+      breakEvenCpaAtMost: (s: string) => `break-even CPA ≤ ${s}`,
+      breakEvenLabel: "Break-even MER",
       profitTooHigh: "too high — ad data missing",
       vsPrev: "vs prev",
     },
@@ -201,12 +257,32 @@ const en = {
     costEstimatedTitle: "Estimated cost",
     costEstimatedBody: (units: number, pct: number) =>
       `${units} sold units have no product cost in Shopify and are estimated at ${pct} % of price. Type the real costs under Costs for an exact profit.`,
+    zeroCostTitle: "Cost 0 — is that right?",
+    zeroCostBody: (n: number) =>
+      `${n} sold units have a cost of exactly 0 in Shopify. That is usually an empty field from an import, so they count as missing cost. If the item really is free (a gift), mark it under Costs.`,
     costMissingTitle: "Cost missing",
     costMissingBody: (n: number) =>
       `${n} sold units have no cost in Shopify. They count as free, so COGS is too low and profit reads too high. Fill them in under Costs.`,
     cogsChange: (note: string) => `COGS: ${note}.`,
     cogsChangeWeighted: (note: string, newPct: number, oldPct: number) =>
       `COGS: ${note} — the period spans the change date, the cost is weighted ${newPct} % new / ${oldPct} % old by revenue per day.`,
+
+    /* Skalningsbeslutet. Tecknet först är ikonen — status bärs av tecken OCH
+       text, aldrig av färgen ensam. "Dra ner" knyts bara till break-even. */
+    verdict: {
+      pull: "▼ Below break-even — pull back",
+      hold: "◆ Profitable, under target — hold",
+      holdShort: (days: number) =>
+        `◆ Above target on ${days === 1 ? "one day" : `${days} days`} — read 7+ days before scaling`,
+      push: "▲ Above target — room to scale",
+      short: { pull: "▼ Pull back", hold: "◆ Hold", push: "▲ Scale" },
+      shortPeriod: (days: number) =>
+        `${days === 1 ? "one day" : `${days} days`} — read 7+ days before scaling`,
+      defaultDuty: "based on default duty",
+    },
+    contributionAfterAds: "Contribution after ads",
+    band: { forlust: "ads lose money", tunt: "thin", sunt: "healthy", starkt: "strong" },
+    bandSource: "Evolve: 10–20 % of revenue after ads is healthy",
 
     visualTitle: "Visual breakdown",
     detailTitle: "Detailed breakdown",
@@ -219,6 +295,9 @@ const en = {
     donutAria: "Revenue breakdown",
     profitPerDay: "Profit per day",
     profitPerDayNote: "COGS, fees and duty allocated by each day's revenue — an estimate, not bookkeeping.",
+    refundCheck: (tid: string | null) =>
+      "Refunds are booked on the order's day. The last 45 days are re-checked every 6 h " +
+      (tid ? `(last check ${tid}).` : "(first check pending)."),
     tipSales: "Sales",
     tipAds: "Ads",
     tipProfit: "Profit",
@@ -227,10 +306,19 @@ const en = {
     thUnits: "Units",
     thNet: "Net",
     thCogs: "COGS",
-    thCm: "CM",
-    thMargin: "Margin",
+    thCm: "Gross profit",
+    thMargin: "Gross margin",
     thMultiple: "Multiple",
+    thBeRoas: "BE ROAS",
     missing: "missing",
+    productsTotal: "All products",
+    productsUnallocated: "Not allocated: shipping, refunds, taxes",
+    productsUnallocatedOld: "Not allocated: shipping, refunds, taxes, order discount codes on * rows",
+    productsBeforeOrderDiscounts:
+      "* = before order-level discount codes (part of the period was fetched before those were measured), so Net and BE ROAS on these rows are somewhat too kind. Those codes sit in the last row.",
+    productsUnprofitable: "unprofitable",
+    productsNote:
+      "Net = what customers paid for the items after all discounts. BE ROAS = the ROAS this product's ads must beat: duty split by order lines, fees at the period's rate, shipping charged not counted (so the number is on the safe side). — = no cost, or fewer than 3 order lines. Products plus the last row add up to Sales.",
   },
 
   costs: {
@@ -278,8 +366,23 @@ const en = {
       thShare: "Share of orders",
       mixRow: "Actual mix (90 days)",
       noSales: "No sales in the last 90 days — 1 pc per order assumed.",
-      feeMeasured: (pct: string) => `CM and BE ROAS use the payment fee Shopify Payments actually charged: ${pct} % of sales (last 90 days).`,
+      feeMeasured: (pct: string, actual: number) =>
+        actual >= 100
+          ? `CM and BE ROAS use the payment fee Shopify Payments actually charged: ${pct} % of sales (last 90 days).`
+          : `CM and BE ROAS use ${pct} % in payment fees: what Shopify Payments actually charged on ${actual} % of sales, and your rate from Settings on the ${100 - actual} % paid another way (last 90 days).`,
       feeSetting: (pct: string) => `CM and BE ROAS use the fee rate from Settings: ${pct} %. Actual fees are read as orders are fetched.`,
+      revenueNote:
+        "BE ROAS uses what customers actually paid per pack size over the last 90 days, after quantity breaks and discount codes. Shipping charged is not counted, so the number is on the safe side.",
+      merNote: (mer: string) =>
+        `Colours compare with your store's MER over the last 30 full days: ${mer}×. Green = at least 10 % below it, yellow = just below, red = above.`,
+      merNone:
+        "No colours yet: they need your store's MER from 30 full days with ad spend fetched (7+ days with sales, 3+ orders). Open the dashboard once to fetch it.",
+      priceRealized: "realized price, 90 days",
+      pricePartly: "realized price where known, list price where older orders make up most of a pack size",
+      priceList: "list price (no sales)",
+      listShort: "list price",
+      thinPrice: "— = unprofitable at the price paid, but fewer than 3 orders carry that price: no verdict yet.",
+      thinFallback: "list price, 1 pc: fewer than 3 orders with a known price",
     },
     market: {
       title: "Market",
@@ -306,7 +409,18 @@ const en = {
       entryHelpStandard: "Written to Shopify and used for every market without its own cost.",
     },
     title: "Costs",
-    subtitle: (have: number, total: number) => `${have} of ${total} variants have a cost`,
+    subtitle: (have: number, total: number, salesPct: number | null) =>
+      `${have} of ${total} variants have a cost` +
+      (salesPct != null ? ` · ${salesPct} % of the last 90 days' sales` : ""),
+    missingSalesShare: (pct: number) =>
+      `They are ${pct} % of the last 90 days' sales — sorted by sales, biggest first.`,
+    zero: {
+      title: (n: number) => `${n} ${n === 1 ? "variant has" : "variants have"} a cost of 0 — is that right?`,
+      body: "A cost of 0.00 is usually an empty field from an import or a dropshipping app, so it counts as missing. Mark the items that really are free (gifts, samples).",
+      isFree: "Yes, this item is free",
+      sales: (s: string) => `${s} in sales, last 90 days`,
+      more: (n: number) => `…and ${n} more`,
+    },
     missingBannerTitle: (n: number) => `${n} variants are missing a cost`,
     missingBannerBody: "Without a cost the product counts as free and profit reads too high.",
     allHaveCost: "All variants have a cost.",
@@ -347,7 +461,7 @@ const en = {
     thVariant: "Variant",
     thPrice: "Price",
     thCost: "Cost",
-    thCmPerUnit: (currency: string) => `CM/unit (${currency})`,
+    thCmPerUnit: "CM/unit",
     thBeRoas: "BE ROAS",
     missingBadge: "missing",
     unprofitable: "unprofitable",
@@ -568,8 +682,24 @@ const en = {
     costsPerOrder: "Costs per order",
     tariffLabel: (currency: string) => `Duty per order (${currency})`,
     tariffHelp: "Charged once per order, not per unit. That's why bundles have better margins.",
+    tariffConfirm: "These duty amounts are correct",
+    tariffConfirmHelp:
+      "Tick this if the duty above (and per market) is right as it stands. Changing an amount confirms it too. Until then the dashboard marks duty as not confirmed.",
+    tariffConfirmedNote: (day: string) => `Duty confirmed ${day}.`,
     feeLabel: "Transaction fee (%)",
-    feeHelp: "Share of total order value. Shopify Payments is typically around 2.9 %.",
+    feeHelp:
+      "Share of total order value. Used for orders not paid through Shopify Payments (PayPal, Klarna direct, manual) and for days without fee data — Shopify Payments' own fees are read from your orders.",
+    thirdPartyLabel: "Shopify fee on orders not paid with Shopify Payments (%)",
+    thirdPartyHelp:
+      "Your Shopify plan's third-party transaction fee (Basic 2 %, Shopify 1 %, Advanced 0.5 %). Charged by Shopify on top of PayPal's or Klarna's own fee. Leave 0 if you only use Shopify Payments.",
+    gateways: {
+      title: "Payment methods, last 90 days",
+      share: (name: string, pct: string) => `${name}: ${pct} % of sales`,
+      none: "No payment recorded",
+      empty: "Shown once orders have been fetched with payment details.",
+      explain:
+        "Only Shopify Payments reports its fees on the order. Sales paid any other way are charged at the transaction fee above.",
+    },
     claude: {
       title: "Connect Claude",
       body: "The app can read your supplier price lists and answer questions about your numbers. Paste your own Claude key and it runs on your account.",
@@ -607,8 +737,8 @@ const en = {
       tariffLabel: "Duty per order",
       hint: "Leave a field empty to use the standard values above. Typical Shopify Payments: +1 % for international cards, 1.5–2 % conversion. Duty is an amount per order, not a percentage.",
       measuredAll: (pct: string, days: number) =>
-        `You don't need to look these up: the dashboard reads the fees Shopify Payments actually charged from your orders — ${pct} % of sales over the last ${days} days. The fields below only matter for days without that data.`,
-      measured: (pct: string) => `Actually charged: ${pct} % (last 90 days)`,
+        `The dashboard reads the fees Shopify Payments actually charged from your orders — ${pct} % of the sales paid through Shopify Payments over the last ${days} days. The fields below are used for sales paid another way and for days without that data.`,
+      measured: (pct: string) => `Shopify Payments charged: ${pct} % (last 90 days)`,
     },
     marginLabel: "Target margin (%)",
     marginHelp: "Max CPA on the dashboard is calculated against this margin.",
@@ -816,10 +946,22 @@ const en = {
       days <= 0
         ? "the Facebook login expires today — open that store's Settings and log in again"
         : `the Facebook login expires in ${days} ${days === 1 ? "day" : "days"} — open that store's Settings and log in again`,
+    outsideHistory: (n: number, date: string) =>
+      `Shopify only gives apps 60 days of orders: ${n} ${n === 1 ? "day" : "days"} before ${date} ${n === 1 ? "is" : "are"} left out of this store's figures, ad spend included`,
+    verdictDefaultDuty: (names: string) => `Verdict based on default duty (not confirmed): ${names}`,
     notesTitle: "Needs attention in another store",
+    qualityTitle: "Included in the total, but profit reads too high",
+    costMissing: (pct: number) =>
+      `cost missing on ${pct} % of sales — those items count as free, so this store's profit is too high`,
+    noAdAccount: "no ad account connected — ad spend counted as 0",
     fxUnavailable: (from: string, to: string) => `exchange rate ${from}→${to} could not be fetched`,
     fxNote: (day: string) =>
       `Each day is converted at that day's ECB exchange rate. Latest rate: ${day}.`,
+    refundCheck: (tid: string | null, saknas: number) =>
+      "Refunds are booked on the order's day. Each store's last 45 days are re-checked every 6 h" +
+      (tid ? ` (oldest check among the stores: ${tid})` : "") +
+      (saknas > 0 ? `; not yet checked in ${saknas} ${saknas === 1 ? "store" : "stores"}` : "") +
+      ".",
   },
 
   tips: {
@@ -831,8 +973,10 @@ const en = {
 
   juicy: {
     titleA: "Your costs are already here",
-    bodyA: (have: number, total: number) =>
-      `${have} of ${total} variants have a cost in Shopify — StonePNL is already using them. Nothing to import.`,
+    bodyA: (have: number, total: number, salesPct: number | null) =>
+      `${have} of ${total} variants have a cost in Shopify` +
+      (salesPct != null ? `, covering ${salesPct} % of the last 90 days' sales` : "") +
+      ` — StonePNL is already using them. Nothing to import.`,
     noteA: "Check that the cost is goods + shipping without duty. Duty is per order in Settings.",
     ctaA: "Looks right",
     ctaA2: "Add bundle costs from Juicy",
@@ -887,8 +1031,14 @@ const en = {
     range: (low: string, high: string) => `${low}–${high}`,
     confidence: { good: "● Good confidence", low: "◐ Low confidence", hidden: "○ Too uncertain to show" },
     notEnough: "Not enough data yet",
-    verdictUnder: (cpa: string, max: string, h: number) => `Your CPA (${cpa}) is under the ${h}-day max CPA (${max}): profitable within ${h} days.`,
-    verdictOver: (cpa: string, max: string, h: number) => `Your CPA (${cpa}) is over the ${h}-day max CPA (${max}): customers do not pay back within ${h} days.`,
+    kpiBreakEven: (h: number) => `Break-even CAC (${h} d)`,
+    kpiBreakEvenSub: (h: number) => `contribution per customer within ${h} days`,
+    verdictUnder: (cpa: string, max: string, h: number) =>
+      `Your CAC (${cpa}) is under the ${h}-day max CPA at your target margin (${max}): above your target — room to scale.`,
+    verdictHold: (cpa: string, max: string, be: string, h: number) =>
+      `Your CAC (${cpa}) is over your target max CPA (${max}) but under the ${h}-day break-even (${be}): profitable within ${h} days, below your target margin — hold.`,
+    verdictOver: (cpa: string, be: string, h: number) =>
+      `Your CAC (${cpa}) is over the ${h}-day break-even (${be}): each new customer loses money within ${h} days — pull back.`,
     verdictNoCpa: "Connect Meta and fetch 30 days of ad spend to compare CPA against customer value.",
     horizonLabel: "Horizon that drives max CPA",
     horizonHelp: "Days after the first order. 90 is the default for dropshipping.",
@@ -966,6 +1116,7 @@ const sv: Texts = {
       bestDay: (day: string, v: string) => `Bästa dagen: ${day} · ${v}`,
       newRecord: "🔥 Ny bästa dag i perioden",
       incomplete: "Annonskostnad saknas — vinsten är för hög",
+      costMissing: (pct: number) => `Inköpspris saknas på ${pct} % av försäljningen — vinsten är för hög`,
     },
     loadingOrders: "Hämtar ordrar",
     loadingText:
@@ -974,12 +1125,38 @@ const sv: Texts = {
     unknownError: "okänt fel",
     fatalHelp: "Skicka en skärmbild av det här meddelandet — det pekar ut exakt var det stannar.",
     refresh: "Uppdatera",
-    feesNote: (fees: string, pct: string, known: number, days: number) =>
-      known >= days
-        ? `Betalavgifter ${fees} (${pct} %) — faktiska belopp från Shopify Payments.`
-        : known > 0
-          ? `Betalavgifter ${fees} (${pct} %) — faktiska för ${known} av ${days} dagar, resten med satsen i Inställningar.`
-          : `Betalavgifter ${fees} (${pct} %) — enligt satsen i Inställningar; faktiska avgifter läses in när nya dagar hämtas.`,
+    feesNote: (fees: string, pct: string, known: number, days: number, actual: number, others: string, thirdParty: string | null) =>
+      known === 0
+        ? `Betalavgifter ${fees} (${pct} %) — enligt satsen i Inställningar; faktiska avgifter läses in när nya dagar hämtas.`
+        : known >= days && actual >= 100
+          ? `Betalavgifter ${fees} (${pct} %) — faktiska belopp från Shopify Payments.`
+          : `Betalavgifter ${fees} (${pct} %) — faktiska för ${actual} % av omsättningen (Shopify Payments), din sats för ${100 - actual} % (${others || "dagar utan avgiftsdata"})${thirdParty ? `, inkl. Shopifys tredjepartsavgift ${thirdParty}` : ""}.`,
+    outsideHistory: (n: number, date: string) =>
+      `Shopify ger appar bara de senaste 60 dagarnas ordrar. ${n} ${n === 1 ? "dag" : "dagar"} före ${date} saknar orderdata och är utelämnade ur perioden, annonskostnaden också.`,
+    overview: {
+      title: "Per marknad",
+      body: "Break-even-MER är den MER (försäljning ÷ annonskostnad) marknaden måste nå för att gå jämnt ut efter varukostnad, tull och avgifter. Bidraget är före fasta kostnader — de hör till butiken, inte till ett land.",
+      thMarket: "Marknad",
+      thSales: "Försäljning",
+      thOrders: "Ordrar",
+      thAov: "Snittorder",
+      thAds: "Annonser",
+      thMer: "MER",
+      thBe: "Break-even-MER",
+      thCogsPct: "Varukostnad %",
+      thContribution: "Bidrag",
+      thContributionPct: "Bidrag %",
+      thPerDay: "Bidrag/dag",
+      noCampaigns: "inga kampanjer märkta",
+      standardCost: (names: string) =>
+        `* ${names}: räknas på butikens standardkostnad (ingen egen kostnad inlagd). Frakten till ett annat land kostar oftast mer — lägg in marknadens egen kostnad under Kostnader → Marknad för en exakt break-even.`,
+      defaultDuty: (names: string) => `Standardtull används för: ${names}. Sätt tull per marknad under Inställningar → Kostnader per order.`,
+      missingCost: (name: string, pct: number) => `${name}: kostnad saknas på ${pct} % av försäljningen — break-even är minst det som står.`,
+      unmarked: (s: string) =>
+        `${s} i annonskostnad ligger på kampanjer utan marknad. Den finns med i butikens summor ovan, men i inget land här. Märk kampanjerna under Inställningar → annonskontot → Välj kampanjer.`,
+      daysWithout: (n: number) => `${n} ${n === 1 ? "dag" : "dagar"} i perioden saknar uppdelning per marknad och är inte med i tabellen.`,
+      openHint: "Klicka på en marknad för hela vyn.",
+    },
     market: {
       label: "Marknad",
       all: "Alla marknader",
@@ -1010,6 +1187,9 @@ const sv: Texts = {
     thSales: "Försäljning",
     thAds: "Annonser",
     thNetProfit: "Nettovinst",
+    thMer: "MER",
+    thBe: "BE",
+    thVerdict: "Besked",
     hourly: {
       title: "Per timme på dygnet",
       sales: "Omsättning",
@@ -1040,6 +1220,10 @@ const sv: Texts = {
       costsHintNoOrders: "Inga ordrar i perioden än. Steget kvitteras när sålda produkter har inköpspris.",
       costsHintMissing: (n: number) => `${n} sålda enheter saknar inköpspris och räknas som gratis.`,
       costsHintDone: "Alla sålda enheter har inköpspris.",
+      costsHintZero: (n: number) =>
+        `${n} sålda enheter har inköpspris 0 i Shopify. De räknas som saknade tills du markerat varan som gratis under Kostnader.`,
+      costsHintEstimated: (n: number, pct: number) =>
+        `${n} sålda enheter räknas på uppskattningen (${pct} % av priset) — skriv in riktiga kostnader för exakt vinst.`,
       ctaCosts: "Till Kostnader",
       stepMeta: "Koppla annonskontot",
       metaHintDone: "Annonskostnaden hämtas automatiskt varje dag.",
@@ -1054,9 +1238,9 @@ const sv: Texts = {
       fixedHintTodo: "Abonnemang, appar, anställda — allt som kostar oavsett försäljning.",
       ctaFixed: "Visa alla",
       stepSettings: "Granska tull och transaktionsavgift",
-      settingsHintDone: "Sparat för den här butiken.",
-      settingsHintTodo: (tariff: string, currency: string) =>
-        `Kör fortfarande på standardvärdena (${tariff} ${currency} per order, 2,9 %). Stämmer de för den här butiken?`,
+      settingsHintDone: "Tullen är bekräftad för den här butiken.",
+      settingsHintTodo: (tariff: string, currency: string, fee: string) =>
+        `Tullen ${tariff} ${currency} per order och avgiften ${fee} % är inte bekräftade. Stämmer de för den här butiken? Ändra tullen eller kryssa i "Tullbeloppen stämmer" under Inställningar.`,
       dismiss: "Dölj checklistan",
     },
 
@@ -1080,15 +1264,32 @@ const sv: Texts = {
       netProfit: "Nettovinst",
       shippingOfWhich: (s: string) => `varav frakt ${s}`,
       avgOrder: (s: string) => `snittorder ${s}`,
+      aov: "Snittorder (AOV)",
+      aovSub: (orders: string) => `försäljning ÷ ${orders} ordrar`,
+      profitPerDay: "Vinst per dag",
+      ofSales: (pct: string) => `${pct} av försäljningen`,
+      margin: (pct: string) => `marginal ${pct}`,
+      profitPerDaySub: (days: number) => `nettovinst ÷ ${days} ${days === 1 ? "dag" : "dagar"}`,
       perDay: "utslagna per dag",
       cpa: (s: string) => `CPA ${s}`,
       missingDays: (n: number) => `⚠ saknas ${n} dagar`,
-      unitsNoCost: (n: number) => `${n} enheter utan kostnad`,
       allUnitsCovered: "alla enheter täckta",
+      missingOnShare: (pct: number, units: number) =>
+        `saknas på ${pct} % av försäljningen (${units} ${units === 1 ? "enhet" : "enheter"})`,
+      dutyNotConfirmed: "standard — inte bekräftad",
+      breakEvenAtLeast: (s: string, pct: number) => `break-even ≥ ${s} — inköpspris saknas på ${pct} % av försäljningen`,
+      breakEvenEstimated: (s: string) => `break-even ≈ ${s} (uppskattad kostnad)`,
+      profitAtMost: (s: string, pct: number) => `högst ${s} — inköpspris saknas på ${pct} % av försäljningen`,
       ordersCount: (s: string) => `${s} ordrar`,
       dutyPerOrder: (orders: string, each: string) => `${orders} ordrar · ${each} styck i snitt`,
       breakEven: (s: string) => `break-even ${s}`,
       maxCpa: (pct: number, s: string) => `max CPA @ ${pct} %: ${s}`,
+      targetMer: (s: string, pct: number) => `mål ${s} (${pct} %)`,
+      targetOutOfReach: (pct: number) => `målet ${pct} % går inte att nå`,
+      evolveRef: (s: string) => `Evolves tumregel: BE + 1 = ${s}`,
+      breakEvenCpa: (s: string) => `break-even-CPA ${s}`,
+      breakEvenCpaAtMost: (s: string) => `break-even-CPA ≤ ${s}`,
+      breakEvenLabel: "Break-even-MER",
       profitTooHigh: "för hög — annonsdata saknas",
       vsPrev: "vs förra",
     },
@@ -1115,12 +1316,30 @@ const sv: Texts = {
     costEstimatedTitle: "Uppskattad kostnad",
     costEstimatedBody: (units: number, pct: number) =>
       `${units} sålda enheter saknar inköpspris i Shopify och uppskattas till ${pct} % av priset. Skriv in riktiga kostnader under Kostnader för exakt vinst.`,
+    zeroCostTitle: "Inköpspris 0 — stämmer det?",
+    zeroCostBody: (n: number) =>
+      `${n} sålda enheter har inköpspris exakt 0 i Shopify. Det är oftast ett tomt fält från en import, så de räknas som saknad kostnad. Är varan verkligen gratis (en gåva), markera den under Kostnader.`,
     costMissingTitle: "Kostnad saknas",
     costMissingBody: (n: number) =>
       `${n} sålda enheter har ingen inköpskostnad i Shopify. De räknas som gratis, så COGS är för låg och vinsten för hög. Fyll i under Kostnader.`,
     cogsChange: (note: string) => `COGS: ${note}.`,
     cogsChangeWeighted: (note: string, newPct: number, oldPct: number) =>
       `COGS: ${note} — perioden spänner över brytdatumet, kostnaden är vägd ${newPct} % ny / ${oldPct} % gammal efter omsättning per dag.`,
+
+    verdict: {
+      pull: "▼ Under break-even — dra ner",
+      hold: "◆ Lönsamt, under målet — håll",
+      holdShort: (days: number) =>
+        `◆ Över målet på ${days === 1 ? "en dag" : `${days} dagar`} — läs 7+ dagar innan du skalar`,
+      push: "▲ Över målet — utrymme att skala",
+      short: { pull: "▼ Dra ner", hold: "◆ Håll", push: "▲ Skala" },
+      shortPeriod: (days: number) =>
+        `${days === 1 ? "en dag" : `${days} dagar`} — läs 7+ dagar innan du skalar`,
+      defaultDuty: "räknat på standardtull",
+    },
+    contributionAfterAds: "Bidrag efter annonser",
+    band: { forlust: "annonserna förlorar pengar", tunt: "tunt", sunt: "sunt", starkt: "starkt" },
+    bandSource: "Evolve: 10–20 % av omsättningen efter annonser är sunt",
 
     visualTitle: "Visuell uppdelning",
     detailTitle: "Detaljerad uppdelning",
@@ -1133,6 +1352,9 @@ const sv: Texts = {
     donutAria: "Fördelning av omsättningen",
     profitPerDay: "Vinst per dag",
     profitPerDayNote: "COGS, avgifter och tull fördelade per dags omsättning — uppskattning, inte bokföring.",
+    refundCheck: (tid: string | null) =>
+      "Returer bokas på orderns dag. De senaste 45 dagarna kollas om var 6:e timme " +
+      (tid ? `(senaste koll ${tid}).` : "(första kollen väntar)."),
     tipSales: "Försäljning",
     tipAds: "Annonser",
     tipProfit: "Vinst",
@@ -1141,10 +1363,19 @@ const sv: Texts = {
     thUnits: "Enheter",
     thNet: "Netto",
     thCogs: "COGS",
-    thCm: "TB",
-    thMargin: "Marginal",
+    thCm: "Bruttovinst",
+    thMargin: "Bruttomarginal",
     thMultiple: "Multipel",
+    thBeRoas: "BE ROAS",
     missing: "saknas",
+    productsTotal: "Alla produkter",
+    productsUnallocated: "Inte fördelat: frakt, returer, moms",
+    productsUnallocatedOld: "Inte fördelat: frakt, returer, moms, rabattkoder på *-rader",
+    productsBeforeOrderDiscounts:
+      "* = före rabattkoder på ordernivå (en del av perioden hämtades innan de mättes), så Netto och BE ROAS på de raderna är något för snälla. Koderna ligger i sista raden.",
+    productsUnprofitable: "olönsam",
+    productsNote:
+      "Netto = vad kunderna betalade för varorna efter alla rabatter. BE ROAS = den ROAS produktens annonser måste slå: tullen fördelad efter orderrader, avgifter med periodens sats, debiterad frakt inte medräknad (talet ligger på den säkra sidan). — = kostnad saknas eller färre än 3 orderrader. Produkterna plus sista raden blir Försäljning.",
   },
 
   costs: {
@@ -1192,8 +1423,23 @@ const sv: Texts = {
       thShare: "Andel av ordrar",
       mixRow: "Faktisk mix (90 dagar)",
       noSales: "Ingen försäljning de senaste 90 dagarna — 1 st per order antas.",
-      feeMeasured: (pct: string) => `TB och BE ROAS räknar med den avgift Shopify Payments faktiskt tog: ${pct} % av omsättningen (senaste 90 dagarna).`,
+      feeMeasured: (pct: string, actual: number) =>
+        actual >= 100
+          ? `TB och BE ROAS räknar med den avgift Shopify Payments faktiskt tog: ${pct} % av omsättningen (senaste 90 dagarna).`
+          : `TB och BE ROAS räknar med ${pct} % i betalavgifter: det Shopify Payments faktiskt tog på ${actual} % av omsättningen, och din sats från Inställningar på de ${100 - actual} % som betalades på annat sätt (senaste 90 dagarna).`,
       feeSetting: (pct: string) => `TB och BE ROAS räknar med satsen i Inställningar: ${pct} %. Faktiska avgifter läses in när ordrar hämtas.`,
+      revenueNote:
+        "BE ROAS räknar med vad kunderna faktiskt betalade per packstorlek de senaste 90 dagarna, efter mängdrabatter och rabattkoder. Debiterad frakt räknas inte, så talet ligger på den säkra sidan.",
+      merNote: (mer: string) =>
+        `Färgerna jämförs med butikens MER de senaste 30 hela dagarna: ${mer}×. Grönt = minst 10 % under, gult = strax under, rött = över.`,
+      merNone:
+        "Inga färger än: de behöver butikens MER ur 30 hela dagar med hämtad annonskostnad (7+ dagar med försäljning, 3+ ordrar). Öppna panelen en gång så hämtas den.",
+      priceRealized: "faktiskt pris, 90 dagar",
+      pricePartly: "faktiskt pris där det finns, listpris där äldre ordrar dominerar en packstorlek",
+      priceList: "listpris (ingen försäljning)",
+      listShort: "listpris",
+      thinPrice: "— = olönsam på det som betalats, men färre än 3 ordrar bär det priset: ingen dom än.",
+      thinFallback: "listpris, 1 st: färre än 3 ordrar med känt pris",
     },
     market: {
       title: "Marknad",
@@ -1220,7 +1466,18 @@ const sv: Texts = {
       entryHelpStandard: "Skrivs till Shopify och gäller alla marknader utan egen kostnad.",
     },
     title: "Kostnader",
-    subtitle: (have: number, total: number) => `${have} av ${total} varianter har inköpspris`,
+    subtitle: (have: number, total: number, salesPct: number | null) =>
+      `${have} av ${total} varianter har inköpspris` +
+      (salesPct != null ? ` · ${salesPct} % av försäljningen senaste 90 dagarna` : ""),
+    missingSalesShare: (pct: number) =>
+      `De står för ${pct} % av försäljningen senaste 90 dagarna — sorterade efter försäljning, störst först.`,
+    zero: {
+      title: (n: number) => `${n} ${n === 1 ? "variant har" : "varianter har"} inköpspris 0 — stämmer det?`,
+      body: "Ett inköpspris på 0,00 är oftast ett tomt fält från en import eller en dropship-app, så det räknas som saknat. Markera varorna som verkligen är gratis (gåvor, prover).",
+      isFree: "Ja, varan är gratis",
+      sales: (s: string) => `${s} i försäljning, senaste 90 dagarna`,
+      more: (n: number) => `…och ${n} till`,
+    },
     missingBannerTitle: (n: number) => `${n} varianter saknar inköpspris`,
     missingBannerBody: "Utan inköpspris räknas produkten som gratis och vinsten blir för hög.",
     allHaveCost: "Alla varianter har inköpspris.",
@@ -1261,7 +1518,7 @@ const sv: Texts = {
     thVariant: "Variant",
     thPrice: "Pris",
     thCost: "Inköp",
-    thCmPerUnit: (currency: string) => `TB/st (${currency})`,
+    thCmPerUnit: "TB/st",
     thBeRoas: "BE ROAS",
     missingBadge: "saknas",
     unprofitable: "olönsam",
@@ -1408,7 +1665,7 @@ const sv: Texts = {
 
   fixed: {
     title: "Fasta kostnader",
-    subtitle: (monthly: string, daily: string) => `${monthly} kr/månad → ${daily} kr/dag i kalkylen`,
+    subtitle: (monthly: string, daily: string) => `${monthly}/månad → ${daily}/dag i kalkylen`,
     addTitle: "Lägg till kostnad",
     addBody:
       "Abonnemang, appar, anställda, bokföring — allt som kostar per månad oavsett försäljning. " +
@@ -1419,8 +1676,8 @@ const sv: Texts = {
     amountPlaceholder: "299",
     add: "Lägg till",
     thName: "Namn",
-    thMonthly: "Kr/månad",
-    thDaily: "Kr/dag",
+    thMonthly: "Per månad",
+    thDaily: "Per dag",
     remove: "Ta bort",
     totalRows: (n: number) => `${n} poster`,
     empty: "Inga fasta kostnader inlagda än. Nettovinsten räknas utan dem tills du lägger till några.",
@@ -1482,8 +1739,24 @@ const sv: Texts = {
     costsPerOrder: "Kostnader per order",
     tariffLabel: (currency: string) => `Tull per order (${currency})`,
     tariffHelp: "Tas ut en gång per order, inte per styck. Det är därför bundles har bättre marginal.",
+    tariffConfirm: "Tullbeloppen stämmer",
+    tariffConfirmHelp:
+      "Kryssa i om tullen ovan (och per marknad) stämmer som den står. Att ändra ett belopp bekräftar också. Tills dess märker panelen tullen som inte bekräftad.",
+    tariffConfirmedNote: (day: string) => `Tullen bekräftad ${day}.`,
     feeLabel: "Transaktionsavgift (%)",
-    feeHelp: "Andel av totalt ordervärde. Shopify Payments ligger typiskt kring 2,9 %.",
+    feeHelp:
+      "Andel av totalt ordervärde. Används för ordrar som inte betalats genom Shopify Payments (PayPal, direkt-Klarna, manuellt) och för dagar utan avgiftsdata — Shopify Payments egna avgifter läses ur ordrarna.",
+    thirdPartyLabel: "Shopifys avgift på ordrar som inte betalats med Shopify Payments (%)",
+    thirdPartyHelp:
+      "Din Shopify-plans tredjepartsavgift (Basic 2 %, Shopify 1 %, Advanced 0,5 %). Shopify tar den ovanpå PayPals eller Klarnas egen avgift. Lämna 0 om du bara använder Shopify Payments.",
+    gateways: {
+      title: "Betalsätt, senaste 90 dagarna",
+      share: (name: string, pct: string) => `${name}: ${pct} % av omsättningen`,
+      none: "Ingen betalning registrerad",
+      empty: "Visas när ordrar hämtats med betaluppgifter.",
+      explain:
+        "Bara Shopify Payments redovisar sina avgifter på ordern. Omsättning som betalats på annat sätt räknas med transaktionsavgiften ovan.",
+    },
     claude: {
       title: "Koppla Claude",
       body: "Appen kan läsa dina leverantörsprislistor och svara på frågor om dina siffror. Klistra in din egen Claude-nyckel så kör den på ditt konto.",
@@ -1521,8 +1794,8 @@ const sv: Texts = {
       tariffLabel: "Tull per order",
       hint: "Tomt fält = standardvärdena ovan. Typiskt för Shopify Payments: +1 % för utländska kort, 1,5–2 % växling. Tullen är ett belopp per order, inte en procentsats.",
       measuredAll: (pct: string, days: number) =>
-        `Du behöver inte slå upp dem: panelen läser de avgifter Shopify Payments faktiskt tog ur dina ordrar — ${pct} % av omsättningen de senaste ${days} dagarna. Fälten nedan används bara för dagar utan den datan.`,
-      measured: (pct: string) => `Faktiskt taget: ${pct} % (senaste 90 dagarna)`,
+        `Panelen läser de avgifter Shopify Payments faktiskt tog ur dina ordrar — ${pct} % av omsättningen som betalades genom Shopify Payments de senaste ${days} dagarna. Fälten nedan används för omsättning som betalats på annat sätt och för dagar utan den datan.`,
+      measured: (pct: string) => `Shopify Payments tog: ${pct} % (senaste 90 dagarna)`,
     },
     marginLabel: "Målmarginal (%)",
     marginHelp: "Max-CPA på panelen räknas mot den här marginalen.",
@@ -1730,10 +2003,22 @@ const sv: Texts = {
       days <= 0
         ? "Facebook-inloggningen går ut idag — öppna den butikens Inställningar och logga in igen"
         : `Facebook-inloggningen går ut om ${days} ${days === 1 ? "dag" : "dagar"} — öppna den butikens Inställningar och logga in igen`,
+    outsideHistory: (n: number, date: string) =>
+      `Shopify ger appar bara 60 dagars ordrar: ${n} ${n === 1 ? "dag" : "dagar"} före ${date} är utelämnade ur butikens siffror, annonskostnaden också`,
+    verdictDefaultDuty: (names: string) => `Beskedet räknat på standardtull (inte bekräftad): ${names}`,
     notesTitle: "Behöver göras i en annan butik",
+    qualityTitle: "Med i summan, men vinsten är för hög",
+    costMissing: (pct: number) =>
+      `inköpspris saknas på ${pct} % av försäljningen — de varorna räknas som gratis, så butikens vinst är för hög`,
+    noAdAccount: "inget annonskonto kopplat — annonskostnaden räknas som 0",
     fxUnavailable: (from: string, to: string) => `växelkurs ${from}→${to} kunde inte hämtas`,
     fxNote: (day: string) =>
       `Varje dag räknas om med den dagens ECB-kurs. Senaste kurs: ${day}.`,
+    refundCheck: (tid: string | null, saknas: number) =>
+      "Returer bokas på orderns dag. Varje butiks senaste 45 dagar kollas om var 6:e timme" +
+      (tid ? ` (äldsta kollen bland butikerna: ${tid})` : "") +
+      (saknas > 0 ? `; ännu inte kollad i ${saknas} ${saknas === 1 ? "butik" : "butiker"}` : "") +
+      ".",
   },
 
   tips: {
@@ -1745,8 +2030,10 @@ const sv: Texts = {
 
   juicy: {
     titleA: "Dina inköpspriser är redan här",
-    bodyA: (have: number, total: number) =>
-      `${have} av ${total} varianter har inköpspris i Shopify — StonePNL räknar redan på dem. Inget att importera.`,
+    bodyA: (have: number, total: number, salesPct: number | null) =>
+      `${have} av ${total} varianter har inköpspris i Shopify` +
+      (salesPct != null ? `, som täcker ${salesPct} % av försäljningen senaste 90 dagarna` : "") +
+      ` — StonePNL räknar redan på dem. Inget att importera.`,
     noteA: "Kontrollera att kostnaden är vara + frakt utan tull. Tullen är per order i Inställningar.",
     ctaA: "Ser rätt ut",
     ctaA2: "Lägg till flerpack från Juicy",
@@ -1798,8 +2085,14 @@ const sv: Texts = {
     range: (low: string, high: string) => `${low}–${high}`,
     confidence: { good: "● God säkerhet", low: "◐ Låg säkerhet", hidden: "○ För osäkert att visa" },
     notEnough: "För lite data än",
-    verdictUnder: (cpa: string, max: string, h: number) => `Din CPA (${cpa}) är under ${h}-dagars max-CPA (${max}): lönsamt inom ${h} dagar.`,
-    verdictOver: (cpa: string, max: string, h: number) => `Din CPA (${cpa}) är över ${h}-dagars max-CPA (${max}): kunderna betalar inte tillbaka inom ${h} dagar.`,
+    kpiBreakEven: (h: number) => `Break-even-CAC (${h} d)`,
+    kpiBreakEvenSub: (h: number) => `täckningsbidrag per kund inom ${h} dagar`,
+    verdictUnder: (cpa: string, max: string, h: number) =>
+      `Din CAC (${cpa}) är under ${h}-dagars max-CPA vid din målmarginal (${max}): över målet — utrymme att skala.`,
+    verdictHold: (cpa: string, max: string, be: string, h: number) =>
+      `Din CAC (${cpa}) är över din mål-max-CPA (${max}) men under ${h}-dagars break-even (${be}): lönsamt inom ${h} dagar, under din målmarginal — håll.`,
+    verdictOver: (cpa: string, be: string, h: number) =>
+      `Din CAC (${cpa}) är över ${h}-dagars break-even (${be}): varje ny kund förlorar pengar inom ${h} dagar — dra ner.`,
     verdictNoCpa: "Koppla Meta och hämta 30 dagars annonskostnad för att jämföra CPA mot kundvärdet.",
     horizonLabel: "Horisont som styr max-CPA",
     horizonHelp: "Dagar efter första ordern. 90 är standard för dropshipping.",

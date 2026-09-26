@@ -435,9 +435,13 @@ export async function getSpend(
       market: bara raderna märkta med den marknaden (landskod). Kampanjer
       utan märkning ligger på "" och räknas då inte med — de syns bara i
       vyn för alla marknader. */
-  opts?: { syncFresh?: boolean; tokenExpired?: boolean; market?: string },
+  opts?: { syncFresh?: boolean; tokenExpired?: boolean; market?: string; perMarknad?: boolean },
 ): Promise<{
   days: { day: string; spend: number; impressions: number; clicks: number }[];
+  /** Med `perMarknad` (och utan marknadsfilter): samma rader delade på
+      kampanjernas marknadsmärkning, "" = omärkta kampanjer. Inga nya
+      Meta-anrop — det är samma rader som `days` summerar. */
+  byMarket?: Record<string, { day: string; spend: number; impressions: number; clicks: number }[]>;
   error?: string;
   errorCode?: SpendErrorCode;
   /* Sätts när ett annonskonto redovisar i en annan valuta än butiken OCH
@@ -526,8 +530,20 @@ export async function getSpend(
     ...(google.fxSaknas ?? []),
   ];
 
+  let byMarket: Record<string, ReturnType<typeof summeraDagar>> | undefined;
+  if (opts?.perMarknad && !marknad) {
+    const grupper = new Map<string, SpendRad[]>();
+    for (const r of fresh) {
+      const m = r.market ?? "";
+      if (!grupper.has(m)) grupper.set(m, []);
+      grupper.get(m)!.push(r);
+    }
+    byMarket = Object.fromEntries([...grupper].map(([m, rader]) => [m, summeraDagar(summerbara(rader), dolda)]));
+  }
+
   return {
     days: summeraDagar(summerbara(fresh), dolda),
+    ...(byMarket ? { byMarket } : {}),
     ...(varst?.error
       ? { error: varst.error, errorCode: varst.errorCode }
       : googleFel

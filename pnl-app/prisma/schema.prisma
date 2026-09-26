@@ -36,10 +36,19 @@ model Session {
 /// Per-butiksinställningar. Skapas med defaults vid installation.
 model ShopSettings {
   shop            String   @id
-  /// Tull per ORDER (inte per styck) i butikens valuta.
-  tariffPerOrder  Decimal  @default(27.50) @db.Decimal(10, 2)
-  /// Transaktionsavgift som andel av totalt ordervärde.
+  /// Tull per ORDER (inte per styck) i butikens valuta. Databasens default
+  /// är 0 sedan 2026-09-26: 27,50 är Axels EU-tull i KRONOR och blev ett
+  /// påhittat tal i alla andra valutor. afterAuth sätter 27,50 vid SKAPANDET
+  /// av en SEK-butik (`startTull`), aldrig vid uppdatering.
+  tariffPerOrder  Decimal  @default(0) @db.Decimal(10, 2)
+  /// Transaktionsavgift som andel av totalt ordervärde. Sedan 2026-09-26
+  /// gäller den omsättning UTAN faktiska avgifter: ordrar som inte gick genom
+  /// Shopify Payments (PayPal, direkt-Klarna, manuellt) och dagar utan data.
   feeRate         Decimal  @default(0.029) @db.Decimal(6, 4)
+  /// Shopifys egen avgift på ordrar som inte betalats med Shopify Payments
+  /// (planens tredjepartsavgift), andel. Tas på omsättning som bevisligen
+  /// gick via en annan betalväxel, ovanpå feeRate. 0 = ingen.
+  thirdPartyFeeRate Decimal @default(0) @db.Decimal(6, 4)
   /// Målmarginal som max-CPA räknas mot.
   targetMargin    Decimal  @default(0.25) @db.Decimal(6, 4)
   /// ⚠ LEGACY sedan 2026-09-17: annonskontona bor i MetaAdAccount, en rad per
@@ -92,6 +101,17 @@ model ShopSettings {
   /// Sätts när handlaren sparat inställningarna minst en gång. Skiljer
   /// "har granskat tull och avgifter" från "kör fortfarande på defaults".
   settingsSavedAt DateTime?
+  /// Sätts när handlaren KVITTERAT tullen: ett tullbelopp ändrades i
+  /// Inställningar, eller rutan "Tullbeloppen stämmer" kryssades i. Inte
+  /// vid vilken sparning som helst — språkbyte eller en inklistrad
+  /// Meta-nyckel stämplade förut tullen som granskad. Null = tullen är ett
+  /// startvärde ingen tittat på.
+  tariffConfirmedAt DateTime?
+  /// Varianter (variantGid) handlaren sagt är GRATIS (gåvor, prover). Bara
+  /// för dem räknas ett inköpspris på 0 som riktigt; alla andra nollor räknas
+  /// som saknad kostnad i täckningen. Kolumn på ShopSettings, så shop/redact
+  /// raderar den med raden.
+  freeVariants    Json?
   /// Sätts när kom igång-checklistan dolts manuellt.
   setupDismissedAt DateTime?
   /// Butiker med samma groupId hör till samma ägare och får summeras ihop.
@@ -141,6 +161,25 @@ model ShopSettings {
   anthropicApiKey String?
   /// När nyckeln sparades — visas som "kopplad sedan" i Inställningar.
   anthropicKeySavedAt DateTime?
+  /// Ser butiken ordrar äldre än 60 dagar? Utan read_all_orders svarar
+  /// Shopify TOMT för dem — inte med fel — och en tom hämtning får aldrig
+  /// skriva nollor över riktiga dagar. Sätts av sonden `harFullOrderhistorik`
+  /// (en order äldre än idag − 61 syns = true). Null = aldrig sonderad, då
+  /// gäller horisonten idag − 59. Se app/lib/historik.ts.
+  fullOrderHistory Boolean?
+  /// När sonden senast kördes. Kontrolleras om varje vecka — en butik som
+  /// var för ny för att ha gamla ordrar kan ha fått några sedan dess.
+  fullOrderHistoryCheckedAt DateTime?
+  /// Returkollen: när butikens senaste 45 dagar senast exporterades om för
+  /// att fånga sena återbetalningar och avbokningar (de bokas på orderns dag).
+  /// Tokenvakten tar butiker där värdet är null eller äldre än 6 h och
+  /// stämplar atomiskt. Skrivs med rå SQL så att `updatedAt` inte rörs — se
+  /// `resyncRunda` i token-keeper.server.ts.
+  refundResyncAt DateTime?
+  /// När returkollen senast LYCKADES. Skrivs bara efter en lyckad hämtning
+  /// (rå SQL, som låset ovan) och är det panelen och gruppen visar som
+  /// "senaste koll" — `refundResyncAt` är låset och stämplas innan exporten.
+  refundResyncOkAt DateTime?
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
 
@@ -372,6 +411,14 @@ model DailyPnl {
   /// Null = raden skrevs innan avgifterna hämtades, eller Shopify lämnade
   /// inte ut dem — då räknar motorn med procentsatsen i Inställningar.
   fees            Float?
+  /// Omsättning i ordrar betalda genom Shopify Payments — den del av
+  /// totalSales som `fees` täcker (bara Shopify Payments skriver fees).
+  /// Resten räknas med satsen. Null = raden skrevs före 2026-09-26: hela
+  /// omsättningen räknas som täckt tills dagen hämtas om.
+  feesCoveredSales Float?
+  /// Omsättning per betalväxel: { "shopify_payments": 6000, "paypal": 4000 }.
+  /// "" = ordrar utan transaktion. Underlaget för listan i Inställningar.
+  gatewaySales    Json?
   /// Dagens produktmix: [{productGid, variantGid, title, variantTitle, units, netSales, unitCost}]
   products        Json
   /// Samma dag uppdelad per marknad (ISO-landskod ur leveransadressen):
@@ -416,6 +463,8 @@ model HourlyPnl {
   totalSales      Float  @default(0)
   shippingCharges Float  @default(0)
   fees            Float?
+  /// Som DailyPnl.feesCoveredSales, för timmen.
+  feesCoveredSales Float?
 
   @@id([shop, day, hour, market])
   @@index([shop, day])
