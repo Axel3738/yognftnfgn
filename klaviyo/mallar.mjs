@@ -37,6 +37,13 @@ export const esk = (s) =>
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
 
+// Samma regel som recensioner.mjs citatSignatur (egen kopia: recensioner.mjs
+// importerar ROT härifrån). Namnet bara när det finns och inte är "Anonym".
+const citatSignatur = (r) => {
+  const namn = String(r?.namn ?? '').trim();
+  return namn && !/^(anonym|verifierad kund)/i.test(namn) ? `${namn}, verifierad kund` : 'Verifierad kund';
+};
+
 // "mejl/konfig.json#butik" → objektet under nyckeln (punkter = djupare nivåer).
 export function lasRef(ref, rot = ROT) {
   if (!ref) return null;
@@ -456,7 +463,7 @@ const BLOCK = {
                   <td style="padding: 16px 20px;">
                     <p style="${s.brod} font-size: 15px; color: ${s.rod}; letter-spacing: 2px; margin: 0 0 6px;">${'&#9733;'.repeat(Math.round(r.betyg))}</p>
                     <p style="${s.brod} font-size: 14px; line-height: 1.6; color: ${s.svart}; font-style: italic; margin: 0;">&#8220;${esk(r.text)}&#8221;</p>
-                    <p style="${s.brod} font-size: 13px; color: ${s.gra}; margin: 8px 0 0;">${esk(r.namn)}, verifierad kund</p>
+                    <p style="${s.brod} font-size: 13px; color: ${s.gra}; margin: 8px 0 0;">${esk(citatSignatur(r))}</p>
                   </td>
                 </tr>
               </table>`
@@ -860,7 +867,7 @@ function textversion(mejl, ctx) {
         break;
       }
       case 'citat':
-        for (const r of (ctx.recensioner?.[b.handle] ?? []).slice(0, Math.min(Number(b.antal ?? 2) || 2, 2))) ut.push(`"${r.text}"\n${r.namn}, verifierad kund`);
+        for (const r of (ctx.recensioner?.[b.handle] ?? []).slice(0, Math.min(Number(b.antal ?? 2) || 2, 2))) ut.push(`"${r.text}"\n${citatSignatur(r)}`);
         break;
       case 'knapp':
         ut.push(`${b.text}: ${lank(b.lank, { ...ctx, varningar: [] })}`);

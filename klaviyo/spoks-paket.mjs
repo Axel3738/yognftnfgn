@@ -28,7 +28,7 @@ import { pathToFileURL } from 'node:url';
 import { ROT } from './mallar.mjs';
 import { lasInnehall, planeraMejl } from './bygg.mjs';
 import { hamtaProdukterCache } from './produkter.mjs';
-import { hamtaRecensionerCache } from './recensioner.mjs';
+import { hamtaRecensionerCache, citatSignatur } from './recensioner.mjs';
 
 // ---------------------------------------------------------------------------
 // Byggstenar
@@ -190,7 +190,7 @@ const BLOCK = {
     }
     return lista.map((r) => ({
       type: 'quote',
-      text: `${'★'.repeat(Math.max(1, Math.min(5, Math.round(r.betyg))))} "${r.text}"\n${r.namn}, verifierad kund`,
+      text: `${'★'.repeat(Math.max(1, Math.min(5, Math.round(r.betyg))))} "${r.text}"\n${citatSignatur(r)}`,
       alignment: 'left',
     }));
   },

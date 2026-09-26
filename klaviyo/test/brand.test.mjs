@@ -176,7 +176,9 @@ test('recensioner: källan väljs per brand, widgetens HTML blir ren text', () =
   assert.equal(recensionsKalla({ id: 'x', recensioner: { kalla: 'ingen' } }).kalla, 'ingen');
   assert.equal(avHtml('<p>Jätte &amp; sköna</p><p>strumpor<br>igen</p>'), 'Jätte & sköna strumpor igen');
   const rader = widgetTillRader({ product_external_id: 1001, reviews: [{ rating: 5, body_html: '<p>Bra</p>', reviewer_name: 'Kent', verified_buyer: true, created_at: '2026-09-25' }] }, 1001);
-  assert.deepEqual(rader[0], { product_external_id: 1001, rating: 5, body: 'Bra', reviewer: { name: 'Kent' }, published: true, hidden: false, verified_buyer: true, created_at: '2026-09-25' });
+  assert.deepEqual(rader[0], { product_external_id: 1001, rating: 5, body: 'Bra', reviewer: { name: 'Kent' }, published: true, hidden: false, verified_buyer: true, anonym: false, created_at: '2026-09-25' });
+  const anonym = widgetTillRader({ reviews: [{ rating: 5, body_html: 'x', reviewer_name: 'Anonym', verified_buyer: true, is_anonymous_reviewer: true }] }, 1);
+  assert.equal(anonym[0].anonym, true);
 });
 
 test('recensioner: judgeme-widget frågar per produkt, kopplar på Shopify-id, cachar med källan', async () => {
@@ -186,7 +188,7 @@ test('recensioner: judgeme-widget frågar per produkt, kopplar på Shopify-id, c
   const fetchFn = async (u) => {
     anrop.push(String(u));
     const id = new URL(u).searchParams.get('product_id');
-    const reviews = String(id) === String(p0.id) ? [{ rating: 5, body_html: '<p>Jätte sköna strumpor, bra present</p>', reviewer_name: 'Kent', verified_buyer: true, created_at: '2026-09-25T08:12:30Z' }, { rating: 2, body_html: '<p>Inte alls bra, för små strumpor</p>', reviewer_name: 'Bo' }] : [];
+    const reviews = String(id) === String(p0.id) ? [{ rating: 5, body_html: '<p>Jätte sköna strumpor, bra present</p>', reviewer_name: 'Kent', verified_buyer: true, created_at: '2026-09-25T08:12:30Z' }, { rating: 2, body_html: '<p>Inte alls bra, för små strumpor</p>', reviewer_name: 'Bo' }, { rating: 5, body_html: '<p>Importerad utan köp bakom sig</p>', reviewer_name: 'Imp', verified_buyer: false }, { rating: 5, body_html: '<p>Skön present, anonym men verifierad</p>', reviewer_name: 'Anonym', verified_buyer: true, is_anonymous_reviewer: true, created_at: '2026-09-24T08:00:00Z' }] : [];
     return { ok: true, json: async () => ({ number_of_reviews: reviews.length, product_external_id: Number(id), reviews }) };
   };
   const live = await hamtaRecensionerCache({ brand: MATSTRUMPOR, produkter: PRODUKTER, rot, env: {}, fetchFn });
@@ -195,8 +197,10 @@ test('recensioner: judgeme-widget frågar per produkt, kopplar på Shopify-id, c
   assert.match(anrop[0], /^https:\/\/judge\.me\/reviews\/reviews_for_widget\?/);
   assert.ok(anrop.some((u) => u.includes(`product_id=${p0.id}`) && u.includes('shop_domain=1r46tp-qx.myshopify.com')));
   assert.deepEqual(Object.keys(live.recensioner), [p0.handle]);
-  assert.equal(live.recensioner[p0.handle].length, 1);
+  // Den overifierade faller bort; den anonyma stannar men utan namn.
+  assert.equal(live.recensioner[p0.handle].length, 2);
   assert.equal(live.recensioner[p0.handle][0].namn, 'Kent');
+  assert.equal(live.recensioner[p0.handle][1].namn, null);
   assert.equal(live.recensioner[p0.handle][0].text, 'Jätte sköna strumpor, bra present');
   const cache = JSON.parse(fs.readFileSync(path.join(rot, 'klaviyo', 'output', 'matstrumpor', 'recensioner.json'), 'utf8'));
   assert.equal(cache.kalla, 'judgeme-widget');

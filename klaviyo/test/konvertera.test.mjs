@@ -88,13 +88,18 @@ test('CaraShell: produktkort blir bild + rubrik + knapp på nb/en, produktblock 
   assert.equal(kassa.buttonText, 'Back to checkout');
 });
 
-test('CaraShell: citat ur produktfilen på sv, aldrig på en; grundare på språket; stjärnorna till Trustpilot per språk', () => {
+test('CaraShell: produktfilens overifierade recensioner blir aldrig citat; grundare på språket; stjärnorna till Trustpilot per språk', () => {
   const { K, brand } = caraKonverterare();
+  // Takskyddets recensioner i produktfilen är Bäverbutikens importerade (Judge.me
+  // verified: nothing) och saknar `verifierad: true` ⇒ inga citat, en varning.
   const rec = lasRecensioner(brand, 'carashell');
-  assert.ok((rec.takskyddet ?? []).length >= 5, 'produktfilens recensioner läses');
-  const sv = K.konverteraBlock({ typ: 'citat', handle: 'takskyddet', antal: 2 }, [], 'sv');
-  assert.equal(sv.length, 2);
-  assert.match(sv[0].text, /verifierad kund$/);
+  assert.deepEqual(rec.takskyddet ?? [], []);
+  const varnSv = [];
+  assert.deepEqual(K.konverteraBlock({ typ: 'citat', handle: 'takskyddet', antal: 2 }, varnSv, 'sv'), []);
+  assert.equal(varnSv.length, 1);
+  // Med en verifierad recension i cachen: signaturen säger verifierad kund.
+  const K2 = skapaKonverterare({ brand, produktIds: lasProduktIds('carashell'), recCache: { takskyddet: [{ namn: 'Lena', betyg: 5, text: 'Sitter bra.', verifierad: true }] }, erbjudande: null });
+  assert.match(K2.konverteraBlock({ typ: 'citat', handle: 'takskyddet' }, [], 'sv')[0].text, /verifierad kund$/);
   const varn = [];
   assert.deepEqual(K.konverteraBlock({ typ: 'citat', handle: 'takskyddet' }, varn, 'en'), []);
   assert.equal(varn.length, 1);
@@ -103,8 +108,8 @@ test('CaraShell: citat ur produktfilen på sv, aldrig på en; grundare på språ
   assert.match(st[0].text, /no\.trustpilot\.com\/evaluate\/carashell\.se\?stars=1/);
 });
 
-test('recensionerUrYaml läser reviews-listan och sorterar 5 före 4', () => {
-  const yaml = 'produkt:\n  namn: "x"\nreviews:\n  - namn: "Karin Berg"\n    betyg: 4\n    text: "Bra."\n    datum: "2026-09-08"\n  - namn: "Erik"\n    betyg: 5\n    text: "Nöjd."\n    datum: "2026-09-08"\n  - namn: "Sur"\n    betyg: 2\n    text: "Nej."\n    datum: "2026-09-08"\nfaq:\n  - fraga: "q"\n';
+test('recensionerUrYaml läser bara verifierade recensioner och sorterar 5 före 4', () => {
+  const yaml = 'produkt:\n  namn: "x"\nreviews:\n  - namn: "Karin Berg"\n    betyg: 4\n    text: "Bra."\n    datum: "2026-09-08"\n    verifierad: true\n  - namn: "Erik"\n    betyg: 5\n    text: "Nöjd."\n    datum: "2026-09-08"\n    verifierad: true\n  - namn: "Importerad"\n    betyg: 5\n    text: "Aldrig köpt."\n    datum: "2026-09-08"\n  - namn: "Sur"\n    betyg: 2\n    text: "Nej."\n    datum: "2026-09-08"\n    verifierad: true\nfaq:\n  - fraga: "q"\n';
   const r = recensionerUrYaml(yaml);
   assert.deepEqual(r.map((x) => [x.namn, x.betyg]), [['Erik', 5], ['Karin B.', 4]]);
 });
