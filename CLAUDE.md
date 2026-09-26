@@ -224,7 +224,10 @@ brick by brick och **varje lyckat steg dokumenteras direkt**:
   mätte samma dag att Factory-appen `ca709dfb` inte finns i något av Axels
   konton — den ligger i jobb-Gmailens Dev Dashboard-org (VA-CHECKLIST rad
   101). Vägen utan den: egen app i Axels org via
-  `factory/tacksida/cowork/2-egen-app.txt` + `TACKSIDA_CLIENT_ID`.
+  `factory/tacksida/cowork/2-egen-app.txt` (Axel skapar den själv samma kväll,
+  inga scopes) + **`TACKSIDA_CLIENT_ID_CARASHELL`** och
+  **`SHOPIFY_APP_AUTOMATION_TOKEN_CARASHELL`** i Environments — token är per
+  app, så `deploy.sh` läser `_<BUTIK>` först och det delade namnet som reserv.
 - **Annonskontot för ALLA OPS-butiker (SE och NO) är "MagiBorsten DK"
   `915422744950975`** (Axels beslut 2026-09-07). Ett gemensamt konto —
   kampanjnamn prefixas alltid med brandet så datan går att skära per

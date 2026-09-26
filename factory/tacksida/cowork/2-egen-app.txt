@@ -64,8 +64,8 @@ exakt så här, så klistrar jag in dem själv:
 
   Lägg in två variabler i miljön på claude.ai/code → Environments, den miljö
   som har SHOPIFY_CLIENT_ID_yitrbk_m3:
-    TACKSIDA_CLIENT_ID = <client id>
-    SHOPIFY_APP_AUTOMATION_TOKEN = <token>   (byt värdet på den som finns)
+    TACKSIDA_CLIENT_ID_CARASHELL = <client id>
+    SHOPIFY_APP_AUTOMATION_TOKEN_CARASHELL = <token>   (nytt namn, per butik)
 
 ------------------------------------------------------------------------------
 RAPPORTERA TILL SLUT, KORT
