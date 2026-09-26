@@ -371,8 +371,10 @@ butikens egen domän när något slås på. Inget är påslaget.
 4. **Flows → F01 E1:** öppna mejlet → medlemskortet (sektionen med "MEDLEMSKORT") → mörk
    bakgrund, ljus text, orange ram — stilen går inte att sätta via MCP:n.
 5. **K01** (https://app.spoks.com/matstrumpor/post/9aa10213-3bf1-42bc-b23e-315e088d92be/edit,
-   i listan "De tittar två gånger, sen skrattar de"): publik `SEG_samtycke` (inte
-   `uppvarmning_steg1`, den är tom) → schemalägg tisdag 29/9 18:00. Sedan en kampanj i taget enligt
+   i listan "De tittar två gånger, sen skrattar de"): publik Spoks **"Warmup tier 1"** om den
+   finns bland mottagarvalen, annars `SEG_samtycke` (inte `SEG_uppvarmning_steg1`, 19 st) →
+   schemalägg tisdag 29/9 18:00 → skärmdump av förhandsvisningen ända ner till sidfoten
+   före sista klicket (se "Slutkollen av K01" ovan). Sedan en kampanj i taget enligt
    `klaviyo/innehall/matstrumpor/KALENDER-2026.md`; F06 E1/E2 ligger kvar tills
    `SEG_oengagerade_180d` har medlemmar.
 6. ✅ **Planen är betald sedan 2026-09-26** (mätt med `whoami` samma eftermiddag: `plan: Paid`,
@@ -395,3 +397,48 @@ svarar samma MCP-användare `kundsupport@baverbutiken.se` och samma två workspa
   som har `emailMarketingConsent: subscribed` står som `subscriptionStatus: not_subscribed`
   (det är Spoks eget följarfält). Döm aldrig ett segment som fel på `subscriptionStatus` —
   läs `emailMarketingConsent` och `emailMarketingCanReceive`.
+- **Fonten är Mochiy Pop P One igen** (`get_settings`: `headerGoogleFontFamily` och
+  `regularGoogleFontFamily` = Mochiy Pop P One, reserv Arial Black) — någon har satt den i appen
+  efter bygget. Tilt Warp + Nunito Sans nedan är alltså historik.
+
+### Slutkollen av K01 före schemaläggning (workflow `k01-forhandskoll`, 2026-09-26)
+
+Tre granskare (fakta mot butiken, länkar, copy mot källan) och två skeptiker per påstått fel.
+Inget som stoppar utskicket:
+
+- **Priset 399 kr stämmer** (`/products/sushi-strumpor.json`: 5 par 399,00, jämförpris 399,00 =
+  ingen rea; 3 par 369 kr nämns inte). Fem par, ätpinnar av trä, onesize 36–44 står i
+  produktbeskrivningen; 30 dagars retur står i `/policies/refund-policy`.
+- **Båda recensionerna finns ordagrant i Judge.me** (widgeten i `klaviyo/recensioner.mjs`,
+  produkt-id 10286130889043): "Jätte sköna strumpor" (Anonym, 5, verifierad, 2026-09-25) och
+  "Underbara strumpor, mottagaren vart så glad." (Kent, 5, verifierad, 2026-09-16).
+- **Alla länkar svarar 200**; produktkortets `1r46tp-qx.myshopify.com`-länk gör en 301 till
+  matstrumpor.se. Bilden på storage.spoks.com svarar 200 (JPEG 800×800).
+- **Texten är källfilen ordagrant**, inga tankstreck, ingen leveranstid, bara förnamnstoken.
+- Produkten säljs med lagerpolicy CONTINUE (minussaldo), så "i lager" bevisar inget — men
+  76 av 95 sushiordrar sedan 5/9 var skickade, och alla oskickade var från samma dag.
+
+**Går bara att se i förhandsvisningen** (get_campaign visar inte fälten): att "Avregistrera dig"
+står längst ner (`isOptOutEnabled` returneras aldrig av `get_campaign`, varken hos Matstrumpor
+eller Bäverbutiken), att produktkortet har knappen "Till sushilådan" och att priset inte ritas
+överstruket. Därför skärmdumpen före sista klicket.
+
+**Publiken — Spoks egen uppvärmning:** hjälpartikeln *Warm-up guidelines*
+(help.spoks.com/en/articles/15693117, läst 2026-09-26) säger "The first segment is your 2 500
+warmest contacts, and each segment doubles from there", att segmenten "appear as recipient
+options when you choose who a campaign goes to" (de syns inte under Contacts och inte i
+`get_segments` — Matstrumpor hade inga Warmup-segment vid mätningen), att flöden inte räknas,
+att nästa steg låses upp cirka 24 h efter förra utskicket beroende på betyget, och att gränserna
+bara försvinner om man väljer "I'll handle warmup manually". **Sessionens val: K01 till Spoks
+"Warmup tier 1" om den finns bland mottagarvalen, annars SEG_samtycke (2 930).** Skillnaden är
+cirka 430 kontakter; kalenderns trappa (K01–K02 uppvärmning) är Klaviyos och ersätts i Spoks av
+plattformens egen.
+
+**Ej rättat (Spoks svarade "Rate limit exceeded" och sessionen slutade anropa):**
+- Faktakolumnen har rubriken **"Ångerrätt"** över "30 dagars returrätt". Lagens ångerrätt är
+  14 dagar; butikens 30 dagar är öppet köp (produktsidan: "30 dagars öppet köp"). Rubriken är
+  hårdkodad i `spoks-paket.mjs:230` (och `mallar.mjs:533/651/875`, som Bäverbutiken delar). Förslag:
+  brandfält, "Öppet köp" för Matstrumpor, och rätta utkasten K02–K14 med
+  `update_draft_campaign_blocks`. Flödesmejlen är live och ändras inte utan att stängas av.
+- `isOptOutEnabled: true` på K01 (försöket stoppades av rate limit) — onödigt om förhandsvisningen
+  redan visar "Avregistrera dig".
