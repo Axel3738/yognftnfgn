@@ -62,6 +62,30 @@ ingen trigger alls, väntan 12 dagar i stället för 14, och F07 filtrerade på
 Kampanjerna K01–K22 byggdes som utkast (Spoks: status draft, avregistreringslänk på).
 K01 schemalades av Axel i appen till tisdag 29/9 18:00 (mätt 2026-09-26 10:26).
 
+## Rättade kopior (v2/v3) byggda 2026-09-26 kväll — ersätter live-flödena
+
+Granskningen i `baverbutiken/KVAR.md` hittade falska "verifierad kund"-citat (F01 E2, K01),
+review gating (F14), ett brutet spårningslöfte och dubbelt KREDIT100 (F04 v2) och en rad
+mindre fel (F02, F05, F07, F13). MCP:n kan inte ändra ett live-flöde (mätt 18:29 CEST:
+`update_flow_step` på F01 svarar "Cannot edit a step in an active flow"), så varje flöde
+fick en **rättad kopia byggd inaktiv via MCP**. Att slå på kopian (sändstegen först, sedan
+flödet) och stänga av originalet är Axels klick i appen. Väntetiderna är originalens,
+inklusive Axels 21 d i F13 och 22 d + 18:00 i F14.
+
+| Kopia | Spoks-id | Post-id (E1, E2, E3) | Vad som rättats mot originalet |
+|---|---|---|---|
+| **F01 Välkomst v2** | `f11d04ab-1789-4a88-9abb-a3aaf6e4219d` | `491d1b99…`, `b1f70673…`, `03544d7c…` | E2 utan citaten (Karin/Erik), ny förhandstext; E3 utan "från beställning till dörren" och "jag svarar själv"; stegfilter på E2 och E3: inget köp ELLER köp före inrullningen |
+| **F02 Övergiven kassa v2** | `f98eb12e-f7a2-4b0b-ae02-f738776b5282` | `c9376a0b…`, `518fe1b7…`, `ee9050d8…` | E2: kassans varor (abandonedCart) i stället för "senast visade produkt", de tre frågorna besvarade; E3 "så svarar vi"; återinträde tidigast efter 7 dagar |
+| **F04 Efter köp v3 (kredit)** | `3c8443d3-4916-40ad-b83e-5345c8752c2e` | `46400d0d…`, `77dcaccd…` | E1: "skriv in paketnumret från leveransmejlet", villkoren en gång + "går inte ihop med andra rabatter", "så hjälper vi dig"; E2: rubriken "Tre prylar till att kika på"; **inget återinträde** (KREDIT100 är en gång per kund) |
+| **F05 Vinna tillbaka v2** | `3ef1aab0-24b1-4c84-80a4-840f7a4cc637` | `dd221fc0…`, `e28604a8…` | E1: Bävertratten som belagt återköp + Marin Motorhölje och Fiskespöhållare i raden; E2: "Tre prylar till att kika på", Bävertratt i stället för adventskalendern |
+| **F07 Motorhölje till båtmotorskydd v2** | `98d46ff1-fb25-44b6-8916-2297198e5ea6` | `897f1a24…`, `1e016b67…` | E1: motsäger inte längre produktsidan ("skyddet går ända ner över riggen"); E2: "Mer för båten", utan spöhållaren (inte båtprodukt, Axel 2026-09-25) och utan påhittat "andra båtägare"; priserna som Spoks produktblock (följer Shopify) |
+| **F13 Tips sätesöverdrag v2** | `ecdbd45a-b271-4443-939b-41905042895f` | `c8a399d8…` | "Finns i flera färger" (bara grå och svart i lager) |
+| F14 Recension Trustpilot v2 | byggs när Axel valt A (alla stjärnor till Trustpilot) eller B (alla till Judge.me) | | stjärna 1–3 → Judge.me och 4–5 → Trustpilot är review gating |
+
+Stegen i kopiorna saknar `parameters.name` i `get_flow` (MCP:n sätter inget) — i appen
+identifieras de på ämnesraden. K01 v2 `0c760c3e-3eec-4fc0-b40f-3ec16b37e330` (utkast,
+utan citaten) ersätter gamla K01 `51c37c20-…` (schemalagd tis 29/9 18:00 MED citaten).
+
 ## Klaviyo avstängt 2026-09-26
 
 `node klaviyo/stang-av.mjs --ja`: 13 flöden till draft, K01 återkallad till utkast. Inget raderat.
