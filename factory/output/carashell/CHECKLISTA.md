@@ -137,8 +137,10 @@ these four switches are yours.
 Skipping this is not a cosmetic risk: the withdrawal period can stretch from
 14 days to 12 months and 14 days, and fines reach 4% of annual turnover in
 some member states.
-- [ ] Settings → **Customer accounts** → turn customer accounts on
-- [ ] Same page → turn on **Self-serve returns** (and cancellations)
+- [x] Settings → **Customer accounts** → turn customer accounts on
+      (measured via API 2026-09-26: NEW_CUSTOMER_ACCOUNTS, login links visible)
+- [x] Same page → turn on **Self-serve returns** (and cancellations)
+      (Axel confirmed 2026-09-26: already on)
 - [ ] Settings → Policies → **Return rules** → return window **14 days**
       from delivery, and say who pays the return shipping
 - [ ] Same page → **Cancellation window** → until the order is fulfilled
