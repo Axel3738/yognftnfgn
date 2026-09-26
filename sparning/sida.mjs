@@ -164,7 +164,23 @@ function lasKonfig(konfig) {
     // nummer" blir liten. Saknas blocket i konfigurationen visas inget —
     // sidan hittar aldrig på ett erbjudande.
     erbjudande: erbjudandeUr(k),
+    // Tilläggen under paketet (sparning/tillagg.mjs): samma två produkter och
+    // koder som tacksidan i kassan, för butiker där registret säger
+    // tillagg: true. Priset hämtas i kundens webbläsare, i kundens valuta.
+    tillagg: tillaggUr(k),
   };
+}
+
+// Raderna ur sparning/tillagg.mjs, kontrollerade en gång till här: en rad
+// utan handle, variant, kod eller rimlig procent fäller hela blocket — hellre
+// inget kort än ett kort som länkar fel.
+function tillaggUr(k) {
+  const rader = Array.isArray(k.tillagg) ? k.tillagg : null;
+  if (!rader || !rader.length) return null;
+  const ok = rader.every(
+    (r) => r && /^[a-z0-9-]+$/.test(String(r.handle ?? '')) && /^\d+$/.test(String(r.variant ?? '')) && /^[A-Z0-9_-]{3,40}$/.test(String(r.kod ?? '')) && Number.isFinite(Number(r.procent)) && Number(r.procent) > 0 && Number(r.procent) < 100 && r.namn && typeof r.namn === 'object'
+  );
+  return ok ? rader : null;
 }
 
 function erbjudandeUr(k) {
@@ -246,6 +262,9 @@ function copydata(c) {
     levMin: c.levMin,
     levMax: c.levMax,
     tomtFalt: T('Klistra in numret från leveransmejlet först.'),
+    // Tilläggen under paketet: texterna på sidans språk och produktnamnen på
+    // samma språk. Skriptet hämtar priset och ritar korten (visaTillagg).
+    tillagg: tillaggCopy(c, T),
     // Samma texter på de extra språken, plus markupens fasta rader. Skriptet
     // byter till C.sprak[lang] när <html lang> säger ett av dem.
     ...(c.extra?.length
@@ -254,7 +273,7 @@ function copydata(c) {
             c.extra.map((x) => [
               x.kod,
               {
-                ...copydata({ ...c, T: x.T, tidszon: x.tidszon, locale: x.locale, extra: [] }),
+                ...copydata({ ...c, T: x.T, tidszon: x.tidszon, locale: x.locale, sprak: x.kod, extra: [] }),
                 markup: markupTexter(x.T, String(c.prefix ?? '').replace(/-+$/, '')),
               },
             ])
@@ -262,6 +281,41 @@ function copydata(c) {
         }
       : {}),
   };
+}
+
+// Tilläggens texter för skriptet. Inget överstruket pris, ingen procent, inget
+// "spara" (PIL 7 a §, factory/tacksida/README.md) — bara priset kunden får.
+// {{pris}} byts av skriptet när priset hämtats i kundens valuta.
+export const TILLAGG_TEXTER = {
+  rubrik: 'Till dig som beställt hos oss',
+  under: 'Två saker som passar samma husvagn eller husbil. Skickas som en egen beställning, med fri frakt och 14 dagars ångerrätt som vanligt.',
+  prisFor: '{{pris}} för dig som beställt hos oss',
+  knapp: 'Lägg till för {{pris}}',
+  villkor: 'Priset gäller dig som beställt hos oss och läggs på av sig själv i kassan.',
+};
+function tillaggCopy(c, T) {
+  if (!c.tillagg) return null;
+  const sprak = c.sprak || 'sv';
+  const ut = {};
+  for (const [k, v] of Object.entries(TILLAGG_TEXTER)) ut[k] = T(v);
+  ut.rader = c.tillagg.map((r) => ({
+    handle: r.handle,
+    variant: String(r.variant),
+    kod: r.kod,
+    procent: Number(r.procent),
+    namn: r.namn?.[sprak] ?? r.namn?.sv ?? r.handle,
+    rad: r.rad?.[sprak] ?? r.rad?.sv ?? '',
+  }));
+  return ut;
+}
+
+// Rutan korten ritas i. Tom i HTML:en: skriptet fyller den när ett paket
+// visas och priset hämtats — utan JavaScript syns ingen ruta, aldrig en
+// halv. Bara när konfigurationen bär tillägg (CaraShell), annars inget alls.
+function tillaggBlock(c) {
+  if (!c.tillagg) return '';
+  return `  <div id="bbs-tillagg" class="bbs-tillagg" hidden></div>
+`;
 }
 
 // ---------------------------------------------------------------------------
@@ -367,6 +421,18 @@ function stil(c) {
 #bb-spar .bbs-etikett--ljus{color:var(--bbs-rod)}
 #bb-spar .bbs-knapp--stor{font-size:23px;min-height:58px;padding:16px 20px}
 #bb-spar .bbs-knapp--liten{width:auto;min-height:42px;padding:9px 18px;margin:16px auto 0;font-size:15px;letter-spacing:.5px;border-width:1px}
+#bb-spar .bbs-tillagg{margin:26px 0 0;padding:20px 16px 16px;border:1px solid var(--bbs-ram);background:#fff}
+#bb-spar .bbs-tillagg-under{margin:0 0 14px;color:var(--bbs-gra);font-size:15px}
+#bb-spar .bbs-tkort-lista{display:grid;gap:12px}
+#bb-spar .bbs-tkort{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:start;padding:12px;border:1px solid var(--bbs-ram);background:#fff;color:var(--bbs-svart);text-decoration:none}
+#bb-spar .bbs-tkort:hover{border-color:var(--bbs-svart);color:var(--bbs-svart)}
+#bb-spar .bbs-tkort img{width:96px;height:96px;object-fit:cover;display:block;background:var(--bbs-ram)}
+#bb-spar .bbs-tkort h3{margin:0 0 4px;font-size:18px;line-height:1.25;font-weight:700;color:var(--bbs-svart)}
+#bb-spar .bbs-tkort-rad{margin:0 0 6px;font-size:14px;color:var(--bbs-gra)}
+#bb-spar .bbs-tkort-pris{margin:0 0 10px;font-weight:700}
+#bb-spar .bbs-tkort-knapp{min-height:44px;padding:11px 16px;font-size:17px}
+#bb-spar .bbs-tillagg-villkor{margin:12px 0 0;font-size:13px;color:var(--bbs-gra)}
+@media (max-width:420px){#bb-spar .bbs-tkort{grid-template-columns:72px 1fr;gap:10px}#bb-spar .bbs-tkort img{width:72px;height:72px}}
 @media (max-width:420px){#bb-spar h2{font-size:25px}#bb-spar .bbs-fakta{gap:10px 0;display:block}}
 `;
 }
@@ -791,8 +857,84 @@ function starta() {
     visaEl(ruta, true);
   }
 
+  // Tilläggen under paketet (C.tillagg, sparning/tillagg.mjs). Priset hämtas
+  // ur /products/<handle>.js i kundens webbläsare — det svarar i den valuta
+  // kunden handlar i (marknaden följer adressen: /nb, carashell.com …) — och
+  // procenten dras av som Shopify gör: rabatten trunkerad till hela ören.
+  // En produkt som inte går att köpa, eller som inte svarar, får inget kort;
+  // svarar ingen visas ingen ruta. Länken är en förifylld varukorg med koden
+  // pålagd, märkt kalla=tacksida så factory/tacksida/rapport.mjs räknar den.
+  var tillaggVisat = false;
+  function visaTillagg() {
+    var ruta = $('bbs-tillagg');
+    var TL = C && C.tillagg;
+    if (!ruta || tillaggVisat || !TL || !TL.rader || !TL.rader.length || typeof fetch !== 'function') return;
+    tillaggVisat = true;
+    var seg = String((location && location.pathname) || '').split('/')[1] || '';
+    var prefix = (LANG && seg.toLowerCase() === LANG) ? '/' + seg : '';
+    var valuta = 'SEK';
+    try { if (window.Shopify && window.Shopify.currency && window.Shopify.currency.active) valuta = String(window.Shopify.currency.active); } catch (e) {}
+    function pengar(v) {
+      var hela = Math.round(v * 100) % 100 === 0;
+      try { return new Intl.NumberFormat(LOC, { style: 'currency', currency: valuta, minimumFractionDigits: hela ? 0 : 2, maximumFractionDigits: 2 }).format(v); } catch (e) { return String(v) + ' ' + valuta; }
+    }
+    function el(tagg, klass, text) {
+      var n = document.createElement(tagg);
+      if (klass) n.className = klass;
+      if (text != null) n.textContent = text;
+      return n;
+    }
+    var huvud = el('div', 'bbs-tillagg-huvud');
+    huvud.appendChild(el('p', 'bbs-etikett', TL.rubrik));
+    huvud.appendChild(el('p', 'bbs-tillagg-under', TL.under));
+    var lista = el('div', 'bbs-tkort-lista');
+    var fot = el('p', 'bbs-tillagg-villkor', TL.villkor);
+    var antal = 0;
+    function kort(rad, p) {
+      var pris = Number(p.price) / 100;
+      if (!isFinite(pris) || pris <= 0) return;
+      var rabatt = Math.floor(pris * rad.procent + 1e-6) / 100;
+      var ut = Math.round((pris - rabatt) * 100) / 100;
+      var q = [
+        'discount=' + encodeURIComponent(rad.kod),
+        encodeURIComponent('attributes[kalla]') + '=tacksida',
+        encodeURIComponent('attributes[plats]') + '=sparningssida'
+      ].join('&');
+      var a = el('a', 'bbs-tkort');
+      a.href = prefix + '/cart/' + rad.variant + ':1?' + q;
+      var bild = p.featured_image || (p.images && p.images[0]) || null;
+      if (bild) {
+        var img = document.createElement('img');
+        var u = String(bild);
+        img.src = u + (u.indexOf('?') > -1 ? '&' : '?') + 'width=240';
+        img.alt = rad.namn; img.loading = 'lazy'; img.width = 96; img.height = 96;
+        a.appendChild(img);
+      }
+      var text = el('div', 'bbs-tkort-text');
+      text.appendChild(el('h3', null, rad.namn));
+      if (rad.rad) text.appendChild(el('p', 'bbs-tkort-rad', rad.rad));
+      text.appendChild(el('p', 'bbs-tkort-pris', TL.prisFor.replace('{{pris}}', pengar(ut))));
+      text.appendChild(el('span', 'bbs-knapp bbs-tkort-knapp', TL.knapp.replace('{{pris}}', pengar(ut))));
+      a.appendChild(text);
+      lista.appendChild(a);
+      if (++antal === 1) {
+        ruta.appendChild(huvud); ruta.appendChild(lista); ruta.appendChild(fot);
+        visaEl(ruta, true);
+      }
+    }
+    for (var ti = 0; ti < TL.rader.length; ti++) {
+      (function (rad) {
+        fetch(prefix + '/products/' + rad.handle + '.js', { credentials: 'same-origin' })
+          .then(function (r) { return r.ok ? r.json() : null; })
+          .then(function (p) { if (p && p.available !== false) kort(rad, p); })
+          .catch(function () {});
+      })(TL.rader[ti]);
+    }
+  }
+
   function visaPaket(p) {
     visaEl(sok, false); visaEl(saknas, false); visaEl(traff, true); visaEl(annat, true);
+    visaTillagg();
     visaLeverans(p);
     $('bbs-rubrik').textContent = C.rubriker[p.statusKod] || ord(p.status) || C.reservrubrik;
 
@@ -1018,7 +1160,7 @@ export function byggSidkropp(data, konfig) {
   <p id="bbs-avvikelse" class="bbs-avvikelse" hidden></p>
   <ol id="bbs-steg" class="bbs-steg" hidden></ol>
   <p class="bbs-hjalprad"><span data-t="Undrar du något om leveransen? Mejla">${T('Undrar du något om leveransen? Mejla')}</span> <a href="mailto:${mail}">${mail}</a>.</p>
-${erbjudandeBlock(c)}</div>
+${tillaggBlock(c)}${erbjudandeBlock(c)}</div>
 <button type="button" id="bbs-annat" class="bbs-knapp bbs-knapp--tunn bbs-knapp--liten" hidden data-t="Spåra ett annat nummer">${T('Spåra ett annat nummer')}</button>
 <p id="bbs-byggd" class="bbs-byggd" hidden></p>
 <script type="application/json" ${DATAMARKOR}>${json}</script>

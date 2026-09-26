@@ -38,6 +38,7 @@ import { STATUS } from './status.mjs';
 import { STEG, DELSTEG, STATUSAR } from './uppacka.mjs';
 import { lasButik, butikIdUr, skapaMappar, skapaKlient } from './butik.mjs';
 import { skapaOversattare, oversattData, oversattExtra } from './oversatt.mjs';
+import { lasTillagg } from './tillagg.mjs';
 
 const ROT = dirname(fileURLToPath(import.meta.url));
 const MEJLKONFIG = join(ROT, '..', 'mejl', 'konfig.json');
@@ -374,7 +375,23 @@ const sidkonfig = {
   // beloppet och hjulets adress får aldrig bli en andra sanning här.
   erbjudande: BUTIK.erbjudande ? (mejlkonfig?.erbjudande ?? null) : null,
   hjul: BUTIK.erbjudande ? (mejlkonfig?.hjul ?? null) : null,
+  // Tilläggen under paketet (registret → tillagg: true): tacksidans två
+  // produkter och koder ur factory/tacksida/ (sparning/tillagg.mjs). Går de
+  // inte att läsa publiceras sidan UTAN rutan, med raden nedan — spårningen
+  // är huvuduppgiften och får aldrig falla på ett erbjudande.
+  tillagg: BUTIK.tillagg ? lasTillaggSakert(BUTIK.id) : null,
 };
+
+function lasTillaggSakert(butikId) {
+  try {
+    const rader = lasTillagg(butikId);
+    console.log(`Tilläggen under paketet: ${rader.map((r) => `${r.handle} (${r.kod})`).join(', ') || 'inga'}.`);
+    return rader.length ? rader : null;
+  } catch (fel) {
+    console.log(`⚠️ Tilläggen under paketet hoppas över: ${fel.message}`);
+    return null;
+  }
+}
 
 // --- 3b. Kontrollen ---------------------------------------------------------
 // Axels fyra krav 2026-09-19: ingen skanning får försvinna, länderna ska gå

@@ -174,6 +174,25 @@ Orderstatussidan: samma kort, gömt efter giltig_timmar (Storage API).
    `rabatter.mjs`-raden. `standard_sprak` och `marknadsdomaner` efter butiken.
 5. `rapport.mjs --butik <id>` efter en vecka.
 
+## ✅ Live utan app sedan 2026-09-26 ~12:40 UTC: samma erbjudande på spårningssidan
+
+Kassans app gick inte att deploya (token i jobb-Gmailens org, se nedan), så
+erbjudandet lades där vi kommer åt utan app: **under paketet på
+https://carashell.se/pages/spara** (`sparning/tillagg.mjs`, `sida.mjs`
+`visaTillagg`, registret `sparning/butiker.json` → `carashell.tillagg: true`).
+Samma facit som kassan — produkter, koder och procent läses ur den här
+mappen, aldrig kopieras. Två kort under paketet: bild, kortnamn, en mening,
+"351 kr för dig som beställt hos oss", knapp "Lägg till för 351 kr" → förifylld
+varukorg med koden (`attributes[kalla]=tacksida`, `plats=sparningssida`, så
+`rapport.mjs` räknar dem). Priset hämtas i kundens webbläsare ur
+`/products/<handle>.js` i kundens valuta (mätt live: SEK 351 kr på .se, US$36.47
+på .com) och räknas som Shopify trunkerar. Fyra språk (sv/nb/en/fi) via
+`sparning/sprak/*.json`. Inget överstruket pris, ingen procent (PIL 7 a §).
+Rutinen `/sparning carashell` (:24 varje timme) bygger om sidan — blocket
+ligger kvar bara om koden finns på `main`. Tacksidan i kassan är fortfarande
+nästa steg när token finns: den ser varenda köpare, spårningssidan bara de
+som kollar paketet.
+
 ## Vad som INTE är gjort, och varför
 
 - **Deployen.** Shopify CLI behöver ett App Automation Token från Dev
