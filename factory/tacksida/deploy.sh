@@ -38,7 +38,16 @@ if [[ -z "${SHOPIFY_APP_AUTOMATION_TOKEN:-}" ]]; then
   exit 2
 fi
 
-# Butikens client id via samma uppslag som fabriken (domän → suffix → nyckel).
+# Appen extensionen deployas till. Standard: butikens Factory-app (samma
+# uppslag som fabriken: domän → suffix → nyckel). ⚠️ Den appen ligger i
+# jobb-Gmailens Dev Dashboard-org (mätt 2026-09-26) — går den inte att nå
+# skapas en EGEN app i Axels org "Carashell" (cowork/2-egen-app.txt) och dess
+# client id sätts som TACKSIDA_CLIENT_ID i Environments. Den appen behöver
+# inga scopes: kortet läser via Storefront-API:t (api_access i extensionen).
+if [[ -n "${TACKSIDA_CLIENT_ID:-}" ]]; then
+  CLIENT_ID="$TACKSIDA_CLIENT_ID"
+  echo "Deployar till den egna tacksides-appen (TACKSIDA_CLIENT_ID), inte Factory-appen."
+else
 CLIENT_ID="$(node --input-type=module -e "
 import { readFileSync } from 'node:fs';
 import { lasYaml } from '$ROT/factory/yaml.mjs';
@@ -51,6 +60,7 @@ const n = losNycklar(suffix);
 if (normaliseraDoman(n.shop) !== doman || !n.clientId) { console.error('Nycklarna för ' + suffix + ' pekar inte på ' + doman); process.exit(3); }
 process.stdout.write(n.clientId);
 ")"
+fi
 echo "Butik: $BUTIK · client id: ${CLIENT_ID:0:6}…"
 
 cd "$APP"

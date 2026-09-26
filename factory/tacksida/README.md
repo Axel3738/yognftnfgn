@@ -174,7 +174,23 @@ Orderstatussidan: samma kort, gömt efter giltig_timmar (Storage API).
    `rabatter.mjs`-raden. `standard_sprak` och `marknadsdomaner` efter butiken.
 5. `rapport.mjs --butik <id>` efter en vecka.
 
-## ✅ Live utan app sedan 2026-09-26 ~12:40 UTC: samma erbjudande på spårningssidan
+## ⛔ Spårningssidan: AV sedan 2026-09-26 ~16:35 UTC (Axels beslut)
+
+Axel, när han såg korten live: "Jag tycker inte vi ska ha dem där. Jag tycker
+vi ska ha dem på tacksidan." `sparning/butiker.json` → `carashell.tillagg:
+false`, sidan ompublicerad utan rutan samma minut. Motorn finns kvar och slås
+på med `true`. Avsnittet nedan beskriver hur det såg ut medan det låg uppe.
+
+**Vägen till tacksidan utan jobb-Gmailen: en EGEN app i Axels org.** Cowork-
+prompten `cowork/2-egen-app.txt` skapar appen "CaraShell Tacksida" i
+organisationen Carashell (235001191, den Axels konto ser), installerar den i
+butiken och genererar token; Axel lägger `TACKSIDA_CLIENT_ID` +
+`SHOPIFY_APP_AUTOMATION_TOKEN` i Environments, och `deploy.sh` deployar dit i
+stället för till Factory-appen. Extensionen behöver inga scopes (Storefront
+via `api_access`). ⚠️ Oprövat om `shopify app config link` fungerar med en
+automation-token — se raden under "Vad som INTE är gjort".
+
+## Så såg det ut på spårningssidan 2026-09-26 12:40–16:35 UTC (avstängt nu)
 
 Kassans app gick inte att deploya (token i jobb-Gmailens org, se nedan), så
 erbjudandet lades där vi kommer åt utan app: **under paketet på
