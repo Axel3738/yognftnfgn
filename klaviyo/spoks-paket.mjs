@@ -435,7 +435,9 @@ const handelse = (field, operator, value, dagar = null) => ({
   value: String(value),
   ...(dagar ? { timeFilter: { type: 'filter', field, operator: 'ge', value: `P${dagar}D` } } : {}),
 });
-const eller = (...filters) => ({ type: 'conjunction', operator: 'or', isGrouped: true, filters });
+// Spoks vägrar en konjunktion med bara EN nod ("must contain at least 2 nodes",
+// mätt 2026-09-26 när kategorisegmenten skapades) — ett ensamt villkor skickas bart.
+const eller = (...filters) => (filters.length === 1 ? filters[0] : { type: 'conjunction', operator: 'or', isGrouped: true, filters });
 const aktiv = (dagar) => eller(handelse('openedEmail', 'ge', 1, dagar), handelse('clickedEmail', 'ge', 1, dagar), handelse('viewedProducts', 'ge', 1, dagar), handelse('orderedProducts', 'ge', 1, dagar));
 
 export function segmentTillSpoks(brand) {

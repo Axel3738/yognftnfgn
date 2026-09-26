@@ -209,7 +209,9 @@ test('segmenten: samtycke i varje, kategorierna ur brandet, oengagerade aldrig k
   for (const x of s) assert.ok(JSON.stringify(x.filter).includes('"emailMarketingConsent","operator":"in","value":["subscribed"]'), x.namn);
   assert.equal(s.find((x) => x.namn === 'SEG_oengagerade_180d').kampanjOk, false);
   const sushi = s.find((x) => x.namn === 'SEG_kategori_sushi');
-  assert.equal(sushi.filter.filters[2].filters[0].conditionFilter.value, 'sushi');
+  // Ett ensamt kategoriord blir en bar eventFilter — Spoks tar ingen konjunktion med en nod.
+  assert.equal(sushi.filter.filters[2].type, 'eventFilter');
+  assert.equal(sushi.filter.filters[2].conditionFilter.value, 'sushi');
   const upp = s.find((x) => x.namn === 'SEG_uppvarmning_steg1');
   assert.equal(upp.filter.filters[2].filters[0].timeFilter.value, 'P30D');
 });
