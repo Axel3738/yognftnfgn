@@ -79,6 +79,8 @@ export interface Marknadsrad {
   mer: number | null;
   /** Omsättning ÷ bruttovinst. Oberoende av annonskostnaden. */
   breakEvenMer: number | null;
+  /** Varukostnad (COGS) i landet. */
+  cogs: number;
   /** Bruttovinst efter varukostnad, tull och avgifter (före annonser). */
   grossProfit: number;
   /** Bruttovinst − annonser, före fasta kostnader. Null när spend är okänd. */
@@ -144,6 +146,7 @@ export function raknaMarknader(opts: {
       spend: spendOk ? t.spend : null,
       mer: spendOk ? t.mer : null,
       breakEvenMer: t.breakEvenMer,
+      cogs: t.cogs,
       grossProfit: t.grossProfit,
       bidrag,
       bidragPerDag: bidrag == null || !(opts.dagar > 0) ? null : bidrag / opts.dagar,

@@ -1354,6 +1354,19 @@ slår ihop **två** källor: `BILLING_EXEMPT_SHOPS` i miljön (som förut) och
 att fylla på med en push — Axel ska inte behöva klicka i Railways
 miljövariabler. Lägg till hela `.myshopify.com`-adressen i små bokstäver.
 
+### Procenten syns (2026-09-26, build procent-v117)
+Axel (CaraShell säljer till USA): *"jag ser inte procentsatserna tillräckligt
+tydligt"*. Procenten fanns bara som liten grå text i uppdelningen.
+- **Varje kostnadsruta har en etikett** (Polaris `Badge`, fältet `andel` på
+  kpis): Annonser, COGS, Tull, Fasta = "X % av försäljningen";
+  Nettovinst = "marginal X %" (röd vid minus eller saknad annonskostnad,
+  blå/info med "≤" när kostnad saknas, grön annars).
+- **Uppdelningen** (`BreakdownRow`): procenten i fast bredd, normal färg,
+  halvfet, minustecken på negativ andel.
+- **Per marknad** fick två kolumner: **Varukostnad %** (COGS ÷ försäljning,
+  "≥" vid osäker kostnad) och **Bidrag %** (bidrag ÷ försäljning, samma färg
+  och "≤" som bidraget). `Marknadsrad.cogs` bär underlaget.
+
 ### Per marknad, AOV-ruta och vinst per dag (2026-09-26, build marknadsoversikt-v116)
 Axel: *"jag behöver veta exakt vad min breakeven roas är [i USA] … och hur
 mycket vinst jag ligger på varje dag … AOV på dashboarden men man kanske

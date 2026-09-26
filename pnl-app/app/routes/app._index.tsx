@@ -1100,12 +1100,13 @@ function ProfitBars({
  * räknas utan den. "*" = landet räknas på butikens standardkostnad, "≥" =
  * kostnad saknas på mer än 2 % av landets försäljning.
  */
-function Marknadsoversikt({ rader, omarktSpend, dagarUtan, money, mult, nf, lang, T, onValj }: {
+function Marknadsoversikt({ rader, omarktSpend, dagarUtan, money, mult, pct, nf, lang, T, onValj }: {
   rader: Marknadsrad[];
   omarktSpend: number;
   dagarUtan: number;
   money: (v: number | null) => string;
   mult: (v: number | null) => string;
+  pct: (v: number | null) => string;
   nf: Intl.NumberFormat;
   lang: Lang;
   T: Texts;
@@ -1125,8 +1126,8 @@ function Marknadsoversikt({ rader, omarktSpend, dagarUtan, money, mult, nf, lang
         </BlockStack>
       </div>
       <DataTable
-        columnContentTypes={["text", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric"]}
-        headings={[O.thMarket, O.thSales, O.thOrders, O.thAov, O.thAds, O.thMer, O.thBe, O.thContribution, O.thPerDay]}
+        columnContentTypes={["text", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric"]}
+        headings={[O.thMarket, O.thSales, O.thOrders, O.thAov, O.thCogsPct, O.thAds, O.thMer, O.thBe, O.thContribution, O.thContributionPct, O.thPerDay]}
         rows={rader.map((r) => {
           /* Grönt/rött bara när båda talen finns och kostnaden är säker —
              samma regel som panelens beslut: ingen dom på osäkert underlag. */
@@ -1147,6 +1148,9 @@ function Marknadsoversikt({ rader, omarktSpend, dagarUtan, money, mult, nf, lang
             money(r.totalSales),
             nf.format(r.orders),
             money(r.aov),
+            <Text key={`c-${r.market}`} as="span" fontWeight="semibold">
+              {r.totalSales > 0 ? `${r.kostnadOsaker ? "≥ " : ""}${pct(r.cogs / r.totalSales)}` : "—"}
+            </Text>,
             r.spend == null ? (
               <Text key={`s-${r.market}`} as="span" tone="subdued">{O.noCampaigns}</Text>
             ) : (
@@ -1159,6 +1163,9 @@ function Marknadsoversikt({ rader, omarktSpend, dagarUtan, money, mult, nf, lang
                 : `${r.kostnadOsaker ? "≥ " : ""}${mult(r.breakEvenMer)}${r.market && !r.egenKostnad ? " *" : ""}`}
             </Text>,
             <Text key={`b-${r.market}`} as="span" tone={bidragTon}>{r.bidrag == null ? "—" : tak + money(r.bidrag)}</Text>,
+            <Text key={`bp-${r.market}`} as="span" fontWeight="semibold" tone={bidragTon}>
+              {r.bidrag == null || !(r.totalSales > 0) ? "—" : tak + pct(r.bidrag / r.totalSales)}
+            </Text>,
             <Text key={`d-${r.market}`} as="span" tone={bidragTon}>{r.bidragPerDag == null ? "—" : tak + money(r.bidragPerDag)}</Text>,
           ];
         })}
@@ -1202,10 +1209,14 @@ function BreakdownRow({ label, value, bold, colorKey, money, ofRevenue, dec, bad
         {badge}
       </InlineStack>
       <InlineStack gap="150" blockAlign="center">
+        {/* Procenten i egen, fast bredd och normal färg — dämpad och liten
+            gick den inte att läsa (Axel 2026-09-26). */}
         {ofRevenue != null ? (
-          <Text as="span" variant="bodySm" tone="subdued">
-            {`${dec((Math.abs(ofRevenue) * 100).toFixed(1))} %`}
-          </Text>
+          <span style={{ minWidth: 64, textAlign: "right", display: "inline-block" }}>
+            <Text as="span" variant="bodyMd" fontWeight="semibold">
+              {`${ofRevenue < 0 ? "−" : ""}${dec((Math.abs(ofRevenue) * 100).toFixed(1))} %`}
+            </Text>
+          </span>
         ) : null}
         <Text as="span" variant={bold ? "headingSm" : "bodyMd"}>
           {value < 0 ? `−${money(-value)}` : money(value)}
@@ -1619,6 +1630,23 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
   const bidragAndel = t2.totalSales > 0 ? t2.netContribution / t2.totalSales : null;
   const band = beslut && bidragAndel != null ? bidragsBand(bidragAndel) : null;
 
+  /* Andel av försäljningen som etikett på varje kostnadsruta — Axel:
+     "jag ser inte procentsatserna tillräckligt tydligt". Utan försäljning
+     finns ingen andel att visa. */
+  const avSales = (v: number) =>
+    t2.totalSales > 0 ? { text: T.dashboard.kpi.ofSales(pct(v / t2.totalSales)) } : undefined;
+  const marginal =
+    t2.totalSales > 0
+      ? {
+          text: `${t2.kostnadOsaker ? "≤ " : ""}${T.dashboard.kpi.margin(pct(t2.netProfit / t2.totalSales))}`,
+          tone: (!t2.spendComplete || t2.netProfit < 0
+            ? "critical"
+            : t2.kostnadOsaker
+              ? "info"
+              : "success") as "success" | "critical" | "info",
+        }
+      : undefined;
+
   const kpis: {
     label: string;
     value: string;
@@ -1628,6 +1656,8 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
     beslut?: SkalningsBeslut | null;
     /** Dämpad referensrad längst ner (Evolves tumregel). */
     note?: string;
+    /** Andelen av försäljningen (eller marginalen) som tydlig etikett under beloppet. */
+    andel?: { text: string; tone?: "success" | "critical" | "info" };
   }[] = [
     { label: T.dashboard.kpi.sales, value: money(t2.totalSales), sub: `${T.dashboard.kpi.shippingOfWhich(money(t2.shipping))}${delta(t2.totalSales, comparison?.totalSales)}` },
     { label: T.dashboard.kpi.orders, value: nf.format(t2.orders), sub: `${T.dashboard.kpi.avgOrder(money(t2.aov))}${delta(t2.orders, comparison?.orders)}` },
@@ -1642,10 +1672,11 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
           : ""
       }`,
     },
-    { label: T.dashboard.kpi.fixedCosts, value: money(t2.fixedCosts), sub: T.dashboard.kpi.perDay },
+    { label: T.dashboard.kpi.fixedCosts, value: money(t2.fixedCosts), sub: T.dashboard.kpi.perDay, andel: avSales(t2.fixedCosts) },
     {
       label: T.dashboard.kpi.adSpend,
       value: money(t2.spend),
+      andel: avSales(t2.spend),
       sub: t2.spendComplete
         ? `${T.dashboard.kpi.cpa(money(t2.cpa))}${beCpaText}${delta(t2.spend, comparison?.spend, comparison?.spendComplete !== false)}`
         : T.dashboard.kpi.missingDays(t2.missingSpendDays.length),
@@ -1657,6 +1688,7 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
     {
       label: T.dashboard.kpi.cogs,
       value: money(t2.cogs),
+      andel: avSales(t2.cogs),
       /* Andelen av FÖRSÄLJNINGEN, inte bara antalet enheter: tre billiga
          tillbehör utan kostnad och en bästsäljare utan kostnad är helt
          olika stora hål i vinsten. */
@@ -1674,6 +1706,7 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
          faktiskt användes. */
       label: T.dashboard.kpi.duty,
       value: money(t2.tariff),
+      andel: avSales(t2.tariff),
       /* Okvitterad tull sägs rakt ut: ett startvärde ingen tittat på är
          inte en kostnad handlaren har. */
       sub:
@@ -1705,6 +1738,7 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
          varukostnaden. Med gratisvaror i siffran är vinsten ett tak. */
       label: T.dashboard.kpi.netProfit,
       value: money(t2.netProfit),
+      andel: marginal,
       sub: !t2.spendComplete
         ? T.dashboard.kpi.profitTooHigh
         : t2.kostnadOsaker
@@ -2156,6 +2190,11 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
                     <Text as="p" variant="headingLg" tone={k.tone}>
                       <span className="pnl-pop">{k.value}</span>
                     </Text>
+                    {k.andel ? (
+                      <div>
+                        <Badge tone={k.andel.tone}>{k.andel.text}</Badge>
+                      </div>
+                    ) : null}
                     <Text as="span" variant="bodySm" tone="subdued">
                       {k.sub}
                     </Text>
@@ -2177,6 +2216,7 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
                 dagarUtan={d.dagarUtanMarknad}
                 money={money}
                 mult={mult}
+                pct={pct}
                 nf={nf}
                 lang={lang}
                 T={T}
