@@ -53,6 +53,12 @@ Läses av `/kommentarer` innan svaren skrivs.
   leverantören om det. Kunder som fått skyddet sönderblåst svaras vänligt
   och hänvisas till kundtjänst med ordernumret (regel 4).
 - **Hagel, dörren:** okänt. Inga påståenden.
+- **Fukt under överdraget: kunden som säger att fukt kan stängas in har
+  rätt.** Axel 2026-09-27 (granskningssidan, Ändra): *"Det som kunden säger
+  här stämmer. Vi håller på att ta fram en produkt för att ha här emellan så
+  det inte blir fukt instängt."* Svar: håll med, säg att en distansprodukt
+  mellan taket och överdraget är på väg (inget datum, pris eller namn), och
+  att det är en bra idé att lägga något under för luft tills den finns.
 
 ## Sotarset / Feiesett (`Sotarset`)
 
