@@ -40,3 +40,18 @@ Pris läst live 2026-09-24: 589 kr / jämförpris 775 kr. Tillåtna siffror i an
 **Hypotes:** hook rate 94 % men hold 9 % ⇒ det är delen efter hooken som tappar. H3 (längre problemdel) är den som direkt adresserar hold rate; H2 och H4 prövar öppningen. Utfall läses dag 7 efter lansering.
 
 Öppet: `Solcellslampa_PD_1` (KPI_WINNER, 1 386 kr, 3 köp, ROAS 2,17) har tre namngivna platser i lärdomarna (`PD_1_H2/H3/H4`) som inte byggdes i dag — vidarebyggsbehovet gällde breakthrougharen.
+
+## Batch #2 — tre nya hookar på Solcellslampa_PD_1 (2026-09-27)
+
+Tre iterationer (typ I, parent `Solcellslampa_PD_1` = Meta-annons 120250253963910291, KPI_WINNER, lärdom L-120250253963910291 — de tre namngivna platserna ur lärdomen, fria mot brieftaket), briefer i `batch-02/video-ads-briefs/`, copy av sonnet (`batch-02/copy-sonnet.md`, 27 rader, alla ❌ i Competitor-signable), spärren `tools/briefgranskning.mjs --manifest` (main d446901) grön 3/3 regi 4/4 (två stopp rättade före: ett "or" i bildkolumnen, `wide-reveal` ⇒ `none`), `lardom.mjs --brief` grön 3/3 med `--befintliga` (17 namn ur kontot + hubben), BRIEF-rader i `agent/budgetlogg.jsonl`, tre rader i **Solar motion sensor light creative hub** (Status Draft / Typ Video - Pending Approval), en läst tillbaka (PD_1_H4: hela briefen i sidan). Ingen Feedback-rad finns i hubben (skapad 2026-09-24, briefgranskningen har inte kört) — inga rondregler att följa än.
+
+| Annons | Iteration | Variabel | Hook-mekanik | Notion |
+|---|---|---|---|---|
+| `Solcellslampa_PD_1_H2` | 1 (loggen: 1 på konceptet pd-1-hookar) | ny hook (0–3 s): lampan tänds i mörkret innan handen hittat nyckeln; resten som föräldern | cut-in | https://app.notion.com/p/3e8270ab908c81f587beda925b33e95d |
+| `Solcellslampa_PD_1_H3` | 1 (loggen: 2) | ny hook: solcellspanelen i dagsljus, ingen sladd, ingen elektriker | zoom-in | https://app.notion.com/p/3e8270ab908c8193bb71d94374a32d3e |
+| `Solcellslampa_PD_1_H4` | 1 (loggen: 3) | ny hook: hela uppfarten upplyst uppifrån, 210 LED på en gång | none | https://app.notion.com/p/3e8270ab908c81a286e3d21a7a4d6fa5 |
+
+Pris läst live 2026-09-27: 589 kr / jämförpris 775 kr (oförändrat). Tillåtna siffror: 589, 775, 210, 1200, 3. Förälderns första bildruta läst ur Metas thumbnail 2026-09-27: den uppackade lampan liggande på sin kartong i gräset med manual och fjärrkontroll — en produktbild, inte ett ögonblick — därför sätter alla tre hookarna ett ögonblick först. ⚠️ Fjärrkontrollen syns i förälderns bild men står inte på produktsidan: förbjuden i copyn. ⚠️ Drive-mappen bär gamla produkttestfiler döpta `Solcellslampa_PD_1_H2.mp4`/`_H3.mp4` — namnkrock med de nya brieferna; briefen säger åt redigeraren att leverera i `Batch #2/<namn>/` och aldrig skriva över.
+
+**Hypotes:** PD_1 säljer bättre per klick än PD_3 (ROAS 2,17, konverteringsgrad 2,1 %) men hold rate 6 % ger den ingen spend — tre öppningar som visar resultatet/mekanismen i sekund 0 mot förälderns produktbild. Utfall läses dag 7 efter lansering.
+

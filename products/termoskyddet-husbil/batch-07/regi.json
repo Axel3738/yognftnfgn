@@ -1,0 +1,195 @@
+{
+ "regi": {
+  "Termoskydd_RI_1_H2": [
+   [
+    "The parent's split frame: top half a hand pulling the inside curtain back over a windscreen full of condensation, bottom half the same hand holding the quilted silver cover on the outside of the windscreen of a white motorhome in misty woods. First frame: this split, no text burned in.",
+    "cut-in, hold 3 s",
+    "DRIVE 3db270ab908c81b2b537d020bdc77937 [EDITOR PICKS: the parent file Termoskydd_RI_1_H1 as delivered on that Notion row (live ad in the account under the same name) — the opening seconds 0–3 as delivered, only the burned-in text corrected to \"Två mornar\"]",
+    "Termoskydd_RI_1_H1 — its own split opening",
+    "none — the opening is the controlled variable"
+   ],
+   [
+    "Inside the cab at dawn: a hand with a microfibre cloth against the inside of the windscreen, the fog smearing, droplets on the glass, the curtain rail visible at the top.",
+    "slow-mo 1 s on the smear, then real time, hold 3 s",
+    "NEW FOOTAGE: one dawn take inside the cab, phone on the dashboard, the cloth against the fogged glass",
+    "Termoskydd_RI_1_H1 — the top half of its opening, now as a moving shot",
+    "crop free; the fog must fill the glass"
+   ],
+   [
+    "The driver's seat from the side door: the driver sits down, leans forward, wipes the fog between the glass and the curtain; the curtain hangs limp beside the glass.",
+    "cut-in, hold 3 s",
+    "NEW FOOTAGE: same take as row 2, second angle from the side door",
+    "Termoskydd_RI_1_H1 — same cab",
+    "order of rows 2–4 free"
+   ],
+   [
+    "A coffee cup on the dashboard, steam gone; behind it the half-wiped windscreen with streaks. Then a cut to the white motorhome outside with the cover on.",
+    "freeze 1 s on the cup, cut, hold 2 s",
+    "NEW FOOTAGE: one still-life take of the cup on the dashboard; the exterior cut is the parent's cover shot",
+    "Termoskydd_RI_1_H1 — its own split opening",
+    "cup brand out of frame"
+   ],
+   [
+    "Evening light: a hand clamps the side flap into the door frame, the door stays shut, the cover lies flat over the windscreen and both side windows.",
+    "cut-in, hold 3 s",
+    "DRIVE 3db270ab908c81b2b537d020bdc77937 [EDITOR PICKS: the parent file Termoskydd_RI_1_H1 as delivered on that Notion row (live ad in the account under the same name) — the parent's fitting shot after the opening (the hand on the cover, the door frame)]",
+    "Termoskydd_RI_1_H1 — its own split opening",
+    "crop free; the door must be visibly closed"
+   ],
+   [
+    "Morning wide shot: the cover on, the windscreen dry behind it; then the price graphic on a plain background, product silhouette small in the corner. No logo, no URL, no countdown, no summer light.",
+    "none",
+    "DRIVE 3db270ab908c81b2b537d020bdc77937 [EDITOR PICKS: the parent's closing price graphic, the last seconds of the delivered file — same layout, text swapped to the row]",
+    "Termoskydd_RI_1_H1 — same closing graphic",
+    "music free"
+   ]
+  ],
+  "Termoskydd_RI_1_H3": [
+   [
+    "Dawn, blue light: the white motorhome with the cover already clamped in the door frame, the windscreen behind it dry — the camera slides from the flap to the glass. First frame: the flap in the door frame at dawn, no text burned in.",
+    "reverse (the result first), hold 3 s",
+    "DRIVE 3db270ab908c81b2b537d020bdc77937 [EDITOR PICKS: the parent file Termoskydd_RI_1_H1 as delivered on that Notion row (live ad in the account under the same name) — the parent's cover-on exterior, or NEW FOOTAGE: one dawn take of the cover on the parked motorhome]",
+    "Termoskydd_RI_1_H1 — the bottom half of its opening, now first",
+    "crop free; the flap in the frame must be visible in second 0–1"
+   ],
+   [
+    "Flashback, warmer light: the parent's top half — the hand pulling the inside curtain back over the fogged windscreen, droplets running.",
+    "cut-in, hold 3 s",
+    "DRIVE 3db270ab908c81b2b537d020bdc77937 [EDITOR PICKS: the parent file Termoskydd_RI_1_H1 as delivered on that Notion row (live ad in the account under the same name) — the top half of the parent's opening]",
+    "Termoskydd_RI_1_H1",
+    "none"
+   ],
+   [
+    "Inside the cab: the cloth against the glass, a coffee cup on the dashboard, the curtain hanging beside the fogged glass.",
+    "cut-in, hold 3 s",
+    "NEW FOOTAGE: one dawn take inside the cab (shared with RI_1_H2 row 2–4)",
+    "Termoskydd_RI_1_H1 — same cab",
+    "crop free"
+   ],
+   [
+    "Back to dawn: close-up of the cover lying on the OUTSIDE of the glass, the quilted surface, then the dry inside of the windscreen seen from the driver's seat.",
+    "zoom-in 1 s on the quilting, hold 2 s",
+    "DRIVE 3db270ab908c81b2b537d020bdc77937 [EDITOR PICKS: the parent file Termoskydd_RI_1_H1 as delivered on that Notion row (live ad in the account under the same name) — the parent's cover shot; the dry-inside shot is NEW FOOTAGE from the same dawn take as row 1]",
+    "Termoskydd_RI_1_H1 — its own split opening",
+    "order of the two shots free"
+   ],
+   [
+    "The price graphic on a plain background, product silhouette small in the corner. No logo, no URL, no countdown.",
+    "none",
+    "DRIVE 3db270ab908c81b2b537d020bdc77937 [EDITOR PICKS: the parent's closing price graphic, the last seconds of the delivered file — same layout, text swapped to the row]",
+    "Termoskydd_RI_1_H1 — same closing graphic",
+    "music free"
+   ]
+  ],
+  "Termoskydd_SP_4_H2": [
+   [
+    "Dawn, from the driver's seat: the inside of the windscreen white with condensation, droplets, the wiper arms as dark shapes through the fog. First frame: the fogged glass from inside, no text burned in.",
+    "cut-in, hold 3 s",
+    "NEW FOOTAGE: one dawn take from the driver's seat with the fogged windscreen (can be shared with the RI_1_H2 cab take)",
+    "Termoskydd_RI_1_H1 — the top half of its opening, as a problem-aware first picture for the measurement body",
+    "crop free; the fog must fill the frame"
+   ],
+   [
+    "The parent's body: the white motorhome front with the cover on, the burned-in measurement line.",
+    "cut-in, hold 3 s",
+    "DRIVE 3db270ab908c81e1b6befd8b048b213c [EDITOR PICKS: the parent file Termoskydd_SP_4_H1 as delivered on that Notion row (live ad in the account under the same name) — seconds 3–6 of the parent]",
+    "Termoskydd_SP_4_H1 — its own measurement body",
+    "none — the body is the controlled variable"
+   ],
+   [
+    "The parent's body: the side flap clamped in the door frame, the door shut.",
+    "cut-in, hold 3 s",
+    "DRIVE 3db270ab908c81e1b6befd8b048b213c [EDITOR PICKS: the parent file Termoskydd_SP_4_H1 as delivered on that Notion row (live ad in the account under the same name) — the parent's fitting shot]",
+    "Termoskydd_SP_4_H1 — its own measurement body",
+    "none"
+   ],
+   [
+    "Evening wide shot of the cover on, then the price card as the parent shows it. No logo, no URL, no countdown, no heat line.",
+    "none",
+    "DRIVE 3db270ab908c81e1b6befd8b048b213c [EDITOR PICKS: the parent file Termoskydd_SP_4_H1 as delivered on that Notion row (live ad in the account under the same name) — the parent's closing card with the text swapped to the row]",
+    "Termoskydd_SP_4_H1 — its own measurement body",
+    "music free"
+   ]
+  ],
+  "Termoskydd_SP_4_H3": [
+   [
+    "Close-up: a hand pushes the side flap into the door frame, the door shut, the quilted fabric folding into the gap. First frame: the flap entering the door frame, no text burned in.",
+    "zoom-in 1 s on the flap, hold 2 s",
+    "DRIVE 3db270ab908c81e1b6befd8b048b213c [EDITOR PICKS: the parent file Termoskydd_SP_4_H1 as delivered on that Notion row (live ad in the account under the same name) — the parent's fitting shot brought to the front, or NEW FOOTAGE: one close-up take of the flap in the door frame]",
+    "Termoskydd_SP_4_H1 — its own fitting shot, now first",
+    "crop free; the door must be visibly closed"
+   ],
+   [
+    "The parent's body: the white motorhome front with the cover on, the burned-in measurement line.",
+    "cut-in, hold 3 s",
+    "DRIVE 3db270ab908c81e1b6befd8b048b213c [EDITOR PICKS: the parent file Termoskydd_SP_4_H1 as delivered on that Notion row (live ad in the account under the same name) — seconds 3–6 of the parent]",
+    "Termoskydd_SP_4_H1 — its own measurement body",
+    "none"
+   ],
+   [
+    "The parent's body: the flap in the door frame from the parent's angle.",
+    "cut-in, hold 3 s",
+    "DRIVE 3db270ab908c81e1b6befd8b048b213c [EDITOR PICKS: the parent file Termoskydd_SP_4_H1 as delivered on that Notion row (live ad in the account under the same name)]",
+    "Termoskydd_SP_4_H1 — its own measurement body",
+    "none"
+   ],
+   [
+    "Evening wide shot of the cover on, then the price card as the parent shows it. No logo, no URL, no countdown, no heat line.",
+    "none",
+    "DRIVE 3db270ab908c81e1b6befd8b048b213c [EDITOR PICKS: the parent file Termoskydd_SP_4_H1 as delivered on that Notion row (live ad in the account under the same name) — the parent's closing card with the text swapped to the row]",
+    "Termoskydd_SP_4_H1 — its own measurement body",
+    "music free"
+   ]
+  ],
+  "Termoskydd_SP_4_H4": [
+   [
+    "From inside the cab, lights off: the windscreen and both side windows are black where daylight should be; a hand reaches out and the black stays. First frame: the black windscreen from inside, no text burned in.",
+    "freeze 1 s on the black glass, hold 2 s",
+    "NEW FOOTAGE: one take inside the cab with the cover on, daylight outside, cabin dark",
+    "Termoskydd_SP_4_H1 — the blackout the page promises, as a first picture",
+    "exposure free; the glass must read as black, not grey"
+   ],
+   [
+    "The parent's body: the white motorhome front with the cover on, the burned-in measurement line.",
+    "cut-in, hold 3 s",
+    "DRIVE 3db270ab908c81e1b6befd8b048b213c [EDITOR PICKS: the parent file Termoskydd_SP_4_H1 as delivered on that Notion row (live ad in the account under the same name) — seconds 3–6 of the parent]",
+    "Termoskydd_SP_4_H1 — its own measurement body",
+    "none"
+   ],
+   [
+    "The parent's body: the side flap clamped in the door frame, the door shut.",
+    "cut-in, hold 3 s",
+    "DRIVE 3db270ab908c81e1b6befd8b048b213c [EDITOR PICKS: the parent file Termoskydd_SP_4_H1 as delivered on that Notion row (live ad in the account under the same name) — the parent's fitting shot]",
+    "Termoskydd_SP_4_H1 — its own measurement body",
+    "none"
+   ],
+   [
+    "Evening wide shot of the cover on, then the price card as the parent shows it. No logo, no URL, no countdown, no heat line.",
+    "none",
+    "DRIVE 3db270ab908c81e1b6befd8b048b213c [EDITOR PICKS: the parent file Termoskydd_SP_4_H1 as delivered on that Notion row (live ad in the account under the same name) — the parent's closing card with the text swapped to the row]",
+    "Termoskydd_SP_4_H1 — its own measurement body",
+    "music free"
+   ]
+  ]
+ },
+ "layout": {
+  "Termoskydd_RI_2_1": {
+   "photo": "The parent's split frame as a still: top half the hand pulling the inside curtain back over the fogged windscreen, bottom half the hand holding the quilted cover on the outside of the windscreen (white motorhome, misty woods). No burned-in text from the video — the headline replaces it.",
+   "Headline": "white text box across the middle seam of the split, black bold, two lines",
+   "Sub-line": "same box, under the headline, regular weight",
+   "Bottom band": "white band at the bottom, black bold",
+   "CTA": "blue rounded button, bottom centre, white bold",
+   "assets": "The parent video Termoskydd_RI_1_H1 (Notion row https://app.notion.com/3db270ab908c81b2b537d020bdc77937, Meta ad 120250301207460291): export the first frame (the split) at full resolution from the delivered file — the Meta thumbnail is 1080 × 1920 and shows the layout. Fallback product photo on the store CDN: https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-termoskydd-se.jpg (never a generic stock frame).",
+   "ref": "parent Termoskydd_RI_1_H1 (live, SPEND_WINNER) — Replicate: the split frame exactly / Do not replicate: the typo \"Två månar\", any motion; the text box / band / button follow the hub's static composition (Termoskydd_BOF_7_1, Notion row https://app.notion.com/3df270ab908c81f08f89fa995ca30ed9)."
+  },
+  "Termoskydd_CS_13_1": {
+   "photo": "The hub's price-graphic composition: white motorhome front straight on with the quilted silver cover on the windscreen and both side windows, light-grey or overcast background (no summer sun), no people, no logo — the photo used in Termoskydd_BOF_7_1 / CS_4_1.",
+   "Headline": "white text box top, black bold, two lines",
+   "Sub-line": "same box, under the headline, regular weight",
+   "Price band": "white band under the vehicle: 559 kr large, \"Ordinarie 932 kr\" and \"40 % rabatt\" smaller beside it",
+   "CTA": "blue rounded button, bottom centre, white bold",
+   "assets": "The composition and photo of Termoskydd_BOF_7_1 (Notion row https://app.notion.com/3df270ab908c81f08f89fa995ca30ed9, `Filer och media`) or Termoskydd_CS_4_1 (Notion row https://app.notion.com/3db270ab908c81caaa50f45c177cf1f4, `Filer och media`) — same photo, same box, same button. Fallback product photo: https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-termoskydd-se.jpg.",
+   "ref": "parent Termoskydd_CS_3 (live, BREAKTHROUGH; Meta ad 120250175770080291) for the offer — Replicate: the price pair and the 40 % / Do not replicate: \"IDAG ENDAST\", \"priset går tillbaka imorgon\", \"inför sommaren\", the summer photo. Composition from Termoskydd_CS_4_1 / BOF_7_1 — Replicate: photo, text box, band, button / Do not replicate: CS_4_1's discount headline (that is the variable)."
+  }
+ }
+}

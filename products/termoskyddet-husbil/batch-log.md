@@ -443,3 +443,22 @@ Ur `agent/etikett-backfill.mjs` 2026-09-27 (annonsens egna första vecka, 7d_cli
 | Termoskydd_CO_1_H1 | 1 | okänd | **LOSER** | 0 % | 21 kr | 0 | 0,00 / 2,08 | nej | släpp |
 | Termoskydd_SP_6_H1 | 2 | okänd | **LOSER** | 0 % | 11 kr | 0 | 0,00 / 2,08 | nej | släpp |
 | Termoskydd_PD_7_H1 | 2 | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 2,08 | nej | hooken föll — logga och släpp, aldrig ABO |
+
+## Batch #7 — 2026-09-27 (`/rond-auto` steg 4b: vidarebygg CS_3 + de sex namngivna platserna ur dagens lärdomar)
+
+Sju briefer i **BÄVER Termoskyddet för Husbil** (Draft), copy av sonnet (`batch-07/copy-sonnet.md`; familj A:s låsta hookrad "Två mornar. En med imma. En utan." föll på fråga 3 och skrevs om till "Två mornar. En med gardinen inifrån. En med skyddet utanpå." i Rättelse-sektionen), spärren `tools/briefgranskning.mjs --manifest` (main d446901) grön 7/7, `lardom.mjs --brief` grön 7/7 (`--befintliga` 65 namn), BRIEF-rader i loggen. Feedback-raden *Brief review 2026-09-23* följd: CPA alltid mot break-even 347 kr i samma mening, hook aldrig en instruktion, parentens Meta-annons-id i Why, ingen dubbel Variables-rad.
+
+| Annons | Typ | Parent | Variabel | Notion |
+|---|---|---|---|---|
+| `Termoskydd_RI_1_H2` | video 15 s | RI_1_H1 (SPEND_WINNER, 23 köp, hold 15 %) | längre problemdel (rad 2–4 i den immiga morgonen) | https://www.notion.so/3e8270ab908c8118bd35ccc9f840ab28 |
+| `Termoskydd_RI_1_H3` | video 12 s | RI_1_H1 | in media res (skyddet i dörrkarmen i gryningen först) | https://www.notion.so/3e8270ab908c815ca796d1bdb8956a12 |
+| `Termoskydd_RI_2_1` | statisk (typ S) | RI_1_H1 | den delade rutan som stillbild | https://www.notion.so/3e8270ab908c81249d55db4cb3a996c1 |
+| `Termoskydd_SP_4_H2` | video 12 s | SP_4_H1 (KPI_WINNER, ROAS 5,03, 7 % av spenden) | ny hook: imman inifrån i gryningen, måttkroppen kvar | https://www.notion.so/3e8270ab908c81a8a7a1fe3059caeb2e |
+| `Termoskydd_SP_4_H3` | video 12 s | SP_4_H1 | ny hook: fliken kläms i dörrkarmen | https://www.notion.so/3e8270ab908c81ccb6dcfd4f0ae6e904 |
+| `Termoskydd_SP_4_H4` | video 12 s | SP_4_H1 | ny hook: mörkläggningen inifrån hytten | https://www.notion.so/3e8270ab908c81e8b362c2e0b3a71e5a |
+| `Termoskydd_CS_13_1` (plats `CS_9_1`) | statisk | CS_3 (BREAKTHROUGH) | hookraden = mekanismen "utanpå glaset, inte innanför", ingen brådska, kondenssäsong | https://www.notion.so/3e8270ab908c8149a05ad8ce9417d5a9 |
+
+Pris läst live 2026-09-27: 559 kr / 932 kr (40 %). Tillåtna siffror: 559, 932, 373, 40, 211, 171, 90, 2. Värmeraden "30 grader av morgonsolen" (fel säsong) och "fri frakt" (butiksneutralt, speglas till CaraShell) borttagna ur SP_4-kroppen. Vidarebygg CS_2: iteration 2 är SLÄPP enligt lärdomen — inget byggs. Första bildrutor lästa ur Meta 2026-09-27: RI_1_H1 delad ruta (gardin/imma över skyddet utanpå, inbränd text "Två månar." — stavfel), SP_4_H1 husbilsfront med skyddet och texten "211 gånger 171 centimeter", CS_3 man som stryker skyddet i sommarljus.
+
+**Hypotes:** RI_1_H1 vinner auktionen (44 % av spenden) men håller bara 15 % förbi öppningen — H2/H3 testar manuset efter sekund 3; SP_4_H1 konverterar 12,3 % men får 7 % av spenden — tre problemmedvetna öppningar på samma måttkropp testar om hooken är det som håller den liten. Utfall dag 7 efter lansering.
+
