@@ -2357,3 +2357,38 @@ fifth wheel med solcell) — aldrig överdraget över ett AC-tak (obesvarat). �
 band med plastkrokar på rosa tyg och motsäger sidans "woven webbing" — inte använda.
 Tre-frågorstestet: 35 rader, 4 ❌ (tre mallrubriker + mätrådet för fifth wheel).
 Annonserna pekar INTE dit ännu — Axels klick.
+
+## LP "5 reasons" (USA) byggd 2026-09-27 kväll — `/anledningar` invändningsvänd, egen sida på carashell.com
+
+Live: https://carashell.com/pages/rv-roof-cover-5-reasons?country=US (obrandad,
+5 punkter, mall `page.listicle`, läst tillbaka som kund: lang en, ingen
+header/footer, 9 tabellrader ritade av butiken med `?variant=`-länkar, ingen
+`[[PRISTABELL]]` kvar). Axels order samma kväll: "en variant där det inte är så
+tydligt att du svarar på deras kommentarer … fem anledningar till varför folk
+struntar i att köpa vårt överdrag, och vad som händer istället … invändningarna,
+och sen svarar vi på dem och gör dem till anledningar till varför folk behöver
+byta … 'five reasons why'". Skälen = de fem största US-invändningarna i
+rapporten, förtroendet sist som grundskelettet vill: 1 inget i bilderna ser ut
+som deras tak (AC, 23 US-kommentarer), 2 priset de såg var inte priset för deras
+vagn (16), 3 förra överdraget gjorde mer skada än nytta (banden, 6), 4 för de
+pengarna hellre hela vagnen (5), 5 ingen de känner har ett (förtroendet, 10).
+Varje punkt: skälet → vad taket får i stället (bara produktsidans "rain sits
+around the hatches and seams") → det belagda → skälet att byta; ingen "you
+wrote". Pristabell + frågedel (8: fifth wheel, solceller, fukt, vattentät, snö,
+en person, två storlekar, frakt). Det obekräftade (AC, fifth wheel-fronten,
+snölast, stege, värme) står som "we don't have the maker's answer" — ALDRIG
+"we've asked": de 17 leverantörsfrågorna skickas inte (Axels beslut samma
+kväll). Bilder: kie-bilden av AC-taket återanvänd ur systersidans cache (0
+credits) + produktbild 8, 6, 1, 4 och 2. Tre-frågorstestet: 29 rader, 5 ❌ (två
+mallrubriker, ingressens öppning, punkt 4:s öppning, riskfritt-instruktionen,
+alla motiverade). Ingen mening delad med systersidan. Annonserna pekar inte dit
+ännu — Axels klick.
+
+⛔ **Systersidan `rv-roof-cover-before-you-buy` är FRYST som original** (Axel
+samma kväll: "Nej ändra inget på den publicerade sidan … Behåll den sidan som
+original … Reversera alla ändringar på den"). Bakgrund: sessionen skrev om dess
+"we have asked the maker"-meningar till "we don't have the maker's answer"
+(ingen fråga var skickad) och det gick live ~3 minuter innan Axels stopp;
+originalcopyn (commit df8d184) publicerades om och lästes tillbaka förbi cachen:
+4 originalfraser, 0 omskrivningar. Han gillar den men använder den inte. Rör
+aldrig den sidan igen.

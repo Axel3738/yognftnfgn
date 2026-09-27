@@ -27,6 +27,15 @@ efter USA-rapporten i `kommentarer/rapporter/usa-2026-09-27.md`: "en landing
 page som kommer hantera alla invändningar vi har fått på den amerikanska
 marknaden … inte på samma länk, byggd på samma sätt som en page på min
 butik"): https://carashell.com/pages/rv-roof-cover-before-you-buy?country=US.
+⛔ **Den sidan är FRYST som original** (Axels order samma kväll: "Nej ändra
+inget på den publicerade sidan … Behåll den sidan som original … Reversera
+alla ändringar på den"). Han gillar den men använder den inte; kör aldrig
+`bygg.mjs` mot den handlen igen. Dess "we have asked the maker"-meningar står
+kvar på hans order fast ingen fråga skickats (de 17 frågorna skickas inte,
+hans beslut). **I varje NY sida står det obekräftade som "we don't have the
+maker's answer" — aldrig "we've asked" om frågan inte är skickad.** Axels
+uppföljare är `/anledningar` i den invändningsvända varianten
+(`rv-roof-cover-5-reasons`, se `.claude/commands/anledningar.md`).
 
 ## Konceptet
 

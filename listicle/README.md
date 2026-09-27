@@ -41,7 +41,7 @@ genererade bilder), ev. `<slug>-<suffix>.gempages`. `bilder/` och
 |---|---|---|---|---|---|
 | `lagerrensning` | `/lagerrensning` | `<slug>-lagerrensning` | 5 | Anders på lagret | priset + jämförpriset |
 | `vi-testade` | `/vi-testade` | `<slug>-vi-testade` | 5 | Anders, som testade den själv | perioden (dagar/vecka/vinter/säsong …) |
-| `anledningar` | `/anledningar` | `<slug>-5-anledningar` / `-7-` | 5 eller 7 | Anders på lagret | antalet (5/fem, 7/sju) |
+| `anledningar` | `/anledningar` | `<slug>-5-anledningar` / `-7-` (marknad: `--handle`) | 5 eller 7 | Anders på lagret | antalet (5/fem, 7/sju). Varianten "invändningsvänd" (2026-09-27: fem skäl folk struntar i produkten → vad som händer i stället → svaret → skälet att byta) är samma koncept med annan copy, gärna med pristabell + frågedel; första sidan `carashell.com/pages/rv-roof-cover-5-reasons` |
 | `invandningar` | `/invandningar` | `<slug>-innan-du-koper` (en: `-before-you-buy`) | 7 eller 5 | Anders på lagret | från-priset (lägsta varianten) |
 
 Copy-strategin per koncept står i kommandofilen, inte i koden. Motorn

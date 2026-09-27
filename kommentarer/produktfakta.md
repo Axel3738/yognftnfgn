@@ -154,8 +154,19 @@ Läses av `/kommentarer` innan svaren skrivs.
   JAG"). Om takskyddet stod bara de tre svaren från 25/9 (webbing, nedre halvan av
   glaset, waterproof/sunproof/paint) — inget om AC, fifth wheel, J-trim, snö, hagel,
   dörr, antenn, stege, körning, värme eller vikt. **De 17 frågorna är alltså
-  fortfarande obesvarade** och sidan säger "we asked the maker" tills de skickats
-  och besvarats. Blocket 3–10 nedan hör inte till takskyddet.
+  fortfarande obesvarade.** ⛔ **Axels beslut samma kväll: de skickas INTE**
+  ("Nej jag tänker inte svara på dom, listicle var tillräckligt bra") — och
+  A/B-frågan om paketrutan lämnades obesvarad i samma andetag: **2-pack står
+  kvar, fråga inte igen.** Sidan
+  https://carashell.com/pages/rv-roof-cover-before-you-buy?country=US är
+  **fryst som original på Axels uttryckliga order** ("Nej ändra inget på den
+  publicerade sidan … Behåll den sidan som original … Reversera alla
+  ändringar på den"), inklusive dess meningar "we have asked the maker" — en
+  session skrev om dem till "we don't have the maker's answer" och det gick
+  live i tre minuter innan originalet lades tillbaka. **Rör aldrig den sidan.**
+  Nya sidor (t.ex. `rv-roof-cover-5-reasons`) skriver det obekräftade som
+  "we don't have the maker's answer", aldrig "we've asked". Blocket 3–10 nedan
+  hör inte till takskyddet.
 
 - Fiskespöhållare 4-pack (baverbutiken.se): texten "Monteras på vägg eller i
   båten" och "Monteras enkelt på vägg eller i båten" stämmer inte enligt

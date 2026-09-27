@@ -74,6 +74,50 @@ blocket** heter "Så vad gör de som redan har en?" (vad de slipper + produktens
 fakta). **Ärlig-blocket** ("Jag ska vara ärlig:") tar den anledning som INTE
 gäller alla — vem som inte behöver den. **Riskfritt** = 30 dagar.
 
+## Varianten "invändningsvänd": fem skäl folk struntar i produkten (Axels order 2026-09-27 kväll)
+
+Axel, efter USA-sidan `/invandningar`: *"en variant där det inte är så
+tydligt att du svarar på deras kommentarer … fem anledningar till varför
+folk struntar i att köpa vårt överdrag, och vad som händer istället, och
+varför så många inte har ett överdrag redan, och varför folk borde byta …
+invändningarna, och sen svarar vi på dem och gör dem till anledningar till
+varför folk behöver byta … det är så vi kör 'five reasons why'."*
+
+Samma koncept (`anledningar`, 5 punkter), men skelettet vänds:
+
+| Punkt | Bär | Källa |
+|---|---|---|
+| 1–5 | **Skälet folk hoppar över produkten** (en invändning, de fem största ur `/kommentarer`-rapporten i fallande ordning) → **vad som händer i stället** (bara produktsidans egen nytta: "rain sits around the hatches and seams") → **det belagda svaret** → **skälet att byta** | rapporten + produktsidan + `kommentarer/produktfakta.md` |
+| 5 | Förtroendet + garantin sist, som i grundskelettet (pris + garanti) | produktsidan |
+
+- **Aldrig "you wrote" / "one of you asked"** — invändningarna skrivs som
+  skäl folk i allmänhet har ("Nothing in the cover pictures looks like their
+  roof"), inte som svar på kommentarer. Antalet kommentarer bakom varje skäl
+  står i `tre_fragor`/rapporten, inte på sidan.
+- **Det obekräftade står som "we don't have the maker's answer"** — aldrig
+  som en gissning, och aldrig som "we've asked" om ingen fråga är skickad.
+- **Rubriken bär antalet** som vanligt ("5 reasons RV owners skip a roof
+  cover, and what happens to the roof instead"). Lyckas-blocket: "So what
+  do the people who do cover the roof do differently?" Ärlig-blocket: vem
+  den inte passar + det vi inte vet. Riskfritt: marknadens garanti.
+- **Pristabellen och frågedelen får följa med** (`copy.pristabell`,
+  `copy.fragor` — blocken är copy-styrda, `listicle/README.md` → "Två extra
+  block"): tabellen svarar på pris-skälet, frågedelen tar de skäl som inte
+  fick en punkt (fifth wheel, solceller, fukt, snö, en person, två storlekar).
+- På en marknad: `--marknad US --egen-sida --handle <engelsk handle>` — en
+  EGEN sida, engelska i grundspråket, `copy.en.json` + `bildplan.json` i
+  `listicle/output/anledningar/<produkthandle>/`. Bilderna delas med
+  systersidan genom att kopiera `bilder.json` (cachen är per plats:
+  döp om nyckeln till den plats bilden får här) — noll credits.
+- **Ingen mening delas med systersidan** för samma produkt (`/listiclar`-regeln).
+
+Första bygget 2026-09-27 kväll, takskyddet i USA:
+https://carashell.com/pages/rv-roof-cover-5-reasons?country=US (skälen: AC 23,
+storlek/pris 16, banden 6, helöverdraget 5, förtroendet 10 US-kommentarer —
+förtroendet sist). Systersidan
+https://carashell.com/pages/rv-roof-cover-before-you-buy?country=US är
+**fryst som original** (Axels order samma kväll) och rörs aldrig.
+
 ## Copy — skillnader mot /lagerrensning
 
 - Rubriken: antalet i stället för priserna. Priset får stå i punkt 5 och i
