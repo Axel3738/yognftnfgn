@@ -1,0 +1,186 @@
+{
+  "agent": "AH — värme på kroppen ute i vinter",
+  "datum": "2026-09-27",
+  "sammanfattning": "Struktur: värme på kroppen när man står still ute (passet, läktaren, hundpromenaden i mörkret). Golvet lästes FÖRE ali.py: 30 PriceRunner-sökningar + Hylte (3), Widforss (kategorinamn, sidorna 404), Jaktia (sök 404), XXL/Clas (JS-skal, oläst), Jula/Biltema (403), Stadium (500). Tolv former prövade. Två rader klarar grindarna: den uppvärmda 2-i-1-mössan (ingen svensk aktör i formen på 7 PR-sökningar + Hylte 0) och de uppvärmda knävärmarna som 2-pack (H08). Fällt: halskrage (golv 99–159 generisk, inget ankare), ryggbälte + strumpor (sortiment 20+), sittunderlag med rygg (K0 = Värmesitsen 45 × 90 är sits + rygg), fotpåse (bara inomhusplysch, ingen utelistning), balaklava (alla tre listningar WEST BIKING-märkta), öronmuffar (28 USD → 999 kr, K8), handskar/vantar (K0246 ja 09-12, ej launchad — SAK-dubblett), muff (K0268 ja), läktarfilt (Läktarponchon i butiken + golv Northio 309). Ingen LÅG-rad utan asymmetri levereras — hellre 2 än 5.",
+  "kandidater": [
+    {
+      "koncept_id": null,
+      "namn_sv": "Värmemössan 2-i-1 med halskrage",
+      "objekt": "NYTT: Den uppvärmda mössan på läktaren och hundpromenaden — USB-slinga i pannan, halskrage i samma set (nov–feb)",
+      "form": "kläder",
+      "arketyp": "E_VADER_SASONG",
+      "arketyp_sekundar": "F_HOBBY_IDENTITET",
+      "slot": "exploitation",
+      "hypotes_id": "H02",
+      "vinnarlikhet": {
+        "likast": "Damaskerna (REAL_WINNER 15 759 / 68 / 2,21) + Värmesulorna (EARLY_SIGNAL 1 064 / 5 / 5,23)",
+        "delade_variabler": ["kroppen ute i säsongsjobbet", "form kläder", "old way = köpt produkt som fungerar (vanlig mössa)", "deadline första frost / mörkret", "prisband 300–499", "USB-värme som sulorna"],
+        "avvikelser": ["ingen ägd dyr sak — köparen är kroppen själv", "powerbank ingår inte (bara USB-kabel)", "hero visar kvinna — kontots köpare är man 45+"]
+      },
+      "sasong": {"fonster_id": "forsta_frost_mellan", "deadline_typ": "första frost", "veckor_kvar": 2.6, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005010536203523",
+        "url": "https://www.aliexpress.com/item/1005010536203523.html",
+        "pris_usd": 13.36,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-27T04:46:32Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-27/v3/bilder/1005010536203523.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "titeln säger 2-i-1 (mössa + halskrage), one size enligt titeln — färgvarianter ej lästa (produktsidan ger inte varianter i containern)",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {
+        "klass": 1,
+        "hero_textfri": true,
+        "hero_i_kontext": true,
+        "samma_produkt": true,
+        "forsta_3s": "ej mätt (ingen video)",
+        "kommentar": "Hero: kvinna i snölandskap, renderad orange värmeglöd i pannan, vit USB-kabel synlig — textfri och i kontext. Alternativ herr-listning 1005005081176843 (12,42 USD, svart stickad, hero man mot vit bakgrund, litet 'M'-märke på kanten, LIVE 04:47:54Z) om Axel vill ha en manlig bild. Set-listning 1005006098351584 (16,45 USD, mössa + halskrage packshot, litet broderat märke) LIVE 04:46:30Z."
+      },
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "ingen hittad i exakt form (eluppvärmd mössa)", "pris_sek": null, "url": "https://www.pricerunner.se/search?q=uppv%C3%A4rmd%20m%C3%B6ssa", "exakt_samma_form": false},
+        "premium_ankare": {"namn": "saknas — Fjällräven Singi Heater Beanie 979 kr heter 'Heater' men är inte eluppvärmd; närmaste eluppvärmda kroppsplagg i fackhandeln är HeatX värmehandskar 1 000–1 569 kr (Hylte) och Härkila Heat-plagg 1 925–1 995 kr", "pris_sek": null, "url": "https://www.pricerunner.se/pl/10001-3361596117/Klaeder/Fjaellraeven-Singi-Heater-Beanie-Dark-Grey-priser", "i_sortiment": false},
+        "ankare_kvot": null,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": [
+          "pricerunner.se 2026-09-27: 'uppvärmd mössa', 'värmemössa', 'värmemössa batteri', 'uppvärmd mössa usb', 'heated beanie', 'värmemössa usb batteri', 'uppvärmd mössa batteri' — noll eluppvärmda mössor (bara stickade Shein/CCM 31–199 kr, LED-mössa Proviz 256 kr)",
+          "hylte-lantman.com 2026-09-27: sök 'uppvärmd' 9 produkter (THAW sittdyna 819, HeatX handskar, vattenbehållare) — ingen mössa; 'värme mössa' 0 träffar",
+          "widforss.se 2026-09-27: kategorier Värmevästar/Värmehandskar/Värmestrumpor/Värmesulor/Värmebyxor/Övriga värmeprodukter finns i menyn, kategorisidorna svarade 404 — 'Övriga värmeprodukter' OLÄST",
+          "jaktia.se sök 404 (oläst) · xxl.se + clasohlson.com JS-skal utan produkter (oläst) · jula.se + biltema.se 403 (oläst) · stadium.se 500 (oläst) · rusta.com 404 (oläst)"
+        ]
+      },
+      "ekonomi": {
+        "landad_sek": [174, 213],
+        "pris_sek": 499,
+        "brutto_sek": [286, 325],
+        "be_cpa_sek": [286, 325],
+        "be_roas": 1.63,
+        "flerkop": false,
+        "returrisk": "låg — one size stickad; ingen mätning"
+      },
+      "meta_tanke": {
+        "hook": "Kall panna på läktaren i november?",
+        "objekt_i_bild": "mössan på huvudet, orange glöd i pannan, kabeln ner i jackfickan — läktare eller mörk hundpromenad",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "värmeslingan lyser genom stickningen (renderad glöd) + ånga i kylan; halskragen runt halsen i samma bild"
+      },
+      "varfor": "Samma struktur som damaskerna och värmesulorna (kroppen i kylan, USB-värme, 300–499 kr) på ett plagg som ALLA har och ingen svensk aktör säljer eluppvärmt — sju PriceRunner-sökningar + Hylte gav noll i formen; kategorinyhet (H10) med textfri hero i kontext. Första frost 2,6 v, mörkret 12 v: hela vintern är fönstret.",
+      "huvudrisk": "Powerbank ingår inte (bara USB-kabel) — utan medskickad powerbank blir första recensionen 'värmer inte'; Widforss/Jula/XXL oläst.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 3, "meta_creative": 2, "efterfragan": 2, "lucka": 3, "ekonomi": 2, "sasong": 2, "leverantor": 2, "nyhet": 3, "hypotesvarde": 2},
+      "per_kriterium": {"K0": "ok", "K8": 5},
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (grep mössa/värm — Värmesits, Värmesulor, Läktarponcho, MC Handvärmare; ingen mössa)", "koncept.py sok mössa/hals/nack = 0", "kontot 7 d: ej läst (rör inte Meta)"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005010536203523.html",
+        "https://www.aliexpress.com/item/1005005081176843.html",
+        "https://www.aliexpress.com/item/1005006098351584.html",
+        "https://www.aliexpress.com/w/wholesale-heated-beanie-hat-usb-rechargeable.html",
+        "https://www.pricerunner.se/search?q=heated%20beanie",
+        "https://www.hylte-lantman.com/sok?q=uppv%C3%A4rmd"
+      ]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Knävärmarna 2-pack för passet",
+      "objekt": "NYTT: De uppvärmda knävärmarna på passet och läktaren — kardborre runt knäet, tre värmelägen, ett per knä (okt–jan)",
+      "form": "annat",
+      "arketyp": "E_VADER_SASONG",
+      "arketyp_sekundar": "I_FLERKOP",
+      "slot": "exploitation",
+      "hypotes_id": "H08",
+      "vinnarlikhet": {
+        "likast": "Värmesitsen för älgpasset (K0240, launchad, 1 934 / 4 / 1,45 EARLY_SIGNAL) + Damaskerna (REAL_WINNER)",
+        "delade_variabler": ["kroppen stilla på passet i kylan", "deadline älgjakt syd 1,6 v", "USB-värme", "prisband 500–999"],
+        "avvikelser": ["formen är ett stöd/bandage — kan läsas som wellness (artros) i stället för jakt", "två behövs (flerköp) — listningen säljer styck", "hero är packshot på idrottsben, inte passet"]
+      },
+      "sasong": {"fonster_id": "algjakt_syd", "deadline_typ": "älgjakt", "veckor_kvar": 1.6, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005010441266600",
+        "url": "https://www.aliexpress.com/item/1005010441266600.html",
+        "pris_usd": 8.99,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-27T04:47:43Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-27/v3/bilder/1005010441266600.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "titeln: 'Knee Brace with 3 Heat Levels, Adjustable' — en storlek med kardborre, säljs styckvis (2 st per kund); första försöket att öppna sidan gav tomt svar, andra gav titel + hero",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {
+        "klass": 2,
+        "hero_textfri": true,
+        "hero_i_kontext": false,
+        "samma_produkt": true,
+        "forsta_3s": "ej mätt (ingen video)",
+        "kommentar": "Hero: svart neoprenknäskydd med röd lysande knapp, på ett ben i shorts + packshot, vit bakgrund — textfri men idrott/inomhus. Alternativ 1005013064954023 (22,37 USD, rödljus + värme) har textfylld wellness-hero — vald bort."
+      },
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "PriceRunner: 'Värmande Knästöd' 99,60 kr och INF självuppvärmande knähylsor 119 kr — turmalin/självvärmande, INTE eluppvärmda", "pris_sek": 99.6, "url": "https://www.pricerunner.se/pl/340-3458154827/Haelsovaardsprodukter/Vaermande-Knaestoed-priser", "exakt_samma_form": false},
+        "premium_ankare": {"namn": "'USB Elektrisk Uppvärmd Knästöd 120 Enkelpack' (generisk marknadsplatslistning, 1 st) — enda eluppvärmda knästödet på PriceRunner; svagt ankare utan varumärke", "pris_sek": 1235, "url": "https://www.pricerunner.se/pl/340-3603875362/Haelsovaardsprodukter/USB-Elektrisk-Uppvaermd-Knaestoed-120-Enkelpack-priser", "i_sortiment": false},
+        "ankare_kvot": 2.06,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": [
+          "pricerunner.se 2026-09-27: 'uppvärmd knäskydd', 'uppvärmt knästöd par', 'värmeknäskydd usb' — ett eluppvärmt (1 235 kr, enkelpack), resten Rehband/McDavid-stöd 199–399 utan värme",
+          "hylte-lantman.com 2026-09-27: 'värme knä' 0 träffar; 'uppvärmd' 9 produkter utan knä",
+          "widforss.se kategorisidor 404 (oläst) · jula/biltema 403 · clas/xxl JS-skal (oläst)"
+        ]
+      },
+      "ekonomi": {
+        "landad_sek": [234, 286],
+        "pris_sek": 599,
+        "brutto_sek": [313, 365],
+        "be_cpa_sek": [313, 365],
+        "be_roas": 1.77,
+        "flerkop": true,
+        "returrisk": "låg — kardborre, justerbar; landad räknad för 2 st (par) à 8,99 USD"
+      },
+      "meta_tanke": {
+        "hook": "Stela knän efter fyra timmar på passet?",
+        "objekt_i_bild": "två knän i jaktbyxor med knävärmarna på, röd knapp lyser, torn/stubbe i bakgrunden",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "värmebild/ånga från knäna när byxbenet dras upp; den röda lysdioden på varje knä"
+      },
+      "varfor": "Tredje kroppsdelen på passet efter sits (launchad) och sulor (ROAS 5,23 dag två) — knäna är det som stelnar när man sitter stilla i tornet; PriceRunner har bara ett eluppvärmt knästöd (1 235 kr, styck) så vårt par för 599 ligger under ankaret med 2,06×. Flerköp inbyggt: två knän = två enheter (H08).",
+      "huvudrisk": "Formen kan läsas som artros-wellness i stället för jakt — creativen måste sättas på passet, inte i soffan; powerbank ingår sannolikt inte.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 2, "meta_creative": 1, "efterfragan": 2, "lucka": 2, "ekonomi": 2, "sasong": 2, "leverantor": 2, "nyhet": 2, "hypotesvarde": 2},
+      "per_kriterium": {"K0": "ok", "K8": 5},
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (grep knä = 0)", "koncept.py sok knä = 0", "kontot 7 d: ej läst (rör inte Meta)"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005010441266600.html",
+        "https://www.aliexpress.com/w/wholesale-heated-knee-pads-usb-rechargeable.html",
+        "https://www.pricerunner.se/search?q=uppv%C3%A4rmd%20kn%C3%A4skydd",
+        "https://www.pricerunner.se/search?q=uppv%C3%A4rmt%20kn%C3%A4st%C3%B6d%20par"
+      ]
+    }
+  ],
+  "strukna": [
+    {"form": "uppvärmd halskrage / värmehalsduk USB", "orsak": "golv i exakt form under oss utan ankare: Teknikproffset USB-värmehalsduk 99 kr, INF USB nackvärmare 159 kr (PriceRunner 2026-09-27); AliExpress 9–15 USD samma vara; inget märkesankare ≥ 1,6× hittat → H06 gäller inte", "kallor": ["https://www.pricerunner.se/search?q=uppv%C3%A4rmd%20halsduk"]},
+    {"form": "uppvärmt ryggbälte / njurbälte", "orsak": "sortiment: 20 träffar på 'värmebälte' + 20 på 'uppvärmt ryggbälte' på PriceRunner (InnovaGoods 329, TerraTherm 380, Vulpés 1 047, infraröda 437–2 299) — fäll på sortiment enligt protokollet", "kallor": ["https://www.pricerunner.se/search?q=v%C3%A4rmeb%C3%A4lte"]},
+    {"form": "uppvärmda strumpor", "orsak": "sortiment: 12+ eluppvärmda strumpor 165–2 499 kr på PriceRunner + egen kategori 'Värmestrumpor' hos Widforss; Alpenheat 2 499 är ankare men golvet är sortiment", "kallor": ["https://www.pricerunner.se/search?q=uppv%C3%A4rmda%20strumpor"]},
+    {"form": "uppvärmt sittunderlag med rygg / läktarstol", "orsak": "K0: butikens Värmesits 45 × 90 cm (4 zoner) ÄR sits + rygg — PriceRunner-motsvarigheten MTP DT-90x43-2S 'sittdyna med ryggstöd' 374 kr är samma form", "kallor": ["https://www.pricerunner.se/search?q=uppv%C3%A4rmt%20sittunderlag"]},
+    {"form": "uppvärmd fotpåse / fotsäck för passet", "orsak": "ingen utomhuslistning: AliExpress ger bara inomhus-plyschfotvärmare 11–14 USD (soffan) och värmestrumpor; PriceRunner: nätdrivna Beurer/Medisana 480–809 kr + Grüezi Feet Heater (dun, ej el) 1 149 kr; Hylte 'fotpåse' 0. Återupptas om en batteridriven utomhusform med vattentät botten hittas", "kallor": ["https://www.aliexpress.com/w/wholesale-usb-heated-foot-muff.html", "https://www.pricerunner.se/search?q=uppv%C3%A4rmd%20fots%C3%A4ck"]},
+    {"form": "uppvärmd balaklava", "orsak": "varumärke: alla tre öppnade listningar (1005007539435593, 1005007629865040, 1005007979865777) har WEST BIKING tryckt på halsen — bryter grinden 'inga varumärken'. Luckan finns (PriceRunner: ingen eluppvärmd balaklava, Brynje 509 oeluppvärmd) — sök omärkt listning i morgon", "kallor": ["https://www.aliexpress.com/w/wholesale-usb-heated-balaclava-face-mask-winter.html", "https://www.pricerunner.se/search?q=v%C3%A4rmebalaklava"]},
+    {"form": "uppvärmda öronmuffar", "orsak": "pris/K8: 28–29 USD → landad ~410 → 999 kr för öronmuffar; hero textfylld (1005010018596744 sedd)", "kallor": ["https://www.aliexpress.com/item/1005010018596744.html"]},
+    {"form": "uppvärmda benvärmare (par)", "orsak": "1005012855661414 (12,65 USD) är dam-stickat med pomponger, packshot — fel köpare för kontot", "kallor": ["https://www.aliexpress.com/item/1005012855661414.html"]},
+    {"form": "uppvärmda handskar / vantar med powerbank", "orsak": "SAK-dubblett: K0246 Värmehandskarna för älgpasset = ja 2026-09-12, ej launchad (HeatX-ankare 1 569 hos Hylte bekräftat i dag). Snabbaste vägen är att launcha K0246, inte söka om", "kallor": ["https://www.hylte-lantman.com/sok?q=heat"]},
+    {"form": "uppvärmd handmuff", "orsak": "SAK-dubblett: K0268 Värmemuffen = ja; Deerhunter Heat-handvärmare 799 kr hos Hylte (ankare bekräftat i dag)", "kallor": ["https://www.hylte-lantman.com/sok?q=heat"]},
+    {"form": "uppvärmd läktarfilt / knäfilt med powerbank", "orsak": "K0-nära: Läktarponchon med värme ligger ny i butiken (849); golv Northio värmefilt med powerbank 309 kr + generiska USB-filtar 425–695 utan ankare", "kallor": ["https://www.pricerunner.se/search?q=v%C3%A4rmefilt%20powerbank"]},
+    {"form": "uppvärmd mössa med öronlappar (trapper) för passet", "orsak": "ingen listning: två AliExpress-sökningar gav bara oeluppvärmda trapperhattar 5–26 USD", "kallor": ["https://www.aliexpress.com/w/wholesale-usb-heated-trapper-hat-ear-flaps-winter.html"]},
+    {"form": "uppvärmt pannband", "orsak": "ingen listning på AliExpress (bara öronmuffar); PriceRunner: bara fleecepannband", "kallor": ["https://www.aliexpress.com/w/wholesale-usb-heated-headband-ear-warmer.html"]},
+    {"form": "handvärmare-powerbank, värmeväst, värmesulor med app", "orsak": "hoppade enligt uppdraget (kedjesortiment 20+ / K0 mot Värmesulorna)", "kallor": []}
+  ]
+}
