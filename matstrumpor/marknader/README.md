@@ -204,7 +204,28 @@ Norge med `webPresenceCreate` + `marketUpdate(webPresencesToAdd)` (receptet mät
 CaraShell 2026-09-16, `factory/API-GRANSER.md`). Tills dess är matstrumpor.se/nb
 adressen — allt fungerar utan .no.
 
-## Norge först — Axels budget 1 000 kr/dag (2026-09-27), förberett men stoppat på två klick
+## Kampanjerna i kontot (byggda 2026-09-27 ~16:00 CEST, alla PAUSED) — `annonser/`
+
+Axels order: "Nu har api tillgång också. Bygg upp alla kampanjer. Bygg upp worldwide kampanj.
+Förbered usa kampanj med alla nya ads vi inte hade innan och UGC heygennad. Katarina får vi
+inte köra i andra marknader så heygenna inte dom." `annonser/bygg.mjs --alla --skarpt`
+skapade i nya kungen (CBO, OUTCOME_SALES, lowest cost, ett adset var — spegel av SE-adsetet
+`09-17 UGC` med marknadens länder):
+
+| Kod | Kampanj | Id | Länder | Språk | Budget |
+|---|---|---|---|---|---|
+| NO | `MATSTRUMP_NO_SALES` | 120251749551520023 | NO | nb | **1 000 kr/dag — Axels** |
+| DK | `MATSTRUMP_DK_SALES` | 120251749599180023 | DK | da | platshållare 1 000, EJ GIVEN |
+| FI | `MATSTRUMP_FI_SALES` | 120251749604200023 | FI | fi | platshållare 1 000, EJ GIVEN |
+| US | `MATSTRUMP_US_SALES` | 120251749609010023 | US | en | platshållare 1 000, EJ GIVEN |
+| WW | `MATSTRUMP_WW_SALES` | 120251749612350023 | NO, DK, FI, US, GB, AU, CA, NZ | en | platshållare 1 000, EJ GIVEN |
+
+Worldwide länkar till `/en/products/sushi-strumpor` utan `?country=` — Shopify väljer marknad
+efter kundens IP, så en dansk ser engelska + DKK. Sverige ingår inte (egen kampanj). **Inga
+annonser ligger i än:** videorna väntar på HeyGen (nedan), och `bygg.mjs --aktivera` vägrar
+allt med platshållarbudget. Läget i kontot: `annonser/lage.json`, `bygg.mjs --lage`.
+
+## Norge först — Axels budget 1 000 kr/dag (2026-09-27), förberett men stoppat på HeyGen
 
 Axels svar 2026-09-27: "1000kr per dag" för Norge, och regeln "alla UGC-videor översätts med
 den dyraste versionen på HeyGen; annars kör vi bara våra egna HeyGen" (egna avatarvideor

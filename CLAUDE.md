@@ -94,19 +94,20 @@ till fars dag/jul" visas bara på svenska. `matstrumpor.no` är INTE registrerad
 `matstrumpor/cogs.json` (`kor.mjs --ekonomi --marknad US`): Norden saknar
 kostnad, donut/pizza/hamburgare saknar Cost per item i Shopify. **Annonserna
 utomlands: Norge först, Axels budget 1 000 kr/dag (2026-09-27), kampanjen
-`MATSTRUMP_NO_SALES` i nya kungen** — allt förberett i `matstrumpor/marknader/norge/`
-(README = körordningen, `upp.mjs` skapar kampanj/adset/annonser PAUSED via token
-och aktiverar bara det den själv skapat, `annonser.json` = norsk copy från
-sonnet, `kallor.json` = de fyra UGC-källvideorna ur kontot). ⛔ **Stoppat på två
-klick, mätt 2026-09-27:** (1) `META_ACCESS_TOKEN` LÄSER nya kungen men får inte
-skriva — `Permissions error … rollen Annonsör eller högre … ads_management`
-(systemanvändaren "API LONG TERM" sitter i SnarkLös och har bara läsrätt på
-Matstrumpors konto; skrivning kräver rollen Manage campaigns/Annonsör på kontot,
-eller Adsmanager-MCP:n i en session Axel startar); (2) HeyGen svarade
-`Insufficient credit. This operation requires 'api' credits` på alla fyra
-proofread-sessionerna medan `remaining_quota` sa `api: 6` — samma som
-2026-08-29; API-krediterna fylls på av Axel på app.heygen.com. Inget är
-aktiverat, inget spenderar. ⚠️ Shopify mätt
+`MATSTRUMP_NO_SALES` i nya kungen.** ✅ **Token:en SKRIVER i nya kungen sedan
+2026-09-27 ~15:30 CEST** (Axel gav rollen; före det `Permissions error …
+ads_management`). `matstrumpor/marknader/annonser/bygg.mjs --alla --skarpt`
+byggde samma eftermiddag **fem kampanjer, alla PAUSED**: NO (Axels 1 000 kr/dag),
+DK, FI, US och WW (NO+DK+FI+US+GB+AU+CA+NZ, engelska, `/en/` utan `?country=`) —
+de fyra sista med PLATSHÅLLARBUDGET 1 000 kr/dag som `--aktivera` vägrar tills
+Axel sagt en budget. Id:n och regler i `marknader/README.md` → Kampanjerna.
+Materialet: `marknader/heygen/` (Nathalie + Sofie H1/H2 → nb/en/da/fi; ⛔ **Katarinas
+UGC får aldrig lämna Sverige**, Axel 2026-09-27) och `marknader/annonser/<KOD>.json`
+(copy av sonnet). ⛔ **HeyGen stoppar:** `Insufficient credit. This operation
+requires 'api' credits` på varje proofread-session (mätt två gånger 2026-09-27)
+medan kvoten säger `api: 6, plan_credit: 2000` — studiokrediterna är inte
+API-krediter; Axel köper API-krediter på app.heygen.com. Inga annonser ligger i
+kampanjerna, inget spenderar. ⚠️ Shopify mätt
 2026-09-27: `translationsRegister` kan svara `INTERNAL_SERVER_ERROR` en stund
 (kör om), och en batchläsning av temats översättningar kan svara med FEL
 språk (`--steg kontroll` läser om ensamt) — lita aldrig på en enda läsning.
