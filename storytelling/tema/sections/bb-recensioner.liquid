@@ -1,0 +1,90 @@
+{%- comment -%}
+  bb-recensioner.liquid — "Kunderna säger": Judge.me:s recensionskarusell,
+  snittbetyget och medaljerna, på startsidan och Om oss-sidan.
+  Skrivs till temat av storytelling/publicera.mjs (repot yognftnfgn).
+
+  Widgetarna är Judge.me:s egna (app-embedden "judgeme_core" måste vara på i
+  temat — den var det 2026-09-27). Markeringen följer Judge.me:s guide för
+  vintage-teman: karusellen läser shop.metafields.judgeme.featured_carousel,
+  medaljerna shop.metafields.judgeme.medals. Vilka recensioner karusellen visar
+  styrs i Judge.me-adminen (Reviews Carousel → Review curation): "featured"
+  visar de 15 vi valt ut, annars de senaste 5-stjärniga.
+{%- endcomment -%}
+{%- liquid
+  assign jm = shop.metafields.judgeme
+  assign betyg = jm.all_reviews_rating | default: ''
+  assign antal = jm.all_reviews_count | default: ''
+  assign betyg_text = betyg | plus: 0 | round: 1 | replace: '.', ','
+-%}
+{%- style -%}
+  .bb-recensioner { background: {{ section.settings.bakgrund }}; color: {{ section.settings.textfarg }}; padding: 52px 0 40px; }
+  .bb-recensioner .section-header { margin-bottom: 18px; }
+  .bb-recensioner .subheading { margin-bottom: 8px; font-size: 13px; }
+  .bb-recensioner__ingress { margin: 0 auto 6px; max-width: 640px; font-size: 16px; opacity: .85; }
+  .bb-recensioner__stjarnor { color: #f4bc33; letter-spacing: 2px; margin-right: 6px; }
+  .bb-recensioner__karusell { margin: 10px 0 0; }
+  .bb-recensioner__medaljer { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 18px; margin-top: 26px; }
+  .bb-recensioner__medaljer .jdgm-medals-wrapper { width: 100%; }
+  .bb-recensioner__medaljer .jdgm-medal-wrapper { display: inline-block; margin: 6px 10px; }
+  .bb-recensioner__medaljer .jdgm-medal__value { font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback); }
+  .bb-recensioner__tomt { text-align: center; opacity: .7; padding: 20px 0; }
+  @media only screen and (max-width: 768px) {
+    .bb-recensioner { padding: 36px 0 28px; }
+    .bb-recensioner__ingress { font-size: 15px; }
+  }
+{%- endstyle -%}
+
+<div class="bb-recensioner" id="kunderna-sager" data-section-id="{{ section.id }}" data-section-type="bb-recensioner">
+  <div class="page-width">
+    <div class="section-header text-center">
+      {%- if section.settings.overrad != blank -%}
+        <div class="subheading">{{ section.settings.overrad | escape }}</div>
+      {%- endif -%}
+      {%- if section.settings.rubrik != blank -%}
+        <h2>{{ section.settings.rubrik | escape }}</h2>
+      {%- endif -%}
+      {%- if betyg != blank and antal != blank -%}
+        <p class="bb-recensioner__ingress"><span class="bb-recensioner__stjarnor" aria-hidden="true">★★★★★</span>{{ betyg_text }} av 5 i snitt, baserat på {{ antal }} recensioner.</p>
+      {%- endif -%}
+      {%- if section.settings.ingress != blank -%}
+        <div class="rte bb-recensioner__ingress">{{ section.settings.ingress }}</div>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <div class="page-width">
+    {%- if jm.featured_carousel != blank -%}
+      <div class="bb-recensioner__karusell">
+        <div class='jdgm-carousel-wrapper' data-auto-install='false'>
+          {{ jm.featured_carousel }}
+        </div>
+      </div>
+    {%- else -%}
+      <p class="bb-recensioner__tomt">Recensionerna laddas från Judge.me. Syns inget här: kontrollera att app-embedden Judge.me är på och att karusellen är aktiverad i Judge.me.</p>
+    {%- endif -%}
+  </div>
+
+  {%- if section.settings.visa_medaljer and jm.medals != blank -%}
+    <div class="page-width">
+      <div class="bb-recensioner__medaljer">
+        {{ jm.medals }}
+      </div>
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Kunderna säger (Judge.me)",
+  "settings": [
+    { "type": "text", "id": "overrad", "label": "Överrad", "default": "Recensioner" },
+    { "type": "text", "id": "rubrik", "label": "Rubrik", "default": "Kunderna har ordet" },
+    { "type": "paragraph", "content": "Snittbetyget och antalet recensioner hämtas automatiskt från Judge.me och visas under rubriken." },
+    { "type": "richtext", "id": "ingress", "label": "Egen text (valfri)" },
+    { "type": "checkbox", "id": "visa_medaljer", "label": "Visa Judge.me-medaljerna", "default": true },
+    { "type": "color", "id": "bakgrund", "label": "Bakgrund", "default": "#ffffff" },
+    { "type": "color", "id": "textfarg", "label": "Text", "default": "#111111" }
+  ],
+  "presets": [ { "name": "Kunderna säger (Judge.me)" } ]
+}
+{% endschema %}

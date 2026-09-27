@@ -1,0 +1,52 @@
+{
+  "sections": {
+    "historia": {
+      "type": "bb-historia",
+      "blocks": {
+        "steg1": { "type": "steg", "settings": { "produkt": "superkoppling", "etikett": "Steg 1", "titel": "Bäverkopplingen", "text": "Snabbkopplingen som startade allt. Tryck fast kabeln, hör klicket, klart." } },
+        "steg2": { "type": "steg", "settings": { "produkt": "bavertratt-tanka-utan-spill", "etikett": "Steg 2", "titel": "Bävertratten", "text": "Snäpper fast på dunken. Tanka gräsklipparen utan spill." } },
+        "steg3": { "type": "steg", "settings": { "produkt": "baverlampa-pro", "etikett": "Steg 3", "titel": "Bäverlampan", "text": "Pannlampan för den som skruvar när det är mörkt." } },
+        "idag": { "type": "idag", "settings": { "samling": "alla-produkter", "tal_reserv": "250+", "tal_ord": "prylar", "etikett": "I dag", "titel": "En hel butik", "text": "För garaget, båten, trädgården och campingen. Och det växer." } },
+        "punkt1": { "type": "punkt", "settings": { "titel": "Prylar som löser problem", "text": "<p>Inga hyllvärmare. Varje sak i butiken finns för att den gör något i vardagen enklare, i garaget, på båten eller i trädgården.</p>" } },
+        "punkt2": { "type": "punkt", "settings": { "titel": "Testat innan det får plats", "text": "<p>Vi tar in mycket och behåller lite. Det kunderna gillar stannar. Det som inte håller måttet åker ut.</p>" } },
+        "punkt3": { "type": "punkt", "settings": { "titel": "Svenskt företag i Göteborg", "text": "<p>Kundtjänst på svenska, Klarna, fri frakt över 300 kr och 14 dagars ångerrätt. Frågor? Mejla <a href=\"mailto:kundsupport@baverbutiken.se\">kundsupport@baverbutiken.se</a>.</p>" } }
+      },
+      "block_order": ["steg1", "steg2", "steg3", "idag", "punkt1", "punkt2", "punkt3"],
+      "settings": {
+        "overrad": "Om Bäverbutiken",
+        "rubrik": "Det började med en koppling",
+        "text": "<p>Bäverbutiken började inte som en butik. Den började i ett garage, med kablar som skulle kopplas, kabelskor som saknades och en tång som inte fungerade. Lösningen blev en liten snabbkoppling som man bara trycker fast. Vi döpte den till Bäverkopplingen, efter Sveriges flitigaste byggare.</p><p>Sedan kom Bävertratten, som sitter fast på dunken när du tankar gräsklipparen. Och Bäverlampan, för den som skruvar när det är mörkt. Varje gång var det samma sak: en vardagsgrej som borde finnas, men som ingen gjort ordentligt.</p><p>I dag är Bäverbutiken en hel butik med över 200 prylar för garaget, båten, trädgården och campingen. Tänk den där järnhandeln du gillar att gå runt i, fast på nätet och bara med det som faktiskt är värt att ha. Allt vi tar in får bevisa sig först. Det som inte håller måttet åker ut.</p>",
+        "signatur_namn": "Axel, grundare",
+        "signatur_rad": "Bäverbutiken, Göteborg",
+        "knapp_text": "",
+        "knapp_lank": "",
+        "tidslinje_rubrik": "Så växte butiken",
+        "punkter_rubrik": "Så tänker vi",
+        "bakgrund": "#000000",
+        "textfarg": "#ffffff",
+        "accent": "#dd1d1d",
+        "kortbakgrund": "#161616"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    },
+    "fortroende": {
+      "type": "bb-fortroende",
+      "blocks": {
+        "betyg": { "type": "betyg", "settings": { "ikon": "stjarna", "rad": "recensioner från kunder", "titel_reserv": "Recensioner", "rad_reserv": "från riktiga kunder" } },
+        "frakt": { "type": "punkt", "settings": { "ikon": "paket", "titel": "Fri frakt", "rad": "på ordrar över 300 kr" } },
+        "klarna": { "type": "punkt", "settings": { "ikon": "kort", "titel": "Klarna", "rad": "få först, betala sen" } },
+        "svenskt": { "type": "punkt", "settings": { "ikon": "flagga", "titel": "Svenskt företag", "rad": "Göteborg · 14 dagars ångerrätt" } }
+      },
+      "block_order": ["betyg", "frakt", "klarna", "svenskt"],
+      "settings": { "bakgrund": "#f6f6f4", "textfarg": "#111111", "ikonbakgrund": "#dd1d1d", "ikonfarg": "#ffffff" }
+    },
+    "recensioner": {
+      "type": "bb-recensioner",
+      "settings": { "overrad": "Recensioner", "rubrik": "Kunderna har ordet", "visa_medaljer": true, "bakgrund": "#ffffff", "textfarg": "#111111" }
+    }
+  },
+  "order": ["historia", "main", "fortroende", "recensioner"]
+}

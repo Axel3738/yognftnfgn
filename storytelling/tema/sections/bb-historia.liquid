@@ -1,0 +1,251 @@
+{%- comment -%}
+  bb-historia.liquid — "Det började med en koppling": Bäverbutikens historia
+  som ett mörkt band på startsidan (och överst på Om oss-sidan).
+  Skrivs till temat av storytelling/publicera.mjs (repot yognftnfgn). All text
+  ligger i sektionens inställningar, så den ändras i temaredigeraren.
+
+  Tre delar, alla valfria:
+    1. Bilden + berättelsen + knappen.
+    2. Tidslinjen: block av typen "steg" (en produkt per steg, bilden hämtas
+       från produkten) och "idag" (antalet produkter räknas ur en samling).
+    3. Punkterna: block av typen "punkt" (rubrik + text), tre i rad.
+{%- endcomment -%}
+{%- liquid
+  assign har_bild = false
+  if section.settings.bild != blank
+    assign har_bild = true
+  endif
+  assign steg = section.blocks | where: 'type', 'steg'
+  assign idag = section.blocks | where: 'type', 'idag'
+  assign punkter = section.blocks | where: 'type', 'punkt'
+  assign antal_tidslinje = steg.size | plus: idag.size
+-%}
+{%- style -%}
+  .bb-historia { background: {{ section.settings.bakgrund }}; color: {{ section.settings.textfarg }}; padding: 70px 0 60px; overflow: hidden; }
+  .bb-historia .subheading { color: {{ section.settings.accent }}; font-size: 13px; margin-bottom: 14px; }
+  .bb-historia__topp { display: grid; grid-template-columns: {% if har_bild %}minmax(0, 5fr) minmax(0, 7fr){% else %}minmax(0, 1fr){% endif %}; gap: 50px; align-items: center; }
+  .bb-historia__bild { position: relative; }
+  .bb-historia__bild img { display: block; width: 100%; height: auto; border-radius: 6px; }
+  .bb-historia__text .h1 { color: inherit; margin-bottom: 18px; }
+  .bb-historia__text .rte { color: inherit; opacity: .92; }
+  .bb-historia__text .rte p { margin-bottom: 14px; }
+  .bb-historia__signatur { margin: 22px 0 26px; padding-left: 14px; border-left: 3px solid {{ section.settings.accent }}; line-height: 1.35; }
+  .bb-historia__signatur strong { display: block; font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback); font-weight: var(--typeHeaderWeight); text-transform: uppercase; letter-spacing: .05em; font-size: 18px; }
+  .bb-historia__signatur span { font-size: 14px; opacity: .75; }
+  .bb-historia__rubrik2 { margin: 58px 0 22px; text-align: center; }
+  .bb-historia__rubrik2 .h3 { color: inherit; margin: 0; }
+  .bb-historia__tidslinje { display: grid; grid-template-columns: repeat({{ antal_tidslinje | at_least: 1 }}, minmax(0, 1fr)); gap: 16px; list-style: none; margin: 0; padding: 0; counter-reset: bbsteg; }
+  .bb-historia__steg { background: {{ section.settings.kortbakgrund }}; border-radius: 6px; padding: 14px 14px 18px; margin: 0; display: flex; flex-direction: column; min-width: 0; }
+  .bb-historia__steg a { color: inherit; text-decoration: none; display: flex; flex-direction: column; height: 100%; }
+  .bb-historia__stegbild { position: relative; height: 0; padding-bottom: 100%; border-radius: 4px; overflow: hidden; background: #fff; margin-bottom: 14px; }
+  .bb-historia__stegbild img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .bb-historia__stegbild--tal { background: {{ section.settings.accent }}; display: flex; align-items: center; justify-content: center; }
+  .bb-historia__tal { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback); font-weight: var(--typeHeaderWeight); text-transform: uppercase; line-height: 1; }
+  .bb-historia__tal b { font-size: 64px; font-weight: inherit; }
+  .bb-historia__tal small { font-size: 14px; letter-spacing: .15em; margin-top: 8px; }
+  .bb-historia__etikett { color: {{ section.settings.accent }}; text-transform: uppercase; letter-spacing: .2em; font-size: 12px; font-weight: 700; margin-bottom: 6px; }
+  .bb-historia__stegtitel { font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback); font-weight: var(--typeHeaderWeight); text-transform: uppercase; letter-spacing: .03em; font-size: 20px; line-height: 1.15; margin-bottom: 6px; }
+  .bb-historia__stegtext { font-size: 14px; opacity: .8; line-height: 1.45; }
+  .bb-historia__punkter { display: grid; grid-template-columns: repeat({{ punkter.size | at_least: 1 }}, minmax(0, 1fr)); gap: 24px; list-style: none; margin: 0; padding: 0; }
+  .bb-historia__punkt { margin: 0; padding-top: 16px; border-top: 3px solid {{ section.settings.accent }}; min-width: 0; }
+  .bb-historia__punkt h3 { color: inherit; font-size: 22px; margin-bottom: 8px; }
+  .bb-historia__punkt .rte-setting { opacity: .85; font-size: 15px; line-height: 1.5; }
+  .bb-historia__punkt .rte-setting p { margin: 0 0 8px; }
+  .bb-historia__punkt a { color: inherit; text-decoration: underline; }
+  @media only screen and (max-width: 768px) {
+    .bb-historia { padding: 44px 0 40px; }
+    .bb-historia__topp { grid-template-columns: minmax(0, 1fr); gap: 26px; }
+    .bb-historia__bild { max-width: 300px; margin: 0 auto; }
+    .bb-historia__rubrik2 { margin: 40px 0 16px; }
+    .bb-historia__tidslinje { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .bb-historia__steg { padding: 10px 10px 14px; }
+    .bb-historia__stegtitel { font-size: 17px; }
+    .bb-historia__stegtext { font-size: 13px; }
+    .bb-historia__tal b { font-size: 44px; }
+    .bb-historia__punkter { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  }
+{%- endstyle -%}
+
+<div class="bb-historia" id="var-historia" data-section-id="{{ section.id }}" data-section-type="bb-historia">
+  <div class="page-width">
+
+    <div class="bb-historia__topp">
+      {%- if har_bild -%}
+        <div class="bb-historia__bild" data-aos>
+          {%- assign img_url = section.settings.bild | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          <img class="lazyload"
+            src="{{ section.settings.bild | img_url: '540x' }}"
+            data-src="{{ img_url }}"
+            data-widths="[360, 540, 720, 900, 1080]"
+            data-aspectratio="{{ section.settings.bild.aspect_ratio }}"
+            data-sizes="auto"
+            alt="{{ section.settings.bild_alt | default: section.settings.bild.alt | escape }}">
+        </div>
+      {%- endif -%}
+      <div class="bb-historia__text{% unless har_bild %} text-center{% endunless %}" data-aos>
+        {%- if section.settings.overrad != blank -%}
+          <div class="subheading">{{ section.settings.overrad | escape }}</div>
+        {%- endif -%}
+        {%- if section.settings.rubrik != blank -%}
+          <h2 class="h1">{{ section.settings.rubrik | escape }}</h2>
+        {%- endif -%}
+        {%- if section.settings.text != blank -%}
+          <div class="rte">{{ section.settings.text }}</div>
+        {%- endif -%}
+        {%- if section.settings.signatur_namn != blank -%}
+          <div class="bb-historia__signatur">
+            <strong>{{ section.settings.signatur_namn | escape }}</strong>
+            {%- if section.settings.signatur_rad != blank -%}<span>{{ section.settings.signatur_rad | escape }}</span>{%- endif -%}
+          </div>
+        {%- endif -%}
+        {%- if section.settings.knapp_text != blank and section.settings.knapp_lank != blank -%}
+          <a href="{{ section.settings.knapp_lank }}" class="btn">{{ section.settings.knapp_text | escape }}</a>
+        {%- endif -%}
+      </div>
+    </div>
+
+    {%- if antal_tidslinje > 0 -%}
+      {%- if section.settings.tidslinje_rubrik != blank -%}
+        <div class="bb-historia__rubrik2"><h3 class="h3">{{ section.settings.tidslinje_rubrik | escape }}</h3></div>
+      {%- endif -%}
+      <ol class="bb-historia__tidslinje">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'steg' -%}
+              {%- assign produkt = all_products[block.settings.produkt] -%}
+              {%- assign lank = block.settings.lank -%}
+              {%- if lank == blank and produkt != blank -%}{%- assign lank = produkt.url -%}{%- endif -%}
+              <li class="bb-historia__steg" {{ block.shopify_attributes }} data-aos="row-of-{{ antal_tidslinje }}">
+                {%- if lank != blank -%}<a href="{{ lank }}">{%- endif -%}
+                  <div class="bb-historia__stegbild">
+                    {%- if block.settings.bild != blank -%}
+                      <img src="{{ block.settings.bild | img_url: '600x600' }}" alt="{{ block.settings.bild.alt | escape }}" loading="lazy">
+                    {%- elsif produkt != blank and produkt.featured_image != blank -%}
+                      <img src="{{ produkt.featured_image | img_url: '600x600' }}" alt="{{ produkt.featured_image.alt | default: produkt.title | escape }}" loading="lazy">
+                    {%- endif -%}
+                  </div>
+                  {%- if block.settings.etikett != blank -%}<div class="bb-historia__etikett">{{ block.settings.etikett | escape }}</div>{%- endif -%}
+                  <div class="bb-historia__stegtitel">{{ block.settings.titel | default: produkt.title | escape }}</div>
+                  {%- if block.settings.text != blank -%}<div class="bb-historia__stegtext">{{ block.settings.text | escape }}</div>{%- endif -%}
+                {%- if lank != blank -%}</a>{%- endif -%}
+              </li>
+            {%- when 'idag' -%}
+              {%- assign samling = collections[block.settings.samling] -%}
+              {%- assign antal = samling.products_count | default: 0 -%}
+              {%- assign antal_jamnt = antal | divided_by: 10 | times: 10 -%}
+              {%- assign lank = block.settings.lank -%}
+              {%- if lank == blank and samling != blank -%}{%- assign lank = samling.url -%}{%- endif -%}
+              <li class="bb-historia__steg" {{ block.shopify_attributes }} data-aos="row-of-{{ antal_tidslinje }}">
+                {%- if lank != blank -%}<a href="{{ lank }}">{%- endif -%}
+                  <div class="bb-historia__stegbild bb-historia__stegbild--tal">
+                    <div class="bb-historia__tal">
+                      {%- if antal_jamnt > 0 -%}<b>{{ antal_jamnt }}+</b>{%- else -%}<b>{{ block.settings.tal_reserv | escape }}</b>{%- endif -%}
+                      <small>{{ block.settings.tal_ord | escape }}</small>
+                    </div>
+                  </div>
+                  {%- if block.settings.etikett != blank -%}<div class="bb-historia__etikett">{{ block.settings.etikett | escape }}</div>{%- endif -%}
+                  <div class="bb-historia__stegtitel">{{ block.settings.titel | escape }}</div>
+                  {%- if block.settings.text != blank -%}<div class="bb-historia__stegtext">{{ block.settings.text | escape }}</div>{%- endif -%}
+                {%- if lank != blank -%}</a>{%- endif -%}
+              </li>
+          {%- endcase -%}
+        {%- endfor -%}
+      </ol>
+    {%- endif -%}
+
+    {%- if punkter.size > 0 -%}
+      {%- if section.settings.punkter_rubrik != blank -%}
+        <div class="bb-historia__rubrik2"><h3 class="h3">{{ section.settings.punkter_rubrik | escape }}</h3></div>
+      {%- else -%}
+        <div class="bb-historia__rubrik2"></div>
+      {%- endif -%}
+      <ul class="bb-historia__punkter">
+        {%- for block in punkter -%}
+          <li class="bb-historia__punkt" {{ block.shopify_attributes }} data-aos="row-of-{{ punkter.size }}">
+            <h3>{{ block.settings.titel | escape }}</h3>
+            <div class="rte-setting">{{ block.settings.text }}</div>
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Vår historia",
+  "class": "index-section--flush",
+  "max_blocks": 9,
+  "settings": [
+    { "type": "header", "content": "Berättelsen" },
+    { "type": "image_picker", "id": "bild", "label": "Bild (bävern)" },
+    { "type": "text", "id": "bild_alt", "label": "Bildens alt-text", "default": "Bäverbutikens bäver i garaget" },
+    { "type": "text", "id": "overrad", "label": "Överrad", "default": "Vår historia" },
+    { "type": "text", "id": "rubrik", "label": "Rubrik", "default": "Det började med en koppling" },
+    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Bäverbutiken började inte som en butik. Den började i ett garage, med kablar som skulle kopplas, kabelskor som saknades och en tång som inte fungerade. Lösningen blev en liten snabbkoppling som man bara trycker fast. Vi döpte den till Bäverkopplingen, efter Sveriges flitigaste byggare.</p>" },
+    { "type": "text", "id": "signatur_namn", "label": "Signatur", "default": "Axel, grundare" },
+    { "type": "text", "id": "signatur_rad", "label": "Rad under signaturen", "default": "Bäverbutiken, Göteborg" },
+    { "type": "text", "id": "knapp_text", "label": "Knapp", "default": "Läs hela historien" },
+    { "type": "url", "id": "knapp_lank", "label": "Knappens länk" },
+    { "type": "header", "content": "Tidslinjen och punkterna" },
+    { "type": "text", "id": "tidslinje_rubrik", "label": "Rubrik över tidslinjen", "default": "Så växte butiken" },
+    { "type": "text", "id": "punkter_rubrik", "label": "Rubrik över punkterna", "default": "Så tänker vi" },
+    { "type": "header", "content": "Färger" },
+    { "type": "color", "id": "bakgrund", "label": "Bakgrund", "default": "#000000" },
+    { "type": "color", "id": "textfarg", "label": "Text", "default": "#ffffff" },
+    { "type": "color", "id": "accent", "label": "Accent", "default": "#dd1d1d" },
+    { "type": "color", "id": "kortbakgrund", "label": "Kortens bakgrund", "default": "#161616" }
+  ],
+  "blocks": [
+    {
+      "type": "steg",
+      "name": "Steg (produkt)",
+      "settings": [
+        { "type": "product", "id": "produkt", "label": "Produkt (bilden och länken hämtas härifrån)" },
+        { "type": "image_picker", "id": "bild", "label": "Egen bild (valfri)" },
+        { "type": "text", "id": "etikett", "label": "Etikett", "default": "Steg 1" },
+        { "type": "text", "id": "titel", "label": "Rubrik (tom = produktens namn)" },
+        { "type": "text", "id": "text", "label": "Text", "default": "Snabbkopplingen som startade allt." },
+        { "type": "url", "id": "lank", "label": "Egen länk (tom = produktsidan)" }
+      ]
+    },
+    {
+      "type": "idag",
+      "name": "I dag (antal produkter)",
+      "limit": 1,
+      "settings": [
+        { "type": "collection", "id": "samling", "label": "Samling som räknas" },
+        { "type": "text", "id": "tal_reserv", "label": "Tal om samlingen saknas", "default": "250+" },
+        { "type": "text", "id": "tal_ord", "label": "Ord under talet", "default": "prylar" },
+        { "type": "text", "id": "etikett", "label": "Etikett", "default": "I dag" },
+        { "type": "text", "id": "titel", "label": "Rubrik", "default": "En hel butik" },
+        { "type": "text", "id": "text", "label": "Text", "default": "För garaget, båten, trädgården och campingen. Och det växer." },
+        { "type": "url", "id": "lank", "label": "Egen länk (tom = samlingen)" }
+      ]
+    },
+    {
+      "type": "punkt",
+      "name": "Punkt",
+      "settings": [
+        { "type": "text", "id": "titel", "label": "Rubrik", "default": "Prylar som löser problem" },
+        { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Varje sak i butiken finns för att den gör något i vardagen enklare.</p>" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Vår historia",
+      "blocks": [
+        { "type": "steg" },
+        { "type": "steg", "settings": { "etikett": "Steg 2", "text": "Tanka utan spill." } },
+        { "type": "steg", "settings": { "etikett": "Steg 3", "text": "Ljus där du skruvar." } },
+        { "type": "idag" },
+        { "type": "punkt" },
+        { "type": "punkt", "settings": { "titel": "Testat innan det får plats", "text": "<p>Vi tar in mycket och behåller lite. Det som inte håller måttet åker ut.</p>" } },
+        { "type": "punkt", "settings": { "titel": "Svenskt företag i Göteborg", "text": "<p>Kundtjänst på svenska, Klarna, fri frakt över 300 kr och 14 dagars ångerrätt.</p>" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
