@@ -3,6 +3,30 @@
 Kör `/no-recensioner` (`.claude/commands/no-recensioner.md`). Den här filen är
 bara lägesrapporten.
 
+## Läget 2026-09-27 — 0 nya, allt redan klart, 38 i `sources.json`
+
+Inga nya mappar i MAKE TO NORWAY: 39 produktmappar + WINNERS med 5 = 44, minus de
+sex som aldrig gått in (de fyra väntande arken + Taköverdrag och Termoskydd som
+Axel importerade själv) = precis de 38 i `sources.json`. Bygget gav 332 klara /
+10 bortvalda (alla gamasjer, betyg saknas i källarket) och identiska filer —
+`git status` tomt. Inget 429 från Google, inget 503 från Discord.
+
+`--dry` mot båda de senaste produkterna svarade "redan 10 synliga, hoppar över":
+Kajakkholder och Feiesett. De spam-publicerade raderna sitter alltså kvar — femte
+respektive sjätte dygnet — vilket bekräftar att `judgeme-publicera.mjs` håller
+över tid.
+
+### Orättat, och vem det väntar på
+
+* **Kajakkholder: tio identiska titlar** i källarket ("Bra och stabila"), fjärde
+  dygnet. Recensionerna är importerade och synliga — det är bara rubrikerna som
+  ser maskinskrivna ut. Rättas i arket, sedan om-import med `--anda` på Axels
+  uttryckliga begäran. Att skriva egna rubriker är påhittad data.
+* **De fyra arken oförändrade nionde dygnet:** Dinosauriekalender (alla namn
+  "(EXEMPEL)"), Gravstenspenna (TEST-rader), Medicinask (exempelrader +
+  `not-a-real-product-handle`, produkten dessutom utgången och kan strykas helt),
+  Lövblåsare/Jetviften (personnamn i `title`, utekattkojans `product_handle`).
+
 ## Läget 2026-09-26 — 0 nya, allt redan klart, 38 i `sources.json`
 
 Inga nya mappar i MAKE TO NORWAY (38 produktmappar + WINNERS med 5). Bygget gav
