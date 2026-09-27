@@ -1,16 +1,16 @@
 {
   "id": "k15-fars-dag-sista-helgen",
-  "emailTitle": "Sista helgen innan fars dag",
+  "emailTitle": "Sista helgen att beställa till fars dag",
   "emailDescription": "Beställ senast måndag för att hinna fram till fars dag den 8 november.",
   "amnesrader": [
-    "Sista helgen innan fars dag",
+    "Sista helgen att beställa till fars dag",
     "Sex presenter för honom som redan har allt",
     "En present för båten, tomten eller kaminen"
   ],
   "blocks": [
     {
       "type": "h1",
-      "text": "Sista helgen innan fars dag",
+      "text": "Sista helgen att beställa till fars dag",
       "alignment": "center"
     },
     {
@@ -20,7 +20,7 @@
     },
     {
       "type": "regular",
-      "text": "Beställer du efter måndag 19 oktober hinner paketet inte fram till fars dag den 8 november.",
+      "text": "Beställ senast måndag 19 oktober, så hinner paketet fram till fars dag den 8 november. Efter det kan vi inte lova det.",
       "alignment": "center"
     },
     {

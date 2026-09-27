@@ -190,8 +190,14 @@ svaret (sonnet, samma regler) och `update` dokumentet med `version` + 1; ny
 fakta ur Axels text förs in i `produktfakta.md`, ny stilregel i
 `svarsregler.md`. Skriv i svaret till Axel hur många som väntar på honom.
 
-Rutinen svarar aldrig själv — ingenting publiceras på Facebook eller
-Instagram förrän Axel uttryckligen säger till. När han gör det: bygg listan
+**Stensäkra svar publiceras direkt (Axels beslut 2026-09-27, `svarsregler.md`
+regel 16):** varje dags förslag granskas av två oberoende Opus-subagenter
+(fakta och ton, mot produktsidan, `produktfakta.md`, `svarsregler.md` och
+Axels domar i `beslut`). Godkänner båda svaret oförändrat publiceras det samma
+körning med `publicera.mjs` (torrt, sedan `--skarpt`). Resten ligger kvar på
+granskningssidan, och de som kräver Axels kunskap blir korta frågor sist i
+svaret till honom. Därtill publiceras varje `beslut: ja` som ännu inte står i
+`svar-publicerade.jsonl`. När han gör det: bygg listan
 `[{id, svar}]` ur granskningssidan (bara `beslut: ja` på AKTUELL version,
 aldrig "(Inget svar …)"), kör `node kommentarer/publicera.mjs --svar <fil>`
 torrt, sedan `--skarpt`. Skriptet svarar som sidan, hoppar allt som redan står

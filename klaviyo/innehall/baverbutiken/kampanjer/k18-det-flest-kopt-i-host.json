@@ -32,7 +32,7 @@
       "rubrik": "Det här har flest köpt i höst",
       "text": "Hej {{fornamn}},\n\nDe senaste två månaderna har fler kunder valt de här tre produkterna än något annat i butiken.",
       "bild": "produkt:marin-motorholje-420d-universellt-skydd",
-      "knapp": { "text": "Se de tre", "lank": "kollektion:alla-produkter" }
+      "knapp": { "text": "Se hela sortimentet", "lank": "kollektion:alla-produkter" }
     },
     {
       "typ": "citat",

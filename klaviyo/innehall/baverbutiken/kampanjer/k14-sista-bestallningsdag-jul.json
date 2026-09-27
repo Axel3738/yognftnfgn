@@ -32,7 +32,7 @@
       "rubrik": "Torsdag är sista dagen",
       "text": "{{fornamn}}, beställer du senast torsdag 3 december hinner paketet fram till jul. Efter det räknar vi inte med att det gör det.",
       "bild": "produkt:takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
-      "knapp": { "text": "Beställ innan torsdag", "lank": "kollektion:alla-produkter" }
+      "knapp": { "text": "Beställ senast torsdag", "lank": "kollektion:alla-produkter" }
     },
     {
       "typ": "produktrad",

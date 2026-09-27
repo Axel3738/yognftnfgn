@@ -20,7 +20,7 @@
     { "text": "Klart innan båten är surrad", "begar": "sätta på skyddet utan verktyg eller hjälp" },
     { "text": "Fyra saker innan båten ställs undan", "begar": "få allt klart i en enda genomgång" }
   ],
-  "forhandstext": "En blank motor är det första en tjuv ser från vägen.",
+  "forhandstext": "Regn, snö och frost jobbar på motorn hela vintern.",
   "block": [
     {
       "typ": "hero",
@@ -51,7 +51,7 @@
     {
       "typ": "text",
       "rubrik": "Aldrig mer trassliga fiskespön",
-      "text": "Fyra kraftiga hållare håller varje spö på sin egen plats, i båten eller på väggen i garaget. Ingen mer hopplock av trassliga linor."
+      "text": "Fyra kraftiga hållare håller varje spö på sin egen plats. Ingen mer hopplock av trassliga linor."
     },
     { "typ": "fakta" }
   ],
