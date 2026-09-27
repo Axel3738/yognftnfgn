@@ -120,7 +120,16 @@ export function patchaFil(fil, kod, ov) {
     }
     case 'sections/ms-reviews.liquid':
     case 'sections/ms-review-slider.liquid': {
-      byt('verifierat_kop', "{% render 'ms-icon', name: 'check-circle' %}\n                Verifierat köp", `{% render 'ms-icon', name: 'check-circle' %}\n                ${gren('verifierat_kop', 'Verifierat köp')}`, 1);
+      // Indraget mellan ikonen och texten skiljer mellan de två filerna (mätt 2026-09-27:
+      // ms-reviews 16 blanksteg, ms-review-slider annat) — matcha valfritt blanksteg och
+      // behåll det. Schemats "Märk som verifierat köp" träffas inte: ingen ikon före.
+      const g = gren('verifierat_kop', 'Verifierat köp');
+      if (!g) { hoppade.push('verifierat_kop: ingen översättning'); break; }
+      if (redan(g)) { hoppade.push('verifierat_kop: redan patchad'); break; }
+      const re = /(\{% render 'ms-icon', name: 'check-circle' %\})(\s+)Verifierat köp/;
+      if (!re.test(kod)) throw new Error(`${fil}: "Verifierat köp" efter check-circle-ikonen hittades inte`);
+      kod = kod.replace(re, (_, ikon, blank) => `${ikon}${blank}${g}`);
+      byten.push('verifierat_kop');
       break;
     }
     case 'snippets/ms-delivery-estimate.liquid': {

@@ -65,10 +65,11 @@ behåller 299 kr för resten av världen.
 | `konfig.json` | Facit: marknader, länder, språk, valutor, fasta priser, fraktzoner, historiken (sushisock), översättningens sanningar, temapatchens filer |
 | `underlag.mjs` | Läser ALLA kundsynliga texter ur Shopify → `output/underlag-sv.json` (+ `.resurser.json`). 187 texter, 56 542 tecken 2026-09-27 |
 | `granska.mjs` | Mekanisk kontroll av en översättning: nycklar, HTML, Liquid, förbjudna ord, marknadens sanning, siffror, svenska kvar. `exit 1` = registreras aldrig |
-| `bygg.mjs` | Stegen: `definition, marknader, sprak, frakt, prislista, oversattningar, tema, publicera`. Torrt är standard, `--skarpt` skriver, `--lage` läser |
+| `bygg.mjs` | Stegen: `definition, marknader, sprak, frakt, prislista, oversattningar, tema, publicera, kontroll`. Torrt är standard, `--skarpt` skriver, `--lage` läser, `--locale xx` begränsar. `kontroll` läser tillbaka varje översättning ur Shopify och jämför med filen (skriver aldrig) |
 | `temapatch.mjs` | Locale-grenar i temats ms-*.liquid, custom_liquid-blocken i product.json/index.json och ms-cro.js (pris + datum i kundens språk/valuta) |
+| `sammanfoga.mjs` | Delarna `<locale>-A1…E.json` → `output/underlag-<locale>.json`: nyckelkontroll, granskning, hårda blanksteg tillbaka |
 | `kundvy.mjs` | Läser butiken som kund i varje land (POST /localization): lang, land, valuta, pris, paketnivå, läckor |
-| `output/underlag-<locale>.json` | Översättningarna (sonnet-subagenter mot REGLER, granskade adversariellt) — committade, det är minnet |
+| `output/underlag-<locale>.json` | Översättningarna (sonnet-subagenter mot REGLER, granskade adversariellt) — committade, det är minnet (`matstrumpor/.gitignore` undantar dem från `output/`) |
 
 ```bash
 node matstrumpor/marknader/underlag.mjs             # svenskt underlag ur Shopify
@@ -103,6 +104,51 @@ med svenskan i else-grenen: saknas ett språk faller det på svenskan, aldrig p�
 Paketnivåerna (`ms_paketniva`, "Köp 1 – Få 1 GRATIS") var inte translatable — det slogs
 på 2026-09-27 (40 texter kom in i underlaget). Rabattkoderna (SUSHI-K1F1 …) är BOGO i
 procent och fungerar i alla valutor.
+
+### Så gick översättningen (2026-09-27)
+
+Sju delar per språk: **A1** produkter/kollektioner, **A2** tema + paketnivåer + menyer,
+**A3** mallarnas hårdkodade rader, **B** frakt-/retur-/om-oss-sidorna + Shopifys retur- och
+användarvillkor, **C** sidan Integritetspolicy, **D** Shopifys integritetspolicy (Liquid-villkor),
+**E** det Shopify skapade medan vi översatte (fraktsättens namn i de nya zonerna, sidan
+"Dina integritetsval" — samma text byte för byte som CaraShells, så den översättningen
+återanvändes ur `factory/output/carashell/oversattning-<locale>.json`). En sonnet-översättare
+per del, en granskare per del som ska HITTA fel, sedan rättning för hand i delfilerna och
+`sammanfoga.mjs` → `output/underlag-<locale>.json`. Tre översättare dog i API-timeouts när
+de skrev 15–20 kB i ett anrop — omstartade med ordern att skriva en policytext per anrop.
+
+**Det granskarna hittade som ändrade texten** (exempel, alla språk fick 5–15 rättningar):
+"favoritparet i lådan" är BYRÅlådan, inte presentlådan (en/da hade "in the box"/"i boksen");
+"36–44" utan "EU" är en okänd skala i USA; "Most free" är inte engelska ("Most freebies");
+"orderbekræftelse" är inte danska (ordre); "For ærligt" betyder *för* ärligt på danska;
+"Jos peruutat tilauksen" läses som avbeställd order (finska); "med mindre" ≠ "medmindre";
+danskans villkorssida heter "Brugsvilkår" så integritetspolicyn ska hänvisa dit, inte till
+"handelsbetingelser"; norskan ska säga nettsted/innsyn/sletting/standardkontraktsklausuler;
+den svenska integritetspolicyns "hur du interagerar med oss" hade smalnat till "hur du
+använder tjänsterna". Ordval som är identiska med svenskan och rätt på målspråket
+("Om oss", "gratis", "Pris", "Egenskap" på bokmål/danska; "Share", "Collections",
+"Free shipping" som redan är engelska i källan) står i `OK_IDENTISKT` i `granska.mjs`.
+
+**Beslut i översättningen (Axel ändrar med ett ord):**
+- Fraktpolicyns "1-2 dagars spårbar frakt med Postnord" från det svenska lagret gäller bara
+  Sverige — utomlands står "spårbar frakt med Postnord" utan dagar (ingen ny siffra hittas på).
+- Rubriken "LEVERANSBEKRÄFTELSE" avser mejlet när ordern skickas ⇒ "Shipping confirmation"/
+  "Forsendelsesbekreftelse"/"Lähetysvahvistus" — "delivery confirmation" betyder framme.
+- "Mest gratis"-brickan: nb/da samma ord, fi "Eniten ilmaista", en "Most freebies".
+- Sidtitlar = menylänkarnas titlar på varje språk (länk och sida säger samma sak).
+
+**Tre Shopify-beteenden som mättes och som koden nu tål:**
+1. `translationsRegister` svarade `INTERNAL_SERVER_ERROR` ("Looks like something went wrong on
+   our end") på alla sex produkter i en körning och gick igenom fem minuter senare — `bygg.mjs`
+   gör ett nytt försök, fortsätter per resurs och listar det som inte gick (`⚠️ … GICK INTE`).
+2. En **batchläsning** av `translatableResourcesByIds` (31 resurser) gav DANSKA värden för
+   `translations(locale: "en")` på temats resurser, medan samma resurs läst ensam gav rätt
+   engelska — reproducerat två gånger samma eftermiddag. `--steg kontroll` läser därför om
+   varje avvikande resurs ensam efter en paus innan något kallas avvikelse (`ℹ️`-raderna visar
+   när det hände), och `oversattningar`-steget registrerar hellre om än litar på läsningen.
+3. Ett `<p> </p>` med vanligt blanksteg kollapsar i webbläsaren där svenskans `<p>&nbsp;</p>`
+   ger en blankrad — alla översättare normaliserade U+00A0 tyst; `sammanfoga.mjs` sätter dem
+   tillbaka segment för segment.
 
 ## COGS per marknad (`matstrumpor/cogs.json`, `cogs.mjs`)
 

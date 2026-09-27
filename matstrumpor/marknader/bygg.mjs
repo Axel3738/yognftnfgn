@@ -460,8 +460,63 @@ async function stegPublicera(k, { skarpt }) {
   }
 }
 
-const STEG = { definition: stegDefinition, marknader: stegMarknader, sprak: stegSprak, frakt: stegFrakt, prislista: stegPrislista, oversattningar: stegOversattningar, tema: stegTema, publicera: stegPublicera };
-const ORDNING = ['definition', 'marknader', 'sprak', 'frakt', 'prislista', 'oversattningar', 'tema', 'publicera'];
+// Tillbakaläsning: läser varje resurs' översättningar per språk ur Shopify och jämför med
+// filen. Registreringen svarar "ok" per anrop, men bara en läsning efteråt bevisar att det
+// som ligger i butiken är det vi skickade (mätt 2026-09-27: en läsning direkt efter en
+// registrering visade gamla värden — Shopifys översättningsläsning släpar — så kör steget
+// en stund efter registreringen, inte i samma sekund). Skriver aldrig.
+async function stegKontroll(k, { bara: baraLocale = null }) {
+  const sv = JSON.parse(readFileSync(underlagsfil('sv'), 'utf8'));
+  const resurser = JSON.parse(readFileSync(resursfil(), 'utf8')).resurser;
+  const typAv = new Map(resurser.map((r) => [r.id, r.typ]));
+  const ut = {};
+  for (const locale of LOCALES) {
+    if (baraLocale && locale !== baraLocale) continue;
+    const mal = lasOversattning(locale);
+    if (!mal) { log(`⚠️ ${locale}: ingen ${underlagsfil(locale)} — hoppar`); continue; }
+    const { karta } = byggKarta(sv, mal);
+    const { noder, misslyckade } = await translatableIds(k, resurser.map((r) => r.id), locale);
+    // Jämför en nod mot filen → { ok, saknas: [plats…], fel: [text…] }.
+    const jamfor = (n) => {
+      const r = { ok: 0, saknas: [], fel: [] };
+      const har = new Map((n.translations ?? []).map((t) => [t.key, t]));
+      for (const c of n.translatableContent ?? []) {
+        if (['handle', 'ab_variant', 'rabattkod'].includes(c.key)) continue;
+        const till = karta.get(norm(c.value));
+        if (!till) continue;
+        const h = har.get(c.key);
+        const plats = `${typAv.get(n.resourceId)} ${n.resourceId.split('/').pop().split('?')[0]} ${c.key}`;
+        if (!h) r.saknas.push(plats);
+        else if (norm(h.value) !== norm(till)) r.fel.push(`${plats}: butiken "${String(h.value).slice(0, 50)}" ≠ filen "${String(till).slice(0, 50)}"`);
+        else r.ok++;
+      }
+      return r;
+    };
+    let ok = 0; const saknas = [], fel = []; let omlasta = 0;
+    for (const n of noder) {
+      let r = jamfor(n);
+      if (r.saknas.length || r.fel.length) {
+        // ⚠️ Mätt 2026-09-27: en batchläsning svarade med DANSKA värden för locale en på temats
+        // resurser, och samma fråga en stund senare gav rätt engelska — Shopifys läsning av
+        // temaöversättningar är inte alltid färsk. En avvikelse räknas därför först när en
+        // ny läsning av resursen ENSAM, efter en paus, säger samma sak.
+        await paus(2000);
+        const { noder: igen } = await translatableIds(k, [n.resourceId], locale);
+        if (igen[0]) { const r2 = jamfor(igen[0]); omlasta++; if (r2.saknas.length + r2.fel.length < r.saknas.length + r.fel.length) log(`   ℹ️ ${typAv.get(n.resourceId)} ${n.resourceId.split('/').pop().split('?')[0]}: första läsningen avvek (${r.saknas.length + r.fel.length}), omläst ensam: ${r2.saknas.length + r2.fel.length} avviker`); r = r2; }
+      }
+      ok += r.ok; saknas.push(...r.saknas); fel.push(...r.fel);
+    }
+    for (const m of misslyckade) fel.push(`${typAv.get(m.id)} ${m.id}: gick inte att läsa (${m.fel})`);
+    log(`${saknas.length || fel.length ? '❌' : '✅'} ${locale}: ${ok} översättningar ligger som i filen, ${saknas.length} saknas, ${fel.length} avviker${omlasta ? ` (${omlasta} resurser omlästa ensamma)` : ''}`);
+    for (const s of saknas.slice(0, 15)) log(`     saknas: ${s}`);
+    for (const f of fel.slice(0, 15)) log(`     avviker: ${f}`);
+    ut[locale] = { ok, saknas: saknas.length, fel: fel.length };
+  }
+  return ut;
+}
+
+const STEG = { definition: stegDefinition, marknader: stegMarknader, sprak: stegSprak, frakt: stegFrakt, prislista: stegPrislista, oversattningar: stegOversattningar, tema: stegTema, publicera: stegPublicera, kontroll: stegKontroll };
+const ORDNING = ['definition', 'marknader', 'sprak', 'frakt', 'prislista', 'oversattningar', 'tema', 'publicera', 'kontroll'];
 
 async function huvud() {
   const arg = process.argv.slice(2);
