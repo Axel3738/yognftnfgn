@@ -1,109 +1,231 @@
 {
-  "comment": "Matstrumpors marknader i Shopify Markets (butiken 1r46tp-qx, matstrumpor.se). Facit för matstrumpor/marknader/*.mjs. Allt här är avläst eller ett dokumenterat beslut — källan står bredvid varje tal. Ändra HÄR, aldrig i skripten.",
-  "butik": "matstrumpor",
-  "butik_comment": "sparning/butiker.json → matstrumpor: 1r46tp-qx.myshopify.com, nycklarna SHOPIFY_CLIENT_ID/SECRET_1r46tp_qx (appen Fabriken, 154 rättigheter — write_markets, write_locales, write_translations, write_shipping, write_price_rules, write_themes, write_products finns, mätt 2026-09-27).",
-  "tema_id": "gid://shopify/OnlineStoreTheme/207180890451",
-  "tema_comment": "MAIN-temat 'Matstrumpor CRO + storleksrad 2026-09-17' (mätt 2026-09-27). Temat bär egna locale-filer för nb/da/fi/en (Dawn-basen), så temats fasta ord kommer gratis. Det som ska översättas via API är butikens INNEHÅLL: produkter, sidor, policyer, menyer, temats JSON-mallar, paketnivåerna, fraktsätten.",
-  "primar": { "land": "SE", "locale": "sv", "valuta": "SEK", "marknad": "Sverige", "market_id": "gid://shopify/Market/105106243923" },
-
-  "historik": {
-    "comment": "Så gjordes det FÖRRA gången — läst 2026-09-27 ur Meta-kontot nya kungen (730973156224390) och sushisock.com. INTE Markets: en egen engelsk Shopify-butik.",
-    "butik": "sushisock.com (ud9jb9-jb.myshopify.com), USD, engelska, land US, skapad 2026-08-26. Inte i repot, inga nycklar i miljön.",
-    "kampanjer": [
-      { "id": "120251241772530023", "namn": "MATSTRUMP_SALES_US_20260828", "geo": ["US"], "spend_sek": 6193.09, "kop": 9, "roas": 0.761, "status": "PAUSED" },
-      { "id": "120251251897940023", "namn": "MATSTRUMP_SALES UK", "geo": ["GB"], "spend_sek": 5844.73, "kop": 11, "roas": 1.067, "status": "PAUSED" },
-      { "id": "120251251965440023", "namn": "MATSTRUMP_SALES AU", "geo": ["AU"], "spend_sek": 9656.04, "kop": 20, "roas": 0.968, "status": "PAUSED" }
+ "comment": "Matstrumpors marknader i Shopify Markets (butiken 1r46tp-qx, matstrumpor.se). Facit för matstrumpor/marknader/*.mjs. Allt här är avläst eller ett dokumenterat beslut — källan står bredvid varje tal. Ändra HÄR, aldrig i skripten.",
+ "butik": "matstrumpor",
+ "butik_comment": "sparning/butiker.json → matstrumpor: 1r46tp-qx.myshopify.com, nycklarna SHOPIFY_CLIENT_ID/SECRET_1r46tp_qx (appen Fabriken, 154 rättigheter — write_markets, write_locales, write_translations, write_shipping, write_price_rules, write_themes, write_products finns, mätt 2026-09-27).",
+ "tema_id": "gid://shopify/OnlineStoreTheme/207180890451",
+ "tema_comment": "MAIN-temat 'Matstrumpor CRO + storleksrad 2026-09-17' (mätt 2026-09-27). Temat bär egna locale-filer för nb/da/fi/en (Dawn-basen), så temats fasta ord kommer gratis. Det som ska översättas via API är butikens INNEHÅLL: produkter, sidor, policyer, menyer, temats JSON-mallar, paketnivåerna, fraktsätten.",
+ "primar": {
+  "land": "SE",
+  "locale": "sv",
+  "valuta": "SEK",
+  "marknad": "Sverige",
+  "market_id": "gid://shopify/Market/105106243923"
+ },
+ "historik": {
+  "comment": "Så gjordes det FÖRRA gången — läst 2026-09-27 ur Meta-kontot nya kungen (730973156224390) och sushisock.com. INTE Markets: en egen engelsk Shopify-butik.",
+  "butik": "sushisock.com (ud9jb9-jb.myshopify.com), USD, engelska, land US, skapad 2026-08-26. Inte i repot, inga nycklar i miljön.",
+  "kampanjer": [
+   {
+    "id": "120251241772530023",
+    "namn": "MATSTRUMP_SALES_US_20260828",
+    "geo": [
+     "US"
     ],
-    "kampanjer_comment": "Alla tre i det svenska kontot (SEK) med Matstrumpors pixel 1785935302094082, annonslänk https://sushisock.com/products/sushi-socks, 155 engelska annonser (MATSTRUMP_US_/AU_sushi_ugc_…). Livstid: 21 694 kr, 40 köp, alla under break-even. PAUSED med spend = beslut, aktiveras aldrig.",
-    "sushisock_priser_usd": { "sushi-socks 5 pairs": 59.0, "sushi-socks 3 pairs": 45.99, "donut-socks": 33.99, "pizza-socks": 49.99, "burger-socks": 33.99, "wooden-chopsticks": 5.99 },
-    "sushisock_priser_comment": "Axels egna USD-priser, lästa ur sushisock.com/products.json 2026-09-27. Butiken lovar 'Free shipping on every order' och '30-day returns'. Återanvänds som fasta priser i den engelska marknaden nedan — det är priser Axel redan satt för samma kunder, inte en gissning."
-  },
-
-  "marknader": [
-    {
-      "id": "NO",
-      "namn": "Norge",
-      "handle": "no",
-      "lander": ["NO"],
-      "locales": ["nb"],
-      "basvaluta": "NOK",
-      "lokala_valutor": false,
-      "priser": "omraknade",
-      "doman": null,
-      "doman_comment": "matstrumpor.no svarar NXDOMAIN 2026-09-27 (dns.google) — inte registrerad. Köps av Axel hos Loopia (där .se och .com ligger), kopplas i Settings → Domains, sedan `node matstrumpor/marknader/bygg.mjs --steg doman` (webPresenceCreate + marketUpdate webPresencesToAdd, receptet i factory/API-GRANSER.md). Tills dess: matstrumpor.se/nb.",
-      "leveranstid": "5–10 arbetsdagar",
-      "frakt": "fri"
-    },
-    {
-      "id": "EU",
-      "namn": "Europa",
-      "handle": "eu",
-      "lander": ["DK", "FI"],
-      "lander_comment": "Danmark + Finland först (Axels order 2026-09-27). Fler EU-länder = fler koder här + fler locales; marknaden är byggd för att växa (lokala valutor på).",
-      "locales": ["da", "fi"],
-      "basvaluta": "EUR",
-      "lokala_valutor": true,
-      "priser": "omraknade",
-      "priser_comment": "Shopifys egen omräkning från SEK-priset (med Shopifys avrundning). Fasta x9-priser per valuta är Axels beslut — inte satta. Byt till fasta priser genom att lägga `fasta_priser` som på EN-marknaden.",
-      "leveranstid": "5–10 arbetsdagar",
-      "frakt": "fri"
-    },
-    {
-      "id": "EN",
-      "namn": "USA, UK, Australien, Kanada, Nya Zeeland",
-      "handle": "en",
-      "lander": ["US", "GB", "AU", "CA", "NZ"],
-      "lander_comment": "Samma modell som CaraShell 2026-09-17: ett engelskt block, USD som bas, lokala valutor för GBP/AUD/CAD/NZD. Kanada och Nya Zeeland ingår för att Axels COGS-ark (matstrumpor/cogs-big5.md) täcker dem och sushisock.com sålde dit.",
-      "locales": ["en"],
-      "basvaluta": "USD",
-      "lokala_valutor": true,
-      "priser": "fasta",
-      "fasta_priser": {
-        "comment": "USD per variant, Axels sushisock.com-priser (se historik). Nyckel = produkthandle i matstrumpor.se, värde = pris per varianttitel eller ett tal för alla varianter. Inget jämförpris: sushisock hade inget, och ett påhittat jämförpris är ett påhittat tal.",
-        "sushi-strumpor": { "5 - Par / One Size": 59.0, "3 - Par / One Size": 45.99 },
-        "donut-strumpor": 33.99,
-        "pizza-strumpor": 49.99,
-        "hamburger-strumpor": 33.99,
-        "sushipinnar-i-akta-tra": 5.99
-      },
-      "leveranstid": "5–10 arbetsdagar",
-      "leveranstid_comment": "Koncernens standardlöfte (CaraShell US fick 5–10 av Axel 2026-09-16). ⚠️ Inte mätt för Matstrumpor utanför Sverige — Axel bekräftar eller ändrar.",
-      "frakt": "fri"
-    }
+    "spend_sek": 6193.09,
+    "kop": 9,
+    "roas": 0.761,
+    "status": "PAUSED"
+   },
+   {
+    "id": "120251251897940023",
+    "namn": "MATSTRUMP_SALES UK",
+    "geo": [
+     "GB"
+    ],
+    "spend_sek": 5844.73,
+    "kop": 11,
+    "roas": 1.067,
+    "status": "PAUSED"
+   },
+   {
+    "id": "120251251965440023",
+    "namn": "MATSTRUMP_SALES AU",
+    "geo": [
+     "AU"
+    ],
+    "spend_sek": 9656.04,
+    "kop": 20,
+    "roas": 0.968,
+    "status": "PAUSED"
+   }
   ],
-
-  "frakt": {
-    "comment": "Beslut 2026-09-27 (sessionens, efter Axels egna precedens): fri frakt till alla launchländer, precis som sushisock.com ('Free shipping on every order'), Bäverbutikens NO/DK/FI och CaraShell. Butikens zoner EU och Internationell tog 299 kr — på en vara för 299–449 kr är det ingen marknad. Zonerna nedan skapas i profilen 'General profile' (gid://shopify/DeliveryProfile/132092821843, locationGroup gid://shopify/DeliveryLocationGroup/133910036819); länderna flyttas UT ur zonerna EU (gid://shopify/DeliveryZone/637511696723) och Internationell (gid://shopify/DeliveryZone/637511729491), som behåller 299 kr för resten av världen. Vill Axel ha betalfrakt: ändra `pris_sek` här och kör --steg frakt igen.",
-    "zoner": [
-      { "namn": "Norden (Norge, Danmark, Finland)", "lander": ["NO", "DK", "FI"], "metod": "Fri frakt", "pris_sek": 0 },
-      { "namn": "Engelska marknader (US, UK, AU, CA, NZ)", "lander": ["US", "GB", "AU", "CA", "NZ"], "metod": "Free shipping", "pris_sek": 0 }
-    ]
+  "kampanjer_comment": "Alla tre i det svenska kontot (SEK) med Matstrumpors pixel 1785935302094082, annonslänk https://sushisock.com/products/sushi-socks, 155 engelska annonser (MATSTRUMP_US_/AU_sushi_ugc_…). Livstid: 21 694 kr, 40 köp, alla under break-even. PAUSED med spend = beslut, aktiveras aldrig.",
+  "sushisock_priser_usd": {
+   "sushi-socks 5 pairs": 59.0,
+   "sushi-socks 3 pairs": 45.99,
+   "donut-socks": 33.99,
+   "pizza-socks": 49.99,
+   "burger-socks": 33.99,
+   "wooden-chopsticks": 5.99
   },
-
-  "oversattning": {
-    "comment": "Underlaget skrivs av underlag.mjs ur Shopify (aldrig ur en fil i repot — butiken är byggd för hand). Översättningarna skrivs av subagenter (sonnet) till output/underlag-<locale>.json med EXAKT samma nycklar. Registreringen matchar på VÄRDE precis som factory/marknad.mjs (byggKarta/paraResurs), så Shopifys hashade temanycklar aldrig gissas.",
-    "hoppa_sidor": ["spara"],
-    "hoppa_sidor_comment": "Spårningssidan bär 138 kB paketdata och byggs om varje timme av /sparning matstrumpor; den får sina språk via sparning/butiker.json → sprak_extra (som CaraShell), aldrig via translationsRegister.",
-    "sanningar": {
-      "comment": "Det som INTE får översättas ordagrant utan skrivas som marknadens sanning. Översättaren får de här raderna i sin prompt.",
-      "frakt": { "nb": "Fri frakt til Norge", "da": "Fri fragt til Danmark", "fi": "Ilmainen toimitus Suomeen", "en": "Free shipping" },
-      "frakt_comment": "Engelskan är fem länder på en sida — inget landsnamn (temat saknar CaraShells [[land]]-token). 'Fri frakt i Sverige'/'i hela Sverige'/'inom Sverige' ⇒ raden ovan.",
-      "leveranstid": { "nb": "5–10 virkedager", "da": "5–10 hverdage", "fi": "5–10 arkipäivää", "en": "5–10 business days" },
-      "valuta": { "nb": "NOK", "da": "DKK", "fi": "EUR", "en": "USD (eller den valuta kassan visar)" },
-      "valuta_comment": "Villkoren säger 'Alla priser anges i SEK' — i översättningen: marknadens valuta / 'the currency shown at checkout'. Inga SEK-belopp i någon översättning.",
-      "returer": "30 dagar från mottagandet — Matstrumpors publicerade policy (kundtjanst/brands/matstrumpor.yaml returfonster_dagar 30). Oförändrat på alla marknader.",
-      "lag": "Svensk lag och EU:s tvistplattform står kvar även på engelska (Axels beslut 2026-09-08: 'alltid svensk lag, aldrig egna köplöften'). Substansen ändras aldrig — bara språket.",
-      "adress": "STONEBITE ECOM AB, Stenkolsgatan 1B, 417 07 Göteborg. Sjöhed 160/Harestad får ALDRIG förekomma (Axels privata bostad).",
-      "brand": "Matstrumpor / Matstrumpor.se skrivs likadant på alla språk. Produktnamnen översätts (Sushi-Strumpor → Sushi Socks / Sushisokker / Sushisokker / Sushisukat).",
-      "kundsiffror": "'Över 3 700 kunder har beställt' är mätt (3 911 ordrar) — behålls som tal, aldrig höjs."
-    }
+  "sushisock_priser_comment": "Axels egna USD-priser, lästa ur sushisock.com/products.json 2026-09-27. Butiken lovar 'Free shipping on every order' och '30-day returns'. Återanvänds som fasta priser i den engelska marknaden nedan — det är priser Axel redan satt för samma kunder, inte en gissning."
+ },
+ "marknader": [
+  {
+   "id": "NO",
+   "namn": "Norge",
+   "handle": "no",
+   "lander": [
+    "NO"
+   ],
+   "locales": [
+    "nb"
+   ],
+   "basvaluta": "NOK",
+   "lokala_valutor": false,
+   "priser": "omraknade",
+   "doman": null,
+   "doman_comment": "matstrumpor.no svarar NXDOMAIN 2026-09-27 (dns.google) — inte registrerad. Köps av Axel hos Loopia (där .se och .com ligger), kopplas i Settings → Domains, sedan `node matstrumpor/marknader/bygg.mjs --steg doman` (webPresenceCreate + marketUpdate webPresencesToAdd, receptet i factory/API-GRANSER.md). Tills dess: matstrumpor.se/nb.",
+   "leveranstid": "5–10 arbetsdagar",
+   "frakt": "fri",
+   "annons": {
+    "beslut": "Axel 2026-09-27: 'Norge först' och '1000kr per dag'. Inget annat land har budget än.",
+    "konto": "730973156224390",
+    "konto_namn": "nya kungen (SEK) — samma konto som Sverige, precis som US/UK/AU i augusti",
+    "kampanj": "MATSTRUMP_NO_SALES",
+    "budget_sek_dag": 1000,
+    "typ": "CBO, OUTCOME_SALES, lowest cost — speglar MATSTRUMP_SALES_20260826",
+    "pixel": "1785935302094082",
+    "sida": "820358954504320",
+    "landningssida": "https://matstrumpor.se/nb/products/sushi-strumpor?country=NO",
+    "annonsnamn": "MATSTRUMP_NO_sushi_<vinkel>_<format>_<nnn>_v<n>",
+    "kallor": "SE-vinnarna som är UGC översätts med HeyGen (dyraste versionen, Axels regel 2026-09-27); egna HeyGen-avatarvideor görs om direkt på norska i HeyGen, översätts inte."
+   }
   },
-
-  "liquid_patch": {
-    "comment": "Hårdkodad svensk kundtext i temats egna ms-*.liquid (mätt 2026-09-27 av en skanning av alla 156 liquid-filer i MAIN-temat). translationsRegister når inte dem; bygg.mjs --steg tema lägger locale-grenar (request.locale.iso_code) runt strängarna, med svenskan som else-gren. Filerna läses från Shopify, patchas i minnet, skrivs med themeFilesUpsert och läses tillbaka.",
-    "filer": ["snippets/ms-paket.liquid", "snippets/ms-sista-dag.liquid", "snippets/ms-trust-row.liquid", "snippets/ms-bundle-picker.liquid", "sections/ms-reviews.liquid", "sections/ms-review-slider.liquid", "sections/ms-compare.liquid", "snippets/ms-delivery-estimate.liquid", "assets/ms-cro.js"],
-    "js_comment": "assets/ms-cro.js formaterade paketpriset med butikens 'kr'-format och datumen på svenska oavsett marknad (mätt 2026-09-27) — patchaJs byter till kundens språk (<html lang>) och Intl.NumberFormat i den aktiva valutan.",
-    "mallar": ["templates/product.json", "templates/index.json"],
-    "mallar_comment": "custom_liquid-blocken i product.json (trust-raden 'Fri frakt i Sverige', leveransraden 'Beräknad leverans', storleksraden) och index.json (AI-bildmarkeringen) är inte translatable — de får sina grenar i själva JSON-strängen (temapatch.patchaMallJson)."
+  {
+   "id": "EU",
+   "namn": "Europa",
+   "handle": "eu",
+   "lander": [
+    "DK",
+    "FI"
+   ],
+   "lander_comment": "Danmark + Finland först (Axels order 2026-09-27). Fler EU-länder = fler koder här + fler locales; marknaden är byggd för att växa (lokala valutor på).",
+   "locales": [
+    "da",
+    "fi"
+   ],
+   "basvaluta": "EUR",
+   "lokala_valutor": true,
+   "priser": "omraknade",
+   "priser_comment": "Shopifys egen omräkning från SEK-priset (med Shopifys avrundning). Fasta x9-priser per valuta är Axels beslut — inte satta. Byt till fasta priser genom att lägga `fasta_priser` som på EN-marknaden.",
+   "leveranstid": "5–10 arbetsdagar",
+   "frakt": "fri"
+  },
+  {
+   "id": "EN",
+   "namn": "USA, UK, Australien, Kanada, Nya Zeeland",
+   "handle": "en",
+   "lander": [
+    "US",
+    "GB",
+    "AU",
+    "CA",
+    "NZ"
+   ],
+   "lander_comment": "Samma modell som CaraShell 2026-09-17: ett engelskt block, USD som bas, lokala valutor för GBP/AUD/CAD/NZD. Kanada och Nya Zeeland ingår för att Axels COGS-ark (matstrumpor/cogs-big5.md) täcker dem och sushisock.com sålde dit.",
+   "locales": [
+    "en"
+   ],
+   "basvaluta": "USD",
+   "lokala_valutor": true,
+   "priser": "fasta",
+   "fasta_priser": {
+    "comment": "USD per variant, Axels sushisock.com-priser (se historik). Nyckel = produkthandle i matstrumpor.se, värde = pris per varianttitel eller ett tal för alla varianter. Inget jämförpris: sushisock hade inget, och ett påhittat jämförpris är ett påhittat tal.",
+    "sushi-strumpor": {
+     "5 - Par / One Size": 59.0,
+     "3 - Par / One Size": 45.99
+    },
+    "donut-strumpor": 33.99,
+    "pizza-strumpor": 49.99,
+    "hamburger-strumpor": 33.99,
+    "sushipinnar-i-akta-tra": 5.99
+   },
+   "leveranstid": "5–10 arbetsdagar",
+   "leveranstid_comment": "Koncernens standardlöfte (CaraShell US fick 5–10 av Axel 2026-09-16). ⚠️ Inte mätt för Matstrumpor utanför Sverige — Axel bekräftar eller ändrar.",
+   "frakt": "fri"
   }
+ ],
+ "frakt": {
+  "comment": "Beslut 2026-09-27 (sessionens, efter Axels egna precedens): fri frakt till alla launchländer, precis som sushisock.com ('Free shipping on every order'), Bäverbutikens NO/DK/FI och CaraShell. Butikens zoner EU och Internationell tog 299 kr — på en vara för 299–449 kr är det ingen marknad. Zonerna nedan skapas i profilen 'General profile' (gid://shopify/DeliveryProfile/132092821843, locationGroup gid://shopify/DeliveryLocationGroup/133910036819); länderna flyttas UT ur zonerna EU (gid://shopify/DeliveryZone/637511696723) och Internationell (gid://shopify/DeliveryZone/637511729491), som behåller 299 kr för resten av världen. Vill Axel ha betalfrakt: ändra `pris_sek` här och kör --steg frakt igen.",
+  "zoner": [
+   {
+    "namn": "Norden (Norge, Danmark, Finland)",
+    "lander": [
+     "NO",
+     "DK",
+     "FI"
+    ],
+    "metod": "Fri frakt",
+    "pris_sek": 0
+   },
+   {
+    "namn": "Engelska marknader (US, UK, AU, CA, NZ)",
+    "lander": [
+     "US",
+     "GB",
+     "AU",
+     "CA",
+     "NZ"
+    ],
+    "metod": "Free shipping",
+    "pris_sek": 0
+   }
+  ]
+ },
+ "oversattning": {
+  "comment": "Underlaget skrivs av underlag.mjs ur Shopify (aldrig ur en fil i repot — butiken är byggd för hand). Översättningarna skrivs av subagenter (sonnet) till output/underlag-<locale>.json med EXAKT samma nycklar. Registreringen matchar på VÄRDE precis som factory/marknad.mjs (byggKarta/paraResurs), så Shopifys hashade temanycklar aldrig gissas.",
+  "hoppa_sidor": [
+   "spara"
+  ],
+  "hoppa_sidor_comment": "Spårningssidan bär 138 kB paketdata och byggs om varje timme av /sparning matstrumpor; den får sina språk via sparning/butiker.json → sprak_extra (som CaraShell), aldrig via translationsRegister.",
+  "sanningar": {
+   "comment": "Det som INTE får översättas ordagrant utan skrivas som marknadens sanning. Översättaren får de här raderna i sin prompt.",
+   "frakt": {
+    "nb": "Fri frakt til Norge",
+    "da": "Fri fragt til Danmark",
+    "fi": "Ilmainen toimitus Suomeen",
+    "en": "Free shipping"
+   },
+   "frakt_comment": "Engelskan är fem länder på en sida — inget landsnamn (temat saknar CaraShells [[land]]-token). 'Fri frakt i Sverige'/'i hela Sverige'/'inom Sverige' ⇒ raden ovan.",
+   "leveranstid": {
+    "nb": "5–10 virkedager",
+    "da": "5–10 hverdage",
+    "fi": "5–10 arkipäivää",
+    "en": "5–10 business days"
+   },
+   "valuta": {
+    "nb": "NOK",
+    "da": "DKK",
+    "fi": "EUR",
+    "en": "USD (eller den valuta kassan visar)"
+   },
+   "valuta_comment": "Villkoren säger 'Alla priser anges i SEK' — i översättningen: marknadens valuta / 'the currency shown at checkout'. Inga SEK-belopp i någon översättning.",
+   "returer": "30 dagar från mottagandet — Matstrumpors publicerade policy (kundtjanst/brands/matstrumpor.yaml returfonster_dagar 30). Oförändrat på alla marknader.",
+   "lag": "Svensk lag och EU:s tvistplattform står kvar även på engelska (Axels beslut 2026-09-08: 'alltid svensk lag, aldrig egna köplöften'). Substansen ändras aldrig — bara språket.",
+   "adress": "STONEBITE ECOM AB, Stenkolsgatan 1B, 417 07 Göteborg. Sjöhed 160/Harestad får ALDRIG förekomma (Axels privata bostad).",
+   "brand": "Matstrumpor / Matstrumpor.se skrivs likadant på alla språk. Produktnamnen översätts (Sushi-Strumpor → Sushi Socks / Sushisokker / Sushisokker / Sushisukat).",
+   "kundsiffror": "'Över 3 700 kunder har beställt' är mätt (3 911 ordrar) — behålls som tal, aldrig höjs."
+  }
+ },
+ "liquid_patch": {
+  "comment": "Hårdkodad svensk kundtext i temats egna ms-*.liquid (mätt 2026-09-27 av en skanning av alla 156 liquid-filer i MAIN-temat). translationsRegister når inte dem; bygg.mjs --steg tema lägger locale-grenar (request.locale.iso_code) runt strängarna, med svenskan som else-gren. Filerna läses från Shopify, patchas i minnet, skrivs med themeFilesUpsert och läses tillbaka.",
+  "filer": [
+   "snippets/ms-paket.liquid",
+   "snippets/ms-sista-dag.liquid",
+   "snippets/ms-trust-row.liquid",
+   "snippets/ms-bundle-picker.liquid",
+   "sections/ms-reviews.liquid",
+   "sections/ms-review-slider.liquid",
+   "sections/ms-compare.liquid",
+   "snippets/ms-delivery-estimate.liquid",
+   "assets/ms-cro.js"
+  ],
+  "js_comment": "assets/ms-cro.js formaterade paketpriset med butikens 'kr'-format och datumen på svenska oavsett marknad (mätt 2026-09-27) — patchaJs byter till kundens språk (<html lang>) och Intl.NumberFormat i den aktiva valutan.",
+  "mallar": [
+   "templates/product.json",
+   "templates/index.json"
+  ],
+  "mallar_comment": "custom_liquid-blocken i product.json (trust-raden 'Fri frakt i Sverige', leveransraden 'Beräknad leverans', storleksraden) och index.json (AI-bildmarkeringen) är inte translatable — de får sina grenar i själva JSON-strängen (temapatch.patchaMallJson)."
+ }
 }

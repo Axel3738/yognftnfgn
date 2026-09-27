@@ -204,6 +204,32 @@ Norge med `webPresenceCreate` + `marketUpdate(webPresencesToAdd)` (receptet mät
 CaraShell 2026-09-16, `factory/API-GRANSER.md`). Tills dess är matstrumpor.se/nb
 adressen — allt fungerar utan .no.
 
+## Norge först — Axels budget 1 000 kr/dag (2026-09-27), förberett men stoppat på två klick
+
+Axels svar 2026-09-27: "1000kr per dag" för Norge, och regeln "alla UGC-videor översätts med
+den dyraste versionen på HeyGen; annars kör vi bara våra egna HeyGen" (egna avatarvideor
+görs om direkt på norska, översätts inte). Allt ligger i **`norge/`** — `README.md` där är
+körordningen. Gjort: de fyra UGC-källvideorna hämtade ur kontot (Nathalie = vinnaren, Katarina
+×2, Sofie H1; `kallor.json`), HeyGen-batchen skapad (`norge.json`, marknad NO, "Norwegian
+Bokmål (Norway)"), norsk annonstext från sonnet mot copy-reglerna (`annonser.json`), och
+`upp.mjs` som bygger `MATSTRUMP_NO_SALES` (CBO 1 000 kr/dag, OUTCOME_SALES, lowest cost) +
+adsetet `MATSTRUMP_NO_ugc` (Norge, 18–65, Advantage+ audience, köp via pixeln, 7d klick —
+speglar SE-adsetet `09-17 UGC`) + annonserna, allt PAUSED, med `--aktivera` som slår på
+bara det körningen själv skapat.
+
+⛔ **Stoppat, mätt 2026-09-27 ~15:00 CEST:**
+1. **Meta:** `META_ACCESS_TOKEN` läser nya kungen men får inte skriva — `Permissions error
+   … kontaktar du en administratör för att få behörighet med rollen Annonsör eller högre …
+   ads_management`. Systemanvändaren "API LONG TERM" (Business Manager SnarkLös) har bara
+   läsrätt på Matstrumpors konto. Axels klick: Business Manager → Matstrumpors konto "nya
+   kungen" → ge SnarkLös/systemanvändaren **Hantera kampanjer** (Annonsör). Alternativet är
+   Adsmanager-MCP:n i en session Axel startar (samma väg som `/matstrumpor`).
+2. **HeyGen:** alla fyra proofread-sessionerna föll på `Insufficient credit. This operation
+   requires 'api' credits` — medan `/v2/user/remaining_quota` sa `api: 6` före och efter.
+   Samma mönster som 2026-08-29 (47 sessioner). API-krediterna köps på app.heygen.com
+   (Settings → Subscriptions & API). Sessionerna återskapas av sig själva vid nästa
+   `proofread`-körning.
+
 ## Annonserna i 20–30 länder — planen (inte byggd)
 
 Kontot är det svenska "nya kungen" (SEK) — så gjordes US/UK/AU i augusti, och det

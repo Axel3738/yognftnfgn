@@ -92,9 +92,21 @@ i `ms-cro.js`) får locale-grenar av `bygg.mjs --steg tema`; löftena "framme
 till fars dag/jul" visas bara på svenska. `matstrumpor.no` är INTE registrerad
 (Axels klick hos Loopia) — /nb fungerar utan den. COGS per marknad i
 `matstrumpor/cogs.json` (`kor.mjs --ekonomi --marknad US`): Norden saknar
-kostnad, donut/pizza/hamburgare saknar Cost per item i Shopify. ⚠️ Annonserna
-utomlands är ett eget spår som INTE är byggt: Norge först, Axel sätter budget,
-inget annonskonto rörs innan dess — planen står i README:n. ⚠️ Shopify mätt
+kostnad, donut/pizza/hamburgare saknar Cost per item i Shopify. **Annonserna
+utomlands: Norge först, Axels budget 1 000 kr/dag (2026-09-27), kampanjen
+`MATSTRUMP_NO_SALES` i nya kungen** — allt förberett i `matstrumpor/marknader/norge/`
+(README = körordningen, `upp.mjs` skapar kampanj/adset/annonser PAUSED via token
+och aktiverar bara det den själv skapat, `annonser.json` = norsk copy från
+sonnet, `kallor.json` = de fyra UGC-källvideorna ur kontot). ⛔ **Stoppat på två
+klick, mätt 2026-09-27:** (1) `META_ACCESS_TOKEN` LÄSER nya kungen men får inte
+skriva — `Permissions error … rollen Annonsör eller högre … ads_management`
+(systemanvändaren "API LONG TERM" sitter i SnarkLös och har bara läsrätt på
+Matstrumpors konto; skrivning kräver rollen Manage campaigns/Annonsör på kontot,
+eller Adsmanager-MCP:n i en session Axel startar); (2) HeyGen svarade
+`Insufficient credit. This operation requires 'api' credits` på alla fyra
+proofread-sessionerna medan `remaining_quota` sa `api: 6` — samma som
+2026-08-29; API-krediterna fylls på av Axel på app.heygen.com. Inget är
+aktiverat, inget spenderar. ⚠️ Shopify mätt
 2026-09-27: `translationsRegister` kan svara `INTERNAL_SERVER_ERROR` en stund
 (kör om), och en batchläsning av temats översättningar kan svara med FEL
 språk (`--steg kontroll` läser om ensamt) — lita aldrig på en enda läsning.
@@ -347,6 +359,12 @@ Järnreglerna (kostar pengar eller förtroende att bryta):
    Är källan nästan bara musik ska den inte översättas alls — HeyGen har ingen röst
    att klona och hittar på en.
 4. Captions är opt-in; max 2 rader. Komprimera aldrig hårdare än 30 MiB-gränsen kräver.
+5. **Axels regel 2026-09-27: UGC-videor (riktiga människor, t.ex. Nathalie, Katarina)
+   översätts ALLTID med HeyGens dyraste version** — full videoöversättning med
+   röstklon + lip-sync, aldrig den billigare "audio only"-dubben. **Egna
+   HeyGen-videor (våra AI-avatarer) översätts inte alls — de görs om direkt på
+   målspråket i HeyGen** ("annars kör vi bara våra egna HeyGen"). En avatarvideo
+   genom translate-pipelinen är alltså fel väg.
 
 Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 

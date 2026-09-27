@@ -1,0 +1,49 @@
+{
+ "nathalie": {
+  "video_id": "1531210268763716",
+  "titel": "Nathalie UGC musik.mp4",
+  "langd_s": 27.747,
+  "fil": "scratchpad/norge/original/nathalie.mp4",
+  "bytes": 5022520
+ },
+ "sofie_h1": {
+  "video_id": "2577232842703704",
+  "titel": "Sofie H1 Sushi.mp4",
+  "langd_s": 25.007,
+  "fil": "scratchpad/norge/original/sofie_h1.mp4",
+  "bytes": 7702311
+ },
+ "sofie_h2": {
+  "video_id": "28225249640488512",
+  "titel": "Sofie H2 Julsushi.mp4",
+  "langd_s": 25.61,
+  "fil": "scratchpad/norge/original/sofie_h2.mp4",
+  "bytes": 8025143
+ },
+ "katarina_unge": {
+  "video_id": "1626879769030756",
+  "titel": "Sushigalen ungen.mp4",
+  "langd_s": 30.51,
+  "fil": "scratchpad/norge/original/katarina_unge.mp4",
+  "bytes": 7503725
+ },
+ "katarina_alskaren": {
+  "video_id": "1707631337001126",
+  "titel": "Sushiälskaren i ditt liv.mp4",
+  "langd_s": 31.207,
+  "fil": "scratchpad/norge/original/katarina_alskaren.mp4",
+  "bytes": 7733690
+ },
+ "_om": "Källvideorna för Norge = Matstrumpors svenska UGC-annonser i kontot nya kungen (advideos, hämtade 2026-09-27 via GET /<video_id>?fields=source). Filerna laddas ner på nytt av norge/README.md steg 1 — de ligger inte i repot. Nathalie är vinnaren (29 av 44 köp i kampanjen 17–26/9); Katarina ×2 hade 1 köp på ~175 kr efter tre dygn (för tidigt att döma); Sofie H1 fick ingen spend (okänd, inte förlorare). Sofie H2 (jul) väntar.",
+ "batch": {
+  "manifest": "norge.json (samma mapp)",
+  "marknad": "NO",
+  "heygen_sprak": "Norwegian Bokmål (Norway)",
+  "videor": [
+   "nathalie",
+   "katarina_unge",
+   "katarina_alskaren",
+   "sofie_h1"
+  ]
+ }
+}
