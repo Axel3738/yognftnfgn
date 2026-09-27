@@ -288,6 +288,39 @@ brick by brick och **varje lyckat steg dokumenteras direkt**:
   butik. ⚠️ Förväxla ALDRIG med MagiBorsten `1867947880635861`
   (Bäverbutiken) — namnen är nästan identiska, kontona är olika
   verksamheter.
+- ⛔ **USA-kampanjen kör BARA flödet på Facebook + Instagram sedan
+  2026-09-27 ~13:45 CEST** (Axels order samma dag: "kör flödet i facebook
+  instagram / men ändra inte ads med social proof"). Natten 26→27/9 lade
+  Meta 96 % av `CaraShellRoof_US_CO_103_H1`:s spend i Instagram Stories:
+  **16 654 kr, 170 157 visningar, CPM 98 kr (flödet 369), 690 sidvisningar,
+  0 i varukorgen, 0 köp.** Sju dygnen före: Facebook-flödet 51 187 kr → 41
+  köp (ROAS 2,03), Facebook Reels 13 190 kr → 11 köp (2,20), Instagram
+  Stories 3 415 kr → 1 köp (0,67), Instagram-flödet 3 271 kr → 0 köp. Kassan
+  fungerade hela tiden (två USA-ordrar samma förmiddag; kassan läst som
+  amerikansk kund: engelska, United States förvalt, USD). Alla 12 adsets i
+  `120251451415500435` (`1 CARASHELL_US_Taköverdrag … – kopia`) bär
+  `publisher_platforms [facebook, instagram]`, `facebook_positions [feed]`,
+  `instagram_positions [stream]`, tillbakalästa — och
+  `OPS_MARKNADER.US.placeringar` (`factory/opsmarknader.mjs`) ger varje NYTT
+  US-adset samma sak via `kampanj.mjs`, så regeln överlever nästa koncept.
+  ⚠️ Sessionen pausade annonsen 13:25 och fick "VARFÖR HAR DU PAUSAT
+  ANNONSERNA / NEJ" — aktiv igen 13:4x. **Axels annonser pausas aldrig av en
+  session, hur natten än såg ut; placeringar och budget är verktygen.**
+  Budgeten sänktes 16 000 → 8 000 kr/dag 07:08 CEST när 17 086 kr redan
+  gått, så Meta stod still resten av dagen (dygnet räknas i kontots tid, UK)
+  — det var budgeten, inte placeringsbytet. Språket på USA-sidorna, mätt
+  från USA samma dag: kassa, landningssida (listiclen), produktsida och alla
+  22 annonstexter engelska; översättningarna intakta (0 gamla en-rader i
+  `translatableResources`). Två läckor rättade direkt i butiken: menylänken
+  "Spåra paket" (LINK-översättning en/nb/da/fi) och etiketten "Verifierat
+  köp" i `sections/ms-review-slider.liquid` + `ms-reviews.liquid`
+  (Liquid-`case` på `request.locale.iso_code`; sektionerna kommer ur
+  källtemat, inte ur fabriken — ett nytt tema från källan behöver samma
+  lapp). Judge.me-rutan på produktsidan visar svenska/norska recensioner för
+  amerikaner — Axel: "recensionerna har aldrig varit problemet", rörs inte.
+  ⚠️ Från Sverige skickar Shopifys geo-omdirigering carashell.com-länkar
+  till carashell.se: det man ser i Sverige är den svenska sidan, aldrig
+  amerikanens.
 - Två järnregler härifrån: namnregeln (funkar på svenska OCH engelska,
   aldrig å/ä/ö) och trippelkollen (säg aldrig "klart" utan tre kontroller
   mot kundens riktiga vy — regeln föddes här 2026-09-07).

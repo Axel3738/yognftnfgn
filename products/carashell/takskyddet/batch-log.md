@@ -2333,3 +2333,55 @@ Kvar i `SE-ACTIVE to be translated`: `CaraShellRoof_CS_109_H1`, `PD_110_H1`,
 `CO_105_H1`, `OB_103_H1`, `OB_104_H1`. De bär gårdagens kommentar om varför —
 ingen ny skrevs, ingenting har ändrats. Nästa körning tar dem av sig själv
 första dagen efter att plånboken fyllts på.
+
+## 2026-09-27 — USA: 16 654 kr i Instagram Stories utan ett köp; placeringar = bara flödet (Axels order)
+
+Natten 26→27/9 gick `CaraShellRoof_US_CO_103_H1` (social proof-annonsen) i
+kampanjen `1 CARASHELL_US_Taköverdrag … – kopia` (`120251451415500435`,
+16 000 kr/dag) nästan helt i Instagram Stories. Mätt i Meta 13:45 CEST
+(`breakdowns=publisher_platform,platform_position`, kontots dygn = UK-tid):
+
+| Placering, i dag t.o.m. 07:00 CEST | Spend | Visningar | CPM | Sidvisn. | Varukorg | Köp |
+|---|---|---|---|---|---|---|
+| Instagram Stories | 16 654 kr | 170 157 | 98 kr | 690 | 0 | 0 |
+| Instagram-flödet | 580 kr | 4 582 | 127 kr | 5 | 0 | 0 |
+| Facebook-flödet | 443 kr | 2 581 | 172 kr | 93 | 7 | 0 |
+
+Sju dygnen före (20–26/9), samma kampanj:
+
+| Placering | Spend | Köp | ROAS | Sidvisn. → varukorg |
+|---|---|---|---|---|
+| Facebook-flödet | 51 187 kr | 41 | 2,03 | 4 775 → 351 (7,4 %) |
+| Facebook Reels | 13 190 kr | 11 | 2,20 | 1 485 → 114 (7,7 %) |
+| Instagram Stories | 3 415 kr | 1 | 0,67 | 96 → 2 |
+| Instagram-flödet | 3 271 kr | 0 | 0 | 114 → 4 |
+| Instagram Reels | 1 506 kr | 1 | 2,54 | 77 → 6 |
+
+Break-even 1,63. Stories-besökarna beter sig inte som kunder: 0 av 690 lade
+i varukorgen, mot 7 av 100 från flödet. Meta optimerar för köp
+(OFFSITE_CONVERSIONS / PURCHASE) men utforskar en ny annons där visningarna
+är billigast — Stories kostade 98 kr per tusen mot flödets 369.
+
+Åtgärder:
+- 13:25 CEST pausade sessionen annonsen. Axel: "VARFÖR HAR DU PAUSAT
+  ANNONSERNA / NEJ … kör flödet i facebook instagram / men ändra inte ads
+  med social proof". Aktiv igen 13:4x (status ACTIVE, effective ACTIVE).
+- Alla 12 adsets i kampanjen: `publisher_platforms [facebook, instagram]`,
+  `facebook_positions [feed]`, `instagram_positions [stream]` — tillbakalästa.
+  Facebook Reels (11 köp, ROAS 2,20 på sju dygn) är därmed också av; frågan
+  om att slå på Reels igen är ställd till Axel.
+- `OPS_MARKNADER.US.placeringar` (`factory/opsmarknader.mjs`) ⇒ `kampanj.mjs`
+  ger nya US-adsets samma placeringar.
+- Budgeten sänktes 16 000 → 8 000 kr/dag 07:08 CEST när 17 086 kr redan gått
+  ⇒ Meta står still till 01:00 CEST. Timserien (UK-tid): 00–05 6 863 / 3 949 /
+  2 851 / 1 662 / 1 247 / 514 kr, från 06 bara 53–320 kr per timme.
+
+Kassan och sidorna, mätt från USA samma eftermiddag: två USA-ordrar 12:31 och
+13:18 CEST; kassan engelsk, United States förvalt, USD; landningssidan
+(listiclen) 0 svenska rader, knapparna → `/products/takskyddet?country=US`;
+produktsidan engelsk utom Judge.me-recensionerna (svenska/norska — Axel:
+"recensionerna har aldrig varit problemet"); alla 22 annonstexter engelska;
+översättningarna intakta (0 gamla en-rader). Rättat i butiken: menylänken
+"Spåra paket" → "Track your parcel" / "Spor pakken" / "Følg pakken" /
+"Seuraa pakettia" (LINK-översättning) och "Verifierat köp" → per språk i
+`sections/ms-review-slider.liquid` + `ms-reviews.liquid`.
