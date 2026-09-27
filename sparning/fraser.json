@@ -20,6 +20,7 @@
   "shipment arrived at facility and measured": "Paketet har kommit till terminalen och mätts in",
   "shipment is ready for outbound": "Paketet är klart att skickas vidare",
   "shipment is in transit to next facility": "Paketet är på väg till nästa terminal",
+  "in transit to next facility": "Paketet är på väg till nästa terminal",
   "the shipment item is under transportation": "Paketet är på väg",
   "in transit to destination": "Paketet är på väg vidare",
   "in transit": "Paketet är på väg",
