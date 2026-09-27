@@ -5,7 +5,7 @@
 
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { summeraOrdrar, kostnadFor } from '../kallor/vinst.mjs';
+import { summeraOrdrar, kostnadFor, frageFor, nekatFalt } from '../kallor/vinst.mjs';
 import { verksamheter, merTotalt } from '../data.mjs';
 import { oversiktSida } from '../vy/oversikt.mjs';
 import { sattSprak } from '../vy/delar.mjs';
@@ -72,6 +72,35 @@ test('summeraOrdrar: betalt utan avgiftsdata (PayPal) syns som utanAvgift; avgif
   const d = dagar.find((x) => x.datum === '2026-09-24');
   assert.equal(d.utanAvgift, 500);
   assert.deepEqual(d.avgifterAnnanValuta, { EUR: 2 });
+});
+
+test('summeraOrdrar: kostnad per leveransland vinner över Cost per item, saknad landskostnad blir orsak, utan hook som förut', () => {
+  const hook = (li, land, antal) => (land === 'US' ? { kostnad: 90.1 * antal, kalla: 'arket' } : land === 'NO' ? { saknas: 'frakten till Norge är inte känd' } : null);
+  const ordrar = [
+    order({ shippingAddress: { countryCodeV2: 'US' } }),
+    order({ shippingAddress: { countryCodeV2: 'NO' } }),
+    order({ shippingAddress: { countryCodeV2: 'SE' } }),
+    order({}), // utan land (appen nekad shippingAddress) ⇒ Cost per item
+  ];
+  const { dagar, saknarKostnad, kostnadKallor, perLand } = summeraOrdrar(ordrar, KOSTNADER, { dagar: 8, nu: new Date('2026-09-25T12:00:00Z'), valuta: 'SEK', kostnadPerLand: hook });
+  const d = dagar.find((x) => x.datum === '2026-09-24');
+  assert.equal(d.varukostnad, 180.2 + 200 + 200); // US ur arket (2 × 90,1), SE + utan land ur Cost per item (2 × 100)
+  assert.equal(d.utanKostnad, 500);                // Norge: saknas med orsak
+  assert.deepEqual(kostnadKallor, { shopify: 2, land: 1, saknasLand: 1 });
+  assert.deepEqual(perLand, { US: 1, NO: 1, SE: 1 });
+  assert.ok(saknarKostnad[0].titel.includes('→ NO: frakten till Norge'));
+  const utan = summeraOrdrar(ordrar, KOSTNADER, { dagar: 8, nu: new Date('2026-09-25T12:00:00Z'), valuta: 'SEK' });
+  assert.equal(utan.dagar.find((x) => x.datum === '2026-09-24').varukostnad, 800);
+});
+
+test('frageFor och nekatFalt: nekat fält tas bort ur frågan, inget annat', () => {
+  assert.ok(frageFor().includes('shippingAddress { countryCodeV2 }'));
+  assert.ok(frageFor().includes('variant { id }'));
+  assert.ok(!frageFor({ medLand: false }).includes('shippingAddress'));
+  assert.ok(!frageFor({ medVariant: false }).includes('variant { id }'));
+  assert.equal(nekatFalt("Field 'variant' doesn't exist on type 'LineItem' (variant field)"), 'variant');
+  assert.equal(nekatFalt('Access denied for shippingAddress field. This app is not approved to access protected customer data'), 'land');
+  assert.equal(nekatFalt('Throttled'), null);
 });
 
 test('kostnadFor: variant-id först, sedan SKU, sedan produktens namn (appen utan read_products)', () => {

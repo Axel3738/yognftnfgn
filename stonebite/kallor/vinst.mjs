@@ -54,23 +54,35 @@ const VARIANTER = `query($efter: String) {
 }`;
 
 // 40 ordrar × (10 rader + 5 transaktioner) håller frågan under Shopifys kostnadstak.
-const ORDRAR = `query($efter: String, $q: String) {
+//
+// `medVariant`: kundtjänstens app (Bäverbutiken) saknar read_products och nekas
+// fältet `variant` — då kopplas kostnaden via SKU, i sista hand via namnet.
+// `medLand`: leveranslandet (shippingAddress.countryCodeV2) behövs för butiker med
+// kostnad per marknad (Matstrumpor sedan 2026-09-27, matstrumpor/cogs.json). En
+// app utan tillgång till kunddata nekas fältet — då räknas utan land.
+export function frageFor({ medVariant = true, medLand = true } = {}) {
+  return `query($efter: String, $q: String) {
   orders(first: 40, after: $efter, query: $q, sortKey: CREATED_AT) {
     pageInfo { hasNextPage endCursor }
     nodes {
       createdAt cancelledAt test
+      ${medLand ? 'shippingAddress { countryCodeV2 }' : ''}
       currentTotalPriceSet { shopMoney { amount } }
       currentTotalTaxSet { shopMoney { amount } }
-      lineItems(first: 10) { nodes { currentQuantity originalUnitPriceSet { shopMoney { amount } } variant { id } sku title variantTitle } }
+      lineItems(first: 10) { nodes { currentQuantity originalUnitPriceSet { shopMoney { amount } } ${medVariant ? 'variant { id } ' : ''}sku title variantTitle } }
       transactions(first: 5) { gateway kind status fees { amount { amount currencyCode } } }
     }
   }
 }`;
+}
 
-// Samma fråga utan variant-id: kundtjänstens app (Bäverbutiken) saknar
-// read_products och nekas fältet `variant`. Då kopplas kostnaden via SKU,
-// och i sista hand via produktens och variantens namn.
-const ORDRAR_UTAN_VARIANT = ORDRAR.replace('variant { id } ', '');
+/** Vilket fält Shopify nekade, ur felmeddelandet — så nästa försök tar bort just det. */
+export function nekatFalt(meddelande) {
+  const m = String(meddelande ?? '');
+  if (/variant field|field 'variant'/i.test(m)) return 'variant';
+  if (/shippingAddress|customer data|protected/i.test(m)) return 'land';
+  return null;
+}
 
 const namnNyckel = (produkt, variant) => `${String(produkt ?? '').trim().toLowerCase()}|${variant && variant !== 'Default Title' ? String(variant).trim().toLowerCase() : ''}`;
 
@@ -108,12 +120,23 @@ async function lasKostnader(shop, token, fetchFn) {
  * Ordrarna → en rad per dag. Ren funktion, testbar utan nät.
  * `kostnader` är variant-id → { kostnad, titel }.
  */
-export function summeraOrdrar(ordrar, kostnader, { dagar, nu = new Date(), valuta }) {
+/**
+ * Ordrarna → en rad per dag. Ren funktion, testbar utan nät.
+ * `kostnader` är variant-id → { kostnad, titel }.
+ * `kostnadPerLand(li, land, antal)` (valfri) ger butikens kostnad för RADEN till
+ * leveranslandet: { kostnad, kalla } vinner över Cost per item, { saknas } räknas
+ * som saknad med orsak, null ⇒ Cost per item som vanligt. Matstrumpor skickar
+ * landad kostnad ur cogs.json för Big 5-länderna; Sverige läses fortfarande ur
+ * Shopify (källan), Norden faller på Sveriges kostnad tills frakten dit är känd.
+ */
+export function summeraOrdrar(ordrar, kostnader, { dagar, nu = new Date(), valuta, kostnadPerLand = null }) {
   const perDag = new Map();
   for (const d of sistaDagarna(dagar, { nu })) {
     perDag.set(d, { datum: d, ordrar: 0, netto: 0, varukostnad: 0, avgifter: 0, avgifterAnnanValuta: {}, utanKostnad: 0, utanAvgift: 0 });
   }
   const saknas = new Map();
+  const kostnadKallor = { shopify: 0, land: 0, saknasLand: 0 };
+  const perLand = {};
   for (const o of ordrar) {
     if (o.cancelledAt || o.test) continue;
     const rad = perDag.get(dagnyckel(new Date(o.createdAt)));
@@ -123,13 +146,30 @@ export function summeraOrdrar(ordrar, kostnader, { dagar, nu = new Date(), valut
     const netto = brutto - moms;
     rad.ordrar += 1;
     rad.netto += netto;
+    const land = o.shippingAddress?.countryCodeV2 ?? null;
+    if (land) perLand[land] = (perLand[land] ?? 0) + 1;
 
     for (const li of o.lineItems?.nodes ?? []) {
       const antal = Number(li.currentQuantity) || 0;
       if (!antal) continue;
+      const egen = kostnadPerLand && land ? kostnadPerLand(li, land, antal) : null;
+      if (egen && typeof egen.kostnad === 'number' && Number.isFinite(egen.kostnad)) {
+        rad.varukostnad += egen.kostnad;
+        kostnadKallor.land += 1;
+        continue;
+      }
+      if (egen?.saknas) {
+        const pris = (Number(li.originalUnitPriceSet?.shopMoney?.amount) || 0) * antal;
+        rad.utanKostnad += pris;
+        kostnadKallor.saknasLand += 1;
+        const titel = `${li.title || 'okänd variant'} → ${land}: ${egen.saknas}`;
+        saknas.set(titel, (saknas.get(titel) ?? 0) + pris);
+        continue;
+      }
       const k = kostnadFor(li, kostnader);
       if (k && k.kostnad !== null) {
         rad.varukostnad += k.kostnad * antal;
+        kostnadKallor.shopify += 1;
       } else {
         const pris = (Number(li.originalUnitPriceSet?.shopMoney?.amount) || 0) * antal;
         rad.utanKostnad += pris;
@@ -157,7 +197,7 @@ export function summeraOrdrar(ordrar, kostnader, { dagar, nu = new Date(), valut
     avgifterAnnanValuta: Object.fromEntries(Object.entries(r.avgifterAnnanValuta).map(([k, v]) => [k, rund(v)])),
   }));
   const saknarKostnad = [...saknas.entries()].sort((a, b) => b[1] - a[1]).slice(0, 5).map(([titel, intakt]) => ({ titel, intakt: rund(intakt) }));
-  return { dagar: dagarUt, saknarKostnad };
+  return { dagar: dagarUt, saknarKostnad, kostnadKallor, perLand };
 }
 
 /**
@@ -165,7 +205,7 @@ export function summeraOrdrar(ordrar, kostnader, { dagar, nu = new Date(), valut
  * komma ur olika appar: kundtjänstens app får läsa ordrar men inte produkter,
  * fabrikens tvärtom (mätt på Bäverbutiken 2026-09-26).
  */
-export async function hamtaVinstunderlag(butik, { dagar = 8, env = process.env, fetchFn = fetch, nu = new Date(), valuta } = {}) {
+export async function hamtaVinstunderlag(butik, { dagar = 8, env = process.env, fetchFn = fetch, nu = new Date(), valuta, kostnadPerLand = null } = {}) {
   const kandidater = await kandidatNycklar(butik, env);
   const tokens = [];
   const fel = [];
@@ -188,13 +228,16 @@ export async function hamtaVinstunderlag(butik, { dagar = 8, env = process.env, 
     try {
       const alla = [];
       let efter = null;
-      let fraga = ORDRAR;
+      const form = { medVariant: true, medLand: true };
       for (let sida = 0; sida < 80; sida++) {
         let d;
         try {
-          d = await gql(t.shop, t.token, fraga, { efter, q: `created_at:>=${fran}` }, fetchFn);
+          d = await gql(t.shop, t.token, frageFor(form), { efter, q: `created_at:>=${fran}` }, fetchFn);
         } catch (e) {
-          if (fraga === ORDRAR && /variant field/.test(e.message)) { fraga = ORDRAR_UTAN_VARIANT; sida--; continue; }
+          // Nekat fält ⇒ ta bort just det och fråga om samma sida.
+          const nekat = nekatFalt(e.message);
+          if (nekat === 'variant' && form.medVariant) { form.medVariant = false; sida--; continue; }
+          if (nekat === 'land' && form.medLand) { form.medLand = false; sida--; continue; }
           throw e;
         }
         alla.push(...d.orders.nodes);
@@ -206,24 +249,28 @@ export async function hamtaVinstunderlag(butik, { dagar = 8, env = process.env, 
   }
   if (!ordrar) throw new Error(`ingen app får läsa ordrarna med rader och avgifter — ${fel.slice(-1)[0] ?? ''}`);
 
-  const utfall = summeraOrdrar(ordrar, kostnader, { dagar, nu, valuta });
+  const utfall = summeraOrdrar(ordrar, kostnader, { dagar, nu, valuta, kostnadPerLand });
   return {
-    id: butik.id, status: 'ok', orsak: null, valuta, via: { kostnad: kostnadVia, ordrar: orderVia },
+    id: butik.id, status: 'ok', orsak: null, valuta, via: { kostnad: kostnadVia, ordrar: orderVia, land: form.medLand ? 'shippingAddress' : 'nekad — räknat utan leveransland' },
     varianter: kostnader.size, varianterMedKostnad: [...kostnader.values()].filter((k) => k.kostnad !== null).length,
     ...utfall,
   };
 }
 
-/** Alla butiker som gick att läsa i försäljningssteget. Aldrig ett undantag. */
-export async function hamtaAllVinst(butiker, lasta, { dagar = 8, env = process.env, fetchFn = fetch, nu = new Date(), logg = () => {} } = {}) {
+/**
+ * Alla butiker som gick att läsa i försäljningssteget. Aldrig ett undantag.
+ * `kostnadPerLandFor(butik)` (valfri) ger butikens hook för kostnad per leveransland,
+ * eller null (Cost per item som vanligt).
+ */
+export async function hamtaAllVinst(butiker, lasta, { dagar = 8, env = process.env, fetchFn = fetch, nu = new Date(), logg = () => {}, kostnadPerLandFor = () => null } = {}) {
   const ut = [];
   for (const b of butiker) {
     const las = lasta.find((x) => x.id === b.id);
     if (!las || las.status !== 'ok') continue; // butiken lästes inte alls — orsaken står redan på butiken
     try {
-      const rad = await hamtaVinstunderlag(b, { dagar, env, fetchFn, nu, valuta: las.valuta });
+      const rad = await hamtaVinstunderlag(b, { dagar, env, fetchFn, nu, valuta: las.valuta, kostnadPerLand: kostnadPerLandFor(b) ?? null });
       const s = rad.dagar.reduce((a, d) => ({ n: a.n + d.netto, k: a.k + d.varukostnad, u: a.u + d.utanKostnad }), { n: 0, k: 0, u: 0 });
-      logg(`  ${b.id}: netto ${Math.round(s.n)} · varukostnad ${Math.round(s.k)} · utan kostnad ${Math.round(s.u)} ${las.valuta} (${rad.varianterMedKostnad}/${rad.varianter} varianter)`);
+      logg(`  ${b.id}: netto ${Math.round(s.n)} · varukostnad ${Math.round(s.k)} · utan kostnad ${Math.round(s.u)} ${las.valuta} (${rad.varianterMedKostnad}/${rad.varianter} varianter${rad.kostnadKallor?.land ? `, ${rad.kostnadKallor.land} rader med kostnad per leveransland` : ''})`);
       ut.push(rad);
     } catch (e) {
       logg(`  ${b.id}: ${e.message}`);

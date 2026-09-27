@@ -21,6 +21,34 @@ import { upptackButiker, hamtaAlla as hamtaButiker, hamtaAllaTvister } from './k
 import { hamtaAllt as hamtaMeta } from './kallor/meta.mjs';
 import { hamtaKurser } from './kallor/valuta.mjs';
 import { hamtaAllVinst } from './kallor/vinst.mjs';
+
+// Kostnad per leveransland för butiker som har en: bara Matstrumpor i dag
+// (matstrumpor/cogs.json — Big 5 ur Axels ark, Sverige läses ur Shopify som
+// förut, Norden faller på Sveriges kostnad tills frakten dit är känd). Utan
+// kurs eller utan cogs-fil: ingen hook, vinsten räknas som förut.
+async function byggKostnadPerLand({ nu, logg }) {
+  try {
+    const [{ lasCogs, landadKostnad, blockFor }, kurser] = await Promise.all([import('../matstrumpor/cogs.mjs'), hamtaKurser({ nu })]);
+    if (kurser.status !== 'ok') { logg(`  kostnad per land: ingen kurs (${kurser.orsak}) — Cost per item gäller`); return () => null; }
+    const cogs = lasCogs();
+    return (butik) => {
+      if (butik.id !== 'matstrumpor') return null;
+      return (li, land, antal) => {
+        if (blockFor(cogs, land) !== 'big5') return null; // SE och Norden: Shopifys Cost per item
+        const handle = String(li.variant?.product?.handle ?? li.handle ?? '').trim();
+        const k = landadKostnad({ handle: handle || handleUrTitel(li.title), variantTitel: li.variantTitle ?? '', antal, land }, kurser, cogs);
+        return k.saknas ? { saknas: k.saknas } : { kostnad: k.sek, kalla: k.kalla };
+      };
+    };
+  } catch (e) {
+    logg(`  kostnad per land: ${e.message} — Cost per item gäller`);
+    return () => null;
+  }
+}
+
+// Orderraden bär produktens titel, inte handlen — Matstrumpors fem titlar är kända.
+const HANDLE_UR_TITEL = { 'Sushi-Strumpor': 'sushi-strumpor', 'Sushistrumpor': 'sushi-strumpor', 'Donut-strumpor': 'donut-strumpor', 'Pizza-Strumpor': 'pizza-strumpor', 'Hamburgare-Strumpor': 'hamburger-strumpor', 'Äkta ätpinnar i trä': 'sushipinnar-i-akta-tra', 'Presentkort': 'presentkort' };
+export function handleUrTitel(titel) { return HANDLE_UR_TITEL[String(titel ?? '').trim()] ?? String(titel ?? '').trim().toLowerCase(); }
 import { hamtaTavla } from './kallor/tavla.mjs';
 import { samlaRepo, lasProfil, lasSystem } from './kallor/repo.mjs';
 import { rutinlage } from './kallor/rutiner.mjs';
@@ -87,7 +115,11 @@ export async function byggSnapshot({
     // item), betalavgifter — 8 dygn, bara dagssummor (kallor/vinst.mjs).
     logg('Vinstunderlag …');
     try {
-      vinst = await hamtaAllVinst(upptackta, butiker, { dagar: 8, env, nu, logg });
+      // Matstrumpor säljer i USA/UK/AU/CA/NZ sedan 2026-09-27 med landad kostnad per
+      // land i matstrumpor/cogs.json (Axels ark). Kursen hämtas här en gång till
+      // (den allmänna hämtningen ligger efter vinsten) — ECB:s XML, billigt.
+      const kostnadPerLandFor = await byggKostnadPerLand({ nu, logg });
+      vinst = await hamtaAllVinst(upptackta, butiker, { dagar: 8, env, nu, logg, kostnadPerLandFor });
       const felV = vinst.filter((v) => v.status !== 'ok');
       anteckna('shopify:vinst', felV.length === vinst.length && vinst.length ? 'fel' : 'ok',
         felV.length ? `${felV.length} av ${vinst.length} butiker gav inget vinstunderlag` : null, { butiker: vinst.length });

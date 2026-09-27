@@ -107,6 +107,8 @@
     "env_suffix": "1r46tp_qx",
     "env_suffix_comment": "Nycklarna fanns redan 2026-09-21: SHOPIFY_CLIENT_ID_1r46tp_qx + SECRET, appen 'Fabriken' (154 rättigheter, alla fyra krävda finns). Inget klick av Axel behövdes.",
     "sprak": "sv",
+    "sprak_extra": ["nb", "da", "fi", "en"],
+    "sprak_extra_comment": "Marknaderna Norge, Europa (DK+FI) och USA/UK/AU/CA/NZ byggda 2026-09-27 (matstrumpor/marknader/) — sidan byter språk på dokumentets lang (/nb, /da, /fi, /en) precis som CaraShell. Texterna ur sparning/sprak/<kod>.json.",
     "land": "Sverige",
     "landskod": "SE",
     "support": "kundsupport@matstrumpor.se",
