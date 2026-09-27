@@ -1,0 +1,84 @@
+{
+  "_om": "Konkurrentdödaren (/konkurrentdodaren). Läs konkurrenter/README.md. Här står FACIT för vad som är vårt (verksamheter, butiker, annonskonton, egna domäner) och trösklarna för när en kopia räknas som en kopia. Uppdatera med datum när något ändras. Ingen hemlighet står här — mejlens lösenord heter KUNDTJANST_MAIL_PASS_<ID> i Environments, precis som för kundtjänsten.",
+  "verksamheter": {
+    "Bäverbutiken": {
+      "avsandare": "baverbutiken",
+      "butiker": ["https://baverbutiken.se"],
+      "sprak": "sv",
+      "konton": [{ "id": "1867947880635861", "namn": "MagiBorsten" }],
+      "_om": "Systerbutikerna NO/DK/FI säljer samma sortiment på landets språk — deras texter är översättningar av de svenska, så den svenska produktsidan är originalet som bevakas. Lägg till dem i butiker: när de ska sökas på egen hand."
+    },
+    "CaraShell": {
+      "avsandare": "carashell",
+      "butiker": ["https://carashell.se"],
+      "sprak": "sv",
+      "konton": [
+        { "id": "915422744950975", "namn": "MagiBorsten DK (OPS-kontot)", "prefix": "CARASHELL_" },
+        { "id": "1107817401910319", "namn": "Magiborsten UK", "prefix": "CARASHELL_" }
+      ]
+    },
+    "Matstrumpor": {
+      "avsandare": "matstrumpor",
+      "butiker": ["https://matstrumpor.se"],
+      "sprak": "sv",
+      "konton": [{ "id": "730973156224390", "namn": "nya kungen" }]
+    }
+  },
+  "bevaka": {
+    "_om": "Produkter (handle) som alltid ska sökas, utöver de som annonseras just nu. Tom lista = bara de annonserade + rotation över resten.",
+    "Bäverbutiken": [],
+    "CaraShell": [],
+    "Matstrumpor": []
+  },
+  "egna_domaner": [
+    "baverbutiken.se", "beverbutikken.no", "baeverbutiken.dk", "majavakauppa.fi", "beavershop.co.uk",
+    "carashell.se", "carashell.com", "matstrumpor.se", "sushisock.com", "grillkliniken.se", "stonebite.org",
+    "hemvakten.se", "heimguard.se", "baverkoppling.se", "myshopify.com", "shopify.com", "cdn.shopify.com"
+  ],
+  "egna_domaner_kommentar": "Kompletteras vid körning med url:erna i sparning/butiker.json och factory/butiker/*.yaml. myshopify.com och cdn.shopify.com står här så att våra egna CDN-länkar och förhandsvisningar aldrig blir 'konkurrenter'.",
+  "ignorera_domaner": [
+    "facebook.com", "instagram.com", "youtube.com", "google.", "bing.com", "wikipedia.org", "pinterest.", "tiktok.com",
+    "amazon.", "temu.com", "aliexpress.", "alibaba.com", "ebay.", "wish.com", "prisjakt.", "pricerunner.", "tradera.com",
+    "blocket.se", "reddit.com", "linkedin.com", "x.com", "twitter.com", "finn.no", "dba.dk", "tori.fi", "cdon.", "fyndiq.se",
+    "shein.com", "etsy.com", "kommun.se", "1177.se", "botkyrka.se"
+  ],
+  "ignorera_kommentar": "Marknadsplatser och sociala nätverk: leverantörens egna bilder och texter ligger lagligt på Amazon/Temu/AliExpress, ett brev dit går ingenstans, och Facebook/Instagram kan inte läsas utan inloggning. Bing fyller dessutom på med lösa träffar när en exakt fras inte finns (mätt 2026-09-27: 'Botkyrka kommun' på en fras ur Trädansiktet) — de faller bort på likhetstalen, inte här.",
+  "sok": {
+    "max_produkter_per_korning": 20,
+    "fraser_per_produkt": 2,
+    "traffar_per_fras": 8,
+    "max_kandidater_per_produkt": 6,
+    "kolla_om_dagar": 5,
+    "min_ord": 7,
+    "max_ord": 16,
+    "paus_ms": 900,
+    "_om": "20 produkter × 2 fraser = 40 Bing-sökningar per körning, i rotation (aldrig kollad först, sedan äldst kollad). De annonserade produkterna är alltid med — det är dem konkurrenter kopierar."
+  },
+  "trosklar": {
+    "text": { "min_passage": 8, "stark_tackning": 0.3, "stark_langsta": 15, "trolig_tackning": 0.12, "trolig_langsta": 9 },
+    "bild": { "identisk": 6, "lik": 12 },
+    "_om": "text: andel av VÅRA 5-ords-sekvenser som återfinns hos dem (tackning) och längsta ordagranna sviten (ord). bild: Hamming-avstånd mellan dHash-värden (64 bitar) — ≤ 6 är samma bild i annan storlek, ≤ 12 är samma bild beskuren/färgjusterad. Mätt 2026-09-27: original 1024 px mot samma bild i 400 px gav avstånd 0."
+  },
+  "generiska_fraser": [
+    "fri frakt", "14 dagars ångerrätt", "30 dagars öppet köp", "lägg i varukorgen", "köp nu", "skickas inom",
+    "leveranstid", "arbetsdagar", "kundtjänst", "vi svarar", "säker betalning", "klarna", "swish", "beställ idag",
+    "free shipping", "add to cart", "money back", "days return"
+  ],
+  "brev": {
+    "svarsfrist_timmar": 48,
+    "paminnelse_efter_dagar": 3,
+    "foretag": { "namn": "Stonebite Ecom AB", "orgnr": "559576-2401", "adress": "Stenkolsgatan 1B, 417 07 Göteborg" },
+    "_om": "Företagsuppgifterna är samma som svar.foretag i kundtjanst/brands/baverbutiken.yaml (kontoret sedan 2026-09-26). Aldrig VD:ns namn i brevet."
+  },
+  "discord": {
+    "kanal": "copycats",
+    "servrar": { "Bäverbutiken": "Bäverbutiken", "CaraShell": "CaraShell — OPS" },
+    "hoppa": { "Matstrumpor": "Matstrumpor har ingen Discord-server — rapporten står bara i konkurrenter/ och på granskningssidan." },
+    "pinga": ["1469423029783236689", "1543537450335477836"],
+    "_om": "Engelska, som allt i Discord. Postas BARA när ett nytt ärende finns. pinga = Axels två konton (confident_otter_25993, ecom_chadking — samma id:n som tools/notify-discord.mjs --ping-axel)."
+  },
+  "ad_library": {
+    "lander": ["SE", "NO", "DK", "FI"],
+    "_om": "Metas Ad Library-API (ads_archive) svarar (#10) 2332002 'Application does not have permission' med META_ACCESS_TOKEN — mätt 2026-09-27. Webbversionen ger 403 'Client challenge' från en container (mätt samma dag). Källan slås på av sig själv den dag token:ens ägare bekräftat sin identitet på facebook.com/ID och appen godkänts på facebook.com/ads/library/api; tills dess står den som 'saknar behörighet' i varje rapport, med länken Axel kan öppna själv."
+  }
+}

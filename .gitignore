@@ -139,3 +139,6 @@ klaviyo/output/
 # Matstrumpors översättningar är minnet — de committas (Axels marknadsbygge 2026-09-27)
 !matstrumpor/marknader/output/
 !matstrumpor/marknader/output/underlag-*.json
+
+# Konkurrentdödaren: rådata, kandidater, bildcache, skärmdumpar och den byggda granskningssidan — dör med containern. Ärendena (arenden.jsonl, arenden/) och lage.json committas.
+konkurrenter/output/
