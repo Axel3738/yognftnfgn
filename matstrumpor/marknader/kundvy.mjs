@@ -35,7 +35,15 @@ export function lasSida(html, { sprak, land }) {
   const currency = /Shopify\.currency\s*=\s*(\{[^}]*\})/.exec(html)?.[1] ?? null;
   const active = currency ? /"active":"([A-Z]{3})"/.exec(currency)?.[1] ?? null : null;
   const locale = /Shopify\.locale\s*=\s*"([^"]+)"/.exec(html)?.[1] ?? null;
-  const lackor = sprak === 'sv' ? [] : MARKORER_SV.filter((m) => synlig.includes(m));
+  // Spårningssidan (sparning/sida.mjs) bär ALLA sina språk i en och samma HTML (C.sprak) och
+  // byter i webbläsaren efter <html lang> — svenskan står alltså alltid kvar i källkoden och är
+  // ingen läcka. Där mäts i stället att språkpaketet för kundens språk finns i sidan; saknas det
+  // visar sidan svenska tills rutinen /sparning matstrumpor byggt om den (den klonar main).
+  const sparsida = /id="bb-spar/.test(html);
+  const sprakpaket = sparsida && /"sprak":\{/.test(html) && new RegExp(`"${sprak}":\\{"tz"`).test(html);
+  const lackor = sprak === 'sv' ? []
+    : sparsida ? (sprakpaket ? [] : [`spårningssidan saknar språkpaket ${sprak} (visar svenska tills /sparning matstrumpor byggt om sidan från main)`])
+    : MARKORER_SV.filter((m) => synlig.includes(m));
   // Priset i köprutan: första money-beloppet i produktformuläret räcker som stickprov.
   const pris = /class="price-item price-item--regular[^"]*"[^>]*>\s*([^<]{1,30})</.exec(html)?.[1]?.trim() ?? null;
   const paket = [...synlig.matchAll(/(Köp 1 – Få 1[^.]{0,20}|Kjøp 1 – Få 1[^.]{0,20}|Køb 1 – Få 1[^.]{0,20}|Osta 1 – Saat 1[^.]{0,30}|Buy 1 – Get 1[^.]{0,20})/g)].map((m) => m[1].trim()).slice(0, 1);

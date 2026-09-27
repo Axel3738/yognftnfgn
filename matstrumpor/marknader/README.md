@@ -58,6 +58,35 @@ behåller 299 kr för resten av världen.
   US fick den av Axel 2026-09-16). ⚠️ Inte mätt för Matstrumpor utanför Sverige.
 - Löftena "framme till fars dag / jul" visas BARA på svenska — de är mätta för Sverige.
 
+## Läget 2026-09-27 ~14:45 CEST — publicerat, läst som kund i alla åtta länder
+
+`bygg.mjs --steg publicera --skarpt` publicerade nb, da, fi, en och band dem till båda
+webbnärvarorna (matstrumpor.se + myshopify) och till marknaderna. Översättningarna lästa
+tillbaka ur Shopify (`--steg kontroll`): **nb 150, da 150, fi 159, en 155 — 0 saknas, 0
+avviker.** Kundvyn (`kundvy.mjs`, POST /localization per land, riktig HTML):
+
+| Land | Adress | lang | Valuta | Pris 5 par | Paketrubrik | Judge.me |
+|---|---|---|---|---|---|---|
+| SE | / | sv | SEK | 399 kr | Köp 1 – Få 1 GRATIS | sv |
+| NO | /nb | nb | NOK | 391,00 kr | Kjøp 1 – Få 1 GRATIS | nb |
+| DK | /da | da | DKK | 270,00 kr | Køb 1 – Få 1 GRATIS | da |
+| FI | /fi | fi | EUR | €36,95 | Osta 1 – Saat 1 ILMAISEKSI | fi |
+| US | /en | en | USD | **$59.00** (fast) | Buy 1 – Get 1 FREE | en |
+| GB | /en | en | GBP | £46.00 | Buy 1 – Get 1 FREE | en |
+| AU | /en | en | AUD | $86.00 | Buy 1 – Get 1 FREE | en |
+| CA | /en | en | CAD | $86.00 | Buy 1 – Get 1 FREE | en |
+| NZ | /en | en | NZD | $107.00 | Buy 1 – Get 1 FREE | en |
+
+Start- och produktsidan: inga svenska läckor på något språk. Judge.me-widgeten följer
+locale av sig själv (`"locale":"nb"` osv. i sidan) — inget klick behövdes.
+
+⚠️ **Spårningssidan `/pages/spara` visar svenska på alla språk tills rutinen byggt om den.**
+Sidan skrivs av `/sparning matstrumpor` varje timme (:56) ur `sparning/butiker.json`, där
+`sprak_extra: ["nb","da","fi","en"]` nu står — men rutinen klonar `main`, så den bygger den
+flerspråkiga sidan först när den här grenen är mergad. `kundvy.mjs` mäter språkpaketet i sidan
+(inte svenskan i källkoden, som alltid står kvar där) och säger det rakt ut tills dess.
+Spårningens egna tester (167) bevisar att de fyra språkpaketen är fullständiga.
+
 ## Filerna
 
 | Fil | Vad |
