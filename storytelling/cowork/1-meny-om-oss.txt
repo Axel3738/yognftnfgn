@@ -1,0 +1,40 @@
+Jag vill ha länken "Om oss" i huvudmenyn på baverbutiken.se. Sidan finns
+redan: https://baverbutiken.se/pages/om-oss (heter "Om Bäverbutiken" i
+Shopify). Ingen app får skriva i menyerna, så det här är ett klick i admin.
+
+Butiken: Bäverbutiken.se, Shopify admin
+https://admin.shopify.com/store/4snrw0-mg. Fråga mig om inloggning när du
+behöver den.
+
+STEG 1 — huvudmenyn.
+Shopify admin → Innehåll (Content) → Menyer (Menus) → öppna "Main menu"
+(huvudmenyn, den som i dag har Startsida, Bäverkoppling, Bävertratt,
+Alla produkter, Kontakta oss, Spåra paket).
+  1. Klicka "Lägg till menyobjekt" (Add menu item).
+  2. Namn: Om oss
+  3. Länk: välj Sidor (Pages) → "Om Bäverbutiken". Länken ska bli
+     /pages/om-oss. Skriv INTE in adressen för hand om sidan går att välja i
+     listan.
+  4. Klicka "Lägg till" och sedan "Spara" uppe till höger.
+  5. Dra objektet så att "Om oss" ligger sist, efter "Spåra paket", om det
+     inte hamnade där. Spara igen.
+
+STEG 2 — sidfotsmenyn (valfritt men snyggt).
+Samma sida: öppna menyn "Footer" (sidfoten, den med Kontakta oss,
+Användarvillkor, Integritetspolicy …). Lägg till "Om oss" med samma länk,
+sist i listan. Spara.
+
+STEG 3 — kontrollera som kund.
+Öppna https://baverbutiken.se/?country=SE i ett nytt fönster (inte
+inloggad i admin). "Om oss" ska synas i huvudmenyn högst upp, och klick på
+den ska öppna sidan "Om Bäverbutiken" med det svarta bandet "Det började
+med en koppling". Kolla även i mobilbredd (hamburgermenyn) att "Om oss" står
+med. Står den inte där: ladda om efter en minut, menyn cachas kort.
+
+RÖR INGET ANNAT:
+  - Ta inte bort eller döp inte om något befintligt menyobjekt.
+  - Rör inga andra menyer än Main menu och Footer.
+  - Ändra inget i Teman, Sidor eller Inställningar.
+
+Rapportera till slut exakt vilka menyobjekt Main menu och Footer har nu, i
+ordning, och att kundvyn visade "Om oss" i huvudmenyn.

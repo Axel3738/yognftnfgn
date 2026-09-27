@@ -1155,7 +1155,14 @@ från olika produkter och jag vill lowkey ha typ allt detta på min startsida"
   `SHOPIFY_SECRET_ID_SE_BAVER_SE` i stället för
   `SHOPIFY_CLIENT_SECRET_SE_BAVER_SE` — utan `lagaMiljo()` svarar Shopify
   `400 Oauth error invalid_request`. Döp om variabeln i Environments.
-- Norilå (förebilden Axel nämnde) hittades inte — länken saknas.
+- **Ingen "Sverige sedan ÅÅÅÅ"-rad i heron** (Norillos grepp): Bäverbutiken
+  startade 2026 (Axels besked 2026-09-27), så raden skulle inte imponera —
+  skippad, Axels beslut. Skriv aldrig ett äldre årtal.
+- **Menylänken "Om oss" är ett klick i admin:** ingen av Bäverbutikens appar
+  ("Bäver uppladdare" 12 scopes, "bäver email" 18) har
+  `write_online_store_navigation` (mätt 2026-09-27). Cowork-prompten
+  `storytelling/cowork/1-meny-om-oss.txt` gör klicken (Main menu + Footer,
+  rör inget annat).
 
 ## `bonus/` — alla i bolaget ska kunna tjäna pengar (NY 2026-09-21)
 
