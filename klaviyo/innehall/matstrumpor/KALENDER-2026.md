@@ -71,3 +71,8 @@ skriver in det här.
 - Leveranstiden skrivs aldrig i ett mejl (spårningssidan visar den).
 - Sushin har inget jämförpris över priset: aldrig spara/rea om sushin.
 - Nya sorter under hösten får en plats genom att flytta en tisdag, inte genom fler utskick.
+- **Veckans dragning (2026-09-27):** från och med den första skarpa klubbdragningen
+  (`/klubbdragning kör`, tisdag morgon) bär varje tisdagskampanj blocket i
+  `VECKANS-DRAGNING.md` sist i brödtexten (Premiär första gången, sedan Återkommande).
+  Bara tisdagar med en skarp rad i `klaviyo/konto/matstrumpor/dragningar.jsonl`; ingen
+  dragning ⇒ inget block. K01 (schemalagd) rörs inte; K02 6/10 är första kandidaten.

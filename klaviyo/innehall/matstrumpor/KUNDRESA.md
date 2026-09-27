@@ -137,3 +137,12 @@ dem först (förturen). Beslutet är Axels (Black Week A/B/C i `klaviyo/README.m
 4. **Börja tidigare med förra årets köpare:** första mejlet till dem tidigast möjligt i
    oktober (K05 27/10 är sent för en lista som "inte kommer tillbaka av sig själv", Evolve
    [C4]); flyttas i kalendern när copyn är skriven.
+5. **Byggt 2026-09-27, dragningen (punkt 2):** `klaviyo/klubb/dragning.mjs` (torrkörd:
+   2 965 kandidater, 197 utan adress) + Spoks-flödet **F08 Klubbdragningen**
+   `27047445-dcab-4898-9f92-5f55f2b77be3` med E1/E2/E3 (dag 0/12/18, avstängda tills Axel
+   slår på dem) + VA-SOP:en `kundtjanst/va-sop/club-draw-winners.md` + kommandot
+   `/klubbdragning`. Allt, inklusive Axels klick och det som är omätt (att Spoks skickar
+   `contact_tags_added` för en Shopify-satt tagg), i `klaviyo/spoks/README.md` →
+   Klubbdragningen. **Förturen (punkt 1) är inte definierad än:** vad förra säsongens
+   köpare får FÖRST (Black Week ett dygn tidigare? restock? sista beställningsdagen?) är
+   Axels ord, och F01 E1 skrivs inte om förrän det är sant.

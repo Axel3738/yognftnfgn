@@ -1,0 +1,162 @@
+{
+  "id": "f08-klubbdragning",
+  "namn": "FLOW_tagg_klubbdragning_v1",
+  "memo": "Klubbdragningen (Axels beslut 2026-09-27, alternativ B efter Evolves svar 9). Triggas av en riktig händelse: varje tisdag morgon drar klaviyo/klubb/dragning.mjs tio medlemmar i Matstrumpor-klubben som inte redan vunnit, lägger en 0-kronorsorder åt var och en och sätter kundtaggen klubb-vinnare i Shopify; taggen synkas till Spoks och startar flödet (contact_tags_added, inget återinträde). E1 (dag 0) berättar att mottagaren är en av de tio, vad som händer med ordern och adressen, och villkoret att skicka en bild på sig själv med strumporna mot att Matstrumpor får visa den i klubbmejl och i annonser. E2 (dag 12) påminner om bilden med tre exempel. E3 (dag 18) är en kort, varm sista påminnelse. E2 och E3 hoppas över när VA:n satt taggen klubb-bild-klar (bilden har kommit). Klubben är öppen för alla medlemmar; det enda exklusiva är själva dragningen, påstå aldrig att klubben är stängd. Ingen rabattkod, inga påhittade förmåner: vinsten är sushilådan (399 kr) och frakten, ingenting annat. Copyn skriven av en Sonnet-subagent mot docs/copy-regler.md 2026-09-27; huvudsessionen ändrade tre rader (adress utan tidigare beställning, orderbekräftelsen som 'kan komma', 'bilden vi bad om' i stället för 'lovade'); en andra Sonnet-runda gav den tredje ämnesraden per mejl och vinstmeningen utan kronbelopp (bygg.mjs kräver tre ämnesrader och tillåter inga priser i löptext).",
+  "trigger": {
+    "typ": "tagg",
+    "tagg": "klubb-vinnare"
+  },
+  "filter": ["utan_tagg:klubb-bild-klar"],
+  "ateintrade": {},
+  "steg": [
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f08-e1",
+        "namn": "FLOW_vinnare_E1_M_du-drogs-i-klubben_v1",
+        "memo": "Dag 0, skickas samma morgon som 0-kronorsordern läggs. Hypotes: att säga rakt ut vad som hänt (en av tio, slumpen, ingen anmälan) och reda ut de två förvirrande delarna direkt, den vanliga 0-kronorsbekräftelsen som kan komma och att adressen kommer från senaste beställningen, gör att färre svarar med frågor och fler skickar bilden senare. Villkoret och rätten att använda bilden står i klartext här första gången.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "Axels uppdrag 2026-09-27: Klubbdragningen (F08), mekaniken given direkt i uppdraget",
+          "lardom": null,
+          "avatar": "medlem som just vunnit klubbdragningen",
+          "begar": "trygghet",
+          "awareness": "most",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "Klubbdragning",
+          "kod": "M"
+        },
+        "amnesrader": [
+          {
+            "text": "Du är en av tio i dag",
+            "begar": "nyfikenhet: vad har hänt"
+          },
+          {
+            "text": "Vi drog ditt namn i morse",
+            "begar": "personligt: namnet nämnt direkt"
+          },
+          {
+            "text": "Lådan har redan ditt namn",
+            "begar": "konkret: synligt bevis, inte bara ord"
+          }
+        ],
+        "forhandstext": "Sushilådan är på väg, utan kostnad. Så funkar det.",
+        "block": [
+          {
+            "typ": "hero",
+            "rubrik": "Du är en av tio den här veckan",
+            "text": "Varje tisdag morgon drar vi tio medlemmar ur Matstrumpor-klubben. Ett skript slumpar fram namnen. Ingen anmälan, inget köp, ingenting du behövt göra. Den här veckan är du en av de tio.\n\nDu vinner sushilådan med fem par sushistrumpor. Du betalar ingenting, varken för lådan eller frakten.\n\nVi lägger ordern åt dig nu, till adressen från din senaste beställning. Har du aldrig beställt hos oss, har du flyttat, eller stämmer adressen inte: svara på det här mejlet med din adress. Det kan också komma en vanlig orderbekräftelse från butiken där summan är noll. Den är rätt, det är samma order.",
+            "bild": "produkt:sushi-strumpor",
+            "knapp": {
+              "text": "Till klubben",
+              "lank": "https://matstrumpor.se"
+            }
+          },
+          {
+            "typ": "text",
+            "rubrik": "Skicka en bild när lådan kommit",
+            "text": "När lådan har kommit: svara på det här mejlet med en bild på dig själv med strumporna. Genom att skicka bilden ger du oss rätt att visa den i klubbmejl och i annonser. Ditt efternamn skrivs aldrig ut, förnamn och stad bara om du säger ja till det, och du måste ha fyllt 18 år.\n\nVill du inte vara med på bild, eller inte ha lådan: svara \"nej tack\" på det här mejlet, så stryker vi ordern."
+          }
+        ],
+        "tretest": [
+          { "rad": "Du är en av tio i dag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Vi drog ditt namn i morse", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Sushilådan är på väg, utan kostnad. Så funkar det.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Du är en av tio den här veckan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Till klubben", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Skicka en bild när lådan kommit", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Lådan har redan ditt namn", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Du vinner sushilådan med fem par sushistrumpor. Du betalar ingenting, varken för lådan eller frakten.", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+        ],
+        "version": 1
+      }
+    },
+    { "typ": "vanta", "varde": 12, "enhet": "days" },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f08-e2",
+        "namn": "FLOW_vinnare_E2_P_skicka-din-bild_v1",
+        "memo": "Dag 12, lådan bör ha kommit fram. Hypotes: tre konkreta exempel på hur bilden kan se ut sänker tröskeln mer än en generell uppmaning. En vag instruktion ('skicka en bild') ger färre svar än exempel man kan kopiera rakt av. Hoppas över när taggen klubb-bild-klar finns.",
+        "taggar": {
+          "typ": "P",
+          "kalla": "egen-data",
+          "kalla_ref": "Axels uppdrag 2026-09-27: Klubbdragningen (F08), mekaniken given direkt i uppdraget",
+          "lardom": null,
+          "avatar": "medlem som vunnit och väntar på att skicka sin bild",
+          "begar": "delaktighet",
+          "awareness": "most",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "Klubbdragning",
+          "kod": "P"
+        },
+        "amnesrader": [
+          { "text": "Vi väntar på din bild", "begar": "påminnelse: bilden är kvar att skicka" },
+          { "text": "Har lådan kommit fram?", "begar": "nyfikenhet: har paketet anlänt" },
+          { "text": "Din bild kan synas i nästa mejl", "begar": "synlighet: bilden kan visas för andra" }
+        ],
+        "forhandstext": "Tre exempel på hur bilden kan se ut.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Bilden vi väntar på",
+            "text": "Lådan borde ha kommit fram till dig nu. Vi väntar fortfarande på bilden vi bad om i första mejlet: du med strumporna.\n\nDen kan vara enkel: du håller upp lådan i handen, du har ett par på fötterna framför soffan, eller någon tar en snabb bild av dig i köket med strumporna på.\n\nGenom att skicka bilden ger du oss rätt att visa den i klubbmejl och i annonser. Ditt efternamn skrivs som förut aldrig ut.\n\nSvara på det här mejlet med bilden."
+          }
+        ],
+        "tretest": [
+          { "rad": "Vi väntar på din bild", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Har lådan kommit fram?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Tre exempel på hur bilden kan se ut.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Bilden vi väntar på", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Din bild kan synas i nästa mejl", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+        ],
+        "version": 1
+      }
+    },
+    { "typ": "vanta", "varde": 6, "enhet": "days" },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f08-e3",
+        "namn": "FLOW_vinnare_E3_P_sista-paminnelsen_v1",
+        "memo": "Dag 18, sista och korta påminnelsen. Hypotes: kort och varmt, utan tjat, ger fler svar än ett tredje långt mejl. Hoppas över när taggen klubb-bild-klar finns.",
+        "taggar": {
+          "typ": "P",
+          "kalla": "egen-data",
+          "kalla_ref": "Axels uppdrag 2026-09-27: Klubbdragningen (F08), mekaniken given direkt i uppdraget",
+          "lardom": null,
+          "avatar": "medlem som vunnit och ännu inte skickat sin bild",
+          "begar": "tillhorighet",
+          "awareness": "most",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "Klubbdragning",
+          "kod": "P"
+        },
+        "amnesrader": [
+          { "text": "Sista påminnelsen om bilden", "begar": "avslut: sista chansen att vara med" },
+          { "text": "Vi vill gärna ha med dig", "begar": "tillhörighet: vi vill ha med just dig" },
+          { "text": "Hann du ta bilden?", "begar": "omtanke: utan press, bara nyfiken" }
+        ],
+        "forhandstext": "Sista mejlet om bilden, utan press.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Vi vill gärna ha med dig",
+            "text": "Vi hoppas lådan känns bra. Om du fortfarande vill vara med: svara på det här mejlet med en bild på dig med strumporna.\n\nVi visar vinnarna i klubbmejl, och vi vill gärna ha med just dig. Har du redan skickat bilden, är det här mejlet inte till dig.\n\nIngen brådska, bara en sista påminnelse från oss."
+          }
+        ],
+        "tretest": [
+          { "rad": "Sista påminnelsen om bilden", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Vi vill gärna ha med dig", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Sista mejlet om bilden, utan press.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Hann du ta bilden?", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+        ],
+        "version": 1
+      }
+    }
+  ]
+}

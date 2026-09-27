@@ -542,6 +542,9 @@ export async function laddaUpp({ brand, manifest, klient = null, skarpt = false,
   if (kor('floden')) {
     for (const fl of manifest.floden ?? []) {
       try {
+        // Ett flöde som startas av en kundtagg (Spoks contact_tags_added, t.ex. F08
+        // Klubbdragningen) finns bara i Spoks — Klaviyo har ingen motsvarighet här.
+        if (fl.trigger?.typ === 'tagg') { hoppa('flode', fl.namn, 'startas av en kundtagg (Spoks-flöde) — laddas aldrig upp i Klaviyo'); continue; }
         const filt = fl.filter ?? [];
         if (filt.includes('kundundantag')) {
           // Kundundantaget gäller bara den som köpt: triggern måste vara ett köp (lagd eller skickad order).

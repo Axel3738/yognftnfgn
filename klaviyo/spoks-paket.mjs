@@ -331,6 +331,18 @@ export function triggerTillSpoks(t, ctx) {
   if (!t) throw new Error('Flödet saknar trigger.');
   if (t.typ === 'lista') return { event: TRIGGER['Email List'], anmarkning: `Klaviyos lista "${t.lista}" ⇒ contact_created med samtycke som villkor.` };
   if (t.typ === 'segment') return { event: null, anmarkning: `Klaviyo triggar på segmentet ${t.segment}; Spoks har ingen segment-trigger ⇒ mejlen blir kampanjutkast som skickas för hand till motsvarande segment.` };
+  if (t.typ === 'tagg') {
+    // Klubbdragningen (klaviyo/klubb/dragning.mjs) sätter en kundtagg i Shopify;
+    // Spoks synkar kundtaggar (mätt 2026-09-27: 640 kontakter bar Shopify-taggar) och
+    // startar flödet på contact_tags_added. Spoks tillåter inget återinträde där.
+    const taggar = [].concat(t.tagg ?? []).filter(Boolean);
+    if (!taggar.length) throw new Error('Triggern "tagg" behöver minst en tagg.');
+    return {
+      event: 'contact_tags_added',
+      triggerFilter: { type: 'filter', field: 'tags', operator: 'in', value: taggar },
+      anmarkning: `Startar när taggen ${taggar.join('/')} sätts på kunden i Shopify (synkas till Spoks). Spoks tillåter inget återinträde på den triggern: en kontakt går in en gång.`,
+    };
+  }
   if (t.typ === 'metrik') {
     const namn = [].concat(t.metrik)[0];
     const event = TRIGGER[namn];
@@ -362,6 +374,9 @@ export function filterTillSpoks(nycklar = []) {
     else if (n === 'ej_checkout_sedan_start') steg.push(sedanStart('lastCheckout'));
     else if (n === 'kopt_minst_en_gang') trigger.push({ type: 'filter', field: 'totalOrders', operator: 'ge', value: '1' });
     else if (/^ej_i_flodet_\d+d$/.test(n)) { /* Spoks: allowReenrolmentAfter gör samma jobb */ }
+    // utan_tagg:<tagg> — mejlet hoppas över när kunden bär taggen (t.ex. klubb-bild-klar:
+    // VA:n sätter den i Shopify när vinnarens bild kommit, och påminnelserna tystnar).
+    else if (/^utan_tagg:.+$/.test(n)) steg.push({ type: 'filter', field: 'tags', operator: 'nin', value: [n.slice('utan_tagg:'.length)] });
     else throw new Error(`Okänd filternyckel "${n}".`);
   }
   return { trigger: trigger.length ? och(...trigger) : null, steg: steg.length ? och(...steg) : null };
@@ -377,6 +392,7 @@ export const FLODESNAMN = {
   'f05-vinback': 'F05 Vinna tillbaka',
   'f06-sunset': 'F06 Sunset',
   'f07-aterkop-sushi': 'F07 En låda till (sushi, dag 21)',
+  'f08-klubbdragning': 'F08 Klubbdragningen (vinnarna)',
 };
 
 export function flodesnamn(flode) {
@@ -389,7 +405,10 @@ export function flodeTillSpoks(flode, ctx, mejlPerId) {
   const tr = triggerTillSpoks(flode.trigger, ctx);
   if (tr.anmarkning) anmarkningar.push(tr.anmarkning);
   const filt = filterTillSpoks(flode.filter ?? []);
-  const ater = ateintradeTillSpoks(flode.ateintrade);
+  // Spoks: "reenrollEnabled is not allowed when trigger.event is contact_tags_added".
+  const ater = tr.event === 'contact_tags_added'
+    ? { reenrollEnabled: false, allowReenrolmentAfter: null }
+    : ateintradeTillSpoks(flode.ateintrade);
   const namn = flodesnamn(flode);
   if (!tr.event) {
     // Segment-trigger: mejlen blir kampanjutkast.
