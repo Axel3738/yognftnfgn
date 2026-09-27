@@ -105,3 +105,72 @@ kassa, efter köp och vinback. Beslutet prövas igen när flödena går.
 - **Ett korsförsäljningsmejl dag 1–3 efter ordern** är värt ett test i F04. Vår egen data pekar åt två håll: 14 av 16 snabba återköp skedde inom första timmen, men riktiga återköp har median 18 dagar (`ATERKOP-ANALYS.md`).
 - **Butikskredit** är Axels beslut (pengar). Frågan är ställd.
 - **Nya produkter mejlas som kampanj till köparna** (Shaun).
+
+---
+
+## Svar 9, 2026-09-27: klubbdragningen och kundbilderna (Matstrumpor)
+
+Frågan står i `FRAGOR.md` (fråga 9). Axel klistrade in svaret ordagrant; `[Cn]`/`[Dn]`
+är botens källor. Numreringen är botens egen (delvis dubblerad i inklistringen).
+
+> 1. No source has direct data on in-list giveaways lifting engagement, but the community's framework is clear: treat the draw as a revenue mechanism (consolation offers to non-winners), track LTV as the success metric, and use VIP early access as your exclusivity lever rather than the draw itself [C2].
+>    1. Giveaway draws on an email list — engagement lift or freebie-seekers?
+>
+> No source has open/click/repeat-purchase data from in-list draws. What the community does say:
+>    * Spencer's test: "As long as you're tracking LTV, no" — LTV is the metric, not engagement signals [C2]. The question is whether the draw produces paying customers, not whether opens go up.
+>    * Dan on giveaways: target creators (video entry), avoid general audience [D3]. Broad "win free stuff" pulls freebie-seekers. Your draw is scoped to existing buyers, which is better, but the principle stands.
+>    * Spencer on sweepstake vs. per-person reward: a draw is fine for low-friction asks — "if you're doing a long ass survey, for sure, but otherwise just no need IMO" [C3]. A photo submission is a light ask, so capping cost with a draw is the right call rather than giving every responder a box.
+>
+> Your Tuesday draw won't lift open rates just by existing — it needs to be one tactic inside a content strategy, not the strategy itself.
+>    2. Turning winners into usable UGC
+>
+> The sources are blunt about customer photo quality:
+>    * D1: "Raw footage from customers: Often poor unless content creators." The course recommends automating a post-review email offering a discount for video, and building an Instagram for inbound UGC/reposts [D1].
+>    * Shaun on directing people who get free product for UGC: "give examples of what's working but specify it's examples they don't have to follow" [C1]. Send winners a short guide with example photos and angles, without scripting them.
+>
+> * Dan's point about targeting creators with video entry [D3] suggests the best UGC comes from people who already create content. Your random draw will get variable quality — set expectations accordingly.
+>
+> No source covers consent forms, photo resolution requirements, or follow-up sequences for non-responders.
+>
+> 3. Measuring ROI
+>
+> Two frameworks, neither specific to in-list giveaways:
+>
+> * Spencer: track LTV of participants vs. non-participants [C2]. Long-term view.
+> * The VIP lead gen calculator [D2] models list campaigns using: total spend, cost per lead/box, AOV, conversion rate, and offer margin → breakeven ROAS and profit. Their example: 2 weeks, $1,300 spend, 491 leads at $2.78 CPL, tracked lifetime attribution via Triple Whale [D2].
+> * Ankit P's revenue mechanism: on draw day, blast non-winners with a time-limited consolation offer — "it's ok if you didn't win... here is a specific offer... goes down in 72 hours... makes a lot of money for our clients" [C5]. This is how the draw produces revenue beyond free boxes.
+>
+> For your $11/box draw: compare consolation-offer revenue against (cost of 10 boxes + any promo spend). No source specifies the window — the VIP example used 2 weeks of attribution [D2], but Spencer's LTV framing suggests tracking longer [C2].
+>
+> 4. Alternatives to make an auto-enrolled list feel exclusive
+>
+> Strongest coverage here:
+>
+> * The VIP list framework [D2] is exactly this — early access and exclusive discounts for members before the public. Example: "35% off to VIPs compared to 30% for the general public." D2 specifically mentions "providing early access to avoid stock issues" — directly relevant given the sushi box sold out in November.
+> * Exclusivity comes from access, not luck. VIP early access is the proven mechanic; the random draw adds excitement but isn't what makes members feel chosen.
+>
+> * Prerequisite from D2: strong email/SMS program to communicate the offer. You already have the Tuesday campaign and welcome flow — you have the infrastructure.
+>
+> Consider running both: VIP early access as the core exclusivity play, with the draw as a supplementary engagement layer.
+>
+> 5. Reactivating last December's buyers
+>
+> No source covers Christmas buyer reactivation timing or tactics specifically. Available signals:
+>
+> * Shaun on seasonal timing: "for most of the brands launching sale earlier made sense... unless you have strong returning customer rate" [C4]. Your 2.5% repeat rate fails that condition — you can't rely on past buyers returning naturally. Start earlier and actively pull them back.
+> * D3: existing customers stock up (BOGO works), new customers prefer % off single [D3]. Your repeat buyers buy the same box for someone else — a BOGO or multi-box offer aligns with that behavior.
+> * D3: "Funnel buyers wait for bigger sales; make BFCM superior" [D3]. If you discounted last December, buyers may be conditioned — this year's offer needs to beat last year's to pull them back.
+> * D2's VIP early access is directly applicable: email last year's buyers first with early access to the seasonal drop before it goes public. Scarcity is real (sushi box sold out) — lead with it.
+>
+> No source covers gift card strategies, new-variant announcement timing, or reactivation sequence structure for seasonal buyers. Worth asking the community directly — other Q4-heavy operators likely have playbooks
+
+### Vad vi gör med svaret (beslutat med Axel 2026-09-27, se `klaviyo/spoks/README.md` → Klubbkänslan)
+
+| Råd | Hos oss |
+|---|---|
+| Exklusivitet = tillgång, inte tur: VIP-förtur som kärna, dragningen som krydda | **A Förtur blir kärnan**, B Dragningen körs ovanpå. Förra säsongens köpare (segmentet `SEG_kopare_forra_sasongen`) får allt först. |
+| Dragningen ska ge intäkt: tröstpris till icke-vinnare med 72 timmars gräns | Tröstpriset är en rabatt ⇒ Axels beslut (frågan ställd). Utan rabatt är trösten förturen. |
+| LTV är måttet, inte öppningar | Mäts som återköp per medlem dec 2026 mot dec 2025 + tröstprisets intäkt i 14 dagar mot lådornas kostnad. |
+| Kundbilder är ofta dåliga; ge exempel utan att skriva manus | Vinnarna får tre exempelbilder och två rader ("håll upp lådan, ansiktet med"), inget manus. Räkna med att bara en del blir annonsbilder. |
+| Börja tidigare, dra aktivt tillbaka förra årets köpare; slå förra årets erbjudande | Förra decembers rabattkoder mätta i Shopify (nedan). Första köparmejlet flyttas fram i kalendern. |
+| Befintliga kunder bunkrar (BOGO), nya vill ha % på en | Köp 1, få 1 är redan standard och matchar återköparen ("en låda till, till nästa person"). |

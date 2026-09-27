@@ -106,3 +106,34 @@ brådskan "sushilådan tog slut i november förra året" (K06), (3) att klubben 
 något man har, inte något man råkade hamna i.
 
 Mät om efter jul: kohorten dec 2025 mot dec 2026 (`/klaviyo cs`, samma skript).
+
+## 6. Förra säsongens erbjudande (mätt 2026-09-27, styr årets)
+
+| Månad | Ordrar | Med rabattkod | Rabatt per order | AOV |
+|---|---:|---:|---:|---:|
+| 2025-10 | 134 | 1 | 45 kr | 203 kr |
+| 2025-11 | 52 | 0 | 105 kr | 209 kr |
+| **2025-12** | **1 613** | **1** | **141 kr** | 366 kr |
+| 2026-01 | 799 | 0 | 127 kr | 360 kr |
+| 2026-02 (till 31/1-frågans slut) | 67 | 0 | 160 kr | 378 kr |
+
+Rabatten förra säsongen låg som **automatisk rabatt** (ingen kod), i snitt 141 kr per
+order i december. I dag är Köp 1, få 1 en kod på 228 av 239 ordrar. Evolve [D3]: "funnel
+buyers wait for bigger sales; make BFCM superior" — förra årets köpare är vana vid en
+gratis låda, så årets julerbjudande till dem måste vara synligt bättre, eller komma till
+dem först (förturen). Beslutet är Axels (Black Week A/B/C i `klaviyo/README.md`).
+
+## 7. Planen efter Evolves svar (svar 9 i `klaviyo/evolve/SVAR.md`)
+
+1. **Förtur är kärnan.** Förra säsongens köpare (`SEG_kopare_forra_sasongen`, 2 415) får
+   Black Week, restock och sista beställningsdagen före alla andra; övriga medlemmar före
+   sajten. Sant, gratis, och det Evolve kallar "the proven mechanic".
+2. **Dragningen är krydda och intäktsmaskin**, inte strategin: tio medlemmar dras varje
+   tisdag av ett skript med loggat frö; vinnarna får lådan mot en bild (exempel, inget
+   manus, bildtillstånd i svaret, bara vuxna); **icke-vinnarna får samma dag ett tröstpris
+   med 72 timmars gräns** — om Axel vill ha en rabatt där; annars är trösten förturen.
+3. **Måttet är återköp, inte öppningar:** medlemmarnas återköp dec 2026 mot dec 2025,
+   tröstprisets intäkt inom 14 dagar mot kostnaden för tio lådor (≈ 1 150 kr + frakt).
+4. **Börja tidigare med förra årets köpare:** första mejlet till dem tidigast möjligt i
+   oktober (K05 27/10 är sent för en lista som "inte kommer tillbaka av sig själv", Evolve
+   [C4]); flyttas i kalendern när copyn är skriven.

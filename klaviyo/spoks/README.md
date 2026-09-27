@@ -515,6 +515,21 @@ plattformens egen.
   Matstrumpors mejl och annonser"), bara vuxna på bilderna, dragningen görs av ett skript
   över medlemslistan med loggat frö (aldrig handplockat), vinnarna namnges bara med förnamn
   och ort och bara med deras ok. Inget byggs förrän Evolves svar lästs och Axel sagt kör.
+  **Evolves svar (samma förmiddag, `klaviyo/evolve/SVAR.md` svar 9) ändrar planen på tre
+  punkter:** (1) exklusivitet kommer av TILLGÅNG, inte tur ⇒ **A Förtur är kärnan** (förra
+  säsongens köpare får allt först: Black Week, restock, sista chansen), **B Dragningen är
+  krydda** ovanpå; (2) dragningen ska ge intäkt: på dragningsdagen får icke-vinnarna ett
+  tröstpris med 72 timmars gräns ("makes a lot of money") — ett tröstpris är en rabatt ⇒
+  Axels beslut, frågan ställd; utan rabatt är trösten förturen; (3) måttet är LTV/återköp,
+  inte öppningar: återköp per medlem dec 2026 mot dec 2025, plus tröstprisets intäkt 14
+  dagar mot lådornas kostnad. Kundbilder: räkna med ojämn kvalitet, ge vinnarna tre
+  exempelbilder utan manus. **Mätt i Shopify för "slå förra årets erbjudande":** okt 2025–feb
+  2026 hade i praktiken **noll rabattkoder** (1 av 134, 0 av 52, 1 av 1 613, 0 av 799) men
+  **141 kr rabatt per order i december** (AOV 366 kr) — rabatten låg som automatisk rabatt,
+  inte kod. I dag bär 228 av 239 ordrar en Köp 1, få 1-kod. Förra årets köpare är alltså
+  vana vid ett gratis-låda-erbjudande; årets julerbjudande till dem måste vara synligt
+  bättre eller komma tidigare/först (förturen) för att dra tillbaka dem. Black Week-frågan
+  A/B/C (`klaviyo/README.md`) hänger ihop med det här och står fortfarande öppen.
 - **Nästa steg (påminnelse `trig_01AoYRfSaHJzbEicy2x49r9h`, ons 30/9 10:00 CEST):** K01:s
   statistik i båda butikerna, rätta "Ångerrätt" + F06 E2:s kommatecken (ovan), förbered
   Bäverbutikens K02 (tor 1/10) och Matstrumpors K02 (tis 6/10) med länk, utseende och publik.
