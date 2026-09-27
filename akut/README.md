@@ -103,8 +103,12 @@ med Axels eget konto; meddelandena postas alltså som honom.
   `carashell.se` svarar med carashell.com (302) — det är 200 och rätt.
 - `toLocaleString('sv-SE')` sätter hårda mellanslag i talen; `kr()` byter till
   vanliga så "18 512 kr" går att söka på.
-- Metas `today` räknas i kontots tidszon (UK-kontot: London); nyckelns datum
-  är svenskt. En timmes skillnad vid midnatt är ofarlig.
+- Metas `today` räknas i kontots tidszon (UK-kontot: London). Nyckeln för
+  "pengar brinner" bär därför Metas eget `date_start` (`dag` på kampanjen),
+  svenskt datum bara som reserv. Första versionen byggde nyckeln på svenskt
+  datum och kallade timmen vid midnatt "ofarlig" — mätt 2026-09-28 00:29:
+  samma USA-kampanj, samma London-dygn, kom tillbaka som ett NYTT larm med
+  22 419 kr, en timme efter att 27/9-larmet postats. Ett dygn är kontots dygn.
 - `kampanjTillhor` matchar prefixet som ORD i namnet (`AU LISTICLE Taköverdrag
   CARASHELL` är CaraShells) — samma regel som sajtens MER.
 - Rutinvakten i en grund klon: `rutinlage` fördjupar historiken själv

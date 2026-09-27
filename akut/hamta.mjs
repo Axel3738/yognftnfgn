@@ -69,8 +69,11 @@ export async function hamtaMetaKonton(konton, { env = process.env, fetchFn = fet
     try {
       const konto = await metaApi(`act_${k.id}`, { fields: 'account_id,name,account_status,disable_reason,currency,spend_cap,amount_spent' }, { env, fetchFn });
       const j = await metaApi(`act_${k.id}/insights`, { level: 'campaign', date_preset: 'today', fields: 'campaign_id,campaign_name,spend,actions,purchase_roas', limit: 200 }, { env, fetchFn });
+      // dag = Metas eget dygn (kontots tidszon, UK-kontot går på London). Nyckeln för
+      // "pengar brinner" bär det, inte svenskt datum — annars blev samma dygn ett
+      // nytt larm när svensk tid passerat midnatt (mätt 2026-09-28 00:29).
       const kampanjer = (j.data ?? []).map((r) => ({
-        id: r.campaign_id, namn: r.campaign_name, spend: Number(r.spend) || 0,
+        id: r.campaign_id, namn: r.campaign_name, spend: Number(r.spend) || 0, dag: r.date_start ?? null,
         kop: Number((r.actions ?? []).find((a) => a.action_type === 'omni_purchase')?.value) || 0,
         roas: (() => { const x = (r.purchase_roas ?? []).find((a) => a.action_type === 'omni_purchase'); return x ? Number(x.value) || 0 : null; })(),
       }));

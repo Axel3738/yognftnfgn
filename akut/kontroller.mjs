@@ -208,11 +208,14 @@ export function domKonton(konton = [], { nu = new Date() } = {}) {
 // ------------------------------------------------------------ pengar brinner
 
 /**
- * konton: samma lista, med kampanjer: [{ id, namn, spend, kop, roas }] för i DAG.
+ * konton: samma lista, med kampanjer: [{ id, namn, spend, kop, roas, dag }] för i DAG.
  * Två regler, båda med höga trösklar med flit — Skalnings kungen och
  * nattvakterna dömer annonser; det här larmar bara när det brinner:
  *   1. ≥ pengar_noll_kop_spend i dag och NOLL köp
  *   2. ≥ pengar_under_be_spend i dag och ROAS under halva break-even (ur namnet)
+ * Nyckelns datum är Metas eget dygn (`dag` = insights date_start, kontots
+ * tidszon), svenskt datum bara som reserv: UK-kontot går på London, så vid
+ * svensk midnatt är det fortfarande samma dygn hos Meta — och samma larm.
  */
 export function domPengar(konton = [], { nu = new Date(), trosklar = TROSKLAR, varumarken = [] } = {}) {
   const datum = dagnyckel(nu);
@@ -240,7 +243,7 @@ export function domPengar(konton = [], { nu = new Date(), trosklar = TROSKLAR, v
         : [`"${c.namn}" har dragit ${kr(spend, valuta)} i dag med ${kop} köp, ${roasText} (${beText}). Mätt ${klockan(nu)}, konto ${k.namn}.`];
       rader.push('Ingen session eller rutin rör dina budgetar — det här är ditt beslut.');
       larm.push({
-        typ: 'pengar', nyckel: `pengar:${k.id}:${c.id}:${datum}`, verksamhet: vm,
+        typ: 'pengar', nyckel: `pengar:${k.id}:${c.id}:${/^\d{4}-\d{2}-\d{2}$/.test(c.dag ?? '') ? c.dag : datum}`, verksamhet: vm,
         rubrik: regel === 'noll' ? `Pengar brinner: ${kr(spend, valuta)} i dag, 0 köp` : `Pengar brinner: ${kr(spend, valuta)} i dag, ROAS ${roas === null ? '–' : tal(roas)}`,
         rader,
         gor: [

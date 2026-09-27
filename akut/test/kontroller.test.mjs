@@ -100,6 +100,21 @@ test('pengar brinner: noll köp över 5 000, eller ROAS under halva break-even �
   assert.equal(larm[2].data.regel, 'under_okand');
   assert.match(larm[2].rader[0], /break-even står inte i kampanjnamnet/);
   assert.match(larm[0].gor[0], /kampanjen "1 CARASHELL_US_Taköverdrag"/, 'namnet utan BE-svansen');
+});
+
+test('pengar brinner: nyckeln bär Metas eget dygn, inte svenskt datum — samma larm efter svensk midnatt', () => {
+  const k = (kampanjer) => [{ id: '1107817401910319', namn: 'Magiborsten UK', verksamhet: 'baverbutiken', konto: { currency: 'SEK' }, kampanjer, fel: null }];
+  const efterMidnatt = new Date('2026-09-27T22:29:00Z'); // 00:29 svensk tid 28/9, 23:29 i London 27/9
+  const { larm } = domPengar(k([
+    { id: 'a', namn: '1 CARASHELL_US_Taköverdrag | BE-ROAS 1.63', spend: 22419, kop: 4, roas: 0.52, dag: '2026-09-27' },
+    { id: 'b', namn: 'Utan dag | BE-ROAS 1.63', spend: 6000, kop: 0, roas: null },
+    { id: 'c', namn: 'Trasig dag | BE-ROAS 1.63', spend: 6000, kop: 0, roas: null, dag: 'igår' },
+  ]), { nu: efterMidnatt, varumarken: VARUMARKEN });
+  assert.deepEqual(larm.map((l) => l.nyckel), [
+    'pengar:1107817401910319:a:2026-09-27',
+    'pengar:1107817401910319:b:2026-09-28',
+    'pengar:1107817401910319:c:2026-09-28',
+  ]);
   for (const l of larm) assert.match(l.rader.at(-1), /ditt beslut/);
 });
 
