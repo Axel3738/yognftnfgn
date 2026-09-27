@@ -501,6 +501,20 @@ plattformens egen.
   segmentet, aldrig påhittat), **C Medlemsreserven** (X lådor hålls undan för klubben till
   8/12 — sant bara om lagret faktiskt hålls undan). Copyn skrivs om (F01 E1, K05–K08) av en
   Sonnet-subagent enligt regel 6 FÖRST när Axel valt, så varje "utvald"-rad är falsifierbar.
+  **Axels riktning samma förmiddag:** lutar åt **B (dragningen)**, med villkoret att
+  vinnarna skickar bilder på sig själva med strumporna som får användas i mejl och annonser
+  ("vi har noll kundbilder"), och att **Evolve-boten frågas först** (`klaviyo/evolve/FRAGOR.md`
+  fråga 9; svaret sparas i `SVAR.md`). ROI-ramen: en låda kostar 80,61 kr inköp + 2,9 EUR
+  tull per försändelse (≈ 33 kr) + frakt till kund (okänd, står inte i konfigen) ⇒ cirka
+  115 kr + frakt per vinnare, ~1 150 kr + frakt i veckan för tio; jämför 5 000–20 000 kr per
+  influencersamarbete (`stonebite/profil.json`). Mäts som (1) klick och köp i mejlen med
+  vinnarbilder mot mejlen utan, (2) annonserna byggda på bilderna genom vanliga
+  analysmetoden (vinstbidrag), (3) återköp bland medlemmar dec 2026 mot dec 2025. Spärrar
+  som inte förhandlas: deltagandet är gratis och kräver inget köp (annars ett lotteri som
+  kräver licens, spellagen), bildtillstånd i skrift i svaret ("bilden får användas i
+  Matstrumpors mejl och annonser"), bara vuxna på bilderna, dragningen görs av ett skript
+  över medlemslistan med loggat frö (aldrig handplockat), vinnarna namnges bara med förnamn
+  och ort och bara med deras ok. Inget byggs förrän Evolves svar lästs och Axel sagt kör.
 - **Nästa steg (påminnelse `trig_01AoYRfSaHJzbEicy2x49r9h`, ons 30/9 10:00 CEST):** K01:s
   statistik i båda butikerna, rätta "Ångerrätt" + F06 E2:s kommatecken (ovan), förbered
   Bäverbutikens K02 (tor 1/10) och Matstrumpors K02 (tis 6/10) med länk, utseende och publik.

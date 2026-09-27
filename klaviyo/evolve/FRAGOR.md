@@ -99,3 +99,27 @@ Our products are not consumables, so there is no natural repurchase cycle. When 
 ```
 My subscribed list is ~6,000, mostly past buyers. For repeat purchases, how many campaigns per week do general stores send, and what works: "new product this week" drops, seasonal bundles, or bestseller emails? What repeat rate after 90 days would members call good for a general store?
 ```
+
+---
+
+**Fråga 9: klubbdragningen och kundbilderna (Matstrumpor, 2026-09-27)**
+
+Bakgrund: Axels beställning 2026-09-27 — klubben ska kännas exklusiv, urgent och
+slumpmässig, och vinnarna ska skicka bilder på sig själva med strumporna som vi får
+använda i mejl och annonser. Axel: "Ska vi inte fråga Evolve-botten om tips först."
+Klistras in ordagrant; svaret klistras tillbaka och sparas i `SVAR.md`.
+
+```
+Different store this time: Swedish gift brand selling sock boxes that look like sushi/pizza/donuts (5 pairs, ~$40, "buy 1 get 1" is the standard order). It's a Christmas product: 86% of all orders are December to March, the sushi box SOLD OUT in November last year. 4,000 customers, 2,900 subscribed. Only ~2.5% of buyers ever buy again, but the ones who do buy the same box again for another person.
+
+We run the email list as a "members club" (welcome flow with a membership card, weekly Tuesday campaign, no discount codes). I want members to feel chosen and the club to feel urgent and exclusive, even though anyone who buys is auto-enrolled.
+
+Plan I'm considering: every Tuesday we randomly draw 10 members who get a free box. The deal: winners send us a photo of themselves wearing/holding the socks, and we get to use those photos in emails and Meta ads (we currently have zero customer photos). Cost is ~$11 per box.
+
+Questions:
+1. Does the community have data or examples on giveaways/draws inside an email list: do they lift open/click/repeat purchase, or just attract freebie-seekers?
+2. How do brands in the community turn winners into usable UGC (photo quality, consent, how to ask so people actually send)?
+3. How would you measure ROI on this: what to compare, over what window?
+4. Better alternatives to make a free, open list feel exclusive: early access windows, member-only stock reserve, anything proven?
+5. Anything specific for a seasonal product where the goal is that last December's buyers come back this December?
+```
