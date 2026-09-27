@@ -2385,3 +2385,16 @@ produktsidan engelsk utom Judge.me-recensionerna (svenska/norska — Axel:
 "Spåra paket" → "Track your parcel" / "Spor pakken" / "Følg pakken" /
 "Seuraa pakettia" (LINK-översättning) och "Verifierat köp" → per språk i
 `sections/ms-review-slider.liquid` + `ms-reviews.liquid`.
+
+**Axels svar ~13:55 CEST: B — bara flödet på Facebook + Instagram, Reels
+förblir av.** Och om språkfelet: "jag vet inte men du behöver hålla koll på
+det". Därför **marknadsvakten** (`factory/marknadskoll.mjs carashell
+--marknad US`, körs av US-rutinen varje dag, steg 6b i `/ops-oversatt`):
+placeringarna per adset (rättar glidningar), spend per placering i går + i dag,
+och språket på startsidan, annonsernas landningssidor, produktsidorna och
+kassan som amerikansk kund i Chromium. Första körningen ~14:20 CEST: 12 av 12
+adsets rätt, 76 annonser ACTIVE, startsidan 88 rader / landningssidan 34 /
+produktsidan 105 — 0 svenska, kassan `en-US` med United States förvalt, inget
+larm. Dagens 16 655 kr i Stories redovisas som "före bytet" (adseten ändrades
+11:32 UTC), inte som larm; från i morgon larmar vakten varje krona utanför
+flödet.
