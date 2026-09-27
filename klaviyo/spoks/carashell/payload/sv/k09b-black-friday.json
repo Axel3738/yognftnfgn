@@ -1,30 +1,22 @@
 {
-  "id": "k09-black-week-utan-rabatt",
+  "id": "k09b-black-friday",
   "sprak": "sv",
-  "emailTitle": "Det kunderna säger om taket",
-  "emailDescription": "Ord från de som redan har det på taket.",
+  "emailTitle": "Black Friday: trappan gäller till och med måndag",
+  "emailDescription": "Fler varor i samma beställning ger fortfarande högre rabatt.",
   "amnesrader": [
-    "Det kunderna säger om taket",
-    "Skydd som redan bevisat sig",
-    "Innan du bestämmer dig, läs det här"
+    "Black Friday: trappan gäller till och med måndag",
+    "10 %, 20 % eller 30 % kvar till och med måndag",
+    "Taket och rutan i samma beställning ger fortfarande 20 %"
   ],
   "blocks": [
     {
-      "type": "quote",
-      "text": "\"Bra skydd för taket och lätt att använda.\"\nKarin, verifierad kund"
-    },
-    {
-      "type": "quote",
-      "text": "\"Jag är nöjd med överdraget. Rekommenderas.\"\nErik, verifierad kund"
-    },
-    {
       "type": "h1",
-      "text": "Orden är deras, inte våra",
+      "text": "Black Friday, till och med måndag 30 november",
       "alignment": "center"
     },
     {
       "type": "regular",
-      "text": "Skyddet har redan suttit på taken en vinter. Här är vad ägarna själva säger om det.",
+      "text": "Samma trappa gäller på Black Friday: fler varor i samma beställning ger högre rabatt, helt automatiskt i kassan. Sista dagen för trappan är måndag 30 november.",
       "alignment": "center"
     },
     {
@@ -32,7 +24,7 @@
       "selectionMode": "manual",
       "products": [
         {
-          "id": "40a22a57-d0df-41b6-9202-2b22cc2e0d29",
+          "id": "c38c04bb-fb13-4894-aa85-3b70c71b5891",
           "button": "Se produkten"
         }
       ],
@@ -52,9 +44,30 @@
     },
     {
       "type": "link",
-      "text": "Se taköverdraget",
-      "url": "https://carashell.se/products/takskyddet",
+      "text": "Handla nu",
+      "url": "https://carashell.se/collections/sortimentet",
       "style": "button"
+    },
+    {
+      "type": "h2",
+      "text": "Trappan gäller fortfarande"
+    },
+    {
+      "type": "list",
+      "text": "1 vara ger 10 % rabatt"
+    },
+    {
+      "type": "list",
+      "text": "2 varor ger 20 % rabatt"
+    },
+    {
+      "type": "list",
+      "text": "3 varor eller fler ger 30 % rabatt"
+    },
+    {
+      "type": "h2",
+      "text": "Taket och rutan tillsammans: 20 %",
+      "alignment": "center"
     },
     {
       "type": "products",
@@ -62,7 +75,15 @@
       "products": [
         {
           "id": "40a22a57-d0df-41b6-9202-2b22cc2e0d29",
-          "button": "Beställ taköverdraget"
+          "button": "Se produkten"
+        },
+        {
+          "id": "c38c04bb-fb13-4894-aa85-3b70c71b5891",
+          "button": "Se produkten"
+        },
+        {
+          "id": "c4d0ddd4-298b-4703-9de0-646db8afb6c6",
+          "button": "Se produkten"
         }
       ],
       "dynamicProductsCount": null,
@@ -77,12 +98,7 @@
       },
       "buttonText": null,
       "alignment": "center",
-      "productsPerRow": 1
-    },
-    {
-      "type": "regular",
-      "text": "14 dagars ångerrätt om det ändå inte passar.",
-      "alignment": "left"
+      "productsPerRow": 3
     },
     {
       "type": "columns",

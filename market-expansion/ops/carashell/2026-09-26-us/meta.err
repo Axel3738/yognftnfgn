@@ -1,0 +1,32 @@
+(node:1328) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+=== ops-till-meta — CaraShell (carashell/takskyddet) · marknad US · konto 1107817401910319 (Magiborsten UK) ===
+1. Butik: prefix carashellroof_ · carashellroof · annons "CaraShellRoof_US_OB_112_1" · bild CaraShellRoof_US_OB_112_1.jpg (0.19 MB)
+3. Marknadskoll: "CaraShellRoof_US_OB_112_1" bär US — ok för US
+2. Kampanj (--kampanj): "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia" (120251451415500435) ACTIVE/ACTIVE — matchar via annonserna, inte namnet
+   CBO: 16000 kr/dag · kampanjbas "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m"
+4. Dubblett: "CaraShellRoof_US_OB_112_1" finns inte bland kontots 431 annonser — ok
+5. Koncept OB → adset "CARASHELL_US_OB" (120251517179380435) — finns, ACTIVE
+6. Sida 1381171778405935 (ärvd) (ingen IG) · länk https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US (ärvd) · DSA saknas — skickar inget
+7. Media: bild uppladdad, image_hash 5d56b91563d3fb3b19dfcf84548976ff
+8. Creative-spec (SHOP_NOW, alla enhancements OPT_OUT):
+   {
+     "page_id": "1381171778405935",
+     "link_data": {
+       "image_hash": "5d56b91563d3fb3b19dfcf84548976ff",
+       "link": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US",
+       "message": "A full cover protects more of your rig, but it's heavy to wrestle on by yourself and rubs against the paint all winter long.\nThe roof is what you never see, and what costs the most to repair.\nOur cover sits there only, 21 × 10 ft, with straps on all four sides that hold it down when the wind picks up.\n$199 (was $249), save $50 (20% off).",
+       "name": "The roof, not the whole rig.",
+       "description": "Protects the priciest spot.",
+       "call_to_action": {
+         "type": "SHOP_NOW",
+         "value": {
+           "link": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US"
+         }
+       }
+     }
+   }
+8. Annons skapad PAUSED: CaraShellRoof_US_OB_112_1 (120251624621420435), creative 1883691246372588
+9. Aktiverad: annons 120251624621420435: PAUSED → ACTIVE
+   Tillbakaläsning: CaraShellRoof_US_OB_112_1 → ACTIVE / effective IN_PROCESS (adset 120251517179380435)

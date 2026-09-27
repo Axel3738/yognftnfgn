@@ -1,0 +1,104 @@
+{
+ "_kalla": "Rutor mätta 2026-09-26 ur SE-bilden med matrader.py (mörk text) och --ljus (vit text på pill/knapp). Bilden är 1080×1350. Textstorlekarna är KALIBRERADE mot de svenska radernas uppmätta bläckbredd i Liberation Sans (kalibrera.py): rubrik 78, underrad 40, etikett 24, pris 32, knapp 41. ⚠️ Storlekarna är INTE gårdagens OB_105-mall (där var underraden 32 och prisraden 89) — mallen är en annan, mät per bild. Rutorna för etikett och knapp ligger med flit i formens MITTBAND, aldrig över de rundade hörnen: suddningen fyller avvikande pixlar med rutans median, så en ruta som tar med hörnen målar fotot svart och fyrkantar pillret.",
+ "CaraShellRoof_OB_112_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      20,
+      52,
+      1060,
+      400
+     ],
+     "post": 0,
+     "rader": 3,
+     "storlek": 78,
+     "fet": true,
+     "radavstand": 1.6,
+     "farg": [
+      19,
+      18,
+      16
+     ]
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      40,
+      440,
+      1040,
+      560
+     ],
+     "post": 0,
+     "rader": 2,
+     "storlek": 40,
+     "radavstand": 1.7,
+     "farg": [
+      20,
+      19,
+      17
+     ]
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      54,
+      704,
+      550,
+      750
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 24,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ]
+    }
+   ],
+   "3": [
+    {
+     "box": [
+      60,
+      1074,
+      1020,
+      1140
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 32,
+     "utvidga": 6,
+     "farg": [
+      23,
+      22,
+      21
+     ],
+     "troskel": 25
+    }
+   ],
+   "4": [
+    {
+     "box": [
+      274,
+      1230,
+      806,
+      1290
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 41,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ]
+    }
+   ]
+  }
+ }
+}

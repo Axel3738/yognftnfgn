@@ -1,5 +1,7 @@
 # Customer wants to return a product
 
+**The PDF attached to this row is an older version with an old address.** Where it differs from this page, follow this page and take the return address from Store facts.
+
 Internal use only. Works for every store — the per-store values are in the "Store facts" table, everything else is the same procedure.
 
 ## Use this when
@@ -22,7 +24,7 @@ delivery promise, return window — is on the page **Store facts**. Take it from
 and never type a store name, a domain or an address into this procedure.
 
 
-Return address and company name per store: the return address (Store facts) (⚠️ OWNER: per store — never copy another store's address).
+Return address and company name: the return address in **Store facts** — copy it from there, never type it from memory.
 
 ## RETURN POLICY SUMMARY
 

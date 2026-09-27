@@ -25,6 +25,8 @@ test('riktiga kommentarer 2026-09-24 hamnar i rätt hink', () => {
     ['Vad kostar den?', NIVA.FRAGA, 'pris'],
     ['Bäverbukten finns det även till helintegrerade husbilar?', NIVA.FRAGA, 'storlek/passform'],
     ['Jag har beställt men inte fått något på 3 veckor', NIVA.ALLVARLIGT, 'ej levererat'],
+    // Dansk köpare på svensk sida 2026-09-27 — föll till "övrigt" tills fraserna lades in
+    ['Bestilte 2 stk den 17 har inte hørt fra jer endnu Føler sig luret', NIVA.ALLVARLIGT, 'ej levererat'],
     ['Bluff!! Köp inte', NIVA.ALLVARLIGT, 'bluff-anklagelse'],
     ['I bought one and it broke after a week', NIVA.ALLVARLIGT, 'missnöjd köpare'],
     ['Is this legit?', NIVA.INVANDNING, 'förtroende'],

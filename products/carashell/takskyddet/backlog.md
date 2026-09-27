@@ -53,6 +53,13 @@ Plockas ett item: märk raden `[använd i batch #N]` i stället för att radera 
 | **"Vad händer med takluckan?"** — OB som visar takluckan under skyddet, gärna med takdistanserna nedan | Ventilation/kondens är största invändningen samma natt i SE, NO, DK och US ("Is it breathable? Don't want mold to grow", "Hva med kondens mellom trekk og vogn?"). Inget får påstås om att väven andas förrän leverantören svarat. | kommentarer på CaraShellRoof_PD_2_1, SP_5_1, US_SP_2_1, NO_BOF_107_1, DK_SP_104_H1, 5 belägg, 25–26 sep, `kalla=voc`, se `kommentarer/leads.md` | **väntar** — leverantörens svar om väven först |
 | **"Samma skydd, två namn"** — förtroende i US: SP med riktiga engelska recensioner | Två US-kommentarer drar slutsatsen att sajten inte är äkta eftersom samma skydd syns under ett annat namn (1 like). Kräver att storleksvalet och recensionerna på den engelska sidan är rättade först. | kommentarer på CaraShellRoof_US_GT_105_H1, 2 belägg, 25–26 sep, `kalla=voc`, se `kommentarer/leads.md` | **väntar** — Axels sidfix först |
 
+## Nytt i backloggen 2026-09-27 (`/kommentarer`, kundens egna ord)
+
+| Koncept | Varför just detta | Källa | Status |
+|---|---|---|---|
+| **Sidfix, inte brief: 1 st förvald på carashell.com** | Paketrutan förvalde 2 st (15 % rabatt) så annonsens $199 blev $338 i kassan, och kunden skrev "Scam" offentligt. Erbjudandet är Axels beslut (`offer.paket` i takskyddet.yaml gäller alla marknader). | kommentar på CaraShellRoof_US_BOF_101_1, 1 belägg, 26 sep, `kalla=voc`, se `kommentarer/leads.md` | **väntar** — Axels beslut |
+| **"Vilken storlek har jag?" för US** — bild/OB med storlekstabellen 18 till 44 ft och regeln "längden närmast över taket" | Sex frågor på ett dygn: 22 ft, 39 ft, 13 ft, fifth wheel, 7,5 m (DK), plus AC-aggregatet igen. Förstärker "Nio storlekar" ovan; AC-delen väntar på leverantören. | kommentarer på CaraShellRoof_US_SP_2_1, US_BOF_109_1, US_BOF_107_1, US_CO_103_H1, DK_SP_5_1, 6 belägg, 26 sep, `kalla=voc`, se `kommentarer/leads.md` | **väntar** |
+
 ⚠️ De fem ursprungliga koncepten är alla plockade (batch #2). De två som briefades
 som video och aldrig blev gjorda — **#4 "En person, en minut"** och **#5
 "Husbilen, inte husvagnen"** — är omgjorda till bild i batch #3 (`PD_7_1` och

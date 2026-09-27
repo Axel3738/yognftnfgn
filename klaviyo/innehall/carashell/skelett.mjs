@@ -276,8 +276,10 @@ export const FLODEN = [
 // Rytmen: en tisdag i veckan per språk, 29/9–29/12, julveckan tom. Svenska och
 // norska 18:00 svensk tid; engelskan 16:00 svensk tid (10:00 New York — 54 av
 // 60 engelska prenumeranter är i USA). Alla går till SEG_samtycke_<sprak>: listan
-// är 76 personer, ingen uppvärmningstrappa behövs. Black Week (vecka 48) byggs
-// UTAN rabatt tills Axel valt A/B/C.
+// är 76 personer, ingen uppvärmningstrappa behövs. Black Week (vecka 48) bär
+// trappan 10/20/30 % (Axels beslut B 2026-09-26: samma som Bäverbutiken, tre
+// automatiska rabatter i Shopify 23–30/11, klaviyo/black-week-trappa.mjs):
+// K09 tisdag 24/11 öppnar, K09b Black Friday fredag 27/11 påminner.
 
 const TID = { sv: 'T18:00:00+02:00', nb: 'T18:00:00+02:00', en: 'T16:00:00+02:00' };
 const TID_CET = { sv: 'T18:00:00+01:00', nb: 'T18:00:00+01:00', en: 'T16:00:00+01:00' };
@@ -413,25 +415,29 @@ export const KAMPANJER = [
     ],
   },
   {
-    id: 'k09-black-week-utan-rabatt', datum: '2026-11-24', prefix: 'CaraShellRoof', kod: 'SP', nr: 1, awareness: 'product', hook: 'kundernas-ord',
-    memo: 'Black Week-veckan UTAN rabatt (Axels beslut A/B/C väntar). sv/nb: social proof med butikens egna publicerade recensioner (SP är CaraShells vinkel, dna.md mönster 11). en: tryggheten i stället (90-day guarantee, free shipping, hur en retur går till) eftersom inga engelska recensioner finns att citera. Väljer Axel en rabatt skrivs det här mejlet om och ett Black Friday-mejl läggs till fre 27/11.',
-    taggar: { typ: 'I', kalla: 'egen-data', kalla_ref: 'products/carashell/takskyddet/dna.md mönster 11 (SP_2_1); factory/produkter/takskyddet.yaml#reviews', avatar: 'prenumeranten som inte köpt än', begar: 'trygghet', urgency: 'ingen', confidence: 'medium' },
-    brief: (s) => s === 'en'
-      ? `Hero: tryggheten (90-day guarantee, free shipping — bara faktabladets ord). Punkter: guarantee, shipping, how to return (email first). Produktkort, fakta. ${EN_HEMISFAR} Inga recensioner, inga siffror om recensioner.`
-      : 'Citat först (två), sedan hero med kundernas ord som rubrik, produktkort, fakta. Inga påhittade omdömen; blocket citat hämtar butikens egna.',
-    block: (s) => s === 'en'
-      ? [
-        { typ: 'hero', rubrik: c('rubrik: tryggheten'), text: c('1–2 meningar'), bild: 'produkt:takskyddet', knapp: { text: c('knapp'), lank: 'produkt:takskyddet' } },
-        { typ: 'punkter', rubrik: c('rubrik'), punkter: [c('guarantee'), c('shipping'), c('how to return')] },
-        { typ: 'produkt', handle: 'takskyddet', text: c('en mening'), knapp: c('knapp') },
-        { typ: 'fakta' },
-      ]
-      : [
-        { typ: 'citat', handle: 'takskyddet', antal: 2 },
-        { typ: 'hero', rubrik: c('rubrik: kundernas ord'), text: c('1–2 meningar'), bild: 'produkt:takskyddet', knapp: { text: c('knapp'), lank: 'produkt:takskyddet' } },
-        { typ: 'produkt', handle: 'takskyddet', text: c('en mening'), knapp: c('knapp') },
-        { typ: 'fakta' },
-      ],
+    id: 'k09-black-week-trappan', datum: '2026-11-24', prefix: 'CaraShellMix', kod: 'S', nr: 2, awareness: 'promo', hook: 'trappan-10-20-30', rabatt: 'black_week',
+    memo: 'Axels beslut B 2026-09-26: samma rabattrappa som Bäverbutiken, tre automatiska rabatter i CaraShells Shopify (Black Week 10/20/30 %, måndag 23/11 till och med måndag 30/11, alla produkter, ingen kod, kombineras bara med fri frakt). K09 öppnar veckan och förklarar trappan så att den går att förstå på fem sekunder, med de tre skydden som kan kombineras till nästa nivå (Bäverbutikens K11 är förlagan, egen copy). Adventskalendern är inte med: lucka 1 hinns inte (sista beställning fre 13/11).',
+    taggar: { typ: 'S', kalla: 'egen-data', kalla_ref: 'Axels beslut B 2026-09-26; brands/carashell.json#black_week; klaviyo/innehall/baverbutiken/kampanjer/k11-black-week-start.json', avatar: 'prenumeranten som ändå tänkt skydda vagnen och väntat på rätt tillfälle', begar: 'spara-pengar', urgency: 'pris', confidence: 'medium' },
+    brief: (s) => `Hero: trappan på en rad (rubrik) och 1–2 meningar: rabatten dras automatiskt i kassan, ingen kod, den gäller till och med måndag 30 november och räknas på antalet varor i varukorgen. Punkter: exakt tre rader, 1 vara 10 %, 2 varor 20 %, 3 varor eller fler 30 % (siffrorna exakt så, inga andra procent, inga belopp). Produktrad med taköverdraget, termoskyddet och fönstertermomattan: rubriken säger att två skydd ger nästa nivå. ${s === 'en' ? 'Inget citat. ' + EN_HEMISFAR + ' Black Week och Black Friday är ok.' : 'Ett citat ur butikens egna recensioner efter produktraden.'} Fakta. Förbjudet: sista chansen, bara idag, belopp, leveranstid, butikens namn.`,
+    block: (s) => [
+      { typ: 'hero', rubrik: c('rubrik: trappan på en rad'), text: c('1–2 meningar: kassan drar rabatten själv, ingen kod, till och med måndag 30 november'), bild: 'produkt:takskyddet', knapp: { text: c('knapp'), lank: 'kollektion:sortimentet' } },
+      { typ: 'punkter', rubrik: c('rubrik: så funkar trappan'), punkter: [c('1 vara: 10 %'), c('2 varor: 20 %'), c('3 varor eller fler: 30 %')] },
+      { typ: 'produktrad', rubrik: c('rubrik: två skydd ger nästa nivå'), handles: ['takskyddet', 'termoskyddet', 'fonstertermomatta-2-pack'] },
+      ...(s === 'en' ? [] : [{ typ: 'citat', handle: 'takskyddet', antal: 1 }]),
+      { typ: 'fakta' },
+    ],
+  },
+  {
+    id: 'k09b-black-friday', datum: '2026-11-27', prefix: 'CaraShellMix', kod: 'S', nr: 3, awareness: 'promo', hook: 'black-friday-till-mandag', rabatt: 'black_week',
+    memo: 'Black Friday-mejlet som K09:s memo lovade om Axel valde en rabatt (beslut B 2026-09-26). Påminner om trappan på fredagen, med det riktiga slutdatumet (måndag 30 november) som enda brådska. Samma tre skydd, en ny vinkel: rutan och taket på en gång.',
+    taggar: { typ: 'S', kalla: 'egen-data', kalla_ref: 'Axels beslut B 2026-09-26; brands/carashell.json#black_week; klaviyo/innehall/baverbutiken/kampanjer/k12-black-friday.json', avatar: 'den som öppnade K09 men inte beställt', begar: 'spara-pengar', urgency: 'pris', confidence: 'medium' },
+    brief: (s) => `Kort mejl. Hero: Black Friday och att trappan gäller till och med måndag 30 november (det är den enda brådskan, den är sann). Punkter: samma tre rader som K09 (1 vara 10 %, 2 varor 20 %, 3 varor eller fler 30 %). Produktrad med de tre skydden och en rubrik om att taket och rutan tillsammans ger 20 %. Fakta. ${s === 'en' ? EN_HEMISFAR + ' Black Friday är ok.' : ''} Förbjudet: sista chansen, bara idag, belopp, leveranstid, butikens namn, andra procent än 10/20/30.`,
+    block: [
+      { typ: 'hero', rubrik: c('rubrik: Black Friday, trappan gäller till och med måndag'), text: c('1–2 meningar'), bild: 'produkt:termoskyddet', knapp: { text: c('knapp'), lank: 'kollektion:sortimentet' } },
+      { typ: 'punkter', rubrik: c('rubrik: trappan'), punkter: [c('1 vara: 10 %'), c('2 varor: 20 %'), c('3 varor eller fler: 30 %')] },
+      { typ: 'produktrad', rubrik: c('rubrik: taket och rutan ger 20 %'), handles: ['takskyddet', 'termoskyddet', 'fonstertermomatta-2-pack'] },
+      { typ: 'fakta' },
+    ],
   },
   {
     id: 'k10-sista-dag-for-julklappar', datum: '2026-12-01', prefix: 'CaraShellMix', kod: 'GT', nr: 4, awareness: 'promo', hook: 'bestall-senast-mandag-7-dec',
@@ -493,6 +499,9 @@ function mejlSkelett(m, s, namn) {
     brief: typeof m.brief === 'function' ? m.brief(s) : m.brief,
     taggar: TAG({ ...m.taggar, ...(m.prefix ? { prefix: m.prefix } : {}), ...(m.kod ? { kod: m.kod } : {}) }),
     ...(m.format ? { format: m.format } : {}),
+    // rabatt: 'black_week' släpper igenom trappans procentsatser (brands/carashell.json#black_week)
+    // i konvertera.mjs copykontroll — bara i det mejlet, bara de talen.
+    ...(m.rabatt ? { rabatt: m.rabatt } : {}),
     amnesrader: [
       { text: c('ämnesrad A, eget begär'), begar: c('begäret') },
       { text: c('ämnesrad B, eget begär'), begar: c('begäret') },
@@ -529,8 +538,8 @@ export function byggKampanj(k, s) {
     planerad: nar(k.datum, s),
     segment: [`SEG_samtycke_${s}`],
     exkludera: [],
-    status_plan: k.id === 'k09-black-week-utan-rabatt' ? 'kraver-axel' : 'utkast-skrivs-om-efter-lardom',
-    kraver_axel: k.id === 'k09-black-week-utan-rabatt' ? 'Black Week: rabatt eller inte är Axels beslut (A/B/C i rapporten 2026-09-26). Utkastet säljer utan rabatt.' : null,
+    status_plan: 'utkast-skrivs-om-efter-lardom',
+    kraver_axel: null,
   };
 }
 

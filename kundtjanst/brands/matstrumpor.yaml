@@ -62,9 +62,10 @@ notion:
 # dag), Shopify Admin API (shop.billingAddress) och Axels avläsning i admin
 # (descriptor). shipping-policy, contact-information och legal-notice svarar 404.
 tvister:
-  # Shopifys faktureringsadress (sjöhed 160, 44274 harestad) — samma adress och
-  # bolag som Bäverbutiken och CaraShell. Står INTE publikt i villkoren.
-  returadress: "STONEBITE ECOM AB, Sjöhed 160, 442 74 Harestad, Sverige"
+  # Samma adress och bolag som Bäverbutiken och CaraShell — kontoret sedan
+  # 2026-09-26 (Axels order). Står INTE publikt i villkoren. Till och med
+  # 2026-09-25: Sjöhed 160, 442 74 Harestad (Shopifys faktureringsadress då).
+  returadress: "STONEBITE ECOM AB, Stenkolsgatan 1B, 417 07 Göteborg, Sverige"
   # Policyn: "Om returen accepteras skickar vi dig en returfraktsedel samt
   # instruktioner … Artiklar som skickas tillbaka utan att retur först har
   # begärts accepteras inte." ⇒ mejla först.

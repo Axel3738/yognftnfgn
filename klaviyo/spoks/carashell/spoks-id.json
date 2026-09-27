@@ -399,12 +399,20 @@
         "planerad": "2026-11-17T18:00:00+01:00",
         "segment": "SEG_samtycke_sv"
       },
-      "k09-black-week-utan-rabatt": {
-        "titel": "K09 SV Det kunderna säger om taket",
+      "k09-black-week-trappan": {
+        "titel": "K09 SV 1 skydd ger 10 %, 2 skydd ger 20 %, 3 eller fler ger 30 %",
         "postId": "eba4e395-6443-4c4f-9d47-4a7585bd4436",
         "editor": "https://app.spoks.com/carashell/post/eba4e395-6443-4c4f-9d47-4a7585bd4436/edit",
         "status": "draft",
         "planerad": "2026-11-24T18:00:00+01:00",
+        "segment": "SEG_samtycke_sv"
+      },
+      "k09b-black-friday": {
+        "titel": "K09B SV Black Friday: trappan gäller till och med måndag",
+        "postId": "9b777d6c-39fb-4d32-9934-2c78c4423f26",
+        "editor": "https://app.spoks.com/carashell/post/9b777d6c-39fb-4d32-9934-2c78c4423f26/edit",
+        "status": "draft",
+        "planerad": "2026-11-27T18:00:00+01:00",
         "segment": "SEG_samtycke_sv"
       },
       "k10-sista-dag-for-julklappar": {
@@ -505,12 +513,20 @@
         "planerad": "2026-11-17T18:00:00+01:00",
         "segment": "SEG_samtycke_nb"
       },
-      "k09-black-week-utan-rabatt": {
-        "titel": "K09 NB Det kundene selv sier om taket",
+      "k09-black-week-trappan": {
+        "titel": "K09 NB Rabatten trappes opp for hver vare du legger i kurven",
         "postId": "549ee8cb-83e2-4235-b447-27e4223d1cfd",
         "editor": "https://app.spoks.com/carashell/post/549ee8cb-83e2-4235-b447-27e4223d1cfd/edit",
         "status": "draft",
         "planerad": "2026-11-24T18:00:00+01:00",
+        "segment": "SEG_samtycke_nb"
+      },
+      "k09b-black-friday": {
+        "titel": "K09B NB Black Friday, rabattrappen gjelder fortsatt",
+        "postId": "299a9a25-032a-4b6a-bbcb-92193f40b7be",
+        "editor": "https://app.spoks.com/carashell/post/299a9a25-032a-4b6a-bbcb-92193f40b7be/edit",
+        "status": "draft",
+        "planerad": "2026-11-27T18:00:00+01:00",
         "segment": "SEG_samtycke_nb"
       },
       "k10-sista-dag-for-julklappar": {
@@ -611,12 +627,20 @@
         "planerad": "2026-11-17T16:00:00+01:00",
         "segment": "SEG_samtycke_en"
       },
-      "k09-black-week-utan-rabatt": {
-        "titel": "K09 EN No discount here. Just the guarantee",
+      "k09-black-week-trappan": {
+        "titel": "K09 EN Add a second item, the discount jumps to 20 %",
         "postId": "68bbbf3c-c0f2-4f76-935c-f464253c3428",
         "editor": "https://app.spoks.com/carashell/post/68bbbf3c-c0f2-4f76-935c-f464253c3428/edit",
         "status": "draft",
         "planerad": "2026-11-24T16:00:00+01:00",
+        "segment": "SEG_samtycke_en"
+      },
+      "k09b-black-friday": {
+        "titel": "K09B EN It's Black Friday, and the ladder is still climbing",
+        "postId": "633a14bc-4912-4852-9cf9-6ef89cc5cfc5",
+        "editor": "https://app.spoks.com/carashell/post/633a14bc-4912-4852-9cf9-6ef89cc5cfc5/edit",
+        "status": "draft",
+        "planerad": "2026-11-27T16:00:00+01:00",
         "segment": "SEG_samtycke_en"
       },
       "k10-sista-dag-for-julklappar": {
@@ -658,6 +682,28 @@
     "metod": "tre oberoende granskare (en per språk) läste tillbaka varje flöde (get_flow) och varje mejl (get_campaign) mot plan.json och payload/",
     "resultat": "sv 8/8 flöden 13/13 kampanjer, nb 8/8 och 13/13, en 8/8 och 13/13; get_flows 24 st alla isActive false, search_campaigns 39 utkast publishDate null, inga dubbletter",
     "rattat": "F01 SV E1:s knapp hade spårningslänken r.spoksmail.com (skapad 08:45 UTC, före länkdomänen) — omsparad, nu link.carashell.com",
-    "ej_lasbart": "produktblockens knapptext och visningsinställningar (t.ex. dolt pris på nb/en) syns inte i get_campaign — skickade exakt som payloaden, kontrolleras i appens förhandsvisning"
+    "ej_lasbart": "produktblockens knapptext och visningsinställningar (t.ex. dolt pris på nb/en) syns inte i get_campaign — skickade exakt som payloaden, kontrolleras i appens förhandsvisning",
+    "black_week": {
+      "datum": "2026-09-26",
+      "resultat": "search_campaigns status draft: 42 utkast, alla publishDate null, inga dubbletter; K09 ×3 med nya titlar, K09B ×3 nya"
+    }
+  },
+  "black_week": {
+    "beslut": "Axels svar B 2026-09-26: samma trappa som Bäverbutiken, 10 % vid 1 vara, 20 % vid 2, 30 % vid 3 eller fler",
+    "shopify": {
+      "butik": "yitrbk-m3.myshopify.com",
+      "rabatter": {
+        "Black Week 10 %": "gid://shopify/DiscountAutomaticNode/2284800868684",
+        "Black Week 20 %": "gid://shopify/DiscountAutomaticNode/2284800901452",
+        "Black Week 30 %": "gid://shopify/DiscountAutomaticNode/2284800934220"
+      },
+      "fran": "2026-11-22T23:00:00Z",
+      "till": "2026-12-01T08:00:00Z",
+      "comment": "Skapade med node klaviyo/black-week-trappa.mjs --butik carashell --ja, tillbakalästa på id: SCHEDULED, alla produkter, minsta antal 1/2/3, kombineras bara med fraktrabatter. Slutet är 1/12 09:00 svensk tid = midnatt natten mot tisdag i Kalifornien, så att engelskans \"through Monday, November 30\" håller i USA (sessionens beslut)."
+    },
+    "spoks": {
+      "k09_omskrivna": "sv eba4e395, nb 549ee8cb, en 68bbbf3c: update_draft_campaign med payloaden för k09-black-week-trappan, samma postId som förut",
+      "k09b_nya": "sv 9b777d6c, nb 299a9a25, en 633a14bc: draft_campaign, planerad fredag 27/11"
+    }
   }
 }

@@ -54,12 +54,14 @@ svar:
   # SOP 36 steg 1 ("be om ordernumret") — av tills Axel sagt till (frågan ställd 2026-09-21).
   fraga_ordernummer: false
   # SOP 38 (VA:ns SOP-databas "Bäverkoppling.se", läst 2026-09-21): de godkända
-  # företagsuppgifterna. Samma bolag och adress som VA:ns egna returmejl i Sent
-  # (2026-09-14) och tvister.returadress. Aldrig VD:ns namn.
+  # företagsuppgifterna. Samma bolag och adress som tvister.returadress. Aldrig
+  # VD:ns namn. Adressen är kontoret sedan 2026-09-26 (Axels order: "allt vi
+  # skickar ut från och med idag till kunderna ska vara min nya adress");
+  # Sjöhed 160, 442 74 Harestad gällde till och med 2026-09-25.
   foretag:
     namn: "Stonebite Ecom AB"
     orgnr: "559576-2401"
-    adress: "Sjöhed 160, 442 74 Harestad"
+    adress: "Stenkolsgatan 1B, 417 07 Göteborg"
     moms: true
 
 notion:
@@ -90,9 +92,11 @@ tvister:
   # Axels besked 2026-09-20. Adressen står INTE i policyn ("Om returen
   # accepteras skickar vi dig instruktioner om hur och var du ska skicka
   # paketet") och ska inte heller göra det — kunden ska höra av sig först.
-  # Hela adressen som VA:n själv skriver i returmejlen (Skickat 2026-09-14 och
-  # 2026-09-16), kommaseparerad — autosvaret skriver en rad per del.
-  returadress: "STONEBITE ECOM AB, Sjöhed 160, 442 74 Harestad, Sverige"
+  # Kommaseparerad — autosvaret skriver en rad per del. Kontoret sedan
+  # 2026-09-26 (Axels order); till och med 2026-09-25 var det "STONEBITE ECOM
+  # AB, Sjöhed 160, 442 74 Harestad, Sverige", och kunder som fått den adressen
+  # innan dess kan fortfarande posta dit (kundtjanst/va-sop/00-STORE-FACTS.md).
+  returadress: "STONEBITE ECOM AB, Stenkolsgatan 1B, 417 07 Göteborg, Sverige"
   # Friktionsmodellen, Axels beslut 2026-09-20: adressen publiceras aldrig,
   # den lämnas ut av kundtjänst på förfrågan. Färre returer — men villkoret är
   # att svaret går ut SNABBT. #5122 är motexemplet: ett missat mejl om en

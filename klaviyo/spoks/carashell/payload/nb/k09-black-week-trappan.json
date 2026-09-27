@@ -1,0 +1,181 @@
+{
+  "id": "k09-black-week-trappan",
+  "sprak": "nb",
+  "emailTitle": "Rabatten trappes opp for hver vare du legger i kurven",
+  "emailDescription": "Automatisk i kassen, uten kode, til og med mandag 30. november.",
+  "amnesrader": [
+    "Rabatten trappes opp for hver vare du legger i kurven",
+    "1 vare gir 10 %, 2 gir 20 %, 3 eller flere gir 30 %",
+    "Ingen kode, rabatten vises rett i kassen"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Rabatten trappes opp av seg selv",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hei {{ contact.first_name | default: 'der' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Jeg holder det enkelt: rabatten regnes ut fra antall varer i handlekurven og trekkes automatisk i kassen, uten kode. Den gjelder til og med mandag 30. november.",
+      "alignment": "center"
+    },
+    {
+      "type": "image",
+      "fileId": "6830b5d9-7f36-4ff3-a0c4-f3aa4a05b62e",
+      "altText": "Taktrekk campingvogn & bobil 5,5–13,5 m",
+      "urlRedirect": "https://carashell.se/nb/products/takskyddet?country=NO"
+    },
+    {
+      "type": "h2",
+      "text": "Taktrekk campingvogn & bobil 5,5–13,5 m",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Se hele utvalget",
+      "url": "https://carashell.se/nb/collections/sortimentet?country=NO",
+      "style": "button"
+    },
+    {
+      "type": "h2",
+      "text": "Slik virker rabattrappen"
+    },
+    {
+      "type": "list",
+      "text": "1 vare: 10 % rabatt"
+    },
+    {
+      "type": "list",
+      "text": "2 varer: 20 % rabatt"
+    },
+    {
+      "type": "list",
+      "text": "3 varer eller flere: 30 % rabatt"
+    },
+    {
+      "type": "h2",
+      "text": "To av disse gir deg 20 % rabatt",
+      "alignment": "center"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "image",
+              "fileId": "6830b5d9-7f36-4ff3-a0c4-f3aa4a05b62e",
+              "altText": "Taktrekk campingvogn & bobil 5,5–13,5 m",
+              "urlRedirect": "https://carashell.se/nb/products/takskyddet?country=NO"
+            },
+            {
+              "type": "h2",
+              "text": "Taktrekk campingvogn & bobil 5,5–13,5 m",
+              "alignment": "center"
+            },
+            {
+              "type": "link",
+              "text": "Se produktet",
+              "url": "https://carashell.se/nb/products/takskyddet?country=NO",
+              "style": "button"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "image",
+              "fileId": "295e18f4-1bba-4ee1-a32e-b06f3b5d7f92",
+              "altText": "Frontrutetrekk til bobil 211 × 171 cm",
+              "urlRedirect": "https://carashell.se/nb/products/termoskyddet?country=NO"
+            },
+            {
+              "type": "h2",
+              "text": "Frontrutetrekk til bobil 211 × 171 cm",
+              "alignment": "center"
+            },
+            {
+              "type": "link",
+              "text": "Se produktet",
+              "url": "https://carashell.se/nb/products/termoskyddet?country=NO",
+              "style": "button"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "image",
+              "fileId": "e389d84e-2027-4b88-9e80-c92a3ce603d5",
+              "altText": "Vindu-termomatte 2-pk 70 × 80 cm",
+              "urlRedirect": "https://carashell.se/nb/products/fonstertermomatta-2-pack?country=NO"
+            },
+            {
+              "type": "h2",
+              "text": "Vindu-termomatte 2-pk 70 × 80 cm",
+              "alignment": "center"
+            },
+            {
+              "type": "link",
+              "text": "Se produktet",
+              "url": "https://carashell.se/nb/products/fonstertermomatta-2-pack?country=NO",
+              "style": "button"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "text": "\"Bra skydd för taket och lätt att använda.\"\nKarin, verifisert kunde"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Angrerett**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagers angrerett",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spor pakken**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Følg den hele veien](https://carashell.se/nb/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

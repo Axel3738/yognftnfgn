@@ -1,0 +1,26 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-26",
+  "lage": "oversatt",
+  "marknad": "US",
+  "server": "CaraShell",
+  "kanal": "annons-uppladdning",
+  "gjort": [
+    "US round for the roof cover: 6 rows in the queue - 1 image and 5 videos. The image is live; the same five videos as yesterday are still HELD, see below.",
+    "Image CaraShellRoof_US_OB_112_1 -> ad 120251624621420435 in ad set CARASHELL_US_OB, ACTIVE. This is the objection ad that answers 'it covers too little', and the concession survives translation: the primary text still grants that a full cover protects more of your rig before it answers with the roof. Label reads ROOF COVER, NOT FULL COVERAGE, so nobody can feel misled. Prices swapped to $199 (was $249, save $50 / 20%), the size given as 21 by 10 feet instead of metres, no store name anywhere. Read back by OCR after rendering: no Swedish word and no kr figure survives, and the only numbers on the image are $199, $249, $50 and 20%.",
+    "The Approved queue was checked as well: 59 rows, every one of them already carries a US ad. Nothing is lagging behind.",
+    "Store readiness for the US confirmed: the American product page and the landing page the ads point to both answer 200 as an American visitor, $199 from $249.",
+    "0 HeyGen credits used - nothing was rendered. The five video rows stay in SE-ACTIVE to be translated, their Swedish and Norwegian versions untouched and no Notion status changed on them. They already carry yesterday's comment explaining the hold, so they were not commented again."
+  ],
+  "varningar": [
+    "Two of the five held videos (OB_103_H1, OB_104_H1) end on a BAVERBUTIKEN card. That is the usual case and the pipeline rebuilds the end card before upload - it is not why they are held.",
+    "The campaign still has two ad sets for the same angle, CARASHELL_US_GT and CARASHELL_US_G, splitting that angle's budget in the CBO. Nothing was touched - the owner decides which one counts.",
+    "The queue still cannot read the price automatically, because the campaign's inherited link is the listicle page rather than a product page. The price was read directly from both American pages instead: $199 from $249. Known carry-over, not a fault.",
+    "Meta shows PENDING_REVIEW / IN_PROCESS on a fresh ad for a while - normal."
+  ],
+  "action_axel": [
+    "HeyGen still has no money in it, second day running: the account is on a pay-as-you-go wallet and the balance is $0.10, with auto-reload switched off. That is why the API reports only 6 credits - the credits are bought out of that wallet. Five finished Swedish videos (CS_109_H1, PD_110_H1, CO_105_H1, OB_103_H1, OB_104_H1) are waiting for their English dub and cannot be translated until it is topped up. Nothing else in the round is blocked: images cost nothing and went out as usual. The moment there is money in the wallet, the next daily round picks the five rows up on its own - no one has to re-queue them."
+  ],
+  "nasta_korning": "2026-09-27 17:05"
+}

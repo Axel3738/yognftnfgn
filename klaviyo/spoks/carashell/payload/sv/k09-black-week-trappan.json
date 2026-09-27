@@ -1,0 +1,146 @@
+{
+  "id": "k09-black-week-trappan",
+  "sprak": "sv",
+  "emailTitle": "1 skydd ger 10 %, 2 skydd ger 20 %, 3 eller fler ger 30 %",
+  "emailDescription": "Rabatten dras automatiskt i kassan, till och med måndag 30 november.",
+  "amnesrader": [
+    "1 skydd ger 10 %, 2 skydd ger 20 %, 3 eller fler ger 30 %",
+    "Ingen kod, bara 10 %, 20 % eller 30 % i kassan",
+    "Taket och rutan i samma beställning ger 20 %"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Fler skydd, större rabatt",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Ju fler skydd du lägger i varukorgen, desto mer rabatt räknar kassan ut åt dig, helt automatiskt och utan kod. Gäller till och med måndag 30 november.",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "40a22a57-d0df-41b6-9202-2b22cc2e0d29",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Se sortimentet",
+      "url": "https://carashell.se/collections/sortimentet",
+      "style": "button"
+    },
+    {
+      "type": "h2",
+      "text": "Så trappar rabatten upp"
+    },
+    {
+      "type": "list",
+      "text": "1 vara ger 10 % rabatt"
+    },
+    {
+      "type": "list",
+      "text": "2 varor ger 20 % rabatt"
+    },
+    {
+      "type": "list",
+      "text": "3 varor eller fler ger 30 % rabatt"
+    },
+    {
+      "type": "h2",
+      "text": "Två skydd, nästa nivå",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "40a22a57-d0df-41b6-9202-2b22cc2e0d29",
+          "button": "Se produkten"
+        },
+        {
+          "id": "c38c04bb-fb13-4894-aa85-3b70c71b5891",
+          "button": "Se produkten"
+        },
+        {
+          "id": "c4d0ddd4-298b-4703-9de0-646db8afb6c6",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "quote",
+      "text": "\"Bra skydd för taket och lätt att använda.\"\nKarin, verifierad kund"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://carashell.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

@@ -1,5 +1,5 @@
 {
- "uppdaterad": "2026-09-26T15:06:15.634Z",
+ "uppdaterad": "2026-09-27T05:06:32.220Z",
  "skickade": [
   {
    "nyckel": "eskalering:1551354091823693906:1551354104536637470",
@@ -140,6 +140,19 @@
    "tid": "2026-09-25T00:07:16.837Z",
    "text": "<@1543617780396593206> 🟡 **Bank inquiry deadline — #5053 (Bäverbutiken)** · 255 SEK · evidence due 2026-09-28 · 3 days left. Unanswered, it escalates into a chargeback. Shopify admin → Orders → Disputes; the handbook is in Notion (Customer support → Chargebacks). Reply here once it is submitted.",
    "meddelandeId": "1552833840165294091",
+   "mottagare": [
+    "1543617780396593206"
+   ]
+  },
+  {
+   "nyckel": "tvist:baverbutiken:#4914:2026-09-30",
+   "typ": "tvist",
+   "brand": "baverbutiken",
+   "kanal": "customer-service",
+   "kanalId": "1548923828590088192",
+   "tid": "2026-09-27T00:07:09.682Z",
+   "text": "<@1543617780396593206> 🔴 **Chargeback deadline — #4914 (Bäverbutiken)** · 348 SEK · evidence due 2026-09-30 · 3 days left. Unanswered, the money is lost for good. Shopify admin → Orders → Disputes; the handbook is in Notion (Customer support → Chargebacks). Reply here once it is submitted.",
+   "meddelandeId": "1553558583302426749",
    "mottagare": [
     "1543617780396593206"
    ]

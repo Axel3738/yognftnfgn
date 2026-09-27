@@ -5,6 +5,7 @@ from Store facts". Nothing else in the procedures names a store, a domain, a car
 or an email address, so the same SOPs work on every brand we run.
 
 Last verified 2026-09-21 against the tracking register and each store's live page.
+Return address and company address changed 2026-09-26.
 
 ## The stores
 
@@ -48,7 +49,8 @@ email.
 | Statutory right of withdrawal | 14 days from receipt (EU) | Distance selling law, runs in parallel with the return window |
 | Auto-reply bot | **Live since 2026-09-23** (owner's decision): it reads the mailbox every minute, around the clock, and **sends** its replies itself, signed "Kundtjänst Bäverbutiken". You will see them in Sent with the replied arrow on the customer's email, and as cards on the Kundtjänst dashboard. Your follow-up on an upset customer, a photo request, a return or a "delivered but not received" is written as the Head of Customer Support the case was escalated to (the page **Following up the auto-reply**); a simple question the bot answered fully gets nothing more unless the customer writes again. Priority folder: VA-PRIO. A wrong reply that went out: put it right with the customer yourself, then report it (see the page **Auto-reply bot**) | Owner (switched live 2026-09-23) |
 | Head of Customer Support sign-off | Mechile signs the follow-ups with her first name and *Kundtjänstansvarig, Bäverbutiken* (the bot signs "Kundtjänst Bäverbutiken": two people, one store) | Owner's decision 2026-09-23 |
-| Return address | Given out by support on request — it is published nowhere | Owner's decision: fewer returns, but only if we answer within 24 hours |
+| Return address | **STONEBITE ECOM AB, Stenkolsgatan 1B, 417 07 Göteborg, Sweden.** The same for every store, since 26 Sep 2026 (the office). Given out by support on request, published nowhere. Until 25 Sep it was Sjöhed 160, 442 74 Harestad: a customer who has **already posted** a return there is fine — do not ask them to send it again, tell the owner the order number so the parcel is collected there. A customer who has the old address but has **not posted yet** gets the new one | Owner's decision 2026-09-26 (the office). Published nowhere: fewer returns, but only if we answer within 24 hours |
+| Company address (company information requests) | Stenkolsgatan 1B, 417 07 Göteborg, Sweden — same entity for every store | Owner's decision 2026-09-26 |
 | First reply target | 24 hours | Owner |
 | Refunds / replacements / "the parcel is lost" | Owner approves before you promise it | Owner |
 | Escalation channel | Discord `#customer-service` | Owner |

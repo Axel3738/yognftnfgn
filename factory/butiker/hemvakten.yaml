@@ -3,14 +3,15 @@
 # är tekniskt och byts inte.
 # Egen OPS-butik, helt separat från Bäverbutiken.
 # Bolaget är samma AB som driver Matstrumpor.se. Adressen från allabolag.se,
-# Axels länk 2026-09-07: Sjöhed 160, 442 74 Harestad.
+# Axels länk 2026-09-07: Sjöhed 160, 442 74 Harestad. Sedan 2026-09-26 kontoret
+# (Axels order: allt kunderna får ska bära den nya adressen).
 
 butik:
   id: hemvakten
   brand: "HeimGuard"
   bolagsnamn: "STONEBITE ECOM AB"
   orgnr: "559576-2401"
-  adress: "Sjöhed 160, 442 74 Harestad"
+  adress: "Stenkolsgatan 1B, 417 07 Göteborg"
   supportmail: "hello@heimguard.se"
   land: SE
   huvudmarknad: Sverige

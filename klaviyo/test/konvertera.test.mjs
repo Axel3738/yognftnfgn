@@ -89,6 +89,18 @@ test('CaraShell: produktkort blir bild + rubrik + knapp på nb/en, produktblock 
   assert.equal(kassa.buttonText, 'Back to checkout');
 });
 
+test('CaraShell: procent stoppas, utom trappans 10/20/30 i ett mejl med rabatt black_week', () => {
+  const K = skapaKonverterare({ brand: lasBrand('carashell'), produktIds: {}, recCache: {}, erbjudande: null });
+  const tre = [1, 2, 3].map((i) => ({ rad: `rad ${i}`, visualisera: true, falsifiera: true, ingen_annan: true }));
+  const mejl = (extra, text) => ({ id: 'x', sprak: 'sv', amnesrader: [{ text: 'a' }, { text: 'b' }, { text: 'c' }], tretest: tre, block: [{ typ: 'punkter', rubrik: 'Trappan', punkter: [text] }], ...extra });
+  assert.deepEqual(K.kontrollera(mejl({ rabatt: 'black_week' }, '3 varor eller fler: 30 %')), []);
+  assert.ok(K.kontrollera(mejl({ rabatt: 'black_week' }, 'Nu 15 % på allt')).some((f) => /utanför trappan/.test(f)));
+  assert.ok(K.kontrollera(mejl({ rabatt: 'black_week' }, 'Spara 25 procent')).some((f) => /utanför trappan/.test(f)));
+  assert.ok(K.kontrollera(mejl({}, '3 varor eller fler: 30 %')).some((f) => /procent/.test(f)), 'utan rabatt stoppas all procent som förut');
+  assert.ok(K.kontrollera(mejl({ rabatt: 'black_week' }, 'Nu 30 % och bara idag')).some((f) => /falsk brådska/.test(f)), 'de andra reglerna gäller fortfarande');
+  assert.ok(K.kontrollera(mejl({ rabatt: 'finns_inte' }, 'hej')).some((f) => /saknas i brandfilen/.test(f)));
+});
+
 test('CaraShell: produkter.json:s Spoks-id och bild-fileId hamnar i blocken', () => {
   const ids = lasProduktIds('carashell');
   if (!ids.takskyddet?.id || !ids.takskyddet?.bild) return; // före uppladdningen: täckt av testet ovan

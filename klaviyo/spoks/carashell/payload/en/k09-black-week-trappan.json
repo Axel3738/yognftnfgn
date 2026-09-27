@@ -1,0 +1,172 @@
+{
+  "id": "k09-black-week-trappan",
+  "sprak": "en",
+  "emailTitle": "Add a second item, the discount jumps to 20 %",
+  "emailDescription": "Three or more takes it to 30 %, and checkout does the math.",
+  "amnesrader": [
+    "Add a second item, the discount jumps to 20 %",
+    "One item is 10 %, two is 20 %, three or more is 30 %",
+    "The ladder runs through Monday, November 30"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "The discount climbs on its own, all week",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "I set up checkout to count what's in your cart and take the discount off automatically, whether that's for a caravan, a motorhome, or an RV. It runs through Monday, November 30, no code needed.",
+      "alignment": "center"
+    },
+    {
+      "type": "image",
+      "fileId": "6830b5d9-7f36-4ff3-a0c4-f3aa4a05b62e",
+      "altText": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft",
+      "urlRedirect": "https://carashell.com/products/takskyddet"
+    },
+    {
+      "type": "h2",
+      "text": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Shop the collection",
+      "url": "https://carashell.com/collections/sortimentet",
+      "style": "button"
+    },
+    {
+      "type": "h2",
+      "text": "How the ladder works"
+    },
+    {
+      "type": "list",
+      "text": "1 item in the cart: 10 % off"
+    },
+    {
+      "type": "list",
+      "text": "2 items in the cart: 20 % off"
+    },
+    {
+      "type": "list",
+      "text": "3 items or more in the cart: 30 % off"
+    },
+    {
+      "type": "h2",
+      "text": "Two covers, the next level",
+      "alignment": "center"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "image",
+              "fileId": "6830b5d9-7f36-4ff3-a0c4-f3aa4a05b62e",
+              "altText": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft",
+              "urlRedirect": "https://carashell.com/products/takskyddet"
+            },
+            {
+              "type": "h2",
+              "text": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft",
+              "alignment": "center"
+            },
+            {
+              "type": "link",
+              "text": "See the cover",
+              "url": "https://carashell.com/products/takskyddet",
+              "style": "button"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "image",
+              "fileId": "295e18f4-1bba-4ee1-a32e-b06f3b5d7f92",
+              "altText": "Windshield Thermal Cover for Motorhome 211 × 171 cm",
+              "urlRedirect": "https://carashell.com/products/termoskyddet"
+            },
+            {
+              "type": "h2",
+              "text": "Windshield Thermal Cover for Motorhome 211 × 171 cm",
+              "alignment": "center"
+            },
+            {
+              "type": "link",
+              "text": "See the cover",
+              "url": "https://carashell.com/products/termoskyddet",
+              "style": "button"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "image",
+              "fileId": "e389d84e-2027-4b88-9e80-c92a3ce603d5",
+              "altText": "Window Thermal Mat, 2-Pack, 70 × 80 cm",
+              "urlRedirect": "https://carashell.com/products/fonstertermomatta-2-pack"
+            },
+            {
+              "type": "h2",
+              "text": "Window Thermal Mat, 2-Pack, 70 × 80 cm",
+              "alignment": "center"
+            },
+            {
+              "type": "link",
+              "text": "See the cover",
+              "url": "https://carashell.com/products/fonstertermomatta-2-pack",
+              "style": "button"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Guarantee**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "90-day guarantee",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Track your parcel**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Follow it all the way](https://carashell.com/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

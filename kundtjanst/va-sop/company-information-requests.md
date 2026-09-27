@@ -1,7 +1,10 @@
 # SOP: Customer asks for company information
 
+**The PDF attached to this row is an older version.** Where it differs from this page,
+the address in particular, follow this page.
+
 **Use this when** a customer asks who we are: legal name, organisation number, VAT
-status, registered address.
+status, address.
 
 **Owner approval:** not needed for the values in the table below. Needed for anything
 outside it.
@@ -18,7 +21,7 @@ facing address and website change per store — take those from **Store facts**.
 | Legal name | Stonebite Ecom AB |
 | Organisation number | 559576-2401 |
 | VAT registered | Yes |
-| Registered address | Sjöhed 160, 442 74 Harestad, Sweden |
+| Address | Stenkolsgatan 1B, 417 07 Göteborg, Sweden (since 26 Sep 2026; the old address in Harestad is no longer used) |
 | Support address | The one for that store — **Store facts** |
 | Website | The store the customer bought from — **Store facts** |
 
@@ -33,7 +36,7 @@ Nothing else. Not the owner's name, not ownership, not turnover, not bank detail
 > Stonebite Ecom AB
 > Org.nr: 559576-2401
 > Momsregistrerat: ja
-> Adress: Sjöhed 160, 442 74 Harestad, Sverige
+> Adress: Stenkolsgatan 1B, 417 07 Göteborg, Sverige
 > Kontakt: [SUPPORTADRESS UR STORE FACTS]
 >
 > Hör av dig om du behöver något mer!
