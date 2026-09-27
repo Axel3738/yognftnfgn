@@ -1,0 +1,138 @@
+{%- comment -%}
+  bb-varfor.liquid — "Varför en bäver?", "Vad du kan räkna med" och "Vilka vi
+  är": resten av historien, som ett ljust band efter det svarta. Skrivs till
+  temat av storytelling/publicera.mjs (repot yognftnfgn). All text ligger i
+  sektionens inställningar och block (punkterna), så den ändras i
+  temaredigeraren. Bilden är bävern (Bäverbutikens maskot).
+{%- endcomment -%}
+{%- liquid
+  assign har_bild = false
+  if section.settings.bild != blank
+    assign har_bild = true
+  endif
+  assign punkter = section.blocks | where: 'type', 'punkt'
+-%}
+{%- style -%}
+  .bb-varfor { background: {{ section.settings.bakgrund }}; color: {{ section.settings.textfarg }}; padding: 64px 0 56px; }
+  .bb-varfor .subheading { color: {{ section.settings.accent }}; font-size: 13px; margin-bottom: 12px; }
+  .bb-varfor__topp { display: grid; grid-template-columns: {% if har_bild %}minmax(0, 7fr) minmax(0, 5fr){% else %}minmax(0, 1fr){% endif %}; gap: 48px; align-items: center; }
+  .bb-varfor__text .h1 { color: inherit; margin-bottom: 16px; }
+  .bb-varfor__text .rte { color: inherit; font-size: 17px; }
+  .bb-varfor__bild img { display: block; width: 100%; height: auto; border-radius: 8px; }
+  .bb-varfor__rubrik2 { margin: 52px 0 20px; text-align: center; }
+  .bb-varfor__rubrik2 .h3 { color: inherit; margin: 0; }
+  .bb-varfor__punkter { display: grid; grid-template-columns: repeat({{ punkter.size | at_least: 1 }}, minmax(0, 1fr)); gap: 18px; list-style: none; margin: 0; padding: 0; }
+  .bb-varfor__punkt { background: {{ section.settings.kortbakgrund }}; border-radius: 8px; padding: 22px 20px 20px; margin: 0; border-top: 4px solid {{ section.settings.accent }}; min-width: 0; }
+  .bb-varfor__nr { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: {{ section.settings.accent }}; color: #fff; font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback); font-weight: var(--typeHeaderWeight); font-size: 16px; margin-bottom: 12px; }
+  .bb-varfor__punkt h3 { color: inherit; font-size: 20px; margin-bottom: 8px; }
+  .bb-varfor__punkt .rte-setting { font-size: 15px; line-height: 1.5; opacity: .85; }
+  .bb-varfor__punkt .rte-setting p { margin: 0 0 8px; }
+  .bb-varfor__vilka { margin-top: 52px; display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 32px; align-items: start; padding-top: 32px; border-top: 1px solid rgba(0,0,0,.12); }
+  .bb-varfor__vilka .h2 { color: inherit; margin: 0; }
+  .bb-varfor__vilka .rte { color: inherit; font-size: 16px; }
+  .bb-varfor__vilka .rte a { color: inherit; }
+  .bb-varfor__vilka .btn { margin-top: 8px; }
+  @media only screen and (max-width: 768px) {
+    .bb-varfor { padding: 42px 0 38px; }
+    .bb-varfor__topp { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+    .bb-varfor__bild { max-width: 320px; margin: 0 auto; order: -1; }
+    .bb-varfor__text .rte { font-size: 16px; }
+    .bb-varfor__rubrik2 { margin: 36px 0 14px; }
+    .bb-varfor__punkter { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .bb-varfor__punkt { padding: 16px 14px 14px; }
+    .bb-varfor__punkt h3 { font-size: 17px; }
+    .bb-varfor__punkt .rte-setting { font-size: 14px; }
+    .bb-varfor__vilka { grid-template-columns: minmax(0, 1fr); gap: 12px; margin-top: 36px; padding-top: 24px; }
+  }
+{%- endstyle -%}
+
+<div class="bb-varfor" id="varfor-en-baver" data-section-id="{{ section.id }}" data-section-type="bb-varfor">
+  <div class="page-width">
+
+    <div class="bb-varfor__topp">
+      <div class="bb-varfor__text" data-aos>
+        {%- if section.settings.overrad != blank -%}<div class="subheading">{{ section.settings.overrad | escape }}</div>{%- endif -%}
+        {%- if section.settings.rubrik != blank -%}<h2 class="h1">{{ section.settings.rubrik | escape }}</h2>{%- endif -%}
+        {%- if section.settings.text != blank -%}<div class="rte">{{ section.settings.text }}</div>{%- endif -%}
+      </div>
+      {%- if har_bild -%}
+        <div class="bb-varfor__bild" data-aos>
+          <img src="{{ section.settings.bild | img_url: '900x' }}" alt="{{ section.settings.bild_alt | default: section.settings.bild.alt | escape }}" loading="lazy">
+        </div>
+      {%- endif -%}
+    </div>
+
+    {%- if punkter.size > 0 -%}
+      {%- if section.settings.punkter_rubrik != blank -%}
+        <div class="bb-varfor__rubrik2"><h3 class="h3">{{ section.settings.punkter_rubrik | escape }}</h3></div>
+      {%- endif -%}
+      <ol class="bb-varfor__punkter">
+        {%- for block in punkter -%}
+          <li class="bb-varfor__punkt" {{ block.shopify_attributes }} data-aos="row-of-{{ punkter.size }}">
+            {%- if section.settings.numrera -%}<span class="bb-varfor__nr" aria-hidden="true">{{ forloop.index }}</span>{%- endif -%}
+            <h3>{{ block.settings.titel | escape }}</h3>
+            <div class="rte-setting">{{ block.settings.text }}</div>
+          </li>
+        {%- endfor -%}
+      </ol>
+    {%- endif -%}
+
+    {%- if section.settings.vilka_rubrik != blank or section.settings.vilka_text != blank -%}
+      <div class="bb-varfor__vilka">
+        <div><h2 class="h2">{{ section.settings.vilka_rubrik | escape }}</h2></div>
+        <div>
+          <div class="rte">{{ section.settings.vilka_text }}</div>
+          {%- if section.settings.knapp_text != blank and section.settings.knapp_lank != blank -%}
+            <a href="{{ section.settings.knapp_lank }}" class="btn">{{ section.settings.knapp_text | escape }}</a>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endif -%}
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Varför en bäver",
+  "class": "index-section--flush",
+  "max_blocks": 6,
+  "settings": [
+    { "type": "header", "content": "Varför en bäver" },
+    { "type": "image_picker", "id": "bild", "label": "Bild (bävern)" },
+    { "type": "text", "id": "bild_alt", "label": "Bildens alt-text", "default": "Bäverbutikens bäver med kabel och skiftnyckel" },
+    { "type": "text", "id": "overrad", "label": "Överrad", "default": "Varför en bäver?" },
+    { "type": "text", "id": "rubrik", "label": "Rubrik", "default": "Bävern bygger. Vi också." },
+    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Bävern bygger, lagar och fixar med det den har omkring sig. Den ger sig inte, och den gör det på gott humör. Det är precis den känslan vi vill att butiken ska ha: prylar för dig som hellre fixar själv än ringer någon.</p>" },
+    { "type": "header", "content": "Punkterna" },
+    { "type": "text", "id": "punkter_rubrik", "label": "Rubrik över punkterna", "default": "Vad du kan räkna med" },
+    { "type": "checkbox", "id": "numrera", "label": "Numrera punkterna", "default": true },
+    { "type": "header", "content": "Vilka vi är" },
+    { "type": "text", "id": "vilka_rubrik", "label": "Rubrik", "default": "Vilka vi är" },
+    { "type": "richtext", "id": "vilka_text", "label": "Text", "default": "<p>Bäverbutiken drivs av Stonebite Ecom AB i Göteborg.</p>" },
+    { "type": "text", "id": "knapp_text", "label": "Knapp (valfri)" },
+    { "type": "url", "id": "knapp_lank", "label": "Knappens länk" },
+    { "type": "header", "content": "Färger" },
+    { "type": "color", "id": "bakgrund", "label": "Bakgrund", "default": "#f4efe4" },
+    { "type": "color", "id": "kortbakgrund", "label": "Kortens bakgrund", "default": "#ffffff" },
+    { "type": "color", "id": "textfarg", "label": "Text", "default": "#111111" },
+    { "type": "color", "id": "accent", "label": "Accent", "default": "#dd1d1d" }
+  ],
+  "blocks": [
+    {
+      "type": "punkt",
+      "name": "Punkt",
+      "settings": [
+        { "type": "text", "id": "titel", "label": "Rubrik", "default": "Prylar som löser ett riktigt problem" },
+        { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Inte saker som fyller en hylla.</p>" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Varför en bäver",
+      "blocks": [ { "type": "punkt" }, { "type": "punkt" }, { "type": "punkt" }, { "type": "punkt" } ]
+    }
+  ]
+}
+{% endschema %}

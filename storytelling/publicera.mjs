@@ -1,9 +1,11 @@
-// publicera.mjs — Bäverbutikens storytelling in i Shopify-temat: tre sektioner
-// (förtroenderaden, historien, Judge.me-recensionerna), startsidans ordning,
+// publicera.mjs — Bäverbutikens storytelling in i Shopify-temat: fyra sektioner
+// (förtroenderaden, historien, varför en bäver, recensionerna), startsidans ordning,
 // sidfoten och sidan /pages/om-oss. Skriver ALLTID till ett namngivet tema,
 // som standard arbetskopian ARBETSTEMA — aldrig tyst till det publicerade.
 //
+//   node storytelling/recensioner.mjs                   # väljer recensionerna (storytelling/recensioner.json)
 //   node storytelling/publicera.mjs --torr              # visar vad som skulle skrivas
+//   node storytelling/publicera.mjs --duplicera         # skapar arbetskopian ur det publicerade temat om den saknas
 //   node storytelling/publicera.mjs                     # skriver till arbetstemat + sidan om-oss
 //   node storytelling/publicera.mjs --bild-start <url> --bild-omoss <url>
 //                                                       # laddar upp bilder till Filer först (publika URL:er)
@@ -20,7 +22,8 @@ import { readFileSync, readdirSync, writeFileSync, appendFileSync, existsSync } 
 import { join, dirname, basename } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { losButik, skapaKlient } from '../listicle/butik.mjs';
-import { ARBETSTEMA, byggIndex, byggFooter, OM_OSS, MARKORER } from './innehall.mjs';
+import { ARBETSTEMA, byggIndex, byggFooter, byggOmOssMall, OM_OSS, MARKORER } from './innehall.mjs';
+import { lasRecensioner } from './recensioner.mjs';
 
 const HAR = dirname(fileURLToPath(import.meta.url));
 const TEMAMAPP = join(HAR, 'tema');
@@ -69,13 +72,6 @@ export function filerLika(namn, a, b) {
 
 export function lasBilder(fil = BILDFIL) { return existsSync(fil) ? JSON.parse(readFileSync(fil, 'utf8')) : {}; }
 
-/** Om oss-mallen med bilden inlagd (om någon finns). */
-export function omOssMall(text, bild) {
-  const j = tolkaJson(text);
-  if (bild) j.sections.historia.settings.bild = bild;
-  return JSON.stringify(j, null, 2) + '\n';
-}
-
 // ------------------------------------------------------------ Shopify
 
 async function lasTemafiler(klient, temaId, namn) {
@@ -112,11 +108,22 @@ async function skrivTemafiler(klient, temaId, filer, { logg }) {
   logg(`   ✓ ${namn.length} fil(er) skrivna och lästa tillbaka lika: ${namn.join(', ')}`);
 }
 
-export async function hittaTema(klient, { namn = ARBETSTEMA, id = null } = {}) {
-  const d = await klient.graphql('{ themes(first: 50) { nodes { id name role processing } } }');
-  const alla = d.themes?.nodes ?? [];
-  const t = id ? alla.find((x) => x.id === id || x.id.endsWith(`/${id}`)) : alla.find((x) => x.name === namn);
-  if (!t) throw new Error(`Hittar inget tema ${id ? `med id ${id}` : `som heter "${namn}"`} (finns: ${alla.map((x) => `"${x.name}" [${x.role}]`).join(', ')}). Duplicera det publicerade temat i Shopify (Teman → ⋯ → Duplicera) och döp kopian så.`);
+export async function hittaTema(klient, { namn = ARBETSTEMA, id = null, duplicera = false, logg = () => {} } = {}) {
+  const lista = async () => (await klient.graphql('{ themes(first: 50) { nodes { id name role processing } } }')).themes?.nodes ?? [];
+  let alla = await lista();
+  let t = id ? alla.find((x) => x.id === id || x.id.endsWith(`/${id}`)) : alla.find((x) => x.name === namn);
+  if (!t && duplicera && !id) {
+    // Arbetskopian: en kopia av det publicerade temat med arbetsnamnet (Axels
+    // egen ordning — han duplicerar och publicerar utkastet).
+    const main = alla.find((x) => x.role === 'MAIN');
+    if (!main) throw new Error('Hittar inget publicerat tema att kopiera.');
+    const d = await klient.graphql(`mutation stKopia($id: ID!, $name: String) { themeDuplicate(id: $id, name: $name) { newTheme { id name role processing } userErrors { field message } } }`, { id: main.id, name: namn });
+    t = d.themeDuplicate?.newTheme;
+    if (!t?.id) throw new Error('themeDuplicate gav inget tema.');
+    logg(`   ✓ arbetskopia skapad ur "${main.name}": "${t.name}" ${t.id}`);
+    for (let i = 0; i < 36 && t.processing; i++) { await sov(5000); t = (await lista()).find((x) => x.id === t.id) ?? t; }
+  }
+  if (!t) throw new Error(`Hittar inget tema ${id ? `med id ${id}` : `som heter "${namn}"`} (finns: ${alla.map((x) => `"${x.name}" [${x.role}]`).join(', ')}). Kör med --duplicera så skapas en kopia av det publicerade temat med det namnet.`);
   if (t.processing) throw new Error(`Temat "${t.name}" bearbetas fortfarande av Shopify — vänta en minut och kör igen.`);
   return t;
 }
@@ -177,12 +184,14 @@ export async function kundvy(klient, tema, vag, markorer) {
 
 // ------------------------------------------------------------ hela vägen
 
-export async function publicera({ temanamn = ARBETSTEMA, temaId = null, torr = false, publiceraTema = false, bildStart = null, bildOmOss = null, logg = console.log, env = process.env } = {}) {
+export async function publicera({ temanamn = ARBETSTEMA, temaId = null, duplicera = false, torr = false, publiceraTema = false, bildStart = null, bildOmOss = null, logg = console.log, env = process.env } = {}) {
   lagaMiljo(env);
   const butik = losButik('baverbutiken', env);
   const klient = await skapaKlient(butik);
   logg(`Butik: ${klient.namn} (${klient.shop}) · ${klient.bas}`);
-  const tema = await hittaTema(klient, { namn: temanamn, id: temaId });
+  const tema = await hittaTema(klient, { namn: temanamn, id: temaId, duplicera: duplicera && !torr, logg });
+  const recensioner = lasRecensioner();
+  if (!recensioner.length) logg('⚠️ storytelling/recensioner.json är tom — kör node storytelling/recensioner.mjs först, annars blir recensionsblocket tomt.');
   logg(`Tema: "${tema.name}" (${tema.role}${tema.role === 'MAIN' ? ' — DET PUBLICERADE' : ''}) ${tema.id}`);
 
   // Bilderna: repots bilder.json är minnet, flaggorna vinner och skrivs dit.
@@ -201,14 +210,14 @@ export async function publicera({ temanamn = ARBETSTEMA, temaId = null, torr = f
 
   // 1. Temafilerna (sektioner + Om oss-mallen).
   const repo = temafiler();
-  repo[OM_OSS_MALLFIL] = omOssMall(repo[OM_OSS_MALLFIL], ref.omOss);
+  repo[OM_OSS_MALLFIL] = JSON.stringify(byggOmOssMall({ bilder: ref, recensioner }), null, 2) + '\n';
   const fore = await lasTemafiler(klient, tema.id, [...Object.keys(repo), INDEX, SETTINGS]);
   for (const n of [INDEX, SETTINGS]) if (fore[n] == null) throw new Error(`${n} finns inte i temat "${tema.name}".`);
   const nyaFiler = {};
   for (const [n, text] of Object.entries(repo)) if (!filerLika(n, fore[n], text)) nyaFiler[n] = text;
 
   // 2. Startsidan och sidfoten (rena funktioner över temats egna filer).
-  const index = byggIndex(tolkaJson(fore[INDEX]), { bild: ref.start });
+  const index = byggIndex(tolkaJson(fore[INDEX]), { bilder: ref, recensioner });
   const indexText = JSON.stringify(index, null, 2) + '\n';
   if (!filerLika(INDEX, fore[INDEX], indexText)) nyaFiler[INDEX] = indexText;
   const settings = byggFooter(tolkaJson(fore[SETTINGS]));
@@ -263,6 +272,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
   publicera({
     temanamn: arg('--tema') ?? ARBETSTEMA,
     temaId: arg('--tema-id'),
+    duplicera: argv.includes('--duplicera'),
     torr: argv.includes('--torr'),
     publiceraTema: argv.includes('--publicera'),
     bildStart: arg('--bild-start'),

@@ -1112,29 +1112,41 @@ det som återstår står i `klaviyo/SISTA-STEGEN.md`.
 
 Axels beställning: storytelling om hur han startade Bäverbutiken ("ett
 mini-Biltema online, fast med bra och roliga produkter"), på startsidan och i
-footern, plus fler Judge.me-widgetar. Läs `storytelling/README.md` först.
-✅ **Live sedan 2026-09-27 eftermiddag** (tema "Story + recensioner
-2026-09-27", publicerat med `node storytelling/publicera.mjs --publicera`;
-det gamla temat "UTKAST utan popup 2026-08-28" ligger kvar som backup).
+footern, plus fler Judge.me-widgetar; förebilden är **Norillo** (norillo.se:
+hero "Sverige sedan 2024, över 75 000 kunder", recensionskarusell, USP-rad,
+tidslinjen "Vår resa", footer med historien). Läs `storytelling/README.md`
+först. ✅ **Live sedan 2026-09-27 eftermiddag, v2 samma kväll** (tema "Story
+v2 2026-09-27", publicerat med `node storytelling/publicera.mjs --publicera`;
+"Story + recensioner 2026-09-27" och "UTKAST utan popup 2026-08-28" ligger
+kvar opublicerade som backup). Axels andra order samma dag: "visa recensioner
+från olika produkter och jag vill lowkey ha typ allt detta på min startsida"
+⇒ hela historien ligger på startsidan.
 
 - **Berättelsen är byggd på det som går att mäta:** butiken började med
   produkten Bäverkopplingen (handle `superkoppling`, 2026-02-13), sedan
-  Bäverlampa Pro och Bävertratten — de tre är tidslinjen i sektionen
-  "Vår historia", och "240+ prylar" räknas live ur samlingen Alla produkter.
-  Den enda påhittade meningen är "efter Sveriges flitigaste byggare" (varför
-  bäver); Axel bekräftar eller byter den. **Konkurrentens namn står aldrig på
-  sajten** ("den där järnhandeln du gillar att gå runt i").
-- **Tre egna sektioner** i temat Impulse 5.0.0 (`bb-fortroende`, `bb-historia`,
-  `bb-recensioner`), startsidans ordning hero → förtroenderad → Bästsäljare →
-  historien → recensionerna → Kategorier → nyhetsbrev → kontakt, sidfoten med
+  Bäverlampa Pro (2026-03-03) och Bävertratten (2026-04-02) — de tre är
+  tidslinjen i sektionen "Vår historia", och "240+ prylar" räknas live ur
+  samlingen Alla produkter. Den enda påhittade meningen är "efter Sveriges
+  flitigaste byggare" (varför bäver); Axel bekräftar eller byter den.
+  **Konkurrentens namn står aldrig på sajten** ("den där järnhandeln du gillar
+  att gå runt i").
+- **Fyra egna sektioner** i temat Impulse 5.0.0 (`bb-fortroende`,
+  `bb-recensioner`, `bb-historia`, `bb-varfor`), startsidans ordning hero →
+  förtroenderad → Bästsäljare → Kunderna har ordet → Vår historia (svart) →
+  Varför en bäver (ljust: "Bävern bygger. Vi också.", fyra punkter "Vad du kan
+  räkna med", "Vilka vi är") → Kategorier → nyhetsbrev → kontakt, sidfoten med
   kolumnen "Om Bäverbutiken" + kontorsadressen, och sidan `/pages/om-oss`
-  (mall `page.om-oss`). Texten bor i `storytelling/innehall.mjs`.
-- **Judge.me:** app-embedden fanns redan; siffrorna kommer ur
-  `shop.metafields.judgeme.*` (964 recensioner, 4,86). Karusellen visar det
-  Judge.me-adminen säger (Reviews Carousel → Review curation) — läget var
-  "senaste", så 15 riktiga, varierade 5-stjärniga recensioner är markerade
-  som featured via API:t (`storytelling/featured.json`); de syns först när
-  Axel byter läget till "Choose reviews manually".
+  (mallen genereras ur `innehall.mjs`). Texten bor i `storytelling/innehall.mjs`.
+- **Recensionerna är egna kort från OLIKA produkter:** `storytelling/recensioner.mjs`
+  läser Judge.me:s API, väljer 12 riktiga 5-stjärniga (verifierade köpare
+  först, en per produkt, aldrig leveransklagomål), skriver
+  `storytelling/recensioner.json` och markerar samma tolv som featured i
+  Judge.me. Judge.me:s egen karusell visade fyra Lövsilarna i rad (läget
+  "senaste" i adminen, Reviews Carousel → Review curation) — den finns kvar
+  som avstängt val i sektionen. Snittet och antalet kommer ur
+  `shop.metafields.judgeme.*` (964, 4,86), medaljerna ur `medals`.
+  "Verifierat köp" visas bara när Judge.me säger `buyer`/`verified-purchase`
+  (48 av 964; 485 är importerade).
 - ⚠️ **Skriv aldrig direkt i det publicerade temat:** `publicera.mjs` skriver
   till ett namngivet arbetstema (`themeDuplicate` först), läser tillbaka varje
   fil, tar skärmdumpar via `preview_theme_id` (`storytelling/skarmdump.mjs`,

@@ -1,40 +1,67 @@
 {%- comment -%}
-  bb-recensioner.liquid — "Kunderna säger": Judge.me:s recensionskarusell,
-  snittbetyget och medaljerna, på startsidan och Om oss-sidan.
-  Skrivs till temat av storytelling/publicera.mjs (repot yognftnfgn).
+  bb-recensioner.liquid — "Kunderna har ordet": utvalda recensioner från OLIKA
+  produkter som kort (blocken skrivs av storytelling/publicera.mjs ur
+  storytelling/recensioner.json, som storytelling/recensioner.mjs väljer ur
+  Judge.me), snittbetyget och antalet ur Judge.me:s fält, och Judge.me:s
+  medaljer. Judge.me:s egen karusell finns kvar som val ("visa_karusell") —
+  den visar det Judge.me-adminen bestämt (senaste eller featured).
 
-  Widgetarna är Judge.me:s egna (app-embedden "judgeme_core" måste vara på i
-  temat — den var det 2026-09-27). Markeringen följer Judge.me:s guide för
-  vintage-teman: karusellen läser shop.metafields.judgeme.featured_carousel,
-  medaljerna shop.metafields.judgeme.medals. Vilka recensioner karusellen visar
-  styrs i Judge.me-adminen (Reviews Carousel → Review curation): "featured"
-  visar de 15 vi valt ut, annars de senaste 5-stjärniga.
+  Produktbilden och länken hämtas live ur butiken (all_products[handle]);
+  en produkt som inte längre finns ger inget kort, aldrig ett trasigt.
 {%- endcomment -%}
 {%- liquid
   assign jm = shop.metafields.judgeme
   assign betyg = jm.all_reviews_rating | default: ''
   assign antal = jm.all_reviews_count | default: ''
   assign betyg_text = betyg | plus: 0 | round: 1 | replace: '.', ','
+  assign kort = section.blocks | where: 'type', 'recension'
 -%}
 {%- style -%}
-  .bb-recensioner { background: {{ section.settings.bakgrund }}; color: {{ section.settings.textfarg }}; padding: 52px 0 40px; }
-  .bb-recensioner .section-header { margin-bottom: 18px; }
-  .bb-recensioner .subheading { margin-bottom: 8px; font-size: 13px; }
-  .bb-recensioner__ingress { margin: 0 auto 6px; max-width: 640px; font-size: 16px; opacity: .85; }
-  .bb-recensioner__stjarnor { color: #f4bc33; letter-spacing: 2px; margin-right: 6px; }
-  .bb-recensioner__karusell { margin: 10px 0 0; }
-  .bb-recensioner__medaljer { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 18px; margin-top: 26px; }
-  .bb-recensioner__medaljer .jdgm-medals-wrapper { width: 100%; }
-  .bb-recensioner__medaljer .jdgm-medal-wrapper { display: inline-block; margin: 6px 10px; }
-  .bb-recensioner__medaljer .jdgm-medal__value { font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback); }
-  .bb-recensioner__tomt { text-align: center; opacity: .7; padding: 20px 0; }
+  .bb-rec { background: {{ section.settings.bakgrund }}; color: {{ section.settings.textfarg }}; padding: 56px 0 44px; }
+  .bb-rec .section-header { margin-bottom: 22px; }
+  .bb-rec .subheading { margin-bottom: 8px; font-size: 13px; color: {{ section.settings.accent }}; }
+  .bb-rec__ingress { margin: 0 auto 6px; max-width: 640px; font-size: 16px; opacity: .85; }
+  .bb-rec__stjarnor { color: #f4bc33; letter-spacing: 2px; margin-right: 6px; }
+  .bb-rec__yta { position: relative; }
+  .bb-rec__rad { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 40px) / 3); gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding: 6px 2px 14px; margin: 0; list-style: none; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .bb-rec__rad::-webkit-scrollbar { display: none; }
+  .bb-rec__kort { scroll-snap-align: start; background: {{ section.settings.kortbakgrund }}; border: 1px solid rgba(0,0,0,.07); border-radius: 8px; padding: 22px 22px 18px; display: flex; flex-direction: column; min-width: 0; margin: 0; }
+  .bb-rec__topp { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .bb-rec__bild { flex: 0 0 56px; width: 56px; height: 56px; border-radius: 6px; overflow: hidden; background: #fff; border: 1px solid rgba(0,0,0,.08); }
+  .bb-rec__bild img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .bb-rec__produkt { font-size: 13px; line-height: 1.3; min-width: 0; }
+  .bb-rec__produkt a { color: inherit; text-decoration: none; opacity: .8; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .bb-rec__produkt a:hover { opacity: 1; text-decoration: underline; }
+  .bb-rec__betyg { color: #f4bc33; font-size: 15px; letter-spacing: 2px; margin-bottom: 8px; }
+  .bb-rec__rubrik { font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback); font-weight: var(--typeHeaderWeight); text-transform: uppercase; letter-spacing: .03em; font-size: 19px; line-height: 1.15; margin-bottom: 6px; }
+  .bb-rec__text { font-size: 15px; line-height: 1.5; margin: 0 0 14px; flex: 1 1 auto; }
+  .bb-rec__text:before { content: '“'; opacity: .5; }
+  .bb-rec__text:after { content: '”'; opacity: .5; }
+  .bb-rec__namn { font-size: 13px; opacity: .8; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .bb-rec__verifierad { display: inline-flex; align-items: center; gap: 4px; color: #1a7f4b; font-weight: 700; }
+  .bb-rec__verifierad svg { width: 14px; height: 14px; fill: currentColor; }
+  .bb-rec__pilar { display: flex; justify-content: center; gap: 10px; margin-top: 4px; }
+  .bb-rec__pil { width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(0,0,0,.2); background: transparent; color: inherit; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
+  .bb-rec__pil svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; }
+  .bb-rec__pil:hover { background: {{ section.settings.accent }}; color: #fff; border-color: {{ section.settings.accent }}; }
+  .bb-rec__medaljer { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 18px; margin-top: 26px; }
+  .bb-rec__medaljer .jdgm-medals-wrapper { width: 100%; }
+  .bb-rec__medaljer .jdgm-medal-wrapper { display: inline-block; margin: 6px 10px; }
+  .bb-rec__medaljer .jdgm-medal__value { font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback); }
+  .bb-rec__karusell { margin-top: 10px; }
+  .bb-rec__tomt { text-align: center; opacity: .7; padding: 20px 0; }
+  @media only screen and (max-width: 959px) { .bb-rec__rad { grid-auto-columns: calc((100% - 20px) / 2); } }
   @media only screen and (max-width: 768px) {
-    .bb-recensioner { padding: 36px 0 28px; }
-    .bb-recensioner__ingress { font-size: 15px; }
+    .bb-rec { padding: 38px 0 30px; }
+    .bb-rec__ingress { font-size: 15px; }
+    .bb-rec__rad { grid-auto-columns: 84%; gap: 12px; }
+    .bb-rec__kort { padding: 18px 16px 14px; }
+    .bb-rec__rubrik { font-size: 17px; }
+    .bb-rec__text { font-size: 14px; }
   }
 {%- endstyle -%}
 
-<div class="bb-recensioner" id="kunderna-sager" data-section-id="{{ section.id }}" data-section-type="bb-recensioner">
+<div class="bb-rec" id="kunderna-sager" data-section-id="{{ section.id }}" data-section-type="bb-recensioner">
   <div class="page-width">
     <div class="section-header text-center">
       {%- if section.settings.overrad != blank -%}
@@ -44,47 +71,121 @@
         <h2>{{ section.settings.rubrik | escape }}</h2>
       {%- endif -%}
       {%- if betyg != blank and antal != blank -%}
-        <p class="bb-recensioner__ingress"><span class="bb-recensioner__stjarnor" aria-hidden="true">★★★★★</span>{{ betyg_text }} av 5 i snitt, baserat på {{ antal }} recensioner.</p>
+        <p class="bb-rec__ingress"><span class="bb-rec__stjarnor" aria-hidden="true">★★★★★</span>{{ betyg_text }} av 5 i snitt, baserat på {{ antal }} recensioner.</p>
       {%- endif -%}
       {%- if section.settings.ingress != blank -%}
-        <div class="rte bb-recensioner__ingress">{{ section.settings.ingress }}</div>
+        <div class="rte bb-rec__ingress">{{ section.settings.ingress }}</div>
       {%- endif -%}
     </div>
   </div>
 
-  <div class="page-width">
-    {%- if jm.featured_carousel != blank -%}
-      <div class="bb-recensioner__karusell">
+  {%- if kort.size > 0 -%}
+    <div class="page-width">
+      <div class="bb-rec__yta">
+        <ul class="bb-rec__rad" id="bb-rec-rad-{{ section.id }}" aria-label="Recensioner från kunder">
+          {%- for block in kort -%}
+            {%- assign produkt = all_products[block.settings.produkt] -%}
+            {%- if produkt == blank and section.settings.bara_med_produkt -%}{%- continue -%}{%- endif -%}
+            <li class="bb-rec__kort" {{ block.shopify_attributes }}>
+              {%- if produkt != blank -%}
+                <div class="bb-rec__topp">
+                  {%- if produkt.featured_image != blank -%}
+                    <a class="bb-rec__bild" href="{{ produkt.url }}" aria-hidden="true" tabindex="-1"><img src="{{ produkt.featured_image | img_url: '160x160' }}" alt="" loading="lazy"></a>
+                  {%- endif -%}
+                  <div class="bb-rec__produkt"><a href="{{ produkt.url }}">{{ produkt.title }}</a></div>
+                </div>
+              {%- endif -%}
+              <div class="bb-rec__betyg" aria-label="{{ block.settings.betyg }} av 5 stjärnor">{%- for i in (1..5) -%}{%- if i <= block.settings.betyg -%}★{%- else -%}☆{%- endif -%}{%- endfor -%}</div>
+              {%- if block.settings.rubrik != blank -%}<div class="bb-rec__rubrik">{{ block.settings.rubrik | escape }}</div>{%- endif -%}
+              <p class="bb-rec__text">{{ block.settings.text | escape }}</p>
+              <div class="bb-rec__namn">
+                <span>{{ block.settings.namn | escape }}</span>
+                {%- if block.settings.verifierad -%}
+                  <span class="bb-rec__verifierad"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 16.2L5.3 12l-1.4 1.4 5.6 5.6 12-12-1.4-1.4z"/></svg>Verifierat köp</span>
+                {%- endif -%}
+              </div>
+            </li>
+          {%- endfor -%}
+        </ul>
+        {%- if kort.size > 3 -%}
+          <div class="bb-rec__pilar">
+            <button type="button" class="bb-rec__pil" data-bb-rec-pil="-1" data-mal="bb-rec-rad-{{ section.id }}" aria-label="Föregående recensioner"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+            <button type="button" class="bb-rec__pil" data-bb-rec-pil="1" data-mal="bb-rec-rad-{{ section.id }}" aria-label="Fler recensioner"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endif -%}
+
+  {%- if section.settings.visa_karusell and jm.featured_carousel != blank -%}
+    <div class="page-width">
+      <div class="bb-rec__karusell">
         <div class='jdgm-carousel-wrapper' data-auto-install='false'>
           {{ jm.featured_carousel }}
         </div>
       </div>
-    {%- else -%}
-      <p class="bb-recensioner__tomt">Recensionerna laddas från Judge.me. Syns inget här: kontrollera att app-embedden Judge.me är på och att karusellen är aktiverad i Judge.me.</p>
-    {%- endif -%}
-  </div>
+    </div>
+  {%- elsif kort.size == 0 -%}
+    <p class="bb-rec__tomt">Inga recensioner valda ännu. Kör <code>node storytelling/recensioner.mjs</code> och sedan <code>publicera.mjs</code>, eller slå på Judge.me:s karusell i sektionens inställningar.</p>
+  {%- endif -%}
 
   {%- if section.settings.visa_medaljer and jm.medals != blank -%}
     <div class="page-width">
-      <div class="bb-recensioner__medaljer">
+      <div class="bb-rec__medaljer">
         {{ jm.medals }}
       </div>
     </div>
   {%- endif -%}
 </div>
 
+<script>
+  (function () {
+    document.querySelectorAll('[data-bb-rec-pil]').forEach(function (knapp) {
+      if (knapp.dataset.bbKlar) return;
+      knapp.dataset.bbKlar = '1';
+      knapp.addEventListener('click', function () {
+        var rad = document.getElementById(knapp.dataset.mal);
+        if (!rad) return;
+        var kort = rad.querySelector('.bb-rec__kort');
+        var steg = kort ? kort.getBoundingClientRect().width + 20 : rad.clientWidth;
+        rad.scrollBy({ left: steg * Number(knapp.dataset.bbRecPil), behavior: 'smooth' });
+      });
+    });
+  })();
+</script>
+
 {% schema %}
 {
-  "name": "Kunderna säger (Judge.me)",
+  "name": "Kunderna har ordet",
+  "max_blocks": 24,
   "settings": [
     { "type": "text", "id": "overrad", "label": "Överrad", "default": "Recensioner" },
     { "type": "text", "id": "rubrik", "label": "Rubrik", "default": "Kunderna har ordet" },
-    { "type": "paragraph", "content": "Snittbetyget och antalet recensioner hämtas automatiskt från Judge.me och visas under rubriken." },
+    { "type": "paragraph", "content": "Snittbetyget och antalet recensioner hämtas automatiskt från Judge.me. Korten nedan väljs av storytelling/recensioner.mjs (en produkt per kort, riktiga 5-stjärniga recensioner)." },
     { "type": "richtext", "id": "ingress", "label": "Egen text (valfri)" },
+    { "type": "checkbox", "id": "bara_med_produkt", "label": "Visa bara kort vars produkt finns kvar i butiken", "default": true },
+    { "type": "checkbox", "id": "visa_karusell", "label": "Visa även Judge.me:s egen karusell", "default": false },
     { "type": "checkbox", "id": "visa_medaljer", "label": "Visa Judge.me-medaljerna", "default": true },
     { "type": "color", "id": "bakgrund", "label": "Bakgrund", "default": "#ffffff" },
-    { "type": "color", "id": "textfarg", "label": "Text", "default": "#111111" }
+    { "type": "color", "id": "kortbakgrund", "label": "Kortens bakgrund", "default": "#f6f6f4" },
+    { "type": "color", "id": "textfarg", "label": "Text", "default": "#111111" },
+    { "type": "color", "id": "accent", "label": "Accent", "default": "#dd1d1d" }
   ],
-  "presets": [ { "name": "Kunderna säger (Judge.me)" } ]
+  "blocks": [
+    {
+      "type": "recension",
+      "name": "Recension",
+      "settings": [
+        { "type": "product", "id": "produkt", "label": "Produkt (bild och länk hämtas härifrån)" },
+        { "type": "text", "id": "namn", "label": "Namn", "default": "Kund" },
+        { "type": "range", "id": "betyg", "label": "Stjärnor", "min": 1, "max": 5, "step": 1, "default": 5 },
+        { "type": "text", "id": "rubrik", "label": "Rubrik (valfri)" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "Precis vad jag behövde." },
+        { "type": "checkbox", "id": "verifierad", "label": "Verifierat köp (bara om Judge.me säger det)", "default": false },
+        { "type": "text", "id": "datum", "label": "Datum (visas inte, spårbarhet)" }
+      ]
+    }
+  ],
+  "presets": [ { "name": "Kunderna har ordet" } ]
 }
 {% endschema %}
