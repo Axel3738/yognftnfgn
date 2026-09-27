@@ -115,6 +115,12 @@ gällde till och med 2026-09-25. Skriv den aldrig i något nytt.
   dagarna före bytet (Bäverbutikens Skickat). Paket till gamla adressen måste
   därför tas emot en tid till. Store facts säger åt VA:n att inte be dem skicka
   om.
+- ⛔ **Sjöhed 160 är Axels privata bostad** (hans besked 2026-09-27; kontoret
+  ligger på Ringön). Paket dit kommer alltså fram, men adressen får **aldrig**
+  stå publikt igen: inte i en policy, på en sida, i en mejlsidfot eller i en
+  ny butik. Mätt 2026-09-27 morgon: den stod kvar i integritetspolicyn i sju
+  butiker, i Bäverbutikens användarvillkor och i Grillklinikens policyer, alla
+  i väntan på Cowork-prompten ovan.
 - Klaviyo `QZ4jLG` (avstängt) bär fortfarande gamla postadressen. Byt den
   först om Klaviyo slås på igen.
 
