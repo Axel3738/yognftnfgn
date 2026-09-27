@@ -94,6 +94,30 @@ Warmup tier 1 valde Axel i appen — publiken går inte att läsa via MCP. **Gam
 `51c37c20-e00c-48c2-b144-089e62f62d14` (med citaten) är återkallad till utkast** 08:17 CEST.
 K02–K22 är utkast; K18 får inte schemaläggas utan ny topp 3-mätning (KVAR.md).
 
+**Recensionskampanjen (Axels fråga 2026-09-27: "en kampanj som bara är recensionsformuläret
+… där de får recensera butiken"):** samma mejl som F14 v2 (alla fem stjärnor till
+`se.trustpilot.com/evaluate/baverbutiken.se`, ingen Judge.me-länk), omskrivet om butiken i
+stället för paketet. Två utkast, eftersom en kampanj bara skickas en gång och paketen måste
+ha hunnit fram (22 dagar efter köpet, samma gräns som F14):
+
+- **Omgång 1** `3d39bb08-76ba-4937-82d2-2e57604d38fb` (ämnesrad "Hur har det varit att handla
+  hos oss?") till segmentet **`Recension butiken omgång 1: tier 1, kunder med samtycke, köpt
+  29 jun till 5 sep`** `0ce1fbd5-52d3-4fda-b616-f503ee2b8faf` (1 050 kontakter 2026-09-27).
+  Förslag: mån 28/9 18:00, dagen före K01 — klick på stjärnorna och svar på mejlet hjälper
+  avsändarryktet innan första säljmejlet går.
+- **Omgång 2** `5908bf3e-738c-4433-9c2b-aa8f29da90ca` (samma mejl) till **`Recension butiken
+  omgång 2 (tidigast 19 okt): tier 1, kunder med samtycke, köpt 6 sep till 27 sep`**
+  `71531cdb-96c1-4bbb-8aff-168f28d11d32` (1 374). Skickas tidigast mån 19/10, när även de
+  sista i fönstret haft sina 22 dagar; sessionen har en påminnelse 19/10 08:30.
+- Köp efter 2026-09-27 07:05 UTC får förfrågan av F14 v2 och ingår i inget av segmenten.
+  Publiken följer uppvärmningen (bara tier 1) och kampanjregeln (bara subscribed). Kunder med
+  samtycke utanför tier 1 tas efter uppvärmningen med ett segment som utesluter dem som redan
+  fått mejlet (`receivedEmail` = 0 med villkoret `emailSubject eq "Hur har det varit att
+  handla hos oss?"`).
+- Publiken väljs i appen av Axel (MCP:n kan inte sätta den). Segmentnamnen ovan är exakt det
+  appen visar; kampanjerna syns på ämnesraden, båda heter likadant — titeln (omgång 1/2) syns
+  först inne i utkastet.
+
 ### Regler ur de två dagarna (för nästa som ger Axel klick)
 
 - **Appen visar ÄMNESRADEN**, på mejlsteg och på kampanjer. Våra koder ("F01", "K01 v2") syns
@@ -180,6 +204,8 @@ Mätt med `get_segments` samma dag, alla taggbaserade:
 | Warmup tier 2 | `9c219ca9-fa16-4a58-af8a-2b2828b29cd1` | 5 000 |
 | Warmup tier 3 | `d3308bc6-2b3e-43ee-9157-7ac5bd719fca` | 6 180 |
 | All subscribed | `9902d9ef-0ea3-4077-bbd5-032851b37143` | 6 267 |
+| Recension butiken omgång 1: tier 1, kunder med samtycke, köpt 29 jun till 5 sep (sessionen 2026-09-27) | `0ce1fbd5-52d3-4fda-b616-f503ee2b8faf` | 1 050 |
+| Recension butiken omgång 2 (tidigast 19 okt): tier 1, kunder med samtycke, köpt 6 sep till 27 sep (sessionen 2026-09-27) | `71531cdb-96c1-4bbb-8aff-168f28d11d32` | 1 374 |
 
 `preview_segment` på tier 1 OCH inte subscribed gav 0: tier 1 får kampanjer.
 Mottagarna går INTE att sätta via MCP:n (`update_draft_campaign` har inget fält för
