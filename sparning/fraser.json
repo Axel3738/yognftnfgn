@@ -2,6 +2,7 @@
   "shipment information received": "Vi har fått uppgifterna om paketet",
   "parcel information received": "Vi har fått uppgifterna om paketet",
   "shipping information received": "Vi har fått uppgifterna om paketet",
+  "order details received": "Vi har fått uppgifterna om paketet",
   "processing information input": "Uppgifterna om paketet är registrerade",
   "vi har fått en beställning på en leverans och väntar på paketet": "Avsändaren har bokat leveransen och fraktbolaget väntar på paketet",
   "we have received a notification from your shipper that they are preparing an item for you. the tracking information will be updated when the parcel is handed over to postnord": "Avsändaren förbereder ditt paket. Spårningen uppdateras när PostNord har tagit emot det",
