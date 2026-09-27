@@ -749,7 +749,9 @@
       "lage": "test",
       "lage_motivering": "startad 2026-08-29, för ny för data",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "kampanjnamnet",
+      "minne": "products/ibc-tankoverdraget",
+      "minne_not": "NO-kampanjen delar produktminne med SE (Norge har aldrig egna briefer, Axel 2026-09-01); tillagt 2026-09-27 av /rond-auto så lardom.mjs kan skriva NO-lärdomarna i samma lardomar.md"
     },
     {
       "campaign_id": "120251996272390233",

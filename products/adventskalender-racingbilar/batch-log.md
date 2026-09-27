@@ -1,6 +1,6 @@
 # Batch-log — Adventskalender Racingbilar
 
-Breakthrough-frekvens: 1/33 (3 %) (etikett.mjs --frekvens 2026-09-25)
+Breakthrough-frekvens: 1/37 (3 %) — spend winners 1, KPI winners 5, losers 17, ej levererade 13 (etikett.mjs --frekvens 2026-09-27)
 
 ## Batch #1 — 2026-09-10 (`/forsta-batch`, automatisk körning via `/rond-auto` steg 4b)
 
@@ -328,3 +328,13 @@ Etiketten är ingen dom (`bedombar` står bredvid). Annonsens egna första vecka
 | Adventskalender_RV_6_1 | 3 | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 1,19 | nej | hooken föll — logga och släpp, aldrig ABO |
 | Adventskalender_RV_5_1 | 3 | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 1,19 | nej | hooken föll — logga och släpp, aldrig ABO |
 
+## Etiketter dag 7 (2026-09-27) — Adventskalendern Racingbilar
+
+Ur `agent/etikett-backfill.mjs` 2026-09-27 (annonsens egna första vecka, 7d_click). Lärdom per annons i `lardomar.md` (LARDOM-rader samma morgon).
+
+| Annons | Batch | Typ | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Bedömbar | Playbook |
+|---|---|---|---|---|---|---|---|---|---|
+| Adventskalender_BF_10_1 | 4 | okänd | **INGEN_LEVERANS** | — | 4 kr | 0 | 0,00 / 0,61 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Adventskalender_BF_11_1 | 4 | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 0,61 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Adventskalender_RV_8_1 | 4 | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 0,61 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Adventskalender_CO_4_1 | 4 | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 0,61 | nej | hooken föll — logga och släpp, aldrig ABO |

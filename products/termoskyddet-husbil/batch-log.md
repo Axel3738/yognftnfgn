@@ -1,6 +1,6 @@
 # Batch-log — Termoskyddet för Husbil
 
-Breakthrough-frekvens: 2/18 (11 %) (etikett.mjs --frekvens 2026-09-26)
+Breakthrough-frekvens: 2/24 (8 %) — spend winners 1, KPI winners 3, losers 12, ej levererade 6 (etikett.mjs --frekvens 2026-09-27)
 
 ## Batch #1 — 2026-09-14 (`/forsta-batch`, på Axels begäran)
 
@@ -430,3 +430,16 @@ Butiksneutralt (speglas till CaraShell): inget butiksnamn, inga policyrader, ing
 
 **Upptagna AD-ID efter batchen:** BOF 1–10, CS 1–12, SP 1–9 (+ SP_2_H2/H3/H4), PD 1–12, G 1–3,
 CO 1–2, LI 1, MT 1, OB 1–2, PR 1–2, RI 1, UG 1–2. Nästa lediga: BOF 11, CS 13, SP 10, PD 13, OB 3.
+
+## Etiketter dag 7 (2026-09-27) — Termoskyddet för Husbil 211 × 171 cm
+
+Ur `agent/etikett-backfill.mjs` 2026-09-27 (annonsens egna första vecka, 7d_click). Lärdom per annons i `lardomar.md` (LARDOM-rader samma morgon).
+
+| Annons | Batch | Typ | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Bedömbar | Playbook |
+|---|---|---|---|---|---|---|---|---|---|
+| Termoskydd_RI_1_H1 | 1 | okänd | **SPEND_WINNER** | 44 % | 7100 kr | 23 | 1,86 / 2,08 | ja | KPI-fix: LP-byte, proof, kostnad-av-att-vänta — utförandet, inte idén |
+| Termoskydd_SP_4_H1 | 1 | okänd | **KPI_WINNER** | 7 % | 1144 kr | 9 | 5,03 / 2,08 | ja | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Termoskydd_PR_1_H1 | 1 | okänd | **LOSER** | 0 % | 78 kr | 0 | 0,00 / 2,08 | nej | släpp |
+| Termoskydd_CO_1_H1 | 1 | okänd | **LOSER** | 0 % | 21 kr | 0 | 0,00 / 2,08 | nej | släpp |
+| Termoskydd_SP_6_H1 | 2 | okänd | **LOSER** | 0 % | 11 kr | 0 | 0,00 / 2,08 | nej | släpp |
+| Termoskydd_PD_7_H1 | 2 | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 2,08 | nej | hooken föll — logga och släpp, aldrig ABO |

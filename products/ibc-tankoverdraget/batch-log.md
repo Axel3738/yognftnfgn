@@ -1,6 +1,6 @@
 # Batch-log — IBC-Tanköverdraget
 
-Breakthrough-frekvens: 1/52 (2 %) (etikett.mjs --frekvens 2026-09-25)
+Breakthrough-frekvens: 1/55 (2 %) — spend winners 0, KPI winners 5, losers 28, ej levererade 21 (etikett.mjs --frekvens 2026-09-27)
 
 ## Batch #1 — 2026-09-01 (`/forsta-batch`, automatisk rutinkörning)
 
@@ -628,3 +628,16 @@ Rundan låg på 0 i morse (0 lärdomar sedan batch #8). Efter lärdomarna (66 st
 | IBC_OB_1_H1 | video | I | IBC_CO_2_H1 | öppningen: kundens invändning ordagrant som fråga ("En grön presenning med ett par spännband duger väl?") i stället för vindpåståendet; inget pris; CTA utan "idag" | invändningen är den kunderna faktiskt skriver (kalla=voc) — CO_2_H1 fick aldrig spend | ≥ 300 kr spend innan dom; svar på rutan "Fungerar det / presenning" | okänd | — |
 
 `invandning=`-taggen togs bort ur OB_1_H1: invändningen "Fungerar det" ligger på 1 av 16 kommentarer (6 %, under matrisens 10 %-gräns) så `lardom --brief` vägrade taggen; briefen räknas som vanlig plats mot taket, inte som fri. Kvar av de namngivna: IBC_PD_13_1, IBC_PD_14_H1, IBC_CS_11_H1 — nästa runda.
+
+## Etiketter dag 7 (2026-09-27) — IBC-Tanköverdraget
+
+Ur `agent/etikett-backfill.mjs` 2026-09-27 (annonsens egna första vecka, 7d_click). Lärdom per annons i `lardomar.md` (LARDOM-rader samma morgon).
+
+| Annons | Batch | Typ | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Bedömbar | Playbook |
+|---|---|---|---|---|---|---|---|---|---|
+| IBC_RI_1_1 | 7 | okänd | **LOSER** | 1 % | 26 kr | 0 | 0,00 / 2,38 | nej | släpp |
+| IBC_BOF_16_1 | 7 | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 2,38 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
+| IBC_BOF_17_1 | 7 | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 2,38 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
+| IBC_BOF_18_1 | 7 | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 2,38 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
+| IBC_RV_11_1 | 7 | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 2,38 | nej | hooken föll — logga och släpp, aldrig ABO |
+| IBC_RV_12_1 | 7 | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 2,38 | nej | hooken föll — logga och släpp, aldrig ABO |

@@ -113,3 +113,7 @@ Hub: **Chimney sweep set creative hub** (db `3e2270ab-908c-8171-bbae-fff6adedbe5
 ⚠️ **Modellpolicy (regel 6) kunde INTE följas:** sessionen hade inget Agent-verktyg, ingen `ANTHROPIC_NYCKEL`/`ANTHROPIC_API_KEY` i miljön och ingen `ant`-profil — copyn (hookar, manusrader, primärtext, rubrik, beskrivning) är skriven av huvudsessionen och taggad `copy_model=fable`, inte sonnet. Tre-frågorstestet står rad för rad i varje brief ändå. Avvikelsen står i CS_BATCH_KLAR-raden.
 
 **Mät från dag 1:** `rev` och `brief → live` fylls i när raderna lästs / annonserna gått live.
+
+## Spendtjuv 2026-09-27 — Sotarset_PD_1_H1 pausad (TROTT_VINNARE)
+
+Grönt läge (kampanjen LAT_VARA, 8 559 kr / 3 d, ROAS 1,89): `Sotarset_PD_1_H1` (etikett LOSER 2026-09-26, livstids-ROAS 1,89 över break-even 1,51) tog 1 847 kr på 3 dygn med 3 köp och ROAS 0,75, dränering 936 kr ⇒ pausad av ronden, kampanjen orörd. Orsak TROTT_VINNARE: annonsen tjänade pengar totalt men bär inte längre — utfallet till nästa brief är "mata ersättarna": batch #3:s vidarebyggen på PD_1_H2/PD_1_H3 (PD_1_H6, PD_7_H1, PD_8_H1, PD_1_H7, PD_8_H2, PD_9_H1) ligger i hubben, 4 redan i To be Reviewed 2026-09-27.

@@ -301,3 +301,17 @@ Läst ur den live annonsen 2026-09-25 (primärtext, rubrik via Graph API; bilden
 | CTA | Ingen pris- eller rea-rad i annonsen — listicle-sidan bär rean · Handla nu | neutral | produktmedveten | samma |
 
 **Bärande komponent = hypotes (gissning):** HOOK-raden — måttet "6,5 × 3 meter – hela taket, inget mer" låter läsaren mäta sitt eget tak innan klicket; det är den enda raden som skiljer PD_8_1 från PD_9_1 (INGEN_LEVERANS, 7 kr) i samma kampanj, och den I1–I3 (PD_8_2 / PD_8_3 / PD_8_H1) byggs på om Axel vill ha briefer i listicle-kampanjen.
+
+## Komponentkarta Takoverdrag_PD_10_1 (BREAKTHROUGH 2026-09-27, ANALYSMETOD 6b)
+
+Läst ur den live annonsen 2026-09-27 (bilden via adimages 1080 × 1350, primärtext och rubrik via Graph) — briefen är batch #3:s rad "Samma nya variabel som PD_10_H1 som bild — rent formattest" (batch-log 2026-09-22, ur Axels annonsidé om storlekarna). ⚠️ Kampanjen är **Taköverdraget LISTICLE LAGERRENSNING** (Axels egen, AGARENS): budgethöjningen som gör den till BREAKTHROUGH är Axels hand. Fönstret 20–26 sep: 3 503 kr (28 % av kampanjen), 8 köp, ROAS 3,03 / CPA 438 kr mot break-even-CPA ~750, konverteringsgrad 3,6 % (8 köp / 224 LPV). Lärdom L-120250301010500291.
+
+| Komponent | Exakt rad / bild (läst ur annonsen, inte ur brief) | Valens | Awareness | Avatar |
+|---|---|---|---|---|
+| HOOK | Rubrik överst i bilden: "Nio storlekar – från 3 × 5,5 till 3 × 13,5 meter." · "Från 1 129 kr." | positiv (tvivlet på passform tas bort innan klicket) | lösningsmedveten | husvagnsagare-som-tvekar-pa-storleken |
+| BRIDGE | Fotot: vit husbil med svart taköverdrag, svarta remmar runt karossen, campingplats | positiv | lösningsmedveten | samma |
+| HOLD | Bandet under bilden: "Sitter kvar när det blåser – remmar på alla fyra sidor, 2,5 m och justerbara efter din vagn." | positiv (andra invändningen: blåser av) | lösningsmedveten | samma |
+| CTA | Knapp "Se alla nio storlekar." · länk till lagerrensnings-listiclen | neutral | — | samma |
+
+**Bärande komponent = hypotes (gissning):** HOOK-rubriken — storleksinvändningen (den vanligaste orsaken att inte klicka enligt Axel 2026-09-18 och invandningar.md) besvarad i rubriken innan klicket; konverteringen 3,6 % mot kampanjens 1,7 % säger att de som klickar redan vet att det passar. Den norska tvillingen Takovertrekk_NO_PD_10_1 tog 16 % av NO-kampanjen på ROAS 2,46 samma vecka med samma rubrik. Iterationerna (PD_10_2/3/4 i lärdomen) byter rubrikens fråga, ordningen mellan de två invändningarna och bilden — men kampanjen är Axels, så de briefas bara på hans ord.
+

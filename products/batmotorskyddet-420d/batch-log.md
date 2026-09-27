@@ -1,6 +1,6 @@
 # Batch-log — Båtmotorskyddet 420D
 
-Breakthrough-frekvens: 1/56 (2 %)
+Breakthrough-frekvens: 1/60 (2 %) — spend winners 0, KPI winners 13, losers 30, ej levererade 16 (etikett.mjs --frekvens 2026-09-27)
 
 ## Batch #1 — 2026-09-02 (`/forsta-batch`, automatisk rutinkörning)
 
@@ -588,3 +588,16 @@ tre, 0 anmärkningar efter rättning (iterationsnumret följer loggen: 1 och 2 p
 
 **Upptagna AD-ID:n efter batch #7:** CS_5_H1–H3, OB_1_1, OB_3_H1 (OB_2_1 reserverat, ej byggt), SP_1_H1–H15,
 SP_3_H1, SP_4_H1 — läs alltid hubben OCH kontot före nästa numrering (`batch-07/befintliga.json`, 74 namn).
+
+## Etiketter dag 7 (2026-09-27) — Båtmotorskyddet 420D
+
+Ur `agent/etikett-backfill.mjs` 2026-09-27 (annonsens egna första vecka, 7d_click). Lärdom per annons i `lardomar.md` (LARDOM-rader samma morgon).
+
+| Annons | Batch | Typ | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Bedömbar | Playbook |
+|---|---|---|---|---|---|---|---|---|---|
+| Batmotor_BOF_3_1 | 3 | okänd | **KPI_WINNER** | 1 % | 189 kr | 1 | 5,20 / 1,90 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
+| Batmotor_SP_1_H9 | 3 | okänd | **KPI_WINNER** | 0 % | 109 kr | 2 | 10,66 / 1,90 | nej | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Batmotor_SP_1_H10 | 3 | okänd | **LOSER** | 0 % | 45 kr | 0 | 0,00 / 1,90 | nej | släpp |
+| Batmotor_BOF_2_1 | 3 | okänd | **LOSER** | 0 % | 30 kr | 0 | 0,00 / 1,90 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
+| Batmotor_SP_3_H1 | 3 | okänd | **LOSER** | 0 % | 13 kr | 0 | 0,00 / 1,90 | nej | släpp |
+| Batmotor_PD_6_H1 | 3 | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 1,90 | nej | hooken föll — logga och släpp, aldrig ABO |
