@@ -1,0 +1,34 @@
+{
+  "lage": "gron",
+  "tjuvar": [
+    {
+      "id": "120250284708620291",
+      "namn": "Sotarset_PD_1_H1",
+      "status": "ACTIVE",
+      "spend": 1847.43,
+      "roas": 0.74536,
+      "kop": 3,
+      "alder_dagar": 8,
+      "spend_7d": 2934.5,
+      "roas_7d": 1.939547,
+      "backdagar_i_rad": null,
+      "etikett": "LOSER",
+      "etikett_datum": "2026-09-26",
+      "roas_livstid": 1.892525,
+      "intakt": 1377.0004248,
+      "dranering": 935.8854187915625,
+      "trott_vinnare": true,
+      "orsak": "TROTT_VINNARE"
+    }
+  ],
+  "vantar": [],
+  "break_even": 1.5106232357549711,
+  "break_even_cpa": 346.0299910009108,
+  "kampanj_spend": 8559.29,
+  "noteringar": [],
+  "dom": "TJUV_I_GRON",
+  "tjuvSpend": 1847.43,
+  "motivering": "1 spendtjuv i en grön kampanj (break-even 1,51): Sotarset_PD_1_H1 (1 847 kr, 3 köp, ROAS 0,75, TROTT_VINNARE). Pausa exakt dessa — kampanjen rörs inte.",
+  "kampanj_id": "120250284693380291",
+  "kampanj_namn": "Sotarsetet med Böjliga Stänger | BE ROAS 1.61 | Launch 2026-09-19"
+}

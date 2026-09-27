@@ -1,0 +1,37 @@
+{
+  "tjuvar": [
+    {
+      "id": "120252363914040233",
+      "namn": "Kajakkholder_NO_GT_1_H1",
+      "status": "ACTIVE",
+      "spend": 1889.05,
+      "roas": 1.072338,
+      "kop": 1,
+      "alder_dagar": 3,
+      "spend_7d": 1889.05,
+      "roas_7d": 1.072338,
+      "backdagar_i_rad": null,
+      "etikett": null,
+      "etikett_datum": null,
+      "roas_livstid": 1.037103,
+      "intakt": 2025.7000989,
+      "trott_vinnare": false,
+      "orsak": "UNDER_BE"
+    }
+  ],
+  "raddade": [],
+  "rest": {
+    "spend": 259.77,
+    "intakt": 0,
+    "kop": 0,
+    "roas": 0
+  },
+  "break_even": 1.62,
+  "kampanj_spend": 2741.56,
+  "tjuvSpend": 1889.05,
+  "tjuvAndel": 0.6890420052816645,
+  "dom": "STANG_AV",
+  "motivering": "Resten av kampanjen är inte bedömbar utan tjuvarna: 260 kr och 0 köp (grinden går vid 300 kr och 1 köp). Det finns ingen bevisat lönsam kärna att rädda.",
+  "kampanj_id": "120252363909390233",
+  "kampanj_namn": "Kajakkholder NO | BE-ROAS 1,62 | 2026-09-24"
+}

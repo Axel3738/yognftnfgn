@@ -1,0 +1,329 @@
+{
+  "meta": {
+    "idag": "2026-09-27",
+    "hamtad": "2026-09-27T05:54:55.882Z",
+    "marknad": "NO",
+    "varningar": [],
+    "surf": false,
+    "spegel": {}
+  },
+  "rader": [
+    {
+      "id": "120252363909390233",
+      "namn": "Kajakkholder NO | BE-ROAS 1,62 | 2026-09-24",
+      "lage": "test",
+      "budget": 1000,
+      "spend3d": 2741.56,
+      "spendTotal": 2800.61,
+      "roas3d": 0.738886,
+      "roas3dVisning": 0.738886,
+      "kop3d": 1,
+      "roasTotal": 0.723307,
+      "briefPausTill": null,
+      "targetRoas": null,
+      "cpaTrend": {
+        "stiger": false,
+        "dagar": 1,
+        "serie": [
+          {
+            "datum": "2026-09-25",
+            "cpa": 860.69
+          },
+          {
+            "datum": "2026-09-26",
+            "cpa": null
+          }
+        ]
+      },
+      "klickandel": {
+        "andel": 1,
+        "klick": 1,
+        "visning": 0,
+        "dygn": 3
+      },
+      "dagarOverTarget": 0,
+      "funnellage": false,
+      "invandningar": null,
+      "dom": {
+        "kod": "ATGARDSTRAPPAN",
+        "rubrik": "Bränner pengar — stäng av om potential saknas",
+        "motivering": "2 742 kr på 3 dagar och bara 1 köp, utan att gå ihop. ROAS 0,74 mot break-even 1,62. Över 1 500 kr sedan start. Läs annonserna: finns minst en annons med köp över break-even OCH en spendtjuv, pausa spendtjuven och ge kampanjen ETT dygn till. Annars stängs hela kampanjen av i dag.",
+        "nyBudget": null,
+        "zon": "stop",
+        "vinstProcent": null,
+        "breakEven": 1.62,
+        "breakEvenKalla": "kampanjnamnet",
+        "targetRoas": 2.722689075630252,
+        "targetKalla": "härledd (25 % vinst av omsättningen)",
+        "kraverGodkannande": true,
+        "naraGrans": false
+      }
+    },
+    {
+      "id": "120252321093160233",
+      "namn": "Feiesett NO | BE-ROAS 1,62 | 2026-09-21",
+      "lage": "test",
+      "budget": 1200,
+      "spend3d": 3039.55,
+      "spendTotal": 6551.13,
+      "roas3d": 3.410633,
+      "roas3dVisning": 3.410633,
+      "kop3d": 24,
+      "roasTotal": 3.484919,
+      "briefPausTill": null,
+      "targetRoas": null,
+      "cpaTrend": {
+        "stiger": false,
+        "dagar": 0,
+        "serie": [
+          {
+            "datum": "2026-09-26",
+            "cpa": 82.777
+          }
+        ]
+      },
+      "klickandel": {
+        "andel": 1,
+        "klick": 24,
+        "visning": 0,
+        "dygn": 3
+      },
+      "dagarOverTarget": 2,
+      "funnellage": false,
+      "invandningar": null,
+      "dom": {
+        "kod": "SKALA",
+        "rubrik": "Skala upp 20 %",
+        "motivering": "32,4 % vinst av omsättningen (ROAS 3,41 mot break-even 1,62). Target 2,72 (härledd (25 % vinst av omsättningen)), ROAS 3,41 = 125 % av target. Trappsteg 20 %, 2 dygn i rad över target, 100,0 % klickköp, CPA 0 stigande dygn. Ändra från 1 200 kr till 1 400 kr per dag. Snabbspår: ROAS över 3 — kan höjas igen om 1 dagar.",
+        "nyBudget": 1400,
+        "zon": "up",
+        "vinstProcent": 32.40832456455089,
+        "breakEven": 1.62,
+        "breakEvenKalla": "kampanjnamnet",
+        "targetRoas": 2.722689075630252,
+        "targetKalla": "härledd (25 % vinst av omsättningen)",
+        "kraverGodkannande": true,
+        "naraGrans": false,
+        "harVinnare": false,
+        "faktor": 1.2,
+        "trappsteg": "20 %"
+      }
+    },
+    {
+      "id": "120252183519570233",
+      "namn": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+      "lage": "test",
+      "budget": 5750,
+      "spend3d": 15738.64,
+      "spendTotal": 61943.01,
+      "roas3d": 2.368209,
+      "roas3dVisning": 2.368209,
+      "kop3d": 27,
+      "roasTotal": 2.914663,
+      "briefPausTill": null,
+      "targetRoas": null,
+      "cpaTrend": {
+        "stiger": false,
+        "dagar": 1,
+        "serie": [
+          {
+            "datum": "2026-09-25",
+            "cpa": 370.869
+          },
+          {
+            "datum": "2026-09-26",
+            "cpa": 654.29
+          }
+        ]
+      },
+      "klickandel": {
+        "andel": 0.9310344827586207,
+        "klick": 27,
+        "visning": 2,
+        "dygn": 3
+      },
+      "dagarOverTarget": 0,
+      "funnellage": false,
+      "invandningar": null,
+      "dom": {
+        "kod": "LAT_VARA",
+        "rubrik": "Låt vara",
+        "motivering": "19,5 % vinst av omsättningen (ROAS 2,37 mot break-even 1,62). Target 2,72 (härledd (25 % vinst av omsättningen)) nås inte. Går plus men skalas inte. Nästa koll om 3 dagar.",
+        "nyBudget": null,
+        "zon": "hold",
+        "vinstProcent": 19.502392204717033,
+        "breakEven": 1.62,
+        "breakEvenKalla": "kampanjnamnet",
+        "targetRoas": 2.722689075630252,
+        "targetKalla": "härledd (25 % vinst av omsättningen)",
+        "kraverGodkannande": false,
+        "naraGrans": false
+      }
+    },
+    {
+      "id": "120252102071560233",
+      "namn": "Arbeidslampe NO | BE-ROAS 1,63 | 2026-09-06",
+      "lage": "test",
+      "budget": 500,
+      "spend3d": 1419.13,
+      "spendTotal": 19522.45,
+      "roas3d": 2.13342,
+      "roas3dVisning": 2.13342,
+      "kop3d": 6,
+      "roasTotal": 1.931742,
+      "briefPausTill": null,
+      "targetRoas": null,
+      "cpaTrend": {
+        "stiger": false,
+        "dagar": 1,
+        "serie": [
+          {
+            "datum": "2026-09-25",
+            "cpa": 159.65
+          },
+          {
+            "datum": "2026-09-26",
+            "cpa": 235.74
+          }
+        ]
+      },
+      "klickandel": {
+        "andel": 1,
+        "klick": 6,
+        "visning": 0,
+        "dygn": 3
+      },
+      "dagarOverTarget": 0,
+      "funnellage": false,
+      "invandningar": null,
+      "dom": {
+        "kod": "LAT_VARA",
+        "rubrik": "Testas — går plus, rörs inte",
+        "motivering": "14,5 % vinst av omsättningen (ROAS 2,13 mot break-even 1,63). Testprodukt på plus behåller sin testbudget. Är marginalen tunn är det priset som ska ses över, inte budgeten.",
+        "nyBudget": null,
+        "zon": "hold",
+        "vinstProcent": 14.476597471049828,
+        "breakEven": 1.63,
+        "breakEvenKalla": "kampanjnamnet",
+        "targetRoas": 2.751054852320675,
+        "targetKalla": "härledd (25 % vinst av omsättningen)",
+        "kraverGodkannande": false,
+        "naraGrans": false
+      }
+    },
+    {
+      "id": "120251996323340233",
+      "namn": "IBC-tanktrekk NO | BE-ROAS 1,63 | 2026-08-29",
+      "lage": "test",
+      "budget": 500,
+      "spend3d": 1456.3,
+      "spendTotal": 31906.65,
+      "roas3d": 1.922502,
+      "roas3dVisning": 1.922502,
+      "kop3d": 4,
+      "roasTotal": 2.247546,
+      "briefPausTill": null,
+      "targetRoas": null,
+      "cpaTrend": {
+        "stiger": false,
+        "dagar": 2,
+        "serie": [
+          {
+            "datum": "2026-09-24",
+            "cpa": 155.8
+          },
+          {
+            "datum": "2026-09-25",
+            "cpa": 422.12
+          },
+          {
+            "datum": "2026-09-26",
+            "cpa": null
+          }
+        ]
+      },
+      "klickandel": {
+        "andel": 1,
+        "klick": 4,
+        "visning": 0,
+        "dygn": 3
+      },
+      "dagarOverTarget": 0,
+      "funnellage": false,
+      "invandningar": null,
+      "dom": {
+        "kod": "LAT_VARA",
+        "rubrik": "Testas — går plus, rörs inte",
+        "motivering": "9,3 % vinst av omsättningen (ROAS 1,92 mot break-even 1,63). Testprodukt på plus behåller sin testbudget. Är marginalen tunn är det priset som ska ses över, inte budgeten.",
+        "nyBudget": null,
+        "zon": "hold",
+        "vinstProcent": 9.334142682535628,
+        "breakEven": 1.63,
+        "breakEvenKalla": "kampanjnamnet",
+        "targetRoas": 2.751054852320675,
+        "targetKalla": "härledd (25 % vinst av omsättningen)",
+        "kraverGodkannande": false,
+        "naraGrans": false
+      }
+    }
+  ],
+  "plan": {
+    "sparrad": false,
+    "orsak": null,
+    "atgarder": [
+      {
+        "kampanj_id": "120252363909390233",
+        "namn": "Kajakkholder NO | BE-ROAS 1,62 | 2026-09-24",
+        "kod": "ATGARDSTRAPPAN",
+        "motivering": "2 742 kr på 3 dagar och bara 1 köp, utan att gå ihop. ROAS 0,74 mot break-even 1,62. Över 1 500 kr sedan start. Läs annonserna: finns minst en annons med köp över break-even OCH en spendtjuv, pausa spendtjuven och ge kampanjen ETT dygn till. Annars stängs hela kampanjen av i dag.",
+        "typ": "trappa"
+      },
+      {
+        "kampanj_id": "120252321093160233",
+        "namn": "Feiesett NO | BE-ROAS 1,62 | 2026-09-21",
+        "kod": "SKALA",
+        "motivering": "32,4 % vinst av omsättningen (ROAS 3,41 mot break-even 1,62). Target 2,72 (härledd (25 % vinst av omsättningen)), ROAS 3,41 = 125 % av target. Trappsteg 20 %, 2 dygn i rad över target, 100,0 % klickköp, CPA 0 stigande dygn. Ändra från 1 200 kr till 1 400 kr per dag. Snabbspår: ROAS över 3 — kan höjas igen om 1 dagar.",
+        "typ": "budget",
+        "fran_sek": 1200,
+        "till_sek": 1400,
+        "till_ore": 140000
+      }
+    ],
+    "uppskjutna": [],
+    "gammalTotal": 8950,
+    "nyTotal": 9150
+  },
+  "annonsbehov": [],
+  "veckokvot": [
+    {
+      "kampanj_id": "120252363909390233",
+      "namn": "Kajakkholder NO | BE-ROAS 1,62 | 2026-09-24",
+      "antal": 2,
+      "nyaKoncept": 1
+    },
+    {
+      "kampanj_id": "120252321093160233",
+      "namn": "Feiesett NO | BE-ROAS 1,62 | 2026-09-21",
+      "antal": 2,
+      "nyaKoncept": 1
+    },
+    {
+      "kampanj_id": "120252183519570233",
+      "namn": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+      "antal": 4,
+      "nyaKoncept": 1
+    },
+    {
+      "kampanj_id": "120252102071560233",
+      "namn": "Arbeidslampe NO | BE-ROAS 1,63 | 2026-09-06",
+      "antal": 1,
+      "nyaKoncept": 0
+    },
+    {
+      "kampanj_id": "120251996323340233",
+      "namn": "IBC-tanktrekk NO | BE-ROAS 1,63 | 2026-08-29",
+      "antal": 1,
+      "nyaKoncept": 0
+    }
+  ]
+}
