@@ -126,6 +126,26 @@ paket) — kortet säger "går till samma adress". Fem språk i
 
 ---
 
+**8. Udda priser utanför Sverige behålls med flit (Axels beslut 2026-09-27).**
+Procentrabatten på Shopifys omräknade pris ger 343,84 kr (NO), 237,04 kr. (DK),
+31,88 € (FI) och $36.47 (US). Axel: "när priset är sådär specifikt känns det
+som att det är mer en sann rabatt." Rör inte rundningen. Mätt samma dag i
+riktig webbläsare: kortets pris = kassans pris på öret i alla 18 kombinationer
+(9 länder × 2 produkter), fri frakt överallt. Förhandsvisningen per land:
+https://claude.ai/artifact/Q8oro9kN48KwpfEoKhSn5D
+
+**9. Engelskan följer kundens land (Axels order 2026-09-27: "jag säljer bara i
+USA och Australien").** `en.json` är australisk/brittisk ("caravan",
+"colour"); `land.US` och `land.CA` ger amerikansk ("RV or camper", "color" i
+USA). Kortet slår upp `land.<LAND>.<nyckel>` först (`landText` i `logik.js`)
+och faller tillbaka på språkets vanliga text. ⚠️ Shopify vägrar deploya om en
+nyckel i någon språkfil saknas i `sv.default.json` (mätt: "The default
+dictionary must contain all possible translation keys"), så varje
+`land.*`-nyckel finns också i den svenska filen, med den svenska texten; ett
+test stoppar det annars. Engelskan lovar inte längre "14-day right of
+withdrawal": carashell.com har 90 dagars garanti, så texten säger "the same
+returns as your first order". Releasad som `carashell-tacksida-3`.
+
 ## Hur det hänger ihop tekniskt
 
 ```

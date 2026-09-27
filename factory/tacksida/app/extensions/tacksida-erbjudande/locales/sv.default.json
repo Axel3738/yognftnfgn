@@ -10,5 +10,19 @@
   },
   "pris_for_dig": "{pris} för dig som just beställt",
   "ord_pris": "Ordinarie pris {pris}",
-  "laddar": "Hämtar …"
+  "laddar": "Hämtar …",
+  "land": {
+    "US": {
+      "underrubrik": "Två saker som passar samma husvagn eller husbil. Läggs till som en egen beställning till samma adress, med fri frakt och 14 dagars ångerrätt som vanligt.",
+      "produkt": {
+        "adventskalender-retrobussar": "24 luckor döljer en liten retrobuss i egen färg bakom nästan varje dag i december."
+      }
+    },
+    "CA": {
+      "underrubrik": "Två saker som passar samma husvagn eller husbil. Läggs till som en egen beställning till samma adress, med fri frakt och 14 dagars ångerrätt som vanligt.",
+      "produkt": {
+        "adventskalender-retrobussar": "24 luckor döljer en liten retrobuss i egen färg bakom nästan varje dag i december."
+      }
+    }
+  }
 }
