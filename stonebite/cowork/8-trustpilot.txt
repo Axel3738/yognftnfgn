@@ -3,6 +3,10 @@ och slå på mejlnotis vid varje ny recension. Profilen finns redan men står so
 "Ej registrerad profil". Gör allt i Chrome med mitt inloggade konto och fråga
 mig om inloggning när du behöver den. Datorn är en Windows-dator.
 
+Hela körningen sker på trustpilot.com (business.trustpilot.com och
+se.trustpilot.com). Du öppnar ingen annan tjänst: inte Loopia, inte Shopify,
+inte min butiks admin. Enda undantaget är dns.google i steg 5, som bara läser.
+
 ⛔ DET VIKTIGASTE: KÖP INGENTING OCH SKICKA INGA INBJUDNINGAR.
 - Ingen betalplan, inget tillägg, inget kortnummer, ingen provperiod.
   Gratisplanen räcker. Ser du ett pris: skriv upp det i rapporten och gå vidare.
@@ -12,9 +16,18 @@ mig om inloggning när du behöver den. Datorn är en Windows-dator.
   egna inbjudningar hade gett dem två mejl om samma sak.
 - Skriv aldrig in ett lösenord själv och hitta inte på något åt mig. Be mig
   skriva det när sidan frågar.
-- Rör aldrig DNS eller sajtens kod. Ber sidan dig verifiera domänen med en
-  DNS-post eller en kodsnutt på webbplatsen: STOPPA och rapportera.
-  Verifiering med en mejllänk är okej.
+- Rör aldrig DNS, Loopia, Shopify eller sajtens kod. Sajten baverbutiken.se
+  låg nere 2026-09-25 för att en DNS-ändring hos Loopia gick fel, och det får
+  inte hända igen. Därför:
+  - Öppna aldrig Loopia (varken kundzon.loopia.se, DNS-inställningar eller
+    webbmejlen). Behövs något därifrån gör jag det själv.
+  - Öppna aldrig admin.shopify.com, installera ingen app och rör inte temat.
+  - Installera ingen TrustBox, ingen widget och ingen kodsnutt "på
+    webbplatsen", hur mycket sidan än föreslår det.
+  - Ber sidan dig verifiera domänen med en DNS-post, en meta-tagg eller en
+    kodsnutt: STOPPA och rapportera. Verifiering med en mejllänk är okej.
+  - Skriv aldrig till någon support (Trustpilot, Loopia eller annan). Fastnar
+    du: stoppa och säg till mig.
 - Svara inte på några recensioner och skriv ingen företagsbeskrivning. Det gör
   vi själva.
 
@@ -47,17 +60,18 @@ STEG 1 - skapa gratiskontot och claima profilen
    www.baverbutiken.se. Frågar den efter företagsnamn: "Bäverbutiken".
    Land: Sverige. Bransch: närmaste alternativ för nätbutik/e-handel. Skriv i
    rapporten vad du valde.
-3. Trustpilot mejlar en aktiveringslänk till kundsupport@baverbutiken.se. Den
-   brevlådan ligger i Loopias webbmejl, https://webmail.loopia.se. Be mig
-   logga in där, eller be mig klicka på länken själv. Skriv inte in
-   lösenordet.
+3. Trustpilot mejlar en aktiveringslänk till kundsupport@baverbutiken.se.
+   Säg till mig då: jag öppnar brevlådan och klickar på länken själv. Du
+   öppnar inte webbmejlen och loggar inte in någonstans hos Loopia.
 4. Frågar den efter ett lösenord till Trustpilot-kontot: be mig skriva det.
 5. Säger sidan att domänen REDAN är claimad av någon: STOPPA. Skapa inget
    nytt, gissa inget, skriv i rapporten exakt vad den sa.
 6. Visar den planer eller priser på vägen: välj Free/Gratis. Hoppa över allt
    som heter "Invite customers", "Upload a list", "Import reviews", "Connect
-   your store" eller "Automatic Feedback Service". Det finns alltid en
-   "Skip"/"Later"/"Hoppa över", även när steget ser obligatoriskt ut.
+   your store", "Automatic Feedback Service", "Add a TrustBox", "Add widget to
+   your website", "Install code" eller "Verify your website". Det finns alltid
+   en "Skip"/"Later"/"Hoppa över", även när steget ser obligatoriskt ut. Går
+   det inte att hoppa över ett steg som vill in på sajten: STOPPA.
 7. Kontrollera efteråt: öppna
    https://se.trustpilot.com/review/www.baverbutiken.se i en ny flik. Där ska
    det INTE längre stå "Ej registrerad profil". Skriv i rapporten exakt vad
@@ -104,7 +118,18 @@ STEG 4 - bekräfta business unit-id:t (bara läsa)
 Ser du någonstans i Trustpilot Business ett 24 tecken långt id (i en
 widget-kod som data-businessunit-id="...", i en adress, eller på API-sidan):
 jämför det med 6a8fefb70fa83ca3905331e9 och skriv i rapporten om det stämmer.
-Hittar du inget: skriv det. Det är inget fel.
+Hittar du inget: skriv det. Det är inget fel. Widget-koden läser du bara:
+kopiera den ingenstans och installera den inte.
+
+------------------------------------------------------------------------------
+STEG 5 - kontrollera att sajten står precis som före (bara läsa)
+------------------------------------------------------------------------------
+
+1. Öppna https://baverbutiken.se i en ny flik. Butiken ska ladda som vanligt.
+2. Öppna https://dns.google/resolve?name=baverbutiken.se&type=NS i en ny flik.
+   Svaret ska innehålla ns1.loopia.se och ns2.loopia.se. Står något annat:
+   säg till mig direkt, innan du skriver rapporten.
+3. Skriv båda resultaten i rapporten.
 
 ------------------------------------------------------------------------------
 RAPPORTERA TILLBAKA
@@ -116,6 +141,9 @@ RAPPORTERA TILLBAKA
 4. API: gick det att skapa en nyckel utan att betala? Annars planen, tillägget
    och priset ordagrant (steg 3.3).
 5. Business unit-id:t om du såg det (steg 4).
-6. Allt som såg konstigt ut, och varje ställe där du stoppade.
+6. Sajten och NS-svaret (steg 5).
+7. Bekräfta att du inte öppnade något utanför trustpilot.com utom dns.google,
+   och att inget installerades på sajten.
+8. Allt som såg konstigt ut, och varje ställe där du stoppade.
 
 Skriv aldrig ut lösenord, API-nycklar eller API-secret i rapporten.
