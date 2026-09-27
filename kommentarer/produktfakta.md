@@ -139,6 +139,17 @@ Läses av `/kommentarer` innan svaren skrivs.
   kund samma dag på carashell.se (SE), carashell.com (US), /nb, /fi och /da:
   vävda/webbing/vevde/kudotut/vævede syns 7 gånger per sida. "Elastisk" finns
   bara kvar i "not elastic" (US).
+  ⚠️ Produktsidans bild 11 och 12 (`tak-hopvikt.jpg`, `tak-spanne.jpg`, leverantörens
+  gamla foton: rosa tyg, ELASTISKA band med plastkrokar) motsäger texten. **Axels
+  beslut 2026-09-27: "Vi ändrar inte de bilderna" — de ligger kvar.** Föreslå inte
+  igen att de tas bort; använd dem bara aldrig på en listicle-sida. Fråga 16 i
+  leverantörslistan (har ett tidigare parti skickats med elastiska band?) är den
+  som avgör om bilderna visar det som skickas.
+  De 17 leverantörsfrågorna i `kommentarer/rapporter/usa-2026-09-27.md` avsnitt 8
+  är de som INTE hade svar i den här filen när USA-sidan byggdes (AC-aggregatet,
+  fifth wheel, J-trim, snö, hagel, dörr, antenn, stege, körning, värme, vikt).
+  Svaren kommer via WhatsApp — skriv in dem här MED frågans nummer, annars blir det
+  som listan 2026-09-27 nedan: svar utan fråga som ingen kan koppla.
 
 - Fiskespöhållare 4-pack (baverbutiken.se): texten "Monteras på vägg eller i
   båten" och "Monteras enkelt på vägg eller i båten" stämmer inte enligt
