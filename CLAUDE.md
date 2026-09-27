@@ -1131,8 +1131,8 @@ npm run bonus                # skarpt: skriver bonus/utfall/<månad>.json
 **Axels svar 2026-09-21 (inskrivna):** kontaktmejl `contact@stonebite.org`;
 **Mechile Delos Santos** är både VA och Head of customer support för alla
 butiker (`bonus/personer.json`, `brands: ["*"]` = alla, även framtida);
-tvistbeloppen halverade ("alldeles för mycket"); Trustpilot-konto finns inte och
-behövs inte — Judge.me läses redan. Servern stoppar självgodkännande även för
+tvistbeloppen halverade ("alldeles för mycket"); Trustpilot-konto fanns inte då
+— Judge.me läses redan (profilen claimas 2026-09-27, se nedan). Servern stoppar självgodkännande även för
 den som har rätten `godkanna` (403 när insatsens personId är den inloggades).
 
 ⚠️ **Varför de inte drog recensioner — och vad som ändrats.** Tre saker
@@ -1169,6 +1169,21 @@ beslut om pengar, systemet ändrar det inte självt.**
 läsning kräver `TRUSTPILOT_API_KEY` + `TRUSTPILOT_BUSINESS_UNITS`. Judge.me
 läses redan automatiskt (1 210 recensioner på 60 dagar). Utan Trustpilot-nyckeln
 rapporterar VA:n in recensionen med länk och chefen godkänner.
+**Mätt 2026-09-27 (Axels val A efter recensionskampanjen i Spoks):** profilen
+https://se.trustpilot.com/review/www.baverbutiken.se var **oclaimad** ("Ej
+registrerad profil"), 2 recensioner, båda 1 stjärna, TrustScore 2,9, business
+unit-id `6a8fefb70fa83ca3905331e9`. ⚠️ **API-nyckeln finns inte i
+gratisplanen:** Trustpilots prissida listar API som ett tillägg från Plus-planen
+(319 dollar/mån per domän), så nyckeln är Axels pengabeslut — ingen session
+eller Cowork köper den. `stonebite/cowork/8-trustpilot.txt` claimar profilen
+gratis (kontot `kundsupport@baverbutiken.se`), slår på mejlnotis vid ny
+recension och läser av tilläggets pris utan att köpa; skickar aldrig
+Trustpilot-inbjudningar, kopplar aldrig Shopify (kunderna får redan förfrågan
+från Spoks) och rör aldrig DNS. **Gratisvägen till automatisk räkning är
+notismejlen i brevlådan vi redan läser** — läsaren `trustpilotMejl()` byggs ur
+första riktiga mejlet, aldrig ur en gissad mall (`bonus/README.md` →
+Trustpilot). `kundtjanst/arenden.mjs arSystem` räknar `trustpilot.com` som
+systemavsändare sedan samma dag.
 
 ---
 

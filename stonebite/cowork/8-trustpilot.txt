@@ -1,0 +1,121 @@
+Jag vill claima Bäverbutikens företagsprofil på Trustpilot, på gratisplanen,
+och slå på mejlnotis vid varje ny recension. Profilen finns redan men står som
+"Ej registrerad profil". Gör allt i Chrome med mitt inloggade konto och fråga
+mig om inloggning när du behöver den. Datorn är en Windows-dator.
+
+⛔ DET VIKTIGASTE: KÖP INGENTING OCH SKICKA INGA INBJUDNINGAR.
+- Ingen betalplan, inget tillägg, inget kortnummer, ingen provperiod.
+  Gratisplanen räcker. Ser du ett pris: skriv upp det i rapporten och gå vidare.
+- Koppla INTE Shopify-appen eller någon e-handelsintegration, slå INTE på
+  "Automatic Feedback Service" (AFS) och ladda INTE upp någon kundlista. Våra
+  kunder får redan recensionsförfrågan från vårt eget mejlsystem. Trustpilots
+  egna inbjudningar hade gett dem två mejl om samma sak.
+- Skriv aldrig in ett lösenord själv och hitta inte på något åt mig. Be mig
+  skriva det när sidan frågar.
+- Rör aldrig DNS eller sajtens kod. Ber sidan dig verifiera domänen med en
+  DNS-post eller en kodsnutt på webbplatsen: STOPPA och rapportera.
+  Verifiering med en mejllänk är okej.
+- Svara inte på några recensioner och skriv ingen företagsbeskrivning. Det gör
+  vi själva.
+
+------------------------------------------------------------------------------
+FAKTA (mätt 2026-09-27 på den publika profilsidan. Det här är facit.)
+------------------------------------------------------------------------------
+
+| Vad                           | Värde                                                        |
+|-------------------------------|--------------------------------------------------------------|
+| Profilsidan                   | https://se.trustpilot.com/review/www.baverbutiken.se         |
+| Domänen att claima            | www.baverbutiken.se                                          |
+| Läget före                    | "Ej registrerad profil", 2 recensioner, TrustScore 2,9       |
+| Business unit-id              | 6a8fefb70fa83ca3905331e9                                     |
+| E-postadress för kontot       | kundsupport@baverbutiken.se                                  |
+| Bolaget                       | Stonebite Ecom AB, org.nr 559576-2401                        |
+| Adress                        | Stenkolsgatan 1B, 417 07 Göteborg                            |
+| Telefon                       | +46 79 340 44 07                                             |
+
+Kontot skapas med EXAKT adressen kundsupport@baverbutiken.se: en adress på
+samma domän som profilen, så att Trustpilot godtar att vi äger den. Ingen
+Gmail-adress, inte min privata.
+
+------------------------------------------------------------------------------
+STEG 1 - skapa gratiskontot och claima profilen
+------------------------------------------------------------------------------
+
+1. Öppna https://business.trustpilot.com/signup (Trustpilot Business,
+   "Create free account" / "Skapa gratis konto").
+2. Ange e-postadressen kundsupport@baverbutiken.se och webbplatsen
+   www.baverbutiken.se. Frågar den efter företagsnamn: "Bäverbutiken".
+   Land: Sverige. Bransch: närmaste alternativ för nätbutik/e-handel. Skriv i
+   rapporten vad du valde.
+3. Trustpilot mejlar en aktiveringslänk till kundsupport@baverbutiken.se. Den
+   brevlådan ligger i Loopias webbmejl, https://webmail.loopia.se. Be mig
+   logga in där, eller be mig klicka på länken själv. Skriv inte in
+   lösenordet.
+4. Frågar den efter ett lösenord till Trustpilot-kontot: be mig skriva det.
+5. Säger sidan att domänen REDAN är claimad av någon: STOPPA. Skapa inget
+   nytt, gissa inget, skriv i rapporten exakt vad den sa.
+6. Visar den planer eller priser på vägen: välj Free/Gratis. Hoppa över allt
+   som heter "Invite customers", "Upload a list", "Import reviews", "Connect
+   your store" eller "Automatic Feedback Service". Det finns alltid en
+   "Skip"/"Later"/"Hoppa över", även när steget ser obligatoriskt ut.
+7. Kontrollera efteråt: öppna
+   https://se.trustpilot.com/review/www.baverbutiken.se i en ny flik. Där ska
+   det INTE längre stå "Ej registrerad profil". Skriv i rapporten exakt vad
+   som står i stället.
+
+------------------------------------------------------------------------------
+STEG 2 - mejlnotis vid varje ny recension
+------------------------------------------------------------------------------
+
+1. I Trustpilot Business: Settings (Inställningar) -> Personal settings ->
+   Email notifications. Namnen kan stå på svenska.
+2. Slå på notis för NYA RECENSIONER, alla stjärnor, inte bara låga. Mottagaren
+   är kontots adress kundsupport@baverbutiken.se. Spara.
+3. Inställningar om veckosammanfattningar eller marknadsföringsmejl från
+   Trustpilot: låt dem vara som de är. Det enda vi behöver är "ny recension".
+4. Skriv i rapporten exakt vilka rutor som är ibockade efteråt.
+
+Varför: profilsidan går inte att läsa maskinellt (den svarar 403 på maskiner),
+men den här brevlådan läser vi redan. Varje notismejl blir en rad i vår
+räkning av recensionerna.
+
+------------------------------------------------------------------------------
+STEG 3 - TITTA på API-åtkomsten. Köp inget.
+------------------------------------------------------------------------------
+
+Trustpilots prissida säger att API-åtkomst är ett tillägg från Plus-planen
+(319 dollar i månaden) och att gratisplanen saknar det. Jag vill veta vad det
+skulle kosta oss, inte köpa det.
+
+1. Leta upp API-delen i Trustpilot Business: Integrations -> Developers -> APIs,
+   eller det närmaste som finns (sök på "API").
+2. Går det att skapa en "application"/API-nyckel UTAN att uppgradera: skapa EN
+   med namnet "Stonebite sajt", lämna sidan med nyckeln öppen på skärmen och
+   säg till mig. Kopiera inte nyckeln någonstans och skriv den inte i
+   rapporten. Jag kopierar den själv.
+3. Står det att det kräver uppgradering eller tillägg: klicka INTE på köp.
+   Skriv i rapporten exakt vad sidan säger: planens namn, tilläggets namn,
+   priset per månad och om det står per domän. Det är hela uppgiften här.
+
+------------------------------------------------------------------------------
+STEG 4 - bekräfta business unit-id:t (bara läsa)
+------------------------------------------------------------------------------
+
+Ser du någonstans i Trustpilot Business ett 24 tecken långt id (i en
+widget-kod som data-businessunit-id="...", i en adress, eller på API-sidan):
+jämför det med 6a8fefb70fa83ca3905331e9 och skriv i rapporten om det stämmer.
+Hittar du inget: skriv det. Det är inget fel.
+
+------------------------------------------------------------------------------
+RAPPORTERA TILLBAKA
+------------------------------------------------------------------------------
+
+1. Kontots e-postadress och vad profilsidan visar efteråt (steg 1.7).
+2. Vilken plan kontot står på (ska vara Free/Gratis) och att inget köptes.
+3. Notisinställningarna ordagrant (steg 2.4).
+4. API: gick det att skapa en nyckel utan att betala? Annars planen, tillägget
+   och priset ordagrant (steg 3.3).
+5. Business unit-id:t om du såg det (steg 4).
+6. Allt som såg konstigt ut, och varje ställe där du stoppade.
+
+Skriv aldrig ut lösenord, API-nycklar eller API-secret i rapporten.

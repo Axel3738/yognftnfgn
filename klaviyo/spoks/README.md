@@ -126,10 +126,19 @@ ha hunnit fram (22 dagar efter köpet, samma gräns som F14):
   med headless Chromium (mätt 2026-09-27 14:20 CEST). Automatisk läsning finns redan byggd
   och väntar på nycklar: `TRUSTPILOT_API_KEY` + `TRUSTPILOT_BUSINESS_UNITS` i Environments ⇒
   `bonus/kallor.mjs` läser recensionerna via Trustpilots API (60 dagar, nyast först) till
-  VA-bonusen och sajtens Recensioner. Nyckeln förutsätter att Bäverbutikens profil är
-  claimad i Trustpilot Business (om API-nyckel ingår i gratisplanen är inte kontrollerat).
-  Tills dess räknas omdömena för hand på https://se.trustpilot.com/review/www.baverbutiken.se,
-  och kampanjen tillskrivs det som skrivits efter 2026-09-27 14:01 CEST.
+  VA-bonusen och sajtens Recensioner. **Axels val A samma dag: claima profilen.** Mätt
+  2026-09-27 ~15:00 CEST (sidan gick att läsa via WebFetch, inte via curl/Chromium): profilen
+  var **oclaimad** ("Ej registrerad profil"), **2 recensioner, båda 1 stjärna, TrustScore 2,9**
+  — alltså vad 1 048 kunder möter när de klickar på en stjärna; business unit-id
+  `6a8fefb70fa83ca3905331e9` (= `TRUSTPILOT_BUSINESS_UNITS`). ⚠️ **API-nyckeln ingår inte i
+  gratisplanen:** Trustpilots prissida listar API som tillägg från Plus-planen (319 dollar/mån
+  per domän) — Axels pengabeslut. `stonebite/cowork/8-trustpilot.txt` claimar profilen gratis
+  (kontot `kundsupport@baverbutiken.se`), slår på mejlnotis vid ny recension och läser av
+  tilläggets pris utan att köpa. Gratisvägen till automatisk räkning är notismejlen i
+  brevlådan `kundtjanst/webmail.mjs` redan läser — läsaren byggs ur första riktiga mejlet
+  (`bonus/README.md` → Trustpilot). Tills dess räknas omdömena på
+  https://se.trustpilot.com/review/www.baverbutiken.se, och kampanjen tillskrivs det som
+  skrivits efter 2026-09-27 14:01 CEST.
 
 ### Regler ur de två dagarna (för nästa som ger Axel klick)
 
