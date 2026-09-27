@@ -1,0 +1,214 @@
+{
+  "agent": "AJ — mörkret på tomten, solcell utan elektriker",
+  "datum": "2026-09-27",
+  "sammanfattning": "Strukturen 'solcell/batteri utan elektriker på det 55+-ägaren redan har' prövades på 14 objekt/former. Golvet lästes FÖRE ali.py (PriceRunner via curl, Flaggstångsexperten, Formenta, Flaggfabriken; Clas/Jula/Biltema oläsbara). Nio former föll på sortiment i svenskt flöde (pollare, trappbelysning, husnummer, ljusslingor, spotlights, gravlyktor, julstjärnor, snökäppar-reflex, solcellsgatlyktor), tre på 'ingen listning i formen' (solcellsjulgran på flaggstång, snökäpp med solcells-LED, brevlådelampa), flaggstångens toppljus föll igen på golvet (Flaggstångsexperten 599 i exakt form, enda Ali-listningen 32 USD landar 468, inget ankare i samma form — Formenta/Flaggfabriken säljer bara 230 V-julgranar respektive ingen belysning). Det som överlever är EN form kontot och kedjorna saknar: solcellsljus som sitter OVANPÅ en stolpe ägaren redan har (murad grindstolpe, staketstolpar) — plus en flyttbar 2 m-stolplykta med vattenfylld fot (ingen grävning). 3 kandidater, alla LIVE_VERIFIED i dag, heros sedda; en märkt LÅG med flit (vikt/material).",
+  "kandidater": [
+    {
+      "koncept_id": null,
+      "namn_sv": "Grindstolpens solcellslykta",
+      "objekt": "NYTT: Grindstolpen (murad/putsad pelare vid infarten) — lyktan som aldrig fick el",
+      "form": "annat",
+      "arketyp": "H_VISUELL_NYHET",
+      "arketyp_sekundar": "E_VADER_SASONG",
+      "slot": "exploration",
+      "hypotes_id": "H10",
+      "vinnarlikhet": {
+        "likast": "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED",
+        "delade_variabler": ["objekt_ute", "agare_55plus_smahus", "form_elektronik_solcell", "latent_behov_nej (mörk infart varje kväll)", "montering utan elektriker", "prisband 500–999", "flerkop_ja (två grindstolpar)"],
+        "avvikelser": ["ingen rörelsesensor — skymningsrelä + timer/fjärr", "sitter på en stolpe, inte på husväggen", "RGB-läge i listningen (säljs som varmvit)"]
+      },
+      "sasong": {"fonster_id": "vintertid_morker", "deadline_typ": "mörker", "veckor_kvar": 4.0, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005009104706851",
+        "url": "https://www.aliexpress.com/item/1005009104706851.html",
+        "pris_usd": 25.59,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-27T04:46:26Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-27/v3/bilder/1005009104706851.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "ur titeln: 'Timed Solar Pillar Lights IP65 … Dimming RGB Post Light Remote Control' — en modell, platt fot (basmått ej läst), fjärrkontroll med timer, varmvit/kallvit/RGB. Syskon: 1005012890192354 'Round Ball Cap 3-Color, 2400mAh' USD 28,39 (LIVE 04:47Z på tredje försöket med gateway-parametrarna, hero ej hämtad) och K0017 'Solar Column Light 3 Colors for Yard Stone Post' USD 23,19 (registrerad 09-09 som kandidat, aldrig levererad).",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {"klass": 1, "hero_textfri": false, "hero_i_kontext": true, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "heron är en riktig kontextbild: två murade grindstolpar i skymning med lyktorna tända — men med rubrik 'Outdoor Solar Post Light', ikoner och lila badge '3 CT+RGB' som måste beskäras/bytas; lumen och brinntid står inte i titel/sökträff (ej mätt)"},
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "ingen svensk aktör hittad i exakt form (solcellslykta med platt fot för stolptopp/murad pelare). Närmast: Star Trading Solcellslampa Granada rostfritt POLLARE 459 kr och Nordlux Justina solcell STOLPLYKTA 60 cm 869 kr — båda på egen stolpe/spjut i marken, inte på ägarens pelare", "pris_sek": null, "url": "https://www.pricerunner.se/search?q=solcellslampa%20pelare", "exakt_samma_form": false},
+        "premium_ankare": {"namn": "ej mätt i samma form — 230 V-stolplyktor för pelare (Norlys, Konstsmide) kräver elektriker och ligger 3 800–10 000 kr på PriceRunner (annan form, ej ankare)", "pris_sek": null, "url": "https://www.pricerunner.se/search?q=stolplykta%20solcell%20platt%20fot", "i_sortiment": false},
+        "ankare_kvot": null,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["pricerunner.se 'solcellslampa pelare' 2026-09-27: 20 träffar, 0 i formen", "pricerunner.se 'solcellslampa stolptopp' 2026-09-27: 20 träffar, 0 i formen (markspjut, stolplyktor på egen stolpe)", "pricerunner.se 'solcellslampa grindstolpe' 2026-09-27: markspjut/pollare, 0 i formen", "pricerunner.se 'stolplykta solcell platt fot' 2026-09-27: bara 230 V-stolplyktor 3 800–11 000 kr", "pricerunner.se 'solcellspollare' 2026-09-27: pollare är sortiment (Star Trading 129, Northlight 249, V-TAC 1 151, Dyberg Larsen 1 610) — annan form (egen stolpe i marken)", "clasohlson.com: JS-spärr, oläst · jula.se/biltema.se: 403, oläst"]
+      },
+      "ekonomi": {"landad_sek": [333, 407], "pris_sek": 799, "brutto_sek": [392, 466], "be_cpa_sek": [392, 466], "be_roas": 1.86, "flerkop": true, "returrisk": "låg — platt fot skruvas på valfri plan stolptopp, ingen mätning; risk att skymningsljuset i november inte håller hela kvällen (brinntid ej mätt)"},
+      "meta_tanke": {
+        "hook": "Grindstolpen fick aldrig el. Nu lyser den.",
+        "objekt_i_bild": "den egna murade grindstolpen i skymning, lyktan tänder sig själv, bilen svänger in",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "fyra skruvar i stolptoppen, ingen sladd, tänds när det mörknar — samma infart före/efter"
+      },
+      "varfor": "Renaste H10-raden i linsen: formen (solcellslykta ovanpå ägarens egen grindstolpe) finns inte hos någon svensk aktör i fem PriceRunner-sökningar, medan objektet är typiskt 55+-småhus (murade grindstolpar, ingen el dragen dit). Samma struktur som Solcellslampan (ute, solcell, ingen elektriker, kväll efter kväll) i en ny form, med flerköp inbyggt (två stolpar) och vintertid 25 okt som datum.",
+      "huvudrisk": "Lumen/brinntid ej mätta — en pelarlykta som slocknar 19:00 i november dödar recensionerna; RGB-läget måste hållas borta från annonsen (55+ vill ha varmvit).",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 2, "meta_creative": 2, "efterfragan": 1, "lucka": 3, "ekonomi": 2, "sasong": 2, "leverantor": 2, "nyhet": 3, "hypotesvarde": 3},
+      "per_kriterium": null,
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt 2026-09-27 (stolp/grind/lykta/solcell): Solcellslampa Med Rörelsesensor = väggen, Solcellslarm = larm, Fjäderbelastat Stödhjul = grinden men annan form — ingen stolptoppslykta", "koncept.py sok pillar/post light/column/lykta: K0017 Solar Column Light kandidat 09-09, aldrig levererad, ingen feedback — ingen nej-spärr; K0290 Fasadlisten nej = annan SAK (fasaden) och annan form (list)", "kandidater-AA 09-23 + kandidater-V 09-16: pelarlykta ej prövad (infartsmarkör = stolpe i marken, struken; hängränne-/klämlampor strukna)"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005009104706851.html",
+        "https://www.aliexpress.com/item/1005012890192354.html",
+        "https://www.pricerunner.se/search?q=solcellslampa%20pelare",
+        "https://www.pricerunner.se/search?q=solcellslampa%20stolptopp",
+        "https://www.pricerunner.se/search?q=solcellspollare",
+        "korningar/2026-09-27/SASONG.md rad 'Vintertid / mörkret faller' (vintertid 25 okt = 4,0 v; sasong.py --objekt Grindstolpen gav EVERGREEN — ingen objektrad ännu)"
+      ]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Staketstolparnas solcellshattar 2-pack",
+      "objekt": "NYTT: Staketstolparna (trästaket 4x4/95×95) — stolphatten som lyser",
+      "form": "annat",
+      "arketyp": "H_VISUELL_NYHET",
+      "arketyp_sekundar": "I_FLERKOP",
+      "slot": "exploration",
+      "hypotes_id": "H08",
+      "vinnarlikhet": {
+        "likast": "Soptunneklistermärkena",
+        "delade_variabler": ["objekt_ute", "agare_55plus_smahus", "objekt alla har (staketet)", "old way ingenting", "flerkop_ja (6-pack-variant, 6–20 stolpar per tomt)", "synlig nyhet utan förklaring"],
+        "avvikelser": ["elektronik/solcell i stället för dekor", "storleksberoende: 4x4 tum (101 mm) med adapter 3,5 tum — svenska 95×95 och 70×70 måste mätas", "599 kr mot klistermärkenas 199"]
+      },
+      "sasong": {"fonster_id": "vintertid_morker", "deadline_typ": "mörker", "veckor_kvar": 4.0, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005011543839599",
+        "url": "https://www.aliexpress.com/item/1005011543839599.html",
+        "pris_usd": 18.90,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-27T04:49:57Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-27/v3/bilder/1005011543839599.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "ur titeln: '2/6pcs … for 4x4 Wood/Vinyl Posts Warm Glow' — USD 18,90 är lägsta variant (antas 2-pack; 6-pack ej prisläst). Färg i heron: vit. Syskon: 1005012960520547 (USD 15,85, LIVE 04:46:31Z, hero sedd: klar/svart hatt på vitt staket, textfri, packstorlek ej läsbar ur titeln) och 1005012463211687 'Modern Transparent … Dual Color' USD 12,12 (LIVE 04:50:00Z, hero ej hämtad).",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {"klass": 1, "hero_textfri": false, "hero_i_kontext": true, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "heron: kontextbild uppe (vit stolphatt tänd på vitt vinylstaket i skymning) + packshots; säljarlogga 'Saifenlan' uppe till vänster måste beskäras. Syskonet 1005012960520547 har en helt textfri hero (rad av tända hattar på svart/vitt staket) — använd den för creativen om samma vara. Vit hatt passar sämre svenska trästaket; svart/klar variant att föredra."},
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "ingen svensk aktör hittad i exakt form (solcellslampa som stolphatt). PriceRunner 'stolphatt solcell' och 'solar post cap' 2026-09-27: bara galvade/plast-stolphattar utan ljus 10–207 kr (NSH, Habo, Jabo). vidaXL 'Solcellslampor för staket 12 st' 939 kr (Markbelysning, form ej läst — sannolikt staketmonterade småstrålkastare). Biltema 'Solcellslampa staket' 2000054535 = klämform enligt lins V/AA (oläst i dag, 403)", "pris_sek": null, "url": "https://www.pricerunner.se/search?q=stolphatt%20solcell", "exakt_samma_form": false},
+        "premium_ankare": {"namn": "ej mätt — ingen märkesvara i formen hittad; NSH Nordic stolphatt svart med kula 9,7 cm 54,95 kr är den dyraste hatt-formen utan ljus", "pris_sek": null, "url": "https://www.pricerunner.se/search?q=solar%20post%20cap", "i_sortiment": false},
+        "ankare_kvot": null,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["pricerunner.se 'stolphatt solcell' 2026-09-27: 11 träffar, 0 med ljus", "pricerunner.se 'solar post cap' 2026-09-27: 20 träffar, 0 med ljus", "pricerunner.se 'solcellslampa staket stolpe' 2026-09-27: stolplyktor på spjut, ingen hatt", "pricerunner.se/pl/460-3205146150 vidaXL staket 12 st 939 kr: sidan läst, formen framgår inte", "jula.se/biltema.se/rusta.com: 403, oläst — Jula kan ha en 'stolplykta solcell 95×95' som inte syns på PriceRunner"]
+      },
+      "ekonomi": {"landad_sek": [246, 300], "pris_sek": 599, "brutto_sek": [299, 353], "be_cpa_sek": [299, 353], "be_roas": 1.84, "flerkop": true, "returrisk": "MEDEL — ägaren måste mäta stolpen: 4x4 tum = 101 mm inv. + adapter ~89 mm; svenska 95×95 hamnar mellan (förlorarsignal 'måste mäta/storlek' 6 v / 9 f)"},
+      "meta_tanke": {
+        "hook": "Staketet du redan har. Nu lyser det.",
+        "objekt_i_bild": "raden av staketstolpar längs uppfarten i skymning, varje hatt tänd",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "hatten trycks på stolpen på fem sekunder, ingen sladd — samma staket före (svart) / efter (rad av ljus)"
+      },
+      "varfor": "H08-test på ett objekt nästan alla 55+-småhus har (staketet), i en form som inte syns i svenskt flöde i tre PriceRunner-sökningar, med flerköp inbyggt (6-pack) och samma 'ingen elektriker'-struktur som Solcellslampan. Klistermärkena visade att 'synlig nyhet på något alla har' bär utan förklaring.",
+      "huvudrisk": "Passformen: listningen är byggd för amerikanska 4x4-stolpar; svenska 95×95/70×70 kräver adapter eller mätning — en retur per tio köp äter marginalen. Lumen/brinntid ej mätta.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 2, "meta_creative": 2, "efterfragan": 2, "lucka": 3, "ekonomi": 2, "sasong": 2, "leverantor": 2, "nyhet": 3, "hypotesvarde": 2},
+      "per_kriterium": null,
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt 2026-09-27: Staketstolpsbygel 2-pack = samma SAK (staketstolpen) men annan form (reparationsbygel) — ingen dubblett på objekt+form", "koncept.py sok post cap/stolphatt/staket: 0 träffar; K0046 stolpreparationssats launchad = annan form", "kandidater-V 09-16 / AA 09-23: klämlampa på staket/räcke struken (Biltema-klämform) — hatten är en annan form (ovanpå stolpen)"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005011543839599.html",
+        "https://www.aliexpress.com/item/1005012960520547.html",
+        "https://www.aliexpress.com/item/1005012463211687.html",
+        "https://www.pricerunner.se/search?q=stolphatt%20solcell",
+        "https://www.pricerunner.se/search?q=solar%20post%20cap",
+        "https://www.pricerunner.se/pl/460-3205146150/Belysning/vidaXL-Solcellslampor-Foer-Staket-12-St-LED-Svart-Markbelysning-priser"
+      ]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Flyttbara solcellslyktan 2 m",
+      "objekt": "NYTT: Uppfarten/vedboden utan lyktstolpe — den flyttbara stolplyktan med vattenfylld fot",
+      "form": "annat",
+      "arketyp": "E_VADER_SASONG",
+      "arketyp_sekundar": "H_VISUELL_NYHET",
+      "slot": "exploitation",
+      "hypotes_id": "H02",
+      "vinnarlikhet": {
+        "likast": "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED",
+        "delade_variabler": ["objekt_ute", "agare_55plus_smahus", "form_elektronik_solcell", "rörelsesensor + skymningsrelä (enligt titeln)", "montering utan elektriker och utan grävning", "prisband 500–999", "old way köpt produkt som fungerar (pannlampa/förlängningssladd)"],
+        "avvikelser": ["står på marken på egen 2 m-stolpe i stället för på väggen", "hero är en komponent-packshot med text (materialklass 0–1)", "vikt ej mätt — stolpe i fyra sektioner + fot"]
+      },
+      "sasong": {"fonster_id": "vintertid_morker", "deadline_typ": "mörker", "veckor_kvar": 4.0, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005009341001409",
+        "url": "https://www.aliexpress.com/item/1005009341001409.html",
+        "pris_usd": 23.89,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-27T04:50:33Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-27/v3/bilder/1005009341001409.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "ur sökträffens titel: '750 LED Solar Lamp Post Light, with 78\" Tall Pole, Removable, Dusk to Dawn Motion Sensor 4000W' — en modell; UFO-huvud med panel, 4 stolpsektioner (78 tum ≈ 198 cm), vattenfylld plastfot med justerskruv. '4000W' och '750 LED' är listningsprosa, inte mätvärden.",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {"klass": 0, "hero_textfri": false, "hero_i_kontext": false, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "heron är en komponentbild på vit botten (huvud, panel, fyra rör, fot, två detaljinklipp) med rubriken 'Solar mobile garden lamp' — creativen måste byggas på egen kontextbild (lyktan på uppfarten i skymning, sedan flyttad till vedboden). Lumen/brinntid ej mätta."},
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "ingen svensk aktör hittad i exakt form (flyttbar solcellslykta ~2 m med vattenfylld fot). Närmast på PriceRunner: 'Solcellsdriven Gatubelysning 40 SMD' 575 kr (form ej läst), Northio solcellslampa med ljussensor stolpbelysning 789 kr, V-TAC ST63 solcellsgatlykta 316 kr (armatur för befintlig stolpe/vägg)", "pris_sek": 575, "url": "https://www.pricerunner.se/search?q=solcellslampa%20stolpe%20200%20cm", "exakt_samma_form": false},
+        "premium_ankare": {"namn": "Norlys Oslo stolpe stolplykta 238 cm — 230 V, kräver grävning och elektriker (annan form; strukturankare, inte formankare)", "pris_sek": 4480, "url": "https://www.pricerunner.se/pl/460-3200059002/Belysning/Norlys-Oslo-Stolpe-Stolplykta-2", "i_sortiment": true},
+        "ankare_kvot": null,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["pricerunner.se 'stolplykta solcell 2 m' 2026-09-27: 13 träffar, 0 flyttbara (Northlight 35–83 cm spjut, Norlys 230 V 9 290)", "pricerunner.se 'solcellslampa stolpe 200 cm' 2026-09-27: 20 träffar, 0 i formen (Airam Kartano 225 cm 230 V 3 705, Lutec 227 cm 3 145, Norlys Oslo 238 cm 4 480)", "pricerunner.se 'solcellsgatlykta' + 'solcell gatlykta rörelsesensor' 2026-09-27: V-TAC ST63 316 / ST120 442, Videx 1 488–2 224 — armaturer utan stolpe/fot", "clasohlson.com JS-spärr, jula.se/biltema.se 403: oläst"]
+      },
+      "ekonomi": {"landad_sek": [311, 380], "pris_sek": 899, "brutto_sek": [519, 588], "be_cpa_sek": [519, 588], "be_roas": 1.62, "flerkop": false, "returrisk": "MEDEL — ingen mätning, men fraktvikten är okänd (stolpe + fot); tippar den i vind med tom fot kommer klagomål"},
+      "meta_tanke": {
+        "hook": "Ingen lyktstolpe? Ställ dit en.",
+        "objekt_i_bild": "uppfarten i november-mörker, lyktan bärs ut och ställs vid bilen, tänds av sig själv",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "foten fylls med vatten ur slangen, stolpen skruvas ihop, lyktan står — sedan flyttas den till vedboden i samma klipp"
+      },
+      "varfor": "Exploitation-kusin till Solcellslampan (samma elektronik: panel + rörelsesensor + skymning) i den enda form kedjorna inte har — en lykta som ställs där det är mörkt utan grävning, med 230 V-stolplyktans 3 700–4 500 kr + elektriker som strukturankare. BE-CPA 519–588 är linsens högsta.",
+      "huvudrisk": "Vikten är ej mätt (fyra stolprör + fot) och kan spräcka landad-kalkylen; heron är en packshot med text (materialklass 0 = förlorarsignal 1 v / 4 f) så creativen måste byggas från noll.",
+      "konfidens": "LÅG",
+      "poang": {"vinnarlikhet": 3, "meta_creative": 0, "efterfragan": 1, "lucka": 3, "ekonomi": 3, "sasong": 2, "leverantor": 2, "nyhet": 2, "hypotesvarde": 2},
+      "per_kriterium": null,
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt 2026-09-27: Solcellslampa Med Rörelsesensor = väggen (annan SAK), LED Campinglampa solcell = bärbar bordslykta (annan form), Bäverlampa Pro (oklart, 199 kr — troligen ficklampa)", "koncept.py sok lamp post/street/lykta: K0022 vägnabbar (annan form), 0 i formen", "kandidater-V 09-16 / AA 09-23: infartsmarkör/stolplykta på markspjut struken som kedjeform — den flyttbara 2 m-lyktan med fot är en annan form"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005009341001409.html",
+        "https://www.pricerunner.se/search?q=solcellslampa%20stolpe%20200%20cm",
+        "https://www.pricerunner.se/search?q=stolplykta%20solcell%202%20m",
+        "https://www.pricerunner.se/search?q=solcell%20gatlykta%20r%C3%B6relsesensor",
+        "https://www.pricerunner.se/pl/460-3200059002/Belysning/Norlys-Oslo-Stolpe-Stolplykta-2"
+      ]
+    }
+  ],
+  "strukna": [
+    {"namn": "Flaggstångens solcellsljus (toppljus på hylsan, 1005011724067658, USD 32,39 — enda listningen i formen efter fem fraser)", "skal": "Samma fällning som lins V 09-16, nu med ankaret läst: Flaggstångsexperten 'Solcellsbelysning' 598,75 kr (479 exkl. moms, läst 2026-09-27) är EXAKT samma form (monteras på toppkulans hylsa), PriceRunner visar Nampook 360 LED 552 kr och Star Trading 488 107 kr i flaggstångsbelysning; landad 421–515 kräver ≥ 799 för BE-CPA ≥ 190. Ankaret ordern gissade (Flaggfabriken/Formenta 900–1 500) finns inte i formen: Formenta säljer bara 230 V-julgranar på flaggstång (Glimma 995, Fairybell 5 000) och belysningsstolpar utan priser, Flaggfabriken (Halmstad) säljer ingen belysning alls. Inget synligt ankare ≥ 1,6× i samma form ⇒ H06 gäller inte. Lyfts bara om en listning < 18 USD dyker upp."},
+    {"namn": "Solcellsjulgran på flaggstången (julbelysning utan sladd i storformat)", "skal": "Ingen listning i formen: 'solar flagpole christmas tree lights' gav bara markspjut-dekor, fyrverkerilampor och 6-i-1 tomtefigurer. 230 V-formen är sortiment (vidaXL 577–1 169, Formenta Glimma 995, Star Trading 419)."},
+    {"namn": "Solcellsdriven ljusslinga i storformat / ljusnät till häcken", "skal": "Sortiment: PriceRunner 'solcell ljusslinga utomhus' 2026-09-27 — Markslöjd Suno 30 m 499, vidaXL 200 lampor 680, MTP 300 LED 394, Northlight, Eglo, Star Trading — 20+ varianter."},
+    {"namn": "Husnummerskylt med solcell (brevlådan/fasaden)", "skal": "Sortiment (bekräftar lins V 09-16): PriceRunner 'solcellslampa husnummer' 2026-09-27 — generika 375 kr ×5 siffror, Eglo 378, Paulmann 550–629, Philips Enkara 590, Grundig 139."},
+    {"namn": "Brevlådans solcellslampa med rörelsesensor", "skal": "Ingen listning i formen (bekräftar lins V): 'solar mailbox light motion sensor' gav bara väggstrålkastare och klämlampor. Stolphatten (kandidat 2) kan i praktiken sitta på postlådestolpen — inte en egen rad."},
+    {"namn": "Uppfartsstolpar/pollare med solcell (stolpe i marken, syskon till vägnabbarna K0295)", "skal": "Sortiment (20+): PriceRunner 'solcellspollare' 2026-09-27 — Star Trading Pathy 129, Northlight 249, Star Trading Granada 459, Nordlux Saulio PIR 783, V-TAC PIR 1 151, Eglo Baracconi 1 130, Dyberg Larsen 1 610. Lins V strök dessutom infartsmarkören 09-16."},
+    {"namn": "Trappstegslampa med rörelsesensor för yttertrappan", "skal": "Sortiment (20+): PriceRunner 'trappbelysning solcell rörelsesensor' 2026-09-27 — Izoxis 209, Hoftronic 140–190, Sygonix 429, V-TAC 439, Steinel 1 499, Lepro, Brennenstuhl … Trapplisten struken av AA 09-23 (Clas Northlight 2-pack)."},
+    {"namn": "Snöstolpar/snökäppar med solcells-LED för snöröjaren (första snö Norrland 4,0 v)", "skal": "Reflexformen är sortiment (Granngården snökäppar reflex 34,90, Millarco bambu 179, Jula) och LED-formen har ingen listning: 'solar snow stake driveway marker light' gav bara marklampor och trappsteg. Infartsmarkör med solcell+reflex struken av lins V 09-16."},
+    {"namn": "Garageportens rörelsestyrda 360°-stolplampa (solcell)", "skal": "K0 på SAK för väggformen (Solcellslampa Med Rörelsesensor – Tre Huvuden i katalogen); 360°-stolpformen gav ingen ren listning ('solar UFO pole top light motion sensor 360' → väggstrålkastare, 3 m-kommersiella stolpar, UFO-lyktor utan sensor). Den flyttbara lyktan (kandidat 3) täcker behovet i en annan form."},
+    {"namn": "Vedbodens/förrådets sensorlampa utan el (separat panel)", "skal": "Struken av AA 09-23 som kedjeform (Jula solcellslampa med separat panel, Clas 36-8989) — inte sökt om."},
+    {"namn": "Solcellsdriven grindlampa med rörelsesensor på grinden själv", "skal": "Samma form som kandidat 1 (pelarlyktan) — slogs ihop, en rad."},
+    {"namn": "Båttrailerns solcellslampor", "skal": "Inte sökt: släpvagnens belysning är lagkrav och redan monterad, och trailern står stilla efter upptagningen (1,9 v) — inget mörkerbehov som kan bevisas i bild."},
+    {"namn": "Gravlyktan med solcell (allhelgona 4,9 v)", "skal": "Sortiment: PriceRunner 'gravlykta solcell' 2026-09-27 — Clas Ohlson gravlykta 99,90 + solcellslykta 69,90, Grundig 89, generika på pinne 279; Ali-formen (gravljus/kors 7–25 USD) är dessutom katolsk/US-estetik."},
+    {"namn": "Julstjärna på solcell till granen på tomten", "skal": "Sortiment i batteri-/230 V-form (Star Trading Alice/Mika/Barlumi, Konstsmide 3D 60–100 cm 471–1 113, B2X batteristjärna 589) och ingen solcellsform i storformat på Ali ('solar star tree topper outdoor' → 15 cm inomhusstjärnor)."},
+    {"namn": "Solcellsspotlight som lyser upp flaggan/björken från marken", "skal": "Sortiment: PriceRunner 'solcellsspotlight' 2026-09-27 — Star Trading Powerspot 132–699, Eglo 291, V-TAC 1 924, as-Schwabe 915, Globe 2-set 649 …"},
+    {"namn": "Solcellsgatlykta/armatur för befintlig stolpe vid uppfarten", "skal": "Golv finns (V-TAC ST63 316, ST120 442, Videx 1 488) och Ali-sökningen gav bara fästen/armar — ingen ren listning verifierad; kandidat 3 (flyttbar lykta med fot) är den form som saknas."},
+    {"namn": "Stolptoppslampan 1–4 st 3000K/6000K (1005009140508974, USD 12,65, LIVE 04:46:29Z, hero sedd)", "skal": "Syskon till kandidat 2 i samma form (stolphatt) — packshot-hero med tre textöverlägg och lös packstorlek; hölls utanför för att inte fylla batchen med syskon (max tre per form)."}
+  ]
+}

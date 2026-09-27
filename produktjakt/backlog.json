@@ -252,5 +252,21 @@
   "deadline": "lövfällning",
   "korningsvecka": 42,
   "orsak": "2026-09-26 lins AG: lucka i SE (PriceRunner 0) men ingen Ali-listning på tre fraser."
+ },
+ {
+  "objekt": "NYTT: Den eluppvärmda balaklavan på passet",
+  "form": "kläder",
+  "arketyp": "E_VADER_SASONG",
+  "deadline": "älgjakt / första frost",
+  "korningsvecka": 41,
+  "orsak": "2026-09-27 lins AH: lucka i SE (0 eluppvärmda balaklavor på PriceRunner) men alla tre Ali-listningar är WEST BIKING-märkta. Sök omärkt."
+ },
+ {
+  "objekt": "NYTT: Flaggstångens solcellsljus",
+  "form": "annat",
+  "arketyp": "H_VISUELL_NYHET",
+  "deadline": "vintertid",
+  "korningsvecka": 44,
+  "orsak": "2026-09-27 lins AJ: Flaggstångsexperten 599 i exakt form, enda Ali-listning 32 USD → landad 468; Formenta/Flaggfabriken säljer ingen solcellsbelysning → inget ankare ≥ 1,6×. Stängd tills ankare finns."
  }
 ]

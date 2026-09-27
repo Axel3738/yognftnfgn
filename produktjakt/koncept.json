@@ -1,6 +1,6 @@
 {
  "_om": "Konceptregistret (V3). Skrivs av koncept.py; feedback.py och meta_facit.py uppdaterar via koncept.py. Ett koncept = objekt + form, med alla listningar, svar, förutsägelser och Metas facit.",
- "nasta": 341,
+ "nasta": 350,
  "koncept": {
   "K0001": {
    "id": "K0001",
@@ -24252,6 +24252,752 @@
     }
    ],
    "namn_sv": "Flugbindningssetet med städ, 6 delar"
+  },
+  "K0341": {
+   "id": "K0341",
+   "skapad": "2026-09-27",
+   "namn": "Värmemössan 2-i-1 med halskrage",
+   "objekt": "NYTT: Den uppvärmda mössan på läktaren och hundpromenaden — USB-slinga i pannan, halskrage i samma set (nov–feb)",
+   "form": "kläder",
+   "sak": "nytt: den uppvärmda mössan på läktaren och hundpromenaden+kläder",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "F_HOBBY_IDENTITET",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005010536203523",
+     "url": "https://www.aliexpress.com/item/1005010536203523.html",
+     "bild": null,
+     "pris_usd": 13.36,
+     "forst_sedd": "2026-09-27",
+     "verifieringar": [
+      {
+       "datum": "2026-09-27",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-27T04:46:32Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-27",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 1,
+     "rank_poang": 15.3,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 2,
+      "efterfragan": 2,
+      "lucka": 3,
+      "ekonomi": 2,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 3,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 499,
+     "landad": 194,
+     "be_cpa": 306,
+     "hook": "Kall panna på läktaren i november?",
+     "varfor": "Samma struktur som damaskerna och värmesulorna (kroppen i kylan, USB-värme, 300–499 kr) på ett plagg som ALLA har och ingen svensk aktör säljer eluppvärmt — sju PriceRunner-sökningar + Hylte gav noll i formen; kategorinyhet (H10) med textfri hero i kontext. Första frost 2,6 v, mörkret 12 v: hela vintern är fönstret.",
+     "huvudrisk": "Powerbank ingår inte (bara USB-kabel) — utan medskickad powerbank blir första recensionen 'värmer inte'; Widforss/Jula/XXL oläst.",
+     "hypotes_id": "H02",
+     "per_kriterium": {
+      "K0": "ok",
+      "K8": 5
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-27",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-27",
+     "handelse": "levererad på V3-arket (rank 1, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Värmemössan 2-i-1 med halskrage"
+  },
+  "K0342": {
+   "id": "K0342",
+   "skapad": "2026-09-27",
+   "namn": "Flyttbara solcellslyktan 2 m",
+   "objekt": "NYTT: Uppfarten/vedboden utan lyktstolpe — den flyttbara stolplyktan med vattenfylld fot",
+   "form": "annat",
+   "sak": "nytt: uppfarten/vedboden utan lyktstolpe+annat",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "H_VISUELL_NYHET",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005009341001409",
+     "url": "https://www.aliexpress.com/item/1005009341001409.html",
+     "bild": null,
+     "pris_usd": 23.89,
+     "forst_sedd": "2026-09-27",
+     "verifieringar": [
+      {
+       "datum": "2026-09-27",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-27T04:50:33Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-27",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 2,
+     "rank_poang": 13.4,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 0,
+      "efterfragan": 1,
+      "lucka": 3,
+      "ekonomi": 3,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "LÅG",
+     "pris": 899,
+     "landad": 346,
+     "be_cpa": 554,
+     "hook": "Ingen lyktstolpe? Ställ dit en.",
+     "varfor": "Exploitation-kusin till Solcellslampan (samma elektronik: panel + rörelsesensor + skymning) i den enda form kedjorna inte har — en lykta som ställs där det är mörkt utan grävning, med 230 V-stolplyktans 3 700–4 500 kr + elektriker som strukturankare. BE-CPA 519–588 är linsens högsta.",
+     "huvudrisk": "Vikten är ej mätt (fyra stolprör + fot) och kan spräcka landad-kalkylen; heron är en packshot med text (materialklass 0 = förlorarsignal 1 v / 4 f) så creativen måste byggas från noll.",
+     "hypotes_id": "H02",
+     "per_kriterium": null,
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-27",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-27",
+     "handelse": "levererad på V3-arket (rank 2, exploitation, konfidens LÅG)"
+    }
+   ],
+   "namn_sv": "Flyttbara solcellslyktan 2 m"
+  },
+  "K0343": {
+   "id": "K0343",
+   "skapad": "2026-09-27",
+   "namn": "Grindstolpens solcellslykta",
+   "objekt": "NYTT: Grindstolpen (murad/putsad pelare vid infarten) — lyktan som aldrig fick el",
+   "form": "annat",
+   "sak": "nytt: grindstolpen+annat",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005009104706851",
+     "url": "https://www.aliexpress.com/item/1005009104706851.html",
+     "bild": null,
+     "pris_usd": 25.59,
+     "forst_sedd": "2026-09-27",
+     "verifieringar": [
+      {
+       "datum": "2026-09-27",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-27T04:46:26Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-27",
+     "levererad": true,
+     "slot": "exploration",
+     "rank": 3,
+     "rank_poang": 13,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 2,
+      "efterfragan": 1,
+      "lucka": 3,
+      "ekonomi": 2,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 3,
+      "hypotesvarde": 3
+     },
+     "konfidens": "MEDEL",
+     "pris": 799,
+     "landad": 370,
+     "be_cpa": 429,
+     "hook": "Grindstolpen fick aldrig el. Nu lyser den.",
+     "varfor": "Renaste H10-raden i linsen: formen (solcellslykta ovanpå ägarens egen grindstolpe) finns inte hos någon svensk aktör i fem PriceRunner-sökningar, medan objektet är typiskt 55+-småhus (murade grindstolpar, ingen el dragen dit). Samma struktur som Solcellslampan (ute, solcell, ingen elektriker, kväll efter kväll) i en ny form, med flerköp inbyggt (två stolpar) och vintertid 25 okt som datum.",
+     "huvudrisk": "Lumen/brinntid ej mätta — en pelarlykta som slocknar 19:00 i november dödar recensionerna; RGB-läget måste hållas borta från annonsen (55+ vill ha varmvit).",
+     "hypotes_id": "H10",
+     "per_kriterium": null,
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-27",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-27",
+     "handelse": "levererad på V3-arket (rank 3, exploration, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Grindstolpens solcellslykta"
+  },
+  "K0344": {
+   "id": "K0344",
+   "skapad": "2026-09-27",
+   "namn": "Staketstolparnas solcellshattar 2-pack",
+   "objekt": "NYTT: Staketstolparna (trästaket 4x4/95×95) — stolphatten som lyser",
+   "form": "annat",
+   "sak": "nytt: staketstolparna+annat",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "I_FLERKOP",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005011543839599",
+     "url": "https://www.aliexpress.com/item/1005011543839599.html",
+     "bild": null,
+     "pris_usd": 18.9,
+     "forst_sedd": "2026-09-27",
+     "verifieringar": [
+      {
+       "datum": "2026-09-27",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-27T04:49:57Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-27",
+     "levererad": true,
+     "slot": "exploration",
+     "rank": 4,
+     "rank_poang": 11,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 2,
+      "efterfragan": 2,
+      "lucka": 3,
+      "ekonomi": 2,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 3,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 599,
+     "landad": 273,
+     "be_cpa": 326,
+     "hook": "Staketet du redan har. Nu lyser det.",
+     "varfor": "H08-test på ett objekt nästan alla 55+-småhus har (staketet), i en form som inte syns i svenskt flöde i tre PriceRunner-sökningar, med flerköp inbyggt (6-pack) och samma 'ingen elektriker'-struktur som Solcellslampan. Klistermärkena visade att 'synlig nyhet på något alla har' bär utan förklaring.",
+     "huvudrisk": "Passformen: listningen är byggd för amerikanska 4x4-stolpar; svenska 95×95/70×70 kräver adapter eller mätning — en retur per tio köp äter marginalen. Lumen/brinntid ej mätta.",
+     "hypotes_id": "H08",
+     "per_kriterium": null,
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-27",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-27",
+     "handelse": "levererad på V3-arket (rank 4, exploration, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Staketstolparnas solcellshattar 2-pack"
+  },
+  "K0345": {
+   "id": "K0345",
+   "skapad": "2026-09-27",
+   "namn": "Knävärmarna 2-pack för passet",
+   "objekt": "NYTT: De uppvärmda knävärmarna på passet och läktaren — kardborre runt knäet, tre värmelägen, ett per knä (okt–jan)",
+   "form": "annat",
+   "sak": "nytt: de uppvärmda knävärmarna på passet och läktaren+annat",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "I_FLERKOP",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005010441266600",
+     "url": "https://www.aliexpress.com/item/1005010441266600.html",
+     "bild": null,
+     "pris_usd": 8.99,
+     "forst_sedd": "2026-09-27",
+     "verifieringar": [
+      {
+       "datum": "2026-09-27",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-27T04:47:43Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-27",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 5,
+     "rank_poang": 10.4,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 1,
+      "efterfragan": 2,
+      "lucka": 2,
+      "ekonomi": 2,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 599,
+     "landad": 260,
+     "be_cpa": 339,
+     "hook": "Stela knän efter fyra timmar på passet?",
+     "varfor": "Tredje kroppsdelen på passet efter sits (launchad) och sulor (ROAS 5,23 dag två) — knäna är det som stelnar när man sitter stilla i tornet; PriceRunner har bara ett eluppvärmt knästöd (1 235 kr, styck) så vårt par för 599 ligger under ankaret med 2,06×. Flerköp inbyggt: två knän = två enheter (H08).",
+     "huvudrisk": "Formen kan läsas som artros-wellness i stället för jakt — creativen måste sättas på passet, inte i soffan; powerbank ingår sannolikt inte.",
+     "hypotes_id": "H08",
+     "per_kriterium": {
+      "K0": "ok",
+      "K8": 5
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-27",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-27",
+     "handelse": "levererad på V3-arket (rank 5, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Knävärmarna 2-pack för passet"
+  },
+  "K0346": {
+   "id": "K0346",
+   "skapad": "2026-09-27",
+   "namn": "Viktstyrda fågelautomaten som snurrar",
+   "objekt": "NYTT: Den viktstyrda fågelautomaten — sittpinnen snurrar av ekorren",
+   "form": "annat",
+   "sak": "nytt: den viktstyrda fågelautomaten+annat",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005013047622586",
+     "url": "https://www.aliexpress.com/item/1005013047622586.html",
+     "bild": null,
+     "pris_usd": 40.99,
+     "forst_sedd": "2026-09-27",
+     "verifieringar": [
+      {
+       "datum": "2026-09-27",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-27T04:45:31Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-27",
+     "levererad": true,
+     "slot": "exploration",
+     "rank": 6,
+     "rank_poang": 10,
+     "poang_axlar": {
+      "vinnarlikhet": 1,
+      "meta_creative": 1,
+      "efterfragan": 2,
+      "lucka": 3,
+      "ekonomi": 2,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 3,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 999,
+     "landad": 593,
+     "be_cpa": 406,
+     "hook": "Har ekorren tömt fågelmataren igen?",
+     "varfor": "Ingen svensk aktör säljer den viktstyrda snurrformen (PriceRunner/Vivara 0 träffar 2026-09-27) och vintermatningen toppar om 4 v — rent H10-test: 'visste inte att det fanns' med en mekanism som är videon i sig.",
+     "huvudrisk": "Landad 534–652 tvingar priset till taket 999 utan mätt ankare (BE-ROAS 2,5) — och heron är en packshot med vattenstämpel.",
+     "hypotes_id": "H10",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 12,
+      "K2": 12,
+      "K3": 12,
+      "K4": 6,
+      "K5": 6,
+      "K6": 10,
+      "K7": 3,
+      "K8": 9,
+      "K9": 4,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-27",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-27",
+     "handelse": "levererad på V3-arket (rank 6, exploration, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Viktstyrda fågelautomaten som snurrar"
+  },
+  "K0347": {
+   "id": "K0347",
+   "skapad": "2026-09-27",
+   "namn": "Ekorrburken i glas på trädet",
+   "objekt": "NYTT: Ekorrburken på trädet — ekorren kryper in i glasburken",
+   "form": "hus",
+   "sak": "nytt: ekorrburken på trädet+hus",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012902518850",
+     "url": "https://www.aliexpress.com/item/1005012902518850.html",
+     "bild": null,
+     "pris_usd": 9.25,
+     "forst_sedd": "2026-09-27",
+     "verifieringar": [
+      {
+       "datum": "2026-09-27",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-27T04:45:33Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-27",
+     "levererad": true,
+     "slot": "exploration",
+     "rank": 7,
+     "rank_poang": 10,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 3,
+      "efterfragan": 2,
+      "lucka": 2,
+      "ekonomi": 1,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 399,
+     "landad": 134,
+     "be_cpa": 266,
+     "hook": "Kommer ekorren till din tomt?",
+     "varfor": "Samma struktur som kojan (älskat djur ute + datum + hus) fast på det vilda djuret alla 55+ redan har på tomten; glasburksformen finns inte i svensk handel (Vivara/PriceRunner bara lockboxar 139–489) och heron är textfri i kontext.",
+     "huvudrisk": "Axels 'kedjan har den'-regel: Vivara säljer fyra ekorrmatare 249–350 kr i näraliggande form — luckan är formen (burken), inte kategorin.",
+     "hypotes_id": "H09",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 12,
+      "K2": 14,
+      "K3": 10,
+      "K4": 8,
+      "K5": 6,
+      "K6": 8,
+      "K7": 5,
+      "K8": 8,
+      "K9": 4,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-27",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-27",
+     "handelse": "levererad på V3-arket (rank 7, exploration, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Ekorrburken i glas på trädet"
+  },
+  "K0348": {
+   "id": "K0348",
+   "skapad": "2026-09-27",
+   "namn": "Ekorrkonen till matarstolpen",
+   "objekt": "NYTT: Ekorrkonen på matarstolpen — ekorren fastnar under plåten",
+   "form": "skydd",
+   "sak": "nytt: ekorrkonen på matarstolpen+skydd",
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "H_VISUELL_NYHET",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012988291851",
+     "url": "https://www.aliexpress.com/item/1005012988291851.html",
+     "bild": null,
+     "pris_usd": 12.06,
+     "forst_sedd": "2026-09-27",
+     "verifieringar": [
+      {
+       "datum": "2026-09-27",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-27T04:45:40Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-27",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 8,
+     "rank_poang": 8,
+     "poang_axlar": {
+      "vinnarlikhet": 1,
+      "meta_creative": 2,
+      "efterfragan": 1,
+      "lucka": 3,
+      "ekonomi": 1,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 3,
+      "hypotesvarde": 1
+     },
+     "konfidens": "LÅG",
+     "pris": 419,
+     "landad": 174,
+     "be_cpa": 244,
+     "hook": "Sitter ekorren på fågelbordet varje morgon?",
+     "varfor": "Formen finns inte i svensk handel (PriceRunner 0 på tre fraser, Vivara 0) fast problemet är universellt bland stolpmatare-ägare; vintermatningen toppar om 4 v och heron är textfri i kontext.",
+     "huvudrisk": "Bara ägare med stolpmatare kan köpa (andel ej mätt) och kunden måste mäta stolpdiametern — A_AGARE_FRIKTION har 2 vinnare på 9 dömda.",
+     "hypotes_id": "H10",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 10,
+      "K2": 12,
+      "K3": 8,
+      "K4": 6,
+      "K5": 6,
+      "K6": 10,
+      "K7": 3,
+      "K8": 6,
+      "K9": 3,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-27",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-27",
+     "handelse": "levererad på V3-arket (rank 8, sasong, konfidens LÅG)"
+    }
+   ],
+   "namn_sv": "Ekorrkonen till matarstolpen"
+  },
+  "K0349": {
+   "id": "K0349",
+   "skapad": "2026-09-27",
+   "namn": "Viltfoderpåsen för rådjur",
+   "objekt": "NYTT: Viltfoderpåsen på stammen — rådjuren vid skogskanten",
+   "form": "annat",
+   "sak": "nytt: viltfoderpåsen på stammen+annat",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "F_HOBBY_IDENTITET",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012026092869",
+     "url": "https://www.aliexpress.com/item/1005012026092869.html",
+     "bild": null,
+     "pris_usd": 37.89,
+     "forst_sedd": "2026-09-27",
+     "verifieringar": [
+      {
+       "datum": "2026-09-27",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-27T04:45:57Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-27",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 9,
+     "rank_poang": 7,
+     "poang_axlar": {
+      "vinnarlikhet": 1,
+      "meta_creative": 2,
+      "efterfragan": 1,
+      "lucka": 3,
+      "ekonomi": 2,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 3,
+      "hypotesvarde": 1
+     },
+     "konfidens": "LÅG",
+     "pris": 999,
+     "landad": 548,
+     "be_cpa": 451,
+     "hook": "Ser du rådjuren från köksfönstret i vinter?",
+     "varfor": "Formen saknas helt i svensk handel (PriceRunner: bara 12 495-kronorsautomater) och testar H09 på ett vilt, älskat djur i stället för ägt; NOW-fönster 4 v.",
+     "huvudrisk": "Ej mätt om 55+-trädgårdsägaren utfodrar rådjur alls — i Sverige är det jägarens åtelrutin, och camo-heron säger jakt, inte köksfönster; pris 999 utan mätt ankare.",
+     "hypotes_id": "H09",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 8,
+      "K2": 12,
+      "K3": 8,
+      "K4": 6,
+      "K5": 6,
+      "K6": 10,
+      "K7": 3,
+      "K8": 7,
+      "K9": 4,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-27",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-27",
+     "handelse": "levererad på V3-arket (rank 9, sasong, konfidens LÅG)"
+    }
+   ],
+   "namn_sv": "Viltfoderpåsen för rådjur"
   }
  }
 }

@@ -1,0 +1,1319 @@
+{
+ "datum": "2026-09-27",
+ "antal": 9,
+ "tema": false,
+ "per_slot": {
+  "exploitation": 3,
+  "exploration": 4,
+  "sasong": 2
+ },
+ "under_minimum": {
+  "exploitation": 2
+ },
+ "batch": [
+  {
+   "koncept_id": "K0341",
+   "namn_sv": "Värmemössan 2-i-1 med halskrage",
+   "objekt": "NYTT: Den uppvärmda mössan på läktaren och hundpromenaden — USB-slinga i pannan, halskrage i samma set (nov–feb)",
+   "form": "kläder",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "F_HOBBY_IDENTITET",
+   "slot": "exploitation",
+   "hypotes_id": "H02",
+   "vinnarlikhet": {
+    "likast": "Damaskerna (REAL_WINNER 15 759 / 68 / 2,21) + Värmesulorna (EARLY_SIGNAL 1 064 / 5 / 5,23)",
+    "delade_variabler": [
+     "kroppen ute i säsongsjobbet",
+     "form kläder",
+     "old way = köpt produkt som fungerar (vanlig mössa)",
+     "deadline första frost / mörkret",
+     "prisband 300–499",
+     "USB-värme som sulorna"
+    ],
+    "avvikelser": [
+     "ingen ägd dyr sak — köparen är kroppen själv",
+     "powerbank ingår inte (bara USB-kabel)",
+     "hero visar kvinna — kontots köpare är man 45+"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "forsta_frost_mellan",
+    "deadline_typ": "första frost",
+    "veckor_kvar": 2.6,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005010536203523",
+    "url": "https://www.aliexpress.com/item/1005010536203523.html",
+    "pris_usd": 13.36,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-27T04:46:32Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-27/v3/bilder/1005010536203523.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "titeln säger 2-i-1 (mössa + halskrage), one size enligt titeln — färgvarianter ej lästa (produktsidan ger inte varianter i containern)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "Hero: kvinna i snölandskap, renderad orange värmeglöd i pannan, vit USB-kabel synlig — textfri och i kontext. Alternativ herr-listning 1005005081176843 (12,42 USD, svart stickad, hero man mot vit bakgrund, litet 'M'-märke på kanten, LIVE 04:47:54Z) om Axel vill ha en manlig bild. Set-listning 1005006098351584 (16,45 USD, mössa + halskrage packshot, litet broderat märke) LIVE 04:46:30Z."
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen hittad i exakt form (eluppvärmd mössa)",
+     "pris_sek": null,
+     "url": "https://www.pricerunner.se/search?q=uppv%C3%A4rmd%20m%C3%B6ssa",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "saknas — Fjällräven Singi Heater Beanie 979 kr heter 'Heater' men är inte eluppvärmd; närmaste eluppvärmda kroppsplagg i fackhandeln är HeatX värmehandskar 1 000–1 569 kr (Hylte) och Härkila Heat-plagg 1 925–1 995 kr",
+     "pris_sek": null,
+     "url": "https://www.pricerunner.se/pl/10001-3361596117/Klaeder/Fjaellraeven-Singi-Heater-Beanie-Dark-Grey-priser",
+     "i_sortiment": false
+    },
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se 2026-09-27: 'uppvärmd mössa', 'värmemössa', 'värmemössa batteri', 'uppvärmd mössa usb', 'heated beanie', 'värmemössa usb batteri', 'uppvärmd mössa batteri' — noll eluppvärmda mössor (bara stickade Shein/CCM 31–199 kr, LED-mössa Proviz 256 kr)",
+     "hylte-lantman.com 2026-09-27: sök 'uppvärmd' 9 produkter (THAW sittdyna 819, HeatX handskar, vattenbehållare) — ingen mössa; 'värme mössa' 0 träffar",
+     "widforss.se 2026-09-27: kategorier Värmevästar/Värmehandskar/Värmestrumpor/Värmesulor/Värmebyxor/Övriga värmeprodukter finns i menyn, kategorisidorna svarade 404 — 'Övriga värmeprodukter' OLÄST",
+     "jaktia.se sök 404 (oläst) · xxl.se + clasohlson.com JS-skal utan produkter (oläst) · jula.se + biltema.se 403 (oläst) · stadium.se 500 (oläst) · rusta.com 404 (oläst)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     174,
+     213
+    ],
+    "pris_sek": 499,
+    "brutto_sek": [
+     286,
+     325
+    ],
+    "be_cpa_sek": [
+     286,
+     325
+    ],
+    "be_roas": 1.63,
+    "flerkop": false,
+    "returrisk": "låg — one size stickad; ingen mätning"
+   },
+   "meta_tanke": {
+    "hook": "Kall panna på läktaren i november?",
+    "objekt_i_bild": "mössan på huvudet, orange glöd i pannan, kabeln ner i jackfickan — läktare eller mörk hundpromenad",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "värmeslingan lyser genom stickningen (renderad glöd) + ånga i kylan; halskragen runt halsen i samma bild"
+   },
+   "varfor": "Samma struktur som damaskerna och värmesulorna (kroppen i kylan, USB-värme, 300–499 kr) på ett plagg som ALLA har och ingen svensk aktör säljer eluppvärmt — sju PriceRunner-sökningar + Hylte gav noll i formen; kategorinyhet (H10) med textfri hero i kontext. Första frost 2,6 v, mörkret 12 v: hela vintern är fönstret.",
+   "huvudrisk": "Powerbank ingår inte (bara USB-kabel) — utan medskickad powerbank blir första recensionen 'värmer inte'; Widforss/Jula/XXL oläst.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 3,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 3,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 3,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K8": 5
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (grep mössa/värm — Värmesits, Värmesulor, Läktarponcho, MC Handvärmare; ingen mössa)",
+     "koncept.py sok mössa/hals/nack = 0",
+     "kontot 7 d: ej läst (rör inte Meta)"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005010536203523.html",
+    "https://www.aliexpress.com/item/1005005081176843.html",
+    "https://www.aliexpress.com/item/1005006098351584.html",
+    "https://www.aliexpress.com/w/wholesale-heated-beanie-hat-usb-rechargeable.html",
+    "https://www.pricerunner.se/search?q=heated%20beanie",
+    "https://www.hylte-lantman.com/sok?q=uppv%C3%A4rmd"
+   ],
+   "_kalla": "kandidater-AH.json",
+   "rank_poang": 15.3,
+   "rank_forklaring": "exploitation: vinnarlikhet 3×2 + ekonomi 2 + säsong 2 + creative 2 + lucka 3 + signalbonus +0.3 [arketyp=E_VADER_SASONG 2V/2F (+0.0); form=kläder 5V/3F (+0.2); deadline_typ=första frost 2V/1F (+0.3); prisband=300–499 8V/15F (-0.3)] = 15.3",
+   "asymmetrisk": false,
+   "rank": 1
+  },
+  {
+   "koncept_id": "K0342",
+   "namn_sv": "Flyttbara solcellslyktan 2 m",
+   "objekt": "NYTT: Uppfarten/vedboden utan lyktstolpe — den flyttbara stolplyktan med vattenfylld fot",
+   "form": "annat",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "H_VISUELL_NYHET",
+   "slot": "exploitation",
+   "hypotes_id": "H02",
+   "vinnarlikhet": {
+    "likast": "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED",
+    "delade_variabler": [
+     "objekt_ute",
+     "agare_55plus_smahus",
+     "form_elektronik_solcell",
+     "rörelsesensor + skymningsrelä (enligt titeln)",
+     "montering utan elektriker och utan grävning",
+     "prisband 500–999",
+     "old way köpt produkt som fungerar (pannlampa/förlängningssladd)"
+    ],
+    "avvikelser": [
+     "står på marken på egen 2 m-stolpe i stället för på väggen",
+     "hero är en komponent-packshot med text (materialklass 0–1)",
+     "vikt ej mätt — stolpe i fyra sektioner + fot"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "vintertid_morker",
+    "deadline_typ": "mörker",
+    "veckor_kvar": 4.0,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005009341001409",
+    "url": "https://www.aliexpress.com/item/1005009341001409.html",
+    "pris_usd": 23.89,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-27T04:50:33Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-27/v3/bilder/1005009341001409.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "ur sökträffens titel: '750 LED Solar Lamp Post Light, with 78\" Tall Pole, Removable, Dusk to Dawn Motion Sensor 4000W' — en modell; UFO-huvud med panel, 4 stolpsektioner (78 tum ≈ 198 cm), vattenfylld plastfot med justerskruv. '4000W' och '750 LED' är listningsprosa, inte mätvärden.",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 0,
+    "hero_textfri": false,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron är en komponentbild på vit botten (huvud, panel, fyra rör, fot, två detaljinklipp) med rubriken 'Solar mobile garden lamp' — creativen måste byggas på egen kontextbild (lyktan på uppfarten i skymning, sedan flyttad till vedboden). Lumen/brinntid ej mätta."
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen svensk aktör hittad i exakt form (flyttbar solcellslykta ~2 m med vattenfylld fot). Närmast på PriceRunner: 'Solcellsdriven Gatubelysning 40 SMD' 575 kr (form ej läst), Northio solcellslampa med ljussensor stolpbelysning 789 kr, V-TAC ST63 solcellsgatlykta 316 kr (armatur för befintlig stolpe/vägg)",
+     "pris_sek": 575,
+     "url": "https://www.pricerunner.se/search?q=solcellslampa%20stolpe%20200%20cm",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "Norlys Oslo stolpe stolplykta 238 cm — 230 V, kräver grävning och elektriker (annan form; strukturankare, inte formankare)",
+     "pris_sek": 4480,
+     "url": "https://www.pricerunner.se/pl/460-3200059002/Belysning/Norlys-Oslo-Stolpe-Stolplykta-2",
+     "i_sortiment": true
+    },
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se 'stolplykta solcell 2 m' 2026-09-27: 13 träffar, 0 flyttbara (Northlight 35–83 cm spjut, Norlys 230 V 9 290)",
+     "pricerunner.se 'solcellslampa stolpe 200 cm' 2026-09-27: 20 träffar, 0 i formen (Airam Kartano 225 cm 230 V 3 705, Lutec 227 cm 3 145, Norlys Oslo 238 cm 4 480)",
+     "pricerunner.se 'solcellsgatlykta' + 'solcell gatlykta rörelsesensor' 2026-09-27: V-TAC ST63 316 / ST120 442, Videx 1 488–2 224 — armaturer utan stolpe/fot",
+     "clasohlson.com JS-spärr, jula.se/biltema.se 403: oläst"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     311,
+     380
+    ],
+    "pris_sek": 899,
+    "brutto_sek": [
+     519,
+     588
+    ],
+    "be_cpa_sek": [
+     519,
+     588
+    ],
+    "be_roas": 1.62,
+    "flerkop": false,
+    "returrisk": "MEDEL — ingen mätning, men fraktvikten är okänd (stolpe + fot); tippar den i vind med tom fot kommer klagomål"
+   },
+   "meta_tanke": {
+    "hook": "Ingen lyktstolpe? Ställ dit en.",
+    "objekt_i_bild": "uppfarten i november-mörker, lyktan bärs ut och ställs vid bilen, tänds av sig själv",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "foten fylls med vatten ur slangen, stolpen skruvas ihop, lyktan står — sedan flyttas den till vedboden i samma klipp"
+   },
+   "varfor": "Exploitation-kusin till Solcellslampan (samma elektronik: panel + rörelsesensor + skymning) i den enda form kedjorna inte har — en lykta som ställs där det är mörkt utan grävning, med 230 V-stolplyktans 3 700–4 500 kr + elektriker som strukturankare. BE-CPA 519–588 är linsens högsta.",
+   "huvudrisk": "Vikten är ej mätt (fyra stolprör + fot) och kan spräcka landad-kalkylen; heron är en packshot med text (materialklass 0 = förlorarsignal 1 v / 4 f) så creativen måste byggas från noll.",
+   "konfidens": "LÅG",
+   "poang": {
+    "vinnarlikhet": 3,
+    "meta_creative": 0,
+    "efterfragan": 1,
+    "lucka": 3,
+    "ekonomi": 3,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": null,
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt 2026-09-27: Solcellslampa Med Rörelsesensor = väggen (annan SAK), LED Campinglampa solcell = bärbar bordslykta (annan form), Bäverlampa Pro (oklart, 199 kr — troligen ficklampa)",
+     "koncept.py sok lamp post/street/lykta: K0022 vägnabbar (annan form), 0 i formen",
+     "kandidater-V 09-16 / AA 09-23: infartsmarkör/stolplykta på markspjut struken som kedjeform — den flyttbara 2 m-lyktan med fot är en annan form"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005009341001409.html",
+    "https://www.pricerunner.se/search?q=solcellslampa%20stolpe%20200%20cm",
+    "https://www.pricerunner.se/search?q=stolplykta%20solcell%202%20m",
+    "https://www.pricerunner.se/search?q=solcell%20gatlykta%20r%C3%B6relsesensor",
+    "https://www.pricerunner.se/pl/460-3200059002/Belysning/Norlys-Oslo-Stolpe-Stolplykta-2"
+   ],
+   "_kalla": "kandidater-AJ.json",
+   "rank_poang": 13.4,
+   "rank_forklaring": "exploitation: vinnarlikhet 3×2 + ekonomi 3 + säsong 2 + creative 0 + lucka 3 + signalbonus -0.6 [arketyp=E_VADER_SASONG 2V/2F (+0.0); form=annat 0V/15F (-1.0); prisband=500–999 12V/5F (+0.4)] = 13.4",
+   "asymmetrisk": false,
+   "rank": 2
+  },
+  {
+   "koncept_id": "K0343",
+   "namn_sv": "Grindstolpens solcellslykta",
+   "objekt": "NYTT: Grindstolpen (murad/putsad pelare vid infarten) — lyktan som aldrig fick el",
+   "form": "annat",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploration",
+   "hypotes_id": "H10",
+   "vinnarlikhet": {
+    "likast": "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED",
+    "delade_variabler": [
+     "objekt_ute",
+     "agare_55plus_smahus",
+     "form_elektronik_solcell",
+     "latent_behov_nej (mörk infart varje kväll)",
+     "montering utan elektriker",
+     "prisband 500–999",
+     "flerkop_ja (två grindstolpar)"
+    ],
+    "avvikelser": [
+     "ingen rörelsesensor — skymningsrelä + timer/fjärr",
+     "sitter på en stolpe, inte på husväggen",
+     "RGB-läge i listningen (säljs som varmvit)"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "vintertid_morker",
+    "deadline_typ": "mörker",
+    "veckor_kvar": 4.0,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005009104706851",
+    "url": "https://www.aliexpress.com/item/1005009104706851.html",
+    "pris_usd": 25.59,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-27T04:46:26Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-27/v3/bilder/1005009104706851.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "ur titeln: 'Timed Solar Pillar Lights IP65 … Dimming RGB Post Light Remote Control' — en modell, platt fot (basmått ej läst), fjärrkontroll med timer, varmvit/kallvit/RGB. Syskon: 1005012890192354 'Round Ball Cap 3-Color, 2400mAh' USD 28,39 (LIVE 04:47Z på tredje försöket med gateway-parametrarna, hero ej hämtad) och K0017 'Solar Column Light 3 Colors for Yard Stone Post' USD 23,19 (registrerad 09-09 som kandidat, aldrig levererad).",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron är en riktig kontextbild: två murade grindstolpar i skymning med lyktorna tända — men med rubrik 'Outdoor Solar Post Light', ikoner och lila badge '3 CT+RGB' som måste beskäras/bytas; lumen och brinntid står inte i titel/sökträff (ej mätt)"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen svensk aktör hittad i exakt form (solcellslykta med platt fot för stolptopp/murad pelare). Närmast: Star Trading Solcellslampa Granada rostfritt POLLARE 459 kr och Nordlux Justina solcell STOLPLYKTA 60 cm 869 kr — båda på egen stolpe/spjut i marken, inte på ägarens pelare",
+     "pris_sek": null,
+     "url": "https://www.pricerunner.se/search?q=solcellslampa%20pelare",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "ej mätt i samma form — 230 V-stolplyktor för pelare (Norlys, Konstsmide) kräver elektriker och ligger 3 800–10 000 kr på PriceRunner (annan form, ej ankare)",
+     "pris_sek": null,
+     "url": "https://www.pricerunner.se/search?q=stolplykta%20solcell%20platt%20fot",
+     "i_sortiment": false
+    },
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se 'solcellslampa pelare' 2026-09-27: 20 träffar, 0 i formen",
+     "pricerunner.se 'solcellslampa stolptopp' 2026-09-27: 20 träffar, 0 i formen (markspjut, stolplyktor på egen stolpe)",
+     "pricerunner.se 'solcellslampa grindstolpe' 2026-09-27: markspjut/pollare, 0 i formen",
+     "pricerunner.se 'stolplykta solcell platt fot' 2026-09-27: bara 230 V-stolplyktor 3 800–11 000 kr",
+     "pricerunner.se 'solcellspollare' 2026-09-27: pollare är sortiment (Star Trading 129, Northlight 249, V-TAC 1 151, Dyberg Larsen 1 610) — annan form (egen stolpe i marken)",
+     "clasohlson.com: JS-spärr, oläst · jula.se/biltema.se: 403, oläst"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     333,
+     407
+    ],
+    "pris_sek": 799,
+    "brutto_sek": [
+     392,
+     466
+    ],
+    "be_cpa_sek": [
+     392,
+     466
+    ],
+    "be_roas": 1.86,
+    "flerkop": true,
+    "returrisk": "låg — platt fot skruvas på valfri plan stolptopp, ingen mätning; risk att skymningsljuset i november inte håller hela kvällen (brinntid ej mätt)"
+   },
+   "meta_tanke": {
+    "hook": "Grindstolpen fick aldrig el. Nu lyser den.",
+    "objekt_i_bild": "den egna murade grindstolpen i skymning, lyktan tänder sig själv, bilen svänger in",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "fyra skruvar i stolptoppen, ingen sladd, tänds när det mörknar — samma infart före/efter"
+   },
+   "varfor": "Renaste H10-raden i linsen: formen (solcellslykta ovanpå ägarens egen grindstolpe) finns inte hos någon svensk aktör i fem PriceRunner-sökningar, medan objektet är typiskt 55+-småhus (murade grindstolpar, ingen el dragen dit). Samma struktur som Solcellslampan (ute, solcell, ingen elektriker, kväll efter kväll) i en ny form, med flerköp inbyggt (två stolpar) och vintertid 25 okt som datum.",
+   "huvudrisk": "Lumen/brinntid ej mätta — en pelarlykta som slocknar 19:00 i november dödar recensionerna; RGB-läget måste hållas borta från annonsen (55+ vill ha varmvit).",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 2,
+    "efterfragan": 1,
+    "lucka": 3,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 3,
+    "hypotesvarde": 3
+   },
+   "per_kriterium": null,
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt 2026-09-27 (stolp/grind/lykta/solcell): Solcellslampa Med Rörelsesensor = väggen, Solcellslarm = larm, Fjäderbelastat Stödhjul = grinden men annan form — ingen stolptoppslykta",
+     "koncept.py sok pillar/post light/column/lykta: K0017 Solar Column Light kandidat 09-09, aldrig levererad, ingen feedback — ingen nej-spärr; K0290 Fasadlisten nej = annan SAK (fasaden) och annan form (list)",
+     "kandidater-AA 09-23 + kandidater-V 09-16: pelarlykta ej prövad (infartsmarkör = stolpe i marken, struken; hängränne-/klämlampor strukna)"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005009104706851.html",
+    "https://www.aliexpress.com/item/1005012890192354.html",
+    "https://www.pricerunner.se/search?q=solcellslampa%20pelare",
+    "https://www.pricerunner.se/search?q=solcellslampa%20stolptopp",
+    "https://www.pricerunner.se/search?q=solcellspollare",
+    "korningar/2026-09-27/SASONG.md rad 'Vintertid / mörkret faller' (vintertid 25 okt = 4,0 v; sasong.py --objekt Grindstolpen gav EVERGREEN — ingen objektrad ännu)"
+   ],
+   "_kalla": "kandidater-AJ.json",
+   "rank_poang": 13,
+   "rank_forklaring": "exploration: hypotesvärde 3×2 + nyhet 3 + creative 2 + ekonomi 2 = 13",
+   "asymmetrisk": false,
+   "rank": 3
+  },
+  {
+   "koncept_id": "K0344",
+   "namn_sv": "Staketstolparnas solcellshattar 2-pack",
+   "objekt": "NYTT: Staketstolparna (trästaket 4x4/95×95) — stolphatten som lyser",
+   "form": "annat",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "I_FLERKOP",
+   "slot": "exploration",
+   "hypotes_id": "H08",
+   "vinnarlikhet": {
+    "likast": "Soptunneklistermärkena",
+    "delade_variabler": [
+     "objekt_ute",
+     "agare_55plus_smahus",
+     "objekt alla har (staketet)",
+     "old way ingenting",
+     "flerkop_ja (6-pack-variant, 6–20 stolpar per tomt)",
+     "synlig nyhet utan förklaring"
+    ],
+    "avvikelser": [
+     "elektronik/solcell i stället för dekor",
+     "storleksberoende: 4x4 tum (101 mm) med adapter 3,5 tum — svenska 95×95 och 70×70 måste mätas",
+     "599 kr mot klistermärkenas 199"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "vintertid_morker",
+    "deadline_typ": "mörker",
+    "veckor_kvar": 4.0,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005011543839599",
+    "url": "https://www.aliexpress.com/item/1005011543839599.html",
+    "pris_usd": 18.9,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-27T04:49:57Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-27/v3/bilder/1005011543839599.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "ur titeln: '2/6pcs … for 4x4 Wood/Vinyl Posts Warm Glow' — USD 18,90 är lägsta variant (antas 2-pack; 6-pack ej prisläst). Färg i heron: vit. Syskon: 1005012960520547 (USD 15,85, LIVE 04:46:31Z, hero sedd: klar/svart hatt på vitt staket, textfri, packstorlek ej läsbar ur titeln) och 1005012463211687 'Modern Transparent … Dual Color' USD 12,12 (LIVE 04:50:00Z, hero ej hämtad).",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron: kontextbild uppe (vit stolphatt tänd på vitt vinylstaket i skymning) + packshots; säljarlogga 'Saifenlan' uppe till vänster måste beskäras. Syskonet 1005012960520547 har en helt textfri hero (rad av tända hattar på svart/vitt staket) — använd den för creativen om samma vara. Vit hatt passar sämre svenska trästaket; svart/klar variant att föredra."
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen svensk aktör hittad i exakt form (solcellslampa som stolphatt). PriceRunner 'stolphatt solcell' och 'solar post cap' 2026-09-27: bara galvade/plast-stolphattar utan ljus 10–207 kr (NSH, Habo, Jabo). vidaXL 'Solcellslampor för staket 12 st' 939 kr (Markbelysning, form ej läst — sannolikt staketmonterade småstrålkastare). Biltema 'Solcellslampa staket' 2000054535 = klämform enligt lins V/AA (oläst i dag, 403)",
+     "pris_sek": null,
+     "url": "https://www.pricerunner.se/search?q=stolphatt%20solcell",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "ej mätt — ingen märkesvara i formen hittad; NSH Nordic stolphatt svart med kula 9,7 cm 54,95 kr är den dyraste hatt-formen utan ljus",
+     "pris_sek": null,
+     "url": "https://www.pricerunner.se/search?q=solar%20post%20cap",
+     "i_sortiment": false
+    },
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se 'stolphatt solcell' 2026-09-27: 11 träffar, 0 med ljus",
+     "pricerunner.se 'solar post cap' 2026-09-27: 20 träffar, 0 med ljus",
+     "pricerunner.se 'solcellslampa staket stolpe' 2026-09-27: stolplyktor på spjut, ingen hatt",
+     "pricerunner.se/pl/460-3205146150 vidaXL staket 12 st 939 kr: sidan läst, formen framgår inte",
+     "jula.se/biltema.se/rusta.com: 403, oläst — Jula kan ha en 'stolplykta solcell 95×95' som inte syns på PriceRunner"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     246,
+     300
+    ],
+    "pris_sek": 599,
+    "brutto_sek": [
+     299,
+     353
+    ],
+    "be_cpa_sek": [
+     299,
+     353
+    ],
+    "be_roas": 1.84,
+    "flerkop": true,
+    "returrisk": "MEDEL — ägaren måste mäta stolpen: 4x4 tum = 101 mm inv. + adapter ~89 mm; svenska 95×95 hamnar mellan (förlorarsignal 'måste mäta/storlek' 6 v / 9 f)"
+   },
+   "meta_tanke": {
+    "hook": "Staketet du redan har. Nu lyser det.",
+    "objekt_i_bild": "raden av staketstolpar längs uppfarten i skymning, varje hatt tänd",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "hatten trycks på stolpen på fem sekunder, ingen sladd — samma staket före (svart) / efter (rad av ljus)"
+   },
+   "varfor": "H08-test på ett objekt nästan alla 55+-småhus har (staketet), i en form som inte syns i svenskt flöde i tre PriceRunner-sökningar, med flerköp inbyggt (6-pack) och samma 'ingen elektriker'-struktur som Solcellslampan. Klistermärkena visade att 'synlig nyhet på något alla har' bär utan förklaring.",
+   "huvudrisk": "Passformen: listningen är byggd för amerikanska 4x4-stolpar; svenska 95×95/70×70 kräver adapter eller mätning — en retur per tio köp äter marginalen. Lumen/brinntid ej mätta.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 3,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 3,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": null,
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt 2026-09-27: Staketstolpsbygel 2-pack = samma SAK (staketstolpen) men annan form (reparationsbygel) — ingen dubblett på objekt+form",
+     "koncept.py sok post cap/stolphatt/staket: 0 träffar; K0046 stolpreparationssats launchad = annan form",
+     "kandidater-V 09-16 / AA 09-23: klämlampa på staket/räcke struken (Biltema-klämform) — hatten är en annan form (ovanpå stolpen)"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005011543839599.html",
+    "https://www.aliexpress.com/item/1005012960520547.html",
+    "https://www.aliexpress.com/item/1005012463211687.html",
+    "https://www.pricerunner.se/search?q=stolphatt%20solcell",
+    "https://www.pricerunner.se/search?q=solar%20post%20cap",
+    "https://www.pricerunner.se/pl/460-3205146150/Belysning/vidaXL-Solcellslampor-Foer-Staket-12-St-LED-Svart-Markbelysning-priser"
+   ],
+   "_kalla": "kandidater-AJ.json",
+   "rank_poang": 11,
+   "rank_forklaring": "exploration: hypotesvärde 2×2 + nyhet 3 + creative 2 + ekonomi 2 = 11",
+   "asymmetrisk": false,
+   "rank": 4
+  },
+  {
+   "koncept_id": "K0345",
+   "namn_sv": "Knävärmarna 2-pack för passet",
+   "objekt": "NYTT: De uppvärmda knävärmarna på passet och läktaren — kardborre runt knäet, tre värmelägen, ett per knä (okt–jan)",
+   "form": "annat",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "I_FLERKOP",
+   "slot": "exploitation",
+   "hypotes_id": "H08",
+   "vinnarlikhet": {
+    "likast": "Värmesitsen för älgpasset (K0240, launchad, 1 934 / 4 / 1,45 EARLY_SIGNAL) + Damaskerna (REAL_WINNER)",
+    "delade_variabler": [
+     "kroppen stilla på passet i kylan",
+     "deadline älgjakt syd 1,6 v",
+     "USB-värme",
+     "prisband 500–999"
+    ],
+    "avvikelser": [
+     "formen är ett stöd/bandage — kan läsas som wellness (artros) i stället för jakt",
+     "två behövs (flerköp) — listningen säljer styck",
+     "hero är packshot på idrottsben, inte passet"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "algjakt_syd",
+    "deadline_typ": "älgjakt",
+    "veckor_kvar": 1.6,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005010441266600",
+    "url": "https://www.aliexpress.com/item/1005010441266600.html",
+    "pris_usd": 8.99,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-27T04:47:43Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-27/v3/bilder/1005010441266600.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "titeln: 'Knee Brace with 3 Heat Levels, Adjustable' — en storlek med kardborre, säljs styckvis (2 st per kund); första försöket att öppna sidan gav tomt svar, andra gav titel + hero",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "Hero: svart neoprenknäskydd med röd lysande knapp, på ett ben i shorts + packshot, vit bakgrund — textfri men idrott/inomhus. Alternativ 1005013064954023 (22,37 USD, rödljus + värme) har textfylld wellness-hero — vald bort."
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "PriceRunner: 'Värmande Knästöd' 99,60 kr och INF självuppvärmande knähylsor 119 kr — turmalin/självvärmande, INTE eluppvärmda",
+     "pris_sek": 99.6,
+     "url": "https://www.pricerunner.se/pl/340-3458154827/Haelsovaardsprodukter/Vaermande-Knaestoed-priser",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "'USB Elektrisk Uppvärmd Knästöd 120 Enkelpack' (generisk marknadsplatslistning, 1 st) — enda eluppvärmda knästödet på PriceRunner; svagt ankare utan varumärke",
+     "pris_sek": 1235,
+     "url": "https://www.pricerunner.se/pl/340-3603875362/Haelsovaardsprodukter/USB-Elektrisk-Uppvaermd-Knaestoed-120-Enkelpack-priser",
+     "i_sortiment": false
+    },
+    "ankare_kvot": 2.06,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se 2026-09-27: 'uppvärmd knäskydd', 'uppvärmt knästöd par', 'värmeknäskydd usb' — ett eluppvärmt (1 235 kr, enkelpack), resten Rehband/McDavid-stöd 199–399 utan värme",
+     "hylte-lantman.com 2026-09-27: 'värme knä' 0 träffar; 'uppvärmd' 9 produkter utan knä",
+     "widforss.se kategorisidor 404 (oläst) · jula/biltema 403 · clas/xxl JS-skal (oläst)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     234,
+     286
+    ],
+    "pris_sek": 599,
+    "brutto_sek": [
+     313,
+     365
+    ],
+    "be_cpa_sek": [
+     313,
+     365
+    ],
+    "be_roas": 1.77,
+    "flerkop": true,
+    "returrisk": "låg — kardborre, justerbar; landad räknad för 2 st (par) à 8,99 USD"
+   },
+   "meta_tanke": {
+    "hook": "Stela knän efter fyra timmar på passet?",
+    "objekt_i_bild": "två knän i jaktbyxor med knävärmarna på, röd knapp lyser, torn/stubbe i bakgrunden",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "värmebild/ånga från knäna när byxbenet dras upp; den röda lysdioden på varje knä"
+   },
+   "varfor": "Tredje kroppsdelen på passet efter sits (launchad) och sulor (ROAS 5,23 dag två) — knäna är det som stelnar när man sitter stilla i tornet; PriceRunner har bara ett eluppvärmt knästöd (1 235 kr, styck) så vårt par för 599 ligger under ankaret med 2,06×. Flerköp inbyggt: två knän = två enheter (H08).",
+   "huvudrisk": "Formen kan läsas som artros-wellness i stället för jakt — creativen måste sättas på passet, inte i soffan; powerbank ingår sannolikt inte.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 1,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K8": 5
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (grep knä = 0)",
+     "koncept.py sok knä = 0",
+     "kontot 7 d: ej läst (rör inte Meta)"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005010441266600.html",
+    "https://www.aliexpress.com/w/wholesale-heated-knee-pads-usb-rechargeable.html",
+    "https://www.pricerunner.se/search?q=uppv%C3%A4rmd%20kn%C3%A4skydd",
+    "https://www.pricerunner.se/search?q=uppv%C3%A4rmt%20kn%C3%A4st%C3%B6d%20par"
+   ],
+   "_kalla": "kandidater-AH.json",
+   "rank_poang": 10.4,
+   "rank_forklaring": "exploitation: vinnarlikhet 2×2 + ekonomi 2 + säsong 2 + creative 1 + lucka 2 + signalbonus -0.6 [arketyp=E_VADER_SASONG 2V/2F (+0.0); form=annat 0V/15F (-1.0); prisband=500–999 12V/5F (+0.4)] = 10.4",
+   "asymmetrisk": false,
+   "rank": 5
+  },
+  {
+   "koncept_id": "K0346",
+   "namn_sv": "Viktstyrda fågelautomaten som snurrar",
+   "objekt": "NYTT: Den viktstyrda fågelautomaten — sittpinnen snurrar av ekorren",
+   "form": "annat",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploration",
+   "hypotes_id": "H10",
+   "vinnarlikhet": {
+    "likast": "Fågelmataren med kamera (K0242, EARLY_SIGNAL 1,71)",
+    "delade_variabler": [
+     "objekt_ute",
+     "fågelbord/fågelmatare",
+     "55+ småhus",
+     "vintermatning NOW"
+    ],
+    "avvikelser": [
+     "mekanik (motor) i stället för elektronik/app",
+     "ingen svensk aktör alls i formen",
+     "pris 999 = grindens tak"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "vintermatning_faglar",
+    "deadline_typ": "vintermatning",
+    "veckor_kvar": 4.0,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005013047622586",
+    "url": "https://www.aliexpress.com/item/1005013047622586.html",
+    "pris_usd": 40.99,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-27T04:45:31Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-27/v3/bilder/1005013047622586.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant enligt sökträff/titel; drivning (batteri/motor) står inte i titeln — ej verifierad",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video) — men mekanismen (ekorren snurras av) är själva videon",
+    "kommentar": "packshot på vit botten med liten inklippt bild med fåglar och säljarens vattenstämpel 'FLORASTHINE' nere till höger — måste beskäras; filen är WebP trots .jpg-namnet"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "PriceRunner: ingen viktstyrd/roterande fågelmatare — närmaste form Gardman Heavy Duty Squirrel Proof Seed Feeder (bur)",
+     "pris_sek": 263,
+     "url": "https://www.pricerunner.se/pl/456-4292380/Husdjur/Gardman-Heavy-Duty-Squirrel-Proof-Seed-Feeder-priser",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "ej mätt i svensk handel — PriceRunner 'yankee flipper' 0 produkter, 'squirrel buster'/'roamwild'/'droll yankees' 0 relevanta (2026-09-27); Vivara-sök 'ekorrsäker' 0 produkter",
+     "pris_sek": null,
+     "url": "https://www.pricerunner.se/search?q=yankee%20flipper",
+     "i_sortiment": false
+    },
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se (ekorrsäker fågelmatare, squirrel buster, yankee flipper, droll yankees, roamwild, brome squirrel, fågelmatare vikt ekorre)",
+     "vivara.se catalogsearch 'ekorrsäker' (0 produkter)",
+     "granngarden.se — oläst (JS-renderad, inga priser i HTML)",
+     "jula.se/fyndiq/cdon/amazon — oläst (403 enligt protokollet)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     534,
+     652
+    ],
+    "pris_sek": 999,
+    "brutto_sek": [
+     347,
+     465
+    ],
+    "be_cpa_sek": [
+     347,
+     465
+    ],
+    "be_roas": 2.46,
+    "flerkop": false,
+    "returrisk": "medel — hängande, universal; motorn måste fungera i minusgrader (ej verifierat)"
+   },
+   "meta_tanke": {
+    "hook": "Har ekorren tömt fågelmataren igen?",
+    "objekt_i_bild": "ekorren som snurras av sittpinnen medan fåglarna äter",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "ekorren hoppar på, pinnen roterar, ekorren åker av — fåglarna sitter kvar"
+   },
+   "varfor": "Ingen svensk aktör säljer den viktstyrda snurrformen (PriceRunner/Vivara 0 träffar 2026-09-27) och vintermatningen toppar om 4 v — rent H10-test: 'visste inte att det fanns' med en mekanism som är videon i sig.",
+   "huvudrisk": "Landad 534–652 tvingar priset till taket 999 utan mätt ankare (BE-ROAS 2,5) — och heron är en packshot med vattenstämpel.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 1,
+    "meta_creative": 1,
+    "efterfragan": 2,
+    "lucka": 3,
+    "ekonomi": 2,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 3,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 12,
+    "K3": 12,
+    "K4": 6,
+    "K5": 6,
+    "K6": 10,
+    "K7": 3,
+    "K8": 9,
+    "K9": 4,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (Fågelmataren med kamera 1 659 = annan SAK: kamera, inte ekorrspärr)",
+     "koncept.py sok fågel/ekorre/ekorr/spärr",
+     "backlog.json (ekorrsäker burmatare = annan form, Vivara 249)"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/w/wholesale-squirrel-proof-bird-feeder-weight-activated.html",
+    "https://www.pricerunner.se/search?q=squirrel%20buster",
+    "https://www.pricerunner.se/search?q=brome%20squirrel",
+    "https://www.vivara.se/catalogsearch/result/?q=ekorrs%C3%A4ker"
+   ],
+   "_kalla": "kandidater-AI.json",
+   "rank_poang": 10,
+   "rank_forklaring": "exploration: hypotesvärde 2×2 + nyhet 3 + creative 1 + ekonomi 2 = 10",
+   "asymmetrisk": true,
+   "rank": 6
+  },
+  {
+   "koncept_id": "K0347",
+   "namn_sv": "Ekorrburken i glas på trädet",
+   "objekt": "NYTT: Ekorrburken på trädet — ekorren kryper in i glasburken",
+   "form": "hus",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploration",
+   "hypotes_id": "H09",
+   "vinnarlikhet": {
+    "likast": "Isolerade Utekattkojan (REAL_WINNER)",
+    "delade_variabler": [
+     "älskat djur ute",
+     "kvinna/man 55+ småhus",
+     "datum (vintermatning)",
+     "form hus/koja",
+     "old way ingenting"
+    ],
+    "avvikelser": [
+     "ekorren är vild, inte ägd",
+     "< 500 kr",
+     "kedjan har ekorrmatare i lockboxform (Vivara 249–350)"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "vintermatning_faglar",
+    "deadline_typ": "vintermatning",
+    "veckor_kvar": 4.0,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005012902518850",
+    "url": "https://www.aliexpress.com/item/1005012902518850.html",
+    "pris_usd": 9.25,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-27T04:45:33Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-27/v3/bilder/1005012902518850.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant (trähus + 500 ml glasburk) enligt titeln",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "bästa heron i linsen: trähuset monterat på en tallstam, ekorren sitter på taket, jordnötter syns i burken — textfri, ingen vattenstämpel; filen är WebP trots .jpg-namnet"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "PriceRunner: Ekorrmatare Trä (lockbox, inte glasburk)",
+     "pris_sek": 139,
+     "url": "https://www.pricerunner.se/pl/456-3425784450/Husdjur/Ekorrmatare-Trae-priser",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "Wildlife Garden Ekorrmatare (lockbox i trä)",
+     "pris_sek": 489,
+     "url": "https://www.pricerunner.se/pl/456-3202272066/Husdjur/Wildlife-Garden-Ekorrmatare-priser",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.23,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se 'ekorrmatare' (3 i formen: 139 / Galiano 350 / Wildlife Garden 489), 'ekorrmatare burk' (0 i burkform)",
+     "vivara.se produktsidor 2026-09-27: Galiano 349,90 · Metall 279,90 · Sanjo byggsats 269,90 · Victoria 249,90 — alla lockbox/plåt, ingen glasburk",
+     "granngarden.se — oläst (JS)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     120,
+     147
+    ],
+    "pris_sek": 399,
+    "brutto_sek": [
+     252,
+     279
+    ],
+    "be_cpa_sek": [
+     252,
+     279
+    ],
+    "be_roas": 1.51,
+    "flerkop": false,
+    "returrisk": "låg — en storlek, skruvas i trädet"
+   },
+   "meta_tanke": {
+    "hook": "Kommer ekorren till din tomt?",
+    "objekt_i_bild": "ekorren halvvägs inne i glasburken med jordnötter",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "ekorren lyfter locket / kryper in i burken och äter — filmat genom köksfönstret"
+   },
+   "varfor": "Samma struktur som kojan (älskat djur ute + datum + hus) fast på det vilda djuret alla 55+ redan har på tomten; glasburksformen finns inte i svensk handel (Vivara/PriceRunner bara lockboxar 139–489) och heron är textfri i kontext.",
+   "huvudrisk": "Axels 'kedjan har den'-regel: Vivara säljer fyra ekorrmatare 249–350 kr i näraliggande form — luckan är formen (burken), inte kategorin.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 3,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 1,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 14,
+    "K3": 10,
+    "K4": 8,
+    "K5": 6,
+    "K6": 8,
+    "K7": 5,
+    "K8": 8,
+    "K9": 4,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (ingen ekorr-rad)",
+     "koncept.py sok ekorr/ekorre/burk (0 träffar)",
+     "backlog.json"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/w/wholesale-squirrel-feeder-wooden-jar.html",
+    "https://www.pricerunner.se/search?q=ekorrmatare",
+    "https://www.vivara.se/ekorrmatare-galiano",
+    "https://www.vivara.se/victoria-ekorrmatare"
+   ],
+   "_kalla": "kandidater-AI.json",
+   "rank_poang": 10,
+   "rank_forklaring": "exploration: hypotesvärde 2×2 + nyhet 2 + creative 3 + ekonomi 1 = 10",
+   "asymmetrisk": true,
+   "rank": 7
+  },
+  {
+   "koncept_id": "K0348",
+   "namn_sv": "Ekorrkonen till matarstolpen",
+   "objekt": "NYTT: Ekorrkonen på matarstolpen — ekorren fastnar under plåten",
+   "form": "skydd",
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "H_VISUELL_NYHET",
+   "slot": "sasong",
+   "hypotes_id": "H10",
+   "vinnarlikhet": {
+    "likast": "Soptunneklistermärkena (H_VISUELL_NYHET, objekt alla har)",
+    "delade_variabler": [
+     "objekt_ute",
+     "billigt objekt",
+     "ny form i svenskt flöde",
+     "< 500 kr"
+    ],
+    "avvikelser": [
+     "kräver att ägaren har en stolpmatare (andel ej mätt)",
+     "A_AGARE_FRIKTION = HÖG förlorarsignal (2 av 9)",
+     "diameter måste passa stolpen"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "vintermatning_faglar",
+    "deadline_typ": "vintermatning",
+    "veckor_kvar": 4.0,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005012988291851",
+    "url": "https://www.aliexpress.com/item/1005012988291851.html",
+    "pris_usd": 12.06,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-27T04:45:40Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-27/v3/bilder/1005012988291851.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant (wrap-around-kon i plast, öppnas runt befintlig stolpe) enligt titeln; passande stolpdiameter står inte i titeln",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "tredelad hero: konen under ett fågelbord vid sjön, ekorre stoppad under konen, packshot — textfri; filen är WebP trots .jpg-namnet"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "PriceRunner: ingen kon/baffel till matarstolpe ('ekorrspärr' 0, 'squirrel baffle' 0 relevanta, 'ekorrskydd fågelmatare' 0) — närmaste är ekorrsäkra burmatare Northix 209",
+     "pris_sek": 209,
+     "url": "https://www.pricerunner.se/pl/456-3523427062/Husdjur/Northix-Ekorrsaeker-Haengande-Faagelmatare-Metall-3-Kg-priser",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "ej mätt — ingen svensk aktör i formen hittad",
+     "pris_sek": null,
+     "url": "https://www.pricerunner.se/search?q=squirrel%20baffle",
+     "i_sortiment": false
+    },
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se (ekorrspärr, squirrel baffle, ekorrskydd fågelmatare, fågelmatare stolpe)",
+     "vivara.se catalogsearch 'ekorrsäker' + 'matarstation' (0 produkter)",
+     "granngarden.se — oläst (JS)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     157,
+     192
+    ],
+    "pris_sek": 419,
+    "brutto_sek": [
+     227,
+     262
+    ],
+    "be_cpa_sek": [
+     227,
+     262
+    ],
+    "be_roas": 1.71,
+    "flerkop": false,
+    "returrisk": "medel — måste passa stolpens diameter; kunden måste mäta"
+   },
+   "meta_tanke": {
+    "hook": "Sitter ekorren på fågelbordet varje morgon?",
+    "objekt_i_bild": "ekorren som klättrar upp stolpen och stoppas under konen",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "ekorren klättrar, fastnar under plåten, ger upp — fåglarna äter ovanför"
+   },
+   "varfor": "Formen finns inte i svensk handel (PriceRunner 0 på tre fraser, Vivara 0) fast problemet är universellt bland stolpmatare-ägare; vintermatningen toppar om 4 v och heron är textfri i kontext.",
+   "huvudrisk": "Bara ägare med stolpmatare kan köpa (andel ej mätt) och kunden måste mäta stolpdiametern — A_AGARE_FRIKTION har 2 vinnare på 9 dömda.",
+   "konfidens": "LÅG",
+   "poang": {
+    "vinnarlikhet": 1,
+    "meta_creative": 2,
+    "efterfragan": 1,
+    "lucka": 3,
+    "ekonomi": 1,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 3,
+    "hypotesvarde": 1
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 10,
+    "K2": 12,
+    "K3": 8,
+    "K4": 6,
+    "K5": 6,
+    "K6": 10,
+    "K7": 3,
+    "K8": 6,
+    "K9": 3,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt",
+     "koncept.py sok spärr/ekorr (0)",
+     "backlog.json"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/w/wholesale-bird-feeder-pole-baffle-squirrel.html",
+    "https://www.pricerunner.se/search?q=ekorrsp%C3%A4rr",
+    "https://www.pricerunner.se/search?q=ekorrskydd%20f%C3%A5gelmatare"
+   ],
+   "_kalla": "kandidater-AI.json",
+   "rank_poang": 8,
+   "rank_forklaring": "säsong: säsong 3×2 + efterfrågan 1 + ekonomi 1 = 8",
+   "asymmetrisk": false,
+   "rank": 8
+  },
+  {
+   "koncept_id": "K0349",
+   "namn_sv": "Viltfoderpåsen för rådjur",
+   "objekt": "NYTT: Viltfoderpåsen på stammen — rådjuren vid skogskanten",
+   "form": "annat",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "F_HOBBY_IDENTITET",
+   "slot": "sasong",
+   "hypotes_id": "H09",
+   "vinnarlikhet": {
+    "likast": "Isolerade Utekattkojan (djur + kyla + datum)",
+    "delade_variabler": [
+     "djur ute i kylan",
+     "55+ på landet",
+     "datum (vintermatning)",
+     "old way improvisation (foder på marken)"
+    ],
+    "avvikelser": [
+     "jaktestetik (camo) i stället för trädgård",
+     "pris 999 vid grindens tak",
+     "vinterutfodring av vilt är jägarens rutin, inte köksfönstrets — ej mätt"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "vintermatning_faglar",
+    "deadline_typ": "vintermatning",
+    "veckor_kvar": 4.0,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005012026092869",
+    "url": "https://www.aliexpress.com/item/1005012026092869.html",
+    "pris_usd": 37.89,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-27T04:45:57Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-27/v3/bilder/1005012026092869.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant (camo-tub med remmar) enligt titeln; volym står inte i titeln",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "camo-tuben spänd på en stam, kronhjort äter ur foderhögen nedanför — textfri, i kontext; svensk creative behöver rådjur och trädgårdskant, inte kronhjort i skog; filen är WebP trots .jpg-namnet"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "PriceRunner: ingen hängande/gravitationsmatare för vilt — enda viltfoderautomaten är Nordic Foderautomat med benställning (annan form, 500 L)",
+     "pris_sek": 12495,
+     "url": "https://www.pricerunner.se/pl/456-3332344622/Husdjur/Nordic-Foderautomat-med-benstaellning-priser",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "ej mätt i exakt form — Jaktia kategorin jakt/viltvard/foderautomater svarar 200 men priserna renderas i JS (oläst)",
+     "pris_sek": null,
+     "url": "https://www.jaktia.se/jakt/viltvard/foderautomater",
+     "i_sortiment": false
+    },
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se (foderautomat vilt, viltfoderautomat, åtel vilt, foderbag vilt, viltfoder hängande)",
+     "jaktia.se — oläst (JS)",
+     "granngarden.se 'foderautomat vilt' — oläst (JS)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     493,
+     603
+    ],
+    "pris_sek": 999,
+    "brutto_sek": [
+     396,
+     506
+    ],
+    "be_cpa_sek": [
+     396,
+     506
+    ],
+    "be_roas": 2.21,
+    "flerkop": false,
+    "returrisk": "låg — universal, remmar runt valfri stam"
+   },
+   "meta_tanke": {
+    "hook": "Ser du rådjuren från köksfönstret i vinter?",
+    "objekt_i_bild": "rådjur som äter vid stammen där påsen sitter",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "påsen spänns på stammen, fodret rinner ut i takt med att djuren äter — rådjur i snö"
+   },
+   "varfor": "Formen saknas helt i svensk handel (PriceRunner: bara 12 495-kronorsautomater) och testar H09 på ett vilt, älskat djur i stället för ägt; NOW-fönster 4 v.",
+   "huvudrisk": "Ej mätt om 55+-trädgårdsägaren utfodrar rådjur alls — i Sverige är det jägarens åtelrutin, och camo-heron säger jakt, inte köksfönster; pris 999 utan mätt ankare.",
+   "konfidens": "LÅG",
+   "poang": {
+    "vinnarlikhet": 1,
+    "meta_creative": 2,
+    "efterfragan": 1,
+    "lucka": 3,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 3,
+    "hypotesvarde": 1
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 8,
+    "K2": 12,
+    "K3": 8,
+    "K4": 6,
+    "K5": 6,
+    "K6": 10,
+    "K7": 3,
+    "K8": 7,
+    "K9": 4,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (ingen vilt/foder-rad)",
+     "koncept.py sok vilt/foder (bara vilthantering/vilthiss/viltsläde = andra SAK)",
+     "backlog.json"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/w/wholesale-automatic-deer-feeder.html",
+    "https://www.pricerunner.se/search?q=viltfoderautomat",
+    "https://www.pricerunner.se/search?q=foderautomat%20vilt"
+   ],
+   "_kalla": "kandidater-AI.json",
+   "rank_poang": 7,
+   "rank_forklaring": "säsong: säsong 2×2 + efterfrågan 1 + ekonomi 2 = 7",
+   "asymmetrisk": true,
+   "rank": 9
+  }
+ ],
+ "skyddsformer_i_batch": 1,
+ "strukna": [],
+ "utanfor_batch": []
+}

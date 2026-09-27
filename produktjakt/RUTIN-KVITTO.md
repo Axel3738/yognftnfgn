@@ -26,3 +26,4 @@ noll passerade. De två levererade är Axels egna val.
 | 2026-09-24-jul3 (temarunda 3, 8 linser) | ~180 sökta / ~170 prövade | 10 (+1 obesvarat kort) | 0 i grinden + 160 i linserna + 3 av huvudsessionen | ja (v27) | ja |
 | 2026-09-26 (V3, 3 linser; publicerad 27/9) | 7 sökta / ~55 prövade | 7 | 0 i grinden + 55 i linserna | ja (som obesvarade kort på 27/9:s sida) | nej (26/9) — ingår i 27/9 |
 | 2026-09-25 | — | — | — | — | rutinen stod stilla (triggern nådde sessionen ett dygn sent) |
+| 2026-09-27 (V3, 3 linser) | 9 sökta / ~50 prövade | 9 (+7 obesvarade kort från 26/9) | 0 i grinden + 49 i linserna | ja (v28) | ja (26+27) |
