@@ -1354,6 +1354,126 @@ slår ihop **två** källor: `BILLING_EXEMPT_SHOPS` i miljön (som förut) och
 att fylla på med en push — Axel ska inte behöva klicka i Railways
 miljövariabler. Lägg till hela `.myshopify.com`-adressen i små bokstäver.
 
+### Offertförfrågan till leverantören (2026-09-27, build offertforfragan-v118)
+Axel: *"varje gång ens butik säger att det är varianter utan kostnader … ska
+den skriva ett utkast på ett meddelande som man kan kopiera … quotes till
+alla aktiva marknader … ett pack, två pack, tre pack med total cost … hon ska
+svara på exakt det här meddelandet, så att appen fattar."*
+- **Kortet "Be leverantören om offert"** på Kostnader (`Offertkort`, bara i
+  standardvyn; `?offert=1`/`?offert=alla` öppnar och scrollar dit). Länkar
+  från panelens COGS-ruta och från "Per marknad" när ett land saknar egen
+  kostnad. Val: bara helt saknade / alla luckor, osålda (90 dagar) med,
+  valuta. Kopieraknapp (clipboard → execCommand → "markera själv").
+- **Luckorna** (`offertLuckor`, `lib/offertforfragan.ts`): aktiva marknader =
+  länder med ordrar senaste 90 dagarna, annars kända marknader. Hemma-
+  marknaden täcks av en riktig standardkostnad (> 0, eller 0 på en kvitterad
+  gåva); varje annat land kräver EGEN kostnad. Butik utan marknader = en
+  `ALL`-rad bara när standarden saknas.
+- **Meddelandet** är engelska och fast mall: markörrad
+  `StonePNL quote request · butik · datum · VALUTA`, åtta regler (ETT svar,
+  kopiera hela, TOTALPRIS inkl. frakt, valutan efter priset, behåll ID-
+  raderna, en rad per land, X = skickar inte, DDP i slutet), sedan ett block
+  per variant: `#N titel`, `ID: <variant-id>`, SKU, länk, och en rad per
+  land `US (United States): 1 pc = ___ USD | 2 pcs = ___ USD | 3 pcs = ___ USD`.
+- **Svaret läses UTAN modell** (`tolkaOffertsvar` → `offertTillRader` →
+  `lasInOffertsvar` → samma `skrivInmatningsrader` som AI-rutan). Klistras
+  svaret in i stora AI-rutan känns det också igen (markör eller ID-rad).
+  AI:n får svaret BARA när det inte följer mallen (`kand` falskt: ingen
+  ifylld landsrad i mallens form men priser i egen form, t.ex. ett fritt
+  e-postsvar ovanför den citerade mallen), och då med samma prisspärr och
+  förfrågans valuta ur markörraden (`markorValuta`) — aldrig kortets
+  rullista, som inte minns vad förfrågan skrevs i. Saknas markören måste
+  valutan stå i svaret (`valutaKravs` i prompten, `kravValuta` i
+  skrivaren); varje AI-rad får valuta och `sparr_hemma` utskrivna så att
+  ett valt alternativ (smart-apply) behåller båda. Aldrig butikens valuta:
+  en dollaroffert som kronor blir tio gånger för låg, och spärren stoppar
+  bara för höga.
+- **E-post som bryter rader** (72 tecken): en bruten länk hoppas över, och
+  en landsrad fogas ihop med sin fortsättning ("… | 3 pcs =" + "110 USD").
+  Bara landsrader fogas — aldrig fritext. Stående layout ("US:" och sedan
+  en antalsrad per rad) fogas med " | ". Klockslag tas bort bara med
+  AM/PM eller sekunder: "1:35 2:60" är antal:pris.
+- **AI-vägen för offertsvar med flera läsningar** (namnlösa prisspalter):
+  handlaren väljer alltid — antalet läsningar avgörs FÖRE valutarensningen,
+  så en spalt som faller bort för att valutan saknas gör aldrig de andra
+  entydiga.
+- **"Såld"** = enheter ELLER försäljning senaste 90 dagarna: en gåva säljs
+  för 0 men skickas. Panelens länk "Be leverantören om priser för de här
+  länderna" visas inte för hemlandet (standarden täcker det).
+
+**Principen efter fem granskningar (22 + 17 + 21 + 11 + 7 bekräftade fel):** ett pris
+sparas bara när det är BEVISAT entydigt. Allt annat visas som ett problem
+under "Lades inte in" och sparas inte. Tolerant mot FORMEN (kolon, fetstil,
+citat, WhatsApp-prefix, tabellrör, fullbreddssiffror, landsnamn), aldrig
+mot INNEHÅLLET:
+1. **Valutan gissas aldrig.** Den står vid priset, i landets parentes eller
+   i förfrågans egen text (markörraden + regel 3/4, `mallValutor`) — annars
+   `ingenValuta`. Fler än en valuta bland priserna, fritext/rubrik/oläsbar
+   rad som nämner en annan ("all price below is RMB"), eller en ÄNDRAD mall
+   (markör eller regel 4 säger något annat än resten) = `valutakonflikt` och
+   INGENTING skrivs. Förfrågans egen valuta räknas inte som "nämnd" (den
+   står i e-postens citat). Alla ISO 4217-koder läses — i versaler och intill
+   ett tal ("45 PLN"); "ALL" är landskoden. Kodgränser är `\p{L}`, så
+   "Eurosäng" inte är EUR.
+   **Appens egna namn är inte leverantörens valutor:** routen skickar
+   `egenText` (butiksnamn, produkt- och variantnamn) — "EUR 42", "Euro plug",
+   "£25" (presentkort), "Stor nok" ska inte stoppa ett korrekt svar. Namnen
+   tas BARA bort där appen skrev dem: som prefix i `#N`-rubriken
+   (`efterNamn`) och som helt led på markörraden. Granskning 4: att sudda
+   dem ur fritext fick en variant "US" att radera "USD" ur "all prices are
+   in USD" — och priset sparades i fel valuta. ISO-koder som också är ord
+   eller enheter (KGS, PEN, TOP …, `ISO_NEKADE`) är aldrig valutor I
+   FRITEXT — men alltid i en prisruta och på markörraden (`ISO_ALLA`):
+   butikens egen valuta kan vara PEN. Rubrikens rest behåller sina
+   versaler ("CHF 180" i rubriken är en konflikt). E-posthuvuden känns
+   igen bara i huvudets form ("From: … <x@y>", "Sent: Saturday, …") —
+   "To AU: 60 USD" är ett pris.
+2. **Ett värde är exakt ett tal.** "30+15", "45 each", "/pc", "2*40",
+   "2 * 140" (blev 2140!), "3~4", "①4", "45-50", "110 7-12 days", två valutor
+   i samma värde = oläsbart. Tusentalsavgränsare bara med exakt tre siffror
+   efter. Operatorer mellan tal görs till "¤" INNAN städningen.
+3. **Antalet läses aldrig som pris:** `1 pc/pair/pack/unit/set/件 = – → :`
+   och `1x45`. Etikettlös rad bara med exakt tre tal. En märkt rad med en
+   omärkt bit ("remote area 60") är oläsbar — villkoret får inte försvinna.
+4. **Block:** en rad som inte är mall (ID, SKU, Link, landsrad, mallens egna
+   rader) avslutar blocket; priser efter den får aldrig föregående variant.
+   Avdelare och `#N`-rubriker likaså. "1. SE: …" läses (numret tas bort).
+   **Ett block som inte gav en enda landsrad sägs** (`obesvarad`: "same as
+   above", "sold out", två ID-rader i rad). ID-raden läses bara FÖRST på
+   raden (eller efter en `#N`-rubrik), och SKU/Link hoppas över före — en
+   SKU "ID10023" tog annars över blocket. Mallens regler känns igen genom
+   exakt jämförelse med `mallensRader()` (samma källa som meddelandet);
+   radbrutna bitar bara om de är långa (≥ 20 tecken, ≥ 40 med siffror).
+5. **Landsrad = landskod i VERSALER först** + kolon/parentes/streck/priser.
+   Engelska landsnamn bara för väntade länder och med kolon. "AU sea
+   shipping: …" är ett andra bud → dubblett för AU, ingen av dem sparas.
+   **Parentesen får bara bära landets namn, valutan och DDP** — "(remote
+   area +15 USD)", "(MOQ 50)", "(DDP not include)" = oläsbart. Landsnamn
+   med egen parentes skrivs utan ("Myanmar / Burma", `mallnamn`).
+   `ALL` bara i butik utan marknader eller med bara hemmamarknaden. Länder
+   som tas emot = sålt senaste ÅRET ∪ kända marknader (en marknad som föll
+   ur 90-dagarsfönstret efter förfrågan avvisas inte).
+6. **En landsrad ger alltid något:** pris, X/N/A/sold out (= skickar inte),
+   "inte ifylld" eller "oläsbar". Samma variant+land två gånger med olika
+   bud = `dubblett`.
+7. **Flerpack:** totalen måste stiga med mer än 15 % av styckpriset per steg,
+   annars är det ett styckpris i fel fält (`stegBilligare`). En offertrad
+   ERSÄTTER landets gamla steg även när inga nya godkändes. **Ett LAND utan
+   godkända steg får linjära steg** (antal × styckpriset, `linjart`) —
+   annars ärver det standardens (`tiersFor` faller tillbaka), och ett
+   amerikanskt tvåpack räknades på Sveriges tvåpackspris. X i en lucka på
+   en ifylld rad sägs.
+8. **DDP:** "DDP", "DDP included", "incl. DDP" = ingår; "no DDP", "not incl.
+   DDP", "DDP: no" = ingår inte; båda eller "DDP not include" = oläsbart.
+   DDP i fritext ("all prices are DDP") sägs (`ddpFritext`); DDP på
+   ALL-raden ger notisen för alla länder.
+9. **Förkontroll:** når ett pris (styck eller flerpack) produktens eget pris
+   × antal (hemma 1×, andra länder 2×) stoppas HELA svaret — valutan är då
+   nästan säkert fel på alla rader.
+10. Standardkostnaden fylls från hemmamarknadens rad när varianten saknar en.
+   En omläsning samma dag ERSÄTTER dagens marknadspost
+   (`skrivMarknadskostnad` raderar samma dag först).
+
 ### Procenten syns (2026-09-26, build procent-v117)
 Axel (CaraShell säljer till USA): *"jag ser inte procentsatserna tillräckligt
 tydligt"*. Procenten fanns bara som liten grå text i uppdelningen.

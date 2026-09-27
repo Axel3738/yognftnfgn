@@ -10,7 +10,7 @@
  * Varianttitel tom = gäller alla varianter i produkten.
  */
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import type { ActionFunctionArgs, LoaderFunctionArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { Link, useFetcher, useLoaderData, useSearchParams } from "@remix-run/react";
@@ -20,6 +20,8 @@ import {
   Banner,
   Button,
   Card,
+  Checkbox,
+  ChoiceList,
   DataTable,
   DropZone,
   InlineStack,
@@ -46,6 +48,7 @@ import { dayInTz } from "../lib/shopify-data.server";
 import { lasMarknadskostnad, skrivMarknadskostnad, taBortMarknad, taBortMarknadskostnad } from "../lib/marknadskostnad.server";
 import { hemlandAv, marknadskod, marknadsnamn } from "../lib/marknad";
 import { fingeravtryck, hittaSummaspalt } from "../lib/prisspalter";
+import { ALLA_LANDER, byggOffertmeddelande, hemmamarknad, markorValuta, OFFERT_MARKOR, offertLuckor, offertTillRader, tolkaOffertsvar, valjOffertrader, type OffertProblem, type Offertvariant } from "../lib/offertforfragan";
 import { asLang, localeOf, t } from "../lib/texts";
 import { JUICY_TACKNING, tackningEfterOmsattning } from "../lib/kostnadstackning";
 import { blandadSats } from "../lib/avgifter";
@@ -129,8 +132,13 @@ export async function loader({ request }: LoaderFunctionArgs) {
      sålt för. Tre bästsäljare utan kostnad är ett större hål än hundra
      varianter som aldrig säljer. */
   const omsPerVariant = new Map<string, number>();
+  /* Sålda enheter: en gåva eller en 100 %-rabatt säljs för 0 men skickas
+     ändå — den ska med i offertförfrågan som "såld". */
+  const enheterPerVariant = new Map<string, number>();
   for (const p of mix90?.products ?? []) {
-    if (p.variantGid) omsPerVariant.set(p.variantGid, (omsPerVariant.get(p.variantGid) ?? 0) + p.netSales);
+    if (!p.variantGid) continue;
+    omsPerVariant.set(p.variantGid, (omsPerVariant.get(p.variantGid) ?? 0) + p.netSales);
+    enheterPerVariant.set(p.variantGid, (enheterPerVariant.get(p.variantGid) ?? 0) + (Number(p.units) || 0));
   }
   /* Varianter handlaren sagt är gratis — deras 0 är ett riktigt pris. */
   const fria = new Set(
@@ -282,6 +290,37 @@ export async function loader({ request }: LoaderFunctionArgs) {
     omsPerVariant,
   );
   const omsSaknade = rows.filter(saknasRad).reduce((a, r) => a + Math.max(0, r.oms90), 0);
+
+  /* Offertförfrågan till leverantören: varje såld variant som saknar en
+     riktig kostnad, och för vilka av butikens aktiva marknader. Bara i
+     standardvyn — under ett marknadsfilter är försäljningen (oms90) bara
+     det landets, och då hade en variant som säljer i USA sett osåld ut. */
+  const aktiva = kravMarknader;
+  const hemma = hemmamarknad(hemlandAv(settings.currency), aktiva);
+  const offert = market
+    ? null
+    : {
+        luckor: offertLuckor({
+          varianter: costs.all.map((v) => ({
+            variantGid: v.variantGid,
+            productTitle: v.productTitle,
+            variantTitle: v.variantTitle,
+            sku: v.sku,
+            handle: v.handle,
+            standardCost: v.unitCost,
+            perMarknad: Object.fromEntries(aktiva.map((m) => [m, allaMk.get(m)?.unitCost.get(v.variantGid) ?? null])),
+            oms90: omsPerVariant.get(v.variantGid) ?? 0,
+            enheter90: enheterPerVariant.get(v.variantGid) ?? 0,
+            fri: fria.has(v.variantGid),
+          })),
+          aktiva,
+          hemma,
+          shop: session.shop,
+        }),
+        butik: settings.shopName || session.shop.replace(/\.myshopify\.com$/, ""),
+        datum: idag,
+      };
+
   return json({
     lang,
     market,
@@ -314,6 +353,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
     juicyDismissed: Boolean(settings.juicyCardDismissedAt),
     cogsEstimatePct: settings.cogsEstimatePct ?? null,
     aiEnabled: aiKoppling.nyckel !== null,
+    offert,
   });
 }
 
@@ -326,6 +366,12 @@ type SmartRad = {
   currency: string;
   tiers: { units: number; total: number }[];
   source_label: string;
+  /** Satt av offertsvaret: raden gäller EXAKT den varianten, inte titeln.
+      Två produkter kan heta likadant — ett variant-id kan inte det. */
+  variant_gid?: string;
+  /** Satt på AI-rader ur ett offertsvar: hemmamarknaden för prisspärren.
+      Följer med raden genom ett valt alternativ (smart-apply). */
+  sparr_hemma?: string;
 };
 
 /** En skriven rad, som kvittot visar den. */
@@ -358,6 +404,14 @@ async function skrivInmatningsrader(o: {
   butiksValuta: string;
   costCurrency: string;
   T: ReturnType<typeof t>;
+  /** Hoppa över en rad vars styckkostnad når variantens eget pris. Satt för
+      offertsvar: ett pris i yuan under en Currency-rad som säger USD blir
+      sju gånger för högt, och det ska stoppas, inte sparas. Butikens pris
+      gäller hemmamarknaden; ett annat land säljs ofta dyrare (USA $199 mot
+      1 129 kr hemma), så där är gränsen dubbla priset. */
+  sparrMotPris?: { hemma: string };
+  /** Ett offertsvar utan känd valuta: en rad utan egen valuta skrivs inte. */
+  kravValuta?: boolean;
 }): Promise<{ applied: SmartKvitto[]; skipped: string[]; andrade: Map<string, number | null> }> {
   const applied: SmartKvitto[] = [];
   const skipped: string[] = [];
@@ -386,11 +440,17 @@ async function skrivInmatningsrader(o: {
 
   for (const r of o.rader) {
     const label = r.source_label || `${r.product}${r.variant ? ` · ${r.variant}` : ""}`;
-    const mal = o.katalog.all.filter(
-      (v) => normTitel(v.productTitle) === normTitel(r.product) && variantTraffar(v.variantTitle, r.variant),
-    );
+    const mal = r.variant_gid
+      ? o.katalog.all.filter((v) => v.variantGid === r.variant_gid)
+      : o.katalog.all.filter(
+          (v) => normTitel(v.productTitle) === normTitel(r.product) && variantTraffar(v.variantTitle, r.variant),
+        );
     if (!mal.length || !Number.isFinite(r.unit_cost) || r.unit_cost < 0) {
       skipped.push(label);
+      continue;
+    }
+    if (o.kravValuta && !String(r.currency ?? "").trim()) {
+      skipped.push(o.T.costs.quoteReq.problem.noCurrency(label, r.market || o.T.costs.quoteReq.allCountries));
       continue;
     }
     const valuta = (r.currency || o.costCurrency).trim().toUpperCase() || o.butiksValuta;
@@ -401,6 +461,11 @@ async function skrivInmatningsrader(o: {
     }
     const rund = (n: number) => Math.round(n * k * 100) / 100;
     const cost = rund(r.unit_cost);
+    const prisgrans = !o.sparrMotPris ? 0 : !marknadskod(r.market) || marknadskod(r.market) === o.sparrMotPris.hemma ? 1 : 2;
+    if (prisgrans && mal.some((v) => v.price > 0 && cost >= v.price * prisgrans)) {
+      skipped.push(o.T.costs.quoteReq.overPrice(label, `${cost.toFixed(2)} ${o.butiksValuta}`));
+      continue;
+    }
     /* Samma antal två gånger (AI:n läste tvåpacket en gång per färg) skulle
        spräcka skrivningen efter att de gamla stegen raderats. Sista vinner. */
     const perAntal = new Map<number, number>();
@@ -410,6 +475,10 @@ async function skrivInmatningsrader(o: {
     }
     const tiers = [...perAntal.entries()].sort((a, b) => a[0] - b[0]).map(([units, total]) => ({ units, total }));
     const m = marknadskod(r.market);
+    /* En offertrad (pekar på varianten via id) är leverantörens HELA bud:
+       dess steg ersätter de gamla även när inga steg blev godkända. Annars
+       stod ett gammalt tvåpack kvar bredvid ett nytt styckpris. */
+    const ersattSteg = !!r.variant_gid;
     /* Kvittots "var X → nu Y" gäller hela raden. Står varianterna på olika
        gamla kostnader finns inget enda "var" att visa — då visas inget. */
     const foren = await Promise.all(mal.map((v) => foreFor(m, v.variantGid)));
@@ -424,7 +493,7 @@ async function skrivInmatningsrader(o: {
         m,
         mal,
         cost,
-        tiers.length ? tiers.map((t) => ({ units: t.units, totalCost: t.total })) : null,
+        tiers.length ? tiers.map((t) => ({ units: t.units, totalCost: t.total })) : ersattSteg ? [] : null,
         `${m}: ${cost.toFixed(2)} (${r.unit_cost} ${valuta})`,
       );
     } else {
@@ -438,13 +507,17 @@ async function skrivInmatningsrader(o: {
       }
       if (!skrivna.length) continue;
       traffade = skrivna;
-      if (tiers.length) {
+      if (tiers.length || ersattSteg) {
         for (const v of skrivna) {
           await prisma.$transaction([
             prisma.costTier.deleteMany({ where: { shop: o.shop, variantGid: v.variantGid, market: "" } }),
-            prisma.costTier.createMany({
-              data: tiers.map((t) => ({ shop: o.shop, variantGid: v.variantGid, units: t.units, totalCost: t.total, market: "" })),
-            }),
+            ...(tiers.length
+              ? [
+                  prisma.costTier.createMany({
+                    data: tiers.map((t) => ({ shop: o.shop, variantGid: v.variantGid, units: t.units, totalCost: t.total, market: "" })),
+                  }),
+                ]
+              : []),
           ]);
         }
       }
@@ -464,6 +537,172 @@ async function skrivInmatningsrader(o: {
   }
   return { applied, skipped, andrade };
 }
+
+/** Ett problem ur offertsvaret som en mening handlaren kan agera på. */
+function offertProblemText(p: OffertProblem, T: ReturnType<typeof t>, lang: "en" | "sv"): string {
+  const Q = T.costs.quoteReq.problem;
+  const land = (m: string) => (m && m !== ALLA_LANDER ? marknadsnamn(m, lang, m) : T.costs.quoteReq.allCountries);
+  switch (p.kod) {
+    case "okantId":
+      return Q.unknownId(p.id);
+    case "ejLeverans":
+      return Q.noShip(p.label, land(p.market));
+    case "saknarEtt":
+      return Q.noSingle(p.label, land(p.market));
+    case "stegBilligare":
+      return Q.tierCheaper(p.label, land(p.market), p.antal);
+    case "ingenStandard":
+      return Q.noStandard(p.label);
+    case "utanId":
+      return Q.noId(p.rad.slice(0, 80));
+    case "ofylld":
+      return Q.unfilled(p.label, land(p.market));
+    case "delvis":
+      return Q.partly(p.label, land(p.market), p.antal.join(", "));
+    case "olasbar":
+      return Q.unreadable(p.label, land(p.market), Q.why[p.orsak], p.rad.slice(0, 80));
+    case "dubblett":
+      return Q.twoPrices(p.label, land(p.market));
+    case "okantLand":
+      return Q.unknownCountry(p.label, p.market);
+    case "valutakonflikt":
+      return Q.currencyConflict(p.namnd.join(", "), p.lastI.join(", "));
+    case "olastRad":
+      return Q.noCountry(p.rad.slice(0, 80));
+    case "ingenValuta":
+      return Q.noCurrency(p.label, land(p.market));
+    case "obesvarad":
+      return Q.unanswered(p.label, p.rad);
+    case "ddpFritext":
+      return Q.ddpElsewhere(p.rad);
+    case "linjart":
+      return Q.linear(p.label, land(p.market), p.antal.join(", "));
+  }
+}
+
+/**
+ * Leverantörens svar på offertförfrågan → skrivna kostnader, utan modell.
+ * `null` = svaret gick inte att läsa som mall (eller ingen rad blev läsbar)
+ * och AI-rutan får försöka i stället. Samma skrivare som AI-rutan, med tre
+ * skillnader: raderna träffar varianten via id, bara butikens egna
+ * marknader tas emot, och en förkontroll stoppar HELA svaret om något pris
+ * når produktens eget — då är valutan nästan säkert fel på alla rader.
+ */
+async function lasInOffertsvar(o: {
+  admin: any;
+  shop: string;
+  text: string;
+  butiksValuta: string;
+  settings: { currency: string; freeVariants: unknown; shopName?: string | null } | null;
+  T: ReturnType<typeof t>;
+  lang: "en" | "sv";
+}) {
+  const Q = o.T.costs.quoteReq;
+  const [saljMarknader, aretsMarknader, kanda, katalog] = await Promise.all([
+    marknaderMedOrdrar(o.shop),
+    marknaderMedOrdrar(o.shop, 365),
+    kandaMarknader(o.shop, hemlandAv(o.settings?.currency)),
+    loadCatalog(o.admin, o.shop, prisma),
+  ]);
+  const aktiva = saljMarknader.length ? saljMarknader : kanda;
+  const hemma = hemmamarknad(hemlandAv(o.settings?.currency), aktiva);
+  /* Länder som tas emot: allt förfrågan kan ha innehållit (sålt senaste
+     året, eller känt av appen). En marknad som föll ur 90-dagarsfönstret
+     mellan förfrågan och svar ska inte avvisas — "EU" och "TO" ska. */
+  const tillatna = new Set([...aktiva, ...aretsMarknader, ...kanda]);
+  /* Valutan gissas aldrig: den står vid priset, på raden eller på
+     markörraden — annars skrivs raden inte. Appens egna namn (produkter,
+     varianter, butiken) är inte leverantörens valutor ("EUR 42"). */
+  const svar = tolkaOffertsvar(o.text, {
+    lander: [...tillatna],
+    egenText: [
+      o.settings?.shopName ?? "",
+      o.shop,
+      o.shop.replace(/\.myshopify\.com$/, ""),
+      ...katalog.all.flatMap((v) => [v.productTitle, v.variantTitle, `${v.productTitle} — ${v.variantTitle}`]),
+    ],
+  });
+  if (!svar.kand) return null;
+  const tomtKvitto = { applied: [] as SmartKvitto[], question: "", notes: "", choices: [] as SmartValRad[], skippedTitle: Q.skippedTitle };
+
+  const fria = new Set(
+    Array.isArray(o.settings?.freeVariants)
+      ? (o.settings!.freeVariants as unknown[]).filter((v): v is string => typeof v === "string")
+      : [],
+  );
+  const { rader, problem, ddp } = offertTillRader(svar, katalog.all, { hemma, fria, tillatna, aktiva: new Set(aktiva) });
+  const problemText = problem.map((p) => offertProblemText(p, o.T, o.lang));
+
+  if (!rader.length) {
+    /* Svaret följer mallen men inget blev entydigt: skälen visas, och AI:n
+       får INTE gissa i stället. Den får bara svar som inte följer mallen. */
+    return {
+      ok: false,
+      message: problem.length ? Q.nothingWritten : svar.utanId.length ? Q.noIdLines : Q.nothingFilled,
+      smart: { ...tomtKvitto, skipped: problemText },
+    };
+  }
+
+  /* Förkontrollen: styckkostnaden och varje flerpack mot produktens eget
+     pris (hemma 1×, andra länder 2× — de säljs ofta dyrare). Slår den till
+     på en enda rad skrivs INGENTING: ett pris i yuan under "USD" är fel på
+     alla rader, inte bara den som råkade nå gränsen. */
+  const kurser = new Map<string, number | null>();
+  const kursFor = async (v: string) => {
+    if (v === o.butiksValuta) return 1;
+    if (!kurser.has(v)) kurser.set(v, (await fxRate(v, o.butiksValuta)) ?? null);
+    return kurser.get(v) ?? null;
+  };
+  const forHoga: string[] = [];
+  for (const r of rader) {
+    const k = await kursFor(r.currency);
+    if (k == null) continue; /* skrivaren hoppar över raden och säger varför */
+    const v = katalog.byGid.get(r.variant_gid);
+    if (!v || !(v.price > 0)) continue;
+    const grans = !r.market || r.market === hemma ? 1 : 2;
+    const hog = [
+      { antal: 1, total: r.unit_cost },
+      ...r.tiers.map((t) => ({ antal: t.units, total: t.total })),
+    ].find((x) => x.total * k >= v.price * x.antal * grans);
+    if (hog) forHoga.push(Q.overPrice(`${r.source_label} · ${hog.antal} ${o.T.costs.smart.pcs}`, `${(hog.total * k).toFixed(2)} ${o.butiksValuta}`));
+  }
+  if (forHoga.length) {
+    return {
+      ok: false,
+      message: Q.stoppedOverPrice,
+      smart: { ...tomtKvitto, skipped: [...forHoga, ...problemText] },
+    };
+  }
+
+  const { applied, skipped, andrade } = await skrivInmatningsrader({
+    admin: o.admin,
+    shop: o.shop,
+    katalog,
+    rader: rader as SmartRad[],
+    butiksValuta: o.butiksValuta,
+    costCurrency: svar.valuta,
+    T: o.T,
+    sparrMotPris: { hemma },
+  });
+  await patchaKostnader(o.shop, prisma, andrade);
+  return {
+    ok: true,
+    message: applied.length ? Q.done(applied.length) : Q.nothingWritten,
+    smart: {
+      applied,
+      skipped: [...problemText, ...skipped],
+      question: "",
+      notes: ddp.length
+        ? Q.ddpNote(ddp.map((m) => (m === ALLA_LANDER ? Q.allCountries : marknadsnamn(m, o.lang, m))).join(", "))
+        : "",
+      choices: [] as SmartValRad[],
+      skippedTitle: Q.skippedTitle,
+    },
+  };
+}
+
+/** Ett alternativ som AI-rutan lägger fram (samma form i båda vägarna). */
+type SmartValRad = { id: string; label: string; explain: string; rader: number; preview: string; rows: string };
 
 /**
  * Bilderna kommer från webbläsaren och får inte skickas vidare oprövade:
@@ -720,12 +959,44 @@ export async function action({ request }: ActionFunctionArgs) {
   const settings = await prisma.shopSettings.findUnique({ where: { shop: session.shop } });
   const T = t(asLang(settings?.language));
 
+  /* Leverantörens svar på offertförfrågan, inklistrat i offertkortet. Läses
+     utan modell — ID-raderna pekar ut varianterna. Följer svaret inte mallen
+     tar AI-rutan över nedan, om Claude är kopplad. */
+  if (intent === "offert-svar") {
+    const text = String(form.get("text") ?? "");
+    if (!text.trim()) return json({ ok: false, message: T.costs.quoteReq.emptyReply }, { status: 400 });
+    const koppling = await hamtaKoppling(session.shop);
+    try {
+      const svar = await lasInOffertsvar({ admin, shop: session.shop, text, butiksValuta, settings, T, lang: asLang(settings?.language) });
+      if (svar) return json(svar, { status: svar.ok ? 200 : 400 });
+    } catch (e) {
+      console.error("Offertsvaret gick inte att läsa in:", e);
+      return json({ ok: false, message: T.costs.smart.failed((e as Error).message) }, { status: 500 });
+    }
+    if (!koppling.nyckel) return json({ ok: false, message: T.costs.quoteReq.notRecognized }, { status: 400 });
+    /* Faller igenom till AI-rutan med samma text. */
+  }
+
   /* EN RUTA FÖR ALLT. Släpp en bild och/eller skriv en mening — "motorhöljet,
      Norge, 140 kr", "alla varianter 12 usd, 2 st 20 usd" — så tolkar AI:n
      produkt, variant, marknad, valuta och flerpack och raderna skrivs direkt.
      Kvittot listar exakt vad som skrevs, med "Ta bort" per rad. Är produkten
      oklar skriver AI:n inget och ställer en fråga i stället. */
-  if (intent === "smart") {
+  if (intent === "smart" || intent === "offert-svar") {
+    /* Klistrade handlaren in leverantörens svar i den stora rutan: samma
+       läsning som offertkortet, utan modell. */
+    const smartText = String(form.get("text") ?? "");
+    const smartBilderRa = String(form.get("bilder") ?? "[]");
+    const arOffertsvar = smartText.includes(OFFERT_MARKOR) || /^[\s>*_~]*ID\s*[:：]\s*\d[\d ]{4,}/im.test(smartText);
+    if (intent === "smart" && arOffertsvar && (smartBilderRa === "[]" || !smartBilderRa)) {
+      try {
+        const svar = await lasInOffertsvar({ admin, shop: session.shop, text: smartText, butiksValuta, settings, T, lang: asLang(settings?.language) });
+        if (svar) return json(svar, { status: svar.ok ? 200 : 400 });
+      } catch (e) {
+        console.error("Offertsvaret gick inte att läsa in:", e);
+        return json({ ok: false, message: T.costs.smart.failed((e as Error).message) }, { status: 500 });
+      }
+    }
     const koppling = await hamtaKoppling(session.shop);
     if (!koppling.nyckel) return json({ ok: false, message: T.settings.claude.missing }, { status: 400 });
     let bilder: Bild[] = [];
@@ -742,7 +1013,18 @@ export async function action({ request }: ActionFunctionArgs) {
         loadCatalog(admin, session.shop, prisma),
         kandaMarknader(session.shop, hemlandAv(settings?.currency)),
       ]);
-      const costCurrency = (settings?.costCurrency ?? butiksValuta).toUpperCase();
+      /* Ett offertsvar som inte följer mallen: valutan är den förfrågan
+         skrevs i (markörraden i svaret). Saknas markören GISSAS den inte —
+         varken kortets rullista (minns inte vad förfrågan skrevs i) eller
+         butikens valuta (en dollaroffert som kronor blir tio gånger för
+         låg, och spärren stoppar bara för höga). Då måste valutan stå i
+         svaret, annars skrivs raden inte. Priserna spärras mot produktens
+         eget pris precis som i mallvägen. */
+      const arOffert = intent === "offert-svar" || arOffertsvar;
+      const offertValuta = arOffert ? markorValuta(text) : "";
+      const kravValuta = arOffert && !offertValuta;
+      const costCurrency = arOffert ? offertValuta : (settings?.costCurrency ?? butiksValuta).toUpperCase();
+      const sparrMotPris = arOffert ? { hemma: hemmamarknad(hemlandAv(settings?.currency), marknader) } : undefined;
       const svar = await tolkaInmatningMedAi({
         bilder: bilder.slice(0, 6),
         text,
@@ -750,6 +1032,7 @@ export async function action({ request }: ActionFunctionArgs) {
         marknader: marknader.map((m) => ({ kod: m, namn: marknadsnamn(m, lang, m) })),
         currency: butiksValuta,
         costCurrency,
+        valutaKravs: kravValuta,
         lang,
         apiKey: koppling.nyckel,
       });
@@ -768,6 +1051,30 @@ export async function action({ request }: ActionFunctionArgs) {
         if (!kandidater.some((k) => fingeravtryck(k.rows) === eget)) {
           kandidater.unshift({ label: T.costs.smart.modelPick, explain: "", rows: svar.rows as SmartRad[] });
         }
+      }
+      /* Flera läsningar av källan? Avgörs FÖRE valutarensningen nedan: att
+         en läsning faller bort för att valutan saknas gör inte de andra
+         entydiga. */
+      const flerTolkningar = kandidater.length > 1;
+      /* Offertsvar: varje rad får sin valuta utskriven (förfrågans, om
+         raden saknar egen) och spärren med sig — även genom ett valt
+         alternativ. En rad utan valuta när förfrågans är okänd tas bort
+         och sägs, i stället för att bli butikens valuta. */
+      if (arOffert) {
+        const utan = new Set<string>();
+        const stampla = (rows: SmartRad[]) =>
+          rows.flatMap((r) => {
+            const cur = String(r.currency || offertValuta).trim().toUpperCase();
+            if (!cur) {
+              utan.add(T.costs.quoteReq.problem.noCurrency(r.source_label || r.product, r.market || T.costs.quoteReq.allCountries));
+              return [];
+            }
+            return [{ ...r, currency: cur, sparr_hemma: sparrMotPris?.hemma ?? "" }];
+          });
+        for (const k of kandidater) k.rows = stampla(k.rows);
+        svar.rows = stampla((svar.rows ?? []) as SmartRad[]);
+        for (let i = kandidater.length - 1; i >= 0; i--) if (!kandidater[i].rows.length) kandidater.splice(i, 1);
+        svar.unmatched = [...(svar.unmatched ?? []), ...utan];
       }
 
       /* Alternativen, som handlaren pekar på. Byggs som en funktion för att
@@ -793,6 +1100,29 @@ export async function action({ request }: ActionFunctionArgs) {
           },
         });
 
+      /* Ett offertsvar med flera läsningar: handlaren väljer bland de som
+         har valuta — även om bara en finns kvar. Ingen summaräkning och
+         ingen direktskrivning: spalterna utan valuta är borta, så talen
+         kan inte längre avgöra saken. */
+      if (arOffert && flerTolkningar) {
+        if (kandidater.length) return valSvar();
+        return json(
+          {
+            ok: false,
+            message: T.costs.quoteReq.nothingWritten,
+            smart: {
+              applied: [] as SmartKvitto[],
+              skipped: svar.unmatched,
+              question: "",
+              notes: svar.notes,
+              choices: [] as SmartValRad[],
+              skippedTitle: T.costs.quoteReq.skippedTitle,
+            },
+          },
+          { status: 400 },
+        );
+      }
+
       /* Är ett av alternativen de andra ihopräknade är det inget val alls:
          de andra är delpriser och summan är inköpskostnaden. Talen avgör.
          Spärren efteråt: ett inköpspris som når butikens eget pris är inget
@@ -816,6 +1146,8 @@ export async function action({ request }: ActionFunctionArgs) {
         butiksValuta,
         costCurrency,
         T,
+        sparrMotPris,
+        kravValuta,
       });
       /* Blev ingenting skrivet är summaträffen värdelös — då är korten kvar
          bättre än ett kvitto som säger "jag använde summan" utan att någon
@@ -874,11 +1206,15 @@ export async function action({ request }: ActionFunctionArgs) {
     try {
       const katalog = await loadCatalog(admin, session.shop, prisma);
       const costCurrency = (settings?.costCurrency ?? butiksValuta).toUpperCase();
+      /* Rader ur ett offertsvar bär sin valuta och spärren (se AI-vägen). */
+      const offertRad = rader.find((r) => typeof r.sparr_hemma === "string");
       const { applied, skipped, andrade } = await skrivInmatningsrader({
         admin,
         shop: session.shop,
         katalog,
         rader,
+        sparrMotPris: offertRad ? { hemma: offertRad.sparr_hemma ?? "" } : undefined,
+        kravValuta: Boolean(offertRad),
         butiksValuta,
         costCurrency,
         T,
@@ -1023,7 +1359,7 @@ export async function action({ request }: ActionFunctionArgs) {
 }
 
 export default function Costs() {
-  const { lang, market, marknader, saljMarknader, costCurrency, kurs, rows, missing, total, tackningOms, saknasAndelOms, nollor, tariffPerOrder, feeRate, feeMatt, feeFaktiskPct, storeMer, currency, juicyDismissed, cogsEstimatePct, aiEnabled } = useLoaderData<typeof loader>();
+  const { lang, market, marknader, saljMarknader, costCurrency, kurs, rows, missing, total, tackningOms, saknasAndelOms, nollor, tariffPerOrder, feeRate, feeMatt, feeFaktiskPct, storeMer, currency, juicyDismissed, cogsEstimatePct, aiEnabled, offert } = useLoaderData<typeof loader>();
   const friFetcher = useFetcher<typeof action>();
   const [params, setParams] = useSearchParams();
   const fetcher = useFetcher<typeof action>();
@@ -1084,7 +1420,7 @@ export default function Costs() {
     | {
         ok: boolean;
         message: string;
-        smart?: { applied: SmartKvitto[]; skipped: string[]; question: string; notes: string; choices?: SmartVal[] };
+        smart?: SmartSvar;
       }
     | undefined;
   /* Peka på ett alternativ → skriv det. Samma fetcher som rutan, så
@@ -1362,57 +1698,16 @@ export default function Costs() {
                   </InlineStack>
 
                   {smartData && smartKor !== "smart" ? (
-                    <BlockStack gap="200">
-                      {!smartData.ok ? <Banner tone="critical">{smartData.message}</Banner> : null}
-                      {smartData.smart?.question ? (
-                        <Banner tone={smartData.smart.choices?.length ? "info" : "warning"}>
-                          <BlockStack gap="100">
-                            <Text as="p" fontWeight="semibold">{smartData.smart.question}</Text>
-                            {smartData.smart.choices?.length ? (
-                              <Text as="p" variant="bodySm">{T.costs.smart.pickHint}</Text>
-                            ) : null}
-                          </BlockStack>
-                        </Banner>
-                      ) : null}
-                      {/* Alternativen: tryck på det som stämmer, så skrivs allt.
-                          Siffrorna är källans egna, så de går att känna igen
-                          direkt i skärmbilden man just släppte. */}
-                      {smartData.smart?.choices?.map((c) => (
-                        <Card key={c.id} background="bg-surface-secondary">
-                          <BlockStack gap="200">
-                            <Text as="h3" variant="headingSm">{c.label}</Text>
-                            {c.explain ? <Text as="p" variant="bodySm" tone="subdued">{c.explain}</Text> : null}
-                            <div style={{ whiteSpace: "pre-wrap" }}>
-                              <Text as="p" variant="bodySm" tone="subdued">{c.preview}</Text>
-                            </div>
-                            <div>
-                              <Button
-                                variant="primary"
-                                disabled={smartKor === "smart-apply"}
-                                loading={smartKor === "smart-apply" && valtId === c.id}
-                                onClick={() => valjAlternativ(c)}
-                              >
-                                {T.costs.smart.useThis(c.rader)}
-                              </Button>
-                            </div>
-                          </BlockStack>
-                        </Card>
-                      ))}
-                      {smartData.ok && smartData.message ? (
-                        <Banner tone={smartData.smart?.applied.length ? "success" : "warning"}>{smartData.message}</Banner>
-                      ) : null}
-                      {smartData.smart?.applied.map((k, i) => (
-                        <SmartKvittoRad key={`${k.targets}|${k.market}|${i}`} k={k} T={T} nf={nf} currency={currency} lang={lang} />
-                      ))}
-                      {smartData.smart?.skipped.length ? (
-                        <Banner tone="warning" title={T.costs.smart.skippedTitle}>
-                          <ul style={{ margin: 0, paddingLeft: 18 }}>
-                            {smartData.smart.skipped.slice(0, 20).map((u, i) => <li key={`${u}${i}`}>{u}</li>)}
-                          </ul>
-                        </Banner>
-                      ) : null}
-                      {smartData.smart?.notes ? <Text as="p" variant="bodySm" tone="subdued">{smartData.smart.notes}</Text> : null}
-                    </BlockStack>
+                    <SmartResultat
+                      data={smartData}
+                      kor={smartKor}
+                      valtId={valtId}
+                      onValj={valjAlternativ}
+                      T={T}
+                      nf={nf}
+                      currency={currency}
+                      lang={lang}
+                    />
                   ) : null}
                 </BlockStack>
               </Card>
@@ -1428,6 +1723,27 @@ export default function Costs() {
             ) : (
               <Banner tone="success">{T.costs.allHaveCost}</Banner>
             )}
+
+            {/* Offertförfrågan: ett färdigt meddelande till leverantören för
+                allt som saknar kostnad, och en ruta för hennes svar. Bara i
+                standardvyn — under ett marknadsfilter är försäljningen bara
+                det landets, och listan hade sett annorlunda ut. */}
+            {offert ? (
+              <Offertkort
+                offert={offert}
+                startLage={params.get("offert") === "alla" ? "alla" : "saknas"}
+                oppna={params.has("offert")}
+                T={T}
+                nf={nf}
+                currency={currency}
+                lang={lang}
+              />
+            ) : missing > 0 ? (
+              <InlineStack gap="200" blockAlign="center">
+                <Text as="span" variant="bodySm" tone="subdued">{T.costs.quoteReq.marketViewHint}</Text>
+                <Button variant="plain" url="/app/costs?offert=1">{T.costs.quoteReq.askLink}</Button>
+              </InlineStack>
+            ) : null}
 
             {/* Nollorna: ett 0,00 är oftast ett tomt fält från en import.
                 En knapp per variant kvitterar den som gratis; resten räknas
@@ -2011,6 +2327,280 @@ export default function Costs() {
  * En rad i kvittot från AI-rutan: vad som skrevs, var, och "Ta bort" som
  * ångrar just den raden (samma väg som Ta bort kostnad).
  */
+/** AI-rutans och offertsvarets resultat, i den form sidan får tillbaka. */
+type SmartSvar = {
+  applied: SmartKvitto[];
+  skipped: string[];
+  question: string;
+  notes: string;
+  choices?: SmartValRad[];
+  /** Offertsvaret har egen rubrik: "Lades inte in" säger mer än "gick inte att koppla". */
+  skippedTitle?: string;
+};
+
+/**
+ * Resultatet av en inmatning: fråga + alternativ, kvittot per skriven rad,
+ * det som inte skrevs och en anmärkning. Delas av den stora rutan och
+ * offertkortet — samma kvitto oavsett väg in, annars ser samma skrivning
+ * olika ut beroende på var man klistrade.
+ */
+function SmartResultat({ data, kor, valtId, onValj, T, nf, currency, lang }: {
+  data: { ok: boolean; message: string; smart?: SmartSvar };
+  kor: string;
+  valtId: string | null;
+  onValj: (v: SmartValRad) => void;
+  T: ReturnType<typeof t>;
+  nf: Intl.NumberFormat;
+  currency: string;
+  lang: "en" | "sv";
+}) {
+  const hoppade = data.smart?.skipped ?? [];
+  const VISA = 30;
+  return (
+    <BlockStack gap="200">
+      {!data.ok ? <Banner tone="critical">{data.message}</Banner> : null}
+      {data.smart?.question ? (
+        <Banner tone={data.smart.choices?.length ? "info" : "warning"}>
+          <BlockStack gap="100">
+            <Text as="p" fontWeight="semibold">{data.smart.question}</Text>
+            {data.smart.choices?.length ? <Text as="p" variant="bodySm">{T.costs.smart.pickHint}</Text> : null}
+          </BlockStack>
+        </Banner>
+      ) : null}
+      {/* Alternativen: tryck på det som stämmer, så skrivs allt.
+          Siffrorna är källans egna, så de går att känna igen
+          direkt i skärmbilden man just släppte. */}
+      {data.smart?.choices?.map((c) => (
+        <Card key={c.id} background="bg-surface-secondary">
+          <BlockStack gap="200">
+            <Text as="h3" variant="headingSm">{c.label}</Text>
+            {c.explain ? <Text as="p" variant="bodySm" tone="subdued">{c.explain}</Text> : null}
+            <div style={{ whiteSpace: "pre-wrap" }}>
+              <Text as="p" variant="bodySm" tone="subdued">{c.preview}</Text>
+            </div>
+            <div>
+              <Button
+                variant="primary"
+                disabled={kor === "smart-apply"}
+                loading={kor === "smart-apply" && valtId === c.id}
+                onClick={() => onValj(c)}
+              >
+                {T.costs.smart.useThis(c.rader)}
+              </Button>
+            </div>
+          </BlockStack>
+        </Card>
+      ))}
+      {data.ok && data.message ? (
+        <Banner tone={data.smart?.applied.length ? "success" : "warning"}>{data.message}</Banner>
+      ) : null}
+      {data.smart?.applied.map((k, i) => (
+        <SmartKvittoRad key={`${k.targets}|${k.market}|${i}`} k={k} T={T} nf={nf} currency={currency} lang={lang} />
+      ))}
+      {hoppade.length ? (
+        <Banner tone="warning" title={data.smart?.skippedTitle || T.costs.smart.skippedTitle}>
+          <ul style={{ margin: 0, paddingLeft: 18 }}>
+            {hoppade.slice(0, VISA).map((u, i) => <li key={`${u}${i}`}>{u}</li>)}
+          </ul>
+          {hoppade.length > VISA ? <p>{T.costs.smart.andMore(hoppade.length - VISA)}</p> : null}
+        </Banner>
+      ) : null}
+      {data.smart?.notes ? <Text as="p" variant="bodySm" tone="subdued">{data.smart.notes}</Text> : null}
+    </BlockStack>
+  );
+}
+
+/**
+ * Offertkortet: ett färdigt meddelande till leverantören för alla sålda
+ * varianter som saknar kostnad, i alla aktiva marknader, för 1, 2 och 3 st —
+ * och en ruta där hennes svar klistras in och läses tillbaka.
+ *
+ * Meddelandet byggs i webbläsaren ur loaderns luckor, så att valen (bara
+ * helt saknade / även länder på standardkostnad, osålda, valuta) byter
+ * texten direkt utan ett anrop.
+ */
+function Offertkort({ offert, startLage, oppna, T, nf, currency, lang }: {
+  offert: { luckor: Offertvariant[]; butik: string; datum: string };
+  startLage: "saknas" | "alla";
+  oppna: boolean;
+  T: ReturnType<typeof t>;
+  nf: Intl.NumberFormat;
+  currency: string;
+  lang: "en" | "sv";
+}) {
+  const Q = T.costs.quoteReq;
+  const fetcher = useFetcher<typeof action>();
+  /* Finns inget som saknar kostnad helt, men länder på standardkostnad,
+     börjar kortet på "även länder" — annars stod det tomt vid första anblick. */
+  const harHelt = offert.luckor.some((v) => v.helt && v.sald);
+  const [lage, setLage] = useState<"saknas" | "alla">(startLage === "alla" || !harHelt ? "alla" : "saknas");
+  const [osalda, setOsalda] = useState(false);
+  const [valuta, setValuta] = useState("USD");
+  const [svar, setSvar] = useState("");
+  const [kopierat, setKopierat] = useState<"" | "ok" | "fel">("");
+  const [valtId, setValtId] = useState<string | null>(null);
+  const kortRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLTextAreaElement>(null);
+
+  const valda = useMemo(() => valjOffertrader(offert.luckor, { lage, osalda }), [offert.luckor, lage, osalda]);
+  const lander = useMemo(() => new Set(valda.flatMap((v) => v.saknas)).size, [valda]);
+  const meddelande = useMemo(
+    () =>
+      byggOffertmeddelande({
+        butik: offert.butik,
+        datum: offert.datum,
+        valuta,
+        varianter: valda,
+        /* Leverantören läser engelska — landsnamnen också. */
+        landsnamn: (k) => marknadsnamn(k, "en", k),
+      }),
+    [offert.butik, offert.datum, valuta, valda],
+  );
+  useEffect(() => setKopierat(""), [meddelande]);
+  /* Kom man hit via en länk ("Be om offert →") ska kortet synas direkt. */
+  useEffect(() => {
+    if (oppna) kortRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [oppna]);
+
+  const data = fetcher.data as unknown as { ok: boolean; message: string; smart?: SmartSvar } | undefined;
+  const kor = fetcher.state !== "idle" ? String(fetcher.formData?.get("intent") ?? "") : "";
+  /* Efter en lyckad inläsning töms rutan — kvittot står kvar under. */
+  useEffect(() => {
+    if (fetcher.state === "idle" && data?.ok && data.smart?.applied.length) setSvar("");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [fetcher.state]);
+
+  /* Kortet försvinner när inget saknas längre — men inte mitt i ett kvitto:
+     sidan laddar om sina luckor efter inläsningen, och då skulle kvittot
+     för det man just lade in försvinna samtidigt. */
+  if (!offert.luckor.length && !data) return null;
+
+  const kopiera = async () => {
+    try {
+      await navigator.clipboard.writeText(meddelande);
+      setKopierat("ok");
+      return;
+    } catch {
+      /* Shopifys ram kan neka urklippet — då markeras texten och webbläsarens
+         egen kopiering provas. Går inte heller den säger kortet hur. */
+    }
+    const el = textRef.current;
+    if (el) {
+      el.focus();
+      el.select();
+      try {
+        if (document.execCommand("copy")) {
+          setKopierat("ok");
+          return;
+        }
+      } catch {
+        /* faller igenom */
+      }
+    }
+    setKopierat("fel");
+  };
+  const valj = (v: SmartValRad) => {
+    setValtId(v.id);
+    fetcher.submit(
+      {
+        intent: "smart-apply",
+        rows: v.rows,
+        unmatched: JSON.stringify(data?.smart?.skipped ?? []),
+        notes: data?.smart?.notes ?? "",
+      },
+      { method: "POST" },
+    );
+  };
+  const valutor = [...new Set(["USD", "CNY", "EUR", currency])];
+
+  return (
+    <div ref={kortRef} id="offert">
+      <Card>
+        <BlockStack gap="300">
+          <Text as="h2" variant="headingLg">{Q.title}</Text>
+          {valda.length ? (
+            <Text as="p" tone="subdued">{Q.body(valda.length, lander)}</Text>
+          ) : (
+            <Banner tone="info">{Q.none}</Banner>
+          )}
+          <InlineStack gap="600" wrap blockAlign="start">
+            <ChoiceList
+              title={Q.modeLabel}
+              choices={[
+                { label: Q.modeMissing, value: "saknas" },
+                { label: Q.modeAll, value: "alla" },
+              ]}
+              selected={[lage]}
+              onChange={(v) => setLage(v[0] === "alla" ? "alla" : "saknas")}
+            />
+            <BlockStack gap="200">
+              <Checkbox label={Q.includeUnsold} checked={osalda} onChange={setOsalda} />
+              <div style={{ maxWidth: 160 }}>
+                <Select label={Q.currencyLabel} options={valutor} value={valuta} onChange={setValuta} />
+              </div>
+            </BlockStack>
+          </InlineStack>
+
+          {valda.length ? (
+            <BlockStack gap="200">
+              <Text as="p" fontWeight="semibold">{Q.step1}</Text>
+              <Text as="span" variant="bodySm" tone="subdued">{Q.summary(valda.length, lander)}</Text>
+              <textarea
+                ref={textRef}
+                readOnly
+                aria-label={Q.messageLabel}
+                value={meddelande}
+                onFocus={(e) => e.currentTarget.select()}
+                style={{
+                  width: "100%",
+                  minHeight: 220,
+                  boxSizing: "border-box",
+                  fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace",
+                  fontSize: 12,
+                  lineHeight: 1.45,
+                  padding: 10,
+                  border: "1px solid #c9cccf",
+                  borderRadius: 8,
+                  resize: "vertical",
+                }}
+              />
+              <InlineStack gap="300" blockAlign="center">
+                <Button variant="primary" onClick={kopiera}>{kopierat === "ok" ? Q.copied : Q.copy}</Button>
+                {kopierat === "fel" ? <Text as="span" tone="caution">{Q.copyFailed}</Text> : null}
+              </InlineStack>
+            </BlockStack>
+          ) : null}
+
+          <BlockStack gap="200">
+            <Text as="p" fontWeight="semibold">{Q.step2}</Text>
+            <TextField
+              label={Q.replyLabel}
+              labelHidden
+              value={svar}
+              onChange={setSvar}
+              autoComplete="off"
+              multiline={6}
+              placeholder={Q.replyPlaceholder}
+            />
+            <div>
+              <Button
+                disabled={!svar.trim()}
+                loading={kor === "offert-svar"}
+                onClick={() => fetcher.submit({ intent: "offert-svar", text: svar }, { method: "POST" })}
+              >
+                {kor === "offert-svar" ? Q.reading : Q.readReply}
+              </Button>
+            </div>
+            {data && kor !== "offert-svar" ? (
+              <SmartResultat data={data} kor={kor} valtId={valtId} onValj={valj} T={T} nf={nf} currency={currency} lang={lang} />
+            ) : null}
+          </BlockStack>
+        </BlockStack>
+      </Card>
+    </div>
+  );
+}
+
 function SmartKvittoRad({
   k, T, nf, currency, lang,
 }: {

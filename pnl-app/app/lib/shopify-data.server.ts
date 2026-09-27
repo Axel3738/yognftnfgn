@@ -493,6 +493,11 @@ export interface VariantCost {
   variantTitle: string;
   price: number;
   unitCost: number | null;
+  /** Variantens SKU och produktens handle — för offertförfrågan till
+      leverantören (hon känner igen SKU:n och länken, inte butikens titlar).
+      Saknas i kataloger som cachats före fälten fanns. */
+  sku?: string | null;
+  handle?: string | null;
 }
 
 export interface VariantCatalog {
@@ -655,8 +660,8 @@ export async function fetchVariantCosts(
          productVariants(first: 250, after: $after) {
            pageInfo { hasNextPage endCursor }
            nodes {
-             id title price
-             product { id title }
+             id title price sku
+             product { id title handle }
              inventoryItem { id unitCost { amount } }
            }
          }
@@ -690,6 +695,8 @@ export async function fetchVariantCosts(
         variantTitle: v.title,
         price: num(v.price),
         unitCost: v.inventoryItem.unitCost ? num(v.inventoryItem.unitCost.amount) : null,
+        sku: v.sku ?? null,
+        handle: v.product.handle ?? null,
       };
       byGid.set(rec.variantGid, rec);
       byTitle.set(titleKey(rec.productTitle, rec.variantTitle), rec);

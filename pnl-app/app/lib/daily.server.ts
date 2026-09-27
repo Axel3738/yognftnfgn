@@ -529,8 +529,8 @@ const utanProdukter = (d: MarknadsDel): Omit<MarknadsDel, "products"> => {
  * bara finns som kostnadspost ska inte få en produkt att räknas som
  * "saknar kostnad".
  */
-export async function marknaderMedOrdrar(shop: string): Promise<string[]> {
-  const sedan = shiftIso(new Date().toISOString().slice(0, 10), -90);
+export async function marknaderMedOrdrar(shop: string, dagar = 90): Promise<string[]> {
+  const sedan = shiftIso(new Date().toISOString().slice(0, 10), -dagar);
   const rader = await prisma.dailyPnl.findMany({ where: { shop, day: { gte: sedan } }, select: { markets: true } });
   const koder: string[] = [];
   for (const r of rader) {

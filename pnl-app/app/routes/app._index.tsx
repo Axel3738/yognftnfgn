@@ -1100,10 +1100,12 @@ function ProfitBars({
  * räknas utan den. "*" = landet räknas på butikens standardkostnad, "≥" =
  * kostnad saknas på mer än 2 % av landets försäljning.
  */
-function Marknadsoversikt({ rader, omarktSpend, dagarUtan, money, mult, pct, nf, lang, T, onValj }: {
+function Marknadsoversikt({ rader, omarktSpend, dagarUtan, hemland, money, mult, pct, nf, lang, T, onValj }: {
   rader: Marknadsrad[];
   omarktSpend: number;
   dagarUtan: number;
+  /** Butikens hemland: räknas på standardkostnaden med rätta. */
+  hemland: string;
   money: (v: number | null) => string;
   mult: (v: number | null) => string;
   pct: (v: number | null) => string;
@@ -1117,6 +1119,10 @@ function Marknadsoversikt({ rader, omarktSpend, dagarUtan, money, mult, pct, nf,
   const standard = rader.filter((r) => r.market && !r.egenKostnad).map((r) => namn(r.market));
   const standardTull = rader.filter((r) => r.market && !r.egenTull).map((r) => namn(r.market));
   const saknas = rader.filter((r) => r.kostnadOsaker);
+  /* Offertlänken bara för det förfrågan faktiskt tar med: hemlandet täcks
+     av standardkostnaden och ingår aldrig — en länk för det landet hade
+     landat på ett kort utan något att fråga om. */
+  const offertLander = rader.filter((r) => r.market && !r.egenKostnad && r.market !== hemland);
   return (
     <Card padding="0">
       <div style={{ padding: "16px 16px 0" }}>
@@ -1174,6 +1180,11 @@ function Marknadsoversikt({ rader, omarktSpend, dagarUtan, money, mult, pct, nf,
         <BlockStack gap="100">
           <Text as="p" variant="bodySm" tone="subdued">{O.openHint}</Text>
           {standard.length ? <Text as="p" variant="bodySm" tone="caution">{O.standardCost(standard.join(", "))}</Text> : null}
+          {offertLander.length || saknas.length ? (
+            <div>
+              <Button variant="plain" url="/app/costs?offert=alla">{O.askQuote}</Button>
+            </div>
+          ) : null}
           {saknas.map((r) => (
             <Text key={`saknas-${r.market}`} as="p" variant="bodySm" tone="caution">
               {O.missingCost(namn(r.market), Math.max(1, Math.round(r.andelUtanKostnad * 100)))}
@@ -1658,6 +1669,8 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
     note?: string;
     /** Andelen av försäljningen (eller marginalen) som tydlig etikett under beloppet. */
     andel?: { text: string; tone?: "success" | "critical" | "info" };
+    /** En länk till det som löser problemet rutan visar. */
+    atgard?: { label: string; url: string };
   }[] = [
     { label: T.dashboard.kpi.sales, value: money(t2.totalSales), sub: `${T.dashboard.kpi.shippingOfWhich(money(t2.shipping))}${delta(t2.totalSales, comparison?.totalSales)}` },
     { label: T.dashboard.kpi.orders, value: nf.format(t2.orders), sub: `${T.dashboard.kpi.avgOrder(money(t2.aov))}${delta(t2.orders, comparison?.orders)}` },
@@ -1689,6 +1702,9 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
       label: T.dashboard.kpi.cogs,
       value: money(t2.cogs),
       andel: avSales(t2.cogs),
+      /* Saknas kostnad: vägen till offertförfrågan, där leverantören får ett
+         färdigt meddelande för just de varianterna. */
+      atgard: osakraEnheter ? { label: T.dashboard.kpi.askQuote, url: "/app/costs?offert=1" } : undefined,
       /* Andelen av FÖRSÄLJNINGEN, inte bara antalet enheter: tre billiga
          tillbehör utan kostnad och en bästsäljare utan kostnad är helt
          olika stora hål i vinsten. */
@@ -2204,6 +2220,11 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
                         {k.note}
                       </Text>
                     ) : null}
+                    {k.atgard ? (
+                      <div>
+                        <Button variant="plain" url={k.atgard.url}>{k.atgard.label}</Button>
+                      </div>
+                    ) : null}
                   </BlockStack>
                 </Card>
               ))}
@@ -2214,6 +2235,7 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
                 rader={d.perMarknad}
                 omarktSpend={d.omarktSpend}
                 dagarUtan={d.dagarUtanMarknad}
+                hemland={hemlandAv(currency)}
                 money={money}
                 mult={mult}
                 pct={pct}

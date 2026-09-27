@@ -246,6 +246,8 @@ export async function tolkaInmatningMedAi(input: {
   marknader: { kod: string; namn: string }[];
   currency: string;
   costCurrency: string;
+  /** Ett leverantörssvar utan känd valuta: valutan får BARA komma ur källan. */
+  valutaKravs?: boolean;
   lang: "en" | "sv";
   apiKey: string;
 }): Promise<AiInmatningSvar> {
@@ -267,14 +269,18 @@ export async function tolkaInmatningMedAi(input: {
       text:
         `Butikens produkter (produkttitel | varianttitel | pris i ${input.currency}), en per rad:\n${katalog}\n\n` +
         `Butikens marknader (landskod = land): ${marknader}\n` +
-        `Butikens valuta: ${input.currency}. Handlarens vanliga valuta för inköpspriser: ${input.costCurrency}.\n\n` +
+        (input.valutaKravs
+          ? `Butikens valuta: ${input.currency}. Detta är en LEVERANTÖRS offert: dess valuta är okänd tills den står i källan.\n\n`
+          : `Butikens valuta: ${input.currency}. Handlarens vanliga valuta för inköpspriser: ${input.costCurrency}.\n\n`) +
         (input.text.trim() ? `Handlaren skrev:\n${input.text.trim()}\n\n` : "") +
         "Uppgift: översätt bilden/texten till rader som ska SKRIVAS som inköpskostnad. " +
         "Handlaren kan ha släppt en skärmbild av en kostnadstabell (t.ex. från appen Juicy), ett foto av en leverantörsoffert, " +
         "eller bara skrivit en mening som 'motorhöljet, Norge, 140 kr' eller 'alla varianter 12 usd, 2 st 20 usd'. " +
         "Regler: (1) product och variant måste vara identiska med listan; nämns ingen variant gäller alla (tom variant). " +
         "(2) market sätts BARA om handlaren nämner ett land eller en marknad (i text eller bild); annars tom sträng. " +
-        "(3) currency: det som står eller sägs; står inget alls använd handlarens vanliga valuta. Räkna aldrig om. " +
+        (input.valutaKravs
+          ? "(3) currency: BARA en valuta som står i källan vid priset eller för hela svaret (USD, $, RMB, ¥, EUR …). Står ingen: currency = tom sträng — gissa ALDRIG, inte heller butikens valuta. Räkna aldrig om. "
+          : "(3) currency: det som står eller sägs; står inget alls använd handlarens vanliga valuta. Räkna aldrig om. ") +
         "(4) Flerpack: 'X st för Y' är tiers [{units:X,total:Y}] — totalpriset, inte styckpriset.\n" +
         "(5) ANTALSKOLUMN: har tabellen en smal kolumn med 1, 2, 3 som upprepas för varje produkt/storlek, är det ANTAL — " +
         "raden med 1 ger unit_cost, raderna med 2 och 3 ger tiers [{units:2,total:…},{units:3,total:…}] för SAMMA produktrad. " +

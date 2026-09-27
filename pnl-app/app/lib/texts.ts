@@ -97,6 +97,7 @@ const en = {
         `${s} of ad spend is on campaigns without a market. It is in the store's totals above, but in no country here. Mark campaigns under Settings → the ad account → Choose campaigns.`,
       daysWithout: (n: number) => `${n} ${n === 1 ? "day" : "days"} in the period have no split by market and are left out of this table.`,
       openHint: "Click a market for its full view.",
+      askQuote: "Ask your supplier for these countries' prices →",
     },
     market: {
       label: "Market",
@@ -208,6 +209,7 @@ const en = {
       aov: "Avg order value (AOV)",
       aovSub: (orders: string) => `sales ÷ ${orders} orders`,
       profitPerDay: "Profit per day",
+      askQuote: "Ask your supplier for a quote →",
       ofSales: (pct: string) => `${pct} of sales`,
       margin: (pct: string) => `margin ${pct}`,
       profitPerDaySub: (days: number) => `net profit ÷ ${days} ${days === 1 ? "day" : "days"}`,
@@ -322,6 +324,78 @@ const en = {
   },
 
   costs: {
+    quoteReq: {
+      title: "Ask your supplier for a quote",
+      body: (n: number, lander: number) =>
+        `${n} sold ${n === 1 ? "variant has" : "variants have"} no real cost in ${lander} ${lander === 1 ? "market" : "markets"}. Copy the message, send it to your supplier, and paste the answer below — the costs are filled in by themselves.`,
+      none: "No sold variant is missing a cost. Nothing to ask for.",
+      modeLabel: "What to ask for",
+      modeMissing: "Only variants with no cost at all",
+      modeAll: "Also countries that use your standard cost",
+      includeUnsold: "Include variants that haven't sold yet",
+      currencyLabel: "Prices in",
+      messageLabel: "Message to your supplier",
+      copy: "Copy message",
+      copied: "Copied ✓",
+      copyFailed: "Select the text and copy it (Ctrl+C / ⌘C).",
+      summary: (varianter: number, lander: number) =>
+        `${varianter} ${varianter === 1 ? "variant" : "variants"} · ${lander} ${lander === 1 ? "country" : "countries"} · 1, 2 and 3 pcs`,
+      step1: "1. Copy the message and send it to your supplier.",
+      step2: "2. Paste her whole answer here and press Read answer.",
+      replyLabel: "Your supplier's answer",
+      replyPlaceholder: "Paste the whole answer here — exactly as she sent it.",
+      readReply: "Read answer",
+      reading: "Reading…",
+      emptyReply: "Paste your supplier's answer first.",
+      notRecognized:
+        "The answer doesn't follow the message template, and Claude isn't connected to read it another way. Ask your supplier to fill in the prices in the message itself, or connect Claude under Settings.",
+      nothingFilled: "The answer has no prices filled in yet — every line still says ___.",
+      noIdLines: "The prices came without the ID lines, so I can't tell which product they belong to. Ask your supplier to keep the lines that start with ID:.",
+      done: (n: number) => (n === 1 ? "1 cost added from the quote." : `${n} costs added from the quote.`),
+      nothingWritten: "Nothing was added from the answer — see why below.",
+      stoppedOverPrice:
+        "Nothing was saved: at least one price is as high as the product's own price. The currency is probably wrong — check it after the prices, or on the top line of the message.",
+      skippedTitle: "Not added",
+      allCountries: "all countries",
+      overPrice: (label: string, cost: string) =>
+        `${label}: ${cost} is at or above the product's own price — check the currency after the price, or on the top line. Not saved.`,
+      ddpNote: (lander: string) =>
+        `Your supplier says import duty is included for: ${lander}. Set the duty for ${lander.includes(",") ? "those markets" : "that market"} to 0 under Settings, or it is counted twice.`,
+      askLink: "Ask your supplier for a quote",
+      marketViewHint: "The quote request is in the standard view.",
+      problem: {
+        unknownId: (id: string) => `ID ${id} isn't a variant in this store.`,
+        noShip: (label: string, land: string) => `${label}: your supplier can't ship to ${land}.`,
+        noSingle: (label: string, land: string) => `${label}, ${land}: no price for 1 pc — nothing saved for that country.`,
+        tierCheaper: (label: string, land: string, antal: number) =>
+          `${label}, ${land}: the ${antal} pcs price was not saved — it is not clearly more than the smaller pack, so it looks like a price per piece.`,
+        partly: (label: string, land: string, antal: string) => `${label}, ${land}: no price for ${antal} pcs — only the rest was saved.`,
+        unreadable: (label: string, land: string, why: string, rad: string) => `${label}, ${land}: not saved — ${why}: "${rad}"`,
+        twoPrices: (label: string, land: string) => `${label}, ${land}: two different prices in the answer — neither was saved. Ask which one applies.`,
+        unknownCountry: (label: string, kod: string) =>
+          `${label}: "${kod}" is not one of your store's markets — not saved. Ask for one line per country.`,
+        currencyConflict: (namnd: string, _lastI: string) =>
+          `The answer uses more than one currency (${namnd}). Nothing was saved — ask your supplier to use one currency and write it after each price.`,
+        noCurrency: (label: string, land: string) =>
+          `${label}, ${land}: no currency — not saved. Ask for the currency after the price, or keep the top line of the message.`,
+        why: {
+          styckpris: "it looks like a price per piece (\"each\", \"/pc\"), not the total",
+          summa: "it is written as a sum (\"30+15\") — ask for the total only",
+          otydligt: "it isn't exactly one price",
+        },
+        noStandard: (label: string) =>
+          `${label}: saved per country, but your store's standard cost is still empty (no price for your home market).`,
+        noId: (rad: string) => `A price line without an ID line above it: "${rad}"`,
+        noCountry: (rad: string) => `A line with prices but no country code at the start — not saved: "${rad}"`,
+        unfilled: (label: string, land: string) => `${label}, ${land}: not filled in.`,
+        unanswered: (label: string, rad: string) =>
+          rad ? `${label}: no country line with prices — your supplier wrote "${rad}". Nothing saved.` : `${label}: no prices in the answer.`,
+        ddpElsewhere: (rad: string) =>
+          `Your supplier mentions DDP outside the country lines: "${rad}". Check which countries have import duty included, and set their duty to 0 under Settings.`,
+        linear: (label: string, land: string, antal: string) =>
+          `${label}, ${land}: no usable price for ${antal} pcs — counted as that many × the 1 pc price until your supplier gives one.`,
+      },
+    },
     smart: {
       title: "Add costs",
       body: "Drop a screenshot or a photo of your supplier's quote, or just write it — \"engine cover, Norway, 140 kr\" or \"all variants 12 usd, 2 pcs 20 usd\". Press Enter. That's it.",
@@ -1156,6 +1230,7 @@ const sv: Texts = {
         `${s} i annonskostnad ligger på kampanjer utan marknad. Den finns med i butikens summor ovan, men i inget land här. Märk kampanjerna under Inställningar → annonskontot → Välj kampanjer.`,
       daysWithout: (n: number) => `${n} ${n === 1 ? "dag" : "dagar"} i perioden saknar uppdelning per marknad och är inte med i tabellen.`,
       openHint: "Klicka på en marknad för hela vyn.",
+      askQuote: "Be leverantören om priser för de här länderna →",
     },
     market: {
       label: "Marknad",
@@ -1267,6 +1342,7 @@ const sv: Texts = {
       aov: "Snittorder (AOV)",
       aovSub: (orders: string) => `försäljning ÷ ${orders} ordrar`,
       profitPerDay: "Vinst per dag",
+      askQuote: "Be leverantören om offert →",
       ofSales: (pct: string) => `${pct} av försäljningen`,
       margin: (pct: string) => `marginal ${pct}`,
       profitPerDaySub: (days: number) => `nettovinst ÷ ${days} ${days === 1 ? "dag" : "dagar"}`,
@@ -1379,6 +1455,78 @@ const sv: Texts = {
   },
 
   costs: {
+    quoteReq: {
+      title: "Be leverantören om offert",
+      body: (n: number, lander: number) =>
+        `${n} ${n === 1 ? "såld variant saknar" : "sålda varianter saknar"} riktig kostnad i ${lander} ${lander === 1 ? "marknad" : "marknader"}. Kopiera meddelandet, skicka det till leverantören och klistra in svaret nedan — kostnaderna fylls i av sig själva.`,
+      none: "Ingen såld variant saknar kostnad. Inget att fråga om.",
+      modeLabel: "Vad ska vi fråga om",
+      modeMissing: "Bara varianter helt utan kostnad",
+      modeAll: "Även länder som räknas på standardkostnaden",
+      includeUnsold: "Ta med varianter som inte sålt än",
+      currencyLabel: "Priser i",
+      messageLabel: "Meddelande till leverantören",
+      copy: "Kopiera meddelandet",
+      copied: "Kopierat ✓",
+      copyFailed: "Markera texten och kopiera (Ctrl+C / ⌘C).",
+      summary: (varianter: number, lander: number) =>
+        `${varianter} ${varianter === 1 ? "variant" : "varianter"} · ${lander} ${lander === 1 ? "land" : "länder"} · 1, 2 och 3 st`,
+      step1: "1. Kopiera meddelandet och skicka det till leverantören.",
+      step2: "2. Klistra in hela hennes svar här och tryck Läs in svaret.",
+      replyLabel: "Leverantörens svar",
+      replyPlaceholder: "Klistra in hela svaret här — precis som hon skickade det.",
+      readReply: "Läs in svaret",
+      reading: "Läser…",
+      emptyReply: "Klistra in leverantörens svar först.",
+      notRecognized:
+        "Svaret följer inte meddelandets mall, och Claude är inte kopplad för att läsa det på annat sätt. Be leverantören fylla i priserna i själva meddelandet, eller koppla Claude under Inställningar.",
+      nothingFilled: "Svaret har inga ifyllda priser än — varje rad står fortfarande med ___.",
+      noIdLines: "Priserna kom utan ID-raderna, så jag kan inte se vilken produkt de gäller. Be leverantören behålla raderna som börjar med ID:.",
+      done: (n: number) => (n === 1 ? "1 kostnad inlagd från offerten." : `${n} kostnader inlagda från offerten.`),
+      nothingWritten: "Inget lades in från svaret — se varför nedan.",
+      stoppedOverPrice:
+        "Inget sparades: minst ett pris är lika högt som produktens eget pris. Valutan är troligen fel — kolla den efter priserna, eller på meddelandets översta rad.",
+      skippedTitle: "Lades inte in",
+      allCountries: "alla länder",
+      overPrice: (label: string, cost: string) =>
+        `${label}: ${cost} är lika mycket som produktens eget pris eller mer — kolla valutan efter priset, eller på översta raden. Sparades inte.`,
+      ddpNote: (lander: string) =>
+        `Leverantören säger att tullen ingår för: ${lander}. Sätt tullen för ${lander.includes(",") ? "de marknaderna" : "den marknaden"} till 0 under Inställningar, annars räknas den två gånger.`,
+      askLink: "Be leverantören om offert",
+      marketViewHint: "Offertförfrågan finns i standardvyn.",
+      problem: {
+        unknownId: (id: string) => `ID ${id} är ingen variant i den här butiken.`,
+        noShip: (label: string, land: string) => `${label}: leverantören kan inte skicka till ${land}.`,
+        noSingle: (label: string, land: string) => `${label}, ${land}: inget pris för 1 st — inget sparat för det landet.`,
+        tierCheaper: (label: string, land: string, antal: number) =>
+          `${label}, ${land}: priset för ${antal} st sparades inte — det är inte tydligt högre än det mindre paketet, så det ser ut som ett styckpris.`,
+        partly: (label: string, land: string, antal: string) => `${label}, ${land}: inget pris för ${antal} st — bara resten sparades.`,
+        unreadable: (label: string, land: string, why: string, rad: string) => `${label}, ${land}: sparades inte — ${why}: ”${rad}”`,
+        twoPrices: (label: string, land: string) => `${label}, ${land}: två olika priser i svaret — inget av dem sparades. Fråga vilket som gäller.`,
+        unknownCountry: (label: string, kod: string) =>
+          `${label}: ”${kod}” är inte en av butikens marknader — sparades inte. Be om en rad per land.`,
+        currencyConflict: (namnd: string, _lastI: string) =>
+          `Svaret har mer än en valuta (${namnd}). Inget sparades — be leverantören använda en valuta och skriva den efter varje pris.`,
+        noCurrency: (label: string, land: string) =>
+          `${label}, ${land}: ingen valuta — sparades inte. Be om valutan efter priset, eller att meddelandets översta rad står kvar.`,
+        why: {
+          styckpris: "det ser ut som ett styckpris (”each”, ”/pc”), inte totalen",
+          summa: "det är skrivet som en summa (”30+15”) — be om bara totalen",
+          otydligt: "det är inte exakt ett pris",
+        },
+        noStandard: (label: string) =>
+          `${label}: sparat per land, men butikens standardkostnad är fortfarande tom (inget pris för hemmamarknaden).`,
+        noId: (rad: string) => `En prisrad utan ID-rad ovanför: ”${rad}”`,
+        noCountry: (rad: string) => `En rad med priser men utan landskod först — sparades inte: ”${rad}”`,
+        unfilled: (label: string, land: string) => `${label}, ${land}: inte ifylld.`,
+        unanswered: (label: string, rad: string) =>
+          rad ? `${label}: ingen landsrad med priser — leverantören skrev ”${rad}”. Inget sparat.` : `${label}: inga priser i svaret.`,
+        ddpElsewhere: (rad: string) =>
+          `Leverantören nämner DDP utanför landsraderna: ”${rad}”. Kolla vilka länder som har tullen inräknad, och sätt deras tull till 0 under Inställningar.`,
+        linear: (label: string, land: string, antal: string) =>
+          `${label}, ${land}: inget användbart pris för ${antal} st — räknas som antal × styckpriset tills leverantören ger ett.`,
+      },
+    },
     smart: {
       title: "Lägg in kostnader",
       body: "Släpp en skärmbild eller ett foto av leverantörens offert, eller skriv bara — ”motorhöljet, Norge, 140 kr” eller ”alla varianter 12 usd, 2 st 20 usd”. Tryck Enter. Klart.",

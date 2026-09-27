@@ -73,6 +73,13 @@ export async function skrivMarknadskostnad(
   const datum = new Date(effectiveFrom || new Date().toISOString().slice(0, 10));
   const ops = [];
   for (const v of mal) {
+    /* Samma variant, marknad och dag skrivs om: den nya posten ERSÄTTER
+       dagens. Förut lades den bredvid, och läsarna sorterar bara på datum —
+       en rättad offert inläst samma dag gav kvittot "45 → 50" medan 45
+       fortsatte gälla (mätt mot Postgres i granskningen 2026-09-27). */
+    ops.push(
+      prisma.costChange.deleteMany({ where: { shop, variantGid: v.variantGid, market: m, effectiveFrom: datum } }),
+    );
     ops.push(
       prisma.costChange.create({
         data: { shop, productGid: v.productGid, variantGid: v.variantGid, unitCost, effectiveFrom: datum, note, market: m },
