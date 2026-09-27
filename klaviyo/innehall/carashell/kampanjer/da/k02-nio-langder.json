@@ -19,50 +19,64 @@
   },
   "amnesrader": [
     {
-      "text": "__COPY__: ämnesrad A, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Ni størrelser, én til dit tag",
+      "begar": "finde den rigtige størrelse"
     },
     {
-      "text": "__COPY__: ämnesrad B, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "5,5 til 13,5 meter, du vælger",
+      "begar": "se hele udvalget, før man antager noget"
     },
     {
-      "text": "__COPY__: ämnesrad C, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Mål taget, vælg længden opad",
+      "begar": "en enkel metode til at ramme rigtigt med det samme"
     }
   ],
-  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "forhandstext": "Fra 5,5 op til 13,5 meter, alle 3 meter brede.",
   "block": [
     {
       "typ": "hero",
-      "rubrik": "__COPY__: rubrik: nio längder / vilken passar din?",
-      "text": "__COPY__: 1–2 meningar",
+      "rubrik": "Ni størrelser. Hvilken passer dit tag?",
+      "text": "Hej {{fornamn}},\n\nTagbetrækket findes i ni størrelser, fra 5,5 til 13,5 meter, alle 3 meter brede. Mål taget fra front til bagkant, og vælg nærmeste længde opad.",
       "bild": "produkt:takskyddet",
       "knapp": {
-        "text": "__COPY__: knapp",
+        "text": "Se alle størrelser",
         "lank": "produkt:takskyddet"
       }
     },
     {
       "typ": "punkter",
-      "rubrik": "__COPY__: rubrik: så väljer du",
+      "rubrik": "Sådan vælger du rigtigt",
       "punkter": [
-        "__COPY__: mät taket front till bakkant",
-        "__COPY__: längderna och bredden",
-        "__COPY__: husvagn och husbil"
+        "Mål taget fra front til bagkant",
+        "Ni størrelser, fra 5,5 til 13,5 meter, alle 3 meter brede",
+        "Passer både campingvogn og autocamper"
       ]
     },
     {
       "typ": "produkt",
       "handle": "takskyddet",
-      "text": "__COPY__: en mening",
-      "knapp": "__COPY__: knapp"
+      "text": "Vælg nærmeste længde opad, aldrig nedad.",
+      "knapp": "Find din længde"
     },
     {
       "typ": "fakta"
     }
   ],
-  "tretest": [],
+  "tretest": [
+    { "rad": "Ni størrelser, én til dit tag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "5,5 til 13,5 meter, du vælger", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Mål taget, vælg længden opad", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fra 5,5 op til 13,5 meter, alle 3 meter brede.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Ni størrelser. Hvilken passer dit tag?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Hej {{fornamn}}, Tagbetrækket findes i ni størrelser, fra 5,5 til 13,5 meter, alle 3 meter brede. Mål taget fra front til bagkant, og vælg nærmeste længde opad.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se alle størrelser", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sådan vælger du rigtigt", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Mål taget fra front til bagkant", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Ni størrelser, fra 5,5 til 13,5 meter, alle 3 meter brede", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Passer både campingvogn og autocamper", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Vælg nærmeste længde opad, aldrig nedad.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Find din længde", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
   "version": 1,
   "planerad": "2026-10-06T18:00:00+02:00",
   "segment": [

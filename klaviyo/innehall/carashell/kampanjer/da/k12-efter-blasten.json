@@ -19,40 +19,51 @@
   },
   "amnesrader": [
     {
-      "text": "__COPY__: ämnesrad A, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Tjek betrækket efter blæsten",
+      "begar": "en omtænksom påmindelse"
     },
     {
-      "text": "__COPY__: ämnesrad B, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Tre ting, der tager to minutter",
+      "begar": "en hurtig, enkel handling"
     },
     {
-      "text": "__COPY__: ämnesrad C, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Har alt siddet, som det skal?",
+      "begar": "et kontrolspørgsmål, der vækker nysgerrighed"
     }
   ],
-  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "forhandstext": "Krogene, båndene, og de to ekstra.",
   "block": [
     {
       "typ": "text",
-      "rubrik": "__COPY__: rubrik: efter blåsten",
-      "text": "__COPY__: en mening"
+      "rubrik": "Efter blæsten",
+      "text": "Har det blæst meget, hvor du bor, på det seneste, er det to minutter værd at gå ud og tjekke betrækket."
     },
     {
       "typ": "punkter",
       "rubrik": null,
       "punkter": [
-        "__COPY__: krokarna under kanten",
-        "__COPY__: banden åtdragna",
-        "__COPY__: de extra banden"
+        "Krogene sidder stadig under kanten",
+        "Båndene er stramme, ikke slappe",
+        "Tjek også de to ekstra bånd på 10,5 meter, der fulgte med"
       ]
     },
     {
       "typ": "grundare",
-      "text": "__COPY__: gick något sönder, svara på mejlet"
+      "text": "Gik noget alligevel i stykker? Svar på denne mail, så kigger jeg selv på det."
     }
   ],
-  "tretest": [],
+  "tretest": [
+    { "rad": "Tjek betrækket efter blæsten", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Tre ting, der tager to minutter", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Har alt siddet, som det skal?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Krogene, båndene, og de to ekstra.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Efter blæsten", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Har det blæst meget, hvor du bor, på det seneste, er det to minutter værd at gå ud og tjekke betrækket.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Krogene sidder stadig under kanten", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Båndene er stramme, ikke slappe", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Tjek også de to ekstra bånd på 10,5 meter, der fulgte med", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Gik noget alligevel i stykker? Svar på denne mail, så kigger jeg selv på det.", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
   "version": 1,
   "planerad": "2026-12-15T18:00:00+01:00",
   "segment": [

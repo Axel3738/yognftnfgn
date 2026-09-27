@@ -46,43 +46,49 @@
         },
         "amnesrader": [
           {
-            "text": "__COPY__: ämnesrad A, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Sådan monterer du forrudebetrækket",
+            "begar": "vide nøjagtigt hvordan man gør"
           },
           {
-            "text": "__COPY__: ämnesrad B, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Udenpå ruden, med dørene lukket",
+            "begar": "forstå, at dørene ikke skal åbnes"
           },
           {
-            "text": "__COPY__: ämnesrad C, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Tre trin, klaret udefra",
+            "begar": "vide, at det går hurtigt"
           }
         ],
-        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "forhandstext": "Tre trin, og du behøver ikke åbne en eneste dør.",
         "block": [
           {
             "typ": "text",
-            "rubrik": "__COPY__: rubrik: så monterar du termoskyddet",
-            "text": "__COPY__: en mening"
+            "rubrik": "Sådan monterer du forrudebetrækket",
+            "text": "Pakken er kommet frem. Sådan monterer du betrækket."
           },
           {
             "typ": "punkter",
             "rubrik": null,
             "punkter": [
-              "__COPY__: utvändigt över vindrutan och båda sidorutorna",
-              "__COPY__: flikarna i dörrkarmen, dörrarna stängda",
-              "__COPY__: håller i blåst"
+              "Spænd betrækket udvendigt over forruden og begge sideruder.",
+              "Klem flapperne fast i dørkarmen. Dørene skal ikke åbnes.",
+              "Færdig. Betrækket holder i blæst."
             ]
           },
           {
             "typ": "grundare",
-            "text": "__COPY__: blev något inte som det skulle, svara på mejlet"
+            "text": "Blev noget ikke, som det skulle, så svar bare på denne mail."
           },
           {
             "typ": "fakta"
           }
         ],
-        "tretest": [],
+        "tretest": [
+          {"rad": "Sådan monterer du forrudebetrækket", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Udenpå ruden, med dørene lukket", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Tre trin, klaret udefra", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Tre trin, og du behøver ikke åbne en eneste dør.", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Sådan monterer du forrudebetrækket", "visualisera": true, "falsifiera": true, "ingen_annan": true}
+        ],
         "version": 1
       }
     }

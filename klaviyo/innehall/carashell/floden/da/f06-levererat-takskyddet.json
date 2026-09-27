@@ -46,44 +46,50 @@
         },
         "amnesrader": [
           {
-            "text": "__COPY__: ämnesrad A, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Sådan sætter du tagbetrækket på",
+            "begar": "vide nøjagtigt hvordan, uden gætværk"
           },
           {
-            "text": "__COPY__: ämnesrad B, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Fire trin, én person",
+            "begar": "vide, at det ikke kræver hjælp"
           },
           {
-            "text": "__COPY__: ämnesrad C, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Kanten skal hænge ned, sådan her",
+            "begar": "gøre det rigtigt med det samme"
           }
         ],
-        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "forhandstext": "Fire trin, ingen værktøjskasse nødvendig.",
         "block": [
           {
             "typ": "text",
-            "rubrik": "__COPY__: rubrik: så sätter du på taköverdraget",
-            "text": "__COPY__: en mening"
+            "rubrik": "Sådan sætter du tagbetrækket på",
+            "text": "Pakken er kommet frem. Sådan sætter du betrækket på."
           },
           {
             "typ": "punkter",
             "rubrik": null,
             "punkter": [
-              "__COPY__: lägg det över taket, kanten ner över sidorna",
-              "__COPY__: haka krokarna under kanten, alla fyra sidor",
-              "__COPY__: dra åt banden",
-              "__COPY__: de två extra banden följer med"
+              "Læg betrækket over taget, med kanten hængende 30 til 40 centimeter ned over siderne.",
+              "Hægt plastikkrogene under karrosseriets kant, langs alle fire sider.",
+              "Stram de justerbare spændebånd, så betrækket sidder tæt.",
+              "De to ekstra forstærkede bånd på 10,5 meter følger med, til ekstra fæste."
             ]
           },
           {
             "typ": "grundare",
-            "text": "__COPY__: blev något inte som det skulle, svara på mejlet"
+            "text": "Blev noget ikke, som det skulle, eller sidder det underligt, så svar bare på denne mail."
           },
           {
             "typ": "fakta"
           }
         ],
-        "tretest": [],
+        "tretest": [
+          {"rad": "Sådan sætter du tagbetrækket på", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Fire trin, én person", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Kanten skal hænge ned, sådan her", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Fire trin, ingen værktøjskasse nødvendig.", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Sådan sætter du tagbetrækket på", "visualisera": true, "falsifiera": true, "ingen_annan": true}
+        ],
         "version": 1
       }
     }

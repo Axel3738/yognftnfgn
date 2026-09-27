@@ -1,0 +1,161 @@
+{
+  "id": "k10-sista-dag-for-julklappar",
+  "sprak": "da",
+  "emailTitle": "Bestil senest mandag den 7. december",
+  "emailDescription": "Ellers når den ikke frem til jul.",
+  "amnesrader": [
+    "Bestil senest mandag den 7. december",
+    "En julegave til vognen, ikke kun ejeren",
+    "Sidste dag for julegaver til vognen"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Bestil senest mandag den 7. december",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hej {{ contact.first_name | default: 'med dig' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Så når pakken frem til jul, uanset hvilket af betrækkene du vælger.",
+      "alignment": "center"
+    },
+    {
+      "type": "image",
+      "fileId": "6830b5d9-7f36-4ff3-a0c4-f3aa4a05b62e",
+      "altText": "Tagbetræk campingvogn & autocamper 5,5–13,5 m",
+      "urlRedirect": "https://carashell.se/da/products/takskyddet?country=DK"
+    },
+    {
+      "type": "h2",
+      "text": "Tagbetræk campingvogn & autocamper 5,5–13,5 m",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Se hele sortimentet",
+      "url": "https://carashell.se/da/collections/sortimentet?country=DK",
+      "style": "button"
+    },
+    {
+      "type": "h2",
+      "text": "Tre måder at beskytte vognen på i vinter",
+      "alignment": "center"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "image",
+              "fileId": "6830b5d9-7f36-4ff3-a0c4-f3aa4a05b62e",
+              "altText": "Tagbetræk campingvogn & autocamper 5,5–13,5 m",
+              "urlRedirect": "https://carashell.se/da/products/takskyddet?country=DK"
+            },
+            {
+              "type": "h2",
+              "text": "Tagbetræk campingvogn & autocamper 5,5–13,5 m",
+              "alignment": "center"
+            },
+            {
+              "type": "link",
+              "text": "Se produktet",
+              "url": "https://carashell.se/da/products/takskyddet?country=DK",
+              "style": "button"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "image",
+              "fileId": "295e18f4-1bba-4ee1-a32e-b06f3b5d7f92",
+              "altText": "Forrudebetræk til autocamper 211 × 171 cm",
+              "urlRedirect": "https://carashell.se/da/products/termoskyddet?country=DK"
+            },
+            {
+              "type": "h2",
+              "text": "Forrudebetræk til autocamper 211 × 171 cm",
+              "alignment": "center"
+            },
+            {
+              "type": "link",
+              "text": "Se produktet",
+              "url": "https://carashell.se/da/products/termoskyddet?country=DK",
+              "style": "button"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "image",
+              "fileId": "e389d84e-2027-4b88-9e80-c92a3ce603d5",
+              "altText": "Vinduestermomåtte 2-pak 70 × 80 cm",
+              "urlRedirect": "https://carashell.se/da/products/fonstertermomatta-2-pack?country=DK"
+            },
+            {
+              "type": "h2",
+              "text": "Vinduestermomåtte 2-pak 70 × 80 cm",
+              "alignment": "center"
+            },
+            {
+              "type": "link",
+              "text": "Se produktet",
+              "url": "https://carashell.se/da/products/fonstertermomatta-2-pack?country=DK",
+              "style": "button"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Fortrydelsesret**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dages fortrydelsesret",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Følg pakken**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Følg den hele vejen](https://carashell.se/da/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

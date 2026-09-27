@@ -19,42 +19,42 @@
   },
   "amnesrader": [
     {
-      "text": "__COPY__: ämnesrad A, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Duggen der sidder mellem gardin og glas",
+      "begar": "genkende et morgenproblem man selv har"
     },
     {
-      "text": "__COPY__: ämnesrad B, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Tredive grader varmt før morgenmaden",
+      "begar": "undgå et ubehag man allerede kender"
     },
     {
-      "text": "__COPY__: ämnesrad C, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Udenpå ruden, ikke indenfor",
+      "begar": "forstå hvorfor en anden løsning virker"
     }
   ],
-  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "forhandstext": "Et gardin ændrer intet, glasset bliver koldt alligevel.",
   "block": [
     {
       "typ": "hero",
-      "rubrik": "__COPY__: rubrik: imman",
-      "text": "__COPY__: 1–2 meningar",
+      "rubrik": "Duggen sidder fast mellem gardin og glas",
+      "text": "Hej {{fornamn}},\n\nFugten fra natten lægger sig på indersiden af ruden, og et gardin gør bare, at den bliver siddende mellem glasset og stoffet. Et betræk udenpå holder glasset varmere, så duggen aldrig når at danne sig.",
       "bild": "produkt:termoskyddet",
       "knapp": {
-        "text": "__COPY__: knapp",
+        "text": "Se forrudebetrækket",
         "lank": "produkt:termoskyddet"
       }
     },
     {
       "typ": "punkter",
-      "rubrik": "__COPY__: rubrik",
+      "rubrik": "Sådan sidder det",
       "punkter": [
-        "__COPY__: utvändigt",
-        "__COPY__: dörrkarmen",
-        "__COPY__: mörklägger"
+        "Spændes udvendigt over forruden og begge sideruder",
+        "Klemmes fast i dørkarmen, uden at dørene skal åbnes",
+        "Mørklægger hele fronten"
       ]
     },
     {
       "typ": "produktrad",
-      "rubrik": "__COPY__: rubrik: rutan och smårutorna",
+      "rubrik": "Forruden og de små ruder",
       "handles": [
         "termoskyddet",
         "fonstertermomatta-2-pack"
@@ -64,7 +64,20 @@
       "typ": "fakta"
     }
   ],
-  "tretest": [],
+  "tretest": [
+    { "rad": "Duggen der sidder mellem gardin og glas", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Tredive grader varmt før morgenmaden", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Udenpå ruden, ikke indenfor", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Et gardin ændrer intet, glasset bliver koldt alligevel.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Duggen sidder fast mellem gardin og glas", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Hej {{fornamn}}, Fugten fra natten lægger sig på indersiden af ruden, og et gardin gør bare, at den bliver siddende mellem glasset og stoffet. Et betræk udenpå holder glasset varmere, så duggen aldrig når at danne sig.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se forrudebetrækket", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sådan sidder det", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Spændes udvendigt over forruden og begge sideruder", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Klemmes fast i dørkarmen, uden at dørene skal åbnes", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Mørklægger hele fronten", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Forruden og de små ruder", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
   "version": 1,
   "planerad": "2026-10-13T18:00:00+02:00",
   "segment": [

@@ -19,46 +19,57 @@
   },
   "amnesrader": [
     {
-      "text": "__COPY__: ämnesrad A, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "En adventskalender til campingfolket",
+      "begar": "finde en present der passer én bestemt person"
     },
     {
-      "text": "__COPY__: ämnesrad B, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "24 låger, retrobusser",
+      "begar": "vide hvad det er, kort og præcist"
     },
     {
-      "text": "__COPY__: ämnesrad C, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Bestil senest fredag den 13. november",
+      "begar": "nå at bestille i tide"
     }
   ],
-  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "forhandstext": "24 låger med retrobusser som tema.",
   "block": [
     {
       "typ": "hero",
-      "rubrik": "__COPY__: rubrik: adventskalendern",
-      "text": "__COPY__: 1–2 meningar",
+      "rubrik": "En adventskalender med retrobusser",
+      "text": "Hej {{fornamn}},\n\n24 låger, med retrobusser som tema. En gave til den, der allerede har alt til vognen.",
       "bild": "produkt:adventskalender-retrobussar",
       "knapp": {
-        "text": "__COPY__: knapp",
+        "text": "Se adventskalenderen",
         "lank": "produkt:adventskalender-retrobussar"
       }
     },
     {
       "typ": "text",
       "rubrik": null,
-      "text": "__COPY__: datumet fredag 13 november för lucka 1"
+      "text": "Bestil senest fredag den 13. november, hvis låge 1 skal kunne åbnes til tiden."
     },
     {
       "typ": "produkt",
       "handle": "adventskalender-retrobussar",
-      "text": "__COPY__: en mening",
-      "knapp": "__COPY__: knapp"
+      "text": "24 låger. Retrobusser. En gave, der er klar til at give.",
+      "knapp": "Se kalenderen"
     },
     {
       "typ": "fakta"
     }
   ],
-  "tretest": [],
+  "tretest": [
+    { "rad": "En adventskalender til campingfolket", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "24 låger, retrobusser", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Bestil senest fredag den 13. november", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "24 låger med retrobusser som tema.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En adventskalender med retrobusser", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Hej {{fornamn}}, 24 låger, med retrobusser som tema. En gave til den, der allerede har alt til vognen.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se adventskalenderen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Bestil senest fredag den 13. november, hvis låge 1 skal kunne åbnes til tiden.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "24 låger. Retrobusser. En gave, der er klar til at give.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se kalenderen", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
   "version": 1,
   "planerad": "2026-10-27T18:00:00+01:00",
   "segment": [

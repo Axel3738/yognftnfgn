@@ -1,0 +1,39 @@
+{
+  "id": "k12-efter-blasten",
+  "sprak": "da",
+  "emailTitle": "Tjek betrækket efter blæsten",
+  "emailDescription": "Krogene, båndene, og de to ekstra.",
+  "amnesrader": [
+    "Tjek betrækket efter blæsten",
+    "Tre ting, der tager to minutter",
+    "Har alt siddet, som det skal?"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Efter blæsten"
+    },
+    {
+      "type": "regular",
+      "text": "Har det blæst meget, hvor du bor, på det seneste, er det to minutter værd at gå ud og tjekke betrækket.",
+      "alignment": "left"
+    },
+    {
+      "type": "list",
+      "text": "Krogene sidder stadig under kanten"
+    },
+    {
+      "type": "list",
+      "text": "Båndene er stramme, ikke slappe"
+    },
+    {
+      "type": "list",
+      "text": "Tjek også de to ekstra bånd på 10,5 meter, der fulgte med"
+    },
+    {
+      "type": "quote",
+      "text": "Gik noget alligevel i stykker? Svar på denne mail, så kigger jeg selv på det.\nAxel, grundlægger"
+    }
+  ],
+  "varningar": []
+}

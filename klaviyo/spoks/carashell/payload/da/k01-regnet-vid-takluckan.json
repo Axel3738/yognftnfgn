@@ -1,0 +1,134 @@
+{
+  "id": "k01-regnet-vid-takluckan",
+  "sprak": "da",
+  "emailTitle": "Vandet der bliver stående ved taglugen",
+  "emailDescription": "Tætningen blødgøres, længe før nogen går op og tjekker.",
+  "amnesrader": [
+    "Vandet der bliver stående ved taglugen",
+    "Ses ikke før fugttesten til foråret",
+    "Ét tag. Ét betræk. Én person."
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Regnen bliver stående ved taglugen",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hej {{ contact.first_name | default: 'med dig' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Regnvand samler sig omkring tagluger og samlinger hele vinteren. Ingen går op og tjekker, før foråret afgør det med en fugttest.",
+      "alignment": "center"
+    },
+    {
+      "type": "image",
+      "fileId": "6830b5d9-7f36-4ff3-a0c4-f3aa4a05b62e",
+      "altText": "Tagbetræk campingvogn & autocamper 5,5–13,5 m",
+      "urlRedirect": "https://carashell.se/da/products/takskyddet?country=DK"
+    },
+    {
+      "type": "h2",
+      "text": "Tagbetræk campingvogn & autocamper 5,5–13,5 m",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Se tagbetrækket",
+      "url": "https://carashell.se/da/products/takskyddet?country=DK",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "Betrækket dækker kun tagfladen. Kanten hænger 30 til 40 cm ned over siderne, så regnvandet ikke bliver stående ved taglugerne, og lakken slipper for at skrabe mod et tungt heldækkende betræk.",
+      "alignment": "left"
+    },
+    {
+      "type": "h2",
+      "text": "Sådan er betrækket bygget"
+    },
+    {
+      "type": "list",
+      "text": "Ni størrelser, fra 5,5 til 13,5 meter, alle 3 meter brede"
+    },
+    {
+      "type": "list",
+      "text": "Vævede spændebånd med plastikkroge, der hægter under kanten"
+    },
+    {
+      "type": "list",
+      "text": "Én person sætter det på, helt alene"
+    },
+    {
+      "type": "image",
+      "fileId": "6830b5d9-7f36-4ff3-a0c4-f3aa4a05b62e",
+      "altText": "Tagbetræk campingvogn & autocamper 5,5–13,5 m",
+      "urlRedirect": "https://carashell.se/da/products/takskyddet?country=DK"
+    },
+    {
+      "type": "h2",
+      "text": "Tagbetræk campingvogn & autocamper 5,5–13,5 m",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Vælg din størrelse",
+      "url": "https://carashell.se/da/products/takskyddet?country=DK",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "Mål taget fra front til bagkant, og vælg nærmeste længde opad.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Fortrydelsesret**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dages fortrydelsesret",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Følg pakken**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Følg den hele vejen](https://carashell.se/da/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "link",
+      "text": "Beskyt taget",
+      "url": "https://carashell.se/da/products/takskyddet?country=DK",
+      "style": "button"
+    }
+  ],
+  "varningar": [
+    "Citat visas inte på da, blocket utgår."
+  ]
+}

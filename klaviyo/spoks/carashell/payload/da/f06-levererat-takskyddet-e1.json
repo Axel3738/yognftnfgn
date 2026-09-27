@@ -1,0 +1,80 @@
+{
+  "id": "f06-levererat-takskyddet-e1",
+  "sprak": "da",
+  "emailTitle": "Sådan sætter du tagbetrækket på",
+  "emailDescription": "Fire trin, ingen værktøjskasse nødvendig.",
+  "amnesrader": [
+    "Sådan sætter du tagbetrækket på",
+    "Fire trin, én person",
+    "Kanten skal hænge ned, sådan her"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Sådan sætter du tagbetrækket på"
+    },
+    {
+      "type": "regular",
+      "text": "Pakken er kommet frem. Sådan sætter du betrækket på.",
+      "alignment": "left"
+    },
+    {
+      "type": "list",
+      "text": "Læg betrækket over taget, med kanten hængende 30 til 40 centimeter ned over siderne."
+    },
+    {
+      "type": "list",
+      "text": "Hægt plastikkrogene under karrosseriets kant, langs alle fire sider."
+    },
+    {
+      "type": "list",
+      "text": "Stram de justerbare spændebånd, så betrækket sidder tæt."
+    },
+    {
+      "type": "list",
+      "text": "De to ekstra forstærkede bånd på 10,5 meter følger med, til ekstra fæste."
+    },
+    {
+      "type": "quote",
+      "text": "Blev noget ikke, som det skulle, eller sidder det underligt, så svar bare på denne mail.\nAxel, grundlægger"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Fortrydelsesret**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dages fortrydelsesret",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Følg pakken**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Følg den hele vejen](https://carashell.se/da/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

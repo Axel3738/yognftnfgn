@@ -42,28 +42,28 @@
         },
         "amnesrader": [
           {
-            "text": "__COPY__: ämnesrad A, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Et halvt år siden du handlede",
+            "begar": "genoptage kontakten, uden pres"
           },
           {
-            "text": "__COPY__: ämnesrad B, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Taget. Ruden. Vinduerne.",
+            "begar": "se, hvad der findes at beskytte"
           },
           {
-            "text": "__COPY__: ämnesrad C, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "{{fornamn}}, tid til at tjekke vognen?",
+            "begar": "blive personligt mindet om at tjekke sit køretøj"
           }
         ],
-        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "forhandstext": "Her er det, vi laver lige nu, uanset årstid.",
         "block": [
           {
             "typ": "text",
-            "rubrik": "__COPY__: rubrik: ett halvår senare",
-            "text": "__COPY__: två stycken"
+            "rubrik": "Et halvt år siden du handlede",
+            "text": "Det er et halvt år siden, du handlede hos os. Vi laver fortsat betræk til campingvognen og autocamperen, til taget og til ruden.\n\nTag gerne et kig på vognen en gang imellem, uanset årstid."
           },
           {
             "typ": "produktrad",
-            "rubrik": "__COPY__: rubrik för produktraden",
+            "rubrik": "Taget. Ruden. Vinduerne.",
             "handles": [
               "takskyddet",
               "termoskyddet",
@@ -74,7 +74,14 @@
             "typ": "fakta"
           }
         ],
-        "tretest": [],
+        "tretest": [
+          {"rad": "Et halvt år siden du handlede", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Taget. Ruden. Vinduerne.", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "{{fornamn}}, tid til at tjekke vognen?", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Her er det, vi laver lige nu, uanset årstid.", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Et halvt år siden du handlede", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Taget. Ruden. Vinduerne.", "visualisera": true, "falsifiera": true, "ingen_annan": true}
+        ],
         "version": 1
       }
     },
@@ -107,26 +114,31 @@
         "format": "rentext",
         "amnesrader": [
           {
-            "text": "__COPY__: ämnesrad A, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Hvad mangler du til vognen?",
+            "begar": "blive spurgt, blive lyttet til"
           },
           {
-            "text": "__COPY__: ämnesrad B, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Et spørgsmål fra mig",
+            "begar": "få et personligt spørgsmål, ikke et nyhedsbrev"
           },
           {
-            "text": "__COPY__: ämnesrad C, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Svar bare, jeg læser det hele",
+            "begar": "vide, at svaret rent faktisk når frem"
           }
         ],
-        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "forhandstext": "Jeg er bare nysgerrig. Svar med et par ord.",
         "block": [
           {
             "typ": "grundare",
-            "text": "__COPY__: frågan från Axel"
+            "text": "Jeg undrer mig over en ting. Hvad mangler du til campingvognen eller autocamperen, som vi burde lave et betræk til? Svar bare på denne mail med et par ord, jeg læser hvert svar selv."
           }
         ],
-        "tretest": [],
+        "tretest": [
+          {"rad": "Hvad mangler du til vognen?", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Et spørgsmål fra mig", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Svar bare, jeg læser det hele", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Jeg er bare nysgerrig. Svar med et par ord.", "visualisera": true, "falsifiera": true, "ingen_annan": true}
+        ],
         "version": 1
       }
     }

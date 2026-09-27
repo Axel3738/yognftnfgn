@@ -192,6 +192,8 @@
       "fakta_sparning_rubrik": "Følg pakken",
       "fakta_sparning_text": "Følg den hele vejen",
       "trustpilot": "https://dk.trustpilot.com/evaluate/carashell.se",
+      "citat": false,
+      "citat_comment": "Recensionerna finns bara på svenska. Ett danskt mejl med svenska kundcitat ser slarvigt ut, och att översätta en kunds ord och visa dem som citat vore att lägga ord i munnen på kunden. Citatblocken utgår i danska mejl (K01, K09).",
       "produktkort": "bild",
       "produktkort_comment": "Som nb: Spoks katalog har svenska titlar och SEK, så danska mejl får bild + dansk rubrik + knapp; länkarna bär ?country=DK så sidan visar DKK. \"Hej {{ contact.first_name | default: 'med dig' }}\" ger \"Hej Anders\" eller \"Hej med dig\"."
     }
@@ -239,7 +241,7 @@
   "erbjudande_comment": "CaraShell har inget gratisprodukt-erbjudande och inga rabattkoder i mejlen. Paketrabatten 2 st / 3 st står på produktsidan och skrivs aldrig som siffra i ett mejl. Enda rabatten i mejlen är Black Week-trappan nedan (Axels beslut B 2026-09-26), och bara i de två mejl som bär rabatt: \"black_week\".",
   "recensioner": {
     "kalla": "produktfil",
-    "comment": "Judge.me:s widget-JSON svarar 0 recensioner för alla fyra produkter (mätt 2026-09-26 med tre parameterset) fast produktsidan skriver '16 recensioner' — de importerade recensionerna syns inte i widget-API:t. Citatblocken tar därför butikens EGNA publicerade recensioner ur factory/produkter/<id>.yaml → reviews (10 per produkt, samma som carashell.se visar). De är svenska: citat bara i sv- och nb-mejl (norrmän läser svenska), aldrig i engelska. Inga påhittade recensioner."
+    "comment": "Judge.me:s widget-JSON svarar 0 recensioner för alla fyra produkter (mätt 2026-09-26 med tre parameterset) fast produktsidan skriver '16 recensioner' — de importerade recensionerna syns inte i widget-API:t. Citatblocken tar därför butikens EGNA publicerade recensioner ur factory/produkter/<id>.yaml → reviews (10 per produkt, samma som carashell.se visar). De är svenska: citat bara i sv- och nb-mejl (norrmän läser svenska), aldrig i engelska eller danska. Inga påhittade recensioner."
   },
   "sidfot_varfor": "Du får det här för att du sa ja till mejl från CaraShell.",
   "utm": {

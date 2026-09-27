@@ -19,50 +19,64 @@
   },
   "amnesrader": [
     {
-      "text": "__COPY__: ämnesrad A, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Sidder det fast, når det blæser?",
+      "begar": "få svar på en bekymring inden købet"
     },
     {
-      "text": "__COPY__: ämnesrad B, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Vævede bånd, ikke elastik",
+      "begar": "forstå hvad der faktisk holder det på plads"
     },
     {
-      "text": "__COPY__: ämnesrad C, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Kroge under kanten, alle fire sider",
+      "begar": "se mekanikken, ikke bare høre et løfte"
     }
   ],
-  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "forhandstext": "Båndene er vævede. De strækker sig ikke.",
   "block": [
     {
       "typ": "hero",
-      "rubrik": "__COPY__: rubrik: does it stay on in wind?",
-      "text": "__COPY__: 1–2 meningar",
+      "rubrik": "Sidder det fast, når det blæser?",
+      "text": "Hej {{fornamn}},\n\nBåndene er vævede spændebånd, ikke elastik, så de strækker sig ikke og løsner sig ikke. Plastikkroge hægter under karrosseriets kant, på alle fire sider.",
       "bild": "produkt:takskyddet",
       "knapp": {
-        "text": "__COPY__: knapp",
+        "text": "Se hvordan det spændes fast",
         "lank": "produkt:takskyddet"
       }
     },
     {
       "typ": "punkter",
-      "rubrik": "__COPY__: rubrik",
+      "rubrik": "Det der holder det på plads",
       "punkter": [
-        "__COPY__: webbing straps, not elastic",
-        "__COPY__: hooks under the edge, all four sides",
-        "__COPY__: two extra straps"
+        "Vævede spændebånd, ikke elastik, så de strækker sig ikke",
+        "Plastikkroge under kanten, på alle fire sider, justerbare",
+        "To ekstra forstærkede bånd på 10,5 meter følger med"
       ]
     },
     {
       "typ": "produkt",
       "handle": "takskyddet",
-      "text": "__COPY__: en mening",
-      "knapp": "__COPY__: knapp"
+      "text": "Fire sider, kroge under kanten, båndene er vævede.",
+      "knapp": "Se båndene"
     },
     {
       "typ": "fakta"
     }
   ],
-  "tretest": [],
+  "tretest": [
+    { "rad": "Sidder det fast, når det blæser?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Vævede bånd, ikke elastik", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Kroge under kanten, alle fire sider", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Båndene er vævede. De strækker sig ikke.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sidder det fast, når det blæser?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Hej {{fornamn}}, Båndene er vævede spændebånd, ikke elastik, så de strækker sig ikke og løsner sig ikke. Plastikkroge hægter under karrosseriets kant, på alle fire sider.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se hvordan det spændes fast", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Det der holder det på plads", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Vævede spændebånd, ikke elastik, så de strækker sig ikke", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Plastikkroge under kanten, på alle fire sider, justerbare", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "To ekstra forstærkede bånd på 10,5 meter følger med", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fire sider, kroge under kanten, båndene er vævede.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se båndene", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
   "version": 1,
   "planerad": "2026-10-20T18:00:00+02:00",
   "segment": [

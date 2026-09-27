@@ -1,0 +1,77 @@
+{
+  "id": "f03-webbhistorik-e2",
+  "sprak": "da",
+  "emailTitle": "Findes min størrelse?",
+  "emailDescription": "Ni længder dækker det meste. Sådan finder du din.",
+  "amnesrader": [
+    "Findes min størrelse?",
+    "Ni længder, 5,5 til 13,5 meter",
+    "Mål taget, vælg længde opad"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Størrelsen, i klart sprog"
+    },
+    {
+      "type": "regular",
+      "text": "Tagbetrækket findes i ni længder, 5,5 til 13,5 meter, alle 3 meter brede. Mål taget fra front til bagkant, og vælg nærmeste længde opad.",
+      "alignment": "left"
+    },
+    {
+      "type": "products",
+      "selectionMode": "dynamic",
+      "dynamicProductsCount": 1,
+      "dynamicCriteria": "recently_viewed",
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": false,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": false
+      },
+      "buttonText": "Se igen",
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Fortrydelsesret**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dages fortrydelsesret",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Følg pakken**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Følg den hele vejen](https://carashell.se/da/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

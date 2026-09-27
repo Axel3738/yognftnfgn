@@ -1,0 +1,121 @@
+{
+  "id": "k04-vecka-43",
+  "sprak": "da",
+  "emailTitle": "Sidder det fast, når det blæser?",
+  "emailDescription": "Båndene er vævede. De strækker sig ikke.",
+  "amnesrader": [
+    "Sidder det fast, når det blæser?",
+    "Vævede bånd, ikke elastik",
+    "Kroge under kanten, alle fire sider"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Sidder det fast, når det blæser?",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hej {{ contact.first_name | default: 'med dig' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Båndene er vævede spændebånd, ikke elastik, så de strækker sig ikke og løsner sig ikke. Plastikkroge hægter under karrosseriets kant, på alle fire sider.",
+      "alignment": "center"
+    },
+    {
+      "type": "image",
+      "fileId": "6830b5d9-7f36-4ff3-a0c4-f3aa4a05b62e",
+      "altText": "Tagbetræk campingvogn & autocamper 5,5–13,5 m",
+      "urlRedirect": "https://carashell.se/da/products/takskyddet?country=DK"
+    },
+    {
+      "type": "h2",
+      "text": "Tagbetræk campingvogn & autocamper 5,5–13,5 m",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Se hvordan det spændes fast",
+      "url": "https://carashell.se/da/products/takskyddet?country=DK",
+      "style": "button"
+    },
+    {
+      "type": "h2",
+      "text": "Det der holder det på plads"
+    },
+    {
+      "type": "list",
+      "text": "Vævede spændebånd, ikke elastik, så de strækker sig ikke"
+    },
+    {
+      "type": "list",
+      "text": "Plastikkroge under kanten, på alle fire sider, justerbare"
+    },
+    {
+      "type": "list",
+      "text": "To ekstra forstærkede bånd på 10,5 meter følger med"
+    },
+    {
+      "type": "image",
+      "fileId": "6830b5d9-7f36-4ff3-a0c4-f3aa4a05b62e",
+      "altText": "Tagbetræk campingvogn & autocamper 5,5–13,5 m",
+      "urlRedirect": "https://carashell.se/da/products/takskyddet?country=DK"
+    },
+    {
+      "type": "h2",
+      "text": "Tagbetræk campingvogn & autocamper 5,5–13,5 m",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Se båndene",
+      "url": "https://carashell.se/da/products/takskyddet?country=DK",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "Fire sider, kroge under kanten, båndene er vævede.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Fortrydelsesret**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dages fortrydelsesret",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Følg pakken**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Følg den hele vejen](https://carashell.se/da/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

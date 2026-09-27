@@ -1,0 +1,18 @@
+{
+  "id": "f05-vinback-e2",
+  "sprak": "da",
+  "emailTitle": "Hvad mangler du til vognen?",
+  "emailDescription": "Jeg er bare nysgerrig. Svar med et par ord.",
+  "amnesrader": [
+    "Hvad mangler du til vognen?",
+    "Et spørgsmål fra mig",
+    "Svar bare, jeg læser det hele"
+  ],
+  "blocks": [
+    {
+      "type": "quote",
+      "text": "Jeg undrer mig over en ting. Hvad mangler du til campingvognen eller autocamperen, som vi burde lave et betræk til? Svar bare på denne mail med et par ord, jeg læser hvert svar selv.\nAxel, grundlægger"
+    }
+  ],
+  "varningar": []
+}

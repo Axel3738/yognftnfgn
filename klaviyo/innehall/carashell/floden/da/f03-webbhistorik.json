@@ -43,31 +43,37 @@
         },
         "amnesrader": [
           {
-            "text": "__COPY__: ämnesrad A, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Den her kiggede du på",
+            "begar": "finde tilbage til det, man kiggede på"
           },
           {
-            "text": "__COPY__: ämnesrad B, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Den er her stadig",
+            "begar": "vide, at varen stadig kan findes"
           },
           {
-            "text": "__COPY__: ämnesrad C, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "{{fornamn}}, et betræk du allerede har set",
+            "begar": "blive personligt genkendt"
           }
         ],
-        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "forhandstext": "Ingen pres, bare en påmindelse om, hvor du var.",
         "block": [
           {
             "typ": "text",
-            "rubrik": "__COPY__: rubrik",
-            "text": "__COPY__: en mening"
+            "rubrik": "Den her kiggede du på",
+            "text": "Du kiggede på den her for et stykke tid siden. Her er den igen, hvis du vil se nærmere på den."
           },
           {
             "typ": "dynamisk",
             "kalla": "visad_produkt"
           }
         ],
-        "tretest": [],
+        "tretest": [
+          {"rad": "Den her kiggede du på", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Den er her stadig", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "{{fornamn}}, et betræk du allerede har set", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Ingen pres, bare en påmindelse om, hvor du var.", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Den her kiggede du på", "visualisera": true, "falsifiera": true, "ingen_annan": true}
+        ],
         "version": 1
       }
     },
@@ -99,24 +105,24 @@
         },
         "amnesrader": [
           {
-            "text": "__COPY__: ämnesrad A, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Findes min størrelse?",
+            "begar": "vide, at man ikke er uden for målene"
           },
           {
-            "text": "__COPY__: ämnesrad B, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Ni længder, 5,5 til 13,5 meter",
+            "begar": "se hele udvalget af størrelser"
           },
           {
-            "text": "__COPY__: ämnesrad C, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Mål taget, vælg længde opad",
+            "begar": "vide, hvordan man vælger rigtigt"
           }
         ],
-        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "forhandstext": "Ni længder dækker det meste. Sådan finder du din.",
         "block": [
           {
             "typ": "text",
-            "rubrik": "__COPY__: rubrik: storleken",
-            "text": "__COPY__: två meningar: nio längder, hur man mäter"
+            "rubrik": "Størrelsen, i klart sprog",
+            "text": "Tagbetrækket findes i ni længder, 5,5 til 13,5 meter, alle 3 meter brede. Mål taget fra front til bagkant, og vælg nærmeste længde opad."
           },
           {
             "typ": "dynamisk",
@@ -126,7 +132,13 @@
             "typ": "fakta"
           }
         ],
-        "tretest": [],
+        "tretest": [
+          {"rad": "Findes min størrelse?", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Ni længder, 5,5 til 13,5 meter", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Mål taget, vælg længde opad", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Ni længder dækker det meste. Sådan finder du din.", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Størrelsen, i klart sprog", "visualisera": true, "falsifiera": true, "ingen_annan": true}
+        ],
         "version": 1
       }
     }

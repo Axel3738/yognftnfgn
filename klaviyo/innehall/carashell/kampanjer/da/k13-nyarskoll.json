@@ -19,28 +19,28 @@
   },
   "amnesrader": [
     {
-      "text": "__COPY__: ämnesrad A, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Et par minutter mellem jul og nytår",
+      "begar": "en enkel påmindelse i et roligt øjeblik"
     },
     {
-      "text": "__COPY__: ämnesrad B, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Står taget stadig tørt?",
+      "begar": "et kontrolspørgsmål"
     },
     {
-      "text": "__COPY__: ämnesrad C, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Før sæsonen går i gang igen",
+      "begar": "forberede sig til næste fase"
     }
   ],
-  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "forhandstext": "To minutter, tre ting at se efter.",
   "block": [
     {
       "typ": "text",
-      "rubrik": "__COPY__: rubrik: en koll i mellandagarna / at the start of the year",
-      "text": "__COPY__: två stycken"
+      "rubrik": "En kontrol mellem jul og nytår",
+      "text": "Hej {{fornamn}},\n\nVognen har stået stille et stykke tid nu. Det er en god anledning til at gå ud og se på den: står taget tørt, sidder betrækket, som det skal, er ruden stadig dækket.\n\nBetrækkene skal sidde, som de gjorde, da du satte dem på. Ser noget anderledes ud, er det godt at vide i tide, før sæsonen går i gang igen."
     },
     {
       "typ": "produktrad",
-      "rubrik": "__COPY__: rubrik",
+      "rubrik": "Tre betræk, én kontrol",
       "handles": [
         "takskyddet",
         "termoskyddet",
@@ -51,7 +51,15 @@
       "typ": "fakta"
     }
   ],
-  "tretest": [],
+  "tretest": [
+    { "rad": "Et par minutter mellem jul og nytår", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Står taget stadig tørt?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Før sæsonen går i gang igen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "To minutter, tre ting at se efter.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En kontrol mellem jul og nytår", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Hej {{fornamn}}, Vognen har stået stille et stykke tid nu. Det er en god anledning til at gå ud og se på den: står taget tørt, sidder betrækket, som det skal, er ruden stadig dækket. Betrækkene skal sidde, som de gjorde, da du satte dem på. Ser noget anderledes ud, er det godt at vide i tide, før sæsonen går i gang igen.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Tre betræk, én kontrol", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
   "version": 1,
   "planerad": "2026-12-29T18:00:00+01:00",
   "segment": [

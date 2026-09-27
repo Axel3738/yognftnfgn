@@ -1,0 +1,110 @@
+{
+  "id": "k05-adventskalendern",
+  "sprak": "da",
+  "emailTitle": "En adventskalender til campingfolket",
+  "emailDescription": "24 låger med retrobusser som tema.",
+  "amnesrader": [
+    "En adventskalender til campingfolket",
+    "24 låger, retrobusser",
+    "Bestil senest fredag den 13. november"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "En adventskalender med retrobusser",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hej {{ contact.first_name | default: 'med dig' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "24 låger, med retrobusser som tema. En gave til den, der allerede har alt til vognen.",
+      "alignment": "center"
+    },
+    {
+      "type": "image",
+      "fileId": "2f01e972-730b-4683-9d9d-b385f3273e4a",
+      "altText": "Adventskalender med retrobusser, 24 låger",
+      "urlRedirect": "https://carashell.se/da/products/adventskalender-retrobussar?country=DK"
+    },
+    {
+      "type": "h2",
+      "text": "Adventskalender med retrobusser, 24 låger",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Se adventskalenderen",
+      "url": "https://carashell.se/da/products/adventskalender-retrobussar?country=DK",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "Bestil senest fredag den 13. november, hvis låge 1 skal kunne åbnes til tiden.",
+      "alignment": "left"
+    },
+    {
+      "type": "image",
+      "fileId": "2f01e972-730b-4683-9d9d-b385f3273e4a",
+      "altText": "Adventskalender med retrobusser, 24 låger",
+      "urlRedirect": "https://carashell.se/da/products/adventskalender-retrobussar?country=DK"
+    },
+    {
+      "type": "h2",
+      "text": "Adventskalender med retrobusser, 24 låger",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Se kalenderen",
+      "url": "https://carashell.se/da/products/adventskalender-retrobussar?country=DK",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "24 låger. Retrobusser. En gave, der er klar til at give.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Fortrydelsesret**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dages fortrydelsesret",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Følg pakken**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Følg den hele vejen](https://carashell.se/da/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

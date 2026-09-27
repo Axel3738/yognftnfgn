@@ -41,36 +41,43 @@
         },
         "amnesrader": [
           {
-            "text": "__COPY__: ämnesrad A, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Bekræftelse, så pakkenummeret",
+            "begar": "vide, hvad der sker efter købet"
           },
           {
-            "text": "__COPY__: ämnesrad B, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Dit pakkenummer starter på CS-",
+            "begar": "have et konkret nummer at holde styr på"
           },
           {
-            "text": "__COPY__: ämnesrad C, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Se, hvor pakken er, når du vil",
+            "begar": "slippe for at skrive og spørge, hvor den er"
           }
         ],
-        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "forhandstext": "Bekræftelse, pakkenummer, og en side, hvor du ser resten.",
         "block": [
           {
             "typ": "text",
-            "rubrik": "__COPY__: rubrik",
-            "text": "__COPY__: två stycken"
+            "rubrik": "Bekræftelse, så pakkenummeret",
+            "text": "Du har fået en bekræftelse på mail. Når pakken sendes, kommer der en ny mail med pakkenummeret, der starter på CS-.\n\nMed det nummer kan du selv se, hvor pakken befinder sig, uden at skulle spørge os."
           },
           {
             "typ": "knapp",
-            "text": "__COPY__: knapp: följ ditt paket",
+            "text": "Følg din pakke",
             "lank": "sparning:"
           },
           {
             "typ": "grundare",
-            "text": "__COPY__: en rad: svara på mejlet, jag läser själv"
+            "text": "Føles det langsomt, så svar bare på denne mail. Jeg tjekker det."
           }
         ],
-        "tretest": [],
+        "tretest": [
+          {"rad": "Bekræftelse, så pakkenummeret", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Dit pakkenummer starter på CS-", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Se, hvor pakken er, når du vil", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Bekræftelse, pakkenummer, og en side, hvor du ser resten.", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Bekræftelse, så pakkenummeret", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Følg din pakke", "visualisera": true, "falsifiera": true, "ingen_annan": true}
+        ],
         "version": 1
       }
     },
@@ -102,35 +109,42 @@
         },
         "amnesrader": [
           {
-            "text": "__COPY__: ämnesrad A, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Kom det hele frem, som det skulle?",
+            "begar": "få bekræftet, at alt er, som det skal være"
           },
           {
-            "text": "__COPY__: ämnesrad B, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Forkert vare, eller fortryder du?",
+            "begar": "vide, hvad man gør, hvis noget er galt"
           },
           {
-            "text": "__COPY__: ämnesrad C, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "14 dages fortrydelsesret, bare så du ved det",
+            "begar": "vide, at man kan fortryde"
           }
         ],
-        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "forhandstext": "Hvor pakken er, og hvad du gør, hvis noget er galt.",
         "block": [
           {
             "typ": "text",
-            "rubrik": "__COPY__: rubrik: kom allt fram?",
-            "text": "__COPY__: tre stycken"
+            "rubrik": "Kom det hele frem, som det skulle?",
+            "text": "På dette tidspunkt burde pakken være kommet frem.\n\nEr den ikke kommet endnu, kan du se præcis, hvor den er, på vores sporingsside.\n\nEr noget galt med varen, eller fortryder du, har du 14 dages fortrydelsesret fra den dag, du modtager den. Du betaler selv returfragten og skriver til hello@carashell.com med dit ordrenummer for en returvejledning. Pengene er tilbage inden for 14 dage, efter vi har modtaget returen."
           },
           {
             "typ": "knapp",
-            "text": "__COPY__: knapp: följ ditt paket",
+            "text": "Følg din pakke",
             "lank": "sparning:"
           },
           {
             "typ": "fakta"
           }
         ],
-        "tretest": [],
+        "tretest": [
+          {"rad": "Kom det hele frem, som det skulle?", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Forkert vare, eller fortryder du?", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "14 dages fortrydelsesret, bare så du ved det", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Hvor pakken er, og hvad du gør, hvis noget er galt.", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Kom det hele frem, som det skulle?", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Følg din pakke", "visualisera": true, "falsifiera": true, "ingen_annan": true}
+        ],
         "version": 1
       }
     }

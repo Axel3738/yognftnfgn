@@ -19,38 +19,38 @@
   },
   "amnesrader": [
     {
-      "text": "__COPY__: ämnesrad A, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "En julegave, der faktisk bliver brugt",
+      "begar": "finde en gave, der ikke går til spilde"
     },
     {
-      "text": "__COPY__: ämnesrad B, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Gaven til den med campingvognen",
+      "begar": "finde en gave til en bestemt person"
     },
     {
-      "text": "__COPY__: ämnesrad C, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "To betræk, ét til taget, ét til ruden",
+      "begar": "se mulighederne på ét blik"
     }
   ],
-  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "forhandstext": "Ikke den slags gave, der ligger i en skuffe.",
   "block": [
     {
       "typ": "hero",
-      "rubrik": "__COPY__: rubrik: the gift",
-      "text": "__COPY__: 1–2 meningar",
+      "rubrik": "Gaven der bliver brugt",
+      "text": "Hej {{fornamn}},\n\nJulen nærmer sig, og et betræk er den slags gave, der bliver brugt samme uge, som den bliver pakket op.",
       "bild": "produkt:takskyddet",
       "knapp": {
-        "text": "__COPY__: knapp",
+        "text": "Se gaven",
         "lank": "produkt:takskyddet"
       }
     },
     {
       "typ": "text",
       "rubrik": null,
-      "text": "__COPY__: varför det är en present som används"
+      "text": "Det kommer på taget eller forruden, så snart det er pakket ud, og det kommer på igen, hver gang vognen parkeres. Ikke en gave, der ligger i en skuffe."
     },
     {
       "typ": "produktrad",
-      "rubrik": "__COPY__: rubrik",
+      "rubrik": "Taget og ruden",
       "handles": [
         "takskyddet",
         "termoskyddet"
@@ -60,7 +60,17 @@
       "typ": "fakta"
     }
   ],
-  "tretest": [],
+  "tretest": [
+    { "rad": "En julegave, der faktisk bliver brugt", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Gaven til den med campingvognen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "To betræk, ét til taget, ét til ruden", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Ikke den slags gave, der ligger i en skuffe.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Gaven der bliver brugt", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Hej {{fornamn}}, Julen nærmer sig, og et betræk er den slags gave, der bliver brugt samme uge, som den bliver pakket op.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se gaven", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Det kommer på taget eller forruden, så snart det er pakket ud, og det kommer på igen, hver gang vognen parkeres. Ikke en gave, der ligger i en skuffe.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Taget og ruden", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
   "version": 1,
   "planerad": "2026-11-03T18:00:00+01:00",
   "segment": [

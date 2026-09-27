@@ -19,41 +19,51 @@
   },
   "amnesrader": [
     {
-      "text": "__COPY__: ämnesrad A, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Fredag er sidste dag",
+      "begar": "handle, inden det er for sent"
     },
     {
-      "text": "__COPY__: ämnesrad B, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "Adventskalenderen, sidste bestillingsdag",
+      "begar": "en tydelig deadline at forholde sig til"
     },
     {
-      "text": "__COPY__: ämnesrad C, eget begär",
-      "begar": "__COPY__: begäret"
+      "text": "24 låger, én deadline: 13. november",
+      "begar": "kombinere fakta og dato i ét hug"
     }
   ],
-  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "forhandstext": "Sidste dag til at bestille til låge 1.",
   "block": [
     {
       "typ": "hero",
-      "rubrik": "__COPY__: rubrik: fredag är sista dagen",
-      "text": "__COPY__: 1–2 meningar",
+      "rubrik": "Fredag er sidste dag til at bestille",
+      "text": "Hej {{fornamn}},\n\nBestil senest fredag den 13. november, så kalenderen er hjemme til låge 1 den 1. december.",
       "bild": "produkt:adventskalender-retrobussar",
       "knapp": {
-        "text": "__COPY__: knapp",
+        "text": "Se adventskalenderen",
         "lank": "produkt:adventskalender-retrobussar"
       }
     },
     {
       "typ": "produkt",
       "handle": "adventskalender-retrobussar",
-      "text": "__COPY__: en mening",
-      "knapp": "__COPY__: knapp"
+      "text": "24 låger, retrobusser. Sidste bestillingsdag er fredag den 13. november.",
+      "knapp": "Bestil inden fredag"
     },
     {
       "typ": "fakta"
     }
   ],
-  "tretest": [],
+  "tretest": [
+    { "rad": "Fredag er sidste dag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Adventskalenderen, sidste bestillingsdag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "24 låger, én deadline: 13. november", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sidste dag til at bestille til låge 1.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fredag er sidste dag til at bestille", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Hej {{fornamn}}, Bestil senest fredag den 13. november, så kalenderen er hjemme til låge 1 den 1. december.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se adventskalenderen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "24 låger, retrobusser. Sidste bestillingsdag er fredag den 13. november.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Bestil inden fredag", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
   "version": 1,
   "planerad": "2026-11-10T18:00:00+01:00",
   "segment": [

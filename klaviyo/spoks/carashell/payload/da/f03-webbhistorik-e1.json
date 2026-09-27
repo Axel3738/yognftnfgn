@@ -1,0 +1,40 @@
+{
+  "id": "f03-webbhistorik-e1",
+  "sprak": "da",
+  "emailTitle": "Den her kiggede du på",
+  "emailDescription": "Ingen pres, bare en påmindelse om, hvor du var.",
+  "amnesrader": [
+    "Den her kiggede du på",
+    "Den er her stadig",
+    "Et betræk du allerede har set"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Den her kiggede du på"
+    },
+    {
+      "type": "regular",
+      "text": "Du kiggede på den her for et stykke tid siden. Her er den igen, hvis du vil se nærmere på den.",
+      "alignment": "left"
+    },
+    {
+      "type": "products",
+      "selectionMode": "dynamic",
+      "dynamicProductsCount": 1,
+      "dynamicCriteria": "recently_viewed",
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": false,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": false
+      },
+      "buttonText": "Se igen",
+      "alignment": "center",
+      "productsPerRow": 1
+    }
+  ],
+  "varningar": []
+}

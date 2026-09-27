@@ -42,31 +42,37 @@
         },
         "amnesrader": [
           {
-            "text": "__COPY__: ämnesrad A, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Ingen udsalg. Bare en påmindelse.",
+            "begar": "undgå salgspres, bare en påmindelse"
           },
           {
-            "text": "__COPY__: ämnesrad B, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Du nåede til kassen, ikke hele vejen",
+            "begar": "fuldføre det, man allerede er i gang med"
           },
           {
-            "text": "__COPY__: ämnesrad C, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "{{fornamn}}, det du valgte ligger klar",
+            "begar": "blive personligt mindet om"
           }
         ],
-        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "forhandstext": "Varen ligger klar i kassen, til du er klar.",
         "block": [
           {
             "typ": "text",
-            "rubrik": "__COPY__: rubrik: kassan är kvar",
-            "text": "__COPY__: 1–2 meningar"
+            "rubrik": "Den ligger her, lige som du forlod den.",
+            "text": "Du nåede til kassen, men ikke hele vejen. Vi gemmer den, til du er klar til at gå videre."
           },
           {
             "typ": "dynamisk",
             "kalla": "checkout_rader"
           }
         ],
-        "tretest": [],
+        "tretest": [
+          {"rad": "Ingen udsalg. Bare en påmindelse.", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Du nåede til kassen, ikke hele vejen", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "{{fornamn}}, det du valgte ligger klar", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Varen ligger klar i kassen, til du er klar.", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Den ligger her, lige som du forlod den.", "visualisera": true, "falsifiera": true, "ingen_annan": true}
+        ],
         "version": 1
       }
     },
@@ -98,33 +104,33 @@
         },
         "amnesrader": [
           {
-            "text": "__COPY__: ämnesrad A, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Tre spørgsmål, før du betaler",
+            "begar": "få svar, inden man beslutter sig"
           },
           {
-            "text": "__COPY__: ämnesrad B, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Passer det virkelig min vogn?",
+            "begar": "vide, at størrelsen findes"
           },
           {
-            "text": "__COPY__: ämnesrad C, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Holder det i blæst? Ja.",
+            "begar": "vide, at det ikke blæser af"
           }
         ],
-        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "forhandstext": "Størrelse, fæste og blæst, i tre korte svar.",
         "block": [
           {
             "typ": "text",
-            "rubrik": "__COPY__: rubrik: tre frågor innan du betalar",
-            "text": "__COPY__: en mening som öppnar"
+            "rubrik": "Størrelse. Fæste. Blæst.",
+            "text": "Vi ser, hvilke spørgsmål der kommer, inden et køb. Her er svarene."
           },
           {
             "typ": "punkter",
             "rubrik": null,
             "punkter": [
-              "__COPY__: passar det min vagn → storlek",
-              "__COPY__: hur fäster det → banden och krokarna",
-              "__COPY__: klarar det vinden → ja, med faktabladets ord",
-              "__COPY__: termoskyddet: måtten och dörrkarmen, en rad"
+              "Passer det min vogn? Tagbetrækket findes i ni længder, 5,5 til 13,5 meter. Mål taget fra front til bagkant, og vælg nærmeste længde opad. Passer både campingvogn og autocamper.",
+              "Hvordan fastgør det? Vævede spændebånd med plastikkroge hægter under karrosseriets kant, på alle fire sider, justerbare.",
+              "Holder det i blæst? Ja. Båndene er vævede, ikke elastik, så de strækker sig ikke og holder betrækket på plads.",
+              "Forrudebetræk til autocamperen: 211 cm bred og 171 cm over midten, med flapper der klemmes fast i dørkarmen."
             ]
           },
           {
@@ -135,7 +141,13 @@
             "typ": "fakta"
           }
         ],
-        "tretest": [],
+        "tretest": [
+          {"rad": "Tre spørgsmål, før du betaler", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Passer det virkelig min vogn?", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Holder det i blæst? Ja.", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Størrelse, fæste og blæst, i tre korte svar.", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Størrelse. Fæste. Blæst.", "visualisera": true, "falsifiera": true, "ingen_annan": true}
+        ],
         "version": 1
       }
     },
@@ -168,30 +180,35 @@
         "format": "rentext",
         "amnesrader": [
           {
-            "text": "__COPY__: ämnesrad A, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Sidste mail om denne kasse",
+            "begar": "vide, at dette er sidste påmindelse, uden pres"
           },
           {
-            "text": "__COPY__: ämnesrad B, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Har du et spørgsmål? Svar bare",
+            "begar": "kunne spørge direkte uden besvær"
           },
           {
-            "text": "__COPY__: ämnesrad C, eget begär",
-            "begar": "__COPY__: begäret"
+            "text": "Jeg hører ikke mere om det herfra",
+            "begar": "slippe for flere påmindelser"
           }
         ],
-        "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+        "forhandstext": "Ingen nedtælling. Bare et sidste spørgsmål: undrer du dig over noget?",
         "block": [
           {
             "typ": "grundare",
-            "text": "__COPY__: sista mejlet, svara på mejlet med frågor, annars inget mer om kassan"
+            "text": "Det her er den sidste mail om den kasse, du forlod. Undrer du dig over størrelse, montering eller noget andet, så svar bare på denne mail, så svarer jeg. Ellers hører du ikke mere om denne kasse fra mig."
           },
           {
             "typ": "dynamisk",
             "kalla": "checkout_rader"
           }
         ],
-        "tretest": [],
+        "tretest": [
+          {"rad": "Sidste mail om denne kasse", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Har du et spørgsmål? Svar bare", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Jeg hører ikke mere om det herfra", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Ingen nedtælling. Bare et sidste spørgsmål: undrer du dig over noget?", "visualisera": true, "falsifiera": true, "ingen_annan": true}
+        ],
         "version": 1
       }
     }
