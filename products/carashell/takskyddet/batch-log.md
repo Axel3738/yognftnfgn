@@ -2398,3 +2398,25 @@ produktsidan 105 — 0 svenska, kassan `en-US` med United States förvalt, inget
 larm. Dagens 16 655 kr i Stories redovisas som "före bytet" (adseten ändrades
 11:32 UTC), inte som larm; från i morgon larmar vakten varje krona utanför
 flödet.
+
+---
+
+## Nattvakten 2026-09-27 — LISTICLE sänkt, huvudkampanjen låst en natt till
+
+**Budget:** LISTICLE **sänkt 2 000 → 1 400 kr** (vinst 3d 10,0 %).
+Huvudkampanjen kvar på 6 750 kr — vinst 3d **−35,6 %** vid ROAS 1,03, men
+kadensspärren håller den (2 av 3 dygn). **Ronden sänker den 2026-09-28.**
+
+**Pausad:** `CaraShellRoof_GT_108_H1` — 1 371 kr, 0 köp på 14 dygn.
+
+**7 dygn SE:** 69 768 kr, 95 köp, ROAS 1,93, vinstbidrag **12 712 kr** — fyra
+nätters fall: 36 911 → 31 253 → 22 733 → 12 712.
+
+**Rotorsaken hittad och den är inte en annons** — se mönster 15 i `dna.md`.
+Huvudkampanjens 7d-CPA är 806 kr mot break-even 693; top spendern `SP_5_1` bär
+37 % av spenden till CPA 765 (bättre än snittet), resten 831. Att pausa någon
+enskild annons fixar ingenting.
+
+⚠️ LISTICLE är den friskare kampanjen på 7 dygn (CPA 579, under break-even) och
+det är den ronden sänkte — huvudkampanjen (CPA 806) räddades av sin kadensspärr.
+Regelfrågan står i mönster 15 och är ägarens.
