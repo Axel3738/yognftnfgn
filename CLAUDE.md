@@ -97,14 +97,22 @@ LI, CH), de sju nya språken **de, fr, nl, es, it, pl, pt** är översatta (28
 sonnet-delar, varje del granskad av en skeptisk granskare, C+D parvis; alla
 fällda fynd inlagda — `marknader/README.md` → "Översättningarna till de sju
 språken") och ligger klara i `output/underlag-<locale>.json`; priser "lite
-dyrare worldwide" (Axels ord): NOK 449, EUR 44.90, USD 69 för 5-paret. ⛔
-**Ingenting av Europa är registrerat i Shopify** — `bygg.mjs --steg
-marknader,sprak,frakt,prislista --skarpt` och sedan `oversattningar,kontroll,
-tema,publicera` körs först när Axel bekräftat marknadslistan (hans krav: "Sen
-bekräftar jag listan"). Domänerna `.no`/`.eu` köper Axel, `.com` finns;
-kopplingen är `marknader/cowork/1-domaner.txt`. Shopifys opt-out-formulär
-("Dina integritetsval") bär kundtexten i `data-*`-attribut — nb/da hade svenska
-knappar live till 2026-09-27 kväll, rättat och tillbakaläst. COGS per marknad i
+dyrare worldwide" (Axels ord): NOK 449, EUR 44.90, USD 69 för 5-paret. ✅
+**Europa LIVE 2026-09-27 kväll efter Axels "ok"**: 27 länder tillagda, sju
+språk aktiverade, registrerade (157–159 texter var, 0 avviker), publicerade och
+lästa som kund i 19 länder (`marknader/README.md` → "Läget … kväll"). ⚠️
+Shopify vägrar locale `pt` — portugisiskan är **`pt-PT`** (URL-mappen `/pt`).
+Spårningssidan får de sju språken (`sparning/sprak/*.json`, `sprak_extra`)
+men rutinen bygger från `main`. Axels beslut samma kväll: butiken heter
+**Matstrumpor** i alla länder och annonserna bär raden "svenskt varumärke"
+(CaraShell-principen); alla kampanjer 1 000 kr/dag men ⛔ **ingen aktiveras
+förrän Axel granskat annonserna**. HeyGen-nyckeln sitter på
+`subscriptions@stonebite.org` med 0,10 USD i API-plånboken och ingen
+prenumeration — därför "Insufficient credit". Domänerna `.no`/`.eu` köper Axel,
+`.com` finns; kopplingen är `marknader/cowork/1-domaner.txt`. Shopifys
+opt-out-formulär ("Dina integritetsval") bär kundtexten i `data-*`-attribut —
+nb/da hade svenska knappar live till 2026-09-27 kväll, rättat och tillbakaläst.
+COGS per marknad i
 `matstrumpor/cogs.json` (`kor.mjs --ekonomi --marknad US`): Norden saknar
 kostnad, donut/pizza/hamburgare saknar Cost per item i Shopify. **Annonserna
 utomlands: Norge först, Axels budget 1 000 kr/dag (2026-09-27), kampanjen
