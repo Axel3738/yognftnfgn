@@ -78,6 +78,15 @@ med Axels eget konto; meddelandena postas alltså som honom.
   `--postat <id>`. Connectorn Slack måste vara kopplad på rutinen (den ärvs
   inte). Kvitteringen är det som skriver minnet — ett meddelande som inte gick
   iväg ligger kvar i kön till nästa körning.
+  ⚠️ **Mätt vid bygget 2026-09-27:** `create_trigger` avvisar `connectors`
+  ("not available for this organization"), rutinen står med
+  `mcp_connections: []`, och dess session har bara Bash/Read/Write/Edit/Glob/
+  Grep/Agent/WebFetch (`get_session` → `turn_handoff.tools`, inga `mcp__*`).
+  Tills Axel kopplat Slack på rutinen i Routines-vyn — eller lagt en
+  `SLACK_WEBHOOK_URL` i miljön — köar rutinen larmen och säger det i sin
+  rapport; en session med Slack (som den som byggde larmet) postar kön och
+  kvitterar. Larmen försvinner aldrig: det som inte kvitterats är "nytt"
+  nästa timme igen.
 - **Reserven:** finns `SLACK_BOT_TOKEN` (en Slack-app med `chat:write`,
   inbjuden i kanalen) eller `SLACK_WEBHOOK_URL` (Incoming Webhook låst till
   kanalen) i miljön postar `kor.mjs` själv. Då behövs inget verktygsanrop
