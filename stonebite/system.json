@@ -68,6 +68,13 @@
           "status": "nytt"
         },
         {
+          "namn": "Annonsvakten",
+          "vad": "Varje timme: alla annonskonton — nedstängt konto, tappad åtkomst, död token, avvisade annonser, adsets och kampanjer med fel, annons som drar iväg med spend utan köp → larm i Discord #ad-alerts, Axel pingas bara på 🔴. Läser, ändrar aldrig något i Meta.",
+          "var": "annonsvakt/",
+          "kommando": "/annonsvakt",
+          "status": "nytt"
+        },
+        {
           "namn": "Bildannonser",
           "vad": "Genererar bildannonser ur briefen varje kväll och lägger dem i granskningskön.",
           "var": "bildannonser/",
@@ -407,6 +414,12 @@
       "namn": "Paketspårningen (5 butiker)",
       "vad": "Skanningar in i Shopify och spårningssidan byggs om.",
       "kommando": "/sparning"
+    },
+    {
+      "tid": "Varje timme (:44)",
+      "namn": "Annonsvakten",
+      "vad": "Alla annonskonton: nedstängt, avvisat, fel, annons som drar iväg med spend → Discord #ad-alerts, Axel pingas på 🔴.",
+      "kommando": "/annonsvakt"
     }
   ],
   "rutiner_kommentar": "Tiderna är svensk tid. Rutinerna körs som Routines på claude.ai och ligger på två olika konton — se rutintabellen i CLAUDE.md för trigger-id och vilket konto som äger vilken."
