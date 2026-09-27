@@ -17,3 +17,6 @@ bot/.env
 # Lokala git-worktrees för bakgrundsagenter (isolation: "worktree"). Hör till
 # containern, inte till repots innehåll.
 .claude/worktrees/
+
+# Metas råsvar från etikett-backfill --cache (1 MB+ per dag, hämtas om varje morgon)
+agent/utdata/cache/
