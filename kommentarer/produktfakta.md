@@ -150,3 +150,27 @@ Läses av `/kommentarer` innan svaren skrivs.
 - **Material:** troligen aluminium (Axel 2026-09-27, obekräftat). Produktsidan
   saknar materialrad. Säg aldrig "rostfritt"; kolla listningen på AliExpress
   innan det påstås något.
+
+## Leverantörssvar 2026-09-27 utan känd produkt (Axels WhatsApp-lista)
+
+Införda ovan: sotarset 150 mm (nej), solcellslampa 6–8 h / 3–4 h. Resten
+saknar produktnamn i svaret och står här tills Axel kopplat dem. Använd
+ALDRIG en rad nedan i ett kundsvar innan den flyttats till rätt produkt.
+
+- **"roof AC cover 210D: 80 × 80 × 38 cm"** — leverantören har ett separat
+  skydd för AC-aggregatet på husbilstaket, 210D. Möjligt tillbehör till
+  taköverdraget (svarar på AC-frågorna i US). Inte i sortimentet.
+- **3.** "European standard 220V, snow melting mat 36 × 150 cm (upgraded
+  diamond-shaped block straight plug 4.5 m version)" — smältmatta för snö,
+  ny produktkandidat, inte i sortimentet.
+- **4.** "No plans to restock. Custom-made from 200 pcs." — produkt okänd.
+- **6.** "Grayblue, orange, green is optional." — färger, produkt okänd.
+- **7.** "190 × 71 × 117 cm" — mått, produkt okänd.
+- **8.** "No reply yet, but judging from the main product image, yes." —
+  fråga och produkt okända.
+- **9.** "96 cm W × 30 cm D × 49 cm H" — mått, produkt okänd.
+- **10.** "confirmed" — fråga okänd.
+- **Antal per kolli:** string-light winders 10 st, Makita holders 5 st,
+  strainers (15 × 8 cm) drain mesh 6 st, plant covers 120 × 180 cm 3 st (=2?).
+- **16.** "What kind of documents do you need? The manufacturer needs to
+  find them." — leverantören frågar tillbaka; frågan var vår.
