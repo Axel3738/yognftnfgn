@@ -68,6 +68,13 @@
           "status": "nytt"
         },
         {
+          "namn": "Akutlarmet",
+          "vad": "Varje timme: det som bara Axel kan påverka — butiker nere, annonskonton avstängda, pengar som brinner, pixeln död, backend, rutiner som står still, döda nycklar, chargeback-graden, misslyckade utbetalningar — postat en gång i Slack #urgent (privat). Läser bara.",
+          "var": "akut/",
+          "kommando": "/akut",
+          "status": "nytt"
+        },
+        {
           "namn": "Bildannonser",
           "vad": "Genererar bildannonser ur briefen varje kväll och lägger dem i granskningskön.",
           "var": "bildannonser/",
@@ -341,6 +348,12 @@
       "namn": "Kommentarsgranskningen",
       "vad": "Nya annonskommentarer: allvarligt, köpfrågor, invändningar, leads — Discord #ad-comments.",
       "kommando": "/kommentarer"
+    },
+    {
+      "tid": "varje timme :28",
+      "namn": "Akutlarmet",
+      "vad": "Det som bara Axel kan påverka, en gång per händelse — Slack #urgent (privat).",
+      "kommando": "/akut"
     },
     {
       "tid": "06:00",

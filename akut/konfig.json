@@ -1,0 +1,60 @@
+{
+  "kommentar": "Akutlarmet (/akut, Axels beställning 2026-09-27): det som BARA Axel kan påverka och som direkt slår mot pengarna, postat i Slack #urgent (privat, bara han). Inte VA:ns ärenden, inte redigerarnas — de har Discord. Trösklarna här är mätta mot kontona 2026-09-27; höj dem hellre än att larma för lite. Kanal-id:t är facit — namnet kan bytas i Slack utan att id:t ändras.",
+  "slack": {
+    "workspace": "Stonebite",
+    "kanal": "urgent",
+    "kanalId": "C0C4MTQNMT7",
+    "kanal_kommentar": "Privat kanal skapad 2026-09-27 av sessionen via Slack-connectorn (Axels eget konto U0B3MADDQR5 är den enda medlemmen). Privat med flit: larmen bär spend och ROAS, och redigerarna får aldrig se spend (Axels beslut 2026-09-02)."
+  },
+  "halsa": {
+    "url": "https://www.stonebite.org/halsa",
+    "reserv": "https://yognftnfgn-production-cfb8.up.railway.app/halsa",
+    "kommentar": "Svarar www inte men direktadressen gör det är felet domänen (Squarespace DNS), inte Railway — larmet säger vilket."
+  },
+  "sajter_extra": [
+    {
+      "id": "grillkliniken",
+      "namn": "Grillkliniken",
+      "url": "https://grillkliniken.se",
+      "verksamhet": "grillkliniken",
+      "varfor": "Ingen Shopify-nyckel i miljön, så butiken syns inte i snapshoten — men SnarkLös spenderar varje dag mot den."
+    }
+  ],
+  "trosklar": {
+    "sajt_forsok": 3,
+    "sajt_paus_ms": 10000,
+    "sajt_timeout_ms": 20000,
+    "butik_i_drift_ordrar_7d": 1,
+    "butik_i_drift_minne_dagar": 14,
+    "pengar_noll_kop_spend": 5000,
+    "pengar_under_be_spend": 10000,
+    "pengar_be_andel": 0.5,
+    "pengar_roas_utan_be": 0.75,
+    "pixel_min_ordrar": 15,
+    "pixel_min_spend": 2000,
+    "autosvar_max_omstarter": 5,
+    "tvistgrad_procent": 0.75,
+    "tvistgrad_dagar": 30,
+    "tvistgrad_min_ordrar": 200,
+    "utbetalning_dagar": 14,
+    "behall_dagar": 30
+  },
+  "trosklar_kommentar": "pengar_noll_kop_spend: en kampanj som dragit så mycket i dag utan ett enda köp (CaraShell US natten 26→27/9: 16 654 kr, 0 köp). pengar_under_be_spend + pengar_be_andel: så mycket spend med ROAS under halva break-even ur kampanjnamnet (BE ROAS 1.63 ⇒ larm under 0,82); saknar namnet break-even gäller pengar_roas_utan_be. pixel: butiken har ordrar men Meta ser noll köp trots spend ⇒ pixeln/CAPI är död. tvistgrad: Visa varnar från 0,9 %, Mastercard 1 % (kundtjanst/chargeback.mjs) — larmet går vid 0,75 % så det finns tid. dagliga kontroller (tvister, utbetalningar) körs bara i körningen som startar timmen nedan, svensk tid.",
+  "dagliga_kontroller_timme": 7,
+  "rutinkonton": {
+    "kommentar": "Vilket Claude-konto som bär rutinen — det är där Axel slår på den igen (claude.ai → Routines). Ur CLAUDE.md:s rutintabell 2026-09-27. Prefixmatchning på rutin-id.",
+    "sparning-": "claude5@stonebite.org",
+    "stonebite": "Barkås-kontot (barkas.kundservice@gmail.com)",
+    "kommentarer": "kontot som bär Skalnings kungen / Översättning NO",
+    "matstrumporkungen": "kontot som bär Matstrumporkungen (byggd 2026-09-23)",
+    "tvistkoll": "claude5@stonebite.org",
+    "kundtjanst": "claude5@stonebite.org",
+    "briefgranskning": "claude5@stonebite.org",
+    "nattvakt-": "claude5@stonebite.org",
+    "leverans-": "claude5@stonebite.org",
+    "no-": "claude5@stonebite.org",
+    "us-": "claude5@stonebite.org",
+    "spegla-": "claude5@stonebite.org",
+    "akut": "claude6@stonebite.org"
+  }
+}
