@@ -61,3 +61,21 @@ skriver svaren får båda filerna.
     sällan är samma material och byggkvalitet, och peka på det konkreta ur
     produktsidan (materialet, måtten, vad som följer med). Aldrig otrevligt
     mot kunden, och aldrig ett påhittat påstående om konkurrentens vara.
+15. **Leverantörsfrågorna ska vara sådana bara leverantören kan svara på**
+    (Axel 2026-09-27, efter fyra dåliga frågor: avsändningsland, material
+    som går att slå upp på AliExpress, en redan besvarad fråga och en
+    vindgräns som inte går att mäta). Innan en fråga skrivs: står svaret i
+    `produktfakta.md`, på produktsidan eller i AliExpress-listningen? Då är
+    det ingen fråga. Fråga aldrig om varifrån något skickas eller om
+    vindstyrka.
+
+## Publicering: stensäkert publiceras direkt (Axel 2026-09-27)
+
+16. **Sluta fråga om det du redan vet.** Axel: *"de som du känner dig
+    stensäker på vad du ska svara, de svarar du på … de som du verkligen
+    inte vet vad du ska svara på, de säger du till mig om."* Ett svar är
+    stensäkert när två oberoende granskare (fakta + ton, mot produktsidan,
+    `produktfakta.md`, den här filen och Axels facit i `beslut`) båda
+    godkänner det oförändrat. Det publiceras utan att vänta på Ja.
+    Allt annat går till Axel som en kort fråga, aldrig som "granska 200 kort".
+    Spärrarna i `publicera.mjs` (rätt sida, aldrig två gånger) gäller som förut.

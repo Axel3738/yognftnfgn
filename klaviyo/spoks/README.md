@@ -121,7 +121,39 @@ efter varje utskick; stiger klagomålen, stanna kvar ett steg till.
   på länge får fortfarande kampanjer tills Spoks egen suppression tar dem.
 - Anonyma recensenter står som "Verifierad kund", aldrig "Anonymous".
 
-## CaraShell (workspace `38f3d430-690c-4c0b-8419-8ec2e5272148`, UPPLADDAT 2026-09-26, allt avstängt)
+## CaraShell (workspace `38f3d430-690c-4c0b-8419-8ec2e5272148`, UPPLADDAT 2026-09-26, danskan 2026-09-27, allt avstängt)
+
+✅ **Danska sedan 2026-09-27** (Axels order: "vi behöver liksom egentligen ha flows för alla
+aktiva marknader bara. Så det är Sverige, Norge, Danmark, USA och Australien" + "utifrån de får
+vi anpassa copyn"). Mätt före bygget: **25 av 26 danska ordrar har `customerLocale` da-DK** —
+danskarna handlar på danska, så de fick inte längre de svenska mejlen. Fyra språkgrupper nu:
+**sv** = Sweden + utan land, **nb** = Norway, **da** = Denmark, **en** = US/UK/CA/AU/NZ + Finland
+(Finland: 7 ordrar, inte en aktiv marknad, står kvar i engelskan). Byggt och uppladdat samma
+förmiddag, allt avstängt/utkast:
+- **Danmark ut ur det svenska:** de 8 svenska flödenas triggerfilter (`update_flow`) och de 4
+  svenska segmenten (`update_segment`, inga utkast använde dem): `SEG_samtycke_sv` 15 → 13.
+- **4 danska segment, 8 danska flöden (15 mejl, alla sändsteg av), 14 danska kampanjutkast**,
+  id:n i `spoks-id.json` (`da`). Titlarna följer de andra: `K01 DA …` internt — i appens lista
+  syns ämnesraden, så **Axel söker på ämnesraden, aldrig på "K01"** (hans skärmdump 2026-09-27:
+  sökningen "k01" gav 0 träffar).
+- **Copyn:** två Sonnet-subagenter mot faktabladet `innehall/carashell/fakta/da.json` (butikens
+  egna danska översättningar), granskad av huvudsessionen: fem språkrättningar ("den" syftade
+  på paketet i monteringsmejlen, "bygger" → "laver", ordföljd) och K12 "hvor du bor" → "hvor
+  vognen står". Danskan speglar engelskan i K04/K06 (ingen farsdag i november i Danmark: K04 =
+  vinden, K06 = julklappen). **Inga svenska kundcitat i danska mejl** (`citat: false`, som
+  engelskan — K01 och K09 tappar citatblocket). Ingen reklamationstid i danskan: den danska
+  policysidan nämner bara fortrydelsesret, och ingen siffra hittas på.
+- **Länkarna:** alla `carashell.se/da/…?country=DK` svarar 200 med `lang="da"` och DKK (även
+  tilläggsprodukterna); Trustpilot `dk.trustpilot.com/evaluate/carashell.se?stars=1–5` 200.
+  Black Week-rabatterna är inte marknadsbegränsade, så trappan gäller i DKK också.
+- **Spårningssidan på danska:** `sparning/butiker.json` → carashell `sprak_extra` fick `da`, så
+  `carashell.se/da/pages/spara` blir dansk vid nästa timkörning (test i `sparning/test/sida.test.mjs`).
+  ⚠️ Shopifys egna fraktmejl till danska kunder är fortfarande svenska (`mejl_marknader` har ingen
+  DK-rad) — en ny mall kräver en inklistring i Shopify (Cowork), inte gjort.
+- **Kontroll:** `get_flows` 32 flöden (8 per språk), alla avstängda, 0 inskrivna; `get_flow` på
+  alla 8 danska mot `plan.json`; `search_campaigns` 56 utkast, 0 publicerade; `get_segments`:
+  samtycke sv 13 + nb 4 + en 61 + da 3 = **81 = Spoks "All subscribed"** — varje kund med
+  samtycke hamnar i exakt ett språk.
 
 ✅ **Uppladdat 2026-09-26 10:45–11:36 CEST** (Axel bjöd in `kundsupport@baverbutiken.se` som
 Admin i workspacen "Carashell" under sitt extra Spoks-konto; `whoami` visade den direkt efter,
@@ -140,12 +172,17 @@ Shopify `yitrbk-m3`, plan **Free = 5 000 mejl/mån**). Facit med varje id:
   domänen var då verifierad: carashell.com bär Spoks poster (`link` → `t7pzafpu.link.spoks.com`,
   `feed` → `0mjnbqxx.feed.spoks.com`, `kps`/`kps2._domainkey` → `u115622048.wl049.sendgrid.net`,
   `_dmarc` `v=DMARC1; p=none;`), mätt med Cloudflare DoH; NS/MX/A orörda (Loopia, Shopify).
-  Rot-SPF:en saknar fortfarande `include:sendgrid.net` (SendGrids egen `em…`-CNAME bär SPF för
-  avsändarvägen, och Spoks godkände domänen ändå). Webbsäkra reservtypsnitt står kvar på
+  Rot-SPF:en saknade `include:sendgrid.net` vid uppladdningen (Spoks godkände domänen ändå, SendGrids
+  egen `em…`-CNAME bär SPF för avsändarvägen); mätt 18:50 samma dag bär den
+  `v=spf1 include:spf.loopia.se include:sendgrid.net -all`. carashell.se saknar DMARC, men mejlen
+  går från carashell.com, som har den. Webbsäkra reservtypsnitt står kvar på
   Helvetica/Arial Black (ändras inte via MCP:n, syns bara om Google Fonts inte laddar).
 - **13 segment** (`SEG_samtycke_sv/nb/en` 15/4/57 …, `SEG_oengagerade_180d` inte valbart i kampanjer).
+  Sedan danskan 2026-09-27: **17** (sv/nb/en/da 13/4/61/3).
 - **24 flöden, 45 mejl** (8 per språk), alla `isActive: false`, alla sändsteg `isEnabled: false`.
-- **39 kampanjutkast** (13 per språk), status draft, ingen publik, inget datum, `isOptOutEnabled`.
+  Sedan danskan: **32 flöden, 60 mejl**.
+- **42 kampanjutkast** (14 per språk: 39 vid uppladdningen + K09B efter Black Week-beslutet),
+  status draft, ingen publik, inget datum, `isOptOutEnabled`. Sedan danskan: **56**.
 - **Kontroll:** tre oberoende granskare (en per språk) läste tillbaka varje flöde och varje mejl
   mot `plan.json` och `payload/`: 8/8 + 13/13 per språk, inga dubbletter. En rättning: F01 SV E1
   skapades före länkdomänen och hade spårningslänken `r.spoksmail.com` — omsparad, nu
@@ -157,11 +194,52 @@ Shopify `yitrbk-m3`, plan **Free = 5 000 mejl/mån**). Facit med varje id:
   (namn/titlar lästes först, halvfärdiga flöden byggdes klart) och inget blev dubbelt, men
   räkna alltid efter en omstart. Spoks svarade "Rate limit exceeded" ett par gånger med två
   agenter samtidigt; läs tillbaka och försök en gång till räckte.
+- **Black Week = B** (Axels svar samma eftermiddag: Bäverbutikens trappa). I CaraShells Shopify
+  ligger tre automatiska rabatter, **"Black Week 10 %" / "20 %" / "30 %"** vid minst 1/2/3 varor,
+  alla produkter, kombineras bara med fraktrabatter, schemalagda **2026-11-22T23:00Z →
+  2026-12-01T08:00Z**. Titlarna saknar svenska ord för att kassan visar dem på alla språk. Slutet
+  är sessionens beslut: tisdag 1/12 09:00 svensk tid = midnatt natten mot tisdag i Kalifornien.
+  Engelska mejl lovar "through Monday, November 30", och med Bäverbutikens slut (00:00 svensk tid)
+  hade rabatten försvunnit måndag 18:00 i New York — 54 av 57 engelska prenumeranter bor i USA.
+  Skapade med `node klaviyo/black-week-trappa.mjs --butik carashell --ja` och lästa tillbaka på
+  id (brandfilen `black_week.shopify`, `spoks-id.json → black_week`). Paketkoderna (15–25 %)
+  kombineras inte med trappan; Shopify ger kunden den bästa, och trappan är alltid minst lika bra.
+  I Spoks: **K09 omskriven på tre språk** (samma postId, nu om trappan) och **K09B Black Friday
+  fredag 27/11 ny** på tre språk. `konvertera.mjs` släpper igenom 10/20/30 % bara i mejl med
+  `rabatt: "black_week"` (testat), och `kolla-mejl.mjs` kör kontrollen på enstaka innehållsfiler.
+  Efter uppdateringen räknat: 42 utkast, titlar och id stämmer mot `plan.json`, inga dubbletter.
 
-**Inget är påslaget.** Att slå på ett flöde = sändstegen på ett i taget i flödesredigeraren,
-sedan flödet (samma som Matstrumpor). F14 (recension) får inte slås på förrän Trustpilot-profilen
-för carashell.se finns (evaluate-sidan svarade 404 2026-09-26 11:40). K09 (Black Week) väntar på
-Axels A/B/C.
+⛔ **PÅSLAGET av Axel 2026-09-27 08:48–08:53 CEST: 29 av 32 flöden** (mätt med `get_flows`; alla
+sändsteg på). Att slå på ett flöde = sändstegen på ett i taget i flödesredigeraren,
+sedan flödet (samma som Matstrumpor). F14 (recension) väntade på Trustpilot: evaluate-sidan för
+carashell.se svarade 404 2026-09-26 11:40 och **200 kl 18:50** ("Rate Carashell", Axel skapade
+profilen), och alla 15 stjärnlänkar i F14 (3 språk × 5) svarade 200.
+**Tre flöden var kvar 09:05 CEST** (Axels ord: "misclicks, jag minns inte vad jag tryckte på"):
+`FLOW_prenumerant_valkommen_SV_v1` hade fått triggern **ändrad till `order_created`** (välkomstmejlen
+hade gått till varje svensk köpare med samtycke i stället för till nya prenumeranter) — återställd
+till `contact_created` med `update_flow` (filter och steg orörda, tillbakaläst), Axel slår på
+triggern; `FLOW_levererat_termoskyddet_DA_v1` orörd men av (sändsteg + trigger = Axels klick);
+`FLOW_visning_webbhistorik_SV_v1` var redan på och rätt (skärmdumpen var tagen före sista klicket).
+25 av 32 flöden lästes tillbaka i detalj mot `plan.json` efter påslaget (event, land, väntetider,
+steg): alla rätt. ⚠️ **Spoks rate-limitar `get_flow`** — 8 parallella anrop efter ~25 i följd gav
+"Rate limit exceeded. Try again in 11 seconds"; de 7 danska lästes därför i en senare check-in,
+EN I TAGET. **Kampanjerna:** de fyra första schemalagda av Axel samma morgon (`waiting_to_be_published`,
+går inte att ändra via MCP:n — bara utkast): sv/nb/da tisdag 29/9 18:00 rätt, **engelskan hamnade på
+söndag 27/9 18:00** (2026-09-27T16:00Z) i stället för tisdag 16:00 — Axel flyttar den själv; en
+check-in 15:30 CEST läser om. Publiken (segmentet) syns inte i `get_campaign`, så den går inte att
+kontrollera från en session.
+
+**Samtycket per land, mätt i Shopify 2026-09-27** (487 kunder; `emailMarketingConsent` +
+`consentUpdatedAt` mot orderns `createdAt`): **USA 59 av 77 (77 %)**, GB 1 av 5, **DK 3 av 28
+(11 %), SE 12 av 198 (6 %), AU 2 av 32, NO 4 av 99 (4 %)**, FI 0 av 8, NZ 0 av 4, CA 0 av 3, 33
+utan land 0. **Varje ja utanför USA gavs i kassan** (samma sekund som ordern, `SINGLE_OPT_IN`) —
+rutan finns alltså i alla marknader; skillnaden är att den är **förikryssad bara i USA** (tillåtet
+där), medan EU/EES, UK, AU, NZ och CA kräver att kunden själv kryssar, och då gör 4–11 % det.
+Axels fråga "har jag glömt att samla in samtycke?" ⇒ nej. Kampanjerna når därför 81 av 488
+kontakter; köparflödena (efter köp, levererat, recension, vinback) går till alla köpare som inte
+tackat nej (egna kunder, MFL 19 § 2 st, samma beslut som 2026-09-25). Enda lagliga spaken för
+fler ja är rutans egen text i kassan (Shopifys standardtext är "Skicka nyheter och erbjudanden
+till mig via e-post") — inget popup (Axels regel).
 
 Axels order 2026-09-26 (`PROMPT-carashell.md`): hela mejlsystemet för CaraShell i
 Spoks, alla marknader och språk, allt som utkast. CaraShell är en egen verksamhet:
@@ -218,21 +296,23 @@ DKK 819 för takskyddet 5,5–6,5 m) — de står ALDRIG i copyn.
 `{country is}` gav 7 766 kontakter och sampeln `country: "Sweden"` — landet lagras
 som engelskt namn. Därför **ett flöde per språk** (landsfiltret i triggerns
 kontaktfilter, återprövas före varje utskick) och ett segment per språk för
-kampanjerna. sv = Sweden + Denmark + kontakter utan land; nb = Norway; en = United
+kampanjerna. sv = Sweden + kontakter utan land; nb = Norway; da = Denmark (egen grupp
+sedan 2026-09-27, var till dess i sv); en = United
 States, United Kingdom, Canada, Australia, New Zealand, Finland (7 ordrar bär inte
 ett finskt system). Ordrarnas `customerLocale` bekräftar att land ⇒ språk håller
-(SE 173/173 sv, NO 67/82 nb, US 59/59 en). ⚠️ Landsnamnen för de andra länderna är
+(SE 173/173 sv, NO 67/82 nb, US 59/59 en, DK 25/26 da). ⚠️ Landsnamnen för de andra länderna är
 Shopifys engelska namn och ska kontrolleras med `preview_segment` i CaraShells
 workspace innan något slås på (uppladdningsprompten steg 1).
 
 **Byggt i repot:** `klaviyo/brands/carashell.json` (per språk: länkbas, spårningssida,
 villkorstext, förnamnsreserv, knappar, Trustpilot; landsgrupperna; Spoks-inställningarna),
 `klaviyo/innehall/carashell/` (skelett.mjs, faktablad per språk ur Shopifys egna
-översättningar, 24 flödesfiler + 39 kampanjfiler med copy, BRIEFER.md),
+översättningar, 24 flödesfiler + 42 kampanjfiler med copy, BRIEFER.md),
 `klaviyo/spoks/carashell/` (PLAN.md, produkter.json, plan.json, payload/<sprak>/).
 Planen i korthet står i `carashell/PLAN.md`: 8 flöden per språk (välkomst, övergiven
 kassa med de tre frågorna, webbhistorik, efter köp, vinna tillbaka, levererat ×2 med
-monteringen, recension) och 13 kampanjer per språk (tisdagar 29/9–29/12).
+monteringen, recension) och 14 kampanjer per språk (tisdagar 29/9–29/12 plus Black Friday
+fredag 27/11).
 **Copyn är ifylld och konverteraren grön 2026-09-26:** 84 payloadfiler (28 per språk:
 15 flödesmejl + 13 kampanjer), 0 copyfel, `node --test klaviyo/test/konvertera.test.mjs`
 9 av 9. De 8 varningarna "produkt-id/bilder saknas i Spoks" är väntade — id:n och
@@ -249,8 +329,8 @@ igenom (negationen), medan ett påstående om elastiska band fortfarande stoppar
 - `order_delivered` finns som trigger (blueprintlistan använder den inte). CaraShells
   spårningsrutin skriver leveransskanningen i Shopify varje timme, så F06 (montering)
   och F14 (recension) triggas på leverans — **omätt i CaraShells workspace**, se PLAN.md.
-- Trustpilot har ingen profil för carashell.se (`evaluate`-sidan 404, Bäverbutikens 308).
-  F14 slås inte på förrän profilen finns.
+- Trustpilot hade ingen profil för carashell.se vid bygget (`evaluate`-sidan 404, Bäverbutikens
+  308). Profilen finns sedan 2026-09-26 eftermiddag (200, se ovan).
 - Kassaflödet kräver subscribed (MFL 19 §) och når därför bara 7 % av svenska
   kassor. Det är lagen, inte ett fel.
 
@@ -270,9 +350,9 @@ steg 0) kan gå vidare. Det extra kontot rörs inte av någon session.
 **Axels klick efter uppladdningen** (allt i https://app.spoks.com/carashell):
 1. ✅ Inbjudan av `kundsupport@baverbutiken.se` som Admin (gjord 2026-09-26 förmiddag).
 2. ✅ Domänen carashell.com kopplad och verifierad (DNS-posterna ovan fanns 11:35).
-3. Black Week: A (ingen rabatt, som byggt), B (Bäverbutikens trappa 10/20/30 % i Shopify, K09
-   skrivs om + ett fredagsmejl) eller C (egen siffra). Rabatten gäller hela butiken, inte bara mejlen.
-4. Trustpilot-profil för carashell.se, sedan F14.
+3. ✅ Black Week: B (svar 2026-09-26). Trappan ligger i Shopify, K09 är omskriven och K09B tillagd.
+   Rabatten gäller hela butiken, även för den som kommer från en annons.
+4. ✅ Trustpilot-profil för carashell.se (sidan svarade 200 kl 18:50, stjärnlänkarna fungerar).
 5. Slå på flödena ett språk i taget (sändstegen först, sedan flödet); stäng först Shopifys egna
    automatiseringar för övergiven kassa (Marknadsföring → Automatiseringar), annars får kunden två mejl.
 6. Kampanjerna: publik `SEG_samtycke_<sprak>` och tiden i `spoks-id.json → kampanjer.*.planerad`,

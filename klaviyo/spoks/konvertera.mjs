@@ -349,16 +349,17 @@ export function skapaKonverterare({ brand, produktIds = {}, recCache = {}, erbju
       [/\d+\s?%/, 'procent'],
       [/\b\d[\d\s.,]*\s?(kr|sek|nok|dkk|usd|eur|gbp|aud|cad|nzd)\b/i, 'belopp'],
       [/[$£€]\s?\d/, 'belopp'],
-      [/förvaringspåse|dragsko|oppbevaringspose|storage bag|drawstring/i, 'påstående som inte får göras (påse/dragsko)'],
+      [/förvaringspåse|dragsko|oppbevaringspose|opbevaringspose|storage bag|drawstring/i, 'påstående som inte får göras (påse/dragsko)'],
       // Negationen är butikens egen text ("ikke strikk, strekker seg ikke ut" i nb-faktabladet) och släpps igenom.
-      [/(?<!\b(?:ikke|inte|not)\s)(?:elastisk|gummiband|\bstrikk\b|elastic strap|rubber strap)/i, 'elastiska band (banden är vävda)'],
-      [/andas|ventilerad|puster|breathable|ventilated/i, 'andas/ventilerad (obesvarat av leverantören)'],
-      [/tusentals|tusenvis|thousands of/i, 'tusentals'],
-      [/bara idag|sista chansen|bare i dag|siste sjanse|today only|last chance/i, 'falsk brådska'],
-      [/30 dagars|30 dager|30-day|öppet köp|åpent kjøp|money-back|warranty/i, 'fel villkor'],
+      [/(?<!\b(?:ikke|inte|not)\s)(?:elastisk|elastik|gummiband|\bstrikk\b|elastic strap|rubber strap)/i, 'elastiska band (banden är vävda)'],
+      [/andas|ventilerad|puster|ånder|ventileret|breathable|ventilated/i, 'andas/ventilerad (obesvarat av leverantören)'],
+      [/tusentals|tusenvis|tusindvis|thousands of/i, 'tusentals'],
+      [/bara idag|sista chansen|bare i dag|siste sjanse|kun i dag|sidste chance|today only|last chance/i, 'falsk brådska'],
+      [/30 dagars|30 dager|30 dages|30-day|öppet köp|åpent kjøp|åbent køb|money-back|warranty/i, 'fel villkor'],
     ],
     sv: [[/\bgaranti\b/i, '"garanti" (skriv 14 dagars ångerrätt)']],
     nb: [[/\bgaranti\b/i, '"garanti" (skriv 14 dagers angrerett)']],
+    da: [[/\bgaranti\b/i, '"garanti" (skriv 14 dages fortrydelsesret)']],
     en: [[/\b(winter|summer|spring|autumn|fall|snow|snowy)\b/i, 'årstid (Australien och Nya Zeeland får samma mejl)']],
   };
   function texterI(m) {
@@ -377,7 +378,20 @@ export function skapaKonverterare({ brand, produktIds = {}, recCache = {}, erbju
     const s = sprakFor(m);
     const fel = [];
     const regler = [...FORBJUDET.alla, ...(FORBJUDET[s] ?? [])];
-    for (const [var_, t] of texterI(m)) for (const [re, vad] of regler) if (re.test(t)) fel.push(`${m.id} ${var_}: ${vad} — "${t.slice(0, 80)}"`);
+    // Ett mejl med rabatt: "black_week" får nämna brandets trappa (brand.black_week.procent,
+    // CaraShell 10/20/30, Axels beslut B 2026-09-26) — bara de talen, och bara i det mejlet.
+    const tillatna = m.rabatt && Array.isArray(brand[m.rabatt]?.procent) ? new Set(brand[m.rabatt].procent.map(Number)) : null;
+    if (m.rabatt && !tillatna) fel.push(`${m.id}: rabatt "${m.rabatt}" saknas i brandfilen (procent-listan)`);
+    for (const [var_, t] of texterI(m)) {
+      for (const [re, vad] of regler) {
+        if (vad === 'procent' && tillatna) {
+          const utanfor = [...t.matchAll(/(\d+)\s?(?:%|procent|prosent|percent)/gi)].map((x) => Number(x[1])).filter((n) => !tillatna.has(n));
+          if (utanfor.length) fel.push(`${m.id} ${var_}: procent utanför trappan (${[...tillatna].join('/')}): ${utanfor.join(', ')} — "${t.slice(0, 80)}"`);
+          continue;
+        }
+        if (re.test(t)) fel.push(`${m.id} ${var_}: ${vad} — "${t.slice(0, 80)}"`);
+      }
+    }
     if (!Array.isArray(m.tretest) || !m.tretest.length) fel.push(`${m.id}: tretest saknas`);
     for (const r of m.tretest ?? []) {
       const ok = r.visualisera && r.falsifiera && (r.ingen_annan || /recension/.test(m.id));

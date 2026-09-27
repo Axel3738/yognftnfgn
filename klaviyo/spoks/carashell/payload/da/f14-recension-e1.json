@@ -1,0 +1,42 @@
+{
+  "id": "f14-recension-e1",
+  "sprak": "da",
+  "emailTitle": "Hvad synes du?",
+  "emailDescription": "Fem stjerner, hvis det er, hvad du synes, eller noget andet.",
+  "amnesrader": [
+    "Hvad synes du?",
+    "Et klik er nok",
+    "Hvordan gik det?"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Hvad synes du?"
+    },
+    {
+      "type": "regular",
+      "text": "Pakken skulle være kommet frem nu. Vi vil gerne høre, hvordan det gik.",
+      "alignment": "left"
+    },
+    {
+      "type": "h2",
+      "text": "Giv en vurdering",
+      "alignment": "center"
+    },
+    {
+      "type": "h1",
+      "text": "[★](https://dk.trustpilot.com/evaluate/carashell.se?stars=1) [★](https://dk.trustpilot.com/evaluate/carashell.se?stars=2) [★](https://dk.trustpilot.com/evaluate/carashell.se?stars=3) [★](https://dk.trustpilot.com/evaluate/carashell.se?stars=4) [★](https://dk.trustpilot.com/evaluate/carashell.se?stars=5)",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Alle vurderinger hjælper lige meget, uanset hvor mange stjerner.",
+      "alignment": "center"
+    },
+    {
+      "type": "quote",
+      "text": "Blev noget galt, så svar på denne mail først, så løser vi det, inden du anmelder.\nAxel, grundlægger"
+    }
+  ],
+  "varningar": []
+}

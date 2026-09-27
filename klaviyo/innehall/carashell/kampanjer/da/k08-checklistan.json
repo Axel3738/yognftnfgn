@@ -1,0 +1,89 @@
+{
+  "id": "k08-checklistan",
+  "namn": "MAIL_20261117_CaraShellMix_DA_S_1_samtycke_solution_innan-vagnen-stalls-undan_v1",
+  "sprak": "da",
+  "memo": "Säsongslistan (Bäverbutikens K02 gav idén om en checklista per produkt, egen copy): taket, rutan, smårutorna. sv/nb: innan vagnen ställs undan för vintern. en: before it sits for a while / between trips.",
+  "brief": "Hero utan produktbild-krav (använd taköverdraget). Punkter: tre saker, en per produkt, med faktabladets ord. Produktrad med alla tre. Fakta. ",
+  "taggar": {
+    "typ": "S",
+    "kalla": "egen-data",
+    "kalla_ref": "factory/produkter/*.yaml",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "sasong",
+    "confidence": "low",
+    "prefix": "CaraShellMix",
+    "kod": "S",
+    "avatar": "ägaren som ska ställa undan vagnen",
+    "begar": "skydda-det-jag-ager"
+  },
+  "amnesrader": [
+    {
+      "text": "Tre ting, før vognen stilles væk",
+      "begar": "en tydelig tjekliste at følge"
+    },
+    {
+      "text": "Taget, ruden, de små ruder",
+      "begar": "se helheden i tre dele"
+    },
+    {
+      "text": "Et gennemsyn før vinteren",
+      "begar": "gøre det rigtigt inden sæsonen"
+    }
+  ],
+  "forhandstext": "Taget, ruden og de små ruder, i den rækkefølge.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Før vognen stilles væk for vinteren",
+      "text": "Hej {{fornamn}},\n\nTre flader er værd at tænke på, før sæsonen er slut: taget, forruden og de små ruder.",
+      "bild": "produkt:takskyddet",
+      "knapp": {
+        "text": "Se hele sortimentet",
+        "lank": "kollektion:sortimentet"
+      }
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "Tre ting at tjekke",
+      "punkter": [
+        "Taget: regnvand der bliver stående ved taglugerne",
+        "Ruden: dug mellem gardin og glas",
+        "De små ruder: vinduestermomåtte 2-pak, 70 × 80 cm"
+      ]
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": null,
+      "handles": [
+        "takskyddet",
+        "termoskyddet",
+        "fonstertermomatta-2-pack"
+      ]
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    { "rad": "Tre ting, før vognen stilles væk", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Taget, ruden, de små ruder", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Et gennemsyn før vinteren", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Taget, ruden og de små ruder, i den rækkefølge.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Før vognen stilles væk for vinteren", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Hej {{fornamn}}, Tre flader er værd at tænke på, før sæsonen er slut: taget, forruden og de små ruder.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se hele sortimentet", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Tre ting at tjekke", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Taget: regnvand der bliver stående ved taglugerne", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Ruden: dug mellem gardin og glas", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "De små ruder: vinduestermomåtte 2-pak, 70 × 80 cm", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "version": 1,
+  "planerad": "2026-11-17T18:00:00+01:00",
+  "segment": [
+    "SEG_samtycke_da"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

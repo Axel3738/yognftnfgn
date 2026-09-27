@@ -13,7 +13,7 @@ Uppladdningen görs av en session med Spoks-MCP:n enligt `klaviyo/spoks/PROMPT-c
 | Norge | 82 | 94 | 4 | nb-NO 67, sv-NO 14 | **nb** |
 | USA | 59 | 69 | 54 | en-US | **en** |
 | Australien | 29 | 31 | 2 | en-AU | en |
-| Danmark | 23 | 24 | 3 | da-DK 22 | sv (som fraktmejlen) |
+| Danmark | 23 | 24 | 3 | da-DK 22 | **da** (sedan 2026-09-27; var sv) |
 | Finland | 7 | 8 | 0 | fi-FI | en |
 | Storbritannien | 6 | 5 | 1 | en-GB | en |
 | Nya Zeeland | 3 | 4 | 0 | en-NZ | en |
@@ -24,9 +24,9 @@ Uppladdningen görs av en session med Spoks-MCP:n enligt `klaviyo/spoks/PROMPT-c
 - **0 återköp**: 2 kunder med två ordrar, båda dubbletter inom en timme. Inget produktpar ⇒ **inget korsförsäljningsflöde byggs.**
 - **73 övergivna kassor** mot 384 ordrar ⇒ kassaflödet får mest omsorg (tre mejl).
 - Order → skickad median 0,5 dygn. Order → levererad: bara 4 paket med `deliveredAt` (7,0 till 9,9 dygn, Norge) — butiken är 15 dagar gammal, p90 kan inte mätas än.
-- Spoks vet bara **landet** på en kontakt (`contact.country`, engelskt namn, mätt: "Sweden"). Inget språkfält. Därför **ett flöde per språk** med landsfiltret i triggern, och ett segment per språk för kampanjerna. Danmark → svenska, Finland → engelska (7 ordrar bär inte ett finskt system).
+- Spoks vet bara **landet** på en kontakt (`contact.country`, engelskt namn, mätt: "Sweden"). Inget språkfält. Därför **ett flöde per språk** med landsfiltret i triggern, och ett segment per språk för kampanjerna. Finland → engelska (7 ordrar bär inte ett finskt system). **Danmark fick egen dansk grupp 2026-09-27** (Axels order: flöden för alla aktiva marknader, Sverige, Norge, Danmark, USA och Australien, och copyn anpassad per marknad; omräknat samma dag: 25 av 26 danska ordrar da-DK).
 
-## Flödena (8 per språk × 3 språk = 24 flöden, 45 mejl)
+## Flödena (8 per språk × 4 språk = 32 flöden, 60 mejl; danskan tillagd 2026-09-27)
 
 | Flöde | Trigger i Spoks | Filter | Väntan | Mejl | Skäl |
 |---|---|---|---|---|---|
@@ -41,9 +41,11 @@ Uppladdningen görs av en session med Spoks-MCP:n enligt `klaviyo/spoks/PROMPT-c
 
 Inte byggt: korsförsäljning (inget par i datan), sunset (Spoks har ingen segmenttrigger), rabattflöden (Axels beslut).
 
+**Black Week (Axels beslut B 2026-09-26):** samma trappa som Bäverbutiken, tre automatiska rabatter i CaraShells Shopify (Black Week 10 % / 20 % / 30 % vid 1 / 2 / 3+ varor, alla produkter, måndag 23/11 till och med måndag 30/11, ingen kod, kombineras bara med fri frakt), skapade med `node klaviyo/black-week-trappa.mjs --butik carashell --ja`. Titlarna saknar svenska ord eftersom kassan visar dem på alla språk. Paketkoderna (2 st / 3 st) slås av trappan: Shopify ger den bästa rabatten, och trappan är alltid minst lika bra. Rabatten gäller alla som handlar den veckan, även annonstrafiken.
+
 ⚠️ Två saker som mäts första veckan efter påslag: att `order_delivered` faktiskt fyrar (spårningsrutinen skriver leveransskanningen i Shopify varje timme; får F06/F14 inga inskrivningar byts triggern till `order_created` + 12 dagar), och att kassaflödets kontakter fått rätt språk (en kund som lämnar kassan innan adressen är ifylld saknar land och hamnar i svenskan).
 
-## Kampanjerna (13 per språk × 3 = 39, tisdagar 29/9–29/12, julveckan tom)
+## Kampanjerna (14 per språk × 3 = 42, tisdagar 29/9–29/12 + Black Friday, julveckan tom)
 
 sv/nb 18:00, en 16:00 svensk tid (10:00 New York). Alla till `SEG_samtycke_<sprak>`.
 
@@ -57,7 +59,8 @@ sv/nb 18:00, en 16:00 svensk tid (10:00 New York). Alla till `SEG_samtycke_<spra
 | 45 | tis 3/11 | K06 Sitter det kvar i blåst (OB) | K06 The gift for the one with the caravan (GT) |
 | 46 | tis 10/11 | K07 Fredag är sista dagen för adventskalendern | samma |
 | 47 | tis 17/11 | K08 Checklistan innan vagnen ställs undan (S) | Before it sits for a while |
-| 48 | tis 24/11 | K09 Black Week UTAN rabatt: kundernas ord (SP) — **Axels A/B/C** | tryggheten: 90-day guarantee (CS) |
+| 48 | tis 24/11 | K09 Black Week: trappan 10/20/30 % (S) — **Axels beslut B 2026-09-26** | samma |
+| 48 | fre 27/11 | K09b Black Friday: trappan gäller till och med måndag 30/11 (S) | samma |
 | 49 | tis 1/12 | K10 Beställ senast mån 7/12 för jul | samma |
 | 50 | tis 8/12 | K11 Rutan på resorna: termoskyddet + mattan (PD) | The trips ahead |
 | 51 | tis 15/12 | K12 Efter blåsten: kolla banden (service, inga produktkort) | After strong wind |
@@ -75,7 +78,7 @@ Alla kampanjsegment börjar med `emailMarketingConsent in [subscribed]`.
 
 ## Copyreglerna som sitter i koden (`konvertera.mjs kontrollera`)
 
-Tankstreck, leveranstid, belopp, procent, butikens namn i brödtexten, "garanti" (sv/nb),
+Tankstreck, leveranstid, belopp, procent (utom trappans 10/20/30 % i de två mejl som bär `rabatt: "black_week"`), butikens namn i brödtexten, "garanti" (sv/nb),
 årstider (en), förvaringspåse/dragsko/elastiska band/andas/tusentals/falsk brådska,
 ofylld copy och ett tre-frågorstest med ❌ stoppar konverteringen. Priset står aldrig i
 copyn: sv får Spoks produktkort (SEK), nb/en får bild + rubrik på språket + knapp,

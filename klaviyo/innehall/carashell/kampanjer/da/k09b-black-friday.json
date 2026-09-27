@@ -1,0 +1,109 @@
+{
+  "id": "k09b-black-friday",
+  "namn": "MAIL_20261127_CaraShellMix_DA_S_3_samtycke_promo_black-friday-till-mandag_v1",
+  "sprak": "da",
+  "memo": "Black Friday-mejlet som K09:s memo lovade om Axel valde en rabatt (beslut B 2026-09-26). Påminner om trappan på fredagen, med det riktiga slutdatumet (måndag 30 november) som enda brådska. Samma tre skydd, en ny vinkel: rutan och taket på en gång.",
+  "brief": "Kort mejl. Hero: Black Friday och att trappan gäller till och med måndag 30 november (det är den enda brådskan, den är sann). Punkter: samma tre rader som K09 (1 vara 10 %, 2 varor 20 %, 3 varor eller fler 30 %). Produktrad med de tre skydden och en rubrik om att taket och rutan tillsammans ger 20 %. Fakta.  Förbjudet: sista chansen, bara idag, belopp, leveranstid, butikens namn, andra procent än 10/20/30.",
+  "taggar": {
+    "typ": "S",
+    "kalla": "egen-data",
+    "kalla_ref": "Axels beslut B 2026-09-26; brands/carashell.json#black_week; klaviyo/innehall/baverbutiken/kampanjer/k12-black-friday.json",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "pris",
+    "confidence": "medium",
+    "prefix": "CaraShellMix",
+    "kod": "S",
+    "avatar": "den som öppnade K09 men inte beställt",
+    "begar": "spara-pengar"
+  },
+  "rabatt": "black_week",
+  "amnesrader": [
+    {
+      "text": "Black Friday, trappen gælder til og med mandag",
+      "begar": "vide, hvor længe Black Friday-rabatten faktisk gælder"
+    },
+    {
+      "text": "10 %, 20 % eller 30 % er her stadig til mandag",
+      "begar": "se hvilke rabatniveauer der stadig findes, før trappen slutter"
+    },
+    {
+      "text": "Taget og ruden i samme bestilling giver stadig 20 %",
+      "begar": "blive mindet om at tag og rude sammen stadig giver næste rabatniveau"
+    }
+  ],
+  "forhandstext": "Flere varer i samme bestilling giver stadig højere rabat.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Black Friday, til og med mandag den 30. november",
+      "text": "Hej {{fornamn}},\n\nSamme trappe gælder på Black Friday: flere varer i samme bestilling giver højere rabat, helt automatisk i kassen. Sidste dag for trappen er mandag den 30. november.",
+      "bild": "produkt:termoskyddet",
+      "knapp": {
+        "text": "Handl nu",
+        "lank": "kollektion:sortimentet"
+      }
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "Trappen gælder stadig",
+      "punkter": [
+        "1 vare giver 10 % rabat",
+        "2 varer giver 20 % rabat",
+        "3 varer eller flere giver 30 % rabat"
+      ]
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Taget og ruden sammen: 20 %",
+      "handles": [
+        "takskyddet",
+        "termoskyddet",
+        "fonstertermomatta-2-pack"
+      ]
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    {
+      "rad": "Black Friday, trappen gælder til og med mandag",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true,
+      "varfor": "Dagen og slutdatoen kan slås op i kalenderen, og linjen handler om netop denne butiks igangværende rabattrappe, ikke et generisk Black Friday-udsalg."
+    },
+    {
+      "rad": "10 %, 20 % eller 30 % er her stadig til mandag",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true,
+      "varfor": "Tallene er konkrete at se for sig og sande eller falske at kontrollere i kassen, og netop dette trin hører kun til denne rabattrappe."
+    },
+    {
+      "rad": "Taget og ruden i samme bestilling giver stadig 20 %",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true,
+      "varfor": "Navngiver to konkrete produkter og en efterprøvelig procent, som ingen anden butik kan sige om netop disse to betræk."
+    },
+    { "rad": "Flere varer i samme bestilling giver stadig højere rabat.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Black Friday, til og med mandag den 30. november", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Hej {{fornamn}}, Samme trappe gælder på Black Friday: flere varer i samme bestilling giver højere rabat, helt automatisk i kassen. Sidste dag for trappen er mandag den 30. november.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Handl nu", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Trappen gælder stadig", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "1 vare giver 10 % rabat", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "2 varer giver 20 % rabat", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "3 varer eller flere giver 30 % rabat", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Taget og ruden sammen: 20 %", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "version": 1,
+  "planerad": "2026-11-27T18:00:00+01:00",
+  "segment": [
+    "SEG_samtycke_da"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

@@ -1,0 +1,75 @@
+{
+  "id": "k12-efter-blasten",
+  "namn": "MAIL_20261215_CaraShellRoof_DA_M_1_samtycke_product_kolla-banden-efter-blasten_v1",
+  "sprak": "da",
+  "memo": "Servicemejl utan produktkort: efter en storm, gå ut och kolla att krokarna sitter under kanten och att banden är åtdragna. Skälet: ett överdrag som sitter rätt håller (faktabladet: håller i blåst), och kunden ska höra av sig om något gått sönder. Ingen försäljning.",
+  "brief": "Rubrik + en mening. Punkter: tre saker att kolla (krokarna under kanten, banden åtdragna, de två extra banden). Grundare-rad: gick något sönder, svara på mejlet. Inga produktkort, ingen knapp. ",
+  "taggar": {
+    "typ": "M",
+    "kalla": "voc",
+    "kalla_ref": "kommentarer/rapporter/2026-09-26.md (sönderblåst efter stormen)",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "ingen",
+    "confidence": "medium",
+    "prefix": "CaraShellRoof",
+    "kod": "M",
+    "avatar": "kunden som har överdraget på vagnen",
+    "begar": "kontroll"
+  },
+  "amnesrader": [
+    {
+      "text": "Tjek betrækket efter blæsten",
+      "begar": "en omtænksom påmindelse"
+    },
+    {
+      "text": "Tre ting, der tager to minutter",
+      "begar": "en hurtig, enkel handling"
+    },
+    {
+      "text": "Har alt siddet, som det skal?",
+      "begar": "et kontrolspørgsmål, der vækker nysgerrighed"
+    }
+  ],
+  "forhandstext": "Krogene, båndene, og de to ekstra.",
+  "block": [
+    {
+      "typ": "text",
+      "rubrik": "Efter blæsten",
+      "text": "Har det blæst meget, hvor vognen står, på det seneste, er det to minutter værd at gå ud og tjekke betrækket."
+    },
+    {
+      "typ": "punkter",
+      "rubrik": null,
+      "punkter": [
+        "Krogene sidder stadig under kanten",
+        "Båndene er stramme, ikke slappe",
+        "Tjek også de to ekstra bånd på 10,5 meter, der fulgte med"
+      ]
+    },
+    {
+      "typ": "grundare",
+      "text": "Gik noget alligevel i stykker? Svar på denne mail, så kigger jeg selv på det."
+    }
+  ],
+  "tretest": [
+    { "rad": "Tjek betrækket efter blæsten", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Tre ting, der tager to minutter", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Har alt siddet, som det skal?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Krogene, båndene, og de to ekstra.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Efter blæsten", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Har det blæst meget, hvor vognen står, på det seneste, er det to minutter værd at gå ud og tjekke betrækket.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Krogene sidder stadig under kanten", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Båndene er stramme, ikke slappe", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Tjek også de to ekstra bånd på 10,5 meter, der fulgte med", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Gik noget alligevel i stykker? Svar på denne mail, så kigger jeg selv på det.", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "version": 1,
+  "planerad": "2026-12-15T18:00:00+01:00",
+  "segment": [
+    "SEG_samtycke_da"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

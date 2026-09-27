@@ -1,0 +1,38 @@
+{
+  "id": "f04-efter-kop-e1",
+  "sprak": "da",
+  "emailTitle": "Bekræftelse, så pakkenummeret",
+  "emailDescription": "Bekræftelse, pakkenummer, og en side, hvor du ser resten.",
+  "amnesrader": [
+    "Bekræftelse, så pakkenummeret",
+    "Dit pakkenummer starter på CS-",
+    "Se, hvor pakken er, når du vil"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Bekræftelse, så pakkenummeret"
+    },
+    {
+      "type": "regular",
+      "text": "Du har fået en bekræftelse på mail. Når pakken sendes, kommer der en ny mail med pakkenummeret, der starter på CS-.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Med det nummer kan du selv se, hvor pakken befinder sig, uden at skulle spørge os.",
+      "alignment": "left"
+    },
+    {
+      "type": "link",
+      "text": "Følg din pakke",
+      "url": "https://carashell.se/da/pages/spara",
+      "style": "button"
+    },
+    {
+      "type": "quote",
+      "text": "Føles det langsomt, så svar bare på denne mail. Jeg tjekker det.\nAxel, grundlægger"
+    }
+  ],
+  "varningar": []
+}

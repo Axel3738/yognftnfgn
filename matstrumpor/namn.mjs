@@ -63,6 +63,27 @@ export function nastaNummer_flera(kandaNamn, antal) {
   return Array.from({ length: antal }, (_, i) => start + i);
 }
 
+/** Alla kända namn ur ALLA källor i EN lista — loggen (UPPLADDAD), ögonblicks-
+ *  bilden på disk, kontots annonser ur senaste avläsningen och hubbens titlar.
+ *  Dubbletter bort, ordningen stabil. Skälet: 2026-09-24 gav --namn 048 fast
+ *  048–053 nyss skapats i hubben (filen var uppdaterad FÖRE raderna skapades),
+ *  och 2026-09-25 gav den 048 IGEN åt uppladdaren — fem dubbla namn i hubben
+ *  och nio annonser live med rond 2:s nummer. En källa i taget räcker inte;
+ *  numret räknas ur unionen. */
+export function samlaKandaNamn({ logg = [], fil = [], konto = [], hubb = [] } = {}) {
+  const sedda = new Set();
+  const ut = [];
+  for (const namn of [...logg, ...fil, ...konto, ...hubb]) {
+    const n = String(namn ?? '').trim();
+    if (!n) continue;
+    const nyckel = n.toLowerCase();
+    if (sedda.has(nyckel)) continue;
+    sedda.add(nyckel);
+    ut.push(n);
+  }
+  return ut;
+}
+
 /** video | bild | okand — ur formatet i namnet, aldrig ur filändelsen.
  *  (Filändelsen ljuger: en .mp4 kan vara en animerad bildannons, och en rad utan
  *  fil har ingen ändelse alls.) */

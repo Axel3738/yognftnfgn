@@ -714,6 +714,25 @@ test('flera språk på samma sida: lang="en" ger engelsk rubrik, etiketter och f
   assert.equal(nb.get('bbs-rubrik').textContent, 'Pakken er på vei');
 });
 
+test('danska som extra språk (CaraShell /da sedan 2026-09-27): lang="da" ger dansk rubrik och dansk markup', async () => {
+  // De danska Spoks-mejlen länkar till carashell.se/da/pages/spara. Utan da i
+  // sprak_extra visade sidan svenska för danska kunder.
+  const { oversattExtra } = await import('../oversatt.mjs');
+  const { STEG, DELSTEG, STATUSAR } = await import('../uppacka.mjs');
+  const data = fixtur();
+  const extra = ['nb', 'en', 'fi', 'da'];
+  oversattExtra(data, [...data.f], extra, { steg: STEG, delsteg: DELSTEG, statusar: STATUSAR });
+  assert.equal(data.ft.da.length, data.f.length);
+  const kropp = byggSidkropp(data, { ...KONFIG, sprak_extra: extra });
+  const copy = JSON.parse(jsonRuta(kropp, COPYMARKOR));
+  assert.equal(copy.sprak.da.markup['Spåra ditt paket'], 'Spor din pakke');
+  assert.equal(copy.sprak.da.tz, 'Europe/Copenhagen');
+  const da = kor(kropp, '?nummer=YT2626100708674690', { lang: 'da' });
+  assert.equal(da.get('bbs-rubrik').textContent, 'Pakken er på vej');
+  const sv = kor(kropp, '?nummer=YT2626100708674690');
+  assert.equal(sv.get('bbs-rubrik').textContent, 'Paketet är på väg');
+});
+
 
 test('beräknad leverans: bokningen som ankare läggs på det mätta dröjsmålet', () => {
   // Rättelsen 2026-09-22 (Axel: "visar något förtidigt estimerat

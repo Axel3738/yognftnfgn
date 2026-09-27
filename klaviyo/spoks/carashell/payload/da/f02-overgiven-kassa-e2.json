@@ -1,0 +1,81 @@
+{
+  "id": "f02-overgiven-kassa-e2",
+  "sprak": "da",
+  "emailTitle": "Tre spørgsmål, før du betaler",
+  "emailDescription": "Størrelse, fæste og blæst, i tre korte svar.",
+  "amnesrader": [
+    "Tre spørgsmål, før du betaler",
+    "Passer det virkelig min vogn?",
+    "Holder det i blæst? Ja."
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Størrelse. Fæste. Blæst."
+    },
+    {
+      "type": "regular",
+      "text": "Vi ser, hvilke spørgsmål der kommer, inden et køb. Her er svarene.",
+      "alignment": "left"
+    },
+    {
+      "type": "list",
+      "text": "Passer det min vogn? Tagbetrækket findes i ni længder, 5,5 til 13,5 meter. Mål taget fra front til bagkant, og vælg nærmeste længde opad. Passer både campingvogn og autocamper."
+    },
+    {
+      "type": "list",
+      "text": "Hvordan fastgør det? Vævede spændebånd med plastikkroge hægter under karrosseriets kant, på alle fire sider, justerbare."
+    },
+    {
+      "type": "list",
+      "text": "Holder det i blæst? Ja. Båndene er vævede, ikke elastik, så de strækker sig ikke og holder betrækket på plads."
+    },
+    {
+      "type": "list",
+      "text": "Forrudebetræk til autocamperen: 211 cm bred og 171 cm over midten, med flapper der klemmes fast i dørkarmen."
+    },
+    {
+      "type": "abandonedCart",
+      "buttonText": "Tilbage til kassen",
+      "isProductPriceVisible": false
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Fortrydelsesret**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dages fortrydelsesret",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Følg pakken**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Følg den hele vejen](https://carashell.se/da/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

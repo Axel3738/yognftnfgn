@@ -1,0 +1,81 @@
+{
+  "id": "k05-adventskalendern",
+  "namn": "MAIL_20261027_CaraShellCal_DA_GT_2_samtycke_product_retrobussar-24-luckor_v1",
+  "sprak": "da",
+  "memo": "Ny produkt i butiken: adventskalender med retrobussar, 24 luckor (läst i Shopify 2026-09-26). Presenten till husvagnsfolket. Sista beställningsdag för lucka 1: fredag 13 november. Om kalenderns innehåll är BARA titeln känd (24 luckor, retrobussar) — inget mer får påstås.",
+  "brief": "Hero (bild adventskalendern). Text: 24 luckor, retrobussar, datumet fredag 13 november skrivet ut. Produktkort, fakta. Inget om vad som finns bakom luckorna. ",
+  "taggar": {
+    "typ": "N",
+    "kalla": "gissning",
+    "kalla_ref": null,
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "konsekvens",
+    "confidence": "low",
+    "prefix": "CaraShellCal",
+    "kod": "GT",
+    "avatar": "den som ger en kalender till någon med husvagn eller husbil",
+    "begar": "en present som passar just den personen"
+  },
+  "amnesrader": [
+    {
+      "text": "En adventskalender til campingfolket",
+      "begar": "finde en present der passer én bestemt person"
+    },
+    {
+      "text": "24 låger, retrobusser",
+      "begar": "vide hvad det er, kort og præcist"
+    },
+    {
+      "text": "Bestil senest fredag den 13. november",
+      "begar": "nå at bestille i tide"
+    }
+  ],
+  "forhandstext": "24 låger med retrobusser som tema.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "En adventskalender med retrobusser",
+      "text": "Hej {{fornamn}},\n\n24 låger, med retrobusser som tema. En gave til den, der allerede har alt til vognen.",
+      "bild": "produkt:adventskalender-retrobussar",
+      "knapp": {
+        "text": "Se adventskalenderen",
+        "lank": "produkt:adventskalender-retrobussar"
+      }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Bestil senest fredag den 13. november, hvis låge 1 skal kunne åbnes til tiden."
+    },
+    {
+      "typ": "produkt",
+      "handle": "adventskalender-retrobussar",
+      "text": "24 låger. Retrobusser. En gave, der er klar til at give.",
+      "knapp": "Se kalenderen"
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    { "rad": "En adventskalender til campingfolket", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "24 låger, retrobusser", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Bestil senest fredag den 13. november", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "24 låger med retrobusser som tema.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En adventskalender med retrobusser", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Hej {{fornamn}}, 24 låger, med retrobusser som tema. En gave til den, der allerede har alt til vognen.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se adventskalenderen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Bestil senest fredag den 13. november, hvis låge 1 skal kunne åbnes til tiden.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "24 låger. Retrobusser. En gave, der er klar til at give.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se kalenderen", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "version": 1,
+  "planerad": "2026-10-27T18:00:00+01:00",
+  "segment": [
+    "SEG_samtycke_da"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

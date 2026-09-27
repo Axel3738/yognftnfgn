@@ -20,14 +20,14 @@
 //   node matstrumpor/kor.mjs --status           lärdomar, briefer, brieftak, mix
 //   node matstrumpor/kor.mjs --rond-klar        logga ROND_KLAR (sist i ronden)
 
-import { readFileSync, writeFileSync, existsSync, appendFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, appendFileSync, mkdirSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
 import { brytpunkter, rangordna, dom } from './ekonomi.mjs';
 import { etikettera, formateraFrekvens, levandeBreakthrough, dagarMellan, ETIKETT } from './etikett.mjs';
 import { brieftak, mix, skelett } from './lardom.mjs';
-import { nastaNummer_flera, bygg, tolka, adsetNyckel } from './namn.mjs';
-import { hamtaKo, planera } from './kon.mjs';
+import { nastaNummer_flera, bygg, tolka, adsetNyckel, samlaKandaNamn } from './namn.mjs';
+import { hamtaKo, planera, hubbNamn } from './kon.mjs';
 
 const ROT = dirname(fileURLToPath(import.meta.url));
 export const KONFIGFIL = join(ROT, 'konfig.json');
@@ -85,6 +85,16 @@ export function skrivRad(rad, fil = LOGGFIL) {
   mkdirSync(dirname(fil), { recursive: true });
   appendFileSync(fil, `${JSON.stringify({ ...rad, skrivet: new Date().toISOString() })}\n`);
   return rad;
+}
+
+/** Senaste avläsningen på disk (`output/avlasning-YYYY-MM-DD.json`), eller null.
+ *  Mappen är gitignorerad — i en rutinsession finns den bara om --hamta körts. */
+export function senasteAvlasning(mapp = UTMAPP) {
+  if (!existsSync(mapp)) return null;
+  const filer = readdirSync(mapp).filter((f) => /^avlasning-\d{4}-\d{2}-\d{2}\.json$/.test(f)).sort();
+  if (!filer.length) return null;
+  const fil = filer[filer.length - 1];
+  return { fil: join(mapp, fil), datum: fil.slice(10, 20) };
 }
 
 /** Döper om en Notion-rad (titeln). Namnet ÄR routingen, så det ska stå på ETT
@@ -158,8 +168,20 @@ async function main() {
     const i = arg.indexOf('--namn');
     const vinkel = arg[i + 1], format = arg[i + 2];
     const antal = Number(arg[i + 3] ?? 1);
-    const kanda = [...lasLogg().filter((r) => r.kod === 'UPPLADDAD').map((r) => r.annons), ...(existsSync(join(ROT, 'kanda-namn.json')) ? JSON.parse(readFileSync(join(ROT, 'kanda-namn.json'), 'utf8')) : [])];
-    if (!kanda.length) console.error('⚠️  Inga kända namn på disk — kör /matstrumpor som läser kontot + hubben först, annars kan numret krocka.');
+    // Fyra källor, unionen räknas (namn.mjs samlaKandaNamn — skälet står där):
+    // loggen, ögonblicksbilden på disk, kontot ur senaste avläsningen, hubben live.
+    const kallor = { logg: lasLogg().filter((r) => r.kod === 'UPPLADDAD').map((r) => r.annons), fil: [], konto: [], hubb: [] };
+    const filen = join(ROT, 'kanda-namn.json');
+    if (existsSync(filen)) kallor.fil = JSON.parse(readFileSync(filen, 'utf8'));
+    const avlasning = senasteAvlasning();
+    if (avlasning) kallor.konto = (JSON.parse(readFileSync(avlasning.fil, 'utf8')).annonser ?? []).map((a) => a.namn);
+    let hubbFel = null;
+    try { kallor.hubb = await hubbNamn(konfig); } catch (e) { hubbFel = e.message; }
+    const kanda = samlaKandaNamn(kallor);
+    console.error(`Kända namn: ${kanda.length} (logg ${kallor.logg.length} · fil ${kallor.fil.length} · konto ${kallor.konto.length}${avlasning ? ` ur ${avlasning.datum}` : ' — ingen avläsning på disk'} · hubb ${hubbFel ? `LÄSTES INTE: ${hubbFel}` : kallor.hubb.length}) · högsta nummer ${nastaNummer_flera(kanda, 1)[0] - 1}`);
+    if (hubbFel || !avlasning) console.error('⚠️  En källa saknas — numret kan krocka med en rad som bara finns där. Kör --hamta och sätt NOTION_TOKEN innan namnet används.');
+    if (!kanda.length) console.error('⚠️  Inga kända namn alls — kör /matstrumpor som läser kontot + hubben först, annars kan numret krocka.');
+    if (!hubbFel && avlasning) writeFileSync(filen, `${JSON.stringify(kanda, null, 1)}\n`); // ögonblicksbilden växer, krymper aldrig
     for (const n of nastaNummer_flera(kanda, antal)) console.log(bygg({ vinkel, format, nummer: n }, konfig));
     return;
   }

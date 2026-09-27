@@ -1,0 +1,139 @@
+{
+  "id": "k11-rutan-pa-resorna",
+  "sprak": "da",
+  "emailTitle": "Ruden på vinterturene",
+  "emailDescription": "Udenpå ruden, så glasset aldrig når at blive koldt.",
+  "amnesrader": [
+    "Ruden på vinterturene",
+    "Kulden og solen, væk fra ruden",
+    "Mørkt, når du sover, uanset rasteplads"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Kulden, der holdes fra ruden",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hej {{ contact.first_name | default: 'med dig' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Betrækket spændes udvendigt over forruden og begge sideruder. Det mørklægger hele fronten, så ingen på rastepladsen kan se ind.",
+      "alignment": "center"
+    },
+    {
+      "type": "image",
+      "fileId": "295e18f4-1bba-4ee1-a32e-b06f3b5d7f92",
+      "altText": "Forrudebetræk til autocamper 211 × 171 cm",
+      "urlRedirect": "https://carashell.se/da/products/termoskyddet?country=DK"
+    },
+    {
+      "type": "h2",
+      "text": "Forrudebetræk til autocamper 211 × 171 cm",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Se forrudebetrækket",
+      "url": "https://carashell.se/da/products/termoskyddet?country=DK",
+      "style": "button"
+    },
+    {
+      "type": "h2",
+      "text": "Ruden og de små ruder på turen",
+      "alignment": "center"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "image",
+              "fileId": "295e18f4-1bba-4ee1-a32e-b06f3b5d7f92",
+              "altText": "Forrudebetræk til autocamper 211 × 171 cm",
+              "urlRedirect": "https://carashell.se/da/products/termoskyddet?country=DK"
+            },
+            {
+              "type": "h2",
+              "text": "Forrudebetræk til autocamper 211 × 171 cm",
+              "alignment": "center"
+            },
+            {
+              "type": "link",
+              "text": "Se produktet",
+              "url": "https://carashell.se/da/products/termoskyddet?country=DK",
+              "style": "button"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "image",
+              "fileId": "e389d84e-2027-4b88-9e80-c92a3ce603d5",
+              "altText": "Vinduestermomåtte 2-pak 70 × 80 cm",
+              "urlRedirect": "https://carashell.se/da/products/fonstertermomatta-2-pack?country=DK"
+            },
+            {
+              "type": "h2",
+              "text": "Vinduestermomåtte 2-pak 70 × 80 cm",
+              "alignment": "center"
+            },
+            {
+              "type": "link",
+              "text": "Se produktet",
+              "url": "https://carashell.se/da/products/fonstertermomatta-2-pack?country=DK",
+              "style": "button"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Fortrydelsesret**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dages fortrydelsesret",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Følg pakken**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Følg den hele vejen](https://carashell.se/da/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

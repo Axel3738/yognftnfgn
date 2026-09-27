@@ -1,0 +1,142 @@
+{
+  "id": "k09b-black-friday",
+  "sprak": "sv",
+  "emailTitle": "Black Friday: trappan gäller till och med måndag",
+  "emailDescription": "Fler varor i samma beställning ger fortfarande högre rabatt.",
+  "amnesrader": [
+    "Black Friday: trappan gäller till och med måndag",
+    "10 %, 20 % eller 30 % kvar till och med måndag",
+    "Taket och rutan i samma beställning ger fortfarande 20 %"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Black Friday, till och med måndag 30 november",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Samma trappa gäller på Black Friday: fler varor i samma beställning ger högre rabatt, helt automatiskt i kassan. Sista dagen för trappan är måndag 30 november.",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "c38c04bb-fb13-4894-aa85-3b70c71b5891",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Handla nu",
+      "url": "https://carashell.se/collections/sortimentet",
+      "style": "button"
+    },
+    {
+      "type": "h2",
+      "text": "Trappan gäller fortfarande"
+    },
+    {
+      "type": "list",
+      "text": "1 vara ger 10 % rabatt"
+    },
+    {
+      "type": "list",
+      "text": "2 varor ger 20 % rabatt"
+    },
+    {
+      "type": "list",
+      "text": "3 varor eller fler ger 30 % rabatt"
+    },
+    {
+      "type": "h2",
+      "text": "Taket och rutan tillsammans: 20 %",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "40a22a57-d0df-41b6-9202-2b22cc2e0d29",
+          "button": "Se produkten"
+        },
+        {
+          "id": "c38c04bb-fb13-4894-aa85-3b70c71b5891",
+          "button": "Se produkten"
+        },
+        {
+          "id": "c4d0ddd4-298b-4703-9de0-646db8afb6c6",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://carashell.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

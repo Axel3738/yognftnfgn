@@ -1,0 +1,82 @@
+{
+  "id": "k06-vecka-45",
+  "namn": "MAIL_20261103_CaraShellRoof_DA_GT_1_samtycke_solution_gaven-til-den-med-vognen_v1",
+  "sprak": "da",
+  "memo": "Presenten till den som har vagnen, som engelskan: julen närmar sig och ett skydd är en present som används. Ingen farsdag i november i Danmark. Sista beställningsdag för jul kommer i K10.",
+  "brief": "Hero: presenten. Text: varför ett skydd är en present som används (bara faktabladets fakta). Produktrad: takskyddet + termoskyddet. Fakta. Julen får nämnas.",
+  "taggar": {
+    "typ": "I",
+    "kalla": "gissning",
+    "kalla_ref": null,
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "ingen",
+    "confidence": "low",
+    "prefix": "CaraShellRoof",
+    "kod": "GT",
+    "avatar": "den der leder efter en gave til en med campingvogn eller autocamper",
+    "begar": "en present som används"
+  },
+  "amnesrader": [
+    {
+      "text": "En julegave, der faktisk bliver brugt",
+      "begar": "finde en gave, der ikke går til spilde"
+    },
+    {
+      "text": "Gaven til den med campingvognen",
+      "begar": "finde en gave til en bestemt person"
+    },
+    {
+      "text": "To betræk, ét til taget, ét til ruden",
+      "begar": "se mulighederne på ét blik"
+    }
+  ],
+  "forhandstext": "Ikke den slags gave, der ligger i en skuffe.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Gaven der bliver brugt",
+      "text": "Hej {{fornamn}},\n\nJulen nærmer sig, og et betræk er den slags gave, der bliver brugt samme uge, som den bliver pakket op.",
+      "bild": "produkt:takskyddet",
+      "knapp": {
+        "text": "Se gaven",
+        "lank": "produkt:takskyddet"
+      }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Det kommer på taget eller forruden, så snart det er pakket ud, og det kommer på igen, hver gang vognen parkeres. Ikke en gave, der ligger i en skuffe."
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Taget og ruden",
+      "handles": [
+        "takskyddet",
+        "termoskyddet"
+      ]
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    { "rad": "En julegave, der faktisk bliver brugt", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Gaven til den med campingvognen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "To betræk, ét til taget, ét til ruden", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Ikke den slags gave, der ligger i en skuffe.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Gaven der bliver brugt", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Hej {{fornamn}}, Julen nærmer sig, og et betræk er den slags gave, der bliver brugt samme uge, som den bliver pakket op.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se gaven", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Det kommer på taget eller forruden, så snart det er pakket ud, og det kommer på igen, hver gang vognen parkeres. Ikke en gave, der ligger i en skuffe.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Taget og ruden", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "version": 1,
+  "planerad": "2026-11-03T18:00:00+01:00",
+  "segment": [
+    "SEG_samtycke_da"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

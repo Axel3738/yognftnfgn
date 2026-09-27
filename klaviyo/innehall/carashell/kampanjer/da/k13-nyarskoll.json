@@ -1,0 +1,71 @@
+{
+  "id": "k13-nyarskoll",
+  "namn": "MAIL_20261229_CaraShellMix_DA_S_2_samtycke_solution_en-koll-innan-sasongen_v1",
+  "sprak": "da",
+  "memo": "Mellandagarna: gå ut och titta på vagnen. sv/nb: står taket torrt, är rutan täckt. en: the start of the year check. Produktrad med alla tre.",
+  "brief": "Rubrik + två stycken. Produktrad med alla tre. Fakta. ",
+  "taggar": {
+    "typ": "S",
+    "kalla": "gissning",
+    "kalla_ref": null,
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "sasong",
+    "confidence": "low",
+    "prefix": "CaraShellMix",
+    "kod": "S",
+    "avatar": "ägaren som inte tittat på vagnen sedan hösten",
+    "begar": "kontroll"
+  },
+  "amnesrader": [
+    {
+      "text": "Et par minutter mellem jul og nytår",
+      "begar": "en enkel påmindelse i et roligt øjeblik"
+    },
+    {
+      "text": "Står taget stadig tørt?",
+      "begar": "et kontrolspørgsmål"
+    },
+    {
+      "text": "Før sæsonen går i gang igen",
+      "begar": "forberede sig til næste fase"
+    }
+  ],
+  "forhandstext": "To minutter, tre ting at se efter.",
+  "block": [
+    {
+      "typ": "text",
+      "rubrik": "En kontrol mellem jul og nytår",
+      "text": "Hej {{fornamn}},\n\nVognen har stået stille et stykke tid nu. Det er en god anledning til at gå ud og se på den: står taget tørt, sidder betrækket, som det skal, er ruden stadig dækket.\n\nBetrækkene skal sidde, som de gjorde, da du satte dem på. Ser noget anderledes ud, er det godt at vide i tide, før sæsonen går i gang igen."
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Tre betræk, én kontrol",
+      "handles": [
+        "takskyddet",
+        "termoskyddet",
+        "fonstertermomatta-2-pack"
+      ]
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    { "rad": "Et par minutter mellem jul og nytår", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Står taget stadig tørt?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Før sæsonen går i gang igen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "To minutter, tre ting at se efter.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En kontrol mellem jul og nytår", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Hej {{fornamn}}, Vognen har stået stille et stykke tid nu. Det er en god anledning til at gå ud og se på den: står taget tørt, sidder betrækket, som det skal, er ruden stadig dækket. Betrækkene skal sidde, som de gjorde, da du satte dem på. Ser noget anderledes ud, er det godt at vide i tide, før sæsonen går i gang igen.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Tre betræk, én kontrol", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "version": 1,
+  "planerad": "2026-12-29T18:00:00+01:00",
+  "segment": [
+    "SEG_samtycke_da"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

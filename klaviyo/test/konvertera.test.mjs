@@ -89,6 +89,18 @@ test('CaraShell: produktkort blir bild + rubrik + knapp på nb/en, produktblock 
   assert.equal(kassa.buttonText, 'Back to checkout');
 });
 
+test('CaraShell: procent stoppas, utom trappans 10/20/30 i ett mejl med rabatt black_week', () => {
+  const K = skapaKonverterare({ brand: lasBrand('carashell'), produktIds: {}, recCache: {}, erbjudande: null });
+  const tre = [1, 2, 3].map((i) => ({ rad: `rad ${i}`, visualisera: true, falsifiera: true, ingen_annan: true }));
+  const mejl = (extra, text) => ({ id: 'x', sprak: 'sv', amnesrader: [{ text: 'a' }, { text: 'b' }, { text: 'c' }], tretest: tre, block: [{ typ: 'punkter', rubrik: 'Trappan', punkter: [text] }], ...extra });
+  assert.deepEqual(K.kontrollera(mejl({ rabatt: 'black_week' }, '3 varor eller fler: 30 %')), []);
+  assert.ok(K.kontrollera(mejl({ rabatt: 'black_week' }, 'Nu 15 % på allt')).some((f) => /utanför trappan/.test(f)));
+  assert.ok(K.kontrollera(mejl({ rabatt: 'black_week' }, 'Spara 25 procent')).some((f) => /utanför trappan/.test(f)));
+  assert.ok(K.kontrollera(mejl({}, '3 varor eller fler: 30 %')).some((f) => /procent/.test(f)), 'utan rabatt stoppas all procent som förut');
+  assert.ok(K.kontrollera(mejl({ rabatt: 'black_week' }, 'Nu 30 % och bara idag')).some((f) => /falsk brådska/.test(f)), 'de andra reglerna gäller fortfarande');
+  assert.ok(K.kontrollera(mejl({ rabatt: 'finns_inte' }, 'hej')).some((f) => /saknas i brandfilen/.test(f)));
+});
+
 test('CaraShell: produkter.json:s Spoks-id och bild-fileId hamnar i blocken', () => {
   const ids = lasProduktIds('carashell');
   if (!ids.takskyddet?.id || !ids.takskyddet?.bild) return; // före uppladdningen: täckt av testet ovan
@@ -132,13 +144,15 @@ test('CaraShell: Spoks-filtret per språk och flödesdefinitionen', () => {
   assert.equal(sv.type, 'conjunction');
   assert.equal(sv.operator, 'and');
   assert.deepEqual(sv.filters[0], { type: 'filter', field: 'emailMarketingConsent', operator: 'in', value: ['subscribed'] });
-  assert.equal(sv.filters[1].operator, 'or', 'svenskan tar Sverige, Danmark och kontakter utan land');
-  assert.deepEqual(sv.filters[1].filters[0].value, ['Sweden', 'Denmark']);
+  assert.equal(sv.filters[1].operator, 'or', 'svenskan tar Sverige och kontakter utan land');
+  // Danmark är en egen språkgrupp sedan 2026-09-27 (25 av 26 danska ordrar på carashell.se/da).
+  assert.deepEqual(sv.filters[1].filters[0].value, ['Sweden']);
   assert.deepEqual(sv.filters[1].filters[1], { type: 'filter', field: 'country', operator: 'nis' });
   const nb = K.spoksFilter(['ej_avregistrerad', 'sprak'], 'nb');
   assert.deepEqual(nb.filters[0], { type: 'filter', field: 'emailMarketingConsent', operator: 'nin', value: ['unsubscribed'] });
   assert.deepEqual(nb.filters[1], { type: 'filter', field: 'country', operator: 'in', value: ['Norway'] });
   assert.equal(K.spoksFilter(['sprak'], 'en').value.length, 6);
+  assert.deepEqual(K.spoksFilter(['sprak'], 'da'), { type: 'filter', field: 'country', operator: 'in', value: ['Denmark'] });
   assert.equal(K.spoksFilter([], 'sv'), null);
   assert.deepEqual(K.spoksFilter(['ej_kopt_sedan_start'], 'sv'), { type: 'filter', field: 'lastPurchase', operator: 'lt', value: '__flow_triggered__' });
 
@@ -150,10 +164,11 @@ test('CaraShell: Spoks-filtret per språk och flödesdefinitionen', () => {
   assert.deepEqual(flode.steg[1], { type: 'publish_flow_post_to_contact', mejl: 'm1', namn: 'Hva synes du?' });
 });
 
-test('CaraShell: 13 segment, alla kampanjsegment kräver samtycke', () => {
+test('CaraShell: 17 segment (fyra per språk + oengagerade), alla kampanjsegment kräver samtycke', () => {
   const { K } = caraKonverterare();
   const seg = K.segment();
-  assert.equal(seg.length, 13);
+  assert.equal(seg.length, 17);
+  assert.ok(seg.some((s) => s.namn === 'SEG_samtycke_da'));
   for (const s of seg.filter((x) => x.kampanj_ok)) {
     const forsta = s.filter.filters?.[0] ?? s.filter;
     assert.deepEqual(forsta, { type: 'filter', field: 'emailMarketingConsent', operator: 'in', value: ['subscribed'] }, s.namn);

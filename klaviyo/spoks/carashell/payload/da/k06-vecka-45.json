@@ -1,0 +1,144 @@
+{
+  "id": "k06-vecka-45",
+  "sprak": "da",
+  "emailTitle": "En julegave, der faktisk bliver brugt",
+  "emailDescription": "Ikke den slags gave, der ligger i en skuffe.",
+  "amnesrader": [
+    "En julegave, der faktisk bliver brugt",
+    "Gaven til den med campingvognen",
+    "To betræk, ét til taget, ét til ruden"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Gaven der bliver brugt",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hej {{ contact.first_name | default: 'med dig' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Julen nærmer sig, og et betræk er den slags gave, der bliver brugt samme uge, som den bliver pakket op.",
+      "alignment": "center"
+    },
+    {
+      "type": "image",
+      "fileId": "6830b5d9-7f36-4ff3-a0c4-f3aa4a05b62e",
+      "altText": "Tagbetræk campingvogn & autocamper 5,5–13,5 m",
+      "urlRedirect": "https://carashell.se/da/products/takskyddet?country=DK"
+    },
+    {
+      "type": "h2",
+      "text": "Tagbetræk campingvogn & autocamper 5,5–13,5 m",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Se gaven",
+      "url": "https://carashell.se/da/products/takskyddet?country=DK",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "Det kommer på taget eller forruden, så snart det er pakket ud, og det kommer på igen, hver gang vognen parkeres. Ikke en gave, der ligger i en skuffe.",
+      "alignment": "left"
+    },
+    {
+      "type": "h2",
+      "text": "Taget og ruden",
+      "alignment": "center"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "image",
+              "fileId": "6830b5d9-7f36-4ff3-a0c4-f3aa4a05b62e",
+              "altText": "Tagbetræk campingvogn & autocamper 5,5–13,5 m",
+              "urlRedirect": "https://carashell.se/da/products/takskyddet?country=DK"
+            },
+            {
+              "type": "h2",
+              "text": "Tagbetræk campingvogn & autocamper 5,5–13,5 m",
+              "alignment": "center"
+            },
+            {
+              "type": "link",
+              "text": "Se produktet",
+              "url": "https://carashell.se/da/products/takskyddet?country=DK",
+              "style": "button"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "image",
+              "fileId": "295e18f4-1bba-4ee1-a32e-b06f3b5d7f92",
+              "altText": "Forrudebetræk til autocamper 211 × 171 cm",
+              "urlRedirect": "https://carashell.se/da/products/termoskyddet?country=DK"
+            },
+            {
+              "type": "h2",
+              "text": "Forrudebetræk til autocamper 211 × 171 cm",
+              "alignment": "center"
+            },
+            {
+              "type": "link",
+              "text": "Se produktet",
+              "url": "https://carashell.se/da/products/termoskyddet?country=DK",
+              "style": "button"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Fortrydelsesret**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dages fortrydelsesret",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Følg pakken**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Følg den hele vejen](https://carashell.se/da/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

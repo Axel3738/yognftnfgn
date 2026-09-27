@@ -56,15 +56,15 @@ gamla Notion-raderna bär bara Drive-länkar, inget manus — så "planerat" är
 `brief saknas` för allt som byggdes före systemet, utom `012 v2` som har en
 brief i Google Docs.
 
-**Kommentarerna kunde INTE läsas:** `tools/annonskommentarer.mjs` svarar
-`(#10) requires pages_read_engagement` på sidan `820358954504320` (Matstrumpors
-Facebooksida). Mätt samma dag: token:en HAR `pages_read_engagement` — men
-token:ens systemanvändare (`122107293489476552`) sitter i Business Manager
-SnarkLös `2368966296803728` och ser 13 sidor, ingen Matstrumpor — Matstrumpors
-sida ligger i Business Manager Matstrumpor.se `3354502211392342` hos en ANNAN
-systemanvändare med samma namn (`61594688758548`). Sidan måste delas som
-partner till SnarkLös och tilldelas där; tills dess kan inga INVAND-briefer
-skrivas ur kommentarer för Matstrumpor.
+**Kommentarerna kunde INTE läsas i rond 2** — ✅ **läses sedan rond 3
+(2026-09-27)** med Axels egen app och sidtoken i `META_ACCESS_TOKEN_MATSTRUMPOR`
+(`tools/annonskommentarer.mjs --sidtoken-env`). Bakgrunden står kvar för att
+felet är lätt att göra om: `META_ACCESS_TOKEN` har `pages_read_engagement`, men
+dess systemanvändare (`122107293489476552`) sitter i Business Manager SnarkLös
+`2368966296803728` och ser 13 sidor, ingen Matstrumpor — Matstrumpors sida
+`820358954504320` ligger i Business Manager Matstrumpor.se `3354502211392342`
+hos en ANNAN systemanvändare med samma namn (`61594688758548`). Första
+läsningen: 4 kommentarer på Nathalie, inget kluster (se hennes lärdom).
 
 **Axels beslut på rondens förslag (2026-09-24):** pausa haikuh3/012v2/haikuh2 —
 nej; minimispend jul_video — nej; "sålde slut i november" — bekräftat;
@@ -149,13 +149,25 @@ haikuh3:s 1,1 % på samma landningssida tyder på att det är trovärdigheten
 och brådskan som saknas i de andra, inte hooken **(gissning)**. Att den
 höjdes 10× på en dag är Axels beslut — etiketten säger inte att den tål det.
 
-Nästa annonser (vidarebyggen inom 14 dagar, CS-KLART punkt 9 — aldrig en ren kopia):
-- `MATSTRUMP_sushi_gift_ugc_048_v1` — I1, **ny hook**: knappheten först ("sålde slut i november förra året"), resten av videon orörd.
-- `MATSTRUMP_sushi_gift_ugc_049_v1` — I2, **längre problemdel**: den misslyckade presenten (byrålådan, presentkortet) i 8 s före "det här är ditt tecken".
-- `MATSTRUMP_sushi_gift_ugc_050_v1` — I3, **in media res**: börja vid 0:18 när vännen öppnar och skrattar, backa sedan till start.
-- `MATSTRUMP_sushi_jul_ugc_051_v1` — I4, **jul-versionen** till jul-adsetet: "spara till julstrumpan" som hook — jul-adsetet har fått 24 kr på tre dygn och behöver en annons som redan bevisat sig.
-- `MATSTRUMP_sushi_jul_static_052_v1` — bild: knappheten + lådan i d3:s layout, till det tomma `jul_bilder`-adsetet.
-- ⚠️ OWNER: **be Nathalie om råfilen utan captions** — iterationerna klipper annars i inbrända texter.
+Nästa annonser (vidarebyggen inom 14 dagar, CS-KLART punkt 9 — aldrig en ren kopia).
+⚠️ **Omdöpta 2026-09-27: 048–052 → 054–058.** Numren 048–052 togs av Gilz
+mini-clips som gick live 25/9 (namnmotorn såg inte hubbens Draft-rader — rättat,
+se batch-log rond 3). Brieferna är oförändrade, bara namnen:
+- `MATSTRUMP_sushi_gift_ugc_054_v1` (hette 048) — I1, **ny hook**: knappheten först ("sålde slut i november förra året"), resten av videon orörd.
+- `MATSTRUMP_sushi_gift_ugc_055_v1` (hette 049) — I2, **längre problemdel**: den misslyckade presenten (byrålådan, presentkortet) i 8 s före "det här är ditt tecken".
+- `MATSTRUMP_sushi_gift_ugc_056_v1` (hette 050) — I3, **in media res**: börja vid 0:18 när vännen öppnar och skrattar, backa sedan till start.
+- `MATSTRUMP_sushi_jul_ugc_057_v1` (hette 051) — I4, **jul-versionen** till jul-adsetet: "spara till julstrumpan" som hook — jul-adsetet har fått 24 kr på tre dygn och behöver en annons som redan bevisat sig.
+- `MATSTRUMP_sushi_jul_static_058_v1` (hette 052) — bild: knappheten + lådan i d3:s layout, till det tomma `jul_bilder`-adsetet.
+- Råfilen utan captions: redigerarna har den (Axel 2026-09-24).
+
+**Kommentarerna lästa 2026-09-27** (`META_ACCESS_TOKEN_MATSTRUMPOR`, 30 d,
+annons `120251591832350023`): **4 kommentarer på 32 703 kr spend** — 1
+"Material?" (produktfråga utan svar i tråden), 1 skepsis *"1+vecka leveranstid
+så är det kina skräp man köper ifrån ett oseriöst företag"*, 1 vän-tagg, 1
+"REKLAMKANINEN igen 🤣". Inget kluster når 3 ⇒ ingen INVAND-brief. Två saker
+att bära vidare: leveranstiden är den enda invändningen som uttalats, och
+materialfrågan är obesvarad i tråden (VA:n) — båda **(gissning)** för svaga
+för en egen vinkel med ett exempel var.
 
 ## L-MATSTRUMP_sushi_gift_ugc_haikuh3_v1   (batch #0a · SPEND_WINNER · bedömbar ja)
 

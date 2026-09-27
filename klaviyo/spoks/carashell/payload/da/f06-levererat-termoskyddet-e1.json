@@ -1,0 +1,76 @@
+{
+  "id": "f06-levererat-termoskyddet-e1",
+  "sprak": "da",
+  "emailTitle": "Sådan monterer du forrudebetrækket",
+  "emailDescription": "Tre trin, og du behøver ikke åbne en eneste dør.",
+  "amnesrader": [
+    "Sådan monterer du forrudebetrækket",
+    "Udenpå ruden, med dørene lukket",
+    "Tre trin, klaret udefra"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Sådan monterer du forrudebetrækket"
+    },
+    {
+      "type": "regular",
+      "text": "Pakken er kommet frem. Sådan monterer du betrækket.",
+      "alignment": "left"
+    },
+    {
+      "type": "list",
+      "text": "Spænd betrækket udvendigt over forruden og begge sideruder."
+    },
+    {
+      "type": "list",
+      "text": "Klem flapperne fast i dørkarmen. Dørene skal ikke åbnes."
+    },
+    {
+      "type": "list",
+      "text": "Færdig. Betrækket holder i blæst."
+    },
+    {
+      "type": "quote",
+      "text": "Blev noget ikke, som det skulle, så svar bare på denne mail.\nAxel, grundlægger"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Fortrydelsesret**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dages fortrydelsesret",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Følg pakken**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Følg den hele vejen](https://carashell.se/da/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

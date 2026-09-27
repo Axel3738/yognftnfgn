@@ -18,7 +18,7 @@
 // inte står i produkten (texterna är butikens egna, per språk i locales/).
 import { useEffect, useState } from 'preact/hooks';
 
-import { STANDARD, installningar, erbjudandeFor, tolkaMarknadsdomaner, adressFor, numId, byggLank, erbjudandepris, tomt, varde } from './logik.js';
+import { STANDARD, installningar, erbjudandeFor, tolkaMarknadsdomaner, adressFor, numId, byggLank, erbjudandepris, tomt, varde, landText } from './logik.js';
 
 const SEDD_NYCKEL = 'tacksida_sedd';
 
@@ -107,6 +107,8 @@ export function Erbjudande({ plats }) {
   }
 
   const sprak = varde(shopify.localization?.language)?.isoCode;
+  const land = varde(shopify.localization?.country)?.isoCode;
+  const tl = (nyckel, vars) => landText(t, land, nyckel, vars);
   const marknad = varde(shopify.localization?.market)?.handle;
   const { bas, prefix } = adressFor({ storefrontUrl: shopify.shop?.storefrontUrl, marknadHandle: marknad, sprak, inst });
   const email = varde(shopify.buyerIdentity?.email);
@@ -118,8 +120,8 @@ export function Erbjudande({ plats }) {
     <s-section>
       <s-stack direction="block" gap="base">
         <s-stack direction="block" gap="small-200">
-          <s-heading>{t('rubrik')}</s-heading>
-          <s-text color="subdued">{t('underrubrik')}</s-text>
+          <s-heading>{tl('rubrik')}</s-heading>
+          <s-text color="subdued">{tl('underrubrik')}</s-text>
         </s-stack>
         {lage.produkter.map((p) => {
           const v = p.variants.nodes[0];
@@ -139,7 +141,7 @@ export function Erbjudande({ plats }) {
                 )}
                 <s-stack direction="block" gap="small-200">
                   <s-text type="strong">{p.title}</s-text>
-                  <s-text color="subdued">{t(`produkt.${p.handle}`) === `produkt.${p.handle}` ? '' : t(`produkt.${p.handle}`)}</s-text>
+                  <s-text color="subdued">{tl(`produkt.${p.handle}`)}</s-text>
                   {inst.visa_ordinarie_pris && procent > 0 ? (
                     <s-stack direction="inline" gap="small-200" alignItems="center">
                       <s-text type="redundant" color="subdued">{formatPris(ord, valuta)}</s-text>
@@ -147,7 +149,7 @@ export function Erbjudande({ plats }) {
                       <s-badge tone="success">{t('spar', { belopp: formatPris(spar, valuta) })}</s-badge>
                     </s-stack>
                   ) : (
-                    <s-text type="strong">{t('pris_for_dig', { pris: formatPris(nu, valuta) })}</s-text>
+                    <s-text type="strong">{tl('pris_for_dig', { pris: formatPris(nu, valuta) })}</s-text>
                   )}
                 </s-stack>
               </s-grid>
@@ -159,7 +161,7 @@ export function Erbjudande({ plats }) {
             </s-box>
           );
         })}
-        <s-text color="subdued">{t('villkor')}</s-text>
+        <s-text color="subdued">{tl('villkor')}</s-text>
       </s-stack>
     </s-section>
   );

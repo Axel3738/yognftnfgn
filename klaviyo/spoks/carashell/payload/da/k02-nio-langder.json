@@ -1,0 +1,121 @@
+{
+  "id": "k02-nio-langder",
+  "sprak": "da",
+  "emailTitle": "Ni størrelser, én til dit tag",
+  "emailDescription": "Fra 5,5 op til 13,5 meter, alle 3 meter brede.",
+  "amnesrader": [
+    "Ni størrelser, én til dit tag",
+    "5,5 til 13,5 meter, du vælger",
+    "Mål taget, vælg længden opad"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Ni størrelser. Hvilken passer dit tag?",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hej {{ contact.first_name | default: 'med dig' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Tagbetrækket findes i ni størrelser, fra 5,5 til 13,5 meter, alle 3 meter brede. Mål taget fra front til bagkant, og vælg nærmeste længde opad.",
+      "alignment": "center"
+    },
+    {
+      "type": "image",
+      "fileId": "6830b5d9-7f36-4ff3-a0c4-f3aa4a05b62e",
+      "altText": "Tagbetræk campingvogn & autocamper 5,5–13,5 m",
+      "urlRedirect": "https://carashell.se/da/products/takskyddet?country=DK"
+    },
+    {
+      "type": "h2",
+      "text": "Tagbetræk campingvogn & autocamper 5,5–13,5 m",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Se alle størrelser",
+      "url": "https://carashell.se/da/products/takskyddet?country=DK",
+      "style": "button"
+    },
+    {
+      "type": "h2",
+      "text": "Sådan vælger du rigtigt"
+    },
+    {
+      "type": "list",
+      "text": "Mål taget fra front til bagkant"
+    },
+    {
+      "type": "list",
+      "text": "Ni størrelser, fra 5,5 til 13,5 meter, alle 3 meter brede"
+    },
+    {
+      "type": "list",
+      "text": "Passer både campingvogn og autocamper"
+    },
+    {
+      "type": "image",
+      "fileId": "6830b5d9-7f36-4ff3-a0c4-f3aa4a05b62e",
+      "altText": "Tagbetræk campingvogn & autocamper 5,5–13,5 m",
+      "urlRedirect": "https://carashell.se/da/products/takskyddet?country=DK"
+    },
+    {
+      "type": "h2",
+      "text": "Tagbetræk campingvogn & autocamper 5,5–13,5 m",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Find din længde",
+      "url": "https://carashell.se/da/products/takskyddet?country=DK",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "Vælg nærmeste længde opad, aldrig nedad.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Fortrydelsesret**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dages fortrydelsesret",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Følg pakken**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Følg den hele vejen](https://carashell.se/da/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

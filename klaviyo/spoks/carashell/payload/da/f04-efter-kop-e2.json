@@ -1,0 +1,76 @@
+{
+  "id": "f04-efter-kop-e2",
+  "sprak": "da",
+  "emailTitle": "Kom det hele frem, som det skulle?",
+  "emailDescription": "Hvor pakken er, og hvad du gør, hvis noget er galt.",
+  "amnesrader": [
+    "Kom det hele frem, som det skulle?",
+    "Forkert vare, eller fortryder du?",
+    "14 dages fortrydelsesret, bare så du ved det"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Kom det hele frem, som det skulle?"
+    },
+    {
+      "type": "regular",
+      "text": "På dette tidspunkt burde pakken være kommet frem.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Er den ikke kommet endnu, kan du se præcis, hvor den er, på vores sporingsside.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Er noget galt med varen, eller fortryder du, har du 14 dages fortrydelsesret fra den dag, du modtager den. Du betaler selv returfragten og skriver til hello@carashell.com med dit ordrenummer for en returvejledning. Pengene er tilbage inden for 14 dage, efter vi har modtaget returen.",
+      "alignment": "left"
+    },
+    {
+      "type": "link",
+      "text": "Følg din pakke",
+      "url": "https://carashell.se/da/pages/spara",
+      "style": "button"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Fortrydelsesret**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dages fortrydelsesret",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Følg pakken**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Følg den hele vejen](https://carashell.se/da/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

@@ -1,4 +1,6 @@
-// Skelettet för CaraShells mejl: flöden och kampanjer i tre språk (sv, nb, en).
+// Skelettet för CaraShells mejl: flöden och kampanjer i fyra språk (sv, nb, en, da).
+// Danska sedan 2026-09-27: danska kunder handlar på carashell.se/da (25 av 26 danska
+// ordrar på 90 dagar), så Danmark är en egen språkgrupp i stället för en del av svenskan.
 //
 //   node klaviyo/innehall/carashell/skelett.mjs            # skriver floden/<sprak>/ + kampanjer/<sprak>/ där filen SAKNAS
 //   node klaviyo/innehall/carashell/skelett.mjs --skriv-om # skriver över (kastar copyn — bara före copy-steget)
@@ -19,7 +21,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const HAR = path.dirname(fileURLToPath(import.meta.url));
-export const SPRAK = ['sv', 'nb', 'en'];
+export const SPRAK = ['sv', 'nb', 'en', 'da'];
 const C = '__COPY__';
 const c = (hint) => `${C}: ${hint}`;
 
@@ -276,16 +278,23 @@ export const FLODEN = [
 // Rytmen: en tisdag i veckan per språk, 29/9–29/12, julveckan tom. Svenska och
 // norska 18:00 svensk tid; engelskan 16:00 svensk tid (10:00 New York — 54 av
 // 60 engelska prenumeranter är i USA). Alla går till SEG_samtycke_<sprak>: listan
-// är 76 personer, ingen uppvärmningstrappa behövs. Black Week (vecka 48) byggs
-// UTAN rabatt tills Axel valt A/B/C.
+// är 76 personer, ingen uppvärmningstrappa behövs. Black Week (vecka 48) bär
+// trappan 10/20/30 % (Axels beslut B 2026-09-26: samma som Bäverbutiken, tre
+// automatiska rabatter i Shopify 23–30/11, klaviyo/black-week-trappa.mjs):
+// K09 tisdag 24/11 öppnar, K09b Black Friday fredag 27/11 påminner.
 
-const TID = { sv: 'T18:00:00+02:00', nb: 'T18:00:00+02:00', en: 'T16:00:00+02:00' };
-const TID_CET = { sv: 'T18:00:00+01:00', nb: 'T18:00:00+01:00', en: 'T16:00:00+01:00' };
+const TID = { sv: 'T18:00:00+02:00', nb: 'T18:00:00+02:00', en: 'T16:00:00+02:00', da: 'T18:00:00+02:00' };
+const TID_CET = { sv: 'T18:00:00+01:00', nb: 'T18:00:00+01:00', en: 'T16:00:00+01:00', da: 'T18:00:00+01:00' };
 const nar = (datum, s) => `${datum}${datum >= '2026-10-25' ? TID_CET[s] : TID[s]}`;
 
 // Engelskan skrivs för US, GB, CA, AU och NZ samtidigt: aldrig winter/summer/
 // spring/autumn/fall som årstid, aldrig snö — vagnen "står parkerad", "mellan
 // resorna". Månadsnamn är tillåtna när ett datum är riktigt (sista beställningsdag).
+// Fars dag i november finns bara i Sverige och Norge (andra söndagen i november).
+// Danmark firar 5 juni och USA/UK i juni resp. mars, så en och da får vinden i K04 och
+// presenten i K06 i stället (brands/carashell.json → kalender).
+const HAR_FARSDAG = (s) => s === 'sv' || s === 'nb';
+
 const EN_HEMISFAR = 'Engelskan gäller USA, Storbritannien, Kanada, Australien och Nya Zeeland samtidigt: inga årstider (winter/summer/spring/autumn/fall), ingen snö — skriv "while it is parked", "between trips", "off the road". Säg caravan där det passar (GB/AU/NZ), motorhome, och RV en gång som amerikansk synonym.';
 
 export const KAMPANJER = [
@@ -330,16 +339,17 @@ export const KAMPANJER = [
   },
   {
     id: 'k04-vecka-43', datum: '2026-10-20', prefix: 'CaraShellRoof',
-    // sv/nb: fars dag (sista beställningsdag mån 26/10). en: vinden.
+    // sv/nb: fars dag (sista beställningsdag mån 26/10). en och da: vinden.
     perSprak: {
       sv: { kod: 'GT', nr: 1, awareness: 'solution', hook: 'fars-dag-26-okt', memo: 'Presenten till honom som ställer undan vagnen: fars dag 8/11, sista beställningsdag mån 26 oktober (10 arbetsdagar + 2). Riktig brådska med datum. Presentvinkeln är dödvikt i annonserna hos CaraShell (dna.md mönster 12) men i mejl går den till folk som redan känner butiken — hypotesen är att datumet, inte vinkeln, säljer.', taggar: { typ: 'I', kalla: 'egen-data', kalla_ref: 'products/carashell/takskyddet/dna.md mönster 12; brands/carashell.json#kalender', avatar: 'den som letar present till en pappa med husvagn eller husbil', begar: 'en present han faktiskt använder', urgency: 'konsekvens', confidence: 'low' } },
       nb: { kod: 'GT', nr: 1, awareness: 'solution', hook: 'farsdag-26-okt', memo: 'Samma som svenskan: farsdag 8/11 i Norge, siste bestillingsdag man 26. oktober.', taggar: { typ: 'I', kalla: 'egen-data', kalla_ref: 'brands/carashell.json#kalender', avatar: 'den som leter etter gave til en pappa med campingvogn eller bobil', begar: 'en present han faktiskt använder', urgency: 'konsekvens', confidence: 'low' } },
       en: { kod: 'OB', nr: 3, awareness: 'product', hook: 'does-it-stay-on-in-wind', memo: 'Vinden och remmarna är invändning nummer två i kommentarerna (sv/no/en/dk 24–26 sep: "straps break off", "sönderblåst", "Sebra"). Svaret med faktabladets ord: vävda spännband, inte elastiska, plastkrokar under karossens kant på alla fyra sidor, justerbara, två extra 10,5 m band, håller i blåst. Inget om lacken utöver faktabladet.', taggar: { typ: 'I', kalla: 'voc', kalla_ref: 'kommentarer/leads.md 2026-09-24 (remmarna), 2026-09-26 (fungerar det)', avatar: 'ägaren som undrar om det blåser av', begar: 'trygghet', urgency: 'ingen', confidence: 'medium' } },
+      da: { kod: 'OB', nr: 3, awareness: 'product', hook: 'sidder-det-fast-i-blaest', memo: 'Ingen farsdag i november i Danmark (5 juni), så danskan får vinden som engelskan. Danska kommentarer 24–26 sep fanns bland "dk" i leads. Svaret med faktabladets ord: vævede spændebånd, ikke elastik, plastikkroge under karrosseriets kant på alle fire sider, to ekstra bånd på 10,5 m, holder i blæst.', taggar: { typ: 'I', kalla: 'voc', kalla_ref: 'kommentarer/leads.md 2026-09-24 (remmarna), 2026-09-26 (fungerar det)', avatar: 'ejeren der spekulerer på om det blæser af', begar: 'trygghet', urgency: 'ingen', confidence: 'medium' } },
     },
-    brief: (s) => s === 'en'
-      ? `Hero: frågan om vinden. Punkter: banden (webbing, not elastic), krokarna på fyra sidor, de två extra banden. Produktkort, fakta. ${EN_HEMISFAR}`
+    brief: (s) => !HAR_FARSDAG(s)
+      ? `Hero: frågan om vinden. Punkter: banden (${s === 'en' ? 'webbing, not elastic' : 'vævede, ikke elastik'}), krokarna på fyra sidor, de två extra banden. Produktkort, fakta. ${s === 'en' ? EN_HEMISFAR : 'Inget om lacken utöver faktabladet.'}`
       : 'Hero: presenten. Text med datumet skrivet ut ("beställ senast måndag 26 oktober") och varför (så att paketet hinner fram till fars dag) — utan leveranstid i dagar. Produktrad: taköverdraget + termoskyddet. Fakta.',
-    block: (s) => s === 'en'
+    block: (s) => !HAR_FARSDAG(s)
       ? [
         { typ: 'hero', rubrik: c('rubrik: does it stay on in wind?'), text: c('1–2 meningar'), bild: 'produkt:takskyddet', knapp: { text: c('knapp'), lank: 'produkt:takskyddet' } },
         { typ: 'punkter', rubrik: c('rubrik'), punkter: [c('webbing straps, not elastic'), c('hooks under the edge, all four sides'), c('two extra straps')] },
@@ -371,11 +381,12 @@ export const KAMPANJER = [
       sv: { kod: 'OB', nr: 3, awareness: 'product', hook: 'sitter-det-kvar-i-blast', memo: 'Vinden och remmarna (kommentarerna 24–26 sep: "sönderblåst", "Sebra", "skaver inte alla remmar"). Svaret med faktabladets ord: vävda spännband, inte gummi, töjs inte ut, plastkrokar under karossens kant på alla fyra sidor, justerbara, två extra band 10,5 m, håller i blåst.', taggar: { typ: 'I', kalla: 'voc', kalla_ref: 'kommentarer/leads.md 2026-09-24 (Sebra), 2026-09-26 (fungerar det)', avatar: 'ägaren som undrar om det blåser av', begar: 'trygghet', urgency: 'ingen', confidence: 'medium' } },
       nb: { kod: 'OB', nr: 3, awareness: 'product', hook: 'sitter-det-fast-i-vind', memo: 'Samma som svenskan, norska kommentarer: "forsvant med nordvest kulingen", "svake strikk". Svaret: vevde bånd, ikke strikk.', taggar: { typ: 'I', kalla: 'voc', kalla_ref: 'kommentarer/rapporter/2026-09-26.md (Takovertrekk)', avatar: 'eieren som lurer på om det blåser av', begar: 'trygghet', urgency: 'ingen', confidence: 'medium' } },
       en: { kod: 'GT', nr: 1, awareness: 'solution', hook: 'the-gift-for-the-one-with-the-caravan', memo: 'Presenten till den som har vagnen: julen närmar sig, och överdraget är en present som används. Ingen farsdag på engelska (USA juni, UK mars). Sista beställningsdag för jul kommer i K10.', taggar: { typ: 'I', kalla: 'gissning', kalla_ref: null, avatar: 'den som letar present till någon med husvagn eller husbil', begar: 'en present som används', urgency: 'ingen', confidence: 'low' } },
+      da: { kod: 'GT', nr: 1, awareness: 'solution', hook: 'gaven-til-den-med-vognen', memo: 'Presenten till den som har vagnen, som engelskan: julen närmar sig och ett skydd är en present som används. Ingen farsdag i november i Danmark. Sista beställningsdag för jul kommer i K10.', taggar: { typ: 'I', kalla: 'gissning', kalla_ref: null, avatar: 'den der leder efter en gave til en med campingvogn eller autocamper', begar: 'en present som används', urgency: 'ingen', confidence: 'low' } },
     },
-    brief: (s) => s === 'en'
-      ? `Hero: presenten. Text: varför ett skydd är en present som används (bara faktabladets fakta). Produktrad: takskyddet + termoskyddet. Fakta. ${EN_HEMISFAR}`
+    brief: (s) => !HAR_FARSDAG(s)
+      ? `Hero: presenten. Text: varför ett skydd är en present som används (bara faktabladets fakta). Produktrad: takskyddet + termoskyddet. Fakta. ${s === 'en' ? EN_HEMISFAR : 'Julen får nämnas.'}`
       : 'Hero: frågan om vinden. Punkter: banden (vävda, inte gummi), krokarna på fyra sidor, de två extra banden. Produktkort, fakta. Inget om lacken utöver faktabladet.',
-    block: (s) => s === 'en'
+    block: (s) => !HAR_FARSDAG(s)
       ? [
         { typ: 'hero', rubrik: c('rubrik: the gift'), text: c('1–2 meningar'), bild: 'produkt:takskyddet', knapp: { text: c('knapp'), lank: 'produkt:takskyddet' } },
         { typ: 'text', rubrik: null, text: c('varför det är en present som används') },
@@ -413,25 +424,29 @@ export const KAMPANJER = [
     ],
   },
   {
-    id: 'k09-black-week-utan-rabatt', datum: '2026-11-24', prefix: 'CaraShellRoof', kod: 'SP', nr: 1, awareness: 'product', hook: 'kundernas-ord',
-    memo: 'Black Week-veckan UTAN rabatt (Axels beslut A/B/C väntar). sv/nb: social proof med butikens egna publicerade recensioner (SP är CaraShells vinkel, dna.md mönster 11). en: tryggheten i stället (90-day guarantee, free shipping, hur en retur går till) eftersom inga engelska recensioner finns att citera. Väljer Axel en rabatt skrivs det här mejlet om och ett Black Friday-mejl läggs till fre 27/11.',
-    taggar: { typ: 'I', kalla: 'egen-data', kalla_ref: 'products/carashell/takskyddet/dna.md mönster 11 (SP_2_1); factory/produkter/takskyddet.yaml#reviews', avatar: 'prenumeranten som inte köpt än', begar: 'trygghet', urgency: 'ingen', confidence: 'medium' },
-    brief: (s) => s === 'en'
-      ? `Hero: tryggheten (90-day guarantee, free shipping — bara faktabladets ord). Punkter: guarantee, shipping, how to return (email first). Produktkort, fakta. ${EN_HEMISFAR} Inga recensioner, inga siffror om recensioner.`
-      : 'Citat först (två), sedan hero med kundernas ord som rubrik, produktkort, fakta. Inga påhittade omdömen; blocket citat hämtar butikens egna.',
-    block: (s) => s === 'en'
-      ? [
-        { typ: 'hero', rubrik: c('rubrik: tryggheten'), text: c('1–2 meningar'), bild: 'produkt:takskyddet', knapp: { text: c('knapp'), lank: 'produkt:takskyddet' } },
-        { typ: 'punkter', rubrik: c('rubrik'), punkter: [c('guarantee'), c('shipping'), c('how to return')] },
-        { typ: 'produkt', handle: 'takskyddet', text: c('en mening'), knapp: c('knapp') },
-        { typ: 'fakta' },
-      ]
-      : [
-        { typ: 'citat', handle: 'takskyddet', antal: 2 },
-        { typ: 'hero', rubrik: c('rubrik: kundernas ord'), text: c('1–2 meningar'), bild: 'produkt:takskyddet', knapp: { text: c('knapp'), lank: 'produkt:takskyddet' } },
-        { typ: 'produkt', handle: 'takskyddet', text: c('en mening'), knapp: c('knapp') },
-        { typ: 'fakta' },
-      ],
+    id: 'k09-black-week-trappan', datum: '2026-11-24', prefix: 'CaraShellMix', kod: 'S', nr: 2, awareness: 'promo', hook: 'trappan-10-20-30', rabatt: 'black_week',
+    memo: 'Axels beslut B 2026-09-26: samma rabattrappa som Bäverbutiken, tre automatiska rabatter i CaraShells Shopify (Black Week 10/20/30 %, måndag 23/11 till och med måndag 30/11, alla produkter, ingen kod, kombineras bara med fri frakt). K09 öppnar veckan och förklarar trappan så att den går att förstå på fem sekunder, med de tre skydden som kan kombineras till nästa nivå (Bäverbutikens K11 är förlagan, egen copy). Adventskalendern är inte med: lucka 1 hinns inte (sista beställning fre 13/11).',
+    taggar: { typ: 'S', kalla: 'egen-data', kalla_ref: 'Axels beslut B 2026-09-26; brands/carashell.json#black_week; klaviyo/innehall/baverbutiken/kampanjer/k11-black-week-start.json', avatar: 'prenumeranten som ändå tänkt skydda vagnen och väntat på rätt tillfälle', begar: 'spara-pengar', urgency: 'pris', confidence: 'medium' },
+    brief: (s) => `Hero: trappan på en rad (rubrik) och 1–2 meningar: rabatten dras automatiskt i kassan, ingen kod, den gäller till och med måndag 30 november och räknas på antalet varor i varukorgen. Punkter: exakt tre rader, 1 vara 10 %, 2 varor 20 %, 3 varor eller fler 30 % (siffrorna exakt så, inga andra procent, inga belopp). Produktrad med taköverdraget, termoskyddet och fönstertermomattan: rubriken säger att två skydd ger nästa nivå. ${s === 'en' ? 'Inget citat. ' + EN_HEMISFAR + ' Black Week och Black Friday är ok.' : 'Ett citat ur butikens egna recensioner efter produktraden.'} Fakta. Förbjudet: sista chansen, bara idag, belopp, leveranstid, butikens namn.`,
+    block: (s) => [
+      { typ: 'hero', rubrik: c('rubrik: trappan på en rad'), text: c('1–2 meningar: kassan drar rabatten själv, ingen kod, till och med måndag 30 november'), bild: 'produkt:takskyddet', knapp: { text: c('knapp'), lank: 'kollektion:sortimentet' } },
+      { typ: 'punkter', rubrik: c('rubrik: så funkar trappan'), punkter: [c('1 vara: 10 %'), c('2 varor: 20 %'), c('3 varor eller fler: 30 %')] },
+      { typ: 'produktrad', rubrik: c('rubrik: två skydd ger nästa nivå'), handles: ['takskyddet', 'termoskyddet', 'fonstertermomatta-2-pack'] },
+      ...(s === 'en' ? [] : [{ typ: 'citat', handle: 'takskyddet', antal: 1 }]),
+      { typ: 'fakta' },
+    ],
+  },
+  {
+    id: 'k09b-black-friday', datum: '2026-11-27', prefix: 'CaraShellMix', kod: 'S', nr: 3, awareness: 'promo', hook: 'black-friday-till-mandag', rabatt: 'black_week',
+    memo: 'Black Friday-mejlet som K09:s memo lovade om Axel valde en rabatt (beslut B 2026-09-26). Påminner om trappan på fredagen, med det riktiga slutdatumet (måndag 30 november) som enda brådska. Samma tre skydd, en ny vinkel: rutan och taket på en gång.',
+    taggar: { typ: 'S', kalla: 'egen-data', kalla_ref: 'Axels beslut B 2026-09-26; brands/carashell.json#black_week; klaviyo/innehall/baverbutiken/kampanjer/k12-black-friday.json', avatar: 'den som öppnade K09 men inte beställt', begar: 'spara-pengar', urgency: 'pris', confidence: 'medium' },
+    brief: (s) => `Kort mejl. Hero: Black Friday och att trappan gäller till och med måndag 30 november (det är den enda brådskan, den är sann). Punkter: samma tre rader som K09 (1 vara 10 %, 2 varor 20 %, 3 varor eller fler 30 %). Produktrad med de tre skydden och en rubrik om att taket och rutan tillsammans ger 20 %. Fakta. ${s === 'en' ? EN_HEMISFAR + ' Black Friday är ok.' : ''} Förbjudet: sista chansen, bara idag, belopp, leveranstid, butikens namn, andra procent än 10/20/30.`,
+    block: [
+      { typ: 'hero', rubrik: c('rubrik: Black Friday, trappan gäller till och med måndag'), text: c('1–2 meningar'), bild: 'produkt:termoskyddet', knapp: { text: c('knapp'), lank: 'kollektion:sortimentet' } },
+      { typ: 'punkter', rubrik: c('rubrik: trappan'), punkter: [c('1 vara: 10 %'), c('2 varor: 20 %'), c('3 varor eller fler: 30 %')] },
+      { typ: 'produktrad', rubrik: c('rubrik: taket och rutan ger 20 %'), handles: ['takskyddet', 'termoskyddet', 'fonstertermomatta-2-pack'] },
+      { typ: 'fakta' },
+    ],
   },
   {
     id: 'k10-sista-dag-for-julklappar', datum: '2026-12-01', prefix: 'CaraShellMix', kod: 'GT', nr: 4, awareness: 'promo', hook: 'bestall-senast-mandag-7-dec',
@@ -493,6 +508,9 @@ function mejlSkelett(m, s, namn) {
     brief: typeof m.brief === 'function' ? m.brief(s) : m.brief,
     taggar: TAG({ ...m.taggar, ...(m.prefix ? { prefix: m.prefix } : {}), ...(m.kod ? { kod: m.kod } : {}) }),
     ...(m.format ? { format: m.format } : {}),
+    // rabatt: 'black_week' släpper igenom trappans procentsatser (brands/carashell.json#black_week)
+    // i konvertera.mjs copykontroll — bara i det mejlet, bara de talen.
+    ...(m.rabatt ? { rabatt: m.rabatt } : {}),
     amnesrader: [
       { text: c('ämnesrad A, eget begär'), begar: c('begäret') },
       { text: c('ämnesrad B, eget begär'), begar: c('begäret') },
@@ -529,8 +547,8 @@ export function byggKampanj(k, s) {
     planerad: nar(k.datum, s),
     segment: [`SEG_samtycke_${s}`],
     exkludera: [],
-    status_plan: k.id === 'k09-black-week-utan-rabatt' ? 'kraver-axel' : 'utkast-skrivs-om-efter-lardom',
-    kraver_axel: k.id === 'k09-black-week-utan-rabatt' ? 'Black Week: rabatt eller inte är Axels beslut (A/B/C i rapporten 2026-09-26). Utkastet säljer utan rabatt.' : null,
+    status_plan: 'utkast-skrivs-om-efter-lardom',
+    kraver_axel: null,
   };
 }
 

@@ -1,0 +1,35 @@
+{
+  "kommentar": "Hubbar som tavlan (sidan Laget) inte räknar som kö och aldrig flaggar som 'har legat länge' — Axels revision 2026-09-26: 'vissa hubbar är liksom arkiverade … vissa kan ligga kvar hur länge som helst'. Utöver listan hoppas varje hubb vars titel innehåller 'arkiv' och varje hubb med arkiverad: true i commission/hubbar.json. Annonserna från de här hubbarna kopplas ändå till sin redigerare (live, vinnare). De nedlagda OPS-butikernas hubbar ligger här (CLAUDE.md: OPS-butikerna är nedlagda utom CaraShell). Enskilda rader döljs i stället med knappen Dölj på sidan (data/tavla-dolda.jsonl på volymen).",
+  "arkiverade_hubbar": [
+    {
+      "id": "3cd270ab-908c-81bd-aab8-f19ec3e2d260",
+      "namn": "Surveillance Camera creative hub",
+      "varfor": "HeimGuard nedlagd"
+    },
+    {
+      "id": "3ce270ab-908c-8161-bed2-e22f132a6aba",
+      "namn": "IBC Tank Cover creative hub",
+      "varfor": "TankGuard nedlagd"
+    },
+    {
+      "id": "3cf270ab-908c-81a0-9b0d-c486f6467ce7",
+      "namn": "Damasker vandring",
+      "varfor": "DryTrek nedlagd"
+    },
+    {
+      "id": "3d7270ab-908c-81b2-ad69-cf7404a62c4e",
+      "namn": "Racing Car Advent Calendar creative hub",
+      "varfor": "AdventLane nedlagd"
+    },
+    {
+      "id": "3c3270ab-908c-80f8-824d-eed3c4aa94e1",
+      "namn": "Fish rod holder",
+      "varfor": "TackleBay nedlagd"
+    },
+    {
+      "id": "3da270ab-908c-80f6-9663-caff35a3c895",
+      "namn": "catcabin creative hub",
+      "varfor": "CatCabin nedlagd"
+    }
+  ]
+}

@@ -99,6 +99,32 @@ export function gruppera(klara) {
 }
 
 /** Läser Matstrumpors hub och planerar. Kräver NOTION_TOKEN. */
+/** Titlarna på ALLA rader i Matstrumpors hub, oavsett status — för namn-
+ *  motorn. En Draft-brief upptar sitt nummer lika mycket som en live annons.
+ *  Kräver NOTION_TOKEN; utan den kastas ett fel som --namn fångar och säger. */
+export async function hubbNamn(konfig, { fetchFn = fetch } = {}) {
+  const token = process.env.NOTION_TOKEN;
+  if (!token) throw new Error('NOTION_TOKEN saknas i miljön — hubben går inte att läsa.');
+  const titlar = [];
+  let cursor;
+  do {
+    const r = await fetchFn(`https://api.notion.com/v1/databases/${konfig.notion.hub_id}/query`, {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${token}`, 'Notion-Version': '2022-06-28', 'Content-Type': 'application/json' },
+      body: JSON.stringify({ page_size: 100, ...(cursor ? { start_cursor: cursor } : {}) }),
+    });
+    const j = await r.json();
+    if (!r.ok || j.object === 'error') throw new Error(`Notion svarade ${r.status}: ${j.message ?? JSON.stringify(j)}`);
+    for (const sida of j.results) {
+      const titel = Object.values(sida.properties ?? {}).find((p) => p.type === 'title');
+      const text = (titel?.title ?? []).map((t) => t.plain_text).join('').trim();
+      if (text) titlar.push(text);
+    }
+    cursor = j.has_more ? j.next_cursor : undefined;
+  } while (cursor);
+  return titlar;
+}
+
 export async function hamtaKo(konfig, val = {}) {
   const hub = { id: konfig.notion.hub_id, titel: konfig.notion.hub_namn };
   const rader = await klaraRader(hub, { statusar: [konfig.notion.ko_status.toLowerCase()], ...val });
