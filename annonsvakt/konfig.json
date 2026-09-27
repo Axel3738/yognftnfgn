@@ -9,7 +9,7 @@
     },
     "slack": {
       "webhook_env": "SLACK_WEBHOOK_URL",
-      "_om": "Axel 2026-09-27: 'genom en Slack-kanal som jag inte har byggt än, men som jag ska bygga'. Finns variabeln i rutinens miljö postas samma text även dit (incoming webhook, POST {text}). Utan variabeln: bara Discord, och rapporten säger det."
+      "_om": "Axel 2026-09-27: 'genom en Slack-kanal som jag inte har byggt än, men som jag ska bygga'. Finns variabeln i rutinens miljö postas samma text även dit (incoming webhook, POST {text}). Utan variabeln: bara Discord, och rapporten säger det. Kanalen finns sedan 2026-09-27 kväll: #urgent (privat, C0C4MTQNMT7, Axel enda medlemmen) — byggd av /akut (akut/), som redan postar dit via Slack-connectorn. Pekas webhooken dit: lägg 'konto' och 'pengar' i akut/konfig.json → kontroller_av, annars får Axel samma larm två gånger."
     }
   },
   "axel_discord": [
