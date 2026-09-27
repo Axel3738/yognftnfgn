@@ -320,7 +320,27 @@ brick by brick och **varje lyckat steg dokumenteras direkt**:
   amerikaner — Axel: "recensionerna har aldrig varit problemet", rörs inte.
   ⚠️ Från Sverige skickar Shopifys geo-omdirigering carashell.com-länkar
   till carashell.se: det man ser i Sverige är den svenska sidan, aldrig
-  amerikanens.
+  amerikanens. **Axels svar samma eftermiddag: B — bara flödet, Facebook
+  Reels förblir av** (trots 11 köp / ROAS 2,20 på sju dygn; frågan ställd,
+  hans beslut) och "jag vet inte men du behöver hålla koll på det". Därför
+  **marknadsvakten `factory/marknadskoll.mjs <butik> --marknad US`**, körd
+  varje dag av `/ops-oversatt <butik> --marknad US` (steg 6b, 17:05, även när
+  kön är tom): sätter tillbaka varje adset i marknadens ACTIVE kampanjer som
+  glidit från `placeringar` (läser tillbaka; `--torr` visar bara), läser spend
+  per placering i går + i dag (kronor utanför flödet larmas, men inte för ett
+  dygn som börjar före adsetens senaste `updated_time` — det dygnet bär spend
+  från före bytet), och läser startsidan, annonsernas landningssidor,
+  produktsidorna och kassan i Chromium som marknadens kund och letar svenska
+  rader (Judge.me-rutan och valutaväljaren räknas inte; kassans förvalda land
+  ska vara marknadens). Discord `#annons-uppladdning` bara när något är fel,
+  Axel pingas för svenska rader och fel land; rättade adsets är "Done
+  automatically". Första körningen 2026-09-27 ~14:20 CEST: 12 av 12 adsets
+  rätt, startsida/landningssida/produktsida/kassa engelska, kassan förvalde
+  United States, inget larm. ⚠️ Svenskdetektorn bär två lärdomar från
+  torrkörningen: ord som också är norska/danska ("frakt", "enkel", "kvalitet",
+  "regn", "vinter") stoppar bara på engelska/finska sidor, och ord som också är
+  engelska ("over", "under", "till") används aldrig — de flaggade fem
+  engelska rader. 8 tester i `factory/test/marknadskoll.test.mjs`.
 - Två järnregler härifrån: namnregeln (funkar på svenska OCH engelska,
   aldrig å/ä/ö) och trippelkollen (säg aldrig "klart" utan tre kontroller
   mot kundens riktiga vy — regeln föddes här 2026-09-07).

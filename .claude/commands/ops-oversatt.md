@@ -219,6 +219,24 @@ kommentaren. Hoppad rad: kommentar med skälet, status orörd. ⚠️ Känd luck
 den översatta filen läggs inte in i Notion-sidan (REST-uppladdning av filer
 är inte byggd) — säg det i rapporten så Axel granskar i Ads Manager.
 
+### 6b. Marknadsvakten — bara marknader med `placeringar` i `factory/opsmarknader.mjs` (US sedan 2026-09-27)
+```
+node factory/marknadskoll.mjs <butik> --marknad <M> --discord
+```
+Axels order 2026-09-27 ("kör bara flöden på fb och ig" + "du behöver hålla
+koll på det"), efter natten då Meta lade 16 654 kr av en ny annons i
+Instagram Stories utan ett köp. Vakten (1) sätter tillbaka varje adset i
+marknadens ACTIVE kampanjer som glidit från marknadens placeringar — ett
+adset skapat i appen får Advantage+-placeringar — och läser tillbaka, (2)
+läser spend per placering i går + i dag och larmar om kronor utanför flödet,
+(3) läser startsidan, annonsernas landningssidor, produktsidorna och kassan i
+Chromium som marknadens kund och letar svenska rader (Judge.me-recensionerna
+räknas inte, Axels besked samma dag; kassans förvalda land ska vara
+marknadens). Körs EFTER uppladdningen så dagens nya adsets också mäts, och
+**alltid, även när kön är tom** — den dagen är vakten hela poängen med
+rutinen. Utskriften in i rapporten: rättade adsets under `gjort`, svenska
+rader och kassafel under `action_axel`. `--torr` visar utan att rätta.
+
 ### 7. Rapport, logg, push
 Discord-jobb (läge `oversatt`, `marknad: "<M>"`): `gjort` = en rad per annons
 (SE-namn → målnamn, kampanj, adset), `varningar` = röstkoll-anmärkningar och
@@ -239,6 +257,7 @@ Pusha till `main`.
 - [ ] Copy utan pris eller med priset ur `ekonomi.marknadspriser`; inget påhittat belopp någonstans
 - [ ] Uppladdning torrkörd först, skarp sedan, tillbakaläst ACTIVE/ACTIVE; ett adset per koncept; rätt konto
 - [ ] Rader flyttade till `Approved` BARA när alla annonsmarknader bär annonsen; annars kommentar
+- [ ] Marknadsvakten körd för marknader med `placeringar` (US): alla adsets bär bara flödet, ingen spend utanför, inga svenska rader på sidorna eller i kassan — eller avvikelsen redovisad under ACTION NEEDED
 - [ ] Discord-rapport på engelska i `#annons-uppladdning` med marknadens flagga; ping bara under ACTION NEEDED
 - [ ] Batchfiler committade (aldrig media), batch-log, push till `main`
 - [ ] Slutrapport i två listor; Axels uppgifter sist, numrerade
