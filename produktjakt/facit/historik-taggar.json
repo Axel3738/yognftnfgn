@@ -3913,6 +3913,35 @@
    "prisband": "500–999",
    "kalla": "kampanjnamnet i kontot 2026-09-26 (Axels egen launch)",
    "anteckning": "Axels egen launch; kampanj ej sedd 09-26."
+  },
+  {
+   "nyckel": "lock-in-engagemang",
+   "namn": "LOCK_IN engagemangskampanjer (Indien) — ingen produkt",
+   "kampanj_monster": [
+    "LOCK_IN_"
+   ],
+   "pris_sek": null,
+   "be_roas": null,
+   "arketyp": "X_UTANFOR",
+   "arketyp_sekundar": null,
+   "objekt": "ingen produkt (engagemang)",
+   "objekt_varde_band": "inget",
+   "objekt_ute": false,
+   "form": "kampanj",
+   "agare_55plus_smahus": false,
+   "old_way": null,
+   "latent_behov": null,
+   "deadline_typ": "ingen",
+   "timing_vid_launch": null,
+   "kedjegolv_under_vart_pris": null,
+   "markesankare_kvot": null,
+   "material_klass": null,
+   "montering_app": false,
+   "variant_risk": null,
+   "flerkop": false,
+   "prisband": null,
+   "kalla": "kontot 2026-09-27",
+   "anteckning": "Engagemangskampanjer mot Indien (LOCK_IN_Bänkhyllan/Spabadskapellet/Bordtennisnätet, ~400 kr var) — räknas aldrig som produkttest."
   }
  ]
 }

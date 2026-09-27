@@ -123,7 +123,7 @@
   "arketyp": "B_SKYDDA_DYRT",
   "deadline": "robotindockning 4,4 v",
   "korningsvecka": 40,
-  "orsak": "2026-09-24 lins AD: ankare Gardena 689 / Worx 639 finns, men AliExpress gav bara handjagarväskor på tre fraser. Sök igen med modellnamn (Gardena Sileno, Husqvarna Automower) eller vänta på ny listning."
+  "orsak": "2026-09-24 lins AD: ankare Gardena 689 / Worx 639 finns, men AliExpress gav bara handjagarväskor på tre fraser. Sök igen med modellnamn (Gardena Sileno, Husqvarna Automower) eller vänta på ny listning. | 2026-09-26 lins AG: Gardena nu 599, Worx 199 UNDER oss; fem fraser till utan listning → stängd."
  },
  {
   "objekt": "NYTT: Knivbyggsatsen — täljd egen jaktkniv",
@@ -228,5 +228,29 @@
   "deadline": "jul",
   "korningsvecka": 41,
   "orsak": "2026-09-24 lins JQ: starkaste nyheten i husdjurslinsen, 58,79 USD → över taket. Rad om < 35 USD."
+ },
+ {
+  "objekt": "NYTT: Jägarens styckset i låda",
+  "form": "låda",
+  "arketyp": "G_Q4_GAVA",
+  "deadline": "älgjakt / fars dag",
+  "korningsvecka": 41,
+  "orsak": "2026-09-26 lins AE: ankare Outdoor Edge 780–1 226 (Jaktia/Widforss) men ingen boxad styckset-listning på AliExpress. Rad om komplett set < 40 USD dyker upp."
+ },
+ {
+  "objekt": "NYTT: Oxalsyraförångaren för bikupan",
+  "form": "verktyg",
+  "arketyp": "D_SNABBARE_METOD",
+  "deadline": "invintring 2,6 v",
+  "korningsvecka": 41,
+  "orsak": "2026-09-26 lins AG: ankare Varrox 1 867 (2,5× vid 749) men 0 träffar på sex Ali-fraser. Annan källa krävs."
+ },
+ {
+  "objekt": "NYTT: Takmossaskrapan på teleskop",
+  "form": "verktyg",
+  "arketyp": "D_SNABBARE_METOD",
+  "deadline": "lövfällning",
+  "korningsvecka": 42,
+  "orsak": "2026-09-26 lins AG: lucka i SE (PriceRunner 0) men ingen Ali-listning på tre fraser."
  }
 ]

@@ -3,7 +3,7 @@
 Läses av `/produktjakt` INNAN sökningen. Auto-delen räknas av `feedback.py vikter`; skriv aldrig i den för hand.
 
 <!-- auto:start -->
-Uppdaterad 2026-09-26. **125 svar** — ja 73, kanske 16, nej 36.
+Uppdaterad 2026-09-27. **125 svar** — ja 73, kanske 16, nej 36.
 
 ## Det Axel säger ja till
 
@@ -132,3 +132,4 @@ Uppdaterad 2026-09-26. **125 svar** — ja 73, kanske 16, nej 36.
 - 2026-09-24 (julrunda 2, Axels signal kl 10): 'magnet chess sålde 2,3 miljoner på en dag förra Q4 (hörsägen) — sådana spel är inte dumma.' Läsningen 'stilla spel förlorar' (från nej på skattkista/klocka/pusselbräda) är för hård: virala Q4-spel med fysisk spänning (magnetschack-typ) ska sökas, golv under oss hindrar inte (H06 + Axels ja på pingisroboten). Lins JH byggd på det.
 - 2026-09-24 (julrunda 2): 11 svar på julrundan (7/1/3) · STOPP nya: inga · LYFT nya: 48 · parkerat: RC-grävmaskin i metall (Amewi-ankare 2 192 men 20 varianter i kedjorna), maglev-kubtåg (lucka men småbarnshero), digital mörkerkikare barn (Ali ≥ 53 USD) · Meta-utfall: — · Avvikelse: 'stilla spel förlorar' var för hård läsning — Axels magnetschack-signal · Ändrat: H06-golvregel mjukad; objekt = SAK först; dedupe på namn.
 - 2026-09-24 (julrunda 3): 9 svar på runda 2 (2/1/6) · STOPP nya: inga · LYFT nya: 48 · parkerat (leverantör saknas): generisk bilbana 1:43 komplett set 30–42 USD (H06 mot Carrera GO), RC-snöslunga < 60 USD, betesbåt < 56 USD, plinko 30–60 USD, träparkeringshus med hiss < 60 USD, kattens jaktmaskin på snöre < 35 USD · Meta-utfall: — · Avvikelse: 17 linser på spel/leksaker gav 30 rader av ~400 fraser — kategorin är uttömd under grindarna · Ändrat: syskon i samma form max tre per batch; AliExpress-recept med region-kaka in i protokollet.
+- 2026-09-26: 11 nya svar (2/0/9 — nej på husdjur 0/3, kinetik 0/3, pussel 1/3) · STOPP nya: inga · LYFT nya: 48 · parkerat: jägarens styckset, lockpipe-set, knivbyggsats med slida, oxalsyraförångaren, takmossaskrapan (alla: ankare finns, Ali-listning saknas) · Meta-utfall: täljset 6,24 + golfkalender 3,25 vinnare, spabadskapell 0 köp förlorare, motorlås tidigt negativt · Avvikelse: rutinen stod stilla 25/9; 26/9:s batch publicerades först 27/9 · Ändrat: publicera före STATUS; H01 kräver 'ingen egen lösning'; hobbyset bara där handeln säljer delarna men inte setet.

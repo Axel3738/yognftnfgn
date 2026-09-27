@@ -43,3 +43,55 @@ NOW: poolstängning 0,6 v · älgjakt syd 1,7 v · uppställning husvagn/husbil 
 | AG | Maskinen/setet som gör höstjobbet ägaren betalar för — vedsäsong, lövfällning, robotindockning | exploitation/exploration | H07/H12 | sotarsetet 91 köp, bälteslipen 2,49 |
 
 Inga spel/leksaker (tre julrundor i går), inga kalendrar, ingen hönsgård/kanin, inget spabad.
+
+## Steg 1–4 — tre linser, 7 kandidater → 7 klarade grindarna → batch 7 (levererad först 27/9 — sessionen somnade efter arkbygget)
+
+| Lins | Sökt | Levererat | Strukna (skäl) |
+|---|---|---|---|
+| AE (H05, hobbysetet som aktivitet) | ~25 fraser, PriceRunner + fackhandel | 2: Läderplånbokssetet 14 delar (svensk handel säljer verktyg/läder/mallar styckvis, aldrig setet), Flugbindningssetet med städ (H06: flyangler 199 under, Loon 789 = 1,61×) | **sortiment:** golfgrepp 20+, knivslipsystem 20+, agility 20+, fågelholk 20+, ljusstöpning, bivaxark (Panduro) · **ankare utan Ali-listning → backlog:** jägarens styckset (Outdoor Edge 780–1 226), lockpipe-set, knivbyggsats med slida · whiskyfat golv 389–479 · ismete EARLY 16,6 v |
+| AF (H01/H02/H06, skyddet inför datumet) | ~30 PriceRunner-frågor + getcamping/watski/hjertmans | 3: Motorstödet till utombordaren (H06: VEVOR 364 under, Attwood 1 049 = 1,62×), Däckvaggorna 2-pack (0 träffar i formen, H08 flerköp), Luftvärmepumpens topphuv (LÅG, asymmetrisk: PriceRunner 0 mjuka huvar) | MC-avställning noll (allt kedjeform eller i katalogen); robotgarage 60–200 USD; styvt värmepumpstak → 1 299+; bunkglid + montering; pizzaugnshuv sortiment 20 (Ooni 511 < 1,6×); MC-hjulstöd Homcom 487; solcellsventil båt (håltagning); gasol/kula/stödben/ventiler = sett innan/K7 |
+| AG (H07/H12, maskinen i höstjobben) | 13 objekt, ~27 PriceRunner-frågor | 2: Rännstaven till högtryckstvätten (faktura 1 490–3 300 kr/gång; H06: kopior 325 under, Kärcher 899 = 1,8×), Repsågen för höga grenar 135 cm (arborist 2 000–6 000/träd; PriceRunner 0 i formen) | **ankare utan Ali-listning:** oxalsyraförångaren (Varrox 1 867 = 2,5×, 0 träffar på sex fraser), robotklipparens vinterväska (Gardena nu 599, Worx 199 under; 5 fraser till utan listning), takmossaskrapa · **sortiment:** rännskopor 10+, robotserviceset, vägghängare, vedbärare, elektrisk kedjeslip (K0), avloppsslang 12+ · rännsug bara proffs 164–875 USD |
+
+**rank.py:** 7 → 7 unika → 7 klarade grindarna → batch 7 (5 exploitation / 0 exploration / 2 säsong; exploration under minimum). Skyddsformer 1 av 7. En SAK-kollision (motorstödet mot Motorlåset K0236 — samma objektrad "Utombordare — kåpan…" + annat) löst med unikt objekt.
+
+## Batchen (sida: publicerad 27/9 som obesvarade kort på dagens sida; ark `Leverantorsoffert-2026-09-26.xlsx` med inbäddade bilder, prisfälten tomma)
+
+| # | Produkt | Slot | Objekt · form · arketyp | Pris · BE-CPA | Säsong | Ankare / golv | Största risken |
+|---|---|---|---|---|---|---|---|
+| 1 | Repsågen för höga grenar 135 cm (K0334) | exploit | NYTT trädets höga grenar · verktyg · D (H07) | 899 · 360–458 | lövfällning 2,7 v | arborist 2 000–6 000 (2,2×) / — | Fyndiq/Amazon olästa |
+| 2 | Däckvaggorna under det uppställda hjulet, 2-pack (K0335) | exploit | husvagn/husbil — hjulen · annat (stöd) · B (H08) | 549 · 303–348 | uppställning 2,0 v | inget ankare / 0 träffar i formen | liknar uppkörningsramp (K0225 nej) — creativen måste visa hjulet i vila |
+| 3 | Motorstödet till utombordaren på trailern (K0336) | exploit | NYTT utombordarens motorstöd · annat (stöd) · B (H06) | 649 · 294–358 | båtupptagning 2,0 v | Attwood 1 049 (1,62×) / VEVOR 364 | bultas på akterrullen |
+| 4 | Luftvärmepumpens topphuv med remmar (K0337) | exploit ASYM | luftvärmepumpens utedel · huv · B (H01) | 299 · 227–240 | första snö norr 4,1 v | Skotte plåthus 990 (annan form) / 0 mjuka | bubbelfolie = K8 lågt; datum 4–8 v |
+| 5 | Rännstaven till högtryckstvätten (K0338) | exploit ASYM | hängrännor · verktyg · D (H06) | 499 · 285–324 | lövfällning 2,7 v | Kärcher PC 20 899 (1,8×) / kopior 325 | kräver Kärcher-fäste — variant per märke |
+| 6 | Läderplånbokssetet, 14 delar förstansade (K0339) | säsong | NYTT läderplånbokssetet · låda · G (H05) | 699 · 333–400 | fars dag 6,1 v | ingen svensk aktör säljer setet / verktyg VEVOR 684 | lädersort okänd (PU?) — kräv prov |
+| 7 | Flugbindningssetet med städ, 6 delar (K0340) | säsong ASYM | NYTT flugbindningssetet · låda · F (H06) | 489 · 255–298 | fars dag 6,1 v | Loon Core 789 (1,61×) / flyangler 199 | 6 delar utan material; vattenstämpel i heron |
+
+Alla 7 LIVE_VERIFIED 04:44–04:53 UTC, hero sedd, materialklass 1–2.
+
+## Parkerade (`backlog.json`)
+Jägarens styckset i låda (Outdoor Edge 780–1 226, ingen Ali-listning) · lockpipe-set · knivbyggsats med slida (Brisa) · oxalsyraförångaren (Varrox 1 867 = 2,5×, ingen listning) · takmossaskrapa (lucka i SE, ingen listning) · robotklipparens vinterväska (Worx 199 under — stängd) · tidigare: bilbana 1:43, RC-snöslunga, betesbåt, plinko, parkeringshus, kattens jaktmaskin, fyra-i-rad trä, kortgivare, snöskulptursäck, nyckelhålslampa, fenderskydd, hästhink, igelkott, isfiske.
+
+## Metodfynd i dag
+1. **Sessionen somnade mellan arkbygget och publiceringen** — batchen låg färdig i 24 timmar utan att Axel såg den. Ordningen ska vara publicera → STATUS, inte STATUS → publicera; och rutinen bör aldrig lämna en byggd batch opublicerad över ett turbyte.
+2. **H05:s tredje vinnare (täljsetet 6,24) är ett hobbyset, inte en kalender** — men hobbyset som form är fackhandelns sortiment; luckan öppnar bara där handeln säljer delarna men inte setet (läder, flugbindning med städ).
+3. **"Stöd" är en ny form som klarar grindarna** (motorstöd, däckvaggor): B_SKYDDA_DYRT utan att vara ett överdrag — formtaket slår inte, och objektet är detsamma som vinnarna (utombordare, husvagn).
+4. **Tjänsten man slipper bär bara när verktyget fäster på en maskin ägaren redan har** (rännstaven på Kärchern) eller ersätter stegen (repsågen) — verktyg för jobb kedjan säljer i 10+ varianter faller varje gång (lins AG).
+5. **Spabadskapellet (Axels ja) 0 köp på 2 075 kr** — H01 gäller inte objekt som redan har en egen lösning (lock) och fackhandelssortiment. Regel: "dyr sak ute" kräver också "ingen egen lösning".
+6. Två nya verktyg: `katalog.py` (Shopify-dump som repo-skript i stället för scratchpad) och `butik_koppla.py` (butiksprodukt → koncept/launch-koppling/taggar i ett kommando).
+
+## Tio kontrollfrågor (MASTERPROMPT §9)
+1. Kattkojan: ingen djurlins i dag; kojan K0. Ja. 2. Taköverdraget 164 586 / 407 / 3,04 — H04 bär ingen rad i dag (max 899). Ja. 3. Kalendern 12 353 / 37; golfkalendern 3,25 — inga kalendrar sökta (12 i butiken). Ja. 4. Verktygen: två (repsågen H07, rännstaven H06/H07) med faktura-ankare utskrivet. Ja. 5. Verktyg levererat: två, medvetet. Ja. 6. Deadline per rad: 7 av 7 NOW (2,0–6,1 v). Ja. 7. Ankare per rad: 5 mätta med URL, 2 "ingen svensk aktör i formen" (däckvaggor, läderset) med kollade källor. Ja. 8. Hero per rad: alla 7 sedda; vattenstämpel (flugbindning), bubbelfolie (värmepumpshuv) anmärkta. Ja. 9. K0 på SAK: katalog-live 09-26 (248), koncept.py sok, kontot; en kollision löst. Ja. 10. Taggar + per_kriterium + koncept-id K0334–K0340; LEARNING_STATE omräknad FÖRE sökningen. Ja.
+
+## Definition of done (2026-09-26)
+- [x] 0A 11 svar inlästa (2/0/9), 11 butiksprodukter kopplade (butik_koppla.py)
+- [x] 0B Metas facit (`facit/snapshots/2026-09-26.json`); täljset + golfkalender vinnare, spabadskapell förlorare; RC-bilar taggade
+- [x] 0C LEARNING_STATE omskriven och läst; prediktion vs verklighet (1 av 13; klicken 6 av 11) kommenterad
+- [x] 0D SASONG.md; bara NOW-fönster
+- [x] Discovery 3 linser (AE/AF/AG), 5/0/2 — exploration under minimum
+- [x] Varje rad LIVE_VERIFIED med UTC-stämpel, hero sedd
+- [x] Golvet läst med URL per rad; materialklass; ekonomi som intervall, BE-CPA ≥ 190
+- [x] Batch 7 (< 10, motiverat: 4 bra slår 12 svaga), ingen utfyllnad
+- [x] Ark byggt med bilder (prisfälten tomma) — **sida publicerad först 27/9** (sessionen somnade)
+- [x] koncept.json bär K0334–K0340
+- [x] STATUS.md + LEARNING_STATE-raden + RUTIN-KVITTO; committat och pushat (27/9)
+- [ ] Discord-rapport 26/9 — ❌ skickades inte (sessionen somnade); ingår i 27/9:s rapport
