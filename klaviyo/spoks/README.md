@@ -119,6 +119,17 @@ ha hunnit fram (22 dagar efter köpet, samma gräns som F14):
 - Publiken väljs i appen av Axel (MCP:n kan inte sätta den). Segmentnamnen ovan är exakt det
   appen visar; kampanjerna syns på ämnesraden, båda heter likadant — titeln (omgång 1/2) syns
   först inne i utkastet.
+- **Mätningen (Axels fråga 2026-09-27):** Spoks räknar mottagare, öppningar och unika klick
+  på stjärnorna (`get_campaign_statistics` med post-id:t) — ett klick är en person som kom
+  fram till Trustpilots formulär. **Själva recensionerna går inte att läsa härifrån:**
+  Trustpilots profilsida svarar 403 med en robotkontroll ("Verifying your connection"), även
+  med headless Chromium (mätt 2026-09-27 14:20 CEST). Automatisk läsning finns redan byggd
+  och väntar på nycklar: `TRUSTPILOT_API_KEY` + `TRUSTPILOT_BUSINESS_UNITS` i Environments ⇒
+  `bonus/kallor.mjs` läser recensionerna via Trustpilots API (60 dagar, nyast först) till
+  VA-bonusen och sajtens Recensioner. Nyckeln förutsätter att Bäverbutikens profil är
+  claimad i Trustpilot Business (om API-nyckel ingår i gratisplanen är inte kontrollerat).
+  Tills dess räknas omdömena för hand på https://se.trustpilot.com/review/www.baverbutiken.se,
+  och kampanjen tillskrivs det som skrivits efter 2026-09-27 14:01 CEST.
 
 ### Regler ur de två dagarna (för nästa som ger Axel klick)
 
