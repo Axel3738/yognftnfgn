@@ -1,2 +1,7 @@
 output/
 kontodata.json
+
+# Översättningarna i marknader/output/underlag-*.json är minnet — de committas (marknadsbygget 2026-09-27).
+!marknader/output/
+marknader/output/*
+!marknader/output/underlag-*.json

@@ -42,7 +42,7 @@ export function bytExakt(kod, sok, ersatt, antal) {
   return kropp.split(sok).join(ersatt) + schema;
 }
 
-const liquidNyckel = (fil, n) => `liquid.${fil.replace(/^.*\//, '').replace(/\.liquid$/, '')}.${n}`;
+const liquidNyckel = (fil, n) => `liquid.${fil.replace(/^.*\//, '').replace(/\.(liquid|json)$/, '')}.${n}`;
 
 /**
  * Patchar EN fil. `kod` är filens innehåll, `ov` översättningarna per locale.

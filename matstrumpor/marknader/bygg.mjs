@@ -151,14 +151,24 @@ function skrivLage(l) {
 }
 
 // Mutation som får svara med userErrors: returnerar { data, fel } i stället för att kasta.
-async function mutation(k, query, variables) {
-  try {
-    const d = await k.graphql(query, variables);
-    return { data: d, fel: [] };
-  } catch (e) {
-    const m = /avvisade \w+: (.*)$/s.exec(e.message);
-    if (m) return { data: null, fel: [m[1]] };
-    throw e;
+// Shopifys egna tillfälliga fel (INTERNAL_SERVER_ERROR, THROTTLED) får ETT nytt försök efter
+// en paus — mätt 2026-09-27: translationsRegister svarade "Internal error. Looks like something
+// went wrong on our end" mitt i en annars felfri körning och dödade hela steget. Kvarstår felet
+// returneras det som text, så resten av resurserna körs och det som inte gick står i listan.
+const TILLFALLIGT = /INTERNAL_SERVER_ERROR|THROTTLED|Internal error|MAX_COST_EXCEEDED|\b50[0-4]\b/;
+const paus = (ms) => new Promise((r) => setTimeout(r, ms));
+async function mutation(k, query, variables, { forsok = 2 } = {}) {
+  for (let n = 1; ; n++) {
+    try {
+      const d = await k.graphql(query, variables);
+      return { data: d, fel: [] };
+    } catch (e) {
+      const m = /avvisade \w+: (.*)$/s.exec(e.message);
+      if (m) return { data: null, fel: [m[1]] };
+      if (!TILLFALLIGT.test(e.message)) throw e;
+      if (n < forsok) { await paus(3000 * n); continue; }
+      return { data: null, fel: [`Shopify: ${e.message.replace(/\s+/g, ' ').slice(0, 200)}`] };
+    }
   }
 }
 
@@ -310,13 +320,21 @@ async function stegPrislista(k, { skarpt }) {
   }
 }
 
+// Läser översättningsbara resurser 40 åt gången. Faller en sats på ett Shopify-fel görs
+// ett nytt försök EN resurs i taget, så ett fel på en resurs inte tar de andra 39 med sig;
+// det som ändå inte gick returneras som `misslyckade` och rapporteras — aldrig tyst.
 async function translatableIds(k, ids, locale) {
-  const ut = [];
+  const Q = `query($ids: [ID!]!, $l: String!) { translatableResourcesByIds(first: 40, resourceIds: $ids) { nodes { resourceId translatableContent { key value digest } translations(locale: $l) { key value outdated } } } }`;
+  const hamta = async (del) => (await k.graphql(Q, { ids: del, l: locale })).translatableResourcesByIds.nodes;
+  const noder = [], misslyckade = [];
   for (let i = 0; i < ids.length; i += 40) {
-    const d = await k.graphql(`query($ids: [ID!]!, $l: String!) { translatableResourcesByIds(first: 40, resourceIds: $ids) { nodes { resourceId translatableContent { key value digest } translations(locale: $l) { key value outdated } } } }`, { ids: ids.slice(i, i + 40), l: locale });
-    ut.push(...d.translatableResourcesByIds.nodes);
+    const del = ids.slice(i, i + 40);
+    try { noder.push(...(await hamta(del))); continue; } catch (e) { if (!TILLFALLIGT.test(e.message)) throw e; await paus(3000); }
+    for (const id of del) {
+      try { noder.push(...(await hamta([id]))); } catch (e) { misslyckade.push({ id, fel: e.message.replace(/\s+/g, ' ').slice(0, 160) }); }
+    }
   }
-  return ut;
+  return { noder, misslyckade };
 }
 
 export function lasOversattning(locale) {
@@ -340,11 +358,13 @@ async function stegOversattningar(k, { skarpt, bara: baraLocale = null }) {
     }
     const { karta, samma, konflikter } = byggKarta(sv, mal);
     if (konflikter.length) log(`⚠️ ${locale}: ${konflikter.length} svenska texter med två olika översättningar (första vann): ${konflikter.map((c) => c.nyckel).join(', ')}`);
-    const noder = await translatableIds(k, resurser.map((r) => r.id), locale);
+    const { noder, misslyckade } = await translatableIds(k, resurser.map((r) => r.id), locale);
     const typAv = new Map(resurser.map((r) => [r.id, r.typ]));
+    for (const m of misslyckade) log(`❌ ${locale}: gick inte att läsa ${typAv.get(m.id)} ${m.id}: ${m.fel}`);
     let registrerade = 0, resurserMed = 0;
     const lackor = [];
     const perTyp = {};
+    const felResurser = [];
     for (const n of noder) {
       const har = new Map((n.translations ?? []).map((t) => [t.key, t]));
       const innehall = (n.translatableContent ?? []).filter((c) => !['handle', 'ab_variant', 'rabattkod'].includes(c.key));
@@ -357,13 +377,14 @@ async function stegOversattningar(k, { skarpt, bara: baraLocale = null }) {
       for (let i = 0; i < rader.length; i += 100) {
         const r = await mutation(k, `mutation($id: ID!, $t: [TranslationInput!]!) { translationsRegister(resourceId: $id, translations: $t) { translations { key } userErrors { field message code } } }`,
           { id: n.resourceId, t: rader.slice(i, i + 100).map((x) => ({ key: x.key, value: x.value, locale, translatableContentDigest: x.digest })) });
-        if (r.fel.length) { log(`❌ ${locale} ${n.resourceId}: ${r.fel.join('; ')}`); continue; }
+        if (r.fel.length) { log(`❌ ${locale} ${typAv.get(n.resourceId)} ${n.resourceId}: ${r.fel.join('; ')}`); felResurser.push(n.resourceId); continue; }
         registrerade += r.data.translationsRegister.translations.length;
       }
     }
-    log(`${skarpt ? '✅' : 'torrt:'} ${locale}: ${registrerade} översättningar ${skarpt ? 'registrerade' : 'skulle registreras'} på ${resurserMed} resurser — ${Object.entries(perTyp).map(([t, n]) => `${t} ${n}`).join(', ')}`);
+    const misslyckat = misslyckade.length + felResurser.length;
+    log(`${skarpt ? (misslyckat ? '⚠️' : '✅') : 'torrt:'} ${locale}: ${registrerade} översättningar ${skarpt ? 'registrerade' : 'skulle registreras'} på ${resurserMed} resurser — ${Object.entries(perTyp).map(([t, n]) => `${t} ${n}`).join(', ')}${misslyckat ? ` — ${misslyckat} resurser GICK INTE (se ❌ ovan), kör steget igen` : ''}`);
     if (lackor.length) { log(`⚠️ ${locale}: ${lackor.length} svenska texter utan översättning (läckor på /${locale}):`); for (const l of lackor.slice(0, 25)) log(`     ${l.typ} ${l.id} ${l.key}: "${l.value}"`); }
-    sammanfattning[locale] = { status: 'ok', registrerade, lackor: lackor.length, konflikter: konflikter.length };
+    sammanfattning[locale] = { status: misslyckat ? 'delvis' : 'ok', registrerade, lackor: lackor.length, konflikter: konflikter.length, misslyckade: misslyckat };
   }
   return sammanfattning;
 }

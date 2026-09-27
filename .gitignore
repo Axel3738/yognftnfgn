@@ -135,3 +135,7 @@ stonebite/data/autosvar/
 
 # Klaviyo-motorn: byggda mejl, galleri, produkt- och recensionscache (klaviyo/bygg.mjs)
 klaviyo/output/
+
+# Matstrumpors översättningar är minnet — de committas (Axels marknadsbygge 2026-09-27)
+!matstrumpor/marknader/output/
+!matstrumpor/marknader/output/underlag-*.json

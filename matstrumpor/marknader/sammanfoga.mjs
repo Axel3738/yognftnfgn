@@ -12,14 +12,44 @@ import { join } from 'node:path';
 import { underlagsfil, OUTPUT } from './underlag.mjs';
 import { granska, skrivUt } from './granska.mjs';
 
+const TAGG = /<\/?[a-zA-Z][^>]*>|\{\{[^}]*\}\}|\{%[^%]*%\}/g;
+
+/**
+ * Återställer hårda blanksteg (U+00A0) där svenskan har dem och översättningen fått
+ * vanliga. Översättarna normaliserar dem tyst (mätt 2026-09-27: 7 av 7 i da-B och en-B),
+ * och ett `<p> </p>` med vanligt blanksteg kollapsar i webbläsaren medan `<p>&nbsp;</p>`
+ * ger en blankrad — sidan hade alltså fått annat radavstånd än den svenska.
+ * Segment mellan taggar som bara är blanksteg tas rakt ur svenskan; ett inledande eller
+ * avslutande hårt blanksteg i ett svenskt textsegment sätts tillbaka. Skiljer sig
+ * taggföljden (då har granska.mjs redan ett FEL) lämnas texten orörd.
+ */
+export function aterstallHardaBlanksteg(sv, mal) {
+  if (typeof sv !== 'string' || typeof mal !== 'string' || !sv.includes(' ') || mal.includes(' ')) return mal;
+  const sSeg = sv.split(TAGG), mSeg = mal.split(TAGG);
+  const mTag = mal.match(TAGG) ?? [];
+  if (sSeg.length !== mSeg.length) return mal;
+  const ut = mSeg.map((seg, i) => {
+    const s = sSeg[i];
+    if (!/\S/.test(s) && s.includes(' ') && !/\S/.test(seg)) return s;
+    let r = seg;
+    if (s.startsWith(' ') && r.startsWith(' ')) r = ` ${r.slice(1)}`;
+    if (s.endsWith(' ') && r.endsWith(' ')) r = `${r.slice(0, -1)} `;
+    return r;
+  });
+  let res = '';
+  for (let i = 0; i < ut.length; i++) { res += ut[i]; if (i < mTag.length) res += mTag[i]; }
+  return res;
+}
+
 export function sammanfoga(sv, delar) {
   const ut = {};
   const dubbletter = [];
   for (const [namn, d] of delar) {
     for (const [k, v] of Object.entries(d)) {
       if (k.startsWith('_')) continue;
-      if (k in ut && ut[k] !== v) dubbletter.push({ nyckel: k, del: namn });
-      ut[k] = v;
+      const varde = aterstallHardaBlanksteg(sv[k], v);
+      if (k in ut && ut[k] !== varde) dubbletter.push({ nyckel: k, del: namn });
+      ut[k] = varde;
     }
   }
   const svNycklar = Object.keys(sv).filter((k) => !k.startsWith('_'));

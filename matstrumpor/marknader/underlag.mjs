@@ -216,7 +216,9 @@ export async function byggUnderlag({ k, konfig = KONFIG, logg = () => {} } = {})
 
   // Hårdkodad liquid-text (patchas, registreras inte).
   for (const [fil, texter] of Object.entries(LIQUID_TEXTER)) {
-    for (const [n, v] of Object.entries(texter)) underlag[`liquid.${fil.replace(/^.*\//, '').replace(/\.liquid$/, '')}.${n}`] = v;
+    // Samma nyckel som temapatch.mjs liquidNyckel: filnamn utan mapp och utan .liquid/.json
+    // (mätt 2026-09-27: `.json` följde med och gav `liquid.product.json.ms_storlek`, som temat aldrig slog upp).
+    for (const [n, v] of Object.entries(texter)) underlag[`liquid.${fil.replace(/^.*\//, '').replace(/\.(liquid|json)$/, '')}.${n}`] = v;
   }
   underlag._liquid = 'liquid.*-raderna är hårdkodad text i temats ms-*.liquid — de patchas med locale-grenar av bygg.mjs --steg tema, aldrig via translationsRegister.';
 
