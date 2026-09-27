@@ -61,3 +61,7 @@ här filen innan de används (regel 3c 4b).
 - Livsstilsbilderna på sidan är AI-illustrationer (sidans egen rad) — får
   inte användas som "riktiga" produktfoton i en annons; Drive `Assets` och
   leverantörsfotona (hero/detalj/fakta) är källan.
+
+## Plockat till batch #1 (2026-09-27, Axels "NU")
+
+Alla vidarebyggen (`PD_1_H4/H5/H6`), alla sex videokoncept (`SO_1_H1`, `OB_1_H1`, `GT_4_H1`, `PD_4_H1`, `PD_5_H1`, `SP_4_H1`) och de fyra statiska (`PD_4_1`, `CS_4_1`, `OB_1_1`, `GT_4_1`) är byggda som briefer i batch #1, plus `SO_1_1`, `LI_1_1`, `BOF_1_1`, `BOF_2_1`, `OB_2_1`. Se batch-log.md. Kvar här: review-bilder (väntar på riktiga recensioner), SP med citat (aldrig), "skedar/figurer" (Axels fråga om sidan).

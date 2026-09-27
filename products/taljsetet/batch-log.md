@@ -68,3 +68,83 @@ Kontroller gjorda 2026-09-26 inför batchen: kampanjen ACTIVE med
 (6 rader, alla Byggd), ingen Notion-hub (ingen Feedback-rad att läsa —
 skapas ur MALL först när briefer finns, aldrig tom i förväg), Drive-mappen
 är Joshs `1IBXKtwHEdjFsTTAtNuIMoJ_ESTO8CmSP` (Batch #1 läggs INUTI den).
+
+## Batch #1 — förstabatchen (2026-09-27, Axels beslut "NU")
+
+**Varför nu:** batchen skulle ha väntat på dag 7-etiketterna (2026-10-01,
+se avsnittet ovan). Axel svarade 2026-09-27 på frågan om Täljsetet och
+Golfkalendern: **"1. NU"** — ägarens override av väntan. CS-KLART punkt 6
+(varje brief pekar på en lärdom) löstes med en **preliminär lärdom**
+`L-120250349207730291` (Taljset_PD_3) + `L-120250349195630291` (Taljset_PD_1,
+benchmark) skrivna för hand ur Metas livstidsdata i `lardomar.md` — märkta
+PRELIMINÄR och **ersätts av dag 7-lärdomen 2026-10-01 under samma id.**
+Ingen etikett är satt; inget här är en dom.
+
+**Data 2026-09-27 07:30 UTC (maximum, 7d_click):** kampanj 3 857 kr, 18 köp,
+ROAS 4,34, CPA 214 kr, AOV 930 kr → break-even-CPA 612 kr (1,52).
+`PD_1` 1 850 kr / 8 köp / ROAS 4,35 / CPA 231 kr / hold 17 % / CVR 1,8 %.
+`PD_3` 1 781 kr / 8 köp / ROAS 3,90 / CPA 223 kr / hold 18 % / CVR 1,8 %.
+Vinstbidrag (612 − CPA) × köp: PD_3 3 112 kr, PD_1 3 048 kr — jämnt; PD_3
+valdes som förälder för iterationerna för att dess första bild (verktyget i
+handen) konverterade dubbelt så bra som unboxingen dygn 1–2 (3,0 mot 1,3 %).
+Dag 7-etiketten kan flytta föräldern till PD_1. Budget: 4 000 kr/dag (SKALA ×2
+2026-09-27 05:54, ROAS 5,05 = 206 % av target).
+
+**Feedback-rad:** hubben skapades i dag (dubblett av MALL) — ingen
+"Brief review"-rad finns. Rapporterat. Termoskyddets senaste regler
+(CPA alltid mot break-even i samma mening, hook aldrig en instruktion,
+parentens Meta-annons-id i Why) tillämpades ändå i varje brief.
+
+**Annonsidéer:** 0 rader "Ny" för produkten 2026-09-27.
+
+**Kvot:** produkten finns inte i `products/products.json`, så
+`pipeline/quota.mjs` visar ingen kvot för den (rond-produkt: `annonsbehov` i
+produktkartan styr). 18 briefer ≥ varje kvot i skriptet (max 9/cykel).
+
+### Briefer (18 st, alla ✅ i tools/briefgranskning.mjs från main 67d5c89, 0 av 18 stoppade, 0 rondfel)
+
+| Brief | Typ | Variabel | Hypotes | KPI | Källa |
+|---|---|---|---|---|---|
+| `Taljset_PD_1_H4` | I, it 1 på PD_3 | öppningen: första snittet i övningsbiten, handsken på | snittet i träet slår verktyget i handen som första bild | CPA mot 612 kr, hold | egen-data |
+| `Taljset_PD_1_H5` | I, it 2 | längre problemdel: kökslådan före väskan | problem-medveten öppning matar samma kropp fler köpare | CPA, hold | egen-data + sidan |
+| `Taljset_PD_1_H6` | I, it 3 | in media res: den snittade biten först | resultatet håller bättre än verktyget/problemet | hold, CPA | egen-data |
+| `Taljset_SO_1_H1` | N | vinkeln SO: fel kniv mot rätt verktyg | den som täljer med kökskniv köper på konflikten | CPA | **voc** (`docs/voc-forum-taljsetet-2026-09-27.md`) |
+| `Taljset_OB_1_H1` | N | vinkeln OB: "är det inte farligt?" | handskarna först låser upp den tveksamma | CPA, CVR | sidan/backlog (0 kommentarer, inte voc) |
+| `Taljset_GT_4_H1` | N | vinkeln GT: presenten som blir en hobby | presentköparen är en egen avatar | CPA | G-copyns rad, backlog |
+| `Taljset_PD_4_H1` | N | demoform: väskan töms del för del | inventariet i sig är demot | CPA | backlog |
+| `Taljset_PD_5_H1` | N | demoform: före/efter på övningsbiten | synlig förvandling slår väskan som bevis | hold, CPA | backlog |
+| `Taljset_SP_4_H1` | N | SP som situation utan citat | lugnet på altanen säljer utan recension | CPA | SP-copyns rad utan citatet |
+| `Taljset_PD_4_1` | N, statisk | formatet: 30 delar utlagda | validerar PD som bild (PD_2_1 för tidig) | CPA | backlog |
+| `Taljset_SO_1_1` | N, statisk | formatet: lådan mot väskan (split) | konflikten bär utan rörelse? | CPA | backlog |
+| `Taljset_LI_1_1` | N, statisk | listicle: sex saker i väskan | listan som bild | CPA | backlog |
+| `Taljset_CS_4_1` | N, statisk | pris utan brådska | ankaret säljer utan "innan priset går upp" | CPA | backlog |
+| `Taljset_OB_1_1` | N, statisk | blad + skydd + handske | säkerhetsinvändningen som bild | CPA | sidan |
+| `Taljset_GT_4_1` | N, statisk | väskan halvt uppackad | presentvinkeln utan rörelse | CPA | G-copyns rad |
+| `Taljset_BOF_1_1` | N, BOF | pris till den som redan klickat | — retargeting | CPA | — |
+| `Taljset_BOF_2_1` | N, BOF | 14 dagars ångerrätt (sidans enda garantirad) | — retargeting | CPA | sidan |
+| `Taljset_OB_2_1` | N, OB | nybörjarens tvivel → träbiten | "kan jag verkligen?" besvaras | CPA | sidan + voc-mönster 2 |
+
+Inga review-bilder (importrader). Ingen testimonial-static av samma skäl —
+redovisat. Tre BOF-bilder = `BOF_1_1`, `BOF_2_1` och `OB_2_1` (invändningen
+heter OB enligt namnkonventionen, aldrig BOF).
+
+**Testplan:** nytt test-ABO med lika budget per annons (regel 11), aldrig i
+skalningskampanjen. Tier 1: PD_1_H4/H5/H6 + SO_1_H1 + PD_4_1 + CS_4_1.
+Tier 2: OB_1_H1, GT_4_H1, PD_4_H1, PD_5_H1, SO_1_1, LI_1_1, OB_1_1, GT_4_1.
+Tier 3 (retargeting): BOF_1_1, BOF_2_1, OB_2_1, SP_4_H1. Ingen dom under
+300 kr / 3 köp; kill när CPA > 612 kr efter ≥ 500 kr spend. Gör innan spend:
+priset läses live (869/1 139), handskarna syns i varje blad-klipp, inga
+recensionsrader, inga barn.
+
+**Copy:** sonnet, `batch-01/copy-sonnet.md` — 152 svenska rader i
+tre-frågorstestet, alla ❌ på "kan konkurrent signera". Regi per rad:
+`batch-01/regi.json`. Manifest: `batch-01/manifest.json`. Drive: `Batch #1`
+(`1a5oI7rMmx3h7Os4NAwEeN0VYD6m0Dztr`) inuti Joshs produktmapp, en undermapp
+per annons (id i manifestet). Notion: **Whittling set creative hub**
+(`3e8270ab-908c-8156-bd42-e5fcbe833705`, dubblett av MALL, omdöpt) — raderna i
+`batch-01/notion-rader.json`.
+
+**Vid dag 7 (2026-10-01):** skriv de riktiga lärdomarna för PD_1/PD_3 med
+`lardom.mjs --skriv` (samma id — ersätt de preliminära blocken i `lardomar.md`,
+LARDOM-raderna 2026-09-27 är märkta `preliminar: true`), läs av om föräldern
+ska vara PD_1 i stället, och logga launchen med `/logga`.

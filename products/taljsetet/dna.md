@@ -208,3 +208,7 @@ en möjlig GT-ram — samma mönster som Axels Annonsidéer för bältesslipmask
   pausa dem själv?
 - "Skedar, figurer och dekorationer" står i PD-copyn men inte på sidan — ska
   sidan få en rad om vad man kan tälja, eller ska copyn hålla sig till sidan?
+
+## Uppdatering 2026-09-27 — förstabatchen skriven på Axels beslut ("NU")
+
+Batch #1 (18 briefer) skrevs 2026-09-27 utan dag 7-etikett, på ägarens override. Data dag 4: PD_1 och PD_3 har 8 köp var (1 850 / 1 781 kr), CVR jämnade ut sig till 1,8 % på båda — hypotesen "verktyget i arbete säljer, paketet lockar klick" är svagare än 2026-09-26 men fortfarande den som prövas (PD_1_H4). Förälder för iterationerna: PD_3. Preliminära lärdomar i `lardomar.md` (ersätts 2026-10-01). Kundspråk: `docs/voc-forum-taljsetet-2026-09-27.md` — nybörjarens första fråga är "vilken kniv?", och svaret från de som täljer är att kniven i lådan "inte är tänkt att tälja med" (→ SO_1_H1, kalla=voc). Ingen i trådarna nämner handskar — säkerhetsinvändningen är sidans, inte kundens. Notion-hub: Whittling set creative hub `3e8270ab-908c-8156-bd42-e5fcbe833705`.

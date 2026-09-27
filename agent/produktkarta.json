@@ -1270,7 +1270,14 @@
         "kalla": "Axels prissheet (Google Sheet 10VrOx…, CSV-export 2026-09-24, BATCH 13: \"Golf advent calendar\"), 1 st till Sverige: produkt + frakt 9,08 + 8,11 = 17,19 USD, plus 2,9 EUR EU-avgift per order. Priset 549 kr läst ur baverbutiken.se/products.json (se lage_motivering).",
         "datum": "2026-09-24"
       },
-      "produkt_mapp": "golf-adventskalendern"
+      "produkt_mapp": "golf-adventskalendern",
+      "notion_hub_id": "3e8270ab-908c-817b-9e74-efe7a636609e",
+      "notion_hub_datakalla": "collection://64a270ab-908c-8281-9151-071ae0ea9c62",
+      "notion_hub_namn": "Golf advent calendar creative hub",
+      "notion_hub_not": "Skapad 2026-09-27 av /rond-auto (Axels beslut \"NU\": förstabatch före dag 7-etikett) som dubblett av MALL Creative hub MALL (3cc270ab-908c-8005-a50e-db6b1b179794), omdöpt via notion-update-data-source. 18 briefer i Draft från start (batch #1). Åtkomsten ärvs från mallen — ser redigerarna inte hubben: fråga Axel.",
+      "drive_senaste_batchmapp_id": "1R_WB7zHj5tPAN91wfX9UoMFp-kYke9KG",
+      "drive_not": "Batch #1 skapad 2026-09-27 INUTI Joshs produktmapp 1P8kp5K1MJZ_zwa6O5zdHRS9rQgD8L1-T, en undermapp per annons.",
+      "minne": "products/golf-adventskalendern"
     },
     {
       "campaign_id": "120250349224920291",
@@ -1303,7 +1310,14 @@
         "kalla": "Axels prissheet (Google Sheet 10VrOx…, CSV-export 2026-09-24, BATCH 10: \"Täljsetet 30 delar i väska\"), 1 st till Sverige: produkt + frakt 13,08 + 13,86 = 26,94 USD, plus 2,9 EUR EU-avgift per order. Priset 869 kr läst ur baverbutiken.se/products.json (se lage_motivering).",
         "datum": "2026-09-24"
       },
-      "produkt_mapp": "taljsetet"
+      "produkt_mapp": "taljsetet",
+      "notion_hub_id": "3e8270ab-908c-8156-bd42-e5fcbe833705",
+      "notion_hub_datakalla": "collection://99c270ab-908c-83f9-b32d-07c644fed308",
+      "notion_hub_namn": "Whittling set creative hub",
+      "notion_hub_not": "Skapad 2026-09-27 av /rond-auto (Axels beslut \"NU\": förstabatch före dag 7-etikett) som dubblett av MALL Creative hub MALL (3cc270ab-908c-8005-a50e-db6b1b179794), omdöpt via notion-update-data-source. 18 briefer i Draft från start (batch #1). Åtkomsten ärvs från mallen — ser redigerarna inte hubben: fråga Axel.",
+      "drive_senaste_batchmapp_id": "1a5oI7rMmx3h7Os4NAwEeN0VYD6m0Dztr",
+      "drive_not": "Batch #1 skapad 2026-09-27 INUTI Joshs produktmapp 1IBXKtwHEdjFsTTAtNuIMoJ_ESTO8CmSP, en undermapp per annons.",
+      "minne": "products/taljsetet"
     },
     {
       "campaign_id": "120250365281490291",

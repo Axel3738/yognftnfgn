@@ -213,3 +213,7 @@ men det kräver Axels ok innan det skrivs.
   upp" — ska de få ligga (regeln 2026-09-15 säger ja) eller vill du pausa
   dem själv?
 - Ska sista beställningsdag (17 nov / 10 dec) få stå i copy i november?
+
+## Uppdatering 2026-09-27 — förstabatchen skriven på Axels beslut ("NU")
+
+Batch #1 (18 briefer) skrevs 2026-09-27 utan dag 7-etikett, på ägarens override. Data dag 4: PD_1 2 969 kr (91 %), 13 köp, ROAS 3,05, CPA 228 kr mot break-even-CPA 452 kr, hold 12 %, CVR 3,3 % — fortfarande enda annonsen med leverans; videon/öppningen är variabeln (H4–H6). Preliminär lärdom i `lardomar.md` (ersätts 2026-10-01). Ingen svensk VoC hittades (redovisat i batch-log). Notion-hub: Golf advent calendar creative hub `3e8270ab-908c-817b-9e74-efe7a636609e`.

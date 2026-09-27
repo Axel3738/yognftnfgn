@@ -55,3 +55,7 @@ här filen innan de används (regel 3c 4b).
   tittade — swipe-källa för hookar när batch #1 ska skrivas, aldrig kopieras.
 - Barn i bild eller "för hela familjen": aldrig — sidan säger uttryckligen
   att kalendern inte beskrivs som barnsäker.
+
+## Plockat till batch #1 (2026-09-27, Axels "NU")
+
+Alla vidarebyggen (`PD_1_H4/H5/H6`), sex videokoncept (`SO_1_H1`, `GT_4_H1`, `PD_4_H1`, `PD_5_H1`, `OB_1_H1`, `SP_4_H1`) och de tre statiska (`PD_4_1`, `CS_4_1`, `GT_4_1`) är byggda som briefer i batch #1, plus `SO_1_1`, `LI_1_1`, `OB_1_1`, `BOF_1_1`, `BOF_2_1`, `OB_2_1`. Se batch-log.md. **Kvar här:** `Golfkalender_RI_1_H1` (BLOCKER: datum i copy kräver Axels ok, tidigast början av november), review-bilder (väntar på riktiga recensioner), SP med citat (aldrig).
