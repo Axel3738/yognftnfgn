@@ -1,0 +1,81 @@
+{
+ "_om": "Skrivet av annonser/bygg.mjs efter tillbakaläsning ur kontot.",
+ "skrivet": "2026-09-27T13:39:06.007Z",
+ "kampanjer": [
+  {
+   "kod": "NO",
+   "kampanj": {
+    "id": "120251749551520023",
+    "name": "MATSTRUMP_NO_SALES",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "daily_budget": "100000"
+   },
+   "adset": {
+    "id": "120251749551860023",
+    "namn": "MATSTRUMP_NO_ugc"
+   },
+   "annonser": []
+  },
+  {
+   "kod": "DK",
+   "kampanj": {
+    "id": "120251749599180023",
+    "name": "MATSTRUMP_DK_SALES",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "daily_budget": "100000"
+   },
+   "adset": {
+    "id": "120251749600560023",
+    "namn": "MATSTRUMP_DK_ugc"
+   },
+   "annonser": []
+  },
+  {
+   "kod": "FI",
+   "kampanj": {
+    "id": "120251749604200023",
+    "name": "MATSTRUMP_FI_SALES",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "daily_budget": "100000"
+   },
+   "adset": {
+    "id": "120251749605630023",
+    "namn": "MATSTRUMP_FI_ugc"
+   },
+   "annonser": []
+  },
+  {
+   "kod": "US",
+   "kampanj": {
+    "id": "120251749609010023",
+    "name": "MATSTRUMP_US_SALES",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "daily_budget": "100000"
+   },
+   "adset": {
+    "id": "120251749610210023",
+    "namn": "MATSTRUMP_US_ugc"
+   },
+   "annonser": []
+  },
+  {
+   "kod": "WW",
+   "kampanj": {
+    "id": "120251749612350023",
+    "name": "MATSTRUMP_WW_SALES",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "daily_budget": "100000"
+   },
+   "adset": {
+    "id": "120251749614670023",
+    "namn": "MATSTRUMP_WW_ugc"
+   },
+   "annonser": []
+  }
+ ]
+}

@@ -1,0 +1,79 @@
+{
+ "_om": "Annonskampanjerna per marknad i kontot nya kungen (730973156224390, SEK). bygg.mjs läser den här filen + <KOD>.json (copy + annonser). Budgetar: bara NO är Axels (2026-09-27 '1000kr per dag'); de andra är PLATSHÅLLARE så att CBO-kampanjen kan skapas PAUSED — de aktiveras aldrig utan Axels budget. Katarinas UGC får aldrig lämna Sverige (Axel 2026-09-27).",
+ "konto": "730973156224390",
+ "konto_namn": "nya kungen",
+ "pixel": "1785935302094082",
+ "sida": "820358954504320",
+ "instagram_user_id": "17841479011543544",
+ "adset_mall": "SE-adsetet 09-17 UGC (mätt 2026-09-27): OFFSITE_CONVERSIONS/IMPRESSIONS, köp via pixeln, Advantage+ audience, 18–65, 7d klick, WEBSITE, DSA STonebite",
+ "kampanjer": {
+  "NO": {
+   "kampanj": "MATSTRUMP_NO_SALES",
+   "adset": "MATSTRUMP_NO_ugc",
+   "geo": [
+    "NO"
+   ],
+   "locale": "nb",
+   "heygen_sprak": "Norwegian Bokmål (Norway)",
+   "lank": "https://matstrumpor.se/nb/products/sushi-strumpor?country=NO",
+   "budget_sek_dag": 1000,
+   "budget_beslut": "Axel 2026-09-27: '1000kr per dag' — får aktiveras när annonserna ligger i och är tillbakalästa"
+  },
+  "DK": {
+   "kampanj": "MATSTRUMP_DK_SALES",
+   "adset": "MATSTRUMP_DK_ugc",
+   "geo": [
+    "DK"
+   ],
+   "locale": "da",
+   "heygen_sprak": "Danish (Denmark)",
+   "lank": "https://matstrumpor.se/da/products/sushi-strumpor?country=DK",
+   "budget_sek_dag": 1000,
+   "budget_beslut": "EJ GIVEN — platshållare 1000 kr/dag, PAUSED tills Axel sagt budget"
+  },
+  "FI": {
+   "kampanj": "MATSTRUMP_FI_SALES",
+   "adset": "MATSTRUMP_FI_ugc",
+   "geo": [
+    "FI"
+   ],
+   "locale": "fi",
+   "heygen_sprak": "Finnish (Finland)",
+   "lank": "https://matstrumpor.se/fi/products/sushi-strumpor?country=FI",
+   "budget_sek_dag": 1000,
+   "budget_beslut": "EJ GIVEN — platshållare 1000 kr/dag, PAUSED tills Axel sagt budget"
+  },
+  "US": {
+   "kampanj": "MATSTRUMP_US_SALES",
+   "adset": "MATSTRUMP_US_ugc",
+   "geo": [
+    "US"
+   ],
+   "locale": "en",
+   "heygen_sprak": "English (United States)",
+   "lank": "https://matstrumpor.se/en/products/sushi-strumpor?country=US",
+   "budget_sek_dag": 1000,
+   "budget_beslut": "EJ GIVEN — Axel 2026-09-27: 'förbered USA-kampanj med alla nya ads och UGC heygennad'; platshållare 1000 kr/dag, PAUSED"
+  },
+  "WW": {
+   "kampanj": "MATSTRUMP_WW_SALES",
+   "adset": "MATSTRUMP_WW_ugc",
+   "geo": [
+    "NO",
+    "DK",
+    "FI",
+    "US",
+    "GB",
+    "AU",
+    "CA",
+    "NZ"
+   ],
+   "locale": "en",
+   "heygen_sprak": "English (United States)",
+   "lank": "https://matstrumpor.se/en/products/sushi-strumpor",
+   "lank_not": "Utan ?country= väljer Shopify marknad efter kundens IP (alla åtta länder är marknader), så en norsk kund ser engelska + NOK. Sverige ingår inte — SE har egen kampanj.",
+   "budget_sek_dag": 1000,
+   "budget_beslut": "EJ GIVEN — Axel 2026-09-27: 'bygg upp worldwide kampanj'; platshållare 1000 kr/dag, PAUSED"
+  }
+ }
+}

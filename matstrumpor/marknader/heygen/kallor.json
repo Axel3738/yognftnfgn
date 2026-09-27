@@ -25,25 +25,26 @@
   "titel": "Sushigalen ungen.mp4",
   "langd_s": 30.51,
   "fil": "scratchpad/norge/original/katarina_unge.mp4",
-  "bytes": 7503725
+  "bytes": 7503725,
+  "sparr": "⛔ Axel 2026-09-27: Katarinas UGC får inte köras i andra marknader — översätts aldrig, bara Sverige."
  },
  "katarina_alskaren": {
   "video_id": "1707631337001126",
   "titel": "Sushiälskaren i ditt liv.mp4",
   "langd_s": 31.207,
   "fil": "scratchpad/norge/original/katarina_alskaren.mp4",
-  "bytes": 7733690
+  "bytes": 7733690,
+  "sparr": "⛔ Axel 2026-09-27: Katarinas UGC får inte köras i andra marknader — översätts aldrig, bara Sverige."
  },
- "_om": "Källvideorna för Norge = Matstrumpors svenska UGC-annonser i kontot nya kungen (advideos, hämtade 2026-09-27 via GET /<video_id>?fields=source). Filerna laddas ner på nytt av norge/README.md steg 1 — de ligger inte i repot. Nathalie är vinnaren (29 av 44 köp i kampanjen 17–26/9); Katarina ×2 hade 1 köp på ~175 kr efter tre dygn (för tidigt att döma); Sofie H1 fick ingen spend (okänd, inte förlorare). Sofie H2 (jul) väntar.",
+ "_om": "Källvideorna för Norge = Matstrumpors svenska UGC-annonser i kontot nya kungen (advideos, hämtade 2026-09-27 via GET /<video_id>?fields=source). Filerna laddas ner på nytt av norge/README.md steg 1 — de ligger inte i repot. Nathalie är vinnaren (29 av 44 köp i kampanjen 17–26/9); Katarina ×2 hade 1 köp på ~175 kr efter tre dygn (för tidigt att döma); Sofie H1 fick ingen spend (okänd, inte förlorare). Sofie H2 (jul) väntar. ⛔ Katarina ×2 STRUKNA ur alla utlandsbatcher (Axel 2026-09-27: får inte köras i andra marknader).",
  "batch": {
   "manifest": "norge.json (samma mapp)",
   "marknad": "NO",
   "heygen_sprak": "Norwegian Bokmål (Norway)",
   "videor": [
    "nathalie",
-   "katarina_unge",
-   "katarina_alskaren",
-   "sofie_h1"
+   "sofie_h1",
+   "sofie_h2"
   ]
  }
 }
