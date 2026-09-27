@@ -75,6 +75,29 @@ fanns bara i hubben, och uppladdaren gav Gilz mini-clips samma nummer dagen
 efter; nio annonser live med rond 2:s nummer, brieferna omdöpta 054–058).
 `node matstrumpor/kor.mjs --namn` läser sedan 2026-09-27 logg + fil + senaste
 avläsning + hubben live och skriver unionen tillbaka i `kanda-namn.json`.
+🌍 **Matstrumpor säljer i åtta länder från SAMMA butik sedan 2026-09-27**
+(Axels order: "launcha matstrumpor med markets i alla marknader … Sverige är
+main marknad"; allt i `matstrumpor/marknader/`, läs `README.md` där först).
+Förra gången (augusti 2026) var det INTE Markets utan en egen engelsk butik,
+**sushisock.com** (`ud9jb9-jb`, USD), med annonser från samma svenska konto —
+US/UK/AU alla under break-even, pausade, butiken ligger kvar utanför repot.
+Nu: tre marknader i matstrumpor.se — **Norge** (NO, nb, NOK), **Europa** (DK +
+FI, da + fi, EUR med DKK som lokal valuta) och **USA/UK/AU/CA/NZ** (en, USD
+fast = Axels sushisock-priser, GBP/AUD/CAD/NZD omräknade) — fri frakt till alla
+åtta, 5–10 arbetsdagar, adresserna `matstrumpor.se/nb|da|fi|en`, 196 texter
+per språk översatta av sonnet-subagenter mot `REGLER.md` och granskade
+adversariellt (`output/underlag-<locale>.json` är minnet). Temats hårdkodade
+svenska (paketväljaren, trust-raden, "Verifierat köp", pris- och datumformatet
+i `ms-cro.js`) får locale-grenar av `bygg.mjs --steg tema`; löftena "framme
+till fars dag/jul" visas bara på svenska. `matstrumpor.no` är INTE registrerad
+(Axels klick hos Loopia) — /nb fungerar utan den. COGS per marknad i
+`matstrumpor/cogs.json` (`kor.mjs --ekonomi --marknad US`): Norden saknar
+kostnad, donut/pizza/hamburgare saknar Cost per item i Shopify. ⚠️ Annonserna
+utomlands är ett eget spår som INTE är byggt: Norge först, Axel sätter budget,
+inget annonskonto rörs innan dess — planen står i README:n. ⚠️ Shopify mätt
+2026-09-27: `translationsRegister` kan svara `INTERNAL_SERVER_ERROR` en stund
+(kör om), och en batchläsning av temats översättningar kan svara med FEL
+språk (`--steg kontroll` läser om ensamt) — lita aldrig på en enda läsning.
 
 **Kopiera aldrig `page`/`pixel` mellan verksamheterna.** Fel pixel betyder att köpen
 bokförs på fel verksamhet och att all analys blir fel — och det syns inte som ett
