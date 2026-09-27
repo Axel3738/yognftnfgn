@@ -162,11 +162,37 @@ Shopify `yitrbk-m3`, plan **Free = 5 000 mejl/mån**). Facit med varje id:
   `rabatt: "black_week"` (testat), och `kolla-mejl.mjs` kör kontrollen på enstaka innehållsfiler.
   Efter uppdateringen räknat: 42 utkast, titlar och id stämmer mot `plan.json`, inga dubbletter.
 
-**Inget är påslaget.** Att slå på ett flöde = sändstegen på ett i taget i flödesredigeraren,
+⛔ **PÅSLAGET av Axel 2026-09-27 08:48–08:53 CEST: 29 av 32 flöden** (mätt med `get_flows`; alla
+sändsteg på). Att slå på ett flöde = sändstegen på ett i taget i flödesredigeraren,
 sedan flödet (samma som Matstrumpor). F14 (recension) väntade på Trustpilot: evaluate-sidan för
 carashell.se svarade 404 2026-09-26 11:40 och **200 kl 18:50** ("Rate Carashell", Axel skapade
-profilen), och alla 15 stjärnlänkar i F14 (3 språk × 5) svarade 200. F14 kan alltså slås på som
-de andra.
+profilen), och alla 15 stjärnlänkar i F14 (3 språk × 5) svarade 200.
+**Tre flöden var kvar 09:05 CEST** (Axels ord: "misclicks, jag minns inte vad jag tryckte på"):
+`FLOW_prenumerant_valkommen_SV_v1` hade fått triggern **ändrad till `order_created`** (välkomstmejlen
+hade gått till varje svensk köpare med samtycke i stället för till nya prenumeranter) — återställd
+till `contact_created` med `update_flow` (filter och steg orörda, tillbakaläst), Axel slår på
+triggern; `FLOW_levererat_termoskyddet_DA_v1` orörd men av (sändsteg + trigger = Axels klick);
+`FLOW_visning_webbhistorik_SV_v1` var redan på och rätt (skärmdumpen var tagen före sista klicket).
+25 av 32 flöden lästes tillbaka i detalj mot `plan.json` efter påslaget (event, land, väntetider,
+steg): alla rätt. ⚠️ **Spoks rate-limitar `get_flow`** — 8 parallella anrop efter ~25 i följd gav
+"Rate limit exceeded. Try again in 11 seconds"; de 7 danska lästes därför i en senare check-in,
+EN I TAGET. **Kampanjerna:** de fyra första schemalagda av Axel samma morgon (`waiting_to_be_published`,
+går inte att ändra via MCP:n — bara utkast): sv/nb/da tisdag 29/9 18:00 rätt, **engelskan hamnade på
+söndag 27/9 18:00** (2026-09-27T16:00Z) i stället för tisdag 16:00 — Axel flyttar den själv; en
+check-in 15:30 CEST läser om. Publiken (segmentet) syns inte i `get_campaign`, så den går inte att
+kontrollera från en session.
+
+**Samtycket per land, mätt i Shopify 2026-09-27** (487 kunder; `emailMarketingConsent` +
+`consentUpdatedAt` mot orderns `createdAt`): **USA 59 av 77 (77 %)**, GB 1 av 5, **DK 3 av 28
+(11 %), SE 12 av 198 (6 %), AU 2 av 32, NO 4 av 99 (4 %)**, FI 0 av 8, NZ 0 av 4, CA 0 av 3, 33
+utan land 0. **Varje ja utanför USA gavs i kassan** (samma sekund som ordern, `SINGLE_OPT_IN`) —
+rutan finns alltså i alla marknader; skillnaden är att den är **förikryssad bara i USA** (tillåtet
+där), medan EU/EES, UK, AU, NZ och CA kräver att kunden själv kryssar, och då gör 4–11 % det.
+Axels fråga "har jag glömt att samla in samtycke?" ⇒ nej. Kampanjerna når därför 81 av 488
+kontakter; köparflödena (efter köp, levererat, recension, vinback) går till alla köpare som inte
+tackat nej (egna kunder, MFL 19 § 2 st, samma beslut som 2026-09-25). Enda lagliga spaken för
+fler ja är rutans egen text i kassan (Shopifys standardtext är "Skicka nyheter och erbjudanden
+till mig via e-post") — inget popup (Axels regel).
 
 Axels order 2026-09-26 (`PROMPT-carashell.md`): hela mejlsystemet för CaraShell i
 Spoks, alla marknader och språk, allt som utkast. CaraShell är en egen verksamhet:
