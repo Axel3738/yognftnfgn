@@ -24,7 +24,7 @@
 // granska.mjs registreras aldrig; ingen marknad som redan bär en valuta får den bytt; inget i
 // Meta rörs härifrån.
 
-import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
 import { lasButik, skapaKlient } from '../../sparning/butik.mjs';
@@ -411,6 +411,11 @@ async function stegTema(k, { skarpt }) {
     if (r.byten.length && r.kod !== kod) skriv.push({ filename: fil, body: { type: 'TEXT', value: r.kod } });
   }
   if (!skarpt || skriv.length === 0) { log(skriv.length ? `torrt: ${skriv.length} filer skulle skrivas` : 'inget att skriva'); return; }
+  // Originalen sparas innan något skrivs, så en fil kan läggas tillbaka exakt som den var
+  // (themeFilesUpsert med innehållet ur mappen). Mappen ligger under output/ och committas inte.
+  const backup = join(OUTPUT, 'tema-original', new Date().toISOString().slice(0, 16).replace(/[:T]/g, '-'));
+  for (const s of skriv) { const p = join(backup, s.filename); mkdirSync(dirname(p), { recursive: true }); writeFileSync(p, innehall[s.filename]); }
+  log(`originalen sparade i ${backup}`);
   const u = await mutation(k, `mutation($id: ID!, $files: [OnlineStoreThemeFilesUpsertFileInput!]!) { themeFilesUpsert(themeId: $id, files: $files) { upsertedThemeFiles { filename } userErrors { filename code message } } }`, { id: temaId, files: skriv });
   if (u.fel.length) throw new Error(`themeFilesUpsert: ${u.fel.join('; ')}`);
   // Tillbakaläsning

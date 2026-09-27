@@ -108,7 +108,23 @@ export function patchaFil(fil, kod, ov) {
       };
       tilldela('popularast', 'flag_text', "  assign flag_text = popular_text | default: 'Populärast'", 'Populärast');
       tilldela('st', 'unit', "  assign unit = unit_word | default: 'st'", 'st');
-      byt('valj_paket', "aria-label=\"{{ heading | default: 'Välj paket' | escape }}\"", `aria-label="{{ heading | default: '${gren('valj_paket', 'Välj paket', { citat: true }) ?? 'Välj paket'}' | escape }}"`, 1);
+      {
+        // aria-label står i en {{ }}-utmatning, och Liquid tillåter inga {% %}-taggar inuti en
+        // sådan — Shopify avvisade hela themeFilesUpsert 2026-09-27 ("Variable … was not
+        // properly terminated"). Därför en variabel som tilldelas på raden före elementet.
+        const sok = "aria-label=\"{{ heading | default: 'Välj paket' | escape }}\"";
+        const ny = 'aria-label="{{ heading | default: valj_paket | escape }}"';
+        const rader = LOCALES.map((l) => [l, ov?.[l]?.[N('valj_paket')]]).filter(([, t]) => t && t !== 'Välj paket');
+        if (redan(ny)) hoppade.push('valj_paket: redan patchad');
+        else if (rader.length === 0) hoppade.push('valj_paket: ingen översättning');
+        else {
+          const block = `{%- assign valj_paket = 'Välj paket' -%}{%- case request.locale.iso_code -%}${rader.map(([l, t]) => `{%- when '${l}' -%}{%- assign valj_paket = '${String(t).replace(/'/g, "\\'")}' -%}`).join('')}{%- endcase -%}\n`;
+          kod = bytExakt(kod, sok, ny, 1);
+          const radstart = kod.lastIndexOf('\n', kod.indexOf(ny)) + 1;
+          kod = kod.slice(0, radstart) + block + kod.slice(radstart);
+          byten.push('valj_paket');
+        }
+      }
       byt('spara', '<span class="ms-bundle__flag">Spara {{ saving }}%</span>', `<span class="ms-bundle__flag">${gren('spara', 'Spara')} {{ saving }}%</span>`, 1);
       break;
     }

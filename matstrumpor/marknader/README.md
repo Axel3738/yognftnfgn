@@ -149,6 +149,14 @@ använder tjänsterna". Ordval som är identiska med svenskan och rätt på mål
 3. Ett `<p> </p>` med vanligt blanksteg kollapsar i webbläsaren där svenskans `<p>&nbsp;</p>`
    ger en blankrad — alla översättare normaliserade U+00A0 tyst; `sammanfoga.mjs` sätter dem
    tillbaka segment för segment.
+4. **`themeFilesUpsert` är INTE atomär.** Första skarpa temaskrivningen (11 filer) fick
+   `userErrors` för EN fil (ett `{% case %}` inne i en `{{ }}`-utmatning: "Variable … was not
+   properly terminated") — och de tio andra filerna var ändå skrivna, mätt med nästa torrkörning
+   ("redan patchad"). Skriv därför aldrig en temafil utan att originalen ligger sparade:
+   `--steg tema --skarpt` lägger dem i `output/tema-original/<tidsstämpel>/` innan något skrivs
+   (2026-09-27-12-30 är den riktiga uppsättningen före patchen). Liquid-taggar får stå i ett
+   HTML-attribut (`aria-label="{% case %}…"`) men aldrig inuti `{{ … }}` — då en variabel som
+   tilldelas på raden före (`valj_paket` i `ms-bundle-picker.liquid`).
 
 ## COGS per marknad (`matstrumpor/cogs.json`, `cogs.mjs`)
 
