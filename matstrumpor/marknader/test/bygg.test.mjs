@@ -5,7 +5,7 @@ import { granska, TILLATET_TOMT } from '../granska.mjs';
 import { KONFIG, raderUr, arText } from '../underlag.mjs';
 
 test('konfigen: elva språk, tre marknader, alla länder i exakt en marknad, fraktzonerna täcker samma länder', () => {
-  assert.deepEqual([...LOCALES].sort(), ['da', 'de', 'en', 'es', 'fi', 'fr', 'it', 'nb', 'nl', 'pl', 'pt']);
+  assert.deepEqual([...LOCALES].sort(), ['da', 'de', 'en', 'es', 'fi', 'fr', 'it', 'nb', 'nl', 'pl', 'pt-PT']);
   const lander = KONFIG.marknader.flatMap((m) => m.lander);
   assert.equal(new Set(lander).size, lander.length);
   assert.ok(!lander.includes('SE'));

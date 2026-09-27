@@ -24,7 +24,7 @@
 // granska.mjs registreras aldrig; ingen marknad som redan bär en valuta får den bytt; inget i
 // Meta rörs härifrån.
 
-import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
 import { lasButik, skapaKlient } from '../../sparning/butik.mjs';
@@ -414,6 +414,17 @@ async function stegOversattningar(k, { skarpt, bara: baraLocale = null }) {
   return sammanfattning;
 }
 
+/** Språken som låg i temats grenar efter första patchen 2026-09-27 12:30 — facit för ombyggnaden. */
+const GAMLA_LOCALES = ['nb', 'da', 'fi', 'en'];
+
+/** Filens ORIGINAL ur den äldsta backupen som har den (output/tema-original/<tid>/<fil>). */
+function urOriginal(fil) {
+  const bas = join(OUTPUT, 'tema-original');
+  if (!existsSync(bas)) return null;
+  for (const d of readdirSync(bas).sort()) { const p = join(bas, d, fil); if (existsSync(p)) return readFileSync(p, 'utf8'); }
+  return null;
+}
+
 async function stegTema(k, { skarpt }) {
   const ov = Object.fromEntries(LOCALES.map((l) => [l, lasOversattning(l) ?? {}]));
   const saknar = LOCALES.filter((l) => !lasOversattning(l));
@@ -425,12 +436,27 @@ async function stegTema(k, { skarpt }) {
   const f = await k.graphql(`query($id: ID!, $f: [String!]) { theme(id: $id) { files(first: 50, filenames: $f) { nodes { filename body { ... on OnlineStoreThemeFileBodyText { content } } } } } }`, { id: temaId, f: filer });
   const innehall = Object.fromEntries(f.theme.files.nodes.map((x) => [x.filename, x.body?.content ?? null]));
   const skriv = [];
+  const patcha = (fil, kod, o) => (fil.endsWith('.json') ? patchaMallJson(fil, kod, o, LIQUID_TEXTER) : patchaFil(fil, kod, o));
   for (const fil of filer) {
     const kod = innehall[fil];
     if (kod === null || kod === undefined) { log(`⚠️ ${fil} finns inte i temat — hoppar`); continue; }
     let r;
     try {
-      r = fil.endsWith('.json') ? patchaMallJson(fil, kod, ov, LIQUID_TEXTER) : patchaFil(fil, kod, ov);
+      // En redan patchad fil bär bara de språk som fanns vid förra patchen (2026-09-27 12:30:
+      // nb, da, fi, en) och patchen är idempotent — den lägger inte till nya grenar. Därför
+      // byggs den om från ORIGINALET i output/tema-original, men bara om originalet + den
+      // gamla patchen ger exakt det som ligger i temat nu (annars har någon rört filen).
+      let bas = kod;
+      if (/request\.locale\.iso_code|var LANG = /.test(kod)) {
+        const orig = urOriginal(fil);
+        if (!orig) { log(`⚠️ ${fil}: redan patchad och originalet saknas i output/tema-original — hoppar`); continue; }
+        const ovGammal = Object.fromEntries(GAMLA_LOCALES.filter((l) => l in ov).map((l) => [l, ov[l]]));
+        const kontroll = patcha(fil, orig, ovGammal);
+        if (kontroll.kod !== kod) { log(`❌ ${fil}: temat är inte originalet + den gamla patchen (någon har ändrat filen) — rör den inte`); continue; }
+        bas = orig;
+        log(`${fil}: byggs om från originalet (${GAMLA_LOCALES.join(',')} → ${LOCALES.join(',')})`);
+      }
+      r = patcha(fil, bas, ov);
     } catch (e) { log(`❌ ${fil}: ${e.message}`); continue; }
     log(`${fil}: ${r.byten.length} byten${r.byten.length ? ` (${r.byten.join(', ')})` : ''}${r.hoppade.length ? ` · hoppade: ${r.hoppade.join('; ')}` : ''}`);
     if (r.byten.length && r.kod !== kod) skriv.push({ filename: fil, body: { type: 'TEXT', value: r.kod } });
