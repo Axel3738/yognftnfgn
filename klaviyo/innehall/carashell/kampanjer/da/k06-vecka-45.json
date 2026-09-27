@@ -1,0 +1,72 @@
+{
+  "id": "k06-vecka-45",
+  "namn": "MAIL_20261103_CaraShellRoof_DA_GT_1_samtycke_solution_gaven-til-den-med-vognen_v1",
+  "sprak": "da",
+  "memo": "Presenten till den som har vagnen, som engelskan: julen närmar sig och ett skydd är en present som används. Ingen farsdag i november i Danmark. Sista beställningsdag för jul kommer i K10.",
+  "brief": "Hero: presenten. Text: varför ett skydd är en present som används (bara faktabladets fakta). Produktrad: takskyddet + termoskyddet. Fakta. Julen får nämnas.",
+  "taggar": {
+    "typ": "I",
+    "kalla": "gissning",
+    "kalla_ref": null,
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "ingen",
+    "confidence": "low",
+    "prefix": "CaraShellRoof",
+    "kod": "GT",
+    "avatar": "den der leder efter en gave til en med campingvogn eller autocamper",
+    "begar": "en present som används"
+  },
+  "amnesrader": [
+    {
+      "text": "__COPY__: ämnesrad A, eget begär",
+      "begar": "__COPY__: begäret"
+    },
+    {
+      "text": "__COPY__: ämnesrad B, eget begär",
+      "begar": "__COPY__: begäret"
+    },
+    {
+      "text": "__COPY__: ämnesrad C, eget begär",
+      "begar": "__COPY__: begäret"
+    }
+  ],
+  "forhandstext": "__COPY__: förhandstext som fortsätter ämnesrad A utan att upprepa den",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "__COPY__: rubrik: the gift",
+      "text": "__COPY__: 1–2 meningar",
+      "bild": "produkt:takskyddet",
+      "knapp": {
+        "text": "__COPY__: knapp",
+        "lank": "produkt:takskyddet"
+      }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "__COPY__: varför det är en present som används"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "__COPY__: rubrik",
+      "handles": [
+        "takskyddet",
+        "termoskyddet"
+      ]
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [],
+  "version": 1,
+  "planerad": "2026-11-03T18:00:00+01:00",
+  "segment": [
+    "SEG_samtycke_da"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

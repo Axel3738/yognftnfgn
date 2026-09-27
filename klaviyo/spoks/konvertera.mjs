@@ -333,16 +333,17 @@ export function skapaKonverterare({ brand, produktIds = {}, recCache = {}, erbju
       [/\d+\s?%/, 'procent'],
       [/\b\d[\d\s.,]*\s?(kr|sek|nok|dkk|usd|eur|gbp|aud|cad|nzd)\b/i, 'belopp'],
       [/[$£€]\s?\d/, 'belopp'],
-      [/förvaringspåse|dragsko|oppbevaringspose|storage bag|drawstring/i, 'påstående som inte får göras (påse/dragsko)'],
+      [/förvaringspåse|dragsko|oppbevaringspose|opbevaringspose|storage bag|drawstring/i, 'påstående som inte får göras (påse/dragsko)'],
       // Negationen är butikens egen text ("ikke strikk, strekker seg ikke ut" i nb-faktabladet) och släpps igenom.
-      [/(?<!\b(?:ikke|inte|not)\s)(?:elastisk|gummiband|\bstrikk\b|elastic strap|rubber strap)/i, 'elastiska band (banden är vävda)'],
-      [/andas|ventilerad|puster|breathable|ventilated/i, 'andas/ventilerad (obesvarat av leverantören)'],
-      [/tusentals|tusenvis|thousands of/i, 'tusentals'],
-      [/bara idag|sista chansen|bare i dag|siste sjanse|today only|last chance/i, 'falsk brådska'],
-      [/30 dagars|30 dager|30-day|öppet köp|åpent kjøp|money-back|warranty/i, 'fel villkor'],
+      [/(?<!\b(?:ikke|inte|not)\s)(?:elastisk|elastik|gummiband|\bstrikk\b|elastic strap|rubber strap)/i, 'elastiska band (banden är vävda)'],
+      [/andas|ventilerad|puster|ånder|ventileret|breathable|ventilated/i, 'andas/ventilerad (obesvarat av leverantören)'],
+      [/tusentals|tusenvis|tusindvis|thousands of/i, 'tusentals'],
+      [/bara idag|sista chansen|bare i dag|siste sjanse|kun i dag|sidste chance|today only|last chance/i, 'falsk brådska'],
+      [/30 dagars|30 dager|30 dages|30-day|öppet köp|åpent kjøp|åbent køb|money-back|warranty/i, 'fel villkor'],
     ],
     sv: [[/\bgaranti\b/i, '"garanti" (skriv 14 dagars ångerrätt)']],
     nb: [[/\bgaranti\b/i, '"garanti" (skriv 14 dagers angrerett)']],
+    da: [[/\bgaranti\b/i, '"garanti" (skriv 14 dages fortrydelsesret)']],
     en: [[/\b(winter|summer|spring|autumn|fall|snow|snowy)\b/i, 'årstid (Australien och Nya Zeeland får samma mejl)']],
   };
   function texterI(m) {
