@@ -26,6 +26,9 @@ import { hamtaAllaHubbar, harToken } from '../../commission/notion.mjs';
 import { byggHubbregister, kopplaAnnons } from '../../commission/koppling.mjs';
 import { arSvensk } from '../../commission/berakning.mjs';
 import { opsHubbar } from '../../tools/lib/ops-hubbar.mjs';
+import { berikaMedKommentarer } from '../../commission/kommentarer.mjs';
+import { readFileSync, existsSync } from 'node:fs';
+import { join } from 'node:path';
 import { api as metaApi } from './meta.mjs';
 
 const DAG = 86_400_000;
@@ -36,6 +39,30 @@ export const VINNARANDEL = 0.2;
 export const MIN_KAMPANJSPEND = 1000;
 /** En rad i arbete längre än så här flaggas (ClickUp-masterminden: ">10 dagar"). */
 export const FORSENAD_DAGAR = 10;
+
+/**
+ * Arkiverade hubbar räknas inte i kön och aldrig i "har legat länge" (Axels
+ * revision 2026-09-26: "vissa hubbar är liksom arkiverade … vissa kan ligga
+ * kvar hur länge som helst"). Tre källor: hubbens titel ("arkiverad …"),
+ * `arkiverad: true` i commission/hubbar.json, och listan i stonebite/tavla.json
+ * (de nedlagda OPS-butikernas hubbar — CLAUDE.md: "OPS-butikerna är nedlagda
+ * utom CaraShell"). Annonserna kopplas fortfarande till sin redigerare via de
+ * hubbarna — bara kön och flaggan hoppar dem.
+ */
+export function lasTavlakonfig(rot = ROT) {
+  const fil = join(rot, 'stonebite', 'tavla.json');
+  const k = existsSync(fil) ? JSON.parse(readFileSync(fil, 'utf8')) : {};
+  let urFil = [];
+  try { urFil = JSON.parse(readFileSync(join(rot, 'commission', 'hubbar.json'), 'utf8')).hubbar.filter((h) => h.arkiverad).map((h) => h.id); } catch { /* ingen fil */ }
+  return { arkiverade: new Set([...(k.arkiverade_hubbar ?? []).map((x) => x.id ?? x), ...urFil].map((id) => String(id).replace(/-/g, ''))) };
+}
+
+export function arArkiverad(hubb, konfig) {
+  if (/\barkiv/i.test(hubb?.namn ?? '')) return true;
+  return Boolean(konfig?.arkiverade?.has(String(hubb?.id ?? '').replace(/-/g, '')));
+}
+
+const ROT = new URL('../..', import.meta.url).pathname.replace(/\/$/, '');
 
 /** Notion-status → tavlans kolumn. Ordningen spelar roll: "Translation in review" är live, inte granskning. */
 export function kolumnFor(status) {
@@ -71,9 +98,10 @@ const median = (xs) => {
  * @param {Map}   o.andelar         annons-id → { andel, kampanjSpend }
  * @param {Array} o.team            [{ id, name, role, notionUserId }]
  */
-export function byggTavla({ hubbar = [], annonser = [], andelar = new Map(), team = [], nu = new Date() }) {
+export function byggTavla({ hubbar = [], annonser = [], andelar = new Map(), team = [], produkttest = new Set(), konfig = null, nu = new Date() }) {
   const perNotion = new Map(team.filter((m) => m.notionUserId).map((m) => [m.notionUserId, m]));
   const redigerare = team.filter((m) => m.role === 'editor' && m.active !== false);
+  const arkiverade = new Set(hubbar.filter((h) => arArkiverad(h, konfig)).map((h) => h.namn));
   const personer = new Map(redigerare.map((m) => [m.id, {
     id: m.id, namn: m.name.split(' ')[0],
     ko: { attGora: 0, pagar: 0, revision: 0, vantar: 0 },
@@ -84,6 +112,7 @@ export function byggTavla({ hubbar = [], annonser = [], andelar = new Map(), tea
 
   const annonsrader = hubbar.flatMap((h) => (h.rader ?? []).filter(arAnnonsrad).map((r) => ({ ...r, hubb: h.namn })));
   for (const r of annonsrader) {
+    if (arkiverade.has(r.hubb)) continue; // parkerat, inte kö
     const kol = kolumnFor(r.status);
     if (kol === 'klar' || kol === 'ovrigt') continue;
     const vem = (r.ansvariga ?? []).map((id) => perNotion.get(id)).find((m) => m && personer.has(m.id));
@@ -94,7 +123,8 @@ export function byggTavla({ hubbar = [], annonser = [], andelar = new Map(), tea
     const dagar = r.skapad ? Math.floor((nu - new Date(r.skapad)) / DAG) : null;
     if ((kol === 'pagar' || kol === 'revision') && dagar !== null && dagar > FORSENAD_DAGAR) {
       p.forsenade += 1; lag.forsenade += 1;
-      forsenadeRader.push({ rad: r.namn.split(/\s+[–-]\s+/)[0].slice(0, 60), person: p.namn, dagar, kolumn: kol });
+      const rad = r.namn.split(/\s+[–-]\s+/)[0].slice(0, 60);
+      forsenadeRader.push({ nyckel: `${r.hubb}|${rad}`.slice(0, 160), rad, hubb: r.hubb, url: r.url ?? null, person: p.namn, dagar, kolumn: kol });
     }
   }
 
@@ -144,7 +174,11 @@ export function byggTavla({ hubbar = [], annonser = [], andelar = new Map(), tea
     // Bara de som haft annonsarbete i fönstret står i tabellen — en nolla för
     // någon som jobbar med annat (produkttest) är inte ett resultat.
     personer: alla.filter(aktiv).sort((a, b) => b.vinnare - a.vinnare || b.live7 - a.live7 || a.namn.localeCompare(b.namn)),
-    utanAnnonser: alla.filter((p) => !aktiv(p)).map((p) => p.namn),
+    // Produkttestarna (bonus/personer.json extraRoller) jobbar med annat — de
+    // står inte som "utan annonser", det är inte deras jobb just nu.
+    utanAnnonser: alla.filter((p) => !aktiv(p) && !produkttest.has(p.id)).map((p) => p.namn),
+    produkttestare: alla.filter((p) => !aktiv(p) && produkttest.has(p.id)).map((p) => p.namn),
+    arkiverade: [...arkiverade],
     // Samma annons kan ligga i flera adsets — en rad per namn, högsta andelen vinner.
     vinnare: [...new Map(vinnare.sort((a, b) => b.andel - a.andel).map((v) => [v.annons, v])).values()].slice(0, 8),
     forsenade: forsenadeRader.sort((a, b) => b.dagar - a.dagar).slice(0, 8),
@@ -205,6 +239,29 @@ export async function hamtaTavla({ annonskonton = [], team = [], env = process.e
   } catch (e) {
     return { status: 'fel', orsak: `Notion: ${e.message}` };
   }
+  // Redigerare utan Notion-konto (Jerzee) märks med en KOMMENTAR på raden, aldrig
+  // Ansvarig (commission/kommentarer.mjs). Bara rader utan Ansvarig från de
+  // senaste 60 dagarna kollas — ett API-anrop per rad.
+  let kommentarer = null;
+  const personer = team.map((u) => ({ id: u.id, namn: u.name, notionUserId: u.notionUserId, kommentarMonster: u.notionKommentarMonster || '' }));
+  if (personer.some((x) => x.kommentarMonster)) {
+    const grans = nu.getTime() - 60 * DAG;
+    const att = hubbar.map((h) => ({ ...h, rader: (h.rader ?? []).filter((r) => r.ansvariga?.length || new Date(r.skapad).getTime() > grans) }));
+    try {
+      kommentarer = await berikaMedKommentarer(att, personer, { env });
+      logg(`  Kommentarer: ${kommentarer.traffar} rader kopplade av ${kommentarer.lasta} lästa (${Object.entries(kommentarer.perPerson).map(([n, a]) => `${n} ${a}`).join(', ') || 'ingen'})`);
+    } catch (e) {
+      logg(`  Kommentarer: ${e.message}`);
+    }
+  }
+  const konfig = lasTavlakonfig();
+  let produkttest = new Set();
+  try {
+    const pf = JSON.parse(readFileSync(join(ROT, 'bonus', 'personer.json'), 'utf8'));
+    const lista = Array.isArray(pf) ? pf : (pf.personer ?? Object.values(pf));
+    produkttest = new Set(lista.filter((p) => (p.extraRoller ?? []).includes('produkttest') || p.roll === 'produkttest').map((p) => p.id));
+  } catch { /* inget register */ }
+
   let meta = { annonser: [], andelar: new Map() };
   let metaOrsak = null;
   const konton = annonskonton.filter((k) => k.status === 'ok');
@@ -212,12 +269,13 @@ export async function hamtaTavla({ annonskonton = [], team = [], env = process.e
   else {
     try { meta = await lasMeta(konton, { env, nu, logg }); logg(`  Meta: ${meta.annonser.length} annonser skapade senaste 35 dagarna`); } catch (e) { metaOrsak = e.message; }
   }
-  const tavla = byggTavla({ hubbar, annonser: meta.annonser, andelar: meta.andelar, team, nu });
+  const tavla = byggTavla({ hubbar, annonser: meta.annonser, andelar: meta.andelar, team, produkttest, konfig, nu });
   return {
     status: metaOrsak || hubbfel.length ? 'delvis' : 'ok',
     orsak: [metaOrsak, hubbfel.length ? `${hubbfel.length} hubbar gick inte att läsa: ${hubbfel.map((f) => f.hubb).join(', ')}` : null].filter(Boolean).join(' · ') || null,
     meta: metaOrsak ? 'saknas' : 'ok',
     hubbar: hubbar.length,
+    kommentarer: kommentarer ? { traffar: kommentarer.traffar, lasta: kommentarer.lasta, fel: kommentarer.fel } : null,
     troskel: { vinnarandel: VINNARANDEL, minKampanjspend: MIN_KAMPANJSPEND, forsenadDagar: FORSENAD_DAGAR },
     ...tavla,
   };

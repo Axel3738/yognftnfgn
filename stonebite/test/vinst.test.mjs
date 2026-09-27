@@ -75,7 +75,7 @@ const dag = (datum, v) => ({ datum, ordrar: 1, netto: 0, varukostnad: 0, avgifte
 function snapshot(vinst) {
   return {
     byggd: NU.toISOString(),
-    valutakurser: { status: 'ok', datum: '2026-09-25', sekPer: { SEK: 1, NOK: 1.04 } },
+    valutakurser: { status: 'ok', datum: '2026-09-25', sekPer: { SEK: 1, NOK: 1.04, EUR: 11 } },
     varumarken: [
       { id: 'bav', namn: 'Bäverbutiken', butiker: ['se', 'no'], konton: [{ id: '1', namn: 'SE', hela: true }] },
       { id: 'mat', namn: 'Matstrumpor', butiker: ['mat'], konton: [{ id: '2', namn: 'Mat', hela: true }] },
@@ -99,14 +99,15 @@ const VINST = [
   { id: 'mat', status: 'ok', valuta: 'SEK', dagar: VECKAN.map((d) => dag(d, { netto: 1_000, varukostnad: 100, avgifter: 10, utanKostnad: 400 })), saknarKostnad: [{ titel: 'Ätpinnar', intakt: 2_800 }] },
 ];
 
-test('vinst per verksamhet: netto − varukostnad − avgifter − reklam, NOK omräknat, dagen i dag räknas inte', () => {
+test('vinst per verksamhet: netto − varukostnad − avgifter − tull − reklam, NOK omräknat, dagen i dag räknas inte', () => {
   const extra = VINST.map((v) => (v.id === 'se' ? { ...v, dagar: [...v.dagar, dag('2026-09-26', { netto: 99_999 })] } : v));
   const bav = verksamheter(snapshot(extra), { nu: NU }).find((v) => v.id === 'bav');
   // Netto: 70 000 + 7 000 NOK × 1,04 = 77 280. Varukostnad: 21 000 + 2 100 × 1,04 = 23 184.
-  // Avgifter: 1 400 + 140 × 1,04 = 1 545,6. Reklam: 21 000.
+  // Avgifter: 1 400 + 140 × 1,04 = 1 545,6. Tull: 14 ordrar × 2,8 EUR × 11 = 431,2. Reklam: 21 000.
   assert.equal(bav.vinst.status, 'ok');
   assert.equal(Math.round(bav.vinst.netto), 77_280);
-  assert.equal(Math.round(bav.vinst.bidrag), Math.round(77_280 - 23_184 - 1_545.6 - 21_000));
+  assert.equal(Math.round(bav.vinst.tull), 431);
+  assert.equal(Math.round(bav.vinst.bidrag), Math.round(77_280 - 23_184 - 1_545.6 - 431.2 - 21_000));
   assert.ok(Math.abs(bav.vinst.marginal - bav.vinst.bidrag / 77_280) < 1e-9);
 });
 
@@ -116,6 +117,14 @@ test('vinsten räknas inte när mer än 1 % av försäljningen saknar Cost per i
   assert.equal(mat.vinst.bidrag, undefined);
   assert.match(mat.vinst.orsak, /40 % av försäljningen/);
   assert.equal(mat.vinst.saknarKostnad[0].titel, 'Ätpinnar');
+});
+
+test('utan EUR-kurs kan tullen inte räknas — vinsten står som saknad med orsak', () => {
+  const s = snapshot(VINST);
+  s.valutakurser = { status: 'ok', datum: '2026-09-25', sekPer: { SEK: 1, NOK: 1.04 } };
+  const bav = verksamheter(s, { nu: NU }).find((v) => v.id === 'bav');
+  assert.equal(bav.vinst.status, 'saknas');
+  assert.match(bav.vinst.orsak, /EUR/);
 });
 
 test('utan vinstunderlag i snapshoten står orsaken — aldrig en nolla', () => {

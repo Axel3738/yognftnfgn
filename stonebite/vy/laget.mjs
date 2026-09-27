@@ -9,7 +9,7 @@
 // ⛔ Inga kronor på sidan. Redigerarna ser den och får aldrig se spend.
 // Trösklarna är absoluta, aldrig "sämst i gruppen" (CLAUDE.md).
 
-import { esc, kort, panel, tabell, tomt, block, status, tal, sprak } from './delar.mjs';
+import { esc, attr, kort, panel, tabell, tomt, block, status, tal, sprak } from './delar.mjs';
 import { sidhuvud } from './layout.mjs';
 import { sedan } from '../berakna.mjs';
 import { harRatt, personIdFor } from '../roller.mjs';
@@ -37,7 +37,7 @@ function vinnarkort(v) {
   });
 }
 
-export function lagetSida({ snapshot, anvandare }) {
+export function lagetSida({ snapshot, anvandare, csrf = '', dolda = new Map() }) {
   const tv = snapshot?.tavla ?? null;
   const ledning = harRatt(anvandare, 'pengar');
   const mittId = personIdFor(anvandare);
@@ -133,6 +133,7 @@ export function lagetSida({ snapshot, anvandare }) {
         fot: [
           lag.attGora ? L(`${tal(lag.attGora)} briefer väntar på en redigerare.`, `${tal(lag.attGora)} briefs are waiting for an editor.`) : '',
           tv.utanAnnonser?.length ? L(`Ingen annonsrad senaste 35 dagarna: ${tv.utanAnnonser.join(', ')}.`, `No ad rows in the last 35 days: ${tv.utanAnnonser.join(', ')}.`) : '',
+          tv.produkttestare?.length ? L(`Jobbar med produkttest: ${tv.produkttestare.join(', ')}.`, `Working on product testing: ${tv.produkttestare.join(', ')}.`) : '',
           ledning ? L('Brief till live och andel vinnare per person ser bara du och chefen.', 'Only the owner and manager see brief-to-live and hit rate per person.') : '',
         ].filter(Boolean).join(' '),
       })
@@ -140,12 +141,20 @@ export function lagetSida({ snapshot, anvandare }) {
   });
 
   // ---------------------------------------------- har legat länge
-  const langdel = tv.forsenade?.length ? block({
+  // Dolda rader (Axels knapp) visas i en egen, hopfälld lista med Visa igen.
+  const arDold = (f) => dolda.get(f.nyckel)?.dold === true;
+  const synligaLange = (tv.forsenade ?? []).filter((f) => !arDold(f));
+  const doldaLange = (tv.forsenade ?? []).filter(arDold);
+  const knapp = (f, gom) => (ledning && csrf ? `<form method="post" action="${gom ? '/app/laget/dolj' : '/app/laget/visa'}" style="margin-left:auto"><input type="hidden" name="csrf" value="${attr(csrf)}"><input type="hidden" name="nyckel" value="${attr(f.nyckel)}"><button type="submit" class="knapp tyst">${esc(gom ? L('Dölj', 'Hide') : L('Visa igen', 'Show again'))}</button></form>` : '');
+  const rad = (f, gom) => `<li><span>${status('varning', `${f.dagar} d`)}</span><span><span class="namn">${f.url ? `<a href="${attr(f.url)}" target="_blank" rel="noopener">${esc(f.rad)}</a>` : esc(f.rad)}</span><span class="bi">${esc(f.person)} · ${esc(f.kolumn === 'revision' ? L('revision', 'revision') : L('pågår', 'in progress'))} · ${esc(f.hubb ?? '')}</span></span>${knapp(f, gom)}</li>`;
+  const langdel = (synligaLange.length || doldaLange.length) ? block({
+    id: 'legat',
     titel: L('Har legat länge', 'Stuck for a while'),
-    under: L(`Pågår eller i revision sedan mer än ${trosk.forsenadDagar} dagar. Räknat från radens skapelsedag, eftersom Notion inte sparar när statusen ändrades.`, `In progress or in revision for more than ${trosk.forsenadDagar} days. Counted from the day the row was created, because Notion does not save when the status changed.`),
-    innehall: panel({
-      innehall: `<ul class="lista">${tv.forsenade.map((f) => `<li><span>${status('varning', L(`${f.dagar} d`, `${f.dagar} d`))}</span><span><span class="namn">${esc(f.rad)}</span><span class="bi">${esc(f.person)} · ${esc(f.kolumn === 'revision' ? L('revision', 'revision') : L('pågår', 'in progress'))}</span></span></li>`).join('')}</ul>`,
-    }),
+    under: L(`Pågår eller i revision sedan mer än ${trosk.forsenadDagar} dagar. Räknat från radens skapelsedag, eftersom Notion inte sparar när statusen ändrades. Arkiverade hubbar räknas inte.`, `In progress or in revision for more than ${trosk.forsenadDagar} days. Counted from the day the row was created, because Notion does not save when the status changed. Archived hubs are not counted.`),
+    innehall: `${synligaLange.length
+      ? panel({ innehall: `<ul class="lista">${synligaLange.map((f) => rad(f, true)).join('')}</ul>`, fot: ledning ? L('Dölj en rad som bara är en glitch — den försvinner härifrån, inte ur Notion.', 'Hide a row that is just a glitch — it disappears from here, not from Notion.') : '' })
+      : tomt(L('Inget ligger', 'Nothing stuck'), L('Allt som pågår är yngre än gränsen.', 'Everything in progress is younger than the limit.'))}
+    ${doldaLange.length ? `<details class="mellan"><summary class="mini">${esc(L(`${doldaLange.length} dolda`, `${doldaLange.length} hidden`))}</summary>${panel({ innehall: `<ul class="lista">${doldaLange.map((f) => rad(f, false)).join('')}</ul>` })}</details>` : ''}`,
   }) : '';
 
   return {
@@ -156,8 +165,8 @@ export function lagetSida({ snapshot, anvandare }) {
     ${agardel}
     ${langdel}
     <p class="mini">${esc(L(
-      `Källor: Notion (varje annonsrad med ansvarig) och Meta (nya annonser och deras andel av kampanjen). Bara svenska originalannonser räknas. En översättning är inte en ny annons.${tv.orsak ? ` Saknas: ${tv.orsak}` : ''}`,
-      `Sources: Notion (every ad row with an owner) and Meta (new ads and their share of the campaign). Only original Swedish ads count. A translation is not a new ad.${tv.orsak ? ` Missing: ${tv.orsak}` : ''}`,
+      `Källor: Notion (varje annonsrad med ansvarig, eller med redigerarens namn i en kommentar) och Meta (nya annonser och deras andel av kampanjen). Bara svenska originalannonser räknas. En översättning är inte en ny annons.${tv.arkiverade?.length ? ` Arkiverade hubbar utanför kön: ${tv.arkiverade.join(', ')}.` : ''}${tv.orsak ? ` Saknas: ${tv.orsak}` : ''}`,
+      `Sources: Notion (every ad row with an owner, or with the editor's name in a comment) and Meta (new ads and their share of the campaign). Only original Swedish ads count. A translation is not a new ad.${tv.arkiverade?.length ? ` Archived hubs outside the queue: ${tv.arkiverade.join(', ')}.` : ''}${tv.orsak ? ` Missing: ${tv.orsak}` : ''}`,
     ))}</p>`,
   };
 }

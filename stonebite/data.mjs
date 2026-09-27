@@ -9,6 +9,7 @@
 //   • Ett tal som saknas är null hela vägen ut, så vyn kan skriva orsaken.
 
 import { readFileSync, existsSync, statSync } from 'node:fs';
+import { join } from 'node:path';
 import { dagnyckel, sistaDagarna, forandring, vinstbidragRoas, breakEvenUrNamn, cpa, motBreakEven, bedombar } from './berakna.mjs';
 
 let cache = { fil: null, mtime: 0, data: null };
@@ -366,6 +367,22 @@ export function verksamheter(snapshot, { nu = new Date() } = {}) {
   });
 }
 
+/**
+ * Kostnader som inte står i Shopify (stonebite/kostnader.json). Axels besked
+ * 2026-09-26: Cost per item inkluderar frakten från leverantören, och varje
+ * paket kostar därutöver 2,8 EUR i tull — räknas per order.
+ */
+let kostnaderCache = null;
+export function lasKostnader(rot = new URL('..', import.meta.url).pathname) {
+  if (kostnaderCache) return kostnaderCache;
+  try { kostnaderCache = JSON.parse(readFileSync(join(rot, 'stonebite', 'kostnader.json'), 'utf8')); } catch { kostnaderCache = { tull_eur_per_order: 0, butiker: {} }; }
+  return kostnaderCache;
+}
+export function tullPerOrderEur(butikId, kostnader = lasKostnader()) {
+  const egen = kostnader?.butiker?.[butikId]?.tull_eur_per_order;
+  return Number(egen ?? kostnader?.tull_eur_per_order ?? 0) || 0;
+}
+
 /** Så stor del av försäljningen som får sakna varukostnad innan vinsten inte räknas. */
 export const TAK_UTAN_KOSTNAD = 0.01;
 
@@ -382,14 +399,18 @@ function vinstFor(vm, butiker, { snapshot, vecka, sekPer, komplett, reklam, sakn
   const underlag = snapshot?.vinst;
   if (!underlag) return { status: 'saknas', orsak: 'vinstunderlaget hämtades inte (kallor/vinst.mjs körs från och med nästa timhämtning)', saknarKostnad: [] };
 
-  let netto = 0; let varukostnad = 0; let avgifter = 0; let utanKostnad = 0; let utanAvgift = 0;
+  let netto = 0; let varukostnad = 0; let avgifter = 0; let tull = 0; let utanKostnad = 0; let utanAvgift = 0;
   const saknarKostnad = [];
+  const kostnader = lasKostnader();
   for (const b of butiker) {
     const v = underlag.find((x) => x.id === b.id);
     if (!v || v.status !== 'ok') return { status: 'saknas', orsak: `${b.namn}: ${v?.orsak ?? 'inget vinstunderlag'}`, saknarKostnad: [] };
     const kurs = sekPer[v.valuta ?? b.valuta];
+    const tullEur = tullPerOrderEur(b.id, kostnader);
+    if (tullEur > 0 && sekPer.EUR === undefined) return { status: 'saknas', orsak: 'ingen växelkurs för EUR (tullen)', saknarKostnad: [] };
     for (const d of v.dagar ?? []) {
       if (!vecka.has(d.datum)) continue;
+      tull += (Number(d.ordrar) || 0) * tullEur * (sekPer.EUR ?? 0);
       netto += d.netto * kurs;
       varukostnad += d.varukostnad * kurs;
       avgifter += d.avgifter * kurs;
@@ -404,11 +425,11 @@ function vinstFor(vm, butiker, { snapshot, vecka, sekPer, komplett, reklam, sakn
   }
   saknarKostnad.sort((a, b) => b.sek - a.sek);
   const utanKostnadAndel = netto > 0 ? utanKostnad / netto : 0;
-  const bas = { netto, varukostnad, avgifter, reklam, utanKostnad, utanKostnadAndel, utanAvgift, saknarKostnad: saknarKostnad.slice(0, 5) };
+  const bas = { netto, varukostnad, avgifter, tull, reklam, utanKostnad, utanKostnadAndel, utanAvgift, saknarKostnad: saknarKostnad.slice(0, 5) };
   if (utanKostnadAndel > TAK_UTAN_KOSTNAD) {
     return { ...bas, status: 'saknas', orsak: `${Math.round(utanKostnadAndel * 100)} % av försäljningen är varianter utan Cost per item i Shopify` };
   }
-  const bidrag = netto - varukostnad - avgifter - reklam;
+  const bidrag = netto - varukostnad - avgifter - tull - reklam;
   return { ...bas, status: 'ok', orsak: null, bidrag, marginal: netto > 0 ? bidrag / netto : null };
 }
 

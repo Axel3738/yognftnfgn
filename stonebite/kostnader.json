@@ -1,0 +1,5 @@
+{
+  "kommentar": "Kostnader i vinstbidraget som inte står i Shopify. Axels besked 2026-09-26: Cost per item INKLUDERAR frakten från leverantören (A), och därutöver kostar varje paket 2,8 EUR i tull. Tullen räknas per order (ett paket per order) och räknas om till kronor med ECB-kursen i snapshoten. Per butik går att skriva över med samma nyckel under 'butiker'.",
+  "tull_eur_per_order": 2.8,
+  "butiker": {}
+}

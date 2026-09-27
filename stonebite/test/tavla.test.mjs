@@ -113,3 +113,73 @@ test('utan tavla i snapshoten står orsaken', () => {
   assert.match(html, /Tavlan är inte hämtad än/);
   assert.match(html, /NOTION_TOKEN saknas/);
 });
+
+// --------------------------------------------------- Axels revision 2026-09-26
+
+import { arArkiverad } from '../kallor/tavla.mjs';
+import { lasDolda, skrivDold, giltigNyckel } from '../tavla-dolda.mjs';
+import { mkdtempSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+
+const KONFIG = { arkiverade: new Set(['3cf270ab908c81a09b0dc486f6467ce7']) };
+
+test('arkiverade hubbar: titeln, listan i tavla.json — aldrig en aktiv hubb', () => {
+  assert.equal(arArkiverad({ namn: 'arkiverad Övervakningskamera' }, KONFIG), true);
+  assert.equal(arArkiverad({ id: '3cf270ab-908c-81a0-9b0d-c486f6467ce7', namn: 'Damasker vandring' }, KONFIG), true);
+  assert.equal(arArkiverad({ id: 'x', namn: 'Boat motor cover creative hub' }, KONFIG), false);
+});
+
+test('en arkiverad hubb räknas inte i kön och flaggas aldrig som "har legat länge" — men annonserna kopplas ändå', () => {
+  const hubbar = [...HUBBAR, {
+    id: '3cf270ab-908c-81a0-9b0d-c486f6467ce7', namn: 'Damasker vandring',
+    rader: [{ namn: 'Damasker_PD_1_H1', status: 'In progress', typ: 'Video - Pending Approval', ansvariga: ['n-jasper'], skapad: dagarSedan(40) }],
+  }];
+  const annonser = [...ANNONSER, { id: 'a9', adNamn: 'Damasker_PD_1_H1', skapad: dagarSedan(3), kampanj: 'Damasker', konto: { id: '1867947880635861' } }];
+  const t = byggTavla({ hubbar, annonser, andelar: ANDELAR, team: TEAM, konfig: KONFIG, nu: NU });
+  const jasper = t.personer.find((p) => p.id === 'jasper');
+  assert.equal(jasper.ko.pagar, 0, 'raden i den arkiverade hubben är ingen kö');
+  assert.equal(jasper.forsenade, 0);
+  assert.equal(jasper.live7, 2, 'annonsen från den arkiverade hubben räknas ändå som live');
+  assert.deepEqual(t.arkiverade, ['Damasker vandring']);
+});
+
+test('produkttestare står inte som "utan annonser"', () => {
+  const t = byggTavla({ hubbar: HUBBAR, annonser: ANNONSER, andelar: ANDELAR, team: TEAM, produkttest: new Set(['josh']), nu: NU });
+  assert.deepEqual(t.utanAnnonser, []);
+  assert.deepEqual(t.produkttestare, ['Josh']);
+});
+
+test('en redigerare utan Notion-konto kopplas via kommentar — raden bär hens syntetiska id', () => {
+  const team = [...TEAM, { id: 'jerzee', name: 'Jerzee', role: 'editor', active: true, notionUserId: 'kommentar:jerzee', notionKommentarMonster: '\\bjerz' }];
+  const hubbar = [{ namn: 'Hubb', rader: [{ namn: 'Batmotor_PD_9_H1', status: 'In progress', typ: 'Video - Pending Approval', ansvariga: ['kommentar:jerzee'], viaKommentar: 'jerzee', skapad: dagarSedan(2) }] }];
+  const t = byggTavla({ hubbar, annonser: [], andelar: new Map(), team, nu: NU });
+  assert.equal(t.personer.find((p) => p.id === 'jerzee').ko.pagar, 1);
+});
+
+test('dölj-filen: senaste raden vinner, Visa igen tar tillbaka, fel nyckel släpps aldrig in', () => {
+  const fil = join(mkdtempSync(join(tmpdir(), 'dolda-')), 'tavla-dolda.jsonl');
+  skrivDold({ nyckel: 'Hubb|Batmotor_PD_2_H1', av: 'Axel' }, fil);
+  assert.equal(lasDolda(fil).get('Hubb|Batmotor_PD_2_H1').dold, true);
+  skrivDold({ nyckel: 'Hubb|Batmotor_PD_2_H1', dold: false, av: 'Axel' }, fil);
+  assert.equal(lasDolda(fil).get('Hubb|Batmotor_PD_2_H1').dold, false);
+  assert.equal(giltigNyckel('ingen-pipe'), false);
+  assert.throws(() => skrivDold({ nyckel: 'x\ny|z' }, fil));
+});
+
+test('en dold rad lämnar "har legat länge" och står under "dolda" med Visa igen — bara ägaren får knappen', () => {
+  sattSprak('sv');
+  const snap = snapshot();
+  const nyckel = snap.tavla.forsenade[0].nyckel;
+  const dolda = new Map([[nyckel, { nyckel, dold: true }]]);
+  const html = lagetSida({ snapshot: snap, anvandare: { roll: 'agare', namn: 'Axel' }, csrf: 'c', dolda }).innehall;
+  assert.match(html, /1 dolda/);
+  assert.match(html, /Visa igen/);
+  assert.match(html, /\/app\/laget\/visa/);
+  const utanDolda = lagetSida({ snapshot: snap, anvandare: { roll: 'agare', namn: 'Axel' }, csrf: 'c' }).innehall;
+  assert.match(utanDolda, /\/app\/laget\/dolj/);
+  sattSprak('en');
+  const red = lagetSida({ snapshot: snap, anvandare: { roll: 'redigerare', namn: 'Carl' }, csrf: 'c' }).innehall;
+  assert.doesNotMatch(red, /\/app\/laget\/dolj/, 'redigeraren får ingen döljknapp');
+  sattSprak('sv');
+});

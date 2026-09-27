@@ -49,6 +49,7 @@ import { lasProfil } from './kallor/repo.mjs';
 import { startaVakt, loggmappFor, harLogg } from './autosvar-vakt.mjs';
 import { samlaAutosvar } from '../kundtjanst/dashboard.mjs';
 import { lasUppfoljning, skrivUppfoljning } from './uppfoljning.mjs';
+import { lasDolda, skrivDold } from './tavla-dolda.mjs';
 
 const HAR = dirname(fileURLToPath(import.meta.url));
 const ROT = dirname(HAR);
@@ -62,6 +63,8 @@ const KALENDERFIL = join(datamapp(process.env, ROT), 'kalender.jsonl');
 const KONTAKTFIL = join(datamapp(process.env, ROT), 'kontakter.jsonl');
 // VA:ns bock "uppföljd" på AI-botens svar (stonebite/uppfoljning.mjs) — på volymen, aldrig i botens logg.
 const UPPFOLJNINGSFIL = join(datamapp(process.env, ROT), 'autosvar-uppfoljning.jsonl');
+// Dolda rader i "har legat länge" på Laget (stonebite/tavla-dolda.mjs) — på volymen.
+const DOLDAFIL = join(datamapp(process.env, ROT), 'tavla-dolda.jsonl');
 
 const lasKal = () => { try { return lasHandelser(KALENDERFIL); } catch { return []; } };
 const lasKont = () => { try { return lasKontakter(KONTAKTFIL); } catch { return []; } };
@@ -287,7 +290,7 @@ function renderaApp({ nyckel, anvandare, extra = {} }) {
     case 'butiker': return butikerSida({ snapshot: snap });
     case 'annonser': return annonserSida({ snapshot: snap });
     case 'redigerare': return redigerareSida({ snapshot: snap, anvandare });
-    case 'laget': return lagetSida({ snapshot: snap, anvandare });
+    case 'laget': return lagetSida({ snapshot: snap, anvandare, csrf: extra.csrf ?? '', dolda: (() => { try { return lasDolda(DOLDAFIL); } catch { return new Map(); } })() });
     case 'kundtjanst': return kundtjanstSida({ snapshot: snap, csrf: extra.csrf ?? '' });
     case 'leverans': return leveransSida({ snapshot: snap });
     case 'produkttest': return produkttestSida({ snapshot: snap, anvandare });
@@ -486,6 +489,18 @@ export async function hantera(req, res) {
           return felsida(res, { kod: 400, rubrik: 'Kunde inte spara', text: e.message, nonce, https });
         }
         return omdirigera(res, nasta);
+      }
+
+      // ------------------------------------------------------- Laget: dölj
+      // "Dölj" / "Visa igen" på en rad i "har legat länge". Bara ägare och chef.
+      if (stig === '/app/laget/dolj' || stig === '/app/laget/visa') {
+        if (!harRatt(anvandare, 'pengar')) return felsida(res, { kod: 403, rubrik: 'Inte din knapp', text: 'Bara ägare och chef kan dölja rader på Laget.', nonce, https });
+        try {
+          skrivDold({ nyckel: f.nyckel, dold: stig === '/app/laget/dolj', av: anvandare.namn }, DOLDAFIL);
+        } catch (e) {
+          return felsida(res, { kod: 400, rubrik: 'Kunde inte spara', text: e.message, nonce, https });
+        }
+        return omdirigera(res, '/app/laget#legat');
       }
 
       // ---------------------------------------------------------- kalendern

@@ -24,7 +24,7 @@
 
 import { esc, hjalte, kort, panel, tabell, tomt, block, spark, status, tal, pengar } from './delar.mjs';
 import { sidhuvud, fornamn } from './layout.mjs';
-import { oversikt as raknaOversikt, allaKampanjer, kallolage, produktlista, verksamheter, merTotalt, TAK_UTAN_KOSTNAD } from '../data.mjs';
+import { oversikt as raknaOversikt, allaKampanjer, kallolage, produktlista, verksamheter, merTotalt, TAK_UTAN_KOSTNAD, tullPerOrderEur } from '../data.mjs';
 import { forandring, sedan, DAG } from '../berakna.mjs';
 import { harRatt } from '../roller.mjs';
 import { forklaraFel, kallnamn, kortMotivering, atgardsnamn, tvisttyp } from '../forklaring.mjs';
@@ -183,7 +183,7 @@ function vinstrad(v) {
     <td class="tal">${ok ? procentText(w.marginal) : '–'}</td>
     <td class="tal">${kr(w.netto)}</td>
     <td class="tal">${w.varukostnad !== undefined ? `−${kr(w.varukostnad)}` : '–'}</td>
-    <td class="tal">${w.avgifter !== undefined ? `−${kr(w.avgifter)}` : '–'}</td>
+    <td class="tal">${w.avgifter !== undefined ? `−${kr((w.avgifter ?? 0) + (w.tull ?? 0))}` : '–'}</td>
     <td class="tal">${w.reklam !== undefined && w.reklam !== null ? `−${kr(w.reklam)}` : '–'}</td>
     <td>${ok ? status(w.bidrag >= 0 ? 'bra' : 'kritisk', w.bidrag >= 0 ? 'vinst' : 'förlust') : status('neutral', 'saknar data')}</td>
   </tr>`;
@@ -267,7 +267,7 @@ export function oversiktSida({ snapshot, anvandare, kalender = [], nu = new Date
       etikett: 'Vinstbidrag 7 dagar',
       varde: mer.bidrag !== null ? pengar(Math.round(mer.bidrag), HUVUDVALUTA) : '–',
       forklaring: mer.bidrag !== null
-        ? `Det som blev kvar efter varor, betalavgifter och reklam: ${procentText(mer.marginal)} av försäljningen.`
+        ? `Det som blev kvar efter varor, betalavgifter, tull och reklam: ${procentText(mer.marginal)} av försäljningen.`
         : 'Går inte att räkna ännu — se tabellen Riktig vinst nedan.',
       status: mer.bidrag !== null ? status(mer.bidrag >= 0 ? 'bra' : 'kritisk', mer.bidrag >= 0 ? 'vinst' : 'förlust') : null,
       fot: mer.vinstMed.length ? `Räknat på ${ochLista(mer.vinstMed.map((v) => v.namn))}${mer.vinstUtan.length ? `. Saknas: ${ochLista(mer.vinstUtan.map((v) => v.namn))}` : ''}.` : '',
@@ -301,13 +301,13 @@ export function oversiktSida({ snapshot, anvandare, kalender = [], nu = new Date
   const utanAvgift = synliga.reduce((x, v) => x + (v.vinst?.status === 'ok' ? v.vinst.utanAvgift : 0), 0);
   const vinstdel = vrader.length ? block({
     titel: 'Riktig vinst per verksamhet, 7 dagar',
-    under: 'Vinstbidrag = försäljning utan moms − varukostnad − betalavgifter − reklam. Evolve-kursens formel.',
+    under: 'Vinstbidrag = försäljning utan moms − varukostnad − betalavgifter − tull − reklam. Evolve-kursens formel.',
     innehall: panel({
       innehall: tabell(
-        [{ titel: 'Verksamhet' }, { titel: 'Vinstbidrag', tal: true }, { titel: 'Av försäljningen', tal: true }, { titel: 'Sålt utan moms', tal: true }, { titel: 'Varukostnad', tal: true }, { titel: 'Avgifter', tal: true }, { titel: 'Reklam', tal: true }, { titel: 'Läge' }],
+        [{ titel: 'Verksamhet' }, { titel: 'Vinstbidrag', tal: true }, { titel: 'Av försäljningen', tal: true }, { titel: 'Sålt utan moms', tal: true }, { titel: 'Varukostnad', tal: true }, { titel: 'Avgifter + tull', tal: true }, { titel: 'Reklam', tal: true }, { titel: 'Läge' }],
         [...synliga].sort((a, b) => (b.vinst?.bidrag ?? -Infinity) - (a.vinst?.bidrag ?? -Infinity)).map(vinstrad),
       ),
-      fot: `Varukostnaden är "Cost per item" i Shopify gånger sålt antal. Frakten från leverantören ingår bara om den ligger i det talet. Betalavgifterna är Shopify Payments egna${utanAvgift > 0 ? `; för ${pengar(Math.round(utanAvgift), HUVUDVALUTA)} betalt på annat sätt (till exempel PayPal) saknas avgiften, så vinsten är där något för hög` : ''}. Löner, appar och andra fasta kostnader är inte avdragna. En verksamhet räknas inte om mer än 1 % av försäljningen saknar Cost per item.`,
+      fot: `Varukostnaden är "Cost per item" i Shopify gånger sålt antal, och den inkluderar frakten från leverantören (Axel 2026-09-26). Tullen är ${tullPerOrderEur('').toLocaleString('sv-SE')} EUR per order, omräknad till kronor. Betalavgifterna är Shopify Payments egna${utanAvgift > 0 ? `; för ${pengar(Math.round(utanAvgift), HUVUDVALUTA)} betalt på annat sätt (till exempel PayPal) saknas avgiften, så vinsten är där något för hög` : ''}. Löner, appar och andra fasta kostnader är inte avdragna. En verksamhet räknas inte om mer än 1 % av försäljningen saknar Cost per item.`,
     }),
   }) : '';
 
