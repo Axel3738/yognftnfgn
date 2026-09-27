@@ -1,5 +1,5 @@
 {
- "uppdaterad": "2026-09-27T14:10:56.188Z",
+ "uppdaterad": "2026-09-27T22:45:18.415Z",
  "konton": {
   "1867947880635861": {
    "namn": "MagiBorsten",
@@ -61,6 +61,21 @@
   {
    "nyckel": "overspend:kampanj:120251451415500435:2026-09-27",
    "tid": "2026-09-27T14:10:56.188Z",
+   "rubrik": "Campaign `1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia` over budget"
+  },
+  {
+   "nyckel": "spend:120251471312620435:2026-09-28:1",
+   "tid": "2026-09-27T22:45:18.415Z",
+   "rubrik": "Ad `CaraShellRoof_US_CS_3_H1` spending badly"
+  },
+  {
+   "nyckel": "spend:120251574965360435:2026-09-28:3",
+   "tid": "2026-09-27T22:45:18.415Z",
+   "rubrik": "Ad `CaraShellRoof_US_CO_103_H1` spending badly"
+  },
+  {
+   "nyckel": "overspend:kampanj:120251451415500435:2026-09-28",
+   "tid": "2026-09-27T22:45:18.415Z",
    "rubrik": "Campaign `1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia` over budget"
   }
  ],
