@@ -150,6 +150,12 @@ Läses av `/kommentarer` innan svaren skrivs.
   fifth wheel, J-trim, snö, hagel, dörr, antenn, stege, körning, värme, vikt).
   Svaren kommer via WhatsApp — skriv in dem här MED frågans nummer, annars blir det
   som listan 2026-09-27 nedan: svar utan fråga som ingen kan koppla.
+  **Mätt 2026-09-27 kväll:** Axel klistrade in hela leverantörstråden ("DETTA VET
+  JAG"). Om takskyddet stod bara de tre svaren från 25/9 (webbing, nedre halvan av
+  glaset, waterproof/sunproof/paint) — inget om AC, fifth wheel, J-trim, snö, hagel,
+  dörr, antenn, stege, körning, värme eller vikt. **De 17 frågorna är alltså
+  fortfarande obesvarade** och sidan säger "we asked the maker" tills de skickats
+  och besvarats. Blocket 3–10 nedan hör inte till takskyddet.
 
 - Fiskespöhållare 4-pack (baverbutiken.se): texten "Monteras på vägg eller i
   båten" och "Monteras enkelt på vägg eller i båten" stämmer inte enligt
