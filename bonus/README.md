@@ -139,7 +139,19 @@ TrustBox eller kodsnutt på sajten; domänverifiering bara via mejllänk; och
 steg 5 läser efteråt att butiken laddar och att NS är ns1/ns2.loopia.se.
 Facit före körningen, mätt 2026-09-27 14:22 UTC med Cloudflare DoH: NS
 ns1/ns2.loopia.se, A 23.227.38.65 (Shopify), MX Loopia, en SPF-rad, www A
-23.227.38.65, butiken svarar 200. ⚠️ **Cowork skapar aldrig konton** (mätt
+23.227.38.65, butiken svarar 200. ⚠️ **Claimen görs alltid med butikens egen
+domänadress, aldrig ett gemensamt stonebite-konto** (Axels fråga 2026-09-27):
+Trustpilots hjälpsida "Verify your domain" (läst samma dag via sökning —
+hjälpcentret laddar inte maskinellt) säger att en e-postadress som inte matchar
+webbplatsens domän kräver domänverifiering med HTML-fil på sajten, DNS TXT-post
+eller Google Search Console, och att Trustpilot aldrig verifierar via
+mejllänk i det läget. Ett stonebite.org-konto hade alltså tvingat fram just
+DNS. Nästa butik (CaraShell hello@carashell.com, Matstrumpor
+kundsupport@matstrumpor.se …) claimas på samma sätt med sin egen brevlåda;
+vill Axel se alla under en inloggning lägger Trustpilots support till
+domänerna i efterhand ("Manage multiple domains or businesses": kontakta
+CSM/Support, sedan kontoväxlaren uppe till vänster) — aldrig i
+registreringen. ⚠️ **Cowork skapar aldrig konton** (mätt
 2026-09-27 kväll: den stannade vid registreringssidan och sa det rakt ut, även
 på direkt begäran) — steg 1 i prompten är därför Axels egna klick
 (business.trustpilot.com/signup: Business details → Additional details →

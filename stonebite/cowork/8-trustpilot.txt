@@ -49,7 +49,13 @@ FAKTA (mätt 2026-09-27 på den publika profilsidan. Det här är facit.)
 
 Kontot skapas med EXAKT adressen kundsupport@baverbutiken.se: en adress på
 samma domän som profilen, så att Trustpilot godtar att vi äger den. Ingen
-Gmail-adress, inte min privata.
+Gmail-adress, inte min privata, inget stonebite.org-konto. Trustpilots egen
+regel (hjälpsidan "Verify your domain", läst 2026-09-27): matchar inte
+e-postadressens domän webbplatsen kräver de domänverifiering med en HTML-fil
+på sajten, en DNS TXT-post eller Google Search Console - alltså exakt det som
+är förbjudet i den här körningen. Fler butiker under samma inloggning läggs
+till av Trustpilots support i efterhand ("Manage multiple domains or
+businesses"), aldrig i registreringen.
 
 ------------------------------------------------------------------------------
 STEG 1 - kontot skapar JAG själv. Du väntar, sedan kontrollerar du.

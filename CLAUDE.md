@@ -1252,7 +1252,13 @@ skriver "inloggad". **Första recensionen ur Spoks-kampanjen kom 2026-09-27
 cirka 16:10 CEST**, drygt två timmar efter utskicket: 5 stjärnor, märkt "Omdöme
 utan inbjudan" (så märks allt via evaluate-länken) — profilen 3 omdömen,
 TrustScore 3,2, namnet "Baverbutiken" och kategorin "Klädbutik" (fel, rättas
-efter claimen). **Gratisvägen till automatisk räkning är
+efter claimen). ⚠️ **Claimen görs alltid med butikens egen domänadress, aldrig
+ett gemensamt stonebite-konto** (Axels fråga 2026-09-27): matchar inte mejlets
+domän sajten kräver Trustpilot verifiering med HTML-fil på sajten, DNS TXT-post
+eller Google Search Console (hjälpsidan "Verify your domain", läst samma dag) —
+ett stonebite.org-konto hade tvingat fram just DNS. Flera domäner under en
+inloggning läggs till av Trustpilots support i efterhand ("Manage multiple
+domains or businesses"), aldrig i registreringen. **Gratisvägen till automatisk räkning är
 notismejlen i brevlådan vi redan läser** — läsaren `trustpilotMejl()` byggs ur
 första riktiga mejlet, aldrig ur en gissad mall (`bonus/README.md` →
 Trustpilot). `kundtjanst/arenden.mjs arSystem` räknar `trustpilot.com` som
