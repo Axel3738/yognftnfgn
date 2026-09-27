@@ -18,6 +18,9 @@ test('egen domän och systemavsändare känns igen', () => {
   assert.equal(arEgen('kund@gmail.com', BRAND), false);
   assert.equal(arSystem('no-reply@shopify.com'), true);
   assert.equal(arSystem('noreply@klarna.com'), true);
+  // Trustpilots notismejl (ny recension) sedan profilen claimades 2026-09-27 —
+  // domänen räcker, vilken avsändare de än använder.
+  assert.equal(arSystem('reviews@trustpilot.com'), true);
   assert.equal(arSystem('kund@gmail.com'), false);
   assert.equal(arSystem('kund@gmail.com', 'Mail delivery failed'), true);
 });

@@ -109,10 +109,38 @@ Utan det försvinner inrapporterade insatser vid varje ny version.
 
 ## Trustpilot
 
-Trustpilots publika sida svarar 403 på maskiner (mätt 2026-09-21), så
-automatisk läsning kräver `TRUSTPILOT_API_KEY` + `TRUSTPILOT_BUSINESS_UNITS`
-i miljön. Utan dem fungerar allt ändå: VA:n klistrar in recensionslänken på
-Min sida och chefen godkänner. Judge.me läses automatiskt redan i dag.
+Trustpilots publika sida svarar 403 på maskiner (mätt 2026-09-21 med curl och
+headless Chromium; 2026-09-27 gick den att läsa via WebFetch i en session, men
+det är inget en rutin kan bygga på), så automatisk läsning kräver
+`TRUSTPILOT_API_KEY` + `TRUSTPILOT_BUSINESS_UNITS` i miljön. Utan dem fungerar
+allt ändå: VA:n klistrar in recensionslänken på Min sida och chefen godkänner.
+Judge.me läses automatiskt redan i dag.
+
+**Mätt 2026-09-27, samma dag som recensionskampanjen i Spoks gick ut (Axels
+val A: claima profilen):** Bäverbutikens profil
+https://se.trustpilot.com/review/www.baverbutiken.se var **oclaimad** ("Ej
+registrerad profil"), 2 recensioner, båda 1 stjärna, TrustScore 2,9. Business
+unit-id **`6a8fefb70fa83ca3905331e9`** (ur sidans HTML) — det är värdet för
+`TRUSTPILOT_BUSINESS_UNITS` den dag en nyckel finns.
+
+⚠️ **API-nyckeln finns inte i gratisplanen.** Trustpilots prissida (läst
+2026-09-27) listar API-åtkomst som ett **tillägg från Plus-planen, 319 dollar
+i månaden per domän**; Free och Starter saknar det, och tilläggets eget pris
+står inte på sidan. Det är Axels pengabeslut, inte något en session eller
+Cowork köper. `stonebite/cowork/8-trustpilot.txt` claimar profilen gratis
+(kontot `kundsupport@baverbutiken.se`), slår på mejlnotis vid ny recension och
+läser av tilläggets pris utan att köpa; skickar aldrig Trustpilot-inbjudningar
+och kopplar aldrig Shopify (kunderna får redan förfrågan från Spoks — två mejl
+om samma sak). Variablerna hör hemma i miljön `/stonebite`-rutinen kör i
+(Barkås-kontot), för det är `hamta.mjs` → `bonus/kor.mjs` som läser källorna.
+
+**Gratisvägen till automatisk räkning:** notismejlen landar i
+`kundsupport@baverbutiken.se`, som `kundtjanst/webmail.mjs` redan läser varje
+timme. När första notisen ligger i brevlådan byggs `trustpilotMejl()` här i
+`kallor.mjs` ur det riktiga mejlet (samma radform som `trustpilot()`: källa,
+butik, betyg, kund, text, datum, länk) — aldrig ur en gissad mall.
+`kundtjanst/arenden.mjs arSystem` räknar `trustpilot.com` som systemavsändare
+sedan 2026-09-27, så autosvaret och veckorapporten hoppar notiserna.
 
 ## Personer utan konto
 
