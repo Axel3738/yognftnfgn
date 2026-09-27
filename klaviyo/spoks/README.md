@@ -610,9 +610,12 @@ av). Reservvägen (`order_created` + `orderTags in [klubb-dragning]`) behövs al
 Före testet var det omätt: taggarna som DATA synkades (`preview_segment tags is` gav 640
 kontakter med Shopify-taggar som "Login with Shop"), men händelsen var inte bevisad.
 ⚠️ Steg 2 vid testet: v1 stod `isActive: true` på flödesnivå men med `trigger.isActive:
-false` och alla tre sändstegen `isEnabled: false` (Axels klick 14:39 CEST) — det räcker
-för att v1 varken tar in någon eller skickar något, så testet kördes; huvudreglaget på v1
-bör ändå slås av för tydlighetens skull.
+false` och alla tre sändstegen `isEnabled: false` (Axels klick 14:39 CEST). **Läs
+`trigger.isActive` och stegens `isEnabled`, inte flödets `isActive`:** Axel slog av flödet i
+appen två gånger (14:39 och igen 15:1x efter en ny uppmaning) och `isActive` stod kvar på
+`true` båda gångerna — appens reglage syns som `trigger.isActive` i API:t, flödets `isActive`
+verkar betyda "har aktiverats". Med triggern av tar v1 inte in någon och med stegen av
+skickar det inget; det räckte, testet kördes. Kommandots steg 2 mäter därför triggern.
 
 **Kända sidoeffekter, accepterade:** 0-kronorsordern rullar också in vinnaren i F04 (dag 3
 "på väg", dag 13 "kom allt fram?") och F07 (dag 21 "en låda till") — inga krockar med
@@ -658,8 +661,8 @@ enligt spellagen); aldrig handplockat; en skarp dragning per datum; inga namn i 
 Discord eller Notion; förnamn + stad bara med vinnarens ja; bara vuxna på video; skarpt utan
 aktivt v2-flöde (eller med v1 fortfarande på) = fel, kommandot stoppar i steg 2.
 
-**Axels klick, i ordning (läget 2026-09-27 14:45 CEST):** ✅ (1) v1:s trigger och tre
-sändsteg av 14:39 (huvudreglaget står kvar på, bör slås av); ✅ (2) v2 på med alla tre
+**Axels klick, i ordning (läget 2026-09-27 14:45 CEST):** ✅ (1) v1 av 14:39 (`trigger.isActive:
+false` + tre sändsteg av; flödets `isActive` står kvar `true` i API:t, det är inte reglaget); ✅ (2) v2 på med alla tre
 sändstegen 14:39; ✅ (3) testet kört 14:40, kontakten inrullad, VA-SOP:en i Notion
 (`3e8270ab-908c-817c-a874-f5e538f8339e`); Axel bekräftar E1 i sin inkorg; (4) säg "kör" en
 tisdag morgon ⇒ första skarpa dragningen, tisdagens kampanj får Premiär-blocket samma

@@ -128,6 +128,17 @@ dem först (förturen). Beslutet är Axels (Black Week A/B/C i `klaviyo/README.m
 1. **Förtur är kärnan.** Förra säsongens köpare (`SEG_kopare_forra_sasongen`, 2 415) får
    Black Week, restock och sista beställningsdagen före alla andra; övriga medlemmar före
    sajten. Sant, gratis, och det Evolve kallar "the proven mechanic".
+   **Axels beslut 2026-09-27 kväll: alternativ C, båda.** (A) Black Week öppnar för klubben
+   söndag 22/11 kl 18:00, ett dygn före alla andra, och bara medlemmarna får veta det; (B) nya
+   sorter och påfyllning går till klubben först: mejlet går ut innan sorten syns på sajten och i
+   annonserna. Kvar att bygga (nästa session, i den här ordningen): **F01 E1 v4** med de två
+   sanna förmånerna (kräver nytt flöde i Spoks, ett aktivt flöde går inte att redigera via
+   MCP:n, Axel byter reglage som för F08), **K16 "Förtur: Black Week öppnar i kväll"** söndag
+   22/11 18:00 till samtycke, och **rabatternas starttid i Shopify flyttad** från mån 23/11 00:00
+   till sön 22/11 18:00 (automatiska rabatter gäller alla på sajten; förturen är att bara klubben
+   får veta). ⚠️ K16 och starttiden hänger på Black Week-frågan A/B/C i `klaviyo/README.md`
+   (trappan 10/20/30 % passar inte Matstrumpor eftersom Köp 1, få 1 slår den): erbjudandet
+   måste vara bestämt innan K16 skrivs.
 2. **Dragningen är krydda och intäktsmaskin**, inte strategin: **tre** medlemmar dras varje
    tisdag av ett skript med loggat frö; vinnarna får lådan mot **en kort video** på sig
    själva med strumporna där de säger en mening om dem (UGC om de vill, tio sekunder
