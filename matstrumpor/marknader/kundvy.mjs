@@ -69,7 +69,8 @@ async function hamta(url, kakor) {
 
 export async function lasMarknad({ land, sprak, valuta }) {
   const kakor = await sattLand(land, sprak);
-  const prefix = sprak === 'sv' ? '' : `/${sprak}`;
+  // Shopify skriver locale-mappen med gemener: pt-PT ligger på /pt-pt.
+  const prefix = sprak === 'sv' ? '' : `/${sprak.toLowerCase()}`;
   const ut = [];
   for (const path of ['/', '/products/sushi-strumpor', '/pages/spara']) {
     const r = await hamta(`${BAS}${prefix}${path}`, kakor);
@@ -83,9 +84,16 @@ async function huvud() {
   const arg = process.argv.slice(2);
   const bara = arg.includes('--land') ? arg[arg.indexOf('--land') + 1].toUpperCase() : null;
   const vyer = [{ land: 'SE', sprak: 'sv', valuta: 'SEK' }];
-  for (const m of KONFIG.marknader) for (const land of m.lander) vyer.push({ land, sprak: m.locales[0], valuta: land === 'US' ? 'USD' : land === 'NO' ? 'NOK' : land === 'FI' ? 'EUR' : land === 'DK' ? 'DKK' : land === 'GB' ? 'GBP' : land === 'AU' ? 'AUD' : land === 'CA' ? 'CAD' : land === 'NZ' ? 'NZD' : null });
-  // Danmark och Finland delar marknad men har olika språk.
-  for (const v of vyer) if (v.land === 'DK') v.sprak = 'da'; else if (v.land === 'FI') v.sprak = 'fi';
+  // Europa-marknaden har många språk: kundens land avgör vilket vi läser som. Länder utan
+  // eget språk i marknaden (CZ, HU, RO, GR, IE …) läses som DE/EUR-vyn — de får samma sidor.
+  const SPRAK_PER_LAND = { DK: 'da', FI: 'fi', DE: 'de', AT: 'de', CH: 'de', FR: 'fr', BE: 'nl', LU: 'fr', NL: 'nl', ES: 'es', IT: 'it', PL: 'pl', PT: 'pt-PT' };
+  const VALUTA_PER_LAND = { US: 'USD', NO: 'NOK', DK: 'DKK', GB: 'GBP', AU: 'AUD', CA: 'CAD', NZ: 'NZD', PL: 'PLN', CH: 'CHF', CZ: 'CZK', HU: 'HUF', RO: 'RON', IS: 'ISK' };
+  const alla = arg.includes('--alla-lander');
+  for (const m of KONFIG.marknader) for (const land of m.lander) {
+    const sprak = SPRAK_PER_LAND[land] ?? m.locales[0];
+    if (!alla && m.id === 'EU' && !(land in SPRAK_PER_LAND)) continue;
+    vyer.push({ land, sprak, valuta: VALUTA_PER_LAND[land] ?? (m.id === 'EU' ? 'EUR' : null) });
+  }
   let rott = 0;
   for (const v of vyer) {
     if (bara && v.land !== bara) continue;
