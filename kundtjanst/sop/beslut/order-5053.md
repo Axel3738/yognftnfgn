@@ -28,4 +28,16 @@ The delivery scan has no signature and no GPS point, so the issuer can still sid
 **If it fails**
 Write off the 603 SEK, tag the customer in Shopify so future orders are reviewed manually, and fix the root cause: both disputes were filed before any human had spoken to this customer, which is the same WISMO backlog that produced 192 unanswered emails over 48 hours this week.
 
-**Timing for the VA:** add the evidence and click **Save** today, on both disputes. If the customer replies to the 2026-09-20 email before 2026-09-26, add the reply and then click **Submit now**. Otherwise submit on 2026-09-26 - never later, the deadline 2026-09-28 has no exceptions, and **Submit now** locks the evidence permanently.
+**Timing for the VA:** add the evidence and click **Save** today, on both disputes. If the customer replies to the 2026-09-20 email, add the reply first. Then click **Submit now**.
+
+> ⛔ **The planned submit date has passed — measured 2026-09-27.** Both disputes
+> (`17773822301`, 348 SEK, and `17773723997`, 255 SEK) are still `needs_response`.
+> Nothing has been submitted. The instruction above used to say "submit on
+> 2026-09-26", and that day is gone. **Submit both today, Sunday 2026-09-27.**
+> The deadline 2026-09-28 has no exceptions and **Submit now** locks the evidence
+> permanently, so there is no reason left to wait: the delivery scan of 2026-09-11
+> already exists, which was the only thing waiting was ever buying us.
+> ⚠️ If nothing is submitted, Shopify sends whatever it has on the due date by
+> itself. That auto-submission is not our evidence pack — it has no delivery
+> screenshot, no email thread and no cover text, and the SOP's "inquiries are
+> always won" record was built on packs a human put together.

@@ -83,6 +83,7 @@
     "Paketet har lämnat avgångsorten": "Paketti on lähtenyt lähtöpaikasta",
     "Chauffören kom inte in genom porten och kunde inte lämna paketet": "Kuljettaja ei päässyt sisään portista eikä voinut jättää pakettia",
     "Leveransen är försenad. Leveransdatumet uppdateras": "Toimitus on myöhässä. Toimituspäivä päivittyy",
+    "Leveransen är troligen försenad. Leveransdatumet uppdateras": "Toimitus on todennäköisesti myöhässä. Toimituspäivä päivittyy",
     "4PX har hämtat paketet": "4PX on noutanut paketin",
     "Paketet ligger hos tullen": "Paketti on tullissa",
     "Leveransen misslyckades": "Toimitus epäonnistui",
@@ -203,6 +204,8 @@
     "Två saker som passar samma husvagn eller husbil. Skickas som en egen beställning, med fri frakt och 14 dagars ångerrätt som vanligt.": "Kaksi tuotetta, jotka sopivat samaan matkailuvaunuun tai matkailuautoon. Lähetetään omana tilauksena, mukana ilmainen toimitus ja tavanomainen 14 päivän peruutusoikeus.",
     "{{pris}} för dig som beställt hos oss": "{{pris}} sinulle, joka tilasit meiltä",
     "Lägg till för {{pris}}": "Lisää hintaan {{pris}}",
-    "Priset gäller dig som beställt hos oss och läggs på av sig själv i kassan.": "Hinta koskee sinua, joka tilasit meiltä, ja se lisätään automaattisesti kassalla."
+    "Priset gäller dig som beställt hos oss och läggs på av sig själv i kassan.": "Hinta koskee sinua, joka tilasit meiltä, ja se lisätään automaattisesti kassalla.",
+    "Paketet är på väg till ombud": "Paketti on matkalla noutopisteeseen",
+    "Vi planerar ett nytt hemleveransförsök till dig": "Suunnittelemme uutta kotiinkuljetusyritystä"
   }
 }
