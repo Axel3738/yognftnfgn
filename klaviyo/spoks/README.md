@@ -350,11 +350,20 @@ triggern; `FLOW_levererat_termoskyddet_DA_v1` orörd men av (sändsteg + trigger
 25 av 32 flöden lästes tillbaka i detalj mot `plan.json` efter påslaget (event, land, väntetider,
 steg): alla rätt. ⚠️ **Spoks rate-limitar `get_flow`** — 8 parallella anrop efter ~25 i följd gav
 "Rate limit exceeded. Try again in 11 seconds"; de 7 danska lästes därför i en senare check-in,
-EN I TAGET. **Kampanjerna:** de fyra första schemalagda av Axel samma morgon (`waiting_to_be_published`,
-går inte att ändra via MCP:n — bara utkast): sv/nb/da tisdag 29/9 18:00 rätt, **engelskan hamnade på
-söndag 27/9 18:00** (2026-09-27T16:00Z) i stället för tisdag 16:00 — Axel flyttar den själv; en
-check-in 15:30 CEST läser om. Publiken (segmentet) syns inte i `get_campaign`, så den går inte att
-kontrollera från en session.
+EN I TAGET. ✅ **Check-in 15:30–15:45 CEST samma dag: 32 av 32 tillbakalästa.** De sju danska
+(`4befe4bb` välkomst, `0eb39291` kassa, `506196b9` webbhistorik, `86b70c3f` efter köp, `50de5e7e`
+vinback, `69ef4ba3` levererat takskyddet, `63b1238b` recension) + `165a134e` välkomst SV +
+`34a610bf` levererat termoskyddet DA, ett anrop i taget: rätt event, `country in [Denmark]`
+(SV: Sweden eller utan land), `triggerFilter externalId` = produktens gid på de två
+levererat-flödena (`16084174242124` / `16108121489740`), väntetiderna ur planen (0/2/3 d, 3 h/1/2 d,
+4 h/1 d, 2/14 d, 180/14 d, 1 d, 10 d till 18:00), varje sändsteg `isEnabled: true` med planens
+postId, alla `isActive: true`; välkomst SV åter på `contact_created` (12 inrullade), efter köp DA
+och vinback DA hade redan 2 inrullade var. Inget att rätta. **Kampanjerna:** de fyra första
+schemalagda av Axel samma morgon (`waiting_to_be_published`, går inte att ändra via MCP:n — bara
+utkast): sv/nb/da tisdag 29/9 18:00 rätt, **engelskan hade hamnat på söndag 27/9 18:00**
+(2026-09-27T16:00Z) — Axel flyttade den 09:30 CEST; `search_campaigns` 15:31 CEST visar alla fyra
+på `2026-09-29T16:00:00Z` = tisdag 18:00. Publiken (segmentet) syns inte i `get_campaign`, så den
+går inte att kontrollera från en session.
 
 **Samtycket per land, mätt i Shopify 2026-09-27** (487 kunder; `emailMarketingConsent` +
 `consentUpdatedAt` mot orderns `createdAt`): **USA 59 av 77 (77 %)**, GB 1 av 5, **DK 3 av 28
