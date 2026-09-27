@@ -1,0 +1,43 @@
+{
+  "_om": "Annonsvakten (/annonsvakt), Axels beställning 2026-09-27: 'en rutin som scannar alla annonskonton … efter problem med nedstängda annonser … rädda mig ifall något annonskonto blir nedtaget, eller om annonsen blir nedtagen … någon annons som drar åt helvete, som tar all spend'. Varje timme: alla annonskonton token:en når → 🔴/🟡 i Discord #ad-alerts (Bäverbutikens server), Axel pingas bara på 🔴. Läs annonsvakt/README.md. Trösklarna här är BESLUT, inte mätvärden — ändra här, aldrig i koden, och skriv datum.",
+  "kanal": {
+    "discord": {
+      "server": "Bäverbutiken",
+      "serverId": "1540322130388983921",
+      "kanal": "ad-alerts",
+      "_om": "Servern är Bäverbutikens (samma id som tools/notify-discord.mjs GUILD, läst tillbaka i stonebite/data/snapshot.json). Kanalen skapas av boten om den saknas (factory/discord.mjs hittaEllerSkapaKanal) — ingen människa ska behöva skapa den (Axels besked 2026-09-10)."
+    },
+    "slack": {
+      "webhook_env": "SLACK_WEBHOOK_URL",
+      "_om": "Axel 2026-09-27: 'genom en Slack-kanal som jag inte har byggt än, men som jag ska bygga'. Finns variabeln i rutinens miljö postas samma text även dit (incoming webhook, POST {text}). Utan variabeln: bara Discord, och rapporten säger det."
+    }
+  },
+  "axel_discord": [
+    { "namn": "confident_otter_25993", "id": "1469423029783236689" },
+    { "namn": "ecom_chadking", "id": "1543537450335477836" }
+  ],
+  "axel_discord_om": "Axels två Discord-konton, id:n verifierade via members/search 2026-09-02 (tools/notify-discord.mjs --ping-axel). Pingas BARA på 🔴 — allowed_mentions låser pingen till just de id:na.",
+  "trosklar": {
+    "spend_min": 1500,
+    "spend_min_om": "I kontots valuta (alla sju nådda konton är SEK, mätt 2026-09-27). Under det beloppet döms ingen annons på dagens siffror — CLAUDE.md regel 3 (ingen dom under 300 kr) i timformat, med marginal för att köpen släpar efter spenden på förmiddagen. 0 köp vid 1 500 kr: larm. Larmet upprepas på nivåerna 3 000, 6 000, 12 000 … (fördubblingar), aldrig varje timme.",
+    "roas_andel_av_breakeven": 0.5,
+    "roas_andel_om": "Med köp larmas först när dagens ROAS är under halva break-even OCH spenden är minst 2 × spend_min. Ett–två köp gör ROAS brusig; kravet på dubbel spend finns för det.",
+    "break_even_standard": 1.6,
+    "break_even_standard_om": "Används när varken kampanjnamnet (BE ROAS x), products.json (creative_prefix) eller matstrumpor/konfig.json ger ett break-even. Larmtexten säger då 'default break-even'. Grillklinikens kampanjer saknar BE i namnet (mätt 2026-09-27).",
+    "overspend_faktor": 2,
+    "overspend_om": "Kampanj (CBO) eller adset (ABO) som spenderat minst faktor × dagsbudget i dag ⇒ 🟡, en gång per dag. Meta får själv gå upp till 75 % över dagsbudgeten en enskild dag, så 2× är inte Metas eget beteende — det är en budget som ändrats, eller något som gått fel. Sänks budgeten mitt på dagen (CaraShell US 2026-09-27: 16 000 → 8 000 när 17 086 kr redan gått) larmar regeln en gång; texten visar båda talen.",
+    "granskning_timmar": 24,
+    "granskning_om": "En annons i PENDING_REVIEW vars updated_time är äldre än så ⇒ 🟡 (fast i Metas granskning).",
+    "paminn_timmar": { "konto": 24, "token": 24, "annons": 168, "adset": 168, "kampanj": 168, "granskning": 168 },
+    "paminn_om": "Ett öppet problem larmas EN gång, sedan påminnelse efter så här många timmar så länge det står kvar. När det försvinner ur kontot: en ✅-rad. Konto och token påminns dagligen — de stoppar all spend.",
+    "handelser_dagar": 14,
+    "handelser_om": "Så länge minnet kommer ihåg skickade spend-larm. Nyckeln bär datumet, så det styr bara minnets storlek."
+  },
+  "ignorera_felkoder": {
+    "4469003": "'Ad not delivering' — Metas leveransdiagnos på en annons som inte fått visningar, inte ett fel att larma om. Mätt 2026-09-27: 21 sådana i MagiBorsten, 107 i SnarkLös, 8 i NO, alla gamla. En annons utan spend på sju dygn är en förlorare enligt CLAUDE.md regel 11 — det är nattvaktens sak, inte vaktens."
+  },
+  "hjartslag": {
+    "timme": 7,
+    "_om": "Första körningen varje dag från och med den här timmen (svensk tid) postar en rad även när inget är fel, så Axel ser att vakten lever. Tystnad resten av dygnet betyder 'inget nytt'."
+  }
+}
