@@ -473,6 +473,34 @@ plattformens egen.
   + F06 E2 (utkast). Det är det enda sättet via MCP:n att se vilken publik en kampanj har —
   `get_campaign` visar den inte. Bäverbutikens K01 "Taket du aldrig går upp och kollar"
   `51c37c20-…` står också schemalagd till samma tid (mätt samma minut).
+- **Mätt 2026-09-27 08–09 CEST (Axels fråga "går mejlen ut, hur ser kundresan ut"):**
+  hela kundresan står i **`klaviyo/innehall/matstrumpor/KUNDRESA.md`** och på sidan
+  *Kundresan Matstrumpor* (artifact, länk i chatten). Kort: `sendCounts.currentMonthEmails`
+  **39**; F01 E1 **37 mottagare / 14 öppnade / 4 klick / 0 köp**; F02 E1 0 skickade (9
+  inrullade); **F03 0 inrullade på 27 h** (hypotes: Spoks identifierar besökaren först efter
+  ett mejlklick — läs av efter K01, supportärende om 0 kvarstår 6/10); F04 49, F05 49, F07 45
+  inrullade; 0 kampanjer skickade. Shopify 14 d: 239 ordrar, 238 kunder, **6 återkommande
+  (2,5 %)**, 193 av 238 köpare SUBSCRIBED (81 %). Förra säsongen (första köp nov 25–mar 26):
+  3 277 kunder, **2 414 SUBSCRIBED i dag** — de får inget flöde, bara kampanjer.
+  **Nytt segment `SEG_kopare_forra_sasongen` `0d1fa31d-993b-40cb-85e2-aa78356b174f`**
+  (samtycke + `firstPurchase` 2025-11-01…2026-04-01, 2 415) — `firstPurchase` ÄR synkat från
+  Shopify för importerade kontakter, till skillnad från händelserna. Kalendern ändrad: K04
+  → samtycke, **K05–K06 → kopare_forra_sasongen**, K03 engagerade 60 d om ≥ 300 annars
+  samtycke (`KALENDER-2026.md`). ⚠️ Kampanjtitlarna i Spoks bär fortfarande de gamla
+  segmentnamnen (`… · engagerade_90d · …`) — rättas med `update_draft_campaign` i onsdagens
+  runda, en i taget. ⚠️ `whoami` visar nu **tre** workspaces: **Carashell
+  `38f3d430-690c-4c0b-8419-8ec2e5272148`** — inbjudan gjord; uppladdningen är en egen
+  session (`PROMPT-carashell-upp.md`, steg 0 kan nu gå vidare).
+- **Klubbkänslan (Axels beställning 2026-09-27: "utvalda, urgent, slumpmässigt, inte alla
+  får vara med"):** klubben är i dag öppen (sidfoten + kassans ruta, 81 % av köparna blir
+  medlemmar), så "inte alla får vara med" är osant tills en mekanik gör det sant. Tre
+  förslag, alla Axels beslut eftersom de kostar pengar eller lager: **A Förtur** (varje
+  släpp + Black Week ett dygn före sajten — den automatiska rabatten startar sön 22/11 18:00
+  och bara klubben får veta), **B Dragningen** (tio medlemmar dras slumpmässigt varje tisdag
+  ur veckans mottagare, får en låda, eget mejl "du drogs"; riktig slump = ett skript över
+  segmentet, aldrig påhittat), **C Medlemsreserven** (X lådor hålls undan för klubben till
+  8/12 — sant bara om lagret faktiskt hålls undan). Copyn skrivs om (F01 E1, K05–K08) av en
+  Sonnet-subagent enligt regel 6 FÖRST när Axel valt, så varje "utvald"-rad är falsifierbar.
 - **Nästa steg (påminnelse `trig_01AoYRfSaHJzbEicy2x49r9h`, ons 30/9 10:00 CEST):** K01:s
   statistik i båda butikerna, rätta "Ångerrätt" + F06 E2:s kommatecken (ovan), förbered
   Bäverbutikens K02 (tor 1/10) och Matstrumpors K02 (tis 6/10) med länk, utseende och publik.

@@ -22,10 +22,10 @@ Därför är oktober uppvärmning och november–december hela affären.
 |---|---|---|---|---|---|---|
 | 40 | tis 29/9 | K01 | Sushi | De tror att det är riktig sushi (avslöjandet) | uppvärmning steg 1 | utkast, klar |
 | 41 | tis 6/10 | K02 | Sushi + tre sorter | Ingen jublar åt tvättmedel (presentproblemet) | uppvärmning steg 1 | utkast, klar |
-| 42 | tis 13/10 | K03 | Sushi | Kundernas ord, ordagrant | engagerade 60 d | utkast, klar |
-| 43 | tis 20/10 | K04 | Sushi + tre sorter | **Fars dag, beställ senast lör 24/10** | engagerade 60 d | utkast, klar |
-| 44 | tis 27/10 | K05 | Sushi | Gissa vad jag la i julstrumpan | engagerade 90 d | utkast |
-| 45 | tis 3/11 | K06 | Sushi + tre sorter | I november förra året tog de slut | engagerade 90 d | utkast |
+| 42 | tis 13/10 | K03 | Sushi | Kundernas ord, ordagrant | engagerade 60 d = de som öppnat K01/K02 i Spoks; **under 300 ⇒ samtycke** | utkast, klar |
+| 43 | tis 20/10 | K04 | Sushi + tre sorter | **Fars dag, beställ senast lör 24/10** | **samtycke** (en deadline ska nå alla; ändrat 2026-09-27) | utkast, klar |
+| 44 | tis 27/10 | K05 | Sushi | Gissa vad jag la i julstrumpan | **kopare_forra_sasongen** (2 415; ändrat 2026-09-27) | utkast |
+| 45 | tis 3/11 | K06 | Sushi + tre sorter | I november förra året tog de slut | **kopare_forra_sasongen** (2 415; ändrat 2026-09-27) | utkast |
 | 46 | tis 10/11 | K07 | Sushi + tre sorter | Två lådor, två personer (köp 1, få 1) | samtycke | utkast |
 | 47 | tis 17/11 | K08 | Alla fyra, en per person | Julklappsguiden | samtycke | utkast |
 | 48 | **mån 23/11** | K09 | Alla fyra | Black Week, trappan 10/20/30 % | samtycke | utkast, klar |
@@ -54,9 +54,15 @@ skriver in det här.
 ## Regler som gäller hela schemat
 
 - Kampanjer går bara till segment med samtycke (motorn stoppar annat).
-- Uppvärmningstrappan: K01–K02 uppvärmning steg 1, K03–K04 engagerade 60 d, K05–K06
-  engagerade 90 d, K07–K14 hela listan med samtycke. Faller öppningsgraden under 20 %
-  går nästa kampanj tillbaka till 30-dagarssegmentet (EPOST-STRATEGI §4).
+- Uppvärmningstrappan (Klaviyos, EPOST-STRATEGI §4) var: K01–K02 uppvärmning steg 1,
+  K03–K04 engagerade 60 d, K05–K06 engagerade 90 d, K07–K14 samtycke.
+  **Ändrat 2026-09-27 för Spoks** (`KUNDRESA.md` §4): Spoks saknar händelsehistorik för
+  importerade kontakter, så engagemangssegmenten hade 19 medlemmar, och förra säsongens
+  2 415 köpare med samtycke får inget flöde alls. Därför: K01–K02 samtycke (Spoks egen
+  uppvärmning gäller), K03 engagerade 60 d om segmentet nått 300 annars samtycke, K04
+  samtycke, **K05–K06 `SEG_kopare_forra_sasongen`**, K07–K14 samtycke. Publiken väljs av
+  Axel i appen vid schemaläggningen (MCP:n kan inte); sessionen säger vilket segment varje
+  vecka.
 - Ingen rabatt utan Axels beslut. **Black Week: Axels beslut 2026-09-25, samma trappa
   som Bäverbutiken på hela sajten:** 10 % på 1 vara, 20 % på 2, 30 % på 3 eller fler,
   23/11 00:00 till 1/12 00:00, som tre schemalagda automatiska rabatter i Shopify.
