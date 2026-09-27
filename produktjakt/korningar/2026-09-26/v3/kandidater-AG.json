@@ -1,0 +1,375 @@
+{
+ "agent": "AG — maskinen/tjänsten i höstjobben",
+ "datum": "2026-09-26",
+ "sammanfattning": "Frågan per rad var 'vilken faktura försvinner och syns payoffen på 3 s'. Två fakturor hittade form med lucka: hängrännerensningen (1 490–3 300 kr/gång) via rännstaven till den Kärcher ägaren redan har, och arboristen (2 000–6 000 kr/träd) via repsågen som tar höga grenar från marken. Bikupornas oxalsyraförångare (Varrox 1 867 kr = ankare 2,5×) saknar AliExpress-listning på sex fraser; robotklipparens vinterväska (backlog) saknar listning på fem fraser till och har Worx 199 under sig; rännskopor, robotset, vägghängare, vedbärare, kedjeslip och avloppsslang föll på sortimentsgolv. 13 objekt prövade, 2 levererade, 11 strukna med golv/listning dokumenterade.",
+ "kandidater": [
+  {
+   "koncept_id": null,
+   "namn_sv": "Rännstaven till högtryckstvätten",
+   "objekt": "Hängrännor",
+   "form": "verktyg",
+   "arketyp": "D_SNABBARE_METOD",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploitation",
+   "hypotes_id": "H06",
+   "hypotes_sekundar": "H07",
+   "vinnarlikhet": {
+    "likast": "Sotarset Med Böjliga Stänger",
+    "delade_variabler": [
+     "arketyp D_SNABBARE_METOD + form verktyg",
+     "old way = tjänst (rensa hängrännor från marken 1 490–3 300 kr/gång: hantverksproffsen.com 3 300 ink. moms / 2 310 efter ROT för 30 m; nanostone från 1 490; aquafix från 1 050 efter ROT — lästa 2026-09-26)",
+     "deadline rätt: lövfällning NOW 2,7 v (sotarsetet: vedsäsong)",
+     "prisband 300–499 (sotarsetet 300–499)",
+     "ägare 55+ småhus, objekt ute (hängrännorna) — sotarsetet hade objekt inne",
+     "synlig payoff på 3 s (lövsörjan sprutar ur rännan — samma bild som sotet i påsen)"
+    ],
+    "avvikelser": [
+     "golv i exakt form UNDER oss: tre marknadsplatskopior 325 kr på PriceRunner (sotarsetet: golv okänt) — därför H06-märkt",
+     "märkesankaret är svagt (Kärcher rännstav 695 = 1,39×; Kärcher PC 20-set 899 = 1,8×) — fakturan är det verkliga ankaret",
+     "kräver att ägaren har Kärcher K2–K7 (bajonettfäste) — Nilfisk/Bosch behöver adapter",
+     "hero med inbränd text (materialklass 1)"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "lovfallning",
+    "deadline_typ": "lövfällning",
+    "veckor_kvar": 2.7,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005007570260883",
+    "url": "https://www.aliexpress.com/item/1005007570260883.html",
+    "pris_usd": 13.45,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-26T04:47:04Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-26/v3/bilder/1005007570260883.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant: rostfri U-böjd stav (~40 cm) med Kärcher K-bajonett för K2–K7, 4000 PSI. Syskon 1005002648558830 (24,24 USD, LIVE 04:47:06Z, hero sedd): samma stav med 1/4\" snabbkoppling + 4 munstycken — heron är textfri och I KONTEXT (strålen nere i rännan) och ska användas som creative-referens; 1005010754304442 (44,29 USD) dyrare syskon.",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron: staven på vit botten med rubrik 'Pressure Washer Extension Wand', Choice-badge och fraktbanner — måste beskäras; tre små kontextbilder (trappa, bil, mur) visar INTE rännan. Syskonets hero (1005002648558830) visar staven böjd ner i en hängränna med strålen igång, textfri — rätt bild för annonsen.",
+    "hero_syskon": "korningar/2026-09-26/v3/bilder/1005002648558830.jpg"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "PriceRunner marknadsplats — 'Högtryckstvätt Rengöringsverktyg Hängrännor U30 90 Grader' (tre listningar)",
+     "pris_sek": 325,
+     "url": "https://www.pricerunner.se/pl/638-3332144169/Hoegtrycks-Hetvattentvaettar/Hoegtryckstvaett-Rengoeringsverktyg-Haengraennor-U-30-90-Grader-priser",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Kärcher PC 20 Roof Gutter and Pipe Cleaning Kit 899 kr (i sortiment); Kärcher Rengöringsstav Hängrännor 695 kr; Nilfisk teleskoplans tak 1 199; tjänsten 'rensa hängrännor från marken' 1 490–3 300 kr/gång",
+     "pris_sek": 899,
+     "url": "https://www.pricerunner.se/pl/638-5164892/Hoegtrycks-Hetvattentvaettar/Kaercher-PC-20-Roof-Gutter-and-Pipe-Cleaning-Kit-priser",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.8,
+    "ankare_kvot_kommentar": "PC 20 899/499 = 1,80; rännstaven 695/499 = 1,39; fakturan 2 310/499 = 4,6",
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se 'högtryckstvätt hängrännor' (3 kopior 325 kr) 2026-09-26",
+     "pricerunner.se 'takrännerensare' / 'gutter cleaning kit' (Fiskars 280/349, Gardena 276, Wolf 379, Flopro 450, Kärcher 695/899, Nilfisk 1 199, AVA 997) 2026-09-26",
+     "pricerunner.se 'kärcher hängränna' (bara slangvagnar) 2026-09-26",
+     "hantverksproffsen.com/rensa-hangrannor (30 m: 3 300 ink. moms, 2 310 efter ROT; 'Spacevac från marken') 2026-09-26",
+     "nanostone.se (från 1 490 efter ROT), aquafix.se (från ~1 050 efter ROT, 50 kr/m), tbcentreprenad.se (från 2 295 efter ROT) — via WebSearch 2026-09-26",
+     "bauhaus.se sök (404), clasohlson.com sök (JS-skal, oläst), jula.se/biltema.se/fyndiq/cdon/amazon.se (403 — oläst)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     175,
+     214
+    ],
+    "pris_sek": 499,
+    "brutto_sek": [
+     285,
+     324
+    ],
+    "be_cpa_sek": [
+     285,
+     324
+    ],
+    "be_roas": 1.64,
+    "flerkop": false,
+    "returrisk": "medel — passar Kärcher K2–K7-bajonett (marknadsledaren i SE); Nilfisk-/Bosch-ägare måste ha adapter, skriv det på sidan så köpet självselekterar"
+   },
+   "meta_tanke": {
+    "hook": "Står du på stegen i höst igen?",
+    "objekt_i_bild": "staven böjd ner i hängrännan från marken, lövsörjan sprutar ut",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "svart sörja och löv flyger ur rännan i ett svep medan personen står på gräsmattan — samma 'skiten kommer ut'-payoff som sotarsetets påse"
+   },
+   "varfor": "Tjänsten 'rensa hängrännor från marken' kostar 1 490–3 300 kr per gång och staven gör samma jobb med den Kärcher ägaren redan har, från marken — payoffen (sörjan som sprutar) syns på 3 s. Golvet är tre marknadsplatskopior på 325 kr under Kärchers egna 695/899: ett rent H06-test med fakturan som ankare, i lövfällningens NOW-fönster (2,7 v).",
+   "huvudrisk": "Golv 325 kr i exakt form och märkesankare bara 1,39–1,8× — köparen måste värdera fakturan, inte Kärcher-märket; heron är textig och kontextbilden måste tas från syskonlistningen.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 3,
+    "meta_creative": 2,
+    "efterfragan": 3,
+    "lucka": 1,
+    "ekonomi": 1,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok (Lövsilarna 6-pack = nät på samma objekt, annan form/annat jobb)",
+    "K1": 12,
+    "K2": 12,
+    "K3": 8,
+    "K4": 8,
+    "K5": 7,
+    "K6": 8,
+    "K7": 5,
+    "K8": 6,
+    "K9": 4,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt 2026-09-26 (ränn/löv: bara 'Lövsilarna 6-pack' 379 = nät; ingen stav/skopa)",
+     "koncept.py sok hängränn/ränn/löv/stuprör (K0285 lövsilarna nät launchad; K0260 regnkedja; K0286 regnfisk nej; K0288 regntunnehuv ja — inget verktyg)",
+     "kandidater-AB 09-24 (hängränna ej sökt; kopparband/takpannekrok/avloppsrens strukna = andra saker)"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005007570260883.html",
+    "https://www.aliexpress.com/item/1005002648558830.html",
+    "https://www.pricerunner.se/search?q=h%C3%B6gtryckstv%C3%A4tt%20h%C3%A4ngr%C3%A4nnor",
+    "https://www.pricerunner.se/search?q=gutter%20cleaning%20kit",
+    "https://www.pricerunner.se/pl/638-5164892/Hoegtrycks-Hetvattentvaettar/Kaercher-PC-20-Roof-Gutter-and-Pipe-Cleaning-Kit-priser",
+    "https://www.pricerunner.se/pl/638-3294888330/Hoegtrycks-Hetvattentvaettar/Kaercher-Rengoeringsstav-Haengraennor-Brun-priser",
+    "https://hantverksproffsen.com/rensa-hangrannor/",
+    "https://nanostone.se/takbehandling/rensa-hangrannor/",
+    "https://aquafix.se/pris-f%C3%B6r-rensning-av-h%C3%A4ngr%C3%A4nnor-i-stockholm-%E2%80%93-vad-kostar-det",
+    "https://tbcentreprenad.se/rensning-hangrannor/"
+   ]
+  },
+  {
+   "koncept_id": null,
+   "namn_sv": "Repsågen för höga grenar 135 cm",
+   "objekt": "NYTT: Trädets höga grenar över taket/uppfarten",
+   "form": "verktyg",
+   "arketyp": "D_SNABBARE_METOD",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploitation",
+   "hypotes_id": "H07",
+   "vinnarlikhet": {
+    "likast": "Sotarset Med Böjliga Stänger",
+    "delade_variabler": [
+     "arketyp D_SNABBARE_METOD + form verktyg",
+     "old way = tjänst (arborist 800–1 200 kr/h, kronbeskärning 2 000–6 000 kr per träd — offerta.se 2026, läst 2026-09-26)",
+     "ägare 55+ småhus med träd över tak/uppfart — den som inte längre klättrar med motorsåg",
+     "synlig payoff på 3 s (grenen knäcks och faller efter tio drag i repen)",
+     "deadline rätt: beskärning när löven fallit + höststormarna (lövfällning NOW 2,7 v)",
+     "prisband 500–999 (HÖG vinnarsignal: 12 av 16 dömda)"
+    ],
+    "avvikelser": [
+     "sotarsetet 300–499; repsågen 899 utan märkesankare i exakt form (tjänsten är ankaret)",
+     "kroppsligt jobb — två personer drar i repen, inte 'maskinen gör jobbet'",
+     "hero textfri men packshot utan kontext (grenen/trädet syns inte)",
+     "Fyndiq/Amazon/CDON/Jula oläst (403) — kopior kan finnas"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "lovfallning",
+    "deadline_typ": "lövfällning",
+    "veckor_kvar": 2.7,
+    "timing": "NOW",
+    "kommentar": "objektraden saknas i sasong.json — fönstret lövfällning valt för att beskärning görs när löven fallit (okt–mars) och höststormarna är argumentet; uppskattning, ingen extern källa"
+   },
+   "listning": {
+    "product_id": "1005012679516915",
+    "url": "https://www.aliexpress.com/item/1005012679516915.html",
+    "pris_usd": 33.89,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-26T04:47:11Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-26/v3/bilder/1005012679516915.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant: 53\" (135 cm) dubbelsidig kedja med tänder åt båda håll, två handtag, 2 rep, 2 karbinhakar, 2 S-krokar, fil och fodral. Syskon i samma form: 1005002121214620 (48\", 48,62 USD, LIVE 04:48:29Z, hero sedd) och 1005013232098924 (48\", 44,30 USD, 'räckvidd 9 m', LIVE 04:48:32Z, samma hero) — dyrare, samma set. 24\"-listningarna (1005012163610308 7,95–8,79 USD) är fickkedjesågar utan rep = butikens Fickkedjesåg 229 (K0), ej samma sak.",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "textfri packshot på vitt: kedjan i slinga, två röda handtag, två röda rep, karbinhakar, fil, svart fodral — allt i settet syns men inte trädet. Kontextklipp (repet över grenen, grenen faller) måste skjutas själv; det klippet är hela annonsen.",
+    "hero_syskon": "korningar/2026-09-26/v3/bilder/1005002121214620.jpg"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen svensk aktör läst i exakt form — PriceRunner 'repsåg', 'rope chain saw', 'kedjesåg rep hög gren', 'grensåg rep', 'linsåg gren' ger bara tigersågar, motorsågskedjor och stångsågar (2026-09-26)",
+     "pris_sek": null,
+     "url": "https://www.pricerunner.se/search?q=rope%20chain%20saw",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "Tjänsten: arborist 2 000–6 000 kr per träd (offerta.se 2026, 800–1 200 kr/h); angränsande form: Silky Hayauchi stångsåg 3,7 m 2 755 kr, Husqvarna Aspire P5 grensåg 1 949–2 390 kr, Ceiever teleskopgrensåg 8 m 1 990 kr",
+     "pris_sek": 2000,
+     "url": "https://offerta.se/guider/tomt-och-markarbeten/vad-kostar-en-arborist",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 2.22,
+    "ankare_kvot_kommentar": "arboristfaktura 2 000/899 = 2,22 (nedre gränsen); Silky 2 755/899 = 3,06 i angränsande form",
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se fem sökningar (repsåg / rope chain saw / kedjesåg rep hög gren / grensåg rep / linsåg gren) 2026-09-26 — 0 i formen",
+     "offerta.se arboristguide 2026 (2 000–6 000 kr/träd, 800–1 200 kr/h) 2026-09-26",
+     "roostradfallning.se, tradbeskarning-pris.se (600–1 200 kr/h) via WebSearch 2026-09-26",
+     "amazon.se / fyndiq.se / cdon.se / jula.se / clasohlson.com — oläst (403 / JS-skal)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     441,
+     539
+    ],
+    "pris_sek": 899,
+    "brutto_sek": [
+     360,
+     458
+    ],
+    "be_cpa_sek": [
+     360,
+     458
+    ],
+    "be_roas": 2.2,
+    "flerkop": false,
+    "returrisk": "låg — en storlek, inget att mäta; risk är felanvändning (kedjan kläms) → svensk bruksanvisning + klipp på sidan"
+   },
+   "meta_tanke": {
+    "hook": "Hänger grenen över taket i vinter?",
+    "objekt_i_bild": "repet kastat över en tjock gren fem meter upp, två personer drar, grenen faller",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "grenen knäcks och slår i marken efter några drag — ingen stege, ingen motorsåg över huvudet, ingen arborist"
+   },
+   "varfor": "Arboristen tar 2 000–6 000 kr per träd och alternativet är stege + motorsåg över huvudet — repsågen tar grenen från marken, vilket är H07:s tjänstesida på tomtens dyraste höstfaktura, och grenen som faller är linsens starkaste 3-sekundersklipp. Ingen svensk aktör har formen på PriceRunner; prisband 500–999 är kontots starkaste vinnarband.",
+   "huvudrisk": "Fyndiq/Amazon oläst — kopior på 300–500 kr kan finnas; 899 kr vilar helt på fakturan, och jobbet är fysiskt (två som drar) vilket kan skrämma 55+.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 3,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 3,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok (Fickkedjesåg 229 = handsåg för campare utan rep; Hopfällbar såg 279 — annan sak, annat jobb)",
+    "K1": 12,
+    "K2": 10,
+    "K3": 8,
+    "K4": 9,
+    "K5": 8,
+    "K6": 9,
+    "K7": 6,
+    "K8": 8,
+    "K9": 4,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt 2026-09-26 (såg: Fickkedjesåg 229, Hopfällbar såg 279, Handdriven Kedjeslip 249 — ingen repsåg/högrensåg)",
+     "koncept.py sok kedjesåg/gren/träd (K0248 Minikedjesågen för Makita ja, ej launchad — annan form, annat jobb)",
+     "kandidater-AB/AC/AD 09-24 (ingen trädrad)"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012679516915.html",
+    "https://www.aliexpress.com/item/1005002121214620.html",
+    "https://www.aliexpress.com/item/1005013232098924.html",
+    "https://www.pricerunner.se/search?q=rope%20chain%20saw",
+    "https://www.pricerunner.se/search?q=reps%C3%A5g",
+    "https://offerta.se/guider/tomt-och-markarbeten/vad-kostar-en-arborist",
+    "https://www.roostradfallning.se/arborist/",
+    "https://www.pricerunner.se/pl/348-3202885907/Traedgaardsredskap/Silky-Hayauchi-staangsaag-3-7m-priser"
+   ]
+  }
+ ],
+ "strukna": [
+  {
+   "namn": "Oxalsyraförångaren 12 V (invintring av bisamhällen, 2,7 v)",
+   "skal": "Ankaret finns och är starkt — Varrox 1 867 kr (biredskapsfabriken.se), Freddy Duwe 1 600 kr, Arg som ett bi 12 V/40 W 475 kr men 'ej i lager', Amazon.se har en (403, oläst) — men AliExpress gav 0 träffar på sex fraser (oxalic acid vaporizer / oxalic acid vaporizer 12V beekeeping / oxalic acid evaporator bee 12V / bee mite treatment vaporizer / oxalic vaporizer / beekeeping vaporizer varroa). Backlog: kräver annan leverantörskälla; ankare_sek 1 867 kan skrivas in på objektraden Bikuporna."
+  },
+  {
+   "namn": "Robotklipparens vinterväska (backlog från 09-24)",
+   "skal": "Ankaret har sjunkit: Gardena Storage Bag 4057-20 599 kr (PriceRunner 09-26, inte 689), Worx Landroid Storage Bag 199 kr UNDER oss i exakt form, Grimsholm skyddsöverdrag 79. Fem fraser till (inkl. 'automower', 'winter dustproof', '600D') gav bara gräsuppsamlare och klipparöverdrag — ingen listning. Kvar i backlog men Worx 199 gör raden svag även med listning."
+  },
+  {
+   "namn": "Robotklipparens underhålls-/vinterserviceset (tjänst: robothotell 2 485–2 690 kr, Söderströms 2026/27)",
+   "skal": "Golv sortiment i exakt form: Husqvarna Cleaning & Maintenance Kit 389 / Underhålls- och rengöringskit 404 / Underhållskit 782, Gardena 539, Worx 399, Cocraft 99,90, AL-KO borste 105. Ali bara däckskrapor/borstar 6–20 USD."
+  },
+  {
+   "namn": "Robotklipparens vägghängare för vinterförvaring",
+   "skal": "Sortiment: Grimsholm 319–499 (Automower/Stiga/Stihl/Luba), Gardena 563, McCulloch 689, Husqvarna 799. Modellspecifikt + A_AGARE_FRIKTION (HÖG förlorarsignal)."
+  },
+  {
+   "namn": "Hängrännerensaren för teleskopskaft (skopa/tång)",
+   "skal": "Sortiment: Fiskars QuikFit 280 / Oneclick 349, Gardena Combisystem 276, Wolf-Garten 379, Flopro 450, ACO 272 + fem marknadsplatskopior 245–425 kr. Ali 6,85–27 USD."
+  },
+  {
+   "namn": "Lövblåsens rännkit (universal)",
+   "skal": "Ingen universalkit på Ali — fyra fraser gav högtrycksstavar, skopor och lövblåsmunstycken (17 USD). I Sverige bara märkesspecifika: Makita 191B03-8 762 kr, Stihl takrengöringsset 745 kr, Black & Decker GWC1820PC 1 142 (egen maskin)."
+  },
+  {
+   "namn": "Rännsuget (Spacevac-formen — tjänstens eget verktyg)",
+   "skal": "Ali bara proffskit i kolfiber 164–875 USD (HOFi 692). Ingen hemform."
+  },
+  {
+   "namn": "Vedbäraren i duk med stålram (kluven ved in till kaminen)",
+   "skal": "Sortiment i kaminkategorin: Valo fällbar 398, Glød 249, Co Tech 299, Aduro 949, Tømmerbærer duk 735 + Jula/Rusta (oläst, 403). Ej sökt på Ali."
+  },
+  {
+   "namn": "Elektrisk kedjeslip (vedsäsong, H12-form med gnistor)",
+   "skal": "K0: butiken har Handdriven Kedjeslip 249 och Gräsklipparslipare 189 på samma objekt. Golv dessutom sortiment: GPL 314, Ejoyous 392, Mini 165, PowerPlus 696, Yato 18 V 1 093, Hawk 1 495, Oregon 2 499. Tjänsten (kedjeslipning 80–150 kr/kedja) är för liten faktura."
+  },
+  {
+   "namn": "Takmossans skrapa på teleskopskaft (taktvätt 5 000–15 000 kr)",
+   "skal": "PriceRunner 0 i formen (lucka), men Ali gav bara snörakor (63–135 USD) och akvarieskrapor — ingen listning. Payoffen (mossan i sjok) syns, till skillnad från kopparbandet, så värd nytt försök med 'roof moss removal tool pole'."
+  },
+  {
+   "namn": "Stuprörs-/avloppsrensslangen till högtryckstvätten (dräneringsspolning)",
+   "skal": "Sortiment: 12+ generiska på PriceRunner 715–1 375 kr (Karcher K2–K7-varianter 935–1 175), Vonroc 579, Bosch 305/361, Kärcher PC 15 1 190 / PC 7.5 1 039. Struken redan 09-24 som VVS-form."
+  },
+  {
+   "namn": "Fickkedjesågen 24\" med rep/handtag (7,95–8,79 USD)",
+   "skal": "K0 — butiken har Fickkedjesåg 229 (samma sak); heron textig campingbild."
+  },
+  {
+   "namn": "Ej sökta enligt ordern",
+   "skal": "vedklyvkil/twister (kedjan har kilar), kaminglasrengöring (förbrukning), askvakuum (Jula), vedfuktmätare (< 200), snöskyffel Makita (K0), takränne-/stuprörsvärmekabel (fönstret snölast EARLY 16,6 v), kranens frostvakt (Kranskydd K0), kompostkvarn (> 4 kg), stubbmedel (kemi), dräneringsrensare/råttspärr/stubbfräs/fönsterputs (strukna 09-24), brunnslocksöppnare (K0287 nej på brunnslocket), skorstenshuv (skyddsform + montering på tak), altan-/fasadtvätt (biltvättborstens form, REAL_LOSER)."
+  }
+ ]
+}

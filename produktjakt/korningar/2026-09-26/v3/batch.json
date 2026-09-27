@@ -1,0 +1,1142 @@
+{
+ "datum": "2026-09-26",
+ "antal": 7,
+ "tema": false,
+ "per_slot": {
+  "exploitation": 5,
+  "exploration": 0,
+  "sasong": 2
+ },
+ "under_minimum": {
+  "exploration": 2
+ },
+ "batch": [
+  {
+   "koncept_id": "K0334",
+   "namn_sv": "Repsågen för höga grenar 135 cm",
+   "objekt": "NYTT: Trädets höga grenar över taket/uppfarten",
+   "form": "verktyg",
+   "arketyp": "D_SNABBARE_METOD",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploitation",
+   "hypotes_id": "H07",
+   "vinnarlikhet": {
+    "likast": "Sotarset Med Böjliga Stänger",
+    "delade_variabler": [
+     "arketyp D_SNABBARE_METOD + form verktyg",
+     "old way = tjänst (arborist 800–1 200 kr/h, kronbeskärning 2 000–6 000 kr per träd — offerta.se 2026, läst 2026-09-26)",
+     "ägare 55+ småhus med träd över tak/uppfart — den som inte längre klättrar med motorsåg",
+     "synlig payoff på 3 s (grenen knäcks och faller efter tio drag i repen)",
+     "deadline rätt: beskärning när löven fallit + höststormarna (lövfällning NOW 2,7 v)",
+     "prisband 500–999 (HÖG vinnarsignal: 12 av 16 dömda)"
+    ],
+    "avvikelser": [
+     "sotarsetet 300–499; repsågen 899 utan märkesankare i exakt form (tjänsten är ankaret)",
+     "kroppsligt jobb — två personer drar i repen, inte 'maskinen gör jobbet'",
+     "hero textfri men packshot utan kontext (grenen/trädet syns inte)",
+     "Fyndiq/Amazon/CDON/Jula oläst (403) — kopior kan finnas"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "lovfallning",
+    "deadline_typ": "lövfällning",
+    "veckor_kvar": 2.7,
+    "timing": "NOW",
+    "kommentar": "objektraden saknas i sasong.json — fönstret lövfällning valt för att beskärning görs när löven fallit (okt–mars) och höststormarna är argumentet; uppskattning, ingen extern källa"
+   },
+   "listning": {
+    "product_id": "1005012679516915",
+    "url": "https://www.aliexpress.com/item/1005012679516915.html",
+    "pris_usd": 33.89,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-26T04:47:11Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-26/v3/bilder/1005012679516915.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant: 53\" (135 cm) dubbelsidig kedja med tänder åt båda håll, två handtag, 2 rep, 2 karbinhakar, 2 S-krokar, fil och fodral. Syskon i samma form: 1005002121214620 (48\", 48,62 USD, LIVE 04:48:29Z, hero sedd) och 1005013232098924 (48\", 44,30 USD, 'räckvidd 9 m', LIVE 04:48:32Z, samma hero) — dyrare, samma set. 24\"-listningarna (1005012163610308 7,95–8,79 USD) är fickkedjesågar utan rep = butikens Fickkedjesåg 229 (K0), ej samma sak.",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "textfri packshot på vitt: kedjan i slinga, två röda handtag, två röda rep, karbinhakar, fil, svart fodral — allt i settet syns men inte trädet. Kontextklipp (repet över grenen, grenen faller) måste skjutas själv; det klippet är hela annonsen.",
+    "hero_syskon": "korningar/2026-09-26/v3/bilder/1005002121214620.jpg"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen svensk aktör läst i exakt form — PriceRunner 'repsåg', 'rope chain saw', 'kedjesåg rep hög gren', 'grensåg rep', 'linsåg gren' ger bara tigersågar, motorsågskedjor och stångsågar (2026-09-26)",
+     "pris_sek": null,
+     "url": "https://www.pricerunner.se/search?q=rope%20chain%20saw",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "Tjänsten: arborist 2 000–6 000 kr per träd (offerta.se 2026, 800–1 200 kr/h); angränsande form: Silky Hayauchi stångsåg 3,7 m 2 755 kr, Husqvarna Aspire P5 grensåg 1 949–2 390 kr, Ceiever teleskopgrensåg 8 m 1 990 kr",
+     "pris_sek": 2000,
+     "url": "https://offerta.se/guider/tomt-och-markarbeten/vad-kostar-en-arborist",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 2.22,
+    "ankare_kvot_kommentar": "arboristfaktura 2 000/899 = 2,22 (nedre gränsen); Silky 2 755/899 = 3,06 i angränsande form",
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se fem sökningar (repsåg / rope chain saw / kedjesåg rep hög gren / grensåg rep / linsåg gren) 2026-09-26 — 0 i formen",
+     "offerta.se arboristguide 2026 (2 000–6 000 kr/träd, 800–1 200 kr/h) 2026-09-26",
+     "roostradfallning.se, tradbeskarning-pris.se (600–1 200 kr/h) via WebSearch 2026-09-26",
+     "amazon.se / fyndiq.se / cdon.se / jula.se / clasohlson.com — oläst (403 / JS-skal)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     441,
+     539
+    ],
+    "pris_sek": 899,
+    "brutto_sek": [
+     360,
+     458
+    ],
+    "be_cpa_sek": [
+     360,
+     458
+    ],
+    "be_roas": 2.2,
+    "flerkop": false,
+    "returrisk": "låg — en storlek, inget att mäta; risk är felanvändning (kedjan kläms) → svensk bruksanvisning + klipp på sidan"
+   },
+   "meta_tanke": {
+    "hook": "Hänger grenen över taket i vinter?",
+    "objekt_i_bild": "repet kastat över en tjock gren fem meter upp, två personer drar, grenen faller",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "grenen knäcks och slår i marken efter några drag — ingen stege, ingen motorsåg över huvudet, ingen arborist"
+   },
+   "varfor": "Arboristen tar 2 000–6 000 kr per träd och alternativet är stege + motorsåg över huvudet — repsågen tar grenen från marken, vilket är H07:s tjänstesida på tomtens dyraste höstfaktura, och grenen som faller är linsens starkaste 3-sekundersklipp. Ingen svensk aktör har formen på PriceRunner; prisband 500–999 är kontots starkaste vinnarband.",
+   "huvudrisk": "Fyndiq/Amazon oläst — kopior på 300–500 kr kan finnas; 899 kr vilar helt på fakturan, och jobbet är fysiskt (två som drar) vilket kan skrämma 55+.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 3,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 3,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok (Fickkedjesåg 229 = handsåg för campare utan rep; Hopfällbar såg 279 — annan sak, annat jobb)",
+    "K1": 12,
+    "K2": 10,
+    "K3": 8,
+    "K4": 9,
+    "K5": 8,
+    "K6": 9,
+    "K7": 6,
+    "K8": 8,
+    "K9": 4,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt 2026-09-26 (såg: Fickkedjesåg 229, Hopfällbar såg 279, Handdriven Kedjeslip 249 — ingen repsåg/högrensåg)",
+     "koncept.py sok kedjesåg/gren/träd (K0248 Minikedjesågen för Makita ja, ej launchad — annan form, annat jobb)",
+     "kandidater-AB/AC/AD 09-24 (ingen trädrad)"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012679516915.html",
+    "https://www.aliexpress.com/item/1005002121214620.html",
+    "https://www.aliexpress.com/item/1005013232098924.html",
+    "https://www.pricerunner.se/search?q=rope%20chain%20saw",
+    "https://www.pricerunner.se/search?q=reps%C3%A5g",
+    "https://offerta.se/guider/tomt-och-markarbeten/vad-kostar-en-arborist",
+    "https://www.roostradfallning.se/arborist/",
+    "https://www.pricerunner.se/pl/348-3202885907/Traedgaardsredskap/Silky-Hayauchi-staangsaag-3-7m-priser"
+   ],
+   "_kalla": "kandidater-AG.json",
+   "rank_poang": 15.3,
+   "rank_forklaring": "exploitation: vinnarlikhet 3×2 + ekonomi 2 + säsong 2 + creative 2 + lucka 3 + signalbonus +0.3 [arketyp=D_SNABBARE_METOD 2V/2F (+0.0); form=verktyg 2V/3F (-0.2); prisband=500–999 12V/4F (+0.5)] = 15.3",
+   "asymmetrisk": false,
+   "rank": 1
+  },
+  {
+   "koncept_id": "K0335",
+   "namn_sv": "Däckvaggorna under det uppställda hjulet, 2-pack",
+   "objekt": "Husvagn/husbil — hjulen och däcken",
+   "form": "annat",
+   "form_kommentar": "stöd (tyre saver / däckvagga) — ingen skyddsform; hjulet rullas upp på en böjd HDPE-platta så däcket inte plattställs under 6 månader",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "I_FLERKOP",
+   "slot": "exploitation",
+   "hypotes_id": "H08",
+   "vinnarlikhet": {
+    "likast": "Taköverdraget för Husvagn 6,5 × 3 m",
+    "delade_variabler": [
+     "samma ägare (283 840 husvagnar, 116 344 avställda ute — Trafikanalys 2024 via objekt.json) och samma datum: uppställning 2,0 v (4 av 4 dömda vann)",
+     "objekt_ute = ja, objekt dyr > 10 tkr (vagn 100–400 tkr; ett par husvagnsdäck 2 000–3 000 kr att byta)",
+     "old way = improvisation (flytta vagnen en halvmeter i månaden, pumpa hårt) eller ingenting",
+     "ägare 55+ småhus",
+     "flerköp inbyggt: 2-pack per axel — husbil och boggievagn behöver två pack, båttrailern och andrabilen på uppfarten ett till (H08)"
+    ],
+    "avvikelser": [
+     "form stöd, inte överdrag — och den LIKNAR en uppkörningsramp, som Axel sagt nej till 09-10 ('varenda campare har dem', K0225 nej). Creativen måste visa vaggan UNDER hjulet i vila, inte en ramp man kör upp på",
+     "ankare saknas i svensk handel (Fiamma Tyre Saver finns i Europa men hittades inte hos getcamping/campingshopen/PriceRunner) — priset sätts på landad × 2,4",
+     "latent behov: plattställning märks först på våren (vibration i 80 km/h) — inte en skada man ser i oktober"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "uppstallning_husvagn",
+    "deadline_typ": "uppställning",
+    "veckor_kvar": 2.0,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005012302238679",
+    "url": "https://www.aliexpress.com/item/1005012302238679.html",
+    "pris_usd": 15.45,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-26T04:45:44Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-26/v3/bilder/1005012302238679.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "set om 2, färg gul eller svart; däckbredd står inte i titeln (ej mätt); syskon: 1005012443831296 (15,75 USD, samma form, LIVE 04:45:47Z) och 1005011883630076 (17,94 USD, ABKM, 'TYRE SAVER' präglat i plasten, LIVE 04:45:50Z)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron är en fyrdelad collage: två svartvita kontextfoton (en Sprinter-husbil och ett personbilshjul som vilar i vaggan) + packshot av gult och svart 2-pack — textfri, men collaget måste delas upp; husbilsbilden är den som ska bära annonsen"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen hittad i formen — PriceRunner 'tyre saver' / 'tire saver' / 'däckavlastare husvagn' / 'däckavlastning' / 'däckskydd ramp husbil' ger däck, däckglans och 4-pack däckskydd (445 kr, annan form)",
+     "pris_sek": null,
+     "url": "https://www.pricerunner.se/search?q=tyre%20saver",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "saknas — Kegel däckskydd husvagn/husbil 195 kr och 'Bil Däckskydd 4 st' 445 kr (PriceRunner) är ÖVERDRAG, inte vaggor; Fiamma Tyre Saver ej hittad i svensk handel 2026-09-26",
+     "pris_sek": null,
+     "url": "https://www.pricerunner.se/search?q=d%C3%A4ckskydd%20husvagn",
+     "i_sortiment": false
+    },
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se (5 sökningar, 0 träffar i formen)",
+     "getcamping.se ('tyre saver', 'däckavlastare', 'fiamma tyre' — sidor lästa, inga produktträffar)",
+     "campingshopen.se ('tyre saver' — inga träffar)",
+     "campingvaruhuset.se, camping4u.se, kamafritid.se (sök-URL 404 — oläst)",
+     "biltema.se (404 — oläst), jula.se (oläst)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     201,
+     246
+    ],
+    "pris_sek": 549,
+    "brutto_sek": [
+     303,
+     348
+    ],
+    "be_cpa_sek": [
+     303,
+     348
+    ],
+    "be_roas": 1.68,
+    "flerkop": true,
+    "returrisk": "medel — vaggans bredd står inte i listningen; husvagnsdäck 185–225 mm måste rymmas (be leverantören om måttet före launch)"
+   },
+   "meta_tanke": {
+    "hook": "Står husvagnen på samma fläck till april?",
+    "objekt_i_bild": "husbilens hjul i vila i vaggan på gräset",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "däcket ligger runt i vaggan i stället för platt mot marken — bilden av ett plattställt däck bredvid"
+   },
+   "varfor": "Nästa del på vinnarens objekt (husvagnen/husbilen vid uppställningen 2,0 v) i en annan form än överdrag: hjulen bär 1,5–3,5 ton stilla i sex månader och plattställs; ingen svensk kedja eller campingbutik hittades med formen (PriceRunner 0 träffar på fem sökningar, getcamping/campingshopen 0), och samma pack passar båttrailern, släpkärran och andrabilen — flerköp enligt H08.",
+   "huvudrisk": "Ser ut som en uppkörningsramp (Axels nej 09-10, 'varenda campare har dem') och ankare saknas — priset 549 kr för två plastplattor vilar helt på upplevt värde i creativen.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 3,
+    "meta_creative": 2,
+    "efterfragan": 3,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 14,
+    "K2": 12,
+    "K3": 7,
+    "K4": 8,
+    "K5": 8,
+    "K6": 10,
+    "K7": 5,
+    "K8": 5,
+    "K9": 5,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (grep ramp/däck/avlast: Digital Däckdjupsmätare 169 och Trådlös Däckpump 519 — andra former)",
+     "koncept.py sok 'ramp' → K0085/K0095/K0096/K0102 kandidater (SOKTRAFF 09-10, aldrig levererade); K0225 NEJ = uppkörningsramper (annan sak: nivellering, inte plattställning); K0235 kanske = hjulskydd (överdrag, annan form på samma objekt)",
+     "kontot 7 d: ej läst (linsen rör inte Meta)"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012302238679.html",
+    "https://www.aliexpress.com/item/1005012443831296.html",
+    "https://www.pricerunner.se/search?q=tyre%20saver",
+    "https://www.pricerunner.se/search?q=d%C3%A4ckskydd%20husvagn",
+    "https://www.getcamping.se/search?q=tyre+saver"
+   ],
+   "_kalla": "kandidater-AF.json",
+   "rank_poang": 15.0,
+   "rank_forklaring": "exploitation: vinnarlikhet 3×2 + ekonomi 2 + säsong 2 + creative 2 + lucka 2 + signalbonus +1.0 [arketyp=B_SKYDDA_DYRT 10V/3F (+0.5); form=annat 0V/13F (-1.0); deadline_typ=uppställning 4V/0F (+1.0); prisband=500–999 12V/4F (+0.5)] = 15.0",
+   "asymmetrisk": false,
+   "rank": 2
+  },
+  {
+   "koncept_id": "K0336",
+   "namn_sv": "Motorstödet till utombordaren på trailern",
+   "objekt": "NYTT: Utombordarens motorstöd på trailern — riggen vilar inte på trimmen",
+   "form": "annat",
+   "form_kommentar": "stöd (transom saver) — ingen skyddsform; stag mellan trailerns akterrulle och motorns rigg",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploitation",
+   "hypotes_id": "H06",
+   "vinnarlikhet": {
+    "likast": "Båtmotorskyddet 420D",
+    "delade_variabler": [
+     "samma ägare och samma objekt (utombordare 20–100 tkr, båt 100 tkr+) som Båtmotorskyddet (54 150 / 236 / 2,67) och Motorhöljet",
+     "objekt_ute = ja",
+     "deadline uppställning/upptagning 2,0 v (4 av 4 dömda vann på 'uppställning')",
+     "prisband 500–999",
+     "ankare ≥ 1,6× (Attwood Transom Saver HD 1 049 kr)",
+     "ägare 55+ småhus"
+    ],
+    "avvikelser": [
+     "form stöd i stället för överdrag (form = annat är kontots starkaste förlorarsignal — men det är metall som bär motorn, inte en pryl på hyllan)",
+     "old way = ingenting / träkloss under riggen, inte en svikande presenning",
+     "montering: fästet bultas på trailerns akterrulle (2 bultar) och remmar hakas i motorn — 10 minuter, men det är montering",
+     "kräver att trailern har en akterrulle (svenska rullbåttrailers har det; bunktrailers utan rulle passar inte)"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "batupptagning",
+    "deadline_typ": "upptagning",
+    "veckor_kvar": 2.0,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005008665548777",
+    "url": "https://www.aliexpress.com/item/1005008665548777.html",
+    "pris_usd": 22.35,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-26T04:45:35Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-26/v3/bilder/1005008665548777.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant, justerbar längd 28–59 tum (71–150 cm), 'up to 150 HP'; syskon: 1005010651436834 (24,89 USD, samma titel, textfri packshot på vitt, LIVE 04:45:41Z) och 1005008798129069 (18,48 USD, fjädrad version med kompositgaffel, 'MR HELLO'-logga, LIVE 04:45:38Z)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron har packshot upptill och ett kontextfoto nedtill (stödet monterat mellan akterrullen och riggen på grus) — 'Dyno Racing'-loggan uppe till vänster måste beskäras; syskonet 1005010651436834 är helt textfritt men saknar kontext"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "VEVOR via PriceRunner (marknadsplats, en kopia)",
+     "pris_sek": 364,
+     "url": "https://www.pricerunner.se/pl/630-3394285235/Baattillbehoer/VEVOR-Adjustable-Boat-Transom-Saver-23-35-in-priser",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Attwood Transom Saver HD 61–92 cm (PriceRunner 2026-09-26); Attwood SP-400-RB justerbar 557 kr",
+     "pris_sek": 1049,
+     "url": "https://www.pricerunner.se/pl/643-3204739668/Musiktillbehoer/Attwood-Transom-Saver-HD-61-92cm-priser",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.62,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se ('transom saver' 12 träffar: VEVOR 364, Attwood SP-400 557, Attwood HD 1 049; 'motorstöd utombordare' 1 träff = en motor; 'motorstöd båtmotor' bara trollingmotorfästen)",
+     "watski.se ('transom saver' och 'motorstöd' — inga träffar i formen, bara Crewsaver-västar och ankarspel)",
+     "hjertmans.se ('motorstöd', 'transom' — inga träffar)",
+     "biltema.se (404 — oläst)",
+     "jula.se / fyndiq / cdon / amazon.se (oläst)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     291,
+     355
+    ],
+    "pris_sek": 649,
+    "brutto_sek": [
+     294,
+     358
+    ],
+    "be_cpa_sek": [
+     294,
+     358
+    ],
+    "be_roas": 1.99,
+    "flerkop": false,
+    "returrisk": "medel — passar bara trailers med akterrulle; justerbar längd 71–150 cm täcker de flesta motorer 8–150 hk"
+   },
+   "meta_tanke": {
+    "hook": "Hänger motorn i tiltlåset hela vintern?",
+    "objekt_i_bild": "utombordaren tippad på trailern, stödet mellan akterrullen och riggen",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "riggen vilar på gaffeln — motorn kan inte studsa mot akterspegeln på vägen hem från rampen"
+   },
+   "varfor": "Samma ägare, samma dyra objekt och samma datum (upptagning 2,0 v) som Båtmotorskyddet och Motorhöljet, men i formen STÖD: 40 000–100 000-kronorsmotorn hänger i tiltlåset på trailern hem från rampen och hela vintern, och akterspegeln tar stötarna. Ingen svensk fackhandel har formen (Watski/Hjertmans noll), bara Attwood 557–1 049 kr och en VEVOR-kopia på PriceRunner — ankare 1,62× (H06).",
+   "huvudrisk": "Form = annat/stöd (0 av 13 dömda 'annat' vann) och kräver 10 minuters bultning på akterrullen — trailers utan akterrulle passar inte.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 3,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 14,
+    "K2": 12,
+    "K3": 8,
+    "K4": 9,
+    "K5": 7,
+    "K6": 10,
+    "K7": 7,
+    "K8": 7,
+    "K9": 4,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (grep transom/motorstöd/ramp: bara ljusramper och Tak-AC-huven — Motorlås 909 och Spolklämma 359 är andra former på samma motor)",
+     "koncept.py sok 'transom' → K0023 kandidat (SOKTRAFF 09-09, annan listning 1005011971582314, aldrig levererad, inget svar) — samma sak, ny listning och första leverans",
+     "kontot 7 d: ej läst (linsen rör inte Meta)"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005008665548777.html",
+    "https://www.aliexpress.com/item/1005010651436834.html",
+    "https://www.pricerunner.se/search?q=transom%20saver",
+    "https://www.watski.se/search?q=transom+saver",
+    "https://www.hjertmans.se/search?q=motorst%C3%B6d"
+   ],
+   "_kalla": "kandidater-AF.json",
+   "rank_poang": 14.0,
+   "rank_forklaring": "exploitation: vinnarlikhet 3×2 + ekonomi 2 + säsong 2 + creative 2 + lucka 2 + signalbonus +0.0 [arketyp=B_SKYDDA_DYRT 10V/3F (+0.5); form=annat 0V/13F (-1.0); prisband=500–999 12V/4F (+0.5)] = 14.0",
+   "asymmetrisk": false,
+   "rank": 3
+  },
+  {
+   "koncept_id": "K0337",
+   "namn_sv": "Luftvärmepumpens topphuv med remmar",
+   "objekt": "Luftvärmepumpens utedel",
+   "form": "huv",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploitation",
+   "hypotes_id": "H01",
+   "vinnarlikhet": {
+    "likast": "Termoskyddet för Husbil 211 × 171 cm",
+    "delade_variabler": [
+     "H01:s egen testlista nämner luftvärmepumpen som nytt objekt för 'formsydd form över dyrt objekt ute'",
+     "objekt_ute = ja, dyr > 10 tkr (installerad luft-luft-pump 20–35 tkr; ~1,8 miljoner i villor)",
+     "old way = ingenting / plywoodskiva (Axel nej 09-11 på den styva 1 499-kronorslådan med skruvar — den här är mjuk, utan montering, < 700 kr som han bad om)",
+     "ägare 55+ småhus"
+    ],
+    "avvikelser": [
+     "väderdatumet är första snö (Norrland 4,1 v, Svealand 7,9 v) — utanför linsens 2–4 v; första frost 2,7 v ger bara takdropp/is, inte snölast",
+     "4,51 USD bubbelfolie ser billig ut — lågt upplevt värde (K8) och ankaret (Skotte Garden plåttak 990) är en annan form",
+     "kedjegolvet är OLÄST: Jula/Biltema 404; PriceRunner har bara plåt-/trähus 795–4 490 och ingen mjuk huv",
+     "en topphuv bär inte snölast från taket — den skyddar mot is och dropp, vilket är svårare att visa på 3 s"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "forsta_sno_norr",
+    "deadline_typ": "första snö",
+    "veckor_kvar": 4.1,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005012717493238",
+    "url": "https://www.aliexpress.com/item/1005012717493238.html",
+    "pris_usd": 4.51,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-26T04:46:50Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-26/v3/bilder/1005012717493238.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "storlek står inte i titeln (ej mätt); syskon 1005011995463604 (6,95 USD, 47 × 95 cm) och 1005005928485410 (6,29 USD, 46 × 95 cm) anger måttet; 1005013125202467 (5,79 USD, LIVE 04:46:53Z) är HELTÄCKANDE och stryks — pumpen kan inte gå under den",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron visar topphuven på en utedel mot en vit vägg, remmarna genom gallret markerade med en röd ring (måste beskäras); bubbelfolieytan syns tydligt — ser ut som sitt pris"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen mjuk huv hittad — PriceRunner 'luftvärmepump överdrag' 0 träffar; 'värmepumpsskydd tyg' ger bara plåt/trä (Lyfco plåt 795, Skotte Garden 990–1 389, Jabo 2 263, Eden Wood 3 232)",
+     "pris_sek": null,
+     "url": "https://www.pricerunner.se/search?q=luftv%C3%A4rmepump%20%C3%B6verdrag",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "Skotte Garden Värna Värmepumpskydd Smart (plåttak, annan form) — PriceRunner 2026-09-26; LuftX värmepumpstak 2 668",
+     "pris_sek": 990,
+     "url": "https://www.pricerunner.se/pl/693-3554243705/Vaermepumpar/Skotte-Garden-Vaerna-Vaermepumpskydd-Smart-priser",
+     "i_sortiment": true
+    },
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se (3 sökningar: 0 mjuka huvar, 20+ styva hus/tak 795–6 207)",
+     "jula.se / biltema.se / clasohlson.se (oläst — 404/blockerat; objekt.json anger Clas Ohlson plåttak 2 499 mätt 09-11)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     59,
+     72
+    ],
+    "pris_sek": 299,
+    "brutto_sek": [
+     227,
+     240
+    ],
+    "be_cpa_sek": [
+     227,
+     240
+    ],
+    "be_roas": 1.28,
+    "flerkop": false,
+    "returrisk": "låg–medel — 47 × 95 cm täcker de vanligaste utedelarna (80–90 cm breda); större pumpar (Mitsubishi Kirigamine 100 cm) sticker ut"
+   },
+   "meta_tanke": {
+    "hook": "Droppar taket på värmepumpen i vinter?",
+    "objekt_i_bild": "utedelen på husväggen med huven på och istappar ovanför",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "isklumpen ligger på huven, inte i fläkten"
+   },
+   "varfor": "H01:s egen lista pekar på luftvärmepumpen och Axel bad 09-11 om just 'mjuk huv utan montering under 700 kr'; ingen mjuk huv finns i svensk handel (PriceRunner 0, bara plåthus 795–4 490 som ankare) och 1,8 miljoner villor har objektet ute. Levereras LÅG med flit: 4,51 USD bubbelfolie, datumet 4–8 v bort och golvet hos Jula/Biltema oläst.",
+   "huvudrisk": "Ser billig ut och löser inte snölast — bara is och dropp — så upplevt värde och 3-sekundersbeviset är svaga; Jula/Biltema kan ha exakt formen (oläst).",
+   "konfidens": "LÅG",
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 2,
+    "efterfragan": 3,
+    "lucka": 2,
+    "ekonomi": 1,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 14,
+    "K2": 14,
+    "K3": 6,
+    "K4": 6,
+    "K5": 7,
+    "K6": 10,
+    "K7": 6,
+    "K8": 3,
+    "K9": 4,
+    "K10": 2,
+    "K11": 1,
+    "K12": 0
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (grep värmepump: bara Poolvärmepumpens Vinterhuv 539 — annat objekt)",
+     "koncept.py sok 'värmepump' / 'Air Conditioner' → K0206–K0215 kandidater (SOKTRAFF, aldrig levererade, inget svar); K0230 NEJ = styv aluminiumlåda 1 499 med montering (annan form); K0258 ja = poolvärmepumpen (annat objekt)",
+     "kontot 7 d: ej läst (linsen rör inte Meta)"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012717493238.html",
+    "https://www.aliexpress.com/item/1005011995463604.html",
+    "https://www.pricerunner.se/search?q=v%C3%A4rmepumpsskydd%20tyg",
+    "https://www.pricerunner.se/search?q=luftv%C3%A4rmepump%20%C3%B6verdrag"
+   ],
+   "_kalla": "kandidater-AF.json",
+   "rank_poang": 12.5,
+   "rank_forklaring": "exploitation: vinnarlikhet 2×2 + ekonomi 1 + säsong 3 + creative 2 + lucka 2 + signalbonus +0.5 [arketyp=B_SKYDDA_DYRT 10V/3F (+0.5); deadline_typ=första snö 2V/1F (+0.3); prisband=<300 4V/8F (-0.3)] = 12.5",
+   "asymmetrisk": true,
+   "rank": 4
+  },
+  {
+   "koncept_id": "K0338",
+   "namn_sv": "Rännstaven till högtryckstvätten",
+   "objekt": "Hängrännor",
+   "form": "verktyg",
+   "arketyp": "D_SNABBARE_METOD",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploitation",
+   "hypotes_id": "H06",
+   "hypotes_sekundar": "H07",
+   "vinnarlikhet": {
+    "likast": "Sotarset Med Böjliga Stänger",
+    "delade_variabler": [
+     "arketyp D_SNABBARE_METOD + form verktyg",
+     "old way = tjänst (rensa hängrännor från marken 1 490–3 300 kr/gång: hantverksproffsen.com 3 300 ink. moms / 2 310 efter ROT för 30 m; nanostone från 1 490; aquafix från 1 050 efter ROT — lästa 2026-09-26)",
+     "deadline rätt: lövfällning NOW 2,7 v (sotarsetet: vedsäsong)",
+     "prisband 300–499 (sotarsetet 300–499)",
+     "ägare 55+ småhus, objekt ute (hängrännorna) — sotarsetet hade objekt inne",
+     "synlig payoff på 3 s (lövsörjan sprutar ur rännan — samma bild som sotet i påsen)"
+    ],
+    "avvikelser": [
+     "golv i exakt form UNDER oss: tre marknadsplatskopior 325 kr på PriceRunner (sotarsetet: golv okänt) — därför H06-märkt",
+     "märkesankaret är svagt (Kärcher rännstav 695 = 1,39×; Kärcher PC 20-set 899 = 1,8×) — fakturan är det verkliga ankaret",
+     "kräver att ägaren har Kärcher K2–K7 (bajonettfäste) — Nilfisk/Bosch behöver adapter",
+     "hero med inbränd text (materialklass 1)"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "lovfallning",
+    "deadline_typ": "lövfällning",
+    "veckor_kvar": 2.7,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005007570260883",
+    "url": "https://www.aliexpress.com/item/1005007570260883.html",
+    "pris_usd": 13.45,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-26T04:47:04Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-26/v3/bilder/1005007570260883.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant: rostfri U-böjd stav (~40 cm) med Kärcher K-bajonett för K2–K7, 4000 PSI. Syskon 1005002648558830 (24,24 USD, LIVE 04:47:06Z, hero sedd): samma stav med 1/4\" snabbkoppling + 4 munstycken — heron är textfri och I KONTEXT (strålen nere i rännan) och ska användas som creative-referens; 1005010754304442 (44,29 USD) dyrare syskon.",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron: staven på vit botten med rubrik 'Pressure Washer Extension Wand', Choice-badge och fraktbanner — måste beskäras; tre små kontextbilder (trappa, bil, mur) visar INTE rännan. Syskonets hero (1005002648558830) visar staven böjd ner i en hängränna med strålen igång, textfri — rätt bild för annonsen.",
+    "hero_syskon": "korningar/2026-09-26/v3/bilder/1005002648558830.jpg"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "PriceRunner marknadsplats — 'Högtryckstvätt Rengöringsverktyg Hängrännor U30 90 Grader' (tre listningar)",
+     "pris_sek": 325,
+     "url": "https://www.pricerunner.se/pl/638-3332144169/Hoegtrycks-Hetvattentvaettar/Hoegtryckstvaett-Rengoeringsverktyg-Haengraennor-U-30-90-Grader-priser",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Kärcher PC 20 Roof Gutter and Pipe Cleaning Kit 899 kr (i sortiment); Kärcher Rengöringsstav Hängrännor 695 kr; Nilfisk teleskoplans tak 1 199; tjänsten 'rensa hängrännor från marken' 1 490–3 300 kr/gång",
+     "pris_sek": 899,
+     "url": "https://www.pricerunner.se/pl/638-5164892/Hoegtrycks-Hetvattentvaettar/Kaercher-PC-20-Roof-Gutter-and-Pipe-Cleaning-Kit-priser",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.8,
+    "ankare_kvot_kommentar": "PC 20 899/499 = 1,80; rännstaven 695/499 = 1,39; fakturan 2 310/499 = 4,6",
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se 'högtryckstvätt hängrännor' (3 kopior 325 kr) 2026-09-26",
+     "pricerunner.se 'takrännerensare' / 'gutter cleaning kit' (Fiskars 280/349, Gardena 276, Wolf 379, Flopro 450, Kärcher 695/899, Nilfisk 1 199, AVA 997) 2026-09-26",
+     "pricerunner.se 'kärcher hängränna' (bara slangvagnar) 2026-09-26",
+     "hantverksproffsen.com/rensa-hangrannor (30 m: 3 300 ink. moms, 2 310 efter ROT; 'Spacevac från marken') 2026-09-26",
+     "nanostone.se (från 1 490 efter ROT), aquafix.se (från ~1 050 efter ROT, 50 kr/m), tbcentreprenad.se (från 2 295 efter ROT) — via WebSearch 2026-09-26",
+     "bauhaus.se sök (404), clasohlson.com sök (JS-skal, oläst), jula.se/biltema.se/fyndiq/cdon/amazon.se (403 — oläst)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     175,
+     214
+    ],
+    "pris_sek": 499,
+    "brutto_sek": [
+     285,
+     324
+    ],
+    "be_cpa_sek": [
+     285,
+     324
+    ],
+    "be_roas": 1.64,
+    "flerkop": false,
+    "returrisk": "medel — passar Kärcher K2–K7-bajonett (marknadsledaren i SE); Nilfisk-/Bosch-ägare måste ha adapter, skriv det på sidan så köpet självselekterar"
+   },
+   "meta_tanke": {
+    "hook": "Står du på stegen i höst igen?",
+    "objekt_i_bild": "staven böjd ner i hängrännan från marken, lövsörjan sprutar ut",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "svart sörja och löv flyger ur rännan i ett svep medan personen står på gräsmattan — samma 'skiten kommer ut'-payoff som sotarsetets påse"
+   },
+   "varfor": "Tjänsten 'rensa hängrännor från marken' kostar 1 490–3 300 kr per gång och staven gör samma jobb med den Kärcher ägaren redan har, från marken — payoffen (sörjan som sprutar) syns på 3 s. Golvet är tre marknadsplatskopior på 325 kr under Kärchers egna 695/899: ett rent H06-test med fakturan som ankare, i lövfällningens NOW-fönster (2,7 v).",
+   "huvudrisk": "Golv 325 kr i exakt form och märkesankare bara 1,39–1,8× — köparen måste värdera fakturan, inte Kärcher-märket; heron är textig och kontextbilden måste tas från syskonlistningen.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 3,
+    "meta_creative": 2,
+    "efterfragan": 3,
+    "lucka": 1,
+    "ekonomi": 1,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok (Lövsilarna 6-pack = nät på samma objekt, annan form/annat jobb)",
+    "K1": 12,
+    "K2": 12,
+    "K3": 8,
+    "K4": 8,
+    "K5": 7,
+    "K6": 8,
+    "K7": 5,
+    "K8": 6,
+    "K9": 4,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt 2026-09-26 (ränn/löv: bara 'Lövsilarna 6-pack' 379 = nät; ingen stav/skopa)",
+     "koncept.py sok hängränn/ränn/löv/stuprör (K0285 lövsilarna nät launchad; K0260 regnkedja; K0286 regnfisk nej; K0288 regntunnehuv ja — inget verktyg)",
+     "kandidater-AB 09-24 (hängränna ej sökt; kopparband/takpannekrok/avloppsrens strukna = andra saker)"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005007570260883.html",
+    "https://www.aliexpress.com/item/1005002648558830.html",
+    "https://www.pricerunner.se/search?q=h%C3%B6gtryckstv%C3%A4tt%20h%C3%A4ngr%C3%A4nnor",
+    "https://www.pricerunner.se/search?q=gutter%20cleaning%20kit",
+    "https://www.pricerunner.se/pl/638-5164892/Hoegtrycks-Hetvattentvaettar/Kaercher-PC-20-Roof-Gutter-and-Pipe-Cleaning-Kit-priser",
+    "https://www.pricerunner.se/pl/638-3294888330/Hoegtrycks-Hetvattentvaettar/Kaercher-Rengoeringsstav-Haengraennor-Brun-priser",
+    "https://hantverksproffsen.com/rensa-hangrannor/",
+    "https://nanostone.se/takbehandling/rensa-hangrannor/",
+    "https://aquafix.se/pris-f%C3%B6r-rensning-av-h%C3%A4ngr%C3%A4nnor-i-stockholm-%E2%80%93-vad-kostar-det",
+    "https://tbcentreprenad.se/rensning-hangrannor/"
+   ],
+   "_kalla": "kandidater-AG.json",
+   "rank_poang": 11.5,
+   "rank_forklaring": "exploitation: vinnarlikhet 3×2 + ekonomi 1 + säsong 2 + creative 2 + lucka 1 + signalbonus -0.5 [arketyp=D_SNABBARE_METOD 2V/2F (+0.0); form=verktyg 2V/3F (-0.2); prisband=300–499 8V/15F (-0.3)] = 11.5",
+   "asymmetrisk": true,
+   "rank": 5
+  },
+  {
+   "koncept_id": "K0339",
+   "namn_sv": "Läderplånbokssetet, 14 delar förstansade",
+   "objekt": "NYTT: Läderplånbokssetet med förstansade delar — mannens kväll vid köksbordet, färdig plånbok i handen",
+   "form": "låda",
+   "arketyp": "G_Q4_GAVA",
+   "arketyp_sekundar": "F_HOBBY_IDENTITET",
+   "slot": "sasong",
+   "hypotes_id": "H05",
+   "vinnarlikhet": {
+    "likast": "Täljset 30 Delar",
+    "delade_variabler": [
+     "G_Q4_GAVA",
+     "form låda/set",
+     "mottagare mannen själv/partnern",
+     "deadline fars dag",
+     "delarna syns i heron",
+     "kan börja i kväll",
+     "prisband 500–999"
+    ],
+    "avvikelser": [
+     "objekt nej/inne (täljsetet är också inne)",
+     "materialet (äkta läder eller PU) framgår inte av listningen"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "fars_dag",
+    "deadline_typ": "fars dag",
+    "veckor_kvar": 6.1,
+    "timing": "NOW",
+    "alternativ": {
+     "fonster_id": "jul",
+     "veckor_kvar": 12.1,
+     "timing": "NOW"
+    }
+   },
+   "listning": {
+    "product_id": "1005013214583536",
+    "url": "https://www.aliexpress.com/item/1005013214583536.html",
+    "pris_usd": 22.99,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-26T04:44:24Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-26/v3/bilder/1005013214583536.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant i titeln (brun/svart plånbok) — färgval ej mätt",
+     "video": "ej tillgänglig i containern"
+    },
+    "alternativ_listning": {
+     "product_id": "1005013219899047",
+     "pris_usd": 21.33,
+     "kommentar": "samma SAK (Handmade Leather Wallet Making Supplies for Men DIY Purse Kit with Pre-punched) — ej öppnad"
+    }
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "Hero: 14 förstansade läderdelar uppradade i en cirkel + den färdiga plånboken i en hand på ett bord — delarna syns på 3 s, textfri. Syskonlistningen 1005013219751847 (21,33 USD) har bara packshot av färdig plånbok — vald bort."
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Fyndiq/Joom/Grandado (akrylmall för plånbok, INTE ett set)",
+     "pris_sek": 18,
+     "url": "https://fyndiq.se/produkt/akrylplanbok-schablon-diy-exakt-skarning-klar-akrylmall-for-myntborstillverkning-laderplanbok-mall-72ee468aba4c4380/",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "ej mätt i exakt form — Panduro har DIY-kit läder-ampel (annan sak), Slöjd-Detaljer säljer läderbitar styckvis; färdig herrplånbok i läder som referens: The Chesterfield Brand Bergen 499 / Downholme 555 (PriceRunner 04:44:45Z)",
+     "pris_sek": null,
+     "url": "https://www.pricerunner.se/search?q=l%C3%A4derset%20pl%C3%A5nbok",
+     "i_sortiment": false
+    },
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se ('lädersömnad set', 'läderverktyg set', 'läder plånbok kit', 'läderset plånbok' 04:39–04:44Z — inget set i exakt form; VEVOR verktygssats 59 delar 684 och Qwork stämpelset 371 är verktyg utan projekt)",
+     "panduro.com (sök 404; DIY-kit läder-ampel via WebSearch)",
+     "slojd-detaljer.com (sök tom)",
+     "temu.com (DIY plånbokstillverkningskit finns — Temu, inte kedja)",
+     "fyndiq.se (mallar 18–260 kr)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     299,
+     366
+    ],
+    "pris_sek": 699,
+    "brutto_sek": [
+     333,
+     400
+    ],
+    "be_cpa_sek": [
+     333,
+     400
+    ],
+    "be_roas": 1.91,
+    "flerkop": false,
+    "returrisk": "låg — inget att mäta; risk om materialet är PU och kunden väntar äkta läder",
+    "kommentar": "Utan ankare ger formeln landad × 2,4 = 797; 699 valt för K8 (leverantören anger inte lädersort) — rank.py får lyfta till 799 om Axel vill."
+   },
+   "meta_tanke": {
+    "hook": "Har han sytt sin egen plånbok?",
+    "objekt_i_bild": "14 läderdelar uppradade → färdig plånbok i handen",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "delarna på bordet, nålen genom de förstansade hålen, plånboken stängs"
+   },
+   "varfor": "Exakt Täljsetets struktur (mannen får en låda, allt ingår, delarna syns, fars dag 6 v) på ett nytt objekt — och svensk handel säljer bara verktyg, läderbitar och mallar styckvis, aldrig setet.",
+   "huvudrisk": "Lädersort okänd (PU eller äkta) — ser den ut som 199 kr när den kommer faller K8; kräv provexemplar före launch.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 3,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 3,
+    "ekonomi": 2,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 12,
+    "K3": 8,
+    "K4": 8,
+    "K5": 8,
+    "K6": 10,
+    "K7": 4,
+    "K8": 7,
+    "K9": 4,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt 2026-09-26 (inget läder/plånbok; Täljset 869 och Rullknivslipen 579 är andra saker)",
+     "koncept.py sok 'plånbok' 0 / 'läder' 4 (alla kläder för älgpasset) / 'skinn' 0",
+     "REDAN-PROVAT jul1–3 (inget läderset)",
+     "kontot 7 d: ej läst (ingen Meta-åtkomst i linsen)"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005013214583536.html",
+    "https://www.aliexpress.com/item/1005013219899047.html",
+    "https://www.pricerunner.se/search?q=l%C3%A4der%20pl%C3%A5nbok%20kit",
+    "https://www.pricerunner.se/search?q=l%C3%A4derverktyg%20set",
+    "https://panduro.com/sv-se/produkter/sy-sticka/lader-tillbehor/ladertillbehor/diy-kit-gor-din-egen-lader-ampel-for-krukvaxter-301151",
+    "https://www.slojd-detaljer.com/se/inspiration/lader",
+    "https://fyndiq.se/produkt/akrylplanbok-schablon-diy-exakt-skarning-klar-akrylmall-for-myntborstillverkning-laderplanbok-mall-72ee468aba4c4380/"
+   ],
+   "_kalla": "kandidater-AE.json",
+   "rank_poang": 10,
+   "rank_forklaring": "säsong: säsong 3×2 + efterfrågan 2 + ekonomi 2 = 10",
+   "asymmetrisk": false,
+   "rank": 6
+  },
+  {
+   "koncept_id": "K0340",
+   "namn_sv": "Flugbindningssetet med städ, 6 delar",
+   "objekt": "NYTT: Flugbindningssetet med bordsstäd — flugfiskarens vinterkvällar, egna flugor till premiären",
+   "form": "låda",
+   "arketyp": "F_HOBBY_IDENTITET",
+   "arketyp_sekundar": "G_Q4_GAVA",
+   "slot": "sasong",
+   "hypotes_id": "H06",
+   "vinnarlikhet": {
+    "likast": "Täljset 30 Delar",
+    "delade_variabler": [
+     "hobby med namn (flugfiskaren)",
+     "set som gör att man kan börja i kväll",
+     "mottagare mannen själv/partnern",
+     "deadline fars dag/jul",
+     "prisband 300–499 (täljsetet 500–999)"
+    ],
+    "avvikelser": [
+     "6 delar, inte 30 — delarna fyller inte heron på samma sätt",
+     "materialet (fjädrar/krokar) ingår inte",
+     "heron bär leverantörens vattenstämpel + inbränd text",
+     "Magnetfiskesatsen (F_HOBBY_IDENTITET, <300 kr) är REAL_LOSER — samma arketyp"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "fars_dag",
+    "deadline_typ": "fars dag",
+    "veckor_kvar": 6.1,
+    "timing": "NOW",
+    "alternativ": {
+     "fonster_id": "jul",
+     "veckor_kvar": 12.1,
+     "timing": "NOW"
+    }
+   },
+   "listning": {
+    "product_id": "1005004852665500",
+    "url": "https://www.aliexpress.com/item/1005004852665500.html",
+    "pris_usd": 14.7,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-26T04:52:26Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-26/v3/bilder/1005004852665500.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant (1set)",
+     "video": "ej tillgänglig i containern"
+    },
+    "alternativ_listning": {
+     "product_id": "1005010169885163",
+     "pris_usd": 28.89,
+     "verifierad_at": "2026-09-26T04:45:58Z",
+     "hero": "korningar/2026-09-26/v3/bilder/1005010169885163.jpg (textfri packshot, städ + 8 verktyg + tråd — bäst hero)",
+     "kommentar": "landad 376–460 → pris ≤ 0,85 × Loon 789 = 669 ger BE-CPA 189–273, undre kant under 190 — därför inte primär"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "Hero: städ med bordsklämma + 5 mässingsverktyg på vit botten, vattenstämpel 'CONTEMPLATOR' uppe till vänster måste beskäras. Kreativen måste byggas på egen bild/video (fluga binds i städet)."
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "flyangler.se 'Flugbindningsset nybörjare'",
+     "pris_sek": 199,
+     "url": "https://flyangler.se/products/flugbindningsset-nyborjare",
+     "exakt_samma_form": true,
+     "kommentar": "innehållet oläst (sidan visar bara pris); Scandinavian Fly Lines verktygsset 11 verktyg UTAN städ 399 (https://www.scandinavianflylines.com/en/product/fly-tying-tool-kit/); Flydressing nybörjarsats 548 UTGÅTT (fiske.se); Frödinflies Fits starting kit 695 slut hos flugbindning.com men 695–699 i lager via PriceRunner"
+    },
+    "premium_ankare": {
+     "namn": "Loon Outdoors Core Fly Tying Tool Kit (verktyg utan städ)",
+     "pris_sek": 789,
+     "url": "https://www.pricerunner.se/search?q=flugbindningssats",
+     "i_sortiment": true,
+     "kommentar": "Frödinflies Fits starting kit 695 (städ + verktyg + material) https://www.pricerunner.se/pl/647-3254556034/Fiskeutrustning/Froedinflies-Flugbindning-Fits-starting-kit-priser (04:50Z, 'Fri frakt 1-2 dagar')"
+    },
+    "ankare_kvot": 1.61,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se ('flugbindningsset' 4 produkter, 'flugbindning startkit' 2, 'flugbindningssats' 11, 'flugbindningsstäd' 4 — 04:39–04:44Z; Maximumcatch mini-städ 455)",
+     "fiske.se (Flydressing nybörjarsats utgått 548)",
+     "flyangler.se (199)",
+     "flugbindning.com (Fits 695 slut, Bauer Pikefly 1 999)",
+     "scandinavianflylines.com (399)",
+     "fishline.se (sök visar bara meny — oläst)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     191,
+     234
+    ],
+    "pris_sek": 489,
+    "brutto_sek": [
+     255,
+     298
+    ],
+    "be_cpa_sek": [
+     255,
+     298
+    ],
+    "be_roas": 2.09,
+    "flerkop": false,
+    "returrisk": "låg — universal, inget att mäta"
+   },
+   "meta_tanke": {
+    "hook": "Binder han sina egna flugor än?",
+    "objekt_i_bild": "flugan i städet på köksbordet",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "krok i städet, tråd, hackel — färdig fluga på 20 s"
+   },
+   "varfor": "H06-test i ren form: golv 199–399 under oss men synligt ankare Loon 789 (1,61×) och Frödinflies 695, två svenska startset utgångna/slut = lucka i hyllan i november; hobbyn har ett namn och setet gör att han kan börja i kväll.",
+   "huvudrisk": "6 delar utan material ser inte ut som 489 kr i heron (K8), och F_HOBBY_IDENTITET har 0 vinnare / 1 förlorare (Magnetfiskesatsen) i kontot.",
+   "konfidens": "LÅG",
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 1,
+    "efterfragan": 1,
+    "lucka": 2,
+    "ekonomi": 1,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 8,
+    "K2": 8,
+    "K3": 6,
+    "K4": 6,
+    "K5": 6,
+    "K6": 7,
+    "K7": 4,
+    "K8": 4,
+    "K9": 3,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt 2026-09-26 (Fiskeset med förvaringslåda 499 = drag/krokar, inte bindning; Adventskalender Fiskedrag 469; Fiskedragsbyggsatsen K0300 = spinnare, annan sak)",
+     "koncept.py sok 'flug' 0 / 'fiskedrag' K0300 ja",
+     "REDAN-PROVAT jul1–3 (inget)",
+     "kontot 7 d: ej läst"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005004852665500.html",
+    "https://www.aliexpress.com/item/1005010169885163.html",
+    "https://www.pricerunner.se/search?q=flugbindningssats",
+    "https://www.pricerunner.se/pl/647-3254556034/Fiskeutrustning/Froedinflies-Flugbindning-Fits-starting-kit-priser",
+    "https://flyangler.se/products/flugbindningsset-nyborjare",
+    "https://www.scandinavianflylines.com/en/product/fly-tying-tool-kit/",
+    "https://www.fiske.se/fly-dressings-nyb%C3%B6rjarsats",
+    "https://www.flugbindning.com/10-Bindsatser"
+   ],
+   "_kalla": "kandidater-AE.json",
+   "rank_poang": 8,
+   "rank_forklaring": "säsong: säsong 3×2 + efterfrågan 1 + ekonomi 1 = 8",
+   "asymmetrisk": true,
+   "rank": 7
+  }
+ ],
+ "skyddsformer_i_batch": 1,
+ "strukna": [],
+ "utanfor_batch": []
+}

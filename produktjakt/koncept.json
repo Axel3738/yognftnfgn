@@ -1,6 +1,6 @@
 {
  "_om": "Konceptregistret (V3). Skrivs av koncept.py; feedback.py och meta_facit.py uppdaterar via koncept.py. Ett koncept = objekt + form, med alla listningar, svar, förutsägelser och Metas facit.",
- "nasta": 334,
+ "nasta": 341,
  "koncept": {
   "K0001": {
    "id": "K0001",
@@ -23566,6 +23566,636 @@
     }
    ],
    "namn_sv": "Regnmolnet — droppar i lampan"
+  },
+  "K0334": {
+   "id": "K0334",
+   "skapad": "2026-09-26",
+   "namn": "Repsågen för höga grenar 135 cm",
+   "objekt": "NYTT: Trädets höga grenar över taket/uppfarten",
+   "form": "verktyg",
+   "sak": "nytt: trädets höga grenar över taket/uppfarten+verktyg",
+   "arketyp": "D_SNABBARE_METOD",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012679516915",
+     "url": "https://www.aliexpress.com/item/1005012679516915.html",
+     "bild": null,
+     "pris_usd": 33.89,
+     "forst_sedd": "2026-09-26",
+     "verifieringar": [
+      {
+       "datum": "2026-09-26",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-26T04:47:11Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-26",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 1,
+     "rank_poang": 15.3,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 2,
+      "efterfragan": 2,
+      "lucka": 3,
+      "ekonomi": 2,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 899,
+     "landad": 490,
+     "be_cpa": 409,
+     "hook": "Hänger grenen över taket i vinter?",
+     "varfor": "Arboristen tar 2 000–6 000 kr per träd och alternativet är stege + motorsåg över huvudet — repsågen tar grenen från marken, vilket är H07:s tjänstesida på tomtens dyraste höstfaktura, och grenen som faller är linsens starkaste 3-sekundersklipp. Ingen svensk aktör har formen på PriceRunner; prisband 500–999 är kontots starkaste vinnarband.",
+     "huvudrisk": "Fyndiq/Amazon oläst — kopior på 300–500 kr kan finnas; 899 kr vilar helt på fakturan, och jobbet är fysiskt (två som drar) vilket kan skrämma 55+.",
+     "hypotes_id": "H07",
+     "per_kriterium": {
+      "K0": "ok (Fickkedjesåg 229 = handsåg för campare utan rep; Hopfällbar såg 279 — annan sak, annat jobb)",
+      "K1": 12,
+      "K2": 10,
+      "K3": 8,
+      "K4": 9,
+      "K5": 8,
+      "K6": 9,
+      "K7": 6,
+      "K8": 8,
+      "K9": 4,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-26",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-26",
+     "handelse": "levererad på V3-arket (rank 1, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Repsågen för höga grenar 135 cm"
+  },
+  "K0335": {
+   "id": "K0335",
+   "skapad": "2026-09-26",
+   "namn": "Däckvaggorna under det uppställda hjulet, 2-pack",
+   "objekt": "Husvagn/husbil — hjulen och däcken",
+   "form": "annat",
+   "sak": "husvagn/husbil+annat",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "I_FLERKOP",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012302238679",
+     "url": "https://www.aliexpress.com/item/1005012302238679.html",
+     "bild": null,
+     "pris_usd": 15.45,
+     "forst_sedd": "2026-09-26",
+     "verifieringar": [
+      {
+       "datum": "2026-09-26",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-26T04:45:44Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-26",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 2,
+     "rank_poang": 15.0,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 2,
+      "efterfragan": 3,
+      "lucka": 2,
+      "ekonomi": 2,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 549,
+     "landad": 224,
+     "be_cpa": 326,
+     "hook": "Står husvagnen på samma fläck till april?",
+     "varfor": "Nästa del på vinnarens objekt (husvagnen/husbilen vid uppställningen 2,0 v) i en annan form än överdrag: hjulen bär 1,5–3,5 ton stilla i sex månader och plattställs; ingen svensk kedja eller campingbutik hittades med formen (PriceRunner 0 träffar på fem sökningar, getcamping/campingshopen 0), och samma pack passar båttrailern, släpkärran och andrabilen — flerköp enligt H08.",
+     "huvudrisk": "Ser ut som en uppkörningsramp (Axels nej 09-10, 'varenda campare har dem') och ankare saknas — priset 549 kr för två plastplattor vilar helt på upplevt värde i creativen.",
+     "hypotes_id": "H08",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 14,
+      "K2": 12,
+      "K3": 7,
+      "K4": 8,
+      "K5": 8,
+      "K6": 10,
+      "K7": 5,
+      "K8": 5,
+      "K9": 5,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-26",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-26",
+     "handelse": "levererad på V3-arket (rank 2, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Däckvaggorna under det uppställda hjulet, 2-pack"
+  },
+  "K0336": {
+   "id": "K0336",
+   "skapad": "2026-09-26",
+   "namn": "Motorstödet till utombordaren på trailern",
+   "objekt": "NYTT: Utombordarens motorstöd på trailern — riggen vilar inte på trimmen",
+   "form": "annat",
+   "sak": "nytt: utombordarens motorstöd på trailern+annat",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005008665548777",
+     "url": "https://www.aliexpress.com/item/1005008665548777.html",
+     "bild": null,
+     "pris_usd": 22.35,
+     "forst_sedd": "2026-09-26",
+     "verifieringar": [
+      {
+       "datum": "2026-09-26",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-26T04:45:35Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-26",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 3,
+     "rank_poang": 14.0,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 2,
+      "efterfragan": 2,
+      "lucka": 2,
+      "ekonomi": 2,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 649,
+     "landad": 323,
+     "be_cpa": 326,
+     "hook": "Hänger motorn i tiltlåset hela vintern?",
+     "varfor": "Samma ägare, samma dyra objekt och samma datum (upptagning 2,0 v) som Båtmotorskyddet och Motorhöljet, men i formen STÖD: 40 000–100 000-kronorsmotorn hänger i tiltlåset på trailern hem från rampen och hela vintern, och akterspegeln tar stötarna. Ingen svensk fackhandel har formen (Watski/Hjertmans noll), bara Attwood 557–1 049 kr och en VEVOR-kopia på PriceRunner — ankare 1,62× (H06).",
+     "huvudrisk": "Form = annat/stöd (0 av 13 dömda 'annat' vann) och kräver 10 minuters bultning på akterrullen — trailers utan akterrulle passar inte.",
+     "hypotes_id": "H06",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 14,
+      "K2": 12,
+      "K3": 8,
+      "K4": 9,
+      "K5": 7,
+      "K6": 10,
+      "K7": 7,
+      "K8": 7,
+      "K9": 4,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-26",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-26",
+     "handelse": "levererad på V3-arket (rank 3, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Motorstödet till utombordaren på trailern"
+  },
+  "K0337": {
+   "id": "K0337",
+   "skapad": "2026-09-26",
+   "namn": "Luftvärmepumpens topphuv med remmar",
+   "objekt": "Luftvärmepumpens utedel",
+   "form": "huv",
+   "sak": "luftvärmepumpens utedel+huv",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012717493238",
+     "url": "https://www.aliexpress.com/item/1005012717493238.html",
+     "bild": null,
+     "pris_usd": 4.51,
+     "forst_sedd": "2026-09-26",
+     "verifieringar": [
+      {
+       "datum": "2026-09-26",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-26T04:46:50Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-26",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 4,
+     "rank_poang": 12.5,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 2,
+      "efterfragan": 3,
+      "lucka": 2,
+      "ekonomi": 1,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 2
+     },
+     "konfidens": "LÅG",
+     "pris": 299,
+     "landad": 66,
+     "be_cpa": 234,
+     "hook": "Droppar taket på värmepumpen i vinter?",
+     "varfor": "H01:s egen lista pekar på luftvärmepumpen och Axel bad 09-11 om just 'mjuk huv utan montering under 700 kr'; ingen mjuk huv finns i svensk handel (PriceRunner 0, bara plåthus 795–4 490 som ankare) och 1,8 miljoner villor har objektet ute. Levereras LÅG med flit: 4,51 USD bubbelfolie, datumet 4–8 v bort och golvet hos Jula/Biltema oläst.",
+     "huvudrisk": "Ser billig ut och löser inte snölast — bara is och dropp — så upplevt värde och 3-sekundersbeviset är svaga; Jula/Biltema kan ha exakt formen (oläst).",
+     "hypotes_id": "H01",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 14,
+      "K2": 14,
+      "K3": 6,
+      "K4": 6,
+      "K5": 7,
+      "K6": 10,
+      "K7": 6,
+      "K8": 3,
+      "K9": 4,
+      "K10": 2,
+      "K11": 1,
+      "K12": 0
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-26",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-26",
+     "handelse": "levererad på V3-arket (rank 4, exploitation, konfidens LÅG)"
+    }
+   ],
+   "namn_sv": "Luftvärmepumpens topphuv med remmar"
+  },
+  "K0338": {
+   "id": "K0338",
+   "skapad": "2026-09-26",
+   "namn": "Rännstaven till högtryckstvätten",
+   "objekt": "Hängrännor",
+   "form": "verktyg",
+   "sak": "hängrännor+verktyg",
+   "arketyp": "D_SNABBARE_METOD",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005007570260883",
+     "url": "https://www.aliexpress.com/item/1005007570260883.html",
+     "bild": null,
+     "pris_usd": 13.45,
+     "forst_sedd": "2026-09-26",
+     "verifieringar": [
+      {
+       "datum": "2026-09-26",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-26T04:47:04Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-26",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 5,
+     "rank_poang": 11.5,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 2,
+      "efterfragan": 3,
+      "lucka": 1,
+      "ekonomi": 1,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 499,
+     "landad": 194,
+     "be_cpa": 304,
+     "hook": "Står du på stegen i höst igen?",
+     "varfor": "Tjänsten 'rensa hängrännor från marken' kostar 1 490–3 300 kr per gång och staven gör samma jobb med den Kärcher ägaren redan har, från marken — payoffen (sörjan som sprutar) syns på 3 s. Golvet är tre marknadsplatskopior på 325 kr under Kärchers egna 695/899: ett rent H06-test med fakturan som ankare, i lövfällningens NOW-fönster (2,7 v).",
+     "huvudrisk": "Golv 325 kr i exakt form och märkesankare bara 1,39–1,8× — köparen måste värdera fakturan, inte Kärcher-märket; heron är textig och kontextbilden måste tas från syskonlistningen.",
+     "hypotes_id": "H06",
+     "per_kriterium": {
+      "K0": "ok (Lövsilarna 6-pack = nät på samma objekt, annan form/annat jobb)",
+      "K1": 12,
+      "K2": 12,
+      "K3": 8,
+      "K4": 8,
+      "K5": 7,
+      "K6": 8,
+      "K7": 5,
+      "K8": 6,
+      "K9": 4,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-26",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-26",
+     "handelse": "levererad på V3-arket (rank 5, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Rännstaven till högtryckstvätten"
+  },
+  "K0339": {
+   "id": "K0339",
+   "skapad": "2026-09-26",
+   "namn": "Läderplånbokssetet, 14 delar förstansade",
+   "objekt": "NYTT: Läderplånbokssetet med förstansade delar — mannens kväll vid köksbordet, färdig plånbok i handen",
+   "form": "låda",
+   "sak": "nytt: läderplånbokssetet med förstansade delar+låda",
+   "arketyp": "G_Q4_GAVA",
+   "arketyp_sekundar": "F_HOBBY_IDENTITET",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005013214583536",
+     "url": "https://www.aliexpress.com/item/1005013214583536.html",
+     "bild": null,
+     "pris_usd": 22.99,
+     "forst_sedd": "2026-09-26",
+     "verifieringar": [
+      {
+       "datum": "2026-09-26",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-26T04:44:24Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-26",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 6,
+     "rank_poang": 10,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 2,
+      "efterfragan": 2,
+      "lucka": 3,
+      "ekonomi": 2,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 699,
+     "landad": 332,
+     "be_cpa": 366,
+     "hook": "Har han sytt sin egen plånbok?",
+     "varfor": "Exakt Täljsetets struktur (mannen får en låda, allt ingår, delarna syns, fars dag 6 v) på ett nytt objekt — och svensk handel säljer bara verktyg, läderbitar och mallar styckvis, aldrig setet.",
+     "huvudrisk": "Lädersort okänd (PU eller äkta) — ser den ut som 199 kr när den kommer faller K8; kräv provexemplar före launch.",
+     "hypotes_id": "H05",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 12,
+      "K2": 12,
+      "K3": 8,
+      "K4": 8,
+      "K5": 8,
+      "K6": 10,
+      "K7": 4,
+      "K8": 7,
+      "K9": 4,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-26",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-26",
+     "handelse": "levererad på V3-arket (rank 6, sasong, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Läderplånbokssetet, 14 delar förstansade"
+  },
+  "K0340": {
+   "id": "K0340",
+   "skapad": "2026-09-26",
+   "namn": "Flugbindningssetet med städ, 6 delar",
+   "objekt": "NYTT: Flugbindningssetet med bordsstäd — flugfiskarens vinterkvällar, egna flugor till premiären",
+   "form": "låda",
+   "sak": "nytt: flugbindningssetet med bordsstäd+låda",
+   "arketyp": "F_HOBBY_IDENTITET",
+   "arketyp_sekundar": "G_Q4_GAVA",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005004852665500",
+     "url": "https://www.aliexpress.com/item/1005004852665500.html",
+     "bild": null,
+     "pris_usd": 14.7,
+     "forst_sedd": "2026-09-26",
+     "verifieringar": [
+      {
+       "datum": "2026-09-26",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-26T04:52:26Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-26",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 7,
+     "rank_poang": 8,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 1,
+      "efterfragan": 1,
+      "lucka": 2,
+      "ekonomi": 1,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 2
+     },
+     "konfidens": "LÅG",
+     "pris": 489,
+     "landad": 212,
+     "be_cpa": 276,
+     "hook": "Binder han sina egna flugor än?",
+     "varfor": "H06-test i ren form: golv 199–399 under oss men synligt ankare Loon 789 (1,61×) och Frödinflies 695, två svenska startset utgångna/slut = lucka i hyllan i november; hobbyn har ett namn och setet gör att han kan börja i kväll.",
+     "huvudrisk": "6 delar utan material ser inte ut som 489 kr i heron (K8), och F_HOBBY_IDENTITET har 0 vinnare / 1 förlorare (Magnetfiskesatsen) i kontot.",
+     "hypotes_id": "H06",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 8,
+      "K2": 8,
+      "K3": 6,
+      "K4": 6,
+      "K5": 6,
+      "K6": 7,
+      "K7": 4,
+      "K8": 4,
+      "K9": 3,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-26",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-26",
+     "handelse": "levererad på V3-arket (rank 7, sasong, konfidens LÅG)"
+    }
+   ],
+   "namn_sv": "Flugbindningssetet med städ, 6 delar"
   }
  }
 }
