@@ -7,7 +7,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import {
-  STANDARD, installningar, erbjudandeFor, tolkaMarknadsdomaner, adressFor, numId, byggLank, erbjudandepris,
+  STANDARD, installningar, erbjudandeFor, tolkaMarknadsdomaner, adressFor, numId, byggLank, erbjudandepris, landText,
 } from '../app/extensions/tacksida-erbjudande/src/logik.js';
 import { byggRabattInput, byggUppdateringsInput } from '../rabatter.mjs';
 import { byggBeskrivning, byggProduktInput, byggTillaggsmall, byggOversattningsrader } from '../produkter.mjs';
@@ -149,4 +149,53 @@ test('översättningsrader byggs bara för fält som har text och digest', () =>
   assert.match(rader[1].value, /Angrerett/);
   const utan = byggOversattningsrader({ ...p, titel: {}, oversattningar: {} }, 'nb', spec, oversattbart);
   assert.deepEqual(utan, []);
+});
+
+// ---- texten följer kundens land (Axels order 2026-09-27) ---------------------
+
+const LOC = join(HAR, '..', 'app', 'extensions', 'tacksida-erbjudande', 'locales');
+const en = JSON.parse(readFileSync(join(LOC, 'en.json'), 'utf8'));
+// Som shopify.i18n.translate: punktnyckel, {var} fylls i, saknad nyckel ger nyckeln tillbaka.
+const oversattare = (sprakfil) => (nyckel, vars = {}) => {
+  const v = nyckel.split('.').reduce((o, k) => (o && typeof o === 'object' ? o[k] : undefined), sprakfil);
+  return typeof v === 'string' ? v.replace(/\{(\w+)\}/g, (_, k) => vars[k] ?? '') : nyckel;
+};
+
+test('USA får amerikansk engelska, Australien behåller caravan och colour', () => {
+  const t = oversattare(en);
+  assert.match(landText(t, 'US', 'underrubrik'), /\bRV\b/);
+  assert.doesNotMatch(landText(t, 'US', 'underrubrik'), /caravan/i);
+  assert.match(landText(t, 'US', 'produkt.adventskalender-retrobussar'), /\bcolor\b/);
+  assert.match(landText(t, 'AU', 'underrubrik'), /caravan/);
+  assert.match(landText(t, 'AU', 'produkt.adventskalender-retrobussar'), /\bcolour\b/);
+});
+
+test('saknas landets text används språkets vanliga, och en saknad nyckel blir tom, aldrig nyckelns namn', () => {
+  const t = oversattare(en);
+  assert.equal(landText(t, 'US', 'knapp', { pris: '$36.47' }), 'Add for $36.47');
+  assert.equal(landText(t, 'AU', 'rubrik'), en.rubrik);
+  assert.equal(landText(t, undefined, 'rubrik'), en.rubrik);
+  assert.equal(landText(t, 'US', 'finns.inte'), '');
+});
+
+test('den engelska texten lovar ingen 14-dagarsångerrätt (engelska sidan har 90 dagars garanti)', () => {
+  assert.doesNotMatch(JSON.stringify(en), /14-day|withdrawal/i);
+});
+
+test('varje landsnyckel finns också som grundtext, så inget land faller på en saknad text', () => {
+  const t = oversattare(en);
+  const platt = (o, pre = '') => Object.entries(o).flatMap(([k, v]) => (typeof v === 'object' ? platt(v, `${pre}${k}.`) : [`${pre}${k}`]));
+  for (const [land, texter] of Object.entries(en.land)) {
+    for (const nyckel of platt(texter)) assert.notEqual(t(nyckel), nyckel, `${land}: ${nyckel} saknar grundtext`);
+  }
+});
+
+test('varje nyckel i alla språkfiler finns i svenska grundfilen (Shopify vägrar annars deploya, mätt 2026-09-27)', () => {
+  const sv = JSON.parse(readFileSync(join(LOC, 'sv.default.json'), 'utf8'));
+  const platt = (o, pre = '') => Object.entries(o).flatMap(([k, v]) => (typeof v === 'object' ? platt(v, `${pre}${k}.`) : [`${pre}${k}`]));
+  const svNycklar = new Set(platt(sv));
+  for (const fil of ['en', 'nb', 'da', 'fi']) {
+    const j = JSON.parse(readFileSync(join(LOC, `${fil}.json`), 'utf8'));
+    for (const n of platt(j)) assert.ok(svNycklar.has(n), `${fil}.json: ${n} saknas i sv.default.json`);
+  }
 });
