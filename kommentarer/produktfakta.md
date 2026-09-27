@@ -38,6 +38,13 @@ Läses av `/kommentarer` innan svaren skrivs.
   en upphöjd framdel över flaket. Takets huvudyta är platt; framdelen är ett
   steg högre. Mät takets längd och välj efter den. (Allmän kunskap, inte
   testat på produkten.)
+- **Paketrutan på carashell.com förvalde 2 st (15 % rabatt) = $338 för två
+  18/21 ft-skydd.** En amerikansk kund läste annonsens $199, fick $338 i
+  kassan och skrev "Scam" (kommentar 2026-09-27, `CaraShellRoof_US_BOF_101_1`).
+  Mätt samma dag i `factory/produkter/takskyddet.yaml` → `offer.paket`:
+  "mitten förvald" gäller alla marknader. Svar till kunden: sidan förvalde
+  2-packet, 1 st för $199 väljs i paketrutan, hör av dig med ordernumret.
+  Om 1 st ska vara förvald i USA är Axels beslut (erbjudandet).
 - **Andas väven? Tål den hagel? Kommer man in genom dörren?** — okänt, fråga
   leverantören.
 
