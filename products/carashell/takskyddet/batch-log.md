@@ -2433,3 +2433,13 @@ rörd. Approved-passet: **60 rader, 0 utan NO-annons.**
 request limit reached` under kontoläsningen, exit 1, och filen blev 0 byte. Ett
 nytt försök några minuter senare läste alla 60. Läs felraden: en strypt läsning
 ser ut som en tom kö i utdatafilen, precis som den tysta nollan 2026-09-22.
+## 2026-09-27 — leveransrundan: sjunde dygnet, oförändrat
+
+Samma två rader, samma md5 (`d9ab48ff…` / `271bf976…`), samma slutkort med
+`carashell.se`. Kontrollen kördes med OCR. Inget uppladdat, ingen status
+ändrad, inga nya kommentarer.
+
+⚠️ Metas läsning svarade först `User request limit reached` (kod 17) — samma
+token bär US-marknadsvakten, NO-rundan och speglingen. Kön gick igenom efter
+15 minuters paus. En strypt kö är inte en tom kö: läs om innan något
+rapporteras som klart.
