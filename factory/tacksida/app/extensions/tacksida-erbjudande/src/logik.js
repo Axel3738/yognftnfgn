@@ -57,6 +57,22 @@ export function adressFor({ storefrontUrl, marknadHandle, sprak, inst }) {
   return { bas, prefix };
 }
 
+/** Text för kundens land: `land.<LAND>.<nyckel>` i språkfilen vinner, annars
+ *  språkets vanliga text. Så får USA "RV"/"color" och Australien
+ *  "caravan"/"colour" ur samma en.json (Axels order 2026-09-27). En nyckel som
+ *  saknas ger tillbaka sig själv från shopify.i18n.translate, och då faller
+ *  vi tillbaka. Saknas även grundtexten blir det tomt, aldrig nyckelns namn. */
+export function landText(translate, land, nyckel, vars) {
+  const kod = String(land ?? '').toUpperCase();
+  if (kod) {
+    const lk = `land.${kod}.${nyckel}`;
+    const s = translate(lk, vars);
+    if (s && s !== lk) return s;
+  }
+  const s = translate(nyckel, vars);
+  return s && s !== nyckel ? s : '';
+}
+
 /** Numeriskt id ur ett gid. */
 export const numId = (gid) => String(gid ?? '').split('/').pop();
 
