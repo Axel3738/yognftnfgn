@@ -39,6 +39,12 @@ Därför är oktober uppvärmning och november–december hela affären.
 **Totalt:** 14 kampanjer på 14 veckor. Vecka 48 har måndag + fredag i stället för tisdag
 (Black Week), vecka 52 ingen.
 
+**Utanför tisdagsrytmen (2026-09-27):** **K15 Butiksrecensionen** — bara köpare
+(`SEG_kopare` utom `SEG_oengagerade_180d`), ber om en butiksrecension på Judge.me, ingen
+rabatt. Föreslagen tors 1/10 18:00 så den inte tar en tisdag; Spoks-utkast
+`45e8e354-8672-4e83-ac11-c8b2ee3e3b85`. Skickas först när Axel hämtat länken i Judge.me
+(butikssidan svarade 404 vid bygget) — `klaviyo/spoks/README.md` → Recensionerna.
+
 ## Räcker prenumerationen?
 
 Klaviyos e-postplan tillåter 10 utskick per profil och månad i den nivå man betalar

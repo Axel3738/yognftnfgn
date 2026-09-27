@@ -600,14 +600,19 @@ ingenting; v1 av den första). Motorn `spoks-paket.mjs` har triggertypen `tagg`,
 tagg-flöden (finns bara i Spoks). Inget faktablock i vinnarmejlen: rubriken "Ångerrätt" hör
 inte hemma i ett gåvomejl.
 
-⚠️ **Omätt tills första testet:** att Spoks avfyrar `contact_tags_added` för en tagg som
-sätts i SHOPIFY. Taggarna som DATA synkas (`preview_segment tags is` gav 640 kontakter med
-Shopify-taggar som "Login with Shop" 2026-09-27), men händelsen är inte bevisad. Testet:
-`/klubbdragning test axel.odhner@stonebite.org` när v2 är på och v1 av — Axels kund taggas,
-ett utkast utan adress skapas (han har ingen adress i butiken), och E1 ska landa i hans inkorg
-inom minuter. Kommer inget mejl: reservvägen är ett flöde på `order_created` med
-triggerfilter `orderTags in [klubb-dragning]` (Spoks tar bevisat emot ordrar: F04 rullar in
-på dem); då måste adresslösa vinnares utkast slutföras av VA:n innan mejlet går.
+✅ **Mätt 2026-09-27 14:40–14:42 CEST: Spoks avfyrar `contact_tags_added` för en tagg som
+sätts i SHOPIFY.** Testet `/klubbdragning test axel.odhner@stonebite.org --skarpt` (kommandots
+steg 3) skapade utkastet **#D101** utan adress och satte taggen `klubb-vinnare` +
+`klubb-vinnare-2026-09-27` på Axels kund 14:40:54 CEST; `get_flow` på v2 inom två minuter:
+`contactsEnrolledCount: 1` och `waitingContactsCount: 1` vid dag-12-väntan, alltså har
+kontakten passerat väntan 0 och sändsteget E1. Inget mejl gick ur v1 (triggern av, stegen
+av). Reservvägen (`order_created` + `orderTags in [klubb-dragning]`) behövs alltså inte.
+Före testet var det omätt: taggarna som DATA synkades (`preview_segment tags is` gav 640
+kontakter med Shopify-taggar som "Login with Shop"), men händelsen var inte bevisad.
+⚠️ Steg 2 vid testet: v1 stod `isActive: true` på flödesnivå men med `trigger.isActive:
+false` och alla tre sändstegen `isEnabled: false` (Axels klick 14:39 CEST) — det räcker
+för att v1 varken tar in någon eller skickar något, så testet kördes; huvudreglaget på v1
+bör ändå slås av för tydlighetens skull.
 
 **Kända sidoeffekter, accepterade:** 0-kronorsordern rullar också in vinnaren i F04 (dag 3
 "på väg", dag 13 "kom allt fram?") och F07 (dag 21 "en låda till") — inga krockar med
@@ -653,11 +658,74 @@ enligt spellagen); aldrig handplockat; en skarp dragning per datum; inga namn i 
 Discord eller Notion; förnamn + stad bara med vinnarens ja; bara vuxna på video; skarpt utan
 aktivt v2-flöde (eller med v1 fortfarande på) = fel, kommandot stoppar i steg 2.
 
-**Axels klick, i ordning:** (1) https://app.spoks.com/matstrumpor/flows/27047445-dcab-4898-9f92-5f55f2b77be3
-→ slå AV v1; (2) https://app.spoks.com/matstrumpor/flows/1a3263e1-a12d-45dc-8e40-2f8b8bf85313
-→ slå på de tre sändstegen ett i taget, sedan flödet; (3) säg "kör test" ⇒ sessionen kör
-`/klubbdragning test axel.odhner@stonebite.org` och läser att E1 kom fram (och publicerar
-VA-SOP:en i Notion); (4) säg "kör" en tisdag morgon ⇒ första skarpa dragningen, tisdagens
-kampanj får Premiär-blocket samma kväll; (5) beloppet på tröstpriset, 100 eller 200 kr.
-En rutin (tisdag 07:30, `/klubbdragning kör`) byggs först när det gått rätt tre veckor för
-hand (Arvids princip).
+**Axels klick, i ordning (läget 2026-09-27 14:45 CEST):** ✅ (1) v1:s trigger och tre
+sändsteg av 14:39 (huvudreglaget står kvar på, bör slås av); ✅ (2) v2 på med alla tre
+sändstegen 14:39; ✅ (3) testet kört 14:40, kontakten inrullad, VA-SOP:en i Notion
+(`3e8270ab-908c-817c-a874-f5e538f8339e`); Axel bekräftar E1 i sin inkorg; (4) säg "kör" en
+tisdag morgon ⇒ första skarpa dragningen, tisdagens kampanj får Premiär-blocket samma
+kväll; (5) beloppet på tröstpriset, 100 eller 200 kr; (6) länken till Judge.me:s
+butiksrecension (avsnittet Recensionerna nedan). En rutin (tisdag 07:30, `/klubbdragning
+kör`) byggs först när det gått rätt tre veckor för hand (Arvids princip). Testkunden bär nu
+taggen `klubb-vinnare`: ett nytt test kräver att taggen tas bort i Shopify först (skriptet
+säger det självt), och utkastet #D101 kan raderas i Shopify när Axel läst mejlet.
+
+## Recensionerna — K15 Butiksrecensionen + F09 Recensionen (byggda 2026-09-27, inget påslaget)
+
+Axels två frågor samma eftermiddag: "Kan du inte också bara göra en kampanj som bara är att
+folk ska lägga en butiksrecension?" och "Vi har inte heller något flow för att samla in
+recensioner?????". Svaret på den andra: nej, Matstrumpor hade inget (F01–F05, F07, F08; bara
+Bäverbutiken har F14 mot Trustpilot). Judge.me finns på matstrumpor.se (Core +
+Recensionsmedaljer, 8 recensioner på sushilådan mot 3 911 ordrar) men ingen
+`JUDGEME_API_TOKEN` för butiken, så om Judge.me:s egna recensionsmejl är på går inte att läsa
+härifrån; siffran säger att de i praktiken inte drar.
+
+**Länken (Axels klick, blockerar båda):** en butiksrecension lämnas på Judge.me:s butikssida.
+Mätt 2026-09-27: `judge.me/reviews/matstrumpor.se`, `judge.me/reviews/stores/matstrumpor.se`,
+`…/stores/1r46tp-qx.myshopify.com`, `matstrumpor.se/pages/reviews`, `/pages/recensioner` och
+`/apps/judgeme/reviews` svarar alla 404 ⇒ butikslistningen är inte påslagen. Två vägar
+(Judge.me:s hjälpcenter, läst samma dag): **(a)** Settings → Request reviews → Links, QR codes
+and point of sale review collection → **Store review link** (kopiera, klistra in i chatten);
+**(b)** Settings → Google, SEO and AI → Manage vid "Judge.me Reviews Site" → **Enable store
+listing** ⇒ sidan `judge.me/reviews/<handle>` (handle under Advanced settings). Mejlen bär
+tills vidare `https://judge.me/reviews/matstrumpor.se` (Judge.me:s dokumenterade mönster, INTE
+verifierat); sessionen byter länken i K15 och F09:s båda mejl och läser den med curl innan
+något slås på eller skickas. Review links är publika (vem som helst med länken kan
+recensera), därför bara köpare i publiken.
+
+**K15 Butiksrecensionen:** Spoks-utkast `45e8e354-8672-4e83-ac11-c8b2ee3e3b85`
+(https://app.spoks.com/matstrumpor/post/45e8e354-8672-4e83-ac11-c8b2ee3e3b85/edit), ämne A
+"Maten är påhittad. Butiken är inte." (B "Skrattade du när paketet kom?", C "Landade skämtet,
+eller inte?"), hero med sushilådan + knappen "Betygsätt butiken bakom lådan" + "Ingen
+inloggning. Bara du, stjärnorna och lådan." + grundarraden (svara på mejlet om något blev fel).
+Publik **SEG_kopare** utom SEG_oengagerade_180d (Axel väljer i appen), föreslaget datum tors
+1/10 18:00 (inte en tisdag, kalendern är full). Innehåll
+`klaviyo/innehall/matstrumpor/kampanjer/k15-butiksrecension.json`, `status_plan: kraver-axel`.
+
+**F09 Recensionen (butiksomdöme) · FLOW_order_recension_v1** `4321f0d9-6c9a-4910-8444-743f1c5c6c75`
+(https://app.spoks.com/matstrumpor/flows/4321f0d9-6c9a-4910-8444-743f1c5c6c75), inaktivt:
+trigger `order_created` med kontaktfiltret kundundantag (`emailMarketingConsent in [subscribed,
+not_subscribed]` och `state ne suppressed`, samma som motorn ger i `floden.json`), återinträde
+P90D. Steg: väntan 16 d tidigast 18:00 (`3c07bad0`) → **E1** "Fortfarande strumpor när du
+öppnade?" (steg `73d66227`, post `c5c8085c-7ddd-40a4-91ca-747ef25be2a6`) → väntan 7 d tidigast
+18:00 (`7db4b838`) → **E2** "Lådan kom fram. Mejlet kanske inte." (steg `254732dc`, post
+`dfab661f-34f8-44e2-9519-b3c0db58d9e2`) med stegfiltret `clickedEmail eq 0` för flowId = F09
+(den som klickat i E1 får ingen påminnelse; motorn kan inte uttrycka stegfilter, det står i
+Spoks och i memo). Innehåll `klaviyo/innehall/matstrumpor/floden/f09-recension.json`; motorn
+har `FLODESNAMN['f09-recension']`. Timingen är Bäverbutikens F14 (16 d); Matstrumpors p90 för
+leverans är 15 dygn.
+
+**Copyn:** Sonnet-subagent mot `docs/copy-regler.md`. Rev 1 stoppades av byggaren på 15 rader
+("Hur blev det?", "Kom paketet fram som det skulle?", "Missade du den här?" kunde vilken butik
+som helst skriva); rev 2 gav 0 ❌ genom att hänga varje rad på lådan, avslöjandet eller ordet
+"påhittad". Huvudsessionen bytte EN rad: knappen "Betygsätt lådan" → "Betygsätt butiken bakom
+lådan" (länken går till butiksrecensionen, inte produkten). Ingen belöning, ingen styrning av
+betyget (review gating), alla stjärnor till samma länk.
+
+**Sidoeffekt att hålla koll på:** klubbdragningens 0-kronorsorder är en `order_created` ⇒
+vinnaren rullar också in i F09 efter 16 dygn (och i F04/F07). Rimligt, de har fått lådan, men
+räkna med det när recensionerna mäts. Vill Axel undvika det: triggerfilter `orderTags nin
+[klubb-dragning]` på F09 (`update_flow` medan flödet är inaktivt).
+
+**Axels klick:** (1) länken ur Judge.me (a eller b ovan) → klistra in i chatten; sessionen
+byter länken i K15 + F09, verifierar den och säger till; (2) K15: välj publik SEG_kopare och
+datum i appen, skicka; (3) F09: slå på de två sändstegen och flödet.

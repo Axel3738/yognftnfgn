@@ -1,13 +1,13 @@
 {
   "id": "k15-butiksrecension",
   "namn": "MAIL_20261001_Butik_M_1_kopare_product_butiksrecension_v1",
-  "memo": "Axels beställning 2026-09-27: 'en kampanj som bara är att folk ska lägga en butiksrecension'. Hypotes (Sonnet-subagenten samma dag): en recension om butiken svarar på 'går det att lita på hela stället', vilket väger tyngre för en osäker köpare än en recension om en enskild vara. Att fråga rakt ut utan belöning, och säga tydligt att både positiva och negativa omdömen hjälper lika mycket, bör ge fler och mer trovärdiga recensioner än om vi bara väntar in dem av sig själva. Går BARA till köpare (SEG_kopare): en butiksrecension från någon som aldrig handlat är inte värd något. Ingen belöning, ingen styrning av betyget (alla stjärnor till samma länk). Länken är Judge.me:s butikssida; den svarade 404 för matstrumpor.se 2026-09-27 (butikslistningen inte påslagen), så adressen nedan är Judge.me:s dokumenterade mönster och BYTS mot länken Axel klistrar in ur Judge.me (Settings > Request reviews > Links, QR codes and point of sale review collection > Store review link) innan något skickas. Datumet är ett förslag (torsdag, för att inte ta en tisdag från kalendern). Tre-frågorstestet: transaktionella rader får ärligt ❌ på 'ingen annan' och en på 'visualisera', redovisat nedan.",
+  "memo": "Axels beställning 2026-09-27: 'en kampanj som bara är att folk ska lägga en butiksrecension'. Hypotes (Sonnet-subagenten, rev 2 samma dag efter att byggaren stoppat 15 rader ur rev 1): en butiksrecension svarar på 'går det att lita på hela stället', vilket väger tyngre för en osäker köpare än en recension om en enskild vara. Varje ämnesrad, förhandstext, rubrik och knapptext hänger på något bara Matstrumpor har (lådan som ser ut som mat, avslöjandet, ordet 'påhittad'); generiska frågor som 'vad tyckte du om att handla hos oss' klarar aldrig 'ingen annan'. Fakta hålls på nivån som gäller alla fyra sorter (SEG_kopare är alla köpare): lådan, maten, påhittat, aldrig ätpinnar eller sushibitar. Går BARA till köpare: en butiksrecension från någon som aldrig handlat är inte värd något. Ingen belöning, ingen styrning av betyget (alla stjärnor till samma länk). Huvudsessionen bytte EN rad: knappen 'Betygsätt lådan' blev 'Betygsätt butiken bakom lådan', för länken går till BUTIKSrecensionen, inte till produkten, och knappen får inte lova något annat än det den gör. Länken är Judge.me:s butikssida; den svarade 404 för matstrumpor.se 2026-09-27 (butikslistningen inte påslagen), så adressen nedan är Judge.me:s dokumenterade mönster och BYTS mot länken Axel klistrar in ur Judge.me (Settings > Request reviews > Links, QR codes and point of sale review collection > Store review link) innan något skickas. Datumet är ett förslag (torsdag, för att inte ta en tisdag från kalendern).",
   "taggar": {
     "typ": "M",
     "kalla": "egen-data",
     "kalla_ref": "Axels beställning 2026-09-27 (butiksrecensionen); F14 Recension Trustpilot i klaviyo/innehall/baverbutiken/floden/ som förlaga för ärlighetsraden",
     "lardom": null,
-    "avatar": "köparen som fått sina strumpor",
+    "avatar": "köparen som fått sin låda",
     "begar": "säga vad man tyckte om butiken",
     "awareness": "product",
     "urgency": "ingen",
@@ -17,10 +17,10 @@
   },
   "amnesrader": [
     { "text": "Maten är påhittad. Butiken är inte.", "begar": "nyfiken på vad påståendet betyder" },
-    { "text": "Vad tyckte du om att handla hos oss?", "begar": "dela sin egen upplevelse av köpet" },
-    { "text": "Gillade du inte allt? Säg det rakt ut", "begar": "kunna säga vad som faktiskt inte var bra" }
+    { "text": "Skrattade du när paketet kom?", "begar": "dela sin egen reaktion när paketet kom" },
+    { "text": "Landade skämtet, eller inte?", "begar": "kunna säga rakt ut om det inte funkade" }
   ],
-  "forhandstext": "Inte om strumporna den här gången, utan om oss.",
+  "forhandstext": "En låda som ser ut som mat, och en recension som är på riktigt.",
   "block": [
     {
       "typ": "hero",
@@ -28,13 +28,13 @@
       "text": "Vi är en liten svensk butik, och det som avgör om nästa kund vågar handla är vad du säger om oss. Var ärlig. Positiva och negativa omdömen hjälper oss lika mycket.",
       "bild": "produkt:sushi-strumpor",
       "knapp": {
-        "text": "Recensera butiken",
+        "text": "Betygsätt butiken bakom lådan",
         "lank": "url:https://judge.me/reviews/matstrumpor.se"
       }
     },
     {
       "typ": "text",
-      "rubrik": "Tre steg, inget konto",
+      "rubrik": "Ingen inloggning. Bara du, stjärnorna och lådan.",
       "text": "Klicka på knappen, välj antal stjärnor och skriv några rader om hur det var att handla hos oss och hur strumporna togs emot."
     },
     {
@@ -44,12 +44,12 @@
   ],
   "tretest": [
     { "rad": "Maten är påhittad. Butiken är inte.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Vad tyckte du om att handla hos oss?", "visualisera": false, "falsifiera": true, "ingen_annan": false },
-    { "rad": "Gillade du inte allt? Säg det rakt ut", "visualisera": true, "falsifiera": true, "ingen_annan": false },
-    { "rad": "Inte om strumporna den här gången, utan om oss.", "visualisera": true, "falsifiera": true, "ingen_annan": false },
+    { "rad": "Skrattade du när paketet kom?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Landade skämtet, eller inte?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En låda som ser ut som mat, och en recension som är på riktigt.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Maten är påhittad. Butiken bakom är på riktigt.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Tre steg, inget konto", "visualisera": true, "falsifiera": true, "ingen_annan": false },
-    { "rad": "Recensera butiken", "visualisera": true, "falsifiera": true, "ingen_annan": false }
+    { "rad": "Ingen inloggning. Bara du, stjärnorna och lådan.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Betygsätt butiken bakom lådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
   ],
   "planerad": "2026-10-01T18:00:00+02:00",
   "segment": ["SEG_kopare"],
