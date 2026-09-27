@@ -1172,3 +1172,41 @@ de tre nya bildfälten; gamla rubriken borta överallt.
 båda sidorna. (2) Är väven silverbelagd på undersidan? Då kan "silverskiktet"
 tillbaka. (3) ORVO kör 2 198 kr som jämförpris och "30 dagars öppet köp" — vi
 rör varken pris eller ångerrätt utan hans ord.
+
+### Rättelse samma dag — copyn låg för nära ORVO:s egna meningar
+
+Axels fråga "har du inte rippat bilderna?" ledde till en mätning av texten
+också, och den var inte ren: stegen ("Lägg den hopvikta väven mitt på taket
+och vik ut den mot fram- och bakkant", "Dra de två förstärkta spännremmarna
+över taket och spänn tills väven ligger slätt"), storleksguidens mening ("Mät
+vagnens längd utan dragstång och välj den storlek som är lika lång eller
+närmast längre"), tre FAQ-svar och jämförelsetabellens rader var ORVO:s
+formuleringar nästan ordagrant — åtta meningar ≥ 0,80 i likhet, tre
+identiska. Det är precis den sortens text en DMCA-anmälan träffar, och det
+bröt mot copy-regel 3 ("kan ingen annan säga det?") i sin renaste form: ORVO
+kunde signera dem för de hade skrivit dem.
+
+**Omskrivet på båda sidorna** (stegen "Dra ut / Kroka fast / Dra åt" med egna
+handgrepp, storleksguiden med ett räkneexempel "är vagnen 7,2 m tar du 7,5
+m", FAQ:n med egna frågor: "Blåser det av?", "Kan jag ha det på från höst
+till vår?", "Tänk om jag mäter fel?", tabellen med egna rader). Det som är
+kvar gemensamt är **Bäverbutikens egna meningar från 2026-09-07** som ORVO
+kopierade ("Regnet, löven och fågelskiten …", "Ett helöverdrag är tungt att
+få på plats ensam och sitter och skaver mot lacken hela vintern", "Det här
+täcker bara den yta som faktiskt tar stryk", "Vattnet rinner av i stället
+för att bli stående") — de står nu i Axels ursprungliga ordalydelse, inte i
+ORVO:s omskrivning av dem. Översättningarna gjordes om för alla fyra
+språken.
+
+**Vakten:** `products/carashell/takskyddet/produktsida/orvo-avstand.py`
+hämtar orvo.se live, jämför varje mening i Bäverbutikens beskrivning och
+CaraShells produktfil mot deras, och märker det som är Axels eget (gamla
+beskrivningen + produktfilen i a5f0986). Exit 1 om något annat ligger ≥ 0,70.
+Kör den innan produktsidans copy ändras igen. Bilderna var rena från början:
+kie.ai fick bara leverantörens fyra foton (bildplan.json), aldrig något från
+orvo.se — men motiven (studio, före/efter, sjö och björkar) är valda med
+ORVO:s bildsvit som mall, vilket är en idé och inte ett verk.
+
+Lärdom: **att läsa konkurrentens sida noga innan man skriver är rätt; att
+skriva med den öppen bredvid sig är fel.** Nästa gång: skriv ur produktfakta
+och Axels egna rader, mät mot konkurrenten EFTERÅT.

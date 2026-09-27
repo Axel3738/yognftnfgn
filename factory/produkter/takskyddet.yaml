@@ -316,9 +316,14 @@ beskrivning:
   # (samma undantag som landningssidorna, Axels beslut 2026-09-16).
   # Aldrig påstått: förvaringspåse, silverskikt, minuter att lägga på.
   problem_rubrik: "Taket är det du aldrig ser – och det som kostar mest att laga"
-  problem_text: "Regn, löv och fågelskit hamnar på taket – precis den yta du inte går upp och kollar. Vattnet blir stående kring takluckor och skarvar hela vintern, och tätmassan mjuknar. När fukten väl tagit sig in är det inte en tvätt som väntar till våren. Det är en reparation."
+  # ⚠️ Omskriven en gång till samma dag: första versionen låg för nära
+  # orvo.se:s egna meningar (steg, storleksguide, FAQ). Det som är kvar av
+  # gemensamma rader är Bäverbutikens ursprungliga text från 2026-09-07,
+  # som ORVO kopierade — inte tvärtom. Jämförelsen mot orvo.se:s sidtext:
+  # products/carashell/takskyddet/produktsida/orvo-jamforelse.md.
+  problem_text: "Regnet, löven och fågelskiten hamnar på taket, och det är precis den ytan du inte går upp och kollar. Vattnet står kvar kring takluckor och skarvar hela vintern, och tätmassan mjuknar. Den dag fukten är inne i taket räcker det inte med en tvätt till våren. Då är det en reparation."
   losning_rubrik: "Täck bara taket – inte hela vagnen"
-  losning_text: "Ett helöverdrag är tungt att få på plats ensam och skaver mot lacken när det blåser. CaraShell täcker bara den yta som tar stryk: vattnet rinner av den vattentäta 210D-väven, och kanten hänger 30–40 cm ner över sidorna så skarven mellan tak och vägg ligger under skydd. Vävda spännband hakar med plastkrok under karossens kant, två förstärkta band dras tvärs över taket – och en person lägger på det själv."
+  losning_text: "Ett helöverdrag är tungt att få på plats ensam och sitter och skaver mot lacken hela vintern. CaraShell täcker bara den yta som faktiskt tar stryk: vattnet rinner av den vattentäta 210D-väven, och kanten hänger 30–40 cm ner över sidorna så skarven mellan tak och vägg ligger under skydd. Vävda spännband hakar med plastkrok under karossens kant, två förstärkta band dras tvärs över taket – och en person lägger på det själv."
 
 vinkel:
   huvudvinkel: "Taket är ytan du aldrig ser — och den som kostar mest att laga. Konflikt typ A mot helöverdraget (tungt, två personer, skaver mot lacken) och före/efter (vattenpöl vid takluckan hela vintern mot torrt tak). Källa: källkampanjen 'Taköverdraget för Husvagn 6,5 × 3 m' i MagiBorsten (16 annonser, 15 köp på 2 563 kr, ROAS 6,61 de första två dygnen 2026-09-09–10; vinnaren Takoverdrag_PD_2_H1 är problem-driven) och källsidans egen rubrik 'Taket är det du aldrig ser'."
@@ -344,7 +349,7 @@ features:
   # Leverantörens svar 2026-09-17 (Axel): band ca 2,5 m, 210D Oxford
   # vattentät och soltålig, band på 4 sidor, justerbar längd, krok i nederkant,
   # två 10,5 m förstärkta band medföljer, storlekar 3×5,5 till 3×13,5 m.
-  - "Nio storlekar: 5,5 till 13,5 m långt, 3 m brett – mät vagnen utan dragstång och välj närmaste längd uppåt"
+  - "Nio storlekar: 5,5 till 13,5 m långt, 3 m brett – mät vagnen från front till bakkant, utan dragstången, och ta den storlek som är minst lika lång"
   - "Svart 210D Oxford-väv, vattentät och tål sol – vattnet rinner av i stället för att bli stående"
   - "Vävda spännband (inte gummi, töjs inte ut) på alla fyra sidor, 2,5 m och justerbara, med plastkrok som hakar under karossens kant"
   - "Två extra förstärkta spännband på 10,5 m följer med – dras tvärs över taket"
@@ -466,17 +471,17 @@ reviews:
 
 faq:
   - fraga: "Vilken storlek ska jag välja?"
-    svar: "Mät vagnens längd utan dragstång och välj den storlek som är lika lång eller närmast längre. Nio längder, 5,5 till 13,5 meter, alla 3 meter breda. Passar både husvagn och husbil."
+    svar: "Mät hur lång vagnen är från front till bakkant, utan dragstången. Ta den storlek som är minst lika lång – är vagnen 7,2 m tar du 7,5 m. Alla nio är 3 m breda och passar både husvagn och husbil."
   - fraga: "Hur läggs det på?"
-    svar: "Tre steg. Lägg den hopvikta väven mitt på taket och vik ut den mot fram- och bakkant. Haka spännbanden på alla fyra sidor under karossens kant och justera längden. Dra de två förstärkta banden över taket och spänn tills väven ligger slätt. En person räcker."
-  - fraga: "Sitter det kvar i blåst?"
-    svar: "Ja. Spännbanden på alla fyra sidor hakar under karossens kant, och de två förstärkta banden på 10,5 m går tvärs över taket. Banden är vävda, inte gummi, så de töjs inte ut."
-  - fraga: "Kan det ligga på hela vintern?"
-    svar: "Ja, det är gjort för vintervila. Borsta av tung blötsnö vid behov, precis som du hade gjort utan överdrag."
+    svar: "Lägg packen på taket, ta tag i ena kortsidan och dra ut väven tills den täcker hela taket. Gå sedan runt vagnen och kroka fast spännbanden under karossens nederkant, sida för sida, och dra åt varje band i spännet. Till sist kastar du de två förstärkta banden tvärs över taket och drar åt dem. En person klarar det själv."
+  - fraga: "Blåser det av?"
+    svar: "Nej. Banden hakar under karossens nederkant på alla fyra sidor, och de två förstärkta banden tvärs över taket håller väven nere så vinden inte får tag under den. Banden är vävda, inte gummi, så de töjs inte ut."
+  - fraga: "Kan jag ha det på från höst till vår?"
+    svar: "Ja, det är precis så det är tänkt att användas. Kommer det tung blötsnö: skotta av den, som du gjort utan överdrag."
   - fraga: "Kommer jag åt dörren och fönstren?"
     svar: "Ja. Överdraget ligger bara på taket och kanten hänger 30–40 cm ner – dörr, fönster och luckor är fria."
-  - fraga: "Kan jag blanda storlekar i ett paket?"
-    svar: "Ja. I paketrutan väljer du storlek per överdrag – ett till husvagnen och ett till husbilen går i samma paket."
+  - fraga: "Har jag en husvagn och en husbil – kan jag ta olika storlekar i ett paket?"
+    svar: "Ja. I paketrutan har varje överdrag sin egen storleksrulle, så du kan välja 6,5 m på det ena och 8,5 m på det andra i samma köp."
   - fraga: "Vad gäller om jag ångrar mig?"
     svar: "14 dagars ångerrätt enligt svensk lag, räknat från den dag du får varan. Mejla hello@carashell.com."
 
