@@ -204,6 +204,35 @@ Norge med `webPresenceCreate` + `marketUpdate(webPresencesToAdd)` (receptet mät
 CaraShell 2026-09-16, `factory/API-GRANSER.md`). Tills dess är matstrumpor.se/nb
 adressen — allt fungerar utan .no.
 
+## Hela Europa + worldwide — Axels mål 2026-09-27 kväll (`/goal`)
+
+Axels order: "vi ska ha hela Europa redo … worldwide redo för att lansera sushistrumporna",
+"lite dyrare priser worldwide", USA "60 eller 70 dollar" för köp 1 – få 1, UGC = Nathalie och
+Sofie (aldrig Katarina), "transkribera alla annonser", och det enda som får bli kvar för honom
+är en liten Cowork-prompt. **Listan han skulle bekräfta** (skickad i chatten ~16:30 CEST):
+
+| Marknad | Länder | Språk | Valuta | Fasta priser (5 par / 3 par / donut / pizza / burger / ätpinnar) |
+|---|---|---|---|---|
+| Norge | NO | nb | NOK | 449 / 349 / 299 / 399 / 299 / 49 |
+| Europa (utökad) | EU 27 utom SE + IS, LI, CH = 29 länder | da, fi + **de, fr, nl, es, it, pl, pt** (en för resten) | EUR + lokala valutor | €44.90 / 34.90 / 29.90 / 39.90 / 29.90 / 4.90 |
+| Engelska världen | US, GB, CA, AU, NZ | en | USD + lokala | $69 / 54.99 / 39.99 / 59.99 / 39.99 / 6.99 |
+
+Shopifys Grow-plan ger inte fler marknader, därför en Europa-marknad med många språk (Shopify
+tar max 20 språk; vi hamnar på 12). Domäner: **matstrumpor.no** och **matstrumpor.eu** köps,
+**matstrumpor.com** finns — kopplas med `cowork/1-domaner.txt`, sedan `webPresenceCreate` +
+`marketUpdate` per marknad. Frakt: ny zon "Europa" fri frakt (29 länder), "EU"-zonen (299 kr)
+blir tom och tas bort, "Norden" döps om och behåller NO, "Internationell" behåller resten.
+
+Allt ovan ligger i `konfig.json` och körs med `bygg.mjs --steg marknader,sprak,frakt,prislista
+--skarpt` när Axel bekräftat listan (torrkört 2026-09-27 ~17:00 CEST, planen stämmer).
+Översättningarna till de sju språken skrivs av 14 sonnet-agenter parallellt (delarna A och B,
+sedan C och D) mot `oversattning/REGLER-EUROPA.md` (ordlista och marknadssanning per språk —
+inget landsnamn i fraktrader, valutan aldrig som belopp). Kampanjkonfig för DE (DE+AT+CH), FR
+(FR+BE+LU), NL, ES, IT, PL, PT ligger i `annonser/marknader.json` (platshållarbudget, PAUSED),
+HeyGen-manifest per språk i `heygen/`. **Alla svenska videoannonser transkriberas lokalt**
+(faster-whisper `medium`, ~25 s per video, 86 unika videor) till `transkript/` — HeyGen behövs
+inte för transkriptet, bara för dubbningen, och den står still på API-krediterna.
+
 ## Kampanjerna i kontot (byggda 2026-09-27 ~16:00 CEST, alla PAUSED) — `annonser/`
 
 Axels order: "Nu har api tillgång också. Bygg upp alla kampanjer. Bygg upp worldwide kampanj.

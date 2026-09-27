@@ -73,7 +73,98 @@
    "lank": "https://matstrumpor.se/en/products/sushi-strumpor",
    "lank_not": "Utan ?country= väljer Shopify marknad efter kundens IP (alla åtta länder är marknader), så en norsk kund ser engelska + NOK. Sverige ingår inte — SE har egen kampanj.",
    "budget_sek_dag": 1000,
-   "budget_beslut": "EJ GIVEN — Axel 2026-09-27: 'bygg upp worldwide kampanj'; platshållare 1000 kr/dag, PAUSED"
+   "budget_beslut": "EJ GIVEN — Axel 2026-09-27: 'bygg upp worldwide kampanj'; platshållare 1000 kr/dag, PAUSED",
+   "geo_not": "WW = de åtta engelsk-/nordiska länderna. De sju språkkampanjerna täcker sina länder på eget språk; övriga europeiska länder (IE, GR, CZ, HU, RO, BG, HR, SK, SI, LT, LV, EE, MT, CY, IS, LI) kan läggas i WW när engelskan är bekräftad som deras språk — Axels beslut."
+  },
+  "DE": {
+   "kampanj": "MATSTRUMP_DE_SALES",
+   "adset": "MATSTRUMP_DE_ugc",
+   "geo": [
+    "DE",
+    "AT",
+    "CH"
+   ],
+   "locale": "de",
+   "heygen_sprak": "German (Germany)",
+   "lank": "https://matstrumpor.se/de/products/sushi-strumpor",
+   "lank_not": "Tre länder i samma språk ⇒ utan ?country= (Shopify väljer marknad/valuta efter IP; alla tre ligger i marknaden Europa)",
+   "budget_sek_dag": 1000,
+   "budget_beslut": "EJ GIVEN — platshållare 1000 kr/dag, PAUSED tills Axel sagt budget (Axel 2026-09-27: 'hela Europa redo')"
+  },
+  "FR": {
+   "kampanj": "MATSTRUMP_FR_SALES",
+   "adset": "MATSTRUMP_FR_ugc",
+   "geo": [
+    "FR",
+    "BE",
+    "LU"
+   ],
+   "locale": "fr",
+   "heygen_sprak": "French (France)",
+   "lank": "https://matstrumpor.se/fr/products/sushi-strumpor",
+   "lank_not": "Belgien får franska här och nederländska i NL-kampanjen — Meta visar båda; språket följer annonsen",
+   "budget_sek_dag": 1000,
+   "budget_beslut": "EJ GIVEN — platshållare 1000 kr/dag, PAUSED tills Axel sagt budget (Axel 2026-09-27: 'hela Europa redo')"
+  },
+  "NL": {
+   "kampanj": "MATSTRUMP_NL_SALES",
+   "adset": "MATSTRUMP_NL_ugc",
+   "geo": [
+    "NL"
+   ],
+   "locale": "nl",
+   "heygen_sprak": "Dutch (Netherlands)",
+   "lank": "https://matstrumpor.se/nl/products/sushi-strumpor?country=NL",
+   "budget_sek_dag": 1000,
+   "budget_beslut": "EJ GIVEN — platshållare 1000 kr/dag, PAUSED tills Axel sagt budget (Axel 2026-09-27: 'hela Europa redo')"
+  },
+  "ES": {
+   "kampanj": "MATSTRUMP_ES_SALES",
+   "adset": "MATSTRUMP_ES_ugc",
+   "geo": [
+    "ES"
+   ],
+   "locale": "es",
+   "heygen_sprak": "Spanish (Spain)",
+   "lank": "https://matstrumpor.se/es/products/sushi-strumpor?country=ES",
+   "budget_sek_dag": 1000,
+   "budget_beslut": "EJ GIVEN — platshållare 1000 kr/dag, PAUSED tills Axel sagt budget (Axel 2026-09-27: 'hela Europa redo')"
+  },
+  "IT": {
+   "kampanj": "MATSTRUMP_IT_SALES",
+   "adset": "MATSTRUMP_IT_ugc",
+   "geo": [
+    "IT"
+   ],
+   "locale": "it",
+   "heygen_sprak": "Italian (Italy)",
+   "lank": "https://matstrumpor.se/it/products/sushi-strumpor?country=IT",
+   "budget_sek_dag": 1000,
+   "budget_beslut": "EJ GIVEN — platshållare 1000 kr/dag, PAUSED tills Axel sagt budget (Axel 2026-09-27: 'hela Europa redo')"
+  },
+  "PL": {
+   "kampanj": "MATSTRUMP_PL_SALES",
+   "adset": "MATSTRUMP_PL_ugc",
+   "geo": [
+    "PL"
+   ],
+   "locale": "pl",
+   "heygen_sprak": "Polish (Poland)",
+   "lank": "https://matstrumpor.se/pl/products/sushi-strumpor?country=PL",
+   "budget_sek_dag": 1000,
+   "budget_beslut": "EJ GIVEN — platshållare 1000 kr/dag, PAUSED tills Axel sagt budget (Axel 2026-09-27: 'hela Europa redo')"
+  },
+  "PT": {
+   "kampanj": "MATSTRUMP_PT_SALES",
+   "adset": "MATSTRUMP_PT_ugc",
+   "geo": [
+    "PT"
+   ],
+   "locale": "pt",
+   "heygen_sprak": "Portuguese (Portugal)",
+   "lank": "https://matstrumpor.se/pt/products/sushi-strumpor?country=PT",
+   "budget_sek_dag": 1000,
+   "budget_beslut": "EJ GIVEN — platshållare 1000 kr/dag, PAUSED tills Axel sagt budget (Axel 2026-09-27: 'hela Europa redo')"
   }
  }
 }

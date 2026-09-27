@@ -25,6 +25,14 @@ export const HEYGEN_SPRAK_PER_MARKNAD = Object.freeze({
   CA: 'English (Canada)',
   AU: 'English (Australia)',
   NZ: 'English (New Zealand)',
+  // Matstrumpors Europa-lansering 2026-09-27 (namnen lästa ur listTargetLanguages samma dag).
+  DE: 'German (Germany)',
+  FR: 'French (France)',
+  NL: 'Dutch (Netherlands)',
+  ES: 'Spanish (Spain)',
+  IT: 'Italian (Italy)',
+  PL: 'Polish (Poland)',
+  PT: 'Portuguese (Portugal)',
 });
 
 /** HeyGen-språket för en marknad, eller null för en okänd kod. */
