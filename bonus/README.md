@@ -139,7 +139,19 @@ TrustBox eller kodsnutt på sajten; domänverifiering bara via mejllänk; och
 steg 5 läser efteråt att butiken laddar och att NS är ns1/ns2.loopia.se.
 Facit före körningen, mätt 2026-09-27 14:22 UTC med Cloudflare DoH: NS
 ns1/ns2.loopia.se, A 23.227.38.65 (Shopify), MX Loopia, en SPF-rad, www A
-23.227.38.65, butiken svarar 200. Variablerna hör hemma i miljön `/stonebite`-rutinen kör i
+23.227.38.65, butiken svarar 200. ⚠️ **Cowork skapar aldrig konton** (mätt
+2026-09-27 kväll: den stannade vid registreringssidan och sa det rakt ut, även
+på direkt begäran) — steg 1 i prompten är därför Axels egna klick
+(business.trustpilot.com/signup: Business details → Additional details →
+Personal details → Activate account, reCAPTCHA), och Cowork tar över när han
+skriver "inloggad". **Första recensionen ur Spoks-kampanjen syntes på profilen
+2026-09-27 cirka 16:10 CEST** (läst som "25 minuter sedan" kl 16:36): 5
+stjärnor, "kund", första orden "Enkelt å snabbt lev…", märkt **"Omdöme utan
+inbjudan"** — så märks varje recension som kommer via evaluate-länken, eftersom
+vi inte använder Trustpilots egna inbjudningar. Profilen visade då 3 omdömen
+och TrustScore 3,2 (två 1-stjärniga sedan tidigare), namnet "Baverbutiken" och
+kategorin "Klädbutik" — båda fel, rättas i Trustpilot Business efter claimen,
+inte i den här körningen. Variablerna hör hemma i miljön `/stonebite`-rutinen kör i
 (Barkås-kontot), för det är `hamta.mjs` → `bonus/kor.mjs` som läser källorna.
 
 **Gratisvägen till automatisk räkning:** notismejlen landar i
