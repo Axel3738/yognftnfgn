@@ -225,12 +225,38 @@ blir tom och tas bort, "Norden" döps om och behåller NO, "Internationell" beh�
 
 Allt ovan ligger i `konfig.json` och körs med `bygg.mjs --steg marknader,sprak,frakt,prislista
 --skarpt` när Axel bekräftat listan (torrkört 2026-09-27 ~17:00 CEST, planen stämmer).
-Översättningarna till de sju språken skrivs av 14 sonnet-agenter parallellt (delarna A och B,
-sedan C och D) mot `oversattning/REGLER-EUROPA.md` (ordlista och marknadssanning per språk —
-inget landsnamn i fraktrader, valutan aldrig som belopp). Kampanjkonfig för DE (DE+AT+CH), FR
-(FR+BE+LU), NL, ES, IT, PL, PT ligger i `annonser/marknader.json` (platshållarbudget, PAUSED),
-HeyGen-manifest per språk i `heygen/`. **Alla svenska videoannonser transkriberas lokalt**
-(faster-whisper `medium`, ~25 s per video, 86 unika videor) till `transkript/` — HeyGen behövs
+
+### Översättningarna till de sju språken — KLARA och granskade (2026-09-27 kväll)
+
+`output/underlag-{de,fr,nl,es,it,pl,pt}.json`, 196 texter per språk, skrivna av 28
+sonnet-agenter (fyra delar per språk: A = meny/startsida/produkter/FAQ/tema, B = sidor och
+policyer, C = integritetspolicy-sidan, D = Shopifys PRIVACY_POLICY med Liquid) mot
+`oversattning/REGLER.md` + `REGLER-EUROPA.md`, och **varje del granskad av en skeptisk
+sonnet-granskare** (`GRANSKARE.md`, domarna i sessionens scratchpad `*.dom.json`; C och D
+granskades parvis så att sidan och policyn använder samma juridiska termer). Rättningar som
+granskarna fällde och som är inlagda: pl könsneutralt (inga `otrzymałeś`/`zadowolony`),
+`liquid.ms-paket.par` → `pary`; de `Box` i berättelsen, `Datenschutzerklärung` i alla fyra
+delar, `erheben`/`Übermittlung`, tyska citattecken „…“; fr `et` (inte `ou`), `stockage en
+nuage`, `discriminerons`, `carte de paiement`; es `¿Les quedan bien a todos?`, `Según dónde
+vivas`, `autoridades de control`; it `titolare del trattamento` för Shopify (D hade
+`responsabile` = biträde), `carte di pagamento`, `Diritto alla cancellazione`; nl `mogelijke`,
+`procedures op tegenspraak`, `klantenservice`, `regelgevende`. Titlarna i menyn (A) och på
+sidorna (B/C) är likriktade per språk (`titelkoll` gav 0 konflikter). ⚠️ Två avsiktliga
+avvikelser som varje granskare flaggade och som INTE är fel: fraktpolicyns "1–2 dagars
+Postnord från svenska lagret" är struket i alla marknadsspråk (gäller bara Sverige; de redan
+publicerade en/nb/da gör likadant), och presentkortets optionvärde `150,00 kr` står kvar
+oöversatt i alla språk (Shopifys egen valör). **Shopifys opt-out-formulär ("Dina
+integritetsval") bär sin kundtext i `data-*`-attribut** — de är översatta i alla elva språk;
+nb/da hade svenska knappar live till 2026-09-27 kväll (omregistrerade, tillbakalästa, sedda som
+kund: `Meld deg av` / `Afmeld dig`). Registreringen av de sju nya språken (`bygg.mjs --steg
+sprak,oversattningar,kontroll,tema,publicera`) väntar bara på Axels ok på listan.
+
+Kampanjkonfig för DE (DE+AT+CH), FR (FR+BE+LU), NL, ES, IT, PL, PT ligger i
+`annonser/marknader.json` (platshållarbudget, PAUSED) med copy i `annonser/<KOD>.json` (alla
+elva marknadskoder skrivna, tre-frågorstestet ✅), HeyGen-manifest per språk i `heygen/`.
+**Alla svenska videoannonser är transkriberade lokalt** (faster-whisper `medium`): 69 av 86
+videor fick SRT i `transkript/` (11 av dem är nästan tysta — musik/text, ska aldrig dubbas),
+17 lämnade Meta inte ut (`source` saknas — id:n i `transkript/README.md`). HeyGen behövs
 inte för transkriptet, bara för dubbningen, och den står still på API-krediterna.
 
 ## Kampanjerna i kontot (byggda 2026-09-27 ~16:00 CEST, alla PAUSED) — `annonser/`
