@@ -33,31 +33,51 @@ export const NYCKELNAMN = {
   id: ['SHOPIFY_CLIENT_ID_SE_BAVER_SE', 'SHOPIFY_CLIENT_ID_SE'],
   secret: ['SHOPIFY_CLIENT_SECRET_SE_BAVER_SE', 'SHOPIFY_CLIENT_SECRET_SE'],
 };
-const forsta = (env, namn) => namn.map((n) => env[n]).find((v) => v && String(v).trim());
+const finns = (env, n) => Boolean(env[n] && String(env[n]).trim());
+
+/**
+ * Id och secret ur SAMMA app: paret _SE_BAVER_SE när båda finns, annars paret _SE.
+ * Ett id från den ena appen med secreten från den andra ger Shopify "400 Oauth
+ * error invalid_request" som en HTML-sida (mätt 2026-09-27 i en miljö som bar
+ * SHOPIFY_CLIENT_ID_SE_BAVER_SE men inte dess secret — och kravEnv valde då
+ * första id:t och första secreten var för sig).
+ *   → { id, secret, nyApp, idNamn, secretNamn } eller null när inget helt par finns
+ */
+export function valjNycklar(env = process.env) {
+  for (let i = 0; i < NYCKELNAMN.id.length; i += 1) {
+    const idNamn = NYCKELNAMN.id[i];
+    const secretNamn = NYCKELNAMN.secret[i];
+    if (finns(env, idNamn) && finns(env, secretNamn)) return { id: env[idNamn], secret: env[secretNamn], nyApp: i === 0, idNamn, secretNamn };
+  }
+  return null;
+}
 
 export function kravEnv(env = process.env) {
-  const id = forsta(env, NYCKELNAMN.id);
-  const secret = forsta(env, NYCKELNAMN.secret);
+  const par = valjNycklar(env);
   const saknas = [
     env.SHOPIFY_SHOP_SE ? null : 'SHOPIFY_SHOP_SE',
-    id ? null : NYCKELNAMN.id.join(' eller '),
-    secret ? null : NYCKELNAMN.secret.join(' eller '),
+    par ? null : `ett HELT par av ${NYCKELNAMN.id.map((n, i) => `${n} + ${NYCKELNAMN.secret[i]}`).join(' eller ')}`,
   ].filter(Boolean);
   if (saknas.length) throw new Error(`Saknade miljövariabler: ${saknas.join(', ')}`);
-  return { shop: env.SHOPIFY_SHOP_SE, id, secret, nyApp: Boolean(env.SHOPIFY_CLIENT_SECRET_SE_BAVER_SE) };
+  return { shop: env.SHOPIFY_SHOP_SE, id: par.id, secret: par.secret, nyApp: par.nyApp, idNamn: par.idNamn, secretNamn: par.secretNamn };
 }
 
 let tokenCache = null;
 async function token() {
   if (tokenCache) return tokenCache;
-  const { shop, id, secret } = kravEnv();
+  const { shop, id, secret, idNamn, secretNamn } = kravEnv();
   const svar = await fetch(`https://${shop}/admin/oauth/access_token`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ client_id: id, client_secret: secret, grant_type: 'client_credentials' }),
   });
-  const j = await svar.json();
-  if (!j.access_token) throw new Error(`Kunde inte minta Shopify-token: ${JSON.stringify(j).slice(0, 300)}`);
+  // Shopify svarar med en HTML-sida (inte JSON) på ett felaktigt par — säg det i klartext.
+  const text = await svar.text();
+  let j = null;
+  try { j = JSON.parse(text); } catch { j = null; }
+  if (!svar.ok || !j?.access_token) {
+    throw new Error(`Kunde inte minta Shopify-token för ${shop} (HTTP ${svar.status}) med ${idNamn} + ${secretNamn}: ${j ? JSON.stringify(j).slice(0, 300) : text.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 160)}`);
+  }
   tokenCache = j.access_token;
   return tokenCache;
 }

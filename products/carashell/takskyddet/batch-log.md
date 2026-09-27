@@ -2333,3 +2333,27 @@ Kvar i `SE-ACTIVE to be translated`: `CaraShellRoof_CS_109_H1`, `PD_110_H1`,
 `CO_105_H1`, `OB_103_H1`, `OB_104_H1`. De bär gårdagens kommentar om varför —
 ingen ny skrevs, ingenting har ändrats. Nästa körning tar dem av sig själv
 första dagen efter att plånboken fyllts på.
+
+## LP "Before you buy" (USA) byggd 2026-09-27 — `/invandningar`, egen sida på carashell.com
+
+Live: https://carashell.com/pages/rv-roof-cover-before-you-buy?country=US (obrandad,
+7 punkter, mall `page.listicle`, läst tillbaka som kund utan header/footer med
+pristabellen ritad av butiken). Axels order efter USA-rapporten
+(`kommentarer/rapporter/usa-2026-09-27.md`, 137 kommentarer): en sida som hanterar
+alla invändningar på den amerikanska marknaden, på en egen länk, byggd som
+lagerrensningssidan. Nytt koncept i motorn (`listicle/koncept/invandningar.json`),
+två nya block (pristabell med en rad per variant — $199/$199/$229/$259/$279/$309/
+$339/$369/$389, knapp per längd med `?variant=`; frågedel med 8 frågor) och läget
+`--egen-sida` (ingen svensk förlaga). Punkterna i kommentarernas ordning: 1 storlek
+och pris (16 US-kommentarer), 2 AC-aggregatet (23 — svaret är "we asked the maker",
+Axels gissning står inte där), 3 banden (6 — leverantörens ord: woven webbing, will
+not damage the paint; ingen vindgräns), 4 fukt (3 — "it can", distansdelen utan
+datum/pris), 5 helöverdraget (5), 6 fifth wheel/solceller/antenn (4 + 1), 7
+förtroendet/90 dagar (10). Bilder: sex produktbilder ur de åtta nya renderna på
+produktsidan (vinterplats, krok under kanten, regn på väven, före/efter, collage,
+studio) + två kie-bilder som visar KUNDENS tak utan överdrag (AC-tak från stege,
+fifth wheel med solcell) — aldrig överdraget över ett AC-tak (obesvarat). ⚠️
+`tak-spanne.jpg`/`tak-hopvikt.jpg` (bild 11–12 på produktsidan) visar elastiska
+band med plastkrokar på rosa tyg och motsäger sidans "woven webbing" — inte använda.
+Tre-frågorstestet: 35 rader, 4 ❌ (tre mallrubriker + mätrådet för fifth wheel).
+Annonserna pekar INTE dit ännu — Axels klick.

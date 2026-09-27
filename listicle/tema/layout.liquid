@@ -23,7 +23,7 @@
     kroppen var bytt av sidmallen, beskrivningen inte). Samma uppslag som i
     templates/page.listicle.liquid: handlen ur data-lp-produkt i innehållet.
   {%- endcomment -%}
-  {%- assign lp_beskrivning = page_description -%}
+  {%- assign lp_beskrivning = page_description | replace: '[[PRISTABELL]]', '' -%}
   {%- if lp_beskrivning contains '[[PRIS]]' or lp_beskrivning contains '[[JAMFORPRIS]]' -%}
     {%- assign lp_delar = page.content | split: 'data-lp-produkt="' -%}
     {%- if lp_delar.size > 1 -%}

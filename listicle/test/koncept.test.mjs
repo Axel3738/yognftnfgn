@@ -21,8 +21,8 @@ function copyMedPunkter(n, { rubrik } = {}) {
   return copy;
 }
 
-test('tre koncept finns och läses med rätt fält', () => {
-  assert.deepEqual(kandaKoncept(), ['anledningar', 'lagerrensning', 'vi-testade']);
+test('fyra koncept finns och läses med rätt fält', () => {
+  assert.deepEqual(kandaKoncept(), ['anledningar', 'invandningar', 'lagerrensning', 'vi-testade']);
   const l = lasKoncept();
   assert.equal(l.id, 'lagerrensning');
   assert.deepEqual(l.punkter, [5]);

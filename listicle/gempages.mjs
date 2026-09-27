@@ -112,6 +112,9 @@ export function lasKoncept(koncept = STANDARD_KONCEPT) {
     id: k.id, namn: k.namn ?? k.id, kommando: k.kommando ?? `/${k.id}`, suffix: k.suffix, sidnamn: k.sidnamn, sidtitel: k.sidtitel ?? k.sidnamn,
     punkter, forfattare_obrandad: k.forfattare_obrandad ?? OBRANDAD.forfattare, rubrik: k.rubrik ?? {}, jamforpris_behovs: k.jamforpris_behovs !== false,
     arlig_rubrik: k.arlig_rubrik ?? 'Jag ska vara ärlig:', riskfritt_rubrik: k.riskfritt_rubrik ?? 'Därför kan du testa helt riskfritt.',
+    // De extra blocken konceptet väntar sig i copyn (pristabell, fragor) — granskaCopy
+    // varnar när de saknas. Blocken är copy-styrda: vilket koncept som helst får bära dem.
+    block: k.block && typeof k.block === 'object' ? { pristabell: !!k.block.pristabell, fragor: !!k.block.fragor } : {},
     // Texterna på andra språk (sidnamn, sidtitel, författare …) — sprak.mjs konceptForSprak.
     sprak: k.sprak && typeof k.sprak === 'object' ? k.sprak : {},
   };
@@ -463,6 +466,29 @@ export function copyUrMall(mall, platser) {
 export const FORBJUDNA_FRASER = SPRAK.sv.forbjudna;
 
 /**
+ * De extra blockens texter (pristabell, fragor) i samma form som platskartans:
+ * [{ nyckel, varde, form }]. Blocken ligger utanför mallen (bara HTML-vägen
+ * ritar dem) men copyn i dem granskas med samma regler — priser, procent,
+ * HTML, förbjudna fraser, butiksnamn.
+ */
+export function extraTexter(copy) {
+  const ut = [];
+  const pt = copy?.pristabell;
+  if (pt && typeof pt === 'object') {
+    for (const f of ['rubrik', 'text', 'knapp', 'fot']) if (pt[f] != null) ut.push({ nyckel: `pristabell.${f}`, varde: pt[f], form: f === 'rubrik' ? 'ren' : f === 'knapp' ? 'knapp' : 'p' });
+  }
+  const fr = copy?.fragor;
+  if (fr && typeof fr === 'object') {
+    if (fr.rubrik != null) ut.push({ nyckel: 'fragor.rubrik', varde: fr.rubrik, form: 'ren' });
+    (Array.isArray(fr.lista) ? fr.lista : []).forEach((q, i) => {
+      ut.push({ nyckel: `fragor.${i + 1}.fraga`, varde: q?.fraga, form: 'ren' });
+      ut.push({ nyckel: `fragor.${i + 1}.svar`, varde: q?.svar, form: 'p' });
+    });
+  }
+  return ut;
+}
+
+/**
  * Fel stoppar bygget; varningar visas. Priser, procent, HTML, förbjudna fraser —
  * och brandnamn: en obrandad sida får inte nämna någon känd butik i copyn
  * (skriv "vi"/"hos oss"), en brandad får nämna sitt eget brand.
@@ -481,7 +507,13 @@ export function granskaCopy(copy, produkt, basPlatser, { brand = null, forbjudna
   const k = konceptForSprak(lasKoncept(koncept), locale);
   const n = valjPunkter(k, punkter);
   const platser = platserForPunkter(basPlatser, n);
-  const tillatna = [produkt.pris, produkt.jamforpris].filter((x) => x != null && Number.isFinite(Number(x))).map(Number);
+  // Tillåtna priser: produktens (lägsta) pris och jämförpris — och sedan 2026-09-27
+  // varje variants pris och jämförpris (takskyddet har nio längder till nio priser,
+  // och /invandningar skriver hela stegen). Allt annat är ett påhittat tal.
+  const tillatna = [...new Set(
+    [produkt.pris, produkt.jamforpris, ...(Array.isArray(produkt.varianter) ? produkt.varianter : []).flatMap((v) => [v?.pris, v?.jamforpris])]
+      .filter((x) => x != null && Number.isFinite(Number(x))).map(Number)
+  )].sort((a, b) => a - b);
   const pris = (t) => formateraPris(t, val);
   const nyckelText = (v) => (Array.isArray(v) ? v.join('\n') : String(v ?? ''));
   const b = brandProfil(brand, { forfattareObrandad: k.forfattare_obrandad });
@@ -499,8 +531,11 @@ export function granskaCopy(copy, produkt, basPlatser, { brand = null, forbjudna
     ...kallbutik.map((ord) => ({ ord, namn: `källbutiken ${kallbutik[0]}`, id: null })),
   ].filter((x) => !egnaOrd.has(x.ord));
 
-  for (const [nyckel, plats] of Object.entries(platser.text)) {
-    const v = lasCopy(copy, nyckel);
+  const rader = [
+    ...Object.entries(platser.text).map(([nyckel, plats]) => ({ nyckel, varde: lasCopy(copy, nyckel), form: plats.form, extra: false })),
+    ...extraTexter(copy).map((r) => ({ ...r, extra: true })),
+  ];
+  for (const { nyckel, varde: v, form, extra } of rader) {
     const tom = v == null || (typeof v === 'string' && !v.trim()) || (Array.isArray(v) && styckenAv(v).length === 0);
     if (tom) { fel.push(`${nyckel}: saknas i copyn`); continue; }
     const text = nyckelText(v);
@@ -512,9 +547,30 @@ export function granskaCopy(copy, produkt, basPlatser, { brand = null, forbjudna
     }
     if (/\d\s?%/.test(text)) fel.push(`${nyckel}: procentsats — sidan lovar "ingen påhittad jätterabatt", skriv priset i ${val}`);
     for (const f of sprak.forbjudna) if (text.toLowerCase().includes(f)) fel.push(`${nyckel}: "${f}" är förbjuden — ${sprak.forbjudnaTips}`);
-    if (plats.form === 'ren' && text.length > 180) varningar.push(`${nyckel}: rubriken är ${text.length} tecken — lång för en rubrik`);
-    if ((plats.form === 'p' || plats.form === 'p-flera') && text.length < 120) varningar.push(`${nyckel}: bara ${text.length} tecken — mallens stycken är 400–900`);
+    if (form === 'ren' && text.length > 180) varningar.push(`${nyckel}: rubriken är ${text.length} tecken — lång för en rubrik`);
+    if (!extra && (form === 'p' || form === 'p-flera') && text.length < 120) varningar.push(`${nyckel}: bara ${text.length} tecken — mallens stycken är 400–900`);
   }
+
+  // De extra blocken: formen, och att konceptet får det det väntar sig.
+  const pt = copy?.pristabell;
+  if (pt != null) {
+    if (typeof pt !== 'object' || Array.isArray(pt)) fel.push('pristabell: ska vara ett objekt { rubrik, text?, knapp, fot? }');
+    else {
+      for (const f of ['rubrik', 'knapp']) if (!String(pt[f] ?? '').trim()) fel.push(`pristabell.${f}: saknas — tabellen behöver en rubrik och en knapptext per rad`);
+      const antal = Array.isArray(produkt.varianter) ? produkt.varianter.length : 0;
+      if (antal < 2) fel.push(`pristabell: produktsidan har ${antal} variant(er) — tabellen är till för produkter med flera storlekar/priser`);
+    }
+  } else if (k.block?.pristabell) varningar.push(`pristabell saknas i copyn — ${k.kommando} väntar sig en prisrad per variant (copy.pristabell: { rubrik, text, knapp })`);
+  const fr = copy?.fragor;
+  if (fr != null) {
+    const lista = Array.isArray(fr?.lista) ? fr.lista : null;
+    if (typeof fr !== 'object' || Array.isArray(fr) || !lista) fel.push('fragor: ska vara { rubrik, lista: [{ fraga, svar }, …] }');
+    else {
+      if (!String(fr.rubrik ?? '').trim()) fel.push('fragor.rubrik: saknas');
+      if (lista.length === 0) fel.push('fragor.lista: tom — skriv minst en fråga eller ta bort blocket');
+      lista.forEach((q, i) => { if (!String(q?.fraga ?? '').trim() || !String(q?.svar ?? '').trim()) fel.push(`fragor.${i + 1}: fråga och svar krävs`); });
+    }
+  } else if (k.block?.fragor) varningar.push(`fragor saknas i copyn — ${k.kommando} väntar sig en kort frågedel (copy.fragor: { rubrik, lista: [{ fraga, svar }] })`);
 
   if (!Array.isArray(copy?.punkter) || copy.punkter.length !== n) fel.push(`punkter: ska vara exakt ${n} (${k.kommando}${k.punkter.length > 1 ? `, --punkter ${k.punkter.join('|')}` : ''}), är ${Array.isArray(copy?.punkter) ? copy.punkter.length : 0}`);
   const rubrik = String(copy?.hero?.rubrik ?? '');

@@ -75,7 +75,8 @@ export async function lokalisera(fragment, mapp, { hamtaFn = hamta, logg = () =>
 export const PLAYWRIGHT = process.env.LR_PLAYWRIGHT || '/opt/node22/lib/node_modules/playwright/index.mjs';
 
 /** Delarna som fotas var för sig (utöver hela sidan) — så de går att läsa i full storlek. */
-export const UTSNITT = [['hero', '.lr-hero'], ['punkt1', '#lr-punkt-1'], ['punkt2', '#lr-punkt-2'], ['slut', '.lr-slut'], ['sidfot', '.lr-sidfot']];
+// pris + fragor finns bara på sidor med pristabell/frågedel (/invandningar) — saknas elementet hoppas utsnittet.
+export const UTSNITT = [['hero', '.lr-hero'], ['pris', '#lr-pris'], ['punkt1', '#lr-punkt-1'], ['punkt2', '#lr-punkt-2'], ['fragor', '#lr-fragor'], ['slut', '.lr-slut'], ['sidfot', '.lr-sidfot']];
 export const VYER = [['desktop', 1280, 900], ['mobil', 390, 844]];
 
 /**
@@ -101,15 +102,17 @@ export async function medPlaywright(indexFil, mapp, { logg = () => {}, modul = P
       const hel = join(mapp, `${namn}.png`);
       await page.screenshot({ path: hel, fullPage: true });
       ut[namn] = hel;
+      let antal = 0;
       for (const [del, sel] of UTSNITT) {
         const el = page.locator(sel).first();
         if ((await el.count()) === 0) continue;
         const fil = join(mapp, `${namn}-${del}.png`);
         await el.screenshot({ path: fil });
         ut[`${namn}-${del}`] = fil;
+        antal += 1;
       }
       await page.close();
-      logg(`  ✓ ${namn}.png + ${UTSNITT.length} utsnitt (${bredd} px)`);
+      logg(`  ✓ ${namn}.png + ${antal} utsnitt (${bredd} px)`);
     }
   } finally {
     await browser.close();

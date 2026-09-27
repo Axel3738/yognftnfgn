@@ -1,0 +1,26 @@
+{
+  "_kommentar": "Konceptet bakom /invandningar — 'Innan du köper: det här frågar kunderna' (Axels beställning 2026-09-27 efter USA-rapporten på 137 annonskommentarer: en sida som hanterar ALLA invändningar på marknaden, byggd som en egen sida i butiken på samma sätt som /lagerrensning). Varje punkt är EN invändning ur kundernas egna kommentarer, i fallande ordning efter hur många som frågade, med ett svar som bara bär det belagda — det som saknas står som 'vi har frågat tillverkaren', aldrig som en gissning. Sju punkter som standard (fem tillåts). Två extra block som bara det här konceptet använder: `pristabell` (en rad per variant med pris, jämförpris och knapp till just den varianten — byts av butiken vid varje visning, så priset aldrig blir gammalt) och `fragor` (kort frågedel efter punkterna). Hero-rubriken bär från-priset (lägsta varianten). Byggs på en marknad som EGEN sida (--egen-sida): ingen svensk sida att översätta, engelska i sidans grundspråk, egen handle.",
+  "id": "invandningar",
+  "namn": "Invändningar",
+  "kommando": "/invandningar",
+  "suffix": "innan-du-koper",
+  "sidnamn": "{kortTitel} – Invändningarna (listicle)",
+  "sidtitel": "Innan du köper: {kortTitel}",
+  "punkter": [7, 5],
+  "forfattare_obrandad": "Anders på lagret",
+  "rubrik": { "pris": true },
+  "jamforpris_behovs": false,
+  "arlig_rubrik": "Jag ska vara ärlig:",
+  "riskfritt_rubrik": "Därför kan du testa helt riskfritt.",
+  "block": { "pristabell": true, "fragor": true },
+  "sprak": {
+    "en": {
+      "suffix": "before-you-buy",
+      "sidnamn": "{kortTitel} – Before you buy (listicle)",
+      "sidtitel": "Before you buy: {kortTitel}",
+      "forfattare_obrandad": "Anders from the warehouse",
+      "arlig_rubrik": "I'll be honest:",
+      "riskfritt_rubrik": "That's why you can try it risk-free."
+    }
+  }
+}
