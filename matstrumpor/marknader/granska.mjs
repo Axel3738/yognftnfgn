@@ -30,9 +30,11 @@ const liquid = (s) => [...String(s ?? '').matchAll(/\{\{[^}]*\}\}|\{%[^%]*%\}/g)
 const tal = (s) => [...String(s ?? '').replace(/<[^>]+>/g, ' ').matchAll(/\d[\d  ]*(?:[.,]\d+)?/g)].map((m) => m[0].replace(/[  ]/g, '').replace(',', '.')).filter((t) => t.length > 0 && !/^\d{4}-\d{2}-\d{2}/.test(t));
 
 const SVENSKA_ORD = {
-  // funktionsord som inte finns på målspråket i samma form
-  nb: /\b(och|att|från|inte|är|också|eller|med dig|våra|vårt|kunder|beställning|leverans|dagar|frakt inom|öppet köp)\b/i,
-  da: /\b(och|att|från|inte|är|också|eller|våra|vårt|kunder|beställning|leverans|dagar|frakt inom|öppet köp|strumpor)\b/i,
+  // funktionsord som inte finns på målspråket i samma form. ⚠️ Ord som är
+  // gemensamma räknas inte: "eller", "vårt" och "kunder" är korrekt bokmål och
+  // danska, "med dig" korrekt danska — de gav falska larm 2026-09-27 (da-B).
+  nb: /\b(och|att|från|inte|är|också|med dig|våra|beställning|leverans|dagar|frakt inom|öppet köp)\b/i,
+  da: /\b(och|att|från|inte|är|också|våra|beställning|leverans|dagar|frakt inom|öppet köp|strumpor)\b/i,
   fi: /\b(och|att|från|inte|är|också|eller|med|för|till|kunder|beställning|leverans|dagar|frakt|strumpor|köp)\b/i,
   en: /\b(och|att|från|inte|är|också|eller|med|för|till|våra|vårt|kunder|beställning|leverans|dagar|frakt|strumpor|köp|kr)\b/i,
 };
