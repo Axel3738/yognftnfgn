@@ -26,6 +26,16 @@ const BAS = 'https://matstrumpor.se';
 // URL:er räknas inte — bara löptext.
 export const MARKORER_SV = ['Fri frakt i Sverige', 'Fri frakt i hela Sverige', 'öppet köp', 'Lägg i varukorgen', 'Köp nu', 'Handla nu', 'Vanliga frågor', 'Beräknad leverans', 'arbetsdagar', 'Levereras presentklart', 'Köp 1 – Få 1', 'Mest Populär', 'Verifierat köp', 'Passar strl', 'Spåra paket', 'Kontakta', 'Strumpor som ser ut som mat', 'Sushi-Strumpor', 'Välj paket', 'Alla Produkter'];
 
+/** Paketrubriken på ett språk, ur output/underlag-<locale>.json (svenskan ur underlag-sv.json). */
+const RUBRIKER = new Map();
+export function paketRubrik(sprak) {
+  if (RUBRIKER.has(sprak)) return RUBRIKER.get(sprak);
+  let t = null;
+  try { t = JSON.parse(readFileSync(join(ROT, 'output', `underlag-${sprak}.json`), 'utf8'))['paket.sushi-2.rubrik'] ?? null; } catch { t = null; }
+  RUBRIKER.set(sprak, t);
+  return t;
+}
+
 /** Ren logik: plockar mätvärdena ur en sidas HTML. */
 export function lasSida(html, { sprak, land }) {
   const text = html.replace(/<script[\s\S]*?<\/script>/g, ' ').replace(/<style[\s\S]*?<\/style>/g, ' ').replace(/<!--[\s\S]*?-->/g, ' ');
@@ -40,13 +50,17 @@ export function lasSida(html, { sprak, land }) {
   // ingen läcka. Där mäts i stället att språkpaketet för kundens språk finns i sidan; saknas det
   // visar sidan svenska tills rutinen /sparning matstrumpor byggt om den (den klonar main).
   const sparsida = /id="bb-spar/.test(html);
-  const sprakpaket = sparsida && /"sprak":\{/.test(html) && new RegExp(`"${sprak}":\\{"tz"`).test(html);
+  // Spårningssidans paket heter efter språkdelen (sida.mjs läser <html lang> två tecken): pt-PT → pt.
+  const sprakpaket = sparsida && /"sprak":\{/.test(html) && new RegExp(`"${sprak.split('-')[0]}":\\{"tz"`).test(html);
   const lackor = sprak === 'sv' ? []
     : sparsida ? (sprakpaket ? [] : [`spårningssidan saknar språkpaket ${sprak} (visar svenska tills /sparning matstrumpor byggt om sidan från main)`])
     : MARKORER_SV.filter((m) => synlig.includes(m));
   // Priset i köprutan: första money-beloppet i produktformuläret räcker som stickprov.
   const pris = /class="price-item price-item--regular[^"]*"[^>]*>\s*([^<]{1,30})</.exec(html)?.[1]?.trim() ?? null;
-  const paket = [...synlig.matchAll(/(Köp 1 – Få 1[^.]{0,20}|Kjøp 1 – Få 1[^.]{0,20}|Køb 1 – Få 1[^.]{0,20}|Osta 1 – Saat 1[^.]{0,30}|Buy 1 – Get 1[^.]{0,20})/g)].map((m) => m[1].trim()).slice(0, 1);
+  // Paketrubriken ("Köp 1 – Få 1 GRATIS") på kundens språk läses ur översättningsunderlaget
+  // (paket.sushi-2.rubrik) — inte ur en fast lista, som missade de sju Europa-språken 2026-09-27.
+  const rubrik = paketRubrik(sprak);
+  const paket = rubrik && synlig.includes(rubrik) ? [rubrik] : [];
   const judgeme = /"locale":"([a-z]{2}(?:-[A-Z]{2})?)"/.exec(html)?.[1] ?? null;
   return { lang, country, active, locale, pris, paket: paket[0] ?? null, judgeme, lackor, bytes: html.length, land, sprak };
 }
@@ -69,8 +83,8 @@ async function hamta(url, kakor) {
 
 export async function lasMarknad({ land, sprak, valuta }) {
   const kakor = await sattLand(land, sprak);
-  // Shopify skriver locale-mappen med gemener: pt-PT ligger på /pt-pt.
-  const prefix = sprak === 'sv' ? '' : `/${sprak.toLowerCase()}`;
+  // Shopifys locale-mapp är språkdelen: pt-PT ligger på /pt (hreflang "pt", mätt 2026-09-27).
+  const prefix = sprak === 'sv' ? '' : `/${sprak.split('-')[0].toLowerCase()}`;
   const ut = [];
   for (const path of ['/', '/products/sushi-strumpor', '/pages/spara']) {
     const r = await hamta(`${BAS}${prefix}${path}`, kakor);

@@ -55,7 +55,9 @@ export const STANDARDSUPPORT = 'kundsupport@baverbutiken.se';
 
 // Tidszon per språk för de extra språken på en sida. 'auto' = kundens
 // webbläsare — engelskan (US, GB, CA, AU, NZ) spänner över tio tidszoner.
-export const TIDSZON = { sv: 'Europe/Stockholm', nb: 'Europe/Oslo', da: 'Europe/Copenhagen', fi: 'Europe/Helsinki', en: 'auto' };
+export const TIDSZON = { sv: 'Europe/Stockholm', nb: 'Europe/Oslo', da: 'Europe/Copenhagen', fi: 'Europe/Helsinki', en: 'auto',
+  // Matstrumpors Europa-marknad 2026-09-27: språket bär ett helt land eller flera i samma zon (de: DE/AT/CH, fr: FR/BE/LU).
+  de: 'Europe/Berlin', fr: 'Europe/Paris', nl: 'Europe/Amsterdam', es: 'Europe/Madrid', it: 'Europe/Rome', pl: 'Europe/Warsaw', pt: 'Europe/Lisbon' };
 
 // De fasta texterna i markupen, på svenska. Varje rad har ett data-t med
 // samma text som nyckel; för de extra språken bakas översättningen in i
