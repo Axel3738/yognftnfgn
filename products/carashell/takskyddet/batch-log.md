@@ -2420,3 +2420,16 @@ enskild annons fixar ingenting.
 ⚠️ LISTICLE är den friskare kampanjen på 7 dygn (CPA 579, under break-even) och
 det är den ronden sänkte — huvudkampanjen (CPA 806) räddades av sin kadensspärr.
 Regelfrågan står i mönster 15 och är ägarens.
+
+## 2026-09-27 — NO-rundan: sju rader, alla live (och en strypt läsning)
+
+7 rader i `SE-ACTIVE to be translated`: gårdagens fem plus dagens två nya
+bildrader ur speglingen, `OB_108_1` (`120249279329000172`) och `OB_110_1`
+(`120249278929900172`). **Alla sju redan live**, tillbakalästa som ACTIVE i
+ACTIVE adset. Inget renderat, inget uppladdat, 0 HeyGen-krediter, ingen status
+rörd. Approved-passet: **60 rader, 0 utan NO-annons.**
+
+⚠️ **Approved-passet föll första gången på Metas kvot** — `✗ Meta paging: User
+request limit reached` under kontoläsningen, exit 1, och filen blev 0 byte. Ett
+nytt försök några minuter senare läste alla 60. Läs felraden: en strypt läsning
+ser ut som en tom kö i utdatafilen, precis som den tysta nollan 2026-09-22.
