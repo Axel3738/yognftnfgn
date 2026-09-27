@@ -1179,7 +1179,14 @@ eller Cowork köper den. `stonebite/cowork/8-trustpilot.txt` claimar profilen
 gratis (kontot `kundsupport@baverbutiken.se`), slår på mejlnotis vid ny
 recension och läser av tilläggets pris utan att köpa; skickar aldrig
 Trustpilot-inbjudningar, kopplar aldrig Shopify (kunderna får redan förfrågan
-från Spoks) och rör aldrig DNS. **Gratisvägen till automatisk räkning är
+från Spoks) och rör aldrig DNS. ⛔ **Cowork öppnar BARA trustpilot.com** (Axels
+krav 2026-09-27: "bara den inte knullar min hemsida som förra gången" —
+Loopia-incidenten 2026-09-25): aldrig Loopia (Axel klickar aktiveringslänken
+själv), aldrig Shopify-admin, ingen TrustBox eller kodsnutt på sajten,
+domänverifiering bara via mejllänk, och prompten slutar med att läsa att
+butiken laddar och att NS är ns1/ns2.loopia.se (facit 2026-09-27 14:22 UTC: NS
+ns1/ns2.loopia.se, A 23.227.38.65, MX Loopia). Mät DNS igen efter körningen
+innan något kallas klart. **Gratisvägen till automatisk räkning är
 notismejlen i brevlådan vi redan läser** — läsaren `trustpilotMejl()` byggs ur
 första riktiga mejlet, aldrig ur en gissad mall (`bonus/README.md` →
 Trustpilot). `kundtjanst/arenden.mjs arSystem` räknar `trustpilot.com` som

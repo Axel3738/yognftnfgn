@@ -131,7 +131,15 @@ Cowork köper. `stonebite/cowork/8-trustpilot.txt` claimar profilen gratis
 (kontot `kundsupport@baverbutiken.se`), slår på mejlnotis vid ny recension och
 läser av tilläggets pris utan att köpa; skickar aldrig Trustpilot-inbjudningar
 och kopplar aldrig Shopify (kunderna får redan förfrågan från Spoks — två mejl
-om samma sak). Variablerna hör hemma i miljön `/stonebite`-rutinen kör i
+om samma sak). **Cowork öppnar bara trustpilot.com** (Axels krav 2026-09-27:
+"bara den inte knullar min hemsida som förra gången" — Loopia-incidenten
+2026-09-25, då Klaviyos namnservrar hamnade på hela baverbutiken.se): aldrig
+Loopia, Axel klickar aktiveringslänken själv; aldrig Shopify-admin; ingen
+TrustBox eller kodsnutt på sajten; domänverifiering bara via mejllänk; och
+steg 5 läser efteråt att butiken laddar och att NS är ns1/ns2.loopia.se.
+Facit före körningen, mätt 2026-09-27 14:22 UTC med Cloudflare DoH: NS
+ns1/ns2.loopia.se, A 23.227.38.65 (Shopify), MX Loopia, en SPF-rad, www A
+23.227.38.65, butiken svarar 200. Variablerna hör hemma i miljön `/stonebite`-rutinen kör i
 (Barkås-kontot), för det är `hamta.mjs` → `bonus/kor.mjs` som läser källorna.
 
 **Gratisvägen till automatisk räkning:** notismejlen landar i
