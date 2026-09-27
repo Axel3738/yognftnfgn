@@ -55,5 +55,5 @@
   "segment": ["SEG_kopare"],
   "exkludera": ["SEG_oengagerade_180d"],
   "status_plan": "kraver-axel",
-  "kraver_axel": "Datumet (förslag tors 1/10 18:00) och publiken SEG_kopare utom SEG_oengagerade_180d, båda väljs i Spoks-appen; länken är på plats sedan 2026-09-27 kväll."
+  "kraver_axel": "Datumet (förslag tors 1/10 18:00) och publiken SEG_kopare, båda väljs i Spoks-appen; länken är på plats sedan 2026-09-27 kväll. Uteslutningen SEG_oengagerade_180d står kvar i exkludera för motorns skull men kan hoppas över i appen: segmentet kräver fem mottagna mejl och hade 0 medlemmar 2026-09-26, så publiken är densamma."
 }

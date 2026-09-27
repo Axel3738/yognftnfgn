@@ -704,8 +704,12 @@ verifiering), därför bara köpare i publiken.
 "Maten är påhittad. Butiken är inte." (B "Skrattade du när paketet kom?", C "Landade skämtet,
 eller inte?"), hero med sushilådan + knappen "Betygsätt butiken bakom lådan" + "Ingen
 inloggning. Bara du, stjärnorna och lådan." + grundarraden (svara på mejlet om något blev fel).
-Publik **SEG_kopare** utom SEG_oengagerade_180d (Axel väljer i appen), föreslaget datum tors
-1/10 18:00 (inte en tisdag, kalendern är full). Innehåll
+Publik **SEG_kopare** (Axel väljer i appen), föreslaget datum tors 1/10 18:00 (inte en tisdag,
+kalendern är full). Innehållsfilen säger dessutom "utom SEG_oengagerade_180d", men det segmentet
+kräver minst fem mottagna mejl och hade **0 medlemmar** vid mätningen 2026-09-26 — så bara
+SEG_kopare är samma publik i dag, och Axel slipper leta efter en uteslutning i appen (beslutat
+2026-09-27 kväll när instruktionen visade sig obegriplig). Uteslutningen blir aktuell först när
+segmentet fått medlemmar, dvs. efter fem kampanjer. Innehåll
 `klaviyo/innehall/matstrumpor/kampanjer/k15-butiksrecension.json`, `status_plan: kraver-axel`.
 
 **F09 Recensionen (butiksomdöme) · FLOW_order_recension_v1** `4321f0d9-6c9a-4910-8444-743f1c5c6c75`
@@ -734,6 +738,8 @@ räkna med det när recensionerna mäts. Vill Axel undvika det: triggerfilter `o
 [klubb-dragning]` på F09 (`update_flow` medan flödet är inaktivt).
 
 **Axels klick:** ✅ (1) länken ur Judge.me, inklistrad och verifierad 2026-09-27 kväll, insatt i
-K15 och F09:s båda mejl; (2) K15: välj publik SEG_kopare utom SEG_oengagerade_180d och datum i
-appen (förslag tors 1/10 18:00), skicka; (3) F09: slå på de två sändstegen och flödet
+K15 och F09:s båda mejl; (2) K15: välj publik SEG_kopare (uteslutningen kan vänta, se ovan) högst
+upp i redigeraren → Review → Schedule längst ner → tors 1/10 18:00 (Stockholmstid, Spoks räknar
+i kontots tidszon); (3) F09: slå på de två sändstegen och flödet (Settings uppe till höger →
+Turn the flow on)
 (https://app.spoks.com/matstrumpor/flows/4321f0d9-6c9a-4910-8444-743f1c5c6c75).
