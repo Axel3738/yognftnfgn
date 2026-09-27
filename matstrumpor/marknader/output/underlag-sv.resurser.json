@@ -1,0 +1,741 @@
+{
+ "_om": "Shopify-resurserna underlaget kom ur; bygg.mjs registrerar översättningar per resurs.",
+ "resurser": [
+  {
+   "id": "gid://shopify/ProductOptionValue/6720489324883",
+   "typ": "optionvarde",
+   "handle": "sushi-strumpor",
+   "prefix": "optionvarde.sushi-strumpor",
+   "keys": [
+    "name"
+   ]
+  },
+  {
+   "id": "gid://shopify/ProductOptionValue/6720489357651",
+   "typ": "optionvarde",
+   "handle": "sushi-strumpor",
+   "prefix": "optionvarde.sushi-strumpor",
+   "keys": [
+    "name"
+   ]
+  },
+  {
+   "id": "gid://shopify/ProductOptionValue/8991107580243",
+   "typ": "optionvarde",
+   "handle": "sushi-strumpor",
+   "prefix": "optionvarde.sushi-strumpor",
+   "keys": [
+    "name"
+   ]
+  },
+  {
+   "id": "gid://shopify/Product/10286130889043",
+   "typ": "produkt",
+   "handle": "sushi-strumpor",
+   "prefix": "produkt.sushi-strumpor",
+   "keys": [
+    "title",
+    "body_html"
+   ]
+  },
+  {
+   "id": "gid://shopify/ProductOption/12989738516819",
+   "typ": "option",
+   "handle": "sushi-strumpor",
+   "prefix": "option.sushi-strumpor",
+   "keys": [
+    "name"
+   ]
+  },
+  {
+   "id": "gid://shopify/ProductOption/13677276037459",
+   "typ": "option",
+   "handle": "sushi-strumpor",
+   "prefix": "option.sushi-strumpor",
+   "keys": [
+    "name"
+   ]
+  },
+  {
+   "id": "gid://shopify/ProductOptionValue/6720585072979",
+   "typ": "optionvarde",
+   "handle": "presentkort",
+   "prefix": "optionvarde.presentkort",
+   "keys": [
+    "name"
+   ]
+  },
+  {
+   "id": "gid://shopify/Product/10286156513619",
+   "typ": "produkt",
+   "handle": "presentkort",
+   "prefix": "produkt.presentkort",
+   "keys": [
+    "title"
+   ]
+  },
+  {
+   "id": "gid://shopify/ProductOption/12989759160659",
+   "typ": "option",
+   "handle": "presentkort",
+   "prefix": "option.presentkort",
+   "keys": [
+    "name"
+   ]
+  },
+  {
+   "id": "gid://shopify/ProductOptionValue/6724572873043",
+   "typ": "optionvarde",
+   "handle": "donut-strumpor",
+   "prefix": "optionvarde.donut-strumpor",
+   "keys": [
+    "name"
+   ]
+  },
+  {
+   "id": "gid://shopify/Product/10286979449171",
+   "typ": "produkt",
+   "handle": "donut-strumpor",
+   "prefix": "produkt.donut-strumpor",
+   "keys": [
+    "title",
+    "body_html"
+   ]
+  },
+  {
+   "id": "gid://shopify/ProductOption/12990913642835",
+   "typ": "option",
+   "handle": "donut-strumpor",
+   "prefix": "option.donut-strumpor",
+   "keys": [
+    "name"
+   ]
+  },
+  {
+   "id": "gid://shopify/ProductOptionValue/6801663230291",
+   "typ": "optionvarde",
+   "handle": "pizza-strumpor",
+   "prefix": "optionvarde.pizza-strumpor",
+   "keys": [
+    "name"
+   ]
+  },
+  {
+   "id": "gid://shopify/Product/10314752852307",
+   "typ": "produkt",
+   "handle": "pizza-strumpor",
+   "prefix": "produkt.pizza-strumpor",
+   "keys": [
+    "title",
+    "body_html"
+   ]
+  },
+  {
+   "id": "gid://shopify/ProductOption/13022036492627",
+   "typ": "option",
+   "handle": "pizza-strumpor",
+   "prefix": "option.pizza-strumpor",
+   "keys": [
+    "name"
+   ]
+  },
+  {
+   "id": "gid://shopify/ProductOptionValue/6801666703699",
+   "typ": "optionvarde",
+   "handle": "hamburger-strumpor",
+   "prefix": "optionvarde.hamburger-strumpor",
+   "keys": [
+    "name"
+   ]
+  },
+  {
+   "id": "gid://shopify/Product/10314753769811",
+   "typ": "produkt",
+   "handle": "hamburger-strumpor",
+   "prefix": "produkt.hamburger-strumpor",
+   "keys": [
+    "title",
+    "body_html"
+   ]
+  },
+  {
+   "id": "gid://shopify/ProductOption/13022037639507",
+   "typ": "option",
+   "handle": "hamburger-strumpor",
+   "prefix": "option.hamburger-strumpor",
+   "keys": [
+    "name"
+   ]
+  },
+  {
+   "id": "gid://shopify/Product/10408204468563",
+   "typ": "produkt",
+   "handle": "sushipinnar-i-akta-tra",
+   "prefix": "produkt.sushipinnar-i-akta-tra",
+   "keys": [
+    "title"
+   ]
+  },
+  {
+   "id": "gid://shopify/Collection/651987419475",
+   "typ": "kollektion",
+   "handle": "frontpage",
+   "prefix": "kollektion.frontpage",
+   "keys": [
+    "title"
+   ]
+  },
+  {
+   "id": "gid://shopify/Collection/655589900627",
+   "typ": "kollektion",
+   "handle": "alla-produkter",
+   "prefix": "kollektion.alla-produkter",
+   "keys": [
+    "title"
+   ]
+  },
+  {
+   "id": "gid://shopify/Collection/695735681363",
+   "typ": "kollektion",
+   "handle": "strumporna",
+   "prefix": "kollektion.strumporna",
+   "keys": [
+    "title",
+    "body_html"
+   ]
+  },
+  {
+   "id": "gid://shopify/Page/162191835475",
+   "typ": "sida",
+   "handle": "contact",
+   "prefix": "sida.contact",
+   "keys": [
+    "title"
+   ]
+  },
+  {
+   "id": "gid://shopify/Page/162417312083",
+   "typ": "sida",
+   "handle": "fraktpolicy",
+   "prefix": "sida.fraktpolicy",
+   "keys": [
+    "title",
+    "body_html"
+   ]
+  },
+  {
+   "id": "gid://shopify/Page/162417443155",
+   "typ": "sida",
+   "handle": "retur-aterbetalningspolicy",
+   "prefix": "sida.retur-aterbetalningspolicy",
+   "keys": [
+    "title",
+    "body_html"
+   ]
+  },
+  {
+   "id": "gid://shopify/Page/162417508691",
+   "typ": "sida",
+   "handle": "integritetspolicy",
+   "prefix": "sida.integritetspolicy",
+   "keys": [
+    "title",
+    "body_html"
+   ]
+  },
+  {
+   "id": "gid://shopify/Page/181918957907",
+   "typ": "sida",
+   "handle": "om-oss",
+   "prefix": "sida.om-oss",
+   "keys": [
+    "title",
+    "body_html"
+   ]
+  },
+  {
+   "id": "gid://shopify/Page/183820812627",
+   "typ": "sida",
+   "handle": "data-sharing-opt-out",
+   "prefix": "sida.data-sharing-opt-out",
+   "keys": [
+    "title",
+    "body_html"
+   ]
+  },
+  {
+   "id": "gid://shopify/ShopPolicy/48690168147",
+   "typ": "policy",
+   "handle": null,
+   "prefix": "policy.PRIVACY_POLICY",
+   "keys": [
+    "body"
+   ]
+  },
+  {
+   "id": "gid://shopify/ShopPolicy/56368890195",
+   "typ": "policy",
+   "handle": null,
+   "prefix": "policy.REFUND_POLICY",
+   "keys": [
+    "body"
+   ]
+  },
+  {
+   "id": "gid://shopify/ShopPolicy/56369021267",
+   "typ": "policy",
+   "handle": null,
+   "prefix": "policy.TERMS_OF_SERVICE",
+   "keys": [
+    "body"
+   ]
+  },
+  {
+   "id": "gid://shopify/Link/717665272147",
+   "typ": "menylänk",
+   "handle": null,
+   "prefix": "meny.717665272147",
+   "keys": [
+    "title"
+   ]
+  },
+  {
+   "id": "gid://shopify/Link/717665337683",
+   "typ": "menylänk",
+   "handle": null,
+   "prefix": "meny.717665337683",
+   "keys": [
+    "title"
+   ]
+  },
+  {
+   "id": "gid://shopify/Link/717665370451",
+   "typ": "menylänk",
+   "handle": null,
+   "prefix": "meny.717665370451",
+   "keys": [
+    "title"
+   ]
+  },
+  {
+   "id": "gid://shopify/Link/717665435987",
+   "typ": "menylänk",
+   "handle": null,
+   "prefix": "meny.717665435987",
+   "keys": [
+    "title"
+   ]
+  },
+  {
+   "id": "gid://shopify/Link/718741012819",
+   "typ": "menylänk",
+   "handle": null,
+   "prefix": "meny.718741012819",
+   "keys": [
+    "title"
+   ]
+  },
+  {
+   "id": "gid://shopify/Link/718741045587",
+   "typ": "menylänk",
+   "handle": null,
+   "prefix": "meny.718741045587",
+   "keys": [
+    "title"
+   ]
+  },
+  {
+   "id": "gid://shopify/Link/718741078355",
+   "typ": "menylänk",
+   "handle": null,
+   "prefix": "meny.718741078355",
+   "keys": [
+    "title"
+   ]
+  },
+  {
+   "id": "gid://shopify/Link/749444858195",
+   "typ": "menylänk",
+   "handle": null,
+   "prefix": "meny.749444858195",
+   "keys": [
+    "title"
+   ]
+  },
+  {
+   "id": "gid://shopify/Link/749444890963",
+   "typ": "menylänk",
+   "handle": null,
+   "prefix": "meny.749444890963",
+   "keys": [
+    "title"
+   ]
+  },
+  {
+   "id": "gid://shopify/Link/768388628819",
+   "typ": "menylänk",
+   "handle": null,
+   "prefix": "meny.768388628819",
+   "keys": [
+    "title"
+   ]
+  },
+  {
+   "id": "gid://shopify/Link/778402300243",
+   "typ": "menylänk",
+   "handle": null,
+   "prefix": "meny.778402300243",
+   "keys": [
+    "title"
+   ]
+  },
+  {
+   "id": "gid://shopify/Link/825199624531",
+   "typ": "menylänk",
+   "handle": null,
+   "prefix": "meny.825199624531",
+   "keys": [
+    "title"
+   ]
+  },
+  {
+   "id": "gid://shopify/Link/845550322003",
+   "typ": "menylänk",
+   "handle": null,
+   "prefix": "meny.845550322003",
+   "keys": [
+    "title"
+   ]
+  },
+  {
+   "id": "gid://shopify/Link/845550551379",
+   "typ": "menylänk",
+   "handle": null,
+   "prefix": "meny.845550551379",
+   "keys": [
+    "title"
+   ]
+  },
+  {
+   "id": "gid://shopify/Link/848896622931",
+   "typ": "menylänk",
+   "handle": null,
+   "prefix": "meny.848896622931",
+   "keys": [
+    "title"
+   ]
+  },
+  {
+   "id": "gid://shopify/OnlineStoreFilterSetting/115431047507",
+   "typ": "filter",
+   "handle": null,
+   "prefix": "filter.115431047507",
+   "keys": [
+    "label"
+   ]
+  },
+  {
+   "id": "gid://shopify/OnlineStoreFilterSetting/115431080275",
+   "typ": "filter",
+   "handle": null,
+   "prefix": "filter.115431080275",
+   "keys": [
+    "label"
+   ]
+  },
+  {
+   "id": "gid://shopify/DeliveryMethodDefinition/1106542821715",
+   "typ": "fraktsätt",
+   "handle": null,
+   "prefix": "frakt.1106542821715",
+   "keys": [
+    "name",
+    "description"
+   ]
+  },
+  {
+   "id": "gid://shopify/DeliveryMethodDefinition/1106542854483",
+   "typ": "fraktsätt",
+   "handle": null,
+   "prefix": "frakt.1106542854483",
+   "keys": [
+    "name"
+   ]
+  },
+  {
+   "id": "gid://shopify/DeliveryMethodDefinition/1106542887251",
+   "typ": "fraktsätt",
+   "handle": null,
+   "prefix": "frakt.1106542887251",
+   "keys": [
+    "name"
+   ]
+  },
+  {
+   "id": "gid://shopify/DeliveryMethodDefinition/1458568429907",
+   "typ": "fraktsätt",
+   "handle": null,
+   "prefix": "frakt.1458568429907",
+   "keys": [
+    "name"
+   ]
+  },
+  {
+   "id": "gid://shopify/DeliveryMethodDefinition/1458568462675",
+   "typ": "fraktsätt",
+   "handle": null,
+   "prefix": "frakt.1458568462675",
+   "keys": [
+    "name"
+   ]
+  },
+  {
+   "id": "gid://shopify/Metaobject/410438533459",
+   "typ": "paket",
+   "handle": "sushi-2",
+   "prefix": "paket.sushi-2",
+   "keys": [
+    "rubrik",
+    "underrubrik",
+    "bricka",
+    "gratis_text"
+   ]
+  },
+  {
+   "id": "gid://shopify/Metaobject/410438566227",
+   "typ": "paket",
+   "handle": "sushi-4",
+   "prefix": "paket.sushi-4",
+   "keys": [
+    "rubrik",
+    "underrubrik",
+    "bricka",
+    "gratis_text"
+   ]
+  },
+  {
+   "id": "gid://shopify/Metaobject/410438631763",
+   "typ": "paket",
+   "handle": "pizza-2",
+   "prefix": "paket.pizza-2",
+   "keys": [
+    "rubrik",
+    "underrubrik",
+    "bricka",
+    "gratis_text"
+   ]
+  },
+  {
+   "id": "gid://shopify/Metaobject/410438664531",
+   "typ": "paket",
+   "handle": "pizza-4",
+   "prefix": "paket.pizza-4",
+   "keys": [
+    "rubrik",
+    "underrubrik",
+    "bricka",
+    "gratis_text"
+   ]
+  },
+  {
+   "id": "gid://shopify/Metaobject/410438795603",
+   "typ": "paket",
+   "handle": "hamburgare-2",
+   "prefix": "paket.hamburgare-2",
+   "keys": [
+    "rubrik",
+    "underrubrik",
+    "bricka",
+    "gratis_text"
+   ]
+  },
+  {
+   "id": "gid://shopify/Metaobject/410438828371",
+   "typ": "paket",
+   "handle": "hamburgare-4",
+   "prefix": "paket.hamburgare-4",
+   "keys": [
+    "rubrik",
+    "underrubrik",
+    "bricka",
+    "gratis_text"
+   ]
+  },
+  {
+   "id": "gid://shopify/Metaobject/410438893907",
+   "typ": "paket",
+   "handle": "donut-2",
+   "prefix": "paket.donut-2",
+   "keys": [
+    "rubrik",
+    "underrubrik",
+    "bricka",
+    "gratis_text"
+   ]
+  },
+  {
+   "id": "gid://shopify/Metaobject/410438926675",
+   "typ": "paket",
+   "handle": "donut-4",
+   "prefix": "paket.donut-4",
+   "keys": [
+    "rubrik",
+    "underrubrik",
+    "bricka",
+    "gratis_text"
+   ]
+  },
+  {
+   "id": "gid://shopify/Metaobject/451482124627",
+   "typ": "paket",
+   "handle": "mix-2",
+   "prefix": "paket.mix-2",
+   "keys": [
+    "rubrik",
+    "underrubrik",
+    "bricka",
+    "gratis_text"
+   ]
+  },
+  {
+   "id": "gid://shopify/Metaobject/451482157395",
+   "typ": "paket",
+   "handle": "mix-4",
+   "prefix": "paket.mix-4",
+   "keys": [
+    "rubrik",
+    "underrubrik",
+    "bricka",
+    "gratis_text"
+   ]
+  },
+  {
+   "id": "gid://shopify/OnlineStoreThemeJsonTemplate/article?theme_id=207180890451",
+   "typ": "temamall",
+   "handle": "article",
+   "prefix": "tema.article",
+   "keys": [
+    "section.article.json.main.share.share_label:3syj88j5f6ixv"
+   ]
+  },
+  {
+   "id": "gid://shopify/OnlineStoreThemeSectionGroup/footer-group?theme_id=207180890451",
+   "typ": "temagrupp",
+   "handle": "footer-group",
+   "prefix": "temagrupp.footer-group",
+   "keys": [
+    "section.sections/footer-group.json.footer.newsletter_heading:3mws8faawdff7",
+    "section.sections/footer-group.json.footer.snabblankar.heading:305ewtmdfduu9",
+    "section.sections/footer-group.json.footer.information.heading:ik8gm5367a2y",
+    "section.sections/footer-group.json.footer.foretaget.heading:f7ja0mi9fwij",
+    "section.sections/footer-group.json.footer.foretaget.subtext:f7jo8939f616"
+   ]
+  },
+  {
+   "id": "gid://shopify/OnlineStoreThemeSectionGroup/header-group?theme_id=207180890451",
+   "typ": "temagrupp",
+   "handle": "header-group",
+   "prefix": "temagrupp.header-group",
+   "keys": [
+    "section.sections/header-group.json.announcement-bar.a1.text:347n6lgdb73c1",
+    "section.sections/header-group.json.announcement-bar.a2.text:3vota34o25qhu",
+    "section.sections/header-group.json.announcement-bar.a3.text:3paho6ziu7mar"
+   ]
+  },
+  {
+   "id": "gid://shopify/OnlineStoreThemeJsonTemplate/index?theme_id=207180890451",
+   "typ": "temamall",
+   "handle": "index",
+   "prefix": "tema.index",
+   "keys": [
+    "section.index.json.hero.h.heading:19i18qlqd4da3",
+    "section.index.json.hero.t.text:25ljk28gk371u",
+    "section.index.json.hero.b.button_label_1:2huh23gy3oixk",
+    "section.index.json.ms_usp.items:1wch9bsjrj9sx",
+    "section.index.json.ms_marquee.items:1bj0lns3e8anh",
+    "section.index.json.produkt.etikett.text:3buld6wjks48z",
+    "section.index.json.berattelse.h.heading:qpnmq7cue6u8",
+    "section.index.json.berattelse.t.text:2fsq9a02nz7pl",
+    "section.index.json.sortiment.title:vc9atew9gicx",
+    "section.index.json.statement.h.heading:dwl9iyne68lq",
+    "section.index.json.statement.b.button_label:mh44oy2lrxdv",
+    "section.index.json.ugc_galleri.title:ji4n7anigidi",
+    "section.index.json.ugc_galleri.g1.title:2o2926wastwr",
+    "section.index.json.ugc_galleri.g2.title:24z792c8ii3k8",
+    "section.index.json.ugc_galleri.g3.title:7t29gxoj6vmx",
+    "section.index.json.omdomen.eyebrow:127tkf6vkkqum",
+    "section.index.json.omdomen.heading:127tmk2diqct3",
+    "section.index.json.omdomen.r1.body:1nofedgu9bmyf",
+    "section.index.json.omdomen.r1.name:1nofedgrpnk00",
+    "section.index.json.omdomen.r2.body:1g7jywu13cwj8",
+    "section.index.json.omdomen.r2.name:1g7jywtymgryb",
+    "section.index.json.omdomen.r3.body:385z2v1d7h2lx",
+    "section.index.json.omdomen.r3.name:385z2v1aqgi9u",
+    "section.index.json.omdomen.r4.body:1785cyzjagh82",
+    "section.index.json.omdomen.r4.name:1785cyzbq5jb9",
+    "section.index.json.trygghet.h.heading:g61emul65bgt",
+    "section.index.json.trygghet.t.text:fzztv4ijnjb8",
+    "section.index.json.ms_faq.heading:38tvg15me3i5r",
+    "section.index.json.ms_faq.q1.q:36ujz16ryt3l9",
+    "section.index.json.ms_faq.q1.a:36ujz16rysq65",
+    "section.index.json.ms_faq.q2.q:1mj4rfwnp1bpq",
+    "section.index.json.ms_faq.q2.a:1mj4rfwnp0yam",
+    "section.index.json.ms_faq.q3.q:1il6p7omlyujz",
+    "section.index.json.ms_faq.q3.a:1il6p7omlyh4v",
+    "section.index.json.ms_guarantee.title:w7nxx68d5ft7",
+    "section.index.json.ms_guarantee.body:1boxrjx0atoij"
+   ]
+  },
+  {
+   "id": "gid://shopify/OnlineStoreThemeJsonTemplate/list-collections?theme_id=207180890451",
+   "typ": "temamall",
+   "handle": "list-collections",
+   "prefix": "tema.list-collections",
+   "keys": [
+    "section.list-collections.json.main.title:1d0ti1c25d6dr"
+   ]
+  },
+  {
+   "id": "gid://shopify/OnlineStoreThemeJsonTemplate/password?theme_id=207180890451",
+   "typ": "temamall",
+   "handle": "password",
+   "prefix": "tema.password",
+   "keys": [
+    "section.password.json.main.heading.heading:3jfchdkhhlz4x",
+    "section.password.json.main.paragraph.text:3dpbi4yl0bkb6"
+   ]
+  },
+  {
+   "id": "gid://shopify/OnlineStoreThemeJsonTemplate/product?theme_id=207180890451",
+   "typ": "temamall",
+   "handle": "product",
+   "prefix": "tema.product",
+   "keys": [
+    "section.product.json.main.share.share_label:1ad7auctiy024",
+    "section.product.json.ms_faq_section.heading:misuij6brqp8",
+    "section.product.json.ms_faq_section.q1.q:mi2y1gm4li9a",
+    "section.product.json.ms_faq_section.q1.a:mi2y1gm4l4u6",
+    "section.product.json.ms_faq_section.q2.q:256vzz5apmljh",
+    "section.product.json.ms_faq_section.q2.a:256vzz5apm84d",
+    "section.product.json.ms_faq_section.q3.q:1kg99vu948oh8",
+    "section.product.json.ms_faq_section.q3.a:1kg99vu948b24",
+    "section.product.json.ms_faq_section.q4.q:tfddxoic64zv",
+    "section.product.json.ms_faq_section.q4.a:tfddxoic5rkr",
+    "section.product.json.ms_faq_section.q5.q:w0ozohomxbfu",
+    "section.product.json.ms_faq_section.q5.a:w0ozohomwy0q",
+    "section.product.json.ms_faq_section.q6.q:2epi1m6d7yeq1",
+    "section.product.json.ms_faq_section.q6.a:2epi1m6d7y1ax",
+    "section.product.json.ms_sticky.label:16eburdqke665"
+   ]
+  },
+  {
+   "id": "gid://shopify/OnlineStoreThemeSettingsCategory/Brand+information?theme_id=207180890451&first_setting_id=brand_headline",
+   "typ": "temainställning",
+   "handle": null,
+   "prefix": "temainst",
+   "keys": [
+    "general.brand_description"
+   ]
+  }
+ ]
+}

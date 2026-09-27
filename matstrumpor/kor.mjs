@@ -11,6 +11,7 @@
 //
 //   node matstrumpor/kor.mjs --kolla            vad som finns och vad som saknas
 //   node matstrumpor/kor.mjs --ekonomi          break-even, båda momslinjerna
+//   node matstrumpor/kor.mjs --ekonomi --marknad US   break-even per marknad ur cogs.json (landad kostnad) + ECB-kurs
 //   node matstrumpor/kor.mjs --aov [--dagar 30] mät AOV ur Shopify på riktigt
 //   node matstrumpor/kor.mjs --ko [--json]      Notion "To be Reviewed" → uppladdningsplan
 //   node matstrumpor/kor.mjs --namn <vinkel> <format> [antal]   nästa lediga namn
@@ -139,6 +140,40 @@ export async function matAov(dagar = 30) {
   return { ordrar: n, dagar, aov_sek: Math.round((tot / n) * 100) / 100, produkter_per_order: Math.round((produkter / n) * 100) / 100 };
 }
 
+// --ekonomi --marknad <LAND>: break-even per marknad ur cogs.json (landad kostnad till
+// leveranslandet) och marknadens pris (fasta USD-priser ur marknader/konfig.json, annars
+// Shopifys omräkning av SEK-priset = SEK-priset i kronor). Kursen hämtas från ECB vid
+// varje körning — inget tal bränns in. Saknas kostnaden för landet står det som orsak.
+async function visaEkonomiMarknad(land) {
+  const { lasCogs, landadKostnad, breakEvenForMarknad, blockFor } = await import('./cogs.mjs');
+  const { hamtaKurser } = await import('../stonebite/kallor/valuta.mjs');
+  const mk = JSON.parse(readFileSync(new URL('./marknader/konfig.json', import.meta.url), 'utf8'));
+  const cogs = lasCogs();
+  const L = String(land).toUpperCase();
+  const marknad = mk.marknader.find((m) => m.lander.includes(L));
+  if (!marknad && L !== 'SE') { console.log(`Landet ${L} finns inte i marknader/konfig.json.`); return; }
+  const kurser = await hamtaKurser();
+  if (kurser.status !== 'ok') { console.log(`Kursen gick inte att hämta (${kurser.orsak}) — break-even per marknad räknas inte utan kurs.`); return; }
+  console.log(`Marknad ${marknad?.namn ?? 'Sverige'} · land ${L} · kurs ECB ${kurser.datum} (${Object.entries(kurser.sekPer).filter(([v]) => ['USD', 'EUR', 'NOK', 'DKK', 'GBP', 'AUD'].includes(v)).map(([v, k]) => `${v} ${k.toFixed(2)}`).join(', ')} kr)`);
+  console.log(`Kostnadsblock: ${blockFor(cogs, L) ?? 'saknas'}`);
+  const konfig = lasKonfig();
+  const tullSek = L === 'SE' ? Number(konfig.ekonomi.tull_eur) * (kurser.sekPer.EUR ?? konfig.ekonomi.eur_sek) : 0;
+  const rader = [
+    ['sushi-strumpor', '5 - Par / One Size', 399], ['sushi-strumpor', '3 - Par / One Size', 369],
+    ['donut-strumpor', 'One Size', 299], ['pizza-strumpor', 'One Size', 449], ['hamburger-strumpor', 'One Size', 299],
+  ];
+  for (const [handle, variant, sekPris] of rader) {
+    const k = landadKostnad({ handle, variantTitel: variant, antal: 1, land: L }, kurser, cogs);
+    const fast = marknad?.priser === 'fasta' ? (typeof marknad.fasta_priser[handle] === 'number' ? marknad.fasta_priser[handle] : marknad.fasta_priser[handle]?.[variant] ?? null) : null;
+    const pris = fast ?? sekPris;
+    const valuta = fast ? marknad.basvaluta : 'SEK';
+    if (k.saknas) { console.log(`  ${handle} · ${variant}: pris ${pris} ${valuta}${fast ? '' : ' (omräknat av Shopify)'} — kostnad SAKNAS: ${k.saknas}`); continue; }
+    const b = breakEvenForMarknad({ pris, valuta, kostnadSek: k.sek + tullSek, kurser });
+    console.log(`  ${handle} · ${variant}: pris ${pris} ${valuta} = ${b.pris_sek} kr · landad kostnad ${b.kostnad_sek} kr (${k.kalla}${tullSek ? ` + tull ${tullSek.toFixed(2)}` : ''}) ⇒ break-even-ROAS ${b.break_even_roas ?? '—'} · break-even-CPA ${b.break_even_cpa_sek ?? '—'} kr`);
+  }
+  console.log('⚠️ En låda per order, utan moms (Axels besked 2026-09-21). Betalavgifter och returer ingår inte — break-even är i bästa fall.');
+}
+
 function visaEkonomi(konfig) {
   const b = brytpunkter(konfig);
   console.log(`AOV ${b.aov_sek} kr · kostnad per order ${b.kostnad_per_order_sek} kr (${konfig.ekonomi.kostnad_per_order_sek} inköp + ${konfig.ekonomi.tull_eur} EUR tull × ${konfig.ekonomi.eur_sek})`);
@@ -155,6 +190,7 @@ async function main() {
   const varde = (f, d = null) => { const i = arg.indexOf(f); return i > -1 ? arg[i + 1] : d; };
   const konfig = lasKonfig();
 
+  if (har('--ekonomi') && varde('--marknad')) { await visaEkonomiMarknad(varde('--marknad')); return; }
   if (har('--ekonomi')) { visaEkonomi(konfig); return; }
 
   if (har('--aov')) {

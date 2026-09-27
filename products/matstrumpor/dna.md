@@ -29,6 +29,40 @@ avgift och svinn/returer. Break-even ovan är alltså i bästa fall.
 
 ---
 
+## Marknader (byggda 2026-09-27 — `matstrumpor/marknader/README.md` är facit)
+
+Butiken säljer sedan 2026-09-27 i **åtta länder från samma Shopify-butik** med
+Sverige som primär marknad (Axels beslut samma dag: Markets, inte en ny butik).
+Förra försöket, augusti 2026, var en egen engelsk butik **sushisock.com** med
+annonser ur samma konto "nya kungen": US 6 193 kr / 9 köp / ROAS 0,76, UK 5 845
+kr / 11 / 1,07, AU 9 656 kr / 20 / 0,97 — alla under break-even, alla pausade.
+Landningssidan var `sushisock.com/products/sushi-socks`, 155 engelska annonser
+(`MATSTRUMP_US_/AU_sushi_ugc_…`). Lärdomen som bär: engelskan såldes utan
+svensk "sålde slut i november"-bevisning och utan Köp 1 – Få 1 i bild — samma
+creative som Sverige, bara översatt.
+
+| Marknad | Länder | Språk | Valuta | Pris | Adress för annonser |
+|---|---|---|---|---|---|
+| Norge | NO | nb | NOK (omräknat) | 5 par ≈ SEK-priset | `matstrumpor.se/nb/products/sushi-strumpor?country=NO` |
+| Europa | DK, FI | da, fi | EUR, DKK lokal | omräknat | `/da/…?country=DK`, `/fi/…?country=FI` |
+| Engelska | US, GB, AU, CA, NZ | en | USD fast, övriga omräknade | 5 par **$59.00**, 3 par $45.99, donut/burger $33.99, pizza $49.99 (Axels sushisock-priser) | `/en/…?country=US` osv. |
+
+**Break-even per land** (`node matstrumpor/kor.mjs --ekonomi --marknad US`,
+ECB-kurs vid körning, landad kostnad ur `matstrumpor/cogs.json` = Axels ark för
+Big 5): sushi 5 par US **1,22**, 3 par 1,23, donut 1,37, pizza 1,24, hamburgare
+1,36. Norden: **ingen kostnad känd** — räkna aldrig på Sveriges 153,62 kr utan
+att säga det. Fri frakt till alla åtta länder (sessionens beslut, precedens
+sushisock/CaraShell/Bäverbutiken NO-DK-FI).
+
+**Annonserna utomlands är inte byggda.** Planen: Norge först (Axels ord 2026-09-27:
+"börja med att testa Norge osv och Norden"), samma konto "nya kungen" (SEK) med
+en kampanj per land `MATSTRUMP_<LAND>_SALES`, geo = landet, länken ovan,
+annonsnamn `MATSTRUMP_<LAND>_sushi_<vinkel>_<format>_<nnn>_v<n>`, SE-vinnarna
+översatta med `pipeline/translate-batch.mjs --marknad <M>` (HeyGen). Budget per
+land är Axels; inget annonskonto rörs innan dess.
+
+---
+
 ## Läget i kontot (14 dagar till 2026-09-26, läst 2026-09-27 — rond 3)
 
 Kampanjen `MATSTRUMP_SALES_20260826`, CBO, **10 000 kr/dag sedan 23/9**
@@ -168,3 +202,8 @@ arbetshypoteser tills kommentarerna går att läsa.
    när en rond har lärdomar att peka på.
 5. **Katarina** (Axels två videor 24/9, `09-17 UGC`) är den första nya
    kreatören efter Nathalie — 85–89 kr var på tre dygn, ett köp. Etikett 30/9.
+6. **Norge** (2026-09-27): butiken är klar på /nb med NOK och fri frakt.
+   Nästa steg är Axels: budget för `MATSTRUMP_NO_SALES`, sedan översätts
+   SE-vinnarna (Nathalie-serien) till norska med `translate-batch.mjs
+   --marknad NO`. Break-even i Norge går inte att räkna förrän den nordiska
+   landade kostnaden finns i `matstrumpor/cogs.json`.

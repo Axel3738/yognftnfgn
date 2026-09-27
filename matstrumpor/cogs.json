@@ -1,0 +1,38 @@
+{
+  "comment": "Matstrumpors varukostnad (COGS) per produkt och LEVERANSLAND — landad kostnad = varan + frakten till kunden. Källor står per block. Belopp i den valuta källan gav; omräkning till SEK sker vid läsning med ECB:s dagskurs (stonebite/kallor/valuta.mjs), aldrig med ett inbränt tal. Saknas ett land står det som null med orsak — aldrig en gissning.",
+  "matt": "2026-09-27",
+  "produkter": {
+    "sushi-strumpor": { "varianter": { "5 - Par / One Size": "sushi-5", "3 - Par / One Size": "sushi-3" }, "comment": "Två varianter = två kostnadsrader." },
+    "donut-strumpor": { "varianter": { "*": "donut" } },
+    "pizza-strumpor": { "varianter": { "*": "pizza" } },
+    "hamburger-strumpor": { "varianter": { "*": "hamburgare" } },
+    "sushipinnar-i-akta-tra": { "varianter": { "*": "atpinnar" }, "comment": "Axel 2026-09-27: ätpinnarna ingår i sushipaketen och kostar 0 (Cost per item i Shopify)." },
+    "presentkort": { "varianter": { "*": "presentkort" }, "comment": "Ett presentkort har ingen varukostnad." }
+  },
+  "sverige": {
+    "comment": "SE-kostnaden är Shopifys 'Cost per item' (inventoryItem.unitCost, SEK, landad — inköp + frakt till Sverige), läst 2026-09-27. Donut/pizza/hamburgare SAKNAR Cost per item i Shopify — Axel fyller i (han sa 2026-09-27 'har inte Sverige än'). Tull 2,9 EUR per order läggs på ordern (matstrumpor/konfig.json ekonomi.tull_eur).",
+    "valuta": "SEK",
+    "kostnad": { "sushi-5": 80.23, "sushi-3": 67.51, "donut": null, "pizza": null, "hamburgare": null, "atpinnar": 0, "presentkort": 0 },
+    "saknas_orsak": "Cost per item tomt i Shopify för donut-strumpor, pizza-strumpor och hamburger-strumpor (mätt 2026-09-27). Fyll i under Produkter → produkten → Kostnad per artikel, så läser vinsten det nästa timme."
+  },
+  "big5": {
+    "comment": "Axels ark 2026-09-27 (matstrumpor/cogs-big5.md, avläst ur en skärmdump — kontrollera mot arket innan något räknas skarpt). USD per ORDER: cost = varan för hela raden, frakt = frakten för hela raden. Raden '1 set' är en låda, '2 set' två lådor i samma paket (frakten är inte dubbel). Sushi har raderna per variant (3 par / 5 par), en låda per rad.",
+    "valuta": "USD",
+    "lander": ["US", "GB", "NZ", "AU", "CA"],
+    "rader": {
+      "sushi-3":    { "US": [ { "antal": 1, "cost": 1.7, "frakt": 6.9 } ], "GB": [ { "antal": 1, "cost": 1.7, "frakt": 4.8 } ], "NZ": [ { "antal": 1, "cost": 1.7, "frakt": 6.4 } ], "AU": [ { "antal": 1, "cost": 1.7, "frakt": 6.7 } ], "CA": [ { "antal": 1, "cost": 1.7, "frakt": 5.9 } ] },
+      "sushi-5":    { "US": [ { "antal": 1, "cost": 2.6, "frakt": 8.0 } ], "GB": [ { "antal": 1, "cost": 2.6, "frakt": 5.7 } ], "NZ": [ { "antal": 1, "cost": 2.6, "frakt": 8.1 } ], "AU": [ { "antal": 1, "cost": 2.6, "frakt": 8.8 } ], "CA": [ { "antal": 1, "cost": 2.6, "frakt": 7.2 } ] },
+      "donut":      { "US": [ { "antal": 1, "cost": 2.6, "frakt": 6.5 }, { "antal": 2, "cost": 5.2, "frakt": 9.0 } ], "GB": [ { "antal": 1, "cost": 2.6, "frakt": 4.5 }, { "antal": 2, "cost": 5.2, "frakt": 6.2 } ], "NZ": [ { "antal": 1, "cost": 2.6, "frakt": 6.2 }, { "antal": 2, "cost": 5.2, "frakt": 9.4 } ], "AU": [ { "antal": 1, "cost": 2.6, "frakt": 6.5 }, { "antal": 2, "cost": 5.2, "frakt": 9.8 } ], "CA": [ { "antal": 1, "cost": 2.6, "frakt": 5.5 }, { "antal": 2, "cost": 5.2, "frakt": 7.5 } ] },
+      "pizza":      { "US": [ { "antal": 1, "cost": 2.7, "frakt": 7.1 }, { "antal": 2, "cost": 5.4, "frakt": 10.7 } ], "GB": [ { "antal": 1, "cost": 2.7, "frakt": 4.9 }, { "antal": 2, "cost": 5.4, "frakt": 7.0 } ], "NZ": [ { "antal": 1, "cost": 2.7, "frakt": 7.2 }, { "antal": 2, "cost": 5.4, "frakt": 11.4 } ], "AU": [ { "antal": 1, "cost": 2.7, "frakt": 7.6 }, { "antal": 2, "cost": 5.4, "frakt": 11.8 } ], "CA": [ { "antal": 1, "cost": 2.7, "frakt": 6.1 }, { "antal": 2, "cost": 5.4, "frakt": 8.9 } ] },
+      "hamburgare": { "US": [ { "antal": 1, "cost": 2.5, "frakt": 6.4 }, { "antal": 2, "cost": 4.9, "frakt": 9.5 } ], "GB": [ { "antal": 1, "cost": 2.5, "frakt": 4.6 }, { "antal": 2, "cost": 4.9, "frakt": 6.4 } ], "NZ": [ { "antal": 1, "cost": 2.5, "frakt": 6.4 }, { "antal": 2, "cost": 4.9, "frakt": 9.9 } ], "AU": [ { "antal": 1, "cost": 2.5, "frakt": 6.8 }, { "antal": 2, "cost": 4.9, "frakt": 10.3 } ], "CA": [ { "antal": 1, "cost": 2.5, "frakt": 5.7 }, { "antal": 2, "cost": 4.9, "frakt": 7.9 } ] },
+      "atpinnar":   { "US": [ { "antal": 1, "cost": 0, "frakt": 0 } ], "GB": [ { "antal": 1, "cost": 0, "frakt": 0 } ], "NZ": [ { "antal": 1, "cost": 0, "frakt": 0 } ], "AU": [ { "antal": 1, "cost": 0, "frakt": 0 } ], "CA": [ { "antal": 1, "cost": 0, "frakt": 0 } ] }
+    },
+    "tull": "Ingen tullrad i arket. Big 5-frakten är dörr till dörr enligt Axels ark — tull läggs INTE på (till skillnad från Sverige). Ändra här om Axel säger annat."
+  },
+  "norden": {
+    "comment": "NO, DK och FI: INGEN kostnad känd (varken i Shopify eller i något ark, mätt 2026-09-27). Marknaderna öppnas ändå, men break-even per land kan inte räknas förrän Axel ger landad kostnad per låda, eller säger att Sveriges kostnad + tullen ska gälla.",
+    "lander": ["NO", "DK", "FI"],
+    "kostnad": null,
+    "saknas_orsak": "Axel har inte gett fraktkostnaden till Norge, Danmark eller Finland. Frågan står i rapporten 2026-09-27."
+  }
+}
