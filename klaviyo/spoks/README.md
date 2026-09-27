@@ -103,8 +103,10 @@ ha hunnit fram (22 dagar efter köpet, samma gräns som F14):
 - **Omgång 1** `3d39bb08-76ba-4937-82d2-2e57604d38fb` (ämnesrad "Hur har det varit att handla
   hos oss?") till segmentet **`Recension butiken omgång 1: tier 1, kunder med samtycke, köpt
   29 jun till 5 sep`** `0ce1fbd5-52d3-4fda-b616-f503ee2b8faf` (1 050 kontakter 2026-09-27).
-  Förslag: mån 28/9 18:00, dagen före K01 — klick på stjärnorna och svar på mejlet hjälper
-  avsändarryktet innan första säljmejlet går.
+  ✅ **Skickad sön 2026-09-27 14:01 CEST** (Axels klick, direkt i stället för mån 18:00):
+  1 050 i publiken, 1 048 unika mottagare; efter 15 minuter 212 öppningar och 37 klick
+  (`get_campaign_statistics`). Stjärnlänkarna svarar 308 → 200: Trustpilots profil ligger på
+  `www.baverbutiken.se`, och antalet stjärnor följer med i omdirigeringen.
 - **Omgång 2** `5908bf3e-738c-4433-9c2b-aa8f29da90ca` (samma mejl) till **`Recension butiken
   omgång 2 (tidigast 19 okt): tier 1, kunder med samtycke, köpt 6 sep till 27 sep`**
   `71531cdb-96c1-4bbb-8aff-168f28d11d32` (1 374). Skickas tidigast mån 19/10, när även de
