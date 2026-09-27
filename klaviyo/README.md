@@ -46,10 +46,11 @@ node klaviyo/ladda-upp.mjs --brand … --skarpt   # skapar segment, mallar, kamp
 node klaviyo/ladda-upp.mjs --brand … --skarpt --uppdatera   # patchar mallar + Draft-kampanjer som finns (flöden skapas bara nya: byt version i namnet)
 node klaviyo/stada.mjs --brand … [--ja]         # tar bort motorns ersatta utkast (äldre versioner av draft-flöden och mallar)
 node klaviyo/klubb-sajt.mjs --brand … [--skarpt]   # butikens anmälningsruta → klubben (temat, tillbakaläst, publika sidan kollad)
+node klaviyo/samtyckesruta.mjs --brand … [--skarpt] [--kundvy]   # kassans samtyckestext per språk (brandfilens samtycke_kassan → Shopify, tillbakaläst; --kundvy = kassan i Chromium)
 node klaviyo/sla-pa.mjs --brand … <flöde …> [--ja]      # bara på Axels ord
 node klaviyo/schemalagg.mjs --brand … K01 [--ja]        # bara på Axels ord
 node klaviyo/rapport.mjs [--brand …]            # resultat → logg/<brand>/utfall.jsonl
-node --test klaviyo/test/*.test.mjs             # 137 tester
+node --test klaviyo/test/*.test.mjs             # 172 tester
 ```
 
 ## Det motorn aldrig gör
