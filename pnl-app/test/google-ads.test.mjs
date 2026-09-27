@@ -6,7 +6,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 
-import { arGoogle, felText, platta, PREFIX, somKonto, tolkaSpend } from "../app/lib/google-ads.ts";
+import { arGoogle, felText, kontoUrRad, platta, PREFIX, slaIhopKonton, somKonto, tolkaSpend } from "../app/lib/google-ads.ts";
 
 const rad = (day, cost, extra = {}) => ({
   segments: { date: day, ...(extra.hour != null ? { hour: extra.hour } : {}) },
@@ -101,4 +101,30 @@ test("felmeddelandet hittas oavsett var Google lagt det", () => {
     "det riktiga skälet",
   );
   assert.equal(felText({}), "");
+});
+
+test("chefskonton blir aldrig valbara — de har ingen egen kostnad", () => {
+  assert.equal(kontoUrRad({ id: "111", manager: true }, "111", null), null);
+});
+
+test("underkonto via chefskonto bär chefens nummer som loginCustomerId", () => {
+  const k = kontoUrRad(
+    { id: "2223334444", descriptiveName: "Butiken", currencyCode: "SEK", timeZone: "Europe/Stockholm", manager: false },
+    "",
+    "999-888-7777",
+  );
+  assert.deepEqual(k, {
+    customerId: "2223334444",
+    name: "Butiken",
+    currency: "SEK",
+    timezone: "Europe/Stockholm",
+    loginCustomerId: "9998887777",
+  });
+});
+
+test("direkt åtkomst vinner över samma konto via chefskonto", () => {
+  const viaChef = { customerId: "1", name: "A", currency: "SEK", timezone: "", loginCustomerId: "9" };
+  const direkt = { ...viaChef, loginCustomerId: null };
+  assert.deepEqual(slaIhopKonton([viaChef, direkt]), [direkt]);
+  assert.deepEqual(slaIhopKonton([direkt, viaChef]), [direkt]);
 });

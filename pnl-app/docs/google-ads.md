@@ -40,6 +40,24 @@ och numera ignoreras till förmån för åtkomstnivå per Cloud-projekt. Sidan s
 skulle avgöra saken gav 404. Därför skickas huvudet **när det är satt** och
 utelämnas annars — det fungerar under båda reglerna.
 
+## Tre fällor mätta vid första riktiga inloggningen (2026-09-26)
+
+- **"Access blocked … has not completed the Google verification process"
+  (403 access_denied):** OAuth-klientens projekt står i läget *Testing*.
+  Bara adresser under Google Auth Platform → Audience → **Test users** släpps
+  in. Lägg till Google-kontot som loggar in. Ska andra butiker kunna koppla
+  måste appen publiceras (Publish app) — då visar Google en varning om
+  overifierad app tills den granskats.
+- **"The provided client secret is invalid":** `GOOGLE_ADS_CLIENT_SECRET`
+  hör inte till `GOOGLE_ADS_CLIENT_ID`. Google visar aldrig en gammal
+  hemlighet igen: Clients → klienten → **Add secret**, in på Railway.
+- **"This Google account has no Google Ads accounts" fast kontot har
+  annonser:** kontolistan kastade bort chefskonton (MCC) och svalde Googles
+  fel till en tom lista. Den som sköter annonserna via ett chefskonto fick
+  alltså alltid "inga konton". Rättat samma dag: underkontona hämtas via
+  `customer_client` och bär chefens nummer som `loginCustomerId`, och blir
+  listan tom för att Google nekade står Googles eget fel i rutan.
+
 ## Så hänger delarna ihop
 
 | Fil | Vad |
