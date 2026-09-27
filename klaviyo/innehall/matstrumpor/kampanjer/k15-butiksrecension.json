@@ -1,0 +1,59 @@
+{
+  "id": "k15-butiksrecension",
+  "namn": "MAIL_20261001_Butik_M_1_kopare_product_butiksrecension_v1",
+  "memo": "Axels beställning 2026-09-27: 'en kampanj som bara är att folk ska lägga en butiksrecension'. Hypotes (Sonnet-subagenten samma dag): en recension om butiken svarar på 'går det att lita på hela stället', vilket väger tyngre för en osäker köpare än en recension om en enskild vara. Att fråga rakt ut utan belöning, och säga tydligt att både positiva och negativa omdömen hjälper lika mycket, bör ge fler och mer trovärdiga recensioner än om vi bara väntar in dem av sig själva. Går BARA till köpare (SEG_kopare): en butiksrecension från någon som aldrig handlat är inte värd något. Ingen belöning, ingen styrning av betyget (alla stjärnor till samma länk). Länken är Judge.me:s butikssida; den svarade 404 för matstrumpor.se 2026-09-27 (butikslistningen inte påslagen), så adressen nedan är Judge.me:s dokumenterade mönster och BYTS mot länken Axel klistrar in ur Judge.me (Settings > Request reviews > Links, QR codes and point of sale review collection > Store review link) innan något skickas. Datumet är ett förslag (torsdag, för att inte ta en tisdag från kalendern). Tre-frågorstestet: transaktionella rader får ärligt ❌ på 'ingen annan' och en på 'visualisera', redovisat nedan.",
+  "taggar": {
+    "typ": "M",
+    "kalla": "egen-data",
+    "kalla_ref": "Axels beställning 2026-09-27 (butiksrecensionen); F14 Recension Trustpilot i klaviyo/innehall/baverbutiken/floden/ som förlaga för ärlighetsraden",
+    "lardom": null,
+    "avatar": "köparen som fått sina strumpor",
+    "begar": "säga vad man tyckte om butiken",
+    "awareness": "product",
+    "urgency": "ingen",
+    "confidence": "low",
+    "prefix": "Butik",
+    "kod": "M"
+  },
+  "amnesrader": [
+    { "text": "Maten är påhittad. Butiken är inte.", "begar": "nyfiken på vad påståendet betyder" },
+    { "text": "Vad tyckte du om att handla hos oss?", "begar": "dela sin egen upplevelse av köpet" },
+    { "text": "Gillade du inte allt? Säg det rakt ut", "begar": "kunna säga vad som faktiskt inte var bra" }
+  ],
+  "forhandstext": "Inte om strumporna den här gången, utan om oss.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Maten är påhittad. Butiken bakom är på riktigt.",
+      "text": "Vi är en liten svensk butik, och det som avgör om nästa kund vågar handla är vad du säger om oss. Var ärlig. Positiva och negativa omdömen hjälper oss lika mycket.",
+      "bild": "produkt:sushi-strumpor",
+      "knapp": {
+        "text": "Recensera butiken",
+        "lank": "url:https://judge.me/reviews/matstrumpor.se"
+      }
+    },
+    {
+      "typ": "text",
+      "rubrik": "Tre steg, inget konto",
+      "text": "Klicka på knappen, välj antal stjärnor och skriv några rader om hur det var att handla hos oss och hur strumporna togs emot."
+    },
+    {
+      "typ": "grundare",
+      "text": "Blev något inte som det skulle? Svara på det här mejlet, så hjälper vi dig, oavsett vad recensionen kommer att säga."
+    }
+  ],
+  "tretest": [
+    { "rad": "Maten är påhittad. Butiken är inte.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Vad tyckte du om att handla hos oss?", "visualisera": false, "falsifiera": true, "ingen_annan": false },
+    { "rad": "Gillade du inte allt? Säg det rakt ut", "visualisera": true, "falsifiera": true, "ingen_annan": false },
+    { "rad": "Inte om strumporna den här gången, utan om oss.", "visualisera": true, "falsifiera": true, "ingen_annan": false },
+    { "rad": "Maten är påhittad. Butiken bakom är på riktigt.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Tre steg, inget konto", "visualisera": true, "falsifiera": true, "ingen_annan": false },
+    { "rad": "Recensera butiken", "visualisera": true, "falsifiera": true, "ingen_annan": false }
+  ],
+  "planerad": "2026-10-01T18:00:00+02:00",
+  "segment": ["SEG_kopare"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "kraver-axel",
+  "kraver_axel": "Länken till Judge.me:s butiksrecension (butikssidan svarade 404 2026-09-27: slå på listningen eller klistra in Store review link), datumet (förslag tors 1/10 18:00) och publiken SEG_kopare i appen."
+}

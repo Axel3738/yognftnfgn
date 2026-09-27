@@ -1,0 +1,117 @@
+{
+  "id": "f09-recension",
+  "namn": "FLOW_order_recension_v1",
+  "memo": "Recensionsflödet, byggt 2026-09-27 efter Axels 'Vi har inte heller något flow för att samla in recensioner?????' (Matstrumpor hade inget; Bäverbutiken har F14 mot Trustpilot). Triggas av Placed Order (Spoks: order_created, det finns ingen skickad- eller levererad-trigger som är bevisad för Matstrumpor), väntar 16 dygn till kl 18 (samma som Bäverbutikens F14: paketet har hunnit fram, p90 15 dygn) och ber om en BUTIKSrecension på Judge.me:s butikssida; alla betyg till samma länk, ingen belöning, ingen styrning (review gating är förbjudet och vilseledande). E2 sju dygn senare går bara till den som inte klickat i E1 (stegfiltret i Spoks: clickedEmail eq 0 i det här flödet; motorn kan inte uttrycka stegfilter, det är satt direkt i Spoks 4321f0d9-6c9a-4910-8444-743f1c5c6c75). Återinträde var 90:e dag så en återköpare kan få frågan igen. Kundundantaget: frågan gäller ett köp kunden gjort. Länken: Judge.me:s butikssida svarade 404 för matstrumpor.se 2026-09-27 (listningen inte påslagen), adressen nedan är Judge.me:s dokumenterade mönster och BYTS mot länken Axel klistrar in innan flödet slås på. Copy av en Sonnet-subagent mot docs/copy-regler.md; tre-frågorstestet redovisat med ärliga ❌ på transaktionella rader (E2 är den svagaste: alla rader ❌ på visualisera, accepterat som påminnelse och första kandidat att skriva om efter första datan). Huvudsessionen ändrade bara knappen: subagenten skrev länken i knapptexten, knappen heter 'Recensera butiken' och länken ligger i lank.",
+  "trigger": {
+    "typ": "metrik",
+    "metrik": ["Placed Order"]
+  },
+  "filter": ["kundundantag"],
+  "ateintrade": {
+    "varaktighet": 90,
+    "enhet": "days"
+  },
+  "steg": [
+    { "typ": "vanta", "varde": 16, "enhet": "days" },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f09-e1",
+        "namn": "FLOW_recension_E1_M_hur-blev-det_v1",
+        "memo": "Hypotes: en fråga som kommer strax efter att just det här paketet har hunnit fram känns mer relevant än kampanjens breda utskick, eftersom upplevelsen fortfarande är färsk och kopplad till en verklig, egen leverans. Samma länk och samma krav på ärlighet som kampanjen, men kortare och mer personlig eftersom mottagaren redan väntar sig ett mejl om sin egen beställning.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "Axels beställning 2026-09-27 (recensionsflödet saknades); F14 Recension Trustpilot som förlaga",
+          "lardom": null,
+          "avatar": "köparen vars paket har hunnit fram",
+          "begar": "säga vad man tyckte",
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "low",
+          "prefix": "Recension",
+          "kod": "M"
+        },
+        "amnesrader": [
+          { "text": "Kom paketet fram som det skulle?", "begar": "bekräfta att den egna leveransen gick bra" },
+          { "text": "Hur blev det?", "begar": "dela sin allmänna känsla om köpet" },
+          { "text": "En ärlig rad om oss, inget mer", "begar": "veta att det inte krävs mer än en rad text" }
+        ],
+        "forhandstext": "Paketet har hunnit fram, och en rad om hur det var räcker.",
+        "block": [
+          {
+            "typ": "hero",
+            "rubrik": "Låtsasmat på riktiga fötter. Hur blev det?",
+            "text": "Hej {{fornamn}}! Paketet med dina strumpor har hunnit fram. Vi vill gärna veta hur det blev, både köpet och strumporna. Var ärlig, det hjälper oss mest.",
+            "bild": "produkt:sushi-strumpor",
+            "knapp": {
+              "text": "Recensera butiken",
+              "lank": "url:https://judge.me/reviews/matstrumpor.se"
+            }
+          },
+          {
+            "typ": "grundare",
+            "text": "Blev något fel med din beställning? Svara på det här mejlet, så hjälper vi dig först."
+          }
+        ],
+        "tretest": [
+          { "rad": "Kom paketet fram som det skulle?", "visualisera": true, "falsifiera": true, "ingen_annan": false },
+          { "rad": "Hur blev det?", "visualisera": false, "falsifiera": true, "ingen_annan": false },
+          { "rad": "En ärlig rad om oss, inget mer", "visualisera": true, "falsifiera": true, "ingen_annan": false },
+          { "rad": "Paketet har hunnit fram, och en rad om hur det var räcker.", "visualisera": true, "falsifiera": true, "ingen_annan": false },
+          { "rad": "Låtsasmat på riktiga fötter. Hur blev det?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+          { "rad": "Recensera butiken", "visualisera": true, "falsifiera": true, "ingen_annan": false }
+        ],
+        "version": 1
+      }
+    },
+    { "typ": "vanta", "varde": 7, "enhet": "days" },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f09-e2",
+        "namn": "FLOW_recension_E2_M_missade-du-den-har_v1",
+        "memo": "Hypotes: den som inte klickade i E1 antingen missade mejlet eller sköt upp det, inte att de tackade nej. En mycket kort påminnelse utan att upprepa hela resonemanget, och som säger rakt ut att vi inte hör av oss igen efter detta, bör fånga några till utan att kännas som påtryckning för resten. Går bara till den som inte klickat i E1 (stegfilter i Spoks).",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "Axels beställning 2026-09-27 (recensionsflödet saknades)",
+          "lardom": null,
+          "avatar": "köparen som inte klickade i första mejlet",
+          "begar": "kunna välja fritt utan press",
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "low",
+          "prefix": "Recension",
+          "kod": "M"
+        },
+        "amnesrader": [
+          { "text": "Missade du den här?", "begar": "uppmärksamma att mejlet kan ha kommit bort" },
+          { "text": "En sista fråga, sen är vi klara", "begar": "veta att vi inte hör av oss om detta igen" },
+          { "text": "Fortfarande läge, om du vill", "begar": "kunna välja fritt utan press" }
+        ],
+        "forhandstext": "Samma korta fråga som sist, och sen lämnar vi det.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Glömde du bort oss?",
+            "text": "Hej {{fornamn}}! Vi hörde inget efter förra mejlet, och det är okej. Vill du ändå dela hur det var att handla hos oss, eller hur strumporna togs emot, är du varmt välkommen."
+          },
+          {
+            "typ": "knapp",
+            "text": "Recensera butiken",
+            "lank": "url:https://judge.me/reviews/matstrumpor.se"
+          }
+        ],
+        "tretest": [
+          { "rad": "Missade du den här?", "visualisera": false, "falsifiera": true, "ingen_annan": false },
+          { "rad": "En sista fråga, sen är vi klara", "visualisera": false, "falsifiera": true, "ingen_annan": false },
+          { "rad": "Fortfarande läge, om du vill", "visualisera": false, "falsifiera": true, "ingen_annan": false },
+          { "rad": "Samma korta fråga som sist, och sen lämnar vi det.", "visualisera": false, "falsifiera": true, "ingen_annan": false },
+          { "rad": "Glömde du bort oss?", "visualisera": false, "falsifiera": true, "ingen_annan": false }
+        ],
+        "version": 1
+      }
+    }
+  ]
+}
