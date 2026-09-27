@@ -2443,3 +2443,61 @@ Samma två rader, samma md5 (`d9ab48ff…` / `271bf976…`), samma slutkort med
 token bär US-marknadsvakten, NO-rundan och speglingen. Kön gick igenom efter
 15 minuters paus. En strypt kö är inte en tom kö: läs om innan något
 rapporteras som klart.
+
+### USA-runda 14 — 2026-09-27
+
+Kön: 7 rader (2 bilder, 5 videor). **Båda bilderna live, videorna hålls tredje
+dygnet** — HeyGen-plånboken är fortfarande tom.
+
+| SE-rad | US-annons | Adset | Ad-ID | Läge |
+|---|---|---|---|---|
+| `CaraShellRoof_OB_108_1` | `CaraShellRoof_US_OB_108_1` | `CARASHELL_US_OB` | `120251634831160435` | ACTIVE |
+| `CaraShellRoof_OB_110_1` | `CaraShellRoof_US_OB_110_1` | `CARASHELL_US_OB` | `120251634835850435` | ACTIVE |
+
+Approved-kön: 60 rader, **0 eftersläpande**. Butiken redo: produktsidan och
+landningssidan svarar 200 som amerikansk kund, $199 från $249.
+
+**Två invändningsannonser, två olika järnregler — båda höll.** OB_108 svarar
+"blåser det inte sönder?" och får ALDRIG lova att överdraget inte kan blåsa
+av: den visar och namnger infästningen ("the strap clips into a hook, not a
+knot you're hoping holds") och stannar där. OB_110 svarar "är det vattentätt?"
+och får ALDRIG skriva ordet: varken *waterproof* eller *water-resistant* står
+någonstans, utan mekanismen gör jobbet (regnet rinner av ytan i stället för
+att bli stående). OCR på de färdiga bilderna bekräftar båda.
+
+**Måtten räknas om för marknaden, inte skrivs av.** 2,5 m → 8 ft och
+10,5 m → 34 ft, samma omräkning som US-produktsidan själv gör
+("21 × 10 ft (6.5 × 3 m)"). Ett metermått i en amerikansk annons är obegripligt
+för läsaren; en omräkning som inte kommer ur sidans egna tal är påhittad.
+Briefens tillåtna tal blir alltså 199/249/50/20 % + 8 ft/34 ft (OB_108) och
++ 210D (OB_110) — inget annat, och OCR:en räknar efter.
+
+⚠️ **Pillret är SMALARE än den svenska texten plus renderarens marginal.**
+OB_108:s pill är 500 px och det svenska bläcket 471 px — designen har ~15 px
+luft, renderaren vill ha 6 % (30 px). Maxbredden blir därför 432 px, inte 471.
+Samma sak i OB_110 (416 px). Den engelska raden mättes mot den RIKTIGA rutan i
+den riktiga fonten **före** rendering (`passa.py`), och OB_110:s första etikett
+var 458 px — den hade krympt till 22 px och synts som mindre text än den
+svenska. Mät rutan, inte tecknen.
+
+**Storlekarna är per bild, igen.** Båda bilderna delar mall och båda gav
+rubrik 77 / underrad 40 / pris 32 / knapp 41 — men etiketten blev 28 i OB_108
+och 24 i OB_110. Samma mall, olika pill.
+
+✅ **Marknadsvakten (ny i kommandofilen i dag, steg 6b) körd efter
+uppladdningen:** alla 12 adsets i US-kampanjen bär flödesplaceringarna, och
+startsidan, båda landningssidorna, produktsidan och kassan läses som engelska
+av en amerikansk kund med US som förvalt land. Inget hade glidit, så inget
+rättades.
+
+⚠️ **16 781 kr gick till Instagram Stories i dag och 2 570 kr i går**, före att
+adseten sattes till bara flödet 11:32 UTC. Vakten larmar med rätt inte — dygnet
+bär spend från före bytet — men pengarna är spenderade, och i dag är det
+huvuddelen av dygnets 19 263 kr. **Läs morgondagens siffra innan någon säger
+att läckan är stoppad**: det är första hela dygnet med rätt placeringar, och
+det är det dygnet som bevisar det.
+
+Kvar i `SE-ACTIVE to be translated`: `CaraShellRoof_CS_109_H1`, `PD_110_H1`,
+`CO_105_H1`, `OB_103_H1`, `OB_104_H1`. HeyGen-plånboken står på $0,10 med
+auto-påfyllning av. Ingen ny kommentar skrevs — inget har ändrats sedan den
+som står där.

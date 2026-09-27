@@ -1,0 +1,23 @@
+{
+ "_kalla": "Avläst ur SE-bilderna 2026-09-27 med oversatt-bild.py --analys (plattor, pill och knapp) och matrader.py (radernas y/x). Båda bilderna delar mall: rubrik i TRE rader och underrad i två på en ljus platta högst upp, en mörk pill med vit text över fotot, prisrad på ljus platta och vit fet text i den blå knappen. Pillets läge skiljer: OB_108 har den nere till HÖGER, OB_110 till VÄNSTER.",
+ "CaraShellRoof_OB_108_1": {
+  "mall": "OPS",
+  "former": [
+   { "typ": "fri",    "roll": "rubrik",   "rader": ["Remmen hakar i en krok, inte i en knut du hoppas håller."] },
+   { "typ": "fri",    "roll": "underrad", "rader": ["Remmar på alla fyra sidor, 2,5 m och justerbara, hakas fast i en krok i nederkant."] },
+   { "typ": "platta", "roll": "etikett",  "rader": ["2 extra spännremmar (10,5 m) ingår"] },
+   { "typ": "fri",    "roll": "pris",     "rader": ["1 129 kr (ord. 1 469 kr), spara 340 kr (23 %)"] },
+   { "typ": "knapp",  "roll": "cta",      "rader": ["Beställ ditt taköverdrag"] }
+  ]
+ },
+ "CaraShellRoof_OB_110_1": {
+  "mall": "OPS",
+  "former": [
+   { "typ": "fri",    "roll": "rubrik",   "rader": ["Regnet rinner av vävens yta i stället för att bli stående."] },
+   { "typ": "fri",    "roll": "underrad", "rader": ["Silverbelagd 210D-oxfordväv, inte en tunn presenning."] },
+   { "typ": "platta", "roll": "etikett",  "rader": ["Silverbelagd väv möter solen, inte taket."] },
+   { "typ": "fri",    "roll": "pris",     "rader": ["1 129 kr (ord. 1 469 kr), spara 340 kr (23 %)"] },
+   { "typ": "knapp",  "roll": "cta",      "rader": ["Beställ ditt taköverdrag"] }
+  ]
+ }
+}
