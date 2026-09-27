@@ -2,6 +2,34 @@
 
 Granskningen läste alla live-flöden och alla kampanjer i Spoks (`f716ae36-68ae-4f1c-a45e-96c35d5637a0`) mot mejlreglerna och verifierade varje fynd en gång till. 31 bekräftade fynd. Källa: get_flow/get_campaign, curl mot Shopify och Judge.me:s API, 2026-09-26 10:30–12:50 CEST.
 
+## Läget 2026-09-27 09:30 CEST: live-listan är stängd, genom kopior
+
+Inget av live-fynden nedan rättades i originalet (MCP:n kan inte, och Axel skulle inte skriva
+om text i appen). Varje flöde med fel fick en rättad kopia byggd inaktiv via MCP, Axel slog på
+kopian och stängde av originalets trigger, och de sändsteg i originalen som bar felen är av.
+Alla id:n, och vad de inrullade i originalen fortfarande får, står i `../README.md` → "Läget
+2026-09-27". Tillbakaläst med `get_flow`/`search_campaigns` 09:30 CEST.
+
+| Fynd nedan | Stängt genom |
+|---|---|
+| Falska citat i F01 E2 | F01 Välkomst v2 `f11d04ab-…` live 07:56 CEST; originalets "Tanköverdraget, slipmaskinen och två till" AV 07:55 (87 väntande får det aldrig) |
+| Falska citat i K01, storleksraden | K01 v2 `0c760c3e-…` schemalagd tis 29/9 18:00 (Warmup tier 1); gamla K01 `51c37c20-…` återkallad till utkast 08:17 |
+| Review gating i F14 | F14 Recension Trustpilot v2 `9bef2ef0-…` live 09:05 (Axels val A: alla stjärnor till Trustpilot); originalets steg AV, de 115 väntande får ingen förfrågan |
+| F04 v2 E2 "Andra som köpte…" | steget AV i både v2 och v3; ersatt av **F04 Levererat `0b2beeb0-…`** på `order_delivered` (oprövat — kontrollen står i README) |
+| F01 utan "inte köpt sedan start" | stegfilter på mejl 2 och 3 i v2 |
+| F02 E2 senast visade produkt, F02 E2/F01 E3-texterna, F02 återinträde | F02 Övergiven kassa v2 `f98eb12e-…` live 09:20 (abandonedCart, frågorna besvarade, P7D); F01 v2 E3; originalets "Tre frågor du kanske har innan du betalar" AV |
+| F04 v2 E1 "exakt var ditt paket är", dubbla villkoren, "jag svarar själv", återinträdet | F04 Efter köp v3 (kredit) `3c8443d3-…` live 08:28, reenroll av, väntan 5 d (Axel). ⚠️ De 96 som redan låg i gamla v2 får kreditmejlet MED den gamla texten — valt hellre än att de blir utan KREDIT100 |
+| F05 E1 och E2 | F05 Vinna tillbaka v2 `3ef1aab0-…` live 09:27; originalets "Tre prylar för säsongen" AV, "Det har hänt en del sedan sist" kvar för de 123 (tidigast januari 2027) |
+| F07 E1, E2, spöhållaren, priserna | F07 Motorhölje till båtmotorskydd v2 `98d46ff1-…` live 09:26 (produktblock i stället för fast text) |
+| F13 fyra färger | F13 Tips sätesöverdrag v2 `ecdbd45a-…` live 09:24; originalets enda inrullade får den gamla texten |
+| F08–F13 21 d, F14 22 d | Axels egna ändringar, gäller — inskrivna i README, rörs inte |
+
+**Fortfarande öppet (inget av det går ut felaktigt):** F03 E2:s förhandstext (F03 är orört
+original), F11 E1:s fasta pristext (följer inte Shopify), den dubbla sidfotsraden (inte
+kontrollerad i förhandsvisning), K18:s topp 3-mätning före schemaläggning, tankstrecken i
+Shopifys produkttitlar (Axels beslut). Utkasten K02–K22 är inte omlästa 2026-09-27;
+"Kontrollen av utkasten" nedan gäller.
+
 ## Redan gjort 2026-09-26
 
 - Gamla F04 `786d2580-…`: båda sändstegen av (Axels klick). F04 v2 (kredit) `bfc5beee-…` live med KREDIT100.

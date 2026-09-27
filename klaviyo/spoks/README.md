@@ -15,26 +15,103 @@ node klaviyo/spoks/konvertera.mjs --brand carashell  # flerspråkigt: payload/<s
 
 Workspace: Bäverbutiken `f716ae36-68ae-4f1c-a45e-96c35d5637a0` (Shopify 4snrw0-mg).
 
-## ⛔ LIVE sedan 2026-09-26 09:02–09:05 CEST (mätt med get_flows/get_flow 10:26 CEST)
+## ⛔ Läget 2026-09-27 09:30 CEST — rättade kopior live, originalens triggers av (mätt med get_flows, get_flow och search_campaigns)
 
-**Alla 13 flöden är påslagna genom Axels egna klick i appen** (`activated` 07:02:13–07:05:05
-UTC), och F04 är ersatt av en ny version med butikskrediten. Spoks-MCP:n kan inte slå på
-flöden, aktivera mejlsteg eller skicka kampanjer; det görs bara i appen, av Axel. Den kan
-däremot stänga av ett sändsteg (`isEnabled: false`) och bara ändra ett flöde som är inaktivt.
+**Alla 13 flöden slogs på av Axel 2026-09-26 09:02–09:05 CEST** (`activated` 07:02:13–07:05:05 UTC).
+Granskningen samma dag (`baverbutiken/KVAR.md`, 31 fynd) hittade falska "verifierad kund"-citat
+(F01 mejl 2, K01), review gating (F14) och dubbel KREDIT100 vid återinträde (F04 v2) i det som
+låg live — och Spoks-MCP:n kan varken slå på flöden, aktivera mejlsteg, skicka kampanjer eller
+ändra ett aktivt flöde (`update_flow_step` svarar "Cannot edit a step in an active flow"). Den
+kan bygga inaktiva flöden och stänga av sändsteg. Därför byggdes **rättade kopior inaktiva via
+MCP** (2026-09-26 kväll; F14 v2 och F04 Levererat 2026-09-27 morgon), och **Axel slog på dem i
+appen 2026-09-27 07:55–09:28 CEST** (sändstegen först, sedan flödet) och stängde av originalens
+triggers plus de sändsteg som bar felen. **Varje klick är tillbakaläst med `get_flow`.**
 
-| Flöde | Spoks-id | Startar på | Väntan | Läge 10:26 |
+### Det som skickar nu
+
+| Flöde (namnet i flödeslistan) | Spoks-id | Startar på | Väntan | Inrullade 09:30 |
 |---|---|---|---|---|
-| F01 Välkomst | `b8165fed-50a2-42e4-a275-494433d3f7f0` | ny kontakt, subscribed | 1 min, 2 d, 3 d | live, 11 inrullade |
-| F02 Övergiven kassa | `df764d97-2fb0-4469-8675-6337edcb7b1b` | checkout, inget köp sedan | 3 h, 1 d, 2 d | live, 2 |
-| F03 Webbhistorik | `f9001da7-60cb-4742-bd5a-8d4397cfb0e6` | produktvisning | 4 h, 1 d | live, 1 |
-| **F04 Efter köp v2 (kredit)** | `bfc5beee-5ef6-40ee-8a80-634c59a7d695` | order skapad | 3 d, 16 d | live sedan 10:16, 2 |
-| F04 Efter köp (gamla) | `786d2580-b0e1-4e98-bc3d-404c435db62a` | order skapad | 3 d, 16 d | **båda sändstegen AV, triggern inaktiv** sedan 10:17 |
-| F05 Vinna tillbaka | `d27ea9f1-a609-425a-a7f5-8d900fecc366` | order, inget köp sedan | 120 d, 14 d | live, 14 |
-| F07 Motorhölje → båtmotorskydd | `84cd7589-d549-4ad7-ab9d-c711384a4396` | order med Marin Motorhölje | 21 d, 7 d (hoppar den som redan köpt båtmotorskyddet) | live, 0 |
-| F08–F13 Tips (bälteslip, taköverdrag, termoskydd, båtmotorskydd, IBC, sätesöverdrag) | `c7dc0fb1…`, `de6d925c…`, `e09a5094…`, `a94ef839…`, `74c973b4…`, `f6186338…` | order med produkten | 14 d, **utom F11 båtmotorskydd 21 d** (Axels ändring i appen 10:17) | live, 0/3/2/1/0/0 |
-| F14 Recension Trustpilot | `23d2710c-1a33-44c3-bb25-df1f691b6161` | order skapad (max var 90:e dag) | 16 d, 18:00 | live, 14 |
+| **F01 Välkomst v2** | `f11d04ab-1789-4a88-9abb-a3aaf6e4219d` | ny kontakt, subscribed | 1 min, 2 d, 3 d; mejl 2 och 3 bara till den som inte köpt sedan inrullningen | 17 |
+| **F02 Övergiven kassa v2** | `f98eb12e-f7a2-4b0b-ae02-f738776b5282` | checkout, inget köp sedan; återinträde tidigast efter 7 d | 3 h, 1 d, 2 d | 0 |
+| F03 Webbhistorik (original) | `f9001da7-60cb-4742-bd5a-8d4397cfb0e6` | produktvisning | 4 h, 1 d | 1 |
+| **F04 Efter köp v3 (kredit)** | `3c8443d3-4916-40ad-b83e-5345c8752c2e` | order skapad, **inget återinträde** | **5 d** → "Din beställning är på väg" med KREDIT100 (Axels ändring 09:02 CEST, se nedan); mejl 2 "Kom allt fram som det ska" **AV** | 15 |
+| **F04 Levererat (kom allt fram)** | `0b2beeb0-5288-46cb-80a2-2845bd05b7c5` | **paketet levererat** (`order_delivered`) | 1 dygn, kl 10:00 | 0 — ⚠️ oprövat, se nedan |
+| **F05 Vinna tillbaka v2** | `3ef1aab0-24b1-4c84-80a4-840f7a4cc637` | order, inget köp sedan | 120 d, 14 d | 0 |
+| **F07 Motorhölje till båtmotorskydd v2** | `98d46ff1-fb25-44b6-8916-2297198e5ea6` | order med Marin Motorhölje; hoppar den som redan köpt båtmotorskyddet | 21 d, 7 d | 0 |
+| F08 Tips bälteslip (original) | `c7dc0fb1-d866-48df-aecd-08657bf9ce06` | order med produkten | 21 d (Axels) | 6 |
+| F09 Tips taköverdrag (original) | `de6d925c-35b1-41d3-8294-577425346734` | order med produkten | 21 d (Axels) | 24 |
+| F10 Tips termoskydd (original) | `e09a5094-d309-4b60-8274-f76a23ab3bd4` | order med produkten | 21 d (Axels) | 11 |
+| F11 Tips båtmotorskydd (original) | `a94ef839-d686-408b-b6d9-a5434e07932c` | order med produkten | 21 d (Axels) | 14 |
+| F12 Tips IBC-överdrag (original) | `74c973b4-7024-478d-915f-88beccad5dd8` | order med produkten | 21 d (Axels) | 3 |
+| **F13 Tips sätesöverdrag v2** | `ecdbd45a-b271-4443-939b-41905042895f` | order med produkten | 21 d | 0 |
+| **F14 Recension Trustpilot v2** | `9bef2ef0-0cf8-46b1-95f8-012d0d406e2d` | order skapad, max var 90:e dag | 22 d, kl 18:00 | 8 |
 
-Dubbletten `e2ff6c1d-…` ("RADERA dubblett (tom)") finns inte längre i `get_flows`.
+F03 och F08–F12 är orörda original: granskningen hade inget fel i dem utöver F03 E2:s
+förhandstext och F11 E1:s fasta pristext (båda små, öppna i KVAR.md). Väntetiderna 21 d i
+tipsflödena och 22 d + 18:00 i F14 är Axels egna ändringar i appen 2026-09-26 och rörs inte.
+
+### Originalen: triggern av, det här får de som redan låg i dem
+
+| Original | Spoks-id | Sändstegen | Inrullade | Vad de får |
+|---|---|---|---|---|
+| F01 Välkomst | `b8165fed-50a2-42e4-a275-494433d3f7f0` | "Axel här. Jag driver Bäverbutiken." på (ingen ny rullar in), **"Tanköverdraget, slipmaskinen och två till" AV 07:55 CEST**, "Så funkar det när du handlar hos oss" AV 09:03 | 87 | ingenting mer — citatmejlet skulle ha gått mån 28/9 09:03 |
+| F02 Övergiven kassa | `df764d97-2fb0-4469-8675-6337edcb7b1b` | "Din kundvagn är fortfarande packad" på, **"Tre frågor du kanske har innan du betalar" AV**, "Sista mejlet om din kassa" på | 2 | mejl 1 och 3 |
+| F04 Efter köp | `786d2580-b0e1-4e98-bc3d-404c435db62a` | båda AV sedan 2026-09-26 10:17 | 11 | ingenting (lyckohjulet och "ADD COUPON HERE: TACKIGEN" hann aldrig gå ut) |
+| F04 Efter köp v2 (kredit) | `bfc5beee-5ef6-40ee-8a80-634c59a7d695` | "Din beställning är på väg" **PÅ**, "Kom allt fram som det ska" AV | 96 | kreditmejlet 3 d efter ordern, med den gamla raden "exakt var ditt paket är" — valt hellre än att 96 köpare blir utan KREDIT100 |
+| F05 Vinna tillbaka | `d27ea9f1-a609-425a-a7f5-8d900fecc366` | "Det har hänt en del sedan sist" **PÅ**, "Tre prylar för säsongen" AV | 123 | mejl 1, tidigast januari 2027 |
+| F07 Motorhölje till båtmotorskydd | `84cd7589-d549-4ad7-ab9d-c711384a4396` | båda på | 0 | ingenting |
+| F13 Tips sätesöverdrag | `f6186338-08a1-41e6-beed-e61689a2f2d0` | på | 1 | tipsmejlet med "fyra färger" |
+| F14 Recension Trustpilot | `23d2710c-1a33-44c3-bb25-df1f691b6161` | AV | 115 | ingenting — ingen recensionsförfrågan alls (gating-mejlet skulle ha gått ~18/10) |
+
+⚠️ **Den stora flödesknappen i appen stänger bara triggern** (`trigger.isActive=false`, flödets
+`isActive` står kvar true) — de inrullade fortsätter genom stegen. Ett mejl som inte får gå ut
+måste stängas av på sitt eget sändsteg. Det är därför tabellen ovan skiljer på trigger och steg.
+
+### ⚠️ F04 Levererat är oprövat
+
+Axels fråga 2026-09-27 ("vi kör väl triggern på att när paketet kommit fram?") gav ett eget
+flöde på `order_delivered` i stället för v3:s mejl 2 på dag 21. Händelsen har aldrig triggats i
+den här workspacen: spårningsrutinen (`/sparning`, varje timme :16) skriver leveransskanningarna
+in i Shopify som fulfillment-event, och Spoks ska läsa dem som levererat, men det är inte mätt
+(söndag 27/9 levereras inget, så 0 inrullade säger inget än). **Kontroll: `get_flow
+0b2beeb0-…` → `contactsEnrolledCount` ska stiga när måndagens leveranser skrivits in.** Står
+den kvar på 0 tisdag 29/9: slå på "Kom allt fram som det ska" i F04 Efter köp v3 igen (Axels
+klick, https://app.spoks.com/baverbutiken/flows/3c8443d3-4916-40ad-b83e-5345c8752c2e). Det
+steget går 16 d efter kreditmejlet, så ingen köpare hinner passera det under tiden.
+
+**Varför 5 dagar i F04 v3** (Axels fråga "säker på att tidshorisonten är rätt?"): ordern →
+skickad går inte att mäta härifrån (Shopify svarar 403 för ordrar i den här miljön), men
+brandfilen säger packtid 1–2 arbetsdagar och spårningsdatan att första skanningen kommer i
+median 4,1 dygn efter bokningen (p90 7,3). Med 3 dagar hade var tredje kund fått "din
+beställning är på väg" innan paketet rört sig. Axel satte 5 dagar (delay 432000000 ms, 09:02
+CEST). Mät om när Shopify-ordrarna går att läsa.
+
+### Kampanjerna
+
+**K01 v2 `0c760c3e-3eec-4fc0-b40f-3ec16b37e330` är SCHEMALAGD tis 29/9 18:00**
+(`waiting_to_be_published`, `publishDate` 2026-09-29T16:00Z, mätt 09:30 CEST). Publiken
+Warmup tier 1 valde Axel i appen — publiken går inte att läsa via MCP. **Gamla K01
+`51c37c20-e00c-48c2-b144-089e62f62d14` (med citaten) är återkallad till utkast** 08:17 CEST.
+K02–K22 är utkast; K18 får inte schemaläggas utan ny topp 3-mätning (KVAR.md).
+
+### Regler ur de två dagarna (för nästa som ger Axel klick)
+
+- **Appen visar ÄMNESRADEN**, på mejlsteg och på kampanjer. Våra koder ("F01", "K01 v2") syns
+  bara i flödeslistans namn. Skriv ämnesraden eller direktlänken
+  (`https://app.spoks.com/baverbutiken/flows/<id>`, `https://app.spoks.com/baverbutiken/post/<id>/edit`),
+  aldrig "mejl 2" och aldrig "K01" (Axel 2026-09-27: kampanjerna "heter inte F01 eller F01V2, de
+  heter 'taket du aldrig går upp och kollar på'").
+- Steg som MCP:n byggt saknar `parameters.name` i `get_flow`; de importerade originalen har
+  namnet = ämnesraden. Beskriv ett namnlöst steg med ämnesraden och ordningen.
+- Sändsteg skapade via MCP är alltid av, och ett aktivt flöde går inte att ändra via MCP. Fel i
+  ett live-flöde = bygg en rättad kopia inaktiv, Axel slår på kopian och av originalets trigger
+  + de sändsteg som inte får gå ut. Be honom aldrig skriva om text i appen.
+- Max fem klick per meddelande, en mening per rad, exakta namn — och läs varje klick tillbaka
+  med `get_flow`/`search_campaigns` innan nästa lista. (Axel bröt själv femregeln till slut:
+  "Jag har ju inte ens aktiverat alla flöden nu ju!" — då gavs de sista 17 på en gång.)
+- Byt aldrig väntetiderna i F08–F14: de är Axels.
+
+### Historik: varför F04 byttes 2026-09-26, KREDIT100, avsändaren, importen
 
 **Varför F04 byttes (2026-09-26):** gamla F04 E1 bar lyckohjulet ("Snurra hjulet, vinn en
 gratis produkt", knappen till `/pages/din-gratisprodukt`) och en trasig importrad från Klaviyo,
@@ -45,46 +122,48 @@ till `https://baverbutiken.se/discount/KREDIT100?redirect=%2Fcollections%2Fall`;
 allt fram som det ska". Gamla E1 hann aldrig gå ut: första inrullningen var 09:02 och väntan
 är 3 dagar, stegen stängdes av 10:17. ⚠️ De 11 som beställde 09:02–10:16 ligger kvar i gamla
 F04 och får alltså inget F04-mejl alls (båda stegen av) — Shopifys egna ordermejl når dem ändå.
+Dagen efter ersattes v2 i sin tur av v3 (kopian ovan), av skälen i KVAR.md.
 
 **KREDIT100 i Shopify** (mätt med Spoks `discounts_search`, källa shopify): 100 kr av, köp från
 299 kr, en gång per kund, kombineras bara med fraktrabatter, aktiv sedan 2026-09-26 08:03 UTC,
 inget slutdatum.
 
-**Avsändaren** (mätt med `get_settings`): Bäverbutiken `kundsupport@baverbutiken.se`, reply-to
-samma. **K01 är schemalagd** (`waiting_to_be_published`, 2026-09-29 16:00 UTC = tisdag 18:00);
-K02–K22 är utkast.
+**Avsändaren** (mätt med `get_settings` 2026-09-26): Bäverbutiken `kundsupport@baverbutiken.se`,
+reply-to samma.
 
 Flödena F01–F13 fanns redan: Spoks importerade dem själv från Klaviyo med
 innehållet. Sessionen rättade det importen missade: tipsflödena och F07 hade
 ingen trigger alls, väntan 12 dagar i stället för 14, och F07 filtrerade på
 "totalt antal ordrar" i stället för om kunden redan köpt båtmotorskyddet.
+Dubbletten `e2ff6c1d-…` ("RADERA dubblett (tom)") finns inte längre i `get_flows`.
 
 Kampanjerna K01–K22 byggdes som utkast (Spoks: status draft, avregistreringslänk på).
-K01 schemalades av Axel i appen till tisdag 29/9 18:00 (mätt 2026-09-26 10:26).
+Gamla K01 schemalades av Axel 2026-09-26 och återkallades 2026-09-27 när K01 v2 tog dess plats.
 
-## Rättade kopior (v2/v3) byggda 2026-09-26 kväll — ersätter live-flödena
+## Rättade kopior (v2/v3) — vad varje kopia rättar mot originalet
 
 Granskningen i `baverbutiken/KVAR.md` hittade falska "verifierad kund"-citat (F01 E2, K01),
 review gating (F14), ett brutet spårningslöfte och dubbelt KREDIT100 (F04 v2) och en rad
-mindre fel (F02, F05, F07, F13). MCP:n kan inte ändra ett live-flöde (mätt 18:29 CEST:
-`update_flow_step` på F01 svarar "Cannot edit a step in an active flow"), så varje flöde
-fick en **rättad kopia byggd inaktiv via MCP**. Att slå på kopian (sändstegen först, sedan
-flödet) och stänga av originalet är Axels klick i appen. Väntetiderna är originalens,
-inklusive Axels 21 d i F13 och 22 d + 18:00 i F14.
+mindre fel (F02, F05, F07, F13). MCP:n kan inte ändra ett live-flöde (mätt 2026-09-26 18:29
+CEST: `update_flow_step` på F01 svarar "Cannot edit a step in an active flow"), så varje flöde
+fick en **rättad kopia byggd inaktiv via MCP**; Axel slog på kopiorna 2026-09-27 (tabellen
+"Det som skickar nu" ovan). Väntetiderna är originalens, inklusive Axels 21 d i F13 och 22 d +
+18:00 i F14 — utom F04 v3 där Axel satte 5 d.
 
 | Kopia | Spoks-id | Post-id (E1, E2, E3) | Vad som rättats mot originalet |
 |---|---|---|---|
 | **F01 Välkomst v2** | `f11d04ab-1789-4a88-9abb-a3aaf6e4219d` | `491d1b99…`, `b1f70673…`, `03544d7c…` | E2 utan citaten (Karin/Erik), ny förhandstext; E3 utan "från beställning till dörren" och "jag svarar själv"; stegfilter på E2 och E3: inget köp ELLER köp före inrullningen |
 | **F02 Övergiven kassa v2** | `f98eb12e-f7a2-4b0b-ae02-f738776b5282` | `c9376a0b…`, `518fe1b7…`, `ee9050d8…` | E2: kassans varor (abandonedCart) i stället för "senast visade produkt", de tre frågorna besvarade; E3 "så svarar vi"; återinträde tidigast efter 7 dagar |
-| **F04 Efter köp v3 (kredit)** | `3c8443d3-4916-40ad-b83e-5345c8752c2e` | `46400d0d…`, `77dcaccd…` | E1: "skriv in paketnumret från leveransmejlet", villkoren en gång + "går inte ihop med andra rabatter", "så hjälper vi dig"; E2: rubriken "Tre prylar till att kika på"; **inget återinträde** (KREDIT100 är en gång per kund) |
+| **F04 Efter köp v3 (kredit)** | `3c8443d3-4916-40ad-b83e-5345c8752c2e` | `46400d0d…`, `77dcaccd…` | E1: "skriv in paketnumret från leveransmejlet", villkoren en gång + "går inte ihop med andra rabatter", "så hjälper vi dig"; E2: rubriken "Tre prylar till att kika på" — **steget AV sedan 2026-09-27, ersatt av F04 Levererat**; **inget återinträde** (KREDIT100 är en gång per kund); väntan 5 d (Axel 2026-09-27) |
+| **F04 Levererat (kom allt fram)** | `0b2beeb0-5288-46cb-80a2-2845bd05b7c5` | `1a15ed11…` | nytt flöde: "Kom allt fram som det ska" på `order_delivered` + 1 dygn kl 10:00, i stället för dag 21 efter ordern (Axels idé 2026-09-27); oprövat, se ovan |
 | **F05 Vinna tillbaka v2** | `3ef1aab0-24b1-4c84-80a4-840f7a4cc637` | `dd221fc0…`, `e28604a8…` | E1: Bävertratten som belagt återköp + Marin Motorhölje och Fiskespöhållare i raden; E2: "Tre prylar till att kika på", Bävertratt i stället för adventskalendern |
 | **F07 Motorhölje till båtmotorskydd v2** | `98d46ff1-fb25-44b6-8916-2297198e5ea6` | `897f1a24…`, `1e016b67…` | E1: motsäger inte längre produktsidan ("skyddet går ända ner över riggen"); E2: "Mer för båten", utan spöhållaren (inte båtprodukt, Axel 2026-09-25) och utan påhittat "andra båtägare"; priserna som Spoks produktblock (följer Shopify) |
 | **F13 Tips sätesöverdrag v2** | `ecdbd45a-b271-4443-939b-41905042895f` | `c8a399d8…` | "Finns i flera färger" (bara grå och svart i lager) |
-| F14 Recension Trustpilot v2 | byggs när Axel valt A (alla stjärnor till Trustpilot) eller B (alla till Judge.me) | | stjärna 1–3 → Judge.me och 4–5 → Trustpilot är review gating |
+| **F14 Recension Trustpilot v2** | `9bef2ef0-0cf8-46b1-95f8-012d0d406e2d` | `34f9ce74…` | alla fem stjärnor till Trustpilot (Axels val A 2026-09-27 av A = allt till Trustpilot / B = allt till Judge.me), ingen Judge.me-länk; 22 d + 18:00 och återinträde 90 d som originalet |
 
 Stegen i kopiorna saknar `parameters.name` i `get_flow` (MCP:n sätter inget) — i appen
-identifieras de på ämnesraden. K01 v2 `0c760c3e-3eec-4fc0-b40f-3ec16b37e330` (utkast,
-utan citaten) ersätter gamla K01 `51c37c20-…` (schemalagd tis 29/9 18:00 MED citaten).
+identifieras de på ämnesraden. K01 v2 `0c760c3e-3eec-4fc0-b40f-3ec16b37e330` (utan citaten,
+storleksraden "nio längder, 5,5 till 13,5 meter") ersätter gamla K01 `51c37c20-…`.
 
 ## Klaviyo avstängt 2026-09-26
 
