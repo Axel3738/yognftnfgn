@@ -75,9 +75,24 @@ export function lasProduktIds(brandId, har = HAR) {
 
 // Recensioner: cachen klaviyo/output/<brand>/recensioner.json, eller (kalla
 // 'produktfil') butikens egna publicerade recensioner ur factory/produkter/<handle>.yaml.
+// ⛔ Bara verifierade köp blir citat (citatet signeras "verifierad kund"): cachen
+// filtreras på `verifierad: true` (recensioner.mjs sätter den bara på verifierade
+// köp), och produktfilens recensioner kräver `verifierad: true` per rad.
+// Mätt 2026-09-26: CaraShells takskydd-recensioner är Bäverbutikens importerade
+// (Judge.me `verified: nothing`, @example.com) — de gick annars ut som
+// "Karin, verifierad kund".
+export function baraVerifierade(recensioner) {
+  const ut = {};
+  for (const [h, lista] of Object.entries(recensioner ?? {})) {
+    const ok = (lista ?? []).filter((r) => r?.verifierad === true);
+    if (ok.length) ut[h] = ok;
+  }
+  return ut;
+}
+
 export function lasRecensioner(brand, brandId, rot = ROT) {
   const cache = path.join(rot, 'klaviyo', 'output', brandId, 'recensioner.json');
-  if (fs.existsSync(cache)) return JSON.parse(fs.readFileSync(cache, 'utf8')).recensioner ?? {};
+  if (fs.existsSync(cache)) return baraVerifierade(JSON.parse(fs.readFileSync(cache, 'utf8')).recensioner);
   if (brand?.recensioner?.kalla === 'produktfil') {
     const ut = {};
     const mapp = path.join(rot, 'factory', 'produkter');
@@ -102,7 +117,8 @@ export function recensionerUrYaml(yaml) {
     const betyg = Number(f('betyg'));
     const text = f('text');
     if (!text || !(betyg >= 4)) continue;
-    ut.push({ namn: kortNamn(f('namn')), betyg, text, datum: f('datum') });
+    if (f('verifierad') !== 'true') continue;
+    ut.push({ namn: kortNamn(f('namn')), betyg, text, datum: f('datum'), verifierad: true });
   }
   return ut.sort((a, b) => b.betyg - a.betyg);
 }

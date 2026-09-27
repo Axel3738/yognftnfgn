@@ -23,7 +23,7 @@
       "selectionMode": "manual",
       "products": [
         {
-          "id": "23456c03-9621-493f-a4df-57b6cdff0e3d",
+          "id": "c14d6b41-f0f6-4da1-9171-5f47bac617c0",
           "button": "Se produkten"
         }
       ],
@@ -57,7 +57,7 @@
       "selectionMode": "manual",
       "products": [
         {
-          "id": "23456c03-9621-493f-a4df-57b6cdff0e3d",
+          "id": "3916cdca-0432-4350-8636-5d6c5392b5c3",
           "button": "Se produkten"
         },
         {
@@ -157,7 +157,7 @@
     },
     {
       "type": "regular",
-      "text": "Sista dag för att beställa och få paketet i tid till jul är torsdag 3 december. Efter det hinner det inte fram.",
+      "text": "Sista dag för att beställa och få paketet i tid till jul är torsdag 3 december. Efter det kan vi inte lova att det hinner fram.",
       "alignment": "left"
     },
     {
