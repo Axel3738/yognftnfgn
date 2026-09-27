@@ -1186,7 +1186,14 @@ själv), aldrig Shopify-admin, ingen TrustBox eller kodsnutt på sajten,
 domänverifiering bara via mejllänk, och prompten slutar med att läsa att
 butiken laddar och att NS är ns1/ns2.loopia.se (facit 2026-09-27 14:22 UTC: NS
 ns1/ns2.loopia.se, A 23.227.38.65, MX Loopia). Mät DNS igen efter körningen
-innan något kallas klart. **Gratisvägen till automatisk räkning är
+innan något kallas klart. ⚠️ **Cowork skapar aldrig konton** (mätt 2026-09-27
+kväll: stannade vid registreringssidan) — steg 1, registreringen på
+business.trustpilot.com/signup, är Axels egna klick; Cowork tar över när han
+skriver "inloggad". **Första recensionen ur Spoks-kampanjen kom 2026-09-27
+cirka 16:10 CEST**, drygt två timmar efter utskicket: 5 stjärnor, märkt "Omdöme
+utan inbjudan" (så märks allt via evaluate-länken) — profilen 3 omdömen,
+TrustScore 3,2, namnet "Baverbutiken" och kategorin "Klädbutik" (fel, rättas
+efter claimen). **Gratisvägen till automatisk räkning är
 notismejlen i brevlådan vi redan läser** — läsaren `trustpilotMejl()` byggs ur
 första riktiga mejlet, aldrig ur en gissad mall (`bonus/README.md` →
 Trustpilot). `kundtjanst/arenden.mjs arSystem` räknar `trustpilot.com` som

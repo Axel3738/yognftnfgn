@@ -130,7 +130,14 @@ ha hunnit fram (22 dagar efter köpet, samma gräns som F14):
   2026-09-27 ~15:00 CEST (sidan gick att läsa via WebFetch, inte via curl/Chromium): profilen
   var **oclaimad** ("Ej registrerad profil"), **2 recensioner, båda 1 stjärna, TrustScore 2,9**
   — alltså vad 1 048 kunder möter när de klickar på en stjärna; business unit-id
-  `6a8fefb70fa83ca3905331e9` (= `TRUSTPILOT_BUSINESS_UNITS`). ⚠️ **API-nyckeln ingår inte i
+  `6a8fefb70fa83ca3905331e9` (= `TRUSTPILOT_BUSINESS_UNITS`). **Första recensionen ur
+  kampanjen syntes på profilen cirka 16:10 CEST** (läst 16:36 som "25 minuter sedan"): 5
+  stjärnor, "kund", "Enkelt å snabbt lev…", märkt **"Omdöme utan inbjudan"** — så märks varje
+  recension via evaluate-länken, eftersom vi inte använder Trustpilots egna inbjudningar.
+  Profilen då: 3 omdömen, TrustScore 3,2, namnet "Baverbutiken", kategorin "Klädbutik" (fel,
+  rättas efter claimen). ⚠️ **Cowork skapar aldrig konton** (stannade vid registreringssidan
+  samma kväll): registreringen är Axels egna klick, Cowork tar över efter "inloggad".
+  ⚠️ **API-nyckeln ingår inte i
   gratisplanen:** Trustpilots prissida listar API som tillägg från Plus-planen (319 dollar/mån
   per domän) — Axels pengabeslut. `stonebite/cowork/8-trustpilot.txt` claimar profilen gratis
   (kontot `kundsupport@baverbutiken.se`), slår på mejlnotis vid ny recension och läser av
