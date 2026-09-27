@@ -22,7 +22,8 @@ import { fileURLToPath } from 'node:url';
 export const TILLATET_TOMT = new Set(['liquid.ms-sista-dag.fars_dag', 'liquid.ms-sista-dag.jul']);
 export const FORBJUDET = ['Sjöhed', 'Harestad', 'sushisock', 'Bäverbutiken', 'baverbutiken', 'Bäverbutikens'];
 // Identiskt med svenskan är okej för egennamn, adresser, e-post, tal och korta tekniska värden.
-const OK_IDENTISKT = /^(Matstrumpor(\.se)?|STONEBITE ECOM AB|Standard|Klarna|Postnord|PostNord|Shop Pay|PayPal|Apple Pay|Google Pay|One Size|Ja|Nej|Par|Pizza|Donut|Sushi|kundsupport@matstrumpor\.se|\d[\d ,.:–-]*( kr)?|Info(rmation)?|Kontakt|Profil|Instagram|Facebook|TikTok|Org\.nr.*|Wide Pia|Jonas|Gittan|Annika|Standard)$/i;
+// "gratis", "Egenskap", "Pris" är samma ord på bokmål och danska (falsklarm 2026-09-27, nb-A2).
+const OK_IDENTISKT = /^(Matstrumpor(\.se)?|STONEBITE ECOM AB|Standard|Klarna|Postnord|PostNord|Shop Pay|PayPal|Apple Pay|Google Pay|One Size|Ja|Nej|Par|Pizza|Donuts?|Sushi|Hamburger|gratis|Mest gratis|Egenskap|Pris|kundsupport@matstrumpor\.se|\d[\d ,.:–-]*( kr)?|Info(rmation)?|Kontakt|Profil|Instagram|Facebook|TikTok|Org\.nr.*|Wide Pia|Jonas|Gittan|Annika|Standard)$/i;
 
 const taggar = (s) => [...String(s ?? '').matchAll(/<\/?([a-zA-Z][a-zA-Z0-9-]*)(\s[^>]*)?>/g)].map((m) => `${m[0].startsWith('</') ? '/' : ''}${m[1].toLowerCase()}`);
 const attr = (s, namn) => [...String(s ?? '').matchAll(new RegExp(`\\s${namn}=["']([^"']*)["']`, 'g'))].map((m) => m[1]);
