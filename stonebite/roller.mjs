@@ -34,6 +34,9 @@ export const SIDOR = Object.freeze([
   { nyckel: 'leverans', titel: 'Leverans', url: '/app/leverans', beskrivning: 'Paket på väg till kund' },
   { nyckel: 'bonus', titel: 'Bonus', url: '/app/bonus', beskrivning: 'Vad alla tjänar utöver lönen' },
   { nyckel: 'system', titel: 'System', url: '/app/system', beskrivning: 'Allt som är byggt och vad det gör' },
+  // Laget efter arbetssidorna: startsidan är rollens FÖRSTA sida, och VA:n ska
+  // landa i Kundtjänst, redigeraren på topplistan.
+  { nyckel: 'laget', titel: 'Laget', url: '/app/laget', beskrivning: 'Kreativa arbetet och veckans vinnare — inga kronor' },
   // Kalendern ligger sist bland arbetssidorna med flit: startsidan efter
   // inloggning är den FÖRSTA sidan rollen får se, och en redigerare ska landa
   // på topplistan, inte i en tom kalender.
@@ -50,7 +53,7 @@ export const ROLLER = Object.freeze({
   agare: {
     namn: 'Ägare',
     beskrivning: 'Allt. Pengar, annonser, folk, bonus och konton.',
-    sidor: ['oversikt', 'varumarken', 'kalender', 'butiker', 'annonser', 'produkttest', 'redigerare', 'kundtjanst', 'recensioner', 'leverans', 'bonus', 'system', 'mig', 'konton'],
+    sidor: ['oversikt', 'varumarken', 'kalender', 'butiker', 'annonser', 'produkttest', 'redigerare', 'laget', 'kundtjanst', 'recensioner', 'leverans', 'bonus', 'system', 'mig', 'konton'],
     ratt: ['pengar', 'spend', 'marginal', 'konton', 'alla-butiker', 'bonus-alla', 'godkanna', 'system', 'varumarken'],
   },
   // ⚠️ Namnen är medvetet övertydliga sedan 2026-09-23: Mechiles konto stod som
@@ -59,7 +62,7 @@ export const ROLLER = Object.freeze({
   chef: {
     namn: 'Chef — ser ALL ekonomi',
     beskrivning: 'Allt utom vem som får logga in. Ser omsättning, spend och ROAS för alla butiker.',
-    sidor: ['oversikt', 'varumarken', 'kalender', 'butiker', 'annonser', 'produkttest', 'redigerare', 'kundtjanst', 'recensioner', 'leverans', 'bonus', 'system', 'mig'],
+    sidor: ['oversikt', 'varumarken', 'kalender', 'butiker', 'annonser', 'produkttest', 'redigerare', 'laget', 'kundtjanst', 'recensioner', 'leverans', 'bonus', 'system', 'mig'],
     ratt: ['pengar', 'spend', 'marginal', 'alla-butiker', 'bonus-alla', 'godkanna', 'system', 'varumarken'],
   },
   // Alla roller har en egen kalender — bara sina egna rader. Varumärkenas
@@ -67,25 +70,25 @@ export const ROLLER = Object.freeze({
   produkttest: {
     namn: 'Produkttest',
     beskrivning: 'Produkterna de testar och vad de tjänat på dem. Ingen spend, ingen omsättning.',
-    sidor: ['produkttest', 'kalender', 'mig'],
+    sidor: ['produkttest', 'laget', 'kalender', 'mig'],
     ratt: [],
   },
   redigerare: {
     namn: 'Videoredigerare',
     beskrivning: 'Topplistan och sin egen sida. Ser aldrig spend eller omsättning.',
-    sidor: ['redigerare', 'kalender', 'mig'],
+    sidor: ['redigerare', 'laget', 'kalender', 'mig'],
     ratt: [],
   },
   support_chef: {
     namn: 'Head of customer support — ingen ekonomi',
     beskrivning: 'Kundtjänst, recensioner, paket och hela VA-teamets bonus. Godkänner insatser. Ingen ekonomi.',
-    sidor: ['kundtjanst', 'recensioner', 'leverans', 'bonus', 'kalender', 'mig'],
+    sidor: ['kundtjanst', 'recensioner', 'leverans', 'bonus', 'laget', 'kalender', 'mig'],
     ratt: ['bonus-alla', 'godkanna'],
   },
   va: {
     namn: 'Kundtjänst (VA)',
     beskrivning: 'Ärenden, tvister, paket och recensioner — plus sina egna uppdrag och pengar.',
-    sidor: ['kundtjanst', 'recensioner', 'leverans', 'kalender', 'mig'],
+    sidor: ['kundtjanst', 'recensioner', 'leverans', 'laget', 'kalender', 'mig'],
     ratt: [],
   },
 });

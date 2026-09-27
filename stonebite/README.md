@@ -369,3 +369,58 @@ reklam**, 7 hela dygn till och med i går, per verksamhet ur `varumarken.json`. 
 - Matstrumpors konto "nya kungen" svarar på `act_<id>` men listas inte av `me/adaccounts`.
   `hamtaAllt({ extraIds })` hämtar kontona ur `varumarken.json` uttryckligen.
 - 11 tester i `test/mer.test.mjs`.
+
+## Riktig vinst per verksamhet (2026-09-26, steg 1b)
+
+Tabellen "Riktig vinst per verksamhet, 7 dagar" och kortet "Vinstbidrag 7 dagar" på Översikt,
+bara för ägare och chef. Evolve-kursens formel: **vinstbidrag = försäljning utan moms −
+varukostnad − betalavgifter − reklam**.
+
+- `kallor/vinst.mjs` hämtar per butik och dag (8 dygn, bara dagssummor i snapshoten):
+  netto utan moms (Shopifys "current"-belopp, återbetalningar redan avdragna), varukostnad =
+  **"Cost per item"** i Shopify × sålt antal, och Shopify Payments avgifter per transaktion.
+- Två appar kan behövas per butik: Bäverbutikens kundtjänstapp får läsa ordrar men inte
+  produkter, fabrikens tvärtom. Kostnaden kopplas då via SKU och i sista hand namn (`kostnadFor`).
+- En verksamhet räknas inte om **mer än 1 %** av försäljningen saknar Cost per item
+  (`TAK_UTAN_KOSTNAD`). Sidan skriver vilka produkter som ska fyllas i.
+- Betalt utan avgiftsdata (PayPal m.fl.) syns som belopp under tabellen: där är vinsten något för hög.
+- Axels besked 2026-09-26: Cost per item **inkluderar** frakten från leverantören, och varje paket
+  kostar därutöver **2,8 EUR i tull** — räknas per order ur `stonebite/kostnader.json` (per butik
+  går att skriva över), omräknad med ECB-kursen. Fasta kostnader (löner, appar) är inte avdragna.
+- Mätt 2026-09-26 (7 dygn): Bäverbutiken 228 365 kr (26,1 %), CaraShell 62 343 kr (13,7 %),
+  Matstrumpor räknas inte (39 % av försäljningen saknar Cost per item: ätpinnar och strumporna).
+- 11 tester i `test/vinst.test.mjs`.
+
+## Laget — lagets tavla (2026-09-26, steg 2)
+
+Sidan **Laget** (`/app/laget`, `vy/laget.mjs`) ser alla roller. Den visar inga kronor. Det är Evolves två lager
+(`stonebite/evolve/SVAR.md`, svar 3): lagets tavla med gemensamt arbete och vinster, och individens tal privat.
+
+- **Veckans vinnare:** ny annons (senaste 35 dagarna) som tar minst 20 % av sin kampanjs reklam senaste 7
+  dagarna, i en kampanj med minst 1 000 kr på 7 dagar. Visas med redigerarens namn och andelen, aldrig beloppet.
+- **Lagets tal:** live senaste 7 dagarna, brief till live (median, Notion-radens skapelsedag → annonsens
+  created_time), andel vinnare, antal som legat över 10 dagar.
+- **Vem äger vad:** kön per redigerare (pågår, revision, granskas), live 7 d, vinnare. Ledtid och andel vinnare
+  per person ser bara ägare och chef (steg 3 blir det privata scorecardet).
+- Källa `kallor/tavla.mjs`: Notion via `commission/notion.mjs` (+ OPS-hubbarna, som commission), Meta via
+  `kallor/meta.mjs` `api`. Kopplingen annons → person är commission's `kopplaAnnons`, bara via hubbraden;
+  Matstrumpors "021"-rader kopplas på numret, bara inom Matstrumpors hubb. Bara svenska originalannonser (`arSvensk`).
+- Notion sparar ingen statushistorik: "över 10 dagar" räknas från radens skapelsedag, och sidan säger det.
+- Mätt 2026-09-26: 46 live på 7 dagar, brief till live 3,7 dygn, 4 vinnare av 150 nya annonser, 4 rader över
+  10 dagar (Carl). Jasper har 95 rader i granskning. Josh, Annabelle och Jerzee har inga annonsrader på 35 dagar.
+- 8 tester i `test/tavla.test.mjs` (bland annat: ingen krona för en redigerare, startsidan oförändrad).
+
+### Axels revision av Laget (2026-09-26 kväll)
+
+- **Jerzee saknades** — han har inget Notion-konto, hans rader märks med en kommentar
+  (`commission/kommentarer.mjs`). Tavlan kör nu `berikaMedKommentarer` på rader utan Ansvarig
+  från de senaste 60 dagarna (ett API-anrop per rad, ~630 rader ≈ 3,5 min i timrutinen).
+  Mätt: 49 rader kopplade, 32 annonser lanserade på 35 dagar.
+- **Josh och Annabelle är produkttestare** (`bonus/personer.json` `extraRoller`) — de står som
+  "jobbar med produkttest", aldrig som "utan annonser".
+- **Arkiverade hubbar** räknas inte i kön och flaggas aldrig som "har legat länge":
+  `stonebite/tavla.json` (de nedlagda OPS-butikernas hubbar), titlar med "arkiv", och
+  `arkiverad: true` i `commission/hubbar.json`. Annonserna därifrån kopplas ändå till redigeraren.
+- **Knappen Dölj** (ägare/chef) på en rad i "har legat länge": `stonebite/tavla-dolda.mjs`,
+  `data/tavla-dolda.jsonl` på volymen, senaste raden per nyckel vinner, "Visa igen" tar tillbaka.
+  Notion rörs aldrig. Nyckeln är `<hubb>|<radnamn>`.

@@ -22,7 +22,7 @@ export const KONTOKARTA = Object.freeze({
   '1346450049878358': { verksamhet: 'Grillkliniken', etikett: 'Grillkliniken (SnarkLös)' },
 });
 
-async function api(sokvag, params, { fetchFn = fetch, env = process.env, forsok = 0 } = {}) {
+export async function api(sokvag, params, { fetchFn = fetch, env = process.env, forsok = 0 } = {}) {
   const token = env.META_ACCESS_TOKEN;
   if (!token) throw new Error('META_ACCESS_TOKEN saknas i miljön.');
   const url = new URL(`https://graph.facebook.com/${VERSION()}/${sokvag}`);

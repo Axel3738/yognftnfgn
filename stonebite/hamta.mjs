@@ -20,6 +20,8 @@ import { fileURLToPath } from 'node:url';
 import { upptackButiker, hamtaAlla as hamtaButiker, hamtaAllaTvister } from './kallor/shopify.mjs';
 import { hamtaAllt as hamtaMeta } from './kallor/meta.mjs';
 import { hamtaKurser } from './kallor/valuta.mjs';
+import { hamtaAllVinst } from './kallor/vinst.mjs';
+import { hamtaTavla } from './kallor/tavla.mjs';
 import { samlaRepo, lasProfil, lasSystem } from './kallor/repo.mjs';
 import { rutinlage } from './kallor/rutiner.mjs';
 import { hamtaEskalering } from './kallor/discord.mjs';
@@ -63,6 +65,7 @@ export async function byggSnapshot({
   let butiker = [];
   let annonskonton = [];
   let tvisterLive = null;
+  let vinst = null;
 
   if (utanNat) {
     anteckna('shopify', 'hoppad', 'kördes med --utan-nat');
@@ -79,6 +82,18 @@ export async function byggSnapshot({
     anteckna('shopify', trasiga.length === aktiva.length && aktiva.length ? 'fel' : 'ok',
       trasiga.length ? `${trasiga.length} av ${aktiva.length} butiker gick inte att läsa` : null,
       { butiker: aktiva.length, avstangda: avstangda.length });
+
+    // Underlaget för riktig vinst: netto utan moms, varukostnad (Cost per
+    // item), betalavgifter — 8 dygn, bara dagssummor (kallor/vinst.mjs).
+    logg('Vinstunderlag …');
+    try {
+      vinst = await hamtaAllVinst(upptackta, butiker, { dagar: 8, env, nu, logg });
+      const felV = vinst.filter((v) => v.status !== 'ok');
+      anteckna('shopify:vinst', felV.length === vinst.length && vinst.length ? 'fel' : 'ok',
+        felV.length ? `${felV.length} av ${vinst.length} butiker gav inget vinstunderlag` : null, { butiker: vinst.length });
+    } catch (e) {
+      anteckna('shopify:vinst', 'fel', e.message);
+    }
 
     // Tvisterna direkt ur Shopify, varje hämtning. Veckorapporten är bara
     // reserv för en butik Shopify inte svarar för (bonus/kallor.mjs
@@ -106,6 +121,21 @@ export async function byggSnapshot({
         anteckna('meta', 'fel', e.message);
       }
     }
+  }
+
+  // Lagets tavla (Notion-kön + nya annonser och vinnare i Meta). Inga kronor.
+  let tavla = { status: 'hoppad', orsak: 'kördes med --utan-nat' };
+  if (!utanNat) {
+    logg('Lagets tavla …');
+    try {
+      const team = JSON.parse(readFileSync(join(rot, 'dashboard', 'data', 'team.json'), 'utf8')).users ?? [];
+      tavla = await hamtaTavla({ annonskonton, team, env, nu, logg });
+    } catch (e) {
+      tavla = { status: 'fel', orsak: e.message };
+    }
+    anteckna('tavla', tavla.status === 'ok' ? 'ok' : tavla.status === 'delvis' ? 'delvis' : 'fel', tavla.orsak, { live7: tavla.lag?.live7 ?? null });
+  } else {
+    anteckna('tavla', 'hoppad', 'kördes med --utan-nat');
   }
 
   // Växelkurserna (ECB) — bara för MER per verksamhet, där försäljning i
@@ -181,6 +211,8 @@ export async function byggSnapshot({
     butiker,
     annonskonton,
     valutakurser,
+    vinst,
+    tavla,
     bonus,
     bonusProgram: (() => { try { return lasRegler(join(rot, 'bonus', 'regler.json')); } catch { return null; } })(),
     personer: (() => { try { return lasPersoner(join(rot, 'bonus', 'personer.json')); } catch { return []; } })(),
