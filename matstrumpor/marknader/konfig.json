@@ -73,7 +73,7 @@
    ],
    "basvaluta": "NOK",
    "lokala_valutor": false,
-   "priser": "omraknade",
+   "priser": "fasta",
    "doman": null,
    "doman_comment": "matstrumpor.no svarar NXDOMAIN 2026-09-27 (dns.google) — inte registrerad. Köps av Axel hos Loopia (där .se och .com ligger), kopplas i Settings → Domains, sedan `node matstrumpor/marknader/bygg.mjs --steg doman` (webPresenceCreate + marketUpdate webPresencesToAdd, receptet i factory/API-GRANSER.md). Tills dess: matstrumpor.se/nb.",
    "leveranstid": "5–10 arbetsdagar",
@@ -90,27 +90,84 @@
     "landningssida": "https://matstrumpor.se/nb/products/sushi-strumpor?country=NO",
     "annonsnamn": "MATSTRUMP_NO_sushi_<vinkel>_<format>_<nnn>_v<n>",
     "kallor": "SE-vinnarna som är UGC översätts med HeyGen (dyraste versionen, Axels regel 2026-09-27); egna HeyGen-avatarvideor görs om direkt på norska i HeyGen, översätts inte."
-   }
+   },
+   "fasta_priser": {
+    "sushi-strumpor": {
+     "5 - Par / One Size": 449,
+     "3 - Par / One Size": 349
+    },
+    "donut-strumpor": 299,
+    "pizza-strumpor": 399,
+    "hamburger-strumpor": 299,
+    "sushipinnar-i-akta-tra": 49
+   },
+   "beslut_priser": "FÖRSLAG — premium enligt Axels 'lite dyrare worldwide'"
   },
   {
    "id": "EU",
    "namn": "Europa",
    "handle": "eu",
    "lander": [
+    "AT",
+    "BE",
+    "BG",
+    "HR",
+    "CY",
+    "CZ",
     "DK",
-    "FI"
+    "EE",
+    "FI",
+    "FR",
+    "DE",
+    "GR",
+    "HU",
+    "IE",
+    "IT",
+    "LV",
+    "LT",
+    "LU",
+    "MT",
+    "NL",
+    "PL",
+    "PT",
+    "RO",
+    "SK",
+    "SI",
+    "ES",
+    "IS",
+    "LI",
+    "CH"
    ],
    "lander_comment": "Danmark + Finland först (Axels order 2026-09-27). Fler EU-länder = fler koder här + fler locales; marknaden är byggd för att växa (lokala valutor på).",
    "locales": [
     "da",
-    "fi"
+    "fi",
+    "de",
+    "fr",
+    "nl",
+    "es",
+    "it",
+    "pl",
+    "pt"
    ],
    "basvaluta": "EUR",
    "lokala_valutor": true,
-   "priser": "omraknade",
+   "priser": "fasta",
    "priser_comment": "Shopifys egen omräkning från SEK-priset (med Shopifys avrundning). Fasta x9-priser per valuta är Axels beslut — inte satta. Byt till fasta priser genom att lägga `fasta_priser` som på EN-marknaden.",
    "leveranstid": "5–10 arbetsdagar",
-   "frakt": "fri"
+   "frakt": "fri",
+   "fasta_priser": {
+    "sushi-strumpor": {
+     "5 - Par / One Size": 44.9,
+     "3 - Par / One Size": 34.9
+    },
+    "donut-strumpor": 29.9,
+    "pizza-strumpor": 39.9,
+    "hamburger-strumpor": 29.9,
+    "sushipinnar-i-akta-tra": 4.9
+   },
+   "namn_not": "Utökad 2026-09-27 från DK+FI till EU 27 (utom SE) + IS, LI, CH; språk da, fi, de, fr, nl, es, it, pl, pt. Axels order: \"hela Europa redo\".",
+   "beslut_priser": "Axel 2026-09-27: \"lite dyrare priser worldwide\", \"hellre för högt\" ⇒ fasta EUR-priser ~+20 % över SEK-nivån, charm-avrundade."
   },
   {
    "id": "EN",
@@ -131,33 +188,32 @@
    "lokala_valutor": true,
    "priser": "fasta",
    "fasta_priser": {
-    "comment": "USD per variant, Axels sushisock.com-priser (se historik). Nyckel = produkthandle i matstrumpor.se, värde = pris per varianttitel eller ett tal för alla varianter. Inget jämförpris: sushisock hade inget, och ett påhittat jämförpris är ett påhittat tal.",
     "sushi-strumpor": {
-     "5 - Par / One Size": 59.0,
-     "3 - Par / One Size": 45.99
+     "5 - Par / One Size": 69.0,
+     "3 - Par / One Size": 54.99
     },
-    "donut-strumpor": 33.99,
-    "pizza-strumpor": 49.99,
-    "hamburger-strumpor": 33.99,
-    "sushipinnar-i-akta-tra": 5.99
+    "donut-strumpor": 39.99,
+    "pizza-strumpor": 59.99,
+    "hamburger-strumpor": 39.99,
+    "sushipinnar-i-akta-tra": 6.99
    },
    "leveranstid": "5–10 arbetsdagar",
    "leveranstid_comment": "Koncernens standardlöfte (CaraShell US fick 5–10 av Axel 2026-09-16). ⚠️ Inte mätt för Matstrumpor utanför Sverige — Axel bekräftar eller ändrar.",
-   "frakt": "fri"
+   "frakt": "fri",
+   "beslut_priser": "FÖRSLAG — Axel 2026-09-27: '60 eller 70 dollar' för buy one get one, 'hellre för högt' ⇒ $69 (tidigare $59 = sushisock-priset)"
   }
  ],
  "frakt": {
   "comment": "Beslut 2026-09-27 (sessionens, efter Axels egna precedens): fri frakt till alla launchländer, precis som sushisock.com ('Free shipping on every order'), Bäverbutikens NO/DK/FI och CaraShell. Butikens zoner EU och Internationell tog 299 kr — på en vara för 299–449 kr är det ingen marknad. Zonerna nedan skapas i profilen 'General profile' (gid://shopify/DeliveryProfile/132092821843, locationGroup gid://shopify/DeliveryLocationGroup/133910036819); länderna flyttas UT ur zonerna EU (gid://shopify/DeliveryZone/637511696723) och Internationell (gid://shopify/DeliveryZone/637511729491), som behåller 299 kr för resten av världen. Vill Axel ha betalfrakt: ändra `pris_sek` här och kör --steg frakt igen.",
   "zoner": [
    {
-    "namn": "Norden (Norge, Danmark, Finland)",
+    "namn": "Norden (Norge)",
     "lander": [
-     "NO",
-     "DK",
-     "FI"
+     "NO"
     ],
     "metod": "Fri frakt",
-    "pris_sek": 0
+    "pris_sek": 0,
+    "tidigare_namn": "Norden (Norge, Danmark, Finland)"
    },
    {
     "namn": "Engelska marknader (US, UK, AU, CA, NZ)",
@@ -170,6 +226,43 @@
     ],
     "metod": "Free shipping",
     "pris_sek": 0
+   },
+   {
+    "namn": "Europa (EU + Island, Liechtenstein, Schweiz)",
+    "lander": [
+     "AT",
+     "BE",
+     "BG",
+     "HR",
+     "CY",
+     "CZ",
+     "DK",
+     "EE",
+     "FI",
+     "FR",
+     "DE",
+     "GR",
+     "HU",
+     "IE",
+     "IT",
+     "LV",
+     "LT",
+     "LU",
+     "MT",
+     "NL",
+     "PL",
+     "PT",
+     "RO",
+     "SK",
+     "SI",
+     "ES",
+     "IS",
+     "LI",
+     "CH"
+    ],
+    "metod": "Fri frakt",
+    "pris_sek": 0,
+    "beslut": "Axel 2026-09-27: hela Europa redo, fri frakt som i de andra launchländerna"
    }
   ]
  },
@@ -227,5 +320,12 @@
    "templates/index.json"
   ],
   "mallar_comment": "custom_liquid-blocken i product.json (trust-raden 'Fri frakt i Sverige', leveransraden 'Beräknad leverans', storleksraden) och index.json (AI-bildmarkeringen) är inte translatable — de får sina grenar i själva JSON-strängen (temapatch.patchaMallJson)."
+ },
+ "domaner": {
+  "NO": "matstrumpor.no (köps)",
+  "EU": "matstrumpor.eu (köps)",
+  "EN": "matstrumpor.com (finns hos Loopia)",
+  "cowork": "matstrumpor/marknader/cowork/1-domaner.txt",
+  "efter": "webPresenceCreate + marketUpdate(webPresencesToAdd) per marknad, sedan kundvy per domän"
  }
 }

@@ -84,17 +84,36 @@ export function arLacka(l, samma = new Set()) {
   return true;
 }
 
-/** Fraktplanen: vilka länder ska UT ur en zon och vilka zoner ska skapas. Ren logik över konfigens zoner och Shopifys. */
+/**
+ * Fraktplanen — ren logik över konfigens zoner och Shopifys:
+ *  - en konfigzon som finns (samma namn, eller `tidigare_namn` när zonen ska döpas om) och
+ *    bär exakt sina länder ⇒ `redan`; finns men skiljer ⇒ `uppdatera` till konfigens länder/namn;
+ *  - en konfigzon som saknas ⇒ `skapa`;
+ *  - varje annan Shopify-zon släpper de länder konfigen gör anspråk på ⇒ `uppdatera`, och blir
+ *    den tom ⇒ `radera` (en tom zon är meningslös och Shopify avvisar den).
+ * Mätt 2026-09-27: den gamla planen tömde zoner som redan var rätt ("Engelska marknader")
+ * bara för att alla dess länder stod i konfigen — därav den här omskrivningen.
+ */
 export function fraktplan(zonerIShopify, konfigZoner) {
-  const nya = konfigZoner.map((z) => ({ namn: z.namn, lander: z.lander, metod: z.metod, pris: z.pris_sek }));
-  const flyttas = new Set(konfigZoner.flatMap((z) => z.lander));
-  const uppdatera = [];
-  for (const z of zonerIShopify) {
-    const kvar = z.lander.filter((c) => !flyttas.has(c));
-    if (kvar.length !== z.lander.length) uppdatera.push({ id: z.id, namn: z.namn, fore: z.lander, efter: kvar, bort: z.lander.filter((c) => flyttas.has(c)) });
+  const lika = (a, b) => a.length === b.length && [...a].sort().every((x, i) => x === [...b].sort()[i]);
+  const anspråk = new Set(konfigZoner.flatMap((z) => z.lander));
+  const skapa = [], redan = [], uppdatera = [], radera = [];
+  const tagna = new Set();
+  for (const kz of konfigZoner) {
+    const z = zonerIShopify.find((x) => x.namn === kz.namn) ?? (kz.tidigare_namn ? zonerIShopify.find((x) => x.namn === kz.tidigare_namn) : null);
+    if (!z) { skapa.push({ namn: kz.namn, lander: kz.lander, metod: kz.metod, pris: kz.pris_sek }); continue; }
+    tagna.add(z.id);
+    if (lika(z.lander, kz.lander) && z.namn === kz.namn) { redan.push(kz.namn); continue; }
+    uppdatera.push({ id: z.id, namn: kz.namn, fore: z.lander, efter: kz.lander, bort: z.lander.filter((c) => !kz.lander.includes(c)), till: kz.lander.filter((c) => !z.lander.includes(c)), bytNamn: z.namn !== kz.namn ? z.namn : null });
   }
-  const finns = new Set(zonerIShopify.map((z) => z.namn));
-  return { skapa: nya.filter((z) => !finns.has(z.namn)), redan: nya.filter((z) => finns.has(z.namn)).map((z) => z.namn), uppdatera };
+  for (const z of zonerIShopify) {
+    if (tagna.has(z.id)) continue;
+    const kvar = z.lander.filter((c) => !anspråk.has(c));
+    if (kvar.length === z.lander.length) continue;
+    if (kvar.length === 0) radera.push({ id: z.id, namn: z.namn, fore: z.lander });
+    else uppdatera.push({ id: z.id, namn: z.namn, fore: z.lander, efter: kvar, bort: z.lander.filter((c) => anspråk.has(c)), till: [], bytNamn: null });
+  }
+  return { skapa, redan, uppdatera, radera };
 }
 
 /** Priset för en variant ur konfigens fasta_priser: tal för alla varianter, eller objekt per varianttitel. */
@@ -258,15 +277,17 @@ async function stegFrakt(k, { skarpt }) {
   const lage = await hamtaLage(k);
   if (!lage.frakt) throw new Error('Ingen fraktprofil.');
   const plan = fraktplan(lage.frakt.zoner, KONFIG.frakt.zoner);
-  for (const z of plan.redan) log(`Fraktzon "${z}" finns redan.`);
-  for (const u of plan.uppdatera) log(`${skarpt ? '' : 'torrt: '}zonen "${u.namn}" släpper ${u.bort.join(', ')} (kvar: ${u.efter.length} länder)`);
+  for (const z of plan.redan) log(`Fraktzon "${z}" finns redan med rätt länder.`);
+  for (const u of plan.uppdatera) log(`${skarpt ? '' : 'torrt: '}zonen "${u.bytNamn ?? u.namn}"${u.bytNamn ? ` döps om till "${u.namn}",` : ''}${u.bort.length ? ` släpper ${u.bort.join(', ')}` : ''}${u.till.length ? ` får ${u.till.join(', ')}` : ''} (efteråt ${u.efter.length} länder)`);
+  for (const z of plan.radera) log(`${skarpt ? '' : 'torrt: '}zonen "${z.namn}" blir tom (${z.fore.join(', ')} flyttar) och tas bort`);
   for (const z of plan.skapa) log(`${skarpt ? '' : 'torrt: '}ny zon "${z.namn}" ${z.lander.join(', ')} med "${z.metod}" ${z.pris} SEK`);
-  if (!skarpt || (plan.skapa.length === 0 && plan.uppdatera.length === 0)) return;
+  if (!skarpt || (plan.skapa.length === 0 && plan.uppdatera.length === 0 && plan.radera.length === 0)) return;
   const land = (kod) => (kod === '*' ? { restOfWorld: true } : { code: kod, includeAllProvinces: true });
   const profile = {
+    ...(plan.radera.length ? { zonesToDelete: plan.radera.map((z) => z.id) } : {}),
     locationGroupsToUpdate: [{
       id: lage.frakt.gruppId,
-      zonesToUpdate: plan.uppdatera.map((u) => ({ id: u.id, countries: u.efter.map(land) })),
+      zonesToUpdate: plan.uppdatera.map((u) => ({ id: u.id, name: u.namn, countries: u.efter.map(land) })),
       zonesToCreate: plan.skapa.map((z) => ({ name: z.namn, countries: z.lander.map(land), methodDefinitionsToCreate: [{ name: z.metod, active: true, rateDefinition: { price: { amount: Number(z.pris).toFixed(1), currencyCode: 'SEK' } } }] })),
     }],
   };
