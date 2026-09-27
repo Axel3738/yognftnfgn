@@ -5,8 +5,7 @@
     "marknad": "SE",
     "varningar": [
       "Bälteslipmaskinen: Axel planerar att höja priset. När det sker: ändra pris_sek här, så räknas break-even om automatiskt, och uppdatera talet i kampanjnamnet.",
-      "Ny break-even ur prissheetet på 16 kampanj(er) den här veckan — lägre tal räknar HÖGRE vinst på samma ROAS, så de blev lättare att skala utan att något ändrats i kontot. Läs SKALA-domarna med det i åtanke: Rullknivslipen i Trä 20° (1,63 → 1,52), Värmesulorna med Fjärrkontroll (1,64 → 1,52), Radiostyrda Driftbilen 1:24 (1,63 → 1,52), Maskinhyllan för 4 Elverktyg (1,64 → 1,52), Värmesitsen 45 × 90 cm (1,63 → 1,52), Motorlåset i Rostfritt Stål (1,64 → 1,52), Golf Adventskalendern (1,70 → 1,58), Täljsetet 30 Delar (1,63 → 1,52), ATV-Kapellet 3XL 256 × 110 × 120 cm (1,62 → 1,52), Sotarsetet med Böjliga Stänger (1,61 → 1,51), Inomhustofflorna i Kamouflage (1,61 → 1,51), Solcellslampan med Rörelsesensor 210 LED (1,62 → 1,52), Taköverdraget LISTICLE LAGERRENSNING (1,52), Termoskyddet för Husbil 211 × 171 cm (1,61 → 1,51), Taköverdraget för Husvagn 6,5 × 3 m (1,63 → 1,52), IBC-Tanköverdraget (1,51 → 1,53).",
-      "3 kampanj(er) saknas i produktkarta.json och kördes som testprodukt: LOCK_IN_Bänkhyllan, LOCK_IN_Spabadskapellet, LOCK_IN_Bordtennisnätet."
+      "Ny break-even ur prissheetet på 16 kampanj(er) den här veckan — lägre tal räknar HÖGRE vinst på samma ROAS, så de blev lättare att skala utan att något ändrats i kontot. Läs SKALA-domarna med det i åtanke: Rullknivslipen i Trä 20° (1,63 → 1,52), Värmesulorna med Fjärrkontroll (1,64 → 1,52), Radiostyrda Driftbilen 1:24 (1,63 → 1,52), Maskinhyllan för 4 Elverktyg (1,64 → 1,52), Värmesitsen 45 × 90 cm (1,63 → 1,52), Motorlåset i Rostfritt Stål (1,64 → 1,52), Golf Adventskalendern (1,70 → 1,58), Täljsetet 30 Delar (1,63 → 1,52), ATV-Kapellet 3XL 256 × 110 × 120 cm (1,62 → 1,52), Sotarsetet med Böjliga Stänger (1,61 → 1,51), Inomhustofflorna i Kamouflage (1,61 → 1,51), Solcellslampan med Rörelsesensor 210 LED (1,62 → 1,52), Taköverdraget LISTICLE LAGERRENSNING (1,52), Termoskyddet för Husbil 211 × 171 cm (1,61 → 1,51), Taköverdraget för Husvagn 6,5 × 3 m (1,63 → 1,52), IBC-Tanköverdraget (1,51 → 1,53)."
     ],
     "surf": false,
     "spegel": {
@@ -23,7 +22,7 @@
           {
             "kod": "SE",
             "budget": 8750,
-            "spend_3d": 0,
+            "spend_3d": 28342.07,
             "kampanjer": [
               "CARASHELL_SE_Taköverdraget LISTICLE",
               "CARASHELL_SE_Taköverdraget"
@@ -33,7 +32,7 @@
           {
             "kod": "US",
             "budget": 8000,
-            "spend_3d": 0,
+            "spend_3d": 47406.69,
             "kampanjer": [
               "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m"
             ],
@@ -42,7 +41,7 @@
           {
             "kod": "NO",
             "budget": 4000,
-            "spend_3d": 0,
+            "spend_3d": 11138.31,
             "kampanjer": [
               "CARASHELL_NO_Takovertrekket"
             ],
@@ -51,7 +50,7 @@
           {
             "kod": "AU",
             "budget": 3169.23,
-            "spend_3d": 0,
+            "spend_3d": 14955.36,
             "kampanjer": [
               "AU LISTICLE Taköverdrag CARASHELL"
             ],
@@ -60,7 +59,7 @@
           {
             "kod": "DK",
             "budget": 2000,
-            "spend_3d": 0,
+            "spend_3d": 7983.45,
             "kampanjer": [
               "CARASHELL_DK_Taköverdrag Husvagn & Husbil 5,5"
             ],
@@ -69,7 +68,7 @@
         ],
         "antal_marknader": 5,
         "budget": 25919.23,
-        "spend_3d": 0
+        "spend_3d": 109825.88
       }
     }
   },
@@ -516,21 +515,18 @@
       "funnellage": false,
       "invandningar": null,
       "dom": {
-        "kod": "SKALA",
-        "rubrik": "Skala upp 20 %",
-        "motivering": "33,0 % vinst av omsättningen (ROAS 3,30 mot break-even 1,58). Target 2,61 (härledd (25 % vinst av omsättningen)), ROAS 3,30 = 127 % av target. Trappsteg 20 %, 3 dygn i rad över target, 93,3 % klickköp, CPA 0 stigande dygn. Ändra från 1 200 kr till 1 400 kr per dag. Snabbspår: ROAS över 3 — kan höjas igen om 1 dagar.",
-        "nyBudget": 1400,
-        "zon": "up",
+        "kod": "VANTA_KADENS",
+        "rubrik": "Vänta — ändrad för nyligen",
+        "motivering": "Budgeten ändrades för 0 dagar sedan. Nästa ändring tidigast efter 1 dag.",
+        "nyBudget": null,
+        "zon": null,
         "vinstProcent": 33.03697208351436,
         "breakEven": 1.5787607504548644,
         "breakEvenKalla": "Axels prissheet (Google Sheet 10VrOx…, CSV-export 2026-09-24, BATCH 13: \"Golf advent calendar\"), 1 st till Sverige: produkt + frakt 9,08 + 8,11 = 17,19 USD, plus 2,9 EUR EU-avgift per order. Priset 549 kr läst ur baverbutiken.se/products.json (se lage_motivering).",
         "targetRoas": 2.6081862843607166,
         "targetKalla": "härledd (25 % vinst av omsättningen)",
-        "kraverGodkannande": true,
-        "naraGrans": false,
-        "harVinnare": false,
-        "faktor": 1.2,
-        "trappsteg": "20 %"
+        "kraverGodkannande": false,
+        "naraGrans": false
       }
     },
     {
@@ -570,21 +566,18 @@
       "funnellage": false,
       "invandningar": null,
       "dom": {
-        "kod": "SKALA",
-        "rubrik": "Skala — dubbla",
-        "motivering": "46,0 % vinst av omsättningen (ROAS 5,05 mot break-even 1,52). Target 2,45 (härledd (25 % vinst av omsättningen)), ROAS 5,05 = 206 % av target. Trappsteg dubbla, 3 dygn i rad över target, 100,0 % klickköp, CPA 1 stigande dygn. Ändra från 2 000 kr till 4 000 kr per dag. Snabbspår: ROAS över 3 — kan höjas igen om 1 dagar.",
-        "nyBudget": 4000,
-        "zon": "up",
+        "kod": "VANTA_KADENS",
+        "rubrik": "Vänta — ändrad för nyligen",
+        "motivering": "Budgeten ändrades för 0 dagar sedan. Nästa ändring tidigast efter 1 dag.",
+        "nyBudget": null,
+        "zon": null,
         "vinstProcent": 46.01361207216962,
         "breakEven": 1.5189822085057412,
         "breakEvenKalla": "Axels prissheet (Google Sheet 10VrOx…, CSV-export 2026-09-24, BATCH 10: \"Täljsetet 30 delar i väska\"), 1 st till Sverige: produkt + frakt 13,08 + 13,86 = 26,94 USD, plus 2,9 EUR EU-avgift per order. Priset 869 kr läst ur baverbutiken.se/products.json (se lage_motivering).",
         "targetRoas": 2.448966248792426,
         "targetKalla": "härledd (25 % vinst av omsättningen)",
-        "kraverGodkannande": true,
-        "naraGrans": false,
-        "harVinnare": false,
-        "faktor": 2,
-        "trappsteg": "dubbla"
+        "kraverGodkannande": false,
+        "naraGrans": false
       }
     },
     {
@@ -1110,21 +1103,18 @@
       "funnellage": false,
       "invandningar": null,
       "dom": {
-        "kod": "SKALA",
-        "rubrik": "Skala upp 20 %",
-        "motivering": "28,3 % vinst av omsättningen (ROAS 3,50 mot break-even 1,76). Target 3,14 (härledd (25 % vinst av omsättningen)), ROAS 3,50 = 111 % av target. Trappsteg 20 %, 2 dygn i rad över target, 100,0 % klickköp, CPA 1 stigande dygn. Ändra från 950 kr till 1 100 kr per dag. Nästa koll om 3 dagar.",
-        "nyBudget": 1100,
-        "zon": "up",
+        "kod": "VANTA_KADENS",
+        "rubrik": "Vänta — ändrad för nyligen",
+        "motivering": "Budgeten ändrades för 0 dagar sedan. Nästa ändring tidigast efter 1 dag.",
+        "nyBudget": null,
+        "zon": null,
         "vinstProcent": 28.260915806075783,
         "breakEven": 1.7595818815331012,
         "breakEvenKalla": "Axels besked 2026-08-29: inköpspris höjt till 40 USD, totalt — ingen frakt eller avgift tillkommer.",
         "targetRoas": 3.1415241057542773,
         "targetKalla": "härledd (25 % vinst av omsättningen)",
-        "kraverGodkannande": true,
-        "naraGrans": false,
-        "harVinnare": true,
-        "faktor": 1.2,
-        "trappsteg": "20 %"
+        "kraverGodkannande": false,
+        "naraGrans": false
       }
     },
     {
@@ -1182,64 +1172,32 @@
   "plan": {
     "sparrad": false,
     "orsak": null,
-    "atgarder": [
+    "atgarder": [],
+    "uppskjutna": [
       {
         "kampanj_id": "120250365281490291",
         "namn": "Radiostyrda Driftbilen 1:24 | BE ROAS 1.63 | Launch 2026-09-25",
         "kod": "ATGARDSTRAPPAN",
         "motivering": "-8,6 % vinst av omsättningen (ROAS 1,35 mot break-even 1,52). Passerad 1 500 kr utan att gå plus. Läs annonserna: finns minst en annons med köp över break-even OCH en spendtjuv utan köp, pausa spendtjuven och ge kampanjen ETT dygn till. Saknas potentialen — eller är förlängningen redan använd — stängs hela kampanjen av i dag.",
-        "typ": "trappa"
+        "orsak": "redan ändrad idag — en ändring per dygn"
       },
-      {
-        "kampanj_id": "120250349292760291",
-        "namn": "Motorlåset i Rostfritt Stål | BE ROAS 1.64 | Launch 2026-09-24",
-        "kod": "ATGARDSTRAPPAN",
-        "motivering": "2 843 kr på 3 dagar och bara 1 köp, utan att gå ihop. ROAS 0,32 mot break-even 1,52. Över 1 500 kr sedan start. Läs annonserna: finns minst en annons med köp över break-even OCH en spendtjuv, pausa spendtjuven och ge kampanjen ETT dygn till. Annars stängs hela kampanjen av i dag.",
-        "typ": "trappa"
-      },
-      {
-        "kampanj_id": "120250349257210291",
-        "namn": "Golf Adventskalendern | BE ROAS 1.70 | Launch 2026-09-24",
-        "kod": "SKALA",
-        "motivering": "33,0 % vinst av omsättningen (ROAS 3,30 mot break-even 1,58). Target 2,61 (härledd (25 % vinst av omsättningen)), ROAS 3,30 = 127 % av target. Trappsteg 20 %, 3 dygn i rad över target, 93,3 % klickköp, CPA 0 stigande dygn. Ändra från 1 200 kr till 1 400 kr per dag. Snabbspår: ROAS över 3 — kan höjas igen om 1 dagar.",
-        "typ": "budget",
-        "fran_sek": 1200,
-        "till_sek": 1400,
-        "till_ore": 140000
-      },
-      {
-        "kampanj_id": "120250349169940291",
-        "namn": "Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24",
-        "kod": "SKALA",
-        "motivering": "46,0 % vinst av omsättningen (ROAS 5,05 mot break-even 1,52). Target 2,45 (härledd (25 % vinst av omsättningen)), ROAS 5,05 = 206 % av target. Trappsteg dubbla, 3 dygn i rad över target, 100,0 % klickköp, CPA 1 stigande dygn. Ändra från 2 000 kr till 4 000 kr per dag. Snabbspår: ROAS över 3 — kan höjas igen om 1 dagar.",
-        "typ": "budget",
-        "fran_sek": 2000,
-        "till_sek": 4000,
-        "till_ore": 400000,
-        "faktor": 2
-      },
-      {
-        "kampanj_id": "120249902177470291",
-        "namn": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
-        "kod": "SKALA",
-        "motivering": "28,3 % vinst av omsättningen (ROAS 3,50 mot break-even 1,76). Target 3,14 (härledd (25 % vinst av omsättningen)), ROAS 3,50 = 111 % av target. Trappsteg 20 %, 2 dygn i rad över target, 100,0 % klickköp, CPA 1 stigande dygn. Ändra från 950 kr till 1 100 kr per dag. Nästa koll om 3 dagar.",
-        "typ": "budget",
-        "fran_sek": 950,
-        "till_sek": 1100,
-        "till_ore": 110000
-      }
-    ],
-    "uppskjutna": [
       {
         "kampanj_id": "120250365205900291",
         "namn": "Värmesitsen 45 × 90 cm | BE ROAS 1.63 | Launch 2026-09-25",
         "kod": "ATGARDSTRAPPAN",
         "motivering": "-2,7 % vinst av omsättningen (ROAS 1,46 mot break-even 1,52). Passerad 1 500 kr utan att gå plus. Läs annonserna: finns minst en annons med köp över break-even OCH en spendtjuv utan köp, pausa spendtjuven och ge kampanjen ETT dygn till. Saknas potentialen — eller är förlängningen redan använd — stängs hela kampanjen av i dag. ⚠ Ligger 2,7 procentenheter från en zongräns — ROAS för de senaste dygnen kan fortfarande revideras uppåt. Kolla i Ads Manager innan du kör den här.",
         "orsak": "nära zongräns — omprövas nästa körning med mognare data"
+      },
+      {
+        "kampanj_id": "120250349292760291",
+        "namn": "Motorlåset i Rostfritt Stål | BE ROAS 1.64 | Launch 2026-09-24",
+        "kod": "ATGARDSTRAPPAN",
+        "motivering": "2 843 kr på 3 dagar och bara 1 köp, utan att gå ihop. ROAS 0,32 mot break-even 1,52. Över 1 500 kr sedan start. Läs annonserna: finns minst en annons med köp över break-even OCH en spendtjuv, pausa spendtjuven och ge kampanjen ETT dygn till. Annars stängs hela kampanjen av i dag.",
+        "orsak": "redan ändrad idag — en ändring per dygn"
       }
     ],
     "gammalTotal": 38450,
-    "nyTotal": 40800
+    "nyTotal": 38450
   },
   "annonsbehov": [
     {

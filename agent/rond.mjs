@@ -735,7 +735,8 @@ export function spegelbudget(post, spegeldata) {
       const m = /CARASHELL_(SE|NO|DK|FI|US|UK)_/i.exec(namn) ?? /^(?:\d+\s+)?(US|AU|UK|CA|NZ)\b/i.exec(namn) ?? /_(US|AU|UK|CA|NZ)_/i.exec(namn);
       const kod = m ? m[1].toUpperCase() : 'OKÄND';
       const budget = lasBelopp(k.daily_budget);
-      const spend = Number.isFinite(k.spend_3d) ? k.spend_3d : null;
+      // spend_3d står som Metas sträng ("7983.45 kr (SEK)") — lasBelopp, inte isFinite (rättat 2026-09-27: rapporten sa "3 d 0 kr" på alla marknader)
+      const spend = lasBelopp(k.spend_3d);
       const mk = marknader[kod] ?? (marknader[kod] = { kod, budget: 0, spend_3d: 0, kampanjer: [], konto: kontoId });
       mk.budget += Number.isFinite(budget) ? budget : 0;
       mk.spend_3d += spend ?? 0;
