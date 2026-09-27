@@ -1,4 +1,4 @@
-# MATSTRUMP_sushi_jul_ugc_051_v1 — Iteration 4 of the Nathalie breakthrough — the Christmas-stocking version for the jul ad set
+# MATSTRUMP_sushi_jul_ugc_057_v1 — Iteration 4 of the Nathalie breakthrough — the Christmas-stocking version for the jul ad set
 
 **VARIABELTAGGAR:** typ=`I` · koncept=`nathalie` · parent=`09-17 Nathalie captions musik` · iteration=`4` · lardom=`L-09-17_Nathalie_captions_musik, L-Sofie_H1_H2` · kalla=`parent` · avatar=`julstrumpefyllaren` · awareness=`problem` · begar=`status` · mekanism=`takeaway-lada-som-ar-strumpor` · tro=`verklig-kreator-verklig-mottagare` · urgency=`sasong` · hook-mekanik=`cut-in` · confidence=`medium` · vinkel=`jul` · hook-typ=`säsong + knapphet (julstrumpan, november)` · format=`video, captions + music, Sofie opening + parent body` · proof=`demo + reaction` · offer-i-creativen=`ingen` · visuell stil=`UGC, stocking two-shot, real kitchen` · textmängd=`≤12 ord per caption` · talare=`verkliga kreatörer (Sofie 0–3 s, Nathalie), ingen VO` · copy_model=`sonnet`
 *(Read by the next /matstrumporkungen run to group profit contribution per variable value. Do not change them without changing the creative.)*

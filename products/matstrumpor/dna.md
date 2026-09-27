@@ -1,7 +1,7 @@
 # Creative DNA — Matstrumpor (Sushi-Strumpor)
 
-**Skapad 2026-09-21. Uppdaterad 2026-09-24, rond 2 (första riktiga
-`/matstrumporkungen`-ronden).** Allt nedan är avläst ur kontot "nya kungen"
+**Skapad 2026-09-21. Uppdaterad 2026-09-27, rond 3** (rond 2 var 2026-09-24,
+den första riktiga `/matstrumporkungen`-ronden). Allt nedan är avläst ur kontot "nya kungen"
 `730973156224390` (token, 7d_click), Shopify och Notion. Ingen siffra är
 hämtad ur en tidigare chatt, och ingen är uppskattad. Talen per annons står
 i `lardomar.md`; det här är vad vi lärt oss om produkten.
@@ -29,29 +29,36 @@ avgift och svinn/returer. Break-even ovan är alltså i bästa fall.
 
 ---
 
-## Läget i kontot (14 dagar till 2026-09-23, läst 2026-09-24)
+## Läget i kontot (14 dagar till 2026-09-26, läst 2026-09-27 — rond 3)
 
-Kampanjen `MATSTRUMP_SALES_20260826`, CBO — **Axel höjde budgeten 1 000 →
-2 000 → 10 000 kr/dag den 23/9** (kontots aktivitetslogg). 96 annonser,
-79 med spend: **18 208 kr · 58 köp · ROAS 1,456** — fortfarande strax
-under break-even 1,498 på kampanjnivå, för fyra förlorare äter vinsten.
+Kampanjen `MATSTRUMP_SALES_20260826`, CBO, **10 000 kr/dag sedan 23/9**
+(Axel: 1 000 → 2 000 → 10 000). 107 annonser, 87 med spend:
+**44 071 kr · 207 köp · ROAS 2,03** — över break-even 1,498 för första
+gången sedan systemet byggdes (rond 2: 18 208 kr / 58 köp / ROAS 1,456).
+Sedan höjningen (24–26/9): 29 750 kr / 154 köp / ROAS 2,20 — budgeten går åt
+och ROAS höll. Senaste 7 dygnen: 37 090 kr / 189 köp, varav **Nathalie
+32 605 kr (88 %)**.
 
 **Sex bedömbara annonser, rangordnade på vinstbidrag (utan moms):**
 
-| Vinstbidrag 14 d | Annons | Spend | Köp | CPA | Ordervärde |
+| Vinstbidrag 14 d | Annons | Spend | Köp | CPA | ROAS |
 |---|---|---|---|---|---|
-| **+3 078 kr** | `09-17 Nathalie captions musik` ★ benchmark | 5 001 kr | 29 | 172 kr | 417 kr |
-| +1 204 kr | `MATSTRUMP_sushi_offer_static_d3_v1` | 2 124 kr | 8 | 266 kr | 623 kr |
-| −6 kr | `MATSTRUMP_sushi_gift_ugc_s001h1_v2` | 539 kr | 1 | 539 kr | 798 kr |
-| −282 kr | `MATSTRUMP_sushi_gift_ugc_haikuh2_v1` | 3 413 kr | 11 | 310 kr | 426 kr |
-| −1 244 kr | `MATSTRUMP_sushi_gift_ugc_012v2_v1` | 1 744 kr | 2 | 872 kr | 374 kr |
-| **−3 184 kr** | `MATSTRUMP_sushi_gift_ugc_haikuh3_v1` | 4 517 kr | 5 | 903 kr | 399 kr |
+| **+16 069 kr** | `09-17 Nathalie captions musik` ★ benchmark | 32 703 kr | 173 | 189 kr | 2,23 |
+| +1 843 kr | `MATSTRUMP_sushi_offer_static_d3_v1` | 2 552 kr | 11 | 232 kr | 2,58 |
+| 0 kr | `MATSTRUMP_sushi_gift_ugc_s001h1_v2` | 325 kr | 0 | — | — |
+| −409 kr | `MATSTRUMP_sushi_gift_ugc_haikuh2_v1` | 3 805 kr | 12 | 317 kr | 1,34 |
+| −617 kr | `MATSTRUMP_sushi_gift_ugc_haikuh3_v1` | 1 949 kr | 5 | 390 kr | 1,02 |
+| **−1 001 kr** | `MATSTRUMP_sushi_gift_ugc_012v2_v1` | 1 467 kr | 2 | 734 kr | 0,48 |
 
-De andra 73 annonserna med spend ligger under 300 kr och döms inte.
+Rond 2 hade samma sex; ordningen i botten bytte plats för att fönstret
+flyttade (haikuh3 −3 184 → −617: dess dyra dagar föll ur). De andra 101 ligger
+under 300 kr och döms inte.
 
-**Etiketter (första veckan per annons): 1 breakthrough av 85 = 1 %.**
-41 INGEN_LEVERANS, 39 LOSER, 3 KPI_WINNER, 1 SPEND_WINNER, 1 BREAKTHROUGH.
-Batch #1 (Gilz 044–047, 11 videor från 21/9) är för ung — 0,6–9,5 kr var.
+**Etiketter (första veckan per annons): 1 breakthrough av 85 = 1 %** —
+oförändrat, inga nya att sätta i rond 3. 22 annonser är för unga: batch #1
+(Gilz 044–047, 11 st från 21/9, 1–10 kr var), Axels två **Katarina**-videor
+från 24/9 (`09-17 UGC`-adsetet, 85–89 kr var, 1 köp) och Gilz nio mini-clips
+048–052 från 25/9 (0–17 kr var). Alla tre grupperna etiketteras 30/9–1/10.
 
 ### Fem mönster som datan bär (2026-09-24)
 
@@ -72,7 +79,9 @@ Batch #1 (Gilz 044–047, 11 videor från 21/9) är för ung — 0,6–9,5 kr va
 4. **CBO:n svälter allt nytt.** `nya20` (20 videor, 2/9) fick **2 kr på 14
    dagar**, `alla17` 587 kr, jul-adsetet 24 kr på tre dygn. 70 av 85
    etiketter är svält, inte dom. Ladda upp färre åt gången; en jul-annons som
-   ska läsas behöver en minimispend (tips till Axel, se rapporten).
+   ska läsas behöver en minimispend (Axel sa nej 24/9). Mätt igen 27/9 med
+   10 000 kr/dag: Nathalie tar 88 % av sjudygnsspenden, de 22 nya ligger på
+   0–89 kr var — mer budget gav henne mer, inte de nya.
 5. **Ordervärdet skiljer sig kraftigt mellan annonser** (374–798 kr).
    Erbjudandebilden drar tvåbox-köpare (623 kr); Nathalie drar
    ettbox-köpare (417 kr) men många. Break-even-CPA räknas därför på
@@ -83,9 +92,17 @@ videostarter på 63 047 visningar rimmar inte med 1 124 klick. Sofie i samma
 adset visar 86–98 %. Troligen räknar Meta `video_play_actions` annorlunda
 för Axels uppladdning (DCO-varianter). Bedöm henne på klick/LPV/köp.
 
-⚠️ **Kommentarerna går inte att läsa:** sidan `820358954504320` nekar
-`pages_read_engagement`. Axel måste ge token:en sidrättigheten innan
-INVAND-briefer kan skrivas för Matstrumpor.
+✅ **Kommentarerna läses sedan 2026-09-27** via `META_ACCESS_TOKEN_MATSTRUMPOR`
+(Axels egen app, sidan ligger i en annan Business Manager än `META_ACCESS_TOKEN`).
+Första läsningen: 4 kommentarer på Nathalie på 32 703 kr — "Material?", en
+skeptiker om leveranstid/"kina skräp", en tagg, ett skämt. Inget kluster.
+Publiken kommenterar nästan inte; invändningarna får läsas ur köpdatan.
+
+⚠️ **Namnkrocken 2026-09-24/25 (rättad 27/9):** rond 2:s briefer fick 048–053,
+och dagen efter gav namnmotorn uppladdaren 048–052 IGEN åt Gilz mini-clips
+(den läste inte hubbens Draft-rader). Nio annonser live med rond 2:s nummer;
+brieferna omdöpta till **054–058** (053 orörd). `--namn` läser nu logg + fil +
+kontot ur senaste avläsningen + hubben live och skriver unionen tillbaka.
 
 ---
 
@@ -133,19 +150,21 @@ arbetshypoteser tills kommentarerna går att läsa.
 
 ## Nästa steg (i ordning, vinst snabbast först)
 
-1. **Rond 2 (2026-09-24): sex briefer** — fyra iterationer på Nathalie
-   (`048`–`051`), en julbild (`052`), en ny vinkel skämtet (`053`). Läs av 1/10.
-2. **Axels beslut 2026-09-24 på rondens förslag:** pausa haikuh3/012v2/haikuh2 —
+1. **Rond 2 (2026-09-24): sex briefer, omdöpta 27/9** — fyra iterationer på
+   Nathalie (`054`–`057`, hette 048–051), en julbild (`058`, hette 052), en ny
+   vinkel skämtet (`053`). Ligger i Draft i hubben; läs av dag 7 efter live.
+2. **Rond 3 (2026-09-27): 0 nya etiketter ⇒ 0 lärdomar ⇒ 0 briefer** (taket
+   är antalet lärdomar sedan förra ronden). Ronden gick åt till namnkrocken,
+   kommentarerna och tipsen. Nästa rond 30/9 etiketterar batch #1 (11) och
+   Katarina (2); 1/10 mini-clipsen (9) — då finns lärdomar att brieffa ur.
+3. **Axels beslut 2026-09-24 på rondens förslag:** pausa haikuh3/012v2/haikuh2 —
    **nej** ("håller lowkey inte med", inget skäl); minimispend på `jul_video` —
    **nej** ("inte bra"); "sålde slut i november" — **bekräftat**; råfilen —
-   redigerarna har den. Kommentarerna: token:en har `pages_read_engagement`,
-   men den tillhör systemanvändaren "API LONG TERM" (`122107293489476552`) i
-   Business Manager **SnarkLös** `2368966296803728` — Matstrumpors sida ligger i
-   Business Manager **Matstrumpor.se** `3354502211392342`, vars EGEN "API long
-   term" (`61594688758548`) har sidan. Två användare med samma namn i två
-   företag. Lösning: dela sidan Matstrumpor som partner till SnarkLös och
-   tilldela den där (Axels klick, 2026-09-24).
-3. **Batch #1 (Gilz 044–047)** etiketteras 28/9 om Meta ger dem något — i
-   dag har de 0,6–9,5 kr var.
+   redigerarna har den. Kommentarerna: löst 27/9 med egen app (se ovan).
+   Rond 3 föreslår samma tre pausningar igen med nya tal — bara haikuh2 får
+   fortfarande spend (2 283 kr / 7 d, ROAS 1,005); de andra två har Meta
+   strypt av sig själv (62 resp. 155 kr / 7 d).
 4. **"Köp 1 – få 1" mot "Köp 2 – få 2"** som isolerad variabel i två bilder,
-   nästa rond.
+   när en rond har lärdomar att peka på.
+5. **Katarina** (Axels två videor 24/9, `09-17 UGC`) är den första nya
+   kreatören efter Nathalie — 85–89 kr var på tre dygn, ett köp. Etikett 30/9.

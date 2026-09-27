@@ -63,6 +63,18 @@ ads_management`). Ronden `/matstrumporkungen` **läser** därför Meta via token
 `/matstrumpor` är inte ombyggd — den skriver fortfarande via Adsmanager-MCP:n i
 en session Axel startar. Portföljen bär också `Norge` `1418612340124566` och
 `Finland DK` `1356652809967926`, båda utan betalmetod.
+⚠️ **Kommentarerna på Matstrumpors annonser kräver en EGEN token,
+`META_ACCESS_TOKEN_MATSTRUMPOR`** (Axels egen app, byggd 2026-09-24, läst
+första gången 2026-09-27): sidan `820358954504320` ligger i Business Manager
+Matstrumpor.se, medan `META_ACCESS_TOKEN`:s systemanvändare sitter i SnarkLös
+— samma namn "API long term", två olika användare. `tools/annonskommentarer.mjs
+--sidtoken-env META_ACCESS_TOKEN_MATSTRUMPOR`.
+⚠️ **Annonsnumren räknas ur kontot OCH hubben, aldrig ur en fil ensam**
+(mätt 2026-09-24/25: `--namn` gav 048 tre gånger — rond 2:s Draft-briefer
+fanns bara i hubben, och uppladdaren gav Gilz mini-clips samma nummer dagen
+efter; nio annonser live med rond 2:s nummer, brieferna omdöpta 054–058).
+`node matstrumpor/kor.mjs --namn` läser sedan 2026-09-27 logg + fil + senaste
+avläsning + hubben live och skriver unionen tillbaka i `kanda-namn.json`.
 
 **Kopiera aldrig `page`/`pixel` mellan verksamheterna.** Fel pixel betyder att köpen
 bokförs på fel verksamhet och att all analys blir fel — och det syns inte som ett

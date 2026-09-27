@@ -73,7 +73,7 @@ linjerna får domen `BEROR_PA_MOMS` och rörs inte förrän
 | `kon.mjs` | Notion-kön → uppladdningsplan med stoppskäl |
 | `kor.mjs` | CLI:n |
 | `logg.jsonl` | Minnet: `UPPLADDAD`, `ETIKETT`, `LARDOM`, `BRIEF`, `BUDGET`, `ROND_KLAR` |
-| `kanda-namn.json` | Ögonblicksbild av upptagna annonsnamn, så `--namn` fungerar utan nät |
+| `kanda-namn.json` | Ögonblicksbild av upptagna annonsnamn (reserven utan nät). `--namn` läser dessutom loggens UPPLADDAD-rader, kontot ur senaste `output/avlasning-*.json` och hubben live via `NOTION_TOKEN`, och skriver unionen tillbaka hit. ⚠️ Lärdom 2026-09-24/25: filen ensam gav 048 tre gånger i rad (rond 2:s Draft-briefer fanns bara i hubben) ⇒ nio annonser live med rond 2:s nummer, brieferna omdöpta 054–058 |
 
 Produktminnet ligger i `products/matstrumpor/` (`dna.md`, `batch-log.md`,
 `lardomar.md`) — som alla andra produkter i repot.

@@ -1,4 +1,4 @@
-# MATSTRUMP_sushi_gift_ugc_050_v1 — Iteration 3 of the Nathalie breakthrough — in media res: open on the reaction, then rewind
+# MATSTRUMP_sushi_gift_ugc_056_v1 — Iteration 3 of the Nathalie breakthrough — in media res: open on the reaction, then rewind
 
 **VARIABELTAGGAR:** typ=`I` · koncept=`nathalie` · parent=`09-17 Nathalie captions musik` · iteration=`3` · lardom=`L-09-17_Nathalie_captions_musik` · kalla=`parent` · avatar=`presentkoparen` · awareness=`problem` · begar=`status` · mekanism=`takeaway-lada-som-ar-strumpor` · tro=`verklig-kreator-verklig-mottagare` · urgency=`lager` · hook-mekanik=`reverse` · confidence=`medium` · vinkel=`gift` · hook-typ=`reaktion (vännen skrattar)` · format=`video, captions + music, recut of parent` · proof=`reaction first` · offer-i-creativen=`ingen` · visuell stil=`UGC, real kitchen` · textmängd=`≤12 ord per caption` · talare=`verklig kreatör (Nathalie), ingen VO` · copy_model=`sonnet`
 *(Read by the next /matstrumporkungen run to group profit contribution per variable value. Do not change them without changing the creative.)*

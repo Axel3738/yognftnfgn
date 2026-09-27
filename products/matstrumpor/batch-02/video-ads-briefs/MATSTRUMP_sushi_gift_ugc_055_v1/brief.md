@@ -1,4 +1,4 @@
-# MATSTRUMP_sushi_gift_ugc_049_v1 — Iteration 2 of the Nathalie breakthrough — a longer problem part before her video
+# MATSTRUMP_sushi_gift_ugc_055_v1 — Iteration 2 of the Nathalie breakthrough — a longer problem part before her video
 
 **VARIABELTAGGAR:** typ=`I` · koncept=`nathalie` · parent=`09-17 Nathalie captions musik` · iteration=`2` · lardom=`L-09-17_Nathalie_captions_musik, L-MATSTRUMP_sushi_gift_ugc_haikuh3_v1` · kalla=`parent` · avatar=`presentkoparen` · awareness=`problem` · begar=`status` · mekanism=`takeaway-lada-som-ar-strumpor` · tro=`verklig-kreator-verklig-mottagare` · urgency=`lager` · hook-mekanik=`zoom-in` · confidence=`medium` · vinkel=`gift` · hook-typ=`problem (den tråkiga presenten)` · format=`video, captions + music, problem part + parent` · proof=`demo + reaction` · offer-i-creativen=`ingen` · visuell stil=`UGC, drawer b-roll, real kitchen` · textmängd=`≤12 ord per caption` · talare=`verklig kreatör (Nathalie), ingen VO` · copy_model=`sonnet`
 *(Read by the next /matstrumporkungen run to group profit contribution per variable value. Do not change them without changing the creative.)*

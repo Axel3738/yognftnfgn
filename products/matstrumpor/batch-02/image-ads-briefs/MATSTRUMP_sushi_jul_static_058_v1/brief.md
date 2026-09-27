@@ -1,4 +1,4 @@
-# MATSTRUMP_sushi_jul_static_052_v1 — Christmas static for the empty jul image ad set — the profitable d3 layout + the sold-out fact
+# MATSTRUMP_sushi_jul_static_058_v1 — Christmas static for the empty jul image ad set — the profitable d3 layout + the sold-out fact
 
 **VARIABELTAGGAR:** typ=`I` · koncept=`offer-static` · parent=`MATSTRUMP_sushi_offer_static_d3_v1` · iteration=`1` · lardom=`L-MATSTRUMP_sushi_offer_static_d3_v1, L-09-17_Nathalie_captions_musik` · kalla=`parent` · avatar=`julstrumpefyllaren` · awareness=`promo` · begar=`status` · mekanism=`takeaway-lada-som-ar-strumpor` · tro=`produktfoto-lador` · urgency=`lager` · hook-mekanik=`none` · confidence=`medium` · vinkel=`jul` · hook-typ=`knapphet (sålde slut förra julen)` · format=`bild, static, 4:5 + 9:16` · proof=`product photo` · offer-i-creativen=`Köp 1 – få 1 gratis` · visuell stil=`d3 layout: trays stacked, flat colour background, big type` · textmängd=`≤12 ord per caption` · talare=`ingen` · copy_model=`sonnet`
 *(Read by the next /matstrumporkungen run to group profit contribution per variable value. Do not change them without changing the creative.)*

@@ -1,4 +1,4 @@
-# MATSTRUMP_sushi_gift_ugc_048_v1 — Iteration 1 of the Nathalie breakthrough — new hook (scarcity first), body unchanged
+# MATSTRUMP_sushi_gift_ugc_054_v1 — Iteration 1 of the Nathalie breakthrough — new hook (scarcity first), body unchanged
 
 **VARIABELTAGGAR:** typ=`I` · koncept=`nathalie` · parent=`09-17 Nathalie captions musik` · iteration=`1` · lardom=`L-09-17_Nathalie_captions_musik` · kalla=`parent` · avatar=`presentkoparen` · awareness=`problem` · begar=`status` · mekanism=`takeaway-lada-som-ar-strumpor` · tro=`verklig-kreator-verklig-mottagare` · urgency=`lager` · hook-mekanik=`cut-in` · confidence=`medium` · vinkel=`gift` · hook-typ=`påstående (sålde slut i november)` · format=`video, captions + music, recut of parent` · proof=`demo + reaction` · offer-i-creativen=`ingen` · visuell stil=`UGC, real kitchen, real recipient` · textmängd=`≤12 ord per caption` · talare=`verklig kreatör (Nathalie), ingen VO` · copy_model=`sonnet`
 *(Read by the next /matstrumporkungen run to group profit contribution per variable value. Do not change them without changing the creative.)*

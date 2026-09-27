@@ -107,12 +107,16 @@ breakthrough finns):**
 
 | Annons | Typ | Förälder | It. | Lärdom | Vad |
 |---|---|---|---|---|---|
-| `MATSTRUMP_sushi_gift_ugc_048_v1` | I | Nathalie | 1 | L-09-17_Nathalie_captions_musik | Ny hook: "Den här sålde slut i november förra året." — kroppen orörd |
-| `MATSTRUMP_sushi_gift_ugc_049_v1` | I | Nathalie | 2 | + L-haikuh3 | Längre problemdel (ljuset i byrålådan, "åh, tack") före hennes video |
-| `MATSTRUMP_sushi_gift_ugc_050_v1` | I | Nathalie | 3 | L-Nathalie | In media res: vännens skratt först, sedan rewind |
-| `MATSTRUMP_sushi_jul_ugc_051_v1` | I | Nathalie | 4 | + L-Sofie_H1_H2 | Julstrumpe-öppning (Sofie H2:s tvåbild) → jul-adsetet |
-| `MATSTRUMP_sushi_jul_static_052_v1` | I (bild) | d3 | 1 | L-d3 + L-Nathalie | d3-layouten + "Sålde slut förra julen" + Köp 1 – få 1 → jul_bilder |
+| `MATSTRUMP_sushi_gift_ugc_054_v1` *(hette 048 t.o.m. 27/9)* | I | Nathalie | 1 | L-09-17_Nathalie_captions_musik | Ny hook: "Den här sålde slut i november förra året." — kroppen orörd |
+| `MATSTRUMP_sushi_gift_ugc_055_v1` *(hette 049)* | I | Nathalie | 2 | + L-haikuh3 | Längre problemdel (ljuset i byrålådan, "åh, tack") före hennes video |
+| `MATSTRUMP_sushi_gift_ugc_056_v1` *(hette 050)* | I | Nathalie | 3 | L-Nathalie | In media res: vännens skratt först, sedan rewind |
+| `MATSTRUMP_sushi_jul_ugc_057_v1` *(hette 051)* | I | Nathalie | 4 | + L-Sofie_H1_H2 | Julstrumpe-öppning (Sofie H2:s tvåbild) → jul-adsetet |
+| `MATSTRUMP_sushi_jul_static_058_v1` *(hette 052)* | I (bild) | d3 | 1 | L-d3 + L-Nathalie | d3-layouten + "Sålde slut förra julen" + Köp 1 – få 1 → jul_bilder |
 | `MATSTRUMP_sushi_skamt_ugc_053_v1` | N | — | 1 | L-012v2 + L-Sofie | Ny vinkel: skämtet på fikat, avatar `skamtaren` (gissning — inga kommentarer) |
+
+⚠️ **Omdöpta 2026-09-27 (rond 3):** numren 048–052 togs 25/9 av Gilz
+mini-clips (uppladdaren fick samma nummer av namnmotorn). Nya Notion-rader
+054–058 med samma brief, de gamla arkiverade — se rond 3 nedan.
 
 Copy: sonnet-subagent (tre-frågorstestet i varje brief), regi rad för rad av
 sessionen ur frames (`OUR AD 09-17_Nathalie_captions_musik mm:ss`), spärren
@@ -197,6 +201,53 @@ inte än** (63 av 100 köp per variant). Mixningen tog fart: 11 av 63 B-ordrar
 blandade sorter i paketet (1 av 22 vid avläsning 2), fyrpack B 8 / A 3,
 enstaka lådor B 5 / A 1 (B:s lucka på pizza-/hamburgare-/donutsidan står
 kvar). Båda når 100 köp inom ungefär ett och ett halvt dygn i den här takten.
+
+---
+
+## 2026-09-27 — rond 3: 0 etiketter, 0 lärdomar, 0 briefer, 4 förslag — och namnkrocken rättad
+
+**Avläsning (token, 7d_click, 14 d till 26/9):** 107 annonser, 87 med spend,
+**44 071 kr · 207 köp · ROAS 2,03** — över break-even 1,498 (rond 2: ROAS
+1,456). Sedan höjningen till 10 000 kr/dag 23/9: 24–26/9 **29 750 kr / 154
+köp / ROAS 2,20**. Sju dygn 20–26/9: 37 090 kr / 189 köp, Nathalie 32 605 kr
+(88 %) / 172 köp / ROAS 2,23. Vinstbidrag 14 d: **Nathalie +16 069** (benchmark)
+· d3 +1 843 · s001h1 0 · haikuh2 −409 · haikuh3 −617 · 012v2 −1 001.
+
+**Etiketter:** 0 nya — alla 85 redan satta i rond 2, och de 22 unga
+(batch #1 ×11 från 21/9, Katarina ×2 från 24/9, Gilz mini-clips ×9 från 25/9)
+har inte fyllt sju dygn. Breakthrough-frekvens oförändrad **1 av 85 = 1 %**.
+⇒ **0 lärdomar sedan förra ronden ⇒ brieftak 0 ⇒ inga briefer** (regeln:
+aldrig fler briefer än lärdomar). Nästa rond 30/9 får 13 etiketter att skriva
+lärdomar ur, 1/10 nio till.
+
+**Kommentarerna läses nu** (`META_ACCESS_TOKEN_MATSTRUMPOR`, Axels egen app):
+Nathalie 4 kommentarer på 30 d — "Material?", en skeptiker (leveranstid, "kina
+skräp"), en tagg, ett skämt. Inget kluster ≥ 3, ingen INVAND-brief.
+
+**Namnkrocken (hittad i dag, orsakad av rond 2):** kontot hade nio nya annonser
+med rond 2:s nummer — `jul_ugc_048h1–h3`, `gift_ugc_049h1–h3`, `050`,
+`gift_lifestyle_051`, `gift_ugc_052` — alla Gilz mini-clips (B_Mini-clip-raderna
+01/03/06 m.fl.) som `/matstrumpor` döpte och laddade upp 25/9. Namnmotorn
+(`--namn`) läste bara `kanda-namn.json` + UPPLADDAD-raderna i loggen: filen
+uppdaterades i rond 2 FÖRE Notion-raderna 048–053 skapades, och uppladdarens
+session pushade inga UPPLADDAD-rader. Så 048 var "ledigt" tre gånger i rad.
+Rättat: `samlaKandaNamn` (namn.mjs) + `hubbNamn` (kon.mjs) — `--namn` läser
+loggen, filen, kontot ur senaste avläsningen och hubben live (85 titlar), och
+skriver unionen tillbaka i filen (179 namn, högsta 053 ⇒ nästa 054). Test:
+"en Draft-brief i hubben upptar sitt nummer". Brieferna 048–052 → **054–058**
+(mappar, manifest, fem nya Notion-rader i Draft med redigerarnoten, de fem
+gamla arkiverade; 053 orörd). `notion-resultat.json` bär spåret.
+
+**Förslag till Axel (FORSLAG-rader, inget utfört):** höj CBO:n +20 % till
+12 000 kr/dag (budgeten går åt, ROAS 2,20 efter 10×-höjningen — men 88 % av
+spenden ligger på EN annons, därför ett steg i taget); pausa haikuh2 (−409 kr
+/ 14 d, får fortfarande 2 283 kr / 7 d på ROAS 1,005), 012v2 (−1 001 kr / 14
+d) och haikuh3 (−617 kr / 14 d) — de två sista har Meta nästan strypt själv
+(155 resp. 62 kr / 7 d). Axel sa nej till pausningarna 24/9; de står kvar som
+rondens rekommendation med nya tal.
+
+**Kön:** `B_Mini-clip_UGC_04` och `BURGER B_Mini-clip_UGC_02` ligger kvar i
+`To be Reviewed` (odöpta, `/matstrumpor` i en session med Adsmanager-MCP:n).
 
 ---
 
