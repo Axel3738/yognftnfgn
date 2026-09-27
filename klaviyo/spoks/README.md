@@ -320,6 +320,34 @@ tackat nej (egna kunder, MFL 19 § 2 st, samma beslut som 2026-09-25). Enda lagl
 fler ja är rutans egen text i kassan (Shopifys standardtext är "Skicka nyheter och erbjudanden
 till mig via e-post") — inget popup (Axels regel).
 
+**Rutans text bytt 2026-09-27 (Axels beslut A samma morgon)** med `node klaviyo/samtyckesruta.mjs
+--brand carashell --skarpt`. Texterna står i brandfilens `samtycke_kassan` (skrivna av en
+Sonnet-subagent mot copy-reglerna och faktabladen, granskade av huvudsessionen; två varv, för
+svenskans "sitter kvar i blåst och erbjudanden" gick att läsa fel och danskans "e-mail mig" är
+inte danska): sv "Ja, mejla mig erbjudanden och tips om hur skyddet sitter kvar i blåst.", nb "Ja,
+send meg e-post med tips om hvordan trekket sitter fast i vind, og tilbud.", da "Ja, send mig mails
+med tips om hvordan betrækket sidder fast i blæst, og tilbud.", en "Yes, email me tips on how the
+cover stays on in the wind, and offers." Finskan står kvar på Shopifys standard (Finland får
+engelska mejl). Var texten ligger, mätt samma dag: nyckeln
+`shopify.checkout.marketing.accept_marketing_checkbox_label` i det publicerade temats
+locale-innehåll (`translatableResources` av typen `ONLINE_STORE_THEME_LOCALE_CONTENT`, samma id som
+temat) — huvudspråket skrivs i temats `locales/sv.json` under `shopify → checkout → marketing`
+(themeFilesUpsert; nyckeln fanns inte i filen förut, och locale-innehållet visade den nya texten
+direkt efteråt), de andra språken med `translationsRegister` (appen Factory har
+`write_translations` + `write_themes`). Läst tillbaka i API:t och **sett i kassan som kund på alla
+fyra språk** (`--kundvy`: Chromium lägger första aktiva produkten i korgen via `/<språk>/cart/add.js`
+och öppnar `/<språk>/checkout`; tre fällor mätta: Chromium här kräver
+`--ignore-certificate-errors` mot proxyns certifikat, länken måste bära landkoden annars skickar
+carashell.se vidare till .com från USA, och utan språkprefixet öppnas kassan på svenska —
+`lang=sv-NO`). Skärmdumparna i `klaviyo/output/carashell/samtycke-kassan/` (gitignorerat) visar
+rutan **ikryssad även på svenska**, eftersom containern surfar från USA — det bevisar inget om
+vad en svensk kund ser; datan ovan (12 av 198) gör det. Loggen med före/efter:
+`klaviyo/konto/carashell/samtyckesruta.jsonl`. Reglerna sitter i verktyget: en mening, max 100
+tecken, orden mejl + erbjudanden kvar (samtycket ska vara informerat), inga tankstreck, inga
+siffror. Mät ja-andelen per land igen om två veckor och jämför med tabellen ovan. Samma verktyg
+fungerar för vilken butik som helst med brandfil + `samtycke_kassan` (Bäverbutiken och Matstrumpor
+har samma standardtext i kassan — det är Axels beslut om de ska få den här texten).
+
 Axels order 2026-09-26 (`PROMPT-carashell.md`): hela mejlsystemet för CaraShell i
 Spoks, alla marknader och språk, allt som utkast. CaraShell är en egen verksamhet:
 inget delas med Bäverbutiken (egen brandfil, eget innehåll, egna produkter, egen copy).

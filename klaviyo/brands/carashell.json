@@ -198,6 +198,13 @@
       "produktkort_comment": "Som nb: Spoks katalog har svenska titlar och SEK, så danska mejl får bild + dansk rubrik + knapp; länkarna bär ?country=DK så sidan visar DKK. \"Hej {{ contact.first_name | default: 'med dig' }}\" ger \"Hej Anders\" eller \"Hej med dig\"."
     }
   },
+  "samtycke_kassan": {
+    "sv": "Ja, mejla mig erbjudanden och tips om hur skyddet sitter kvar i blåst.",
+    "nb": "Ja, send meg e-post med tips om hvordan trekket sitter fast i vind, og tilbud.",
+    "da": "Ja, send mig mails med tips om hvordan betrækket sidder fast i blæst, og tilbud.",
+    "en": "Yes, email me tips on how the cover stays on in the wind, and offers.",
+    "comment": "Texten vid kassans kryssruta för e-postmarknadsföring (Shopify-nyckeln shopify.checkout.marketing.accept_marketing_checkbox_label), skriven 2026-09-27 av en Sonnet-subagent mot copy-reglerna och faktabladen, granskad av huvudsessionen. Axels beslut A samma dag: rutan finns i alla marknader men är förikryssad bara i USA (59 av 77 sa ja; SE 12 av 198, NO 4 av 99, DK 3 av 28, AU 2 av 32), ingen popup (Axels regel) — så texten är enda spaken. Reglerna sitter i klaviyo/samtyckesruta.mjs: en mening, max 100 tecken, orden mejl + erbjudanden måste stå kvar (samtycket ska vara informerat, MFL 19 §), inga tankstreck, inga siffror. Finska (fi) står inte här med flit: Finland får engelska mejl och Shopifys finska standardtext står kvar i kassan. Skrivs till butiken med node klaviyo/samtyckesruta.mjs --brand carashell --skarpt."
+  },
   "produkttitlar": {
     "takskyddet": {
       "sv": "Taköverdrag Husvagn & Husbil 5,5–13,5 m",
