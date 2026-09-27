@@ -375,7 +375,7 @@ export function filterTillSpoks(nycklar = []) {
     else if (n === 'kopt_minst_en_gang') trigger.push({ type: 'filter', field: 'totalOrders', operator: 'ge', value: '1' });
     else if (/^ej_i_flodet_\d+d$/.test(n)) { /* Spoks: allowReenrolmentAfter gör samma jobb */ }
     // utan_tagg:<tagg> — mejlet hoppas över när kunden bär taggen (t.ex. klubb-video-klar:
-    // VA:n sätter den i Shopify när vinnarens bild kommit, och påminnelserna tystnar).
+    // VA:n sätter den i Shopify när vinnarens video kommit, och påminnelserna tystnar).
     else if (/^utan_tagg:.+$/.test(n)) steg.push({ type: 'filter', field: 'tags', operator: 'nin', value: [n.slice('utan_tagg:'.length)] });
     else throw new Error(`Okänd filternyckel "${n}".`);
   }
@@ -393,6 +393,7 @@ export const FLODESNAMN = {
   'f06-sunset': 'F06 Sunset',
   'f07-aterkop-sushi': 'F07 En låda till (sushi, dag 21)',
   'f08-klubbdragning': 'F08 Klubbdragningen (vinnarna)',
+  'f09-recension': 'F09 Recensionen (butiksomdöme)',
 };
 
 export function flodesnamn(flode) {
