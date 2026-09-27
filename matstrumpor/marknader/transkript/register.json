@@ -4030,5 +4030,72 @@
   ],
   "fil": "MATSTRUMP_sushi_gift_ugc_trodde_v1.srt",
   "tal_s": 19.0
+ },
+ "1448657477320973": {
+  "annons": "MATSTRUMP_sushi_gift_ugc_s008h1_v1",
+  "annons_id": "120251218122850023",
+  "status": "ACTIVE",
+  "skapad": "2026-08-27T05:15:47+0200",
+  "langd_s": 30.266,
+  "titel": "008 Sushi_H1.mov",
+  "rader": [
+   {
+    "start": 0.0,
+    "slut": 3.48,
+    "text": "Jag antecknar hela året för att pricka den perfekta julklappen."
+   },
+   {
+    "start": 3.48,
+    "slut": 5.32,
+    "text": "Det är min favoritdel av hela jul."
+   },
+   {
+    "start": 5.32,
+    "slut": 8.16,
+    "text": "Att se barnens ansikten när de öppnar paketen."
+   },
+   {
+    "start": 8.16,
+    "slut": 11.52,
+    "text": "Men jag har hittat en gen väg till exakt samma ansikte."
+   },
+   {
+    "start": 11.52,
+    "slut": 12.96,
+    "text": "Utan anteckningen."
+   },
+   {
+    "start": 12.96,
+    "slut": 14.0,
+    "text": "Sushi-strumpor."
+   },
+   {
+    "start": 14.0,
+    "slut": 17.52,
+    "text": "Något som faktiskt får en reaktion och som används på riktigt."
+   },
+   {
+    "start": 17.52,
+    "slut": 20.96,
+    "text": "Det är den typen av present som passar perfekt till alla tillfällen."
+   },
+   {
+    "start": 20.96,
+    "slut": 24.08,
+    "text": "Genomtänkt, kul, men utan att försöka för mycket."
+   },
+   {
+    "start": 24.08,
+    "slut": 26.16,
+    "text": "Ser ut som sushi är strumpor."
+   },
+   {
+    "start": 26.16,
+    "slut": 27.64,
+    "text": "Sushi-strumpor."
+   }
+  ],
+  "fil": "MATSTRUMP_sushi_gift_ugc_s008h1_v1.srt",
+  "tal_s": 27.6
  }
 }
