@@ -156,6 +156,13 @@ export async function korAkut({
   const dom = domAllt({ sajter: sajtsvar, konton: metasvar ?? [], butiker, halsa, rutiner, notion, tvister, utbetalningar },
     { nu, trosklar, varumarken, rutinkonton: konfig.rutinkonton ?? {}, minne, dagligt: korDagligt });
   noteringar.push(...dom.noteringar);
+  // Avstängda larmtyper (konfig.kontroller_av): mäts, men postas aldrig.
+  const avstangda = new Set(konfig.kontroller_av ?? []);
+  if (avstangda.size) {
+    const bort = dom.larm.filter((l) => avstangda.has(l.typ));
+    dom.larm = dom.larm.filter((l) => !avstangda.has(l.typ));
+    if (bort.length) noteringar.push(`${bort.length} larm av avstängd typ (${[...new Set(bort.map((l) => l.typ))].join(', ')}) postas inte — kontroller_av i akut/konfig.json`);
+  }
 
   // Nytt = inte redan postat (tillstånd: inte olöst; händelse: inte alls).
   // Löst = ett postat tillstånd vars nyckel den här körningen mätte som frisk.

@@ -1,0 +1,27 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-27",
+  "lage": "budget",
+  "server": "CaraShell — OPS",
+  "gjort": [
+    "Budget round: the LISTICLE campaign is cut 2 000 → 1 400 kr/day on a 3-day profit of 10.0 %. Read back and logged",
+    "The main campaign is still held at 6 750 kr by the cadence lock, 2 of the 3 required days. Its 3-day profit is -35.6 % at ROAS 1.03. The round cuts it tomorrow night, 28 September",
+    "Paused one ad: CaraShellRoof_GT_108_H1 — 1 371 kr and zero purchases in 14 days",
+    "95 purchases over 7 days on 69 768 kr at ROAS 1.93. Profit contribution 12 712 kr, down from 36 911 three nights ago"
+  ],
+  "siffror": { "spend_7d": 69768, "kop_7d": 95, "roas_7d": 1.93, "vinstbidrag_7d": 12712 },
+  "briefer": [],
+  "action_axel": [
+    "The main campaign has spent about 20 000 kr at or below break-even in three days and no ad-level fix exists. Daily: 6 576 kr at ROAS 0.96 yesterday, 6 662 at 1.28, 9 198 at 0.91 — five to six purchases a day against ten to fourteen the week before. Decide whether it keeps running this week. Three options: let the round cut it to 4 725 kr tomorrow night and watch one more day; tell me to cut it now and I will; or pause the campaign and leave the LISTICLE one running, which is the profitable half. I recommend the middle option only if you want it to keep running at all — at ROAS 1.03 each day costs roughly 2 500 kr in lost margin"
+  ],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-28",
+  "varningar": [
+    "No single ad explains this, and that is the important finding. The main campaign's 7-day CPA is 806 kr against break-even 693. Its top spender SP_5_1 carries 19 132 kr — 37 % of the campaign — at CPA 765, which is BETTER than the campaign average. Everything else averages 831. So pausing the top ad, or any ad, does not fix it: the whole campaign has drifted above break-even together",
+    "SP_5_1 has still degraded badly on its own terms: CPA 478 measured on 23 September, 604 over 14 days now, 765 over the last 7. The rules protect it correctly (top spender, over 30 % of contribution, still class winner on the 14-day window) which means the night watch structurally cannot act here. This one is the owner's",
+    "And the round may be cutting the wrong campaign. LISTICLE's 7-day CPA is 579 kr, comfortably under break-even, and its 7-day profit is 19.4 % — it is the healthier of the two. It got cut because the rules judge on the 3-day window and it had a bad Saturday (1 878 kr at ROAS 0.77, one purchase). The main campaign, at CPA 806, was held by its cadence lock. Worth a look at whether the cadence lock should yield when a campaign is under break-even",
+    "Norway and Denmark still run unwatched on 4 000 kr/day each, reported 23 September, unchanged",
+    "Briefs stay paused by owner decision from 18 September"
+  ]
+}

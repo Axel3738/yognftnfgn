@@ -164,6 +164,7 @@
     "Paketet har sorterats fel och leveransdatumet uppdateras": "The parcel was missorted and the delivery date is being updated",
     "Ett sms om paketet har skickats till dig": "A text message about the parcel has been sent to you",
     "Fraktbolaget har hämtat paketet i paketboxen": "The carrier has collected the parcel from the locker",
+    "Fraktbolaget har hämtat paketet och det är på väg till terminalen": "The carrier has collected the parcel and it is on its way to the facility",
     "Ombudet förlänger tiden du har på dig att hämta paketet": "The pickup point is extending the time you have to collect the parcel",
     "Vi kunde inte skicka avin till din mejladress": "We could not send the notification to your email address",
     "Du har hämtat paketet hos ombudet": "You have collected the parcel from the pickup point",
@@ -194,6 +195,8 @@
     "Två saker som passar samma husvagn eller husbil. Skickas som en egen beställning, med fri frakt och 14 dagars ångerrätt som vanligt.": "Two items that suit the same caravan or motorhome. Sent as a separate order, with free delivery and the usual 14-day right of withdrawal.",
     "{{pris}} för dig som beställt hos oss": "{{pris}} for you who ordered from us",
     "Lägg till för {{pris}}": "Add for {{pris}}",
-    "Priset gäller dig som beställt hos oss och läggs på av sig själv i kassan.": "This price applies to you as a customer of ours and is added automatically at checkout."
+    "Priset gäller dig som beställt hos oss och läggs på av sig själv i kassan.": "This price applies to you as a customer of ours and is added automatically at checkout.",
+    "Paketet är på väg till ombud": "The parcel is on its way to a pickup point",
+    "Vi planerar ett nytt hemleveransförsök till dig": "We are scheduling another home delivery attempt"
   }
 }

@@ -83,6 +83,7 @@
     "Paketet har lämnat avgångsorten": "Pakken har forlatt avsendingsstedet",
     "Chauffören kom inte in genom porten och kunde inte lämna paketet": "Sjåføren kom ikke inn porten og kunne ikke levere pakken",
     "Leveransen är försenad. Leveransdatumet uppdateras": "Leveringen er forsinket. Leveringsdatoen oppdateres",
+    "Leveransen är troligen försenad. Leveransdatumet uppdateras": "Leveringen er sannsynligvis forsinket. Leveringsdatoen oppdateres",
     "4PX har hämtat paketet": "4PX har hentet pakken",
     "Paketet ligger hos tullen": "Pakken ligger hos tollen",
     "Leveransen misslyckades": "Leveringen mislyktes",
@@ -169,6 +170,7 @@
     "Paketet har sorterats fel och leveransdatumet uppdateras": "Pakken har blitt feilsortert, og leveringsdatoen oppdateres",
     "Ett sms om paketet har skickats till dig": "En SMS om pakken er sendt til deg",
     "Fraktbolaget har hämtat paketet i paketboxen": "Fraktselskapet har hentet pakken i pakkeboksen",
+    "Fraktbolaget har hämtat paketet och det är på väg till terminalen": "Fraktselskapet har hentet pakken, og den er på vei til terminalen",
     "Ombudet förlänger tiden du har på dig att hämta paketet": "Hentestedet forlenger tiden du har på deg til å hente pakken",
     "Vi kunde inte skicka avin till din mejladress": "Vi kunne ikke sende varselet til e-postadressen din",
     "Du har hämtat paketet hos ombudet": "Du har hentet pakken på hentestedet",
@@ -203,6 +205,8 @@
     "Två saker som passar samma husvagn eller husbil. Skickas som en egen beställning, med fri frakt och 14 dagars ångerrätt som vanligt.": "To ting som passer til samme campingvogn eller bobil. Sendes som en egen bestilling, med fri frakt og 14 dagers angrerett som vanlig.",
     "{{pris}} för dig som beställt hos oss": "{{pris}} for deg som har bestilt hos oss",
     "Lägg till för {{pris}}": "Legg til for {{pris}}",
-    "Priset gäller dig som beställt hos oss och läggs på av sig själv i kassan.": "Prisen gjelder deg som har bestilt hos oss, og legges på av seg selv i kassen."
+    "Priset gäller dig som beställt hos oss och läggs på av sig själv i kassan.": "Prisen gjelder deg som har bestilt hos oss, og legges på av seg selv i kassen.",
+    "Paketet är på väg till ombud": "Pakken er på vei til et hentested",
+    "Vi planerar ett nytt hemleveransförsök till dig": "Vi planlegger et nytt leveringsforsøk hjem til deg"
   }
 }

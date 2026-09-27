@@ -2398,3 +2398,48 @@ produktsidan 105 — 0 svenska, kassan `en-US` med United States förvalt, inget
 larm. Dagens 16 655 kr i Stories redovisas som "före bytet" (adseten ändrades
 11:32 UTC), inte som larm; från i morgon larmar vakten varje krona utanför
 flödet.
+
+---
+
+## Nattvakten 2026-09-27 — LISTICLE sänkt, huvudkampanjen låst en natt till
+
+**Budget:** LISTICLE **sänkt 2 000 → 1 400 kr** (vinst 3d 10,0 %).
+Huvudkampanjen kvar på 6 750 kr — vinst 3d **−35,6 %** vid ROAS 1,03, men
+kadensspärren håller den (2 av 3 dygn). **Ronden sänker den 2026-09-28.**
+
+**Pausad:** `CaraShellRoof_GT_108_H1` — 1 371 kr, 0 köp på 14 dygn.
+
+**7 dygn SE:** 69 768 kr, 95 köp, ROAS 1,93, vinstbidrag **12 712 kr** — fyra
+nätters fall: 36 911 → 31 253 → 22 733 → 12 712.
+
+**Rotorsaken hittad och den är inte en annons** — se mönster 15 i `dna.md`.
+Huvudkampanjens 7d-CPA är 806 kr mot break-even 693; top spendern `SP_5_1` bär
+37 % av spenden till CPA 765 (bättre än snittet), resten 831. Att pausa någon
+enskild annons fixar ingenting.
+
+⚠️ LISTICLE är den friskare kampanjen på 7 dygn (CPA 579, under break-even) och
+det är den ronden sänkte — huvudkampanjen (CPA 806) räddades av sin kadensspärr.
+Regelfrågan står i mönster 15 och är ägarens.
+
+## 2026-09-27 — NO-rundan: sju rader, alla live (och en strypt läsning)
+
+7 rader i `SE-ACTIVE to be translated`: gårdagens fem plus dagens två nya
+bildrader ur speglingen, `OB_108_1` (`120249279329000172`) och `OB_110_1`
+(`120249278929900172`). **Alla sju redan live**, tillbakalästa som ACTIVE i
+ACTIVE adset. Inget renderat, inget uppladdat, 0 HeyGen-krediter, ingen status
+rörd. Approved-passet: **60 rader, 0 utan NO-annons.**
+
+⚠️ **Approved-passet föll första gången på Metas kvot** — `✗ Meta paging: User
+request limit reached` under kontoläsningen, exit 1, och filen blev 0 byte. Ett
+nytt försök några minuter senare läste alla 60. Läs felraden: en strypt läsning
+ser ut som en tom kö i utdatafilen, precis som den tysta nollan 2026-09-22.
+## 2026-09-27 — leveransrundan: sjunde dygnet, oförändrat
+
+Samma två rader, samma md5 (`d9ab48ff…` / `271bf976…`), samma slutkort med
+`carashell.se`. Kontrollen kördes med OCR. Inget uppladdat, ingen status
+ändrad, inga nya kommentarer.
+
+⚠️ Metas läsning svarade först `User request limit reached` (kod 17) — samma
+token bär US-marknadsvakten, NO-rundan och speglingen. Kön gick igenom efter
+15 minuters paus. En strypt kö är inte en tom kö: läs om innan något
+rapporteras som klart.
