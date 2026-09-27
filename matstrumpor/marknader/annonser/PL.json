@@ -1,0 +1,39 @@
+{
+ "_om": "Annonstext (pl) för MATSTRUMP_PL_SALES (Polen), skriven 2026-09-27 av en sonnet-subagent mot docs/copy-regler.md + REGLER-EUROPA ur den svenska vinnarannonsen (Nathalie). Tre-frågorstestet 5/5 ✅ per mening. Inget pris, ingen leveranstid, inget butiksnamn, inget landsnamn i fraktraden. Videorna är PL-batchens (heygen/PL.json), klar/PL_<namn>.mp4. ⛔ Katarina ingår aldrig. Budgeten är EJ GIVEN — kampanjen förblir PAUSED.",
+ "instagram_user_id": "17841479011543544",
+ "copy": {
+  "title": "Zabawa wieczorem. Na twoich nogach jutro.",
+  "title_alt": [
+   "Żartobliwy prezent, który nie trafia do szuflady.",
+   "Skarpetki sushi, które naprawdę nosisz."
+  ],
+  "message": "Nikt nie świętuje proszku do prania. Nikt nie trzyma żartobliwego prezentu.\nOdpowiedź na oba: pudełko, które wygląda jak prawdziwe jedzenie na wynos, 5 par zwiniętych jak maki, drewniane pałeczki obok.\nNie zostaje w pudełku po rozpakowaniu. Jest na twoich nogach, tydzień po tygodniu.",
+  "link_description": "4 rodzaje. Kup 1 – Otrzymaj 1 GRATIS. Darmowa dostawa."
+ },
+ "annonser": [
+  {
+   "namn": "MATSTRUMP_PL_sushi_gift_ugc_001_v1",
+   "kalla": "09-17 Nathalie captions musik (video 1531210268763716)",
+   "video": "klar/PL_nathalie.mp4",
+   "title": "Zabawa wieczorem. Na twoich nogach jutro.",
+   "message": "Nikt nie świętuje proszku do prania. Nikt nie trzyma żartobliwego prezentu.\nOdpowiedź na oba: pudełko, które wygląda jak prawdziwe jedzenie na wynos, 5 par zwiniętych jak maki, drewniane pałeczki obok.\nNie zostaje w pudełku po rozpakowaniu. Jest na twoich nogach, tydzień po tygodniu.",
+   "link_description": "4 rodzaje. Kup 1 – Otrzymaj 1 GRATIS. Darmowa dostawa."
+  },
+  {
+   "namn": "MATSTRUMP_PL_sushi_gift_ugc_002_v1",
+   "kalla": "Sofie H1 Sushi Captions Ingen musik (video 2577232842703704)",
+   "video": "klar/PL_sofie_h1.mp4",
+   "title": "Żartobliwy prezent, który nie trafia do szuflady.",
+   "message": "Nikt nie świętuje proszku do prania. Nikt nie trzyma żartobliwego prezentu.\nOdpowiedź na oba: pudełko, które wygląda jak prawdziwe jedzenie na wynos, 5 par zwiniętych jak maki, drewniane pałeczki obok.\nNie zostaje w pudełku po rozpakowaniu. Jest na twoich nogach, tydzień po tygodniu.",
+   "link_description": "4 rodzaje. Kup 1 – Otrzymaj 1 GRATIS. Darmowa dostawa."
+  },
+  {
+   "namn": "MATSTRUMP_PL_sushi_jul_ugc_003_v1",
+   "kalla": "Sofie H2 julstrumpa Sushi Captions Ingen musik (video 28225249640488512)",
+   "video": "klar/PL_sofie_h2.mp4",
+   "title": "Skarpetki sushi, które naprawdę nosisz.",
+   "message": "Nikt nie świętuje proszku do prania. Nikt nie trzyma żartobliwego prezentu.\nOdpowiedź na oba: pudełko, które wygląda jak prawdziwe jedzenie na wynos, 5 par zwiniętych jak maki, drewniane pałeczki obok.\nNie zostaje w pudełku po rozpakowaniu. Jest na twoich nogach, tydzień po tygodniu.",
+   "link_description": "4 rodzaje. Kup 1 – Otrzymaj 1 GRATIS. Darmowa dostawa."
+  }
+ ]
+}

@@ -1,0 +1,39 @@
+{
+ "_om": "Annonstext (it) för MATSTRUMP_IT_SALES (Italien), skriven 2026-09-27 av en sonnet-subagent mot docs/copy-regler.md + REGLER-EUROPA ur den svenska vinnarannonsen (Nathalie). Tre-frågorstestet 5/5 ✅ per mening. Inget pris, ingen leveranstid, inget butiksnamn, inget landsnamn i fraktraden. Videorna är IT-batchens (heygen/IT.json), klar/IT_<namn>.mp4. ⛔ Katarina ingår aldrig. Budgeten är EJ GIVEN — kampanjen förblir PAUSED.",
+ "instagram_user_id": "17841479011543544",
+ "copy": {
+  "title": "Divertente stasera. Ai tuoi piedi domani.",
+  "title_alt": [
+   "Il regalo scherzo che non finisce nel cassetto.",
+   "Calzini sushi che indossi davvero."
+  ],
+  "message": "Nessuno festeggia un detersivo. Nessuno conserva un regalo scherzo.\nLa risposta a entrambi: una scatola che sembra vero cibo da asporto, 5 paia arrotolate come maki, bacchette in legno a fianco.\nNon resta nella scatola dopo. È ai tuoi piedi, settimana dopo settimana.",
+  "link_description": "4 tipi. Compri 1 – Ricevi 1 GRATIS. Spedizione gratuita."
+ },
+ "annonser": [
+  {
+   "namn": "MATSTRUMP_IT_sushi_gift_ugc_001_v1",
+   "kalla": "09-17 Nathalie captions musik (video 1531210268763716)",
+   "video": "klar/IT_nathalie.mp4",
+   "title": "Divertente stasera. Ai tuoi piedi domani.",
+   "message": "Nessuno festeggia un detersivo. Nessuno conserva un regalo scherzo.\nLa risposta a entrambi: una scatola che sembra vero cibo da asporto, 5 paia arrotolate come maki, bacchette in legno a fianco.\nNon resta nella scatola dopo. È ai tuoi piedi, settimana dopo settimana.",
+   "link_description": "4 tipi. Compri 1 – Ricevi 1 GRATIS. Spedizione gratuita."
+  },
+  {
+   "namn": "MATSTRUMP_IT_sushi_gift_ugc_002_v1",
+   "kalla": "Sofie H1 Sushi Captions Ingen musik (video 2577232842703704)",
+   "video": "klar/IT_sofie_h1.mp4",
+   "title": "Il regalo scherzo che non finisce nel cassetto.",
+   "message": "Nessuno festeggia un detersivo. Nessuno conserva un regalo scherzo.\nLa risposta a entrambi: una scatola che sembra vero cibo da asporto, 5 paia arrotolate come maki, bacchette in legno a fianco.\nNon resta nella scatola dopo. È ai tuoi piedi, settimana dopo settimana.",
+   "link_description": "4 tipi. Compri 1 – Ricevi 1 GRATIS. Spedizione gratuita."
+  },
+  {
+   "namn": "MATSTRUMP_IT_sushi_jul_ugc_003_v1",
+   "kalla": "Sofie H2 julstrumpa Sushi Captions Ingen musik (video 28225249640488512)",
+   "video": "klar/IT_sofie_h2.mp4",
+   "title": "Calzini sushi che indossi davvero.",
+   "message": "Nessuno festeggia un detersivo. Nessuno conserva un regalo scherzo.\nLa risposta a entrambi: una scatola che sembra vero cibo da asporto, 5 paia arrotolate come maki, bacchette in legno a fianco.\nNon resta nella scatola dopo. È ai tuoi piedi, settimana dopo settimana.",
+   "link_description": "4 tipi. Compri 1 – Ricevi 1 GRATIS. Spedizione gratuita."
+  }
+ ]
+}

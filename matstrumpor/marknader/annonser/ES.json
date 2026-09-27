@@ -1,0 +1,39 @@
+{
+ "_om": "Annonstext (es) för MATSTRUMP_ES_SALES (Spanien), skriven 2026-09-27 av en sonnet-subagent mot docs/copy-regler.md + REGLER-EUROPA ur den svenska vinnarannonsen (Nathalie). Tre-frågorstestet 5/5 ✅ per mening. Inget pris, ingen leveranstid, inget butiksnamn, inget landsnamn i fraktraden. Videorna är ES-batchens (heygen/ES.json), klar/ES_<namn>.mp4. ⛔ Katarina ingår aldrig. Budgeten är EJ GIVEN — kampanjen förblir PAUSED.",
+ "instagram_user_id": "17841479011543544",
+ "copy": {
+  "title": "Diversión esta noche. En tus pies mañana.",
+  "title_alt": [
+   "El regalo de broma que no acaba en un cajón.",
+   "Calcetines de sushi que realmente te pones."
+  ],
+  "message": "Nadie celebra un detergente. Nadie guarda un regalo de broma.\nLa respuesta a ambos: una caja que parece comida a domicilio de verdad, 5 pares enrollados como maki, palillos de madera al lado.\nNo se queda en la caja después. Está en tus pies, semana tras semana.",
+  "link_description": "4 tipos. Compra 1 – Llévate 1 GRATIS. Envío gratis."
+ },
+ "annonser": [
+  {
+   "namn": "MATSTRUMP_ES_sushi_gift_ugc_001_v1",
+   "kalla": "09-17 Nathalie captions musik (video 1531210268763716)",
+   "video": "klar/ES_nathalie.mp4",
+   "title": "Diversión esta noche. En tus pies mañana.",
+   "message": "Nadie celebra un detergente. Nadie guarda un regalo de broma.\nLa respuesta a ambos: una caja que parece comida a domicilio de verdad, 5 pares enrollados como maki, palillos de madera al lado.\nNo se queda en la caja después. Está en tus pies, semana tras semana.",
+   "link_description": "4 tipos. Compra 1 – Llévate 1 GRATIS. Envío gratis."
+  },
+  {
+   "namn": "MATSTRUMP_ES_sushi_gift_ugc_002_v1",
+   "kalla": "Sofie H1 Sushi Captions Ingen musik (video 2577232842703704)",
+   "video": "klar/ES_sofie_h1.mp4",
+   "title": "El regalo de broma que no acaba en un cajón.",
+   "message": "Nadie celebra un detergente. Nadie guarda un regalo de broma.\nLa respuesta a ambos: una caja que parece comida a domicilio de verdad, 5 pares enrollados como maki, palillos de madera al lado.\nNo se queda en la caja después. Está en tus pies, semana tras semana.",
+   "link_description": "4 tipos. Compra 1 – Llévate 1 GRATIS. Envío gratis."
+  },
+  {
+   "namn": "MATSTRUMP_ES_sushi_jul_ugc_003_v1",
+   "kalla": "Sofie H2 julstrumpa Sushi Captions Ingen musik (video 28225249640488512)",
+   "video": "klar/ES_sofie_h2.mp4",
+   "title": "Calcetines de sushi que realmente te pones.",
+   "message": "Nadie celebra un detergente. Nadie guarda un regalo de broma.\nLa respuesta a ambos: una caja que parece comida a domicilio de verdad, 5 pares enrollados como maki, palillos de madera al lado.\nNo se queda en la caja después. Está en tus pies, semana tras semana.",
+   "link_description": "4 tipos. Compra 1 – Llévate 1 GRATIS. Envío gratis."
+  }
+ ]
+}
