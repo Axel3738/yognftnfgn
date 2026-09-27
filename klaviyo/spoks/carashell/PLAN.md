@@ -13,7 +13,7 @@ Uppladdningen görs av en session med Spoks-MCP:n enligt `klaviyo/spoks/PROMPT-c
 | Norge | 82 | 94 | 4 | nb-NO 67, sv-NO 14 | **nb** |
 | USA | 59 | 69 | 54 | en-US | **en** |
 | Australien | 29 | 31 | 2 | en-AU | en |
-| Danmark | 23 | 24 | 3 | da-DK 22 | sv (som fraktmejlen) |
+| Danmark | 23 | 24 | 3 | da-DK 22 | **da** (sedan 2026-09-27; var sv) |
 | Finland | 7 | 8 | 0 | fi-FI | en |
 | Storbritannien | 6 | 5 | 1 | en-GB | en |
 | Nya Zeeland | 3 | 4 | 0 | en-NZ | en |
@@ -24,9 +24,9 @@ Uppladdningen görs av en session med Spoks-MCP:n enligt `klaviyo/spoks/PROMPT-c
 - **0 återköp**: 2 kunder med två ordrar, båda dubbletter inom en timme. Inget produktpar ⇒ **inget korsförsäljningsflöde byggs.**
 - **73 övergivna kassor** mot 384 ordrar ⇒ kassaflödet får mest omsorg (tre mejl).
 - Order → skickad median 0,5 dygn. Order → levererad: bara 4 paket med `deliveredAt` (7,0 till 9,9 dygn, Norge) — butiken är 15 dagar gammal, p90 kan inte mätas än.
-- Spoks vet bara **landet** på en kontakt (`contact.country`, engelskt namn, mätt: "Sweden"). Inget språkfält. Därför **ett flöde per språk** med landsfiltret i triggern, och ett segment per språk för kampanjerna. Danmark → svenska, Finland → engelska (7 ordrar bär inte ett finskt system).
+- Spoks vet bara **landet** på en kontakt (`contact.country`, engelskt namn, mätt: "Sweden"). Inget språkfält. Därför **ett flöde per språk** med landsfiltret i triggern, och ett segment per språk för kampanjerna. Finland → engelska (7 ordrar bär inte ett finskt system). **Danmark fick egen dansk grupp 2026-09-27** (Axels order: flöden för alla aktiva marknader, Sverige, Norge, Danmark, USA och Australien, och copyn anpassad per marknad; omräknat samma dag: 25 av 26 danska ordrar da-DK).
 
-## Flödena (8 per språk × 3 språk = 24 flöden, 45 mejl)
+## Flödena (8 per språk × 4 språk = 32 flöden, 60 mejl; danskan tillagd 2026-09-27)
 
 | Flöde | Trigger i Spoks | Filter | Väntan | Mejl | Skäl |
 |---|---|---|---|---|---|

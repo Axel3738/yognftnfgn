@@ -36,7 +36,7 @@
     {
       "typ": "text",
       "rubrik": "Efter blæsten",
-      "text": "Har det blæst meget, hvor du bor, på det seneste, er det to minutter værd at gå ud og tjekke betrækket."
+      "text": "Har det blæst meget, hvor vognen står, på det seneste, er det to minutter værd at gå ud og tjekke betrækket."
     },
     {
       "typ": "punkter",
@@ -58,7 +58,7 @@
     { "rad": "Har alt siddet, som det skal?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Krogene, båndene, og de to ekstra.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Efter blæsten", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Har det blæst meget, hvor du bor, på det seneste, er det to minutter værd at gå ud og tjekke betrækket.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Har det blæst meget, hvor vognen står, på det seneste, er det to minutter værd at gå ud og tjekke betrækket.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Krogene sidder stadig under kanten", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Båndene er stramme, ikke slappe", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Tjek også de to ekstra bånd på 10,5 meter, der fulgte med", "visualisera": true, "falsifiera": true, "ingen_annan": true },

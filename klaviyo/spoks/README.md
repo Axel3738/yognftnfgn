@@ -74,7 +74,39 @@ efter varje utskick; stiger klagomålen, stanna kvar ett steg till.
   på länge får fortfarande kampanjer tills Spoks egen suppression tar dem.
 - Anonyma recensenter står som "Verifierad kund", aldrig "Anonymous".
 
-## CaraShell (workspace `38f3d430-690c-4c0b-8419-8ec2e5272148`, UPPLADDAT 2026-09-26, allt avstängt)
+## CaraShell (workspace `38f3d430-690c-4c0b-8419-8ec2e5272148`, UPPLADDAT 2026-09-26, danskan 2026-09-27, allt avstängt)
+
+✅ **Danska sedan 2026-09-27** (Axels order: "vi behöver liksom egentligen ha flows för alla
+aktiva marknader bara. Så det är Sverige, Norge, Danmark, USA och Australien" + "utifrån de får
+vi anpassa copyn"). Mätt före bygget: **25 av 26 danska ordrar har `customerLocale` da-DK** —
+danskarna handlar på danska, så de fick inte längre de svenska mejlen. Fyra språkgrupper nu:
+**sv** = Sweden + utan land, **nb** = Norway, **da** = Denmark, **en** = US/UK/CA/AU/NZ + Finland
+(Finland: 7 ordrar, inte en aktiv marknad, står kvar i engelskan). Byggt och uppladdat samma
+förmiddag, allt avstängt/utkast:
+- **Danmark ut ur det svenska:** de 8 svenska flödenas triggerfilter (`update_flow`) och de 4
+  svenska segmenten (`update_segment`, inga utkast använde dem): `SEG_samtycke_sv` 15 → 13.
+- **4 danska segment, 8 danska flöden (15 mejl, alla sändsteg av), 14 danska kampanjutkast**,
+  id:n i `spoks-id.json` (`da`). Titlarna följer de andra: `K01 DA …` internt — i appens lista
+  syns ämnesraden, så **Axel söker på ämnesraden, aldrig på "K01"** (hans skärmdump 2026-09-27:
+  sökningen "k01" gav 0 träffar).
+- **Copyn:** två Sonnet-subagenter mot faktabladet `innehall/carashell/fakta/da.json` (butikens
+  egna danska översättningar), granskad av huvudsessionen: fem språkrättningar ("den" syftade
+  på paketet i monteringsmejlen, "bygger" → "laver", ordföljd) och K12 "hvor du bor" → "hvor
+  vognen står". Danskan speglar engelskan i K04/K06 (ingen farsdag i november i Danmark: K04 =
+  vinden, K06 = julklappen). **Inga svenska kundcitat i danska mejl** (`citat: false`, som
+  engelskan — K01 och K09 tappar citatblocket). Ingen reklamationstid i danskan: den danska
+  policysidan nämner bara fortrydelsesret, och ingen siffra hittas på.
+- **Länkarna:** alla `carashell.se/da/…?country=DK` svarar 200 med `lang="da"` och DKK (även
+  tilläggsprodukterna); Trustpilot `dk.trustpilot.com/evaluate/carashell.se?stars=1–5` 200.
+  Black Week-rabatterna är inte marknadsbegränsade, så trappan gäller i DKK också.
+- **Spårningssidan på danska:** `sparning/butiker.json` → carashell `sprak_extra` fick `da`, så
+  `carashell.se/da/pages/spara` blir dansk vid nästa timkörning (test i `sparning/test/sida.test.mjs`).
+  ⚠️ Shopifys egna fraktmejl till danska kunder är fortfarande svenska (`mejl_marknader` har ingen
+  DK-rad) — en ny mall kräver en inklistring i Shopify (Cowork), inte gjort.
+- **Kontroll:** `get_flows` 32 flöden (8 per språk), alla avstängda, 0 inskrivna; `get_flow` på
+  alla 8 danska mot `plan.json`; `search_campaigns` 56 utkast, 0 publicerade; `get_segments`:
+  samtycke sv 13 + nb 4 + en 61 + da 3 = **81 = Spoks "All subscribed"** — varje kund med
+  samtycke hamnar i exakt ett språk.
 
 ✅ **Uppladdat 2026-09-26 10:45–11:36 CEST** (Axel bjöd in `kundsupport@baverbutiken.se` som
 Admin i workspacen "Carashell" under sitt extra Spoks-konto; `whoami` visade den direkt efter,
@@ -99,9 +131,11 @@ Shopify `yitrbk-m3`, plan **Free = 5 000 mejl/mån**). Facit med varje id:
   går från carashell.com, som har den. Webbsäkra reservtypsnitt står kvar på
   Helvetica/Arial Black (ändras inte via MCP:n, syns bara om Google Fonts inte laddar).
 - **13 segment** (`SEG_samtycke_sv/nb/en` 15/4/57 …, `SEG_oengagerade_180d` inte valbart i kampanjer).
+  Sedan danskan 2026-09-27: **17** (sv/nb/en/da 13/4/61/3).
 - **24 flöden, 45 mejl** (8 per språk), alla `isActive: false`, alla sändsteg `isEnabled: false`.
+  Sedan danskan: **32 flöden, 60 mejl**.
 - **42 kampanjutkast** (14 per språk: 39 vid uppladdningen + K09B efter Black Week-beslutet),
-  status draft, ingen publik, inget datum, `isOptOutEnabled`.
+  status draft, ingen publik, inget datum, `isOptOutEnabled`. Sedan danskan: **56**.
 - **Kontroll:** tre oberoende granskare (en per språk) läste tillbaka varje flöde och varje mejl
   mot `plan.json` och `payload/`: 8/8 + 13/13 per språk, inga dubbletter. En rättning: F01 SV E1
   skapades före länkdomänen och hade spårningslänken `r.spoksmail.com` — omsparad, nu
@@ -189,10 +223,11 @@ DKK 819 för takskyddet 5,5–6,5 m) — de står ALDRIG i copyn.
 `{country is}` gav 7 766 kontakter och sampeln `country: "Sweden"` — landet lagras
 som engelskt namn. Därför **ett flöde per språk** (landsfiltret i triggerns
 kontaktfilter, återprövas före varje utskick) och ett segment per språk för
-kampanjerna. sv = Sweden + Denmark + kontakter utan land; nb = Norway; en = United
+kampanjerna. sv = Sweden + kontakter utan land; nb = Norway; da = Denmark (egen grupp
+sedan 2026-09-27, var till dess i sv); en = United
 States, United Kingdom, Canada, Australia, New Zealand, Finland (7 ordrar bär inte
 ett finskt system). Ordrarnas `customerLocale` bekräftar att land ⇒ språk håller
-(SE 173/173 sv, NO 67/82 nb, US 59/59 en). ⚠️ Landsnamnen för de andra länderna är
+(SE 173/173 sv, NO 67/82 nb, US 59/59 en, DK 25/26 da). ⚠️ Landsnamnen för de andra länderna är
 Shopifys engelska namn och ska kontrolleras med `preview_segment` i CaraShells
 workspace innan något slås på (uppladdningsprompten steg 1).
 
