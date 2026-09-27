@@ -1,0 +1,152 @@
+{
+  "_om": "Åtta produktbilder för taköverdraget, genererade 2026-09-27 med kie.ai (google/nano-banana-edit, referens = leverantörens fyra foton på Bäverbutikens CDN). Granskade en och en av sessionen innan uppladdning. kie-länkarna är tillfälliga; CDN-länkarna är de som gäller. Före/efter byggdes i tre steg (bar husvagn utan referens → överdraget på → staplade lokalt med Pillow).",
+  "bilder": {
+    "husvagn-grusplan": {
+      "alt": "Husvagn med taköverdraget på grusplanen vid sjön",
+      "carashell_files": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-husvagn-grusplan.png?v=1790495725",
+      "carashell_media": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-husvagn-grusplan_b80cb81b-7ccd-4deb-a882-ee083c3a0bc9.png?v=1790495770",
+      "baverbutiken_media": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/takoverdrag-husvagn-grusplan.png?v=1790495818",
+      "kie": {
+        "url": "https://tempfile.aiquickdraw.com/nano-banana-runninghub/1790495160768-v933wltj0ui.png",
+        "taskId": "af38bfbfc3e972f3332cb8ba27f6a3f6",
+        "modell": "google/nano-banana-edit",
+        "prompt": "Photorealistic commercial product photography. No text, no letters, no logos, no watermark, no people. The product is exactly the black roof cover from the reference photos: matte black 210D oxford fabric, black webbing straps with black plastic slide buckles and black plastic J-shaped hooks. A white caravan (travel trailer with tow hitch and grey stripe) parked on a gravel driveway beside a dark-grey Swedish wooden house with birch trees and a lake in the background, overcast autumn daylight. On its roof the black roof cover from the reference photos: it covers the whole roof, the edge hangs about 30–40 cm down over the sides, and black webbing straps run down the white sides at regular intervals and hook under the bottom edge. Three-quarter front view, camera slightly elevated so the covered roof is visible. Square format.",
+        "referenser": [
+          "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/image4.png",
+          "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-van.jpg",
+          "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-spanne.jpg"
+        ]
+      }
+    },
+    "studio-husbil": {
+      "alt": "Husbil med taköverdraget, spännbanden hakade under karossens kant",
+      "carashell_files": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-studio-husbil.png?v=1790495731",
+      "carashell_media": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-studio-husbil_b2403636-4c96-4e82-911f-71aab87b1ea8.png?v=1790495770",
+      "baverbutiken_media": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/takoverdrag-studio-husbil.png?v=1790495818",
+      "kie": {
+        "url": "https://tempfile.aiquickdraw.com/nano-banana-runninghub/1790495551056-ynh66kuj5cr.png",
+        "taskId": "559e86bae4bcb79ac0ce263ec8c320ab",
+        "modell": "google/nano-banana-edit",
+        "prompt": "Photorealistic commercial product photography. No text, no letters, no logos, no watermark, no people. A modern white integrated motorhome standing in a clean light-grey photo studio with soft even lighting and a soft floor shadow. On its roof lies a matte black 210D oxford roof cover: it covers the entire roof and its edge hangs about 30–40 cm down over the sides. From the edge of the cover, black webbing straps run straight down the white sides at regular intervals and disappear under the lower body edge, where they are hooked and pulled taut. IMPORTANT: nothing hangs below the body — no strap, no hook and no loose end is visible under the vehicle or on the floor. Three-quarter front view from a slightly elevated camera so the covered roof is clearly visible. Sharp, catalog quality. Square format.",
+        "referenser": [
+          "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-van.jpg",
+          "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-spanne.jpg"
+        ]
+      }
+    },
+    "fore-efter-husvagn": {
+      "alt": "Samma husvagn utan och med taköverdraget",
+      "carashell_files": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-fore-efter-husvagn.png?v=1790495737",
+      "carashell_media": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-fore-efter-husvagn_8a1ed64f-210d-4f19-b557-15b8dee0e6f4.png?v=1790495770",
+      "baverbutiken_media": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/takoverdrag-fore-efter-husvagn.png?v=1790495818",
+      "kie": {
+        "url": "https://tempfile.aiquickdraw.com/nano-banana-runninghub/1790495621274-hbycjgdh4nr.png",
+        "taskId": "93a8baaac5e333cc6d529b4beb1df7f8",
+        "modell": "google/nano-banana-edit",
+        "prompt": "Create one square image that shows the two reference photos stacked vertically: the FIRST reference photo (bare caravan) on top and the SECOND reference photo (same caravan with the black roof cover) below, each cropped to a wide 2:1 panel, separated by a thin white gap. Do not alter the photos in any other way, do not add text, labels, arrows or icons.",
+        "referenser": [
+          "https://tempfile.aiquickdraw.com/nano-banana-runninghub/1790495541329-4ra4iszaql.jpg",
+          "https://tempfile.aiquickdraw.com/nano-banana-runninghub/1790495581205-m2rh95id0cg.png"
+        ]
+      }
+    },
+    "detaljer-collage": {
+      "alt": "Taköverdraget hopvikt, vävens struktur och den sydda bandfästningen",
+      "carashell_files": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-detaljer-collage.png?v=1790495743",
+      "carashell_media": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-detaljer-collage_2a3bdf03-7f23-4fd5-87a0-615471f9e9b4.png?v=1790495770",
+      "baverbutiken_media": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/takoverdrag-detaljer-collage.png?v=1790495819",
+      "kie": {
+        "url": "https://tempfile.aiquickdraw.com/nano-banana-runninghub/1790495150918-8ut46ia6ukw.png",
+        "taskId": "8b6dd0ed5fcf92182a31f5ae9244f342",
+        "modell": "google/nano-banana-edit",
+        "prompt": "Photorealistic commercial product photography. No text, no letters, no logos, no watermark, no people. The product is exactly the black roof cover from the reference photos: matte black 210D oxford fabric, black webbing straps with black plastic slide buckles and black plastic J-shaped hooks. Square product detail collage with three panels separated by thin white gaps. LARGE TOP PANEL: the black roof cover folded into a neat flat rectangular bundle lying on a light grey concrete surface, with two black webbing straps ending in black plastic J-hooks sticking out from one end. BOTTOM-LEFT PANEL: extreme close-up of the black oxford fabric weave showing the fine ripstop texture and a slight water-repellent sheen. BOTTOM-RIGHT PANEL: close-up of the hem of the cover where a black webbing strap is sewn on with a reinforced cross-stitched box seam, and a black plastic slide buckle on the strap. Soft studio light.",
+        "referenser": [
+          "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-hopvikt.jpg",
+          "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-spanne.jpg"
+        ]
+      }
+    },
+    "krok-under-kanten": {
+      "alt": "Spännbandet hakat under husvagnens nederkant",
+      "carashell_files": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-krok-under-kanten.png?v=1790495749",
+      "carashell_media": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-krok-under-kanten_cddbe35c-c4b9-4823-bc6a-994da37c581f.png?v=1790495770",
+      "baverbutiken_media": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/takoverdrag-krok-under-kanten.png?v=1790495819",
+      "kie": {
+        "url": "https://tempfile.aiquickdraw.com/nano-banana-runninghub/1790495140925-8g8my5p93xw.png",
+        "taskId": "bd286710eaa3553e1b6b7b7e4e25fd0e",
+        "modell": "google/nano-banana-edit",
+        "prompt": "Photorealistic commercial product photography. No text, no letters, no logos, no watermark, no people. The product is exactly the black roof cover from the reference photos: matte black 210D oxford fabric, black webbing straps with black plastic slide buckles and black plastic J-shaped hooks. Close-up photo at the lower side of a white caravan body outdoors in daylight: a black webbing strap comes down the white wall from above and its black plastic J-hook is hooked under the aluminium bottom edge of the caravan, the strap pulled taut, a black plastic slide buckle visible on the strap. Slightly shallow depth of field, gravel ground softly blurred behind. Square format.",
+        "referenser": [
+          "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-spanne.jpg",
+          "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/image4.png"
+        ]
+      }
+    },
+    "krokar-makro": {
+      "alt": "Två spännband med plastkrokar",
+      "carashell_files": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-krokar-makro.jpg?v=1790495755",
+      "carashell_media": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-krokar-makro_d07d2743-2024-4cc0-bd00-9a59e6f49c6e.jpg?v=1790495770",
+      "baverbutiken_media": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/takoverdrag-krokar-makro.jpg?v=1790495819",
+      "kie": {
+        "url": "https://tempfile.aiquickdraw.com/nano-banana-runninghub/1790495540931-c9t3r45r9iw.jpg",
+        "taskId": "2ff1c3c56ce0f3e450fc8164d677cbc6",
+        "modell": "google/nano-banana-edit",
+        "prompt": "Photorealistic commercial product photography. No text, no letters, no logos, no watermark, no people. Macro product photo on a light grey stone surface of the two straps in the reference photo: two identical black webbing straps, each with a black plastic slide adjuster buckle, each ending in the SAME black plastic hook as in the reference — a flat, wide J-shaped hook with a straight shank and a rounded lip that turns back (NOT an S-hook, NOT a round wire hook). Both hooks identical in shape and size, lying side by side diagonally across the frame with the hooks in the lower right. Shallow depth of field, soft directional studio light, high detail on the strap weave and the smooth hook surface. Square format.",
+        "referenser": [
+          "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-spanne.jpg"
+        ]
+      }
+    },
+    "regn-pa-vaven": {
+      "alt": "Regn som rinner av taköverdragets väv",
+      "carashell_files": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-regn-pa-vaven.png?v=1790495759",
+      "carashell_media": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-regn-pa-vaven_6453d7c1-a90e-446e-ac2d-01ef5ea937bd.png?v=1790495771",
+      "baverbutiken_media": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/takoverdrag-regn-pa-vaven.png?v=1790495820",
+      "kie": {
+        "url": "https://tempfile.aiquickdraw.com/nano-banana-runninghub/1790495151949-t5bg4utbcu9.png",
+        "taskId": "53e3ad4f1a7af986d6c66144c4592e22",
+        "modell": "google/nano-banana-edit",
+        "prompt": "Photorealistic commercial product photography. No text, no letters, no logos, no watermark, no people. The product is exactly the black roof cover from the reference photos: matte black 210D oxford fabric, black webbing straps with black plastic slide buckles and black plastic J-shaped hooks. Close-up photo of the black roof cover lying taut over the roof of a white caravan in the rain: water drops beading and running off the matte black coated oxford fabric, the fabric slightly wet and glistening, the white roof edge of the caravan and a grey overcast sky softly blurred in the background. Overcast daylight, macro detail on the drops. Square format.",
+        "referenser": [
+          "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-hopvikt.jpg",
+          "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-van.jpg"
+        ]
+      }
+    },
+    "husbil-vinterplats": {
+      "alt": "Husbil med taköverdraget på vinterplatsen",
+      "carashell_files": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-husbil-vinterplats.png?v=1790495765",
+      "carashell_media": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-husbil-vinterplats_2db671a6-fed3-428d-98ed-a518dff24030.png?v=1790495772",
+      "baverbutiken_media": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/takoverdrag-husbil-vinterplats.png?v=1790495820",
+      "kie": {
+        "url": "https://tempfile.aiquickdraw.com/nano-banana-runninghub/1790495161346-3f21c88p7fu.png",
+        "taskId": "f95700ac1cb2d15658dfbff0aaa19ec2",
+        "modell": "google/nano-banana-edit",
+        "prompt": "Photorealistic commercial product photography. No text, no letters, no logos, no watermark, no people. The product is exactly the black roof cover from the reference photos: matte black 210D oxford fabric, black webbing straps with black plastic slide buckles and black plastic J-shaped hooks. A white integrated motorhome parked for winter storage on a gravel lot in Sweden, a thin dusting of snow on the ground, bare birch trees and a pale grey winter sky. On its roof the black roof cover from the reference photos: it covers the entire roof, the edge hangs down over the sides, black webbing straps run down the sides and hook under the body edge; the cover is taut and clean. Rear three-quarter view, camera slightly elevated. Square format.",
+        "referenser": [
+          "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/image4.png",
+          "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-van.jpg",
+          "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-spanne.jpg"
+        ]
+      }
+    }
+  },
+  "mellansteg": {
+    "fe-1-bar": {
+      "url": "https://tempfile.aiquickdraw.com/nano-banana-runninghub/1790495541329-4ra4iszaql.jpg",
+      "taskId": "2774a9543ea540bb119c1895464440b5",
+      "modell": "google/nano-banana",
+      "bytes": 613075,
+      "prompt": "Photorealistic commercial product photography. No text, no letters, no logos, no watermark, no people. A white caravan (travel trailer with a tow hitch and a grey stripe along the side) parked on a gravel driveway beside a dark-grey Swedish wooden house, birch trees with yellow autumn leaves and a lake in the background, soft overcast autumn daylight. The caravan is completely bare: plain white roof, nothing on it, no straps. Three-quarter front view, camera slightly elevated so the roof is visible. Square format.",
+      "ref": [],
+      "tid_s": 28
+    },
+    "fe-2-med": {
+      "url": "https://tempfile.aiquickdraw.com/nano-banana-runninghub/1790495701162-0ql1ebw1ap8.png",
+      "taskId": "f27486486811f05773677cba457e51e3",
+      "modell": "google/nano-banana-edit",
+      "bytes": 2317642,
+      "tid_s": 34
+    }
+  }
+}

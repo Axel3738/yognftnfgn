@@ -1096,3 +1096,79 @@ Mät köp/dygn i tre dygn till innan något av det skrivs som orsak.
 ⚠️ **Och den här filen är själv exemplet på repots regel:** i går skrevs
 "bevisad mekanism" om något som var mätt i EN riktning på EN kampanj. Ett dygn
 senare var hälften fel. Skriv aldrig en mätning som en evig lag.
+
+---
+
+## 2026-09-27 — Produktsidan omskriven + åtta nya produktbilder (ORVO-jämförelsen)
+
+**Bakgrund.** Axel hittade **orvo.se/products/takskydd-husbil-husvagn** (Eoka AB,
+org.nr 559587-0162, `support@eoka.se`): samma leverantörsprodukt, samma nio
+storlekar 3 × 5,5–13,5 m, 1 099 kr "spara 50 %" mot ett påhittat jämförpris
+2 198 kr, 2-pack 1 899 / 3-pack 2 499 kr. Sidan bär Bäverbutikens copy nästan
+ordagrant ("Taket är det du aldrig ser – och det som kostar mest att laga",
+"Täck bara taket – inte hela vagnen", "Vattnet rinner av i stället för att bli
+stående") **och Axels annonser** — men med sju AI-renderade produktbilder på
+1254 × 1254 (studiobild, före/efter, detaljcollage, krokmakro, tre
+lifestylebilder), jämförelsetabell mot helöverdrag, tre monteringssteg,
+storleksguide, "386 omdömen" med namn + stad + ålder (ingen Judge.me, inga
+verifierbara källor) och "30 dagars öppet köp". Axels order: "liknande
+produktbilder … jag gillar produktbilderna på detaljerna", och ny copy på
+**båda** sidorna (Bäverbutiken + CaraShell).
+
+**Bilderna (8 st, båda butikerna).** kie.ai `google/nano-banana-edit` med
+leverantörens fyra foton som referens, 1:1, 1024 px, inga texter. Sessionen
+tittade på varje bild; tre fick göras om och en byggdes i tre steg:
+
+| Bild | Utfall |
+|---|---|
+| `husvagn-grusplan` (hero) · `krok-under-kanten` · `regn-pa-vaven` · `husbil-vinterplats` · `detaljer-collage` | rätt första gången |
+| `studio-husbil` | v1–v2: krokarna hängde lösa i luften under karossen (modellen överdrev referensens band). v3 med "nothing hangs below the body" rätt |
+| `krokar-makro` | v1 två olika krokformer, v2 S-krokar (fel produkt). v3 med bara `tak-spanne.jpg` som referens + "flat J-hook, NOT an S-hook" rätt |
+| `fore-efter-husvagn` | edit-modellen vägrar ta BORT överdraget (båda rutorna fick det, två gånger). Löst i tre steg: bar husvagn med text-modellen (ingen referens) → överdraget lagt på den bilden med `tak-van.jpg` + `image4.png` som referens (första försöket blev ett tält över halva vagnen; "thin sheet lying FLAT, windows stay visible" rättade det) → staplade lokalt med Pillow (`stapla-fore-efter.py`). kie:s egna "stack these two" ritade bara ett vitt streck |
+
+Lärdom: **nano-banana-edit kopierar in det som syns i referensen.** Vill du ha
+en bild UTAN produkten måste den genereras utan referens. Och en ny bildserie
+kostar ~14 genereringar för 8 användbara — räkna med det.
+
+Prompter, kie-länkar (tillfälliga) och CDN-länkar i båda butikerna:
+`products/carashell/takskyddet/produktsida/bildplan.json`. Uppladdade som
+Files + produktmedia i CaraShell (`takoverdrag-<namn>.png`, Factory-appen),
+och därifrån som produktmedia i Bäverbutiken ("Bäver uppladdare" saknar
+`write_files`, men `productCreateMedia` med publik URL går). Ordning: nya
+först, leverantörens fyra sist — inget raderat. `takskyddet.yaml` → `media`
+pekar på de nya (problemblocket = före/efter i stället för källans GIF,
+lösningen = kroken under kanten, lifestyle = vinterplatsen).
+
+⚠️ **Pillow finns inte i containern från start** (`pip install pillow` gick,
+ffmpeg saknas helt). `Read` visar .webp direkt.
+
+**Copyn.** Skriven av huvudsessionen (samma undantag som landningssidorna,
+Axels beslut 2026-09-16), tre-frågorstestet + läsbarhetstest, inga nya
+påståenden: **inget silverskikt** (Bäverbutikens gamla text sa "silverbelagd",
+leverantören har bara bekräftat "210D Oxford, vattentät, soltålig" och
+bilderna visar svart — struket tills det är verifierat), **ingen
+förvaringspåse**, **inga minuter**, **inga påhittade omdömen**. Bäverbutikens
+`body_html` (före/efter sparade i `produktsida/`): problem → lösning → så
+sitter det fast → tre steg → funktioner → storleksguide (tabell, 9 rader) →
+taköverdrag mot helöverdrag (tabell) → FAQ → ångerrätt, fem av de nya bilderna
+inline. CaraShell: `beskrivning`, `benefits`, `features` och `faq` (7 frågor,
+bl.a. "Hur läggs det på?" i tre steg och "Kan jag blanda storlekar i ett
+paket?") i `takskyddet.yaml` → metafälten via `byggMetafalt` + `skrivMetafalt`.
+
+**Översättningarna (nb/en/fi/da)** av fyra sonnet-subagenter, registrerade
+**bara på takskyddets sju metafält** (`translationsRegister` per resurs, egen
+körning). ⛔ **Fulla `--igen oversatt` kördes INTE, med flit:** alla fyra
+`oversattning-<locale>.json` bar fortfarande **Sjöhed 160** i `sida.kopvillkor
+.body` och `sida.contact.body` (adressbytet 2026-09-26 gick via API direkt i
+Shopify, aldrig tillbaka i underlagsfilerna) — en full registrering hade
+skrivit Axels privata adress tillbaka på fyra språk. Filerna är rättade i
+samma commit (Stenkolsgatan 1B + hello@carashell.com). Kontrollera alltid
+`grep Sjöhed factory/output/*/oversattning-*.json` innan ett oversatt-steg.
+EN-FAQ:n om ångerrätt behåller "Try it risk-free for 90 days" (USA-undantaget).
+Mätt som kund efter körningen: sv/nb/en/fi/da bär nya rubriken, nya FAQ:n och
+de tre nya bildfälten; gamla rubriken borta överallt.
+
+**Öppet för Axel:** (1) följer en förvaringspåse med? Då skriver vi det på
+båda sidorna. (2) Är väven silverbelagd på undersidan? Då kan "silverskiktet"
+tillbaka. (3) ORVO kör 2 198 kr som jämförpris och "30 dagars öppet köp" — vi
+rör varken pris eller ångerrätt utan hans ord.

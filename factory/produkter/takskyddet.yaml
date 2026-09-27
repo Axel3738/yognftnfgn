@@ -265,7 +265,30 @@ varianter:
         pris: 1629
         jamforpris: 2119
 media:
+  # Åtta nya produktbilder 2026-09-27 (Axels order efter orvo.se: "jag gillar
+  # produktbilderna på detaljerna"). Genererade med kie.ai nano-banana-edit ur
+  # leverantörens fyra foton som referens, granskade en och en av sessionen,
+  # uppladdade i butikens Files (takoverdrag-<namn>.png) och som produktmedia
+  # — nya först, leverantörens fyra sist. Prompter + kie-länkar:
+  # products/carashell/takskyddet/produktsida/bildplan.json. Samma åtta ligger
+  # i Bäverbutiken (kopierade från den här CDN:en). Inga bilder bär text.
   bilder:
+    - url: "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-husvagn-grusplan.png"
+      alt: "Husvagn med taköverdraget på grusplanen vid sjön"
+    - url: "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-studio-husbil.png"
+      alt: "Husbil med taköverdraget, spännbanden hakade under karossens kant"
+    - url: "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-fore-efter-husvagn.png"
+      alt: "Samma husvagn utan och med taköverdraget"
+    - url: "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-detaljer-collage.png"
+      alt: "Taköverdraget hopvikt, vävens struktur och den sydda bandfästningen"
+    - url: "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-krok-under-kanten.png"
+      alt: "Spännbandet hakat under husvagnens nederkant"
+    - url: "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-krokar-makro.jpg"
+      alt: "Två spännband med plastkrokar"
+    - url: "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-regn-pa-vaven.png"
+      alt: "Regn som rinner av taköverdragets väv"
+    - url: "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-husbil-vinterplats.png"
+      alt: "Husbil med taköverdraget på vinterplatsen"
     - url: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/image4.png"
       alt: "Husbil sedd snett framifrån med CaraShell taköverdrag på taket"
     - url: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-van.jpg"
@@ -276,18 +299,26 @@ media:
       alt: "Vävda spännband med plastkrokar som håller fast taköverdraget"
   videor:
   # ⚠️ Demot ska vara en MP4 (Axel 2026-09-09), men Shopify Files tar inga
-  # videor på trial (API-GRANSER.md, mätt 2026-09-10). Källans GIF (över-
-  # toningar mellan produktbilderna, ingen inbränd text) bär demot tills
-  # ägaren valt plan — då: node factory/filer.mjs <mp4> och --igen metafalt.
-  gif_problem: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-takoverdrag-4.gif"
-  media_losning: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-van.jpg"
-  bild_lifestyle: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/image4.png"
+  # videor på trial (API-GRANSER.md, mätt 2026-09-10). Sedan 2026-09-27 bär
+  # problemblocket före/efter-bilden i stället för källans GIF (samma husvagn
+  # utan och med överdrag), lösningen kroken under kanten och lifestyle-
+  # blocket vinterplatsen. Ägarens val om en MP4 ska in: node factory/filer.mjs
+  # <mp4> och --igen metafalt.
+  gif_problem: "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-fore-efter-husvagn.png"
+  media_losning: "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-krok-under-kanten.png"
+  bild_lifestyle: "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-husbil-vinterplats.png"
 
 beskrivning:
-  problem_rubrik: "Regnet står kvar vid takluckan"
-  problem_text: "Husvagnen eller husbilen står ute över vintern. Regnvatten samlas kring takluckor och skarvar, och ingen går upp och kollar förrän våren – då avgör fukttestet om tätningarna höll."
-  losning_rubrik: "CaraShell täcker bara taket"
-  losning_text: "CaraShell täcker takytan, med kanten hängande 30–40 cm ner över sidorna, så regnvatten inte blir stående vid takluckorna. Vävda spännband med plastkrokar hakar under karossens kant och sitter kvar i blåst. En person sätter på det själv."
+  # Omskriven 2026-09-27 (Axels order: "ändra copyn på min hemsida", efter
+  # att ha sett orvo.se som kopierat Bäverbutikens annonser men byggt en
+  # bättre produktsida). Rubriken är Bäverbutikens bevisade PD-rad. Copyn
+  # skriven av huvudsessionen med tre-frågorstestet + läsbarhetstest
+  # (samma undantag som landningssidorna, Axels beslut 2026-09-16).
+  # Aldrig påstått: förvaringspåse, silverskikt, minuter att lägga på.
+  problem_rubrik: "Taket är det du aldrig ser – och det som kostar mest att laga"
+  problem_text: "Regn, löv och fågelskit hamnar på taket – precis den yta du inte går upp och kollar. Vattnet blir stående kring takluckor och skarvar hela vintern, och tätmassan mjuknar. När fukten väl tagit sig in är det inte en tvätt som väntar till våren. Det är en reparation."
+  losning_rubrik: "Täck bara taket – inte hela vagnen"
+  losning_text: "Ett helöverdrag är tungt att få på plats ensam och skaver mot lacken när det blåser. CaraShell täcker bara den yta som tar stryk: vattnet rinner av den vattentäta 210D-väven, och kanten hänger 30–40 cm ner över sidorna så skarven mellan tak och vägg ligger under skydd. Vävda spännband hakar med plastkrok under karossens kant, två förstärkta band dras tvärs över taket – och en person lägger på det själv."
 
 vinkel:
   huvudvinkel: "Taket är ytan du aldrig ser — och den som kostar mest att laga. Konflikt typ A mot helöverdraget (tungt, två personer, skaver mot lacken) och före/efter (vattenpöl vid takluckan hela vintern mot torrt tak). Källa: källkampanjen 'Taköverdraget för Husvagn 6,5 × 3 m' i MagiBorsten (16 annonser, 15 köp på 2 563 kr, ROAS 6,61 de första två dygnen 2026-09-09–10; vinnaren Takoverdrag_PD_2_H1 är problem-driven) och källsidans egen rubrik 'Taket är det du aldrig ser'."
@@ -306,19 +337,19 @@ problem:
 benefits:
   - "Torrt tak fram till våren"
   - "Lugn inför fukttestet"
-  - "Sätts på utan att be om hjälp"
-  - "Lacken slipper skava mot ett tungt helöverdrag"
+  - "Läggs på av en person"
+  - "Ligger stilla – inget som skaver mot lacken"
 
 features:
   # Leverantörens svar 2026-09-17 (Axel): band ca 2,5 m, 210D Oxford
   # vattentät och soltålig, band på 4 sidor, justerbar längd, krok i nederkant,
   # två 10,5 m förstärkta band medföljer, storlekar 3×5,5 till 3×13,5 m.
-  - "Nio storlekar: 5,5 till 13,5 m långt, 3 m brett – välj efter ditt tak"
-  - "Svart 210D Oxford-väv, vattentät och tål sol"
-  - "Vävda spännband (inte gummi, töjs inte ut) på alla fyra sidor, justerbara, med plastkrokar som hakar under karossens kant"
-  - "Två extra förstärkta band på 10,5 m följer med"
-  - "Sätts på av en person"
-  - "Kanten hänger ner ca 30–40 cm över sidorna"
+  - "Nio storlekar: 5,5 till 13,5 m långt, 3 m brett – mät vagnen utan dragstång och välj närmaste längd uppåt"
+  - "Svart 210D Oxford-väv, vattentät och tål sol – vattnet rinner av i stället för att bli stående"
+  - "Vävda spännband (inte gummi, töjs inte ut) på alla fyra sidor, 2,5 m och justerbara, med plastkrok som hakar under karossens kant"
+  - "Två extra förstärkta spännband på 10,5 m följer med – dras tvärs över taket"
+  - "Kanten hänger ca 30–40 cm ner över sidorna, så skarven mellan tak och vägg ligger under skydd"
+  - "Viks ihop till en famnstor packe efter säsongen"
 
 offer:
   beskrivning: "1 129 kr (jämförpris 1 469 kr), fri frakt till Sverige och Norge, 14 dagars ångerrätt enligt svensk lag och leverans på 5–10 arbetsdagar."
@@ -435,15 +466,19 @@ reviews:
 
 faq:
   - fraga: "Vilken storlek ska jag välja?"
-    svar: "Taköverdraget finns i nio längder, 5,5 till 13,5 meter, alla 3 meter breda. Mät taket från front till bakkant och välj närmaste längd uppåt. Passar både husvagn och husbil."
-  - fraga: "Hur fäster jag överdraget?"
-    svar: "Vävda spännband med plastkrokar hakar under karossens kant, längs sidorna."
+    svar: "Mät vagnens längd utan dragstång och välj den storlek som är lika lång eller närmast längre. Nio längder, 5,5 till 13,5 meter, alla 3 meter breda. Passar både husvagn och husbil."
+  - fraga: "Hur läggs det på?"
+    svar: "Tre steg. Lägg den hopvikta väven mitt på taket och vik ut den mot fram- och bakkant. Haka spännbanden på alla fyra sidor under karossens kant och justera längden. Dra de två förstärkta banden över taket och spänn tills väven ligger slätt. En person räcker."
   - fraga: "Sitter det kvar i blåst?"
-    svar: "Ja, de vävda spännbanden håller det på plats i blåst. De är inte av gummi, så de töjs inte ut."
-  - fraga: "Hur många behövs för att lägga på det?"
-    svar: "En person räcker, eftersom överdraget bara täcker taket."
+    svar: "Ja. Spännbanden på alla fyra sidor hakar under karossens kant, och de två förstärkta banden på 10,5 m går tvärs över taket. Banden är vävda, inte gummi, så de töjs inte ut."
+  - fraga: "Kan det ligga på hela vintern?"
+    svar: "Ja, det är gjort för vintervila. Borsta av tung blötsnö vid behov, precis som du hade gjort utan överdrag."
+  - fraga: "Kommer jag åt dörren och fönstren?"
+    svar: "Ja. Överdraget ligger bara på taket och kanten hänger 30–40 cm ner – dörr, fönster och luckor är fria."
+  - fraga: "Kan jag blanda storlekar i ett paket?"
+    svar: "Ja. I paketrutan väljer du storlek per överdrag – ett till husvagnen och ett till husbilen går i samma paket."
   - fraga: "Vad gäller om jag ångrar mig?"
-    svar: "14 dagars ångerrätt enligt svensk lag. Mejla hello@carashell.com."
+    svar: "14 dagars ångerrätt enligt svensk lag, räknat från den dag du får varan. Mejla hello@carashell.com."
 
 leveranstid: "5–10 arbetsdagar"
 
