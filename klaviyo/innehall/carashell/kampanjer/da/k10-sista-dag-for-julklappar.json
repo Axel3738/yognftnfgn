@@ -1,0 +1,77 @@
+{
+  "id": "k10-sista-dag-for-julklappar",
+  "namn": "MAIL_20261201_CaraShellMix_DA_GT_4_samtycke_promo_bestall-senast-mandag-7-dec_v1",
+  "sprak": "da",
+  "memo": "Riktig brådska: måndag 7 december är sista beställningsdag för att paketet ska hinna fram till jul (10 arbetsdagar + 2). Efter det lovar ingen text något om jul.",
+  "brief": "Hero med datumet måndag 7 december. Produktrad med de tre skydden. Fakta. ",
+  "taggar": {
+    "typ": "S",
+    "kalla": "egen-data",
+    "kalla_ref": "brands/carashell.json#kalender",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "konsekvens",
+    "confidence": "medium",
+    "prefix": "CaraShellMix",
+    "kod": "GT",
+    "avatar": "den som letar julklapp till någon med husvagn eller husbil",
+    "begar": "hinna"
+  },
+  "amnesrader": [
+    {
+      "text": "Bestil senest mandag den 7. december",
+      "begar": "nå det til jul"
+    },
+    {
+      "text": "En julegave til vognen, ikke kun ejeren",
+      "begar": "finde en gave med praktisk værdi"
+    },
+    {
+      "text": "Sidste dag for julegaver til vognen",
+      "begar": "en tydelig deadline"
+    }
+  ],
+  "forhandstext": "Ellers når den ikke frem til jul.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Bestil senest mandag den 7. december",
+      "text": "Hej {{fornamn}},\n\nSå når pakken frem til jul, uanset hvilket af betrækkene du vælger.",
+      "bild": "produkt:takskyddet",
+      "knapp": {
+        "text": "Se hele sortimentet",
+        "lank": "kollektion:sortimentet"
+      }
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Tre måder at beskytte vognen på i vinter",
+      "handles": [
+        "takskyddet",
+        "termoskyddet",
+        "fonstertermomatta-2-pack"
+      ]
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    { "rad": "Bestil senest mandag den 7. december", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En julegave til vognen, ikke kun ejeren", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sidste dag for julegaver til vognen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Ellers når den ikke frem til jul.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Bestil senest mandag den 7. december", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Hej {{fornamn}}, Så når pakken frem til jul, uanset hvilket af betrækkene du vælger.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se hele sortimentet", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Tre måder at beskytte vognen på i vinter", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "version": 1,
+  "planerad": "2026-12-01T18:00:00+01:00",
+  "segment": [
+    "SEG_samtycke_da"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

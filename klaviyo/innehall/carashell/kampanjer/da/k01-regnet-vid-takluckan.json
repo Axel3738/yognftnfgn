@@ -1,0 +1,105 @@
+{
+  "id": "k01-regnet-vid-takluckan",
+  "namn": "MAIL_20260929_CaraShellRoof_DA_PD_1_samtycke_problem_regnet-vid-takluckan_v1",
+  "sprak": "da",
+  "memo": "Problemvinkeln bär butikens egen data: PD/SP är de vinklar som köper hos CaraShell (dna.md mönster 11). Regnet står kvar vid takluckan, tätmassan mjuknar, fukttestet till våren. sv/nb: inför vinteruppställningen. en: vagnen står parkerad — ingen årstid.",
+  "brief": "Hero (bild taköverdraget) med problemet ur faktabladet (regnet vid takluckan, tätmassan, fukttestet). Text: vad överdraget täcker (taket, kanten 30–40 cm ner) och inte täcker. Punkter: nio längder, banden, en person. Produktkort, två citat, fakta, knapp. Vintern får nämnas: uppställningen är riktig säsong (urgency sasong).",
+  "taggar": {
+    "typ": "I",
+    "kalla": "egen-data",
+    "kalla_ref": "products/carashell/takskyddet/dna.md mönster 11; factory/produkter/takskyddet.yaml#beskrivning",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "sasong",
+    "confidence": "medium",
+    "prefix": "CaraShellRoof",
+    "kod": "PD",
+    "avatar": "husvagns- eller husbilsägaren som ställer upp fordonet utomhus",
+    "begar": "skydda-det-jag-ager"
+  },
+  "amnesrader": [
+    {
+      "text": "Vandet der bliver stående ved taglugen",
+      "begar": "vide hvad der faktisk sker på taget"
+    },
+    {
+      "text": "Ses ikke før fugttesten til foråret",
+      "begar": "undgå en ubehagelig overraskelse til foråret"
+    },
+    {
+      "text": "Ét tag. Ét betræk. Én person.",
+      "begar": "en løsning man klarer selv, uden hjælp"
+    }
+  ],
+  "forhandstext": "Tætningen blødgøres, længe før nogen går op og tjekker.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Regnen bliver stående ved taglugen",
+      "text": "Hej {{fornamn}},\n\nRegnvand samler sig omkring tagluger og samlinger hele vinteren. Ingen går op og tjekker, før foråret afgør det med en fugttest.",
+      "bild": "produkt:takskyddet",
+      "knapp": {
+        "text": "Se tagbetrækket",
+        "lank": "produkt:takskyddet"
+      }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Betrækket dækker kun tagfladen. Kanten hænger 30 til 40 cm ned over siderne, så regnvandet ikke bliver stående ved taglugerne, og lakken slipper for at skrabe mod et tungt heldækkende betræk."
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "Sådan er betrækket bygget",
+      "punkter": [
+        "Ni størrelser, fra 5,5 til 13,5 meter, alle 3 meter brede",
+        "Vævede spændebånd med plastikkroge, der hægter under kanten",
+        "Én person sætter det på, helt alene"
+      ]
+    },
+    {
+      "typ": "produkt",
+      "handle": "takskyddet",
+      "text": "Mål taget fra front til bagkant, og vælg nærmeste længde opad.",
+      "knapp": "Vælg din størrelse"
+    },
+    {
+      "typ": "citat",
+      "handle": "takskyddet",
+      "antal": 2
+    },
+    {
+      "typ": "fakta"
+    },
+    {
+      "typ": "knapp",
+      "text": "Beskyt taget",
+      "lank": "produkt:takskyddet"
+    }
+  ],
+  "tretest": [
+    { "rad": "Vandet der bliver stående ved taglugen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Ses ikke før fugttesten til foråret", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Ét tag. Ét betræk. Én person.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Tætningen blødgøres, længe før nogen går op og tjekker.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Regnen bliver stående ved taglugen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Hej {{fornamn}}, Regnvand samler sig omkring tagluger og samlinger hele vinteren. Ingen går op og tjekker, før foråret afgør det med en fugttest.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se tagbetrækket", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Betrækket dækker kun tagfladen. Kanten hænger 30 til 40 cm ned over siderne, så regnvandet ikke bliver stående ved taglugerne, og lakken slipper for at skrabe mod et tungt heldækkende betræk.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sådan er betrækket bygget", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Ni størrelser, fra 5,5 til 13,5 meter, alle 3 meter brede", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Vævede spændebånd med plastikkroge, der hægter under kanten", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Én person sætter det på, helt alene", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Mål taget fra front til bagkant, og vælg nærmeste længde opad.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Vælg din størrelse", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Beskyt taget", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "version": 1,
+  "planerad": "2026-09-29T18:00:00+02:00",
+  "segment": [
+    "SEG_samtycke_da"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

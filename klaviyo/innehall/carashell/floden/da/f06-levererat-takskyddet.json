@@ -1,0 +1,97 @@
+{
+  "id": "f06-levererat-takskyddet",
+  "namn": "FLOW_levererat_takskyddet_DA_v1",
+  "sprak": "da",
+  "memo": "Triggas när Shopify säger levererat (spårningsrutinen skriver leveransskanningen i Shopify varje timme). Dagen efter: så sätter du på taköverdraget. Skälet: en kund som sätter på det rätt ringer inte om vind och lack. ⚠️ Triggern order_delivered är inte mätt i CaraShells workspace: mät att flödet får inskrivningar första veckan, annars byt till order_created + 12 dagar.",
+  "spoks": {
+    "event": "order_delivered",
+    "filter": [
+      "ej_avregistrerad",
+      "sprak"
+    ],
+    "triggerFilter": {
+      "externalId": [
+        "takskyddet"
+      ]
+    },
+    "reenroll": true,
+    "reenrollEfter": null
+  },
+  "steg": [
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 1
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f06-levererat-takskyddet-e1",
+        "namn": "FLOW_levererat_takskyddet_DA_E1_M_sa-satter-du-pa-det_v1",
+        "sprak": "da",
+        "memo": "Monteringen med faktabladets ord: lägg det över taket med kanten 30–40 cm ner över sidorna, haka plastkrokarna under karossens kant längs sidorna (alla fyra sidor), dra åt de justerbara banden, de två extra banden på 10,5 m följer med för extra fäste. Inget om hur de extra banden dras (står inte i faktabladet).",
+        "brief": "Rubrik + en mening + fyra punkter i ordning + grundare-rad (blev något fel, svara på mejlet) + fakta.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "factory/produkter/takskyddet.yaml#features, #faq",
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "CaraShellRoof",
+          "kod": "M",
+          "avatar": "kunden som just fått paketet",
+          "begar": "slippa-krangel"
+        },
+        "amnesrader": [
+          {
+            "text": "Sådan sætter du tagbetrækket på",
+            "begar": "vide nøjagtigt hvordan, uden gætværk"
+          },
+          {
+            "text": "Fire trin, én person",
+            "begar": "vide, at det ikke kræver hjælp"
+          },
+          {
+            "text": "Kanten skal hænge ned, sådan her",
+            "begar": "gøre det rigtigt med det samme"
+          }
+        ],
+        "forhandstext": "Fire trin, ingen værktøjskasse nødvendig.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Sådan sætter du tagbetrækket på",
+            "text": "Pakken er kommet frem. Sådan sætter du betrækket på."
+          },
+          {
+            "typ": "punkter",
+            "rubrik": null,
+            "punkter": [
+              "Læg betrækket over taget, med kanten hængende 30 til 40 centimeter ned over siderne.",
+              "Hægt plastikkrogene under karrosseriets kant, langs alle fire sider.",
+              "Stram de justerbare spændebånd, så betrækket sidder tæt.",
+              "De to ekstra forstærkede bånd på 10,5 meter følger med, til ekstra fæste."
+            ]
+          },
+          {
+            "typ": "grundare",
+            "text": "Blev noget ikke, som det skulle, eller sidder det underligt, så svar bare på denne mail."
+          },
+          {
+            "typ": "fakta"
+          }
+        ],
+        "tretest": [
+          {"rad": "Sådan sætter du tagbetrækket på", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Fire trin, én person", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Kanten skal hænge ned, sådan her", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Fire trin, ingen værktøjskasse nødvendig.", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Sådan sætter du tagbetrækket på", "visualisera": true, "falsifiera": true, "ingen_annan": true}
+        ],
+        "version": 1
+      }
+    }
+  ]
+}

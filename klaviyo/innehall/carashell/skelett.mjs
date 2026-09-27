@@ -1,4 +1,6 @@
-// Skelettet för CaraShells mejl: flöden och kampanjer i tre språk (sv, nb, en).
+// Skelettet för CaraShells mejl: flöden och kampanjer i fyra språk (sv, nb, en, da).
+// Danska sedan 2026-09-27: danska kunder handlar på carashell.se/da (25 av 26 danska
+// ordrar på 90 dagar), så Danmark är en egen språkgrupp i stället för en del av svenskan.
 //
 //   node klaviyo/innehall/carashell/skelett.mjs            # skriver floden/<sprak>/ + kampanjer/<sprak>/ där filen SAKNAS
 //   node klaviyo/innehall/carashell/skelett.mjs --skriv-om # skriver över (kastar copyn — bara före copy-steget)
@@ -19,7 +21,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const HAR = path.dirname(fileURLToPath(import.meta.url));
-export const SPRAK = ['sv', 'nb', 'en'];
+export const SPRAK = ['sv', 'nb', 'en', 'da'];
 const C = '__COPY__';
 const c = (hint) => `${C}: ${hint}`;
 
@@ -281,13 +283,18 @@ export const FLODEN = [
 // automatiska rabatter i Shopify 23–30/11, klaviyo/black-week-trappa.mjs):
 // K09 tisdag 24/11 öppnar, K09b Black Friday fredag 27/11 påminner.
 
-const TID = { sv: 'T18:00:00+02:00', nb: 'T18:00:00+02:00', en: 'T16:00:00+02:00' };
-const TID_CET = { sv: 'T18:00:00+01:00', nb: 'T18:00:00+01:00', en: 'T16:00:00+01:00' };
+const TID = { sv: 'T18:00:00+02:00', nb: 'T18:00:00+02:00', en: 'T16:00:00+02:00', da: 'T18:00:00+02:00' };
+const TID_CET = { sv: 'T18:00:00+01:00', nb: 'T18:00:00+01:00', en: 'T16:00:00+01:00', da: 'T18:00:00+01:00' };
 const nar = (datum, s) => `${datum}${datum >= '2026-10-25' ? TID_CET[s] : TID[s]}`;
 
 // Engelskan skrivs för US, GB, CA, AU och NZ samtidigt: aldrig winter/summer/
 // spring/autumn/fall som årstid, aldrig snö — vagnen "står parkerad", "mellan
 // resorna". Månadsnamn är tillåtna när ett datum är riktigt (sista beställningsdag).
+// Fars dag i november finns bara i Sverige och Norge (andra söndagen i november).
+// Danmark firar 5 juni och USA/UK i juni resp. mars, så en och da får vinden i K04 och
+// presenten i K06 i stället (brands/carashell.json → kalender).
+const HAR_FARSDAG = (s) => s === 'sv' || s === 'nb';
+
 const EN_HEMISFAR = 'Engelskan gäller USA, Storbritannien, Kanada, Australien och Nya Zeeland samtidigt: inga årstider (winter/summer/spring/autumn/fall), ingen snö — skriv "while it is parked", "between trips", "off the road". Säg caravan där det passar (GB/AU/NZ), motorhome, och RV en gång som amerikansk synonym.';
 
 export const KAMPANJER = [
@@ -332,16 +339,17 @@ export const KAMPANJER = [
   },
   {
     id: 'k04-vecka-43', datum: '2026-10-20', prefix: 'CaraShellRoof',
-    // sv/nb: fars dag (sista beställningsdag mån 26/10). en: vinden.
+    // sv/nb: fars dag (sista beställningsdag mån 26/10). en och da: vinden.
     perSprak: {
       sv: { kod: 'GT', nr: 1, awareness: 'solution', hook: 'fars-dag-26-okt', memo: 'Presenten till honom som ställer undan vagnen: fars dag 8/11, sista beställningsdag mån 26 oktober (10 arbetsdagar + 2). Riktig brådska med datum. Presentvinkeln är dödvikt i annonserna hos CaraShell (dna.md mönster 12) men i mejl går den till folk som redan känner butiken — hypotesen är att datumet, inte vinkeln, säljer.', taggar: { typ: 'I', kalla: 'egen-data', kalla_ref: 'products/carashell/takskyddet/dna.md mönster 12; brands/carashell.json#kalender', avatar: 'den som letar present till en pappa med husvagn eller husbil', begar: 'en present han faktiskt använder', urgency: 'konsekvens', confidence: 'low' } },
       nb: { kod: 'GT', nr: 1, awareness: 'solution', hook: 'farsdag-26-okt', memo: 'Samma som svenskan: farsdag 8/11 i Norge, siste bestillingsdag man 26. oktober.', taggar: { typ: 'I', kalla: 'egen-data', kalla_ref: 'brands/carashell.json#kalender', avatar: 'den som leter etter gave til en pappa med campingvogn eller bobil', begar: 'en present han faktiskt använder', urgency: 'konsekvens', confidence: 'low' } },
       en: { kod: 'OB', nr: 3, awareness: 'product', hook: 'does-it-stay-on-in-wind', memo: 'Vinden och remmarna är invändning nummer två i kommentarerna (sv/no/en/dk 24–26 sep: "straps break off", "sönderblåst", "Sebra"). Svaret med faktabladets ord: vävda spännband, inte elastiska, plastkrokar under karossens kant på alla fyra sidor, justerbara, två extra 10,5 m band, håller i blåst. Inget om lacken utöver faktabladet.', taggar: { typ: 'I', kalla: 'voc', kalla_ref: 'kommentarer/leads.md 2026-09-24 (remmarna), 2026-09-26 (fungerar det)', avatar: 'ägaren som undrar om det blåser av', begar: 'trygghet', urgency: 'ingen', confidence: 'medium' } },
+      da: { kod: 'OB', nr: 3, awareness: 'product', hook: 'sidder-det-fast-i-blaest', memo: 'Ingen farsdag i november i Danmark (5 juni), så danskan får vinden som engelskan. Danska kommentarer 24–26 sep fanns bland "dk" i leads. Svaret med faktabladets ord: vævede spændebånd, ikke elastik, plastikkroge under karrosseriets kant på alle fire sider, to ekstra bånd på 10,5 m, holder i blæst.', taggar: { typ: 'I', kalla: 'voc', kalla_ref: 'kommentarer/leads.md 2026-09-24 (remmarna), 2026-09-26 (fungerar det)', avatar: 'ejeren der spekulerer på om det blæser af', begar: 'trygghet', urgency: 'ingen', confidence: 'medium' } },
     },
-    brief: (s) => s === 'en'
-      ? `Hero: frågan om vinden. Punkter: banden (webbing, not elastic), krokarna på fyra sidor, de två extra banden. Produktkort, fakta. ${EN_HEMISFAR}`
+    brief: (s) => !HAR_FARSDAG(s)
+      ? `Hero: frågan om vinden. Punkter: banden (${s === 'en' ? 'webbing, not elastic' : 'vævede, ikke elastik'}), krokarna på fyra sidor, de två extra banden. Produktkort, fakta. ${s === 'en' ? EN_HEMISFAR : 'Inget om lacken utöver faktabladet.'}`
       : 'Hero: presenten. Text med datumet skrivet ut ("beställ senast måndag 26 oktober") och varför (så att paketet hinner fram till fars dag) — utan leveranstid i dagar. Produktrad: taköverdraget + termoskyddet. Fakta.',
-    block: (s) => s === 'en'
+    block: (s) => !HAR_FARSDAG(s)
       ? [
         { typ: 'hero', rubrik: c('rubrik: does it stay on in wind?'), text: c('1–2 meningar'), bild: 'produkt:takskyddet', knapp: { text: c('knapp'), lank: 'produkt:takskyddet' } },
         { typ: 'punkter', rubrik: c('rubrik'), punkter: [c('webbing straps, not elastic'), c('hooks under the edge, all four sides'), c('two extra straps')] },
@@ -373,11 +381,12 @@ export const KAMPANJER = [
       sv: { kod: 'OB', nr: 3, awareness: 'product', hook: 'sitter-det-kvar-i-blast', memo: 'Vinden och remmarna (kommentarerna 24–26 sep: "sönderblåst", "Sebra", "skaver inte alla remmar"). Svaret med faktabladets ord: vävda spännband, inte gummi, töjs inte ut, plastkrokar under karossens kant på alla fyra sidor, justerbara, två extra band 10,5 m, håller i blåst.', taggar: { typ: 'I', kalla: 'voc', kalla_ref: 'kommentarer/leads.md 2026-09-24 (Sebra), 2026-09-26 (fungerar det)', avatar: 'ägaren som undrar om det blåser av', begar: 'trygghet', urgency: 'ingen', confidence: 'medium' } },
       nb: { kod: 'OB', nr: 3, awareness: 'product', hook: 'sitter-det-fast-i-vind', memo: 'Samma som svenskan, norska kommentarer: "forsvant med nordvest kulingen", "svake strikk". Svaret: vevde bånd, ikke strikk.', taggar: { typ: 'I', kalla: 'voc', kalla_ref: 'kommentarer/rapporter/2026-09-26.md (Takovertrekk)', avatar: 'eieren som lurer på om det blåser av', begar: 'trygghet', urgency: 'ingen', confidence: 'medium' } },
       en: { kod: 'GT', nr: 1, awareness: 'solution', hook: 'the-gift-for-the-one-with-the-caravan', memo: 'Presenten till den som har vagnen: julen närmar sig, och överdraget är en present som används. Ingen farsdag på engelska (USA juni, UK mars). Sista beställningsdag för jul kommer i K10.', taggar: { typ: 'I', kalla: 'gissning', kalla_ref: null, avatar: 'den som letar present till någon med husvagn eller husbil', begar: 'en present som används', urgency: 'ingen', confidence: 'low' } },
+      da: { kod: 'GT', nr: 1, awareness: 'solution', hook: 'gaven-til-den-med-vognen', memo: 'Presenten till den som har vagnen, som engelskan: julen närmar sig och ett skydd är en present som används. Ingen farsdag i november i Danmark. Sista beställningsdag för jul kommer i K10.', taggar: { typ: 'I', kalla: 'gissning', kalla_ref: null, avatar: 'den der leder efter en gave til en med campingvogn eller autocamper', begar: 'en present som används', urgency: 'ingen', confidence: 'low' } },
     },
-    brief: (s) => s === 'en'
-      ? `Hero: presenten. Text: varför ett skydd är en present som används (bara faktabladets fakta). Produktrad: takskyddet + termoskyddet. Fakta. ${EN_HEMISFAR}`
+    brief: (s) => !HAR_FARSDAG(s)
+      ? `Hero: presenten. Text: varför ett skydd är en present som används (bara faktabladets fakta). Produktrad: takskyddet + termoskyddet. Fakta. ${s === 'en' ? EN_HEMISFAR : 'Julen får nämnas.'}`
       : 'Hero: frågan om vinden. Punkter: banden (vävda, inte gummi), krokarna på fyra sidor, de två extra banden. Produktkort, fakta. Inget om lacken utöver faktabladet.',
-    block: (s) => s === 'en'
+    block: (s) => !HAR_FARSDAG(s)
       ? [
         { typ: 'hero', rubrik: c('rubrik: the gift'), text: c('1–2 meningar'), bild: 'produkt:takskyddet', knapp: { text: c('knapp'), lank: 'produkt:takskyddet' } },
         { typ: 'text', rubrik: null, text: c('varför det är en present som används') },

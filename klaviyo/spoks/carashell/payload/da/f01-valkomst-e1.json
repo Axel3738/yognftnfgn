@@ -1,0 +1,43 @@
+{
+  "id": "f01-valkomst-e1",
+  "sprak": "da",
+  "emailTitle": "Det er Axel, der skriver",
+  "emailDescription": "Jeg svarer altid selv, når du skriver tilbage.",
+  "amnesrader": [
+    "Det er Axel, der skriver",
+    "Ingen udsalg, bare en hilsen",
+    "Jeg laver betræk til taget og ruden"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Hej, det er Axel"
+    },
+    {
+      "type": "regular",
+      "text": "Jeg står selv bag butikken. Vi laver betræk til campingvognen og autocamperen, til de dage, hvor den bare står stille: et tagbetræk, der lægger sig over taget, og et forrudebetræk, der spændes over forruden og begge sideruder.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Ingen af delene tages med indenfor. De bliver siddende på køretøjet, så længe der er brug for dem.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Du hører fra mig, når der er noget konkret at sige, om produkterne eller om din ordre. Undrer du dig over noget inden da, svarer jeg selv på denne mail.",
+      "alignment": "left"
+    },
+    {
+      "type": "link",
+      "text": "Se udvalget",
+      "url": "https://carashell.se/da/collections/sortimentet?country=DK",
+      "style": "button"
+    },
+    {
+      "type": "quote",
+      "text": "Har du et spørgsmål, så svar bare på denne mail. Jeg læser den selv.\nAxel, grundlægger"
+    }
+  ],
+  "varningar": []
+}

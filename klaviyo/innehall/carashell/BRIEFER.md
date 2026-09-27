@@ -8,6 +8,10 @@ mot `docs/copy-regler.md`, faktabladet `fakta/<sprak>.json` (butikens egna
 produkttexter per språk, lästa ur Shopify 2026-09-26), `factory/output/carashell/BRAND.md`,
 `products/carashell/takskyddet/dna.md` och kundernas ord i `kommentarer/leads.md`.
 Svenska, norska och engelska skrevs var för sig på det egna språket, aldrig översatta.
+**Danskan (2026-09-27)** skrevs av två Sonnet-subagenter (flöden, kampanjer) mot `fakta/da.json` och
+granskades av huvudsessionen: den följer engelskan i K04/K06 (ingen farsdag i november i
+Danmark: K04 = vinden, K06 = julklappen), har inga svenska kundcitat (`citat: false`) och
+ingen reklamationstid (den danska policysidan nämner bara fortrydelsesret).
 
 **Det här är en KALLSTART.** Butiken är 15 dagar gammal, 0 återköp, 76 kontakter med
 samtycke. Inga mejl-lärdomar finns, så alla kampanjer är `utkast-skrivs-om-efter-lardom`
@@ -17,7 +21,7 @@ samtycke. Inga mejl-lärdomar finns, så alla kampanjer är `utkast-skrivs-om-ef
 ## Gemensamt för alla mejl
 
 - Fakta bara ur faktabladet på språket. Priser aldrig i copyn: sv får Spoks produktkort
-  (SEK), nb/en får bild + rubrik + knapp, för Spoks katalog har en valuta och ett språk.
+  (SEK), nb/en/da får bild + rubrik + knapp, för Spoks katalog har en valuta och ett språk.
 - Leveranstiden står aldrig i ett mejl (Axel 2026-09-21; spårningssidan visar den).
 - Villkoren exakt som butikens policy per marknad (läst 2026-09-26): sv/nb 14 dagars
   ångerrätt från mottagandet, kunden betalar returfrakten, mejla hello@carashell.com;

@@ -1,0 +1,23 @@
+{
+  "id": "f02-overgiven-kassa-e3",
+  "sprak": "da",
+  "emailTitle": "Sidste mail om denne kasse",
+  "emailDescription": "Ingen nedtælling. Bare et sidste spørgsmål: undrer du dig over noget?",
+  "amnesrader": [
+    "Sidste mail om denne kasse",
+    "Har du et spørgsmål? Svar bare",
+    "Jeg hører ikke mere om det herfra"
+  ],
+  "blocks": [
+    {
+      "type": "quote",
+      "text": "Det her er den sidste mail om den kasse, du forlod. Undrer du dig over størrelse, montering eller noget andet, så svar bare på denne mail, så svarer jeg. Ellers hører du ikke mere om denne kasse fra mig.\nAxel, grundlægger"
+    },
+    {
+      "type": "abandonedCart",
+      "buttonText": "Tilbage til kassen",
+      "isProductPriceVisible": false
+    }
+  ],
+  "varningar": []
+}

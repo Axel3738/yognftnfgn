@@ -35,8 +35,8 @@
     "tillagg": false,
     "tillagg_comment": "AV sedan 2026-09-26 kväll (Axel: \"Jag tycker inte vi ska ha dem där. Jag tycker vi ska ha dem på tacksidan\") — korten fanns live 12:40–~16:30 UTC. Motorn (sparning/tillagg.mjs) finns kvar och slås på med true; erbjudandet hör hemma på tacksidan i kassan (factory/tacksida/).",
     "sparning_vaknar": "2–4 dagar",
-    "sprak_extra": ["nb", "en", "fi"],
-    "sprak_extra_comment": "Sidan bär alla fyra språken och byter själv efter adressen kunden kom in på (Shopifys <html lang>: /nb → norska, carashell.com → engelska, /fi → finska, annars svenska). Byggt 2026-09-20 sen kväll (Axels fråga: 'hur gör du med språket?').",
+    "sprak_extra": ["nb", "en", "fi", "da"],
+    "sprak_extra_comment": "Sidan bär alla fem språken och byter själv efter adressen kunden kom in på (Shopifys <html lang>: /nb → norska, carashell.com → engelska, /fi → finska, /da → danska, annars svenska). Byggt 2026-09-20 sen kväll (Axels fråga: 'hur gör du med språket?'). Danskan tillagd 2026-09-27: de danska Spoks-mejlen länkar till carashell.se/da/pages/spara, och danska kunder handlar på danska (25 av 26 DK-ordrar da-DK).",
     "mejl_marknader": [
       { "lander": ["NO"], "sprak": "nb", "sida": "https://carashell.se/nb/pages/spara" },
       { "lander": ["US", "GB", "CA", "AU", "NZ"], "sprak": "en", "sida": "https://carashell.com/pages/spara" },

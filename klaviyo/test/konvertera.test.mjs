@@ -139,13 +139,15 @@ test('CaraShell: Spoks-filtret per språk och flödesdefinitionen', () => {
   assert.equal(sv.type, 'conjunction');
   assert.equal(sv.operator, 'and');
   assert.deepEqual(sv.filters[0], { type: 'filter', field: 'emailMarketingConsent', operator: 'in', value: ['subscribed'] });
-  assert.equal(sv.filters[1].operator, 'or', 'svenskan tar Sverige, Danmark och kontakter utan land');
-  assert.deepEqual(sv.filters[1].filters[0].value, ['Sweden', 'Denmark']);
+  assert.equal(sv.filters[1].operator, 'or', 'svenskan tar Sverige och kontakter utan land');
+  // Danmark är en egen språkgrupp sedan 2026-09-27 (25 av 26 danska ordrar på carashell.se/da).
+  assert.deepEqual(sv.filters[1].filters[0].value, ['Sweden']);
   assert.deepEqual(sv.filters[1].filters[1], { type: 'filter', field: 'country', operator: 'nis' });
   const nb = K.spoksFilter(['ej_avregistrerad', 'sprak'], 'nb');
   assert.deepEqual(nb.filters[0], { type: 'filter', field: 'emailMarketingConsent', operator: 'nin', value: ['unsubscribed'] });
   assert.deepEqual(nb.filters[1], { type: 'filter', field: 'country', operator: 'in', value: ['Norway'] });
   assert.equal(K.spoksFilter(['sprak'], 'en').value.length, 6);
+  assert.deepEqual(K.spoksFilter(['sprak'], 'da'), { type: 'filter', field: 'country', operator: 'in', value: ['Denmark'] });
   assert.equal(K.spoksFilter([], 'sv'), null);
   assert.deepEqual(K.spoksFilter(['ej_kopt_sedan_start'], 'sv'), { type: 'filter', field: 'lastPurchase', operator: 'lt', value: '__flow_triggered__' });
 
@@ -157,10 +159,11 @@ test('CaraShell: Spoks-filtret per språk och flödesdefinitionen', () => {
   assert.deepEqual(flode.steg[1], { type: 'publish_flow_post_to_contact', mejl: 'm1', namn: 'Hva synes du?' });
 });
 
-test('CaraShell: 13 segment, alla kampanjsegment kräver samtycke', () => {
+test('CaraShell: 17 segment (fyra per språk + oengagerade), alla kampanjsegment kräver samtycke', () => {
   const { K } = caraKonverterare();
   const seg = K.segment();
-  assert.equal(seg.length, 13);
+  assert.equal(seg.length, 17);
+  assert.ok(seg.some((s) => s.namn === 'SEG_samtycke_da'));
   for (const s of seg.filter((x) => x.kampanj_ok)) {
     const forsta = s.filter.filters?.[0] ?? s.filter;
     assert.deepEqual(forsta, { type: 'filter', field: 'emailMarketingConsent', operator: 'in', value: ['subscribed'] }, s.namn);

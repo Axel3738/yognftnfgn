@@ -1,0 +1,96 @@
+{
+  "id": "f06-levererat-termoskyddet",
+  "namn": "FLOW_levererat_termoskyddet_DA_v1",
+  "sprak": "da",
+  "memo": "Samma som takskyddets leveransflöde, för termoskyddet: spänns utvändigt över vindrutan och båda sidorutorna, flikarna kläms fast i dörrkarmen utan att dörrarna öppnas, håller i blåst.",
+  "spoks": {
+    "event": "order_delivered",
+    "filter": [
+      "ej_avregistrerad",
+      "sprak"
+    ],
+    "triggerFilter": {
+      "externalId": [
+        "termoskyddet"
+      ]
+    },
+    "reenroll": true,
+    "reenrollEfter": null
+  },
+  "steg": [
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 1
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f06-levererat-termoskyddet-e1",
+        "namn": "FLOW_levererat_termoskyddet_DA_E1_M_sa-monterar-du-termoskyddet_v1",
+        "sprak": "da",
+        "memo": "Monteringen med faktabladets ord, tre punkter.",
+        "brief": "Rubrik + en mening + tre punkter + grundare-rad + fakta.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "factory/produkter/termoskyddet.yaml#features, #faq",
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "medium",
+          "prefix": "CaraShellFront",
+          "kod": "M",
+          "avatar": "husbilsägaren som just fått termoskyddet",
+          "begar": "slippa-krangel"
+        },
+        "amnesrader": [
+          {
+            "text": "Sådan monterer du forrudebetrækket",
+            "begar": "vide nøjagtigt hvordan man gør"
+          },
+          {
+            "text": "Udenpå ruden, med dørene lukket",
+            "begar": "forstå, at dørene ikke skal åbnes"
+          },
+          {
+            "text": "Tre trin, klaret udefra",
+            "begar": "vide, at det går hurtigt"
+          }
+        ],
+        "forhandstext": "Tre trin, og du behøver ikke åbne en eneste dør.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Sådan monterer du forrudebetrækket",
+            "text": "Pakken er kommet frem. Sådan monterer du betrækket."
+          },
+          {
+            "typ": "punkter",
+            "rubrik": null,
+            "punkter": [
+              "Spænd betrækket udvendigt over forruden og begge sideruder.",
+              "Klem flapperne fast i dørkarmen. Dørene skal ikke åbnes.",
+              "Færdig. Betrækket holder i blæst."
+            ]
+          },
+          {
+            "typ": "grundare",
+            "text": "Blev noget ikke, som det skulle, så svar bare på denne mail."
+          },
+          {
+            "typ": "fakta"
+          }
+        ],
+        "tretest": [
+          {"rad": "Sådan monterer du forrudebetrækket", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Udenpå ruden, med dørene lukket", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Tre trin, klaret udefra", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Tre trin, og du behøver ikke åbne en eneste dør.", "visualisera": true, "falsifiera": true, "ingen_annan": true},
+          {"rad": "Sådan monterer du forrudebetrækket", "visualisera": true, "falsifiera": true, "ingen_annan": true}
+        ],
+        "version": 1
+      }
+    }
+  ]
+}

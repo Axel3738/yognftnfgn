@@ -1,0 +1,81 @@
+{
+  "id": "f01-valkomst-e3",
+  "sprak": "da",
+  "emailTitle": "Sådan foregår en retur, hvis du får brug for det",
+  "emailDescription": "Fra bestilling til en eventuel retur, i klart sprog.",
+  "amnesrader": [
+    "Sådan foregår en retur, hvis du får brug for det",
+    "Pakkenummer, sporing, en rigtig adresse",
+    "14 dages fortrydelsesret, hvis det ikke passer"
+  ],
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Bestilling, sporing, og hvis du fortryder"
+    },
+    {
+      "type": "regular",
+      "text": "Du får en bekræftelse på mail, så snart du bestiller, og en ny mail med pakkenummeret, når pakken sendes. Nummeret starter på CS-.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Med pakkenummeret finder du frem til vores egen sporingsside, hvor du kan se, hvor pakken er lige nu.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Fortryder du, har du 14 dages fortrydelsesret fra den dag, du modtager varen. Du betaler selv returfragten og skriver til hello@carashell.com med dit ordrenummer for en returvejledning. Pengene er tilbage inden for 14 dage, efter vi har modtaget returen.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Spørgsmål af enhver art går til samme adresse: hello@carashell.com.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Fortrydelsesret**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dages fortrydelsesret",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Følg pakken**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Følg den hele vejen](https://carashell.se/da/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "link",
+      "text": "Se tagbetrækket",
+      "url": "https://carashell.se/da/products/takskyddet?country=DK",
+      "style": "button"
+    }
+  ],
+  "varningar": []
+}

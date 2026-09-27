@@ -1,0 +1,88 @@
+{
+  "id": "k02-nio-langder",
+  "namn": "MAIL_20261006_CaraShellRoof_DA_OB_2_samtycke_product_nio-langder_v1",
+  "sprak": "da",
+  "memo": "Kundernas egna ord i kommentarerna (25 sep, alla marknader): \"bara 6,5 m\", \"only one size\", \"looking for 12×40\". Storleksvalet syns inte för dem. Mejlet gör valet till huvudsaken: nio längder 5,5–13,5 m, alla 3 m breda, mät front till bakkant, välj närmaste längd uppåt.",
+  "brief": "Hero: storleken är huvudsaken. Punkter: hur man mäter, längderna, bredden, husvagn och husbil. Produktkort, fakta. ",
+  "taggar": {
+    "typ": "I",
+    "kalla": "voc",
+    "kalla_ref": "kommentarer/leads.md 2026-09-25 + 2026-09-26 (storleksvalet syns inte)",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "ingen",
+    "confidence": "medium",
+    "prefix": "CaraShellRoof",
+    "kod": "OB",
+    "avatar": "ägaren som tror att överdraget bara finns i en storlek",
+    "begar": "veta att det finns en storlek som passar"
+  },
+  "amnesrader": [
+    {
+      "text": "Ni størrelser, én til dit tag",
+      "begar": "finde den rigtige størrelse"
+    },
+    {
+      "text": "5,5 til 13,5 meter, du vælger",
+      "begar": "se hele udvalget, før man antager noget"
+    },
+    {
+      "text": "Mål taget, vælg længden opad",
+      "begar": "en enkel metode til at ramme rigtigt med det samme"
+    }
+  ],
+  "forhandstext": "Fra 5,5 op til 13,5 meter, alle 3 meter brede.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Ni størrelser. Hvilken passer dit tag?",
+      "text": "Hej {{fornamn}},\n\nTagbetrækket findes i ni størrelser, fra 5,5 til 13,5 meter, alle 3 meter brede. Mål taget fra front til bagkant, og vælg nærmeste længde opad.",
+      "bild": "produkt:takskyddet",
+      "knapp": {
+        "text": "Se alle størrelser",
+        "lank": "produkt:takskyddet"
+      }
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "Sådan vælger du rigtigt",
+      "punkter": [
+        "Mål taget fra front til bagkant",
+        "Ni størrelser, fra 5,5 til 13,5 meter, alle 3 meter brede",
+        "Passer både campingvogn og autocamper"
+      ]
+    },
+    {
+      "typ": "produkt",
+      "handle": "takskyddet",
+      "text": "Vælg nærmeste længde opad, aldrig nedad.",
+      "knapp": "Find din længde"
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    { "rad": "Ni størrelser, én til dit tag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "5,5 til 13,5 meter, du vælger", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Mål taget, vælg længden opad", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fra 5,5 op til 13,5 meter, alle 3 meter brede.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Ni størrelser. Hvilken passer dit tag?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Hej {{fornamn}}, Tagbetrækket findes i ni størrelser, fra 5,5 til 13,5 meter, alle 3 meter brede. Mål taget fra front til bagkant, og vælg nærmeste længde opad.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se alle størrelser", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sådan vælger du rigtigt", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Mål taget fra front til bagkant", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Ni størrelser, fra 5,5 til 13,5 meter, alle 3 meter brede", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Passer både campingvogn og autocamper", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Vælg nærmeste længde opad, aldrig nedad.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Find din længde", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "version": 1,
+  "planerad": "2026-10-06T18:00:00+02:00",
+  "segment": [
+    "SEG_samtycke_da"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

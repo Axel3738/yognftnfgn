@@ -1,0 +1,87 @@
+{
+  "id": "f14-recension",
+  "namn": "FLOW_levererat_recension_DA_v1",
+  "sprak": "da",
+  "memo": "Tio dagar efter leveransen, klockan 18: vad tyckte du? Fem stjärnor som ALLA går till samma Trustpilot-sida (?stars=N förväljer betyget) — aldrig review gating. Plus grundarens rad: blev något fel, svara på mejlet först. ⚠️ Trustpilot har ingen profil för carashell.se (evaluate-sidan svarar 404, mätt 2026-09-26) — Axel gör anspråk på profilen innan flödet slås på.",
+  "spoks": {
+    "event": "order_delivered",
+    "filter": [
+      "ej_avregistrerad",
+      "sprak"
+    ],
+    "reenroll": true,
+    "reenrollEfter": "P90D",
+    "tilHour": "18:00"
+  },
+  "steg": [
+    {
+      "typ": "vanta",
+      "enhet": "days",
+      "varde": 10
+    },
+    {
+      "typ": "mejl",
+      "mejl": {
+        "id": "f14-recension-e1",
+        "namn": "FLOW_levererat_recension_DA_E1_M_vad-tyckte-du_v1",
+        "sprak": "da",
+        "memo": "Transaktionell förfrågan: tre-frågorstestets \"ingen annan kan säga det\" får vara ❌ och redovisas.",
+        "brief": "Rubrik + en mening (paketet har hunnit fram, ett klick räcker). Stjärnblocket: rubrik + rad om att alla omdömen hjälper lika mycket. Grundare: blev något fel, svara på mejlet först.",
+        "taggar": {
+          "typ": "M",
+          "kalla": "egen-data",
+          "kalla_ref": "klaviyo/innehall/baverbutiken/floden/f14-recension-trustpilot.json (samma konstruktion, egen copy)",
+          "lardom": null,
+          "awareness": "product",
+          "urgency": "ingen",
+          "confidence": "low",
+          "prefix": "CaraShellRoof",
+          "kod": "M",
+          "avatar": "köparen vars paket har hunnit fram",
+          "begar": "säga vad man tyckte"
+        },
+        "amnesrader": [
+          {
+            "text": "Hvad synes du?",
+            "begar": "få lov at sige sin mening"
+          },
+          {
+            "text": "Et klik er nok",
+            "begar": "gøre det uden besvær"
+          },
+          {
+            "text": "Hvordan gik det, {{fornamn}}?",
+            "begar": "blive spurgt personligt"
+          }
+        ],
+        "forhandstext": "Fem stjerner, hvis det er, hvad du synes, eller noget andet.",
+        "block": [
+          {
+            "typ": "text",
+            "rubrik": "Hvad synes du?",
+            "text": "Pakken skulle være kommet frem nu. Vi vil gerne høre, hvordan det gik."
+          },
+          {
+            "typ": "stjarnor",
+            "rubrik": "Giv en vurdering",
+            "lank": "trustpilot:",
+            "text": "Alle vurderinger hjælper lige meget, uanset hvor mange stjerner."
+          },
+          {
+            "typ": "grundare",
+            "text": "Blev noget galt, så svar på denne mail først, så løser vi det, inden du anmelder."
+          }
+        ],
+        "tretest": [
+          {"rad": "Hvad synes du?", "visualisera": true, "falsifiera": true, "ingen_annan": false},
+          {"rad": "Et klik er nok", "visualisera": true, "falsifiera": true, "ingen_annan": false},
+          {"rad": "Hvordan gik det, {{fornamn}}?", "visualisera": true, "falsifiera": true, "ingen_annan": false},
+          {"rad": "Fem stjerner, hvis det er, hvad du synes, eller noget andet.", "visualisera": true, "falsifiera": true, "ingen_annan": false},
+          {"rad": "Hvad synes du?", "visualisera": true, "falsifiera": true, "ingen_annan": false},
+          {"rad": "Giv en vurdering", "visualisera": true, "falsifiera": true, "ingen_annan": false}
+        ],
+        "version": 1
+      }
+    }
+  ]
+}

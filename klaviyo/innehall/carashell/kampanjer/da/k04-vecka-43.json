@@ -1,0 +1,88 @@
+{
+  "id": "k04-vecka-43",
+  "namn": "MAIL_20261020_CaraShellRoof_DA_OB_3_samtycke_product_sidder-det-fast-i-blaest_v1",
+  "sprak": "da",
+  "memo": "Ingen farsdag i november i Danmark (5 juni), så danskan får vinden som engelskan. Danska kommentarer 24–26 sep fanns bland \"dk\" i leads. Svaret med faktabladets ord: vævede spændebånd, ikke elastik, plastikkroge under karrosseriets kant på alle fire sider, to ekstra bånd på 10,5 m, holder i blæst.",
+  "brief": "Hero: frågan om vinden. Punkter: banden (vævede, ikke elastik), krokarna på fyra sidor, de två extra banden. Produktkort, fakta. Inget om lacken utöver faktabladet.",
+  "taggar": {
+    "typ": "I",
+    "kalla": "voc",
+    "kalla_ref": "kommentarer/leads.md 2026-09-24 (remmarna), 2026-09-26 (fungerar det)",
+    "lardom": null,
+    "awareness": "product",
+    "urgency": "ingen",
+    "confidence": "medium",
+    "prefix": "CaraShellRoof",
+    "kod": "OB",
+    "avatar": "ejeren der spekulerer på om det blæser af",
+    "begar": "trygghet"
+  },
+  "amnesrader": [
+    {
+      "text": "Sidder det fast, når det blæser?",
+      "begar": "få svar på en bekymring inden købet"
+    },
+    {
+      "text": "Vævede bånd, ikke elastik",
+      "begar": "forstå hvad der faktisk holder det på plads"
+    },
+    {
+      "text": "Kroge under kanten, alle fire sider",
+      "begar": "se mekanikken, ikke bare høre et løfte"
+    }
+  ],
+  "forhandstext": "Båndene er vævede. De strækker sig ikke.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Sidder det fast, når det blæser?",
+      "text": "Hej {{fornamn}},\n\nBåndene er vævede spændebånd, ikke elastik, så de strækker sig ikke og løsner sig ikke. Plastikkroge hægter under karrosseriets kant, på alle fire sider.",
+      "bild": "produkt:takskyddet",
+      "knapp": {
+        "text": "Se hvordan det spændes fast",
+        "lank": "produkt:takskyddet"
+      }
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "Det der holder det på plads",
+      "punkter": [
+        "Vævede spændebånd, ikke elastik, så de strækker sig ikke",
+        "Plastikkroge under kanten, på alle fire sider, justerbare",
+        "To ekstra forstærkede bånd på 10,5 meter følger med"
+      ]
+    },
+    {
+      "typ": "produkt",
+      "handle": "takskyddet",
+      "text": "Fire sider, kroge under kanten, båndene er vævede.",
+      "knapp": "Se båndene"
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    { "rad": "Sidder det fast, når det blæser?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Vævede bånd, ikke elastik", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Kroge under kanten, alle fire sider", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Båndene er vævede. De strækker sig ikke.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sidder det fast, når det blæser?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Hej {{fornamn}}, Båndene er vævede spændebånd, ikke elastik, så de strækker sig ikke og løsner sig ikke. Plastikkroge hægter under karrosseriets kant, på alle fire sider.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se hvordan det spændes fast", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Det der holder det på plads", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Vævede spændebånd, ikke elastik, så de strækker sig ikke", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Plastikkroge under kanten, på alle fire sider, justerbare", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "To ekstra forstærkede bånd på 10,5 meter følger med", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fire sider, kroge under kanten, båndene er vævede.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se båndene", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "version": 1,
+  "planerad": "2026-10-20T18:00:00+02:00",
+  "segment": [
+    "SEG_samtycke_da"
+  ],
+  "exkludera": [],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}

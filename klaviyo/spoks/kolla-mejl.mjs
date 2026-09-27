@@ -1,6 +1,7 @@
 // Copykontrollen för enskilda innehållsfiler, utan att skriva payload eller plan.
 //
 //   node klaviyo/spoks/kolla-mejl.mjs --brand carashell klaviyo/innehall/carashell/kampanjer/sv/k09-black-week-trappan.json [...]
+//   (flödesfiler går också: varje steg med mejl kontrolleras)
 //
 // Samma regler som konvertera.mjs (kontrollera()), men bara för de filer som anges —
 // så att flera copyskrivare kan kontrollera sina egna mejl samtidigt utan att
@@ -16,8 +17,9 @@ const K = skapaKonverterare({ brand: lasBrand(brandId), produktIds: {}, recCache
 let fel = 0;
 for (const f of filer) {
   const d = JSON.parse(fs.readFileSync(f, 'utf8'));
-  const m = d.mejl ?? d;
-  const lista = K.kontrollera({ ...m, id: m.id ?? d.id });
+  // En flödesfil bär sina mejl i steg[].mejl, en kampanjfil är själv mejlet.
+  const mejl = Array.isArray(d.steg) ? d.steg.filter((st) => st.mejl).map((st) => st.mejl) : [d.mejl ?? d];
+  const lista = mejl.flatMap((m) => K.kontrollera({ ...m, id: m.id ?? d.id, sprak: m.sprak ?? d.sprak }));
   const ofyllt = JSON.stringify(d).includes('__COPY__') ? ['ofylld copy (__COPY__) någonstans i filen'] : [];
   const alla = [...lista, ...ofyllt];
   console.log(`${f}: ${alla.length ? `${alla.length} fel` : 'OK'}`);
