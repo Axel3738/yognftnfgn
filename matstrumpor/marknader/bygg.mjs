@@ -366,9 +366,13 @@ async function stegOversattningar(k, { skarpt, bara: baraLocale = null }) {
     const perTyp = {};
     const felResurser = [];
     for (const n of noder) {
-      const har = new Map((n.translations ?? []).map((t) => [t.key, t]));
+      // ⚠️ Befintliga översättningar ur batchläsningen används INTE för att hoppa över något:
+      // läsningen kan svara med ett ANNAT språks värden (mätt 2026-09-27), och där danskan och
+      // norskan råkar vara identiska ("Del", "Hele sortimentet") hoppades sju norska texter
+      // över som "redan registrerade" — de fanns aldrig. Registreringen är idempotent, så allt
+      // skickas varje körning; `--steg kontroll` (som läser om ensamt) är facit.
       const innehall = (n.translatableContent ?? []).filter((c) => !['handle', 'ab_variant', 'rabattkod'].includes(c.key));
-      const { rader, kvar } = paraResurs(innehall, karta, har);
+      const { rader, kvar } = paraResurs(innehall, karta, new Map());
       for (const q of kvar) if (arLacka({ ...q, typ: typAv.get(n.resourceId) }, samma)) lackor.push({ id: n.resourceId.split('/').pop().split('?')[0], typ: typAv.get(n.resourceId), ...q });
       if (rader.length === 0) continue;
       resurserMed++;
