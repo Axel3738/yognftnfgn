@@ -128,12 +128,16 @@ dem först (förturen). Beslutet är Axels (Black Week A/B/C i `klaviyo/README.m
 1. **Förtur är kärnan.** Förra säsongens köpare (`SEG_kopare_forra_sasongen`, 2 415) får
    Black Week, restock och sista beställningsdagen före alla andra; övriga medlemmar före
    sajten. Sant, gratis, och det Evolve kallar "the proven mechanic".
-2. **Dragningen är krydda och intäktsmaskin**, inte strategin: tio medlemmar dras varje
-   tisdag av ett skript med loggat frö; vinnarna får lådan mot en bild (exempel, inget
-   manus, bildtillstånd i svaret, bara vuxna); **icke-vinnarna får samma dag ett tröstpris
-   med 72 timmars gräns** — om Axel vill ha en rabatt där; annars är trösten förturen.
+2. **Dragningen är krydda och intäktsmaskin**, inte strategin: **tre** medlemmar dras varje
+   tisdag av ett skript med loggat frö; vinnarna får lådan mot **en kort video** på sig
+   själva med strumporna där de säger en mening om dem (UGC om de vill, tio sekunder
+   räcker; exempel, inget manus, tillstånd i svaret, bara vuxna). Var tio + bild till
+   2026-09-27 eftermiddag; Axels ändring samma dag före första testet ("3 kunder … måste
+   då göra ugc videos eller bara göra videos där de säger någon mening om produkten").
+   **Icke-vinnarna får ett tröstpris på Black Friday** (kredit, beloppet är Axels).
 3. **Måttet är återköp, inte öppningar:** medlemmarnas återköp dec 2026 mot dec 2025,
-   tröstprisets intäkt inom 14 dagar mot kostnaden för tio lådor (≈ 1 150 kr + frakt).
+   tröstprisets intäkt inom 14 dagar mot kostnaden för tre lådor i veckan (≈ 345 kr + frakt),
+   och videorna: annonser byggda på dem mäts med den vanliga analysmetoden.
 4. **Börja tidigare med förra årets köpare:** första mejlet till dem tidigast möjligt i
    oktober (K05 27/10 är sent för en lista som "inte kommer tillbaka av sig själv", Evolve
    [C4]); flyttas i kalendern när copyn är skriven.

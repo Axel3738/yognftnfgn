@@ -15,7 +15,7 @@ const KONF = {
   land: 'SE',
   vinst: { handle: 'sushi-strumpor', variant_gid: 'gid://shopify/ProductVariant/1', titel: 'Sushi 5 par', varde_kr: 399 },
   tagg_vinnare: 'klubb-vinnare',
-  tagg_bild_klar: 'klubb-bild-klar',
+  tagg_video_klar: 'klubb-video-klar',
   ordertagg: 'klubb-dragning',
   egna_domaner: ['stonebite.org'],
   logg: 'klaviyo/konto/testbutik/dragningar.jsonl',

@@ -1,4 +1,4 @@
-# /klubbdragning – Klubbdragningen: tio medlemmar dras och får en låda (Matstrumpor)
+# /klubbdragning – Klubbdragningen: tre medlemmar dras och får en låda (Matstrumpor)
 
 Argument: `$ARGUMENTS` — inget = **torrt** (visar vilka som hade vunnit, skriver
 inget i Shopify). `kör` = **skarpt** mot riktiga medlemmar. `test <e-post>` = hela
@@ -8,17 +8,19 @@ kedjan på EN egen adress (skarpt, men bara den kunden). Exempel: `/klubbdragnin
 ## Vad det är
 
 Axels beslut 2026-09-27 (alternativ B, efter Evolves svar 9 i `klaviyo/evolve/SVAR.md`):
-varje tisdag morgon dras tio medlemmar ur Matstrumpor-klubben av ett skript. Vinnaren
+varje tisdag morgon dras **tre** medlemmar ur Matstrumpor-klubben av ett skript. Vinnaren
 får sushilådan (5 par, 399 kr) hemskickad som en 0-kronorsorder, mot att hen skickar en
-bild på sig själv med strumporna som får användas i klubbmejl och annonser. Förturen
-är kärnan i klubbkänslan, dragningen är krydda och intäktsmaskin (Evolve).
+**kort video på sig själv med strumporna där hen säger en mening om dem** (UGC om hen
+vill, tio sekunder räcker) som får användas i klubbmejl och annonser. Förturen är kärnan
+i klubbkänslan, dragningen är krydda och intäktsmaskin (Evolve). *(Tio vinnare + bild
+till 2026-09-27 eftermiddag; Axels ändring samma dag före första testet.)*
 
 | | |
 |---|---|
 | Butik | Matstrumpor (`1r46tp-qx`), appen "Fabriken" via `sparning/butik.mjs` |
 | Skript | `klaviyo/klubb/dragning.mjs` (konfig `klaviyo/brands/matstrumpor.json` → `klubb.dragning`) |
-| Spoks-flöde | **F08 Klubbdragningen (vinnarna)** `27047445-dcab-4898-9f92-5f55f2b77be3`, startar på kundtaggen `klubb-vinnare` (contact_tags_added) |
-| Taggar | kund: `klubb-vinnare` + `klubb-vinnare-<datum>`; order: `klubb-dragning` + `klubb-dragning-<datum>`; VA:n sätter `klubb-bild-klar` när bilden kommit |
+| Spoks-flöde | **F08 Klubbdragningen (vinnarna)** `1a3263e1-a12d-45dc-8e40-2f8b8bf85313`, startar på kundtaggen `klubb-vinnare` (contact_tags_added) |
+| Taggar | kund: `klubb-vinnare` + `klubb-vinnare-<datum>`; order: `klubb-dragning` + `klubb-dragning-<datum>`; VA:n sätter `klubb-video-klar` när videon kommit |
 | Logg | `klaviyo/konto/matstrumpor/dragningar.jsonl` (inga personuppgifter), VA-listan i `klaviyo/output/matstrumpor/dragningar/<datum>.csv` (gitignorerad) |
 | Innehåll | `klaviyo/innehall/matstrumpor/floden/f08-klubbdragning.json`, kampanjblocket `klaviyo/innehall/matstrumpor/VECKANS-DRAGNING.md` |
 | VA:ns SOP | `kundtjanst/va-sop/club-draw-winners.md` (Notion: "Club draw winners — photos, consent, missing addresses") |
@@ -48,9 +50,13 @@ Ett kommando per Bash-anrop.
 1. **Torrt först, alltid.** `node klaviyo/klubb/dragning.mjs` — läs: vinsten (rätt
    variant, rätt pris), antal kandidater, hur många utan adress, bortsorterade. Ser
    något konstigt ut (0 kandidater, fel produkt, `ej_samtycke` > 0): stanna och säg det.
-2. **Flödet i Spoks** (bara vid `kör`/`test`): `get_flow` på F08 ⇒ `isActive: true` och
-   alla tre sändstegen `isEnabled: true`. Annars stanna: det är Axels klick i
-   https://app.spoks.com/matstrumpor/flows/27047445-dcab-4898-9f92-5f55f2b77be3.
+2. **Flödet i Spoks** (bara vid `kör`/`test`): `get_flow` på F08 **v2** ⇒ `isActive: true` och
+   alla tre sändstegen `isEnabled: true`, OCH `get_flow` på v1
+   `27047445-dcab-4898-9f92-5f55f2b77be3` ⇒ `isActive: false` (v1 = tio vinnare + bild,
+   påslaget av Axel 2026-09-27 innan ändringen; två aktiva flöden på samma tagg ger två E1).
+   Annars stanna: det är Axels klick i
+   https://app.spoks.com/matstrumpor/flows/1a3263e1-a12d-45dc-8e40-2f8b8bf85313 (v2 på)
+   och https://app.spoks.com/matstrumpor/flows/27047445-dcab-4898-9f92-5f55f2b77be3 (v1 av).
 3. **Skarpt.** `node klaviyo/klubb/dragning.mjs --skarpt` (eller `--test <e-post> --skarpt`).
    Utskriften bär maskerade adresser, ordernamn och eventuella fel. Ett fel på en
    vinnare stoppar inte de andra; felraden går till VA:n.

@@ -12,9 +12,9 @@ test('tagg-trigger blir contact_tags_added med taggen som triggerfilter', () => 
 });
 
 test('utan_tagg:<tagg> blir ett stegfilter tags nin, inget triggerfilter', () => {
-  const f = filterTillSpoks(['utan_tagg:klubb-bild-klar']);
+  const f = filterTillSpoks(['utan_tagg:klubb-video-klar']);
   assert.equal(f.trigger, null);
-  assert.deepEqual(f.steg, { type: 'filter', field: 'tags', operator: 'nin', value: ['klubb-bild-klar'] });
+  assert.deepEqual(f.steg, { type: 'filter', field: 'tags', operator: 'nin', value: ['klubb-video-klar'] });
 });
 
 test('F08 Klubbdragningen: inget 책terintr채de, v채ntestegen i dagar, filtret p책 varje mejl', () => {
@@ -22,7 +22,7 @@ test('F08 Klubbdragningen: inget 책terintr채de, v채ntestegen i dagar, filtret p�
     id: 'f08-klubbdragning',
     namn: 'F08 Klubbdragningen',
     trigger: { typ: 'tagg', tagg: 'klubb-vinnare' },
-    filter: ['utan_tagg:klubb-bild-klar'],
+    filter: ['utan_tagg:klubb-video-klar'],
     ateintrade: { varaktighet: 30, enhet: 'days' },
     steg: [
       { typ: 'mejl', mejl: { id: 'f08-e1' } },

@@ -545,54 +545,66 @@ plattformens egen.
   `send_campaign`: `https://app.spoks.com/matstrumpor/post/{postId}/edit`). Beskriv alltid hur
   mejlet ser ut (K01: stor bild på sushilådan, rubriken "Ser ut som sushi. Är strumpor.").
 
-## Klubbdragningen — F08 (byggd 2026-09-27, INTE påslagen)
+## Klubbdragningen — F08 (byggd 2026-09-27; v2 med tre vinnare + video samma eftermiddag)
 
-Axels beslut 2026-09-27 (alternativ B efter Evolves svar 9): tio medlemmar dras varje
-tisdag och får sushilådan, mot en bild på sig själva med strumporna som får användas i
-mejl och annonser. Förturen är kärnan (Evolve), dragningen krydda och intäktsmaskin.
+Axels beslut 2026-09-27 (alternativ B efter Evolves svar 9): medlemmar dras varje tisdag
+och får sushilådan, mot något Matstrumpor får använda i mejl och annonser. **Förmiddagen:
+tio vinnare mot en bild på sig själva. Eftermiddagen, innan första testet körts (Axel:
+"ändra så det blir 3 kunder, men dessa kunder måste då göra ugc videos eller bara göra
+videos där de säger någon mening om produkten", sedan "Så kör vi"): TRE vinnare mot en
+kort video** på sig själva med strumporna där de säger en mening om dem (UGC om de vill,
+tio sekunder räcker). Förturen är kärnan (Evolve), dragningen krydda och intäktsmaskin.
 Kommandot: **`/klubbdragning`** (`.claude/commands/klubbdragning.md`: torrt / `test <e-post>`
 / `kör`).
 
 **Kedjan:** `klaviyo/klubb/dragning.mjs` (konfig `klaviyo/brands/matstrumpor.json` →
-`klubb.dragning`) läser alla SUBSCRIBED-kunder ur Shopify (mätt 2026-09-27: 2 966, varav
-2 768 med adress, 1 på egen domän = testkunden `axel.odhner@stonebite.org`, 0 utanför
-Sverige), drar med HMAC-SHA256(frö, kund-id) stigande och loggar frö + kandidathash i
-`klaviyo/konto/matstrumpor/dragningar.jsonl` (kund-hash och ordernamn, inga
-personuppgifter). Skarpt, per vinnare: draft order med lådan (variant
-`gid://shopify/ProductVariant/52506473365843`, 100 % rabatt "Klubbdragningen <datum>",
-fraktrad 0 kr, ordertaggar `klubb-dragning` + `klubb-dragning-<datum>`) → slutförs till en
-0-kronorsorder när adress finns (utan adress står utkastet kvar med noten ADRESS SAKNAS,
-VA:n slutför när kunden svarat) → kundtaggar `klubb-vinnare` + `klubb-vinnare-<datum>`.
-Skriptet vägrar om totalen inte är 0, om samma datum redan dragits skarpt (`--igen`
-krävs) och läser aldrig annat än SUBSCRIBED; `--test <e-post>` kör kedjan på EN egen
-adress. 9 tester (`klaviyo/test/dragning.test.mjs`), torrkörd mot butiken 2026-09-27
-(loggens första rad, `torr: true`). Shopify-fälten avlästa med introspektion samma dag:
-kunden sätts via `purchasingEntity.customerId`, frakten via
-`shippingLine.priceWithCurrency`, `draftOrderComplete` tar bara `id`.
+`klubb.dragning`, `antal: 3`) läser alla SUBSCRIBED-kunder ur Shopify (mätt 2026-09-27
+förmiddag: 2 966, varav 2 768 med adress, 1 på egen domän = testkunden
+`axel.odhner@stonebite.org`, 0 utanför Sverige; andra torrkörningen samma eftermiddag:
+2 979 prenumeranter, 2 978 kandidater, 198 utan adress), drar med HMAC-SHA256(frö,
+kund-id) stigande och loggar frö + kandidathash i `klaviyo/konto/matstrumpor/dragningar.jsonl`
+(kund-hash och ordernamn, inga personuppgifter). Skarpt, per vinnare: draft order med lådan
+(variant `gid://shopify/ProductVariant/52506473365843`, 100 % rabatt "Klubbdragningen
+<datum>", fraktrad 0 kr, ordertaggar `klubb-dragning` + `klubb-dragning-<datum>`) → slutförs
+till en 0-kronorsorder när adress finns (utan adress står utkastet kvar med noten ADRESS
+SAKNAS, VA:n slutför när kunden svarat) → kundtaggar `klubb-vinnare` + `klubb-vinnare-<datum>`.
+Skriptet vägrar om totalen inte är 0, om samma datum redan dragits skarpt (`--igen` krävs)
+och läser aldrig annat än SUBSCRIBED; `--test <e-post>` kör kedjan på EN egen adress.
+9 tester (`klaviyo/test/dragning.test.mjs`). Shopify-fälten avlästa med introspektion:
+kunden sätts via `purchasingEntity.customerId`, frakten via `shippingLine.priceWithCurrency`,
+`draftOrderComplete` tar bara `id`. VA:n sätter kundtaggen **`klubb-video-klar`** när videon
+kommit (hette `klubb-bild-klar` i v1), då tystnar E2/E3.
 
-**Flödet i Spoks:** **F08 Klubbdragningen (vinnarna) · FLOW_tagg_klubbdragning_v1**
-`27047445-dcab-4898-9f92-5f55f2b77be3`
-(https://app.spoks.com/matstrumpor/flows/27047445-dcab-4898-9f92-5f55f2b77be3), trigger
+**Flödet i Spoks, v2:** **F08 Klubbdragningen (vinnarna) · FLOW_tagg_klubbdragning_v2**
+`1a3263e1-a12d-45dc-8e40-2f8b8bf85313`
+(https://app.spoks.com/matstrumpor/flows/1a3263e1-a12d-45dc-8e40-2f8b8bf85313), trigger
 `contact_tags_added` med triggerfilter `tags in [klubb-vinnare]`, inget återinträde (Spoks
-tillåter inte det på den triggern). Steg: väntan 0 (`7012e7ad`) → **E1** "Du är en av tio
-i dag" (steg `adc2e143`, post `53a42bda-2120-4ee7-9d40-8246b09def59`) → väntan 12 d,
-tidigast 09:00 (`473ecfbb`) → **E2** "Vi väntar på din bild" (steg `2febde85`, post
-`223ee568-07f2-4858-b6ea-acd6a808a3f4`) → väntan 6 d, tidigast 09:00 (`f5f394e5`) → **E3**
-"Sista påminnelsen om bilden" (steg `d28aa9f7`, post `29cdacd6-afc4-42c5-9231-8efc30393e14`).
-Alla tre sändstegen bär filtret `tags nin [klubb-bild-klar]` (VA:n sätter taggen i Shopify
-när bilden kommit, då tystnar påminnelserna). Innehållet:
-`klaviyo/innehall/matstrumpor/floden/f08-klubbdragning.json` (Sonnet mot
-`docs/copy-regler.md`; huvudsessionen ändrade tre rader: adress utan tidigare beställning,
-orderbekräftelsen som "kan komma", "bilden vi bad om" i stället för "lovade"). Motorn
-`spoks-paket.mjs` fick triggertypen `tagg`, filternyckeln `utan_tagg:<tagg>` och F08:s namn
-(3 tester i `spoks-klubb.test.mjs`); `ladda-upp.mjs` hoppar tagg-flöden (finns bara i Spoks).
-Inget faktablock i vinnarmejlen: rubriken "Ångerrätt" hör inte hemma i ett gåvomejl.
+tillåter inte det på den triggern). Steg: väntan 0 (`916387a6`) → **E1** "Du är en av tre
+i dag" (steg `a978e20b`, post `55cddb09-fb18-4c96-95e6-14199cf41256`) → väntan 12 d,
+tidigast 09:00 (`4c4c2cc8`) → **E2** "Vi väntar på din video" (steg `3b95381e`, post
+`7ff0c5d5-93ac-411b-807e-ecdac7475201`) → väntan 6 d, tidigast 09:00 (`969e12bf`) → **E3**
+"Sista påminnelsen om videon" (steg `ac31ad91`, post `bf9e74b3-b86b-4b64-92c1-aef439f57c3f`).
+Alla tre sändstegen bär filtret `tags nin [klubb-video-klar]`. Mejlen fyllda 14:12–14:13
+CEST med samma blockordning som motorn ger (`spoks-paket.mjs --offline`: 10 / 5 / 4 block).
+⚠️ **v1 `27047445-dcab-4898-9f92-5f55f2b77be3`** (tio, bild, `klubb-bild-klar`) byggdes
+07:38–07:52 UTC och **slogs på av Axel 13:37 CEST med alla tre stegen** innan ändringen kom.
+Ett aktivt flöde går inte att ändra via MCP:n: `update_flow`, `update_flow_step` och
+`update_draft_campaign` kräver alla ett inaktivt flöde med avstängt steg, och inget verktyg
+kan slå av ett flöde (mätt i verktygens scheman 2026-09-27). Därför v2 i stället för lappning.
+**v1 ska stå AV** (Axels klick) innan något körs skarpt: två aktiva flöden på samma tagg är två
+E1 till samma vinnare. Kommandots steg 2 kräver v2 aktivt OCH v1 inaktivt. v1 kan raderas i
+appen efteråt (MCP:n kan inte). Innehållet: `klaviyo/innehall/matstrumpor/floden/f08-klubbdragning.json`
+(v2: en andra Sonnet-subagent mot `docs/copy-regler.md`, 0 ❌, huvudsessionen ändrade
+ingenting; v1 av den första). Motorn `spoks-paket.mjs` har triggertypen `tagg`, filternyckeln
+`utan_tagg:<tagg>` och F08:s namn (3 tester i `spoks-klubb.test.mjs`); `ladda-upp.mjs` hoppar
+tagg-flöden (finns bara i Spoks). Inget faktablock i vinnarmejlen: rubriken "Ångerrätt" hör
+inte hemma i ett gåvomejl.
 
 ⚠️ **Omätt tills första testet:** att Spoks avfyrar `contact_tags_added` för en tagg som
 sätts i SHOPIFY. Taggarna som DATA synkas (`preview_segment tags is` gav 640 kontakter med
 Shopify-taggar som "Login with Shop" 2026-09-27), men händelsen är inte bevisad. Testet:
-`/klubbdragning test axel.odhner@stonebite.org` när flödet är på — Axels kund taggas, ett
-utkast utan adress skapas (han har ingen adress i butiken), och E1 ska landa i hans inkorg
+`/klubbdragning test axel.odhner@stonebite.org` när v2 är på och v1 av — Axels kund taggas,
+ett utkast utan adress skapas (han har ingen adress i butiken), och E1 ska landa i hans inkorg
 inom minuter. Kommer inget mejl: reservvägen är ett flöde på `order_created` med
 triggerfilter `orderTags in [klubb-dragning]` (Spoks tar bevisat emot ordrar: F04 rullar in
 på dem); då måste adresslösa vinnares utkast slutföras av VA:n innan mejlet går.
@@ -604,21 +616,24 @@ E1/E2/E3 (dag 0/12/18). Ordern räknas som en order i Shopify: räkna bort tagge
 `draftOrderComplete` är omätt, därför säger E1 "det KAN komma en orderbekräftelse där summan
 är noll" (bygg.mjs tillåter inte ens "0 kr" i löptext).
 Autosvaret för Matstrumpor är torrt; innan det slås skarpt: kontrollera att ett svar med
-bild (bilaga ⇒ SVÅR) och ett "nej tack" går till VA:n, och att ett adressvar inte tas som
+video (bilaga ⇒ SVÅR) och ett "nej tack" går till VA:n, och att ett adressvar inte tas som
 adressbyte av boten.
 
-**VA:n:** SOP `kundtjanst/va-sop/club-draw-winners.md` ("Club draw winners — photos,
+**VA:n:** SOP `kundtjanst/va-sop/club-draw-winners.md` ("Club draw winners — videos,
 consent, missing addresses", raden ligger i `notion.json` utan `notion_id` och publiceras
 med `node kundtjanst/va-sop/skriv.mjs --bara club-draw-winners.md` när flödet ska på):
-fem svarstyper, fem svenska mallar, bilden + samtycket som kommentar med bilaga på orderns
-tidslinje i Shopify, taggarna `klubb-bild-klar` / `klubb-bild-namn-ok` / `klubb-tackade-nej`.
-Vinnarnas svar landar i kundsupport@matstrumpor.se (Spoks reply-to, `get_settings`).
+fem svarstyper (video med personen och en mening / video utan person, utan mening eller
+en bild / adress / nej tack / barn), fem svenska mallar, videon + samtycket som kommentar
+med bilaga på orderns tidslinje i Shopify (för stor fil ⇒ Drive-länk i kommentaren), taggarna
+`klubb-video-klar` / `klubb-video-namn-ok` / `klubb-tackade-nej`. Vinnarnas svar landar i
+kundsupport@matstrumpor.se (Spoks reply-to, `get_settings`).
 
 **Kampanjerna:** blocket "Veckans dragning" (`klaviyo/innehall/matstrumpor/VECKANS-DRAGNING.md`,
-Premiär första gången, sedan Återkommande) läggs sist i varje tisdagskampanj från och med
-den första skarpa dragningen — aldrig en tisdag utan dragning. K01 (29/9, schemalagd) rörs
-inte; K02 (6/10) är första kandidaten. Vinnarbilder med skriftligt ja byts in i blocket
-(förnamn + stad bara med taggen `klubb-bild-namn-ok`), uppladdade med `upload_media`.
+Premiär första gången, sedan Återkommande, båda omskrivna för tre + video) läggs sist i varje
+tisdagskampanj från och med den första skarpa dragningen — aldrig en tisdag utan dragning.
+K01 (29/9, schemalagd) rörs inte; K02 (6/10) är första kandidaten. Vinnarvideor med skriftligt
+ja byts in i blocket (förnamn + stad bara med taggen `klubb-video-namn-ok`), uppladdade med
+`upload_media` (Spoks har ett videoblock).
 
 **Tröstpriset (Axels beslut 2026-09-27: "kredit i vår butik, 100 eller 200 kr, under
 Black Friday, till alla som aldrig vunnit"):** byggs i november som en Shopify-rabatt
@@ -628,20 +643,21 @@ Black Friday, till alla som aldrig vunnit"):** byggs i november som en Shopify-r
 200 kr lämnar ≈ 45 kr (troligen förlust efter frakt). Rekommendation 100 kr; beloppet är
 Axels. Black Week-trappan A/B/C (`klaviyo/README.md`) hänger ihop med det.
 
-**Kostnad:** tio lådor i veckan ≈ 80,61 kr inköp + ≈ 33 kr tull per låda + frakt ⇒ ≈ 1 150 kr
-+ frakt per vecka (`matstrumpor/konfig.json`). Mäts som (1) klick och köp i mejl med
-vinnarbilder mot utan, (2) annonserna byggda på bilderna med vanliga analysmetoden,
-(3) medlemmarnas återköp dec 2026 mot dec 2025 (`KUNDRESA.md` §5).
+**Kostnad:** tre lådor i veckan ≈ 80,61 kr inköp + ≈ 33 kr tull per låda + frakt ⇒ ≈ 345 kr
++ frakt per vecka (`matstrumpor/konfig.json`; tio lådor hade varit ≈ 1 150 kr). Mäts som
+(1) klick och köp i mejl med vinnarvideor mot utan, (2) annonserna byggda på videorna med
+vanliga analysmetoden, (3) medlemmarnas återköp dec 2026 mot dec 2025 (`KUNDRESA.md` §5).
 
 **Spärrar (förhandlas inte):** deltagandet är gratis och kräver inget köp (annars lotteri
 enligt spellagen); aldrig handplockat; en skarp dragning per datum; inga namn i repot,
-Discord eller Notion; förnamn + stad bara med vinnarens ja; bara vuxna på bild; skarpt utan
-aktivt flöde = vinnare utan mejl (kommandot stoppar i steg 2).
+Discord eller Notion; förnamn + stad bara med vinnarens ja; bara vuxna på video; skarpt utan
+aktivt v2-flöde (eller med v1 fortfarande på) = fel, kommandot stoppar i steg 2.
 
 **Axels klick, i ordning:** (1) https://app.spoks.com/matstrumpor/flows/27047445-dcab-4898-9f92-5f55f2b77be3
-→ slå på de tre sändstegen ett i taget, sedan flödet; (2) säg "kör test" ⇒ sessionen kör
+→ slå AV v1; (2) https://app.spoks.com/matstrumpor/flows/1a3263e1-a12d-45dc-8e40-2f8b8bf85313
+→ slå på de tre sändstegen ett i taget, sedan flödet; (3) säg "kör test" ⇒ sessionen kör
 `/klubbdragning test axel.odhner@stonebite.org` och läser att E1 kom fram (och publicerar
-VA-SOP:en i Notion); (3) säg "kör" en tisdag morgon ⇒ första skarpa dragningen, tisdagens
-kampanj får Premiär-blocket samma kväll; (4) beloppet på tröstpriset, 100 eller 200 kr.
+VA-SOP:en i Notion); (4) säg "kör" en tisdag morgon ⇒ första skarpa dragningen, tisdagens
+kampanj får Premiär-blocket samma kväll; (5) beloppet på tröstpriset, 100 eller 200 kr.
 En rutin (tisdag 07:30, `/klubbdragning kör`) byggs först när det gått rätt tre veckor för
 hand (Arvids princip).

@@ -360,7 +360,7 @@ async function main() {
     console.log(`VA-listan (e-post, stad, order): ${r.vaFil} (gitignorerad).`);
     console.log(`\nFor the VA (English): winners are tagged "${konf.tagg_vinnare}-${datum}" in Shopify → Customers; their orders are tagged "${konf.ordertagg}-${datum}". ` +
       `Orders without a shipping address are left as DRAFT orders — the winner replies to the club email with the address; add it to the draft and click "Mark as paid"/complete. ` +
-      `When a winner's photo arrives, add the customer tag "${konf.tagg_bild_klar ?? 'klubb-bild-klar'}" so the reminders stop.`);
+      `When a winner's video arrives, add the customer tag "${konf.tagg_video_klar ?? 'klubb-video-klar'}" so the reminders stop.`);
   }
   if (r.fel.length) {
     console.error(`\n❌ ${r.fel.length} fel:\n${r.fel.map((f) => `  ${f}`).join('\n')}`);

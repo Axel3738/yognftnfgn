@@ -42,7 +42,7 @@
       "bekraftelse": "Din plats är klar"
     },
     "dragning": {
-      "antal": 10,
+      "antal": 3,
       "veckodag": 2,
       "land": "SE",
       "vinst": {
@@ -52,11 +52,11 @@
         "varde_kr": 399
       },
       "tagg_vinnare": "klubb-vinnare",
-      "tagg_bild_klar": "klubb-bild-klar",
+      "tagg_video_klar": "klubb-video-klar",
       "ordertagg": "klubb-dragning",
       "egna_domaner": ["stonebite.org", "matstrumpor.se"],
       "logg": "klaviyo/konto/matstrumpor/dragningar.jsonl",
-      "comment": "Klubbdragningen (Axels beslut 2026-09-27, B efter Evolves svar 9): klaviyo/klubb/dragning.mjs drar `antal` medlemmar varje tisdag (veckodag 2) bland SUBSCRIBED-kunder utan taggen tagg_vinnare, egna domäner borträknade, adress utanför `land` borträknad, medlemmar utan adress med (E1 ber om adressen). Vinsten är sushilådan 5 par (variant-gid avläst 2026-09-27, 399 kr, skriptet kontrollerar handle + status före varje dragning). Ordern får ordertagg + ordertagg-<datum>, kunden tagg_vinnare + tagg_vinnare-<datum>; taggen startar Spoks-flödet F08 Klubbdragningen. VA:n sätter tagg_bild_klar när bilden kommit, då tystnar påminnelserna (E2/E3 filtrerar på den). Mätt 2026-09-27: 2 966 medlemmar, 2 768 med adress, 1 på egen domän (testkunden)."
+      "comment": "Klubbdragningen (Axels beslut 2026-09-27, B efter Evolves svar 9; samma eftermiddag ändrat från tio vinnare + bild till TRE vinnare + kort video, Axels ord: 'ändra så det blir 3 kunder, men dessa kunder måste då göra ugc videos eller bara göra videos där de säger någon mening om produkten'): klaviyo/klubb/dragning.mjs drar `antal` medlemmar varje tisdag (veckodag 2) bland SUBSCRIBED-kunder utan taggen tagg_vinnare, egna domäner borträknade, adress utanför `land` borträknad, medlemmar utan adress med (E1 ber om adressen). Vinsten är sushilådan 5 par (variant-gid avläst 2026-09-27, 399 kr, skriptet kontrollerar handle + status före varje dragning). Ordern får ordertagg + ordertagg-<datum>, kunden tagg_vinnare + tagg_vinnare-<datum>; taggen startar Spoks-flödet F08 Klubbdragningen. VA:n sätter tagg_video_klar när videon kommit, då tystnar påminnelserna (E2/E3 filtrerar på den). Mätt 2026-09-27: 2 966 medlemmar, 2 768 med adress, 1 på egen domän (testkunden); andra torrkörningen samma eftermiddag 2 979 prenumeranter, 2 978 kandidater, 198 utan adress."
     },
     "comment": "Axels beslut 2026-09-25: 'det måste vara som ett medlemskap att vara med i Matstrumpors klubb', och samma kväll: namnet 'klubben' godkänt, men 'det ska kännas som ett exklusivt medlemskap. Det är den känslan jag vill förmedla.' Att vara medlem = att stå på listan Email List. Inga medlemsrabatter, koder eller poäng finns, och inget sådant lovas i något mejl (koden KLUBB10, 'E-postklubben 10 % (skrapkortet)', ligger i Shopify med 0 användningar och används inte: sämre än Köp 1, få 1 och kombineras inte med den). Namnet står under loggan i varje mejl och eyebrow som versalrad under namnet (mallar.mjs dokument), sidfoten säger varför mottagaren får mejlet (sidfot_varfor), F01 E1 v3 är klubbvälkomsten med medlemskortet (blocket medlemskort) och F06 v2 frågar om medlemmen vill vara kvar. sajt = butikens anmälningsruta i sidfoten på matstrumpor.se (hette 'Missa inga nyheter' / 'Prenumerera' / 'Tack för att du prenumererar', mätt i temat 2026-09-25; v2 'Gå med i Matstrumpor-klubben' / 'Gå med' / 'Välkommen till Matstrumpor-klubben'): klubb-sajt.mjs skriver rubrik, knapp och bekräftelse i temat. ⛔ Inget popup- eller anmälningsformulär i Klaviyo (Axels beslut samma kväll: sänker konverteringen, testat). Copyn skrevs av Sonnet-subagenter mot docs/copy-regler.md; huvudsessionen strök 'bara här'/'bara i mejl' på två punkter (recensionerna och lådans innehåll syns även på produktsidan)."
   },
