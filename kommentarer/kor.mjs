@@ -149,6 +149,7 @@ async function hamta() {
   console.log(fil);
 }
 
+let guildsCache = null;
 async function postaDiscord(v, text, { va }) {
   const { hamtaGuilds, hittaEllerSkapaKanal } = await import('../factory/discord.mjs');
   const { skickaTillKanal } = await import('../stonebite/kallor/discord.mjs');
@@ -158,7 +159,11 @@ async function postaDiscord(v, text, { va }) {
   const k = konfig();
   const sprak = await granskaSprak(text);
   if (sprak.stoppad) { const e = new Error(stoppText(sprak.orsak)); e.exit = 3; throw e; }
-  const guilds = await hamtaGuilds();
+  // Serverlistan hämtas EN gång per körning: två verksamheter i rad gav 429
+  // ("You are being rate limited") på /users/@me/guilds två dagar i rad (26–27 sep 2026),
+  // så CaraShells post fick köras om för hand varje morgon.
+  guildsCache ??= hamtaGuilds();
+  const guilds = await guildsCache;
   // Ingen reserv: en verksamhet utan egen server (och utan rad i konfig.discord.servrar)
   // får ett fel, aldrig en annan verksamhets server.
   const onskad = k.discord.servrar?.[v.verksamhet] ?? v.verksamhet;
