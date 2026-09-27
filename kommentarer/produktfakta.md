@@ -45,8 +45,14 @@ Läses av `/kommentarer` innan svaren skrivs.
   "mitten förvald" gäller alla marknader. Svar till kunden: sidan förvalde
   2-packet, 1 st för $199 väljs i paketrutan, hör av dig med ordernumret.
   Om 1 st ska vara förvald i USA är Axels beslut (erbjudandet).
-- **Andas väven? Tål den hagel? Kommer man in genom dörren?** — okänt, fråga
-  leverantören.
+- **Andas väven?** Axel 2026-09-27: "ganska fuktinstängande tror jag, men
+  inte säker". Leverantören har bara sagt "waterproof and sunproof". Påstå
+  aldrig något åt något håll om andning/kondens i ett svar. Frågan är
+  STÄNGD, ställ den inte igen.
+- **Vindstyrka:** finns ingen gräns att mäta (Axel 2026-09-27). Fråga aldrig
+  leverantören om det. Kunder som fått skyddet sönderblåst svaras vänligt
+  och hänvisas till kundtjänst med ordernumret (regel 4).
+- **Hagel, dörren:** okänt. Inga påståenden.
 
 ## Sotarset / Feiesett (`Sotarset`)
 
@@ -131,3 +137,16 @@ Läses av `/kommentarer` innan svaren skrivs.
 - Fiskespöhållare 4-pack (baverbutiken.se): texten "Monteras på vägg eller i
   båten" och "Monteras enkelt på vägg eller i båten" stämmer inte enligt
   Axel 2026-09-25.
+
+## Alla produkter
+
+- **Allt skickas från Kina** (Temu-flödet, `docs/temu-launch-flow.md`). Fråga
+  aldrig leverantören var något skickas ifrån (Axel 2026-09-27). "Leverans från
+  Kina?" i en kommentar besvaras inte med land; hoppa eller svara på
+  leveranstiden ur produktsidan om den står där.
+
+## Kajakhållare / Kajakkholder (`Kajakkholder`, NO)
+
+- **Material:** troligen aluminium (Axel 2026-09-27, obekräftat). Produktsidan
+  saknar materialrad. Säg aldrig "rostfritt"; kolla listningen på AliExpress
+  innan det påstås något.

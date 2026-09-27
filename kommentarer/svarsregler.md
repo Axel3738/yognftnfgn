@@ -61,3 +61,10 @@ skriver svaren får båda filerna.
     sällan är samma material och byggkvalitet, och peka på det konkreta ur
     produktsidan (materialet, måtten, vad som följer med). Aldrig otrevligt
     mot kunden, och aldrig ett påhittat påstående om konkurrentens vara.
+15. **Leverantörsfrågorna ska vara sådana bara leverantören kan svara på**
+    (Axel 2026-09-27, efter fyra dåliga frågor: avsändningsland, material
+    som går att slå upp på AliExpress, en redan besvarad fråga och en
+    vindgräns som inte går att mäta). Innan en fråga skrivs: står svaret i
+    `produktfakta.md`, på produktsidan eller i AliExpress-listningen? Då är
+    det ingen fråga. Fråga aldrig om varifrån något skickas eller om
+    vindstyrka.
