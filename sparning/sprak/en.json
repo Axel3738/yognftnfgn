@@ -194,6 +194,8 @@
     "Två saker som passar samma husvagn eller husbil. Skickas som en egen beställning, med fri frakt och 14 dagars ångerrätt som vanligt.": "Two items that suit the same caravan or motorhome. Sent as a separate order, with free delivery and the usual 14-day right of withdrawal.",
     "{{pris}} för dig som beställt hos oss": "{{pris}} for you who ordered from us",
     "Lägg till för {{pris}}": "Add for {{pris}}",
-    "Priset gäller dig som beställt hos oss och läggs på av sig själv i kassan.": "This price applies to you as a customer of ours and is added automatically at checkout."
+    "Priset gäller dig som beställt hos oss och läggs på av sig själv i kassan.": "This price applies to you as a customer of ours and is added automatically at checkout.",
+    "Paketet är på väg till ombud": "The parcel is on its way to a pickup point",
+    "Vi planerar ett nytt hemleveransförsök till dig": "We are scheduling another home delivery attempt"
   }
 }

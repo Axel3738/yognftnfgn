@@ -203,6 +203,8 @@
     "Två saker som passar samma husvagn eller husbil. Skickas som en egen beställning, med fri frakt och 14 dagars ångerrätt som vanligt.": "To ting, der passer til samme campingvogn eller autocamper. Sendes som en separat bestilling, med fri fragt og 14 dages fortrydelsesret som sædvanlig.",
     "{{pris}} för dig som beställt hos oss": "{{pris}} for dig, der har bestilt hos os",
     "Lägg till för {{pris}}": "Tilføj for {{pris}}",
-    "Priset gäller dig som beställt hos oss och läggs på av sig själv i kassan.": "Prisen gælder dig, der har bestilt hos os, og tilføjes automatisk i kassen."
+    "Priset gäller dig som beställt hos oss och läggs på av sig själv i kassan.": "Prisen gælder dig, der har bestilt hos os, og tilføjes automatisk i kassen.",
+    "Paketet är på väg till ombud": "Pakken er på vej til et afhentningssted",
+    "Vi planerar ett nytt hemleveransförsök till dig": "Vi planlægger et nyt leveringsforsøg hjem til dig"
   }
 }
