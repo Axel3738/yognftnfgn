@@ -2501,3 +2501,32 @@ Kvar i `SE-ACTIVE to be translated`: `CaraShellRoof_CS_109_H1`, `PD_110_H1`,
 `CO_105_H1`, `OB_103_H1`, `OB_104_H1`. HeyGen-plånboken står på $0,10 med
 auto-påfyllning av. Ingen ny kommentar skrevs — inget har ändrats sedan den
 som står där.
+
+## Nattvakten 2026-09-28 — sänkning 6 750 → 4 750 kr, vinstbidraget negativt
+
+**Budgetronden (konto 915422744950975, MagiBorsten DK):**
+- `CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11` **6 750 → 4 750 kr/dygn**
+  (SÄNK, −30 %). 3d: 19 401 kr, 20 köp, ROAS 1,38, vinst −10,9 %. Kadensspärren
+  löpte ut (3 dygn sedan förra sänkningen). Tillbakaläst.
+- `CARASHELL_SE_Taköverdraget LISTICLE` **hålls på 1 400 kr**. 3d: 5 663 kr,
+  9 köp, ROAS 2,27, vinst 30,5 % — tillbaka i håll-bandet ett dygn efter
+  gårdagens sänkning, precis som den var 24→25/9.
+- **Inga annonser pausade.** Ingen ACTIVE annons är kill-kandidat på
+  14-dygnsklassen.
+
+**7 dygn SE (båda kampanjerna):** 72 756 kr, 91 köp, ROAS 1,74, CPA 800 kr mot
+break-even 693 ⇒ vinstbidrag **−9 693 kr**. Första negativa natten (i går
++12 712, 25/9 +31 253, 24/9 +36 911).
+
+**Huvudkampanjen 27/9: 6 162 kr, ROAS 1,95, 9 köp** — första dygnet över
+break-even sedan den 23:e. Ett dygn, ingen vändning.
+
+**Nattens fynd:** `SP_5_1`:s 7-dygns-CPA gick 765 → 951 kr när fönstret gled ett
+dygn (25 köp → 21 på nästan samma spend). Den är nu sämst av kampanjens stora
+annonser, inte bättre än snittet som i går. Fyra ACTIVE annonser som
+14-dygnsklassen fortfarande kallar `vinnare` bär 25 241 kr och 24 köp på 7 dygn
+= CPA 1 052; resten av kampanjen ligger på 747. Detaljerna och instruktionen i
+`dna.md`.
+
+**Briefronden:** pausad sedan 2026-09-18 (Axels beslut) — inga briefer skrivna,
+bara `kord` stämplad.
