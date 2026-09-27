@@ -36,10 +36,48 @@ node matstrumpor/kor.mjs --namn jul ugc 3        # nästa lediga namn
 node matstrumpor/kor.mjs --dop <sid-id> <namn>   # döp en odöpt rad i Notion
 node matstrumpor/kor.mjs --dom <jobb.json>       # vinstbidrag + etiketter ur en avläsning
 node matstrumpor/kor.mjs --status                # lärdomar, briefer, brieftak, mix
-node --test matstrumpor/test/*.test.mjs          # 46 tester
+node matstrumpor/ringlista.mjs                   # ringlistan: kunder med 2+ ordrar → output/ringlista/ (se nedan)
+node --test matstrumpor/test/*.test.mjs          # 80 tester
 ```
 
 Inga npm-beroenden. Node ≥ 20.
+
+## Ringlistan (byggd 2026-09-27)
+
+Axels beställning: "en lista med alla kunder som köpt 2 gånger eller fler …
+en ringlista … 1–3 frågor per kund", han ringer själv och skriver medan de
+pratar (inget spelas in). `node matstrumpor/ringlista.mjs` läser alla ordrar
+ur Shopify (appen "Fabriken", läs-bart) och skriver **`output/ringlista/`**:
+`RINGLISTA.md` (läsbar), `ringlista.html` (tryck-för-att-ringa, statusknappar,
+anteckningsfält per kund som sparas i webbläsaren, knappen *Kopiera
+anteckningar* ger markdown att klistra in i chatten) och `ringlista.json`.
+`--spara-ordrar` lägger råordrarna bredvid, `--fran <fil>` bygger om utan nät.
+
+⛔ **Utdatan bär namn, telefonnummer och e-post.** Mappen är gitignorerad och
+filerna får aldrig committas, postas i Discord eller läggas i Notion. Ett test
+bevisar att utmappen ligger under `output/`.
+
+Tre saker datan visade (4 012 ordrar, 2026-09-27):
+
+| Fynd | Vad det betyder för listan |
+|---|---|
+| 70 av 71 `shopify_draft_order` är Donut-strumpor 299 kr, skapade 1–5 min efter en webborder (dec 2025–mars 2026) | Tacksidans tillägg, inte ett återköp. Ordrar inom en timme räknas som **samma köptillfälle**; kunden hamnar i gruppen *Tog donut-tillägget* |
+| Butiken sålde Fixkliniken-produkter (Skrubbmattan, FixToes …) före strumporna: 322 ordrar | En order utan strumpor/ätpinnar/presentkort räknas inte — de kunderna är inte Matstrumpors |
+| Kassan kräver inte telefon: 800 av 4 006 ordrar bär ett nummer | 114 kunder har 2+ ordrar, **37 går att ringa**; de 77 utan nummer står sist med e-post |
+
+Grupperna, i den ordning de står i listan: **Kom tillbaka och köpte igen**
+(42, 16 med telefon — två eller fler köptillfällen), **Två beställningar i
+samma besök** (6, 3 med telefon — två identiska ordrar flaggas som möjligt
+dubbelköp) och **Tog donut-tillägget direkt efter köpet** (66, 18 med telefon).
+Frågorna är tre per kund, den mest specifika först (antal köp, byte av sort,
+tid mellan köpen, tillägget eller dubbelordern), sedan alltid *Vem fick
+strumporna, och hur reagerade den som fick dem?* och *Var det något som nästan
+fick dig att inte köpa?* Manuset står överst i filen. Presentkortet i
+"Köp 2 – få 2"-paketet räknas inte som en sort kunden valt.
+
+Sammanfattningen efter samtalen skrivs av sessionen ur Axels anteckningar och
+landar i `products/matstrumpor/` (avatarerna i `dna.md` bygger i dag på
+hookar och ordrar, inte på en enda kundintervju — samtalen är den källan).
 
 ## Två saker att veta innan du ändrar något
 
