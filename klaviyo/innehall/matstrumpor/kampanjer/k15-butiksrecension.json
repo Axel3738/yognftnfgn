@@ -1,7 +1,7 @@
 {
   "id": "k15-butiksrecension",
   "namn": "MAIL_20261001_Butik_M_1_kopare_product_butiksrecension_v1",
-  "memo": "Axels beställning 2026-09-27: 'en kampanj som bara är att folk ska lägga en butiksrecension'. Hypotes (Sonnet-subagenten, rev 2 samma dag efter att byggaren stoppat 15 rader ur rev 1): en butiksrecension svarar på 'går det att lita på hela stället', vilket väger tyngre för en osäker köpare än en recension om en enskild vara. Varje ämnesrad, förhandstext, rubrik och knapptext hänger på något bara Matstrumpor har (lådan som ser ut som mat, avslöjandet, ordet 'påhittad'); generiska frågor som 'vad tyckte du om att handla hos oss' klarar aldrig 'ingen annan'. Fakta hålls på nivån som gäller alla fyra sorter (SEG_kopare är alla köpare): lådan, maten, påhittat, aldrig ätpinnar eller sushibitar. Går BARA till köpare: en butiksrecension från någon som aldrig handlat är inte värd något. Ingen belöning, ingen styrning av betyget (alla stjärnor till samma länk). Huvudsessionen bytte EN rad: knappen 'Betygsätt lådan' blev 'Betygsätt butiken bakom lådan', för länken går till BUTIKSrecensionen, inte till produkten, och knappen får inte lova något annat än det den gör. Länken är Judge.me:s butikssida; den svarade 404 för matstrumpor.se 2026-09-27 (butikslistningen inte påslagen), så adressen nedan är Judge.me:s dokumenterade mönster och BYTS mot länken Axel klistrar in ur Judge.me (Settings > Request reviews > Links, QR codes and point of sale review collection > Store review link) innan något skickas. Datumet är ett förslag (torsdag, för att inte ta en tisdag från kalendern).",
+  "memo": "Axels beställning 2026-09-27: 'en kampanj som bara är att folk ska lägga en butiksrecension'. Hypotes (Sonnet-subagenten, rev 2 samma dag efter att byggaren stoppat 15 rader ur rev 1): en butiksrecension svarar på 'går det att lita på hela stället', vilket väger tyngre för en osäker köpare än en recension om en enskild vara. Varje ämnesrad, förhandstext, rubrik och knapptext hänger på något bara Matstrumpor har (lådan som ser ut som mat, avslöjandet, ordet 'påhittad'); generiska frågor som 'vad tyckte du om att handla hos oss' klarar aldrig 'ingen annan'. Fakta hålls på nivån som gäller alla fyra sorter (SEG_kopare är alla köpare): lådan, maten, påhittat, aldrig ätpinnar eller sushibitar. Går BARA till köpare: en butiksrecension från någon som aldrig handlat är inte värd något. Ingen belöning, ingen styrning av betyget (alla stjärnor till samma länk). Huvudsessionen bytte EN rad: knappen 'Betygsätt lådan' blev 'Betygsätt butiken bakom lådan', för länken går till BUTIKSrecensionen, inte till produkten, och knappen får inte lova något annat än det den gör. Länken är Judge.me:s delbara recensionslänk som Axel hämtade i Judge.me 2026-09-27 kväll (Settings > Request reviews > Links). Verifierad samma kväll i headless Chromium: formuläret heter 'Granska ditt senaste köp från Matstrumpor.se', frågar först efter produktnamn och har knappen 'Eller skriv en butiksrecension' under, och det är den knappen som är butiksrecensionen; därför säger mejlet åt kunden att välja den (rubriken 'Ingen inloggning. Bara du, stjärnorna och lådan.' står kvar, meningen under den nämner knappen). Judge.me:s butikssida (judge.me/reviews/matstrumpor.se) svarar fortfarande 404, listningen är inte påslagen, och behövs inte med den här länken. Datumet är ett förslag (torsdag, för att inte ta en tisdag från kalendern).",
   "taggar": {
     "typ": "M",
     "kalla": "egen-data",
@@ -29,13 +29,13 @@
       "bild": "produkt:sushi-strumpor",
       "knapp": {
         "text": "Betygsätt butiken bakom lådan",
-        "lank": "url:https://judge.me/reviews/matstrumpor.se"
+        "lank": "url:https://judge.me/product_reviews/49abef4a-9c95-484f-ade2-4242ec2fc5e1/new?source=shareable-link"
       }
     },
     {
       "typ": "text",
       "rubrik": "Ingen inloggning. Bara du, stjärnorna och lådan.",
-      "text": "Klicka på knappen, välj antal stjärnor och skriv några rader om hur det var att handla hos oss och hur strumporna togs emot."
+      "text": "Klicka på knappen och välj \"Eller skriv en butiksrecension\". Sätt antal stjärnor och skriv några rader om hur det var att handla hos oss och hur strumporna togs emot."
     },
     {
       "typ": "grundare",
@@ -55,5 +55,5 @@
   "segment": ["SEG_kopare"],
   "exkludera": ["SEG_oengagerade_180d"],
   "status_plan": "kraver-axel",
-  "kraver_axel": "Länken till Judge.me:s butiksrecension (butikssidan svarade 404 2026-09-27: slå på listningen eller klistra in Store review link), datumet (förslag tors 1/10 18:00) och publiken SEG_kopare i appen."
+  "kraver_axel": "Datumet (förslag tors 1/10 18:00) och publiken SEG_kopare utom SEG_oengagerade_180d, båda väljs i Spoks-appen; länken är på plats sedan 2026-09-27 kväll."
 }

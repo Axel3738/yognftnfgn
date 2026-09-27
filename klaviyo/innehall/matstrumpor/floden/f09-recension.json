@@ -1,7 +1,7 @@
 {
   "id": "f09-recension",
   "namn": "FLOW_order_recension_v1",
-  "memo": "Recensionsflödet, byggt 2026-09-27 efter Axels 'Vi har inte heller något flow för att samla in recensioner?????' (Matstrumpor hade inget; Bäverbutiken har F14 mot Trustpilot). Triggas av Placed Order (Spoks: order_created, det finns ingen skickad- eller levererad-trigger som är bevisad för Matstrumpor), väntar 16 dygn till kl 18 (samma som Bäverbutikens F14: paketet har hunnit fram, p90 15 dygn) och ber om en BUTIKSrecension på Judge.me:s butikssida; alla betyg till samma länk, ingen belöning, ingen styrning (review gating är förbjudet och vilseledande). E2 sju dygn senare går bara till den som inte klickat i E1 (stegfiltret i Spoks: clickedEmail eq 0 i det här flödet; motorn kan inte uttrycka stegfilter, det är satt direkt i Spoks 4321f0d9-6c9a-4910-8444-743f1c5c6c75). Återinträde var 90:e dag så en återköpare kan få frågan igen. Kundundantaget: frågan gäller ett köp kunden gjort. Länken: Judge.me:s butikssida svarade 404 för matstrumpor.se 2026-09-27 (listningen inte påslagen), adressen nedan är Judge.me:s dokumenterade mönster och BYTS mot länken Axel klistrar in innan flödet slås på. Copy av en Sonnet-subagent mot docs/copy-regler.md, rev 2 samma dag (rev 1 stoppades av byggaren på 10 rader: 'Kom paketet fram som det skulle?', 'Hur blev det?', 'Missade du den här?' kunde vilken butik som helst skriva); nu hänger varje rad på avslöjandet (lådan som visar sig vara strumpor) eller ordet 'påhittat'. Huvudsessionen bytte EN rad: knappen 'Betygsätt lådan' blev 'Betygsätt butiken bakom lådan', för länken går till butiksrecensionen, inte till produkten.",
+  "memo": "Recensionsflödet, byggt 2026-09-27 efter Axels 'Vi har inte heller något flow för att samla in recensioner?????' (Matstrumpor hade inget; Bäverbutiken har F14 mot Trustpilot). Triggas av Placed Order (Spoks: order_created, det finns ingen skickad- eller levererad-trigger som är bevisad för Matstrumpor), väntar 16 dygn till kl 18 (samma som Bäverbutikens F14: paketet har hunnit fram, p90 15 dygn) och ber om en BUTIKSrecension på Judge.me; alla betyg till samma länk, ingen belöning, ingen styrning (review gating är förbjudet och vilseledande). E2 sju dygn senare går bara till den som inte klickat i E1 (stegfiltret i Spoks: clickedEmail eq 0 i det här flödet; motorn kan inte uttrycka stegfilter, det är satt direkt i Spoks 4321f0d9-6c9a-4910-8444-743f1c5c6c75). Återinträde var 90:e dag så en återköpare kan få frågan igen. Kundundantaget: frågan gäller ett köp kunden gjort. Länken är Judge.me:s delbara recensionslänk som Axel hämtade i Judge.me 2026-09-27 kväll (Settings > Request reviews > Links). Verifierad samma kväll i headless Chromium: formuläret heter 'Granska ditt senaste köp från Matstrumpor.se', frågar först efter produktnamn och har knappen 'Eller skriv en butiksrecension' under, och det är den knappen som är butiksrecensionen; därför säger mejlen åt kunden att välja den. Judge.me:s butikssida (judge.me/reviews/matstrumpor.se) svarar fortfarande 404, listningen är inte påslagen, och behövs inte med den här länken. Copy av en Sonnet-subagent mot docs/copy-regler.md, rev 2 samma dag (rev 1 stoppades av byggaren på 10 rader: 'Kom paketet fram som det skulle?', 'Hur blev det?', 'Missade du den här?' kunde vilken butik som helst skriva); nu hänger varje rad på avslöjandet (lådan som visar sig vara strumpor) eller ordet 'påhittat'. Huvudsessionen ändrade två saker: knappen 'Betygsätt lådan' blev 'Betygsätt butiken bakom lådan' (länken går till butiksrecensionen, inte produkten), och meningen om att välja 'Eller skriv en butiksrecension' lades sist i brödtexten i E1 och E2 efter att formuläret setts.",
   "trigger": {
     "typ": "metrik",
     "metrik": ["Placed Order"]
@@ -42,11 +42,11 @@
           {
             "typ": "hero",
             "rubrik": "Låtsasmat på riktiga fötter. Hur blev det?",
-            "text": "Hej {{fornamn}}! Paketet med dina strumpor har hunnit fram. Vi vill gärna veta hur det blev, både köpet och strumporna. Var ärlig, det hjälper oss mest.",
+            "text": "Hej {{fornamn}}! Paketet med dina strumpor har hunnit fram. Vi vill gärna veta hur det blev, både köpet och strumporna. Var ärlig, det hjälper oss mest. Klicka på knappen och välj \"Eller skriv en butiksrecension\".",
             "bild": "produkt:sushi-strumpor",
             "knapp": {
               "text": "Betygsätt butiken bakom lådan",
-              "lank": "url:https://judge.me/reviews/matstrumpor.se"
+              "lank": "url:https://judge.me/product_reviews/49abef4a-9c95-484f-ade2-4242ec2fc5e1/new?source=shareable-link"
             }
           },
           {
@@ -95,12 +95,12 @@
           {
             "typ": "text",
             "rubrik": "Lådan kom fram. Vi väntar fortfarande på orden.",
-            "text": "Hej {{fornamn}}! Lådan kom fram, och vi hörde inget mer från din sida. Vill du ändå dela hur det var, är du varmt välkommen, annars hör vi inte av oss om det här igen."
+            "text": "Hej {{fornamn}}! Lådan kom fram, och vi hörde inget mer från din sida. Vill du ändå dela hur det var, är du varmt välkommen, annars hör vi inte av oss om det här igen. Klicka på knappen och välj \"Eller skriv en butiksrecension\"."
           },
           {
             "typ": "knapp",
             "text": "Betygsätt butiken bakom lådan",
-            "lank": "url:https://judge.me/reviews/matstrumpor.se"
+            "lank": "url:https://judge.me/product_reviews/49abef4a-9c95-484f-ade2-4242ec2fc5e1/new?source=shareable-link"
           }
         ],
         "tretest": [

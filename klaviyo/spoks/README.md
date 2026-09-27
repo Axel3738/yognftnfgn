@@ -682,18 +682,22 @@ Recensionsmedaljer, 8 recensioner på sushilådan mot 3 911 ordrar) men ingen
 `JUDGEME_API_TOKEN` för butiken, så om Judge.me:s egna recensionsmejl är på går inte att läsa
 härifrån; siffran säger att de i praktiken inte drar.
 
-**Länken (Axels klick, blockerar båda):** en butiksrecension lämnas på Judge.me:s butikssida.
-Mätt 2026-09-27: `judge.me/reviews/matstrumpor.se`, `judge.me/reviews/stores/matstrumpor.se`,
-`…/stores/1r46tp-qx.myshopify.com`, `matstrumpor.se/pages/reviews`, `/pages/recensioner` och
-`/apps/judgeme/reviews` svarar alla 404 ⇒ butikslistningen är inte påslagen. Två vägar
-(Judge.me:s hjälpcenter, läst samma dag): **(a)** Settings → Request reviews → Links, QR codes
-and point of sale review collection → **Store review link** (kopiera, klistra in i chatten);
-**(b)** Settings → Google, SEO and AI → Manage vid "Judge.me Reviews Site" → **Enable store
-listing** ⇒ sidan `judge.me/reviews/<handle>` (handle under Advanced settings). Mejlen bär
-tills vidare `https://judge.me/reviews/matstrumpor.se` (Judge.me:s dokumenterade mönster, INTE
-verifierat); sessionen byter länken i K15 och F09:s båda mejl och läser den med curl innan
-något slås på eller skickas. Review links är publika (vem som helst med länken kan
-recensera), därför bara köpare i publiken.
+**Länken (löst 2026-09-27 kväll):** en butiksrecension lämnas via Judge.me:s **delbara
+recensionslänk** `https://judge.me/product_reviews/49abef4a-9c95-484f-ade2-4242ec2fc5e1/new?source=shareable-link`,
+som Axel hämtade i Judge.me (Settings → Request reviews → Links, QR codes and point of sale
+review collection) och klistrade in i chatten. **Verifierad i headless Chromium samma kväll**
+(curl räcker inte, sidan är en Vue-app; Chromium kräver
+`--ignore-certificate-errors-spki-list` med proxy-CA:ns nycklar eftersom containerns proxy
+skriver om TLS): formuläret heter "Granska ditt senaste köp från Matstrumpor.se", frågar först
+efter ett produktnamn och har knappen **"Eller skriv en butiksrecension"** under
+(`template_enables_shop_reviews: true` i sidans inbäddade inställningar). Den knappen ÄR
+butiksrecensionen, så K15 och F09 säger åt kunden att välja den. Butikssidan
+`judge.me/reviews/matstrumpor.se` (och `…/reviews/stores/…`, `/pages/reviews`,
+`/apps/judgeme/reviews`) svarar fortfarande 404: listningen är inte påslagen och behövs inte
+med den här länken (den kan slås på under Settings → Google, SEO and AI → Judge.me Reviews
+Site → Enable store listing om Axel vill ha en publik butikssida). Review links är publika
+(vem som helst med länken kan recensera, `review_verification_flow_enabled: true` mejlar en
+verifiering), därför bara köpare i publiken.
 
 **K15 Butiksrecensionen:** Spoks-utkast `45e8e354-8672-4e83-ac11-c8b2ee3e3b85`
 (https://app.spoks.com/matstrumpor/post/45e8e354-8672-4e83-ac11-c8b2ee3e3b85/edit), ämne A
@@ -729,6 +733,7 @@ vinnaren rullar också in i F09 efter 16 dygn (och i F04/F07). Rimligt, de har f
 räkna med det när recensionerna mäts. Vill Axel undvika det: triggerfilter `orderTags nin
 [klubb-dragning]` på F09 (`update_flow` medan flödet är inaktivt).
 
-**Axels klick:** (1) länken ur Judge.me (a eller b ovan) → klistra in i chatten; sessionen
-byter länken i K15 + F09, verifierar den och säger till; (2) K15: välj publik SEG_kopare och
-datum i appen, skicka; (3) F09: slå på de två sändstegen och flödet.
+**Axels klick:** ✅ (1) länken ur Judge.me, inklistrad och verifierad 2026-09-27 kväll, insatt i
+K15 och F09:s båda mejl; (2) K15: välj publik SEG_kopare utom SEG_oengagerade_180d och datum i
+appen (förslag tors 1/10 18:00), skicka; (3) F09: slå på de två sändstegen och flödet
+(https://app.spoks.com/matstrumpor/flows/4321f0d9-6c9a-4910-8444-743f1c5c6c75).
