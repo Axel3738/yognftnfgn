@@ -90,7 +90,21 @@ adversariellt (`output/underlag-<locale>.json` är minnet). Temats hårdkodade
 svenska (paketväljaren, trust-raden, "Verifierat köp", pris- och datumformatet
 i `ms-cro.js`) får locale-grenar av `bygg.mjs --steg tema`; löftena "framme
 till fars dag/jul" visas bara på svenska. `matstrumpor.no` är INTE registrerad
-(Axels klick hos Loopia) — /nb fungerar utan den. COGS per marknad i
+(Axels klick hos Loopia) — /nb fungerar utan den. **Hela Europa förberett
+2026-09-27 kväll (Axels `/goal`: "hela Europa redo … worldwide redo"):**
+`marknader/konfig.json` bär Europa-marknaden med 29 länder (EU 27 utom SE + IS,
+LI, CH), de sju nya språken **de, fr, nl, es, it, pl, pt** är översatta (28
+sonnet-delar, varje del granskad av en skeptisk granskare, C+D parvis; alla
+fällda fynd inlagda — `marknader/README.md` → "Översättningarna till de sju
+språken") och ligger klara i `output/underlag-<locale>.json`; priser "lite
+dyrare worldwide" (Axels ord): NOK 449, EUR 44.90, USD 69 för 5-paret. ⛔
+**Ingenting av Europa är registrerat i Shopify** — `bygg.mjs --steg
+marknader,sprak,frakt,prislista --skarpt` och sedan `oversattningar,kontroll,
+tema,publicera` körs först när Axel bekräftat marknadslistan (hans krav: "Sen
+bekräftar jag listan"). Domänerna `.no`/`.eu` köper Axel, `.com` finns;
+kopplingen är `marknader/cowork/1-domaner.txt`. Shopifys opt-out-formulär
+("Dina integritetsval") bär kundtexten i `data-*`-attribut — nb/da hade svenska
+knappar live till 2026-09-27 kväll, rättat och tillbakaläst. COGS per marknad i
 `matstrumpor/cogs.json` (`kor.mjs --ekonomi --marknad US`): Norden saknar
 kostnad, donut/pizza/hamburgare saknar Cost per item i Shopify. **Annonserna
 utomlands: Norge först, Axels budget 1 000 kr/dag (2026-09-27), kampanjen
