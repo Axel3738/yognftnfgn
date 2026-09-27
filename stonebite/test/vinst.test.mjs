@@ -15,6 +15,7 @@ const VECKAN = ['2026-09-19', '2026-09-20', '2026-09-21', '2026-09-22', '2026-09
 
 const KOSTNADER = new Map([
   ['gid://v/1', { kostnad: 100, titel: 'Motorhölje · L' }],
+  ['gid://v/gratis', { kostnad: 0, titel: 'Ätpinnar' }],
   ['sku:ABC', { kostnad: 40, titel: 'Borste' }],
   ['namn:borste|', { kostnad: 40, titel: 'Borste' }],
 ]);
@@ -41,6 +42,16 @@ test('summeraOrdrar: netto utan moms, varukostnad × antal, avgifter — avbrutn
   assert.equal(d.varukostnad, 400, '2 ordrar × 2 st × 100 kr');
   assert.equal(d.avgifter, 19);
   assert.equal(d.utanKostnad, 0);
+});
+
+test('summeraOrdrar: en ifylld nolla är en riktig kostnad, inte saknad (ätpinnarna ingår i paketet)', () => {
+  const { dagar, saknarKostnad } = summeraOrdrar([
+    order({ lineItems: { nodes: [{ currentQuantity: 3, originalUnitPriceSet: { shopMoney: { amount: '49' } }, variant: { id: 'gid://v/gratis' }, title: 'Ätpinnar', variantTitle: null }] } }),
+  ], KOSTNADER, { dagar: 8, nu: NU, valuta: 'SEK' });
+  const d = dagar.find((x) => x.datum === '2026-09-24');
+  assert.equal(d.varukostnad, 0);
+  assert.equal(d.utanKostnad, 0);
+  assert.deepEqual(saknarKostnad, []);
 });
 
 test('summeraOrdrar: en variant utan Cost per item räknas som saknad — med belopp och namn, aldrig som noll', () => {

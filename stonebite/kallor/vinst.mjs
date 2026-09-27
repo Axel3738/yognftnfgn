@@ -89,8 +89,11 @@ async function lasKostnader(shop, token, fetchFn) {
   for (let sida = 0; sida < 40; sida++) {
     const d = await gql(shop, token, VARIANTER, { efter }, fetchFn);
     for (const v of d.productVariants.nodes) {
-      const k = Number(v.inventoryItem?.unitCost?.amount);
-      const post = { kostnad: k > 0 ? k : null, titel: `${v.product?.title ?? ''}${v.title && v.title !== 'Default Title' ? ` · ${v.title}` : ''}` };
+      // Ifylld nolla är en riktig kostnad (Axel 2026-09-27: ätpinnarna ingår i
+      // sushipaketen och kostar 0). Bara ett TOMT fält räknas som saknat.
+      const raa = v.inventoryItem?.unitCost?.amount;
+      const k = raa === null || raa === undefined ? null : Number(raa);
+      const post = { kostnad: Number.isFinite(k) && k >= 0 ? k : null, titel: `${v.product?.title ?? ''}${v.title && v.title !== 'Default Title' ? ` · ${v.title}` : ''}` };
       karta.set(v.id, post);
       if (v.sku) karta.set(`sku:${v.sku}`, post);
       karta.set(`namn:${namnNyckel(v.product?.title, v.title)}`, post);
@@ -125,7 +128,7 @@ export function summeraOrdrar(ordrar, kostnader, { dagar, nu = new Date(), valut
       const antal = Number(li.currentQuantity) || 0;
       if (!antal) continue;
       const k = kostnadFor(li, kostnader);
-      if (k?.kostnad) {
+      if (k && k.kostnad !== null) {
         rad.varukostnad += k.kostnad * antal;
       } else {
         const pris = (Number(li.originalUnitPriceSet?.shopMoney?.amount) || 0) * antal;
@@ -206,7 +209,7 @@ export async function hamtaVinstunderlag(butik, { dagar = 8, env = process.env, 
   const utfall = summeraOrdrar(ordrar, kostnader, { dagar, nu, valuta });
   return {
     id: butik.id, status: 'ok', orsak: null, valuta, via: { kostnad: kostnadVia, ordrar: orderVia },
-    varianter: kostnader.size, varianterMedKostnad: [...kostnader.values()].filter((k) => k.kostnad).length,
+    varianter: kostnader.size, varianterMedKostnad: [...kostnader.values()].filter((k) => k.kostnad !== null).length,
     ...utfall,
   };
 }
