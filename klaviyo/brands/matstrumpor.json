@@ -66,6 +66,13 @@
     "shop_domain": "1r46tp-qx.myshopify.com",
     "comment": "Judge.me finns på matstrumpor.se (Core + Recensionsmedaljer, mätt 2026-09-25) men ingen JUDGEME_API_TOKEN för butiken i miljön. Widgetens publika JSON (judge.me/reviews/reviews_for_widget) ger samma recensioner som produktsidan visar: sushi-strumpor 8 st (5★ ×5, 4★ ×2, 3★ ×1, snitt 4,5), pizza/hamburgare/donut 0. Citatblock bara på sushi."
   },
+  "butiksrecension": {
+    "judgeme_lank": "https://judge.me/product_reviews/49abef4a-9c95-484f-ade2-4242ec2fc5e1/new?source=shareable-link",
+    "valj_knapp": "Eller skriv en butiksrecension",
+    "betygssida": "/pages/betyg",
+    "rubrik": "Hur många stjärnor får butiken bakom lådan?",
+    "comment": "Butiksrecensionen (K15 + F09). judgeme_lank är Judge.me:s delbara recensionslänk som Axel hämtade 2026-09-27 kväll (Settings > Request reviews > Links); formuläret frågar först efter produkt och har knappen valj_knapp under — den knappen ÄR butiksrecensionen, och en ?rating=-parameter förfyller INGET (mätt i headless Chromium samma kväll). betygssida är sidan klaviyo/recension/betygssida.mjs lägger i butiken: mejlets fem stjärnor länkar dit med ?s=1…5, sidan tänder stjärnorna med en animation (Axels ord: 'en animation när man trycker på stjärnan och nån rörelse så det syns att man interagerar') och skickar vidare till judgeme_lank. Alla fem stjärnor går till SAMMA formulär, ingen review gating. Länken byts på ETT ställe: här."
+  },
   "kategorier": {
     "sushi": ["sushi"],
     "pizza": ["pizza"],

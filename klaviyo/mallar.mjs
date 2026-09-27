@@ -186,7 +186,12 @@ function knappHtml(s, text, href, { liten = false } = {}) {
 // En länk per stjärna, 1–5, alltid till samma destination. Trustpilots
 // evaluate-sida tar ?stars=N (förvalt betyg); okänd parameter ignoreras.
 export function stjarnLankar(b, ctx) {
-  const bas = lank(b.lank, ctx);
+  const mall = String(b.lank ?? '');
+  // "{n}" i länken = en adress per stjärna (Matstrumpors betygssida ?s=1…5, som
+  // tänder stjärnorna och skickar vidare till Judge.me — samma formulär för alla
+  // fem). Utan {n}: Trustpilots ?stars=N på en gemensam adress.
+  if (mall.includes('{n}')) return [1, 2, 3, 4, 5].map((n) => lank(mall.replace(/\{n\}/g, String(n)), ctx));
+  const bas = lank(mall, ctx);
   const sep = bas.includes('?') ? '&' : '?';
   return [1, 2, 3, 4, 5].map((n) => `${bas}${sep}stars=${n}`);
 }

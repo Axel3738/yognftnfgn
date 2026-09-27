@@ -162,4 +162,7 @@ test('stjärnblocket: alla fem stjärnor går till SAMMA ställe (ingen review g
   assert.deepEqual(l.map((x) => x.match(/stars=(\d)$/)[1]), ['1', '2', '3', '4', '5']);
   const html = bygg(mejl({ block: [{ typ: 'stjarnor', lank: 'url:https://se.trustpilot.com/evaluate/baverbutiken.se' }] })).html;
   assert.equal((html.match(/evaluate\/baverbutiken\.se\?stars=/g) ?? []).length, 5);
+  // "{n}" i länken: en adress per stjärna (betygssidan ?s=1…5), samma sida för alla.
+  const egna = stjarnLankar({ lank: 'sida:/pages/betyg?s={n}' }, ctx);
+  assert.deepEqual(egna, [1, 2, 3, 4, 5].map((n) => `https://baverbutiken.se/pages/betyg?s=${n}`));
 });

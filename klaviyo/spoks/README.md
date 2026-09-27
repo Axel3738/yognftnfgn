@@ -702,18 +702,49 @@ verifiering), därför bara köpare i publiken.
 **K15 Butiksrecensionen:** Spoks-utkast `45e8e354-8672-4e83-ac11-c8b2ee3e3b85`
 (https://app.spoks.com/matstrumpor/post/45e8e354-8672-4e83-ac11-c8b2ee3e3b85/edit), ämne A
 "Maten är påhittad. Butiken är inte." (B "Skrattade du när paketet kom?", C "Landade skämtet,
-eller inte?"), hero med sushilådan + knappen "Betygsätt butiken bakom lådan" + "Ingen
-inloggning. Bara du, stjärnorna och lådan." + grundarraden (svara på mejlet om något blev fel).
-Publik **SEG_kopare** (Axel väljer i appen), föreslaget datum tors 1/10 18:00 (inte en tisdag,
-kalendern är full). Innehållsfilen säger dessutom "utom SEG_oengagerade_180d", men det segmentet
+eller inte?"), hero med sushilådan, **stjärnraden** (se nedan), "Ingen inloggning. Bara du,
+stjärnorna och lådan." + grundarraden (svara på mejlet om något blev fel). Titeln i Spoks är
+`K15 · kopare · Maten är påhittad. Butiken är inte.` (datumet 1/10 struket: Axel vill skicka
+samma dag, 2026-09-27). Publik **SEG_kopare** (Axel väljer i appen). Innehållsfilen säger dessutom "utom SEG_oengagerade_180d", men det segmentet
 kräver minst fem mottagna mejl och hade **0 medlemmar** vid mätningen 2026-09-26 — så bara
 SEG_kopare är samma publik i dag, och Axel slipper leta efter en uteslutning i appen (beslutat
 2026-09-27 kväll när instruktionen visade sig obegriplig). Uteslutningen blir aktuell först när
 segmentet fått medlemmar, dvs. efter fem kampanjer. Innehåll
 `klaviyo/innehall/matstrumpor/kampanjer/k15-butiksrecension.json`, `status_plan: kraver-axel`.
 
+**Stjärnraden + betygssidan (Axels order 2026-09-27 kväll: "5 stjärnor och jag kan länka på
+varje så de bara trycker på en av stjärnorna sen kommer dom till recensionsformuläret … en
+animation när man trycker på stjärnan och nån rörelse så det syns att man interagerar … jag
+vill ha en annan knapp").** Knappen är borta ur K15. I stället: h2 "Hur många stjärnor får
+butiken bakom lådan?", ett **h1-block med fem ★ som var och en är en inline-länk** till
+`https://matstrumpor.se/pages/betyg?s=1` … `?s=5` (block `4dba0842`; en länk per stjärna, så de
+går att ändra var för sig i Spoks redigerare, i redigerarens länkfärg #dd821d) och hjälpraden
+"Klicka på en stjärna, så öppnas formuläret. 1 är dålig och 5 är bra." Motorn: blocktypen
+`stjarnor` i `spoks-paket.mjs` (`stjarnLankarSpoks`: `{n}` i länken ⇒ en adress per stjärna,
+annars Trustpilots `?stars=N`) och samma regel i `mallar.mjs stjarnLankar`. **Ett mejl kan inte
+köra skript, så rörelsen bor på betygssidan** `https://matstrumpor.se/pages/betyg`
+(`klaviyo/recension/betygssida.mjs`, Shopify-sidan `gid://shopify/Page/183830806867` med mallen
+`page.betyg` + `layout/betyg.liquid` utan header/footer/meny, `content_for_header` kvar,
+noindex; skrivna 2026-09-27 14:51 UTC via Fabrikens app, lästa tillbaka lika): sidan läser
+`?s=`, tänder stjärnorna en i taget med en pop-animation, den valda störst med skugga, en orange
+linje växer under, rubriken blir "Tack! N av 5." och efter 1,5 s skickas kunden till Judge.me-
+länken (250 ms och ingen animation vid `prefers-reduced-motion`; synlig reservlänk om inget
+händer; utan `?s=` är sidan en egen betygssida med fem klickbara stjärnor). **Alla fem stjärnor
+går till SAMMA formulär** (`granskaPublik` stoppar annars; ingen review gating), och Judge.me
+kan inte förfyllas med betyget (`?rating=` mätt utan verkan), så sidan säger att stjärnorna
+sätts en gång till i formuläret. Mätt live i headless Chromium 2026-09-27: vid 400 ms
+virtuell tid var fyra stjärnor tända, rubriken "Tack! 4 av 5.", inga temasektioner; vid 900 ms
+hade sidan landat på Judge.me ("Judge.me Product Reviews"). Länken byts på ETT ställe:
+`klaviyo/brands/matstrumpor.json` → `butiksrecension.judgeme_lank`, sedan `betygssida.mjs
+--skarpt`. ⚠️ F09:s båda mejl har kvar knappen: flödet slogs på av Axel innan stjärnraden
+fanns, och ett aktivt flöde går inte att ändra via MCP:n — stjärnor i F09 kräver en v2 (nytt
+flöde) och Axels byte, som F08.
+
 **F09 Recensionen (butiksomdöme) · FLOW_order_recension_v1** `4321f0d9-6c9a-4910-8444-743f1c5c6c75`
-(https://app.spoks.com/matstrumpor/flows/4321f0d9-6c9a-4910-8444-743f1c5c6c75), inaktivt:
+(https://app.spoks.com/matstrumpor/flows/4321f0d9-6c9a-4910-8444-743f1c5c6c75), ✅ **PÅSLAGET av
+Axel 2026-09-27 14:16:54 UTC** (mätt med `get_flow` 14:40 UTC: `isActive: true`,
+`trigger.isActive: true`, båda sändstegen `isEnabled: true`, 2 kontakter redan inrullade och
+väntar vid 16-dygnssteget):
 trigger `order_created` med kontaktfiltret kundundantag (`emailMarketingConsent in [subscribed,
 not_subscribed]` och `state ne suppressed`, samma som motorn ger i `floden.json`), återinträde
 P90D. Steg: väntan 16 d tidigast 18:00 (`3c07bad0`) → **E1** "Fortfarande strumpor när du
@@ -739,7 +770,7 @@ räkna med det när recensionerna mäts. Vill Axel undvika det: triggerfilter `o
 
 **Axels klick:** ✅ (1) länken ur Judge.me, inklistrad och verifierad 2026-09-27 kväll, insatt i
 K15 och F09:s båda mejl; (2) K15: välj publik SEG_kopare (uteslutningen kan vänta, se ovan) högst
-upp i redigeraren → Review → Schedule längst ner → tors 1/10 18:00 (Stockholmstid, Spoks räknar
-i kontots tidszon); (3) F09: slå på de två sändstegen och flödet (Settings uppe till höger →
-Turn the flow on)
-(https://app.spoks.com/matstrumpor/flows/4321f0d9-6c9a-4910-8444-743f1c5c6c75).
+upp i redigeraren → Review → skicka (Axels ord 2026-09-27 kväll: "skicka ut review requesten
+idag faktiskt till alla tidigare kunder" — SEG_kopare är köparna med samtycke; "alla kunder"
+inklusive dem utan samtycke är hans MFL-beslut, se `CLAUDE.md` → Klaviyo, kampanjer bara
+subscribed); ✅ (3) F09: påslaget 2026-09-27 14:16 UTC, mätt (se ovan).

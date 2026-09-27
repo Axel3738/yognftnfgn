@@ -121,7 +121,9 @@ Rabatten förra säsongen låg som **automatisk rabatt** (ingen kod), i snitt 14
 order i december. I dag är Köp 1, få 1 en kod på 228 av 239 ordrar. Evolve [D3]: "funnel
 buyers wait for bigger sales; make BFCM superior" — förra årets köpare är vana vid en
 gratis låda, så årets julerbjudande till dem måste vara synligt bättre, eller komma till
-dem först (förturen). Beslutet är Axels (Black Week A/B/C i `klaviyo/README.md`).
+dem först (förturen). **Axels beslut 2026-09-27 kväll: B, trappan ligger kvar som den är**
+(`klaviyo/README.md` → Black Week) — så det som gör årets erbjudande bättre för klubben är
+förturen, inte rabatten.
 
 ## 7. Planen efter Evolves svar (svar 9 i `klaviyo/evolve/SVAR.md`)
 
@@ -136,9 +138,9 @@ dem först (förturen). Beslutet är Axels (Black Week A/B/C i `klaviyo/README.m
    MCP:n, Axel byter reglage som för F08), **K16 "Förtur: Black Week öppnar i kväll"** söndag
    22/11 18:00 till samtycke, och **rabatternas starttid i Shopify flyttad** från mån 23/11 00:00
    till sön 22/11 18:00 (automatiska rabatter gäller alla på sajten; förturen är att bara klubben
-   får veta). ⚠️ K16 och starttiden hänger på Black Week-frågan A/B/C i `klaviyo/README.md`
-   (trappan 10/20/30 % passar inte Matstrumpor eftersom Köp 1, få 1 slår den): erbjudandet
-   måste vara bestämt innan K16 skrivs.
+   får veta). ✅ Black Week-frågan är avgjord (Axels beslut B 2026-09-27 kväll: trappan
+   10/20/30 % ligger kvar, fast Köp 1, få 1 slår den på par), så K16 kan skrivas: den lovar
+   förturen och tidpunkten, aldrig en procentsats som är sämre än butikens vanliga deal.
 2. **Dragningen är krydda och intäktsmaskin**, inte strategin: **tre** medlemmar dras varje
    tisdag av ett skript med loggat frö; vinnarna får lådan mot **en kort video** på sig
    själva med strumporna där de säger en mening om dem (UGC om de vill, tio sekunder

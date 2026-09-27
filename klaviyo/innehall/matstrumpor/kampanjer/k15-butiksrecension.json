@@ -1,7 +1,7 @@
 {
   "id": "k15-butiksrecension",
   "namn": "MAIL_20261001_Butik_M_1_kopare_product_butiksrecension_v1",
-  "memo": "Axels beställning 2026-09-27: 'en kampanj som bara är att folk ska lägga en butiksrecension'. Hypotes (Sonnet-subagenten, rev 2 samma dag efter att byggaren stoppat 15 rader ur rev 1): en butiksrecension svarar på 'går det att lita på hela stället', vilket väger tyngre för en osäker köpare än en recension om en enskild vara. Varje ämnesrad, förhandstext, rubrik och knapptext hänger på något bara Matstrumpor har (lådan som ser ut som mat, avslöjandet, ordet 'påhittad'); generiska frågor som 'vad tyckte du om att handla hos oss' klarar aldrig 'ingen annan'. Fakta hålls på nivån som gäller alla fyra sorter (SEG_kopare är alla köpare): lådan, maten, påhittat, aldrig ätpinnar eller sushibitar. Går BARA till köpare: en butiksrecension från någon som aldrig handlat är inte värd något. Ingen belöning, ingen styrning av betyget (alla stjärnor till samma länk). Huvudsessionen bytte EN rad: knappen 'Betygsätt lådan' blev 'Betygsätt butiken bakom lådan', för länken går till BUTIKSrecensionen, inte till produkten, och knappen får inte lova något annat än det den gör. Länken är Judge.me:s delbara recensionslänk som Axel hämtade i Judge.me 2026-09-27 kväll (Settings > Request reviews > Links). Verifierad samma kväll i headless Chromium: formuläret heter 'Granska ditt senaste köp från Matstrumpor.se', frågar först efter produktnamn och har knappen 'Eller skriv en butiksrecension' under, och det är den knappen som är butiksrecensionen; därför säger mejlet åt kunden att välja den (rubriken 'Ingen inloggning. Bara du, stjärnorna och lådan.' står kvar, meningen under den nämner knappen). Judge.me:s butikssida (judge.me/reviews/matstrumpor.se) svarar fortfarande 404, listningen är inte påslagen, och behövs inte med den här länken. Datumet är ett förslag (torsdag, för att inte ta en tisdag från kalendern).",
+  "memo": "Axels beställning 2026-09-27: 'en kampanj som bara är att folk ska lägga en butiksrecension'. Hypotes (Sonnet-subagenten, rev 2 samma dag efter att byggaren stoppat 15 rader ur rev 1): en butiksrecension svarar på 'går det att lita på hela stället', vilket väger tyngre för en osäker köpare än en recension om en enskild vara. Varje ämnesrad, förhandstext, rubrik och knapptext hänger på något bara Matstrumpor har (lådan som ser ut som mat, avslöjandet, ordet 'påhittad'); generiska frågor som 'vad tyckte du om att handla hos oss' klarar aldrig 'ingen annan'. Fakta hålls på nivån som gäller alla fyra sorter (SEG_kopare är alla köpare): lådan, maten, påhittat, aldrig ätpinnar eller sushibitar. Går BARA till köpare: en butiksrecension från någon som aldrig handlat är inte värd något. Ingen belöning, ingen styrning av betyget (alla stjärnor till samma länk). Länken är Judge.me:s delbara recensionslänk som Axel hämtade i Judge.me 2026-09-27 kväll (Settings > Request reviews > Links), verifierad samma kväll i headless Chromium: formuläret heter 'Granska ditt senaste köp från Matstrumpor.se', frågar först efter produktnamn och har knappen 'Eller skriv en butiksrecension' under, och det är den knappen som är butiksrecensionen. Judge.me:s butikssida (judge.me/reviews/matstrumpor.se) svarar fortfarande 404, listningen är inte påslagen, och behövs inte med den här länken. Datumet är ett förslag (torsdag, för att inte ta en tisdag från kalendern). ⭐ Rev 3 samma kväll (Axels order: 'ändra så det är 5 stjärnor och jag kan länka på varje så de bara trycker på en av stjärnorna … en animation när man trycker på stjärnan … jag vill ha en annan knapp'): knappen är borta, i stället blocket stjarnor med fem klickbara stjärnor som var och en länkar till butikens betygssida /pages/betyg?s=1…5 (klaviyo/recension/betygssida.mjs), där stjärnorna tänds med en animation innan kunden skickas vidare till samma Judge.me-formulär (mejl kan inte köra skript, så rörelsen bor på sidan). Rubriken över stjärnorna är huvudsessionens ('Hur många stjärnor får butiken bakom lådan?', samma motiv som knappen 'Betygsätt butiken bakom lådan' som klarade tre-frågorstestet): Sonnet-subagentens tre förslag ('Blev du lurad av lådan?', 'Hur påhittad kändes maten?', 'Trodde du det var äkta mat?') var ja/nej-frågor som en 1–5-rad inte svarar på. Hjälpraden och meningen om att välja knappen är instruktion, inte hook, och står utanför testet som förut.",
   "taggar": {
     "typ": "M",
     "kalla": "egen-data",
@@ -26,16 +26,18 @@
       "typ": "hero",
       "rubrik": "Maten är påhittad. Butiken bakom är på riktigt.",
       "text": "Vi är en liten svensk butik, och det som avgör om nästa kund vågar handla är vad du säger om oss. Var ärlig. Positiva och negativa omdömen hjälper oss lika mycket.",
-      "bild": "produkt:sushi-strumpor",
-      "knapp": {
-        "text": "Betygsätt butiken bakom lådan",
-        "lank": "url:https://judge.me/product_reviews/49abef4a-9c95-484f-ade2-4242ec2fc5e1/new?source=shareable-link"
-      }
+      "bild": "produkt:sushi-strumpor"
+    },
+    {
+      "typ": "stjarnor",
+      "rubrik": "Hur många stjärnor får butiken bakom lådan?",
+      "lank": "sida:/pages/betyg?s={n}",
+      "text": "Klicka på en stjärna, så öppnas formuläret. 1 är dålig och 5 är bra."
     },
     {
       "typ": "text",
       "rubrik": "Ingen inloggning. Bara du, stjärnorna och lådan.",
-      "text": "Klicka på knappen och välj \"Eller skriv en butiksrecension\". Sätt antal stjärnor och skriv några rader om hur det var att handla hos oss och hur strumporna togs emot."
+      "text": "Efter stjärnan öppnas formuläret. Välj \"Eller skriv en butiksrecension\", sätt stjärnorna en gång till där och skriv några rader om hur det var att handla hos oss och hur strumporna togs emot."
     },
     {
       "typ": "grundare",
@@ -48,12 +50,12 @@
     { "rad": "Landade skämtet, eller inte?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "En låda som ser ut som mat, och en recension som är på riktigt.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Maten är påhittad. Butiken bakom är på riktigt.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Ingen inloggning. Bara du, stjärnorna och lådan.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Betygsätt butiken bakom lådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+    { "rad": "Hur många stjärnor får butiken bakom lådan?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Ingen inloggning. Bara du, stjärnorna och lådan.", "visualisera": true, "falsifiera": true, "ingen_annan": true }
   ],
   "planerad": "2026-10-01T18:00:00+02:00",
   "segment": ["SEG_kopare"],
   "exkludera": ["SEG_oengagerade_180d"],
   "status_plan": "kraver-axel",
-  "kraver_axel": "Datumet (förslag tors 1/10 18:00) och publiken SEG_kopare, båda väljs i Spoks-appen; länken är på plats sedan 2026-09-27 kväll. Uteslutningen SEG_oengagerade_180d står kvar i exkludera för motorns skull men kan hoppas över i appen: segmentet kräver fem mottagna mejl och hade 0 medlemmar 2026-09-26, så publiken är densamma."
+  "kraver_axel": "Publiken (SEG_kopare) och datumet väljs i Spoks-appen; Axel vill skicka 2026-09-27 (samma dag), förslaget 1/10 är överspelat. Uteslutningen SEG_oengagerade_180d står kvar i exkludera för motorns skull men kan hoppas över i appen: segmentet kräver fem mottagna mejl och hade 0 medlemmar 2026-09-26, så publiken är densamma."
 }

@@ -40,10 +40,12 @@ Därför är oktober uppvärmning och november–december hela affären.
 (Black Week), vecka 52 ingen.
 
 **Utanför tisdagsrytmen (2026-09-27):** **K15 Butiksrecensionen** — bara köpare
-(`SEG_kopare` utom `SEG_oengagerade_180d`), ber om en butiksrecension på Judge.me, ingen
-rabatt. Föreslagen tors 1/10 18:00 så den inte tar en tisdag; Spoks-utkast
-`45e8e354-8672-4e83-ac11-c8b2ee3e3b85`. Skickas först när Axel hämtat länken i Judge.me
-(butikssidan svarade 404 vid bygget) — `klaviyo/spoks/README.md` → Recensionerna.
+(`SEG_kopare`; uteslutningen `SEG_oengagerade_180d` är tom tills fem kampanjer gått), ber om en
+butiksrecension på Judge.me med **fem klickbara stjärnor** som går via betygssidan
+`matstrumpor.se/pages/betyg?s=1…5` (animationen) till Judge.me-formuläret, ingen rabatt.
+Spoks-utkast `45e8e354-8672-4e83-ac11-c8b2ee3e3b85`. Axels beslut 2026-09-27 kväll: **skickas
+samma dag** (förslaget tors 1/10 är överspelat), publik och Send i appen är hans klick —
+`klaviyo/spoks/README.md` → Recensionerna.
 
 ## Räcker prenumerationen?
 

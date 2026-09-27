@@ -103,6 +103,16 @@ export function lankTillSpoks(spec, ctx) {
   return bas;
 }
 
+// Stjärnblockets fem adresser: "{n}" i länken ⇒ en adress per stjärna (betygssidan
+// ?s=1…5), annars Trustpilots ?stars=N på en gemensam adress.
+export function stjarnLankarSpoks(b, ctx) {
+  const mall = String(b.lank ?? '');
+  if (mall.includes('{n}')) return [1, 2, 3, 4, 5].map((n) => lankTillSpoks(mall.replace(/\{n\}/g, String(n)), ctx));
+  const bas = lankTillSpoks(mall, ctx);
+  const sep = bas.includes('?') ? '&' : '?';
+  return [1, 2, 3, 4, 5].map((n) => `${bas}${sep}stars=${n}`);
+}
+
 const SYNLIGT = (knapp) => ({
   isImageVisible: true,
   isTitleVisible: true,
@@ -255,9 +265,19 @@ const BLOCK = {
     ctx.varningar.push(`Dynamiska blocket "${b.kalla}" har ingen motsvarighet i Spoks, blocket utgår.`);
     return [];
   },
+  // Fem klickbara stjärnor (Axels beställning 2026-09-27: "5 stjärnor … länka på
+  // varje så de bara trycker på en av stjärnorna"). Spoks har inget stjärnblock,
+  // men ett textblock tar inline-länkar: fem ★ i ett h1-block, var och en med sin
+  // egen länk, så de går att ändra en i taget i Spoks redigerare. Samma länkregel
+  // som mallar.mjs stjarnLankar: "{n}" i länken byts mot 1–5, annars ?stars=N.
+  // ALLA fem går till samma formulär — ingen review gating.
   stjarnor(b, ctx) {
-    ctx.varningar.push('Stjärnblocket byts mot en knapp till samma adress (Spoks har inga klickbara stjärnor).');
-    return [knappBlock(b.rubrik ?? 'Ge ditt betyg', lankTillSpoks(b.lank, ctx))];
+    const ut = [];
+    if (b.rubrik) ut.push(text(b.rubrik, { typ: 'h2', align: 'center' }));
+    ut.push({ type: 'h1', text: stjarnLankarSpoks(b, ctx).map((u) => `[★](${u})`).join(' '), alignment: 'center' });
+    if (b.text) ut.push(...styckeBlock(b.text, 'center'));
+    ctx.anmarkningar.add('Stjärnraden är fem inline-länkar (★) i ett h1-block, en länk per stjärna i redigerarens länkfärg; varje länk ändras för sig i Spoks redigerare.');
+    return ut;
   },
   erbjudande(b, ctx) {
     ctx.varningar.push('Erbjudandeblocket (lyckohjulet) är Bäverbutikens och byggs inte i Spoks-paketet.');

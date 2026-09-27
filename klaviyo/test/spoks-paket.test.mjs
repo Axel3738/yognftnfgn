@@ -120,6 +120,22 @@ test('fakta blir två kolumner, medlemskortet en sektion, knappen med spårning 
   assert.ok(ut[3].text.includes('MS'));
 });
 
+test('stjärnblocket blir fem inline-länkar i ett h1-block: {n} ger betygssidan ?s=1…5, utan {n} Trustpilots ?stars=N — aldrig en knapp', () => {
+  const c = ctx();
+  const ut = blockTillSpoks({ block: [{ typ: 'stjarnor', rubrik: 'Hur många stjärnor?', lank: 'sida:/pages/betyg?s={n}', text: 'Klicka på en stjärna.' }] }, c);
+  assert.equal(ut[0].type, 'h2');
+  assert.equal(ut[0].text, 'Hur många stjärnor?');
+  assert.equal(ut[1].type, 'h1');
+  assert.equal(ut[1].alignment, 'center');
+  assert.equal(ut[1].text, [1, 2, 3, 4, 5].map((n) => `[★](https://testbutik.se/pages/betyg?s=${n})`).join(' '));
+  assert.equal(ut[2].text, 'Klicka på en stjärna.');
+  assert.ok(!ut.some((b) => b.type === 'link'), 'ingen knapp');
+  const tp = blockTillSpoks({ block: [{ typ: 'stjarnor', lank: 'url:https://se.trustpilot.com/evaluate/testbutik.se' }] }, ctx());
+  assert.equal(tp[0].type, 'h1');
+  assert.deepEqual([...tp[0].text.matchAll(/stars=(\d)\)/g)].map((m) => m[1]), ['1', '2', '3', '4', '5']);
+  assert.equal(new Set([...tp[0].text.matchAll(/\]\(([^)?]+)/g)].map((m) => m[1])).size, 1, 'samma mål för alla fem');
+});
+
 test('dynamiska block: kassan blir abandonedCart (kräver checkout-trigger), visad produkt blir recently_viewed', () => {
   const c = ctx();
   const ut = blockTillSpoks({ block: [{ typ: 'dynamisk', kalla: 'checkout_rader' }, { typ: 'dynamisk', kalla: 'visad_produkt' }, { typ: 'dynamisk', kalla: 'order_rader' }] }, c);
