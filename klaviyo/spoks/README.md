@@ -280,9 +280,13 @@ Trustpilot-profil, carashell.se** — en registrering täcker alla marknader. Tv
   ("Free plan", inget köpt, provperioden inte klickad), notis för nya recensioner på alla stjärnor
   till hello@carashell.se, inget installerat, NS ns1/ns2.loopia.se orört. Sessionen mätte direkt
   efter: **alla fyra evaluate-länkarna (se/no/dk/www) svarar 200** och öppnar formuläret
-  "Betygsätt Carashell". Kvar, Axels klick eller en kort Cowork-prompt: namnet står **"Carashell"**
-  (ska vara CaraShell), publika profilen visar landet **USA** (Plans & billing säger Sweden — ska vara
-  Sverige), **ingen kategori**. ⚠️ **`?stars=N` förvaljer inte stjärnorna längre**: mätt i Chromium
+  "Betygsätt Carashell". Tre fel på profilen efter registreringen (namnet "Carashell", landet USA,
+  ingen kategori) — ✅ **rättade samma förmiddag av Cowork** (en kort andra prompt i chatten,
+  Settings → Profile page): namn **CaraShell**, kontaktuppgifter Stenkolsgatan 1B, 417 07 Göteborg,
+  Sverige, kategori **RV Supply Store** (svenska sajten visar "Butik med husbilstillbehör", sökvägen
+  Fordon och transport › Andra fordon och släp), tillbakaläst på den publika profilen. Kontonamnet i
+  Trustpilot Business (menyn, Plans & billing) står kvar som "Carashell" — bara internt, syns aldrig
+  för kunder, rörs inte. ⚠️ **`?stars=N` förvaljer inte stjärnorna längre**: mätt i Chromium
   på både `carashell.se?stars=5` och `www.baverbutiken.se?stars=5` — fem radioknappar, alla
   `checked: false`, ingen vald. Kunden klickar stjärnan själv; mejlen fungerar, inget byggs om för
   det. ⚠️ Notismejlen går till hello@carashell.se — inte .com-brevlådan som autosvaret och
