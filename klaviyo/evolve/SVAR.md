@@ -174,3 +174,23 @@ Frågan står i `FRAGOR.md` (fråga 9). Axel klistrade in svaret ordagrant; `[Cn
 | Kundbilder är ofta dåliga; ge exempel utan att skriva manus | Vinnarna får tre exempelbilder och två rader ("håll upp lådan, ansiktet med"), inget manus. Räkna med att bara en del blir annonsbilder. |
 | Börja tidigare, dra aktivt tillbaka förra årets köpare; slå förra årets erbjudande | Förra decembers rabattkoder mätta i Shopify (nedan). Första köparmejlet flyttas fram i kalendern. |
 | Befintliga kunder bunkrar (BOGO), nya vill ha % på en | Köp 1, få 1 är redan standard och matchar återköparen ("en låda till, till nästa person"). |
+
+## Svar 15, 2026-09-28: recensioner via mejl (Matstrumpor) — boten hade INGET underlag
+
+Axel klistrade in Fråga 15 (vårt eget recensionsmejl: svarsgrad, ordval, ämnesrader,
+struktur, stjärnor mot knapp, timing för en present). Botens svar, ordagrant i sak: "I don't
+have any source material to answer these questions. Both the Discord Q&A conversations and
+course documents arrays are empty in my current context, so I can't ground a single claim
+about review rates, wording, subject lines, timing, or star-link mechanics." Den listade
+varje delfråga som "no data" och rådde: "Post the full six-question breakdown in the
+community … Paste as-is."
+
+### Vad vi gör med svaret
+
+- **Evolve har inget om recensionsmejl** (samma läge som flödesstrukturen i Svar 1). K15 v2
+  står som den är, byggd på det som finns: Judge.me:s, Trustpilots, Yotpos och Okendos egna
+  riktlinjer + Karaman 2021 (`klaviyo/spoks/README.md` → Recensionerna → Bästa praxis).
+- Frågan kan Axel posta i Evolve-communityn om han vill; ett svar därifrån klistras in här
+  och vägs mot bästa-praxis-listan. Inget väntar på det.
+- Facit blir våra egna siffror: K15:s klick per stjärna i Spoks och antalet nya recensioner
+  i Judge.me två veckor efter utskicket.

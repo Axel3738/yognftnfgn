@@ -835,6 +835,9 @@ omdöme." Gjort samma förmiddag:
 - **Fråga 15 till Evolve-boten** (`klaviyo/evolve/FRAGOR.md`, omskriven efter beslutet): hur
   VÅRT recensionsmejl ska skrivas och skickas — svarsgrad på gamla köpare, ordval som får
   missnöjda att skriva, ämnesrader, struktur, stjärnor mot knapp, timing för en present.
+  **Ställd samma förmiddag: boten hade inget underlag** ("I don't have any source material …
+  Post the full six-question breakdown in the community"), `SVAR.md` → Svar 15. K15 v2 står
+  som den är; facit blir Spoks klick per stjärna + nya recensioner i Judge.me efter två veckor.
 
 **Bästa praxis för recensionsmejlet (research 2026-09-28, Judge.me/Trustpilot/Yotpo/Okendo/NN
 g + Karaman 2021; hela underlaget i sessionens workflow-utdata, sammanfattat här):** 50–100

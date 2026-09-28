@@ -135,6 +135,8 @@ mest effektivt i mejlen." Läget när frågan skrevs: 8 recensioner på sushilå
 ordrar, Judge.me på butiken, mejlen går ur Spoks. **Axels beslut samma dag: det är VÅRT EGET
 mejl (K15 i Spoks) som ska gå ut**, inte Judge.me:s, så frågan handlar bara om hur vårt mejl
 ska skrivas och skickas. Klistras in ordagrant; svaret klistras tillbaka och sparas i `SVAR.md`.
+**Ställd 2026-09-28: boten hade inget underlag alls** ("I don't have any source material to
+answer these questions") och rådde att posta frågan i communityn — `SVAR.md` → Svar 15.
 
 ```
 Same Swedish sock-box brand as before (boxes that look like sushi/pizza/burgers/donuts, ~$40, Christmas product, ~3,900 buyers, ~2,900 subscribed). Reviews are almost non-existent: 8 reviews in total on the bestseller after ~3,900 orders. Shopify, Judge.me for the review form, Spoks for email.
