@@ -356,3 +356,7 @@ miljön används Innehåll → Filer i stället, automatiskt.
 ### Pristabell utan jämförpris (2026-09-28)
 
 `copy.pristabell.jamforpris: false` ritar tabellen utan kolumnen "Ordinarie pris": sidans body får `data-lp-jmf="nej"` och `templates/page.listicle.liquid` hoppar då `lr-pris-forr`. Standard är oförändrad (den frysta USA-sidan ritas som förut). Svenska sidor ska ha den avslagen så länge jämförpriset inte är belagt som lägsta pris de senaste 30 dagarna (PPL 7a §). Första: https://carashell.se/pages/takoverdrag-innan-du-koper?country=SE.
+
+### Tabellens plats (2026-09-28)
+
+`copy.pristabell.efter_punkt: N` lägger tabellen direkt efter punkt N i stället för direkt efter hero, och `knapp_till: "tabell"` på `hero` eller en punkt gör att knappen hoppar ner till `#lr-pris` i stället för till produktsidan. Axels beslut för den svenska sidan: priset ska inte stå före skälen att köpa, så tabellen står under punkt 1 (storleken) och hero-knappen hoppar dit. Utan fälten ritas sidan som förut.

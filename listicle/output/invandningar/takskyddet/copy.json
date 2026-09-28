@@ -5,22 +5,25 @@
     "ingress": "Ni har skrivit över 70 kommentarer under annonserna sedan mitten av september, och samma frågor kommer tillbaka hela tiden. Måste det inte vara luft emellan? Finns min längd, och vad kostar den? Tål inte en husbil regn ändå? Här tar vi dem en i taget, och där vi inte vet svaret säger vi det hellre än att gissa.",
     "knapp": "Se priset för din längd →",
     "sammanfattning": [
-      "Överdraget finns i nio längder, från 5,5 till 13,5 meter, och alla är 3 meter breda. Priserna går från 1 129 kr till 2 239 kr, och hela listan står direkt här under, med en knapp per längd som öppnar just den storleken på produktsidan.",
-      "Efter tabellen kommer de sju saker ni frågar mest om: storleken, fukten under överdraget, varför man ska täcka ett tak som tål regn, remmarna mot lacken, vad som ingår, det som sitter på taket och vad du har om det inte passar."
-    ]
+      "Överdraget finns i nio längder, från 5,5 till 13,5 meter, och alla är 3 meter breda. Priserna går från 1 129 kr till 2 239 kr, och hela listan står under punkt 1, med en knapp per längd som öppnar just den storleken på produktsidan.",
+      "Här under kommer de sju saker ni frågar mest om: storleken, fukten under överdraget, varför man ska täcka ett tak som tål regn, remmarna mot lacken, vad som ingår, det som sitter på taket och vad du har om det inte passar."
+    ],
+    "knapp_till": "tabell"
   },
   "pristabell": {
     "rubrik": "Din längd, ditt pris",
     "text": "Alla nio är 3 meter breda. Mät vagnen från framkant till bakkant, utan dragstången, och ta den längd som är minst lika lång. Priset gäller ett överdrag. På produktsidan är två överdrag förvalda i paketrutan, så har du bara en vagn byter du till 1 st där.",
     "knapp": "Öppna den här längden →",
     "fot": "Hamnar vagnen mellan två längder tar du den längre. En husbil på 7,2 meter tar alltså 7,5, och en vagn på 8,3 meter tar 8,5. Vill du ha två olika längder, en till husvagnen och en till husbilen, väljer du en storlek per överdrag i paketrutan.",
-    "jamforpris": false
+    "jamforpris": false,
+    "efter_punkt": 1
   },
   "punkter": [
     {
       "rubrik": "1. Hittade du bara 6,5 meter? Alla nio längder finns, upp till 13,5.",
-      "text": "En av er skrev att husbilen är 7,2 meter lång, men att bara 6,5 meter gick att hitta vid beställningen. En annan undrade om det finns ett överdrag till en vagn på 8,3 meter. Det gör det, för alla nio längder finns. På produktsidan väljer du längden i paketrutan, där varje överdrag har en egen liten storleksväljare, och den är lätt att gå förbi. Därför står samma nio längder i tabellen här ovanför. Trycker du på knappen vid din längd öppnas produktsidan med den redan vald, och det enda du behöver göra där är att byta till 1 st om du har en vagn.",
-      "knapp": "Hitta din längd i tabellen →"
+      "text": "En av er skrev att husbilen är 7,2 meter lång, men att bara 6,5 meter gick att hitta vid beställningen. En annan undrade om det finns ett överdrag till en vagn på 8,3 meter. Det gör det, för alla nio längder finns. På produktsidan väljer du längden i paketrutan, där varje överdrag har en egen liten storleksväljare, och den är lätt att gå förbi. Därför står samma nio längder i tabellen här under. Trycker du på knappen vid din längd öppnas produktsidan med den redan vald, och det enda du behöver göra där är att byta till 1 st om du har en vagn.",
+      "knapp": "Se tabellen med alla nio längder ↓",
+      "knapp_till": "tabell"
     },
     {
       "rubrik": "2. Måste det inte vara luft emellan? Jo. Så gör du tills vidare.",
@@ -131,7 +134,7 @@
     {
       "rad": "Se priset för din längd →",
       "visualisera": "✅ knappen leder till tabellen",
-      "falsifiera": "✅ tabellen står direkt under",
+      "falsifiera": "✅ hoppar ner till tabellen under punkt 1",
       "ingen_annan_kan_saga": "✅ vår prislista"
     },
     {
@@ -159,9 +162,9 @@
       "ingen_annan_kan_saga": "✅ våra kunder, vår produkt"
     },
     {
-      "rad": "Hitta din längd i tabellen →",
+      "rad": "Se tabellen med alla nio längder ↓",
       "visualisera": "✅ knappen och målet",
-      "falsifiera": "✅ leder till produktsidan",
+      "falsifiera": "✅ hoppar till tabellen direkt under punkt 1",
       "ingen_annan_kan_saga": "✅ knyter till punktens innehåll"
     },
     {

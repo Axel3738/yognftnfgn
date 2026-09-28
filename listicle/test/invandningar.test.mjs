@@ -202,3 +202,17 @@ test('pristabell utan jämförpris (svensk sida 2026-09-28): ingen forr-kolumn, 
   assert.match(sida, /unless lp_utan_jmf/);
   assert.match(CSS, /lr-pris--utan-jmf/);
 });
+
+test('pristabell.efter_punkt och knapp_till "tabell": tabellen efter punkt N, knappen hoppar till #lr-pris; utan fälten som förut', () => {
+  const opts = { produkt: PRODUKT, fasta: fasta7(), datum: '2026-09-28', koncept: 'invandningar', locale: 'en', stil: 'ingen', prisTokens: 'behall' };
+  const flytt = copyEn();
+  flytt.pristabell = { ...flytt.pristabell, efter_punkt: 1 };
+  flytt.hero = { ...flytt.hero, knapp_till: 'tabell' };
+  const html = renderaHtml({ ...opts, copy: flytt });
+  assert.ok(html.indexOf('id="lr-pris"') > html.indexOf('id="lr-punkt-1"'), 'tabellen efter punkt 1');
+  assert.ok(html.indexOf('id="lr-pris"') < html.indexOf('id="lr-punkt-2"'), 'och före punkt 2');
+  assert.match(html, /class="lr-cta" href="#lr-pris"/);
+  const std = renderaHtml({ ...opts, copy: copyEn() });
+  assert.ok(std.indexOf('id="lr-pris"') < std.indexOf('id="lr-punkt-1"'), 'standard: tabellen före punkterna');
+  assert.doesNotMatch(std, /href="#lr-pris"/);
+});

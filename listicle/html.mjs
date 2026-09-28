@@ -262,7 +262,10 @@ ${lista.map((q) => `    <div class="lr-fraga">
 </section>`;
   })();
 
-  const punkter = (copy.punkter ?? []).map((p, i) => {
+  // Knappar med knapp_till: "tabell" hoppar ner till pristabellen (#lr-pris) i
+  // stället för till produktsidan (2026-09-28, svenska invändningssidan).
+  const tillTabell = (del) => copy.pristabell && del?.knapp_till === 'tabell';
+  const punktLista = (copy.punkter ?? []).map((p, i) => {
     const n = i + 1;
     const b = bild(`punkt${n}`);
     return `
@@ -272,11 +275,18 @@ ${lista.map((q) => `    <div class="lr-fraga">
     <div class="lr-kropp">
       <h2 class="lr-h2">${ikon(n)}<span>${rubrik(`punkt${n}.rubrik`)}</span></h2>
       <div class="lr-text">${stycken(text(`punkt${n}.text`))}</div>
-      ${knapp(text(`punkt${n}.knapp`), url)}
+      ${knapp(text(`punkt${n}.knapp`), tillTabell(p) ? '#lr-pris' : url)}
     </div>
   </div>
 </section>`;
-  }).join('\n');
+  });
+  // Pristabellens plats: copy.pristabell.efter_punkt = N lägger den direkt efter
+  // punkt N (Axels beslut 2026-09-28: priset ska inte stå före skälen att köpa).
+  // Utan fältet står den som förut, direkt efter hero (USA-sidan är fryst).
+  const efterPunkt = Number(copy.pristabell?.efter_punkt ?? 0);
+  if (efterPunkt > 0 && efterPunkt > punktLista.length) throw new Error(`renderaHtml: pristabell.efter_punkt ${efterPunkt} men bara ${punktLista.length} punkter.`);
+  const tabellForst = efterPunkt > 0 ? '' : pristabell;
+  const punkter = punktLista.map((h, i) => (efterPunkt === i + 1 ? `${h}${pristabell}` : h)).join('\n');
 
   const html = `<!-- Listicle (${htmlAv(k.id)}): ${htmlAv(namn)} · byggd ${datum} av listicle/bygg.mjs (repot yognftnfgn) -->
 ${stil === 'ingen' ? '' : `<style>
@@ -291,7 +301,7 @@ ${CSS}
       <h1 class="lr-h1">${rubrik('hero.rubrik')}</h1>
       <div class="lr-ingress">${stycken(text('hero.ingress'))}</div>
       <div class="lr-hero-rad">
-        <div>${knapp(text('hero.knapp'), url)}</div>
+        <div>${knapp(text('hero.knapp'), tillTabell(copy.hero) ? '#lr-pris' : url)}</div>
         <div class="lr-forfattare">
           ${bildTag(bild('hero'), b.forfattare)}
           <div>
@@ -304,7 +314,7 @@ ${CSS}
     </div>
     <div></div>
   </div>
-</section>${pristabell}
+</section>${tabellForst}
 ${punkter}${fragor}
 <section class="lr-slut">
   <div class="lr-inre">

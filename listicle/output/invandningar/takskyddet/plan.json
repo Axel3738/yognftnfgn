@@ -1,5 +1,5 @@
 {
-  "byggd": "2026-09-28T14:42:24.477Z",
+  "byggd": "2026-09-28T15:49:33.821Z",
   "koncept": "invandningar",
   "punkter": 7,
   "datumrad": "2026-09-28",
@@ -202,14 +202,14 @@
       "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/takoverdrag-innan-du-koper-punkt2.jpg?v=1790606469",
       "width": 1024,
       "height": 1024,
-      "kalla": "kie → files"
+      "kalla": "kie (cachad 2026-09-28)"
     },
     {
       "plats": "punkt3",
       "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/takoverdrag-innan-du-koper-punkt3.jpg?v=1790606498",
       "width": 1024,
       "height": 1024,
-      "kalla": "kie → files"
+      "kalla": "kie (cachad 2026-09-28)"
     },
     {
       "plats": "punkt4",
@@ -237,7 +237,7 @@
       "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/takoverdrag-innan-du-koper-punkt6.jpg?v=1790606527",
       "width": 1024,
       "height": 1024,
-      "kalla": "kie → files"
+      "kalla": "kie (cachad 2026-09-28)"
     },
     {
       "plats": "punkt7",
@@ -270,28 +270,25 @@
     "mobil-sidfot": "/home/user/yognftnfgn/listicle/output/invandningar/takskyddet/forhandsvisning/mobil-sidfot.png"
   },
   "sida": {
-    "id": "630811675149793756",
+    "id": "631903025105052203",
     "namn": "Taköverdrag Husvagn & Husbil 5,5–13,5 m – Invändningarna (listicle)",
     "handle": "takoverdrag-innan-du-koper"
   },
   "publicerat": {
     "url": "https://carashell.se/pages/takoverdrag-innan-du-koper",
     "sidaId": "gid://shopify/Page/736246301004",
-    "skapad": true,
+    "skapad": false,
     "tema": {
       "id": "gid://shopify/OnlineStoreTheme/205487636812",
       "namn": "CaraShell – CRO v1",
-      "skrivna": [
-        "templates/page.listicle.liquid",
-        "assets/listicle.css"
-      ]
+      "skrivna": []
     },
     "oversattning": null,
     "kontroll": {
       "ok": true,
       "fel": [],
       "url": "https://carashell.se/pages/takoverdrag-innan-du-koper?country=SE",
-      "tecken": 111278
+      "tecken": 111250
     }
   },
   "bildUrler": [

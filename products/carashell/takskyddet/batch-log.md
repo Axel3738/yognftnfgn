@@ -2640,3 +2640,4 @@ Bilder: produktbild 1, 5, 4, 3, 8 + tre kie-bilder av KUNDENS tak utan överdrag
 regn, grönsvart tak under träd, alkovbil med solpanel och antenn). Studiobilden (2) används inte:
 den visar överdraget på en helintegrerad, vilket sidan säger att vi inte vet. Annonserna pekar
 INTE dit ännu — Axels klick.
+**Samma dag, Axels beslut:** tabellen flyttad från toppen till direkt under punkt 1 (`pristabell.efter_punkt: 1`); hero-knappen "Se priset för din längd →" och punkt 1:s knapp hoppar ner till tabellen. Skäl: 74 kommentarer om fukt mot 18 om storleken, och priset (upp till 2 239 kr) ska inte stå före skälen att köpa. Läst tillbaka som kund: tabellen mellan punkt 1 och 2, 9 rader.
