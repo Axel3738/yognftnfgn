@@ -35,7 +35,7 @@ triggers plus de sändsteg som bar felen. **Varje klick är tillbakaläst med `g
 | **F02 Övergiven kassa v2** | `f98eb12e-f7a2-4b0b-ae02-f738776b5282` | checkout, inget köp sedan; återinträde tidigast efter 7 d | 3 h, 1 d, 2 d | 0 |
 | F03 Webbhistorik (original) | `f9001da7-60cb-4742-bd5a-8d4397cfb0e6` | produktvisning | 4 h, 1 d | 1 |
 | **F04 Efter köp v3 (kredit)** | `3c8443d3-4916-40ad-b83e-5345c8752c2e` | order skapad, **inget återinträde** | **5 d** → "Din beställning är på väg" med KREDIT100 (Axels ändring 09:02 CEST, se nedan); mejl 2 "Kom allt fram som det ska" **AV** | 15 |
-| **F04 Levererat (kom allt fram)** | `0b2beeb0-5288-46cb-80a2-2845bd05b7c5` | **paketet levererat** (`order_delivered`) | 1 dygn, kl 10:00 | 0 — ⚠️ oprövat, se nedan |
+| **F04 Levererat (kom allt fram)** | `0b2beeb0-5288-46cb-80a2-2845bd05b7c5` | **paketet levererat** (`order_delivered`) | 1 dygn, kl 10:00 | 41 (mätt 2026-09-28 17:26 CEST) — fungerar, se nedan |
 | **F05 Vinna tillbaka v2** | `3ef1aab0-24b1-4c84-80a4-840f7a4cc637` | order, inget köp sedan | 120 d, 14 d | 0 |
 | **F07 Motorhölje till båtmotorskydd v2** | `98d46ff1-fb25-44b6-8916-2297198e5ea6` | order med Marin Motorhölje; hoppar den som redan köpt båtmotorskyddet | 21 d, 7 d | 0 |
 | F08 Tips bälteslip (original) | `c7dc0fb1-d866-48df-aecd-08657bf9ce06` | order med produkten | 21 d (Axels) | 6 |
@@ -67,17 +67,19 @@ tipsflödena och 22 d + 18:00 i F14 är Axels egna ändringar i appen 2026-09-26
 `isActive` står kvar true) — de inrullade fortsätter genom stegen. Ett mejl som inte får gå ut
 måste stängas av på sitt eget sändsteg. Det är därför tabellen ovan skiljer på trigger och steg.
 
-### ⚠️ F04 Levererat är oprövat
+### ✅ F04 Levererat fungerar (mätt 2026-09-28)
 
 Axels fråga 2026-09-27 ("vi kör väl triggern på att när paketet kommit fram?") gav ett eget
-flöde på `order_delivered` i stället för v3:s mejl 2 på dag 21. Händelsen har aldrig triggats i
-den här workspacen: spårningsrutinen (`/sparning`, varje timme :16) skriver leveransskanningarna
-in i Shopify som fulfillment-event, och Spoks ska läsa dem som levererat, men det är inte mätt
-(söndag 27/9 levereras inget, så 0 inrullade säger inget än). **Kontroll: `get_flow
-0b2beeb0-…` → `contactsEnrolledCount` ska stiga när måndagens leveranser skrivits in.** Står
-den kvar på 0 tisdag 29/9: slå på "Kom allt fram som det ska" i F04 Efter köp v3 igen (Axels
-klick, https://app.spoks.com/baverbutiken/flows/3c8443d3-4916-40ad-b83e-5345c8752c2e). Det
-steget går 16 d efter kreditmejlet, så ingen köpare hinner passera det under tiden.
+flöde på `order_delivered` i stället för v3:s mejl 2 på dag 21. Händelsen hade aldrig triggats i
+den här workspacen, och söndag 27/9 levererades inget, så 0 inrullade sade inget den dagen.
+**Mätt måndag 2026-09-28 17:26 CEST med `get_flow 0b2beeb0-…`: `contactsEnrolledCount` 41,
+41 väntar i dygnssteget, sändsteget `1a15ed11…` på (`isEnabled: true`), triggern aktiv.**
+Kedjan håller alltså: spårningsrutinen (`/sparning`, varje timme :16) skriver
+leveransskanningarna in i Shopify som fulfillment-event, och Spoks läser dem som
+`order_delivered`. Första "Kom allt fram som det ska" går tisdag 29/9 kl 10:00 (väntan 1 dygn,
+till kl 10:00). Mejl 2 i F04 Efter köp v3 förblir AV — inget att slå på. Vill du se att det
+faktiskt skickades: läs `finishedEnrollmentsCount` efter 29/9 10:00 (stod på 0 vid mätningen,
+vilket är rätt så länge alla 41 väntar).
 
 **Varför 5 dagar i F04 v3** (Axels fråga "säker på att tidshorisonten är rätt?"): ordern →
 skickad går inte att mäta härifrån (Shopify svarar 403 för ordrar i den här miljön), men
@@ -208,7 +210,7 @@ fick en **rättad kopia byggd inaktiv via MCP**; Axel slog på kopiorna 2026-09-
 | **F01 Välkomst v2** | `f11d04ab-1789-4a88-9abb-a3aaf6e4219d` | `491d1b99…`, `b1f70673…`, `03544d7c…` | E2 utan citaten (Karin/Erik), ny förhandstext; E3 utan "från beställning till dörren" och "jag svarar själv"; stegfilter på E2 och E3: inget köp ELLER köp före inrullningen |
 | **F02 Övergiven kassa v2** | `f98eb12e-f7a2-4b0b-ae02-f738776b5282` | `c9376a0b…`, `518fe1b7…`, `ee9050d8…` | E2: kassans varor (abandonedCart) i stället för "senast visade produkt", de tre frågorna besvarade; E3 "så svarar vi"; återinträde tidigast efter 7 dagar |
 | **F04 Efter köp v3 (kredit)** | `3c8443d3-4916-40ad-b83e-5345c8752c2e` | `46400d0d…`, `77dcaccd…` | E1: "skriv in paketnumret från leveransmejlet", villkoren en gång + "går inte ihop med andra rabatter", "så hjälper vi dig"; E2: rubriken "Tre prylar till att kika på" — **steget AV sedan 2026-09-27, ersatt av F04 Levererat**; **inget återinträde** (KREDIT100 är en gång per kund); väntan 5 d (Axel 2026-09-27) |
-| **F04 Levererat (kom allt fram)** | `0b2beeb0-5288-46cb-80a2-2845bd05b7c5` | `1a15ed11…` | nytt flöde: "Kom allt fram som det ska" på `order_delivered` + 1 dygn kl 10:00, i stället för dag 21 efter ordern (Axels idé 2026-09-27); oprövat, se ovan |
+| **F04 Levererat (kom allt fram)** | `0b2beeb0-5288-46cb-80a2-2845bd05b7c5` | `1a15ed11…` | nytt flöde: "Kom allt fram som det ska" på `order_delivered` + 1 dygn kl 10:00, i stället för dag 21 efter ordern (Axels idé 2026-09-27); fungerar — 41 inrullade första måndagen (2026-09-28), se ovan |
 | **F05 Vinna tillbaka v2** | `3ef1aab0-24b1-4c84-80a4-840f7a4cc637` | `dd221fc0…`, `e28604a8…` | E1: Bävertratten som belagt återköp + Marin Motorhölje och Fiskespöhållare i raden; E2: "Tre prylar till att kika på", Bävertratt i stället för adventskalendern |
 | **F07 Motorhölje till båtmotorskydd v2** | `98d46ff1-fb25-44b6-8916-2297198e5ea6` | `897f1a24…`, `1e016b67…` | E1: motsäger inte längre produktsidan ("skyddet går ända ner över riggen"); E2: "Mer för båten", utan spöhållaren (inte båtprodukt, Axel 2026-09-25) och utan påhittat "andra båtägare"; priserna som Spoks produktblock (följer Shopify) |
 | **F13 Tips sätesöverdrag v2** | `ecdbd45a-b271-4443-939b-41905042895f` | `c8a399d8…` | "Finns i flera färger" (bara grå och svart i lager) |
