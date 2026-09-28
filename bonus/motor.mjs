@@ -318,15 +318,140 @@ function commissionrader(uppdrag, personer, matningar) {
   return { rader, otilldelat };
 }
 
+// ------------------------------------------------------- utbetalningarna
+
 /**
- * Vilken halva av månaden en rad hör till: 'forsta' (1–15), 'andra' (16–sista)
- * eller 'manad' (commission och rader utan datum — de går inte att dela ärligt).
+ * Tre utbetalningar med tre takter (Axels beslut 2026-09-28), aldrig i en
+ * summa:
+ *   produkttest  varannan vecka — 1–15 betalas den 15:e, 16–sista betalas
+ *                sista dagen i månaden. Raden hamnar i den halva dess
+ *                bevisdatum ligger i; den 15:e hör till första halvan.
+ *   bonus        en gång i månaden: kundtjänst + Head of support, även
+ *                teamandelen. Delas aldrig på halvor.
+ *   commission   separat — räknad av commission-körningen på hela månadens
+ *                spend, samma siffra som topplistan.
+ * Programmet pekar ut sin utbetalning (`utbetalning` i regler.json). Saknas
+ * fältet räknas programmet som bonus: månadstakten är den försiktiga.
+ * Ersatte halvmånaderna från 2026-09-24, som delade ALLA rader på 1–15 och
+ * 16–slut — Axel: "bonusarna ska fortfarande vara varje månad".
  */
-export function halvaFor(rad, uppdrag = {}) {
-  if (rad.redanRaknad || uppdrag.kalla === 'commission') return 'manad';
-  const m = /^\d{4}-\d{2}-(\d{2})/.exec(String(rad.bevis?.datum ?? ''));
-  if (!m) return 'manad';
+export const STANDARD_UTBETALNINGAR = Object.freeze({
+  produkttest: { namn: 'Produkttest', takt: 'halvmanad' },
+  bonus: { namn: 'Bonus', takt: 'manad' },
+  commission: { namn: 'Commission', takt: 'manad' },
+});
+
+/** Utbetalningsdefinitionerna ur reglerna (utan kommentarsraden), annars standarden. */
+export function utbetalningsdefinitioner(regler) {
+  const ut = {};
+  for (const [id, def] of Object.entries(regler?.utbetalningar ?? {})) {
+    if (!def || typeof def !== 'object' || Array.isArray(def)) continue;
+    ut[id] = def;
+  }
+  return Object.keys(ut).length ? ut : { ...STANDARD_UTBETALNINGAR };
+}
+
+/** Vilken utbetalning ett uppdrag hör till: programmets `utbetalning`, annars bonus. */
+export function utbetalningFor(regler, uppdragId) {
+  for (const program of Object.values(regler?.program ?? {})) {
+    if ((program.uppdrag ?? []).some((u) => u.id === uppdragId)) return program.utbetalning ?? 'bonus';
+  }
+  return 'bonus';
+}
+
+/** Utbetalningens takt: 'halvmanad' eller 'manad'. Okänd utbetalning ⇒ månad. */
+export function taktFor(regler, utbetalningId) {
+  return utbetalningsdefinitioner(regler)[utbetalningId]?.takt === 'halvmanad' ? 'halvmanad' : 'manad';
+}
+
+/**
+ * Halvan en rad hör till: 'forsta' (1–15) eller 'andra' (16–sista). Bara
+ * meningsfullt för halvmånadsutbetalningar. En rad utan datum kan inte
+ * placeras och hamnar i andra halvan — den betalas då sist i månaden, aldrig
+ * före den tjänats.
+ */
+export function halvaFor(rad) {
+  const m = /^\d{4}-\d{2}-(\d{2})/.exec(String(rad?.bevis?.datum ?? ''));
+  if (!m) return 'andra';
   return Number(m[1]) <= 15 ? 'forsta' : 'andra';
+}
+
+/**
+ * Månadens två löneperioder med sina betaldagar: 1–15 betalas den 15:e,
+ * 16–sista betalas sista dagen i månaden. null om perioden inte är en månad.
+ */
+export function halvmanader(period) {
+  const manad = String(period?.fran ?? '').slice(0, 7);
+  const till = String(period?.till ?? '').slice(0, 10);
+  if (!/^\d{4}-\d{2}$/.test(manad) || !/^\d{4}-\d{2}-\d{2}$/.test(till)) return null;
+  return {
+    forsta: { fran: `${manad}-01`, till: `${manad}-15`, betalas: `${manad}-15` },
+    andra: { fran: `${manad}-16`, till, betalas: till },
+  };
+}
+
+/**
+ * Personens pengar per utbetalning, räknade ur raderna. Samma funktion för
+ * körningen och för sajten: en snapshot från före bygget saknar posten, och
+ * då räknar sidan fram den ur raderna på precis samma sätt.
+ * Halvmånad: forsta + andra = summa, alltid — det som inte ligger i första
+ * halvan ligger i andra (se halvaFor).
+ */
+export function utbetalningarFor(person, regler) {
+  const ut = {};
+  for (const [id, def] of Object.entries(utbetalningsdefinitioner(regler))) {
+    ut[id] = def.takt === 'halvmanad' ? { takt: 'halvmanad', forsta: 0, andra: 0, summa: 0 } : { takt: 'manad', summa: 0 };
+  }
+  for (const rad of person?.rader ?? []) {
+    const id = rad.utbetalning ?? utbetalningFor(regler, rad.uppdrag);
+    const post = ut[id] ?? (ut[id] = { takt: 'manad', summa: 0 });
+    const belopp = Number(rad.summa) || 0;
+    post.summa += belopp;
+    if (post.takt === 'halvmanad') {
+      const forsta = Number(rad.halvor?.forsta) || 0;
+      post.forsta += forsta;
+      post.andra += belopp - forsta;
+    }
+  }
+  const runda = (v) => Math.round(v * 100) / 100;
+  for (const post of Object.values(ut)) {
+    for (const k of ['forsta', 'andra', 'summa']) if (k in post) post[k] = runda(post[k]);
+  }
+  return ut;
+}
+
+/**
+ * Hela laget per utbetalning — kvittot på vad som betalas ut när. Bär
+ * definitionen (namn, takt, betaltext på båda språken) så att den sparade
+ * filen går att läsa för sig.
+ */
+export function summeraUtbetalningar(personer, regler) {
+  const ut = {};
+  for (const [id, def] of Object.entries(utbetalningsdefinitioner(regler))) {
+    ut[id] = def.takt === 'halvmanad'
+      ? { ...def, forsta: 0, andra: 0, summa: 0, personer: { forsta: 0, andra: 0 } }
+      : { ...def, summa: 0, personer: 0 };
+  }
+  for (const p of personer ?? []) {
+    for (const [id, mitt] of Object.entries(p.utbetalningar ?? {})) {
+      const post = ut[id];
+      if (!post) continue;
+      post.summa += Number(mitt.summa) || 0;
+      if (post.takt === 'halvmanad') {
+        post.forsta += Number(mitt.forsta) || 0;
+        post.andra += Number(mitt.andra) || 0;
+        if ((Number(mitt.forsta) || 0) > 0) post.personer.forsta += 1;
+        if ((Number(mitt.andra) || 0) > 0) post.personer.andra += 1;
+      } else if ((Number(mitt.summa) || 0) > 0) {
+        post.personer += 1;
+      }
+    }
+  }
+  const runda = (v) => Math.round(v * 100) / 100;
+  for (const post of Object.values(ut)) {
+    for (const k of ['forsta', 'andra', 'summa']) if (k in post) post[k] = runda(post[k]);
+  }
+  return ut;
 }
 
 // ------------------------------------------------------------ huvudräkningen
@@ -341,7 +466,7 @@ export function halvaFor(rad, uppdrag = {}) {
 export function raknaUt({ regler, personer = [], matningar = {}, insatser = [], period }) {
   const perPerson = new Map(personer.map((p) => [p.id, {
     id: p.id, namn: p.namn, roll: p.roll, extraRoller: p.extraRoller ?? [], valuta: regler.valuta ?? 'USD',
-    summa: 0, rader: [], program: null, programs: [], halvor: { forsta: 0, andra: 0, manad: 0 },
+    summa: 0, rader: [], program: null, programs: [],
   }]));
   const otilldelat = [];
   let recensionsTraffar = [];
@@ -356,7 +481,7 @@ export function raknaUt({ regler, personer = [], matningar = {}, insatser = [], 
     }
 
     for (const uppdrag of program.uppdrag ?? []) {
-      const u = { ...uppdrag, roller: program.roller ?? [] };
+      const u = { ...uppdrag, roller: program.roller ?? [], utbetalning: program.utbetalning ?? 'bonus' };
       let resultat = { rader: [], otilldelat: [] };
 
       switch (u.kalla) {
@@ -388,20 +513,23 @@ export function raknaUt({ regler, personer = [], matningar = {}, insatser = [], 
         const person = perPerson.get(r.personId);
         if (!person) continue;
         const fanns = person.rader.find((x) => x.uppdrag === u.id);
-        const post = fanns ?? { uppdrag: u.id, namn: u.namn, enhet: u.enhet, antal: 0, summa: 0, bevis: [] };
+        const post = fanns ?? { uppdrag: u.id, namn: u.namn, enhet: u.enhet, utbetalning: u.utbetalning, antal: 0, summa: 0, bevis: [] };
+        const belopp = Number(r.belopp) || 0;
         post.antal += 1;
-        post.summa += Number(r.belopp) || 0;
-        // Halvmånaderna (Josh 2026-09-24: "our pay cycle is bi-weekly — 1st–15th
-        // and 16th–31st"). En rad hamnar i den halva dess bevisdatum ligger i.
-        // Commission är en andel av HELA månadens spend och har inget eget
-        // datum per annons — den delas aldrig, den står som 'manad'.
-        const halva = halvaFor(r, u);
-        post.halvor = post.halvor ?? { forsta: 0, andra: 0, manad: 0 };
-        post.halvor[halva] += Number(r.belopp) || 0;
-        person.halvor[halva] += Number(r.belopp) || 0;
+        post.summa += belopp;
+        // Halvmånadsutbetalningen (produkttest): raden hamnar i den halva dess
+        // bevisdatum ligger i, med antal och belopp per halva. Månadsutbetalningar
+        // (bonus, commission) delas aldrig — de får inga halvor alls.
+        if (taktFor(regler, u.utbetalning) === 'halvmanad') {
+          const halva = halvaFor(r);
+          post.halvor = post.halvor ?? { forsta: 0, andra: 0 };
+          post.halvorAntal = post.halvorAntal ?? { forsta: 0, andra: 0 };
+          post.halvor[halva] += belopp;
+          post.halvorAntal[halva] += 1;
+        }
         if (post.bevis.length < 25) post.bevis.push(r.bevis);
         if (!fanns) person.rader.push(post);
-        person.summa += Number(r.belopp) || 0;
+        person.summa += belopp;
       }
       otilldelat.push(...resultat.otilldelat.map((o) => ({ ...o, program: programId })));
     }
@@ -419,25 +547,33 @@ export function raknaUt({ regler, personer = [], matningar = {}, insatser = [], 
         if (teamsumma <= 0) continue;
         const summa = teamsumma * (Number(uppdrag.belopp) || 0);
         chef.rader.push({
-          uppdrag: uppdrag.id, namn: uppdrag.namn, enhet: uppdrag.enhet, antal: team.length, summa,
+          uppdrag: uppdrag.id, namn: uppdrag.namn, enhet: uppdrag.enhet, utbetalning: program.utbetalning ?? 'bonus', antal: team.length, summa,
           bevis: team.filter((p) => p.summa > 0).map((p) => ({ vad: p.namn, text: `tjänade ${p.summa.toFixed(2)}`, datum: '', lank: '' })),
         });
         chef.summa += summa;
-        chef.halvor.manad += summa;
       }
     }
   }
 
   const avrunda = (h) => Object.fromEntries(Object.entries(h).map(([k, v]) => [k, Math.round(v * 100) / 100]));
   const ut = [...perPerson.values()]
-    .map((p) => ({ ...p, summa: Math.round(p.summa * 100) / 100, halvor: avrunda(p.halvor) }))
+    .map((p) => ({
+      ...p,
+      summa: Math.round(p.summa * 100) / 100,
+      rader: p.rader.map((r) => (r.halvor ? { ...r, halvor: avrunda(r.halvor) } : r)),
+      // Utbetalningarna räknas ur raderna — samma funktion sajten använder
+      // på en äldre snapshot, så de två kan aldrig säga olika saker.
+      utbetalningar: utbetalningarFor(p, regler),
+    }))
     .sort((a, b) => b.summa - a.summa);
 
   return {
     period,
+    halvmanader: halvmanader(period),
     valuta: regler.valuta ?? 'USD',
     personer: ut,
     summa: Math.round(ut.reduce((s, p) => s + p.summa, 0) * 100) / 100,
+    utbetalningar: summeraUtbetalningar(ut, regler),
     otilldelat,
     raknat: new Date().toISOString(),
   };
@@ -454,6 +590,7 @@ export function uppdragForRoll(regler, roll) {
       namn: program.namn,
       beskrivning: program.beskrivning,
       en: program.en ?? null,
+      utbetalning: program.utbetalning ?? 'bonus',
       uppdrag: program.uppdrag ?? [],
     });
   }

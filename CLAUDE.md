@@ -1243,12 +1243,30 @@ text att kopiera** (sv + en) och en veckoräknare "1 av 3".
 **Mätt 2026-09-21: 2 av 1 210 recensioner nämnde någon i teamet.** Den siffran
 står nu överst på sidan Recensioner.
 
-**Halvmånaderna på Min sida (2026-09-24, Joshs önskan — lönen går 1–15 och
-16–månadens slut):** motorn lägger `halvor: { forsta, andra, manad }` på varje
-person (`halvaFor` i `bonus/motor.mjs`, bevisdatumet avgör, den 15:e hör till
-första halvan). Commission (andel av spenden) och teamandelen räknas på hela
-månaden och står som `manad` — de delas aldrig på en påhittad nyckel. Mätt
-samma dag: Josh 1–15 $240, 16–30 $60, spend $50,94 = hans summa $350,94.
+**Utbetalningarna på sajten (Axels beslut 2026-09-28: "betalningar i
+tvåveckorsperioder, men bonusarna ska fortfarande vara varje månad …
+produkttesterna får betalt den 15:e och sista dagen i månaden … kommissionen
+separat") — ersatte halvmånaderna från 2026-09-24, som delade ALLA rader på
+1–15/16–slut:** tre utbetalningar med tre takter, aldrig i en summa.
+**Produkttest** (15 $/färdig produkt) betalas varannan vecka — raden hamnar i
+den halva bevisdatumet ligger i (den 15:e hör till första), 1–15 betalas den
+15:e och 16–sista betalas sista dagen i månaden. **Bonusarna** (kundtjänst +
+Head of support, även teamandelen) betalas en gång i månaden och delas
+aldrig. **Commission** (redigerarnas 0,4 %) räknas separat av
+commission-körningen och visas för sig. Definitionerna: `bonus/regler.json`
+→ `utbetalningar` (namn, takt, betaltext på båda språken) + `utbetalning`
+per program (saknas fältet ⇒ bonus). Motorn lägger `utbetalningar:
+{ produkttest: { forsta, andra, summa }, bonus: { summa }, commission:
+{ summa } }` på varje person, `utbetalning` (+ `halvor`/`halvorAntal` bara
+för halvmånad) på varje rad, och utfallet bär `halvmanader` (betaldagarna)
+och lagets summa per utbetalning — kvittot `bonus/utfall/<månad>.json` går
+att läsa för sig. Min sida visar ett kort per del ("Produkttest 1–15 ·
+Betalas den 15:e"), Bonus-sidan en tabell per del med vem som får vad; en
+person utan roll i ett program får inget kort för den utbetalningen. Vyn
+räknar aldrig om — men en snapshot från före bygget får uppdelningen ur
+raderna med motorns egen `utbetalningarFor`. Mätt 2026-09-28 på kvällens
+snapshot: Josh produkttest 1–15 $240, 16–30 $90, commission $60,88; Annabelle
+$240 / $30 / $30,70; ingen bonus till någon än.
 
 **Fyra regler som sitter i koden:**
 1. **Hellre okopplad än fel person** — två namn i samma recension betalar ingen.
