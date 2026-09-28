@@ -5,6 +5,9 @@
 //   node matstrumpor/marknader/annonser/bygg.mjs --marknad NO --skarpt --aktivera   # slår på det den själv byggt
 //   node matstrumpor/marknader/annonser/bygg.mjs --alla [--skarpt]       # alla kampanjer i marknader.json
 //   node matstrumpor/marknader/annonser/bygg.mjs --lage                  # läs läget i kontot
+//   node matstrumpor/marknader/annonser/bygg.mjs --marknad NO --skarpt --byt-video
+//       byter videon i annonser som redan finns när filen i klar/ har ändrats (ny creative,
+//       samma annons, fortfarande PAUSED). videor.json minns vilken fil varje annons bär.
 //
 // Läser marknader.json (kampanj, adset, geo, länk, budget, budgetbeslut) och <KOD>.json
 // (copy + en post per annons: namn, videofil relativt annonser/klar/, title, message,
@@ -16,6 +19,7 @@
 // PAUSED är ett beslut (CLAUDE.md). Kontonamnet läses tillbaka innan något skrivs.
 
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
 import { api, alla, laddaUppVideo, väntaPåThumb, ingaEnhancements, skapaAnnons } from '../../../tools/meta-lib.mjs';
@@ -25,7 +29,14 @@ const M = JSON.parse(readFileSync(join(ROT, 'marknader.json'), 'utf8'));
 const arg = process.argv.slice(2);
 const skarpt = arg.includes('--skarpt');
 const aktivera = arg.includes('--aktivera');
+const bytVideo = arg.includes('--byt-video');
 const log = (s) => console.log(s);
+// Vilken fil varje annons bär (sha256 av filen i klar/). Utan minnet går det inte att veta om en
+// annons redan har den nya videon — 2026-09-28 byttes speed-renderingarna mot precision.
+const VIDEOR = join(ROT, 'videor.json');
+const videor = existsSync(VIDEOR) ? JSON.parse(readFileSync(VIDEOR, 'utf8')) : {};
+const sha = (fil) => createHash('sha256').update(readFileSync(fil)).digest('hex');
+const sparaVideor = () => writeFileSync(VIDEOR, JSON.stringify(videor, null, 1) + '\n');
 
 /** Ren: får kampanjen aktiveras? Bara med ett budgetbeslut som är Axels och annonser som pekar rätt.
  *  ⛔ i budgetbeslutet (eller "tills Axel granskat") stoppar också: Axel 2026-09-27 kväll, "jag vill
@@ -81,16 +92,36 @@ async function byggMarknad(kod) {
   if (!A) log(`inga annonser: ${kod}.json saknas (copy skrivs av sonnet mot docs/copy-regler.md)`);
   else {
     const finns = adset ? await alla(`${adset.id}/ads`, { fields: 'id,name,status' }, 50) : [];
+    const spec = (an, videoId, thumb) => ({ page_id: M.sida, instagram_user_id: M.instagram_user_id,
+      video_data: { video_id: videoId, image_url: thumb, title: an.title, message: an.message, link_description: an.link_description, call_to_action: { type: 'SHOP_NOW', value: { link: k.lank } } } });
     for (const an of A.annonser) {
-      if (finns.find((x) => x.name === an.namn)) { log(`annons finns: ${an.namn}`); continue; }
       const fil = join(ROT, an.video);
+      const gammal = finns.find((x) => x.name === an.namn);
+      if (gammal) {
+        if (!bytVideo) { log(`annons finns: ${an.namn}`); continue; }
+        if (!existsSync(fil)) { log(`⚠️ ${an.namn}: videon saknas (${an.video}) — behåller den gamla`); continue; }
+        const hash = sha(fil);
+        if (videor[an.namn]?.sha256 === hash) { log(`annons finns med samma video: ${an.namn}`); continue; }
+        if (!skarpt) { log(`torrt: skulle byta videon i ${an.namn} (${gammal.id}) mot ${an.video}`); continue; }
+        const videoId = await laddaUppVideo(act, fil);
+        const thumb = await väntaPåThumb(videoId);
+        const creative = await api(`act_${act}/adcreatives`, { form: { name: an.namn, object_story_spec: JSON.stringify(spec(an, videoId, thumb)), degrees_of_freedom_spec: JSON.stringify(ingaEnhancements()) } });
+        await api(gammal.id, { form: { creative: JSON.stringify({ creative_id: creative.id }) } });
+        const las = await api(gammal.id, { params: { fields: 'status,creative{id}' } });
+        if (las.creative?.id !== creative.id) throw new Error(`${an.namn}: creative byttes inte (läst ${las.creative?.id}, ville ${creative.id})`);
+        videor[an.namn] = { sha256: hash, fil: an.video, video_id: videoId, creative_id: creative.id, annons_id: gammal.id, bytt: new Date().toISOString() };
+        sparaVideor();
+        log(`✅ ny video i ${an.namn} (${gammal.id}): creative ${creative.id}, status ${las.status}`);
+        continue;
+      }
       if (!existsSync(fil)) { log(`⚠️ ${an.namn}: videon saknas (${an.video}) — hoppar`); continue; }
       if (!skarpt || !adset) { log(`torrt: skulle ladda upp ${an.video} och skapa ${an.namn} (PAUSED) → ${k.lank}`); continue; }
+      const hash = sha(fil);
       const videoId = await laddaUppVideo(act, fil);
       const thumb = await väntaPåThumb(videoId);
-      const spec = { page_id: M.sida, instagram_user_id: M.instagram_user_id,
-        video_data: { video_id: videoId, image_url: thumb, title: an.title, message: an.message, link_description: an.link_description, call_to_action: { type: 'SHOP_NOW', value: { link: k.lank } } } };
-      const r = await skapaAnnons({ act, adsetId: adset.id, namn: an.namn, spec, enhancements: ingaEnhancements() });
+      const r = await skapaAnnons({ act, adsetId: adset.id, namn: an.namn, spec: spec(an, videoId, thumb), enhancements: ingaEnhancements() });
+      videor[an.namn] = { sha256: hash, fil: an.video, video_id: videoId, creative_id: r.creativeId, annons_id: r.annonsId, skapad: new Date().toISOString() };
+      sparaVideor();
       log(`✅ annons ${an.namn}: ${r.annonsId} PAUSED`);
     }
   }

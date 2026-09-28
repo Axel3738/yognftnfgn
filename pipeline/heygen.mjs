@@ -88,7 +88,7 @@ export async function getTranslateStatus(id) {
 // ⚠️ Läget (mode) — Axels regel 2026-09-27: UGC översätts ALLTID med HeyGens dyraste
 // version. Den här funktionen gick till 2026-09-28 mot v2-endpointen utan läge, och då
 // blev det HeyGens standard "speed". API:t har ett dyrare läge, "precision" (avatar-
-// inferens, "context- and gender-aware" översättning, tydligt bättre läppsynk), som
+// inferens, "context- and gender-aware" översättning och bättre läppsynk enligt HeyGen), som
 // repot aldrig använde — upptäckt när 24 av Matstrumpors videor (åtta marknader) redan
 // renderats i speed.
 // Standard är därför "precision"; "speed" måste väljas uttryckligen. v3-endpointen
