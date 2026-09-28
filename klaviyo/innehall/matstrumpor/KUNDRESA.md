@@ -167,3 +167,10 @@ förturen, inte rabatten.
    Klubbdragningen. **Förturen (punkt 1) är inte definierad än:** vad förra säsongens
    köpare får FÖRST (Black Week ett dygn tidigare? restock? sista beställningsdagen?) är
    Axels ord, och F01 E1 skrivs inte om förrän det är sant.
+6. **Byggt 2026-09-28, dagliga serien till fars dag (Axels order "kampanjer varje dag …
+   10 stycken minst"):** 23 kampanjutkast i Spoks, FD01–FD20 + REA01–REA03, 30/9–25/10, som
+   tillsammans med K01–K04 ger **ett mejl om dagen 29/9–25/10** fram till sista
+   beställningsdagen. Punkt 4 ovan är därmed delvis löst: **FD10 går till
+   `SEG_kopare_forra_sasongen` redan 12/10**, två veckor före K05. Inget schemalagt: publik
+   och Schedule per mejl är Axels klick. Schemat med länkar i `KALENDER-2026.md` → Dagliga
+   serien; id:n, faktakollen och stoppregeln i `klaviyo/spoks/README.md` → Dagliga serien.

@@ -1,0 +1,66 @@
+{
+  "id": "fd08-sa-reagerade-de",
+  "namn": "MAIL_20261010_FarsDag_GT_2_samtycke_product_sa-reagerade-de_v1",
+  "memo": "Hypotes: K03 bevisade att riktiga kunders ord fungerar bättre än AI-klipp (dna.md, döda koncept), men gick bara till nykomlingar i uppvärmningen. Kopplat till fars dag och riktat mot den som ska välja en låda åt pappa kan samma bevis sänka tveksamheten just för det köpet, utan en enda ny siffra. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28).",
+  "taggar": {
+    "typ": "I",
+    "kalla": "egen-data",
+    "kalla_ref": "klaviyo/output/matstrumpor/recensioner.json + klaviyo/innehall/matstrumpor/kampanjer/k03-kundernas-ord.json",
+    "lardom": null,
+    "avatar": "presentkoparen (till pappa)",
+    "begar": "veta att mottagaren av presenten till pappa blir glad",
+    "awareness": "product",
+    "urgency": "ingen",
+    "confidence": "medium",
+    "prefix": "FarsDag",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    { "text": "Så här skrev de om lådan till pappa", "begar": "läsa vad tidigare köpare faktiskt skrev" },
+    { "text": "Mottagaren blev glad, det skriver kunderna", "begar": "få ett bevis på att mottagaren blir glad" },
+    { "text": "Läs recensionerna innan du väljer till pappa", "begar": "minska risken innan man väljer present till pappa" }
+  ],
+  "forhandstext": "4,5 av 5 i snittbetyg. Deras egna ord, inte våra.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Riktiga ord om lådan till pappa",
+      "text": "Hej {{fornamn}},\n\nInnan du väljer en låda till pappa kan det vara bra att se vad andra köpare tyckte.\n\n4,5 av 5 i snittbetyg, i deras egna ord.",
+      "bild": "produkt:sushi-strumpor",
+      "knapp": { "text": "Läs recensionerna om sushilådan", "lank": "produkt:sushi-strumpor" }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Åtta recensioner finns i dag. Fem har högsta betyg."
+    },
+    { "typ": "citat", "handle": "sushi-strumpor", "antal": 2 },
+    {
+      "typ": "produkt",
+      "handle": "sushi-strumpor",
+      "text": "Samma låda, nu till pappa.",
+      "knapp": "Till sushilådan"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Pizza, hamburgare eller donut, till honom",
+      "handles": ["pizza-strumpor", "hamburger-strumpor", "donut-strumpor"]
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "Så här skrev de om lådan till pappa", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Mottagaren blev glad, det skriver kunderna", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Läs recensionerna innan du väljer till pappa", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "4,5 av 5 i snittbetyg. Deras egna ord, inte våra.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Riktiga ord om lådan till pappa", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Läs recensionerna om sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Till sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Pizza, hamburgare eller donut, till honom", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-10-10T18:00:00+02:00",
+  "segment": ["SEG_samtycke"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "kraver-axel",
+  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28)."
+}

@@ -1,0 +1,65 @@
+{
+  "id": "fd10-forra-aret-jul-i-ar-fars-dag",
+  "namn": "MAIL_20261012_FarsDag_GT_4_kopareforrasasongen_solution_forra-aret-jul-i-ar-fars-dag_v1",
+  "memo": "Hypotes: den här listan köpte redan en gång, mellan november 2025 och mars 2026, nästan säkert till jul (sushin är 92 % av strumpenheterna, dna.md). Fars dag är ett nytt köptillfälle för samma köpare, och hamburgarlådan ger dem en annan sort än den de troligen redan gett bort. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28).",
+  "taggar": {
+    "typ": "N",
+    "kalla": "egen-data",
+    "kalla_ref": "klaviyo/evolve/ATERKOP-ANALYS-matstrumpor.md + klaviyo/brands/matstrumpor.json#kalender",
+    "lardom": null,
+    "avatar": "presentkoparen (till pappa)",
+    "begar": "ge pappa en present utan att upprepa julklappen",
+    "awareness": "solution",
+    "urgency": "ingen",
+    "confidence": "medium",
+    "prefix": "FarsDag",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    { "text": "Förra gången jul, den här gången fars dag", "begar": "förstå att lådan passar ett nytt tillfälle" },
+    { "text": "Den här gången, prova hamburgaren i stället", "begar": "få ett konkret förslag på en ny sort" },
+    { "text": "Du köpte i vintras, nu är det pappas tur", "begar": "känna igen sig som återkommande kund" }
+  ],
+  "forhandstext": "En annan sort den här gången: hamburgaren.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Förra gången jul. Den här gången fars dag.",
+      "text": "Hej {{fornamn}},\n\nDu köpte en låda i vintras, förmodligen sushi till julklapp.\n\nDen här gången handlar det om fars dag den 8 november. Hamburgaren är en annan sort att ge bort.",
+      "bild": "produkt:hamburger-strumpor",
+      "knapp": { "text": "Se hamburgarlådan", "lank": "produkt:hamburger-strumpor" }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Lådan är samma trick som förra gången: den ser ut som mat tills den öppnas."
+    },
+    {
+      "typ": "produkt",
+      "handle": "hamburger-strumpor",
+      "text": "Två par strumpor, vikta som en hamburgare, i en egen låda.",
+      "knapp": "Till hamburgarlådan"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Eller sushi, pizza och donut",
+      "handles": ["sushi-strumpor", "pizza-strumpor", "donut-strumpor"]
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "Förra gången jul, den här gången fars dag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Den här gången, prova hamburgaren i stället", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Du köpte i vintras, nu är det pappas tur", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En annan sort den här gången: hamburgaren.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Förra gången jul. Den här gången fars dag.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se hamburgarlådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Till hamburgarlådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Eller sushi, pizza och donut", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-10-12T18:00:00+02:00",
+  "segment": ["SEG_kopare_forra_sasongen"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "kraver-axel",
+  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28)."
+}

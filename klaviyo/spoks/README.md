@@ -870,3 +870,88 @@ upp i redigeraren → Review → skicka (Axels ord 2026-09-27 kväll: "skicka ut
 idag faktiskt till alla tidigare kunder" — SEG_kopare är köparna med samtycke; "alla kunder"
 inklusive dem utan samtycke är hans MFL-beslut, se `CLAUDE.md` → Klaviyo, kampanjer bara
 subscribed); ✅ (3) F09: påslaget 2026-09-27 14:16 UTC, mätt (se ovan).
+
+## Dagliga serien till fars dag — FD01–FD20 + REA01–REA03 (byggd 2026-09-28, 23 utkast, inget schemalagt)
+
+Axels order 2026-09-28, ordagrant: "BARA SPAMMAR mina kunder … kampanjer varje dag med produkter
+skräddarsydda för våra kunder … REA mail för den pågående rean … massa fars dag kampanjer …
+10 stycken minst." Tolkning: **Matstrumpor.** Bäverbutikens dagliga serie byggs av en annan
+session samma dag (spåren i Spoks-ytan `f716ae36-…`: segmentet "Köpare båt",
+`BRIEFER-DAGLIGA.md`, K24 2/10 … K34 17/10) — rör aldrig den ytan härifrån, då blir det
+dubbletter. **"Rean" på Matstrumpor är det stående erbjudandet Köp 1, få 1** (18 aktiva
+BOGO-koder som läggs på av produktsidan): mejlen säger "det står på produktsidan", aldrig en
+kod, och erbjudandet tar aldrig slut ⇒ den enda brådskan i serien är sista beställningsdagen
+**lör 24/10** (fars dag sön 8/11, p90 15 dygn, brandfilens `kalender`).
+
+**Vad som finns.** 23 innehållsfiler i `klaviyo/innehall/matstrumpor/kampanjer/` (`fd01…fd20`,
+`rea01…rea03`; samma block som k04: hero med förnamnet, text, produkt, produktrad, fakta;
+`exkludera SEG_oengagerade_180d`; `status_plan kraver-axel`), copyn av sex Sonnet-subagenter mot
+`docs/copy-regler.md` (regel 6), byggda med `node klaviyo/bygg.mjs --brand matstrumpor` (0 fel,
+bara ämneslängdsvarningar), paketerade med `spoks-paket.mjs --brand matstrumpor --offline`
+(titeln `FD01 · 30/9 · samtycke · <ämne>`; `KORT` läser prefixet ur id:t sedan samma dag) och
+uppladdade som **23 utkast** via `draft_campaign` 2026-09-28 11:36–16:48 UTC. Tillbakalästa
+med `search_campaigns` (status draft, nyast först): exakt 23 FD/REA-titlar, inga dubbletter.
+Loggen: 23 rader i `klaviyo/konto/matstrumpor/spoks-uppladdat.jsonl` (id, hash, planerad dag,
+segment). **Schemat med länkar: `klaviyo/innehall/matstrumpor/KALENDER-2026.md` → Dagliga
+serien.** Tillsammans med tisdagarna K01–K04 (serien hoppar 6/10, 13/10 och 20/10 med flit) blir
+det **ett mejl om dagen 29/9–25/10, 27 dagar utan lucka.**
+
+| Kort | Dag | Segment | Spoks-id |
+|---|---|---|---|
+| FD01 | ons 30/9 | samtycke | `fe8c9abf-4cbe-41fc-aaca-1d4400717049` |
+| FD02 | tor 1/10 | samtycke | `4f1d87cf-633d-4ddd-870a-6710e73d7d59` |
+| REA01 | fre 2/10 | samtycke | `411d7f9e-a68b-4b69-a07b-4a9d32bb8b1d` |
+| FD03 | lör 3/10 | samtycke | `f915735d-7f9d-41d5-b658-cddb15e02e20` |
+| FD04 | sön 4/10 | samtycke | `35eda39a-52a8-4c72-8879-dabf3ef28b6e` |
+| FD05 | mån 5/10 | samtycke | `11247ac0-87cf-4b4a-9c52-73e705aeef31` |
+| FD06 | ons 7/10 | samtycke | `19db626c-e88e-4900-bb19-c2e5ca196144` |
+| FD07 | tor 8/10 | samtycke | `df000c31-0eb7-4572-b4c0-4891a53df843` |
+| REA02 | fre 9/10 | samtycke | `9d41c29d-d7e4-42c7-aaaa-b8f49f17da12` |
+| FD08 | lör 10/10 | samtycke | `f4696d2a-8358-4fcd-a67a-4b5ac280c0d5` |
+| FD09 | sön 11/10 | samtycke | `5317562c-2e88-4549-a23e-13329494c9a3` |
+| FD10 | mån 12/10 | **kopare_forra_sasongen** | `f7e75509-9397-4ed6-bfb3-aabec4f0ea63` |
+| FD11 | ons 14/10 | samtycke | `9a8e6ea5-f889-4df1-8109-ca5f665908ed` |
+| FD12 | tor 15/10 | **kopare** | `69506961-866a-4f47-bb09-6c503672f9d8` |
+| REA03 | fre 16/10 | samtycke | `45aabe88-d6c9-490d-a634-2ddfb936aeb0` |
+| FD13 | lör 17/10 | samtycke | `f68abd56-a4bb-4608-b5ea-610375ca6e05` |
+| FD14 | sön 18/10 | **ej_kopt** | `faaafae6-7469-4251-9dfe-0fb88588c461` |
+| FD15 | mån 19/10 | samtycke | `656f890e-5629-431d-9efa-5f6ef55a95dd` |
+| FD16 | ons 21/10 | samtycke | `56fb1045-5139-4d04-bb52-f2fd704c7d10` |
+| FD17 | tor 22/10 | samtycke | `a2529b5a-c43b-4fc3-bc1e-5fbe2f5e9f59` |
+| FD18 | fre 23/10 | samtycke | `ea849786-ea60-43bc-8d8b-cc6ca4eceea8` |
+| FD19 | lör 24/10 **09:00** | samtycke | `b91692ad-d7ab-4e71-b8db-1799f97af346` |
+| FD20 | sön 25/10 | samtycke | `385b6fc9-f41c-43c3-bb02-96bd0970b849` |
+
+**Skräddarsytt per segment där segment finns** (Spoks-storlekar vid bygget): FD10 till
+`SEG_kopare_forra_sasongen` (2 396: "förra gången jul, den här gången fars dag" — så är
+KUNDRESA §7 punkt 4, "börja tidigare med förra årets köpare", delvis löst två veckor före K05),
+FD12 till `SEG_kopare` (2 700: "du har redan sushin, ge pappa pizzan"), FD14 till `SEG_ej_kopt`
+(300). Kategorisegmenten (sushi 105, pizza 3, hamburgare 2, donut 9) är för små för egna mejl,
+så sorterna får varsin dag till hela listan i stället (FD03 pizza, FD04 burgare, FD05 donut, FD16
+burgare, REA03 donut). Övriga tjugo går till `SEG_samtycke` (3 000). Vinklarna är olika varje
+dag: mottagaren (pappa, barnen, svärfar, farfar/morfar, pappan som har allt), sorten,
+kundcitaten (FD08), Köp 1, få 1 (REA01–03, FD11), nedräkningen (FD09, FD13, FD15–FD19) och
+presentkortet dagen efter sista dagen (FD20).
+
+**Faktakollen som rättade agenterna — skriv aldrig om dem:** par per låda är **sushi 5, pizza
+4, hamburgare 2, donut 3** (två agenter skrev "fem" på pizza och donut); **ätpinnar är INTE
+lådans innehåll** (de finns bara på foton och i BOGO-kodnamnen), tre ätpinnelöften strukna;
+fd09 "äkta pizzakartong" ⇒ "ser ut som en pizzakartong"; fd20 påstår inte att en låda beställd
+25/10 missar fars dag, bara att den "kan komma fram efter"; `klaviyo/validera.mjs`
+`ANDRA_VERKSAMHETER` stoppar ordet "grill" (Grillkliniken-spärren) — fd03/fd04 skrevs om utan
+grillord och fd04 heter `burgarpappan`; spärren är kvar med flit. Leveranstiden står aldrig i
+ett mejl; sushin har inget jämförpris så ingen "rea" på sushin; butikens namn står inte i copyn.
+
+**Guardrails:** inget schemalagt, inget skickat — **publik och Schedule per mejl är Axels klick
+i appen** (MCP:n kan varken välja publik eller schemalägga). Bara segment med samtycke (MFL
+19 §). Klaviyo-utkasten i `UV6Rqg` rörs inte. Sessionen raderar aldrig ett utkast.
+
+**Förslag på stoppregel (Axels beslut, inte inskrivet någonstans än):** ett mejl om dagen till
+3 000 personer är cirka 70 000 mejl på fyra veckor. Läs `get_campaign_statistics` per utskick
+dagen efter: **avanmälningar över 0,5 % på ett utskick, eller ett enda spamklagomål ⇒ hoppa
+över nästa dag och gå ner till varannan dag**; två utskick i rad utan en enda order ⇒ byt vinkel
+innan nästa. Öppningsgraden fäller aldrig en dom ensam (Evolve/Billy). Måttet är ordrar och
+avanmälningar, aldrig öppningar.
+
+**Kvar / nästa:** Veckans dragning-blocket hör till tisdagarna (K02 6/10 först), inte till de
+dagliga; K16 förtur + F01 E1 v4 (KUNDRESA §7); K15 kvar att skicka (Recensionerna ovan).

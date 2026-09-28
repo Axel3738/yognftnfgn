@@ -1,0 +1,65 @@
+{
+  "id": "rea02-alla-fyra-sorter",
+  "namn": "MAIL_20261009_Rea_GT_1_samtycke_promo_alla-fyra-sorter_v1",
+  "memo": "Hypotes: 90 av 110 ordrar bär exakt två strumpprodukter (dna.md), men copyn har hittills bara visat sushi mot sushi. Att säga rakt ut att köp 1, få 1 gäller sushi, pizza, hamburgare och donut, inte bara sushin, kan få den som redan bestämt sig för en sushilåda till pappa att lägga den andra lådan på en ny sort i stället för att ta sushi igen. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28).",
+  "taggar": {
+    "typ": "I",
+    "kalla": "egen-data",
+    "kalla_ref": "products/matstrumpor/dna.md:22-23 + klaviyo/innehall/matstrumpor/kampanjer/k07-tva-lador-tva-personer.json",
+    "lardom": null,
+    "avatar": "presentkoparen",
+    "begar": "få välja fritt mellan alla sorter",
+    "awareness": "promo",
+    "urgency": "ingen",
+    "confidence": "medium",
+    "prefix": "Rea",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    { "text": "Köp 1, få 1 gäller alla fyra sorterna", "begar": "veta att erbjudandet gäller mer än sushin" },
+    { "text": "En till pappa, en till någon annan", "begar": "få ett konkret exempel på vem den andra lådan är till" },
+    { "text": "En beställning, fyra sorter att blanda", "begar": "kunna blanda sorter i samma köp" }
+  ],
+  "forhandstext": "Sushi, pizza, hamburgare eller donut, du väljer själv.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Köp 1, få 1, i alla fyra sorterna",
+      "text": "Hej {{fornamn}},\n\nKöp 1, få 1 gäller sushi, pizza, hamburgare och donut.\n\nEn låda till pappa, en till någon annan. Det står på produktsidan.",
+      "bild": "produkt:sushi-strumpor",
+      "knapp": { "text": "Se sushilådan", "lank": "produkt:sushi-strumpor" }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Sushi är storsäljaren, men pizza, hamburgare och donut funkar precis lika bra som present nummer två. Du väljer själv vilka två som blir dina."
+    },
+    {
+      "typ": "produkt",
+      "handle": "sushi-strumpor",
+      "text": "Fem par strumpor rullade som sushi, i en låda som ser ut som takeaway.",
+      "knapp": "Till sushilådan"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Pizza, hamburgare och donut, samma trick",
+      "handles": ["pizza-strumpor", "hamburger-strumpor", "donut-strumpor"]
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "Köp 1, få 1 gäller alla fyra sorterna", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En till pappa, en till någon annan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En beställning, fyra sorter att blanda", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sushi, pizza, hamburgare eller donut, du väljer själv.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Köp 1, få 1, i alla fyra sorterna", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Till sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Pizza, hamburgare och donut, samma trick", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-10-09T18:00:00+02:00",
+  "segment": ["SEG_samtycke"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "kraver-axel",
+  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28)."
+}
