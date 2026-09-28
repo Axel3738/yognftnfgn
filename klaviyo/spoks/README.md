@@ -836,6 +836,26 @@ omdöme." Gjort samma förmiddag:
   VÅRT recensionsmejl ska skrivas och skickas — svarsgrad på gamla köpare, ordval som får
   missnöjda att skriva, ämnesrader, struktur, stjärnor mot knapp, timing för en present.
 
+**Bästa praxis för recensionsmejlet (research 2026-09-28, Judge.me/Trustpilot/Yotpo/Okendo/NN
+g + Karaman 2021; hela underlaget i sessionens workflow-utdata, sammanfattat här):** 50–100
+ord, från en namngiven person och helst en riktig avsändaradress, förnamn i tilltalet, en enda
+uppmaning och inget annat klickbart (inga produktkort, ingen rabatt), en mening om varför
+(nästa kund läser det, vi lär oss), säg rakt ut att ett dåligt omdöme är lika välkommet, bjud
+in ALLA lika (ingen förhandssållning på nöjdhet: Trustpilots riktlinjer, UCPD bilaga I 23c /
+MFL 8 §), publicera allt och svara offentligt på det dåliga. Stjärnor i mejlet tar bort
+friktion men ska kallas "klicka för att börja", aldrig "det här är ditt betyg". Första
+förfrågan räknas från LEVERANSEN, några dagar efter att paketet kommit (för Matstrumpor:
+order + 18–21 dagar, eller `order_delivered` + 5–7 d), sedan EN påminnelse 3–7 dagar senare
+till dem som inte klickat, sedan stopp. Mät på inskickade recensioner, aldrig på öppningar.
+**K15 v2 mot listan:** klarar ord, avsändare, en uppmaning, inget klickbart, ärlighetsraden,
+alla lika, stjärnornas hjälprad. Avvikelser: mejlet nämner inte vilken låda kunden köpte
+(Spoks har ingen produkttoken i en kampanj) och går till gamla köpare i ett svep (Axels
+beslut). **F09 mot listan:** 16 d efter order är tidigt när leveransens p90 är 15 dygn — en
+v2 med 21 d (eller `order_delivered` + 7 d) är nästa justering när Axel vill, inte nu.
+⚠️ MFL 12 c §: en butik som visar recensioner måste på sajten säga hur den säkerställer att
+de kommer från riktiga köpare (Judge.me:s verifiering). Om matstrumpor.se säger det är inte
+kontrollerat.
+
 **Sidoeffekt att hålla koll på:** klubbdragningens 0-kronorsorder är en `order_created` ⇒
 vinnaren rullar också in i F09 efter 16 dygn (och i F04/F07). Rimligt, de har fått lådan, men
 räkna med det när recensionerna mäts. Vill Axel undvika det: triggerfilter `orderTags nin
