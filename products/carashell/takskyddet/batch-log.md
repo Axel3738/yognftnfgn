@@ -2530,3 +2530,26 @@ annonser, inte bättre än snittet som i går. Fyra ACTIVE annonser som
 
 **Briefronden:** pausad sedan 2026-09-18 (Axels beslut) — inga briefer skrivna,
 bara `kord` stämplad.
+
+## Marknadsvakten 2026-09-28 08:33 CEST — första natten med bara flödet
+
+**Facit på läckan (svaret på "läs morgondagens siffra" ovan):** dygnet 28/9
+(kontots tid, UK) fram till 07h UK: **1 050 kr, allt i flödet** — Facebook-flödet
+962 kr, Instagram-flödet 79 kr, "unknown" 9 kr — 0 köp än, USA sover. **Noll
+kronor i Stories, Reels eller något annat.** Dygnet 27/9 slutade på 22 963 kr:
+Instagram Stories 16 665 kr / 0 köp (16 654 vid 13:30 CEST — de 11 kr och 130
+visningarna är efterrapportering, inte leverans), Facebook-flödet 5 321 kr /
+4 köp / ROAS 2,21, Instagram-flödet 773 kr / 0 köp; småposterna på Reels,
+Marketplace, Audience Network m.m. (≈205 kr) låg före bytet. Efter bytet
+12:32 UK gick ~5 000 kr, allt i flödet.
+
+**Leveransen kom igång 01:00 CEST** som väntat: 215 / 220 / 181 / 187 / 120 /
+69 / 47 kr per timme från 00h UK. Budget 8 000 kr/dag, kampanjen ACTIVE, 12 av
+12 adsets oförändrade sedan 11:32 UTC 27/9 (flödet på Facebook + Instagram).
+Sidorna som amerikansk kund: startsida, listiclen, produktsidan och kassan
+engelska med United States förvalt, 0 svenska rader. Inget larm i Discord,
+inget rättat.
+
+**US-rutinen 17:05 CEST 27/9 körde steg 6b** (commit `19bcd50`: 12 av 12,
+sidorna engelska). Vakten går alltså varje dag där; morgonkollen här var
+sessionens egen uppföljning på första natten och behövs inte igen.
