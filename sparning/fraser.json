@@ -144,6 +144,7 @@
   "delivered_to_locker": "Paketet är inlagt i paketboxen",
   "sorted_at_terminal": "Paketet är sorterat på terminalen",
   "processing at sort facility": "Paketet hanteras på sorteringsterminalen",
+  "processing at facility": "Paketet hanteras på terminalen",
   "handed over to the recipient": "Paketet är överlämnat till dig",
   "first arrival notification sent": "Du har fått en avi om att paketet finns att hämta",
   "ready to be collected": "Paketet finns att hämta",
