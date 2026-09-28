@@ -1,0 +1,65 @@
+{
+  "id": "fd13-en-vecka-kvar",
+  "namn": "MAIL_20261017_FarsDag_GT_8_samtycke_solution_en-vecka-kvar_v1",
+  "memo": "Hypotes: exakt en vecka (lördag 17/10 till lördag 24/10) är en sann, enkel milstolpe som tål en lugn påminnelse utan att dramatisera datumet ytterligare, i kontrast till rea03:s fredagston dagen innan. Ingen ny mekanik eller vinkel, bara räkningen, ärligt satt utan påhittad brådska. Källa: klaviyo/brands/matstrumpor.json#kalender.",
+  "taggar": {
+    "typ": "S",
+    "kalla": "egen-data",
+    "kalla_ref": "klaviyo/brands/matstrumpor.json#kalender",
+    "lardom": null,
+    "avatar": "presentkoparen (till pappa)",
+    "begar": "veta exakt hur mycket tid som är kvar, utan att stressas",
+    "awareness": "solution",
+    "urgency": "konsekvens",
+    "confidence": "medium",
+    "prefix": "FarsDag",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    { "text": "Exakt en vecka kvar till 24 oktober", "begar": "veta exakt hur många dagar som är kvar" },
+    { "text": "24 oktober är sista dagen att beställa till fars dag", "begar": "få det exakta datumet svart på vitt" },
+    { "text": "Sju dagar kvar, gott om tid att välja sort", "begar": "känna att det finns tid att välja rätt sort utan stress" }
+  ],
+  "forhandstext": "En vecka till 24 oktober. Ingen anledning att stressa än.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Sju dagar kvar till sista beställningsdagen",
+      "text": "Hej {{fornamn}},\n\nI dag är det lördag 17 oktober. Sista dagen att beställa till fars dag är lördag 24 oktober, exakt en vecka bort.\n\nIngen brådska än, bara en påminnelse medan det finns gott om tid att välja sort.",
+      "bild": "produkt:sushi-strumpor",
+      "knapp": { "text": "Se sushilådan", "lank": "produkt:sushi-strumpor" }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Det här är bara en påminnelse om datumet, ingen ny regel."
+    },
+    {
+      "typ": "produkt",
+      "handle": "sushi-strumpor",
+      "text": "Fem par, klara att skickas i god tid till fars dag.",
+      "knapp": "Till sushilådan"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Om pappa hellre vill ha en annan sort",
+      "handles": ["hamburger-strumpor", "pizza-strumpor", "donut-strumpor"]
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "Exakt en vecka kvar till 24 oktober", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "24 oktober är sista dagen att beställa till fars dag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sju dagar kvar, gott om tid att välja sort", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En vecka till 24 oktober. Ingen anledning att stressa än.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sju dagar kvar till sista beställningsdagen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Om pappa hellre vill ha en annan sort", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Till sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-10-17T18:00:00+02:00",
+  "segment": ["SEG_samtycke"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "kraver-axel",
+  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28)."
+}

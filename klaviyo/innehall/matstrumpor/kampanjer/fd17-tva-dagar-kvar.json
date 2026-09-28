@@ -1,0 +1,65 @@
+{
+  "id": "fd17-tva-dagar-kvar",
+  "namn": "MAIL_20261022_FarsDag_GT_4_samtycke_promo_tva-dagar-kvar_v1",
+  "memo": "Hypotes: två dagar kvar till 24 oktober (klaviyo/brands/matstrumpor.json#kalender) är den sista påminnelsen i serien innan sista beställningsdagen. Mejlet skiljer uttryckligen brådskan (leveransen) från erbjudandet (Köp 1, få 1, som aldrig tar slut, se k07-tva-lador-tva-personer.json), så ingen läsare tror att erbjudandet försvinner.",
+  "taggar": {
+    "typ": "S",
+    "kalla": "egen-data",
+    "kalla_ref": "klaviyo/brands/matstrumpor.json#kalender",
+    "lardom": null,
+    "avatar": "presentkoparen till pappa, i sista stund",
+    "begar": "beställa innan paketet inte hinner fram till fars dag",
+    "awareness": "promo",
+    "urgency": "konsekvens",
+    "confidence": "medium",
+    "prefix": "FarsDag",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    { "text": "Två dagar kvar innan paketet inte hinner fram", "begar": "veta exakt hur lite tid som är kvar" },
+    { "text": "Erbjudandet finns kvar. Tiden till fars dag gör det inte.", "begar": "förstå att det är leveransen, inte erbjudandet, som är knappt" },
+    { "text": "Lördag är sista dagen att beställa till fars dag", "begar": "det konkreta, sista datumet" }
+  ],
+  "forhandstext": "Två dagar kvar. Efter lördag räknar vi inte med att det hinner fram.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Två dagar kvar att beställa till fars dag",
+      "text": "Hej {{fornamn}},\n\nPaketet behöver skickas i tid för att hinna fram till fars dag. Beställ senast lördag. Köp 1, få 1, det står på produktsidan som alltid. Det är bara tiden till fars dag som är knapp.",
+      "bild": "produkt:sushi-strumpor",
+      "knapp": { "text": "Beställ innan lördag", "lank": "produkt:sushi-strumpor" }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Många väntar, för erbjudandet finns ju kvar. Det stämmer, Köp 1, få 1 tar aldrig slut. Det som tar slut är tiden innan fars dag."
+    },
+    {
+      "typ": "produkt",
+      "handle": "sushi-strumpor",
+      "text": "Fem par som hinner fram om ordern läggs i tid.",
+      "knapp": "Till sushilådan"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Pizza, burgare eller donut, samma sista dag",
+      "handles": ["pizza-strumpor", "hamburger-strumpor", "donut-strumpor"]
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "Två dagar kvar innan paketet inte hinner fram", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Erbjudandet finns kvar. Tiden till fars dag gör det inte.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Lördag är sista dagen att beställa till fars dag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Två dagar kvar. Efter lördag räknar vi inte med att det hinner fram.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Två dagar kvar att beställa till fars dag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Beställ innan lördag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Pizza, burgare eller donut, samma sista dag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Till sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-10-22T18:00:00+02:00",
+  "segment": ["SEG_samtycke"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "kraver-axel",
+  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28)."
+}

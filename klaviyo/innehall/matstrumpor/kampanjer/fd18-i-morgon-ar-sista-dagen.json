@@ -1,0 +1,70 @@
+{
+  "id": "fd18-i-morgon-ar-sista-dagen",
+  "namn": "MAIL_20261023_FarsDag_GT_5_samtycke_promo_i-morgon-ar-sista-dagen_v1",
+  "memo": "Hypotes: dagen före sista beställningsdag är den sista chansen att agera innan helgen tar över inkorgen. Lådan som förväxlas med riktig sushi är det enda kontot bevisat fungerar (dna.md mönster 1), här riktat mot pappa och fars dag i stället för en generisk mottagare. Sista beställningsdag 24 oktober kommer ur brandfilens p90-beräkning (15 dygn före fars dag 8 november). Källa: klaviyo/brands/matstrumpor.json#kalender + products/matstrumpor/dna.md:56-63.",
+  "taggar": {
+    "typ": "M",
+    "_typ": "N=nytt koncept, I=iteration av annonsvinnare, IM=imitation, M=mejlspecifikt, S=säsong",
+    "kalla": "egen-data",
+    "_kalla": "egen-data | winning-line | voc | swipe | gissning",
+    "kalla_ref": "klaviyo/brands/matstrumpor.json#kalender + products/matstrumpor/dna.md:56-63",
+    "lardom": null,
+    "avatar": "presentkoparen (till pappa)",
+    "begar": "kontroll",
+    "awareness": "promo",
+    "_awareness": "unaware | problem | solution | product | promo",
+    "urgency": "konsekvens",
+    "_urgency": "sasong | lager | pris | konsekvens | ingen",
+    "confidence": "medium",
+    "_confidence": "high | medium | low (low = gissning)",
+    "prefix": "FarsDag",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    { "text": "I morgon är sista dagen att beställa till fars dag", "begar": "hinna beställa sushilådan innan tiden är ute" },
+    { "text": "Pappa tror att det är riktig sushi, tills han öppnar lådan", "begar": "se pappas förvåning när han förstår att det är strumpor" },
+    { "text": "Väntar du en dag till hinner inte lådan fram till fars dag", "begar": "förstå vad som händer om beställningen kommer in för sent" }
+  ],
+  "forhandstext": "Fars dag är den 8 november. I morgon är sista dagen att beställa.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "I morgon är sista dagen till fars dag",
+      "text": "Hej {{fornamn}},\n\nFör att sushilådan ska hinna fram till fars dag behöver ordern läggas senast i morgon. Fars dag är den 8 november.",
+      "bild": "produkt:sushi-strumpor",
+      "knapp": { "text": "Se sushilådan", "lank": "produkt:sushi-strumpor" }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Lördag 24 oktober är sista dagen vi räknar med att hinna leverera i tid. Beställer du i morgon kommer paketet fram innan fars dag."
+    },
+    {
+      "typ": "produkt",
+      "handle": "sushi-strumpor",
+      "text": "Fem par som ser ut som sushi, rullade i lådan.",
+      "knapp": "Till sushilådan"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Om han hellre vill ha en annan låda",
+      "handles": ["pizza-strumpor", "hamburger-strumpor", "donut-strumpor"]
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "I morgon är sista dagen att beställa till fars dag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Pappa tror att det är riktig sushi, tills han öppnar lådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Väntar du en dag till hinner inte lådan fram till fars dag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fars dag är den 8 november. I morgon är sista dagen att beställa.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "I morgon är sista dagen till fars dag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Om han hellre vill ha en annan låda", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Till sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-10-23T18:00:00+02:00",
+  "segment": ["SEG_samtycke"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "kraver-axel",
+  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28)."
+}

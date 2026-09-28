@@ -1,0 +1,65 @@
+{
+  "id": "fd16-tre-dagar-kvar",
+  "namn": "MAIL_20261021_FarsDag_GT_3_samtycke_promo_tre-dagar-kvar_v1",
+  "memo": "Hypotes, låg confidence: inte alla pappor gillar sushi, och burgar- och pizzalådan (products/matstrumpor/dna.md, produktkatalogen) är oprövade som eget skäl i mejl. Tre dagar kvar till 24 oktober (klaviyo/brands/matstrumpor.json#kalender) är samma verkliga deadline som resten av serien, nu med ett alternativ till hero-produkten sushi.",
+  "taggar": {
+    "typ": "S",
+    "kalla": "egen-data",
+    "kalla_ref": "products/matstrumpor/dna.md:19-21 (Pizza, Hamburgare, Donut) + klaviyo/brands/matstrumpor.json#kalender",
+    "lardom": null,
+    "avatar": "presentkoparen till en pappa som inte gillar sushi",
+    "begar": "hitta en sort han faktiskt vill ha",
+    "awareness": "promo",
+    "urgency": "konsekvens",
+    "confidence": "low",
+    "prefix": "FarsDag",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    { "text": "Tre dagar kvar. Ingen sushi i den här lådan.", "begar": "en lösning för honom som inte äter sushi" },
+    { "text": "Burgare i stället för sushi, tre dagar kvar", "begar": "ett konkret alternativ innan tiden rinner ut" },
+    { "text": "Pizza eller burgare, till pappan som hoppar sushin", "begar": "att känna igen sin egen pappas smak i valet" }
+  ],
+  "forhandstext": "Tre dagar kvar. Burgare och pizza finns om han hoppar över sushin.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Lådan som ser ut som burgare, för honom som hoppar sushin",
+      "text": "Hej {{fornamn}},\n\nInte alla pappor vill ha sushi. Den här lådan ser ut som burgare i stället, med två par strumpor inuti. Tre dagar kvar innan 24 oktober.",
+      "bild": "produkt:hamburger-strumpor",
+      "knapp": { "text": "Se burgarlådan", "lank": "produkt:hamburger-strumpor" }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Tre dagar kvar innan 24 oktober. Det är sista dagen vi räknar med för fars dag. Burgare eller pizza kan vara lådan han faktiskt vill ha."
+    },
+    {
+      "typ": "produkt",
+      "handle": "hamburger-strumpor",
+      "text": "Två par som ser ut som burgare, ingen sushi i lådan.",
+      "knapp": "Till burgarlådan"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Pizza, sushi eller donut i stället",
+      "handles": ["pizza-strumpor", "sushi-strumpor", "donut-strumpor"]
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "Tre dagar kvar. Ingen sushi i den här lådan.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Burgare i stället för sushi, tre dagar kvar", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Pizza eller burgare, till pappan som hoppar sushin", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Tre dagar kvar. Burgare och pizza finns om han hoppar över sushin.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Lådan som ser ut som burgare, för honom som hoppar sushin", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se burgarlådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Pizza, sushi eller donut i stället", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Till burgarlådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-10-21T18:00:00+02:00",
+  "segment": ["SEG_samtycke"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "kraver-axel",
+  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28)."
+}

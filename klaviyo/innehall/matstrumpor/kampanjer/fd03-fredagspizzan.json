@@ -1,0 +1,65 @@
+{
+  "id": "fd03-fredagspizzan",
+  "namn": "MAIL_20261003_FarsDag_GT_3_samtycke_product_fredagspizzan_v1",
+  "memo": "Hypotes: fredagspizzan är en etablerad svensk vardagsrutin, och pappan som alltid bestämmer den har redan en identitet innan mejlet börjar. En låda byggd som en pizzakartong (produktsidans egna fakta: pizza-strumpor, fyra par, jämförpris över priset) borde kännas som en igenkänning i stället för ett påhitt, samma sorts konkreta koppling som gjorde sushilådans avslöjande till kontots vinnare (dna.md mönster 1). Ingen data säger att just pizza funkar för Matstrumpor än, så vinkeln är en gissning på identitet, inte ett bevisat mönster.",
+  "taggar": {
+    "typ": "N",
+    "kalla": "egen-data",
+    "kalla_ref": "https://matstrumpor.se/products/pizza-strumpor + products/matstrumpor/dna.md:56-63 (mönster 1)",
+    "lardom": null,
+    "avatar": "presentkoparen (till pappa)",
+    "begar": "ge pappa som äger fredagspizzan en present som passar honom",
+    "awareness": "product",
+    "urgency": "ingen",
+    "confidence": "low",
+    "prefix": "FarsDag",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    { "text": "En pizzalåda pappa inte kan äta", "begar": "se att lådan bara ser ut som mat" },
+    { "text": "Fredagspizzan pappa faktiskt kan ha på fötterna", "begar": "koppla fredagspizzan till något han kan ha på sig" },
+    { "text": "Fyra skivor i en låda som ser ut som pizza", "begar": "se vad som faktiskt ligger i pizzalådan" }
+  ],
+  "forhandstext": "Lådan ser ut som fredagspizzan. Innehållet gör det inte.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Fredagspizzan är hans. Den här är strumpor.",
+      "text": "Hej {{fornamn}},\n\nVarje fredag är det han som bestämmer pizzan. Den här lådan ser ut som hans vanliga beställning, men innehåller fyra par strumpor.",
+      "bild": "produkt:pizza-strumpor",
+      "knapp": { "text": "Se pizzalådan", "lank": "produkt:pizza-strumpor" }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Lådan doftar inte som pizza. Den känns som strumpor så fort den öppnas."
+    },
+    {
+      "typ": "produkt",
+      "handle": "pizza-strumpor",
+      "text": "Fyra par strumpor i en låda gjord för att se ut som en pizzakartong.",
+      "knapp": "Till pizzalådan"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Om han hellre är sushi- eller grilltypen",
+      "handles": ["sushi-strumpor", "hamburger-strumpor", "donut-strumpor"]
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "En pizzalåda pappa inte kan äta", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fredagspizzan pappa faktiskt kan ha på fötterna", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fyra skivor i en låda som ser ut som pizza", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Lådan ser ut som fredagspizzan. Innehållet gör det inte.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fredagspizzan är hans. Den här är strumpor.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se pizzalådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Om han hellre är sushi- eller grilltypen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Till pizzalådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-10-03T18:00:00+02:00",
+  "segment": ["SEG_samtycke"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "kraver-axel",
+  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28)."
+}

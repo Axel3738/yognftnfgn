@@ -1,0 +1,52 @@
+{
+  "id": "fd05-farfar-och-morfar",
+  "namn": "MAIL_20261005_FarsDag_GT_1_samtycke_problem_farfar-och-morfar_v1",
+  "memo": "Hypotes: fars dag räknas i marknadsföring nästan alltid som pappas dag, men presentkoparen (dna.md) köper ofta till fler än en manlig familjemedlem. Farfar och morfar får sällan en egen present den här dagen. Ingen tidigare annons eller mejl i kontot har testat vinkeln (dna.md:s exempel gäller mamma och brorsan), så den räknas som ny, inte bevisad. Donutlådan står som hero eftersom den ännu saknar en egen vinkel i mejlserien.",
+  "taggar": {
+    "typ": "N",
+    "kalla": "egen-data",
+    "kalla_ref": "klaviyo/brands/matstrumpor.json#kalender + products/matstrumpor/dna.md:115-118",
+    "lardom": null,
+    "avatar": "presentkoparen (till farfar eller morfar)",
+    "begar": "ge farfar och morfar en egen present, inte bara pappa",
+    "awareness": "problem",
+    "urgency": "sasong",
+    "confidence": "low",
+    "prefix": "FarsDag",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    { "text": "En donutlåda åt farfar, inte bara pappa", "begar": "se att fars dag också gäller farfar och morfar" },
+    { "text": "Morfar tror det är en donut. Det är strumpor.", "begar": "nyfikenhet på vad som egentligen ligger i lådan" },
+    { "text": "Farfar glöms lätt. En donutlåda gör det svårare.", "begar": "känna igen att farfar sällan får en egen present" }
+  ],
+  "forhandstext": "Farfar och morfar räknas också. Se donutlådan.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Farfar öppnar en donutlåda. Hittar tre par strumpor.",
+      "text": "Hej {{fornamn}},\n\nFars dag brukar handla om pappa. Farfar och morfar räknas också, och de får sällan en egen present.\n\nDonutlådan är tre par strumpor, rullade som donuts i en färgglad box.",
+      "bild": "produkt:donut-strumpor",
+      "knapp": { "text": "Se donutlådan", "lank": "produkt:donut-strumpor" }
+    },
+    { "typ": "text", "rubrik": null, "text": "Den som öppnar den tror först att det är bakverk." },
+    { "typ": "produkt", "handle": "donut-strumpor", "text": "Tre par som ser ut som donuts, tills lådan öppnas.", "knapp": "Till donutlådan" },
+    { "typ": "produktrad", "rubrik": "Om farfar hellre vill ha sushi eller pizza", "handles": ["sushi-strumpor", "pizza-strumpor", "hamburger-strumpor"] },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "En donutlåda åt farfar, inte bara pappa", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Morfar tror det är en donut. Det är strumpor.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Farfar glöms lätt. En donutlåda gör det svårare.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Farfar och morfar räknas också. Se donutlådan.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Farfar öppnar en donutlåda. Hittar tre par strumpor.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se donutlådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Om farfar hellre vill ha sushi eller pizza", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Till donutlådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-10-05T18:00:00+02:00",
+  "segment": ["SEG_samtycke"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "kraver-axel",
+  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28)."
+}

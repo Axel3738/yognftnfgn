@@ -1,0 +1,52 @@
+{
+  "id": "rea01-tva-pappor",
+  "namn": "MAIL_20261002_Rea_GT_1_samtycke_promo_tva-pappor_v1",
+  "memo": "Hypotes: Köp 1, få 1 löser samma problem för fars dag som det gjorde för mamma och brorsan i K07 (samma mekanik, ny mottagargrupp), och bygger vidare på offer_static_d3, kontots billigaste vinst (dna.md mönster 3, +1 204 kr vinstbidrag). De flesta som firar fars dag har fler än en pappafigur att ge till (pappa, svärfar, farfar, morfar eller bonuspappan), så att säga det rakt ut borde sälja lika bra som i K07.",
+  "taggar": {
+    "typ": "I",
+    "kalla": "egen-data",
+    "kalla_ref": "klaviyo/innehall/matstrumpor/kampanjer/k07-tva-lador-tva-personer.json + klaviyo/brands/matstrumpor.json#erbjudande_comment",
+    "lardom": null,
+    "avatar": "presentkoparen (till pappa)",
+    "begar": "ordna presenter till fler än en pappa i ett köp",
+    "awareness": "promo",
+    "urgency": "ingen",
+    "confidence": "medium",
+    "prefix": "Rea",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    { "text": "En till pappa, en till svärfar", "begar": "se att erbjudandet räcker till fler än en pappa" },
+    { "text": "Två sushilådor, en beställning", "begar": "förstå att båda lådorna ingår i samma köp" },
+    { "text": "Fem par till pappa, fem till farfar", "begar": "se konkret vad den andra lådan innehåller" }
+  ],
+  "forhandstext": "Den andra lådan väljer du fritt på produktsidan.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "En till pappa. En till farfar.",
+      "text": "Hej {{fornamn}},\n\nKöp 1, få 1, det står på produktsidan. Den ena lådan går till pappa. Den andra kan gå till svärfar, farfar eller morfar.",
+      "bild": "produkt:sushi-strumpor",
+      "knapp": { "text": "Se sushilådan", "lank": "produkt:sushi-strumpor" }
+    },
+    { "typ": "text", "rubrik": null, "text": "Ingen av dem väntar sig en låda som ser ut som sushi." },
+    { "typ": "produkt", "handle": "sushi-strumpor", "text": "Fem par som funkar lika bra till pappa som till svärfar.", "knapp": "Till sushilådan" },
+    { "typ": "produktrad", "rubrik": "Om den andra pappan hellre vill ha en annan sort", "handles": ["pizza-strumpor", "hamburger-strumpor", "donut-strumpor"] },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "En till pappa, en till svärfar", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Två sushilådor, en beställning", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fem par till pappa, fem till farfar", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Den andra lådan väljer du fritt på produktsidan.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En till pappa. En till farfar.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Om den andra pappan hellre vill ha en annan sort", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Till sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-10-02T18:00:00+02:00",
+  "segment": ["SEG_samtycke"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "kraver-axel",
+  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28)."
+}

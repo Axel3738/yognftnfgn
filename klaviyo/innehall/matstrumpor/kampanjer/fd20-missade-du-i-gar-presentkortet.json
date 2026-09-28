@@ -1,0 +1,70 @@
+{
+  "id": "fd20-missade-du-i-gar-presentkortet",
+  "namn": "MAIL_20261025_FarsDag_GT_7_samtycke_solution_missade-du-i-gar-presentkortet_v1",
+  "memo": "Hypotes: den som missade 24 oktober behöver en väg framåt utan att vi lovar något om en ny beställnings leveranstid. Presentkortet löser det digitalt och direkt i mejlet, precis som K13 gjorde inför jul, och pappa väljer sort själv. Källa: klaviyo/brands/matstrumpor.json#kalender och Shopify (isGiftCard, avläst 2026-09-25).",
+  "taggar": {
+    "typ": "M",
+    "_typ": "N=nytt koncept, I=iteration av annonsvinnare, IM=imitation, M=mejlspecifikt, S=säsong",
+    "kalla": "egen-data",
+    "_kalla": "egen-data | winning-line | voc | swipe | gissning",
+    "kalla_ref": "klaviyo/brands/matstrumpor.json#kalender + Shopify (isGiftCard, avläst 2026-09-25)",
+    "lardom": null,
+    "avatar": "presentkoparen (till pappa) som missade sista beställningsdagen",
+    "begar": "slippa-krangel",
+    "awareness": "solution",
+    "_awareness": "unaware | problem | solution | product | promo",
+    "urgency": "konsekvens",
+    "_urgency": "sasong | lager | pris | konsekvens | ingen",
+    "confidence": "low",
+    "_confidence": "high | medium | low (low = gissning)",
+    "prefix": "FarsDag",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    { "text": "En present till pappa som hinner fram ändå", "begar": "hitta en lösning trots att man missade deadline" },
+    { "text": "Sushilådan hann inte i tid, men presentkortet gör det", "begar": "förstå att det ändå finns en lösning efter missad deadline" },
+    { "text": "Pappa väljer sin egen låda, inte du", "begar": "slippa gissa fel sort åt pappa" }
+  ],
+  "forhandstext": "Presentkortet kommer i mejlen direkt, även om sista dagen för lådan är passerad.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Missade du sista dagen till fars dag?",
+      "text": "Hej {{fornamn}},\n\nEn låda som beställs nu kan komma fram efter fars dag. Ett presentkort skickas direkt i mejlet, och pappa väljer sin egen låda själv.",
+      "bild": "produkt:presentkort",
+      "knapp": { "text": "Se presentkortet", "lank": "produkt:presentkort" }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Presentkortet är en riktig gåva i sig, inte en kompromiss. Mottagaren väljer bland alla fyra lådor när den passar."
+    },
+    {
+      "typ": "produkt",
+      "handle": "presentkort",
+      "text": "Presentkortet gäller i hela butiken, och pappa väljer sort själv.",
+      "knapp": "Köp presentkortet"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Om du redan vet vilken sort han vill ha",
+      "handles": ["sushi-strumpor", "pizza-strumpor", "hamburger-strumpor"]
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "En present till pappa som hinner fram ändå", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sushilådan hann inte i tid, men presentkortet gör det", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Pappa väljer sin egen låda, inte du", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Presentkortet kommer i mejlen direkt, även om sista dagen för lådan är passerad.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Missade du sista dagen till fars dag?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se presentkortet", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Om du redan vet vilken sort han vill ha", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Köp presentkortet", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-10-25T18:00:00+02:00",
+  "segment": ["SEG_samtycke"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "kraver-axel",
+  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28)."
+}

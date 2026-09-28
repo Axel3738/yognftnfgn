@@ -1,0 +1,65 @@
+{
+  "id": "fd04-grillpappan",
+  "namn": "MAIL_20261004_FarsDag_GT_4_samtycke_product_grillpappan_v1",
+  "memo": "Hypotes: grillpappan är samma sorts färdiga identitet som fredagspizzan i fd03, fast med grillen i stället för ugnen. Hamburgarlådan (produktsidans fakta: hamburger-strumpor, två par, burgerbox) byter bara vilken vardagsrutin som pekas ut, samma mekanik som fd03 och samma avslöjandeprincip som dna.md mönster 1. Ingen data säger att just grillvinkeln funkar för Matstrumpor än, så det här är en gissning på identitet, inte ett bevisat mönster.",
+  "taggar": {
+    "typ": "N",
+    "kalla": "egen-data",
+    "kalla_ref": "https://matstrumpor.se/products/hamburger-strumpor + products/matstrumpor/dna.md:56-63 (mönster 1)",
+    "lardom": null,
+    "avatar": "presentkoparen (till pappa)",
+    "begar": "ge grillpappan en present som passar honom",
+    "awareness": "product",
+    "urgency": "ingen",
+    "confidence": "low",
+    "prefix": "FarsDag",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    { "text": "En burgare han inte kan grilla", "begar": "se att lådan bara ser ut som mat" },
+    { "text": "Grillpappan får en burgare utan kol", "begar": "koppla lådan till grillpappans vanliga grej" },
+    { "text": "Två par i en box som ser ut som en burgare", "begar": "se vad som faktiskt ligger i burgarlådan" }
+  ],
+  "forhandstext": "Lådan ser ut som från grillen. Innehållet är strumpor.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Grillen är hans. Den här går inte att grilla.",
+      "text": "Hej {{fornamn}},\n\nHan är den som sköter grillen, oavsett väder. Den här lådan ser ut som något därifrån, men innehåller två par strumpor.",
+      "bild": "produkt:hamburger-strumpor",
+      "knapp": { "text": "Se burgarlådan", "lank": "produkt:hamburger-strumpor" }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Den går inte att grilla. Den går att ha på fötterna direkt efter."
+    },
+    {
+      "typ": "produkt",
+      "handle": "hamburger-strumpor",
+      "text": "Två par strumpor i en box vikt som en hamburgare.",
+      "knapp": "Till burgarlådan"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Om han hellre är sushi- eller pizzatypen",
+      "handles": ["sushi-strumpor", "pizza-strumpor", "donut-strumpor"]
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "En burgare han inte kan grilla", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Grillpappan får en burgare utan kol", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Två par i en box som ser ut som en burgare", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Lådan ser ut som från grillen. Innehållet är strumpor.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Grillen är hans. Den här går inte att grilla.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se burgarlådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Om han hellre är sushi- eller pizzatypen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Till burgarlådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-10-04T18:00:00+02:00",
+  "segment": ["SEG_samtycke"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "kraver-axel",
+  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28)."
+}

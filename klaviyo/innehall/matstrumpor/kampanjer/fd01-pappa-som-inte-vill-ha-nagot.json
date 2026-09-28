@@ -1,0 +1,65 @@
+{
+  "id": "fd01-pappa-som-inte-vill-ha-nagot",
+  "namn": "MAIL_20260930_FarsDag_GT_1_samtycke_problem_pappa-som-inte-vill-ha-nagot_v1",
+  "memo": "Hypotes: den vanligaste invändningen inför fars dag är att pappa säger att han inte vill ha något, och en låda som ser ut som mat är lätt att ge ändå eftersom den inte känns som en vanlig present. Vinkeln bygger vidare på K04:s datum (fars dag 8/11, sista beställning 24/10, brandfilens kalender och p90 15 dygn) men leder med invändningen i stället för datumet, och lägger till att köp 1, få 1 räcker till både pappa och farfar.",
+  "taggar": {
+    "typ": "N",
+    "kalla": "egen-data",
+    "kalla_ref": "klaviyo/brands/matstrumpor.json#kalender + https://matstrumpor.se/products/sushi-strumpor",
+    "lardom": null,
+    "avatar": "presentkoparen (till pappa)",
+    "begar": "ge pappa en present trots att han säger nej",
+    "awareness": "problem",
+    "urgency": "konsekvens",
+    "confidence": "medium",
+    "prefix": "FarsDag",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    { "text": "Han säger nej till presenter. Inte till sushi.", "begar": "se att invändningen inte gäller den här lådan" },
+    { "text": "En till pappa, en till farfar", "begar": "se att en beställning räcker till två mottagare" },
+    { "text": "En låda pappa öppnar som om den vore mat", "begar": "se pappa öppna en låda som ser ut som mat" }
+  ],
+  "forhandstext": "Söndag 8 november. Beställ senast 24 oktober om du vill hinna.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Han säger att han inte vill ha något. Ge honom en låda som ser ut som sushi.",
+      "text": "Hej {{fornamn}},\n\nDe flesta pappor säger att de inte vill ha något. Den här lådan ser ut som en sushibeställning, inte som en present.",
+      "bild": "produkt:sushi-strumpor",
+      "knapp": { "text": "Se lådan han inte bad om", "lank": "produkt:sushi-strumpor" }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Fars dag är söndag 8 november. Vill du hinna till dess räcker det att beställa senast 24 oktober."
+    },
+    {
+      "typ": "produkt",
+      "handle": "sushi-strumpor",
+      "text": "Köp 1, få 1, det står på produktsidan. En till pappa, en till farfar.",
+      "knapp": "Till sushilådan"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Andra sorter, om han säger nej till sushi också",
+      "handles": ["pizza-strumpor", "hamburger-strumpor", "donut-strumpor"]
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "Han säger nej till presenter. Inte till sushi.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En till pappa, en till farfar", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En låda pappa öppnar som om den vore mat", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Söndag 8 november. Beställ senast 24 oktober om du vill hinna.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Han säger att han inte vill ha något. Ge honom en låda som ser ut som sushi.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se lådan han inte bad om", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Andra sorter, om han säger nej till sushi också", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Till sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-09-30T18:00:00+02:00",
+  "segment": ["SEG_samtycke"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "kraver-axel",
+  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28)."
+}

@@ -1,0 +1,65 @@
+{
+  "id": "fd12-ni-gav-bort-sushin",
+  "namn": "MAIL_20261015_FarsDag_GT_7_kopare_promo_ni-gav-bort-sushin_v1",
+  "memo": "Hypotes: de flesta köpare valde sushilådan (dna.md), så ett mejl bara till SEG_kopare bör föreslå en NY sort till pappa i stället för att upprepa samma låda de redan känner till. Att peka på att man redan gett bort sushin, och att pizzan eller hamburgaren är den som gäller i år, ger en egen vinkel som varken fd11 (bred publik, sushi) eller fd13 (ren datumräkning) täcker. Köp 1, få 1-formuleringen är ordagrant K07:s. Källa: products/matstrumpor/dna.md (sushin dominerar köpen) + K07-erbjudandet.",
+  "taggar": {
+    "typ": "S",
+    "kalla": "egen-data",
+    "kalla_ref": "products/matstrumpor/dna.md + klaviyo/innehall/matstrumpor/kampanjer/k07-tva-lador-tva-personer.json",
+    "lardom": null,
+    "avatar": "presentkoparen (till pappa, redan köpt)",
+    "begar": "ge pappa en ny sort i stället för att upprepa förra köpet",
+    "awareness": "promo",
+    "urgency": "ingen",
+    "confidence": "medium",
+    "prefix": "FarsDag",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    { "text": "Du har redan sushin. Ge pappa pizzan.", "begar": "se att det finns en ny sort att ge, inte samma som sist" },
+    { "text": "Sist var det sushi. Den här gången är det pizza.", "begar": "förstå att det är en annan sorts låda den här gången" },
+    { "text": "En annan sort till pappa den här gången", "begar": "veta att det finns fler sorter att välja bland till pappa" }
+  ],
+  "forhandstext": "Sushin gav du bort förra gången. Pizzan blir pappas i år.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "I år får pappa pizzan, inte sushin",
+      "text": "Hej {{fornamn}},\n\nSushilådan har du redan skickat vidare. I år är turen kommen till pizzalådan, samma trick men med en annan maträtt.\n\nGe den till pappa. Köp 1, få 1, det står på produktsidan.",
+      "bild": "produkt:pizza-strumpor",
+      "knapp": { "text": "Se pizzalådan", "lank": "produkt:pizza-strumpor" }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Den här gången är det pizzabitar som göms i lådan, inte sushi."
+    },
+    {
+      "typ": "produkt",
+      "handle": "pizza-strumpor",
+      "text": "Fyra par, förklädda till pizza den här gången.",
+      "knapp": "Till pizzalådan"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Fler sorter, om det inte ska bli pizzan",
+      "handles": ["hamburger-strumpor", "donut-strumpor", "sushi-strumpor"]
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "Du har redan sushin. Ge pappa pizzan.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sist var det sushi. Den här gången är det pizza.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En annan sort till pappa den här gången", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sushin gav du bort förra gången. Pizzan blir pappas i år.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "I år får pappa pizzan, inte sushin", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se pizzalådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fler sorter, om det inte ska bli pizzan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Till pizzalådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-10-15T18:00:00+02:00",
+  "segment": ["SEG_kopare"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "kraver-axel",
+  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28)."
+}

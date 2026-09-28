@@ -1,0 +1,65 @@
+{
+  "id": "rea03-helgen-en-vecka-kvar",
+  "namn": "MAIL_20261016_Rea_CS_5_samtycke_promo_helgen-en-vecka-kvar_v1",
+  "memo": "Hypotes: ett fredagsmejl inför helgen, med samma Köp 1, få 1-text som K07 och det verkliga avståndet fredag 16/10 till sista beställningsdagen lördag 24/10 (drygt en vecka), håller trycket uppe utan att upprepa fd11/fd12:s pappa-vinkel. Donuten får hero-platsen så serien inte visar sushi varje dag. Källa: K07:s erbjudandetext + klaviyo/brands/matstrumpor.json#kalender (sista beställningsdag 24 oktober).",
+  "taggar": {
+    "typ": "S",
+    "kalla": "egen-data",
+    "kalla_ref": "klaviyo/innehall/matstrumpor/kampanjer/k07-tva-lador-tva-personer.json + klaviyo/brands/matstrumpor.json#kalender",
+    "lardom": null,
+    "avatar": "presentkoparen (till pappa)",
+    "begar": "beställa innan helgen är över och veta att erbjudandet gäller",
+    "awareness": "promo",
+    "urgency": "konsekvens",
+    "confidence": "medium",
+    "prefix": "Rea",
+    "kod": "CS"
+  },
+  "amnesrader": [
+    { "text": "En vecka och en helg kvar till 24 oktober", "begar": "förstå hur lång tid som faktiskt är kvar" },
+    { "text": "Den här ser ut som en donut. Det är strumpor.", "begar": "nyfikenhet på hur lådan är förklädd" },
+    { "text": "Köp en donutlåda, få en till på köpet", "begar": "se att erbjudandet gäller donutlådan också" }
+  ],
+  "forhandstext": "Drygt en vecka kvar innan sista beställningsdagen till fars dag.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "En vecka kvar. Fortfarande Köp 1, få 1.",
+      "text": "Hej {{fornamn}},\n\nHelgen är här. Drygt en vecka är kvar till sista beställningsdagen 24 oktober, för att hinna till fars dag.\n\nKöp en låda och få en till, det står på produktsidan. Donutlådan är med precis som de andra tre.",
+      "bild": "produkt:donut-strumpor",
+      "knapp": { "text": "Se donutlådan", "lank": "produkt:donut-strumpor" }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Lådan ser ut som en godisdisk. Det är strumpor som ligger där."
+    },
+    {
+      "typ": "produkt",
+      "handle": "donut-strumpor",
+      "text": "Tre par gömda i en låda som ser ut som donuts.",
+      "knapp": "Till donutlådan"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Köp 1, få 1 gäller de tre andra sorterna också",
+      "handles": ["sushi-strumpor", "pizza-strumpor", "hamburger-strumpor"]
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "En vecka och en helg kvar till 24 oktober", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Den här ser ut som en donut. Det är strumpor.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Köp en donutlåda, få en till på köpet", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Drygt en vecka kvar innan sista beställningsdagen till fars dag.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En vecka kvar. Fortfarande Köp 1, få 1.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se donutlådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Köp 1, få 1 gäller de tre andra sorterna också", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Till donutlådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-10-16T18:00:00+02:00",
+  "segment": ["SEG_samtycke"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "kraver-axel",
+  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28)."
+}

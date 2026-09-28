@@ -1,0 +1,65 @@
+{
+  "id": "fd14-tittat-men-aldrig-bestallt",
+  "namn": "MAIL_20261018_FarsDag_GT_1_ejkopt_product_tittat-men-aldrig-bestallt_v1",
+  "memo": "Hypotes: SEG_ej_kopt har fått mejl om lådorna men aldrig beställt. Fars dag (8 november, klaviyo/brands/matstrumpor.json#kalender) är ett konkret nytt skäl att testa, utan rabatt och utan konstruerad brådska. Sista beställningsdagen 24 oktober sparas till nästa mejl i serien. Sushilådan står som hero eftersom den bär kontots enda breakthrough (dna.md mönster 1: en riktig mottagare som öppnar lådan och reagerar), den mest bevisade vinkeln att testa på en kall publik.",
+  "taggar": {
+    "typ": "S",
+    "kalla": "egen-data",
+    "kalla_ref": "klaviyo/brands/matstrumpor.json#kalender + products/matstrumpor/dna.md:56-63",
+    "lardom": null,
+    "avatar": "presentkoparen till pappa, har aldrig beställt",
+    "begar": "ett konkret skäl att testa lådan till fars dag",
+    "awareness": "product",
+    "urgency": "sasong",
+    "confidence": "medium",
+    "prefix": "FarsDag",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    { "text": "Du har aldrig sett hans min när lådan öppnas", "begar": "nyfikenhet på reaktionen när han inser att det inte är sushi" },
+    { "text": "Medlem i klubben. Aldrig fått sushilådan.", "begar": "kontrasten mellan att vara med i klubben och aldrig ha testat" },
+    { "text": "Fars dag är ursäkten att testa lådan som lurar ögat", "begar": "en tydlig, odramatisk anledning att äntligen beställa" }
+  ],
+  "forhandstext": "Lådan ser ut som sushi. Han har aldrig öppnat en.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Lådan som ser ut som sushi, till fars dag i år",
+      "text": "Hej {{fornamn}},\n\nDu har fått mejl om lådan förut men aldrig beställt den. Fars dag den 8 november är ett bra tillfälle att se den själv.",
+      "bild": "produkt:sushi-strumpor",
+      "knapp": { "text": "Se sushilådan", "lank": "produkt:sushi-strumpor" }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Lådan öppnas som en sushibeställning. Fem par strumpor ligger rullade som sushibitar. Den som öppnar den tror först att det är riktig mat."
+    },
+    {
+      "typ": "produkt",
+      "handle": "sushi-strumpor",
+      "text": "Fem par som får honom att titta en gång till.",
+      "knapp": "Till sushilådan"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Andra sorter, om sushi inte är hans grej",
+      "handles": ["pizza-strumpor", "hamburger-strumpor", "donut-strumpor"]
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "Du har aldrig sett hans min när lådan öppnas", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Medlem i klubben. Aldrig fått sushilådan.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fars dag är ursäkten att testa lådan som lurar ögat", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Lådan ser ut som sushi. Han har aldrig öppnat en.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Lådan som ser ut som sushi, till fars dag i år", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Andra sorter, om sushi inte är hans grej", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Till sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-10-18T18:00:00+02:00",
+  "segment": ["SEG_ej_kopt"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "kraver-axel",
+  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28)."
+}

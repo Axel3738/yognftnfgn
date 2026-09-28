@@ -1,0 +1,65 @@
+{
+  "id": "fd02-fran-barnen",
+  "namn": "MAIL_20261001_FarsDag_GT_2_samtycke_product_fran-barnen_v1",
+  "memo": "Hypotes: kontots enda bevisade mönster är avslöjandet, en riktig mottagare öppnar lådan och skrattar (dna.md mönster 1, Nathalie, +3 078 kr vinstbidrag, 3,4 % köp per landningssidevisning). Här är avsändaren barnen i stället för en partner: en present barnen kan ge på egen hand, som pappa skrattar åt när han öppnar den, borde fungera lika bra som Nathalies version eftersom skrattet, inte relationen till givaren, är det som sålt hittills.",
+  "taggar": {
+    "typ": "I",
+    "kalla": "egen-data",
+    "kalla_ref": "products/matstrumpor/dna.md:56-63 (mönster 1) + https://matstrumpor.se/products/sushi-strumpor",
+    "lardom": null,
+    "avatar": "presentkoparen (till pappa)",
+    "begar": "ge en present barnen kan ge, som pappa skrattar åt",
+    "awareness": "product",
+    "urgency": "ingen",
+    "confidence": "medium",
+    "prefix": "FarsDag",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    { "text": "Från barnen: en låda som ser ut som sushi", "begar": "se att den här sushilådan är från barnen" },
+    { "text": "Barnen kan ge den här utan hjälp", "begar": "hitta en present barnen kan ge på egen hand" },
+    { "text": "Han skrattar. Barnen vet varför.", "begar": "se varför pappa skrattar när barnen ger presenten" }
+  ],
+  "forhandstext": "En låda som ser ut som mat, vald av barnen.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "En present från barnen. Han skrattar när han öppnar den.",
+      "text": "Hej {{fornamn}},\n\nBarnen har sällan en egen present att ge. Den här är en låda de kan lämna över själva. Den ser ut som sushi och får honom att skratta.",
+      "bild": "produkt:sushi-strumpor",
+      "knapp": { "text": "Se lådan från barnen", "lank": "produkt:sushi-strumpor" }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "En present barnen kan ge är sällsynt. Den här är enkel att slå in och kul att se honom öppna."
+    },
+    {
+      "typ": "produkt",
+      "handle": "sushi-strumpor",
+      "text": "Fem par strumpor i en låda som ser ut som takeaway, klar för barnen att ge bort.",
+      "knapp": "Till sushilådan"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Andra sorter barnen kan ge i stället",
+      "handles": ["pizza-strumpor", "hamburger-strumpor", "donut-strumpor"]
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "Från barnen: en låda som ser ut som sushi", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Barnen kan ge den här utan hjälp", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Han skrattar. Barnen vet varför.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En låda som ser ut som mat, vald av barnen.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "En present från barnen. Han skrattar när han öppnar den.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se lådan från barnen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Andra sorter barnen kan ge i stället", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Till sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-10-01T18:00:00+02:00",
+  "segment": ["SEG_samtycke"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "kraver-axel",
+  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28)."
+}

@@ -1,0 +1,70 @@
+{
+  "id": "fd19-sista-dagen-i-dag",
+  "namn": "MAIL_20261024_FarsDag_GT_6_samtycke_promo_sista-dagen-i-dag_v1",
+  "memo": "Hypotes: sista dagen skickad på morgonen i stället för kvällen ger hela dagen kvar att agera innan helgens sista utlämning. Samma struktur som K12 (sista dagen till jul) men flyttad till fars dag, med sushilådan som hero och de tre andra sorterna som alternativ om pappa hellre vill ha något annat. Källa: klaviyo/brands/matstrumpor.json#kalender.",
+  "taggar": {
+    "typ": "M",
+    "_typ": "N=nytt koncept, I=iteration av annonsvinnare, IM=imitation, M=mejlspecifikt, S=säsong",
+    "kalla": "egen-data",
+    "_kalla": "egen-data | winning-line | voc | swipe | gissning",
+    "kalla_ref": "klaviyo/brands/matstrumpor.json#kalender",
+    "lardom": null,
+    "avatar": "presentkoparen (till pappa) som väntat till sista dagen",
+    "begar": "kontroll",
+    "awareness": "promo",
+    "_awareness": "unaware | problem | solution | product | promo",
+    "urgency": "konsekvens",
+    "_urgency": "sasong | lager | pris | konsekvens | ingen",
+    "confidence": "medium",
+    "_confidence": "high | medium | low (low = gissning)",
+    "prefix": "FarsDag",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    { "text": "I dag är sista dagen att beställa till fars dag", "begar": "veta det verkliga, konkreta datumet" },
+    { "text": "Efter i dag hinner lådan inte fram till fars dag", "begar": "förstå konsekvensen av att vänta längre" },
+    { "text": "Fyra lådor, en sista dag att välja mellan dem", "begar": "få hjälp att bestämma snabbt bland sorterna" }
+  ],
+  "forhandstext": "Beställer du i dag hinner sushilådan fram till fars dag.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "I dag är sista dagen att beställa",
+      "text": "Hej {{fornamn}},\n\nBeställer du i dag hinner sushilådan fram till fars dag den 8 november. I morgon räknar vi inte längre med det.",
+      "bild": "produkt:sushi-strumpor",
+      "knapp": { "text": "Beställ i dag", "lank": "produkt:sushi-strumpor" }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Sista dagen betyder att ordern måste in i dag, inte i morgon. Fyra sorter finns om han hellre vill ha en annan."
+    },
+    {
+      "typ": "produkt",
+      "handle": "sushi-strumpor",
+      "text": "Fem par i en låda som ser ut som sushi, redo att skickas i dag.",
+      "knapp": "Till sushilådan"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Om han hellre vill ha en annan sort",
+      "handles": ["pizza-strumpor", "hamburger-strumpor", "donut-strumpor"]
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "I dag är sista dagen att beställa till fars dag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Efter i dag hinner lådan inte fram till fars dag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fyra lådor, en sista dag att välja mellan dem", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Beställer du i dag hinner sushilådan fram till fars dag.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "I dag är sista dagen att beställa", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Beställ i dag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Om han hellre vill ha en annan sort", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Till sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-10-24T09:00:00+02:00",
+  "segment": ["SEG_samtycke"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "kraver-axel",
+  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28)."
+}
