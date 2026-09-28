@@ -67,6 +67,18 @@ låter som en robot under ett nytt varumärke.
 Redovisa alltid i leveransen hur många filer som lyssnats igenom och hur många som
 renderats om. "QA grön" utan röstraden räknas inte som QA.
 
+## Vilka videor översätts — Axels regel 2026-09-27
+
+- **UGC (riktiga människor framför kameran: Nathalie, Katarina, Sofie …) översätts alltid
+  med HeyGens dyraste version** = full videoöversättning med röstklon och lip-sync (det
+  `proofreadCreate` → `proofreadGenerate` gör). Aldrig "audio only"-dubben, aldrig en
+  billigare nivå för att spara krediter — hellre en video mindre.
+- **Egna HeyGen-videor (våra AI-avatarer) översätts INTE.** De görs om direkt på
+  målspråket i HeyGen med samma avatar och manus. En avatarvideo som skickas genom den här
+  pipelinen är fel väg — stoppa och säg det.
+- Visar HeyGen en ännu dyrare nivå i UI:t som API:t inte har: säg det i leveransen i stället
+  för att välja en billigare tyst.
+
 ## Miljö
 
 - `HEYGEN_API_KEY` måste finnas som env-variabel (läggs in i environment-inställningarna).

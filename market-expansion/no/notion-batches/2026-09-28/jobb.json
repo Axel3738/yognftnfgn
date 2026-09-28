@@ -825,8 +825,8 @@
         "kalla": "notion-rest"
       },
       "namn": "Takoverdrag_UG_2_H1",
-      "status": "KÖ",
-      "skal": "över max 12 videor per körning",
+      "status": "KÖR",
+      "skal": null,
       "se": {
         "annonsId": "120250357009170291",
         "status": "ACTIVE",
@@ -856,7 +856,13 @@
         "adsetNamn": "Takovertrekk Campingvogn NO - UG",
         "annonsNamn": "Takovertrekk_NO_UG_2_H1",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
-        "prefix": "Takovertrekk"
+        "prefix": "Takovertrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252413537210233",
+        "creativeId": "1520797693446180",
+        "adsetId": "120252263233450233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1189.00",

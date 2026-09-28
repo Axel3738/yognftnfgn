@@ -1,0 +1,40 @@
+{
+ "_om": "Annonstext (pt) för MATSTRUMP_PT_SALES (Portugal), skriven 2026-09-27 av en sonnet-subagent mot docs/copy-regler.md + REGLER-EUROPA ur den svenska vinnarannonsen (Nathalie). Tre-frågorstestet 5/5 ✅ per mening. Inget pris, ingen leveranstid, inget butiksnamn, inget landsnamn i fraktraden. Videorna är PT-batchens (heygen/PT.json), klar/PT_<namn>.mp4. ⛔ Katarina ingår aldrig. Budgeten är EJ GIVEN — kampanjen förblir PAUSED.",
+ "instagram_user_id": "17841479011543544",
+ "copy": {
+  "title": "Diversão à noite. Nos teus pés amanhã.",
+  "title_alt": [
+   "O presente de brincadeira que não acaba numa gaveta.",
+   "Meias de sushi que usas mesmo."
+  ],
+  "message": "Ninguém festeja um detergente da roupa. Ninguém guarda um presente de brincadeira.\nA resposta a ambas: uma caixa que parece mesmo comida para levar, 5 pares enrolados como maki, pauzinhos de madeira ao lado.\nNão fica na caixa depois. Fica nos teus pés, semana após semana.\nUma marca sueca.",
+  "link_description": "4 tipos. Compre 1 – Receba 1 GRÁTIS. Envio grátis."
+ },
+ "annonser": [
+  {
+   "namn": "MATSTRUMP_PT_sushi_gift_ugc_001_v1",
+   "kalla": "09-17 Nathalie captions musik (video 1531210268763716)",
+   "video": "klar/PT_nathalie.mp4",
+   "title": "Diversão à noite. Nos teus pés amanhã.",
+   "message": "Ninguém festeja um detergente da roupa. Ninguém guarda um presente de brincadeira.\nA resposta a ambas: uma caixa que parece mesmo comida para levar, 5 pares enrolados como maki, pauzinhos de madeira ao lado.\nNão fica na caixa depois. Fica nos teus pés, semana após semana.\nUma marca sueca.",
+   "link_description": "4 tipos. Compre 1 – Receba 1 GRÁTIS. Envio grátis."
+  },
+  {
+   "namn": "MATSTRUMP_PT_sushi_gift_ugc_002_v1",
+   "kalla": "Sofie H1 Sushi Captions Ingen musik (video 2577232842703704)",
+   "video": "klar/PT_sofie_h1.mp4",
+   "title": "O presente de brincadeira que não acaba numa gaveta.",
+   "message": "Ninguém festeja um detergente da roupa. Ninguém guarda um presente de brincadeira.\nA resposta a ambas: uma caixa que parece mesmo comida para levar, 5 pares enrolados como maki, pauzinhos de madeira ao lado.\nNão fica na caixa depois. Fica nos teus pés, semana após semana.\nUma marca sueca.",
+   "link_description": "4 tipos. Compre 1 – Receba 1 GRÁTIS. Envio grátis."
+  },
+  {
+   "namn": "MATSTRUMP_PT_sushi_jul_ugc_003_v1",
+   "kalla": "Sofie H2 julstrumpa Sushi Captions Ingen musik (video 28225249640488512)",
+   "video": "klar/PT_sofie_h2.mp4",
+   "title": "Meias de sushi que usas mesmo.",
+   "message": "Ninguém festeja um detergente da roupa. Ninguém guarda um presente de brincadeira.\nA resposta a ambas: uma caixa que parece mesmo comida para levar, 5 pares enrolados como maki, pauzinhos de madeira ao lado.\nNão fica na caixa depois. Fica nos teus pés, semana após semana.\nUma marca sueca.",
+   "link_description": "4 tipos. Compre 1 – Receba 1 GRÁTIS. Envio grátis."
+  }
+ ],
+ "_svenskt_varumarke": "Axels beslut 2026-09-27 kväll (\"Svenskt varumärke? … Jag tycker definitivt vi gör så!\"): sista raden i brödtexten är \"Uma marca sueca.\". Utan butiksnamnet — regeln från 2026-09-18 att butikens namn aldrig står i en annons gäller."
+}

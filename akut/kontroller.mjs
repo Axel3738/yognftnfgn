@@ -356,8 +356,14 @@ export function domBackend(halsa, { nu = new Date(), trosklar = TROSKLAR } = {})
  * "saknas" har lämnat inget spår på tre intervall — och bara Axel kan slå på
  * den igen (den ligger i Routines-vyn på hans konto). "omatbar" och
  * "avstangd" är inte fel. Kontot per rutin ur konfig.rutinkonton.
+ *
+ * Akutlarmet dömer aldrig sig självt (egenId): står det still kan det inte
+ * posta, och när det postar kör det ju. Mätt 2026-09-28 15:57: triggern
+ * fyrade varje timme men sessionen låg still i sex timmar, och första
+ * körningen efteråt köade "Akutlarmet står still" — om sig självt, medan det
+ * körde. Rutinvakten på sajten (stonebite.org → System) ser det i stället.
  */
-export function domRutiner(lage, { nu = new Date(), rutinkonton = {} } = {}) {
+export function domRutiner(lage, { nu = new Date(), rutinkonton = {}, egenId = 'akut' } = {}) {
   const larm = [];
   const friska = [];
   if (!lage || !Array.isArray(lage.rutiner) || lage.status === 'fel' || lage.status === 'saknas') {
@@ -369,6 +375,7 @@ export function domRutiner(lage, { nu = new Date(), rutinkonton = {} } = {}) {
   };
   for (const r of lage.rutiner) {
     const nyckel = `rutin:${r.id}`;
+    if (r.id === egenId) continue;
     if (r.status === 'saknas') {
       const konto = kontoFor(r.id);
       larm.push({

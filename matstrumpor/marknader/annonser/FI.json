@@ -1,0 +1,40 @@
+{
+ "_om": "Finsk annonstext för MATSTRUMP_FI_SALES, skriven 2026-09-27 av en sonnet-subagent mot docs/copy-regler.md ur den svenska vinnarannonsen (Nathalie). Tre-frågorstestet 5/5 ✅. Inget pris, ingen leveranstid, inget butiksnamn. Videorna är FI-batchens (heygen/FI.json), klar/FI_<namn>.mp4. ⛔ Katarina ingår aldrig. Budgeten är EJ GIVEN — kampanjen förblir PAUSED.",
+ "instagram_user_id": "17841479011543544",
+ "copy": {
+  "title": "Hauska tänä iltana. Jalassa huomenna.",
+  "title_alt": [
+   "Sukat, jotka näyttävät sushilta.",
+   "Osta 1 – Saat 1 ILMAISEKSI."
+  ],
+  "message": "Kukaan ei innostu pyykkipulverista. Kukaan ei säilytä vitsilahjaa.\nVastaus molempiin: laatikko, joka näyttää sushi-noutolaatikolta, 5 paria rullattu kuin maki, puiset syömäpuikot mukana.\nSe ei jää laatikkoon. Se on jalassa, viikko viikon perään.\nRuotsalainen merkki.",
+  "link_description": "4 lajia. Osta 1, saat 1. Ilmainen toimitus Suomeen."
+ },
+ "annonser": [
+  {
+   "namn": "MATSTRUMP_FI_sushi_gift_ugc_001_v1",
+   "kalla": "09-17 Nathalie captions musik (video 1531210268763716)",
+   "video": "klar/FI_nathalie.mp4",
+   "title": "Hauska tänä iltana. Jalassa huomenna.",
+   "message": "Kukaan ei innostu pyykkipulverista. Kukaan ei säilytä vitsilahjaa.\nVastaus molempiin: laatikko, joka näyttää sushi-noutolaatikolta, 5 paria rullattu kuin maki, puiset syömäpuikot mukana.\nSe ei jää laatikkoon. Se on jalassa, viikko viikon perään.\nRuotsalainen merkki.",
+   "link_description": "4 lajia. Osta 1, saat 1. Ilmainen toimitus Suomeen."
+  },
+  {
+   "namn": "MATSTRUMP_FI_sushi_gift_ugc_002_v1",
+   "kalla": "Sofie H1 Sushi Captions Ingen musik (video 2577232842703704)",
+   "video": "klar/FI_sofie_h1.mp4",
+   "title": "Sukat, jotka näyttävät sushilta.",
+   "message": "Kukaan ei innostu pyykkipulverista. Kukaan ei säilytä vitsilahjaa.\nVastaus molempiin: laatikko, joka näyttää sushi-noutolaatikolta, 5 paria rullattu kuin maki, puiset syömäpuikot mukana.\nSe ei jää laatikkoon. Se on jalassa, viikko viikon perään.\nRuotsalainen merkki.",
+   "link_description": "4 lajia. Osta 1, saat 1. Ilmainen toimitus Suomeen."
+  },
+  {
+   "namn": "MATSTRUMP_FI_sushi_jul_ugc_003_v1",
+   "kalla": "Sofie H2 julstrumpa Sushi Captions Ingen musik (video 28225249640488512)",
+   "video": "klar/FI_sofie_h2.mp4",
+   "title": "Osta 1 – Saat 1 ILMAISEKSI.",
+   "message": "Kukaan ei innostu pyykkipulverista. Kukaan ei säilytä vitsilahjaa.\nVastaus molempiin: laatikko, joka näyttää sushi-noutolaatikolta, 5 paria rullattu kuin maki, puiset syömäpuikot mukana.\nSe ei jää laatikkoon. Se on jalassa, viikko viikon perään.\nRuotsalainen merkki.",
+   "link_description": "4 lajia. Osta 1, saat 1. Ilmainen toimitus Suomeen."
+  }
+ ],
+ "_svenskt_varumarke": "Axels beslut 2026-09-27 kväll (\"Svenskt varumärke? … Jag tycker definitivt vi gör så!\"): sista raden i brödtexten är \"Ruotsalainen merkki.\". Utan butiksnamnet — regeln från 2026-09-18 att butikens namn aldrig står i en annons gäller."
+}

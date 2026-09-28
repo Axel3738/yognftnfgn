@@ -187,6 +187,16 @@ test('rutinerna: saknas larmar med kontot ur konfig; ok/sen är friska; avstäng
   assert.match(domRutiner(null, { nu: NU }).notering, /rutinvakten kunde inte döma/);
 });
 
+test('rutiner: akutlarmet dömer aldrig sig självt — varken larm eller frisk', () => {
+  const lage = { status: 'ok', rutiner: [
+    { id: 'akut', namn: 'Akutlarmet (Slack #urgent)', kommando: '/akut', status: 'saknas', ord: 'senast för 6 h sedan, väntat var 1 h' },
+    { id: 'stonebite', namn: 'Stonebite', status: 'saknas', ord: 'senast för 5 h sedan' },
+  ] };
+  const { larm, friska } = domRutiner(lage, { nu: NU });
+  assert.deepEqual(larm.map((l) => l.nyckel), ['rutin:stonebite']);
+  assert.deepEqual(friska, []);
+});
+
 test('Notion: 200 friskt, 401 larm, annat = notering', () => {
   assert.deepEqual(domNotion({ status: 200 }).friska, ['nyckel:notion']);
   const d = domNotion({ status: 401 }, { nu: NU });

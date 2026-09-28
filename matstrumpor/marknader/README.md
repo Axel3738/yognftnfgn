@@ -80,6 +80,50 @@ avviker.** Kundvyn (`kundvy.mjs`, POST /localization per land, riktig HTML):
 Start- och produktsidan: inga svenska läckor på något språk. Judge.me-widgeten följer
 locale av sig själv (`"locale":"nb"` osv. i sidan) — inget klick behövdes.
 
+### Läget 2026-09-27 kväll — Europa skarpt efter Axels "ok", läst som kund i 19 länder
+
+Axels ok på listan kom ~17:30 CEST ("ok men vart kan jag se priserna?"). `bygg.mjs --steg
+marknader,sprak,frakt,prislista --skarpt` lade 27 länder i Europa (29 med DK, FI), aktiverade
+de sju språken, skrev fraktzonen "Europa (EU + Island, Liechtenstein, Schweiz)" fri frakt,
+tömde och tog bort "EU (Europeiska Unionen)" (299 kr), döpte om Norden till "Norden (Norge)"
+och släppte CH ur "Internationell"; prislistorna: **NOK 449/349/299/399/299/49 (ny), EUR
+44,90/34,90/29,90/39,90/29,90/4,90 (ny), USD 69/54,99/39,99/59,99/39,99/6,99 (uppdaterad)**.
+Valutor i kassan nu: AUD, CAD, CHF, CZK, DKK, EUR, GBP, HUF, ISK, NOK, NZD, PLN, RON, SEK, USD.
+⚠️ **Shopify vägrar locale `pt` ("Locale is invalid") — portugisiskan heter `pt-PT`** i
+shopLocaleEnable/translationsRegister och i `request.locale.iso_code`, men URL-mappen är `/pt`
+(hreflang `pt`, mätt). Konfig, underlag (`underlag-pt-PT.json`), temagrenar (`when 'pt-PT'`)
+och kundvyn följer det; annonslänken är `/pt/…?country=PT`. Registrering + tillbakaläsning:
+**de 157, fr 157, nl 159, es 159, it 159, pl 158, pt-PT 159 — 0 saknas, 0 avviker.** Temat
+byggdes om från originalen med alla elva språk (9 filer, tillbakalästa). Publicerat och bundet
+till båda webbnärvarorna. Kundvyn (POST /localization per land):
+
+| Land | Adress | lang | Valuta | Pris 5 par | Paketrubrik |
+|---|---|---|---|---|---|
+| NO | /nb | nb | NOK | 449,00 kr (fast) | Kjøp 1 – Få 1 GRATIS |
+| DK | /da | da | DKK | 343,00 kr | Køb 1 – Få 1 GRATIS |
+| FI | /fi | fi | EUR | €44,90 (fast) | Osta 1 – Saat 1 ILMAISEKSI |
+| DE, AT | /de | de | EUR | €44,90 | Kauf 1 – Bekomm 1 GRATIS |
+| CH | /de | de | CHF | CHF 44.00 | Kauf 1 – Bekomm 1 GRATIS |
+| FR, LU | /fr | fr | EUR | €44,90 | Achetez-en 1 – Recevez-en 1 GRATUIT |
+| NL, BE | /nl | nl | EUR | €44,90 | Koop 1 – Krijg 1 GRATIS |
+| ES | /es | es | EUR | €44,90 | Compra 1 – Llévate 1 GRATIS |
+| IT | /it | it | EUR | €44,90 | Compri 1 – Ricevi 1 GRATIS |
+| PL | /pl | pl | PLN | 201,00 zł | Kup 1 – Otrzymaj 1 GRATIS |
+| PT | /pt | pt-PT | EUR | €44,90 | Compre 1 – Receba 1 GRÁTIS |
+| US | /en | en | USD | $69.00 (fast) | Buy 1 – Get 1 FREE |
+| GB / AU / CA / NZ | /en | en | GBP / AUD / CAD / NZD | £54 / A$101 / C$100 / NZ$125 | Buy 1 – Get 1 FREE |
+
+Inga svenska läckor på start- eller produktsidan i något av de elva språken. ⚠️ Länder i
+Europa-marknaden utan eget språk (CZ, HU, RO, GR, IE …) får sidan på den locale kunden kommer
+in på — annonserna länkar alltid med språk och `?country=`. Judge.me visar `en` för pt-PT
+(widgeten känner inte `pt-PT`; alla andra språk följer locale). **Spårningssidan** får de sju
+språken via `sparning/sprak/{de,fr,nl,es,it,pl,pt}.json` + `sprak_extra` i
+`sparning/butiker.json` — byggs av `/sparning matstrumpor` från `main`, så den visar svenska
+för dem tills grenen är mergad (samma läge som nb/da/fi/en hade tidigare i dag).
+
+Kundvyn kollar paketrubriken ur `output/underlag-<locale>.json` (`paket.sushi-2.rubrik`) —
+den fasta listan med fem språk missade alla Europa-språken första gången.
+
 ⚠️ **Spårningssidan `/pages/spara` visar svenska på alla språk tills rutinen byggt om den.**
 Sidan skrivs av `/sparning matstrumpor` varje timme (:56) ur `sparning/butiker.json`, där
 `sprak_extra: ["nb","da","fi","en"]` nu står — men rutinen klonar `main`, så den bygger den
@@ -203,6 +247,130 @@ vinsten på stonebite.org räknar Matstrumpors Big 5-ordrar på leveranslandets 
 Norge med `webPresenceCreate` + `marketUpdate(webPresencesToAdd)` (receptet mättes på
 CaraShell 2026-09-16, `factory/API-GRANSER.md`). Tills dess är matstrumpor.se/nb
 adressen — allt fungerar utan .no.
+
+## Hela Europa + worldwide — Axels mål 2026-09-27 kväll (`/goal`)
+
+Axels order: "vi ska ha hela Europa redo … worldwide redo för att lansera sushistrumporna",
+"lite dyrare priser worldwide", USA "60 eller 70 dollar" för köp 1 – få 1, UGC = Nathalie och
+Sofie (aldrig Katarina), "transkribera alla annonser", och det enda som får bli kvar för honom
+är en liten Cowork-prompt. **Listan han skulle bekräfta** (skickad i chatten ~16:30 CEST):
+
+| Marknad | Länder | Språk | Valuta | Fasta priser (5 par / 3 par / donut / pizza / burger / ätpinnar) |
+|---|---|---|---|---|
+| Norge | NO | nb | NOK | 449 / 349 / 299 / 399 / 299 / 49 |
+| Europa (utökad) | EU 27 utom SE + IS, LI, CH = 29 länder | da, fi + **de, fr, nl, es, it, pl, pt** (en för resten) | EUR + lokala valutor | €44.90 / 34.90 / 29.90 / 39.90 / 29.90 / 4.90 |
+| Engelska världen | US, GB, CA, AU, NZ | en | USD + lokala | $69 / 54.99 / 39.99 / 59.99 / 39.99 / 6.99 |
+
+Shopifys Grow-plan ger inte fler marknader, därför en Europa-marknad med många språk (Shopify
+tar max 20 språk; vi hamnar på 12). Domäner: **matstrumpor.no** och **matstrumpor.eu** köps,
+**matstrumpor.com** finns — kopplas med `cowork/1-domaner.txt`, sedan `webPresenceCreate` +
+`marketUpdate` per marknad. Frakt: ny zon "Europa" fri frakt (29 länder), "EU"-zonen (299 kr)
+blir tom och tas bort, "Norden" döps om och behåller NO, "Internationell" behåller resten.
+
+Allt ovan ligger i `konfig.json` och körs med `bygg.mjs --steg marknader,sprak,frakt,prislista
+--skarpt` när Axel bekräftat listan (torrkört 2026-09-27 ~17:00 CEST, planen stämmer).
+
+### Översättningarna till de sju språken — KLARA och granskade (2026-09-27 kväll)
+
+`output/underlag-{de,fr,nl,es,it,pl,pt}.json`, 196 texter per språk, skrivna av 28
+sonnet-agenter (fyra delar per språk: A = meny/startsida/produkter/FAQ/tema, B = sidor och
+policyer, C = integritetspolicy-sidan, D = Shopifys PRIVACY_POLICY med Liquid) mot
+`oversattning/REGLER.md` + `REGLER-EUROPA.md`, och **varje del granskad av en skeptisk
+sonnet-granskare** (`GRANSKARE.md`, domarna i sessionens scratchpad `*.dom.json`; C och D
+granskades parvis så att sidan och policyn använder samma juridiska termer). Rättningar som
+granskarna fällde och som är inlagda: pl könsneutralt (inga `otrzymałeś`/`zadowolony`),
+`liquid.ms-paket.par` → `pary`; de `Box` i berättelsen, `Datenschutzerklärung` i alla fyra
+delar, `erheben`/`Übermittlung`, tyska citattecken „…“; fr `et` (inte `ou`), `stockage en
+nuage`, `discriminerons`, `carte de paiement`; es `¿Les quedan bien a todos?`, `Según dónde
+vivas`, `autoridades de control`; it `titolare del trattamento` för Shopify (D hade
+`responsabile` = biträde), `carte di pagamento`, `Diritto alla cancellazione`; nl `mogelijke`,
+`procedures op tegenspraak`, `klantenservice`, `regelgevende`. Titlarna i menyn (A) och på
+sidorna (B/C) är likriktade per språk (`titelkoll` gav 0 konflikter). ⚠️ Två avsiktliga
+avvikelser som varje granskare flaggade och som INTE är fel: fraktpolicyns "1–2 dagars
+Postnord från svenska lagret" är struket i alla marknadsspråk (gäller bara Sverige; de redan
+publicerade en/nb/da gör likadant), och presentkortets optionvärde `150,00 kr` står kvar
+oöversatt i alla språk (Shopifys egen valör). **Shopifys opt-out-formulär ("Dina
+integritetsval") bär sin kundtext i `data-*`-attribut** — de är översatta i alla elva språk;
+nb/da hade svenska knappar live till 2026-09-27 kväll (omregistrerade, tillbakalästa, sedda som
+kund: `Meld deg av` / `Afmeld dig`). Registreringen av de sju nya språken (`bygg.mjs --steg
+sprak,oversattningar,kontroll,tema,publicera`) väntar bara på Axels ok på listan.
+
+Kampanjkonfig för DE (DE+AT+CH), FR (FR+BE+LU), NL, ES, IT, PL, PT ligger i
+`annonser/marknader.json` (platshållarbudget, PAUSED) med copy i `annonser/<KOD>.json` (alla
+elva marknadskoder skrivna, tre-frågorstestet ✅), HeyGen-manifest per språk i `heygen/`.
+**Alla svenska videoannonser är transkriberade lokalt** (faster-whisper `medium`): 69 av 86
+videor fick SRT i `transkript/` (11 av dem är nästan tysta — musik/text, ska aldrig dubbas),
+17 lämnade Meta inte ut (`source` saknas — id:n i `transkript/README.md`). HeyGen behövs
+inte för transkriptet, bara för dubbningen, och den står still på API-krediterna.
+
+## Kampanjerna i kontot (byggda 2026-09-27 ~16:00 CEST, alla PAUSED) — `annonser/`
+
+Axels order: "Nu har api tillgång också. Bygg upp alla kampanjer. Bygg upp worldwide kampanj.
+Förbered usa kampanj med alla nya ads vi inte hade innan och UGC heygennad. Katarina får vi
+inte köra i andra marknader så heygenna inte dom." `annonser/bygg.mjs --alla --skarpt`
+skapade i nya kungen (CBO, OUTCOME_SALES, lowest cost, ett adset var — spegel av SE-adsetet
+`09-17 UGC` med marknadens länder):
+
+| Kod | Kampanj | Id | Länder | Språk | Budget |
+|---|---|---|---|---|---|
+| NO | `MATSTRUMP_NO_SALES` | 120251749551520023 | NO | nb | **1 000 kr/dag — Axels** |
+| DK | `MATSTRUMP_DK_SALES` | 120251749599180023 | DK | da | 1 000 kr/dag — Axels (kväll; var platshållare) |
+| FI | `MATSTRUMP_FI_SALES` | 120251749604200023 | FI | fi | 1 000 kr/dag — Axels (kväll; var platshållare) |
+| US | `MATSTRUMP_US_SALES` | 120251749609010023 | US | en | 1 000 kr/dag — Axels (kväll; var platshållare) |
+| WW | `MATSTRUMP_WW_SALES` | 120251749612350023 | NO, DK, FI, US, GB, AU, CA, NZ | en | 1 000 kr/dag — Axels (kväll; var platshållare) |
+| DE | `MATSTRUMP_DE_SALES` | 120251750242530023 | DE, AT, CH | de | 1 000 kr/dag — Axels (kväll) |
+| FR | `MATSTRUMP_FR_SALES` | 120251750244370023 | FR, BE, LU | fr | 1 000 kr/dag — Axels (kväll) |
+| NL | `MATSTRUMP_NL_SALES` | 120251750246440023 | NL | nl | 1 000 kr/dag — Axels (kväll) |
+| ES | `MATSTRUMP_ES_SALES` | 120251750248310023 | ES | es | 1 000 kr/dag — Axels (kväll) |
+| IT | `MATSTRUMP_IT_SALES` | 120251750250830023 | IT | it | 1 000 kr/dag — Axels (kväll) |
+| PL | `MATSTRUMP_PL_SALES` | 120251750321130023 | PL | pl | 1 000 kr/dag — Axels (kväll) |
+| PT | `MATSTRUMP_PT_SALES` | 120251750324340023 | PT | pt (`/pt/`) | 1 000 kr/dag — Axels (kväll) |
+
+Worldwide länkar till `/en/products/sushi-strumpor` utan `?country=` — Shopify väljer marknad
+efter kundens IP, så en dansk ser engelska + DKK. Sverige ingår inte (egen kampanj). **Inga
+annonser ligger i än:** videorna väntar på HeyGen (nedan). **Axels budgetbeslut 2026-09-27
+kväll: alla kampanjer 1 000 kr/dag** ("Worldwide kanske vi kan börja på 1000kr per dag. Sen
+respektive kampanjer 1000kr per dag också") — men ⛔ **ingen kampanj aktiveras förrän Axel
+granskat annonserna** ("jag vill inte att du aktiverar kampanjerna i meta för ens jag har
+granskat alla"); `--aktivera` körs aldrig utan hans ord. Sista raden i varje marknads brödtext
+är sedan samma kväll "svenskt varumärke"-raden (`A Swedish brand.` / `Eine schwedische Marke.`
+…, Axels beslut: "Svenskt varumärke? … Jag tycker definitivt vi gör så!" — CaraShell-principen),
+utan butiksnamnet, så regeln "butikens namn står aldrig i en annons" håller. Läget i kontot:
+`annonser/lage.json`, `bygg.mjs --lage`. Metas rate limit slog till mitt i bygget (kod 17,
+backoff 30/60/120 s …) — bygget tar en kvart för sju kampanjer, inte en minut.
+
+⚠️ **HeyGen-nyckeln sitter på kontot `subscriptions@stonebite.org`** (Axel Odhner, mätt
+`GET /v1/user/me` 2026-09-27 kväll): `billing_type: wallet`, **saldo 0,10 USD, ingen
+prenumeration på det kontot**. Det är därför API:t svarar "Insufficient credit … requires 'api'
+credits" fast `remaining_quota` visar `plan_credit: 2000` — planens krediter ligger inte i
+API-plånboken. Axel fyller på plånboken på det kontot (app.heygen.com → Settings → API/Billing)
+eller lägger en API-nyckel från kontot som bär prenumerationen i `HEYGEN_API_KEY`.
+
+## Norge först — Axels budget 1 000 kr/dag (2026-09-27), förberett men stoppat på HeyGen
+
+Axels svar 2026-09-27: "1000kr per dag" för Norge, och regeln "alla UGC-videor översätts med
+den dyraste versionen på HeyGen; annars kör vi bara våra egna HeyGen" (egna avatarvideor
+görs om direkt på norska, översätts inte). Allt ligger i **`norge/`** — `README.md` där är
+körordningen. Gjort: de fyra UGC-källvideorna hämtade ur kontot (Nathalie = vinnaren, Katarina
+×2, Sofie H1; `kallor.json`), HeyGen-batchen skapad (`norge.json`, marknad NO, "Norwegian
+Bokmål (Norway)"), norsk annonstext från sonnet mot copy-reglerna (`annonser.json`), och
+`upp.mjs` som bygger `MATSTRUMP_NO_SALES` (CBO 1 000 kr/dag, OUTCOME_SALES, lowest cost) +
+adsetet `MATSTRUMP_NO_ugc` (Norge, 18–65, Advantage+ audience, köp via pixeln, 7d klick —
+speglar SE-adsetet `09-17 UGC`) + annonserna, allt PAUSED, med `--aktivera` som slår på
+bara det körningen själv skapat.
+
+⛔ **Stoppat, mätt 2026-09-27 ~15:00 CEST:**
+1. **Meta:** `META_ACCESS_TOKEN` läser nya kungen men får inte skriva — `Permissions error
+   … kontaktar du en administratör för att få behörighet med rollen Annonsör eller högre …
+   ads_management`. Systemanvändaren "API LONG TERM" (Business Manager SnarkLös) har bara
+   läsrätt på Matstrumpors konto. Axels klick: Business Manager → Matstrumpors konto "nya
+   kungen" → ge SnarkLös/systemanvändaren **Hantera kampanjer** (Annonsör). Alternativet är
+   Adsmanager-MCP:n i en session Axel startar (samma väg som `/matstrumpor`).
+2. **HeyGen:** alla fyra proofread-sessionerna föll på `Insufficient credit. This operation
+   requires 'api' credits` — medan `/v2/user/remaining_quota` sa `api: 6` före och efter.
+   Samma mönster som 2026-08-29 (47 sessioner). API-krediterna köps på app.heygen.com
+   (Settings → Subscriptions & API). Sessionerna återskapas av sig själva vid nästa
+   `proofread`-körning.
 
 ## Annonserna i 20–30 länder — planen (inte byggd)
 
