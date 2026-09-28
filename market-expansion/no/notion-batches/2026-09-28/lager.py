@@ -165,6 +165,11 @@ RUTOR = {
     'CS_12_H1_pris': dict(fil='CS_12_H1_pris.png', rect=[130, 333, 589, 566],
                           rader=[{'text': '1 189 kr', 'vikt': 1.0},
                                  {'text': '5,0/5', 'vikt': 0.52}]),
+    # UG_2_H1: svenska "1 129 kr. / Ord. 1 469 kr." (mätt 14,5-20,5 s, stilla
+    # från 14,9). Ingen struken rad här — källan skriver "Ord." framför.
+    'UG_2_H1_pris': dict(fil='UG_2_H1_pris.png', rect=[152, 228, 564, 390],
+                         rader=[{'text': '1 189 kr.', 'vikt': 1.0},
+                                {'text': 'Ord. 1 549 kr.', 'vikt': 0.52}]),
 }
 
 if __name__ == '__main__':
