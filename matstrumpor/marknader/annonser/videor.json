@@ -1,0 +1,26 @@
+{
+ "MATSTRUMP_DE_sushi_gift_ugc_001_v1": {
+  "sha256": "29a337bab274163601466152df5bb602b82464c4cdcfd3f027657758e3df8224",
+  "fil": "klar/DE_nathalie.mp4",
+  "video_id": "4616870098459193",
+  "creative_id": "1886747832040618",
+  "annons_id": "120251767700350023",
+  "skapad": "2026-09-28T16:53:46.214Z"
+ },
+ "MATSTRUMP_DE_sushi_gift_ugc_002_v1": {
+  "sha256": "3b0564aeafd940e18207de3aabaa649b8724fbf667f5b792c8b73f09f1d64442",
+  "fil": "klar/DE_sofie_h1.mp4",
+  "video_id": "1859040478795202",
+  "creative_id": "1073181438895649",
+  "annons_id": "120251767709150023",
+  "skapad": "2026-09-28T16:54:13.741Z"
+ },
+ "MATSTRUMP_DE_sushi_jul_ugc_003_v1": {
+  "sha256": "992b49e0a05070d9a3495bd35ff74f1a8a79e746aef66fe6adb75c4d91382512",
+  "fil": "klar/DE_sofie_h2.mp4",
+  "video_id": "1142180378156014",
+  "creative_id": "955470877026988",
+  "annons_id": "120251767714620023",
+  "skapad": "2026-09-28T16:54:37.193Z"
+ }
+}
