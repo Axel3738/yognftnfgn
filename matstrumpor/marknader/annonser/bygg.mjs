@@ -27,9 +27,13 @@ const skarpt = arg.includes('--skarpt');
 const aktivera = arg.includes('--aktivera');
 const log = (s) => console.log(s);
 
-/** Ren: får kampanjen aktiveras? Bara med ett budgetbeslut som är Axels och annonser som pekar rätt. */
+/** Ren: får kampanjen aktiveras? Bara med ett budgetbeslut som är Axels och annonser som pekar rätt.
+ *  ⛔ i budgetbeslutet (eller "tills Axel granskat") stoppar också: Axel 2026-09-27 kväll, "jag vill
+ *  inte att du aktiverar kampanjerna i meta för ens jag har granskat alla". Budgeten är given, men
+ *  aktiveringen är hans — texten i marknader.json ändras när han sagt ja, aldrig av en session själv. */
 export function farAktiveras(k, annonser) {
   if (/EJ GIVEN|platshållare/i.test(k.budget_beslut ?? '')) return { ok: false, skal: `budgeten är en platshållare (${k.budget_beslut})` };
+  if (/⛔|tills Axel granskat/i.test(k.budget_beslut ?? '')) return { ok: false, skal: `väntar på Axels granskning (${k.budget_beslut})` };
   if (!annonser.length) return { ok: false, skal: 'inga annonser i adsetet' };
   const fel = annonser.filter((a) => !lankOk(k, a.lank));
   if (fel.length) return { ok: false, skal: `${fel.length} annonser länkar fel: ${fel.map((a) => `${a.name} → ${a.lank}`).join('; ')}` };

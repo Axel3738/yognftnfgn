@@ -22,3 +22,16 @@ test('farAktiveras: platshållarbudget, tomt adset eller fel länk stoppar', () 
   assert.match(farAktiveras(NO, []).skal, /inga annonser/);
   assert.match(farAktiveras(NO, [{ name: 'b', lank: 'https://matstrumpor.se/products/sushi-strumpor' }]).skal, /länkar fel/);
 });
+
+test('farAktiveras: en given budget med ⛔ "tills Axel granskat" stoppar ändå — och det gör marknader.json i dag', async () => {
+  const ok = [{ name: 'a', lank: 'https://matstrumpor.se/nb/products/sushi-strumpor?country=NO' }];
+  const vantar = { ...NO, budget_beslut: "Axel 2026-09-27: '1000kr per dag'. ⛔ Förblir PAUSED tills Axel granskat annonserna" };
+  assert.match(farAktiveras(vantar, ok).skal, /Axels granskning/);
+  // Facit är filen: varje kampanj som ännu inte granskats ska stoppas av spärren.
+  const { readFileSync } = await import('node:fs');
+  const M = JSON.parse(readFileSync(new URL('../annonser/marknader.json', import.meta.url), 'utf8'));
+  for (const [kod, k] of Object.entries(M.kampanjer)) {
+    const lank = [{ name: kod, lank: k.lank }];
+    assert.equal(farAktiveras(k, lank).ok, false, `${kod} skulle kunna aktiveras: ${k.budget_beslut}`);
+  }
+});

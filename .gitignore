@@ -141,3 +141,8 @@ klaviyo/output/
 # Matstrumpors översättningar är minnet — de committas (Axels marknadsbygge 2026-09-27)
 !matstrumpor/marknader/output/
 !matstrumpor/marknader/output/underlag-*.json
+
+# Matstrumpors lokaliserade videor (HeyGen + undertexter) — stora filer, laddas upp till Meta, aldrig i git
+matstrumpor/marknader/annonser/klar/*.mp4
+matstrumpor/marknader/annonser/klar/*.png
+matstrumpor/marknader/annonser/klar/*.rutor.json
