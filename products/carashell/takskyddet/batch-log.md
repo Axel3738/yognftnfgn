@@ -2654,3 +2654,73 @@ fanns bara i den commitade versionen (`23de2805`). **Hämta originalet ur git
 innan Discord-rapporten postas efter en efterjustering**, annars rapporteras
 fem färdiga rader från tidigare dygn som dagens arbete och stoppet försvinner
 ur ACTION NEEDED.
+### USA-runda 15 — 2026-09-28
+
+**Sju videor live.** HeyGen-plånboken fylldes på över natten ($235,67, 14 140
+api-credits mot $0,10 i går), så de fem som hållits sedan 25/9 gick tillsammans
+med två nya.
+
+| SE-rad | US-annons | Adset | Ad-ID |
+|---|---|---|---|
+| `CaraShellRoof_SP_104_H3` | `CaraShellRoof_US_SP_104_H3` | `CARASHELL_US_SP` | `120251650660230435` |
+| `CaraShellRoof_SP_104_H4` | `CaraShellRoof_US_SP_104_H4` | `CARASHELL_US_SP` | `120251650670480435` |
+| `CaraShellRoof_CS_109_H1` | `CaraShellRoof_US_CS_109_H1` | `CARASHELL_US_CS` | `120251650890260435` |
+| `CaraShellRoof_PD_110_H1` | `CaraShellRoof_US_PD_110_H1` | `CARASHELL_US_PD` | `120251650898200435` |
+| `CaraShellRoof_CO_105_H1` | `CaraShellRoof_US_CO_105_H1` | `CARASHELL_US_CO` | `120251650907860435` |
+| `CaraShellRoof_OB_103_H1` | `CaraShellRoof_US_OB_103_H1` | `CARASHELL_US_OB` | `120251651131140435` |
+| `CaraShellRoof_OB_104_H1` | `CaraShellRoof_US_OB_104_H1` | `CARASHELL_US_OB` | `120251651140340435` |
+
+Alla sju tillbakalästa ACTIVE. Approved-kön: 62 rader, 0 eftersläpande.
+
+⛔ **FYRA FEL I DE SVENSKA KÄLLORNA — rättade, inte översatta.** Det här är
+rundans viktigaste lärdom: en trogen översättning hade burit in fyra falska
+eller förbjudna påståenden i USA.
+
+1. **"dragsko" ligger i det svenska TALET** i `CS_109_H1` och `PD_110_H1`
+   ("spänns fast med rem och dragsko i kanten"). Produkten har ingen dragsko —
+   det står i produktminnet och i varje brief. HeyGen översatte det lydigt till
+   "drawstring". Engelskan säger sidans egen mekanism i stället: remmar på alla
+   fyra sidor som hakas i en krok i nederkant.
+2. **Betyget finns på TRE ställen:** `CS_109_H1`:s sista talblock ("Betyg 5,0 av
+   5") och inbränt i bilden i `PD_110_H1` och `CO_105_H1` ("5,0/5" bredvid
+   priset). Produkten har bara seedade recensioner. Talblocket skrevs om, och
+   panelerna över bilden täcker betyget och lämnar priset ensamt.
+3. **`OB_103_H1`:s kommentarskort namnger en person, "Lars"** — och just den
+   briefen säger: *"The comment … is never attributed to a named person."*
+   Källan bryter alltså mot sin egen regel. Det engelska kortet
+   (`video/kort.py`) ställer samma fråga utan namn.
+4. **HeyGen hörde fel på priset:** `OB_103_H1`:s tal blev "one thousand seven
+   hundred twenty-nine kronor" där svenskan säger 1 129. Fångat i den rättade
+   SRT:n, före rendering. **Den råa maskinöversättningen får aldrig gå ut** —
+   det här är beviset.
+
+⚠️ **Recensionsraden är borta ur det amerikanska slutkortet** (`video/slutkort.py`).
+Kortet bar "16 reviews · 5.0 average" i rundorna 20/9 och 23/9, och butiken
+publicerar den siffran (Judge.me på carashell.com: `reviewCount` 16,
+`ratingValue` 5.00, mätt samma dag). Men alla sju briefer i dag säger att
+produkten bara har seedade recensioner, och samma påstående stryks ur talet och
+täcks i bilden i samma annonser. Att låta det stå kvar på slutkortet hade varit
+inkonsekvent. **Redan live-lagda annonser rörs aldrig i efterhand** — det här
+gäller nya.
+
+⛔ **svenskkoll fällde fyra av sju i första bygget.** OCR över hela videon hittade
+`Är det vattentätt?` (OB_103, 1,0–2,5 s), `och hakas fast i en` (OB_104 12,75 s,
+SP_104_H3 17,75 s) och `och dragsko i kanten.` (PD_110 14,25 s). Rotorsak: i just
+de framesen smälte det svenska pillret ihop med bakgrunden till en grupp på
+237–299 px, alltså över `h_max`, och rutan avvisades — pillret ritades aldrig
+över. **Att höja `h_max` är fel medicin**: då läggs en svart platta över hela
+produkten. Rätt medicin är en `fyll`-platta i just det tidsfönstret. Efter det:
+0 träffar på alla sju.
+
+**Mätvärden som är rundans egna** (skriv aldrig av dem till nästa runda):
+pillrets medianhöjd per video — CO 85, CS 79, OB_103 61, OB_104 61, PD 85,
+SP_H3 62, SP_H4 86 px. Röstkollen grön på alla sju med längddrift och avhugget
+slut FAKTISKT mätta (första körningen hoppade över dem tyst för att filnamnen
+inte matchade — `CaraShellRoof_US_<n>.mp4` mot källans `<n>.mp4`; en grön
+röstkoll som inte jämfört med källan har inte mätt det den påstår).
+
+✅ **Placeringsläckan är stängd — bevisat.** I går sa vakten att 16 842 kr gick
+till Instagram Stories, men att dygnet bar spend från före bytet 11:32 UTC. I dag
+är första HELA dygnet med bara flödet: **6 044 kr på tre placeringar, allt inne i
+flödet, noll utanför.** Alla 12 adsets bär rätt placeringar, och sidorna och
+kassan läses som engelska med USA förvalt.

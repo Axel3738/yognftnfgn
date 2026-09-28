@@ -1,0 +1,50 @@
+{
+ "in": "../forbehandlad/carashell_SP_104_H3.mp4",
+ "ut": "../../us/CaraShellRoof_US_SP_104_H3.mp4",
+ "srt": "../srt-us/carashell_SP_104_H3.srt",
+ "captions": {
+  "zon": [
+   640,
+   1260
+  ],
+  "max_chars": 34,
+  "font_px": 30,
+  "standard_cy": 1010,
+  "h_min": 30,
+  "h_max": 130,
+  "x0": 50,
+  "x1": 670,
+  "bredd_max": 620,
+  "fyll": [
+   {
+    "rect": [
+     0,
+     962,
+     720,
+     1078
+    ],
+    "t": [
+     17.4,
+     18.5
+    ]
+   }
+  ]
+ },
+ "lager": [
+  {
+   "png": "../lager/sp104-vav.png",
+   "t": [
+    19.8,
+    23.4
+   ]
+  },
+  {
+   "png": "../lager/sp104-pris.png",
+   "t": [
+    25.4,
+    28.8
+   ]
+  }
+ ],
+ "qa": "qa-SP_104_H3"
+}

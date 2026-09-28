@@ -1,0 +1,32 @@
+(node:7014) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+=== ops-till-meta — CaraShell (carashell/takskyddet) · marknad US · konto 1107817401910319 (Magiborsten UK) ===
+1. Butik: prefix carashellroof_ · carashellroof · annons "CaraShellRoof_US_CO_105_H1" · video CaraShellRoof_US_CO_105_H1-ai.mp4 (2.07 MB)
+3. Marknadskoll: "CaraShellRoof_US_CO_105_H1" bär US — ok för US
+2. Kampanj (--kampanj): "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia" (120251451415500435) ACTIVE/ACTIVE — matchar via annonserna, inte namnet
+   CBO: 8000 kr/dag · kampanjbas "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m"
+4. Dubblett: "CaraShellRoof_US_CO_105_H1" finns inte bland kontots 472 annonser — ok
+5. Koncept CO → adset "CARASHELL_US_CO" (120251488318130435) — finns, ACTIVE
+6. Sida 1381171778405935 (ärvd) (ingen IG) · länk https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US (ärvd) · DSA saknas — skickar inget
+7. Media: video 1428446972756893 uppladdad, thumbnail klar
+8. Creative-spec (SHOP_NOW, alla enhancements OPT_OUT):
+   {
+     "page_id": "1381171778405935",
+     "video_data": {
+       "video_id": "1428446972756893",
+       "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/825558122_1399781222325652_8183175093564077376_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=e3495b&_nc_ohc=_64vYYXKY4sQ7kNvwFpt1n3&_nc_oc=AdqKOwZ4D3dlQvQHrklUwcwl5C-hjepXnSNa6ehuFZ-ZkMuenXERBQsSPFViBsotKiI&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=APRAPSkEAAAA&_nc_gid=YiSlxcmO5MD-L0Z0b4NQLg&_nc_tpa=Q5bMBQKdiFcsUxHUAULOeOw7DMl5a9L_OmWocKnOLYVdSPkHCbAxgXaCEk5aPeQir67NGOYa1_yhSJb0fQ&oh=00_AQPIZTnjNPjSnjGSyUx771RzkEjIGQ9_w9ha6jRdtV8h3w&oe=6AC073F8",
+       "message": "It's held up fine so far.\nThe roof is the surface you never check — until something's wrong up there.\n$199 now, or a roof you find out is damaged next spring.\nWas $249, save $50 (20%).",
+       "title": "$199 now. Nothing to guess later.",
+       "link_description": "The roof is the costliest part of the RV to repair.",
+       "call_to_action": {
+         "type": "SHOP_NOW",
+         "value": {
+           "link": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US"
+         }
+       }
+     }
+   }
+8. Annons skapad PAUSED: CaraShellRoof_US_CO_105_H1 (120251650907860435), creative 1546314820846537
+9. Aktiverad: annons 120251650907860435: PAUSED → ACTIVE
+   Tillbakaläsning: CaraShellRoof_US_CO_105_H1 → ACTIVE / effective IN_PROCESS (adset 120251488318130435)

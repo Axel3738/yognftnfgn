@@ -1,0 +1,56 @@
+{
+ "in": "../forbehandlad/carashell_OB_104_H1.mp4",
+ "ut": "../../us/CaraShellRoof_US_OB_104_H1.mp4",
+ "srt": "../srt-us/carashell_OB_104_H1.srt",
+ "captions": {
+  "zon": [
+   630,
+   1140
+  ],
+  "max_chars": 34,
+  "font_px": 30,
+  "standard_cy": 860,
+  "h_min": 25,
+  "h_max": 260,
+  "x0": 50,
+  "x1": 670,
+  "bredd_max": 620,
+  "av": [
+   [
+    19.4,
+    999
+   ]
+  ],
+  "fyll": [
+   {
+    "rect": [
+     0,
+     812,
+     720,
+     902
+    ],
+    "t": [
+     12.4,
+     13.7
+    ]
+   }
+  ]
+ },
+ "lager": [
+  {
+   "png": "../lager/ob104-pris.png",
+   "t": [
+    15.0,
+    19.4
+   ]
+  },
+  {
+   "png": "../lager/slutkort-720.png",
+   "t": [
+    19.4,
+    999
+   ]
+  }
+ ],
+ "qa": "qa-OB_104_H1"
+}
