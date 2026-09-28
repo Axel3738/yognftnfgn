@@ -2559,3 +2559,23 @@ sessionens egen uppföljning på första natten och behövs inte igen.
 Samma två rader, samma md5 (`d9ab48ff…` / `271bf976…`), samma slutkort med
 `carashell.se` (OCR kördes). Inget uppladdat, ingen status ändrad, inga nya
 kommentarer. SE-kampanjen ACTIVE, pris 1 129 kr ur butiken.
+
+## 2026-09-28 — NO-rundan: kön kortare, allt redan uppe
+
+5 rader i `SE-ACTIVE to be translated` (`CS_109_H1`, `PD_110_H1`, `CO_105_H1`,
+`OB_103_H1`, `OB_104_H1`), alla med `finns_i_meta: true`. Tillbakalästa en och
+en ur Meta: ACTIVE/ACTIVE i ACTIVE-adsets (CS, PD, CO, OB). Fredagens två
+bildrader (`OB_108_1`, `OB_110_1`) ligger inte längre i statusen — de har
+flyttat vidare av sig själva.
+
+Approved-kollen: **62 rader, 0 utan NO-annons.** Kampanjen
+`CARASHELL_NO_Takovertrekket` ACTIVE med 12 adsets, ärvd länk
+`carashell.se/nb/products/takskyddet?country=NO`, pris 1 106 NOK läst ur
+butiken. Inget renderat, inget uppladdat, 0 HeyGen-credits, ingen Notion-status
+rörd (raderna står kvar för att US inte bär dem än). Discord-rapport postad i
+`#annons-uppladdning` (`1554134064217198663`), ingen ping.
+
+Sjätte dygnet i rad utan något att översätta: allt som landar i kön kommer ur
+speglingen och bär redan sin norska annons. Frågan om presentvinkelns två
+adsets (`- G` och `- GT`) ligger fortfarande hos Axel, obesvarad sedan
+2026-09-23 — rapporterad i `varningar`, inget rört.
