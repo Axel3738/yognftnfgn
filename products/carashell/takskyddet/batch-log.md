@@ -2559,3 +2559,62 @@ sessionens egen uppföljning på första natten och behövs inte igen.
 Samma två rader, samma md5 (`d9ab48ff…` / `271bf976…`), samma slutkort med
 `carashell.se` (OCR kördes). Inget uppladdat, ingen status ändrad, inga nya
 kommentarer. SE-kampanjen ACTIVE, pris 1 129 kr ur butiken.
+
+## LP "Before you buy" (USA) byggd 2026-09-27 — `/invandningar`, egen sida på carashell.com
+
+Live: https://carashell.com/pages/rv-roof-cover-before-you-buy?country=US (obrandad,
+7 punkter, mall `page.listicle`, läst tillbaka som kund utan header/footer med
+pristabellen ritad av butiken). Axels order efter USA-rapporten
+(`kommentarer/rapporter/usa-2026-09-27.md`, 137 kommentarer): en sida som hanterar
+alla invändningar på den amerikanska marknaden, på en egen länk, byggd som
+lagerrensningssidan. Nytt koncept i motorn (`listicle/koncept/invandningar.json`),
+två nya block (pristabell med en rad per variant — $199/$199/$229/$259/$279/$309/
+$339/$369/$389, knapp per längd med `?variant=`; frågedel med 8 frågor) och läget
+`--egen-sida` (ingen svensk förlaga). Punkterna i kommentarernas ordning: 1 storlek
+och pris (16 US-kommentarer), 2 AC-aggregatet (23 — svaret är "we asked the maker",
+Axels gissning står inte där), 3 banden (6 — leverantörens ord: woven webbing, will
+not damage the paint; ingen vindgräns), 4 fukt (3 — "it can", distansdelen utan
+datum/pris), 5 helöverdraget (5), 6 fifth wheel/solceller/antenn (4 + 1), 7
+förtroendet/90 dagar (10). Bilder: sex produktbilder ur de åtta nya renderna på
+produktsidan (vinterplats, krok under kanten, regn på väven, före/efter, collage,
+studio) + två kie-bilder som visar KUNDENS tak utan överdrag (AC-tak från stege,
+fifth wheel med solcell) — aldrig överdraget över ett AC-tak (obesvarat). ⚠️
+`tak-spanne.jpg`/`tak-hopvikt.jpg` (bild 11–12 på produktsidan) visar elastiska
+band med plastkrokar på rosa tyg och motsäger sidans "woven webbing" — inte använda.
+Tre-frågorstestet: 35 rader, 4 ❌ (tre mallrubriker + mätrådet för fifth wheel).
+Annonserna pekar INTE dit ännu — Axels klick.
+
+## LP "5 reasons" (USA) byggd 2026-09-27 kväll — `/anledningar` invändningsvänd, egen sida på carashell.com
+
+Live: https://carashell.com/pages/rv-roof-cover-5-reasons?country=US (obrandad,
+5 punkter, mall `page.listicle`, läst tillbaka som kund: lang en, ingen
+header/footer, 9 tabellrader ritade av butiken med `?variant=`-länkar, ingen
+`[[PRISTABELL]]` kvar). Axels order samma kväll: "en variant där det inte är så
+tydligt att du svarar på deras kommentarer … fem anledningar till varför folk
+struntar i att köpa vårt överdrag, och vad som händer istället … invändningarna,
+och sen svarar vi på dem och gör dem till anledningar till varför folk behöver
+byta … 'five reasons why'". Skälen = de fem största US-invändningarna i
+rapporten, förtroendet sist som grundskelettet vill: 1 inget i bilderna ser ut
+som deras tak (AC, 23 US-kommentarer), 2 priset de såg var inte priset för deras
+vagn (16), 3 förra överdraget gjorde mer skada än nytta (banden, 6), 4 för de
+pengarna hellre hela vagnen (5), 5 ingen de känner har ett (förtroendet, 10).
+Varje punkt: skälet → vad taket får i stället (bara produktsidans "rain sits
+around the hatches and seams") → det belagda → skälet att byta; ingen "you
+wrote". Pristabell + frågedel (8: fifth wheel, solceller, fukt, vattentät, snö,
+en person, två storlekar, frakt). Det obekräftade (AC, fifth wheel-fronten,
+snölast, stege, värme) står som "we don't have the maker's answer" — ALDRIG
+"we've asked": de 17 leverantörsfrågorna skickas inte (Axels beslut samma
+kväll). Bilder: kie-bilden av AC-taket återanvänd ur systersidans cache (0
+credits) + produktbild 8, 6, 1, 4 och 2. Tre-frågorstestet: 29 rader, 5 ❌ (två
+mallrubriker, ingressens öppning, punkt 4:s öppning, riskfritt-instruktionen,
+alla motiverade). Ingen mening delad med systersidan. Annonserna pekar inte dit
+ännu — Axels klick.
+
+⛔ **Systersidan `rv-roof-cover-before-you-buy` är FRYST som original** (Axel
+samma kväll: "Nej ändra inget på den publicerade sidan … Behåll den sidan som
+original … Reversera alla ändringar på den"). Bakgrund: sessionen skrev om dess
+"we have asked the maker"-meningar till "we don't have the maker's answer"
+(ingen fråga var skickad) och det gick live ~3 minuter innan Axels stopp;
+originalcopyn (commit df8d184) publicerades om och lästes tillbaka förbi cachen:
+4 originalfraser, 0 omskrivningar. Han gillar den men använder den inte. Rör
+aldrig den sidan igen.

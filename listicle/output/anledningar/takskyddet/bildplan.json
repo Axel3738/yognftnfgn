@@ -1,0 +1,16 @@
+{
+  "_kommentar": "Bildplan för USA-sidan '5 reasons RV owners skip a roof cover' (takskyddet, carashell.com, koncept anledningar i den invändningsvända varianten), 2026-09-27 kväll. Samma produktbilder som systersidan rv-roof-cover-before-you-buy (index i marknadsproduktens ordning, alla tittade 2026-09-27: inga människor, ingen text, inga loggor, vävda remmar). punkt1 (AC-skälet) återanvänder systersidans kie-bild av KUNDENS tak med AC-aggregat UTAN överdraget — prompten är ordagrant densamma så cachen (bilder.json, nyckel aac6c8fcae60) träffar utan nya credits; aldrig överdraget på ett AC-tak, för hur det sitter där är obekräftat. ⛔ Produktbild 11 och 12 (leverantörens elastiska band) används aldrig på en listicle-sida.",
+  "bilder": {
+    "punkt1": {
+      "kalla": "kie",
+      "prompt": "The roof of a white American travel trailer photographed from a ladder at the rear corner, slightly above roof level: a large white rooftop air conditioner shroud in the middle of the flat roof, two low plastic vent hoods and a small plumbing vent pipe, seams and a light rubber roof membrane visible, no cover on the roof, overcast daylight, an empty gravel RV storage lot and a plain wooden fence blurred below, no other vehicles in the frame, photo-realistic, natural muted colors, completely unbranded trailer with no badges, no lettering, no stickers and no decals, no people, no hands, no text, no logos",
+      "referenser": [],
+      "format": "1:1"
+    },
+    "punkt2": { "kalla": "produkt", "index": 8 },
+    "punkt3": { "kalla": "produkt", "index": 6 },
+    "punkt4": { "kalla": "produkt", "index": 1 },
+    "punkt5": { "kalla": "produkt", "index": 4 },
+    "lyckas": { "kalla": "produkt", "index": 2 }
+  }
+}

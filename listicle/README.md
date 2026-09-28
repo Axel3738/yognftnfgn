@@ -16,6 +16,7 @@ kom först, motorn blev gemensam. Noll npm-beroenden.
 node listicle/bygg.mjs <produktlänk> --underlag [--koncept id] [--punkter n]   # produktfakta → output/<koncept>/<handle>/underlag.json
 node listicle/bygg.mjs <produktlänk> --torr [--koncept id]                     # planen, inget nät mot kie/Shopify, butiken orörd
 node listicle/bygg.mjs <produktlänk> [--koncept id] [--punkter 7] [--butik id] # skarpt: bilder → CDN, sidan → butiken, förhandsvisning
+node listicle/bygg.mjs <produktlänk> --butik carashell --marknad US --egen-sida --koncept invandningar --handle x  # egen sida på marknaden (ingen svensk förlaga)
 node listicle/bygg.mjs <produktlänk> --gempages                                # dessutom .gempages-filen
 node listicle/bygg.mjs <produktlänk> --utan-publicering                        # bara filerna, rör inte butiken
 node listicle/bygg.mjs <produktlänk> --igen punkt2                             # generera om en kie-bild
@@ -40,11 +41,62 @@ genererade bilder), ev. `<slug>-<suffix>.gempages`. `bilder/` och
 |---|---|---|---|---|---|
 | `lagerrensning` | `/lagerrensning` | `<slug>-lagerrensning` | 5 | Anders på lagret | priset + jämförpriset |
 | `vi-testade` | `/vi-testade` | `<slug>-vi-testade` | 5 | Anders, som testade den själv | perioden (dagar/vecka/vinter/säsong …) |
-| `anledningar` | `/anledningar` | `<slug>-5-anledningar` / `-7-` | 5 eller 7 | Anders på lagret | antalet (5/fem, 7/sju) |
+| `anledningar` | `/anledningar` | `<slug>-5-anledningar` / `-7-` (marknad: `--handle`) | 5 eller 7 | Anders på lagret | antalet (5/fem, 7/sju). Varianten "invändningsvänd" (2026-09-27: fem skäl folk struntar i produkten → vad som händer i stället → svaret → skälet att byta) är samma koncept med annan copy, gärna med pristabell + frågedel; första sidan `carashell.com/pages/rv-roof-cover-5-reasons` |
+| `invandningar` | `/invandningar` | `<slug>-innan-du-koper` (en: `-before-you-buy`) | 7 eller 5 | Anders på lagret | från-priset (lägsta varianten) |
 
 Copy-strategin per koncept står i kommandofilen, inte i koden. Motorn
 kontrollerar formen: exakt rätt antal punkter, numrerade "1." …, priser bara
-ur produktsidan, inga procent, inget butiksnamn på en obrandad sida.
+ur produktsidan (sedan 2026-09-27: varje variants pris och jämförpris), inga
+procent, inget butiksnamn på en obrandad sida.
+
+### Två extra block — pristabellen och frågedelen (2026-09-27, `/invandningar`)
+
+Copy-styrda och generiska: vilket koncept som helst får bära dem, och
+konceptet säger i `block: { pristabell, fragor }` om det VÄNTAR sig dem
+(varning när de saknas). `koncept/invandningar.json` gör det.
+
+- **`copy.pristabell`** `{ rubrik, text?, knapp, fot? }` → sektionen `.lr-pris`
+  direkt efter hero med EN rad per variant: storlek, pris, jämförpris (bara
+  när det är högre), knapp till just den varianten (`?variant=id`).
+  **Butikens body bär `[[PRISTABELL]]`** och `data-lp-knapp="…"` /
+  `data-lp-slutsald="…"` på sektionen; `templates/page.listicle.liquid`
+  byter platsen vid varje visning mot raderna ur `all_products[handle].variants`
+  i besökarens valuta och språk, med `&country=` ur `localization`. Så blir
+  priset aldrig gammalt — byter ägaren ett pris i Shopify ändras sidan i
+  samma sekund. Motorn skriver raderna själv bara i förhandsvisningen
+  (`pristabellHtml`). Kräver ≥ 2 varianter. Tillbakaläsningen kräver
+  `class="lr-pris-tabell"` och stoppar om platsen syns. `.gempages`-filen
+  bär inte tabellen (bara HTML-vägen). Bakgrund: takskyddet har nio längder
+  till nio priser, annonsen sa $199 och åtta amerikaner hade 22–44 ft.
+- **`copy.fragor`** `{ rubrik, lista: [{ fraga, svar }] }` → sektionen
+  `.lr-fragor` efter punkterna, före slutblocket. Samma granskning som all
+  annan copy (priser, procent, HTML, butiksnamn, förbjudna fraser).
+
+Förhandsvisningen tar utsnitt av båda (`desktop-pris.png`, `-fragor.png`)
+när de finns.
+
+### Egen sida på en marknad (`--marknad US --egen-sida`)
+
+En översättning (`--marknad US`) kräver en svensk sida med samma handle. En
+sida om USA-invändningar har ingen svensk förlaga — därför `--egen-sida`:
+sidan byggs med marknadens språk i grundspråket, egen handle (`--handle`,
+annars marknadsproduktens slug + konceptets suffix på marknadens språk,
+`sprak.en.suffix`), copyn i `copy.en.json`, bildplanen i `bildplan.json`
+(eller `bildplan.en.json`), `plan.en.json` bär handlen, och sidan läses
+tillbaka på marknadens domän med `?country=`. Samma väg som ett land i
+marknaden (`--land GB`) men utan landssuffix och utan krav på den svenska
+sidan. Första: https://carashell.com/pages/rv-roof-cover-before-you-buy?country=US.
+
+⚠️ **Temafilernas tillbakaläsning kan läsa den GAMLA filen sekunden efter
+upsert** (mätt 2026-09-27 på CaraShell: "listicle.css lästes inte tillbaka
+lika", byte för byte rätt en minut senare). `installeraTema` läser om upp
+till sex gånger med växande paus innan det räknas som fel.
+
+⚠️ **Bäverbutikens id och secret måste komma ur SAMMA app** (mätt samma dag:
+miljön bar `SHOPIFY_CLIENT_ID_SE_BAVER_SE` utan dess secret, `kravEnv` tog
+första id:t och första secreten var för sig, Shopify svarade "400 Oauth
+error invalid_request" som HTML och kie-bilden kunde inte läggas på CDN:et).
+`mejl/shopify.mjs valjNycklar` väljer nu ett helt par, och `losButik` med.
 
 **Sju punkter** klonar mallens sektioner för punkt 4 (bild till höger) och
 5 (bild till vänster) till punkt 6 och 7: nya sektions-id:n, nya cid:n, nya

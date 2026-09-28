@@ -139,6 +139,34 @@ Läses av `/kommentarer` innan svaren skrivs.
   kund samma dag på carashell.se (SE), carashell.com (US), /nb, /fi och /da:
   vävda/webbing/vevde/kudotut/vævede syns 7 gånger per sida. "Elastisk" finns
   bara kvar i "not elastic" (US).
+  ⚠️ Produktsidans bild 11 och 12 (`tak-hopvikt.jpg`, `tak-spanne.jpg`, leverantörens
+  gamla foton: rosa tyg, ELASTISKA band med plastkrokar) motsäger texten. **Axels
+  beslut 2026-09-27: "Vi ändrar inte de bilderna" — de ligger kvar.** Föreslå inte
+  igen att de tas bort; använd dem bara aldrig på en listicle-sida. Fråga 16 i
+  leverantörslistan (har ett tidigare parti skickats med elastiska band?) är den
+  som avgör om bilderna visar det som skickas.
+  De 17 leverantörsfrågorna i `kommentarer/rapporter/usa-2026-09-27.md` avsnitt 8
+  är de som INTE hade svar i den här filen när USA-sidan byggdes (AC-aggregatet,
+  fifth wheel, J-trim, snö, hagel, dörr, antenn, stege, körning, värme, vikt).
+  Svaren kommer via WhatsApp — skriv in dem här MED frågans nummer, annars blir det
+  som listan 2026-09-27 nedan: svar utan fråga som ingen kan koppla.
+  **Mätt 2026-09-27 kväll:** Axel klistrade in hela leverantörstråden ("DETTA VET
+  JAG"). Om takskyddet stod bara de tre svaren från 25/9 (webbing, nedre halvan av
+  glaset, waterproof/sunproof/paint) — inget om AC, fifth wheel, J-trim, snö, hagel,
+  dörr, antenn, stege, körning, värme eller vikt. **De 17 frågorna är alltså
+  fortfarande obesvarade.** ⛔ **Axels beslut samma kväll: de skickas INTE**
+  ("Nej jag tänker inte svara på dom, listicle var tillräckligt bra") — och
+  A/B-frågan om paketrutan lämnades obesvarad i samma andetag: **2-pack står
+  kvar, fråga inte igen.** Sidan
+  https://carashell.com/pages/rv-roof-cover-before-you-buy?country=US är
+  **fryst som original på Axels uttryckliga order** ("Nej ändra inget på den
+  publicerade sidan … Behåll den sidan som original … Reversera alla
+  ändringar på den"), inklusive dess meningar "we have asked the maker" — en
+  session skrev om dem till "we don't have the maker's answer" och det gick
+  live i tre minuter innan originalet lades tillbaka. **Rör aldrig den sidan.**
+  Nya sidor (t.ex. `rv-roof-cover-5-reasons`) skriver det obekräftade som
+  "we don't have the maker's answer", aldrig "we've asked". Blocket 3–10 nedan
+  hör inte till takskyddet.
 
 - Fiskespöhållare 4-pack (baverbutiken.se): texten "Monteras på vägg eller i
   båten" och "Monteras enkelt på vägg eller i båten" stämmer inte enligt

@@ -10,22 +10,64 @@
   eller utan handle skrivs innehållet ut som det är. (Byggt 2026-09-17: en
   marknad med flera valutor och automatisk kursomräkning gör en inbränd
   siffra fel nästa dag.)
+
+  Pristabellen (2026-09-27, konceptet /invandningar): bär sidan [[PRISTABELL]]
+  byts den mot EN rad per variant — storlek, pris, jämförpris och en knapp till
+  just den varianten (?variant=id) — ur samma produkt, i besökarens valuta och
+  språk. Knapptexten och slutsåld-etiketten står i sidans body som
+  data-lp-knapp="…" och data-lp-slutsald="…" (copyn styr orden, mallen
+  ritar raderna). Så blir priserna aldrig gamla: byter ägaren ett pris i
+  Shopify ändras sidan i samma sekund.
 {%- endcomment -%}
 {% layout 'listicle' %}
 {%- assign lp_innehall = page.content -%}
-{%- if lp_innehall contains '[[PRIS]]' or lp_innehall contains '[[JAMFORPRIS]]' -%}
+{%- assign lp_handle = '' -%}
+{%- if lp_innehall contains 'data-lp-produkt="' -%}
   {%- assign lp_delar = lp_innehall | split: 'data-lp-produkt="' -%}
-  {%- if lp_delar.size > 1 -%}
-    {%- assign lp_handle = lp_delar[1] | split: '"' | first -%}
-    {%- assign lp_produkt = all_products[lp_handle] -%}
-    {%- if lp_produkt.price -%}
-      {%- assign lp_pris = lp_produkt.price | money_without_trailing_zeros -%}
-      {%- assign lp_innehall = lp_innehall | replace: '[[PRIS]]', lp_pris -%}
-      {%- if lp_produkt.compare_at_price > lp_produkt.price -%}
-        {%- assign lp_jmf = lp_produkt.compare_at_price | money_without_trailing_zeros -%}
-        {%- assign lp_innehall = lp_innehall | replace: '[[JAMFORPRIS]]', lp_jmf -%}
-      {%- endif -%}
+  {%- assign lp_handle = lp_delar[1] | split: '"' | first -%}
+{%- endif -%}
+{%- if lp_handle != '' -%}
+  {%- assign lp_produkt = all_products[lp_handle] -%}
+{%- endif -%}
+{%- if lp_produkt.price -%}
+  {%- if lp_innehall contains '[[PRIS]]' or lp_innehall contains '[[JAMFORPRIS]]' -%}
+    {%- assign lp_pris = lp_produkt.price | money_without_trailing_zeros -%}
+    {%- assign lp_innehall = lp_innehall | replace: '[[PRIS]]', lp_pris -%}
+    {%- if lp_produkt.compare_at_price > lp_produkt.price -%}
+      {%- assign lp_jmf = lp_produkt.compare_at_price | money_without_trailing_zeros -%}
+      {%- assign lp_innehall = lp_innehall | replace: '[[JAMFORPRIS]]', lp_jmf -%}
     {%- endif -%}
+  {%- endif -%}
+  {%- if lp_innehall contains '[[PRISTABELL]]' -%}
+    {%- assign lp_knapp = 'Select' -%}
+    {%- if lp_innehall contains 'data-lp-knapp="' -%}
+      {%- assign lp_knapp = lp_innehall | split: 'data-lp-knapp="' | last | split: '"' | first -%}
+    {%- endif -%}
+    {%- assign lp_slutsald = 'Sold out' -%}
+    {%- if lp_innehall contains 'data-lp-slutsald="' -%}
+      {%- assign lp_slutsald = lp_innehall | split: 'data-lp-slutsald="' | last | split: '"' | first -%}
+    {%- endif -%}
+    {%- capture lp_tabell -%}
+      <div class="lr-pris-tabell">
+      {%- for lp_v in lp_produkt.variants -%}
+        <div class="lr-pris-rad{% unless lp_v.available %} lr-pris-rad--slut{% endunless %}">
+          <span class="lr-pris-storlek">{{ lp_v.title | escape }}</span>
+          <span class="lr-pris-nu">{{ lp_v.price | money_without_trailing_zeros }}</span>
+          {%- if lp_v.compare_at_price > lp_v.price -%}
+            <span class="lr-pris-forr">{{ lp_v.compare_at_price | money_without_trailing_zeros }}</span>
+          {%- else -%}
+            <span class="lr-pris-forr"></span>
+          {%- endif -%}
+          {%- if lp_v.available -%}
+            <a class="lr-pris-knapp" href="{{ lp_produkt.url }}?variant={{ lp_v.id }}&amp;country={{ localization.country.iso_code }}">{{ lp_knapp }}</a>
+          {%- else -%}
+            <span class="lr-pris-knapp lr-pris-knapp--slut">{{ lp_slutsald }}</span>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+      </div>
+    {%- endcapture -%}
+    {%- assign lp_innehall = lp_innehall | replace: '[[PRISTABELL]]', lp_tabell -%}
   {%- endif -%}
 {%- endif -%}
 {{ lp_innehall }}

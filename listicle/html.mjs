@@ -21,7 +21,7 @@
 // och gör **fet** till <strong>. Ingen annan HTML släpps igenom från copyn.
 
 import { htmlAv, styckenAv, lasCopy, allaElement, brandProfil, lasKoncept, IKON_STIG } from './gempages.mjs';
-import { sprakFor, konceptForSprak, ersattPrisTokens } from './sprak.mjs';
+import { sprakFor, konceptForSprak, ersattPrisTokens, formateraPris, PRISTABELL_TOKEN } from './sprak.mjs';
 
 const IKONER = {
   1: 'M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm0,192a90,90,0,1,1,90-90A90.1,90.1,0,0,1,128,218ZM138,80v96a6,6,0,0,1-12,0V91.21L111.33,101a6,6,0,0,1-6.66-10l24-16A6,6,0,0,1,138,80Z',
@@ -75,7 +75,37 @@ export const CSS = `
 .lr-sidfot hr{border:0;border-top:1px solid #A4C4C0;margin:0 0 24px}
 .lr-sidfot .lr-kontakt{text-align:center;font-size:13px;color:#1D1C20}
 .lr-sidfot .lr-kontakt a{color:#1D1C20}
+.lr-pris{padding:0 20px 80px}
+.lr-pris .lr-inre{max-width:790px;margin:0 auto}
+.lr-pris .lr-h2{margin-bottom:16px}
+.lr-pris .lr-text{padding-bottom:24px}
+.lr-pris-huvud,.lr-pris-rad{display:grid;grid-template-columns:1.7fr 1fr 1fr 1.4fr;gap:12px;align-items:center}
+.lr-pris-huvud{font-size:13px;color:#666;text-transform:uppercase;letter-spacing:.04em;padding:0 0 8px;border-bottom:2px solid #151515}
+.lr-pris-rad{padding:14px 0;border-bottom:1px solid #E4E4E4}
+.lr-pris-storlek{font-weight:700;font-size:16px}
+.lr-pris-nu{font-family:Anton,Impact,'Arial Narrow',sans-serif;font-size:26px;line-height:1.2;color:#151515}
+.lr-pris-forr{color:#8A8A8A;text-decoration:line-through;font-size:15px}
+.lr-pris-knapp{display:inline-flex;align-items:center;justify-content:center;background:#FF3B00;color:#fff!important;text-decoration:none!important;border-radius:100px;font-family:Inter,Arial,sans-serif;font-size:15px;font-weight:600;line-height:1.2;padding:10px 18px;white-space:nowrap;transition:background .15s}
+.lr-pris-knapp:hover{background:#3D50FF}
+.lr-pris-knapp--slut{background:#DDD;color:#666!important;cursor:default}
+.lr-pris-rad--slut .lr-pris-storlek,.lr-pris-rad--slut .lr-pris-nu{color:#8A8A8A}
+.lr-pris-fot{margin-top:16px;color:#555}
+.lr-pris-fot p{font-size:14px}
+.lr-fragor{padding:0 20px 48px}
+.lr-fragor .lr-inre{max-width:790px;margin:0 auto}
+.lr-fragor .lr-h2{margin-bottom:8px}
+.lr-fraga{border-top:1px solid #E4E4E4;padding:20px 0}
+.lr-fraga h3{font-family:Inter,Arial,Helvetica,sans-serif;font-size:18px;font-weight:700;line-height:1.35;margin:0 0 8px;color:#151515}
+.lr-fraga p{margin:0}
 @media (max-width:767px){
+  .lr-pris{padding-bottom:64px}
+  .lr-pris-huvud{display:none}
+  .lr-pris-rad{grid-template-columns:1fr auto;grid-template-areas:"storlek nu" "storlek forr" "knapp knapp";row-gap:4px;padding:16px 0}
+  .lr-pris-storlek{grid-area:storlek;font-size:15px}
+  .lr-pris-nu{grid-area:nu;text-align:right;font-size:22px}
+  .lr-pris-forr{grid-area:forr;text-align:right;font-size:14px}
+  .lr-pris-knapp{grid-area:knapp;margin-top:8px;font-size:14px}
+  .lr-fraga h3{font-size:16px}
   .lr p{font-size:14px}
   .lr-hero{padding:40px 20px 72px}
   .lr-hero .lr-inre,.lr-hero-rad,.lr-punkt .lr-inre,.lr-slut .lr-inre,.lr-sidfot .lr-logga{grid-template-columns:1fr}
@@ -97,6 +127,34 @@ const stycken = (v) => styckenAv(v).map((s) => `<p>${htmlAv(s)}</p>`).join('\n')
 const knapp = (text, url) => `<a class="lr-cta" href="${htmlAv(url)}">${htmlAv(styckenAv(text).join(' '))}</a>`;
 const bildTag = (b, alt, klass = '') =>
   `<img${klass ? ` class="${klass}"` : ''} src="${htmlAv(b.src)}"${b.width ? ` width="${b.width}"` : ''}${b.height ? ` height="${b.height}"` : ''} alt="${htmlAv(alt)}" loading="lazy">`;
+
+/** Produktlänken med varianten förvald: "…?country=US" → "…?country=US&variant=123", "/products/x" → "/products/x?variant=123". */
+export function variantLank(url, id) {
+  const u = String(url ?? '');
+  return `${u}${u.includes('?') ? '&' : '?'}variant=${encodeURIComponent(String(id))}`;
+}
+
+/**
+ * Pristabellen som färdig HTML — EN rad per variant: storlek, pris, jämförpris
+ * (bara när det är högre), knapp till just den varianten. Samma klasser som
+ * templates/page.listicle.liquid ritar i butiken vid varje visning; den här
+ * versionen är förhandsvisningens (och testernas), med dagens pris ur
+ * produkt-JSON:en. `slut` = varianter som inte går att köpa (id-lista).
+ */
+export function pristabellHtml({ varianter = [], url, knapp, valuta = 'SEK', locale = 'sv', slut = [] }) {
+  const s = sprakFor(locale);
+  const rader = varianter.map((v) => {
+    const slutsald = slut.includes(v.id) || v.available === false;
+    const jmf = v.jamforpris != null && Number(v.jamforpris) > Number(v.pris) ? formateraPris(v.jamforpris, valuta) : '';
+    return `<div class="lr-pris-rad${slutsald ? ' lr-pris-rad--slut' : ''}">
+<span class="lr-pris-storlek">${htmlAv(v.titel)}</span>
+<span class="lr-pris-nu">${htmlAv(formateraPris(v.pris, valuta))}</span>
+<span class="lr-pris-forr">${htmlAv(jmf)}</span>
+${slutsald ? `<span class="lr-pris-knapp lr-pris-knapp--slut">${htmlAv(s.tabell.slutsald)}</span>` : `<a class="lr-pris-knapp" href="${htmlAv(variantLank(url, v.id))}">${htmlAv(styckenAv(knapp).join(' '))}</a>`}
+</div>`;
+  });
+  return `<div class="lr-pris-tabell">\n${rader.join('\n')}\n</div>`;
+}
 
 /** Mallens egna bilder per plats (författarfoto, lager, logga … och motorhöljets punktbilder som reserv). */
 export function mallBilder(mall, platser) {
@@ -142,7 +200,13 @@ export function renderaHtml({ copy: copyIn, produkt, bilder = {}, fasta = {}, da
     if (v == null || styckenAv(v).length === 0) throw new Error(`renderaHtml: copyn saknar "${nyckel}".`);
     return v;
   };
-  const rubrik = (nyckel) => htmlAv(styckenAv(text(nyckel)).join(' '));
+  const rubrik = (nyckel) => {
+    // Extra blockens rubriker ligger utanför platskartan (pristabell.rubrik, fragor.rubrik).
+    const [del, falt] = nyckel.split('.');
+    const v = ['pristabell', 'fragor'].includes(del) ? copy?.[del]?.[falt] : text(nyckel);
+    if (v == null || styckenAv(v).length === 0) throw new Error(`renderaHtml: copyn saknar "${nyckel}".`);
+    return htmlAv(styckenAv(v).join(' '));
+  };
   const url = produkt.url;
   const namn = produkt.kortTitel ?? '';
 
@@ -150,6 +214,47 @@ export function renderaHtml({ copy: copyIn, produkt, bilder = {}, fasta = {}, da
     const st = styckenAv(text('hero.sammanfattning')).map((x) => x.replace(/^\**\s*(Sammanfattning|Summary):\s*\**\s*/i, ''));
     const [a, ...rest] = st;
     return `<p><strong>${htmlAv(s.sammanfattning)}</strong> ${htmlAv(a)}${rest.length ? `<br>${rest.map(htmlAv).join('<br>')}` : ''}</p>`;
+  })();
+
+  // Pristabellen (copy.pristabell): rubrik + text ur copyn, raderna ur produktens
+  // varianter. Butikens body bär [[PRISTABELL]] och låter sidmallen rita raderna
+  // vid visning; förhandsvisningen får dagens rader direkt.
+  const pristabell = (() => {
+    const pt = copy.pristabell;
+    if (!pt) return '';
+    if (!String(pt.rubrik ?? '').trim() || !String(pt.knapp ?? '').trim()) throw new Error('renderaHtml: pristabell behöver rubrik och knapp.');
+    const varianter = Array.isArray(produkt.varianter) ? produkt.varianter : [];
+    if (prisTokens !== 'behall' && varianter.length === 0) throw new Error('renderaHtml: pristabell utan varianter på produkten.');
+    const knappText = htmlAv(styckenAv(pt.knapp).join(' '));
+    const tabell = prisTokens === 'behall' ? PRISTABELL_TOKEN : pristabellHtml({ varianter, url, knapp: pt.knapp, valuta: produkt.valuta, locale });
+    return `
+<section class="lr-pris" id="lr-pris" data-lp-knapp="${knappText}" data-lp-slutsald="${htmlAv(s.tabell.slutsald)}">
+  <div class="lr-inre">
+    <h2 class="lr-h2"><span>${rubrik('pristabell.rubrik')}</span></h2>
+    ${pt.text ? `<div class="lr-text">${stycken(pt.text)}</div>` : ''}
+    <div class="lr-pris-huvud"><span>${htmlAv(s.tabell.storlek)}</span><span>${htmlAv(s.tabell.pris)}</span><span>${htmlAv(s.tabell.ordinarie)}</span><span></span></div>
+${tabell}
+    ${pt.fot ? `<div class="lr-pris-fot">${stycken(pt.fot)}</div>` : ''}
+  </div>
+</section>`;
+  })();
+
+  // Frågedelen (copy.fragor): kort, efter punkterna och före slutblocket.
+  const fragor = (() => {
+    const fr = copy.fragor;
+    if (!fr) return '';
+    const lista = Array.isArray(fr.lista) ? fr.lista : [];
+    if (!String(fr.rubrik ?? '').trim() || lista.length === 0) throw new Error('renderaHtml: fragor behöver rubrik och minst en fråga.');
+    return `
+<section class="lr-fragor" id="lr-fragor">
+  <div class="lr-inre">
+    <h2 class="lr-h2"><span>${rubrik('fragor.rubrik')}</span></h2>
+${lista.map((q) => `    <div class="lr-fraga">
+      <h3>${htmlAv(styckenAv(q.fraga).join(' '))}</h3>
+      ${stycken(q.svar)}
+    </div>`).join('\n')}
+  </div>
+</section>`;
   })();
 
   const punkter = (copy.punkter ?? []).map((p, i) => {
@@ -194,8 +299,8 @@ ${CSS}
     </div>
     <div></div>
   </div>
-</section>
-${punkter}
+</section>${pristabell}
+${punkter}${fragor}
 <section class="lr-slut">
   <div class="lr-inre">
     <div>

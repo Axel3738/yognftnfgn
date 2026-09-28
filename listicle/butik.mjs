@@ -31,7 +31,7 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
-import { NYCKELNAMN } from '../mejl/shopify.mjs';
+import { NYCKELNAMN, valjNycklar } from '../mejl/shopify.mjs';
 import { losNycklar, suffixForDoman, storefrontLosenord, mintaToken, normaliseraDoman } from '../factory/token.mjs';
 import { lasYaml } from '../factory/yaml.mjs';
 import { domanForMarknad, lankFor, arOpsMarknad } from '../factory/opsmarknader.mjs';
@@ -41,6 +41,7 @@ import { CSS } from './html.mjs';
 const HAR = dirname(fileURLToPath(import.meta.url));
 const ROT = join(HAR, '..');
 const API_VERSION = '2025-07';
+const sov = (ms) => new Promise((r) => setTimeout(r, ms));
 export const MALLSUFFIX = 'listicle';
 export const BAVERBUTIKEN = 'baverbutiken';
 
@@ -68,11 +69,11 @@ export function losButik(butikId, env = process.env, { butikerMapp } = {}) {
   if (!id) throw new Error('losButik: butik saknas — skriv --butik baverbutiken eller --butik <ops-id>.');
   if (arBaverbutiken(id)) {
     const shop = normaliseraDoman(env.SHOPIFY_SHOP_SE ?? '');
-    const clientId = forsta(env, NYCKELNAMN.id) ?? '';
-    const clientSecret = forsta(env, NYCKELNAMN.secret) ?? '';
-    const saknas = [!shop && 'SHOPIFY_SHOP_SE', !clientId && NYCKELNAMN.id.join(' eller '), !clientSecret && NYCKELNAMN.secret.join(' eller ')].filter(Boolean);
+    // Id och secret ur SAMMA app (mejl/shopify.mjs valjNycklar) — ett blandat par ger Shopify 400.
+    const par = valjNycklar(env);
+    const saknas = [!shop && 'SHOPIFY_SHOP_SE', !par && `ett helt par av ${NYCKELNAMN.id.map((n, i) => `${n} + ${NYCKELNAMN.secret[i]}`).join(' eller ')}`].filter(Boolean);
     if (saknas.length) throw new Error(`Bäverbutiken: saknar ${saknas.join(', ')} i miljön.`);
-    return { id: BAVERBUTIKEN, shop, clientId, clientSecret, losenord: env.SHOPIFY_STOREFRONT_PASSWORD_SE ?? '', kalla: 'SHOPIFY_*_SE' };
+    return { id: BAVERBUTIKEN, shop, clientId: par.id, clientSecret: par.secret, losenord: env.SHOPIFY_STOREFRONT_PASSWORD_SE ?? '', kalla: par.nyApp ? 'SHOPIFY_*_SE_BAVER_SE' : 'SHOPIFY_*_SE' };
   }
   // OPS: domänen ur butiksfilen → suffixet som bär den i miljön (Axels beslut
   // 2026-09-10: VA:n döper variablerna efter adressen, inte efter butiks-id:t).
@@ -230,8 +231,15 @@ export async function installeraTema(klient, { torr = false, logg = () => {} } =
     { themeId: tema.id, files: attSkriva.map((filename) => ({ filename, body: { type: 'TEXT', value: filer[filename] } })) }
   );
   // Tillbakaläsning: exakt innehåll, annars stopp (en CSS-escape blev en gång dubblerad på vägen).
-  const efter = await lasTemafiler(klient, tema.id, attSkriva);
-  const fel = attSkriva.filter((n) => efter[n] !== filer[n]);
+  // Shopify läser ibland tillbaka den GAMLA filen sekunden efter upsert (mätt 2026-09-27 på
+  // CaraShell: listicle.css "lästes inte tillbaka lika", men var byte för byte rätt en minut
+  // senare) — därför några försök med paus innan det räknas som fel.
+  let fel = attSkriva;
+  for (let forsok = 0; forsok < 6 && fel.length; forsok += 1) {
+    if (forsok > 0) await sov(1500 * forsok);
+    const efter = await lasTemafiler(klient, tema.id, fel);
+    fel = fel.filter((n) => efter[n] !== filer[n]);
+  }
   if (fel.length) throw new Error(`Temafilerna lästes inte tillbaka lika: ${fel.join(', ')}.`);
   logg(`   ✓ ${attSkriva.length} temafil(er) skrivna och lästa tillbaka`);
   return { tema, skrivna: attSkriva, oforandrade, attSkriva, torr };

@@ -102,6 +102,13 @@ export const VALUTOR = Object.freeze({
 // där ingen Liquid finns: förhandsvisningen och .gempages-filen.
 export const PRIS_TOKEN = '[[PRIS]]';
 export const JAMFORPRIS_TOKEN = '[[JAMFORPRIS]]';
+// [[PRISTABELL]] byts av butiken mot EN rad per variant (storlek, pris,
+// jämförpris, knapp till just den varianten) — konceptet /invandningar
+// (2026-09-27: amerikanerna läste "$199" i annonsen, hittade bara "18 × 10 ft"
+// i paketrutan och skrev "Scam"; hela prislistan på sidan är svaret). Butiken
+// renderar raderna vid varje visning så priset aldrig blir gammalt; motorn
+// skriver tabellen själv bara i förhandsvisningen.
+export const PRISTABELL_TOKEN = '[[PRISTABELL]]';
 export const harPrisTokens = (v) => /\[\[(PRIS|JAMFORPRIS)\]\]/.test(typeof v === 'string' ? v : JSON.stringify(v ?? ''));
 
 /** Byter prisplatserna mot produktens pristext (prisText/jamforprisText), rekursivt över copy-objektet. Rör inte objektet som skickas in. */
@@ -146,6 +153,8 @@ export const SPRAK = Object.freeze({
     locale: 'sv', namn: 'svenska', lang: 'sv',
     av: 'Av', sammanfattning: 'Sammanfattning:', reklam: 'OBS: Detta är reklam.',
     lagret: 'Lagret', punkt: 'punkt',
+    // Pristabellens fasta ord (konceptet /invandningar): kolumnhuvudet och slutsåld-etiketten.
+    tabell: Object.freeze({ storlek: 'Storlek', pris: 'Pris', ordinarie: 'Ordinarie pris', slutsald: 'Slutsåld' }),
     datumrad: (iso) => `Senast uppdaterad ${svensktDatum(iso)}.`,
     periodOrd: /\b(dag|dagar|dygn|vecka|veckor|månad|månader|vinter|sommar|höst|vår|säsong|år)\b/i,
     antalOrd: Object.freeze({ 5: 'fem', 7: 'sju' }),
@@ -157,6 +166,7 @@ export const SPRAK = Object.freeze({
     locale: 'en', namn: 'engelska', lang: 'en',
     av: 'By', sammanfattning: 'Summary:', reklam: 'Note: this is an advertisement.',
     lagret: 'The warehouse', punkt: 'point',
+    tabell: Object.freeze({ storlek: 'Size', pris: 'Price', ordinarie: 'Regular price', slutsald: 'Sold out' }),
     datumrad: (iso) => `Last updated ${engelsktDatum(iso)}.`,
     periodOrd: /\b(day|days|week|weeks|month|months|winter|summer|fall|autumn|spring|season|year)\b/i,
     antalOrd: Object.freeze({ 5: 'five', 7: 'seven' }),
@@ -192,5 +202,7 @@ export function konceptForSprak(koncept, locale = STANDARD_SPRAK) {
   const over = koncept?.sprak?.[kod];
   if (!over) throw new Error(`Konceptet ${koncept?.id ?? '?'} saknar texterna för språket "${kod}" (fältet "sprak": { "${kod}": { sidnamn, sidtitel, forfattare_obrandad } } i listicle/koncept/${koncept?.id}.json).`);
   for (const f of ['sidnamn', 'sidtitel', 'forfattare_obrandad']) if (!over[f]) throw new Error(`Konceptet ${koncept.id}, språket ${kod}: saknar "${f}".`);
-  return { ...koncept, sidnamn: over.sidnamn, sidtitel: over.sidtitel, forfattare_obrandad: over.forfattare_obrandad, arlig_rubrik: over.arlig_rubrik ?? koncept.arlig_rubrik, riskfritt_rubrik: over.riskfritt_rubrik ?? koncept.riskfritt_rubrik, sprak: koncept.sprak };
+  // `suffix` på ett annat språk gäller bara en EGEN sida på marknaden (--egen-sida): en
+  // översättning delar handle med den svenska sidan och rör aldrig suffixet.
+  return { ...koncept, suffix: over.suffix ?? koncept.suffix, sidnamn: over.sidnamn, sidtitel: over.sidtitel, forfattare_obrandad: over.forfattare_obrandad, arlig_rubrik: over.arlig_rubrik ?? koncept.arlig_rubrik, riskfritt_rubrik: over.riskfritt_rubrik ?? koncept.riskfritt_rubrik, sprak: koncept.sprak };
 }
