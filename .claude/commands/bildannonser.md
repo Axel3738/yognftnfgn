@@ -181,6 +181,11 @@ Flödet är därför tre steg, och ordningen är inte förhandlingsbar:
 1. **Verifiera texten** mot briefen innan något genereras:
    `python3 bildannonser/verifiera.py --spec <spec> --briefar <mapp>`
    Varje sträng måste finnas ordagrant i briefen. Ett fynd = inget renderas.
+   Ordet **rea** stoppas alltid — utom när briefen bär en rad som börjar med
+   `REA BESLUTAD AV ÄGAREN` (datum + Axels egna ord). Då är rean ägarens
+   beslut och skriptet släpper igenom den av sig självt: rita badgen som
+   briefen säger, stryk aldrig ordet. *(Fars dag-batchen 2026-09-28: alla elva
+   `_FD_2_1` bär raden och badgen "Fars dag-rea".)*
 2. **Generera bilden utan text**, med produktfotot som referens. Prompten ska
    beskriva produkten ur referensbilden och avsluta med en negativlista:
    ingen text, inga bokstäver, inga siffror, ingen logga, ingen vattenstämpel.

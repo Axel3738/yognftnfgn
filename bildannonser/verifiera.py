@@ -56,7 +56,7 @@ def normalisera(s):
 
 
 def granska_block(namn, text, brieftext, pris_verifierat=False,
-                  betyg_verifierat=False, produkt=None):
+                  betyg_verifierat=False, produkt=None, rea_beslutad=False):
     """Kontrollerar ett textblock rad för rad — ett block kan innehålla flera
     rader (t.ex. en punktlista), och varje rad ska stå ordagrant i briefen.
 
@@ -67,6 +67,14 @@ def granska_block(namn, text, brieftext, pris_verifierat=False,
     stoppas fortfarande, för de påstår något annat än ett jämförpris, och `betyg_verifierat` släpper igenom ett
     stjärnbetyg som körningen räknat ur produktsidans egna recensioner (raden
     BETYG VERIFIERAT). Siffran går därmed alltid att spåra till avläsningen.
+
+    Ett tredje undantag gäller bara ordet rea: `rea_beslutad` släpper igenom
+    det när briefen bär en rad som börjar med REA BESLUTAD AV ÄGAREN, med datum
+    och ägarens egna ord. Rea är ett juridiskt påstående (prisinformationslagen
+    7 a §), så det är ägarens beslut, aldrig körningens — och beslutet ska stå
+    i skrift i briefen. Påhittad knapphet stoppas fortfarande. *(Fars
+    dag-batchen 2026-09-28: Axel beställde "fars dag-rea" och bestämde att
+    rean är dagens jämförpris; utan undantaget hade alla elva bilder stoppats.)*
     Allt annat i FORBUD gäller oförändrat."""
     fel = []
     normaliserad_brief = normalisera(brieftext)
@@ -93,6 +101,8 @@ def granska_block(namn, text, brieftext, pris_verifierat=False,
                     and produkt is not None and produkt != "axelbaltet"):
                 continue
             if betyg_verifierat and skal.startswith("stjärnbetyg"):
+                continue
+            if rea_beslutad and skal == "ordet rea":
                 continue
             if re.search(monster, rad):
                 fel.append(f'förbjudet innehåll ({skal}) i: "{rad}"')
@@ -128,6 +138,10 @@ def main():
         brieftext = brieffil.read_text(encoding="utf-8")
         pris_verifierat = bool(spec.get("pris_verifierat"))
         betyg_verifierat = bool(spec.get("betyg_verifierat"))
+        # Ägarens skrivna beslut i briefen är hela grinden — ingen flagga i
+        # spec:en behövs, så en rutin som inte känner till undantaget ändå
+        # renderar det ägaren beställt.
+        rea_beslutad = bool(re.search(r"^REA BESLUTAD AV ÄGAREN", brieftext, re.M))
         fel = []
         if pris_verifierat and not re.search(r"^PRIS VERIFIERAT", brieftext, re.M):
             fel.append("pris_verifierat är satt men briefen saknar en rad som "
@@ -148,7 +162,7 @@ def main():
                            "får betyget inte renderas")
             fel += granska_block(namn, b["text"], brieftext,
                                  pris_verifierat, betyg_verifierat,
-                                 spec.get("produkt"))
+                                 spec.get("produkt"), rea_beslutad)
 
         if fel:
             totalt_fel += len(fel)

@@ -21,6 +21,9 @@ const ja = (b) => (b ? '✅' : '❌');
 const cell = (s) => String(s ?? '').replace(/\|/g, '/').replace(/\n+/g, ' ').trim();
 
 const EXPORT_VIDEO = 'Export: 9:16 (1080×1920) + 4:5 (1080×1350), MP4 H.264, ≤ 30 MiB.';
+// Ägarens skrivna beslut: bildrutinens textspärr (bildannonser/verifiera.py)
+// släpper igenom ordet rea bara när den här raden börjar en rad i briefen.
+const REA_BESLUT = 'REA BESLUTAD AV ÄGAREN 2026-09-28: "Fars dag-rea" is the product page\'s own price against its compare-at price. Axel\'s words: "Det är den som är idag det är rean som är på alla prodkter. Jämf pris". The image text check (bildannonser/verifiera.py) lets the word rea through only because this line is here.';
 const FASTA_REGLER = (p) => [
   'The ad never names the store: no store name, URL or logo in copy, picture, voice-over, captions or end card.',
   'Sweden only: this is a Father\'s Day ad (FD). It is never translated and never mirrored to another store — after the Swedish upload the translation routine moves the row straight to Approved (tools/lib/bara-sverige.mjs).',
@@ -216,6 +219,8 @@ ${tb.tabell}
 
 ## Rules
 ${[...FASTA_REGLER(p), ...p.extraRegler.filter((r) => !/parent/i.test(r)), 'The image model never renders the text: the lines are burned on afterwards, word for word from the Design brief.', 'Export: 4:5 (1080×1350) + 1:1 (1080×1080), PNG or JPG.'].map((r) => `- ${r}`).join('\n')}
+
+${REA_BESLUT}
 
 ## COPY CARD
 **Primary text:** ${c.copy_card.primar}

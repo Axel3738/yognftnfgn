@@ -50,12 +50,31 @@ kontot, aldrig ur en fil ensam.**
 | Täljsetet | `Taljset_PD_3` | 2 585 kr | 14 | 4,71 | 185 kr | 556 kr | 4 879 kr |
 | Fiskespöhållaren | `Fiskespöhållare_CS_1_H1` (bästa AKTIVA; toppen `Fiskespöhållare_PD_EXTRA` är pausad på annonsnivå) | 3 622 kr | 23 | 3,02 | 157 kr | 296 kr | 3 661 kr |
 
-⚠️ **Två saker gör att de fyra inte går hela vägen av sig själva** (frågat Axel
-samma dag): `/bildannonser` gör bara bilder för hubbar i
-`products/aktiva-hubbar.json`, där de fyra saknas, och **Fish rod holder**
-(`3c3270ab-…`) står i `factory/produkter/register.json` som TackleBays hubb, så
-leveransrundan undantar den. I den ligger 12 rader i `To be Reviewed`, varav 11
-är `TackleBayRod_…` med tacklebay.se som landningssida.
+⚠️ **Två saker gör att de fyra inte går hela vägen av sig själva:**
+`/bildannonser` gör bara bilder för hubbar i `products/aktiva-hubbar.json`, där
+de fyra saknas, och **Fish rod holder** (`3c3270ab-…`) står i
+`factory/produkter/register.json` som TackleBays hubb, så leveransrundan
+undantar den. I den ligger 12 rader i `To be Reviewed`, varav 11 är
+`TackleBayRod_…` med tacklebay.se som landningssida. Axel förstod inte frågan
+om "nya hubbar" (det är hans befintliga hubbar) — listan är orörd, i stället:
+
+- **Bilderna för de fyra gjordes av sessionen samma kväll** (ramverket nivå
+  1/2, ingen bildmodell): produktsidans eget foto, texten ordagrant ur Design
+  brief, grön i `bildannonser/verifiera.py`, tittad i båda formaten, 4:5 + 1:1
+  i `Filer och media`, status `To be Reviewed`, tillbakaläst. Fiskespöhållarens
+  foton bär alla en människa eller inbränd text, så bilden är fyra kopior av
+  den orange hållaren ur produktsidans foto "Fyra färgalternativ" — ett 4-pack
+  är EN färg, så fyra färger i bild hade lovat fel.
+- **Leveranskön torrläst 2026-09-28 ~17:50:** Solcellslampa, Golfkalender och
+  Täljset hittade med kampanj ur kontot. `Rodholder_FD_2_1` finns inte i kön
+  (Fish rod holder undantas) — väntar på Axels svar.
+
+⛔ **Ordet "rea" stoppades av bildrutinens textspärr** (`verifiera.py`: "ordet
+rea … stoppas alltid"), så alla elva `FD_2_1` hade fastnat i Draft i kväll.
+Spärren släpper nu igenom ordet bara när briefen bär en rad som börjar med
+`REA BESLUTAD AV ÄGAREN` (datum + Axels ord); raden står i alla elva
+bildbrieferna, i repot och i Notion (tillbakaläst). Fyra tester i
+`bildannonser/test/verifiera.test.mjs`.
 
 ## Brieferna i Notion (alla `Draft`, skapade 2026-09-28)
 

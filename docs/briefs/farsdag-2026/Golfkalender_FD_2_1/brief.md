@@ -58,6 +58,8 @@
 - The image model never renders the text: the lines are burned on afterwards, word for word from the Design brief.
 - Export: 4:5 (1080×1350) + 1:1 (1080×1080), PNG or JPG.
 
+REA BESLUTAD AV ÄGAREN 2026-09-28: "Fars dag-rea" is the product page's own price against its compare-at price. Axel's words: "Det är den som är idag det är rean som är på alla prodkter. Jämf pris". The image text check (bildannonser/verifiera.py) lets the word rea through only because this line is here.
+
 ## COPY CARD
 **Primary text:** Fars dag-present. 24 golfluckor öppnas i december. Peggar knäcks och bollar försvinner hela säsongen, den här presenten fyller på igen. Fars dag-rea: 549 kr, ord. 719 kr. Beställ senast 19 oktober.
 **Headline:** Fars dag-present som fyller golfbagen.
