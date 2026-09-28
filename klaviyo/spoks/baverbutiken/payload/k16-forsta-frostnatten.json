@@ -29,7 +29,7 @@
       "products": [
         {
           "id": "ca232636-6a2f-496a-9a77-c8a7d0d19aab",
-          "button": "Se produkten"
+          "button": "Se kranskyddet"
         }
       ],
       "dynamicProductsCount": null,
@@ -51,29 +51,6 @@
       "text": "Skydda kranen",
       "url": "https://baverbutiken.se/products/kranskydd-frost-420d-skyddar-utekranen-i-vinter",
       "style": "button"
-    },
-    {
-      "type": "products",
-      "selectionMode": "manual",
-      "products": [
-        {
-          "id": "ca232636-6a2f-496a-9a77-c8a7d0d19aab",
-          "button": "Se kranskyddet"
-        }
-      ],
-      "dynamicProductsCount": null,
-      "dynamicCriteria": null,
-      "productVisibilitySettings": {
-        "isImageVisible": true,
-        "isTitleVisible": true,
-        "isPriceVisible": true,
-        "isButtonVisible": true,
-        "isDescriptionVisible": false,
-        "isOriginalPriceVisible": true
-      },
-      "buttonText": null,
-      "alignment": "center",
-      "productsPerRow": 1
     },
     {
       "type": "regular",

@@ -1,16 +1,16 @@
 {
-  "id": "k04-sotarset-fore-eldning",
-  "emailTitle": "Draget blir sämre för varje eldning",
-  "emailDescription": "Nio böjliga stänger följer krökarna i röret.",
+  "id": "k37-mc-hojen-stalls-undan",
+  "emailTitle": "Ett kapell som tar smällen i stället för lacken",
+  "emailDescription": "Dras över på en minut, hela hojen skyddad.",
   "amnesrader": [
-    "Draget blir sämre för varje eldning",
-    "Rensa själv mellan sotarens besök",
-    "Når bakom kaminen utan att krypa dit"
+    "Ett kapell som tar smällen i stället för lacken",
+    "Innan hojen ställs undan för vintern",
+    "Lås styret och hjälmen i ett enda lås"
   ],
   "blocks": [
     {
       "type": "h1",
-      "text": "Draget blir sämre för varje eldning",
+      "text": "Ett kapell som tar smällen i stället för lacken",
       "alignment": "center"
     },
     {
@@ -20,7 +20,7 @@
     },
     {
       "type": "regular",
-      "text": "Sotlagret växer tyst i bakgrunden. Kaminen drar sämre och lukten sitter i.",
+      "text": "Säsongen är på väg mot sitt slut för de flesta hojar. Innan den ställs undan är det tre saker värda att ha koll på.",
       "alignment": "center"
     },
     {
@@ -28,8 +28,8 @@
       "selectionMode": "manual",
       "products": [
         {
-          "id": "b1d4717b-d737-46ad-a9c2-be85081a15ac",
-          "button": "Se sotarsetet"
+          "id": "d091553e-f265-47f7-816c-e40134950a9b",
+          "button": "Köp kapellet"
         }
       ],
       "dynamicProductsCount": null,
@@ -48,35 +48,61 @@
     },
     {
       "type": "link",
-      "text": "Se sotarsetet",
-      "url": "https://baverbutiken.se/products/sotarset-med-bojliga-stanger-rensar-rokkanal-och-kaminror",
+      "text": "Se kapellet",
+      "url": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv",
       "style": "button"
     },
     {
-      "type": "regular",
-      "text": "Nio böjliga stänger på 41 cm skruvas ihop till 3,69 meters räckvidd. De följer krökarna i röret i stället för att ta stopp i första kröken, och når bakom kaminen eller torktumlaren.",
-      "alignment": "left"
-    },
-    {
       "type": "h2",
-      "text": "Tre saker settet gör"
+      "text": "Innan hojen ställs undan"
     },
     {
       "type": "list",
-      "text": "Rensar mellan sotarens besök, utan att boka någon."
+      "text": "Lås fast styret och hjälmen."
     },
     {
       "type": "list",
-      "text": "Böjer med i kröken där en stel stång fastnar."
+      "text": "Skydda sätet mot slitage under vintern."
     },
     {
       "type": "list",
-      "text": "Borstar loss sotet med nylonstrån i stället för att skrapa."
+      "text": "En låsbar bensinreserv på 3 liter, redo till våren."
     },
     {
       "type": "regular",
-      "text": "Byggs i den längd du behöver, en stång i taget.",
+      "text": "Dras över hela hojen på en minut, 218 × 118,5 cm. Regnet rinner av, dammet stannar utanpå och solen bleker kapellet i stället för lacken.",
       "alignment": "left"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "0e363a79-524a-4ca7-8e4c-85de78479f2b",
+          "button": "Se produkten"
+        },
+        {
+          "id": "df7aad9c-957e-4134-ab5f-5df0430f89c0",
+          "button": "Se produkten"
+        },
+        {
+          "id": "d149b83d-d19b-4358-b196-d96146942be9",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
     },
     {
       "type": "columns",

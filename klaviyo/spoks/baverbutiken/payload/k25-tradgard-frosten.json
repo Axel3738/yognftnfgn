@@ -1,21 +1,26 @@
 {
-  "id": "k08-morkret-kommer",
-  "emailTitle": "210 lysdioder, tre huvuden som vrids var för sig",
-  "emailDescription": "1200 mAh-batteriet laddas själv i solljus.",
+  "id": "k25-tradgard-frosten",
+  "emailTitle": "Kranen fryser vid första köldknäppen",
+  "emailDescription": "Isen kan spränga kran eller ledning innan du märker något.",
   "amnesrader": [
-    "210 lysdioder, tre huvuden som vrids var för sig",
-    "Söndag blir det mörkt en timme tidigare",
-    "Ljuset som tänds innan du hittar nyckelhålet"
+    "Kranen fryser vid första köldknäppen",
+    "Frosten kommer innan krukorna är inne",
+    "Kranen, tunnan och krukorna före frosten"
   ],
   "blocks": [
     {
       "type": "h1",
-      "text": "Tre huvuden vrids var för sig, mot nyckelhålet",
+      "text": "Kranen fryser vid första köldknäppen",
       "alignment": "center"
     },
     {
       "type": "regular",
-      "text": "Klockan ställs om på söndag, och det blir mörkt en timme tidigare. En fast monterad lampa hade krävt en elektriker, en sladdlampa fryser fast i snön till våren.",
+      "text": "Hej {{ contact.first_name | default: 'där' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Första köldknäppen fryser vattnet i utekranen, ofta innan du hunnit tänka på den.",
       "alignment": "center"
     },
     {
@@ -23,8 +28,8 @@
       "selectionMode": "manual",
       "products": [
         {
-          "id": "66ab4154-18a8-4fe9-aa81-2cd3846389da",
-          "button": "Se lampan"
+          "id": "ca232636-6a2f-496a-9a77-c8a7d0d19aab",
+          "button": "Se kranskyddet"
         }
       ],
       "dynamicProductsCount": null,
@@ -43,44 +48,45 @@
     },
     {
       "type": "link",
-      "text": "Se lampan",
-      "url": "https://baverbutiken.se/products/solcellslampa-med-rorelsesensor-tre-huvuden-210-led",
+      "text": "Skydda kranen",
+      "url": "https://baverbutiken.se/products/kranskydd-frost-420d-skyddar-utekranen-i-vinter",
       "style": "button"
     },
     {
-      "type": "regular",
-      "text": "Solcellslampan monteras på väggen utan en enda kabel. Solcellspanelen laddar det inbyggda 1200 mAh-batteriet under dagen, och rörelsesensorn tänder alla tre huvudena, 210 lysdioder, när du kommer gående.",
-      "alignment": "left"
-    },
-    {
-      "type": "regular",
-      "text": "Varje huvud vrids för sig, så du riktar ljuset mot uppfarten, trappan eller nyckelhålet, inte bara rakt fram.",
-      "alignment": "left"
-    },
-    {
-      "type": "regular",
-      "text": "Ingen elektriker, ingen sladd. Bara solljus och en rörelsesensor.",
-      "alignment": "left"
-    },
-    {
       "type": "h2",
-      "text": "Mer ljus",
-      "alignment": "center"
+      "text": "Tre saker frosten tar först"
+    },
+    {
+      "type": "list",
+      "text": "Kranen: vattnet i ledningen fryser vid första köldknäppen, och isen kan spränga kran eller ledning."
+    },
+    {
+      "type": "list",
+      "text": "Tunnan: löv och pollen samlas i vattnet hela hösten, och till våren kan en grön hinna ligga kvar om den stått öppen."
+    },
+    {
+      "type": "list",
+      "text": "Krukorna: en huv skyddar mot vind, regn, snö och frost, och kvällarna blir kalla innan du hunnit ta in dem."
+    },
+    {
+      "type": "regular",
+      "text": "Träs över kranen och sluter tätt, med isolerande foder som håller frosten ute hela vintern.",
+      "alignment": "left"
     },
     {
       "type": "products",
       "selectionMode": "manual",
       "products": [
         {
-          "id": "a806a583-cf56-43cf-b3f3-64f8d1205606",
+          "id": "e28684fe-d25a-44fb-abd9-a39bda1c34e5",
           "button": "Se produkten"
         },
         {
-          "id": "c14d6b41-f0f6-4da1-9171-5f47bac617c0",
+          "id": "c92885ee-ecef-40e6-9f18-0c2668c17095",
           "button": "Se produkten"
         },
         {
-          "id": "6c54cf0f-4f5d-4237-b8f0-31262b0fad90",
+          "id": "3e2f6e02-30c6-40dc-b34f-04157ad3f72a",
           "button": "Se produkten"
         }
       ],

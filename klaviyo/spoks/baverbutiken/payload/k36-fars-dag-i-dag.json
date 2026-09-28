@@ -1,16 +1,16 @@
 {
-  "id": "k04-sotarset-fore-eldning",
-  "emailTitle": "Draget blir sämre för varje eldning",
-  "emailDescription": "Nio böjliga stänger följer krökarna i röret.",
+  "id": "k36-fars-dag-i-dag",
+  "emailTitle": "I dag är sista dagen att beställa till fars dag",
+  "emailDescription": "Måndag 19 oktober. Beställer du i morgon kan vi inte lova det till fars dag.",
   "amnesrader": [
-    "Draget blir sämre för varje eldning",
-    "Rensa själv mellan sotarens besök",
-    "Når bakom kaminen utan att krypa dit"
+    "I dag är sista dagen att beställa till fars dag",
+    "Efter i dag hinner presenten inte fram",
+    "Fyra förslag om presenten inte är klar"
   ],
   "blocks": [
     {
       "type": "h1",
-      "text": "Draget blir sämre för varje eldning",
+      "text": "I dag är sista dagen att beställa till fars dag",
       "alignment": "center"
     },
     {
@@ -20,16 +20,34 @@
     },
     {
       "type": "regular",
-      "text": "Sotlagret växer tyst i bakgrunden. Kaminen drar sämre och lukten sitter i.",
+      "text": "Fyra förslag väntar nedan.",
       "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Se presenterna",
+      "url": "https://baverbutiken.se/collections/alla-produkter",
+      "style": "button"
     },
     {
       "type": "products",
       "selectionMode": "manual",
       "products": [
         {
-          "id": "b1d4717b-d737-46ad-a9c2-be85081a15ac",
-          "button": "Se sotarsetet"
+          "id": "e5b2eb1f-3eba-4603-a09c-1c9692e4ae66",
+          "button": "Se produkten"
+        },
+        {
+          "id": "d0832750-b091-43b4-9d92-e2889d5b5a0a",
+          "button": "Se produkten"
+        },
+        {
+          "id": "039975de-c295-4409-a7aa-78df00cf06c0",
+          "button": "Se produkten"
+        },
+        {
+          "id": "08757c7e-7d50-498a-a1b4-70370bcd3c5c",
+          "button": "Se produkten"
         }
       ],
       "dynamicProductsCount": null,
@@ -44,38 +62,11 @@
       },
       "buttonText": null,
       "alignment": "center",
-      "productsPerRow": 1
-    },
-    {
-      "type": "link",
-      "text": "Se sotarsetet",
-      "url": "https://baverbutiken.se/products/sotarset-med-bojliga-stanger-rensar-rokkanal-och-kaminror",
-      "style": "button"
+      "productsPerRow": 3
     },
     {
       "type": "regular",
-      "text": "Nio böjliga stänger på 41 cm skruvas ihop till 3,69 meters räckvidd. De följer krökarna i röret i stället för att ta stopp i första kröken, och når bakom kaminen eller torktumlaren.",
-      "alignment": "left"
-    },
-    {
-      "type": "h2",
-      "text": "Tre saker settet gör"
-    },
-    {
-      "type": "list",
-      "text": "Rensar mellan sotarens besök, utan att boka någon."
-    },
-    {
-      "type": "list",
-      "text": "Böjer med i kröken där en stel stång fastnar."
-    },
-    {
-      "type": "list",
-      "text": "Borstar loss sotet med nylonstrån i stället för att skrapa."
-    },
-    {
-      "type": "regular",
-      "text": "Byggs i den längd du behöver, en stång i taget.",
+      "text": "Beställer du i morgon räknar vi inte med att det hinner fram till 8 november.",
       "alignment": "left"
     },
     {

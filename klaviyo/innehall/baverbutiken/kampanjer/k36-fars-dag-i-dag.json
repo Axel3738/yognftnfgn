@@ -1,0 +1,101 @@
+{
+  "id": "k36-fars-dag-i-dag",
+  "namn": "MAIL_20261019_Farsdag_GT_12_tier2_promo_sista-dagen-i-dag_v1",
+  "memo": "Sista dagen. Kort mejl, en rubrik, fyra produkter, en mening om dagen. Hypotes: det kortaste mejlet i serien får högst klick per öppning.",
+  "taggar": {
+    "typ": "S",
+    "kalla": "egen-data",
+    "kalla_ref": "klaviyo/brands/baverbutiken.json (kalender)",
+    "lardom": null,
+    "avatar": "den som beställer sista dagen",
+    "begar": "hinna",
+    "awareness": "promo",
+    "urgency": "konsekvens",
+    "confidence": "medium",
+    "prefix": "Farsdag",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    {
+      "text": "I dag är sista dagen att beställa till fars dag",
+      "begar": "veta att deadline är i dag, inte snart"
+    },
+    {
+      "text": "Efter i dag hinner presenten inte fram",
+      "begar": "förstå konsekvensen av att vänta till i morgon"
+    },
+    {
+      "text": "Fyra förslag om presenten inte är klar",
+      "begar": "få snabb hjälp att välja, utan att behöva leta"
+    }
+  ],
+  "forhandstext": "Måndag 19 oktober. Beställer du i morgon kan vi inte lova det till fars dag.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "I dag är sista dagen att beställa till fars dag",
+      "text": "Hej {{fornamn}},\n\nFyra förslag väntar nedan.",
+      "knapp": {
+        "text": "Se presenterna",
+        "lank": "kollektion:alla-produkter"
+      }
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": null,
+      "handles": [
+        "balteslipmaskin-mini-3-i-1-knivslip-polerare",
+        "fiskespohallare-4-pack-kraftig-forvaring",
+        "motorlas-i-rostfritt-stal-laser-utombordarens-fastskruvar",
+        "varmesits-45-90-cm-4-varmezoner-usb-driven"
+      ]
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Beställer du i morgon räknar vi inte med att det hinner fram till 8 november."
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    {
+      "rad": "I dag är sista dagen att beställa till fars dag",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Efter i dag hinner presenten inte fram",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Fyra förslag om presenten inte är klar",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Måndag 19 oktober. Beställer du i morgon kan vi inte lova det till fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Se presenterna",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    }
+  ],
+  "planerad": "2026-10-19T18:00:00+02:00",
+  "segment": [
+    "Warmup tier 2"
+  ],
+  "exkludera": [],
+  "status_plan": "klar",
+  "kraver_axel": null
+}

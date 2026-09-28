@@ -1,0 +1,124 @@
+{
+  "id": "k32-fars-dag-prylar",
+  "namn": "MAIL_20261012_Fagelmatare_GT_8_kopare-verkstad_product_faglarna-i-mobilen_v1",
+  "memo": "Verkstadsköparna gillar prylar med en funktion man kan visa upp. Hypotes: fågelmataren med kamera är presenten som pappan aldrig köper själv men pratar om i veckor; mätt på klick på hero mot raden.",
+  "taggar": {
+    "typ": "N",
+    "kalla": "gissning",
+    "kalla_ref": null,
+    "lardom": null,
+    "avatar": "den som ger present till pappan som redan har verktygen",
+    "begar": "en present som blir ett samtalsämne",
+    "awareness": "product",
+    "urgency": "konsekvens",
+    "confidence": "low",
+    "prefix": "Fagelmatare",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    {
+      "text": "Han ser fåglarna innan han reser sig",
+      "begar": "se fåglarna på mobilen utan att resa sig från soffan"
+    },
+    {
+      "text": "Beställ senast 19 oktober till fars dag",
+      "begar": "få paketet fram i tid till fars dag"
+    },
+    {
+      "text": "Tre andra presenter för garaget",
+      "begar": "hitta en present även om han inte är intresserad av fåglar"
+    }
+  ],
+  "forhandstext": "Kameran filmar sittrampen, appen visar bilden i mobilen.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Han ser fåglarna innan han reser sig",
+      "text": "Hej {{fornamn}},\n\nKameran i fågelmatarens hus filmar sittrampen. En app visar bilden i mobilen, så pappan ser vem som landat innan han hunnit resa sig från soffan.",
+      "bild": "produkt:fagelmatare-med-kamera-och-solcellspanel-se-faglarna-i-appen",
+      "knapp": {
+        "text": "Se presenten",
+        "lank": "produkt:fagelmatare-med-kamera-och-solcellspanel-se-faglarna-i-appen"
+      }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Instruktionerna för att koppla ihop kameran och appen ligger i förpackningen. Solcellspanelen sitter på taket av fågelmatarens hus och laddar kameran i dagsljus, så pappan slipper dra en sladd till väggen."
+    },
+    {
+      "typ": "produkt",
+      "handle": "fagelmatare-med-kamera-och-solcellspanel-se-faglarna-i-appen",
+      "text": "Kameran har 5 MP och filmar sittrampen, med en vattenkopp bredvid som ger fåglarna en anledning att stanna.",
+      "knapp": "Se fågelmataren"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "För garaget",
+      "handles": [
+        "7-i-1-jumpstart-5000a-med-luftkompressor-12v-batteribooster",
+        "1080p-inspektionskamera-endoskop-ip67-for-bil-ror-motor",
+        "solcellsladdare-10-w-mppt-underhallsladdare-for-12-v"
+      ]
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Beställ senast 19 oktober om paketet ska vara framme till fars dag den 8 november."
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    {
+      "rad": "Han ser fåglarna innan han reser sig",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Beställ senast 19 oktober till fars dag",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Tre andra presenter för garaget",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Kameran filmar sittrampen, appen visar bilden i mobilen.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Se presenten",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Se fågelmataren",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "För garaget",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    }
+  ],
+  "planerad": "2026-10-12T18:00:00+02:00",
+  "segment": [
+    "Köpare verkstad & garage"
+  ],
+  "exkludera": [],
+  "status_plan": "klar",
+  "kraver_axel": null
+}

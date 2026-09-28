@@ -1,0 +1,124 @@
+{
+  "id": "k33-fars-dag-fryser",
+  "namn": "MAIL_20261014_Varmesits_GT_9_tier2_problem_pappan-som-fryser_v1",
+  "memo": "Höstens läktare, pass och båtbryggor. Hypotes: en problemöppning om kylan (läktaren i oktober) slår en produktöppning, mätt mot K28 på öppning per mottagare.",
+  "taggar": {
+    "typ": "N",
+    "kalla": "gissning",
+    "kalla_ref": null,
+    "lardom": null,
+    "avatar": "den som ger present till pappan som står på läktaren eller i passet",
+    "begar": "att han slipper frysa i vinter",
+    "awareness": "problem",
+    "urgency": "konsekvens",
+    "confidence": "low",
+    "prefix": "Varmesits",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    {
+      "text": "Den kalla sitsen känns i hela kroppen",
+      "begar": "slippa vänta på att kroppen värmer upp stolen själv"
+    },
+    {
+      "text": "Beställ senast 19 oktober till fars dag",
+      "begar": "få paketet fram i tid till fars dag"
+    },
+    {
+      "text": "Värmesulor, poncho eller handvärmare",
+      "begar": "hitta rätt värmepryl utifrån var han fryser"
+    }
+  ],
+  "forhandstext": "Fyra värmezoner värmer både sits och rygg.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Den kalla sitsen känns i hela kroppen",
+      "text": "Hej {{fornamn}},\n\nBilsätet, kontorsstolen eller campingstolen är iskall på morgonen, och det tar sin tid innan värmen kommer av sig själv.",
+      "bild": "produkt:varmesits-45-90-cm-4-varmezoner-usb-driven",
+      "knapp": {
+        "text": "Se presenten",
+        "lank": "produkt:varmesits-45-90-cm-4-varmezoner-usb-driven"
+      }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Fyra värmezoner täcker sits och rygg i ett stycke, och tre lägen väljs med en knapp på sitsen. Den drivs via USB, så en vanlig powerbank räcker. Powerbanken följer inte med."
+    },
+    {
+      "typ": "produkt",
+      "handle": "varmesits-45-90-cm-4-varmezoner-usb-driven",
+      "text": "Sits och rygg värms i samma stund, med tre lägen du växlar mellan på en knapp.",
+      "knapp": "Se värmesitsen"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Tre till mot kylan",
+      "handles": [
+        "varmesulor-med-fjarrkontroll-varma-fotter-pa-passet",
+        "laktarponcho-med-varme-tre-varmelagen-via-usb",
+        "mc-handvarmare-vindtata-greppoverdrag"
+      ]
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Beställ senast 19 oktober om paketet ska vara framme till fars dag den 8 november."
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    {
+      "rad": "Den kalla sitsen känns i hela kroppen",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Beställ senast 19 oktober till fars dag",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Värmesulor, poncho eller handvärmare",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Fyra värmezoner värmer både sits och rygg.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Se presenten",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Se värmesitsen",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Tre till mot kylan",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    }
+  ],
+  "planerad": "2026-10-14T18:00:00+02:00",
+  "segment": [
+    "Warmup tier 2"
+  ],
+  "exkludera": [],
+  "status_plan": "klar",
+  "kraver_axel": null
+}

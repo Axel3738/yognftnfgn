@@ -1,0 +1,123 @@
+{
+  "id": "k25-tradgard-frosten",
+  "namn": "MAIL_20261003_Kranskydd_S_1_kopare-tradgard_problem_utekranen-fryser-forst_v1",
+  "memo": "Första frostnatten kommer i oktober i stora delar av landet. Mejlet går till dem som redan köpt till tomten, en månad före K16 (som går brett 3/11). Hypotes: problemöppningen \"det som fryser först\" (utekranen) säljer hela raden av skydd; mätt på klick per produkt.",
+  "taggar": {
+    "typ": "S",
+    "kalla": "gissning",
+    "kalla_ref": null,
+    "lardom": null,
+    "avatar": "villaägaren som redan köpt något till tomten",
+    "begar": "att inget spricker i vinter",
+    "awareness": "problem",
+    "urgency": "sasong",
+    "confidence": "low",
+    "prefix": "Kranskydd",
+    "kod": "S"
+  },
+  "amnesrader": [
+    {
+      "text": "Kranen fryser vid första köldknäppen",
+      "begar": "att inget spricker i vinter"
+    },
+    {
+      "text": "Frosten kommer innan krukorna är inne",
+      "begar": "hinna skydda krukväxterna innan kvällarna blir för kalla"
+    },
+    {
+      "text": "Kranen, tunnan och krukorna före frosten",
+      "begar": "veta vilka delar av trädgården som är mest utsatta"
+    }
+  ],
+  "forhandstext": "Isen kan spränga kran eller ledning innan du märker något.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Kranen fryser vid första köldknäppen",
+      "text": "Hej {{fornamn}},\n\nFörsta köldknäppen fryser vattnet i utekranen, ofta innan du hunnit tänka på den.",
+      "bild": "produkt:kranskydd-frost-420d-skyddar-utekranen-i-vinter",
+      "knapp": {
+        "text": "Skydda kranen",
+        "lank": "produkt:kranskydd-frost-420d-skyddar-utekranen-i-vinter"
+      }
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "Tre saker frosten tar först",
+      "punkter": [
+        "Kranen: vattnet i ledningen fryser vid första köldknäppen, och isen kan spränga kran eller ledning.",
+        "Tunnan: löv och pollen samlas i vattnet hela hösten, och till våren kan en grön hinna ligga kvar om den stått öppen.",
+        "Krukorna: en huv skyddar mot vind, regn, snö och frost, och kvällarna blir kalla innan du hunnit ta in dem."
+      ]
+    },
+    {
+      "typ": "produkt",
+      "handle": "kranskydd-frost-420d-skyddar-utekranen-i-vinter",
+      "text": "Träs över kranen och sluter tätt, med isolerande foder som håller frosten ute hela vintern.",
+      "knapp": "Se kranskyddet"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": null,
+      "handles": [
+        "ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+        "krukvaxthuv-3-pack-skydd-mot-vind-regn-och-frost",
+        "regntunnehuv-200-l-i-svart-210d-dras-over-tunnan"
+      ]
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    {
+      "rad": "Kranen fryser vid första köldknäppen",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Frosten kommer innan krukorna är inne",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Kranen, tunnan och krukorna före frosten",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Isen kan spränga kran eller ledning innan du märker något.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Skydda kranen",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Tre saker frosten tar först",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Se kranskyddet",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    }
+  ],
+  "planerad": "2026-10-03T18:00:00+02:00",
+  "segment": [
+    "Köpare trädgård & tomt"
+  ],
+  "exkludera": [],
+  "status_plan": "klar",
+  "kraver_axel": null
+}

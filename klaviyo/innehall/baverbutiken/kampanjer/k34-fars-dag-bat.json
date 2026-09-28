@@ -1,0 +1,124 @@
+{
+  "id": "k34-fars-dag-bat",
+  "namn": "MAIL_20261017_Motorlas_GT_10_kopare-bat_product_motorn-han-laser-fast_v1",
+  "memo": "Båtköparna får sin egen fars dag-lista två dagar före sista beställningsdagen, som önskelista att skicka vidare. Hypotes: motorlåset är presenten båtägaren vill ha men inte köper själv.",
+  "taggar": {
+    "typ": "S",
+    "kalla": "egen-data",
+    "kalla_ref": "klaviyo/evolve/ATERKOP-ANALYS.md:161",
+    "lardom": null,
+    "avatar": "båtägaren som skickar vidare önskelistan, och den som köper åt honom",
+    "begar": "att motorn sitter kvar och står skyddad",
+    "awareness": "product",
+    "urgency": "konsekvens",
+    "confidence": "medium",
+    "prefix": "Motorlas",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    {
+      "text": "Motorn han låser fast vid bryggan",
+      "begar": "låsa fast motorn så den inte går att skruva loss vid bryggan"
+    },
+    {
+      "text": "Beställ senast måndag 19 oktober",
+      "begar": "hinna beställa innan sista dagen för fars dag"
+    },
+    {
+      "text": "Skydd för motorn, kylsystemet eller båten",
+      "begar": "hitta en present för en annan del av båten"
+    }
+  ],
+  "forhandstext": "Nyckelringen flyter om den hamnar i vattnet vid båten.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Motorn han låser fast vid bryggan",
+      "text": "Hej {{fornamn}},\n\nUtombordaren sitter fast med några fästskruvar som går att lossa på några minuter, och båten ligger ofta obevakad vid bryggan över natten.",
+      "bild": "produkt:motorlas-i-rostfritt-stal-laser-utombordarens-fastskruvar",
+      "knapp": {
+        "text": "Se presenten",
+        "lank": "produkt:motorlas-i-rostfritt-stal-laser-utombordarens-fastskruvar"
+      }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Nyckelringen flyter. Tappar han nyckeln i vattnet vid båten guppar den upp i stället för att sjunka. Två nycklar följer med, en till honom och en i reserv."
+    },
+    {
+      "typ": "produkt",
+      "handle": "motorlas-i-rostfritt-stal-laser-utombordarens-fastskruvar",
+      "text": "Ett lås i rostfritt stål läggs över fästskruvarna och låses med en av de två nycklarna som följer med.",
+      "knapp": "Se motorlåset"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Mer för båten",
+      "handles": [
+        "batmotorskydd-420d-heltackande-for-utombordare",
+        "spolklamma-for-batmotor-testvattenklamma",
+        "bathuv-for-trailerbat-17-19-fot-600-310-cm-i-600d-vav"
+      ]
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Beställ senast måndag 19 oktober om paketet ska vara framme till fars dag den 8 november."
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    {
+      "rad": "Motorn han låser fast vid bryggan",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Beställ senast måndag 19 oktober",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Skydd för motorn, kylsystemet eller båten",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Nyckelringen flyter om den hamnar i vattnet vid båten.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Se presenten",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Se motorlåset",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Mer för båten",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    }
+  ],
+  "planerad": "2026-10-17T18:00:00+02:00",
+  "segment": [
+    "Köpare båt"
+  ],
+  "exkludera": [],
+  "status_plan": "klar",
+  "kraver_axel": null
+}
