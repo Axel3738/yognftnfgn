@@ -148,6 +148,33 @@ Per varumärke:
    fönstret är stängt — aldrig vad som står i det. Skriv därför "evidence
    submitted", aldrig "we submitted our evidence".
 
+   ✅ **Rättelse 2026-09-28: det GÅR att se när beviset gick in.** Fältet heter
+   **`evidence_sent_on`** och ligger i samma svar som allt annat
+   (`shopify_payments/disputes/<id>.json`) — punkten ovan var skriven utan att
+   någon läst en enskild tvist, bara listan. `normaliseraTvist` bär det sedan
+   samma dag som `bevisSkickat`. Det säger fortfarande inte VAD som skickades,
+   men det säger **när** — och en tidpunkt långt efter `evidence_due_by`, eller
+   på minuten lika med den, skiljer en människas inskick från Shopifys
+   autosvar. Mätt på **#5053**: deadline `2026-09-28T01:00:00+02:00`, de två
+   bevisen skickade `07:10:14` och `07:41:42` samma morgon — sex timmar efter
+   att fönstret stängde, 31 minuter isär, alltså en människa som gjorde dem en
+   och en. Läs alltid `evidence_sent_on` innan du skriver något om vem som
+   svarade.
+
+4b. ⛔ **`evidence_due_by` är en TIDPUNKT. Läs aldrig bara datumet.**
+   Samma mätning: deadline var klockan **01:00 på natten**, inte "under
+   måndagen". Tvistkollen slängde tiden (`String(...).slice(0, 10)`) och skrev
+   "due 2026-09-28 — 1 day left" i söndagens larm; beslutsbladet sa "skicka in
+   på måndagen"; VA:n skickade 07:10 på måndagen. Ingen hade fel om datumet, och
+   ändå gick allt in för sent. Rättat samma dag: `evidensSenastTid` bär hela
+   tidpunkten, `timmarKvar()` räknar på den, larmet skriver **"due 2026-09-28 at
+   01:00 — 19h left"** när det är under ett dygn kvar, och en passerad deadline
+   samma dygn blir "6h OVERDUE" i stället för "due TODAY". En sida eller ett
+   larm som visar deadline ska visa klockslaget när det inte är midnatt.
+   ⚠️ Shopify accepterade de två sena inskicken ändå (status blev
+   `under_review`, inte `lost`) — men det är bankens goda vilja, inte en regel
+   att bygga på.
+
 5. **En `under_review` är inget avslut — den kan eskalera.** Mätt på **#5122**
    två dygn i rad: 2026-09-23 stod den `inquiry` / `under_review` med deadline
    2026-09-21, alltså besvarad och låst; 2026-09-24 står den som

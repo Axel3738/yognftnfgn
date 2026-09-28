@@ -30,7 +30,21 @@ Write off the 603 SEK, tag the customer in Shopify so future orders are reviewed
 
 **Timing for the VA:** add the evidence and click **Save** today, on both disputes. If the customer replies to the 2026-09-20 email, add the reply first. Then click **Submit now**.
 
-> ⛔ **The planned submit date has passed — measured 2026-09-27.** Both disputes
+> ✅ **Answered — measured 2026-09-28.** Both disputes are `under_review`:
+> `17773822301` had its evidence sent at **07:10:14** and `17773723997` at
+> **07:41:42** that morning. Nothing more to do here; watch for an escalation
+> to chargeback the way #5122 and #4446 both did.
+>
+> ⛔ **But they went in six hours LATE, and the reason is written down here.**
+> The real deadline was `2026-09-28T01:00:00+02:00` — **one o'clock at night**,
+> not "some time on Monday". This sheet said "submit on Monday", the daily alarm
+> said "due 2026-09-28 — 1 day left", and both were reading a date where Shopify
+> had written a timestamp. Shopify accepted the late evidence anyway; that is
+> the bank's goodwill, not a rule to lean on. Fixed the same day: the alarm now
+> prints "due 2026-09-28 at 01:00 — 19h left". **On any dispute, read the
+> clock time in `evidence_due_by`, not just the day.**
+
+> ⛔ **The planned submit date had already passed — measured 2026-09-27.** Both disputes
 > (`17773822301`, 348 SEK, and `17773723997`, 255 SEK) are still `needs_response`.
 > Nothing has been submitted. The instruction above used to say "submit on
 > 2026-09-26", and that day is gone. **Submit both today, Sunday 2026-09-27.**
