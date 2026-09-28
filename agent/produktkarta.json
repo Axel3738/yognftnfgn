@@ -1197,7 +1197,9 @@
       "lage": "test",
       "lage_motivering": "ny norsk kampanj startad 2026-09-21, 845 kr, 7 köp vid tillägget — tillagd av /rond-auto 2026-09-22. Break-even står i kampanjnamnet (norskt skrivsätt BE-ROAS med komma).",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "kampanjnamnet",
+      "minne": "products/sotarsetet",
+      "minne_not": "NO-kampanjen delar produktminne med SE (Norge har inga egna briefer eller minnesfiler — de norska annonserna är de svenska översatta); lärdomarna för Sotarset_NO_* skrivs i products/sotarsetet/lardomar.md, som IBC NO. Satt av /rond-auto 2026-09-28."
     },
     {
       "campaign_id": "120252363909390233",
