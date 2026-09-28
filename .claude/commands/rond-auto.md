@@ -1060,7 +1060,17 @@ Discord-boten att en ny produkt fått en creative hub, och arbetet blir osynligt
 4. Skriv om `agent/notion-uppgifter.json`: levande hubbar med collection-id,
    arkiverade hubbar, och alla rader med Status `Draft`. Sätt `uppdaterad` till
    dagens datum. **Committa och pusha filen.**
-5. Rapportera i leveransen:
+5. **Döda hubbar (Axels beslut 2026-09-28):** en hub vars kampanj ronden
+   stängt av (`STANG_AV` senaste genomförda livscykelrad, PAUSED med spend i
+   Meta, ingen `ATERAKTIVERA`) ska ARKIVERAS så redigerarna inte lägger tid på
+   annonser som aldrig laddas upp — leveransrundan vägrar avvecklade kampanjer
+   (rutinregeln 2026-08-30). Lista dem under **"Hubbar att arkivera"** i
+   leveransen med hubbnamn och avstängningsdatum; arkiveringen är Axels klick
+   (`•••` → Archive) tills en rutin får skriva i Notion. Mätt 2026-09-28: fyra
+   sådana — Car wash brush (STANG_AV 23/9, 7 rader i To be Reviewed), Motorcycle
+   Cover (19/9), Bird feeder with camera (21/9), BÄVER Adventskalendern
+   Racingbilar (23/9). Skapa aldrig briefer i en sådan hub.
+6. Rapportera i leveransen:
    - **Nya hubbar sedan igår** (fanns inte i filen innan) — det är signalen att
      en produkt börjat rulla.
    - Hubbar som blivit arkiverade sedan igår.
