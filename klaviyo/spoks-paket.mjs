@@ -508,7 +508,8 @@ export function segmentTillSpoks(brand) {
 // Paketet
 // ---------------------------------------------------------------------------
 
-const KORT = (id) => id.replace(/^k(\d\d)-.*$/, 'K$1');
+// "k15-…" → K15, "fd01-…" → FD01, "rea02-…" → REA02 (den dagliga serien 2026-09-28 har egna prefix).
+const KORT = (id) => id.replace(/^([a-z]+)(\d\d)-.*$/, (_, p, n) => `${p.toUpperCase()}${n}`);
 const kortDatum = (iso, tidszon) => {
   const d = new Date(iso);
   if (Number.isNaN(d.getTime())) return '?';
