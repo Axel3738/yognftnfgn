@@ -109,3 +109,12 @@ node temu/takoverdrag/fi.mjs --skarp                 # skapar produkten (vägrar
   belagda fakta, täthet är ett absolut löfte. Samma linje som spakapellet i batch 9.
 - **Den gamla bulleten "Vattnet blir aldrig stående kring takluckorna" är borta.** "Aldrig"
   om ett utfall är förbjudet i CLAUDE.md och hade legat live sedan batch 6.
+
+## 2026-09-28 — tre fakta tillagda på NO-sidan (Axels begäran)
+Bullets i `Funksjoner` på beverbutikken.no: (1) "Ligger i ro i vind – stropper på alle fire sider, 2,5 m og justerbare i
+spennen" ersatte "strammes med reim og strammesnor" (som motsade remfaktan), (2) "Sølvbelegget tar solen i stedet for taket –
+210D-oxfordstoff med sølvbelagt overside", (3) "To ekstra strammestropper følger med – forsterkede, 10,5 m, i tillegg til
+trekkets egne". Belägg: offertens variantruta `[210D] Black/silver` (rad 40 ovan) + SE-sidans bullets.
+**Kvar, inte rört (Axel avgör):** NO-bullet 1 och titeln säger "6,5 × 3 m" fast NO har nio storlekar 5,5–13,5 m (SE säger
+"Nio storlekar"); NO påstår "oppbevaringspose følger med" — står inte på SE och är obelagt; SE använder "vattentät"
+(förbjudet absolut ord enligt CLAUDE.md).
