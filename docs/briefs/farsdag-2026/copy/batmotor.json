@@ -1,0 +1,73 @@
+{
+  "hook_H1": {
+    "rad": "Fars dag-present: dra över, spänn remmen, klart.",
+    "engelska": "Father's Day gift: pull it over, strap it, done.",
+    "alternativ": [
+      "Fars dag-present: skyddet på, inga verktyg behövs.",
+      "Fars dag-present: han drar det över motorn."
+    ]
+  },
+  "hook_H2": {
+    "rad": "Fars dag-present: han spänner fast skyddet i snön.",
+    "engelska": "Father's Day gift: he straps the cover down in the snow.",
+    "alternativ": [
+      "Fars dag-present: händerna spänner skyddet i snön.",
+      "Fars dag-present: han knäpper spännet medan det snöar."
+    ]
+  },
+  "rader": [
+    { "nr": 2, "rad": "Droppar pärlar sig på 420D-tyget.", "engelska": "Droplets bead on the 420D fabric." },
+    { "nr": 3, "rad": "Han står i snön. Motorn står skyddad.", "engelska": "He stands in the snow. The motor stays covered." },
+    { "nr": 4, "rad": "Ingen ser vilken motor som står under.", "engelska": "No one can tell which motor is underneath." },
+    { "nr": 5, "rad": "Fars dag-rea: 579 kr. Beställ senast 19 oktober.", "engelska": "Father's Day sale: 579 kr. Order by October 19." }
+  ],
+  "text_pa_skarm": {
+    "1_H1": "Fars dag-present. Dra över, klart.",
+    "1_H2": "Fars dag-present: skyddet i snön.",
+    "2": "Droppar pärlar sig på 420D-tyget.",
+    "3": "I snön. Motorn står skyddad.",
+    "4": "Ingen ser vilken motor det är.",
+    "5": "579 kr. Beställ senast 19 oktober."
+  },
+  "bild": {
+    "rubrik": "Fars dag-present: skydd för hela vintern.",
+    "underrad": "420D Oxford-tyg mot regn, snö och UV. Nio storlekar, inga verktyg.",
+    "marke": "Fars dag-rea",
+    "prisband": "579 kr, ord. 965 kr",
+    "sista_raden": "Beställ senast 19 oktober",
+    "engelska": {
+      "rubrik": "Father's Day gift: protection for the whole winter.",
+      "underrad": "420D Oxford fabric against rain, snow and UV. Nine sizes, no tools."
+    }
+  },
+  "copy_card": {
+    "primar": "Fars dag-present: dra över, spänn remmen, klart. 420D Oxford-tyg håller regn, snö och UV ute hela vintern. Ingen ser vilken motor som står under skyddet. Fars dag-rea: 579 kr, ord. 965 kr. Beställ senast 19 oktober.",
+    "rubrik": "Fars dag-present: motorn skyddad i vinter.",
+    "beskrivning": "Fars dag-rea: 579 kr, ord. 965 kr"
+  },
+  "tretest": [
+    { "rad": "Fars dag-present: dra över, spänn remmen, klart.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Speglar föräldraannonsens bevisade rad (125 köp, CPA 220 kr) med fars dag-taggen tillagd; matchar exakt bilden av mannen som drar över och spänner remmen." },
+    { "rad": "Fars dag-present: skyddet på, inga verktyg behövs.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Konkret handling ur produktsidan (inga verktyg), knuten till samma trailer-scen." },
+    { "rad": "Fars dag-present: han drar det över motorn.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Ren observation av bilden, går att sanningspröva mot klippet." },
+    { "rad": "Fars dag-present: han spänner fast skyddet i snön.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Matchar H2-klippet exakt: händer i handskar, snöfall, spänne." },
+    { "rad": "Fars dag-present: händerna spänner skyddet i snön.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Alternativ vinkel på samma klipp, fokus på närbilden på händerna." },
+    { "rad": "Fars dag-present: han knäpper spännet medan det snöar.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Tredje varianten av H2, samma observation, annan ordföljd." },
+    { "rad": "Droppar pärlar sig på 420D-tyget.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Pekar på det konkreta i bilden (vattendropparna) och namnger materialet, inte ett adjektiv som 'vattentät'." },
+    { "rad": "Han står i snön. Motorn står skyddad.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Matchar bilden av mannen i vinterjacka bredvid den övertäckta motorn." },
+    { "rad": "Ingen ser vilken motor som står under.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Ordagrant ur produktsidans stöldskyddsfakta, konkret och sant/falskt-prövbart." },
+    { "rad": "Fars dag-rea: 579 kr. Beställ senast 19 oktober.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Erbjudandet med riktiga siffror och det enda äkta deadline-datumet, ingen påhittad brådska." },
+    { "rad": "Fars dag-present. Dra över, klart.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Kortad skärmtext, samma påstående som hook H1." },
+    { "rad": "Fars dag-present: skyddet i snön.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Kortad skärmtext, samma påstående som hook H2." },
+    { "rad": "I snön. Motorn står skyddad.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Kortad skärmtext för rad 3." },
+    { "rad": "Ingen ser vilken motor det är.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Kortad skärmtext för rad 4, samma sakuppgift." },
+    { "rad": "579 kr. Beställ senast 19 oktober.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Kortad skärmtext för erbjudandet." },
+    { "rad": "Fars dag-present: skydd för hela vintern.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Statisk rubrik, konkret löfte (hela vintern) kopplat till produktsidans '420D … tål en hel vinter ute'." },
+    { "rad": "420D Oxford-tyg mot regn, snö och UV. Nio storlekar, inga verktyg.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Ren specifikation från produktsidan, inga adjektiv." },
+    { "rad": "Fars dag-rea", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Märket för erbjudandet, exakt som GEMENSAMT anger." },
+    { "rad": "579 kr, ord. 965 kr", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Prisbandet, riktiga siffror från produktsidan." },
+    { "rad": "Beställ senast 19 oktober", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Den enda äkta deadlinen, ingen påhittad brådska." },
+    { "rad": "Fars dag-present: dra över, spänn remmen, klart. 420D Oxford-tyg håller regn, snö och UV ute hela vintern. Ingen ser vilken motor som står under skyddet. Fars dag-rea: 579 kr, ord. 965 kr. Beställ senast 19 oktober.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Copy card, fyra korta meningar, börjar med hook H1 och slutar med erbjudandet i rätt format. Ingen upprepning av hookens 'present'-ord, bara två fakta från produktsidan mellan hook och erbjudande." },
+    { "rad": "Fars dag-present: motorn skyddad i vinter.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Copy card-rubrik, 6 ord, samma påstående som hooken." },
+    { "rad": "Fars dag-rea: 579 kr, ord. 965 kr", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Copy card-beskrivning i exakt föreskrivet format." }
+  ]
+}

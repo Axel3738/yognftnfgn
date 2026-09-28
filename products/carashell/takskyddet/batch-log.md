@@ -2553,3 +2553,12 @@ inget rättat.
 **US-rutinen 17:05 CEST 27/9 körde steg 6b** (commit `19bcd50`: 12 av 12,
 sidorna engelska). Vakten går alltså varje dag där; morgonkollen här var
 sessionens egen uppföljning på första natten och behövs inte igen.
+
+## Fars dag-batchen 2026-09-28 — speglas INTE hit
+
+Bäverbutikens källhubb fick tre fars dag-briefer (`*_FD_1_H1`, `*_FD_1_H2`,
+`*_FD_2_1`, Axels order 2026-09-28). De är **bara Sverige**: `/oversatt NO`
+flyttar dem direkt till `Approved`, och `tools/ops-spegla.mjs` stoppar varje
+namn med vinkeln `FD` (`tools/lib/bara-sverige.mjs`) — fars dag är i juni i
+USA. Ingen `CaraShell…_FD_…`-annons ska finnas. Batchen:
+`docs/briefs/farsdag-2026/README.md`.
