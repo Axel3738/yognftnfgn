@@ -1,0 +1,206 @@
+{
+  "hook_H1": {
+    "rad": "Fars dag: pappa slapp ringa en elektriker.",
+    "engelska": "Father's Day: dad didn't have to call an electrician.",
+    "alternativ": [
+      "Ingen kabel, ingen elektriker. En present till fars dag.",
+      "Fars dag: lampan pappa monterar själv, utan elektriker."
+    ]
+  },
+  "hook_H2": {
+    "rad": "Fars dag: ljuset tänds innan pappa hunnit fram.",
+    "engelska": "Father's Day: the light turns on before dad gets there.",
+    "alternativ": [
+      "Fars dag: uppfarten lyser upp innan pappa är framme.",
+      "Fars dag: lampan tänds när pappa cyklar hem."
+    ]
+  },
+  "rader": [
+    {
+      "nr": 2,
+      "rad": "210 lysdioder på tre huvuden ger brett ljus.",
+      "engelska": "210 LEDs across three heads give broad light."
+    },
+    {
+      "nr": 3,
+      "rad": "Varje huvud vrids dit ljuset behövs: uppfarten, trappan, garageporten.",
+      "engelska": "Each head turns where the light is needed: the driveway, the stairs, the garage door."
+    },
+    {
+      "nr": 4,
+      "rad": "Solcellspanelen laddar det inbyggda 1200 mAh-batteriet.",
+      "engelska": "The solar panel charges the built-in 1200 mAh battery."
+    },
+    {
+      "nr": 5,
+      "rad": "Fars dag-rea: 589 kr, ord. 775 kr. Beställ senast 19 oktober.",
+      "engelska": "Father's Day sale: 589 SEK, reg. 775 SEK. Order by October 19."
+    }
+  ],
+  "text_pa_skarm": {
+    "1_H1": "Fars dag. Ingen elektriker behövdes.",
+    "1_H2": "Fars dag. Tänds automatiskt i mörkret.",
+    "2": "210 lysdioder. Brett ljus.",
+    "3": "Rikta mot uppfarten eller trappan.",
+    "4": "Solcellspanelen laddar det inbyggda 1200 mAh-batteriet.",
+    "5": "Fars dag-rea. Beställ senast 19 oktober."
+  },
+  "bild": {
+    "rubrik": "En present till fars dag: ingen elektriker.",
+    "underrad": "Solcellsladdat, väggmonterat, tre huvuden med 210 lysdioder som lyser upp mörkret.",
+    "marke": "Fars dag-rea",
+    "prisband": "589 kr, ord. 775 kr",
+    "sista_raden": "Beställ senast 19 oktober",
+    "engelska": {
+      "rubrik": "A Father's Day gift: no electrician needed.",
+      "underrad": "Solar charged, wall mounted, three heads with 210 LEDs that light up the dark."
+    }
+  },
+  "copy_card": {
+    "primar": "Fars dag: pappa slapp ringa en elektriker. Tre huvuden med 210 lysdioder tänds automatiskt när han kommer hem i mörkret. Fars dag-rea: 589 kr, ord. 775 kr. Beställ senast 19 oktober.",
+    "rubrik": "Present till fars dag utan elektriker",
+    "beskrivning": "Fars dag-rea: 589 kr, ord. 775 kr"
+  },
+  "tretest": [
+    {
+      "rad": "Fars dag: pappa slapp ringa en elektriker.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Ses direkt (mannen med lampan, ingen kabel i väggen). Sant/falskt kontrollerbart mot faktan om väggmontering utan kabel. Bunden till just den här väggmonterade solcellsprodukten, ingen generisk lampannons kan skriva under den utan att äga samma installationsfördel."
+    },
+    {
+      "rad": "Ingen kabel, ingen elektriker. En present till fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret parbild: ingen sladd, ingen hantverkare. Kontrollerbart påstående. Kräver den specifika kabellösa monteringen, en fast installerad lampa kan inte säga samma sak."
+    },
+    {
+      "rad": "Fars dag: lampan pappa monterar själv, utan elektriker.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Scenen syns (pappa sätter upp lampan själv). Går att kontrollera mot montering utan kabeldrag. En lampa som kräver installation av fackman kan inte skriva under den."
+    },
+    {
+      "rad": "Fars dag: ljuset tänds innan pappa hunnit fram.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Man på cykel, lampan tänds före honom, syns i klippet. Kontrollerbart mot rörelsesensorns funktion. Kräver just den sensorstyrda tändningen på håll, en manuellt tänd lampa kan inte säga det."
+    },
+    {
+      "rad": "Fars dag: uppfarten lyser upp innan pappa är framme.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret bild av upplyst uppfart före ankomst. Sant/falskt mot sensorns räckvidd. Specifikt för rörelsestyrd belysning i förväg, inte en generisk lampas påstående."
+    },
+    {
+      "rad": "Fars dag: lampan tänds när pappa cyklar hem.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Cyklisten och den tända lampan syns direkt. Kontrollerbart. Bunden till rörelsesensorns tändning, inte ett allmänt ljuspåstående."
+    },
+    {
+      "rad": "210 lysdioder på tre huvuden ger brett ljus.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Närbilden på lysdiodpanelerna visar just det brett lysande ljuset. Exakt, kontrollerbart tal ur faktabladet (brett ljus i stället för en smal kägla, fördelat på tre huvuden). Kombinationen 210 lysdioder på tre huvuden är produktens egen specifikation."
+    },
+    {
+      "rad": "Varje huvud vrids dit ljuset behövs: uppfarten, trappan, garageporten.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kvinnan som pekar upp mot huvudena visar exakt detta. Kontrollerbart mot faktans mening om att rikta ljuset. De tre namngivna platserna är hämtade ordagrant ur produktsidans funktionslista, inte en generisk formulering."
+    },
+    {
+      "rad": "Solcellspanelen laddar det inbyggda 1200 mAh-batteriet.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Solcellspanelen syns i händerna när lampan lyfts ur kartongen. Exakt, mätbart tal. 1200 mAh är den här produktens batteristorlek, ingen annan lampa kan äga just den siffran."
+    },
+    {
+      "rad": "Fars dag-rea: 589 kr, ord. 775 kr. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Prisbandet och datumet syns i bild på slutkortet. Priserna och deadlinen är exakta, kontrollerbara fakta. Just det här priset och just den här sista beställningsdagen tillhör bara den här reans."
+    },
+    {
+      "rad": "Fars dag. Ingen elektriker behövdes.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kort skärmtext till samma scen som H1-hooken. Samma kontrollerbara påstående, samma bundenhet till produktens kabelfria montering."
+    },
+    {
+      "rad": "Fars dag. Tänds automatiskt i mörkret.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kort skärmtext till kvällsscenen. Kontrollerbart mot rörelsesensorns funktion i mörker, bunden till just den sensorstyrda tändningen."
+    },
+    {
+      "rad": "210 lysdioder. Brett ljus.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kort skärmtext till panelnärbilden. Samma exakta, produktspecifika tal som raden ovan."
+    },
+    {
+      "rad": "Rikta mot uppfarten eller trappan.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kort skärmtext till pekande-scenen. Kontrollerbart mot de vridbara huvudenas funktion, bunden till just den mekaniken."
+    },
+    {
+      "rad": "Fars dag-rea. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kort skärmtext till slutkortet. Exakt datum, kontrollerbart, gäller bara den här reans tidsfrist."
+    },
+    {
+      "rad": "En present till fars dag: ingen elektriker.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Produktfotot av lampan visar det kabelfria, väggmonterade objektet direkt. Kontrollerbart mot faktan. Kräver produktens egen monteringsfördel."
+    },
+    {
+      "rad": "Solcellsladdat, väggmonterat, tre huvuden med 210 lysdioder som lyser upp mörkret.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Varje ord pekar på något synligt i produktfotot: panelen, väggfästet, de tre huvudena. Exakta, kontrollerbara tal. Den exakta specifikationen tillhör bara den här lampan."
+    },
+    {
+      "rad": "Fars dag: pappa slapp ringa en elektriker. Tre huvuden med 210 lysdioder tänds automatiskt när han kommer hem i mörkret. Fars dag-rea: 589 kr, ord. 775 kr. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Copy card-texten i sin helhet: tre scener man kan se framför sig (montering, tändning, prisband) och tre kontrollerbara påståenden. Numren och datumen är produktens och reans egna, ingen annan annons kan äga dem."
+    },
+    {
+      "rad": "Present till fars dag utan elektriker",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Copy card-rubriken. Samma kontrollerbara, produktbundna påstående som hooken, förkortat."
+    },
+    {
+      "rad": "Fars dag-rea: 589 kr, ord. 775 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Copy card-beskrivningen. Exakta priser, kontrollerbara, unika för den här reans nedsättning."
+    }
+  ]
+}
