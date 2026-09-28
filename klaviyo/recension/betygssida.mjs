@@ -295,6 +295,21 @@ export async function kollaPublik({ brand, bygge, fetchFn = fetch, logg = consol
   return { ...g, url, status: svar.status, tecken: html.length };
 }
 
+/** Avpublicerar sidan (Axel 2026-09-28: "jag ville inte ha min egen recensionsinsamling på hemsidan"). Sidan finns kvar opublicerad, inget raderas. */
+export async function avpublicera({ brand, klient, logg = console.log }) {
+  const k = recensionKonfig(brand);
+  const sida = await hittaSida(klient, k.handle);
+  if (!sida) { logg(`Sida: /pages/${k.handle} finns inte — inget att avpublicera.`); return { fanns: false }; }
+  if (!sida.isPublished) { logg(`Sida: /pages/${k.handle} är redan opublicerad.`); return { fanns: true, redan: true, id: sida.id }; }
+  const d = await klient.graphql(
+    `mutation betygSidaAv($id: ID!, $page: PageUpdateInput!) { pageUpdate(id: $id, page: $page) { page { id handle isPublished } userErrors { field message } } }`,
+    { id: sida.id, page: { isPublished: false } }
+  );
+  if (d.pageUpdate.page.isPublished) throw new Error('Sidan är fortfarande publicerad efter uppdateringen.');
+  logg(`   ✓ /pages/${k.handle} avpublicerad (${sida.id}); temafilerna layout/betyg.liquid + templates/page.betyg.liquid ligger kvar och gör inget.`);
+  return { fanns: true, redan: false, id: sida.id };
+}
+
 async function main() {
   const argv = process.argv.slice(2);
   const arg = (n) => { const i = argv.indexOf(n); return i >= 0 ? argv[i + 1] : null; };
@@ -311,6 +326,13 @@ async function main() {
   (await import('../../mejl/shopify.mjs')).kravProxy();
   const { lasButik, skapaKlient } = await import('../../sparning/butik.mjs');
   const klient = await skapaKlient(lasButik(butikId));
+  if (argv.includes('--avpublicera')) {
+    const ut = await avpublicera({ brand, klient });
+    const loggDir = join(ROT, 'klaviyo', 'konto', brand.id);
+    mkdirSync(loggDir, { recursive: true });
+    appendFileSync(join(loggDir, 'betygssida.jsonl'), JSON.stringify({ tid: new Date().toISOString(), atgard: 'avpublicerad', ...ut, orsak: 'Axel 2026-09-28: mellansidan var inte det han ville ha; stjärnorna i mejlet går direkt till Judge.me.' }) + '\n');
+    return;
+  }
   const skarpt = argv.includes('--skarpt');
   const ut = await publicera({ brand, stil, klient, skarpt });
   if (!skarpt) { console.log('Torrt: inget skrivet. Kör med --skarpt.'); return; }

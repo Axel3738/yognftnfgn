@@ -39,13 +39,15 @@ Därför är oktober uppvärmning och november–december hela affären.
 **Totalt:** 14 kampanjer på 14 veckor. Vecka 48 har måndag + fredag i stället för tisdag
 (Black Week), vecka 52 ingen.
 
-**Utanför tisdagsrytmen (2026-09-27):** **K15 Butiksrecensionen** — bara köpare
-(`SEG_kopare`; uteslutningen `SEG_oengagerade_180d` är tom tills fem kampanjer gått), ber om en
-butiksrecension på Judge.me med **fem klickbara stjärnor** som går via betygssidan
-`matstrumpor.se/pages/betyg?s=1…5` (animationen) till Judge.me-formuläret, ingen rabatt.
-Spoks-utkast `45e8e354-8672-4e83-ac11-c8b2ee3e3b85`. Axels beslut 2026-09-27 kväll: **skickas
-samma dag** (förslaget tors 1/10 är överspelat), publik och Send i appen är hans klick —
-`klaviyo/spoks/README.md` → Recensionerna.
+**Utanför tisdagsrytmen (2026-09-27, omskriven 2026-09-28):** **K15 Recensionen** — bara köpare
+(`SEG_kopare`; uteslutningen `SEG_oengagerade_180d` är tom tills fem kampanjer gått), ett kort
+personligt mejl som ber om ett omdöme på Judge.me, bra eller dåligt, med **fem klickbara
+stjärnor direkt till Judge.me-formuläret** (`&stars=1…5` bara för klickstatistiken), ingen rabatt,
+ingen produktbild. Betygssidan `/pages/betyg` (v1:s mellansida med animationen) är avpublicerad
+sedan 2026-09-28 på Axels ord. Spoks-utkast `45e8e354-8672-4e83-ac11-c8b2ee3e3b85`. Axels beslut
+2026-09-27 kväll: **skickas samma dag som han väljer publik**, publik och Send i appen är hans
+klick. Alternativet är Judge.me:s egna recensionsmejl med stjärnor i mejlet (även till gamla
+ordrar) — `klaviyo/spoks/README.md` → Recensionerna.
 
 ## Räcker prenumerationen?
 

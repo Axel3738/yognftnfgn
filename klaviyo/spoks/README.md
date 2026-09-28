@@ -468,6 +468,9 @@ plattformens egen.
 - ✅ **K01 SCHEMALAGD 2026-09-26 12:49 CEST av Axel, kontrollerad av sessionen:**
   `search_campaigns publishedAfter` → K01 `waiting_to_be_published`, `publishDate
   2026-09-29T16:00Z` (tis 18:00), och ingen annan kampanj schemalagd (F06 E2 `draft`).
+  **Kontrollerat igen 2026-09-28 07:01 UTC** av rutinen "Kolla Matstrumpors schemalagda mejl"
+  (`trig_013G65e8CvGdpybAJctqjCMc`, samma `search_campaigns publishedAfter 2026-09-25`): K01
+  `waiting_to_be_published` `2026-09-29T16:00Z`, F06 E2 `draft` — rätt, inget att göra.
   **Publiken mätt** med `update_segment` på SEG_samtycke UTAN `acknowledgeWarnings` och med
   identisk beskrivning (`applied: false`, inget ändrat): `postsUsingSegment` = K01 (schemalagd)
   + F06 E2 (utkast). Det är det enda sättet via MCP:n att se vilken publik en kampanj har —
@@ -712,7 +715,7 @@ SEG_kopare är samma publik i dag, och Axel slipper leta efter en uteslutning i 
 segmentet fått medlemmar, dvs. efter fem kampanjer. Innehåll
 `klaviyo/innehall/matstrumpor/kampanjer/k15-butiksrecension.json`, `status_plan: kraver-axel`.
 
-**Stjärnraden + betygssidan (Axels order 2026-09-27 kväll: "5 stjärnor och jag kan länka på
+**Stjärnraden + betygssidan, v1 — ⚠️ mellansidan ersatt 2026-09-28, se stycket efter F09 (Axels order 2026-09-27 kväll: "5 stjärnor och jag kan länka på
 varje så de bara trycker på en av stjärnorna sen kommer dom till recensionsformuläret … en
 animation när man trycker på stjärnan och nån rörelse så det syns att man interagerar … jag
 vill ha en annan knapp").** Knappen är borta ur K15. I stället: h2 "Hur många stjärnor får
@@ -762,6 +765,73 @@ som helst skriva); rev 2 gav 0 ❌ genom att hänga varje rad på lådan, avslö
 "påhittad". Huvudsessionen bytte EN rad: knappen "Betygsätt lådan" → "Betygsätt butiken bakom
 lådan" (länken går till butiksrecensionen, inte produkten). Ingen belöning, ingen styrning av
 betyget (review gating), alla stjärnor till samma länk.
+
+**2026-09-28: mellansidan bort, stjärnorna direkt till Judge.me, K15 v2.** Axels dom på
+morgonen, med skärmdump av `/pages/betyg` ("Tack! 1 av 5."): "Först kommer man till denna
+sidan. Sen blir man redirectad till Judgeme? Och jag ville ju ha animeringarna i mejlet. Jag
+ville inte ha min egen recensionsinsamling på hemsidan, för det är bara dumt. Det är jättebra om
+vi kan använda Judge Me … det känns som att det här mejlet kommer att kännas mer som ett säljigt
+mejl som man kanske inte ens läser. Och jag vill verkligen få in både dåliga och bra recensioner
+för att lära mig grejer. Så det är därför vi behöver vara tydliga med att de ska lämna ett
+omdöme." Gjort samma förmiddag:
+- **Betygssidan avpublicerad** (`node klaviyo/recension/betygssida.mjs --avpublicera`, ny
+  flagga, testad): `gid://shopify/Page/183830806867` `isPublished: false`, publika adressen
+  svarar 404, temafilerna `layout/betyg.liquid` + `templates/page.betyg.liquid` ligger kvar och
+  gör inget, loggrad i `klaviyo/konto/matstrumpor/betygssida.jsonl`. Inget raderat; `--skarpt`
+  publicerar den igen om Axel ändrar sig.
+- **Animation i mejlet går inte, tre mätta skäl:** mejl kör inga skript (ingen klick-reaktion
+  finns i något mejlprogram); Spoks tar ingen egen HTML/CSS i block (så inte ens hover); och
+  `upload_media` gör om en animerad GIF till en **stilla PNG** (mätt 2026-09-28: testfilen blev
+  `…/01816106-af02-44f7-ae03-414f10d0ac6f.png`, 89 175 byte; den ligger kvar i mediebiblioteket
+  som "TEST-gif-animering-provas-raderas", inget MCP-verktyg raderar, Axel kan ta bort den i
+  appen). Det som går är stjärnor som länkar, och det har K15.
+- **K15 v2** (samma utkast `45e8e354`): inget hero, ingen produktbild, ingen butikslänk. Ett
+  kort personligt mejl från grundaren som ber om ett omdöme, bra eller dåligt, fem ★ som
+  länkar **direkt** till Judge.me-länken (`&stars=1…5` läggs på bara så Spoks klickstatistik
+  visar vilken stjärna som trycktes; Judge.me ignorerar parametern och alla fem öppnar samma
+  formulär, ingen gating) och grundarraden. Copyn av en Sonnet-subagent mot
+  `docs/copy-regler.md` med två versioner (personlig / kort); huvudsessionen valde (memo i
+  innehållsfilen). Patchad 2026-09-28 08:37 UTC med `update_draft_campaign`: titel `K15 · kopare
+  · Landade skämtet, eller inte?`, hash `fff30224…`, sex block (7376fba7, d162eda4, 4f18b682,
+  4dba0842, d49d2571, da3eb8f2; bildblocket 3ac0339c, h1 532e457f och h2 327c59a5 borttagna),
+  raden i `klaviyo/konto/matstrumpor/spoks-uppladdat.jsonl`. ⚠️ **Före patchen pekade stjärna
+  4 och 5 på Trustpilot** (`get_campaign` samma förmiddag: `updated 2026-09-28T06:41:51Z`,
+  alltså ändrat i appen 08:41 svensk tid, inte av någon session; 1–3 pekade kvar på
+  betygssidan, 4–5 på `se.trustpilot.com/evaluate/www.matstrumpor.se`). Det är **review
+  gating**, höga betyg till en publik sajt och låga någon annanstans: Trustpilot förbjuder det i
+  sina riktlinjer och det är vilseledande mot nästa kund, så patchen skrev över det. Alla fem
+  stjärnor går till samma formulär. Vill Axel ha Trustpilot i stället för Judge.me ska alla fem
+  dit (och Matstrumpor har ingen Trustpilot-profil vad sessionen sett), det byts i
+  innehållsfilens `lank` och patchas om.
+- **Judge.me:s egna recensionsmejl är alternativet**, läst i Judge.me:s hjälpcenter
+  2026-09-28 (artiklarna 11887051 smart styling, 11792628 reminders, 8380029 past orders,
+  8384957 store reviews, 11419250 review form, 8420621 languages): **Free-planen** har
+  obegränsade förfrågningar, svenska (39 språk, Settings → Language → "Widget and notification
+  emails language"), val av recensionstyp ("Type of review": produkt först och butik efteråt,
+  eller bara butik; Free), avstängning av hjälptexten (Free), "Send sample email" och
+  **utskick till gamla ordrar** (Settings → Request reviews → "Request reviews from previous
+  Shopify orders" → Get started: startdatumet måste ligga FÖRE installationsdatumet, högst
+  5 000 uppfyllda ordrar, redan skickade hoppas över, går iväg cirka 10 minuter efter
+  schemaläggningen när väntetiden redan passerat; Free). **Stjärnorna i Judge.me:s mejl
+  förfyller betyget i formuläret** ("When a customer clicks a star, the review form opens with
+  that rating pre-filled, so they don't have to choose a rating twice"), det vår länk inte kan.
+  **Awesome ($15/mån):** byta trigger (Stars / Button / In email form), ändra hjälptexten
+  "Click a star to leave a review", påminnelser, egen styling, blocket Shop review. Om
+  Free-mallen visar stjärnor som standard står inte i artikeln — Axel ser det med Send sample
+  email. ⚠️ Judge.me mejlar ALLA köpare oavsett marknadsföringssamtycke; det är Axels
+  MFL-beslut (samma som "alla kunder" ovan). **Judge.me installerades 2026-08-22** (mätt via
+  Fabrikens app: butikens `judgeme`-metafält skapade 03:48 UTC den dagen; appen "Judge.me
+  Reviews" i `appInstallations`, bredvid "Klaviyo Reviews") med automatiska förfrågningar på
+  som standard (Fulfilled-trigger enligt artikel 8379844) — så septemberköparna kan redan ha
+  fått Judge.me:s mejl, och F09 (16 d efter order) ber då en gång till; vilket som ska gälla
+  är Axels val (Judge.me: Settings → Request scheduling; F09: Settings i flödet). Av de 5
+  recensioner motorn cachar (de bästa av 8, `klaviyo/output/matstrumpor/recensioner.json`) är
+  3 daterade före installationen (2/1, 7/1, 9/4: importerade eller från en tidigare app) och 2
+  i september (16/9, 25/9); de andra tre är inte lästa. Vad som faktiskt skickats syns i
+  Judge.me → Reviews → Review requests.
+- **Fråga 15 till Evolve-boten** (`klaviyo/evolve/FRAGOR.md`): hur man ber om recensioner via
+  mejl, appens egna mejl mot ett personligt, gamla köpare, dåliga recensioner, timing för en
+  present, stjärnor mot knapp, ämnesrader.
 
 **Sidoeffekt att hålla koll på:** klubbdragningens 0-kronorsorder är en `order_created` ⇒
 vinnaren rullar också in i F09 efter 16 dygn (och i F04/F07). Rimligt, de har fått lådan, men

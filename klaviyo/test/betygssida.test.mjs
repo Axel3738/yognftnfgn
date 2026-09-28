@@ -1,7 +1,7 @@
 // Betygssidan: fem stjärnor, ett mål, ingen header — och skriptet läser ?s=.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { byggBetygssida, granskaPublik, recensionKonfig, MALLSUFFIX } from '../recension/betygssida.mjs';
+import { byggBetygssida, granskaPublik, recensionKonfig, avpublicera, MALLSUFFIX } from '../recension/betygssida.mjs';
 
 const MAL = 'https://judge.me/product_reviews/abc/new?source=shareable-link';
 const brand = {
@@ -57,4 +57,32 @@ test('granskningen godkänner en bar sida och stoppar header, temasektioner och 
   const gating = bar.replace(`class="betyg-stjarna" href="${MAL}" data-n="1"`, `class="betyg-stjarna" href="https://annat.se/privat" data-n="1"`);
   assert.ok(granskaPublik(gating, { mal: MAL }).fel.some((f) => f.includes('gating')));
   assert.ok(!granskaPublik('<html></html>', { mal: MAL }).ok);
+});
+
+// Axel 2026-09-28: mellansidan var inte det han ville ha. Avpubliceringen släcker sidan
+// utan att radera något, och gör inget alls när sidan saknas eller redan är släckt.
+test('avpublicera släcker sidan med isPublished:false, raderar inget och är idempotent', async () => {
+  const anrop = [];
+  const fejk = (sida) => ({
+    async graphql(q, vars) {
+      anrop.push({ q, vars });
+      if (q.includes('pages(first')) return { pages: { nodes: sida ? [sida] : [] } };
+      if (q.includes('pageUpdate')) {
+        assert.deepEqual(vars, { id: sida.id, page: { isPublished: false } });
+        return { pageUpdate: { page: { ...sida, isPublished: false }, userErrors: [] } };
+      }
+      throw new Error(`oväntat anrop: ${q.slice(0, 40)}`);
+    },
+  });
+  const tyst = () => {};
+  const live = await avpublicera({ brand, klient: fejk({ id: 'gid://shopify/Page/1', handle: 'betyg', isPublished: true }), logg: tyst });
+  assert.deepEqual(live, { fanns: true, redan: false, id: 'gid://shopify/Page/1' });
+  assert.ok(anrop.some((a) => a.q.includes('pageUpdate')), 'sidan uppdateras');
+  assert.ok(!anrop.some((a) => /pageDelete|themeFilesDelete/.test(a.q)), 'inget raderas');
+
+  const redan = await avpublicera({ brand, klient: fejk({ id: 'gid://shopify/Page/1', handle: 'betyg', isPublished: false }), logg: tyst });
+  assert.deepEqual(redan, { fanns: true, redan: true, id: 'gid://shopify/Page/1' });
+
+  const saknas = await avpublicera({ brand, klient: fejk(null), logg: tyst });
+  assert.deepEqual(saknas, { fanns: false });
 });

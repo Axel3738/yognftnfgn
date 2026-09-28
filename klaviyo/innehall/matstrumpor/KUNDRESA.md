@@ -66,9 +66,13 @@ start. Alla flöden kräver samtycke utom F04/F05/F07 som går på ordern (kundu
 | Mejl till kundsupport@matstrumpor.se | Autosvaret (TORRT: utkast, inget skickas) + VA:n | Railway-vakten | torrt sedan 23/9 |
 | Efter 180 d utan öppning | F06 E1/E2 "Vill du vara kvar i klubben?" — för hand | Spoks-utkast | 0 i segmentet |
 
-Recensionsförfrågan: inget mejl i den här kedjan ber om en recension. De 8 recensionerna
-kommer via Judge.me (Core), som har egna förfrågningsmejl — **inställningen är inte
-kontrollerad**. Bäverbutiken har F14 (Trustpilot); Matstrumpor har inget recensionsflöde.
+Recensionsförfrågan (uppdaterad 2026-09-28): **F09 Recensionen** (order_created + 16 d,
+påslaget av Axel 2026-09-27) och kampanjen **K15** (utkast, fem stjärnor direkt till Judge.me,
+ett kort personligt mejl som ber om ett omdöme, bra eller dåligt) ber båda via Judge.me:s
+delbara länk. Judge.me installerades 2026-08-22 (mätt i Shopify) med automatiska
+förfrågningsmejl på som standard, **inställningen är inte kontrollerad i appen**, så en
+septemberköpare kan få både Judge.me:s mejl och F09. Vilket som ska gälla är Axels val
+(`klaviyo/spoks/README.md` → Recensionerna). Bäverbutiken har F14 (Trustpilot).
 
 ## 4. Återköpen — vad Shopify säger
 
