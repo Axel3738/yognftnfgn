@@ -829,9 +829,12 @@ omdöme." Gjort samma förmiddag:
   3 daterade före installationen (2/1, 7/1, 9/4: importerade eller från en tidigare app) och 2
   i september (16/9, 25/9); de andra tre är inte lästa. Vad som faktiskt skickats syns i
   Judge.me → Reviews → Review requests.
-- **Fråga 15 till Evolve-boten** (`klaviyo/evolve/FRAGOR.md`): hur man ber om recensioner via
-  mejl, appens egna mejl mot ett personligt, gamla köpare, dåliga recensioner, timing för en
-  present, stjärnor mot knapp, ämnesrader.
+- ✅ **Axels beslut 2026-09-28 förmiddag: VÅRT EGET MEJL** ("VI SKA HA VÅRAT EGNA JÄVLA MAIL").
+  K15 i Spoks är det som går ut; Judge.me:s egna recensionsmejl ovan är referens, ingen plan.
+  Föreslå det aldrig igen.
+- **Fråga 15 till Evolve-boten** (`klaviyo/evolve/FRAGOR.md`, omskriven efter beslutet): hur
+  VÅRT recensionsmejl ska skrivas och skickas — svarsgrad på gamla köpare, ordval som får
+  missnöjda att skriva, ämnesrader, struktur, stjärnor mot knapp, timing för en present.
 
 **Sidoeffekt att hålla koll på:** klubbdragningens 0-kronorsorder är en `order_created` ⇒
 vinnaren rullar också in i F09 efter 16 dygn (och i F04/F07). Rimligt, de har fått lådan, men

@@ -48,5 +48,5 @@
   "segment": ["SEG_kopare"],
   "exkludera": ["SEG_oengagerade_180d"],
   "status_plan": "kraver-axel",
-  "kraver_axel": "Publiken (SEG_kopare) och Skicka väljs i Spoks-appen. Axel ville skicka samma dag (2026-09-27); sedan 2026-09-28 väntar utskicket på hans val mellan det här mejlet och Judge.me:s egna recensionsmejl (klaviyo/spoks/README.md → Recensionerna). Uteslutningen SEG_oengagerade_180d står kvar i exkludera för motorns skull men kan hoppas över i appen: segmentet kräver fem mottagna mejl och hade 0 medlemmar 2026-09-26, så publiken är densamma."
+  "kraver_axel": "Publiken (SEG_kopare) och Skicka väljs i Spoks-appen. Axels beslut 2026-09-28: det är DET HÄR mejlet som går ut, inte Judge.me:s egna ('VI SKA HA VÅRAT EGNA JÄVLA MAIL'). Uteslutningen SEG_oengagerade_180d står kvar i exkludera för motorns skull men kan hoppas över i appen: segmentet kräver fem mottagna mejl och hade 0 medlemmar 2026-09-26, så publiken är densamma."
 }

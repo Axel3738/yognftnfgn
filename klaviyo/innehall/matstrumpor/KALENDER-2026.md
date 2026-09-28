@@ -46,8 +46,8 @@ stjärnor direkt till Judge.me-formuläret** (`&stars=1…5` bara för klickstat
 ingen produktbild. Betygssidan `/pages/betyg` (v1:s mellansida med animationen) är avpublicerad
 sedan 2026-09-28 på Axels ord. Spoks-utkast `45e8e354-8672-4e83-ac11-c8b2ee3e3b85`. Axels beslut
 2026-09-27 kväll: **skickas samma dag som han väljer publik**, publik och Send i appen är hans
-klick. Alternativet är Judge.me:s egna recensionsmejl med stjärnor i mejlet (även till gamla
-ordrar) — `klaviyo/spoks/README.md` → Recensionerna.
+klick. Axels beslut 2026-09-28: vårt eget mejl, inte Judge.me:s — `klaviyo/spoks/README.md`
+→ Recensionerna.
 
 ## Räcker prenumerationen?
 
