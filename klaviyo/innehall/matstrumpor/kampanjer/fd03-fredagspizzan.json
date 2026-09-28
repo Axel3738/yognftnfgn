@@ -42,7 +42,7 @@
     },
     {
       "typ": "produktrad",
-      "rubrik": "Om han hellre är sushi- eller grilltypen",
+      "rubrik": "Om han hellre är sushi- eller burgartypen",
       "handles": ["sushi-strumpor", "hamburger-strumpor", "donut-strumpor"]
     },
     { "typ": "fakta" }
@@ -54,7 +54,7 @@
     { "rad": "Lådan ser ut som fredagspizzan. Innehållet gör det inte.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Fredagspizzan är hans. Den här är strumpor.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Se pizzalådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Om han hellre är sushi- eller grilltypen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Om han hellre är sushi- eller burgartypen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Till pizzalådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
   ],
   "planerad": "2026-10-03T18:00:00+02:00",
