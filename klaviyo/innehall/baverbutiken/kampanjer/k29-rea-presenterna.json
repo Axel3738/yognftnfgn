@@ -117,5 +117,20 @@
   ],
   "exkludera": [],
   "status_plan": "klar",
-  "kraver_axel": null
+  "kraver_axel": null,
+  "rabatt": {
+    "typ": "kod",
+    "kod": "PAPPA15",
+    "procent": 15,
+    "start": "2026-10-09T06:00:00Z",
+    "slut": "2026-10-13T21:59:59Z",
+    "handles": [
+      "balteslipmaskin-mini-3-i-1-knivslip-polerare",
+      "taljset-30-delar-6-knivar-och-6-jarn",
+      "motorlas-i-rostfritt-stal-laser-utombordarens-fastskruvar",
+      "fagelmatare-med-kamera-och-solcellspanel-se-faglarna-i-appen",
+      "varmesits-45-90-cm-4-varmezoner-usb-driven",
+      "kamadohuv-80-102-cm-skydd-med-forvaringspase"
+    ]
+  }
 }
