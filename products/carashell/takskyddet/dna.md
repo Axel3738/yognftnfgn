@@ -1189,3 +1189,54 @@ strukturellt inte röra den (top spender, > 30 % av vinstbidraget, klass
 `vinnare`), så en paus är ägarens beslut, inte rondens. Och NO/DK-mätningen som
 skulle skilja "kampanjen gick sönder" från "produkten eller säsongen gick
 sönder" är fortfarande inte gjord.
+
+## 2026-09-29 — Axel tog ratten, och `SP_5_1` är bekräftad på tredje natten
+
+**Inga ändringar av ronden i natt.** Båda kadensspärrarna håller (huvudkampanjen
+1 dygn, LISTICLE 2 av 3), och den nya kampanjen är för tidig (371 kr, 1 köp).
+
+⚠️ **Budgetarna är Axels sedan i går kväll, inte rondens** — avläst ur Metas
+`updated_time` 2026-09-28 19:09–19:15 CEST:
+
+| Kampanj | Ronden satte | Axel satte | Not |
+|---|---|---|---|
+| Huvudkampanjen | 4 750 kr (28/9 00:41) | **3 000 kr** | sänkt ytterligare |
+| LISTICLE | 1 400 kr (27/9 00:41) | **2 800 kr** | fördubblad |
+| `NYA LISTICLE … – kopia` | — | **2 000 kr** | NY kampanj, 22 annonser med prefixet |
+
+Han flyttade alltså pengar från huvudkampanjen till listicle-spåret och startade
+ett andra listicle. Första dygnet på den nya: **371 kr, 1 köp, ROAS 3,91** — för
+lite för en dom (grinden är 300 kr OCH 3 köp).
+
+⚠️ **Kadensspärren räknas ur VÅR logg, inte ur Meta.** Rondens nästa fönster på
+huvudkampanjen öppnar 2026-10-01, och då sänker den Axels 3 000 → 2 100 om
+3-dygnsvinsten fortfarande ligger under 16 %. Ronden vet inte att talet är hans.
+
+**`SP_5_1` — tre nätter i rad över break-even, precis den mätning gårdagens
+instruktion krävde:**
+
+| 7-dygnsfönster läst | Spend | Köp | CPA |
+|---|---|---|---|
+| 23/9 | — | — | 478 kr |
+| 27/9 | 19 132 kr | 25 | 765 kr |
+| 28/9 | 19 969 kr | 21 | 951 kr |
+| **29/9** | **18 622 kr** | **16** | **1 164 kr** |
+
+Spenden står stilla, köpen halveras. 14-dygnsklassen säger fortfarande `vinnare`
+(CPA 664) så reglerna skyddar den — men trenden är nu mätt tre gånger och pekar
+åt samma håll varje gång. **Det är inte längre ett fönsterfel.** Resten av
+huvudkampanjens stora annonser ligger på CPA 851, alltså också över break-even:
+kampanjen är bred sjuk, `SP_5_1` är den värsta biten.
+
+**Dygn för dygn, huvudkampanjen:** 9 198 / 0,91 / 6 (24/9) → 6 662 / 1,28 / 6 →
+6 577 / 0,96 / 5 → 6 206 / 1,94 / 9 → **5 034 / 1,50 / 6 (28/9)**. Två dygn i rad
+bättre än botten, fortfarande under break-even 1,63.
+
+**7 dygn SE:** 70 470 kr, 87 köp, ROAS 1,69, CPA 810 ⇒ vinstbidrag **−10 179 kr**.
+Andra negativa natten i rad.
+
+→ **Instruktion:** nästa mätning som betyder något är den nya listicle-kampanjen.
+Den passerar grinden (300 kr + 3 köp) om ett par dygn — läs den DÅ, inte tidigare,
+och jämför mot LISTICLE (7d CPA 556) snarare än mot huvudkampanjen. Och skriv inte
+"listicle-spåret är lösningen" förrän den nya kampanjen har egna tre köp: ett köp
+på 371 kr är exakt den sortens tal som ser ut som en vinnare och inte är det.

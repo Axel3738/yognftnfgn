@@ -1,0 +1,27 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-29",
+  "lage": "budget",
+  "server": "CaraShell — OPS",
+  "gjort": [
+    "Budget round: no changes tonight. Both campaigns sit below the profit floor but their cadence locks hold — the main campaign 1 of 3 days, the LISTICLE 2 of 3. The main campaign's next window opens 1 October",
+    "The budgets running now were set by hand yesterday evening, not by this round: the main campaign 4 750 → 3 000 kr, the LISTICLE 1 400 → 2 800 kr, both at 19:09 CEST",
+    "A new campaign went live at 19:15 yesterday, a copy of the listicle one at 2 000 kr/day with 22 ads. First day: 371 kr, one purchase, ROAS 3.91. That is below the judging threshold of 300 kr AND 3 purchases, so no verdict on it yet",
+    "No ads paused. 87 purchases over 7 days on 70 470 kr at ROAS 1.69. Profit contribution -10 179 kr, the second negative night"
+  ],
+  "siffror": { "spend_7d": 70470, "kop_7d": 87, "roas_7d": 1.69, "vinstbidrag_7d": -10179 },
+  "briefer": [],
+  "action_axel": [
+    "SP_5_1 is now confirmed on the third reading, which is what I said I would wait for. Its 7-day CPA has gone 765 → 951 → 1 164 kr against break-even 693, with spend flat around 19 000 kr and purchases falling 25 → 21 → 16. This is no longer a window artifact. Its 14-day class still reads winner at CPA 664, so the rules will never touch it — pausing it is your decision. I recommend pausing it now. For context, the rest of the main campaign's big ads run at CPA 851, so this does not fix the campaign on its own, it removes the worst 19 000 kr of it",
+    "One thing to know about 1 October: the round's cadence lock counts from ITS own log, not from Meta, so it does not know the 3 000 kr is your number. If the 3-day profit is still below 16 % that night, it will cut your 3 000 to 2 100. Tell me if you want it left alone and I will hold it"
+  ],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-30",
+  "varningar": [
+    "Two better days on the main campaign: 6 206 kr at ROAS 1.94 with 9 purchases on the 27th, then 5 034 kr at 1.50 with 6 on the 28th, after three days at 0.91 to 1.28. Still under break-even 1.63, but it is no longer falling",
+    "Do not read the new listicle campaign yet. One purchase on 371 kr is exactly the kind of number that looks like a winner and is not. It clears the threshold in a couple of days and I will judge it then, against the LISTICLE campaign's 7-day CPA of 556 kr rather than against the main one",
+    "Norway and Denmark still run unwatched. That was measured 23 September and has not been re-measured since. Only Sweden is managed by this round",
+    "Briefs stay paused by owner decision from 18 September"
+  ]
+}
