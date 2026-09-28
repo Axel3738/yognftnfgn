@@ -39,13 +39,13 @@ Ordagrant, de tyngsta (kundnamn och adresser aldrig):
 | Invändning | Video-svar | Statisk | Demo | Jämförelse |
 |---|---|---|---|---|
 | **Fukt / kondens / självdrag** (32 %) | `Takoverdrag_OB_4_H1` live | `Takoverdrag_OB_5_1` live | `Takoverdrag_OB_6_H1` briefad, ej live | `Takoverdrag_OB_7_H1` briefad, ej live |
-| Blåser sönder (6 %) | `Takoverdrag_OB_1_H1` live | `Takoverdrag_OB_8_1` live | `Takoverdrag_OB_9_H1` briefad, ej live | ⬜ |
-| Täcker för lite (4 %) | ⬜ | `Takoverdrag_OB_12_1` live | ⬜ | ⬜ |
-| Önskemål (3 %) | ⬜ | ⬜ | ⬜ | ⬜ |
-| Vattentätt | `Takoverdrag_OB_3_H1` live | `Takoverdrag_OB_10_1` live | `Takoverdrag_OB_11_H1` briefad, ej live | ⬜ |
-| Förvaring | `Takoverdrag_OB_2_H1` live | ⬜ | ⬜ | ⬜ |
+| Blåser sönder (6 %) | `Takoverdrag_OB_1_H1` live | `Takoverdrag_OB_8_1` live | `Takoverdrag_OB_9_H1` briefad, ej live | `Takoverdrag_OB_13_H1` briefad, ej live |
+| Täcker för lite (4 %) | `Takoverdrag_OB_18_H1` briefad, ej live | `Takoverdrag_OB_12_1` live | `Takoverdrag_OB_19_H1` briefad, ej live | `Takoverdrag_OB_20_1` briefad, ej live |
+| Önskemål (3 %) | `Takoverdrag_OB_22_H1` briefad, ej live | `Takoverdrag_OB_21_1` briefad, ej live | ⬜ | ⬜ |
+| Vattentätt | `Takoverdrag_OB_3_H1` live | `Takoverdrag_OB_10_1` live | `Takoverdrag_OB_11_H1` briefad, ej live | `Takoverdrag_OB_14_H1` briefad, ej live |
+| Förvaring | `Takoverdrag_OB_2_H1` live | `Takoverdrag_OB_15_1` briefad, ej live | `Takoverdrag_OB_16_H1` briefad, ej live | `Takoverdrag_OB_17_H1` briefad, ej live |
 
-**Täckning:** fukt 2 av 4 format (+2 briefade) (32 %) · blåser 2 av 4 format (+1 briefad) (6 %) · täcker 1 av 4 format (4 %) · önskemål 0 av 4 format (3 %) · vattentätt 2 av 4 format (+1 briefad) · förvaring 1 av 4 format.
+**Täckning (efter batch #7, 2026-09-28, uppdaterad för hand — Metas anropsgräns var nådd när verktyget skulle mäta om efter uppladdningen; hubben läst med SQL: 10 nya rader i Draft):** fukt 4 av 4 (2 live + 2 briefade) (32 %) · blåser 4 av 4 (2 live + 2 briefade) (6 %) · täcker 4 av 4 (1 live + 3 briefade) (4 %) · önskemål 2 av 4 (2 briefade) (3 %) · vattentätt 4 av 4 (2 live + 2 briefade) · förvaring 4 av 4 (1 live + 3 briefade). Kvar tomma: önskemål × demo och önskemål × jämförelse (3 %, två kommentarer — byggs när raden fått en etikett). Batch #7 (10 briefer) skrevs på Axels beslut samma dag ("1": bygg på invändningarna nu).
 
 **Täckning (efter batch #6, 2026-09-25):** fukt 4 av 4 format (2 live + 2 briefade) (34 %) · blåser 3 av 4 format (1 live + 2 briefade) (7 %) · önskemål 0 av 4 format (5 %) · täcker 1 av 4 format (briefad) (2 %) · vattentätt 3 av 4 format (1 live + 2 briefade) · förvaring 1 av 4 format. Batch #6 (7 briefer, Notion Draft) skrevs på Axels order samma dag; `Takoverdrag_OB_5_1` står som live för att kontot visar den ACTIVE och raden i hubben är i `CaraShell EN ready to be active`.
 
