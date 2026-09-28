@@ -60,6 +60,12 @@ Plockas ett item: märk raden `[använd i batch #N]` i stället för att radera 
 | **Sidfix, inte brief: 1 st förvald på carashell.com** | Paketrutan förvalde 2 st (15 % rabatt) så annonsens $199 blev $338 i kassan, och kunden skrev "Scam" offentligt. Erbjudandet är Axels beslut (`offer.paket` i takskyddet.yaml gäller alla marknader). | kommentar på CaraShellRoof_US_BOF_101_1, 1 belägg, 26 sep, `kalla=voc`, se `kommentarer/leads.md` | **väntar** — Axels beslut |
 | **"Vilken storlek har jag?" för US** — bild/OB med storlekstabellen 18 till 44 ft och regeln "längden närmast över taket" | Sex frågor på ett dygn: 22 ft, 39 ft, 13 ft, fifth wheel, 7,5 m (DK), plus AC-aggregatet igen. Förstärker "Nio storlekar" ovan; AC-delen väntar på leverantören. | kommentarer på CaraShellRoof_US_SP_2_1, US_BOF_109_1, US_BOF_107_1, US_CO_103_H1, DK_SP_5_1, 6 belägg, 26 sep, `kalla=voc`, se `kommentarer/leads.md` | **väntar** |
 
+## Nytt i backloggen 2026-09-28 (`/kommentarer`, kundens egna ord)
+
+| Koncept | Varför just detta | Källa | Status |
+|---|---|---|---|
+| **OB "Fukten under överdraget" med distansprodukten** — kundens egen invändning som hook, sedan distansen som ger luftspalt | Fuktinvändningen fortsätter i tre länder, och Axel har nu bekräftat att kunderna har rätt (produktfakta 2026-09-27). En kund skriver att hon fortfarande väntar på svar om väven är diffusionstät. Ingen annons som lovar torrt tak före distansen. | kommentarer på CaraShellRoof_PD_2_H1, PD_2_1 + Bäverbutikens Takoverdrag_*, 9 belägg, 28 sep, `kalla=voc`, se `kommentarer/leads.md` | **väntar** — distansprodukten |
+
 ⚠️ De fem ursprungliga koncepten är alla plockade (batch #2). De två som briefades
 som video och aldrig blev gjorda — **#4 "En person, en minut"** och **#5
 "Husbilen, inte husvagnen"** — är omgjorda till bild i batch #3 (`PD_7_1` och
