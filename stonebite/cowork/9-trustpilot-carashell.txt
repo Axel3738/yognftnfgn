@@ -1,0 +1,165 @@
+Jag vill registrera CaraShells företagsprofil på Trustpilot, på gratisplanen,
+och slå på mejlnotis vid varje ny recension. Till skillnad från Bäverbutiken
+FINNS ingen profil att claima just nu: sidan för att skriva omdöme om
+carashell.se svarade "Hoppsan! Sidan du letar efter gick inte att hitta"
+(404) den 28 september 2026, på se-, no-, dk- och www.trustpilot.com. Den
+skapas av registreringen. Gör allt i Chrome med mitt inloggade konto och fråga
+mig om inloggning när du behöver den. Datorn är en Windows-dator.
+
+Hela körningen sker på trustpilot.com (business.trustpilot.com och
+se.trustpilot.com). Du öppnar ingen annan tjänst: inte Loopia, inte Shopify,
+inte min butiks admin, inte Spoks. Enda undantaget är dns.google i steg 4, som
+bara läser.
+
+⛔ DET VIKTIGASTE: KÖP INGENTING OCH SKICKA INGA INBJUDNINGAR.
+- Ingen betalplan, inget tillägg, inget kortnummer, ingen provperiod.
+  Gratisplanen räcker. Ser du ett pris: skriv upp det i rapporten och gå vidare.
+  API-priset är redan känt från Bäverbutikens körning (tillägg från Plus-planen,
+  319 dollar i månaden per domän) och behöver inte läsas av igen.
+- Koppla INTE Shopify-appen eller någon e-handelsintegration, slå INTE på
+  "Automatic Feedback Service" (AFS) och ladda INTE upp någon kundlista. Våra
+  kunder får redan recensionsförfrågan från vårt eget mejlsystem (Spoks), på
+  fyra språk. Trustpilots egna inbjudningar hade gett dem två mejl om samma sak.
+- Skriv aldrig in ett lösenord själv och hitta inte på något åt mig. Be mig
+  skriva det när sidan frågar.
+- Rör aldrig DNS, Loopia, Shopify eller sajtens kod. Sajten baverbutiken.se
+  låg nere 2026-09-25 för att en DNS-ändring hos Loopia gick fel, och det får
+  inte hända igen. Därför:
+  - Öppna aldrig Loopia (varken kundzon.loopia.se, DNS-inställningar eller
+    webbmejlen). Aktiveringsmejlet från Trustpilot läser jag själv.
+  - Öppna aldrig admin.shopify.com, installera ingen app och rör inte temat.
+  - Installera ingen TrustBox, ingen widget och ingen kodsnutt "på
+    webbplatsen", hur mycket sidan än föreslår det.
+  - Ber sidan dig verifiera domänen med en DNS-post, en meta-tagg eller en
+    kodsnutt: STOPPA och rapportera. Verifiering med en mejllänk är okej.
+  - Skriv aldrig till någon support (Trustpilot, Loopia eller annan). Fastnar
+    du: stoppa och säg till mig.
+- Svara inte på några recensioner och skriv ingen företagsbeskrivning. Det gör
+  vi själva.
+
+------------------------------------------------------------------------------
+FAKTA (mätt 2026-09-28 cirka 09:00 svensk tid. Det här är facit.)
+------------------------------------------------------------------------------
+
+| Vad                           | Värde                                                        |
+|-------------------------------|--------------------------------------------------------------|
+| Domänen att registrera        | carashell.se  (INTE carashell.com, se nedan)                 |
+| Profilsidan efteråt           | https://se.trustpilot.com/review/carashell.se                |
+| Läget före                    | Ingen profil: omdömessidan svarar 404 på se/no/dk/www; profilsidan svarar 403 (robotspärr) och säger ingenting. Inga kända omdömen. Den 26–27 september svarade omdömessidan 200, sedan försvann den |
+| E-postadress för kontot       | hello@carashell.se                                           |
+| Företagsnamn på profilen      | CaraShell                                                    |
+| Bolaget                       | Stonebite Ecom AB, org.nr 559576-2401                        |
+| Adress                        | Stenkolsgatan 1B, 417 07 Göteborg                            |
+| Telefon                       | +46 79 340 44 07                                             |
+| Business unit-id              | okänt (finns inget förrän profilen finns)                    |
+
+Varför carashell.se och inte carashell.com: alla fyra recensionsmejlen i Spoks
+(svenska, norska, danska, engelska) länkar redan till omdömessidan för
+carashell.se, och de är påslagna. En profil på carashell.com hade blivit en
+andra, tom profil som mejlen inte pekar på. Kunderna i USA och Australien
+kan lämna omdömen på carashell.se-profilen precis som alla andra, och
+profilnamnet blir "CaraShell" oavsett domän.
+
+Kontot skapas med EXAKT adressen hello@carashell.se: en adress på samma domän
+som profilen, så att Trustpilot godtar att vi äger den. Inte hello@carashell.com,
+ingen Gmail-adress, inte min privata, inget stonebite.org-konto. Trustpilots
+egen regel (hjälpsidan "Verify your domain", läst 2026-09-27): matchar inte
+e-postadressens domän webbplatsen kräver de domänverifiering med en HTML-fil
+på sajten, en DNS TXT-post eller Google Search Console - alltså exakt det som
+är förbjudet i den här körningen. Brevlådan hello@carashell.se ligger på Loopia
+(MX mätt 2026-09-28) och verifierades som avsändare i Shopify 2026-09-20.
+
+------------------------------------------------------------------------------
+STEG 1 - kontot skapar JAG själv. Du väntar, sedan kontrollerar du.
+------------------------------------------------------------------------------
+
+Cowork skapar aldrig konton (mätt 2026-09-27: Cowork stannade vid
+registreringssidan och sa det rakt ut). Därför gör jag registreringen själv,
+i den här fliken, medan du väntar:
+
+  https://business.trustpilot.com/signup - guiden har fyra steg: Business
+  details (Sverige, CaraShell, carashell.se) -> Additional details (närmaste
+  bransch för nätbutik/e-handel, till exempel bil- och fordonstillbehör) ->
+  Personal details (hello@carashell.se, mitt namn, lösenord) -> Activate
+  account (aktiveringslänken i brevlådan hello@carashell.se, som jag klickar
+  själv i Loopias webbmejl).
+
+Du gör under tiden INGENTING i formuläret: skriv inte i något fält, klicka
+inte på reCAPTCHA, gissa inte lösenord. När jag skriver "inloggad" tar du
+över:
+
+1. Kontrollera att du är inloggad i Trustpilot Business på kontot
+   hello@carashell.se och att profilen som visas är carashell.se. Är det en
+   annan domän (till exempel carashell.com) eller ett annat konto: STOPPA.
+2. Visar Trustpilot planer, priser eller "kom igång"-steg efter inloggningen:
+   välj Free/Gratis. Hoppa över allt som heter "Invite customers", "Upload a
+   list", "Import reviews", "Connect your store", "Automatic Feedback
+   Service", "Add a TrustBox", "Add widget to your website", "Install code"
+   eller "Verify your website". Det finns alltid en "Skip"/"Later"/"Hoppa
+   över", även när steget ser obligatoriskt ut. Går det inte att hoppa över
+   ett steg som vill in på sajten: STOPPA.
+3. Säger sidan att domänen REDAN är registrerad av någon annan: STOPPA. Skapa
+   inget nytt, gissa inget, skriv i rapporten exakt vad den sa.
+4. Kontrollera: öppna https://se.trustpilot.com/review/carashell.se i en ny
+   flik. Skriv i rapporten exakt vad som står överst: namn, kategori, antal
+   omdömen och TrustScore. Står namnet eller kategorin fel: ändra inget nu,
+   skriv bara upp det.
+
+------------------------------------------------------------------------------
+STEG 2 - mejlnotis vid varje ny recension
+------------------------------------------------------------------------------
+
+1. I Trustpilot Business: Settings (Inställningar) -> Personal settings ->
+   Email notifications. Namnen kan stå på svenska.
+2. Slå på notis för NYA RECENSIONER, alla stjärnor, inte bara låga. Mottagaren
+   är kontots adress hello@carashell.se. Spara.
+3. Inställningar om veckosammanfattningar eller marknadsföringsmejl från
+   Trustpilot: låt dem vara som de är. Det enda vi behöver är "ny recension".
+4. Skriv i rapporten exakt vilka rutor som är ibockade efteråt.
+
+Varför: profilsidan går inte att läsa maskinellt (den svarar 403 på maskiner),
+men brevlådorna läser vi redan. Varje notismejl blir en rad i vår räkning av
+recensionerna. Att vidarebefordra hello@carashell.se till hello@carashell.com
+är mitt eget klick hos Loopia, inte ditt.
+
+------------------------------------------------------------------------------
+STEG 3 - kontrollera att länkarna i våra recensionsmejl lever (bara läsa)
+------------------------------------------------------------------------------
+
+Recensionsmejlen i Spoks länkar till omdömessidan på fyra av Trustpilots
+landssajter. Öppna var och en i en ny flik (utan att skriva något omdöme):
+
+  https://se.trustpilot.com/evaluate/carashell.se?stars=5
+  https://no.trustpilot.com/evaluate/carashell.se?stars=5
+  https://dk.trustpilot.com/evaluate/carashell.se?stars=5
+  https://www.trustpilot.com/evaluate/carashell.se?stars=5
+
+Rätt: ett formulär för att skriva ett omdöme om CaraShell, med fem stjärnor
+förvalda. Fel: "Hoppsan!"/"Whoops!"/"could not be found" eller en annan
+butik. Skriv i rapporten vad varje länk visade. Lämna INTE något omdöme själv
+- ett omdöme från oss själva bryter mot Trustpilots regler.
+
+------------------------------------------------------------------------------
+STEG 4 - kontrollera att sajten står precis som före (bara läsa)
+------------------------------------------------------------------------------
+
+1. Öppna https://carashell.se i en ny flik. Butiken ska ladda som vanligt.
+2. Öppna https://dns.google/resolve?name=carashell.se&type=NS i en ny flik.
+   Svaret ska innehålla ns1.loopia.se och ns2.loopia.se (mätt 2026-09-28).
+   Står något annat: säg till mig direkt, innan du skriver rapporten.
+3. Skriv båda resultaten i rapporten.
+
+------------------------------------------------------------------------------
+RAPPORTERA TILLBAKA
+------------------------------------------------------------------------------
+
+1. Kontots e-postadress och vad profilsidan visar efteråt (steg 1.4).
+2. Vilken plan kontot står på (ska vara Free/Gratis) och att inget köptes.
+3. Notisinställningarna ordagrant (steg 2.4).
+4. Vad var och en av de fyra länkarna visade (steg 3).
+5. Sajten och NS-svaret (steg 4).
+6. Bekräfta att du inte öppnade något utanför trustpilot.com utom dns.google,
+   och att inget installerades på sajten.
+7. Allt som såg konstigt ut, och varje ställe där du stoppade.
+
+Skriv aldrig ut lösenord i rapporten.

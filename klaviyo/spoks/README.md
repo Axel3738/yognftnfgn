@@ -259,6 +259,50 @@ efter varje utskick; stiger klagomålen, stanna kvar ett steg till.
 
 ## CaraShell (workspace `38f3d430-690c-4c0b-8419-8ec2e5272148`, UPPLADDAT 2026-09-26, danskan 2026-09-27, allt avstängt)
 
+⚠️ **Recensionsflödet, mätt 2026-09-28 ~09:00 CEST** (Axels fråga: "var kan jag se recensionsflödet
+till alla marknader för CaraShell? Jag vill samla in till Trustpilot för CaraShell också"). Det är
+de fyra flödena `FLOW_levererat_recension_SV/NB/EN/DA_v1` (`spoks-id.json` → `f14-recension`, länk
+`https://app.spoks.com/carashell/flows/<flowId>`), **aktiva sedan 2026-09-27 06:49 UTC** (get_flows):
+trigger `order_delivered`, filter land + inte avregistrerad, vänta 10 dagar till kl 18:00, ett mejl
+("Vad tyckte du?" / "Hva syntes du om den?" / "Hvad synes du?" / engelska) med fem stjärnor →
+`se|no|dk|www.trustpilot.com/evaluate/carashell.se?stars=1–5`. **Alla fyra språk går till SAMMA
+Trustpilot-profil, carashell.se** — en registrering täcker alla marknader. Två fynd:
+- ⛔ **Alla 20 stjärnlänkar svarar 404** ("Hoppsan! Sidan du letar efter gick inte att hitta") på
+  se/no/dk/www, med och utan webbläsar-UA, i Chromium och curl — medan
+  `evaluate/www.baverbutiken.se` svarar 200 i samma körning, så det är ingen robotspärr.
+  26/9 18:50 och 27/9 ~15:40 svarade de 200; nu finns ingen profil. `review/carashell.se` svarar
+  403 (WAF, säger inget), `evaluate/carashell.com` och `www.carashell.*` 404 också. **Ingen kund
+  har fått mejlet** (0 inrullade, och 10 dagars väntan), så inget har skickats med död länk. Vägen:
+  Axel registrerar CaraShell på business.trustpilot.com med **hello@carashell.se** (samma domän som
+  profilen — hello@carashell.com hade krävt domänverifiering med DNS/HTML, förbjudet sedan
+  Loopia-incidenten; båda brevlådorna har MX på Loopia), sedan
+  `stonebite/cowork/9-trustpilot-carashell.txt` (notis, länkkontroll, DNS-kontroll).
+  ✅ **Gjort 2026-09-28 ~10:30 CEST** (Axel registrerade, Cowork körde prompten): profilen
+  `se.trustpilot.com/review/carashell.se` visar "Registrerad profil", 0 omdömen, gratisplanen
+  ("Free plan", inget köpt, provperioden inte klickad), notis för nya recensioner på alla stjärnor
+  till hello@carashell.se, inget installerat, NS ns1/ns2.loopia.se orört. Sessionen mätte direkt
+  efter: **alla fyra evaluate-länkarna (se/no/dk/www) svarar 200** och öppnar formuläret
+  "Betygsätt Carashell". Tre fel på profilen efter registreringen (namnet "Carashell", landet USA,
+  ingen kategori) — ✅ **rättade samma förmiddag av Cowork** (en kort andra prompt i chatten,
+  Settings → Profile page): namn **CaraShell**, kontaktuppgifter Stenkolsgatan 1B, 417 07 Göteborg,
+  Sverige, kategori **RV Supply Store** (svenska sajten visar "Butik med husbilstillbehör", sökvägen
+  Fordon och transport › Andra fordon och släp), tillbakaläst på den publika profilen. Kontonamnet i
+  Trustpilot Business (menyn, Plans & billing) står kvar som "Carashell" — bara internt, syns aldrig
+  för kunder, rörs inte. ⚠️ **`?stars=N` förvaljer inte stjärnorna längre**: mätt i Chromium
+  på både `carashell.se?stars=5` och `www.baverbutiken.se?stars=5` — fem radioknappar, alla
+  `checked: false`, ingen vald. Kunden klickar stjärnan själv; mejlen fungerar, inget byggs om för
+  det. ⚠️ Notismejlen går till hello@carashell.se — inte .com-brevlådan som autosvaret och
+  `trustpilotMejl()` läser — tills Axel lagt vidarebefordran .se → .com hos Loopia.
+- ⚠️ **`order_delivered` har inte fyrat en enda gång än — för tidigt att döma:** 0 inrullade i alla
+  12 `FLOW_levererat_*` och 0 fulfillments `DELIVERED` i Shopify efter aktiveringen. CaraShells
+  ordrar 1–16/9 (82 st, alla under 20 dagar gamla) står 75 `IN_TRANSIT` / 4 `DELIVERED` (alla
+  norska, 25–26/9, före aktiveringen) / 2 `CONFIRMED`; 46 av 46 svenska bär sista skanningen
+  "Paketet är på väg (Mainland China)". Spårningsminnet: 5 levererade av 415 paket (Bäverbutikens:
+  1 283 av 2 717). Första svenska leveranserna väntas den här veckan; sessionens check-in ons 30/9
+  08:40 CEST mäter Shopify `DELIVERED` mot Spoks inrullade. Fyrar händelsen inte trots levererade
+  ordrar byggs F14 (och de två monteringsflödena, samma trigger) om på `order_created` + 20 dagar,
+  som Bäverbutikens tipsflöden — Axels beslut, frågas då.
+
 ✅ **Danska sedan 2026-09-27** (Axels order: "vi behöver liksom egentligen ha flows för alla
 aktiva marknader bara. Så det är Sverige, Norge, Danmark, USA och Australien" + "utifrån de får
 vi anpassa copyn"). Mätt före bygget: **25 av 26 danska ordrar har `customerLocale` da-DK** —

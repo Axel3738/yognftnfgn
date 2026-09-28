@@ -1,0 +1,35 @@
+{
+  "hub_id": "3e1270ab-908c-8131-a121-fe435a4e22aa",
+  "hub_titel": "Indoor slippers creative hub",
+  "slug": "indoor-slippers-creative-hub-3e1270ab",
+  "rond": "2026-09-25",
+  "idag": "2026-09-28",
+  "antal": 2,
+  "rena": 0,
+  "anm": 0,
+  "fel": 2,
+  "feedback_rad": {
+    "skapad": true,
+    "page_id": "3e9270ab-908c-8128-864f-f7bfa549df02",
+    "url": "https://app.notion.com/p/Brief-review-2026-09-25-3e9270ab908c8128864ff7bfa549df02",
+    "titel": "Brief review 2026-09-25",
+    "block": 19
+  },
+  "feedback_fil": null,
+  "kommentarer": [
+    {
+      "namn": "Inomhustofflor_SP_1_H5",
+      "utfall": "skriven",
+      "text": "Brief review 2026-09-25 (Indoor slippers creative hub) — this brief has an error the editor must know about:\n1. The Source column's bracketed EDITOR PICKS text is in Swedish. In English: row 3 — \"look for the close-up of the slipper with the strap around the heel\"; row 4 — \"the price graphic at the end\". Rows 1–2 are NEW FOOTAGE (bare feet on a cold kitchen floor at dawn; an old worn slipper sliding off a heel on basement stairs, then the crushed heel in close-up) — no product in frame in those two rows.\nFix before production. If the ad is already live, apply it to the next version — nothing is paused. Status unchanged."
+    },
+    {
+      "namn": "Inomhustofflor_SP_1_H6",
+      "utfall": "skriven",
+      "text": "Brief review 2026-09-25 (Indoor slippers creative hub) — this brief has an error the editor must know about:\n1. The Source column's bracketed EDITOR PICKS text is in Swedish. In English: row 1 — \"look for a shot where the foot steps into the slipper; if none exists: NEW FOOTAGE — the foot stepping into the slipper in slow motion, floor level\"; row 2 — \"look for the stairs; if none: NEW FOOTAGE — the slipper on the foot at the top of the basement stairs, seen from above\"; row 3 — \"look for the close-up of the slipper with the strap around the heel\"; row 4 — \"the price graphic at the end\".\nFix before production. If the ad is already live, apply it to the next version — nothing is paused. Status unchanged."
+    }
+  ],
+  "varningar": [
+    "no product folder in the repo (products.json / register.json) — dna.md and feedback.md do not apply; the Feedback row in the hub is the memory"
+  ],
+  "torr": false
+}

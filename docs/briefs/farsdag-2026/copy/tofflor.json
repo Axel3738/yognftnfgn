@@ -1,0 +1,234 @@
+{
+  "hook_H1": {
+    "rad": "Present till fars dag. Plysch under kamouflaget.",
+    "engelska": "A gift for father's day. Plush under the camouflage.",
+    "alternativ": [
+      "Present till fars dag. Kamouflaget döljer plyschen.",
+      "Redo på en kartong. Present till fars dag."
+    ]
+  },
+  "hook_H2": {
+    "rad": "Present till fars dag. Foten glider in i plysch.",
+    "engelska": "A gift for father's day. The foot slides into plush.",
+    "alternativ": [
+      "Present till fars dag. Kylan stannar utanför foten.",
+      "Present till fars dag, fodrad från häl till tå."
+    ]
+  },
+  "rader": [
+    {
+      "nr": 2,
+      "rad": "Grov sula för svängen ut på altanen efter veden.",
+      "engelska": "Rugged sole for the trip out to the woodpile."
+    },
+    {
+      "nr": 3,
+      "rad": "Fodrad med plysch, från häl till tå.",
+      "engelska": "Lined with plush, from heel to toe."
+    },
+    {
+      "nr": 4,
+      "rad": "Hälremmen håller den kvar, hela vägen nerför trappan.",
+      "engelska": "The heel strap holds it on, all the way down the stairs."
+    },
+    {
+      "nr": 5,
+      "rad": "Fars dag-rea. Halva priset. Beställ senast 19 oktober.",
+      "engelska": "Father's day sale. Half price. Order by October 19."
+    }
+  ],
+  "text_pa_skarm": {
+    "1_H1": "Kamouflage och plysch till fars dag.",
+    "1_H2": "Plysch möter kall fot.",
+    "2": "Grov sula. Ut efter veden.",
+    "3": "Plysch från häl till tå.",
+    "4": "Hälremmen håller kvar i trappan.",
+    "5": "Fars dag-rea. Halva priset. 19 oktober."
+  },
+  "bild": {
+    "rubrik": "Kamouflagetofflor fodrade med plysch till fars dag",
+    "underrad": "Hälrem som håller kvar i trappan. Herrstorlek 40 till 47.",
+    "marke": "Fars dag-rea",
+    "prisband": "489 kr, ord. 978 kr",
+    "sista_raden": "Beställ senast 19 oktober",
+    "engelska": {
+      "rubrik": "Camouflage slippers lined with plush for father's day",
+      "underrad": "Heel strap that holds it on the stairs. Men's sizes 40 to 47."
+    }
+  },
+  "copy_card": {
+    "primar": "Present till fars dag. Plysch under kamouflaget. Hälremmen håller kvar i trappan efter veden. Fars dag-rea: 489 kr, ord. 978 kr. Beställ senast 19 oktober.",
+    "rubrik": "Present till fars dag i kamouflage",
+    "beskrivning": "Fars dag-rea: 489 kr, ord. 978 kr"
+  },
+  "tretest": [
+    {
+      "rad": "Present till fars dag. Plysch under kamouflaget.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret: man ser kamouflagemönstret och plyschen inuti (produktsidan: fodrad med plysch häl till tå). Ingen annan toffelbutik äger just den här kombinationen."
+    },
+    {
+      "rad": "Present till fars dag. Kamouflaget döljer plyschen.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Samma fakta, omvänd ordning (reveal-struktur). Håller."
+    },
+    {
+      "rad": "Redo på en kartong. Present till fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Beskriver exakt det klippet visar (tofflorna på en kartong, som ett paket)."
+    },
+    {
+      "rad": "Present till fars dag. Foten glider in i plysch.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Matchar klippet rakt av: en fot glider in i tofflan vid brasan, slow motion."
+    },
+    {
+      "rad": "Present till fars dag. Kylan stannar utanför foten.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Direkt ur produktsidan ('golvets kyla stannar utanför'), inte en gissning."
+    },
+    {
+      "rad": "Present till fars dag, fodrad från häl till tå.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Faktapåstående ordagrant ur produktsidan."
+    },
+    {
+      "rad": "Grov sula för svängen ut på altanen efter veden.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Matchar klippet (fötter vid vedtraven). Håller sig innanför gränsen 'högst en snabb sväng ut på altanen efter veden' — ingen utomhusbruk-siffra hittas på."
+    },
+    {
+      "rad": "Fodrad med plysch, från häl till tå.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Närbild på fodret, exakt vad raden säger."
+    },
+    {
+      "rad": "Hälremmen håller den kvar, hela vägen nerför trappan.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Hälremmen syns i bild; funktionen är produktsidans egen ('sitter kvar nerför trappan')."
+    },
+    {
+      "rad": "Fars dag-rea. Halva priset. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "489 kr är exakt hälften av 978 kr, och 19 oktober är den mätta sista beställningsdagen — inga påhittade tal."
+    },
+    {
+      "rad": "Kamouflage och plysch till fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Skärmtext, kortare variant av hook H1 med samma två fakta kvar."
+    },
+    {
+      "rad": "Plysch möter kall fot.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Skärmtext till H2, samma fakta som hooken i komprimerad form."
+    },
+    {
+      "rad": "Grov sula. Ut efter veden.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Skärmtext, håller sig till vedtraven-scenariot."
+    },
+    {
+      "rad": "Plysch från häl till tå.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Skärmtext, produktsidans egen fras förkortad."
+    },
+    {
+      "rad": "Hälremmen håller kvar i trappan.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Skärmtext, samma fakta som raden."
+    },
+    {
+      "rad": "Fars dag-rea. Halva priset. 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Skärmtext, samma verifierbara siffror som erbjudanderaden."
+    },
+    {
+      "rad": "Kamouflagetofflor fodrade med plysch till fars dag",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Bildrubrik, samma två fakta (kamouflage + plysch) som bär hela batchen."
+    },
+    {
+      "rad": "Hälrem som håller kvar i trappan. Herrstorlek 40 till 47.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Bildunderrad, fakta + storleksspann direkt ur produktsidan."
+    },
+    {
+      "rad": "Fars dag-rea",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": true,
+      "kommentar": "Det obligatoriska märkesnamnet för erbjudandet, inte ett unikt sälj­påstående — vilken butik som helst kan kalla sin rea samma sak. Skrivs enligt GEMENSAMT.md:s exakta format och testas därför inte som en fristående copy-rad."
+    },
+    {
+      "rad": "489 kr, ord. 978 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Butikens egna riktiga priser, går inte att kopiera av en konkurrent med andra priser."
+    },
+    {
+      "rad": "Beställ senast 19 oktober",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Datumet är mätt på butikens egna leveranstider, inte en generisk brådska."
+    },
+    {
+      "rad": "Present till fars dag. Plysch under kamouflaget. Hälremmen håller kvar i trappan efter veden. Fars dag-rea: 489 kr, ord. 978 kr. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Copy card, bygger vidare på hook H1 med en andra fakta och den obligatoriska rea-meningen."
+    },
+    {
+      "rad": "Present till fars dag i kamouflage",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Copy card-rubrik, kamouflaget gör den specifik för produkten."
+    },
+    {
+      "rad": "Fars dag-rea: 489 kr, ord. 978 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Copy card-beskrivning, exakt priskälla."
+    }
+  ]
+}

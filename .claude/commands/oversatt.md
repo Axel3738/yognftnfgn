@@ -44,6 +44,14 @@ Skriv i Axels läsformat: en mening per rad, max 10 ord, inga filnamn, ingen tek
   körloggen. Mätt 2026-09-19: Beltesliper, Frontrutetrekk til Bobil och
   Båtmotortrekk är alla avvecklade med spend, och alla tre produkterna skalar
   i Sverige — det är det normala läget, inte ett problem att lösa.
+- **Fars dag-annonserna (`_FD_` i namnet) översätts aldrig** (batchen
+  2026-09-28, Axels order: fars dag-rea, fars dag 8 november). De säger
+  "beställ senast 19 oktober", räknat på leveranstiden till Sverige, och i USA
+  och Danmark firas fars dag i juni. Kön märker dem `bara_se: true`
+  (`tools/lib/bara-sverige.mjs`). Hanteras som en avvecklad kampanj:
+  kommentar `Sweden only (Father's Day ad) — not translated` och status →
+  **`Approved`** direkt, **även i en speglad hubb** — aldrig
+  `<Brand> SE ready to be active`, för då hade CaraShell och USA fått den.
 - **Fel konto = avbryt.** Kampanjens `account_id` måste vara marknadens (`marknader.json`).
 - **Kontot är facit för dubbletter.** Finns målnamnet i målkontot är raden klar.
 - **Ingen rad hoppas tyst.** Allt som inte kördes står i briefen med skäl.

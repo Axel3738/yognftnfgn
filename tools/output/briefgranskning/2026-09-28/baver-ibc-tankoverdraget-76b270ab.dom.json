@@ -1,0 +1,78 @@
+{
+  "hub_id": "76b270ab-908c-8393-8a47-01f6ae366d42",
+  "rond": "2026-09-25",
+  "bra": [
+    "Two of the three rules from the 2026-09-24 review held: no stray `(H1)/(H2)` lines after the COPY CARD in any of the four bodies, and the one NEW opening (OB_1_H1) drops `idag` from the CTA (`Skydda din tank.`) while the iterations keep the parent's line for isolation.",
+    "PD_15_H1 is the cleanest test in the hub: the exact hook line IBC_PD_12_H1 already proved (CPA 204 kr against break-even 441 kr) carried onto the short cut, so only cut length differs between the two ads.",
+    "CS_10_H1 strips a live winner's fabricated urgency (`IDAG ENDAST`) and its burned-in store name and keeps the demo body — the 2026-09-18 store-name rule applied to an ad that is already spending.",
+    "SP_6_H1's two quotes (Maria, Lena) and the rating 4,7 av 5 on 10 reviews are on the product page (read live from the product page 2026-09-28); price 489 / 636 kr matches; 210D, 120 × 100 × 116 cm, `öppning upptill` are the page's facts.",
+    "Every video carries VARIABELTAGGAR, Memo, `AI content:`, COPY CARD and a full direction table with sources per row (OUR AD timestamps or Drive ids)."
+  ],
+  "missat": [
+    "IBC_OB_1_H1 opens on a question again (`En grön presenning med ett par spännband duger väl?`) — the hub's own rule 1 from 2026-09-21 says hooks are declaratives, and this is a NEW opening written 2026-09-25, not an inherited line. State the objection as the customer did (`En grön presenning med spännband duger.`) and let the answer follow.",
+    "IBC_OB_1_H1: the hook and caption say `grön presenning` while the row-1 picture (OUR AD IBC_CO_2_H1 0:00–0:01) is described in the brief itself as `a blue tarp flapping` — the viewer sees the contradiction before anything else. Check the source clip's colour before the line is written, or drop the colour word.",
+    "IBC_OB_1_H1 row 2 claims a tarp weakness the page does not make (`Solljuset kommer ändå igenom — vid kanterna och genom tyget`) — while the page's own tarp line (`Presenningen som skulle skydda blåser av vid första höststormen`) is exactly the parent's opening this brief removed as \"manufactured\". Use the page's line or film the light leak.",
+    "Verdicts without the numbers ANALYSMETOD asks for: SP_6_H1 calls its parent a LOSER on `ROAS 1,03` alone, CS_10_H1 calls its parent a KPI_WINNER on `ROAS 3,61, CVR 7,7 % on 366 kr spend` — no CPA, no purchases, no break-even; 366 kr at ROAS 3,61 is about 1 320 kr of revenue, roughly 2–3 orders at 489 kr, so it may sit under the 3-purchase gate. Write CPA and purchases against break-even 441 kr, or write \"too little data\".",
+    "Rule 1 from 2026-09-24 half-held: PD_15_H1 says the editor writes the measured time where the script says `[TID]`, but the COPY CARD's primary text also carries `[TID]` and nobody is named to copy the number there — the editor comments the seconds, the uploader copies them.",
+    "SP_6_H1: `AI content: person` on footage with a woman and a man plus a voice-over — if the VO is synthetic too, say so; and `Isolated variable: the mechanism line` while the headline is also changed (the headline is Meta copy, not the creative, so the test survives — but say that).",
+    "Small things: `Drive folder: none — the brief lives in Notion Landing page: https://…` is two fields on one line in all four bodies; OB_1_H1 row 2 cites zero-length source timestamps (`0:02–0:02 and 0:09–0:09`); the break-even 441 kr is cited from a dna.md this product does not have on `main`."
+  ],
+  "regler": [
+    "Hooks are declaratives — the 2026-09-21 rule broke again on IBC_OB_1_H1: an objection is opened by stating it in the customer's words (`En grön presenning med spännband duger.`), never as a question the viewer answers with yes.",
+    "The line and the picture say the same thing: a hook that says `grön presenning` is never written over a blue tarp — read the source clip before the colour word goes in, or leave the colour out.",
+    "Every parent verdict in the Why carries CPA and purchases against break-even 441 kr in the same sentence — `ROAS 1,03` or `ROAS 3,61 on 366 kr` is not a verdict, and under 3 purchases there is no verdict at all (ANALYSMETOD)."
+  ],
+  "rader": [
+    {
+      "namn": "IBC_OB_1_H1",
+      "fel": [
+        "Hook is a question (`En grön presenning med ett par spännband duger väl?`) — a question cannot be true or false and fails the three-question test; this hub's rule since 2026-09-21 is declarative hooks. Open on the customer's statement instead: `En grön presenning med spännband duger.` — then row 2 answers it. The alt hooks H2/H3 are questions too.",
+        "The hook and the caption say `grön presenning` but the row-1 clip (OUR AD IBC_CO_2_H1 0:00–0:01) is a blue tarp — the viewer sees a blue tarp under the words \"green tarp\". Either use a clip with a green tarp or drop the colour: `En presenning med spännband duger.`"
+      ],
+      "anmarkningar": [
+        "the ad text carries kronor amounts but the brief states no price rule (\"Price exactly … kr\")",
+        "Row 2's claim that light gets through a tarp `vid kanterna och genom tyget` is not on the page; the page's own tarp line is that it blows off in the first autumn storm — the very opening this brief removed.",
+        "Row 2 source timestamps are zero-length (`0:02–0:02 and 0:09–0:09`)."
+      ],
+      "bra": [
+        "Built on a real comment (invandningar.md), drops `idag`, no price in an objection ad, full direction table."
+      ]
+    },
+    {
+      "namn": "IBC_SP_6_H1",
+      "fel": [],
+      "anmarkningar": [
+        "the rationale argues on ROAS alone — rank on profit contribution (break-even-CPA − CPA) × purchases (ANALYSMETOD)",
+        "the ad text carries kronor amounts but the brief states no price rule (\"Price exactly … kr\")",
+        "The parent is judged on `ROAS 1,03` alone — write its CPA and purchases against break-even 441 kr.",
+        "`AI content: person` with a voice-over: say whether the VO is synthetic too.",
+        "Two changes named (mechanism line + headline) — the headline is Meta copy, so the creative test holds; say so in the Isolated variable line."
+      ],
+      "bra": [
+        "Both quotes and the 4,7 / 10 rating verified on the page; the inserted line is the account's proven mechanism line, verbatim."
+      ]
+    },
+    {
+      "namn": "IBC_CS_10_H1",
+      "fel": [],
+      "anmarkningar": [
+        "the rationale argues on ROAS alone — rank on profit contribution (break-even-CPA − CPA) × purchases (ANALYSMETOD)",
+        "KPI_WINNER on `ROAS 3,61, CVR 7,7 % on 366 kr` — no CPA, no purchases; at 489 kr that is roughly 2–3 orders, which may be under the 3-purchase gate. Write the numbers or write \"too little data\"."
+      ],
+      "bra": [
+        "Removes `IDAG ENDAST` and the burned-in store name from a live winner and keeps the body verbatim — the right way to fix an ad that is already spending."
+      ]
+    },
+    {
+      "namn": "IBC_PD_15_H1",
+      "fel": [],
+      "anmarkningar": [
+        "the ad text carries kronor amounts but the brief states no price rule (\"Price exactly … kr\")",
+        "`[TID]` stands in the primary text too — name who copies the measured seconds there (the editor comments, the uploader copies)."
+      ],
+      "bra": [
+        "Same proven hook line on the short cut — the one test in the hub where only cut length differs."
+      ]
+    }
+  ]
+}

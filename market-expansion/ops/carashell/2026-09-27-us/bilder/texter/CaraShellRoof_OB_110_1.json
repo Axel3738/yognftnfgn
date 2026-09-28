@@ -1,0 +1,93 @@
+[
+ {
+  "box": [
+   30,
+   58,
+   1050,
+   400
+  ],
+  "rader": 3,
+  "storlek": 77,
+  "fet": true,
+  "radavstand": 1.56,
+  "utvidga": 6,
+  "troskel": 25,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "text": "Rain runs off the fabric's surface instead of pooling."
+ },
+ {
+  "box": [
+   40,
+   438,
+   1040,
+   562
+  ],
+  "rader": 2,
+  "storlek": 40,
+  "radavstand": 1.65,
+  "utvidga": 6,
+  "troskel": 25,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "Silver-coated 210D oxford weave, not a thin tarp."
+ },
+ {
+  "box": [
+   58,
+   780,
+   530,
+   824
+  ],
+  "rader": 1,
+  "storlek": 24,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Silver weave meets sun, not roof."
+ },
+ {
+  "box": [
+   40,
+   1074,
+   1040,
+   1145
+  ],
+  "rader": 1,
+  "storlek": 32,
+  "utvidga": 6,
+  "troskel": 25,
+  "farg": [
+   19,
+   18,
+   17
+  ],
+  "text": "$199 (was $249), save $50 (20%)"
+ },
+ {
+  "box": [
+   274,
+   1230,
+   806,
+   1290
+  ],
+  "rader": 1,
+  "storlek": 41,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Order Your Roof Cover"
+ }
+]

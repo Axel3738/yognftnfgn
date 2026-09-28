@@ -1,0 +1,90 @@
+{
+  "hub_id": "3e2270ab-908c-8171-bbae-fff6adedbe5a",
+  "rond": "2026-09-26",
+  "bra": [
+    "All three rules from the 2026-09-24 review held: no line the writer's own test marked competitor-signable ships — every body line now carries a set-specific fact (nine rods, 41 cm, 3,69 m, the bend, 100 mm nylon); all six videos carry a full direction table; VARIABELTAGGAR, Memo and `AI content:` replace the old Variables line, and `perfekt julklapp` is gone.",
+    "Every CPA stands against break-even 307 kr with purchases in the same sentence (PD_1_H2 182 kr / 48, PD_1_H3 188 kr / 26) and the lesson ids are named.",
+    "The six briefs are three declared pairs on two bodies (PD_8_H1 / PD_8_H2, PD_1_H6 / PD_1_H7, PD_7_H1 on problem length) — the data can read hook against hook with nothing else moving.",
+    "PD_9_H1 is the first single-avatar test (the tumble-dryer owner without a stove), marked `confidence=low`, resting on the page's own line (`för trångt bakom pelletskaminen eller torktumlaren`); the English source carton (`30 FEET`) and the six-rod supplier image are banned in every MUST NOT.",
+    "Price 459 / 599 kr and every mechanism phrase (`Sotet borstas loss, inte skrapas`, `Bygg bara den längd du behöver`, `Rensa själv mellan sotarens besök`, `följer krökarna … i stället för att ta stopp`) are the page's own (read live from the product page 2026-09-28)."
+  ],
+  "missat": [
+    "Three new videos (PD_1_H6, PD_1_H7, PD_7_H1) keep the parent's burned-in caption track `as delivered` — including the known misspelling of the product name (`sotarsätt` for Sotarset), explicitly deferred to \"the next body version\". A misspelled product name is not a controlled variable: correct that one word in all three the same way and the test stays clean.",
+    "All six carry `AI content: none` while every row is voiced (`Audio: VO`). If the VO is synthetic, the line must say `voice` — the US translation step reads it and a false `none` skips a required disclosure. Say who recorded the voice.",
+    "The inherited Meta headline `Rent rör, bättre drag – på minuter` (five of six briefs) is a timing claim the page does not make — flagged on `Klart på minuter` last round. Time a real take once and write the number, or drop `på minuter` in the next body version.",
+    "PD_9_H1 opens on a 15-word voice-over line for a 4-second row (`Bakom torktumlaren är det för trångt för att krypa in – 3,69 meter böjlig stång når dit.`) — 3,75 words per second spoken; the caption is shortened, the VO is not. Split it over rows 1–2 or give it the seconds."
+  ],
+  "regler": [
+    "A known typo in the parent's captions (`sotarsätt`) is corrected in every iteration that reuses the body — the same one-word fix in all three, so the test stays clean; a misspelled product name is never a \"controlled variable\".",
+    "`AI content:` says how the voice was made: `none` only when a human recorded it (name who); a synthetic VO is `voice`. Six videos with VO and `none` is a claim, not a default.",
+    "A timing claim has a measurement or it goes: `på minuter` in the inherited headline is timed once from a real take and written as the number, or dropped in the next body version."
+  ],
+  "rader": [
+    {
+      "namn": "Sotarset_PD_9_H1",
+      "fel": [],
+      "anmarkningar": [
+        "Row 1 VO is 15 words in 4 seconds — too fast to speak; split over rows 1–2.",
+        "`AI content: none` on a video with a voice-over — `none` is right only if a human recorded the voice; a synthetic VO is `voice`, and the US step burns in the disclosure from this line. Say which, and on what basis."
+      ],
+      "bra": [
+        "First dryer-only avatar, honest `confidence=low`, the page's own line as the hook; carton and six-rod image banned."
+      ]
+    },
+    {
+      "namn": "Sotarset_PD_8_H2",
+      "fel": [],
+      "anmarkningar": [
+        "`AI content: none` on a video with a voice-over — `none` is right only if a human recorded the voice; a synthetic VO is `voice`, and the US step burns in the disclosure from this line. Say which, and on what basis.",
+        "Inherited headline `på minuter` is untimed — see the hub rules."
+      ],
+      "bra": [
+        "Correctly named as the H2 hook variant of PD_8; everything from 0:03 frame for frame from PD_8_H1."
+      ]
+    },
+    {
+      "namn": "Sotarset_PD_1_H7",
+      "fel": [],
+      "anmarkningar": [
+        "Keeps the parent's `sotarsätt` caption as delivered — fix the one word in all three body reuses the same way.",
+        "`AI content: none` on a video with a voice-over — `none` is right only if a human recorded the voice; a synthetic VO is `voice`, and the US step burns in the disclosure from this line. Say which, and on what basis."
+      ],
+      "bra": [
+        "Pipe-interior opening one step further in than H3 — a real single-variable test on the breakthrough."
+      ]
+    },
+    {
+      "namn": "Sotarset_PD_8_H1",
+      "fel": [],
+      "anmarkningar": [
+        "`AI content: none` on a video with a voice-over — `none` is right only if a human recorded the voice; a synthetic VO is `voice`, and the US step burns in the disclosure from this line. Say which, and on what basis.",
+        "Inherited headline `på minuter` is untimed."
+      ],
+      "bra": [
+        "In-media-res re-cut with new VO and captions, sources per row from the PD_1 folder."
+      ]
+    },
+    {
+      "namn": "Sotarset_PD_7_H1",
+      "fel": [],
+      "anmarkningar": [
+        "Keeps the parent's `sotarsätt` caption as delivered — fix it.",
+        "`AI content: none` on a video with a voice-over — `none` is right only if a human recorded the voice; a synthetic VO is `voice`, and the US step burns in the disclosure from this line. Say which, and on what basis."
+      ],
+      "bra": [
+        "Problem section isolated (7 new seconds, no tool in frame), opening and body untouched."
+      ]
+    },
+    {
+      "namn": "Sotarset_PD_1_H6",
+      "fel": [],
+      "anmarkningar": [
+        "Keeps the parent's `sotarsätt` caption as delivered — fix it.",
+        "`AI content: none` on a video with a voice-over — `none` is right only if a human recorded the voice; a synthetic VO is `voice`, and the US step burns in the disclosure from this line. Say which, and on what basis."
+      ],
+      "bra": [
+        "Symptom-at-home opening on the breakthrough body; the sooted glass is the page's own `Draget blir sämre för varje eldning`."
+      ]
+    }
+  ]
+}

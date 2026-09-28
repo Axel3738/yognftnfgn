@@ -223,6 +223,15 @@
   "campaign_id": "120252202507830233",
   "link": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende"
  },
+ "solcellslampa": {
+  "se_prefix": "Solcellslampa",
+  "se_kampanj": "Solcellslampan med Rörelsesensor 210 LED | BE ROAS 1.62 | Launch 2026-09-17",
+  "no_prefix": "Solcellslampa",
+  "adset_prefix": "Solcellslampa NO",
+  "campaign_id": "120252268799910233",
+  "link": "https://beverbutikken.no/products/solcellelampe-med-bevegelsessensor-tre-hoder-210-led",
+  "_matt": "Tillagd 2026-09-28: kön larmade \"saknar koppling\" på tre videorader. Kampanjen och de 14 norska annonserna (Solcellslampa_NO_*) fanns redan, byggda 2026-09-17 — det var bara raden här som saknades. Läst samma dag: kampanjen PAUSED med 1 895,69 kr spend och ROAS 0,616, alltså avvecklad; nya rader flyttas därför till Approved av PAUSED-regeln, inte översätts."
+ },
  "adventskalender": {
   "se_prefix": "Adventskalender",
   "se_kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",

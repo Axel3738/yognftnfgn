@@ -1,0 +1,21 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-28",
+  "lage": "oversatt",
+  "marknad": "NO",
+  "server": "CaraShell",
+  "gjort": [
+    "Nothing to translate today: the 5 rows in SE-ACTIVE to be translated (CS_109_H1, PD_110_H1, CO_105_H1, OB_103_H1, OB_104_H1) all already carry their Norwegian ad. Read back one by one from Meta: all five ACTIVE/ACTIVE in ACTIVE ad sets (CS, PD, CO, OB).",
+    "The two image rows from Friday (OB_108_1, OB_110_1) have left this status on their own - they are no longer in the queue.",
+    "Checked the whole Approved queue as well: 62 rows, every one of them live in Norway. Nothing lagging behind.",
+    "The campaign CARASHELL_NO_Takovertrekket is ACTIVE with 12 ad sets, the inherited link is carashell.se/nb/products/takskyddet?country=NO, and the store price reads 1 106 NOK.",
+    "Nothing rendered, nothing uploaded, no HeyGen credits used, no Notion status touched. The five rows stay where they are because US has not carried them yet."
+  ],
+  "varningar": [
+    "Still open, and reported again because nothing has changed since Tuesday: the gift angle runs in two ad sets in the same CBO - CARASHELL_NO_Takovertrekket - G and - GT. Both are live with spend, so no session touches them; the owner decides whether both keep running or he pauses one himself. No ping today, the decision is already with him.",
+    "The queue repeats that GT_4_1 is live as CaraShellRoof_NO_G_4_1 (120249089471580172), which is the naming difference behind the split. That row is correct and is never uploaded again."
+  ],
+  "action_axel": [],
+  "nasta_korning": "2026-09-29"
+}

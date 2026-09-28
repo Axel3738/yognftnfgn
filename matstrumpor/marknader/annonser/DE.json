@@ -1,0 +1,40 @@
+{
+ "_om": "Annonstext (de) för MATSTRUMP_DE_SALES, skriven 2026-09-27 av en sonnet-subagent mot docs/copy-regler.md + REGLER-EUROPA ur den svenska vinnarannonsen (Nathalie). Tre-frågorstestet 4/4 ✅. Inget pris, ingen leveranstid, inget butiksnamn, inget landsnamn i fraktraden. Videorna är DE-batchens (heygen/DE.json), klar/DE_<namn>.mp4. ⛔ Katarina ingår aldrig. Budgeten är EJ GIVEN — kampanjen förblir PAUSED.",
+ "instagram_user_id": "17841479011543544",
+ "copy": {
+  "title": "Spaß heute Abend. An deinen Füßen morgen.",
+  "title_alt": [
+   "Zum Lachen heute. Zum Tragen morgen.",
+   "Heute ein Lacher. Morgen an den Füßen."
+  ],
+  "message": "Waschmittel begeistert niemanden. Ein Scherzgeschenk hebt niemand auf.\nDie Antwort auf beides: eine Box, die aussieht wie echtes Take-Away-Essen, 5 Paar gerollt wie Maki, dazu echte Essstäbchen aus Holz.\nSie bleiben nicht in der Box, sondern stecken an deinen Füßen, Woche für Woche.\nEine schwedische Marke.",
+  "link_description": "4 Sorten. Kauf 1 – Bekomm 1 GRATIS. Kostenloser Versand."
+ },
+ "annonser": [
+  {
+   "namn": "MATSTRUMP_DE_sushi_gift_ugc_001_v1",
+   "kalla": "09-17 Nathalie captions musik (video 1531210268763716)",
+   "video": "klar/DE_nathalie.mp4",
+   "title": "Spaß heute Abend. An deinen Füßen morgen.",
+   "message": "Waschmittel begeistert niemanden. Ein Scherzgeschenk hebt niemand auf.\nDie Antwort auf beides: eine Box, die aussieht wie echtes Take-Away-Essen, 5 Paar gerollt wie Maki, dazu echte Essstäbchen aus Holz.\nSie bleiben nicht in der Box, sondern stecken an deinen Füßen, Woche für Woche.\nEine schwedische Marke.",
+   "link_description": "4 Sorten. Kauf 1 – Bekomm 1 GRATIS. Kostenloser Versand."
+  },
+  {
+   "namn": "MATSTRUMP_DE_sushi_gift_ugc_002_v1",
+   "kalla": "Sofie H1 Sushi Captions Ingen musik (video 2577232842703704)",
+   "video": "klar/DE_sofie_h1.mp4",
+   "title": "Zum Lachen heute. Zum Tragen morgen.",
+   "message": "Waschmittel begeistert niemanden. Ein Scherzgeschenk hebt niemand auf.\nDie Antwort auf beides: eine Box, die aussieht wie echtes Take-Away-Essen, 5 Paar gerollt wie Maki, dazu echte Essstäbchen aus Holz.\nSie bleiben nicht in der Box, sondern stecken an deinen Füßen, Woche für Woche.\nEine schwedische Marke.",
+   "link_description": "4 Sorten. Kauf 1 – Bekomm 1 GRATIS. Kostenloser Versand."
+  },
+  {
+   "namn": "MATSTRUMP_DE_sushi_jul_ugc_003_v1",
+   "kalla": "Sofie H2 julstrumpa Sushi Captions Ingen musik (video 28225249640488512)",
+   "video": "klar/DE_sofie_h2.mp4",
+   "title": "Heute ein Lacher. Morgen an den Füßen.",
+   "message": "Waschmittel begeistert niemanden. Ein Scherzgeschenk hebt niemand auf.\nDie Antwort auf beides: eine Box, die aussieht wie echtes Take-Away-Essen, 5 Paar gerollt wie Maki, dazu echte Essstäbchen aus Holz.\nSie bleiben nicht in der Box, sondern stecken an deinen Füßen, Woche für Woche.\nEine schwedische Marke.",
+   "link_description": "4 Sorten. Kauf 1 – Bekomm 1 GRATIS. Kostenloser Versand."
+  }
+ ],
+ "_svenskt_varumarke": "Axels beslut 2026-09-27 kväll (\"Svenskt varumärke? … Jag tycker definitivt vi gör så!\"): sista raden i brödtexten är \"Eine schwedische Marke.\". Utan butiksnamnet — regeln från 2026-09-18 att butikens namn aldrig står i en annons gäller."
+}

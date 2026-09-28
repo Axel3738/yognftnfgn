@@ -2420,3 +2420,171 @@ enskild annons fixar ingenting.
 ⚠️ LISTICLE är den friskare kampanjen på 7 dygn (CPA 579, under break-even) och
 det är den ronden sänkte — huvudkampanjen (CPA 806) räddades av sin kadensspärr.
 Regelfrågan står i mönster 15 och är ägarens.
+
+## 2026-09-27 — NO-rundan: sju rader, alla live (och en strypt läsning)
+
+7 rader i `SE-ACTIVE to be translated`: gårdagens fem plus dagens två nya
+bildrader ur speglingen, `OB_108_1` (`120249279329000172`) och `OB_110_1`
+(`120249278929900172`). **Alla sju redan live**, tillbakalästa som ACTIVE i
+ACTIVE adset. Inget renderat, inget uppladdat, 0 HeyGen-krediter, ingen status
+rörd. Approved-passet: **60 rader, 0 utan NO-annons.**
+
+⚠️ **Approved-passet föll första gången på Metas kvot** — `✗ Meta paging: User
+request limit reached` under kontoläsningen, exit 1, och filen blev 0 byte. Ett
+nytt försök några minuter senare läste alla 60. Läs felraden: en strypt läsning
+ser ut som en tom kö i utdatafilen, precis som den tysta nollan 2026-09-22.
+## 2026-09-27 — leveransrundan: sjunde dygnet, oförändrat
+
+Samma två rader, samma md5 (`d9ab48ff…` / `271bf976…`), samma slutkort med
+`carashell.se`. Kontrollen kördes med OCR. Inget uppladdat, ingen status
+ändrad, inga nya kommentarer.
+
+⚠️ Metas läsning svarade först `User request limit reached` (kod 17) — samma
+token bär US-marknadsvakten, NO-rundan och speglingen. Kön gick igenom efter
+15 minuters paus. En strypt kö är inte en tom kö: läs om innan något
+rapporteras som klart.
+
+### USA-runda 14 — 2026-09-27
+
+Kön: 7 rader (2 bilder, 5 videor). **Båda bilderna live, videorna hålls tredje
+dygnet** — HeyGen-plånboken är fortfarande tom.
+
+| SE-rad | US-annons | Adset | Ad-ID | Läge |
+|---|---|---|---|---|
+| `CaraShellRoof_OB_108_1` | `CaraShellRoof_US_OB_108_1` | `CARASHELL_US_OB` | `120251634831160435` | ACTIVE |
+| `CaraShellRoof_OB_110_1` | `CaraShellRoof_US_OB_110_1` | `CARASHELL_US_OB` | `120251634835850435` | ACTIVE |
+
+Approved-kön: 60 rader, **0 eftersläpande**. Butiken redo: produktsidan och
+landningssidan svarar 200 som amerikansk kund, $199 från $249.
+
+**Två invändningsannonser, två olika järnregler — båda höll.** OB_108 svarar
+"blåser det inte sönder?" och får ALDRIG lova att överdraget inte kan blåsa
+av: den visar och namnger infästningen ("the strap clips into a hook, not a
+knot you're hoping holds") och stannar där. OB_110 svarar "är det vattentätt?"
+och får ALDRIG skriva ordet: varken *waterproof* eller *water-resistant* står
+någonstans, utan mekanismen gör jobbet (regnet rinner av ytan i stället för
+att bli stående). OCR på de färdiga bilderna bekräftar båda.
+
+**Måtten räknas om för marknaden, inte skrivs av.** 2,5 m → 8 ft och
+10,5 m → 34 ft, samma omräkning som US-produktsidan själv gör
+("21 × 10 ft (6.5 × 3 m)"). Ett metermått i en amerikansk annons är obegripligt
+för läsaren; en omräkning som inte kommer ur sidans egna tal är påhittad.
+Briefens tillåtna tal blir alltså 199/249/50/20 % + 8 ft/34 ft (OB_108) och
++ 210D (OB_110) — inget annat, och OCR:en räknar efter.
+
+⚠️ **Pillret är SMALARE än den svenska texten plus renderarens marginal.**
+OB_108:s pill är 500 px och det svenska bläcket 471 px — designen har ~15 px
+luft, renderaren vill ha 6 % (30 px). Maxbredden blir därför 432 px, inte 471.
+Samma sak i OB_110 (416 px). Den engelska raden mättes mot den RIKTIGA rutan i
+den riktiga fonten **före** rendering (`passa.py`), och OB_110:s första etikett
+var 458 px — den hade krympt till 22 px och synts som mindre text än den
+svenska. Mät rutan, inte tecknen.
+
+**Storlekarna är per bild, igen.** Båda bilderna delar mall och båda gav
+rubrik 77 / underrad 40 / pris 32 / knapp 41 — men etiketten blev 28 i OB_108
+och 24 i OB_110. Samma mall, olika pill.
+
+✅ **Marknadsvakten (ny i kommandofilen i dag, steg 6b) körd efter
+uppladdningen:** alla 12 adsets i US-kampanjen bär flödesplaceringarna, och
+startsidan, båda landningssidorna, produktsidan och kassan läses som engelska
+av en amerikansk kund med US som förvalt land. Inget hade glidit, så inget
+rättades.
+
+⚠️ **16 781 kr gick till Instagram Stories i dag och 2 570 kr i går**, före att
+adseten sattes till bara flödet 11:32 UTC. Vakten larmar med rätt inte — dygnet
+bär spend från före bytet — men pengarna är spenderade, och i dag är det
+huvuddelen av dygnets 19 263 kr. **Läs morgondagens siffra innan någon säger
+att läckan är stoppad**: det är första hela dygnet med rätt placeringar, och
+det är det dygnet som bevisar det.
+
+Kvar i `SE-ACTIVE to be translated`: `CaraShellRoof_CS_109_H1`, `PD_110_H1`,
+`CO_105_H1`, `OB_103_H1`, `OB_104_H1`. HeyGen-plånboken står på $0,10 med
+auto-påfyllning av. Ingen ny kommentar skrevs — inget har ändrats sedan den
+som står där.
+
+## Nattvakten 2026-09-28 — sänkning 6 750 → 4 750 kr, vinstbidraget negativt
+
+**Budgetronden (konto 915422744950975, MagiBorsten DK):**
+- `CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11` **6 750 → 4 750 kr/dygn**
+  (SÄNK, −30 %). 3d: 19 401 kr, 20 köp, ROAS 1,38, vinst −10,9 %. Kadensspärren
+  löpte ut (3 dygn sedan förra sänkningen). Tillbakaläst.
+- `CARASHELL_SE_Taköverdraget LISTICLE` **hålls på 1 400 kr**. 3d: 5 663 kr,
+  9 köp, ROAS 2,27, vinst 30,5 % — tillbaka i håll-bandet ett dygn efter
+  gårdagens sänkning, precis som den var 24→25/9.
+- **Inga annonser pausade.** Ingen ACTIVE annons är kill-kandidat på
+  14-dygnsklassen.
+
+**7 dygn SE (båda kampanjerna):** 72 756 kr, 91 köp, ROAS 1,74, CPA 800 kr mot
+break-even 693 ⇒ vinstbidrag **−9 693 kr**. Första negativa natten (i går
++12 712, 25/9 +31 253, 24/9 +36 911).
+
+**Huvudkampanjen 27/9: 6 162 kr, ROAS 1,95, 9 köp** — första dygnet över
+break-even sedan den 23:e. Ett dygn, ingen vändning.
+
+**Nattens fynd:** `SP_5_1`:s 7-dygns-CPA gick 765 → 951 kr när fönstret gled ett
+dygn (25 köp → 21 på nästan samma spend). Den är nu sämst av kampanjens stora
+annonser, inte bättre än snittet som i går. Fyra ACTIVE annonser som
+14-dygnsklassen fortfarande kallar `vinnare` bär 25 241 kr och 24 köp på 7 dygn
+= CPA 1 052; resten av kampanjen ligger på 747. Detaljerna och instruktionen i
+`dna.md`.
+
+**Briefronden:** pausad sedan 2026-09-18 (Axels beslut) — inga briefer skrivna,
+bara `kord` stämplad.
+
+## Marknadsvakten 2026-09-28 08:33 CEST — första natten med bara flödet
+
+**Facit på läckan (svaret på "läs morgondagens siffra" ovan):** dygnet 28/9
+(kontots tid, UK) fram till 07h UK: **1 050 kr, allt i flödet** — Facebook-flödet
+962 kr, Instagram-flödet 79 kr, "unknown" 9 kr — 0 köp än, USA sover. **Noll
+kronor i Stories, Reels eller något annat.** Dygnet 27/9 slutade på 22 963 kr:
+Instagram Stories 16 665 kr / 0 köp (16 654 vid 13:30 CEST — de 11 kr och 130
+visningarna är efterrapportering, inte leverans), Facebook-flödet 5 321 kr /
+4 köp / ROAS 2,21, Instagram-flödet 773 kr / 0 köp; småposterna på Reels,
+Marketplace, Audience Network m.m. (≈205 kr) låg före bytet. Efter bytet
+12:32 UK gick ~5 000 kr, allt i flödet.
+
+**Leveransen kom igång 01:00 CEST** som väntat: 215 / 220 / 181 / 187 / 120 /
+69 / 47 kr per timme från 00h UK. Budget 8 000 kr/dag, kampanjen ACTIVE, 12 av
+12 adsets oförändrade sedan 11:32 UTC 27/9 (flödet på Facebook + Instagram).
+Sidorna som amerikansk kund: startsida, listiclen, produktsidan och kassan
+engelska med United States förvalt, 0 svenska rader. Inget larm i Discord,
+inget rättat.
+
+**US-rutinen 17:05 CEST 27/9 körde steg 6b** (commit `19bcd50`: 12 av 12,
+sidorna engelska). Vakten går alltså varje dag där; morgonkollen här var
+sessionens egen uppföljning på första natten och behövs inte igen.
+
+## 2026-09-28 — leveransrundan: åttonde dygnet, oförändrat
+
+Samma två rader, samma md5 (`d9ab48ff…` / `271bf976…`), samma slutkort med
+`carashell.se` (OCR kördes). Inget uppladdat, ingen status ändrad, inga nya
+kommentarer. SE-kampanjen ACTIVE, pris 1 129 kr ur butiken.
+
+## 2026-09-28 — NO-rundan: kön kortare, allt redan uppe
+
+5 rader i `SE-ACTIVE to be translated` (`CS_109_H1`, `PD_110_H1`, `CO_105_H1`,
+`OB_103_H1`, `OB_104_H1`), alla med `finns_i_meta: true`. Tillbakalästa en och
+en ur Meta: ACTIVE/ACTIVE i ACTIVE-adsets (CS, PD, CO, OB). Fredagens två
+bildrader (`OB_108_1`, `OB_110_1`) ligger inte längre i statusen — de har
+flyttat vidare av sig själva.
+
+Approved-kollen: **62 rader, 0 utan NO-annons.** Kampanjen
+`CARASHELL_NO_Takovertrekket` ACTIVE med 12 adsets, ärvd länk
+`carashell.se/nb/products/takskyddet?country=NO`, pris 1 106 NOK läst ur
+butiken. Inget renderat, inget uppladdat, 0 HeyGen-credits, ingen Notion-status
+rörd (raderna står kvar för att US inte bär dem än). Discord-rapport postad i
+`#annons-uppladdning` (`1554134064217198663`), ingen ping.
+
+Sjätte dygnet i rad utan något att översätta: allt som landar i kön kommer ur
+speglingen och bär redan sin norska annons. Frågan om presentvinkelns två
+adsets (`- G` och `- GT`) ligger fortfarande hos Axel, obesvarad sedan
+2026-09-23 — rapporterad i `varningar`, inget rört.
+
+## Fars dag-batchen 2026-09-28 — speglas INTE hit
+
+Bäverbutikens källhubb fick tre fars dag-briefer (`*_FD_1_H1`, `*_FD_1_H2`,
+`*_FD_2_1`, Axels order 2026-09-28). De är **bara Sverige**: `/oversatt NO`
+flyttar dem direkt till `Approved`, och `tools/ops-spegla.mjs` stoppar varje
+namn med vinkeln `FD` (`tools/lib/bara-sverige.mjs`) — fars dag är i juni i
+USA. Ingen `CaraShell…_FD_…`-annons ska finnas. Batchen:
+`docs/briefs/farsdag-2026/README.md`.

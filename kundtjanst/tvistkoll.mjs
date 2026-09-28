@@ -66,6 +66,35 @@ export function dagarKvar(deadline, nu = new Date()) {
 }
 
 /**
+ * Timmar kvar till deadline, räknat på den RIKTIGA tidpunkten. Ren.
+ *
+ * ⚠️ `dagarKvar` ovan räknar kalenderdygn och säger "1 day left" om deadline
+ * är i morgon — oavsett om det är i morgon kl 01:00 eller kl 23:59. Skillnaden
+ * är ett helt arbetsdygn. Mätt 2026-09-28 på #5053: deadline var
+ * `2026-09-28T01:00:00+02:00`, larmet sa "1 day left" söndag 05:40, och beviset
+ * gick in 07:10 på måndagen — sex timmar för sent, för att alla inblandade
+ * läste datumet som "hela måndagen".
+ */
+export function timmarKvar(tidpunkt, nu = new Date()) {
+  if (!tidpunkt) return null;
+  const d = Date.parse(String(tidpunkt));
+  if (Number.isNaN(d)) return null;
+  return (d - new Date(nu).getTime()) / 36e5;
+}
+
+/**
+ * Klockslaget i deadline, som VA:n ska läsa det — men bara när det spelar roll.
+ * Är deadline midnatt lokalt finns inget att varna för; är den mitt i natten
+ * eller mitt på dagen måste timmen stå i larmet. Ren.
+ */
+export function klockslag(tidpunkt) {
+  if (!tidpunkt) return null;
+  const m = String(tidpunkt).match(/T(\d{2}):(\d{2})/);
+  if (!m) return null;
+  return m[1] === '00' && m[2] === '00' ? null : `${m[1]}:${m[2]}`;
+}
+
+/**
  * De tvister som kräver handling nu: de som fortfarande väntar på VÅRT svar
  * (`BEHOVER_SVAR`, alltså aldrig en `under_review`), och antingen med deadline
  * inom `grans` dagar (förfallna räknas in — de är värst) eller helt utan avläst
@@ -75,7 +104,7 @@ export function dagarKvar(deadline, nu = new Date()) {
 export function bradskande(lista = [], { nu = new Date(), grans = LARMGRANS_DAGAR } = {}) {
   return lista
     .filter((x) => BEHOVER_SVAR.includes(x.status))
-    .map((x) => ({ ...x, kvar: dagarKvar(x.evidensSenast, nu) }))
+    .map((x) => ({ ...x, kvar: dagarKvar(x.evidensSenast, nu), timmar: timmarKvar(x.evidensSenastTid, nu) }))
     // En ÖPPEN CHARGEBACK larmas ALLTID, oavsett hur många dagar som är kvar.
     // Mätt 2026-09-23: #4914 (348 kr, 7 dagar kvar) var osynlig i både
     // tvistkollen och morgonlistan bakom 3-dagarsgränsen — precis den tvist
@@ -100,8 +129,21 @@ export function arChargeback(t) {
 
 const belopp = (x) => `${Number(x.belopp ?? 0).toLocaleString('en-US', { maximumFractionDigits: 0 })} ${x.valuta ?? ''}`.trim();
 
-/** "1 day left" / "due today" / "2 days OVERDUE" / "no deadline read". Ren. */
-export function narText(kvar) {
+/**
+ * "1 day left" / "due today" / "2 days OVERDUE" / "no deadline read". Ren.
+ *
+ * Med `timmar` (den riktiga tidpunkten) skrivs timmarna ut i stället så fort
+ * det är under ett dygn kvar — "19h left" ljuger inte på samma sätt som
+ * "1 day left" gör när deadline är klockan ett på natten.
+ */
+export function narText(kvar, timmar = null) {
+  if (timmar !== null && timmar <= 24) {
+    if (timmar <= 0) {
+      const h = Math.floor(Math.abs(timmar));
+      return h < 24 ? `${h}h OVERDUE` : `${Math.floor(h / 24)} day${Math.floor(h / 24) === 1 ? '' : 's'} OVERDUE`;
+    }
+    return `${Math.floor(timmar)}h left`;
+  }
   if (kvar === null) return 'no deadline read';
   if (kvar < 0) return `${Math.abs(kvar)} day${Math.abs(kvar) === 1 ? '' : 's'} OVERDUE`;
   if (kvar === 0) return 'due TODAY';
@@ -147,7 +189,12 @@ export function renderaLarm(rader, { brand, nu = new Date(), grans = LARMGRANS_D
   for (const x of rader) {
     const order = x.ordernamn ? `${x.ordernamn}` : `order ${x.orderId ?? 'unknown'}`;
     const mark = arChargeback(x) ? '🔴 CHARGEBACK' : 'inquiry';
-    ut.push(`• **${order}** — ${mark}, ${String(x.orsak).replace(/_/g, ' ')} — ${belopp(x)} — ${x.evidensSenast ? `due ${x.evidensSenast}` : 'due date unknown'} — ${narText(x.kvar)}`);
+    // Klockslaget skrivs ut när deadline INTE är midnatt och det är under två
+    // dygn kvar. Utan det läses "due 2026-09-28" som hela den dagen, och för
+    // #5053 var den dagen slut kl 01:00 (se `timmarKvar`).
+    const tid = (x.kvar ?? 99) <= 1 ? klockslag(x.evidensSenastTid) : null;
+    const nar = x.evidensSenast ? `due ${x.evidensSenast}${tid ? ` at ${tid}` : ''}` : 'due date unknown';
+    ut.push(`• **${order}** — ${mark}, ${String(x.orsak).replace(/_/g, ' ')} — ${belopp(x)} — ${nar} — ${narText(x.kvar, x.timmar ?? null)}`);
   }
   ut.push(
     '',
@@ -155,14 +202,24 @@ export function renderaLarm(rader, { brand, nu = new Date(), grans = LARMGRANS_D
     '1. "Not received"? CHECK THE TRACKING FIRST. Delivered with a scan → fight. Stuck or no scan → refund, do not fight.',
     '2. Shopify admin → Settings → Payments → Disputes → open the order.',
     '3. Attach the proof: delivery scan, order confirmation, and the email thread.',
-    '4. Submit before the due date. Do not wait for the weekly report.',
+    '4. Submit the DAY BEFORE the due date — see the clock warning below. Do not wait for the weekly report.',
+    '',
+    // ⚠️ Klockslaget. Mätt 2026-09-28 på alla fem öppna tvister i kontot:
+    // varenda `evidence_due_by` står på 01:00 lokal tid. "Due 30 Sep" betyder
+    // alltså att fönstret stänger när måndagen tar slut. Den gamla raden här sa
+    // "press Submit on the due date" — vilket för #5053 blev sex timmar för
+    // sent. Regeln står i larmet och inte bara i SOP:en, för det är larmet VA:n
+    // läser på morgonen.
+    '**⏰ The due date is not a whole day. Measured: every deadline in this account falls at 01:00 in the night.**',
+    '"Due 30 Sep" means the window shuts as the 29th ends. Treat the day BEFORE the due date as your last',
+    'working day, and submit during that day. A row showing hours instead of days is already inside the final day.',
     '',
     // Tidsstrategin (Axels beslut 2026-09-22). Larmet är säkerhetsnätet som
     // gör väntandet ofarligt — därför står regeln här och inte bara i SOP:en.
-    '**⏳ When to submit: prepare now, send on the last day.**',
+    '**⏳ When to submit: prepare now, send on the last working day.**',
     'A parcel that has not arrived yet is not a lost case: for "not received" we submit LAST, the day before the',
     'deadline, because by then the delivery scan usually exists. Build the evidence today and press **Save**;',
-    `press *Submit* on the due date. An inquiry on this list is ≤ ${grans} days out, so decide it now. A chargeback is`,
+    `press *Submit* the day before the due date. An inquiry on this list is ≤ ${grans} days out, so decide it now. A chargeback is`,
     'listed from the day it opens however far off its deadline is, because it is the one that loses real money —',
     'gather its proof today even when the date is weeks away. **Always email the customer the same day anyway;**',
     '**only the evidence submission waits, and a customer who gets an answer often withdraws the dispute themselves.**',

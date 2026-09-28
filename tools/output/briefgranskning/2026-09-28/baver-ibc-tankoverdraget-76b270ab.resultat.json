@@ -1,0 +1,30 @@
+{
+  "hub_id": "76b270ab-908c-8393-8a47-01f6ae366d42",
+  "hub_titel": "BÄVER IBC-Tanköverdraget",
+  "slug": "baver-ibc-tankoverdraget-76b270ab",
+  "rond": "2026-09-25",
+  "idag": "2026-09-28",
+  "antal": 4,
+  "rena": 0,
+  "anm": 3,
+  "fel": 1,
+  "feedback_rad": {
+    "skapad": true,
+    "page_id": "3e9270ab-908c-814a-aba8-c5f498cf46a0",
+    "url": "https://app.notion.com/p/Brief-review-2026-09-25-3e9270ab908c814aaba8c5f498cf46a0",
+    "titel": "Brief review 2026-09-25",
+    "block": 23
+  },
+  "feedback_fil": null,
+  "kommentarer": [
+    {
+      "namn": "IBC_OB_1_H1",
+      "utfall": "skriven",
+      "text": "Brief review 2026-09-25 (BÄVER IBC-Tanköverdraget) — this brief has 2 errors the editor must know about:\n1. Hook is a question (`En grön presenning med ett par spännband duger väl?`) — a question cannot be true or false and fails the three-question test; this hub's rule since 2026-09-21 is declarative hooks. Open on the customer's statement instead: `En grön presenning med spännband duger.` — then row 2 answers it. The alt hooks H2/H3 are questions too.\n2. The hook and the caption say `grön presenning` but the row-1 clip (OUR AD IBC_CO_2_H1 0:00–0:01) is a blue tarp — the viewer sees a blue tarp under the words \"green tarp\". Either use a clip with a green tarp or drop the colour: `En presenning med spännband duger.`\nFix before production. If the ad is already live, apply it to the next version — nothing is paused. Status unchanged."
+    }
+  ],
+  "varningar": [
+    "no product folder in the repo (products.json / register.json) — dna.md and feedback.md do not apply; the Feedback row in the hub is the memory"
+  ],
+  "torr": false
+}

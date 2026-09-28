@@ -1,0 +1,49 @@
+{
+  "hub_id": "3e1270ab-908c-8131-a121-fe435a4e22aa",
+  "rond": "2026-09-25",
+  "bra": [
+    "All three rules from the 2026-09-20 review held: both hooks are declaratives (`Golvet är kallt innan kaffet är klart.`, `På en sekund.`); no row exceeds three words per second (SP_1_H5 row 2: 8 words / 3 s); one proof line per concept — the heel strap — and the 2026-09-21 format (VARIABELTAGGAR, Memo, `AI content:`, direction table) is in both.",
+    "The parent's unverifiable review quotes (`Bästa tofflorna jag ägt`, `många köper ett par till`) are stripped with the reason given (ten launch-import reviews, dna.md 2026-09-25) — the structure is kept, the false proof is not.",
+    "Parent named with its Meta ad id and judged the right way: CPA 198 kr against break-even 383 kr on 10 purchases, with the sibling H1 (339 kr) as the comparison.",
+    "Every scene line is the page's own (`Golvet är kallt innan kaffet är klart`, `glider … av redan i första trappsteget`, `hälen är uttrampad`, `Kliv i dem på en sekund`); price 489 / 978 kr `halva priset` matches (read live from the product page 2026-09-28).",
+    "SP_1_H5 / SP_1_H6 share rows 3–4 word for word and say so — the two openings read against each other."
+  ],
+  "missat": [
+    "The Source column's EDITOR PICKS text is in Swedish in both briefs (`leta efter närbilden på tofflan med remmen om hälen`, `prisgrafiken i slutet`, `leta efter en bild där foten kliver i tofflan; finns ingen: NEW FOOTAGE — foten kliver i tofflan i slow motion, golvnivå`) — the editors read English; the one column that tells them which clip to find is the one they cannot read.",
+    "Both carry `AI content: none` with a voice-over on every row (`speaker=vo`) — `none` is right only if a human records it; say who, or write `voice`.",
+    "SP_1_H5 needs two NEW FOOTAGE scenes (bare feet at dawn, an old slipper sliding off on the stairs) and SP_1_H6 possibly one — named only in the Assets line and the table cells, not in a block at the top with the fallback."
+  ],
+  "regler": [
+    "Every word the editor reads is English — including the bracketed EDITOR PICKS text in the Source column; a Swedish instruction there is an instruction nobody follows.",
+    "`AI content:` says how the voice was made: `none` only when a human recorded it (name who); a synthetic VO is `voice` — the US step reads this line.",
+    "Footage the editor must shoot new goes in a `NEW FOOTAGE` block at the top of the brief with its fallback — never only in the Assets line or a table cell."
+  ],
+  "rader": [
+    {
+      "namn": "Inomhustofflor_SP_1_H5",
+      "fel": [
+        "The Source column's bracketed EDITOR PICKS text is in Swedish. In English: row 3 — \"look for the close-up of the slipper with the strap around the heel\"; row 4 — \"the price graphic at the end\". Rows 1–2 are NEW FOOTAGE (bare feet on a cold kitchen floor at dawn; an old worn slipper sliding off a heel on basement stairs, then the crushed heel in close-up) — no product in frame in those two rows."
+      ],
+      "anmarkningar": [
+        "`AI content: none` on a video with a voice-over — `none` is right only if a human recorded the voice; a synthetic VO is `voice`, and the US step burns in the disclosure from this line. Say which, and on what basis.",
+        "Rows 1–2 are new footage — a block at the top with the fallback."
+      ],
+      "bra": [
+        "Six seconds of the page's own problem before the slipper, declarative hook, false review lines stripped."
+      ]
+    },
+    {
+      "namn": "Inomhustofflor_SP_1_H6",
+      "fel": [
+        "The Source column's bracketed EDITOR PICKS text is in Swedish. In English: row 1 — \"look for a shot where the foot steps into the slipper; if none exists: NEW FOOTAGE — the foot stepping into the slipper in slow motion, floor level\"; row 2 — \"look for the stairs; if none: NEW FOOTAGE — the slipper on the foot at the top of the basement stairs, seen from above\"; row 3 — \"look for the close-up of the slipper with the strap around the heel\"; row 4 — \"the price graphic at the end\"."
+      ],
+      "anmarkningar": [
+        "\"Isolated variable: the opening move — the foot stepping in at second 0 in slow motion, then the skeptic line; rows 3–4 are shared word for word with Inomhustofflor_SP_1_H5\" may name more than one variable — a variant changes exactly one thing",
+        "`AI content: none` on a video with a voice-over — `none` is right only if a human recorded the voice; a synthetic VO is `voice`, and the US step burns in the disclosure from this line. Say which, and on what basis."
+      ],
+      "bra": [
+        "In-media-res opening on the page's own `på en sekund`; the skeptic line is first person, never a customer quote."
+      ]
+    }
+  ]
+}
