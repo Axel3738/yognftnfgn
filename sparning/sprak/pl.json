@@ -58,6 +58,7 @@
     "Paketet har kommit till en terminal i ditt land": "Paczka dotarła do terminalu w Twoim kraju",
     "Paketet har kommit till terminalen": "Paczka dotarła do terminalu",
     "Paketet har kommit till distributionsterminalen": "Paczka dotarła do terminalu dystrybucyjnego",
+    "Paketet är på väg till distributionsterminalen": "Paczka jest w drodze do terminalu dystrybucyjnego",
     "Paketet förbereds för leverans": "Paczka jest przygotowywana do dostawy",
     "Paketet är inlagt för utkörning": "Paczka została załadowana do doręczenia",
     "Paketet är ute för leverans": "Paczka jest w doręczeniu",
@@ -164,6 +165,7 @@
     "Paketet har sorterats fel och leveransdatumet uppdateras": "Paczka została błędnie posortowana i data dostawy zostanie zaktualizowana",
     "Ett sms om paketet har skickats till dig": "SMS o paczce został wysłany do Ciebie",
     "Fraktbolaget har hämtat paketet i paketboxen": "Przewoźnik odebrał paczkę z paczkomatu",
+    "Fraktbolaget har hämtat paketet och det är på väg till terminalen": "Przewoźnik odebrał paczkę i jest ona w drodze do terminalu",
     "Ombudet förlänger tiden du har på dig att hämta paketet": "Punkt odbioru wydłuża czas na odbiór paczki",
     "Vi kunde inte skicka avin till din mejladress": "Nie mogliśmy wysłać awizo na Twój adres e-mail",
     "Du har hämtat paketet hos ombudet": "Paczkę odebrano w punkcie odbioru",
@@ -180,6 +182,7 @@
     "Paketet levereras i natt. Märk brevlådan och dörren med ditt fullständiga namn — budet ringer inte på, och du får ett sms i morgon bitti när paketet är levererat": "Paczka zostanie dostarczona dziś w nocy. Oznacz skrzynkę pocztową i drzwi pełnym imieniem i nazwiskiem. Kurier nie dzwoni domofonem, a jutro rano dostaniesz SMS-a, gdy paczka zostanie dostarczona",
     "Paketet är lastat för huvudtransporten": "Paczka została załadowana do głównego transportu",
     "Fraktbolaget har tagit emot paketet för transport": "Przewoźnik otrzymał paczkę do transportu",
+    "Fraktbolaget har tagit emot paketet": "Przewoźnik otrzymał paczkę",
     "Paketet har kommit till flygplatsen": "Paczka dotarła na lotnisko",
     "Paketet har lämnat flygplatsen": "Paczka opuściła lotnisko",
     "Paketet fick inte plats i brevlådan och den överenskomna leveransplatsen hittades inte. Det är på väg till ett ombud nära dig och du får besked när det kan hämtas, oftast inom en arbetsdag": "Paczka nie zmieściła się w skrzynce pocztowej, a uzgodnione miejsce dostawy nie zostało znalezione. Paczka jedzie teraz do punktu odbioru w pobliżu, a Ty dostaniesz powiadomienie, gdy będzie gotowa do odbioru, zwykle w ciągu jednego dnia roboczego",
@@ -194,6 +197,8 @@
     "Två saker som passar samma husvagn eller husbil. Skickas som en egen beställning, med fri frakt och 14 dagars ångerrätt som vanligt.": "Dwie rzeczy pasujące do tej samej przyczepy kempingowej lub kampera. Wysyłane jako osobne zamówienie, z darmową dostawą i standardowym 14-dniowym prawem odstąpienia od umowy.",
     "{{pris}} för dig som beställt hos oss": "{{pris}} dla naszych klientów",
     "Lägg till för {{pris}}": "Dodaj za {{pris}}",
-    "Priset gäller dig som beställt hos oss och läggs på av sig själv i kassan.": "Cena dotyczy naszych klientów i jest naliczana automatycznie w koszyku."
+    "Priset gäller dig som beställt hos oss och läggs på av sig själv i kassan.": "Cena dotyczy naszych klientów i jest naliczana automatycznie w koszyku.",
+    "Paketet är på väg till ombud": "Paczka jest w drodze do punktu odbioru",
+    "Vi planerar ett nytt hemleveransförsök till dig": "Planujemy kolejną próbę doręczenia pod Twój adres"
   }
 }

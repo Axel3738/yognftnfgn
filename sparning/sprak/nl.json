@@ -58,6 +58,7 @@
     "Paketet har kommit till en terminal i ditt land": "Het pakket is aangekomen bij een terminal in jouw land",
     "Paketet har kommit till terminalen": "Het pakket is aangekomen bij de terminal",
     "Paketet har kommit till distributionsterminalen": "Het pakket is aangekomen bij het distributiecentrum",
+    "Paketet är på väg till distributionsterminalen": "Het pakket is op weg naar het distributiecentrum",
     "Paketet förbereds för leverans": "Het pakket wordt voorbereid voor levering",
     "Paketet är inlagt för utkörning": "Het pakket staat gereed voor bezorging",
     "Paketet är ute för leverans": "Het pakket is onderweg voor levering",
@@ -164,6 +165,7 @@
     "Paketet har sorterats fel och leveransdatumet uppdateras": "Het pakket is verkeerd gesorteerd en de leverdatum wordt bijgewerkt",
     "Ett sms om paketet har skickats till dig": "Er is een sms over het pakket naar je gestuurd",
     "Fraktbolaget har hämtat paketet i paketboxen": "De vervoerder heeft het pakket uit de pakketautomaat gehaald",
+    "Fraktbolaget har hämtat paketet och det är på väg till terminalen": "De vervoerder heeft het pakket opgehaald en het is op weg naar de terminal",
     "Ombudet förlänger tiden du har på dig att hämta paketet": "Het afhaalpunt verlengt de tijd die je hebt om het pakket op te halen",
     "Vi kunde inte skicka avin till din mejladress": "We konden het bericht niet naar je e-mailadres versturen",
     "Du har hämtat paketet hos ombudet": "Je hebt het pakket bij het afhaalpunt opgehaald",
@@ -180,6 +182,7 @@
     "Paketet levereras i natt. Märk brevlådan och dörren med ditt fullständiga namn — budet ringer inte på, och du får ett sms i morgon bitti när paketet är levererat": "Het pakket wordt vannacht afgeleverd. Zet je volledige naam op de brievenbus en de deur, de bezorger belt niet aan en je krijgt morgenochtend een sms zodra het pakket is afgeleverd",
     "Paketet är lastat för huvudtransporten": "Het pakket is geladen voor het hoofdtransport",
     "Fraktbolaget har tagit emot paketet för transport": "De vervoerder heeft het pakket ontvangen voor vervoer",
+    "Fraktbolaget har tagit emot paketet": "De vervoerder heeft het pakket ontvangen",
     "Paketet har kommit till flygplatsen": "Het pakket is aangekomen op de luchthaven",
     "Paketet har lämnat flygplatsen": "Het pakket heeft de luchthaven verlaten",
     "Paketet fick inte plats i brevlådan och den överenskomna leveransplatsen hittades inte. Det är på väg till ett ombud nära dig och du får besked när det kan hämtas, oftast inom en arbetsdag": "Het pakket paste niet in de brievenbus en de afgesproken bezorgplek werd niet gevonden. Het is op weg naar een afhaalpunt bij jou in de buurt en je krijgt bericht zodra het kan worden opgehaald, meestal binnen één werkdag",
@@ -194,6 +197,8 @@
     "Två saker som passar samma husvagn eller husbil. Skickas som en egen beställning, med fri frakt och 14 dagars ångerrätt som vanligt.": "Twee dingen die bij dezelfde caravan of camper passen. Worden verstuurd als een eigen bestelling, met gratis verzending en het gebruikelijke herroepingsrecht van 14 dagen.",
     "{{pris}} för dig som beställt hos oss": "{{pris}} voor jou die bij ons besteld hebt",
     "Lägg till för {{pris}}": "Toevoegen voor {{pris}}",
-    "Priset gäller dig som beställt hos oss och läggs på av sig själv i kassan.": "Deze prijs geldt voor jou als klant van ons en wordt automatisch toegepast bij het afrekenen."
+    "Priset gäller dig som beställt hos oss och läggs på av sig själv i kassan.": "Deze prijs geldt voor jou als klant van ons en wordt automatisch toegepast bij het afrekenen.",
+    "Paketet är på väg till ombud": "Het pakket is op weg naar een afhaalpunt",
+    "Vi planerar ett nytt hemleveransförsök till dig": "We plannen een nieuwe bezorgpoging bij jou thuis"
   }
 }
