@@ -2553,3 +2553,9 @@ inget rättat.
 **US-rutinen 17:05 CEST 27/9 körde steg 6b** (commit `19bcd50`: 12 av 12,
 sidorna engelska). Vakten går alltså varje dag där; morgonkollen här var
 sessionens egen uppföljning på första natten och behövs inte igen.
+
+## 2026-09-28 — leveransrundan: åttonde dygnet, oförändrat
+
+Samma två rader, samma md5 (`d9ab48ff…` / `271bf976…`), samma slutkort med
+`carashell.se` (OCR kördes). Inget uppladdat, ingen status ändrad, inga nya
+kommentarer. SE-kampanjen ACTIVE, pris 1 129 kr ur butiken.
