@@ -1,9 +1,9 @@
 {
- "datum": "2026-09-27",
- "antal_svar": 125,
+ "datum": "2026-09-28",
+ "antal_svar": 141,
  "per_dom": {
-  "ja": 73,
-  "kanske": 16,
+  "ja": 85,
+  "kanske": 20,
   "nej": 36
  },
  "antal_utfall": 7,
@@ -89,10 +89,10 @@
     "score": 0.667
    },
    "Husvagn/husbil — hjulen och däcken": {
-    "ja": 0,
+    "ja": 1,
     "kanske": 1,
     "nej": 0,
-    "score": 0.5
+    "score": 0.625
    },
    "Snöskoter på släpet": {
     "ja": 1,
@@ -167,10 +167,10 @@
     "score": 0.667
    },
    "Luftvärmepumpens utedel": {
-    "ja": 0,
+    "ja": 1,
     "kanske": 0,
     "nej": 1,
-    "score": 0.333
+    "score": 0.5
    },
    "Utekatten": {
     "ja": 1,
@@ -461,10 +461,10 @@
     "score": 0.667
    },
    "Hängrännor": {
-    "ja": 1,
+    "ja": 2,
     "kanske": 0,
     "nej": 0,
-    "score": 0.667
+    "score": 0.75
    },
    "Elcykel under skärmtak": {
     "ja": 1,
@@ -707,6 +707,84 @@
     "score": 0.333
    },
    "NYTT: Fäktningsdockorna på pinnar — motståndarens ballonghuvud ska spräckas": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Flugbindningssetet med bordsstäd — flugfiskarens vinterkvällar, egna flugor till premiären": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Utombordarens motorstöd på trailern — riggen vilar inte på trimmen": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Grindstolpen (murad/putsad pelare vid infarten) — lyktan som aldrig fick el": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "NYTT: Uppfarten/vedboden utan lyktstolpe — den flyttbara stolplyktan med vattenfylld fot": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "NYTT: De uppvärmda knävärmarna på passet och läktaren — kardborre runt knäet, tre värmelägen, ett per knä (okt–jan)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Den uppvärmda mössan på läktaren och hundpromenaden — USB-slinga i pannan, halskrage i samma set (nov–feb)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Staketstolparna (trästaket 4x4/95×95) — stolphatten som lyser": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "NYTT: Viltfoderpåsen på stammen — rådjuren vid skogskanten": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Trädets höga grenar över taket/uppfarten": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Ekorrburken på trädet — ekorren kryper in i glasburken": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Ekorrkonen på matarstolpen — ekorren fastnar under plåten": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "NYTT: Den viktstyrda fågelautomaten — sittpinnen snurrar av ekorren": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Läderplånbokssetet med förstansade delar — mannens kväll vid köksbordet, färdig plånbok i handen": {
     "ja": 1,
     "kanske": 0,
     "nej": 0,
@@ -1386,6 +1464,102 @@
     "nej": 0,
     "score": 0.667
    },
+   "Loon Outdoors Core Fly Tying Tool Kit (verktyg utan städ)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Kärcher PC 20 Roof Gutter and Pipe Cleaning Kit 899 kr (i sortiment); Kärcher Rengöringsstav Hängrännor 695 kr; Nilfisk teleskoplans tak 1 199; tjänsten 'rensa hängrännor från marken' 1 490–3 300 kr/gång": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Attwood Transom Saver HD 61–92 cm (PriceRunner 2026-09-26); Attwood SP-400-RB justerbar 557 kr": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "ej mätt i samma form — 230 V-stolplyktor för pelare (Norlys, Konstsmide) kräver elektriker och ligger 3 800–10 000 kr på PriceRunner (annan form, ej ankare)": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "Norlys Oslo stolpe stolplykta 238 cm — 230 V, kräver grävning och elektriker (annan form; strukturankare, inte formankare)": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "'USB Elektrisk Uppvärmd Knästöd 120 Enkelpack' (generisk marknadsplatslistning, 1 st) — enda eluppvärmda knästödet på PriceRunner; svagt ankare utan varumärke": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "saknas — Fjällräven Singi Heater Beanie 979 kr heter 'Heater' men är inte eluppvärmd; närmaste eluppvärmda kroppsplagg i fackhandeln är HeatX värmehandskar 1 000–1 569 kr (Hylte) och Härkila Heat-plagg 1 925–1 995 kr": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "ej mätt — ingen märkesvara i formen hittad; NSH Nordic stolphatt svart med kula 9,7 cm 54,95 kr är den dyraste hatt-formen utan ljus": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "ej mätt i exakt form — Jaktia kategorin jakt/viltvard/foderautomater svarar 200 men priserna renderas i JS (oläst)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "saknas — Kegel däckskydd husvagn/husbil 195 kr och 'Bil Däckskydd 4 st' 445 kr (PriceRunner) är ÖVERDRAG, inte vaggor; Fiamma Tyre Saver ej hittad i svensk handel 2026-09-26": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Tjänsten: arborist 2 000–6 000 kr per träd (offerta.se 2026, 800–1 200 kr/h); angränsande form: Silky Hayauchi stångsåg 3,7 m 2 755 kr, Husqvarna Aspire P5 grensåg 1 949–2 390 kr, Ceiever teleskopgrensåg 8 m 1 990 kr": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Skotte Garden Värna Värmepumpskydd Smart (plåttak, annan form) — PriceRunner 2026-09-26; LuftX värmepumpstak 2 668": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Wildlife Garden Ekorrmatare (lockbox i trä)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "ej mätt — ingen svensk aktör i formen hittad": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "ej mätt i svensk handel — PriceRunner 'yankee flipper' 0 produkter, 'squirrel buster'/'roamwild'/'droll yankees' 0 relevanta (2026-09-27); Vivara-sök 'ekorrsäker' 0 produkter": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "ej mätt i exakt form — Panduro har DIY-kit läder-ampel (annan sak), Slöjd-Detaljer säljer läderbitar styckvis; färdig herrplånbok i läder som referens: The Chesterfield Brand Bergen 499 / Downholme 555 (PriceRunner 04:44:45Z)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
    "eurotrail/getcamping.se": {
     "ja": 3,
     "kanske": 0,
@@ -1431,10 +1605,10 @@
   },
   "ankare_klass": {
    "≥ 1,6×": {
-    "ja": 25,
+    "ja": 30,
     "kanske": 7,
     "nej": 17,
-    "score": 0.578
+    "score": 0.616
    },
    "1,3–1,6×": {
     "ja": 23,
@@ -1449,16 +1623,16 @@
     "score": 0.909
    },
    "ej mätt": {
-    "ja": 11,
-    "kanske": 0,
+    "ja": 17,
+    "kanske": 4,
     "nej": 10,
-    "score": 0.522
+    "score": 0.606
    },
    "1,2–1,3×": {
-    "ja": 7,
+    "ja": 8,
     "kanske": 1,
     "nej": 2,
-    "score": 0.708
+    "score": 0.731
    },
    "ingen aktör": {
     "ja": 2,
@@ -1487,40 +1661,40 @@
     "score": 0.5
    },
    "B_SKYDDA_DYRT": {
-    "ja": 16,
+    "ja": 19,
     "kanske": 1,
     "nej": 3,
-    "score": 0.795
+    "score": 0.82
    },
    "A_AGARE_FRIKTION": {
     "ja": 4,
-    "kanske": 4,
+    "kanske": 5,
     "nej": 4,
     "score": 0.5
    },
    "D_SNABBARE_METOD": {
-    "ja": 6,
+    "ja": 8,
     "kanske": 0,
     "nej": 3,
-    "score": 0.636
+    "score": 0.692
    },
    "H_VISUELL_NYHET": {
-    "ja": 11,
-    "kanske": 2,
+    "ja": 13,
+    "kanske": 4,
     "nej": 11,
-    "score": 0.5
+    "score": 0.533
    },
    "G_Q4_GAVA": {
-    "ja": 11,
+    "ja": 12,
     "kanske": 2,
     "nej": 6,
-    "score": 0.619
+    "score": 0.636
    },
    "E_VADER_SASONG": {
-    "ja": 14,
-    "kanske": 1,
+    "ja": 17,
+    "kanske": 2,
     "nej": 3,
-    "score": 0.775
+    "score": 0.792
    },
    "C_LAGA_ISTALLET": {
     "ja": 0,
@@ -1529,10 +1703,10 @@
     "score": 0.333
    },
    "F_HOBBY_IDENTITET": {
-    "ja": 2,
+    "ja": 3,
     "kanske": 0,
     "nej": 2,
-    "score": 0.5
+    "score": 0.571
    },
    "A4": {
     "ja": 3,
@@ -1575,16 +1749,16 @@
   },
   "deadline_typ": {
    "första snö": {
-    "ja": 6,
+    "ja": 7,
     "kanske": 1,
     "nej": 2,
-    "score": 0.682
+    "score": 0.708
    },
    "uppställning": {
-    "ja": 11,
+    "ja": 12,
     "kanske": 1,
     "nej": 1,
-    "score": 0.833
+    "score": 0.844
    },
    "höstregn": {
     "ja": 2,
@@ -1593,10 +1767,10 @@
     "score": 0.5
    },
    "älgjakt": {
-    "ja": 6,
+    "ja": 7,
     "kanske": 0,
     "nej": 1,
-    "score": 0.778
+    "score": 0.8
    },
    "jaktstart": {
     "ja": 1,
@@ -1617,28 +1791,28 @@
     "score": 0.9
    },
    "första frost": {
-    "ja": 13,
+    "ja": 14,
     "kanske": 2,
     "nej": 3,
-    "score": 0.75
+    "score": 0.762
    },
    "upptagning": {
-    "ja": 6,
+    "ja": 7,
     "kanske": 0,
     "nej": 2,
-    "score": 0.7
+    "score": 0.727
    },
    "vintermatning": {
-    "ja": 2,
-    "kanske": 0,
-    "nej": 0,
-    "score": 0.75
-   },
-   "fars dag": {
-    "ja": 3,
+    "ja": 5,
     "kanske": 1,
     "nej": 0,
-    "score": 0.75
+    "score": 0.812
+   },
+   "fars dag": {
+    "ja": 5,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.812
    },
    "invintring": {
     "ja": 1,
@@ -1665,10 +1839,10 @@
     "score": 0.667
    },
    "lövfällning": {
-    "ja": 3,
+    "ja": 5,
     "kanske": 1,
     "nej": 0,
-    "score": 0.75
+    "score": 0.812
    },
    "isläggning": {
     "ja": 1,
@@ -1678,9 +1852,9 @@
    },
    "mörker": {
     "ja": 3,
-    "kanske": 0,
+    "kanske": 3,
     "nej": 1,
-    "score": 0.667
+    "score": 0.611
    },
    "jul": {
     "ja": 10,
@@ -1698,9 +1872,9 @@
   "form": {
    "skydd": {
     "ja": 1,
-    "kanske": 1,
+    "kanske": 2,
     "nej": 0,
-    "score": 0.625
+    "score": 0.6
    },
    "överdrag": {
     "ja": 22,
@@ -1715,10 +1889,10 @@
     "score": 0.667
    },
    "huv": {
-    "ja": 6,
+    "ja": 7,
     "kanske": 1,
     "nej": 2,
-    "score": 0.682
+    "score": 0.708
    },
    "dyna": {
     "ja": 1,
@@ -1727,10 +1901,10 @@
     "score": 0.667
    },
    "annat": {
-    "ja": 22,
-    "kanske": 7,
+    "ja": 27,
+    "kanske": 10,
     "nej": 22,
-    "score": 0.5
+    "score": 0.541
    },
    "kalenderlåda": {
     "ja": 4,
@@ -1757,28 +1931,28 @@
     "score": 0.5
    },
    "låda": {
-    "ja": 2,
-    "kanske": 0,
-    "nej": 0,
-    "score": 0.75
-   },
-   "hus": {
-    "ja": 1,
-    "kanske": 0,
-    "nej": 1,
-    "score": 0.5
-   },
-   "kläder": {
     "ja": 4,
     "kanske": 0,
     "nej": 0,
     "score": 0.833
    },
-   "verktyg": {
+   "hus": {
+    "ja": 2,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.6
+   },
+   "kläder": {
     "ja": 5,
     "kanske": 0,
+    "nej": 0,
+    "score": 0.857
+   },
+   "verktyg": {
+    "ja": 7,
+    "kanske": 0,
     "nej": 2,
-    "score": 0.667
+    "score": 0.727
    },
    "klämma": {
     "ja": 0,
@@ -1855,10 +2029,10 @@
     "score": 0.667
    },
    "Husvagn/husbil — hjulen och däcken": {
-    "ja": 0,
+    "ja": 1,
     "kanske": 1,
     "nej": 0,
-    "score": 0.5
+    "score": 0.625
    },
    "Snöskoter på släpet": {
     "ja": 1,
@@ -1933,10 +2107,10 @@
     "score": 0.833
    },
    "Luftvärmepumpens utedel": {
-    "ja": 0,
+    "ja": 1,
     "kanske": 0,
     "nej": 1,
-    "score": 0.333
+    "score": 0.5
    },
    "Utekatten": {
     "ja": 4,
@@ -2227,10 +2401,10 @@
     "score": 0.667
    },
    "Hängrännor": {
-    "ja": 1,
+    "ja": 2,
     "kanske": 0,
     "nej": 0,
-    "score": 0.667
+    "score": 0.75
    },
    "Elcykel under skärmtak": {
     "ja": 1,
@@ -2478,6 +2652,84 @@
     "nej": 0,
     "score": 0.667
    },
+   "NYTT: Flugbindningssetet med bordsstäd — flugfiskarens vinterkvällar, egna flugor till premiären": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Utombordarens motorstöd på trailern — riggen vilar inte på trimmen": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Grindstolpen (murad/putsad pelare vid infarten) — lyktan som aldrig fick el": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "NYTT: Uppfarten/vedboden utan lyktstolpe — den flyttbara stolplyktan med vattenfylld fot": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "NYTT: De uppvärmda knävärmarna på passet och läktaren — kardborre runt knäet, tre värmelägen, ett per knä (okt–jan)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Den uppvärmda mössan på läktaren och hundpromenaden — USB-slinga i pannan, halskrage i samma set (nov–feb)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Staketstolparna (trästaket 4x4/95×95) — stolphatten som lyser": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "NYTT: Viltfoderpåsen på stammen — rådjuren vid skogskanten": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Trädets höga grenar över taket/uppfarten": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Ekorrburken på trädet — ekorren kryper in i glasburken": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Ekorrkonen på matarstolpen — ekorren fastnar under plåten": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "NYTT: Den viktstyrda fågelautomaten — sittpinnen snurrar av ekorren": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Läderplånbokssetet med förstansade delar — mannens kväll vid köksbordet, färdig plånbok i handen": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
    "Staketet — stolpen": {
     "ja": 2,
     "kanske": 0,
@@ -2505,10 +2757,10 @@
   },
   "prisband": {
    "500–999": {
-    "ja": 51,
-    "kanske": 8,
+    "ja": 58,
+    "kanske": 11,
     "nej": 25,
-    "score": 0.651
+    "score": 0.672
    },
    "≥ 1 000": {
     "ja": 12,
@@ -2517,10 +2769,16 @@
     "score": 0.722
    },
    "300–499": {
-    "ja": 23,
-    "kanske": 4,
+    "ja": 27,
+    "kanske": 5,
     "nej": 4,
-    "score": 0.788
+    "score": 0.803
+   },
+   "<300": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
    }
   }
  },
@@ -2604,6 +2862,7 @@
   "arketyp:B_SKYDDA_DYRT",
   "arketyp:D_SNABBARE_METOD",
   "arketyp:E_VADER_SASONG",
+  "arketyp:F_HOBBY_IDENTITET",
   "arketyp:G_Q4_GAVA",
   "arketyp:H_VISUELL_NYHET",
   "arketyp:verktyg",
@@ -2620,6 +2879,7 @@
   "deadline_typ:uppställning",
   "deadline_typ:upptagning",
   "deadline_typ:vedsäsong",
+  "deadline_typ:vintermatning",
   "deadline_typ:älgjakt",
   "form:annat",
   "form:huv",
@@ -2627,6 +2887,7 @@
   "form:kalenderlåda",
   "form:kläder",
   "form:koja",
+  "form:låda",
   "form:verktyg",
   "form:överdrag",
   "objekt:Barnbarnet — adventskalendern",

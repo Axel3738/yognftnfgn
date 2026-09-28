@@ -51,18 +51,18 @@
     "datum": "2026-09-09"
    },
    "meta": {
-    "spend": 173984.38,
-    "kop": 423,
-    "roas": 3.0033,
-    "cpa": 411.31,
+    "spend": 187001.19,
+    "kop": 445,
+    "roas": 2.949,
+    "cpa": 420.23,
     "be": 1.63,
-    "be_cpa": 757.83,
-    "vinstbidrag": 146577.96,
+    "be_cpa": 760.28,
+    "vinstbidrag": 151322.25,
     "band": "HIGH",
     "klass": "REAL_WINNER",
     "lutning": "positiv",
     "bekraftelse": "bekräftad (snapshot 2026-09-11)",
-    "last": "2026-09-27",
+    "last": "2026-09-28",
     "utfall": ">=BE"
    },
    "status": "vinnare",
@@ -146,7 +146,7 @@
     "klass": "REAL_WINNER",
     "lutning": "positiv (marginell, < 5 % från BE)",
     "bekraftelse": "bekräftad (snapshot 2026-09-11)",
-    "last": "2026-09-27",
+    "last": "2026-09-28",
     "utfall": ">=BE"
    },
    "status": "vinnare",
@@ -223,7 +223,7 @@
     "klass": "REAL_WINNER",
     "lutning": "positiv",
     "bekraftelse": "bekräftad (snapshot 2026-09-11)",
-    "last": "2026-09-27",
+    "last": "2026-09-28",
     "utfall": ">=BE"
    },
    "status": "vinnare",
@@ -358,7 +358,7 @@
     "klass": "REAL_LOSER",
     "lutning": "negativ",
     "bekraftelse": "bekräftad (snapshot 2026-09-23)",
-    "last": "2026-09-27"
+    "last": "2026-09-28"
    },
    "status": "forlorare",
    "aterupptas_om": [],
@@ -886,7 +886,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-27"
+    "last": "2026-09-28"
    },
    "status": "launchad",
    "aterupptas_om": [],
@@ -1685,18 +1685,18 @@
     "datum": "2026-09-19"
    },
    "meta": {
-    "spend": 19721.15,
-    "kop": 101,
-    "roas": 2.6771,
-    "cpa": 195.26,
+    "spend": 24510.72,
+    "kop": 123,
+    "roas": 2.6179,
+    "cpa": 199.27,
     "be": 1.61,
-    "be_cpa": 324.67,
-    "vinstbidrag": 13070.41,
+    "be_cpa": 324.02,
+    "vinstbidrag": 15344.25,
     "band": "HIGH",
     "klass": "REAL_WINNER",
     "lutning": "positiv",
     "bekraftelse": "bekräftad (snapshot 2026-09-23)",
-    "last": "2026-09-27"
+    "last": "2026-09-28"
    },
    "status": "vinnare",
    "aterupptas_om": [],
@@ -2029,7 +2029,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-27",
+    "last": "2026-09-28",
     "utfall": "launchad"
    },
    "status": "launchad",
@@ -2429,7 +2429,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-27",
+    "last": "2026-09-28",
     "utfall": "launchad"
    },
    "status": "launchad",
@@ -2811,7 +2811,7 @@
     "datum": "2026-09-23"
    },
    "meta": {
-    "spend": 377.65,
+    "spend": 1065.51,
     "kop": 0,
     "roas": null,
     "cpa": null,
@@ -2822,7 +2822,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-27"
+    "last": "2026-09-28"
    },
    "status": "forlorare",
    "aterupptas_om": [],
@@ -6335,7 +6335,7 @@
     "klass": "REAL_LOSER",
     "lutning": "negativ",
     "bekraftelse": "bekräftad (snapshot 2026-09-23)",
-    "last": "2026-09-27"
+    "last": "2026-09-28"
    },
    "status": "forlorare",
    "aterupptas_om": [
@@ -8636,7 +8636,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-27"
+    "last": "2026-09-28"
    },
    "status": "launchad",
    "aterupptas_om": [],
@@ -10229,7 +10229,7 @@
     "klass": "REAL_LOSER",
     "lutning": "negativ",
     "bekraftelse": "bekräftad (snapshot 2026-09-23)",
-    "last": "2026-09-27"
+    "last": "2026-09-28"
    },
    "status": "forlorare",
    "aterupptas_om": [
@@ -11267,7 +11267,7 @@
     "klass": "REAL_LOSER",
     "lutning": "negativ",
     "bekraftelse": "bekräftad (snapshot 2026-09-24)",
-    "last": "2026-09-27"
+    "last": "2026-09-28"
    },
    "status": "forlorare",
    "aterupptas_om": [],
@@ -11397,7 +11397,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-27",
+    "last": "2026-09-28",
     "utfall": "launchad"
    },
    "status": "launchad",
@@ -11450,18 +11450,18 @@
     "datum": "2026-09-11"
    },
    "meta": {
-    "spend": 31677.51,
-    "kop": 131,
-    "roas": 2.4766,
-    "cpa": 241.81,
+    "spend": 34942.09,
+    "kop": 142,
+    "roas": 2.4212,
+    "cpa": 246.07,
     "be": 1.61,
-    "be_cpa": 371.97,
-    "vinstbidrag": 17050.96,
+    "be_cpa": 370.06,
+    "vinstbidrag": 17606.58,
     "band": "HIGH",
     "klass": "REAL_WINNER",
     "lutning": "positiv",
     "bekraftelse": "bekräftad (snapshot 2026-09-12)",
-    "last": "2026-09-27",
+    "last": "2026-09-28",
     "utfall": ">=BE"
    },
    "status": "vinnare",
@@ -12232,18 +12232,18 @@
     "datum": "2026-09-22"
    },
    "meta": {
-    "spend": 6029.76,
-    "kop": 21,
-    "roas": 2.4198,
-    "cpa": 287.13,
+    "spend": 8452.22,
+    "kop": 29,
+    "roas": 2.3222,
+    "cpa": 291.46,
     "be": 1.62,
-    "be_cpa": 428.89,
-    "vinstbidrag": 2976.96,
+    "be_cpa": 417.8,
+    "vinstbidrag": 3663.86,
     "band": "HIGH",
     "klass": "REAL_WINNER",
     "lutning": "positiv",
     "bekraftelse": "bekräftad (snapshot 2026-09-24)",
-    "last": "2026-09-27"
+    "last": "2026-09-28"
    },
    "status": "vinnare",
    "aterupptas_om": [],
@@ -12485,18 +12485,18 @@
     "datum": "2026-09-24"
    },
    "meta": {
-    "spend": 2881.1,
-    "kop": 1,
-    "roas": 0.3155,
-    "cpa": 2881.1,
+    "spend": 2968.39,
+    "kop": 2,
+    "roas": 0.5013,
+    "cpa": 1484.19,
     "be": 1.64,
     "be_cpa": 554.27,
-    "vinstbidrag": -2326.83,
+    "vinstbidrag": -1859.84,
     "band": "MEANINGFUL",
     "klass": "REAL_LOSER",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-27"
+    "last": "2026-09-28"
    },
    "status": "forlorare",
    "aterupptas_om": [],
@@ -12623,7 +12623,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-27"
+    "last": "2026-09-28"
    },
    "status": "launchad",
    "aterupptas_om": [],
@@ -12764,7 +12764,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-27"
+    "last": "2026-09-28"
    },
    "status": "launchad",
    "aterupptas_om": [],
@@ -12905,7 +12905,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-27"
+    "last": "2026-09-28"
    },
    "status": "launchad",
    "aterupptas_om": [],
@@ -13021,20 +13021,20 @@
     "datum": "2026-09-25"
    },
    "meta": {
-    "spend": 1934.29,
-    "kop": 4,
-    "roas": 1.4503,
-    "cpa": 483.57,
+    "spend": 2715.43,
+    "kop": 6,
+    "roas": 1.6287,
+    "cpa": 452.57,
     "be": 1.63,
-    "be_cpa": 430.26,
-    "vinstbidrag": -213.24,
-    "band": "EARLY_SIGNAL",
-    "klass": "INSUFFICIENT_DATA",
-    "lutning": "negativ",
+    "be_cpa": 452.21,
+    "vinstbidrag": -2.16,
+    "band": "MEANINGFUL",
+    "klass": "REAL_LOSER",
+    "lutning": "negativ (marginell, < 5 % från BE)",
     "bekraftelse": "preliminär",
-    "last": "2026-09-27"
+    "last": "2026-09-28"
    },
-   "status": "launchad",
+   "status": "forlorare",
    "aterupptas_om": [],
    "historik": [
     {
@@ -13269,7 +13269,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "positiv",
     "bekraftelse": "preliminär",
-    "last": "2026-09-27"
+    "last": "2026-09-28"
    },
    "status": "launchad",
    "aterupptas_om": [],
@@ -13385,18 +13385,18 @@
     "datum": "2026-09-24"
    },
    "meta": {
-    "spend": 3353.22,
-    "kop": 18,
-    "roas": 4.992,
-    "cpa": 186.29,
+    "spend": 7746.89,
+    "kop": 33,
+    "roas": 3.9219,
+    "cpa": 234.75,
     "be": 1.63,
-    "be_cpa": 570.53,
-    "vinstbidrag": 6916.32,
-    "band": "MEANINGFUL",
+    "be_cpa": 564.83,
+    "vinstbidrag": 10892.64,
+    "band": "HIGH",
     "klass": "REAL_WINNER",
     "lutning": "positiv",
     "bekraftelse": "preliminär",
-    "last": "2026-09-27"
+    "last": "2026-09-28"
    },
    "status": "vinnare",
    "aterupptas_om": [],
@@ -15792,18 +15792,18 @@
     "datum": "2026-09-26"
    },
    "meta": {
-    "spend": 926.86,
-    "kop": 0,
-    "roas": null,
-    "cpa": null,
+    "spend": 1908.02,
+    "kop": 3,
+    "roas": 1.5476,
+    "cpa": 636.01,
     "be": 1.63,
-    "be_cpa": 355.21,
-    "vinstbidrag": null,
+    "be_cpa": 603.87,
+    "vinstbidrag": -96.42,
     "band": "EARLY_SIGNAL",
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-27"
+    "last": "2026-09-28"
    },
    "status": "launchad",
    "aterupptas_om": [],
@@ -23600,6 +23600,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-26T04:47:11Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-27",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-27/fynd-sida.json"
       }
      ]
     }
@@ -23648,10 +23653,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-27",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-28T08:45:34.124Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -23661,6 +23674,10 @@
     {
      "datum": "2026-09-26",
      "handelse": "levererad på V3-arket (rank 1, exploitation, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-27",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Repsågen för höga grenar 135 cm"
@@ -23698,6 +23715,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-26T04:45:44Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-27",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-27/fynd-sida.json"
       }
      ]
     }
@@ -23746,10 +23768,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-27",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-28T08:45:53.674Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -23759,6 +23789,10 @@
     {
      "datum": "2026-09-26",
      "handelse": "levererad på V3-arket (rank 2, exploitation, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-27",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Däckvaggorna under det uppställda hjulet, 2-pack"
@@ -23796,6 +23830,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-26T04:45:35Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-27",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-27/fynd-sida.json"
       }
      ]
     }
@@ -23844,10 +23883,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-27",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-28T08:46:01.323Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -23857,6 +23904,10 @@
     {
      "datum": "2026-09-26",
      "handelse": "levererad på V3-arket (rank 3, exploitation, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-27",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Motorstödet till utombordaren på trailern"
@@ -23894,6 +23945,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-26T04:46:50Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-27",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-27/fynd-sida.json"
       }
      ]
     }
@@ -23942,10 +23998,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-27",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-28T08:46:12.407Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -23955,6 +24019,10 @@
     {
      "datum": "2026-09-26",
      "handelse": "levererad på V3-arket (rank 4, exploitation, konfidens LÅG)"
+    },
+    {
+     "datum": "2026-09-27",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Luftvärmepumpens topphuv med remmar"
@@ -23992,6 +24060,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-26T04:47:04Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-27",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-27/fynd-sida.json"
       }
      ]
     }
@@ -24040,10 +24113,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-27",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-28T08:46:20.889Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -24053,6 +24134,10 @@
     {
      "datum": "2026-09-26",
      "handelse": "levererad på V3-arket (rank 5, exploitation, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-27",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Rännstaven till högtryckstvätten"
@@ -24090,6 +24175,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-26T04:44:24Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-27",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-27/fynd-sida.json"
       }
      ]
     }
@@ -24138,10 +24228,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-27",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-28T08:46:27.573Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -24151,6 +24249,10 @@
     {
      "datum": "2026-09-26",
      "handelse": "levererad på V3-arket (rank 6, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-27",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Läderplånbokssetet, 14 delar förstansade"
@@ -24188,6 +24290,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-26T04:52:26Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-27",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-27/fynd-sida.json"
       }
      ]
     }
@@ -24236,10 +24343,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-27",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-28T08:46:33.140Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -24249,6 +24364,10 @@
     {
      "datum": "2026-09-26",
      "handelse": "levererad på V3-arket (rank 7, sasong, konfidens LÅG)"
+    },
+    {
+     "datum": "2026-09-27",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Flugbindningssetet med städ, 6 delar"
@@ -24263,7 +24382,15 @@
    "arketyp": "E_VADER_SASONG",
    "arketyp_sekundar": "F_HOBBY_IDENTITET",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Den uppvärmda mössan på läktaren och hundpromenaden — USB-slinga i pannan, halskrage i samma set (nov–feb)",
+    "form": "kläder",
+    "arketyp": "E_VADER_SASONG",
+    "deadline_typ": "första frost",
+    "prisband": "300–499",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "saknas — Fjällräven Singi Heater Beanie 979 kr heter 'Heater' men är inte eluppvärmd; närmaste eluppvärmda kroppsplagg i fackhandeln är HeatX värmehandskar 1 000–1 569 kr (Hylte) och Härkila Heat-plagg 1 925–1 995 kr"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -24315,10 +24442,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-27",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-28T08:43:32.540Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -24328,6 +24463,10 @@
     {
      "datum": "2026-09-27",
      "handelse": "levererad på V3-arket (rank 1, exploitation, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-27",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Värmemössan 2-i-1 med halskrage"
@@ -24342,7 +24481,15 @@
    "arketyp": "E_VADER_SASONG",
    "arketyp_sekundar": "H_VISUELL_NYHET",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Uppfarten/vedboden utan lyktstolpe — den flyttbara stolplyktan med vattenfylld fot",
+    "form": "annat",
+    "arketyp": "E_VADER_SASONG",
+    "deadline_typ": "mörker",
+    "prisband": "500–999",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "Norlys Oslo stolpe stolplykta 238 cm — 230 V, kräver grävning och elektriker (annan form; strukturankare, inte formankare)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -24391,10 +24538,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-27",
+     "dom": "kanske",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-28T08:48:12.024Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "kanske",
    "aterupptas_om": [],
    "historik": [
     {
@@ -24404,6 +24559,10 @@
     {
      "datum": "2026-09-27",
      "handelse": "levererad på V3-arket (rank 2, exploitation, konfidens LÅG)"
+    },
+    {
+     "datum": "2026-09-27",
+     "handelse": "Axel: kanske "
     }
    ],
    "namn_sv": "Flyttbara solcellslyktan 2 m"
@@ -24418,7 +24577,15 @@
    "arketyp": "H_VISUELL_NYHET",
    "arketyp_sekundar": "E_VADER_SASONG",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Grindstolpen (murad/putsad pelare vid infarten) — lyktan som aldrig fick el",
+    "form": "annat",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "mörker",
+    "prisband": "500–999",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "ej mätt i samma form — 230 V-stolplyktor för pelare (Norlys, Konstsmide) kräver elektriker och ligger 3 800–10 000 kr på PriceRunner (annan form, ej ankare)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -24467,10 +24634,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-27",
+     "dom": "kanske",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-28T08:48:09.424Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "kanske",
    "aterupptas_om": [],
    "historik": [
     {
@@ -24480,6 +24655,10 @@
     {
      "datum": "2026-09-27",
      "handelse": "levererad på V3-arket (rank 3, exploration, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-27",
+     "handelse": "Axel: kanske "
     }
    ],
    "namn_sv": "Grindstolpens solcellslykta"
@@ -24494,7 +24673,15 @@
    "arketyp": "H_VISUELL_NYHET",
    "arketyp_sekundar": "I_FLERKOP",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Staketstolparna (trästaket 4x4/95×95) — stolphatten som lyser",
+    "form": "annat",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "mörker",
+    "prisband": "500–999",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "ej mätt — ingen märkesvara i formen hittad; NSH Nordic stolphatt svart med kula 9,7 cm 54,95 kr är den dyraste hatt-formen utan ljus"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -24543,10 +24730,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-27",
+     "dom": "kanske",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-28T08:48:04.356Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "kanske",
    "aterupptas_om": [],
    "historik": [
     {
@@ -24556,6 +24751,10 @@
     {
      "datum": "2026-09-27",
      "handelse": "levererad på V3-arket (rank 4, exploration, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-27",
+     "handelse": "Axel: kanske "
     }
    ],
    "namn_sv": "Staketstolparnas solcellshattar 2-pack"
@@ -24570,7 +24769,15 @@
    "arketyp": "E_VADER_SASONG",
    "arketyp_sekundar": "I_FLERKOP",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: De uppvärmda knävärmarna på passet och läktaren — kardborre runt knäet, tre värmelägen, ett per knä (okt–jan)",
+    "form": "annat",
+    "arketyp": "E_VADER_SASONG",
+    "deadline_typ": "älgjakt",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "'USB Elektrisk Uppvärmd Knästöd 120 Enkelpack' (generisk marknadsplatslistning, 1 st) — enda eluppvärmda knästödet på PriceRunner; svagt ankare utan varumärke"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -24622,10 +24829,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-27",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-28T08:47:54.256Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -24635,6 +24850,10 @@
     {
      "datum": "2026-09-27",
      "handelse": "levererad på V3-arket (rank 5, exploitation, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-27",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Knävärmarna 2-pack för passet"
@@ -24649,7 +24868,15 @@
    "arketyp": "H_VISUELL_NYHET",
    "arketyp_sekundar": "E_VADER_SASONG",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Den viktstyrda fågelautomaten — sittpinnen snurrar av ekorren",
+    "form": "annat",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "vintermatning",
+    "prisband": "500–999",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "ej mätt i svensk handel — PriceRunner 'yankee flipper' 0 produkter, 'squirrel buster'/'roamwild'/'droll yankees' 0 relevanta (2026-09-27); Vivara-sök 'ekorrsäker' 0 produkter"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -24712,10 +24939,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-27",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-28T08:47:43.957Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -24725,6 +24960,10 @@
     {
      "datum": "2026-09-27",
      "handelse": "levererad på V3-arket (rank 6, exploration, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-27",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Viktstyrda fågelautomaten som snurrar"
@@ -24739,7 +24978,15 @@
    "arketyp": "H_VISUELL_NYHET",
    "arketyp_sekundar": "E_VADER_SASONG",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Ekorrburken på trädet — ekorren kryper in i glasburken",
+    "form": "hus",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "vintermatning",
+    "prisband": "300–499",
+    "ankare_klass": "1,2–1,3×",
+    "ankare_kalla": "Wildlife Garden Ekorrmatare (lockbox i trä)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -24802,10 +25049,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-27",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-28T08:47:26.257Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -24815,6 +25070,10 @@
     {
      "datum": "2026-09-27",
      "handelse": "levererad på V3-arket (rank 7, exploration, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-27",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Ekorrburken i glas på trädet"
@@ -24829,7 +25088,15 @@
    "arketyp": "A_AGARE_FRIKTION",
    "arketyp_sekundar": "H_VISUELL_NYHET",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Ekorrkonen på matarstolpen — ekorren fastnar under plåten",
+    "form": "skydd",
+    "arketyp": "A_AGARE_FRIKTION",
+    "deadline_typ": "vintermatning",
+    "prisband": "300–499",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "ej mätt — ingen svensk aktör i formen hittad"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -24892,10 +25159,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-27",
+     "dom": "kanske",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-28T08:47:03.657Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "kanske",
    "aterupptas_om": [],
    "historik": [
     {
@@ -24905,6 +25180,10 @@
     {
      "datum": "2026-09-27",
      "handelse": "levererad på V3-arket (rank 8, sasong, konfidens LÅG)"
+    },
+    {
+     "datum": "2026-09-27",
+     "handelse": "Axel: kanske "
     }
    ],
    "namn_sv": "Ekorrkonen till matarstolpen"
@@ -24919,7 +25198,15 @@
    "arketyp": "E_VADER_SASONG",
    "arketyp_sekundar": "F_HOBBY_IDENTITET",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Viltfoderpåsen på stammen — rådjuren vid skogskanten",
+    "form": "annat",
+    "arketyp": "E_VADER_SASONG",
+    "deadline_typ": "vintermatning",
+    "prisband": "500–999",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "ej mätt i exakt form — Jaktia kategorin jakt/viltvard/foderautomater svarar 200 men priserna renderas i JS (oläst)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -24982,10 +25269,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-27",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-28T08:45:24.892Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -24995,6 +25290,10 @@
     {
      "datum": "2026-09-27",
      "handelse": "levererad på V3-arket (rank 9, sasong, konfidens LÅG)"
+    },
+    {
+     "datum": "2026-09-27",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Viltfoderpåsen för rådjur"

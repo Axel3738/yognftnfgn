@@ -3,43 +3,43 @@
 Läses av `/produktjakt` INNAN sökningen. Auto-delen räknas av `feedback.py vikter`; skriv aldrig i den för hand.
 
 <!-- auto:start -->
-Uppdaterad 2026-09-27. **125 svar** — ja 73, kanske 16, nej 36.
+Uppdaterad 2026-09-28. **141 svar** — ja 85, kanske 20, nej 36.
 
 ## Det Axel säger ja till
 
-- prisband **500–999**: 51 ja, 8 kanske, 25 nej → score 0.651
-- ankare_klass **≥ 1,6×**: 25 ja, 7 kanske, 17 nej → score 0.578
+- prisband **500–999**: 58 ja, 11 kanske, 25 nej → score 0.672
+- ankare_klass **≥ 1,6×**: 30 ja, 7 kanske, 17 nej → score 0.616
+- prisband **300–499**: 27 ja, 5 kanske, 4 nej → score 0.803
+- form **annat**: 27 ja, 10 kanske, 22 nej → score 0.541
 - ankare_klass **1,3–1,6×**: 23 ja, 2 kanske, 4 nej → score 0.806
-- prisband **300–499**: 23 ja, 4 kanske, 4 nej → score 0.788
 - form **överdrag**: 22 ja, 1 kanske, 2 nej → score 0.87
-- form **annat**: 22 ja, 7 kanske, 22 nej → score 0.5
+- arketyp **B_SKYDDA_DYRT**: 19 ja, 1 kanske, 3 nej → score 0.82
 - ankare_klass **golv utan ankare**: 18 ja, 2 kanske, 0 nej → score 0.909
-- arketyp **B_SKYDDA_DYRT**: 16 ja, 1 kanske, 3 nej → score 0.795
-- arketyp **E_VADER_SASONG**: 14 ja, 1 kanske, 3 nej → score 0.775
-- deadline_typ **första frost**: 13 ja, 2 kanske, 3 nej → score 0.75
+- arketyp **E_VADER_SASONG**: 17 ja, 2 kanske, 3 nej → score 0.792
+- ankare_klass **ej mätt**: 17 ja, 4 kanske, 10 nej → score 0.606
+- deadline_typ **första frost**: 14 ja, 2 kanske, 3 nej → score 0.762
+- arketyp **H_VISUELL_NYHET**: 13 ja, 4 kanske, 11 nej → score 0.533
+- deadline_typ **uppställning**: 12 ja, 1 kanske, 1 nej → score 0.844
 - prisband **≥ 1 000**: 12 ja, 0 kanske, 4 nej → score 0.722
-- deadline_typ **uppställning**: 11 ja, 1 kanske, 1 nej → score 0.833
-- arketyp **G_Q4_GAVA**: 11 ja, 2 kanske, 6 nej → score 0.619
-- ankare_klass **ej mätt**: 11 ja, 0 kanske, 10 nej → score 0.522
-- arketyp **H_VISUELL_NYHET**: 11 ja, 2 kanske, 11 nej → score 0.5
+- arketyp **G_Q4_GAVA**: 12 ja, 2 kanske, 6 nej → score 0.636
 
 ## Det Axel säger nej till
 
-- prisband **500–999**: 25 nej, 51 ja → score 0.651
-- form **annat**: 22 nej, 22 ja → score 0.5
+- prisband **500–999**: 25 nej, 58 ja → score 0.672
+- form **annat**: 22 nej, 27 ja → score 0.541
 - deadline_typ **jul**: 18 nej, 10 ja → score 0.375
-- ankare_klass **≥ 1,6×**: 17 nej, 25 ja → score 0.578
-- arketyp **H_VISUELL_NYHET**: 11 nej, 11 ja → score 0.5
-- ankare_klass **ej mätt**: 10 nej, 11 ja → score 0.522
-- arketyp **G_Q4_GAVA**: 6 nej, 11 ja → score 0.619
+- ankare_klass **≥ 1,6×**: 17 nej, 30 ja → score 0.616
+- arketyp **H_VISUELL_NYHET**: 11 nej, 13 ja → score 0.533
+- ankare_klass **ej mätt**: 10 nej, 17 ja → score 0.606
+- arketyp **G_Q4_GAVA**: 6 nej, 12 ja → score 0.636
 - arketyp **A_AGARE_FRIKTION**: 4 nej, 4 ja → score 0.5
 - prisband **≥ 1 000**: 4 nej, 12 ja → score 0.722
 - ankare_klass **1,3–1,6×**: 4 nej, 23 ja → score 0.806
-- prisband **300–499**: 4 nej, 23 ja → score 0.788
-- arketyp **D_SNABBARE_METOD**: 3 nej, 6 ja → score 0.636
-- deadline_typ **första frost**: 3 nej, 13 ja → score 0.75
-- arketyp **E_VADER_SASONG**: 3 nej, 14 ja → score 0.775
-- arketyp **B_SKYDDA_DYRT**: 3 nej, 16 ja → score 0.795
+- prisband **300–499**: 4 nej, 27 ja → score 0.803
+- arketyp **D_SNABBARE_METOD**: 3 nej, 8 ja → score 0.692
+- deadline_typ **första frost**: 3 nej, 14 ja → score 0.762
+- arketyp **E_VADER_SASONG**: 3 nej, 17 ja → score 0.792
+- arketyp **B_SKYDDA_DYRT**: 3 nej, 19 ja → score 0.82
 
 ## Orsakerna han anger
 
@@ -78,6 +78,7 @@ Uppdaterad 2026-09-27. **125 svar** — ja 73, kanske 16, nej 36.
 - arketyp:B_SKYDDA_DYRT
 - arketyp:D_SNABBARE_METOD
 - arketyp:E_VADER_SASONG
+- arketyp:F_HOBBY_IDENTITET
 - arketyp:G_Q4_GAVA
 - arketyp:H_VISUELL_NYHET
 - arketyp:verktyg
@@ -94,6 +95,7 @@ Uppdaterad 2026-09-27. **125 svar** — ja 73, kanske 16, nej 36.
 - deadline_typ:uppställning
 - deadline_typ:upptagning
 - deadline_typ:vedsäsong
+- deadline_typ:vintermatning
 - deadline_typ:älgjakt
 - form:annat
 - form:huv
@@ -101,6 +103,7 @@ Uppdaterad 2026-09-27. **125 svar** — ja 73, kanske 16, nej 36.
 - form:kalenderlåda
 - form:kläder
 - form:koja
+- form:låda
 - form:verktyg
 - form:överdrag
 - objekt:Barnbarnet — adventskalendern
