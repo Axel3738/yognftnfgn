@@ -1,0 +1,104 @@
+{
+  "hub_id": "c5a270ab-908c-83e3-b721-81fde8643080",
+  "rond": "2026-09-27",
+  "bra": [
+    "All three rules from the 2026-09-24 review held: every CPA stands against break-even 347 kr in the same sentence (CS_3 185 kr / 26, SP_4_H1 127 kr / 9, RI_1_H1 309 kr / 23); no hook tells the viewer to do the chore; every live parent carries its Meta ad id and the duplicate `Variables:` line is gone.",
+    "Seven briefs in three declared families, one variable each: three new openings on the KPI winner SP_4_H1 (fog / fitting / blackout), problem length + in media res + a static twin on the spend winner RI_1_H1, and the lesson's named hook iteration on the breakthrough CS_3.",
+    "The season correction is in every brief (never `30 grader`, never `inför sommaren`), the store-neutral rules for the CaraShell mirror too, and the parent's own typo `Två månar` is caught and corrected.",
+    "Price 559 / 932 / 373 / 40 %, 211 × 171 cm, 90 cm flaps, `två minuter`, `kläms i dörrkarmen`, `ingen ser in`, `utanpå glaset, inte innanför` are all the page's own (read live from the product page 2026-09-28).",
+    "Every video has a direction table with the parent's file as source per row and NEW FOOTAGE marked where a shot does not exist."
+  ],
+  "missat": [
+    "Rows too dense to speak or read: RI_1_H2 row 3 (`Du hinner knappt sätta dig i förarsätet innan du torkar imman som samlats mellan glas och gardin i natt.`, 18 words in 2 s) and row 5 (18 words in 2 s), RI_1_H3 row 2 (14 words in 2 s) and row 3 (13 words in 3 s) — the Inomhustofflor hub's rule is three words per second, and it applies here too. Cut the lines or give them the seconds.",
+    "RI_1_H3 row 2 reads `Kvällen innan var det en annan morgon` — the evening before was a different morning. Read aloud it is nonsense; `Morgonen innan var en annan.` says it. And RI_1_H2 spells the plural `mornar` in H1 and `morgnar` in H3 — one spelling per brief.",
+    "RI_1_H2 needs three NEW FOOTAGE takes (cloth on the fogged glass, the driver's seat from the side door, the cup on the dashboard), SP_4_H2 and SP_4_H4 one each — all only in table cells. The Taköverdraget hub's rule since 2026-09-24 is a `NEW FOOTAGE` block at the top with the fallback; the editors are the same people.",
+    "CS_13_1 is the lesson's iteration 1 on CS_3 but named as a new concept (`CS_13_1`, with `plats=Termoskydd_CS_9_1` in the tags) — docs/naming-convention.md keeps the parent's number and bumps the variant; and its COPY CARD headline is the entire primary text (three sentences), not a headline.",
+    "Small things: the Source column labels a Notion page id as `DRIVE 3db270ab…` (the bracket explains it, the label misleads); the on-screen text in RI_1_H2 row 6 and RI_1_H3 row 5 ends `932 kr..`; `First frame (thumbnail): … no text burned in — no text burned in` is a template echo in four briefs."
+  ],
+  "regler": [
+    "A video row carries at most three words per second: an 18-word line never sits on a 2-second row (RI_1_H2 rows 3 and 5, RI_1_H3 row 2) — cut the line or give it the seconds.",
+    "Every Swedish line is read aloud before it goes out: `Kvällen innan var det en annan morgon` says the evening was a morning — write `Morgonen innan var en annan.`; and one spelling per brief (`mornar` or `morgnar`, never both).",
+    "Footage the editor must shoot new goes in a `NEW FOOTAGE` block at the top of the brief with its fallback — RI_1_H2's three dawn takes are found row by row today."
+  ],
+  "rader": [
+    {
+      "namn": "Termoskydd_CS_13_1",
+      "fel": [],
+      "anmarkningar": [
+        "Named as a new concept though it is iteration 1 on CS_3 (the lesson's named slot) — the family should be readable in the name.",
+        "COPY CARD headline is the whole primary text — a headline is one short line.",
+        "Sub-line dates the ad to September (`en kylig septembermorgon`) — it will still run in October."
+      ],
+      "bra": [
+        "The mechanism as the hook on the proven price layout, one variable against CS_4_1, no urgency."
+      ]
+    },
+    {
+      "namn": "Termoskydd_SP_4_H4",
+      "fel": [],
+      "anmarkningar": [
+        "Row 1 is NEW FOOTAGE (inside the cab, cover on) — put it in a block at the top with the fallback.",
+        "Template echo in the thumbnail line (`no text burned in — no text burned in`)."
+      ],
+      "bra": [
+        "Blackout as the first picture — the page's own `ingen ser in`, untested as an opening; the body is the parent's."
+      ]
+    },
+    {
+      "namn": "Termoskydd_SP_4_H3",
+      "fel": [],
+      "anmarkningar": [
+        "Clean one-variable test; the fitting shot exists in the parent, NEW FOOTAGE only as fallback — say that at the top too."
+      ],
+      "bra": [
+        "`kläms fast i dörrkarmen … ingen dörr öppnas` is the page's own line."
+      ]
+    },
+    {
+      "namn": "Termoskydd_SP_4_H2",
+      "fel": [],
+      "anmarkningar": [
+        "Row 1 is NEW FOOTAGE (dawn fog from the driver's seat, shared with RI_1_H2) — flag it at the top; the shared take is a good idea, name it in both briefs."
+      ],
+      "bra": [
+        "Problem opener feeding the best-converting body — the read-out (spend share against 7 %) is stated."
+      ]
+    },
+    {
+      "namn": "Termoskydd_RI_2_1",
+      "fel": [],
+      "anmarkningar": [
+        "Fine. The static twin asks the right question (frame vs body); `Två mornar` is an accepted plural but the hub also writes `morgnar` — pick one."
+      ],
+      "bra": [
+        "Parent's typo corrected; the frame exported from the delivered file, not rebuilt."
+      ]
+    },
+    {
+      "namn": "Termoskydd_RI_1_H3",
+      "fel": [],
+      "anmarkningar": [
+        "Row 2 `Kvällen innan var det en annan morgon` is nonsense read aloud — `Morgonen innan var en annan.`",
+        "Row 2: 14 words in 2 s; row 3: 13 words in 3 s — too dense.",
+        "Row 5 on-screen text ends `932 kr..` (double period).",
+        "Row 3 and the dry-inside shot in row 4 are NEW FOOTAGE — flag at the top."
+      ],
+      "bra": [
+        "Result-first order on the spend winner, the third manuscript-list step, with the same closing graphic."
+      ]
+    },
+    {
+      "namn": "Termoskydd_RI_1_H2",
+      "fel": [],
+      "anmarkningar": [
+        "Rows 3 and 5 are 18 words on 2-second rows — unspeakable; cut or re-time.",
+        "Three NEW FOOTAGE takes (rows 2, 3, 4) only in table cells — a block at the top with the fallback.",
+        "`mornar` (H1) and `morgnar` (H3) in the same brief.",
+        "Row 6 on-screen text ends `932 kr..`."
+      ],
+      "bra": [
+        "Longer problem section isolated against hold 15 %; opening kept frame for frame with the typo corrected."
+      ]
+    }
+  ]
+}
