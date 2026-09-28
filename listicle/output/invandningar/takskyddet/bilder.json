@@ -1,24 +1,35 @@
 {
   "punkt2": {
-    "nyckel": "aac6c8fcae60",
-    "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/1da26f87611bef988e6daac3dffd6634_1790509405781.png?v=1790509414",
+    "nyckel": "29a357bc793f",
+    "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/takoverdrag-innan-du-koper-punkt2.jpg?v=1790606469",
     "width": 1024,
     "height": 1024,
-    "via": "bildarkiv",
-    "kie_url": "https://tempfile.aiquickdraw.com/as/1da26f87611bef988e6daac3dffd6634_1790509405781.png",
-    "taskId": "1da26f87611bef988e6daac3dffd6634",
+    "via": "files",
+    "kie_url": "https://tempfile.aiquickdraw.com/nano-banana-runninghub/1790606431195-htbr6d3ug8e.jpg",
+    "taskId": "2db3b93d3df25a64d51640ddb70d45f0",
     "lokal": "/home/user/yognftnfgn/listicle/output/invandningar/takskyddet/bilder/punkt2.png",
-    "datum": "2026-09-27"
+    "datum": "2026-09-28"
   },
   "punkt6": {
-    "nyckel": "9d8ba299a63d",
-    "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/490a6d0f2c5432b138241eb76e7e3ec3_1790509424915.png?v=1790509432",
+    "nyckel": "000e1b9edb71",
+    "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/takoverdrag-innan-du-koper-punkt6.jpg?v=1790606527",
     "width": 1024,
     "height": 1024,
-    "via": "bildarkiv",
-    "kie_url": "https://tempfile.aiquickdraw.com/as/490a6d0f2c5432b138241eb76e7e3ec3_1790509424915.png",
-    "taskId": "490a6d0f2c5432b138241eb76e7e3ec3",
+    "via": "files",
+    "kie_url": "https://tempfile.aiquickdraw.com/nano-banana-runninghub/1790606520974-a9poxz85607.jpg",
+    "taskId": "8cb9ae271cc6e82cb902dded2d423ba4",
     "lokal": "/home/user/yognftnfgn/listicle/output/invandningar/takskyddet/bilder/punkt6.png",
-    "datum": "2026-09-27"
+    "datum": "2026-09-28"
+  },
+  "punkt3": {
+    "nyckel": "29454501d3d6",
+    "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/takoverdrag-innan-du-koper-punkt3.jpg?v=1790606498",
+    "width": 1024,
+    "height": 1024,
+    "via": "files",
+    "kie_url": "https://tempfile.aiquickdraw.com/nano-banana-runninghub/1790606490948-c4vb67wtf5.jpg",
+    "taskId": "eeec6a987e3a8212b0e91025a81857f6",
+    "lokal": "/home/user/yognftnfgn/listicle/output/invandningar/takskyddet/bilder/punkt3.png",
+    "datum": "2026-09-28"
   }
 }

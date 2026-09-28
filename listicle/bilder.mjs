@@ -149,7 +149,10 @@ export async function losBilder(poster, produkt, { cache = {}, igen = [], torr =
     if (hamta && sparaLokalt) {
       try { lokal = await sparaLokalt(plats, await hamta(g.url)); } catch (e) { logg(`    ⚠ kunde inte spara lokal kopia: ${e.message}`); }
     }
-    const filnamn = `${filnamnBas}-${plats}.png`;
+    // Filändelsen följer kie-filen: Shopify avvisar fileCreate när filnamnets
+    // ändelse inte stämmer med källan (mätt 2026-09-28: kie gav en .jpg).
+    const ext = (String(g.url).split('?')[0].match(/\.(png|jpe?g|webp)$/i)?.[1] ?? 'png').toLowerCase();
+    const filnamn = `${filnamnBas}-${plats}.${ext}`;
     const upp = await laddaUpp(g.url, { filnamn, alt: `${produkt.kortTitel ?? ''} – lagerrensning, ${plats}`.trim() });
     if (!upp?.src) throw new Error(`${plats}: uppladdningen gav ingen URL.`);
     bilder[plats] = { src: upp.src, width: upp.width, height: upp.height, kalla: `kie → ${upp.via}` };

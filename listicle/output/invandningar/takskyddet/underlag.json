@@ -1,5 +1,5 @@
 {
-  "hamtat": "2026-09-28T13:49:10.947Z",
+  "hamtat": "2026-09-28T14:40:09.212Z",
   "koncept": "invandningar",
   "kommando": "/invandningar",
   "punkter": 7,
@@ -177,6 +177,6 @@
     "id": "carashell/takskyddet",
     "fil": "products/carashell/takskyddet/dna.md"
   },
-  "sidhandle": "takoverdrag-husvagn-husbil-5-5-13-5-m-innan-du-koper",
-  "sidhandle_kalla": null
+  "sidhandle": "takoverdrag-innan-du-koper",
+  "sidhandle_kalla": "--handle"
 }

@@ -2618,3 +2618,25 @@ original … Reversera alla ändringar på den"). Bakgrund: sessionen skrev om d
 originalcopyn (commit df8d184) publicerades om och lästes tillbaka förbi cachen:
 4 originalfraser, 0 omskrivningar. Han gillar den men använder den inte. Rör
 aldrig den sidan igen.
+
+## LP "Innan du köper" (Sverige) byggd 2026-09-28 — `/invandningar`, svensk sida i CaraShell
+
+Live: https://carashell.se/pages/takoverdrag-innan-du-koper?country=SE (obrandad, 7 punkter,
+mall `page.listicle`, läst tillbaka som svensk kund utan header/footer, 9 tabellrader ritade av
+butiken med `?variant=`). Axels order: bygg en ny sida utifrån strukturen i den amerikanska
+`rv-roof-cover-before-you-buy` (som är fryst och inte rörd), med Sverige-rapporten
+(`kommentarer/rapporter/sverige-2026-09-28.md`) som underlag — rapportens sida 2 "Din längd,
+ditt pris" hos CaraShell. Pristabellen står överst UTAN jämförpriskolumn (`copy.pristabell.jamforpris:
+false`, ny i motorn samma dag: ett högre pris under "Ordinarie pris" är ett prissänkningsbesked
+enligt PPL 7a § och 1 469 kr är inte belagt som tidigare pris). Punkterna: 1 storleken (en kund
+7,2 m hittade bara 6,5), 2 fukten + takluckorna (distansdelen utan datum/pris, luft under duken),
+3 "husbilar är byggda för att stå ute" (skarvarna, grannens grönsvarta tak), 4 remmarna och lacken
+(sebran; tillverkarens ord om lacken, märken i blåst okänt), 5 vad som ingår, 6 solceller/antenn/
+helintegrerad/alkov, 7 förtroendet (ångerrätt 14 dagar från mottagandet, returfrakten på kunden).
+Alla kundcitat ur CaraShells egna svenska kommentarer. Det obekräftade står som "inget svar från
+tillverkaren". Ingen färg, ingen vindgräns, inget "torrt tak", inga "30–40 cm", ingen lagerhistoria,
+inget "från 1 129 kr" på knapparna. Granskad av sex oberoende granskare (26 fynd, alla rättade).
+Bilder: produktbild 1, 5, 4, 3, 8 + tre kie-bilder av KUNDENS tak utan överdrag (takluckor efter
+regn, grönsvart tak under träd, alkovbil med solpanel och antenn). Studiobilden (2) används inte:
+den visar överdraget på en helintegrerad, vilket sidan säger att vi inte vet. Annonserna pekar
+INTE dit ännu — Axels klick.

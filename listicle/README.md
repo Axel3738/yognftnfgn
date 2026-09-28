@@ -351,3 +351,8 @@ på samma CDN och är publika oavsett status; kunden ser aldrig en
 DRAFT-produkt. **Radera aldrig den produkten** — då försvinner bilderna från
 sidorna. Finns `SHOPIFY_CLIENT_ID_SE_BAVER_SE` (appen med alla scopes) i
 miljön används Innehåll → Filer i stället, automatiskt.
+
+
+### Pristabell utan jämförpris (2026-09-28)
+
+`copy.pristabell.jamforpris: false` ritar tabellen utan kolumnen "Ordinarie pris": sidans body får `data-lp-jmf="nej"` och `templates/page.listicle.liquid` hoppar då `lr-pris-forr`. Standard är oförändrad (den frysta USA-sidan ritas som förut). Svenska sidor ska ha den avslagen så länge jämförpriset inte är belagt som lägsta pris de senaste 30 dagarna (PPL 7a §). Första: https://carashell.se/pages/takoverdrag-innan-du-koper?country=SE.
