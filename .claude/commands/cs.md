@@ -135,6 +135,7 @@ har dödat vinnare två gånger. Kortversion av kraven:
   vinklar. En ny vinkel = annan avatar, annat begär eller annan känslomässig
   ingång; samma löfte med nya ord är en iteration (punkt 19).
 - Varje annons: hypotes, vad som behålls/ändras, format, exakt hook, komplett brief enligt leveransformatet i `.claude/commands/forsta-batch.md` (engelska briefer, `Swedish (use this) | English meaning`-tabeller, naming-strukturen, upptagna AD-ID:n avlästa i kontot).
+- **Varje videobrief har scentabellen** (`docs/copy-regler.md` → "Sätt det i proportion", Axels beslut 2026-09-28 ur Norillo-annonsen): minst 3 vardagsscener ur research (kommentarer, recensioner, produktsidan), minst 2 av typerna comparison/before/after/time/act/people, minst en `after` (vardagen efteråt), en i manusrad 1–2, varje scen ordagrant i manuset. Huvudsessionen väljer scenerna; subagenten skriver raderna runt dem. `briefgranskning.mjs --rad/--manifest` stoppar utan dem.
 - **Varje videobrief har regitabellen** (`docs/os/BRIEF-REGI.md`, Axels beslut
   2026-09-21): en rad per manusrad — Time | Script line | Audio | On-screen
   text | Picture | Effect + length | Source | Reference | Latitude — plus
@@ -179,7 +180,7 @@ har dödat vinnare två gånger. Kortversion av kraven:
 - [ ] Batchstorlek ≥ kvoten (quota-output visad)
 - [ ] Copy/voiceover skriven av sonnet/haiku-subagent, strategi av huvudmodellen
 - [ ] Briefer på engelska, naming korrekt, zip-paketerade
-- [ ] Varje videobrief: regitabell enligt `docs/os/BRIEF-REGI.md`; varje brief: komponenttaggar + `tro` + `Memo:` + `lardom=L-…`; `node tools/briefgranskning.mjs --rad/--manifest` grön INNAN Notion-raderna skapades (utskriften visad)
+- [ ] Varje videobrief: regitabell enligt `docs/os/BRIEF-REGI.md` + scentabell (copy-regler.md → "Sätt det i proportion": ≥ 3 scener, en `after`, en i rad 1–2); varje brief: komponenttaggar + `tro` + `Memo:` + `lardom=L-…`; `node tools/briefgranskning.mjs --rad/--manifest` grön INNAN Notion-raderna skapades (utskriften visad)
 - [ ] Lärdom skriven för varje etiketterad annons i förra batchen (`products/<id>/lardomar.md`), briefer ≤ lärdomar, mixen ur etiketterna redovisad (levande breakthrough ja/nej ⇒ 80/20 åt vilket håll)
 - [ ] `kommentarer.md` uppdaterad för top spendern; kluster ≥ 3 ⇒ INVAND-variant i batchen, namngiven med vinkelkoden `OB`
 - [ ] `invandningar.md` läst FÖRE batchen och uppdaterad EFTER (`tools/invandningsmatris.mjs`): tomma rutor briefade före iterationer (i funnelläge > 10 000 kr/dag: varje obesvarad invändning ≥ 10 % har en brief), ingen fylld ruta briefad igen, täckningsraden i rapporten

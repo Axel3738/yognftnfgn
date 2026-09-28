@@ -19,7 +19,7 @@ import {
   valjRond, redanGranskad, hittaBatch, nastaGranskning, harSektion, domFor, giltigDom, kommentarText, feedbackSektion, laggInSektion,
   feedbackRadMarkdown, feedbackEgenskaper, byggRapport, samlaKorning,
   REGI_FRAN, SPARRKODER, KOMPONENT_TAGGAR, manusrader, regiUr, granskaRegi, giltigKalla, komponentUr, sparra, spegelPris,
-  tolkaMatstrumporNamn,
+  tolkaMatstrumporNamn, SCEN_FRAN, SCENTYPER, scenTyp, scenerUr, granskaScener,
 } from '../briefgranskning.mjs';
 import { serUtSomSvenska } from '../lib/engelska.mjs';
 
@@ -762,7 +762,7 @@ Proof-first beats problem-first on hook rate at equal CPA.
 |---|---|---|
 | 0:00–0:03 | En strumpa blöt. En strumpa torr. Samma tur. | One sock wet. One sock dry. Same hike. |
 | 0:03–0:10 | Benet utan damask: snön kryper in vid kängans kant. | The leg without a gaiter: snow creeps in at the boot's edge. |
-| 0:10–0:15 | Damasker, 389 kr per par. | Gaiters, 389 kr per pair. |
+| 0:10–0:15 | Torra strumpor hela vägen till fikat. Damasker, 389 kr per par. | Dry socks all the way to the coffee stop. Gaiters, 389 kr per pair. |
 
 ## 4. Direction — one row per script line (docs/os/BRIEF-REGI.md)
 **Assets:** Drive folder DryTrek/Damasker (id 1AbCdEf) · CDN: https://cdn.shopify.com/s/files/1/x/damask-krok.jpg
@@ -773,7 +773,14 @@ Proof-first beats problem-first on hook rate at equal CPA.
 |---|---|---|---|---|---|---|---|---|---|
 | 1 | 0:00–0:03 | En strumpa blöt. En strumpa torr. Samma tur. | VO | En strumpa blöt. En strumpa torr. | Close-up, top-down: two socks side by side on the trail, left dark with water, right dry; hands hold them up. First frame: this shot. | freeze 0.5 s then cut-in | OUR AD Damasker_PD_1 0:14–0:18 | parent's proof shot, same framing | none |
 | 2 | 0:03–0:10 | Benet utan damask: snön kryper in vid kängans kant. | VO | NO TEXT | Medium shot from the side: the bare leg, slush at the boot's top edge, the gaiter leg beside it with the hook in the lacing visible. | slow-mo 0.5× 2 s | DRIVE 1AbCdEf 0:22 | — | b-roll order free |
-| 3 | 0:10–0:15 | Damasker, 389 kr per par. | VO | Damasker, 389 kr per par. | Wide shot: both legs walking away on the trail; price card bottom third. | none | DRIVE 1AbCdEf [EDITOR PICKS: look for the walking-away shot on the wet trail] | — | music free |
+| 3 | 0:10–0:15 | Torra strumpor hela vägen till fikat. Damasker, 389 kr per par. | VO | Torra strumpor hela vägen till fikat. Damasker, 389 kr per par. | Wide shot: both legs walking away on the trail; price card bottom third. | none | DRIVE 1AbCdEf [EDITOR PICKS: look for the walking-away shot on the wet trail] | — | music free |
+
+## 4b. Scenes — the product in proportion (docs/copy-regler.md)
+| Scene | Type | Script line | Source |
+|---|---|---|---|
+| En strumpa blöt. En strumpa torr. | comparison | 1 | our own test, parent 0:14 |
+| snön kryper in vid kängans kant | before | 2 | Judge.me review 2026-08-30 |
+| Torra strumpor hela vägen till fikat | after | 3 | ad comment on Damasker_PD_1 |
 
 ## 5. Three-question test (docs/copy-regler.md) — every delivered line
 | Line | Visualise? | Falsifiable? | Only we can say it? |
@@ -889,6 +896,61 @@ test('granskaBrief: video med regi + komponenttaggar + Memo är ren; regi-FEL ba
   assert.equal(ogiltig.fel.length, 0);
 });
 
+test('granskaScener: Norillo-regeln — 3 scener, 2 typer, en after, ordagrant i manus, en i hooken, källa per scen', () => {
+  assert.equal(SCEN_FRAN, '2026-09-28');
+  assert.deepEqual(SCENTYPER, ['comparison', 'before', 'after', 'time', 'act', 'people']);
+  assert.equal(scenTyp('efteråt'), 'after');
+  assert.equal(scenTyp('**jämförelse**'), 'comparison');
+  assert.equal(scenTyp('vibe'), null);
+  const s = scenerUr(VIDEO_REGI);
+  assert.equal(s.finns, true);
+  assert.deepEqual(s.rader.map((r) => r.typ), ['comparison', 'before', 'after']);
+  const bra = granskaScener(VIDEO_REGI);
+  assert.deepEqual(bra.stopp, [], JSON.stringify(bra.stopp));
+  assert.deepEqual(bra.anm, []);
+  assert.equal(bra.antal, 3);
+  assert.equal(granskaScener(somNotionDump(VIDEO_REGI)).stopp.length, 0, 'Notion-dumpen läses likadant');
+  // Ingen tabell.
+  const ingen = granskaScener(VIDEO_REGI.replace(/## 4b\. Scenes[\s\S]*?\n\n(?=## 5)/, ''));
+  assert.match(ingen.stopp[0], /no scene table/);
+  // Ingen after-scen.
+  const utanEfter = granskaScener(VIDEO_REGI.replace('| Torra strumpor hela vägen till fikat | after |', '| Torra strumpor hela vägen till fikat | time |'));
+  assert.ok(utanEfter.stopp.some((t) => /no "after" scene/.test(t)), JSON.stringify(utanEfter.stopp));
+  // Scen som inte står i manuset.
+  const paHittad = granskaScener(VIDEO_REGI.replace('| Torra strumpor hela vägen till fikat | after |', '| Rakt in på macken efter turen | after |'));
+  assert.ok(paHittad.stopp.some((t) => /not word for word in any script line/.test(t)));
+  // Ingen källa, och en gissning (anmärkning, inte stopp).
+  const utanKalla = granskaScener(VIDEO_REGI.replace('| Judge.me review 2026-08-30 |', '| — |').replace('| ad comment on Damasker_PD_1 |', '| guess |'));
+  assert.ok(utanKalla.stopp.some((t) => /has no source/.test(t)));
+  assert.ok(utanKalla.anm.some((t) => /marked as a guess/.test(t)));
+  // Bara en typ, ogiltig typ, för få scener, ingen scen i hooken.
+  const enTyp = granskaScener(VIDEO_REGI.replace('| comparison |', '| after |').replace('| before |', '| after |'));
+  assert.ok(enTyp.stopp.some((t) => /at least 2 different types/.test(t)));
+  const ogiltig = granskaScener(VIDEO_REGI.replace('| before |', '| vibe |'));
+  assert.ok(ogiltig.stopp.some((t) => /scene type "vibe"/.test(t)));
+  const tva = granskaScener(VIDEO_REGI.replace(/\| snön kryper in[^\n]*\n/, ''));
+  assert.ok(tva.stopp.some((t) => /^2 scenes/.test(t)));
+  const senHook = granskaScener(VIDEO_REGI.replace('| En strumpa blöt. En strumpa torr. | comparison |', '| 389 kr per par | time |').replace(/\| snön kryper in[^\n]*\n/, '| Damasker | people | 3 | x |\n'));
+  assert.ok(senHook.stopp.some((t) => /no scene in script line 1 or 2/.test(t)), JSON.stringify(senHook.stopp));
+});
+
+test('granskaBrief + sparra: scenerna stoppar nya videobriefer i spärrläget, är anmärkning i granskningen, rör aldrig äldre briefer eller bilder', () => {
+  const utan = VIDEO_REGI.replace(/## 4b\. Scenes[\s\S]*?\n\n(?=## 5)/, '');
+  const ny = granskaBrief({ ...RAD_VIDEO, text: utan }, CTX_VIDEO);
+  assert.equal(ny.fel.length, 0, 'scenerna är aldrig ett FEL till redigeraren');
+  assert.ok(ny.anmarkningar.some((a) => a.kod === 'scen'));
+  const gammal = granskaBrief({ ...RAD_VIDEO, skapad_dag: '2026-09-25', text: utan }, CTX_VIDEO);
+  assert.ok(!gammal.anmarkningar.some((a) => /^scen/.test(a.kod)), 'briefer före SCEN_FRAN granskas inte på scener');
+  assert.ok(!granskaBrief({ ...RAD, text: BRA }, CTX).anmarkningar.some((a) => /^scen/.test(a.kod)), 'bildbriefer berörs inte');
+  const rad = { namn: 'Damasker_PD_12_H1', typ: 'video', text: utan };
+  const s = sparra([rad], CTX_VIDEO);
+  assert.equal(s.ok, false);
+  assert.equal(s.rader[0].stopp[0].kod, 'scen');
+  const gissning = sparra([{ ...rad, text: VIDEO_REGI.replace('| ad comment on Damasker_PD_1 |', '| guess |') }], CTX_VIDEO);
+  assert.equal(gissning.ok, true, 'en gissad källa stoppar inte — den blir en anmärkning');
+  assert.equal(granskaBrief({ ...RAD_VIDEO, text: VIDEO_REGI }, CTX_VIDEO).fakta.scener, 3);
+});
+
 test('komponentUr: fasta listor, alias (source/desire/season/slow-motion), typ N med parent, typ I utan', () => {
   assert.deepEqual(KOMPONENT_TAGGAR, ['typ', 'koncept', 'kalla', 'avatar', 'awareness', 'begar', 'mekanism', 'tro', 'urgency', 'hook-mekanik', 'confidence', 'lardom']);
   const ok = komponentUr({ typ: 'N', koncept: 'x', kalla: 'voc', avatar: 'a', awareness: 'unaware', begar: 'protect-what-i-own', mekanism: 'm', tro: 't', urgency: 'season', 'hook-mekanik': 'slow-motion', confidence: 'low', lardom: 'L-1, L-2' });
@@ -917,7 +979,7 @@ test('komponentUr: fasta listor, alias (source/desire/season/slow-motion), typ N
 });
 
 test('sparra: FEL och SPARRKODER stoppar; H-varianter med samma hook-mekanik och 5 typ N utan voc är rondfel', () => {
-  assert.deepEqual(SPARRKODER, ['regi', 'taggar', 'komponent']);
+  assert.deepEqual(SPARRKODER, ['regi', 'taggar', 'komponent', 'scen']);
   const rad = (namn, text) => ({ namn, typ: 'video', text: text.replace(/Damasker_PD_12_H1/g, namn), fil: `${namn}/brief.md` });
   const ren = sparra([rad('Damasker_PD_12_H1', VIDEO_REGI)], CTX_VIDEO);
   assert.equal(ren.ok, true, JSON.stringify(ren.rader[0]));

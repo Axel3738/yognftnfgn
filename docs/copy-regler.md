@@ -64,6 +64,64 @@ Räkna om till den ram där siffran blir slående — men den ska förbli sann.
 
 ---
 
+## Sätt det i proportion — scenerna (Norillo-regeln, Axels beslut 2026-09-28)
+
+Axels iakttagelse ur Norillos arbetssko-annons (hela genomgången:
+`docs/swipes/norillo-armor-flex-swipe.md`): produkten är "en sketen
+arbetssko", men varje rad sätter den i en situation kunden redan har levt.
+"Jeg kan gå rett til bensinstasjonen etter jobb uten å bytte sko" säljer mer
+än "snygg och bekväm", för kunden ser sig själv göra det. Det är
+tre-frågorstestet i praktiken — men regeln gäller **manuset, inte varje
+mening** (Axel: "vi behöver inte applya det på varje mening").
+
+**Sex scentyper** (engelska namn — de står i briefen):
+
+| Typ | Vad | Norillo |
+|---|---|---|
+| `comparison` | Något kunden redan känner, gärna två ytterligheter i samma rad | "som om du går på ski … beskyttelse som en norsk stridsvogn" |
+| `before` | Den gamla smärtan med tid och plats | "føttene mine har tidligere skreket etter ti timer på betong" |
+| `after` | **Vardagsscenen efteråt** — det kunden nu kan göra som den inte kunde | "rett til bensinstasjonen etter jobb uten å bytte sko" |
+| `time` | Hur länge det har hållit | "brukt mine i syv måneder" |
+| `act` | Det kunden gjorde på grund av produkten | "etter første vakt kastet jeg alle gamle arbeidssko" |
+| `people` | Andra människor i scenen | "alle gutta på byggeplassen vil ha et par" |
+
+Siffror sätts i proportion på samma sätt: inte "45 % lättare" ensamt, utan
+"førti fem prosent lettere enn de betongkrossene jeg brukte før" — jämfört med något kunden
+har burit.
+
+**Kravet per videobrief** (mäts av `tools/briefgranskning.mjs`, stoppar i
+spärrläget innan Notion-raden skapas; briefer skrivna före 2026-09-28 och
+bildbriefer berörs inte):
+
+1. **Minst 3 scener, minst 2 olika typer.**
+2. **Minst en `after`.** Det är scenen varje video behöver — vardagen efter köpet.
+3. **En scen i manusrad 1 eller 2.** Hooken är där tittaren bestämmer sig;
+   en `comparison` eller en `before` hör hemma där.
+4. **Varje scen står ordagrant i en manusrad.** En scen tittaren aldrig hör
+   gör ingenting.
+5. **Varje scen har en källa:** recension, annonskommentar
+   (`kommentarer/leads.md`, `products/<id>/kommentarer.md`), produktsidan,
+   vårt eget test. Scenen ska vara SANN (falsifierbar) — "gick till macken
+   utan att byta skor" måste vara något en kund faktiskt gör. Saknas källa:
+   skriv `guess`; det stoppar inte, men nästa rond ska hitta beläggen.
+
+Tabellen i briefen, efter regitabellen:
+
+```
+## Scenes — the product in proportion (docs/copy-regler.md)
+| Scene | Type | Script line | Source |
+|---|---|---|---|
+| <svenska frasen, ordagrant ur manuset> | after | 5 | Judge.me review 2026-08-30 / comment <id> / product page |
+```
+
+**Var scenerna kommer ifrån:** research, aldrig huvudet. Leta efter
+situationer i kundens egna ord — vad de gjorde innan, vad de gör nu, vem som
+såg. Subagenten som skriver copyn (regel 6) får scenlistan tillsammans med
+den här filen och skriver raderna runt scenerna; huvudsessionen väljer
+scenerna.
+
+---
+
 ## Processregler (för den som bygger briefer/statics)
 
 - **Butikens namn står aldrig i annonsen** (Axels beslut 2026-09-18). Inte

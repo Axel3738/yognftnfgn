@@ -108,7 +108,9 @@ const KOMPONENT_ALIAS = { ny: 'N', imiterad: 'IM', imitation: 'IM', imitated: 'I
 /** Regitabellen krävs som FEL från och med den här briefdagen; äldre briefer får bara anmärkning (kalibreringen 2026-09-18: en regel som inte fanns när briefen skrevs ska inte bli en kommentar till redigeraren). */
 export const REGI_FRAN = '2026-09-21';
 /** Anmärkningskoder som stoppar i spärrläget (--rad/--manifest): där är skrivaren sessionen själv och kan rätta innan Notion-raden skapas. */
-export const SPARRKODER = Object.freeze(['regi', 'taggar', 'komponent']);
+export const SPARRKODER = Object.freeze(['regi', 'taggar', 'komponent', 'scen']);
+/** Scenerna (docs/copy-regler.md → "Sätt det i proportion", Axels beslut 2026-09-28 ur Norillo-annonsen) krävs på videobriefer från den här dagen. Äldre briefer granskas inte på det. */
+export const SCEN_FRAN = '2026-09-28';
 /** Veckodagar rutinen går (JS: 1 = måndag, 4 = torsdag). */
 export const GRANSKNINGSDAGAR = Object.freeze([1, 4]);
 /** Markören som gör kommentaren igenkännbar, så en omkörning aldrig skriver den två gånger. */
@@ -547,6 +549,69 @@ export function granskaRegi(text) {
   return { fel, anm, tackning: `${tackta}/${manus.length || regi.rader.length}` };
 }
 
+// ------------------------------------------------------------ scenerna (Norillo-regeln, 2026-09-28)
+
+/**
+ * De sex scentyperna (docs/copy-regler.md → "Sätt det i proportion"). Norillos
+ * arbetssko-annons bär alla sex: "går på ski / norsk stridsvogn" (comparison),
+ * "ti timer på betong" (before), "rett til bensinstasjonen uten å bytte sko"
+ * (after), "brukt i syv måneder" (time), "kastet alle gamle arbeidssko" (act),
+ * "alle gutta på byggeplassen vil ha et par" (people).
+ */
+export const SCENTYPER = Object.freeze(['comparison', 'before', 'after', 'time', 'act', 'people']);
+const SCENALIAS = { jamforelse: 'comparison', jämförelse: 'comparison', compare: 'comparison', fore: 'before', före: 'before', efter: 'after', efterat: 'after', efteråt: 'after', tid: 'time', handling: 'act', action: 'act', folk: 'people', andra: 'people', social: 'people' };
+export function scenTyp(s) {
+  const t = utanFet(String(s ?? '')).replace(/`/g, '').trim().toLowerCase();
+  return SCENTYPER.includes(t) ? t : SCENALIAS[t] ?? null;
+}
+
+/** Scentabellen: rubrikraden har en Scene- och en Type-kolumn. Returnerar { finns, rader: [{scen, typ, rå, kalla}] }. */
+export function scenerUr(text) {
+  const rader = rad(text);
+  const start = rader.findIndex((r) => /\|/.test(r) && celler(r).some((c) => /^(scene|scen)\b/i.test(c)) && celler(r).some((c) => /^(type|typ)\b/i.test(c)));
+  if (start === -1) return { finns: false, rader: [] };
+  const t = tabellFran(rader, start);
+  const i = (re) => t.rubriker.findIndex((c) => re.test(c));
+  const iScen = i(/^(scene|scen)\b/), iTyp = i(/^(type|typ)\b/), iKalla = i(/^(source|källa|kalla)\b/);
+  const ut = t.rader.map((c) => ({ scen: (c[iScen] ?? '').replace(/^[“”"«»']+|[“”"«»']+$/g, '').trim(), rå: (c[iTyp] ?? '').trim(), typ: scenTyp(c[iTyp]), kalla: iKalla === -1 ? '' : (c[iKalla] ?? '').trim() })).filter((r) => r.scen);
+  return { finns: true, rader: ut };
+}
+
+/**
+ * Scenspärren för en videobrief. Ren. Inte varje mening — hela manuset
+ * (Axel 2026-09-28: "vi behöver inte applya det på varje mening"):
+ * minst 3 scener, minst 2 typer, minst en `after` (vardagen efteråt), varje
+ * scen ordagrant i en manusrad, en scen i rad 1 eller 2, och en källa per
+ * scen. Returnerar { stopp: [text], anm: [text], antal }.
+ */
+export function granskaScener(text) {
+  const stopp = [];
+  const anm = [];
+  const hjalp = 'six types: comparison (something the customer already knows) · before (the old pain with time and place) · after (an everyday scene the customer can do now) · time (how long it has held) · act (what they did because of it) · people (others in the scene); docs/copy-regler.md → "Sätt det i proportion"';
+  const s = scenerUr(text);
+  if (!s.finns) {
+    stopp.push(`no scene table (Scene | Type | Script line | Source) — a video brief carries at least 3 real-life scenes that put the product in proportion; ${hjalp}`);
+    return { stopp, anm, antal: 0 };
+  }
+  const manus = manusrader(text).map(normRad);
+  if (s.rader.length < 3) stopp.push(`${s.rader.length} scene${s.rader.length === 1 ? '' : 's'} — at least 3 per video; ${hjalp}`);
+  for (const r of s.rader.filter((x) => !x.typ)) stopp.push(`scene type "${r.rå || '(empty)'}" for \`${r.scen}\` is not one of ${SCENTYPER.join(' | ')}`);
+  const typer = new Set(s.rader.map((r) => r.typ).filter(Boolean));
+  if (s.rader.length >= 3 && typer.size < 2) stopp.push(`all scenes are "${[...typer][0] ?? '?'}" — at least 2 different types, so the script does more than one thing`);
+  if (!typer.has('after')) stopp.push('no "after" scene — the everyday moment the customer can now have (Norillo: "straight to the petrol station after work without changing shoes"); this is the one scene every video needs');
+  let tidig = false;
+  for (const r of s.rader) {
+    const n = normRad(r.scen);
+    const i = manus.findIndex((m) => m.includes(n));
+    if (i === -1) stopp.push(`scene \`${r.scen}\` is not word for word in any script line — a scene the viewer never hears does nothing`);
+    else if (i <= 1) tidig = true;
+    if (!r.kalla || /^[-–—]$/.test(r.kalla)) stopp.push(`scene \`${r.scen}\` has no source (review, comment, product page, our own test) — a scene must be true`);
+    else if (/\b(guess|gissning)\b/i.test(r.kalla)) anm.push(`scene \`${r.scen}\` is marked as a guess — find a review or comment that says it before the next round`);
+  }
+  if (manus.length && !tidig && s.rader.length) stopp.push('no scene in script line 1 or 2 — the hook is where the viewer decides; put a comparison or a before-scene there');
+  return { stopp, anm, antal: s.rader.length };
+}
+
 /**
  * Komponenttaggarna ur en taggrad: saknade och ogiltiga värden. Ren.
  * typ I/M kräver parent; typ N kräver kalla. Fasta listor i KOMPONENT_VARDEN.
@@ -792,6 +857,16 @@ export function granskaBrief(r, ctx = {}) {
     for (const t of regi.anm) A('regi', t);
   }
 
+  // 8b2. Scenerna (Norillo-regeln, Axels beslut 2026-09-28): produkten satt i
+  //      proportion med vardagsscener. Kod `scen` stoppar i spärrläget; i
+  //      måndag/torsdag-granskningen är den bara en anmärkning till skrivaren.
+  let scener = null;
+  if (typ === 'video' && harTextTabell && (!r.skapad_dag || String(r.skapad_dag) >= SCEN_FRAN)) {
+    scener = granskaScener(text);
+    for (const t of scener.stopp) A('scen', t);
+    for (const t of scener.anm) A('scen-kalla', t);
+  }
+
   // 8c. Komponenttaggarna (2.12): typ/koncept/källa/avatar/awareness/begär/
   //     mekanism/urgency/hook-mekanik/confidence + Memo-raden. Skrivarens sak.
   const komponent = komponentUr(taggar?.taggar);
@@ -811,7 +886,7 @@ export function granskaBrief(r, ctx = {}) {
 
   return {
     fel, anmarkningar: anm,
-    fakta: { koncept: t.koncept, nummer: t.nummer, variant: t.variant, typ, ar_variant: variant, isolerad: isoleradVariabel(text), taggar: taggar?.taggar ?? null, pris_brief: p, trefragor: tre.finns, image_prompt: Boolean(prompt), regi: regi ? regi.tackning : null, komponent_typ: komponent.typ, parent: komponent.parent },
+    fakta: { koncept: t.koncept, nummer: t.nummer, variant: t.variant, typ, ar_variant: variant, isolerad: isoleradVariabel(text), taggar: taggar?.taggar ?? null, pris_brief: p, trefragor: tre.finns, image_prompt: Boolean(prompt), regi: regi ? regi.tackning : null, scener: scener ? scener.antal : null, komponent_typ: komponent.typ, parent: komponent.parent },
   };
 }
 
@@ -1493,7 +1568,7 @@ function lasSparrRad(fil, { namn = null, typ = null } = {}) {
 function skrivSparr(res, { json = false } = {}) {
   if (json) { console.log(JSON.stringify(res, null, 2)); return; }
   for (const r of res.rader) {
-    console.log(`${r.ok ? '✅' : '❌'} ${r.namn} (${r.typ})${r.fakta?.regi ? ` · regi ${r.fakta.regi}` : ''}${r.fakta?.komponent_typ ? ` · typ ${r.fakta.komponent_typ}` : ''}`);
+    console.log(`${r.ok ? '✅' : '❌'} ${r.namn} (${r.typ})${r.fakta?.regi ? ` · regi ${r.fakta.regi}` : ''}${r.fakta?.scener != null ? ` · scener ${r.fakta.scener}` : ''}${r.fakta?.komponent_typ ? ` · typ ${r.fakta.komponent_typ}` : ''}`);
     for (const f of r.fel) console.log(`   🔴 FEL ${f.kod}: ${f.text}`);
     for (const a of r.stopp) console.log(`   🟠 STOPP ${a.kod}: ${a.text}`);
     for (const a of r.anmarkningar) console.log(`   ⚠️  ${a.kod}: ${a.text}`);
