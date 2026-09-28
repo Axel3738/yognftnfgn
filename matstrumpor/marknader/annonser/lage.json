@@ -1,6 +1,6 @@
 {
  "_om": "Skrivet av annonser/bygg.mjs efter tillbakaläsning ur kontot.",
- "skrivet": "2026-09-28T16:58:39.885Z",
+ "skrivet": "2026-09-28T17:10:06.805Z",
  "kampanjer": [
   {
    "kod": "NO",
@@ -64,7 +64,26 @@
     "id": "120251749605630023",
     "namn": "MATSTRUMP_FI_ugc"
    },
-   "annonser": []
+   "annonser": [
+    {
+     "id": "120251767836390023",
+     "name": "MATSTRUMP_FI_sushi_jul_ugc_003_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251767833370023",
+     "name": "MATSTRUMP_FI_sushi_gift_ugc_002_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251767830080023",
+     "name": "MATSTRUMP_FI_sushi_gift_ugc_001_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    }
+   ]
   },
   {
    "kod": "US",
@@ -241,7 +260,26 @@
     "id": "120251750322480023",
     "namn": "MATSTRUMP_PL_ugc"
    },
-   "annonser": []
+   "annonser": [
+    {
+     "id": "120251767868150023",
+     "name": "MATSTRUMP_PL_sushi_jul_ugc_003_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251767864530023",
+     "name": "MATSTRUMP_PL_sushi_gift_ugc_002_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251767862200023",
+     "name": "MATSTRUMP_PL_sushi_gift_ugc_001_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    }
+   ]
   },
   {
    "kod": "PT",
