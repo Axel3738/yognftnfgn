@@ -2,91 +2,328 @@
   "_kommentar": "Svenska invändningssidan för taköverdraget i CaraShell (carashell.se), byggd 2026-09-28 på Axels order: 'Detta är den amerikanska listicle och vi ska bygga en ny utifrån denna strukturen' (rv-roof-cover-before-you-buy, fryst som original). Innehållet kommer ur Sverige-rapporten kommentarer/rapporter/sverige-2026-09-28.md (198 svenska kommentarer, 74 på CaraShells annonser) och rapportens sida 2 'Din längd, ditt pris' (CaraShell först: produktsidan visar inget pris per längd, låg under break-even 1,51 tre dagar i rad, och alla tre klagomål på uteblivet svar om längd och pris kom hos CaraShell). Kundcitaten är CaraShells egna kommentarer (kommentarer/logg/2026-09.jsonl, verksamhet CaraShell, marknad SE). Fakta bara ur CaraShells svenska produktsida 2026-09-28, kommentarer/produktfakta.md och rapporten. Det obekräftade står som 'inget svar från tillverkaren', aldrig 'vi har frågat' (Axels beslut 2026-09-27). Ingen färg, ingen vindgräns, inget 'torrt tak', ingen minutsiffra, inget 'en person', ingen lagerhistoria, inga butiksnamn, inga konkurrentnamn.",
   "hero": {
     "rubrik": "1 129 kr är priset för de två kortaste överdragen. Här är priset för din längd, och raka svar på allt annat ni frågat om.",
-    "ingress": "Över 70 av er har skrivit under annonserna sedan mitten av september, och samma frågor kommer tillbaka varje dag. Måste det inte vara luft emellan? Finns min längd, och vad kostar den? Tål inte en husbil regn ändå? Den här sidan tar dem i tur och ordning, och där vi inte vet svaret står det i stället för en gissning.",
-    "knapp": "Se alla nio längder och priser → från 1 129 kr",
+    "ingress": "Ni har skrivit över 70 kommentarer under annonserna sedan mitten av september, och samma frågor kommer tillbaka hela tiden. Måste det inte vara luft emellan? Finns min längd, och vad kostar den? Tål inte en husbil regn ändå? Här tar vi dem en i taget, och där vi inte vet svaret säger vi det hellre än att gissa.",
+    "knapp": "Se priset för din längd →",
     "sammanfattning": [
       "Överdraget finns i nio längder, från 5,5 till 13,5 meter, och alla är 3 meter breda. Priserna går från 1 129 kr till 2 239 kr, och hela listan står direkt här under, med en knapp per längd som öppnar just den storleken på produktsidan.",
-      "Efter tabellen kommer de sju saker ni frågar mest om: storleken, fukten under överdraget, varför man ska täcka ett tak som tål regn, remmarna mot lacken, vad som ingår, det som sitter på taket och vad du har om det inte passar. Där vi saknar svar från tillverkaren står det rakt ut."
+      "Efter tabellen kommer de sju saker ni frågar mest om: storleken, fukten under överdraget, varför man ska täcka ett tak som tål regn, remmarna mot lacken, vad som ingår, det som sitter på taket och vad du har om det inte passar."
     ]
   },
   "pristabell": {
     "rubrik": "Din längd, ditt pris",
-    "text": "Alla nio är 3 meter breda. Mät hur lång vagnen är från front till bakkant, utan dragstången, och ta den storlek som är minst lika lång. Priset i tabellen gäller ett överdrag. På produktsidan finns också paket med två eller tre, och paketrutan öppnar med två valda, så har du en vagn väljer du 1 st där.",
+    "text": "Alla nio är 3 meter breda. Mät vagnen från framkant till bakkant, utan dragstången, och ta den längd som är minst lika lång. Priset gäller ett överdrag. På produktsidan är två överdrag förvalda i paketrutan, så har du bara en vagn byter du till 1 st där.",
     "knapp": "Öppna den här längden →",
-    "fot": "Hamnar vagnen mellan två längder tar du den längre. En husbil på 7,2 meter tar alltså 7,5, och en vagn på 8,3 meter tar 8,5. Vill du ha två olika längder, en till husvagnen och en till husbilen, väljer du en storlek per överdrag i paketrutan."
+    "fot": "Hamnar vagnen mellan två längder tar du den längre. En husbil på 7,2 meter tar alltså 7,5, och en vagn på 8,3 meter tar 8,5. Vill du ha två olika längder, en till husvagnen och en till husbilen, väljer du en storlek per överdrag i paketrutan.",
+    "jamforpris": false
   },
   "punkter": [
     {
       "rubrik": "1. Hittade du bara 6,5 meter? Alla nio längder finns, upp till 13,5.",
-      "text": "Flera av er har skrivit att ni bara hittade 6,5 meter när ni skulle beställa, fast husbilen är 7,2 meter eller vagnen 8,3. Längderna finns, men de ligger i paketrutan på produktsidan, där varje överdrag har en egen liten storleksväljare som är lätt att gå förbi. Tabellen här ovanför är samma nio längder, från 5,5 till 13,5 meter, och knappen på varje rad öppnar produktsidan med den längden vald. Mät vagnen från front till bakkant, utan dragstången, och ta den storlek som är minst lika lång. Eftersom paketrutan öppnar med två överdrag valda väljer du 1 st där om du har en vagn, och då blir priset det som står i tabellen.",
-      "knapp": "Se alla nio längder → från 1 129 kr"
+      "text": "En av er skrev att husbilen är 7,2 meter lång, men att bara 6,5 meter gick att hitta vid beställningen. En annan undrade om det finns ett överdrag till en vagn på 8,3 meter. Det gör det, för alla nio längder finns. På produktsidan väljer du längden i paketrutan, där varje överdrag har en egen liten storleksväljare, och den är lätt att gå förbi. Därför står samma nio längder i tabellen här ovanför. Trycker du på knappen vid din längd öppnas produktsidan med den redan vald, och det enda du behöver göra där är att byta till 1 st om du har en vagn.",
+      "knapp": "Hitta din längd i tabellen →"
     },
     {
       "rubrik": "2. Måste det inte vara luft emellan? Jo. Så gör du tills vidare.",
-      "text": "Det är den fråga vi får oftast, och ni som ställer den har rätt. Ligger ett vattentätt överdrag tätt mot taket kan fukt stängas in under det, och takluckorna hamnar under duken. Därför tar vi fram en distansdel som lyfter överdraget från taket, så att luften kan röra sig emellan. Den har inget datum och inget pris än, så vi lovar den inte här. Tills den finns kan du göra som några av er själva har föreslagit under annonserna: lägg något på taket som håller duken uppe, till exempel några reglar eller papprör, så att det blir en luftspalt. Lägg sedan på överdraget en torr dag, inte direkt efter ett regn.",
+      "text": "Det är den fråga vi får oftast, och ni som ställer den har rätt. Ligger ett vattentätt överdrag tätt mot taket kan fukt stängas in under det. Takluckorna och takventilerna hamnar dessutom under duken så länge överdraget ligger på, och om en lucka går att öppna då vet vi inte. Därför tar vi fram en distansdel som lyfter överdraget från taket, så att luften kan röra sig emellan. Den har inget datum och inget pris än, så vi lovar den inte här. Tills den finns kan du göra som en av er föreslog under annonserna: lägg något på taket som håller duken uppe, till exempel några papprör, så att det blir en luftspalt. Lägg sedan på överdraget en torr dag, inte direkt efter ett regn.",
       "knapp": "Se överdraget → nio längder, en bredd"
     },
     {
       "rubrik": "3. Husbilar är byggda för att stå ute. Varför täcka taket då?",
-      "text": "En av er skrev precis så, och en annan att ett tak inte förstörs av lite regn. Det stämmer. Kan vagnen stå under tak i vinter är det det bästa den kan få, och då behöver den inget överdrag. Det här är för er som måste ställa den ute. En ägare skriver att det inte är lacken som är problemet, utan skarvarna vid takluckorna, som sällan krånglar de första tio, femton åren men sedan bara är en tidsfråga. En annan beskriver grannens husbil, som stått utanför garaget i åratal med taket grönsvart av skit från träden. Överdraget täcker bara taket, och kanten hänger ner ungefär 30 till 40 cm över sidorna, så skarven mellan tak och vägg ligger under skydd. Regnet rinner av väven i stället för att bli stående vid takluckorna.",
+      "text": "En av er skrev precis så, och en annan att ett tak inte förstörs av lite regn. Det stämmer. Kan vagnen stå under tak i vinter är det det bästa den kan få, och då behöver den inget överdrag. Det här är för er som måste ställa den ute. En ägare skriver att det inte är lacken som är problemet, utan skarvarna vid takluckorna, som sällan krånglar de första tio, femton åren men sedan bara är en tidsfråga. En annan beskriver grannens husbil, som stått utanför garaget i åratal med taket grönsvart av skit från träden. Överdraget täcker bara taket, och kanten hänger ner en bit över sidorna. Hur långt beror på hur bred vagnen är. Regnet rinner av väven i stället för att bli stående vid takluckorna.",
       "knapp": "Se vad överdraget täcker →"
     },
     {
       "rubrik": "4. Blir husbilen en sebra till sommaren? Så sitter remmarna.",
-      "text": "Den husbilen kommer att se ut som en sebra till sommaren, skrev en av er, eftersom blåsten får banden att vibrera och nöta på sidorna. En annan har haft ett helöverdrag som mattade sidorna i blåsten, medan en tredje svarar att de aldrig fått märken efter banden på sina husbilar. Så här sitter de här remmarna. De är vävda i ett mjukt material, inte gummi, och töjs inte ut. De sitter på alla fyra sidor, ställs in i ett spänne och hakar fast med en plastkrok under karossens nederkant, och två förstärkta remmar går dessutom tvärs över taket och håller duken nere. Om lacken säger tillverkaren att remmarna inte skadar den, och det är deras ord vi för vidare. Någon vindgräns ger vi dig inte, för det finns ingen att mäta. En ägare trär rörisolering på banden, och det tipset får du gärna ta med dig.",
+      "text": "Den husbilen kommer att se ut som en sebra till sommaren, skrev en av er, eftersom blåsten får banden att vibrera och nöta på sidorna. En annan har haft ett helöverdrag som mattade sidorna i blåsten, medan en tredje svarar att de aldrig fått märken efter banden på sina husbilar. Så här sitter de här remmarna. De är vävda i ett mjukt material, inte gummi, och töjs inte ut. De sitter på alla fyra sidor, ställs in i ett spänne och hakar fast med en krok under karossens nederkant. Tillverkaren säger att remmarna inte skadar lacken, och det är deras ord vi för vidare. Om remmarna kan lämna märken på sidorna när de rör sig i blåsten har vi inget svar på. En av er tipsade om att trä rörisolering på banden, och det tipset får du gärna ta med dig.",
       "knapp": "Se remmarna i närbild →"
     },
     {
-      "rubrik": "5. Finns det billigare duk på nätet? Säkert. Här är allt som ingår i den här.",
-      "text": "Några har skrivit att samma sak finns mycket billigare på nätet. Vi jämför oss inte med någon annans duk, men vi kan lägga allt som ingår i vår på bordet, så kan du jämföra själv. Du får ett överdrag i vattentät 210D-väv som tål sol, i din längd och 3 meter brett. Längs alla fyra sidor sitter vävda remmar på 2,5 meter, ställbara i ett spänne, och två förstärkta remmar på 10,5 meter följer med att dra tvärs över taket. När säsongen är slut viks alltihop ihop till en packe som du bär i famnen. Frakten är fri inom Sverige och leveransen tar 5 till 10 arbetsdagar.",
+      "rubrik": "5. Vad får du för pengarna? Här är allt som ingår.",
+      "text": "Vi jämför oss inte med någon annans duk. Men vi kan lägga korten på bordet och visa allt som ingår, så jämför du själv. Du får ett överdrag i vattentät 210D-väv som tål sol, i din längd och 3 meter brett. Längs alla fyra sidor sitter vävda remmar på 2,5 meter som ställs in i ett spänne, och i paketet ligger två förstärkta remmar på 10,5 meter som du drar över taket. När säsongen är slut viker du ihop överdraget till en packe som du bär i famnen. Frakten är fri inom Sverige och leveransen tar 5 till 10 arbetsdagar.",
       "knapp": "Se allt som ingår →"
     },
     {
       "rubrik": "6. Solceller, antenn, husbil? Det här vet vi, och det här vet vi inte.",
-      "text": "Solcellerna först, för där är svaret enkelt: överdraget läggs över dem, så de är täckta så länge det ligger på. Behöver batteriet laddas i vinter är det här inte lösningen, och en av er valde av just det skälet en genomskinlig presenning i stället. Överdraget passar både husvagn och husbil, och du mäter på samma sätt, från front till bakkant. Hur det lägger sig på en helintegrerad husbil eller en alkovbil, där taket inte är en enda plan yta, har vi inget svar från tillverkaren på. Samma sak gäller antennen, och om en taklucka går att öppna inifrån när överdraget ligger på. En av er frågade om öppningarna för luckorna och ventilen som syns på en av våra bilder. Om den bilden visar just den version vi skickar har vi inget svar på heller, så räkna inte med några öppningar.",
-      "knapp": "Se storlekarna → från 1 129 kr"
+      "text": "Solcellerna först, för där är svaret enkelt: överdraget läggs över dem, så de är täckta så länge det ligger på. Behöver batteriet laddas i vinter är det här inte lösningen, och en av er valde av just det skälet en genomskinlig presenning i stället. Överdraget passar både husvagn och husbil, och du mäter på samma sätt, från framkant till bakkant. Hur det lägger sig på en helintegrerad husbil eller en alkovbil, där taket inte är en enda plan yta, har vi inget svar från tillverkaren på. Detsamma gäller antennen. En av er frågade om det finns öppningar för luckor och ventil, och där är svaret att du inte ska räkna med några.",
+      "knapp": "Se storlekar och priser →"
     },
     {
       "rubrik": "7. Varför ska jag lita på er? Här är vad du har om det inte passar.",
-      "text": "Några av er har skrivit rakt ut att ni inte litar på oss. Ett par av er frågade dessutom om längderna och priserna under annonserna och fick vänta flera dagar på svar, och det var för länge. Därför står hela prislistan överst på den här sidan, så att priset för din längd syns innan du klickar och inte först i kassan. Frakten är fri och leveransen tar 5 till 10 arbetsdagar. Som alltid när du handlar på nätet har du 14 dagars ångerrätt, räknat från dagen du får paketet, men returfrakten står du för själv. Passar överdraget inte din vagn mejlar du oss inom de 14 dagarna, så hjälper vi dig med returen. Adressen står på produktsidan.",
+      "text": "Några av er har skrivit rakt ut att ni inte vill köpa av oss. Ett par av er frågade dessutom om längderna och priserna under annonserna och fick vänta flera dagar på svar, och det var för länge. Därför står hela prislistan överst på den här sidan, så att priset för din längd syns innan du klickar och inte först i kassan. Som alltid när du handlar på nätet har du 14 dagars ångerrätt, räknat från dagen du får paketet, och returfrakten står du för själv. Vill du ångra dig mejlar du oss inom de 14 dagarna, så får du returadressen och hjälp med resten. Mejladressen står under Vanliga frågor på produktsidan.",
       "knapp": "Till produktsidan → alla nio längder"
     }
   ],
   "fragor": {
     "rubrik": "Korta svar på resten ni frågat om",
     "lista": [
-      { "fraga": "Är det vattentätt?", "svar": "Ja. Väven är vattentät 210D och tål sol, så regnet rinner av i stället för att bli stående vid takluckorna." },
-      { "fraga": "Sitter det remmar fram och bak också, eller bara på långsidorna?", "svar": "På alla fyra sidor. De är vävda, 2,5 meter långa och ställbara i ett spänne, med en krok som hakar under karossens kant. Två förstärkta remmar på 10,5 meter går dessutom tvärs över taket." },
-      { "fraga": "Kan det ligga på hela vintern?", "svar": "Ja, det är tänkt att ligga på från höst till vår. Kommer det tung blötsnö skottar du av den, precis som du hade gjort utan överdrag. Hur mycket snö väven bär, och hur många vintrar den håller, har vi inget svar från tillverkaren på." },
-      { "fraga": "Skyddar det rutorna och tätningarna runt dem?", "svar": "Bara upptill. Kanten går över rutornas överkant men täcker aldrig nedre halvan av glaset, det säger tillverkaren själv. Hur långt ner den når beror på hur bred vagnen är." },
-      { "fraga": "Hjälper det mot solen, till exempel i Spanien?", "svar": "Väven tål sol. Om den håller nere värmen inne i vagnen vet vi inte, så det lovar vi inget om." },
-      { "fraga": "Tål det hagel?", "svar": "Det vet vi inte, och då lovar vi det inte heller." },
-      { "fraga": "Min vagn är 5,45 meter. Blir 5,5 för stort?", "svar": "Nej, ta 5,5. Det är den minsta storleken, och den är minst lika lång som vagnen. Hur långt ner kanten hänger beror på hur bred vagnen är." },
-      { "fraga": "Hur går det till att lägga på det?", "svar": "Du lägger packen på taket, tar tag i ena kortsidan och drar ut väven tills den täcker hela taket. Sedan går du runt vagnen, krokar fast remmarna under karossens nederkant sida för sida och drar åt dem i spännet. Sist kastar du de två förstärkta remmarna över taket och drar åt dem. Välj en dag utan blåst." },
-      { "fraga": "Hur snabbt kommer det?", "svar": "Frakten är fri inom Sverige, och leveransen tar 5 till 10 arbetsdagar." }
+      {
+        "fraga": "Är det vattentätt?",
+        "svar": "Ja. Väven är vattentät 210D och tål sol, så regnet rinner av i stället för att bli stående vid takluckorna."
+      },
+      {
+        "fraga": "Sitter det remmar fram och bak också, eller bara på långsidorna?",
+        "svar": "På alla fyra sidor. De är vävda, 2,5 meter långa och ställs in i ett spänne, med en krok som hakar under karossens kant. I paketet ligger dessutom två förstärkta remmar på 10,5 meter som dras över taket."
+      },
+      {
+        "fraga": "Kan det ligga på hela vintern?",
+        "svar": "Ja, det är tänkt att ligga på från höst till vår. Kommer det tung blötsnö skottar du av den, precis som du hade gjort utan överdrag. Hur mycket snö väven bär, och hur många vintrar den håller, har vi inget svar från tillverkaren på."
+      },
+      {
+        "fraga": "Skyddar det rutorna och tätningarna runt dem?",
+        "svar": "Bara upptill. Kanten kan gå ner över rutornas överkant, men den täcker aldrig nedre halvan av glaset, det säger tillverkaren själv. Hur långt ner den når beror på hur bred vagnen är."
+      },
+      {
+        "fraga": "Hjälper det mot solen, till exempel i Spanien?",
+        "svar": "Väven tål sol. Om den håller nere värmen inne i vagnen vet vi inte, så det lovar vi inget om."
+      },
+      {
+        "fraga": "Tål det hagel?",
+        "svar": "Det vet vi inte, och då lovar vi det inte heller."
+      },
+      {
+        "fraga": "Min vagn är 5,45 meter. Blir 5,5 för stort?",
+        "svar": "Nej, ta 5,5. Det är den minsta storleken, och den är minst lika lång som vagnen. Hur långt ner kanten hänger beror på hur bred vagnen är."
+      },
+      {
+        "fraga": "Hur går det till att lägga på det?",
+        "svar": "Du lägger packen på taket, tar tag i ena kortsidan och drar ut väven tills den täcker hela taket. Sedan går du runt vagnen, krokar fast remmarna under karossens nederkant sida för sida och drar åt dem i spännet. Sist kastar du de två förstärkta remmarna över taket och drar åt dem. Välj en dag utan blåst."
+      },
+      {
+        "fraga": "Hur snabbt kommer det?",
+        "svar": "Frakten är fri inom Sverige, och leveransen tar 5 till 10 arbetsdagar."
+      }
     ]
   },
   "lyckas": {
-    "rubrik": "Så vad gör de som beställer ändå?",
+    "rubrik": "Vill du prova ändå? Så gör du.",
     "stycken": [
-      "De mäter vagnen från front till bakkant, utan dragstången, tar samma längd eller närmast längre i tabellen och väljer 1 st i paketrutan om de har en vagn. Innan överdraget åker på lägger de något på taket som håller duken uppe, så att det blir luft emellan, och sedan väntar de in en torr dag.",
-      "Det som kommer är ett överdrag i din längd, 3 meter brett, med vävda remmar på alla fyra sidor och två förstärkta remmar att dra över taket. Blir det inte som de tänkt har de 14 dagar på sig från att paketet kom, och ingen behöver ta någon annans ord för hur det sitter på just deras vagn."
+      "Mät vagnen från framkant till bakkant, utan dragstången, och ta samma längd eller närmast längre i tabellen. Har du en vagn väljer du 1 st i paketrutan. Innan överdraget åker på lägger du något på taket som håller duken uppe, så att det blir luft emellan, och sedan väntar du in en torr dag.",
+      "Det som kommer är ett överdrag i din längd, 3 meter brett, med vävda remmar på alla fyra sidor och två förstärkta remmar att dra över taket. Ångrar du dig har du 14 dagars ångerrätt från dagen paketet kom, och du får packa upp och titta på överdraget precis som i en butik."
     ],
-    "knapp": "Välj din längd → från 1 129 kr"
+    "knapp": "Välj din längd →"
   },
   "arlig": {
     "rubrik": "Jag ska vara ärlig:",
     "stycken": [
-      "det finns saker på den här sidan som vi fortfarande inte vet. Vi vet inte om en taklucka går att öppna med överdraget på, eller om det får ligga på när någon bor i vagnen. Vi vet inte hur det sitter på en helintegrerad husbil eller en alkovbil, och inte heller hur många vintrar väven håller. Vi har inget svar från tillverkaren på någon av de frågorna, och tills vi har det skriver vi inget om dem.",
-      "Två saker vet vi, och de passar inte alla. Ett vattentätt överdrag som ligger tätt mot taket kan stänga in fukt, så kan du inte ordna en luftspalt under duken är det bättre att vänta tills distansdelen finns. Och det täcker bara taket och övre kanten av rutorna, aldrig nedre halvan av glaset. Vill du ha hela vagnen inklädd är ett helöverdrag rätt sak för dig, bara inte det här.",
+      "det finns saker vi fortfarande inte vet. Vi vet inte om en taklucka går att öppna med överdraget på, eller om det får ligga på när någon bor i vagnen. Vi vet inte hur det sitter på en helintegrerad husbil eller en alkovbil, och inte heller hur många vintrar väven håller. Vi har inget svar från tillverkaren på någon av de frågorna, så vi lovar ingenting om dem.",
+      "Två saker vet vi säkert, och de gör att överdraget inte passar alla. Ett vattentätt överdrag som ligger tätt mot taket kan stänga in fukt, så kan du inte ordna en luftspalt under duken är det bättre att vänta tills distansdelen finns. Och det täcker bara taket och en bit ner på sidorna, aldrig nedre halvan av rutorna. Vill du ha hela vagnen inklädd ska du välja ett helöverdrag, och det här är inte ett sådant.",
       "Priset är det som står per längd, från 1 129 kr för 5,5 och 6,5 meter upp till 2 239 kr för 13,5 meter, och ett överdrag kostar precis det som står i tabellen."
     ]
   },
   "riskfritt": {
     "rubrik": "Om det inte blir som du tänkt",
-    "text": "Välj din längd i tabellen, eller tryck på knappen här under och välj den på produktsidan. Frakten är fri och leveransen tar 5 till 10 arbetsdagar. Ångrar du dig har du 14 dagars ångerrätt enligt lag, räknat från dagen du får paketet. Returfrakten betalar du själv, och det ska du veta redan innan du beställer.",
+    "text": "Välj din längd i tabellen, eller tryck på knappen här under och välj den på produktsidan. Ångrar du dig har du 14 dagars ångerrätt enligt lag, räknat från dagen du får paketet. Returfrakten betalar du själv, och det ska du veta redan innan du beställer.",
     "knapp": "Ja, jag vill ha ett i min längd →"
   },
-  "tre_fragor": [],
-  "lasbarhetstest": {}
+  "tre_fragor": [
+    {
+      "rad": "1 129 kr är priset för de två kortaste överdragen. Här är priset för din längd, och raka svar på allt annat ni frågat om.",
+      "visualisera": "✅ prislappen på de två kortaste, listan för resten",
+      "falsifiera": "✅ tabellen och sju svar följer på sidan",
+      "ingen_annan_kan_saga": "✅ våra nio längder, våra priser, våra kommentarer"
+    },
+    {
+      "rad": "Ni har skrivit över 70 kommentarer under annonserna sedan mitten av september",
+      "visualisera": "✅ kommentarstrådarna under annonserna",
+      "falsifiera": "✅ 76 kundkommentarer på CaraShells svenska annonser 18–28/9 (loggen)",
+      "ingen_annan_kan_saga": "✅ våra annonser, våra kommentarer"
+    },
+    {
+      "rad": "Se priset för din längd →",
+      "visualisera": "✅ knappen leder till tabellen",
+      "falsifiera": "✅ tabellen står direkt under",
+      "ingen_annan_kan_saga": "✅ vår prislista"
+    },
+    {
+      "rad": "Din längd, ditt pris",
+      "visualisera": "✅ en längd, ett pris",
+      "falsifiera": "✅ varje rad går att kolla mot produktsidan",
+      "ingen_annan_kan_saga": "✅ vår prisstege i nio steg"
+    },
+    {
+      "rad": "Öppna den här längden →",
+      "visualisera": "✅ knappen öppnar storleken",
+      "falsifiera": "✅ produktsidan öppnas med varianten vald (kontrollerat i Chromium: 8,5 × 3 m vald)",
+      "ingen_annan_kan_saga": "✅ våra variantlänkar"
+    },
+    {
+      "rad": "1. Hittade du bara 6,5 meter? Alla nio längder finns, upp till 13,5.",
+      "visualisera": "✅ en husbil på 7,2 m bredvid etiketten 6,5",
+      "falsifiera": "✅ nio längder upp till 13,5 i tabellen",
+      "ingen_annan_kan_saga": "✅ svarar vår egen kommentar (7,2 m)"
+    },
+    {
+      "rad": "En av er skrev att husbilen är 7,2 meter lång, men att bara 6,5 meter gick att hitta vid beställningen.",
+      "visualisera": "✅ kommentaren under annonsen",
+      "falsifiera": "✅ står i kommentarsloggen",
+      "ingen_annan_kan_saga": "✅ våra kunder, vår produkt"
+    },
+    {
+      "rad": "Hitta din längd i tabellen →",
+      "visualisera": "✅ knappen och målet",
+      "falsifiera": "✅ leder till produktsidan",
+      "ingen_annan_kan_saga": "✅ knyter till punktens innehåll"
+    },
+    {
+      "rad": "2. Måste det inte vara luft emellan? Jo. Så gör du tills vidare.",
+      "visualisera": "✅ duk tätt mot taket, en luftspalt",
+      "falsifiera": "✅ sidan säger ja, och vad du gör",
+      "ingen_annan_kan_saga": "✅ vårt svar på vår vanligaste fråga"
+    },
+    {
+      "rad": "Det är den fråga vi får oftast, och ni som ställer den har rätt.",
+      "visualisera": "✅ kommentaren under annonsen",
+      "falsifiera": "✅ belagt i produktfakta/produktsidan",
+      "ingen_annan_kan_saga": "✅ våra kunder, vår produkt"
+    },
+    {
+      "rad": "Se överdraget → nio längder, en bredd",
+      "visualisera": "✅ knappen och målet",
+      "falsifiera": "✅ leder till produktsidan",
+      "ingen_annan_kan_saga": "✅ knyter till punktens innehåll"
+    },
+    {
+      "rad": "3. Husbilar är byggda för att stå ute. Varför täcka taket då?",
+      "visualisera": "✅ en husbil ute i regnet",
+      "falsifiera": "✅ sidan håller med och säger vem det är för",
+      "ingen_annan_kan_saga": "✅ våra kunders egna ord"
+    },
+    {
+      "rad": "En av er skrev precis så, och en annan att ett tak inte förstörs av lite regn.",
+      "visualisera": "✅ kommentaren under annonsen",
+      "falsifiera": "✅ står i kommentarsloggen",
+      "ingen_annan_kan_saga": "✅ våra kunder, vår produkt"
+    },
+    {
+      "rad": "Se vad överdraget täcker →",
+      "visualisera": "✅ knappen och målet",
+      "falsifiera": "✅ leder till produktsidan",
+      "ingen_annan_kan_saga": "✅ knyter till punktens innehåll"
+    },
+    {
+      "rad": "4. Blir husbilen en sebra till sommaren? Så sitter remmarna.",
+      "visualisera": "✅ ränder på lacken",
+      "falsifiera": "✅ sidan säger vad remmarna är gjorda av",
+      "ingen_annan_kan_saga": "✅ vår kommentar, våra remmar"
+    },
+    {
+      "rad": "Den husbilen kommer att se ut som en sebra till sommaren, skrev en av er, eftersom blåsten får banden att vibrera och nöta på sidorna.",
+      "visualisera": "✅ kommentaren under annonsen",
+      "falsifiera": "✅ står i kommentarsloggen",
+      "ingen_annan_kan_saga": "✅ våra kunder, vår produkt"
+    },
+    {
+      "rad": "Se remmarna i närbild →",
+      "visualisera": "✅ knappen och målet",
+      "falsifiera": "✅ leder till produktsidan",
+      "ingen_annan_kan_saga": "✅ knyter till punktens innehåll"
+    },
+    {
+      "rad": "5. Vad får du för pengarna? Här är allt som ingår.",
+      "visualisera": "✅ allt som ligger i paketet",
+      "falsifiera": "✅ listan går att kolla mot produktsidan",
+      "ingen_annan_kan_saga": "✅ vårt paket"
+    },
+    {
+      "rad": "Vi jämför oss inte med någon annans duk.",
+      "visualisera": "✅ kommentaren under annonsen",
+      "falsifiera": "✅ belagt i produktfakta/produktsidan",
+      "ingen_annan_kan_saga": "✅ våra kunder, vår produkt"
+    },
+    {
+      "rad": "Se allt som ingår →",
+      "visualisera": "✅ knappen och målet",
+      "falsifiera": "✅ leder till produktsidan",
+      "ingen_annan_kan_saga": "❌ generisk knapptext — motivering: knapparna leder alla till produktsidan och ska säga vart, inte sälja"
+    },
+    {
+      "rad": "6. Solceller, antenn, husbil? Det här vet vi, och det här vet vi inte.",
+      "visualisera": "✅ solpanel och antenn på taket",
+      "falsifiera": "✅ sidan skiljer vet/vet inte",
+      "ingen_annan_kan_saga": "✅ vi erkänner vad vi inte vet"
+    },
+    {
+      "rad": "Solcellerna först, för där är svaret enkelt: överdraget läggs över dem, så de är täckta så länge det ligger på.",
+      "visualisera": "✅ kommentaren under annonsen",
+      "falsifiera": "✅ belagt i produktfakta/produktsidan",
+      "ingen_annan_kan_saga": "✅ våra kunder, vår produkt"
+    },
+    {
+      "rad": "Se storlekar och priser →",
+      "visualisera": "✅ knappen och målet",
+      "falsifiera": "✅ leder till produktsidan",
+      "ingen_annan_kan_saga": "✅ knyter till punktens innehåll"
+    },
+    {
+      "rad": "7. Varför ska jag lita på er? Här är vad du har om det inte passar.",
+      "visualisera": "✅ någon som tvekar framför köpknappen",
+      "falsifiera": "✅ prislistan, ångerrätten, returfrakten",
+      "ingen_annan_kan_saga": "✅ vår egen väntan på svar"
+    },
+    {
+      "rad": "Några av er har skrivit rakt ut att ni inte vill köpa av oss.",
+      "visualisera": "✅ kommentaren under annonsen",
+      "falsifiera": "✅ står i kommentarsloggen",
+      "ingen_annan_kan_saga": "✅ våra kunder, vår produkt"
+    },
+    {
+      "rad": "Till produktsidan → alla nio längder",
+      "visualisera": "✅ knappen och målet",
+      "falsifiera": "✅ leder till produktsidan",
+      "ingen_annan_kan_saga": "✅ knyter till punktens innehåll"
+    },
+    {
+      "rad": "Korta svar på resten ni frågat om",
+      "visualisera": "✅ en lista med frågor",
+      "falsifiera": "✅ frågorna står under",
+      "ingen_annan_kan_saga": "✅ frågorna är tagna ur våra kommentarer"
+    },
+    {
+      "rad": "Vill du prova ändå? Så gör du.",
+      "visualisera": "✅ någon som bestämmer sig",
+      "falsifiera": "✅ stegen står under",
+      "ingen_annan_kan_saga": "✅ våra mätsteg och paketrutan"
+    },
+    {
+      "rad": "Välj din längd →",
+      "visualisera": "✅ en längd att välja",
+      "falsifiera": "✅ leder till produktsidan",
+      "ingen_annan_kan_saga": "❌ generisk — motivering: slutknapp, ska bara säga vad man gör"
+    },
+    {
+      "rad": "Jag ska vara ärlig:",
+      "visualisera": "❌ mallens fasta rubrik — motivering: konceptets ärlig-block",
+      "falsifiera": "❌ mallrubrik",
+      "ingen_annan_kan_saga": "❌ mallrubrik — sidans premiss, behålls"
+    },
+    {
+      "rad": "Om det inte blir som du tänkt",
+      "visualisera": "✅ kunden som ångrar sig",
+      "falsifiera": "✅ ångerrätten och returfrakten står under",
+      "ingen_annan_kan_saga": "❌ vilken butik som helst kan säga det — motivering: blocket är villkoren, inget eget löfte (lagens ångerrätt får inte säljas som unik)"
+    },
+    {
+      "rad": "Ja, jag vill ha ett i min längd →",
+      "visualisera": "✅ min längd",
+      "falsifiera": "✅ leder till produktsidan",
+      "ingen_annan_kan_saga": "✅ längdvalet är vårt"
+    }
+  ],
+  "lasbarhetstest": {
+    "metod": "Varje stycke läst högt, reglerna 1–6 i /lagerrensning, plus sex oberoende granskare (fakta, rapportens förbud, läsbarhet, marknadsföringslagen, skeptisk husvagnsägare, kundvy i Chromium) 2026-09-28. 26 verifierade fynd, alla rättade.",
+    "omskrivna": [
+      "hero.ingress: 'skrivit under' → 'kommentarer under', subjekt i sista meningen",
+      "punkt 1: 'flera av er' → en kund (7,2 m) + en fråga (8,3 m); mätregeln bara en gång på sidan",
+      "punkt 2: ventilationen och takluckorna besvaras direkt",
+      "punkt 3: '30–40 cm' borttaget (beror på bredden)",
+      "punkt 4: vindgränsmeningen struken, 'plastkrok' → 'krok', 'håller duken nere' borttaget, okänt om märken i blåst sägs rakt ut",
+      "punkt 5: prisjämförelsen från Bäverbutikens kommentarer borttagen; 'följer med att dra' och 'alltihop ihop' omskrivna",
+      "punkt 6: meningen om bilden ersatt",
+      "punkt 7: 'inte litar på' → 'inte vill köpa av'; returadressen fås på mejl",
+      "lyckas: köparbeteende som inte är belagt → råd i du-form; ångerrätten = undersöka som i butik (DAL 2:14)",
+      "ärlig: 'saker på den här sidan' → 'saker', 'rätt sak för dig' borttaget",
+      "frakten sägs två gånger i stället för fyra; 'från 1 129 kr' borta från knapparna (rapporten)"
+    ],
+    "osakraste_raden": "punkt 2: 'lägg något på taket som håller duken uppe, till exempel några papprör' — en kunds tips, inte leverantörens. Står som tips från en av er."
+  }
 }

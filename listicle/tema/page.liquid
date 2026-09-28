@@ -16,7 +16,8 @@
   just den varianten (?variant=id) — ur samma produkt, i besökarens valuta och
   språk. Knapptexten och slutsåld-etiketten står i sidans body som
   data-lp-knapp="…" och data-lp-slutsald="…" (copyn styr orden, mallen
-  ritar raderna). Så blir priserna aldrig gamla: byter ägaren ett pris i
+  ritar raderna). data-lp-jmf="nej" i sidans body (copy.pristabell.jamforpris:
+  false, 2026-09-28) ritar raderna utan jämförpriskolumnen. Så blir priserna aldrig gamla: byter ägaren ett pris i
   Shopify ändras sidan i samma sekund.
 {%- endcomment -%}
 {% layout 'listicle' %}
@@ -47,17 +48,21 @@
     {%- if lp_innehall contains 'data-lp-slutsald="' -%}
       {%- assign lp_slutsald = lp_innehall | split: 'data-lp-slutsald="' | last | split: '"' | first -%}
     {%- endif -%}
+    {%- assign lp_utan_jmf = false -%}
+    {%- if lp_innehall contains 'data-lp-jmf="nej"' -%}{%- assign lp_utan_jmf = true -%}{%- endif -%}
     {%- capture lp_tabell -%}
       <div class="lr-pris-tabell">
       {%- for lp_v in lp_produkt.variants -%}
         <div class="lr-pris-rad{% unless lp_v.available %} lr-pris-rad--slut{% endunless %}">
           <span class="lr-pris-storlek">{{ lp_v.title | escape }}</span>
           <span class="lr-pris-nu">{{ lp_v.price | money_without_trailing_zeros }}</span>
+          {%- unless lp_utan_jmf -%}
           {%- if lp_v.compare_at_price > lp_v.price -%}
             <span class="lr-pris-forr">{{ lp_v.compare_at_price | money_without_trailing_zeros }}</span>
           {%- else -%}
             <span class="lr-pris-forr"></span>
           {%- endif -%}
+          {%- endunless -%}
           {%- if lp_v.available -%}
             <a class="lr-pris-knapp" href="{{ lp_produkt.url }}?variant={{ lp_v.id }}&amp;country={{ localization.country.iso_code }}">{{ lp_knapp }}</a>
           {%- else -%}

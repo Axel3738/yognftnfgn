@@ -191,3 +191,14 @@ test('valjNycklar: id och secret ur SAMMA app — ett halvt _SE_BAVER_SE-par fal
   assert.throws(() => kravEnv({ SHOPIFY_SHOP_SE: 'x', SHOPIFY_CLIENT_ID_SE_BAVER_SE: 'id' }), /ett HELT par av SHOPIFY_CLIENT_ID_SE_BAVER_SE \+ SHOPIFY_CLIENT_SECRET_SE_BAVER_SE/);
   assert.equal(kravEnv(bada).secretNamn, 'SHOPIFY_CLIENT_SECRET_SE_BAVER_SE');
 });
+
+test('pristabell utan jämförpris (svensk sida 2026-09-28): ingen forr-kolumn, attributet till sidmallen, sidmallen hoppar kolumnen', () => {
+  const utan = pristabellHtml({ varianter: VARIANTER, url: '/products/takskyddet', knapp: 'Öppna →', valuta: 'SEK', locale: 'sv', jamforpris: false });
+  assert.doesNotMatch(utan, /lr-pris-forr/);
+  const med = pristabellHtml({ varianter: VARIANTER, url: '/products/takskyddet', knapp: 'Öppna →', valuta: 'SEK', locale: 'sv' });
+  assert.match(med, /lr-pris-forr/, 'standard är oförändrad (USA-sidan är fryst)');
+  const sida = temafiler()['templates/page.listicle.liquid'];
+  assert.match(sida, /data-lp-jmf="nej"/);
+  assert.match(sida, /unless lp_utan_jmf/);
+  assert.match(CSS, /lr-pris--utan-jmf/);
+});

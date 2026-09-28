@@ -89,6 +89,7 @@ export const CSS = `
 .lr-pris-knapp:hover{background:#3D50FF}
 .lr-pris-knapp--slut{background:#DDD;color:#666!important;cursor:default}
 .lr-pris-rad--slut .lr-pris-storlek,.lr-pris-rad--slut .lr-pris-nu{color:#8A8A8A}
+.lr-pris--utan-jmf .lr-pris-huvud,.lr-pris--utan-jmf .lr-pris-rad{grid-template-columns:1.7fr 1fr 1.4fr}
 .lr-pris-fot{margin-top:16px;color:#555}
 .lr-pris-fot p{font-size:14px}
 .lr-fragor{padding:0 20px 48px}
@@ -141,7 +142,7 @@ export function variantLank(url, id) {
  * versionen är förhandsvisningens (och testernas), med dagens pris ur
  * produkt-JSON:en. `slut` = varianter som inte går att köpa (id-lista).
  */
-export function pristabellHtml({ varianter = [], url, knapp, valuta = 'SEK', locale = 'sv', slut = [] }) {
+export function pristabellHtml({ varianter = [], url, knapp, valuta = 'SEK', locale = 'sv', slut = [], jamforpris = true }) {
   const s = sprakFor(locale);
   const rader = varianter.map((v) => {
     const slutsald = slut.includes(v.id) || v.available === false;
@@ -149,8 +150,7 @@ export function pristabellHtml({ varianter = [], url, knapp, valuta = 'SEK', loc
     return `<div class="lr-pris-rad${slutsald ? ' lr-pris-rad--slut' : ''}">
 <span class="lr-pris-storlek">${htmlAv(v.titel)}</span>
 <span class="lr-pris-nu">${htmlAv(formateraPris(v.pris, valuta))}</span>
-<span class="lr-pris-forr">${htmlAv(jmf)}</span>
-${slutsald ? `<span class="lr-pris-knapp lr-pris-knapp--slut">${htmlAv(s.tabell.slutsald)}</span>` : `<a class="lr-pris-knapp" href="${htmlAv(variantLank(url, v.id))}">${htmlAv(styckenAv(knapp).join(' '))}</a>`}
+${jamforpris ? `<span class="lr-pris-forr">${htmlAv(jmf)}</span>\n` : ''}${slutsald ? `<span class="lr-pris-knapp lr-pris-knapp--slut">${htmlAv(s.tabell.slutsald)}</span>` : `<a class="lr-pris-knapp" href="${htmlAv(variantLank(url, v.id))}">${htmlAv(styckenAv(knapp).join(' '))}</a>`}
 </div>`;
   });
   return `<div class="lr-pris-tabell">\n${rader.join('\n')}\n</div>`;
@@ -226,13 +226,18 @@ export function renderaHtml({ copy: copyIn, produkt, bilder = {}, fasta = {}, da
     const varianter = Array.isArray(produkt.varianter) ? produkt.varianter : [];
     if (prisTokens !== 'behall' && varianter.length === 0) throw new Error('renderaHtml: pristabell utan varianter på produkten.');
     const knappText = htmlAv(styckenAv(pt.knapp).join(' '));
-    const tabell = prisTokens === 'behall' ? PRISTABELL_TOKEN : pristabellHtml({ varianter, url, knapp: pt.knapp, valuta: produkt.valuta, locale });
+    // pt.jamforpris === false: ingen jämförpriskolumn (svensk sida 2026-09-28 — ett högre
+    // pris under 'Ordinarie pris' är ett prissänkningsbesked enligt PPL 7a §, och det
+    // tidigare priset är inte belagt). Sidmallen läser data-lp-jmf="nej" och ritar då
+    // raderna utan kolumnen; sidor utan attributet ritas som förut.
+    const medJmf = pt.jamforpris !== false;
+    const tabell = prisTokens === 'behall' ? PRISTABELL_TOKEN : pristabellHtml({ varianter, url, knapp: pt.knapp, valuta: produkt.valuta, locale, jamforpris: medJmf });
     return `
-<section class="lr-pris" id="lr-pris" data-lp-knapp="${knappText}" data-lp-slutsald="${htmlAv(s.tabell.slutsald)}">
+<section class="lr-pris${medJmf ? '' : ' lr-pris--utan-jmf'}" id="lr-pris" data-lp-knapp="${knappText}" data-lp-slutsald="${htmlAv(s.tabell.slutsald)}"${medJmf ? '' : ' data-lp-jmf="nej"'}>
   <div class="lr-inre">
     <h2 class="lr-h2"><span>${rubrik('pristabell.rubrik')}</span></h2>
     ${pt.text ? `<div class="lr-text">${stycken(pt.text)}</div>` : ''}
-    <div class="lr-pris-huvud"><span>${htmlAv(s.tabell.storlek)}</span><span>${htmlAv(s.tabell.pris)}</span><span>${htmlAv(s.tabell.ordinarie)}</span><span></span></div>
+    <div class="lr-pris-huvud"><span>${htmlAv(s.tabell.storlek)}</span><span>${htmlAv(s.tabell.pris)}</span>${medJmf ? `<span>${htmlAv(s.tabell.ordinarie)}</span>` : ''}<span></span></div>
 ${tabell}
     ${pt.fot ? `<div class="lr-pris-fot">${stycken(pt.fot)}</div>` : ''}
   </div>
