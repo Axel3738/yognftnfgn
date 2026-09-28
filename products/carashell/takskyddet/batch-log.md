@@ -2588,3 +2588,44 @@ flyttar dem direkt till `Approved`, och `tools/ops-spegla.mjs` stoppar varje
 namn med vinkeln `FD` (`tools/lib/bara-sverige.mjs`) — fars dag är i juni i
 USA. Ingen `CaraShell…_FD_…`-annons ska finnas. Batchen:
 `docs/briefs/farsdag-2026/README.md`.
+
+---
+
+## 2026-09-28 — speglingen: 5 av 6 speglade, 8 av 10 annonser live
+
+Kön var 6 rader i `CaraShell SE ready to be active`: fem nya videor
+(`SP_4_H4`, `SP_4_H3`, `SP_4_H2`, `CS_12_H1`, `UG_2_H1`) plus den stoppade
+`GT_11_H1`. Pris SE 1 129 kr / NO 1 106 NOK lästa live; alla creatives bar
+1 129 kr — 0 % avvikelse.
+
+| Källrad | Spegelnamn | SE-annons | NO-annons |
+|---|---|---|---|
+| `Takoverdrag_SP_4_H4` | `CaraShellRoof_SP_104_H4` | `120249303450790172` | `120249303471350172` |
+| `Takoverdrag_SP_4_H3` | `CaraShellRoof_SP_104_H3` | `120249303595620172` | `120249303609050172` |
+| `Takoverdrag_SP_4_H2` | `CaraShellRoof_SP_104_H2` | `120249303842690172` | ❌ **saknas** |
+| `Takoverdrag_CS_12_H1` | `CaraShellRoof_CS_112_H1` | `120249303997750172` | ❌ **saknas** |
+| `Takoverdrag_UG_2_H1` | `CaraShellRoof_UG_102_H1` | `120249304159620172` | `120249304260960172` |
+
+⛔ **Tredje dygnet i rad som Metas strypning äter NO-annonser** (22/9 två, 26/9
+en, i dag två). Sammanfattningen sa "5 speglade · 0 fel" — men bara 8 annonser
+av 10 finns: `CaraShellRoof_NO_SP_104_H2` och `NO_CS_112_H1` föll på
+`Meta paging: User request limit reached`. Verktyget räknar en rad som speglad
+när SE går live och hubbraden skapas. **Räkna alltid annonserna mot rader × 2.**
+De åtta lästes tillbaka ur Meta: alla ACTIVE i konto `915422744950975`,
+SE i `CARASHELL_SE_Taköverdraget`, NO i `CARASHELL_NO_Takovertrekket`;
+`NO_UG_102_H1` stod `IN_PROCESS` (Metas granskning).
+
+Hubbraderna för `SP_104_H2` och `CS_112_H1` skapades med bara den svenska
+filen — de norska bifogas för hand när annonserna är uppe
+(`node tools/notion-fil-upp.mjs <sid-id> --fil <fil>`).
+
+**Efterjustering:** `--fran "CaraShell EN ready to be active"`, torrt först.
+Idempotensen gör att bara de två NO-uppladdningarna körs.
+
+**Stoppad (1):** `Takoverdrag_GT_11_H1` — copyn nämner Bäverbutiken, femte
+dygnet. Källradens status orörd, ingen ny kommentar (den står redan på raden).
+Ligger hos Axel sedan 24/9.
+
+**2 källrader → `Approved`:** `Takoverdrag_OB_10_1` och `OB_8_1` — deras
+US-annonser (`120251634835850435`, `120251634831160435`) kom upp i natt.
+Fem videor väntar fortfarande på USA (HeyGen-krediterna).

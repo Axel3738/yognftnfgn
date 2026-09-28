@@ -1,0 +1,1463 @@
+{
+  "brand": "CaraShell",
+  "nyckel": "carashell/takskyddet",
+  "datum": "2026-09-28",
+  "torr": false,
+  "kalla_hub": "7ec270ab-908c-82f6-a2a8-0153159b20fa",
+  "kalla_hub_namn": "BÄVER Taköverdraget för Husvagn",
+  "saknade_statusar": [],
+  "rader": [
+    {
+      "namn": "Takoverdrag_SP_4_H4",
+      "spegel": "CaraShellRoof_SP_104_H4",
+      "page_id": "3e4270ab-908c-8132-83b7-ca93fd2e714c",
+      "utfall": "speglad",
+      "skal": null,
+      "se": {
+        "ad_id": "120249303450790172",
+        "kampanj": "CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11",
+        "adset": "CARASHELL_SE_Taköverdraget - SP",
+        "status": "ACTIVE",
+        "fanns": false
+      },
+      "no": {
+        "ad_id": "120249303471350172",
+        "kampanj": "CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11",
+        "adset": "CARASHELL_NO_Takovertrekket - SP",
+        "fanns": false
+      },
+      "hubb": {
+        "page_id": "3e9270ab-908c-81ec-b443-f0769a110e17",
+        "url": "https://app.notion.com/p/CaraShellRoof_SP_104_H4-3e9270ab908c81ecb443f0769a110e17",
+        "fanns": false,
+        "block": 40,
+        "hoppade": [
+          {
+            "typ": "video",
+            "antal": 2
+          }
+        ],
+        "se_fil": true
+      },
+      "slutkort": {
+        "se": {
+          "fil": "factory/output/carashell/spegla-2026-09-28/Takoverdrag_SP_4_H4/CaraShellRoof_SP_104_H4.mp4",
+          "slut_sek": 3,
+          "langd_s": null,
+          "start_s": null,
+          "stilla": null,
+          "byte": null,
+          "textrader": [],
+          "fynd": [],
+          "sekunder": 0.03,
+          "dom": "okand",
+          "skal": "ffmpeg läste ingen speltid ur filen (spawnSync ffmpeg ENOENT)",
+          "kod": "ingen-speltid"
+        },
+        "no": {
+          "fil": "factory/output/carashell/spegla-2026-09-28/Takoverdrag_SP_4_H4/CaraShellRoof_NO_SP_104_H4.mp4",
+          "slut_sek": 3,
+          "langd_s": null,
+          "start_s": null,
+          "stilla": null,
+          "byte": null,
+          "textrader": [],
+          "fynd": [],
+          "sekunder": 0,
+          "dom": "okand",
+          "skal": "ffmpeg läste ingen speltid ur filen (spawnSync ffmpeg ENOENT)",
+          "kod": "ingen-speltid"
+        }
+      },
+      "status_rord": true
+    },
+    {
+      "namn": "Takoverdrag_SP_4_H3",
+      "spegel": "CaraShellRoof_SP_104_H3",
+      "page_id": "3e4270ab-908c-815f-80fb-d1c10d145b34",
+      "utfall": "speglad",
+      "skal": null,
+      "se": {
+        "ad_id": "120249303595620172",
+        "kampanj": "CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11",
+        "adset": "CARASHELL_SE_Taköverdraget - SP",
+        "status": "ACTIVE",
+        "fanns": false
+      },
+      "no": {
+        "ad_id": "120249303609050172",
+        "kampanj": "CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11",
+        "adset": "CARASHELL_NO_Takovertrekket - SP",
+        "fanns": false
+      },
+      "hubb": {
+        "page_id": "3e9270ab-908c-8180-8e92-c1a3f1154a1c",
+        "url": "https://app.notion.com/p/CaraShellRoof_SP_104_H3-3e9270ab908c81808e92c1a3f1154a1c",
+        "fanns": false,
+        "block": 40,
+        "hoppade": [
+          {
+            "typ": "video",
+            "antal": 2
+          }
+        ],
+        "se_fil": true
+      },
+      "slutkort": {
+        "se": {
+          "fil": "factory/output/carashell/spegla-2026-09-28/Takoverdrag_SP_4_H3/CaraShellRoof_SP_104_H3.mp4",
+          "slut_sek": 3,
+          "langd_s": null,
+          "start_s": null,
+          "stilla": null,
+          "byte": null,
+          "textrader": [],
+          "fynd": [],
+          "sekunder": 0.01,
+          "dom": "okand",
+          "skal": "ffmpeg läste ingen speltid ur filen (spawnSync ffmpeg ENOENT)",
+          "kod": "ingen-speltid"
+        },
+        "no": {
+          "fil": "factory/output/carashell/spegla-2026-09-28/Takoverdrag_SP_4_H3/CaraShellRoof_NO_SP_104_H3.mp4",
+          "slut_sek": 3,
+          "langd_s": null,
+          "start_s": null,
+          "stilla": null,
+          "byte": null,
+          "textrader": [],
+          "fynd": [],
+          "sekunder": 0.01,
+          "dom": "okand",
+          "skal": "ffmpeg läste ingen speltid ur filen (spawnSync ffmpeg ENOENT)",
+          "kod": "ingen-speltid"
+        }
+      },
+      "status_rord": true
+    },
+    {
+      "namn": "Takoverdrag_SP_4_H2",
+      "spegel": "CaraShellRoof_SP_104_H2",
+      "page_id": "3e4270ab-908c-81ae-8b88-cc7f1d88433a",
+      "utfall": "speglad",
+      "skal": null,
+      "se": {
+        "ad_id": "120249303842690172",
+        "kampanj": "CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11",
+        "adset": "CARASHELL_SE_Taköverdraget - SP",
+        "status": "ACTIVE",
+        "fanns": false
+      },
+      "no": {
+        "ad_id": null,
+        "skal": "NO-uppladdningen misslyckades: Meta paging: User request limit reached"
+      },
+      "hubb": {
+        "page_id": "3e9270ab-908c-816b-ba60-eeb0c8735d83",
+        "url": "https://app.notion.com/p/CaraShellRoof_SP_104_H2-3e9270ab908c816bba60eeb0c8735d83",
+        "fanns": false,
+        "block": 40,
+        "hoppade": [
+          {
+            "typ": "video",
+            "antal": 2
+          }
+        ],
+        "se_fil": true
+      },
+      "slutkort": {
+        "se": {
+          "fil": "factory/output/carashell/spegla-2026-09-28/Takoverdrag_SP_4_H2/CaraShellRoof_SP_104_H2.mp4",
+          "slut_sek": 3,
+          "langd_s": null,
+          "start_s": null,
+          "stilla": null,
+          "byte": null,
+          "textrader": [],
+          "fynd": [],
+          "sekunder": 0,
+          "dom": "okand",
+          "skal": "ffmpeg läste ingen speltid ur filen (spawnSync ffmpeg ENOENT)",
+          "kod": "ingen-speltid"
+        },
+        "no": {
+          "fil": "factory/output/carashell/spegla-2026-09-28/Takoverdrag_SP_4_H2/CaraShellRoof_NO_SP_104_H2.mp4",
+          "slut_sek": 3,
+          "langd_s": null,
+          "start_s": null,
+          "stilla": null,
+          "byte": null,
+          "textrader": [],
+          "fynd": [],
+          "sekunder": 0,
+          "dom": "okand",
+          "skal": "ffmpeg läste ingen speltid ur filen (spawnSync ffmpeg ENOENT)",
+          "kod": "ingen-speltid"
+        }
+      },
+      "status_rord": true
+    },
+    {
+      "namn": "Takoverdrag_GT_11_H1",
+      "spegel": "CaraShellRoof_GT_111_H1",
+      "page_id": "3e3270ab-908c-8109-a4cb-ce98698f5a63",
+      "utfall": "hoppad",
+      "skal": "nämner Bäverbutiken: Bäverbutiken",
+      "se": null,
+      "no": null,
+      "hubb": null,
+      "slutkort": {
+        "se": {
+          "fil": "factory/output/carashell/spegla-2026-09-28/Takoverdrag_GT_11_H1/CaraShellRoof_GT_111_H1.mp4",
+          "slut_sek": 3,
+          "langd_s": null,
+          "start_s": null,
+          "stilla": null,
+          "byte": null,
+          "textrader": [],
+          "fynd": [],
+          "sekunder": 0.01,
+          "dom": "okand",
+          "skal": "ffmpeg läste ingen speltid ur filen (spawnSync ffmpeg ENOENT)",
+          "kod": "ingen-speltid"
+        },
+        "no": {
+          "fil": "factory/output/carashell/spegla-2026-09-28/Takoverdrag_GT_11_H1/CaraShellRoof_NO_GT_111_H1.mp4",
+          "slut_sek": 3,
+          "langd_s": null,
+          "start_s": null,
+          "stilla": null,
+          "byte": null,
+          "textrader": [],
+          "fynd": [],
+          "sekunder": 0,
+          "dom": "okand",
+          "skal": "ffmpeg läste ingen speltid ur filen (spawnSync ffmpeg ENOENT)",
+          "kod": "ingen-speltid"
+        }
+      }
+    },
+    {
+      "namn": "Takoverdrag_CS_12_H1",
+      "spegel": "CaraShellRoof_CS_112_H1",
+      "page_id": "3e0270ab-908c-81a3-96aa-e0be09885e8f",
+      "utfall": "speglad",
+      "skal": null,
+      "se": {
+        "ad_id": "120249303997750172",
+        "kampanj": "CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11",
+        "adset": "CARASHELL_SE_Taköverdraget - CS",
+        "status": "ACTIVE",
+        "fanns": false
+      },
+      "no": {
+        "ad_id": null,
+        "skal": "NO-uppladdningen misslyckades: Meta paging: User request limit reached"
+      },
+      "hubb": {
+        "page_id": "3e9270ab-908c-8180-b368-c3032af2995e",
+        "url": "https://app.notion.com/p/CaraShellRoof_CS_112_H1-3e9270ab908c8180b368c3032af2995e",
+        "fanns": false,
+        "block": 18,
+        "hoppade": [
+          {
+            "typ": "video",
+            "antal": 2
+          }
+        ],
+        "se_fil": true
+      },
+      "slutkort": {
+        "se": {
+          "fil": "factory/output/carashell/spegla-2026-09-28/Takoverdrag_CS_12_H1/CaraShellRoof_CS_112_H1.mp4",
+          "slut_sek": 3,
+          "langd_s": null,
+          "start_s": null,
+          "stilla": null,
+          "byte": null,
+          "textrader": [],
+          "fynd": [],
+          "sekunder": 0,
+          "dom": "okand",
+          "skal": "ffmpeg läste ingen speltid ur filen (spawnSync ffmpeg ENOENT)",
+          "kod": "ingen-speltid"
+        },
+        "no": {
+          "fil": "factory/output/carashell/spegla-2026-09-28/Takoverdrag_CS_12_H1/CaraShellRoof_NO_CS_112_H1.mp4",
+          "slut_sek": 3,
+          "langd_s": null,
+          "start_s": null,
+          "stilla": null,
+          "byte": null,
+          "textrader": [],
+          "fynd": [],
+          "sekunder": 0,
+          "dom": "okand",
+          "skal": "ffmpeg läste ingen speltid ur filen (spawnSync ffmpeg ENOENT)",
+          "kod": "ingen-speltid"
+        }
+      },
+      "status_rord": true
+    },
+    {
+      "namn": "Takoverdrag_UG_2_H1",
+      "spegel": "CaraShellRoof_UG_102_H1",
+      "page_id": "3dd270ab-908c-81f2-8426-d1537a431f52",
+      "utfall": "speglad",
+      "skal": null,
+      "se": {
+        "ad_id": "120249304159620172",
+        "kampanj": "CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11",
+        "adset": "CARASHELL_SE_Taköverdraget - UG",
+        "status": "ACTIVE",
+        "fanns": false
+      },
+      "no": {
+        "ad_id": "120249304260960172",
+        "kampanj": "CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11",
+        "adset": "CARASHELL_NO_Takovertrekket - UG",
+        "fanns": false
+      },
+      "hubb": {
+        "page_id": "3e9270ab-908c-810f-9066-e478fa6b9182",
+        "url": "https://app.notion.com/p/CaraShellRoof_UG_102_H1-3e9270ab908c810f9066e478fa6b9182",
+        "fanns": false,
+        "block": 23,
+        "hoppade": [
+          {
+            "typ": "video",
+            "antal": 1
+          }
+        ],
+        "se_fil": true
+      },
+      "slutkort": {
+        "se": {
+          "fil": "factory/output/carashell/spegla-2026-09-28/Takoverdrag_UG_2_H1/CaraShellRoof_UG_102_H1.mp4",
+          "slut_sek": 3,
+          "langd_s": null,
+          "start_s": null,
+          "stilla": null,
+          "byte": null,
+          "textrader": [],
+          "fynd": [],
+          "sekunder": 0.01,
+          "dom": "okand",
+          "skal": "ffmpeg läste ingen speltid ur filen (spawnSync ffmpeg ENOENT)",
+          "kod": "ingen-speltid"
+        },
+        "no": {
+          "fil": "factory/output/carashell/spegla-2026-09-28/Takoverdrag_UG_2_H1/CaraShellRoof_NO_UG_102_H1.mp4",
+          "slut_sek": 3,
+          "langd_s": null,
+          "start_s": null,
+          "stilla": null,
+          "byte": null,
+          "textrader": [],
+          "fynd": [],
+          "sekunder": 0.01,
+          "dom": "okand",
+          "skal": "ffmpeg läste ingen speltid ur filen (spawnSync ffmpeg ENOENT)",
+          "kod": "ingen-speltid"
+        }
+      },
+      "status_rord": true
+    }
+  ],
+  "approved": [
+    {
+      "namn": "Takoverdrag_OB_10_1",
+      "spegel": "CaraShellRoof_OB_110_1",
+      "page_id": "3e6270ab-908c-8156-9b7b-fc4b4c952c7d",
+      "us_ad_id": "120251634835850435",
+      "torr": false
+    },
+    {
+      "namn": "Takoverdrag_OB_8_1",
+      "spegel": "CaraShellRoof_OB_108_1",
+      "page_id": "3e6270ab-908c-8107-9bb7-e7b5d54755a4",
+      "us_ad_id": "120251634831160435",
+      "torr": false
+    }
+  ],
+  "varningar": [
+    "SE-kampanj: \"CARASHELL_SE_Taköverdraget LISTICLE\" är eget spår (namnet bär LISTICLE) och tog inte emot annonserna."
+  ],
+  "ko": {
+    "brand": "CaraShell",
+    "nyckel": "carashell/takskyddet",
+    "konto": "915422744950975",
+    "us_konto": "1107817401910319",
+    "datum": "2026-09-28",
+    "annonsmarknader": [
+      "NO",
+      "US"
+    ],
+    "kalla_hub": {
+      "id": "7ec270ab-908c-82f6-a2a8-0153159b20fa",
+      "titel": "BÄVER Taköverdraget för Husvagn",
+      "url": "https://app.notion.com/p/7ec270ab908c82f6a2a80153159b20fa"
+    },
+    "hub": {
+      "id": "3da270ab-908c-80c4-80d1-fbdb3fefd3b4",
+      "titel": "Carashell Taköverdrag creative hub",
+      "url": "https://app.notion.com/p/3da270ab908c80c480d1fbdb3fefd3b4"
+    },
+    "statusar": {
+      "se": "CaraShell SE ready to be active",
+      "en": "CaraShell EN ready to be active",
+      "spegel": "SE-ACTIVE to be translated",
+      "slut": "Approved"
+    },
+    "kallstatusar": [
+      "CaraShell SE ready to be active"
+    ],
+    "saknade_statusar": [],
+    "kampanj_se": {
+      "id": "120249050544990172",
+      "namn": "CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11",
+      "bas": "CARASHELL_SE_Taköverdraget",
+      "status": "ACTIVE",
+      "utfall": "ACTIVE",
+      "adsets": [
+        {
+          "id": "120249174776820172",
+          "name": "CARASHELL_SE_Taköverdraget - OB",
+          "status": "ACTIVE"
+        },
+        {
+          "id": "120249174103390172",
+          "name": "CARASHELL_SE_Taköverdraget - TR",
+          "status": "ACTIVE"
+        },
+        {
+          "id": "120249156801640172",
+          "name": "CARASHELL_SE_Taköverdraget - RI",
+          "status": "ACTIVE"
+        },
+        {
+          "id": "120249156618810172",
+          "name": "CARASHELL_SE_Taköverdraget - UG",
+          "status": "ACTIVE"
+        },
+        {
+          "id": "120249156102430172",
+          "name": "CARASHELL_SE_Taköverdraget - LI",
+          "status": "ACTIVE"
+        },
+        {
+          "id": "120249155128570172",
+          "name": "CARASHELL_SE_Taköverdraget - CO",
+          "status": "ACTIVE"
+        },
+        {
+          "id": "120249154404740172",
+          "name": "CARASHELL_SE_Taköverdraget - BOF",
+          "status": "ACTIVE"
+        },
+        {
+          "id": "120249050594580172",
+          "name": "CARASHELL_SE_Taköverdraget - CS",
+          "status": "ACTIVE"
+        },
+        {
+          "id": "120249050592930172",
+          "name": "CARASHELL_SE_Taköverdraget - SP",
+          "status": "ACTIVE"
+        },
+        {
+          "id": "120249050591110172",
+          "name": "CARASHELL_SE_Taköverdraget - GT",
+          "status": "ACTIVE"
+        },
+        {
+          "id": "120249050545660172",
+          "name": "CARASHELL_SE_Taköverdraget - PD",
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    "kampanj_se_skal": null,
+    "kampanj_no": {
+      "id": "120249050596730172",
+      "namn": "CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11",
+      "bas": "CARASHELL_NO_Takovertrekket",
+      "status": "ACTIVE",
+      "utfall": "ACTIVE",
+      "adsets": [
+        {
+          "id": "120249174816210172",
+          "name": "CARASHELL_NO_Takovertrekket - OB",
+          "status": "ACTIVE"
+        },
+        {
+          "id": "120249174108870172",
+          "name": "CARASHELL_NO_Takovertrekket - TR",
+          "status": "ACTIVE"
+        },
+        {
+          "id": "120249156816620172",
+          "name": "CARASHELL_NO_Takovertrekket - RI",
+          "status": "ACTIVE"
+        },
+        {
+          "id": "120249156685590172",
+          "name": "CARASHELL_NO_Takovertrekket - UG",
+          "status": "ACTIVE"
+        },
+        {
+          "id": "120249156245620172",
+          "name": "CARASHELL_NO_Takovertrekket - LI",
+          "status": "ACTIVE"
+        },
+        {
+          "id": "120249155151120172",
+          "name": "CARASHELL_NO_Takovertrekket - CO",
+          "status": "ACTIVE"
+        },
+        {
+          "id": "120249154712440172",
+          "name": "CARASHELL_NO_Takovertrekket - GT",
+          "status": "ACTIVE"
+        },
+        {
+          "id": "120249154412930172",
+          "name": "CARASHELL_NO_Takovertrekket - BOF",
+          "status": "ACTIVE"
+        },
+        {
+          "id": "120249089478400172",
+          "name": "CARASHELL_NO_Takovertrekket - CS",
+          "status": "ACTIVE"
+        },
+        {
+          "id": "120249050601280172",
+          "name": "CARASHELL_NO_Takovertrekket - G",
+          "status": "ACTIVE"
+        },
+        {
+          "id": "120249050600070172",
+          "name": "CARASHELL_NO_Takovertrekket - SP",
+          "status": "ACTIVE"
+        },
+        {
+          "id": "120249050598260172",
+          "name": "CARASHELL_NO_Takovertrekket - PD",
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    "kampanj_no_skal": null,
+    "lank_se": "https://carashell.se/products/takskyddet",
+    "lank_no": "https://carashell.se/nb/products/takskyddet?country=NO",
+    "pris_se": {
+      "pris": 1129,
+      "min": 1129,
+      "max": 2239,
+      "jamforpris": 1469,
+      "valuta": "SEK",
+      "titel": "Taköverdrag Husvagn & Husbil 5,5–13,5 m",
+      "handle": "takskyddet",
+      "kalla": "https://carashell.se/products/takskyddet.json"
+    },
+    "pris_no": {
+      "pris": 1106,
+      "min": 1106,
+      "max": 2193,
+      "valuta": "NOK",
+      "jamforpris": null,
+      "titel": null,
+      "handle": null,
+      "kalla": "https://carashell.se/nb/products/takskyddet?country=NO"
+    },
+    "rader": [
+      {
+        "namn": "Takoverdrag_SP_4_H4",
+        "spegel": "CaraShellRoof_SP_104_H4",
+        "spegel_no": "CaraShellRoof_NO_SP_104_H4",
+        "spegel_us": "CaraShellRoof_US_SP_104_H4",
+        "page_id": "3e4270ab-908c-8132-83b7-ca93fd2e714c",
+        "url": "https://app.notion.com/p/Takoverdrag_SP_4_H4-3e4270ab908c813283b7ca93fd2e714c",
+        "typ": "video",
+        "typ_notion": "Video - Pending Approval",
+        "status": "CaraShell SE ready to be active",
+        "filer": [],
+        "landning": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+        "skapad": "2026-09-23T06:42:00.000Z",
+        "kall_ad": {
+          "id": "120250371696280291",
+          "status": "ACTIVE",
+          "kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09"
+        },
+        "copy_se": {
+          "message": "Det här täcker bara taket, inte hela vagnen — en person klarar det på egen hand. Vattnet står aldrig vid takluckorna, och 210D-väven håller hela vintersäsongen ute. Remmarna sitter på alla fyra sidor och hakas fast i en krok i nederkant. 1 129 kr i stället för 1 469 kr.",
+          "rubrik": "En person räcker. 210D-väv.",
+          "beskrivning": "",
+          "lank": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+        },
+        "no": {
+          "ad_id": "120252413271340233",
+          "konto": "1050941584152547",
+          "namn": "Takovertrekk_NO_SP_4_H4",
+          "status": "ACTIVE",
+          "kampanj": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+          "copy": {
+            "message": "Dette dekker bare taket, ikke hele campingvognen. Én person klarer det alene. Vannet blir aldri stående ved taklukene, og 210D-duken tåler hele vintersesongen ute. Reimene sitter på alle fire sider og hektes fast i en krok i nedkant. 1 189 kr i stedet for 1 549 kr.",
+            "rubrik": "Én person er nok. 210D-duk.",
+            "beskrivning": "",
+            "lank": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+          },
+          "media": {
+            "typ": "video",
+            "id": "3938519466444132"
+          },
+          "fil": "factory/output/carashell/spegla-2026-09-28/Takoverdrag_SP_4_H4/CaraShellRoof_NO_SP_104_H4.mp4",
+          "fel": null,
+          "lank": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+        },
+        "brand": [],
+        "pris_kalla": 1129,
+        "pris_kalla_fran": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan.json",
+        "pris_kalla_no": 1189,
+        "paritet_se": {
+          "ok": true,
+          "okand": false,
+          "avvikelse": 0,
+          "skal": null
+        },
+        "paritet_no": {
+          "ok": true,
+          "okand": false,
+          "avvikelse": 0.07504520795660036,
+          "skal": null
+        },
+        "finns_i_meta": {
+          "SE": false,
+          "NO": false,
+          "US": false
+        },
+        "ad_ids": {
+          "SE": null,
+          "NO": null,
+          "US": null
+        },
+        "kampanj_se": {
+          "id": "120249050544990172",
+          "namn": "CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11",
+          "bas": "CARASHELL_SE_Taköverdraget"
+        },
+        "kampanj_no": {
+          "id": "120249050596730172",
+          "namn": "CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11",
+          "bas": "CARASHELL_NO_Takovertrekket"
+        },
+        "adset_se": {
+          "id": "120249050592930172",
+          "name": "CARASHELL_SE_Taköverdraget - SP",
+          "status": "ACTIVE"
+        },
+        "block": 41,
+        "fil": "factory/output/carashell/spegla-2026-09-28/Takoverdrag_SP_4_H4/CaraShellRoof_SP_104_H4.mp4",
+        "fil_kalla": "Meta-annons 120250371696280291",
+        "fil_alla": [
+          "factory/output/carashell/spegla-2026-09-28/Takoverdrag_SP_4_H4/CaraShellRoof_SP_104_H4.mp4"
+        ],
+        "fil_fel": null,
+        "hamtat": true,
+        "slutkort": {
+          "se": {
+            "fil": "factory/output/carashell/spegla-2026-09-28/Takoverdrag_SP_4_H4/CaraShellRoof_SP_104_H4.mp4",
+            "slut_sek": 3,
+            "langd_s": null,
+            "start_s": null,
+            "stilla": null,
+            "byte": null,
+            "textrader": [],
+            "fynd": [],
+            "sekunder": 0.03,
+            "dom": "okand",
+            "skal": "ffmpeg läste ingen speltid ur filen (spawnSync ffmpeg ENOENT)",
+            "kod": "ingen-speltid"
+          },
+          "no": {
+            "fil": "factory/output/carashell/spegla-2026-09-28/Takoverdrag_SP_4_H4/CaraShellRoof_NO_SP_104_H4.mp4",
+            "slut_sek": 3,
+            "langd_s": null,
+            "start_s": null,
+            "stilla": null,
+            "byte": null,
+            "textrader": [],
+            "fynd": [],
+            "sekunder": 0,
+            "dom": "okand",
+            "skal": "ffmpeg läste ingen speltid ur filen (spawnSync ffmpeg ENOENT)",
+            "kod": "ingen-speltid"
+          }
+        },
+        "bedomning": {
+          "se": {
+            "ok": true,
+            "skal": []
+          },
+          "no": {
+            "ok": true,
+            "skal": []
+          }
+        }
+      },
+      {
+        "namn": "Takoverdrag_SP_4_H3",
+        "spegel": "CaraShellRoof_SP_104_H3",
+        "spegel_no": "CaraShellRoof_NO_SP_104_H3",
+        "spegel_us": "CaraShellRoof_US_SP_104_H3",
+        "page_id": "3e4270ab-908c-815f-80fb-d1c10d145b34",
+        "url": "https://app.notion.com/p/Takoverdrag_SP_4_H3-3e4270ab908c815f80fbd1c10d145b34",
+        "typ": "video",
+        "typ_notion": "Video - Pending Approval",
+        "status": "CaraShell SE ready to be active",
+        "filer": [],
+        "landning": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+        "skapad": "2026-09-23T06:42:00.000Z",
+        "kall_ad": {
+          "id": "120250371676420291",
+          "status": "ACTIVE",
+          "kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09"
+        },
+        "copy_se": {
+          "message": "Vid en taklucka utan skydd blir vattnet lätt stående, och tätmassan tar stryk. Ett helöverdrag är tungt att få på plats ensam — det här täcker bara taket, och en person klarar det själv. Vattnet står aldrig vid takluckorna, och 210D-väven håller hela vintersäsongen ute. Remmarna sitter på alla fyra sidor och hakas fast i en krok i nederkant. 1 129 kr i stället för 1 469 kr.",
+          "rubrik": "En person räcker. 210D-väv.",
+          "beskrivning": "",
+          "lank": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+        },
+        "no": {
+          "ad_id": "120252413274120233",
+          "konto": "1050941584152547",
+          "namn": "Takovertrekk_NO_SP_4_H3",
+          "status": "ACTIVE",
+          "kampanj": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+          "copy": {
+            "message": "Ved en taklukke uten beskyttelse blir vannet lett stående, og tetningsmassen tar skade. Et heldekkende trekk er tungt å få på plass alene. Dette dekker bare taket, og én person klarer det selv. Vannet blir aldri stående ved taklukene, og 210D-duken tåler hele vintersesongen ute. Reimene sitter på alle fire sider og hektes fast i en krok i nedkant. 1 189 kr i stedet for 1 549 kr.",
+            "rubrik": "Én person er nok. 210D-duk.",
+            "beskrivning": "",
+            "lank": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+          },
+          "media": {
+            "typ": "video",
+            "id": "1077385974920454"
+          },
+          "fil": "factory/output/carashell/spegla-2026-09-28/Takoverdrag_SP_4_H3/CaraShellRoof_NO_SP_104_H3.mp4",
+          "fel": null,
+          "lank": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+        },
+        "brand": [],
+        "pris_kalla": 1129,
+        "pris_kalla_fran": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan.json",
+        "pris_kalla_no": 1189,
+        "paritet_se": {
+          "ok": true,
+          "okand": false,
+          "avvikelse": 0,
+          "skal": null
+        },
+        "paritet_no": {
+          "ok": true,
+          "okand": false,
+          "avvikelse": 0.07504520795660036,
+          "skal": null
+        },
+        "finns_i_meta": {
+          "SE": false,
+          "NO": false,
+          "US": false
+        },
+        "ad_ids": {
+          "SE": null,
+          "NO": null,
+          "US": null
+        },
+        "kampanj_se": {
+          "id": "120249050544990172",
+          "namn": "CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11",
+          "bas": "CARASHELL_SE_Taköverdraget"
+        },
+        "kampanj_no": {
+          "id": "120249050596730172",
+          "namn": "CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11",
+          "bas": "CARASHELL_NO_Takovertrekket"
+        },
+        "adset_se": {
+          "id": "120249050592930172",
+          "name": "CARASHELL_SE_Taköverdraget - SP",
+          "status": "ACTIVE"
+        },
+        "block": 41,
+        "fil": "factory/output/carashell/spegla-2026-09-28/Takoverdrag_SP_4_H3/CaraShellRoof_SP_104_H3.mp4",
+        "fil_kalla": "Meta-annons 120250371676420291",
+        "fil_alla": [
+          "factory/output/carashell/spegla-2026-09-28/Takoverdrag_SP_4_H3/CaraShellRoof_SP_104_H3.mp4"
+        ],
+        "fil_fel": null,
+        "hamtat": true,
+        "slutkort": {
+          "se": {
+            "fil": "factory/output/carashell/spegla-2026-09-28/Takoverdrag_SP_4_H3/CaraShellRoof_SP_104_H3.mp4",
+            "slut_sek": 3,
+            "langd_s": null,
+            "start_s": null,
+            "stilla": null,
+            "byte": null,
+            "textrader": [],
+            "fynd": [],
+            "sekunder": 0.01,
+            "dom": "okand",
+            "skal": "ffmpeg läste ingen speltid ur filen (spawnSync ffmpeg ENOENT)",
+            "kod": "ingen-speltid"
+          },
+          "no": {
+            "fil": "factory/output/carashell/spegla-2026-09-28/Takoverdrag_SP_4_H3/CaraShellRoof_NO_SP_104_H3.mp4",
+            "slut_sek": 3,
+            "langd_s": null,
+            "start_s": null,
+            "stilla": null,
+            "byte": null,
+            "textrader": [],
+            "fynd": [],
+            "sekunder": 0.01,
+            "dom": "okand",
+            "skal": "ffmpeg läste ingen speltid ur filen (spawnSync ffmpeg ENOENT)",
+            "kod": "ingen-speltid"
+          }
+        },
+        "bedomning": {
+          "se": {
+            "ok": true,
+            "skal": []
+          },
+          "no": {
+            "ok": true,
+            "skal": []
+          }
+        }
+      },
+      {
+        "namn": "Takoverdrag_SP_4_H2",
+        "spegel": "CaraShellRoof_SP_104_H2",
+        "spegel_no": "CaraShellRoof_NO_SP_104_H2",
+        "spegel_us": "CaraShellRoof_US_SP_104_H2",
+        "page_id": "3e4270ab-908c-81ae-8b88-cc7f1d88433a",
+        "url": "https://app.notion.com/p/Takoverdrag_SP_4_H2-3e4270ab908c81ae8b88cc7f1d88433a",
+        "typ": "video",
+        "typ_notion": "Video - Pending Approval",
+        "status": "CaraShell SE ready to be active",
+        "filer": [],
+        "landning": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+        "skapad": "2026-09-23T06:42:00.000Z",
+        "kall_ad": {
+          "id": "120250371639930291",
+          "status": "ACTIVE",
+          "kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09"
+        },
+        "copy_se": {
+          "message": "En hand hakar fast remmen i kroken vid takkanten – en person räcker för att få det här på plats. Det här täcker bara taket, inte hela vagnen. Vattnet står aldrig vid takluckorna, och 210D-väven håller hela vintersäsongen ute. Remmarna sitter på alla fyra sidor och hakas fast i en krok i nederkant. 1 129 kr i stället för 1 469 kr.",
+          "rubrik": "En person räcker. 210D-väv.",
+          "beskrivning": "",
+          "lank": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+        },
+        "no": {
+          "ad_id": "120252413275680233",
+          "konto": "1050941584152547",
+          "namn": "Takovertrekk_NO_SP_4_H2",
+          "status": "ACTIVE",
+          "kampanj": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+          "copy": {
+            "message": "Én hånd hekter fast reimen i kroken ved takkanten. Én person er nok for å få dette på plass. Dette dekker bare taket, ikke hele vognen. Vannet blir aldri stående ved taklukene, og 210D-duken tåler hele vintersesongen ute. Reimene sitter på alle fire sider og hektes fast i en krok i nedkant. 1 189 kr i stedet for 1 549 kr.",
+            "rubrik": "Én person er nok. 210D-duk.",
+            "beskrivning": "",
+            "lank": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+          },
+          "media": {
+            "typ": "video",
+            "id": "3406440459536033"
+          },
+          "fil": "factory/output/carashell/spegla-2026-09-28/Takoverdrag_SP_4_H2/CaraShellRoof_NO_SP_104_H2.mp4",
+          "fel": null,
+          "lank": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+        },
+        "brand": [],
+        "pris_kalla": 1129,
+        "pris_kalla_fran": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan.json",
+        "pris_kalla_no": 1189,
+        "paritet_se": {
+          "ok": true,
+          "okand": false,
+          "avvikelse": 0,
+          "skal": null
+        },
+        "paritet_no": {
+          "ok": true,
+          "okand": false,
+          "avvikelse": 0.07504520795660036,
+          "skal": null
+        },
+        "finns_i_meta": {
+          "SE": false,
+          "NO": false,
+          "US": false
+        },
+        "ad_ids": {
+          "SE": null,
+          "NO": null,
+          "US": null
+        },
+        "kampanj_se": {
+          "id": "120249050544990172",
+          "namn": "CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11",
+          "bas": "CARASHELL_SE_Taköverdraget"
+        },
+        "kampanj_no": {
+          "id": "120249050596730172",
+          "namn": "CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11",
+          "bas": "CARASHELL_NO_Takovertrekket"
+        },
+        "adset_se": {
+          "id": "120249050592930172",
+          "name": "CARASHELL_SE_Taköverdraget - SP",
+          "status": "ACTIVE"
+        },
+        "block": 41,
+        "fil": "factory/output/carashell/spegla-2026-09-28/Takoverdrag_SP_4_H2/CaraShellRoof_SP_104_H2.mp4",
+        "fil_kalla": "Meta-annons 120250371639930291",
+        "fil_alla": [
+          "factory/output/carashell/spegla-2026-09-28/Takoverdrag_SP_4_H2/CaraShellRoof_SP_104_H2.mp4"
+        ],
+        "fil_fel": null,
+        "hamtat": true,
+        "slutkort": {
+          "se": {
+            "fil": "factory/output/carashell/spegla-2026-09-28/Takoverdrag_SP_4_H2/CaraShellRoof_SP_104_H2.mp4",
+            "slut_sek": 3,
+            "langd_s": null,
+            "start_s": null,
+            "stilla": null,
+            "byte": null,
+            "textrader": [],
+            "fynd": [],
+            "sekunder": 0,
+            "dom": "okand",
+            "skal": "ffmpeg läste ingen speltid ur filen (spawnSync ffmpeg ENOENT)",
+            "kod": "ingen-speltid"
+          },
+          "no": {
+            "fil": "factory/output/carashell/spegla-2026-09-28/Takoverdrag_SP_4_H2/CaraShellRoof_NO_SP_104_H2.mp4",
+            "slut_sek": 3,
+            "langd_s": null,
+            "start_s": null,
+            "stilla": null,
+            "byte": null,
+            "textrader": [],
+            "fynd": [],
+            "sekunder": 0,
+            "dom": "okand",
+            "skal": "ffmpeg läste ingen speltid ur filen (spawnSync ffmpeg ENOENT)",
+            "kod": "ingen-speltid"
+          }
+        },
+        "bedomning": {
+          "se": {
+            "ok": true,
+            "skal": []
+          },
+          "no": {
+            "ok": true,
+            "skal": []
+          }
+        }
+      },
+      {
+        "namn": "Takoverdrag_GT_11_H1",
+        "spegel": "CaraShellRoof_GT_111_H1",
+        "spegel_no": "CaraShellRoof_NO_GT_111_H1",
+        "spegel_us": "CaraShellRoof_US_GT_111_H1",
+        "page_id": "3e3270ab-908c-8109-a4cb-ce98698f5a63",
+        "url": "https://app.notion.com/p/Takoverdrag_GT_11_H1-3e3270ab908c8109a4cbce98698f5a63",
+        "typ": "video",
+        "typ_notion": "Video - Pending Approval",
+        "status": "CaraShell SE ready to be active",
+        "filer": [],
+        "landning": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+        "skapad": "2026-09-22T06:42:00.000Z",
+        "kall_ad": {
+          "id": "120250341502740291",
+          "status": "ACTIVE",
+          "kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09"
+        },
+        "copy_se": {
+          "message": "Han pratar om husvagnen som om den vore ett husdjur.\nStrumpor och en grillspade glöms bort i lådan på en vecka.\nTaket ser han aldrig – ändå är det ytan som kostar mest när något går fel.\nNio storlekar, från 1 129 kr. Klar till fars dag, 8 november.",
+          "rubrik": "Han glömmer strumpor. Inte det här.",
+          "beskrivning": "",
+          "lank": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+        },
+        "no": {
+          "ad_id": "120252357454840233",
+          "konto": "1050941584152547",
+          "namn": "Takovertrekk_NO_GT_11_H1",
+          "status": "ACTIVE",
+          "kampanj": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+          "copy": {
+            "message": "Han snakker om campingvogna som om den var et kjæledyr.\nSokker og en ny grillspade er glemt i esken på en uke.\nTaket ser han aldri – likevel er det flaten som koster mest når noe går galt.\nNi størrelser, fra 1 189 kr. Klar til farsdag, 8. november.",
+            "rubrik": "Han glemmer sokker. Ikke dette.",
+            "beskrivning": "",
+            "lank": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+          },
+          "media": {
+            "typ": "video",
+            "id": "2190443801895716"
+          },
+          "fil": "factory/output/carashell/spegla-2026-09-28/Takoverdrag_GT_11_H1/CaraShellRoof_NO_GT_111_H1.mp4",
+          "fel": null,
+          "lank": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+        },
+        "brand": [
+          "Bäverbutiken"
+        ],
+        "pris_kalla": 1129,
+        "pris_kalla_fran": "briefen",
+        "pris_kalla_no": 1189,
+        "paritet_se": {
+          "ok": true,
+          "okand": false,
+          "avvikelse": 0,
+          "skal": null
+        },
+        "paritet_no": {
+          "ok": true,
+          "okand": false,
+          "avvikelse": 0.07504520795660036,
+          "skal": null
+        },
+        "finns_i_meta": {
+          "SE": false,
+          "NO": false,
+          "US": false
+        },
+        "ad_ids": {
+          "SE": null,
+          "NO": null,
+          "US": null
+        },
+        "kampanj_se": {
+          "id": "120249050544990172",
+          "namn": "CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11",
+          "bas": "CARASHELL_SE_Taköverdraget"
+        },
+        "kampanj_no": {
+          "id": "120249050596730172",
+          "namn": "CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11",
+          "bas": "CARASHELL_NO_Takovertrekket"
+        },
+        "adset_se": {
+          "id": "120249050591110172",
+          "name": "CARASHELL_SE_Taköverdraget - GT",
+          "status": "ACTIVE"
+        },
+        "block": 43,
+        "fil": "factory/output/carashell/spegla-2026-09-28/Takoverdrag_GT_11_H1/CaraShellRoof_GT_111_H1.mp4",
+        "fil_kalla": "Meta-annons 120250341502740291",
+        "fil_alla": [
+          "factory/output/carashell/spegla-2026-09-28/Takoverdrag_GT_11_H1/CaraShellRoof_GT_111_H1.mp4"
+        ],
+        "fil_fel": null,
+        "hamtat": true,
+        "slutkort": {
+          "se": {
+            "fil": "factory/output/carashell/spegla-2026-09-28/Takoverdrag_GT_11_H1/CaraShellRoof_GT_111_H1.mp4",
+            "slut_sek": 3,
+            "langd_s": null,
+            "start_s": null,
+            "stilla": null,
+            "byte": null,
+            "textrader": [],
+            "fynd": [],
+            "sekunder": 0.01,
+            "dom": "okand",
+            "skal": "ffmpeg läste ingen speltid ur filen (spawnSync ffmpeg ENOENT)",
+            "kod": "ingen-speltid"
+          },
+          "no": {
+            "fil": "factory/output/carashell/spegla-2026-09-28/Takoverdrag_GT_11_H1/CaraShellRoof_NO_GT_111_H1.mp4",
+            "slut_sek": 3,
+            "langd_s": null,
+            "start_s": null,
+            "stilla": null,
+            "byte": null,
+            "textrader": [],
+            "fynd": [],
+            "sekunder": 0,
+            "dom": "okand",
+            "skal": "ffmpeg läste ingen speltid ur filen (spawnSync ffmpeg ENOENT)",
+            "kod": "ingen-speltid"
+          }
+        },
+        "bedomning": {
+          "se": {
+            "ok": false,
+            "skal": [
+              "nämner Bäverbutiken: Bäverbutiken"
+            ]
+          },
+          "no": {
+            "ok": false,
+            "skal": [
+              "SE stoppad"
+            ]
+          }
+        }
+      },
+      {
+        "namn": "Takoverdrag_CS_12_H1",
+        "spegel": "CaraShellRoof_CS_112_H1",
+        "spegel_no": "CaraShellRoof_NO_CS_112_H1",
+        "spegel_us": "CaraShellRoof_US_CS_112_H1",
+        "page_id": "3e0270ab-908c-81a3-96aa-e0be09885e8f",
+        "url": "https://app.notion.com/p/Takoverdrag_CS_12_H1-3e0270ab908c81a396aae0be09885e8f",
+        "typ": "video",
+        "typ_notion": "Video - Pending Approval",
+        "status": "CaraShell SE ready to be active",
+        "filer": [],
+        "landning": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+        "skapad": "2026-09-19T06:02:00.000Z",
+        "kall_ad": {
+          "id": "120250371708270291",
+          "status": "ACTIVE",
+          "kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09"
+        },
+        "copy_se": {
+          "message": "Jag betalade 1 129 kronor för det här. Taket är den dyraste ytan på hela vagnen. Tål en hel vintersäsong ute – 210D-väv, inte tunn presenning som spricker i frost. Sitter kvar när det blåser – remmarna sitter på alla fyra sidor och hakas fast i en krok i nederkant. Jämförpriset är 1 469 kronor. Jag betalade 1 129. Skydda taket – 1 129 kr.",
+          "rubrik": "Skydda taket – 1 129 kr.",
+          "beskrivning": "",
+          "lank": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+        },
+        "no": {
+          "ad_id": "120252413354800233",
+          "konto": "1050941584152547",
+          "namn": "Takovertrekk_NO_CS_12_H1",
+          "status": "ACTIVE",
+          "kampanj": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+          "copy": {
+            "message": "Jeg betalte 1 189 kroner for dette. Taket er den dyreste flaten på hele vognen. Tåler en hel vintersesong ute: 210D-duk, ikke tynn presenning som sprekker i frost. Sitter fast når det blåser: reimene sitter på alle fire sider og hektes fast i en krok i nedkant. Sammenligningsprisen er 1 549 kroner. Jeg betalte 1 189. Beskytt taket, 1 189 kr.",
+            "rubrik": "Beskytt taket, 1 189 kr.",
+            "beskrivning": "",
+            "lank": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+          },
+          "media": {
+            "typ": "video",
+            "id": "1596780968587259"
+          },
+          "fil": "factory/output/carashell/spegla-2026-09-28/Takoverdrag_CS_12_H1/CaraShellRoof_NO_CS_112_H1.mp4",
+          "fel": null,
+          "lank": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+        },
+        "brand": [],
+        "pris_kalla": 1129,
+        "pris_kalla_fran": "briefen",
+        "pris_kalla_no": 1189,
+        "paritet_se": {
+          "ok": true,
+          "okand": false,
+          "avvikelse": 0,
+          "skal": null
+        },
+        "paritet_no": {
+          "ok": true,
+          "okand": false,
+          "avvikelse": 0.07504520795660036,
+          "skal": null
+        },
+        "finns_i_meta": {
+          "SE": false,
+          "NO": false,
+          "US": false
+        },
+        "ad_ids": {
+          "SE": null,
+          "NO": null,
+          "US": null
+        },
+        "kampanj_se": {
+          "id": "120249050544990172",
+          "namn": "CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11",
+          "bas": "CARASHELL_SE_Taköverdraget"
+        },
+        "kampanj_no": {
+          "id": "120249050596730172",
+          "namn": "CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11",
+          "bas": "CARASHELL_NO_Takovertrekket"
+        },
+        "adset_se": {
+          "id": "120249050594580172",
+          "name": "CARASHELL_SE_Taköverdraget - CS",
+          "status": "ACTIVE"
+        },
+        "block": 19,
+        "fil": "factory/output/carashell/spegla-2026-09-28/Takoverdrag_CS_12_H1/CaraShellRoof_CS_112_H1.mp4",
+        "fil_kalla": "Meta-annons 120250371708270291",
+        "fil_alla": [
+          "factory/output/carashell/spegla-2026-09-28/Takoverdrag_CS_12_H1/CaraShellRoof_CS_112_H1.mp4"
+        ],
+        "fil_fel": null,
+        "hamtat": true,
+        "slutkort": {
+          "se": {
+            "fil": "factory/output/carashell/spegla-2026-09-28/Takoverdrag_CS_12_H1/CaraShellRoof_CS_112_H1.mp4",
+            "slut_sek": 3,
+            "langd_s": null,
+            "start_s": null,
+            "stilla": null,
+            "byte": null,
+            "textrader": [],
+            "fynd": [],
+            "sekunder": 0,
+            "dom": "okand",
+            "skal": "ffmpeg läste ingen speltid ur filen (spawnSync ffmpeg ENOENT)",
+            "kod": "ingen-speltid"
+          },
+          "no": {
+            "fil": "factory/output/carashell/spegla-2026-09-28/Takoverdrag_CS_12_H1/CaraShellRoof_NO_CS_112_H1.mp4",
+            "slut_sek": 3,
+            "langd_s": null,
+            "start_s": null,
+            "stilla": null,
+            "byte": null,
+            "textrader": [],
+            "fynd": [],
+            "sekunder": 0,
+            "dom": "okand",
+            "skal": "ffmpeg läste ingen speltid ur filen (spawnSync ffmpeg ENOENT)",
+            "kod": "ingen-speltid"
+          }
+        },
+        "bedomning": {
+          "se": {
+            "ok": true,
+            "skal": []
+          },
+          "no": {
+            "ok": true,
+            "skal": []
+          }
+        }
+      },
+      {
+        "namn": "Takoverdrag_UG_2_H1",
+        "spegel": "CaraShellRoof_UG_102_H1",
+        "spegel_no": "CaraShellRoof_NO_UG_102_H1",
+        "spegel_us": "CaraShellRoof_US_UG_102_H1",
+        "page_id": "3dd270ab-908c-81f2-8426-d1537a431f52",
+        "url": "https://app.notion.com/p/Takoverdrag_UG_2_H1-3dd270ab908c81f28426d1537a431f52",
+        "typ": "video",
+        "typ_notion": "Video - Pending Approval",
+        "status": "CaraShell SE ready to be active",
+        "filer": [],
+        "landning": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+        "skapad": "2026-09-16T15:49:00.000Z",
+        "kall_ad": {
+          "id": "120250357009170291",
+          "status": "ACTIVE",
+          "kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09"
+        },
+        "copy_se": {
+          "message": "Bara taket. Inte hela vagnen.\n6,5 × 3 m, rakt över taket – helt själv, ingen hjälp.\nRem och dragsko i kanten, ryms i påsen efteråt.\n1 129 kr (ord. 1 469 kr).",
+          "rubrik": "Bara taket. Inte hela vagnen.",
+          "beskrivning": "",
+          "lank": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+        },
+        "no": {
+          "ad_id": "120252413537210233",
+          "konto": "1050941584152547",
+          "namn": "Takovertrekk_NO_UG_2_H1",
+          "status": "ACTIVE",
+          "kampanj": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+          "copy": {
+            "message": "Bare taket. Ikke hele vogna.\n6,5 × 3 m, rett over taket. Helt selv, ingen hjelp.\nReim og strammesnor i kanten, får plass i posen etterpå.\n1 189 kr (ord. 1 549 kr).",
+            "rubrik": "Bare taket. Ikke hele vogna.",
+            "beskrivning": "",
+            "lank": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+          },
+          "media": {
+            "typ": "video",
+            "id": "1600256038241182"
+          },
+          "fil": "factory/output/carashell/spegla-2026-09-28/Takoverdrag_UG_2_H1/CaraShellRoof_NO_UG_102_H1.mp4",
+          "fel": null,
+          "lank": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+        },
+        "brand": [],
+        "pris_kalla": 1129,
+        "pris_kalla_fran": "briefen",
+        "pris_kalla_no": 1189,
+        "paritet_se": {
+          "ok": true,
+          "okand": false,
+          "avvikelse": 0,
+          "skal": null
+        },
+        "paritet_no": {
+          "ok": true,
+          "okand": false,
+          "avvikelse": 0.07504520795660036,
+          "skal": null
+        },
+        "finns_i_meta": {
+          "SE": false,
+          "NO": false,
+          "US": false
+        },
+        "ad_ids": {
+          "SE": null,
+          "NO": null,
+          "US": null
+        },
+        "kampanj_se": {
+          "id": "120249050544990172",
+          "namn": "CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11",
+          "bas": "CARASHELL_SE_Taköverdraget"
+        },
+        "kampanj_no": {
+          "id": "120249050596730172",
+          "namn": "CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11",
+          "bas": "CARASHELL_NO_Takovertrekket"
+        },
+        "adset_se": {
+          "id": "120249156618810172",
+          "name": "CARASHELL_SE_Taköverdraget - UG",
+          "status": "ACTIVE"
+        },
+        "block": 23,
+        "fil": "factory/output/carashell/spegla-2026-09-28/Takoverdrag_UG_2_H1/CaraShellRoof_UG_102_H1.mp4",
+        "fil_kalla": "Meta-annons 120250357009170291",
+        "fil_alla": [
+          "factory/output/carashell/spegla-2026-09-28/Takoverdrag_UG_2_H1/CaraShellRoof_UG_102_H1.mp4"
+        ],
+        "fil_fel": null,
+        "hamtat": true,
+        "slutkort": {
+          "se": {
+            "fil": "factory/output/carashell/spegla-2026-09-28/Takoverdrag_UG_2_H1/CaraShellRoof_UG_102_H1.mp4",
+            "slut_sek": 3,
+            "langd_s": null,
+            "start_s": null,
+            "stilla": null,
+            "byte": null,
+            "textrader": [],
+            "fynd": [],
+            "sekunder": 0.01,
+            "dom": "okand",
+            "skal": "ffmpeg läste ingen speltid ur filen (spawnSync ffmpeg ENOENT)",
+            "kod": "ingen-speltid"
+          },
+          "no": {
+            "fil": "factory/output/carashell/spegla-2026-09-28/Takoverdrag_UG_2_H1/CaraShellRoof_NO_UG_102_H1.mp4",
+            "slut_sek": 3,
+            "langd_s": null,
+            "start_s": null,
+            "stilla": null,
+            "byte": null,
+            "textrader": [],
+            "fynd": [],
+            "sekunder": 0.01,
+            "dom": "okand",
+            "skal": "ffmpeg läste ingen speltid ur filen (spawnSync ffmpeg ENOENT)",
+            "kod": "ingen-speltid"
+          }
+        },
+        "bedomning": {
+          "se": {
+            "ok": true,
+            "skal": []
+          },
+          "no": {
+            "ok": true,
+            "skal": []
+          }
+        }
+      }
+    ],
+    "klara_en": [
+      {
+        "namn": "Takoverdrag_OB_10_1",
+        "spegel": "CaraShellRoof_OB_110_1",
+        "spegel_us": "CaraShellRoof_US_OB_110_1",
+        "page_id": "3e6270ab-908c-8156-9b7b-fc4b4c952c7d",
+        "url": "https://app.notion.com/p/Takoverdrag_OB_10_1-3e6270ab908c81569b7bfc4b4c952c7d",
+        "us_uppe": true,
+        "us_ad_id": "120251634835850435",
+        "klar_for_approved": true
+      },
+      {
+        "namn": "Takoverdrag_OB_8_1",
+        "spegel": "CaraShellRoof_OB_108_1",
+        "spegel_us": "CaraShellRoof_US_OB_108_1",
+        "page_id": "3e6270ab-908c-8107-9bb7-e7b5d54755a4",
+        "url": "https://app.notion.com/p/Takoverdrag_OB_8_1-3e6270ab908c81079bb7e7b5d54755a4",
+        "us_uppe": true,
+        "us_ad_id": "120251634831160435",
+        "klar_for_approved": true
+      },
+      {
+        "namn": "Takoverdrag_OB_4_H1",
+        "spegel": "CaraShellRoof_OB_104_H1",
+        "spegel_us": "CaraShellRoof_US_OB_104_H1",
+        "page_id": "3e3270ab-908c-8117-8ae1-cf5a3ed39e2e",
+        "url": "https://app.notion.com/p/Takoverdrag_OB_4_H1-3e3270ab908c81178ae1cf5a3ed39e2e",
+        "us_uppe": false,
+        "us_ad_id": null,
+        "klar_for_approved": false
+      },
+      {
+        "namn": "Takoverdrag_OB_3_H1",
+        "spegel": "CaraShellRoof_OB_103_H1",
+        "spegel_us": "CaraShellRoof_US_OB_103_H1",
+        "page_id": "3e3270ab-908c-8186-a524-f0b04da24eee",
+        "url": "https://app.notion.com/p/Takoverdrag_OB_3_H1-3e3270ab908c8186a524f0b04da24eee",
+        "us_uppe": false,
+        "us_ad_id": null,
+        "klar_for_approved": false
+      },
+      {
+        "namn": "Takoverdrag_CO_5_H1",
+        "spegel": "CaraShellRoof_CO_105_H1",
+        "spegel_us": "CaraShellRoof_US_CO_105_H1",
+        "page_id": "3e0270ab-908c-8143-b656-dac37e95807e",
+        "url": "https://app.notion.com/p/Takoverdrag_CO_5_H1-3e0270ab908c8143b656dac37e95807e",
+        "us_uppe": false,
+        "us_ad_id": null,
+        "klar_for_approved": false
+      },
+      {
+        "namn": "Takoverdrag_PD_10_H1",
+        "spegel": "CaraShellRoof_PD_110_H1",
+        "spegel_us": "CaraShellRoof_US_PD_110_H1",
+        "page_id": "3e0270ab-908c-8186-909b-c8bf55d3c6d0",
+        "url": "https://app.notion.com/p/Takoverdrag_PD_10_H1-3e0270ab908c8186909bc8bf55d3c6d0",
+        "us_uppe": false,
+        "us_ad_id": null,
+        "klar_for_approved": false
+      },
+      {
+        "namn": "Takoverdrag_CS_9_H1",
+        "spegel": "CaraShellRoof_CS_109_H1",
+        "spegel_us": "CaraShellRoof_US_CS_109_H1",
+        "page_id": "3dd270ab-908c-811b-8bf2-f9a3f20e1299",
+        "url": "https://app.notion.com/p/Takoverdrag_CS_9_H1-3dd270ab908c811b8bf2f9a3f20e1299",
+        "us_uppe": false,
+        "us_ad_id": null,
+        "klar_for_approved": false
+      }
+    ],
+    "varningar": [
+      "SE-kampanj: \"CARASHELL_SE_Taköverdraget LISTICLE\" är eget spår (namnet bär LISTICLE) och tog inte emot annonserna."
+    ],
+    "utmapp": "/home/user/yognftnfgn/factory/output/carashell",
+    "hamtad": "2026-09-28T14:59:33.474Z"
+  }
+}
