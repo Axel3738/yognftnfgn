@@ -1,23 +1,28 @@
 {
-  "_kommentar": "Bildplan för USA-sidan 'Before you buy' (takskyddet, carashell.com), 2026-09-27. Produktsidan bär tolv bilder (index i marknadsproduktens ordning): 1 husvagn på grusplan med överdraget (render, höst), 2 husbil i studio med överdraget, 3 före/efter husvagn, 4 detaljcollage (hopvikt överdrag + väv + vävd rem med spänne), 5 vävd rem med krok under karossens kant, 6 vävda remmar med krokar (makro), 7 regn på väven, 8 husbil på vinterplats med överdraget, 9 image4 (leverantörens husbil), 10 tak-van (leverantörens husbil från andra hållet), 11 tak-hopvikt, 12 tak-spanne. ⛔ 11 och 12 (och collaget i 11) visar ELASTISKA band med plastkrokar på rosa tyg — leverantörens gamla foton — och motsäger sidans text 'woven webbing, not elastic': används aldrig här. Bild 1–8 är tittade 2026-09-27: inga människor, ingen text, inga loggor; remmarna är vävda. AC-punkten och fifth wheel-punkten får kie-bilder som visar KUNDENS tak utan överdraget (ett tak med AC-aggregat, en fifth wheel med solcell) — aldrig överdraget på ett AC-tak, för hur det sitter där är obesvarat (rapporten: bilden kommer från leverantören).",
+  "_kommentar": "Bildplan för den SVENSKA invändningssidan (takskyddet, carashell.se), 2026-09-28. USA-sidans bildplan ligger orörd i bildplan.en.json. Produktbilderna tittade 2026-09-28 (index = CaraShells galleri): 1 husvagn på grusplan med överdraget, 3 samma husvagn utan och med, 4 detaljcollage (hopvikt packe, väven, vävd rem med spänne), 5 vävd rem med krok under karossens kant, 8 husbil på vinterplats. ⛔ Bild 2 (studio) visar överdraget draperat över fronten på en HELINTEGRERAD husbil — sidan säger att vi inte vet hur det sitter på en helintegrerad, så den bilden används inte här. ⛔ 11–12 (elastiska band på rosa tyg) används aldrig. Tre kie-bilder visar KUNDENS tak utan överdrag (europeisk husvagn/husbil): takluckorna som hamnar under duken (fukt), det smutsiga taket (grannens husbil, 'grönsvart av skit från träden') och ett husbilstak med solcell och antenn (det vi inte vet) — aldrig överdraget över något obesvarat.",
   "bilder": {
-    "punkt1": { "kalla": "produkt", "index": 8 },
+    "punkt1": { "kalla": "produkt", "index": 1 },
     "punkt2": {
       "kalla": "kie",
-      "prompt": "The roof of a white American travel trailer photographed from a ladder at the rear corner, slightly above roof level: a large white rooftop air conditioner shroud in the middle of the flat roof, two low plastic vent hoods and a small plumbing vent pipe, seams and a light rubber roof membrane visible, no cover on the roof, overcast daylight, an empty gravel RV storage lot and a plain wooden fence blurred below, no other vehicles in the frame, photo-realistic, natural muted colors, completely unbranded trailer with no badges, no lettering, no stickers and no decals, no people, no hands, no text, no logos",
+      "prompt": "The flat white roof of a European touring caravan photographed from a ladder at the rear corner, slightly above roof level: two square translucent roof hatches (skylights) and one small round mushroom vent on the roof, the roof surface slightly damp after autumn rain with a few small puddles near the hatch frames, no cover on the roof, grey overcast Scandinavian autumn daylight, birch trees with yellow leaves blurred in the background, photo-realistic, natural muted colors, completely unbranded caravan with no badges, no lettering, no stickers and no decals, no people, no hands, no text, no logos",
       "referenser": [],
       "format": "1:1"
     },
-    "punkt3": { "kalla": "produkt", "index": 5 },
-    "punkt4": { "kalla": "produkt", "index": 7 },
-    "punkt5": { "kalla": "produkt", "index": 3 },
+    "punkt3": {
+      "kalla": "kie",
+      "prompt": "Close view of the flat roof of an old white European caravan that has stood outdoors under trees for years: green and black algae streaks and dirt spread across the roof panel, wet brown leaves and pine needles collected along the edge and around the frame of a square roof hatch, a sealant seam along the roof edge visibly grimy, no cover on the roof, overcast daylight, photo-realistic, natural muted colors, completely unbranded caravan with no badges, no lettering, no stickers and no decals, no people, no hands, no text, no logos",
+      "referenser": [],
+      "format": "1:1"
+    },
+    "punkt4": { "kalla": "produkt", "index": 5 },
+    "punkt5": { "kalla": "produkt", "index": 4 },
     "punkt6": {
       "kalla": "kie",
-      "prompt": "A white fifth wheel travel trailer parked on a gravel RV storage lot, seen from the side and slightly above, the raised front section over the hitch clearly visible, one flat solar panel and a small TV antenna on the main flat roof, no cover on the roof, overcast daylight, bare trees in the background, photo-realistic, natural muted colors, completely unbranded trailer with no badges, no lettering, no stickers and no decals, no people, no hands, no text, no logos",
+      "prompt": "The roof of a white European alcove motorhome seen from above and slightly behind, with the raised alcove section over the cab at the front, one flat rectangular solar panel, a small white TV antenna mast and a square roof hatch on the main flat roof, no cover on the roof, parked on a gravel lot in grey Scandinavian autumn daylight, bare birch trees in the background, photo-realistic, natural muted colors, completely unbranded motorhome with no badges, no lettering, no stickers and no decals, no people, no hands, no text, no logos",
       "referenser": [],
       "format": "1:1"
     },
-    "punkt7": { "kalla": "produkt", "index": 4 },
-    "lyckas": { "kalla": "produkt", "index": 2 }
+    "punkt7": { "kalla": "produkt", "index": 3 },
+    "lyckas": { "kalla": "produkt", "index": 8 }
   }
 }

@@ -1,0 +1,92 @@
+{
+  "_kommentar": "Svenska invändningssidan för taköverdraget i CaraShell (carashell.se), byggd 2026-09-28 på Axels order: 'Detta är den amerikanska listicle och vi ska bygga en ny utifrån denna strukturen' (rv-roof-cover-before-you-buy, fryst som original). Innehållet kommer ur Sverige-rapporten kommentarer/rapporter/sverige-2026-09-28.md (198 svenska kommentarer, 74 på CaraShells annonser) och rapportens sida 2 'Din längd, ditt pris' (CaraShell först: produktsidan visar inget pris per längd, låg under break-even 1,51 tre dagar i rad, och alla tre klagomål på uteblivet svar om längd och pris kom hos CaraShell). Kundcitaten är CaraShells egna kommentarer (kommentarer/logg/2026-09.jsonl, verksamhet CaraShell, marknad SE). Fakta bara ur CaraShells svenska produktsida 2026-09-28, kommentarer/produktfakta.md och rapporten. Det obekräftade står som 'inget svar från tillverkaren', aldrig 'vi har frågat' (Axels beslut 2026-09-27). Ingen färg, ingen vindgräns, inget 'torrt tak', ingen minutsiffra, inget 'en person', ingen lagerhistoria, inga butiksnamn, inga konkurrentnamn.",
+  "hero": {
+    "rubrik": "1 129 kr är priset för de två kortaste överdragen. Här är priset för din längd, och raka svar på allt annat ni frågat om.",
+    "ingress": "Över 70 av er har skrivit under annonserna sedan mitten av september, och samma frågor kommer tillbaka varje dag. Måste det inte vara luft emellan? Finns min längd, och vad kostar den? Tål inte en husbil regn ändå? Den här sidan tar dem i tur och ordning, och där vi inte vet svaret står det i stället för en gissning.",
+    "knapp": "Se alla nio längder och priser → från 1 129 kr",
+    "sammanfattning": [
+      "Överdraget finns i nio längder, från 5,5 till 13,5 meter, och alla är 3 meter breda. Priserna går från 1 129 kr till 2 239 kr, och hela listan står direkt här under, med en knapp per längd som öppnar just den storleken på produktsidan.",
+      "Efter tabellen kommer de sju saker ni frågar mest om: storleken, fukten under överdraget, varför man ska täcka ett tak som tål regn, remmarna mot lacken, vad som ingår, det som sitter på taket och vad du har om det inte passar. Där vi saknar svar från tillverkaren står det rakt ut."
+    ]
+  },
+  "pristabell": {
+    "rubrik": "Din längd, ditt pris",
+    "text": "Alla nio är 3 meter breda. Mät hur lång vagnen är från front till bakkant, utan dragstången, och ta den storlek som är minst lika lång. Priset i tabellen gäller ett överdrag. På produktsidan finns också paket med två eller tre, och paketrutan öppnar med två valda, så har du en vagn väljer du 1 st där.",
+    "knapp": "Öppna den här längden →",
+    "fot": "Hamnar vagnen mellan två längder tar du den längre. En husbil på 7,2 meter tar alltså 7,5, och en vagn på 8,3 meter tar 8,5. Vill du ha två olika längder, en till husvagnen och en till husbilen, väljer du en storlek per överdrag i paketrutan."
+  },
+  "punkter": [
+    {
+      "rubrik": "1. Hittade du bara 6,5 meter? Alla nio längder finns, upp till 13,5.",
+      "text": "Flera av er har skrivit att ni bara hittade 6,5 meter när ni skulle beställa, fast husbilen är 7,2 meter eller vagnen 8,3. Längderna finns, men de ligger i paketrutan på produktsidan, där varje överdrag har en egen liten storleksväljare som är lätt att gå förbi. Tabellen här ovanför är samma nio längder, från 5,5 till 13,5 meter, och knappen på varje rad öppnar produktsidan med den längden vald. Mät vagnen från front till bakkant, utan dragstången, och ta den storlek som är minst lika lång. Eftersom paketrutan öppnar med två överdrag valda väljer du 1 st där om du har en vagn, och då blir priset det som står i tabellen.",
+      "knapp": "Se alla nio längder → från 1 129 kr"
+    },
+    {
+      "rubrik": "2. Måste det inte vara luft emellan? Jo. Så gör du tills vidare.",
+      "text": "Det är den fråga vi får oftast, och ni som ställer den har rätt. Ligger ett vattentätt överdrag tätt mot taket kan fukt stängas in under det, och takluckorna hamnar under duken. Därför tar vi fram en distansdel som lyfter överdraget från taket, så att luften kan röra sig emellan. Den har inget datum och inget pris än, så vi lovar den inte här. Tills den finns kan du göra som några av er själva har föreslagit under annonserna: lägg något på taket som håller duken uppe, till exempel några reglar eller papprör, så att det blir en luftspalt. Lägg sedan på överdraget en torr dag, inte direkt efter ett regn.",
+      "knapp": "Se överdraget → nio längder, en bredd"
+    },
+    {
+      "rubrik": "3. Husbilar är byggda för att stå ute. Varför täcka taket då?",
+      "text": "En av er skrev precis så, och en annan att ett tak inte förstörs av lite regn. Det stämmer. Kan vagnen stå under tak i vinter är det det bästa den kan få, och då behöver den inget överdrag. Det här är för er som måste ställa den ute. En ägare skriver att det inte är lacken som är problemet, utan skarvarna vid takluckorna, som sällan krånglar de första tio, femton åren men sedan bara är en tidsfråga. En annan beskriver grannens husbil, som stått utanför garaget i åratal med taket grönsvart av skit från träden. Överdraget täcker bara taket, och kanten hänger ner ungefär 30 till 40 cm över sidorna, så skarven mellan tak och vägg ligger under skydd. Regnet rinner av väven i stället för att bli stående vid takluckorna.",
+      "knapp": "Se vad överdraget täcker →"
+    },
+    {
+      "rubrik": "4. Blir husbilen en sebra till sommaren? Så sitter remmarna.",
+      "text": "Den husbilen kommer att se ut som en sebra till sommaren, skrev en av er, eftersom blåsten får banden att vibrera och nöta på sidorna. En annan har haft ett helöverdrag som mattade sidorna i blåsten, medan en tredje svarar att de aldrig fått märken efter banden på sina husbilar. Så här sitter de här remmarna. De är vävda i ett mjukt material, inte gummi, och töjs inte ut. De sitter på alla fyra sidor, ställs in i ett spänne och hakar fast med en plastkrok under karossens nederkant, och två förstärkta remmar går dessutom tvärs över taket och håller duken nere. Om lacken säger tillverkaren att remmarna inte skadar den, och det är deras ord vi för vidare. Någon vindgräns ger vi dig inte, för det finns ingen att mäta. En ägare trär rörisolering på banden, och det tipset får du gärna ta med dig.",
+      "knapp": "Se remmarna i närbild →"
+    },
+    {
+      "rubrik": "5. Finns det billigare duk på nätet? Säkert. Här är allt som ingår i den här.",
+      "text": "Några har skrivit att samma sak finns mycket billigare på nätet. Vi jämför oss inte med någon annans duk, men vi kan lägga allt som ingår i vår på bordet, så kan du jämföra själv. Du får ett överdrag i vattentät 210D-väv som tål sol, i din längd och 3 meter brett. Längs alla fyra sidor sitter vävda remmar på 2,5 meter, ställbara i ett spänne, och två förstärkta remmar på 10,5 meter följer med att dra tvärs över taket. När säsongen är slut viks alltihop ihop till en packe som du bär i famnen. Frakten är fri inom Sverige och leveransen tar 5 till 10 arbetsdagar.",
+      "knapp": "Se allt som ingår →"
+    },
+    {
+      "rubrik": "6. Solceller, antenn, husbil? Det här vet vi, och det här vet vi inte.",
+      "text": "Solcellerna först, för där är svaret enkelt: överdraget läggs över dem, så de är täckta så länge det ligger på. Behöver batteriet laddas i vinter är det här inte lösningen, och en av er valde av just det skälet en genomskinlig presenning i stället. Överdraget passar både husvagn och husbil, och du mäter på samma sätt, från front till bakkant. Hur det lägger sig på en helintegrerad husbil eller en alkovbil, där taket inte är en enda plan yta, har vi inget svar från tillverkaren på. Samma sak gäller antennen, och om en taklucka går att öppna inifrån när överdraget ligger på. En av er frågade om öppningarna för luckorna och ventilen som syns på en av våra bilder. Om den bilden visar just den version vi skickar har vi inget svar på heller, så räkna inte med några öppningar.",
+      "knapp": "Se storlekarna → från 1 129 kr"
+    },
+    {
+      "rubrik": "7. Varför ska jag lita på er? Här är vad du har om det inte passar.",
+      "text": "Några av er har skrivit rakt ut att ni inte litar på oss. Ett par av er frågade dessutom om längderna och priserna under annonserna och fick vänta flera dagar på svar, och det var för länge. Därför står hela prislistan överst på den här sidan, så att priset för din längd syns innan du klickar och inte först i kassan. Frakten är fri och leveransen tar 5 till 10 arbetsdagar. Som alltid när du handlar på nätet har du 14 dagars ångerrätt, räknat från dagen du får paketet, men returfrakten står du för själv. Passar överdraget inte din vagn mejlar du oss inom de 14 dagarna, så hjälper vi dig med returen. Adressen står på produktsidan.",
+      "knapp": "Till produktsidan → alla nio längder"
+    }
+  ],
+  "fragor": {
+    "rubrik": "Korta svar på resten ni frågat om",
+    "lista": [
+      { "fraga": "Är det vattentätt?", "svar": "Ja. Väven är vattentät 210D och tål sol, så regnet rinner av i stället för att bli stående vid takluckorna." },
+      { "fraga": "Sitter det remmar fram och bak också, eller bara på långsidorna?", "svar": "På alla fyra sidor. De är vävda, 2,5 meter långa och ställbara i ett spänne, med en krok som hakar under karossens kant. Två förstärkta remmar på 10,5 meter går dessutom tvärs över taket." },
+      { "fraga": "Kan det ligga på hela vintern?", "svar": "Ja, det är tänkt att ligga på från höst till vår. Kommer det tung blötsnö skottar du av den, precis som du hade gjort utan överdrag. Hur mycket snö väven bär, och hur många vintrar den håller, har vi inget svar från tillverkaren på." },
+      { "fraga": "Skyddar det rutorna och tätningarna runt dem?", "svar": "Bara upptill. Kanten går över rutornas överkant men täcker aldrig nedre halvan av glaset, det säger tillverkaren själv. Hur långt ner den når beror på hur bred vagnen är." },
+      { "fraga": "Hjälper det mot solen, till exempel i Spanien?", "svar": "Väven tål sol. Om den håller nere värmen inne i vagnen vet vi inte, så det lovar vi inget om." },
+      { "fraga": "Tål det hagel?", "svar": "Det vet vi inte, och då lovar vi det inte heller." },
+      { "fraga": "Min vagn är 5,45 meter. Blir 5,5 för stort?", "svar": "Nej, ta 5,5. Det är den minsta storleken, och den är minst lika lång som vagnen. Hur långt ner kanten hänger beror på hur bred vagnen är." },
+      { "fraga": "Hur går det till att lägga på det?", "svar": "Du lägger packen på taket, tar tag i ena kortsidan och drar ut väven tills den täcker hela taket. Sedan går du runt vagnen, krokar fast remmarna under karossens nederkant sida för sida och drar åt dem i spännet. Sist kastar du de två förstärkta remmarna över taket och drar åt dem. Välj en dag utan blåst." },
+      { "fraga": "Hur snabbt kommer det?", "svar": "Frakten är fri inom Sverige, och leveransen tar 5 till 10 arbetsdagar." }
+    ]
+  },
+  "lyckas": {
+    "rubrik": "Så vad gör de som beställer ändå?",
+    "stycken": [
+      "De mäter vagnen från front till bakkant, utan dragstången, tar samma längd eller närmast längre i tabellen och väljer 1 st i paketrutan om de har en vagn. Innan överdraget åker på lägger de något på taket som håller duken uppe, så att det blir luft emellan, och sedan väntar de in en torr dag.",
+      "Det som kommer är ett överdrag i din längd, 3 meter brett, med vävda remmar på alla fyra sidor och två förstärkta remmar att dra över taket. Blir det inte som de tänkt har de 14 dagar på sig från att paketet kom, och ingen behöver ta någon annans ord för hur det sitter på just deras vagn."
+    ],
+    "knapp": "Välj din längd → från 1 129 kr"
+  },
+  "arlig": {
+    "rubrik": "Jag ska vara ärlig:",
+    "stycken": [
+      "det finns saker på den här sidan som vi fortfarande inte vet. Vi vet inte om en taklucka går att öppna med överdraget på, eller om det får ligga på när någon bor i vagnen. Vi vet inte hur det sitter på en helintegrerad husbil eller en alkovbil, och inte heller hur många vintrar väven håller. Vi har inget svar från tillverkaren på någon av de frågorna, och tills vi har det skriver vi inget om dem.",
+      "Två saker vet vi, och de passar inte alla. Ett vattentätt överdrag som ligger tätt mot taket kan stänga in fukt, så kan du inte ordna en luftspalt under duken är det bättre att vänta tills distansdelen finns. Och det täcker bara taket och övre kanten av rutorna, aldrig nedre halvan av glaset. Vill du ha hela vagnen inklädd är ett helöverdrag rätt sak för dig, bara inte det här.",
+      "Priset är det som står per längd, från 1 129 kr för 5,5 och 6,5 meter upp till 2 239 kr för 13,5 meter, och ett överdrag kostar precis det som står i tabellen."
+    ]
+  },
+  "riskfritt": {
+    "rubrik": "Om det inte blir som du tänkt",
+    "text": "Välj din längd i tabellen, eller tryck på knappen här under och välj den på produktsidan. Frakten är fri och leveransen tar 5 till 10 arbetsdagar. Ångrar du dig har du 14 dagars ångerrätt enligt lag, räknat från dagen du får paketet. Returfrakten betalar du själv, och det ska du veta redan innan du beställer.",
+    "knapp": "Ja, jag vill ha ett i min längd →"
+  },
+  "tre_fragor": [],
+  "lasbarhetstest": {}
+}

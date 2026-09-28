@@ -1,0 +1,23 @@
+{
+  "_kommentar": "Bildplan för USA-sidan 'Before you buy' (takskyddet, carashell.com), 2026-09-27. Produktsidan bär tolv bilder (index i marknadsproduktens ordning): 1 husvagn på grusplan med överdraget (render, höst), 2 husbil i studio med överdraget, 3 före/efter husvagn, 4 detaljcollage (hopvikt överdrag + väv + vävd rem med spänne), 5 vävd rem med krok under karossens kant, 6 vävda remmar med krokar (makro), 7 regn på väven, 8 husbil på vinterplats med överdraget, 9 image4 (leverantörens husbil), 10 tak-van (leverantörens husbil från andra hållet), 11 tak-hopvikt, 12 tak-spanne. ⛔ 11 och 12 (och collaget i 11) visar ELASTISKA band med plastkrokar på rosa tyg — leverantörens gamla foton — och motsäger sidans text 'woven webbing, not elastic': används aldrig här. Bild 1–8 är tittade 2026-09-27: inga människor, ingen text, inga loggor; remmarna är vävda. AC-punkten och fifth wheel-punkten får kie-bilder som visar KUNDENS tak utan överdraget (ett tak med AC-aggregat, en fifth wheel med solcell) — aldrig överdraget på ett AC-tak, för hur det sitter där är obesvarat (rapporten: bilden kommer från leverantören).",
+  "bilder": {
+    "punkt1": { "kalla": "produkt", "index": 8 },
+    "punkt2": {
+      "kalla": "kie",
+      "prompt": "The roof of a white American travel trailer photographed from a ladder at the rear corner, slightly above roof level: a large white rooftop air conditioner shroud in the middle of the flat roof, two low plastic vent hoods and a small plumbing vent pipe, seams and a light rubber roof membrane visible, no cover on the roof, overcast daylight, an empty gravel RV storage lot and a plain wooden fence blurred below, no other vehicles in the frame, photo-realistic, natural muted colors, completely unbranded trailer with no badges, no lettering, no stickers and no decals, no people, no hands, no text, no logos",
+      "referenser": [],
+      "format": "1:1"
+    },
+    "punkt3": { "kalla": "produkt", "index": 5 },
+    "punkt4": { "kalla": "produkt", "index": 7 },
+    "punkt5": { "kalla": "produkt", "index": 3 },
+    "punkt6": {
+      "kalla": "kie",
+      "prompt": "A white fifth wheel travel trailer parked on a gravel RV storage lot, seen from the side and slightly above, the raised front section over the hitch clearly visible, one flat solar panel and a small TV antenna on the main flat roof, no cover on the roof, overcast daylight, bare trees in the background, photo-realistic, natural muted colors, completely unbranded trailer with no badges, no lettering, no stickers and no decals, no people, no hands, no text, no logos",
+      "referenser": [],
+      "format": "1:1"
+    },
+    "punkt7": { "kalla": "produkt", "index": 4 },
+    "lyckas": { "kalla": "produkt", "index": 2 }
+  }
+}
