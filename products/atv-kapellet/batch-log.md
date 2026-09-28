@@ -58,3 +58,5 @@ Drive-mappen är Joshs `ATV-Kapell` (Batch #1 läggs INUTI den).
 
 **2026-09-25:** `forsta_batch` flaggat igen (3 391 kr, 29,1 % vinst, VANTA_KADENS efter höjningen 24/9 — CPA 👀 två stigningar 128 → 266 → 739 kr). Fortfarande 0 etiketter (annonserna 3 dygn), 0 lärdomar ⇒ inga briefer (samma regel som 24/9). Första möjliga dag oförändrad: 2026-09-29. Annonsidéer: 0 rader Ny.
 
+
+**2026-09-28:** `forsta_batch` flaggat igen (8 138 kr, 20,9 % vinst, LAT_VARA 1 500 kr/dag, ROAS 3d 2,22). Fortfarande 0 etiketter (annonserna skapade 2026-09-22, sju dygn fyllda först 2026-09-29) ⇒ 0 lärdomar ⇒ inga briefer (regeln från 24/9). Kampanjen läst ACTIVE 05:53 UTC. Annonsidéer: 0 rader Ny för produkten. Första möjliga dag oförändrad: **2026-09-29** (etiketter dag 7 → lärdomar → förstabatch i samma rond).

@@ -462,3 +462,5 @@ Pris läst live 2026-09-27: 559 kr / 932 kr (40 %). Tillåtna siffror: 559, 932,
 
 **Hypotes:** RI_1_H1 vinner auktionen (44 % av spenden) men håller bara 15 % förbi öppningen — H2/H3 testar manuset efter sekund 3; SP_4_H1 konverterar 12,3 % men får 7 % av spenden — tre problemmedvetna öppningar på samma måttkropp testar om hooken är det som håller den liten. Utfall dag 7 efter lansering.
 
+
+**2026-09-28 — vidarebygg VÄNTAR:** `annonsbehov` säger `vidarebygg` på Termoskydd_CS_2 (2 av 3 iterationer, deadline 2026-10-05) men brieftaket är 0 — 0 etiketterade annonser utan lärdom sedan batch #7 (2026-09-27) och alla namngivna platser (RI_1_H2/H3, RI_2_1, SP_4_H2/H3/H4) är utförda. Inga nya briefer i dag; nästa etiketter (batch #6/#7-raderna) ger taket. Kampanjen LAT_VARA 2 300 kr/dag, ROAS 3d 2,08 (14,2 % vinst). Draft i hubben: Termoskydd_CS_12_1.

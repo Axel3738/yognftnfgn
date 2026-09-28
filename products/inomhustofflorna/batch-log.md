@@ -101,3 +101,5 @@ Etiketten är ingen dom (`bedombar` står bredvid). Annonsens egna första vecka
 
 Rad 3–4 identiska (hälremmen håller kvar hela vägen ner · 489 kr halva priset). **`SP_1_H4` struken** — recensionerna är launchimport (se rättelsen i dna.md); förälderns obelagda citat ärvs inte. Regitabell rad för rad, spärren exit 0 (en varning om variabelraden i H6), `lardom.mjs --brief` 2 BRIEF-rader, ett item öppnat och kontrollerat. `## Avatarer` tillagt i dna.md. Copy av sonnet-subagent (regel 6). ⚠️ ffmpeg saknas — källorna är `DRIVE <id> [EDITOR PICKS: …]`.
 
+
+**2026-09-28 — brief-runda INTE byggd:** `annonsbehov` gav `rundaAntal 1` (tak 0 + 1 namngiven plats `Inomhustofflor_SP_1_H4`). Platsen bygger på "en RIKTIG recension ordagrant" — men recensionerna är launchimport (rättelsen i dna.md 2026-09-25), så SP_1_H4 ströks redan i batch #2 och kan inte byggas utan obelagt citat. 0 briefer. Kampanjen RAKNA_BACKDAGAR på golvet 500 kr (ROAS 3d 1,32 mot 1,51, livstid 1,66, 0 back-dygn i rad räknade i dag), spendtjuv INGEN_TJUV. SP_1_H5/SP_1_H6 ligger som Draft i Indoor slippers creative hub.

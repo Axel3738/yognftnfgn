@@ -592,3 +592,5 @@ Rundan låg på 0 i morse (0 lärdomar sedan batch #7, 104 etiketterade utan lä
 | Rodholder_CS_11_H1 | video | I | Fiskespöhållare_CS_1_H1 | rabatten som siffra utan tidsbrådska: "Spara 193 kr — 289 kr i stället för 482 kr."; urgency- och policyrader strukna | CS-effekten sitter i rabatten, inte i "idag endast"; CS_10_H1 testar överstrykningen i bild | CVR ≥ 5 %, CPA < 291 kr | okänd | — |
 
 Kvar av de namngivna: Rodholder_PD_68_1 (rubriken på PD_6_1 — körs när PD_38/41/62 lästs). `Fiskespöhållare_SO_1_H3` bär fortfarande 149 kr i copyn utan ZZ_GAMMAL-namn (pausad) — flaggat för omdöpning.
+
+**2026-09-28 — brief-runda INTE byggd:** `annonsbehov` gav `rundaAntal 1` (tak 0 + 1 namngiven plats `Rodholder_PD_68_1`). Lärdomen villkorar platsen: "körs först när PD_38_1/PD_41_1/PD_62_1 lästs" — alla tre står fortfarande som Draft i Fish rod holder (58 drafts i hubben, mätt 2026-09-28), så villkoret är inte uppfyllt. 0 briefer. Kampanjen VANTA_KONSEKVENT 750 kr/dag, ROAS 3d 2,65 (target 2,43, 1 dygn över), visningsköpsvarning 21,6 %.
