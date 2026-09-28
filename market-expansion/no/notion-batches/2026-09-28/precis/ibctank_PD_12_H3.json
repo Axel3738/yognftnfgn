@@ -4,8 +4,8 @@
  "srt": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-28/srt-no/ibctank_PD_12_H3.srt",
  "captions": {
   "zon": [
-   885,
-   1000
+   860,
+   1010
   ],
   "standard_cy": 941,
   "font_px": 42,
@@ -15,8 +15,8 @@
   "bredd_max": 715,
   "pad_x": 34,
   "pad_y": 8,
-  "h_min": 88,
-  "h_max": 105
+  "h_min": 75,
+  "h_max": 115
  },
  "blur": [],
  "lager": [],
