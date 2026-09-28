@@ -274,10 +274,19 @@ Trustpilot-profil, carashell.se** — en registrering täcker alla marknader. Tv
   Axel registrerar CaraShell på business.trustpilot.com med **hello@carashell.se** (samma domän som
   profilen — hello@carashell.com hade krävt domänverifiering med DNS/HTML, förbjudet sedan
   Loopia-incidenten; båda brevlådorna har MX på Loopia), sedan
-  `stonebite/cowork/9-trustpilot-carashell.txt` (notis, länkkontroll, DNS-kontroll). Länkarna lever
-  först när `evaluate/carashell.se?stars=5` svarar 200 på alla fyra domänerna — mät innan något
-  kallas klart. Hamnar profilen på en annan adress: bygg om de fyra flödena inaktiva med nya länkar
-  (aktiva flöden kan inte ändras via MCP:n), Axel slår på.
+  `stonebite/cowork/9-trustpilot-carashell.txt` (notis, länkkontroll, DNS-kontroll).
+  ✅ **Gjort 2026-09-28 ~10:30 CEST** (Axel registrerade, Cowork körde prompten): profilen
+  `se.trustpilot.com/review/carashell.se` visar "Registrerad profil", 0 omdömen, gratisplanen
+  ("Free plan", inget köpt, provperioden inte klickad), notis för nya recensioner på alla stjärnor
+  till hello@carashell.se, inget installerat, NS ns1/ns2.loopia.se orört. Sessionen mätte direkt
+  efter: **alla fyra evaluate-länkarna (se/no/dk/www) svarar 200** och öppnar formuläret
+  "Betygsätt Carashell". Kvar, Axels klick eller en kort Cowork-prompt: namnet står **"Carashell"**
+  (ska vara CaraShell), publika profilen visar landet **USA** (Plans & billing säger Sweden — ska vara
+  Sverige), **ingen kategori**. ⚠️ **`?stars=N` förvaljer inte stjärnorna längre**: mätt i Chromium
+  på både `carashell.se?stars=5` och `www.baverbutiken.se?stars=5` — fem radioknappar, alla
+  `checked: false`, ingen vald. Kunden klickar stjärnan själv; mejlen fungerar, inget byggs om för
+  det. ⚠️ Notismejlen går till hello@carashell.se — inte .com-brevlådan som autosvaret och
+  `trustpilotMejl()` läser — tills Axel lagt vidarebefordran .se → .com hos Loopia.
 - ⚠️ **`order_delivered` har inte fyrat en enda gång än — för tidigt att döma:** 0 inrullade i alla
   12 `FLOW_levererat_*` och 0 fulfillments `DELIVERED` i Shopify efter aktiveringen. CaraShells
   ordrar 1–16/9 (82 st, alla under 20 dagar gamla) står 75 `IN_TRANSIT` / 4 `DELIVERED` (alla
