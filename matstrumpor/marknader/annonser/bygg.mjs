@@ -128,7 +128,18 @@ async function huvud() {
   if (!koder.length) { console.error('Ange --marknad <KOD>, --alla eller --lage'); process.exit(2); }
   const lage = [];
   for (const kod of koder) lage.push(await byggMarknad(kod));
-  writeFileSync(join(ROT, 'lage.json'), JSON.stringify({ _om: 'Skrivet av annonser/bygg.mjs efter tillbakaläsning ur kontot.', skrivet: new Date().toISOString(), kampanjer: lage.filter(Boolean) }, null, 1) + '\n');
+  // Slå ihop med filen: en körning med --marknad NO får bara byta ut NO-raden. Utan det
+  // skrev 2026-09-28 års NO-körning över läget för de elva andra kampanjerna.
+  const fil = join(ROT, 'lage.json');
+  const forra = existsSync(fil) ? (JSON.parse(readFileSync(fil, 'utf8')).kampanjer ?? []) : [];
+  writeFileSync(fil, JSON.stringify({ _om: 'Skrivet av annonser/bygg.mjs efter tillbakaläsning ur kontot.', skrivet: new Date().toISOString(), kampanjer: slaIhopLage(forra, lage.filter(Boolean)) }, null, 1) + '\n');
+}
+
+/** Ren: nya rader ersätter gamla med samma kod, övriga står kvar, ordningen följer marknader.json. */
+export function slaIhopLage(forra, nya, ordning = Object.keys(M.kampanjer)) {
+  const per = new Map(forra.map((k) => [k.kod, k]));
+  for (const k of nya) per.set(k.kod, k);
+  return [...per.values()].sort((a, b) => ordning.indexOf(a.kod) - ordning.indexOf(b.kod));
 }
 
 if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) huvud().catch((e) => { console.error(`\n❌ ${e.message}`); process.exit(1); });

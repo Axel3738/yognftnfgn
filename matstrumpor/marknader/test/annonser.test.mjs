@@ -1,7 +1,16 @@
 // Tester för annonser/bygg.mjs — spärrarna före aktivering (ren logik, inget nät).
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { farAktiveras, lankOk } from '../annonser/bygg.mjs';
+import { farAktiveras, lankOk, slaIhopLage } from '../annonser/bygg.mjs';
+
+test('slaIhopLage: en körning för en marknad byter bara ut den raden, resten står kvar i marknadsordning', () => {
+  const forra = [{ kod: 'NO', annonser: [] }, { kod: 'DK', annonser: [] }, { kod: 'FI', annonser: [] }];
+  const nya = [{ kod: 'NO', annonser: [{ id: '1' }] }];
+  const ut = slaIhopLage(forra, nya, ['NO', 'DK', 'FI']);
+  assert.deepEqual(ut.map((k) => k.kod), ['NO', 'DK', 'FI']);
+  assert.equal(ut[0].annonser.length, 1);
+  assert.deepEqual(slaIhopLage([], [{ kod: 'FI' }, { kod: 'NO' }], ['NO', 'FI']).map((k) => k.kod), ['NO', 'FI']);
+});
 
 const NO = { kampanj: 'MATSTRUMP_NO_SALES', geo: ['NO'], locale: 'nb', budget_beslut: "Axel 2026-09-27: '1000kr per dag'" };
 const WW = { kampanj: 'MATSTRUMP_WW_SALES', geo: ['NO', 'DK', 'US'], locale: 'en', budget_beslut: 'EJ GIVEN — platshållare' };

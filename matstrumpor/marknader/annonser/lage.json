@@ -1,6 +1,6 @@
 {
  "_om": "Skrivet av annonser/bygg.mjs efter tillbakaläsning ur kontot.",
- "skrivet": "2026-09-27T15:03:52.029Z",
+ "skrivet": "2026-09-28T15:52:52.811Z",
  "kampanjer": [
   {
    "kod": "NO",
@@ -15,7 +15,26 @@
     "id": "120251749551860023",
     "namn": "MATSTRUMP_NO_ugc"
    },
-   "annonser": []
+   "annonser": [
+    {
+     "id": "120251766982410023",
+     "name": "MATSTRUMP_NO_sushi_jul_ugc_003_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251766972450023",
+     "name": "MATSTRUMP_NO_sushi_gift_ugc_002_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251766960870023",
+     "name": "MATSTRUMP_NO_sushi_gift_ugc_001_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    }
+   ]
   },
   {
    "kod": "DK",
