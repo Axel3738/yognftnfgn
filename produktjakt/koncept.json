@@ -1,6 +1,6 @@
 {
  "_om": "Konceptregistret (V3). Skrivs av koncept.py; feedback.py och meta_facit.py uppdaterar via koncept.py. Ett koncept = objekt + form, med alla listningar, svar, förutsägelser och Metas facit.",
- "nasta": 350,
+ "nasta": 358,
  "koncept": {
   "K0001": {
    "id": "K0001",
@@ -25297,6 +25297,684 @@
     }
    ],
    "namn_sv": "Viltfoderpåsen för rådjur"
+  },
+  "K0350": {
+   "id": "K0350",
+   "skapad": "2026-09-28",
+   "namn": "Sopkärlets lockrem 2-pack",
+   "objekt": "NYTT: Sopkärlets lockrem — locket hålls stängt mot skator och vind",
+   "form": "annat",
+   "sak": "nytt: sopkärlets lockrem+annat",
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "I_FLERKOP",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005010294815366",
+     "url": "https://www.aliexpress.com/item/1005010294815366.html",
+     "bild": null,
+     "pris_usd": 8.32,
+     "forst_sedd": "2026-09-28",
+     "verifieringar": [
+      {
+       "datum": "2026-09-28",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-28T09:04:58Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-28",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 1,
+     "rank_poang": 12.0,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 2,
+      "efterfragan": 2,
+      "lucka": 3,
+      "ekonomi": 1,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 349,
+     "landad": 120,
+     "be_cpa": 229,
+     "hook": "Skatorna hittade sopkärlet igen?",
+     "varfor": "Samma flerköpsstruktur som spöklämman (< 350 kr, 2-pack, ägt objekt ute, improvisation som default) på ett objekt varje hushåll har flera av, och formen saknas i svenskt flöde på sex PriceRunner-sökningar. Ingen skruv i kommunens kärl — hakas på och av.",
+     "huvudrisk": "Friktionen är inte mätt för svenska kärl (locken är tunga och stängs av sig själva; skatorna tar mest lösa påsar) och tömningsdagen kräver att remmen hakas av — glöms det töms inte kärlet.",
+     "hypotes_id": "H08",
+     "per_kriterium": null,
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-28",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-28",
+     "handelse": "levererad på V3-arket (rank 1, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Sopkärlets lockrem 2-pack"
+  },
+  "K0351": {
+   "id": "K0351",
+   "skapad": "2026-09-28",
+   "namn": "Sopkärlets vägglist 2-pack",
+   "objekt": "NYTT: Sopkärlets vägglist — kärlet blåser inte omkull i storm",
+   "form": "annat",
+   "sak": "nytt: sopkärlets vägglist+annat",
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012868726670",
+     "url": "https://www.aliexpress.com/item/1005012868726670.html",
+     "bild": null,
+     "pris_usd": 9.02,
+     "forst_sedd": "2026-09-28",
+     "verifieringar": [
+      {
+       "datum": "2026-09-28",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-28T09:01:06Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-28",
+     "levererad": true,
+     "slot": "exploration",
+     "rank": 2,
+     "rank_poang": 12,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 1,
+      "efterfragan": 2,
+      "lucka": 3,
+      "ekonomi": 2,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 3,
+      "hypotesvarde": 3
+     },
+     "konfidens": "MEDEL",
+     "pris": 599,
+     "landad": 261,
+     "be_cpa": 338,
+     "hook": "Ligger sopkärlet på uppfarten igen?",
+     "varfor": "Objektet finns i varje hushåll (2–4 kärl sedan fyrfackssystemet), friktionen syns på 3 s (välta kärl på tömningsdagen i höststorm) och formen saknas helt i svenskt flöde — nio PriceRunner-sökningar utan en enda träff i formen. Samma struktur som klistermärkena (sopkärlet + noll förklaring) fast med friktion i stället för dekor, och flerköp inbyggt.",
+     "huvudrisk": "Friktionen är inte mätt (hur ofta välter kärl i Sverige?) och Jula/Biltema är oläsbara — en galvad sopkärlshållare kan ligga där för 149 kr; blå färg och packshot-hero kräver egen creative.",
+     "hypotes_id": "H10",
+     "per_kriterium": null,
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-28",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-28",
+     "handelse": "levererad på V3-arket (rank 2, exploration, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Sopkärlets vägglist 2-pack"
+  },
+  "K0352": {
+   "id": "K0352",
+   "skapad": "2026-09-28",
+   "namn": "Stuprörets uppfällbara gångjärn 2-pack",
+   "objekt": "NYTT: Stuprörets utkastare — gångjärnet som fäller upp den för krattan och snöskoveln",
+   "form": "annat",
+   "sak": "nytt: stuprörets utkastare+annat",
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005011822160178",
+     "url": "https://www.aliexpress.com/item/1005011822160178.html",
+     "bild": null,
+     "pris_usd": 8.45,
+     "forst_sedd": "2026-09-28",
+     "verifieringar": [
+      {
+       "datum": "2026-09-28",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-28T09:01:19Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-28",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 3,
+     "rank_poang": 9.0,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 2,
+      "efterfragan": 2,
+      "lucka": 2,
+      "ekonomi": 1,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "LÅG",
+     "pris": 349,
+     "landad": 122,
+     "be_cpa": 227,
+     "hook": "Sparkar du loss utkastaren varje höst?",
+     "varfor": "H06-test med ovanligt tydligt ankare: hela fackhandeln (Lindab/Plannja/Wijo/Rias) tar 319–546 kr per fällbar utkastare, gångjärnet gör samma sak på den utkastare ägaren redan har för 175 kr/st — ordning på flera ägda saker (2–6 stuprör), textfri hero i kontext, lövfällning NOW.",
+     "huvudrisk": "Byggd för rektangulära amerikanska rör — passar den inte svenska runda 87 mm-rör är raden död oavsett ankare; 'sett innan' (fällbar utkastare är standard i bygghandeln) kan ge nej från Axel.",
+     "hypotes_id": "H06",
+     "per_kriterium": null,
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-28",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-28",
+     "handelse": "levererad på V3-arket (rank 3, exploitation, konfidens LÅG)"
+    }
+   ],
+   "namn_sv": "Stuprörets uppfällbara gångjärn 2-pack"
+  },
+  "K0353": {
+   "id": "K0353",
+   "skapad": "2026-09-28",
+   "namn": "Ekorrbordet med parasoll",
+   "objekt": "NYTT: Ekorrbordet med parasoll — ekorren sitter vid bordet och äter majskolven",
+   "form": "annat",
+   "sak": "nytt: ekorrbordet med parasoll+annat",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012793616870",
+     "url": "https://www.aliexpress.com/item/1005012793616870.html",
+     "bild": null,
+     "pris_usd": 21.33,
+     "forst_sedd": "2026-09-28",
+     "verifieringar": [
+      {
+       "datum": "2026-09-28",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-28T08:56:28Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-28",
+     "levererad": true,
+     "slot": "exploration",
+     "rank": 4,
+     "rank_poang": 9,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 1,
+      "efterfragan": 2,
+      "lucka": 3,
+      "ekonomi": 1,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 3,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 599,
+     "landad": 308,
+     "be_cpa": 290,
+     "hook": "Har ekorren ett eget bord hos dig?",
+     "varfor": "Formen finns inte i svensk handel (PriceRunner/Vivara 0 i formen 2026-09-28) medan ekorrburken fick ja i går och vintermatningen toppar om 4 v — rent H10-test på det vilda djur alla 55+ redan ser på tomten, med en mekanism som är videon i sig.",
+     "huvudrisk": "Hero är en inomhuspackshot utan ekorre — creativen måste filmas själv; utan ankare i exakt form är 599 satt på upplevt värde (Ekorrbo 959,92 är ett annat objekt), och ekorrmatare finns i lockboxform 139–489 ('kedjan har den'-risk på kategorin).",
+     "hypotes_id": "H10",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 12,
+      "K2": 14,
+      "K3": 10,
+      "K4": 6,
+      "K5": 6,
+      "K6": 10,
+      "K7": 4,
+      "K8": 8,
+      "K9": 4,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-28",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-28",
+     "handelse": "levererad på V3-arket (rank 4, exploration, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Ekorrbordet med parasoll"
+  },
+  "K0354": {
+   "id": "K0354",
+   "skapad": "2026-09-28",
+   "namn": "Surdegssetet 15 delar med jäskorg",
+   "objekt": "NYTT: Surdegssetet med jäskorg, burk och lame — hemmabagarens första surdegsbröd före jul",
+   "form": "låda",
+   "sak": "nytt: surdegssetet med jäskorg, burk och lame+låda",
+   "arketyp": "G_Q4_GAVA",
+   "arketyp_sekundar": "F_HOBBY_IDENTITET",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005013242685679",
+     "url": "https://www.aliexpress.com/item/1005013242685679.html",
+     "bild": null,
+     "pris_usd": 24.05,
+     "forst_sedd": "2026-09-28",
+     "verifieringar": [
+      {
+       "datum": "2026-09-28",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-28T09:00:00Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-28",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 5,
+     "rank_poang": 9,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 2,
+      "efterfragan": 2,
+      "lucka": 1,
+      "ekonomi": 1,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 649,
+     "landad": 348,
+     "be_cpa": 301,
+     "hook": "Har han satt sin första surdeg än?",
+     "varfor": "Täljsetets struktur i köket: en låda med allt (korg, burk, lame, visp, skrapor, duk, recept) till en namngiven mottagare inför fars dag/jul — och svensk handel säljer bara 4–5-delars startset hos specialister (299–496) medan det enda större setet (729) är utsålt.",
+     "huvudrisk": "Golv i delform under oss (FreakyKitchen 496 för 5 delar) och heron bär engelska etiketter — creativen måste byggas på egen bild; surdegen ingår inte i lådan och det måste sägas.",
+     "hypotes_id": "H05",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 12,
+      "K2": 12,
+      "K3": 8,
+      "K4": 8,
+      "K5": 7,
+      "K6": 8,
+      "K7": 4,
+      "K8": 8,
+      "K9": 4,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-28",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-28",
+     "handelse": "levererad på V3-arket (rank 5, sasong, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Surdegssetet 15 delar med jäskorg"
+  },
+  "K0355": {
+   "id": "K0355",
+   "skapad": "2026-09-28",
+   "namn": "Stentrumlaren med råstenar och slipmedel",
+   "objekt": "NYTT: Stentrumlaren — stensamlarens råstenar blir blanka ädelstenar på fyra veckor, klara till jul",
+   "form": "annat",
+   "sak": "nytt: stentrumlaren+annat",
+   "arketyp": "G_Q4_GAVA",
+   "arketyp_sekundar": "F_HOBBY_IDENTITET",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012429987187",
+     "url": "https://www.aliexpress.com/item/1005012429987187.html",
+     "bild": null,
+     "pris_usd": 29.99,
+     "forst_sedd": "2026-09-28",
+     "verifieringar": [
+      {
+       "datum": "2026-09-28",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-28T09:04:30Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-28",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 6,
+     "rank_poang": 9,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 1,
+      "efterfragan": 1,
+      "lucka": 2,
+      "ekonomi": 2,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 3
+     },
+     "konfidens": "LÅG",
+     "pris": 799,
+     "landad": 434,
+     "be_cpa": 366,
+     "hook": "Grå sten in, ädelsten ut — på 4 veckor",
+     "varfor": "H06 i ren form (Discovery 649 under, National Geographic 1 400 över) på en hobby-i-låda med hårt datum där maskinen själv sätter tidsgränsen: fyra veckors trumling betyder att lådan måste köpas i november för att stenarna ska vara blanka till jul.",
+     "huvudrisk": "Mottagaren är snarare barnbarnet än vuxen med namn, alla fyra heron bär vattenstämpel utan stenar i bild, och Ädelstenskalendern (K0266, ja) talar redan till samma stensamlare i butiken.",
+     "hypotes_id": "H06",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 8,
+      "K2": 9,
+      "K3": 6,
+      "K4": 6,
+      "K5": 6,
+      "K6": 8,
+      "K7": 3,
+      "K8": 6,
+      "K9": 3,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-28",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-28",
+     "handelse": "levererad på V3-arket (rank 6, sasong, konfidens LÅG)"
+    }
+   ],
+   "namn_sv": "Stentrumlaren med råstenar och slipmedel"
+  },
+  "K0356": {
+   "id": "K0356",
+   "skapad": "2026-09-28",
+   "namn": "Jerkysetet i rostfritt, 5 munstycken",
+   "objekt": "NYTT: Jerkypistolen med 5 munstycken — jägarens älgkött blir torkat kött i ugnen",
+   "form": "låda",
+   "sak": "nytt: jerkypistolen med 5 munstycken+låda",
+   "arketyp": "F_HOBBY_IDENTITET",
+   "arketyp_sekundar": "G_Q4_GAVA",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012555830300",
+     "url": "https://www.aliexpress.com/item/1005012555830300.html",
+     "bild": null,
+     "pris_usd": 27.39,
+     "forst_sedd": "2026-09-28",
+     "verifieringar": [
+      {
+       "datum": "2026-09-28",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-28T09:04:26Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-28",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 7,
+     "rank_poang": 8,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 3,
+      "efterfragan": 1,
+      "lucka": 3,
+      "ekonomi": 1,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 3,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 699,
+     "landad": 396,
+     "be_cpa": 303,
+     "hook": "Vad gör han med 40 kilo älgkött?",
+     "varfor": "Äkta hyllucka (noll svenska säljare på sex PriceRunner-sökningar + WebSearch) på ett objekt jägaren redan har hemma i frysen, med två hårda datum i rad — älgjakt 1,4 v och fars dag 5,9 v — och en hero som visar payoffen utan text.",
+     "huvudrisk": "Formen är närmare verktyg än set (7 delar) och F_HOBBY_IDENTITET är 0/1 i kontot; utan ankare kan 699 se dyrt ut mot vad kunden ser på Amazon.se (oläst).",
+     "hypotes_id": "H05",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 10,
+      "K2": 10,
+      "K3": 8,
+      "K4": 7,
+      "K5": 8,
+      "K6": 9,
+      "K7": 4,
+      "K8": 6,
+      "K9": 4,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-28",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-28",
+     "handelse": "levererad på V3-arket (rank 7, sasong, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Jerkysetet i rostfritt, 5 munstycken"
+  },
+  "K0357": {
+   "id": "K0357",
+   "skapad": "2026-09-28",
+   "namn": "Igelkotthuset i trä med filttak",
+   "objekt": "Igelkotten i trädgården",
+   "form": "hus",
+   "sak": "igelkotten i trädgården+hus",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "B_SKYDDA_DYRT",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005011561558562",
+     "url": "https://www.aliexpress.com/item/1005011561558562.html",
+     "bild": null,
+     "pris_usd": 25.89,
+     "forst_sedd": "2026-09-28",
+     "verifieringar": [
+      {
+       "datum": "2026-09-28",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-28T08:58:16Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-28",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 8,
+     "rank_poang": 7,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 0,
+      "efterfragan": 2,
+      "lucka": 2,
+      "ekonomi": 1,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 2
+     },
+     "konfidens": "LÅG",
+     "pris": 649,
+     "landad": 374,
+     "be_cpa": 274,
+     "hook": "Var sover igelkotten hos dig i vinter?",
+     "varfor": "Samma struktur som kojan (älskat djur ute + kyla + hus) på det vilda djur som har hårdast datum av alla — igelkotten går i ide vid första frosten om 2,4 v; golvet 342–659 ligger under oss men Vivara Igelkottshus XL 1 039,92 ger 1,60× mot 649 = H06-test, och ekorr-/rådjursraderna fick ja i går.",
+     "huvudrisk": "Nio svenska igelkotthus 342–659 i exakt samma form — H06 hänger på att ankaret 1,60× räcker (ATV-kapellet vann med Jula 399 under sig, kojan skalade inte); heron är oanvändbar (vattenstämpel) och listningen ströks tre gånger tidigare på > 20 USD.",
+     "hypotes_id": "H06",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 12,
+      "K2": 10,
+      "K3": 12,
+      "K4": 4,
+      "K5": 6,
+      "K6": 6,
+      "K7": 4,
+      "K8": 7,
+      "K9": 4,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-28",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-28",
+     "handelse": "levererad på V3-arket (rank 8, sasong, konfidens LÅG)"
+    }
+   ],
+   "namn_sv": "Igelkotthuset i trä med filttak"
   }
  }
 }

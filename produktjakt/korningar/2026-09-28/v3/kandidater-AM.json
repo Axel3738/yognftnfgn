@@ -1,0 +1,157 @@
+{
+  "agent": "AM — små saker på tomtens vardagsobjekt",
+  "datum": "2026-09-28",
+  "sammanfattning": "Strukturen 'liten sak som sitter på ett tomtobjekt ALLA 55+-hus har och löser en friktion som syns i november' prövades på 9 objekt / 22 former. Golvet lästes FÖRE ali.py (35 PriceRunner-sökningar via curl + Lindab FUTK-sidan; Bauhaus/Byggmax/K-rauta/Jula/Beijer/Flaggstångsexperten svarade 403/404/JS-skal = oläst, aldrig gissat). Kedjeformer föll: grindfjäder/grindstängare (Alberts 129, MALATEC 119, generisk 169), grindhake (Habo 105), altanräckets krukhållare (Habo 90, Elho 135, Lechuza 293), skoskrapan (Hortus Boot Brush 370, Jula HARD HEAD 499, Astro Turf 359 — Ali 25–61 USD landar dessutom över golvet), postlådestolpen (Berglund Post-Stick Flex 303). Utan Ali-listning i formen: flaggstångens linlås/linspännare (två fraser → bara rep och knapar), sopkärlets fotpedal, brevlådans vindspärr. K0: reflexnummer till sopkärlet = samma SAK + samma form (dekal) som Klistermärkena. Det som överlever är SOPKÄRLET — objektet varje hushåll numera har 2–4 av (fyrfack), där PriceRunner har NOLL i formen på nio sökningar (locklås, lockhållare, sopkärlshållare, soptunneställ, vindsäkring, rem, fäste, lås, soptunnehållare) — och STUPRÖRETS utkastare, där hela fackhandeln säljer den fällbara funktionen som komplett utkastare 319–546 kr (Rias/Lindab/Wijo/Plannja) men ingen säljer gångjärnet som eftermontering. 3 kandidater, alla LIVE_VERIFIED i dag med heros sedda; en märkt LÅG-MEDEL med flit (passform på runda svenska rör).",
+  "kandidater": [
+    {
+      "koncept_id": null,
+      "namn_sv": "Sopkärlets vägglist 2-pack",
+      "objekt": "NYTT: Sopkärlets vägglist — kärlet blåser inte omkull i storm",
+      "form": "annat",
+      "arketyp": "A_AGARE_FRIKTION",
+      "arketyp_sekundar": "E_VADER_SASONG",
+      "slot": "exploration",
+      "hypotes_id": "H10",
+      "hypotes_sekundar": "H08",
+      "vinnarlikhet": {
+        "likast": "Soptunneklistermärkena",
+        "delade_variabler": ["samma objekt (sopkärlet) — objekt alla har, ute, billig<1tkr", "agare_55plus_smahus", "old way ingenting/improvisation (tegelsten på locket, kärlet mot väggen, spännband)", "flerkop_ja (2–4 kärl per hushåll sedan fyrfackssystemet)", "montering utan app/elektriker (två skruvar i fasaden)", "golv under nej — PriceRunner 0 i formen på nio sökningar"],
+        "avvikelser": ["friktion (kärlet omkull, soporna över uppfarten) i stället för ren nyhet — klistermärkena hade noll friktion", "kräver att kärlet står vid en vägg/plank", "blå färg i listningen (55+ vill ha svart/galv) — färgvariant ej läst", "hero är packshot, kontextbilderna är kompositer"]
+      },
+      "sasong": {"fonster_id": "hostregn", "deadline_typ": "höstregn", "veckor_kvar": 1.7, "timing": "NOW", "kommentar": "sasong.py --objekt Sopkärlet = EVERGREEN (ingen objektrad); fönstret höstregn valt för höststormarna okt–nov då kärlen välter på tömningsdagen — uppskattning, ingen extern källa"},
+      "listning": {
+        "product_id": "1005012868726670",
+        "url": "https://www.aliexpress.com/item/1005012868726670.html",
+        "pris_usd": 9.02,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-28T09:01:06Z",
+        "kontroll": {"produktsida_oppnad": true, "titel_stammer": true, "hero_nedladdad": "korningar/2026-09-28/v3/bilder/1005012868726670.jpg", "hero_sedd": true, "pris_sett": true, "varianter": "ur titeln 'Heavy Duty Steel Outdoor Trash Can Hook … Wind Resistant Garbage Container Coupler Wheeled Can Clip' — en variant, blå pulverlackad stålprofil 35 × 6 × 5 cm (måttbild 4 sedd), två avlånga skruvhål; kärlets bakre handtagsbalk/lockkant glider in under listen. Pris 9,02 USD per st i sökträffen. Bilder 2–3 (sedda) visar listen på vägg ovanför tre 240 L-kärl. Syskon i annan form: 1005013145671958 'Steel Trash Can Wheel Holder … Fixing Bracket' 47,29 USD (markplatta för hjulen — landar 684, struken).", "video": "ej tillgänglig i containern"}
+      },
+      "material": {"klass": 1, "hero_textfri": true, "hero_i_kontext": false, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "heron är en ren packshot av den blå listen på vitt (textfri). Bild 2 (tre gråa 240 L-kärl med gula lock mot putsad vägg, listen ovanför) och bild 3 (tegelvägg, kärl med blå/orange lock) är kompositer men visar SAKEN i kontext och duger som referens; annonsen behöver ett eget klipp: kärlet välter i blåst → listen skruvas fast → kärlet står. Blå färg måste bort ur bild eller bytas till svart variant (ej läst om den finns)."},
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "ingen svensk aktör hittad i exakt form (vägglist/fäste som håller sopkärlet upprätt). PriceRunner 'sopkärlshållare' 2026-09-28: 20 träffar, 0 i formen (badrumshållare); 'soptunnehållare' 0 träffar; 'kärlhållare' 0 i formen; 'sopkärl fixering'/'sopkärl vägg fäste galvad'/'soptunna fäste' 0 i formen; 'wheelie bin' ger bara skjul 1 579–8 839 kr (vidaXL)", "pris_sek": null, "url": "https://www.pricerunner.se/search?q=sopk%C3%A4rlsh%C3%A5llare", "exakt_samma_form": false},
+        "premium_ankare": {"namn": "ej mätt i samma form — strukturankaret är sopkärlsskjulet: vidaXL skjul för 2 sopkärl 3 779 kr, för 3 st 5 818 kr (PriceRunner 'wheelie bin' 2026-09-28) — annan form, inte prisankare", "pris_sek": null, "url": "https://www.pricerunner.se/search?q=wheelie%20bin", "i_sortiment": false},
+        "ankare_kvot": null,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["pricerunner.se 'sopkärlshållare' 2026-09-28: 0 i formen", "pricerunner.se 'soptunnehållare' 2026-09-28: 0 träffar", "pricerunner.se 'kärlhållare' 2026-09-28: 0 i formen", "pricerunner.se 'soptunneställ' 2026-09-28: 0 i formen (notställ)", "pricerunner.se 'sopkärl vindsäkring' 2026-09-28: 0 i formen", "pricerunner.se 'sopkärl fixering' / 'soptunna fäste' / 'sopkärl vägg fäste galvad' / 'sopkärlshållare vägg' 2026-09-28: 0 i formen", "pricerunner.se 'wheelie bin' 2026-09-28: bara skjul (vidaXL 1 579–8 839)", "bauhaus.se (404 på tre sökvägar), byggmax.se (404), k-rauta.se (JS-skal 3,8 kB text), jula.se (403), beijerbygg.se (404) — oläst; en sopkärlshållare hos Jula/Biltema kan finnas utan att synas på PriceRunner"]
+      },
+      "ekonomi": {"landad_sek": [235, 287], "pris_sek": 599, "brutto_sek": [312, 364], "be_cpa_sek": [312, 364], "be_roas": 1.77, "flerkop": true, "returrisk": "låg — listen är 35 cm och passar 120/190/240/370 L-kärlens handtagsbalk oavsett fabrikat; ingen mätning; risk att kärlet står på grus utan vägg bakom (då hjälper listen inte — skriv det på sidan)", "kommentar": "2-pack: 2 × 9,02 USD × 9,64 × 1,5 = 261 ±10 %. Styck 349 kr ger BE-CPA 206–232 (BE-ROAS 1,6) — 2-packet valt för H08 (fyrfack = 2–4 kärl) och prisband 500–999 (12 av 18 dömda vann)"},
+      "meta_tanke": {"hook": "Ligger sopkärlet på uppfarten igen?", "objekt_i_bild": "två sopkärl vid husväggen i blåst — det ena omkullvält med påsar över gruset, det andra står kvar under listen", "sjalvselekterande": true, "forstas_3s": true, "bevisas_visuellt": "två skruvar i fasaden, kärlet rullas in under listen, någon drar i kärlet — det står; klipp på höststorm mot samma kärl"},
+      "varfor": "Objektet finns i varje hushåll (2–4 kärl sedan fyrfackssystemet), friktionen syns på 3 s (välta kärl på tömningsdagen i höststorm) och formen saknas helt i svenskt flöde — nio PriceRunner-sökningar utan en enda träff i formen. Samma struktur som klistermärkena (sopkärlet + noll förklaring) fast med friktion i stället för dekor, och flerköp inbyggt.",
+      "huvudrisk": "Friktionen är inte mätt (hur ofta välter kärl i Sverige?) och Jula/Biltema är oläsbara — en galvad sopkärlshållare kan ligga där för 149 kr; blå färg och packshot-hero kräver egen creative.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 2, "meta_creative": 1, "efterfragan": 2, "lucka": 3, "ekonomi": 2, "sasong": 2, "leverantor": 2, "nyhet": 3, "hypotesvarde": 3},
+      "per_kriterium": null,
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt 2026-09-28 (sop/tunn/kärl): bara 'Klistermärken för Soptunnan 4-pack' 199 = samma SAK, annan form (dekor) — ingen list/hållare", "koncept.py sok soptunn/bin/trash/garbage/kärlhåll/wheelie: 0 relevanta träffar (K0067/K0202 'Binding' är presenningar)", "kandidater-AJ 09-27 / AG 09-26 / V 09-16 / AA 09-23: sopkärlet aldrig prövat"]},
+      "kallor": ["https://www.aliexpress.com/item/1005012868726670.html", "https://www.aliexpress.com/item/1005013145671958.html", "https://www.pricerunner.se/search?q=sopk%C3%A4rlsh%C3%A5llare", "https://www.pricerunner.se/search?q=soptunneh%C3%A5llare", "https://www.pricerunner.se/search?q=wheelie%20bin", "korningar/2026-09-28/SASONG.md rad 'Höstregn' (topp 10 okt, 1,7 v)"]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Sopkärlets lockrem 2-pack",
+      "objekt": "NYTT: Sopkärlets lockrem — locket hålls stängt mot skator och vind",
+      "form": "annat",
+      "arketyp": "A_AGARE_FRIKTION",
+      "arketyp_sekundar": "I_FLERKOP",
+      "slot": "exploitation",
+      "hypotes_id": "H08",
+      "hypotes_sekundar": "H03",
+      "vinnarlikhet": {
+        "likast": "Fiskespöhållaren (spöklämma 4-pack)",
+        "delade_variabler": ["A_AGARE_FRIKTION på ägt objekt ute", "flerkop_ja (2-pack, ett par per kärl, 2–4 kärl per hushåll)", "old way improvisation (tegelsten/spännband/gummiband — svikande default, H03)", "< 300–349 kr, en variant, universal (rem 60–122 cm, krokar 38 mm)", "golv under nej (PriceRunner 0 i formen)", "montering utan verktyg — hakas på lockkant och kärlkant, inget hål i kommunens kärl"],
+        "avvikelser": ["ingen 'kaos → ordning'-bild, utan 'stängt → öppet'", "remmen måste hakas av före tömning (sidlastaren tippar kärlet) — en handling per tömningsdag", "hero är AI-komposit med björn/tvättbjörn (US-djur) som måste beskäras"]
+      },
+      "sasong": {"fonster_id": "hostregn", "deadline_typ": "höstregn", "veckor_kvar": 1.7, "timing": "NOW", "kommentar": "sasong.py --objekt Soptunnan = EVERGREEN; höstregn/höststormar valt som fönster (välta kärl, lock som slår i vind); skator/kråkor är helårsproblem — uppskattning"},
+      "listning": {
+        "product_id": "1005010294815366",
+        "url": "https://www.aliexpress.com/item/1005010294815366.html",
+        "pris_usd": 8.32,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-28T09:04:58Z",
+        "kontroll": {"produktsida_oppnad": true, "titel_stammer": true, "hero_nedladdad": "korningar/2026-09-28/v3/bilder/1005010294815366.jpg", "hero_sedd": true, "pris_sett": true, "varianter": "bild 2 (sedd): '2 Pack, Fully Adjustable Slide Buckle', krok 1,5 tum (38 mm) × 0,32 tum tjock, rem min 23,6 tum (60 cm) – max 48 tum (122 cm). Bild 3 (sedd): fyra steg — haka kroken på kärlkanten, justera, haka andra kroken på lockkanten. En variant (svart). Syskon i samma form: 1005012347794265 'Double Claw Windproof' metallkrokar 23,29 USD (LIVE 09:05:01Z, hero + bild 2 sedda: remmen monterad på 240 L-kärl i trädgård, packstorlek ej läst) och 1005012600928981 lockklämma 2 st 5,74 USD (LIVE 09:05:04Z, hero sedd: grön plastklämma på kärlhörn, textfri). 1005009990087189 (9,55 USD, hero med två sopkärl) kräver skruv i kärlet — struken för Sverige (kommunens kärl).", "video": "ej tillgänglig i containern"}
+      },
+      "material": {"klass": 1, "hero_textfri": true, "hero_i_kontext": true, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "heron: grönt 240 L-kärl med två remmar monterade + två remmar bredvid — textfri (bara 'TIDY MAN' tryckt på kärlet) men AI-komposit med björn, tvättbjörn och råtta ovanpå som måste beskäras; syskonet 1005012347794265 bild 2 (korningar/2026-09-28/v3/bilder/1005012347794265-2.jpg) visar remmen på ett kärl i verklig trädgård med rubriktext — bättre kontextreferens. Svensk creative: skata på kärlkanten, lock som fladdrar, remmen på — stängt.", "hero_syskon": "korningar/2026-09-28/v3/bilder/1005012347794265-2.jpg"},
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "ingen svensk aktör hittad i exakt form (rem/lås som håller sopkärlets lock stängt). PriceRunner 2026-09-28: 'sopkärl locklås' 4 träffar 0 i formen (kolfilterlock, kommodvattenlås, barnlås), 'soptunna lockhållare' 2 träffar 0 i formen, 'sopkärl rem' 1 träff 0 i formen, 'soptunna lock vind' 11 träffar 0 i formen (fodertunnor), 'sopkärl lås' 12 träffar 0 i formen (vattenlås), 'sopkärl lockstöd' 0 i formen", "pris_sek": null, "url": "https://www.pricerunner.se/search?q=sopk%C3%A4rl%20lockl%C3%A5s", "exakt_samma_form": false},
+        "premium_ankare": {"namn": "ej mätt — ingen märkesvara i formen; fodertunna med låsbart lock 80 L (V-Plast) 269 kr är närmaste 'låst lock' men annan SAK", "pris_sek": null, "url": "https://www.pricerunner.se/search?q=soptunna%20lock%20vind", "i_sortiment": false},
+        "ankare_kvot": null,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["pricerunner.se 'sopkärl locklås' 2026-09-28: 0 i formen", "pricerunner.se 'soptunna lockhållare' 2026-09-28: 0 i formen", "pricerunner.se 'sopkärl rem' 2026-09-28: 0 i formen", "pricerunner.se 'soptunna lock vind' 2026-09-28: 0 i formen", "pricerunner.se 'sopkärl lås' 2026-09-28: 0 i formen", "pricerunner.se 'sopkärl lockstöd' 2026-09-28: 0 i formen", "bauhaus.se 'sopkärl lock' (404), jula.se/biltema.se (403), k-rauta.se (JS-skal) — oläst"]
+      },
+      "ekonomi": {"landad_sek": [108, 132], "pris_sek": 349, "brutto_sek": [217, 241], "be_cpa_sek": [217, 241], "be_roas": 1.52, "flerkop": true, "returrisk": "låg — remmen är justerbar 60–122 cm och krokarna hakas på valfri kärlkant; ingen mätning. Risk: kunden glömmer haka av på tömningsdagen och kärlet töms inte — skriv det stort på sidan", "kommentar": "2-pack: 8,32 USD × 9,64 × 1,5 = 120 ±10 %. 399 kr ger BE-CPA 267–291 / BE-ROAS 1,5 om 349 känns lågt mot klistermärkenas 199"},
+      "meta_tanke": {"hook": "Skatorna hittade sopkärlet igen?", "objekt_i_bild": "sopkärlet vid tomtgränsen med locket uppslaget och påsar utdragna på marken, skata på kanten", "sjalvselekterande": true, "forstas_3s": true, "bevisas_visuellt": "kroken hakas på kärlkanten, remmen dras över locket, kroken på lockkanten — skatan landar, locket rör sig inte; sedan: vinden tar locket på grannens kärl, inte på detta"},
+      "varfor": "Samma flerköpsstruktur som spöklämman (< 350 kr, 2-pack, ägt objekt ute, improvisation som default) på ett objekt varje hushåll har flera av, och formen saknas i svenskt flöde på sex PriceRunner-sökningar. Ingen skruv i kommunens kärl — hakas på och av.",
+      "huvudrisk": "Friktionen är inte mätt för svenska kärl (locken är tunga och stängs av sig själva; skatorna tar mest lösa påsar) och tömningsdagen kräver att remmen hakas av — glöms det töms inte kärlet.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 3, "meta_creative": 2, "efterfragan": 2, "lucka": 3, "ekonomi": 1, "sasong": 2, "leverantor": 2, "nyhet": 2, "hypotesvarde": 2},
+      "per_kriterium": null,
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt 2026-09-28: 'Klistermärken för Soptunnan' = samma SAK, annan form (dekor); ingen rem/lås", "koncept.py sok soptunn/lockspärr/bin strap/lid/trash/garbage: 0 i formen", "kandidat 1 i denna fil (vägglisten) = samma SAK, annan form (list mot vältning, inte lock) — två former på sopkärlet, under syskontaket"]},
+      "kallor": ["https://www.aliexpress.com/item/1005010294815366.html", "https://www.aliexpress.com/item/1005012347794265.html", "https://www.aliexpress.com/item/1005012600928981.html", "https://www.pricerunner.se/search?q=sopk%C3%A4rl%20lockl%C3%A5s", "https://www.pricerunner.se/search?q=soptunna%20lock%20vind", "https://www.pricerunner.se/search?q=sopk%C3%A4rl%20l%C3%A5s"]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Stuprörets uppfällbara gångjärn 2-pack",
+      "objekt": "NYTT: Stuprörets utkastare — gångjärnet som fäller upp den för krattan och snöskoveln",
+      "form": "annat",
+      "arketyp": "A_AGARE_FRIKTION",
+      "arketyp_sekundar": "E_VADER_SASONG",
+      "slot": "exploitation",
+      "hypotes_id": "H06",
+      "hypotes_sekundar": "H08",
+      "vinnarlikhet": {
+        "likast": "Fiskespöhållaren (spöklämma 4-pack)",
+        "delade_variabler": ["A_AGARE_FRIKTION på ägt objekt ute (utkastaren i vägen, sparkas loss, snöskoveln fastnar)", "flerkop_ja (2-pack; hus har 2–6 stuprör)", "old way köpt produkt som fungerar dåligt — fast utkastare som lossnar/böjs (H03)", "synligt märkesankare ≥ 1,6× i samma FUNKTION: Lindab Fällbar utkastare FUTK 339 kr, Rias 319, Wijo 411–469, Plannja 546 (PriceRunner 2026-09-28) mot 175 kr/st hos oss = 1,8–3,1× (H06)", "montering: åtta skruvar, ingen elektriker"],
+        "avvikelser": ["formen är byggd för USA:s rektangulära 2×3-/3×4-tums stuprör — svenska rör är runda 87/100 mm; klämplattorna (bild 3 sedd) är ~30 mm breda fjäderclips som griper rörväggen och KAN sitta på ett runt rörs krön, men det är inte verifierat", "funktionen finns redan i fackhandeln som komplett fällbar utkastare (319–546) — 'sett innan'-risk hos Axel", "ingen kaos → ordning-bild; payoffen är 'fäll upp, kratta, fäll ner'"]
+      },
+      "sasong": {"fonster_id": "lovfallning", "deadline_typ": "lövfällning", "veckor_kvar": 2.4, "timing": "NOW", "kommentar": "sasong.py --objekt Stupröret = EVERGREEN, Hängrännor = lovfallning (2,4 v). Lövfällning valt: heron visar löv och vatten, utkastaren fälls upp när man krattar/lövblåser runt grunden; andra köpskälet är snöskottning (första snö Svealand 7,6 v)"},
+      "listning": {
+        "product_id": "1005011822160178",
+        "url": "https://www.aliexpress.com/item/1005011822160178.html",
+        "pris_usd": 8.45,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-28T09:01:19Z",
+        "kontroll": {"produktsida_oppnad": true, "titel_stammer": true, "hero_nedladdad": "korningar/2026-09-28/v3/bilder/1005011822160178.jpg", "hero_sedd": true, "pris_sett": true, "varianter": "titel 'Flip-Up Downspout Hinge 2pcs Waterproof Extension' — 2 st aluminiumgångjärn med clips + 8 skruvar + bricka (bild 4 sedd), en variant, silver. Sökträffens titel: 'Innovative Flip Design Gutter Extension Hinge Anti-slip Durable Downspout'. Syskon i samma form: 1005013236212506 (2 st 4,42 USD, LIVE 09:01:13Z, hero = AI-vardagsrum, struken på hero), 1005013191790196 (2 set 4,79 USD, LIVE 09:01:16Z, hero i kontext med text 'Rectangle Square'), 1005009439821930 AT14 rostfri (11,16 USD, LIVE 09:01:21Z, texttung hero). Passform: ingen listning nämner runda rör — 'downspout hinge round pipe' gav bara möbelgångjärn.", "video": "ej tillgänglig i containern"}
+      },
+      "material": {"klass": 2, "hero_textfri": true, "hero_i_kontext": true, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "heron är ett textfritt collage: fyra stuprör med vatten och löv runt utkastaren + gångjärnet monterat i mitten — SAKEN och problemet syns. Bild 3 (hand håller gångjärnet, clipsen synliga) och bild 4 (utkastaren uppfälld mot husvägg, gräsmatta) sedda. Svensk creative måste visa ett RUNT Lindab-rör — annars ser 55+-tittaren ett amerikanskt rör och känner inte igen sitt."},
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "ingen svensk aktör i exakt form (gångjärn för eftermontering på befintlig utkastare): PriceRunner 'stuprör gångjärn' och 'utkastare gångjärn' 2026-09-28 — 0 i formen (Lindab stuprör 109–207, möbelgångjärn); 'stuprör utkastare uppfällbar' 0 träffar. Funktionen finns som komplett utkastare: Rias Fällbar utkastare 90 319 kr (lägst)", "pris_sek": 319, "url": "https://www.pricerunner.se/search?q=f%C3%A4llbar%20utkastare", "exakt_samma_form": false},
+        "premium_ankare": {"namn": "Lindab Fällbar utkastare FUTK silvermetallic 87 — 339 kr (Velltra, PriceRunner-sidan läst 2026-09-28); Wijo Fällbar utkastare 075/100 411–469 kr; Plannja Fällbar Utkastare 90 546 kr", "pris_sek": 339, "url": "https://www.pricerunner.se/pl/1432-3202941052/Tak/Lindab-Faellbar-utkastare-FUTK-silvermetallic-87-priser", "i_sortiment": true},
+        "ankare_kvot": 1.94,
+        "ankare_kvot_kommentar": "räknat per stuprör: Lindab 339 / (349 ÷ 2 = 175) = 1,94; Rias 319/175 = 1,82; Plannja 546/175 = 3,1. Räknat per paket (339/349 = 0,97) finns inget ankare — kunden med fyra stuprör jämför 698 mot 1 356",
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["pricerunner.se 'fällbar utkastare' 2026-09-28: Rias 319, Lindab 339, Wijo 411/469, Plannja 546 ×2 (6 varianter, alla kompletta utkastare)", "pricerunner.se/pl/1432-3202941052 Lindab FUTK: 339 kr Velltra, läst 2026-09-28", "pricerunner.se 'stuprör gångjärn' / 'utkastare gångjärn' / 'stuprör utkastare uppfällbar' / 'lövutkastare stuprör' (Lindab UTK fast 119, Wijo 123) 2026-09-28", "bauhaus.se/byggmax.se/k-rauta.se/beijerbygg.se: 404/JS-skal — oläst"]
+      },
+      "ekonomi": {"landad_sek": [110, 134], "pris_sek": 349, "brutto_sek": [215, 239], "be_cpa_sek": [215, 239], "be_roas": 1.63, "flerkop": true, "returrisk": "MEDEL — passformen på runda 87/100 mm-rör är inte verifierad; kunden måste såga sin utkastare och skruva åtta skruvar (visa på sidan med ett svenskt rör innan launch, annars 'passar inte'-returer)", "kommentar": "2-pack: 8,45 USD × 9,64 × 1,5 = 122 ±10 %"},
+      "meta_tanke": {"hook": "Sparkar du loss utkastaren varje höst?", "objekt_i_bild": "stuprörets utkastare vid husgrunden, löv och kratta runt den — utkastaren fälls upp mot väggen med en hand, krattan går fritt, fälls ner när regnet kommer", "sjalvselekterande": true, "forstas_3s": true, "bevisas_visuellt": "en hand fäller upp utkastaren, snöskoveln/krattan går rakt under; vattnet rinner som vanligt när den är nere"},
+      "varfor": "H06-test med ovanligt tydligt ankare: hela fackhandeln (Lindab/Plannja/Wijo/Rias) tar 319–546 kr per fällbar utkastare, gångjärnet gör samma sak på den utkastare ägaren redan har för 175 kr/st — ordning på flera ägda saker (2–6 stuprör), textfri hero i kontext, lövfällning NOW.",
+      "huvudrisk": "Byggd för rektangulära amerikanska rör — passar den inte svenska runda 87 mm-rör är raden död oavsett ankare; 'sett innan' (fällbar utkastare är standard i bygghandeln) kan ge nej från Axel.",
+      "konfidens": "LÅG",
+      "poang": {"vinnarlikhet": 2, "meta_creative": 2, "efterfragan": 2, "lucka": 2, "ekonomi": 1, "sasong": 2, "leverantor": 2, "nyhet": 2, "hypotesvarde": 2},
+      "per_kriterium": null,
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt 2026-09-28 (stuprör/ränn/utkast): Lövsilarna 6-pack (nät), Regnkedjan (annat, ersätter röret), Regntunnehuv (huv) — inget gångjärn/utkastare", "koncept.py sok stuprör/utkast/downspout: K0260 regnkedja kanske, K0285 lövsilar launchad, K0286 regnfisk nej (dekor), K0288 regntunnehuv ja, K0018/K0021 flexibel förlängning kandidat (annan form) — inget gångjärn", "kandidater-AG 09-26: rännstaven (verktyg) och rännskopor strukna — annan sak (hängrännan)"]},
+      "kallor": ["https://www.aliexpress.com/item/1005011822160178.html", "https://www.aliexpress.com/item/1005013191790196.html", "https://www.aliexpress.com/item/1005009439821930.html", "https://www.pricerunner.se/search?q=f%C3%A4llbar%20utkastare", "https://www.pricerunner.se/pl/1432-3202941052/Tak/Lindab-Faellbar-utkastare-FUTK-silvermetallic-87-priser", "https://www.pricerunner.se/search?q=stupr%C3%B6r%20g%C3%A5ngj%C3%A4rn", "korningar/2026-09-28/SASONG.md rad 'Lövfällning' (topp 15 okt, 2,4 v)"]
+    }
+  ],
+  "strukna": [
+    {"namn": "Stuprörets flexibla förlängning (1005010718082299 / 1005012262862861, 10,82–11,33 USD, LIVE 09:01:37Z/09:01:44Z, hero sedd: brun korrugerad slang på vitt, textfri, ingen kontext)", "skal": "Tre skäl: (1) passform — listningarna är för amerikanska 2×3/3×4-tumsrör och 3/4-tums runda, svenska 87 mm-rör nämns inte; (2) PriceRunner 'stuprörsförlängning'/'stuprörsutkastare flexibel'/'dräneringsslang stuprör' 2026-09-28 gav 0 i formen men Biltema/Jula/Bauhaus är oläsbara och formen är typisk kedjevara ('flexibel stuprörsförlängare'); (3) tredje stuprörsprodukten på tre veckor (regnkedja kanske, lövsilar launchade UNTESTED, regntunnehuv ja) — gångjärnet valt som den enda med ankare. K0018/K0021 står kvar som kandidat i koncept.json. Backlog: friktionen 'vattnet fryser till isgata vid utkastaren' (första frost 2,4 v) är stark om en 87 mm-listning dyker upp."},
+    {"namn": "Sopkärlets lockstöd/ventilationsklämma (1005010128946013, 5,09 USD, LIVE 09:01:47Z, hero sedd)", "skal": "Visade sig vara en klämma som håller locket på glänt för luftning (lukt/mögel) — sommarfriktion, ingen novemberfriktion, och 5 USD styck ger BE-CPA < 190 i varje pack."},
+    {"namn": "Sopkärlets lockrem med skruvplattor (1005009990087189, 9,55 USD, LIVE 09:01:03Z, hero sedd: två sopkärl i kontext + remmar med triangelplattor)", "skal": "Kräver skruv i kärlet — kommunens/entreprenörens kärl får inte modifieras. Kandidat 2 (hakas på) valdes i stället; heron med två 240 L-kärl duger som referensbild."},
+    {"namn": "Sopkärlets markhållare för hjulen (1005013145671958, 47,29 USD)", "skal": "Landar 615–752 kr — kräver ≥ 1 099 utan ankare i formen. Vägglisten (kandidat 1) löser samma friktion för 9 USD."},
+    {"namn": "Sopkärlets reflexnummer/adressdekal (1005010636063053 2,62 USD, 1005010398738177 4,91 USD m.fl. — sökträff, ej öppnade)", "skal": "K0: samma SAK (sopkärlet) och samma form (dekal) som Klistermärkena för Soptunnan 199 kr — bara annat motiv. Tips till Axel: reflexnummer som variant/upsell på klistermärkesprodukten i stället för ny rad. PriceRunner 'sopkärl skylt husnummer'/'sopkärl reflex' 0 i formen."},
+    {"namn": "Sopkärlets fotpedal/handsfree locköppnare", "skal": "Ingen listning i formen: 'wheelie bin pedal lid opener foot' gav gångjärnspinnar, tunnöppnare och köksfotpedaler. PriceRunner 'sopkärl pedal' = bara pedalhinkar inomhus. Friktionen (locket med händerna fulla av påsar) är verklig — backlog om en listning dyker upp."},
+    {"namn": "Grindens självstängare/grindfjäder (Jula? — läst via PriceRunner)", "skal": "Kedjeform: Alberts Grindfjäder 30×280 129 kr, MALATEC Dörr/Grindstängare 119 kr, 'Justerbar dörr- och grindfjäder automatisk stängning' 169 kr, 'Svart dörr grindstängare justerbar' 485 kr (PriceRunner 2026-09-28). Golv under oss utan märkesankare ≥ 1,6× i formen. Ej sökt på Ali."},
+    {"namn": "Grindhake mot vind / grindhållare", "skal": "Habo Grindhake 20 varmgalv 105 kr (PriceRunner 2026-09-28) — kedjeform, 'sett innan'. Ej sökt på Ali."},
+    {"namn": "Dörrmattans skrapgaller / stövelborste vid ytterdörren", "skal": "Golv i exakt form: Hortus Boot Brush 370 kr, HARD HEAD Shoe Scraper (Julas märke) 499 kr, Astro Turf skrapmatta 359 kr, 'Skoskrapa dörrmatta nätgaller' 735 kr, ACO Vario skrapgaller 1 143–1 420 kr (PriceRunner 2026-09-28). Ali 'boot scraper brush outdoor' 25–61 USD landar 360–880 — över golvet. Granngården svarade 200 men sidan gav ingen läsbar produkttext."},
+    {"namn": "Flaggstångens linlås/linspännare mot smäll (linan slår mot stången i vind — 55+-objekt)", "skal": "Ingen Ali-listning i formen: 'flagpole halyard tensioner' → knape 2,55 USD och rep; 'flag pole rope silencer' → taktiska remmar. Svenskt golv: bara flagglinor 65–146 kr och knapar (Harald Nyborg 64,90), Adela flaggclips 63 kr; Flaggstångsexperten har kategorin 'clips-krokar-sling' + 'viktringar' (söksidan 404, kategorin ej läst); Formenta-sök 'linspännare' tom. Formen är oklar även i Sverige — inte fällt på golv utan på saknad leverantör."},
+    {"namn": "Altanräckets kruk-/ljushållare (H08 flerköp)", "skal": "Sortiment: Habo Balkonghängare 740 galv 90 kr, Elho Barcelona bracket 135 kr, Lechuza Balconera fästen 293 kr, Jabo beslag altanräcke 122 kr + 'Balkong hängande växthyllor' 345 kr (PriceRunner 2026-09-28). Ej sökt på Ali."},
+    {"namn": "Brevlådans lockhållare/vindspärr och tidningsrör", "skal": "Svenska brevlådor (Berglund S90 252–329, MEFA) har gångjärnslock som stänger av egen vikt — ingen synlig friktion på 3 s. Tidningsrör: PriceRunner bara kompletta lådor 252–7 995; Habo-tillbehör ej läst. Ej sökt på Ali."},
+    {"namn": "Postlådans fjädrande stolpe mot snöplogen (Norrland första snö 3,9 v)", "skal": "Svensk form finns: Berglund Postlådestolpe Post-Stick Flex galv 303 kr (PriceRunner 2026-09-28) + MEFA-stativ 1 095–5 795. Ali 'mailbox swing arm bracket snow plow' gav 0 i formen. Objektraden 'Postlådan vid vägen' (huv) ej sökt — postlådehuv har ingen synlig friktion."},
+    {"namn": "Stuprörets lövutkastare/självrensande lövavskiljare (annan form än Lövsilarna)", "skal": "Inte sökt på Ali med flit: Lövsilarna 6-pack (K0285) launchades 2026-09-26 och är UNTESTED — en andra lövprodukt på samma SAK innan den första fått data är en syskonfälla. PriceRunner 'lövutkastare'/'lövavskiljare stuprör' 2026-09-28: 0 i formen (bara fasta utkastare Lindab 119/Wijo 123) — luckan finns, sök när lövsilarna dömts."},
+    {"namn": "Ytterdörrens dragstopp/vindfång", "skal": "K0 på SAK: Dörrbottenlist 319 kr i katalogen (ytterdörren + list). Dörrkilar/dörrhakar = kedja."},
+    {"namn": "Uppfartens snökäppar med reflex / solcell", "skal": "Struken av AJ 09-27 (Granngården 34,90, Millarco 179, ingen LED-listning) — inte sökt om."},
+    {"namn": "Staketets snöskydd/snöplogsnät", "skal": "Inte sökt: snönät på staket är ett kommunalt/lantbruksobjekt, inte ett 55+-villaobjekt; Buskjackan 2-pack (katalog) täcker 'skärmar av vind' på tomten."},
+    {"namn": "Sopkärlets vägghake — syskon och golv", "skal": "PriceRunner 'sopkärlshållare vägg' 14 träffar 0 i formen (badrum/kök); 'trash can holder bracket wall outdoor wind' på Ali gav bara kökshållare utöver kandidat 1."}
+  ]
+}

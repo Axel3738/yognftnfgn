@@ -131,7 +131,7 @@
   "arketyp": "G_Q4_GAVA",
   "deadline": "fars dag 6,4 v / jul",
   "korningsvecka": 41,
-  "orsak": "2026-09-24 lins AD: ankare Karesuando 1 145 / Casström 615–989, ingen boxad byggsats i svensk handel — men Ali säljer blad och skaft separat, ingen sats. Bara om en komplett sats hittas (blad + skaft + slida)."
+  "orsak": "2026-09-24 lins AD: ankare Karesuando 1 145 / Casström 615–989, ingen boxad byggsats i svensk handel — men Ali säljer blad och skaft separat, ingen sats. Bara om en komplett sats hittas (blad + skaft + slida). | 2026-09-28 lins AL: tredje sökningen utan setform på AliExpress → stängd för AliExpress, kräver annan källa."
  },
  {
   "objekt": "Fyrhjuling/ATV — sadeln",
@@ -235,7 +235,7 @@
   "arketyp": "G_Q4_GAVA",
   "deadline": "älgjakt / fars dag",
   "korningsvecka": 41,
-  "orsak": "2026-09-26 lins AE: ankare Outdoor Edge 780–1 226 (Jaktia/Widforss) men ingen boxad styckset-listning på AliExpress. Rad om komplett set < 40 USD dyker upp."
+  "orsak": "2026-09-26 lins AE: ankare Outdoor Edge 780–1 226 (Jaktia/Widforss) men ingen boxad styckset-listning på AliExpress. Rad om komplett set < 40 USD dyker upp. | 2026-09-28 lins AL: tredje sökningen utan setform på AliExpress → stängd för AliExpress, kräver annan källa."
  },
  {
   "objekt": "NYTT: Oxalsyraförångaren för bikupan",
@@ -268,5 +268,13 @@
   "deadline": "vintertid",
   "korningsvecka": 44,
   "orsak": "2026-09-27 lins AJ: Flaggstångsexperten 599 i exakt form, enda Ali-listning 32 USD → landad 468; Formenta/Flaggfabriken säljer ingen solcellsbelysning → inget ankare ≥ 1,6×. Stängd tills ankare finns."
+ },
+ {
+  "objekt": "NYTT: Stuprörets flexibla förlängning 87 mm",
+  "form": "annat",
+  "arketyp": "A_AGARE_FRIKTION",
+  "deadline": "första frost 2,4 v (isgata vid utkastaren)",
+  "korningsvecka": 41,
+  "orsak": "2026-09-28 lins AM: K0018/K0021 finns i registret; Ali-listningarna är US-dimensioner. Rad när 87 mm-listning hittas."
  }
 ]
