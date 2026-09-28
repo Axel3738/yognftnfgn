@@ -1,16 +1,16 @@
 {
   "id": "k26-fars-dag-listan",
-  "emailTitle": "Fem veckor kvar till fars dag",
+  "emailTitle": "Sista dag att beställa till fars dag: 19 oktober",
   "emailDescription": "Sex presenter sorterade efter vad han sysslar med.",
   "amnesrader": [
-    "Fem veckor kvar till fars dag",
-    "Tre pappor, sex presenter",
-    "Funkar också som hans egen önskelista"
+    "Sista dag att beställa till fars dag: 19 oktober",
+    "Beställ senast 19 oktober till fars dag",
+    "Efter 19 oktober kan vi inte lova att det hinner fram"
   ],
   "blocks": [
     {
       "type": "h1",
-      "text": "Fem veckor kvar till fars dag",
+      "text": "Sista dagen att beställa till fars dag är 19 oktober",
       "alignment": "center"
     },
     {
@@ -20,7 +20,7 @@
     },
     {
       "type": "regular",
-      "text": "Sex presenter till fars dag, sorterade efter vad han faktiskt sysslar med: båten, verkstaden eller kaminen.",
+      "text": "Om paketet ska hinna fram till fars dag den 8 november behöver ordern läggas senast 19 oktober. Sex presenter, sorterade efter vad han faktiskt sysslar med: båten, verkstaden eller kaminen.",
       "alignment": "center"
     },
     {

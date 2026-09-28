@@ -129,26 +129,60 @@ köparsegment på fältet, aldrig på händelsen. Och skriv aldrig ett produkt-i
 `klaviyo/spoks/baverbutiken/produkter.json` (alla 248 handles → Spoks-id sedan 2026-09-28) är
 facit; en första förhandsvisning med gissade id:n gav 23 träffar av fel skäl.
 
-**Utkast i Spoks (10 av 15, uppladdade 2026-09-28 eftermiddag):**
+**Utkast i Spoks (alla 15, uppladdade 2026-09-28 eftermiddag; K33–K37 18:45–18:49 CEST efter Axels "A"):**
 
 | Mejl | Dag | Publik | Ämnesrad | Post-id |
 |---|---|---|---|---|
-| K23 | ons 30/9 | Warmup tier 1 | Sex bästsäljare till reapris | `32ced8c7-e3dc-412f-9e0e-f36c6a03f975` |
+| K23 | ons 30/9 | Warmup tier 1 | Sätesöverdraget och fem till, 15 % extra (kod BASTSALJARE15) | `32ced8c7-e3dc-412f-9e0e-f36c6a03f975` |
 | K24 | fre 2/10 | Köpare båt | Ett vinterskydd som täcker hela motorn | `357d53cb-8e2f-43a1-8116-e8f7e72b9df1` |
-| K25 | lör 3/10 | Köpare trädgård & tomt | Kranen fryser vid första köldknäppen | `334c5fd5-5f5b-47d0-93aa-475976211195` |
-| K26 | sön 4/10 | Warmup tier 1 | Fem veckor kvar till fars dag | `ab2e0398-224c-46c4-b6b1-40778c2a56d2` |
+| K25 | lör 3/10 | Köpare trädgård & tomt | Kranen fryser, koden FROST15 väntar | `334c5fd5-5f5b-47d0-93aa-475976211195` |
+| K26 | sön 4/10 | Warmup tier 1 | Sista dag att beställa till fars dag: 19 oktober | `ab2e0398-224c-46c4-b6b1-40778c2a56d2` |
 | K27 | mån 5/10 | Köpare husvagn & husbil | Taket är skyddat, resten är det inte. | `bfec6cff-0d81-44a8-a2f9-acc2592b6c49` |
 | K28 | ons 7/10 | Warmup tier 1 | Kniven som legat slö sedan midsommar | `63bad9d8-0b9e-41fe-893c-7af4dfbaa05c` |
-| K29 | fre 9/10 | Warmup tier 1 | Reapris på sex presenter till fars dag | `c7ac660a-4969-4e04-a03f-e7fe6e378909` |
+| K29 | fre 9/10 | Warmup tier 1 | Presenter till fars dag. Kod: PAPPA15 | `c7ac660a-4969-4e04-a03f-e7fe6e378909` |
 | K30 | lör 10/10 | Köpare trädgård & tomt | En present för honom med kamin och vedbod | `7e49c595-6cdc-4740-b9e8-5ba58e0f5dbd` |
 | K31 | sön 11/10 | Warmup tier 1 | Aldrig mer trassliga fiskespön | `9f0eb81e-6084-4e5e-854e-fe2d340425cc` |
 | K32 | mån 12/10 | Köpare verkstad & garage | Han ser fåglarna innan han reser sig | `a97045ba-936c-4889-8bdc-c8db87a78656` |
+| K33 | ons 14/10 | Warmup tier 2 | Den kalla sitsen känns i hela kroppen | `c759a3ac-e639-4177-967d-b5e0762f23b1` |
+| K34 | lör 17/10 | Köpare båt | Motorn han låser fast vid bryggan | `de65f9b4-4ded-493d-9aec-1a2b5f38d3b8` |
+| K35 | sön 18/10 | Warmup tier 2 | I morgon är sista dagen till fars dag | `923a2200-c498-4cb1-a5b4-a34904fcea24` |
+| K36 | mån 19/10 | Warmup tier 2 | I dag är sista dagen att beställa till fars dag | `d6c2a03b-5ca7-4abc-91cb-420ce077bf15` |
+| K37 | ons 21/10 | Köpare MC & fordon | Ett kapell som tar smällen i stället för lacken | `93dd1b86-c942-40fd-827c-4bc9b41d366a` |
 
-Redigeringslänk: `https://app.spoks.com/baverbutiken/post/<post-id>/edit`. **K33–K37 (14/10 till
-21/10) är skrivna och konverterade men inte uppladdade** — Axel stoppade sessionen mitt i
-uppladdningen. Payloaden ligger i `payload/k33…k37.json`; ladda upp dem med `draft_campaign`
-(samma titelform) och skriv in id:na här. Rea-mejlen (K23, K29) speglar butikens egen
-"Rea"-prissättning (ordinarie pris överstruket, reapris), inga procent, belopp eller slutdatum.
+Redigeringslänk: `https://app.spoks.com/baverbutiken/post/<post-id>/edit`. K02 (tor 1/10, tier 1)
+är det gamla utkastet `8e970060-558d-4ec6-bc04-89780ab20b95`. **K23, K25, K26 och K29 skrevs om
+samma kväll och utkasten uppdaterades i Spoks 18:57–19:10 CEST** (`update_draft_campaign`
+med hash, nya block, titel och ämnesrad): rea-copyn (kod, procent, sista dag, kodstycket)
+av en Sonnet-subagent mot samma regler som resten; huvudsessionen ändrade tre K26-rader för
+sanningens skull (agentens "Sista dagen att beställa till fars dag" som rubrik läste som "i
+dag", nu "… är 19 oktober"; "Efter 19 oktober hinner paketet inte fram" var ett löfte vi inte
+kan hålla, nu "kan vi inte lova att det hinner fram"; "till pappa" bröt tvåläsarregeln, nu
+"till fars dag") och rättade "eller skriver du in" till "eller så skriver du in". Axels dom på
+K26:s gamla ämnesrad "Fem veckor kvar till fars dag": "verkligen en urgency-minskare". K24
+oförändrad (ingen rabatt). ⚠️ `konvertera.mjs` skriver om ALLA payloads: citatmejlen (f01-e2,
+k01, k03, k06, k10, k18, k21) tappar sina citat utan recensionscache — återställ dem med
+`git checkout` efter varje körning tills cachen finns i containern.
+
+**Extrarean med rabattkod (Axels beslut A 2026-09-28: "Du har ju inte gjort någon extra rea
+på 1" … "Bra men också rea" på K25; på frågan kod via länk eller automatisk rabatt på hela
+sajten svarade han A):** K23, K25 och K29 bär varsin kod, 15 % (Axel har inte sagt procenten,
+15 gäller tills han säger 10 eller 20), bara på mejlets produkter, en gång per kund, bara
+kombinerbar med fraktrabatt, räknad på dagens pris. Koderna ligger i Shopify sedan 2026-09-28
+~19:40 CEST, alla `SCHEDULED`, tillbakalästa på id: **BASTSALJARE15** (K23,
+`DiscountCodeNode/2304572129629`, 2026-09-30T06:00Z till 2026-10-04T21:59:59Z, 6 produkter),
+**FROST15** (K25, `…2304572162397`, 2026-10-03T06:00Z till 2026-10-07T21:59:59Z, 4 produkter),
+**PAPPA15** (K29, `…2304572195165`, 2026-10-09T06:00Z till 2026-10-13T21:59:59Z, 6 produkter).
+Motorn är `klaviyo/rea-kod.mjs` (kampanjfilens `rabatt: { typ: "kod", kod, procent, start,
+slut, handles }` är facit; torrt utan `--ja`; idempotent), nycklarna `SHOPIFY_*_SE` = appen
+"Bäver uppladdare", som HAR `write_discounts` (mätt 2026-09-28; CLAUDE.md:s "saknar
+write_discounts" var 2026-09-12). Knappen i mejlet går via `rabatt:<KOD>:<länk>` →
+`https://baverbutiken.se/discount/<KOD>?redirect=<sökväg>` (mätt: 302 till sökvägen), så
+koden ligger i kassan när kunden klickat; den står också i klartext i mejlet. ⚠️
+`codeDiscountNodeByCode` svarar null i upp till en minut efter skapandet — läs tillbaka på id
+direkt, på koden senare. `konvertera.mjs` släpper igenom exakt mejlets egen procentsats när
+`rabatt` är ett kod-objekt. K24 (båtköparna) får ingen rabatt: återköpsparet motorhölje →
+båtmotorskydd köps till fullpris (12 av 21), en rabatt dit kostar bara marginal (Axel frågade,
+sessionens råd, inget beslut om annat).
 
 **Takten:** Axels order är dagliga utskick. Vecka 40–41 får tier 1 (2 500) fyra till fem
 breda mejl i veckan, med de skräddarsydda däremellan; larmet i `docs/os/EPOST-STRATEGI.md`

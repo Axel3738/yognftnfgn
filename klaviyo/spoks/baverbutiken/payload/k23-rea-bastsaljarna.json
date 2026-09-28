@@ -1,16 +1,16 @@
 {
   "id": "k23-rea-bastsaljarna",
-  "emailTitle": "Sex bästsäljare till reapris",
-  "emailDescription": "Ordinarie pris överstruket, reapris i kassan.",
+  "emailTitle": "Sätesöverdraget och fem till, 15 % extra",
+  "emailDescription": "BASTSALJARE15 ger 15 % extra på de sex mest sålda till söndag.",
   "amnesrader": [
-    "Sex bästsäljare till reapris",
-    "Priset du ser är priset du betalar",
-    "Spöhållaren och fem andra till reapris"
+    "Sätesöverdraget och fem till, 15 % extra",
+    "15 % extra på fiskespöhållaren och fler",
+    "Koden BASTSALJARE15 är här"
   ],
   "blocks": [
     {
       "type": "h1",
-      "text": "Sex bästsäljare till reapris",
+      "text": "Extra rabatt på bästsäljarna. Kod: BASTSALJARE15",
       "alignment": "center"
     },
     {
@@ -20,23 +20,18 @@
     },
     {
       "type": "regular",
-      "text": "De sex vi säljer mest av står till reapris just nu, med ordinarie pris överstruket på produktsidan.",
+      "text": "De sex vi säljer mest av får 15 % extra rabatt till och med söndag 4 oktober. Koden läggs på automatiskt när du klickar dig vidare, eller så skriver du in BASTSALJARE15 själv i kassan.",
       "alignment": "center"
     },
     {
       "type": "link",
-      "text": "Se bästsäljarna på rea",
-      "url": "https://baverbutiken.se/collections/bestsaljare",
+      "text": "Hämta BASTSALJARE15",
+      "url": "https://baverbutiken.se/discount/BASTSALJARE15?redirect=%2Fcollections%2Fbestsaljare",
       "style": "button"
     },
     {
       "type": "regular",
-      "text": "Rea hos oss betyder att ordinarie pris står överstruket på produktsidan, och reapriset är det du ser.",
-      "alignment": "left"
-    },
-    {
-      "type": "regular",
-      "text": "Ingen kod att hålla reda på. Priset i kassan är samma som på sidan.",
+      "text": "Koden BASTSALJARE15 ger 15 % extra på priset som redan står på produktsidan, till och med söndag 4 oktober. Den gäller sätesöverdraget, axelbältet, strandtofflorna, motorhöljet, väggfästet och fiskespöhållaren, en gång per kund. Klicka på knappen ovan så läggs den på av sig själv, eller skriv in koden i kassan.",
       "alignment": "left"
     },
     {

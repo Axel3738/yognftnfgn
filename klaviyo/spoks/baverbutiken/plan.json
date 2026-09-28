@@ -635,7 +635,7 @@
     },
     {
       "id": "k23-rea-bastsaljarna",
-      "namn": "MAIL_20260930_Rea_CS_1_tier1_promo_bastsaljarna-reapris_v1",
+      "namn": "MAIL_20260930_Rea_CS_1_tier1_promo_bastsaljare-15-procent_v1",
       "planerad": "2026-09-30T18:00:00+02:00",
       "segment": [
         "Warmup tier 1"
@@ -653,7 +653,7 @@
     },
     {
       "id": "k25-tradgard-frosten",
-      "namn": "MAIL_20261003_Kranskydd_S_1_kopare-tradgard_problem_utekranen-fryser-forst_v1",
+      "namn": "MAIL_20261003_Kranskydd_S_1_kopare-tradgard_problem_utekranen-fryser-frost15_v1",
       "planerad": "2026-10-03T18:00:00+02:00",
       "segment": [
         "Köpare trädgård & tomt"
@@ -662,7 +662,7 @@
     },
     {
       "id": "k26-fars-dag-listan",
-      "namn": "MAIL_20261004_Farsdag_GT_4_tier1_solution_fem-veckor-tre-pappor_v1",
+      "namn": "MAIL_20261004_Farsdag_GT_4_tier1_solution_tva-veckor-kvar-tre-pappor_v1",
       "planerad": "2026-10-04T18:00:00+02:00",
       "segment": [
         "Warmup tier 1"
@@ -689,7 +689,7 @@
     },
     {
       "id": "k29-rea-presenterna",
-      "namn": "MAIL_20261009_Rea_CS_2_tier1_promo_presenterna-pa-rea_v1",
+      "namn": "MAIL_20261009_Rea_CS_2_tier1_promo_presenter-pappa15_v1",
       "planerad": "2026-10-09T18:00:00+02:00",
       "segment": [
         "Warmup tier 1"

@@ -2,7 +2,9 @@
 
 Axels order 2026-09-28: kampanjer **varje dag**, produkter skräddarsydda för kunderna,
 rea-mejl för den pågående rean (butiken visar "Rea" med ordinarie pris och reapris på
-produkterna, ingen rabattkod, inget slutdatum) och **minst tio fars dag-kampanjer**.
+produkterna) och **minst tio fars dag-kampanjer**. **Tillägg samma kväll (Axel: "du har ju
+inte gjort någon extra rea"):** rea-mejlen bär en EXTRAREA med rabattkod, 15 % på mejlets
+produkter, beslut A = kod via länk (se Gemensamt nedan och `KALENDER-2026.md`).
 Fars dag är söndag 8 november; sista beställningsdag **måndag 19 oktober**
 (brandfilens `kalender`, p90 20 dygn). K05 (13/10) och K15 (16/10) finns redan, så tio
 nya här ger tolv fars dag-mejl.
@@ -44,10 +46,18 @@ skräddarsytt mejl ligger aldrig samma dag som ett brett.
 - **Inga siffror med kr, inga procent, inga tankstreck, ingen leveranstid** (konverteraren
   stoppar dem). Priserna kommer ur Spoks produktblock, som visar reapriset och det
   överstrukna ordinarie priset precis som butiken.
-- **Rea-mejlen** får använda orden "rea", "reapris" och "ordinarie pris", eftersom det
-  är butikens egna ord på produktsidorna. Aldrig ett slutdatum, aldrig "tillfälligt",
-  aldrig "bara i dag", för rean har inget slutdatum. Brådskan i fars dag-mejlen är
-  däremot äkta: 19 oktober är sista beställningsdagen, och den får skrivas ut.
+- **Rea-mejlen (K23, K25, K29) bär en extrarea med rabattkod** (Axels beslut A
+  2026-09-28): kampanjfilens `rabatt: { typ: "kod", kod, procent, start, slut, handles }`
+  är facit, koden skapas i Shopify med `node klaviyo/rea-kod.mjs --brand baverbutiken
+  <id> --ja` INNAN mejlet går, knappen går via `rabatt:<KOD>:<länk>` (Shopifys
+  `/discount/<KOD>` lägger koden i kassan), och koden står i klartext i mejlet. Mejlet
+  får skriva exakt sin egen procentsats ("15 %") och sin sista dag ("till och med söndag
+  4 oktober"), för båda är sanna och räknade. Orden "rea", "reapris" och "ordinarie pris"
+  är fortfarande butikens egna. Aldrig "bara i dag" eller "sista chansen". Brådskan i
+  fars dag-mejlen är äkta: 19 oktober är sista beställningsdagen, och den får skrivas ut.
+- **Ingen rabatt i de skräddarsydda köparmejlen** (K24 först): återköpen sker till
+  fullpris, en rabatt dit kostar bara marginal. Axel frågade om det 2026-09-28,
+  sessionens råd var nej, och han beslutade inget annat.
 - **Fars dag-vinkeln till våra egna kunder** (mest män som handlar till sig själva):
   två läsare i samma mejl. Den som ska köpa en present till en pappa, och pappan själv
   som kan skicka mejlet vidare som önskelista. Skriv aldrig "din pappa" som om läsaren
@@ -98,7 +108,7 @@ K05 och K15 = tolv. Omgång 2 (23/10 till 8/11) skrivs när de här är uppladda
 - **Produkter (butikens kollektion Bästsäljare, mätt 2026-09-28):** `satesoverdrag-for-akgrasklippare-slittaligt-600d-oxford`, `axelbalte-for-trimmer-justerbart-nylonbalte`, `strandtofflor-for-herr-halkfria-tradgardsskor`, `marin-motorholje-420d-universellt-skydd`, `vaggfaste-for-grastrimmer-kraftig-verktygshallare`, `fiskespohallare-4-pack-kraftig-forvaring`.
 - **Memo:** Butiken visar reapris och ordinarie pris på varje produkt. Mejlet säger det rakt ut och visar de sex flest köpta med priserna ur produktblocken. Hypotes: kunder som redan handlat öppnar ett rea-mejl på det de känner igen; mätt mot K01 på klick per mottagare.
 - **Taggar:** typ M · kalla egen-data · kalla_ref `kollektionen bestsaljare 2026-09-28` · avatar kunden som handlat en gång och sett rea-etiketterna · begär köpa det han ändå tänkt köpa medan reapriset står · awareness promo · urgency pris · confidence medium · prefix Rea · kod CS.
-- **Block:** hero (rubrik om rean, ingen produktbild, knapp `kollektion:bestsaljare`) → text (vad rea betyder hos oss: ordinarie priset står överstruket på produktsidan, inget kodkrångel, priset i kassan är det du ser) → produktrad (tre) → produktrad (tre) → fakta. Inga procent, inga belopp, inget slutdatum.
+- **Block:** hero (rubrik om extrarean, ingen produktbild, knapp `rabatt:BASTSALJARE15:kollektion:bestsaljare`) → text (koden BASTSALJARE15 ger 15 % på de sex, läggs på av sig själv via knappen eller skrivs in i kassan, gäller till och med söndag 4 oktober, en gång per kund) → produktrad (tre) → produktrad (tre) → fakta. Procenten och sista dagen får stå, inga belopp. *(Före Axels "extra rea"-order samma kväll speglade mejlet bara butikens överstrukna priser.)*
 
 ## K24, fre 2 okt: Båtköpare, nästa steg
 - **Fil:** `kampanjer/k24-batkopare-nasta-steg.json` · **Namn:** `MAIL_20261002_Batmotorskydd_S_2_kopare-bat_solution_motorholje-till-batmotorskydd_v1`
@@ -112,7 +122,7 @@ K05 och K15 = tolv. Omgång 2 (23/10 till 8/11) skrivs när de här är uppladda
 - **Publik:** Köpare trädgård & tomt. **Produkter:** hero `kranskydd-frost-420d-skyddar-utekranen-i-vinter`, produktrad `ibc-tankoverdrag-1000-l-stoppar-alger-uv`, `krukvaxthuv-3-pack-skydd-mot-vind-regn-och-frost`, `regntunnehuv-200-l-i-svart-210d-dras-over-tunnan`.
 - **Memo:** Första frostnatten kommer i oktober i stora delar av landet. Mejlet går till dem som redan köpt till tomten, en månad före K16 (som går brett 3/11). Hypotes: problemöppningen "det som fryser först" (utekranen) säljer hela raden av skydd; mätt på klick per produkt.
 - **Taggar:** typ S · kalla gissning · kalla_ref null · avatar villaägaren som redan köpt något till tomten · begär att inget spricker i vinter · awareness problem · urgency sasong · confidence low · prefix Kranskydd · kod S.
-- **Block:** hero → punkter "Tre saker frosten tar först" (kranen, tunnan, krukorna; bara det produkttexterna belägger, inga påståenden om skador vi inte kan visa) → produkt → produktrad (tre) → fakta. **Förbud:** inga påståenden om försäkring eller skadekostnader.
+- **Block:** hero (knapp `rabatt:FROST15:produkt:kranskydd-…`) → punkter "Tre saker frosten tar först" (kranen, tunnan, krukorna; bara det produkttexterna belägger, inga påståenden om skador vi inte kan visa) → produkt → produktrad (tre) → text (koden FROST15 ger 15 % på de fyra till och med onsdag 7 oktober, Axels "bra men också rea" 2026-09-28) → fakta. **Förbud:** inga påståenden om försäkring eller skadekostnader.
 
 ## K26, sön 4 okt: Fars dag 1, listan
 - **Fil:** `kampanjer/k26-fars-dag-listan.json` · **Namn:** `MAIL_20261004_Farsdag_GT_4_tier1_solution_fem-veckor-tre-pappor_v1`
@@ -120,6 +130,7 @@ K05 och K15 = tolv. Omgång 2 (23/10 till 8/11) skrivs när de här är uppladda
 - **Memo:** Första fars dag-mejlet, fem veckor före. Presentvinkeln är bevisad (`Takoverdrag_GT_2_H1`, 8 202 kr vinstbidrag). Hypotes: en lista sorterad på vad pappan sysslar med (båt, verkstad, kamin) ger fler klick än ett enproduktsmejl, mätt mot K05.
 - **Taggar:** typ I · kalla egen-data · kalla_ref `products/carashell/takskyddet/dna.md:56-66` · avatar den som redan nu vill ha fars dag ur vägen, och pappan som skickar vidare önskelistan · begär en present som används, beställd i tid · awareness solution · urgency konsekvens (19 oktober) · confidence medium · prefix Farsdag · kod GT.
 - **Block:** hero (ingen produktbild, knapp `kollektion:alla-produkter` "Se hela listan") → text (två läsare: köparen och önskelistan) → produktrad "Om han har båt" → produktrad "Om han har verkstad" → produktrad "Om han har kamin" → text (beställ senast 19 oktober, fars dag 8 november) → fakta.
+- **Ämnesraden omskriven 2026-09-28 kväll** (Axel: "fem veckor kvar till fars dag är verkligen en urgency-minskare"): brådskan är deadlinen, inte antalet veckor. Nu "Sista dag att beställa till fars dag: 19 oktober", rubriken "Sista dagen att beställa till fars dag är 19 oktober" (datumet står i rubriken, annars läser den som "i dag") och första meningen bär samma deadline. Ingen rea i det här mejlet (Axel: "ingen rea kanske").
 
 ## K27, mån 5 okt: Husvagnsköpare, resten av bilen
 - **Fil:** `kampanjer/k27-husvagn-resten.json` · **Namn:** `MAIL_20261005_Husbil_S_1_kopare-husvagn_solution_resten-av-bilen_v1`
@@ -140,7 +151,7 @@ K05 och K15 = tolv. Omgång 2 (23/10 till 8/11) skrivs när de här är uppladda
 - **Publik:** Warmup tier 1. **Produkter (alla med ordinarie pris överstruket i butiken):** `balteslipmaskin-mini-3-i-1-knivslip-polerare`, `taljset-30-delar-6-knivar-och-6-jarn`, `motorlas-i-rostfritt-stal-laser-utombordarens-fastskruvar`, `fagelmatare-med-kamera-och-solcellspanel-se-faglarna-i-appen`, `varmesits-45-90-cm-4-varmezoner-usb-driven`, `kamadohuv-80-102-cm-skydd-med-forvaringspase`.
 - **Memo:** Rea och fars dag i samma mejl: sex presenter som står med reapris just nu. Hypotes: reapriset gör presentköpet lättare att motivera fem veckor i förväg; mätt mot K26 på köp per mottagare.
 - **Taggar:** typ M · kalla egen-data · kalla_ref `produktsidornas reapris 2026-09-28` · avatar den som vill köpa presenten nu när den är billigare · begär köpa presenten till reapris och vara klar · awareness promo · urgency pris + konsekvens (19 oktober) · confidence medium · prefix Rea · kod CS.
-- **Block:** hero (utan produktbild, knapp `kollektion:alla-produkter`) → text (reapris på presenterna, ordinarie priset står överstruket, beställ senast 19 oktober) → produktrad (tre) → produktrad (tre) → fakta.
+- **Block:** hero (utan produktbild, knapp `rabatt:PAPPA15:kollektion:alla-produkter`) → text (koden PAPPA15 ger 15 % på de sex presenterna till och med tisdag 13 oktober, listan går att skicka vidare som önskelista, beställ senast 19 oktober) → produktrad (tre) → produktrad (tre) → fakta.
 
 ## K30, lör 10 okt: Fars dag 3, vedpappan
 - **Fil:** `kampanjer/k30-fars-dag-ved.json` · **Namn:** `MAIL_20261010_Tandvedsklyv_GT_6_kopare-tradgard_product_vinterns-ved_v1`
