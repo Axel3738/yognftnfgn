@@ -63,6 +63,7 @@ import {
 import { marknadFor, marknadsNamn, marknadslank, arMarknadsfil } from '../factory/opsmarknader.mjs';
 import { granskaOmVideo, butiksordUr, blockerar as slutkortBlockerar, rapportrad as slutkortsrad, DOMAR as SLUTKORTSDOMAR, IKON as SLUTKORTSIKON } from '../factory/bildbrand.mjs';
 import { hittaFält, byggEgenskaper, delaBlock } from './notion-brief.mjs';
+import { baraSverige } from './lib/bara-sverige.mjs';
 
 const ROT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const NOTION_API = 'https://api.notion.com/v1';
@@ -286,6 +287,11 @@ export function arSlutstatus(status, statusar = {}) {
 export function bedom(rad) {
   const se = { ok: true, skal: [] };
   if (!rad.spegel) se.skal.push('spegelnamn kan inte bildas ur namnet');
+  // Fars dag-annonserna (FD) lämnar aldrig Sverige — /oversatt flyttar dem
+  // till Approved, så hit ska de aldrig nå. Hängslen om någon ändå sätter
+  // raden i speglingens kö för hand.
+  const svensk = baraSverige(rad.namn);
+  if (svensk) se.skal.push(svensk);
   if (rad.brand?.length) se.skal.push(`nämner Bäverbutiken: ${rad.brand.join(', ')}`);
   // Slutkortet i bilden. Bara "med-brand" stoppar; "utan-brand" och "okänd"
   // är rapportrader, inte stopp (factory/bildbrand.mjs).

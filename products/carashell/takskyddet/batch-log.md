@@ -2579,3 +2579,12 @@ Sjätte dygnet i rad utan något att översätta: allt som landar i kön kommer 
 speglingen och bär redan sin norska annons. Frågan om presentvinkelns två
 adsets (`- G` och `- GT`) ligger fortfarande hos Axel, obesvarad sedan
 2026-09-23 — rapporterad i `varningar`, inget rört.
+
+## Fars dag-batchen 2026-09-28 — speglas INTE hit
+
+Bäverbutikens källhubb fick tre fars dag-briefer (`*_FD_1_H1`, `*_FD_1_H2`,
+`*_FD_2_1`, Axels order 2026-09-28). De är **bara Sverige**: `/oversatt NO`
+flyttar dem direkt till `Approved`, och `tools/ops-spegla.mjs` stoppar varje
+namn med vinkeln `FD` (`tools/lib/bara-sverige.mjs`) — fars dag är i juni i
+USA. Ingen `CaraShell…_FD_…`-annons ska finnas. Batchen:
+`docs/briefs/farsdag-2026/README.md`.

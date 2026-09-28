@@ -27,12 +27,16 @@
 //    annonserna"). Ingen HeyGen-kredit, ingen bildkomposition, ingen subagent —
 //    raden hoppas här i Fas 1 och nämns en gång i briefen. Den ligger kvar i
 //    Notion-kön och tas av sig själv den dag kampanjen startas igen.
+//  • Bara Sverige: vinkelkoder i tools/lib/bara-sverige.mjs (FD = fars dag,
+//    2026-09-28) hoppas FÖRE allt annat med `bara_se: true` — raden går till
+//    Approved med skälet, även i en speglad hubb.
 //  • Dubblettspärr: målkontot läses EN gång; finns målnamnet → klar, hoppa tyst.
 //  • Pris ur marknadens butik vid varje körning (products.json, matchat på handle).
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { resolve, join } from 'node:path';
 import { säkerställProxy, api, alla, kampanjUtfall } from './meta-lib.mjs';
+import { baraSverige } from './lib/bara-sverige.mjs';
 
 säkerställProxy();
 
@@ -176,6 +180,11 @@ async function main() {
     const namn = annonsdel(rad.namn);
     const j = { notion: rad, namn, status: 'HOPPA', skal: null };
     jobb.push(j);
+
+    // Fars dag-annonserna (FD) översätts aldrig — raden går till Approved med
+    // skälet som kommentar, precis som en avvecklad kampanj (oversatt.md).
+    const svensk = baraSverige(namn);
+    if (svensk) { j.bara_se = true; j.skal = svensk; continue; }
 
     const se = seMap.get(namn.toLowerCase());
     if (!se) { j.skal = 'inte uppe i Sverige (annonsnamnet finns inte i SE-kontot)'; continue; }

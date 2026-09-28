@@ -1,0 +1,234 @@
+{
+  "hook_H1": {
+    "rad": "Fars dag-present: han skruvar ihop 3,69 meter själv.",
+    "engelska": "Father's Day gift: he screws together 3.69 meters himself.",
+    "alternativ": [
+      "Fars dag: pappan skruvar ihop 9 stänger själv.",
+      "I fars dag-present bygger han sina egna 3,69 meter."
+    ]
+  },
+  "hook_H2": {
+    "rad": "Fars dag-present: han rensar röret utan att krypa dit.",
+    "engelska": "Father's Day gift: he clears the pipe without crawling in.",
+    "alternativ": [
+      "Han slipper krypa bakom kaminen i fars dag-present.",
+      "I fars dag-present slipper han krypa bakom kaminen."
+    ]
+  },
+  "rader": [
+    {
+      "nr": 2,
+      "rad": "9 böjliga stänger, en nylonborste på 100 millimeter.",
+      "engelska": "9 flexible rods, a nylon brush at 100 millimeters."
+    },
+    {
+      "nr": 3,
+      "rad": "Varje stång böjer med, i stället för att stanna.",
+      "engelska": "Every rod bends along, instead of stopping."
+    },
+    {
+      "nr": 4,
+      "rad": "Borsten når 3,69 meter upp i röret.",
+      "engelska": "The brush reaches 3.69 meters up the pipe."
+    },
+    {
+      "nr": 5,
+      "rad": "459 kr, ord. 599 kr. Beställ senast 19 oktober.",
+      "engelska": "459 SEK, was 599 SEK. Order by October 19."
+    }
+  ],
+  "text_pa_skarm": {
+    "1_H1": "Fars dag-present: 3,69 meter själv.",
+    "1_H2": "Rensar röret utan att krypa dit.",
+    "2": "9 böjliga stänger, nylonborste 100 mm.",
+    "3": "Böjer med, stannar inte.",
+    "4": "Når 3,69 meter upp i röret.",
+    "5": "Fars dag-rea. Beställ senast 19 oktober."
+  },
+  "bild": {
+    "rubrik": "Fars dag-present: skruva ihop 3,69 meter själv.",
+    "underrad": "9 böjliga stänger och en nylonborste på 100 millimeter rensar röret.",
+    "marke": "Fars dag-rea",
+    "prisband": "459 kr, ord. 599 kr",
+    "sista_raden": "Beställ senast 19 oktober",
+    "engelska": {
+      "rubrik": "Father's Day gift: screw together 3.69 meters yourself.",
+      "underrad": "9 flexible rods and a 100 mm nylon brush clear the chimney pipe."
+    }
+  },
+  "copy_card": {
+    "primar": "Fars dag-present: han skruvar ihop 3,69 meter själv, och rensar mellan sotarens besök. 9 böjliga stänger böjer med i varje krök i stället för att stanna, och en nylonborste på 100 millimeter borstar bort sotet i stället för att skrapa. Fars dag-rea: 459 kr, ord. 599 kr. Beställ senast 19 oktober.",
+    "rubrik": "Fars dag-present: 3,69 meter, byggd själv.",
+    "beskrivning": "Fars dag-rea: 459 kr, ord. 599 kr"
+  },
+  "tretest": [
+    {
+      "rad": "Fars dag-present: han skruvar ihop 3,69 meter själv. (hook H1)",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret handling (skruvar ihop) + exakt mått ur produktsidan (9×41 cm = 3,69 m). Matchar bild 1 H1 (garaget)."
+    },
+    {
+      "rad": "Fars dag: pappan skruvar ihop 9 stänger själv. (H1 alt 1)",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Reservhook, samma handling, siffran 9 i stället för 3,69."
+    },
+    {
+      "rad": "I fars dag-present bygger han sina egna 3,69 meter. (H1 alt 2)",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Reservhook, samma sakuppgift, annan ordföljd."
+    },
+    {
+      "rad": "Fars dag-present: han rensar röret utan att krypa dit. (hook H2)",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kontots bevisade vinkel (föräldraannonsen: 59 köp, CPA 183 kr), omskriven till bättre svenska. Grundad i produktsidans 'Når bakom kaminen eller torktumlaren'. Matchar bild 1 H2 (borste + sot)."
+    },
+    {
+      "rad": "Han slipper krypa bakom kaminen i fars dag-present. (H2 alt 1)",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Reservhook, samma vinkel, tidigare huvudrad."
+    },
+    {
+      "rad": "I fars dag-present slipper han krypa bakom kaminen. (H2 alt 2)",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Reservhook, kortare variant."
+    },
+    {
+      "rad": "9 böjliga stänger, en nylonborste på 100 millimeter. (rad 2)",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Exakta produktmått ur produktsidan. Matchar bilden av stänger och borste på golvet."
+    },
+    {
+      "rad": "Varje stång böjer med, i stället för att stanna. (rad 3)",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Grundad i 'följer krökarna i röret i stället för att ta stopp i första kröken'. Matchar bilden av handen som böjer stången."
+    },
+    {
+      "rad": "Borsten når 3,69 meter upp i röret. (rad 4)",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Omskriven: lovade tidigare 'hela röret', men röret kan vara längre än setets 3,69 m. Nu bara den mätta räckvidden ('3,69 meters räckvidd' på produktsidan). Matchar bilden rakt upp i rökkanalen mot ljuset."
+    },
+    {
+      "rad": "459 kr, ord. 599 kr. Beställ senast 19 oktober. (rad 5, erbjudandet)",
+      "visualisera": false,
+      "falsifiera": true,
+      "konkurrent_kan_signera": true,
+      "kommentar": "Prisrad, inte en produktclaim - testet är inte byggt för erbjudanderader. Priset och datumet är verifierbart sanna."
+    },
+    {
+      "rad": "Fars dag-present: 3,69 meter själv. (skärmtext 1 H1)",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kortversion av hook H1."
+    },
+    {
+      "rad": "Rensar röret utan att krypa dit. (skärmtext 1 H2)",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kortversion av nya hook H2."
+    },
+    {
+      "rad": "9 böjliga stänger, nylonborste 100 mm. (skärmtext 2)",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kortversion av rad 2."
+    },
+    {
+      "rad": "Böjer med, stannar inte. (skärmtext 3)",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kortversion av rad 3."
+    },
+    {
+      "rad": "Når 3,69 meter upp i röret. (skärmtext 4)",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kortversion av omskrivna rad 4."
+    },
+    {
+      "rad": "Fars dag-rea. Beställ senast 19 oktober. (skärmtext 5)",
+      "visualisera": false,
+      "falsifiera": true,
+      "konkurrent_kan_signera": true,
+      "kommentar": "Erbjudandetext, samma undantag som rad 5."
+    },
+    {
+      "rad": "Fars dag-present: skruva ihop 3,69 meter själv. (bild.rubrik)",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Rubrik på stillbilden, samma sakuppgift som hook H1."
+    },
+    {
+      "rad": "9 böjliga stänger och en nylonborste på 100 millimeter rensar röret. (bild.underrad)",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Underrad på stillbilden, exakta mått ur produktsidan."
+    },
+    {
+      "rad": "Fars dag-rea (bild.marke)",
+      "visualisera": false,
+      "falsifiera": true,
+      "konkurrent_kan_signera": true,
+      "kommentar": "Erbjudandeetikett, inte en produktclaim."
+    },
+    {
+      "rad": "459 kr, ord. 599 kr (bild.prisband)",
+      "visualisera": false,
+      "falsifiera": true,
+      "konkurrent_kan_signera": true,
+      "kommentar": "Prisband, samma undantag som rad 5."
+    },
+    {
+      "rad": "Beställ senast 19 oktober (bild.sista_raden)",
+      "visualisera": false,
+      "falsifiera": true,
+      "konkurrent_kan_signera": true,
+      "kommentar": "CTA-rad, den enda riktiga brådskan (sista beställningsdag för fars dag-leverans)."
+    },
+    {
+      "rad": "Fars dag-present: han skruvar ihop 3,69 meter själv, och rensar mellan sotarens besök. 9 böjliga stänger böjer med i varje krök i stället för att stanna, och en nylonborste på 100 millimeter borstar bort sotet i stället för att skrapa. Fars dag-rea: 459 kr, ord. 599 kr. Beställ senast 19 oktober. (copy_card.primar)",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Hela copy carden, inleds med hook H1, avslutas med exakt erbjudanderad."
+    },
+    {
+      "rad": "Fars dag-present: 3,69 meter, byggd själv. (copy_card.rubrik)",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kortversion av hook H1."
+    },
+    {
+      "rad": "Fars dag-rea: 459 kr, ord. 599 kr (copy_card.beskrivning)",
+      "visualisera": false,
+      "falsifiera": true,
+      "konkurrent_kan_signera": true,
+      "kommentar": "Erbjudandebeskrivning, samma undantag som rad 5."
+    }
+  ]
+}
