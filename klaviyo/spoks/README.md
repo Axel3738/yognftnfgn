@@ -96,6 +96,76 @@ Warmup tier 1 valde Axel i appen — publiken går inte att läsa via MCP. **Gam
 `51c37c20-e00c-48c2-b144-089e62f62d14` (med citaten) är återkallad till utkast** 08:17 CEST.
 K02–K22 är utkast; K18 får inte schemaläggas utan ny topp 3-mätning (KVAR.md).
 
+### De dagliga kampanjerna K23–K37 (byggda 2026-09-28)
+
+Axels order 2026-09-28: "kampanjer varje dag med produkter skräddarsydda för våra kunder,
+rea-mejl för den pågående rean, minst tio fars dag-kampanjer". Strategin och briefen per mejl:
+`klaviyo/innehall/baverbutiken/BRIEFER-DAGLIGA.md`; schemat dag för dag:
+`klaviyo/innehall/baverbutiken/KALENDER-2026.md`. Innehållet i `kampanjer/k23…k37.json`
+(skrivet av Sonnet-subagenter mot produkttexterna, kontrollerat med
+`node klaviyo/spoks/kolla-kampanj.mjs --alla-nya`), payloaden i `payload/`, uppladdat med
+`draft_campaign`. Titeln i Spoks bär datum och publik ("K23 · ons 30/9 18:00 · till: Warmup
+tier 1 · Sex bästsäljare till reapris") eftersom MCP:n varken kan välja publik eller
+schemalägga — varje kampanj är Axels klick i appen.
+
+**Åtta köparsegment, skapade 2026-09-28** (`emailMarketingConsent in [subscribed]` +
+`purchasedProducts in [<produkt-id:n>]`, max 25 id per nod, `like` stöds inte; storlek vid
+skapandet):
+
+| Segment | id | Kontakter |
+|---|---|---|
+| Köpare båt | `e2304001-fe94-467b-990c-e67c60f2fe7a` | 1 387 |
+| Köpare husvagn & husbil | `c9f36868-aea8-4983-8d87-bfade710c9e1` | 624 |
+| Köpare trädgård & tomt | `c3210638-a777-4b2d-af4d-d2c8ae21c671` | 630 |
+| Köpare verkstad & garage | `af5f212e-5dfc-4b50-abed-e759d016482e` | 193 |
+| Köpare fiske & friluft | `bb469cf5-cc4f-4ea6-bc56-c6539a3fbe4c` | 604 |
+| Köpare hem & säkerhet | `8c99f852-ca5d-48be-a030-19b4c45d6f69` | 363 |
+| Köpare MC & fordon | `c65bf9f9-fcff-4e66-8c87-5538aa8d96fd` | 114 |
+| Köpare kalendrar & lek | `e62a3ddc-61cf-41e5-8f4e-f19d1214fa5b` | 95 |
+
+⚠️ Händelsen `orderedProducts` bär bara historik från Spoks-kopplingen (en förhandsvisning
+på två båtprodukter gav 23 kontakter mot 615 via kontaktfältet `purchasedProducts`) — bygg
+köparsegment på fältet, aldrig på händelsen. Och skriv aldrig ett produkt-id ur minnet:
+`klaviyo/spoks/baverbutiken/produkter.json` (alla 248 handles → Spoks-id sedan 2026-09-28) är
+facit; en första förhandsvisning med gissade id:n gav 23 träffar av fel skäl.
+
+**Utkast i Spoks (10 av 15, uppladdade 2026-09-28 eftermiddag):**
+
+| Mejl | Dag | Publik | Ämnesrad | Post-id |
+|---|---|---|---|---|
+| K23 | ons 30/9 | Warmup tier 1 | Sex bästsäljare till reapris | `32ced8c7-e3dc-412f-9e0e-f36c6a03f975` |
+| K24 | fre 2/10 | Köpare båt | Ett vinterskydd som täcker hela motorn | `357d53cb-8e2f-43a1-8116-e8f7e72b9df1` |
+| K25 | lör 3/10 | Köpare trädgård & tomt | Kranen fryser vid första köldknäppen | `334c5fd5-5f5b-47d0-93aa-475976211195` |
+| K26 | sön 4/10 | Warmup tier 1 | Fem veckor kvar till fars dag | `ab2e0398-224c-46c4-b6b1-40778c2a56d2` |
+| K27 | mån 5/10 | Köpare husvagn & husbil | Taket är skyddat, resten är det inte. | `bfec6cff-0d81-44a8-a2f9-acc2592b6c49` |
+| K28 | ons 7/10 | Warmup tier 1 | Kniven som legat slö sedan midsommar | `63bad9d8-0b9e-41fe-893c-7af4dfbaa05c` |
+| K29 | fre 9/10 | Warmup tier 1 | Reapris på sex presenter till fars dag | `c7ac660a-4969-4e04-a03f-e7fe6e378909` |
+| K30 | lör 10/10 | Köpare trädgård & tomt | En present för honom med kamin och vedbod | `7e49c595-6cdc-4740-b9e8-5ba58e0f5dbd` |
+| K31 | sön 11/10 | Warmup tier 1 | Aldrig mer trassliga fiskespön | `9f0eb81e-6084-4e5e-854e-fe2d340425cc` |
+| K32 | mån 12/10 | Köpare verkstad & garage | Han ser fåglarna innan han reser sig | `a97045ba-936c-4889-8bdc-c8db87a78656` |
+
+Redigeringslänk: `https://app.spoks.com/baverbutiken/post/<post-id>/edit`. **K33–K37 (14/10 till
+21/10) är skrivna och konverterade men inte uppladdade** — Axel stoppade sessionen mitt i
+uppladdningen. Payloaden ligger i `payload/k33…k37.json`; ladda upp dem med `draft_campaign`
+(samma titelform) och skriv in id:na här. Rea-mejlen (K23, K29) speglar butikens egen
+"Rea"-prissättning (ordinarie pris överstruket, reapris), inga procent, belopp eller slutdatum.
+
+**Takten:** Axels order är dagliga utskick. Vecka 40–41 får tier 1 (2 500) fyra till fem
+breda mejl i veckan, med de skräddarsydda däremellan; larmet i `docs/os/EPOST-STRATEGI.md`
+(spamklagomål över 0,3 % eller avregistreringar över 1 % på ett utskick) är det som stoppar,
+inte en veckokvot. Ingen får två mejl samma dag: ett skräddarsytt mejl ligger aldrig samma
+dag som ett brett.
+
+**Konverteraren rättad samma dag:** dubblettkortet (hero med produktbild + samma produkt
+igen längre ner) tas bort i `konverteraMejl` — ett senare enprodukts-block med samma produkt
+som ett tidigare stryks och dess knapptext flyttas till första kortet. De gamla utkasten
+K02–K22 i Spoks bär fortfarande dubbletten tills de laddas upp igen (KVAR.md).
+
+**Recensionerna:** Trustpilot-profilen är claimad sedan 2026-09-28 ("Registrerad profil",
+5 omdömen, TrustScore 3,1, läst samma dag), och **Judge.me:s recensionsförfrågningar är AV**
+(Axels ord 2026-09-28) — F14 Recension Trustpilot v2 `9bef2ef0-…` är enda vägen till nya
+recensioner.
+
 **Recensionskampanjen (Axels fråga 2026-09-27: "en kampanj som bara är recensionsformuläret
 … där de får recensera butiken"):** samma mejl som F14 v2 (alla fem stjärnor till
 `se.trustpilot.com/evaluate/baverbutiken.se`, ingen Judge.me-länk), omskrivet om butiken i

@@ -1,0 +1,124 @@
+{
+  "id": "k31-fars-dag-fiske",
+  "namn": "MAIL_20261011_Rodholder_GT_7_tier1_product_fyra-spon-pa-vaggen_v1",
+  "memo": "Spöhållaren är bästsäljare och raden \"Aldrig mer trassliga fiskespön\" bar 85 köp (products/tacklebay/fiskespohallare-4-pack/dna.md:111-122, får användas ordagrant). Hypotes: den bevisade raden som ämnesrad i ett presentmejl.",
+  "taggar": {
+    "typ": "I",
+    "kalla": "winning-line",
+    "kalla_ref": "products/tacklebay/fiskespohallare-4-pack/dna.md:111-122",
+    "lardom": null,
+    "avatar": "den som ger present till pappan som fiskar",
+    "begar": "att spöna hänger på plats i stället för att trassla i garaget",
+    "awareness": "product",
+    "urgency": "konsekvens (19 oktober)",
+    "confidence": "high",
+    "prefix": "Rodholder",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    {
+      "text": "Aldrig mer trassliga fiskespön",
+      "begar": "sluta trassla med spön i garaget eller båten"
+    },
+    {
+      "text": "En present för honom som fiskar",
+      "begar": "hitta en present till pappan som fiskar, utan att gissa"
+    },
+    {
+      "text": "Hinn beställa innan 19 oktober",
+      "begar": "hinna beställa i tid till fars dag"
+    }
+  ],
+  "forhandstext": "Fyra hållare, varje spö sin egen plats.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Aldrig mer trassliga fiskespön",
+      "text": "Hej {{fornamn}},\n\nFyra kraftiga hållare ger varje spö sin egen plats, i båten eller i garaget. Inget mer att reda ut innan ni kommer ut på vattnet.",
+      "bild": "produkt:fiskespohallare-4-pack-kraftig-forvaring",
+      "knapp": {
+        "text": "Se presenten",
+        "lank": "produkt:fiskespohallare-4-pack-kraftig-forvaring"
+      }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Lösa spön trasslar lätt ihop sig i båten och garaget, och linor och beten fastnar i varandra. Hållarna gör slut på det, för strand, sjö eller båt."
+    },
+    {
+      "typ": "produkt",
+      "handle": "fiskespohallare-4-pack-kraftig-forvaring",
+      "text": "Fyra hållare i ett set, för både proffs och nybörjare.",
+      "knapp": "Se fiskespöhållaren"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Mer för fiskaren",
+      "handles": [
+        "mini-fiskespo-set-teleskopiskt-dubbelsidigt",
+        "fiskeset-med-forvaringslada-komplett-fiskeredskapsset",
+        "linupprullare-aluminium-snabbt-linbyte-pa-rullen"
+      ]
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Beställ senast 19 oktober om paketet ska vara framme till fars dag den 8 november."
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    {
+      "rad": "Aldrig mer trassliga fiskespön",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "En present för honom som fiskar",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Hinn beställa innan 19 oktober",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Fyra hållare, varje spö sin egen plats.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Se presenten",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Se fiskespöhållaren",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Mer för fiskaren",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    }
+  ],
+  "planerad": "2026-10-11T18:00:00+02:00",
+  "segment": [
+    "Warmup tier 1"
+  ],
+  "exkludera": [],
+  "status_plan": "klar",
+  "kraver_axel": null
+}

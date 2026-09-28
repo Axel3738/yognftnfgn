@@ -1,0 +1,119 @@
+{
+  "id": "k27-husvagn-resten",
+  "namn": "MAIL_20261005_Husbil_S_1_kopare-husvagn_solution_resten-av-bilen_v1",
+  "memo": "De som köpt taköverdraget eller termoskyddet har redan bestämt sig för att skydda fordonet över vintern. Hypotes: tillbehören till resten (AC-aggregatet på taket, cykelhållaren, rutorna) säljer till just dem. K03 dagen efter är termoskyddet brett, så termoskyddet nämns inte här.",
+  "taggar": {
+    "typ": "S",
+    "kalla": "egen-data",
+    "kalla_ref": "products/carashell/takskyddet/dna.md (skyddsvinkeln)",
+    "lardom": null,
+    "avatar": "husbils- eller husvagnsägaren som redan skyddat taket eller rutan",
+    "begar": "att hela fordonet står skyddat, inte bara taket",
+    "awareness": "solution",
+    "urgency": "sasong",
+    "confidence": "medium",
+    "prefix": "Husbil",
+    "kod": "S"
+  },
+  "amnesrader": [
+    {
+      "text": "Taket är skyddat, resten är det inte.",
+      "begar": "inse att mer än taket faktiskt behöver skydd"
+    },
+    {
+      "text": "Regnet och kådan hittar tak-AC:n",
+      "begar": "skydda specifikt tak-AC:n från regn och kåda"
+    },
+    {
+      "text": "Cyklarna bak tar all smuts från resan",
+      "begar": "skydda cyklarna på hållaren från smutsen på resan"
+    }
+  ],
+  "forhandstext": "Tak-AC:n, cyklarna och rutorna står fortfarande i vädret.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Taket är skyddat, resten är det inte.",
+      "text": "Hej {{fornamn}},\n\nDu har redan börjat skydda husvagnen eller husbilen inför vintern. Tak-AC:n, cyklarna och rutorna står kvar.",
+      "bild": "produkt:husbilens-tak-ac-huv-80-80-38-cm-skydd-mellan-resorna",
+      "knapp": {
+        "text": "Se skyddet",
+        "lank": "produkt:husbilens-tak-ac-huv-80-80-38-cm-skydd-mellan-resorna"
+      }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Tak-AC:n står högst upp och tar regn och kåda rakt av.\n\nCyklarna på hållaren bak tar smutsen från hela resan, och rutorna släpper igenom kylan på natten."
+    },
+    {
+      "typ": "produkt",
+      "handle": "husbilens-tak-ac-huv-80-80-38-cm-skydd-mellan-resorna",
+      "text": "Läggs över hela tak-AC:n i längd, bredd och höjd, och snörs åt i nederkanten så den sitter kvar mellan resorna.",
+      "knapp": "Se AC-huven"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Mer för resten av fordonet",
+      "handles": [
+        "husbilens-cykelhallarskydd-2-cyklar-smutsen-stannar-utanpa",
+        "husbilskalendern-24-luckor-retrobussar-och-campingprylar",
+        "fonstertermomatta-2-pack-70-80-cm-isolering-mot-kyla-och-sol"
+      ]
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    {
+      "rad": "Taket är skyddat, resten är det inte.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Regnet och kådan hittar tak-AC:n",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Cyklarna bak tar all smuts från resan",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Tak-AC:n, cyklarna och rutorna står fortfarande i vädret.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Se skyddet",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Se AC-huven",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Mer för resten av fordonet",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    }
+  ],
+  "planerad": "2026-10-05T18:00:00+02:00",
+  "segment": [
+    "Köpare husvagn & husbil"
+  ],
+  "exkludera": [],
+  "status_plan": "klar",
+  "kraver_axel": null
+}

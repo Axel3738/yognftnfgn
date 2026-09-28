@@ -174,6 +174,17 @@ butik, betyg, kund, text, datum, länk) — aldrig ur en gissad mall.
 `kundtjanst/arenden.mjs arSystem` räknar `trustpilot.com` som systemavsändare
 sedan 2026-09-27, så autosvaret och veckorapporten hoppar notiserna.
 
+✅ **Profilen är claimad sedan 2026-09-28** (Axels ord "jag har verifierat TP-kontot";
+läst samma dag: "Registrerad profil", 5 omdömen, TrustScore 3,1 — två 5-stjärniga ur
+Spoks-kampanjen, tre 1-stjärniga sedan tidigare). Aktiveringsmejlet kom från
+`noreply.activation@trustpilot.com` med ämnet "Activate your Trustpilot account" och
+lästes ur brevlådan med `loopia-mail`; Loopia rördes aldrig. ⚠️ **Judge.me:s
+recensionsförfrågningar är AV sedan 2026-09-28** (Axels beslut samma dag) — nya
+recensioner kommer alltså via F14 Recension Trustpilot v2 i Spoks, inte via Judge.me, och
+VA-bonusen "recension med ditt namn" räknas därför på Trustpilot (notismejlen ovan eller
+inrapporterad + godkänd) tills en API-nyckel finns. Judge.me-recensionerna som redan
+finns läses fortfarande.
+
 ## Personer utan konto
 
 Mätt 2026-09-21: **Josh Naelga (13) och Annabelle Gonzales (12)** står som

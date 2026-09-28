@@ -1,21 +1,26 @@
 {
-  "id": "k08-morkret-kommer",
-  "emailTitle": "210 lysdioder, tre huvuden som vrids var för sig",
-  "emailDescription": "1200 mAh-batteriet laddas själv i solljus.",
+  "id": "k32-fars-dag-prylar",
+  "emailTitle": "Han ser fåglarna innan han reser sig",
+  "emailDescription": "Kameran filmar sittrampen, appen visar bilden i mobilen.",
   "amnesrader": [
-    "210 lysdioder, tre huvuden som vrids var för sig",
-    "Söndag blir det mörkt en timme tidigare",
-    "Ljuset som tänds innan du hittar nyckelhålet"
+    "Han ser fåglarna innan han reser sig",
+    "Beställ senast 19 oktober till fars dag",
+    "Tre andra presenter för garaget"
   ],
   "blocks": [
     {
       "type": "h1",
-      "text": "Tre huvuden vrids var för sig, mot nyckelhålet",
+      "text": "Han ser fåglarna innan han reser sig",
       "alignment": "center"
     },
     {
       "type": "regular",
-      "text": "Klockan ställs om på söndag, och det blir mörkt en timme tidigare. En fast monterad lampa hade krävt en elektriker, en sladdlampa fryser fast i snön till våren.",
+      "text": "Hej {{ contact.first_name | default: 'där' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Kameran i fågelmatarens hus filmar sittrampen. En app visar bilden i mobilen, så pappan ser vem som landat innan han hunnit resa sig från soffan.",
       "alignment": "center"
     },
     {
@@ -23,8 +28,8 @@
       "selectionMode": "manual",
       "products": [
         {
-          "id": "66ab4154-18a8-4fe9-aa81-2cd3846389da",
-          "button": "Se lampan"
+          "id": "8e7d71b3-e2d8-4ce1-b8eb-7edbf327df24",
+          "button": "Se fågelmataren"
         }
       ],
       "dynamicProductsCount": null,
@@ -43,28 +48,23 @@
     },
     {
       "type": "link",
-      "text": "Se lampan",
-      "url": "https://baverbutiken.se/products/solcellslampa-med-rorelsesensor-tre-huvuden-210-led",
+      "text": "Se presenten",
+      "url": "https://baverbutiken.se/products/fagelmatare-med-kamera-och-solcellspanel-se-faglarna-i-appen",
       "style": "button"
     },
     {
       "type": "regular",
-      "text": "Solcellslampan monteras på väggen utan en enda kabel. Solcellspanelen laddar det inbyggda 1200 mAh-batteriet under dagen, och rörelsesensorn tänder alla tre huvudena, 210 lysdioder, när du kommer gående.",
+      "text": "Instruktionerna för att koppla ihop kameran och appen ligger i förpackningen. Solcellspanelen sitter på taket av fågelmatarens hus och laddar kameran i dagsljus, så pappan slipper dra en sladd till väggen.",
       "alignment": "left"
     },
     {
       "type": "regular",
-      "text": "Varje huvud vrids för sig, så du riktar ljuset mot uppfarten, trappan eller nyckelhålet, inte bara rakt fram.",
-      "alignment": "left"
-    },
-    {
-      "type": "regular",
-      "text": "Ingen elektriker, ingen sladd. Bara solljus och en rörelsesensor.",
+      "text": "Kameran har 5 MP och filmar sittrampen, med en vattenkopp bredvid som ger fåglarna en anledning att stanna.",
       "alignment": "left"
     },
     {
       "type": "h2",
-      "text": "Mer ljus",
+      "text": "För garaget",
       "alignment": "center"
     },
     {
@@ -72,15 +72,15 @@
       "selectionMode": "manual",
       "products": [
         {
-          "id": "a806a583-cf56-43cf-b3f3-64f8d1205606",
+          "id": "0118cd74-d1c8-41f1-800f-5037f05c1901",
           "button": "Se produkten"
         },
         {
-          "id": "c14d6b41-f0f6-4da1-9171-5f47bac617c0",
+          "id": "91de8779-7fc1-4b0b-9387-70e24e961d6e",
           "button": "Se produkten"
         },
         {
-          "id": "6c54cf0f-4f5d-4237-b8f0-31262b0fad90",
+          "id": "f147f088-4a34-411a-bb9c-228b5b20b418",
           "button": "Se produkten"
         }
       ],
@@ -97,6 +97,11 @@
       "buttonText": null,
       "alignment": "center",
       "productsPerRow": 3
+    },
+    {
+      "type": "regular",
+      "text": "Beställ senast 19 oktober om paketet ska vara framme till fars dag den 8 november.",
+      "alignment": "left"
     },
     {
       "type": "columns",

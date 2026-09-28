@@ -1,0 +1,138 @@
+{
+  "id": "k26-fars-dag-listan",
+  "namn": "MAIL_20261004_Farsdag_GT_4_tier1_solution_fem-veckor-tre-pappor_v1",
+  "memo": "Första fars dag-mejlet, fem veckor före. Presentvinkeln är bevisad (Takoverdrag_GT_2_H1, 8 202 kr vinstbidrag). Hypotes: en lista sorterad på vad pappan sysslar med (båt, verkstad, kamin) ger fler klick än ett enproduktsmejl, mätt mot K05.",
+  "taggar": {
+    "typ": "I",
+    "kalla": "egen-data",
+    "kalla_ref": "products/carashell/takskyddet/dna.md:56-66",
+    "lardom": null,
+    "avatar": "den som redan nu vill ha fars dag ur vägen, och pappan som skickar vidare önskelistan",
+    "begar": "en present som används, beställd i tid",
+    "awareness": "solution",
+    "urgency": "konsekvens",
+    "confidence": "medium",
+    "prefix": "Farsdag",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    {
+      "text": "Fem veckor kvar till fars dag",
+      "begar": "veta att det är gott om tid att välja i lugn takt"
+    },
+    {
+      "text": "Tre pappor, sex presenter",
+      "begar": "hitta rätt present snabbt utifrån vad han sysslar med"
+    },
+    {
+      "text": "Funkar också som hans egen önskelista",
+      "begar": "slippa gissa, skicka vidare mejlet och låta pappan peka ut sin egen present"
+    }
+  ],
+  "forhandstext": "Sex presenter sorterade efter vad han sysslar med.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Fem veckor kvar till fars dag",
+      "text": "Hej {{fornamn}},\n\nSex presenter till fars dag, sorterade efter vad han faktiskt sysslar med: båten, verkstaden eller kaminen.",
+      "knapp": {
+        "text": "Se hela listan",
+        "lank": "kollektion:alla-produkter"
+      }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Du kanske läser det här som present till pappan i huset. Eller så är det han som läser det, och skickar mejlet vidare som sin egen önskelista.\n\nBåda funkar. Listan nedan är sorterad efter vad han sysslar med."
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Om han har båt",
+      "handles": [
+        "motorlas-i-rostfritt-stal-laser-utombordarens-fastskruvar",
+        "batmotorskydd-420d-heltackande-for-utombordare"
+      ]
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Om han har verkstad",
+      "handles": [
+        "balteslipmaskin-mini-3-i-1-knivslip-polerare",
+        "taljset-30-delar-6-knivar-och-6-jarn"
+      ]
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Om han har kamin",
+      "handles": [
+        "sotarset-med-bojliga-stanger-rensar-rokkanal-och-kaminror",
+        "tandvedsklyv-i-gjutjarn-klyv-utan-yxa-i-handen"
+      ]
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Beställ senast 19 oktober om paketet ska vara framme till fars dag den 8 november."
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    {
+      "rad": "Fem veckor kvar till fars dag",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Tre pappor, sex presenter",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Funkar också som hans egen önskelista",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Sex presenter sorterade efter vad han sysslar med.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Se hela listan",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Om han har båt",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Om han har verkstad",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Om han har kamin",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    }
+  ],
+  "planerad": "2026-10-04T18:00:00+02:00",
+  "segment": [
+    "Warmup tier 1"
+  ],
+  "exkludera": [],
+  "status_plan": "klar",
+  "kraver_axel": null
+}

@@ -1,21 +1,26 @@
 {
-  "id": "k08-morkret-kommer",
-  "emailTitle": "210 lysdioder, tre huvuden som vrids var för sig",
-  "emailDescription": "1200 mAh-batteriet laddas själv i solljus.",
+  "id": "k31-fars-dag-fiske",
+  "emailTitle": "Aldrig mer trassliga fiskespön",
+  "emailDescription": "Fyra hållare, varje spö sin egen plats.",
   "amnesrader": [
-    "210 lysdioder, tre huvuden som vrids var för sig",
-    "Söndag blir det mörkt en timme tidigare",
-    "Ljuset som tänds innan du hittar nyckelhålet"
+    "Aldrig mer trassliga fiskespön",
+    "En present för honom som fiskar",
+    "Hinn beställa innan 19 oktober"
   ],
   "blocks": [
     {
       "type": "h1",
-      "text": "Tre huvuden vrids var för sig, mot nyckelhålet",
+      "text": "Aldrig mer trassliga fiskespön",
       "alignment": "center"
     },
     {
       "type": "regular",
-      "text": "Klockan ställs om på söndag, och det blir mörkt en timme tidigare. En fast monterad lampa hade krävt en elektriker, en sladdlampa fryser fast i snön till våren.",
+      "text": "Hej {{ contact.first_name | default: 'där' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Fyra kraftiga hållare ger varje spö sin egen plats, i båten eller i garaget. Inget mer att reda ut innan ni kommer ut på vattnet.",
       "alignment": "center"
     },
     {
@@ -23,8 +28,8 @@
       "selectionMode": "manual",
       "products": [
         {
-          "id": "66ab4154-18a8-4fe9-aa81-2cd3846389da",
-          "button": "Se lampan"
+          "id": "d0832750-b091-43b4-9d92-e2889d5b5a0a",
+          "button": "Se fiskespöhållaren"
         }
       ],
       "dynamicProductsCount": null,
@@ -43,28 +48,23 @@
     },
     {
       "type": "link",
-      "text": "Se lampan",
-      "url": "https://baverbutiken.se/products/solcellslampa-med-rorelsesensor-tre-huvuden-210-led",
+      "text": "Se presenten",
+      "url": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
       "style": "button"
     },
     {
       "type": "regular",
-      "text": "Solcellslampan monteras på väggen utan en enda kabel. Solcellspanelen laddar det inbyggda 1200 mAh-batteriet under dagen, och rörelsesensorn tänder alla tre huvudena, 210 lysdioder, när du kommer gående.",
+      "text": "Lösa spön trasslar lätt ihop sig i båten och garaget, och linor och beten fastnar i varandra. Hållarna gör slut på det, för strand, sjö eller båt.",
       "alignment": "left"
     },
     {
       "type": "regular",
-      "text": "Varje huvud vrids för sig, så du riktar ljuset mot uppfarten, trappan eller nyckelhålet, inte bara rakt fram.",
-      "alignment": "left"
-    },
-    {
-      "type": "regular",
-      "text": "Ingen elektriker, ingen sladd. Bara solljus och en rörelsesensor.",
+      "text": "Fyra hållare i ett set, för både proffs och nybörjare.",
       "alignment": "left"
     },
     {
       "type": "h2",
-      "text": "Mer ljus",
+      "text": "Mer för fiskaren",
       "alignment": "center"
     },
     {
@@ -72,15 +72,15 @@
       "selectionMode": "manual",
       "products": [
         {
-          "id": "a806a583-cf56-43cf-b3f3-64f8d1205606",
+          "id": "4be2e797-74d3-43c3-8232-169ab5d856a3",
           "button": "Se produkten"
         },
         {
-          "id": "c14d6b41-f0f6-4da1-9171-5f47bac617c0",
+          "id": "6860aaa7-3d53-476c-8886-3c689cd7766d",
           "button": "Se produkten"
         },
         {
-          "id": "6c54cf0f-4f5d-4237-b8f0-31262b0fad90",
+          "id": "80331aaa-6327-4283-9ad3-1f9e2e7570fa",
           "button": "Se produkten"
         }
       ],
@@ -97,6 +97,11 @@
       "buttonText": null,
       "alignment": "center",
       "productsPerRow": 3
+    },
+    {
+      "type": "regular",
+      "text": "Beställ senast 19 oktober om paketet ska vara framme till fars dag den 8 november.",
+      "alignment": "left"
     },
     {
       "type": "columns",

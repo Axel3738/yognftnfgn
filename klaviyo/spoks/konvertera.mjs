@@ -272,10 +272,24 @@ export function skapaKonverterare({ brand, produktIds = {}, recCache = {}, erbju
     const s = sprakFor(m);
     const l = L(s);
     const varn = [];
-    const blocks = (m.block ?? []).flatMap((b) => konverteraBlock(b, varn, s)).map((b) => {
+    const alla = (m.block ?? []).flatMap((b) => konverteraBlock(b, varn, s)).map((b) => {
       if (b.type === 'products' && b.selectionMode === 'dynamic') delete b.products;
       return b;
     });
+    // Dubblettkort (KVAR.md 2026-09-26, rättat 2026-09-28): hero-bilden är ett produktkort,
+    // och ett senare produkt-block med SAMMA enda produkt ritade kortet en gång till. Det
+    // senare kortet tas bort och dess knapptext (t.ex. "Se båtmotorskyddet") flyttas till
+    // det första, så mejlet visar produkten en gång med rätt knapp.
+    const forsta = new Map();
+    const blocks = [];
+    for (const b of alla) {
+      if (b.type === 'products' && b.selectionMode === 'manual' && b.products?.length === 1) {
+        const id = b.products[0].id;
+        if (forsta.has(id)) { forsta.get(id).products[0].button = b.products[0].button; continue; }
+        forsta.set(id, b);
+      }
+      blocks.push(b);
+    }
     return {
       id: m.id,
       ...(brand.flersprakig ? { sprak: s } : {}),

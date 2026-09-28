@@ -1,16 +1,16 @@
 {
-  "id": "k05-fars-dag",
-  "emailTitle": "En present för taket han aldrig kollar",
-  "emailDescription": "Taket är den dyraste ytan på hela vagnen.",
+  "id": "k26-fars-dag-listan",
+  "emailTitle": "Fem veckor kvar till fars dag",
+  "emailDescription": "Sex presenter sorterade efter vad han sysslar med.",
   "amnesrader": [
-    "En present för taket han aldrig kollar",
-    "Beställ senast 19 oktober till fars dag",
-    "Tre andra presenter om han saknar husvagn"
+    "Fem veckor kvar till fars dag",
+    "Tre pappor, sex presenter",
+    "Funkar också som hans egen önskelista"
   ],
   "blocks": [
     {
       "type": "h1",
-      "text": "En present för taket han aldrig kollar",
+      "text": "Fem veckor kvar till fars dag",
       "alignment": "center"
     },
     {
@@ -20,7 +20,28 @@
     },
     {
       "type": "regular",
-      "text": "Taket är den dyraste ytan på hela vagnen, och den han aldrig tänker på själv.",
+      "text": "Sex presenter till fars dag, sorterade efter vad han faktiskt sysslar med: båten, verkstaden eller kaminen.",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Se hela listan",
+      "url": "https://baverbutiken.se/collections/alla-produkter",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "Du kanske läser det här som present till pappan i huset. Eller så är det han som läser det, och skickar mejlet vidare som sin egen önskelista.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Båda funkar. Listan nedan är sorterad efter vad han sysslar med.",
+      "alignment": "left"
+    },
+    {
+      "type": "h2",
+      "text": "Om han har båt",
       "alignment": "center"
     },
     {
@@ -28,8 +49,12 @@
       "selectionMode": "manual",
       "products": [
         {
-          "id": "f3c26650-bf9b-49b4-a411-b11fb25392c8",
-          "button": "Se taköverdraget"
+          "id": "039975de-c295-4409-a7aa-78df00cf06c0",
+          "button": "Se produkten"
+        },
+        {
+          "id": "6f01ed7d-90e1-45a9-bb43-f0fbbc8c2285",
+          "button": "Se produkten"
         }
       ],
       "dynamicProductsCount": null,
@@ -44,22 +69,11 @@
       },
       "buttonText": null,
       "alignment": "center",
-      "productsPerRow": 1
-    },
-    {
-      "type": "link",
-      "text": "Se presenten",
-      "url": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
-      "style": "button"
-    },
-    {
-      "type": "regular",
-      "text": "Skyddar taket med remmar på alla fyra sidor, i stället för ett helöverdrag han måste be om hjälp med.",
-      "alignment": "left"
+      "productsPerRow": 2
     },
     {
       "type": "h2",
-      "text": "Om han inte har husvagn",
+      "text": "Om han har verkstad",
       "alignment": "center"
     },
     {
@@ -71,11 +85,7 @@
           "button": "Se produkten"
         },
         {
-          "id": "d0832750-b091-43b4-9d92-e2889d5b5a0a",
-          "button": "Se produkten"
-        },
-        {
-          "id": "c4fdb786-0a7d-4499-b1db-f81ad5272edd",
+          "id": "9bbccd1d-d249-44c3-92ea-015ef372432c",
           "button": "Se produkten"
         }
       ],
@@ -91,7 +101,39 @@
       },
       "buttonText": null,
       "alignment": "center",
-      "productsPerRow": 3
+      "productsPerRow": 2
+    },
+    {
+      "type": "h2",
+      "text": "Om han har kamin",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "b1d4717b-d737-46ad-a9c2-be85081a15ac",
+          "button": "Se produkten"
+        },
+        {
+          "id": "3916cdca-0432-4350-8636-5d6c5392b5c3",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 2
     },
     {
       "type": "regular",

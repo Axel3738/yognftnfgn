@@ -1,0 +1,124 @@
+{
+  "id": "k28-fars-dag-verkstad",
+  "namn": "MAIL_20261007_Balteslip_GT_5_tier1_product_kniven-som-legat-slo_v1",
+  "memo": "Bälteslipen är en av butikens storsäljare och en klassisk present till den som slipar själv. Hypotes: den konkreta bilden \"kniven som legat slö sedan midsommar\" slår \"presenttips\" som rubrik. Kornstorlek och kitets innehåll är okänt (kommentarer/leads.md 2026-09-27) och får inte påstås.",
+  "taggar": {
+    "typ": "I",
+    "kalla": "voc",
+    "kalla_ref": "kommentarer/leads.md (Beltgrinder, frågorna om förbrukning)",
+    "lardom": null,
+    "avatar": "den som ska ge en present till pappan med verkstad",
+    "begar": "en present han använder redan första helgen",
+    "awareness": "product",
+    "urgency": "konsekvens",
+    "confidence": "medium",
+    "prefix": "Balteslip",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    {
+      "text": "Kniven som legat slö sedan midsommar",
+      "begar": "ge en present som äntligen löser den där slöa kniven"
+    },
+    {
+      "text": "En present han provar samma helg",
+      "begar": "en present som används direkt, inte läggs i en låda"
+    },
+    {
+      "text": "15 graders vinkel, jämn egg varje gång",
+      "begar": "veta att verktyget ger samma resultat varje gång, utan gissning"
+    }
+  ],
+  "forhandstext": "En present till pappan med verkstad, redo att användas på lördag.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Kniven som legat slö sedan midsommar",
+      "text": "Hej {{fornamn}},\n\nEn present till pappan med verkstad. Inte en till pryl som hamnar i en låda.",
+      "bild": "produkt:balteslipmaskin-mini-3-i-1-knivslip-polerare",
+      "knapp": {
+        "text": "Se presenten",
+        "lank": "produkt:balteslipmaskin-mini-3-i-1-knivslip-polerare"
+      }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "En mini-bälteslipmaskin med 7 hastigheter och 15 graders slipvinkel. Slipar knivar, polerar metall och formar trä, tre maskiner i en.\n\nFår plats på minsta arbetsbänk."
+    },
+    {
+      "typ": "produkt",
+      "handle": "balteslipmaskin-mini-3-i-1-knivslip-polerare",
+      "text": "Rätt fart för materialet, för knivar, trä, metall och smycken.",
+      "knapp": "Se bälteslipen"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Tre till för verkstaden",
+      "handles": [
+        "rullknivslipen-i-tra-20-vinkeln-ar-redan-bestamd",
+        "taljset-30-delar-6-knivar-och-6-jarn",
+        "makita-hallare-5-pack-verktygen-samlade-pa-vaggen"
+      ]
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Beställ senast 19 oktober om paketet ska vara framme till fars dag den 8 november."
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    {
+      "rad": "Kniven som legat slö sedan midsommar",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "En present han provar samma helg",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "15 graders vinkel, jämn egg varje gång",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "En present till pappan med verkstad, redo att användas på lördag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Se presenten",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Se bälteslipen",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Tre till för verkstaden",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    }
+  ],
+  "planerad": "2026-10-07T18:00:00+02:00",
+  "segment": [
+    "Warmup tier 1"
+  ],
+  "exkludera": [],
+  "status_plan": "klar",
+  "kraver_axel": null
+}
