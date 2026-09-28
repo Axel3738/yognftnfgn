@@ -1,0 +1,38 @@
+{
+ "ibctank": {
+  "produkt": "IBC-tanktrekk",
+  "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
+  "pris_nok": 439,
+  "jamforpris_nok": 586,
+  "videos": {
+   "PD_12_H1": "meta:4096046270695497",
+   "PD_12_H2": "meta:1128238286583746",
+   "PD_12_H3": "meta:1863964741255471",
+   "CS_9_H1": "meta:1785606832453033"
+  }
+ },
+ "feiesett": {
+  "produkt": "Sotarset",
+  "link": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror",
+  "pris_nok": 389,
+  "jamforpris_nok": 509,
+  "videos": {
+   "PD_9_H1": "meta:1639734997875130",
+   "PD_8_H2": "meta:1103010818984138",
+   "PD_8_H1": "meta:1607999167671209",
+   "PD_7_H1": "meta:2263039721316305"
+  }
+ },
+ "takovertrekk": {
+  "produkt": "Takovertrekk",
+  "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
+  "pris_nok": 1189,
+  "jamforpris_nok": 1549,
+  "videos": {
+   "SP_4_H4": "meta:4572957359625651",
+   "SP_4_H3": "meta:1098418466410287",
+   "SP_4_H2": "meta:4708239646167646",
+   "CS_12_H1": "meta:1604517611454232"
+  }
+ }
+}
