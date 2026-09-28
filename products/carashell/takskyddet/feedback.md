@@ -72,3 +72,33 @@ Inga påhittade siffror — allt kommer ur briefarna, butiken (läst live) och d
 | `Takoverdrag_SP_4_H4` | ⚠️ | — | Fine. Row 1 correctly says NO TEXT and the latitude forbids filling the silence. |
 | `Takoverdrag_SP_4_H3` | ⚠️ | — | The opener is 15 words in two clauses for a 5-second row — too long to read; open on the standing water and start the line at second 2. · Row 1 requires new footage (hatch with standing water); flag it at the top of the brief, not only in the Source column. |
 | `Takoverdrag_SP_4_H2` | ⚠️ | — | Clean one-variable test (opening line only) with hook rate as the read-out; the strap line is the page's. Add the break-even CPA next to `CPA 463 kr`. |
+
+## Rond 2026-09-25 — batch okänd (7 briefer) · granskad 2026-09-28 · hub BÄVER Taköverdraget för Husvagn
+
+**Bra**
+- All three rules from the 2026-09-24 review held: CPA 463 kr stands against break-even 715 kr with its derivation named (AOV 1 165 kr, break-even ROAS 1,63) in every Why; every video opener is one clause readable in three seconds; all four videos carry a `NEW FOOTAGE` block at the top with a fallback and never wait in Draft for it.
+- The round works the measured objection matrix (44 comments on SP_4_H1: `fukt` 34 %, `blåser` 7 %, `täcker` 2 %) with a demo and a static per objection, each declared as a format pair against the live told version (OB_4_H1, OB_1_H1, OB_3_H1) — the concession never calls the buyer wrong.
+- Strap facts (`alla fyra sidor`, 2,5 m, `krok i nederkant`, two 10,5 m ratchet straps included), `silverbelagd 210D-oxfordväv`, `Ett helöverdrag … skaver mot lacken`, `Taket är det du aldrig ser` and price 1 129 / 1 469 kr with nine sizes are all the page's own (read live from the product page 2026-09-28).
+- `vattentät` is avoided as a bare word even though the page uses it, and `dragsko` / `förvaringspåse` stay banned — the 2026-09-19 rules are now habit.
+- Sources per row on delivered files (SP_4_H1.mp4, OUR AD OB_3_H1 timestamps, CDN) and the stock-clip rows say `never this product`.
+
+**Missat**
+- Takoverdrag_OB_6_H1 says the cover `stannar vid takkanten, hela vägen runt vagnen` and the row-3 picture is `the cover's edge holding at the roofline … nothing hanging below it` — the page says the edge hangs 30–40 cm down over the sides, and that is why the roof/wall seam is covered. The line contradicts the product; the editor would frame away the very edge the page sells.
+- Two break-evens for one product: this hub writes 715 kr (AOV 1 165 / 1,63 from the campaign name), CaraShell's dna.md carries 693 kr (price 1 129 − cost 436). Both derivations are honest and both are written down — but the mirror hub and the source hub must judge on the same line.
+- OB_9_H1 and OB_7_H1 open on a stock clip `sourced by the editor from the stock library` — no library, licence or fallback still is named beyond `a stock still`; a source the editor has to invent is not a source.
+- OB_12_1, OB_10_1 and OB_8_1 were already live before this review (Approved / CaraShell EN ready) — nothing here pauses them; the notes are for the next version.
+
+**Tre regler för nästa rond**
+1. The edge hangs 30–40 cm down over the sides — the page's own line and the reason the roof/wall seam is covered: never `stannar vid takkanten`, never `nothing hanging below it`; write `bara taket och kanten` or show the edge.
+2. One break-even for the product, used in both hubs: 715 kr (AOV-based) or 693 kr (price-based, CaraShell dna.md) — pick one, write its derivation once in this Feedback row, and judge every CPA against it.
+3. A stock clip is a source only when the brief says where it comes from (library, licence) and names the fallback still — `sourced by the editor` is not a source.
+
+| Brief | Dom | Fel | Anmärkningar |
+|---|---|---|---|
+| `Takoverdrag_OB_12_1` | ⚠️ | — | Already live (Approved). For the next version: the break-even is 715 here and 693 in CaraShell's dna.md — settle it. |
+| `Takoverdrag_OB_11_H1` | ⚠️ | — | Clean. The pour is sourced from OUR AD OB_3_H1 first, re-shoot as fallback — exactly right. |
+| `Takoverdrag_OB_10_1` | ⚠️ | — | Already live (CaraShell EN ready). Label rewritten from a competitor-signable line before it went out — the rule from 2026-09-24 applied. |
+| `Takoverdrag_OB_9_H1` | ⚠️ | — | Row 1 stock clip: name the library and the fallback still; `sourced by the editor` is not a source. |
+| `Takoverdrag_OB_8_1` | ⚠️ | — | Already live (CaraShell EN ready). Good catch that tak-spanne.jpg is a supplier pack shot — the frame from SP_4_H1 is the right fallback. |
+| `Takoverdrag_OB_7_H1` | ⚠️ | — | Rows 1–2 stock clip: name the library and the fallback still. |
+| `Takoverdrag_OB_6_H1` | ❌ | Row 3 line `Överdraget stannar vid takkanten, hela vägen runt vagnen.` and the picture note `nothing hanging below it` contradict the product page: the edge hangs 30–40 cm down over the sides so the roof/wall seam is covered. Do not frame the edge away — show it hanging over the side, and use the alt line for row 3 (`Sidoväggen, fönstret och dörren syns hela varvet runt.`) or `Bara taket och kanten.` | The lap is NEW FOOTAGE with a fallback — right; `duken` for the cover is loose next to `överdraget` everywhere else. |

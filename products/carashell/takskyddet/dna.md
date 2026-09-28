@@ -1096,3 +1096,96 @@ Mät köp/dygn i tre dygn till innan något av det skrivs som orsak.
 ⚠️ **Och den här filen är själv exemplet på repots regel:** i går skrevs
 "bevisad mekanism" om något som var mätt i EN riktning på EN kampanj. Ett dygn
 senare var hälften fel. Skriv aldrig en mätning som en evig lag.
+
+---
+
+## Mönster 15 — hela kampanjen drev över break-even, inte en annons (2026-09-27)
+
+Mönster 14 sa "leveranstak". Fyra dygns data säger något annat, och mätningen som
+avgör det är denna:
+
+| 7 dygn | Spend | Köp | CPA | mot break-even 693 kr |
+|---|---|---|---|---|
+| Huvudkampanjen | 52 389 kr | 65 | **806 kr** | över |
+| — därav `SP_5_1` (top spender) | 19 132 kr | 25 | **765 kr** | över, men BÄTTRE än snittet |
+| — resten | 33 257 kr | 40 | **831 kr** | över |
+| LISTICLE | 17 379 kr | 30 | **579 kr** | **under** |
+
+**Ingen enskild annons förklarar det.** Top spendern bär 37 % av kampanjens spend
+och ligger under kampanjsnittet — pausar man den, eller någon annan, fixas
+ingenting. Hela kampanjen har drivit över break-even samtidigt.
+
+`SP_5_1` har ändå försämrats på egna meriter: **CPA 478 kr (mätt 2026-09-23) →
+604 kr på 14 dygn → 765 kr på 7 dygn.** Reglerna skyddar den med rätta (top
+spender, > 30 % av vinstbidraget, klass `vinnare` på 14-dygnsfönstret), vilket
+betyder att **nattvakten strukturellt inte kan åtgärda den här kampanjen.** Det
+är ägarens beslut.
+
+**Dygn för dygn, huvudkampanjen:** 3 421 kr / ROAS 4,46 / 10 köp (20/9) →
+11 759 / 1,70 / 13 → 9 654 / 1,91 / 14 → 9 198 / **0,91** / 6 → 6 662 / 1,28 / 6
+→ 6 576 / **0,96** / 5. Spenden gick ner med sänkningen; köpen gjorde det inte.
+5–6 köp/dygn mot 10–14 veckan före.
+
+→ **Instruktion:** mönster 14:s leveranstak förklarar dygnen 22–23/9 (dubbla
+pengarna, samma köp). Det förklarar INTE dygnen 24–26/9, där spenden är tillbaka
+på ~6 600 kr och köpen ändå ligger på 5–6. Skriv ingen orsak till DET förrän
+antingen köpen vänder eller NO/DK mätts — faller alla tre marknaderna samtidigt
+är det produkten eller säsongen, inte kampanjen. Den mätningen är inte gjord.
+
+⚠️ **Och en regelobservation, inte en produktobservation:** ronden sänkte
+LISTICLE (7d CPA 579, UNDER break-even, 7d-vinst 19,4 %) medan huvudkampanjen
+(7d CPA 806) hölls av sin kadensspärr. LISTICLE föll på 3-dygnsfönstret efter en
+svag lördag (1 878 kr, ROAS 0,77, 1 köp). Reglerna gjorde precis vad de säger —
+men de sänkte den friska kampanjen och sparade den sjuka. Om kadensspärren ska
+vika när en kampanj ligger under break-even är ägarens beslut; `budgetbeslut.mjs`
+ändras aldrig av en session.
+
+## 2026-09-28 — mönster 15 vänder på ett dygn: top spendern ÄR problemet i natt
+
+Ronden sänkte huvudkampanjen **6 750 → 4 750 kr** (kadensspärren löpte ut,
+3d-vinst −10,9 %). LISTICLE hölls på 1 400 kr: 3d-vinst tillbaka på 30,5 %,
+ROAS 2,27 — gårdagens sänkning tog. Inga annonser pausades.
+
+**Första natten vinstbidraget är NEGATIVT:** 7 dygn SE ger 72 756 kr, 91 köp,
+ROAS 1,74, CPA **800 kr** mot break-even 693 ⇒ **−9 693 kr** (i går +12 712,
+för fyra nätter sedan +36 911).
+
+⚠️ **I går skrev jag "ingen enskild annons förklarar det". På det här fönstret
+är det inte sant längre** — och skillnaden är ETT dygn:
+
+| `SP_5_1`, 7 dygn | Spend | Köp | CPA |
+|---|---|---|---|
+| fönstret 20–26/9 (läst i går) | 19 132 kr | 25 | **765 kr** — bättre än kampanjen (806) |
+| fönstret 21–27/9 (läst i natt) | 19 969 kr | 21 | **951 kr** — sämre än kampanjen (861) |
+
+Spenden rörde sig 837 kr. Köpen föll med fyra. Metas omattribuering flyttar
+alltså en enskild annons från "bättre än snittet" till "sämst i kampanjen" när
+fönstret glider ett dygn. **En dom byggd på EN natts 7-dygnsläsning av EN annons
+håller inte.** 14-dygnsklassen (`vinnare`, CPA 625) är den som är trög — och det
+är den reglerna dömer på.
+
+**Fyra ACTIVE annonser som 14-dygnsklassen skyddar går dåligt på 7 dygn:**
+
+| Annons | 7d spend | Köp | CPA |
+|---|---|---|---|
+| `SP_5_1` | 19 969 kr | 21 | 951 kr |
+| `PD_2_1` (huvud) | 2 543 kr | 1 | 2 543 kr |
+| `CS_2_1` (huvud) | 1 372 kr | 1 | 1 372 kr |
+| `CS_1_H1` | 1 357 kr | 1 | 1 357 kr |
+| **summa** | **25 241 kr** | **24** | **1 052 kr** |
+| resten av huvudkampanjen | 29 890 kr | 40 | 747 kr |
+
+De fyra är **46 % av kampanjens spend på 1,5× break-even.** Resten ligger nära
+linjen. Det är en annan bild än i går, och den pekar på annonsnivå igen.
+
+**Dygn för dygn, huvudkampanjen:** 5 120 kr / ROAS 3,15 / 11 köp (21/9) →
+11 759 / 1,70 / 13 → 9 654 / 1,91 / 14 → 9 198 / 0,91 / 6 → 6 662 / 1,28 / 6 →
+6 576 / 0,96 / 5 → **6 162 / 1,95 / 9 (27/9)**. Gårdagen är första dygnet över
+break-even sedan den 23:e. Ett dygn är inte en vändning.
+
+→ **Instruktion:** döm inte om `SP_5_1` på nästa natts 7-dygnstal heller — läs
+tre nätter i rad och se om CPA:n stannar över 693 på alla tre. Reglerna kan
+strukturellt inte röra den (top spender, > 30 % av vinstbidraget, klass
+`vinnare`), så en paus är ägarens beslut, inte rondens. Och NO/DK-mätningen som
+skulle skilja "kampanjen gick sönder" från "produkten eller säsongen gick
+sönder" är fortfarande inte gjord.

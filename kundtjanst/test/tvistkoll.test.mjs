@@ -5,7 +5,8 @@ import assert from 'node:assert/strict';
 import { join, dirname } from 'node:path';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { dagarKvar, bradskande, narText, renderaLarm, kollaBrand, LARMGRANS_DAGAR, TVISTFONSTER_DAGAR } from '../tvistkoll.mjs';
+import { dagarKvar, timmarKvar, klockslag, bradskande, narText, renderaLarm, kollaBrand, LARMGRANS_DAGAR, TVISTFONSTER_DAGAR } from '../tvistkoll.mjs';
+import { normaliseraTvist } from '../shopify.mjs';
 import { brandUrEgenfil } from '../brands.mjs';
 import { lasYaml } from '../../factory/yaml.mjs';
 
@@ -258,4 +259,74 @@ test('tidsstrategin ljuger inte om en chargeback med veckor kvar', () => {
   assert.doesNotMatch(text, /anything\s+it lists is/i);
   assert.match(text, /An inquiry on this list is ≤ 3 days out/);
   assert.match(text, /A chargeback is\s+listed from the day it opens/);
+});
+
+// --------------------------------------------------- deadline är en TIDPUNKT
+// #5053 (2026-09-28): `evidence_due_by` var `2026-09-28T01:00:00+02:00` — alltså
+// klockan ett på natten. Larmet skrev "due 2026-09-28 — 1 day left" på
+// söndagsmorgonen, beslutsbladet sa "skicka in på måndagen", och beviset gick
+// in 07:10 på måndagen: sex timmar efter att tiden gått ut. Ingen hade fel om
+// datumet. Alla läste ett datum där det stod en tidpunkt.
+
+test('deadlinens klockslag följer med ur Shopify', () => {
+  const t = normaliseraTvist({
+    id: 17773822301, order_id: 1, type: 'inquiry', reason: 'product_not_received',
+    status: 'under_review', amount: '348.00', currency: 'SEK',
+    evidence_due_by: '2026-09-28T01:00:00+02:00', evidence_sent_on: '2026-09-28T07:10:14+02:00',
+  });
+  assert.equal(t.evidensSenast, '2026-09-28', 'datumsträngen finns kvar som förut');
+  assert.equal(t.evidensSenastTid, '2026-09-28T01:00:00+02:00');
+  assert.equal(t.bevisSkickat, '2026-09-28T07:10:14+02:00');
+});
+
+test('timmarKvar räknar på tidpunkten, inte på dygnet', () => {
+  // Söndag 05:40 CEST, samma minut som rutinen fyrade.
+  const nu = new Date('2026-09-27T03:40:00Z');
+  const h = timmarKvar('2026-09-28T01:00:00+02:00', nu);
+  assert.ok(h > 19 && h < 20, `19-20 timmar kvar, inte ett dygn — fick ${h}`);
+  assert.equal(dagarKvar('2026-09-28', nu), 1, 'dygnsräkningen säger fortfarande 1');
+  assert.equal(timmarKvar(null, nu), null);
+});
+
+test('midnatt får inget klockslag, allt annat får det', () => {
+  assert.equal(klockslag('2026-09-28T00:00:00+02:00'), null);
+  assert.equal(klockslag('2026-09-28T01:00:00+02:00'), '01:00');
+  assert.equal(klockslag(null), null);
+});
+
+test('larmet skriver timmar och klockslag när deadline är inom ett dygn', () => {
+  const nu = new Date('2026-09-27T03:40:00Z');
+  const rad = tvist({
+    typ: 'inquiry', ordernamn: '#5053', belopp: 348,
+    evidensSenast: '2026-09-28', evidensSenastTid: '2026-09-28T01:00:00+02:00',
+  });
+  const text = renderaLarm(bradskande([rad], { nu }), { brand: 'B', nu });
+  assert.match(text, /due 2026-09-28 at 01:00/, 'klockslaget måste stå i raden');
+  assert.match(text, /19h left/, 'timmarna, inte "1 day left"');
+  assert.doesNotMatch(text, /1 day left/);
+});
+
+test('en passerad tidpunkt samma dygn skrivs som timmar försenad', () => {
+  // Måndag 07:41 CEST — då beviset faktiskt gick in.
+  const nu = new Date('2026-09-28T05:41:00Z');
+  assert.equal(narText(0, timmarKvar('2026-09-28T01:00:00+02:00', nu)), '6h OVERDUE');
+});
+
+test('utan tidpunkt beter sig larmet precis som förut', () => {
+  assert.equal(narText(3, null), '3 days left');
+  assert.equal(narText(0, null), 'due TODAY');
+  assert.equal(narText(-2, null), '2 days OVERDUE');
+  assert.equal(narText(null, null), 'no deadline read');
+  const text = renderaLarm(bradskande([tvist({ evidensSenast: '2026-10-05' })], { nu: NU }), { brand: 'B', nu: NU });
+  assert.match(text, /due 2026-10-05 —/, 'inget påhittat klockslag när tidpunkten saknas');
+});
+
+test('larmet säger aldrig "submit on the due date"', () => {
+  // Deadline står på 01:00 i det här kontot, så "skicka in på förfallodagen"
+  // är samma sak som att skicka in sex timmar för sent (#5053, 2026-09-28).
+  const text = renderaLarm(bradskande([tvist()], { nu: NU }), { brand: 'B', nu: NU });
+  assert.doesNotMatch(text, /Submit\* on the due date/i);
+  assert.doesNotMatch(text, /^4\. Submit before the due date/m);
+  assert.match(text, /01:00 in the night/);
+  assert.match(text, /day BEFORE the due date/);
 });

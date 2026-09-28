@@ -94,6 +94,59 @@ Warmup tier 1 valde Axel i appen — publiken går inte att läsa via MCP. **Gam
 `51c37c20-e00c-48c2-b144-089e62f62d14` (med citaten) är återkallad till utkast** 08:17 CEST.
 K02–K22 är utkast; K18 får inte schemaläggas utan ny topp 3-mätning (KVAR.md).
 
+**Recensionskampanjen (Axels fråga 2026-09-27: "en kampanj som bara är recensionsformuläret
+… där de får recensera butiken"):** samma mejl som F14 v2 (alla fem stjärnor till
+`se.trustpilot.com/evaluate/baverbutiken.se`, ingen Judge.me-länk), omskrivet om butiken i
+stället för paketet. Två utkast, eftersom en kampanj bara skickas en gång och paketen måste
+ha hunnit fram (22 dagar efter köpet, samma gräns som F14):
+
+- **Omgång 1** `3d39bb08-76ba-4937-82d2-2e57604d38fb` (ämnesrad "Hur har det varit att handla
+  hos oss?") till segmentet **`Recension butiken omgång 1: tier 1, kunder med samtycke, köpt
+  29 jun till 5 sep`** `0ce1fbd5-52d3-4fda-b616-f503ee2b8faf` (1 050 kontakter 2026-09-27).
+  ✅ **Skickad sön 2026-09-27 14:01 CEST** (Axels klick, direkt i stället för mån 18:00):
+  1 050 i publiken, 1 048 unika mottagare; efter 15 minuter 212 öppningar och 37 klick
+  (`get_campaign_statistics`). Stjärnlänkarna svarar 308 → 200: Trustpilots profil ligger på
+  `www.baverbutiken.se`, och antalet stjärnor följer med i omdirigeringen.
+- **Omgång 2** `5908bf3e-738c-4433-9c2b-aa8f29da90ca` (samma mejl) till **`Recension butiken
+  omgång 2 (tidigast 19 okt): tier 1, kunder med samtycke, köpt 6 sep till 27 sep`**
+  `71531cdb-96c1-4bbb-8aff-168f28d11d32` (1 374). Skickas tidigast mån 19/10, när även de
+  sista i fönstret haft sina 22 dagar; sessionen har en påminnelse 19/10 08:30.
+- Köp efter 2026-09-27 07:05 UTC får förfrågan av F14 v2 och ingår i inget av segmenten.
+  Publiken följer uppvärmningen (bara tier 1) och kampanjregeln (bara subscribed). Kunder med
+  samtycke utanför tier 1 tas efter uppvärmningen med ett segment som utesluter dem som redan
+  fått mejlet (`receivedEmail` = 0 med villkoret `emailSubject eq "Hur har det varit att
+  handla hos oss?"`).
+- Publiken väljs i appen av Axel (MCP:n kan inte sätta den). Segmentnamnen ovan är exakt det
+  appen visar; kampanjerna syns på ämnesraden, båda heter likadant — titeln (omgång 1/2) syns
+  först inne i utkastet.
+- **Mätningen (Axels fråga 2026-09-27):** Spoks räknar mottagare, öppningar och unika klick
+  på stjärnorna (`get_campaign_statistics` med post-id:t) — ett klick är en person som kom
+  fram till Trustpilots formulär. **Själva recensionerna går inte att läsa härifrån:**
+  Trustpilots profilsida svarar 403 med en robotkontroll ("Verifying your connection"), även
+  med headless Chromium (mätt 2026-09-27 14:20 CEST). Automatisk läsning finns redan byggd
+  och väntar på nycklar: `TRUSTPILOT_API_KEY` + `TRUSTPILOT_BUSINESS_UNITS` i Environments ⇒
+  `bonus/kallor.mjs` läser recensionerna via Trustpilots API (60 dagar, nyast först) till
+  VA-bonusen och sajtens Recensioner. **Axels val A samma dag: claima profilen.** Mätt
+  2026-09-27 ~15:00 CEST (sidan gick att läsa via WebFetch, inte via curl/Chromium): profilen
+  var **oclaimad** ("Ej registrerad profil"), **2 recensioner, båda 1 stjärna, TrustScore 2,9**
+  — alltså vad 1 048 kunder möter när de klickar på en stjärna; business unit-id
+  `6a8fefb70fa83ca3905331e9` (= `TRUSTPILOT_BUSINESS_UNITS`). **Första recensionen ur
+  kampanjen syntes på profilen cirka 16:10 CEST** (läst 16:36 som "25 minuter sedan"): 5
+  stjärnor, "kund", "Enkelt å snabbt lev…", märkt **"Omdöme utan inbjudan"** — så märks varje
+  recension via evaluate-länken, eftersom vi inte använder Trustpilots egna inbjudningar.
+  Profilen då: 3 omdömen, TrustScore 3,2, namnet "Baverbutiken", kategorin "Klädbutik" (fel,
+  rättas efter claimen). ⚠️ **Cowork skapar aldrig konton** (stannade vid registreringssidan
+  samma kväll): registreringen är Axels egna klick, Cowork tar över efter "inloggad".
+  ⚠️ **API-nyckeln ingår inte i
+  gratisplanen:** Trustpilots prissida listar API som tillägg från Plus-planen (319 dollar/mån
+  per domän) — Axels pengabeslut. `stonebite/cowork/8-trustpilot.txt` claimar profilen gratis
+  (kontot `kundsupport@baverbutiken.se`), slår på mejlnotis vid ny recension och läser av
+  tilläggets pris utan att köpa. Gratisvägen till automatisk räkning är notismejlen i
+  brevlådan `kundtjanst/webmail.mjs` redan läser — läsaren byggs ur första riktiga mejlet
+  (`bonus/README.md` → Trustpilot). Tills dess räknas omdömena på
+  https://se.trustpilot.com/review/www.baverbutiken.se, och kampanjen tillskrivs det som
+  skrivits efter 2026-09-27 14:01 CEST.
+
 ### Regler ur de två dagarna (för nästa som ger Axel klick)
 
 - **Appen visar ÄMNESRADEN**, på mejlsteg och på kampanjer. Våra koder ("F01", "K01 v2") syns
@@ -180,6 +233,8 @@ Mätt med `get_segments` samma dag, alla taggbaserade:
 | Warmup tier 2 | `9c219ca9-fa16-4a58-af8a-2b2828b29cd1` | 5 000 |
 | Warmup tier 3 | `d3308bc6-2b3e-43ee-9157-7ac5bd719fca` | 6 180 |
 | All subscribed | `9902d9ef-0ea3-4077-bbd5-032851b37143` | 6 267 |
+| Recension butiken omgång 1: tier 1, kunder med samtycke, köpt 29 jun till 5 sep (sessionen 2026-09-27) | `0ce1fbd5-52d3-4fda-b616-f503ee2b8faf` | 1 050 |
+| Recension butiken omgång 2 (tidigast 19 okt): tier 1, kunder med samtycke, köpt 6 sep till 27 sep (sessionen 2026-09-27) | `71531cdb-96c1-4bbb-8aff-168f28d11d32` | 1 374 |
 
 `preview_segment` på tier 1 OCH inte subscribed gav 0: tier 1 får kampanjer.
 Mottagarna går INTE att sätta via MCP:n (`update_draft_campaign` har inget fält för
@@ -201,6 +256,50 @@ efter varje utskick; stiger klagomålen, stanna kvar ett steg till.
 - Anonyma recensenter står som "Verifierad kund", aldrig "Anonymous".
 
 ## CaraShell (workspace `38f3d430-690c-4c0b-8419-8ec2e5272148`, UPPLADDAT 2026-09-26, danskan 2026-09-27, allt avstängt)
+
+⚠️ **Recensionsflödet, mätt 2026-09-28 ~09:00 CEST** (Axels fråga: "var kan jag se recensionsflödet
+till alla marknader för CaraShell? Jag vill samla in till Trustpilot för CaraShell också"). Det är
+de fyra flödena `FLOW_levererat_recension_SV/NB/EN/DA_v1` (`spoks-id.json` → `f14-recension`, länk
+`https://app.spoks.com/carashell/flows/<flowId>`), **aktiva sedan 2026-09-27 06:49 UTC** (get_flows):
+trigger `order_delivered`, filter land + inte avregistrerad, vänta 10 dagar till kl 18:00, ett mejl
+("Vad tyckte du?" / "Hva syntes du om den?" / "Hvad synes du?" / engelska) med fem stjärnor →
+`se|no|dk|www.trustpilot.com/evaluate/carashell.se?stars=1–5`. **Alla fyra språk går till SAMMA
+Trustpilot-profil, carashell.se** — en registrering täcker alla marknader. Två fynd:
+- ⛔ **Alla 20 stjärnlänkar svarar 404** ("Hoppsan! Sidan du letar efter gick inte att hitta") på
+  se/no/dk/www, med och utan webbläsar-UA, i Chromium och curl — medan
+  `evaluate/www.baverbutiken.se` svarar 200 i samma körning, så det är ingen robotspärr.
+  26/9 18:50 och 27/9 ~15:40 svarade de 200; nu finns ingen profil. `review/carashell.se` svarar
+  403 (WAF, säger inget), `evaluate/carashell.com` och `www.carashell.*` 404 också. **Ingen kund
+  har fått mejlet** (0 inrullade, och 10 dagars väntan), så inget har skickats med död länk. Vägen:
+  Axel registrerar CaraShell på business.trustpilot.com med **hello@carashell.se** (samma domän som
+  profilen — hello@carashell.com hade krävt domänverifiering med DNS/HTML, förbjudet sedan
+  Loopia-incidenten; båda brevlådorna har MX på Loopia), sedan
+  `stonebite/cowork/9-trustpilot-carashell.txt` (notis, länkkontroll, DNS-kontroll).
+  ✅ **Gjort 2026-09-28 ~10:30 CEST** (Axel registrerade, Cowork körde prompten): profilen
+  `se.trustpilot.com/review/carashell.se` visar "Registrerad profil", 0 omdömen, gratisplanen
+  ("Free plan", inget köpt, provperioden inte klickad), notis för nya recensioner på alla stjärnor
+  till hello@carashell.se, inget installerat, NS ns1/ns2.loopia.se orört. Sessionen mätte direkt
+  efter: **alla fyra evaluate-länkarna (se/no/dk/www) svarar 200** och öppnar formuläret
+  "Betygsätt Carashell". Tre fel på profilen efter registreringen (namnet "Carashell", landet USA,
+  ingen kategori) — ✅ **rättade samma förmiddag av Cowork** (en kort andra prompt i chatten,
+  Settings → Profile page): namn **CaraShell**, kontaktuppgifter Stenkolsgatan 1B, 417 07 Göteborg,
+  Sverige, kategori **RV Supply Store** (svenska sajten visar "Butik med husbilstillbehör", sökvägen
+  Fordon och transport › Andra fordon och släp), tillbakaläst på den publika profilen. Kontonamnet i
+  Trustpilot Business (menyn, Plans & billing) står kvar som "Carashell" — bara internt, syns aldrig
+  för kunder, rörs inte. ⚠️ **`?stars=N` förvaljer inte stjärnorna längre**: mätt i Chromium
+  på både `carashell.se?stars=5` och `www.baverbutiken.se?stars=5` — fem radioknappar, alla
+  `checked: false`, ingen vald. Kunden klickar stjärnan själv; mejlen fungerar, inget byggs om för
+  det. ⚠️ Notismejlen går till hello@carashell.se — inte .com-brevlådan som autosvaret och
+  `trustpilotMejl()` läser — tills Axel lagt vidarebefordran .se → .com hos Loopia.
+- ⚠️ **`order_delivered` har inte fyrat en enda gång än — för tidigt att döma:** 0 inrullade i alla
+  12 `FLOW_levererat_*` och 0 fulfillments `DELIVERED` i Shopify efter aktiveringen. CaraShells
+  ordrar 1–16/9 (82 st, alla under 20 dagar gamla) står 75 `IN_TRANSIT` / 4 `DELIVERED` (alla
+  norska, 25–26/9, före aktiveringen) / 2 `CONFIRMED`; 46 av 46 svenska bär sista skanningen
+  "Paketet är på väg (Mainland China)". Spårningsminnet: 5 levererade av 415 paket (Bäverbutikens:
+  1 283 av 2 717). Första svenska leveranserna väntas den här veckan; sessionens check-in ons 30/9
+  08:40 CEST mäter Shopify `DELIVERED` mot Spoks inrullade. Fyrar händelsen inte trots levererade
+  ordrar byggs F14 (och de två monteringsflödena, samma trigger) om på `order_created` + 20 dagar,
+  som Bäverbutikens tipsflöden — Axels beslut, frågas då.
 
 ✅ **Danska sedan 2026-09-27** (Axels order: "vi behöver liksom egentligen ha flows för alla
 aktiva marknader bara. Så det är Sverige, Norge, Danmark, USA och Australien" + "utifrån de får
@@ -302,11 +401,20 @@ triggern; `FLOW_levererat_termoskyddet_DA_v1` orörd men av (sändsteg + trigger
 25 av 32 flöden lästes tillbaka i detalj mot `plan.json` efter påslaget (event, land, väntetider,
 steg): alla rätt. ⚠️ **Spoks rate-limitar `get_flow`** — 8 parallella anrop efter ~25 i följd gav
 "Rate limit exceeded. Try again in 11 seconds"; de 7 danska lästes därför i en senare check-in,
-EN I TAGET. **Kampanjerna:** de fyra första schemalagda av Axel samma morgon (`waiting_to_be_published`,
-går inte att ändra via MCP:n — bara utkast): sv/nb/da tisdag 29/9 18:00 rätt, **engelskan hamnade på
-söndag 27/9 18:00** (2026-09-27T16:00Z) i stället för tisdag 16:00 — Axel flyttar den själv; en
-check-in 15:30 CEST läser om. Publiken (segmentet) syns inte i `get_campaign`, så den går inte att
-kontrollera från en session.
+EN I TAGET. ✅ **Check-in 15:30–15:45 CEST samma dag: 32 av 32 tillbakalästa.** De sju danska
+(`4befe4bb` välkomst, `0eb39291` kassa, `506196b9` webbhistorik, `86b70c3f` efter köp, `50de5e7e`
+vinback, `69ef4ba3` levererat takskyddet, `63b1238b` recension) + `165a134e` välkomst SV +
+`34a610bf` levererat termoskyddet DA, ett anrop i taget: rätt event, `country in [Denmark]`
+(SV: Sweden eller utan land), `triggerFilter externalId` = produktens gid på de två
+levererat-flödena (`16084174242124` / `16108121489740`), väntetiderna ur planen (0/2/3 d, 3 h/1/2 d,
+4 h/1 d, 2/14 d, 180/14 d, 1 d, 10 d till 18:00), varje sändsteg `isEnabled: true` med planens
+postId, alla `isActive: true`; välkomst SV åter på `contact_created` (12 inrullade), efter köp DA
+och vinback DA hade redan 2 inrullade var. Inget att rätta. **Kampanjerna:** de fyra första
+schemalagda av Axel samma morgon (`waiting_to_be_published`, går inte att ändra via MCP:n — bara
+utkast): sv/nb/da tisdag 29/9 18:00 rätt, **engelskan hade hamnat på söndag 27/9 18:00**
+(2026-09-27T16:00Z) — Axel flyttade den 09:30 CEST; `search_campaigns` 15:31 CEST visar alla fyra
+på `2026-09-29T16:00:00Z` = tisdag 18:00. Publiken (segmentet) syns inte i `get_campaign`, så den
+går inte att kontrollera från en session.
 
 **Samtycket per land, mätt i Shopify 2026-09-27** (487 kunder; `emailMarketingConsent` +
 `consentUpdatedAt` mot orderns `createdAt`): **USA 59 av 77 (77 %)**, GB 1 av 5, **DK 3 av 28

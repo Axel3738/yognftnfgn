@@ -1,0 +1,26 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-28",
+  "lage": "budget",
+  "server": "CaraShell — OPS",
+  "gjort": [
+    "Budget round: the main campaign is cut 6 750 → 4 750 kr/day. Its cadence lock expired tonight and the 3-day profit is -10.9 % at ROAS 1.38. Read back and logged",
+    "The LISTICLE campaign holds at 1 400 kr and is back in the healthy band: 3-day profit 30.5 % at ROAS 2.27. Yesterday's cut worked within one day, same as the last time it was cut",
+    "No ads paused tonight. Nothing active qualifies as a kill candidate on the 14-day class",
+    "91 purchases over 7 days on 72 756 kr at ROAS 1.74. Profit contribution is -9 693 kr — the first negative night. It was +12 712 last night and +36 911 four nights ago"
+  ],
+  "siffror": { "spend_7d": 72756, "kop_7d": 91, "roas_7d": 1.74, "vinstbidrag_7d": -9693 },
+  "briefer": [],
+  "action_axel": [
+    "Last night I reported that no single ad explained the losses. On tonight's window that is no longer true, and the change came from one day of data. SP_5_1 now carries 19 969 kr and 21 purchases over 7 days at CPA 951 kr against break-even 693 — worse than the campaign average of 861, where last night it read 765 and looked better than average. Three more active ads that the 14-day class still calls winners are also bad over 7 days: PD_2_1 at 2 543 kr for one purchase, CS_2_1 at 1 372 for one, CS_1_H1 at 1 357 for one. Together those four are 25 241 kr and 24 purchases, CPA 1 052, which is 46 % of the campaign spend at one and a half times break-even. The rest of the campaign runs at 747. The rules cannot touch any of them, because the kill class is measured over 14 days and they were winners two weeks ago. Pausing SP_5_1 is your call. My recommendation is to wait two more nights: one day of window movement flipped this verdict once already, so I would rather read the same number three nights running than kill the biggest ad on one reading"
+  ],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-29",
+  "varningar": [
+    "One good sign: yesterday the main campaign spent 6 162 kr at ROAS 1.95 with 9 purchases, its first day above break-even since 23 September. That is one day, not a turn, and the cut to 4 750 kr lands on top of it",
+    "The deeper issue is a rule gap rather than a product problem. Ads are killed on their 14-day class, so an ad that turned bad in the last week keeps running with the label winner. If you want that changed it is a rules decision, not something a nightly run should do on its own",
+    "Norway and Denmark still run unwatched on 4 000 kr/day each. That was measured on 23 September and has not been re-measured since — Meta throttles these reads hard. Only Sweden is managed by this round",
+    "Briefs stay paused by owner decision from 18 September"
+  ]
+}

@@ -62,6 +62,14 @@ export const OPS_MARKNADER = Object.freeze({
     geo: ['US'], locale: 'en', country: 'US', valuta: 'USD', valuta_i_annons: '$',
     heygen_sprak: 'English (United States)', sprak: 'amerikansk engelska', rost: null, status_ko: 'SE-ACTIVE to be translated', oversatts: true,
     emoji: '🇺🇸', rubrik_en: 'US translation',
+    // Bara flödet på Facebook + Instagram (Axels order 2026-09-27: "kör
+    // flödet i facebook instagram"). Natten 26→27/9 lade Meta 16 654 kr av
+    // en ny annons i Instagram Stories: 690 sidvisningar, 0 i varukorgen,
+    // 0 köp, medan Facebook-flödet gav 41 köp på sju dygn (ROAS 2,03).
+    // Läses av kampanj.mjs när ett US-adset skapas; de tolv befintliga
+    // adseten sattes samma dag för hand. Saknas fältet (SE/NO/DK) får
+    // adsetet Metas standardplaceringar som förut.
+    placeringar: Object.freeze({ publisher_platforms: ['facebook', 'instagram'], facebook_positions: ['feed'], instagram_positions: ['stream'] }),
   }),
   // Danmark 2026-09-20 (/ny-marknad carashell DK). Kontot är det delade
   // OPS-kontot — samma som SE och NO. ⚠️ Kontot HETER "MagiBorsten DK" men

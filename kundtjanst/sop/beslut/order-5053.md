@@ -28,4 +28,30 @@ The delivery scan has no signature and no GPS point, so the issuer can still sid
 **If it fails**
 Write off the 603 SEK, tag the customer in Shopify so future orders are reviewed manually, and fix the root cause: both disputes were filed before any human had spoken to this customer, which is the same WISMO backlog that produced 192 unanswered emails over 48 hours this week.
 
-**Timing for the VA:** add the evidence and click **Save** today, on both disputes. If the customer replies to the 2026-09-20 email before 2026-09-26, add the reply and then click **Submit now**. Otherwise submit on 2026-09-26 - never later, the deadline 2026-09-28 has no exceptions, and **Submit now** locks the evidence permanently.
+**Timing for the VA:** add the evidence and click **Save** today, on both disputes. If the customer replies to the 2026-09-20 email, add the reply first. Then click **Submit now**.
+
+> ✅ **Answered — measured 2026-09-28.** Both disputes are `under_review`:
+> `17773822301` had its evidence sent at **07:10:14** and `17773723997` at
+> **07:41:42** that morning. Nothing more to do here; watch for an escalation
+> to chargeback the way #5122 and #4446 both did.
+>
+> ⛔ **But they went in six hours LATE, and the reason is written down here.**
+> The real deadline was `2026-09-28T01:00:00+02:00` — **one o'clock at night**,
+> not "some time on Monday". This sheet said "submit on Monday", the daily alarm
+> said "due 2026-09-28 — 1 day left", and both were reading a date where Shopify
+> had written a timestamp. Shopify accepted the late evidence anyway; that is
+> the bank's goodwill, not a rule to lean on. Fixed the same day: the alarm now
+> prints "due 2026-09-28 at 01:00 — 19h left". **On any dispute, read the
+> clock time in `evidence_due_by`, not just the day.**
+
+> ⛔ **The planned submit date had already passed — measured 2026-09-27.** Both disputes
+> (`17773822301`, 348 SEK, and `17773723997`, 255 SEK) are still `needs_response`.
+> Nothing has been submitted. The instruction above used to say "submit on
+> 2026-09-26", and that day is gone. **Submit both today, Sunday 2026-09-27.**
+> The deadline 2026-09-28 has no exceptions and **Submit now** locks the evidence
+> permanently, so there is no reason left to wait: the delivery scan of 2026-09-11
+> already exists, which was the only thing waiting was ever buying us.
+> ⚠️ If nothing is submitted, Shopify sends whatever it has on the due date by
+> itself. That auto-submission is not our evidence pack — it has no delivery
+> screenshot, no email thread and no cover text, and the SOP's "inquiries are
+> always won" record was built on packs a human put together.

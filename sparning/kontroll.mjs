@@ -207,10 +207,25 @@ export function kontrolleraStandardvyn(paket, { mottagarland }) {
   return problem;
 }
 
+// Slå upp den packade skanningens EGEN rad i rådatan.
+//
+// ⚠️ Tiden räcker inte som nyckel. Fraktbolagen stämplar flera skanningar på
+// samma minut, och då gav `find` på tid ensam den FÖRSTA raden i minuten —
+// alltså någon annans text. Mätt 2026-09-27 på YT2626200704724679 (CaraShell,
+// order till Australien): "Delivered to local carrier" och "Received by
+// Australia Post for transportation to processing facility" står båda på
+// 23:10, uppslaget tog den andra, och krav 4 fällde ett paket som hade en
+// riktig ankomstskanning. Vi matchar därför på tid + vår egen översatta text
+// först, och faller tillbaka på tiden bara när ingen sådan rad finns.
+function raRad(h, rå) {
+  const iMinuten = (rå ?? []).filter((x) => x.iso && x.iso.slice(0, 16) === h.iso.slice(0, 16));
+  return iMinuten.find((x) => x.text === h.text) ?? iMinuten[0];
+}
+
 // Är skanningen en förhandsavisering? Slås upp i RÅDATAN, inte i vår egen
 // översättning — det är fraktbolagets text regeln gäller.
 function arForhandsaviText(h, rå) {
-  const r = rå.find((x) => x.iso && x.iso.slice(0, 16) === h.iso.slice(0, 16));
+  const r = raRad(h, rå);
   return arForhandsavi(r?.ra ?? r?.text ?? '');
 }
 
@@ -218,7 +233,7 @@ function arForhandsaviText(h, rå) {
 // ("Arrival to the destination airport")? Då är skedet stött även utan att
 // platsen råkar vara angiven.
 function bararAnkomstfras(h, rå) {
-  const r = rå.find((x) => x.iso && x.iso.slice(0, 16) === h.iso.slice(0, 16));
+  const r = raRad(h, rå);
   const t = normalisera(r?.ra ?? r?.text ?? '');
   return /destination|domestic|local carrier|import|ankommit till|distribution terminal|terminal \(t/i.test(t);
 }

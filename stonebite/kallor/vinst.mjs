@@ -224,6 +224,7 @@ export async function hamtaVinstunderlag(butik, { dagar = 8, env = process.env, 
   const fran = sistaDagarna(dagar, { nu })[0];
   let ordrar = null;
   let orderVia = null;
+  let landVia = null;
   for (const t of tokens) {
     try {
       const alla = [];
@@ -244,14 +245,14 @@ export async function hamtaVinstunderlag(butik, { dagar = 8, env = process.env, 
         if (!d.orders.pageInfo.hasNextPage) break;
         efter = d.orders.pageInfo.endCursor;
       }
-      ordrar = alla; orderVia = t.via; break;
+      ordrar = alla; orderVia = t.via; landVia = form.medLand; break;
     } catch (e) { fel.push(`${t.via} (ordrar): ${e.message}`); }
   }
   if (!ordrar) throw new Error(`ingen app får läsa ordrarna med rader och avgifter — ${fel.slice(-1)[0] ?? ''}`);
 
   const utfall = summeraOrdrar(ordrar, kostnader, { dagar, nu, valuta, kostnadPerLand });
   return {
-    id: butik.id, status: 'ok', orsak: null, valuta, via: { kostnad: kostnadVia, ordrar: orderVia, land: form.medLand ? 'shippingAddress' : 'nekad — räknat utan leveransland' },
+    id: butik.id, status: 'ok', orsak: null, valuta, via: { kostnad: kostnadVia, ordrar: orderVia, land: landVia ? 'shippingAddress' : 'nekad — räknat utan leveransland' },
     varianter: kostnader.size, varianterMedKostnad: [...kostnader.values()].filter((k) => k.kostnad !== null).length,
     ...utfall,
   };

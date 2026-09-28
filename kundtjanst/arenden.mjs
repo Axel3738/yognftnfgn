@@ -28,7 +28,7 @@ export function arSystem(adress, amne = '') {
   const a = String(adress ?? '').toLowerCase();
   const d = doman(a);
   if (/^(no-?reply|noreply|donotreply|do-not-reply|mailer-daemon|postmaster|bounce|notifications?|alerts?)@/.test(a)) return true;
-  if (/(^|\.)(shopify\.com|shopifyemail\.com|klarna\.(com|se|no|dk)|paypal\.com|stripe\.com|postnord\.(com|se|no|dk)|dhl\.com|bring\.com|budbee\.com|instabox\.io|judge\.me|meta\.com|facebookmail\.com|google\.com|loopia\.(se|com)|notion\.so|discord\.com)$/.test(d)) return true;
+  if (/(^|\.)(shopify\.com|shopifyemail\.com|klarna\.(com|se|no|dk)|paypal\.com|stripe\.com|postnord\.(com|se|no|dk)|dhl\.com|bring\.com|budbee\.com|instabox\.io|judge\.me|trustpilot\.com|meta\.com|facebookmail\.com|google\.com|loopia\.(se|com)|notion\.so|discord\.com)$/.test(d)) return true;
   if (/^(mail delivery|delivery status notification|undeliverable|leveransfel)/i.test(amne)) return true;
   return false;
 }

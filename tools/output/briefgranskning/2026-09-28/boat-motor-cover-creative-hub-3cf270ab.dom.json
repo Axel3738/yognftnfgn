@@ -1,0 +1,54 @@
+{
+  "hub_id": "3cf270ab-908c-8113-a35c-f9c1cd61d727",
+  "rond": "2026-09-26",
+  "bra": [
+    "All three rules from the 2026-09-24 review held: every CPA stands against break-even 393 kr in the same sentence (BF_3_1 233 kr / 7 purchases, CS_5_H1 184 kr / 4, SP_1_H1 147 kr, SP_1_H5 171 kr); the Source column points at the delivered Drive files (SP_1_H5, SP_1_H14, CS_5_H1) before any NEW FOOTAGE; `AI content: voice` on all three.",
+    "The one NEW FOOTAGE line (OB_3_H1, a tape measure on the cowling) names the folders that were checked and found lacking — that is how a re-shoot request should read.",
+    "CS_5_H2 corrects the parent's live word `saltvatten` to the page's `regn, snö och frost` instead of inheriting it under the isolation argument — the isolation covers picture and structure, not a word the page does not use.",
+    "CS_5_H2 / CS_5_H3 are a declared pair (problem opener vs mechanism opener on the same honest-price body), named as hook variants of CS_5 exactly as docs/naming-convention.md asks.",
+    "Price 579 / 965 kr, the nine hk ranges, `måttguiden`, `från kåpan ner över riggen`, `spänn remmen runt mitten`, `inte bara toppen`, `sex månader` are all the page's own (read live from the product page 2026-09-28)."
+  ],
+  "missat": [
+    "OB_3_H1 opens on a question (`Fel storlek? Se måttguiden innan du beställer.`) — inherited word for word from the KPI winner BF_3_1 because the format is the variable, so it stays; but the next NEW concept on the size objection opens on the declarative already written as H3 (`Mät kåpan. Välj storlek. Beställ rätt.`).",
+    "OB_3_H1 row 2 puts all nine hk ranges on screen inside 5 seconds — nobody reads nine ranges in five seconds; the point is that the table exists. Hold the full table one second longer or let it stay under row 3 as well.",
+    "The tool flags kronor amounts in OB_3_H1 / SP-style PD rows with no `Price exactly` rule — here the price IS in the creative (579 / 965) and the Rules block lists the numbers, so nothing is wrong; writing `Price exactly 579 kr` in the standard slot makes the tool read it."
+  ],
+  "regler": [
+    "A question hook is inherited only when the format is the variable and the parent's line is the test (OB_3_H1); every NEW concept opens on a declarative — the size objection's is already written: `Mät kåpan. Välj storlek. Beställ rätt.`",
+    "A banned word in the parent's live copy (`saltvatten`) is corrected in the iteration, as CS_5_H2 does — isolation covers picture and structure, never a word the page does not use.",
+    "Every NEW FOOTAGE line names the delivered files that were checked and found lacking (as OB_3_H1 row 1 does) — the editor then knows the re-shoot is real, not a habit."
+  ],
+  "rader": [
+    {
+      "namn": "Batmotor_OB_3_H1",
+      "fel": [],
+      "anmarkningar": [
+        "Question hook inherited from BF_3_1 for the format test — fine here; the next new size concept opens on H3's declarative.",
+        "Row 2: nine ranges in five seconds — hold the table one second longer."
+      ],
+      "bra": [
+        "NEW FOOTAGE line names the checked folders; CPA against break-even; the nine ranges match the live variants."
+      ]
+    },
+    {
+      "namn": "Batmotor_CS_5_H2",
+      "fel": [],
+      "anmarkningar": [
+        "Clean. The only note: the Rules block's example `30 dagars öppet köp` is a banned phrase, not a fact — keep it phrased as a ban."
+      ],
+      "bra": [
+        "`saltvatten` corrected to the page's words instead of inherited; one variable (the opening picture); sources on delivered files."
+      ]
+    },
+    {
+      "namn": "Batmotor_CS_5_H3",
+      "fel": [],
+      "anmarkningar": [
+        "Clean. Named as iteration 2 of the CS_5 family — right."
+      ],
+      "bra": [
+        "Borrows SP_1_H5's measured 37 % hook on a different body and says exactly what the pair H2/H3 answers."
+      ]
+    }
+  ]
+}

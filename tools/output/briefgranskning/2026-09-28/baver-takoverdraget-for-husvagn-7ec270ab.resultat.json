@@ -1,0 +1,28 @@
+{
+  "hub_id": "7ec270ab-908c-82f6-a2a8-0153159b20fa",
+  "hub_titel": "BÄVER Taköverdraget för Husvagn",
+  "slug": "baver-takoverdraget-for-husvagn-7ec270ab",
+  "rond": "2026-09-25",
+  "idag": "2026-09-28",
+  "antal": 7,
+  "rena": 0,
+  "anm": 6,
+  "fel": 1,
+  "feedback_rad": {
+    "skapad": true,
+    "page_id": "3e9270ab-908c-8145-846f-d57ef01198fd",
+    "url": "https://app.notion.com/p/Brief-review-2026-09-25-3e9270ab908c8145846fd57ef01198fd",
+    "titel": "Brief review 2026-09-25",
+    "block": 20
+  },
+  "feedback_fil": "products/carashell/takskyddet/feedback.md",
+  "kommentarer": [
+    {
+      "namn": "Takoverdrag_OB_6_H1",
+      "utfall": "skriven",
+      "text": "Brief review 2026-09-25 (BÄVER Taköverdraget för Husvagn) — this brief has an error the editor must know about:\n1. Row 3 line `Överdraget stannar vid takkanten, hela vägen runt vagnen.` and the picture note `nothing hanging below it` contradict the product page: the edge hangs 30–40 cm down over the sides so the roof/wall seam is covered. Do not frame the edge away — show it hanging over the side, and use the alt line for row 3 (`Sidoväggen, fönstret och dörren syns hela varvet runt.`) or `Bara taket och kanten.`\nFix before production. If the ad is already live, apply it to the next version — nothing is paused. Status unchanged."
+    }
+  ],
+  "varningar": [],
+  "torr": false
+}

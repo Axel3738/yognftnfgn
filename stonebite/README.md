@@ -331,9 +331,13 @@ Grillkliniken/CaraShell/Matstrumpor (ingen brandfil). Bank, kort och
   Barkås-kontot: trigger `trig_01QwKgfZP3JdhZX6tbGo1LJb`, fast session
   `session_01PBEszeiGu5Qe2Lu5Je1p9T`, cron `4 * * * *`. Snapshoten går till
   `main` varje timme och Railway bygger om.
-- Trustpilot läses inte automatiskt: deras publika sida svarar 403 på maskiner.
-  Med `TRUSTPILOT_API_KEY` + `TRUSTPILOT_BUSINESS_UNITS` går det; tills dess
-  rapporterar VA:n in recensionen med länk och chefen godkänner.
+- Trustpilot läses inte automatiskt: deras publika sida svarar 403 på maskiner,
+  och API-nyckeln (`TRUSTPILOT_API_KEY` + `TRUSTPILOT_BUSINESS_UNITS`) är ett
+  betaltillägg från Plus-planen (läst 2026-09-27; Axels pengabeslut). Profilen
+  claimas gratis med `cowork/8-trustpilot.txt`, business unit-id
+  `6a8fefb70fa83ca3905331e9`; gratisvägen är notismejlen i brevlådan vi redan
+  läser. Tills en läsare finns rapporterar VA:n in recensionen med länk och
+  chefen godkänner. `bonus/README.md` → Trustpilot.
 - Bäverbutikens försäljning saknas i sajten tills Shopify-appen fått
   godkännande för kunddata (`read_orders`). Sidan säger det rakt ut i stället
   för att visa noll.

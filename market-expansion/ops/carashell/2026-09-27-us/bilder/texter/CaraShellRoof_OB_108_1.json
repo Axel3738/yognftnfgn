@@ -1,0 +1,93 @@
+[
+ {
+  "box": [
+   32,
+   58,
+   1048,
+   400
+  ],
+  "rader": 3,
+  "storlek": 77,
+  "fet": true,
+  "radavstand": 1.56,
+  "utvidga": 6,
+  "troskel": 25,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "The strap clips into a hook, not a knot you're hoping holds."
+ },
+ {
+  "box": [
+   40,
+   438,
+   1040,
+   562
+  ],
+  "rader": 2,
+  "storlek": 40,
+  "radavstand": 1.65,
+  "utvidga": 6,
+  "troskel": 25,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "Straps on all four sides, 8 ft and adjustable, hook into a hook at the bottom edge."
+ },
+ {
+  "box": [
+   564,
+   962,
+   1054,
+   1016
+  ],
+  "rader": 1,
+  "storlek": 28,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "2 bonus ratchet straps, 34 ft"
+ },
+ {
+  "box": [
+   40,
+   1074,
+   1040,
+   1145
+  ],
+  "rader": 1,
+  "storlek": 32,
+  "utvidga": 6,
+  "troskel": 25,
+  "farg": [
+   20,
+   18,
+   16
+  ],
+  "text": "$199 (was $249), save $50 (20%)"
+ },
+ {
+  "box": [
+   274,
+   1230,
+   806,
+   1290
+  ],
+  "rader": 1,
+  "storlek": 41,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Order Your Roof Cover"
+ }
+]

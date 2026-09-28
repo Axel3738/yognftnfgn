@@ -281,10 +281,10 @@ if (process.argv[1] && process.argv[1].endsWith('kampanj.mjs')) {
           optimization_goal: 'OFFSITE_CONVERSIONS',
           destination_type: 'WEBSITE',
           promoted_object: JSON.stringify({ pixel_id: pixelId, custom_event_type: 'PURCHASE' }),
-          targeting: JSON.stringify({ geo_locations: { countries: marknaden.geo }, age_min: 25, age_max: 65, targeting_automation: { advantage_audience: 1 } }),
+          targeting: JSON.stringify({ geo_locations: { countries: marknaden.geo }, age_min: 25, age_max: 65, targeting_automation: { advantage_audience: 1 }, ...(marknaden.placeringar ?? {}) }),
         },
       });
-      console.log(`✅ Adset ${v}: ${adset.id} (PAUSED, geo ${marknaden.geo.join(',')}, ingen egen budget)`);
+      console.log(`✅ Adset ${v}: ${adset.id} (PAUSED, geo ${marknaden.geo.join(',')}, ingen egen budget${marknaden.placeringar ? ', bara flödet' : ''})`);
     }
     const iKontot = await api(`${kampanj.id}/adsets`, { params: { fields: 'id,name,status', limit: 100 } });
     console.log(`\n─── RÄKNING ───\n  adsets i kampanjen: ${(iKontot.data ?? []).length}  ← läst ur Meta\n  annonser: 0 (fylls av /ops-oversatt ${butikId} --marknad ${marknad})`);
@@ -380,11 +380,13 @@ if (process.argv[1] && process.argv[1].endsWith('kampanj.mjs')) {
           age_min: 25,
           age_max: 65,
           targeting_automation: { advantage_audience: 1 },
+          // Marknadens placeringar (US: bara flödet, Axels order 2026-09-27).
+          ...(marknaden.placeringar ?? {}),
         }),
       },
     });
     adsetAv.set(v, adset.id);
-    console.log(`✅ Adset ${v}: ${adset.id} (PAUSED, geo ${marknaden.geo.join(',')}, ${perAdset / 100} ${marknaden.kontovaluta}/dag)`);
+    console.log(`✅ Adset ${v}: ${adset.id} (PAUSED, geo ${marknaden.geo.join(',')}, ${perAdset / 100} ${marknaden.kontovaluta}/dag${marknaden.placeringar ? ', bara flödet' : ''})`);
   }
 
   // --- annonserna. En annons som redan finns i kampanjen (samma namn) hoppas

@@ -2,6 +2,15 @@
 
 Skrivs av `/kommentarer` (nyaste överst). Varje lead pekar på kommentarer i `kommentarer/logg/` — kundens egna ord är källan (`kalla=voc`). `/cs` läser raderna för sin produkts prefix och bockar av dem den använder: `- [x] … status: använd i batch #N`.
 
+## 2026-09-28
+
+- [ ] **Bäverbutiken · Takoverdrag** · invändning — Fukt och mögel under överdraget är fortfarande den största invändningen: "Fungerar inte, men du får gratis mögelsporer och fuktskador", "Och under ligger det kondens hela vintern", "Inget bra med fukt mellan taket å överdraget=mögel". Sju kommentarer i dag i Sverige och Norge. Axel har bekräftat att kunderna har rätt och att en distansprodukt är på väg. → När distansprodukten finns: en OB-annons som visar distansen under överdraget och luften som rör sig, med kundens egen invändning som hook. Fram till dess ingen annons som lovar torrt tak.
+  - Källa: kommentarer på Takoverdrag_PD_4_H1, SP_2_1, SP_4_H1, Takovertrekk_NO_PD_10_1, 7 st, 28 sep · `kalla=voc` · belägg: 122186552624859973_4239534829677339, 122186552624859973_28535736202743826, 122135278137209535_1788871345690168, 122185856630859973_1612660063795084, 122186552624859973_2455102688231638, 122186616698859973_1690147776009600, 122186616698859973_2072584470036475 · status: väntar
+- [ ] **CaraShell · CaraShellRoof** · invändning — Samma fuktfråga hos CaraShell: "Vad händer med ventilationen på taket!?" och "undrar fortfarande om materialet är diffusions tätt eller inte". Den andra kunden har frågat förut och inte fått svar. → Samma OB-annons som Bäverbutikens när distansprodukten finns, speglad till CaraShell.
+  - Källa: kommentarer på CaraShellRoof_PD_2_H1 och PD_2_1, 2 st, 28 sep · `kalla=voc` · belägg: 122101717329473983_1353501946712932, 122101720941473983_1021322787629235 · status: väntar
+- [ ] **CaraShell · CaraShellRoof** · köpfråga — Amerikaner hittar fortfarande inte storlekarna: "Only have the one size????" och "18’ with ac and solar panels 21’?". En tredje skriver att han lutar åt att köpa efter vårt svar. → Pristabellen med en knapp per längd på USA-sidan (kommentarer/rapporter/usa-2026-09-27.md, sida 1). Ingen ny brief.
+  - Källa: kommentarer på CaraShellRoof_US_SP_2_1 och GT_105_H1, 3 st, 28 sep · `kalla=voc` · belägg: 122107043547473983_1114750954336251, 122107729167473983_1108302778276301, 122109041217473983_1424298409835888 · status: väntar
+
 ## 2026-09-27
 
 - [ ] **CaraShell · CaraShellRoof** · produktfeedback — Paketrutan på carashell.com förvalde 2 st: "Price advertising at $199 but when I actually ordered, it was more like $338 bucks. Scam." Annonsen säger $199, kassan 2 × 199 × 0,85 = $338. Kunden trodde han blev lurad och skrev det offentligt. → Axel: överväg 1 st förvald på carashell.com (offer.paket i takskyddet.yaml gäller alla marknader). Ingen brief: det är sidan, inte annonsen.

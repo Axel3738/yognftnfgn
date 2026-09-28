@@ -9,6 +9,7 @@ den första ger dig, så kör dem inte samtidigt.
 | 2 | Google Workspace / domänen | `cowork/2-dns.txt` | Letar upp var DNS ligger, lägger in posterna, rör aldrig mejlen — ✅ körd 2026-09-21 (www fungerar, roten blev en 302) |
 | 3 | Google Workspace / domänen | `cowork/3-rot.txt` | **Roten utan www:** ALIAS-post på `@` hos Squarespace mot Railways rotvärde, vidarebefordran + Squarespaces A-poster bort. Rör aldrig mejlen |
 | 7 | Shopify Dev Dashboard + butikernas admin | `cowork/7-tvister-no-dk-fi.txt` | Lägger till `read_shopify_payments_disputes` på apparna för NO/DK/FI ("Bever No produkter claude", "DK claudeprodukter", "FI claudeprodukter"), släpper en ny version, godkänner i varje admin. Tar aldrig bort en rättighet — stoppar om Scopes-fältet är tomt. Fristående från 1–3 |
+| 8 | Trustpilot Business | `cowork/8-trustpilot.txt` | **Claimar Bäverbutikens Trustpilot-profil på gratisplanen** (kontot `kundsupport@baverbutiken.se`), slår på mejlnotis vid ny recension och **tittar** på API-priset utan att köpa (API är ett tillägg från Plus-planen, 319 dollar/mån — Axels pengabeslut). Skickar aldrig Trustpilot-inbjudningar, kopplar aldrig Shopify, rör aldrig DNS. **Öppnar bara trustpilot.com** (Axels krav 2026-09-27 efter Loopia-incidenten 2026-09-25): aldrig Loopia — Axel klickar aktiveringslänken själv — aldrig Shopify-admin, ingen TrustBox eller kodsnutt på sajten, och steg 5 läser efteråt att butiken laddar och att NS fortfarande är ns1/ns2.loopia.se. ⚠️ **Cowork skapar aldrig konton** (mätt 2026-09-27: stannade vid registreringssidan och sa det rakt ut) — registreringen på business.trustpilot.com/signup är Axels egna klick, Cowork tar över när han skriver "inloggad". Fristående |
 
 Råfilerna att kopiera (öppna, Ctrl+A, Ctrl+C):
 
@@ -16,6 +17,7 @@ Råfilerna att kopiera (öppna, Ctrl+A, Ctrl+C):
 - https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/stonebite/cowork/2-dns.txt
 - https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/stonebite/cowork/3-rot.txt
 - https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/stonebite/cowork/7-tvister-no-dk-fi.txt
+- https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/stonebite/cowork/8-trustpilot.txt
 
 **Mellan de två:** prompt 1 slutar med att Cowork skriver ut exakt vilka
 DNS-poster Railway vill ha. Kopiera de raderna och klistra in dem i prompt 2
@@ -53,7 +55,7 @@ så att Cowork inte fyller i det formuläret åt dig.
 | Head of customer support | Mechile, alla butiker | samma rad, roll `support_chef` (tjänar VA-uppdragen direkt) |
 | Produkttestarna | Josh och Annabelle tjänar på produkttest också: **15 dollar per färdig produkt** + sin vanliga 0,4 % på de egna annonserna (bara Sverige) | `extraRoller: ["produkttest"]`, `bonus/regler.json` → produkttest |
 | Bonusbeloppen | Tvister halverade: **1 dollar besvarad, 5 dollar vunnen**. Tom inkorg 15 och svarstid 10 per vecka står kvar — men betalas en gång per vecka när **alla** butiker klarar det, inte per butik. Head of support 10 % av teamet, utan egna rader (noll medan hon är ensam) | `bonus/regler.json` |
-| Trustpilot | Inget konto, och det behövs inte: Judge.me läses redan automatiskt. Skaffar Axel ett senare: `TRUSTPILOT_API_KEY` + `TRUSTPILOT_BUSINESS_UNITS` i Environments | `bonus/kallor.mjs` |
+| Trustpilot | Inget konto 2026-09-21. **Mätt 2026-09-27:** profilen fanns men var oclaimad (2 recensioner, båda 1 stjärna, TrustScore 2,9), business unit-id `6a8fefb70fa83ca3905331e9`. Claimas gratis med `cowork/8-trustpilot.txt` (Axels val A). API-nyckeln (`TRUSTPILOT_API_KEY` + `TRUSTPILOT_BUSINESS_UNITS` i Environments, i miljön `/stonebite`-rutinen kör i) är ett betaltillägg från Plus-planen — Axels pengabeslut. Gratisvägen: notismejlen i brevlådan vi redan läser | `bonus/kallor.mjs`, `bonus/README.md` → Trustpilot |
 
 Det enda som inte står i repot är **Mechiles e-post** — den skriver Axel in
 själv när han skapar hennes konto på sidan Konton (koppla till personen

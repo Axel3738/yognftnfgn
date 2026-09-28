@@ -1,0 +1,47 @@
+{
+  "hub_id": "3cc270ab-908c-813c-94fa-d90daa9bf776",
+  "rond": "2026-09-25",
+  "bra": [
+    "Rule 1 from the 2026-09-24 review held in this round: one break-even, 566 kr, in both briefs; rule 3 held: the English column says what the Swedish says, no stray compounds.",
+    "`[ANTAL]` and `[TID]` have an owner in PD_35_1: the editor counts the knives and times the take, writes both in a comment, the uploader copies them into the headline — the rule the IBC hub asked for, applied here.",
+    "PD_34_H1 is a clean opening-only test on a KPI winner: rows 2–9 verbatim from the live ad with timestamps per row, the spark shot from the parent's own file moved to second 0.",
+    "Price 909 / 1 182 / 273 kr / 23 % and the page facts (7 hastigheter, 15° slipvinkel, 3-i-1) match (read live from the product page 2026-09-28); no price in the PD video, price rule in the static."
+  ],
+  "missat": [
+    "Rule 2 from 2026-09-24 broke again: PD_35_1 is iteration 1 of Balteslipmaskin_PD_2_1 and PD_34_H1 iteration 1 of Balteslipmaskin_PD_1, both named as new concepts (35, 34) — the family should read as `PD_2_2` and `PD_1_H2`; the parents' old prefix does not change the number.",
+    "`Vässad på 10 sekunder` (PD_34_H1 hook and rule `Winning DNA 2 … the product's own measured claim`) is not on the product page (page: 7 hastigheter, 15°) — it lives on the account's live ad only. Time one take and write the measurement into the hub's Feedback row, or call it inherited, never \"the product's own measured claim\".",
+    "Both COPY CARDs carry the parent's old primary text: opens on a question (`Trötta på slöa knivar …?`), ends on `Beställ din idag` — the copy rules that bind the creative bind the primary text; rewrite it declarative and without `idag`.",
+    "PD_34_H1 uses the same source seconds (OUR AD 0:06–0:07, the sparks) at 0:00 and again at 0:06 in row 4 — the viewer sees the identical shot twice in six seconds; pick another spark take for row 4 or say the repeat is intended."
+  ],
+  "regler": [
+    "An iteration keeps the parent's number and bumps the variant — `PD_2_2` for the PD_2_1 static, `PD_1_H2` for the PD_1 hook test — even when the parent carries the old `Balteslipmaskin_` prefix; the number is the family.",
+    "`10 sekunder` is written only with its measurement: time one take, write the seconds in this Feedback row, and cite that — never \"the product's own measured claim\" from an ad.",
+    "The COPY CARD's primary text follows the copy rules like every other line: declarative opening, no `idag` — the parent's old text is rewritten, not pasted."
+  ],
+  "rader": [
+    {
+      "namn": "Beltgrinder_PD_35_1",
+      "fel": [],
+      "anmarkningar": [
+        "Named as a new concept (35) though it is iteration 1 of Balteslipmaskin_PD_2_1 — `PD_2_2`.",
+        "Primary text is the parent's old copy (question opener, `Beställ din idag`)."
+      ],
+      "bra": [
+        "Placeholders with an owner; the layout, band and button held; sub-line adds no unmeasured number."
+      ]
+    },
+    {
+      "namn": "Beltgrinder_PD_34_H1",
+      "fel": [],
+      "anmarkningar": [
+        "the ad text carries kronor amounts but the brief states no price rule (\"Price exactly … kr\")",
+        "Named as a new concept (34) though it is iteration 1 of Balteslipmaskin_PD_1 — `PD_1_H2`.",
+        "`10 sekunder` is not on the page — inherited from the live ad, say so; time a take once.",
+        "Row 1 and row 4 use the same source seconds (0:06–0:07) — the identical shot twice within six seconds."
+      ],
+      "bra": [
+        "Body verbatim with timestamps per row; the proven spark shot moved to second 0 — one variable."
+      ]
+    }
+  ]
+}

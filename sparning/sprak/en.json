@@ -58,6 +58,7 @@
     "Paketet har kommit till en terminal i ditt land": "The parcel has arrived at a facility in your country",
     "Paketet har kommit till terminalen": "The parcel has arrived at the facility",
     "Paketet har kommit till distributionsterminalen": "The parcel has arrived at the delivery depot",
+    "Paketet är på väg till distributionsterminalen": "The parcel is on its way to the delivery depot",
     "Paketet förbereds för leverans": "The parcel is being prepared for delivery",
     "Paketet är inlagt för utkörning": "The parcel has been loaded for delivery",
     "Paketet är ute för leverans": "The parcel is out for delivery",
@@ -164,6 +165,7 @@
     "Paketet har sorterats fel och leveransdatumet uppdateras": "The parcel was missorted and the delivery date is being updated",
     "Ett sms om paketet har skickats till dig": "A text message about the parcel has been sent to you",
     "Fraktbolaget har hämtat paketet i paketboxen": "The carrier has collected the parcel from the locker",
+    "Fraktbolaget har hämtat paketet och det är på väg till terminalen": "The carrier has collected the parcel and it is on its way to the facility",
     "Ombudet förlänger tiden du har på dig att hämta paketet": "The pickup point is extending the time you have to collect the parcel",
     "Vi kunde inte skicka avin till din mejladress": "We could not send the notification to your email address",
     "Du har hämtat paketet hos ombudet": "You have collected the parcel from the pickup point",
@@ -180,6 +182,7 @@
     "Paketet levereras i natt. Märk brevlådan och dörren med ditt fullständiga namn — budet ringer inte på, och du får ett sms i morgon bitti när paketet är levererat": "Your parcel is being delivered tonight. Mark your mailbox and door with your full name — the courier will not ring the bell, and you will get a text tomorrow morning once it has been delivered",
     "Paketet är lastat för huvudtransporten": "The parcel has been loaded for the main transport",
     "Fraktbolaget har tagit emot paketet för transport": "The carrier has received the parcel for transport",
+    "Fraktbolaget har tagit emot paketet": "The carrier has received the parcel",
     "Paketet har kommit till flygplatsen": "The parcel has arrived at the airport",
     "Paketet har lämnat flygplatsen": "The parcel has left the airport",
     "Paketet fick inte plats i brevlådan och den överenskomna leveransplatsen hittades inte. Det är på väg till ett ombud nära dig och du får besked när det kan hämtas, oftast inom en arbetsdag": "The parcel did not fit in the mailbox and the agreed delivery spot could not be found. It is on its way to a pickup point near you, and you will be notified when it can be collected, usually within one business day",
@@ -194,6 +197,8 @@
     "Två saker som passar samma husvagn eller husbil. Skickas som en egen beställning, med fri frakt och 14 dagars ångerrätt som vanligt.": "Two items that suit the same caravan or motorhome. Sent as a separate order, with free delivery and the usual 14-day right of withdrawal.",
     "{{pris}} för dig som beställt hos oss": "{{pris}} for you who ordered from us",
     "Lägg till för {{pris}}": "Add for {{pris}}",
-    "Priset gäller dig som beställt hos oss och läggs på av sig själv i kassan.": "This price applies to you as a customer of ours and is added automatically at checkout."
+    "Priset gäller dig som beställt hos oss och läggs på av sig själv i kassan.": "This price applies to you as a customer of ours and is added automatically at checkout.",
+    "Paketet är på väg till ombud": "The parcel is on its way to a pickup point",
+    "Vi planerar ett nytt hemleveransförsök till dig": "We are scheduling another home delivery attempt"
   }
 }

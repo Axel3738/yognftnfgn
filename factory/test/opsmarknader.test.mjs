@@ -30,6 +30,15 @@ test('USA ligger i Magiborsten UK, SE/NO/DK i OPS-kontot — kontot är per mark
   assert.equal(OPS_MARKNADER.US.locale, 'en');
   assert.equal(OPS_MARKNADER.US.valuta, 'USD');
   assert.deepEqual(OPS_MARKNADER.US.geo, ['US']);
+  // 2026-09-27: USA kör bara flödet på Facebook + Instagram (Axels order
+  // efter natten då Instagram Stories tog 16 654 kr utan ett köp). Fältet
+  // spreadas in i adsetets targeting av kampanj.mjs — de andra marknaderna
+  // har inget fält och får Metas standardplaceringar som förut.
+  assert.deepEqual(OPS_MARKNADER.US.placeringar, { publisher_platforms: ['facebook', 'instagram'], facebook_positions: ['feed'], instagram_positions: ['stream'] });
+  for (const kod of ['SE', 'NO', 'DK']) assert.equal(OPS_MARKNADER[kod].placeringar, undefined, `${kod} ska inte bära placeringar`);
+  const targeting = { geo_locations: { countries: OPS_MARKNADER.US.geo }, ...(OPS_MARKNADER.US.placeringar ?? {}) };
+  assert.deepEqual(targeting.facebook_positions, ['feed']);
+  assert.ok(!('facebook_positions' in { ...(OPS_MARKNADER.NO.placeringar ?? {}) }));
   // Danmark 2026-09-20: samma konto som SE och NO trots att kontot HETER
   // "MagiBorsten DK" — namnet är historiskt, kontot är OPS gemensamma.
   assert.equal(kontoFor('DK'), '915422744950975');

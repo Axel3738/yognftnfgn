@@ -1,0 +1,413 @@
+{
+  "marknad": "NO",
+  "datum": "2026-09-28",
+  "skapad": "2026-09-28T13:25:15.327Z",
+  "kvot": {
+    "heygen": null,
+    "kie": 9873.2
+  },
+  "jobb": [
+    {
+      "notion": {
+        "id": "3e5270ab908c813280b1ff725230d034",
+        "namn": "Solcellslampa_PD_3_H4",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Solar motion sensor light creative hub",
+        "url": "https://app.notion.com/p/Solcellslampa_PD_3_H4-3e5270ab908c813280b1ff725230d034",
+        "kalla": "notion-rest"
+      },
+      "namn": "Solcellslampa_PD_3_H4",
+      "status": "HOPPA",
+      "skal": "prefixet \"Solcellslampa\" saknar koppling i market-expansion/no/produkter.json — lägg till raden (SE-kampanj: Solcellslampan med Rörelsesensor 210 LED | BE ROAS 1.62 | Launch 2026-09-17)",
+      "se": {
+        "annonsId": "120250401295590291",
+        "status": "ACTIVE",
+        "kampanj": "Solcellslampan med Rörelsesensor 210 LED | BE ROAS 1.62 | Launch 2026-09-17",
+        "kampanjId": "120250253948980291",
+        "adset": "Solcellslampan 210 LED | PD | 2026-09-17"
+      },
+      "prefix": "Solcellslampa",
+      "K": "PD",
+      "nr": "3",
+      "hook": "H4",
+      "typ": "video"
+    },
+    {
+      "notion": {
+        "id": "3e5270ab908c818d87a1f9d478fe932a",
+        "namn": "Solcellslampa_PD_3_H3",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Solar motion sensor light creative hub",
+        "url": "https://app.notion.com/p/Solcellslampa_PD_3_H3-3e5270ab908c818d87a1f9d478fe932a",
+        "kalla": "notion-rest"
+      },
+      "namn": "Solcellslampa_PD_3_H3",
+      "status": "HOPPA",
+      "skal": "prefixet \"Solcellslampa\" saknar koppling i market-expansion/no/produkter.json — lägg till raden (SE-kampanj: Solcellslampan med Rörelsesensor 210 LED | BE ROAS 1.62 | Launch 2026-09-17)",
+      "se": {
+        "annonsId": "120250401261480291",
+        "status": "ACTIVE",
+        "kampanj": "Solcellslampan med Rörelsesensor 210 LED | BE ROAS 1.62 | Launch 2026-09-17",
+        "kampanjId": "120250253948980291",
+        "adset": "Solcellslampan 210 LED | PD | 2026-09-17"
+      },
+      "prefix": "Solcellslampa",
+      "K": "PD",
+      "nr": "3",
+      "hook": "H3",
+      "typ": "video"
+    },
+    {
+      "notion": {
+        "id": "3e5270ab908c81db990eeba4ae83cffd",
+        "namn": "Solcellslampa_PD_3_H2",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Solar motion sensor light creative hub",
+        "url": "https://app.notion.com/p/Solcellslampa_PD_3_H2-3e5270ab908c81db990eeba4ae83cffd",
+        "kalla": "notion-rest"
+      },
+      "namn": "Solcellslampa_PD_3_H2",
+      "status": "HOPPA",
+      "skal": "prefixet \"Solcellslampa\" saknar koppling i market-expansion/no/produkter.json — lägg till raden (SE-kampanj: Solcellslampan med Rörelsesensor 210 LED | BE ROAS 1.62 | Launch 2026-09-17)",
+      "se": {
+        "annonsId": "120250401226420291",
+        "status": "ACTIVE",
+        "kampanj": "Solcellslampan med Rörelsesensor 210 LED | BE ROAS 1.62 | Launch 2026-09-17",
+        "kampanjId": "120250253948980291",
+        "adset": "Solcellslampan 210 LED | PD | 2026-09-17"
+      },
+      "prefix": "Solcellslampa",
+      "K": "PD",
+      "nr": "3",
+      "hook": "H2",
+      "typ": "video"
+    },
+    {
+      "notion": {
+        "id": "3e8270ab908c812488c0f24d85dd8f97",
+        "namn": "Taljset_PD_5_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Whittling set creative hub",
+        "url": "https://app.notion.com/p/Taljset_PD_5_H1-3e8270ab908c812488c0f24d85dd8f97",
+        "kalla": "notion-rest"
+      },
+      "namn": "Taljset_PD_5_H1",
+      "status": "HOPPA",
+      "skal": "prefixet \"Taljset\" saknar koppling i market-expansion/no/produkter.json — lägg till raden (SE-kampanj: Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24)",
+      "se": {
+        "annonsId": "120250401328270291",
+        "status": "ACTIVE",
+        "kampanj": "Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24",
+        "kampanjId": "120250349169940291",
+        "adset": "Täljsetet 30 Delar | PD | 2026-09-24"
+      },
+      "prefix": "Taljset",
+      "K": "PD",
+      "nr": "5",
+      "hook": "H1",
+      "typ": "video"
+    },
+    {
+      "notion": {
+        "id": "3e8270ab908c815dba0bd7ce71eca760",
+        "namn": "Taljset_PD_4_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Whittling set creative hub",
+        "url": "https://app.notion.com/p/Taljset_PD_4_H1-3e8270ab908c815dba0bd7ce71eca760",
+        "kalla": "notion-rest"
+      },
+      "namn": "Taljset_PD_4_H1",
+      "status": "HOPPA",
+      "skal": "prefixet \"Taljset\" saknar koppling i market-expansion/no/produkter.json — lägg till raden (SE-kampanj: Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24)",
+      "se": {
+        "annonsId": "120250401367570291",
+        "status": "ACTIVE",
+        "kampanj": "Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24",
+        "kampanjId": "120250349169940291",
+        "adset": "Täljsetet 30 Delar | PD | 2026-09-24"
+      },
+      "prefix": "Taljset",
+      "K": "PD",
+      "nr": "4",
+      "hook": "H1",
+      "typ": "video"
+    },
+    {
+      "notion": {
+        "id": "3e8270ab908c8175af9fe4c0d2c2b5ab",
+        "namn": "Taljset_SP_4_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Whittling set creative hub",
+        "url": "https://app.notion.com/p/Taljset_SP_4_H1-3e8270ab908c8175af9fe4c0d2c2b5ab",
+        "kalla": "notion-rest"
+      },
+      "namn": "Taljset_SP_4_H1",
+      "status": "HOPPA",
+      "skal": "prefixet \"Taljset\" saknar koppling i market-expansion/no/produkter.json — lägg till raden (SE-kampanj: Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24)",
+      "se": {
+        "annonsId": "120250401409490291",
+        "status": "ACTIVE",
+        "kampanj": "Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24",
+        "kampanjId": "120250349169940291",
+        "adset": "Täljsetet 30 Delar | SP | 2026-09-24"
+      },
+      "prefix": "Taljset",
+      "K": "SP",
+      "nr": "4",
+      "hook": "H1",
+      "typ": "video"
+    },
+    {
+      "notion": {
+        "id": "3e8270ab908c812a9de8c81dcaf97bda",
+        "namn": "Taljset_SO_1_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Whittling set creative hub",
+        "url": "https://app.notion.com/p/Taljset_SO_1_H1-3e8270ab908c812a9de8c81dcaf97bda",
+        "kalla": "notion-rest"
+      },
+      "namn": "Taljset_SO_1_H1",
+      "status": "HOPPA",
+      "skal": "prefixet \"Taljset\" saknar koppling i market-expansion/no/produkter.json — lägg till raden (SE-kampanj: Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24)",
+      "se": {
+        "annonsId": "120250401482270291",
+        "status": "ACTIVE",
+        "kampanj": "Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24",
+        "kampanjId": "120250349169940291",
+        "adset": "SO | Notionrunda 2026-09-28"
+      },
+      "prefix": "Taljset",
+      "K": "SO",
+      "nr": "1",
+      "hook": "H1",
+      "typ": "video"
+    },
+    {
+      "notion": {
+        "id": "3e8270ab908c81ebbd93d7e592ba885f",
+        "namn": "Taljset_OB_1_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Whittling set creative hub",
+        "url": "https://app.notion.com/p/Taljset_OB_1_H1-3e8270ab908c81ebbd93d7e592ba885f",
+        "kalla": "notion-rest"
+      },
+      "namn": "Taljset_OB_1_H1",
+      "status": "HOPPA",
+      "skal": "prefixet \"Taljset\" saknar koppling i market-expansion/no/produkter.json — lägg till raden (SE-kampanj: Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24)",
+      "se": {
+        "annonsId": "120250401514290291",
+        "status": "ACTIVE",
+        "kampanj": "Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24",
+        "kampanjId": "120250349169940291",
+        "adset": "OB | Notionrunda 2026-09-28"
+      },
+      "prefix": "Taljset",
+      "K": "OB",
+      "nr": "1",
+      "hook": "H1",
+      "typ": "video"
+    },
+    {
+      "notion": {
+        "id": "3e8270ab908c81ec983bfeb153959f8c",
+        "namn": "Taljset_GT_4_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Whittling set creative hub",
+        "url": "https://app.notion.com/p/Taljset_GT_4_H1-3e8270ab908c81ec983bfeb153959f8c",
+        "kalla": "notion-rest"
+      },
+      "namn": "Taljset_GT_4_H1",
+      "status": "HOPPA",
+      "skal": "prefixet \"Taljset\" saknar koppling i market-expansion/no/produkter.json — lägg till raden (SE-kampanj: Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24)",
+      "se": {
+        "annonsId": "120250401540160291",
+        "status": "ACTIVE",
+        "kampanj": "Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24",
+        "kampanjId": "120250349169940291",
+        "adset": "GT | Notionrunda 2026-09-28"
+      },
+      "prefix": "Taljset",
+      "K": "GT",
+      "nr": "4",
+      "hook": "H1",
+      "typ": "video"
+    },
+    {
+      "notion": {
+        "id": "3e8270ab908c8111a675c0c43c72d769",
+        "namn": "Taljset_PD_1_H4",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Whittling set creative hub",
+        "url": "https://app.notion.com/p/Taljset_PD_1_H4-3e8270ab908c8111a675c0c43c72d769",
+        "kalla": "notion-rest"
+      },
+      "namn": "Taljset_PD_1_H4",
+      "status": "HOPPA",
+      "skal": "prefixet \"Taljset\" saknar koppling i market-expansion/no/produkter.json — lägg till raden (SE-kampanj: Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24)",
+      "se": {
+        "annonsId": "120250401560050291",
+        "status": "ACTIVE",
+        "kampanj": "Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24",
+        "kampanjId": "120250349169940291",
+        "adset": "Täljsetet 30 Delar | PD | 2026-09-24"
+      },
+      "prefix": "Taljset",
+      "K": "PD",
+      "nr": "1",
+      "hook": "H4",
+      "typ": "video"
+    },
+    {
+      "notion": {
+        "id": "3e8270ab908c818da27cce60eb4270b3",
+        "namn": "Taljset_PD_1_H6",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Whittling set creative hub",
+        "url": "https://app.notion.com/p/Taljset_PD_1_H6-3e8270ab908c818da27cce60eb4270b3",
+        "kalla": "notion-rest"
+      },
+      "namn": "Taljset_PD_1_H6",
+      "status": "HOPPA",
+      "skal": "prefixet \"Taljset\" saknar koppling i market-expansion/no/produkter.json — lägg till raden (SE-kampanj: Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24)",
+      "se": {
+        "annonsId": "120250401659310291",
+        "status": "ACTIVE",
+        "kampanj": "Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24",
+        "kampanjId": "120250349169940291",
+        "adset": "Täljsetet 30 Delar | PD | 2026-09-24"
+      },
+      "prefix": "Taljset",
+      "K": "PD",
+      "nr": "1",
+      "hook": "H6",
+      "typ": "video"
+    },
+    {
+      "notion": {
+        "id": "3e8270ab908c81e79285f3a16a8ec2b0",
+        "namn": "Taljset_PD_1_H5",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Whittling set creative hub",
+        "url": "https://app.notion.com/p/Taljset_PD_1_H5-3e8270ab908c81e79285f3a16a8ec2b0",
+        "kalla": "notion-rest"
+      },
+      "namn": "Taljset_PD_1_H5",
+      "status": "HOPPA",
+      "skal": "prefixet \"Taljset\" saknar koppling i market-expansion/no/produkter.json — lägg till raden (SE-kampanj: Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24)",
+      "se": {
+        "annonsId": "120250401628530291",
+        "status": "ACTIVE",
+        "kampanj": "Täljsetet 30 Delar | BE ROAS 1.63 | Launch 2026-09-24",
+        "kampanjId": "120250349169940291",
+        "adset": "Täljsetet 30 Delar | PD | 2026-09-24"
+      },
+      "prefix": "Taljset",
+      "K": "PD",
+      "nr": "1",
+      "hook": "H5",
+      "typ": "video"
+    },
+    {
+      "notion": {
+        "id": "3e8270ab908c8149a05ad8ce9417d5a9",
+        "namn": "Termoskydd_CS_13_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Termoskyddet för Husbil",
+        "url": "https://app.notion.com/p/Termoskydd_CS_13_1-3e8270ab908c8149a05ad8ce9417d5a9",
+        "kalla": "notion-rest"
+      },
+      "namn": "Termoskydd_CS_13_1",
+      "status": "HOPPA",
+      "skal": "\"Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12\" är PAUSED med 4494.59 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250401684800291",
+        "status": "ACTIVE",
+        "kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+        "kampanjId": "120250175763810291",
+        "adset": "Termoskydd Husbil | CS | 2026-09-11"
+      },
+      "prefix": "Termoskydd",
+      "K": "CS",
+      "nr": "13",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Termoskydd",
+        "se_kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+        "no_prefix": "Frontrutetrekk",
+        "adset_prefix": "Frontrutetrekk til Bobil NO",
+        "campaign_id": "120252202507830233",
+        "link": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252202507830233",
+        "kampanjNamn": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+        "utfall": "AVVECKLAD",
+        "spend": 4494.59,
+        "adsetNamn": "Frontrutetrekk til Bobil NO - CS",
+        "annonsNamn": "Frontrutetrekk_NO_CS_13_1",
+        "link": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende",
+        "prefix": "Frontrutetrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e8270ab908c81249d55db4cb3a996c1",
+        "namn": "Termoskydd_RI_2_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Termoskyddet för Husbil",
+        "url": "https://app.notion.com/p/Termoskydd_RI_2_1-3e8270ab908c81249d55db4cb3a996c1",
+        "kalla": "notion-rest"
+      },
+      "namn": "Termoskydd_RI_2_1",
+      "status": "HOPPA",
+      "skal": "\"Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12\" är PAUSED med 4494.59 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250401700970291",
+        "status": "ACTIVE",
+        "kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+        "kampanjId": "120250175763810291",
+        "adset": "RI | Notionrunda 2026-09-20"
+      },
+      "prefix": "Termoskydd",
+      "K": "RI",
+      "nr": "2",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Termoskydd",
+        "se_kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+        "no_prefix": "Frontrutetrekk",
+        "adset_prefix": "Frontrutetrekk til Bobil NO",
+        "campaign_id": "120252202507830233",
+        "link": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252202507830233",
+        "kampanjNamn": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+        "utfall": "AVVECKLAD",
+        "spend": 4494.59,
+        "adsetNamn": "Frontrutetrekk til Bobil NO - RI",
+        "annonsNamn": "Frontrutetrekk_NO_RI_2_1",
+        "link": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende",
+        "prefix": "Frontrutetrekk"
+      }
+    }
+  ]
+}

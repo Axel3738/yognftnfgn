@@ -1,0 +1,96 @@
+{
+  "hub_id": "7ec270ab-908c-82f6-a2a8-0153159b20fa",
+  "rond": "2026-09-25",
+  "bra": [
+    "All three rules from the 2026-09-24 review held: CPA 463 kr stands against break-even 715 kr with its derivation named (AOV 1 165 kr, break-even ROAS 1,63) in every Why; every video opener is one clause readable in three seconds; all four videos carry a `NEW FOOTAGE` block at the top with a fallback and never wait in Draft for it.",
+    "The round works the measured objection matrix (44 comments on SP_4_H1: `fukt` 34 %, `blåser` 7 %, `täcker` 2 %) with a demo and a static per objection, each declared as a format pair against the live told version (OB_4_H1, OB_1_H1, OB_3_H1) — the concession never calls the buyer wrong.",
+    "Strap facts (`alla fyra sidor`, 2,5 m, `krok i nederkant`, two 10,5 m ratchet straps included), `silverbelagd 210D-oxfordväv`, `Ett helöverdrag … skaver mot lacken`, `Taket är det du aldrig ser` and price 1 129 / 1 469 kr with nine sizes are all the page's own (read live from the product page 2026-09-28).",
+    "`vattentät` is avoided as a bare word even though the page uses it, and `dragsko` / `förvaringspåse` stay banned — the 2026-09-19 rules are now habit.",
+    "Sources per row on delivered files (SP_4_H1.mp4, OUR AD OB_3_H1 timestamps, CDN) and the stock-clip rows say `never this product`."
+  ],
+  "missat": [
+    "Takoverdrag_OB_6_H1 says the cover `stannar vid takkanten, hela vägen runt vagnen` and the row-3 picture is `the cover's edge holding at the roofline … nothing hanging below it` — the page says the edge hangs 30–40 cm down over the sides, and that is why the roof/wall seam is covered. The line contradicts the product; the editor would frame away the very edge the page sells.",
+    "Two break-evens for one product: this hub writes 715 kr (AOV 1 165 / 1,63 from the campaign name), CaraShell's dna.md carries 693 kr (price 1 129 − cost 436). Both derivations are honest and both are written down — but the mirror hub and the source hub must judge on the same line.",
+    "OB_9_H1 and OB_7_H1 open on a stock clip `sourced by the editor from the stock library` — no library, licence or fallback still is named beyond `a stock still`; a source the editor has to invent is not a source.",
+    "OB_12_1, OB_10_1 and OB_8_1 were already live before this review (Approved / CaraShell EN ready) — nothing here pauses them; the notes are for the next version."
+  ],
+  "regler": [
+    "The edge hangs 30–40 cm down over the sides — the page's own line and the reason the roof/wall seam is covered: never `stannar vid takkanten`, never `nothing hanging below it`; write `bara taket och kanten` or show the edge.",
+    "One break-even for the product, used in both hubs: 715 kr (AOV-based) or 693 kr (price-based, CaraShell dna.md) — pick one, write its derivation once in this Feedback row, and judge every CPA against it.",
+    "A stock clip is a source only when the brief says where it comes from (library, licence) and names the fallback still — `sourced by the editor` is not a source."
+  ],
+  "rader": [
+    {
+      "namn": "Takoverdrag_OB_12_1",
+      "fel": [],
+      "anmarkningar": [
+        "Already live (Approved). For the next version: the break-even is 715 here and 693 in CaraShell's dna.md — settle it."
+      ],
+      "bra": [
+        "Grants the full-tent owner's point in the first sentence and answers with the page's own headline; the still shows how little is covered on purpose."
+      ]
+    },
+    {
+      "namn": "Takoverdrag_OB_11_H1",
+      "fel": [],
+      "anmarkningar": [
+        "Clean. The pour is sourced from OUR AD OB_3_H1 first, re-shoot as fallback — exactly right."
+      ],
+      "bra": [
+        "The demo of the water objection without the word `vattentät`; one-clause hook; NEW FOOTAGE block at the top."
+      ]
+    },
+    {
+      "namn": "Takoverdrag_OB_10_1",
+      "fel": [],
+      "anmarkningar": [
+        "Already live (CaraShell EN ready). Label rewritten from a competitor-signable line before it went out — the rule from 2026-09-24 applied."
+      ],
+      "bra": [
+        "A frame from the live pour as the still; the page's own mechanism line as the headline."
+      ]
+    },
+    {
+      "namn": "Takoverdrag_OB_9_H1",
+      "fel": [],
+      "anmarkningar": [
+        "Row 1 stock clip: name the library and the fallback still; `sourced by the editor` is not a source."
+      ],
+      "bra": [
+        "Opens on the doubter's scene on a generic tarp, never this product; the hook being fastened is the page's own mechanism."
+      ]
+    },
+    {
+      "namn": "Takoverdrag_OB_8_1",
+      "fel": [],
+      "anmarkningar": [
+        "Already live (CaraShell EN ready). Good catch that tak-spanne.jpg is a supplier pack shot — the frame from SP_4_H1 is the right fallback."
+      ],
+      "bra": [
+        "The fastening as one sharp still, the page's strap facts as text."
+      ]
+    },
+    {
+      "namn": "Takoverdrag_OB_7_H1",
+      "fel": [],
+      "anmarkningar": [
+        "Rows 1–2 stock clip: name the library and the fallback still."
+      ],
+      "bra": [
+        "Side-by-side that answers the comparison error the commenters actually make; the left half is never this product."
+      ]
+    },
+    {
+      "namn": "Takoverdrag_OB_6_H1",
+      "fel": [
+        "Row 3 line `Överdraget stannar vid takkanten, hela vägen runt vagnen.` and the picture note `nothing hanging below it` contradict the product page: the edge hangs 30–40 cm down over the sides so the roof/wall seam is covered. Do not frame the edge away — show it hanging over the side, and use the alt line for row 3 (`Sidoväggen, fönstret och dörren syns hela varvet runt.`) or `Bara taket och kanten.`"
+      ],
+      "anmarkningar": [
+        "The lap is NEW FOOTAGE with a fallback — right; `duken` for the cover is loose next to `överdraget` everywhere else."
+      ],
+      "bra": [
+        "A continuous lap is the one format that shows the open sides without arguing; the roof-hatch line was struck because the page does not say it."
+      ]
+    }
+  ]
+}
