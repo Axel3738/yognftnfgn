@@ -202,8 +202,12 @@ arbetshypoteser tills kommentarerna går att läsa.
    när en rond har lärdomar att peka på.
 5. **Katarina** (Axels två videor 24/9, `09-17 UGC`) är den första nya
    kreatören efter Nathalie — 85–89 kr var på tre dygn, ett köp. Etikett 30/9.
-6. **Norge** (2026-09-27): butiken är klar på /nb med NOK och fri frakt.
-   Nästa steg är Axels: budget för `MATSTRUMP_NO_SALES`, sedan översätts
-   SE-vinnarna (Nathalie-serien) till norska med `translate-batch.mjs
-   --marknad NO`. Break-even i Norge går inte att räkna förrän den nordiska
-   landade kostnaden finns i `matstrumpor/cogs.json`.
+6. **Norge** (2026-09-27): butiken är klar på /nb med NOK och fri frakt, och
+   Axel satte budgeten **1 000 kr/dag** samma dag. Kampanjen `MATSTRUMP_NO_SALES`
+   och de fyra UGC-videorna (Nathalie, Katarina ×2, Sofie H1) är förberedda i
+   `matstrumpor/marknader/norge/` men **inget är byggt i kontot**: token:en får
+   inte skriva i nya kungen och HeyGen saknar api-krediter (båda mätta samma
+   dag, båda Axels klick). Körordningen står i `norge/README.md`. Break-even i
+   Norge går inte att räkna förrän den nordiska landade kostnaden finns i
+   `matstrumpor/cogs.json` (frågan till leverantören:
+   `matstrumpor/marknader/LEVERANTOR-FRAGA.md`).

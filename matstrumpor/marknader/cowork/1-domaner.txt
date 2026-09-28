@@ -1,0 +1,16 @@
+Uppdrag: koppla tre domäner till Shopify-butiken Matstrumpor (1r46tp-qx.myshopify.com, admin.shopify.com/store/1r46tp-qx) så att de kan bindas till varsin marknad. Rör ALDRIG matstrumpor.se (huvuddomänen), inga MX/SPF/DKIM-poster, inga namnservrar.
+
+Domänerna (köpta/ägda hos Loopia):
+1. matstrumpor.no  → marknaden Norge
+2. matstrumpor.eu  → marknaden Europa
+3. matstrumpor.com → marknaden "USA, UK, Australien, Kanada, Nya Zeeland" (finns redan hos Loopia)
+
+Steg per domän:
+A. Shopify admin → Settings (Inställningar) → Domains (Domäner) → "Connect existing domain" (Anslut befintlig domän) → skriv domänen → Next. Shopify visar vilka DNS-poster som krävs: en A-post för roten (@) till 23.227.38.65 och en CNAME för www till shops.myshopify.com.
+B. Loopia kundzon (customerzone.loopia.se) → Domäner → domänen → DNS-inställningar: lägg in A @ = 23.227.38.65 och CNAME www = shops.myshopify.com. Ta bort Loopias standard-A-poster på @ och www om de finns (parkeringssidan). Rör inget annat.
+C. Tillbaka i Shopify → Domains → "Verify connection" tills den står som Connected. SSL utfärdas av Shopify inom en timme.
+D. ⚠️ Byt INTE primärdomän. matstrumpor.se ska fortsätta vara "Primary". Sätt INTE "redirect to primary" på de nya domänerna — de ska kunna kopplas till marknader (det gör vi via API efteråt, du behöver inte göra det).
+
+När alla tre står som Connected i Shopify: skriv "Domäner klara" i chatten med Claude, så binder Claude dem till marknaderna (webPresenceCreate + marketUpdate) och läser tillbaka som kund på varje domän.
+
+Rapportera per domän: Connected ja/nej, vilka DNS-poster som lades in, vilka som togs bort, och eventuella varningar Shopify visade.

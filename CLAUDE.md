@@ -90,11 +90,46 @@ adversariellt (`output/underlag-<locale>.json` är minnet). Temats hårdkodade
 svenska (paketväljaren, trust-raden, "Verifierat köp", pris- och datumformatet
 i `ms-cro.js`) får locale-grenar av `bygg.mjs --steg tema`; löftena "framme
 till fars dag/jul" visas bara på svenska. `matstrumpor.no` är INTE registrerad
-(Axels klick hos Loopia) — /nb fungerar utan den. COGS per marknad i
+(Axels klick hos Loopia) — /nb fungerar utan den. **Hela Europa förberett
+2026-09-27 kväll (Axels `/goal`: "hela Europa redo … worldwide redo"):**
+`marknader/konfig.json` bär Europa-marknaden med 29 länder (EU 27 utom SE + IS,
+LI, CH), de sju nya språken **de, fr, nl, es, it, pl, pt** är översatta (28
+sonnet-delar, varje del granskad av en skeptisk granskare, C+D parvis; alla
+fällda fynd inlagda — `marknader/README.md` → "Översättningarna till de sju
+språken") och ligger klara i `output/underlag-<locale>.json`; priser "lite
+dyrare worldwide" (Axels ord): NOK 449, EUR 44.90, USD 69 för 5-paret. ✅
+**Europa LIVE 2026-09-27 kväll efter Axels "ok"**: 27 länder tillagda, sju
+språk aktiverade, registrerade (157–159 texter var, 0 avviker), publicerade och
+lästa som kund i 19 länder (`marknader/README.md` → "Läget … kväll"). ⚠️
+Shopify vägrar locale `pt` — portugisiskan är **`pt-PT`** (URL-mappen `/pt`).
+Spårningssidan får de sju språken (`sparning/sprak/*.json`, `sprak_extra`)
+men rutinen bygger från `main`. Axels beslut samma kväll: butiken heter
+**Matstrumpor** i alla länder och annonserna bär raden "svenskt varumärke"
+(CaraShell-principen); alla kampanjer 1 000 kr/dag men ⛔ **ingen aktiveras
+förrän Axel granskat annonserna**. HeyGen-nyckeln sitter på
+`subscriptions@stonebite.org` med 0,10 USD i API-plånboken och ingen
+prenumeration — därför "Insufficient credit". Domänerna `.no`/`.eu` köper Axel,
+`.com` finns; kopplingen är `marknader/cowork/1-domaner.txt`. Shopifys
+opt-out-formulär ("Dina integritetsval") bär kundtexten i `data-*`-attribut —
+nb/da hade svenska knappar live till 2026-09-27 kväll, rättat och tillbakaläst.
+COGS per marknad i
 `matstrumpor/cogs.json` (`kor.mjs --ekonomi --marknad US`): Norden saknar
-kostnad, donut/pizza/hamburgare saknar Cost per item i Shopify. ⚠️ Annonserna
-utomlands är ett eget spår som INTE är byggt: Norge först, Axel sätter budget,
-inget annonskonto rörs innan dess — planen står i README:n. ⚠️ Shopify mätt
+kostnad, donut/pizza/hamburgare saknar Cost per item i Shopify. **Annonserna
+utomlands: Norge först, Axels budget 1 000 kr/dag (2026-09-27), kampanjen
+`MATSTRUMP_NO_SALES` i nya kungen.** ✅ **Token:en SKRIVER i nya kungen sedan
+2026-09-27 ~15:30 CEST** (Axel gav rollen; före det `Permissions error …
+ads_management`). `matstrumpor/marknader/annonser/bygg.mjs --alla --skarpt`
+byggde samma eftermiddag **fem kampanjer, alla PAUSED**: NO (Axels 1 000 kr/dag),
+DK, FI, US och WW (NO+DK+FI+US+GB+AU+CA+NZ, engelska, `/en/` utan `?country=`) —
+de fyra sista med PLATSHÅLLARBUDGET 1 000 kr/dag som `--aktivera` vägrar tills
+Axel sagt en budget. Id:n och regler i `marknader/README.md` → Kampanjerna.
+Materialet: `marknader/heygen/` (Nathalie + Sofie H1/H2 → nb/en/da/fi; ⛔ **Katarinas
+UGC får aldrig lämna Sverige**, Axel 2026-09-27) och `marknader/annonser/<KOD>.json`
+(copy av sonnet). ⛔ **HeyGen stoppar:** `Insufficient credit. This operation
+requires 'api' credits` på varje proofread-session (mätt två gånger 2026-09-27)
+medan kvoten säger `api: 6, plan_credit: 2000` — studiokrediterna är inte
+API-krediter; Axel köper API-krediter på app.heygen.com. Inga annonser ligger i
+kampanjerna, inget spenderar. ⚠️ Shopify mätt
 2026-09-27: `translationsRegister` kan svara `INTERNAL_SERVER_ERROR` en stund
 (kör om), och en batchläsning av temats översättningar kan svara med FEL
 språk (`--steg kontroll` läser om ensamt) — lita aldrig på en enda läsning.
@@ -400,6 +435,12 @@ Järnreglerna (kostar pengar eller förtroende att bryta):
    Är källan nästan bara musik ska den inte översättas alls — HeyGen har ingen röst
    att klona och hittar på en.
 4. Captions är opt-in; max 2 rader. Komprimera aldrig hårdare än 30 MiB-gränsen kräver.
+5. **Axels regel 2026-09-27: UGC-videor (riktiga människor, t.ex. Nathalie, Katarina)
+   översätts ALLTID med HeyGens dyraste version** — full videoöversättning med
+   röstklon + lip-sync, aldrig den billigare "audio only"-dubben. **Egna
+   HeyGen-videor (våra AI-avatarer) översätts inte alls — de görs om direkt på
+   målspråket i HeyGen** ("annars kör vi bara våra egna HeyGen"). En avatarvideo
+   genom translate-pipelinen är alltså fel väg.
 
 Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 
