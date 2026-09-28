@@ -133,13 +133,13 @@ facit; en första förhandsvisning med gissade id:n gav 23 träffar av fel skäl
 
 | Mejl | Dag | Publik | Ämnesrad | Post-id |
 |---|---|---|---|---|
-| K23 | ons 30/9 | Warmup tier 1 | Sex bästsäljare till reapris | `32ced8c7-e3dc-412f-9e0e-f36c6a03f975` |
+| K23 | ons 30/9 | Warmup tier 1 | Sätesöverdraget och fem till, 15 % extra (kod BASTSALJARE15) | `32ced8c7-e3dc-412f-9e0e-f36c6a03f975` |
 | K24 | fre 2/10 | Köpare båt | Ett vinterskydd som täcker hela motorn | `357d53cb-8e2f-43a1-8116-e8f7e72b9df1` |
-| K25 | lör 3/10 | Köpare trädgård & tomt | Kranen fryser vid första köldknäppen | `334c5fd5-5f5b-47d0-93aa-475976211195` |
-| K26 | sön 4/10 | Warmup tier 1 | Fem veckor kvar till fars dag | `ab2e0398-224c-46c4-b6b1-40778c2a56d2` |
+| K25 | lör 3/10 | Köpare trädgård & tomt | Kranen fryser, koden FROST15 väntar | `334c5fd5-5f5b-47d0-93aa-475976211195` |
+| K26 | sön 4/10 | Warmup tier 1 | Sista dag att beställa till fars dag: 19 oktober | `ab2e0398-224c-46c4-b6b1-40778c2a56d2` |
 | K27 | mån 5/10 | Köpare husvagn & husbil | Taket är skyddat, resten är det inte. | `bfec6cff-0d81-44a8-a2f9-acc2592b6c49` |
 | K28 | ons 7/10 | Warmup tier 1 | Kniven som legat slö sedan midsommar | `63bad9d8-0b9e-41fe-893c-7af4dfbaa05c` |
-| K29 | fre 9/10 | Warmup tier 1 | Reapris på sex presenter till fars dag | `c7ac660a-4969-4e04-a03f-e7fe6e378909` |
+| K29 | fre 9/10 | Warmup tier 1 | Presenter till fars dag. Kod: PAPPA15 | `c7ac660a-4969-4e04-a03f-e7fe6e378909` |
 | K30 | lör 10/10 | Köpare trädgård & tomt | En present för honom med kamin och vedbod | `7e49c595-6cdc-4740-b9e8-5ba58e0f5dbd` |
 | K31 | sön 11/10 | Warmup tier 1 | Aldrig mer trassliga fiskespön | `9f0eb81e-6084-4e5e-854e-fe2d340425cc` |
 | K32 | mån 12/10 | Köpare verkstad & garage | Han ser fåglarna innan han reser sig | `a97045ba-936c-4889-8bdc-c8db87a78656` |
@@ -150,8 +150,18 @@ facit; en första förhandsvisning med gissade id:n gav 23 träffar av fel skäl
 | K37 | ons 21/10 | Köpare MC & fordon | Ett kapell som tar smällen i stället för lacken | `93dd1b86-c942-40fd-827c-4bc9b41d366a` |
 
 Redigeringslänk: `https://app.spoks.com/baverbutiken/post/<post-id>/edit`. K02 (tor 1/10, tier 1)
-är det gamla utkastet `8e970060-558d-4ec6-bc04-89780ab20b95`. Ämnesraderna för K23, K25, K26
-och K29 skrevs om samma kväll (extrarean + brådskan), se nedan.
+är det gamla utkastet `8e970060-558d-4ec6-bc04-89780ab20b95`. **K23, K25, K26 och K29 skrevs om
+samma kväll och utkasten uppdaterades i Spoks 18:57–19:10 CEST** (`update_draft_campaign`
+med hash, nya block, titel och ämnesrad): rea-copyn (kod, procent, sista dag, kodstycket)
+av en Sonnet-subagent mot samma regler som resten; huvudsessionen ändrade tre K26-rader för
+sanningens skull (agentens "Sista dagen att beställa till fars dag" som rubrik läste som "i
+dag", nu "… är 19 oktober"; "Efter 19 oktober hinner paketet inte fram" var ett löfte vi inte
+kan hålla, nu "kan vi inte lova att det hinner fram"; "till pappa" bröt tvåläsarregeln, nu
+"till fars dag") och rättade "eller skriver du in" till "eller så skriver du in". Axels dom på
+K26:s gamla ämnesrad "Fem veckor kvar till fars dag": "verkligen en urgency-minskare". K24
+oförändrad (ingen rabatt). ⚠️ `konvertera.mjs` skriver om ALLA payloads: citatmejlen (f01-e2,
+k01, k03, k06, k10, k18, k21) tappar sina citat utan recensionscache — återställ dem med
+`git checkout` efter varje körning tills cachen finns i containern.
 
 **Extrarean med rabattkod (Axels beslut A 2026-09-28: "Du har ju inte gjort någon extra rea
 på 1" … "Bra men också rea" på K25; på frågan kod via länk eller automatisk rabatt på hela

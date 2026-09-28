@@ -1,7 +1,7 @@
 {
   "id": "k25-tradgard-frosten",
-  "namn": "MAIL_20261003_Kranskydd_S_1_kopare-tradgard_problem_utekranen-fryser-forst_v1",
-  "memo": "Första frostnatten kommer i oktober i stora delar av landet. Mejlet går till dem som redan köpt till tomten, en månad före K16 (som går brett 3/11). Hypotes: problemöppningen \"det som fryser först\" (utekranen) säljer hela raden av skydd; mätt på klick per produkt.",
+  "namn": "MAIL_20261003_Kranskydd_S_1_kopare-tradgard_problem_utekranen-fryser-frost15_v1",
+  "memo": "Första frostnatten kommer i oktober i stora delar av landet. Mejlet går till dem som redan köpt till tomten, en månad före K16 (som går brett 3/11). Hypotes: problemöppningen \"det som fryser först\" (utekranen) säljer hela raden av skydd; mätt på klick per produkt. Extrarea 15 % med FROST15 på de fyra produkterna till och med onsdag 7 oktober (Axels \"bra men också rea\" 2026-09-28).",
   "taggar": {
     "typ": "S",
     "kalla": "gissning",
@@ -10,35 +10,35 @@
     "avatar": "villaägaren som redan köpt något till tomten",
     "begar": "att inget spricker i vinter",
     "awareness": "problem",
-    "urgency": "sasong",
+    "urgency": "sasong + slutdag (7 oktober)",
     "confidence": "low",
     "prefix": "Kranskydd",
     "kod": "S"
   },
   "amnesrader": [
     {
-      "text": "Kranen fryser vid första köldknäppen",
+      "text": "Kranen fryser, koden FROST15 väntar",
       "begar": "att inget spricker i vinter"
     },
     {
-      "text": "Frosten kommer innan krukorna är inne",
-      "begar": "hinna skydda krukväxterna innan kvällarna blir för kalla"
+      "text": "15 % extra på Kranskydd Frost",
+      "begar": "skydda kranen, tunnan och krukorna medan rabatten gäller"
     },
     {
-      "text": "Kranen, tunnan och krukorna före frosten",
-      "begar": "veta vilka delar av trädgården som är mest utsatta"
+      "text": "Kranskydd Frost och tre till, 15 % extra",
+      "begar": "veta vad extrarean är och hur länge"
     }
   ],
-  "forhandstext": "Isen kan spränga kran eller ledning innan du märker något.",
+  "forhandstext": "FROST15 ger 15 % extra på kranskyddet och tre andra produkter, till onsdag.",
   "block": [
     {
       "typ": "hero",
-      "rubrik": "Kranen fryser vid första köldknäppen",
-      "text": "Hej {{fornamn}},\n\nFörsta köldknäppen fryser vattnet i utekranen, ofta innan du hunnit tänka på den.",
+      "rubrik": "Extra rabatt på Kranskydd Frost. Kod: FROST15",
+      "text": "Hej {{fornamn}},\n\nKranen fryser vid första köldknäppen, ofta innan du hunnit skydda den. Nu får Kranskydd Frost och tre andra produkter för kylan 15 % extra rabatt, till och med onsdag 7 oktober.",
       "bild": "produkt:kranskydd-frost-420d-skyddar-utekranen-i-vinter",
       "knapp": {
-        "text": "Skydda kranen",
-        "lank": "produkt:kranskydd-frost-420d-skyddar-utekranen-i-vinter"
+        "text": "Hämta FROST15",
+        "lank": "rabatt:FROST15:produkt:kranskydd-frost-420d-skyddar-utekranen-i-vinter"
       }
     },
     {
@@ -66,36 +66,47 @@
       ]
     },
     {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Koden FROST15 ger 15 % extra på priset som redan står på produktsidan, till och med onsdag 7 oktober. Den gäller Kranskydd Frost, IBC-tanköverdraget, krukväxthuven och regntunnehuven, en gång per kund. Klicka på knappen ovan så läggs den på av sig själv, eller skriv in koden i kassan."
+    },
+    {
       "typ": "fakta"
     }
   ],
   "tretest": [
     {
-      "rad": "Kranen fryser vid första köldknäppen",
+      "rad": "Kranen fryser, koden FROST15 väntar",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true
     },
     {
-      "rad": "Frosten kommer innan krukorna är inne",
+      "rad": "15 % extra på Kranskydd Frost",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true
     },
     {
-      "rad": "Kranen, tunnan och krukorna före frosten",
+      "rad": "Kranskydd Frost och tre till, 15 % extra",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true
     },
     {
-      "rad": "Isen kan spränga kran eller ledning innan du märker något.",
+      "rad": "FROST15 ger 15 % extra på kranskyddet och tre andra produkter, till onsdag.",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true
     },
     {
-      "rad": "Skydda kranen",
+      "rad": "Extra rabatt på Kranskydd Frost. Kod: FROST15",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Hämta FROST15",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true

@@ -1,7 +1,7 @@
 {
   "id": "k26-fars-dag-listan",
-  "namn": "MAIL_20261004_Farsdag_GT_4_tier1_solution_fem-veckor-tre-pappor_v1",
-  "memo": "Första fars dag-mejlet, fem veckor före. Presentvinkeln är bevisad (Takoverdrag_GT_2_H1, 8 202 kr vinstbidrag). Hypotes: en lista sorterad på vad pappan sysslar med (båt, verkstad, kamin) ger fler klick än ett enproduktsmejl, mätt mot K05.",
+  "namn": "MAIL_20261004_Farsdag_GT_4_tier1_solution_tva-veckor-kvar-tre-pappor_v1",
+  "memo": "Första fars dag-mejlet, två veckor före sista beställningsdagen (Axel 2026-09-28: \"fem veckor kvar\" var en urgency-minskare, så ämnesraden bär deadlinen). Presentvinkeln är bevisad (Takoverdrag_GT_2_H1, 8 202 kr vinstbidrag). Hypotes: en lista sorterad på vad pappan sysslar med (båt, verkstad, kamin) ger fler klick än ett enproduktsmejl, mätt mot K05.",
   "taggar": {
     "typ": "I",
     "kalla": "egen-data",
@@ -17,15 +17,15 @@
   },
   "amnesrader": [
     {
-      "text": "Fem veckor kvar till fars dag",
-      "begar": "veta att det är gott om tid att välja i lugn takt"
+      "text": "Sista dag att beställa till fars dag: 19 oktober",
+      "begar": "hinna beställa presenten före sista dagen"
     },
     {
-      "text": "Tre pappor, sex presenter",
+      "text": "Beställ senast 19 oktober till fars dag",
       "begar": "hitta rätt present snabbt utifrån vad han sysslar med"
     },
     {
-      "text": "Funkar också som hans egen önskelista",
+      "text": "Efter 19 oktober kan vi inte lova att det hinner fram",
       "begar": "slippa gissa, skicka vidare mejlet och låta pappan peka ut sin egen present"
     }
   ],
@@ -33,8 +33,8 @@
   "block": [
     {
       "typ": "hero",
-      "rubrik": "Fem veckor kvar till fars dag",
-      "text": "Hej {{fornamn}},\n\nSex presenter till fars dag, sorterade efter vad han faktiskt sysslar med: båten, verkstaden eller kaminen.",
+      "rubrik": "Sista dagen att beställa till fars dag är 19 oktober",
+      "text": "Hej {{fornamn}},\n\nOm paketet ska hinna fram till fars dag den 8 november behöver ordern läggas senast 19 oktober. Sex presenter, sorterade efter vad han faktiskt sysslar med: båten, verkstaden eller kaminen.",
       "knapp": {
         "text": "Se hela listan",
         "lank": "kollektion:alla-produkter"
@@ -80,25 +80,31 @@
   ],
   "tretest": [
     {
-      "rad": "Fem veckor kvar till fars dag",
+      "rad": "Sista dag att beställa till fars dag: 19 oktober",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true
     },
     {
-      "rad": "Tre pappor, sex presenter",
+      "rad": "Beställ senast 19 oktober till fars dag",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true
     },
     {
-      "rad": "Funkar också som hans egen önskelista",
+      "rad": "Efter 19 oktober kan vi inte lova att det hinner fram",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true
     },
     {
       "rad": "Sex presenter sorterade efter vad han sysslar med.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Sista dagen att beställa till fars dag är 19 oktober",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true

@@ -1,16 +1,16 @@
 {
   "id": "k25-tradgard-frosten",
-  "emailTitle": "Kranen fryser vid första köldknäppen",
-  "emailDescription": "Isen kan spränga kran eller ledning innan du märker något.",
+  "emailTitle": "Kranen fryser, koden FROST15 väntar",
+  "emailDescription": "FROST15 ger 15 % extra på kranskyddet och tre andra produkter, till onsdag.",
   "amnesrader": [
-    "Kranen fryser vid första köldknäppen",
-    "Frosten kommer innan krukorna är inne",
-    "Kranen, tunnan och krukorna före frosten"
+    "Kranen fryser, koden FROST15 väntar",
+    "15 % extra på Kranskydd Frost",
+    "Kranskydd Frost och tre till, 15 % extra"
   ],
   "blocks": [
     {
       "type": "h1",
-      "text": "Kranen fryser vid första köldknäppen",
+      "text": "Extra rabatt på Kranskydd Frost. Kod: FROST15",
       "alignment": "center"
     },
     {
@@ -20,7 +20,7 @@
     },
     {
       "type": "regular",
-      "text": "Första köldknäppen fryser vattnet i utekranen, ofta innan du hunnit tänka på den.",
+      "text": "Kranen fryser vid första köldknäppen, ofta innan du hunnit skydda den. Nu får Kranskydd Frost och tre andra produkter för kylan 15 % extra rabatt, till och med onsdag 7 oktober.",
       "alignment": "center"
     },
     {
@@ -48,8 +48,8 @@
     },
     {
       "type": "link",
-      "text": "Skydda kranen",
-      "url": "https://baverbutiken.se/products/kranskydd-frost-420d-skyddar-utekranen-i-vinter",
+      "text": "Hämta FROST15",
+      "url": "https://baverbutiken.se/discount/FROST15?redirect=%2Fproducts%2Fkranskydd-frost-420d-skyddar-utekranen-i-vinter",
       "style": "button"
     },
     {
@@ -103,6 +103,11 @@
       "buttonText": null,
       "alignment": "center",
       "productsPerRow": 3
+    },
+    {
+      "type": "regular",
+      "text": "Koden FROST15 ger 15 % extra på priset som redan står på produktsidan, till och med onsdag 7 oktober. Den gäller Kranskydd Frost, IBC-tanköverdraget, krukväxthuven och regntunnehuven, en gång per kund. Klicka på knappen ovan så läggs den på av sig själv, eller skriv in koden i kassan.",
+      "alignment": "left"
     },
     {
       "type": "columns",
