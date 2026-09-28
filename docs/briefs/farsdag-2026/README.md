@@ -9,7 +9,7 @@ och som vi faktiskt gör nya annonser för i Notion … fars dag-rea … fars da
 | Beslut | Vem | Varför |
 |---|---|---|
 | **Rean = dagens jämförpris** ("Det är den som är idag det är rean som är på alla produkter. Jämf pris") | Axel 2026-09-28 | Svar på frågan om rabatt 10/15/20 % eller ingen. ⚠️ Risken framförd innan svaret: alla sju produkter visar jämförpriset året runt, och prisinformationslagen 7 a § kräver att en annonserad prissänkning räknas från lägsta priset senaste 30 dagarna (`factory/tacksida/RESEARCH.md`). |
-| **7 produkter, inte 11** | sessionen | `products/aktiva-hubbar.json` listar 11 hubbar, men kampanjerna för Biltvättborsten, Fågelmataren, Adventskalendern Racingbilar och MC-kapellet stod PAUSED med spend i MagiBorsten 2026-09-28 (läst ur Meta). Leveransrundan laddar aldrig upp i en avstängd kampanj. |
+| **7 produkter i första omgången** | sessionen | `products/aktiva-hubbar.json` listar 11 hubbar, men kampanjerna för Biltvättborsten, Fågelmataren, Adventskalendern Racingbilar och MC-kapellet stod PAUSED med spend i MagiBorsten 2026-09-28 (läst ur Meta). Leveransrundan laddar aldrig upp i en avstängd kampanj. |
 | **3 annonser per produkt:** `FD_1_H1` + `FD_1_H2` (video, omklipp av produktens bästa video, hooken är enda skillnaden) och `FD_2_1` (bild) | sessionen | Omklipp av en bevisad video går snabbast för redigerarna; bilden görs av `/bildannonser` samma kväll. |
 | **Bara Sverige** | sessionen | Fars dag är 8 november i Sverige (och Norge/Finland), men i juni i USA och Danmark — Taköverdraget och Termoskyddet speglas annars till CaraShell och vidare till USA. Sista beställningsdagen är räknad på leveranstiden till Sverige. Spärren: `tools/lib/bara-sverige.mjs` (kod `FD`), inkopplad i `tools/oversattningskon.mjs` och `tools/ops-spegla.mjs`, regeln i `.claude/commands/oversatt.md` och `docs/naming-convention.md`. |
 | **"Beställ senast 19 oktober"** i varje annons | sessionen, ur repot | `klaviyo/brands/baverbutiken.json` → `kalender.fars_dag_sista_bestallning` (fars dag − p90 20 dygn). Samma datum som fars dag-mejlen. |
@@ -33,6 +33,30 @@ break-even-CPA = kampanjens AOV ÷ BE-ROAS.
 Varje `OUR AD`-tid i brieferna är avläst ur föräldervideon: hämtad ur Meta med
 sidans token, en frame per sekund, tittad bild för bild.
 
+## Omgång 2 samma eftermiddag: fyra hubbar som saknades
+
+Axel skickade en skärmbild av sin Notion ("Ligger det en i alla dessa?"). Fyra
+hubbar där saknade batch: **Solar motion sensor light**, **Golf advent
+calendar**, **Whittling set** och **Fish rod holder**. Orsaken: första
+omgången tog produktlistan ur `products/aktiva-hubbar.json` (ändrad senast
+2026-09-23), där de fyra inte står. Alla fyra kampanjerna var ACTIVE i
+MagiBorsten. **Lärdom: listan över aktiva produkter läses ur Notion och
+kontot, aldrig ur en fil ensam.**
+
+| Produkt | Förälder (video) | Spend | Köp | ROAS | CPA | BE-CPA | Vinstbidrag |
+|---|---|---|---|---|---|---|---|
+| Solcellslampan | `Solcellslampa_PD_3` | 9 887 kr | 25 | 2,13 | 395 kr | 518 kr | 3 114 kr |
+| Golfkalendern | `Golfkalender_PD_1` | 4 181 kr | 20 | 3,27 | 209 kr | 409 kr | 3 860 kr |
+| Täljsetet | `Taljset_PD_3` | 2 585 kr | 14 | 4,71 | 185 kr | 556 kr | 4 879 kr |
+| Fiskespöhållaren | `Fiskespöhållare_CS_1_H1` (bästa AKTIVA; toppen `Fiskespöhållare_PD_EXTRA` är pausad på annonsnivå) | 3 622 kr | 23 | 3,02 | 157 kr | 296 kr | 3 661 kr |
+
+⚠️ **Två saker gör att de fyra inte går hela vägen av sig själva** (frågat Axel
+samma dag): `/bildannonser` gör bara bilder för hubbar i
+`products/aktiva-hubbar.json`, där de fyra saknas, och **Fish rod holder**
+(`3c3270ab-…`) står i `factory/produkter/register.json` som TackleBays hubb, så
+leveransrundan undantar den. I den ligger 12 rader i `To be Reviewed`, varav 11
+är `TackleBayRod_…` med tacklebay.se som landningssida.
+
 ## Brieferna i Notion (alla `Draft`, skapade 2026-09-28)
 
 | Hubb | Video H1 | Video H2 | Bild |
@@ -44,10 +68,14 @@ sidans token, en frame per sekund, tittad bild för bild.
 | Chimney sweep set | [Sotarset_FD_1_H1](https://www.notion.so/3e9270ab908c81e9b589ea04906a39ca) | [Sotarset_FD_1_H2](https://www.notion.so/3e9270ab908c81429a91ea6222487cce) | [Sotarset_FD_2_1](https://www.notion.so/3e9270ab908c81a8b6eeedf51011b26c) |
 | Indoor slippers | [Inomhustofflor_FD_1_H1](https://www.notion.so/3e9270ab908c8129a30cdb0e254aacdd) | [Inomhustofflor_FD_1_H2](https://www.notion.so/3e9270ab908c815d9b7ff5b594024bd0) | [Inomhustofflor_FD_2_1](https://www.notion.so/3e9270ab908c817e96aee052ed6996ad) |
 | Belt grinder | [Beltgrinder_FD_1_H1](https://www.notion.so/3e9270ab908c81268fb4d7f212ac4ff5) | [Beltgrinder_FD_1_H2](https://www.notion.so/3e9270ab908c81eda994d9f7648a7bbd) | [Beltgrinder_FD_2_1](https://www.notion.so/3e9270ab908c81ebaf46d8ac76f9305b) |
+| Solar motion sensor light | [Solcellslampa_FD_1_H1](https://www.notion.so/3e9270ab908c81209941c71af5d4b8ea) | [Solcellslampa_FD_1_H2](https://www.notion.so/3e9270ab908c8101975ae24582c542db) | [Solcellslampa_FD_2_1](https://www.notion.so/3e9270ab908c818c82dcdd3a80e0add4) |
+| Golf advent calendar | [Golfkalender_FD_1_H1](https://www.notion.so/3e9270ab908c818384c9fbcf7eebefeb) | [Golfkalender_FD_1_H2](https://www.notion.so/3e9270ab908c812fb8f8c072db8a70f2) | [Golfkalender_FD_2_1](https://www.notion.so/3e9270ab908c81fd81b8ea869d2d71d7) |
+| Whittling set | [Taljset_FD_1_H1](https://www.notion.so/3e9270ab908c81928ad6eab94bade6a8) | [Taljset_FD_1_H2](https://www.notion.so/3e9270ab908c816dbfbdf499630f9117) | [Taljset_FD_2_1](https://www.notion.so/3e9270ab908c81f58cc2ee0cf35b0be7) |
+| Fish rod holder | [Rodholder_FD_1_H1](https://www.notion.so/3e9270ab908c81ba92acc3de1fdb1967) | [Rodholder_FD_1_H2](https://www.notion.so/3e9270ab908c818daee5dcd042bf6494) | [Rodholder_FD_2_1](https://www.notion.so/3e9270ab908c8133bda9d481a3729b6b) |
 
-Alla 21 klarade spärren `node tools/briefgranskning.mjs --rad … --pris … --jamforpris …`
-(0 fel, 0 anmärkningar) innan raden skapades, och alla 21 lästes tillbaka ur
-Notion (Namn, `Draft`, rätt Pending Approval-typ, Landing page).
+Alla 33 klarade spärren `node tools/briefgranskning.mjs --rad … --pris … --jamforpris …`
+(0 fel, 0 anmärkningar) innan raden skapades, och alla 33 lästes tillbaka ur
+Notion (3 i var och en av de 11 hubbarna) (Namn, `Draft`, rätt Pending Approval-typ, Landing page).
 
 ## Så byggs den om
 

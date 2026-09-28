@@ -216,3 +216,119 @@ export const PRODUKTER = [
     ],
   },
 ];
+
+// ---------------------------------------------------------------------------
+// Omgång 2 samma dag: fyra hubbar som saknades (Axels skärmbild av Notion
+// 2026-09-28: "Ligger det en i alla dessa?"). De stod inte i
+// products/aktiva-hubbar.json (ändrad senast 2026-09-23), men alla fyra
+// kampanjerna var ACTIVE i MagiBorsten vid läsningen.
+PRODUKTER.push(
+  {
+    nyckel: 'solcellslampa', prefix: 'Solcellslampa', produkt: 'the solar motion sensor light',
+    hub: '3e5270ab-908c-81ed-8316-f0f4327d75db', hubnamn: 'Solar motion sensor light creative hub',
+    landning: 'https://baverbutiken.se/products/solcellslampa-med-rorelsesensor-tre-huvuden-210-led',
+    pris: 589, jamfor: 775, prisText: '589 kr, ord. 775 kr', prisNot: 'one variant',
+    siffror: ['589', '775', '210', '3', '1200', '8', '19'],
+    be: { roas: 1.62, aov: 839, cpa: 518 },
+    forälder: { namn: 'Solcellslampa_PD_3', ad: '120250253967570291', video: '1395372216133673', langd: 30.3, spend: 9887, kop: 25, roas: 2.13, cpa: 395, vb: 3114,
+      beskrivning: 'the product demo that opens on an older man with the remote beside the lamp on a pole ("210 lampor, tre huvuden") — the product\'s top spender' },
+    benchmark: 'Solcellslampa_PD_3 is itself the top spender',
+    avatar: 'den-som-letar-present-till-en-pappa-med-mork-uppfart', begar: 'trygghet', mekanism: 'rorelsesensor-tander-tre-huvuden-utan-kabel', tro: 'att-en-utelampa-kraver-elektriker',
+    hook: {
+      H1: { bild: 'Medium, daylight: an older man in a navy T-shirt and a cap holds the remote and talks beside the lamp mounted on a wooden pole. First frame: the man, the remote and the lamp.', effekt: 'cut-in', mekanik: 'cut-in', kalla: 'OUR AD Solcellslampa_PD_3 0:00–0:03', ref: 'parent opening — WITHOUT its caption' },
+      H2: { bild: 'Wide, evening: the lamp above a garage door switches on and lights the drive as a man arrives with his bicycle. First frame: the lit lamp over the garage door.', effekt: 'zoom-in 1 s', mekanik: 'zoom-in', kalla: 'OUR AD Solcellslampa_PD_3 0:04–0:06', ref: 'parent evening beat — WITHOUT its caption' },
+    },
+    rader: [
+      { bild: 'Close-up: the LED panels of the three heads, a hand with a ring holds the remote in front of them.', effekt: 'slow-mo 0.67× 3 s', kalla: 'OUR AD Solcellslampa_PD_3 0:07–0:09', ref: 'parent LED close-up — WITHOUT its caption', frihet: 'crop free' },
+      { bild: 'Medium: a woman in a denim shirt points up at the lamp\'s adjustable heads under a porch roof.', effekt: 'none', kalla: 'OUR AD Solcellslampa_PD_3 0:09–0:12', ref: 'parent heads beat — WITHOUT its caption', frihet: 'none' },
+      { bild: 'Close-up on a kitchen counter: hands lift the lamp out of its box, the solar panel on top.', effekt: 'none', kalla: 'OUR AD Solcellslampa_PD_3 0:23–0:26', ref: 'parent unboxing — WITHOUT its caption', frihet: 'none' },
+    ],
+    slutbild: 'https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b8-solcellslampa-hero-se.jpg?v=1789119730',
+    bild: { foto: 'The product hero photo: the solar light with its three heads and the solar panel, no people.', ref: 'none — the product has no static with 3 purchases; composition as the other FD_2_1 statics', parentBild: null },
+    extraRegler: [
+      'Never use the parent\'s 0:17–0:22: another creator\'s TikTok watermark is burned into those frames.',
+      'No brightness or angle claims beyond the page (210 lysdioder, tre huvuden, 1200 mAh): never "2500 lumen", never "270 grader", never "vattentät" — the parent\'s captions carry them, the page does not.',
+    ],
+  },
+  {
+    nyckel: 'golfkalender', prefix: 'Golfkalender', produkt: 'the golf advent calendar',
+    hub: '3e8270ab-908c-817b-9e74-efe7a636609e', hubnamn: 'Golf advent calendar creative hub',
+    landning: 'https://baverbutiken.se/products/golf-adventskalender-24-golftillbehor',
+    pris: 549, jamfor: 719, prisText: '549 kr, ord. 719 kr', prisNot: 'one variant',
+    siffror: ['549', '719', '24', '8', '19'],
+    be: { roas: 1.70, aov: 695, cpa: 409 },
+    forälder: { namn: 'Golfkalender_PD_1', ad: '120250349281960291', video: '3628961317255943', langd: 22.3, spend: 4181, kop: 20, roas: 3.27, cpa: 209, vb: 3860,
+      beskrivning: 'the unboxing demo ("Glöm chokladkalendern. Det här är för golfare.") — a hand opens the doors and shows the golf accessories; the product\'s top spender' },
+    benchmark: 'Golfkalender_PD_1 is itself the top spender',
+    avatar: 'den-som-letar-present-till-en-pappa-som-spelar-golf', begar: 'njutning', mekanism: 'golftillbehor-bakom-24-luckor', tro: 'att-en-present-till-golfaren-maste-vara-en-klubba',
+    hook: {
+      H1: { bild: 'Top-down: the closed calendar box ("GOLF ADVENT CALENDAR") on a lap, Christmas lights and a lamp behind it. First frame: the whole box.', effekt: 'cut-in', mekanik: 'cut-in', kalla: 'OUR AD Golfkalender_PD_1 0:00–0:03', ref: 'parent opening — WITHOUT its caption' },
+      H2: { bild: 'Top-down: the calendar on the lap with most doors already opened. First frame: the opened doors.', effekt: 'zoom-in 1 s', mekanik: 'zoom-in', kalla: 'OUR AD Golfkalender_PD_1 0:18–0:20', ref: 'parent 0:18 — WITHOUT its caption' },
+    },
+    rader: [
+      { bild: 'Close-up: a hand opens one door and lifts the cardboard insert out.', effekt: 'none', kalla: 'OUR AD Golfkalender_PD_1 0:03–0:06', ref: 'parent door beat — WITHOUT its caption', frihet: 'none' },
+      { bild: 'Close-up: a hand holds a small golf tool from the door up in front of the calendar.', effekt: 'slow-mo 0.67× 3 s', kalla: 'OUR AD Golfkalender_PD_1 0:06–0:08', ref: 'parent tool beat — WITHOUT its caption', frihet: 'crop free' },
+      { bild: 'Close-up: a finger opens door 08 and a golf ball sits inside, then the hand lifts the ball out.', effekt: 'none', kalla: 'OUR AD Golfkalender_PD_1 0:10–0:13', ref: 'parent ball beat — WITHOUT its caption', frihet: 'none' },
+    ],
+    slutbild: 'https://cdn.shopify.com/s/files/1/1013/0322/2621/files/kalender-golf-1.png?v=1789563918',
+    bild: { foto: 'The product photo: the golf advent calendar box, no people.', ref: 'none — the product has no static with 3 purchases; composition as the other FD_2_1 statics', parentBild: null },
+    extraRegler: [
+      'Never use the parent\'s flat lay at 0:14–0:17: it shows golf socks, which the page does not list.',
+      'Only the page\'s contents may be named: golfbollar, peggar, bollmarkeringar, greenlagare med spegel, klubbrengöringsborste, golfhandduk. Never "barnsäker", never an age.',
+    ],
+  },
+  {
+    nyckel: 'taljset', prefix: 'Taljset', produkt: 'the 30-piece whittling set',
+    hub: '3e8270ab-908c-8156-bd42-e5fcbe833705', hubnamn: 'Whittling set creative hub',
+    landning: 'https://baverbutiken.se/products/taljset-30-delar-6-knivar-och-6-jarn',
+    pris: 869, jamfor: 1139, prisText: '869 kr, ord. 1 139 kr', prisNot: 'one variant',
+    siffror: ['869', '1 139', '30', '6', '8', '19'],
+    be: { roas: 1.63, aov: 906, cpa: 556 },
+    forälder: { namn: 'Taljset_PD_3', ad: '120250349207730291', video: '1584038393213339', langd: 24.5, spend: 2585, kop: 14, roas: 4.71, cpa: 185, vb: 4879,
+      beskrivning: 'the demo ("Sluta köpa täljverktyg") with hands carving, the knives in the roll and a bearded man holding up the full set in its case' },
+    benchmark: 'Taljset_PD_1 (3 067 kr, 13 purchases, ROAS 4.04) is the top spender and the benchmark; PD_3 carries more profit contribution',
+    avatar: 'den-som-letar-present-till-en-pappa-som-vill-borja-talja', begar: 'njutning', mekanism: '30-delar-i-en-vaska-med-skarskyddade-handskar', tro: 'att-talja-kraver-att-man-letar-ihop-verktyg',
+    hook: {
+      H1: { bild: 'Medium: a bearded man in a dark sweater holds the open orange case up to the camera, knives, gouges and the strop in their slots. First frame: the man and the open case.', effekt: 'cut-in', mekanik: 'cut-in', kalla: 'OUR AD Taljset_PD_3 0:22–0:24', ref: 'parent end shot — WITHOUT its captions (they name the store)' },
+      H2: { bild: 'Medium: a bearded man carves at a wooden table while a dog rests its head beside his hands. First frame: the man, the knife and the dog.', effekt: 'slow-mo 0.5× 3 s', mekanik: 'slow-mo', kalla: 'OUR AD Taljset_PD_3 0:16–0:17', ref: 'parent 0:16 — WITHOUT its caption' },
+    },
+    rader: [
+      { bild: 'Close-up: hands carve a thin wooden stick with a knife, shavings on the table.', effekt: 'none', kalla: 'OUR AD Taljset_PD_3 0:02–0:04', ref: 'parent carving beat — WITHOUT its caption', frihet: 'hold the last frame to fill 3 s' },
+      { bild: 'Close-up: the knives in their slots in the roll, the grey cut-resistant glove on top.', effekt: 'none', kalla: 'OUR AD Taljset_PD_3 0:12–0:15', ref: 'parent glove beat — WITHOUT its caption', frihet: 'none' },
+      { bild: 'Close-up: a gouge hollows out the bowl of a wooden spoon.', effekt: 'none', kalla: 'OUR AD Taljset_PD_3 0:19–0:22', ref: 'parent spoon beat — WITHOUT its caption', frihet: 'none' },
+    ],
+    slutbild: 'https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b10-taljset-hero-se.jpg?v=1789216352',
+    bild: { foto: 'The product hero photo: the 30-piece set laid out in its zip case, no people.', ref: 'none — the product has no static with 3 purchases; composition as the other FD_2_1 statics', parentBild: null },
+    extraRegler: [
+      'The parent\'s captions at 0:20–0:24 name the store and say "Länken finns nedan" — cut from the clean clip, never from the rendered ad.',
+      'Sharp tools: never show a bare hand holding a blade towards the camera; the glove line is the page\'s own ("Handskarna skyddar när kniven slinter").',
+    ],
+  },
+  {
+    nyckel: 'rodholder', prefix: 'Rodholder', produkt: 'the fishing rod holders (4-pack)',
+    hub: '3c3270ab-908c-80f8-824d-eed3c4aa94e1', hubnamn: 'Fish rod holder',
+    landning: 'https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring',
+    pris: 289, jamfor: 482, prisText: '289 kr, ord. 482 kr', prisNot: 'same price for all four colours',
+    siffror: ['289', '482', '4', '8', '19'],
+    be: { roas: 1.50, aov: 444, cpa: 296 },
+    forälder: { namn: 'Fiskespöhållare_CS_1_H1', ad: '120249850603660291', video: '1074100205589263', langd: 29, spend: 3622, kop: 23, roas: 3.02, cpa: 157, vb: 3661,
+      beskrivning: 'the price video with a hand full of coloured holders, the holders clipped onto rods by the lake and on the boat wall — the best ACTIVE video on profit contribution' },
+    benchmark: 'Fiskespöhållare_PD_EXTRA (11 776 kr, 60 purchases, ROAS 2.14, vinstbidrag 5 005 kr) is the top spender and the benchmark; it is PAUSED at ad level (someone\'s decision), so the recut builds on the best active video',
+    avatar: 'den-som-letar-present-till-en-pappa-som-fiskar', begar: 'slippa-krangel', mekanism: 'fyra-kraftiga-hallare-ett-spo-per-hallare', tro: 'att-trassel-i-baten-hor-till',
+    hook: {
+      H1: { bild: 'Close-up: two open hands full of blue and green rod holders (a tattoo and a watch on the wrist). First frame: the full hands.', effekt: 'cut-in', mekanik: 'cut-in', kalla: 'OUR AD Fiskespöhållare_CS_1_H1 0:03–0:06', ref: 'parent 0:03–0:06 — WITHOUT its caption' },
+      H2: { bild: 'Medium on a boat: an orange holder keeps two rods upright against the boat\'s side wall, the lake glittering behind. First frame: the holder and the rods.', effekt: 'zoom-in 1 s', mekanik: 'zoom-in', kalla: 'OUR AD Fiskespöhållare_CS_1_H1 0:14–0:17', ref: 'parent boat beat — WITHOUT its caption' },
+    },
+    rader: [
+      { bild: 'Close-up by a lake: fingers clip a blue holder onto a rod, then a row of orange and blue holders along the rods.', effekt: 'none', kalla: 'OUR AD Fiskespöhållare_CS_1_H1 0:06–0:09', ref: 'parent clip beat — WITHOUT its caption', frihet: 'none' },
+      { bild: 'Top-down: holders in blue, orange, green and pink lie on a dark stone next to a rod and a reel.', effekt: 'slow-mo 0.67× 3 s', kalla: 'OUR AD Fiskespöhållare_CS_1_H1 0:18–0:20', ref: 'parent colour flat lay — WITHOUT its caption', frihet: 'crop free' },
+      { bild: 'POV on the shore rocks: a rod with a blue holder on it, waves behind.', effekt: 'none', kalla: 'OUR AD Fiskespöhållare_CS_1_H1 0:20–0:23', ref: 'parent shore beat — WITHOUT its captions', frihet: 'none' },
+    ],
+    slutbild: 'https://cdn.shopify.com/s/files/1/1013/0322/2621/files/1d426b7a-cfe0-49df-8b44-03c3aabbc326.jpg?v=1782033165',
+    bild: { foto: 'The product photo: the rod holders, no people.', ref: 'Rodholder_PD_6_1 (Meta ad 120249936610640291: 2 882 kr, 17 purchases, ROAS 2.78, CPA 170 kr against break-even CPA 296 kr) for the composition', parentBild: 'Rodholder_PD_6_1' },
+    extraRegler: [
+      'Every parent caption is banned in this recut: "Idag och bara idag", "Lagret är begränsat", "När det är slut är det slut", "Fri frakt", "30 dagars öppet köp" — cut from the clean clips only.',
+      'The page states little: fyra hållare i ett set, kraftig konstruktion, för strand, sjö och båtfiske. Never "på 1 sekund", never a load or size claim.',
+    ],
+  },
+);
