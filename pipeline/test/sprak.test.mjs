@@ -105,3 +105,52 @@ test('sprakUrHeygenId: suffixet i HeyGen-id:t läses för rapporten', () => {
   assert.deepEqual(sprakUrHeygenId('3ef0251f76c9473ab691680c4023c355-nb'), { kod: 'nb', locale: null });
   assert.equal(sprakUrHeygenId('abc'), null);
 });
+
+// Europa-språken (2026-09-28, Matstrumpors UGC till sju nya språk). Texterna är
+// Sofie H1-manuset som en människa skulle översätta det — samma innehåll på varje
+// språk, så skillnaden i poäng kommer ur språket och inte ur ämnet.
+const EUROPA = {
+  de: 'Ich dachte ehrlich, das wäre echtes Sushi. Aber das sind tatsächlich Socken. Fünf Paar Sushi-Socken, verpackt wie eine echte Takeaway-Box, und sogar mit Essstäbchen. Mir fallen schon zehn Leute ein, denen ich das schenken könnte. Gerade bekommst du zwei Boxen zum Preis von einer.',
+  fr: "Honnêtement, je pensais que c'était de vrais sushis. Mais ce sont en fait des chaussettes. Cinq paires de chaussettes sushi, emballées comme une vraie boîte à emporter, et même avec des baguettes. Je pense déjà à dix personnes à qui je pourrais les offrir. En ce moment, vous avez deux boîtes pour le prix d'une.",
+  nl: 'Ik dacht echt dat dit echte sushi was. Maar het zijn eigenlijk sokken. Vijf paar sushisokken, verpakt als een echte afhaalbox, en zelfs met eetstokjes. Ik kan nu al tien mensen bedenken aan wie ik dit zou geven. Op dit moment krijg je twee dozen voor de prijs van één.',
+  es: 'De verdad pensé que esto era sushi de verdad. Pero en realidad son calcetines. Cinco pares de calcetines de sushi, empaquetados como una caja de comida para llevar, y hasta con palillos. Ya se me ocurren diez personas a las que se lo regalaría. Ahora mismo te llevas dos cajas por el precio de una.',
+  it: 'Pensavo davvero che fosse sushi vero. Ma in realtà sono calzini. Cinque paia di calzini sushi, confezionati come una vera scatola da asporto, e ci sono perfino le bacchette. Mi vengono già in mente dieci persone a cui potrei regalarli. In questo momento ricevi due scatole al prezzo di una.',
+  pl: 'Naprawdę myślałam, że to prawdziwe sushi. Ale to są skarpetki. Pięć par skarpetek sushi zapakowanych jak prawdziwe pudełko na wynos, a nawet z pałeczkami. Już teraz przychodzi mi do głowy dziesięć osób, którym mogłabym to dać. Teraz dostajesz dwa pudełka w cenie jednego.',
+  pt: 'Juro que pensei que isto era sushi a sério. Mas afinal são meias. Cinco pares de meias de sushi, embaladas como uma caixa de takeaway a sério, e até vêm com pauzinhos. Já me estou a lembrar de dez pessoas a quem podia oferecer isto. Neste momento recebes duas caixas pelo preço de uma.',
+};
+
+test('sprakfamilj: de sju Europa-språken har en familj — utan den kontrollerades SRT:n inte alls', () => {
+  assert.equal(sprakfamilj(heygenSprakFor('DE')), 'de');
+  assert.equal(sprakfamilj(heygenSprakFor('FR')), 'fr');
+  assert.equal(sprakfamilj(heygenSprakFor('NL')), 'nl');
+  assert.equal(sprakfamilj(heygenSprakFor('ES')), 'es');
+  assert.equal(sprakfamilj(heygenSprakFor('IT')), 'it');
+  assert.equal(sprakfamilj(heygenSprakFor('PL')), 'pl');
+  assert.equal(sprakfamilj(heygenSprakFor('PT')), 'pt');
+});
+
+test('kollaSprak: varje Europa-språk är grönt i sin egen session och gissas rätt', () => {
+  for (const [f, text] of Object.entries(EUROPA)) {
+    assert.equal(kollaSprak(text, f).ok, true, `${f} i ${f}-session`);
+    assert.equal(gissaSprak(text).sprak, f, `${f} gissas som ${f}`);
+  }
+});
+
+test('kollaSprak: fel språk i en Europa-session stoppas — engelska, norska, svenska och grannspråket', () => {
+  for (const f of Object.keys(EUROPA)) {
+    assert.equal(kollaSprak(srtText(ENGELSK_SRT), f).ok, false, `engelska i ${f}-session`);
+    assert.equal(kollaSprak(NORSK, f).ok, false, `norska i ${f}-session`);
+    assert.equal(kollaSprak(SVENSK, f).ok, false, `svenska i ${f}-session`);
+  }
+  // Spanska och portugisiska delar mest — de ska ändå inte släppa igenom varandra.
+  assert.equal(kollaSprak(EUROPA.es, 'pt').ok, false);
+  assert.equal(kollaSprak(EUROPA.pt, 'es').ok, false);
+  assert.equal(kollaSprak(EUROPA.it, 'es').ok, false);
+  assert.equal(kollaSprak(EUROPA.nl, 'de').ok, false);
+  assert.equal(kollaSprak(EUROPA.de, 'nl').ok, false);
+});
+
+test('gissaSprak: bokstäver utanför a–ö hålls ihop (não, się, très)', () => {
+  assert.equal(gissaSprak('Não, não é isso. Não é mesmo, não.').poang.pt >= 4, true);
+  assert.equal(gissaSprak('Ale to się nie da, bo się nie mieści.').poang.pl >= 5, true);
+});
