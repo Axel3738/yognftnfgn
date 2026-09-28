@@ -3,6 +3,33 @@
 Kör `/no-recensioner` (`.claude/commands/no-recensioner.md`). Den här filen är
 bara lägesrapporten.
 
+## Läget 2026-09-28 — 0 nya, allt redan klart, 38 i `sources.json`
+
+Drive oförändrad: 39 produktmappar + WINNERS med 5 = 44, minus de sex som aldrig
+gått in = de 38 i `sources.json`. Bygget gav 332 klara / 10 bortvalda (alla
+gamasjer) och identiska filer — `git status` tomt. Kartorna står på 509
+översättningar och 124 namn. Inget 429, inget 503.
+
+`--dry` mot Kajakkholder och Feiesett: "redan 10 synliga, hoppar över" — de
+spam-publicerade raderna sitter kvar sjätte respektive sjunde dygnet.
+
+⚠️ `git pull` drog in 274 filer den här natten (akutlarm, annonsvakt,
+Matstrumpors marknader, CaraShell i Spoks på danska …) men **inget** under
+`market-expansion/no/reviews/` och inget i kommandofilen. En stor pull betyder
+alltså inte att den här rutinens förutsättningar ändrats — kolla vilka sökvägar
+som rörts innan något antas.
+
+### Orättat, och vem det väntar på
+
+* **Kajakkholder: tio identiska titlar** i källarket ("Bra och stabila"), femte
+  dygnet. Recensionerna är importerade och synliga; bara rubrikerna ser
+  maskinskrivna ut. Rättas i arket, sedan om-import med `--anda` på Axels
+  uttryckliga begäran.
+* **De fyra arken oförändrade tionde dygnet:** Dinosauriekalender (alla namn
+  "(EXEMPEL)"), Gravstenspenna (TEST-rader), Medicinask (exempelrader +
+  `not-a-real-product-handle`, produkten dessutom utgången och kan strykas helt),
+  Lövblåsare/Jetviften (personnamn i `title`, utekattkojans `product_handle`).
+
 ## Läget 2026-09-27 — 0 nya, allt redan klart, 38 i `sources.json`
 
 Inga nya mappar i MAKE TO NORWAY: 39 produktmappar + WINNERS med 5 = 44, minus de
