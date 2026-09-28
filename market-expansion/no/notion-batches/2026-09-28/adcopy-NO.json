@@ -1,0 +1,57 @@
+{
+  "IBC-tanktrekk_NO_PD_12_H1": {
+    "message": "Grønt vann i en IBC-tank uten UV-beskyttelse.\nTrekket blokkerer sollys og UV. Vannet holdes klart.\nKraftig 210D oxfordstoff, enkel glidelås.\nÅpning på toppen, du når lokket likevel.",
+    "headline": "Grønt vann uten UV-beskyttelse.",
+    "description": ""
+  },
+  "IBC-tanktrekk_NO_PD_12_H2": {
+    "message": "Sollys når vannet i en ubeskyttet IBC-tank.\nAlgene vokser i lyset, og UV-strålingen sliter ut tanken før tiden.\nEt 210D oxfordtrekk stopper begge deler.\nGlidelås og åpning på toppen gjør det enkelt.",
+    "headline": "Sollys når vannet i tanken.",
+    "description": ""
+  },
+  "IBC-tanktrekk_NO_PD_12_H3": {
+    "message": "Dette er 210D oxfordstoffet: tett vevd, blokkerer lys.\nSamme stoff dekker hele IBC-tanken din.\nSollys og UV stenges ute, vannet holdes klart.\nGlidelås i siden, lokk du når uten å løfte av alt.",
+    "headline": "210D oxfordstoff blokkerer lyset.",
+    "description": ""
+  },
+  "Sotarset_NO_PD_9_H1": {
+    "message": "Bak tørketrommelen er det for trangt til å krype inn. 3,69 meter bøyelig stang når dit. Ni stenger på 41 cm skrus sammen en og en, følger svingene i røret, og nylonbørsten børster løs det som sitter fast. Bygg bare den lengden du trenger. Rens selv, fra der du står. Bestill ditt Feiesett.",
+    "headline": "3,69 meter bak tørketrommelen",
+    "description": ""
+  },
+  "Sotarset_NO_PD_8_H2": {
+    "message": "Børsten er inne i røret. Soten børstes løs, ikke skrapes. Ni bøyelige stenger bøyer med i svingen i stedet for å stoppe. Skru sammen 3,69 meter, bygg bare den lengden du trenger, og rens selv mellom feierens besøk. Bestill ditt Feiesett i dag og få tilbake trekket.",
+    "headline": "Rent rør, bedre trekk på minutter",
+    "description": ""
+  },
+  "Sotarset_NO_PD_8_H1": {
+    "message": "Børsten er inne i røret. Soten børstes løs, ikke skrapes. Ni bøyelige stenger bøyer med i svingen i stedet for å stoppe. Skru sammen 3,69 meter, bygg bare den lengden du trenger, og rens selv mellom feierens besøk. Bestill ditt Feiesett i dag og få tilbake trekket.",
+    "headline": "Rent rør, bedre trekk på minutter",
+    "description": ""
+  },
+  "Sotarset_NO_PD_7_H1": {
+    "message": "Ovnen trekker dårligere for hver fyring, og du vet hvorfor. Sotlaget vokser stille lengst inne i svingen, der en stiv stang stopper opp. Ni bøyelige stenger følger svingene, skru sammen 3,69 meter og dra nylonbørsten gjennom røret. Rens selv mellom feierens besøk. Bestill ditt Feiesett i dag og få tilbake trekket.",
+    "headline": "Rent rør, bedre trekk på minutter",
+    "description": ""
+  },
+  "Takovertrekk_NO_SP_4_H4": {
+    "message": "Dette dekker bare taket, ikke hele campingvognen. Én person klarer det alene. Vannet blir aldri stående ved taklukene, og 210D-duken tåler hele vintersesongen ute. Reimene sitter på alle fire sider og hektes fast i en krok i nedkant. 1 189 kr i stedet for 1 549 kr.",
+    "headline": "Én person er nok. 210D-duk.",
+    "description": ""
+  },
+  "Takovertrekk_NO_SP_4_H3": {
+    "message": "Ved en taklukke uten beskyttelse blir vannet lett stående, og tetningsmassen tar skade. Et heldekkende trekk er tungt å få på plass alene. Dette dekker bare taket, og én person klarer det selv. Vannet blir aldri stående ved taklukene, og 210D-duken tåler hele vintersesongen ute. Reimene sitter på alle fire sider og hektes fast i en krok i nedkant. 1 189 kr i stedet for 1 549 kr.",
+    "headline": "Én person er nok. 210D-duk.",
+    "description": ""
+  },
+  "Takovertrekk_NO_SP_4_H2": {
+    "message": "Én hånd hekter fast reimen i kroken ved takkanten. Én person er nok for å få dette på plass. Dette dekker bare taket, ikke hele vognen. Vannet blir aldri stående ved taklukene, og 210D-duken tåler hele vintersesongen ute. Reimene sitter på alle fire sider og hektes fast i en krok i nedkant. 1 189 kr i stedet for 1 549 kr.",
+    "headline": "Én person er nok. 210D-duk.",
+    "description": ""
+  },
+  "Takovertrekk_NO_CS_12_H1": {
+    "message": "Jeg betalte 1 189 kroner for dette. Taket er den dyreste flaten på hele vognen. Tåler en hel vintersesong ute: 210D-duk, ikke tynn presenning som sprekker i frost. Sitter fast når det blåser: reimene sitter på alle fire sider og hektes fast i en krok i nedkant. Sammenligningsprisen er 1 549 kroner. Jeg betalte 1 189. Beskytt taket, 1 189 kr.",
+    "headline": "Beskytt taket, 1 189 kr.",
+    "description": ""
+  }
+}
