@@ -1,5 +1,5 @@
 {
-  "byggd": "2026-09-28T15:49:33.821Z",
+  "byggd": "2026-09-28T16:33:23.371Z",
   "koncept": "invandningar",
   "punkter": 7,
   "datumrad": "2026-09-28",
@@ -270,7 +270,7 @@
     "mobil-sidfot": "/home/user/yognftnfgn/listicle/output/invandningar/takskyddet/forhandsvisning/mobil-sidfot.png"
   },
   "sida": {
-    "id": "631903025105052203",
+    "id": "631237675784739478",
     "namn": "Taköverdrag Husvagn & Husbil 5,5–13,5 m – Invändningarna (listicle)",
     "handle": "takoverdrag-innan-du-koper"
   },
@@ -288,7 +288,7 @@
       "ok": true,
       "fel": [],
       "url": "https://carashell.se/pages/takoverdrag-innan-du-koper?country=SE",
-      "tecken": 111250
+      "tecken": 111411
     }
   },
   "bildUrler": [
