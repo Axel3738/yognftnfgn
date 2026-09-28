@@ -1,5 +1,5 @@
 // kolla-srt.mjs — maskinell kontroll av en lokaliserad SRT mot HeyGens (2026-09-28).
-//   node kolla-srt.mjs <KOD> <video>          # t.ex. DE sofie_h1
+//   node kolla-srt.mjs <KOD> <video> [fil]    # t.ex. DE sofie_h1; fil = en annan SRT än srt-fixed/ (t.ex. ett utkast)
 //   node kolla-srt.mjs --alla                  # varje srt-fixed som finns
 // Exit 1 om något FEL. VARNING stoppar inte (längd per block).
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
@@ -29,9 +29,9 @@ const FORBJUDET = [
 // Svenska ord som inte får stå kvar (utom där de också är målspråkets ord).
 const SVENSKA = { alla: ['strumpor', 'låda', 'lådan', 'ätpinnar', 'kalaset', 'julstrumpan', 'jättebra', 'också', 'verkligen', 'faktiskt', 'riktig', 'riktigt', 'paketerade', 'sushistrumpor', 'priset'] };
 
-export function kolla(kod, video) {
+export function kolla(kod, video, fil) {
   const orig = join(H, kod, 'srt-orig', `matstrumpor_${video}.srt`);
-  const fixad = join(H, kod, 'srt-fixed', `matstrumpor_${video}.srt`);
+  const fixad = fil || join(H, kod, 'srt-fixed', `matstrumpor_${video}.srt`);
   const fel = [], varningar = [];
   if (!existsSync(orig)) return { kod, video, fel: [`HeyGens SRT saknas: ${orig}`], varningar };
   if (!existsSync(fixad)) return { kod, video, fel: [`lokaliserad SRT saknas: ${fixad}`], varningar };
@@ -65,8 +65,8 @@ if (arg[0] === '--alla') {
     if (!existsSync(dir)) continue;
     for (const f of readdirSync(dir).filter((f) => /^matstrumpor_.*\.srt$/.test(f))) res.push(kolla(kod, f.replace(/^matstrumpor_|\.srt$/g, '')));
   }
-} else if (arg.length === 2) res.push(kolla(arg[0].toUpperCase(), arg[1]));
-else { console.error('node kolla-srt.mjs <KOD> <video> | --alla'); process.exit(2); }
+} else if (arg.length === 2 || arg.length === 3) res.push(kolla(arg[0].toUpperCase(), arg[1], arg[2]));
+else { console.error('node kolla-srt.mjs <KOD> <video> [fil] | --alla'); process.exit(2); }
 let rott = 0;
 for (const r of res) {
   console.log(`${r.fel.length ? '❌' : '✅'} ${r.kod} ${r.video}${r.fel.length ? ' FEL: ' + r.fel.join(' | ') : ''}${r.varningar.length ? ' · varning: ' + r.varningar.join(' | ') : ''}`);

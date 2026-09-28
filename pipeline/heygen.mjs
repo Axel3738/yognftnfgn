@@ -84,13 +84,24 @@ export async function getTranslateStatus(id) {
 // --- Proofread-flödet (kreditsnålt: granska/rätta transkriptet FÖRE rendering) ---
 
 // Skapar en proofread-session: transkriberar + översätter utan att rendera video.
-export async function proofreadCreate({ videoUrl, outputLanguage, title }) {
-  const body = await call(API, '/v2/video_translate/proofread', {
+//
+// ⚠️ Läget (mode) — Axels regel 2026-09-27: UGC översätts ALLTID med HeyGens dyraste
+// version. Den här funktionen gick till 2026-09-28 mot v2-endpointen utan läge, och då
+// blev det HeyGens standard "speed". API:t har ett dyrare läge, "precision" (avatar-
+// inferens, "context- and gender-aware" översättning, tydligt bättre läppsynk), som
+// repot aldrig använde — upptäckt när 24 av Matstrumpors videor (åtta marknader) redan
+// renderats i speed.
+// Standard är därför "precision"; "speed" måste väljas uttryckligen. v3-endpointen
+// ersätter v2 (som HeyGen stänger 2026-10-31).
+export const LAGEN = Object.freeze(['precision', 'speed']);
+export async function proofreadCreate({ videoUrl, outputLanguage, title, mode = 'precision' }) {
+  if (!LAGEN.includes(mode)) throw new Error(`Okänt HeyGen-läge "${mode}" — ${LAGEN.join(' eller ')}.`);
+  const body = await call(API, '/v3/video-translations/proofreads', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ video_url: videoUrl, output_language: outputLanguage, title }),
+    body: JSON.stringify({ video: { type: 'url', url: videoUrl }, output_languages: [outputLanguage], title, mode }),
   });
-  const id = body?.data?.proofread_id ?? body?.data?.id;
+  const id = body?.data?.proofread_ids?.[0] ?? body?.data?.proofread_id ?? body?.data?.id;
   if (!id) throw new Error(`Inget proofread_id i svaret: ${JSON.stringify(body)}`);
   return id;
 }

@@ -3,7 +3,7 @@
 // (rutinen /translate-no). Kör stegvis, state skrivs till disk efter VARJE API-anrop
 // så en containeromstart aldrig kostar omrenderingar.
 //
-//   node translate-batch.mjs proofread --manifest=<batch.json> [--bara=<slug>]   # 0 krediter*
+//   node translate-batch.mjs proofread --manifest=<batch.json> [--bara=<slug>] [--mode=precision|speed]
 //   node translate-batch.mjs status    --manifest=<batch.json>                    # läge + kvot
 //   node translate-batch.mjs apply     --manifest=<batch.json> --srtdir=<mapp>    # rättade SRT:er
 //   node translate-batch.mjs render    --manifest=<batch.json> [--bara=<slug>]    # DRAR krediter
@@ -77,13 +77,22 @@ if (TABELLSPRAK && LANG !== TABELLSPRAK) {
   process.exit(1);
 }
 const FAMILJ = sprakfamilj(LANG);
-console.log(`Marknad: ${MARKNAD} · HeyGen-språk: ${LANG}${FAMILJ ? ` (${namnFor(FAMILJ)})` : ' (ingen SRT-språkkoll för det här språket)'}`);
+// Läget: Axels regel 2026-09-27 — UGC alltid med HeyGens dyraste version. "precision" är
+// standard sedan 2026-09-28 (före det gick allt i HeyGens standard "speed" utan att någon
+// valt det); "speed" kräver --mode=speed uttryckligen.
+const MODE = typeof args.mode === 'string' ? args.mode : 'precision';
+if (!h.LAGEN.includes(MODE)) { console.error(`✗ --mode="${MODE}" — välj ${h.LAGEN.join(' eller ')}.`); process.exit(1); }
+console.log(`Marknad: ${MARKNAD} · HeyGen-språk: ${LANG}${FAMILJ ? ` (${namnFor(FAMILJ)})` : ' (ingen SRT-språkkoll för det här språket)'} · läge: ${MODE}`);
 let sprakfel = 0;   // exit 1 i slutet om något jobb hamnade på fel språk
 
-/** Posten skapades för ett annat språk? En batchmapp per marknad — state saknar
- *  språkdimension, så en NO-post som återanvänds för US hade renderat norska. */
+/** Posten skapades för ett annat språk — eller ett annat läge? En batchmapp per marknad
+ *  och läge: en speed-session som återanvänds i en precision-körning hade renderat speed.
+ *  Poster utan `mode` skapades via v2 före 2026-09-28 (speed) och får gå klart med en varning. */
 function felSprakIState(st, key) {
   if (st?.sprak && st.sprak !== LANG) { console.error(`✗ ${key}: state-posten skapades för "${st.sprak}", inte "${LANG}" — en batchmapp per marknad. Hoppar.`); sprakfel++; return true; }
+  if (st?.proofreadId && st.mode && st.mode !== MODE) { console.error(`✗ ${key}: sessionen är "${st.mode}", körningen "${MODE}" — en batchmapp per läge. Hoppar.`); sprakfel++; return true; }
+  // En pågående batch från före 2026-09-28 (rutinerna) får gå klart i sitt läge i stället för att stoppas mitt i.
+  if (st?.proofreadId && !st.mode && !st.renderId) console.log(`  ⚠️ ${key}: sessionen skapades via v2 före lägesvalet (speed) — renderas i speed. Ny session = precision.`);
   return false;
 }
 /** HeyGens eget besked om sessionens språk mot det vi bad om. */
@@ -139,7 +148,7 @@ switch (cmd) {
       }
       if (st.output_language && st.output_language !== LANG) sprakfel++;
       const sprak = st.output_language ? (st.output_language === LANG ? `✓ ${st.output_language}` : `✗ FEL SPRÅK: ${st.output_language}`) : (st.sprak ? st.sprak : 'språk okänt');
-      console.log(`${j.key}: ${läge}${st.error ? ` (${st.error})` : ''}${st.sprakfel ? ` (SPRÅKFEL: ${st.sprakfel})` : ''} · ${sprak}`);
+      console.log(`${j.key}: ${läge}${st.error ? ` (${st.error})` : ''}${st.sprakfel ? ` (SPRÅKFEL: ${st.sprakfel})` : ''} · ${sprak}${st.proofreadId ? ` · ${st.mode ?? 'speed'}` : ''}`);
     }
     break;
   }
@@ -155,7 +164,7 @@ switch (cmd) {
       if (felSprakIState(st, j.key)) continue;
       try {
         if (!st.assetUrl) { st.assetUrl = await h.uploadAsset(path.join(mDir, j.slug, 'up', j.name + '.mp4')); save(); console.log('upload ok', j.key); }
-        if (!st.proofreadId) { st.proofreadId = await h.proofreadCreate({ videoUrl: st.assetUrl, outputLanguage: LANG, title: MARKNAD + '_' + j.key }); st.sprak = LANG; st.marknad = MARKNAD; save(); console.log('proofread skapad', j.key, `(${LANG})`); }
+        if (!st.proofreadId) { st.proofreadId = await h.proofreadCreate({ videoUrl: st.assetUrl, outputLanguage: LANG, title: MARKNAD + '_' + j.key, mode: MODE }); st.sprak = LANG; st.marknad = MARKNAD; st.mode = MODE; save(); console.log('proofread skapad', j.key, `(${LANG}, ${MODE})`); }
       } catch (e) { st.error = e.message; save(); console.error('FEL', j.key, e.message); }
     }
     // polla + hämta SRT
@@ -196,6 +205,7 @@ switch (cmd) {
     if (!args.srtdir) { console.error('Ange --srtdir=<mapp med rättade .srt>'); process.exit(1); }
     for (const j of jobs) {
       const st = state[j.key]; if (!st?.proofreadId || st.srtDone !== true) continue;
+      if (st.renderId) continue;  // redan renderad — sessionens text rörs inte i efterhand
       if (felSprakIState(st, j.key)) continue;
       const f = path.join(args.srtdir, j.key + '.srt');
       if (!existsSync(f)) { console.log('ingen rättad SRT för', j.key, '— hoppar'); continue; }
