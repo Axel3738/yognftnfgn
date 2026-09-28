@@ -1,0 +1,25 @@
+{
+  "_om": "Messenger-svararen (/messenger). Läs messenger/README.md. sidor = facit för vilken butik en DM hör till: sida → kundtjänstens brandfil (kundtjanst/brands/<brand>.yaml), som ger språk, signatur, Shopify och Discord. En sida som token:en når men som saknar rad här får ALDRIG ett automatiskt svar — dess DM:s går till VA:n. Uppdatera med datum.",
+  "sidor": {
+    "678639638662543": { "namn": "Bäverbutiken.se", "brand": "baverbutiken" },
+    "879054088633562": { "namn": "Beverbutikken", "brand": "beverbutikken" },
+    "1324465810740336": { "namn": "Bæverbutiken", "brand": "baeverbutiken" },
+    "1317870104733246": { "namn": "Majavakauppa", "brand": "majavakauppa" },
+    "820358954504320": { "namn": "Matstrumpor.se", "brand": "matstrumpor" },
+    "1381171778405935": { "namn": "CaraShell", "brand": "carashell" }
+  },
+  "discord_reserv": {
+    "_om": "Brands utan egen Discord-server (Matstrumpor) rapporterar i Bäverbutikens #customer-service — samma reserv som stonebite/larm.mjs.",
+    "server": "Bäverbutiken",
+    "kanal": "customer-service"
+  },
+  "fonster": {
+    "_om": "Metas standardfönster: en sida får svara med messaging_type RESPONSE bara inom 24 timmar från kundens senaste meddelande. Äldre DM:s går till VA:n (HUMAN_AGENT-taggen är för människor, aldrig för en bot).",
+    "svar_timmar": 24,
+    "las_timmar": 72,
+    "va_kund_dagar": 14,
+    "max_autosvar_per_konversation": 2
+  },
+  "max_per_korning": 30,
+  "max_tecken": 1900
+}

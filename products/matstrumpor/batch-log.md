@@ -202,6 +202,23 @@ blandade sorter i paketet (1 av 22 vid avläsning 2), fyrpack B 8 / A 3,
 enstaka lådor B 5 / A 1 (B:s lucka på pizza-/hamburgare-/donutsidan står
 kvar). Båda når 100 köp inom ungefär ett och ett halvt dygn i den här takten.
 
+**Avläsning 4 — 2026-09-28 ~19:00 UTC (Axels fråga "hur går det för AB-testet?"):**
+`#4786` → `#5098`, **313 ordrar** (5 ur rabattkoden, 0 okända, 0 tvingade,
+0 annullerade, 0 återbetalda). Ordrarna hämtade direkt ur Admin API (appen
+Fabriken), `analys.mjs` från grenen `claude/build-shrinepro-like-theme-pfalsx`
+körd oförändrad: **A 173 / 73 932 kr / snitt 427 kr, B 140 / 60 288 kr /
+snitt 431 kr.** Lyft B mot A −19,1 %, p = 0,071 (konfidens 93,0 %).
+Snittordern lika (+3 kr, p = 0,81) — B:s försprång i snittorder vid avläsning
+3 (+46 kr) är borta. Verktygets beslut, ordagrant: **"Ingen säkerställd
+skillnad, och underlaget räcker för att säga det. Behåll A och testa något
+med större skillnad."** Riktningen pekar mot A (A fler köp sju av elva dygn, B två,
+och sedan 25/9 A 122 / B 83), men under 95 % — ingen dom om att B är sämre,
+bara att B inte är bättre. Sessionens rekommendation: avsluta testet och
+låta alla se A (Axels klick, eller sessionens ändring av `ms_ab_tests` i
+temat på hans ok — `/abtest`: rör inte temat utan ok). B:s lucka på
+pizza-/hamburgare-/donutsidan står kvar och gör att B aldrig ska bli
+permanent i sin nuvarande form.
+
 ---
 
 ## 2026-09-27 — rond 3: 0 etiketter, 0 lärdomar, 0 briefer, 4 förslag — och namnkrocken rättad
