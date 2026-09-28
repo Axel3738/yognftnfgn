@@ -39,6 +39,7 @@ import {
   markeraPagaende,
   readDaily,
   readHourly,
+  readHourlyPerDag,
   refreshDaily,
   refreshShopDaily,
   shiftIso,
@@ -59,7 +60,7 @@ import {
   type BidragsBand,
   type SkalningsBeslut,
 } from "../lib/skalning";
-import { getSpend, TIMFONSTER_DAGAR, timvisSpend } from "../lib/meta.server";
+import { getSpend, TIMFONSTER_DAGAR, timvisSpend, timvisSpendPerDag } from "../lib/meta.server";
 import { hamtaKonton, konfigurationer } from "../lib/meta-konton.server";
 import { dagarKvar, VARNA_DAGAR } from "../lib/meta-login";
 import { summeraGrupp } from "../lib/group.server";
@@ -614,11 +615,29 @@ async function timvisData(
   /* Timfönstret är kapat: Metas timbreakdown är dagar × kampanjer × 24 rader. */
   const timFran = shiftIso(to, -(TIMFONSTER_DAGAR - 1));
   const fran = from > timFran ? from : timFran;
-  const h = await readHourly(shop, fran, to, { market });
+  const [h, perDag] = await Promise.all([
+    readHourly(shop, fran, to, { market }),
+    readHourlyPerDag(shop, fran, to, { market }),
+  ]);
+  /* Klockan i butikens zon: i dag ritas kurvan bara fram till nu. */
+  const nu = new Intl.DateTimeFormat("en-CA", {
+    timeZone: timezone || "UTC",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    hourCycle: "h23",
+  }).formatToParts(new Date());
+  const del = (t: string) => nu.find((p) => p.type === t)?.value ?? "";
+  const idagHar = `${del("year")}-${del("month")}-${del("day")}`;
+  const nuTimme = Number(del("hour")) || 0;
   if (!h.dagarMedTimmar.length) {
-    return { timmar: h.timmar, spend: null, offset: null, dagar: 0, dagarUtan: h.dagarUtanTimmar, kapad: from < fran };
+    return { timmar: h.timmar, spend: null, offset: null, dagar: 0, dagarUtan: h.dagarUtanTimmar, kapad: from < fran, perDag: [], idag: idagHar, nuTimme };
   }
-  const sp = await timvisSpend(shop, metaKonton, h.dagarMedTimmar, timezone, market).catch(() => null);
+  const [sp, spDag] = await Promise.all([
+    timvisSpend(shop, metaKonton, h.dagarMedTimmar, timezone, market).catch(() => null),
+    timvisSpendPerDag(shop, metaKonton, h.dagarMedTimmar, timezone, market).catch(() => null),
+  ]);
   return {
     timmar: h.timmar,
     spend: sp?.offset == null ? null : sp.timmar,
@@ -626,6 +645,9 @@ async function timvisData(
     dagar: h.dagarMedTimmar.length,
     dagarUtan: h.dagarUtanTimmar,
     kapad: from < fran,
+    perDag: perDag.map((d) => ({ ...d, spend: spDag?.perDag[d.day] ?? null })),
+    idag: idagHar,
+    nuTimme,
   };
 }
 
@@ -2313,7 +2335,7 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
                 och då ska timmarna bort: timmar från butiker i olika
                 tidszoner adderade till en stapel är inget att besluta på. */}
             {timvis && !group ? (
-              <Timgraf d={timvis} T={T} money={money} nf={nf} />
+              <Timgraf d={timvis} T={T} money={money} nf={nf} breakEven={t2.breakEvenMer} breakEvenOsaker={t2.kostnadOsaker} />
             ) : null}
           </BlockStack>
         </Layout.Section>

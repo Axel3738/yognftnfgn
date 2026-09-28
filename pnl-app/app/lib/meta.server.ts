@@ -792,6 +792,64 @@ export async function timvisSpend(
   return { timmar, offset };
 }
 
+/**
+ * Annonskostnad per timme DAG FÖR DAG, på butikens klocka. Samma krav som
+ * `timvisSpend`: alla konton måste gå att lägga på en gemensam klocka i
+ * hela timmar, annars null. En timme som i butikens zon hamnar på dagen
+ * före eller efter läggs där — därför läses en dag extra åt båda hållen.
+ */
+export async function timvisSpendPerDag(
+  shop: string,
+  konton: MetaConfig[] | null,
+  dagar: string[],
+  butikensTidszon: string,
+  market = "",
+): Promise<{ perDag: Record<string, number[]>; offset: number } | null> {
+  const metaKonton = (konton ?? []).map((c) => kontoId(c.adAccountId)).filter(Boolean);
+  const googleKonton = await prisma.googleAdsAccount.findMany({
+    where: { shop },
+    select: { customerId: true, timezoneName: true },
+  });
+  const kopplade = [...metaKonton, ...googleKonton.map((k) => somKonto(k.customerId))];
+  if (!kopplade.length || !dagar.length) return null;
+  const sorterade = [...dagar].sort();
+  const forsta = new Date(`${sorterade[0]}T00:00:00Z`);
+  const sista = new Date(`${sorterade[sorterade.length - 1]}T00:00:00Z`);
+  forsta.setUTCDate(forsta.getUTCDate() - 1);
+  sista.setUTCDate(sista.getUTCDate() + 1);
+  const [rader, konton2] = await Promise.all([
+    prisma.hourlySpend.findMany({
+      where: { shop, account: { in: kopplade }, day: { gte: forsta, lte: sista }, ...(market ? { market } : {}) },
+      select: { day: true, hour: true, spend: true },
+    }),
+    prisma.metaAdAccount.findMany({ where: { shop, accountId: { in: metaKonton } }, select: { timezoneName: true } }),
+  ]);
+  if (!rader.length) return null;
+  const mitt = sorterade[Math.floor(sorterade.length / 2)];
+  const zoner = [...new Set([...konton2, ...googleKonton].map((k) => k.timezoneName).filter(Boolean))] as string[];
+  const offsets = zoner.map((z) => tidszonsOffset(z, butikensTidszon, mitt));
+  const offset = offsets.length === 1 ? offsets[0] : offsets.length && offsets.every((o) => o === 0) ? 0 : null;
+  if (offset == null) return null;
+  const vill = new Set(dagar);
+  const perDag: Record<string, number[]> = {};
+  for (const d of dagar) perDag[d] = Array(24).fill(0);
+  for (const r of rader) {
+    let timme = r.hour - offset;
+    const dag = new Date(r.day);
+    while (timme < 0) {
+      timme += 24;
+      dag.setUTCDate(dag.getUTCDate() - 1);
+    }
+    while (timme > 23) {
+      timme -= 24;
+      dag.setUTCDate(dag.getUTCDate() + 1);
+    }
+    const iso = dag.toISOString().slice(0, 10);
+    if (vill.has(iso)) perDag[iso][timme] += r.spend;
+  }
+  return { perDag, offset };
+}
+
 async function refreshSpend(
   shop: string,
   cfg: MetaConfig,

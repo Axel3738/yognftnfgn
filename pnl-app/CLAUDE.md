@@ -1354,6 +1354,25 @@ slår ihop **två** källor: `BILLING_EXEMPT_SHOPS` i miljön (som förut) och
 att fylla på med en push — Axel ska inte behöva klicka i Railways
 miljövariabler. Lägg till hela `.myshopify.com`-adressen i små bokstäver.
 
+### ROAS under dagen (2026-09-28, build roas-under-dagen-v119)
+Axel, med en skärmbild som förlaga: *"gör om timvisaren så här i
+dashboarden"*. `Timgraf.tsx` visar nu EN dag i taget (‹ dag ›, standard i
+dag): heldragen linje **ROAS hittills** (ackumulerad försäljning ÷
+ackumulerad annonskostnad; grön över break-even, röd under), streckad grå
+**per timme**, streckad **break-even** (panelens `breakEvenMer`, "≥" vid
+osäker kostnad), och under grafen ROAS hittills / Annonser / Omsättning.
+- Data: `readHourlyPerDag` (daily.server) + `timvisSpendPerDag`
+  (meta.server) — annonstimmen flyttas till butikens klocka och hamnar på
+  dagen före/efter när offseten korsar midnatt (därför läses en dag extra
+  åt båda håll). Samma krav som förut: ingen gemensam klocka ⇒ ingen ROAS,
+  då visas omsättning hittills och skälet.
+- Beräkningen: `lib/roas-under-dagen.ts` (3 tester). Före första
+  spenderade kronan finns ingen ROAS (null, aldrig 0/∞); i dag slutar
+  kurvan vid nuvarande timme (`nuTimme` i butikens zon); timmarnas ROAS
+  klipps vid grafens tak.
+- De gamla 30-dagarssummorna per timme finns inte längre på kortet
+  (avsnittet "Timgrafen på panelen" nedan beskriver den gamla versionen).
+
 ### Offertförfrågan till leverantören (2026-09-27, build offertforfragan-v118)
 Axel: *"varje gång ens butik säger att det är varianter utan kostnader … ska
 den skriva ett utkast på ett meddelande som man kan kopiera … quotes till

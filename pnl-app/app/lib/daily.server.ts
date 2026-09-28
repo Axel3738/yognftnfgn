@@ -338,6 +338,39 @@ export async function readHourly(
   };
 }
 
+/**
+ * Försäljning per timme, DAG FÖR DAG — för "ROAS under dagen" på panelen.
+ * Bara dagar som faktiskt är timuppdelade; en dag utan timmar vore en platt
+ * nolla som ser ut som en dag utan försäljning.
+ */
+export async function readHourlyPerDag(
+  shop: string,
+  from: string,
+  to: string,
+  opts: { market?: string } = {},
+): Promise<{ day: string; orders: number[]; sales: number[] }[]> {
+  const market = marknadskod(opts.market);
+  const [rader, dagar] = await Promise.all([
+    prisma.hourlyPnl.findMany({
+      where: { shop, day: { gte: from, lte: to }, market },
+      select: { day: true, hour: true, orders: true, totalSales: true },
+    }),
+    prisma.dailyPnl.findMany({
+      where: { shop, day: { gte: from, lte: to }, hoursAt: { not: null } },
+      select: { day: true },
+      orderBy: { day: "asc" },
+    }),
+  ]);
+  const per = new Map(dagar.map((d) => [d.day, { day: d.day, orders: Array(24).fill(0), sales: Array(24).fill(0) }]));
+  for (const r of rader) {
+    const d = per.get(r.day);
+    if (!d || r.hour < 0 || r.hour > 23) continue;
+    d.orders[r.hour] += r.orders;
+    d.sales[r.hour] += r.totalSales;
+  }
+  return [...per.values()];
+}
+
 export interface ReadDailyOpts {
   /**
    * Marknad (landskod) att läsa. Tom/undefined = hela butiken. Med filter
