@@ -61,7 +61,8 @@
         "adsetNamn": "IBC-tanktrekk NO - PD",
         "annonsNamn": "IBC-tanktrekk_NO_PD_12_H1",
         "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
-        "prefix": "IBC-tanktrekk"
+        "prefix": "IBC-tanktrekk",
+        "status": "KAMPANJ_AVVECKLAD"
       },
       "pris": {
         "pris": "439.00",
@@ -124,7 +125,8 @@
         "adsetNamn": "IBC-tanktrekk NO - PD",
         "annonsNamn": "IBC-tanktrekk_NO_PD_12_H2",
         "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
-        "prefix": "IBC-tanktrekk"
+        "prefix": "IBC-tanktrekk",
+        "status": "KAMPANJ_AVVECKLAD"
       },
       "pris": {
         "pris": "439.00",
@@ -187,7 +189,8 @@
         "adsetNamn": "IBC-tanktrekk NO - PD",
         "annonsNamn": "IBC-tanktrekk_NO_PD_12_H3",
         "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
-        "prefix": "IBC-tanktrekk"
+        "prefix": "IBC-tanktrekk",
+        "status": "KAMPANJ_AVVECKLAD"
       },
       "pris": {
         "pris": "439.00",
@@ -207,8 +210,8 @@
         "kalla": "notion-rest"
       },
       "namn": "IBC_CS_9_H1",
-      "status": "KÖR",
-      "skal": null,
+      "status": "HOPPA",
+      "skal": "hålls: den svenska prisskylten (489 kr / jämförpris 636 kr) är ett fysiskt skyltkort i scenen och kameran zoomar in på det de första 5,75 s av 14,2 — går inte att täcka, kräver ny export",
       "se": {
         "annonsId": "120250312659050291",
         "status": "ACTIVE",
@@ -313,7 +316,8 @@
         "adsetNamn": "Feiesett NO - PD",
         "annonsNamn": "Sotarset_NO_PD_9_H1",
         "link": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror",
-        "prefix": "Sotarset"
+        "prefix": "Sotarset",
+        "status": "DRY"
       },
       "pris": {
         "pris": "389.00",
@@ -376,7 +380,8 @@
         "adsetNamn": "Feiesett NO - PD",
         "annonsNamn": "Sotarset_NO_PD_8_H2",
         "link": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror",
-        "prefix": "Sotarset"
+        "prefix": "Sotarset",
+        "status": "DRY"
       },
       "pris": {
         "pris": "389.00",
@@ -439,7 +444,8 @@
         "adsetNamn": "Feiesett NO - PD",
         "annonsNamn": "Sotarset_NO_PD_8_H1",
         "link": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror",
-        "prefix": "Sotarset"
+        "prefix": "Sotarset",
+        "status": "DRY"
       },
       "pris": {
         "pris": "389.00",
@@ -502,7 +508,8 @@
         "adsetNamn": "Feiesett NO - PD",
         "annonsNamn": "Sotarset_NO_PD_7_H1",
         "link": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror",
-        "prefix": "Sotarset"
+        "prefix": "Sotarset",
+        "status": "DRY"
       },
       "pris": {
         "pris": "389.00",
@@ -565,7 +572,8 @@
         "adsetNamn": "Takovertrekk Campingvogn NO - SP",
         "annonsNamn": "Takovertrekk_NO_SP_4_H4",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
-        "prefix": "Takovertrekk"
+        "prefix": "Takovertrekk",
+        "status": "DRY"
       },
       "pris": {
         "pris": "1189.00",
@@ -628,7 +636,8 @@
         "adsetNamn": "Takovertrekk Campingvogn NO - SP",
         "annonsNamn": "Takovertrekk_NO_SP_4_H3",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
-        "prefix": "Takovertrekk"
+        "prefix": "Takovertrekk",
+        "status": "DRY"
       },
       "pris": {
         "pris": "1189.00",
@@ -691,7 +700,8 @@
         "adsetNamn": "Takovertrekk Campingvogn NO - SP",
         "annonsNamn": "Takovertrekk_NO_SP_4_H2",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
-        "prefix": "Takovertrekk"
+        "prefix": "Takovertrekk",
+        "status": "DRY"
       },
       "pris": {
         "pris": "1189.00",
@@ -754,7 +764,8 @@
         "adsetNamn": "Takovertrekk Campingvogn NO - CS",
         "annonsNamn": "Takovertrekk_NO_CS_12_H1",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
-        "prefix": "Takovertrekk"
+        "prefix": "Takovertrekk",
+        "status": "DRY"
       },
       "pris": {
         "pris": "1189.00",
