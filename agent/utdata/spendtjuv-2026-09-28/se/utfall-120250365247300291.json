@@ -1,0 +1,70 @@
+{
+  "tjuvar": [
+    {
+      "id": "120250365248970291",
+      "namn": "Maskinhylla_CS_2_1",
+      "status": "ACTIVE",
+      "spend": 967.04,
+      "roas": 0,
+      "kop": 0,
+      "alder_dagar": 3,
+      "spend_7d": 967.04,
+      "roas_7d": 0,
+      "backdagar_i_rad": null,
+      "etikett": null,
+      "etikett_datum": null,
+      "roas_livstid": 1.062437,
+      "intakt": 0,
+      "trott_vinnare": false,
+      "orsak": "NOLL_KOP"
+    }
+  ],
+  "raddade": [
+    {
+      "id": "120250365249980291",
+      "namn": "Maskinhylla_GT_2",
+      "status": "ACTIVE",
+      "spend": 101.44,
+      "roas": 17.412263,
+      "kop": 1,
+      "alder_dagar": 3,
+      "spend_7d": 101.44,
+      "roas_7d": 17.412263,
+      "backdagar_i_rad": null,
+      "etikett": null,
+      "etikett_datum": null,
+      "roas_livstid": 16.613055,
+      "intakt": 1766.29995872
+    },
+    {
+      "id": "120250365247750291",
+      "namn": "Maskinhylla_CS_1",
+      "status": "ACTIVE",
+      "spend": 526.63,
+      "roas": 3.353968,
+      "kop": 1,
+      "alder_dagar": 3,
+      "spend_7d": 526.63,
+      "roas_7d": 3.353968,
+      "backdagar_i_rad": null,
+      "etikett": null,
+      "etikett_datum": null,
+      "roas_livstid": 3.020504,
+      "intakt": 1766.30016784
+    }
+  ],
+  "rest": {
+    "spend": 1713.3899999999999,
+    "intakt": 3532.60012656,
+    "kop": 2,
+    "roas": 2.061760677113792
+  },
+  "break_even": 1.520709754321216,
+  "kampanj_spend": 2680.43,
+  "tjuvSpend": 967.04,
+  "tjuvAndel": 0.3607779348835821,
+  "dom": "PAUSA_TJUVAR",
+  "motivering": "1 spendtjuv tog 36 % av spenden under break-even 1,52: Maskinhylla_CS_2_1 (967 kr, ROAS 0,00). Resten av kampanjen ligger på ROAS 2,06 (1 713 kr, 2 köp) — över break-even. Pausa tjuvarna, låt kampanjen stå kvar.",
+  "kampanj_id": "120250365247300291",
+  "kampanj_namn": "Maskinhyllan för 4 Elverktyg | BE ROAS 1.64 | Launch 2026-09-25"
+}

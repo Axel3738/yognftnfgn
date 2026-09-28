@@ -1,0 +1,81 @@
+[
+  {
+    "kampanj_id": "120252321093160233",
+    "namn": "Feiesett NO",
+    "lage": "gron",
+    "dom_i_planen": "VANTA_KONSEKVENT",
+    "annonser": 24,
+    "break_even": 1.62,
+    "break_even_cpa": 276.0865596695001,
+    "raddningar_14d": 0,
+    "forlangning_idag": false,
+    "agarbeslut_idag": false,
+    "dom": "INGEN_TJUV",
+    "tjuvar": [],
+    "vantar": [],
+    "rest": null,
+    "raddade": null,
+    "motivering": "Ingen annons uppfyller den gröna grinden (≥ 300 kr, ≥ 10 % av spenden, ≥ 500 kr dränering, och ≥ 3 köp under 1,46 eller 0 köp över 3 × break-even-CPA)."
+  },
+  {
+    "kampanj_id": "120252183519570233",
+    "namn": "Takovertrekk Campingvogn NO",
+    "lage": "gron",
+    "dom_i_planen": "VANTA_KONSEKVENT",
+    "annonser": 70,
+    "break_even": 1.62,
+    "break_even_cpa": 851.3267638615519,
+    "raddningar_14d": 0,
+    "forlangning_idag": false,
+    "agarbeslut_idag": false,
+    "dom": "INGEN_TJUV",
+    "tjuvar": [],
+    "vantar": [],
+    "rest": null,
+    "raddade": null,
+    "motivering": "Ingen annons uppfyller den gröna grinden (≥ 300 kr, ≥ 10 % av spenden, ≥ 500 kr dränering, och ≥ 3 köp under 1,46 eller 0 köp över 3 × break-even-CPA)."
+  },
+  {
+    "kampanj_id": "120252102071560233",
+    "namn": "Arbeidslampe NO",
+    "lage": "rod_utan_trappa",
+    "dom_i_planen": "RAKNA_BACKDAGAR",
+    "annonser": 12,
+    "break_even": 1.63,
+    "break_even_cpa": 296.6205658209848,
+    "raddningar_14d": 0,
+    "forlangning_idag": false,
+    "agarbeslut_idag": false,
+    "dom": "INGEN_TJUV",
+    "tjuvar": [],
+    "vantar": [],
+    "rest": null,
+    "raddade": [],
+    "motivering": "Ingen enskild annons tog ≥10 % av spenden på en ROAS under 1,47 (break-even 1,63 minus marginalen). Förlusten sitter i kampanjen, inte i ett par annonser."
+  },
+  {
+    "kampanj_id": "120251996323340233",
+    "namn": "IBC-tanktrekk NO",
+    "lage": "trappa",
+    "dom_i_planen": "ATGARDSTRAPPAN",
+    "annonser": 64,
+    "break_even": 1.63,
+    "break_even_cpa": 392.8113598398334,
+    "raddningar_14d": 0,
+    "forlangning_idag": false,
+    "agarbeslut_idag": false,
+    "dom": "STANG_AV",
+    "tjuvar": [
+      "IBC-tanktrekk_NO_CS_1_H3 1149.8 roas 0.398339 TROTT_VINNARE"
+    ],
+    "vantar": [],
+    "rest": {
+      "spend": 360.31999999999994,
+      "intakt": 0,
+      "kop": 0,
+      "roas": 0
+    },
+    "raddade": [],
+    "motivering": "Resten av kampanjen är inte bedömbar utan tjuvarna: 360 kr och 0 köp (grinden går vid 300 kr och 1 köp). Det finns ingen bevisat lönsam kärna att rädda."
+  }
+]

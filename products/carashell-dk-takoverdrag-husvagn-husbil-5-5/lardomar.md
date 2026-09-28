@@ -1482,3 +1482,81 @@ En per etiketterad annons (docs/os/CS-KLART.md punkt 1–5). Skrivs av `node age
 **Nästa annonser:**
 - `SLÄPP` — INGEN_LEVERANS (under 300 kr, 0 köp): logga och släpp, aldrig ABO (Axels beslut 2026-09-20); idén får bara komma igen som en ny öppning på en levande vinnare, inte som samma annons.
 
+### Lärdom L-120249189967000172 — CaraShellRoof_DK_SP_2_H1 (LOSER, etikett 2026-09-28)
+
+| Fält | Värde |
+|---|---|
+| Batch | okänd |
+| Utfall | LOSER |
+| Fönster | 2026-09-21 – 2026-09-27 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 5 097 kr / 21 307 kr (24 %) |
+| Köp | 7 |
+| ROAS / CPA | 1,73 / 728 kr — kampanjens ROAS 1,93 |
+| Konverteringsgrad | 0,6 % (7 köp / 1099 LPV) |
+| Hook rate / hold rate | 59 % / 27 % |
+| Bedömbar | ja |
+
+**Koncept:** SP — recensionsvideo ("Passer godt og beskytter taget mod vejret." – Lars, 16 anmeldelser, alla fem stjärnor), dansk översättning av Bäverbutikens `Takoverdrag_SP_2_H1` · **Typ:** IM · **Parent:** Takoverdrag_SP_2_H1 · **Iteration:** 0 · **Källa:** CaraShell DK-kampanjen (översättningsflödet); ingen egen brief. Meta-annons-id 120249189967000172, OPS-kontot MagiBorsten DK 915422744950975.
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext (live 2026-09-28): "\"Passer godt og beskytter taget mod vejret.\" – Lars 🙌 / En af 16 anmeldelser om vores tagbetræk – alle fem stjerner. / ✅ Beskytter taget mod regn, sne og snavs / ✅ Én pe…" · Rubrik: "Tagbetrækket kunderne giver 5 stjerner"
+- VO/bild: ej läst (videon inte öppnad, ffmpeg saknas)
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | husvagnsägaren som vill höra andra kunder först | okänd |
+| Vinkel | SP: recensionscitat med stjärnor (SE-syskonet) | samma, översatt till danska | ja |
+| Medvetandenivå | — (brief saknas i repot) | lösningsmedveten | okänd |
+| Mekanism | — (brief saknas i repot) | "beskytter taget mod regn, sne og snavs" — ingen | okänd |
+| Tro | — (brief saknas i repot) | citatet + "16 anmeldelser – alle fem stjerner" ⚠️ CaraShells recensioner är importerade (31 h efter publicering, granskningen 2026-09-26) — "verifierad kund"-påståenden är obelagda | okänd |
+| Positionering | — (brief saknas i repot) | ingen | okänd |
+| Brådska | — (brief saknas i repot) | ingen | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd — ingen brief; citatet går inte att belägga (importerade recensioner). Anmärkning till nästa version, annonsen rörs inte.
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: videon stoppar och håller (hook 59 %, hold 27 % — högst i fönstret) men konverterar sämst per landningssidevisning (0,6 % mot SP_5_1:s 3,4 %) — citatet lockar tittare som inte är köpklara, och CPA 728 kr mot break-even-CPA ~760 kr (DK-priset 819 kr, break-even 1,93) är på gränsen; 24 % av spenden på en annons som bara nästan går ihop är kampanjens största läcka.
+
+**Nästa annonser:**
+- `SLÄPP` — imiterad översättning med obelagt citat; recensionsformatet byggs inte vidare på CaraShell (granskningen 2026-09-26: falska "verifierad kund"-citat). Statiken SP_5_1 (samma citat, bild i regn) konverterar 3,4 % och tar över.
+
+### Lärdom L-120249187901200172 — CaraShellRoof_DK_SP_5_1 (KPI_WINNER, etikett 2026-09-28)
+
+| Fält | Värde |
+|---|---|
+| Batch | okänd |
+| Utfall | KPI_WINNER |
+| Fönster | 2026-09-21 – 2026-09-27 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 2 302 kr / 21 307 kr (11 %) |
+| Köp | 7 |
+| ROAS / CPA | 5,34 / 329 kr — kampanjens ROAS 1,93 |
+| Konverteringsgrad | 3,4 % (7 köp / 209 LPV) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | ja |
+
+**Koncept:** SP — recensionscitat på bild tagen i regn ("Billedet her er taget i regn: vandet bliver liggende på væven") — dansk översättning av Bäverbutikens `Takoverdrag_SP_5_1` · **Typ:** IM · **Parent:** Takoverdrag_SP_5_1 · **Iteration:** 0 · **Källa:** CaraShell DK-kampanjen; ingen egen brief. Meta-annons-id 120249187901200172.
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext (live 2026-09-28): "\"Passer godt og beskytter taget mod vejret.\" – Lars, en af 16 anmeldelser – alle fem stjerner. / Billedet her er taget i regn: vandet bliver liggende på væven, taget u…" · Rubrik: "16 anmeldelser, 5 stjerner – i regn"
+- Bild: ej öppnad i full storlek · statisk
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | husvagnsägaren som vill se att det håller regn | okänd |
+| Vinkel | SP: citat + bevisbild i regn (SE-syskonet) | samma, översatt | ja |
+| Medvetandenivå | — (brief saknas i repot) | lösningsmedveten | okänd |
+| Mekanism | — (brief saknas i repot) | "vandet bliver liggende på væven" — vattnet stannar på duken | okänd |
+| Tro | — (brief saknas i repot) | citatet + bilden i regn (bevis i bild) — citatet obelagt, bilden är det egna beviset | okänd |
+| Positionering | — (brief saknas i repot) | ingen | okänd |
+| Brådska | — (brief saknas i repot) | ingen | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd — ingen brief; citatet obelagt (importerade recensioner), bilden i regn är det som går att kontrollera.
+
+**Diagnos:** KPI winner: läs hook rate, sedan hold rate, sedan förbi hooken. Den säljer men får inte spend — får den ingen spend på sju dagar är den en förlorare.
+
+**Hypotes (gissning):** Gissning: bilden i regn gör jobbet, inte citatet — samma citat i videon (SP_2_H1) konverterar 0,6 % medan bilden med vattnet på duken konverterar 3,4 % och landar på CPA 329 kr mot break-even-CPA ~760; ett synligt bevis på att regnet stannar på duken svarar på DK-publikens fråga bättre än fem stjärnor gör.
+
+**Nästa annonser:**
+- `CaraShellRoof_DK_SP_5_2` — typ I, parent CaraShellRoof_DK_SP_5_1, iteration 1 (KPI winner ⇒ ny hook, allt annat lika): samma regnbild, men rubriken/hookraden byts från stjärnorna till beviset i bilden ("Vandet bliver liggende på væven — taget under er tørt"), citatet struket. Isolerar: bevis-i-bild-hook utan obelagt citat. ⚠️ Byggs i Bäverbutikens hub som `Takoverdrag_SP_5_2` (SE-ronden) och översätts/speglas — CaraShell briefar aldrig själv.
+

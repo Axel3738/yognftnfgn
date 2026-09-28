@@ -1,0 +1,199 @@
+# Lärdomar — CARASHELL_SE_Taköverdraget
+
+En per etiketterad annons (docs/os/CS-KLART.md punkt 1–5). Skrivs av `node agent/lardom.mjs --skriv`; varje brief pekar på ett id här (`lardom=L-…`).
+
+### Lärdom L-120249189397310172 — CaraShellRoof_PD_110_1 (KPI_WINNER, etikett 2026-09-28)
+
+| Fält | Värde |
+|---|---|
+| Batch | okänd |
+| Utfall | KPI_WINNER |
+| Fönster | 2026-09-21 – 2026-09-27 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 12 078 kr / 55 159 kr (22 %) |
+| Köp | 17 |
+| ROAS / CPA | 2,03 / 710 kr — kampanjens ROAS 1,63 |
+| Konverteringsgrad | 1,8 % (17 köp / 931 LPV) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | ja |
+
+**Koncept:** PD — nio storlekar, "från 1 129 kr", remmar på alla fyra sidor (statisk) — CaraShell-spegling (+100) av Bäverbutikens `Takoverdrag_PD_10_1` (SE BREAKTHROUGH 2026-09-27, listiclesidan) · **Typ:** IM · **Parent:** Takoverdrag_PD_10_1 · **Iteration:** 0 · **Källa:** `/ops-spegla carashell/takskyddet` (Bäverbutikens hub → CaraShell, samma fil); ingen egen brief i CaraShells hub. Meta-annons-id 120249189397310172, OPS-kontot MagiBorsten DK 915422744950975.
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext (live 2026-09-28): "Nio storlekar – från 3 × 5,5 till 3 × 13,5 meter. Från 1 129 kr. Sitter kvar när det blåser – remmar på alla fyra sidor, 2,5 meter och justerbara efter din vagn." · Rubrik: "Nio storlekar. Från 1 129 kr."
+- Bild: inbränd text "5,5 till 3 × 13,5 meter." över en husbil i profil på grå bakgrund (thumbnailen, 64 px — bilden i full storlek är inte öppnad) · statisk, ingen VO
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | SE-lärdomen för Takoverdrag_PD_10_1: husvagns-/husbilsägaren som undrar om det finns för just hens längd | samma text, samma bild — "din vagn" | ja |
+| Vinkel | PD: storleksbredden (nio storlekar) som svar på "finns det för min husbil?" (Axels annonsidé 2026-09-18) | samma | ja |
+| Medvetandenivå | produktmedveten (storlek och pris) | samma | ja |
+| Mekanism | remmar på alla fyra sidor, 2,5 m, justerbara | samma rad | ja |
+| Tro | "sitter kvar när det blåser" | samma | ja |
+| Positionering | ingen | ingen | ja |
+| Brådska | pris "från 1 129 kr", ingen deadline | samma | ja |
+**Utförandet föll:** nej · utford_som_briefad: okänd — speglingen är källfilen; bilden i full storlek inte öppnad. Priset 1 129 kr är CaraShells (carashell.se), inte Bäverbutikens.
+
+**Diagnos:** KPI winner: läs hook rate, sedan hold rate, sedan förbi hooken. Den säljer men får inte spend — får den ingen spend på sju dagar är den en förlorare.
+
+**Hypotes (gissning):** Gissning: samma creative som bröt igenom i Bäverbutiken säljer över kampanjens snitt även i CaraShell (ROAS 2,03 mot 1,63, CPA 710 kr mot break-even-CPA ~715 kr — på gränsen), men den får 22 % av spenden i stället för 30 %+ för att CaraShell-kampanjen bär fler starka annonser (SP_5_1 SPEND_WINNER sedan 2026-09-23); storleksbredden konverterar (1,8 %) men CaraShells högre pris pressar CPA:n till break-even, så vinsten per köp är tunn.
+
+**Nästa annonser:**
+- `CaraShellRoof_PD_110_2` — typ IM, parent CaraShellRoof_PD_110_1: speglingen (`/ops-spegla carashell/takskyddet`) av den första SE-iterationen på Takoverdrag_PD_10_1 (vidarebygg 0 av 3, deadline 2026-10-11, byggs i Bäverbutikens hub av SE-ronden — CaraShell briefar aldrig själv). Enda variabeln följer SE-iterationen (ny hook).
+
+### Lärdom L-120249189597020172 — CaraShellRoof_BOF_107_1 (KPI_WINNER, etikett 2026-09-28)
+
+| Fält | Värde |
+|---|---|
+| Batch | okänd |
+| Utfall | KPI_WINNER · BOF |
+| Fönster | 2026-09-21 – 2026-09-27 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 2 162 kr / 55 159 kr (4 %) |
+| Köp | 4 |
+| ROAS / CPA | 2,24 / 541 kr — kampanjens ROAS 1,63 |
+| Konverteringsgrad | 1,7 % (4 köp / 231 LPV) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | ja |
+
+**Koncept:** BOF — storleksinvändningen ("din husvagns längd är en av nio") — spegling av Bäverbutikens `Takoverdrag_BOF_7_1` (statisk) · **Typ:** IM · **Parent:** Takoverdrag_BOF_7_1 · **Iteration:** 0 · **Källa:** `/ops-spegla`; ingen egen brief. Meta-annons-id 120249189597020172.
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext (live 2026-09-28): "Din husvagns längd är en av nio. Nio storlekar, 3 × 5,5 till 3 × 13,5 meter. Från 1 129 kr." · Rubrik: "Se alla nio storlekar"
+- Bild: ej öppnad i full storlek · statisk, ingen VO
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | den som redan tittat och tvekar på om storleken finns (BOF) | samma | ja |
+| Vinkel | BOF: storleksinvändningen besvarad med nio storlekar | samma | ja |
+| Medvetandenivå | produktmedveten (retargeting) | samma | ja |
+| Mekanism | ingen (storlekstabellen är svaret) | ingen | ja |
+| Tro | "din längd är en av nio" | samma | ja |
+| Positionering | ingen | ingen | ja |
+| Brådska | pris från 1 129 kr, ingen deadline | samma | ja |
+**Utförandet föll:** nej · utford_som_briefad: okänd — spegling av källfilen.
+
+**Diagnos:** BOF — räknas inte i frekvensen; lärdomen handlar om invändningen den svarar på.
+
+**Hypotes (gissning):** Gissning: storleksinvändningen är den som CaraShells publik faktiskt har (samma som SE: Axels annonsidé "finns det för husbilen?"), och BOF-svaret konverterar över kampanjens snitt (ROAS 2,24, CPA 541 kr under break-even-CPA ~715) — 4 köp, precis bedömbar, så domen är svag men går åt rätt håll.
+
+**Nästa annonser:**
+- `SLÄPP` för egna CaraShell-varianter — BOF-etiketten är KPI_WINNER, så regeln "0 BOF-bilder" släpper för Taköverdraget; nästa BOF på storleksrutan byggs i Bäverbutikens hub (SE-ronden, invändningsmatrisen "täcker" 2026-09-28) och speglas hit — aldrig direkt i CaraShells hub.
+
+### Lärdom L-120249189223200172 — CaraShellRoof_BOF_109_1 (KPI_WINNER, etikett 2026-09-28)
+
+| Fält | Värde |
+|---|---|
+| Batch | okänd |
+| Utfall | KPI_WINNER · BOF |
+| Fönster | 2026-09-21 – 2026-09-27 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 743 kr / 55 159 kr (1 %) |
+| Köp | 1 |
+| ROAS / CPA | 2,49 / 743 kr — kampanjens ROAS 1,63 |
+| Konverteringsgrad | 2,1 % (1 köp / 47 LPV) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept:** BOF — priset som hela notan ("1 129 kr nu. Ett tak du inte vet priset på sen.") — spegling av Bäverbutikens `Takoverdrag_BOF_9_1` · **Typ:** IM · **Parent:** Takoverdrag_BOF_9_1 · **Iteration:** 0 · **Källa:** `/ops-spegla`; ingen egen brief. Meta-annons-id 120249189223200172.
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext (live 2026-09-28): "1 129 kr nu. Ett tak du inte vet priset på sen. Taket är det du aldrig ser – och det som kostar mest att laga. 1 129 kr är hela notan, ingen gissning." · Rubrik: "Skydda taket – 1 129 kr."
+- Bild: ej öppnad · statisk
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | den som tvekar på priset (BOF) | samma | ja |
+| Vinkel | BOF: priset mot en okänd reparationsnota | samma | ja |
+| Medvetandenivå | produktmedveten | samma | ja |
+| Mekanism | ingen | ingen | ja |
+| Tro | "1 129 kr är hela notan, ingen gissning" | samma | ja |
+| Positionering | mot takreparationen | samma | ja |
+| Brådska | "nu", inget datum | samma | ja |
+**Utförandet föll:** nej · utford_som_briefad: okänd — spegling.
+
+**Diagnos:** BOF — räknas inte i frekvensen; lärdomen handlar om invändningen den svarar på.
+
+**Hypotes (gissning):** Gissning: ett köp på 743 kr (CPA 743 kr, över break-even-CPA ~715) — prisinvändningen får ett svar som Meta ger 1 % av spenden; n=1, ingen dom.
+
+**Nästa annonser:**
+- `SLÄPP` — under 3 köp; prisrutan är fylld (BOF_109_1 live) och nya BOF-svar byggs i Bäverbutikens hub och speglas.
+
+### Lärdom L-120249189478830172 — CaraShellRoof_BOF_108_1 (LOSER, etikett 2026-09-28)
+
+| Fält | Värde |
+|---|---|
+| Batch | okänd |
+| Utfall | LOSER · BOF |
+| Fönster | 2026-09-21 – 2026-09-27 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 110 kr / 55 159 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 1,63 |
+| Konverteringsgrad | 0,0 % (0 köp / 1 LPV) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept:** BOF — förvaringsinvändningen ("ryms i en påse") — spegling av Bäverbutikens `Takoverdrag_BOF_8_1` · **Typ:** IM · **Parent:** Takoverdrag_BOF_8_1 · **Iteration:** 0 · **Källa:** `/ops-spegla`; ingen egen brief. Meta-annons-id 120249189478830172.
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext (live 2026-09-28): "På sommaren bor den i en påse, inte i vägen. Ryms i förvaringspåsen som följer med. Ingen skrymmande vinterförvaring – bara påsen som kom med paketet." · Rubrik: "1 129 kr. Ryms i en påse."
+- Bild: ej öppnad · statisk
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | den som tvekar på var den ska förvaras (BOF) | samma | ja |
+| Vinkel | BOF: förvaringen | samma | ja |
+| Medvetandenivå | produktmedveten | samma | ja |
+| Mekanism | förvaringspåsen som följer med | samma | ja |
+| Tro | "bara påsen som kom med paketet" | samma | ja |
+| Positionering | ingen | ingen | ja |
+| Brådska | pris i rubriken, ingen deadline | samma | ja |
+**Utförandet föll:** nej · utford_som_briefad: okänd — spegling.
+
+**Diagnos:** BOF — räknas inte i frekvensen; lärdomen handlar om invändningen den svarar på.
+
+**Hypotes (gissning):** Gissning: 110 kr och 1 LPV — förvaringsrutan är inte den invändning CaraShells publik har (storlek och pris får spenden); Meta valde bort den, ingen dom.
+
+**Nästa annonser:**
+- `SLÄPP` — under 300 kr; förvaringsrutan räknas som fylld (live) och byggs inte igen.
+
+### Lärdom L-120249189301610172 — CaraShellRoof_CS_113_1 (LOSER, etikett 2026-09-28)
+
+| Fält | Värde |
+|---|---|
+| Batch | okänd |
+| Utfall | LOSER |
+| Fönster | 2026-09-21 – 2026-09-27 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 24 kr / 55 159 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 1,63 |
+| Konverteringsgrad | okänd — backfillad före 2026-09-21 (inga klick i fönstret hämtade) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept:** CS — priset per kvadratmeter ("58 kr per kvadratmeter tak") — spegling av Bäverbutikens `Takoverdrag_CS_13_1` · **Typ:** IM · **Parent:** Takoverdrag_CS_13_1 · **Iteration:** 0 · **Källa:** `/ops-spegla`; ingen egen brief. Meta-annons-id 120249189301610172.
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext (live 2026-09-28): "58 kr per kvadratmeter skyddat tak. 1 129 kr för 19,5 m² – hela takytan på en 6,5-meters husvagn. Taket är det du aldrig ser, och det som kostar mest att laga." · Rubrik: "58 kr per kvadratmeter tak"
+- Bild: ej öppnad · statisk
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | den som räknar på priset | samma | ja |
+| Vinkel | CS: priset omräknat per kvadratmeter | samma | ja |
+| Medvetandenivå | produktmedveten | samma | ja |
+| Mekanism | ingen | ingen | ja |
+| Tro | räkningen 1 129 kr / 19,5 m² | samma | ja |
+| Positionering | mot takreparationen | samma | ja |
+| Brådska | ingen | ingen | ja |
+**Utförandet föll:** nej · utford_som_briefad: okänd — spegling.
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 24 kr — Meta valde bort kvadratmeterräkningen i en kampanj där storleksbredden tar spenden; säger inget om räkningen.
+
+**Nästa annonser:**
+- `SLÄPP` — imiterad spegling, 24 kr; SE-versionen bär frågan.
+

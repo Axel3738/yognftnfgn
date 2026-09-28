@@ -1,0 +1,34 @@
+{
+  "lage": "gron",
+  "tjuvar": [],
+  "vantar": [
+    {
+      "id": "120250242482300291",
+      "namn": "Takoverdrag_SP_4_H1",
+      "status": "ACTIVE",
+      "spend": 6665.6,
+      "roas": 1.305659,
+      "kop": 7,
+      "alder_dagar": 12,
+      "spend_7d": 24668.51,
+      "roas_7d": 2.402902,
+      "backdagar_i_rad": 1,
+      "etikett": "BREAKTHROUGH",
+      "etikett_datum": "2026-09-23",
+      "roas_livstid": 2.601068,
+      "intakt": 8703.0006304,
+      "dranering": 949.3142432494087,
+      "trott_vinnare": true,
+      "orsak": "TROTT_VINNARE",
+      "vantar_orsak": "BREAKTHROUGH (2026-09-23) med livstids-ROAS 2,60 över break-even — nåd. Dränering 7 d: −14 265 kr (tak 2 442 kr), back-dygn 1 (tak 5)."
+    }
+  ],
+  "break_even": 1.5224922267264678,
+  "break_even_cpa": 813.9685341599865,
+  "kampanj_spend": 32610.54,
+  "noteringar": [],
+  "dom": "INGEN_TJUV",
+  "motivering": "Ingen annons uppfyller den gröna grinden (≥ 300 kr, ≥ 10 % av spenden, ≥ 500 kr dränering, och ≥ 3 köp under 1,37 eller 0 köp över 3 × break-even-CPA). 1 annons(er) väntar (nåd eller ung).",
+  "kampanj_id": "120250147343350291",
+  "kampanj_namn": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09"
+}

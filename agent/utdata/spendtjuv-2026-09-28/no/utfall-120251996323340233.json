@@ -1,0 +1,37 @@
+{
+  "tjuvar": [
+    {
+      "id": "120251996677280233",
+      "namn": "IBC-tanktrekk_NO_CS_1_H3",
+      "status": "ACTIVE",
+      "spend": 1149.8,
+      "roas": 0.398339,
+      "kop": 1,
+      "alder_dagar": 30,
+      "spend_7d": 2439.52,
+      "roas_7d": 1.706676,
+      "backdagar_i_rad": null,
+      "etikett": "SPEND_WINNER",
+      "etikett_datum": "2026-09-21",
+      "roas_livstid": 2.314335,
+      "intakt": 458.0101822,
+      "trott_vinnare": true,
+      "orsak": "TROTT_VINNARE"
+    }
+  ],
+  "raddade": [],
+  "rest": {
+    "spend": 360.31999999999994,
+    "intakt": 0,
+    "kop": 0,
+    "roas": 0
+  },
+  "break_even": 1.63,
+  "kampanj_spend": 1538.82,
+  "tjuvSpend": 1149.8,
+  "tjuvAndel": 0.7471959033545184,
+  "dom": "STANG_AV",
+  "motivering": "Resten av kampanjen är inte bedömbar utan tjuvarna: 360 kr och 0 köp (grinden går vid 300 kr och 1 köp). Det finns ingen bevisat lönsam kärna att rädda.",
+  "kampanj_id": "120251996323340233",
+  "kampanj_namn": "IBC-tanktrekk NO | BE-ROAS 1,63 | 2026-08-29"
+}
