@@ -2629,3 +2629,28 @@ Ligger hos Axel sedan 24/9.
 **2 källrader → `Approved`:** `Takoverdrag_OB_10_1` och `OB_8_1` — deras
 US-annonser (`120251634835850435`, `120251634831160435`) kom upp i natt.
 Fem videor väntar fortfarande på USA (HeyGen-krediterna).
+
+### Efterjusteringen körd 2026-09-28 16:06 CEST — 10 av 10 annonser live
+
+| Spegelnamn | NO-annons | Läst tillbaka |
+|---|---|---|
+| `CaraShellRoof_NO_SP_104_H2` | `120249304588710172` | ACTIVE · `IN_PROCESS` · konto `915422744950975` · adset `CARASHELL_NO_Takovertrekket - SP` |
+| `CaraShellRoof_NO_CS_112_H1` | `120249304605860172` | ACTIVE · `IN_PROCESS` · konto `915422744950975` · adset `CARASHELL_NO_Takovertrekket - CS` |
+
+Torrkörningen 13 min efter strypningen visade exakt de två raderna
+(`TORR: 10 speglad(e) · 0 hoppad(e) · 0 fel`), skarpt gav båda live.
+De norska filerna bifogade för hand på hubbraderna — `SP_104_H2`
+(`3e9270ab-908c-816b-ba60-eeb0c8735d83`) och `CS_112_H1`
+(`3e9270ab-908c-8180-b368-c3032af2995e`), båda "2 fil(er) totalt" vid
+tillbakaläsning. Discord-rapporten postad först när raderna var hela
+(meddelande `1554163384054976765` i `#annons-uppladdning`).
+
+⚠️ **Efterjusteringen skriver över dagens egen resultatfil.** `--ut` styr bara
+var videofilerna hamnar; resultatet går alltid till
+`factory/output/carashell/spegla-<datum>.json` + `.discord.json`. Körningen med
+`--fran` såg 10 rader (dagens 5 + fem äldre som redan var klara) och skrev om
+båda filerna — dagens egna 6 rader, `GT_11_H1`-stoppet och de två `Approved`
+fanns bara i den commitade versionen (`23de2805`). **Hämta originalet ur git
+innan Discord-rapporten postas efter en efterjustering**, annars rapporteras
+fem färdiga rader från tidigare dygn som dagens arbete och stoppet försvinner
+ur ACTION NEEDED.

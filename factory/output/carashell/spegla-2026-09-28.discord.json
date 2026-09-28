@@ -1,36 +1,24 @@
 {
-  "brand": "CaraShell",
-  "datum": "2026-09-28",
-  "lage": "spegla",
-  "gjort": [
-    "Takoverdrag_SP_4_H4 → CaraShellRoof_SP_104_H4: SE ad 120249303450790172 live in CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11 (adset CARASHELL_SE_Taköverdraget - SP), NO ad 120249303471350172 live in CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11 — row in hub",
-    "Takoverdrag_SP_4_H3 → CaraShellRoof_SP_104_H3: SE ad 120249303595620172 live in CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11 (adset CARASHELL_SE_Taköverdraget - SP), NO ad 120249303609050172 live in CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11 — row in hub",
-    "Takoverdrag_SP_4_H2 → CaraShellRoof_SP_104_H2: SE ad 120249303842690172 live in CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11 (adset CARASHELL_SE_Taköverdraget - SP) — row in hub",
-    "Takoverdrag_CS_12_H1 → CaraShellRoof_CS_112_H1: SE ad 120249303997750172 live in CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11 (adset CARASHELL_SE_Taköverdraget - CS) — row in hub",
-    "Takoverdrag_UG_2_H1 → CaraShellRoof_UG_102_H1: SE ad 120249304159620172 live in CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11 (adset CARASHELL_SE_Taköverdraget - UG), NO ad 120249304260960172 live in CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11 — row in hub",
-    "Takoverdrag_OB_10_1: 🇺🇸 English version 120251634835850435 is live — source row set to Approved",
-    "Takoverdrag_OB_8_1: 🇺🇸 English version 120251634831160435 is live — source row set to Approved"
-  ],
-  "varningar": [
-    "CaraShellRoof_SP_104_H2: NO not mirrored — NO-uppladdningen misslyckades: Meta paging: User request limit reached (the NO routine will translate it)",
-    "Takoverdrag_GT_11_H1: skipped — nämner Bäverbutiken: Bäverbutiken",
-    "CaraShellRoof_CS_112_H1: NO not mirrored — NO-uppladdningen misslyckades: Meta paging: User request limit reached (the NO routine will translate it)",
-    "Takoverdrag_SP_4_H4 (SE): end card could not be checked — ffmpeg could not read the duration. Does not block the upload — someone has to look at the last seconds.",
-    "Takoverdrag_SP_4_H4 (NO): end card could not be checked — ffmpeg could not read the duration. Does not block the upload — someone has to look at the last seconds.",
-    "Takoverdrag_SP_4_H3 (SE): end card could not be checked — ffmpeg could not read the duration. Does not block the upload — someone has to look at the last seconds.",
-    "Takoverdrag_SP_4_H3 (NO): end card could not be checked — ffmpeg could not read the duration. Does not block the upload — someone has to look at the last seconds.",
-    "Takoverdrag_SP_4_H2 (SE): end card could not be checked — ffmpeg could not read the duration. Does not block the upload — someone has to look at the last seconds.",
-    "Takoverdrag_SP_4_H2 (NO): end card could not be checked — ffmpeg could not read the duration. Does not block the upload — someone has to look at the last seconds.",
-    "Takoverdrag_GT_11_H1 (SE): end card could not be checked — ffmpeg could not read the duration. Does not block the upload — someone has to look at the last seconds.",
-    "Takoverdrag_GT_11_H1 (NO): end card could not be checked — ffmpeg could not read the duration. Does not block the upload — someone has to look at the last seconds.",
-    "Takoverdrag_CS_12_H1 (SE): end card could not be checked — ffmpeg could not read the duration. Does not block the upload — someone has to look at the last seconds.",
-    "Takoverdrag_CS_12_H1 (NO): end card could not be checked — ffmpeg could not read the duration. Does not block the upload — someone has to look at the last seconds.",
-    "Takoverdrag_UG_2_H1 (SE): end card could not be checked — ffmpeg could not read the duration. Does not block the upload — someone has to look at the last seconds.",
-    "Takoverdrag_UG_2_H1 (NO): end card could not be checked — ffmpeg could not read the duration. Does not block the upload — someone has to look at the last seconds.",
-    "SE-kampanj: \"CARASHELL_SE_Taköverdraget LISTICLE\" är eget spår (namnet bär LISTICLE) och tog inte emot annonserna."
-  ],
-  "action_axel": [
-    "Takoverdrag_GT_11_H1: nämner Bäverbutiken: Bäverbutiken — decide whether the editor should make a store version"
-  ],
-  "nasta_korning": "tomorrow 16:20 + slot"
+ "brand": "CaraShell",
+ "datum": "2026-09-28",
+ "lage": "spegla",
+ "gjort": [
+  "Takoverdrag_SP_4_H4 → CaraShellRoof_SP_104_H4: SE ad 120249303450790172 live in CARASHELL_SE_Taköverdraget (adset - SP), NO ad 120249303471350172 live in CARASHELL_NO_Takovertrekket — row in hub",
+  "Takoverdrag_SP_4_H3 → CaraShellRoof_SP_104_H3: SE ad 120249303595620172 live in CARASHELL_SE_Taköverdraget (adset - SP), NO ad 120249303609050172 live in CARASHELL_NO_Takovertrekket — row in hub",
+  "Takoverdrag_SP_4_H2 → CaraShellRoof_SP_104_H2: SE ad 120249303842690172 live in CARASHELL_SE_Taköverdraget (adset - SP), NO ad 120249304588710172 live in CARASHELL_NO_Takovertrekket (uploaded in a repair pass after Meta throttled the first attempt) — row in hub, both files attached",
+  "Takoverdrag_CS_12_H1 → CaraShellRoof_CS_112_H1: SE ad 120249303997750172 live in CARASHELL_SE_Taköverdraget (adset - CS), NO ad 120249304605860172 live in CARASHELL_NO_Takovertrekket (uploaded in a repair pass after Meta throttled the first attempt) — row in hub, both files attached",
+  "Takoverdrag_UG_2_H1 → CaraShellRoof_UG_102_H1: SE ad 120249304159620172 live in CARASHELL_SE_Taköverdraget (adset - UG), NO ad 120249304260960172 live in CARASHELL_NO_Takovertrekket — row in hub",
+  "Takoverdrag_OB_10_1: 🇺🇸 English version 120251634835850435 is live — source row set to Approved",
+  "Takoverdrag_OB_8_1: 🇺🇸 English version 120251634831160435 is live — source row set to Approved",
+  "5 rows mirrored, 10 of 10 ads live and read back from Meta (ACTIVE, account 915422744950975, IN_PROCESS = normal review)"
+ ],
+ "varningar": [
+  "Meta throttling (code 17) ate 2 NO uploads on the first attempt — third day in a row (22 Sep two, 26 Sep one, today two). Both were uploaded in a repair pass the same afternoon and the Norwegian files are attached to their hub rows. Nothing is missing, but the run summary said \"0 errors\" while 8 of 10 ads existed: always count ads against rows × 2.",
+  "End card could not be checked on all files — ffmpeg is not installed in this container, so it could not read the duration. Does not block the upload — someone has to look at the last seconds.",
+  "SE campaign \"CARASHELL_SE_Taköverdraget LISTICLE\" is its own track (LISTICLE in the name) and did not receive the ads — correct behaviour."
+ ],
+ "action_axel": [
+  "Takoverdrag_GT_11_H1: still skipped — the copy names Bäverbutiken. Fifth day in a row (24-28 Sep). Decide whether the editor should make a store-neutral version, or the row stays parked."
+ ],
+ "nasta_korning": "tomorrow 16:20 + slot"
 }
