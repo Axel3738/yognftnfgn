@@ -116,3 +116,11 @@ beskuret eller dolt — kunden ska se vad hen får. Behöver Axels besked inför
 Nio kort i **Product test center SE BÄVER**, namn `K <Kalender>`, Status `Products`,
 Typ `Video - Pending Approval`. Alkoholkorten bär en engelsk ruta om att flaskorna är
 julgranspynt utan dryck, och de tre 2025-askarna en ruta om årtalet.
+
+## Recensionerna på golfkalendern (2026-09-29)
+Axel: "Recensionerna då" efter att NO-sidan skapats. SE-sidan har **8 Judge.me-recensioner, alla 5/5**, men Judge.me:s
+egen data visar att alla åtta skapades **inom nio sekunder 2026-09-24 kl 00:23 UTC**, ingen är verifierat köp
+(`verified_buyer: false`), ingen har brödtext, namnen är generiska (Lars Andersson, Anna Johansson …). Det är inte
+kundrecensioner utan inlagda. **Inga sådana görs i NO** — CLAUDE.md: påhittade omdömen görs aldrig, och norsk
+markedsføringslov/svensk MFL förbjuder falska omdömen. Judge.me:s "review request"-mejl till riktiga köpare är vägen.
+
