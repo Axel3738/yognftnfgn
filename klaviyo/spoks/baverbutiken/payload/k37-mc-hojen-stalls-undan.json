@@ -1,16 +1,16 @@
 {
   "id": "k37-mc-hojen-stalls-undan",
-  "emailTitle": "Ett kapell som tar smällen i stället för lacken",
-  "emailDescription": "Dras över på en minut, hela hojen skyddad.",
+  "emailTitle": "Hojen ställs undan: 30 % på kapellet med MC30",
+  "emailDescription": "Och på låset, sätesöverdraget och bensindunken. Koden gäller till och med söndag 25 oktober.",
   "amnesrader": [
-    "Ett kapell som tar smällen i stället för lacken",
-    "Innan hojen ställs undan för vintern",
-    "Lås styret och hjälmen i ett enda lås"
+    "Hojen ställs undan: 30 % på kapellet med MC30",
+    "Matt lack, rost på kromet. MC30 ger 30 %",
+    "Ett lås för styret och hjälmen. 30 % med MC30"
   ],
   "blocks": [
     {
       "type": "h1",
-      "text": "Ett kapell som tar smällen i stället för lacken",
+      "text": "Efter en säsong ute syns det: matt lack, rost på kromet",
       "alignment": "center"
     },
     {
@@ -20,8 +20,13 @@
     },
     {
       "type": "regular",
-      "text": "Säsongen är på väg mot sitt slut för de flesta hojar. Innan den ställs undan är det tre saker värda att ha koll på.",
+      "text": "Regn, fågelspillning och sol jobbar på hojen dygnet runt. Nu är säsongen slut för de flesta. Frågan är vad som ska ligga över den i vinter.",
       "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Sätet blir slitet av sol och användning. Och motorcyklar och hjälmar är tyvärr populära mål för tjuvar.",
+      "alignment": "left"
     },
     {
       "type": "products",
@@ -29,7 +34,7 @@
       "products": [
         {
           "id": "d091553e-f265-47f7-816c-e40134950a9b",
-          "button": "Köp kapellet"
+          "button": "Se kapellet med UV-skydd"
         }
       ],
       "dynamicProductsCount": null,
@@ -47,31 +52,41 @@
       "productsPerRow": 1
     },
     {
-      "type": "link",
-      "text": "Se kapellet",
-      "url": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv",
-      "style": "button"
-    },
-    {
-      "type": "h2",
-      "text": "Innan hojen ställs undan"
-    },
-    {
-      "type": "list",
-      "text": "Lås fast styret och hjälmen."
-    },
-    {
-      "type": "list",
-      "text": "Skydda sätet mot slitage under vintern."
-    },
-    {
-      "type": "list",
-      "text": "En låsbar bensinreserv på 3 liter, redo till våren."
+      "type": "regular",
+      "text": "Kapellet får ta smällen. Det dras över hela hojen på en minut och mäter 218 × 118,5 cm. Regnet rinner av, dammet stannar utanpå och UV-strålningen bleker kapellet i stället för lacken.",
+      "alignment": "left"
     },
     {
       "type": "regular",
-      "text": "Dras över hela hojen på en minut, 218 × 118,5 cm. Regnet rinner av, dammet stannar utanpå och solen bleker kapellet i stället för lacken.",
+      "text": "En resårkant runt nederkanten håller det på plats i blåst, och det viker ihop till en liten packe.",
       "alignment": "left"
+    },
+    {
+      "type": "h2",
+      "text": "Lås, sätesöverdrag och bensindunk: 30 % med MC30"
+    },
+    {
+      "type": "list",
+      "text": "Styrlås och hjälmlås i ett, i solid aluminiumlegering."
+    },
+    {
+      "type": "list",
+      "text": "Sätesöverdrag i camo som skyddar sätet mot slitage."
+    },
+    {
+      "type": "list",
+      "text": "Bensindunk på 3 liter, låsbar, tunn och lätt att bära."
+    },
+    {
+      "type": "regular",
+      "text": "Koden MC30 ger 30 % på kapellet, styrlåset, sätesöverdraget och bensindunken till och med söndag 25 oktober. Tryck på knappen så ligger koden redan i kassan, eller skriv in den själv. Rabatten dras i kassan, en gång per kund, på priset som står på produktsidan.",
+      "alignment": "left"
+    },
+    {
+      "type": "link",
+      "text": "Hämta 30 % med MC30",
+      "url": "https://baverbutiken.se/discount/MC30?redirect=%2Fproducts%2Fmc-kapell-220-120-regn-damm-uv",
+      "style": "button"
     },
     {
       "type": "products",

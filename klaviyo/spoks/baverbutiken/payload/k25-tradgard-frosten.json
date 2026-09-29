@@ -1,16 +1,16 @@
 {
   "id": "k25-tradgard-frosten",
-  "emailTitle": "Kranen fryser, koden FROST15 väntar",
-  "emailDescription": "FROST15 ger 15 % extra på kranskyddet och tre andra produkter, till onsdag.",
+  "emailTitle": "Isen spränger kranen. 30 % på skyddet till onsdag",
+  "emailDescription": "Koden är FROST30, och den gäller tre skydd till: tanken, krukorna och tunnan.",
   "amnesrader": [
-    "Kranen fryser, koden FROST15 väntar",
-    "15 % extra på Kranskydd Frost",
-    "Kranskydd Frost och tre till, 15 % extra"
+    "Isen spränger kranen. 30 % på skyddet till onsdag",
+    "Skadan syns först när allt tinar och läcker",
+    "Tio sekunder, sen klarar kranen köldknäpparna"
   ],
   "blocks": [
     {
       "type": "h1",
-      "text": "Extra rabatt på Kranskydd Frost. Kod: FROST15",
+      "text": "Första köldknäppen fryser vattnet i utekranen",
       "alignment": "center"
     },
     {
@@ -20,8 +20,18 @@
     },
     {
       "type": "regular",
-      "text": "Kranen fryser vid första köldknäppen, ofta innan du hunnit skydda den. Nu får Kranskydd Frost och tre andra produkter för kylan 15 % extra rabatt, till och med onsdag 7 oktober.",
+      "text": "Isen spränger kran eller ledning, och det syns inte förrän det tinar.",
       "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Först då börjar det läcka, och då är skadan redan gjord.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Det händer natten du inte hunnit tänka på kranen.",
+      "alignment": "left"
     },
     {
       "type": "products",
@@ -29,7 +39,7 @@
       "products": [
         {
           "id": "ca232636-6a2f-496a-9a77-c8a7d0d19aab",
-          "button": "Se kranskyddet"
+          "button": "Se kranskyddet med isolerande foder"
         }
       ],
       "dynamicProductsCount": null,
@@ -47,31 +57,25 @@
       "productsPerRow": 1
     },
     {
+      "type": "regular",
+      "text": "En vinterjacka för kranen. Den träs över på tio sekunder, utan verktyg. Det isolerande fodret håller frosten ute hela vintern, och 420D Oxford-tyget utanpå tål snö, regn och is. Med 22 × 14 cm når det ända in till väggen.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Koden FROST30 ger 30 % på kranskyddet, IBC-tanköverdraget, krukväxthuven och regntunnehuven till och med onsdag 7 oktober. Tryck på knappen så ligger koden redan i kassan, eller skriv in den själv. Rabatten dras i kassan, en gång per kund, på priset som står på produktsidan.",
+      "alignment": "left"
+    },
+    {
       "type": "link",
-      "text": "Hämta FROST15",
-      "url": "https://baverbutiken.se/discount/FROST15?redirect=%2Fproducts%2Fkranskydd-frost-420d-skyddar-utekranen-i-vinter",
+      "text": "Hämta 30 % med FROST30",
+      "url": "https://baverbutiken.se/discount/FROST30?redirect=%2Fproducts%2Fkranskydd-frost-420d-skyddar-utekranen-i-vinter",
       "style": "button"
     },
     {
       "type": "h2",
-      "text": "Tre saker frosten tar först"
-    },
-    {
-      "type": "list",
-      "text": "Kranen: vattnet i ledningen fryser vid första köldknäppen, och isen kan spränga kran eller ledning."
-    },
-    {
-      "type": "list",
-      "text": "Tunnan: löv och pollen samlas i vattnet hela hösten, och till våren kan en grön hinna ligga kvar om den stått öppen."
-    },
-    {
-      "type": "list",
-      "text": "Krukorna: en huv skyddar mot vind, regn, snö och frost, och kvällarna blir kalla innan du hunnit ta in dem."
-    },
-    {
-      "type": "regular",
-      "text": "Träs över kranen och sluter tätt, med isolerande foder som håller frosten ute hela vintern.",
-      "alignment": "left"
+      "text": "Tanken, krukorna och tunnan, också 30 %",
+      "alignment": "center"
     },
     {
       "type": "products",
@@ -103,11 +107,6 @@
       "buttonText": null,
       "alignment": "center",
       "productsPerRow": 3
-    },
-    {
-      "type": "regular",
-      "text": "Koden FROST15 ger 15 % extra på priset som redan står på produktsidan, till och med onsdag 7 oktober. Den gäller Kranskydd Frost, IBC-tanköverdraget, krukväxthuven och regntunnehuven, en gång per kund. Klicka på knappen ovan så läggs den på av sig själv, eller skriv in koden i kassan.",
-      "alignment": "left"
     },
     {
       "type": "columns",

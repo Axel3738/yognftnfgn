@@ -1,16 +1,16 @@
 {
   "id": "k15-fars-dag-sista-helgen",
-  "emailTitle": "Sista helgen att beställa till fars dag",
-  "emailDescription": "Beställ senast måndag för att hinna fram till fars dag den 8 november.",
+  "emailTitle": "Fars dag-rean: sista helgen. Sex presenter, 30 %",
+  "emailDescription": "Koden FARSDAG30 gäller till och med måndag 19 oktober, på allt från motorhölje till bälteslip.",
   "amnesrader": [
-    "Sista helgen att beställa till fars dag",
-    "Sex presenter för honom som redan har allt",
-    "En present för båten, tomten eller kaminen"
+    "Fars dag-rean: sista helgen. Sex presenter, 30 %",
+    "Motorhölje, axelbälte, slipmaskin: 30 % rea",
+    "Skicka listan vidare. Koden FARSDAG30 ger 30 %"
   ],
   "blocks": [
     {
       "type": "h1",
-      "text": "Sista helgen att beställa till fars dag",
+      "text": "Sista helgen med fars dag-rean",
       "alignment": "center"
     },
     {
@@ -20,41 +20,23 @@
     },
     {
       "type": "regular",
-      "text": "Beställ senast måndag 19 oktober, så hinner paketet fram till fars dag den 8 november. Efter det kan vi inte lova det.",
+      "text": "Fars dag är söndag 8 november och kommer fortare än man tror. Till och med måndag kan du fortfarande få 30 % på sex presenter, sorterade efter vad han har hemma: en båt, en tomt, en kamin eller knivar som legat slöa.",
       "alignment": "center"
     },
     {
-      "type": "products",
-      "selectionMode": "manual",
-      "products": [
-        {
-          "id": "d01d20c5-a2cf-40fa-894d-3149ff871b81",
-          "button": "Se produkten"
-        }
-      ],
-      "dynamicProductsCount": null,
-      "dynamicCriteria": null,
-      "productVisibilitySettings": {
-        "isImageVisible": true,
-        "isTitleVisible": true,
-        "isPriceVisible": true,
-        "isButtonVisible": true,
-        "isDescriptionVisible": false,
-        "isOriginalPriceVisible": true
-      },
-      "buttonText": null,
-      "alignment": "center",
-      "productsPerRow": 1
+      "type": "regular",
+      "text": "Koden FARSDAG30 ger 30 % på motorhöljet, båtmotorskyddet, axelbältet, sätesöverdraget, sotarsetet och bälteslipmaskinen till och med måndag 19 oktober. Tryck på knappen så ligger koden redan i kassan, eller skriv in den själv. Rabatten dras i kassan, en gång per kund, på priset som står på produktsidan.",
+      "alignment": "left"
     },
     {
       "type": "link",
-      "text": "Se presenterna",
-      "url": "https://baverbutiken.se/collections/alla-produkter",
+      "text": "Hämta 30 % med FARSDAG30",
+      "url": "https://baverbutiken.se/discount/FARSDAG30?redirect=%2Fcollections%2Falla-produkter",
       "style": "button"
     },
     {
       "type": "h2",
-      "text": "Om han har en båt",
+      "text": "Båten: motorhölje eller heltäckande motorskydd",
       "alignment": "center"
     },
     {
@@ -86,7 +68,7 @@
     },
     {
       "type": "h2",
-      "text": "Om han har en tomt, en gräsklippare eller en kamin",
+      "text": "Tomten, kaminen och de slöa knivarna",
       "alignment": "center"
     },
     {
@@ -126,7 +108,7 @@
     },
     {
       "type": "regular",
-      "text": "Ett skydd för motorn i alla väder, en sele som tar vikten av axlarna, en slipmaskin för kniven som legat slö i lådan. Sex saker han inte köper själv, men använder varje gång.",
+      "text": "Ska du själv ha något av det här? Skicka mejlet vidare som önskelista.",
       "alignment": "left"
     },
     {

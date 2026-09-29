@@ -1,24 +1,16 @@
 {
   "id": "k03-termoskydd-kundernas-ord",
-  "emailTitle": "Immig ruta varje morgon",
-  "emailDescription": "Skyddet sitter utanpå glaset, inte innanför.",
+  "emailTitle": "Immig ruta varje morgon. 30 % på termoskyddet",
+  "emailDescription": "Skyddet sitter utanpå glaset, inte innanför. Koden TERMO30 gäller till och med fredag.",
   "amnesrader": [
-    "Immig ruta varje morgon",
-    "Alla på rastplatsen ser rakt in",
-    "Sätts fast utan att öppna en dörr"
+    "Immig ruta varje morgon. 30 % på termoskyddet",
+    "Alla ser rakt in på rastplatsen. 30 % på skyddet",
+    "Två minuter på utsidan. 30 % på termoskyddet"
   ],
   "blocks": [
     {
-      "type": "quote",
-      "text": "\"Praktiskt skydd mot sol och värme.\"\nVerifierad kund"
-    },
-    {
-      "type": "quote",
-      "text": "\"Bra passform och känns stabilt.\"\nVerifierad kund"
-    },
-    {
       "type": "h1",
-      "text": "Imma inifrån, varje morgon",
+      "text": "Rutan är immig inifrån varje morgon",
       "alignment": "center"
     },
     {
@@ -28,16 +20,26 @@
     },
     {
       "type": "regular",
-      "text": "Fukten från natten lägger sig på insidan av rutan. Gardiner gör bara att den stannar kvar mellan glaset och tyget.",
+      "text": "Har du husbil känner du igen det: fukten från natten lägger sig på insidan av vindrutan, och invändiga gardiner gör bara att den blir kvar mellan glaset och tyget.",
       "alignment": "center"
     },
     {
+      "type": "regular",
+      "text": "Ingen katastrof. Bara en trasa i handen varje morgon.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Och på en rastplats vet du att alla som går förbi ser rakt in.",
+      "alignment": "left"
+    },
+    {
       "type": "products",
       "selectionMode": "manual",
       "products": [
         {
           "id": "12d5933e-635f-4c23-91d4-ef061dad82ab",
-          "button": "Se produkten"
+          "button": "Se skyddet, 211 × 171 cm"
         }
       ],
       "dynamicProductsCount": null,
@@ -53,45 +55,32 @@
       "buttonText": null,
       "alignment": "center",
       "productsPerRow": 1
+    },
+    {
+      "type": "regular",
+      "text": "Skyddet spänns utvändigt över vindrutan och båda sidorutorna, så att glaset inte hinner bli kallt inifrån. Det mörklägger samtidigt hela framvagnen, så ingen ser in.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Två minuters jobb på utsidan i stället för imma att torka bort varje dag. Flikarna kläms i dörrkarmen och håller i blåst.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Måtten är 211 cm i bredd, 171 cm över mitten och 90 cm sidflikar, så mät din vindruta först.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Koden TERMO30 ger 30 % på termoskyddet till och med fredag 9 oktober. Tryck på knappen så ligger koden redan i kassan, eller skriv in den själv. Rabatten dras i kassan, en gång per kund, på priset som står på produktsidan.",
+      "alignment": "left"
     },
     {
       "type": "link",
-      "text": "Se termoskyddet",
-      "url": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+      "text": "Skydda rutan för 30 % mindre",
+      "url": "https://baverbutiken.se/discount/TERMO30?redirect=%2Fproducts%2Ftermoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
       "style": "button"
-    },
-    {
-      "type": "regular",
-      "text": "Skyddet spänns utanpå rutan i stället för innanför, så kylan aldrig får kontakt med glaset från insidan. Det mörklägger samtidigt hela framvagnen, och ingen ser in på rastplatsen.",
-      "alignment": "left"
-    },
-    {
-      "type": "products",
-      "selectionMode": "manual",
-      "products": [
-        {
-          "id": "12d5933e-635f-4c23-91d4-ef061dad82ab",
-          "button": "Se termoskyddet"
-        }
-      ],
-      "dynamicProductsCount": null,
-      "dynamicCriteria": null,
-      "productVisibilitySettings": {
-        "isImageVisible": true,
-        "isTitleVisible": true,
-        "isPriceVisible": true,
-        "isButtonVisible": true,
-        "isDescriptionVisible": false,
-        "isOriginalPriceVisible": true
-      },
-      "buttonText": null,
-      "alignment": "center",
-      "productsPerRow": 1
-    },
-    {
-      "type": "regular",
-      "text": "Täcker vindrutan och båda sidorutorna, 211 cm bred och 171 cm över mitten.",
-      "alignment": "left"
     },
     {
       "type": "columns",

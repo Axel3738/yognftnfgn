@@ -1,11 +1,11 @@
 {
   "id": "k04-sotarset-fore-eldning",
-  "emailTitle": "Draget blir sämre för varje eldning",
-  "emailDescription": "Nio böjliga stänger följer krökarna i röret.",
+  "emailTitle": "Sämre drag för varje eldning. 30 % på sotarset",
+  "emailDescription": "Nio böjliga stänger följer krökarna i röret. Koden SOTAR30 gäller till och med söndag.",
   "amnesrader": [
-    "Draget blir sämre för varje eldning",
-    "Rensa själv mellan sotarens besök",
-    "Når bakom kaminen utan att krypa dit"
+    "Sämre drag för varje eldning. 30 % på sotarset",
+    "Rensa själv mellan sotarens besök. 30 % rabatt",
+    "Når bakom kaminen utan att krypa dit. 30 % rabatt"
   ],
   "blocks": [
     {
@@ -20,8 +20,18 @@
     },
     {
       "type": "regular",
-      "text": "Sotlagret växer tyst i bakgrunden. Kaminen drar sämre och lukten sitter i.",
+      "text": "Nu börjar det bli dags att elda igen. Sotlagret i röret växer tyst i bakgrunden, kaminen drar sämre och lukten sitter i.",
       "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Att boka sotare för en snabb kontroll känns onödigt. Att strunta i det känns fel.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Och bakom pelletskaminen eller torktumlaren är det för trångt för att du ska vilja krypa dit själv.",
+      "alignment": "left"
     },
     {
       "type": "products",
@@ -29,7 +39,7 @@
       "products": [
         {
           "id": "b1d4717b-d737-46ad-a9c2-be85081a15ac",
-          "button": "Se sotarsetet"
+          "button": "Se settet, 3,69 m räckvidd"
         }
       ],
       "dynamicProductsCount": null,
@@ -47,14 +57,8 @@
       "productsPerRow": 1
     },
     {
-      "type": "link",
-      "text": "Se sotarsetet",
-      "url": "https://baverbutiken.se/products/sotarset-med-bojliga-stanger-rensar-rokkanal-och-kaminror",
-      "style": "button"
-    },
-    {
       "type": "regular",
-      "text": "Nio böjliga stänger på 41 cm skruvas ihop till 3,69 meters räckvidd. De följer krökarna i röret i stället för att ta stopp i första kröken, och når bakom kaminen eller torktumlaren.",
+      "text": "Nio böjliga stänger på 41 cm skruvas ihop en och en till 3,69 meters räckvidd. Nylonborsten på 100 mm sitter i toppen, och en sexkantsadapter ingår.",
       "alignment": "left"
     },
     {
@@ -63,20 +67,26 @@
     },
     {
       "type": "list",
-      "text": "Rensar mellan sotarens besök, utan att boka någon."
+      "text": "Du rensar själv mellan sotarens besök."
     },
     {
       "type": "list",
-      "text": "Böjer med i kröken där en stel stång fastnar."
+      "text": "Stängerna följer krökarna i röret i stället för att ta stopp i första kröken."
     },
     {
       "type": "list",
-      "text": "Borstar loss sotet med nylonstrån i stället för att skrapa."
+      "text": "De når bakom kaminen eller torktumlaren, så du slipper krypa dit."
     },
     {
       "type": "regular",
-      "text": "Byggs i den längd du behöver, en stång i taget.",
+      "text": "Koden SOTAR30 ger 30 % på sotarsetet till och med söndag 11 oktober. Tryck på knappen så ligger koden redan i kassan, eller skriv in den själv. Rabatten dras i kassan, en gång per kund, på priset som står på produktsidan.",
       "alignment": "left"
+    },
+    {
+      "type": "link",
+      "text": "Rensa röret för 30 % mindre",
+      "url": "https://baverbutiken.se/discount/SOTAR30?redirect=%2Fproducts%2Fsotarset-med-bojliga-stanger-rensar-rokkanal-och-kaminror",
+      "style": "button"
     },
     {
       "type": "columns",

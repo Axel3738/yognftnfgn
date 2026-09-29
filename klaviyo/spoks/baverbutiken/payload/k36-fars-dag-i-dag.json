@@ -1,16 +1,16 @@
 {
   "id": "k36-fars-dag-i-dag",
-  "emailTitle": "I dag är sista dagen att beställa till fars dag",
-  "emailDescription": "Måndag 19 oktober. Beställer du i morgon kan vi inte lova det till fars dag.",
+  "emailTitle": "I dag är sista dagen på fars dag-rean: 30 %",
+  "emailDescription": "Fyra presenter med koden FARSDAG30, till midnatt i kväll.",
   "amnesrader": [
-    "I dag är sista dagen att beställa till fars dag",
-    "Efter i dag hinner presenten inte fram",
-    "Fyra förslag om presenten inte är klar"
+    "I dag är sista dagen på fars dag-rean: 30 %",
+    "Rean slutar i kväll vid midnatt. Kod: FARSDAG30",
+    "Slipmaskin, spöhållare, motorlås, värmesits: 30 %"
   ],
   "blocks": [
     {
       "type": "h1",
-      "text": "I dag är sista dagen att beställa till fars dag",
+      "text": "I dag är sista dagen på fars dag-rean",
       "alignment": "center"
     },
     {
@@ -20,13 +20,18 @@
     },
     {
       "type": "regular",
-      "text": "Fyra förslag väntar nedan.",
+      "text": "Fars dag är söndag 8 november. Fars dag-rean slutar vid midnatt i kväll, och fyra presenter har 30 % fram till dess.",
       "alignment": "center"
     },
     {
+      "type": "regular",
+      "text": "Koden FARSDAG30 ger 30 % på bälteslipmaskinen, fiskespöhållaren, motorlåset och värmesitsen till och med i dag, måndag 19 oktober. Tryck på knappen så ligger koden redan i kassan, eller skriv in den själv. Rabatten dras i kassan, en gång per kund, på priset som står på produktsidan.",
+      "alignment": "left"
+    },
+    {
       "type": "link",
-      "text": "Se presenterna",
-      "url": "https://baverbutiken.se/collections/alla-produkter",
+      "text": "Hämta 30 % med FARSDAG30",
+      "url": "https://baverbutiken.se/discount/FARSDAG30?redirect=%2Fcollections%2Falla-produkter",
       "style": "button"
     },
     {
@@ -63,11 +68,6 @@
       "buttonText": null,
       "alignment": "center",
       "productsPerRow": 3
-    },
-    {
-      "type": "regular",
-      "text": "Beställer du i morgon räknar vi inte med att det hinner fram till 8 november.",
-      "alignment": "left"
     },
     {
       "type": "columns",

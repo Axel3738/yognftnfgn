@@ -1,22 +1,48 @@
 {
   "id": "k07-damasker-hostlov",
-  "emailTitle": "44 cm skydd, tre grepp, klart",
-  "emailDescription": "Kroka fast, dra remmen, slut kardborren.",
+  "emailTitle": "Blöta strumpor? 44 cm skydd, 30 % till fredag",
+  "emailDescription": "Höstlovet betyder stigar. Koden DAMASK30 gäller till och med fredag 23 oktober.",
   "amnesrader": [
-    "44 cm skydd, tre grepp, klart",
-    "Kroken i snörningen håller den uppe hela dagen",
-    "Redo för älgpasset i gryningen"
+    "Blöta strumpor? 44 cm skydd, 30 % till fredag",
+    "Kroka, dra, fäst kardborren. 30 % på damaskerna",
+    "Gul, neongrön eller orange. 30 % på damaskerna"
   ],
   "blocks": [
     {
       "type": "h1",
-      "text": "Kardborren runt benet stänger ute gruset",
+      "text": "Blöta strumpor avgör turen före trötta ben",
       "alignment": "center"
     },
     {
       "type": "regular",
-      "text": "Snö nerifrån, blöt sly och grus som letar sig ner i kängan. Det är sällan vädret som stoppar turen, det är det som tar sig in nedtill.",
+      "text": "Hej {{ contact.first_name | default: 'där' }},",
       "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Snö nerifrån, blöt sly och grus som letar sig ner i kängan. Det är sällan vädret som avbryter turen. Det är det som tar sig in nedtill.",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Höstlovet betyder stigar, och stigar betyder blöt sly. Grus hittar ner i kängan oavsett väder, så det gäller att stänga till nedtill.",
+      "alignment": "left"
+    },
+    {
+      "type": "h2",
+      "text": "Tre grepp, från känga till knä"
+    },
+    {
+      "type": "list",
+      "text": "Kroka fast i snörningen."
+    },
+    {
+      "type": "list",
+      "text": "Dra remmen under foten."
+    },
+    {
+      "type": "list",
+      "text": "Fäst kardborren runt benet."
     },
     {
       "type": "products",
@@ -24,7 +50,7 @@
       "products": [
         {
           "id": "25febc20-e723-4f07-9e64-e0fd12754294",
-          "button": "Se damaskerna"
+          "button": "Se damaskerna, 44 cm höga"
         }
       ],
       "dynamicProductsCount": null,
@@ -42,31 +68,25 @@
       "productsPerRow": 1
     },
     {
-      "type": "link",
-      "text": "Se damaskerna",
-      "url": "https://baverbutiken.se/products/damasker-vandring-haller-sno-vata-grus-ute",
-      "style": "button"
-    },
-    {
-      "type": "h2",
-      "text": "Så sätter du på dem"
-    },
-    {
-      "type": "list",
-      "text": "Kroka fast i snörningen"
-    },
-    {
-      "type": "list",
-      "text": "Dra remmen under foten"
-    },
-    {
-      "type": "list",
-      "text": "Slut kardborren runt benet"
+      "type": "regular",
+      "text": "44 centimeter skydd i polyester håller snö, väta och grus ute hela vägen upp. En storlek som justeras efter benet: 43 cm omkrets, och den passar de flesta vuxna.",
+      "alignment": "left"
     },
     {
       "type": "regular",
-      "text": "44 centimeter skydd i 100 % polyester, i en storlek som justeras efter benet.",
+      "text": "Syns i terrängen om du väljer gul, neongrön eller orange.",
       "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Koden DAMASK30 ger 30 % på damaskerna till och med fredag 23 oktober. Tryck på knappen så ligger koden redan i kassan, eller skriv in den själv. Rabatten dras i kassan, en gång per kund, på priset som står på produktsidan.",
+      "alignment": "left"
+    },
+    {
+      "type": "link",
+      "text": "Hämta 30 % med DAMASK30",
+      "url": "https://baverbutiken.se/discount/DAMASK30?redirect=%2Fproducts%2Fdamasker-vandring-haller-sno-vata-grus-ute",
+      "style": "button"
     },
     {
       "type": "columns",

@@ -1,11 +1,11 @@
 {
   "id": "k05-fars-dag",
-  "emailTitle": "En present för taket han aldrig kollar",
-  "emailDescription": "Taket är den dyraste ytan på hela vagnen.",
+  "emailTitle": "Taket han aldrig kollar. Fars dag-rea: 30 %",
+  "emailDescription": "Rean slutar måndag 19 oktober. Koden FARSDAG30 gäller taköverdraget och tre presenter till.",
   "amnesrader": [
-    "En present för taket han aldrig kollar",
-    "Beställ senast 19 oktober till fars dag",
-    "Tre andra presenter om han saknar husvagn"
+    "Taket han aldrig kollar. Fars dag-rea: 30 %",
+    "Ingen husvagn? Tre presenter med 30 % rabatt",
+    "Fyra presenter, en kod: FARSDAG30 ger 30 %"
   ],
   "blocks": [
     {
@@ -20,8 +20,23 @@
     },
     {
       "type": "regular",
-      "text": "Taket är den dyraste ytan på hela vagnen, och den han aldrig tänker på själv.",
+      "text": "Fars dag är söndag 8 november och kommer fortare än man tror. Presenten som köps i sista stund blir ofta en nödlösning, så börja hellre med något han faktiskt har nytta av.",
       "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Taket på husvagnen eller husbilen, till exempel. Det är den yta han aldrig går upp och kollar.",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Under tiden hamnar regn, löv och fågelspillning på taket, och vattnet blir stående kring takluckor och skarvar hela vintern. Då mjuknar tätmassan.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Den dag fukten är inne i taket räcker det inte med en tvätt till våren. Då är det en reparation, och taket är just det som kostar mest att laga.",
+      "alignment": "left"
     },
     {
       "type": "products",
@@ -47,19 +62,29 @@
       "productsPerRow": 1
     },
     {
-      "type": "link",
-      "text": "Se presenten",
-      "url": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
-      "style": "button"
-    },
-    {
       "type": "regular",
-      "text": "Skyddar taket med remmar på alla fyra sidor, i stället för ett helöverdrag han måste be om hjälp med.",
+      "text": "Taköverdraget täcker bara taket, inte hela vagnen, så han får på det själv. Vattnet rinner av väven i stället för att bli stående, och kanten hänger ner över sidorna så att skarven mellan tak och vägg också ligger under skydd.",
       "alignment": "left"
     },
     {
+      "type": "regular",
+      "text": "Remmar på alla fyra sidor håller det på plats. Det passar både husvagn och husbil, i nio storlekar.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Koden FARSDAG30 ger 30 % på taköverdraget, bälteslipmaskinen, fiskespöhållaren och övervakningskameran till och med måndag 19 oktober. Tryck på knappen så ligger koden redan i kassan, eller skriv in den själv. Rabatten dras i kassan, en gång per kund, på priset som står på produktsidan.",
+      "alignment": "left"
+    },
+    {
+      "type": "link",
+      "text": "Hämta 30 % med FARSDAG30",
+      "url": "https://baverbutiken.se/discount/FARSDAG30?redirect=%2Fproducts%2Ftakoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+      "style": "button"
+    },
+    {
       "type": "h2",
-      "text": "Om han inte har husvagn",
+      "text": "Utan husvagn: slipmaskin, spöhållare eller kamera",
       "alignment": "center"
     },
     {
@@ -95,7 +120,7 @@
     },
     {
       "type": "regular",
-      "text": "Beställ senast 19 oktober om paketet ska vara framme till fars dag den 8 november.",
+      "text": "Är det du som ska få presenten? Skicka mejlet vidare, så slipper någon gissa.",
       "alignment": "left"
     },
     {
