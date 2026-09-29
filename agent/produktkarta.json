@@ -1214,7 +1214,12 @@
       },
       "produkt_mapp": "atv-kapellet",
       "hub_not": "Ingen Notion-hub 2026-09-24 — skapas ur MALL Creative hub MALL först när förstabatchens briefer finns (första möjliga dag 2026-09-29, etiketter dag 7). Produktminnet products/atv-kapellet/ skrivet av /rond-auto 2026-09-24.",
-      "minne": "products/atv-kapellet"
+      "minne": "products/atv-kapellet",
+      "notion_hub_id": "3ea270ab-908c-8157-a2a2-ca2cb28cb792",
+      "notion_hub_datakalla": "collection://e68270ab-908c-8316-a89c-07bd784ea4bd",
+      "notion_hub_namn": "ATV cover creative hub",
+      "notion_hub_not": "Skapad 2026-09-29 av /rond-auto steg 4b (vidarebygg) genom duplicering av MALL Creative hub MALL (3cc270ab-908c-8005-a50e-db6b1b179794), döpt om via notion-update-data-source. Integrationen \"Bäverbutiken RUTINER\" ser den INTE (REST 404, som Solar/Golf/Whittling) — läs och skriv via Notion-MCP. Batch-01 (PD_1_H4/H5/H6) ligger här som Draft.",
+      "drive_produktmapp_not": "Joshs produktmapp \"ATV-Kapell\" (Product test center-raden \"10 ATV-kapell 3XL\"); förälderns fil ATV-kapell_PD_1_H1.mp4 id 1-8-ycjSrheQilknhRhfPfsbVAriiFPu-. Ingen batchmapp skapad — briefarna ligger i Notion."
     },
     {
       "campaign_id": "120250320680220291",

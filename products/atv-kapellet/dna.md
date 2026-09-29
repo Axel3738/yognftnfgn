@@ -131,3 +131,24 @@ det håller till dag 7 är det hooken som väljer publik, inte sidan som tappar.
 
 - Materialfakta (vattentätt? tyg? spännband?) står inte på produktsidan men i
   Joshs copy — ska sidan uppdateras, eller ska copyn hålla sig till sidan?
+
+## Komponentkarta ATVKapell_PD_1_H1 (BREAKTHROUGH 2026-09-29, ANALYSMETOD 6b)
+
+Läst ur den live annonsen 2026-09-29 (primärtext, rubrik via Graph API; videon inte transkriberad — ffmpeg saknas i rutinens container, Drive-filen `1-8-ycjSrheQilknhRhfPfsbVAriiFPu-` är källan) — briefen är Joshs launchcreative (Product test center "10 ATV-kapell 3XL"), inte en brief i repot, så raderna är lästa ur annonsen, inte ur brief. Fönstret 22–28 sep: 7 336 kr (77 % av kampanjen), 27 köp, ROAS 2,52 / CPA 272 kr mot break-even-CPA ~450 kr (AOV 684 kr ÷ 1,52), hook rate 36 %, hold rate 14 %, konverteringsgrad 4,1 % (27 köp / 653 LPV). Budgeten höjdes 1 000 → 1 500 kr 2026-09-24 (SKALA) inne i fönstret. Lärdom L-120250320728410291.
+
+| Komponent | Exakt rad / bild (läst ur annonsen, inte ur brief) | Valens | Awareness | Avatar |
+|---|---|---|---|---|
+| HOOK | VO 0–3 s: INTE avläst (videon ej transkriberad). Primärtext rad 1: "Din ATV förtjänar bättre än att stå ute och skadas av vädret. 🌧️" · rubrik: "Skydda din ATV – hela året" | negativ → omsorg (skadas → skydda) | problemmedveten | atv-agaren-som-parkerar-ute |
+| BRIDGE | "✅ Vattentätt, vindtätt och UV-skyddat" (⚠️ inte sidans ord — får inte ärvas) | positiv | lösningsmedveten | samma |
+| HOLD | "✅ Passar de flesta märken – Polaris, Honda, Yamaha, Can-Am ✅ Ingen mer skrapning eller tvätt innan du kör" (⚠️ märkeslistan står inte på sidan) | positiv, invändningen "passar den min?" | produktmedveten | samma |
+| CTA | "Dra bara på kapellet och glöm bort vädret. 👉 Beställ ditt ATV-Kapell idag." | neutral, mjuk brådska | — | samma |
+
+**Bärande komponent = hypotes (gissning):** VO-hooken 0–3 s. Texten är identisk i PD_1_H1/H2/H3 (26 kr och 770 kr / 1 köp) — det enda som skiljer är videons öppning, så breakthrough-etiketten sitter i H1:s första tre sekunder. Vad i öppningen som skiljer är oläst; iterationerna (PD_1_H4 ny hook, PD_1_H5 längre problemdel, PD_1_H6 in media res) isolerar det och byter samtidigt copyn till sidans egna löften (löv, damm, skräp på kapellet i stället för lacken; 256 × 110 × 120 cm; mät först).
+
+## Avatarer (taggar, 2026-09-29 — `avatar=` i briefer)
+
+| Tagg | Vem | Källa | Läge |
+|---|---|---|---|
+| `atv-agaren-som-parkerar-ute` | ATV-ägaren som parkerar ute mellan turerna — löv, damm och skräp på lacken | sidans egen rad ("står ATV:n parkerad utomhus eller i garaget – löv, damm och skräp lägger sig på lacken dag efter dag") + PD_1_H1 27 köp | bevisad (vinkeln), hooken oläst |
+| `agaren-som-parkerar-inne` | Den som parkerar i garaget ("Min står inne") — dammet lägger sig där också, helsvart i stället för klarfärgad presenning | kommentar 1 st på PD_1_H1 + sidans rad "Diskret i garaget" | dokumenterad invändning (kluster < 3) |
+| `anhorig-som-koper-present` | Partnern/barnet som köper present (G-vinkeln) | G_1/G_2: 149 kr, ingen leverans | obevisad |

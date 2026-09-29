@@ -6,7 +6,7 @@ får användas i copyn (damm, löv, skräp på kapellet i stället för lacken;
 256 × 110 × 120 cm; svart; en storlek — mät först). Tal: 579, 759, 256, 110,
 120, 3XL. Inga recensioner (de tio på sidan är importrader).
 
-## Vidarebyggen på `ATVKapell_PD_1_H1` (typ I, när lärdomen L-120250320728410291 finns)
+## Vidarebyggen på `ATVKapell_PD_1_H1` (typ I) — [använda i batch #1, 2026-09-29]
 
 | Namn | Iteration | Variabel | Källa |
 |---|---|---|---|
