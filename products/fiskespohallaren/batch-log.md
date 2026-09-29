@@ -594,3 +594,7 @@ Rundan låg på 0 i morse (0 lärdomar sedan batch #7, 104 etiketterade utan lä
 Kvar av de namngivna: Rodholder_PD_68_1 (rubriken på PD_6_1 — körs när PD_38/41/62 lästs). `Fiskespöhållare_SO_1_H3` bär fortfarande 149 kr i copyn utan ZZ_GAMMAL-namn (pausad) — flaggat för omdöpning.
 
 **2026-09-28 — brief-runda INTE byggd:** `annonsbehov` gav `rundaAntal 1` (tak 0 + 1 namngiven plats `Rodholder_PD_68_1`). Lärdomen villkorar platsen: "körs först när PD_38_1/PD_41_1/PD_62_1 lästs" — alla tre står fortfarande som Draft i Fish rod holder (58 drafts i hubben, mätt 2026-09-28), så villkoret är inte uppfyllt. 0 briefer. Kampanjen VANTA_KONSEKVENT 750 kr/dag, ROAS 3d 2,65 (target 2,43, 1 dygn över), visningsköpsvarning 21,6 %.
+
+## 2026-09-29 — brief-runda INTE byggd (`/rond-auto` steg 4b)
+
+`annonsbehov` gav `rundaAntal 1` (tak 0 + 1 namngiven plats `Rodholder_PD_68_1`; PD_65_H1/PD_66_H1/PD_67_H1/CS_11_H1 strukna = redan i hubben). Lärdomen L-120249936610640291 (Rodholder_PD_6_1, KPI_WINNER) villkorar platsen: *"körs först när PD_38_1/PD_41_1/PD_62_1 (samma formel i nya miljöer, redan briefade) lästs, så miljö och rubrik inte testas samtidigt"*. Läst i hubben 2026-09-29: alla tre står som **Draft** (inte producerade, inte i kontot, ingen ETIKETT-rad) — villkoret är inte uppfyllt, så platsen byggs inte i dag. 0 briefer, ingen `CS_BATCH_KLAR`. Hubben "Fish rod holder" har ingen Feedback-rad (Brief review) — noterat i rapporten. Kampanjen LAT_VARA (ROAS 3d 2,33, 19,4 % vinst, under target 2,45), spendtjuv INGEN_TJUV. Annonsidéer: 0 rader Ny.
