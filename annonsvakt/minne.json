@@ -1,5 +1,5 @@
 {
- "uppdaterad": "2026-09-29T08:44:59.961Z",
+ "uppdaterad": "2026-09-29T15:29:02.651Z",
  "konton": {
   "1867947880635861": {
    "namn": "MagiBorsten",
@@ -98,6 +98,21 @@
    "nyckel": "spend:120251609594670435:2026-09-29:0",
    "tid": "2026-09-28T22:44:32.051Z",
    "rubrik": "Ad `CaraShellRoof_US_OB_105_1` spending badly"
+  },
+  {
+   "nyckel": "spend:120251451415280435:2026-09-29:0",
+   "tid": "2026-09-29T15:29:02.651Z",
+   "rubrik": "Ad `CaraShellRoof_US_SP_2_1` spending badly"
+  },
+  {
+   "nyckel": "spend:120251633656450435:2026-09-29:0",
+   "tid": "2026-09-29T15:29:02.651Z",
+   "rubrik": "Ad `CaraShellRoof_US_SP_2_1 – kopia` spending badly"
+  },
+  {
+   "nyckel": "spend:120252263198540233:2026-09-29:0",
+   "tid": "2026-09-29T15:29:02.651Z",
+   "rubrik": "Ad `Takovertrekk_NO_SP_4_H1` spending badly"
   }
  ],
  "hjartslag": "2026-09-29"
