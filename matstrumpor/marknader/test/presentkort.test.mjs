@@ -61,3 +61,27 @@ test('kontrollen läser bara sidinnehållet: annonsraden får säga fri frakt, s
   assert.match(mainText(smutsig), /Presentkort/);
   assert.throws(() => kvarPaSidan('<div>ingen main</div>'), /saknar <main>/);
 });
+
+test('ätpinnarnas mall: strumpornas storleksrad, paketväljare och FAQ bort — resten av sidan kvar i samma ordning', async () => {
+  const { tillbehorMall, STRUMPBLOCK, STRUMPSEKTIONER, PROFILER } = await import('../presentkort.mjs');
+  const produkt = `/*\n * auto\n */\n${JSON.stringify({
+    sections: {
+      main: { type: 'main-product', settings: { media_size: 'large' }, block_order: ['vendor', 'title', 'price', 'ms_storlek', 'ms_sortval', 'ms_paket', 'buy_buttons', 'ms_trust', 'description'],
+        blocks: { vendor: { type: 'text' }, title: { type: 'title' }, price: { type: 'price' }, ms_storlek: { type: 'custom_liquid' }, ms_sortval: { type: 'custom_liquid' }, ms_paket: { type: 'custom_liquid' }, buy_buttons: { type: 'buy_buttons', settings: {} }, ms_trust: { type: 'custom_liquid' }, description: { type: 'description' } } },
+      judgeme_widget: { type: 'apps' }, ms_faq_section: { type: 'ms-faq-section' }, ms_sticky: { type: 'ms-sticky-atc' },
+    },
+    order: ['main', 'judgeme_widget', 'ms_faq_section', 'ms_sticky'],
+  })}`;
+  const r = tillbehorMall(produkt);
+  const j = JSON.parse(r.text);
+  assert.deepEqual(r.bortaBlock, STRUMPBLOCK);
+  assert.deepEqual(r.bortaSektioner, STRUMPSEKTIONER);
+  assert.deepEqual(j.sections.main.block_order, ['vendor', 'title', 'price', 'buy_buttons', 'ms_trust', 'description']);
+  assert.ok(!j.sections.main.blocks.ms_storlek && !j.sections.ms_faq_section);
+  assert.deepEqual(j.order, ['main', 'judgeme_widget', 'ms_sticky']);
+  assert.equal(j.sections.main.settings.media_size, 'large');
+  // Ingen mottagarformulär-inställning: ätpinnarna är ingen gåva som mejlas.
+  assert.equal(j.sections.main.blocks.buy_buttons.settings.show_gift_card_recipient, undefined);
+  assert.equal(PROFILER.atpinnar.presentkort, false);
+  assert.equal(PROFILER.presentkort.mall, 'templates/product.presentkort.json');
+});

@@ -1,7 +1,13 @@
-// presentkort.mjs — presentkortets egen sidmall, utan strumpornas block.
+// presentkort.mjs — egna sidmallar utan strumpornas block: presentkortet och gratisätpinnarna.
 //
-//   node matstrumpor/marknader/presentkort.mjs            # torrt: visar vad som tas bort
-//   node matstrumpor/marknader/presentkort.mjs --skarpt   # skriver mallen i MAIN och kopplar presentkortet till den
+//   node matstrumpor/marknader/presentkort.mjs                          # torrt: visar vad som tas bort
+//   node matstrumpor/marknader/presentkort.mjs --skarpt                 # skriver mallen i MAIN och kopplar presentkortet till den
+//   node matstrumpor/marknader/presentkort.mjs --profil atpinnar [--skarpt]   # samma sak för ätpinnarna (mallen "tillbehor")
+//
+// Ätpinnarna (2026-09-29, QA som kund på alla språk): "Äkta ätpinnar i trä" nås från varukorgsraden och
+// visade strumpornas storleksrad ("Passar strl 36–44 · stretchigt material") och strumpornas sex frågor.
+// Deras mall är strumpornas product.json UTAN de strumpbundna delarna — allt annat (leverans, trust-raden,
+// recensioner, köpknappen) står kvar, så en ändring i product.json efter bygget följer inte med: kör om.
 //
 // Varför (mätt 2026-09-29, presentkortet läst som kund på /, /pt och /fr): presentkortet delade
 // templates/product.json med strumporna och visade därför "Passar strl 36–44 · stretchigt material",
@@ -28,6 +34,30 @@ export const BLOCK = ['vendor', 'title', 'price', 'buy_buttons'];
 
 /** Tar bort Shopifys autogenererade kommentar överst i en mallfil. */
 export const utanKommentar = (text) => text.replace(/^\s*\/\*[\s\S]*?\*\/\s*/, '');
+
+// Strumpbundna delar av product.json: storleksraden, de två paketväljarna och strumpornas FAQ.
+export const STRUMPBLOCK = ['ms_storlek', 'ms_sortval', 'ms_paket'];
+export const STRUMPSEKTIONER = ['ms_faq_section'];
+export const PROFILER = {
+  presentkort: { handle: 'presentkort', suffix: 'presentkort', mall: 'templates/product.presentkort.json', presentkort: true },
+  atpinnar: { handle: 'sushipinnar-i-akta-tra', suffix: 'tillbehor', mall: 'templates/product.tillbehor.json', presentkort: false },
+};
+
+/** Ren: strumpornas product.json (text) → en tillbehörsmall utan strumpbundna block och sektioner. */
+export function tillbehorMall(produktJson) {
+  const j = JSON.parse(utanKommentar(produktJson));
+  const main = j.sections?.main;
+  if (main?.type !== 'main-product') throw new Error('product.json saknar sektionen main (main-product)');
+  if (!main.blocks?.buy_buttons) throw new Error('product.json saknar köpknappen');
+  const mall = structuredClone(j);
+  const bortaBlock = (main.block_order ?? []).filter((b) => STRUMPBLOCK.includes(b));
+  const bortaSektioner = (j.order ?? []).filter((x) => STRUMPSEKTIONER.includes(x));
+  for (const b of bortaBlock) delete mall.sections.main.blocks[b];
+  mall.sections.main.block_order = main.block_order.filter((b) => !STRUMPBLOCK.includes(b));
+  for (const x of bortaSektioner) delete mall.sections[x];
+  mall.order = j.order.filter((x) => !STRUMPSEKTIONER.includes(x));
+  return { text: JSON.stringify(mall, null, 2) + '\n', bortaBlock, bortaSektioner };
+}
 
 /** Ren: strumpornas product.json (text) → presentkortets mall (text) + vad som togs bort. */
 export function presentkortMall(produktJson) {
@@ -74,40 +104,56 @@ export function kvarPaSidan(html) {
 async function huvud() {
   const arg = process.argv.slice(2);
   const skarpt = arg.includes('--skarpt');
+  const profilNamn = arg.includes('--profil') ? arg[arg.indexOf('--profil') + 1] : 'presentkort';
+  const P = PROFILER[profilNamn];
+  if (!P) throw new Error(`okänd profil ${profilNamn} — finns: ${Object.keys(PROFILER).join(', ')}`);
   const { lasButik, skapaKlient } = await import('../../sparning/butik.mjs');
   const KONFIG = JSON.parse(readFileSync(join(ROT, 'konfig.json'), 'utf8'));
   const k = await skapaKlient(lasButik(KONFIG.butik));
   const temaId = arg.includes('--tema') ? arg[arg.indexOf('--tema') + 1] : KONFIG.tema_id;
   const log = (s) => console.log(s);
 
-  const d = await k.graphql(`query($id: ID!, $h: String!) { theme(id: $id) { name role files(filenames: ["templates/product.json"], first: 1) { nodes { body { ... on OnlineStoreThemeFileBodyText { content } } } } } productByHandle(handle: $h) { id title isGiftCard templateSuffix } }`, { id: temaId, h: HANDLE });
+  const d = await k.graphql(`query($id: ID!, $h: String!) { theme(id: $id) { name role files(filenames: ["templates/product.json"], first: 1) { nodes { body { ... on OnlineStoreThemeFileBodyText { content } } } } } productByHandle(handle: $h) { id title vendor isGiftCard templateSuffix } }`, { id: temaId, h: P.handle });
   const p = d.productByHandle;
-  if (!p) throw new Error(`produkten ${HANDLE} finns inte`);
-  if (!p.isGiftCard) throw new Error(`${HANDLE} är inte ett presentkort — rör inte dess mall`);
-  const { text, bortaBlock, bortaSektioner } = presentkortMall(d.theme.files.nodes[0].body.content);
+  if (!p) throw new Error(`produkten ${P.handle} finns inte`);
+  // Presentkortsmallen på en vanlig produkt (eller tvärtom) hade gett fel köpknapp — stoppa hellre.
+  if (p.isGiftCard !== P.presentkort) throw new Error(`${P.handle} är ${p.isGiftCard ? '' : 'inte '}ett presentkort — fel profil, rör inte dess mall`);
+  const { text, bortaBlock, bortaSektioner } = (P.presentkort ? presentkortMall : tillbehorMall)(d.theme.files.nodes[0].body.content);
+  const blockOrder = JSON.parse(text).sections.main.block_order;
   log(`Tema: ${d.theme.name} (${d.theme.role})${skarpt ? '  SKARPT' : '  (torrt — --skarpt skriver)'}`);
-  log(`${MALL}: block ${BLOCK.join(', ')} · bort: ${bortaBlock.join(', ')} · sektioner bort: ${bortaSektioner.join(', ')}`);
-  log(`${p.title}: mall "${p.templateSuffix || '(standard)'}" → "${SUFFIX}"`);
+  log(`${P.mall}: block ${blockOrder.join(', ')} · bort: ${bortaBlock.join(', ') || '–'} · sektioner bort: ${bortaSektioner.join(', ') || '–'}`);
+  log(`${p.title}: mall "${p.templateSuffix || '(standard)'}" → "${P.suffix}"`);
+  // Presentkortets leverantör var skriven med liten bokstav ("matstrumpor") medan alla andra produkter
+  // visar "Matstrumpor" ovanför titeln (QA 2026-09-29).
+  const vendorRatt = P.presentkort && /^matstrumpor$/i.test(p.vendor ?? '') && p.vendor !== 'Matstrumpor';
+  if (vendorRatt) log(`leverantör "${p.vendor}" → "Matstrumpor"`);
   if (!skarpt) return;
 
   // Mallen först, sedan produkten — produkten får aldrig peka på en mall som inte finns.
   const r = await k.graphql(`mutation($id: ID!, $files: [OnlineStoreThemeFilesUpsertFileInput!]!) { themeFilesUpsert(themeId: $id, files: $files) { upsertedThemeFiles { filename } userErrors { filename code message } } }`,
-    { id: temaId, files: [{ filename: MALL, body: { type: 'TEXT', value: text } }] });
+    { id: temaId, files: [{ filename: P.mall, body: { type: 'TEXT', value: text } }] });
   if (r.themeFilesUpsert.userErrors.length) throw new Error(r.themeFilesUpsert.userErrors.map((e) => `${e.code} ${e.message}`).join('; '));
-  const las = await k.graphql(`query($id: ID!) { theme(id: $id) { files(filenames: ["${MALL}"], first: 1) { nodes { body { ... on OnlineStoreThemeFileBodyText { content } } } } } }`, { id: temaId });
-  const tillbaka = JSON.parse(utanKommentar(las.theme.files.nodes[0]?.body?.content ?? '{}'));
-  if (JSON.stringify(tillbaka.sections?.main?.block_order) !== JSON.stringify(BLOCK)) throw new Error(`${MALL} läste tillbaka fel`);
-  log(`✅ ${MALL} skriven och tillbakaläst`);
-  // --utan-koppling: bara mallen. Prova den som kund med /products/presentkort?view=presentkort innan
-  // produkten kopplas om — mallen syns inte för någon kund förrän produkten pekar på den.
-  if (arg.includes('--utan-koppling')) { log(`mallen skriven, produkten orörd — prova /products/${HANDLE}?view=${SUFFIX}`); return; }
-
-  if (p.templateSuffix !== SUFFIX) {
-    const u = await k.graphql(`mutation($p: ProductUpdateInput!) { productUpdate(product: $p) { product { templateSuffix } userErrors { field message } } }`, { p: { id: p.id, templateSuffix: SUFFIX } });
-    if (u.productUpdate.userErrors.length) throw new Error(u.productUpdate.userErrors.map((e) => e.message).join('; '));
-    if (u.productUpdate.product.templateSuffix !== SUFFIX) throw new Error('templateSuffix läste tillbaka fel');
+  let tillbaka = null;
+  for (let forsok = 1; forsok <= 3; forsok++) {
+    const las = await k.graphql(`query($id: ID!) { theme(id: $id) { files(filenames: ["${P.mall}"], first: 1) { nodes { body { ... on OnlineStoreThemeFileBodyText { content } } } } } }`, { id: temaId });
+    tillbaka = JSON.parse(utanKommentar(las.theme.files.nodes[0]?.body?.content ?? '{}'));
+    if (JSON.stringify(tillbaka.sections?.main?.block_order) === JSON.stringify(blockOrder)) break;
+    await new Promise((res) => setTimeout(res, 5000));
   }
-  log(`✅ ${p.title} använder mallen ${SUFFIX}`);
+  if (JSON.stringify(tillbaka.sections?.main?.block_order) !== JSON.stringify(blockOrder)) throw new Error(`${P.mall} läste tillbaka fel`);
+  log(`✅ ${P.mall} skriven och tillbakaläst`);
+  // --utan-koppling: bara mallen. Prova den som kund med /products/<handle>?view=<suffix> innan
+  // produkten kopplas om — mallen syns inte för någon kund förrän produkten pekar på den.
+  if (arg.includes('--utan-koppling')) { log(`mallen skriven, produkten orörd — prova /products/${P.handle}?view=${P.suffix}`); return; }
+
+  const andra = { ...(p.templateSuffix !== P.suffix ? { templateSuffix: P.suffix } : {}), ...(vendorRatt ? { vendor: 'Matstrumpor' } : {}) };
+  if (Object.keys(andra).length) {
+    const u = await k.graphql(`mutation($p: ProductUpdateInput!) { productUpdate(product: $p) { product { templateSuffix vendor } userErrors { field message } } }`, { p: { id: p.id, ...andra } });
+    if (u.productUpdate.userErrors.length) throw new Error(u.productUpdate.userErrors.map((e) => e.message).join('; '));
+    if (u.productUpdate.product.templateSuffix !== P.suffix) throw new Error('templateSuffix läste tillbaka fel');
+    if (vendorRatt && u.productUpdate.product.vendor !== 'Matstrumpor') throw new Error('leverantören läste tillbaka fel');
+  }
+  log(`✅ ${p.title} använder mallen ${P.suffix}${vendorRatt ? ', leverantören heter Matstrumpor' : ''}`);
 }
 
 if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
