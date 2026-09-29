@@ -2,9 +2,10 @@
 // annonsvakt/kor.mjs — Annonsvakten: alla annonskonton, varje timme.
 //
 //   node annonsvakt/kor.mjs                 torrt: läs, döm, visa larmet — skriv inget, posta inget
-//   node annonsvakt/kor.mjs --discord       rutinen: posta i Discord (+ Slack om SLACK_WEBHOOK_URL finns), skriv minnet
+//   node annonsvakt/kor.mjs --discord       rutinen: posta i Discord + det röda i Slack #urgent, skriv minnet
 //   node annonsvakt/kor.mjs --json <fil>    hela resultatet som JSON (går med båda)
 //   node annonsvakt/kor.mjs --kolla         nycklar, token:ens rättigheter och kontona — inget mer
+//   node annonsvakt/kor.mjs --postat <id …|alla>   kvittera Slack-meddelanden sessionen postat via connectorn
 //
 // Axels beställning 2026-09-27: "en rutin som scannar alla annonskonton …
 // efter problem med nedstängda annonser … rädda mig ifall något annonskonto
@@ -16,9 +17,11 @@
 // Flödet: konton (me/adaccounts + facit) → per konto: problemannonser,
 // aktiva kampanjer/adsets, dagens insights → reglerna (regler.mjs) →
 // minnet avgör vad som är NYTT, PÅMINNELSE, LÖST eller redan sagt → en
-// Discord-post bara om det finns något att säga → minnet skrivs (bara om
-// det ändrats). Misslyckas posten skrivs inte minnet: då larmas det igen
-// nästa timme i stället för att försvinna.
+// Discord-post bara om det finns något att säga → det RÖDA på svenska till
+// Slack #urgent (nyckel i miljön, annars kön till connectorn) → minnet
+// skrivs (bara om det ändrats). Misslyckas Discord-posten skrivs inte
+// minnet: då larmas det igen nästa timme i stället för att försvinna.
+// Slack stoppar aldrig något — det som inte gick iväg ligger i kön.
 //
 // Exit: 0 klart · 1 fel (inget läst, ingen post) · 4 posten misslyckades
 // (larmet står i terminalen, minnet är INTE skrivet).
@@ -28,12 +31,14 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { säkerställProxy } from '../tools/meta-lib.mjs';
 import { skapaKlient, lasKonton, lasKonto, lasRattigheter } from './meta.mjs';
-import { bedomKonton, bedomObjekt, bedomSpend, lasfel, sammanfoga, formulera, skapaBreakEvenFor, dagStockholm, timmeStockholm } from './regler.mjs';
+import { bedomKonton, bedomObjekt, bedomSpend, lasfel, sammanfoga, formulera, formuleraSlack, skapaBreakEvenFor, dagStockholm, timmeStockholm } from './regler.mjs';
 import { lasMinne, sparaMinne, likaMinne } from './minne.mjs';
-import { postaDiscord, postaSlack } from './posta.mjs';
+import { postaDiscord, postaSlack, slackVag, laggIKo, kvittera, lasKo, botTokenEnv, webhookEnv } from './posta.mjs';
 
 export const MAPP = dirname(fileURLToPath(import.meta.url));
 export const ROT = dirname(MAPP);
+/** Kön till Slack-connectorn (gitignorerad: annonsvakt/output/). */
+export const KOFIL = (mapp = MAPP) => join(mapp, 'output', 'att-posta.json');
 
 const lasJson = (fil, reserv = null) => (existsSync(fil) ? JSON.parse(readFileSync(fil, 'utf8')) : reserv);
 
@@ -122,12 +127,16 @@ export async function kor({ rot = ROT, mapp = MAPP, env = process.env, nu = new 
   const hjartslag = hjartslagNu ? { konton: lasta.size, oppna: Object.keys(nyttMinne.oppna).length, olasta: lasning.olasta.length } : null;
   if (hjartslagNu) nyttMinne.hjartslag = datum;
   const post = formulera({ nya: s.nya, paminnelser: s.paminnelser, handelser: s.handelser, losta: s.losta, hjartslag, nu }, konfig);
+  const slackPost = formuleraSlack({ nya: s.nya, paminnelser: s.paminnelser, handelser: s.handelser, losta: s.losta, nu });
+  const kofil = KOFIL(mapp);
+  const slackKanal = konfig.kanal?.slack ?? {};
 
   const resultat = {
     datum, nu: nu.toISOString(), torr,
     tokenFel: lasning.tokenFel, konton: kontorader, olasta: lasning.olasta,
     problem, nya: s.nya, paminnelser: s.paminnelser, handelser: s.handelser, losta: s.losta, hjartslag,
     text: post?.text ?? null, mentions: post?.mentions ?? [],
+    slackText: slackPost?.text ?? null, slackKanalId: slackKanal.kanalId ?? null, slackVag: slackVag(env, konfig),
     postat: null, slack: null, postFel: null, minneAndrat: !likaMinne(minne, nyttMinne), minneSkrivet: false,
   };
   if (torr) return resultat;
@@ -142,17 +151,24 @@ export async function kor({ rot = ROT, mapp = MAPP, env = process.env, nu = new 
       logg(`  ✗ Discord: ${e.message}`);
       return resultat; // minnet skrivs inte — larmas igen nästa timme
     }
-    const webhook = env[konfig.kanal?.slack?.webhook_env ?? 'SLACK_WEBHOOK_URL'];
-    if (webhook) {
-      try {
-        resultat.slack = await (sandSlack ?? ((text) => postaSlack(text, { url: webhook })))(post.text);
-        logg('  Slack ✓');
-      } catch (e) {
-        resultat.slack = { ok: false, fel: e.message };
-        logg(`  ⚠️ Slack: ${e.message} (Discord gick — Slack stoppar inget)`);
+    // Slack #urgent: bara det röda, på svenska. Nyckel i miljön ⇒ skriptet postar;
+    // annars (eller vid fel) läggs texten i kön som sessionen postar via connectorn.
+    if (slackPost) {
+      const sanda = sandSlack ?? (resultat.slackVag ? (m) => postaSlack(m, { env, konfig }) : null);
+      if (sanda) {
+        try {
+          resultat.slack = { ok: true, ...(await sanda(slackPost)) };
+          logg(`  Slack ✓ #${slackKanal.kanal ?? 'urgent'} (${resultat.slack.vag ?? 'injicerad'})`);
+        } catch (e) {
+          const q = laggIKo(kofil, slackPost, { konfig, nu });
+          resultat.slack = { ok: false, fel: e.message, koad: q.id };
+          logg(`  ⚠️ Slack: ${e.message} — lagd i kön som ${q.id} (Discord gick, Slack stoppar inget)`);
+        }
+      } else {
+        const q = laggIKo(kofil, slackPost, { konfig, nu });
+        resultat.slack = { ok: false, vag: 'connector', koad: q.id, fel: `ingen Slack-nyckel i miljön (${webhookEnv(konfig)} / ${botTokenEnv(konfig)}) — texten ligger i annonsvakt/output/att-posta.json för Slack-connectorn` };
+        logg(`  Slack: ingen nyckel i miljön — ${q.id} i kön för connectorn (${q.kvar} i kön)`);
       }
-    } else {
-      resultat.slack = { ok: false, fel: `${konfig.kanal?.slack?.webhook_env ?? 'SLACK_WEBHOOK_URL'} saknas i miljön — bara Discord` };
     }
   }
   if (resultat.minneAndrat) {
@@ -171,9 +187,11 @@ function skrivSammanfattning(r, logg = console.log) {
   for (const o of r.olasta) logg(`  ✗ ${o.namn ?? o.id} (${o.id}): ${o.fel}`);
   logg(`  fynd totalt ${r.problem.length}: ${r.nya.length} nya tillstånd · ${r.handelser.length} nya händelser · ${r.paminnelser.length} påminnelser · ${r.losta.length} lösta${r.hjartslag ? ' · hjärtslag' : ''}`);
   if (r.text) { logg('\n----- Discord -----'); logg(r.text); logg('-------------------'); } else logg('  inget att posta');
+  if (r.slackText) { logg(`\n----- Slack #urgent (${r.slackKanalId ?? 'kanal-id saknas'}) -----`); logg(r.slackText); logg('-------------------'); } else logg('  Slack: inget rött, inget att posta där');
   if (r.postat) logg(`  postat: #${r.postat.kanal} i ${r.postat.server}${r.postat.lank ? ` ${r.postat.lank}` : ''}`);
   if (r.postFel) logg(`  ✗ posten misslyckades: ${r.postFel} — minnet är inte skrivet, larmas igen nästa timme`);
-  if (r.slack) logg(`  slack: ${r.slack.ok ? 'postat' : r.slack.fel}`);
+  if (r.slack) logg(`  slack: ${r.slack.ok ? `postat (${r.slack.vag ?? 'injicerad'})` : r.slack.fel}`);
+  if (r.slack?.koad) logg(`  ATT POSTA via Slack-connectorn: ${r.slack.koad} i annonsvakt/output/att-posta.json (kanal ${r.slackKanalId}) — kvittera med: node annonsvakt/kor.mjs --postat ${r.slack.koad}`);
   logg(`  minne: ${r.torr ? (r.minneAndrat ? 'hade ändrats (torrt — inte skrivet)' : 'oförändrat') : r.minneSkrivet ? 'ÄNDRAT och skrivet — committa annonsvakt/minne.json' : 'oförändrat'}`);
 }
 
@@ -190,8 +208,18 @@ async function kolla(env = process.env) {
     for (const o of l.olasta) console.log(`  ✗ ${o.namn ?? o.id} (${o.id}): ${o.fel}`);
   }
   console.log(`DISCORD_BOT_TOKEN: ${env.DISCORD_BOT_TOKEN ? '✓' : '✗ saknas (larmet står bara i terminalen)'} — #${konfig.kanal.discord.kanal} i ${konfig.kanal.discord.server}`);
-  const w = konfig.kanal?.slack?.webhook_env ?? 'SLACK_WEBHOOK_URL';
-  console.log(`${w}: ${env[w] ? '✓ (postar även i Slack)' : '– saknas (bara Discord; lägg in den när Slack-kanalen finns)'}`);
+  const vag = slackVag(env, konfig);
+  const s = konfig.kanal?.slack ?? {};
+  console.log(`Slack #${s.kanal ?? 'urgent'} (${s.kanalId ?? 'kanal-id saknas'}): ${vag === 'bot' ? `✓ ${botTokenEnv(konfig)} (chat.postMessage)` : vag === 'webhook' ? `✓ ${webhookEnv(konfig)} (webhook)` : `– ingen nyckel (${webhookEnv(konfig)} / ${botTokenEnv(konfig)}) — det röda läggs i annonsvakt/output/att-posta.json för Slack-connectorn`}`);
+  const ko = lasKo(KOFIL(), { ttlTimmar: Infinity });
+  if (ko.meddelanden.length) console.log(`  kön: ${ko.meddelanden.length} meddelande(n) väntar på att postas via connectorn: ${ko.meddelanden.map((m) => m.id).join(', ')}`);
+}
+
+/** --postat <id …|alla>: sessionen har postat ur kön via connectorn — ta bort dem. */
+function postat(ids) {
+  if (!ids.length) { console.error('✗ --postat behöver id:n (eller "alla")'); process.exit(1); }
+  const r = kvittera(KOFIL(), ids);
+  console.log(`kvitterade: ${r.kvitterade.join(', ') || 'inga (id:t fanns inte i kön)'} · kvar i kön: ${r.kvar}`);
 }
 
 if (process.argv[1] && /annonsvakt[\\/]kor\.mjs$/.test(process.argv[1])) {
@@ -201,6 +229,8 @@ if (process.argv[1] && /annonsvakt[\\/]kor\.mjs$/.test(process.argv[1])) {
   const flagga = (f) => { const i = args.indexOf(`--${f}`); return i !== -1 && args[i + 1] && !args[i + 1].startsWith('--') ? args[i + 1] : null; };
   const jobb = har('kolla')
     ? () => kolla()
+    : har('postat')
+    ? () => postat(args.slice(args.indexOf('--postat') + 1).filter((a) => !a.startsWith('--')))
     : async () => {
       const r = await kor({ torr: !har('discord'), posta: har('discord') });
       skrivSammanfattning(r);

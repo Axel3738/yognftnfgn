@@ -4,11 +4,11 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import {
-  bedomKonton, bedomObjekt, bedomSpend, lasfel, sammanfoga, formulera, delaText, skapaBreakEvenFor,
+  bedomKonton, bedomObjekt, bedomSpend, lasfel, sammanfoga, formulera, formuleraSlack, delaText, skapaBreakEvenFor,
   breakEvenUrNamn, menadAttKora, riktigaFel, heltal, kod, KONTOSTATUS, DISABLE_REASON, dagStockholm, timmeStockholm, tidText,
+  tidTextSv, valutaSv, decimalSv, lankAnnons,
 } from '../regler.mjs';
 import { normaliseraKonto, arTokenFel } from '../meta.mjs';
-import { slackText } from '../posta.mjs';
 import { serUtSomSvenska } from '../../tools/lib/engelska.mjs';
 
 const KONFIG = JSON.parse(readFileSync(new URL('../konfig.json', import.meta.url), 'utf8'));
@@ -265,5 +265,72 @@ test('hjälparna: tid i Stockholm, tusenmellanslag, kodspann, textdelning, Slack
   assert.ok(delar.length > 1);
   assert.ok(delar.every((d) => d.length <= 500));
   assert.equal(delar.join('\n'), lang);
-  assert.equal(slackText('🔴 **AD ALERT**\n<@1> <@2>\n1. x'), '🔴 *AD ALERT*\n1. x');
+  assert.equal(tidTextSv(NU), '27 sep 16:44');
+  assert.equal(valutaSv('SEK'), 'kr');
+  assert.equal(valutaSv('USD'), 'USD');
+  assert.equal(decimalSv(0.3149), '0,31');
+  assert.equal(lankAnnons('1867947880635861', '120250063374440291'), 'https://adsmanager.facebook.com/adsmanager/manage/ads?act=1867947880635861&selected_ad_ids=120250063374440291');
+});
+
+test('varje fynd bär svensk text och länk till Ads Manager: konto, annons, spend', () => {
+  const konto = { id: '1867947880635861', namn: 'MagiBorsten', valuta: 'SEK' };
+  const ned = bedomKonton({ konton: [{ id: '1', namn: 'MagiBorsten', account_status: 2, disable_reason: 1 }] }, { verksamhetFor: () => 'Bäverbutiken' });
+  assert.equal(ned[0].rubrikSv, 'Annonskontot `MagiBorsten` DISABLED');
+  assert.match(ned[0].sv, /^Annonskontot `MagiBorsten` \(1, Bäverbutiken\) är AVSTÄNGT av Meta, inget i det kan spendera\. Metas skäl: ADS_INTEGRITY_POLICY\./);
+  assert.equal(ned[0].lank, 'https://adsmanager.facebook.com/adsmanager/manage/campaigns?act=1');
+
+  const a = { id: '120250063374440291', name: 'Beltgrinder_REV_2_1', status: 'ACTIVE', effective_status: 'DISAPPROVED', preview_shareable_link: 'https://fb.me/249IEmq3JfNiE5W', ad_review_feedback: { global: { 'Unacceptable Business Practices': 'x' } }, campaign: { id: 'k', name: 'Bälteslipmaskinen | BE ROAS 1.73', effective_status: 'ACTIVE' }, adset: { id: 's', name: 'REV', effective_status: 'ACTIVE' } };
+  const [p] = bedomObjekt({ konto, annonser: [a] }, { nu: NU, konfig: KONFIG });
+  assert.equal(p.rubrikSv, 'Annonsen `Beltgrinder_REV_2_1` AVVISAD');
+  assert.equal(p.sv, 'Annonsen `Beltgrinder_REV_2_1` i `Bälteslipmaskinen | BE ROAS 1.73` är AVVISAD av Meta (`Unacceptable Business Practices`). Den visas inte. Rätta eller överklaga den i Ads Manager (konto `MagiBorsten`).');
+  assert.equal(p.lank, 'https://adsmanager.facebook.com/adsmanager/manage/ads?act=1867947880635861&selected_ad_ids=120250063374440291');
+  assert.equal(p.forhandsvisning, 'https://fb.me/249IEmq3JfNiE5W');
+
+  const kamp = { id: 'k', name: '1 CARASHELL_US_Tak | BE-ROAS 1.63', status: 'ACTIVE', effective_status: 'ACTIVE', daily_budget: '800000' };
+  const rad = { ad_id: 'x1', ad_name: 'CaraShellRoof_US_CO_103_H1', adset_id: 's', campaign_id: 'k', campaign_name: kamp.name, spend: '17350', actions: [], purchase_roas: [] };
+  const [s] = bedomSpend({ konto: { id: '1107817401910319', namn: 'Magiborsten UK', valuta: 'SEK' }, idag: [rad], kampanjer: [kamp] }, { konfig: KONFIG, datum: '2026-09-27' });
+  assert.equal(s.sv, '`CaraShellRoof_US_CO_103_H1` i `1 CARASHELL_US_Tak | BE-ROAS 1.63`, dagsbudget 8 000 kr: 17 350 kr i dag, 0 köp. 100 % av allt `Magiborsten UK` spenderat i dag. Öppna den i Ads Manager och bestäm: budget, placeringar eller av.');
+  assert.equal(s.lank, 'https://adsmanager.facebook.com/adsmanager/manage/ads?act=1107817401910319&selected_ad_ids=x1');
+  const rad2 = { ...rad, ad_id: 'x2', actions: [{ action_type: 'omni_purchase', value: '2' }], purchase_roas: [{ action_type: 'omni_purchase', value: '0.31' }] };
+  const [s2] = bedomSpend({ konto: { id: '1107817401910319', namn: 'Magiborsten UK', valuta: 'SEK' }, idag: [rad2], kampanjer: [kamp] }, { konfig: KONFIG, datum: '2026-09-27', breakEvenFor: skapaBreakEvenFor({}) });
+  assert.match(s2.sv, /17 350 kr i dag för 2 köp, ROAS 0,31 mot break-even 1,63 \(ur kampanjnamnet\)/);
+  const [over] = bedomSpend({ konto, idag: [{ ...rad, ad_id: 'x3', spend: '21665' }], kampanjer: [kamp] }, { konfig: KONFIG, datum: '2026-09-27' }).filter((x) => x.typ === 'overspend');
+  assert.match(over.sv, /^Kampanjen `1 CARASHELL_US_Tak \| BE-ROAS 1\.63` har spenderat 21 665 kr i dag mot dagsbudgeten 8 000 kr \(2,7 gånger\)\./);
+  assert.equal(over.lank, 'https://adsmanager.facebook.com/adsmanager/manage/campaigns?act=1867947880635861&selected_campaign_ids=k');
+});
+
+test('formuleraSlack: bara det röda, på svenska, med länkar — 🟡 och hjärtslag stannar i Discord, tomt ger null', () => {
+  const konto = { id: '1867947880635861', namn: 'MagiBorsten', valuta: 'SEK' };
+  const rod = { nyckel: 'a', typ: 'annons', niva: 'rod', slag: 'tillstand', konto, rubrik: 'Ad `X` DISAPPROVED', rubrikSv: 'Annonsen `X` AVVISAD', text: 'english', sv: 'Annonsen `X` i `Kampanj – kopia` är AVVISAD av Meta. Den visas inte.', lank: 'https://adsmanager.facebook.com/adsmanager/manage/ads?act=1&selected_ad_ids=2', forhandsvisning: 'https://fb.me/abc' };
+  const gul = { nyckel: 'b', typ: 'overspend', niva: 'gul', slag: 'handelse', konto, rubrik: 'x', sv: 'Kampanjen `K` över budget.', text: 'y', lank: 'https://x' };
+
+  assert.equal(formuleraSlack({ nu: NU }), null);
+  assert.equal(formuleraSlack({ handelser: [gul], nu: NU }), null, 'bara gult ⇒ inget till Slack');
+  assert.equal(formuleraSlack({ losta: [{ nyckel: 'c', niva: 'gul', rubrikSv: 'x' }], nu: NU }), null, 'ett löst gult ⇒ inget till Slack');
+
+  const r = formuleraSlack({ nya: [rod], handelser: [gul], losta: [{ nyckel: 'c', niva: 'rod', rubrik: 'Ad `IBC_GT_1_H1` has an issue', rubrikSv: 'Annonsen `IBC_GT_1_H1` har ett fel' }, { nyckel: 'd', niva: 'gul', rubrikSv: 'gult' }], nu: NU });
+  assert.equal(r.text, [
+    '**🔴 ANNONSLARM · 27 sep 16:44**',
+    '1. Annonsen `X` i `Kampanj - kopia` är AVVISAD av Meta. Den visas inte. [Öppna i Ads Manager](https://adsmanager.facebook.com/adsmanager/manage/ads?act=1&selected_ad_ids=2) · [Se annonsen](https://fb.me/abc)',
+    '',
+    '**✅ Löst · 27 sep 16:44**',
+    '• Annonsen `IBC_GT_1_H1` har ett fel: borta ur Meta, inget mer att göra.',
+  ].join('\n'));
+  assert.match(r.mrkdwn, /^\*🔴 ANNONSLARM · 27 sep 16:44\*\n1\. .*<https:\/\/adsmanager\.facebook\.com\/adsmanager\/manage\/ads\?act=1&selected_ad_ids=2\|Öppna i Ads Manager> · <https:\/\/fb\.me\/abc\|Se annonsen>/);
+  assert.ok(!r.text.includes('—') && !r.text.includes('–'), 'inga tankstreck i Slack');
+  assert.ok(!r.text.includes('Kampanjen `K`'), 'det gula står inte i Slack');
+
+  const paminn = formuleraSlack({ paminnelser: [{ ...rod, forst: '2026-09-20T05:00:00Z' }], nu: NU });
+  assert.match(paminn.text, /^\*\*⏰ Står kvar · 27 sep 16:44\*\*\n• Annonsen `X` .* Öppet sedan 20 sep 07:00\. \[Öppna i Ads Manager\]/);
+
+  const lostUtanSv = formuleraSlack({ losta: [{ nyckel: 'e', niva: 'rod', rubrik: 'Ad `Y` DISAPPROVED' }], nu: NU });
+  assert.match(lostUtanSv.text, /• Ad `Y` DISAPPROVED: borta ur Meta/, 'ett minne från före svenskan faller tillbaka på den engelska rubriken');
+});
+
+test('formulera (Discord) lägger länkarna sist på raden, maskerade utan förhandsvisning', () => {
+  const konto = { id: '1', namn: 'MagiBorsten', valuta: 'SEK' };
+  const rod = { nyckel: 'a', typ: 'annons', niva: 'rod', slag: 'tillstand', konto, rubrik: 'r', text: 'Ad `X` was DISAPPROVED by Meta.', lank: 'https://adsmanager.facebook.com/adsmanager/manage/ads?act=1&selected_ad_ids=2', forhandsvisning: 'https://fb.me/abc' };
+  const r = formulera({ nya: [rod], nu: NU }, KONFIG);
+  assert.match(r.text, /\n1\. Ad `X` was DISAPPROVED by Meta\. \[Ads Manager\]\(<https:\/\/adsmanager\.facebook\.com\/adsmanager\/manage\/ads\?act=1&selected_ad_ids=2>\) · \[preview\]\(<https:\/\/fb\.me\/abc>\)$/);
+  assert.equal(serUtSomSvenska(r.text), false);
 });

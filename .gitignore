@@ -9,6 +9,9 @@ pipeline/output/
 # Genererade bildannonser — artefakter, inte källkod
 bildannonser/output/
 
+# Annonsvaktens kö till Slack-connectorn (att-posta.json) — lever i rutinens session, aldrig i repot
+annonsvakt/output/
+
 # Python-bytekod (py_compile, tester)
 __pycache__/
 market-expansion/no/video-batches/fran-meta/

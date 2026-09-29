@@ -157,11 +157,15 @@ export async function korAkut({
     { nu, trosklar, varumarken, rutinkonton: konfig.rutinkonton ?? {}, minne, dagligt: korDagligt });
   noteringar.push(...dom.noteringar);
   // Avstängda larmtyper (konfig.kontroller_av): mäts, men postas aldrig.
-  const avstangda = new Set(konfig.kontroller_av ?? []);
+  // kontroller_av_med_slacknyckel gäller bara när miljön bär en Slack-nyckel —
+  // då postar annonsvakten (annonsvakt/) själv sina konto- och spendlarm i
+  // #urgent, och samma sak två gånger är brus (överlappet, 2026-09-29).
+  const medNyckel = slackVag(env) ? (konfig.kontroller_av_med_slacknyckel ?? []) : [];
+  const avstangda = new Set([...(konfig.kontroller_av ?? []), ...medNyckel]);
   if (avstangda.size) {
     const bort = dom.larm.filter((l) => avstangda.has(l.typ));
     dom.larm = dom.larm.filter((l) => !avstangda.has(l.typ));
-    if (bort.length) noteringar.push(`${bort.length} larm av avstängd typ (${[...new Set(bort.map((l) => l.typ))].join(', ')}) postas inte — kontroller_av i akut/konfig.json`);
+    if (bort.length) noteringar.push(`${bort.length} larm av avstängd typ (${[...new Set(bort.map((l) => l.typ))].join(', ')}) postas inte — ${medNyckel.length ? 'annonsvakten larmar dem i #urgent (kontroller_av_med_slacknyckel)' : 'kontroller_av i akut/konfig.json'}`);
   }
 
   // Nytt = inte redan postat (tillstånd: inte olöst; händelse: inte alls).
