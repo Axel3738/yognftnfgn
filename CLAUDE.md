@@ -147,7 +147,12 @@ alla tolv kampanjer 2026-09-29.** 🇳🇴 **A/B-testet i Norge (Axels order 202
 PAUSED. Varje ny NO-annons ⇒ `annonser/nob.mjs` + `bygg.mjs --marknad NOB --skarpt`. Avläs med
 `annonser/ab-norge.mjs` efter ~två veckor. ⛔ B påstår aldrig att butiken är norsk. Domänerna
 .no/.eu/.com, temapatchen per domän, presentkortets egen mall (`marknader/presentkort.mjs`) och
-allt detta i `marknader/README.md` → "Domänerna". ⚠️ Shopify mätt
+allt detta i `marknader/README.md` → "Domänerna". ✅ **QA som kund på alla tolv språk
+2026-09-29** (fyra agenter, 289 fynd, rättade samma dag): "Ångra köp" i sidfoten ledde till
+BÄVERBUTIKENS kundkonto, loggan "MATSTRUMPOR.SE" stod kvar i sidfot + JSON-LD på egna domäner,
+köpknappen sa "Lägger i…" på alla språk, ätpinnarnas sida visade strumpstorlekarna. `bygg.mjs --steg
+tema` uppdaterar sedan dess översättningar i redan patchade filer (förut nådde en ändrad översättning
+aldrig temat). Kvar och varför: `marknader/README.md` → "QA som kund". ⚠️ Shopify mätt
 2026-09-27: `translationsRegister` kan svara `INTERNAL_SERVER_ERROR` en stund
 (kör om), och en batchläsning av temats översättningar kan svara med FEL
 språk (`--steg kontroll` läser om ensamt) — lita aldrig på en enda läsning.

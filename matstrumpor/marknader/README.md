@@ -341,6 +341,56 @@ Ett jämnt pris per marknad är Axels beslut.
 `bygg.mjs --steg oversattningar --locale <l> --skarpt` (157–159 texter per språk) och lästes
 tillbaka som kund.
 
+## QA som kund på alla tolv språk (2026-09-29 eftermiddag)
+
+Fyra agenter läste sajten som kund, var och en i sin språkgrupp: Norden, engelska, de/fr/nl och
+es/it/pl/pt. De läste på .se, .eu, .com och .no, och tog 289 fynd totalt (fynden ligger i sessionens
+scratchpad, inte i repot). Det här rättades:
+
+| Fynd | Rättning | Var |
+|---|---|---|
+| "Ångra köp" i sidfoten ledde till **Bäverbutikens** kundkonto (`shopify.com/101303222621`) | menyposten pekar på Matstrumpors (`97675084115`), alla 8 poster och deras översättningar kvar | Shopify-menyn, live |
+| Spårningssidan: "…2–4 **dagar**" på alla språk | butikens väntetid går genom översättningen | `sparning/sida.mjs` + `sparning/sprak/*.json` (bygger om efter merge till `main`) |
+| Sidfoten och JSON-LD visade loggan "MATSTRUMPOR.SE" på .com/.eu/.no | layoutens v5 byter filnamnet i hela sidan på egen domän | `domantema.mjs` |
+| Köpknappen: "Lägger i…" och två svenska felrader på varje språk | ordlista per språk i `ms-paket.js` | `temapatch.mjs` → `patchaPaketJs` |
+| Sortvalets aria-etikett "Sort i låda 1" | språkgren | `temapatch.mjs` |
+| Finska presentkortet: namnfältet hade e-postfältets etikett (fel i Dawns `fi.json`) | "Vastaanottajan nimi (valinnainen)" | `domantema.mjs` → `patchaFiLocale` |
+| Ätpinnarnas sida visade strumpstorlekarna 36–44 och strumpornas FAQ | egen mall `product.tillbehor.json` | `presentkort.mjs --profil atpinnar` |
+| Presentkortets leverantör "matstrumpor" med liten bokstav | "Matstrumpor" | `presentkort.mjs` |
+| FR/PL: länkbeskrivningen i annons 001–007 | ny creative per annons, alla PAUSED | `annonser/bygg.mjs --byt-text` |
+
+**Temabygget kan nu uppdatera översättningar i redan patchade filer.** Förut byggde
+`bygg.mjs --steg tema` om en fil bara när den var exakt "originalet + fyrspråkspatchen" från
+2026-09-27. En ändrad översättning nådde därför aldrig temat. Nu godtas också:
+
+- nuvarande underlag;
+- varje committad version av `output/underlag-*.json`, läst med `git show`.
+
+Den version som ger exakt live-filen bevisar att filen är vår. Då byggs den om från originalet i
+`output/tema-original/`.
+
+JSON-mallarna (`product.json`, `index.json`) rörs också av `domantema` och Trustpilot-sektionen. De
+byggs därför aldrig om. `patchaMallJson` byter bara sin egen gren på plats, från en gammal
+översättning till den nya. `ms-paket.js` bär sin ordlista som en rad som byts varje körning.
+
+Rättat på vägen: saknades en översättning blev ersättningen i `patchaFil` strängen `null`. Live-temat
+mättes rent.
+
+**Står kvar med flit:**
+
+- Judge.me-rutan är svensk på alla språk. Det är appens inställning "multi-locale", och på .no döljs
+  den redan.
+- Trustpilot-rutorna, som en annan session byggde på Axels beställning, visar de riktiga svenska
+  omdömena, även på .no.
+- Landväljarens namn på /nb är svenska. Shopify har inga bokmålsnamn.
+- Integritetspolicyns adress. Policyn är autoManaged och bär platshållare, så Axels adressbyte i
+  Shopify rättar alla språk på en gång.
+- `hreflang` på .eu/.com/.no pekar på .se. Shopify skriver dem själv.
+- Kvar som ägarbeslut:
+  - fraktpolicyns "priserna är exklusive moms, tull kan tillkomma" mot "Inkl. Steuern";
+  - presentkortets omräknade pris;
+  - rabattkodernas svenska namn (HAMBURGARE-K1F1).
+
 ## Hela Europa + worldwide — Axels mål 2026-09-27 kväll (`/goal`)
 
 Axels order: "vi ska ha hela Europa redo … worldwide redo för att lansera sushistrumporna",
