@@ -141,15 +141,15 @@ test('spend: med köp krävs 2 × spend_min OCH ROAS under halva break-even; kä
   const be = skapaBreakEvenFor({ produkter: [{ id: 'motorholjet', creative_prefix: 'Enginecover_', break_even_roas: 1.63 }], matstrumpor: { kontoId: '730973156224390', ekonomi: { aov_sek: 462.1, kostnad_per_order_sek: 120.92, tull_eur: 2.9, eur_sek: 11.275 } }, standard: 1.6 });
   const MS = { id: '730973156224390', namn: 'nya kungen', valuta: 'SEK' };
   // Ur kampanjnamnet.
-  assert.deepEqual(be({ kampanjNamn: 'Båtmotorskyddet 420D | BE ROAS 1.62 | Launch', adNamn: 'Batmotor_SP_1_H5' }, UK), { varde: 1.62, kalla: 'from the campaign name' });
+  assert.deepEqual(be({ kampanjNamn: 'Båtmotorskyddet 420D | BE ROAS 1.62 | Launch', adNamn: 'Batmotor_SP_1_H5' }, UK), { varde: 1.62, kalla: 'from the campaign name', kallaSv: 'ur kampanjnamnet' });
   // Ur products.json på prefixet.
-  assert.deepEqual(be({ kampanjNamn: 'Motorhöljet', adNamn: 'Enginecover_PD_22_H1' }, UK), { varde: 1.63, kalla: 'from products.json' });
+  assert.deepEqual(be({ kampanjNamn: 'Motorhöljet', adNamn: 'Enginecover_PD_22_H1' }, UK), { varde: 1.63, kalla: 'from products.json', kallaSv: 'ur products.json' });
   // Matstrumpor: räknat ur ekonomiblocket (1,498), aldrig ett tal ur minnet.
   const ms = be({ kampanjNamn: 'MATSTRUMP_SALES_20260826', adNamn: '09-17 Nathalie' }, MS);
   assert.equal(ms.kalla, 'from matstrumpor/konfig.json');
   assert.equal(ms.varde.toFixed(3), '1.498');
   // Standard.
-  assert.deepEqual(be({ kampanjNamn: 'Grillklubbor', adNamn: 'Golfare' }, UK), { varde: 1.6, kalla: 'default break-even' });
+  assert.deepEqual(be({ kampanjNamn: 'Grillklubbor', adNamn: 'Golfare' }, UK), { varde: 1.6, kalla: 'default break-even', kallaSv: 'standardvärdet' });
 
   const konfig = KONFIG;
   // 1 köp på 2 000 kr (ROAS 0,25) — under 2 × spend_min ⇒ inget larm, ROAS är brusig med ett köp.
