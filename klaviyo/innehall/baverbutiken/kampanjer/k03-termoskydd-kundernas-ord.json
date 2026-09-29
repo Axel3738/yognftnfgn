@@ -1,7 +1,7 @@
 {
   "id": "k03-termoskydd-kundernas-ord",
-  "namn": "MAIL_20261006_Termoskydd_SP_2_uppvarmning_product_kundernas-ord_v1",
-  "memo": "Hypotes: kundomdömen i bild gav annonsens högsta CTR (7,04 %) och vittnesmålet SP_2 bästa CPA (149 kr). Erbjudandevinkeln med mest köp bygger på falsk brådska och används inte. Riktiga recensioner ordagrant plus höstens problem, kalla nätter och imma, ska konvertera utan brådska.",
+  "namn": "MAIL_20261006_Termoskydd_SP_2_tier1_problem_immig-ruta-varje-morgon_v2",
+  "memo": "Omskriven 2026-09-29: utan citat (ingen recensionscache i containern, och kundcitat skrivs aldrig för hand), problemet före produkten (Axels krav) och 30 % med TERMO30 till och med fredag 9 oktober (Axel: rea på alla kampanjer). Hypotes: imma varje morgon som problemöppning, sedan lösningen och koden, säljer termoskyddet till den breda listan utan falsk brådska; mätt på klick och köp per mottagare. Kundomdömen i bild gav tidigare annonsens högsta CTR (7,04 %) och vittnesmålet SP_2 bästa CPA (149 kr), men de ligger inte i mejlet. Fönstermattan är inte med: den sitter innanför glaset, och mejlet säger att det som sitter innanför bara håller fukten kvar.",
   "taggar": {
     "typ": "I",
     "kalla": "egen-data",
@@ -9,51 +9,82 @@
     "lardom": null,
     "avatar": "husbilsägaren som kör hösten ut",
     "begar": "varm och torr hytt utan imma på morgonen",
-    "awareness": "product",
-    "urgency": "sasong",
+    "awareness": "problem",
+    "urgency": "sasong + slutdag (9 oktober)",
     "confidence": "medium",
     "prefix": "Termoskydd",
     "kod": "SP"
   },
   "amnesrader": [
-    { "text": "Immig ruta varje morgon", "begar": "vakna utan att behöva torka bort imma" },
-    { "text": "Alla på rastplatsen ser rakt in", "begar": "inte bli sedd av alla som går förbi på rastplatsen" },
-    { "text": "Sätts fast utan att öppna en dörr", "begar": "sätta på skyddet utan att öppna dörrarna i kylan" }
+    {
+      "text": "Immig ruta varje morgon. 30 % på termoskyddet",
+      "begar": "vakna utan att behöva torka bort imma"
+    },
+    {
+      "text": "Alla ser rakt in på rastplatsen. 30 % på skyddet",
+      "begar": "inte bli sedd av alla som går förbi på rastplatsen"
+    },
+    {
+      "text": "Två minuter på utsidan. 30 % på termoskyddet",
+      "begar": "slippa imma att torka bort varje dag, med två minuters jobb"
+    }
   ],
-  "forhandstext": "Skyddet sitter utanpå glaset, inte innanför.",
+  "forhandstext": "Skyddet sitter utanpå glaset, inte innanför. Koden TERMO30 gäller till och med fredag.",
   "block": [
-    { "typ": "citat", "handle": "termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande", "antal": 2 },
     {
       "typ": "hero",
-      "rubrik": "Imma inifrån, varje morgon",
-      "text": "Hej {{fornamn}},\n\nFukten från natten lägger sig på insidan av rutan. Gardiner gör bara att den stannar kvar mellan glaset och tyget.",
-      "bild": "produkt:termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
-      "knapp": { "text": "Se termoskyddet", "lank": "produkt:termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande" }
+      "rubrik": "Rutan är immig inifrån varje morgon",
+      "text": "Hej {{fornamn}},\n\nHar du husbil känner du igen det: fukten från natten lägger sig på insidan av vindrutan, och invändiga gardiner gör bara att den blir kvar mellan glaset och tyget."
     },
     {
       "typ": "text",
       "rubrik": null,
-      "text": "Skyddet spänns utanpå rutan i stället för innanför, så kylan stoppas redan på utsidan av glaset. Det mörklägger samtidigt hela framvagnen, och ingen ser in på rastplatsen."
+      "text": "Ingen katastrof. Bara en trasa i handen varje morgon.\n\nOch på en rastplats vet du att alla som går förbi ser rakt in."
     },
     {
       "typ": "produkt",
       "handle": "termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
-      "text": "Täcker vindrutan och båda sidorutorna, 211 cm bred och 171 cm över mitten.",
-      "knapp": "Se termoskyddet"
+      "text": "Skyddet spänns utvändigt över vindrutan och båda sidorutorna, så att glaset inte hinner bli kallt inifrån. Det mörklägger samtidigt hela framvagnen, så ingen ser in.\n\nTvå minuters jobb på utsidan i stället för imma att torka bort varje dag. Flikarna kläms i dörrkarmen och håller i blåst.\n\nMåtten är 211 cm i bredd, 171 cm över mitten och 90 cm sidflikar, så mät din vindruta först.",
+      "knapp": "Se skyddet, 211 × 171 cm"
     },
-    { "typ": "fakta" }
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Koden TERMO30 ger 30 % på termoskyddet till och med fredag 9 oktober. Tryck på knappen så ligger koden redan i kassan, eller skriv in den själv. Rabatten dras i kassan, en gång per kund, på priset som står på produktsidan."
+    },
+    {
+      "typ": "knapp",
+      "text": "Skydda rutan för 30 % mindre",
+      "lank": "rabatt:TERMO30:produkt:termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande"
+    },
+    {
+      "typ": "fakta"
+    }
   ],
   "tretest": [
-    { "rad": "Immig ruta varje morgon", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Alla på rastplatsen ser rakt in", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Sätts fast utan att öppna en dörr", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Skyddet sitter utanpå glaset, inte innanför.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Imma inifrån, varje morgon", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Se termoskyddet", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+    { "rad": "Immig ruta varje morgon. 30 % på termoskyddet", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Alla ser rakt in på rastplatsen. 30 % på skyddet", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Två minuter på utsidan. 30 % på termoskyddet", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Skyddet sitter utanpå glaset, inte innanför. Koden TERMO30 gäller till och med fredag.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Rutan är immig inifrån varje morgon", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se skyddet, 211 × 171 cm", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Skydda rutan för 30 % mindre", "visualisera": true, "falsifiera": true, "ingen_annan": true }
   ],
   "planerad": "2026-10-06T18:00:00+02:00",
-  "segment": ["SEG_uppvarmning_steg1"],
-  "exkludera": ["SEG_oengagerade_180d"],
+  "segment": [
+    "Warmup tier 1"
+  ],
+  "exkludera": [],
   "status_plan": "klar",
-  "kraver_axel": null
+  "kraver_axel": null,
+  "rabatt": {
+    "typ": "kod",
+    "kod": "TERMO30",
+    "procent": 30,
+    "start": "2026-10-06T06:00:00Z",
+    "slut": "2026-10-09T21:59:59Z",
+    "handles": [
+      "termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande"
+    ]
+  }
 }
