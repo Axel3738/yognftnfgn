@@ -822,5 +822,21 @@
   "creative_id": "1852444939248272",
   "annons_id": "120251779586620023",
   "skapad": "2026-09-29T11:05:02.133Z"
+ },
+ "MATSTRUMP_PL_sushi_offer_static_008_v1": {
+  "sha256": "1d429019763d565d3cb6e4fa3940f576f058fb2ed7290cd4de20223bc13ab2ea",
+  "fil": "klar/PL_d3.jpg",
+  "image_hash": "fd5606eed8d4676d944dd1973c136e43",
+  "creative_id": "1065676216461556",
+  "annons_id": "120251779590650023",
+  "skapad": "2026-09-29T11:05:26.524Z"
+ },
+ "MATSTRUMP_PT_sushi_offer_static_008_v1": {
+  "sha256": "e0e6493a505f6d867dcdfa098e3e7287f393ebe9b0f91078c9004bb4c0648490",
+  "fil": "klar/PT_d3.jpg",
+  "image_hash": "bb037565204057010a3a024d655a776e",
+  "creative_id": "1732174237836998",
+  "annons_id": "120251779706040023",
+  "skapad": "2026-09-29T11:13:21.019Z"
  }
 }
