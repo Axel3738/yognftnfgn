@@ -1,6 +1,6 @@
 {
  "_om": "Skrivet av annonser/bygg.mjs efter tillbakaläsning ur kontot.",
- "skrivet": "2026-09-29T12:10:18.387Z",
+ "skrivet": "2026-09-29T12:10:59.936Z",
  "kampanjer": [
   {
    "kod": "NO",
@@ -724,7 +724,7 @@
      "id": "120251778334920023",
      "name": "MATSTRUMP_PL_sushi_gift_ugc_006_v1",
      "status": "PAUSED",
-     "effective_status": "IN_PROCESS"
+     "effective_status": "PENDING_REVIEW"
     },
     {
      "id": "120251767868150023",
