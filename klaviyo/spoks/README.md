@@ -187,11 +187,12 @@ direkt, på koden senare. `konvertera.mjs` släpper igenom exakt mejlets egen pr
 båtmotorskydd köps till fullpris (12 av 21), en rabatt dit kostar bara marginal (Axel frågade,
 sessionens råd, inget beslut om annat).
 
-**Takten:** Axels order är dagliga utskick. Vecka 40–41 får tier 1 (2 500) fyra till fem
-breda mejl i veckan, med de skräddarsydda däremellan; larmet i `docs/os/EPOST-STRATEGI.md`
-(spamklagomål över 0,3 % eller avregistreringar över 1 % på ett utskick) är det som stoppar,
-inte en veckokvot. Ingen får två mejl samma dag: ett skräddarsytt mejl ligger aldrig samma
-dag som ett brett.
+**Takten:** Axels order är dagliga utskick. Sedan köparmejlen blev breda (2026-09-29, se
+30 %-rean nedan) får tier 1 (2 500) ett mejl varje dag 29/9–11/10 och tier 2 (5 000) varje
+dag 12/10–22/10; larmet i `docs/os/EPOST-STRATEGI.md` (spamklagomål över 0,3 % eller
+avregistreringar över 1 % på ett utskick) är det som stoppar, inte en veckokvot. Ingen får två
+mejl samma dag: ett skräddarsytt mejl ligger aldrig samma dag som ett brett, och går två mejl
+samma dag bär det breda segmentet undantaget.
 
 **Konverteraren rättad samma dag:** dubblettkortet (hero med produktbild + samma produkt
 igen längre ner) tas bort i `konverteraMejl` — ett senare enprodukts-block med samma produkt
@@ -317,21 +318,47 @@ alla fjorton.
 
 "Köpare fiske" är bara de sju fiskeprodukterna, utan vandrarna i "Köpare fiske & friluft".
 
-**Gräsklipparen blev bred samma eftermiddag** (Axels fråga: "ska vi verkligen ta samma
-personer som har köpt sådana innan och sälja det samma igen, eller kan vi inte boka ut en om
-gräsklippningsgrejerna till alla?"). Nytt segment **Gräsklipparrean 30/9**
-`d4f13555-2710-4f1b-ac18-aa9db74ef5b9`, 2 578 kontakter: samtycke och (Warmup tier 1 eller köpt
-någon av de elva klippar- och trimmerprodukterna), utan den som köpt tofflor eller skor. Tre
-beslut i det: (1) tier 1 och inte All subscribed, för uppvärmningen ger vecka 40 bara tier 1
-breda utskick; (2) köparna är kvar, de har gräsmattan; (3) toffelköparna är borta, de får
-tofflorrean samma kväll och ingen får två mejl samma dag. Mätt med `preview_segment` före
-sparandet: 2 697 utan undantaget, 119 toffelköpare i den mängden, 2 697 − 119 = 2 578 = det
-sparade segmentets storlek. Undantaget byggs som `OR[purchasedProducts nis, purchasedProducts
-nin [ids]]`; `nin` ensamt gav samma 2 578 (mätt samma minut), så `nis`-grenen är bara hängslen
-för kontakter utan köp. Av de 2 578 har
-**318** köpt klippar- eller trimmergrejer och **2 260** inte; GRAS30-ordrarna delas på de två
-grupperna efter 4/10, och det är svaret på Axels fråga. Heron skrevs om av en Sonnet-agent
-(v1 sa "Du har handlat till klipparen eller trimmern hos oss").
+**Köparmejlen blev breda samma eftermiddag** (Axels två frågor: först gräsklipparen, "ska vi
+verkligen ta samma personer som har köpt sådana innan och sälja det samma igen, eller kan vi
+inte boka ut en om gräsklippningsgrejerna till alla?", sedan "samma gäller såklart för tofflor
+och liknande, vi ska ju skicka till alla våra kunder"). Varje köparmejl går nu till ett eget
+segment: samtycke och (veckans uppvärmningssteg ELLER köparna i gruppen). Fyra beslut i det,
+alla sessionens:
+
+1. **"Alla" följer uppvärmningen:** tier 1 vecka 40–41 och tier 2 vecka 42–43, samma steg som
+   de breda mejlen; All subscribed först vecka 45. Köparna utanför steget är med, de är de
+   varmaste för just de produkterna.
+2. **Ingen får två mejl samma dag:** tofflorrean flyttades från onsdag 30/9 till fredag 2/10
+   (TOFFLOR30 gäller ändå till söndag 4/10, ingen kod ändrad), och där ett köparmejl står kvar
+   samma dag byggs undantaget in i det breda segmentet: Tofflorrean utan båtköparna, Fiskerean
+   utan husvagnsköparna. Gräsklipparens första version uteslöt toffelköparna; undantaget togs
+   bort med `update_segment` när tofflorna flyttades (2 578 → 2 697).
+3. **Två köparmejl stannar hos köparna:** båtmejlet fredag 2/10 (bygger på återköpsparet
+   motorhölje till båtmotorskydd, och båtmejlet till tier 1 går dagen före) och husvagnsmejlet
+   måndag 5/10 (bygger på att de redan har taket, som gick till tier 1 29/9).
+4. **Bara två mejl fick ny text:** gräsklipparen och tofflorna sa "Du har handlat … hos oss",
+   som är osant för de flesta nu. Heron skrevs om av Sonnet-agenter (tre-frågorstestet i
+   filen). De andra köparmejlen påstår inget köp och står oförändrade; bara titeln i Spoks är ny.
+
+| Mejl | Dag 18:00 | Segment | id | Kontakter |
+|---|---|---|---|---|
+| K38 | ons 30/9 | Gräsklipparrean 30/9 | `d4f13555-2710-4f1b-ac18-aa9db74ef5b9` | 2 697 |
+| K23 | fre 2/10 | Tofflorrean 2/10 (utan båtköparna) | `ff2587ec-93fc-4820-b041-e381003e5c10` | 2 219 |
+| K25 | lör 3/10 | Kranskyddet 3/10 | `353c38ab-f9cb-41ba-9431-3d7012e24e36` | 2 752 |
+| K39 | mån 5/10 | Fiskerean 5/10 (utan husvagnsköparna) | `e58d459c-ed50-427c-80c9-76da31c01623` | 1 942 |
+| K30 | lör 10/10 | Fars dag ved 10/10 | `4060b123-0fec-403d-90bb-6499f134f564` | 2 752 |
+| K32 | mån 12/10 | Fars dag fågelmataren 12/10 | `0bdf7023-b6ab-429d-9a61-be1864b71e65` | 5 023 |
+| K34 | lör 17/10 | Fars dag båt 17/10 | `e31d680e-8255-45ed-a022-64317e50e60d` | 5 019 |
+| K37 | ons 21/10 | MC-rean 21/10 | `ee6089b1-4920-4433-83f4-4645b3eddfeb` | 4 989 |
+
+Storlekarna är `create_segment`/`update_segment`:s egna svar 2026-09-29. Undantaget byggs som
+`OR[purchasedProducts nis, purchasedProducts nin [ids]]`; mätt med `preview_segment` på
+gräsklipparens första version: 2 697 utan undantaget, 119 toffelköpare i den mängden,
+2 697 − 119 = 2 578 = det sparade segmentets storlek, och `nin` ensamt gav samma 2 578, så
+`nis`-grenen är bara hängslen för kontakter utan köp. **Mätningen svarar på Axels fråga:**
+GRAS30-ordrar per mottagare hos de 322 i Gräsklipparrean som redan köpt klippar- eller
+trimmergrejer mot de 2 375 som inte gjort det, och likadant per kod för de andra breda
+köparmejlen (ordrarnas kunder slås upp mot köparsegmentet när koden gått ut).
 
 **Utkasten i Spoks (25, uppladdade 2026-09-29 06:36–08:22 CEST;** 23 uppdaterade med
 `update_draft_campaign` och hash, K38 och K39 nya med `draft_campaign`; alla `draft`, ingen
@@ -340,30 +367,30 @@ appen:
 
 | Mejl | Dag 18:00 | Publik | Ämnesrad | Post-id |
 |---|---|---|---|---|
-| K23 | ons 30/9 | Köpare tofflor & skor | Golvet blir kallt. 30 % på tofflorna till söndag | `32ced8c7-e3dc-412f-9e0e-f36c6a03f975` |
-| K38 | ons 30/9 | **Gräsklipparrean 30/9** (bred sedan eftermiddagen, se nedan) | Säsongen är slut. 30 % på klippargrejer till söndag | `8850aa7d-f30b-4e88-842e-02290c14cd12` |
+| K38 | ons 30/9 | **Gräsklipparrean 30/9** (bred, se ovan) | Säsongen är slut. 30 % på klippargrejer till söndag | `8850aa7d-f30b-4e88-842e-02290c14cd12` |
 | K02 | tor 1/10 | Warmup tier 1 | Motorn står ute i sex månader | `8e970060-558d-4ec6-bc04-89780ab20b95` |
 | K24 | fre 2/10 | Köpare båt | Ett vinterskydd som täcker hela motorn | `357d53cb-8e2f-43a1-8116-e8f7e72b9df1` |
-| K25 | lör 3/10 | Köpare trädgård & tomt | Isen spränger kranen. 30 % på skyddet till onsdag | `334c5fd5-5f5b-47d0-93aa-475976211195` |
+| K23 | fre 2/10 (flyttad från 30/9) | **Tofflorrean 2/10** | Golvet blir kallt. 30 % på tofflorna till söndag | `32ced8c7-e3dc-412f-9e0e-f36c6a03f975` |
+| K25 | lör 3/10 | **Kranskyddet 3/10** | Isen spränger kranen. 30 % på skyddet till onsdag | `334c5fd5-5f5b-47d0-93aa-475976211195` |
 | K26 | sön 4/10 | Warmup tier 1 | Redan oktober. Fars dag: sex presenter, 30 % nu | `ab2e0398-224c-46c4-b6b1-40778c2a56d2` |
 | K27 | mån 5/10 | Köpare husvagn & husbil | Taket är täckt, resten inte. 30 % på resten | `bfec6cff-0d81-44a8-a2f9-acc2592b6c49` |
-| K39 | mån 5/10 | Köpare fiske | Ett drag om dagen till jul. 30 % på fiskegrejer | `9088238b-2715-4c0a-805d-d63b1dc80842` |
+| K39 | mån 5/10 | **Fiskerean 5/10** | Ett drag om dagen till jul. 30 % på fiskegrejer | `9088238b-2715-4c0a-805d-d63b1dc80842` |
 | K03 | tis 6/10 | Warmup tier 1 | Immig ruta varje morgon. 30 % på termoskyddet | `c2646bdb-c6d4-4474-9ee8-acb0132536e5` |
 | K28 | ons 7/10 | Warmup tier 1 | Slö kniv sedan midsommar? 30 % på bälteslipen | `63bad9d8-0b9e-41fe-893c-7af4dfbaa05c` |
 | K04 | tor 8/10 | Warmup tier 1 | Sämre drag för varje eldning. 30 % på sotarset | `64690af6-fd81-46aa-91eb-e7562705991b` |
 | K29 | fre 9/10 | Warmup tier 1 | Lucka 1 öppnas 1 december. 30 % på kalendrarna | `c7ac660a-4969-4e04-a03f-e7fe6e378909` |
-| K30 | lör 10/10 | Köpare trädgård & tomt | Fars dag: tändved utan yxa i handen. 30 % nu | `7e49c595-6cdc-4740-b9e8-5ba58e0f5dbd` |
+| K30 | lör 10/10 | **Fars dag ved 10/10** | Fars dag: tändved utan yxa i handen. 30 % nu | `7e49c595-6cdc-4740-b9e8-5ba58e0f5dbd` |
 | K31 | sön 11/10 | Warmup tier 1 | Aldrig mer trassliga fiskespön. 30 % till fars dag | `9f0eb81e-6084-4e5e-854e-fe2d340425cc` |
-| K32 | mån 12/10 | Köpare verkstad & garage | Han ser fåglarna innan han reser sig. 30 % nu | `a97045ba-936c-4889-8bdc-c8db87a78656` |
+| K32 | mån 12/10 | **Fars dag fågelmataren 12/10** | Han ser fåglarna innan han reser sig. 30 % nu | `a97045ba-936c-4889-8bdc-c8db87a78656` |
 | K05 | tis 13/10 | Warmup tier 2 | Taket han aldrig kollar. Fars dag-rea: 30 % | `d45975e2-904a-456d-99d9-ca15c5232a00` |
 | K33 | ons 14/10 | Warmup tier 2 | Sitsen är iskall. Fars dag-rean ger 30 % | `c759a3ac-e639-4177-967d-b5e0762f23b1` |
 | K06 | tor 15/10 | Warmup tier 2 | Klockan tre: gren eller människa? 30 % på kameran | `b71f44c6-ff62-4580-9efa-8eb1b61d4841` |
 | K15 | fre 16/10 | Warmup tier 2 | Fars dag-rean: sista helgen. Sex presenter, 30 % | `f3eb1359-dd1c-42c1-a489-b19aa57b625b` |
-| K34 | lör 17/10 | Köpare båt | Motorn låst vid bryggan. Fars dag-rea: 30 % | `de65f9b4-4ded-493d-9aec-1a2b5f38d3b8` |
+| K34 | lör 17/10 | **Fars dag båt 17/10** | Motorn låst vid bryggan. Fars dag-rea: 30 % | `de65f9b4-4ded-493d-9aec-1a2b5f38d3b8` |
 | K35 | sön 18/10 | Warmup tier 2 | I morgon slutar fars dag-rean: 30 % | `923a2200-c498-4cb1-a5b4-a34904fcea24` |
 | K36 | mån 19/10 | Warmup tier 2 | I dag är sista dagen på fars dag-rean: 30 % | `d6c2a03b-5ca7-4abc-91cb-420ce077bf15` |
 | K07 | tis 20/10 | Warmup tier 2 | Blöta strumpor? 44 cm skydd, 30 % till fredag | `7b02cb3f-cd47-43ec-a207-06b28599efca` |
-| K37 | ons 21/10 | Köpare MC & fordon | Hojen ställs undan: 30 % på kapellet med MC30 | `93dd1b86-c942-40fd-827c-4bc9b41d366a` |
+| K37 | ons 21/10 | **MC-rean 21/10** | Hojen ställs undan: 30 % på kapellet med MC30 | `93dd1b86-c942-40fd-827c-4bc9b41d366a` |
 | K08 | tor 22/10 | Warmup tier 2 | Söndag: mörkt en timme tidigare. LJUS30 ger 30 % | `6465b615-4c3b-4b6f-9e9a-8647c79331f9` |
 
 Copyn av fem Sonnet-subagenter mot briefen och produktsidorna; huvudsessionen läste alla 25
@@ -379,6 +406,33 @@ produktblock med flera produkter (mätt 2026-09-29: första produkten hamnar sis
 aldrig text som pekar på ett korts plats ("den till vänster"). ⚠️ 32 av 248 aktiva
 produktsidor lovar "Vår garanti 30 dagars öppet köp" medan butikens villkor är 14 dagar (mätt 2026-09-29, bl.a. tak-AC-huven och båthuven) — mejlen säger
 14 dagars ångerrätt; sidorna är en egen fråga till Axel.
+
+**Kodrutan och kontrollen (Axels krav 2026-09-29 eftermiddag: "se till att rabatterna är
+korrekta i Shopify med mejlen och att vi flashar rabattkoden tydligt"):**
+
+- **Kodrutan:** i varje mejl med `rabatt.typ: "kod"` lägger `konverteraMejl` in `divider` +
+  `h1` med koden + `divider` direkt före kodstycket "Koden X ger …". Bara koden, ingen ny
+  text (testat i `konvertera.test.mjs`); saknas kodstycket blir det en varning, aldrig en tyst
+  hoppning. Spoks egen kupongruta (`coupon`) går inte att använda: den ser bara
+  Shopify-rabatter som redan är aktiva, och rea-koderna är schemalagda (`discounts_search`
+  2026-09-29: fyra aktiva koder, KREDIT100, VALKOMMEN10, bäver10 och KOMTILLBAKA10, ingen av
+  rea-koderna).
+- **Alla 25 utkast uppdaterade 12:37–12:53 CEST** med `update_draft_campaign` och hash
+  (kodrutan och titlarna med de breda segmenten). Ett ord tappade en bokstav när postData
+  skrevs för hand (K07 "terängen"); rättat med `update_draft_campaign_blocks` 12:53. **Sedan
+  kontrollerat maskinellt:** `node klaviyo/spoks/utkast-koll.mjs` läser Spoks egna svar ur
+  sessionens logg och jämför text, justering, länkar, produkter, titel, ämnesrad och
+  förhandstext med `plan.json` + `payload/`, och knapptexterna (som Spoks svar inte visar) med
+  det som skickades: **25 av 25 stämmer**. Jämför aldrig för ögat. `--postdata <kort> --ut
+  <mapp>` skriver exakt det postData som ska skickas.
+- **Rabatterna mot mejlen:** `node klaviyo/rea-kod.mjs --brand baverbutiken --alla` (torrt,
+  2026-09-29 ~13:00 CEST): alla 14 koder "stämmer" (30 %, start och slut, en gång per kund,
+  exakt mejlets produkter), alla `SCHEDULED`, använda 0 gånger. `kolla-kampanj.mjs` på de 25
+  filerna: alla OK.
+- **Schemaläggningen är Axels klick:** MCP:n kan varken välja publik eller schemalägga (att
+  skicka en kampanj är en app-åtgärd enligt `get_links`). Publiken är segmentet i titeln, tiden
+  18:00. Läs tillbaka efteråt med `search_campaigns`: `waiting_to_be_published` och
+  `publishDate` 16:00Z (18:00 CEST). Publiken går inte att läsa via MCP.
 
 ### Regler ur de två dagarna (för nästa som ger Axel klick)
 

@@ -43,6 +43,22 @@ test('Bäverbutiken: fornamn-reserven är "där" och fakta-blocket bär brandets
   assert.match(fakta.columns[1].blocks[1].text, /baverbutiken\.se\/pages\/spara/);
 });
 
+test('Bäverbutiken: rabattkoden står stort mellan två linjer direkt före kodstycket', () => {
+  const { K } = baverKonverterare();
+  const rabatt = { typ: 'kod', kod: 'TEST30', procent: 30, start: '2026-10-01T06:00:00Z', slut: '2026-10-04T21:59:59Z', handles: [] };
+  const block = [{ typ: 'text', text: 'Problemet först.' }, { typ: 'text', text: 'Koden TEST30 ger 30 % till och med söndag 4 oktober.' }, { typ: 'knapp', text: 'Hämta 30 % med TEST30', lank: 'rabatt:TEST30:kollektion:alla-produkter' }];
+  const ut = K.konverteraMejl({ id: 'x', amnesrader: [{ text: 'a' }], block, rabatt });
+  const i = ut.blocks.findIndex((b) => b.type === 'regular' && b.text.startsWith('Koden TEST30'));
+  assert.deepEqual(ut.blocks.slice(i - 3, i), [{ type: 'divider' }, { type: 'h1', text: 'TEST30', alignment: 'center' }, { type: 'divider' }]);
+  assert.equal(ut.blocks.filter((b) => b.type === 'h1' && b.text === 'TEST30').length, 1, 'koden står stort en gång');
+  assert.deepEqual(ut.varningar, []);
+  const utanStycke = K.konverteraMejl({ id: 'y', amnesrader: [{ text: 'a' }], block: [block[0], block[2]], rabatt });
+  assert.ok(!utanStycke.blocks.some((b) => b.type === 'h1' && b.text === 'TEST30'));
+  assert.ok(utanStycke.varningar.some((v) => /Kodstycket/.test(v)), 'saknat kodstycke syns som varning');
+  const utanRabatt = K.konverteraMejl({ id: 'z', amnesrader: [{ text: 'a' }], block });
+  assert.ok(!utanRabatt.blocks.some((b) => b.type === 'divider'), 'inget mejl utan rabattkod får rutan');
+});
+
 // ------------------------------------------------------------------- CaraShell
 
 function caraKonverterare() {

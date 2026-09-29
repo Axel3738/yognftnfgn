@@ -1,7 +1,7 @@
 {
   "id": "k30-fars-dag-ved",
-  "namn": "MAIL_20261010_Tandvedsklyv_GT_6_kopare-tradgard_product_vinterns-ved_v2",
-  "memo": "Vedsäsongen börjar. Till dem som redan köpt till tomten, som önskelista eller present. Hypotes: en produktfamilj (klyva, klyva mer, skydda klyven) säljer som helhet, och problemöppningen \"tändved i påse\" (ur produkttexten) slår en ren presentöppning. Fars dag-rean, 30 % med FARSDAG30 på tändvedsklyven och tre till till och med måndag 19 oktober, lades till 2026-09-29 (Axel). Aldrig beställningsdatum eller frakt: mejlet säger att fars dag är söndag 8 november och kommer fortare än man tror, och 19 oktober står bara som reans sista dag i kodstycket. Förbud kvar: inga påståenden om säkerhet eller olyckor.",
+  "namn": "MAIL_20261010_Tandvedsklyv_GT_6_tier1-kopare-tradgard_product_vinterns-ved_v3",
+  "memo": "Vedsäsongen börjar. Brett (Axels order 2026-09-29: \"samma gäller för tofflor och liknande, vi ska ju skicka till alla våra kunder\"): Fars dag ved 10/10 är Warmup tier 1 plus trädgårdsköparna, som önskelista eller present. Hypotes: en produktfamilj (klyva, klyva mer, skydda klyven) säljer som helhet, och problemöppningen \"tändved i påse\" (ur produkttexten) slår en ren presentöppning. Fars dag-rean, 30 % med FARSDAG30 på tändvedsklyven och tre till till och med måndag 19 oktober, lades till 2026-09-29 (Axel). Aldrig beställningsdatum eller frakt: mejlet säger att fars dag är söndag 8 november och kommer fortare än man tror, och 19 oktober står bara som reans sista dag i kodstycket. Förbud kvar: inga påståenden om säkerhet eller olyckor.",
   "taggar": {
     "typ": "N",
     "kalla": "gissning",
@@ -121,7 +121,7 @@
   ],
   "planerad": "2026-10-10T18:00:00+02:00",
   "segment": [
-    "Köpare trädgård & tomt"
+    "Fars dag ved 10/10"
   ],
   "exkludera": [],
   "status_plan": "klar",

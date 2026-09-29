@@ -1,7 +1,7 @@
 {
   "id": "k32-fars-dag-prylar",
-  "namn": "MAIL_20261012_Fagelmatare_GT_8_kopare-verkstad_product_faglarna-i-mobilen_v2",
-  "memo": "Verkstadsköparna gillar prylar med en funktion man kan visa upp. Hypotes: fågelmataren med kamera är presenten som pappan aldrig köper själv men pratar om i veckor; mätt på klick på hero mot raden. Fars dag-rean, 30 % med FARSDAG30 på fågelmataren och tre prylar till garaget till och med måndag 19 oktober, lades till 2026-09-29 (Axel). Aldrig beställningsdatum eller frakt: mejlet säger att fars dag är söndag 8 november och kommer fortare än man tror, och 19 oktober står bara som reans sista dag i kodstycket. Obs: Solcellsprodukterna möter \"var kommer solen ifrån\" (kommentarer/leads.md 2026-09-26): panelen sitter på fågelmatarens tak enligt produkttexten, inget påstående om laddning i mörker.",
+  "namn": "MAIL_20261012_Fagelmatare_GT_8_tier2-kopare-verkstad_product_faglarna-i-mobilen_v3",
+  "memo": "Brett (Axels order 2026-09-29: \"samma gäller för tofflor och liknande, vi ska ju skicka till alla våra kunder\"): Fars dag fågelmataren 12/10 är Warmup tier 2 plus verkstadsköparna. Prylar med en funktion man kan visa upp. Hypotes: fågelmataren med kamera är presenten som pappan aldrig köper själv men pratar om i veckor; mätt på klick på hero mot raden. Fars dag-rean, 30 % med FARSDAG30 på fågelmataren och tre prylar till garaget till och med måndag 19 oktober, lades till 2026-09-29 (Axel). Aldrig beställningsdatum eller frakt: mejlet säger att fars dag är söndag 8 november och kommer fortare än man tror, och 19 oktober står bara som reans sista dag i kodstycket. Obs: Solcellsprodukterna möter \"var kommer solen ifrån\" (kommentarer/leads.md 2026-09-26): panelen sitter på fågelmatarens tak enligt produkttexten, inget påstående om laddning i mörker.",
   "taggar": {
     "typ": "N",
     "kalla": "gissning",
@@ -121,7 +121,7 @@
   ],
   "planerad": "2026-10-12T18:00:00+02:00",
   "segment": [
-    "Köpare verkstad & garage"
+    "Fars dag fågelmataren 12/10"
   ],
   "exkludera": [],
   "status_plan": "klar",
