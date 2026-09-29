@@ -13,6 +13,7 @@ import { fakturaLitenPdf } from '../faktura.mjs';
 import { brevPdf, foljetext, harLankbartOrd } from '../brevpdf.mjs';
 import { kvittoUtfall, coworkPrompt } from '../anmal-skicka.mjs';
 import { angraKvittoAnmalan } from '../arenden.mjs';
+import { annonsUppfoljning } from '../annonsfall.mjs';
 
 const ARENDE = { id: 'KD-TEST-001', typ: 'annons', verksamhet: 'Bäverbutiken', deras: { sidnamn: 'X', doman: 'x.se', lang: 'sv' }, anmalan: { antal: 10, baraAktiva: true, rapporter: [] }, bevis: { annonser: [] } };
 const BAS = { avsandare: { brand: 'Bäverbutiken', mail: 'contact@example.se' }, foretag: { namn: 'Exempel AB', orgnr: '556000-0000', adress: 'Gatan 1' }, nu: new Date('2026-09-29T10:00:00Z') };
@@ -124,6 +125,17 @@ test('angraKvittoAnmalan: anmälan blir utkast igen, historiken säger varför, 
   assert.match(upp.historik.at(-1).not, /INTE inskickad.*säkerhetskontroll/);
   assert.throws(() => angraKvittoAnmalan(a, { nr: 2, skal: 'x' }), /inte som inskickad/);
   assert.throws(() => angraKvittoAnmalan(a, { nr: 9, skal: 'x' }), /ingen anmälan 9/);
+});
+
+test('annonsUppfoljning: annonsfallet följs upp i annonsbiblioteket, aldrig på sajten — och oläst är aldrig "borta"', () => {
+  const bevis = [{ lank: 'https://www.facebook.com/ads/library/?id=11', aktiv: true }, { lank: 'https://www.facebook.com/ads/library/?id=22', aktiv: true }, { lank: 'https://www.facebook.com/ads/library/?id=33', aktiv: false }];
+  const kvar = annonsUppfoljning(bevis, { annonser: [{ id: '11', aktiv: true }, { id: '22', aktiv: false }, { id: '99', aktiv: true }], fel: [] });
+  assert.equal(kvar.kvar, true); assert.match(kvar.detalj, /1 av 2 anmälda annonser är fortfarande aktiva/); assert.deepEqual(kvar.aktiva, ['11']);
+  const borta = annonsUppfoljning(bevis, { annonser: [{ id: '11', aktiv: false }], fel: [] });
+  assert.equal(borta.kvar, false, 'avstängd eller borttagen = borta');
+  assert.equal(annonsUppfoljning(bevis, { annonser: [], fel: ['HTTP 403'] }).kvar, null, 'oläst är okänt, aldrig åtgärdat');
+  assert.equal(annonsUppfoljning(bevis, null).kvar, null);
+  assert.equal(annonsUppfoljning([{ lank: 'x', aktiv: false }], { annonser: [] }).kvar, null, 'inga aktiva i bevisen ⇒ okänt');
 });
 
 test('coworkPrompt: exakt de godkända fälten, och säkerhetskontrollen lämnas till Axel', () => {

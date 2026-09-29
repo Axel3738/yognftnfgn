@@ -149,6 +149,25 @@ function produktRad(p) {
 }
 
 /**
+ * Uppföljningen av ett annonsfall: är de anmälda annonserna kvar? Kopian är
+ * ANNONSERNA, och deras sajt säger ingenting. ORVO hade inget på hemsidan, och
+ * uppföljningen jämförde sajten med vår produktsida. Den hade alltså stängt ärendet
+ * som "åtgärdat" morgonen efter brevet, medan annonserna rullade (mätt 2026-09-29).
+ * `bibliotek` = hamtaAdLibrary() för sidan och landet. Oläst eller fel ⇒ kvar: null
+ * (okänt), aldrig "borta". Ren.
+ */
+export function annonsUppfoljning(bevisAnnonser, bibliotek) {
+  const idn = [...new Set((bevisAnnonser ?? []).filter((t) => t.aktiv !== false).map((t) => String(t.lank ?? '').match(/[?&]id=(\d+)/)?.[1]).filter(Boolean))];
+  if (!idn.length) return { kvar: null, detalj: 'inga aktiva annonser i bevisen — kan inte följas upp automatiskt', aktiva: [] };
+  if (!bibliotek || (!(bibliotek.annonser ?? []).length && (bibliotek.fel ?? []).length)) return { kvar: null, detalj: `annonsbiblioteket gick inte att läsa${bibliotek?.fel?.[0] ? `: ${bibliotek.fel[0]}` : ''}`, aktiva: [] };
+  const aktiva = new Set((bibliotek.annonser ?? []).filter((x) => x.aktiv).map((x) => String(x.id)));
+  const kvar = idn.filter((id) => aktiva.has(id));
+  return kvar.length
+    ? { kvar: true, detalj: `${kvar.length} av ${idn.length} anmälda annonser är fortfarande aktiva`, aktiva: kvar }
+    : { kvar: false, detalj: `ingen av de ${idn.length} anmälda annonserna är aktiv längre`, aktiva: [] };
+}
+
+/**
  * Hela fyndet för en konkurrent: en rad per annons som matchar, styrkan ur den
  * bästa, skälen på svenska + engelska. null om ingen annons matchar.
  */
