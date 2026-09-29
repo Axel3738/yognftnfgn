@@ -4460,6 +4460,22 @@
    "status17": "InfoReceived",
    "senast": "2026-09-29T03:25",
    "status": "CONFIRMED"
+  },
+  "YT2627200704891170": {
+   "bolag": "",
+   "kod": null,
+   "order": null,
+   "fulfillment": null,
+   "manuell": "influencer",
+   "tillagd": "2026-09-29"
+  },
+  "YT2627200704892301": {
+   "bolag": "",
+   "kod": null,
+   "order": null,
+   "fulfillment": null,
+   "manuell": "influencer",
+   "tillagd": "2026-09-29"
   }
  },
  "senaste_korning": {
