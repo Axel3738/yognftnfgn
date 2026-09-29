@@ -1,0 +1,506 @@
+{
+ "CS_1_H1": [
+  {
+   "tale": "Fra tusen tre hundre og femti-ni kroner til tusen og tretti-ni kroner.",
+   "tekst": "Fra 1359 kr til 1039 kr."
+  },
+  {
+   "tale": "Bare nå.",
+   "tekst": "Bare nå."
+  },
+  {
+   "tale": "Spikkesett tretti deler, seks kniver og seks jern.",
+   "tekst": "Spikkesett 30 deler, 6 kniver og 6 jern."
+  },
+  {
+   "tale": "Ordinær pris tusen tre hundre og femti-ni kroner.",
+   "tekst": "Ordinær pris 1359 kr."
+  },
+  {
+   "tale": "Nå tusen og tretti-ni kroner.",
+   "tekst": "Nå 1039 kr."
+  },
+  {
+   "tale": "Det er tre hundre og tjue kroner billigere, over tjue prosent rabatt.",
+   "tekst": "320 kr billigere, over 20% rabatt."
+  },
+  {
+   "tale": "Ikke gå glipp av dette.",
+   "tekst": "Ikke gå glipp av dette."
+  },
+  {
+   "tale": "Bestill via lenken før det er for sent.",
+   "tekst": "Bestill via lenken før det er for sent."
+  }
+ ],
+ "_tre_CS_1_H1": "Konkrete priser og deler: visualisere ✅, falsifisere ✅ (tall kan sjekkes), ingen konkurrent kan si samme pris ✅",
+ "CS_1_H2": [
+  {
+   "tale": "Fra tusen tre hundre og femti-ni kroner til tusen og tretti-ni kroner.",
+   "tekst": "Fra 1359 kr til 1039 kr."
+  },
+  {
+   "tale": "Bare nå.",
+   "tekst": "Bare nå."
+  },
+  {
+   "tale": "Spikkesett, tretti deler - seks kniver og seks jern.",
+   "tekst": "Spikkesett, 30 deler - 6 kniver og 6 jern."
+  },
+  {
+   "tale": "Ordinær pris tusen tre hundre og femti-ni kroner.",
+   "tekst": "Ordinær pris 1359 kr."
+  },
+  {
+   "tale": "Nå tusen og tretti-ni kroner.",
+   "tekst": "Nå 1039 kr."
+  },
+  {
+   "tale": "Det er tre hundre og tjue kroner billigere - over tjue prosent rabatt.",
+   "tekst": "320 kr billigere - over 20% rabatt."
+  },
+  {
+   "tale": "Ikke gå glipp av dette.",
+   "tekst": "Ikke gå glipp av dette."
+  },
+  {
+   "tale": "Bestill via lenken nedenfor.",
+   "tekst": "Bestill via lenken nedenfor."
+  }
+ ],
+ "_tre_CS_1_H2": "Visualisere ✅ (konkrete priser/deler), falsifisere ✅ (tall er fakta), ingen konkurrent kan si det: delvis ❌ (pris/rabatt kunne gjelde andre butikker, men spikkesett-detaljene er produktspesifikke)",
+ "CS_1_H3": [
+  {
+   "tale": "Spar tre hundre og tjue kroner på dette spikkesettet.",
+   "tekst": "Spar 320 kr på dette spikkesettet."
+  },
+  {
+   "tale": "Spikkesett tretti deler, seks kniver og seks jern.",
+   "tekst": "Spikkesett 30 deler, 6 kniver og 6 jern."
+  },
+  {
+   "tale": "Førpris var tusen tre hundre og femti-ni kroner.",
+   "tekst": "Førpris 1359 kr."
+  },
+  {
+   "tale": "Nå tusen og tretti-ni kroner.",
+   "tekst": "Nå 1039 kr."
+  },
+  {
+   "tale": "Det er tre hundre og tjue kroner billigere, rundt tjue-fire prosent rabatt.",
+   "tekst": "Det er 320 kr billigere, rundt 24% rabatt."
+  },
+  {
+   "tale": "Ikke gå glipp av dette.",
+   "tekst": "Ikke gå glipp av dette."
+  },
+  {
+   "tale": "Bestill via lenken før det er for sent.",
+   "tekst": "Bestill via lenken før det er for sent."
+  }
+ ],
+ "_tre_CS_1_H3": "Konkrete tall og deler man kan peke på ✅, falsifiserbart (pris/antall) ✅, men generisk CTA/rabatt-påstand kunne stått i hvilken som helst annonse ❌",
+ "G_1_H1": [
+  {
+   "tale": "Hva gir du ham som allerede har alt?",
+   "tekst": "Hva gir du ham som allerede har alt?"
+  },
+  {
+   "tale": "Du vet den følelsen når du finner den helt rette gaven.",
+   "tekst": "Du vet den følelsen når du finner den helt rette gaven."
+  },
+  {
+   "tale": "Det er denne.",
+   "tekst": "Det er denne."
+  },
+  {
+   "tale": "Et spikkesett med tretti deler, seks kniver, seks jern.",
+   "tekst": "Et spikkesett med 30 deler, 6 kniver, 6 jern."
+  },
+  {
+   "tale": "Han pakker det opp.",
+   "tekst": "Han pakker det opp."
+  },
+  {
+   "tale": "Han blir stille et sekund.",
+   "tekst": "Han blir stille et sekund."
+  },
+  {
+   "tale": "Så smiler han.",
+   "tekst": "Så smiler han."
+  },
+  {
+   "tale": "Dette har jeg villet prøve.",
+   "tekst": "Dette har jeg villet prøve."
+  },
+  {
+   "tale": "Og plutselig sitter han der med en pinne og et smil.",
+   "tekst": "Og plutselig sitter han der med en pinne og et smil."
+  },
+  {
+   "tale": "Ikke flere slips, ikke flere sokker – noe han får bruke, noe han får skape.",
+   "tekst": "Ikke flere slips, ikke flere sokker – noe han får bruke, noe han får skape."
+  },
+  {
+   "tale": "Og du blir den som fant den perfekte gaven.",
+   "tekst": "Og du blir den som fant den perfekte gaven."
+  },
+  {
+   "tale": "Du finner det via lenken.",
+   "tekst": "Du finner det via lenken."
+  },
+  {
+   "tale": "Bestill i dag.",
+   "tekst": "Bestill i dag."
+  }
+ ],
+ "_tre_G_1_H1": "Visualisere ✅ (pinne, smil, spikkesett), falsifisere ✅ (konkret innhold og reaksjon), ingen konkurrent kan si det ⚠️ (generisk gavevinkel, men konkretisert med produktdetaljer)",
+ "G_1_H2": [
+  {
+   "tale": "Denne gaven kommer han faktisk til å bruke.",
+   "tekst": "Denne gaven kommer han faktisk til å bruke."
+  },
+  {
+   "tale": "Du vet den følelsen når du finner akkurat riktig gave.",
+   "tekst": "Du vet den følelsen når du finner akkurat riktig gave."
+  },
+  {
+   "tale": "Det er denne.",
+   "tekst": "Det er denne."
+  },
+  {
+   "tale": "Et spikkesett med tretti deler, seks kniver, seks jern.",
+   "tekst": "Et spikkesett med 30 deler, 6 kniver, 6 jern."
+  },
+  {
+   "tale": "Han pakker det ut.",
+   "tekst": "Han pakker det ut."
+  },
+  {
+   "tale": "Han blir stille et sekund.",
+   "tekst": "Han blir stille et sekund."
+  },
+  {
+   "tale": "Så smiler han.",
+   "tekst": "Så smiler han."
+  },
+  {
+   "tale": "Dette har jeg villet prøve.",
+   "tekst": "Dette har jeg villet prøve."
+  },
+  {
+   "tale": "Og plutselig sitter han der med en pinne og et smil.",
+   "tekst": "Og plutselig sitter han der med en pinne og et smil."
+  },
+  {
+   "tale": "Ikke flere slips, ikke flere sokker, noe han får bruke, noe han får skape.",
+   "tekst": "Ikke flere slips, ikke flere sokker, noe han får bruke, noe han får skape."
+  },
+  {
+   "tale": "Og du blir den som fant den perfekte gaven.",
+   "tekst": "Og du blir den som fant den perfekte gaven."
+  },
+  {
+   "tale": "Finn den via lenken.",
+   "tekst": "Finn den via lenken."
+  },
+  {
+   "tale": "Lenken ligger nedenfor.",
+   "tekst": "Lenken ligger nedenfor."
+  }
+ ],
+ "_tre_G_1_H2": "Konkret produkt (30 deler/6+6) er visualiserbart ✅, falsifiserbart ✅, men reaksjonsscenen er generisk og kunne signeres av en konkurrent ❌",
+ "G_1_H3": [
+  {
+   "tale": "Jeg fant den perfekte gaven.",
+   "tekst": "Jeg fant den perfekte gaven."
+  },
+  {
+   "tale": "Se på reaksjonen hans.",
+   "tekst": "Se på reaksjonen hans."
+  },
+  {
+   "tale": "Du vet den følelsen når du finner helt riktig gave.",
+   "tekst": "Du vet den følelsen når du finner helt riktig gave."
+  },
+  {
+   "tale": "Det er denne.",
+   "tekst": "Det er denne."
+  },
+  {
+   "tale": "Et spikkesett med tretti deler, seks kniver og seks jern.",
+   "tekst": "Et spikkesett med 30 deler, 6 kniver og 6 jern."
+  },
+  {
+   "tale": "Han pakker det opp.",
+   "tekst": "Han pakker det opp."
+  },
+  {
+   "tale": "Han blir stille et sekund.",
+   "tekst": "Han blir stille et sekund."
+  },
+  {
+   "tale": "Så smiler han.",
+   "tekst": "Så smiler han."
+  },
+  {
+   "tale": "Dette har jeg villet prøve.",
+   "tekst": "Dette har jeg villet prøve."
+  },
+  {
+   "tale": "Og plutselig sitter han der med en kubbe og et smil.",
+   "tekst": "Og plutselig sitter han der med en kubbe og et smil."
+  },
+  {
+   "tale": "Ingen slips til, ingen sokker til, noe han faktisk får bruke, noe han får skape.",
+   "tekst": "Ingen slips til, ingen sokker til, noe han faktisk får bruke, noe han får skape."
+  },
+  {
+   "tale": "Og du blir den som fant den perfekte gaven.",
+   "tekst": "Og du blir den som fant den perfekte gaven."
+  },
+  {
+   "tale": "Du finner spikkesettet via lenken.",
+   "tekst": "Du finner spikkesettet via lenken."
+  },
+  {
+   "tale": "Lenken ligger nedenfor.",
+   "tekst": "Lenken ligger nedenfor."
+  }
+ ],
+ "_tre_G_1_H3": "Konkret gaveøyeblikk med spikkesett: visualisere ✅, falsifisere ✅ (produkt/antall stemmer), ingen konkurrent kan si nøyaktig denne scenen ✅",
+ "PD_1_H1": [
+  {
+   "tale": "Vil du begynne å spikke, men vet ikke hvilke verktøy du trenger?",
+   "tekst": "Vil du begynne å spikke, men vet ikke hvilke verktøy du trenger?"
+  },
+  {
+   "tale": "Dette er et komplett spikkesett med tretti deler, seks kniver,",
+   "tekst": "Dette er et komplett spikkesett med 30 deler, 6 kniver,"
+  },
+  {
+   "tale": "seks jern og alt du trenger for å komme i gang.",
+   "tekst": "6 jern og alt du trenger for å komme i gang."
+  },
+  {
+   "tale": "Knivene bruker du til å forme og skjære,",
+   "tekst": "Knivene bruker du til å forme og skjære,"
+  },
+  {
+   "tale": "jernene til å hule ut og lage detaljene.",
+   "tekst": "jernene til å hule ut og lage detaljene."
+  },
+  {
+   "tale": "Skjeer, figurer, dekorasjoner.",
+   "tekst": "Skjeer, figurer, dekorasjoner."
+  },
+  {
+   "tale": "Du velger selv.",
+   "tekst": "Du velger selv."
+  },
+  {
+   "tale": "Ett sett, mange prosjekter.",
+   "tekst": "Ett sett, mange prosjekter."
+  },
+  {
+   "tale": "Du trenger ikke gjette hva du skal kjøpe.",
+   "tekst": "Du trenger ikke gjette hva du skal kjøpe."
+  },
+  {
+   "tale": "Spikkesett med tretti deler venter på deg.",
+   "tekst": "Spikkesett med 30 deler venter på deg."
+  },
+  {
+   "tale": "Bestill via lenken nedenfor.",
+   "tekst": "Bestill via lenken nedenfor."
+  }
+ ],
+ "_tre_PD_1_H1": "Konkrete tall og deler (kniver/jern) ✅ visualisere, påstander om innhold er sjekkbare ✅ falsifisere, men generiske produktbeskrivelser uten unikt bevis ❌ ingen konkurrent kan si det",
+ "PD_1_H2": [
+  {
+   "tale": "Tretti deler.",
+   "tekst": "30 deler."
+  },
+  {
+   "tale": "Alt du trenger for å begynne å spikke.",
+   "tekst": "Alt du trenger for å begynne å spikke."
+  },
+  {
+   "tale": "Dette er et komplett spikkesett med tretti deler, seks kniver,",
+   "tekst": "Dette er et komplett spikkesett med 30 deler, 6 kniver,"
+  },
+  {
+   "tale": "seks jern og alt du trenger for å komme i gang.",
+   "tekst": "6 jern og alt du trenger for å komme i gang."
+  },
+  {
+   "tale": "Knivene bruker du til å forme og skjære,",
+   "tekst": "knivene bruker du til å forme og skjære,"
+  },
+  {
+   "tale": "jernene til å hule ut og ta fram detaljene.",
+   "tekst": "Jernene til å hule ut og ta fram detaljene."
+  },
+  {
+   "tale": "Skjeer, figurer, dekorasjoner.",
+   "tekst": "Skjeer, figurer, dekorasjoner."
+  },
+  {
+   "tale": "Du velger selv.",
+   "tekst": "Du velger selv."
+  },
+  {
+   "tale": "Ett sett, mange prosjekter.",
+   "tekst": "Ett sett, mange prosjekter."
+  },
+  {
+   "tale": "Du trenger ikke gjette hva du skal kjøpe.",
+   "tekst": "Du trenger ikke gjette hva du skal kjøpe."
+  },
+  {
+   "tale": "Spikkesettet med tretti deler venter på deg.",
+   "tekst": "Spikkesettet med 30 deler venter på deg."
+  },
+  {
+   "tale": "Bestill via lenken nedenfor.",
+   "tekst": "Bestill via lenken nedenfor."
+  }
+ ],
+ "_tre_PD_1_H2": "Konkrete tall/gjenstander (30 deler, 6 kniver, 6 jern) ✅ visualisere, ✅ falsifisere, ❌ ingen konkurrent kan si det (generisk produktbeskrivelse)",
+ "PD_1_H3": [
+  {
+   "tale": "Slutt å kjøpe spikkeverktøy ett og ett.",
+   "tekst": "Slutt å kjøpe spikkeverktøy ett og ett."
+  },
+  {
+   "tale": "Dette er et komplett spikkesett med tretti deler, seks kniver,",
+   "tekst": "Dette er et komplett spikkesett med 30 deler, 6 kniver,"
+  },
+  {
+   "tale": "seks jern og alt du trenger for å komme i gang.",
+   "tekst": "6 jern og alt du trenger for å komme i gang."
+  },
+  {
+   "tale": "Knivene bruker du til å forme og skjære,",
+   "tekst": "Knivene bruker du til å forme og skjære,"
+  },
+  {
+   "tale": "jernene til å hule ut og ta fram detaljene.",
+   "tekst": "jernene til å hule ut og ta fram detaljene."
+  },
+  {
+   "tale": "Skjeer, figurer, dekorasjoner.",
+   "tekst": "Skjeer, figurer, dekorasjoner."
+  },
+  {
+   "tale": "Du velger selv.",
+   "tekst": "Du velger selv."
+  },
+  {
+   "tale": "Ett sett, mange prosjekter.",
+   "tekst": "Ett sett, mange prosjekter."
+  },
+  {
+   "tale": "Du trenger ikke gjette hva du skal kjøpe.",
+   "tekst": "Du trenger ikke gjette hva du skal kjøpe."
+  },
+  {
+   "tale": "Bestill spikkesett tretti deler i dag.",
+   "tekst": "Bestill spikkesett 30 deler i dag."
+  },
+  {
+   "tale": "Lenken finner du nedenfor.",
+   "tekst": "Lenken finner du nedenfor."
+  }
+ ],
+ "_tre_PD_1_H3": "Konkret innhold (deler/kniver/jern) ✅ visualisere, ✅ falsifiserbart (antall deler er sjekkbart), ⚠️ delvis generisk CTA som konkurrent kunne signere",
+ "SP_1_H1": [
+  {
+   "tale": "Alle snakker om dette spikkesettet.",
+   "tekst": "Alle snakker om dette spikkesettet."
+  },
+  {
+   "tale": "Mange har villet prøve spikking, få har visst hvor de skal begynne.",
+   "tekst": "Mange har villet prøve spikking, få har visst hvor de skal begynne."
+  },
+  {
+   "tale": "Derfor velger så mange nettopp dette settet.",
+   "tekst": "Derfor velger så mange nettopp dette settet."
+  },
+  {
+   "tale": "Spikkesett tretti deler - seks kniver, seks jern og alt du trenger for å begynne.",
+   "tekst": "Spikkesett 30 deler - 6 kniver, 6 jern og alt du trenger for å begynne."
+  },
+  {
+   "tale": "Se hvorfor andre allerede har blitt hekta på spikking.",
+   "tekst": "Se hvorfor andre allerede har blitt hekta på spikking."
+  },
+  {
+   "tale": "Bestill via lenken.",
+   "tekst": "Bestill via lenken."
+  }
+ ],
+ "_tre_SP_1_H1": "Linje 4 (konkret innhold/antall): visualisere ✅, falsifisere ✅, ingen konkurrent kan si det ✅ - de andre er myke hooks/CTA, ok i kontekst.",
+ "SP_1_H2": [
+  {
+   "tale": "Jeg trodde aldri jeg skulle synes det var så avslappende.",
+   "tekst": "Jeg trodde aldri jeg skulle synes det var så avslappende."
+  },
+  {
+   "tale": "Mange har hatt lyst til å prøve spikking.",
+   "tekst": "Mange har hatt lyst til å prøve spikking."
+  },
+  {
+   "tale": "Få har visst hvor de skal begynne.",
+   "tekst": "Få har visst hvor de skal begynne."
+  },
+  {
+   "tale": "Derfor velger så mange dette settet.",
+   "tekst": "Derfor velger så mange dette settet."
+  },
+  {
+   "tale": "Spikkesett tretti deler, seks kniver, seks jern og alt du trenger for å begynne.",
+   "tekst": "Spikkesett 30 deler, 6 kniver, 6 jern og alt du trenger for å begynne."
+  },
+  {
+   "tale": "Se hvorfor andre allerede har blitt hekta på spikking.",
+   "tekst": "Se hvorfor andre allerede har blitt hekta på spikking."
+  },
+  {
+   "tale": "Bestill via lenken.",
+   "tekst": "Bestill via lenken."
+  }
+ ],
+ "_tre_SP_1_H2": "Konkret produktlinje (30 deler/6 kniver/6 jern): visualisere ✅, falsifisere ✅, konkurrent kan si det ⚠️ (samme innhold, men spesifikt for dette settet) – resten er myke stemningslinjer, ikke reklamefaktapåstander.",
+ "SP_1_H3": [
+  {
+   "tale": "Dette er grunnen til at så mange begynner å spikke akkurat nå.",
+   "tekst": "Dette er grunnen til at så mange begynner å spikke akkurat nå."
+  },
+  {
+   "tale": "Mange har hatt lyst til å prøve spikking.",
+   "tekst": "Mange har hatt lyst til å prøve spikking."
+  },
+  {
+   "tale": "Få har visst hvor de skal begynne.",
+   "tekst": "Få har visst hvor de skal begynne."
+  },
+  {
+   "tale": "Derfor velger så mange dette settet.",
+   "tekst": "Derfor velger så mange dette settet."
+  },
+  {
+   "tale": "Spikkesett med tretti deler, seks kniver, seks jern og alt du trenger for å begynne.",
+   "tekst": "Spikkesett med 30 deler, 6 kniver, 6 jern og alt du trenger for å begynne."
+  },
+  {
+   "tale": "Se hvorfor andre allerede har blitt hekta på spikking.",
+   "tekst": "Se hvorfor andre allerede har blitt hekta på spikking."
+  },
+  {
+   "tale": "Bestill via lenken.",
+   "tekst": "Bestill via lenken."
+  }
+ ],
+ "_tre_SP_1_H3": "Åpningshooken er generisk (❌ ingen konkurrent-unik), men produktlinjen med 30/6/6 er konkret ✅ og falsifiserbar ✅"
+}

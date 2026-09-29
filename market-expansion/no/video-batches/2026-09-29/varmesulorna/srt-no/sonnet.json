@@ -1,0 +1,522 @@
+{
+ "CS_1_H1": [
+  {
+   "tale": "I dag sju hundre og nitti-ni kroner i stedet for tusen og tretti-ni kroner.",
+   "tekst": "I dag 799 kr i stedet for 1039 kr."
+  },
+  {
+   "tale": "Varmesåler med fjernkontroll.",
+   "tekst": "Varmesåler med fjernkontroll."
+  },
+  {
+   "tale": "Ordinær pris tusen og tretti-ni kroner.",
+   "tekst": "Ordinær pris 1039 kr."
+  },
+  {
+   "tale": "I dag sju hundre og nitti-ni kroner.",
+   "tekst": "I dag 799 kr."
+  },
+  {
+   "tale": "Nå på salg.",
+   "tekst": "Nå på salg."
+  },
+  {
+   "tale": "Lad opp, legg dem i skoene, trykk på knappen, varme føtter med en gang.",
+   "tekst": "Lad opp, legg dem i skoene, trykk på knappen, varme føtter med en gang."
+  },
+  {
+   "tale": "Før vinteren kommer.",
+   "tekst": "Før vinteren kommer."
+  },
+  {
+   "tale": "Sju hundre og nitti-ni kroner i dag.",
+   "tekst": "799 kr i dag."
+  },
+  {
+   "tale": "Bestill via lenken.",
+   "tekst": "Bestill via lenken."
+  }
+ ],
+ "_tre_CS_1_H1": "Priser og produkt er konkrete og etterprøvbare ✅✅, men uten butikknavn kunne en konkurrent i prinsippet si det samme ❌.",
+ "CS_1_H2": [
+  {
+   "tale": "Salgspris nå.",
+   "tekst": "Salgspris nå."
+  },
+  {
+   "tale": "Varmesåler med fjernkontroll.",
+   "tekst": "Varmesåler med fjernkontroll."
+  },
+  {
+   "tale": "Førpris tusen og tretti-ni kroner.",
+   "tekst": "Førpris 1039 kr."
+  },
+  {
+   "tale": "Nå sju hundre og nitti-ni kroner.",
+   "tekst": "Nå 799 kr."
+  },
+  {
+   "tale": "Nå på salg.",
+   "tekst": "Nå på salg."
+  },
+  {
+   "tale": "Lad dem, legg dem i skoene, trykk på knappen, varme føtter med en gang.",
+   "tekst": "Lad dem, legg i skoene, trykk på knappen, varme føtter med en gang."
+  },
+  {
+   "tale": "Før vinteren kommer.",
+   "tekst": "Før vinteren kommer."
+  },
+  {
+   "tale": "Sju hundre og nitti-ni kroner nå.",
+   "tekst": "799 kr nå."
+  },
+  {
+   "tale": "Bestill via lenken.",
+   "tekst": "Bestill via lenken."
+  }
+ ],
+ "_tre_CS_1_H2": "Konkrete produkt-/prisreplikker: visualisere ✅, falsifisere ✅, ingen konkurrent kan si det ⚠️ (pris/produkt er unikt, men generiske linjer som 'Nå på salg' kan i prinsippet sies av andre).",
+ "CS_1_H3": [
+  {
+   "tale": "Nå på salg.",
+   "tekst": "Nå på salg."
+  },
+  {
+   "tale": "Slå til nå!",
+   "tekst": "Slå til nå!"
+  },
+  {
+   "tale": "Varmesåler med fjernkontroll.",
+   "tekst": "Varmesåler med fjernkontroll."
+  },
+  {
+   "tale": "Før: tusen og tretti-ni kroner.",
+   "tekst": "Før: 1039 kr."
+  },
+  {
+   "tale": "Nå: sju hundre og nitti-ni kroner.",
+   "tekst": "Nå: 799 kr."
+  },
+  {
+   "tale": "Før vinteren kommer.",
+   "tekst": "Før vinteren kommer."
+  },
+  {
+   "tale": "Lad opp, legg dem i skoene, trykk på knappen.",
+   "tekst": "Lad opp, legg dem i skoene, trykk på knappen."
+  },
+  {
+   "tale": "Varme føtter med en gang.",
+   "tekst": "Varme føtter med en gang."
+  },
+  {
+   "tale": "Spar to hundre og førti kroner.",
+   "tekst": "Spar 240 kr."
+  },
+  {
+   "tale": "Sju hundre og nitti-ni kroner nå.",
+   "tekst": "799 kr nå."
+  },
+  {
+   "tale": "Bestill via lenken.",
+   "tekst": "Bestill via lenken."
+  }
+ ],
+ "_tre_CS_1_H3": "Konkrete produktrader (pris, funksjon): visualisere ✅, falsifisere ✅, konkurrent kan ikke si det (pga pris/produktnavn) ✅; myke rader som 'Slå til nå!'/'Jeg hadde hørt om dem': visualisere ⚠️, falsifisere ❌, men brukes kort som overgang, ikke hovedpåstand.",
+ "G_1_H1": [
+  {
+   "tale": "Han fryser på beina hver vinter.",
+   "tekst": "Han fryser på beina hver vinter."
+  },
+  {
+   "tale": "Ikke i år.",
+   "tekst": "Ikke i år."
+  },
+  {
+   "tale": "Han fryser på beina hver vinter.",
+   "tekst": "Han fryser på beina hver vinter."
+  },
+  {
+   "tale": "På jobb, ute og fisker, i skibakken.",
+   "tekst": "På jobb, ute og fisker, i skibakken."
+  },
+  {
+   "tale": "Han klager aldri, men jeg ser det.",
+   "tekst": "Han klager aldri, men jeg ser det."
+  },
+  {
+   "tale": "I år fant jeg den perfekte presangen.",
+   "tekst": "I år fant jeg den perfekte presangen."
+  },
+  {
+   "tale": "Varmesåler med fjernkontroll.",
+   "tekst": "Varmesåler med fjernkontroll."
+  },
+  {
+   "tale": "Han la dem i skoene og smilte på den måten han gjør når noe faktisk er bra.",
+   "tekst": "Han la dem i skoene og smilte på den måten han gjør når noe faktisk er bra."
+  },
+  {
+   "tale": "Noen ganger er den beste presangen ikke den største.",
+   "tekst": "Noen ganger er den beste presangen ikke den største."
+  },
+  {
+   "tale": "Det er den som løser noe han aldri har bedt om hjelp med.",
+   "tekst": "Det er den som løser noe han aldri har bedt om hjelp med."
+  }
+ ],
+ "_tre_G_1_H1": "Konkret scene (jobb/fiske/skibakke) ✅, falsifiserbart (produkt+funksjon nevnt) ✅, konkurrent kunne signert samme historie ❌ – men følger kildens narrative struktur som krevd.",
+ "G_1_H2": [
+  {
+   "tale": "Jeg fant endelig den perfekte gaven til ham.",
+   "tekst": "Jeg fant endelig den perfekte gaven til ham."
+  },
+  {
+   "tale": "Han fryser på føttene hver vinter, ute på jobb,",
+   "tekst": "Han fryser på føttene hver vinter, ute på jobb,"
+  },
+  {
+   "tale": "ute og fisker, ute i skibakken.",
+   "tekst": "ute og fisker, ute i skibakken."
+  },
+  {
+   "tale": "Han klager aldri, men jeg ser det.",
+   "tekst": "Han klager aldri, men jeg ser det."
+  },
+  {
+   "tale": "I år fant jeg den perfekte gaven.",
+   "tekst": "I år fant jeg den perfekte gaven."
+  },
+  {
+   "tale": "Varmesåler med fjernkontroll.",
+   "tekst": "Varmesåler med fjernkontroll."
+  },
+  {
+   "tale": "Han la dem i skoene og smilte sånn han gjør når noe faktisk er bra.",
+   "tekst": "Han la dem i skoene og smilte sånn han gjør når noe faktisk er bra."
+  },
+  {
+   "tale": "Noen ganger er den beste gaven ikke den største.",
+   "tekst": "Noen ganger er den beste gaven ikke den største."
+  },
+  {
+   "tale": "Det er den som løser noe han aldri ba om hjelp med.",
+   "tekst": "Det er den som løser noe han aldri ba om hjelp med."
+  }
+ ],
+ "_tre_G_1_H2": "Visualisere ✅ (konkrete scener: sko, skibakke, smil), falsifisere ⚠️ (delvis observasjon, delvis følelse), ingen konkurrent kan si det ❌ (generisk gavehistorie)",
+ "G_1_H3": [
+  {
+   "tale": "Han sa det var den beste julegaven han har fått.",
+   "tekst": "Han sa det var den beste julegaven han har fått."
+  },
+  {
+   "tale": "Han fryser på beina hver vinter, ute på jobb,",
+   "tekst": "Han fryser på beina hver vinter, ute på jobb,"
+  },
+  {
+   "tale": "ute og fisker, ute i skibakken.",
+   "tekst": "ute og fisker, ute i skibakken."
+  },
+  {
+   "tale": "Han klager aldri, men jeg ser det.",
+   "tekst": "Han klager aldri, men jeg ser det."
+  },
+  {
+   "tale": "I år fant jeg den perfekte gaven.",
+   "tekst": "I år fant jeg den perfekte gaven."
+  },
+  {
+   "tale": "Varmesåler med fjernkontroll.",
+   "tekst": "Varmesåler med fjernkontroll."
+  },
+  {
+   "tale": "Han la dem i skoene og smilte sånn han gjør når noe faktisk er bra.",
+   "tekst": "Han la dem i skoene og smilte sånn han gjør når noe faktisk er bra."
+  },
+  {
+   "tale": "Noen ganger er den beste gaven ikke den største.",
+   "tekst": "Noen ganger er den beste gaven ikke den største."
+  },
+  {
+   "tale": "Det er den som løser noe han aldri har bedt om hjelp med.",
+   "tekst": "Det er den som løser noe han aldri har bedt om hjelp med."
+  }
+ ],
+ "_tre_G_1_H3": "Konkret historie med gjenkjennelig scene (skibakke, sko, smil): visualisere ✅, falsifiserbar anekdote ✅, personlig nok til at konkurrent ikke kan signere den ✅",
+ "PD_1_H1": [
+  {
+   "tale": "Kalde føtter ødelegger hele dagen.",
+   "tekst": "Kalde føtter ødelegger hele dagen."
+  },
+  {
+   "tale": "Kalde føtter ødelegger hele dagen, men ikke lenger.",
+   "tekst": "Kalde føtter ødelegger hele dagen, men ikke lenger."
+  },
+  {
+   "tale": "Dette er varmesåler med fjernkontroll.",
+   "tekst": "Dette er varmesåler med fjernkontroll."
+  },
+  {
+   "tale": "Du lader dem, legger dem i skoene, ferdig.",
+   "tekst": "Du lader dem, legger dem i skoene, ferdig."
+  },
+  {
+   "tale": "Trykk på knappen, og varmen kommer med en gang.",
+   "tekst": "Trykk på knappen, og varmen kommer med en gang."
+  },
+  {
+   "tale": "Ingen kabel, ingen sko av.",
+   "tekst": "Ingen kabel, ingen sko av."
+  },
+  {
+   "tale": "Perfekt for skibakken.",
+   "tekst": "Perfekt for skibakken."
+  },
+  {
+   "tale": "Perfekt når du står ute på fotballbanen.",
+   "tekst": "Perfekt når du står ute på fotballbanen."
+  },
+  {
+   "tale": "Perfekt når du jobber ute hele dagen.",
+   "tekst": "Perfekt når du jobber ute hele dagen."
+  },
+  {
+   "tale": "Tre varmenivåer, opptil åtte timer med varme.",
+   "tekst": "3 varmenivåer, opptil 8 timer med varme."
+  },
+  {
+   "tale": "Varme føtter, uansett hvor du er.",
+   "tekst": "Varme føtter, uansett hvor du er."
+  }
+ ],
+ "_tre_PD_1_H1": "Konkrete produktbeskrivelser (knapp, kabel, skibakke) ✅ visualisere, ✅ falsifiserbare (funksjon/tid), ⚠️ konkurrent kunne si det samme siden det er generisk produktbeskrivelse uten unikt bevis.",
+ "PD_1_H2": [
+  {
+   "tale": "Disse sålene har fjernkontroll, seriøst.",
+   "tekst": "Disse sålene har fjernkontroll, seriøst."
+  },
+  {
+   "tale": "Kalde føtter ødelegger hele dagen, men ikke lenger.",
+   "tekst": "Kalde føtter ødelegger hele dagen, men ikke lenger."
+  },
+  {
+   "tale": "Dette er varmesåler med fjernkontroll.",
+   "tekst": "Dette er varmesåler med fjernkontroll."
+  },
+  {
+   "tale": "Du lader dem, legger dem i skoene, klart.",
+   "tekst": "Du lader dem, legger dem i skoene, klart."
+  },
+  {
+   "tale": "Trykk på knappen, og varmen kommer med en gang.",
+   "tekst": "Trykk på knappen, og varmen kommer med en gang."
+  },
+  {
+   "tale": "Ingen kabel, ingen sko av.",
+   "tekst": "Ingen kabel, ingen sko av."
+  },
+  {
+   "tale": "Perfekt for skibakken.",
+   "tekst": "Perfekt for skibakken."
+  },
+  {
+   "tale": "Perfekt når du står ute på fotballbanen.",
+   "tekst": "Perfekt når du står ute på fotballbanen."
+  },
+  {
+   "tale": "Perfekt når du jobber ute hele dagen.",
+   "tekst": "Perfekt når du jobber ute hele dagen."
+  },
+  {
+   "tale": "Tre varmenivåer, opptil åtte timer med varme.",
+   "tekst": "3 varmenivåer, opptil 8 timer med varme."
+  },
+  {
+   "tale": "Varme føtter, uansett hvor du er.",
+   "tekst": "Varme føtter, uansett hvor du er."
+  }
+ ],
+ "_tre_PD_1_H2": "Konkret produkt/handling (fjernkontroll, knapp, kabel) ✅ visualisere, ✅ falsifiserbart (kan sjekkes mot faktaark), ✅ ingen konkurrent kan si nøyaktig dette om egen sko/produkt uten samme funksjon.",
+ "PD_1_H3": [
+  {
+   "tale": "Iskalde tær?",
+   "tekst": "Iskalde tær?"
+  },
+  {
+   "tale": "Ikke lenger.",
+   "tekst": "Ikke lenger."
+  },
+  {
+   "tale": "Kalde føtter ødelegger hele dagen, men ikke lenger.",
+   "tekst": "Kalde føtter ødelegger hele dagen, men ikke lenger."
+  },
+  {
+   "tale": "Dette er varmesåler med fjernkontroll.",
+   "tekst": "Dette er varmesåler med fjernkontroll."
+  },
+  {
+   "tale": "Du lader dem, legger dem i skoene, klart.",
+   "tekst": "Du lader dem, legger dem i skoene, klart."
+  },
+  {
+   "tale": "Trykk på knappen, og varmen kommer med én gang.",
+   "tekst": "Trykk på knappen, og varmen kommer med én gang."
+  },
+  {
+   "tale": "Ingen kabel, ingen sko av.",
+   "tekst": "Ingen kabel, ingen sko av."
+  },
+  {
+   "tale": "Perfekt for skibakken.",
+   "tekst": "Perfekt for skibakken."
+  },
+  {
+   "tale": "Perfekt når du står ute på fotballbanen.",
+   "tekst": "Perfekt når du står ute på fotballbanen."
+  },
+  {
+   "tale": "Perfekt når du jobber utendørs hele dagen.",
+   "tekst": "Perfekt når du jobber utendørs hele dagen."
+  },
+  {
+   "tale": "Tre varmenivåer, opptil åtte timer varme.",
+   "tekst": "3 varmenivåer, opptil 8 timer varme."
+  },
+  {
+   "tale": "Varme føtter, uansett hvor du er.",
+   "tekst": "Varme føtter, uansett hvor du er."
+  }
+ ],
+ "_tre_PD_1_H3": "Konkret produkt/handling ✅, sant/falskt sjekkbart mot fakta ✅, generisk fjernkontroll-formulering som konkurrent kan si ❌",
+ "SP_1_H1": [
+  {
+   "tale": "Jeg har frosset på beina hver eneste vinter.",
+   "tekst": "Jeg har frosset på beina hver eneste vinter."
+  },
+  {
+   "tale": "Trodde ikke det var sant før jeg testet det selv.",
+   "tekst": "Trodde ikke det var sant før jeg testet det selv."
+  },
+  {
+   "tale": "Varmesåler med fjernkontroll.",
+   "tekst": "Varmesåler med fjernkontroll."
+  },
+  {
+   "tale": "Man lader dem om kvelden, legger dem i skoene om morgenen,",
+   "tekst": "Man lader dem om kvelden, legger dem i skoene om morgenen,"
+  },
+  {
+   "tale": "så er det bare å trykke på knappen.",
+   "tekst": "Så er det bare å trykke på knappen."
+  },
+  {
+   "tale": "Varmen kommer med én gang.",
+   "tekst": "Varmen kommer med én gang."
+  },
+  {
+   "tale": "Du merker den med det samme.",
+   "tekst": "Du merker den med det samme."
+  },
+  {
+   "tale": "Perfekt for lange dager ute i kulda, skitur, jobb, kamper, fiske.",
+   "tekst": "Perfekt for lange dager ute i kulda, skitur, jobb, kamper, fiske."
+  },
+  {
+   "tale": "Det er en av de enkleste tingene jeg har kjøpt i vinter.",
+   "tekst": "Det er en av de enkleste tingene jeg har kjøpt i vinter."
+  },
+  {
+   "tale": "Varme føtter hele dagen.",
+   "tekst": "Varme føtter hele dagen."
+  }
+ ],
+ "_tre_SP_1_H1": "Konkrete produktobservasjoner (visualisere ✅), sanne/falsifiserbare påstander om lading og varme (✅), spesifikk for dette produktet uten hype-fraser (✅)",
+ "SP_1_H2": [
+  {
+   "tale": "Jeg har frosset på beina hver eneste vinter.",
+   "tekst": "Jeg har frosset på beina hver eneste vinter."
+  },
+  {
+   "tale": "Jeg trodde ikke det var sant før jeg testet dem selv.",
+   "tekst": "Jeg trodde ikke det var sant før jeg testet dem selv."
+  },
+  {
+   "tale": "Varmesåler med fjernkontroll.",
+   "tekst": "Varmesåler med fjernkontroll."
+  },
+  {
+   "tale": "Du lader dem på kvelden, legger dem i skoene om morgenen,",
+   "tekst": "Du lader dem på kvelden, legger dem i skoene om morgenen,"
+  },
+  {
+   "tale": "så trykker du bare på knappen.",
+   "tekst": "Så trykker du bare på knappen."
+  },
+  {
+   "tale": "Varmen kommer med en gang.",
+   "tekst": "Varmen kommer med en gang."
+  },
+  {
+   "tale": "Du merker den umiddelbart.",
+   "tekst": "Du merker den umiddelbart."
+  },
+  {
+   "tale": "Perfekt for lange dager i kulden, skibakken, jobb, kamper, fiske.",
+   "tekst": "Perfekt for lange dager i kulden, skibakken, jobb, kamper, fiske."
+  },
+  {
+   "tale": "Det er en av de enkleste tingene jeg har kjøpt denne vinteren.",
+   "tekst": "Det er en av de enkleste tingene jeg har kjøpt denne vinteren."
+  },
+  {
+   "tale": "Varme føtter hele dagen.",
+   "tekst": "Varme føtter hele dagen."
+  }
+ ],
+ "_tre_SP_1_H2": "Linje 1 og 3 konkret/falsifiserbar/unik ✅✅✅, linje 6-7 og 10 er generiske og kunne stått i en konkurrents annonse ❌ på 'ingen annan'-testet, resten ✅✅✅",
+ "SP_1_H3": [
+  {
+   "tale": "Jeg trodde ikke det var sant før jeg testet det selv.",
+   "tekst": "Jeg trodde ikke det var sant før jeg testet det selv."
+  },
+  {
+   "tale": "Jeg trodde ikke det var sant før jeg testet det selv.",
+   "tekst": "Jeg trodde ikke det var sant før jeg testet det selv."
+  },
+  {
+   "tale": "Varmesåler med fjernkontroll.",
+   "tekst": "Varmesåler med fjernkontroll."
+  },
+  {
+   "tale": "Du lader dem om kvelden, legger dem i skoene om morgenen,",
+   "tekst": "Du lader dem om kvelden, legger dem i skoene om morgenen,"
+  },
+  {
+   "tale": "så trykker du bare på knappen.",
+   "tekst": "Så trykker du bare på knappen."
+  },
+  {
+   "tale": "Varmen kommer med en gang.",
+   "tekst": "Varmen kommer med en gang."
+  },
+  {
+   "tale": "Du kjenner den med en gang.",
+   "tekst": "Du kjenner den med en gang."
+  },
+  {
+   "tale": "Perfekt for lange dager ute i kulda, skibakken, jobb, kamper, fiske.",
+   "tekst": "Perfekt for lange dager ute i kulda, skibakken, jobb, kamper, fiske."
+  },
+  {
+   "tale": "Det er en av de enkleste tingene jeg har kjøpt i vinter.",
+   "tekst": "Det er en av de enkleste tingene jeg har kjøpt i vinter."
+  },
+  {
+   "tale": "Varme føtter hele dagen.",
+   "tekst": "Varme føtter hele dagen."
+  }
+ ],
+ "_tre_SP_1_H3": "Visualisere ✅ (såler, knapp, skoene), falsifisere ✅ (lades/varmes faktisk), ingen konkurrent kan si det ⚠️ (generisk produktbeskrivelse, men konkret nok til å beholdes)"
+}

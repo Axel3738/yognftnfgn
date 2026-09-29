@@ -1,0 +1,842 @@
+{
+ "language_code": "swe",
+ "language_probability": 1.0,
+ "text": "Det här är sitsen alla i sportföräldragruppen pratar om. Den här värmesitsen har blivit riktigt populär den här säsongen. Folk som fryser på fotbollsläktaren har hittat den. Fiskare har hittat den. Jakt- och campingfolk också. Det de skriver är ungefär samma sak. Fyra värmezoner, tre värmelägen och den drivs med USB. Vill du också sluta frysa? Länken finns här under.",
+ "words": [
+  {
+   "text": "Det",
+   "start": 0.0,
+   "end": 0.06,
+   "type": "word",
+   "logprob": -0.0008122005965560675
+  },
+  {
+   "text": " ",
+   "start": 0.06,
+   "end": 0.1,
+   "type": "spacing",
+   "logprob": -7.152555099310121e-07
+  },
+  {
+   "text": "här",
+   "start": 0.1,
+   "end": 0.26,
+   "type": "word",
+   "logprob": -7.152555099310121e-07
+  },
+  {
+   "text": " ",
+   "start": 0.26,
+   "end": 0.28,
+   "type": "spacing",
+   "logprob": -1.1086402082582936e-05
+  },
+  {
+   "text": "är",
+   "start": 0.28,
+   "end": 0.36,
+   "type": "word",
+   "logprob": -1.1086402082582936e-05
+  },
+  {
+   "text": " ",
+   "start": 0.36,
+   "end": 0.4,
+   "type": "spacing",
+   "logprob": -0.001662064460106194
+  },
+  {
+   "text": "sitsen",
+   "start": 0.4,
+   "end": 0.9,
+   "type": "word",
+   "logprob": -0.0011080429734041293
+  },
+  {
+   "text": " ",
+   "start": 0.9,
+   "end": 1.0,
+   "type": "spacing",
+   "logprob": -1.1324817933200393e-05
+  },
+  {
+   "text": "alla",
+   "start": 1.0,
+   "end": 1.36,
+   "type": "word",
+   "logprob": -1.1324817933200393e-05
+  },
+  {
+   "text": " ",
+   "start": 1.36,
+   "end": 1.4,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "i",
+   "start": 1.4,
+   "end": 1.44,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 1.44,
+   "end": 1.48,
+   "type": "spacing",
+   "logprob": -0.0006704466650262475
+  },
+  {
+   "text": "sportföräldragruppen",
+   "start": 1.48,
+   "end": 2.42,
+   "type": "word",
+   "logprob": -0.005800055427971529
+  },
+  {
+   "text": " ",
+   "start": 2.42,
+   "end": 2.5,
+   "type": "spacing",
+   "logprob": -4.768370445162873e-07
+  },
+  {
+   "text": "pratar",
+   "start": 2.5,
+   "end": 2.8,
+   "type": "word",
+   "logprob": -4.132576843100348e-06
+  },
+  {
+   "text": " ",
+   "start": 2.8,
+   "end": 2.86,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "om.",
+   "start": 2.86,
+   "end": 2.98,
+   "type": "word",
+   "logprob": -1.1920927060297497e-07
+  },
+  {
+   "text": " ",
+   "start": 2.98,
+   "end": 3.08,
+   "type": "spacing",
+   "logprob": -6.794906312279636e-06
+  },
+  {
+   "text": "Den",
+   "start": 3.08,
+   "end": 3.14,
+   "type": "word",
+   "logprob": -6.794906312279636e-06
+  },
+  {
+   "text": " ",
+   "start": 3.14,
+   "end": 3.18,
+   "type": "spacing",
+   "logprob": -3.2186455882765586e-06
+  },
+  {
+   "text": "här",
+   "start": 3.18,
+   "end": 3.32,
+   "type": "word",
+   "logprob": -3.2186455882765586e-06
+  },
+  {
+   "text": " ",
+   "start": 3.32,
+   "end": 3.38,
+   "type": "spacing",
+   "logprob": -0.00019095504831057042
+  },
+  {
+   "text": "värmesitsen",
+   "start": 3.38,
+   "end": 3.98,
+   "type": "word",
+   "logprob": -0.0033304142839783294
+  },
+  {
+   "text": " ",
+   "start": 3.98,
+   "end": 4.0,
+   "type": "spacing",
+   "logprob": -4.410734163684538e-06
+  },
+  {
+   "text": "har",
+   "start": 4.0,
+   "end": 4.08,
+   "type": "word",
+   "logprob": -4.410734163684538e-06
+  },
+  {
+   "text": " ",
+   "start": 4.08,
+   "end": 4.1,
+   "type": "spacing",
+   "logprob": -4.291525328881107e-06
+  },
+  {
+   "text": "blivit",
+   "start": 4.1,
+   "end": 4.32,
+   "type": "word",
+   "logprob": -1.9073454495810438e-06
+  },
+  {
+   "text": " ",
+   "start": 4.32,
+   "end": 4.38,
+   "type": "spacing",
+   "logprob": -0.0001823735801735893
+  },
+  {
+   "text": "riktigt",
+   "start": 4.38,
+   "end": 4.8,
+   "type": "word",
+   "logprob": -0.00010584834152333704
+  },
+  {
+   "text": " ",
+   "start": 4.8,
+   "end": 4.84,
+   "type": "spacing",
+   "logprob": -3.302042750874534e-05
+  },
+  {
+   "text": "populär",
+   "start": 4.84,
+   "end": 5.22,
+   "type": "word",
+   "logprob": -2.8558706877187694e-05
+  },
+  {
+   "text": " ",
+   "start": 5.22,
+   "end": 5.28,
+   "type": "spacing",
+   "logprob": -1.5497195136049413e-06
+  },
+  {
+   "text": "den",
+   "start": 5.28,
+   "end": 5.38,
+   "type": "word",
+   "logprob": -1.5497195136049413e-06
+  },
+  {
+   "text": " ",
+   "start": 5.38,
+   "end": 5.4,
+   "type": "spacing",
+   "logprob": -2.288792165927589e-05
+  },
+  {
+   "text": "här",
+   "start": 5.4,
+   "end": 5.52,
+   "type": "word",
+   "logprob": -2.288792165927589e-05
+  },
+  {
+   "text": " ",
+   "start": 5.52,
+   "end": 5.6,
+   "type": "spacing",
+   "logprob": -3.2782016205601394e-05
+  },
+  {
+   "text": "säsongen.",
+   "start": 5.6,
+   "end": 6.04,
+   "type": "word",
+   "logprob": -0.0011567364595563845
+  },
+  {
+   "text": " ",
+   "start": 6.04,
+   "end": 6.12,
+   "type": "spacing",
+   "logprob": -1.1444026313256472e-05
+  },
+  {
+   "text": "Folk",
+   "start": 6.12,
+   "end": 6.32,
+   "type": "word",
+   "logprob": -1.1444026313256472e-05
+  },
+  {
+   "text": " ",
+   "start": 6.32,
+   "end": 6.36,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "som",
+   "start": 6.36,
+   "end": 6.5,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 6.5,
+   "end": 6.56,
+   "type": "spacing",
+   "logprob": -0.00023421882360707968
+  },
+  {
+   "text": "fryser",
+   "start": 6.56,
+   "end": 6.92,
+   "type": "word",
+   "logprob": -0.00011752664414643732
+  },
+  {
+   "text": " ",
+   "start": 6.92,
+   "end": 6.96,
+   "type": "spacing",
+   "logprob": -1.7881377516459906e-06
+  },
+  {
+   "text": "på",
+   "start": 6.96,
+   "end": 7.04,
+   "type": "word",
+   "logprob": -1.7881377516459906e-06
+  },
+  {
+   "text": " ",
+   "start": 7.04,
+   "end": 7.08,
+   "type": "spacing",
+   "logprob": -8.356221951544285e-05
+  },
+  {
+   "text": "fotbollsläktaren",
+   "start": 7.08,
+   "end": 7.78,
+   "type": "word",
+   "logprob": -0.008101879299829307
+  },
+  {
+   "text": " ",
+   "start": 7.78,
+   "end": 7.8,
+   "type": "spacing",
+   "logprob": -1.7881377516459906e-06
+  },
+  {
+   "text": "har",
+   "start": 7.8,
+   "end": 7.86,
+   "type": "word",
+   "logprob": -1.7881377516459906e-06
+  },
+  {
+   "text": " ",
+   "start": 7.86,
+   "end": 7.9,
+   "type": "spacing",
+   "logprob": -0.00010859376925509423
+  },
+  {
+   "text": "hittat",
+   "start": 7.9,
+   "end": 8.22,
+   "type": "word",
+   "logprob": -7.247531902028943e-05
+  },
+  {
+   "text": " ",
+   "start": 8.22,
+   "end": 8.24,
+   "type": "spacing",
+   "logprob": -7.152531907195225e-06
+  },
+  {
+   "text": "den.",
+   "start": 8.24,
+   "end": 8.42,
+   "type": "word",
+   "logprob": -0.008416922743890609
+  },
+  {
+   "text": " ",
+   "start": 8.42,
+   "end": 8.54,
+   "type": "spacing",
+   "logprob": -0.00025912740966305137
+  },
+  {
+   "text": "Fiskare",
+   "start": 8.54,
+   "end": 8.96,
+   "type": "word",
+   "logprob": -0.0001494011355589464
+  },
+  {
+   "text": " ",
+   "start": 8.96,
+   "end": 9.02,
+   "type": "spacing",
+   "logprob": -5.960462772236497e-07
+  },
+  {
+   "text": "har",
+   "start": 9.02,
+   "end": 9.1,
+   "type": "word",
+   "logprob": -5.960462772236497e-07
+  },
+  {
+   "text": " ",
+   "start": 9.1,
+   "end": 9.14,
+   "type": "spacing",
+   "logprob": -6.365573790390044e-05
+  },
+  {
+   "text": "hittat",
+   "start": 9.14,
+   "end": 9.48,
+   "type": "word",
+   "logprob": -4.287425902778826e-05
+  },
+  {
+   "text": " ",
+   "start": 9.48,
+   "end": 9.5,
+   "type": "spacing",
+   "logprob": -1.3112935448589269e-05
+  },
+  {
+   "text": "den.",
+   "start": 9.5,
+   "end": 9.74,
+   "type": "word",
+   "logprob": -0.010759670222569184
+  },
+  {
+   "text": " ",
+   "start": 9.74,
+   "end": 9.78,
+   "type": "spacing",
+   "logprob": -2.3603161025675945e-05
+  },
+  {
+   "text": "Jakt-",
+   "start": 9.78,
+   "end": 9.98,
+   "type": "word",
+   "logprob": -0.040334800963682936
+  },
+  {
+   "text": " ",
+   "start": 9.98,
+   "end": 10.02,
+   "type": "spacing",
+   "logprob": -0.16024857759475708
+  },
+  {
+   "text": "och",
+   "start": 10.02,
+   "end": 10.1,
+   "type": "word",
+   "logprob": -0.16024857759475708
+  },
+  {
+   "text": " ",
+   "start": 10.1,
+   "end": 10.14,
+   "type": "spacing",
+   "logprob": -8.237022848334163e-05
+  },
+  {
+   "text": "campingfolk",
+   "start": 10.14,
+   "end": 10.76,
+   "type": "word",
+   "logprob": -0.012346799275044097
+  },
+  {
+   "text": " ",
+   "start": 10.76,
+   "end": 10.82,
+   "type": "spacing",
+   "logprob": -7.152531907195225e-06
+  },
+  {
+   "text": "också.",
+   "start": 10.82,
+   "end": 11.1,
+   "type": "word",
+   "logprob": -5.960443255996021e-06
+  },
+  {
+   "text": " ",
+   "start": 11.1,
+   "end": 11.2,
+   "type": "spacing",
+   "logprob": -1.1920922133867862e-06
+  },
+  {
+   "text": "Det",
+   "start": 11.2,
+   "end": 11.28,
+   "type": "word",
+   "logprob": -1.1920922133867862e-06
+  },
+  {
+   "text": " ",
+   "start": 11.28,
+   "end": 11.3,
+   "type": "spacing",
+   "logprob": -9.179073458653875e-06
+  },
+  {
+   "text": "de",
+   "start": 11.3,
+   "end": 11.44,
+   "type": "word",
+   "logprob": -9.179073458653875e-06
+  },
+  {
+   "text": " ",
+   "start": 11.44,
+   "end": 11.52,
+   "type": "spacing",
+   "logprob": -0.0004070168943144381
+  },
+  {
+   "text": "skriver",
+   "start": 11.52,
+   "end": 11.86,
+   "type": "word",
+   "logprob": -0.0004070168943144381
+  },
+  {
+   "text": " ",
+   "start": 11.86,
+   "end": 11.92,
+   "type": "spacing",
+   "logprob": -1.07287787614041e-05
+  },
+  {
+   "text": "är",
+   "start": 11.92,
+   "end": 12.0,
+   "type": "word",
+   "logprob": -1.07287787614041e-05
+  },
+  {
+   "text": " ",
+   "start": 12.0,
+   "end": 12.02,
+   "type": "spacing",
+   "logprob": -3.182837463100441e-05
+  },
+  {
+   "text": "ungefär",
+   "start": 12.04,
+   "end": 12.36,
+   "type": "word",
+   "logprob": -2.8763073974654878e-05
+  },
+  {
+   "text": " ",
+   "start": 12.36,
+   "end": 12.44,
+   "type": "spacing",
+   "logprob": -5.006777428206988e-06
+  },
+  {
+   "text": "samma",
+   "start": 12.44,
+   "end": 12.66,
+   "type": "word",
+   "logprob": -5.006777428206988e-06
+  },
+  {
+   "text": " ",
+   "start": 12.66,
+   "end": 12.7,
+   "type": "spacing",
+   "logprob": -7.152531907195225e-06
+  },
+  {
+   "text": "sak.",
+   "start": 12.7,
+   "end": 12.92,
+   "type": "word",
+   "logprob": -1.6748626876506023e-05
+  },
+  {
+   "text": " ",
+   "start": 12.92,
+   "end": 12.96,
+   "type": "spacing",
+   "logprob": -3.2782016205601394e-05
+  },
+  {
+   "text": "Fyra",
+   "start": 12.96,
+   "end": 13.24,
+   "type": "word",
+   "logprob": -1.692744962156212e-05
+  },
+  {
+   "text": " ",
+   "start": 13.24,
+   "end": 13.28,
+   "type": "spacing",
+   "logprob": -5.936446541454643e-05
+  },
+  {
+   "text": "värmezoner,",
+   "start": 13.28,
+   "end": 13.98,
+   "type": "word",
+   "logprob": -0.00808507132288386
+  },
+  {
+   "text": " ",
+   "start": 13.98,
+   "end": 14.12,
+   "type": "spacing",
+   "logprob": -1.311301275563892e-06
+  },
+  {
+   "text": "tre",
+   "start": 14.12,
+   "end": 14.34,
+   "type": "word",
+   "logprob": -1.311301275563892e-06
+  },
+  {
+   "text": " ",
+   "start": 14.34,
+   "end": 14.38,
+   "type": "spacing",
+   "logprob": -1.597391747054644e-05
+  },
+  {
+   "text": "värmelägen",
+   "start": 14.38,
+   "end": 15.06,
+   "type": "word",
+   "logprob": -0.0055067442526706145
+  },
+  {
+   "text": " ",
+   "start": 15.06,
+   "end": 15.14,
+   "type": "spacing",
+   "logprob": -0.00012337400403339416
+  },
+  {
+   "text": "och",
+   "start": 15.14,
+   "end": 15.2,
+   "type": "word",
+   "logprob": -0.00012337400403339416
+  },
+  {
+   "text": " ",
+   "start": 15.2,
+   "end": 15.22,
+   "type": "spacing",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": "den",
+   "start": 15.22,
+   "end": 15.32,
+   "type": "word",
+   "logprob": -1.1920928244535389e-07
+  },
+  {
+   "text": " ",
+   "start": 15.32,
+   "end": 15.36,
+   "type": "spacing",
+   "logprob": -0.00020466140995267779
+  },
+  {
+   "text": "drivs",
+   "start": 15.36,
+   "end": 15.64,
+   "type": "word",
+   "logprob": -0.00016372912796214223
+  },
+  {
+   "text": " ",
+   "start": 15.64,
+   "end": 15.66,
+   "type": "spacing",
+   "logprob": -3.576278118089249e-07
+  },
+  {
+   "text": "med",
+   "start": 15.66,
+   "end": 15.76,
+   "type": "word",
+   "logprob": -3.576278118089249e-07
+  },
+  {
+   "text": " ",
+   "start": 15.76,
+   "end": 15.86,
+   "type": "spacing",
+   "logprob": -7.497983460780233e-05
+  },
+  {
+   "text": "USB.",
+   "start": 15.86,
+   "end": 16.26,
+   "type": "word",
+   "logprob": -5.623487595585175e-05
+  },
+  {
+   "text": " ",
+   "start": 16.26,
+   "end": 16.379,
+   "type": "spacing",
+   "logprob": -2.8729025871143676e-05
+  },
+  {
+   "text": "Vill",
+   "start": 16.379,
+   "end": 16.48,
+   "type": "word",
+   "logprob": -2.8729025871143676e-05
+  },
+  {
+   "text": " ",
+   "start": 16.48,
+   "end": 16.5,
+   "type": "spacing",
+   "logprob": 0.0
+  },
+  {
+   "text": "du",
+   "start": 16.5,
+   "end": 16.58,
+   "type": "word",
+   "logprob": 0.0
+  },
+  {
+   "text": " ",
+   "start": 16.58,
+   "end": 16.64,
+   "type": "spacing",
+   "logprob": -1.7881377516459906e-06
+  },
+  {
+   "text": "också",
+   "start": 16.64,
+   "end": 16.88,
+   "type": "word",
+   "logprob": -1.7881377516459906e-06
+  },
+  {
+   "text": " ",
+   "start": 16.88,
+   "end": 16.92,
+   "type": "spacing",
+   "logprob": -6.318072337307967e-06
+  },
+  {
+   "text": "sluta",
+   "start": 16.92,
+   "end": 17.24,
+   "type": "word",
+   "logprob": -9.107545702136122e-06
+  },
+  {
+   "text": " ",
+   "start": 17.24,
+   "end": 17.28,
+   "type": "spacing",
+   "logprob": -0.0014105618465691805
+  },
+  {
+   "text": "frysa?",
+   "start": 17.28,
+   "end": 17.68,
+   "type": "word",
+   "logprob": -0.0007054001325551932
+  },
+  {
+   "text": " ",
+   "start": 17.68,
+   "end": 17.84,
+   "type": "spacing",
+   "logprob": -6.6756979322235566e-06
+  },
+  {
+   "text": "Länken",
+   "start": 17.84,
+   "end": 18.2,
+   "type": "word",
+   "logprob": -0.0019012864952401287
+  },
+  {
+   "text": " ",
+   "start": 18.2,
+   "end": 18.26,
+   "type": "spacing",
+   "logprob": -2.610649426060263e-05
+  },
+  {
+   "text": "finns",
+   "start": 18.26,
+   "end": 18.46,
+   "type": "word",
+   "logprob": -2.610649426060263e-05
+  },
+  {
+   "text": " ",
+   "start": 18.46,
+   "end": 18.48,
+   "type": "spacing",
+   "logprob": -0.01825648546218872
+  },
+  {
+   "text": "här",
+   "start": 18.48,
+   "end": 18.6,
+   "type": "word",
+   "logprob": -0.01825648546218872
+  },
+  {
+   "text": " ",
+   "start": 18.6,
+   "end": 18.68,
+   "type": "spacing",
+   "logprob": -0.0003026265767402947
+  },
+  {
+   "text": "under.",
+   "start": 18.68,
+   "end": 18.92,
+   "type": "word",
+   "logprob": -0.0002646655860492804
+  }
+ ],
+ "transcription_id": "4cwcqBfF2egG7sRXhE2U",
+ "audio_duration_secs": 18.9706875
+}
