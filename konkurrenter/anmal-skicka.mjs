@@ -42,13 +42,13 @@ const korta = (s, n) => { const t = String(s ?? '').trim(); return t.length <= n
 export function beskrivning500(a, max = MAX.beskrivning) {
   const f = a.falt ?? {};
   const m = f.contentDescription?.match(/(\d+) words of our advertising copy appear verbatim[\s\S]*?longest identical run is (\d+) consecutive words: "([^"]+)"/);
-  const bilder = /image[s]? in the ad (?:is|are) our own copyrighted product photograph/.test(f.contentDescription ?? '');
+  const bilder = /image[s]? in the ad (?:is|are) our own copyrighted advertising image/.test(f.contentDescription ?? '');
   const video = /The ad is a video that uses our material/.test(f.contentDescription ?? '');
   const varAnnons = f.contentDescription?.match(/It copies our ad "([^"]+)"/)?.[1] ?? null;
   const produkt = f.contentDescription?.match(/for the product "([^"]+)"/)?.[1] ?? null;
   const bygg = (passage) => [
     m ? `Verbatim copy of our ad copy: ${m[2]} consecutive identical words ("${passage}"), ${m[1]} words in total.` : null,
-    bilder ? 'It also uses our own product photograph.' : null,
+    bilder ? 'It uses our own advertising image (a still frame from our ad video).' : null,
     !m && !bilder && video ? 'The video uses our material.' : null,
     `Original: ${varAnnons ? `our ad "${varAnnons}"` : 'our ad'}${produkt ? ` for "${produkt}"` : ''}, running before this ad.`,
     a.bevisbildUrl ? `Evidence screenshot (ours left, theirs right): ${a.bevisbildUrl}` : null,

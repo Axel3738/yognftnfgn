@@ -205,7 +205,8 @@ export function byggAnnonsfynd(input, { egnaAnnonser, egnaProdukter, konfig, der
     },
     bevis: {
       text: null, annons: basta.text, bilder: allaBilder,
-      annonser: traffar.map((t) => ({ nr: t.nr, lank: t.lank, video: t.video, start: t.start, slut: t.slut, aktiv: t.aktiv, exponeringar: t.exponeringar, exponeringarKalla: t.exponeringarKalla, text: t.text, varAnnons: t.varAnnons ? { id: t.varAnnons.id, namn: t.varAnnons.namn, handle: t.varAnnons.handle ?? null } : null, produkt: t.produkt ? { handle: t.produkt.handle, titel: t.produkt.titel, url: t.produkt.url, butik: t.produkt.butik ?? null, verksamhet: t.produkt.verksamhet ?? null } : null, bilder: t.bilder, derasText: t.derasText })),
+      // Live först, sedan störst räckvidd — brevets bevislista och anmälningarnas numrering följer den ordningen.
+      annonser: [...traffar].sort((x, y) => Number(y.aktiv !== false) - Number(x.aktiv !== false) || (y.exponeringar ?? 0) - (x.exponeringar ?? 0)).map((t) => ({ nr: t.nr, lank: t.lank, video: t.video, start: t.start, slut: t.slut, aktiv: t.aktiv, exponeringar: t.exponeringar, exponeringarKalla: t.exponeringarKalla, text: t.text, varAnnons: t.varAnnons ? { id: t.varAnnons.id, namn: t.varAnnons.namn, handle: t.varAnnons.handle ?? null } : null, produkt: t.produkt ? { handle: t.produkt.handle, titel: t.produkt.titel, url: t.produkt.url, butik: t.produkt.butik ?? null, verksamhet: t.produkt.verksamhet ?? null } : null, bilder: t.bilder, derasText: t.derasText })),
       skarmdump: null, nar: nu,
     },
     styrka, skal, skalEn, varde, miniatyrer: {},

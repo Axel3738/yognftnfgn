@@ -517,7 +517,7 @@ test('anmal-skicka: formulärets fält ur anmälan (produkt per annons, beskrivn
   // Produkten PER ANNONS vinner över ärendets (en sida kan kopiera flera av våra produkter)
   assert.match(an.falt.contentDescription, /for the product "Taköverdrag Husvagn"/); assert.equal(an.falt.originalWorkUrls[0], 'https://baverbutiken.se/products/takoverdrag');
   const b = beskrivning500(an);
-  assert.ok(b.length <= 500, `beskrivningen är ${b.length} tecken`); assert.match(b, /7 consecutive identical words/); assert.match(b, /our own product photograph/); assert.match(b, /our ad "Takoverdrag_PD_3_H1"/); assert.match(b, /bevis-1\.png/); assert.match(b, /Ref KD-2026-011 1\/10\.$/);
+  assert.ok(b.length <= 500, `beskrivningen är ${b.length} tecken`); assert.match(b, /7 consecutive identical words/); assert.match(b, /our own advertising image/); assert.match(b, /our ad "Takoverdrag_PD_3_H1"/); assert.match(b, /bevis-1\.png/); assert.match(b, /Ref KD-2026-011 1\/10\.$/);
   const lang = byggAnmalan(arende, { ...annons, text: { ...annons.text, langsta: 80, kopieradeOrd: 80, passager: [{ text: 'ord '.repeat(200).trim() }] } }, KONFIG, { nr: 1, antal: 1, bevisbildUrl: 'https://cdn/x.png' });
   assert.ok(beskrivning500(lang).length <= 500, 'en lång passage kortas tills 500 håller');
   const v = formularVarden(an);
@@ -575,7 +575,7 @@ test('Meta-anmälan: en per annons med länk, alla fält ifyllda på engelska, s
   assert.deepEqual(a1.falt.declarations, [...FORSAKRINGAR]); assert.equal(a1.falt.signature, 'Axel Odhner'); assert.equal(a1.bevisbildUrl, 'https://cdn.shopify.com/s/files/x/bevis-1.png');
   assert.deepEqual(kontrolleraAnmalan(a1), []);
   const a3 = anmalningar[1];
-  assert.equal(a3.nr, 2); assert.equal(a3.libraryId, '333'); assert.match(a3.falt.contentDescription, /1 image in the ad is our own copyrighted product photograph \(perceptual-hash comparison: identical, distance 1\/64\)/); assert.match(a3.falt.contentDescription, /The ad is a video/); assert.match(a3.falt.additionalInfo, /attached to this report/);
+  assert.equal(a3.nr, 2); assert.equal(a3.libraryId, '333'); assert.match(a3.falt.contentDescription, /1 image in the ad is our own copyrighted advertising image — a still frame or photo taken from our own ad \(perceptual-hash comparison: identical, distance 1\/64\)/); assert.match(a3.falt.contentDescription, /The ad is a video/); assert.match(a3.falt.additionalInfo, /attached to this report/);
   assert.doesNotMatch(JSON.stringify(a3), /skarm3\.png/); // Axels lokala fil står aldrig i anmälan
   // Stopp: ingen undertecknare, ingen bevisbild
   const utan = byggAnmalan(arende, t1, { ...KONFIG, anmalan: { ...KONFIG.anmalan, undertecknare: {} } }, { nr: 1, antal: 1 });
