@@ -1,0 +1,188 @@
+{
+ "agent": "AT",
+ "datum": "2026-09-29-carashell",
+ "struktur": "Stöld och inbrott på den uppställda husvagnen/husbilen (okt–april). Ankare mätt hos campingvaruhuset.se/getcamping.se, golv hos PriceRunner. Biltema/Jula/kama/husvagnsexperten = oläst (403/000 i containern 2026-09-29).",
+ "kandidater": [
+  {
+   "koncept_id": null,
+   "namn_sv": "Hjullåset för husvagn (Milenco-kopia)",
+   "objekt": "Husvagn/husbil — hjulen och däcken",
+   "form": "annat",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploration",
+   "hypotes_id": "H06",
+   "vinnarlikhet": {
+    "likast": "Termoskyddet för Husbil 211 × 171 cm",
+    "delade_variabler": ["objekt_ute", "dyr>10tkr", "deadline uppställning", "ankare ≥1,6×", "prisband 500–999"],
+    "avvikelser": ["form annat/lås (0 av 15 dömda vann; Motorlåset i rostfritt = REAL_LOSER 0,50 på uppställning)", "old way = ingenting eller kopplingslås som alla redan har"]
+   },
+   "sasong": {"fonster_id": "uppstallning_husvagn", "deadline_typ": "uppställning", "veckor_kvar": 1.6, "timing": "NOW"},
+   "listning": {
+    "product_id": "1005012671051312",
+    "url": "https://www.aliexpress.com/item/1005012671051312.html",
+    "pris_usd": 34.56,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-29T11:43:32Z",
+    "kontroll": {"produktsida_oppnad": true, "titel_stammer": true, "hero_nedladdad": "korningar/2026-09-29-carashell/v3/bilder/1005012671051312.jpg", "hero_sedd": true, "pris_sett": true, "varianter": "en variant enligt sökträffen; däckbredd/fälgmått står inte i titeln — Milenco Compact anger 12–16 tum, 145–225 mm (kolla i listningen före launch)", "video": "ej tillgänglig i containern"}
+   },
+   "material": {"klass": 1, "hero_textfri": false, "hero_i_kontext": true, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "inbränd text uppe ('Fit wheel hub design') måste beskäras; klämman sitter på ett bilhjul, inte ett husvagnshjul — egen bild på vagnen behövs. Alternativ listning 1005012908100149 (20,42 USD, landad ≈ 295) är ren packshot med etiketten 'Wheel lock' och märkt golfbil/MC — inte husvagn."},
+   "marknad": {
+    "lagsta_jamforbara": {"aktor": "PriceRunner: 'Heavy Duty Hjulklämma För Bil Med 3 Nycklar' (generisk)", "pris_sek": 281, "url": "https://www.pricerunner.se/search?q=hjulkl%C3%A4mma", "exakt_samma_form": true},
+    "premium_ankare": {"namn": "Milenco Hjullås Compact (campingvaruhuset.se, 'passar alla husvagnar och husbilar 12–16 tum')", "pris_sek": 1619, "url": "https://www.campingvaruhuset.se/sv/milenco-hjullas-compact", "i_sortiment": true},
+    "ankare_kvot": 1.71,
+    "annonsorer_se": "ej mätt",
+    "golv_detalj": "PriceRunner 2026-09-29: generisk 281, Sealey Claw 395, Relaxdays Cepo 476, Maypole Universal 530, Proplus Universal 665, Lifebox Mottez 699, Maypole 13\" 845, Basi KFZ 111 850, Pricenet Nemesis Hjulklo 2 519. Sju generiska kopior 281–850 — inte 20+ varianter i en kedja. Getcamping.se saknar hjullås helt (sök 'hjullås'/'wheel' 2026-09-29). Biltema/Jula: oläst (403).",
+    "kollade_kallor": ["pricerunner.se", "campingvaruhuset.se", "getcamping.se", "biltema.se (403)", "jula.se (403)"]
+   },
+   "ekonomi": {"landad_sek": [450, 550], "pris_sek": 949, "brutto_sek": [399, 499], "be_cpa_sek": [399, 499], "be_roas": 2.11, "flerkop": false, "returrisk": "medel — däckbredd måste passa (145–225 mm är campingstandard, men listningen anger inget mått)"},
+   "meta_tanke": {
+    "hook": "Står vagnen olåst i vinter?",
+    "objekt_i_bild": "gul-röd hjulklämma på husvagnens hjul, vagnen uppställd på grus",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "klämman låses på hjulet, nyckeln dras ur — syns från vägen"
+   },
+   "varfor": "Samma H06-struktur som ATV-kapellet: kopia under fackhandelns Milenco Compact 1 619 kr (1,71×), generiskt golv 281–850 på PriceRunner men ingen kedja med sortiment. Objekt 150–400 tkr ute obevakat oktober–april, uppställning NOW 1,6 v — och ett hjullås syns, till skillnad från kopplingslåset som alla redan har.",
+   "huvudrisk": "Form lås = 'annat' (0 av 15 vinnare) och Motorlåset förlorade på exakt samma deadline — stöldskydd har aldrig burit i kontot; hero måste byggas om på en riktig husvagn.",
+   "konfidens": "MEDEL",
+   "poang": {"vinnarlikhet": 2, "meta_creative": 2, "efterfragan": 3, "lucka": 2, "ekonomi": 2, "sasong": 2, "leverantor": 2, "nyhet": 1, "hypotesvarde": 2},
+   "per_kriterium": null,
+   "k0": {"dubblett": false, "kollat": ["katalog-live.txt (Styrlås & Hjälmlås Combo = MC, annat objekt)", "koncept.py sok hjullås/wheel clamp/wheel lock = 0 träffar", "REDAN-PROVAT.md (hjulen: bara skydd/huv/ramper)"]},
+   "kallor": [
+    "https://www.aliexpress.com/w/wholesale-caravan-wheel-clamp-lock.html",
+    "https://www.campingvaruhuset.se/sv/milenco-hjullas-compact",
+    "https://www.campingvaruhuset.se/shop?funk=gor_sokning&term=hjull%C3%A5s",
+    "https://www.pricerunner.se/search?q=hjulkl%C3%A4mma",
+    "https://www.pricerunner.se/search?q=wheel+clamp",
+    "https://www.pricerunner.se/search?q=hjull%C3%A5s+bil",
+    "https://www.getcamping.se/search/?q=hjull%C3%A5s"
+   ]
+  },
+  {
+   "koncept_id": null,
+   "namn_sv": "Dörrhaspen med dolt hänglås",
+   "objekt": "NYTT: Husvagnens bodelsdörr — enda dörren in i den uppställda vagnen (Thule/Fiamma säljer utanpåliggande säkerhetslås 850–1 600 kr)",
+   "form": "annat",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploration",
+   "hypotes_id": "H06",
+   "vinnarlikhet": {
+    "likast": "Termoskyddet för Husbil 211 × 171 cm",
+    "delade_variabler": ["objekt_ute", "dyr>10tkr", "deadline uppställning", "prisband 500–999"],
+    "avvikelser": ["form annat/lås (0 av 15 vinnare)", "montering: fyra bultar genom dörren (montering_app = ja är förlorarsignal 2 av 9)", "hero visar en skåpbil, inte en husvagn"]
+   },
+   "sasong": {"fonster_id": "uppstallning_husvagn", "deadline_typ": "uppställning", "veckor_kvar": 1.6, "timing": "NOW", "kommentar": "sasong.py känner inte objektet (EVERGREEN) — fönstret är samma uppställning som resten av vagnen"},
+   "listning": {
+    "product_id": "1005010518810434",
+    "url": "https://www.aliexpress.com/item/1005010518810434.html",
+    "pris_usd": 18.36,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-29T11:47:19Z",
+    "kontroll": {"produktsida_oppnad": true, "titel_stammer": true, "hero_nedladdad": "korningar/2026-09-29-carashell/v3/bilder/1005010518810434.jpg", "hero_sedd": true, "pris_sett": true, "varianter": "universal, en variant (hasp + hänglås med dold bygel + 4 genomgående bultar)", "video": "ej tillgänglig i containern"}
+   },
+   "material": {"klass": 1, "hero_textfri": true, "hero_i_kontext": true, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "övre halvan visar haspen på en skåpbils bakdörrar med röd pil — måste bytas mot husvagnens bodelsdörr; nedre halvan ren packshot med bultar och nycklar. Syskonlistning 32960118882 (30,49 USD) är samma sak, dyrare."},
+   "marknad": {
+    "lagsta_jamforbara": {"aktor": "ingen i exakt form hittad — PriceRunner 'hänglås överfall dold bygel' gav bara vanliga hänglås; campingvaruhusets 'Husvagnslås Universal modell' 574 kr är en annan form (klämlås över dörrkanten)", "pris_sek": null, "url": "https://www.pricerunner.se/search?q=h%C3%A4ngl%C3%A5s+%C3%B6verfall+dold+bygel", "exakt_samma_form": false},
+    "premium_ankare": {"namn": "Säkerhetslås Thule Husvagn/Husbil (campingvaruhuset.se); Fiamma Säkerhetslås Safe Door Frame 965; Thule 2-pack 1 490; Security 46-bågen 1 599", "pris_sek": 870, "url": "https://www.campingvaruhuset.se/shop?funk=gor_sokning&term=s%C3%A4kerhetsl%C3%A5s", "i_sortiment": true},
+    "ankare_kvot": 1.45,
+    "annonsorer_se": "ej mätt",
+    "golv_detalj": "campingvaruhuset 2026-09-29: Säkerhetslås för husbils-bodelsdörr 791, Thule 849/870, Fiamma Safe Door Frame 965, Thule Universallås 1 239, Security 31/46 1 479/1 599, Security Pro 46 1 990. PriceRunner 'dörrlås husvagn': inget haspset. Biltema/Jula oläst (403).",
+    "kollade_kallor": ["campingvaruhuset.se", "pricerunner.se", "getcamping.se", "biltema.se (403)", "jula.se (403)"]
+   },
+   "ekonomi": {"landad_sek": [240, 290], "pris_sek": 599, "brutto_sek": [309, 359], "be_cpa_sek": [309, 359], "be_roas": 1.79, "flerkop": false, "returrisk": "medel — kräver att man borrar fyra hål i dörren; ångrar sig ägaren är den redan monterad"},
+   "meta_tanke": {
+    "hook": "Vem vaktar vagnens dörr i vinter?",
+    "objekt_i_bild": "husvagnens dörr med stålhaspen och det runda hänglåset, snö på trappsteget",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "bultsax mot den dolda bygeln — får inget grepp"
+   },
+   "varfor": "Thule/Fiamma säljer utanpåliggande säkerhetslås för exakt den här dörren för 850–1 600 kr och ingen svensk aktör säljer haspformen; vagnen står obevakad fem månader med TV, gasol och inredning bakom en dörr som öppnas med en skruvmejsel. Dörrlarmet (K0010, i butiken) bevisar att Axel köpt objektet — låset är nästa form på samma dörr.",
+   "huvudrisk": "Lås har aldrig vunnit i kontot (Motorlåset förlorade), och fyra genomgående bultar i en husvagnsdörr skrämmer 55+-ägaren — ankaret är bara 1,45× så H06-kravet 1,6× nås inte utan Fiamma-jämförelsen (965 = 1,61×).",
+   "konfidens": "LÅG",
+   "poang": {"vinnarlikhet": 2, "meta_creative": 2, "efterfragan": 3, "lucka": 2, "ekonomi": 2, "sasong": 2, "leverantor": 2, "nyhet": 2, "hypotesvarde": 2},
+   "per_kriterium": null,
+   "k0": {"dubblett": false, "kollat": ["katalog-live.txt (Dörr- och Fönsterlarm 110 dB 449 kr = samma dörr, form larm — syskon, inte dubblett)", "koncept.py sok lås/dörr/anti-theft (K0010 larm, K0236 motorlås)", "REDAN-PROVAT.md"]},
+   "kallor": [
+    "https://www.aliexpress.com/w/wholesale-caravan-door-security-lock-hasp.html",
+    "https://www.campingvaruhuset.se/shop?funk=gor_sokning&term=s%C3%A4kerhetsl%C3%A5s",
+    "https://www.campingvaruhuset.se/sv/husvagnslas-universal-modell",
+    "https://www.campingvaruhuset.se/sv/sakerhetsbage-security-46-vit",
+    "https://www.pricerunner.se/search?q=fiamma+security",
+    "https://www.pricerunner.se/search?q=d%C3%B6rrl%C3%A5s+husvagn"
+   ]
+  },
+  {
+   "koncept_id": null,
+   "namn_sv": "Fönsterspärrarna Seitz/Dometic, 3 par",
+   "objekt": "NYTT: Husvagnens sidofönster — Seitz/Dometic-spärrhandtagen (3–5 fönster per vagn, samma SAK som K0267 men form lås)",
+   "form": "annat",
+   "arketyp": "I_FLERKOP",
+   "arketyp_sekundar": "B_SKYDDA_DYRT",
+   "slot": "exploration",
+   "hypotes_id": "H08",
+   "vinnarlikhet": {
+    "likast": "Fiskespöhållaren (spöklämma 4-pack)",
+    "delade_variabler": ["objekt_ute", "flerköp ja", "material 2 (bild i kontext)"],
+    "avvikelser": ["form annat", "prisband 300–499 (förlorarband 7/23)", "bara Seitz/Dometic S4–S6/P6-fönster — ägaren måste veta fönstermodell", "inbrottseffekten är svag: spärren hindrar handtaget att fällas, inte rutan att brytas"]
+   },
+   "sasong": {"fonster_id": "uppstallning_husvagn", "deadline_typ": "uppställning", "veckor_kvar": 1.6, "timing": "NOW", "kommentar": "sasong.py känner inte objektet — fönstret är vagnens uppställning"},
+   "listning": {
+    "product_id": "1005012010863972",
+    "url": "https://www.aliexpress.com/item/1005012010863972.html",
+    "pris_usd": 2.26,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-29T11:47:19Z",
+    "kontroll": {"produktsida_oppnad": true, "titel_stammer": true, "hero_nedladdad": "korningar/2026-09-29-carashell/v3/bilder/1005012010863972.jpg", "hero_sedd": true, "pris_sett": true, "varianter": "1 par (vänster+höger) per listning, röd; passar Seitz/Dometic-spärrhandtag — vi paketerar 3 par", "video": "ej tillgänglig i containern"}
+   },
+   "material": {"klass": 1, "hero_textfri": false, "hero_i_kontext": true, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "övre halvan: spärren på ett riktigt Seitz-fönster med trädgård utanför (bra), grön inbränd text 'SEITZ Handle LEFT/RIGHT HAND LOCK' måste bort; nedre halvan packshot."},
+   "marknad": {
+    "lagsta_jamforbara": {"aktor": "campingvaruhuset.se 'Fönsterlås Svart 2-Pack' (beställningsvara; exakt form ej verifierad, produktsidan gick inte att läsa)", "pris_sek": 159, "url": "https://www.campingvaruhuset.se/shop?funk=gor_sokning&term=f%C3%B6nsterl%C3%A5s", "exakt_samma_form": false},
+    "premium_ankare": {"namn": "Dometic Fönsterlås S6/P6 (getcamping.se, 1 par höger+vänster, 199 kr — 3 par = 597 kr)", "pris_sek": 597, "url": "https://www.getcamping.se/husvagns-husbilstillbehor/dometic-fonsterlas-s6-p6/", "i_sortiment": true},
+    "ankare_kvot": 1.71,
+    "annonsorer_se": "ej mätt",
+    "golv_detalj": "getcamping 2026-09-29: Dometic Fönsterlås S6/P6 199 kr/par ('endast få kvar, 5 st'). campingvaruhuset: Fönsterlås Svart 2-pack 159 kr, Fästhake fast fönster 264. PriceRunner 'fönsterlås dometic': bara villafönsterlås (ABUS, Assa). Per par ligger vi (116 kr) under båda; som 3-pack 349 ligger vi under Dometics 597.",
+    "kollade_kallor": ["getcamping.se", "campingvaruhuset.se", "pricerunner.se", "biltema.se (403)", "jula.se (403)"]
+   },
+   "ekonomi": {"landad_sek": [88, 108], "pris_sek": 349, "brutto_sek": [241, 261], "be_cpa_sek": [241, 261], "be_roas": 1.39, "flerkop": true, "returrisk": "medel — passar bara Seitz/Dometic-handtag; fel fönsterfabrikat = retur"},
+   "meta_tanke": {
+    "hook": "Går dina fönster att öppna utifrån?",
+    "objekt_i_bild": "husvagnsfönstret inifrån med den röda spärren över handtaget",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "handtaget kan inte fällas — fönstret sitter fast"
+   },
+   "varfor": "Dometics original kostar 199 kr per fönster och vagnen har 3–5 — vårt 3-pack landar under originalets 597 (1,71×) med flerköpsskäl inbyggt (H08, spöklämme-strukturen). Uppställning NOW 1,6 v.",
+   "huvudrisk": "Liten röd plastbit — inbrottspåståendet håller bara mot handtaget, inte mot rutan, och lågt pris (349) i förlorarbandet 300–499; Dometic-originalet finns i varje fackhandel.",
+   "konfidens": "LÅG",
+   "poang": {"vinnarlikhet": 1, "meta_creative": 2, "efterfragan": 3, "lucka": 2, "ekonomi": 1, "sasong": 2, "leverantor": 2, "nyhet": 1, "hypotesvarde": 2},
+   "per_kriterium": null,
+   "k0": {"dubblett": false, "kollat": ["katalog-live.txt (Dörr- och Fönsterlarm = larm, annan form)", "koncept.py sok fönster/window (K0267 termomatta = överdrag, annan form)", "REDAN-PROVAT.md"]},
+   "kallor": [
+    "https://www.aliexpress.com/w/wholesale-caravan-window-security-lock.html",
+    "https://www.getcamping.se/husvagns-husbilstillbehor/dometic-fonsterlas-s6-p6/",
+    "https://www.campingvaruhuset.se/shop?funk=gor_sokning&term=f%C3%B6nsterl%C3%A5s",
+    "https://www.pricerunner.se/search?q=f%C3%B6nsterl%C3%A5s+dometic"
+   ]
+  }
+ ],
+ "strukna": [
+  {"objekt": "Kopplingslås / kulskydd", "skal": "standardutrustning (SIGNALER 'sett innan'); sortiment i kedjan — AL-KO 566–4 495, Milenco 1 615–1 945, VEVOR/Carpoint/Seatec 195–894 på PriceRunner"},
+  {"objekt": "Cykelhållarlås (vajerlås)", "skal": "sortiment: ABUS/Axa 20+ varianter 275–1 395 på PriceRunner; Fiamma Cable Lock 359 och Thule Cable Lock 538 499 är ankare men Ali-vajern (4,75–14 USD) är en generisk cykelvajer"},
+  {"objekt": "Gasolkoffertlås", "skal": "golv finns (STS Lås för Gaslåda 279, PriceRunner) men ingen AliExpress-listning i formen — 'caravan gas locker lock' gav bara skåpslås och nycklar"},
+  {"objekt": "Reservhjulslås", "skal": "ingen AliExpress-listning i formen (sök 'spare wheel lock'/'spare wheel carrier lock' gav hjulklämmor och båttrailerhållare); PriceRunner: bara Land Rover-specifikt 593"},
+  {"objekt": "Stödhjulslås", "skal": "ingen listning — 'jockey wheel lock' gav stödhjul och movers"},
+  {"objekt": "Markislås", "skal": "ingen listning i formen; getcamping/PriceRunner 'markislås' = noll"},
+  {"objekt": "Låsbar batterilåda", "skal": "ingen listning i husvagnsform (bara AA-batteriaskar och elbilslådor)"},
+  {"objekt": "Säkerhetsbåge Security 46-kopia (1005013165210087)", "skal": "ej samma form som Fiamma-bågen (vit boxlås à la Thule) och 50,79 USD → landad ≈ 734 mot Thule 849/Fiamma 965 = BE-CPA under 190"},
+  {"objekt": "Ducato-bakdörrsplåtar (1005010391381706)", "skal": "bara Fiat Ducato/Boxer X250–X290, osynlig plåt bakom gångjärnet — ingen creative, ingen universal"},
+  {"objekt": "Dummy-larm / larmdekal", "skal": "attrapp = dekor, nej enligt order"},
+  {"objekt": "GPS-spårare / kamera", "skal": "abonnemang resp. Hemvakten är egen butik — nej enligt order"},
+  {"objekt": "Dörrlarm 110 dB", "skal": "K0010 ja + redan i butiken (Dörr- och Fönsterlarm 449 kr) — dubblett"}
+ ]
+}
