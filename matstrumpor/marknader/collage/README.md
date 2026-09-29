@@ -15,3 +15,8 @@ och besökarens eget land läggs först (orange etikett).
 
 Omgång 2 samma dag (Axels dom: "hyperrealistiskt eller tydligt tecknat — ingen halvdålig AI slop"): alla 13 omgjorda som mobil/blixtfoton i riktiga hem, i samma stil som sajtens "Som de används"-bilder (en av dem är referensbild), flaggan som en naturlig del av miljön. AI-raden under collaget = samma text som "ugc_markning". Läst som kund: SE, NO, US, 0 trasiga bilder, dator + mobil.
 Ta bort: radera sektionen "Matstrumpor i världen" på startsidan i temaredigeraren.
+
+**Omgång 3, samma dag, gäller nu** (Axel: "hellre animerade bilder bara"): alla 13 som tecknade
+illustrationer i loggans kawaii-stil (loggan + produktfotot som referens), en figur per land med
+landmärke och flagga, globen med sockhalsduk överst. Ramar som modellen ritade själv gjordes om (NO, NL, GB),
+och Norges vita kant beskars i koden. Läst som kund: SE, NO, US, 0 trasiga bilder, dator + mobil.

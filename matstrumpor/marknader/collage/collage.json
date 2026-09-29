@@ -3,74 +3,73 @@
  "modell": "google/nano-banana-edit",
  "referenser": [
   "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/WhatsAppImage2025-11-25at08.41.59_5.jpg?v=1771995278",
-  "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/WhatsAppImage2025-11-27at03.41.37_80407476-11ab-4ab2-a940-b37398596e88_2.jpg?v=1771995278",
-  "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/matstrumpor_52_alla_fotter_soffan.jpg"
+  "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/Namnlos_design_-_2026-03-19T120925.579.png"
  ],
- "stil": "Hyperrealistic amateur smartphone snapshot taken by a friend, NOT a stock photo, NOT a studio shot: warm indoor lamp light or on-camera flash, slight grain, imperfect casual framing, a real lived-in home with everyday clutter, ordinary-looking people with natural skin, no posing for the camera. Match the look of the third reference image (candid feet on a sofa, warm yellow light). The socks and the black sushi gift box must look exactly like the product in the first two reference images (salmon nigiri, maki rolls, tamago, striped salmon/red/black/yellow socks). No text, no words, no letters, no logos, no watermarks anywhere. Square composition.",
+ "stil": "Clearly a cartoon illustration, NOT a photo: cute, cheerful 2D cartoon style matching the kawaii sushi mascot logo in the second reference image — bold dark rounded outlines, flat bright colors with soft simple shading, rounded chunky shapes, big friendly smiles, warm cream background tones with orange (#dd821d) accents. The sushi socks and the black sushi gift box are drawn in the same cartoon style but clearly recognizable from the first reference image (salmon nigiri, maki rolls, tamago; socks striped salmon, red, black, yellow, white). One simple scene, a happy cartoon character in the country, the country's flag drawn correctly. No text, no words, no letters, no logos anywhere. Square composition. Full-bleed: the scene fills the entire square edge to edge, NO frame, NO border, NO rounded card, NO margin, NO decorative blobs around it.",
  "karta": {
   "id": "karta",
-  "prompt": "Hyperrealistic amateur phone photo, top-down, on a worn wooden floor in warm evening lamp light: an opened brown cardboard parcel with the black sushi sock gift box inside, three more plain brown parcels stacked next to it, an old paper desk globe beside them, a pair of the striped sushi socks thrown on top. Casual, slightly grainy, real home, not a stock photo. The socks and gift box must look exactly like the reference images. No text, no labels, no letters, no logos anywhere."
+  "prompt": "Cute 2D cartoon illustration in the style of the kawaii sushi mascot logo (second reference image): a big smiling cartoon globe wearing a pair of striped sushi socks like a scarf, surrounded by little flying parcels and paper airplanes, the black sushi gift box (first reference image) open next to it, tiny flags of Sweden, Norway, Denmark, Finland, Germany, France, Italy, Spain, the Netherlands, the UK, the USA and Australia on little sticks around it. Bold dark rounded outlines, flat bright colors, warm cream background, orange (#dd821d) accents. No text, no words, no letters. Square composition. Full-bleed: the scene fills the entire square edge to edge, NO frame, NO border, NO rounded card, NO margin, NO decorative blobs around it."
  },
  "rutor": [
   {
    "id": "se",
    "namn": "Sverige",
-   "prompt": "Swedish birthday at a pine kitchen table in the evening: a laughing middle-aged woman just opened the sushi sock gift box, a homemade cake with tiny paper Swedish flags (blue with yellow cross) stuck in it, coffee cups, on-camera flash."
+   "prompt": "A cartoon Swedish girl with blonde braids at a midsummer maypole on a green meadow, holding up the sushi sock gift box, a Swedish flag (blue with a yellow Nordic cross) waving next to her."
   },
   {
    "id": "no",
    "namn": "Norge",
-   "prompt": "Cozy Norwegian cabin living room in winter: two pairs of feet wearing the striped sushi socks up on a wooden coffee table next to a thermos, a small Norwegian flag (red with blue cross outlined in white) in a jar on the windowsill, snowy mountains visible through the window."
+   "prompt": "A cartoon Norwegian boy in a knitted sweater sitting on a red wooden cabin porch by a fjord with mountains, wearing the striped sushi socks, waving a Norwegian flag (red with a blue Nordic cross outlined in white)."
   },
   {
    "id": "dk",
    "namn": "Danmark",
-   "prompt": "Danish family kitchen at a kid's birthday: a string of small Danish flag bunting (red with a white Nordic cross) across the kitchen, a boy around ten grinning and holding up the opened black sushi sock gift box with both hands (salmon nigiri, maki rolls, tamago clearly visible), cake on the table, flash photo."
+   "prompt": "A cartoon Danish girl riding a bicycle past colorful Nyhavn harbour houses in Copenhagen, the sushi sock gift box in the bike basket, a small Danish flag (red with a white Nordic cross) on the bike."
   },
   {
    "id": "fi",
    "namn": "Suomi",
-   "prompt": "Finnish summer cottage porch by a lake: bare legs stretched out on a wooden bench, feet wearing the striped sushi socks, a Finnish flag (white with blue cross) on a tall flagpole by the lake in the background, soft evening light."
+   "prompt": "A cartoon Finnish man relaxing on a wooden sauna jetty by a blue lake with pine trees, feet in the striped sushi socks, a Finnish flag (white with a blue Nordic cross) on a flagpole."
   },
   {
    "id": "de",
    "namn": "Deutschland",
-   "prompt": "German old-building apartment living room during a football evening: three friends' feet in sushi socks resting on a coffee table with beer bottles and crisps, a black-red-gold German flag hanging on the wall behind the sofa, warm lamp light."
+   "prompt": "A cartoon German woman in front of the Brandenburg Gate holding a pretzel and the sushi sock gift box, a German flag (black, red, gold horizontal stripes) waving."
   },
   {
    "id": "fr",
    "namn": "France",
-   "prompt": "Small Paris apartment in the morning: feet in the striped sushi socks resting on a little balcony railing, a croissant and coffee cup on a tiny table, Paris zinc rooftops outside, a small blue-white-red French tricolour paper flag in a glass."
+   "prompt": "A cartoon French man with a beret at a café table with the Eiffel Tower behind him, holding up striped sushi socks next to a croissant, a French flag (blue, white, red vertical stripes)."
   },
   {
    "id": "it",
    "namn": "Italia",
-   "prompt": "Italian grandmother's kitchen: an elderly Italian man laughing at the table with a pizza, holding the opened sushi sock gift box, an Italian flag tea towel (green, white, red stripes) hanging on the oven, warm light, flash."
+   "prompt": "A cartoon Italian grandma in her kitchen in front of the Colosseum view out of the window, holding a pizza in one hand and the sushi sock gift box in the other, an Italian flag (green, white, red vertical stripes)."
   },
   {
    "id": "es",
    "namn": "España",
-   "prompt": "Sunny Spanish apartment terrace with terracotta tiles and plants: feet in the sushi socks propped on a plastic chair, a glass of lemonade, a red-yellow-red Spanish flag hanging from the neighbour's balcony across the street."
+   "prompt": "A cartoon Spanish girl dancing on a sunny terrace with Sagrada Familia in the background, wearing the striped sushi socks, a Spanish flag (red, yellow, red horizontal stripes, yellow band twice as wide) hanging from the balcony."
   },
   {
    "id": "nl",
    "namn": "Nederland",
-   "prompt": "Dutch living room on King's Day: a young woman in an orange t-shirt laughing on the sofa, feet in the striped sushi socks up on the coffee table, the gift box on her lap, through the big window a Dutch flag with exactly three equal horizontal stripes (red on top, white middle, blue bottom) hangs from the house across the street."
+   "prompt": "A cartoon Dutch boy in an orange shirt next to a windmill and tulip field, holding the sushi sock gift box, a Dutch flag (red, white, blue horizontal stripes)."
   },
   {
    "id": "gb",
    "namn": "UK",
-   "prompt": "British living room on a rainy evening: feet in the sushi socks on a patterned sofa, a mug of tea with milk, a biscuit tin, Union Jack bunting strung above the fireplace, warm lamp light."
+   "prompt": "A cartoon British woman with an umbrella and a cup of tea next to a red double-decker bus and Big Ben, wearing the striped sushi socks, a Union Jack flag."
   },
   {
    "id": "us",
    "namn": "USA",
-   "prompt": "American suburban backyard on the 4th of July: a smiling dad in a baseball cap holding up a pair of sushi socks, the gift box on a picnic table with burgers, small American flags stuck in the lawn, late afternoon sun."
+   "prompt": "A cartoon American dad in a baseball cap at a backyard barbecue grill holding up the sushi sock gift box, the New York skyline far behind, an American flag (stars and stripes)."
   },
   {
    "id": "au",
    "namn": "Australia",
-   "prompt": "Australian backyard barbecue in summer: feet in the striped sushi socks with rubber flip-flops on a sunny wooden deck, a stubby holder drink, an Australian flag hanging on the fence, bright harsh sunlight."
+   "prompt": "A cartoon Australian surfer girl on the beach with the Sydney Opera House behind her and a kangaroo peeking in, wearing the striped sushi socks with flip-flops, an Australian flag."
   }
  ]
 }
