@@ -498,12 +498,16 @@ async function stegTema(k, { skarpt }) {
   log(`originalen sparade i ${backup}`);
   const u = await mutation(k, `mutation($id: ID!, $files: [OnlineStoreThemeFilesUpsertFileInput!]!) { themeFilesUpsert(themeId: $id, files: $files) { upsertedThemeFiles { filename } userErrors { filename code message } } }`, { id: temaId, files: skriv });
   if (u.fel.length) throw new Error(`themeFilesUpsert: ${u.fel.join('; ')}`);
-  // Tillbakaläsning
-  const efter = await k.graphql(`query($id: ID!, $f: [String!]) { theme(id: $id) { files(first: 50, filenames: $f) { nodes { filename body { ... on OnlineStoreThemeFileBodyText { content } } } } } }`, { id: temaId, f: skriv.map((s) => s.filename) });
-  for (const s of skriv) {
-    const nu = efter.theme.files.nodes.find((x) => x.filename === s.filename)?.body?.content;
-    if (nu !== s.body.value) throw new Error(`${s.filename} läses inte tillbaka identiskt efter skrivningen.`);
+  // Tillbakaläsning. Shopify kan svara med den förra versionen en kort stund efter skrivningen (mätt
+  // 2026-09-29: assets/ms-paket.js läste fel direkt efter, rätt en minut senare) — upp till tre läsningar.
+  let fel = [];
+  for (let forsok = 1; forsok <= 3; forsok++) {
+    const efter = await k.graphql(`query($id: ID!, $f: [String!]) { theme(id: $id) { files(first: 50, filenames: $f) { nodes { filename body { ... on OnlineStoreThemeFileBodyText { content } } } } } }`, { id: temaId, f: skriv.map((s) => s.filename) });
+    fel = skriv.filter((s) => efter.theme.files.nodes.find((x) => x.filename === s.filename)?.body?.content !== s.body.value).map((s) => s.filename);
+    if (fel.length === 0) break;
+    if (forsok < 3) await paus(5000);
   }
+  if (fel.length) throw new Error(`${fel.join(', ')} läses inte tillbaka identiskt efter skrivningen (tre försök).`);
   log(`✅ ${skriv.length} temafiler skrivna och tillbakalästa: ${skriv.map((s) => s.filename).join(', ')}`);
 }
 
