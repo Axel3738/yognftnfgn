@@ -1,0 +1,105 @@
+{
+ "segment": [
+  {
+   "a": 0.0,
+   "b": 4.74,
+   "sv": "Om du ska ge bort en present snart så är sushiformade strumpor det snällaste du kan ge dem.",
+   "text": "Jeśli niedługo masz komuś dać prezent, skarpetki w kształcie sushi to najmilsze, co możesz dać."
+  },
+  {
+   "a": 4.84,
+   "b": 7.08,
+   "sv": "Jag startade Matstrumpor ur en ilska.",
+   "text": "Założyłam tę firmę z czystej frustracji."
+  },
+  {
+   "a": 7.22,
+   "b": 10.92,
+   "sv": "Jag brukar alltid vänta till sista sekund med att tänka ut vad jag ska ge bort till present.",
+   "text": "Zawsze czekam do ostatniej chwili, żeby wymyślić, co podarować."
+  },
+  {
+   "a": 11.1,
+   "b": 13.12,
+   "sv": "Och varje gång blir det panikletande.",
+   "text": "I za każdym razem szukam w panice."
+  },
+  {
+   "a": 13.26,
+   "b": 15.9,
+   "sv": "Men en grej vi alla går kort om är strumpor.",
+   "text": "Ale jednego nam wszystkim brakuje: skarpetek."
+  },
+  {
+   "a": 16.04,
+   "b": 17.52,
+   "sv": "Och udda par är vardag.",
+   "text": "Nie do pary? To codzienność."
+  },
+  {
+   "a": 17.58,
+   "b": 19.16,
+   "sv": "De här blandar du aldrig ihop.",
+   "text": "Tych nigdy nie pomylisz."
+  },
+  {
+   "a": 19.26,
+   "b": 22.72,
+   "sv": "Det är typ den perfekta balansen mellan praktiskt och oväntat.",
+   "text": "To taki idealny balans między praktycznym a zaskakującym."
+  },
+  {
+   "a": 22.82,
+   "b": 24.14,
+   "sv": "Först tror man att det är sushi.",
+   "text": "Najpierw myślisz: sushi."
+  },
+  {
+   "a": 24.24,
+   "b": 25.92,
+   "sv": "Sen inser man att det är strumpor.",
+   "text": "Potem widzisz: skarpetki."
+  },
+  {
+   "a": 26.02,
+   "b": 29.42,
+   "sv": "Och helt plötsligt har du gett bort något som faktiskt får en reaktion.",
+   "text": "I nagle dajesz coś, co naprawdę wywołuje reakcję."
+  },
+  {
+   "a": 29.42,
+   "b": 31.02,
+   "sv": "Och som används på riktigt.",
+   "text": "Coś, co faktycznie się nosi."
+  },
+  {
+   "a": 31.22,
+   "b": 34.74,
+   "sv": "Det är den typen av lilla present som passar perfekt till alla tillfällen.",
+   "text": "To taki mały prezent, który idealnie pasuje na każdą okazję."
+  },
+  {
+   "a": 35.24,
+   "b": 38.06,
+   "sv": "Genomtänkt, kul men utan att försöka för mycket.",
+   "text": "Przemyślany, zabawny, ale nie na siłę."
+  },
+  {
+   "a": 38.3,
+   "b": 40.14,
+   "sv": "Ser ut som sushi, är strumpor.",
+   "text": "Wygląda jak sushi, a to skarpetki."
+  },
+  {
+   "a": 40.34,
+   "b": 41.34,
+   "sv": "Sushistrumpor.",
+   "text": "Skarpetki sushi."
+  }
+ ],
+ "texter": {
+  "etikett": "Skarpetki sushi"
+ },
+ "granskad": true,
+ "granskning": "godkänd av infödd granskare i runda 2 (2026-09-29)"
+}
