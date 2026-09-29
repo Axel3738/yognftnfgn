@@ -12,14 +12,21 @@ verksamhet, aldrig något annat konto, aldrig en annan kampanj.
 | Konto | **"nya kungen" `730973156224390`** (portfölj Matstrumpor.se, SEK) |
 | Kampanj | `MATSTRUMP_SALES_20260826` — `120251217860260023`, CBO 1 000 kr/dag |
 | Hub | `Matstrumpor creative hub` `3a7270ab-908c-80d2-9f35-e73e51e457ff` |
-| Kö | Status **`To be Reviewed`** → uppladdad → **`Approved`** |
+| Kö | Status **`To be Reviewed`** → uppladdad → **`Approved + Launched in SE`** |
 | Facit | `matstrumpor/konfig.json` — ändra tal DÄR, aldrig i den här filen |
 
 ⚠️ **Kontot HETER "nya kungen", inte Matstrumpor.** Kolla alltid
 `ad_account_id`. Fem konton i Axels portföljer heter nästan samma sak och
 fel konto kostar riktiga pengar.
 
-⚠️ **`META_ACCESS_TOKEN` NEKAS på det här kontot** (mätt 2026-09-21:
+✅ **Sedan 2026-09-27 SKRIVER `META_ACCESS_TOKEN` i "nya kungen"** (CLAUDE.md). Mätt
+2026-09-29: nio videoannonser laddades upp med `tools/meta-lib.mjs` (`laddaUppVideo` →
+`väntaPåThumb` → `skapaAnnons` PAUSED → status ACTIVE → tillbakaläst), medan
+Adsmanager-MCP:n stod i utkastläge (`ads_create_ad` skapar bara ett utkast som kräver
+att hela kampanjen publiceras). Token-vägen är därför förstahandsvalet; stycket nedan
+är historik.
+
+⚠️ *Historik:* **`META_ACCESS_TOKEN` NEKADES på det här kontot** (mätt 2026-09-21:
 `(#200) Ad account owner has NOT granted ads_management`). Allt som SKRIVER
 i Meta går därför genom **Adsmanager-MCP:n** (`mcp__Adsmanager__*`) i en
 session Axel startar. Finns inte de verktygen: **avbryt**, säg det rakt ut,
@@ -114,7 +121,8 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    - **Läs tillbaka annonsen** (`ads_get_ad_entities`, `level: "ad"`) och visa
      id + namn + adset + status i svaret. En uppladdning utan tillbakaläsning
      är inte gjord.
-   - Sätt radens status till **`Approved`** i Notion (Matstrumpor har ingen
+   - Sätt radens status till **`Approved + Launched in SE`** i Notion — statusen
+     heter så i hubben, `Approved` finns inte (Notion 400, mätt 2026-09-29) (Matstrumpor har ingen
      översättningskö — NO- och FI-kontona i portföljen saknar betalmetod).
    - Logga en rad per uppladdning:
      ```bash
@@ -154,7 +162,7 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
 - [ ] Nytt adset (om något skapades) kopierat ur mallen, utan egen budget, id inskrivet i konfigen
 - [ ] Varje uppladdad annons tillbakaläst: id, namn, adset, status
 - [ ] Prisspärren körd; stoppade rader kommenterade i Notion och satta till `Draft`
-- [ ] Uppladdade rader satta till `Approved`
+- [ ] Uppladdade rader satta till `Approved + Launched in SE`
 - [ ] Inget PAUSED aktiverat, inget annat adset rört, ingen annan kampanj rörd
 - [ ] `logg.jsonl` (+ konfigen) committad och pushad
 - [ ] Slutrapport i två listor; Axels uppgifter sist, numrerade

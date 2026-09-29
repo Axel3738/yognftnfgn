@@ -62,8 +62,8 @@
     "hub_namn": "Matstrumpor creative hub",
     "matt_2026_09_21": "88 rader · 39 Approved, 26 Draft, 10 To be translated, 6 In Review, 4 To be Reviewed",
     "ko_status": "To be Reviewed",
-    "efter_uppladdning": "Approved",
-    "efter_uppladdning_comment": "Matstrumpor har ingen översättningsrutin (NO/FI-kontona saknar betalmetod 2026-09-21), så en uppladdad rad går direkt till Approved — inte till 'SE-ACTIVE to be translated' som Bäverbutiken."
+    "efter_uppladdning": "Approved + Launched in SE",
+    "efter_uppladdning_comment": "Matstrumpor har ingen översättningsrutin (NO/FI-kontona saknar betalmetod 2026-09-21), så en uppladdad rad går direkt till Approved + Launched in SE — inte till 'SE-ACTIVE to be translated' som Bäverbutiken. ⚠️ Statusen heter 'Approved + Launched in SE' i hubben (mätt 2026-09-29: 'Approved' finns inte, Notion svarar 400)."
   },
   "ekonomi": {
     "aov_sek": 462.1,

@@ -383,3 +383,35 @@ på köp per sidvisning.
 **Utfall (dag 7):** etikett per annons, breakthrough-frekvens som bråk
 **Lärdom:** länk till products/matstrumpor/lardomar.md#<id>
 ```
+
+---
+
+## 2026-09-29 — `/matstrumpor`: batch #3 (039–043) live, nio annonser
+
+**Vad:** redigerarens leveranser för briefer 039–043 (skrivna 2026-09-17) upp i
+`MATSTRUMP_SALES_20260826`, adset `broad_advplus_purchase_nya16`, ACTIVE, via
+`META_ACCESS_TOKEN` (inte MCP:n). Copyn = briefens fasta Meta-copy (samma primärtext
+som kampanjen redan kör; beskrivning "Köp 1 – Få 1 gratis. Fri frakt i Sverige.").
+Pris 399 kr och erbjudandet lästa live på produktsidan samma kväll.
+
+| Annons | Id |
+|---|---|
+| `MATSTRUMP_sushi_curiosity_ugc_039h1_v1` | 120251785912320023 |
+| `MATSTRUMP_sushi_curiosity_ugc_039h2_v1` ("Det här är inte sushi") | 120251785916890023 |
+| `MATSTRUMP_sushi_curiosity_ugc_039h3_v1` ("En strumpa får aldrig ett skratt") | 120251785920850023 |
+| `MATSTRUMP_sushi_curiosity_ugc_040h1_v1` | 120251785924650023 |
+| `MATSTRUMP_sushi_gift_ugc_041h1_v1` | 120251785927920023 |
+| `MATSTRUMP_sushi_offer_anim_042_v1` ("Fyra lådor. Fyra presenter klara") | 120251785931940023 |
+| `MATSTRUMP_sushi_offer_anim_042_v2` ("Fyra presenter packade på en kväll") | 120251785935620023 |
+| `MATSTRUMP_sushi_offer_anim_042_v3` ("En låda i taget …") | 120251785940700023 |
+| `MATSTRUMP_sushi_pain_comparison_043_v1` | 120251785948030023 |
+
+Redigeraren levererade briefens backlog-hooks (039 h2/h3, 042 V2/V3) — de gick upp som
+egna annonser, så hooken är enda variabeln. Anmärkningar till nästa version (kommentar
+på raderna, inget stopp): 039 "byralada" utan å; 041 och 043 har julpynt fast briefen
+sa "no Christmas". Notion-raderna → `Approved + Launched in SE` (statusen heter så —
+`Approved` finns inte i hubben).
+
+**Kvar i kön:** `B_Mini-clip_UGC_04` (pizzastrumpor) och `BURGER B_Mini-clip_UGC_02`
+(hamburgarstrumpor) — inte sushi, namnmallen har bara `sushi`, och kampanjen länkar
+till sushisidan. Väntar på Axels beslut.
