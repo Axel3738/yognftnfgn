@@ -1,0 +1,43 @@
+{
+  "comment": "Polska för Matstrumpors fraktmejl. Skriven av en sonnet-subagent 2026-09-29 mot den svenska källan och butikens egna ord (produkttexterna och spårningssidan på polska); rätta här, aldrig i koden. Knappen och orden Twój numer paczki matchar spårningssidan ordagrant. Tilltal: informellt Ty med versal (Twoja, Ci, Cię) som butikens övriga texter.",
+  "kod": "pl",
+  "ord": {
+    "Hej": "Cześć",
+    "I paketet": "W paczce",
+    "Levereras till": "Dostawa do",
+    "Antal": "Ilość",
+    "Ditt paketnummer": "Twój numer paczki",
+    "Klicka på knappen ovan så visas ditt paket direkt.": "Kliknij przycisk powyżej, a Twoja paczka pojawi się od razu."
+  },
+  "manader": ["stycznia", "lutego", "marca", "kwietnia", "maja", "czerwca", "lipca", "sierpnia", "września", "października", "listopada", "grudnia"],
+  "dagsuffix": "",
+  "menyrad": "Śledź swoją paczkę",
+  "sidfot": "Pytania o zamówienie? Odpowiedz na tę wiadomość lub napisz na adres {{support}}.",
+  "mallar": {
+    "fraktbekraftelse": {
+      "amne": ["Twoja paczka jest w drodze", "Zamówienie {{ordernummer}} wyszło z magazynu", "Już jedzie do Ciebie"],
+      "preheader": ["Link do śledzenia jest w środku.", "Sprawdź folder ze spamem, jeśli nie widzisz maila."],
+      "rubrik": "Paczka jest w drodze!",
+      "intro": "Twoje zamówienie {{ordernummer}} opuściło magazyn i jedzie do Ciebie.",
+      "knapp": "Śledź swoją paczkę",
+      "tips": "Śledzenie może nie pokazywać żadnych zmian przez 2–4 dni, gdy paczka jedzie na lotnisko. To zupełnie normalne. Sprawdź ponownie po tym czasie.",
+      "beraknad_rubrik": "Szacowana dostawa",
+      "beraknad": "{{leverans_fran}}–{{leverans_till}}",
+      "tysta_dagar": "Przez pierwsze 2–4 dni śledzenie często nic nie pokazuje. Paczka jedzie na lotnisko, nie zaginęła. Nie musisz nic robić. Śledzenie zaktualizuje się, gdy tylko paczka zostanie zarejestrowana."
+    },
+    "fraktuppdatering": {
+      "amne": ["Nowe dane o Twojej paczce", "Śledzenie zostało zaktualizowane", "Aktualizacja: {{ordernummer}}"],
+      "preheader": ["Oto aktualny stan przesyłki.", "Zobacz najnowsze dane tutaj."],
+      "rubrik": "Śledzenie zostało zaktualizowane",
+      "intro": "Dane śledzenia Twojego zamówienia {{ordernummer}} zostały zaktualizowane.",
+      "knapp": "Śledź swoją paczkę"
+    },
+    "ute_for_leverans": {
+      "amne": ["Paczka dotrze dziś", "Paczka jest w doręczeniu", "Zamówienie {{ordernummer}} dotrze dziś"],
+      "preheader": ["Wypatruj jej w ciągu dnia.", "Wkrótce w Twojej skrzynce lub w punkcie odbioru."],
+      "rubrik": "Paczka dotrze dziś",
+      "intro": "Twoje zamówienie {{ordernummer}} jest w doręczeniu i dotrze w ciągu dnia.",
+      "knapp": "Śledź swoją paczkę"
+    }
+  }
+}

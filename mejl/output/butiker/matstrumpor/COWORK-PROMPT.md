@@ -1,4 +1,4 @@
-# Cowork-prompt: fraktmejlen + menylänken i Matstrumpor (matstrumpor.se)
+# Cowork-prompt: fraktmejlen i Matstrumpor (matstrumpor.se)
 
 Byggd av `node mejl/bygg-butik.mjs matstrumpor`. Hela mallen byts — inte enskilda
 rader — så mejlet ser ut som Bäverbutikens (Axels dom 2026-09-20 på den
@@ -9,7 +9,7 @@ först, annars klistrar Cowork in en gammal version. Delen under linjen är prom
 
 Du jobbar i Chrome i mitt inloggade Shopify-konto för butiken **Matstrumpor**
 (matstrumpor.se, 1r46tp-qx.myshopify.com). Uppgifter: **A.** byta ut koden i
-**tre kundnotiser**, **B.** lägga in menylänken, sedan **C.** ett testmejl. Rör ingenting annat i
+**tre kundnotiser**, sedan **C.** ett testmejl. Rör ingenting annat i
 Shopify: inga andra mallar, inga inställningar, inga rabatter, inga produkter.
 
 ⚠️ **Datorn är en Windows-dator, inte en Mac.** Klicka alltid först inne i
@@ -51,7 +51,7 @@ Gör så här för en mall i taget, uppifrån och ner i tabellen:
 
 | # | Mall i Shopify | Ämnesrad | Kontrollera | Tecken | Mallens kod |
 |---|---|---|---|---|---|
-| 1 | **Leveransbekräftelse / Shipping confirmation** | `Ditt paket är på väg` | `MS-` och `sha256` | **10 305** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/butiker/matstrumpor/fraktbekraftelse.liquid |
+| 1 | **Leveransbekräftelse / Shipping confirmation** | `Ditt paket är på väg` | `MS-` och `sha256` | **7 192** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/butiker/matstrumpor/fraktbekraftelse.liquid |
 | 2 | **Leveransuppdatering / Shipping update** | `Ny info om ditt paket` | `MS-` och `sha256` | **6 153** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/butiker/matstrumpor/fraktuppdatering.liquid |
 | 3 | **Ute för leverans / Out for delivery** | `Paketet kommer idag` | `MS-` och `sha256` | **6 142** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/butiker/matstrumpor/ute_for_leverans.liquid |
 
@@ -59,14 +59,18 @@ Gör så här för en mall i taget, uppifrån och ner i tabellen:
 det — id:t i adressfältet är markören: shipment_out_for_delivery är rätt, local_out_for_delivery fel (båda heter "Out for delivery" internt; CaraShell 2026-09-21). Rör inte "Levererad". Talen är tecken, inte byte (å/ä/ö väger två byte i
 Shopifys räknare).
 
+### Översättningarna (11 språk) — rör dem inte
+
+Mallarna på nb, da, fi, en, de, fr, nl, es, it, pl, pt-PT ligger redan i Shopify som notisernas **översättningar**
+(lagda via API av sessionen, lästa tillbaka). Shopify skickar själv mejlet på
+det språk kunden handlade på. Du klistrar BARA in de svenska mallarna ovan.
+Öppna inte Translate & Adapt och ändra inga översättningar. Att översättningarna
+blir "inaktuella" när du sparat den svenska mallen är väntat — spårningsrutinen
+lägger in dem igen inom en timme.
+
 ### B. Menylänken
 
-1. **Onlinebutik** → **Navigering** → **Huvudmeny** (Main menu).
-2. Finns redan en rad som länkar till `/pages/spara`: rör den inte. Annars **Lägg till menyalternativ**, Namn: `Spåra paket`, Länk: `/pages/spara`, **Lägg till**, **Spara menyn**. Raden sist.
-3. Samma i **Sidfotsmeny** (Footer menu) — heter den något annat, ta den meny sidfoten på matstrumpor.se faktiskt visar.
-4. Kontrollera i kundens vy: öppna https://matstrumpor.se i en ny flik, ladda om, se att **Spåra paket** syns i huvudmenyn och sidfoten och landar på "Spåra ditt paket".
-
-Skapa aldrig en ny meny, ta aldrig bort en rad, ändra inga andra namn.
+Redan gjord — **Spåra paket** ligger i huvudmenyn och sidfotsmenyn. Rör inte menyerna.
 
 ### C. Testmejlet
 
@@ -75,12 +79,34 @@ enda knapp **Spåra paketet**, länken börjar med
 `https://matstrumpor.se/pages/spara?nummer=MS-`. (Sidan säger att den inte hittar numret för
 testmejlets påhittade spårningsnummer — det är väntat.)
 
+**Testmejl per språk.** Finns det i redigeraren för Leveransbekräftelse en
+språkväljare (förhandsvisning eller testmejl på ett annat språk): skicka ett
+testmejl per språk i tabellen, ett i taget, till butikens egen adress
+**kundsupport@matstrumpor.se** — aldrig till någon annan. Kontrollera ämnesraden, knappens
+text och att länken börjar som i tabellen. Finns ingen språkväljare: skicka
+inget mer, skriv "ingen språkväljare" i rapporten (sessionen har redan läst
+tillbaka varje språk ur Shopify och provat länkarna som kund).
+
+| Språk | Ämnesrad | Knappen | Länken börjar med |
+|---|---|---|---|
+| nb | `Pakken din er på vei` | **Spor pakken** | `https://matstrumpor.se/nb/pages/spara?nummer=MS-` |
+| da | `Din pakke er på vej` | **Spor pakken** | `https://matstrumpor.se/da/pages/spara?nummer=MS-` |
+| fi | `Pakettisi on matkalla` | **Seuraa pakettia** | `https://matstrumpor.se/fi/pages/spara?nummer=MS-` |
+| en | `Your parcel is on its way` | **Track your parcel** | `https://matstrumpor.se/en/pages/spara?nummer=MS-` |
+| de | `Dein Paket ist unterwegs` | **Paket verfolgen** | `https://matstrumpor.se/de/pages/spara?nummer=MS-` |
+| fr | `Votre colis est en route` | **Suivre votre colis** | `https://matstrumpor.se/fr/pages/spara?nummer=MS-` |
+| nl | `Je pakket is onderweg` | **Volg je pakket** | `https://matstrumpor.se/nl/pages/spara?nummer=MS-` |
+| es | `Tu paquete ya está en camino` | **Rastrear paquete** | `https://matstrumpor.se/es/pages/spara?nummer=MS-` |
+| it | `Il tuo pacco è in viaggio` | **Traccia il pacco** | `https://matstrumpor.se/it/pages/spara?nummer=MS-` |
+| pl | `Twoja paczka jest w drodze` | **Śledź swoją paczkę** | `https://matstrumpor.se/pl/pages/spara?nummer=MS-` |
+| pt-PT | `A tua encomenda já vai a caminho` | **Rastrear encomenda** | `https://matstrumpor.se/pt/pages/spara?nummer=MS-` |
+
 ### Rapportera tillbaka
 
 1. Vilka mallar som sparades och verifierades mot servern, teckenantal per mall.
 2. Om kontrolltexten saknades, och i vilken mall.
-3. Menyerna: vilka två menyer som fick raden, och vad du såg i kundens vy.
-4. Testmejlet: gick det, till vilken adress, knappens text.
+3. Testmejlet: gick det, till vilken adress, knappens text.
+4. Testmejl per språk: vilka språk som gick och vad knappen hette — eller "ingen språkväljare".
 5. Allt som såg konstigt ut.
 
 Om Shopify vägrar spara: spara inte om, skriv exakt vad felmeddelandet sa.
