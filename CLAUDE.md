@@ -133,9 +133,13 @@ andra block än speed — en godkänd text flyttas med `pipeline/srt-block.mjs`,
 upp. QA och id:n: `marknader/README.md` → Annonserna i kontot. ⛔ Inget aktiverat — Axel
 granskar först. **Egna videor (inte UGC) görs med egen röst, aldrig med HeyGens
 översättning** (Axel 2026-09-28): haikuh3, haikuh2, s001h1 (en svensk AI-kvinnoröst →
-ElevenLabs-dubbning i manuellt läge med granskade manus — kräver `ELEVENLABS_API_KEY`,
-som saknas 2026-09-29) och 012v2 (ingen röst, bara bildtext: `pipeline/textboxar.py` +
-`textbyte.py`); allt i `marknader/egna/`. ⚠️ Shopify mätt
+ElevenLabs-dubbning i manuellt läge med granskade manus — `ELEVENLABS_API_KEY` syntes inte i
+den session som byggde verktygen, så rösten görs i en egen session enligt
+`marknader/egna/PROMPT-elevenlabs.md`) och 012v2 (ingen röst, bara bildtext:
+`pipeline/textboxar.py` + `textbyte.py`; ✅ **annons 004 PAUSED i alla tolv kampanjer
+2026-09-29**); allt i `marknader/egna/`. ⛔ Källorna bär butikens logga "MATSTRUMPOR.SE" i
+bild (012v2:s sista scen, haiku-videornas slutkort) — den målas bort (`pipeline/logga.py`,
+`kopiera` i `textbyte.py`), för butikens namn står aldrig i en annons. ⚠️ Shopify mätt
 2026-09-27: `translationsRegister` kan svara `INTERNAL_SERVER_ERROR` en stund
 (kör om), och en batchläsning av temats översättningar kan svara med FEL
 språk (`--steg kontroll` läser om ensamt) — lita aldrig på en enda läsning.

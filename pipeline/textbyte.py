@@ -12,6 +12,8 @@ rutan och bara medan den syns.
 plan.json:
   {"video": "in.mp4", "ut": "ut.mp4", "font": "pipeline/fonts/Poppins-Bold.ttf",
    "sudda": [{"a": 0.0, "b": 2.0, "ruta": [x0, y0, x1, y1]}],
+   "kopiera": [{"a": 50.12, "b": 99, "fran": [x, y, w, h], "till": [x, y]}],
+   "bilder": [{"a": 12.0, "b": 99, "fil": "lapp.png", "x": 160, "y": 10}],
    "texter": [{"a": 0.0, "b": 2.0, "text": "…", "mitt": [cx, cy], "min": [w, h], "max_bredd": 600,
                "font_px": 38, "farg": [255,255,255], "bakgrund": [246,132,38,255], "radie": 10, "pad": [18, 8]}]}
 
@@ -34,8 +36,8 @@ def radbryt(text, font, max_bredd):
 
 
 def rita_ruta(t, fontfil):
-    """En RGBA-bild med rutan och texten. Returnerar (bild, bredd, höjd)."""
-    font = ImageFont.truetype(fontfil, t['font_px'])
+    """En RGBA-bild med rutan och texten. Returnerar (bild, bredd, höjd). En text kan bära egen font."""
+    font = ImageFont.truetype(t.get('font', fontfil), t['font_px'])
     padx, pady = t.get('pad', [18, 8])
     maxb = t.get('max_bredd', 600) - 2 * padx
     rader = []
@@ -66,10 +68,25 @@ def kor(plan):
         x0, y0, x1, y1 = s['ruta']
         x0, y0 = max(0, x0 - 6), max(0, y0 - 6)
         w, h = x1 - x0 + 12, y1 - y0 + 12
-        r = max(4, min(w, h) // 3)
-        filt.append(f"{senaste}split[bas{i}][kalla{i}];[kalla{i}]crop={w}:{h}:{x0}:{y0},boxblur={r}:3[bl{i}];"
+        # boxblur tål högst halva sidan i luma och en fjärdedel i chroma (yuv420) — annars vägrar ffmpeg
+        lr = max(2, min(min(w, h) // 3, min(w, h) // 2 - 1)); cr = max(1, min(lr // 2, min(w, h) // 4 - 1))
+        filt.append(f"{senaste}split[bas{i}][kalla{i}];[kalla{i}]crop={w}:{h}:{x0}:{y0},"
+                    f"boxblur=luma_radius={lr}:luma_power=3:chroma_radius={cr}:chroma_power=3[bl{i}];"
                     f"[bas{i}][bl{i}]overlay={x0}:{y0}:enable='between(t,{s['a']:.2f},{s['b']:.2f})'[s{i}]")
         senaste = f'[s{i}]'
+    # 1a) kopiera en bit av samma bild över en annan (slät bakgrund över en logga): samma pixlar och
+    #     samma brus i samma färgrymd, så lappen syns inte ens på en helt jämn yta (en fast RGB-färg
+    #     gav en svag rektangel, mätt på haikuh3:s slutkort 2026-09-29)
+    for i, c in enumerate(plan.get('kopiera', [])):
+        fx, fy, w, h = c['fran']; tx, ty = c['till']
+        filt.append(f"{senaste}split[kb{i}][kk{i}];[kk{i}]crop={w}:{h}:{fx}:{fy}[kc{i}];"
+                    f"[kb{i}][kc{i}]overlay={tx}:{ty}:enable='between(t,{c['a']:.3f},{c['b']:.3f})'[k{i}]")
+        senaste = f'[k{i}]'
+    # 1b) fasta lappar (PNG med alfa, t.ex. en borttagen logga ur pipeline/logga.py), bara medan de gäller
+    for i, l in enumerate(plan.get('bilder', [])):
+        inputs += ['-loop', '1', '-i', l['fil']]
+        filt.append(f"{senaste}[{n}:v]overlay={l['x']}:{l['y']}:shortest=1:enable='between(t,{l['a']:.2f},{l['b']:.2f})'[l{i}]")
+        senaste = f'[l{i}]'; n += 1
     # 2) nya rutor
     qa = []
     for i, t in enumerate(plan['texter']):

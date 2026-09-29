@@ -1,0 +1,13 @@
+{
+ "texter": [
+  "Una di queste pizze\nè finta.",
+  "La finta?\nSono calzini.",
+  "Prima non ci crede.\nPoi ride.",
+  "Il tuo non si presta.",
+  "Nel cassetto,\ntra quelli normali",
+  "A ognuno il suo.",
+  "Quattro gusti. Uno a testa."
+ ],
+ "granskad": true,
+ "not": "text 4: granskarens eget förslag efter runda 3 ('I tuoi non si prestano.' underkänd)"
+}

@@ -1,0 +1,13 @@
+{
+ "texter": [
+  "En av eskene\ner fake-pizza.",
+  "Fake-pizzaen\ner sokker.",
+  "Et blikk til.\nSå ler hun.",
+  "Ingen får låne din.",
+  "Bor i skuffen med\nde vanlige",
+  "Hver sin sort.",
+  "Fire sorter. Velg én hver."
+ ],
+ "granskad": true,
+ "not": "text 3: granskarens förslag efter runda 3 ('Hun må se to ganger.\\nSå ler hun.' underkänd)"
+}

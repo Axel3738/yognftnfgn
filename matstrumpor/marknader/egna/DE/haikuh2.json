@@ -1,0 +1,123 @@
+{
+ "segment": [
+  {
+   "a": 0,
+   "b": 3.5,
+   "sv": "Tre anledningar att inte köpa sushistrumpor.",
+   "text": "Drei Gründe, warum du keine Sushi-Socken kaufen solltest."
+  },
+  {
+   "a": 4.04,
+   "b": 5.54,
+   "sv": "Ett: de är helt enkelt unika.",
+   "text": "Eins: Die sind einfach einzigartig."
+  },
+  {
+   "a": 5.72,
+   "b": 8.7,
+   "sv": "Glöm alla de där tråkiga presenterna som hamnar i en låda.",
+   "text": "Vergiss langweilige Geschenke, die in der Schublade landen."
+  },
+  {
+   "a": 8.8,
+   "b": 10.56,
+   "sv": "Det här är en hel upplevelse.",
+   "text": "Das ist ein richtiges Erlebnis."
+  },
+  {
+   "a": 10.64,
+   "b": 13.68,
+   "sv": "Folk tror alltid att det är riktig sushi när de öppnar lådan.",
+   "text": "Wer die Box aufmacht, denkt immer: Das ist echtes Sushi."
+  },
+  {
+   "a": 13.78,
+   "b": 15.56,
+   "sv": "Och sen, vänta, det är strumpor.",
+   "text": "Und dann, Moment, das sind ja Socken."
+  },
+  {
+   "a": 15.56,
+   "b": 17.74,
+   "sv": "Två: värdet för pengarna är helt absurt.",
+   "text": "Zwei: Fürs Geld kriegst du absurd viel."
+  },
+  {
+   "a": 17.94,
+   "b": 19.6,
+   "sv": "Det är inte bara fem par strumpor.",
+   "text": "Nicht nur fünf Paar Socken."
+  },
+  {
+   "a": 19.68,
+   "b": 22.9,
+   "sv": "Det är hög kvalitet, mjukt material och de håller länge.",
+   "text": "Hohe Qualität, weiches Material, und sie halten lange."
+  },
+  {
+   "a": 22.98,
+   "b": 26.14,
+   "sv": "Plus att de faktiskt används. Ingen present som bara samlar damm.",
+   "text": "Und die trägt man wirklich. Kein Geschenk, das nur Staub sammelt."
+  },
+  {
+   "a": 26.14,
+   "b": 28.28,
+   "sv": "Tre: du gör mottagaren väldigt glad.",
+   "text": "Drei: Du machst jemanden richtig glücklich."
+  },
+  {
+   "a": 28.28,
+   "b": 30.34,
+   "sv": "Mamma sa att det var hennes favoritgåva.",
+   "text": "Mama meinte, das war ihr Lieblingsgeschenk."
+  },
+  {
+   "a": 30.44,
+   "b": 32.04,
+   "sv": "Och gissa vad, hon vill redan ha fler.",
+   "text": "Rate mal, sie will schon mehr."
+  },
+  {
+   "a": 32.12,
+   "b": 35,
+   "sv": "Det är liksom garanterat att få en reaktion och ett skratt.",
+   "text": "Da sind Reaktion und Lacher quasi vorprogrammiert."
+  },
+  {
+   "a": 35.12,
+   "b": 37.74,
+   "sv": "Det är den typen av present där givaren är den smarta.",
+   "text": "Bei so einem Geschenk stehst du clever da."
+  },
+  {
+   "a": 37.82,
+   "b": 40.36,
+   "sv": "Du blir personen som ger de bästa presenterna.",
+   "text": "Du wirst die Person mit den besten Geschenken."
+  },
+  {
+   "a": 40.52,
+   "b": 42.16,
+   "sv": "Alla frågar: var köpte du det här?",
+   "text": "Alle fragen: Woher hast du das?"
+  },
+  {
+   "a": 42.3,
+   "b": 44.3,
+   "sv": "Klicka bara på länken nu och kolla in allt.",
+   "text": "Einfach auf den Link klicken und reinschauen."
+  }
+ ],
+ "texter": {
+  "hook": "Stopp! Kauf keine Sushi-Socken, bevor du das hier gesehen hast",
+  "rubriker": [
+   "EINS: DIE SIND EINFACH EINZIGARTIG",
+   "ZWEI: DAS LOHNT SICH",
+   "DREI: DU SCHENKST FREUDE"
+  ],
+  "knapp": "JETZT KAUFEN"
+ },
+ "granskad": false,
+ "not": "utkast för piloten (skriven av sonnet, ännu inte godkänd av granskaren) — laddas aldrig upp"
+}
