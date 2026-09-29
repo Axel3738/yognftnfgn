@@ -62,7 +62,7 @@
     { "rad": "Om du redan vet vilken sort han vill ha", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Köp presentkortet", "visualisera": true, "falsifiera": true, "ingen_annan": true }
   ],
-  "planerad": "2026-10-25T18:00:00+02:00",
+  "planerad": "2026-10-25T18:00:00+01:00",
   "segment": ["SEG_samtycke"],
   "exkludera": ["SEG_oengagerade_180d"],
   "status_plan": "kraver-axel",

@@ -63,8 +63,8 @@
     { "rad": "Till sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
   ],
   "planerad": "2026-10-27T18:00:00+01:00",
-  "segment": ["SEG_engagerade_90d"],
+  "segment": ["SEG_kopare_forra_sasongen"],
   "exkludera": ["SEG_oengagerade_180d"],
   "status_plan": "utkast-skrivs-om-efter-lardom",
-  "kraver_axel": null
+  "kraver_axel": "Publiken ändrad 2026-09-29 till SEG_kopare_forra_sasongen (kalenderns beslut 2026-09-27; SEG_engagerade_90d stod kvar här av misstag)."
 }

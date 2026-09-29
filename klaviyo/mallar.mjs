@@ -560,7 +560,7 @@ const BLOCK = {
     const celler = [
       // Leveranstiden står aldrig i ett mejl som bär spårningslänken — sidan
       // visar beräknad leverans själv (CLAUDE.md, Axels order 2026-09-21 + 2026-09-25).
-      ['Ångerrätt', brand.angerratt_text, null],
+      [brand.angerratt_rubrik ?? 'Ångerrätt', brand.angerratt_text, null],
       ['Spåra paketet', 'Följ det hela vägen', brand.sparningssida],
     ]
       .filter(([, v]) => v)
@@ -678,7 +678,7 @@ const RENTEXT = {
   fakta(b, ctx) {
     const { s, brand } = ctx;
     const rader = [
-      brand.angerratt_text ? `Ångerrätt: ${esk(brand.angerratt_text)}` : null,
+      brand.angerratt_text ? `${esk(brand.angerratt_rubrik ?? 'Ångerrätt')}: ${esk(brand.angerratt_text)}` : null,
       brand.sparningssida ? `Spåra paketet: <a href="${esk(brand.sparningssida)}" target="_blank" style="color: ${s.svart};">${esk(brand.sparningssida.replace(/^https:\/\//, ''))}</a>` : null,
     ].filter(Boolean);
     return rad(`<p style="${RT_BROD} color: ${s.svart}; margin: 0 0 16px;">${rader.join('<br>')}</p>`, '0 32px 0');
@@ -902,7 +902,7 @@ function textversion(mejl, ctx) {
         ut.push(mejl.format === 'rentext' ? t(b.text) : `${t(b.text)}\n${ctx.stil.grundare ?? 'Axel'}, grundare`);
         break;
       case 'fakta':
-        ut.push(`Ångerrätt: ${brand.angerratt_text}\nSpåra paketet: ${brand.sparningssida}`);
+        ut.push(`${brand.angerratt_rubrik ?? 'Ångerrätt'}: ${brand.angerratt_text}\nSpåra paketet: ${brand.sparningssida}`);
         break;
       case 'erbjudande': {
         const e = ctx.erbjudande;

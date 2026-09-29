@@ -157,7 +157,9 @@ skriver in det här.
   uppvärmning gäller), K03 engagerade 60 d om segmentet nått 300 annars samtycke, K04
   samtycke, **K05–K06 `SEG_kopare_forra_sasongen`**, K07–K14 samtycke. Publiken väljs av
   Axel i appen vid schemaläggningen (MCP:n kan inte); sessionen säger vilket segment varje
-  vecka.
+  vecka. **Sedan 2026-09-29 schemaläggs allt på en gång av Cowork** (Axels order "schemalägg
+  allt"): prompten och facit byggs ur de här filerna med `node klaviyo/spoks/cowork-schema.mjs`
+  (`klaviyo/spoks/README.md` → Schemaläggningen via Cowork). FD20 går 18:00 den 25/10 (CET).
 - Ingen rabatt utan Axels beslut. **Black Week: Axels beslut 2026-09-25, samma trappa
   som Bäverbutiken på hela sajten:** 10 % på 1 vara, 20 % på 2, 30 % på 3 eller fler,
   23/11 00:00 till 1/12 00:00, som tre schemalagda automatiska rabatter i Shopify.

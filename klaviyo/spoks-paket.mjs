@@ -251,7 +251,9 @@ const BLOCK = {
   fakta(b, ctx) {
     const { brand } = ctx;
     const kolumner = [];
-    if (brand.angerratt_text) kolumner.push({ flex: 1, blocks: [text('**Ångerrätt**', { align: 'center' }), text(brand.angerratt_text, { align: 'center' })] });
+    // Rubriken följer butikens villkor: Matstrumpors 30 dagar är öppet köp, inte
+    // lagens ångerrätt (14 dagar). Brandfältet angerratt_rubrik, standard "Ångerrätt".
+    if (brand.angerratt_text) kolumner.push({ flex: 1, blocks: [text(`**${brand.angerratt_rubrik ?? 'Ångerrätt'}**`, { align: 'center' }), text(brand.angerratt_text, { align: 'center' })] });
     if (brand.sparningssida) kolumner.push({ flex: 1, blocks: [text('**Spåra paketet**', { align: 'center' }), text(`[Följ det hela vägen](${brand.sparningssida})`, { align: 'center' })] });
     if (kolumner.length < 2) return kolumner.flatMap((k) => k.blocks);
     return [{ type: 'columns', columns: kolumner, stackedOnMobile: true, verticalAlignment: 'top' }];

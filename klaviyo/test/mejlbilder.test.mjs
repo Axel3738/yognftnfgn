@@ -119,3 +119,16 @@ test('Spoks-paketet: bildblock med Spoks-id och knappens länk, utan id stoppar 
   const okand = mejlTillSpoks({ ...m, block: [{ typ: 'hero', bild: 'bild:okand', rubrik: 'x' }] }, ctx, { titel: 'V01' });
   assert.ok(okand.fel.some((f) => /finns inte i bildregistret/.test(f)));
 });
+
+test('faktablocket: rubriken följer brandfältet angerratt_rubrik, annars Ångerrätt', () => {
+  const brand = { id: 'testbutik', namn: 'Testbutiken', butik_url: 'https://testbutik.se', angerratt_text: '30 dagars returrätt', angerratt_rubrik: 'Öppet köp', sparningssida: 'https://testbutik.se/pages/spara' };
+  const ctx = { brand, facit: { produkter: {} }, produkt: () => null, produktlista: [], recensioner: {}, stil: null, bilder: {} };
+  const m = { id: 'x', amnesrader: [{ text: 'Ämne' }], block: [{ typ: 'fakta' }] };
+  const med = JSON.stringify(mejlTillSpoks(m, ctx, { titel: 'X' }).post.blocks);
+  assert.match(med, /\*\*Öppet köp\*\*/);
+  assert.doesNotMatch(med, /Ångerrätt/);
+  const utan = JSON.stringify(mejlTillSpoks(m, { ...ctx, brand: { ...brand, angerratt_rubrik: undefined } }, { titel: 'X' }).post.blocks);
+  assert.match(utan, /\*\*Ångerrätt\*\*/);
+  const html = byggMejl(mejl({ block: [{ typ: 'fakta' }] }), { brand: { ...BRAND, angerratt_rubrik: 'Öppet köp' }, produkter: PRODUKTER, recensioner: RECENSIONER, bilder: {}, lage: 'exempel' }).html;
+  assert.match(html, /Öppet köp/);
+});

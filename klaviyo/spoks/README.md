@@ -1142,3 +1142,39 @@ samma bild en gång till.
 - **Kvar som förut:** produktkorten längre ner i mejlen visar produktens egen bild (den
   hydreras av Spoks och går inte att byta per mejl). Flödena (F01–F09) har kvar sina
   produktbilder: de är aktiva, och ett aktivt flöde går inte att ändra via MCP:n.
+
+### Schemaläggningen via Cowork 2026-09-29: alla 37 mejl på en gång
+
+Axels order samma eftermiddag: "Skriv cowork prompt för att schemalägga allt". Spoks MCP kan
+varken välja publik eller schemalägga, så klicken görs i appen, och Cowork (Claude i Axels
+webbläsare) gör dem.
+
+- **Prompten byggs, skrivs aldrig för hand:** `node klaviyo/spoks/cowork-schema.mjs --brand
+  matstrumpor --fran 2026-09-30 --aldrig "K01,K15"` läser innehållsfilerna (datum, segment,
+  ämnesrad A) och uppladdningsloggen (Spoks-id) och skriver
+  `klaviyo/spoks/cowork/matstrumpor-schema-2026-09-30.txt` (klistras in i Cowork) och `.json`
+  (facit med lokal tid och UTC). `--bara V04` ger en prompt för ett enda mejl. Bänken
+  (`parkerad`), ett mejl utan Spoks-utkast eller med mer än ett segment stoppas med orsak.
+- **Vad prompten låter Cowork göra:** per mejl länken → kolla ämnesraden → "Till:" exakt ett
+  segment → "TITTA IGENOM" → schemalägg datum och klockslag → pillret "Kommer att publiceras …"
+  kontrolleras. Aldrig skicka nu, aldrig ändra text, aldrig välja Warmup tier/All subscribed
+  eller något förväxlingsbart segment, aldrig exkludera, och en uppvärmningsruta är Axels
+  beslut (Cowork stannar och frågar). Sommartiden: CEST till och med 24/10, CET från 25/10.
+- **Efteråt mäter sessionen, Cowork:s rapport räcker inte:** `search_campaigns` (status,
+  `publishDate`, `notify`) mot facit med `cowork-schema.mjs --jamfor <svar.json> --facit
+  <fil.json>`, och publiken med `update_segment` utan `acknowledgeWarnings`
+  (`postsUsingSegment`). `notify: false` betyder att mejlet publiceras utan att någon får det
+  (CaraShell nb 29/9), och det syns inte i redigeraren. Påminnelsen
+  `trig_01AoYRfSaHJzbEicy2x49r9h` gör kollen ons 30/9 10:00.
+- **Rättat före schemaläggningen (ett schemalagt mejl går inte att ändra via MCP:n):**
+  faktarutans rubrik **"Ångerrätt" → "Öppet köp"** i 41 utkast (alla utom V01, som saknar
+  rutan; brandfältet `angerratt_rubrik`, Bäverbutiken behåller sin), K06:s titel och källfil
+  till `SEG_kopare_forra_sasongen` (K05 samma), FD20 till **18:00** den 25/10 (källfilen sa
+  `+02:00`, alltså 17:00 efter omställningen). Loggen: `atgard: rubrik-oppet-kop` och `titel`.
+- **Beslut som följer av "allt":** veckans dragning 6/10 kan inte läggas in i K02 i efterhand
+  (K02 är schemalagd), så V04 lör 10/10 berättar om den. K05–K14 (`skrivs om efter lärdom`)
+  är schemalagda som de står; ska ett skrivas om flyttas det först till utkast i appen
+  (menyn "•••" på den schemalagda kampanjen), sedan MCP, sedan ny Cowork-prompt med `--bara`.
+  V04 och V05 skrivs 9/10 och 12/10 och får egna prompter. K16 (förtur 22/11) och tröstpriset
+  byggs 2/11. Stoppregeln `LARM_LEVERANS` gäller fortfarande: vid larm flyttas nästa
+  schemalagda mejl till utkast.

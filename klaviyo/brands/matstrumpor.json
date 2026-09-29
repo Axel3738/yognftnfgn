@@ -27,6 +27,8 @@
   "leverans_p90_dygn": 15,
   "leverans_p90_comment": "Mätt 2026-09-25 på 71 levererade paket (ordrar 2026-08-29 till 2026-09-15): order lagd → leveransskanning p25 10,0 / median 11,4 / p75 13,1 / p90 14,9 / max 19,7 dygn ⇒ 15. Datumen: sparning/butiker/matstrumpor/lage.json pekar ut vilka paket som är DELIVERED (71 av 204), och tidsstämpeln är Shopifys fulfillments.deliveredAt, som spårningsrutinen själv skriver ur 17TRACK-skanningens klockslag. ⚠️ lage.json:s eget fält `senast` duger INTE som leveranstid: det är rutinens kontrolltid (sparning/kor.mjs rad 195), och 60 av de 71 står på 2026-09-21, rutinens första körning — räknat på det blir p90 25,6, vilket är fel. Order → skickad är samma dygn (median 0,4). Jämför Bäverbutiken 20 dygn. Mät om när fler paket levererats; talet styr sista beställningsdagarna nedan.",
   "angerratt_text": "30 dagars returrätt",
+  "angerratt_rubrik": "Öppet köp",
+  "angerratt_rubrik_comment": "Rubriken över angerratt_text i faktablocket. Produktsidan säger \"30 dagars öppet köp\"; lagens ångerrätt är 14 dagar, så \"Ångerrätt\" över 30 dagar var fel ord (upptäckt 2026-09-26, rättat 2026-09-29 före schemaläggningen). Bäverbutiken saknar fältet och behåller \"Ångerrätt\".",
   "angerratt_comment": "Matstrumpors publicerade returpolicy (matstrumpor.se/policies/refund-policy, läst 2026-09-25): '30 dagars returpolicy … från det att du mottog artikeln'. Kunden betalar returfrakten (Axels beslut 2026-09-23, kundtjanst/brands/matstrumpor.yaml). Den lagstadgade ångerrätten är 14 dagar därutöver. Texten här står i fakta-blocket; copyn skriver aldrig ett returfönster själv.",
   "returfonster_fran": "kundtjanst/brands/matstrumpor.yaml#tvister.returfonster_dagar",
   "sparningssida": "https://matstrumpor.se/pages/spara",
