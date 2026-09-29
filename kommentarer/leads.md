@@ -2,6 +2,17 @@
 
 Skrivs av `/kommentarer` (nyaste överst). Varje lead pekar på kommentarer i `kommentarer/logg/` — kundens egna ord är källan (`kalla=voc`). `/cs` läser raderna för sin produkts prefix och bockar av dem den använder: `- [x] … status: använd i batch #N`.
 
+## 2026-09-29
+
+- [ ] **Bäverbutiken · Takoverdrag** · invändning — Fukt/ventilation igen i SE och NO, och en norsk kund ger sin egen lösning: frigolitlådor under duken med öppna ändar för luft (2 likes). Kundens egen distans är ett konkret hook för OB-konceptet med distansprodukten. → OB: kundens frigolitlådor som hook, sedan distansprodukten när den finns
+  - Källa: voc · `kalla=voc` · belägg: 122134881411209535_1101966402765375, 122185855088859973_2363972047475037, 122186883104859973_1394453119551441, 122186552624859973_2063046820993354, 122185856630859973_4709424642622319, 122134881411209535_1628360318677671, 122134881411209535_1434654528596361 · status: väntar
+- [ ] **CaraShell · CaraShellRoof** · invändning — US: det som sticker upp på taket (AC, ventiler, takluckor, rör) och storlekar för fifth wheel/motorhome 34 till 40 ft. Tre likes på 'Never seen a camper without AC, vents and skylights'. → Bild/OB: en husbil med AC och takluckor under överdraget + storlekstabell i ft
+  - Källa: voc · `kalla=voc` · belägg: 122107043547473983_1712306849854704, 122115450333473983_1745412517589672, 122107044033473983_1099248992696428, 122107043547473983_2324369308386769, 122109041217473983_2038102590242256, 122115450333473983_2634508943717369, 122107043541473983_1811778489849582 · status: väntar
+- [ ] **Bäverbutiken · Taljset** · köpfråga — Tre frågar vad '30 delar' är när bara 6 knivar och 6 järn syns, en kallar det ful marknadsföring. Annonsen bör visa allt som ingår. → Bild: flatlay med alla delar numrerade
+  - Källa: voc · `kalla=voc` · belägg: 122187648548859973_3457702804393130, 122187648338859973_2703934150009414, 122187648338859973_1109305721597001 · status: väntar
+- [ ] **Bäverbutiken · Takoverdrag** · förtroende — Temu/Amazon/AliExpress-jämförelser på fem produkter samma natt (taköverdrag SE/NO, fiskespöhållare, bälteslip, golfkalender). Materialet och vad som ingår är enda svaret. → SP/CS: 'Samma som på Temu?' med materialet och remmarna i närbild
+  - Källa: voc · `kalla=voc` · belägg: 122187148058859973_1085107617595243, 122134881411209535_1558499092982877, 122183442260859973_1103031909331816, 122185866236859973_1331937835529765, ig_18099974807376589 · status: väntar
+
 ## 2026-09-28
 
 - [ ] **Bäverbutiken · Takoverdrag** · invändning — Fukt och mögel under överdraget är fortfarande den största invändningen: "Fungerar inte, men du får gratis mögelsporer och fuktskador", "Och under ligger det kondens hela vintern", "Inget bra med fukt mellan taket å överdraget=mögel". Sju kommentarer i dag i Sverige och Norge. Axel har bekräftat att kunderna har rätt och att en distansprodukt är på väg. → När distansprodukten finns: en OB-annons som visar distansen under överdraget och luften som rör sig, med kundens egen invändning som hook. Fram till dess ingen annons som lovar torrt tak.
