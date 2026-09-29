@@ -105,3 +105,20 @@ Rad 3–4 identiska (hälremmen håller kvar hela vägen ner · 489 kr halva pri
 **2026-09-28 — brief-runda INTE byggd:** `annonsbehov` gav `rundaAntal 1` (tak 0 + 1 namngiven plats `Inomhustofflor_SP_1_H4`). Platsen bygger på "en RIKTIG recension ordagrant" — men recensionerna är launchimport (rättelsen i dna.md 2026-09-25), så SP_1_H4 ströks redan i batch #2 och kan inte byggas utan obelagt citat. 0 briefer. Kampanjen RAKNA_BACKDAGAR på golvet 500 kr (ROAS 3d 1,32 mot 1,51, livstid 1,66, 0 back-dygn i rad räknade i dag), spendtjuv INGEN_TJUV. SP_1_H5/SP_1_H6 ligger som Draft i Indoor slippers creative hub.
 
 **2026-09-29 — brief-runda INTE byggd (samma skäl som 28/9):** `rundaAntal 1` = tak 0 + den namngivna platsen `Inomhustofflor_SP_1_H4` ("ny hook med en RIKTIG recension ordagrant"). Recensionerna är launchimport (rättelsen i dna.md 2026-09-25) — platsen kan inte byggas utan ett obelagt citat, så 0 briefer. Feedback-raden `Brief review 2026-09-25` läst (tre regler: engelska EDITOR PICKS, `AI content:` säger hur rösten gjordes, NEW FOOTAGE-block överst) — gäller nästa brief i hubben. Kampanjen RAKNA_BACKDAGAR på golvet 500 kr (ROAS 3d 1,25 mot 1,51, livstid 1,55, 2 back-dygn i rad, 3 kvar), spendtjuv INGEN_TJUV. SP_1_H5/SP_1_H6 ligger som Draft; FD_1_H1/FD_1_H2 (Draft) och FD_2_1 (To be Reviewed) är någon annans rader (fars dag?) — inte rondens.
+
+
+## Fars dag omgång 4 — extra BOF-batch (2026-09-29 kväll, Axels order samma kväll)
+
+Axel: "gör en till extra batch för fars dag för alla produkter och gärna dubbelt så mycket bildads och sedan normal kvantitet videos så att vi pushar extra mycket BOF fars dag annonser". Invändningen som batchen svarar på: **"vilken storlek, vilken färg?"** (svar ur sidan: storlek 40 till 47, khaki eller svart, plysch från häl till tå, hälrem). Förälder Inomhustofflor_SP_1_H2 (lärdom L-120250268524830291). Alla sju klarade spärren (regi 4/4, 0 fel), ligger som `Draft` i Indoor slippers creative hub. Loggkod `FARSDAG_BATCH_KLAR`. Batch-loggen för hela omgången: `docs/briefs/farsdag-2026/README-bof.md`.
+
+| Annons | Typ | Hook / rubrik | Notion |
+|---|---|---|---|
+| Inomhustofflor_FD_3_H1 | video 13 s, BOF-omklipp | Fars dag: storlek 40 till 47, khaki eller svart. | https://www.notion.so/3ea270ab908c810eb55af5111ddfe63c |
+| Inomhustofflor_FD_3_H2 | video 13 s, BOF-omklipp | 489 kr, ord. 978 kr. Plyschtofflor till fars dag. | https://www.notion.so/3ea270ab908c815483b8d152dbf56d7a |
+| Inomhustofflor_FD_3_H3 | video 13 s, BOF-omklipp | Beställ senast 19 oktober. Fars dag-tofflor vid vedstapeln. | https://www.notion.so/3ea270ab908c8197ad07f7d54604a8d2 |
+| Inomhustofflor_FD_4_1 | bild, BOF | Storlek 40 till 47, khaki eller svart. | https://www.notion.so/3ea270ab908c81b39c06f628feae4f85 |
+| Inomhustofflor_FD_4_2 | bild, BOF | 489 kr till fars dag. Ord. 978 kr. | https://www.notion.so/3ea270ab908c81ff818fcf8f5edc2c49 |
+| Inomhustofflor_FD_4_3 | bild, BOF | Beställ senast 19 oktober. Fars dag-tofflor. | https://www.notion.so/3ea270ab908c81f8b4c9f0802d0e2a3c |
+| Inomhustofflor_FD_4_4 | bild, BOF | Två färger, åtta storlekar, plysch hela vägen. | https://www.notion.so/3ea270ab908c81fab157c731eecb27ca |
+
+Mätning (ANALYSMETOD): ingen dom under 300 kr / 3 köp. H1 mot H2 mot H3 = vilken öppning (invändning, pris, sista dag) den produktmedvetna tittaren behöver; FD_4_1–4 mot varandra = budskapet i textrutan; hela batchen mot FD_1/FD_2 (presentvinkeln, kall publik). Etikett dag 7, lärdom, sedan dna.md.

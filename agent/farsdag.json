@@ -1,0 +1,34 @@
+{
+  "kommentar": "Fars dag 2026 — stående regel för alla batcher t.o.m. 2026-10-31. Axels order 2026-09-29: \"gör en till extra batch för fars dag för alla produkter och gärna dubbelt så mycket bildads och sedan normal kvantitet videos så att vi pushar extra mycket BOF fars dag annonser. Det verkar ge väldigt bra resultat. Speciellt för alla produkter som går så sjukt bra nu och ta detta in till accountance när du gör nya batcher fram till sista oktober. Efter det är det nog inte lämpligt att launcha mer fars dag ads.\" Läses av /rond-auto steg 4b vid varje brief-runda och förstabatch.",
+  "fars_dag": "2026-11-08",
+  "sista_bestallning": "2026-10-19",
+  "sista_bestallning_kalla": "klaviyo/brands/baverbutiken.json → kalender.fars_dag_sista_bestallning (fars dag − p90 20 dygn)",
+  "sista_launch": "2026-10-31",
+  "vinkelkod": "FD",
+  "bara_sverige": true,
+  "regel": {
+    "galler": "varje brief_runda och forsta_batch på en SE-produkt vars kampanj är ACTIVE, fram till och med sista_launch",
+    "bilder": "dubbelt så många fars dag-bilder som rundans normala bildtak (rundans tak är 2 statiska ⇒ 4 FD-bilder), BOF: invändningen, priset först, sista beställningsdagen, vad han får — samma foto, samma badge/prisband/bottenrad, bara budskapet skiljer",
+    "video": "normalt antal fars dag-videor (3, hookvarianter H1–H3 på ett omklipp av produktens bästa video), BOF: produktmedveten tittare, invändningen besvarad, erbjudandet och sista beställningsdagen på slutkortet",
+    "utover_rundan": "FD-brieferna är EXTRA — de räknas inte inom rundaAntal och begränsas inte av brieftak (Axel: \"en till extra batch\")",
+    "bildregeln_bara_med_ett_jobb": "gäller inte FD-bilderna, och BOF-villkoret 'minst en KPI_WINNER bland senaste BOF-etiketterna' gäller inte heller — ägarens skrivna order 2026-09-29 går före rond-auto 4b:s bildregel från 2026-09-20",
+    "funnel": "BOF skrivs i taggarna (awareness=product, funnel i Memo), aldrig i namnet — BOF är funnelposition, inte vinkelkod (docs/naming-convention.md); namnet bär vinkelkoden FD",
+    "efter_sista_bestallning": "från 2026-10-20 skrivs raden 'Beställ senast 19 oktober' INTE i nya FD-briefer (datumet har passerat) — slutkortet bär bara 'Fars dag 8 november' och priset. Sessionens beslut 2026-09-29, inte Axels: ändra här om han säger annat",
+    "efter_sista_launch": "från 2026-11-01 skrivs inga nya FD-briefer och inga FD-rader laddas upp; FD-annonser som redan kör rörs inte av den här regeln (ronden dömer dem som vanligt)",
+    "kopieringsregler": "docs/briefs/farsdag-2026/copy/GEMENSAMT.md + copy/BOF-GEMENSAMT.md; rean = produktsidans pris mot jämförpriset (Axel 2026-09-28); inga recensioner, ingen påhittad brådska, inget butiksnamn; Båtmotorskyddet: ⛔-blocket överst i products/batmotorskyddet-420d/dna.md gäller"
+  },
+  "namnraknare": {
+    "kommentar": "FD_<koncept>_<variant>. Upptagna konceptnummer per produkt — läs alltid av kontot och hubben innan du numrerar (namnkonventionen regel 8).",
+    "FD_1": "video, omklipp av bästa videon, presentvinkeln (H1/H2 2026-09-28, H3 'faktiskt använder' 2026-09-29)",
+    "FD_2": "bild, presentvinkeln (_1 2026-09-28, _2 rubrikvariant 2026-09-29)",
+    "FD_3": "video BOF, invändning/pris/sista dagen som hook (H1–H3, 2026-09-29 kväll)",
+    "FD_4": "bild BOF ×4 (_1 invändningen, _2 priset först, _3 sista beställningsdagen, _4 vad han får; 2026-09-29 kväll)",
+    "nasta_lediga": "FD_5"
+  },
+  "loggkod": "FARSDAG_BATCH_KLAR — en rad per produkt och batch i agent/budgetlogg.jsonl (bär aldrig ny_budget; nollställer inte CS-klockan)",
+  "batcher": [
+    { "datum": "2026-09-28", "omgang": "1–2", "annonser": "FD_1_H1, FD_1_H2, FD_2_1 × 11 produkter", "logg": "docs/briefs/farsdag-2026/README.md" },
+    { "datum": "2026-09-29", "omgang": "3", "annonser": "FD_2_2, FD_1_H3 × 11 produkter", "logg": "docs/briefs/farsdag-2026/README.md" },
+    { "datum": "2026-09-29", "omgang": "4 (extra BOF-batch, Axels order samma kväll)", "annonser": "FD_3_H1–H3 + FD_4_1–4 × 12 produkter (11 hubbar + ATV-Kapellet)", "logg": "docs/briefs/farsdag-2026/README-bof.md" }
+  ]
+}

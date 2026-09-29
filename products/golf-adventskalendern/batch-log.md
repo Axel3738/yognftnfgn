@@ -146,3 +146,20 @@ per annons. Notion: **Golf advent calendar creative hub**
 `lardom.mjs --skriv` (samma id — ersätt det preliminära blocket i
 `lardomar.md`, LARDOM-raden 2026-09-27 är märkt `preliminar: true`) och logga
 launchen med `/logga`.
+
+
+## Fars dag omgång 4 — extra BOF-batch (2026-09-29 kväll, Axels order samma kväll)
+
+Axel: "gör en till extra batch för fars dag för alla produkter och gärna dubbelt så mycket bildads och sedan normal kvantitet videos så att vi pushar extra mycket BOF fars dag annonser". Invändningen som batchen svarar på: **"vad finns i luckorna?"** (svar ur sidan: 24 luckor med golfbollar, peggar, bollmarkeringar, greenlagare med spegel, klubbrengöringsborste och golfhandduk). Förälder Golfkalender_PD_1 (lärdom L-120250349281960291). Alla sju klarade spärren (regi 4/4, 0 fel), ligger som `Draft` i Golf advent calendar creative hub. Loggkod `FARSDAG_BATCH_KLAR`. Batch-loggen för hela omgången: `docs/briefs/farsdag-2026/README-bof.md`.
+
+| Annons | Typ | Hook / rubrik | Notion |
+|---|---|---|---|
+| Golfkalender_FD_3_H1 | video 13 s, BOF-omklipp | Bakom luckorna: golfbollar, peggar, greenlagare och klubbborste. | https://www.notion.so/3ea270ab908c8116ac44d03f47479315 |
+| Golfkalender_FD_3_H2 | video 13 s, BOF-omklipp | 549 kr, ord. 719 kr. Golfkalender till fars dag. | https://www.notion.so/3ea270ab908c818698c8f76a2f9d56b8 |
+| Golfkalender_FD_3_H3 | video 13 s, BOF-omklipp | Beställ senast 19 oktober: golfkalendern till fars dag. | https://www.notion.so/3ea270ab908c811db60aff414dd91ff0 |
+| Golfkalender_FD_4_1 | bild, BOF | Luckorna är fyllda med golfbollar och peggar | https://www.notion.so/3ea270ab908c813597d5d0ab675496d3 |
+| Golfkalender_FD_4_2 | bild, BOF | 549 kr till fars dag. Ord. 719 kr. | https://www.notion.so/3ea270ab908c81f88fafe1b0e4a0deb0 |
+| Golfkalender_FD_4_3 | bild, BOF | Beställ senast 19 oktober, golfkalender till fars dag | https://www.notion.so/3ea270ab908c81c8b424ff4ff73d5b0c |
+| Golfkalender_FD_4_4 | bild, BOF | Golfhandduk, klubbrengöringsborste, greenlagare med spegel | https://www.notion.so/3ea270ab908c8174aec9d02928d5d4ed |
+
+Mätning (ANALYSMETOD): ingen dom under 300 kr / 3 köp. H1 mot H2 mot H3 = vilken öppning (invändning, pris, sista dag) den produktmedvetna tittaren behöver; FD_4_1–4 mot varandra = budskapet i textrutan; hela batchen mot FD_1/FD_2 (presentvinkeln, kall publik). Etikett dag 7, lärdom, sedan dna.md.

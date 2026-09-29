@@ -1,0 +1,287 @@
+{
+  "hook_H1": {
+    "rad": "Bakom luckorna: golfbollar, peggar, greenlagare och klubbborste.",
+    "engelska": "Behind the doors: golf balls, tees, green repair tool and club brush.",
+    "alternativ": [
+      "Golfbollar, peggar, greenlagare med spegel. Allt ligger bakom luckorna.",
+      "24 luckor, färdigfyllda med golfbollar, peggar och handduk."
+    ]
+  },
+  "hook_H2": {
+    "rad": "549 kr, ord. 719 kr. Golfkalender till fars dag.",
+    "engelska": "549 kr, reg. 719 kr. Golf calendar for Father's Day.",
+    "alternativ": [
+      "Golfkalender till fars dag: 549 kr, ord. 719 kr.",
+      "549 kr, ord. 719 kr. 24 luckor golfprylar."
+    ]
+  },
+  "hook_H3": {
+    "rad": "Beställ senast 19 oktober: golfkalendern till fars dag.",
+    "engelska": "Order by 19 October: the golf calendar for Father's Day.",
+    "alternativ": [
+      "Fars dag: beställ golfkalendern senast 19 oktober.",
+      "Senast 19 oktober beställer du golfkalendern till fars dag."
+    ]
+  },
+  "rader": [
+    {
+      "nr": 2,
+      "rad": "Alla 24 luckor är färdigfyllda. Inget att köpa på.",
+      "engelska": "All 24 doors are pre-filled. Nothing to buy and add."
+    },
+    {
+      "nr": 3,
+      "rad": "Golfbollar, peggar, bollmarkeringar, greenlagare med spegel, golfhandduk.",
+      "engelska": "Golf balls, tees, ball markers, green repair tool with mirror, golf towel."
+    },
+    {
+      "nr": 4,
+      "rad": "Fars dag-rea: 549 kr, ord. 719 kr. Beställ senast 19 oktober.",
+      "engelska": "Father's Day sale: 549 kr, reg. 719 kr. Order by 19 October."
+    }
+  ],
+  "text_pa_skarm": {
+    "1_H1": "Fars dag: bollar, peggar, handduk",
+    "1_H2": "549 kr till fars dag",
+    "1_H3": "Beställ senast 19 oktober",
+    "2": "24 luckor, färdigfyllda",
+    "3": "Bollar, peggar, greenlagare, handduk"
+  },
+  "bilder": {
+    "FD_4_1": {
+      "rubrik": "Luckorna är fyllda med golfbollar och peggar",
+      "underrad": "Peggar i plast och trä. Han öppnar en lucka om dagen.",
+      "engelska": {
+        "rubrik": "The doors are filled with golf balls and tees",
+        "underrad": "Tees in plastic and wood. He opens one door a day."
+      }
+    },
+    "FD_4_2": {
+      "rubrik": "549 kr till fars dag. Ord. 719 kr.",
+      "underrad": "24 luckor, färdigfyllda. Ett paket att slå in.",
+      "engelska": {
+        "rubrik": "549 kr for Father's Day. Regular 719 kr.",
+        "underrad": "24 doors, pre-filled. One package to wrap."
+      }
+    },
+    "FD_4_3": {
+      "rubrik": "Beställ senast 19 oktober, golfkalender till fars dag",
+      "underrad": "Ett paket att slå in, går att skicka direkt som present.",
+      "engelska": {
+        "rubrik": "Order by 19 October, golf calendar for Father's Day",
+        "underrad": "One package to wrap, can be shipped straight as a gift."
+      }
+    },
+    "FD_4_4": {
+      "rubrik": "Golfhandduk, klubbrengöringsborste, greenlagare med spegel",
+      "underrad": "Plus bollmarkeringar. 24 luckor, färdigfyllda, inget att fylla i.",
+      "engelska": {
+        "rubrik": "Golf towel, club cleaning brush, green repair tool with mirror",
+        "underrad": "Plus ball markers. 24 doors, pre-filled, nothing to fill in."
+      }
+    }
+  },
+  "copy_card": {
+    "primar": "Bakom luckorna: golfbollar, peggar, greenlagare och klubbborste. Alla 24 luckor är färdigfyllda. Fars dag-rea: 549 kr, ord. 719 kr. Beställ senast 19 oktober.",
+    "rubrik": "Golfprylar bakom 24 luckor",
+    "beskrivning": "Fars dag-rea: 549 kr, ord. 719 kr"
+  },
+  "tretest": [
+    {
+      "rad": "Bakom luckorna: golfbollar, peggar, greenlagare och klubbborste.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans listade innehåll/pris/datum; kontrollerad mot faktafilen."
+    },
+    {
+      "rad": "Golfbollar, peggar, greenlagare med spegel. Allt ligger bakom luckorna.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans listade innehåll/pris/datum; kontrollerad mot faktafilen."
+    },
+    {
+      "rad": "24 luckor, färdigfyllda med golfbollar, peggar och handduk.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans listade innehåll/pris/datum; kontrollerad mot faktafilen."
+    },
+    {
+      "rad": "549 kr, ord. 719 kr. Golfkalender till fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans listade innehåll/pris/datum; kontrollerad mot faktafilen."
+    },
+    {
+      "rad": "Golfkalender till fars dag: 549 kr, ord. 719 kr.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans listade innehåll/pris/datum; kontrollerad mot faktafilen."
+    },
+    {
+      "rad": "549 kr, ord. 719 kr. 24 luckor golfprylar.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans listade innehåll/pris/datum; kontrollerad mot faktafilen."
+    },
+    {
+      "rad": "Beställ senast 19 oktober: golfkalendern till fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans listade innehåll/pris/datum; kontrollerad mot faktafilen."
+    },
+    {
+      "rad": "Fars dag: beställ golfkalendern senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans listade innehåll/pris/datum; kontrollerad mot faktafilen."
+    },
+    {
+      "rad": "Senast 19 oktober beställer du golfkalendern till fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans listade innehåll/pris/datum; kontrollerad mot faktafilen."
+    },
+    {
+      "rad": "Alla 24 luckor är färdigfyllda. Inget att köpa på.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans listade innehåll/pris/datum; kontrollerad mot faktafilen."
+    },
+    {
+      "rad": "Golfbollar, peggar, bollmarkeringar, greenlagare med spegel, golfhandduk.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans listade innehåll/pris/datum; kontrollerad mot faktafilen."
+    },
+    {
+      "rad": "Fars dag-rea: 549 kr, ord. 719 kr. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans listade innehåll/pris/datum; kontrollerad mot faktafilen."
+    },
+    {
+      "rad": "Fars dag: bollar, peggar, handduk",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans listade innehåll/pris/datum; kontrollerad mot faktafilen."
+    },
+    {
+      "rad": "549 kr till fars dag",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans listade innehåll/pris/datum; kontrollerad mot faktafilen."
+    },
+    {
+      "rad": "Beställ senast 19 oktober",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans listade innehåll/pris/datum; kontrollerad mot faktafilen."
+    },
+    {
+      "rad": "24 luckor, färdigfyllda",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans listade innehåll/pris/datum; kontrollerad mot faktafilen."
+    },
+    {
+      "rad": "Bollar, peggar, greenlagare, handduk",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans listade innehåll/pris/datum; kontrollerad mot faktafilen."
+    },
+    {
+      "rad": "Luckorna är fyllda med golfbollar och peggar",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans listade innehåll/pris/datum; kontrollerad mot faktafilen."
+    },
+    {
+      "rad": "Peggar i plast och trä. Han öppnar en lucka om dagen.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans listade innehåll/pris/datum; kontrollerad mot faktafilen."
+    },
+    {
+      "rad": "549 kr till fars dag. Ord. 719 kr.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans listade innehåll/pris/datum; kontrollerad mot faktafilen."
+    },
+    {
+      "rad": "24 luckor, färdigfyllda. Ett paket att slå in.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans listade innehåll/pris/datum; kontrollerad mot faktafilen."
+    },
+    {
+      "rad": "Beställ senast 19 oktober, golfkalender till fars dag",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans listade innehåll/pris/datum; kontrollerad mot faktafilen."
+    },
+    {
+      "rad": "Ett paket att slå in, går att skicka direkt som present.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans listade innehåll/pris/datum; kontrollerad mot faktafilen."
+    },
+    {
+      "rad": "Golfhandduk, klubbrengöringsborste, greenlagare med spegel",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans listade innehåll/pris/datum; kontrollerad mot faktafilen."
+    },
+    {
+      "rad": "Plus bollmarkeringar. 24 luckor, färdigfyllda, inget att fylla i.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans listade innehåll/pris/datum; kontrollerad mot faktafilen."
+    },
+    {
+      "rad": "Bakom luckorna: golfbollar, peggar, greenlagare och klubbborste. Alla 24 luckor är färdigfyllda. Fars dag-rea: 549 kr, ord. 719 kr. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans listade innehåll/pris/datum; kontrollerad mot faktafilen."
+    },
+    {
+      "rad": "Golfprylar bakom 24 luckor",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans listade innehåll/pris/datum; kontrollerad mot faktafilen."
+    },
+    {
+      "rad": "Fars dag-rea: 549 kr, ord. 719 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans listade innehåll/pris/datum; kontrollerad mot faktafilen."
+    }
+  ]
+}

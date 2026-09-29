@@ -1,0 +1,287 @@
+{
+  "hook_H1": {
+    "rad": "Löven ligger på lacken. Mät din ATV först.",
+    "engelska": "The leaves are on the paint. Measure your ATV first.",
+    "alternativ": [
+      "Kapellet finns i en storlek. Mät din ATV först.",
+      "Löven ligger på lacken. Kapellet finns i 3XL."
+    ]
+  },
+  "hook_H2": {
+    "rad": "ATV-kapell till fars dag: 579 kr, ord. 759 kr.",
+    "engelska": "ATV cover for Father's Day: 579 kr, ord. 759 kr.",
+    "alternativ": [
+      "579 kr, ord. 759 kr: ATV-kapell till fars dag.",
+      "Fars dag-rea på ATV-kapellet: 579 kr, ord. 759 kr."
+    ]
+  },
+  "hook_H3": {
+    "rad": "Beställ senast 19 oktober: ATV-kapell till fars dag.",
+    "engelska": "Order by 19 October: ATV cover for Father's Day.",
+    "alternativ": [
+      "Fars dag-kapell till ATV:n: beställ senast 19 oktober.",
+      "Fars dag är 8 november. Beställ ATV-kapellet senast 19 oktober."
+    ]
+  },
+  "rader": [
+    {
+      "nr": 2,
+      "rad": "Läggs över hela ATV:n. Skräpet lägger sig på kapellet.",
+      "engelska": "Goes over the whole ATV. The debris lands on the cover."
+    },
+    {
+      "nr": 3,
+      "rad": "Helsvart. En storlek: 256 × 110 × 120 cm.",
+      "engelska": "All black. One size: 256 × 110 × 120 cm."
+    },
+    {
+      "nr": 4,
+      "rad": "Fars dag-rea: 579 kr, ord. 759 kr. Beställ senast 19 oktober.",
+      "engelska": "Father's Day sale: 579 kr, ord. 759 kr. Order by 19 October."
+    }
+  ],
+  "text_pa_skarm": {
+    "1_H1": "Fars dag: mät din ATV först",
+    "1_H2": "579 kr, ord. 759 kr",
+    "1_H3": "Beställ senast 19 oktober",
+    "2": "Skräpet lägger sig på kapellet",
+    "3": "256 × 110 × 120 cm"
+  },
+  "bilder": {
+    "FD_4_1": {
+      "rubrik": "En storlek. Mät din ATV först.",
+      "underrad": "3XL, 256 × 110 × 120 cm. Skräpet lägger sig på kapellet.",
+      "engelska": {
+        "rubrik": "One size. Measure your ATV first.",
+        "underrad": "3XL, 256 × 110 × 120 cm. The debris lands on the cover."
+      }
+    },
+    "FD_4_2": {
+      "rubrik": "579 kr till fars dag. Ord. 759 kr.",
+      "underrad": "Helsvart kapell som läggs över hela ATV:n.",
+      "engelska": {
+        "rubrik": "579 kr for Father's Day. Ord. 759 kr.",
+        "underrad": "All-black cover that goes over the whole ATV."
+      }
+    },
+    "FD_4_3": {
+      "rubrik": "Beställ senast 19 oktober. Kapell till fars dag.",
+      "underrad": "Ett kapell för ATV:n som står ute mellan turerna.",
+      "engelska": {
+        "rubrik": "Order by 19 October. A cover for Father's Day.",
+        "underrad": "A cover for the ATV that sits outside between rides."
+      }
+    },
+    "FD_4_4": {
+      "rubrik": "256 långt, 110 brett, 120 högt.",
+      "underrad": "Helsvart och diskret i garaget. Läggs över hela ATV:n.",
+      "engelska": {
+        "rubrik": "256 long, 110 wide, 120 high.",
+        "underrad": "All black and discreet in the garage. Goes over the whole ATV."
+      }
+    }
+  },
+  "copy_card": {
+    "primar": "Löven ligger på lacken. Mät din ATV först, kapellet finns i en storlek: 256 × 110 × 120 cm. Skräpet lägger sig på kapellet. Fars dag-rea: 579 kr, ord. 759 kr. Beställ senast 19 oktober.",
+    "rubrik": "Mät din ATV först",
+    "beskrivning": "Fars dag-rea: 579 kr, ord. 759 kr"
+  },
+  "tretest": [
+    {
+      "rad": "Löven ligger på lacken. Mät din ATV först.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret bild, sidans fakta/pris/datum."
+    },
+    {
+      "rad": "Kapellet finns i en storlek. Mät din ATV först.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret, sidans fakta, ingen konkurrent har just den här produkten."
+    },
+    {
+      "rad": "Löven ligger på lacken. Kapellet finns i 3XL.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret, sidans fakta, ingen konkurrent har just den här produkten."
+    },
+    {
+      "rad": "ATV-kapell till fars dag: 579 kr, ord. 759 kr.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret bild, sidans fakta/pris/datum."
+    },
+    {
+      "rad": "579 kr, ord. 759 kr: ATV-kapell till fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret, sidans fakta, ingen konkurrent har just den här produkten."
+    },
+    {
+      "rad": "Fars dag-rea på ATV-kapellet: 579 kr, ord. 759 kr.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret, sidans fakta, ingen konkurrent har just den här produkten."
+    },
+    {
+      "rad": "Beställ senast 19 oktober: ATV-kapell till fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret bild, sidans fakta/pris/datum."
+    },
+    {
+      "rad": "Fars dag-kapell till ATV:n: beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret, sidans fakta, ingen konkurrent har just den här produkten."
+    },
+    {
+      "rad": "Fars dag är 8 november. Beställ ATV-kapellet senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret, sidans fakta, ingen konkurrent har just den här produkten."
+    },
+    {
+      "rad": "Läggs över hela ATV:n. Skräpet lägger sig på kapellet.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Visas i bild, fakta ur sidan."
+    },
+    {
+      "rad": "Helsvart. En storlek: 256 × 110 × 120 cm.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Visas i bild, fakta ur sidan."
+    },
+    {
+      "rad": "Fars dag-rea: 579 kr, ord. 759 kr. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Visas i bild, fakta ur sidan."
+    },
+    {
+      "rad": "Fars dag: mät din ATV först",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kortversion av radens fakta."
+    },
+    {
+      "rad": "579 kr, ord. 759 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kortversion av radens fakta."
+    },
+    {
+      "rad": "Beställ senast 19 oktober",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kortversion av radens fakta."
+    },
+    {
+      "rad": "Skräpet lägger sig på kapellet",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kortversion av radens fakta."
+    },
+    {
+      "rad": "256 × 110 × 120 cm",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kortversion av radens fakta."
+    },
+    {
+      "rad": "En storlek. Mät din ATV först.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Sidans fakta eller pris."
+    },
+    {
+      "rad": "3XL, 256 × 110 × 120 cm. Skräpet lägger sig på kapellet.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Sidans fakta."
+    },
+    {
+      "rad": "579 kr till fars dag. Ord. 759 kr.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Sidans fakta eller pris."
+    },
+    {
+      "rad": "Helsvart kapell som läggs över hela ATV:n.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Sidans fakta."
+    },
+    {
+      "rad": "Beställ senast 19 oktober. Kapell till fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Sidans fakta eller pris."
+    },
+    {
+      "rad": "Ett kapell för ATV:n som står ute mellan turerna.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Sidans fakta."
+    },
+    {
+      "rad": "256 långt, 110 brett, 120 högt.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Sidans fakta eller pris."
+    },
+    {
+      "rad": "Helsvart och diskret i garaget. Läggs över hela ATV:n.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Sidans fakta."
+    },
+    {
+      "rad": "Löven ligger på lacken. Mät din ATV först, kapellet finns i en storlek: 256 × 110 × 120 cm. Skräpet lägger sig på kapellet. Fars dag-rea: 579 kr, ord. 759 kr. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Sidans fakta, pris och datum."
+    },
+    {
+      "rad": "Mät din ATV först",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Sidans instruktion."
+    },
+    {
+      "rad": "Fars dag-rea: 579 kr, ord. 759 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pris ur sidan."
+    }
+  ]
+}

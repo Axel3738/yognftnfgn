@@ -1,0 +1,287 @@
+{
+  "hook_H1": {
+    "rad": "Fars dag: 559 kr täcker vindrutan och båda sidorutorna.",
+    "engelska": "Father's Day: 559 kr covers the windscreen and both side windows.",
+    "alternativ": [
+      "Fars dag: 559 kr, utanpå vindrutan och sidorutorna.",
+      "Fars dag: 211 cm skydd för 559 kr."
+    ]
+  },
+  "hook_H2": {
+    "rad": "559 kr, ord. 932 kr. Husbilsskydd till fars dag.",
+    "engelska": "559 kr, ord. 932 kr. Motorhome cover for Father's Day.",
+    "alternativ": [
+      "Ord. 932 kr. Fars dag-pris 559 kr för husbilen.",
+      "559 kr mot 932 kr: husbilsskydd, fars dag."
+    ]
+  },
+  "hook_H3": {
+    "rad": "Beställ senast 19 oktober: skyddet hinner till fars dag.",
+    "engelska": "Order by 19 October: the cover makes it in time for Father's Day.",
+    "alternativ": [
+      "Fars dag 8 november: beställ senast 19 oktober.",
+      "Beställ senast 19 oktober: pappas husbil, fars dag."
+    ]
+  },
+  "rader": [
+    {
+      "nr": 2,
+      "rad": "Spänns utanpå glaset. Glaset hinner aldrig bli kallt inifrån.",
+      "engelska": "Fitted on the outside of the glass. The glass never gets cold from inside."
+    },
+    {
+      "nr": 3,
+      "rad": "Flikar i dörrkarmen. 211 cm bred, 90 cm sidflikar.",
+      "engelska": "Flaps in the door jamb. 211 cm wide, 90 cm side flaps."
+    },
+    {
+      "nr": 4,
+      "rad": "Fars dag-rea: 559 kr, ord. 932 kr. Beställ senast 19 oktober.",
+      "engelska": "Father's Day sale: 559 kr, ord. 932 kr. Order by 19 October."
+    }
+  ],
+  "text_pa_skarm": {
+    "1_H1": "Fars dag: 559 kr, tre rutor",
+    "1_H2": "559 kr, ord. 932 kr",
+    "1_H3": "Fars dag: beställ senast 19 oktober",
+    "2": "Utanpå glaset, aldrig kallt inifrån",
+    "3": "Flikar i dörrkarmen, 211 cm bred"
+  },
+  "bilder": {
+    "FD_4_1": {
+      "rubrik": "Tre rutor mörklagda för 559 kr",
+      "underrad": "Vindrutan och båda sidorutorna, fast i dörrkarmen. 211 × 171 cm.",
+      "engelska": {
+        "rubrik": "Three windows blacked out for 559 kr",
+        "underrad": "Windscreen and both side windows, fixed in the door jamb. 211 × 171 cm."
+      }
+    },
+    "FD_4_2": {
+      "rubrik": "559 kr till fars dag. Ord. 932 kr.",
+      "underrad": "Husbilsskydd för vindrutan och båda sidorutorna, 211 × 171 cm.",
+      "engelska": {
+        "rubrik": "559 kr for Father's Day. Ord. 932 kr.",
+        "underrad": "Motorhome cover for the windscreen and both side windows, 211 × 171 cm."
+      }
+    },
+    "FD_4_3": {
+      "rubrik": "Beställ senast 19 oktober, fars dag",
+      "underrad": "Mörkläggande husbilsskydd som ska hinna fram till fars dag.",
+      "engelska": {
+        "rubrik": "Order by 19 October, Father's Day",
+        "underrad": "Blackout motorhome cover that should arrive in time for Father's Day."
+      }
+    },
+    "FD_4_4": {
+      "rubrik": "211 cm bred, 90 cm sidflikar",
+      "underrad": "171 cm över mitten. Flikarna kläms i dörrkarmen och håller i blåst.",
+      "engelska": {
+        "rubrik": "211 cm wide, 90 cm side flaps",
+        "underrad": "171 cm across the middle. The flaps clamp in the door jamb and hold in wind."
+      }
+    }
+  },
+  "copy_card": {
+    "primar": "Fars dag: 559 kr täcker vindrutan och båda sidorutorna. Skyddet sitter utanpå glaset, fast i dörrkarmen. Fars dag-rea: 559 kr, ord. 932 kr. Beställ senast 19 oktober.",
+    "rubrik": "Husbilsskydd till fars dag",
+    "beskrivning": "Fars dag-rea: 559 kr, ord. 932 kr"
+  },
+  "tretest": [
+    {
+      "rad": "Fars dag: 559 kr täcker vindrutan och båda sidorutorna.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Tre rutor och en summa går att se i vidbilden; mått och pris kan kontrolleras mot sidan; ingen annan husbilsprodukt har just dessa rutor."
+    },
+    {
+      "rad": "Fars dag: 559 kr, utanpå vindrutan och sidorutorna.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret mått/plats, kontrollerbart mot sidan, bunden till just den här produkten."
+    },
+    {
+      "rad": "Fars dag: 211 cm skydd för 559 kr.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret mått/plats, kontrollerbart mot sidan, bunden till just den här produkten."
+    },
+    {
+      "rad": "559 kr, ord. 932 kr. Husbilsskydd till fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Två priser syns på skärmen; kan kontrolleras; jämförpriset är butikens eget."
+    },
+    {
+      "rad": "Ord. 932 kr. Fars dag-pris 559 kr för husbilen.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Två priser, kontrollerbara mot sidan."
+    },
+    {
+      "rad": "559 kr mot 932 kr: husbilsskydd, fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Två priser, kontrollerbara mot sidan."
+    },
+    {
+      "rad": "Beställ senast 19 oktober: skyddet hinner till fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Datumet är verkligt och produkten nämns; kontrollerbart; bundet till fars dag och husbilsskyddet."
+    },
+    {
+      "rad": "Fars dag 8 november: beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Verkligt datum kopplat till fars dag och husbil."
+    },
+    {
+      "rad": "Beställ senast 19 oktober: pappas husbil, fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Verkligt datum kopplat till fars dag och husbil."
+    },
+    {
+      "rad": "Spänns utanpå glaset. Glaset hinner aldrig bli kallt inifrån.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Man ser handen släta ut skyddet utanpå rutan; sidans egen mekanism; specifikt för utvändig montering."
+    },
+    {
+      "rad": "Flikar i dörrkarmen. 211 cm bred, 90 cm sidflikar.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Händer trycker flikarna, kvinnan lägger flik över sidorutan; mått ur sidan."
+    },
+    {
+      "rad": "Fars dag-rea: 559 kr, ord. 932 kr. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Prisband och datum står i bild; exakta siffror ur sidan."
+    },
+    {
+      "rad": "Fars dag: 559 kr, tre rutor",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kortversion av videoraden, samma fakta."
+    },
+    {
+      "rad": "559 kr, ord. 932 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kortversion av videoraden, samma fakta."
+    },
+    {
+      "rad": "Fars dag: beställ senast 19 oktober",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kortversion av videoraden, samma fakta."
+    },
+    {
+      "rad": "Utanpå glaset, aldrig kallt inifrån",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kortversion av videoraden, samma fakta."
+    },
+    {
+      "rad": "Flikar i dörrkarmen, 211 cm bred",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kortversion av videoraden, samma fakta."
+    },
+    {
+      "rad": "Tre rutor mörklagda för 559 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Rubrik ur sidans fakta/pris/datum, syns på produktfotot."
+    },
+    {
+      "rad": "Vindrutan och båda sidorutorna, fast i dörrkarmen. 211 × 171 cm.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Mått och fästsätt ur sidan, syns på fotot."
+    },
+    {
+      "rad": "559 kr till fars dag. Ord. 932 kr.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Rubrik ur sidans fakta/pris/datum, syns på produktfotot."
+    },
+    {
+      "rad": "Husbilsskydd för vindrutan och båda sidorutorna, 211 × 171 cm.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Mått och fästsätt ur sidan, syns på fotot."
+    },
+    {
+      "rad": "Beställ senast 19 oktober, fars dag",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Rubrik ur sidans fakta/pris/datum, syns på produktfotot."
+    },
+    {
+      "rad": "Mörkläggande husbilsskydd som ska hinna fram till fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Mått och fästsätt ur sidan, syns på fotot."
+    },
+    {
+      "rad": "211 cm bred, 90 cm sidflikar",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Rubrik ur sidans fakta/pris/datum, syns på produktfotot."
+    },
+    {
+      "rad": "171 cm över mitten. Flikarna kläms i dörrkarmen och håller i blåst.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Mått och fästsätt ur sidan, syns på fotot."
+    },
+    {
+      "rad": "Fars dag: 559 kr täcker vindrutan och båda sidorutorna. Skyddet sitter utanpå glaset, fast i dörrkarmen. Fars dag-rea: 559 kr, ord. 932 kr. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Sidans fakta i tre påståenden plus erbjudandet."
+    },
+    {
+      "rad": "Husbilsskydd till fars dag",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Produkt och tillfälle, konkret."
+    },
+    {
+      "rad": "Fars dag-rea: 559 kr, ord. 932 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Exakt erbjudanderad med riktiga priser."
+    }
+  ]
+}

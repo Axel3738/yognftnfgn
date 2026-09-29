@@ -1,0 +1,234 @@
+{
+  "hook_H1": {
+    "rad": "Fars dag-presenten till pappan som vattnar med regntanken.",
+    "engelska": "The Father's Day gift for the dad who waters with the rain tank.",
+    "alternativ": [
+      "Fars dag-present: en tank utan alger, äntligen.",
+      "Till pappan med regnvattentanken: en fars dag-present."
+    ]
+  },
+  "hook_H2": {
+    "rad": "Fars dag: det gröna överdraget som stoppar algerna.",
+    "engelska": "Father's Day: the green cover that stops the algae.",
+    "alternativ": [
+      "Grönt överdrag, fars dag-present, inga fler alger.",
+      "Fars dag: tanken som slutar grönska."
+    ]
+  },
+  "rader": [
+    {
+      "nr": 2,
+      "rad": "Så här skiljer sig vattnet med och utan överdrag.",
+      "engelska": "This is the difference between the water with and without the cover."
+    },
+    {
+      "nr": 3,
+      "rad": "Dragkedjan stänger tanken, ingen kamp med presenning.",
+      "engelska": "The zipper closes the tank, no fighting with a tarp."
+    },
+    {
+      "nr": 4,
+      "rad": "Lyft fliken, det röda locket är åtkomligt.",
+      "engelska": "Lift the flap, the red lid is accessible."
+    },
+    {
+      "nr": 5,
+      "rad": "489 kr. Fars dag-rea, beställ senast 19 oktober.",
+      "engelska": "489 kr. Father's Day sale, order by October 19."
+    }
+  ],
+  "text_pa_skarm": {
+    "1_H1": "Fars dag-presenten till trädgårdspappan.",
+    "1_H2": "Fars dag: överdraget som stoppar algerna.",
+    "2": "Vattnet med och utan överdrag.",
+    "3": "Dragkedja i stället för presenning.",
+    "4": "Lyft fliken, röda locket syns.",
+    "5": "489 kr. Beställ senast 19 oktober."
+  },
+  "bild": {
+    "rubrik": "Fars dag-presenten som stoppar algerna i tanken",
+    "underrad": "Grönt 210D-oxfordtyg stänger ute ljuset så vattnet hålls klart och tanken hel.",
+    "marke": "Fars dag-rea",
+    "prisband": "489 kr, ord. 636 kr",
+    "sista_raden": "Beställ senast 19 oktober",
+    "engelska": {
+      "rubrik": "The Father's Day gift that stops the algae in the tank",
+      "underrad": "Green 210D oxford fabric blocks the light so the water stays clear and the tank stays whole."
+    }
+  },
+  "copy_card": {
+    "primar": "Fars dag-presenten till pappan som vattnar med regntanken. Grönt 210D-oxfordtyg stänger ute ljuset så vattnet hålls klart, och tar UV-strålningen i stället för plasten. Dragkedja i stället för presenning, och en öppning upptill så locket alltid går att nå. Fars dag-rea: 489 kr, ord. 636 kr. Beställ senast 19 oktober.",
+    "rubrik": "Tanköverdraget som stoppar algerna",
+    "beskrivning": "Fars dag-rea: 489 kr, ord. 636 kr"
+  },
+  "tretest": [
+    {
+      "rad": "Fars dag-presenten till pappan som vattnar med regntanken.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Matchar H1-bilden (pappan vid tanken) och GEMENSAMT:s persona-krav (vattnar med regntanken)."
+    },
+    {
+      "rad": "Fars dag-present: en tank utan alger, äntligen.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Alternativ till H1, mer resultatfokuserad."
+    },
+    {
+      "rad": "Till pappan med regnvattentanken: en fars dag-present.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Alternativ till H1, samma persona, kortare uppbyggnad."
+    },
+    {
+      "rad": "Fars dag: det gröna överdraget som stoppar algerna.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Matchar H2-bilden (grön tank i trädgården); mekanismen (blockerar ljus) är produktspecifik."
+    },
+    {
+      "rad": "Grönt överdrag, fars dag-present, inga fler alger.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Alternativ till H2, telegramstil."
+    },
+    {
+      "rad": "Fars dag: tanken som slutar grönska.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Alternativ till H2, 'grönska' som konkret metafor för alger."
+    },
+    {
+      "rad": "Så här skiljer sig vattnet med och utan överdrag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Samma bevisade jämförelse som föräldraannonsen (132 köp, CPA 256 kr) visar i bild."
+    },
+    {
+      "rad": "Dragkedjan stänger tanken, ingen kamp med presenning.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Grundat ordagrant i produktsidans 'ingen kamp med presenning och gummiband'."
+    },
+    {
+      "rad": "Lyft fliken, det röda locket är åtkomligt.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Omskriven 2026-09-28: matchar bilden (hand lyfter fliken, röda locket syns), låter som talspråk, grundat i produktsidans 'åtkomligt ... utan att ta av överdraget'."
+    },
+    {
+      "rad": "489 kr. Fars dag-rea, beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Enda tillåtna brådskan (regel 6); pris och datum gäller bara den här produkten."
+    },
+    {
+      "rad": "Fars dag-presenten till trädgårdspappan.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kortversion av hook H1 för skärmtext."
+    },
+    {
+      "rad": "Fars dag: överdraget som stoppar algerna.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kortversion av hook H2 för skärmtext."
+    },
+    {
+      "rad": "Vattnet med och utan överdrag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kortversion av rad 2 för skärmtext."
+    },
+    {
+      "rad": "Dragkedja i stället för presenning.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kortversion av rad 3 för skärmtext."
+    },
+    {
+      "rad": "Lyft fliken, röda locket syns.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kortversion av den omskrivna rad 4."
+    },
+    {
+      "rad": "489 kr. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kortversion av erbjudandet för skärmtext."
+    },
+    {
+      "rad": "Fars dag-presenten som stoppar algerna i tanken",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Bildannonsens rubrik, samma vinkel som videon."
+    },
+    {
+      "rad": "Grönt 210D-oxfordtyg stänger ute ljuset så vattnet hålls klart och tanken hel.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Bildannonsens underrad, ordagrant grundad i produktsidans material och mekanism."
+    },
+    {
+      "rad": "Fars dag-rea",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": true,
+      "kommentar": "Fast erbjudandeetikett enligt GEMENSAMT regel 11, ingen fristående marknadsföringsclaim — undantagen från kravet på ❌ i sista kolumnen."
+    },
+    {
+      "rad": "489 kr, ord. 636 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": true,
+      "kommentar": "Rent prisband, samma undantag som ovan."
+    },
+    {
+      "rad": "Beställ senast 19 oktober",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": true,
+      "kommentar": "Den enda tillåtna brådskan (regel 6), exakt formulering enligt GEMENSAMT."
+    },
+    {
+      "rad": "Fars dag-presenten till pappan som vattnar med regntanken. Grönt 210D-oxfordtyg stänger ute ljuset så vattnet hålls klart, och tar UV-strålningen i stället för plasten. Dragkedja i stället för presenning, och en öppning upptill så locket alltid går att nå. Fars dag-rea: 489 kr, ord. 636 kr. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Copy card, hela stycket: börjar med hook H1, grundade produktfakta, avslutas med det obligatoriska erbjudandestycket."
+    },
+    {
+      "rad": "Tanköverdraget som stoppar algerna",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Copy card-rubrik, mekanism-specifik."
+    },
+    {
+      "rad": "Fars dag-rea: 489 kr, ord. 636 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": true,
+      "kommentar": "Copy card-beskrivning, samma fasta prisformat och undantag som badge/prisband."
+    }
+  ]
+}

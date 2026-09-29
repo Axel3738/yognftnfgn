@@ -105,6 +105,15 @@ Axel bad om:
    raketspår), och förlust kapar aldrig: två förlustmorgnar i rad ger −20 %,
    en ensam ger domen `HOGZON_AVVAKTA` och ingen ändring.
 
+## Fars dag-regeln (t.o.m. 2026-10-31)
+
+`agent/farsdag.json` bär Axels order 2026-09-29: varje brief-runda och
+förstabatch får ett extra fars dag-block — dubbelt så många FD-bilder som
+rundans bildtak (4) och normalt antal FD-videor (3), BOF, bara Sverige,
+utanför `rundaAntal`/`brieftak`. Sista beställningsdag 19 oktober står i
+annonserna t.o.m. den dagen; från 1 november skrivs inga nya FD-briefer.
+Loggkod `FARSDAG_BATCH_KLAR`. Regeln i `/rond-auto` steg 4b.
+
 ## Spärrarna
 
 - **Bara ett konto.** Ronden vägrar köra mot annat än MagiBorsten

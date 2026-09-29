@@ -121,3 +121,20 @@ Grönt läge (kampanjen LAT_VARA, 8 559 kr / 3 d, ROAS 1,89): `Sotarset_PD_1_H1`
 **2026-09-28 — vidarebygg VÄNTAR:** `annonsbehov` säger `vidarebygg` på Sotarset_PD_1_H3 (2 av 3 iterationer, deadline 2026-10-10) men brieftaket är 0 — 0 etiketterade annonser utan lärdom sedan batchen 2026-09-26 och de namngivna platserna (PD_1_H6, PD_7_H1, PD_8_H1, PD_1_H7, PD_8_H2) är redan utförda (i hubben: PD_1_H6 och PD_1_H7 Draft). Inga nya briefer i dag. Kampanjen LAT_VARA 3 050 kr/dag, ROAS 3d 1,85 (13,2 % vinst). **Norge:** Feiesett NO fick i dag två BREAKTHROUGH-etiketter — Sotarset_NO_PD_1_H2 (48 % av spenden, 31 köp, ROAS 3,80) och NO_PD_1_H3 (37 %, 22 köp, 3,21) — lärdomarna i `lardomar.md` (12 NO-rader, Feiesett NO delar minne med SE sedan i dag); vidarebyggena byggs på SE och översätts via `/translate-no`.
 
 **2026-09-29 — vidarebygg INTE byggt:** `annonsbehov` gav `vidarebygg` för Sotarset_PD_1_H3 (2 av 3 iterationer, deadline 2026-10-10) men brieftak 0 — inga nya etiketter på Sotarsetet i dag (nästa annonser fyller sju dygn senare i veckan), och lärdomen bakom PD_1_H3 namnger inga öppna platser (PD_1_H6/PD_7_H1/PD_8_H1/PD_1_H7/PD_8_H2 är redan briefade). Kampanjen LAT_VARA 3 050 kr/dag (22,6 % vinst), spendtjuv INGEN_TJUV.
+
+
+## Fars dag omgång 4 — extra BOF-batch (2026-09-29 kväll, Axels order samma kväll)
+
+Axel: "gör en till extra batch för fars dag för alla produkter och gärna dubbelt så mycket bildads och sedan normal kvantitet videos så att vi pushar extra mycket BOF fars dag annonser". Invändningen som batchen svarar på: **"kan jag verkligen rensa själv?"** (svar ur sidan: nio böjliga stänger som skruvas ihop till 3,69 m, borsten 100 mm, drivs med borrmaskinen; når bakom kaminen). Förälder Sotarset_PD_1_H2 (lärdom L-120250284711040291). Alla sju klarade spärren (regi 4/4, 0 fel), ligger som `Draft` i Chimney sweep set creative hub. Loggkod `FARSDAG_BATCH_KLAR`. Batch-loggen för hela omgången: `docs/briefs/farsdag-2026/README-bof.md`.
+
+| Annons | Typ | Hook / rubrik | Notion |
+|---|---|---|---|
+| Sotarset_FD_3_H1 | video 13 s, BOF-omklipp | Rensa själv mellan sotarens besök. Fars dag-present. | https://www.notion.so/3ea270ab908c81f4bb28f0563825a483 |
+| Sotarset_FD_3_H2 | video 13 s, BOF-omklipp | 459 kr, ord. 599 kr: sotarset till fars dag. | https://www.notion.so/3ea270ab908c81429f3accf1621d0cd8 |
+| Sotarset_FD_3_H3 | video 13 s, BOF-omklipp | Beställ senast 19 oktober: sotarset till fars dag. | https://www.notion.so/3ea270ab908c8117ae28d1258b43a550 |
+| Sotarset_FD_4_1 | bild, BOF | Rensa själv mellan sotarens besök | https://www.notion.so/3ea270ab908c816a8f98d759ca607648 |
+| Sotarset_FD_4_2 | bild, BOF | 459 kr till fars dag. Ord. 599 kr. | https://www.notion.so/3ea270ab908c818cbfc0e6e593b37499 |
+| Sotarset_FD_4_3 | bild, BOF | Beställ senast 19 oktober: sotarset till fars dag. | https://www.notion.so/3ea270ab908c81edbdfcc4825c099305 |
+| Sotarset_FD_4_4 | bild, BOF | 9 stänger à 41 cm. 3,69 meter. | https://www.notion.so/3ea270ab908c8188ab62ec376d700c53 |
+
+Mätning (ANALYSMETOD): ingen dom under 300 kr / 3 köp. H1 mot H2 mot H3 = vilken öppning (invändning, pris, sista dag) den produktmedvetna tittaren behöver; FD_4_1–4 mot varandra = budskapet i textrutan; hela batchen mot FD_1/FD_2 (presentvinkeln, kall publik). Etikett dag 7, lärdom, sedan dna.md.

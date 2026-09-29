@@ -1,0 +1,288 @@
+{
+  "hook_H1": {
+    "rad": "Mät husvagnen. Nio längder, 5,5 till 13,5 meter.",
+    "engelska": "Measure the caravan. Nine lengths, 5.5 to 13.5 metres.",
+    "alternativ": [
+      "Mät vagnen. Ta storleken som är minst lika lång.",
+      "Nio längder. Vagnen mäts från front till bakkant."
+    ]
+  },
+  "hook_H2": {
+    "rad": "Taköverdrag: från 1 129 kr, ord. 1 469 kr.",
+    "engelska": "Roof cover: from 1,129 SEK, was 1,469 SEK.",
+    "alternativ": [
+      "Husvagnstak från 1 129 kr, ord. 1 469 kr.",
+      "Taket täckt från 1 129 kr, ord. 1 469 kr."
+    ]
+  },
+  "hook_H3": {
+    "rad": "Beställ senast 19 oktober. Fars dag-present: 210D-väv på taket.",
+    "engelska": "Order by 19 October. Father's Day gift: 210D fabric on the roof.",
+    "alternativ": [
+      "Beställ senast 19 oktober. Till fars dag: taköverdrag.",
+      "Beställ senast 19 oktober. Husvagnstaket till fars dag."
+    ]
+  },
+  "rader": [
+    {
+      "nr": 2,
+      "rad": "Remmar på alla fyra sidor. Ställ in i spännet.",
+      "engelska": "Straps on all four sides. Adjust in the buckle."
+    },
+    {
+      "nr": 3,
+      "rad": "Vattnet rinner av. Alla nio är 3 meter breda.",
+      "engelska": "The water runs off. All nine are 3 metres wide."
+    },
+    {
+      "nr": 4,
+      "rad": "Fars dag-rea: från 1 129 kr, ord. 1 469 kr.",
+      "engelska": "Father's Day sale: from 1,129 SEK, was 1,469 SEK."
+    }
+  ],
+  "text_pa_skarm": {
+    "1_H1": "Fars dag: nio längder",
+    "1_H2": "Fars dag-rea: från 1 129 kr",
+    "1_H3": "Beställ senast 19 oktober",
+    "2": "Remmar på alla fyra sidor",
+    "3": "Alla nio är 3 meter breda",
+    "4": "Beställ senast 19 oktober"
+  },
+  "bilder": {
+    "FD_4_1": {
+      "rubrik": "Mät vagnen. Ta storleken minst lika lång.",
+      "underrad": "Nio längder, 5,5 till 13,5 meter. Alla 3 meter breda.",
+      "engelska": {
+        "rubrik": "Measure the caravan. Take the size at least as long.",
+        "underrad": "Nine lengths, 5.5 to 13.5 metres. All 3 metres wide."
+      }
+    },
+    "FD_4_2": {
+      "rubrik": "Från 1 129 kr. Ord. 1 469 kr.",
+      "underrad": "Fars dag-rea: taket täckt, dörr och fönster fria.",
+      "engelska": {
+        "rubrik": "From 1,129 SEK. Was 1,469 SEK.",
+        "underrad": "Father's Day sale: roof covered, door and windows free."
+      }
+    },
+    "FD_4_3": {
+      "rubrik": "Beställ senast 19 oktober: taköverdrag till fars dag.",
+      "underrad": "Bara taket täcks, så han får på det själv.",
+      "engelska": {
+        "rubrik": "Order by 19 October: roof cover for Father's Day.",
+        "underrad": "Only the roof is covered, so he can fit it himself."
+      }
+    },
+    "FD_4_4": {
+      "rubrik": "Remmar på alla fyra sidor. Spänne, krok.",
+      "underrad": "Kroka under karossens nederkant, dra åt. Bara taket, en person.",
+      "engelska": {
+        "rubrik": "Straps on all four sides. Buckle, hook.",
+        "underrad": "Hook under the body's lower edge, tighten. Roof only, one person."
+      }
+    }
+  },
+  "copy_card": {
+    "primar": "Mät husvagnen: nio längder, 5,5 till 13,5 meter. Remmar på alla fyra sidor. Fars dag-rea: Från 1 129 kr, ord. 1 469 kr. Beställ senast 19 oktober.",
+    "rubrik": "Taköverdrag i nio längder",
+    "beskrivning": "Fars dag-rea: Från 1 129 kr, ord. 1 469 kr"
+  },
+  "tretest": [
+    {
+      "rad": "Mät husvagnen. Nio längder, 5,5 till 13,5 meter.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret, stämmer mot sidan, bara den här produkten"
+    },
+    {
+      "rad": "Mät vagnen. Ta storleken som är minst lika lång.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Sidans fakta, går att kontrollera"
+    },
+    {
+      "rad": "Nio längder. Vagnen mäts från front till bakkant.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Sidans fakta, går att kontrollera"
+    },
+    {
+      "rad": "Taköverdrag: från 1 129 kr, ord. 1 469 kr.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret, stämmer mot sidan, bara den här produkten"
+    },
+    {
+      "rad": "Husvagnstak från 1 129 kr, ord. 1 469 kr.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Sidans fakta, går att kontrollera"
+    },
+    {
+      "rad": "Taket täckt från 1 129 kr, ord. 1 469 kr.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Sidans fakta, går att kontrollera"
+    },
+    {
+      "rad": "Beställ senast 19 oktober. Fars dag-present: 210D-väv på taket.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret, stämmer mot sidan, bara den här produkten"
+    },
+    {
+      "rad": "Beställ senast 19 oktober. Till fars dag: taköverdrag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Sidans fakta, går att kontrollera"
+    },
+    {
+      "rad": "Beställ senast 19 oktober. Husvagnstaket till fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Sidans fakta, går att kontrollera"
+    },
+    {
+      "rad": "Remmar på alla fyra sidor. Ställ in i spännet.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Bilden visar det raden säger, sidans fakta"
+    },
+    {
+      "rad": "Vattnet rinner av. Alla nio är 3 meter breda.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Bilden visar det raden säger, sidans fakta"
+    },
+    {
+      "rad": "Fars dag-rea: från 1 129 kr, ord. 1 469 kr.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Bilden visar det raden säger, sidans fakta"
+    },
+    {
+      "rad": "Fars dag: nio längder",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kort skärmversion av raden"
+    },
+    {
+      "rad": "Fars dag-rea: från 1 129 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kort skärmversion av raden"
+    },
+    {
+      "rad": "Beställ senast 19 oktober",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kort skärmversion av raden"
+    },
+    {
+      "rad": "Remmar på alla fyra sidor",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kort skärmversion av raden"
+    },
+    {
+      "rad": "Alla nio är 3 meter breda",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kort skärmversion av raden"
+    },
+    {
+      "rad": "Mät vagnen. Ta storleken minst lika lång.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret fakta ur sidan"
+    },
+    {
+      "rad": "Nio längder, 5,5 till 13,5 meter. Alla 3 meter breda.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret fakta ur sidan"
+    },
+    {
+      "rad": "Från 1 129 kr. Ord. 1 469 kr.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret fakta ur sidan"
+    },
+    {
+      "rad": "Fars dag-rea: taket täckt, dörr och fönster fria.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret fakta ur sidan"
+    },
+    {
+      "rad": "Beställ senast 19 oktober: taköverdrag till fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret fakta ur sidan"
+    },
+    {
+      "rad": "Bara taket täcks, så han får på det själv.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret fakta ur sidan"
+    },
+    {
+      "rad": "Remmar på alla fyra sidor. Spänne, krok.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret fakta ur sidan"
+    },
+    {
+      "rad": "Kroka under karossens nederkant, dra åt. Bara taket, en person.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret fakta ur sidan"
+    },
+    {
+      "rad": "Taköverdrag i nio längder",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Produkt och fakta"
+    },
+    {
+      "rad": "Mät husvagnen: nio längder, 5,5 till 13,5 meter. Remmar på alla fyra sidor. Fars dag-rea: Från 1 129 kr, ord. 1 469 kr. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Sidans fakta i följd"
+    },
+    {
+      "rad": "Fars dag-rea: Från 1 129 kr, ord. 1 469 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pris enligt sidan"
+    }
+  ]
+}

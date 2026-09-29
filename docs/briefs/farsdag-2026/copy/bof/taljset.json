@@ -1,0 +1,273 @@
+{
+  "hook_H1": {
+    "rad": "Fars dag: knivar, järn, strop, handskar. Allt i väskan.",
+    "engelska": "Father's Day: knives, gouges, strop, gloves. All in one case.",
+    "alternativ": [
+      "Fars dag: skärskyddade handskar ingår i täljsetet.",
+      "Han får skärskyddade handskar med väskan. Fars dag."
+    ]
+  },
+  "hook_H2": {
+    "rad": "Täljset 869 kr, ord. 1 139 kr. Fars dag.",
+    "engelska": "Whittling set 869 kr, ord. 1 139 kr. Father's Day.",
+    "alternativ": [
+      "30 delar för 869 kr, ord. 1 139 kr.",
+      "Fars dag-rea: 869 kr, ord. 1 139 kr."
+    ]
+  },
+  "hook_H3": {
+    "rad": "Beställ senast 19 oktober: täljset till fars dag.",
+    "engelska": "Order by 19 October: the whittling set for Father's Day.",
+    "alternativ": [
+      "Beställ senast 19 oktober: väskan hinner till fars dag.",
+      "Beställ senast 19 oktober, så hinner täljsetet fram."
+    ]
+  },
+  "rader": [
+    {
+      "nr": 2,
+      "rad": "Handskarna skyddar när kniven slinter.",
+      "engelska": "The gloves protect you when the knife slips."
+    },
+    {
+      "nr": 3,
+      "rad": "Ett av 6 järn för olika snitt.",
+      "engelska": "One of 6 gouges for different cuts."
+    },
+    {
+      "nr": 4,
+      "rad": "Fars dag-rea: 869 kr, ord. 1 139 kr. Beställ senast 19 oktober.",
+      "engelska": "Father's Day sale: 869 kr, was 1 139 kr. Order by 19 October."
+    }
+  ],
+  "text_pa_skarm": {
+    "1_H1": "Fars dag. Handskarna ingår i väskan.",
+    "1_H2": "Täljset 869 kr, ord. 1 139 kr",
+    "1_H3": "Fars dag: beställ senast 19 oktober",
+    "2": "Handskarna skyddar när kniven slinter.",
+    "3": "Ett av 6 järn för olika snitt."
+  },
+  "bilder": {
+    "FD_4_1": {
+      "rubrik": "Skärskyddade handskar ingår i väskan",
+      "underrad": "Handskarna skyddar när kniven slinter. Vassa verktyg, använd handskarna.",
+      "engelska": {
+        "rubrik": "Cut-resistant gloves come in the case",
+        "underrad": "The gloves protect you when the knife slips. Sharp tools, use the gloves."
+      }
+    },
+    "FD_4_2": {
+      "rubrik": "869 kr. Ord. 1 139 kr. Fars dag.",
+      "underrad": "6 knivar, 6 järn, strop och handskar i en väska",
+      "engelska": {
+        "rubrik": "869 kr. Was 1 139 kr. Father's Day.",
+        "underrad": "6 knives, 6 gouges, strop and gloves in one case"
+      }
+    },
+    "FD_4_3": {
+      "rubrik": "Beställ senast 19 oktober, täljset till fars dag",
+      "underrad": "Väskan med dragkedja hinner fram till fars dag.",
+      "engelska": {
+        "rubrik": "Order by 19 October, the whittling set for Father's Day",
+        "underrad": "The zip case arrives in time for Father's Day."
+      }
+    },
+    "FD_4_4": {
+      "rubrik": "6 knivar och 6 järn för olika snitt",
+      "underrad": "Läderstrop, polermedel, träbit att öva på och handskar.",
+      "engelska": {
+        "rubrik": "6 knives and 6 gouges for different cuts",
+        "underrad": "Leather strop, polishing compound, a wood block to practise on and gloves."
+      }
+    }
+  },
+  "copy_card": {
+    "primar": "Fars dag: knivar, järn, strop och handskar i en väska. Handskarna skyddar när kniven slinter. Fars dag-rea: 869 kr, ord. 1 139 kr. Beställ senast 19 oktober.",
+    "rubrik": "Täljset med skärskyddade handskar",
+    "beskrivning": "Fars dag-rea: 869 kr, ord. 1 139 kr"
+  },
+  "tretest": [
+    {
+      "rad": "Fars dag: knivar, järn, strop, handskar. Allt i väskan.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Hooken visar det bilden visar och bygger på sidans fakta."
+    },
+    {
+      "rad": "Fars dag: skärskyddade handskar ingår i täljsetet.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Alternativ, bara sidans fakta och tillåtna siffror."
+    },
+    {
+      "rad": "Han får skärskyddade handskar med väskan. Fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Alternativ, bara sidans fakta och tillåtna siffror."
+    },
+    {
+      "rad": "Täljset 869 kr, ord. 1 139 kr. Fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Hooken visar det bilden visar och bygger på sidans fakta."
+    },
+    {
+      "rad": "30 delar för 869 kr, ord. 1 139 kr.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Alternativ, bara sidans fakta och tillåtna siffror."
+    },
+    {
+      "rad": "Fars dag-rea: 869 kr, ord. 1 139 kr.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Alternativ, bara sidans fakta och tillåtna siffror."
+    },
+    {
+      "rad": "Beställ senast 19 oktober: täljset till fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Hooken visar det bilden visar och bygger på sidans fakta."
+    },
+    {
+      "rad": "Beställ senast 19 oktober: väskan hinner till fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Alternativ, bara sidans fakta och tillåtna siffror."
+    },
+    {
+      "rad": "Beställ senast 19 oktober, så hinner täljsetet fram.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Alternativ, bara sidans fakta och tillåtna siffror."
+    },
+    {
+      "rad": "Handskarna skyddar när kniven slinter.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Sidans egen rad eller siffra, konkret och pekbar."
+    },
+    {
+      "rad": "Ett av 6 järn för olika snitt.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Sidans egen rad eller siffra, konkret och pekbar."
+    },
+    {
+      "rad": "Fars dag-rea: 869 kr, ord. 1 139 kr. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Sidans egen rad eller siffra, konkret och pekbar."
+    },
+    {
+      "rad": "Fars dag. Handskarna ingår i väskan.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kortversion av raden."
+    },
+    {
+      "rad": "Täljset 869 kr, ord. 1 139 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kortversion av raden."
+    },
+    {
+      "rad": "Fars dag: beställ senast 19 oktober",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kortversion av raden."
+    },
+    {
+      "rad": "Skärskyddade handskar ingår i väskan",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Statisk rubrik ur sidans fakta."
+    },
+    {
+      "rad": "Handskarna skyddar när kniven slinter. Vassa verktyg, använd handskarna.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Underrad ur sidans fakta."
+    },
+    {
+      "rad": "869 kr. Ord. 1 139 kr. Fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Statisk rubrik ur sidans fakta."
+    },
+    {
+      "rad": "6 knivar, 6 järn, strop och handskar i en väska",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Underrad ur sidans fakta."
+    },
+    {
+      "rad": "Beställ senast 19 oktober, täljset till fars dag",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Statisk rubrik ur sidans fakta."
+    },
+    {
+      "rad": "Väskan med dragkedja hinner fram till fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Underrad ur sidans fakta."
+    },
+    {
+      "rad": "6 knivar och 6 järn för olika snitt",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Statisk rubrik ur sidans fakta."
+    },
+    {
+      "rad": "Läderstrop, polermedel, träbit att öva på och handskar.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Underrad ur sidans fakta."
+    },
+    {
+      "rad": "Fars dag: knivar, järn, strop och handskar i en väska. Handskarna skyddar när kniven slinter. Fars dag-rea: 869 kr, ord. 1 139 kr. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Primärtext ur sidans fakta."
+    },
+    {
+      "rad": "Täljset med skärskyddade handskar",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Rubrik ur sidans fakta."
+    },
+    {
+      "rad": "Fars dag-rea: 869 kr, ord. 1 139 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Erbjudandet."
+    }
+  ]
+}

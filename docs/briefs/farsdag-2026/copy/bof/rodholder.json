@@ -1,0 +1,280 @@
+{
+ "hook_H1": {
+  "rad": "Passar proffs och nybörjare. Fyra hållare till fars dag.",
+  "engelska": "Suits pros and beginners. Four holders for Father's Day.",
+  "alternativ": [
+   "Fyra kraftiga hållare för strand, sjö och båt.",
+   "Fars dag: kraftiga hållare, ett spö i varje."
+  ]
+ },
+ "hook_H2": {
+  "rad": "289 kr, ord. 482 kr för fyra hållare.",
+  "engelska": "289 kr, was 482 kr, for four holders.",
+  "alternativ": [
+   "Fars dag-rea: fyra hållare för 289 kr.",
+   "Fyra hållare för 289 kr. Ord. 482 kr."
+  ]
+ },
+ "hook_H3": {
+  "rad": "Beställ senast 19 oktober. Fyra hållare till fars dag.",
+  "engelska": "Order by 19 October. Four holders for Father's Day.",
+  "alternativ": [
+   "Fars dag: beställ senast 19 oktober. Fyra hållare.",
+   "Beställ senast 19 oktober. Hållare för strandfiskaren."
+  ]
+ },
+ "rader": [
+  {
+   "nr": 2,
+   "rad": "Varje spö får sin egen plats. Kraftig konstruktion.",
+   "engelska": "Every rod gets its own place. Heavy-duty build."
+  },
+  {
+   "nr": 3,
+   "rad": "Välj färg: grön, orange, rosa eller blå.",
+   "engelska": "Pick a colour: green, orange, pink or blue."
+  },
+  {
+   "nr": 4,
+   "rad": "Fars dag-rea: 289 kr, ord. 482 kr. Beställ senast 19 oktober.",
+   "engelska": "Father's Day sale: 289 kr, was 482 kr. Order by 19 October."
+  }
+ ],
+ "text_pa_skarm": {
+  "1_H1": "Fars dag: passar proffs och nybörjare",
+  "1_H2": "Fars dag-rea: 289 kr",
+  "1_H3": "Fars dag: senast 19 oktober",
+  "2": "Varje spö får sin egen plats",
+  "3": "Välj färg: grön, orange, rosa eller blå."
+ },
+ "bilder": {
+  "FD_4_1": {
+   "rubrik": "Passar proffs och nybörjare",
+   "underrad": "Fyra kraftiga hållare för strand, sjö och båtfiske.",
+   "engelska": {
+    "rubrik": "Suits pros and beginners",
+    "underrad": "Four heavy-duty holders for shore, lake and boat fishing."
+   }
+  },
+  "FD_4_2": {
+   "rubrik": "289 kr till fars dag. Ord. 482 kr.",
+   "underrad": "Fyra hållare i ett set, en färg per set.",
+   "engelska": {
+    "rubrik": "289 kr for Father's Day. Was 482 kr.",
+    "underrad": "Four holders in a set, one colour per set."
+   }
+  },
+  "FD_4_3": {
+   "rubrik": "Beställ senast 19 oktober. Fars dag-rea på spöhållare.",
+   "underrad": "Kraftig konstruktion, en egen plats för varje spö.",
+   "engelska": {
+    "rubrik": "Order by 19 October. Father's Day sale on rod holders.",
+    "underrad": "Heavy-duty build, its own place for every rod."
+   }
+  },
+  "FD_4_4": {
+   "rubrik": "Ett set: fyra hållare i en färg",
+   "underrad": "Välj grön, orange, rosa eller blå. Kraftig konstruktion.",
+   "engelska": {
+    "rubrik": "One set: four holders in one colour",
+    "underrad": "Choose green, orange, pink or blue. Heavy-duty build."
+   }
+  }
+ },
+ "copy_card": {
+  "primar": "Passar proffs och nybörjare. Fyra hållare till fars dag. Varje spö får sin egen plats. Fars dag-rea: 289 kr, ord. 482 kr. Beställ senast 19 oktober.",
+  "rubrik": "Fyra hållare till fars dag",
+  "beskrivning": "Fars dag-rea: 289 kr, ord. 482 kr"
+ },
+ "tretest": [
+  {
+   "rad": "Passar proffs och nybörjare. Fyra hållare till fars dag.",
+   "visualisera": true,
+   "falsifiera": true,
+   "konkurrent_kan_signera": false,
+   "kommentar": "Konkret ur sidans fakta (fyra hållare, ett spö per hållare, strand/sjö/båt, färger, priset) och bilden."
+  },
+  {
+   "rad": "289 kr, ord. 482 kr för fyra hållare.",
+   "visualisera": true,
+   "falsifiera": true,
+   "konkurrent_kan_signera": false,
+   "kommentar": "Konkret ur sidans fakta (fyra hållare, ett spö per hållare, strand/sjö/båt, färger, priset) och bilden."
+  },
+  {
+   "rad": "Beställ senast 19 oktober. Fyra hållare till fars dag.",
+   "visualisera": true,
+   "falsifiera": true,
+   "konkurrent_kan_signera": false,
+   "kommentar": "Konkret ur sidans fakta (fyra hållare, ett spö per hållare, strand/sjö/båt, färger, priset) och bilden."
+  },
+  {
+   "rad": "Fyra kraftiga hållare för strand, sjö och båt.",
+   "visualisera": true,
+   "falsifiera": true,
+   "konkurrent_kan_signera": false,
+   "kommentar": "Konkret ur sidans fakta (fyra hållare, ett spö per hållare, strand/sjö/båt, färger, priset) och bilden."
+  },
+  {
+   "rad": "Fars dag: kraftiga hållare, ett spö i varje.",
+   "visualisera": true,
+   "falsifiera": true,
+   "konkurrent_kan_signera": false,
+   "kommentar": "Konkret ur sidans fakta (fyra hållare, ett spö per hållare, strand/sjö/båt, färger, priset) och bilden."
+  },
+  {
+   "rad": "Fars dag-rea: fyra hållare för 289 kr.",
+   "visualisera": true,
+   "falsifiera": true,
+   "konkurrent_kan_signera": false,
+   "kommentar": "Konkret ur sidans fakta (fyra hållare, ett spö per hållare, strand/sjö/båt, färger, priset) och bilden."
+  },
+  {
+   "rad": "Fyra hållare för 289 kr. Ord. 482 kr.",
+   "visualisera": true,
+   "falsifiera": true,
+   "konkurrent_kan_signera": false,
+   "kommentar": "Konkret ur sidans fakta (fyra hållare, ett spö per hållare, strand/sjö/båt, färger, priset) och bilden."
+  },
+  {
+   "rad": "Fars dag: beställ senast 19 oktober. Fyra hållare.",
+   "visualisera": true,
+   "falsifiera": true,
+   "konkurrent_kan_signera": false,
+   "kommentar": "Konkret ur sidans fakta (fyra hållare, ett spö per hållare, strand/sjö/båt, färger, priset) och bilden."
+  },
+  {
+   "rad": "Beställ senast 19 oktober. Hållare för strandfiskaren.",
+   "visualisera": true,
+   "falsifiera": true,
+   "konkurrent_kan_signera": false,
+   "kommentar": "Konkret ur sidans fakta (fyra hållare, ett spö per hållare, strand/sjö/båt, färger, priset) och bilden."
+  },
+  {
+   "rad": "Varje spö får sin egen plats. Kraftig konstruktion.",
+   "visualisera": true,
+   "falsifiera": true,
+   "konkurrent_kan_signera": false,
+   "kommentar": "Konkret ur sidans fakta (fyra hållare, ett spö per hållare, strand/sjö/båt, färger, priset) och bilden."
+  },
+  {
+   "rad": "Välj färg: grön, orange, rosa eller blå.",
+   "visualisera": true,
+   "falsifiera": true,
+   "konkurrent_kan_signera": false,
+   "kommentar": "Konkret ur sidans fakta (fyra hållare, ett spö per hållare, strand/sjö/båt, färger, priset) och bilden."
+  },
+  {
+   "rad": "Fars dag-rea: 289 kr, ord. 482 kr. Beställ senast 19 oktober.",
+   "visualisera": true,
+   "falsifiera": true,
+   "konkurrent_kan_signera": false,
+   "kommentar": "Konkret ur sidans fakta (fyra hållare, ett spö per hållare, strand/sjö/båt, färger, priset) och bilden."
+  },
+  {
+   "rad": "Fars dag: passar proffs och nybörjare",
+   "visualisera": true,
+   "falsifiera": true,
+   "konkurrent_kan_signera": false,
+   "kommentar": "Konkret ur sidans fakta (fyra hållare, ett spö per hållare, strand/sjö/båt, färger, priset) och bilden."
+  },
+  {
+   "rad": "Fars dag-rea: 289 kr",
+   "visualisera": true,
+   "falsifiera": true,
+   "konkurrent_kan_signera": false,
+   "kommentar": "Konkret ur sidans fakta (fyra hållare, ett spö per hållare, strand/sjö/båt, färger, priset) och bilden."
+  },
+  {
+   "rad": "Fars dag: senast 19 oktober",
+   "visualisera": true,
+   "falsifiera": true,
+   "konkurrent_kan_signera": false,
+   "kommentar": "Konkret ur sidans fakta (fyra hållare, ett spö per hållare, strand/sjö/båt, färger, priset) och bilden."
+  },
+  {
+   "rad": "Varje spö får sin egen plats",
+   "visualisera": true,
+   "falsifiera": true,
+   "konkurrent_kan_signera": false,
+   "kommentar": "Konkret ur sidans fakta (fyra hållare, ett spö per hållare, strand/sjö/båt, färger, priset) och bilden."
+  },
+  {
+   "rad": "Passar proffs och nybörjare",
+   "visualisera": true,
+   "falsifiera": true,
+   "konkurrent_kan_signera": false,
+   "kommentar": "Konkret ur sidans fakta (fyra hållare, ett spö per hållare, strand/sjö/båt, färger, priset) och bilden."
+  },
+  {
+   "rad": "Fyra kraftiga hållare för strand, sjö och båtfiske.",
+   "visualisera": true,
+   "falsifiera": true,
+   "konkurrent_kan_signera": false,
+   "kommentar": "Konkret ur sidans fakta (fyra hållare, ett spö per hållare, strand/sjö/båt, färger, priset) och bilden."
+  },
+  {
+   "rad": "289 kr till fars dag. Ord. 482 kr.",
+   "visualisera": true,
+   "falsifiera": true,
+   "konkurrent_kan_signera": false,
+   "kommentar": "Konkret ur sidans fakta (fyra hållare, ett spö per hållare, strand/sjö/båt, färger, priset) och bilden."
+  },
+  {
+   "rad": "Fyra hållare i ett set, en färg per set.",
+   "visualisera": true,
+   "falsifiera": true,
+   "konkurrent_kan_signera": false,
+   "kommentar": "Konkret ur sidans fakta (fyra hållare, ett spö per hållare, strand/sjö/båt, färger, priset) och bilden."
+  },
+  {
+   "rad": "Beställ senast 19 oktober. Fars dag-rea på spöhållare.",
+   "visualisera": true,
+   "falsifiera": true,
+   "konkurrent_kan_signera": false,
+   "kommentar": "Konkret ur sidans fakta (fyra hållare, ett spö per hållare, strand/sjö/båt, färger, priset) och bilden."
+  },
+  {
+   "rad": "Kraftig konstruktion, en egen plats för varje spö.",
+   "visualisera": true,
+   "falsifiera": true,
+   "konkurrent_kan_signera": false,
+   "kommentar": "Konkret ur sidans fakta (fyra hållare, ett spö per hållare, strand/sjö/båt, färger, priset) och bilden."
+  },
+  {
+   "rad": "Ett set: fyra hållare i en färg",
+   "visualisera": true,
+   "falsifiera": true,
+   "konkurrent_kan_signera": false,
+   "kommentar": "Konkret ur sidans fakta (fyra hållare, ett spö per hållare, strand/sjö/båt, färger, priset) och bilden."
+  },
+  {
+   "rad": "Välj grön, orange, rosa eller blå. Kraftig konstruktion.",
+   "visualisera": true,
+   "falsifiera": true,
+   "konkurrent_kan_signera": false,
+   "kommentar": "Konkret ur sidans fakta (fyra hållare, ett spö per hållare, strand/sjö/båt, färger, priset) och bilden."
+  },
+  {
+   "rad": "Passar proffs och nybörjare. Fyra hållare till fars dag. Varje spö får sin egen plats. Fars dag-rea: 289 kr, ord. 482 kr. Beställ senast 19 oktober.",
+   "visualisera": true,
+   "falsifiera": true,
+   "konkurrent_kan_signera": false,
+   "kommentar": "Konkret ur sidans fakta (fyra hållare, ett spö per hållare, strand/sjö/båt, färger, priset) och bilden."
+  },
+  {
+   "rad": "Fyra hållare till fars dag",
+   "visualisera": true,
+   "falsifiera": true,
+   "konkurrent_kan_signera": false,
+   "kommentar": "Konkret ur sidans fakta (fyra hållare, ett spö per hållare, strand/sjö/båt, färger, priset) och bilden."
+  },
+  {
+   "rad": "Fars dag-rea: 289 kr, ord. 482 kr",
+   "visualisera": true,
+   "falsifiera": true,
+   "konkurrent_kan_signera": false,
+   "kommentar": "Konkret ur sidans fakta (fyra hållare, ett spö per hållare, strand/sjö/båt, färger, priset) och bilden."
+  }
+ ]
+}

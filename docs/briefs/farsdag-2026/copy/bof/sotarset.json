@@ -1,0 +1,280 @@
+{
+  "hook_H1": {
+    "rad": "Rensa själv mellan sotarens besök. Fars dag-present.",
+    "engelska": "Clean it yourself between the sweep's visits. A Father's Day present.",
+    "alternativ": [
+      "Fars dag-present: rensa själv med 9 böjliga stänger.",
+      "Fars dag: sotarset som böjer med i kröken."
+    ]
+  },
+  "hook_H2": {
+    "rad": "459 kr, ord. 599 kr: sotarset till fars dag.",
+    "engelska": "459 kr, ord. 599 kr: the chimney sweep set for Father's Day.",
+    "alternativ": [
+      "Sotarset: 459 kr, ord. 599 kr, fars dag-rea.",
+      "Fars dag-rea: sotarset 459 kr, ord. 599 kr."
+    ]
+  },
+  "hook_H3": {
+    "rad": "Beställ senast 19 oktober: sotarset till fars dag.",
+    "engelska": "Order by 19 October: the chimney sweep set for Father's Day.",
+    "alternativ": [
+      "Fars dag 8 november: beställ sotarset senast 19 oktober.",
+      "Sotarset till fars dag: beställ senast 19 oktober."
+    ]
+  },
+  "rader": [
+    {
+      "nr": 2,
+      "rad": "De böjliga stängerna följer krökarna i röret.",
+      "engelska": "The flexible rods follow the bends in the pipe."
+    },
+    {
+      "nr": 3,
+      "rad": "9 stänger à 41 cm blir 3,69 meter.",
+      "engelska": "9 rods of 41 cm make 3.69 metres."
+    },
+    {
+      "nr": 4,
+      "rad": "Fars dag-rea: 459 kr, ord. 599 kr. Beställ senast 19 oktober.",
+      "engelska": "Father's Day sale: 459 kr, ord. 599 kr. Order by 19 October."
+    }
+  ],
+  "text_pa_skarm": {
+    "1_H1": "Rensa själv mellan sotarens besök",
+    "1_H2": "459 kr, ord. 599 kr",
+    "1_H3": "Beställ senast 19 oktober",
+    "2": "Böjliga stänger följer krökarna",
+    "3": "9 stänger, 3,69 meter"
+  },
+  "bilder": {
+    "FD_4_1": {
+      "rubrik": "Rensa själv mellan sotarens besök",
+      "underrad": "Stängerna böjer med i kröken i stället för att ta stopp.",
+      "engelska": {
+        "rubrik": "Clean it yourself between the sweep's visits",
+        "underrad": "The rods bend with the curve instead of stopping."
+      }
+    },
+    "FD_4_2": {
+      "rubrik": "459 kr till fars dag. Ord. 599 kr.",
+      "underrad": "Sotarset med 9 böjliga stänger och nylonborste på 100 mm.",
+      "engelska": {
+        "rubrik": "459 kr for Father's Day. Ord. 599 kr.",
+        "underrad": "Chimney sweep set with 9 flexible rods and a 100 mm nylon brush."
+      }
+    },
+    "FD_4_3": {
+      "rubrik": "Beställ senast 19 oktober: sotarset till fars dag.",
+      "underrad": "Sotarset med 9 böjliga stänger som når bakom kaminen.",
+      "engelska": {
+        "rubrik": "Order by 19 October: chimney sweep set for Father's Day",
+        "underrad": "Chimney sweep set with 9 flexible rods that reach behind the stove."
+      }
+    },
+    "FD_4_4": {
+      "rubrik": "9 stänger à 41 cm. 3,69 meter.",
+      "underrad": "Nylonborste på 100 mm. Sexkantsadapter medföljer.",
+      "engelska": {
+        "rubrik": "9 rods of 41 cm. 3.69 metres.",
+        "underrad": "100 mm nylon brush. Hex adapter included."
+      }
+    }
+  },
+  "copy_card": {
+    "primar": "Rensa själv mellan sotarens besök. 9 böjliga stänger à 41 cm skruvas ihop till 3,69 meter, med nylonborste på 100 mm i toppen. Fars dag-rea: 459 kr, ord. 599 kr. Beställ senast 19 oktober.",
+    "rubrik": "Sotarset till fars dag",
+    "beskrivning": "Fars dag-rea: 459 kr, ord. 599 kr"
+  },
+  "tretest": [
+    {
+      "rad": "Rensa själv mellan sotarens besök. Fars dag-present.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Händer som skruvar ihop stängerna; sidans funktionsrad; en sotarfirma kan inte skriva 'fars dag-present' om ett eget set."
+    },
+    {
+      "rad": "Rensa själv mellan sotarens besök. Fars dag-present.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Händer som skruvar ihop stängerna; sidans funktionsrad; en sotarfirma kan inte skriva 'fars dag-present' om ett eget set."
+    },
+    {
+      "rad": "Fars dag-present: rensa själv med 9 böjliga stänger.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Stängerna syns, 9 står på sidan."
+    },
+    {
+      "rad": "Fars dag: sotarset som böjer med i kröken.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Böjningen är sidans fakta och syns i bilden."
+    },
+    {
+      "rad": "459 kr, ord. 599 kr: sotarset till fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Priset är sidans; visar borsten ur röret."
+    },
+    {
+      "rad": "Sotarset: 459 kr, ord. 599 kr, fars dag-rea.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pris mot jämförpris går att kontrollera."
+    },
+    {
+      "rad": "Fars dag-rea: sotarset 459 kr, ord. 599 kr.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Samma fakta, annan ordning."
+    },
+    {
+      "rad": "Beställ senast 19 oktober: sotarset till fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Datum och produkt, kopplat till skorstenen i bild."
+    },
+    {
+      "rad": "Fars dag 8 november: beställ sotarset senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Datumen går att kontrollera."
+    },
+    {
+      "rad": "Sotarset till fars dag: beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Produkt, tillfälle och sista dag."
+    },
+    {
+      "rad": "De böjliga stängerna följer krökarna i röret.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kvinnan böjer en stång till en båge; sidans mening."
+    },
+    {
+      "rad": "9 stänger à 41 cm blir 3,69 meter.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "9 x 41 cm = 3,69 m, syns i bilden när stängerna skruvas ihop."
+    },
+    {
+      "rad": "Fars dag-rea: 459 kr, ord. 599 kr. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Erbjudandet med verkligt pris och verkligt datum."
+    },
+    {
+      "rad": "Rensa själv mellan sotarens besök",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Sidans funktionsrad; går att avgöra; kräver just detta set."
+    },
+    {
+      "rad": "Böjliga stänger följer krökarna",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kortversion av rad 2."
+    },
+    {
+      "rad": "9 stänger, 3,69 meter",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kortversion av rad 3."
+    },
+    {
+      "rad": "459 kr, ord. 599 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pris på skärmen."
+    },
+    {
+      "rad": "Beställ senast 19 oktober",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Sista dag."
+    },
+    {
+      "rad": "Stängerna böjer med i kröken i stället för att ta stopp.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Sidans mening, en stel stång fastnar synligt i kröken."
+    },
+    {
+      "rad": "459 kr till fars dag. Ord. 599 kr.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Priset som rubrik."
+    },
+    {
+      "rad": "Sotarset med 9 böjliga stänger och nylonborste på 100 mm.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Alla mått finns på sidan."
+    },
+    {
+      "rad": "Sotarset med 9 böjliga stänger som når bakom kaminen.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Sidans funktionsrad."
+    },
+    {
+      "rad": "9 stänger à 41 cm. 3,69 meter.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Mått ur sidan, syns på fotot."
+    },
+    {
+      "rad": "Nylonborste på 100 mm. Sexkantsadapter medföljer.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Sidan nämner både borste och adapter."
+    },
+    {
+      "rad": "Rensa själv mellan sotarens besök. 9 böjliga stänger à 41 cm skruvas ihop till 3,69 meter, med nylonborste på 100 mm i toppen. Fars dag-rea: 459 kr, ord. 599 kr. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Fakta ur sidan, fars dag-rea och sista dag."
+    },
+    {
+      "rad": "Sotarset till fars dag",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Produkt och tillfälle."
+    },
+    {
+      "rad": "Fars dag-rea: 459 kr, ord. 599 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Erbjudande."
+    }
+  ]
+}

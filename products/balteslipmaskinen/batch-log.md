@@ -495,3 +495,20 @@ Ur `agent/etikett-backfill.mjs` 2026-09-29 (annonsens egna första vecka 22–28
 | Beltgrinder_CS_5_H1 | 5 | **LOSER** | 0 % | 36 kr | 0 | 0,00 / 2,40 | nej |
 | Beltgrinder_PD_31_1 | 5 | **LOSER** | 0 % | 35 kr | 0 | 0,00 / 2,40 | nej |
 | Beltgrinder_PD_30_H1 | 5 | **LOSER** | 0 % | 24 kr | 0 | 0,00 / 2,40 | nej |
+
+
+## Fars dag omgång 4 — extra BOF-batch (2026-09-29 kväll, Axels order samma kväll)
+
+Axel: "gör en till extra batch för fars dag för alla produkter och gärna dubbelt så mycket bildads och sedan normal kvantitet videos så att vi pushar extra mycket BOF fars dag annonser". Invändningen som batchen svarar på: **"kräver det inte teknik?"** (svar ur sidan: slipbandet gör jobbet; 3-i-1: slipband, polerskiva, knivslip; sätt kniven mot bandet i vinkel). Förälder Beltgrinder_PD_4_H1 (lärdom L-120250104966480291). Alla sju klarade spärren (regi 4/4, 0 fel), ligger som `Draft` i Belt grinder creative hub. Loggkod `FARSDAG_BATCH_KLAR`. Batch-loggen för hela omgången: `docs/briefs/farsdag-2026/README-bof.md`.
+
+| Annons | Typ | Hook / rubrik | Notion |
+|---|---|---|---|
+| Beltgrinder_FD_3_H1 | video 13 s, BOF-omklipp | Slipbandet gör jobbet. Du håller bara kniven i vinkel. | https://www.notion.so/3ea270ab908c81c892ebf756fe13e468 |
+| Beltgrinder_FD_3_H2 | video 13 s, BOF-omklipp | Fars dag: bälteslipmaskin 909 kr, ord. 1 182 kr | https://www.notion.so/3ea270ab908c8140ace5dc4327898c56 |
+| Beltgrinder_FD_3_H3 | video 13 s, BOF-omklipp | Beställ senast 19 oktober: bälteslipmaskinen till fars dag. | https://www.notion.so/3ea270ab908c8195b431f6fc5c13c7cb |
+| Beltgrinder_FD_4_1 | bild, BOF | Bandet slipar. Du styr bara vinkeln. | https://www.notion.so/3ea270ab908c81b291bad4d2e4009861 |
+| Beltgrinder_FD_4_2 | bild, BOF | Fars dag: 909 kr, ord. 1 182 kr | https://www.notion.so/3ea270ab908c81efbc7deea49f1e59f3 |
+| Beltgrinder_FD_4_3 | bild, BOF | Beställ senast 19 oktober: fars dag-present för hobbybänken | https://www.notion.so/3ea270ab908c8183b7b7fb3419f80cb1 |
+| Beltgrinder_FD_4_4 | bild, BOF | Slipband. Polerhjul. Knivslip. Alla tre på en bänk. | https://www.notion.so/3ea270ab908c81b3a633c17fa1712292 |
+
+Mätning (ANALYSMETOD): ingen dom under 300 kr / 3 köp. H1 mot H2 mot H3 = vilken öppning (invändning, pris, sista dag) den produktmedvetna tittaren behöver; FD_4_1–4 mot varandra = budskapet i textrutan; hela batchen mot FD_1/FD_2 (presentvinkeln, kall publik). Etikett dag 7, lärdom, sedan dna.md.

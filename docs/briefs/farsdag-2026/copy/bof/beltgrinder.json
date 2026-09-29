@@ -1,0 +1,287 @@
+{
+  "hook_H1": {
+    "rad": "Slipbandet gör jobbet. Du håller bara kniven i vinkel.",
+    "engelska": "The belt does the work. You just hold the knife at an angle.",
+    "alternativ": [
+      "Kniven mot bandet. Bandet slipar, du styr vinkeln.",
+      "Ingen slipteknik. Bandet gör jobbet, du styr vinkeln."
+    ]
+  },
+  "hook_H2": {
+    "rad": "Fars dag: bälteslipmaskin 909 kr, ord. 1 182 kr",
+    "engelska": "Father's Day: belt grinder 909 kr, ord. 1 182 kr",
+    "alternativ": [
+      "Bälteslipmaskin: 909 kr till fars dag, ord. 1 182 kr",
+      "Fars dag-rea på bälteslipmaskinen: 909 kr, ord. 1 182 kr"
+    ]
+  },
+  "hook_H3": {
+    "rad": "Beställ senast 19 oktober: bälteslipmaskinen till fars dag.",
+    "engelska": "Order by 19 October: the belt grinder for Father's Day.",
+    "alternativ": [
+      "Fars dag 8 november. Beställ senast 19 oktober.",
+      "Bälteslipmaskin till fars dag. Beställ senast 19 oktober."
+    ]
+  },
+  "rader": [
+    {
+      "nr": 2,
+      "rad": "Kniven dras längs bandet i vinkel. Bandet slipar.",
+      "engelska": "The knife is drawn along the belt at an angle. The belt grinds."
+    },
+    {
+      "nr": 3,
+      "rad": "Slipband, polerhjul och knivslip. Mini, för hobbybänken.",
+      "engelska": "Belt, polishing wheel and knife sharpener. Mini, for the hobby bench."
+    },
+    {
+      "nr": 4,
+      "rad": "Fars dag-rea: 909 kr, ord. 1 182 kr. Beställ senast 19 oktober.",
+      "engelska": "Father's Day sale: 909 kr, ord. 1 182 kr. Order by 19 October."
+    }
+  ],
+  "text_pa_skarm": {
+    "1_H1": "Fars dag: bandet gör jobbet",
+    "1_H2": "909 kr, ord. 1 182 kr",
+    "1_H3": "Beställ senast 19 oktober",
+    "2": "Kniven dras längs bandet i vinkel",
+    "3": "Slipband, polerhjul, knivslip. Mini."
+  },
+  "bilder": {
+    "FD_4_1": {
+      "rubrik": "Bandet slipar. Du styr bara vinkeln.",
+      "underrad": "Slipband, polerhjul och knivslip i en mini-maskin.",
+      "engelska": {
+        "rubrik": "The belt grinds. You only steer the angle.",
+        "underrad": "Belt, polishing wheel and knife sharpener in one mini machine."
+      }
+    },
+    "FD_4_2": {
+      "rubrik": "Fars dag: 909 kr, ord. 1 182 kr",
+      "underrad": "Bälteslipmaskin med slipband, polerhjul och knivslip.",
+      "engelska": {
+        "rubrik": "Father's Day: 909 kr, ord. 1 182 kr",
+        "underrad": "Belt grinder with belt, polishing wheel and knife sharpener."
+      }
+    },
+    "FD_4_3": {
+      "rubrik": "Beställ senast 19 oktober: fars dag-present för hobbybänken",
+      "underrad": "Mini-bälteslipmaskin till pappans hobbybänk.",
+      "engelska": {
+        "rubrik": "Order by 19 October: a Father's Day gift for the hobby bench",
+        "underrad": "Mini belt grinder for dad's hobby bench."
+      }
+    },
+    "FD_4_4": {
+      "rubrik": "Slipband. Polerhjul. Knivslip. Alla tre på en bänk.",
+      "underrad": "För knivar, mejslar, yxor och trä.",
+      "engelska": {
+        "rubrik": "Belt. Polishing wheel. Knife sharpener. All three on one bench.",
+        "underrad": "For knives, chisels, axes and wood."
+      }
+    }
+  },
+  "copy_card": {
+    "primar": "Slipbandet gör jobbet, du håller bara kniven i vinkel. Slipband, polerhjul och knivslip i en mini-maskin. Fars dag-rea: 909 kr, ord. 1 182 kr. Beställ senast 19 oktober.",
+    "rubrik": "Bandet slipar, du styr vinkeln",
+    "beskrivning": "Fars dag-rea: 909 kr, ord. 1 182 kr"
+  },
+  "tretest": [
+    {
+      "rad": "Slipbandet gör jobbet. Du håller bara kniven i vinkel.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kniv mot löpande band i bild; sidan: slipbandet gör jobbet, du styr vinkeln; svarar på tekniktvivlet"
+    },
+    {
+      "rad": "Kniven mot bandet. Bandet slipar, du styr vinkeln.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Samma bild och sidfakta"
+    },
+    {
+      "rad": "Ingen slipteknik. Bandet gör jobbet, du styr vinkeln.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Sidan säger att handslipning kräver teknik; bandet tar det jobbet"
+    },
+    {
+      "rad": "Fars dag: bälteslipmaskin 909 kr, ord. 1 182 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Maskinen mellan händerna; priset är faktum på sidan"
+    },
+    {
+      "rad": "Bälteslipmaskin: 909 kr till fars dag, ord. 1 182 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Samma"
+    },
+    {
+      "rad": "Fars dag-rea på bälteslipmaskinen: 909 kr, ord. 1 182 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Samma"
+    },
+    {
+      "rad": "Beställ senast 19 oktober: bälteslipmaskinen till fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Maskin i bild; datumet är verkligt"
+    },
+    {
+      "rad": "Fars dag 8 november. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Två verkliga datum; kopplat till maskinen via bild"
+    },
+    {
+      "rad": "Bälteslipmaskin till fars dag. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Maskin i bild, verkligt datum"
+    },
+    {
+      "rad": "Kniven dras längs bandet i vinkel. Bandet slipar.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Hand drar kniv längs bandet uppifrån; sidfakta"
+    },
+    {
+      "rad": "Slipband, polerhjul och knivslip. Mini, för hobbybänken.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Bandet och polerhjulet syns; sidfakta 3-i-1, mini, hobbybänk"
+    },
+    {
+      "rad": "Fars dag-rea: 909 kr, ord. 1 182 kr. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Erbjudandet, exakt pris ur sidan"
+    },
+    {
+      "rad": "Fars dag: bandet gör jobbet",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Skärmtext H1"
+    },
+    {
+      "rad": "909 kr, ord. 1 182 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Skärmtext H2"
+    },
+    {
+      "rad": "Beställ senast 19 oktober",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Skärmtext H3"
+    },
+    {
+      "rad": "Kniven dras längs bandet i vinkel",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Skärmtext rad 2"
+    },
+    {
+      "rad": "Slipband, polerhjul, knivslip. Mini.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Skärmtext rad 3"
+    },
+    {
+      "rad": "Bandet slipar. Du styr bara vinkeln.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "FD_4_1 rubrik"
+    },
+    {
+      "rad": "Slipband, polerhjul och knivslip i en mini-maskin.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Sidfakta, produktfoto visar dem"
+    },
+    {
+      "rad": "Fars dag: 909 kr, ord. 1 182 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "FD_4_2 rubrik, pris och jämförpris är sidfakta"
+    },
+    {
+      "rad": "Bälteslipmaskin med slipband, polerhjul och knivslip.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Sidfakta"
+    },
+    {
+      "rad": "Beställ senast 19 oktober: fars dag-present för hobbybänken",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "FD_4_3 rubrik"
+    },
+    {
+      "rad": "Mini-bälteslipmaskin till pappans hobbybänk.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Sidan: kompakt nog för hobbybänken"
+    },
+    {
+      "rad": "Slipband. Polerhjul. Knivslip. Alla tre på en bänk.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "FD_4_4 rubrik, tre delar syns i foto"
+    },
+    {
+      "rad": "För knivar, mejslar, yxor och trä.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Sidfakta"
+    },
+    {
+      "rad": "Slipbandet gör jobbet, du håller bara kniven i vinkel. Slipband, polerhjul och knivslip i en mini-maskin. Fars dag-rea: 909 kr, ord. 1 182 kr. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Copy card primär"
+    },
+    {
+      "rad": "Bandet slipar, du styr vinkeln",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Copy card rubrik"
+    },
+    {
+      "rad": "Fars dag-rea: 909 kr, ord. 1 182 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Copy card beskrivning"
+    }
+  ]
+}

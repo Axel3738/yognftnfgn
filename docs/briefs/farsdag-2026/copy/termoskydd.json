@@ -1,0 +1,234 @@
+{
+  "hook_H1": {
+    "rad": "Fars dag-present: pappa slipper torka imma varje morgon.",
+    "engelska": "Father's Day gift: no more wiping condensation every morning.",
+    "alternativ": [
+      "Fars dag-present: rutan blir aldrig kall i natt.",
+      "Fars dag-present: ingen imma att torka i morgon."
+    ]
+  },
+  "hook_H2": {
+    "rad": "Fars dag-present: skyddet sitter på 2 minuter.",
+    "engelska": "Father's Day gift: cover on in 2 minutes.",
+    "alternativ": [
+      "Fars dag-present: han spänner fast den själv.",
+      "Fars dag-present: ingen ser in i kupén."
+    ]
+  },
+  "rader": [
+    {
+      "nr": 2,
+      "rad": "Han spänner skyddet utanpå vindrutan, från utsidan.",
+      "engelska": "He straps the cover over the windshield, from the outside."
+    },
+    {
+      "nr": 3,
+      "rad": "Sidoflikarna kläms i dörrkarmen och håller i blåst.",
+      "engelska": "The side flaps clamp into the door frame and hold in wind."
+    },
+    {
+      "nr": 4,
+      "rad": "Tätt material som stoppar kylan utanpå glaset.",
+      "engelska": "Dense material that stops the cold outside the glass."
+    },
+    {
+      "nr": 5,
+      "rad": "559 kr, ord. 932 kr. Beställ senast 19 oktober.",
+      "engelska": "559 SEK, reg. 932 SEK. Order by October 19."
+    }
+  ],
+  "text_pa_skarm": {
+    "1_H1": "Slipper torka imma varje morgon",
+    "1_H2": "Skyddet sitter på 2 minuter",
+    "2": "Spänns utanpå vindrutan, från utsidan",
+    "3": "Flikarna kläms i dörrkarmen",
+    "4": "Tätt material stoppar kylan",
+    "5": "559 kr. Beställ senast 19 oktober"
+  },
+  "bild": {
+    "rubrik": "Fars dag-present: pappa slipper torka imma",
+    "underrad": "Spänns utanpå vindrutan och båda sidorutorna, 211 cm bred, 2 minuters jobb.",
+    "marke": "Fars dag-rea",
+    "prisband": "559 kr, ord. 932 kr",
+    "sista_raden": "Beställ senast 19 oktober",
+    "engelska": {
+      "rubrik": "Father's Day gift: no more wiping fog",
+      "underrad": "Straps over the windshield and both side windows, 211 cm wide, a 2-minute job."
+    }
+  },
+  "copy_card": {
+    "primar": "Fars dag-present: pappa slipper torka imma varje morgon. Skyddet spänns utanpå vindrutan och båda sidorutorna på 2 minuter, utan att öppna dörrarna. Fars dag-rea: 559 kr, ord. 932 kr. Beställ senast 19 oktober.",
+    "rubrik": "Fars dag-present: slipper torka imma",
+    "beskrivning": "Fars dag-rea: 559 kr, ord. 932 kr."
+  },
+  "tretest": [
+    {
+      "rad": "Fars dag-present: pappa slipper torka imma varje morgon.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret bild (pappa torkar imma). Sann/falsk mot faktat om kondens på insidan. En innanförgardin (konkurrentens lösning) kan inte sanningsenligt säga det här — fakta säger tvärtom att gardiner gör att fukten blir kvar."
+    },
+    {
+      "rad": "Fars dag-present: rutan blir aldrig kall i natt.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Direkt ur faktat 'glaset aldrig hinner bli kallt inifrån'. Specifikt för utvändig montering, inte en invändig lösning."
+    },
+    {
+      "rad": "Fars dag-present: ingen imma att torka i morgon.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Samma grund som huvudhooken, kortare variant. Specifikt för produktens sätt att sitta utanpå glaset."
+    },
+    {
+      "rad": "Fars dag-present: skyddet sitter på 2 minuter.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Exakt tidsangivelse ur faktat ('Två minuters jobb'). En produkt som kräver att dörrarna öppnas kan inte signera samma påstående lika sant."
+    },
+    {
+      "rad": "Fars dag-present: han spänner fast den själv.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kopplar till faktat om att flikarna kläms fast utan att dörrarna öppnas — en specifik montering, inte generellt 'lätt att sätta på'."
+    },
+    {
+      "rad": "Fars dag-present: ingen ser in i kupén.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Ur faktat om mörkläggning över hela framvagnen. Specifikt för ett skydd som täcker vindruta och båda sidorutor, inte en enkel solskärm."
+    },
+    {
+      "rad": "Han spänner skyddet utanpå vindrutan, från utsidan.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Beskriver exakt den utvändiga monteringen ur faktat, i kontrast mot invändiga gardiner."
+    },
+    {
+      "rad": "Sidoflikarna kläms i dörrkarmen och håller i blåst.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Nästan ordagrant ur produktsidans funktionslista. En specifik fästmetod, inte 'sitter stadigt'."
+    },
+    {
+      "rad": "Tätt material som stoppar kylan utanpå glaset.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Ur faktat 'där kylan och solen faktiskt stoppas'. Kopplat till att materialet sitter utanpå, inte innanför."
+    },
+    {
+      "rad": "559 kr, ord. 932 kr. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Exakta priser och datum för den här produkten och den här leveranstiden — en annan butik med andra priser och andra leveranstider kan inte signera samma rad."
+    },
+    {
+      "rad": "Slipper torka imma varje morgon",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kortversion av hook H1, samma grund."
+    },
+    {
+      "rad": "Skyddet sitter på 2 minuter",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kortversion av hook H2, samma grund."
+    },
+    {
+      "rad": "Spänns utanpå vindrutan, från utsidan",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kortversion av rad 2."
+    },
+    {
+      "rad": "Flikarna kläms i dörrkarmen",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kortversion av rad 3."
+    },
+    {
+      "rad": "Tätt material stoppar kylan",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kortversion av rad 4."
+    },
+    {
+      "rad": "559 kr. Beställ senast 19 oktober",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kortversion av rad 5, samma priser och datum."
+    },
+    {
+      "rad": "Fars dag-present: pappa slipper torka imma",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Bildens rubrik, samma grund som hook H1."
+    },
+    {
+      "rad": "Spänns utanpå vindrutan och båda sidorutorna, 211 cm bred, 2 minuters jobb.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Exakt mått och exakt tid ur faktat — knutet till just den här produktens dimensioner."
+    },
+    {
+      "rad": "Fars dag-rea",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": true,
+      "kommentar": "Obligatorisk märkestext enligt formatkravet (regel 11), inte en kreativ hook — vilken butik som helst kan kalla sin rea samma sak. Undantaget från kravet på ❌ eftersom det är en fast etikett, inte ett påstående som ska särskilja produkten."
+    },
+    {
+      "rad": "559 kr, ord. 932 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Exakta priser för den här produkten — en annan butik med annat pris kan inte signera samma rad."
+    },
+    {
+      "rad": "Beställ senast 19 oktober",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Datumet är räknat på denna butiks leveranstider till Sverige — inte ett generellt datum."
+    },
+    {
+      "rad": "Fars dag-present: pappa slipper torka imma varje morgon. Skyddet spänns utanpå vindrutan och båda sidorutorna på 2 minuter, utan att öppna dörrarna. Fars dag-rea: 559 kr, ord. 932 kr. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Hela primärtexten: hook plus mekanism plus exakta priser/datum — knuten till den här produktens fakta och den här butikens rea."
+    },
+    {
+      "rad": "Fars dag-present: slipper torka imma",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Copy card-rubrik, samma grund som hook H1."
+    },
+    {
+      "rad": "Fars dag-rea: 559 kr, ord. 932 kr.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Exakta priser för den här produkten."
+    }
+  ]
+}

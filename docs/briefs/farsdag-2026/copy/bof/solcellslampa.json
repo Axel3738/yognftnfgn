@@ -1,0 +1,287 @@
+{
+  "hook_H1": {
+    "rad": "Fars dag: solcellen laddar den, ingen kabel dras.",
+    "engelska": "Father's Day: the solar panel charges it, no cable to run.",
+    "alternativ": [
+      "Fars dag: rörelsesensorn tänder tre huvuden, ingen elektriker.",
+      "Ingen kabel dras. Solcellen på toppen laddar lampan."
+    ]
+  },
+  "hook_H2": {
+    "rad": "589 kr, ord. 775 kr: solcellslampa till fars dag.",
+    "engelska": "589 kr, was 775 kr: solar light for Father's Day.",
+    "alternativ": [
+      "775 kr blev 589 kr. Solcellslampa till fars dag.",
+      "Fars dag-rea: solcellslampa 589 kr, ord. 775 kr."
+    ]
+  },
+  "hook_H3": {
+    "rad": "Beställ senast 19 oktober: 210 lysdioder till fars dag.",
+    "engelska": "Order by 19 October: 210 LEDs for Father's Day.",
+    "alternativ": [
+      "Beställ senast 19 oktober. Tre huvuden till fars dag.",
+      "Beställ senast 19 oktober: solcellslampan till fars dag."
+    ]
+  },
+  "rader": [
+    {
+      "nr": 2,
+      "rad": "Solcell på ovansidan laddar batteriet på 1200 mAh.",
+      "engelska": "The solar panel on top charges the 1200 mAh battery."
+    },
+    {
+      "nr": 3,
+      "rad": "Tre huvuden vrids var för sig. Sensorn tänder alla.",
+      "engelska": "Three heads turn separately. The sensor lights them all."
+    },
+    {
+      "nr": 4,
+      "rad": "Fars dag-rea: 589 kr, ord. 775 kr. Beställ senast 19 oktober.",
+      "engelska": "Father's Day sale: 589 kr, was 775 kr. Order by 19 October."
+    }
+  ],
+  "text_pa_skarm": {
+    "1_H1": "Fars dag: ingen kabel dras.",
+    "1_H2": "589 kr, ord. 775 kr",
+    "1_H3": "Beställ senast 19 oktober",
+    "2": "Solcell laddar 1200 mAh-batteriet",
+    "3": "Tre huvuden, 210 lysdioder"
+  },
+  "bilder": {
+    "FD_4_1": {
+      "rubrik": "Utan en enda kabel. Solcellen laddar den.",
+      "underrad": "1200 mAh-batteri laddas i solljus. Sensorn tänder tre huvuden.",
+      "engelska": {
+        "rubrik": "Not a single cable. The solar panel charges it.",
+        "underrad": "1200 mAh battery charges in sunlight. The sensor lights three heads."
+      }
+    },
+    "FD_4_2": {
+      "rubrik": "589 kr till fars dag. Ord. 775 kr.",
+      "underrad": "Solcellslampa med tre huvuden och 210 lysdioder.",
+      "engelska": {
+        "rubrik": "589 kr for Father's Day. Was 775 kr.",
+        "underrad": "Solar light with three heads and 210 LEDs."
+      }
+    },
+    "FD_4_3": {
+      "rubrik": "Beställ senast 19 oktober. Solcellslampa till fars dag.",
+      "underrad": "Tre huvuden som vrids mot uppfarten, trappan eller garageporten.",
+      "engelska": {
+        "rubrik": "Order by 19 October. Solar light for Father's Day.",
+        "underrad": "Three heads that turn toward the drive, the steps or the garage door."
+      }
+    },
+    "FD_4_4": {
+      "rubrik": "Tre huvuden. 210 lysdioder. 1200 mAh.",
+      "underrad": "Rörelsesensorn tänder dem. Varje huvud vrids för sig.",
+      "engelska": {
+        "rubrik": "Three heads. 210 LEDs. 1200 mAh.",
+        "underrad": "The motion sensor lights them. Each head turns separately."
+      }
+    }
+  },
+  "copy_card": {
+    "primar": "Solcellen laddar den, ingen kabel dras. 1200 mAh-batteri, rörelsesensor och tre huvuden med 210 lysdioder. Fars dag-rea: 589 kr, ord. 775 kr. Beställ senast 19 oktober.",
+    "rubrik": "Solcellslampa utan kabel till fars dag",
+    "beskrivning": "Fars dag-rea: 589 kr, ord. 775 kr"
+  },
+  "tretest": [
+    {
+      "rad": "1200 mAh-batteri laddas i solljus. Sensorn tänder tre huvuden.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans fakta (solcell, 1200 mAh, tre huvuden, 210 lysdioder, ingen elektriker/kabel, pris) som syns eller går att kontrollera; en konkurrent med annan produkt kan inte skriva samma siffror."
+    },
+    {
+      "rad": "589 kr till fars dag. Ord. 775 kr.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans fakta (solcell, 1200 mAh, tre huvuden, 210 lysdioder, ingen elektriker/kabel, pris) som syns eller går att kontrollera; en konkurrent med annan produkt kan inte skriva samma siffror."
+    },
+    {
+      "rad": "589 kr, ord. 775 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans fakta (solcell, 1200 mAh, tre huvuden, 210 lysdioder, ingen elektriker/kabel, pris) som syns eller går att kontrollera; en konkurrent med annan produkt kan inte skriva samma siffror."
+    },
+    {
+      "rad": "589 kr, ord. 775 kr: solcellslampa till fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans fakta (solcell, 1200 mAh, tre huvuden, 210 lysdioder, ingen elektriker/kabel, pris) som syns eller går att kontrollera; en konkurrent med annan produkt kan inte skriva samma siffror."
+    },
+    {
+      "rad": "775 kr blev 589 kr. Solcellslampa till fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans fakta (solcell, 1200 mAh, tre huvuden, 210 lysdioder, ingen elektriker/kabel, pris) som syns eller går att kontrollera; en konkurrent med annan produkt kan inte skriva samma siffror."
+    },
+    {
+      "rad": "Beställ senast 19 oktober",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans fakta (solcell, 1200 mAh, tre huvuden, 210 lysdioder, ingen elektriker/kabel, pris) som syns eller går att kontrollera; en konkurrent med annan produkt kan inte skriva samma siffror."
+    },
+    {
+      "rad": "Beställ senast 19 oktober. Solcellslampa till fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans fakta (solcell, 1200 mAh, tre huvuden, 210 lysdioder, ingen elektriker/kabel, pris) som syns eller går att kontrollera; en konkurrent med annan produkt kan inte skriva samma siffror."
+    },
+    {
+      "rad": "Beställ senast 19 oktober. Tre huvuden till fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans fakta (solcell, 1200 mAh, tre huvuden, 210 lysdioder, ingen elektriker/kabel, pris) som syns eller går att kontrollera; en konkurrent med annan produkt kan inte skriva samma siffror."
+    },
+    {
+      "rad": "Beställ senast 19 oktober: 210 lysdioder till fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans fakta (solcell, 1200 mAh, tre huvuden, 210 lysdioder, ingen elektriker/kabel, pris) som syns eller går att kontrollera; en konkurrent med annan produkt kan inte skriva samma siffror."
+    },
+    {
+      "rad": "Beställ senast 19 oktober: solcellslampan till fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans fakta (solcell, 1200 mAh, tre huvuden, 210 lysdioder, ingen elektriker/kabel, pris) som syns eller går att kontrollera; en konkurrent med annan produkt kan inte skriva samma siffror."
+    },
+    {
+      "rad": "Fars dag-rea: 589 kr, ord. 775 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans fakta (solcell, 1200 mAh, tre huvuden, 210 lysdioder, ingen elektriker/kabel, pris) som syns eller går att kontrollera; en konkurrent med annan produkt kan inte skriva samma siffror."
+    },
+    {
+      "rad": "Fars dag-rea: 589 kr, ord. 775 kr. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans fakta (solcell, 1200 mAh, tre huvuden, 210 lysdioder, ingen elektriker/kabel, pris) som syns eller går att kontrollera; en konkurrent med annan produkt kan inte skriva samma siffror."
+    },
+    {
+      "rad": "Fars dag-rea: solcellslampa 589 kr, ord. 775 kr.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans fakta (solcell, 1200 mAh, tre huvuden, 210 lysdioder, ingen elektriker/kabel, pris) som syns eller går att kontrollera; en konkurrent med annan produkt kan inte skriva samma siffror."
+    },
+    {
+      "rad": "Fars dag: ingen kabel dras.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans fakta (solcell, 1200 mAh, tre huvuden, 210 lysdioder, ingen elektriker/kabel, pris) som syns eller går att kontrollera; en konkurrent med annan produkt kan inte skriva samma siffror."
+    },
+    {
+      "rad": "Fars dag: rörelsesensorn tänder tre huvuden, ingen elektriker.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans fakta (solcell, 1200 mAh, tre huvuden, 210 lysdioder, ingen elektriker/kabel, pris) som syns eller går att kontrollera; en konkurrent med annan produkt kan inte skriva samma siffror."
+    },
+    {
+      "rad": "Fars dag: solcellen laddar den, ingen kabel dras.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans fakta (solcell, 1200 mAh, tre huvuden, 210 lysdioder, ingen elektriker/kabel, pris) som syns eller går att kontrollera; en konkurrent med annan produkt kan inte skriva samma siffror."
+    },
+    {
+      "rad": "Ingen kabel dras. Solcellen på toppen laddar lampan.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans fakta (solcell, 1200 mAh, tre huvuden, 210 lysdioder, ingen elektriker/kabel, pris) som syns eller går att kontrollera; en konkurrent med annan produkt kan inte skriva samma siffror."
+    },
+    {
+      "rad": "Rörelsesensorn tänder dem. Varje huvud vrids för sig.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans fakta (solcell, 1200 mAh, tre huvuden, 210 lysdioder, ingen elektriker/kabel, pris) som syns eller går att kontrollera; en konkurrent med annan produkt kan inte skriva samma siffror."
+    },
+    {
+      "rad": "Solcell laddar 1200 mAh-batteriet",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans fakta (solcell, 1200 mAh, tre huvuden, 210 lysdioder, ingen elektriker/kabel, pris) som syns eller går att kontrollera; en konkurrent med annan produkt kan inte skriva samma siffror."
+    },
+    {
+      "rad": "Solcell på ovansidan laddar batteriet på 1200 mAh.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans fakta (solcell, 1200 mAh, tre huvuden, 210 lysdioder, ingen elektriker/kabel, pris) som syns eller går att kontrollera; en konkurrent med annan produkt kan inte skriva samma siffror."
+    },
+    {
+      "rad": "Solcellen laddar den, ingen kabel dras. 1200 mAh-batteri, rörelsesensor och tre huvuden med 210 lysdioder. Fars dag-rea: 589 kr, ord. 775 kr. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans fakta (solcell, 1200 mAh, tre huvuden, 210 lysdioder, ingen elektriker/kabel, pris) som syns eller går att kontrollera; en konkurrent med annan produkt kan inte skriva samma siffror."
+    },
+    {
+      "rad": "Solcellslampa med tre huvuden och 210 lysdioder.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans fakta (solcell, 1200 mAh, tre huvuden, 210 lysdioder, ingen elektriker/kabel, pris) som syns eller går att kontrollera; en konkurrent med annan produkt kan inte skriva samma siffror."
+    },
+    {
+      "rad": "Solcellslampa utan kabel till fars dag",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans fakta (solcell, 1200 mAh, tre huvuden, 210 lysdioder, ingen elektriker/kabel, pris) som syns eller går att kontrollera; en konkurrent med annan produkt kan inte skriva samma siffror."
+    },
+    {
+      "rad": "Tre huvuden som vrids mot uppfarten, trappan eller garageporten.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans fakta (solcell, 1200 mAh, tre huvuden, 210 lysdioder, ingen elektriker/kabel, pris) som syns eller går att kontrollera; en konkurrent med annan produkt kan inte skriva samma siffror."
+    },
+    {
+      "rad": "Tre huvuden vrids var för sig. Sensorn tänder alla.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans fakta (solcell, 1200 mAh, tre huvuden, 210 lysdioder, ingen elektriker/kabel, pris) som syns eller går att kontrollera; en konkurrent med annan produkt kan inte skriva samma siffror."
+    },
+    {
+      "rad": "Tre huvuden, 210 lysdioder",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans fakta (solcell, 1200 mAh, tre huvuden, 210 lysdioder, ingen elektriker/kabel, pris) som syns eller går att kontrollera; en konkurrent med annan produkt kan inte skriva samma siffror."
+    },
+    {
+      "rad": "Tre huvuden. 210 lysdioder. 1200 mAh.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans fakta (solcell, 1200 mAh, tre huvuden, 210 lysdioder, ingen elektriker/kabel, pris) som syns eller går att kontrollera; en konkurrent med annan produkt kan inte skriva samma siffror."
+    },
+    {
+      "rad": "Utan en enda kabel. Solcellen laddar den.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på sidans fakta (solcell, 1200 mAh, tre huvuden, 210 lysdioder, ingen elektriker/kabel, pris) som syns eller går att kontrollera; en konkurrent med annan produkt kan inte skriva samma siffror."
+    }
+  ]
+}

@@ -718,6 +718,23 @@ utlöste. Den kopplingen är borttagen: `ersatt` kommer numera bara från
   (Notion `Skapad` → Metas `created_time`), så regitabellens effekt går att
   jämföra före/efter över ≥ 2 batcher.
 
+- **Fars dag-tillägget — gäller varje runda t.o.m. 2026-10-31 (Axels order
+  2026-09-29: "en till extra batch för fars dag för alla produkter … dubbelt så
+  mycket bildads och sedan normal kvantitet videos … pushar extra mycket BOF fars
+  dag annonser … fram till sista oktober. Efter det är det nog inte lämpligt att
+  launcha mer fars dag ads").** Läs `agent/farsdag.json` först. Varje
+  `brief_runda` och `forsta_batch` på en SE-produkt med ACTIVE kampanj får
+  **dessutom** ett fars dag-block (vinkelkod `FD`, BOF i taggarna — aldrig i
+  namnet): **dubbelt så många FD-bilder som rundans bildtak (4)** och **normalt
+  antal FD-videor (3, hookvarianter på ett omklipp)**. FD-brieferna är EXTRA:
+  de räknas inte inom `rundaAntal` och stoppas inte av `brieftak`. Bildregeln
+  "bara med ett jobb" och BOF-villkoret ovan gäller inte FD-bilderna — ägarens
+  order går före. Rean = produktsidans pris mot jämförpriset, "Beställ senast 19
+  oktober" bara t.o.m. 2026-10-19, bara Sverige, samma copyregler som
+  `docs/briefs/farsdag-2026/copy/GEMENSAMT.md` + `BOF-GEMENSAMT.md`. Läs av
+  upptagna `FD_<n>` i kontot OCH hubben innan du numrerar (`namnraknare` i
+  filen). Logga `FARSDAG_BATCH_KLAR` per produkt (aldrig `ny_budget`). **Från
+  2026-11-01: inga nya FD-briefer.**
 - Behov `forsta_batch` → produkten har passerat 1 500 kr OCH ligger på minst
   **20 % vinst**. Under det flaggas ingenting: produkten chillar och prövas om
   nästa dygn. Bygg ALDRIG en batch för en produkt som inte står i listan.

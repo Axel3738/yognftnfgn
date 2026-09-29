@@ -479,3 +479,20 @@ Ur `agent/etikett-backfill.mjs` 2026-09-29 (annonsens egna första vecka 22–28
 | Termoskydd_PD_10_H1 | 2 | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 2,05 | nej |
 
 **Vidarebygg 2026-09-29 — inte byggt, med flit:** `annonsbehov` gav `vidarebygg` för Termoskydd_CS_2 (2 av 3 iterationer, deadline 2026-10-05, tak 5 ur dagens fem lärdomar). Lärdomen L-120250175768000291 avgjorde redan iteration 2 (längre problemdel) som **SLÄPP**: "copyn är identisk med CS_3 och Termoskydd_CS_10_1 testar exakt den variabeln på samma prisvinkel; att bygga den två gånger ger två annonser datan inte kan skilja åt". CS_12_1 (iter 1) och CS_12_H1 (iter 3) är briefade 23/9. Behovet kommer att flaggas varje morgon till deadline eftersom räkningen bara ser BRIEF-rader — det är rätt att låta det stå. Feedback-raden `Brief review 2026-09-27` finns i hubben (ny sedan gårdagens läsning) och läses före nästa brief. Dagens fem etiketter: UG_2_H1 KPI_WINNER under grinden (180 kr, 1 köp), OB_2_H1 LOSER, PD_12_1/PD_11_H1/PD_10_H1 INGEN_LEVERANS — alla SLÄPP/läs om dag 14.
+
+
+## Fars dag omgång 4 — extra BOF-batch (2026-09-29 kväll, Axels order samma kväll)
+
+Axel: "gör en till extra batch för fars dag för alla produkter och gärna dubbelt så mycket bildads och sedan normal kvantitet videos så att vi pushar extra mycket BOF fars dag annonser". Invändningen som batchen svarar på: **"559 kr för ett överdrag?"** (svar ur sidan: 559 kr mot 932 kr; sitter utanpå glaset i dörrkarmen, 211 × 171 cm, vindrutan och båda sidorutorna). Förälder Termoskydd_CS_3 (lärdom L-120250175770080291). Alla sju klarade spärren (regi 4/4, 0 fel), ligger som `Draft` i BÄVER Termoskyddet för Husbil. Loggkod `FARSDAG_BATCH_KLAR`. Batch-loggen för hela omgången: `docs/briefs/farsdag-2026/README-bof.md`.
+
+| Annons | Typ | Hook / rubrik | Notion |
+|---|---|---|---|
+| Termoskydd_FD_3_H1 | video 13 s, BOF-omklipp | Fars dag: 559 kr täcker vindrutan och båda sidorutorna. | https://www.notion.so/3ea270ab908c8142bc62d70558abe76f |
+| Termoskydd_FD_3_H2 | video 13 s, BOF-omklipp | 559 kr, ord. 932 kr. Husbilsskydd till fars dag. | https://www.notion.so/3ea270ab908c815fbd3be1b7021e664f |
+| Termoskydd_FD_3_H3 | video 13 s, BOF-omklipp | Beställ senast 19 oktober: skyddet hinner till fars dag. | https://www.notion.so/3ea270ab908c81f2b23ef6f408cbdce2 |
+| Termoskydd_FD_4_1 | bild, BOF | Tre rutor mörklagda för 559 kr | https://www.notion.so/3ea270ab908c818a9016deafeaf129fc |
+| Termoskydd_FD_4_2 | bild, BOF | 559 kr till fars dag. Ord. 932 kr. | https://www.notion.so/3ea270ab908c81b6aed5c52ee8b56cf6 |
+| Termoskydd_FD_4_3 | bild, BOF | Beställ senast 19 oktober, fars dag | https://www.notion.so/3ea270ab908c813197b5cfbeacbb9c6e |
+| Termoskydd_FD_4_4 | bild, BOF | 211 cm bred, 90 cm sidflikar | https://www.notion.so/3ea270ab908c81fb80e5cd00dd72faae |
+
+Mätning (ANALYSMETOD): ingen dom under 300 kr / 3 köp. H1 mot H2 mot H3 = vilken öppning (invändning, pris, sista dag) den produktmedvetna tittaren behöver; FD_4_1–4 mot varandra = budskapet i textrutan; hela batchen mot FD_1/FD_2 (presentvinkeln, kall publik). Etikett dag 7, lärdom, sedan dna.md.

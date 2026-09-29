@@ -1,0 +1,192 @@
+{
+  "hook_H1": {
+    "rad": "En present till fars dag. Taket han aldrig kollar.",
+    "engelska": "A Father's Day gift. The roof he never checks.",
+    "alternativ": [
+      "En present till fars dag. Taket han glömmer.",
+      "Till fars dag: pappa pratar om husvagnen jämt."
+    ]
+  },
+  "hook_H2": {
+    "rad": "Presenten till fars dag ligger redan på taket.",
+    "engelska": "Dad's Father's Day gift is already on the roof.",
+    "alternativ": [
+      "Gåvan till fars dag ligger på taket.",
+      "Nu ligger presenten till fars dag uppe."
+    ]
+  },
+  "rader": [
+    {
+      "nr": 2,
+      "rad": "Vattnet rinner av 210D-oxfordväven. Blir aldrig stående.",
+      "engelska": "Water runs off the 210D Oxford weave. Never pools."
+    },
+    {
+      "nr": 3,
+      "rad": "Spänn remmen. Kroka den under kanten.",
+      "engelska": "Tighten the strap. Hook it under the edge."
+    },
+    {
+      "nr": 4,
+      "rad": "Den rör bara taket, aldrig lacken.",
+      "engelska": "It only touches the roof, never the paint."
+    },
+    {
+      "nr": 5,
+      "rad": "Fars dag-rea. Beställ senast 19 oktober.",
+      "engelska": "Father's Day sale. Order by October 19."
+    }
+  ],
+  "text_pa_skarm": {
+    "1_H1": "En present till fars dag.",
+    "1_H2": "Presenten ligger redan på taket.",
+    "2": "Vattnet rinner av. Blir aldrig stående.",
+    "3": "Spänn remmen. Kroka den under kanten.",
+    "4": "Den rör bara taket, aldrig lacken.",
+    "5": "Fars dag-rea. Från 1 129 kr."
+  },
+  "bild": {
+    "rubrik": "Present till fars dag: taket han aldrig kollar.",
+    "underrad": "Kanten hänger 30 till 40 cm ner. Vattentät 210D-väv.",
+    "marke": "Fars dag-rea",
+    "prisband": "Från 1 129 kr, ord. 1 469 kr",
+    "sista_raden": "Beställ senast 19 oktober",
+    "engelska": {
+      "rubrik": "Father's Day gift: the roof he never checks.",
+      "underrad": "Edge drops 30 to 40 cm. Waterproof 210D fabric."
+    }
+  },
+  "copy_card": {
+    "primar": "En present till fars dag. Taket han aldrig kollar. Vattentät 210D-oxfordväv med remmar på alla fyra sidor håller den på plats. Fars dag-rea: 1 129 kr, ord. 1 469 kr. Beställ senast 19 oktober.",
+    "rubrik": "Taket pappa aldrig kollar.",
+    "beskrivning": "Fars dag-rea: 1 129 kr, ord. 1 469 kr"
+  },
+  "tretest": [
+    {
+      "rad": "En present till fars dag. Taket han aldrig kollar.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Bygger direkt på produktsidans egen fakta ('det är precis den ytan du inte går upp och kollar') — knutet till just det här taket, inte generisk presentprat."
+    },
+    {
+      "rad": "Presenten till fars dag ligger redan på taket.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret handling i bild (hon pekar på överdraget på taket) — säger exakt vad kameran visar, ingen konkurrent har det här klippet."
+    },
+    {
+      "rad": "Vattnet rinner av 210D-oxfordväven. Blir aldrig stående.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Pekar på materialet (210D-oxfordväv) i stället för adjektiv, direkt ur produktsidan. Specifik materialsiffra gör den svår att kopiera rakt av."
+    },
+    {
+      "rad": "Spänn remmen. Kroka den under kanten.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Beskriver exakt det handen gör i klippet (spänner remmen, krokar under kanten) — en instruktion till just den här mekanismen."
+    },
+    {
+      "rad": "Den rör bara taket, aldrig lacken.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Ur produktsidans egen jämförelse (helöverdrag rör lacken hela vintern, det här gör inte det: 'Rör lacken: Nej, ligger bara på taket') — differentierar mot helöverdraget, matchar handen som stryker över taket i bild."
+    },
+    {
+      "rad": "Fars dag-rea. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Datumet är den riktiga sista beställningsdagen för just den här leveranskedjan, ingen påhittad brådska."
+    },
+    {
+      "rad": "En present till fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": true,
+      "kommentar": "Kort skärmtext, avsiktligt generisk för att rymmas på 6 ord — bär inte hela claimet ensam, resten av videon gör det."
+    },
+    {
+      "rad": "Presenten ligger redan på taket.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Säger var presenten fysiskt är (taket) — knutet till just den här produkten."
+    },
+    {
+      "rad": "Vattnet rinner av. Blir aldrig stående.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Skärmversion av rad 2, samma sakuppgift kortare."
+    },
+    {
+      "rad": "Fars dag-rea. Från 1 129 kr.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Det exakta priset gör raden omöjlig för en konkurrent att skriva under."
+    },
+    {
+      "rad": "Present till fars dag: taket han aldrig kollar.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Samma faktabaserade claim som H1, i statisk rubrikform."
+    },
+    {
+      "rad": "Kanten hänger 30 till 40 cm ner. Vattentät 210D-väv.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Två uppmätta produktfakta (kantens fall, materialets kod) — ingen annan produkt har exakt de här siffrorna."
+    },
+    {
+      "rad": "Fars dag-rea",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": true,
+      "kommentar": "Fast erbjudandeetikett (marke-fältet), inte en creative-rad — vilken butik som helst kan sätta samma badge på sin egen rea. Bärs av priset och produkten runt om."
+    },
+    {
+      "rad": "Från 1 129 kr, ord. 1 469 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Produktens riktiga pris ur produktsidan — exakta kronor gör den unik för just den här varan."
+    },
+    {
+      "rad": "Beställ senast 19 oktober",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Den enda tillåtna brådskan, mätt på leveranstiden till fars dag."
+    },
+    {
+      "rad": "En present till fars dag. Taket han aldrig kollar. Vattentät 210D-oxfordväv med remmar på alla fyra sidor håller den på plats. Fars dag-rea: 1 129 kr, ord. 1 469 kr. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Hooken + mekanism + pris i tur och ordning, allt spårbart till produktsidan och det riktiga priset."
+    },
+    {
+      "rad": "Taket pappa aldrig kollar.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kort copy card-rubrik, samma faktabaserade claim som hooken."
+    },
+    {
+      "rad": "Fars dag-rea: 1 129 kr, ord. 1 469 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Exakt pris ur produktsidan, samma som prisbandet."
+    }
+  ]
+}

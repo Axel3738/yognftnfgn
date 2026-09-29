@@ -55,3 +55,20 @@ Pris läst live 2026-09-27: 589 kr / jämförpris 775 kr (oförändrat). Tillåt
 
 **Hypotes:** PD_1 säljer bättre per klick än PD_3 (ROAS 2,17, konverteringsgrad 2,1 %) men hold rate 6 % ger den ingen spend — tre öppningar som visar resultatet/mekanismen i sekund 0 mot förälderns produktbild. Utfall läses dag 7 efter lansering.
 
+
+
+## Fars dag omgång 4 — extra BOF-batch (2026-09-29 kväll, Axels order samma kväll)
+
+Axel: "gör en till extra batch för fars dag för alla produkter och gärna dubbelt så mycket bildads och sedan normal kvantitet videos så att vi pushar extra mycket BOF fars dag annonser". Invändningen som batchen svarar på: **"måste en elektriker sätta upp den?"** (svar ur sidan: ingen kabel: solcell och 1200 mAh batteri, rörelsesensorn tänder tre huvuden med 210 lysdioder, skruvas upp själv). Förälder Solcellslampa_PD_3 (lärdom L-120250253967570291). Alla sju klarade spärren (regi 4/4, 0 fel), ligger som `Draft` i Solar motion sensor light creative hub. Loggkod `FARSDAG_BATCH_KLAR`. Batch-loggen för hela omgången: `docs/briefs/farsdag-2026/README-bof.md`.
+
+| Annons | Typ | Hook / rubrik | Notion |
+|---|---|---|---|
+| Solcellslampa_FD_3_H1 | video 13 s, BOF-omklipp | Fars dag: solcellen laddar den, ingen kabel dras. | https://www.notion.so/3ea270ab908c8186a47cd407de0b17d9 |
+| Solcellslampa_FD_3_H2 | video 13 s, BOF-omklipp | 589 kr, ord. 775 kr: solcellslampa till fars dag. | https://www.notion.so/3ea270ab908c8161b4fcfb545fbe6c9f |
+| Solcellslampa_FD_3_H3 | video 13 s, BOF-omklipp | Beställ senast 19 oktober: 210 lysdioder till fars dag. | https://www.notion.so/3ea270ab908c81739081cc8ff3f83e04 |
+| Solcellslampa_FD_4_1 | bild, BOF | Utan en enda kabel. Solcellen laddar den. | https://www.notion.so/3ea270ab908c81c1a162d1cd5e1a055e |
+| Solcellslampa_FD_4_2 | bild, BOF | 589 kr till fars dag. Ord. 775 kr. | https://www.notion.so/3ea270ab908c81e88183ca4ab6da849d |
+| Solcellslampa_FD_4_3 | bild, BOF | Beställ senast 19 oktober. Solcellslampa till fars dag. | https://www.notion.so/3ea270ab908c8168afb4f188cae9daeb |
+| Solcellslampa_FD_4_4 | bild, BOF | Tre huvuden. 210 lysdioder. 1200 mAh. | https://www.notion.so/3ea270ab908c812da104f1e8d51d53c9 |
+
+Mätning (ANALYSMETOD): ingen dom under 300 kr / 3 köp. H1 mot H2 mot H3 = vilken öppning (invändning, pris, sista dag) den produktmedvetna tittaren behöver; FD_4_1–4 mot varandra = budskapet i textrutan; hela batchen mot FD_1/FD_2 (presentvinkeln, kall publik). Etikett dag 7, lärdom, sedan dna.md.

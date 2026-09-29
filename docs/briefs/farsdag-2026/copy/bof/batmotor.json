@@ -1,0 +1,287 @@
+{
+  "hook_H1": {
+    "rad": "Nio storlekar. Mät motorn, välj rätt, dra över.",
+    "engelska": "Nine sizes. Measure the motor, pick the right one, pull it on.",
+    "alternativ": [
+      "Fars dag: nio storlekar, mät motorn först.",
+      "Mät motorn. Nio storlekar, ett skydd som passar."
+    ]
+  },
+  "hook_H2": {
+    "rad": "Båtmotorskydd 579 kr till fars dag. Ord. 965 kr.",
+    "engelska": "Outboard cover 579 kr for Father's Day. Was 965 kr.",
+    "alternativ": [
+      "Motorskydd 579 kr. Ord. 965 kr. Till fars dag.",
+      "Fars dag-rea: motorskydd 579 kr, ord. 965 kr."
+    ]
+  },
+  "hook_H3": {
+    "rad": "Beställ senast 19 oktober. Motorskyddet hinner till fars dag.",
+    "engelska": "Order by 19 October. The motor cover makes it in time for Father's Day.",
+    "alternativ": [
+      "Fars dag är 8 november. Beställ senast 19 oktober.",
+      "Motorskyddet till fars dag: beställ senast 19 oktober."
+    ]
+  },
+  "rader": [
+    {
+      "nr": 2,
+      "rad": "Över kåpan, ner över riggen. Spänn en rem.",
+      "engelska": "Over the cowling, down over the rig. Tighten one strap."
+    },
+    {
+      "nr": 3,
+      "rad": "0 till 5 hk, upp till 350. Mät först.",
+      "engelska": "0 to 5 hp, up to 350. Measure first."
+    },
+    {
+      "nr": 4,
+      "rad": "Fars dag-rea: 579 kr, ord. 965 kr. Beställ senast 19 oktober.",
+      "engelska": "Father's Day sale: 579 kr, was 965 kr. Order by 19 October."
+    }
+  ],
+  "text_pa_skarm": {
+    "1_H1": "Fars dag: nio storlekar, mät först",
+    "1_H2": "579 kr, ord. 965 kr",
+    "1_H3": "Beställ senast 19 oktober",
+    "2": "Kåpa till rigg. En rem.",
+    "3": "Från 0 till 5 hk. Mät först."
+  },
+  "bilder": {
+    "FD_4_1": {
+      "rubrik": "Mät motorn. Ett av nio skydd passar.",
+      "underrad": "Nio storlekar efter hk. Dras på utan verktyg.",
+      "engelska": {
+        "rubrik": "Measure the motor. One of nine covers fits.",
+        "underrad": "Nine sizes by horsepower. Goes on without tools."
+      }
+    },
+    "FD_4_2": {
+      "rubrik": "579 kr till fars dag. Ord. 965 kr.",
+      "underrad": "Ett tygöverdrag för utombordaren, spänns med en rem.",
+      "engelska": {
+        "rubrik": "579 kr for Father's Day. Was 965 kr.",
+        "underrad": "A fabric cover for the outboard, tightened with one strap."
+      }
+    },
+    "FD_4_3": {
+      "rubrik": "Beställ senast 19 oktober: båtmotorskydd till fars dag",
+      "underrad": "Så hinner det fram. Dras på utan verktyg.",
+      "engelska": {
+        "rubrik": "Order by 19 October: outboard cover for Father's Day",
+        "underrad": "So it arrives in time. Goes on without tools."
+      }
+    },
+    "FD_4_4": {
+      "rubrik": "420D Oxford-tyg från kåpa till rigg",
+      "underrad": "En rem runt mitten. Nio storlekar. Inga verktyg.",
+      "engelska": {
+        "rubrik": "420D Oxford fabric from cowling to rig",
+        "underrad": "One strap around the middle. Nine sizes. No tools."
+      }
+    }
+  },
+  "copy_card": {
+    "primar": "Nio storlekar. Mät motorn, välj rätt, dra över. Dras på utan verktyg och spänns med en rem. Fars dag-rea: 579 kr, ord. 965 kr. Beställ senast 19 oktober.",
+    "rubrik": "Nio storlekar, en rem",
+    "beskrivning": "Fars dag-rea: 579 kr, ord. 965 kr"
+  },
+  "tretest": [
+    {
+      "rad": "Nio storlekar. Mät motorn, välj rätt, dra över.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret bild (storlek, rem, pris, datum), går att kontrollera mot sidan; ett generiskt överdrag för annan produkt har inte just den här siffer- och datumkombinationen."
+    },
+    {
+      "rad": "Fars dag: nio storlekar, mät motorn först.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret bild (storlek, rem, pris, datum), går att kontrollera mot sidan; ett generiskt överdrag för annan produkt har inte just den här siffer- och datumkombinationen."
+    },
+    {
+      "rad": "Mät motorn. Nio storlekar, ett skydd som passar.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret bild (storlek, rem, pris, datum), går att kontrollera mot sidan; ett generiskt överdrag för annan produkt har inte just den här siffer- och datumkombinationen."
+    },
+    {
+      "rad": "Båtmotorskydd 579 kr till fars dag. Ord. 965 kr.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret bild (storlek, rem, pris, datum), går att kontrollera mot sidan; ett generiskt överdrag för annan produkt har inte just den här siffer- och datumkombinationen."
+    },
+    {
+      "rad": "Motorskydd 579 kr. Ord. 965 kr. Till fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret bild (storlek, rem, pris, datum), går att kontrollera mot sidan; ett generiskt överdrag för annan produkt har inte just den här siffer- och datumkombinationen."
+    },
+    {
+      "rad": "Fars dag-rea: motorskydd 579 kr, ord. 965 kr.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret bild (storlek, rem, pris, datum), går att kontrollera mot sidan; ett generiskt överdrag för annan produkt har inte just den här siffer- och datumkombinationen."
+    },
+    {
+      "rad": "Beställ senast 19 oktober. Motorskyddet hinner till fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret bild (storlek, rem, pris, datum), går att kontrollera mot sidan; ett generiskt överdrag för annan produkt har inte just den här siffer- och datumkombinationen."
+    },
+    {
+      "rad": "Fars dag är 8 november. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret bild (storlek, rem, pris, datum), går att kontrollera mot sidan; ett generiskt överdrag för annan produkt har inte just den här siffer- och datumkombinationen."
+    },
+    {
+      "rad": "Motorskyddet till fars dag: beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret bild (storlek, rem, pris, datum), går att kontrollera mot sidan; ett generiskt överdrag för annan produkt har inte just den här siffer- och datumkombinationen."
+    },
+    {
+      "rad": "Över kåpan, ner över riggen. Spänn en rem.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret bild (storlek, rem, pris, datum), går att kontrollera mot sidan; ett generiskt överdrag för annan produkt har inte just den här siffer- och datumkombinationen."
+    },
+    {
+      "rad": "0 till 5 hk, upp till 350. Mät först.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret bild (storlek, rem, pris, datum), går att kontrollera mot sidan; ett generiskt överdrag för annan produkt har inte just den här siffer- och datumkombinationen."
+    },
+    {
+      "rad": "Fars dag-rea: 579 kr, ord. 965 kr. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret bild (storlek, rem, pris, datum), går att kontrollera mot sidan; ett generiskt överdrag för annan produkt har inte just den här siffer- och datumkombinationen."
+    },
+    {
+      "rad": "Fars dag: nio storlekar, mät först",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret bild (storlek, rem, pris, datum), går att kontrollera mot sidan; ett generiskt överdrag för annan produkt har inte just den här siffer- och datumkombinationen."
+    },
+    {
+      "rad": "579 kr, ord. 965 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret bild (storlek, rem, pris, datum), går att kontrollera mot sidan; ett generiskt överdrag för annan produkt har inte just den här siffer- och datumkombinationen."
+    },
+    {
+      "rad": "Beställ senast 19 oktober",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret bild (storlek, rem, pris, datum), går att kontrollera mot sidan; ett generiskt överdrag för annan produkt har inte just den här siffer- och datumkombinationen."
+    },
+    {
+      "rad": "Kåpa till rigg. En rem.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret bild (storlek, rem, pris, datum), går att kontrollera mot sidan; ett generiskt överdrag för annan produkt har inte just den här siffer- och datumkombinationen."
+    },
+    {
+      "rad": "Från 0 till 5 hk. Mät först.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret bild (storlek, rem, pris, datum), går att kontrollera mot sidan; ett generiskt överdrag för annan produkt har inte just den här siffer- och datumkombinationen."
+    },
+    {
+      "rad": "Mät motorn. Ett av nio skydd passar.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret bild (storlek, rem, pris, datum), går att kontrollera mot sidan; ett generiskt överdrag för annan produkt har inte just den här siffer- och datumkombinationen."
+    },
+    {
+      "rad": "Nio storlekar efter hk. Dras på utan verktyg.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret bild (storlek, rem, pris, datum), går att kontrollera mot sidan; ett generiskt överdrag för annan produkt har inte just den här siffer- och datumkombinationen."
+    },
+    {
+      "rad": "579 kr till fars dag. Ord. 965 kr.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret bild (storlek, rem, pris, datum), går att kontrollera mot sidan; ett generiskt överdrag för annan produkt har inte just den här siffer- och datumkombinationen."
+    },
+    {
+      "rad": "Ett tygöverdrag för utombordaren, spänns med en rem.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret bild (storlek, rem, pris, datum), går att kontrollera mot sidan; ett generiskt överdrag för annan produkt har inte just den här siffer- och datumkombinationen."
+    },
+    {
+      "rad": "Beställ senast 19 oktober: båtmotorskydd till fars dag",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret bild (storlek, rem, pris, datum), går att kontrollera mot sidan; ett generiskt överdrag för annan produkt har inte just den här siffer- och datumkombinationen."
+    },
+    {
+      "rad": "Så hinner det fram. Dras på utan verktyg.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret bild (storlek, rem, pris, datum), går att kontrollera mot sidan; ett generiskt överdrag för annan produkt har inte just den här siffer- och datumkombinationen."
+    },
+    {
+      "rad": "420D Oxford-tyg från kåpa till rigg",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret bild (storlek, rem, pris, datum), går att kontrollera mot sidan; ett generiskt överdrag för annan produkt har inte just den här siffer- och datumkombinationen."
+    },
+    {
+      "rad": "En rem runt mitten. Nio storlekar. Inga verktyg.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret bild (storlek, rem, pris, datum), går att kontrollera mot sidan; ett generiskt överdrag för annan produkt har inte just den här siffer- och datumkombinationen."
+    },
+    {
+      "rad": "Nio storlekar, en rem",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret bild (storlek, rem, pris, datum), går att kontrollera mot sidan; ett generiskt överdrag för annan produkt har inte just den här siffer- och datumkombinationen."
+    },
+    {
+      "rad": "Fars dag-rea: 579 kr, ord. 965 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret bild (storlek, rem, pris, datum), går att kontrollera mot sidan; ett generiskt överdrag för annan produkt har inte just den här siffer- och datumkombinationen."
+    },
+    {
+      "rad": "Nio storlekar. Mät motorn, välj rätt, dra över. Dras på utan verktyg och spänns med en rem. Fars dag-rea: 579 kr, ord. 965 kr. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret bild (storlek, rem, pris, datum), går att kontrollera mot sidan; ett generiskt överdrag för annan produkt har inte just den här siffer- och datumkombinationen."
+    }
+  ]
+}

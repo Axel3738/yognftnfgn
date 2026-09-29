@@ -1,0 +1,280 @@
+{
+  "hook_H1": {
+    "rad": "Fars dag: storlek 40 till 47, khaki eller svart.",
+    "engelska": "Father's Day: sizes 40 to 47, khaki or black.",
+    "alternativ": [
+      "Khaki eller svart. Storlek 40 till 47. Fars dag.",
+      "Två färger, åtta storlekar, ett par till fars dag."
+    ]
+  },
+  "hook_H2": {
+    "rad": "489 kr, ord. 978 kr. Plyschtofflor till fars dag.",
+    "engelska": "489 kr, was 978 kr. Plush slippers for Father's Day.",
+    "alternativ": [
+      "Fars dag-rea: 489 kr, ord. 978 kr. Kamouflagetofflor.",
+      "Tofflor till fars dag: 489 kr, ord. 978 kr."
+    ]
+  },
+  "hook_H3": {
+    "rad": "Beställ senast 19 oktober. Fars dag-tofflor vid vedstapeln.",
+    "engelska": "Order by 19 October. Father's Day slippers by the woodpile.",
+    "alternativ": [
+      "Beställ senast 19 oktober. Fars dag-tofflor med plysch.",
+      "Fars dag-tofflor: beställ senast 19 oktober."
+    ]
+  },
+  "rader": [
+    {
+      "nr": 2,
+      "rad": "Plysch från häl till tå. Golvets kyla stannar utanför.",
+      "engelska": "Plush from heel to toe. The cold of the floor stays outside."
+    },
+    {
+      "nr": 3,
+      "rad": "Hälrem på varje par. Den sitter kvar på foten.",
+      "engelska": "A heel strap on every pair. It stays on the foot."
+    },
+    {
+      "nr": 4,
+      "rad": "Fars dag-rea: 489 kr, ord. 978 kr. Beställ senast 19 oktober.",
+      "engelska": "Father's Day sale: 489 kr, was 978 kr. Order by 19 October."
+    }
+  ],
+  "text_pa_skarm": {
+    "1_H1": "Fars dag. Storlek 40 till 47.",
+    "1_H2": "489 kr, ord. 978 kr",
+    "1_H3": "Beställ senast 19 oktober. Fars dag.",
+    "2": "Plysch från häl till tå",
+    "3": "Hälrem på varje par"
+  },
+  "bilder": {
+    "FD_4_1": {
+      "rubrik": "Storlek 40 till 47, khaki eller svart.",
+      "underrad": "Hälrem och plysch från häl till tå.",
+      "engelska": {
+        "rubrik": "Sizes 40 to 47, khaki or black.",
+        "underrad": "Heel strap and plush from heel to toe."
+      }
+    },
+    "FD_4_2": {
+      "rubrik": "489 kr till fars dag. Ord. 978 kr.",
+      "underrad": "Plysch från häl till tå, khaki eller svart.",
+      "engelska": {
+        "rubrik": "489 kr for Father's Day. Was 978 kr.",
+        "underrad": "Plush from heel to toe, khaki or black."
+      }
+    },
+    "FD_4_3": {
+      "rubrik": "Beställ senast 19 oktober. Fars dag-tofflor.",
+      "underrad": "Så hinner tofflorna fram till fars dag.",
+      "engelska": {
+        "rubrik": "Order by 19 October. Father's Day slippers.",
+        "underrad": "So the slippers arrive in time for Father's Day."
+      }
+    },
+    "FD_4_4": {
+      "rubrik": "Två färger, åtta storlekar, plysch hela vägen.",
+      "underrad": "Samma pris i alla storlekar och båda färgerna.",
+      "engelska": {
+        "rubrik": "Two colours, eight sizes, plush all the way.",
+        "underrad": "Same price in every size and both colours."
+      }
+    }
+  },
+  "copy_card": {
+    "primar": "Fars dag: storlek 40 till 47, khaki eller svart. Plysch från häl till tå och hälrem på varje par. Fars dag-rea: 489 kr, ord. 978 kr. Beställ senast 19 oktober.",
+    "rubrik": "Storlek 40 till 47, två färger",
+    "beskrivning": "Fars dag-rea: 489 kr, ord. 978 kr"
+  },
+  "tretest": [
+    {
+      "rad": "Fars dag: storlek 40 till 47, khaki eller svart.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret fakta ur produktsidan (storlek, färg, plysch, hälrem, pris eller datum); ingen annan säljer just dessa tofflor med just detta pris."
+    },
+    {
+      "rad": "Khaki eller svart. Storlek 40 till 47. Fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret fakta ur produktsidan (storlek, färg, plysch, hälrem, pris eller datum); ingen annan säljer just dessa tofflor med just detta pris."
+    },
+    {
+      "rad": "Två färger, åtta storlekar, ett par till fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret fakta ur produktsidan (storlek, färg, plysch, hälrem, pris eller datum); ingen annan säljer just dessa tofflor med just detta pris."
+    },
+    {
+      "rad": "489 kr, ord. 978 kr. Plyschtofflor till fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret fakta ur produktsidan (storlek, färg, plysch, hälrem, pris eller datum); ingen annan säljer just dessa tofflor med just detta pris."
+    },
+    {
+      "rad": "Fars dag-rea: 489 kr, ord. 978 kr. Kamouflagetofflor.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret fakta ur produktsidan (storlek, färg, plysch, hälrem, pris eller datum); ingen annan säljer just dessa tofflor med just detta pris."
+    },
+    {
+      "rad": "Tofflor till fars dag: 489 kr, ord. 978 kr.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret fakta ur produktsidan (storlek, färg, plysch, hälrem, pris eller datum); ingen annan säljer just dessa tofflor med just detta pris."
+    },
+    {
+      "rad": "Beställ senast 19 oktober. Fars dag-tofflor vid vedstapeln.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret fakta ur produktsidan (storlek, färg, plysch, hälrem, pris eller datum); ingen annan säljer just dessa tofflor med just detta pris."
+    },
+    {
+      "rad": "Beställ senast 19 oktober. Fars dag-tofflor med plysch.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret fakta ur produktsidan (storlek, färg, plysch, hälrem, pris eller datum); ingen annan säljer just dessa tofflor med just detta pris."
+    },
+    {
+      "rad": "Fars dag-tofflor: beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret fakta ur produktsidan (storlek, färg, plysch, hälrem, pris eller datum); ingen annan säljer just dessa tofflor med just detta pris."
+    },
+    {
+      "rad": "Plysch från häl till tå. Golvets kyla stannar utanför.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret fakta ur produktsidan (storlek, färg, plysch, hälrem, pris eller datum); ingen annan säljer just dessa tofflor med just detta pris."
+    },
+    {
+      "rad": "Hälrem på varje par. Den sitter kvar på foten.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret fakta ur produktsidan (storlek, färg, plysch, hälrem, pris eller datum); ingen annan säljer just dessa tofflor med just detta pris."
+    },
+    {
+      "rad": "Fars dag-rea: 489 kr, ord. 978 kr. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret fakta ur produktsidan (storlek, färg, plysch, hälrem, pris eller datum); ingen annan säljer just dessa tofflor med just detta pris."
+    },
+    {
+      "rad": "Fars dag. Storlek 40 till 47.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret fakta ur produktsidan (storlek, färg, plysch, hälrem, pris eller datum); ingen annan säljer just dessa tofflor med just detta pris."
+    },
+    {
+      "rad": "489 kr, ord. 978 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret fakta ur produktsidan (storlek, färg, plysch, hälrem, pris eller datum); ingen annan säljer just dessa tofflor med just detta pris."
+    },
+    {
+      "rad": "Beställ senast 19 oktober. Fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret fakta ur produktsidan (storlek, färg, plysch, hälrem, pris eller datum); ingen annan säljer just dessa tofflor med just detta pris."
+    },
+    {
+      "rad": "Plysch från häl till tå",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret fakta ur produktsidan (storlek, färg, plysch, hälrem, pris eller datum); ingen annan säljer just dessa tofflor med just detta pris."
+    },
+    {
+      "rad": "Hälrem på varje par",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret fakta ur produktsidan (storlek, färg, plysch, hälrem, pris eller datum); ingen annan säljer just dessa tofflor med just detta pris."
+    },
+    {
+      "rad": "Storlek 40 till 47, khaki eller svart.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret fakta ur produktsidan (storlek, färg, plysch, hälrem, pris eller datum); ingen annan säljer just dessa tofflor med just detta pris."
+    },
+    {
+      "rad": "Hälrem och plysch från häl till tå.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret fakta ur produktsidan (storlek, färg, plysch, hälrem, pris eller datum); ingen annan säljer just dessa tofflor med just detta pris."
+    },
+    {
+      "rad": "489 kr till fars dag. Ord. 978 kr.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret fakta ur produktsidan (storlek, färg, plysch, hälrem, pris eller datum); ingen annan säljer just dessa tofflor med just detta pris."
+    },
+    {
+      "rad": "Plysch från häl till tå, khaki eller svart.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret fakta ur produktsidan (storlek, färg, plysch, hälrem, pris eller datum); ingen annan säljer just dessa tofflor med just detta pris."
+    },
+    {
+      "rad": "Beställ senast 19 oktober. Fars dag-tofflor.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret fakta ur produktsidan (storlek, färg, plysch, hälrem, pris eller datum); ingen annan säljer just dessa tofflor med just detta pris."
+    },
+    {
+      "rad": "Så hinner tofflorna fram till fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret fakta ur produktsidan (storlek, färg, plysch, hälrem, pris eller datum); ingen annan säljer just dessa tofflor med just detta pris."
+    },
+    {
+      "rad": "Två färger, åtta storlekar, plysch hela vägen.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret fakta ur produktsidan (storlek, färg, plysch, hälrem, pris eller datum); ingen annan säljer just dessa tofflor med just detta pris."
+    },
+    {
+      "rad": "Samma pris i alla storlekar och båda färgerna.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret fakta ur produktsidan (storlek, färg, plysch, hälrem, pris eller datum); ingen annan säljer just dessa tofflor med just detta pris."
+    },
+    {
+      "rad": "Fars dag: storlek 40 till 47, khaki eller svart. Plysch från häl till tå och hälrem på varje par. Fars dag-rea: 489 kr, ord. 978 kr. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret fakta ur produktsidan (storlek, färg, plysch, hälrem, pris eller datum); ingen annan säljer just dessa tofflor med just detta pris."
+    },
+    {
+      "rad": "Storlek 40 till 47, två färger",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Konkret fakta ur produktsidan (storlek, färg, plysch, hälrem, pris eller datum); ingen annan säljer just dessa tofflor med just detta pris."
+    }
+  ]
+}

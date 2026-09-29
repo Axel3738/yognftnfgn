@@ -538,3 +538,20 @@ Ur `agent/etikett-backfill.mjs` 2026-09-29 (annonsens egna första vecka 22–28
 | Takoverdrag_GT_9_1 | 2 | **INGEN_LEVERANS** | — | 5 kr | 0 | 0,00 / 2,06 | nej |
 
 Bedömbara i dag: PD_10_1 (KPI_WINNER, 17 köp, CPA 473 kr — platser PD_10_2/PD_10_3 namngivna), RI_2_H1 (KPI_WINNER, 5 köp — RI_2_H2 namngiven; recensionsraden är importrader), RI_3_H1 (KPI_WINNER prel., 4 köp — RI_3_H2/H3 namngivna), CS_8_H1 (LOSER bedömbar, ROAS 1,58 — släppt, idén lever i RI_3). **Observation, ingen dom:** samma creative som SE:s `Takoverdrag_CS_7_H1` (LOSER, 712 kr, 0 köp) kör som `CaraShellRoof_NO_CS_107_H1` i CaraShells NO-kampanj med 10 köp på 5 060 kr (KPI_WINNER, bedömbar, ROAS 2,75) — prisankaret vinner i Norge men fick inget köp i SE-huvudkampanjen samma vecka; läs om dag 14. Rundan för Taköverdraget förfaller först när 3-dagarsklockan från batch #7 (28/9) gått. Spendtjuven i grönt läge pausade `Takoverdrag_CS_2_H1` i dag (TROTT_VINNARE: 4 042 kr / 4 köp / ROAS 1,24 på 3 d, livstid 3,66, etikett KPI_WINNER 21/9) — kampanjen orörd.
+
+
+## Fars dag omgång 4 — extra BOF-batch (2026-09-29 kväll, Axels order samma kväll)
+
+Axel: "gör en till extra batch för fars dag för alla produkter och gärna dubbelt så mycket bildads och sedan normal kvantitet videos så att vi pushar extra mycket BOF fars dag annonser". Invändningen som batchen svarar på: **"finns den för min husvagn?"** (svar ur sidan: nio längder, 3 × 5,5 till 3 × 13,5 m, från 1 129 kr; remmar på alla fyra sidor, kanten 30 till 40 cm ner över väggen). Förälder Takoverdrag_GT_2_H1 (lärdom L-120250147364200291). Alla sju klarade spärren (regi 4/4, 0 fel), ligger som `Draft` i BÄVER For CARL Taköverdraget för Husvagn. Loggkod `FARSDAG_BATCH_KLAR`. Batch-loggen för hela omgången: `docs/briefs/farsdag-2026/README-bof.md`.
+
+| Annons | Typ | Hook / rubrik | Notion |
+|---|---|---|---|
+| Takoverdrag_FD_3_H1 | video 13 s, BOF-omklipp | Mät husvagnen. Nio längder, 5,5 till 13,5 meter. | https://www.notion.so/3ea270ab908c8188951cf208681397d6 |
+| Takoverdrag_FD_3_H2 | video 13 s, BOF-omklipp | Taköverdrag: från 1 129 kr, ord. 1 469 kr. | https://www.notion.so/3ea270ab908c8130a40afa967fb77483 |
+| Takoverdrag_FD_3_H3 | video 13 s, BOF-omklipp | Beställ senast 19 oktober. Fars dag-present: 210D-väv på taket. | https://www.notion.so/3ea270ab908c81af942ae78c980d6d58 |
+| Takoverdrag_FD_4_1 | bild, BOF | Mät vagnen. Ta storleken minst lika lång. | https://www.notion.so/3ea270ab908c81c4b411fc60d5db57db |
+| Takoverdrag_FD_4_2 | bild, BOF | Från 1 129 kr. Ord. 1 469 kr. | https://www.notion.so/3ea270ab908c8166a734f84a6fbf3c00 |
+| Takoverdrag_FD_4_3 | bild, BOF | Beställ senast 19 oktober: taköverdrag till fars dag. | https://www.notion.so/3ea270ab908c817b9babe17a222c44db |
+| Takoverdrag_FD_4_4 | bild, BOF | Remmar på alla fyra sidor. Spänne, krok. | https://www.notion.so/3ea270ab908c81108ee6eca9e640acbb |
+
+Mätning (ANALYSMETOD): ingen dom under 300 kr / 3 köp. H1 mot H2 mot H3 = vilken öppning (invändning, pris, sista dag) den produktmedvetna tittaren behöver; FD_4_1–4 mot varandra = budskapet i textrutan; hela batchen mot FD_1/FD_2 (presentvinkeln, kall publik). Etikett dag 7, lärdom, sedan dna.md.

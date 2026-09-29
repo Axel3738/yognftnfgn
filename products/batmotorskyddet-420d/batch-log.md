@@ -621,3 +621,22 @@ Ur `agent/etikett-backfill.mjs` 2026-09-29 (annonsens egna första vecka 22–28
 | Batmotor_CS_11_1 | 3 | **LOSER** | 0 % | 11 kr | 0 | 0,00 / 1,75 | nej |
 
 BF_14_1 (40 kr, 1 köp) och SP_1_H12 (542 kr, 2 köp) är KPI_WINNER under grinden — läs om dag 14; FM_4_H1 (1 442 kr, 2 köp, ROAS 0,80) LOSER under grinden. Alla sex: SLÄPP i lärdomarna, inga nya platser.
+
+
+## Fars dag omgång 4 — extra BOF-batch (2026-09-29 kväll, Axels order samma kväll)
+
+Axel: "gör en till extra batch för fars dag för alla produkter och gärna dubbelt så mycket bildads och sedan normal kvantitet videos så att vi pushar extra mycket BOF fars dag annonser". Invändningen som batchen svarar på: **"passar den min motor?"** (svar ur sidan: nio storlekar, 0 till 5 hk upp till 250 till 350 hk, mät först; dras på utan verktyg och spänns med en rem). Förälder Batmotor_SP_1_H5 (lärdom L-120250125804850291). Alla sju klarade spärren (regi 4/4, 0 fel), ligger som `Draft` i Boat motor cover creative hub. Loggkod `FARSDAG_BATCH_KLAR`. Batch-loggen för hela omgången: `docs/briefs/farsdag-2026/README-bof.md`.
+
+| Annons | Typ | Hook / rubrik | Notion |
+|---|---|---|---|
+| Batmotor_FD_3_H1 | video 13 s, BOF-omklipp | Nio storlekar. Mät motorn, välj rätt, dra över. | https://www.notion.so/3ea270ab908c81398ecce1d83f75a5af |
+| Batmotor_FD_3_H2 | video 13 s, BOF-omklipp | Båtmotorskydd 579 kr till fars dag. Ord. 965 kr. | https://www.notion.so/3ea270ab908c813882c7f483c2dd9a9f |
+| Batmotor_FD_3_H3 | video 13 s, BOF-omklipp | Beställ senast 19 oktober. Motorskyddet hinner till fars dag. | https://www.notion.so/3ea270ab908c81989345ecf0f7f6a004 |
+| Batmotor_FD_4_1 | bild, BOF | Mät motorn. Ett av nio skydd passar. | https://www.notion.so/3ea270ab908c81e2b3d4c3b64d9031e0 |
+| Batmotor_FD_4_2 | bild, BOF | 579 kr till fars dag. Ord. 965 kr. | https://www.notion.so/3ea270ab908c81be9309d7eb63c9d2f2 |
+| Batmotor_FD_4_3 | bild, BOF | Beställ senast 19 oktober: båtmotorskydd till fars dag | https://www.notion.so/3ea270ab908c81cbb489f041b66b1088 |
+| Batmotor_FD_4_4 | bild, BOF | 420D Oxford-tyg från kåpa till rigg | https://www.notion.so/3ea270ab908c817695a5d1d60d5bef10 |
+
+Mätning (ANALYSMETOD): ingen dom under 300 kr / 3 köp. H1 mot H2 mot H3 = vilken öppning (invändning, pris, sista dag) den produktmedvetna tittaren behöver; FD_4_1–4 mot varandra = budskapet i textrutan; hela batchen mot FD_1/FD_2 (presentvinkeln, kall publik). Etikett dag 7, lärdom, sedan dna.md.
+
+⛔ Copyn följer Axels beslut 2026-09-29 (dna.md överst): inga materiallöften, ingen snö, ingen "vattnet rinner av" — föräldrens snöklipp och vattenmakro används inte.

@@ -148,3 +148,20 @@ per annons (id i manifestet). Notion: **Whittling set creative hub**
 `lardom.mjs --skriv` (samma id — ersätt de preliminära blocken i `lardomar.md`,
 LARDOM-raderna 2026-09-27 är märkta `preliminar: true`), läs av om föräldern
 ska vara PD_1 i stället, och logga launchen med `/logga`.
+
+
+## Fars dag omgång 4 — extra BOF-batch (2026-09-29 kväll, Axels order samma kväll)
+
+Axel: "gör en till extra batch för fars dag för alla produkter och gärna dubbelt så mycket bildads och sedan normal kvantitet videos så att vi pushar extra mycket BOF fars dag annonser". Invändningen som batchen svarar på: **"är det farligt att börja tälja?"** (svar ur sidan: 30 delar i väskan: 6 knivar, 6 järn, strop och skärskyddade handskar; allt i en väska). Förälder Taljset_PD_3 (lärdom L-120250349207730291). Alla sju klarade spärren (regi 4/4, 0 fel), ligger som `Draft` i Whittling set creative hub. Loggkod `FARSDAG_BATCH_KLAR`. Batch-loggen för hela omgången: `docs/briefs/farsdag-2026/README-bof.md`.
+
+| Annons | Typ | Hook / rubrik | Notion |
+|---|---|---|---|
+| Taljset_FD_3_H1 | video 13 s, BOF-omklipp | Fars dag: knivar, järn, strop, handskar. Allt i väskan. | https://www.notion.so/3ea270ab908c81ee879ac63c2a8af07a |
+| Taljset_FD_3_H2 | video 13 s, BOF-omklipp | Täljset 869 kr, ord. 1 139 kr. Fars dag. | https://www.notion.so/3ea270ab908c8110b600cbc054ff4a47 |
+| Taljset_FD_3_H3 | video 13 s, BOF-omklipp | Beställ senast 19 oktober: täljset till fars dag. | https://www.notion.so/3ea270ab908c81769714df3327dda5ac |
+| Taljset_FD_4_1 | bild, BOF | Skärskyddade handskar ingår i väskan | https://www.notion.so/3ea270ab908c8118ba76dfbf1d93a32f |
+| Taljset_FD_4_2 | bild, BOF | 869 kr. Ord. 1 139 kr. Fars dag. | https://www.notion.so/3ea270ab908c813296c6c865c2059108 |
+| Taljset_FD_4_3 | bild, BOF | Beställ senast 19 oktober, täljset till fars dag | https://www.notion.so/3ea270ab908c814a958fda8ee7108dd8 |
+| Taljset_FD_4_4 | bild, BOF | 6 knivar och 6 järn för olika snitt | https://www.notion.so/3ea270ab908c8116bdd3ff8340a3cc3f |
+
+Mätning (ANALYSMETOD): ingen dom under 300 kr / 3 köp. H1 mot H2 mot H3 = vilken öppning (invändning, pris, sista dag) den produktmedvetna tittaren behöver; FD_4_1–4 mot varandra = budskapet i textrutan; hela batchen mot FD_1/FD_2 (presentvinkeln, kall publik). Etikett dag 7, lärdom, sedan dna.md.

@@ -97,3 +97,20 @@ SP_1_H1–H3 och SP_2_1 pausades vid launch och fick aldrig spend (uteslutna: "a
 **Spärrarna:** `briefgranskning.mjs --manifest … --prefix ATVKapell --pris 579 --jamforpris 759` ⇒ exit 0 (regi 6/7/6, två "or/eller" i Picture rättade före andra körningen). `lardom.mjs --brief … --befintliga <kontots 16 namn>` ⇒ 3 BRIEF-rader, "11 fria + 3 namngivna". `VIDAREBYGG_KLAR` loggad. Källorna är `DRIVE 1-8-ycjS… [EDITOR PICKS: …]` — ffmpeg saknas, ingen påhittad sekund; H6:s öppning är förälderns demoklipp i reverse 3 s. `AI content: voice`. ⚠️ Hubben duplicerades ur MALL och syns inte för integrationen Bäverbutiken RUTINER (REST 404) — raderna skapades via Notion-MCP; ett item (PD_1_H4) öppnat och kontrollerat: hela briefen i sidan, ingen .md-länk.
 
 **Upptagna AD-ID:n efter batch #1:** PD_1_H1–H6, PD_2_1, CS_1_H1–H3, CS_2_1, G_1_H1–H3, G_2_1, SP_1_H1–H3, SP_2_1. Nästa lediga: PD_3, CS_3, G_3, SP_3, SO_1, OB_1.
+
+
+## Fars dag omgång 4 — extra BOF-batch (2026-09-29 kväll, Axels order samma kväll)
+
+Axel: "gör en till extra batch för fars dag för alla produkter och gärna dubbelt så mycket bildads och sedan normal kvantitet videos så att vi pushar extra mycket BOF fars dag annonser". Invändningen som batchen svarar på: **"passar den min ATV?"** (svar ur sidan: en storlek: 3XL, 256 × 110 × 120 cm, mät din ATV först; skräpet lägger sig på kapellet i stället för på lacken). Förälder ATVKapell_PD_1_H1 (lärdom L-120250320728410291). Alla sju klarade spärren (regi 4/4, 0 fel), ligger som `Draft` i ATV cover creative hub. Loggkod `FARSDAG_BATCH_KLAR`. Batch-loggen för hela omgången: `docs/briefs/farsdag-2026/README-bof.md`.
+
+| Annons | Typ | Hook / rubrik | Notion |
+|---|---|---|---|
+| ATVKapell_FD_3_H1 | video 13 s, BOF-omklipp | Löven ligger på lacken. Mät din ATV först. | https://www.notion.so/3ea270ab908c81428cc2ffeeee90e425 |
+| ATVKapell_FD_3_H2 | video 13 s, BOF-omklipp | ATV-kapell till fars dag: 579 kr, ord. 759 kr. | https://www.notion.so/3ea270ab908c81498bbae03bd7d8c74d |
+| ATVKapell_FD_3_H3 | video 13 s, BOF-omklipp | Beställ senast 19 oktober: ATV-kapell till fars dag. | https://www.notion.so/3ea270ab908c81158bc8e91297de30ad |
+| ATVKapell_FD_4_1 | bild, BOF | En storlek. Mät din ATV först. | https://www.notion.so/3ea270ab908c81e1bbd6eef2a900d584 |
+| ATVKapell_FD_4_2 | bild, BOF | 579 kr till fars dag. Ord. 759 kr. | https://www.notion.so/3ea270ab908c81f5bca3ec0119a6e137 |
+| ATVKapell_FD_4_3 | bild, BOF | Beställ senast 19 oktober. Kapell till fars dag. | https://www.notion.so/3ea270ab908c81d490e6c8aa9e331d04 |
+| ATVKapell_FD_4_4 | bild, BOF | 256 långt, 110 brett, 120 högt. | https://www.notion.so/3ea270ab908c8154868aeb62c781c42b |
+
+Mätning (ANALYSMETOD): ingen dom under 300 kr / 3 köp. H1 mot H2 mot H3 = vilken öppning (invändning, pris, sista dag) den produktmedvetna tittaren behöver; FD_4_1–4 mot varandra = budskapet i textrutan; hela batchen mot FD_1/FD_2 (presentvinkeln, kall publik). Etikett dag 7, lärdom, sedan dna.md.

@@ -598,3 +598,20 @@ Kvar av de namngivna: Rodholder_PD_68_1 (rubriken på PD_6_1 — körs när PD_3
 ## 2026-09-29 — brief-runda INTE byggd (`/rond-auto` steg 4b)
 
 `annonsbehov` gav `rundaAntal 1` (tak 0 + 1 namngiven plats `Rodholder_PD_68_1`; PD_65_H1/PD_66_H1/PD_67_H1/CS_11_H1 strukna = redan i hubben). Lärdomen L-120249936610640291 (Rodholder_PD_6_1, KPI_WINNER) villkorar platsen: *"körs först när PD_38_1/PD_41_1/PD_62_1 (samma formel i nya miljöer, redan briefade) lästs, så miljö och rubrik inte testas samtidigt"*. Läst i hubben 2026-09-29: alla tre står som **Draft** (inte producerade, inte i kontot, ingen ETIKETT-rad) — villkoret är inte uppfyllt, så platsen byggs inte i dag. 0 briefer, ingen `CS_BATCH_KLAR`. Hubben "Fish rod holder" har ingen Feedback-rad (Brief review) — noterat i rapporten. Kampanjen LAT_VARA (ROAS 3d 2,33, 19,4 % vinst, under target 2,45), spendtjuv INGEN_TJUV. Annonsidéer: 0 rader Ny.
+
+
+## Fars dag omgång 4 — extra BOF-batch (2026-09-29 kväll, Axels order samma kväll)
+
+Axel: "gör en till extra batch för fars dag för alla produkter och gärna dubbelt så mycket bildads och sedan normal kvantitet videos så att vi pushar extra mycket BOF fars dag annonser". Invändningen som batchen svarar på: **"passar de mina spön?"** (svar ur sidan: fyra kraftiga hållare, ett spö per hållare, för strand, sjö och båt; ett set är EN färg: grön, orange, rosa eller blå). Förälder Fiskespöhållare_CS_1_H1 (lärdom L-120249850603660291). Alla sju klarade spärren (regi 4/4, 0 fel), ligger som `Draft` i Fish rod holder. Loggkod `FARSDAG_BATCH_KLAR`. Batch-loggen för hela omgången: `docs/briefs/farsdag-2026/README-bof.md`.
+
+| Annons | Typ | Hook / rubrik | Notion |
+|---|---|---|---|
+| Rodholder_FD_3_H1 | video 13 s, BOF-omklipp | Passar proffs och nybörjare. Fyra hållare till fars dag. | https://www.notion.so/3ea270ab908c814b868aed4bfbf47876 |
+| Rodholder_FD_3_H2 | video 13 s, BOF-omklipp | 289 kr, ord. 482 kr för fyra hållare. | https://www.notion.so/3ea270ab908c816790a9ea6e6b6431a1 |
+| Rodholder_FD_3_H3 | video 13 s, BOF-omklipp | Beställ senast 19 oktober. Fyra hållare till fars dag. | https://www.notion.so/3ea270ab908c81eb9ce5f90f23ae7cd7 |
+| Rodholder_FD_4_1 | bild, BOF | Passar proffs och nybörjare | https://www.notion.so/3ea270ab908c8197bc51e3f5427035f8 |
+| Rodholder_FD_4_2 | bild, BOF | 289 kr till fars dag. Ord. 482 kr. | https://www.notion.so/3ea270ab908c810c8c41ceada54bc25b |
+| Rodholder_FD_4_3 | bild, BOF | Beställ senast 19 oktober. Fars dag-rea på spöhållare. | https://www.notion.so/3ea270ab908c812ba04efa1076f0cf63 |
+| Rodholder_FD_4_4 | bild, BOF | Ett set: fyra hållare i en färg | https://www.notion.so/3ea270ab908c81019ae0d3cf937acf50 |
+
+Mätning (ANALYSMETOD): ingen dom under 300 kr / 3 köp. H1 mot H2 mot H3 = vilken öppning (invändning, pris, sista dag) den produktmedvetna tittaren behöver; FD_4_1–4 mot varandra = budskapet i textrutan; hela batchen mot FD_1/FD_2 (presentvinkeln, kall publik). Etikett dag 7, lärdom, sedan dna.md.

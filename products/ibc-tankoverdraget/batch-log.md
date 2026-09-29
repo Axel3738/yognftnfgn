@@ -654,3 +654,20 @@ Ur `agent/etikett-backfill.mjs` 2026-09-27 (annonsens egna första vecka, 7d_cli
 | IBC_PD_16_1 | bild | N | — (avatar odlare-med-flera-tankar, kalla=egen-data) | avataren i rubriken: "Bevattningsvattnet blir grönt i solen. Ett överdrag per tank." på sidans egen bild — validera vinkeln statiskt före video | odlaren med flera tankar är en egen publik (GISSNING, confidence low) | ≥ 300 kr och ROAS_7d ≥ 1,53 ⇒ video byggs | okänd | — |
 
 Notion: PD_13_1 `3e9270ab908c81d0ad42fa17bb8f3656` · PD_16_1 `3e9270ab908c81cab2e1f40bc6a05e54` · CS_11_H1 `3e9270ab908c81a79227da5193a22b1e` · PD_11_H2 `3e9270ab908c813faa4cc3796194dc1e`. Kvar av de namngivna: inga (PD_14_H1 släppt).
+
+
+## Fars dag omgång 4 — extra BOF-batch (2026-09-29 kväll, Axels order samma kväll)
+
+Axel: "gör en till extra batch för fars dag för alla produkter och gärna dubbelt så mycket bildads och sedan normal kvantitet videos så att vi pushar extra mycket BOF fars dag annonser". Invändningen som batchen svarar på: **"räcker inte en presenning?"** (svar ur sidan: tyget stänger ute ljuset så algerna inte växer; dragkedja på sidan, lucka för locket, passar 1000-literstanken). Förälder IBC_PD_1_H1 (lärdom L-120250005818370291). Alla sju klarade spärren (regi 4/4, 0 fel), ligger som `Draft` i BÄVER IBC-Tanköverdraget. Loggkod `FARSDAG_BATCH_KLAR`. Batch-loggen för hela omgången: `docs/briefs/farsdag-2026/README-bof.md`.
+
+| Annons | Typ | Hook / rubrik | Notion |
+|---|---|---|---|
+| IBC_FD_3_H1 | video 13 s, BOF-omklipp | Presenningen blåser av. Det här stängs med dragkedja. | https://www.notion.so/3ea270ab908c817bbd23f30cef914715 |
+| IBC_FD_3_H2 | video 13 s, BOF-omklipp | 489 kr, ord. 636 kr. Överdraget till 1000-literstanken. | https://www.notion.so/3ea270ab908c8114acbff1265736bd75 |
+| IBC_FD_3_H3 | video 13 s, BOF-omklipp | Beställ senast 19 oktober. Luckan upptill når locket. | https://www.notion.so/3ea270ab908c815995ded0f57cf904c9 |
+| IBC_FD_4_1 | bild, BOF | Tyget stänger ute ljuset. Algerna kommer aldrig igång. | https://www.notion.so/3ea270ab908c81acbbcdc0120ae3077e |
+| IBC_FD_4_2 | bild, BOF | 489 kr till fars dag. Ord. 636 kr. | https://www.notion.so/3ea270ab908c81d18100c890611a9a1e |
+| IBC_FD_4_3 | bild, BOF | Beställ senast 19 oktober. Fars dag-överdrag till tanken. | https://www.notion.so/3ea270ab908c8175b036ce27557254aa |
+| IBC_FD_4_4 | bild, BOF | Måtten 120 × 100 × 116 cm. | https://www.notion.so/3ea270ab908c81ca9d27f5424f74eb81 |
+
+Mätning (ANALYSMETOD): ingen dom under 300 kr / 3 köp. H1 mot H2 mot H3 = vilken öppning (invändning, pris, sista dag) den produktmedvetna tittaren behöver; FD_4_1–4 mot varandra = budskapet i textrutan; hela batchen mot FD_1/FD_2 (presentvinkeln, kall publik). Etikett dag 7, lärdom, sedan dna.md.
