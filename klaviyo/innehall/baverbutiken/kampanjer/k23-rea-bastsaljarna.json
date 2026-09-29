@@ -1,0 +1,130 @@
+{
+  "id": "k23-rea-bastsaljarna",
+  "namn": "MAIL_20260930_Rea_CS_1_tier1_promo_bastsaljare-15-procent_v1",
+  "memo": "Extrarea med rabattkod (Axels beslut A 2026-09-28: \"du har ju inte gjort någon extra rea\"): 15 % med BASTSALJARE15 på de sex flest köpta, till och med söndag 4 oktober, koden läggs på via knappen. Hypotes: kunder som redan handlat öppnar ett rea-mejl på det de känner igen, och en kod med slutdag ger fler köp än butikens fasta reapris; mätt mot K01 på köp per mottagare.",
+  "taggar": {
+    "typ": "M",
+    "kalla": "egen-data",
+    "kalla_ref": "kollektionen bestsaljare 2026-09-28",
+    "lardom": null,
+    "avatar": "kunden som handlat en gång och sett rea-etiketterna",
+    "begar": "köpa det han ändå tänkt köpa medan reapriset står",
+    "awareness": "promo",
+    "urgency": "pris + slutdag (4 oktober)",
+    "confidence": "medium",
+    "prefix": "Rea",
+    "kod": "CS"
+  },
+  "amnesrader": [
+    {
+      "text": "Sätesöverdraget och fem till, 15 % extra",
+      "begar": "köpa det han ändå tänkt köpa medan extrarean gäller"
+    },
+    {
+      "text": "15 % extra på fiskespöhållaren och fler",
+      "begar": "veta exakt vad rabatten är och hur länge"
+    },
+    {
+      "text": "Koden BASTSALJARE15 är här",
+      "begar": "hitta produkten han redan känner igen bland bästsäljarna"
+    }
+  ],
+  "forhandstext": "BASTSALJARE15 ger 15 % extra på de sex mest sålda till söndag.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Extra rabatt på bästsäljarna. Kod: BASTSALJARE15",
+      "text": "Hej {{fornamn}},\n\nDe sex vi säljer mest av får 15 % extra rabatt till och med söndag 4 oktober. Koden läggs på automatiskt när du klickar dig vidare, eller så skriver du in BASTSALJARE15 själv i kassan.",
+      "knapp": {
+        "text": "Hämta BASTSALJARE15",
+        "lank": "rabatt:BASTSALJARE15:kollektion:bestsaljare"
+      }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Koden BASTSALJARE15 ger 15 % extra på priset som redan står på produktsidan, till och med söndag 4 oktober. Den gäller sätesöverdraget, axelbältet, strandtofflorna, motorhöljet, väggfästet och fiskespöhållaren, en gång per kund. Klicka på knappen ovan så läggs den på av sig själv, eller skriv in koden i kassan."
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": null,
+      "handles": [
+        "satesoverdrag-for-akgrasklippare-slittaligt-600d-oxford",
+        "axelbalte-for-trimmer-justerbart-nylonbalte",
+        "strandtofflor-for-herr-halkfria-tradgardsskor"
+      ]
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": null,
+      "handles": [
+        "marin-motorholje-420d-universellt-skydd",
+        "vaggfaste-for-grastrimmer-kraftig-verktygshallare",
+        "fiskespohallare-4-pack-kraftig-forvaring"
+      ]
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    {
+      "rad": "Sätesöverdraget och fem till, 15 % extra",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "15 % extra på fiskespöhållaren och fler",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Koden BASTSALJARE15 är här",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "BASTSALJARE15 ger 15 % extra på de sex mest sålda till söndag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Extra rabatt på bästsäljarna. Kod: BASTSALJARE15",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Hämta BASTSALJARE15",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    }
+  ],
+  "planerad": "2026-09-30T18:00:00+02:00",
+  "segment": [
+    "Warmup tier 1"
+  ],
+  "exkludera": [],
+  "status_plan": "klar",
+  "kraver_axel": null,
+  "rabatt": {
+    "typ": "kod",
+    "kod": "BASTSALJARE15",
+    "procent": 15,
+    "start": "2026-09-30T06:00:00Z",
+    "slut": "2026-10-04T21:59:59Z",
+    "handles": [
+      "satesoverdrag-for-akgrasklippare-slittaligt-600d-oxford",
+      "axelbalte-for-trimmer-justerbart-nylonbalte",
+      "strandtofflor-for-herr-halkfria-tradgardsskor",
+      "marin-motorholje-420d-universellt-skydd",
+      "vaggfaste-for-grastrimmer-kraftig-verktygshallare",
+      "fiskespohallare-4-pack-kraftig-forvaring"
+    ]
+  }
+}

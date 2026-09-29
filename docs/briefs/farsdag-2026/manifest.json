@@ -211,6 +211,126 @@
       "fil": "docs/briefs/farsdag-2026/Beltgrinder_FD_2_1/brief.md",
       "pris": 909,
       "jamforpris": 1182
+    },
+    {
+      "namn": "Solcellslampa_FD_1_H1",
+      "typ": "video",
+      "hub": "3e5270ab-908c-81ed-8316-f0f4327d75db",
+      "hubnamn": "Solar motion sensor light creative hub",
+      "produkt": "solcellslampa",
+      "fil": "docs/briefs/farsdag-2026/Solcellslampa_FD_1_H1/brief.md",
+      "pris": 589,
+      "jamforpris": 775
+    },
+    {
+      "namn": "Solcellslampa_FD_1_H2",
+      "typ": "video",
+      "hub": "3e5270ab-908c-81ed-8316-f0f4327d75db",
+      "hubnamn": "Solar motion sensor light creative hub",
+      "produkt": "solcellslampa",
+      "fil": "docs/briefs/farsdag-2026/Solcellslampa_FD_1_H2/brief.md",
+      "pris": 589,
+      "jamforpris": 775
+    },
+    {
+      "namn": "Solcellslampa_FD_2_1",
+      "typ": "bild",
+      "hub": "3e5270ab-908c-81ed-8316-f0f4327d75db",
+      "hubnamn": "Solar motion sensor light creative hub",
+      "produkt": "solcellslampa",
+      "fil": "docs/briefs/farsdag-2026/Solcellslampa_FD_2_1/brief.md",
+      "pris": 589,
+      "jamforpris": 775
+    },
+    {
+      "namn": "Golfkalender_FD_1_H1",
+      "typ": "video",
+      "hub": "3e8270ab-908c-817b-9e74-efe7a636609e",
+      "hubnamn": "Golf advent calendar creative hub",
+      "produkt": "golfkalender",
+      "fil": "docs/briefs/farsdag-2026/Golfkalender_FD_1_H1/brief.md",
+      "pris": 549,
+      "jamforpris": 719
+    },
+    {
+      "namn": "Golfkalender_FD_1_H2",
+      "typ": "video",
+      "hub": "3e8270ab-908c-817b-9e74-efe7a636609e",
+      "hubnamn": "Golf advent calendar creative hub",
+      "produkt": "golfkalender",
+      "fil": "docs/briefs/farsdag-2026/Golfkalender_FD_1_H2/brief.md",
+      "pris": 549,
+      "jamforpris": 719
+    },
+    {
+      "namn": "Golfkalender_FD_2_1",
+      "typ": "bild",
+      "hub": "3e8270ab-908c-817b-9e74-efe7a636609e",
+      "hubnamn": "Golf advent calendar creative hub",
+      "produkt": "golfkalender",
+      "fil": "docs/briefs/farsdag-2026/Golfkalender_FD_2_1/brief.md",
+      "pris": 549,
+      "jamforpris": 719
+    },
+    {
+      "namn": "Taljset_FD_1_H1",
+      "typ": "video",
+      "hub": "3e8270ab-908c-8156-bd42-e5fcbe833705",
+      "hubnamn": "Whittling set creative hub",
+      "produkt": "taljset",
+      "fil": "docs/briefs/farsdag-2026/Taljset_FD_1_H1/brief.md",
+      "pris": 869,
+      "jamforpris": 1139
+    },
+    {
+      "namn": "Taljset_FD_1_H2",
+      "typ": "video",
+      "hub": "3e8270ab-908c-8156-bd42-e5fcbe833705",
+      "hubnamn": "Whittling set creative hub",
+      "produkt": "taljset",
+      "fil": "docs/briefs/farsdag-2026/Taljset_FD_1_H2/brief.md",
+      "pris": 869,
+      "jamforpris": 1139
+    },
+    {
+      "namn": "Taljset_FD_2_1",
+      "typ": "bild",
+      "hub": "3e8270ab-908c-8156-bd42-e5fcbe833705",
+      "hubnamn": "Whittling set creative hub",
+      "produkt": "taljset",
+      "fil": "docs/briefs/farsdag-2026/Taljset_FD_2_1/brief.md",
+      "pris": 869,
+      "jamforpris": 1139
+    },
+    {
+      "namn": "Rodholder_FD_1_H1",
+      "typ": "video",
+      "hub": "3c3270ab-908c-80f8-824d-eed3c4aa94e1",
+      "hubnamn": "Fish rod holder",
+      "produkt": "rodholder",
+      "fil": "docs/briefs/farsdag-2026/Rodholder_FD_1_H1/brief.md",
+      "pris": 289,
+      "jamforpris": 482
+    },
+    {
+      "namn": "Rodholder_FD_1_H2",
+      "typ": "video",
+      "hub": "3c3270ab-908c-80f8-824d-eed3c4aa94e1",
+      "hubnamn": "Fish rod holder",
+      "produkt": "rodholder",
+      "fil": "docs/briefs/farsdag-2026/Rodholder_FD_1_H2/brief.md",
+      "pris": 289,
+      "jamforpris": 482
+    },
+    {
+      "namn": "Rodholder_FD_2_1",
+      "typ": "bild",
+      "hub": "3c3270ab-908c-80f8-824d-eed3c4aa94e1",
+      "hubnamn": "Fish rod holder",
+      "produkt": "rodholder",
+      "fil": "docs/briefs/farsdag-2026/Rodholder_FD_2_1/brief.md",
+      "pris": 289,
+      "jamforpris": 482
     }
   ]
 }

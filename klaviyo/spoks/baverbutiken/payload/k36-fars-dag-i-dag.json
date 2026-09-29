@@ -1,0 +1,111 @@
+{
+  "id": "k36-fars-dag-i-dag",
+  "emailTitle": "I dag är sista dagen att beställa till fars dag",
+  "emailDescription": "Måndag 19 oktober. Beställer du i morgon kan vi inte lova det till fars dag.",
+  "amnesrader": [
+    "I dag är sista dagen att beställa till fars dag",
+    "Efter i dag hinner presenten inte fram",
+    "Fyra förslag om presenten inte är klar"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "I dag är sista dagen att beställa till fars dag",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hej {{ contact.first_name | default: 'där' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Fyra förslag väntar nedan.",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Se presenterna",
+      "url": "https://baverbutiken.se/collections/alla-produkter",
+      "style": "button"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "e5b2eb1f-3eba-4603-a09c-1c9692e4ae66",
+          "button": "Se produkten"
+        },
+        {
+          "id": "d0832750-b091-43b4-9d92-e2889d5b5a0a",
+          "button": "Se produkten"
+        },
+        {
+          "id": "039975de-c295-4409-a7aa-78df00cf06c0",
+          "button": "Se produkten"
+        },
+        {
+          "id": "08757c7e-7d50-498a-a1b4-70370bcd3c5c",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "regular",
+      "text": "Beställer du i morgon räknar vi inte med att det hinner fram till 8 november.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

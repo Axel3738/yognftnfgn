@@ -1,0 +1,145 @@
+{
+  "id": "k24-batkopare-nasta-steg",
+  "emailTitle": "Ett vinterskydd som täcker hela motorn",
+  "emailDescription": "420D Oxford-tyg, draget hela vägen ner över riggen.",
+  "amnesrader": [
+    "Ett vinterskydd som täcker hela motorn",
+    "Från kåpan till riggen, under samma skydd",
+    "En täckt motor lockar ingen tjuv"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Ett vinterskydd som täcker hela motorn",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hej {{ contact.first_name | default: 'där' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Du har handlat båtprylar hos oss, och snart står båten på land för vintern.",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "6f01ed7d-90e1-45a9-bb43-f0fbbc8c2285",
+          "button": "Se båtmotorskyddet"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Se vinterskyddet",
+      "url": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "Motorhöljet skyddar mot sol, regn och salt.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Båtmotorskyddet går längre: det dras över hela motorn, från kåpan och ner över riggen, och spänns fast med en rem runt mitten.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "420D Oxford-tyg mot regn, snö och UV, en hel vinter ute. Ingen ser vilken motor som står under.",
+      "alignment": "left"
+    },
+    {
+      "type": "h2",
+      "text": "Mer för båten",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "039975de-c295-4409-a7aa-78df00cf06c0",
+          "button": "Se produkten"
+        },
+        {
+          "id": "407d54bf-6cdd-4b6e-9b11-82b90ade1786",
+          "button": "Se produkten"
+        },
+        {
+          "id": "d0db6095-e79f-449a-b98c-534575147929",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

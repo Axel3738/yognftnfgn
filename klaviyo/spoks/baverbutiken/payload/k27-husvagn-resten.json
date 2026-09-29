@@ -1,0 +1,145 @@
+{
+  "id": "k27-husvagn-resten",
+  "emailTitle": "Taket är skyddat, resten är det inte.",
+  "emailDescription": "Tak-AC:n, cyklarna och rutorna står fortfarande i vädret.",
+  "amnesrader": [
+    "Taket är skyddat, resten är det inte.",
+    "Regnet och kådan hittar tak-AC:n",
+    "Cyklarna bak tar all smuts från resan"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Taket är skyddat, resten är det inte.",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hej {{ contact.first_name | default: 'där' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Du har redan börjat skydda husvagnen eller husbilen inför vintern. Tak-AC:n, cyklarna och rutorna står kvar.",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "c261264d-38d5-4fe2-a75c-e835546fcf70",
+          "button": "Se AC-huven"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Se skyddet",
+      "url": "https://baverbutiken.se/products/husbilens-tak-ac-huv-80-80-38-cm-skydd-mellan-resorna",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "Tak-AC:n står högst upp och tar regn och kåda rakt av.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Cyklarna på hållaren bak tar smutsen från hela resan, och rutorna släpper igenom kylan på natten.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Läggs över hela tak-AC:n i längd, bredd och höjd, och snörs åt i nederkanten så den sitter kvar mellan resorna.",
+      "alignment": "left"
+    },
+    {
+      "type": "h2",
+      "text": "Mer för resten av fordonet",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "3247664b-b7c1-4adb-b11d-64d7e8848ee9",
+          "button": "Se produkten"
+        },
+        {
+          "id": "fa219263-0372-48c2-9848-aa9eca884708",
+          "button": "Se produkten"
+        },
+        {
+          "id": "836eee86-a9c3-4cdb-8486-1678d49adfdf",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

@@ -1,0 +1,226 @@
+{
+  "hook_H1": {
+    "rad": "Fars dag-present: fyra kraftiga hållare, en till varje spö.",
+    "engelska": "Father's Day gift: four sturdy holders, one for every rod.",
+    "alternativ": [
+      "Fyra kraftiga hållare. Fars dag-present till pappa som fiskar."
+    ]
+  },
+  "hook_H2": {
+    "rad": "Fars dag-present: spöna står säkert i båten.",
+    "engelska": "Father's Day gift: the rods stand secure in the boat.",
+    "alternativ": [
+      "Fyra hållare, fars dag-present. Spöet rör sig inte.",
+      "Fars dag-present: orange hållare, en av fyra i paketet."
+    ]
+  },
+  "rader": [
+    {
+      "nr": 2,
+      "rad": "Kläm fast hållaren. Fyra spön, fyra egna platser.",
+      "engelska": "Clip it on. Four rods, four spots of their own."
+    },
+    {
+      "nr": 3,
+      "rad": "Fyra hållare i paketet. Välj din färg.",
+      "engelska": "Four holders in the pack. Pick your color."
+    },
+    {
+      "nr": 4,
+      "rad": "För strand, sjö och båtfiske. Pappas spö står stadigt.",
+      "engelska": "For beach, lake and boat fishing. Dad's rod stays steady."
+    },
+    {
+      "nr": 5,
+      "rad": "Fars dag-rea. 289 kr, ord. 482 kr. Beställ senast 19 oktober.",
+      "engelska": "Father's Day sale. 289 kr, was 482 kr. Order by October 19."
+    }
+  ],
+  "text_pa_skarm": {
+    "1_H1": "Fyra hållare. Fars dag-present.",
+    "1_H2": "Spöna står säkert i båten.",
+    "2": "Fyra spön, fyra platser.",
+    "3": "Fyra hållare. Välj din färg.",
+    "4": "Strand, sjö och båt.",
+    "5": "Fars dag-rea. 289 kr."
+  },
+  "bild": {
+    "rubrik": "Fars dag-present: fyra hållare, en till varje spö",
+    "underrad": "Håller spöna säkert på plats för båt, strand och sjö.",
+    "marke": "Fars dag-rea",
+    "prisband": "289 kr, ord. 482 kr",
+    "sista_raden": "Beställ senast 19 oktober",
+    "engelska": {
+      "rubrik": "Father's Day gift: four holders, one for every rod",
+      "underrad": "Keeps rods secure for boat, beach and lake fishing."
+    }
+  },
+  "copy_card": {
+    "primar": "Fars dag-present: fyra kraftiga hållare, en till varje spö. Ingen mer trassel i båten eller garaget. Fars dag-rea: 289 kr, ord. 482 kr. Beställ senast 19 oktober.",
+    "rubrik": "Fars dag-present: fyra hållare, ingen trassel",
+    "beskrivning": "Fars dag-rea: 289 kr, ord. 482 kr"
+  },
+  "tretest": [
+    {
+      "rad": "Fars dag-present: fyra kraftiga hållare, en till varje spö.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Fyra är produktens riktiga antal (4-pack) och matchar 'får varje spö sin egen plats' på sidan. En annan förpackningsstorlek kan inte säga exakt det här."
+    },
+    {
+      "rad": "Fyra kraftiga hållare. Fars dag-present till pappa som fiskar.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Samma fakta, låst till antalet fyra och till mottagaren (pappa som fiskar)."
+    },
+    {
+      "rad": "Fars dag-present: spöna står säkert i båten.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Matchar produktsidans 'håller dina spön säkert på plats', utan det klumpiga 'hållare håller'."
+    },
+    {
+      "rad": "Fyra hållare, fars dag-present. Spöet rör sig inte.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Omskrivning av samma fakta (säkert på plats), kortare och hårdare."
+    },
+    {
+      "rad": "Fars dag-present: orange hållare, en av fyra i paketet.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Orange är en riktig variant och radn pekar rakt på hållaren i bilden."
+    },
+    {
+      "rad": "Kläm fast hållaren. Fyra spön, fyra egna platser.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Handlingen i bilden plus faktan att just fyra spön får fyra egna platser (4-pack)."
+    },
+    {
+      "rad": "Fyra hållare i paketet. Välj din färg.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Varje paket är EN färg (grön, orange, rosa eller blå), fyra hållare i den färgen. Bilden visar färgvalet, inte innehållet i ett och samma paket."
+    },
+    {
+      "rad": "För strand, sjö och båtfiske. Pappas spö står stadigt.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Första meningen är produktsidans egen formulering ordagrant."
+    },
+    {
+      "rad": "Fars dag-rea. 289 kr, ord. 482 kr. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Butikens egna priser och det räknade sista beställningsdatumet."
+    },
+    {
+      "rad": "Fyra hållare. Fars dag-present.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Skärmtext, kortversion av H1."
+    },
+    {
+      "rad": "Spöna står säkert i båten.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Skärmtext, kortversion av H2."
+    },
+    {
+      "rad": "Fyra spön, fyra platser.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Skärmtext, kortversion av rad 2."
+    },
+    {
+      "rad": "Fyra hållare. Välj din färg.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Skärmtext, kortversion av rad 3. Visar färgvalet, inte att alla fyra färger ingår i samma paket."
+    },
+    {
+      "rad": "Strand, sjö och båt.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Skärmtext, kortversion av rad 4, citerar produktsidan."
+    },
+    {
+      "rad": "Fars dag-rea. 289 kr.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Skärmtext, kortversion av erbjudandet."
+    },
+    {
+      "rad": "Fars dag-present: fyra hållare, en till varje spö",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Bildens rubrik, samma fakta som H1."
+    },
+    {
+      "rad": "Håller spöna säkert på plats för båt, strand och sjö.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Bildens underrad, två meningar från produktsidan ihopslagna till en."
+    },
+    {
+      "rad": "Fars dag-rea",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Märket på bilden. Namnet på just den här kampanjen, inte en generisk rea-etikett."
+    },
+    {
+      "rad": "Beställ senast 19 oktober",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Datumet är uträknat ur leveranstiderna till Sverige, inte påhittat."
+    },
+    {
+      "rad": "289 kr, ord. 482 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Prisbandet på bilden, butikens egna priser."
+    },
+    {
+      "rad": "Fars dag-present: fyra kraftiga hållare, en till varje spö. Ingen mer trassel i båten eller garaget. Fars dag-rea: 289 kr, ord. 482 kr. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Copy card i sin helhet: hooken, problemet ur produktsidan (trasslar i båten och garaget) och erbjudandet med riktiga siffror."
+    },
+    {
+      "rad": "Fars dag-present: fyra hållare, ingen trassel",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Copy card-rubriken, samma fakta kortare."
+    },
+    {
+      "rad": "Fars dag-rea: 289 kr, ord. 482 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Copy card-beskrivningen, rent pris."
+    }
+  ]
+}

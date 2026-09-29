@@ -13,7 +13,7 @@ node bonus/kor.mjs                  # räkna den här månaden och spara utfalle
 node bonus/kor.mjs --torr           # räkna och visa, skriv ingen fil
 node bonus/kor.mjs --manad 2026-08  # en gången månad
 node bonus/kor.mjs --utan-nat       # bara det repot redan vet
-npm test                            # 24 tester för motorn
+npm test                            # 31 tester för motorn + 7 för körningen
 ```
 
 Sajten kör den här automatiskt vid varje hämtning (`node stonebite/hamta.mjs`).
@@ -74,6 +74,47 @@ samma ställe som allt annat.
 
 ---
 
+## Utbetalningarna: tre takter, aldrig i en summa
+
+Axels beslut 2026-09-28 ("betalningar i tvåveckorsperioder, men bonusarna ska
+fortfarande vara varje månad … produkttesterna får betalt den 15:e och sista
+dagen i månaden … kommissionen separat"). Det ersatte halvmånaderna från
+2026-09-24, som delade *alla* rader på 1–15/16–slut.
+
+| Utbetalning | Program | Takt | Betalas |
+|---|---|---|---|
+| **Produkttest** | Produkttest | halvmånad | 1–15 den 15:e, 16–sista dagen den sista dagen i månaden. Raden hamnar i den halva bevisdatumet ligger i; den 15:e hör till första halvan. |
+| **Bonus** | Kundtjänst, Head of customer support (även teamandelen) | månad | En gång i månaden. Delas aldrig på halvor. |
+| **Commission** | Videoredigerare | månad, separat | Räknas av commission-körningen på hela månadens spend — samma siffra som topplistan. |
+
+Definitionerna står i `regler.json` → `utbetalningar` (namn, takt, betaltext
+på svenska och engelska), och varje program pekar på sin med `utbetalning`
+(saknas fältet räknas programmet som bonus — månadstakten är den försiktiga).
+
+Motorn lägger `utbetalningar` på varje person:
+
+```json
+"utbetalningar": {
+  "produkttest": { "takt": "halvmanad", "forsta": 240, "andra": 90, "summa": 330 },
+  "bonus":       { "takt": "manad", "summa": 0 },
+  "commission":  { "takt": "manad", "summa": 60.88 }
+}
+```
+
+Varje rad bär `utbetalning`, och halvmånadsrader dessutom `halvor` och
+`halvorAntal` per halva. Utfallet bär `halvmanader` (perioderna med sina
+betaldagar) och `utbetalningar` för hela laget, så kvittot i
+`utfall/<månad>.json` går att läsa för sig när det är dags att betala.
+
+På sajten: **Min sida** visar ett kort per del ("Produkttest 1–15 · Betalas
+den 15:e", "Bonus · Betalas en gång i månaden", "Commission · räknas
+separat") — bara de utbetalningar personens program pekar på, även på noll
+så man vet vad som kommer. **Bonus-sidan** visar en tabell per del med vem
+som får vad. Vyn räknar aldrig om; en snapshot från före bygget får
+uppdelningen ur raderna med samma funktion (`utbetalningarFor`).
+
+---
+
 ## Tre regler som sitter i koden
 
 1. **Hellre okopplad än fel person.** Nämner en recension två namn betalas den
@@ -96,10 +137,10 @@ godkänna den. Ett test loggar in som VA och försöker — och får 403.
 |---|---|
 | `regler.json` | Programmen, beloppen, instruktionerna och mallen. Svenska + engelska. |
 | `personer.json` | Folkregistret: roll, förnamn (för recensionsmatchning), butiker. |
-| `motor.mjs` | Räknandet. Rena funktioner, inget nät — därför testbart. |
+| `motor.mjs` | Räknandet, inklusive utbetalningarna (`utbetalningarFor`, `halvmanader`). Rena funktioner, inget nät — därför testbart. |
 | `kallor.mjs` | Judge.me, Trustpilot, kundtjänstrapporterna, Notion, commission. |
 | `kor.mjs` | Körningen: hämtar, räknar, skriver `utfall/<månad>.json`. |
-| `test/motor.test.mjs` | 24 tester. Pengar räknas här, så de är hårdare än andra. |
+| `test/motor.test.mjs` | 31 tester. Pengar räknas här, så de är hårdare än andra. |
 
 Föränderliga filer (`insatser.jsonl`, `personer-extra.json`) ligger i
 dataspegeln — `STONEBITE_DATA`, i drift en volym som överlever en deploy.
@@ -173,6 +214,17 @@ timme. När första notisen ligger i brevlådan byggs `trustpilotMejl()` här i
 butik, betyg, kund, text, datum, länk) — aldrig ur en gissad mall.
 `kundtjanst/arenden.mjs arSystem` räknar `trustpilot.com` som systemavsändare
 sedan 2026-09-27, så autosvaret och veckorapporten hoppar notiserna.
+
+✅ **Profilen är claimad sedan 2026-09-28** (Axels ord "jag har verifierat TP-kontot";
+läst samma dag: "Registrerad profil", 5 omdömen, TrustScore 3,1 — två 5-stjärniga ur
+Spoks-kampanjen, tre 1-stjärniga sedan tidigare). Aktiveringsmejlet kom från
+`noreply.activation@trustpilot.com` med ämnet "Activate your Trustpilot account" och
+lästes ur brevlådan med `loopia-mail`; Loopia rördes aldrig. ⚠️ **Judge.me:s
+recensionsförfrågningar är AV sedan 2026-09-28** (Axels beslut samma dag) — nya
+recensioner kommer alltså via F14 Recension Trustpilot v2 i Spoks, inte via Judge.me, och
+VA-bonusen "recension med ditt namn" räknas därför på Trustpilot (notismejlen ovan eller
+inrapporterad + godkänd) tills en API-nyckel finns. Judge.me-recensionerna som redan
+finns läses fortfarande.
 
 ## Personer utan konto
 

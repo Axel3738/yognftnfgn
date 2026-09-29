@@ -1,0 +1,182 @@
+{
+  "id": "k26-fars-dag-listan",
+  "emailTitle": "Sista dag att beställa till fars dag: 19 oktober",
+  "emailDescription": "Sex presenter sorterade efter vad han sysslar med.",
+  "amnesrader": [
+    "Sista dag att beställa till fars dag: 19 oktober",
+    "Beställ senast 19 oktober till fars dag",
+    "Efter 19 oktober kan vi inte lova att det hinner fram"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Sista dagen att beställa till fars dag är 19 oktober",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hej {{ contact.first_name | default: 'där' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Om paketet ska hinna fram till fars dag den 8 november behöver ordern läggas senast 19 oktober. Sex presenter, sorterade efter vad han faktiskt sysslar med: båten, verkstaden eller kaminen.",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Se hela listan",
+      "url": "https://baverbutiken.se/collections/alla-produkter",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "Du kanske läser det här som present till pappan i huset. Eller så är det han som läser det, och skickar mejlet vidare som sin egen önskelista.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Båda funkar. Listan nedan är sorterad efter vad han sysslar med.",
+      "alignment": "left"
+    },
+    {
+      "type": "h2",
+      "text": "Om han har båt",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "039975de-c295-4409-a7aa-78df00cf06c0",
+          "button": "Se produkten"
+        },
+        {
+          "id": "6f01ed7d-90e1-45a9-bb43-f0fbbc8c2285",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 2
+    },
+    {
+      "type": "h2",
+      "text": "Om han har verkstad",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "e5b2eb1f-3eba-4603-a09c-1c9692e4ae66",
+          "button": "Se produkten"
+        },
+        {
+          "id": "9bbccd1d-d249-44c3-92ea-015ef372432c",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 2
+    },
+    {
+      "type": "h2",
+      "text": "Om han har kamin",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "b1d4717b-d737-46ad-a9c2-be85081a15ac",
+          "button": "Se produkten"
+        },
+        {
+          "id": "3916cdca-0432-4350-8636-5d6c5392b5c3",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 2
+    },
+    {
+      "type": "regular",
+      "text": "Beställ senast 19 oktober om paketet ska vara framme till fars dag den 8 november.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

@@ -1,0 +1,158 @@
+{
+  "id": "k29-rea-presenterna",
+  "emailTitle": "Presenter till fars dag. Kod: PAPPA15",
+  "emailDescription": "PAPPA15 ger 15 % extra på sex presenter till pappan, till tisdag 13 oktober.",
+  "amnesrader": [
+    "Presenter till fars dag. Kod: PAPPA15",
+    "Bälteslipmaskinen till extra pris, 15 %",
+    "Fågelmataren till extra pris, kod PAPPA15"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Extra rabatt på sex presenter till pappan. Kod: PAPPA15",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hej {{ contact.first_name | default: 'där' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Sex presenter till pappan får nu 15 % extra rabatt, till och med tisdag 13 oktober. Koden läggs på automatiskt när du klickar dig vidare, eller så skriver du in PAPPA15 själv i kassan.",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Hämta PAPPA15",
+      "url": "https://baverbutiken.se/discount/PAPPA15?redirect=%2Fcollections%2Falla-produkter",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "Koden PAPPA15 ger 15 % extra på priset som redan står på produktsidan, till och med tisdag 13 oktober. Den gäller bälteslipmaskinen, täljsetet, motorlåset, fågelmataren, värmesitsen och kamadohuven, en gång per kund. Klicka på knappen ovan så läggs den på av sig själv, eller skriv in koden i kassan.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Listan går lika bra att skicka vidare till pappan, som hans egen önskelista.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Beställ senast 19 oktober om paketet ska vara framme till fars dag den 8 november.",
+      "alignment": "left"
+    },
+    {
+      "type": "h2",
+      "text": "Tre presenter till reapris",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "e5b2eb1f-3eba-4603-a09c-1c9692e4ae66",
+          "button": "Se produkten"
+        },
+        {
+          "id": "9bbccd1d-d249-44c3-92ea-015ef372432c",
+          "button": "Se produkten"
+        },
+        {
+          "id": "039975de-c295-4409-a7aa-78df00cf06c0",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "h2",
+      "text": "Tre till, också till reapris",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "8e7d71b3-e2d8-4ce1-b8eb-7edbf327df24",
+          "button": "Se produkten"
+        },
+        {
+          "id": "08757c7e-7d50-498a-a1b4-70370bcd3c5c",
+          "button": "Se produkten"
+        },
+        {
+          "id": "00140466-ea18-407d-9c6b-52ef4a7f3230",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

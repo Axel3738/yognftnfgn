@@ -264,9 +264,18 @@
     "gissat": "nb",
     "ord": 60,
     "skal": null
+   },
+   "den rättade SRT:n": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 60,
+    "skal": null
    }
   },
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "81180a3a0f074b38bf6eca1224e69349-nb",
+  "downloaded": true
  },
  "atv-kapell_CS_1_H2": {
   "assetUrl": "https://resource2.heygen.ai/video/c4e8a17c3a3c49c496a26bdbabd9ece3/original.mp4",
@@ -280,9 +289,18 @@
     "gissat": "nb",
     "ord": 60,
     "skal": null
+   },
+   "den rättade SRT:n": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 56,
+    "skal": null
    }
   },
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "90eeb360f70646519f5edddec2f335f8-nb",
+  "downloaded": true
  },
  "atv-kapell_CS_1_H3": {
   "assetUrl": "https://resource2.heygen.ai/video/1281d61522d44423a369b3a5ac4a882c/original.mp4",
@@ -296,9 +314,18 @@
     "gissat": "nb",
     "ord": 65,
     "skal": null
+   },
+   "den rättade SRT:n": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 57,
+    "skal": null
    }
   },
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "399b49dbaa4a440aa150424a2cbb145a-nb",
+  "downloaded": true
  },
  "atv-kapell_G_1_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/ca2e3b9c54504236bee8c874ae2bccaa/original.mp4",
@@ -312,9 +339,18 @@
     "gissat": "nb",
     "ord": 80,
     "skal": null
+   },
+   "den rättade SRT:n": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 80,
+    "skal": null
    }
   },
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "9aac7deac9ab48dda3c609df5b2a6a61-nb",
+  "downloaded": true
  },
  "atv-kapell_G_1_H2": {
   "assetUrl": "https://resource2.heygen.ai/video/e68c47bd0d514cf99419b59a71f8cd90/original.mp4",
@@ -328,9 +364,18 @@
     "gissat": "nb",
     "ord": 77,
     "skal": null
+   },
+   "den rättade SRT:n": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 77,
+    "skal": null
    }
   },
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "6e8a88997ada4fbf8b7f9ea5791b1670-nb",
+  "downloaded": true
  },
  "atv-kapell_G_1_H3": {
   "assetUrl": "https://resource2.heygen.ai/video/c1389d2984044efcae1a90e4cebb7ab3/original.mp4",
@@ -344,9 +389,18 @@
     "gissat": "nb",
     "ord": 79,
     "skal": null
+   },
+   "den rättade SRT:n": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 79,
+    "skal": null
    }
   },
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "b7f92cc4012b46ea9771985369485a8a-nb",
+  "downloaded": true
  },
  "atv-kapell_PD_1_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/94051a83064e47eea7d90dd44d97690a/original.mp4",
@@ -360,9 +414,18 @@
     "gissat": "nb",
     "ord": 78,
     "skal": null
+   },
+   "den rättade SRT:n": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 75,
+    "skal": null
    }
   },
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "a428b17c2e97405ca77c99f34c6bd337-nb",
+  "downloaded": true
  },
  "atv-kapell_PD_1_H2": {
   "assetUrl": "https://resource2.heygen.ai/video/9637047a0b574a86a79f291a8eb65943/original.mp4",
@@ -376,9 +439,18 @@
     "gissat": "nb",
     "ord": 92,
     "skal": null
+   },
+   "den rättade SRT:n": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 79,
+    "skal": null
    }
   },
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "daea254a069241608883829f8f0408e4-nb",
+  "downloaded": true
  },
  "atv-kapell_PD_1_H3": {
   "assetUrl": "https://resource2.heygen.ai/video/52f35681a5ab4c34bd1be84ebc3a9548/original.mp4",
@@ -392,9 +464,18 @@
     "gissat": "nb",
     "ord": 77,
     "skal": null
+   },
+   "den rättade SRT:n": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 74,
+    "skal": null
    }
   },
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "d5194bed55154866b41dfa3b1e419031-nb",
+  "downloaded": true
  },
  "atv-kapell_SP_1_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/2282a18d483d4485be899fe5b668c2e5/original.mp4",
@@ -408,9 +489,18 @@
     "gissat": "nb",
     "ord": 64,
     "skal": null
+   },
+   "den rättade SRT:n": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 65,
+    "skal": null
    }
   },
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "7f87ca122c7e4877a786d1532c0c6048-nb",
+  "downloaded": true
  },
  "atv-kapell_SP_1_H2": {
   "assetUrl": "https://resource2.heygen.ai/video/eb740ecace95449fad48b3f292632d56/original.mp4",
@@ -424,9 +514,18 @@
     "gissat": "nb",
     "ord": 61,
     "skal": null
+   },
+   "den rättade SRT:n": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 61,
+    "skal": null
    }
   },
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "7ddc0cfe8f9246a8ba8153eca6db6d0b-nb",
+  "downloaded": true
  },
  "atv-kapell_SP_1_H3": {
   "assetUrl": "https://resource2.heygen.ai/video/c1981592a528486bba62f5e4ff4f9d20/original.mp4",
@@ -440,9 +539,18 @@
     "gissat": "nb",
     "ord": 65,
     "skal": null
+   },
+   "den rättade SRT:n": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 66,
+    "skal": null
    }
   },
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "6632c66e21e748f38b3ff22eeca16f0f-nb",
+  "downloaded": true
  },
  "kapell-till-snoslunga_CS_1_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/2614453ae29c4fcd9940e1c53a6a80a7/original.mp4",
@@ -456,9 +564,18 @@
     "gissat": "nb",
     "ord": 62,
     "skal": null
+   },
+   "den rättade SRT:n": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 56,
+    "skal": null
    }
   },
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "3e8884435b1c4d2baa50532dc47b76c6-nb",
+  "downloaded": true
  },
  "kapell-till-snoslunga_CS_1_H2": {
   "assetUrl": "https://resource2.heygen.ai/video/0b758e62e649478b9e1ed807c803e333/original.mp4",
@@ -472,9 +589,18 @@
     "gissat": "nb",
     "ord": 46,
     "skal": null
+   },
+   "den rättade SRT:n": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 46,
+    "skal": null
    }
   },
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "b3f8bc56eb434ff2964847b64457a46c-nb",
+  "downloaded": true
  },
  "kapell-till-snoslunga_CS_1_H3": {
   "assetUrl": "https://resource2.heygen.ai/video/67e4d8c6b7f846d8a27dfa8ec2d50199/original.mp4",
@@ -488,9 +614,18 @@
     "gissat": "nb",
     "ord": 65,
     "skal": null
+   },
+   "den rättade SRT:n": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 53,
+    "skal": null
    }
   },
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "70afa14178e044adb0f6bbe8f35768e3-nb",
+  "downloaded": true
  },
  "kapell-till-snoslunga_G_1_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/2a35d29f47f1443587f2ac40e29fb0d4/original.mp4",
@@ -504,9 +639,18 @@
     "gissat": "nb",
     "ord": 88,
     "skal": null
+   },
+   "den rättade SRT:n": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 88,
+    "skal": null
    }
   },
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "9ecc8f62fa1a4a8cacd39c163ef8085c-nb",
+  "downloaded": true
  },
  "kapell-till-snoslunga_G_1_H2": {
   "assetUrl": "https://resource2.heygen.ai/video/cd1d84439ae84196a3ab904b28b1e26a/original.mp4",
@@ -520,9 +664,18 @@
     "gissat": "nb",
     "ord": 85,
     "skal": null
+   },
+   "den rättade SRT:n": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 85,
+    "skal": null
    }
   },
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "75ff672b646a4947a2a652dcda021f8d-nb",
+  "downloaded": true
  },
  "kapell-till-snoslunga_G_1_H3": {
   "assetUrl": "https://resource2.heygen.ai/video/33de1d74a61b4d87bc55630085f6c60a/original.mp4",
@@ -536,9 +689,18 @@
     "gissat": "nb",
     "ord": 85,
     "skal": null
+   },
+   "den rättade SRT:n": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 85,
+    "skal": null
    }
   },
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "14eb73ebbd7d4aef80018bb1ffcf8860-nb",
+  "downloaded": true
  },
  "kapell-till-snoslunga_PD_1_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/433bc86ccfba44bea105b69b32e19161/original.mp4",
@@ -552,9 +714,18 @@
     "gissat": "nb",
     "ord": 73,
     "skal": null
+   },
+   "den rättade SRT:n": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 73,
+    "skal": null
    }
   },
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "e5e2102fa562475c8826304caa0714d2-nb",
+  "downloaded": true
  },
  "kapell-till-snoslunga_PD_1_H2": {
   "assetUrl": "https://resource2.heygen.ai/video/9fb27760950844a2b48658fbc195fc48/original.mp4",
@@ -568,9 +739,18 @@
     "gissat": "nb",
     "ord": 67,
     "skal": null
+   },
+   "den rättade SRT:n": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 67,
+    "skal": null
    }
   },
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "3bf34079f8d748918a260a03b27781d3-nb",
+  "downloaded": true
  },
  "kapell-till-snoslunga_PD_1_H3": {
   "assetUrl": "https://resource2.heygen.ai/video/e745577d32fc45d282ce18ab5aefac79/original.mp4",
@@ -584,9 +764,18 @@
     "gissat": "nb",
     "ord": 68,
     "skal": null
+   },
+   "den rättade SRT:n": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 68,
+    "skal": null
    }
   },
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "276d1fbf627246b2aefe88734d2f54a4-nb",
+  "downloaded": true
  },
  "kapell-till-snoslunga_SP_1_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/5cc5fd0361fc490286e9d45166053b60/original.mp4",
@@ -600,9 +789,18 @@
     "gissat": "nb",
     "ord": 63,
     "skal": null
+   },
+   "den rättade SRT:n": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 63,
+    "skal": null
    }
   },
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "c19bf13e92304abc87adaafaee95e5c3-nb",
+  "downloaded": true
  },
  "kapell-till-snoslunga_SP_1_H2": {
   "assetUrl": "https://resource2.heygen.ai/video/28076185effc46418fd2a83b494fbbc7/original.mp4",
@@ -616,9 +814,18 @@
     "gissat": "nb",
     "ord": 61,
     "skal": null
+   },
+   "den rättade SRT:n": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 59,
+    "skal": null
    }
   },
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "3b2ecee581de4e0893dc04e6358da901-nb",
+  "downloaded": true
  },
  "kapell-till-snoslunga_SP_1_H3": {
   "assetUrl": "https://resource2.heygen.ai/video/9138c4db51d6465abbc41e3f9e2bd9a5/original.mp4",
@@ -632,8 +839,17 @@
     "gissat": "nb",
     "ord": 60,
     "skal": null
+   },
+   "den rättade SRT:n": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 59,
+    "skal": null
    }
   },
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "579238969dca4089ae2ffb9af6b853f2-nb",
+  "downloaded": true
  }
 }

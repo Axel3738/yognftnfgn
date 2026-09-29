@@ -1,0 +1,204 @@
+{
+  "hook_H1": {
+    "rad": "Fars dag-present. 24 golfluckor öppnas i december.",
+    "engelska": "A Father's Day gift. 24 golf doors open in December.",
+    "alternativ": [
+      "24 luckor golfprylar. En fars dag-present för december.",
+      "Fars dag-present. 24 dagar golfprylar fram till jul."
+    ]
+  },
+  "hook_H2": {
+    "rad": "Peggar knäcks, bollar försvinner. Fars dag-presenten fyller på.",
+    "engelska": "Tees snap, balls go missing. This Father's Day gift restocks them.",
+    "alternativ": [
+      "Bollar försvinner, peggar knäcks. Fars dag-presenten fyller på.",
+      "Peggarna tar slut hela säsongen. Fars dag-presenten fyller på."
+    ]
+  },
+  "rader": [
+    { "nr": 2, "rad": "24 luckor. En ny golfpryl varje dag.", "engelska": "24 doors. A new golf item every day." },
+    { "nr": 3, "rad": "Golfverktyg bakom luckan, inte choklad.", "engelska": "A golf tool behind the door, not chocolate." },
+    { "nr": 4, "rad": "En lucka öppnas. Golfbollen lyfts fram.", "engelska": "A door opens. The golf ball comes out." },
+    { "nr": 5, "rad": "Fars dag-rea: 549 kr, ord. 719 kr. Beställ senast 19 oktober.", "engelska": "Father's Day sale: 549 SEK, was 719 SEK. Order by October 19." }
+  ],
+  "text_pa_skarm": {
+    "1_H1": "Fars dag-present. 24 golfluckor i december.",
+    "1_H2": "Peggar knäcks, bollar försvinner. Fyll på.",
+    "2": "24 luckor. Ny golfpryl varje dag.",
+    "3": "Golfverktyg bakom luckan, inte choklad.",
+    "4": "En lucka öppnas. Golfbollen lyfts fram.",
+    "5": "549 kr. Beställ senast 19 oktober."
+  },
+  "bild": {
+    "rubrik": "Fars dag-present fylld med golfprylar.",
+    "underrad": "24 luckor med golftillbehör i stället för choklad, klart att ge.",
+    "marke": "Fars dag-rea",
+    "prisband": "549 kr, ord. 719 kr",
+    "sista_raden": "Beställ senast 19 oktober",
+    "engelska": {
+      "rubrik": "A Father's Day gift filled with golf gear.",
+      "underrad": "24 doors of golf gear instead of chocolate, ready to give."
+    }
+  },
+  "copy_card": {
+    "primar": "Fars dag-present. 24 golfluckor öppnas i december. Peggar knäcks och bollar försvinner hela säsongen, den här presenten fyller på igen. Fars dag-rea: 549 kr, ord. 719 kr. Beställ senast 19 oktober.",
+    "rubrik": "Fars dag-present som fyller golfbagen.",
+    "beskrivning": "Fars dag-rea: 549 kr, ord. 719 kr"
+  },
+  "tretest": [
+    {
+      "rad": "Fars dag-present. 24 golfluckor öppnas i december.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "H1-hook till den stängda kartongen. Konkret siffra (24), konkret tidpunkt (december). Ingen annan butik säljer golfluckor."
+    },
+    {
+      "rad": "24 luckor golfprylar. En fars dag-present för december.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Alternativ till H1, samma fakta i omvänd ordning."
+    },
+    {
+      "rad": "Fars dag-present. 24 dagar golfprylar fram till jul.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Alternativ till H1, betonar hela perioden fram till julafton."
+    },
+    {
+      "rad": "Peggar knäcks, bollar försvinner. Fars dag-presenten fyller på.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "H2-hook till klippet med de flesta luckorna öppnade. Direkt ur produktsidans rad om peggar och bollar. Bara golfare tappar peggar."
+    },
+    {
+      "rad": "Bollar försvinner, peggar knäcks. Fars dag-presenten fyller på.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Alternativ till H2, omkastad ordning."
+    },
+    {
+      "rad": "Peggarna tar slut hela säsongen. Fars dag-presenten fyller på.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Alternativ till H2, säsongsvinkeln explicit."
+    },
+    {
+      "rad": "24 luckor. En ny golfpryl varje dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Matchar klippet: hand öppnar lucka, lyfter ut insatsen. 24 och en om dagen är produktens egen mekanik."
+    },
+    {
+      "rad": "Golfverktyg bakom luckan, inte choklad.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Matchar klippet med golfverktyget. Choklad-kontrasten är rakt ur produktsidan."
+    },
+    {
+      "rad": "En lucka öppnas. Golfbollen lyfts fram.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Matchar klippet utan att peka ut ett lucknummer. sidan anger inte vad som ligger bakom varje enskild lucka, så inget nummer eller siffran 8 nämns."
+    },
+    {
+      "rad": "Fars dag-rea: 549 kr, ord. 719 kr. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Slutkortet. Exakt pris och exakt deadline, ingen annan butik har de siffrorna."
+    },
+    {
+      "rad": "Fars dag-present. 24 golfluckor i december.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kortare skärmtext till H1, samma sakfråga."
+    },
+    {
+      "rad": "Peggar knäcks, bollar försvinner. Fyll på.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kortare skärmtext till H2, samma sakfråga."
+    },
+    {
+      "rad": "24 luckor. Ny golfpryl varje dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kortare skärmtext till rad 2."
+    },
+    {
+      "rad": "549 kr. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kortare skärmtext till erbjudandet, exakta siffror kvar."
+    },
+    {
+      "rad": "Fars dag-present fylld med golfprylar.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Statisk annons, rubrik. Golfspecifikt."
+    },
+    {
+      "rad": "24 luckor med golftillbehör i stället för choklad, klart att ge.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Statisk annons, underrad. Nästan ordagrant ur produktsidan."
+    },
+    {
+      "rad": "Fars dag-rea",
+      "visualisera": true,
+      "falsifiera": false,
+      "konkurrent_kan_signera": true,
+      "kommentar": "Fast märkestext, ordagrant ur GEMENSAMT.md:s format. En badge, ingen creative-rad om produkten, och därför undantagen kravet på unikhet med flit."
+    },
+    {
+      "rad": "549 kr, ord. 719 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Prisbandet. Exakta siffror ur produktsidan, ingen annan butik har det priset."
+    },
+    {
+      "rad": "Beställ senast 19 oktober",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": true,
+      "kommentar": "Fast rad ur formatet (sista_raden). Datumet är uträknat på leveranstiden men frasen i sig är en generisk deadline-CTA vem som helst kan skriva. Undantagen med flit, samma skäl som märket."
+    },
+    {
+      "rad": "Fars dag-present. 24 golfluckor öppnas i december. Peggar knäcks och bollar försvinner hela säsongen, den här presenten fyller på igen. Fars dag-rea: 549 kr, ord. 719 kr. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Copy card, hela primärtexten. Bygger på H1 och H2, avslutas med det obligatoriska erbjudandet."
+    },
+    {
+      "rad": "Fars dag-present som fyller golfbagen.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Copy card-rubrik. Kopplar till produktsidans egen bild (\"Golfbagen tömmer sig i det tysta\")."
+    },
+    {
+      "rad": "Fars dag-rea: 549 kr, ord. 719 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Copy card-beskrivning. Märket är generiskt men de exakta priserna gör hela raden omöjlig att signera för någon annan butik."
+    }
+  ]
+}

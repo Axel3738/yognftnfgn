@@ -1,0 +1,145 @@
+{
+  "id": "k34-fars-dag-bat",
+  "emailTitle": "Motorn han låser fast vid bryggan",
+  "emailDescription": "Nyckelringen flyter om den hamnar i vattnet vid båten.",
+  "amnesrader": [
+    "Motorn han låser fast vid bryggan",
+    "Beställ senast måndag 19 oktober",
+    "Skydd för motorn, kylsystemet eller båten"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Motorn han låser fast vid bryggan",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hej {{ contact.first_name | default: 'där' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Utombordaren sitter fast med några fästskruvar som går att lossa på några minuter, och båten ligger ofta obevakad vid bryggan över natten.",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "039975de-c295-4409-a7aa-78df00cf06c0",
+          "button": "Se motorlåset"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Se presenten",
+      "url": "https://baverbutiken.se/products/motorlas-i-rostfritt-stal-laser-utombordarens-fastskruvar",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "Nyckelringen flyter. Tappar han nyckeln i vattnet vid båten guppar den upp i stället för att sjunka. Två nycklar följer med, en till honom och en i reserv.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Ett lås i rostfritt stål läggs över fästskruvarna och låses med en av de två nycklarna som följer med.",
+      "alignment": "left"
+    },
+    {
+      "type": "h2",
+      "text": "Mer för båten",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "6f01ed7d-90e1-45a9-bb43-f0fbbc8c2285",
+          "button": "Se produkten"
+        },
+        {
+          "id": "d0db6095-e79f-449a-b98c-534575147929",
+          "button": "Se produkten"
+        },
+        {
+          "id": "f8206b31-f08d-4fc4-9823-7502203532c2",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "regular",
+      "text": "Beställ senast måndag 19 oktober om paketet ska vara framme till fars dag den 8 november.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

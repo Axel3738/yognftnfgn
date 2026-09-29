@@ -1,0 +1,234 @@
+{
+  "hook_H1": {
+    "rad": "Till fars dag: 30 delar i en väska.",
+    "engelska": "For Father's Day: 30 pieces in one bag.",
+    "alternativ": [
+      "Till fars dag: hela täljsetet i en väska.",
+      "Till fars dag: 6 knivar, 6 järn, en väska."
+    ]
+  },
+  "hook_H2": {
+    "rad": "Till fars dag: rätt kniv, inte en slö kökskniv.",
+    "engelska": "For Father's Day: the right knife, not a dull kitchen knife.",
+    "alternativ": [
+      "Till fars dag: ingen mer slö kökskniv åt pappa.",
+      "Till fars dag: rätt kniv i pappas hand."
+    ]
+  },
+  "rader": [
+    {
+      "nr": 2,
+      "rad": "Skarp egg. Läderstropen håller den så.",
+      "engelska": "Sharp edge. The leather strop keeps it that way."
+    },
+    {
+      "nr": 3,
+      "rad": "6 knivar, 6 järn. Handsken skyddar om den slinter.",
+      "engelska": "6 knives, 6 irons. The glove protects if it slips."
+    },
+    {
+      "nr": 4,
+      "rad": "Ett av 6 järn gröper ur en sked.",
+      "engelska": "One of the 6 irons hollows out a spoon."
+    },
+    {
+      "nr": 5,
+      "rad": "Fars dag-rea. 869 kr, ord. 1 139 kr. Beställ senast 19 oktober.",
+      "engelska": "Father's Day sale. 869 kr, was 1,139 kr. Order by October 19."
+    }
+  ],
+  "text_pa_skarm": {
+    "1_H1": "Till fars dag: 30 delar.",
+    "1_H2": "Till fars dag: rätt kniv.",
+    "2": "Skarp egg med läderstrop.",
+    "3": "6 knivar. 6 järn. Handsken skyddar.",
+    "4": "Ett av 6 järn i sked.",
+    "5": "Fars dag-rea. Beställ senast 19 oktober."
+  },
+  "bild": {
+    "rubrik": "Till fars dag: 30 delar i väskan.",
+    "underrad": "Bladskydd, läderstrop, slippapper och skärskyddade handskar i samma väska.",
+    "marke": "Fars dag-rea",
+    "prisband": "869 kr, ord. 1 139 kr",
+    "sista_raden": "Beställ senast 19 oktober",
+    "engelska": {
+      "rubrik": "For Father's Day: 30 pieces in the bag.",
+      "underrad": "Blade guards, leather strop, sandpaper and cut resistant gloves in the same bag."
+    }
+  },
+  "copy_card": {
+    "primar": "Till fars dag: 30 delar i en väska. Inuti: 6 knivar, 6 järn, bladskydd och skärskyddade handskar. Fars dag-rea: 869 kr, ord. 1 139 kr. Beställ senast 19 oktober.",
+    "rubrik": "30 delar till pappa som täljer.",
+    "beskrivning": "Fars dag-rea: 869 kr, ord. 1 139 kr"
+  },
+  "tretest": [
+    {
+      "rad": "Till fars dag: 30 delar i en väska.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Säger fars dag inom tre sekunder och pekar på det exakta antalet (30) i väskan som syns i bild, precis det klippet visar."
+    },
+    {
+      "rad": "Till fars dag: hela täljsetet i en väska.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Samma konkreta scen (öppen väska) som huvudhooken, fars dag med."
+    },
+    {
+      "rad": "Till fars dag: 6 knivar, 6 järn, en väska.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kopplar de exakta antalen (6 och 6) direkt till fars dag-presenten."
+    },
+    {
+      "rad": "Till fars dag: rätt kniv, inte en slö kökskniv.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Bygger direkt på produktsidans text 'En slö kniv från köksskåpet' och vänder den till lösningen som syns i klippet, med fars dag inom tre sekunder."
+    },
+    {
+      "rad": "Till fars dag: ingen mer slö kökskniv åt pappa.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Samma grund som H2, fars dag med."
+    },
+    {
+      "rad": "Till fars dag: rätt kniv i pappas hand.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Samma grund som H2, omvänd ordning, fars dag med."
+    },
+    {
+      "rad": "Skarp egg. Läderstropen håller den så.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Läderstrop och polermedel är en konkret, ovanlig detalj som står specifikt på produktsidan, inte 'skarp och bra'."
+    },
+    {
+      "rad": "6 knivar, 6 järn. Handsken skyddar om den slinter.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Exakta antal plus den specifika säkerhetsfunktionen (handsken vid slint) står ordagrant i produktsidans funktionslista."
+    },
+    {
+      "rad": "Ett av 6 järn gröper ur en sked.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Ren beskrivning av det som faktiskt syns i klippet (järnet gröper ur skålen på skeden). Peka, inte prata."
+    },
+    {
+      "rad": "Fars dag-rea. 869 kr, ord. 1 139 kr. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Siffrorna är butikens egna. En konkurrent med andra priser och andra leveranstider kan inte skriva under exakt denna rad."
+    },
+    {
+      "rad": "Till fars dag: 30 delar.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kort skärmversion av hook H1, fars dag med."
+    },
+    {
+      "rad": "Till fars dag: rätt kniv.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kort skärmversion av hook H2, fars dag med."
+    },
+    {
+      "rad": "Skarp egg med läderstrop.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kort skärmversion av rad 2."
+    },
+    {
+      "rad": "6 knivar. 6 järn. Handsken skyddar.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kort skärmversion av rad 3."
+    },
+    {
+      "rad": "Ett av 6 järn i sked.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kort skärmversion av rad 4."
+    },
+    {
+      "rad": "Fars dag-rea. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Kort skärmversion av erbjudanderaden, samma unika siffror som huvudraden."
+    },
+    {
+      "rad": "Till fars dag: 30 delar i väskan.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Statisk rubrik. Säger fars dag och pekar på det exakta antalet (30), matchar produktfotot med hela setet utlagt i väskan."
+    },
+    {
+      "rad": "Bladskydd, läderstrop, slippapper och skärskyddade handskar i samma väska.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Rak lista ur produktsidans egna delar. Ingen av dem är påhittad, och kombinationen är ovanlig för ett täljset."
+    },
+    {
+      "rad": "Fars dag-rea",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": true,
+      "kommentar": "Fast kampanjetikett enligt uppdragets format (GEMENSAMT.md kräver exakt 'Fars dag-rea'), inte en unik copy-rad. Vilken butik som helst kan sätta samma etikett på sin egen rea, men fältet är obligatoriskt och bär ingen egen produktclaim."
+    },
+    {
+      "rad": "869 kr, ord. 1 139 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Butikens egna priser. En konkurrent med andra priser kan inte skriva under exakt denna rad."
+    },
+    {
+      "rad": "Beställ senast 19 oktober",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Datumet är räknat på den här butikens leveranstider till fars dag, inte ett allmänt påstående."
+    },
+    {
+      "rad": "Till fars dag: 30 delar i en väska. Inuti: 6 knivar, 6 järn, bladskydd och skärskyddade handskar. Fars dag-rea: 869 kr, ord. 1 139 kr. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "copy_card.primar. Fars dag inom första meningen, sedan de exakta delarna och priset i tre korta led som alla går att peka på."
+    },
+    {
+      "rad": "30 delar till pappa som täljer.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Exakt antal plus konkret mottagare (pappan som täljer), inte en allmän presentrad."
+    },
+    {
+      "rad": "Fars dag-rea: 869 kr, ord. 1 139 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "copy_card.beskrivning. Butikens egna priser i det angivna formatet."
+    }
+  ]
+}

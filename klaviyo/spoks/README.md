@@ -35,7 +35,7 @@ triggers plus de sändsteg som bar felen. **Varje klick är tillbakaläst med `g
 | **F02 Övergiven kassa v2** | `f98eb12e-f7a2-4b0b-ae02-f738776b5282` | checkout, inget köp sedan; återinträde tidigast efter 7 d | 3 h, 1 d, 2 d | 0 |
 | F03 Webbhistorik (original) | `f9001da7-60cb-4742-bd5a-8d4397cfb0e6` | produktvisning | 4 h, 1 d | 1 |
 | **F04 Efter köp v3 (kredit)** | `3c8443d3-4916-40ad-b83e-5345c8752c2e` | order skapad, **inget återinträde** | **5 d** → "Din beställning är på väg" med KREDIT100 (Axels ändring 09:02 CEST, se nedan); mejl 2 "Kom allt fram som det ska" **AV** | 15 |
-| **F04 Levererat (kom allt fram)** | `0b2beeb0-5288-46cb-80a2-2845bd05b7c5` | **paketet levererat** (`order_delivered`) | 1 dygn, kl 10:00 | 0 — ⚠️ oprövat, se nedan |
+| **F04 Levererat (kom allt fram)** | `0b2beeb0-5288-46cb-80a2-2845bd05b7c5` | **paketet levererat** (`order_delivered`) | 1 dygn, kl 10:00 | 41 (mätt 2026-09-28 17:26 CEST) — fungerar, se nedan |
 | **F05 Vinna tillbaka v2** | `3ef1aab0-24b1-4c84-80a4-840f7a4cc637` | order, inget köp sedan | 120 d, 14 d | 0 |
 | **F07 Motorhölje till båtmotorskydd v2** | `98d46ff1-fb25-44b6-8916-2297198e5ea6` | order med Marin Motorhölje; hoppar den som redan köpt båtmotorskyddet | 21 d, 7 d | 0 |
 | F08 Tips bälteslip (original) | `c7dc0fb1-d866-48df-aecd-08657bf9ce06` | order med produkten | 21 d (Axels) | 6 |
@@ -67,17 +67,19 @@ tipsflödena och 22 d + 18:00 i F14 är Axels egna ändringar i appen 2026-09-26
 `isActive` står kvar true) — de inrullade fortsätter genom stegen. Ett mejl som inte får gå ut
 måste stängas av på sitt eget sändsteg. Det är därför tabellen ovan skiljer på trigger och steg.
 
-### ⚠️ F04 Levererat är oprövat
+### ✅ F04 Levererat fungerar (mätt 2026-09-28)
 
 Axels fråga 2026-09-27 ("vi kör väl triggern på att när paketet kommit fram?") gav ett eget
-flöde på `order_delivered` i stället för v3:s mejl 2 på dag 21. Händelsen har aldrig triggats i
-den här workspacen: spårningsrutinen (`/sparning`, varje timme :16) skriver leveransskanningarna
-in i Shopify som fulfillment-event, och Spoks ska läsa dem som levererat, men det är inte mätt
-(söndag 27/9 levereras inget, så 0 inrullade säger inget än). **Kontroll: `get_flow
-0b2beeb0-…` → `contactsEnrolledCount` ska stiga när måndagens leveranser skrivits in.** Står
-den kvar på 0 tisdag 29/9: slå på "Kom allt fram som det ska" i F04 Efter köp v3 igen (Axels
-klick, https://app.spoks.com/baverbutiken/flows/3c8443d3-4916-40ad-b83e-5345c8752c2e). Det
-steget går 16 d efter kreditmejlet, så ingen köpare hinner passera det under tiden.
+flöde på `order_delivered` i stället för v3:s mejl 2 på dag 21. Händelsen hade aldrig triggats i
+den här workspacen, och söndag 27/9 levererades inget, så 0 inrullade sade inget den dagen.
+**Mätt måndag 2026-09-28 17:26 CEST med `get_flow 0b2beeb0-…`: `contactsEnrolledCount` 41,
+41 väntar i dygnssteget, sändsteget `1a15ed11…` på (`isEnabled: true`), triggern aktiv.**
+Kedjan håller alltså: spårningsrutinen (`/sparning`, varje timme :16) skriver
+leveransskanningarna in i Shopify som fulfillment-event, och Spoks läser dem som
+`order_delivered`. Första "Kom allt fram som det ska" går tisdag 29/9 kl 10:00 (väntan 1 dygn,
+till kl 10:00). Mejl 2 i F04 Efter köp v3 förblir AV — inget att slå på. Vill du se att det
+faktiskt skickades: läs `finishedEnrollmentsCount` efter 29/9 10:00 (stod på 0 vid mätningen,
+vilket är rätt så länge alla 41 väntar).
 
 **Varför 5 dagar i F04 v3** (Axels fråga "säker på att tidshorisonten är rätt?"): ordern →
 skickad går inte att mäta härifrån (Shopify svarar 403 för ordrar i den här miljön), men
@@ -93,6 +95,110 @@ CEST). Mät om när Shopify-ordrarna går att läsa.
 Warmup tier 1 valde Axel i appen — publiken går inte att läsa via MCP. **Gamla K01
 `51c37c20-e00c-48c2-b144-089e62f62d14` (med citaten) är återkallad till utkast** 08:17 CEST.
 K02–K22 är utkast; K18 får inte schemaläggas utan ny topp 3-mätning (KVAR.md).
+
+### De dagliga kampanjerna K23–K37 (byggda 2026-09-28)
+
+Axels order 2026-09-28: "kampanjer varje dag med produkter skräddarsydda för våra kunder,
+rea-mejl för den pågående rean, minst tio fars dag-kampanjer". Strategin och briefen per mejl:
+`klaviyo/innehall/baverbutiken/BRIEFER-DAGLIGA.md`; schemat dag för dag:
+`klaviyo/innehall/baverbutiken/KALENDER-2026.md`. Innehållet i `kampanjer/k23…k37.json`
+(skrivet av Sonnet-subagenter mot produkttexterna, kontrollerat med
+`node klaviyo/spoks/kolla-kampanj.mjs --alla-nya`), payloaden i `payload/`, uppladdat med
+`draft_campaign`. Titeln i Spoks bär datum och publik ("K23 · ons 30/9 18:00 · till: Warmup
+tier 1 · Sex bästsäljare till reapris") eftersom MCP:n varken kan välja publik eller
+schemalägga — varje kampanj är Axels klick i appen.
+
+**Åtta köparsegment, skapade 2026-09-28** (`emailMarketingConsent in [subscribed]` +
+`purchasedProducts in [<produkt-id:n>]`, max 25 id per nod, `like` stöds inte; storlek vid
+skapandet):
+
+| Segment | id | Kontakter |
+|---|---|---|
+| Köpare båt | `e2304001-fe94-467b-990c-e67c60f2fe7a` | 1 387 |
+| Köpare husvagn & husbil | `c9f36868-aea8-4983-8d87-bfade710c9e1` | 624 |
+| Köpare trädgård & tomt | `c3210638-a777-4b2d-af4d-d2c8ae21c671` | 630 |
+| Köpare verkstad & garage | `af5f212e-5dfc-4b50-abed-e759d016482e` | 193 |
+| Köpare fiske & friluft | `bb469cf5-cc4f-4ea6-bc56-c6539a3fbe4c` | 604 |
+| Köpare hem & säkerhet | `8c99f852-ca5d-48be-a030-19b4c45d6f69` | 363 |
+| Köpare MC & fordon | `c65bf9f9-fcff-4e66-8c87-5538aa8d96fd` | 114 |
+| Köpare kalendrar & lek | `e62a3ddc-61cf-41e5-8f4e-f19d1214fa5b` | 95 |
+
+⚠️ Händelsen `orderedProducts` bär bara historik från Spoks-kopplingen (en förhandsvisning
+på två båtprodukter gav 23 kontakter mot 615 via kontaktfältet `purchasedProducts`) — bygg
+köparsegment på fältet, aldrig på händelsen. Och skriv aldrig ett produkt-id ur minnet:
+`klaviyo/spoks/baverbutiken/produkter.json` (alla 248 handles → Spoks-id sedan 2026-09-28) är
+facit; en första förhandsvisning med gissade id:n gav 23 träffar av fel skäl.
+
+**Utkast i Spoks (alla 15, uppladdade 2026-09-28 eftermiddag; K33–K37 18:45–18:49 CEST efter Axels "A"):**
+
+| Mejl | Dag | Publik | Ämnesrad | Post-id |
+|---|---|---|---|---|
+| K23 | ons 30/9 | Warmup tier 1 | Sätesöverdraget och fem till, 15 % extra (kod BASTSALJARE15) | `32ced8c7-e3dc-412f-9e0e-f36c6a03f975` |
+| K24 | fre 2/10 | Köpare båt | Ett vinterskydd som täcker hela motorn | `357d53cb-8e2f-43a1-8116-e8f7e72b9df1` |
+| K25 | lör 3/10 | Köpare trädgård & tomt | Kranen fryser, koden FROST15 väntar | `334c5fd5-5f5b-47d0-93aa-475976211195` |
+| K26 | sön 4/10 | Warmup tier 1 | Sista dag att beställa till fars dag: 19 oktober | `ab2e0398-224c-46c4-b6b1-40778c2a56d2` |
+| K27 | mån 5/10 | Köpare husvagn & husbil | Taket är skyddat, resten är det inte. | `bfec6cff-0d81-44a8-a2f9-acc2592b6c49` |
+| K28 | ons 7/10 | Warmup tier 1 | Kniven som legat slö sedan midsommar | `63bad9d8-0b9e-41fe-893c-7af4dfbaa05c` |
+| K29 | fre 9/10 | Warmup tier 1 | Presenter till fars dag. Kod: PAPPA15 | `c7ac660a-4969-4e04-a03f-e7fe6e378909` |
+| K30 | lör 10/10 | Köpare trädgård & tomt | En present för honom med kamin och vedbod | `7e49c595-6cdc-4740-b9e8-5ba58e0f5dbd` |
+| K31 | sön 11/10 | Warmup tier 1 | Aldrig mer trassliga fiskespön | `9f0eb81e-6084-4e5e-854e-fe2d340425cc` |
+| K32 | mån 12/10 | Köpare verkstad & garage | Han ser fåglarna innan han reser sig | `a97045ba-936c-4889-8bdc-c8db87a78656` |
+| K33 | ons 14/10 | Warmup tier 2 | Den kalla sitsen känns i hela kroppen | `c759a3ac-e639-4177-967d-b5e0762f23b1` |
+| K34 | lör 17/10 | Köpare båt | Motorn han låser fast vid bryggan | `de65f9b4-4ded-493d-9aec-1a2b5f38d3b8` |
+| K35 | sön 18/10 | Warmup tier 2 | I morgon är sista dagen till fars dag | `923a2200-c498-4cb1-a5b4-a34904fcea24` |
+| K36 | mån 19/10 | Warmup tier 2 | I dag är sista dagen att beställa till fars dag | `d6c2a03b-5ca7-4abc-91cb-420ce077bf15` |
+| K37 | ons 21/10 | Köpare MC & fordon | Ett kapell som tar smällen i stället för lacken | `93dd1b86-c942-40fd-827c-4bc9b41d366a` |
+
+Redigeringslänk: `https://app.spoks.com/baverbutiken/post/<post-id>/edit`. K02 (tor 1/10, tier 1)
+är det gamla utkastet `8e970060-558d-4ec6-bc04-89780ab20b95`. **K23, K25, K26 och K29 skrevs om
+samma kväll och utkasten uppdaterades i Spoks 18:57–19:10 CEST** (`update_draft_campaign`
+med hash, nya block, titel och ämnesrad): rea-copyn (kod, procent, sista dag, kodstycket)
+av en Sonnet-subagent mot samma regler som resten; huvudsessionen ändrade tre K26-rader för
+sanningens skull (agentens "Sista dagen att beställa till fars dag" som rubrik läste som "i
+dag", nu "… är 19 oktober"; "Efter 19 oktober hinner paketet inte fram" var ett löfte vi inte
+kan hålla, nu "kan vi inte lova att det hinner fram"; "till pappa" bröt tvåläsarregeln, nu
+"till fars dag") och rättade "eller skriver du in" till "eller så skriver du in". Axels dom på
+K26:s gamla ämnesrad "Fem veckor kvar till fars dag": "verkligen en urgency-minskare". K24
+oförändrad (ingen rabatt). ⚠️ `konvertera.mjs` skriver om ALLA payloads: citatmejlen (f01-e2,
+k01, k03, k06, k10, k18, k21) tappar sina citat utan recensionscache — återställ dem med
+`git checkout` efter varje körning tills cachen finns i containern.
+
+**Extrarean med rabattkod (Axels beslut A 2026-09-28: "Du har ju inte gjort någon extra rea
+på 1" … "Bra men också rea" på K25; på frågan kod via länk eller automatisk rabatt på hela
+sajten svarade han A):** K23, K25 och K29 bär varsin kod, 15 % (Axel har inte sagt procenten,
+15 gäller tills han säger 10 eller 20), bara på mejlets produkter, en gång per kund, bara
+kombinerbar med fraktrabatt, räknad på dagens pris. Koderna ligger i Shopify sedan 2026-09-28
+~19:40 CEST, alla `SCHEDULED`, tillbakalästa på id: **BASTSALJARE15** (K23,
+`DiscountCodeNode/2304572129629`, 2026-09-30T06:00Z till 2026-10-04T21:59:59Z, 6 produkter),
+**FROST15** (K25, `…2304572162397`, 2026-10-03T06:00Z till 2026-10-07T21:59:59Z, 4 produkter),
+**PAPPA15** (K29, `…2304572195165`, 2026-10-09T06:00Z till 2026-10-13T21:59:59Z, 6 produkter).
+Motorn är `klaviyo/rea-kod.mjs` (kampanjfilens `rabatt: { typ: "kod", kod, procent, start,
+slut, handles }` är facit; torrt utan `--ja`; idempotent), nycklarna `SHOPIFY_*_SE` = appen
+"Bäver uppladdare", som HAR `write_discounts` (mätt 2026-09-28; CLAUDE.md:s "saknar
+write_discounts" var 2026-09-12). Knappen i mejlet går via `rabatt:<KOD>:<länk>` →
+`https://baverbutiken.se/discount/<KOD>?redirect=<sökväg>` (mätt: 302 till sökvägen), så
+koden ligger i kassan när kunden klickat; den står också i klartext i mejlet. ⚠️
+`codeDiscountNodeByCode` svarar null i upp till en minut efter skapandet — läs tillbaka på id
+direkt, på koden senare. `konvertera.mjs` släpper igenom exakt mejlets egen procentsats när
+`rabatt` är ett kod-objekt. K24 (båtköparna) får ingen rabatt: återköpsparet motorhölje →
+båtmotorskydd köps till fullpris (12 av 21), en rabatt dit kostar bara marginal (Axel frågade,
+sessionens råd, inget beslut om annat).
+
+**Takten:** Axels order är dagliga utskick. Vecka 40–41 får tier 1 (2 500) fyra till fem
+breda mejl i veckan, med de skräddarsydda däremellan; larmet i `docs/os/EPOST-STRATEGI.md`
+(spamklagomål över 0,3 % eller avregistreringar över 1 % på ett utskick) är det som stoppar,
+inte en veckokvot. Ingen får två mejl samma dag: ett skräddarsytt mejl ligger aldrig samma
+dag som ett brett.
+
+**Konverteraren rättad samma dag:** dubblettkortet (hero med produktbild + samma produkt
+igen längre ner) tas bort i `konverteraMejl` — ett senare enprodukts-block med samma produkt
+som ett tidigare stryks och dess knapptext flyttas till första kortet. De gamla utkasten
+K02–K22 i Spoks bär fortfarande dubbletten tills de laddas upp igen (KVAR.md).
+
+**Recensionerna:** Trustpilot-profilen är claimad sedan 2026-09-28 ("Registrerad profil",
+5 omdömen, TrustScore 3,1, läst samma dag), och **Judge.me:s recensionsförfrågningar är AV**
+(Axels ord 2026-09-28) — F14 Recension Trustpilot v2 `9bef2ef0-…` är enda vägen till nya
+recensioner.
 
 **Recensionskampanjen (Axels fråga 2026-09-27: "en kampanj som bara är recensionsformuläret
 … där de får recensera butiken"):** samma mejl som F14 v2 (alla fem stjärnor till
@@ -208,7 +314,7 @@ fick en **rättad kopia byggd inaktiv via MCP**; Axel slog på kopiorna 2026-09-
 | **F01 Välkomst v2** | `f11d04ab-1789-4a88-9abb-a3aaf6e4219d` | `491d1b99…`, `b1f70673…`, `03544d7c…` | E2 utan citaten (Karin/Erik), ny förhandstext; E3 utan "från beställning till dörren" och "jag svarar själv"; stegfilter på E2 och E3: inget köp ELLER köp före inrullningen |
 | **F02 Övergiven kassa v2** | `f98eb12e-f7a2-4b0b-ae02-f738776b5282` | `c9376a0b…`, `518fe1b7…`, `ee9050d8…` | E2: kassans varor (abandonedCart) i stället för "senast visade produkt", de tre frågorna besvarade; E3 "så svarar vi"; återinträde tidigast efter 7 dagar |
 | **F04 Efter köp v3 (kredit)** | `3c8443d3-4916-40ad-b83e-5345c8752c2e` | `46400d0d…`, `77dcaccd…` | E1: "skriv in paketnumret från leveransmejlet", villkoren en gång + "går inte ihop med andra rabatter", "så hjälper vi dig"; E2: rubriken "Tre prylar till att kika på" — **steget AV sedan 2026-09-27, ersatt av F04 Levererat**; **inget återinträde** (KREDIT100 är en gång per kund); väntan 5 d (Axel 2026-09-27) |
-| **F04 Levererat (kom allt fram)** | `0b2beeb0-5288-46cb-80a2-2845bd05b7c5` | `1a15ed11…` | nytt flöde: "Kom allt fram som det ska" på `order_delivered` + 1 dygn kl 10:00, i stället för dag 21 efter ordern (Axels idé 2026-09-27); oprövat, se ovan |
+| **F04 Levererat (kom allt fram)** | `0b2beeb0-5288-46cb-80a2-2845bd05b7c5` | `1a15ed11…` | nytt flöde: "Kom allt fram som det ska" på `order_delivered` + 1 dygn kl 10:00, i stället för dag 21 efter ordern (Axels idé 2026-09-27); fungerar — 41 inrullade första måndagen (2026-09-28), se ovan |
 | **F05 Vinna tillbaka v2** | `3ef1aab0-24b1-4c84-80a4-840f7a4cc637` | `dd221fc0…`, `e28604a8…` | E1: Bävertratten som belagt återköp + Marin Motorhölje och Fiskespöhållare i raden; E2: "Tre prylar till att kika på", Bävertratt i stället för adventskalendern |
 | **F07 Motorhölje till båtmotorskydd v2** | `98d46ff1-fb25-44b6-8916-2297198e5ea6` | `897f1a24…`, `1e016b67…` | E1: motsäger inte längre produktsidan ("skyddet går ända ner över riggen"); E2: "Mer för båten", utan spöhållaren (inte båtprodukt, Axel 2026-09-25) och utan påhittat "andra båtägare"; priserna som Spoks produktblock (följer Shopify) |
 | **F13 Tips sätesöverdrag v2** | `ecdbd45a-b271-4443-939b-41905042895f` | `c8a399d8…` | "Finns i flera färger" (bara grå och svart i lager) |

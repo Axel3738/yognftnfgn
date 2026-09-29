@@ -1,0 +1,151 @@
+{
+  "id": "k25-tradgard-frosten",
+  "emailTitle": "Kranen fryser, koden FROST15 väntar",
+  "emailDescription": "FROST15 ger 15 % extra på kranskyddet och tre andra produkter, till onsdag.",
+  "amnesrader": [
+    "Kranen fryser, koden FROST15 väntar",
+    "15 % extra på Kranskydd Frost",
+    "Kranskydd Frost och tre till, 15 % extra"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Extra rabatt på Kranskydd Frost. Kod: FROST15",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hej {{ contact.first_name | default: 'där' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Kranen fryser vid första köldknäppen, ofta innan du hunnit skydda den. Nu får Kranskydd Frost och tre andra produkter för kylan 15 % extra rabatt, till och med onsdag 7 oktober.",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "ca232636-6a2f-496a-9a77-c8a7d0d19aab",
+          "button": "Se kranskyddet"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Hämta FROST15",
+      "url": "https://baverbutiken.se/discount/FROST15?redirect=%2Fproducts%2Fkranskydd-frost-420d-skyddar-utekranen-i-vinter",
+      "style": "button"
+    },
+    {
+      "type": "h2",
+      "text": "Tre saker frosten tar först"
+    },
+    {
+      "type": "list",
+      "text": "Kranen: vattnet i ledningen fryser vid första köldknäppen, och isen kan spränga kran eller ledning."
+    },
+    {
+      "type": "list",
+      "text": "Tunnan: löv och pollen samlas i vattnet hela hösten, och till våren kan en grön hinna ligga kvar om den stått öppen."
+    },
+    {
+      "type": "list",
+      "text": "Krukorna: en huv skyddar mot vind, regn, snö och frost, och kvällarna blir kalla innan du hunnit ta in dem."
+    },
+    {
+      "type": "regular",
+      "text": "Träs över kranen och sluter tätt, med isolerande foder som håller frosten ute hela vintern.",
+      "alignment": "left"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "e28684fe-d25a-44fb-abd9-a39bda1c34e5",
+          "button": "Se produkten"
+        },
+        {
+          "id": "c92885ee-ecef-40e6-9f18-0c2668c17095",
+          "button": "Se produkten"
+        },
+        {
+          "id": "3e2f6e02-30c6-40dc-b34f-04157ad3f72a",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "regular",
+      "text": "Koden FROST15 ger 15 % extra på priset som redan står på produktsidan, till och med onsdag 7 oktober. Den gäller Kranskydd Frost, IBC-tanköverdraget, krukväxthuven och regntunnehuven, en gång per kund. Klicka på knappen ovan så läggs den på av sig själv, eller skriv in koden i kassan.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

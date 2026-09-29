@@ -1,0 +1,123 @@
+{
+  "id": "k37-mc-hojen-stalls-undan",
+  "namn": "MAIL_20261021_MCkapell_S_1_kopare-mc_solution_hojen-stalls-undan_v1",
+  "memo": "Säsongen är slut för de flesta hojar i slutet av oktober. Till dem som redan köpt MC- eller fordonsprylar. Hypotes: 'ställs undan'-vinkeln, som K17 kör brett 10/11, funkar tre veckor tidigare till rätt grupp.",
+  "taggar": {
+    "typ": "S",
+    "kalla": "egen-data",
+    "kalla_ref": "klaviyo/innehall/baverbutiken/KALENDER-2026.md (K17)",
+    "lardom": null,
+    "avatar": "hojägaren som ställer undan för vintern",
+    "begar": "att hojen står torr och låst till våren",
+    "awareness": "solution",
+    "urgency": "sasong",
+    "confidence": "medium",
+    "prefix": "MCkapell",
+    "kod": "S"
+  },
+  "amnesrader": [
+    {
+      "text": "Ett kapell som tar smällen i stället för lacken",
+      "begar": "skydda lacken utan att behöva göra något själv"
+    },
+    {
+      "text": "Innan hojen ställs undan för vintern",
+      "begar": "veta vad som bör göras innan hojen ställs in"
+    },
+    {
+      "text": "Lås styret och hjälmen i ett enda lås",
+      "begar": "hitta en lösning som täcker både styret och hjälmen"
+    }
+  ],
+  "forhandstext": "Dras över på en minut, hela hojen skyddad.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Ett kapell som tar smällen i stället för lacken",
+      "text": "Hej {{fornamn}},\n\nSäsongen är på väg mot sitt slut för de flesta hojar. Innan den ställs undan är det tre saker värda att ha koll på.",
+      "bild": "produkt:mc-kapell-220-120-regn-damm-uv",
+      "knapp": {
+        "text": "Se kapellet",
+        "lank": "produkt:mc-kapell-220-120-regn-damm-uv"
+      }
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "Innan hojen ställs undan",
+      "punkter": [
+        "Lås fast styret och hjälmen.",
+        "Skydda sätet mot slitage under vintern.",
+        "En låsbar bensinreserv på 3 liter, redo till våren."
+      ]
+    },
+    {
+      "typ": "produkt",
+      "handle": "mc-kapell-220-120-regn-damm-uv",
+      "text": "Dras över hela hojen på en minut, 218 × 118,5 cm. Regnet rinner av, dammet stannar utanpå och solen bleker kapellet i stället för lacken.",
+      "knapp": "Köp kapellet"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": null,
+      "handles": [
+        "styrlas-hjalmlas-combo-stoldskydd-i-aluminium",
+        "mc-satesoverdrag-camo-ventilerande-skydd",
+        "bensindunk-3l-lasbar-reservtank-for-mc"
+      ]
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    {
+      "rad": "Ett kapell som tar smällen i stället för lacken",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Innan hojen ställs undan för vintern",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Lås styret och hjälmen i ett enda lås",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Dras över på en minut, hela hojen skyddad.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Innan hojen ställs undan",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Se kapellet",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Köp kapellet",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    }
+  ],
+  "planerad": "2026-10-21T18:00:00+02:00",
+  "segment": [
+    "Köpare MC & fordon"
+  ],
+  "exkludera": [],
+  "status_plan": "klar",
+  "kraver_axel": null
+}

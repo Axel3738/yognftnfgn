@@ -9,12 +9,18 @@
 //      mer, med belopp bredvid. Ett program ingen förstår betalar aldrig ut.
 //   3. BEVISET LIGGER FRAMME. Varje krona pekar på recensionen, tvisten eller
 //      produkten som gav den. Ingen behöver lita på systemet — man kan titta.
+//
+// Och en fjärde sedan 2026-09-28 (Axels beslut): PENGARNA VISAS SOM DE BETALAS
+// UT, aldrig som en klumpsumma. Tre utbetalningar med tre takter — produkttest
+// varannan vecka (1–15 betalas den 15:e, 16–sista betalas sista dagen i
+// månaden), bonusen en gång i månaden, commission för sig. Talen är motorns
+// (`utbetalningar` på varje person i utfallet); vyn räknar aldrig om dem.
 
 import { esc, attr, kort, panel, tabell, tomt, block, status, stapel, tal, t, sprak } from './delar.mjs';
 import { sidhuvud } from './layout.mjs';
-import { sedan, datum } from '../berakna.mjs';
+import { sedan } from '../berakna.mjs';
 import { harRatt, personIdFor, ROLLER } from '../roller.mjs';
-import { uppdragForRoll } from '../../bonus/motor.mjs';
+import { uppdragForRoll, utbetalningarFor, utbetalningFor, utbetalningsdefinitioner, halvmanader } from '../../bonus/motor.mjs';
 
 const USD = (v) => (v === null || v === undefined ? '–' : `$${Number(v).toLocaleString('sv-SE', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`);
 const USD0 = (v) => (v === null || v === undefined ? '–' : `$${Number(v).toLocaleString('sv-SE', { maximumFractionDigits: 0 })}`);
@@ -69,11 +75,69 @@ function bevislista(rader) {
     </li>`).join('')}</ul>`;
 }
 
+// ------------------------------------------------------- utbetalningarna
+
+/** Betaltexten för en utbetalning (eller en halva av den) på läsarens språk. */
+function betalasText(def, halva = null) {
+  const valj = (v) => (v && typeof v === 'object' ? v[halva] : v) ?? '';
+  return (sprak() === 'en' ? valj(def?.en?.betalas) : '') || valj(def?.betalas) || '';
+}
+
+/**
+ * Utbetalningarna som DELAR — det som landar på ett konto en viss dag.
+ * Produkttest blir två (1–15 och 16–sista, var sin betaldag), bonus och
+ * commission en var. Ordningen är reglernas. `nyckel` är fältet i personens
+ * `utbetalningar[id]` som bär beloppet.
+ */
+export function utbetalningsdelar(regler, period) {
+  const h = halvmanader(period);
+  const sista = String(period?.till ?? '').slice(8, 10).replace(/^0/, '');
+  const delar = [];
+  for (const [id, def] of Object.entries(utbetalningsdefinitioner(regler))) {
+    const namn = txt(def, 'namn') || id;
+    if (def.takt === 'halvmanad') {
+      delar.push({ id, nyckel: 'forsta', etikett: `${namn} 1–15`, betalas: betalasText(def, 'forsta'), fran: h?.forsta.fran ?? null, till: h?.forsta.till ?? null, betaldag: h?.forsta.betalas ?? null });
+      delar.push({ id, nyckel: 'andra', etikett: `${namn} 16–${sista || t('slut')}`, betalas: betalasText(def, 'andra'), fran: h?.andra.fran ?? null, till: h?.andra.till ?? null, betaldag: h?.andra.betalas ?? null });
+    } else {
+      delar.push({ id, nyckel: 'summa', etikett: namn, betalas: betalasText(def), fran: period?.fran ?? null, till: period?.till ?? null, betaldag: null });
+    }
+  }
+  return delar;
+}
+
+/**
+ * Personens belopp i en del. Talen är motorns; saknas posten (en snapshot
+ * från före bygget) räknas den fram ur raderna med motorns egen funktion.
+ */
+function beloppI(person, regler, del) {
+  if (!person) return 0;
+  const u = person.utbetalningar ?? utbetalningarFor(person, regler);
+  return Number(u?.[del.id]?.[del.nyckel]) || 0;
+}
+
+/** "2026-09-01 – 2026-09-15" — perioden en del täcker. ISO, så den läses lika på båda språken. */
+function periodText(del) {
+  return del.fran && del.till ? `${del.fran} – ${del.till}` : '';
+}
+
+/** Radens uppdrag som gav pengar i just den här delen: "Färdig produkt ×16". */
+function paVad(person, regler, del) {
+  return (person.rader ?? [])
+    .filter((r) => (r.utbetalning ?? utbetalningFor(regler, r.uppdrag)) === del.id)
+    .filter((r) => del.nyckel === 'summa' || (Number(r.halvor?.[del.nyckel]) || 0) > 0)
+    .map((r) => {
+      const n = del.nyckel === 'summa' ? r.antal : r.halvorAntal?.[del.nyckel];
+      return n ? `${r.namn} ×${tal(n)}` : r.namn;
+    })
+    .join(' · ');
+}
+
 // ------------------------------------------------------------- Bonus-sidan
 
 export function bonusSida({ snapshot, anvandare, csrf, meddelande = '', fel = '' }) {
   const b = snapshot?.bonus ?? null;
-  const program = snapshot?.bonusProgram?.program ?? {};
+  const regler = snapshot?.bonusProgram ?? null;
+  const program = regler?.program ?? {};
   const serAlla = harRatt(anvandare, 'bonus-alla');
   const farGodkanna = harRatt(anvandare, 'godkanna');
   const mittId = personIdFor(anvandare);
@@ -120,8 +184,18 @@ export function bonusSida({ snapshot, anvandare, csrf, meddelande = '', fel = ''
   }
 
   const personer = serAlla ? b.personer : b.personer.filter((p) => p.id === mittId);
-  const medPengar = personer.filter((p) => p.summa > 0);
   const vantande = vantandeNu;
+
+  // Utbetalningarna: en del per betaldag, summerad över laget. Den som inte
+  // tjänat något i en del står inte med i den.
+  const delar = utbetalningsdelar(regler, b.period).map((d) => {
+    const rader = personer
+      .map((p) => ({ p, belopp: beloppI(p, regler, d) }))
+      .filter((x) => x.belopp > 0)
+      .sort((x, y) => y.belopp - x.belopp);
+    return { ...d, rader, summa: Math.round(rader.reduce((s, x) => s + x.belopp, 0) * 100) / 100 };
+  });
+  const antalText = (n) => `${tal(n)} ${t(n === 1 ? 'person' : 'personer')}`;
 
   // Summering per uppdrag: vilket program som faktiskt betalar ut.
   const perUppdrag = new Map();
@@ -138,16 +212,11 @@ export function bonusSida({ snapshot, anvandare, csrf, meddelande = '', fel = ''
   const maxUppdrag = Math.max(1, ...uppdragsrader.map((u) => u.summa));
 
   const kortRad = [
-    kort({
-      etikett: `Utbetalas för ${b.period?.namn ?? ''}`,
-      varde: USD(personer.reduce((s, p) => s + p.summa, 0)),
-      forklaring: `${tal(medPengar.length)} av ${tal(personer.length)} personer har tjänat något den här månaden.`,
-    }),
-    kort({
-      etikett: 'Största enskilda',
-      varde: medPengar[0] ? esc(medPengar[0].namn) : '–',
-      forklaring: medPengar[0] ? `${USD(medPengar[0].summa)} — ${medPengar[0].rader.map((r) => r.namn).join(', ')}.` : 'Ingen har tjänat något än.',
-    }),
+    ...delar.map((d) => kort({
+      etikett: d.etikett,
+      varde: USD(d.summa),
+      forklaring: `${d.betalas} ${antalText(d.rader.length)}.`,
+    })),
     kort({
       etikett: 'Recensioner med namn',
       varde: tal(snapshot?.recensioner?.medNamn ?? null),
@@ -162,16 +231,29 @@ export function bonusSida({ snapshot, anvandare, csrf, meddelande = '', fel = ''
     }) : null,
   ].filter(Boolean).join('');
 
-  const personrader = personer.map((p) => `<tr>
-    <td>
-      <span class="namn">${esc(p.namn)}${p.id === mittId ? ' · du' : ''}</span>
-      <span class="bi">${esc(ROLLER[p.roll]?.namn ?? p.roll)}${p.programs?.length > 1 ? ` · ${p.programs.map((x) => x.namn).join(' + ')}` : ''}</span>
-    </td>
-    <td class="tal">${USD(p.summa)}</td>
-    <td>${p.rader.length ? `<span class="mini">${esc(p.rader.map((r) => `${r.namn} ×${r.antal}`).join(' · '))}</span>` : '<span class="mini">inget än</span>'}</td>
-  </tr>`);
-
   const godkannande = kon('Att godkänna');
+
+  // En tabell per utbetalning — det Axel tittar på när det är dags att betala.
+  const utbetalningsdel = block({
+    titel: 'Utbetalningarna',
+    under: 'Vem som får vad, och när. Produkttest varannan vecka, bonusen en gång i månaden och commission för sig — de blandas aldrig i en summa.',
+    innehall: `<div style="display:grid;gap:14px">${delar.map((d) => panel({
+      titel: d.etikett,
+      under: [d.betalas, periodText(d)].filter(Boolean).join(' '),
+      innehall: d.rader.length ? tabell(
+        [{ titel: 'Person' }, { titel: 'Belopp', tal: true }, { titel: 'På vad' }],
+        d.rader.map(({ p, belopp }) => `<tr>
+          <td>
+            <span class="namn">${esc(p.namn)}${p.id === mittId ? ' · du' : ''}</span>
+            <span class="bi">${esc(t(ROLLER[p.roll]?.namn ?? p.roll))}</span>
+          </td>
+          <td class="tal">${USD(belopp)}</td>
+          <td><span class="mini">${esc(paVad(p, regler, d))}</span></td>
+        </tr>`),
+      ) : tomt('Ingen har tjänat något här än.'),
+      fot: d.rader.length ? `${t('Summa')}: ${USD(d.summa)} · ${antalText(d.rader.length)}` : '',
+    })).join('')}</div>`,
+  });
 
   const otilldelat = serAlla && b.otilldelat?.length ? block({
     titel: 'Pengar ingen fick',
@@ -200,21 +282,14 @@ export function bonusSida({ snapshot, anvandare, csrf, meddelande = '', fel = ''
     titel: 'Bonus',
     innehall: `${sidhuvud({
       rubrik: 'Bonus',
-      under: serAlla ? 'Allt som betalas ut utöver lönen, och vad som driver det.' : 'Dina pengar utöver lönen.',
+      under: serAlla ? 'Vad som betalas ut, till vem och när — och vad som driver det.' : 'Dina pengar utöver lönen.',
       farsk: b.raknat ? `Räknat <b>${esc(sedan(b.raknat))}</b>` : '',
     })}
     ${meddelande ? `<div class="ok-ruta">${esc(meddelande)}</div>` : ''}
     ${fel ? `<div class="fel-ruta">${esc(fel)}</div>` : ''}
     <div class="kort-rad">${kortRad}</div>
     ${godkannande}
-
-    ${block({
-      titel: serAlla ? 'Vem tjänar vad' : 'Din intjäning',
-      innehall: personer.length ? panel({
-        innehall: tabell([{ titel: 'Person' }, { titel: 'Intjänat', tal: true }, { titel: 'På vad' }], personrader),
-        fot: `Perioden ${b.period?.fran ?? ''} – ${b.period?.till ?? ''}. Beloppen är i ${b.valuta ?? 'USD'}.`,
-      }) : tomt('Ingen i registret än', 'Lägg till folk under Konton.'),
-    })}
+    ${utbetalningsdel}
 
     ${uppdragsrader.length ? block({
       titel: 'Vad pengarna går till',
@@ -229,6 +304,7 @@ export function bonusSida({ snapshot, anvandare, csrf, meddelande = '', fel = ''
             <td style="width:130px">${stapel((u.summa / maxUppdrag) * 100)}</td>
           </tr>`),
         ),
+        fot: `Perioden ${b.period?.fran ?? ''} – ${b.period?.till ?? ''}. Beloppen är i ${b.valuta ?? 'USD'}.`,
       }),
     }) : ''}
 
@@ -239,26 +315,7 @@ export function bonusSida({ snapshot, anvandare, csrf, meddelande = '', fel = ''
 
 // ------------------------------------------------- delarna för Min sida
 
-/**
- * Lönen går varannan vecka, 1–15 och 16–månadens slut (Joshs önskan
- * 2026-09-24). Talen är motorns (`halvor` i utfallet) — vyn räknar aldrig om.
- * Commission räknas på hela månadens spend och har ingen egen halva: den får
- * ett eget kort i stället för en påhittad uppdelning.
- */
-function halvkort(mitt, period) {
-  const h = mitt?.halvor;
-  if (!h) return '';
-  const manad = String(period?.fran ?? '').slice(0, 7);
-  const sista = String(period?.till ?? '').slice(8, 10) || '31';
-  const kortet = (etikett, belopp, forklaring) => kort({ etikett, varde: USD(belopp ?? 0), forklaring });
-  return [
-    kortet(`${t('Löneperiod')} 1–15`, h.forsta, `${manad}-01 – ${manad}-15`),
-    kortet(`${t('Löneperiod')} 16–${sista}`, h.andra, `${manad}-16 – ${manad}-${sista}`),
-    h.manad > 0 ? kortet(t('Andel av spenden (hela månaden)'), h.manad, t('Räknas på hela månaden och delas inte på perioderna.')) : '',
-  ].join('');
-}
-
-/** "Du har tjänat X" + dina uppdrag + dina bevis + rapporteringsknappen. */
+/** "Dina utbetalningar" + dina uppdrag + dina bevis + rapporteringsknappen. */
 export function minBonus({ snapshot, anvandare, person, csrf }) {
   const b = snapshot?.bonus ?? null;
   const regler = snapshot?.bonusProgram ?? null;
@@ -280,6 +337,23 @@ export function minBonus({ snapshot, anvandare, person, csrf }) {
   const veckansBevis = (perUppdrag.get('recension_med_namn')?.bevis ?? [])
     .filter((b) => String(b.datum ?? '') >= veckostart.toISOString().slice(0, 10));
 
+  // Utbetalningarna som gäller MIG: de mina program pekar på, i reglernas
+  // ordning. En produkttestare ser 1–15 och 16–sista med var sin betaldag, en
+  // VA ser bonusen per månad, en redigerare commission för sig — och den som
+  // bär två roller ser båda. Ett kort visas även på noll: då vet man vad som
+  // kommer, och när.
+  const mina = new Set(program.map((p) => p.utbetalning ?? 'bonus'));
+  const delar = utbetalningsdelar(regler, b?.period).filter((d) => mina.has(d.id));
+  const utbetalningskort = delar.map((d) => {
+    const belopp = beloppI(mitt, regler, d);
+    return kort({
+      etikett: d.etikett,
+      varde: USD(belopp),
+      forklaring: [d.betalas, periodText(d)].filter(Boolean).join(' '),
+      status: belopp > 0 ? status('bra', 'på väg till dig') : status('neutral', 'inget än'),
+    });
+  }).join('');
+
   const rapportera = `<form method="post" action="/app/mig/rapportera" style="padding:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;align-items:end">
     <input type="hidden" name="csrf" value="${attr(csrf)}">
     <label class="falt" style="margin:0"><span>${esc(t('Vad gäller det?'))}</span>
@@ -293,24 +367,11 @@ export function minBonus({ snapshot, anvandare, person, csrf }) {
   </form>`;
 
   return `${block({
-    titel: 'Dina pengar den här månaden',
+    titel: 'Dina utbetalningar',
     under: mitt && mitt.summa > 0
-      ? 'Varje rad går att klicka fram beviset för. Inget betalas utan underlag.'
+      ? 'Varje krona pekar på ett bevis. Inget betalas utan underlag.'
       : 'Du har inte tjänat något än den här månaden — uppdragen nedan visar hur du gör.',
-    innehall: `<div class="kort-rad">
-      ${kort({
-        etikett: 'Intjänat',
-        varde: USD(mitt?.summa ?? 0),
-        forklaring: `${b?.period?.fran ?? ''} – ${b?.period?.till ?? ''}. ${t('Betalas ut med lönen.')}`,
-        status: (mitt?.summa ?? 0) > 0 ? status('bra', 'på väg till dig') : status('neutral', 'inget än'),
-      })}
-      ${halvkort(mitt, b?.period)}
-      ${(mitt?.rader ?? []).slice(0, 3).map((r) => kort({
-        etikett: r.namn,
-        varde: USD(r.summa),
-        forklaring: `${tal(r.antal)} ${t(r.antal === 1 ? 'gång' : 'gånger')} ${t('den här månaden.')}`,
-      })).join('')}
-    </div>`,
+    innehall: `<div class="kort-rad">${utbetalningskort}</div>`,
   })}
 
   ${program.map((p) => block({

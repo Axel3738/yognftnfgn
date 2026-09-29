@@ -1,0 +1,27 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-28",
+  "lage": "oversatt",
+  "marknad": "US",
+  "server": "CaraShell",
+  "kanal": "annons-uppladdning",
+  "gjort": [
+    "US round for the roof cover: 7 videos, all live. HeyGen was topped up overnight, so the five that had been held since the 25th went through together with two new ones.",
+    "Live in the US campaign: SP_104_H3 -> ad 120251650660230435 and SP_104_H4 -> 120251650670480435 (ad set CARASHELL_US_SP), CS_109_H1 -> 120251650890260435 (CS), PD_110_H1 -> 120251650898200435 (PD), CO_105_H1 -> 120251650907860435 (CO), OB_103_H1 -> 120251651131140435 and OB_104_H1 -> 120251651140340435 (OB). All seven read back ACTIVE.",
+    "Every one carries an American voice-over, English captions rebuilt frame by frame, prices at $199 (was $249, save $50 / 20%) and metres converted the way the US product page does it: 21 by 10 ft, 210 sq ft, nine sizes 18 to 44 ft, two 34 ft ratchet straps. The 'Contains AI-generated content' line is burned into all seven - the dub is an AI voice, so it is required.",
+    "Checks on the finished files: OCR over every frame of all seven found no Swedish word and no kr price; the voice check found no silence, no length drift and no cut-off ending on any of them; the two BAVERBUTIKEN end cards are replaced by the American one.",
+    "Placements: today is the first full day with the feed-only setting, and it is clean - 6 044 kr across three placements, all inside the feed, nothing outside. Yesterday's 16 842 kr in Instagram Stories was spend from before the switch took effect. The leak is closed.",
+    "The Approved queue was checked as well: 62 rows, every one already carries a US ad. Nothing lagging.",
+    "Store readiness confirmed: home page, both landing pages, the product page and the checkout all read as English to an American visitor, with the US preselected."
+  ],
+  "varningar": [
+    "Four things in the Swedish sources were corrected rather than translated, because translating them faithfully would have carried a false claim into the US. (1) The voice-over in CS_109 and PD_110 says the cover fastens with a drawcord - it has none; the English says what the page says, straps on all four sides hooking into a hook at the bottom edge. (2) CS_109's voice-over ends on a 5.0 rating, and PD_110 and CO_105 burn a 5,0/5 rating into the picture; the product has only seeded reviews, so the rating is gone from the script and covered in the picture. (3) OB_103's opening comment card names a person, 'Lars', which that ad's own brief forbids; the English card asks the same question with no name. (4) HeyGen mis-transcribed OB_103's spoken price as 1 729 kronor where the Swedish says 1 129 - caught before render.",
+    "The American end card no longer carries '16 reviews · 5.0 average'. It did in the rounds on the 20th and 23rd. The store does publish that figure, but every brief in this batch says the product has only seeded reviews, and the same claim is being stripped from the audio and the picture of these very ads - leaving it on the end card would have contradicted that. Ads already live are untouched.",
+    "The campaign still has two ad sets for the same angle, CARASHELL_US_GT and CARASHELL_US_G, splitting that angle's budget in the CBO. Nothing was touched - the owner decides which one counts.",
+    "The queue still cannot read the price automatically, because the campaign's inherited link is the listicle page rather than a product page. The price was read directly from the American pages: $199 from $249. Known carry-over.",
+    "Meta shows IN_PROCESS on the two newest ads for a while - normal."
+  ],
+  "action_axel": [],
+  "nasta_korning": "2026-09-29 17:05"
+}

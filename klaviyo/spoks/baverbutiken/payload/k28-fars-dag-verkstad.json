@@ -1,0 +1,150 @@
+{
+  "id": "k28-fars-dag-verkstad",
+  "emailTitle": "Kniven som legat slö sedan midsommar",
+  "emailDescription": "En present till pappan med verkstad, redo att användas på lördag.",
+  "amnesrader": [
+    "Kniven som legat slö sedan midsommar",
+    "En present han provar samma helg",
+    "15 graders vinkel, jämn egg varje gång"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Kniven som legat slö sedan midsommar",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hej {{ contact.first_name | default: 'där' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "En present till pappan med verkstad. Inte en till pryl som hamnar i en låda.",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "e5b2eb1f-3eba-4603-a09c-1c9692e4ae66",
+          "button": "Se bälteslipen"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Se presenten",
+      "url": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "En mini-bälteslipmaskin med 7 hastigheter och 15 graders slipvinkel. Slipar knivar, polerar metall och formar trä, tre maskiner i en.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Får plats på minsta arbetsbänk.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Rätt fart för materialet, för knivar, trä, metall och smycken.",
+      "alignment": "left"
+    },
+    {
+      "type": "h2",
+      "text": "Tre till för verkstaden",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "47d815ce-1c35-4423-aae7-628d74d43ca6",
+          "button": "Se produkten"
+        },
+        {
+          "id": "9bbccd1d-d249-44c3-92ea-015ef372432c",
+          "button": "Se produkten"
+        },
+        {
+          "id": "5d59690f-ba38-4ad8-89aa-27042fb5e02a",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "regular",
+      "text": "Beställ senast 19 oktober om paketet ska vara framme till fars dag den 8 november.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

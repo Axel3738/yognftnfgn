@@ -1,0 +1,43 @@
+{
+ "in": "../forbehandlad/carashell_PD_110_H1.mp4",
+ "ut": "../../us/CaraShellRoof_US_PD_110_H1.mp4",
+ "srt": "../srt-us/carashell_PD_110_H1.srt",
+ "captions": {
+  "zon": [
+   780,
+   1070
+  ],
+  "max_chars": 34,
+  "font_px": 30,
+  "standard_cy": 950,
+  "h_min": 30,
+  "h_max": 130,
+  "x0": 50,
+  "x1": 670,
+  "bredd_max": 620,
+  "fyll": [
+   {
+    "rect": [
+     0,
+     916,
+     720,
+     998
+    ],
+    "t": [
+     13.7,
+     14.9
+    ]
+   }
+  ]
+ },
+ "lager": [
+  {
+   "png": "../lager/pd110-pris.png",
+   "t": [
+    19.2,
+    24.1
+   ]
+  }
+ ],
+ "qa": "qa-PD_110_H1"
+}
