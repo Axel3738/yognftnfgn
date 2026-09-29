@@ -375,3 +375,14 @@ Feedbackloopen står i `batch-log.md` under samma datum. Det datan flyttade:
 3. **HYPOTES — "utan skydd" (before/after) är otestad** ⇒ `PD_8_H1`, bara äkta material.
 
 Priset avläst live 2026-09-21: 579 kr, jämförpris 965 kr.
+
+## Produktsidan 2026-09-29 — ny text FÄRDIG, inte inlagd
+
+Axel bad sessionen skriva om sidan själv. Den nya texten (inga "tål en hel
+vinter", "slitstarkt", "sex månader", "UV", "övervintrar"; i stället "håller
+regn, smuts och löv borta", "ett enkelt tygöverdrag – inte ett vattentätt
+kapell") ligger klar i `produktsida-2026-09-29.html`. Shopify-MCP:n krävde
+ny inloggning, och skrivningen via API-nyckel stoppades av sessionens
+spärr mot produktionsändringar. Läggs in via Shopify-MCP:n så fort den är
+återkopplad, eller av Axel själv. Tills dess får ingen brief citera sidans
+gamla materialrader.
