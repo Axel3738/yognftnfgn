@@ -14,6 +14,8 @@
 //       och skrivs in i registret, utan Spoks-id tills den laddats upp där
 //   node klaviyo/mejlbilder.mjs --brand matstrumpor --befintlig
 //       planens befintliga bilder (butikens egna i Shopify Files) → registret
+//   node klaviyo/mejlbilder.mjs --brand matstrumpor --synka
+//       planens alt-text och länk → registret (url och Spoks-id rörs inte)
 //   node klaviyo/mejlbilder.mjs --brand matstrumpor --spoks-lista
 //       upload_media-anropen för bilder utan Spoks-id (max 10 per anrop)
 //   node klaviyo/mejlbilder.mjs --brand matstrumpor --spoks <namn> <fileId>
@@ -258,6 +260,25 @@ function befintlig(brandId) {
   console.log(`${n} befintliga bilder skrivna i registret.`);
 }
 
+// Alt-text och länk följer planen även efter godkännandet (url och Spoks-id rörs
+// inte): en rättad länk i planen ska inte kräva en ny bild.
+function synka(brandId) {
+  const plan = lasPlan(brandId);
+  const register = lasBildregister(brandId);
+  let n = 0;
+  for (const b of plan.bilder) {
+    const r = register[b.namn];
+    if (!r) continue;
+    const lank = standardLank(b);
+    if (r.alt === b.alt && r.lank === lank) continue;
+    register[b.namn] = { ...r, alt: b.alt, lank };
+    n++;
+    console.log(`• ${b.namn}: alt/länk uppdaterad (${lank ?? 'ingen länk'})`);
+  }
+  skrivRegister(brandId, register);
+  console.log(`${n} bilder uppdaterade i registret.`);
+}
+
 function spoksLista(brandId) {
   const register = lasBildregister(brandId);
   const utan = Object.entries(register).filter(([, r]) => r.url && !r.spoks_id);
@@ -305,6 +326,8 @@ async function main() {
     await godkann(brandId, a[i + 1], a[i + 2]);
   } else if (a.includes('--befintlig')) {
     befintlig(brandId);
+  } else if (a.includes('--synka')) {
+    synka(brandId);
   } else if (a.includes('--spoks-lista')) {
     spoksLista(brandId);
   } else if (a.includes('--spoks')) {

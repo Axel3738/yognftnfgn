@@ -227,6 +227,7 @@
       "namn": "kuvert-pa-frukostbordet",
       "mejl": ["fd20-missade-du-i-gar-presentkortet"],
       "alt": "Ett kuvert med rött band och en laxbit av strumpor på frukostbordet",
+      "lank": "produkt:presentkort",
       "format": "4:3",
       "ref": ["sushi-tallrik"],
       "prompt": "A plain cream-colored envelope tied with a thin red ribbon lying on a breakfast table next to a cup of coffee, with one salmon nigiri sock placed on top of the envelope like a paperweight. Soft morning light. The envelope has no writing on it."
@@ -299,6 +300,7 @@
       "namn": "rott-kuvert-jul",
       "mejl": ["k13-presentkortet"],
       "alt": "Ett rött kuvert med guldband på julbordet",
+      "lank": "produkt:presentkort",
       "format": "4:3",
       "ref": ["sushi-tallrik"],
       "prompt": "A plain red envelope with a gold ribbon on a Christmas table with gingerbread cookies, a lit candle and a pine sprig, and one maki roll sock lying next to the envelope. The envelope has no writing on it."
