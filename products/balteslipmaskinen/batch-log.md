@@ -482,3 +482,16 @@ Batch #5:s fyra sista statiska (skapade 2026-09-19), egna första veckan 2026-09
 | Beltgrinder_OB_1_H1 | video | N | — (kalla=voc, lärdom BOF_5_1) | invändningen "Den ser ut som en Temu-pryl." som hook, svaret = maskinen som kör (inga kvalitetsord) | förtroendet, inte risken, är det publiken tvekar på (garantisvar 3 × 0 köp) | ≥ 300 kr innan dom; GISSNING, confidence low | okänd | — |
 
 Notion: PD_1_H3 `3e9270ab908c810fb163d50f3cc74fae` · PD_1_H4 `3e9270ab908c817c895eff51d3df8610` · OB_1_H1 `3e9270ab908c819cbb83d842bdebbc1f` · PD_2_3 `3e9270ab908c8124a4cece64759bbd3d`. ⚠️ Hubben bär 19 videor i `Creative strat review` (CS_4_H1, GT_1_H1, PD_6/7/11/12/16/17/22/23/25/26/28/33/34_H1, SP_6/7/8/9_H1) — redigerarnas kö är lång; leveransen, inte fler briefer, avgör.
+
+
+## Etiketter dag 7 (2026-09-29) — Bälteslipmaskinen
+
+Ur `agent/etikett-backfill.mjs` 2026-09-29 (annonsens egna första vecka 22–28 sep, 7d_click). Lärdom per annons i `lardomar.md` (LARDOM-rader samma morgon). Breakthrough-frekvens: 1/41 (2 %) (etikett.mjs --frekvens 2026-09-29).
+
+| Annons | Batch | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Bedömbar |
+|---|---|---|---|---|---|---|---|
+| Beltgrinder_JF_1_1 | 5 | **LOSER** | 4 % | 316 kr | 0 | 0,00 / 2,40 | nej |
+| Beltgrinder_PD_29_H1 | 5 | **KPI_WINNER** | 4 % | 315 kr | 1 | 4,79 / 2,40 | nej |
+| Beltgrinder_CS_5_H1 | 5 | **LOSER** | 0 % | 36 kr | 0 | 0,00 / 2,40 | nej |
+| Beltgrinder_PD_31_1 | 5 | **LOSER** | 0 % | 35 kr | 0 | 0,00 / 2,40 | nej |
+| Beltgrinder_PD_30_H1 | 5 | **LOSER** | 0 % | 24 kr | 0 | 0,00 / 2,40 | nej |

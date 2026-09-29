@@ -1,6 +1,6 @@
 # Batch-log — Taköverdraget för Husvagn
 
-Breakthrough-frekvens: 1/31 (3 %) (etikett.mjs --frekvens 2026-09-25)
+Breakthrough-frekvens: 1/55 (2 %) (etikett.mjs --frekvens 2026-09-29)
 
 ## Batch #1 — 2026-09-14 (`/forsta-batch`, på Axels begäran)
 
@@ -498,3 +498,43 @@ fyra), täcker × video/demo/jämförelse, förvaring × statisk/demo/jämförel
 | `Takoverdrag_OB_22_H1` | N | önskemål × video | — | "sen då?" besvarat med säsongens slut, ingen livslängdssiffra | "Till våren lossas remmarna ur krokarna, en efter en." | `3e9270ab908c81af98cfd69885df7e31` |
 
 Spärren `briefgranskning.mjs` (main 67d5c89): första körningen 1 av 12 stoppad ("or" i Picture, OB_16 rad 2) + fyra variabelnoter, rättat, 12/12 gröna. `lardom.mjs --brief` (--befintliga 85 namn ur kontot + hubben, --budget 10 000): matrisrutorna fria mot taket (10 rutor som byggs), men **`SP_6_1` och `CS_14_1` (de namngivna IM-platserna ur batch #5:s lärdom) avvisades** — taket är 0 sedan förra batchen och en äldre lärdoms namn räknas inte längre — de två briefarna ströks ur batchen (copyn står kvar i copy-sonnet.md) och byggs när en ny lärdom namnger dem. Not från lardom: OB_16_H1 delar avatar/begär/mekanism med OB_15_1 (punkt 19: samma löfte med nya ord är en iteration) — raden står kvar som typ N med ruta demo, för det är rutan som är variabeln. 10 BRIEF-rader skrivna. `tools/notion-brief-upp.mjs` (REST): alla tio skapade och tillbakalästa block för block; SQL-kontroll 10 rader Draft, 7 Video + 3 Image, Skapad 2026-09-28. Copy av sonnet (103 rader, tre-frågorstestet 103/103 ❌ på "kan konkurrent signera"; huvudsessionen strök en rad: "Ställ den på riktig vinterförvaring, säger många" → "Riktig vinterförvaring är ett alternativ" — "säger många" är inte kollbart). Butiksneutralt (speglas till CaraShell). Matrisen uppdaterad för hand efter uppladdningen (Metas anropsgräns nådd när verktyget skulle mäta om). **Kvar obyggt:** önskemål × demo och önskemål × jämförelse (3 %, väntar på etikett), `SP_6_1` / `CS_14_1` (kräver ny lärdom som namnger dem). De 4 batch #6-videorna i `Creative strat review` väntar på `/granska`.
+
+
+## Etiketter dag 7 (2026-09-29) — Taköverdraget för Husvagn 6,5 × 3 m
+
+Ur `agent/etikett-backfill.mjs` 2026-09-29 (annonsens egna första vecka 22–28 sep, 7d_click). Lärdom per annons i `lardomar.md` (LARDOM-rader samma morgon). Breakthrough-frekvens: 1/55 (2 %) (etikett.mjs --frekvens 2026-09-29).
+
+| Annons | Batch | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Bedömbar |
+|---|---|---|---|---|---|---|---|
+| Takoverdrag_PD_10_1 | 3 | **KPI_WINNER** | 8 % | 8043 kr | 17 | 2,82 / 2,06 | ja |
+| Takoverdrag_CS_8_H1 | 2 | **LOSER** | 4 % | 3569 kr | 4 | 1,58 / 2,06 | ja |
+| Takoverdrag_RI_2_H1 | 2 | **KPI_WINNER** | 3 % | 2927 kr | 5 | 2,25 / 2,06 | ja |
+| Takoverdrag_RI_3_H1 | 2 | **KPI_WINNER** | 2 % | 1855 kr | 4 | 2,86 / 2,06 | ja |
+| Takoverdrag_PD_8_1 | 2 | **LOSER** | 1 % | 756 kr | 0 | 0,00 / 2,06 | nej |
+| Takoverdrag_CS_7_H1 | 2 | **LOSER** | 1 % | 712 kr | 0 | 0,00 / 2,06 | nej |
+| Takoverdrag_BOF_4_1 | 2 | **LOSER** · BOF | 1 % | 498 kr | 0 | 0,00 / 2,06 | nej |
+| Takoverdrag_PD_9_1 | 2 | **LOSER** | 0 % | 433 kr | 0 | 0,00 / 2,06 | nej |
+| Takoverdrag_PD_6_H1 | 2 | **LOSER** | 0 % | 293 kr | 0 | 0,00 / 2,06 | nej |
+| Takoverdrag_BOF_9_1 | 3 | **LOSER** · BOF | 0 % | 273 kr | 0 | 0,00 / 2,06 | nej |
+| Takoverdrag_GT_8_H1 | 2 | **LOSER** | 0 % | 271 kr | 0 | 0,00 / 2,06 | nej |
+| Takoverdrag_OB_2_H1 | 3 | **LOSER** | 0 % | 228 kr | 0 | 0,00 / 2,06 | nej |
+| Takoverdrag_CS_11_1 | 2 | **LOSER** | 0 % | 192 kr | 0 | 0,00 / 2,06 | nej |
+| Takoverdrag_GT_7_H1 | 2 | **LOSER** | 0 % | 128 kr | 0 | 0,00 / 2,06 | nej |
+| Takoverdrag_PD_7_H1 | 2 | **LOSER** | 0 % | 115 kr | 0 | 0,00 / 2,06 | nej |
+| Takoverdrag_RI_4_1 | 2 | **LOSER** | 0 % | 110 kr | 0 | 0,00 / 2,06 | nej |
+| Takoverdrag_GT_10_H1 | 3 | **LOSER** | 0 % | 84 kr | 0 | 0,00 / 2,06 | nej |
+| Takoverdrag_CS_10_1 | 2 | **LOSER** | 0 % | 71 kr | 0 | 0,00 / 2,06 | nej |
+| Takoverdrag_CO_3_H1 | 2 | **LOSER** | 0 % | 70 kr | 0 | 0,00 / 2,06 | nej |
+| Takoverdrag_BOF_5_1 | 2 | **LOSER** · BOF | 0 % | 57 kr | 0 | 0,00 / 2,06 | nej |
+| Takoverdrag_CS_13_1 | 3 | **LOSER** | 0 % | 51 kr | 0 | 0,00 / 2,06 | nej |
+| Takoverdrag_BOF_8_1 | 3 | **LOSER** · BOF | 0 % | 41 kr | 0 | 0,00 / 2,06 | nej |
+| Takoverdrag_LI_2_1 | 2 | **LOSER** | 0 % | 23 kr | 0 | 0,00 / 2,06 | nej |
+| Takoverdrag_TR_2_1 | 2 | **LOSER** | 0 % | 16 kr | 0 | 0,00 / 2,06 | nej |
+| Takoverdrag_OB_1_H1 | 2 | **LOSER** | 0 % | 11 kr | 0 | 0,00 / 2,06 | nej |
+| Takoverdrag_BOF_7_1 | 3 | **INGEN_LEVERANS** · BOF | — | 7 kr | 0 | 0,00 / 2,06 | nej |
+| Takoverdrag_TR_3_H1 | 3 | **INGEN_LEVERANS** | — | 6 kr | 0 | 0,00 / 2,06 | nej |
+| Takoverdrag_BOF_6_1 | 2 | **INGEN_LEVERANS** · BOF | — | 6 kr | 0 | 0,00 / 2,06 | nej |
+| Takoverdrag_CO_4_1 | 2 | **INGEN_LEVERANS** | — | 6 kr | 0 | 0,00 / 2,06 | nej |
+| Takoverdrag_GT_9_1 | 2 | **INGEN_LEVERANS** | — | 5 kr | 0 | 0,00 / 2,06 | nej |
+
+Bedömbara i dag: PD_10_1 (KPI_WINNER, 17 köp, CPA 473 kr — platser PD_10_2/PD_10_3 namngivna), RI_2_H1 (KPI_WINNER, 5 köp — RI_2_H2 namngiven; recensionsraden är importrader), RI_3_H1 (KPI_WINNER prel., 4 köp — RI_3_H2/H3 namngivna), CS_8_H1 (LOSER bedömbar, ROAS 1,58 — släppt, idén lever i RI_3). **Observation, ingen dom:** samma creative som SE:s `Takoverdrag_CS_7_H1` (LOSER, 712 kr, 0 köp) kör som `CaraShellRoof_NO_CS_107_H1` i CaraShells NO-kampanj med 10 köp på 5 060 kr (KPI_WINNER, bedömbar, ROAS 2,75) — prisankaret vinner i Norge men fick inget köp i SE-huvudkampanjen samma vecka; läs om dag 14. Rundan för Taköverdraget förfaller först när 3-dagarsklockan från batch #7 (28/9) gått. Spendtjuven i grönt läge pausade `Takoverdrag_CS_2_H1` i dag (TROTT_VINNARE: 4 042 kr / 4 köp / ROAS 1,24 på 3 d, livstid 3,66, etikett KPI_WINNER 21/9) — kampanjen orörd.

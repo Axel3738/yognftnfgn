@@ -605,3 +605,19 @@ Ur `agent/etikett-backfill.mjs` 2026-09-27 (annonsens egna första vecka, 7d_cli
 ## 2026-09-29 — brief-runda INTE byggd (`/rond-auto` steg 4b)
 
 `annonsbehov` gav `rundaAntal 4` (budget 4, tak 6 = de sex lärdomarna 27/9, 0 namngivna platser; OB_3_H1 och CS_5_H2 strukna = redan i hubben). Mix 80/20 på levande breakthrough `Batmotor_SP_1_H3`. Men **alla sex lärdomar sedan förra batchen säger SLÄPP** (BOF_3_1 och SP_1_H9 KPI_WINNER under grinden — "läs om dag 14"; SP_1_H10, BOF_2_1, SP_3_H1 LOSER under grinden; PD_6_H1 INGEN_LEVERANS), och varje öppen väg är låst av en tidigare lärdom: SP_1-familjen har redan H7–H15 i kön (H7 i Creative strat review, H8–H15 Approved, inga etiketter på de nya än); CS_5-steget väntar på H2/H3:s etiketter (batch #7, 26/9); `OB_2_1` (fukt, 43 % av kommentarerna) väntar på Axel (ventilationsmekanism saknas på sidan); OB_3_H1 väntar på sin etikett. En brief som inte pekar på en tanke är produktion utan tanke (Axels ord om golvet 2026-09-21) — 0 briefer i dag, ingen `CS_BATCH_KLAR`, behovet flaggas igen i morgon. Feedback-raden `Brief review 2026-09-26` läst (tre regler: deklarativ hook på varje nytt koncept — storleksinvändningens är `Mät kåpan. Välj storlek. Beställ rätt.`; förbjudet ord i förälderns copy rättas i iterationen; varje NEW FOOTAGE-rad namnger filerna som kontrollerats). Spendtjuven i grönt läge pausade **`Batmotor_BF_12_1`** (TROTT_VINNARE: 2 319 kr / 4 köp / ROAS 1,00 på 3 d, livstid 1,72, etikett LOSER 22/9) — kampanjen orörd (VANTA_KADENS efter gårdagens kapning till 500 kr; ROAS 3d 1,71 klick / 2,36 med visningsköp, 37,5 % visningsandel — domen står men marginalen är tunn). Annonsidéer: 0 rader Ny.
+
+
+## Etiketter dag 7 (2026-09-29) — Båtmotorskyddet 420D
+
+Ur `agent/etikett-backfill.mjs` 2026-09-29 (annonsens egna första vecka 22–28 sep, 7d_click). Lärdom per annons i `lardomar.md` (LARDOM-rader samma morgon). Breakthrough-frekvens: 1/66 (2 %) (etikett.mjs --frekvens 2026-09-29).
+
+| Annons | Batch | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Bedömbar |
+|---|---|---|---|---|---|---|---|
+| Batmotor_FM_4_H1 | 3 | **LOSER** | 6 % | 1442 kr | 2 | 0,80 / 1,75 | nej |
+| Batmotor_SP_1_H12 | 3 | **KPI_WINNER** | 2 % | 542 kr | 2 | 2,14 / 1,75 | nej |
+| Batmotor_SP_1_H11 | 3 | **LOSER** | 0 % | 107 kr | 0 | 0,00 / 1,75 | nej |
+| Batmotor_BF_14_1 | 3 | **KPI_WINNER** | 0 % | 40 kr | 1 | 14,44 / 1,75 | nej |
+| Batmotor_PD_8_H1 | 3 | **LOSER** | 0 % | 15 kr | 0 | 0,00 / 1,75 | nej |
+| Batmotor_CS_11_1 | 3 | **LOSER** | 0 % | 11 kr | 0 | 0,00 / 1,75 | nej |
+
+BF_14_1 (40 kr, 1 köp) och SP_1_H12 (542 kr, 2 köp) är KPI_WINNER under grinden — läs om dag 14; FM_4_H1 (1 442 kr, 2 köp, ROAS 0,80) LOSER under grinden. Alla sex: SLÄPP i lärdomarna, inga nya platser.

@@ -464,3 +464,18 @@ Pris läst live 2026-09-27: 559 kr / 932 kr (40 %). Tillåtna siffror: 559, 932,
 
 
 **2026-09-28 — vidarebygg VÄNTAR:** `annonsbehov` säger `vidarebygg` på Termoskydd_CS_2 (2 av 3 iterationer, deadline 2026-10-05) men brieftaket är 0 — 0 etiketterade annonser utan lärdom sedan batch #7 (2026-09-27) och alla namngivna platser (RI_1_H2/H3, RI_2_1, SP_4_H2/H3/H4) är utförda. Inga nya briefer i dag; nästa etiketter (batch #6/#7-raderna) ger taket. Kampanjen LAT_VARA 2 300 kr/dag, ROAS 3d 2,08 (14,2 % vinst). Draft i hubben: Termoskydd_CS_12_1.
+
+
+## Etiketter dag 7 (2026-09-29) — Termoskyddet för Husbil 211 × 171 cm
+
+Ur `agent/etikett-backfill.mjs` 2026-09-29 (annonsens egna första vecka 22–28 sep, 7d_click). Lärdom per annons i `lardomar.md` (LARDOM-rader samma morgon). Breakthrough-frekvens: 2/29 (7 %) (etikett.mjs --frekvens 2026-09-29).
+
+| Annons | Batch | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Bedömbar |
+|---|---|---|---|---|---|---|---|
+| Termoskydd_UG_2_H1 | 2 | **KPI_WINNER** | 1 % | 180 kr | 1 | 3,10 / 2,05 | nej |
+| Termoskydd_OB_2_H1 | 2 | **LOSER** | 0 % | 23 kr | 0 | 0,00 / 2,05 | nej |
+| Termoskydd_PD_12_1 | 2 | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 2,05 | nej |
+| Termoskydd_PD_11_H1 | 2 | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 2,05 | nej |
+| Termoskydd_PD_10_H1 | 2 | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 2,05 | nej |
+
+**Vidarebygg 2026-09-29 — inte byggt, med flit:** `annonsbehov` gav `vidarebygg` för Termoskydd_CS_2 (2 av 3 iterationer, deadline 2026-10-05, tak 5 ur dagens fem lärdomar). Lärdomen L-120250175768000291 avgjorde redan iteration 2 (längre problemdel) som **SLÄPP**: "copyn är identisk med CS_3 och Termoskydd_CS_10_1 testar exakt den variabeln på samma prisvinkel; att bygga den två gånger ger två annonser datan inte kan skilja åt". CS_12_1 (iter 1) och CS_12_H1 (iter 3) är briefade 23/9. Behovet kommer att flaggas varje morgon till deadline eftersom räkningen bara ser BRIEF-rader — det är rätt att låta det stå. Feedback-raden `Brief review 2026-09-27` finns i hubben (ny sedan gårdagens läsning) och läses före nästa brief. Dagens fem etiketter: UG_2_H1 KPI_WINNER under grinden (180 kr, 1 köp), OB_2_H1 LOSER, PD_12_1/PD_11_H1/PD_10_H1 INGEN_LEVERANS — alla SLÄPP/läs om dag 14.
