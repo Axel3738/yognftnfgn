@@ -69,7 +69,7 @@
     "svarsfrist_timmar": 48,
     "paminnelse_efter_dagar": 3,
     "foretag": { "namn": "Stonebite Ecom AB", "orgnr": "559576-2401", "adress": "Stenkolsgatan 1B, 417 07 Göteborg" },
-    "avsandare": { "via": "gmail", "mail": "contact@stonebite.org", "namn": "Stonebite Ecom AB" },
+    "avsandare": { "via": "gmail", "mail": "contact@stonebite.org", "namn": "Stonebite Ecom AB", "gmail_konto": "axel.odhner@stonebite.org", "_gmail_konto": "Kontot Gmail-connectorn faktiskt skickar från (mätt 2026-09-29 i Skickat: axel.odhner@stonebite.org). Mejlet går därifrån, så Axels namn syns som avsändare; granskningsappen visar det. Brevet ber dem svara till `mail`." },
     "_om": "Företagsuppgifterna är samma som svar.foretag i kundtjanst/brands/baverbutiken.yaml (kontoret sedan 2026-09-26). Aldrig VD:ns namn i brevet. AVSÄNDAREN (Axels beslut 2026-09-29): brevet går från bolagets egen Stonebite-mejl via Gmail-connectorn i sessionen — 'mycket mer seriöst … från Stonebite-mailen' — inte från butikens kundtjänstbrevlåda. `mail` är adressen som skrivs i brevet och på fakturan; sessionen byter den mot det Gmail-konto Axel faktiskt kopplat om de skiljer sig. `via: loopia` + verksamhetens `avsandare` finns kvar som reserv (--via loopia, kräver KUNDTJANST_MAIL_PASS_<ID>)."
   },
   "faktura": {

@@ -254,6 +254,35 @@ node konkurrenter/kor.mjs --lista
     kommandona att kopiera (`skicka`, `skickad` när paketet är byggt,
     `avfarda`, `paminn`, `eskalera`).
 
+## Granskningsappen: Axels Ja/Nej per kort (2026-09-29)
+
+Axels order samma kväll: "jag kan swipa mellan anmälningarna, läsa igenom all
+text och bilderna … och så kan jag bara klicka ja eller nej … mejlet … fakturan
+kan jag granska här också … och sen så skickas det."
+
+- `--granska <id> --forsta` bygger `output/granska/<id>/`: ett kort per
+  Meta-anmälan (bevisbilden, en svensk sammanfattning och exakt de fält
+  `anmal-skicka.mjs formularVarden` skriver in), ett kort för mejlet (från, till,
+  ämne, hela brevet, fakturan som bild) och ett för sms:et. Korten bär en
+  `version` ur innehållet; byggs ett kort om gäller ett gammalt svar inte längre.
+- Appen publiceras på ärendets verifieringslänk med `capabilities: {artifact: {}}`.
+  Axels Ja/Nej sparas av sidan själv i `data/beslut.json` (files-formen, `ifMatch`
+  = sha256 av råa byten, mätt mot serverns sha 2026-09-29). Varje sparning är en
+  ny version av artifacten och väcker sessionen som bevakar den. Sidan skriver
+  aldrig `data/status.json`, sessionen skriver aldrig `data/beslut.json`, så två
+  skrivare krockar inte.
+- `--granska-svar <id> --beslut <fil>` läser svaret (`granskning.mjs attGora`):
+  ja på aktuell version ⇒ skicka in, mejlet först när varje anmälan har ett svar
+  och med antalet ja i brevet (`brev.mjs metaRad`: "7 av de 10 aktiva
+  annonserna …", 0 ⇒ ingen mening), aldrig något som redan är inskickat, skickat
+  eller pågår.
+- Mejlet går från det kopplade Gmail-kontot (`brev.avsandare.gmail_konto`,
+  axel.odhner@stonebite.org mätt i Skickat 2026-09-29), och appen visar det.
+- Sms-texten är ärendets `arenden/<id>/sms-mall.txt` med fakturan som faktiskt
+  gick ut (`{{FAKTURA_NR}}`, `{{BELOPP}}`, `{{EXPONERINGAR}}`, `{{FORFALLER}}`,
+  `{{META}}`); den visas i appen när mejlet gått.
+- Flödet steg för steg står i kommandofilen under `granska <id>`.
+
 ## Filer
 
 | Fil | Committas | Vad |
@@ -264,6 +293,9 @@ node konkurrenter/kor.mjs --lista
 | `arenden/<id>/brev.txt`, `brev.json`, `faktura-<nr>.pdf` + `.html` | ✅ | Sändpaketet: exakt det som lades i Gmail |
 | `arenden/<id>/anmalan/<nr>.json` + `.txt` | ✅ | Meta-anmälan per annons: fälten, bevisbildens CDN-länk, status + Metas referens |
 | `arenden/<id>/anmalan/bevis-<nr>.png`, `verifiering.html` | ❌ | Bevisbilderna (~1 MB styck) och Axels verifieringssida — byggs om med `--anmal` |
+| `arenden/<id>/sms-mall.txt`, `sms.txt` | ✅ | Sms:et till konkurrenten: mallen med platshållare och texten som gällde när mejlet gick |
+| `granskning.mjs`, `granskning-sida.html` | ✅ | Granskningsappen: kortens data, status, sms, `attGora`, och sidan med svep och Ja/Nej |
+| `output/granska/<id>/` | ❌ | Appen som publiceras: `index.html`, `data/granskning.json`, `data/status.json`, `bilder/` — byggs om med `--granska` |
 | `arenden/<id>/anmalan/klipp.json` | ✅ | Klippvalet: paren (film, tid, avstånd, hash) per annons, de lånade hasharna, biblioteket — `--klipp` |
 | `output/klipp/<id>/` | ❌ | Cache: deras och våra filmer (mp4), `rutor-<video>.json`, `bibliotek.json`, rutorna som JPEG — bygg om med `--klipp` |
 | `arenden/<id>/anmalan/<nr>-torr.png`, `<nr>-formular.png`, `<nr>-kvitto.png`, `kod.txt*` | ❌ | Formulärets skärmdumpar (torrkörning, ifyllt före Submit, kvittot) och engångskodens fil — referensen står i `<nr>.json` |

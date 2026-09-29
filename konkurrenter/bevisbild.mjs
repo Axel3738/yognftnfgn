@@ -130,13 +130,13 @@ ${dom}
  * skala 1 för verifieringssidan: tio PNG:er inbäddade gav 34,6 MB (mätt 2026-09-29), gränsen är 16 MB.
  * Returnerar PNG-filen eller kastar med orsak.
  */
-export async function bevisbildPng(html, fil, { jpg = null, playwrightSokvag = process.env.LR_PLAYWRIGHT || '/opt/node22/lib/node_modules/playwright/index.mjs', kandidater = ['/opt/pw-browsers/chromium-1194/chrome-linux/chrome', '/opt/pw-browsers/chromium'] } = {}) {
+export async function bevisbildPng(html, fil, { jpg = null, bredd = 1200, playwrightSokvag = process.env.LR_PLAYWRIGHT || '/opt/node22/lib/node_modules/playwright/index.mjs', kandidater = ['/opt/pw-browsers/chromium-1194/chrome-linux/chrome', '/opt/pw-browsers/chromium'] } = {}) {
   let pw;
   try { pw = await import(playwrightSokvag); } catch (e) { throw new Error(`Playwright saknas (${e.message.split('\n')[0]}) — bevisbilden kan inte göras här`); }
   const exe = kandidater.find((k) => existsSync(k));
   const browser = await pw.chromium.launch({ headless: true, args: ['--no-sandbox'], ...(exe ? { executablePath: exe } : {}) });
   try {
-    const page = await browser.newPage({ viewport: { width: 1200, height: 900 }, deviceScaleFactor: 2 });
+    const page = await browser.newPage({ viewport: { width: bredd, height: 900 }, deviceScaleFactor: 2 });
     await page.setContent(html, { waitUntil: 'load' });
     mkdirSync(dirname(fil), { recursive: true });
     await page.screenshot({ path: fil, type: 'png', fullPage: true });
