@@ -13,7 +13,13 @@ Inga AI-bilder, inga nyskrivna texter — allt kommer från Adventlanes egna sid
 (MODELL: SE-landat 11,95 USD × 1,133, Kalenderkungen-arket har bara SWEDEN-rader).
 Norsk copy i `copy-no.json` (Sonnet), skapad med `no.mjs dinosaurie --skarp`, bilden via SE:s CDN.
 https://beverbutikken.no/products/dinosaur-adventskalender-24-dinosaurer
-Övriga åtta kalendrar finns bara i SE. Fler till NO: skriv copyn till `copy-no.json`, lägg
+**Golfkalendern i NO (2026-09-29, Axel: "vi måste fixa golfkalendern till norska butiken"):** 619 / 809 NOK, cogs 181,14 NOK
+(MODELL: 17,19 USD × 1,133 × 9,2989 — arket har bara SWEDEN-rader), norsk copy i `copy-no.json` (Sonnet, korrläst), skapad
+med `no.mjs golf --skarp`, båda SE-bilderna via CDN:en. https://beverbutikken.no/products/golf-adventskalender-24-golftilbehor
+⚠️ Garantiblocket: SE:s alla nio kalendrar (och taköverdraget) fick 2026-09-21 ett block "Ångerrätt – 14 dagars ångerrätt
+enligt lag" i stället för GARANTI4 (30 dagars öppet köp) — odokumenterat, ingen session har loggat det. NO-kalendrarna
+(dinosaurie, golf) har GARANTI4.no (30 dagers åpent kjøp). Axel avgör vilket som gäller; ändra inte NO förrän han sagt till.
+Övriga sju kalendrar finns bara i SE. Fler till NO: skriv copyn till `copy-no.json`, lägg
 `no: { pris, jamfor, usd, modell }` i `fakta.mjs`, kör `node temu/kalendrar/no.mjs <id> --skarp`.
 
 | id | Titel i butiken | Pris | Inköp | Kvar |
