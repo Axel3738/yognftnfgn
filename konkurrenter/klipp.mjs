@@ -46,6 +46,7 @@ export const KLIPPBYTE_TROSKEL = 0.3; // ffmpegs scenpoäng (0–1) för ett kli
 export const BIBLIOTEK_VERSION = 2; // 2 = filmerna bär `skapad` (annonsens created_time) och `konto`
 export const FRO_AVSTAND = 10;      // förhandsbilden mot deras täta rutor (30/s) — mätt 1–7 för rätt ruta
 export const KONTROLL_AVSTAND = 10; // de två UTTAGNA bilderna (JPEG, 640 bred) mot varandra — samma ruta ger 0–6, en annan bild 15+ (mätt 2026-09-29)
+export const SAMMA_TAGNING = 20;    // skillnadOvre (0–255) under det = två valda par visar SAMMA bild — mätt 2026-09-29 på ORVO:s 20 annonser: vår ruta mot deras (samma bild, olika text) 1,1–15,6, olika par i en annons 29,1–115, utom annons 9 B/C 11,7 (samma drönarbild två gånger)
 const UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36';
 
 /** Klarar binären att avkoda H.264? (Playwrights ffmpeg gör det inte.) */
@@ -135,6 +136,29 @@ export function bildRuta(ffmpeg, fil) {
 
 /** Hashen för en stillbild. null om ffmpeg inte kunde läsa den. */
 export const hashUrBild = (ffmpeg, fil) => bildRuta(ffmpeg, fil)?.hash ?? null;
+
+/**
+ * En stillbild som gråskala 32 × 18 (576 byte) — till "samma tagning?" mellan två valda par.
+ * dHash räcker inte där: himmel och betong har nästan ingen kontrast, så samma bild kan skilja
+ * 24/64 bitar (ORVO:s annons 9, två rutor ur samma drönarbild, mätt 2026-09-29). null om ffmpeg inte kunde läsa den.
+ */
+export function graRuta(ffmpeg, fil) {
+  try {
+    const raw = execFileSync(ffmpeg, ['-hide_banner', '-loglevel', 'error', '-i', fil, '-frames:v', '1', '-vf', 'scale=32:18:flags=area,format=gray', '-f', 'rawvideo', '-'], { maxBuffer: 4 * 1024 * 1024 });
+    return raw.length >= 576 ? raw.subarray(0, 576) : null;
+  } catch { return null; }
+}
+
+/**
+ * Medelskillnaden (0–255) mellan två graRuta-bilder i de övre 14 av 18 raderna — textrutorna
+ * sitter längst ner och skiljer sig mellan deras film och vår. Ren.
+ */
+export function skillnadOvre(a, b, { bredd = 32, rader = 14 } = {}) {
+  if (!a || !b) return null;
+  let s = 0;
+  for (let y = 0; y < rader; y++) for (let x = 0; x < bredd; x++) s += Math.abs(a[y * bredd + x] - b[y * bredd + x]);
+  return Math.round((s / (bredd * rader)) * 10) / 10;
+}
 
 /**
  * Klippbytena i en film, i sekunder, ur ffmpegs scenpoäng. En TAGNING (mellan två byten) är en enhet
@@ -438,8 +462,8 @@ export function klippSammanfattning(klipp, { sprak = 'sv' } = {}) {
   const andel = klipp?.statistik?.andel ?? klipp?.andel ?? null;
   if (!n) return sprak === 'sv' ? 'inga rutor ur våra klipp' : 'no frames from our clips';
   return sprak === 'sv'
-    ? `filmen är klippt ur våra: ${n} rutor ur olika scener identiska med våra${andel !== null ? `, ${andel} % av deras rutor matchar våra filmer` : ''}`
-    : `the video is cut from ours: ${n} frames from different scenes identical to ours${andel !== null ? `, ${andel}% of its frames match our films` : ''}`;
+    ? `filmen är klippt ur våra: ${n === 1 ? '1 ruta identisk med vår' : `${n} rutor ur olika scener identiska med våra`}${andel !== null ? `, ${andel} % av deras rutor matchar våra filmer` : ''}`
+    : `the video is cut from ours: ${n === 1 ? '1 frame identical to ours' : `${n} frames from different scenes identical to ours`}${andel !== null ? `, ${andel}% of its frames match our films` : ''}`;
 }
 
 /**

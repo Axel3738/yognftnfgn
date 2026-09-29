@@ -57,6 +57,18 @@ test('kortAnmalan: fälten som formuläret får, svensk sammanfattning, version 
   assert.equal(kortAnmalan({ nr: 1 }, paket(1, { skapad: 'annan tid' })).version, k.version, 'byggtiden påverkar inte versionen');
 });
 
+test('kortAnmalan: exempellänken säger på svenska vilken av våra annonser den är — och när den bara är sidans lista', () => {
+  const lank = 'https://www.facebook.com/ads/library/?id=2000363993957496';
+  const med = kortAnmalan({ nr: 1 }, paket(1, { originaler: [{ film: 'Takoverdrag_SP_4_H1', lank, sida: 'Bäverbutiken.se', start: '2026-09-15' }], falt: { ...paket(1).falt, originalWorkUrls: [lank, 'https://example.se/products/x'] } }));
+  const ex = med.falt.find((f) => f.etikett === 'Exempel på vårt original');
+  assert.equal(ex.varde, lank); assert.match(ex.sv, /^vår annons Takoverdrag_SP_4_H1 i annonsbiblioteket, sidan Bäverbutiken\.se, igång sedan 15 sep — samma film/);
+  const lista = 'https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=SE&search_type=page&view_all_page_id=678639638662543';
+  const utan = kortAnmalan({ nr: 1 }, paket(1, { falt: { ...paket(1).falt, originalWorkUrls: [lista] } }));
+  assert.match(utan.falt.find((f) => f.etikett === 'Exempel på vårt original').sv, /ingen enskild annons hittad/);
+  assert.equal(kortAnmalan({ nr: 1 }, paket(1)).falt.find((f) => f.etikett === 'Exempel på vårt original').sv, undefined);
+  assert.notEqual(med.version, kortAnmalan({ nr: 1 }, paket(1)).version, 'ny exempellänk = ny version, gamla svar gäller inte');
+});
+
 test('kortMejl: meningen om Meta blir en plats som sidan fyller med rätt antal', () => {
   const a = { id: 'KD-TEST-001', typ: 'annons', verksamhet: 'Bäverbutiken', deras: { sidnamn: 'X', doman: 'x.se', lang: 'sv' }, anmalan: { antal: 3, baraAktiva: true, rapporter: [] }, bevis: { annonser: [] } };
   const brev = byggBrev(a, { avsandare: { brand: 'B', mail: 'contact@example.se' }, foretag: { namn: 'Exempel AB', orgnr: '556000-0000', adress: 'Gatan 1' }, anmalanSamtidigt: true, mottagare: 'info@x.se' });

@@ -15,6 +15,24 @@
     "Takoverdrag_SP_4_H1",
     "Takoverdrag_RI_1_H1"
   ],
+  "originaler": [
+    {
+      "film": "Takoverdrag_SP_4_H1",
+      "lank": "https://www.facebook.com/ads/library/?id=2000363993957496",
+      "arkivId": "2000363993957496",
+      "start": "2026-09-15",
+      "sida": "Bäverbutiken.se",
+      "sidaId": "678639638662543"
+    },
+    {
+      "film": "Takoverdrag_RI_1_H1",
+      "lank": "https://www.facebook.com/ads/library/?id=1384755223647735",
+      "arkivId": "1384755223647735",
+      "start": "2026-09-15",
+      "sida": "Bäverbutiken.se",
+      "sidaId": "678639638662543"
+    }
+  ],
   "produkt": "Taköverdrag Husvagn – Skyddar Den Dyraste Ytan",
   "falt": {
     "reporter": {
@@ -32,13 +50,15 @@
     "contentUrls": [
       "https://www.facebook.com/ads/library/?id=883337508196166"
     ],
-    "contentDescription": "This advertisement, run by the Facebook page \"ORVO\" (page ID 1299101096626433), reproduces our copyrighted advertising material without authorisation. The ad's video is cut from our own ad films \"Takoverdrag_SP_4_H1\", \"Takoverdrag_RI_1_H1\" (published by us on 16 September 2026, before this ad started running on 24 September 2026): 3 still frames from different scenes of the reported video (at 0:19, 0:21, 0:29) are identical to frames of our films (perceptual-hash distance 0, 3, 1/64), and 59% of the reported video's sampled frames match our films frame for frame (compared against 204 of our films). According to the Ad Library it has reached approximately 2,295 people in the EU. It copies our ads \"Takoverdrag_SP_4_H1\", \"Takoverdrag_RI_1_H1\" for the product \"Taköverdrag Husvagn – Skyddar Den Dyraste Ytan\", which our page ran before this ad appeared. This is report 3 of 10 concerning ads from the same advertiser; each ad is reported separately.",
-    "originalWorkDescription": "Original advertising films produced by Stonebite Ecom AB for our store https://baverbutiken.se (product: \"Taköverdrag Husvagn – Skyddar Den Dyraste Ytan\"): \"Takoverdrag_SP_4_H1\", \"Takoverdrag_RI_1_H1\". The footage is our own work and we hold the copyright. Our ads are listed in the Ad Library and the product page is at the links below.",
+    "contentDescription": "This advertisement, run by the Facebook page \"ORVO\" (page ID 1299101096626433), reproduces our copyrighted advertising material without authorisation. The ad's video is cut from our own ad films \"Takoverdrag_SP_4_H1\", \"Takoverdrag_RI_1_H1\" (published by us on 16 September 2026, before this ad started running on 24 September 2026): 3 still frames from different scenes of the reported video (at 0:19, 0:21, 0:29) are identical to frames of our films (perceptual-hash distance 0, 3, 1/64), and 59% of the reported video's sampled frames match our films frame for frame (compared against 204 of our films). Our original ads are public in Meta's Ad Library: \"Takoverdrag_SP_4_H1\" https://www.facebook.com/ads/library/?id=2000363993957496, \"Takoverdrag_RI_1_H1\" https://www.facebook.com/ads/library/?id=1384755223647735. According to the Ad Library it has reached approximately 2,295 people in the EU. It copies our ads \"Takoverdrag_SP_4_H1\", \"Takoverdrag_RI_1_H1\" for the product \"Taköverdrag Husvagn – Skyddar Den Dyraste Ytan\", which our page ran before this ad appeared. This is report 3 of 10 concerning ads from the same advertiser; each ad is reported separately.",
+    "originalWorkDescription": "Original advertising films produced by Stonebite Ecom AB for our store https://baverbutiken.se (product: \"Taköverdrag Husvagn – Skyddar Den Dyraste Ytan\"): \"Takoverdrag_SP_4_H1\", \"Takoverdrag_RI_1_H1\". The footage is our own work and we hold the copyright. The original ads are public in Meta's Ad Library, run by our page Bäverbutiken.se (links below).",
     "originalWorkUrls": [
-      "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
-      "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=SE&search_type=page&view_all_page_id=678639638662543"
+      "https://www.facebook.com/ads/library/?id=2000363993957496",
+      "https://www.facebook.com/ads/library/?id=1384755223647735",
+      "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=SE&search_type=page&view_all_page_id=678639638662543",
+      "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
     ],
-    "additionalInfo": "Evidence screenshot (frames from our film on the left, the same frames in the reported ad on the right): https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-3_6332f8ce-204a-43b8-9f33-ac95c6691e50.png?v=1790682737. Internal reference: KD-2026-001, report 3/10, prepared 29 September 2026.",
+    "additionalInfo": "Evidence screenshot (frames from our film on the left, the same frames in the reported ad on the right): https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-3_bf7646e2-770c-4bd7-baba-9f7b08bf8d24.png?v=1790691558. Internal reference: KD-2026-001, report 3/10, prepared 29 September 2026.",
     "declarations": [
       "I have a good faith belief that the use of the copyrighted material described above is not authorised by the copyright owner, its agent, or the law.",
       "The information in this notification is accurate.",
@@ -47,7 +67,7 @@
     "signature": "Axel Odhner"
   },
   "bevisbild": "arenden/KD-2026-001/anmalan/bevis-3.png",
-  "bevisbildUrl": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-3_6332f8ce-204a-43b8-9f33-ac95c6691e50.png?v=1790682737",
+  "bevisbildUrl": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-3_bf7646e2-770c-4bd7-baba-9f7b08bf8d24.png?v=1790691558",
   "status": "utkast",
-  "skapad": "2026-09-29T11:51:25.184Z"
+  "skapad": "2026-09-29T14:18:14.320Z"
 }

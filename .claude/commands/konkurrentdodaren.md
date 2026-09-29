@@ -296,7 +296,19 @@ inget: "Inget för dig i dag."
      vårt eget material tas aldrig med i anmälan, brevet eller fakturan — den
      står med orsak i ärendet och på sidan. Har en filmannons bara
      miniatyrträffen (klippen aldrig körda) stoppar `--anmal`, `--faktura`
-     och `--skicka` tills `--klipp <id> --alla` körts.
+     och `--skicka` tills `--klipp <id> --alla` körts. Två par som visar
+     samma bild väljs aldrig båda (`SAMMA_TAGNING`, samma AI-klipp ligger
+     ofta i flera av våra filmer) — titta ändå på översiktsarket.
+  0b. **Originalen: `node konkurrenter/kor.mjs --original <id>`** (Axel
+     2026-09-29: "exemplet på vårt original leder bara till produktsidan … du
+     måste hitta annonserna inne i vårt ad library"). Letar upp varje film
+     paren pekar på som VÅR annons i annonsbiblioteket (fras ur vår annonstext
+     → sökning → våra sidor → filmen jämförd ruta för ruta, ≥ 60 % åt båda
+     håll) och skriver `arenden/<id>/anmalan/original.json`. `--anmal` lägger
+     sedan ledfilmens annons i formulärets exempelfält och länkarna i
+     beskrivningen. Hittas inget för en annons blir exemplet vår sidas lista i
+     annonsbiblioteket — aldrig produktsidan — och `--anmal` varnar: säg det
+     till Axel. ~3 min för 15 filmer första gången, sekunder sedan (cache).
   1. `node konkurrenter/kor.mjs --anmal <id>` — bygger **en anmälan per
      annons** med länk och träff: bevisbilden (för en film: 3 par ur våra
      egna klipp, vår filmruta till vänster och samma ruta i deras annons till
@@ -415,6 +427,7 @@ sidnamn eller domän i stället för ett bolag, be Axel om `--kopare`.
 - [ ] Inget brev skickades av rutinen; Gmail rördes bara på Axels `skicka <id>` (utkast), `skicka <id> --direkt` (sänt) eller hans Ja på mejlkortet i granskningsappen (aktuell version, alla anmälningar besvarade)
 - [ ] Ingen Meta-anmälan skickades utan Axels "kör anmälningarna <id>" eller hans Ja på just det kortet i granskningsappen (`--granska-svar` säger vilka; `--anmal-skicka <id> --nr <n> --ja` bara då); varje inskickad anmälan kvitterad med referens och `data/status.json` publicerad efteråt
 - [ ] Bevisbilderna för videoannonser är byggda ur våra egna klipp (`--klipp` före `--anmal`), aldrig ur miniatyrträffen — och en ruta Axel pekat ut som lånad är utesluten med `--lanat` och kortet ombyggt
+- [ ] Varje anmälans exempel på vårt original är VÅR annons i annonsbiblioteket (`--original` före `--anmal`, verifierad ruta för ruta) — aldrig produktsidan; saknas ett original står det i svaret till Axel
 - [ ] Varje annons i brev, faktura och anmälan är BEVISAD med vårt eget material (`bevisStatus`: text, film ur våra klipp eller en bildannons bild) — obevisade står med orsak i ärendet, och inget par bygger på en platt ruta eller en film publicerad efter deras annons
 - [ ] Sessionen har TITTAT på varje par (översiktsark av `output/klipp/<id>/<nr>-<bokstav>-egen/deras.jpg`) — inga av de lånade klippen från förhandsbilderna, och kortets två bilder är samma bild; ett lånat par är utpekat med `--klipp <id> --lanat <anmälan>:<bokstav>` och korten ombyggda
 - [ ] Ett annonsfynd under Axels tröskel (ingen annons över 10 000 i räckvidd och färre än 10 live) blev INGET ärende — det står i rapporten under "Under din tröskel"

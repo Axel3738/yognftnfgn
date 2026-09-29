@@ -16,6 +16,32 @@
     "CaraShellRoof_NO_PD_106_H1",
     "CaraShellRoof_US_UG_101_H1"
   ],
+  "originaler": [
+    {
+      "film": "Takoverdrag_OB_1_H1",
+      "lank": "https://www.facebook.com/ads/library/?id=1619798969500412",
+      "arkivId": "1619798969500412",
+      "start": "2026-09-18",
+      "sida": "Bäverbutiken.se",
+      "sidaId": "678639638662543"
+    },
+    {
+      "film": "CaraShellRoof_NO_PD_106_H1",
+      "lank": "https://www.facebook.com/ads/library/?id=1477507084209046",
+      "arkivId": "1477507084209046",
+      "start": "2026-09-19",
+      "sida": "CaraShell",
+      "sidaId": "1381171778405935"
+    },
+    {
+      "film": "CaraShellRoof_US_UG_101_H1",
+      "lank": "https://www.facebook.com/ads/library/?id=1578049354054094",
+      "arkivId": "1578049354054094",
+      "start": "2026-09-27",
+      "sida": "CaraShell",
+      "sidaId": "1381171778405935"
+    }
+  ],
   "produkt": "Taköverdrag Husvagn & Husbil 5,5–13,5 m",
   "falt": {
     "reporter": {
@@ -33,13 +59,16 @@
     "contentUrls": [
       "https://www.facebook.com/ads/library/?id=2354225538650112"
     ],
-    "contentDescription": "This advertisement, run by the Facebook page \"ORVO\" (page ID 1299101096626433), reproduces our copyrighted advertising material without authorisation. The ad's video is cut from our own ad films \"Takoverdrag_OB_1_H1\", \"CaraShellRoof_NO_PD_106_H1\", \"CaraShellRoof_US_UG_101_H1\" (published by us between 18 September 2026 and 19 September 2026, before this ad started running on 24 September 2026): 3 still frames from different scenes of the reported video (at 0:29, 0:32, 0:39) are identical to frames of our films (perceptual-hash distance 0, 1, 2/64), and 63% of the reported video's sampled frames match our films frame for frame (compared against 204 of our films). According to the Ad Library it has reached approximately 1,875 people in the EU. It copies our ads \"Takoverdrag_OB_1_H1\", \"CaraShellRoof_NO_PD_106_H1\", \"CaraShellRoof_US_UG_101_H1\" for the product \"Taköverdrag Husvagn & Husbil 5,5–13,5 m\", which our page ran before this ad appeared. This is report 6 of 10 concerning ads from the same advertiser; each ad is reported separately.",
-    "originalWorkDescription": "Original advertising films produced by Stonebite Ecom AB for our store https://carashell.se (product: \"Taköverdrag Husvagn & Husbil 5,5–13,5 m\"): \"Takoverdrag_OB_1_H1\", \"CaraShellRoof_NO_PD_106_H1\", \"CaraShellRoof_US_UG_101_H1\". The footage is our own work and we hold the copyright. Our ads are listed in the Ad Library and the product page is at the links below.",
+    "contentDescription": "This advertisement, run by the Facebook page \"ORVO\" (page ID 1299101096626433), reproduces our copyrighted advertising material without authorisation. The ad's video is cut from our own ad films \"Takoverdrag_OB_1_H1\", \"CaraShellRoof_NO_PD_106_H1\", \"CaraShellRoof_US_UG_101_H1\" (published by us between 18 September 2026 and 19 September 2026, before this ad started running on 24 September 2026): 3 still frames from different scenes of the reported video (at 0:29, 0:32, 0:39) are identical to frames of our films (perceptual-hash distance 0, 1, 2/64), and 63% of the reported video's sampled frames match our films frame for frame (compared against 204 of our films). Our original ads are public in Meta's Ad Library: \"Takoverdrag_OB_1_H1\" https://www.facebook.com/ads/library/?id=1619798969500412, \"CaraShellRoof_NO_PD_106_H1\" https://www.facebook.com/ads/library/?id=1477507084209046, \"CaraShellRoof_US_UG_101_H1\" https://www.facebook.com/ads/library/?id=1578049354054094. According to the Ad Library it has reached approximately 1,875 people in the EU. It copies our ads \"Takoverdrag_OB_1_H1\", \"CaraShellRoof_NO_PD_106_H1\", \"CaraShellRoof_US_UG_101_H1\" for the product \"Taköverdrag Husvagn & Husbil 5,5–13,5 m\", which our page ran before this ad appeared. This is report 6 of 10 concerning ads from the same advertiser; each ad is reported separately.",
+    "originalWorkDescription": "Original advertising films produced by Stonebite Ecom AB for our store https://carashell.se (product: \"Taköverdrag Husvagn & Husbil 5,5–13,5 m\"): \"Takoverdrag_OB_1_H1\", \"CaraShellRoof_NO_PD_106_H1\", \"CaraShellRoof_US_UG_101_H1\". The footage is our own work and we hold the copyright. The original ads are public in Meta's Ad Library, run by our page Bäverbutiken.se (links below).",
     "originalWorkUrls": [
-      "https://carashell.se/products/takskyddet",
-      "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=SE&search_type=page&view_all_page_id=1381171778405935"
+      "https://www.facebook.com/ads/library/?id=1619798969500412",
+      "https://www.facebook.com/ads/library/?id=1477507084209046",
+      "https://www.facebook.com/ads/library/?id=1578049354054094",
+      "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=SE&search_type=page&view_all_page_id=1381171778405935",
+      "https://carashell.se/products/takskyddet"
     ],
-    "additionalInfo": "Evidence screenshot (frames from our film on the left, the same frames in the reported ad on the right): https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-6_d0487351-d450-42ac-a69a-104236dd2ae2.png?v=1790682731. Internal reference: KD-2026-001, report 6/10, prepared 29 September 2026.",
+    "additionalInfo": "Evidence screenshot (frames from our film on the left, the same frames in the reported ad on the right): https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-6_04d80ce1-7147-4640-bf6b-3d929739715f.png?v=1790691552. Internal reference: KD-2026-001, report 6/10, prepared 29 September 2026.",
     "declarations": [
       "I have a good faith belief that the use of the copyrighted material described above is not authorised by the copyright owner, its agent, or the law.",
       "The information in this notification is accurate.",
@@ -48,7 +77,7 @@
     "signature": "Axel Odhner"
   },
   "bevisbild": "arenden/KD-2026-001/anmalan/bevis-6.png",
-  "bevisbildUrl": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-6_d0487351-d450-42ac-a69a-104236dd2ae2.png?v=1790682731",
+  "bevisbildUrl": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-6_04d80ce1-7147-4640-bf6b-3d929739715f.png?v=1790691552",
   "status": "utkast",
-  "skapad": "2026-09-29T11:51:25.184Z"
+  "skapad": "2026-09-29T14:18:14.320Z"
 }
