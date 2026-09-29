@@ -184,10 +184,12 @@ domäner??? Ska inte alla vara via .com domänen?"). .com-närvaron bär alla ut
 B-sidan på .no. .eu och .se/<språk> fungerar kvar, men inget länkar dit. ⚠️ "En egen domän hör till EN
 marknad" (CaraShell 2026-09-17) stämmer inte här: `marketUpdate(webPresencesToAdd)` delade .com utan fel
 (mätt 2026-09-29, också i ett prov som återställdes).
-⚠️ Kassan har EN logga för hela butiken, MATSTRUMPOR.SE, eftersom en logga per marknad kräver Plus.
-API:t nekar också (`checkoutBranding` ⇒ ACCESS_DENIED "must be on a Plus plan", mätt 2026-09-29). Loggan
-utan .SE ligger i Filer som `matstrumpor-kassa-logga.png`, i samma format som den nuvarande. Bytet görs
-med Cowork-prompten `matstrumpor/marknader/cowork/2-slutklick.txt` och gäller även Sverige.
+✅ **Kassans logga är MATSTRUMPOR, utan .SE, i alla länder och även i Sverige sedan 2026-09-29
+kväll.** Kassan har bara EN logga för hela butiken, eftersom en logga per marknad kräver Plus. API:t
+nekar också: `checkoutBranding` ger ACCESS_DENIED "must be on a Plus plan". Cowork bytte till filen
+`matstrumpor-kassa-logga.png` med `matstrumpor/marknader/cowork/2-slutklick.txt`. Knappen heter
+"Redigera", inte "Anpassa". Sessionen läste tillbaka den tyska kassan (.com/de) och den svenska
+(.se), och båda visade den nya loggan.
 **Utlandsannonserna visas som Facebook-sidan "Matstrumpor" `1285064981363590`** (Axels sida, samma
 BM). Instagram visas via sidans page-backed identitet `17841423405715219`, eftersom kontot
 matstrumpor.se säger .se. Källan är `annonser/marknader.json`, och `bygg.mjs --byt-text` byter sidan

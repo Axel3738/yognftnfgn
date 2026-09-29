@@ -471,10 +471,14 @@ loggan utan .SE.
   - Axel frågade samma kväll: "The logo tho in the german checkout?". Därför laddade sessionen upp
     loggan utan .SE till Filer som **`matstrumpor-kassa-logga.png`** (`gid://shopify/MediaImage/62475343495507`).
     Den har samma format som den nuvarande kassaloggan, 1920 × 1080 med transparens och samma
-    inramning, så storleken i kassan blir densamma. Bytet görs med Cowork-prompten
-    `cowork/2-slutklick.txt`: Inställningar → Kassa → Anpassa → Logotyp, och kontrollen görs som
-    tysk och svensk kund. Det gäller alla länder, också Sverige. Axel ville ha loggan fixad i en
-    Cowork-prompt i slutet, inte som klick under arbetet.
+    inramning, så storleken i kassan blir densamma. Bytet gjordes med Cowork-prompten
+    `cowork/2-slutklick.txt`, eftersom Axel ville ha loggan fixad i en Cowork-prompt i slutet och
+    inte som klick under arbetet. Det gäller alla länder, också Sverige.
+  - ✅ **Klart 2026-09-29 kväll.** Cowork gick via Inställningar → Kassa → "Redigera" (inte
+    "Anpassa") på den aktiva konfigurationen → kugghjulet → Logotyp, och valde den befintliga filen.
+    Bredden 130 px och justeringen Vänster står kvar, och Shopify svarade "Ändringar sparade".
+    Sessionen läste tillbaka kassan som tysk kund (.com/de, de-DE) och som svensk kund (.se, sv-SE).
+    Båda visar `matstrumpor-kassa-logga` med alt-texten "Matstrumpor".
 
 ### Judge.me på tolv språk (mätt 2026-09-29 kväll, efter Axels inställning)
 
