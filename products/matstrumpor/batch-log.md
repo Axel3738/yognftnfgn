@@ -295,6 +295,24 @@ bortmålad (`pipeline/logga.py`), och de sju först uppladdade fick videon utbyt
 **Nästa:** haikuh3, haikuh2 och s001h1 som annons 005–007 med ElevenLabs-röst (egen session,
 `matstrumpor/marknader/egna/PROMPT-elevenlabs.md`).
 
+## 2026-09-29 — utlandet: haikuh3, haikuh2, s001h1 som annons 005–007 i alla tolv kampanjer (36 annonser, PAUSED)
+
+**Hypotes:** De tre svenska röstvideorna (svensk AI-kvinnoröst + klipp) bär lika bra med samma röst
+på marknadens språk. Test utomlands, fast alla tre låg under break-even i Sverige.
+**Mix:** 0 vidarebyggen / 36 lokaliseringar av tre befintliga svenska annonser (ingen ny vinkel).
+**Källa:** `kallor.json` (haikuh3, haikuh2, s001h1). Texterna är granskade av infödda granskare
+(33 av 33 `"granskad": true`). Rösten är ElevenLabs text-till-tal med en klon av källans röst, aldrig
+HeyGen (Axels order 2026-09-28).
+**Annonser:** `MATSTRUMP_<KOD>_sushi_gift_ugc_005_v1` (haikuh3), `_006_v1` (haikuh2), `_007_v1`
+(s001h1) × NO DK FI US DE FR NL ES IT PL PT WW (WW bär engelskan). Id:n finns i
+`matstrumpor/marknader/annonser/lage.json` och `videor.json`.
+**QA:** 33 av 33 gröna i rostkoll. Whisper hör rätt språk i alla 33 (norska 0,73–0,86, övriga
+0,91–1,0), ordtäckningen är 0,88–1,0 och tonhöjden ligger 190–239 Hz mot källans 198–200. Alla 33
+är tittade på i bild: inget svenskt ord, ingen logga, knappen på marknadens språk. Tabellen finns i
+`matstrumpor/marknader/egna/README.md` → Läget.
+**Uppladdat:** 2026-09-29, i marknadens enda adset, PAUSED och tillbakaläst.
+**Utfall (dag 7):** inget ännu. ⛔ Inget aktiveras förrän Axel granskat.
+
 ## Format för kommande rader
 
 ```
