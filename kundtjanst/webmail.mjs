@@ -430,6 +430,29 @@ export class WebmailKlient {
   }
 
   /**
+   * Steg 7b: ett TOMT formulär för ett nytt mejl — inget `_reply_uid`, ingen
+   * tråd. Samma 302-dans som oppnaSvar (compose utan `_id` skickar vidare
+   * till sidan med `_id`). Mottagarfältet är tomt: anroparen sätter `till`
+   * innan skickaSvar(). Byggt 2026-09-27 för Konkurrentdödaren, som skriver
+   * till en adress som aldrig skrivit till oss.
+   */
+  async oppnaNytt() {
+    const q = new URLSearchParams({ _task: 'mail', _action: 'compose' });
+    let svar = await this.anrop(`?${q}`);
+    for (let hopp = 0; hopp < 3 && [301, 302, 303, 307].includes(svar.status); hopp++) {
+      const dit = svar.headers.get('location');
+      if (!dit) throw new Error(`Roundcube compose gav HTTP ${svar.status} utan Location (steg 7b, nytt mejl).`);
+      const u = new URL(dit, this.url);
+      if (u.searchParams.get('_task') === 'login' || !u.searchParams.get('_id')) throw new Error(`Roundcube compose skickade vidare till ${u.search || u.pathname} (steg 7b) — sessionen kan ha gått ut.`);
+      svar = await this.anrop(u.search);
+    }
+    const html = await svar.text();
+    if (!svar.ok) throw new Error(`Roundcube compose gav HTTP ${svar.status} (steg 7b, nytt mejl).`);
+    if (/name="_pass"/.test(html) && !/name="_to"/.test(html)) throw new Error('Formuläret för nytt mejl gav inloggningssidan (steg 7b) — sessionen kan ha gått ut.');
+    return tolkaKompose(html);
+  }
+
+  /**
    * Steg 8: skicka (eller spara som utkast) det öppnade svaret.
    * `kompose` är svaret från oppnaSvar(); `text` är hela kroppen som skickas
    * (anroparen bestämmer om citatet ska hänga med). `utkast: true` sparar i

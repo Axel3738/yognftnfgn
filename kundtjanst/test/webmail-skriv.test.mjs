@@ -82,7 +82,10 @@ function falskWebmail({ mappar = ['INBOX', 'INBOX.Drafts', 'INBOX.Sent', 'INBOX.
       }
       const k = tillstand.kompose[q.get('_id')];
       if (!k) return svar(200, LOGIN_HTML);
-      if (!k.replyUid) return svar(200, '<html>nytt mejl</html>');
+      // Nytt mejl utan tråd (compose utan _reply_uid, Konkurrentdödaren
+      // 2026-09-27): samma formulär, men tom mottagare, tomt ämne, ingen
+      // reply_msgid och inget citat.
+      if (!k.replyUid) return svar(200, COMPOSE_HTML(0).replace(',"reply_msgid":"<w0@gmail.com>"', '').replace(/<textarea name="_to"[^>]*>[^<]*<\/textarea>/, '<textarea name="_to" id="_to" data-recipient-input="true"></textarea>').replace(/value="Re: Var är min order #1042 &amp; #1043\?"/, 'value=""').replace(/<textarea name="_message"[^>]*>[\s\S]*?<\/textarea>/, '<textarea name="_message" id="composebody" data-html-editor="true"></textarea>'));
       if (k.replyUid === '99') return svar(200, COMPOSE_HTML(99).replace(/<textarea name="_to"[^>]*>[^<]*<\/textarea>/, '<textarea name="_to" id="_to"></textarea>'));
       return svar(200, COMPOSE_HTML(k.replyUid));
     }
@@ -417,4 +420,40 @@ test('MCP: fyra skrivverktyg annonseras rätt och går till brevlådan', async (
   assert.equal(move2.result.structuredContent.skapad, true);
   const tom = await req(7, 'mail_reply', { uid: 3, text: ' ' });
   assert.equal(tom.result.isError, true);
+});
+
+// ------------------------------------------------------------------ nytt mejl (Konkurrentdödaren)
+
+test('skickaNytt: ett nytt mejl utan tråd — compose utan _reply_uid, mottagare och ämne från oss', async () => {
+  const { b, f } = ny();
+  const r = await b.skickaNytt({ till: 'info@kopian.se', amne: 'Upphovsrättsintrång på kopian.se (ärende KD-2026-001)', text: 'Till företagsledningen\n\nVi kräver …' });
+  assert.equal(r.typ, 'skickat');
+  assert.equal(r.till, 'info@kopian.se');
+  assert.match(r.fran, /kundsupport@baverbutiken\.se/, 'butikens identitet är avsändare');
+  const compose = f.anrop.filter((a) => a.q.get('_action') === 'compose');
+  assert.equal(compose.length, 2, 'första anropet får 302, andra hämtar formuläret');
+  assert.equal(compose[0].q.get('_reply_uid'), null, 'ingen tråd');
+  assert.equal(compose[1].q.get('_id'), '68cf1a2b3c4d5');
+  assert.equal(f.tillstand.skickade.length, 1);
+  const s = f.tillstand.skickade[0];
+  assert.equal(s.get('_to'), 'info@kopian.se');
+  assert.equal(s.get('_subject'), 'Upphovsrättsintrång på kopian.se (ärende KD-2026-001)');
+  assert.equal(s.get('_from'), '1');
+  assert.match(s.get('_message'), /^Till företagsledningen/);
+  assert.doesNotMatch(s.get('_message'), /Den 12 sep/, 'inget citat i ett nytt mejl');
+  assert.equal(s.get('_draft'), '');
+});
+
+test('skickaNytt: utkast sparas i Drafts, och ogiltig adress, tom text eller tomt ämne stoppar före något anrop', async () => {
+  const { b, f } = ny();
+  const u = await b.skickaNytt({ till: 'info@kopian.se', amne: 'Test', text: 'Hej', utkast: true });
+  assert.equal(u.typ, 'utkast');
+  assert.equal(u.utkastUid, 77);
+  assert.equal(f.tillstand.skickade.length, 0);
+  assert.equal(f.tillstand.utkast.length, 1);
+  const fore = f.anrop.length;
+  await assert.rejects(() => b.skickaNytt({ till: 'ingen adress', amne: 'x', text: 'y' }), /ingen giltig mejladress/);
+  await assert.rejects(() => b.skickaNytt({ till: 'a@b.se', amne: 'x', text: '  ' }), /texten är tom/);
+  await assert.rejects(() => b.skickaNytt({ till: 'a@b.se', amne: ' ', text: 'y' }), /ämnesraden är tom/);
+  assert.equal(f.anrop.length, fore, 'spärrarna stoppar innan Roundcube anropas');
 });

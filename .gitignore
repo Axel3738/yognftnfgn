@@ -142,6 +142,9 @@ klaviyo/output/
 !matstrumpor/marknader/output/
 !matstrumpor/marknader/output/underlag-*.json
 
+# Konkurrentdödaren: rådata, kandidater, bildcache, skärmdumpar och den byggda granskningssidan — dör med containern. Ärendena (arenden.jsonl, arenden/) och lage.json committas.
+konkurrenter/output/
+
 # Matstrumpors lokaliserade videor (HeyGen + undertexter) — stora filer, laddas upp till Meta, aldrig i git
 matstrumpor/marknader/annonser/klar/*.mp4
 matstrumpor/marknader/annonser/klar/*.png
