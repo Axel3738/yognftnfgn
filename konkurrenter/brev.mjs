@@ -76,7 +76,7 @@ export function bevisrader(arende, sprak = 'sv') {
       const p = s.text ? a.text?.passager?.[0] : null;
       const kallor = [...new Set([s.text ? a.varAnnons?.namn : null, ...(s.film ? a.klipp?.filmer ?? [] : []), s.bild || s.overifierad ? a.varAnnons?.namn : null].filter(Boolean))].slice(0, 3);
       const film = s.film
-        ? ` · ${sv ? `filmen är klippt ur våra: ${a.klipp.antal} rutor ur olika scener identiska med våra, ${a.klipp.andel} % av er film matchar våra filmer ruta för ruta` : `the video is cut from ours: ${a.klipp.antal} frames from different scenes identical to ours, ${a.klipp.andel}% of your video matches our films frame for frame`}`
+        ? ` · ${sv ? `filmen är klippt ur våra: ${a.klipp.antal === 1 ? '1 ruta identisk med vår' : `${a.klipp.antal} rutor ur olika scener identiska med våra`}, ${a.klipp.andel} % av er film matchar våra filmer ruta för ruta` : `the video is cut from ours: ${a.klipp.antal === 1 ? '1 frame identical to ours' : `${a.klipp.antal} frames from different scenes identical to ours`}, ${a.klipp.andel}% of your video matches our films frame for frame`}`
         : (s.bild || s.overifierad) && a.bilder?.length ? ` · ${a.bilder.length} ${sv ? 'bild(er) identiska med våra' : 'image(s) identical to ours'}` : '';
       ut.push(`    ${a.lank ?? `${sv ? 'annons' : 'ad'} ${a.nr}`}${kallor.length ? ` ← ${kallor.join(', ')}` : ''}${p ? `: ${citat(p.text, 140)} (${p.ord} ${sv ? 'ord i följd' : 'consecutive words'})` : ''}${film}`);
     }

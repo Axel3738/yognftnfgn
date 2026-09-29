@@ -23,6 +23,7 @@ node konkurrenter/kor.mjs --skicka KD-2026-001 [--till adress] [--sprak sv|en] [
 node konkurrenter/kor.mjs --skickad KD-2026-001 [--till adress] [--paminnelse]   # kvittot när brevet gått ut via Gmail
 node konkurrenter/kor.mjs --faktura KD-2026-001 [--kopare …] [--cpm 98] [--land GB] [--ny-faktura]   # bara fakturan (CPM mäts ur Meta om --cpm saknas)
 node konkurrenter/kor.mjs --klipp KD-2026-001 [--antal 3] [--lanat 3:B] [--alla]   # bevisrutorna ur våra egna klipp (deras film ↔ alla våra filmer) — före --anmal för videoannonser
+node konkurrenter/kor.mjs --original KD-2026-001 [--alla] [--tvinga]   # våra originalannonser i annonsbiblioteket (exempelfältet i Metas formulär) — efter --klipp, före --anmal
 node konkurrenter/kor.mjs --anmal KD-2026-001 [--bara-aktiva] [--utan-cdn] [--utan-bevisbild] [--namn …] [--epost …] [--telefon …]   # Meta-anmälningarna: en per annons + bevisbild + verifieringssida
 node konkurrenter/kor.mjs --anmald KD-2026-001 --nr 1 --referens <Metas nr>   # kvittot per inskickad anmälan
 node konkurrenter/kor.mjs --skicka KD-2026-001 --via loopia --ja        # RESERV: skicka direkt från butikens kundtjänstbrevlåda
@@ -246,6 +247,39 @@ node konkurrenter/kor.mjs --lista
     inte automatiskt — sessionen tittar på alla par (översiktsark) och Axel
     pekar ut med `--lanat <anmälan>:<bokstav>`, som nu utesluter hela
     TAGNINGEN hos dem och rutan ± 1 s i vår film.
+    (7) **Aldrig samma bild två gånger** (Axels granskning 2026-09-29: efter
+    `--lanat 5:A,5:B` visade anmälan 5 samma drönarbild som B och C — samma
+    AI-klipp ligger i två av våra filmer och två gånger i deras, så "olika
+    scener hos dem, olika filmer hos oss" släppte igenom det; dHash skilde
+    24/64 eftersom himmel och betong nästan saknar kontrast). Varje valt par
+    jämförs nu i gråskala 32 × 18, bara de övre 14 raderna (textrutorna sitter
+    längst ner): medelskillnad under `SAMMA_TAGNING` 20 ⇒ samma bild, nästa
+    kandidat tas. Mätt på ORVO:s 20 annonser: vår ruta mot deras 1,1–15,6,
+    olika par 29,1–115, det dubbla paret 11,7.
+10c. **Originalen i annonsbiblioteket** (`original.mjs`, `--original <id>`; Axel
+    2026-09-29: "exemplet på vårt original leder bara till produktsidan … du
+    måste hitta annonserna inne i vårt ad library … vi äger ju rättigheterna
+    till alla annonserna"). Metas formulär tar EN länk som "example of your
+    copyrighted work", och den ska vara vår egen annons, inte butikens sida.
+    För varje film paren pekar på: annonsens text ur Meta → upp till tre fraser
+    (kroken först, sedan de längsta; 5–10 ord, inga siffror) → annonsbibliotekets
+    sökning på exakt fras (resultaten kommer i GraphQL-svaren, inte i HTML:en;
+    noll träffar prövas en gång till — samma fras gav 0 och sedan 8) → träffarna
+    på VÅRA sidor (`anmalan.vara_sidor`) → varje kandidats film laddas ner och
+    jämförs ruta för ruta med vår (lika åt BÅDA håll ≥ 60 %; samma film ger
+    100/100, en annan film med ett delat klipp ≤ 37). En träff som bara delar
+    texten räknas aldrig. Filmens egen sida först, sedan tidigast start.
+    Facit `arenden/<id>/anmalan/original.json` (committas), cache
+    `output/klipp/<id>/bibliotek-original/`. `--anmal` lägger **ledfilmens**
+    annons (flest matchade rutor) först i `originalWorkUrls` — det blir
+    exempelfältet — resten efter, sedan vår sidas lista i annonsbiblioteket och
+    produktsidan SIST; 500-teckensbeskrivningen bär två länkar till våra
+    annonser (+ tiderna i deras film), bevisbilden länken per par, och kortet i
+    appen en svensk rad om vilken annons det är. Utan hittat original blir
+    exemplet vår sidas lista (aldrig produktsidan) och `--anmal` varnar.
+    **Mätt 2026-09-29 på ORVO:** 15 av 15 filmer hittade (två efter att den
+    andra frasen provats), alla 100/100; ledfilmerna Takoverdrag_SP_4_H1
+    (id 2000363993957496) och OB_1_H1 (id 1619798969500412), Bäverbutiken.se.
 11. **Rapport och sida** (`rapport.mjs`, `sida.mjs`): svensk rapport med
     Axels uppgifter sist, engelsk Discord-post i `#copycats` bara när något
     är nytt, och granskningssidan (`output/sida.html`, publiceras som
@@ -297,6 +331,8 @@ kan jag granska här också … och sen så skickas det."
 | `granskning.mjs`, `granskning-sida.html` | ✅ | Granskningsappen: kortens data, status, sms, `attGora`, och sidan med svep och Ja/Nej |
 | `output/granska/<id>/` | ❌ | Appen som publiceras: `index.html`, `data/granskning.json`, `data/status.json`, `bilder/` — byggs om med `--granska` |
 | `arenden/<id>/anmalan/klipp.json` | ✅ | Klippvalet: paren (film, tid, avstånd, hash) per annons, de lånade hasharna, biblioteket — `--klipp` |
+| `original.mjs` | ✅ | Våra originalannonser i annonsbiblioteket: fraserna, sökningen, jämförelsen ruta för ruta, ledfilmen |
+| `arenden/<id>/anmalan/original.json` | ✅ | Per film: vår annons i annonsbiblioteket (länk, arkiv-id, sida, start, lika %) eller orsaken — `--original` |
 | `output/klipp/<id>/` | ❌ | Cache: deras och våra filmer (mp4), `rutor-<video>.json`, `bibliotek.json`, rutorna som JPEG — bygg om med `--klipp` |
 | `arenden/<id>/anmalan/<nr>-torr.png`, `<nr>-formular.png`, `<nr>-kvitto.png`, `kod.txt*` | ❌ | Formulärets skärmdumpar (torrkörning, ifyllt före Submit, kvittot) och engångskodens fil — referensen står i `<nr>.json` |
 | `output/<datum>.annonser-<sid-id>.json` | ❌ | Annonsfilen läsaren skrev ur annonsbiblioteket (alla annonser, räckvidd, sidinfo) — byggs om med `--annonser-sida` |

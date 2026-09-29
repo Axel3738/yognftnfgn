@@ -52,6 +52,11 @@ export function sammanfattning(paket) {
 /** Fälten exakt som anmal-skicka.mjs skriver in dem i Metas formulär, med svenska etiketter. Ren. */
 export function faltLista(paket, { land = 'Sweden' } = {}) {
   const v = formularVarden(paket, { land });
+  // Vad exempellänken är, på svenska (Axel 2026-09-29: den ska vara vår annons i annonsbiblioteket, aldrig produktsidan).
+  const o = (paket?.originaler ?? []).find((x) => x?.lank === v.original);
+  const orgSv = o
+    ? `vår annons ${o.film} i annonsbiblioteket${o.sida ? `, sidan ${o.sida}` : ''}${o.start ? `, igång sedan ${dagSv(o.start)}` : ''} — samma film, kontrollerad ruta för ruta`
+    : /view_all_page_id=/.test(v.original ?? '') ? 'vår sidas alla annonser i annonsbiblioteket (ingen enskild annons hittad)' : undefined;
   return {
     fel: v.fel,
     falt: [
@@ -61,7 +66,7 @@ export function faltLista(paket, { land = 'Sweden' } = {}) {
       { etikett: 'Äger du rättigheten själv?', varde: v.ombud ? "No, but I'm authorised to represent the rights owner" : 'Yes', sv: v.ombud ? 'nej, du företräder bolaget som äger den' : 'ja' },
       { etikett: 'Rättighetsinnehavare', varde: v.rattighetshavare },
       { etikett: 'Annonsen som anmäls', varde: v.urls, lank: true },
-      { etikett: 'Exempel på vårt original', varde: v.original, lank: true },
+      { etikett: 'Exempel på vårt original', varde: v.original, lank: true, ...(orgSv ? { sv: orgSv } : {}) },
       { etikett: `Beskrivning (${v.beskrivning.length} av 500 tecken)`, varde: v.beskrivning, lang: true },
       { etikett: 'Ditt namn', varde: v.namn },
       { etikett: 'E-post (engångskoden kommer hit)', varde: v.epost },
@@ -81,7 +86,8 @@ export function kortAnmalan(rapport, paket, { annons = null, bild = null, land =
     typ: 'anmalan',
     nr: rapport.nr,
     antal: paket.antal ?? null,
-    version: kort12(JSON.stringify({ falt: paket.falt, bild: paket.bevisbildUrl ?? null, filmer: paket.filmer ?? [] })),
+    // Versionen följer det Axel SER — även texten som räknas fram ur fälten (500-teckensbeskrivningen): ändras koden efter hans ja gäller ja:t inte.
+    version: kort12(JSON.stringify({ falt: paket.falt, bild: paket.bevisbildUrl ?? null, filmer: paket.filmer ?? [], visat: falt.map((f) => f.varde) })),
     annonsNr: paket.annonsNr ?? annons?.nr ?? null,
     lank: paket.lank,
     exponeringar: paket.exponeringar ?? annons?.exponeringar ?? null,

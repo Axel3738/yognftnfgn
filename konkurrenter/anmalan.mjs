@@ -16,6 +16,7 @@
 // (Metas referensnummer) skrivs tillbaka med --anmald. Rena funktioner.
 
 import { tid, bevisStatus } from './klipp.mjs';
+import { originalFor } from './original.mjs';
 
 export const FORMULAR = Object.freeze({
   facebook: 'https://www.facebook.com/help/contact/1758255661104383',
@@ -46,9 +47,10 @@ const datumEn = (iso) => (iso ? new Intl.DateTimeFormat('en-GB', { day: 'numeric
 
 /**
  * En anmälan för EN av deras annonser. `undertecknare` = { namn, epost, telefon, adress }
- * (konfig.anmalan.undertecknare), `bevisbildUrl` = publik länk till bevisbilden om den finns.
+ * (konfig.anmalan.undertecknare), `bevisbildUrl` = publik länk till bevisbilden om den finns,
+ * `original` = original.json:s `filmer` (våra annonser i annonsbiblioteket, kor.mjs --original).
  */
-export function byggAnmalan(arende, annons, konfig, { undertecknare, nr = 1, antal = 1, nu = new Date().toISOString(), bevisbild = null, bevisbildUrl = null } = {}) {
+export function byggAnmalan(arende, annons, konfig, { undertecknare, nr = 1, antal = 1, nu = new Date().toISOString(), bevisbild = null, bevisbildUrl = null, original = null } = {}) {
   const foretag = konfig.brev?.foretag ?? {};
   const u = undertecknare ?? konfig.anmalan?.undertecknare ?? {};
   const deras = arende.deras ?? {};
@@ -77,17 +79,23 @@ export function byggAnmalan(arende, annons, konfig, { undertecknare, nr = 1, ant
   const sida = deras.sidnamn ? `the Facebook page "${deras.sidnamn}"${deras.sidaId ? ` (page ID ${deras.sidaId})` : ''}` : `the advertiser${deras.doman ? ` behind ${deras.doman}` : ''}`;
   const exp = Number(annons.exponeringar) > 0 ? ` According to the Ad Library it has reached approximately ${talEn(annons.exponeringar)} people in the EU.` : '';
   const start = annons.start && !klipp?.datum ? ` The ad has been running since ${datumEn(annons.start)}.` : '';
-  const contentDescription = `This advertisement, run by ${sida}, reproduces our copyrighted advertising material without authorisation. ${delar.join(' ')}${start}${exp} It copies ${varAnnons} for the product "${prod.titel ?? prod.handle ?? ''}", which our page ran before this ad appeared. This is report ${nr} of ${antal} concerning ads from the same advertiser; each ad is reported separately.`;
-  const originalWorkUrls = [prod.url, varAdLibraryLank(konfig, prod.verksamhet ?? arende.verksamhet)].filter(Boolean);
+  // Originalen (Axel 2026-09-29: "du måste hitta annonserna inne i vårt ad library"): våra egna annonser med
+  // filmerna, verifierade ruta för ruta — ledfilmen först, den går i formulärets exempelfält (EN länk).
+  const originaler = klipp && original ? originalFor(klipp, original).map((o) => ({ film: o.film, lank: o.lank, arkivId: o.arkivId ?? null, start: o.start ?? null, sida: o.sida ?? null, sidaId: o.sidaId ?? null })) : [];
+  const orgMening = originaler.length ? ` Our original ad${originaler.length === 1 ? ' is' : 's are'} public in Meta's Ad Library: ${originaler.map((o) => `"${o.film}" ${o.lank}`).join(', ')}.` : '';
+  const contentDescription = `This advertisement, run by ${sida}, reproduces our copyrighted advertising material without authorisation. ${delar.join(' ')}${orgMening}${start}${exp} It copies ${varAnnons} for the product "${prod.titel ?? prod.handle ?? ''}", which our page ran before this ad appeared. This is report ${nr} of ${antal} concerning ads from the same advertiser; each ad is reported separately.`;
+  // Ordningen är formulärets: [0] blir "example of your copyrighted work". Utan hittat original är det vår sidas lista i annonsbiblioteket — aldrig produktsidan först.
+  const originalWorkUrls = [...new Set([...originaler.map((o) => o.lank), varAdLibraryLank(konfig, prod.verksamhet ?? arende.verksamhet), prod.url].filter(Boolean))];
+  const sidnamn = originaler.find((o) => o.sida)?.sida ?? null;
   const originalWorkDescription = klipp
-    ? `Original advertising films produced by ${foretag.namn ?? 'Stonebite Ecom AB'} for our store${prod.butik ? ` ${prod.butik}` : ''} (product: "${prod.titel ?? ''}")${filmer.length ? `: ${filmer.map((f) => `"${f}"`).join(', ')}` : ''}. The footage is our own work and we hold the copyright. Our ads are listed in the Ad Library and the product page is at the links below.`
+    ? `Original advertising films produced by ${foretag.namn ?? 'Stonebite Ecom AB'} for our store${prod.butik ? ` ${prod.butik}` : ''} (product: "${prod.titel ?? ''}")${filmer.length ? `: ${filmer.map((f) => `"${f}"`).join(', ')}` : ''}. The footage is our own work and we hold the copyright. ${originaler.length ? `The original ads are public in Meta's Ad Library, run by our page${sidnamn ? ` ${sidnamn}` : ''} (links below).` : 'Our ads are listed in the Ad Library and the product page is at the links below.'}`
     : `Original advertising copy, product photographs and video produced by ${foretag.namn ?? 'Stonebite Ecom AB'} for our store${prod.butik ? ` ${prod.butik}` : ''} (product: "${prod.titel ?? ''}"). The text and the images are our own work and we hold the copyright. The original ad and product page are at the links below.`;
   const brevRad = arende.brev?.skickat ? ` A cease-and-desist letter${arende.faktura?.nr ? ` with invoice ${arende.faktura.nr}` : ''} was sent to the advertiser on ${datumEn(arende.brev.skickat.nar)}.` : '';
   const additionalInfo = `Evidence screenshot (${klipp ? 'frames from our film on the left, the same frames in the reported ad on the right' : 'our original on the left, the reported ad on the right, copied passage highlighted'}): ${bevisbildUrl ?? (bevisbild ? 'attached to this report' : 'available on request')}. Internal reference: ${arende.id}, report ${nr}/${antal}, prepared ${datumEn(nu)}.${brevRad}`;
   return {
     nr, antal, arende: arende.id, verksamhet: prod.verksamhet ?? arende.verksamhet, plattform: 'facebook', formular: FORMULAR.facebook,
     lank, libraryId, annonsNr: annons.nr ?? null, exponeringar: annons.exponeringar ?? null, video: Boolean(annons.video),
-    grund: s.grund, filmer, produkt: prod.titel ?? prod.handle ?? null,
+    grund: s.grund, filmer, originaler, produkt: prod.titel ?? prod.handle ?? null,
     falt: {
       reporter: { fullName: u.namn ?? null, email: u.epost ?? konfig.brev?.avsandare?.mail ?? null, phone: u.telefon ?? null, address: u.adress ?? `${foretag.adress ?? ''}, Sweden`, country: 'Sweden' },
       rightsOwner: { name: foretag.namn ?? null, registrationNumber: foretag.orgnr ?? null, relationship: `${u.roll ?? 'Authorised representative'} of the rights owner ${foretag.namn ?? ''} (Swedish company, reg. no. ${foretag.orgnr ?? '?'})` },
@@ -111,7 +119,7 @@ export function kontrolleraAnmalan(a) {
   if (!a?.falt?.reporter?.fullName) fel.push('undertecknare saknas — konkurrenter/konfig.json → anmalan.undertecknare.namn (eller --namn)');
   if (!a?.falt?.reporter?.email) fel.push('e-post saknas — anmalan.undertecknare.epost');
   if (!a?.falt?.rightsOwner?.registrationNumber) fel.push('org.nr saknas — brev.foretag.orgnr');
-  if (!a?.falt?.originalWorkUrls?.length) fel.push(`anmälan ${a?.nr ?? '?'}: ingen länk till originalet (produktsidan eller vår sida i annonsbiblioteket)`);
+  if (!a?.falt?.originalWorkUrls?.length) fel.push(`anmälan ${a?.nr ?? '?'}: ingen länk till originalet (vår annons eller vår sida i annonsbiblioteket)`);
   if (!a?.bevisbild && !a?.bevisbildUrl) fel.push(`anmälan ${a?.nr ?? '?'}: ingen bevisbild — kör utan --utan-bevisbild eller kontrollera Chromium`);
   return fel;
 }
@@ -122,12 +130,12 @@ export function kontrolleraAnmalan(a) {
  * lånade klippet matchar anmäls aldrig — den hoppas med orsak.
  * Returnerar { anmalningar, hoppade: [{ nr, orsak }] }. Ren.
  */
-export function byggAnmalningar(arende, konfig, { undertecknare, nu, bevisbilder = {} } = {}) {
+export function byggAnmalningar(arende, konfig, { undertecknare, nu, bevisbilder = {}, original = null } = {}) {
   const alla = Array.isArray(arende.bevis?.annonser) ? arende.bevis.annonser.filter((t) => t.text?.styrka || t.bilder?.length || t.klipp?.antal || t.klippStatus) : [];
   const hoppade = [];
   const annonser = alla.filter((t) => { const s = bevisStatus(t); if (!s.bevisad) { hoppade.push({ nr: t.nr, orsak: `inte bevisad med vårt eget material: ${s.orsak}` }); return false; } return true; });
   const kandidater = annonser.filter((t) => { if (!annonsLank(t.lank).lank) { hoppade.push({ nr: t.nr, orsak: 'ingen Ad Library-länk' }); return false; } return true; });
-  const anmalningar = kandidater.map((t, i) => byggAnmalan(arende, t, konfig, { undertecknare, nr: i + 1, antal: kandidater.length, nu, bevisbild: bevisbilder[t.nr]?.fil ?? null, bevisbildUrl: bevisbilder[t.nr]?.url ?? null }));
+  const anmalningar = kandidater.map((t, i) => byggAnmalan(arende, t, konfig, { undertecknare, nr: i + 1, antal: kandidater.length, nu, bevisbild: bevisbilder[t.nr]?.fil ?? null, bevisbildUrl: bevisbilder[t.nr]?.url ?? null, original }));
   return { anmalningar, hoppade };
 }
 

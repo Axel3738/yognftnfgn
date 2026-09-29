@@ -51,19 +51,25 @@ export function beskrivning500(a, max = MAX.beskrivning) {
   const kallor = f.contentDescription?.match(/It copies our ads? ((?:"[^"]+"(?:, )?)+)/)?.[1] ?? null;
   const produkt = a.produkt ?? f.contentDescription?.match(/for the product "([^"]+)"/)?.[1] ?? null;
   const flera = (filmer?.length ?? 0) > 1 ? 's' : '';
-  // Kortas i steg när 500 inte räcker — filmlistan och etiketterna först, så att referensen i slutet alltid får plats
+  // Originalen i annonsbiblioteket (kor.mjs --original): länkarna till våra egna annonser säger granskaren mer än våra interna filmnamn.
+  const org = Array.isArray(a.originaler) ? a.originaler.filter((o) => o?.lank) : [];
+  // Kortas i steg när 500 inte räcker — länk-/filmlistan och etiketterna först, så att referensen i slutet alltid får plats
   // (mätt 2026-09-29: tre filmnamn + CDN-länken gav 500 tecken jämnt och "Ref KD-2026-001…" klipptes).
   const bygg = (passage, { antalFilmer = 3, tider = true, bevis = 'Evidence screenshot (ours left, theirs right):', produktNamn = true } = {}) => [
     m ? `Verbatim copy of our ad copy: ${m[2]} consecutive identical words ("${passage}"), ${m[1]} words in total.` : null,
     klipp ? `Its video is cut from our own ad film${flera}: ${klipp[1]} stills from different scenes${tider ? ` (at ${klipp[2]})` : ''} are identical to ours; ${klipp[3]}% of its frames match our film${flera}.` : bilder ? 'It uses our own advertising image (a still frame from our ad video).' : null,
     !m && !bilder && !klipp && video ? 'The video uses our material.' : null,
-    filmer
-      ? `Original: our ad film${flera} ${filmer.slice(0, antalFilmer).map((x) => `"${x}"`).join(', ')}${filmer.length > antalFilmer ? ' and others' : ''}${produkt && produktNamn ? ` for "${produkt}"` : ''}, published before this ad.`
-      : `Original: ${kallor ? `our ad ${kallor}` : 'our ad'}${produkt && produktNamn ? ` for "${produkt}"` : ''}, running before this ad.`,
+    org.length
+      ? `Original: our ad${Math.min(org.length, antalFilmer) > 1 ? 's' : ''} in the Ad Library ${org.slice(0, antalFilmer).map((o) => o.lank).join(' ')}${produkt && produktNamn ? ` for "${produkt}"` : ''}, published by us before this ad.`
+      : filmer
+        ? `Original: our ad film${flera} ${filmer.slice(0, antalFilmer).map((x) => `"${x}"`).join(', ')}${filmer.length > antalFilmer ? ' and others' : ''}${produkt && produktNamn ? ` for "${produkt}"` : ''}, published before this ad.`
+        : `Original: ${kallor ? `our ad ${kallor}` : 'our ad'}${produkt && produktNamn ? ` for "${produkt}"` : ''}, running before this ad.`,
     a.bevisbildUrl ? `${bevis} ${a.bevisbildUrl}` : null,
     `Ref ${a.arende} ${a.nr}/${a.antal}.`,
   ].filter(Boolean).join(' ');
-  const steg = [{}, { bevis: 'Evidence (ours left, theirs right):' }, { bevis: 'Evidence (ours left, theirs right):', antalFilmer: 2 }, { bevis: 'Evidence:', antalFilmer: 2, tider: false }, { bevis: 'Evidence:', antalFilmer: 1, tider: false }, { bevis: 'Evidence:', antalFilmer: 1, tider: false, produktNamn: false }];
+  // Två länkar till våra annonser väger tyngst, sedan tiderna i deras film (där granskaren ska titta) — produktnamnet
+  // står redan på bevisbilden (mätt 2026-09-29, ORVO: två länkar + tiderna utan produktnamn = 483 tecken).
+  const steg = [{}, { bevis: 'Evidence (ours left, theirs right):' }, { bevis: 'Evidence (ours left, theirs right):', antalFilmer: 2 }, { bevis: 'Evidence:', antalFilmer: 2 }, { bevis: 'Evidence:', antalFilmer: 2, produktNamn: false }, { bevis: 'Evidence:', antalFilmer: 2, tider: false, produktNamn: false }, { bevis: 'Evidence:', antalFilmer: 1, tider: false, produktNamn: false }];
   let passage = m ? m[3] : '';
   let text = bygg(passage);
   for (const o of steg) { text = bygg(passage, o); if (text.length <= max) break; }
