@@ -1,0 +1,103 @@
+Jag vill att du LÄSER fyra saker i min norska butik Beverbutikken
+(beverbutikken.no) och rapporterar ordagrant vad som står. Du ändrar
+ingenting, installerar ingenting och godkänner ingenting. Gör allt i Chrome
+med mitt inloggade Shopify-konto och fråga mig om inloggning när du behöver
+den. Datorn är en Windows-dator.
+
+Varför: vi ska bygga butikens e-postmarknadsföring i Spoks. Innan dess måste
+vi veta hur kundernas ja till e-postreklam har samlats in, vilka automatiska
+mejl Shopify redan skickar och vilka appar som finns. I Norge räknas en
+förikryssad ruta i kassan inte som samtycke (Forbrukertilsynets veiledning om
+markedsføring via e-post, SMS o.l., punkt 2.6.1).
+
+⛔ DET VIKTIGASTE: ÄNDRA INGENTING.
+- Tryck aldrig Spara/Save, Aktivera, Installera, Avinstallera, Godkänn eller
+  Skicka. Rör inga reglage och inga kryssrutor. Ser en sida ut att ha osparade
+  ändringar: lämna den utan att spara och skriv det i rapporten.
+- Installera inte Spoks och logga inte in i Spoks. Det gör jag själv.
+- Öppna aldrig Domeneshop, Loopia eller någon DNS-sida. Rör inte temat,
+  kassans text, rabatterna eller någon app.
+- Skriv aldrig in ett lösenord eller en kod själv. Be mig när en sida frågar.
+- Skicka inga testmejl och inga recensionsförfrågningar.
+
+------------------------------------------------------------------------------
+FAKTA (mätt 2026-09-29 via Shopifys API. Det här är facit.)
+------------------------------------------------------------------------------
+
+| Vad                                        | Värde                                         |
+|--------------------------------------------|-----------------------------------------------|
+| Butiken                                    | Beverbutikken, beverbutikken.no               |
+| Shopify-admin                              | https://admin.shopify.com/store/1acuam-s5     |
+| Ordrar 9 augusti till 29 september         | 1 194, alla till Norge                        |
+| Ordrar där kunden sa ja till e-postreklam  | 1 020 av 1 194 (85 %)                         |
+| Samma sak hos CaraShells norska kunder     | 4 av 99 (4 %)                                 |
+| Appar som syns på sajten                   | Judge.me och Kaching Bundles. Spoks och Klaviyo syns inte |
+
+Skillnaden mellan 85 och 4 procent är skälet till steg 1.
+
+Djupa admin-adresser gav en vit sida i den här butiken (Coworks egen
+anmärkning 2026-09-21). Klicka dig då fram via menyn i stället.
+
+------------------------------------------------------------------------------
+STEG 1 - kassans ruta för e-postreklam (bara läsa)
+------------------------------------------------------------------------------
+
+1. Admin -> Inställningar -> Kassa (Settings -> Checkout).
+2. Leta upp avsnittet om kundens ja till marknadsföring. På engelska heter
+   det "Marketing opt-in", med valen "Email" och "SMS" (Shopifys hjälpsida
+   "Collecting customer contact information", läst 2026-09-29). Den svenska
+   rubriken kan heta något annat. Skriv exakt vad som står.
+3. Skriv i rapporten, ordagrant:
+   - Visas rutan för e-postreklam i kassan (påslagen eller avslagen)?
+   - Är "Preselect the sign-up option" (eller det svenska namnet, något med
+     "förvälj") ibockad?
+   - Vilket regionsval som är valt: "Regions recommended by Shopify" eller
+     "Regions you choose" (eller de svenska namnen), och vilka länder som står
+     i listan. Står Norge med?
+   - Texten kunden ser vid rutan, om sidan visar den.
+4. Ta en skärmdump av avsnittet.
+
+------------------------------------------------------------------------------
+STEG 2 - Shopifys egna automatiska mejl (bara läsa)
+------------------------------------------------------------------------------
+
+1. Admin -> Marknadsföring -> Automatiseringar (Marketing -> Automations).
+2. Skriv varje automatisering med namn och status (Aktiv/Inaktiv). Säg
+   särskilt om någon handlar om övergiven kassa eller varukorg (till exempel
+   "Återställ övergiven varukorg", "abandoned checkout", "forlatt handlekurv").
+3. Ta en skärmdump av listan.
+
+------------------------------------------------------------------------------
+STEG 3 - installerade appar (bara läsa)
+------------------------------------------------------------------------------
+
+1. Admin -> Inställningar -> Appar och försäljningskanaler (Settings -> Apps
+   and sales channels).
+2. Skriv namnet på varje installerad app. Säg särskilt om Spoks, Klaviyo,
+   Judge.me eller någon app för popup, skrapkort eller nyhetsbrev finns med.
+3. Öppna ingen app, utom Judge.me i steg 4.
+
+------------------------------------------------------------------------------
+STEG 4 - Judge.me:s recensionsförfrågningar (bara läsa, bara om Judge.me finns)
+------------------------------------------------------------------------------
+
+1. Öppna Judge.me från applistan.
+2. Leta upp inställningen för recensionsförfrågningar som mejlas till
+   kunderna efter köpet (på engelska ofta "Requests" eller "Review requests").
+3. Skriv: är de automatiska förfrågningarna PÅ eller AV, och hur många dagar
+   efter vad (order, leverans) går de ut? Ändra ingenting.
+
+------------------------------------------------------------------------------
+RAPPORTERA TILLBAKA
+------------------------------------------------------------------------------
+
+1. Steg 1 ordagrant, och skärmdumpen.
+2. Steg 2: listan med status.
+3. Steg 3: applistan.
+4. Steg 4: Judge.me på eller av, och när förfrågan går ut.
+5. Bekräfta att du inte tryckte på Spara någonstans och inte öppnade något
+   utanför Shopify-admin och Judge.me.
+6. Allt som såg konstigt ut, och varje ställe där du stannade.
+
+Stanna och fråga mig om något ser annorlunda ut än beskrivet. Gissa aldrig.
+Skriv aldrig ut lösenord eller koder i rapporten.
