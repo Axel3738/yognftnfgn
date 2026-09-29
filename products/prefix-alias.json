@@ -7,5 +7,11 @@
       "kontots_prefix": "Balteslipmaskin",
       "noterat": "2026-08-31 — Notion-hubben 'Belt grinder creative hub' är engelsk, kontot svenskt."
     }
+  },
+  "blockerade": {
+    "tacklebayrod": {
+      "orsak": "TackleBays gamla annonser (landningssida tacklebay.se, butiken nedlagd). Hubben Fish rod holder flyttades till Bäverbutiken 2026-09-29 på Axels ord; bara Bäverbutikens egna Rodholder_-rader ska upp, aldrig dessa.",
+      "noterat": "2026-09-29 — elva rader i To be Reviewed vid flytten (TackleBayRod_PD_42/45/47/48/54/55/56/57/60/61_H1, SO_9_H1). Rörs aldrig: ingen statusändring, ingen kommentar, ingen koppling till Fiskespöhållaren."
+    }
   }
 }
