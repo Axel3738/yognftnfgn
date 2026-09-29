@@ -45,3 +45,19 @@ What does the community run at this size, and what works best for "where is my o
 ```
 Same stores. For a "where is my order / you never answer my emails" message in DM, what first reply does the community use to calm the customer and stop them from opening a dispute with their bank? Should the reply move the conversation to email, or solve it in the chat? Any wording that members have seen work well?
 ```
+
+---
+
+## Allt i ETT meddelande (Axel 2026-09-29: boten har timeout, bara en prompt)
+
+```
+I run several Shopify stores in the Nordics. 100 % of traffic is Meta ads, products 40–100 EUR, delivery 5–10 business days. Customers message our Facebook pages and Instagram in DM, mostly "where is my order", and some complain we don't answer email. We don't know the DM volume yet. Four questions, answer each briefly with what members have actually measured:
+
+1. ROI: what is the real payoff of answering Messenger/IG DMs fast? Fewer chargebacks and bad reviews, extra sales from pre-purchase questions, or mostly damage control? Any data on DM volume as a share of orders?
+
+2. Ads: does Messenger responsiveness (response rate/time, "very responsive" badge) affect ad delivery, CPM or ad account health, or is it irrelevant to the auction?
+
+3. Setup: for "where is my order" messages, what works best at this size: (a) Meta Business Suite's built-in automations (instant reply, FAQ buttons) pointing to our tracking page, (b) a custom Messenger API bot that looks up the order in Shopify, or (c) a VA working the inbox once or twice a day? Is a custom bot worth Meta's app review?
+
+4. Wording: what first reply calms a "where is my order, you never answer my emails" customer and stops them opening a bank dispute? Solve it in the chat or move it to email?
+```
