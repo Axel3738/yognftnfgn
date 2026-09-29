@@ -285,3 +285,11 @@ Gmail. Ett mail per mottagare, ingen kopia eller hemlig kopia. Texterna är exak
 Nummer 7, Charlotte Hvide Smith, är inte skickat. Det går till samma Sebastian som Kathrine
 och skickas fredag 2 oktober. Påminnelsen enligt mallen skickas måndag 5 oktober till dem
 som inte svarat (fyra vardagar).
+
+## Svar
+
+| Datum | Profil | Från | Svar | Nästa steg |
+|---|---|---|---|---|
+| 2026-09-29 17:18 | Else Kåss Furuseth | Kristin Starheim, Booking & Sånt | **Nej.** "På grunn av hennes NRK avtale kan hun dessverre ikke gjøre betalte samarbeid." | Tacka med en rad (kursen: ingen invändningshantering). NRK-flaggan stämde; samma risk finns för Martha Leivestad. |
+
+Inga studsar på de nio mailen per 2026-09-29 kväll, inte heller på Marnas obekräftade adress.
