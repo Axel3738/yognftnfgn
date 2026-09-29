@@ -101,6 +101,7 @@ export function promptText({ brand, arbetsyta, rader, lankMall, andraSegment = [
 
 BAKGRUND, så du vet vad du tittar på.
 Spoks är mitt mejlprogram, app.spoks.com. Butikens arbetsyta heter "${arbetsyta.namn}" och alla länkar nedan börjar med ${arbetsyta.app}/. Varje mejl ligger som ett utkast. Länken i listan öppnar utkastet direkt, så använd alltid länkarna: kampanjlistan i Spoks visar ämnesraden, inte koden. Ämnesraden står i listan så du kan känna igen mejlet. Ser du en titel, börjar den med koden (till exempel "${rader[0]?.kod ?? 'K02'} · …").
+Spoks ritar bara upp sidan när fliken syns på skärmen. Är sidan helt vit: be mig ta fram fliken och ladda om den, och börja först när du ser Spoks meny. Ser du en inloggningssida: be mig logga in.
 Arbetsytans tidszon är Stockholm. ${zonRad}
 
 RÖR ALDRIG DE HÄR, oavsett vad du ser:

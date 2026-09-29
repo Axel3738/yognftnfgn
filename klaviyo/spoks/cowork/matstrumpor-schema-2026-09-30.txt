@@ -2,6 +2,7 @@ Jag vill att du schemalägger 37 färdiga mejl i Spoks för min butik Matstrumpo
 
 BAKGRUND, så du vet vad du tittar på.
 Spoks är mitt mejlprogram, app.spoks.com. Butikens arbetsyta heter "Matstrumpor.se" och alla länkar nedan börjar med https://app.spoks.com/matstrumpor/. Varje mejl ligger som ett utkast. Länken i listan öppnar utkastet direkt, så använd alltid länkarna: kampanjlistan i Spoks visar ämnesraden, inte koden. Ämnesraden står i listan så du kan känna igen mejlet. Ser du en titel, börjar den med koden (till exempel "V01 · …").
+Spoks ritar bara upp sidan när fliken syns på skärmen. Är sidan helt vit: be mig ta fram fliken och ladda om den, och börja först när du ser Spoks meny. Ser du en inloggningssida: be mig logga in.
 Arbetsytans tidszon är Stockholm. Sommartiden slutar natten mot söndag 25 oktober. Mejl före dess visar CEST (UTC+2) i pillret, mejl från 25/10 visar CET (UTC+1). Det är rätt. Skriv alltid klockslaget exakt som i listan och räkna aldrig om det.
 
 RÖR ALDRIG DE HÄR, oavsett vad du ser:

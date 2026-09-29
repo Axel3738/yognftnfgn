@@ -1178,6 +1178,10 @@ webbläsare) gör dem.
   V04 och V05 skrivs 9/10 och 12/10 och får egna prompter. K16 (förtur 22/11) och tröstpriset
   byggs 2/11. Stoppregeln `LARM_LEVERANS` gäller fortfarande: vid larm flyttas nästa
   schemalagda mejl till utkast.
+- ⚠️ **Spoks ritar ingenting i en dold flik** (Coworks första försök 2026-09-29 ~17:15 CEST: vit
+  sida, Chrome rapporterade fliken som `hidden`, ingen inloggningssida, inget ändrat). Fliken
+  måste ligga överst i ett synligt fönster medan Cowork arbetar. Prompten säger det sedan dess
+  och ber Cowork be om hjälp i stället för att gissa.
 - **Stoppregeln läses varje morgon** av rutinen `trig_0184cEo3qqjRg5GxemevSEYf` (08:38 svensk tid,
   `CRON_TZ=Europe/Stockholm`, i den här sessionen, sedd i svaret från `create_trigger` 2026-09-29):
   gårdagens utskick mot `LARM_LEVERANS`, och `notify` på de närmaste 48 timmarnas mejl. Tyst utom

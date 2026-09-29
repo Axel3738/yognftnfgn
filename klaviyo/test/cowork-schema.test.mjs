@@ -74,6 +74,8 @@ test('promptText: länk, publik och tid per mejl, förväxlingsbara segment, ald
   assert.match(text, /CET \(UTC\+1\)/);
   assert.match(text, /Särskilt inte K01, K15/);
   assert.match(text, /Skicka aldrig något direkt/);
+  // Mätt 2026-09-29: Cowork fick en vit sida, Spoks ritar inte i en dold flik.
+  assert.match(text, /Är sidan helt vit/);
   // Förväxlingslistan: arbetsytans andra segment och Spoks egna, aldrig ett segment listan använder.
   const aldrigRad = text.split('\n').find((r) => r.startsWith('Det finns segment med nästan samma namn'));
   assert.match(aldrigRad, /SEG_engagerade_90d/);
