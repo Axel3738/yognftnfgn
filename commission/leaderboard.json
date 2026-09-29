@@ -1,17 +1,17 @@
 {
-  "uppdaterad": "2026-09-28T04:23:45.063Z",
-  "kord": "2026-09-28T04:19:18.170Z",
+  "uppdaterad": "2026-09-29T04:15:18.767Z",
+  "kord": "2026-09-29T04:10:15.833Z",
   "manad": "2026-09",
   "period": {
     "fran": "2026-09-01",
-    "till": "2026-09-28"
+    "till": "2026-09-29"
   },
   "slutavrakning": false,
   "sats": 0.004,
   "valuta": {
     "kod": "USD",
-    "kurs": 0.101,
-    "datum": "2026-09-25",
+    "kurs": 0.10051,
+    "datum": "2026-09-28",
     "gammal": false
   },
   "rader": [
@@ -19,27 +19,27 @@
       "plats": 1,
       "id": "josh",
       "namn": "Josh Naelga",
-      "usd": 60.88,
+      "usd": 61.67,
       "annonser": 277,
       "kampanjer": [
         {
           "namn": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
-          "usd": 14.64
-        },
-        {
-          "namn": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
-          "usd": 13.63
+          "usd": 14.8
         },
         {
           "namn": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "usd": 13.49
+          "usd": 13.76
+        },
+        {
+          "namn": "Övervakningskameran | BE ROAS 1.57 | Launch 2026-08-21",
+          "usd": 13.56
         }
       ],
       "basta": {
         "namn": "IBC_PD_1_H1",
-        "usd": 12.41
+        "usd": 12.57
       },
-      "okning": 9.94,
+      "okning": 0.79,
       "forraPlats": 1,
       "flytt": 0
     },
@@ -47,72 +47,72 @@
       "plats": 2,
       "id": "carl",
       "namn": "Carl Vicente",
-      "usd": 44.14,
-      "annonser": 101,
+      "usd": 45.24,
+      "annonser": 104,
       "kampanjer": [
         {
           "namn": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
-          "usd": 27
+          "usd": 27.77
         },
         {
           "namn": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
-          "usd": 14.49
+          "usd": 14.56
         },
         {
           "namn": "Taköverdraget LISTICLE LAGERRENSNING",
-          "usd": 2.32
+          "usd": 2.53
         }
       ],
       "basta": {
         "namn": "Takoverdrag_SP_4_H1",
-        "usd": 20.3
+        "usd": 20.87
       },
-      "okning": 37.45,
-      "forraPlats": 3,
-      "flytt": 1
+      "okning": 1.1,
+      "forraPlats": 2,
+      "flytt": 0
     },
     {
       "plats": 3,
       "id": "annabelle",
       "namn": "Annabelle Gonzales",
-      "usd": 30.7,
+      "usd": 31.65,
       "annonser": 161,
       "kampanjer": [
         {
           "namn": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
-          "usd": 11.04
+          "usd": 11.42
         },
         {
           "namn": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
-          "usd": 5.98
+          "usd": 5.95
         },
         {
           "namn": "Damasker Vandring | BE ROAS 1.60 | Launch 2026-08-29",
-          "usd": 5.34
+          "usd": 5.31
         }
       ],
       "basta": {
         "namn": "Beltgrinder_PD_19_1",
-        "usd": 4.41
+        "usd": 4.66
       },
-      "okning": 3.85,
-      "forraPlats": 2,
-      "flytt": -1
+      "okning": 0.95,
+      "forraPlats": 3,
+      "flytt": 0
     },
     {
       "plats": 4,
       "id": "jerzee",
       "namn": "Jerzee",
-      "usd": 16.33,
+      "usd": 17.28,
       "annonser": 70,
       "kampanjer": [
         {
           "namn": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
-          "usd": 10.41
+          "usd": 10.96
         },
         {
           "namn": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
-          "usd": 3.83
+          "usd": 4.06
         },
         {
           "namn": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
@@ -121,26 +121,26 @@
       ],
       "basta": {
         "namn": "Takoverdrag_PD_4_H1",
-        "usd": 4.34
+        "usd": 4.48
       },
-      "okning": 15.39,
-      "forraPlats": 6,
-      "flytt": 2
+      "okning": 0.95,
+      "forraPlats": 4,
+      "flytt": 0
     },
     {
       "plats": 5,
       "id": "gilz",
       "namn": "Gilz Bruce Biazon",
-      "usd": 7.49,
+      "usd": 7.63,
       "annonser": 56,
       "kampanjer": [
         {
           "namn": "Mastern",
-          "usd": 6.63
+          "usd": 6.75
         },
         {
           "namn": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "usd": 0.86
+          "usd": 0.87
         },
         {
           "namn": "MATSTRUMP_SALES_20260826",
@@ -149,44 +149,44 @@
       ],
       "basta": {
         "namn": "277 H1 08-11",
-        "usd": 2.98
+        "usd": 3.03
       },
-      "okning": 3.77,
-      "forraPlats": 4,
-      "flytt": -1
+      "okning": 0.14,
+      "forraPlats": 5,
+      "flytt": 0
     },
     {
       "plats": 6,
       "id": "jasper",
       "namn": "Jasper Tomboc",
-      "usd": 4.64,
-      "annonser": 106,
+      "usd": 5.27,
+      "annonser": 115,
       "kampanjer": [
         {
           "namn": "Mastern",
-          "usd": 2.2
+          "usd": 2.26
         },
         {
           "namn": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
-          "usd": 1.64
+          "usd": 1.71
         },
         {
-          "namn": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-          "usd": 0.28
+          "namn": "Sotarsetet med Böjliga Stänger | BE ROAS 1.61 | Launch 2026-09-19",
+          "usd": 0.46
         }
       ],
       "basta": {
         "namn": "Beltgrinder_PD_4_H1",
-        "usd": 1.53
+        "usd": 1.59
       },
-      "okning": 1.55,
-      "forraPlats": 5,
-      "flytt": -1
+      "okning": 0.63,
+      "forraPlats": 6,
+      "flytt": 0
     }
   ],
   "totalt": {
-    "usd": 164.19,
-    "annonser": 771,
+    "usd": 168.74,
+    "annonser": 783,
     "redigerare": 6
   },
   "obetald": {
@@ -202,7 +202,7 @@
     "konflikter": 0
   },
   "kallor": {
-    "hubbar": 22,
+    "hubbar": 25,
     "konton": 7,
     "fel": 0
   },
@@ -402,6 +402,17 @@
         "gilz": 3.72,
         "jasper": 3.09,
         "jerzee": 0.94
+      }
+    },
+    {
+      "datum": "2026-09-28",
+      "per": {
+        "josh": 60.88,
+        "carl": 44.14,
+        "annabelle": 30.7,
+        "jerzee": 16.33,
+        "gilz": 7.49,
+        "jasper": 4.64
       }
     }
   ]
