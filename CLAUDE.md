@@ -27,6 +27,13 @@ I övrigt: skriv som situationen kräver. Fattar du ett beslut åt honom, säg
 vilket. Är något osäkert, säg det i stället för att gissa. En fråga i taget,
 med svarsalternativ.
 
+**Manuella klick samlas i EN Cowork-prompt i slutet** (Axels order 2026-09-29: "alla manuella små
+tasks ska fixas i slutet av en enda cowork prompt"). Ge honom aldrig klicklistor i admin under
+arbetets gång. Samla allt som inte går via API i en prompt, lägg den i repot (`<område>/cowork/`) och
+ge den sist i ett kodblock som går att kopiera. Hans egen lista blir då "klistra in prompten i
+Cowork", plus det som bara han kan avgöra: granskning, pengar och aktivering. Prompten säger vad som
+aldrig får röras och hur resultatet kontrolleras som kund.
+
 ⚠️ **Språket följer läsaren, inte den här filen** (Axels beslut 2026-09-09):
 Axel svaras på svenska, **VA:n och redigerarna på engelska**. Ett kommando
 som säger "svara henne på engelska" gäller — den här filen ska aldrig
@@ -129,7 +136,8 @@ utomlands: Norge först, Axels budget 1 000 kr/dag (2026-09-27), kampanjen
 2026-09-27 ~15:30 CEST** (Axel gav rollen; före det `Permissions error …
 ads_management`). `matstrumpor/marknader/annonser/bygg.mjs --alla --skarpt`
 byggde samma eftermiddag **fem kampanjer, alla PAUSED**: NO (Axels 1 000 kr/dag),
-DK, FI, US och WW (NO+DK+FI+US+GB+AU+CA+NZ, engelska, `/en/` utan `?country=`) —
+DK, FI, US och WW (engelska, `/en/` utan `?country=`; **sedan 2026-09-29 bara GB+AU+CA+NZ**,
+Axels "en kampanj per marknad borde bli bäst", så inget land ligger i två kampanjer) —
 de fyra sista med PLATSHÅLLARBUDGET 1 000 kr/dag som `--aktivera` vägrar tills
 Axel sagt en budget. Id:n och regler i `marknader/README.md` → Kampanjerna.
 Materialet: `marknader/heygen/` (Nathalie + Sofie H1/H2 → elva språk; ⛔ **Katarinas
@@ -151,7 +159,7 @@ bild (012v2:s sista scen, haiku-videornas slutkort) — den målas bort (`pipeli
 `kopiera` i `textbyte.py`), för butikens namn står aldrig i en annons. ✅ **Annons 005–007
 (röstvideorna, PR #266) och 008 (bildannonsen D3 "Köp 2 – få 2", `marknader/egna/d3/`) PAUSED i
 alla tolv kampanjer 2026-09-29.** 🇳🇴 **A/B-testet i Norge (Axels order 2026-09-29):** A
-`MATSTRUMP_NO_SALES` (matstrumpor.se/nb, "Et svensk merke.") mot B `MATSTRUMP_NOB_SALES`
+`MATSTRUMP_NO_SALES` (matstrumpor.com/nb sedan 2026-09-29 kväll, förut .se/nb; "Et svensk merke.") mot B `MATSTRUMP_NOB_SALES`
 (matstrumpor.no, norska B-sidan i `marknader/domantema.mjs`), 500 + 500 kr/dag, samma annonser,
 PAUSED. Varje ny NO-annons ⇒ `annonser/nob.mjs` + `bygg.mjs --marknad NOB --skarpt`. Avläs med
 `annonser/ab-norge.mjs` efter ~två veckor. ⛔ B påstår aldrig att butiken är norsk. Domänerna
@@ -165,7 +173,34 @@ aldrig temat). Kvar och varför: `marknader/README.md` → "QA som kund". ⛔ **
 sajten sedan 2026-09-29 kväll** (Axel: "ta bort inkl. moms / Skriv inget / C"): "Skatter ingår." under
 priset och hela korgraden under totalsumman är borta på alla värdar och tolv språk
 (`domantema.mjs` → `patchaProduktMoms`/`patchaKorgMoms`). Skriv aldrig in en moms- eller tulltext
-igen. Fraktpolicyn står som den står, och skatteinställningen rörs inte. ⚠️ Shopify mätt
+igen. Fraktpolicyn står som den står, och skatteinställningen rörs inte. ✅ **Loggan och namnet är
+"Matstrumpor" i alla länder utom Sverige sedan 2026-09-29 kväll** (Axel: "vi borde bara ha
+Matstrumpor"). Villkoret är kundens land (`localization.country.iso_code != 'SE'`) eller egen domän
+(`domantema.mjs` layout v6), så gamla länkar till `matstrumpor.se/<språk>` visar också Matstrumpor.
+🌐 **Allt utland går via matstrumpor.com sedan 2026-09-29 kväll** (Axel: "varför är alla dessa .se
+domäner??? Ska inte alla vara via .com domänen?"). .com-närvaron bär alla utlandsspråk (/nb /da /fi
+/de /fr /nl /es /it /pl /pt-pt, engelska i roten) och ligger i Norge, Europa och USA-marknaden
+(`konfig.json` → `ocksa_domaner`, `bygg.mjs --steg domaner`). Alla utlandsannonser länkar dit, utom
+B-sidan på .no. .eu och .se/<språk> fungerar kvar, men inget länkar dit. ⚠️ "En egen domän hör till EN
+marknad" (CaraShell 2026-09-17) stämmer inte här: `marketUpdate(webPresencesToAdd)` delade .com utan fel
+(mätt 2026-09-29, också i ett prov som återställdes).
+✅ **Kassans logga är MATSTRUMPOR, utan .SE, i alla länder och även i Sverige sedan 2026-09-29
+kväll.** Kassan har bara EN logga för hela butiken, eftersom en logga per marknad kräver Plus. API:t
+nekar också: `checkoutBranding` ger ACCESS_DENIED "must be on a Plus plan". Cowork bytte till filen
+`matstrumpor-kassa-logga.png` med `matstrumpor/marknader/cowork/2-slutklick.txt`. Knappen heter
+"Redigera", inte "Anpassa". Sessionen läste tillbaka den tyska kassan (.com/de) och den svenska
+(.se), och båda visade den nya loggan.
+**Utlandsannonserna visas som Facebook-sidan "Matstrumpor" `1285064981363590`** (Axels sida, samma
+BM). Instagram visas via sidans page-backed identitet `17841423405715219`, eftersom kontot
+matstrumpor.se säger .se. Källan är `annonser/marknader.json`, och `bygg.mjs --byt-text` byter sidan
+i PAUSED annonser. Sverige och sidan Matstrumpor.se `820358954504320` rörs aldrig därifrån.
+Sidans profilbild var tom, så annonserna visade en grå gubbe. Sedan 2026-09-29 är den loggan utan ".SE"
+(sessionen, `POST /{sida}/picture`, tillbakaläst). ✅ Alla 104 utlandsannonser bär sidan, Instagram-
+identiteten och .com-länken (B-sidan .no) sedan 2026-09-29 kväll. En egen avläsning av kontot gav 104
+av 104, alla PAUSED.
+**Judge.me:** rutans texter är översatta på alla tolv språk. Axel slog på "automatic" 2026-09-29, men
+recensionerna var ännu inte översatta samma kväll, eftersom Judge.me anger upp till 48 timmar
+(`marknader/README.md` → "Judge.me på tolv språk"). ⚠️ Shopify mätt
 2026-09-27: `translationsRegister` kan svara `INTERNAL_SERVER_ERROR` en stund
 (kör om), och en batchläsning av temats översättningar kan svara med FEL
 språk (`--steg kontroll` läser om ensamt) — lita aldrig på en enda läsning.

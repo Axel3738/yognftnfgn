@@ -1,7 +1,8 @@
 // Tester för annonser/bygg.mjs — spärrarna före aktivering (ren logik, inget nät).
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { farAktiveras, lankOk, slaIhopLage, textSkillnad } from '../annonser/bygg.mjs';
+import { farAktiveras, identitetSkillnad, lankOk, lankSkillnad, slaIhopLage, textSkillnad } from '../annonser/bygg.mjs';
+import { readFileSync } from 'node:fs';
 import { tillB, VARUMARKESRAD } from '../annonser/nob.mjs';
 
 test('slaIhopLage: en körning för en marknad byter bara ut den raden, resten står kvar i marknadsordning', () => {
@@ -54,6 +55,37 @@ test('lankOk: B-kampanjen på egen domän måste gå dit, aldrig till .se', () =
   assert.equal(lankOk(NOB, 'https://www.matstrumpor.no.example.com/products/x?country=NO'), false);
 });
 
+test('lankOk: matstrumpor.com bär språkmappen utom för engelskan, /pt-pt/ via sprakmapp, och .se duger inte längre', () => {
+  const com = (k) => ({ doman: 'matstrumpor.com', ...k });
+  assert.equal(lankOk(com({ locale: 'nb', geo: ['NO'] }), 'https://matstrumpor.com/nb/products/sushi-strumpor?country=NO'), true);
+  assert.equal(lankOk(com({ locale: 'nb', geo: ['NO'] }), 'https://matstrumpor.se/nb/products/sushi-strumpor?country=NO'), false);
+  assert.equal(lankOk(com({ locale: 'en', geo: ['US'] }), 'https://matstrumpor.com/products/sushi-strumpor?country=US'), true);
+  assert.equal(lankOk(com({ locale: 'en', geo: ['GB', 'AU', 'CA', 'NZ'] }), 'https://matstrumpor.com/products/sushi-strumpor'), true);
+  assert.equal(lankOk(com({ locale: 'de', geo: ['DE', 'AT', 'CH'] }), 'https://matstrumpor.com/products/sushi-strumpor'), false, 'tyskan kräver /de/');
+  assert.equal(lankOk(com({ locale: 'pt', sprakmapp: 'pt-pt', geo: ['PT'] }), 'https://matstrumpor.com/pt-pt/products/sushi-strumpor?country=PT'), true);
+  assert.equal(lankOk(com({ locale: 'pt', sprakmapp: 'pt-pt', geo: ['PT'] }), 'https://matstrumpor.com/pt/products/sushi-strumpor?country=PT'), false);
+});
+
+test('marknader.json: varje kampanjs länk klarar sin egen kontroll, och allt utland går via matstrumpor.com utom B-sidan', () => {
+  const M = JSON.parse(readFileSync(new URL('../annonser/marknader.json', import.meta.url), 'utf8'));
+  for (const [kod, k] of Object.entries(M.kampanjer)) {
+    assert.equal(lankOk(k, k.lank), true, `${kod}: ${k.lank}`);
+    if (kod === 'NOB') assert.ok(k.lank.startsWith('https://matstrumpor.no/'), 'B-sidan i A/B-testet ligger på .no');
+    else assert.ok(k.lank.startsWith('https://matstrumpor.com/'), `${kod} länkar inte via .com: ${k.lank}`);
+  }
+});
+
+test('lankSkillnad: gammal .se-länk i video eller bild ger "länk", rätt länk ger inget', () => {
+  const k = { lank: 'https://matstrumpor.com/da/products/sushi-strumpor?country=DK' };
+  const video = (l) => ({ video_data: { call_to_action: { type: 'SHOP_NOW', value: { link: l } } } });
+  const bild = (l, cta = l) => ({ link_data: { link: l, call_to_action: { type: 'SHOP_NOW', value: { link: cta } } } });
+  assert.deepEqual(lankSkillnad(k, video('https://matstrumpor.se/da/products/sushi-strumpor?country=DK')), ['länk']);
+  assert.deepEqual(lankSkillnad(k, video(k.lank)), []);
+  assert.deepEqual(lankSkillnad(k, bild(k.lank)), []);
+  assert.deepEqual(lankSkillnad(k, bild(k.lank, 'https://matstrumpor.se/da/x')), ['länk'], 'knappen räknas också');
+  assert.deepEqual(lankSkillnad(k, {}), ['länk'], 'ingen länk alls i annonsen är också fel');
+});
+
 test('nob: B-annonsen är A-annonsen utan varumärkesraden, med samma video/bild och rubrik', () => {
   const a = { namn: 'MATSTRUMP_NO_sushi_gift_ugc_001_v1', video: 'klar/NO_nathalie.mp4', title: 'T', message: `Rad ett.\nRad två.\n${VARUMARKESRAD}`, link_description: 'L' };
   const b = tillB(a);
@@ -75,4 +107,16 @@ test('--byt-text: bara de fält som skiljer mot annonsens creative byts, video o
   const bild = { link_data: { name: 'Rubrik', message: 'Rad 1\nRad 2', description: an.link_description } };
   assert.deepEqual(textSkillnad(an, bild), []);
   assert.deepEqual(textSkillnad(an, {}), ['title', 'message', 'link_description']);
+});
+
+test('--byt-text byter också sidan: utlandsannonserna visas som sidan Matstrumpor, aldrig Matstrumpor.se', () => {
+  const M = JSON.parse(readFileSync(new URL('../annonser/marknader.json', import.meta.url), 'utf8'));
+  // Axel 2026-09-29 kväll: sidan 1285064981363590 "Matstrumpor". 820358954504320 är Matstrumpor.se (Sverige).
+  assert.equal(M.sida, '1285064981363590');
+  assert.notEqual(M.sida, '820358954504320');
+  assert.notEqual(M.instagram_user_id, '17841479011543544', 'Instagram-kontot matstrumpor.se visar .se');
+  const gammal = { page_id: '820358954504320', instagram_user_id: '17841479011543544', video_data: {} };
+  assert.deepEqual(identitetSkillnad(M, gammal), ['sida', 'instagram']);
+  assert.deepEqual(identitetSkillnad(M, { page_id: M.sida, instagram_user_id: M.instagram_user_id }), []);
+  assert.deepEqual(identitetSkillnad(M, {}), ['sida', 'instagram']);
 });

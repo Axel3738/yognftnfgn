@@ -41,6 +41,11 @@ export const NORSK_VARD = 'matstrumpor.no';
 export const EGNA_VARDAR = ['matstrumpor.no', 'matstrumpor.eu', 'matstrumpor.com'];
 const OM_EGEN = EGNA_VARDAR.map((v) => `request.host contains '${v}'`).join(' or ');
 const OM_NORSK = `request.host contains '${NORSK_VARD}'`;
+// Alla länder utom Sverige heter "Matstrumpor" (Axel 2026-09-29 kväll: "vi borde bara ha Matstrumpor").
+// 12 av 13 utlandskampanjer länkar till matstrumpor.se/<språk>, så värden räcker inte som villkor:
+// kundens land avgör. Sverige (SE) ritas exakt som förut, med MATSTRUMPOR.SE.
+const OM_UTLAND = `localization.country.iso_code != 'SE'`;
+const OM_MATSTRUMPOR = `${OM_EGEN} or ${OM_UTLAND}`;
 // Kortets descriptor är bankens text och ska stå exakt som den står (tvisthandboken).
 const DESCRIPTOR = 'SP Matstrumpor.se';
 
@@ -63,14 +68,16 @@ export const PRESENTKORT_SV = 'BlackRedBowPremiumGiftCertificate_3.png';
 // om Axel byter den svenska bilden.
 export const PRESENTKORT_HANDLE = 'presentkort';
 
-const villkor = (v2) => `{%- comment -%} ${MARK}: egen domän (.no/.eu/.com) och norska B-sidan (.no) — matstrumpor/marknader/domantema.mjs {%- endcomment -%}
+// v6 (2026-09-29 kväll): ms_egen gäller också alla länder utom Sverige. Namnet står kvar, för
+// blocken v1–v5 nedan bär det och måste gå att känna igen i en live-fil.
+const villkor = (v2, v6 = false) => `{%- comment -%} ${MARK}: ${v6 ? 'egen domän (.no/.eu/.com) och alla länder utom Sverige' : 'egen domän (.no/.eu/.com)'} och norska B-sidan (.no) — matstrumpor/marknader/domantema.mjs {%- endcomment -%}
     {%- liquid
       assign ms_no = false
       assign ms_egen = false${v2 ? '\n      assign ms_lokal = false' : ''}
       if ${OM_NORSK}
         assign ms_no = true
       endif
-      if ${OM_EGEN}
+      if ${v6 ? OM_MATSTRUMPOR : OM_EGEN}
         assign ms_egen = true
       endif${v2 ? "\n      if request.locale.iso_code != 'sv'\n        assign ms_lokal = true\n      endif" : ''}
     -%}
@@ -148,38 +155,52 @@ const V4_EGEN = `      {%- if ms_egen -%}\n        {{ ${KEDJA} }}`;
 const BLOCK_V5 = BLOCK_V4.replace(V4_EGEN, `      {%- if ms_egen -%}\n${LOGGA_I_SIDAN}        {{ ${KEDJA} }}`);
 if (BLOCK_V5 === BLOCK_V4) throw new Error('domantema: version 5 hittade inte egen-domän-grenen i version 4');
 
+const VILLKOR_V5 = villkor(true);
+const VILLKOR_V6 = villkor(true, true);
+
 export function patchaLayout(kod) {
-  if (kod.includes(BLOCK_V5)) return { kod, byten: [], hoppade: ['layout: redan patchad (v5)'] };
-  if (kod.includes(BLOCK_V4)) {
-    kod = bytExakt(kod, BLOCK_V4, BLOCK_V5, 1);
-    return { kod, byten: ['uppgradering_v5'], hoppade: [] };
-  }
+  if (kod.includes(BLOCK_V5) && kod.includes(VILLKOR_V6)) return { kod, byten: [], hoppade: ['layout: redan patchad (v6)'] };
+  let byten;
   const aldreV3 = /\?pk=(\d+)&v='/.exec(kod);
-  if (aldreV3) {
+  if (kod.includes(BLOCK_V5)) byten = [];
+  else if (kod.includes(BLOCK_V4)) {
+    kod = bytExakt(kod, BLOCK_V4, BLOCK_V5, 1);
+    byten = ['uppgradering_v5'];
+  } else if (aldreV3) {
     kod = bytExakt(kod, blockV3(Number(aldreV3[1])), BLOCK_V5, 1);
-    return { kod, byten: ['uppgradering_v5'], hoppade: [] };
-  }
-  if (kod.includes(BLOCK_V2)) {
+    byten = ['uppgradering_v5'];
+  } else if (kod.includes(BLOCK_V2)) {
     kod = bytExakt(kod, BLOCK_V2, BLOCK_V5, 1);
-    return { kod, byten: ['uppgradering_v5'], hoppade: [] };
-  }
-  if (kod.includes(MARK)) {
-    kod = bytExakt(kod, `    ${villkor(false)}    <title>\n`, `    ${villkor(true)}    <title>\n`, 1);
+    byten = ['uppgradering_v5'];
+  } else if (kod.includes(MARK)) {
+    kod = bytExakt(kod, `    ${villkor(false)}    <title>\n`, `    ${VILLKOR_V5}    <title>\n`, 1);
     kod = bytExakt(kod, BLOCK_V1, BLOCK_V5, 1);
-    return { kod, byten: ['uppgradering_v5'], hoppade: [] };
+    byten = ['uppgradering_v5'];
+  } else {
+    kod = bytExakt(kod, '    <title>\n', `    ${VILLKOR_V5}    <title>\n`, 1);
+    kod = bytExakt(kod, '      {{ page_title }}\n',
+      "      {% if ms_egen %}{{ page_title | replace: 'Matstrumpor.se', 'Matstrumpor' }}{% else %}{{ page_title }}{% endif %}\n", 1);
+    kod = bytExakt(kod, '      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}\n',
+      "      {%- if ms_egen -%}{%- unless page_title contains 'Matstrumpor' %} &ndash; Matstrumpor{% endunless -%}{%- else -%}{%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}{%- endif -%}\n", 1);
+    kod = bytExakt(kod, SIDAN, BLOCK_V5, 1);
+    byten = ['villkor', 'titel', 'titelsuffix', 'sidan'];
   }
-  kod = bytExakt(kod, '    <title>\n', `    ${villkor(true)}    <title>\n`, 1);
-  kod = bytExakt(kod, '      {{ page_title }}\n',
-    "      {% if ms_egen %}{{ page_title | replace: 'Matstrumpor.se', 'Matstrumpor' }}{% else %}{{ page_title }}{% endif %}\n", 1);
-  kod = bytExakt(kod, '      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}\n',
-    "      {%- if ms_egen -%}{%- unless page_title contains 'Matstrumpor' %} &ndash; Matstrumpor{% endunless -%}{%- else -%}{%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}{%- endif -%}\n", 1);
-  kod = bytExakt(kod, SIDAN, BLOCK_V5, 1);
-  return { kod, byten: ['villkor', 'titel', 'titelsuffix', 'sidan'], hoppade: [] };
+  // v6: villkoret gäller också alla länder utom Sverige (loggan, namnet och titeln följer med).
+  if (!kod.includes(VILLKOR_V6)) {
+    kod = bytExakt(kod, VILLKOR_V5, VILLKOR_V6, 1);
+    byten.push('utland_v6');
+  }
+  return { kod, byten, hoppade: [] };
+}
+
+/** Bara för testerna: version 5 av layoutpatchen (live 2026-09-29 eftermiddag, bara egen domän). */
+export function patchaLayoutV5(kod) {
+  return patchaLayout(kod).kod.replace(VILLKOR_V6, VILLKOR_V5);
 }
 
 /** Bara för testerna: version 4 av layoutpatchen (live 2026-09-29 ~12:00). */
 export function patchaLayoutV4(kod) {
-  return patchaLayout(kod).kod.replace(BLOCK_V5, BLOCK_V4);
+  return patchaLayoutV5(kod).replace(BLOCK_V5, BLOCK_V4);
 }
 
 // Dawns egen finska locale-fil bär e-postfältets text på NAMNfältet i presentkortets mottagarformulär
@@ -247,26 +268,43 @@ export function patchaLayoutV1(kod) {
   return bytExakt(kod, SIDAN, BLOCK_V1, 1);
 }
 
+// v1 (2026-09-29 eftermiddag): bara egen domän. v2 (samma kväll): också alla länder utom Sverige.
+const META_V1 = `  # ${MARK}: egen domän ⇒ "Matstrumpor", aldrig "Matstrumpor.se" (matstrumpor/marknader/domantema.mjs)\n  assign ms_namn = shop.name\n  if ${OM_EGEN}\n`;
+const META_V2 = `  # ${MARK}: egen domän och alla länder utom Sverige ⇒ "Matstrumpor", aldrig "Matstrumpor.se" (matstrumpor/marknader/domantema.mjs)\n  assign ms_namn = shop.name\n  if ${OM_MATSTRUMPOR}\n`;
+
 export function patchaMetaTags(kod) {
-  if (kod.includes(MARK)) return { kod, byten: [], hoppade: ['meta-tags: redan patchad'] };
+  if (kod.includes(META_V2)) return { kod, byten: [], hoppade: ['meta-tags: redan patchad (v2)'] };
+  if (kod.includes(META_V1)) return { kod: bytExakt(kod, META_V1, META_V2, 1), byten: ['utland_v2'], hoppade: [] };
+  if (kod.includes(MARK)) throw new Error('meta-tags: patchen finns men i en okänd version — rör inget');
   // Byter bara när värdet ÄR butiksnamnet (startsidan och sidor utan egen beskrivning). Ett
   // replace på Shopifys färdigkodade text + escape dubbelkodar den ("don&amp;#39;t", mätt på
   // matstrumpor.com 2026-09-29) — därför rörs ingen annan text, och .se får exakt samma rader.
-  kod = bytExakt(kod, '{%- liquid\n', `{%- liquid\n  # ${MARK}: egen domän ⇒ "Matstrumpor", aldrig "Matstrumpor.se" (matstrumpor/marknader/domantema.mjs)\n  assign ms_namn = shop.name\n  if ${OM_EGEN}\n    assign ms_namn = 'Matstrumpor'\n  endif\n`, 1);
+  kod = bytExakt(kod, '{%- liquid\n', `{%- liquid\n${META_V2}    assign ms_namn = 'Matstrumpor'\n  endif\n`, 1);
   kod = bytExakt(kod, '  assign og_description = page_description | default: shop.description | default: shop.name\n',
     '  assign og_description = page_description | default: shop.description | default: shop.name\n  if ms_namn != shop.name\n    if og_title == shop.name\n      assign og_title = ms_namn\n    endif\n    if og_description == shop.name\n      assign og_description = ms_namn\n    endif\n  endif\n', 1);
   kod = bytExakt(kod, '<meta property="og:site_name" content="{{ shop.name }}">', '<meta property="og:site_name" content="{{ ms_namn }}">', 1);
   return { kod, byten: ['namn', 'og_title_og_description', 'og_site_name'], hoppade: [] };
 }
 
-export function patchaHeader(kod) {
-  if (kod.includes(MARK)) return { kod, byten: [], hoppade: ['header: redan patchad'] };
-  const topp = `{%- comment -%} ${MARK}: loggan utan ".SE" på egen domän (.no/.eu/.com), bilden ligger i Files som ${LOGGA_FIL} {%- endcomment -%}
+// v1 (2026-09-29 eftermiddag): bara egen domän. v2 (samma kväll): också alla länder utom Sverige.
+const HEADER_V1 = `{%- comment -%} ${MARK}: loggan utan ".SE" på egen domän (.no/.eu/.com), bilden ligger i Files som ${LOGGA_FIL} {%- endcomment -%}
 {%- liquid
   assign ms_logga = settings.logo
   assign ms_logga_alt = settings.logo.alt | default: shop.name
   if ${OM_EGEN}
-    if images['${LOGGA_FIL}'] != blank
+`;
+const HEADER_V2 = `{%- comment -%} ${MARK}: loggan utan ".SE" på egen domän (.no/.eu/.com) och i alla länder utom Sverige, bilden ligger i Files som ${LOGGA_FIL} {%- endcomment -%}
+{%- liquid
+  assign ms_logga = settings.logo
+  assign ms_logga_alt = settings.logo.alt | default: shop.name
+  if ${OM_MATSTRUMPOR}
+`;
+
+export function patchaHeader(kod) {
+  if (kod.includes(HEADER_V2)) return { kod, byten: [], hoppade: ['header: redan patchad (v2)'] };
+  if (kod.includes(HEADER_V1)) return { kod: bytExakt(kod, HEADER_V1, HEADER_V2, 1), byten: ['utland_v2'], hoppade: [] };
+  if (kod.includes(MARK)) throw new Error('header: patchen finns men i en okänd version — rör inget');
+  const topp = `${HEADER_V2}    if images['${LOGGA_FIL}'] != blank
       assign ms_logga = images['${LOGGA_FIL}']
       assign ms_logga_alt = 'Matstrumpor'
     endif
@@ -495,7 +533,9 @@ async function huvud() {
   const okFor = (n) => (n.filename === 'templates/product.json' ? n.body.content.includes('ms_omdomen_no')
     : n.filename === 'locales/fi.json' ? n.body.content.includes(FI_RATT)
       : MOMSFILER.includes(n.filename) ? n.body.content.includes(MOMS_MARK)
-        : n.filename === 'layout/theme.liquid' ? n.body.content.includes(BLOCK_V5) : n.body.content.includes(MARK));
+        : n.filename === 'layout/theme.liquid' ? n.body.content.includes(BLOCK_V5) && n.body.content.includes(VILLKOR_V6)
+          : n.filename === 'sections/header.liquid' ? n.body.content.includes(HEADER_V2)
+            : n.filename === 'snippets/meta-tags.liquid' ? n.body.content.includes(META_V2) : n.body.content.includes(MARK));
   let las;
   for (let forsok = 1; forsok <= 3; forsok++) {
     las = await k.graphql(`query($id: ID!, $f: [String!]) { theme(id: $id) { files(filenames: $f, first: 20) { nodes { filename body { ... on OnlineStoreThemeFileBodyText { content } } } } } }`, { id: temaId, f: ut.map((x) => x.filename) });
