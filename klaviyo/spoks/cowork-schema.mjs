@@ -116,7 +116,7 @@ MOTTAGARNA.
 Varje mejl går till EXAKT ett segment, och det heter exakt som i listan, tecken för tecken: ${anvanda.join(', ')}.
 Det finns segment med nästan samma namn. Välj ALDRIG något av de här: ${forvaxla.join(', ')}.
 Lägg inte till något under "exkludera" eller liknande. Står ett annat segment redan i fältet: ta bort det så att bara listans segment står kvar.
-"Smart sending" ska vara AV på varje mejl. Med den på hoppar Spoks över alla som fått ett mejl de senaste 24 timmarna, och mejlen går ut varje dag kl 18, så den stryker nästan alla mottagare.
+"Smart sending" ska vara AV (rutan tom) på varje mejl. Med den på hoppar Spoks över alla som fått ett mejl de senaste 24 timmarna, och mejlen går ut varje dag kl 18, så den skulle stryka nästan alla mottagare.
 Visar Spoks en ruta om uppvärmning (warm-up, "I'll handle warmup manually" eller liknande): välj ingenting i rutan. Stanna och fråga mig, det är mitt beslut.
 
 SÅ HÄR GÖR DU MED VARJE MEJL, i listans ordning:
@@ -124,11 +124,11 @@ SÅ HÄR GÖR DU MED VARJE MEJL, i listans ordning:
   2. Kontrollera att ämnesraden stämmer med listan (och koden, om du ser titeln). Stämmer det inte: gör ingenting med mejlet, skriv det i rapporten och ta nästa.
   3. Står det redan "Schemalagd kampanj" med ett pill "Kommer att publiceras …": ändra ingenting. Stämmer datum, klockslag och "Till:" med listan, skriv "redan schemalagd" i rapporten. Stämmer något inte, skriv exakt vad det står i rapporten. Ta nästa.
   4. Klicka i fältet "Till:" (på engelska "To:") och välj listans segment. Kontrollera att bara det står där.
-  5. Klicka på "TITTA IGENOM" (på engelska "REVIEW"). Schemalägg aldrig utan att ha varit på granskningssidan: då publiceras mejlet på webben utan att någon får det.
-  6. På granskningssidan: kontrollera ämnesraden och förhandstexten. Stäng av "Smart sending" (på svenska kanske "Smart sändning"). Kontrollera att antalet beräknade mottagare inte är 0.
+  5. Klicka på "TITTA IGENOM" (på engelska "REVIEW").
+  6. På granskningssidan: kontrollera ämnesraden och förhandstexten, att rutan "Smart sending" är tom (av), och att "… beräknas skickas" visar fler än 0. Är det 0: tryck inte vidare, skriv det i rapporten och ta nästa.
   7. Klicka på "Planera" (på engelska "Schedule") längst ner på granskningssidan, välj datum och klockslag exakt som i listan och tryck "Tillämpa". Tryck aldrig "Publicera nu".
-  8. Kontrollera resultatet: överst ska det stå "Schemalagd kampanj" och pillret ska säga "Kommer att publiceras <dag> <datum> kl <tid> …" med listans datum och klockslag, och "Till:" ska visa listans segment. Är tiden fel: rätta den med pennan bredvid pillret och kontrollera igen. Kan du läsa kampanjen bakom kulisserna: notify ska vara true. Står notify på false går mejlet inte ut: stanna och säg till mig.
-  9. Skriv en rad i rapporten och ta nästa mejl.
+  8. Kontrollera resultatet: överst ska det stå "Schemalagd kampanj" och pillret ska säga "Kommer att publiceras <dag> <datum> kl <tid> …" med listans datum och klockslag, och "Till:" ska visa listans segment. Är tiden fel: rätta den med pennan bredvid pillret och kontrollera igen. Läser du kampanjen bakom kulisserna: notify false och 0 mottagare är normalt på ett schemalagt mejl, Spoks sätter dem när mejlet går ut.
+  9. Skriv en rad i rapporten (med antalet som "… beräknas skickas" visade) och ta nästa mejl.
 Heter en knapp något annat än jag skrivit: leta på samma ställe, det är samma sak. Är du osäker på om en knapp skickar direkt: tryck inte, stanna och fråga mig.
 Svarar Spoks med ett fel eller "försök igen": vänta en minut och försök en gång till. Går det inte då heller: stanna och skriv vid vilket mejl du stannade.
 
@@ -143,6 +143,9 @@ Rapportera sedan till mig i en tabell, en rad per mejl: kod | Till | datum och k
 }
 
 // Jämför facit med ett search_campaigns-svar. Utfall per rad: ok, eller vad som skiljer.
+// notify och notificationRecipientsCount döms bara på ett PUBLICERAT mejl: på ett schemalagt
+// står de på false/0 tills det går ut (mätt 2026-09-29: CaraShells K01 NB stod
+// waiting_to_be_published med notify false, publicerades 18:00 med notify true och 17 mottagare).
 export function jamfor(facit, svar) {
   const lista = Array.isArray(svar) ? svar : (svar?.campaigns ?? svar?.results ?? []);
   const perId = new Map(lista.map((c) => [c.id, c]));
@@ -153,7 +156,10 @@ export function jamfor(facit, svar) {
     if (!['waiting_to_be_published', 'published'].includes(c.status)) fel.push(`status ${c.status}`);
     const t = c.publishDate ? new Date(c.publishDate).getTime() : NaN;
     if (t !== new Date(r.utc).getTime()) fel.push(`tid ${c.publishDate ?? 'saknas'}, facit ${r.utc}`);
-    if (c.notify !== true) fel.push(`notify ${c.notify}`);
+    if (c.status === 'published') {
+      if (c.notify !== true) fel.push(`publicerad utan utskick (notify ${c.notify})`);
+      if (c.notificationRecipientsCount === 0) fel.push('publicerad till 0 mottagare');
+    }
     return { kod: r.kod, ok: fel.length === 0, fel };
   });
 }

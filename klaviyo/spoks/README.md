@@ -1182,22 +1182,21 @@ webbläsare) gör dem.
   sida, Chrome rapporterade fliken som `hidden`, ingen inloggningssida, inget ändrat). Fliken
   måste ligga överst i ett synligt fönster medan Cowork arbetar. Prompten säger det sedan dess
   och ber Cowork be om hjälp i stället för att gissa.
-- ⛔ **V01 schemalades första gången UTAN utskick** (Cowork 2026-09-29 ~20:30 CEST; mätt 20:4x med
-  `search_campaigns`: `waiting_to_be_published`, `2026-09-30T16:00Z`, **`notify: false`**,
-  `notificationRecipientsCount: 0`). K01 samma kväll: `published`, `notify: true`, **2 990 mottagare**.
-  Coworks väg var "Till:" (SEG_samtycke stod redan där) → **"Planera"** → datum och tid →
-  **"Tillämpa"** (appens svenska knappnamn, avlästa av Cowork; "Publicera nu" finns bredvid och rördes
-  aldrig). Spoks hjälpartikel *Scheduling an email campaign* (help.spoks.com/en/articles/13563019,
-  läst samma kväll): mottagarna överst → **Review** → kontrollera ämnesrad och förhandstext →
-  **Schedule längst ner på granskningssidan**, och *"With smart sending on, contacts who received any
-  marketing email in the last 24 hours, from a campaign or a flow, are left out, so a list you emailed
-  less than 24 hours ago can show 0 recipients."* Hela SEG_samtycke fick K01 två timmar innan V01
-  schemalades, så granskningssidan borde ha visat 0 mottagare. **Sessionens beslut: Smart sending AV
-  på varje kampanj i serien** (Axels order är ett mejl om dagen till de aktiva, alltid kl 18, och
-  24-timmarsregeln stryker då nästan alla varannan dag; stoppregeln `LARM_LEVERANS` är skyddet).
-  Prompten kräver sedan dess granskningssidan, Smart sending av, mottagare > 0 och `notify: true` efter
-  varje mejl. Orsaken till `notify: false` är en slutsats ur hjälptexten, inte mätt i appen: mät om
-  efter V01:s omschemaläggning.
+- ✅ **`notify: false` på ett SCHEMALAGT mejl är normalt — rättat samma kväll.** Efter Coworks första
+  mejl läste sessionen V01 (`search_campaigns` 2026-09-29 ~20:4x CEST): `waiting_to_be_published`,
+  `2026-09-30T16:00Z`, `notify: false`, `notificationRecipientsCount: 0`, och drog slutsatsen att V01
+  inte skulle mejlas, med Smart sending som trolig orsak. **Båda delarna var fel.** Cowork hade gått
+  rätt väg ("Till:" SEG_samtycke → "TITTA IGENOM" → Smart sending-rutan tom, "2971 beräknas skickas" →
+  **"Planera"** → datum och tid → **"Tillämpa"**; "Publicera nu" rördes aldrig), och CaraShells K01 NB,
+  som stod på `notify: false` efter tre omschemaläggningar 14:14–14:35, **publicerades 18:00 med
+  `notify: true` och 17 mottagare** (mätt med `search_campaigns` i CaraShells yta samma kväll; sv 38,
+  da 13, en 92). Spoks sätter alltså `notify` och mottagarantalet när mejlet går ut. Domen fälls därför
+  bara på ett PUBLICERAT mejl (`cowork-schema.mjs --jamfor`: publicerat utan `notify` eller till 0
+  mottagare = fel; schemalagt = bara status och tid). Prompten kräver granskningssidan, Smart sending
+  av (rutan tom), "… beräknas skickas" över 0 och "Planera" → "Tillämpa". Smart sending är av på
+  varje mejl (sessionens beslut: 24-timmarsregeln skulle stryka de aktiva varannan dag i en serie som
+  går kl 18 varje dag). Hjälpartikeln *Scheduling an email campaign*
+  (help.spoks.com/en/articles/13563019) beskriver samma väg: mottagare → Review → Schedule längst ner.
 - **Stoppregeln läses varje morgon** av rutinen `trig_0184cEo3qqjRg5GxemevSEYf` (08:38 svensk tid,
   `CRON_TZ=Europe/Stockholm`, i den här sessionen, sedd i svaret från `create_trigger` 2026-09-29):
   gårdagens utskick mot `LARM_LEVERANS`, och `notify` på de närmaste 48 timmarnas mejl. Tyst utom

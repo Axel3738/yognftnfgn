@@ -76,11 +76,12 @@ test('promptText: länk, publik och tid per mejl, förväxlingsbara segment, ald
   assert.match(text, /Skicka aldrig något direkt/);
   // Mätt 2026-09-29: Cowork fick en vit sida, Spoks ritar inte i en dold flik.
   assert.match(text, /Är sidan helt vit/);
-  // Mätt 2026-09-29: V01 schemalades med notify false (0 mottagare) — granskningssidan,
-  // Smart sending av och notify-kollen är obligatoriska steg.
-  assert.match(text, /Stäng av "Smart sending"/);
+  // Mätt 2026-09-29: granskningssidan, Smart sending av och mottagare > 0 är obligatoriska steg,
+  // och notify false på ett schemalagt mejl är normalt (får inte stoppa Cowork).
+  assert.match(text, /rutan "Smart sending" är tom/);
   assert.match(text, /"Planera" \(på engelska "Schedule"\) längst ner på granskningssidan/);
-  assert.match(text, /notify ska vara true/);
+  assert.match(text, /notify false och 0 mottagare är normalt på ett schemalagt mejl/);
+  assert.ok(!/notify ska vara true/.test(text));
   // Förväxlingslistan: arbetsytans andra segment och Spoks egna, aldrig ett segment listan använder.
   const aldrigRad = text.split('\n').find((r) => r.startsWith('Det finns segment med nästan samma namn'));
   assert.match(aldrigRad, /SEG_engagerade_90d/);
@@ -90,16 +91,17 @@ test('promptText: länk, publik och tid per mejl, förväxlingsbara segment, ald
   assert.ok(!/[–—]/.test(text));
 });
 
-test('jamfor: schemalagd, rätt tid och notify true; allt annat pekas ut', () => {
+test('jamfor: schemalagd med rätt tid är ok även med notify false; publicerad kräver utskick', () => {
   const { rader } = schemaRader({ kampanjer: KAMPANJER, spoks: SPOKS, fran: '2026-09-30' });
+  // Så såg V01 ut 2026-09-29 20:4x och CaraShells K01 NB före 18:00: schemalagd, notify false, 0.
   const svar = { campaigns: [
-    { id: 'p-v01', status: 'waiting_to_be_published', publishDate: '2026-09-30T16:00:00.000Z', notify: true },
-    { id: 'p-fd18', status: 'waiting_to_be_published', publishDate: '2026-10-23T07:00:00Z', notify: false },
+    { id: 'p-v01', status: 'waiting_to_be_published', publishDate: '2026-09-30T16:00:00.000Z', notify: false, notificationRecipientsCount: 0 },
+    { id: 'p-fd18', status: 'published', publishDate: '2026-10-23T07:00:00Z', notify: false, notificationRecipientsCount: 0 },
     { id: 'p-fd20', status: 'draft', publishDate: null, notify: false },
   ] };
   const ut = jamfor(rader, svar);
   assert.deepEqual(ut.map((r) => [r.kod, r.ok]), [['V01', true], ['FD18', false], ['FD20', false], ['K05', false]]);
-  assert.deepEqual(ut[1].fel, ['notify false']);
-  assert.equal(ut[2].fel.length, 3);
+  assert.deepEqual(ut[1].fel, ['publicerad utan utskick (notify false)', 'publicerad till 0 mottagare']);
+  assert.deepEqual(ut[2].fel, ['status draft', 'tid saknas, facit 2026-10-25T17:00:00.000Z']);
   assert.deepEqual(ut[3].fel, ['finns inte i svaret']);
 });
