@@ -1,0 +1,134 @@
+{
+ "segment": [
+  {
+   "a": 0,
+   "b": 4.62,
+   "sv": "Det här är typ den perfekta balansen mellan helt praktiskt och helt oväntat.",
+   "text": "C'est un peu l'équilibre parfait entre hyper pratique et totalement inattendu."
+  },
+  {
+   "a": 4.7,
+   "b": 7.78,
+   "sv": "Men efter jag gav dem till min mamma fattade jag tre grejer.",
+   "text": "Mais après les avoir offertes à ma mère, j'ai compris trois choses."
+  },
+  {
+   "a": 8.18,
+   "b": 9.74,
+   "sv": "Ett: de är helt enkelt unika.",
+   "text": "Un : elles sont vraiment uniques."
+  },
+  {
+   "a": 9.88,
+   "b": 12.9,
+   "sv": "Glöm alla de där tråkiga presenterna som hamnar i en låda.",
+   "text": "Oubliez tous ces cadeaux ennuyeux qui finissent au fond d'un tiroir."
+  },
+  {
+   "a": 13,
+   "b": 14.76,
+   "sv": "Det här är en hel upplevelse.",
+   "text": "Ça, c'est toute une expérience."
+  },
+  {
+   "a": 14.86,
+   "b": 17.86,
+   "sv": "Folk tror alltid att det är riktig sushi när de öppnar lådan.",
+   "text": "On croit toujours voir de vrais sushis en ouvrant la boîte."
+  },
+  {
+   "a": 17.98,
+   "b": 19.72,
+   "sv": "Och sen, vänta, det är strumpor.",
+   "text": "Et là, attendez : des chaussettes !"
+  },
+  {
+   "a": 19.84,
+   "b": 21.88,
+   "sv": "Två: värdet för pengarna är helt absurt.",
+   "text": "Deux : un rapport qualité-prix de fou."
+  },
+  {
+   "a": 22.12,
+   "b": 23.82,
+   "sv": "Det är inte bara fem par strumpor.",
+   "text": "Pas juste cinq paires de chaussettes."
+  },
+  {
+   "a": 23.88,
+   "b": 27.1,
+   "sv": "Det är hög kvalitet, mjukt material och de håller länge.",
+   "text": "La qualité est top, la matière est douce, et elles durent longtemps."
+  },
+  {
+   "a": 27.18,
+   "b": 28.48,
+   "sv": "Plus att de faktiskt används.",
+   "text": "Et on les porte vraiment."
+  },
+  {
+   "a": 28.48,
+   "b": 30.34,
+   "sv": "Ingen present som bara samlar damm.",
+   "text": "Pas un cadeau qui prend la poussière."
+  },
+  {
+   "a": 30.62,
+   "b": 32.5,
+   "sv": "Tre: du gör mottagaren väldigt glad.",
+   "text": "Trois : vous faites un heureux."
+  },
+  {
+   "a": 32.7,
+   "b": 34.52,
+   "sv": "Mamma sa att det var hennes favoritgåva.",
+   "text": "Maman dit que c'est son cadeau préféré."
+  },
+  {
+   "a": 34.64,
+   "b": 36.24,
+   "sv": "Och gissa vad, hon vill redan ha fler.",
+   "text": "Devinez quoi : elle en redemande déjà."
+  },
+  {
+   "a": 36.3,
+   "b": 39.12,
+   "sv": "Det är liksom garanterat att få en reaktion och ett skratt.",
+   "text": "À tous les coups, ça fait réagir et ça fait rire."
+  },
+  {
+   "a": 39.3,
+   "b": 41.94,
+   "sv": "Det är den typen av present där givaren är den smarta.",
+   "text": "Ce genre de cadeau, celui qui l'offre a tout compris."
+  },
+  {
+   "a": 42.02,
+   "b": 44.56,
+   "sv": "Du blir personen som ger de bästa presenterna.",
+   "text": "Vous devenez la personne qui fait les meilleurs cadeaux."
+  },
+  {
+   "a": 44.72,
+   "b": 46.38,
+   "sv": "Alla frågar: var köpte du det här?",
+   "text": "Tout le monde vous demande l'adresse."
+  },
+  {
+   "a": 46.5,
+   "b": 48.48,
+   "sv": "Klicka bara på länken nu och kolla in allt.",
+   "text": "Cliquez vite sur le lien et découvrez tout."
+  }
+ ],
+ "texter": {
+  "hook": "J'ai offert à ma mère le cadeau surprise ultime, mais ensuite j'ai compris...",
+  "rubriker": [
+   "UN : ELLES SONT VRAIMENT UNIQUES",
+   "DEUX : ÇA VAUT LE COUP",
+   "TROIS : VOUS FAITES PLAISIR"
+  ]
+ },
+ "granskad": true,
+ "granskning": "godkänd av infödd granskare i runda 4 (2026-09-29)"
+}
