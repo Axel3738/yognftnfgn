@@ -20,7 +20,7 @@
     },
     {
       "type": "regular",
-      "text": "Du har handlat skor eller tofflor hos oss. Nu kommer kylan, och strumpor hjälper bara en stund.",
+      "text": "Nu kommer kylan på allvar. Sockor håller värmen till slutet av hallen, sedan är det kallt igen.",
       "alignment": "center"
     },
     {
@@ -60,6 +60,17 @@
       "type": "regular",
       "text": "Plysch från häl till tå, så golvets kyla stannar utanför. Hälremmen håller tofflan kvar på foten i trappan, och den öppna modellen har du på dig innan kaffet hunnit brygga. Khaki eller svart, herr 40 till 47.",
       "alignment": "left"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "h1",
+      "text": "TOFFLOR30",
+      "alignment": "center"
+    },
+    {
+      "type": "divider"
     },
     {
       "type": "regular",

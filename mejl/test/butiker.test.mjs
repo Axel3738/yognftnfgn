@@ -180,3 +180,116 @@ test('Bäverbutikens åtta mallar bygger fortfarande utan k.sprak', () => {
   const copy = JSON.parse(readFileSync(join(ROT, 'copy.json'), 'utf8'));
   assert.ok(konfig.erbjudande && !konfig.sprak && !konfig.sparning);
 });
+
+// ---------------------------------------------------------------------------
+// Matstrumpor på tolv språk (2026-09-29): svenska huvudmallen + elva
+// översättningar som registreras i Shopify (mejl/notis-oversattning.mjs).
+// ---------------------------------------------------------------------------
+
+const ALLA_SPRAK = ['nb', 'da', 'fi', 'en', 'de', 'fr', 'nl', 'es', 'it', 'pl', 'pt'];
+
+test('språkfilerna: alla elva bär samma nycklar som en.json, tolv månader och sidans knapp', () => {
+  const en = lasSprak('en');
+  const nycklar = (o) => Object.keys(o).sort();
+  for (const kod of ALLA_SPRAK) {
+    const s = lasSprak(kod);
+    assert.equal(s.kod, kod);
+    assert.deepEqual(Object.keys(s.ord), Object.keys(en.ord), `${kod}: samma ord`);
+    assert.equal(s.manader.length, 12, `${kod}: tolv månader`);
+    for (const m of FRAKTMALLAR) {
+      assert.deepEqual(nycklar(s.mallar[m]), nycklar(en.mallar[m]), `${kod}/${m}: samma nycklar som en`);
+      assert.equal(s.mallar[m].amne.length, 3, `${kod}/${m}: tre ämnesrader`);
+      assert.ok(s.mallar[m].intro.includes('{{ordernummer}}'), `${kod}/${m}: ordernumret`);
+    }
+    assert.ok(s.sidfot.includes('{{support}}'), `${kod}: support i sidfoten`);
+    // Knappen = den knapp spårningssidan hänvisar till ("under knappen …").
+    const sida = JSON.parse(readFileSync(join(ROT, '..', 'sparning', 'sprak', `${kod}.json`), 'utf8'));
+    const hanvisning = Object.entries(sida.ord).find(([sv]) => sv.startsWith('Paketnumret börjar med'))?.[1] ?? '';
+    for (const m of FRAKTMALLAR) assert.ok(hanvisning.includes(s.mallar[m].knapp), `${kod}/${m}: knappen "${s.mallar[m].knapp}" är den sidan hänvisar till`);
+    assert.equal(s.ord['Ditt paketnummer'].trim(), sida.mejl.paketnummer, `${kod}: paketnumrets etikett som på sidan`);
+    // Inga tankstreck som pratpaus (" – ", " — ") i den copy som syns.
+    for (const m of FRAKTMALLAR) {
+      const c = s.mallar[m];
+      for (const t of [c.rubrik, c.intro, c.tysta_dagar ?? '', ...c.amne, ...c.preheader]) assert.ok(!/\s[–—]\s/.test(t), `${kod}/${m}: tankstreck i "${t}"`);
+    }
+  }
+});
+
+test('Matstrumpor: svensk huvudmall utan leveransfönster, elva översättningar med sin språkmapp', () => {
+  const b = byggButik('matstrumpor');
+  assert.equal(b.brand.leveransfonster, false);
+  const frakt = b.liquid.find((m) => m.id === 'fraktbekraftelse').html;
+  assert.ok(!frakt.includes('Beräknad leverans') && !frakt.includes('lev_fran_datum'), 'inget leveransfönster i mejlet som bär länken (Axel 2026-09-21)');
+  assert.ok(frakt.includes('Spårningen visar ofta inget'), 'raden om tyst spårning står kvar');
+  assert.ok(!/Sjöhed/i.test(JSON.stringify(b.liquid)), 'gamla adressen');
+  assert.deepEqual(b.oversattningar.map((o) => o.locale), ['nb', 'da', 'fi', 'en', 'de', 'fr', 'nl', 'es', 'it', 'pl', 'pt-PT']);
+  for (const o of b.oversattningar) {
+    const mapp = o.locale === 'pt-PT' ? 'pt' : o.locale;
+    assert.equal(o.sida, `https://matstrumpor.se/${mapp}/pages/spara`);
+    for (const m of o.mallar) {
+      assert.ok(m.html.startsWith('{% assign fornamn'), `${o.locale}/${m.id}: en hel mall, ingen case`);
+      assert.ok(m.html.includes(`<html lang="${o.kod}">`), `${o.locale}/${m.id}: lang`);
+      assert.ok(m.html.includes(`${o.sida}?nummer=${sparningsKedja('MS-')}`), `${o.locale}/${m.id}: knappen till språkmappen`);
+      assert.ok(!/Beräknad|Estimated delivery|lev_fran_datum/.test(m.html), `${o.locale}/${m.id}: inget leveransfönster`);
+      // "Hej" är också danska — bara de andra språken prövas på det ordet.
+      assert.ok(!/Spåra paketet|Paketet är på väg|I paketet|Levereras till/.test(m.html), `${o.locale}/${m.id}: svensk text kvar`);
+      if (o.kod !== 'da') assert.ok(!m.html.includes('Hej {{ fornamn }}'), `${o.locale}/${m.id}: svensk hälsning kvar`);
+      assert.ok(m.html.includes('kundsupport@matstrumpor.se'), `${o.locale}/${m.id}: support`);
+      assert.equal(rakna(m.html, /\{%\s*if\b/g), rakna(m.html, /\{%\s*endif\b/g), `${o.locale}/${m.id}: if/endif`);
+      assert.ok(!/\{\{(förnamn|ordernummer|leverans_fran|leverans_till|support)\}\}/.test(m.html + m.amne), `${o.locale}/${m.id}: platshållare kvar`);
+      for (const tagg of m.html.match(/\{\{[^}]*\}\}|\{%[^%]*%\}/g) ?? []) assert.ok(!tagg.includes('"'), `${o.locale}/${m.id}: citattecken i Liquid`);
+    }
+  }
+  const es = b.oversattningar.find((o) => o.locale === 'es').mallar[0].html;
+  assert.ok(es.includes('{% if fornamn != blank %}¡Hola, {{ fornamn }}!{% else %}¡Hola!{% endif %}'), 'spanskans egen hälsning');
+});
+
+test('mejl_sprak och mejl_marknader samtidigt stoppar, svenska i mejl_sprak stoppar', async () => {
+  const { byggOversattningar } = await import('../bygg-butik.mjs');
+  const bas = butikIndata('matstrumpor');
+  assert.throws(() => byggOversattningar('matstrumpor', { ...bas, reg: { ...bas.reg, mejl_sprak: [{ locale: 'sv', sprak: 'sv' }] } }), /butikens eget språk/);
+  assert.throws(() => byggOversattningar('matstrumpor', { ...bas, reg: { ...bas.reg, mejl_sprak: [{ locale: 'de', sprak: 'de' }, { locale: 'de', sprak: 'de' }] } }), /två gånger/);
+});
+
+test('notis-oversattning: läget per språk och spärren mot en främmande huvudmall', async () => {
+  const { lageFor, arVarMall, lasFraga, kor } = await import('../notis-oversattning.mjs');
+  const onskat = { title: 'T', body_html: 'B' };
+  assert.equal(lageFor([], onskat), 'saknas');
+  assert.equal(lageFor([{ key: 'title', value: 'Shopify' }, { key: 'body_html', value: 'std' }], onskat), 'annan');
+  assert.equal(lageFor([{ key: 'title', value: 'T' }, { key: 'body_html', value: 'B', outdated: true }], onskat), 'inaktuell');
+  assert.equal(lageFor([{ key: 'title', value: 'T' }, { key: 'body_html', value: 'B', outdated: false }], onskat), 'lika');
+  const reg = { prefix: 'MS-', handle: 'spara' };
+  assert.ok(arVarMall(`x ${sparningsKedja('MS-')} /pages/spara?nummer= y`, reg));
+  assert.ok(!arVarMall('{% assign buyer_email_rtl = false %} Shopifys standard', reg));
+  assert.ok(lasFraga(['pt-PT']).includes('l_pt_PT: translations(locale: "pt-PT")'));
+
+  // Mot en låtsasklient: torrt skriver inget, skarpt registrerar och läser tillbaka.
+  const b = byggButik('matstrumpor');
+  const lager = {};
+  const anrop = [];
+  const huvud = b.liquid.find((m) => m.id === 'fraktbekraftelse').html;
+  const klient = {
+    graphql: async (q, v) => {
+      anrop.push(q.startsWith('mutation') ? 'mutation' : 'query');
+      if (q.startsWith('mutation')) {
+        for (const t of v.t) (lager[`${v.id}|${t.locale}`] ??= []).push({ key: t.key, value: t.value, outdated: false });
+        return { translationsRegister: { userErrors: [], translations: [] } };
+      }
+      const r = { resourceId: v.id, translatableContent: [{ key: 'title', value: 'x', digest: 'd1' }, { key: 'body_html', value: huvud, digest: 'd2' }] };
+      for (const o of b.oversattningar) r[`l_${o.locale.replace(/[^a-z0-9]/gi, '_')}`] = lager[`${v.id}|${o.locale}`] ?? [];
+      return { translatableResource: r };
+    },
+  };
+  const torr = await kor('matstrumpor', { klient, logg: () => {} });
+  assert.ok(!anrop.includes('mutation'), 'torrt skriver inget');
+  assert.equal(torr.mallar.fraktbekraftelse.sprak.de.fore, 'saknas');
+  const skarp = await kor('matstrumpor', { klient, skarpt: true, logg: () => {} });
+  assert.equal(skarp.fel, 0);
+  assert.equal(skarp.mallar.fraktbekraftelse.sprak['pt-PT'].efter, 'lika');
+  anrop.length = 0;
+  const igen = await kor('matstrumpor', { klient, skarpt: true, omInaktuell: true, logg: () => {} });
+  assert.ok(!anrop.includes('mutation'), '--om-inaktuell gör inget när allt redan är vårt');
+  assert.equal(igen.mallar.ute_for_leverans.registrerade.length, 0);
+  const framling = { graphql: async (q, v) => ({ translatableResource: { resourceId: v.id, translatableContent: [{ key: 'title', value: 'x', digest: 'a' }, { key: 'body_html', value: 'Shopifys standard', digest: 'b' }] } }) };
+  await assert.rejects(() => kor('matstrumpor', { klient: framling, skarpt: true, logg: () => {} }), /inte vår/);
+});

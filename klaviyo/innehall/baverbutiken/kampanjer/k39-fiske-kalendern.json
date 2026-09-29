@@ -1,13 +1,13 @@
 {
   "id": "k39-fiske-kalendern",
-  "namn": "MAIL_20261005_Rodholder_S_1_kopare-fiske_solution_ett-drag-om-dagen_v1",
-  "memo": "Skräddarsytt rea-mejl till fiskeköparna. Hypotes: kalendern är nyheten för den som redan har spöhållaren, och 30 % med slutdag gör december-köpet till ett oktober-köp; mätt på köp per mottagare och andelen kalendrar. Axel 2026-09-29: 30 % på fiskegrejer, där vi har fiskekalendern med. FISKE30 gäller till och med torsdag 8 oktober på kalendern och sex fiskegrejer. Spöhållaren är inte hero, eftersom många i gruppen redan har den.",
+  "namn": "MAIL_20261005_Rodholder_S_1_tier1-kopare-fiske_solution_ett-drag-om-dagen_v2",
+  "memo": "Fiskerea brett (Axels order 2026-09-29: \"samma gäller för tofflor och liknande, vi ska ju skicka till alla våra kunder\"; v1 gick bara till fiskeköparna). Publiken är Fiskerean 5/10: Warmup tier 1 plus fiskeköparna, utan husvagnsköparna som får husvagnsmejlet samma dag. Hypotes: kalendern är nyheten, och 30 % med slutdag gör december-köpet till ett oktober-köp; mätt på köp per mottagare, köpare mot icke-köpare, och andelen kalendrar. Axel 2026-09-29: 30 % på fiskegrejer, där vi har fiskekalendern med. FISKE30 gäller till och med torsdag 8 oktober på kalendern och sex fiskegrejer. Spöhållaren är inte hero, eftersom många av fiskeköparna redan har den.",
   "taggar": {
     "typ": "S",
     "kalla": "egen-data",
-    "kalla_ref": "segmentet Köpare fiske 2026-09-29",
+    "kalla_ref": "segmentet Fiskerean 5/10 (Warmup tier 1 + Köpare fiske, utan Köpare husvagn & husbil) 2026-09-29",
     "lardom": null,
-    "avatar": "den som köpt fiskegrejer av oss",
+    "avatar": "den som fiskar",
     "begar": "nya drag och ordning på grejerna",
     "awareness": "solution",
     "urgency": "pris + slutdag (8 oktober)",
@@ -95,7 +95,7 @@
   ],
   "planerad": "2026-10-05T18:00:00+02:00",
   "segment": [
-    "Köpare fiske"
+    "Fiskerean 5/10"
   ],
   "exkludera": [],
   "status_plan": "klar",

@@ -5,6 +5,14 @@
   "farg_svart": "#121212",
   "farg_ram": "#e4dbc9",
   "farg_ram_comment": "Temats cream-bakgrund (243,237,226) ett steg mörkare, så ramen syns mot vitt.",
+  "leveransfonster": false,
+  "leveransfonster_comment": "Ingen 'Beräknad leverans'-ruta i fraktbekräftelsen (2026-09-29): Axels order 2026-09-21 — leveransfönstret skrivs aldrig i ett mejl som bär spårningslänken, spårningssidan visar det själv. Mallen som låg live sedan 2026-09-21 bar rutan; den nya svenska mallen klistras in via COWORK-PROMPT.md.",
+  "shopify_mallar": {
+    "fraktbekraftelse": "gid://shopify/EmailTemplate/126064296275",
+    "fraktuppdatering": "gid://shopify/EmailTemplate/126064361811",
+    "ute_for_leverans": "gid://shopify/EmailTemplate/126064427347"
+  },
+  "shopify_mallar_comment": "Notisernas id i Shopify, avlästa 2026-09-29 ur translatableResources(resourceType: EMAIL_TEMPLATE): de tre enda med vår titel ('Ditt paket är på väg', 'Ny info om ditt paket', 'Paketet kommer idag') och kroppen tecken för tecken lika med mallarna i mejl/output/butiker/matstrumpor/ (10 305 / 6 153 / 6 142). notis-oversattning.mjs registrerar översättningarna på just de id:na och vägrar om huvudmallen inte längre är vår.",
   "font_rubrik": "'Trebuchet MS',Verdana,Arial,sans-serif",
   "font_rubrik_comment": "Reservstacken när webbfonten inte laddas (Gmail, Outlook): närmaste rundade systemfont. Fraktmejlen (mejl/) och spårningssidan använder bara den här raden.",
   "font_webb": {

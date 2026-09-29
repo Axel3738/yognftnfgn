@@ -169,6 +169,17 @@
       "productsPerRow": 3
     },
     {
+      "type": "divider"
+    },
+    {
+      "type": "h1",
+      "text": "KALENDER30",
+      "alignment": "center"
+    },
+    {
+      "type": "divider"
+    },
+    {
       "type": "regular",
       "text": "Koden KALENDER30 ger 30 % på alla fjorton kalendrar till och med måndag 12 oktober. Tryck på knappen så ligger koden redan i kassan, eller skriv in den själv. Rabatten dras i kassan, en gång per kund, på priset som står på produktsidan.",
       "alignment": "left"

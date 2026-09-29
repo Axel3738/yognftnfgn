@@ -1,0 +1,43 @@
+{
+  "comment": "Tyska för Matstrumpors fraktmejl (Tyskland, Österrike, Schweiz m.fl.). Skriven av en sonnet-subagent 2026-09-29 mot sv-källan och butikens egna ord; knappen och tilltalet (du) är låsta mot spårningssidan.",
+  "kod": "de",
+  "ord": {
+    "Hej": "Hallo",
+    "I paketet": "Im Paket",
+    "Levereras till": "Lieferung an",
+    "Antal": "Menge",
+    "Ditt paketnummer": "Deine Paketnummer",
+    "Klicka på knappen ovan så visas ditt paket direkt.": "Klick auf den Button oben, dann siehst du dein Paket sofort."
+  },
+  "manader": ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"],
+  "dagsuffix": ".",
+  "menyrad": "Paket verfolgen",
+  "sidfot": "Fragen zu deiner Bestellung? Antworte auf diese E-Mail oder schreib an {{support}}.",
+  "mallar": {
+    "fraktbekraftelse": {
+      "amne": ["Dein Paket ist unterwegs", "{{ordernummer}} hat das Lager verlassen", "Jetzt auf dem Weg zu dir"],
+      "preheader": ["Hier ist dein Tracking-Link.", "Schau im Spam-Ordner nach, falls die Mail fehlt."],
+      "rubrik": "Dein Paket ist unterwegs!",
+      "intro": "Deine Bestellung {{ordernummer}} hat das Lager verlassen und ist auf dem Weg zu dir.",
+      "knapp": "Paket verfolgen",
+      "tips": "Der Sendungsstatus kann 2–4 Tage unverändert bleiben, während das Paket zum Flughafen unterwegs ist. Das ist völlig normal. Schau danach noch einmal nach.",
+      "beraknad_rubrik": "Voraussichtliche Lieferung",
+      "beraknad": "{{leverans_fran}}–{{leverans_till}}",
+      "tysta_dagar": "Die Sendungsverfolgung zeigt in den ersten 2–4 Tagen oft noch nichts an. Das Paket ist auf dem Weg zum Flughafen und nicht verloren gegangen. Du musst nichts tun: Sobald es eingecheckt ist, wird der Status aktualisiert."
+    },
+    "fraktuppdatering": {
+      "amne": ["Neues zu deinem Paket", "Tracking wurde aktualisiert", "Update: {{ordernummer}}"],
+      "preheader": ["So ist der aktuelle Stand.", "Hier siehst du die neuesten Angaben."],
+      "rubrik": "Das Tracking wurde aktualisiert",
+      "intro": "Die Tracking-Angaben zu deiner Bestellung {{ordernummer}} wurden aktualisiert.",
+      "knapp": "Paket verfolgen"
+    },
+    "ute_for_leverans": {
+      "amne": ["Dein Paket kommt heute", "Jetzt in der Zustellung", "{{ordernummer}} wird heute geliefert"],
+      "preheader": ["Halte im Lauf des Tages Ausschau.", "Bald im Briefkasten oder im Paketshop."],
+      "rubrik": "Dein Paket kommt heute",
+      "intro": "Deine Bestellung {{ordernummer}} ist in der Zustellung und kommt im Lauf des Tages bei dir an.",
+      "knapp": "Paket verfolgen"
+    }
+  }
+}

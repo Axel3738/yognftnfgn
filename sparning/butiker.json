@@ -160,6 +160,64 @@
    "pt"
   ],
   "sprak_extra_comment": "Marknaderna Norge, Europa (DK+FI) och USA/UK/AU/CA/NZ byggda 2026-09-27 (matstrumpor/marknader/) — sidan byter språk på dokumentets lang (/nb, /da, /fi, /en) precis som CaraShell. Texterna ur sparning/sprak/<kod>.json.",
+  "mejl_sprak": [
+   {
+    "locale": "nb",
+    "sprak": "nb",
+    "mapp": "nb"
+   },
+   {
+    "locale": "da",
+    "sprak": "da",
+    "mapp": "da"
+   },
+   {
+    "locale": "fi",
+    "sprak": "fi",
+    "mapp": "fi"
+   },
+   {
+    "locale": "en",
+    "sprak": "en",
+    "mapp": "en"
+   },
+   {
+    "locale": "de",
+    "sprak": "de",
+    "mapp": "de"
+   },
+   {
+    "locale": "fr",
+    "sprak": "fr",
+    "mapp": "fr"
+   },
+   {
+    "locale": "nl",
+    "sprak": "nl",
+    "mapp": "nl"
+   },
+   {
+    "locale": "es",
+    "sprak": "es",
+    "mapp": "es"
+   },
+   {
+    "locale": "it",
+    "sprak": "it",
+    "mapp": "it"
+   },
+   {
+    "locale": "pl",
+    "sprak": "pl",
+    "mapp": "pl"
+   },
+   {
+    "locale": "pt-PT",
+    "sprak": "pt",
+    "mapp": "pt"
+   }
+  ],
+  "mejl_sprak_comment": "Fraktmejlen på kundens språk (2026-09-29): en hel mall per rad, registrerad som Shopifys EGEN översättning av notisen (EMAIL_TEMPLATE, title + body_html) med node mejl/notis-oversattning.mjs matstrumpor. Shopify skickar notisen på det språk kunden handlade på — orderns språk, inte leveranslandet (Belgien/Schweiz har flera språk). locale = Shopifys språkkod (pt-PT), sprak = mejl/sprak/<kod>.json, mapp = URL-mappen på matstrumpor.se (/pt, inte /pt-pt) — knappen går till matstrumpor.se/<mapp>/pages/spara?nummer=MS-…, som bär alla tolv språk i alla marknader (mätt i webPresences 2026-09-29). Svenska är huvudmallen och klistras in för hand.",
   "land": "Sverige",
   "landskod": "SE",
   "support": "kundsupport@matstrumpor.se",

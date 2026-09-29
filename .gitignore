@@ -160,3 +160,4 @@ matstrumpor/marknader/annonser/klar/*.rutor.json
 # Matstrumpors egna videor: källorna och renderingarna ligger inte i repot
 matstrumpor/marknader/egna/kalla/
 matstrumpor/marknader/egna/ut/
+mejl/output/butiker/*/lankkoll/

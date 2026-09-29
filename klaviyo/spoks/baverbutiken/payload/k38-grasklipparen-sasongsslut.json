@@ -20,7 +20,7 @@
     },
     {
       "type": "regular",
-      "text": "Du har handlat till klipparen eller trimmern hos oss. Nu är säsongen slut, och vintern har gott om tid att jobba på det som står oskyddat.",
+      "text": "Klipparen och trimmern jobbade hela sommaren. Nu är säsongen slut, och vintern får jobba på det som står oskyddat.",
       "alignment": "center"
     },
     {
@@ -81,6 +81,17 @@
     {
       "type": "list",
       "text": "Har du åkgräsklippare träs sätesöverdraget över dynan och håller sätet torrt även efter regn."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "h1",
+      "text": "GRAS30",
+      "alignment": "center"
+    },
+    {
+      "type": "divider"
     },
     {
       "type": "regular",
