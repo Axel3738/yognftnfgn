@@ -219,6 +219,18 @@ temat på hans ok — `/abtest`: rör inte temat utan ok). B:s lucka på
 pizza-/hamburgare-/donutsidan står kvar och gör att B aldrig ska bli
 permanent i sin nuvarande form.
 
+**⛔ Testet AVSTÄNGT 2026-09-29 — Axels beslut ("stäng av AB-testet så alla ser A").**
+Sessionen ändrade EN rad i det publicerade temats `config/settings_data.json`
+(`Matstrumpor CRO + storleksrad 2026-09-17`, `gid://shopify/OnlineStoreTheme/207180890451`,
+butik 1r46tp-qx, via `themeFilesUpsert` med appen Fabriken): `"ms_ab_tests":
+"sortval"` → `"# sortval"` (en rad som börjar med `#` hoppas av `ms-head.liquid`).
+Tillbakaläst: bara den raden ändrad. Publika sidan: `"tests": []`, B-blocket
+`hidden`, A synligt. Chromium som kund: ny besökare ser A, och en besökare med
+gamla kakan `ms_ab_sortval=b` ser också A (`ms-ab.js` rör inte element för
+ett avstängt test). Nya ordrar får ingen `AB sortval`-stämpel. Slå på igen =
+ta bort `# ` i samma inställning. B-koderna `STRUMPOR-K1F1-P*`/`K2F2-P*` ligger
+kvar i Shopify men visas inte längre någonstans.
+
 ---
 
 ## 2026-09-27 — rond 3: 0 etiketter, 0 lärdomar, 0 briefer, 4 förslag — och namnkrocken rättad
