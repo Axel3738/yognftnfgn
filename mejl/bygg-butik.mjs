@@ -64,9 +64,12 @@ export function butikIndata(id, { rot = ROT, register = undefined, sprakKod = nu
       logga_bredd: brand.logga_bredd,
       logga_hojd: brand.logga_hojd,
     },
-    frakt: { leverans_dagar_min: min, leverans_dagar_max: max },
+    // fonster: false ⇒ ingen "Beräknad leverans"-ruta i fraktbekräftelsen
+    // (brandfilens `leveransfonster`, Axels order 2026-09-21: fönstret står
+    // aldrig i ett mejl som bär spårningslänken).
+    frakt: { leverans_dagar_min: min, leverans_dagar_max: max, fonster: brand.leveransfonster !== false },
     sparning: { sida: sida ?? `${reg.url}/pages/${reg.handle}`, prefix: reg.prefix },
-    sprak: { kod: sprak.kod, ord: sprak.ord ?? {}, manader: sprak.manader ?? undefined, dagsuffix: sprak.dagsuffix ?? '' },
+    sprak: { kod: sprak.kod, ord: sprak.ord ?? {}, manader: sprak.manader ?? undefined, dagsuffix: sprak.dagsuffix ?? '', halsning: sprak.halsning ?? undefined },
     // Inget erbjudande: blocket byggs bara när konfigen bär `erbjudande`.
   };
   const copy = {};
@@ -110,14 +113,47 @@ export function byggButik(id, opts = {}) {
       `{% else %}${grund.amne}{% endcase %}`;
     return { ...grund, html, amne, sprak: [bas.sprak.kod, ...varianter.map((v) => v.kod)] };
   });
+  const oversattningar = byggOversattningar(id, bas, opts);
+  if (oversattningar.length && varianter.length) {
+    throw new Error(`${id}: mejl_sprak och mejl_marknader samtidigt — välj en väg (språket per order ELLER landet i en mall).`);
+  }
   const exempel = FRAKTMALLAR.map((m) => byggMall(m, { ...bas, lage: 'exempel' }));
-  const exempelExtra = varianter.flatMap((v) => FRAKTMALLAR.map((m) => ({ ...byggMall(m, { ...v.indata, lage: 'exempel' }), kod: v.kod })));
-  return { ...bas, liquid, exempel, exempelExtra, varianter };
+  const exempelExtra = [
+    ...varianter.flatMap((v) => FRAKTMALLAR.map((m) => ({ ...byggMall(m, { ...v.indata, lage: 'exempel' }), kod: v.kod }))),
+    ...oversattningar.flatMap((o) => FRAKTMALLAR.map((m) => ({ ...byggMall(m, { ...o.indata, lage: 'exempel' }), kod: o.locale }))),
+  ];
+  return { ...bas, liquid, exempel, exempelExtra, varianter, oversattningar };
+}
+
+// En butik med språk i Shopify (registret → mejl_sprak, Matstrumpor sedan
+// 2026-09-29) får en HEL mall per språk, som registreras som Shopifys egen
+// översättning av notisen (translatableResource EMAIL_TEMPLATE, nycklarna
+// title + body_html — mejl/notis-oversattning.mjs). Shopify skickar då
+// notisen på det språk kunden handlade på ("If translations are available
+// for an email notification, then a customer is automatically sent email
+// notifications in the language that they placed their order in",
+// help.shopify.com → Languages → Notifications, läst 2026-09-29). Det är
+// orderns språk, inte leveranslandet — en belgare som handlade på franska
+// får franska. Varje språk länkar till spårningssidan i sin språkmapp.
+export function byggOversattningar(id, bas, opts = {}) {
+  const rader = Array.isArray(bas.reg.mejl_sprak) ? bas.reg.mejl_sprak : [];
+  const sett = new Set();
+  return rader.map((r) => {
+    if (!r.locale || !r.sprak) throw new Error(`${id}: mejl_sprak-rad utan locale eller sprak.`);
+    if (r.sprak === bas.sprak.kod) throw new Error(`${id}: mejl_sprak får inte bära butikens eget språk (${r.sprak}) — det är huvudmallen.`);
+    if (sett.has(r.locale)) throw new Error(`${id}: locale ${r.locale} två gånger i mejl_sprak.`);
+    sett.add(r.locale);
+    const mapp = r.mapp ?? r.sprak;
+    const sida = r.sida ?? `${bas.reg.url}/${mapp}/pages/${bas.reg.handle}`;
+    const indata = butikIndata(id, { ...opts, sprakKod: r.sprak, sida });
+    const mallar = FRAKTMALLAR.map((m) => byggMall(m, { ...indata, lage: 'liquid' }));
+    return { locale: r.locale, kod: r.sprak, sida, indata, mallar };
+  });
 }
 
 // Prompten till Cowork: samma metod som Bäverbutikens (mejl/COWORK-PROMPT.md)
 // — hela mallen byts, verifieras mot serverns mall-data, teckenantal i tecken.
-export function coworkPrompt({ reg, brand, sprak, liquid, copy }) {
+export function coworkPrompt({ reg, brand, sprak, liquid, copy, oversattningar = [] }) {
   const id = reg.id;
   const sida = `${reg.url}/pages/${reg.handle}`;
   const rader = liquid
@@ -208,22 +244,62 @@ ${rader}
 det — id:t i adressfältet är markören: shipment_out_for_delivery är rätt, local_out_for_delivery fel (båda heter "Out for delivery" internt; CaraShell 2026-09-21). Rör inte "Levererad". Talen är tecken, inte byte (å/ä/ö väger två byte i
 Shopifys räknare).
 
-${meny}
+${oversattningar.length ? oversattningsDel(reg, oversattningar) : ''}${meny}
 ### C. Testmejlet
 
 **Leveransbekräftelse** → **Skicka testmejl**. Bara den. Öppna mejlet: en
 enda knapp **${copy.fraktbekraftelse.knapp}**, länken börjar med
 \`${sida}?nummer=${reg.prefix}\`. (Sidan säger att den inte hittar numret för
 testmejlets påhittade spårningsnummer — det är väntat.)
-
+${oversattningar.length ? testmejlPerSprak(reg, oversattningar) : ''}
 ### Rapportera tillbaka
 
 1. Vilka mallar som sparades och verifierades mot servern, teckenantal per mall.
 2. Om kontrolltexten saknades, och i vilken mall.
 ${brand.meny_klar ? '' : '3. Menyerna: vilka två menyer som fick raden, och vad du såg i kundens vy.\n'}${brand.meny_klar ? '3' : '4'}. Testmejlet: gick det, till vilken adress, knappens text.
-${brand.meny_klar ? '4' : '5'}. Allt som såg konstigt ut.
+${oversattningar.length ? `${brand.meny_klar ? '4' : '5'}. Testmejl per språk: vilka språk som gick och vad knappen hette — eller "ingen språkväljare".\n` : ''}${brand.meny_klar ? (oversattningar.length ? '5' : '4') : oversattningar.length ? '6' : '5'}. Allt som såg konstigt ut.
 
 Om Shopify vägrar spara: spara inte om, skriv exakt vad felmeddelandet sa.
+`;
+}
+
+// Översättningarna läggs via API (mejl/notis-oversattning.mjs), inte av
+// Cowork — prompten säger det rakt ut så att ingen klistrar in en
+// översättning i admin (där går bara huvudspråket att redigera).
+function oversattningsDel(reg, oversattningar) {
+  const lista = oversattningar.map((o) => `${o.locale}`).join(', ');
+  return `### Översättningarna (${oversattningar.length} språk) — rör dem inte
+
+Mallarna på ${lista} ligger redan i Shopify som notisernas **översättningar**
+(lagda via API av sessionen, lästa tillbaka). Shopify skickar själv mejlet på
+det språk kunden handlade på. Du klistrar BARA in de svenska mallarna ovan.
+Öppna inte Translate & Adapt och ändra inga översättningar. Att översättningarna
+blir "inaktuella" när du sparat den svenska mallen är väntat — spårningsrutinen
+lägger in dem igen inom en timme.
+
+`;
+}
+
+function testmejlPerSprak(reg, oversattningar) {
+  const rader = oversattningar
+    .map((o) => {
+      const m = o.mallar.find((x) => x.id === 'fraktbekraftelse');
+      const knapp = o.indata.copy.fraktbekraftelse.knapp;
+      return `| ${o.locale} | \`${m.amne}\` | **${knapp}** | \`${o.sida}?nummer=${reg.prefix}\` |`;
+    })
+    .join('\n');
+  return `
+**Testmejl per språk.** Finns det i redigeraren för Leveransbekräftelse en
+språkväljare (förhandsvisning eller testmejl på ett annat språk): skicka ett
+testmejl per språk i tabellen, ett i taget, till butikens egen adress
+**${reg.support}** — aldrig till någon annan. Kontrollera ämnesraden, knappens
+text och att länken börjar som i tabellen. Finns ingen språkväljare: skicka
+inget mer, skriv "ingen språkväljare" i rapporten (sessionen har redan läst
+tillbaka varje språk ur Shopify och provat länkarna som kund).
+
+| Språk | Ämnesrad | Knappen | Länken börjar med |
+|---|---|---|---|
+${rader}
 `;
 }
 
@@ -237,6 +313,14 @@ export function skrivButik(id, { rot = ROT } = {}) {
   }
   for (const m of b.exempel) writeFileSync(join(ut, 'forhandsvisning', `${m.id}.html`), m.html);
   for (const m of b.exempelExtra ?? []) writeFileSync(join(ut, 'forhandsvisning', `${m.id}.${m.kod}.html`), m.html);
+  // Översättningarna (mejl_sprak) — det mejl/notis-oversattning.mjs registrerar i Shopify.
+  for (const o of b.oversattningar ?? []) {
+    mkdirSync(join(ut, 'oversattningar', o.locale), { recursive: true });
+    for (const m of o.mallar) {
+      writeFileSync(join(ut, 'oversattningar', o.locale, `${m.id}.liquid`), m.html);
+      writeFileSync(join(ut, 'oversattningar', o.locale, `${m.id}.amne.txt`), `${m.amne}\n`);
+    }
+  }
   const prompt = coworkPrompt(b);
   writeFileSync(join(ut, 'COWORK-PROMPT.md'), prompt);
   // PROMPT.txt = bara delen under linjen, så Axel kan öppna råfilen, Ctrl+A, Ctrl+C och klistra in i Cowork.

@@ -46,11 +46,16 @@ export function lasArenden(fil = ARENDEFIL, { logg = () => {} } = {}) {
   return ut;
 }
 
-/** Skriver en ny rad (hela ärendet) — aldrig en ändring av en gammal rad. */
+/**
+ * Skriver en ny rad (hela ärendet) — aldrig en ändring av en gammal rad. Förhandsbilderna (`miniatyrer`,
+ * data-URI:er) skrivs ALDRIG i loggen: de bor i arenden/<id>/miniatyrer.json. Mätt 2026-09-29: ORVO:s
+ * 1,7 MB bilder i varje rad gav 22 rader = 35 MB i en fil som committas.
+ */
 export function sparaArende(arende, fil = ARENDEFIL, { nu = new Date().toISOString() } = {}) {
   if (!arende?.id || !arende?.status) throw new Error('sparaArende: ärendet saknar id eller status.');
   mkdirSync(dirname(fil), { recursive: true });
-  const rad = { ...arende, uppdaterad: nu };
+  const { miniatyrer: _bilder, ...utanBilder } = arende;
+  const rad = { ...utanBilder, uppdaterad: nu };
   appendFileSync(fil, `${JSON.stringify(rad)}\n`);
   return rad;
 }

@@ -296,6 +296,17 @@ function sidhuvud(k, s) {
           </tr>`;
 }
 
+// Hälsningen. Standard är "<Hej> <förnamn>!"; ett språk vars hälsning inte
+// går att bygga så (spanska "¡Hola, Ana!", franska "Bonjour Ana !" med hårt
+// mellanslag) bär `halsning: { med_namn: '… {namn} …', utan_namn }` i sin
+// språkfil (infödd granskning 2026-09-29).
+function halsning(k, hej, lage) {
+  const h = k.sprak?.halsning;
+  const med = (namn) => (h ? h.med_namn.replace('{namn}', namn) : `${hej} ${namn}!`);
+  const utan = h ? h.utan_namn : `${hej}!`;
+  return lage === 'liquid' ? `{% if fornamn != blank %}${med('{{ fornamn }}')}{% else %}${utan}{% endif %}` : med(esk(EXEMPEL.fornamn));
+}
+
 function rubrikOchIntro(k, s, rubrik, intro, lage) {
   const o = ordFor(k);
   const hej = o('Hej');
@@ -308,7 +319,7 @@ function rubrikOchIntro(k, s, rubrik, intro, lage) {
           <tr>
             <td align="center" style="padding: 8px 32px 4px;">
               <p style="${s.brod} font-size: 15px; line-height: 1.6; color: ${s.svart}; margin: 0;">
-                ${lage === 'liquid' ? `{% if fornamn != blank %}${hej} {{ fornamn }}!{% else %}${hej}!{% endif %}` : `${hej} ${esk(EXEMPEL.fornamn)}!`}
+                ${halsning(k, hej, lage)}
                 ${lankaMejl(ersatt(intro, lage, LIQUID, { sprak: k.sprak }), k)}
               </p>
             </td>
@@ -920,8 +931,14 @@ export function byggMall(id, { konfig: k, copy, produkter, lage }) {
         // Beräknad leverans med datum + varför spårningen är tyst i början.
         // Inga leveransevent kommer från YunExpress/4PX, så det här mejlet är
         // det enda som sätter förväntningen (Axel 2026-09-18: "fixa det").
-        leveransFonster(s, ers(c.beraknad_rubrik), ers(c.beraknad), ers(c.tysta_dagar)) +
-        stycke(k, s, ers(c.tips), { farg: s.gra, storlek: 13, topp: 8 }) +
+        // Utan fönster (`frakt.fonster: false`, Matstrumpor sedan 2026-09-29):
+        // Axels order 2026-09-21 — leveransfönstret står aldrig i ett mejl
+        // som bär spårningslänken, sidan visar Beräknad leverans själv. Kvar
+        // är raden om att spårningen är tyst de första dagarna.
+        (k.frakt?.fonster === false
+          ? stycke(k, s, ers(c.tysta_dagar), { farg: s.gra, storlek: 13, topp: 12 })
+          : leveransFonster(s, ers(c.beraknad_rubrik), ers(c.beraknad), ers(c.tysta_dagar)) +
+            stycke(k, s, ers(c.tips), { farg: s.gra, storlek: 13, topp: 8 })) +
         erbj +
         litenRubrik(s, o('I paketet'), { topp: 24 }) +
         orderRader(s, lage, 'frakt', k) +
@@ -979,7 +996,11 @@ export function byggMall(id, { konfig: k, copy, produkter, lage }) {
   // Leveransfönstret räknas vid utskick: orderbekräftelsen går vid ordern
   // (lägg på packtiden), fraktmejlet när paketet skickas (ingen packtid).
   const leverans =
-    id === 'orderbekraftelse' ? { packdagar: k.frakt.packas_dagar ?? 2 } : id === 'fraktbekraftelse' ? { packdagar: 0 } : null;
+    id === 'orderbekraftelse'
+      ? { packdagar: k.frakt.packas_dagar ?? 2 }
+      : id === 'fraktbekraftelse' && k.frakt?.fonster !== false
+        ? { packdagar: 0 }
+        : null;
   const html = dokument(k, s, lage, { titel: c.rubrik, preheader: c.preheader[0], rader, paket: paketTimmar, leverans });
   return {
     id,

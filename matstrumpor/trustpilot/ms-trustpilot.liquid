@@ -1,0 +1,129 @@
+{%- comment -%}
+  sections/ms-trustpilot.liquid — skrivs av matstrumpor/trustpilot.mjs --tema, ändra inte i temat.
+  Butikens betyg och omdömen på Trustpilot, ur shop-metafältet matstrumpor.trustpilot
+  (uppdateras av matstrumpor/trustpilot.mjs --skarpt). Två varianter:
+    rad  — en kompakt rad med stjärnor, betyg och antal (högt upp på startsidan)
+    kort — rubrik, betyg och de senaste omdömena som kort
+  Ritas bara när metafältet finns och bär minst ett omdöme. Gratisplanen på
+  Trustpilot släpper inte igenom deras egna widgetar, därför ritar temat självt.
+{%- endcomment -%}
+{%- liquid
+  assign s = section.settings
+  assign d = shop.metafields.matstrumpor.trustpilot.value
+  assign sprak = request.locale.iso_code
+-%}
+{%- if s.visible and d and d.antal > 0 -%}
+  {%- liquid
+    assign profil = d.profil[sprak] | default: d.profil.sv
+    assign etikett = d.etikett[sprak] | default: d.etikett.sv
+    if sprak == 'en'
+      assign poang = d.poang_en
+    else
+      assign poang = d.poang_text
+    endif
+  -%}
+  {%- capture av5 -%}{{{ sprak:av5 }}}{%- endcapture -%}
+  {%- capture las -%}{{{ sprak:las }}}{%- endcapture -%}
+  {%- capture stjarnor_stora -%}
+    <span class="ms-tp__stj" role="img" aria-label="{{ poang }} {{ av5 }}">
+      {%- for i in (1..5) -%}
+        {%- assign fyll = d.stjarnor | minus: i | plus: 1 -%}
+        <span class="ms-tp__box{% if fyll >= 1 %} is-full{% elsif fyll >= 0.5 %} is-half{% endif %}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6l3.3 6.8 7.5 1.1-5.4 5.3 1.3 7.5L12 18.7l-6.7 3.6 1.3-7.5L1.2 9.5l7.5-1.1z"/></svg></span>
+      {%- endfor -%}
+    </span>
+  {%- endcapture -%}
+  {%- capture logga -%}
+    <span class="ms-tp__logga" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 1.6l3.3 6.8 7.5 1.1-5.4 5.3 1.3 7.5L12 18.7l-6.7 3.6 1.3-7.5L1.2 9.5l7.5-1.1z"/></svg>Trustpilot</span>
+  {%- endcapture -%}
+
+  {%- if s.variant == 'rad' -%}
+    {%- render 'ms-trustpilot-rad' -%}
+  {%- else -%}
+    <div class="ms-scope ms-section ms-tp ms-tp--kort">
+      <div class="ms-wrap">
+        <div class="ms-center ms-tp__huvud">
+          <span class="ms-eyebrow">{{{ sprak:eyebrow }}}</span>
+          <h2 class="ms-h2">{{{ sprak:heading }}}</h2>
+          <a class="ms-tp__betyg" href="{{ profil }}" target="_blank" rel="noopener">
+            {{ stjarnor_stora }}
+            <span class="ms-tp__betygtext"><strong>{{ etikett }}</strong> · {{ poang }} {{ av5 }}</span>
+            <span class="ms-tp__antal">{{{ sprak:baserat }}} · {{ logga }}</span>
+          </a>
+        </div>
+        {%- comment -%}
+          Omdömena är skrivna på svenska. Korten ritas bara där kunden läser
+          svenska obehindrat (sv, nb, da); övriga språk får betyget och knappen.
+        {%- endcomment -%}
+        {%- liquid
+          assign visa_kort = false
+          if sprak == 'sv' or sprak == 'nb' or sprak == 'da' or sprak == blank
+            assign visa_kort = true
+          endif
+        -%}
+        {%- if d.omdomen.size > 0 and visa_kort -%}
+          <div class="ms-reviews__grid ms-tp__grid">
+            {%- for o in d.omdomen limit: s.max -%}
+              <article class="ms-review ms-tp__kort">
+                <div class="ms-tp__stj ms-tp__stj--liten" role="img" aria-label="{{ o.stjarnor }} {{ av5 }}">
+                  {%- for i in (1..5) -%}
+                    <span class="ms-tp__box{% if i <= o.stjarnor %} is-full{% endif %}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6l3.3 6.8 7.5 1.1-5.4 5.3 1.3 7.5L12 18.7l-6.7 3.6 1.3-7.5L1.2 9.5l7.5-1.1z"/></svg></span>
+                  {%- endfor -%}
+                </div>
+                {%- if o.rubrik != blank -%}<h3 class="ms-review__title">{{ o.rubrik | escape }}</h3>{%- endif -%}
+                <p class="ms-review__body">{{ o.text | escape }}</p>
+                <div class="ms-review__who ms-tp__vem">
+                  <span><strong>{{ o.namn | escape }}</strong>{% if o.datum != blank %} · {% if sprak == 'sv' %}{{ o.datum_sv }}{% else %}{{ o.datum }}{% endif %}{% endif %}</span>
+                  <a class="ms-tp__lank" href="{{ o.lank }}" target="_blank" rel="noopener">{{ las }}</a>
+                </div>
+              </article>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+        <div class="ms-center ms-tp__fot">
+          <a class="ms-tp__knapp" href="{{ profil }}" target="_blank" rel="noopener">{{{ sprak:knapp }}}</a>
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+
+  <style>
+    .ms-tp { --tp-gron: #00b67a; --tp-gra: #dcdce6; }
+    .ms-tp__stj { display: inline-flex; gap: 3px; vertical-align: middle; }
+    .ms-tp__box { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; background: var(--tp-gra); border-radius: 3px; }
+    .ms-tp__box.is-full { background: var(--tp-gron); }
+    .ms-tp__box.is-half { background: linear-gradient(90deg, var(--tp-gron) 50%, var(--tp-gra) 50%); }
+    .ms-tp__box svg { width: 70%; height: 70%; fill: #fff; }
+    .ms-tp__stj--liten .ms-tp__box { width: 18px; height: 18px; border-radius: 2px; }
+    .ms-tp__logga { display: inline-flex; align-items: center; gap: 4px; font-weight: 700; font-size: var(--ms-fs-sm); color: currentColor; white-space: nowrap; }
+    .ms-tp__logga svg { width: 1.05em; height: 1.05em; fill: var(--tp-gron); }
+    .ms-tp__huvud { margin-bottom: 26px; }
+    .ms-tp__betyg { display: inline-flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 14px; color: inherit; text-decoration: none; }
+    .ms-tp__betyg .ms-tp__box { width: 34px; height: 34px; }
+    .ms-tp__betygtext { font-size: var(--ms-fs-lg); }
+    .ms-tp__antal { font-size: var(--ms-fs-sm); color: var(--ms-ink-soft); display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap; justify-content: center; }
+    .ms-tp__vem { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+    .ms-tp__lank { color: var(--ms-ink-soft); text-decoration: underline; white-space: nowrap; }
+    .ms-tp__fot { margin-top: 26px; }
+    .ms-tp__knapp { display: inline-block; padding: 12px 22px; border: 2px solid currentColor; border-radius: var(--ms-radius-pill); color: inherit; text-decoration: none; font-weight: 700; font-size: var(--ms-fs-sm); }
+    .ms-tp__knapp:hover { background: var(--ms-accent); border-color: var(--ms-accent); color: #fff; }
+  </style>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Trustpilot",
+  "tag": "section",
+  "settings": [
+    { "type": "checkbox", "id": "visible", "label": "Visa sektionen", "default": true,
+      "info": "Bocka ur för att stänga av den utan att ta bort den." },
+    { "type": "select", "id": "variant", "label": "Utseende", "default": "kort",
+      "options": [
+        { "value": "rad", "label": "Kompakt rad (stjärnor, betyg, antal)" },
+        { "value": "kort", "label": "Rubrik, betyg och omdömen som kort" }
+      ] },
+    { "type": "range", "id": "max", "label": "Antal omdömen som kort", "min": 3, "max": 9, "step": 1, "default": 6 },
+    { "type": "paragraph", "content": "Betyget och omdömena hämtas från Trustpilot av repot (matstrumpor/trustpilot.mjs) och ligger i butikens metafält matstrumpor.trustpilot. Inget skrivs för hand här." }
+  ],
+  "presets": [{ "name": "Trustpilot" }]
+}
+{% endschema %}

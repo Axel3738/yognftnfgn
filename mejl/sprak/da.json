@@ -1,5 +1,5 @@
 {
-  "comment": "Danska för Bæverbutiken (baeverbutiken.dk). Skriven av sessionen 2026-09-20 — inte av en modersmålstalare; rätta här, aldrig i koden. Samma struktur som nb.json.",
+  "comment": "Danska för Bæverbutiken (baeverbutiken.dk). Skriven av sessionen 2026-09-20 — inte av en modersmålstalare; rätta här, aldrig i koden. Samma struktur som nb.json. Delas sedan 2026-09-29 med Matstrumpors danska fraktmejl (mejl_sprak); rättad efter en infödd granskning samma dag (tankstreck och kommasammanfogning i tips/tysta_dagar).",
   "kod": "da",
   "ord": {
     "Hej": "Hej",
@@ -20,10 +20,10 @@
       "rubrik": "Pakken er på vej!",
       "intro": "Din ordre {{ordernummer}} har forladt lageret og er på vej til dig.",
       "knapp": "Spor pakken",
-      "tips": "Sporingen kan stå stille i 2–4 dage, mens pakken er på vej til flyet – helt normalt. Tjek igen derefter.",
+      "tips": "Sporingen kan stå stille i 2–4 dage, mens pakken er på vej til flyet. Det er helt normalt. Tjek igen bagefter.",
       "beraknad_rubrik": "Forventet levering",
       "beraknad": "{{leverans_fran}}–{{leverans_till}}",
-      "tysta_dagar": "Sporingen viser ofte ingenting de første 2–4 dage – pakken er på vej til flyet, ikke bortkommet. Du behøver ikke gøre noget, den opdateres, så snart pakken er tjekket ind."
+      "tysta_dagar": "Sporingen viser ofte ikke noget de første 2–4 dage. Pakken er på vej til flyet og ikke bortkommet. Du behøver ikke gøre noget, for sporingen opdateres, så snart pakken er tjekket ind."
     },
     "fraktuppdatering": {
       "amne": ["Ny info om din pakke", "Sporingen er opdateret", "Opdatering: {{ordernummer}}"],

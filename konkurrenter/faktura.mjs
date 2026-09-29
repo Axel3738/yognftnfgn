@@ -26,12 +26,14 @@
 
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { dirname } from 'node:path';
+import { bevisStatus } from './klipp.mjs';
 
 export const STANDARDTAXA = Object.freeze({ annons: 5000, video: 8000, bild: 3000, produkttext: 5000 });
 
 const ORD = {
   sv: {
     produkttext: 'Produkttext kopierad från vår produktsida', annons: 'Annonstext kopierad från vår annons', video: 'Annonsfilm kopierad från vår annons', bild: 'Produktbild kopierad',
+    film: 'Annonsfilm klippt ur våra annonsfilmer', textfilm: 'Annonstext och annonsfilm kopierade från våra annonser', annonsbild: 'Annonsbild kopierad från vår annons',
     exponeringar: 'exponeringar', cpm: 'CPM', schablon: 'schablon, exponeringar okända', minst: 'minimibelopp',
     titel: 'FAKTURA', datum: 'Fakturadatum', forfaller: 'Förfallodag', nr: 'Fakturanummer', ref: 'Vår referens', saljare: 'Säljare', kopare: 'Köpare',
     beskrivning: 'Beskrivning', antal: 'Antal', apris: 'À-pris', belopp: 'Belopp', netto: 'Summa', moms: 'Moms', att_betala: 'Att betala',
@@ -43,6 +45,7 @@ const ORD = {
   },
   en: {
     produkttext: 'Product text copied from our product page', annons: 'Ad copy copied from our ad', video: 'Ad video copied from our ad', bild: 'Product photo copied',
+    film: 'Ad video cut from our ad films', textfilm: 'Ad copy and ad video copied from our ads', annonsbild: 'Ad image copied from our ad',
     exponeringar: 'impressions', cpm: 'CPM', schablon: 'flat rate, impressions unknown', minst: 'minimum charge',
     titel: 'INVOICE', datum: 'Invoice date', forfaller: 'Due date', nr: 'Invoice number', ref: 'Our reference', saljare: 'Seller', kopare: 'Buyer',
     beskrivning: 'Description', antal: 'Qty', apris: 'Unit price', belopp: 'Amount', netto: 'Subtotal', moms: 'VAT', att_betala: 'Total due',
@@ -100,9 +103,33 @@ export function svenskKopare({ land = null, doman = null, sprak = null } = {}) {
 }
 
 /**
+ * Vad raden säger att de kopierat, ur bevisStatus (Axel 2026-09-29: bara det
+ * som är bevisat med VÅRT material, aldrig det lånade klippet i miniatyren).
+ * text ⇒ annonsens text, film ⇒ filmerna paren kommer ur, bild ⇒ vår annonsbild.
+ * `typ` styr schablontaxan: en bevisad film är 'video', allt annat 'annons'. Ren.
+ */
+export function annonsRad(a, sprak = 'sv') {
+  const L = ORD[sprak] ?? ORD.sv;
+  const s = bevisStatus(a);
+  if (!s.bevisad) return null;
+  const filmer = a.klipp?.filmer?.length ? a.klipp.filmer : [];
+  const textNamn = s.text ? a.varAnnons?.namn ?? null : null;
+  const namnlista = (lista) => (lista.length ? ` (${lista.join(', ')})` : '');
+  const lank = a.lank ? ` — ${a.lank}` : '';
+  if (s.text && s.film) return { typ: 'video', beskrivning: `${L.textfilm}${namnlista([...new Set([textNamn, ...filmer].filter(Boolean))])}${lank}` };
+  if (s.film) return { typ: 'video', beskrivning: `${L.film}${namnlista(filmer)}${lank}` };
+  if (s.text) return { typ: 'annons', beskrivning: `${L.annons}${namnlista([textNamn].filter(Boolean))}${lank}` };
+  if (s.bild) return { typ: 'annons', beskrivning: `${L.annonsbild}${namnlista([a.varAnnons?.namn].filter(Boolean))}${lank}` };
+  // 'miniatyr' — en film som aldrig gått genom klippvalet (kor.mjs stoppar --faktura tills --klipp körts).
+  return { typ: 'video', beskrivning: `${L.video}${namnlista([a.varAnnons?.namn].filter(Boolean))}${lank}` };
+}
+
+/**
  * Fakturaraderna ur bevisen. En rad per mätt sak, aldrig mer.
  * `cpm` = { sek, text, period } (cpm.mjs) — utan den går varje annons på schablon.
  * Bilder som redan ingår i en exponeringsräknad annons räknas inte en gång till.
+ * En annons som inte är bevisad med vårt eget material (bevisStatus) får ingen rad,
+ * och en films miniatyr räknas aldrig som en kopierad produktbild — den är lånad.
  */
 export function fakturarader(arende, taxa = {}, sprak = 'sv', { cpm = null, berakning = 'exponeringar', minst = 0 } = {}) {
   const t = { ...STANDARDTAXA, ...(taxa ?? {}) };
@@ -113,21 +140,23 @@ export function fakturarader(arende, taxa = {}, sprak = 'sv', { cpm = null, bera
   const annonser = Array.isArray(b.annonser) && b.annonser.length ? b.annonser : (b.annons?.styrka ? [{ text: b.annons, video: false, varAnnons: arende.var?.annons ?? null, lank: null, exponeringar: b.exponeringar ?? null }] : []);
   const raknadeBilder = new Set();
   for (const a of annonser) {
-    if (!a.text?.styrka && !(a.bilder?.length)) continue;
-    const namn = a.varAnnons?.namn ? ` (${a.varAnnons.namn})` : '';
-    const bas = `${a.video ? L.video : L.annons}${namn}${a.lank ? ` — ${a.lank}` : ''}`;
+    const r = annonsRad(a, sprak);
+    if (!r) continue;
+    const bas = r.beskrivning;
     const exp = Number(a.exponeringar) > 0 ? Math.round(Number(a.exponeringar)) : null;
     if (berakning === 'exponeringar' && exp) {
-      if (!(cpm?.sek > 0)) { rader.push({ typ: a.video ? 'video' : 'annons', grund: 'saknar_cpm', beskrivning: bas, antal: 1, apris: 0, exponeringar: exp }); continue; }
+      if (!(cpm?.sek > 0)) { rader.push({ typ: r.typ, grund: 'saknar_cpm', beskrivning: bas, antal: 1, apris: 0, exponeringar: exp }); continue; }
       const rakn = Math.round(exp * cpm.sek / 1000);
       const apris = Math.max(rakn, Number(minst) || 0);
-      rader.push({ typ: a.video ? 'video' : 'annons', grund: 'exponeringar', beskrivning: `${bas}: ${tal(exp, sprak)} ${L.exponeringar} × ${L.cpm} ${belopp(cpm.sek, 'SEK', sprak, 1)}${apris > rakn ? ` (${L.minst})` : ''}`, antal: 1, apris, exponeringar: exp, cpm: cpm.sek });
+      rader.push({ typ: r.typ, grund: 'exponeringar', beskrivning: `${bas}: ${tal(exp, sprak)} ${L.exponeringar} × ${L.cpm} ${belopp(cpm.sek, 'SEK', sprak, 1)}${apris > rakn ? ` (${L.minst})` : ''}`, antal: 1, apris, exponeringar: exp, cpm: cpm.sek });
       for (const x of a.bilder ?? []) raknadeBilder.add(x.deras);
       continue;
     }
-    rader.push({ typ: a.video ? 'video' : 'annons', grund: 'schablon', beskrivning: `${bas}${berakning === 'exponeringar' ? ` (${L.schablon})` : ''}`, antal: 1, apris: a.video ? t.video : t.annons });
+    rader.push({ typ: r.typ, grund: 'schablon', beskrivning: `${bas}${berakning === 'exponeringar' ? ` (${L.schablon})` : ''}`, antal: 1, apris: r.typ === 'video' ? t.video : t.annons });
   }
-  const bilder = new Set([...(b.bilder ?? []).map((x) => x.deras), ...annonser.flatMap((a) => (a.bilder ?? []).map((x) => x.deras))].filter((u) => u && !raknadeBilder.has(u)));
+  // Lösa bilder: sajtens produktbilder + bilderna i BILDannonser. En videos miniatyr är aldrig en produktbild.
+  const bildannonser = annonser.filter((a) => bevisStatus(a).bild);
+  const bilder = new Set([...(b.bilder ?? []).map((x) => x.deras), ...bildannonser.flatMap((a) => (a.bilder ?? []).map((x) => x.deras))].filter((u) => u && !raknadeBilder.has(u)));
   if (bilder.size) rader.push({ typ: 'bild', grund: 'schablon', beskrivning: `${L.bild} (${bilder.size} ${sprak === 'sv' ? 'st' : 'pcs'})`, antal: bilder.size, apris: t.bild });
   return rader.map((r) => ({ ...r, belopp: r.antal * r.apris }));
 }

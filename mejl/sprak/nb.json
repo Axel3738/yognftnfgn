@@ -1,5 +1,5 @@
 {
-  "comment": "Norsk bokmål för Beverbutikken (beverbutikken.no). Skriven av sessionen 2026-09-20 — inte av en modersmålstalare; rätta här, aldrig i koden. `ord` byter de fasta orden i byggstenarna (svenskt ord → norskt), `manader` månadsnamnen i Liquid-datumen, `mallar` är copyn per fraktmejl (samma nycklar som mejl/copy.json). Platshållarna {{ordernummer}}, {{leverans_fran}}, {{leverans_till}} och {{support}} står kvar.",
+  "comment": "Norsk bokmål för Beverbutikken (beverbutikken.no). Skriven av sessionen 2026-09-20 — inte av en modersmålstalare; rätta här, aldrig i koden. `ord` byter de fasta orden i byggstenarna (svenskt ord → norskt), `manader` månadsnamnen i Liquid-datumen, `mallar` är copyn per fraktmejl (samma nycklar som mejl/copy.json). Platshållarna {{ordernummer}}, {{leverans_fran}}, {{leverans_till}} och {{support}} står kvar. Delas sedan 2026-09-29 med Matstrumpors norska fraktmejl (mejl_sprak); rättad efter en infödd granskning samma dag.",
   "kod": "nb",
   "ord": {
     "Hej": "Hei",
@@ -20,10 +20,10 @@
       "rubrik": "Pakken er på vei!",
       "intro": "Ordren din {{ordernummer}} har forlatt lageret og er på vei til deg.",
       "knapp": "Spor pakken",
-      "tips": "Sporingen kan stå stille i 2–4 dager mens pakken er på vei til flyet – helt normalt. Sjekk igjen etter det.",
+      "tips": "Sporingen kan stå stille i 2–4 dager mens pakken er på vei til flyet. Det er helt normalt. Sjekk igjen etterpå.",
       "beraknad_rubrik": "Beregnet levering",
       "beraknad": "{{leverans_fran}}–{{leverans_till}}",
-      "tysta_dagar": "Sporingen viser ofte ingenting de første 2–4 dagene – pakken er på vei til flyet, ikke mistet. Du trenger ikke gjøre noe, den oppdateres så snart pakken er sjekket inn."
+      "tysta_dagar": "Sporingen viser ofte ingenting de første 2–4 dagene. Pakken er på vei til flyet og ikke kommet bort. Du trenger ikke gjøre noe. Sporingen oppdateres så snart pakken er sjekket inn."
     },
     "fraktuppdatering": {
       "amne": ["Ny info om pakken din", "Sporingen er oppdatert", "Oppdatering: {{ordernummer}}"],

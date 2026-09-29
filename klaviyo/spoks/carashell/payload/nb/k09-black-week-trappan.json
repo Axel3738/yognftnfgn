@@ -136,10 +136,6 @@
       ]
     },
     {
-      "type": "quote",
-      "text": "\"Bra skydd för taket och lätt att använda.\"\nKarin, verifisert kunde"
-    },
-    {
       "type": "columns",
       "stackedOnMobile": true,
       "verticalAlignment": "top",
@@ -177,5 +173,7 @@
       ]
     }
   ],
-  "varningar": []
+  "varningar": [
+    "Citatet borttaget 2026-09-29: recensionerna i factory/produkter/takskyddet.yaml är importerade, inte verifierade köp (KVAR.md, Bäverbutikens granskning 2026-09-26)."
+  ]
 }

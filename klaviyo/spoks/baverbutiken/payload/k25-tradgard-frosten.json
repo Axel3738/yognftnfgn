@@ -62,6 +62,17 @@
       "alignment": "left"
     },
     {
+      "type": "divider"
+    },
+    {
+      "type": "h1",
+      "text": "FROST30",
+      "alignment": "center"
+    },
+    {
+      "type": "divider"
+    },
+    {
       "type": "regular",
       "text": "Koden FROST30 ger 30 % på kranskyddet, IBC-tanköverdraget, krukväxthuven och regntunnehuven till och med onsdag 7 oktober. Tryck på knappen så ligger koden redan i kassan, eller skriv in den själv. Rabatten dras i kassan, en gång per kund, på priset som står på produktsidan.",
       "alignment": "left"

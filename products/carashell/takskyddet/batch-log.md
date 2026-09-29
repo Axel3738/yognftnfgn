@@ -2749,3 +2749,14 @@ skyddar den fortfarande som `vinnare` (CPA 664), så ronden kan inte röra den.
 Detaljerna och instruktionen i `dna.md`.
 
 **Briefronden:** pausad sedan 2026-09-18 (Axels beslut) — bara `kord` stämplad.
+
+## 2026-09-29 — leveransrundan: nionde dygnet, oförändrat
+
+Samma två rader, samma md5 (`d9ab48ff…` / `271bf976…`), samma slutkort med
+`carashell.se` (OCR kördes). Inget uppladdat, ingen status ändrad.
+
+⚠️ Nytt i kontot: en ANDRA listicle-kampanj, `NYA LISTICLE
+CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11 – kopia`. Den bär ordet
+LISTICLE och filtrerades därför bort som eget spår (`tools/lib/sidokampanjer.mjs`)
+— huvudkampanjen `CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11` är
+fortfarande ACTIVE med 11 adsets och är den kön skulle laddat upp i.

@@ -631,3 +631,104 @@ text på transparent — alla fyra får därför **vitt sidhuvud** med linje und
 (`sidhuvud_farg`), inte Bäverbutikens svarta. Mätt i Chromium 2026-09-20
 på 700 och 390 px.
 
+
+## Matstrumpor på tolv språk: översättningar via API (2026-09-29)
+
+Matstrumpor säljer på tolv språk från samma butik. Fraktmejlen var bara
+svenska. **Vägen är inte en mall med `{% case %}` (som CaraShell) utan
+Shopifys egna översättningar av notisen**, lagda via API.
+
+**Mätt 2026-09-29 (appen "Fabriken", `write_translations`):**
+- Varje notis är en översättningsbar resurs:
+  `translatableResources(resourceType: EMAIL_TEMPLATE)` gav 65 notiser med
+  nycklarna `title` (ämnesraden) och `body_html` (mallen). Tre är våra
+  (`126064296275` / `…361811` / `…427347`, kroppen tecken för tecken lika
+  med `output/butiker/matstrumpor/`); resten är Shopifys standard
+  (orderbekräftelse, återbetalning, annullering, presentkort …).
+- **Alla 65 bar redan Shopifys standardöversättning på alla elva språk**
+  (`updatedAt: null`, ingen har registrerat dem). Också våra tre: en tysk
+  kund hade fått Shopifys tyska standardmejl, med fraktbolagets
+  spårningslänk och Shop-knappen — inte vårt mejl, inte svenska.
+- Standardnotiserna (orderbekräftelse, återbetalning, avbokning,
+  presentkort) går alltså redan på kundens språk. Vi rör dem inte.
+- Huvudspråket (svenska) går inte att skriva via API, bara i admin.
+  Översättningarna går, med huvudtextens digest (`translationsRegister`).
+- Shopify väljer språket själv: "If translations are available for an email
+  notification, then a customer is automatically sent email notifications in
+  the language that they placed their order in" (help.shopify.com →
+  Languages → Notifications). Det är orderns språk, inte leveranslandet — en
+  belgare som handlade på franska får franska. Ordrarna bär det som
+  `customerLocale` (senaste 100: `sv-SE` 90, `en-SE` 8, `sv` 2).
+- **Liquid-variabel för orderns språk finns inte dokumenterad** — varken i
+  Shopifys notisvariabler eller i Liquid-objektet `order` (läst 2026-09-29).
+  Därför ingen landreserv i den svenska mallen: utan variabeln går det inte
+  att skilja "kunden valde svenska" från "ordern saknar språk". Svenska
+  huvudmallen går till de som handlade på svenska och till ordrar utan språk
+  (utkast/API — Shopify använder då kundprofilens språk).
+
+**Så byggs det:**
+- `sparning/butiker.json` → `matstrumpor.mejl_sprak`: en rad per språk,
+  `{ locale, sprak, mapp }` (`pt-PT` / `pt.json` / `/pt`).
+- `node mejl/bygg-butik.mjs matstrumpor` skriver den svenska huvudmallen som
+  förut + `output/butiker/matstrumpor/oversattningar/<locale>/<mall>.liquid`.
+  Knappen går till `matstrumpor.se/<mapp>/pages/spara?nummer=MS-…` —
+  matstrumpor.se bär alla tolv språk i alla marknader (webPresences).
+- `node mejl/notis-oversattning.mjs matstrumpor [--skarpt] [--om-inaktuell]`
+  registrerar och läser tillbaka. Vägrar om huvudmallen inte längre är vår.
+  Spårningsrutinen kör `--skarpt --om-inaktuell` varje timme
+  (`.claude/commands/sparning.md` steg 2b): gör inget när allt stämmer,
+  lägger in språken igen när den svenska mallen klistrats om.
+- `node mejl/lankkoll.mjs matstrumpor` öppnar knappens länk som kund i
+  Chromium, ett språk i taget, med ett riktigt paket ur spårningsminnet:
+  sidans språk, att paketet visas, ingen svensk text.
+- `mejl/butiker/matstrumpor.json` → `leveransfonster: false`: ingen
+  "Beräknad leverans"-ruta i fraktbekräftelsen, på något språk (Axels order
+  2026-09-21 — fönstret står aldrig i ett mejl som bär spårningslänken).
+  Den svenska mallen som låg live sedan 2026-09-21 bar rutan; den nya
+  klistras in via `output/butiker/matstrumpor/COWORK-PROMPT.md`.
+
+**Språkfilerna** `mejl/sprak/{de,fr,nl,es,it,pl,pt}.json` skrevs av
+sonnet-subagenter mot svenskan, butikens egna ord
+(`matstrumpor/marknader/output/underlag-<locale>.json`) och spårningssidans
+text; knappen är exakt den knapp sidan hänvisar till ("under knappen …").
+Alla elva (även nb/da/fi/en, som delas med CaraShell och Bäver-klonerna)
+granskades av en skeptisk infödd granskare var; fynden inlagda samma dag
+(bl.a. tankstreck och kommasammanfogningar i `tysta_dagar`, "la porta" /
+"je deur" som lovade leverans till dörren, spanskans "a tu casa", franskans
+hårda mellanslag). Språk vars hälsning inte blir "<Hej> <namn>!" bär
+`halsning: { med_namn, utan_namn }` (es, fr).
+
+⚠️ nb/da/fi/en ändrades i källan. CaraShells, NO:s, DK:s och FI:s mallar i
+Shopify bär den gamla texten tills de byggs och klistras om — inget fel i
+dem, bara de rättade meningarna saknas.
+
+**Utfall 2026-09-29 ~13:10 CEST:** `notis-oversattning.mjs --skarpt` registrerade
+33 översättningar (11 språk × 3 notiser), alla lästa tillbaka lika och
+aktuella (`updatedAt` 2026-09-29T11:09:27Z); omkörning med `--om-inaktuell`
+gjorde ingenting. `lankkoll.mjs`: alla tolv språk svarar 200 med rätt
+`<html lang>` och visar det riktiga paketet MS-3654539E, ingen svensk text
+(skärmdumpar i `output/butiker/matstrumpor/lankkoll/`, gitignorerade).
+Kvar: den svenska huvudmallen utan leveransfönstret — Cowork-prompten.
+
+**Svenska huvudmallen inne 2026-09-29 eftermiddag** (Cowork + Axel): alla tre
+tecken för tecken lika med filerna (7 192 / 6 153 / 6 142), ingen "Beräknad
+leverans" kvar. Fraktbekräftelsens elva översättningar blev `outdated` av
+bytet och registrerades om med `--om-inaktuell` (lika och aktuella).
+
+**Fler marknader kommer** (Axel samma dag: "vi kommer köra fler än tolv
+marknader"): ett nytt publicerat språk utan rad i `mejl_sprak` får Shopifys
+standardfraktmejl. `notis-oversattning.mjs` läser därför `shopLocales` varje
+körning och skriver "Språk i butiken utan egna fraktmejl: …" — spårningsrutinen
+tar med det i rapporten. Nytt språk = `mejl/sprak/<kod>.json` (sonnet +
+granskare, knappen = spårningssidans knapp) + en rad i `mejl_sprak` + bygg +
+`--skarpt`. Spårningssidan behöver samma språk i `sparning/sprak/`.
+
+**Testmejlen 2026-09-29 eftermiddag** (Cowork, till axelodhner.business@gmail.com —
+Shopifys testknapp skickar bara till personalkontot, adressen går inte att välja):
+språkväljaren i redigerarens förhandsvisning skickar testet på valt språk. Tio av
+tolv lästa i Gmail — sv, nb, da, fi, en, de, fr, nl, es, it — rätt ämnesrad, rätt
+knapp, och knappen går till `matstrumpor.se/<mapp>/pages/spara?nummer=MS-…`
+(Shopify lägger en egen klickspårning `_t/c/v3/…` + `&syclid=` runt länken).
+pl och pt-PT stoppades av Shopifys spärr "För många testaviseringar" — inte
+skickade; täckta av tillbakaläsningen i API:t, polskans förhandsvisning och
+`lankkoll.mjs`. ⚠️ Testknappen tål ungefär tio mejl i följd.

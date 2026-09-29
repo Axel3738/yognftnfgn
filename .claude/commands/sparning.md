@@ -49,6 +49,21 @@ argumentet; för Bäverbutiken utelämnas `--butik` helt.
    ⚠️ Står det att meningar saknar översättning: lägg in dem i
    `sparning/sprak/<kod>.json` (svensk mening → butikens språk) och committa
    med lagefilen. En mening utan översättning når kunden på svenska.
+2b. **Bara en butik som bär `mejl_sprak` i `sparning/butiker.json`
+   (Matstrumpor sedan 2026-09-29):**
+   `node mejl/notis-oversattning.mjs <butik> --skarpt --om-inaktuell`
+   Fraktmejlen på kundens språk ligger som Shopifys egna översättningar av
+   de tre fraktnotiserna. När någon klistrar om den svenska huvudmallen i
+   admin märks de `outdated` — då registrerar skriptet dem igen och läser
+   tillbaka. Stämmer allt redan gör det ingenting och skriver ingen fil.
+   Skrev det: committa `mejl/output/butiker/<butik>/oversattningar/lage.json`
+   med lagefilen i steg 3. Exit 1 = ett språk stämde inte vid
+   tillbakaläsningen — skriv det överst i rapporten. Vägrar det för att
+   "huvudmallen i Shopify är inte vår": rör ingenting, skriv det i rapporten.
+   Säger det "Språk i butiken utan egna fraktmejl": ett nytt språk har
+   publicerats (fler marknader kommer) och får Shopifys standardmejl tills
+   `mejl/sprak/<kod>.json` + en rad i `mejl_sprak` finns — skriv språken i
+   rapporten, bygg inte språkfilen i rutinen (den skrivs av sonnet och granskas).
 3. Committa och pusha minnet. Lagefilen är `sparning/lage.json` för
    Bäverbutiken, annars `sparning/butiker/<butik>/lage.json` (+ butikens
    `konfig.json` med bokföringen). Flera rutiner pushar till `main` varje
@@ -75,13 +90,15 @@ argumentet; för Bäverbutiken utelämnas `--butik` helt.
 
 Aldrig: skapa ordrar, ändra fulfillments, skicka mejl, röra andra butiker
 än argumentets, röra temafiler. Skriptet skriver ENBART
-`fulfillmentEventCreate` och `pageCreate`/`pageUpdate` på den egna sidan.
+`fulfillmentEventCreate` och `pageCreate`/`pageUpdate` på den egna sidan
+(och i steg 2b `translationsRegister` på butikens tre egna fraktnotiser).
 
 ## DEFINITION OF DONE
 
 - [ ] `--kolla` grön (eller rapporten säger exakt vad som saknas)
 - [ ] Rundan körd, utskriften visad
 - [ ] Spårningssidan publicerad och tillbakaläst i kundens vy (eller orsaken skriven)
+- [ ] Steg 2b körd för en butik med `mejl_sprak` (eller: butiken har inga)
 - [ ] Lagefilen committad och pushad till `main`, `output/` inte med
 - [ ] Nya fraser inlagda i ordboken och språkfilerna, eller orsaken skriven
 - [ ] Rapporten har siffrorna ovan

@@ -1,0 +1,47 @@
+{
+  "comment": "Franska för Matstrumpors fraktmejl (marknaden Europa, franskspråkiga kunder). Skriven av en sonnet-subagent 2026-09-29 för Matstrumpors fraktmejl, mot sv-källan och butikens egna ord; tilltalet är vous, knappen matchar spårningssidan.",
+  "kod": "fr",
+  "ord": {
+    "Hej": "Bonjour",
+    "I paketet": "Dans le colis",
+    "Levereras till": "Adresse de livraison",
+    "Antal": "Quantité ",
+    "Ditt paketnummer": "Votre numéro de colis ",
+    "Klicka på knappen ovan så visas ditt paket direkt.": "Cliquez sur le bouton ci-dessus, et votre colis s'affiche immédiatement."
+  },
+  "manader": ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"],
+  "dagsuffix": "",
+  "menyrad": "Suivre votre colis",
+  "sidfot": "Une question sur votre commande ? Répondez à cet e-mail ou écrivez à {{support}}.",
+  "mallar": {
+    "fraktbekraftelse": {
+      "amne": ["Votre colis est en route", "{{ordernummer}} a quitté l'entrepôt", "En route vers vous"],
+      "preheader": ["Le lien de suivi est ici.", "Vérifiez vos spams si vous ne voyez pas l'e-mail."],
+      "rubrik": "Votre colis est en route !",
+      "intro": "Votre commande {{ordernummer}} a quitté l'entrepôt et est en route vers vous.",
+      "knapp": "Suivre votre colis",
+      "tips": "Le suivi peut rester inchangé pendant 2–4 jours, le temps que le colis soit acheminé jusqu'à l'avion. C'est tout à fait normal. Vérifiez à nouveau ensuite.",
+      "beraknad_rubrik": "Livraison estimée",
+      "beraknad": "{{leverans_fran}}–{{leverans_till}}",
+      "tysta_dagar": "Le suivi n'affiche souvent rien pendant les 2–4 premiers jours. Le colis est simplement en route vers l'avion, il n'est pas perdu. Vous n'avez rien à faire : le suivi se met à jour dès que le colis est enregistré."
+    },
+    "fraktuppdatering": {
+      "amne": ["Du nouveau pour votre colis", "Le suivi a été mis à jour", "Mise à jour : {{ordernummer}}"],
+      "preheader": ["Voici où en est votre colis.", "Consultez les dernières informations ici."],
+      "rubrik": "Le suivi a été mis à jour",
+      "intro": "Les informations de suivi de votre commande {{ordernummer}} ont été mises à jour.",
+      "knapp": "Suivre votre colis"
+    },
+    "ute_for_leverans": {
+      "amne": ["Votre colis arrive aujourd'hui", "En cours de livraison", "{{ordernummer}} arrive aujourd'hui"],
+      "preheader": ["Restez à l'affût dans la journée.", "Bientôt dans votre boîte aux lettres ou au point relais."],
+      "rubrik": "Votre colis arrive aujourd'hui",
+      "intro": "Votre commande {{ordernummer}} est en cours de livraison et arrivera dans la journée.",
+      "knapp": "Suivre votre colis"
+    }
+  },
+  "halsning": {
+    "med_namn": "Bonjour {namn} !",
+    "utan_namn": "Bonjour !"
+  }
+}

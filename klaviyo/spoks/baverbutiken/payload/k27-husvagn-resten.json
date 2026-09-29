@@ -103,6 +103,17 @@
       "productsPerRow": 3
     },
     {
+      "type": "divider"
+    },
+    {
+      "type": "h1",
+      "text": "HUSVAGN30",
+      "alignment": "center"
+    },
+    {
+      "type": "divider"
+    },
+    {
       "type": "regular",
       "text": "Koden HUSVAGN30 ger 30 % på AC-huven, cykelhållarskyddet, fönstermattorna och husbilskalendern till och med torsdag 8 oktober. Tryck på knappen så ligger koden redan i kassan, eller skriv in den själv. Rabatten dras i kassan, en gång per kund, på priset som står på produktsidan.",
       "alignment": "left"

@@ -1,13 +1,13 @@
 {
   "id": "k25-tradgard-frosten",
-  "namn": "MAIL_20261003_Kranskydd_S_1_kopare-tradgard_problem_kranen-spricker_v2",
-  "memo": "Första frostnatten kommer i oktober i stora delar av landet. Mejlet går till dem som redan köpt till tomten, en månad före K16 (som går brett 3/11). Hypotes: problemöppningen \"det som fryser först\" (utekranen) säljer hela raden av skydd; mätt på klick per produkt. Omskriven 2026-09-29 efter Axels granskning (problem och agitation först): hero utan produktbild med problemet, sedan agitationen, sedan kranskyddet, sedan koden och knappen, sist de tre andra skydden. Rea 30 % med FROST30 på de fyra produkterna till och med onsdag 7 oktober (ersätter FROST15). Inga påståenden om försäkring eller skadekostnader.",
+  "namn": "MAIL_20261003_Kranskydd_S_1_tier1-kopare-tradgard_problem_kranen-spricker_v3",
+  "memo": "Första frostnatten kommer i oktober i stora delar av landet. Mejlet går brett (Axels order 2026-09-29: \"samma gäller för tofflor och liknande, vi ska ju skicka till alla våra kunder\"): Kranskyddet 3/10 är Warmup tier 1 plus trädgårdsköparna, en månad före K16 (3/11). Hypotes: problemöppningen \"det som fryser först\" (utekranen) säljer hela raden av skydd; mätt på klick per produkt. Omskriven 2026-09-29 efter Axels granskning (problem och agitation först): hero utan produktbild med problemet, sedan agitationen, sedan kranskyddet, sedan koden och knappen, sist de tre andra skydden. Rea 30 % med FROST30 på de fyra produkterna till och med onsdag 7 oktober (ersätter FROST15). Inga påståenden om försäkring eller skadekostnader.",
   "taggar": {
     "typ": "S",
     "kalla": "gissning",
     "kalla_ref": null,
     "lardom": null,
-    "avatar": "villaägaren som redan köpt något till tomten",
+    "avatar": "villaägaren med utekran",
     "begar": "att inget spricker i vinter",
     "awareness": "problem",
     "urgency": "sasong + slutdag (7 oktober)",
@@ -122,7 +122,7 @@
   ],
   "planerad": "2026-10-03T18:00:00+02:00",
   "segment": [
-    "Köpare trädgård & tomt"
+    "Kranskyddet 3/10"
   ],
   "exkludera": [],
   "status_plan": "klar",

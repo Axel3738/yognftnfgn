@@ -1,0 +1,47 @@
+{
+  "comment": "Spanska (Spanien) för Matstrumpors fraktmejl, tú-form. Skriven av en sonnet-subagent 2026-09-29 mot sv-källan och butikens egna ord; rätta här, aldrig i koden.",
+  "kod": "es",
+  "ord": {
+    "Hej": "Hola",
+    "I paketet": "En el paquete",
+    "Levereras till": "Dirección de entrega",
+    "Antal": "Cantidad",
+    "Ditt paketnummer": "Tu número de paquete",
+    "Klicka på knappen ovan så visas ditt paket direkt.": "Haz clic en el botón de arriba y tu paquete aparecerá enseguida."
+  },
+  "manader": ["de enero", "de febrero", "de marzo", "de abril", "de mayo", "de junio", "de julio", "de agosto", "de septiembre", "de octubre", "de noviembre", "de diciembre"],
+  "dagsuffix": "",
+  "menyrad": "Rastrear paquete",
+  "sidfot": "¿Tienes preguntas sobre tu pedido? Responde a este correo o escribe a {{support}}.",
+  "mallar": {
+    "fraktbekraftelse": {
+      "amne": ["Tu paquete ya está en camino", "{{ordernummer}} ya ha salido del almacén", "Ya va de camino hacia ti"],
+      "preheader": ["Aquí tienes el enlace de seguimiento.", "Revisa el spam si no ves el correo."],
+      "rubrik": "¡Tu paquete está en camino!",
+      "intro": "Tu pedido {{ordernummer}} ha salido del almacén y va de camino hacia ti.",
+      "knapp": "Rastrear paquete",
+      "tips": "El seguimiento puede no mostrar cambios durante 2–4 días mientras el paquete va de camino al avión. Es totalmente normal. Vuelve a consultarlo pasado ese tiempo.",
+      "beraknad_rubrik": "Entrega estimada",
+      "beraknad": "{{leverans_fran}}–{{leverans_till}}",
+      "tysta_dagar": "Es habitual que el seguimiento no muestre nada los primeros 2–4 días: el paquete va de camino al avión, no se ha perdido. No tienes que hacer nada, se actualizará en cuanto lo registren."
+    },
+    "fraktuppdatering": {
+      "amne": ["Novedades sobre tu paquete", "El seguimiento se ha actualizado", "Actualización: {{ordernummer}}"],
+      "preheader": ["Así va tu paquete ahora mismo.", "Consulta aquí los últimos datos."],
+      "rubrik": "El seguimiento se ha actualizado",
+      "intro": "Los datos de seguimiento de tu pedido {{ordernummer}} se han actualizado.",
+      "knapp": "Rastrear paquete"
+    },
+    "ute_for_leverans": {
+      "amne": ["Tu paquete llega hoy", "Ya está en reparto", "{{ordernummer}} se entrega hoy"],
+      "preheader": ["Estate pendiente durante el día.", "Pronto en tu buzón o en el punto de recogida."],
+      "rubrik": "Tu paquete llega hoy",
+      "intro": "Tu pedido {{ordernummer}} ha salido a reparto y llegará a lo largo del día.",
+      "knapp": "Rastrear paquete"
+    }
+  },
+  "halsning": {
+    "med_namn": "¡Hola, {namn}!",
+    "utan_namn": "¡Hola!"
+  }
+}

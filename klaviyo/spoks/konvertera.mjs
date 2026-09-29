@@ -174,6 +174,7 @@ export function skapaKonverterare({ brand, produktIds = {}, recCache = {}, erbju
     type: 'products', selectionMode: 'manual', products: ids.map((id) => ({ id, button: knapp })),
     dynamicProductsCount: null, dynamicCriteria: null, productVisibilitySettings: synlig(), buttonText: null, alignment: 'center', productsPerRow: perRad,
   });
+  const kodruta = (kod) => [{ type: 'divider' }, { type: 'h1', text: kod, alignment: 'center' }, { type: 'divider' }];
   const stycken = (text, l, alignment = 'left') => String(text ?? '').split(/\n{2,}/).filter((x) => x.trim()).map((t) => ({ type: 'regular', text: fornamn(t.trim(), l.fornamn_reserv), alignment }));
   const titel = (h, s) => brand.produkttitlar?.[h]?.[s] ?? brand.produkttitlar?.[h]?.sv ?? h;
 
@@ -298,6 +299,17 @@ export function skapaKonverterare({ brand, produktIds = {}, recCache = {}, erbju
         forsta.set(id, b);
       }
       blocks.push(b);
+    }
+    // Kodrutan (Axels krav 2026-09-29: "att vi flashar rabattkoden tydligt"): i ett mejl med
+    // rabattkod står koden som stor rubrik mellan två linjer, direkt före kodstycket "Koden X
+    // ger …". Bara koden, ingen ny text. Spoks egen kupongruta går inte att använda: den ser
+    // bara Shopify-rabatter som redan är aktiva, och våra koder är schemalagda (mätt samma dag
+    // med discounts_search: 4 aktiva koder, inga av rea-koderna).
+    const kod = m.rabatt && typeof m.rabatt === 'object' && m.rabatt.typ === 'kod' ? String(m.rabatt.kod ?? '') : '';
+    if (kod) {
+      const i = blocks.findIndex((b) => b.type === 'regular' && String(b.text ?? '').includes(`Koden ${kod} `));
+      if (i >= 0) blocks.splice(i, 0, ...kodruta(kod));
+      else varn.push(`Kodstycket "Koden ${kod} …" saknas, koden visas inte stort.`);
     }
     return {
       id: m.id,

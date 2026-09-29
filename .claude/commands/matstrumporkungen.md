@@ -56,15 +56,25 @@ räkna aldrig om i huvudet.
 Ett kommando per Bash-anrop, kedja aldrig med skaloperatorer —
 behörighetsreglerna matchar på första ordet.
 
-0. **Repot och kördagen.**
+0. **Repot, Trustpilot och kördagen.**
    ```bash
    git pull --rebase origin main
+   node matstrumpor/trustpilot.mjs --skarpt
    node matstrumpor/kor.mjs --kordag
    ```
    Rutinens session lever kvar mellan körningarna — utan pull kör den förra
    veckans kod och ser aldrig en rättad konfig. Misslyckas pullen (konflikt):
    `git rebase --abort`, skriv det i rapporten och fortsätt med den kod som
    finns.
+   **Trustpilot körs VARJE dag, före kördagsfrågan** (Axels beställning
+   2026-09-29: betyget och omdömena på matstrumpor.se). Skriptet läser
+   betyget och de senaste omdömena från Trustpilot, skriver dem i butikens
+   metafält `matstrumpor.trustpilot` (bara när något ändrats) och skriver
+   `matstrumpor/trustpilot/data.json`. Ändrades filen: committa och pusha den
+   direkt (`git add matstrumpor/trustpilot/data.json && git commit -m
+   "Trustpilot Matstrumpor <datum>: <poäng> av 5, <antal> omdömen" && git push
+   origin main`), oavsett om det blir rond. Felar skriptet: skriv orsaken som
+   en rad, rör inget annat och fortsätt — sajten visar då förra värdet.
    `--kordag`: **exit 0 = rond i dag. Exit 2 = ingen rond:** skriv EN rad
    ("Ingen rond i dag — nästa <datum>") och sluta. Inga anrop, ingen rapport.
    Kadensen (`kadens.rond_var_n_dag` i konfigen) räknas från förra rondens
