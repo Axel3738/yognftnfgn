@@ -10,6 +10,13 @@
   "annonsNr": 7,
   "exponeringar": 1615,
   "video": true,
+  "grund": "film",
+  "filmer": [
+    "Takoverdrag_RI_1_H1",
+    "Takoverdrag_SP_4_H1",
+    "CaraShellRoof_US_RI_101_H1"
+  ],
+  "produkt": "Taköverdrag Husvagn – Skyddar Den Dyraste Ytan",
   "falt": {
     "reporter": {
       "fullName": "Axel Odhner",
@@ -26,13 +33,13 @@
     "contentUrls": [
       "https://www.facebook.com/ads/library/?id=1379264000855257"
     ],
-    "contentDescription": "This advertisement, run by the Facebook page \"ORVO\" (page ID 1299101096626433), reproduces our copyrighted advertising material without authorisation. 1 image in the ad is our own copyrighted advertising image — a still frame or photo taken from our own ad (perceptual-hash comparison: identical, distance 4/64). The ad is a video that uses our material. The ad has been running since 24 September 2026. According to the Ad Library it has reached approximately 1,615 people in the EU. It copies our ad \"CaraShellRoof_PD_104_H1\" for the product \"Taköverdrag Husvagn & Husbil 5,5–13,5 m\", which our page has been running since before this ad appeared. This is report 7 of 10 concerning ads from the same advertiser; each ad is reported separately.",
-    "originalWorkDescription": "Original advertising copy, product photographs and video produced by Stonebite Ecom AB for our store https://carashell.se (product: \"Taköverdrag Husvagn & Husbil 5,5–13,5 m\"). The text and the images are our own work and we hold the copyright. The original ad and product page are at the links below.",
+    "contentDescription": "This advertisement, run by the Facebook page \"ORVO\" (page ID 1299101096626433), reproduces our copyrighted advertising material without authorisation. The ad's video is cut from our own ad films \"Takoverdrag_RI_1_H1\", \"Takoverdrag_SP_4_H1\", \"CaraShellRoof_US_RI_101_H1\" (published by us between 16 September 2026 and 18 September 2026, before this ad started running on 24 September 2026): 3 still frames from different scenes of the reported video (at 0:11, 0:13, 0:34) are identical to frames of our films (perceptual-hash distance 4, 2, 2/64), and 72% of the reported video's sampled frames match our films frame for frame (compared against 204 of our films). According to the Ad Library it has reached approximately 1,615 people in the EU. It copies our ads \"Takoverdrag_RI_1_H1\", \"Takoverdrag_SP_4_H1\", \"CaraShellRoof_US_RI_101_H1\" for the product \"Taköverdrag Husvagn – Skyddar Den Dyraste Ytan\", which our page ran before this ad appeared. This is report 7 of 10 concerning ads from the same advertiser; each ad is reported separately.",
+    "originalWorkDescription": "Original advertising films produced by Stonebite Ecom AB for our store https://baverbutiken.se (product: \"Taköverdrag Husvagn – Skyddar Den Dyraste Ytan\"): \"Takoverdrag_RI_1_H1\", \"Takoverdrag_SP_4_H1\", \"CaraShellRoof_US_RI_101_H1\". The footage is our own work and we hold the copyright. Our ads are listed in the Ad Library and the product page is at the links below.",
     "originalWorkUrls": [
-      "https://carashell.se/products/takskyddet",
-      "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=SE&search_type=page&view_all_page_id=1381171778405935"
+      "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+      "https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=SE&search_type=page&view_all_page_id=678639638662543"
     ],
-    "additionalInfo": "Evidence screenshot (our original on the left, the reported ad on the right, copied passage highlighted): https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-7_0823bd56-506e-438f-b540-8d64dcc12361.png?v=1790669001. Internal reference: KD-2026-001, report 7/10, prepared 29 September 2026.",
+    "additionalInfo": "Evidence screenshot (frames from our film on the left, the same frames in the reported ad on the right): https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-7_45f97be2-c5a8-4b6b-86a9-a0dc776190c5.png?v=1790682721. Internal reference: KD-2026-001, report 7/10, prepared 29 September 2026.",
     "declarations": [
       "I have a good faith belief that the use of the copyrighted material described above is not authorised by the copyright owner, its agent, or the law.",
       "The information in this notification is accurate.",
@@ -41,7 +48,7 @@
     "signature": "Axel Odhner"
   },
   "bevisbild": "arenden/KD-2026-001/anmalan/bevis-7.png",
-  "bevisbildUrl": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-7_0823bd56-506e-438f-b540-8d64dcc12361.png?v=1790669001",
+  "bevisbildUrl": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-7_45f97be2-c5a8-4b6b-86a9-a0dc776190c5.png?v=1790682721",
   "status": "utkast",
-  "skapad": "2026-09-29T08:02:47.589Z"
+  "skapad": "2026-09-29T11:51:25.184Z"
 }

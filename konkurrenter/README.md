@@ -22,7 +22,8 @@ node konkurrenter/kor.mjs --skicka KD-2026-001 [--till adress] [--sprak sv|en] [
                                                         # SÄNDPAKETET: brev.txt + brev.json + faktura-<nr>.pdf i arenden/<id>/ — skickar inget
 node konkurrenter/kor.mjs --skickad KD-2026-001 [--till adress] [--paminnelse]   # kvittot när brevet gått ut via Gmail
 node konkurrenter/kor.mjs --faktura KD-2026-001 [--kopare …] [--cpm 98] [--land GB] [--ny-faktura]   # bara fakturan (CPM mäts ur Meta om --cpm saknas)
-node konkurrenter/kor.mjs --anmal KD-2026-001 [--utan-cdn] [--utan-bevisbild] [--namn …] [--epost …] [--telefon …]   # Meta-anmälningarna: en per annons + bevisbild + verifieringssida
+node konkurrenter/kor.mjs --klipp KD-2026-001 [--antal 3] [--lanat 3:B] [--alla]   # bevisrutorna ur våra egna klipp (deras film ↔ alla våra filmer) — före --anmal för videoannonser
+node konkurrenter/kor.mjs --anmal KD-2026-001 [--bara-aktiva] [--utan-cdn] [--utan-bevisbild] [--namn …] [--epost …] [--telefon …]   # Meta-anmälningarna: en per annons + bevisbild + verifieringssida
 node konkurrenter/kor.mjs --anmald KD-2026-001 --nr 1 --referens <Metas nr>   # kvittot per inskickad anmälan
 node konkurrenter/kor.mjs --skicka KD-2026-001 --via loopia --ja        # RESERV: skicka direkt från butikens kundtjänstbrevlåda
 node konkurrenter/kor.mjs --avfarda KD-2026-001 "ingen kopia"
@@ -167,6 +168,84 @@ node konkurrenter/kor.mjs --lista
     Meta byter dem utan förvarning; ett fält paketet inte täcker stoppar, det
     fylls aldrig med en gissning. PNG:erna och verifieringssidan är
     gitignorerade (`<nr>.json` bär CDN-länken).
+10b. **Klippen — bevisrutorna ur våra EGNA klipp** (`klipp.mjs`, `--klipp <id>`;
+    Axel 2026-09-29, andra vändan: "många av de videosarna som vi säger är
+    snodda har vi också snott … typ nittio procent av alla klippen i
+    videosarna är våra, förutom just de som du tog screenshots på"). De
+    första bevisbilderna visade miniatyrträffen — annonsens förhandsbild mot
+    vår — och just de klippen är lånad b-roll; resten av filmerna är våra
+    AI-klipp. Därför: deras video laddas ner ur annonsbiblioteket
+    (`videoUrl` i annonsfilen), ALLA våra filmer med samma namnprefix som de
+    träffade annonserna hämtas ur våra konton (Metas `filtering` på namnet;
+    `object_story_spec.video_data.video_id` bär `source`, `creative.video_id`
+    — reelen — gör det inte; utan source tas Metas `thumbnails` som rutor),
+    en ruta var halva sekund hashas (dHash 9 × 8 räknat i ffmpeg — Playwrights
+    egen ffmpeg saknar H.264, mätt 2026-09-29; `pip3 install --user
+    imageio-ffmpeg` ger en som har det, `hittaFfmpeg` provar FFMPEG, PATH och
+    den), varje ruta hos dem paras med den närmaste hos oss över alla filmer
+    (≤ 6/64 = samma ruta), deras film delas i scener, allt inom 2 s från en
+    utesluten ruta (miniatyrerna på båda sidor för alla annonser + det Axel
+    pekat ut med `--lanat <anmälan>:<bokstav>`) kastas, och 3 par väljs ur
+    olika scener hos dem och olika scener/filmer hos oss, tätast först, i
+    tidsordning på kortet. Andelen matchande rutor räknas UTAN de lånade.
+    Facit `arenden/<id>/anmalan/klipp.json` (committas: par, hashar, lånade
+    hashar, biblioteket), cache `output/klipp/<id>/` (filmer, `rutor-<video>.json`,
+    rutorna som JPEG). Sammanfattningen (`klipp` per annons: antal, andel,
+    filmer, par) läggs på ärendet, så brevet, anmälan, bevisbilden och
+    rapporten säger samma sak; `--anmal` stoppar om rutfilerna saknas i
+    stället för att falla tillbaka på miniatyren. **Mätt 2026-09-29 på ORVO:**
+    mot EN film matchade 3–56 % av rutorna, mot alla 131 takskyddsfilmer
+    68–84 % — deras tio filmer är hopklippta ur många av våra (mest
+    Takoverdrag_SP_4_H1, RI_1_H1, OB_1_H1); paren 0–1/64; 5 min första
+    gången (131 filmer nedladdade), sekunder därefter. Verifieringssidan
+    visar per anmälan paren (A/B/C med film och tid) och det lånade klippet
+    som utesluts, så Axel ser att rätt scen kastats.
+    **Tre skydd sedan samma kväll** (efter att bevis-8 visat ett par ur ett
+    nästan svart övertoningsparti): (1) **platta rutor räknas aldrig** —
+    standardavvikelsen i 9 × 8-miniatyren ska vara ≥ 8 (`KONTRAST_MIN`),
+    annars matchar varje svart ruta varje annan svart ruta; (2) **bara filmer
+    publicerade FÖRE deras annons** får bära ett par (`fore` = annonsens
+    startdatum ur annonsbiblioteket mot vår annons `created_time`; biblioteket
+    bär `skapad`, version 2 — en äldre cache läses om av sig själv); (3)
+    **`bevisStatus` avgör vad varje annons bevisar** (`klipp.mjs`): *text*
+    (ordagrann annonstext), *film* (par ur våra klipp), *bild* (en
+    BILDannons bild — en films miniatyr räknas aldrig, den kan vara lånad),
+    *miniatyr* (en film där `--klipp` aldrig körts: `overifierad`, och då
+    stoppar `--anmal`, `--faktura` och `--skicka` tills klippen körts), eller
+    *ej bevisad* (bara det lånade matchade, eller jämförelsen föll) — den
+    annonsen står med orsak på sidan och i ärendet men tas aldrig med i
+    brev, faktura eller anmälan. Fakturaraden säger vad som är bevisat
+    ("Annonsfilm klippt ur våra annonsfilmer (…)" / "Annonstext kopierad …"),
+    anmälan nämner filmerna och deras datum ("published by us between … before
+    this ad started running on …") och aldrig miniatyrens annons.
+    **Tre lärdomar till samma kväll, alla inbyggda** (efter att två bevisbilder
+    visat fel): (4) **bilden tas ut på rutnummer, inte på tid** (`skrivRutaNr`:
+    samma fps-kedja som hashen) — `-ss 4` gav rutan FÖRE ett klippbyte i vår
+    film medan den jämförda rutan redan var nästa scen, och kortet visade två
+    olika bilder med "avstånd 0/64"; varje par **kontrolleras nu i de uttagna
+    bilderna** (`KONTROLL_AVSTAND` 10) och byts mot nästa kandidat om det inte
+    håller, och par mitt i ett gemensamt klipp (grannrutorna matchar också,
+    `stod`) går före par vid ett klippbyte; lika nära ⇒ vår ÄLDSTA film. (5)
+    **Förhandsbilden är deras allra första bildruta** (1–7 bitar mot rutan vid
+    0,00 s i alla tio, läst med 30 rutor/s) men 16–23 bitar från närmaste ruta
+    i 2-per-sekund-serien — så uteslutningen runt hashen missade de lånade
+    inledningarna. Nu: deras **tagningar** ur ffmpegs klippbyten
+    (`klippbyten`, scenpoäng ≥ 0,3; ORVO klipper hårt) och `lanadeKlipp`:
+    tagningen med förhandsbilden är lånad, liksom varje tagning i en annan av
+    deras annonser där minst två rutor ligger inom 5 bitar från en lånad ruta
+    (samma lånade klipp återanvänt, högst två varv; kantrutan vid ett
+    klippbyte sprider aldrig — den kan visa grannklippet). På VÅR sida
+    utesluts bara rutorna som liknar det lånade (± 1 s), och vår sida sprider
+    aldrig tillbaka. (6) **Mätt fel väg två gånger innan det satt:** att
+    sprida via våra filmer märkte 184 av 240 filmer (våra AI-filmer har mjuka
+    övergångar, så ffmpeg slår ihop flera av våra klipp till en tagning — och
+    kantrutan i annons 18 var redan ett av VÅRA klipp som finns i nästan
+    alla deras annonser); nu utesluts 5–17 rutor per annons, 48–72 % av deras
+    film matchar fortfarande våra klipp. Ett lånat klipp som inte hänger ihop
+    med någon förhandsbild (ORVO:s Sterling-klipp mitt i annons 7) fångas
+    inte automatiskt — sessionen tittar på alla par (översiktsark) och Axel
+    pekar ut med `--lanat <anmälan>:<bokstav>`, som nu utesluter hela
+    TAGNINGEN hos dem och rutan ± 1 s i vår film.
 11. **Rapport och sida** (`rapport.mjs`, `sida.mjs`): svensk rapport med
     Axels uppgifter sist, engelsk Discord-post i `#copycats` bara när något
     är nytt, och granskningssidan (`output/sida.html`, publiceras som
@@ -185,6 +264,8 @@ node konkurrenter/kor.mjs --lista
 | `arenden/<id>/brev.txt`, `brev.json`, `faktura-<nr>.pdf` + `.html` | ✅ | Sändpaketet: exakt det som lades i Gmail |
 | `arenden/<id>/anmalan/<nr>.json` + `.txt` | ✅ | Meta-anmälan per annons: fälten, bevisbildens CDN-länk, status + Metas referens |
 | `arenden/<id>/anmalan/bevis-<nr>.png`, `verifiering.html` | ❌ | Bevisbilderna (~1 MB styck) och Axels verifieringssida — byggs om med `--anmal` |
+| `arenden/<id>/anmalan/klipp.json` | ✅ | Klippvalet: paren (film, tid, avstånd, hash) per annons, de lånade hasharna, biblioteket — `--klipp` |
+| `output/klipp/<id>/` | ❌ | Cache: deras och våra filmer (mp4), `rutor-<video>.json`, `bibliotek.json`, rutorna som JPEG — bygg om med `--klipp` |
 | `arenden/<id>/anmalan/<nr>-torr.png`, `<nr>-formular.png`, `<nr>-kvitto.png`, `kod.txt*` | ❌ | Formulärets skärmdumpar (torrkörning, ifyllt före Submit, kvittot) och engångskodens fil — referensen står i `<nr>.json` |
 | `output/<datum>.annonser-<sid-id>.json` | ❌ | Annonsfilen läsaren skrev ur annonsbiblioteket (alla annonser, räckvidd, sidinfo) — byggs om med `--annonser-sida` |
 | `cowork/1-annonser.txt` | ✅ | Reservprompten till Cowork när containern inte kan läsa annonsbiblioteket |
