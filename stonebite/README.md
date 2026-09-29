@@ -85,6 +85,13 @@ se `bonus/README.md`. Sajten räknar den vid varje hämtning.
 Ingen godkänner sina egna pengar: en VA rapporterar in en insats, ägaren,
 chefen eller Head of support godkänner den på sidan Bonus.
 
+**Pengarna visas som de betalas ut, aldrig som en klumpsumma** (Axels beslut
+2026-09-28). Tre utbetalningar, tre takter: produkttest varannan vecka (1–15
+betalas den 15:e, 16–sista betalas sista dagen i månaden), bonusen en gång i
+månaden, commission för sig. Min sida har ett kort per del, Bonus-sidan en
+tabell per del med vem som får vad. Definitionerna bor i `bonus/regler.json`
+→ `utbetalningar`; talen är motorns (`bonus/README.md` → Utbetalningarna).
+
 ---
 
 ## Så hänger datan ihop

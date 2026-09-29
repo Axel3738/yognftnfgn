@@ -139,7 +139,7 @@
         },
         {
           "namn": "Bonusprogrammen",
-          "vad": "Nytt 2026-09-21: alla roller kan tjäna extra — recensioner, tvister, tom inkorg, produkter som skalar.",
+          "vad": "Nytt 2026-09-21: alla roller kan tjäna extra — recensioner, tvister, tom inkorg, färdiga produkter. Sedan 2026-09-28 visas pengarna som de betalas ut: produkttest varannan vecka (den 15:e och sista dagen), bonusen en gång i månaden, commission för sig.",
           "var": "bonus/",
           "kommando": "node bonus/kor.mjs",
           "status": "nytt"
