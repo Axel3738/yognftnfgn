@@ -47,6 +47,21 @@ Varför inte fraktbolagen direkt: YunExpress svarar 405 utanför sin sajt och
 | `lage.json` | Minnet: registrerade nummer, senast skrivna status, leveransdatum. **Committas av rutinen** — utan filen registreras allt om och kvoten bränns. Bär **inga** skanningar, se nedan |
 | `test/` | 115 tester utan nät, varav 14 för Axels fyra krav |
 
+⚠️ **Trippelkollens "sidan är en annan version" är Shopifys cache, inte en
+misslyckad publicering.** Sidan ligger inne (API:t läser tillbaka rätt antal
+tecken) men den publika vyn serverar den förra versionen några varv.
+Mätt på Matstrumpor 2026-09-28/29: fyra gånger på ett dygn (17:56, 07:56,
+12:56, 16:56 CEST) — två gånger löste publiceringens egen omförsöksloop det
+inom körningen, två gånger tog alla fyra försöken slut och körningen föll med
+kod 1. **Åtgärden är att köra om publiceringen, inte att felsöka bygget:**
+
+```bash
+node sparning/publicera.mjs --butik <butik> --paket <repo>/sparning/butiker/<butik>/output/paket.json
+```
+
+Den gick grön på första försöket båda gångerna. Eventen är redan skrivna när
+det händer — bara sidan saknas — så rundan behöver aldrig köras om.
+
 ```bash
 node --test sparning/test/*.test.mjs
 node sparning/kor.mjs --kolla

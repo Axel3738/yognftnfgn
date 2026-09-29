@@ -1,0 +1,123 @@
+[
+ {
+  "box": [
+   58,
+   42,
+   276,
+   107
+  ],
+  "fet": true,
+  "storlek": 34,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "utvidga": 4,
+  "text": "Farsdagssalg"
+ },
+ {
+  "box": [
+   30,
+   150,
+   1050,
+   232
+  ],
+  "text": "Gave til farsdag: taket han",
+  "fet": true,
+  "storlek": 61,
+  "rader": 1,
+  "utvidga": 7,
+  "farg": [
+   16,
+   15,
+   13
+  ]
+ },
+ {
+  "box": [
+   30,
+   240,
+   1050,
+   334
+  ],
+  "text": "aldri sjekker.",
+  "fet": true,
+  "storlek": 61,
+  "rader": 1,
+  "utvidga": 7,
+  "farg": [
+   16,
+   15,
+   13
+  ]
+ },
+ {
+  "box": [
+   30,
+   352,
+   1050,
+   412
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   17,
+   16,
+   14
+  ],
+  "utvidga": 5,
+  "text": "Hele takflaten, 6,5 × 3 m. 210D-duk, ikke tynn presenning."
+ },
+ {
+  "box": [
+   40,
+   972,
+   1040,
+   1073
+  ],
+  "fet": true,
+  "storlek": 73,
+  "farg": [
+   15,
+   14,
+   12
+  ],
+  "utvidga": 6,
+  "text": "Fra 1 189 kr"
+ },
+ {
+  "box": [
+   40,
+   1114,
+   1040,
+   1170
+  ],
+  "fet": false,
+  "storlek": 44,
+  "farg": [
+   70,
+   66,
+   59
+  ],
+  "utvidga": 5,
+  "text": "ord. 1 549 kr"
+ },
+ {
+  "box": [
+   40,
+   1196,
+   1040,
+   1256
+  ],
+  "fet": true,
+  "storlek": 44,
+  "farg": [
+   15,
+   14,
+   12
+  ],
+  "utvidga": 5,
+  "text": "Bestill senest 19. oktober"
+ }
+]

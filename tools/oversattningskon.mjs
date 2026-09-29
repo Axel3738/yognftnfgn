@@ -181,9 +181,11 @@ async function main() {
     const j = { notion: rad, namn, status: 'HOPPA', skal: null };
     jobb.push(j);
 
-    // Fars dag-annonserna (FD) översätts aldrig — raden går till Approved med
-    // skälet som kommentar, precis som en avvecklad kampanj (oversatt.md).
-    const svensk = baraSverige(namn);
+    // Vinklar som inte lämnar Sverige (FD = fars dag) — raden går till Approved
+    // med skälet som kommentar, precis som en avvecklad kampanj (oversatt.md).
+    // Spärren är MARKNADSVIS: Norge har samma farsdag och samma rea, så den
+    // gäller inte dit (tools/lib/bara-sverige.mjs, mätt 2026-09-29).
+    const svensk = baraSverige(namn, kod);
     if (svensk) { j.bara_se = true; j.skal = svensk; continue; }
 
     const se = seMap.get(namn.toLowerCase());

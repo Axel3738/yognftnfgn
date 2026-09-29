@@ -101,6 +101,26 @@ export function overgang(arende, till, { av = 'rutinen', not = null, nu = new Da
   };
 }
 
+/**
+ * Tar tillbaka ett kvitto på en Meta-anmälan som var fel: anmälan står som
+ * utkast igen och historiken säger varför (raden om kvittot står kvar, det är
+ * spåret av felet). Kastar när anmälan inte är kvitterad. Ren.
+ * Mätt 2026-09-29, ORVO anmälan 1: Meta visade en säkerhetskontroll (captcha)
+ * vid Submit, och skriptet läste det kvarvarande formuläret som kvitto.
+ */
+export function angraKvittoAnmalan(a, { nr, nu = new Date().toISOString(), av = 'sessionen', skal }) {
+  const rapporter = a.anmalan?.rapporter ?? [];
+  const r = rapporter.find((x) => x.nr === nr);
+  if (!r) throw new Error(`${a.id} har ingen anmälan ${nr}.`);
+  if (r.status !== 'inskickad') throw new Error(`Anmälan ${nr} står inte som inskickad (${r.status ?? 'utkast'}) — inget att ta tillbaka.`);
+  const nya = rapporter.map((x) => {
+    if (x.nr !== nr) return x;
+    const { kvitto, kvittoText, ...rest } = x;
+    return { ...rest, status: 'utkast', referens: null, inskickad: null };
+  });
+  return { ...a, anmalan: { ...a.anmalan, rapporter: nya, klar: null }, historik: [...(a.historik ?? []), { nar: nu, fran: a.status, till: a.status, av, not: `Meta-anmälan ${nr}/${rapporter.length} INTE inskickad — kvittot togs tillbaka: ${skal}` }] };
+}
+
 /** Ett nytt ärende ur ett fynd. Ren — skriver inget. */
 export function nyttArende({ id, nyckel, verksamhet, typ, var: vart, deras, bevis, styrka, skal, skalEn, brev, nu = new Date().toISOString() }) {
   return {

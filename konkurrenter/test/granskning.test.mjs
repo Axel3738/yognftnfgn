@@ -3,7 +3,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 
 import { metaRad, byggBrev } from '../brev.mjs';
-import { kortAnmalan, kortMejl, byggGranskning, statusFor, smsText, attGora, sidaHtml, sammanfattning, META_PLATS } from '../granskning.mjs';
+import { kortAnmalan, kortMejl, byggGranskning, statusFor, smsText, attGora, sidaHtml, sammanfattning, META_PLATS, mejlRedanNot } from '../granskning.mjs';
 
 const paket = (nr, extra = {}) => ({
   nr, antal: 3, arende: 'KD-TEST-001', plattform: 'facebook', lank: `https://www.facebook.com/ads/library/?id=10${nr}`, annonsNr: nr + 1, exponeringar: 1000 * nr, grund: 'film', filmer: ['Takoverdrag_OB_1_H1', 'Takoverdrag_SP_4_H1'], produkt: 'Taköverdrag',
@@ -55,6 +55,18 @@ test('kortAnmalan: fälten som formuläret får, svensk sammanfattning, version 
   const andrad = kortAnmalan({ nr: 1 }, paket(1, { bevisbildUrl: 'https://cdn.example/ny.png' }));
   assert.notEqual(andrad.version, k.version, 'ny bevisbild = ny version, gamla svar gäller inte');
   assert.equal(kortAnmalan({ nr: 1 }, paket(1, { skapad: 'annan tid' })).version, k.version, 'byggtiden påverkar inte versionen');
+});
+
+test('kortAnmalan: exempellänken säger på svenska vilken av våra annonser den är — och när den bara är sidans lista', () => {
+  const lank = 'https://www.facebook.com/ads/library/?id=2000363993957496';
+  const med = kortAnmalan({ nr: 1 }, paket(1, { originaler: [{ film: 'Takoverdrag_SP_4_H1', lank, sida: 'Bäverbutiken.se', start: '2026-09-15' }], falt: { ...paket(1).falt, originalWorkUrls: [lank, 'https://example.se/products/x'] } }));
+  const ex = med.falt.find((f) => f.etikett === 'Exempel på vårt original');
+  assert.equal(ex.varde, lank); assert.match(ex.sv, /^vår annons Takoverdrag_SP_4_H1 i annonsbiblioteket, sidan Bäverbutiken\.se, igång sedan 15 sep — samma film/);
+  const lista = 'https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=SE&search_type=page&view_all_page_id=678639638662543';
+  const utan = kortAnmalan({ nr: 1 }, paket(1, { falt: { ...paket(1).falt, originalWorkUrls: [lista] } }));
+  assert.match(utan.falt.find((f) => f.etikett === 'Exempel på vårt original').sv, /ingen enskild annons hittad/);
+  assert.equal(kortAnmalan({ nr: 1 }, paket(1)).falt.find((f) => f.etikett === 'Exempel på vårt original').sv, undefined);
+  assert.notEqual(med.version, kortAnmalan({ nr: 1 }, paket(1)).version, 'ny exempellänk = ny version, gamla svar gäller inte');
 });
 
 test('kortMejl: meningen om Meta blir en plats som sidan fyller med rätt antal', () => {
@@ -121,4 +133,42 @@ test('sidaHtml: datan bakas in utan att kunna stänga script-blocket', () => {
   const html = sidaHtml(g, { mall: '<script type="application/json" id="granskning">__GRANSKNING__</script>' });
   assert.ok(!html.slice(0, -'</script>'.length).includes('</script>'), 'ingen tidig </script>');
   assert.equal(JSON.parse(html.replace(/^<script[^>]*>/, '').replace(/<\/script>$/, '')).deras.sidnamn, '</script><b>');
+});
+
+test('mejlRedanNot: en runda utan mejl pekar på ärendet mot samma sida som bär brevet', () => {
+  const no = { id: 'KD-TEST-002', deras: { sidaId: '99', sidnamn: 'ORVO' } };
+  const se = { id: 'KD-TEST-001', deras: { sidaId: '99' }, brev: { skickat: { nar: '2026-09-29T18:28:48Z' } } };
+  const annan = { id: 'KD-TEST-003', deras: { sidaId: '77' }, brev: { skickat: { nar: '2026-09-30T10:00:00Z' } } };
+  const not = mejlRedanNot(no, [se, annan, no]);
+  assert.match(not, /^Inget nytt mejl i den här rundan: brevet och fakturan till ORVO gick redan i KD-TEST-001 \(29 sep 20:28\)/);
+  assert.equal(mejlRedanNot(no, [annan]), null, 'ett brev till en annan sida räknas aldrig');
+  assert.equal(mejlRedanNot({ id: 'X', deras: {} }, [se]), null, 'utan sid-id ingen koppling');
+  const g = byggGranskning({ a: { ...no, land: 'NO' }, kort: [], not });
+  assert.equal(g.not, not);
+  assert.equal(g.land, 'NO');
+  assert.equal(byggGranskning({ a: se, kort: [] }).not, null);
+});
+
+test('attGora: en runda utan mejlkort ger aldrig ett mejl att skicka', () => {
+  const kort = [1, 2].map((nr) => kortAnmalan({ nr }, paket(nr)));
+  const g = { arende: 'KD-TEST-002', kort };
+  const r = attGora({ granskning: g, beslut: { svar: { [kort[0].nyckel]: ja(kort[0]), [kort[1].nyckel]: ja(kort[1]) } }, status: { kort: {} } });
+  assert.deepEqual(r.anmalningar, [1, 2]);
+  assert.equal(r.mejl, null);
+  assert.equal(r.mejlVantar, null);
+});
+
+test('sidmallen: mejlstatus och mejlingress bara när rundan har ett mejlkort', async () => {
+  const { readFileSync } = await import('node:fs');
+  const mall = readFileSync(new URL('../granskning-sida.html', import.meta.url), 'utf8');
+  assert.match(mall, /mk \? `<span class="chip/, 'mejlchippet ritas bara med ett mejlkort');
+  assert.match(mall, /if \(!mk\) document\.getElementById\('ingress'\)/, 'ingressen utan mejl');
+  assert.match(mall, /if \(G\.not\) delar\.push/, 'rundans not visas');
+  assert.match(mall, /säkerhetskontroll gör du den själv, Claude gör den aldrig/, 'ingressen lovar aldrig att Claude klarar Metas kontroll');
+});
+
+test('sidaHtml: titeln följer ärendet och kan inte bryta sig ur <title>', () => {
+  const mall = '<title>__TITEL__</title><script type="application/json" id="granskning">__GRANSKNING__</script>';
+  assert.match(sidaHtml(byggGranskning({ a: { id: 'KD-2026-002' }, kort: [] }), { mall }), /^<title>Anmälningar KD-2026-002<\/title>/);
+  assert.match(sidaHtml(byggGranskning({ a: { id: '</title><b>' }, kort: [] }), { mall }), /^<title>Anmälningar &lt;\/title&gt;&lt;b&gt;<\/title>/);
 });

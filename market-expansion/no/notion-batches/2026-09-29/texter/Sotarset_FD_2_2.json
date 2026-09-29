@@ -1,0 +1,123 @@
+[
+ {
+  "box": [
+   58,
+   42,
+   276,
+   107
+  ],
+  "fet": true,
+  "storlek": 34,
+  "farg": [
+   255,
+   251,
+   252
+  ],
+  "utvidga": 4,
+  "text": "Farsdagssalg"
+ },
+ {
+  "box": [
+   30,
+   150,
+   1050,
+   232
+  ],
+  "text": "Til farsdag: pipen",
+  "fet": true,
+  "storlek": 61,
+  "rader": 1,
+  "utvidga": 7,
+  "farg": [
+   15,
+   14,
+   13
+  ]
+ },
+ {
+  "box": [
+   30,
+   240,
+   1050,
+   334
+  ],
+  "text": "han faktisk feier selv",
+  "fet": true,
+  "storlek": 61,
+  "rader": 1,
+  "utvidga": 7,
+  "farg": [
+   15,
+   14,
+   13
+  ]
+ },
+ {
+  "box": [
+   30,
+   354,
+   1050,
+   412
+  ],
+  "fet": false,
+  "storlek": 32,
+  "farg": [
+   16,
+   16,
+   15
+  ],
+  "utvidga": 5,
+  "text": "9 fleksible stenger og en nylonbørste på 100 mm renser pipen."
+ },
+ {
+  "box": [
+   40,
+   986,
+   1040,
+   1068
+  ],
+  "fet": true,
+  "storlek": 73,
+  "farg": [
+   15,
+   14,
+   12
+  ],
+  "utvidga": 6,
+  "text": "389 kr"
+ },
+ {
+  "box": [
+   40,
+   1112,
+   1040,
+   1172
+  ],
+  "fet": false,
+  "storlek": 44,
+  "farg": [
+   69,
+   66,
+   61
+  ],
+  "utvidga": 5,
+  "text": "ord. 509 kr"
+ },
+ {
+  "box": [
+   40,
+   1196,
+   1040,
+   1256
+  ],
+  "fet": true,
+  "storlek": 44,
+  "farg": [
+   14,
+   14,
+   13
+  ],
+  "utvidga": 5,
+  "text": "Bestill senest 19. oktober"
+ }
+]

@@ -1,0 +1,25 @@
+{
+ "brand": "CaraShell",
+ "butik": "carashell/takskyddet",
+ "datum": "2026-09-29",
+ "lage": "brief",
+ "server": "CaraShell — OPS",
+ "kanal": "annons-uppladdning",
+ "gjort": [
+  "🇺🇸 US translation round: 3 videos live in 1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m",
+  "CaraShellRoof_US_UG_102_H1 → ad set UG (ad 120251671833900435)",
+  "CaraShellRoof_US_CS_112_H1 → ad set CS (ad 120251671852550435)",
+  "CaraShellRoof_US_SP_104_H2 → ad set SP (ad 120251671868600435)",
+  "All three: American English voice (HeyGen precision), captions rebuilt, prices $199 / was $249 read live from the US product page",
+  "Three source defects corrected instead of translated: the drawstring claim (the product has no drawcord), the 5.0/5 rating burned into CS_112's end block, and the kronor prices",
+  "\"Contains AI-generated content\" burned in on all three",
+  "Market watch: 12 of 12 ad sets on the right placements, home page, landing page, product page and checkout all English, checkout defaults to United States",
+  "Approved queue: 69 rows, none lagging in the US",
+  "All three Notion rows commented and moved to Approved"
+ ],
+ "varningar": [
+  "The original CARASHELL_US_Taköverdrag campaign is still PAUSED with 2 246 kr spend — owner's decision, nothing uploaded there.",
+  "The campaign still has two ad sets for the same angle, CARASHELL_US_GT and CARASHELL_US_G, splitting the angle's budget in the CBO."
+ ],
+ "nasta_korning": "2026-09-30"
+}

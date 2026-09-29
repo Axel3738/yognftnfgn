@@ -52,6 +52,11 @@ export function sammanfattning(paket) {
 /** Fälten exakt som anmal-skicka.mjs skriver in dem i Metas formulär, med svenska etiketter. Ren. */
 export function faltLista(paket, { land = 'Sweden' } = {}) {
   const v = formularVarden(paket, { land });
+  // Vad exempellänken är, på svenska (Axel 2026-09-29: den ska vara vår annons i annonsbiblioteket, aldrig produktsidan).
+  const o = (paket?.originaler ?? []).find((x) => x?.lank === v.original);
+  const orgSv = o
+    ? `vår annons ${o.film} i annonsbiblioteket${o.sida ? `, sidan ${o.sida}` : ''}${o.start ? `, igång sedan ${dagSv(o.start)}` : ''} — samma film, kontrollerad ruta för ruta`
+    : /view_all_page_id=/.test(v.original ?? '') ? 'vår sidas alla annonser i annonsbiblioteket (ingen enskild annons hittad)' : undefined;
   return {
     fel: v.fel,
     falt: [
@@ -61,7 +66,7 @@ export function faltLista(paket, { land = 'Sweden' } = {}) {
       { etikett: 'Äger du rättigheten själv?', varde: v.ombud ? "No, but I'm authorised to represent the rights owner" : 'Yes', sv: v.ombud ? 'nej, du företräder bolaget som äger den' : 'ja' },
       { etikett: 'Rättighetsinnehavare', varde: v.rattighetshavare },
       { etikett: 'Annonsen som anmäls', varde: v.urls, lank: true },
-      { etikett: 'Exempel på vårt original', varde: v.original, lank: true },
+      { etikett: 'Exempel på vårt original', varde: v.original, lank: true, ...(orgSv ? { sv: orgSv } : {}) },
       { etikett: `Beskrivning (${v.beskrivning.length} av 500 tecken)`, varde: v.beskrivning, lang: true },
       { etikett: 'Ditt namn', varde: v.namn },
       { etikett: 'E-post (engångskoden kommer hit)', varde: v.epost },
@@ -81,7 +86,8 @@ export function kortAnmalan(rapport, paket, { annons = null, bild = null, land =
     typ: 'anmalan',
     nr: rapport.nr,
     antal: paket.antal ?? null,
-    version: kort12(JSON.stringify({ falt: paket.falt, bild: paket.bevisbildUrl ?? null, filmer: paket.filmer ?? [] })),
+    // Versionen följer det Axel SER — även texten som räknas fram ur fälten (500-teckensbeskrivningen): ändras koden efter hans ja gäller ja:t inte.
+    version: kort12(JSON.stringify({ falt: paket.falt, bild: paket.bevisbildUrl ?? null, filmer: paket.filmer ?? [], visat: falt.map((f) => f.varde) })),
     annonsNr: paket.annonsNr ?? annons?.nr ?? null,
     lank: paket.lank,
     exponeringar: paket.exponeringar ?? annons?.exponeringar ?? null,
@@ -128,10 +134,26 @@ export function kortMejl({ brev, faktura, fran, franNot = null, antalByggda = 0,
   };
 }
 
-/** Hela sidans data. Ren. */
-export function byggGranskning({ a, kort, byggd = new Date().toISOString() }) {
+/**
+ * Hela sidans data. `not` = en mening under ingressen (t.ex. varför rundan saknar
+ * mejl: brevet gick redan i ett annat ärende mot samma sida). Ren.
+ */
+export function byggGranskning({ a, kort, byggd = new Date().toISOString(), not = null }) {
   const d = a.deras ?? {};
-  return { arende: a.id, verksamhet: a.verksamhet ?? null, deras: { sidnamn: d.sidnamn ?? null, sidaId: d.sidaId ?? null, doman: d.doman ?? null, epost: (d.epost ?? [])[0] ?? null }, byggd, kort };
+  return { arende: a.id, verksamhet: a.verksamhet ?? null, deras: { sidnamn: d.sidnamn ?? null, sidaId: d.sidaId ?? null, doman: d.doman ?? null, epost: (d.epost ?? [])[0] ?? null }, land: a.land ?? null, byggd, not: not ?? null, kort };
+}
+
+/**
+ * Meningen när en runda bara är anmälningar: vilket ärende mot samma Facebook-sida
+ * som redan bär brevet (senast skickat vinner). null när inget brev gått. Ren.
+ */
+export function mejlRedanNot(a, andra) {
+  const sida = a?.deras?.sidaId;
+  if (!sida) return null;
+  const fore = [...(andra ?? [])].filter((x) => x.id !== a.id && x.deras?.sidaId === sida && x.brev?.skickat?.nar)
+    .sort((x, y) => String(y.brev.skickat.nar).localeCompare(String(x.brev.skickat.nar)))[0];
+  if (!fore) return null;
+  return `Inget nytt mejl i den här rundan: brevet och fakturan till ${a.deras?.sidnamn ?? 'dem'} gick redan i ${fore.id} (${dagSv(fore.brev.skickat.nar, { tid: true })}). Här är bara anmälningarna.`;
 }
 
 /**
@@ -198,9 +220,13 @@ export function attGora({ granskning, beslut, status }) {
   return { anmalningar, mejl, mejlVantar, nej, obesvarade, jaAntal, gamla };
 }
 
-/** Sidans HTML: mallen med kortens data inbakad (säker i ett script-block). Ren utom läsningen av mallen. */
+/**
+ * Sidans HTML: mallen med kortens data inbakad (säker i ett script-block) och titeln
+ * "Anmälningar <ärende>" (stod låst på KD-2026-001 tills den norska rundan). Ren utom läsningen av mallen.
+ */
 export function sidaHtml(granskning, { mall = readFileSync(SIDMALL, 'utf8') } = {}) {
   const json = JSON.stringify(granskning).replace(/</g, '\\u003c').replace(/\u2028/g, '\\u2028').replace(/\u2029/g, '\\u2029');
   if (!mall.includes('__GRANSKNING__')) throw new Error('sidmallen saknar __GRANSKNING__');
-  return mall.replace('__GRANSKNING__', () => json);
+  const titel = `Anmälningar ${granskning?.arende ?? ''}`.trim().replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  return mall.replace('__TITEL__', () => titel).replace('__GRANSKNING__', () => json);
 }

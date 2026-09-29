@@ -1,0 +1,80 @@
+{
+ "carashell_UG_102_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/c811391725cf497f926be6f306ee0288/original.mp4",
+  "proofreadId": "f1231baf37454126ba2cd7ef173504bc-en-en-US",
+  "sprak": "English (United States)",
+  "marknad": "US",
+  "mode": "precision",
+  "output_language": "English (United States)",
+  "sprakkoll": {
+   "HeyGens översättning": {
+    "ok": true,
+    "gissat": "en",
+    "ord": 63,
+    "skal": null
+   },
+   "den rättade SRT:n": {
+    "ok": true,
+    "gissat": "en",
+    "ord": 46,
+    "skal": null
+   }
+  },
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "3493b2d1f3554d55ab0af87887a20f7e-en",
+  "downloaded": true
+ },
+ "carashell_CS_112_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/4c8131c55bd54d928c32d5a4a9be8690/original.mp4",
+  "proofreadId": "6edbebdfdea74d4784f0ff5581ca1c19-en-en-US",
+  "sprak": "English (United States)",
+  "marknad": "US",
+  "mode": "precision",
+  "output_language": "English (United States)",
+  "sprakkoll": {
+   "HeyGens översättning": {
+    "ok": true,
+    "gissat": "en",
+    "ord": 75,
+    "skal": null
+   },
+   "den rättade SRT:n": {
+    "ok": true,
+    "gissat": "en",
+    "ord": 56,
+    "skal": null
+   }
+  },
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "8e79f54e72f048d3b76a593332ed99fc-en",
+  "downloaded": true
+ },
+ "carashell_SP_104_H2": {
+  "assetUrl": "https://resource2.heygen.ai/video/bc31f284f3f04127b2e19dad70d668df/original.mp4",
+  "proofreadId": "c4d0449a6a7a43ccbf6106a087f229d2-en-en-US",
+  "sprak": "English (United States)",
+  "marknad": "US",
+  "mode": "precision",
+  "output_language": "English (United States)",
+  "sprakkoll": {
+   "HeyGens översättning": {
+    "ok": true,
+    "gissat": "en",
+    "ord": 79,
+    "skal": null
+   },
+   "den rättade SRT:n": {
+    "ok": true,
+    "gissat": "en",
+    "ord": 55,
+    "skal": null
+   }
+  },
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "11a0a4519bd64e5dbdb75ceabafabb62-en",
+  "downloaded": true
+ }
+}

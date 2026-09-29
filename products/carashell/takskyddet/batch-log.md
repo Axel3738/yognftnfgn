@@ -2760,3 +2760,120 @@ CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11 – kopia`. Den bär ord
 LISTICLE och filtrerades därför bort som eget spår (`tools/lib/sidokampanjer.mjs`)
 — huvudkampanjen `CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11` är
 fortfarande ACTIVE med 11 adsets och är den kön skulle laddat upp i.
+
+---
+
+## 2026-09-29 — speglingen: 0 speglade, 7 källrader → Approved
+
+**Inget att spegla.** SE-kön (`CaraShell SE ready to be active`) hade EN rad,
+`Takoverdrag_GT_11_H1`, och den stoppas av brandregeln — copyn nämner
+Bäverbutiken. Sjätte dygnet i rad (24–29/9), och nu den enda raden i kön.
+Källradens status orörd, ingen ny kommentar (stopp-kommentaren står redan där).
+Ligger hos Axel; ACTION NEEDED postad igen i `#annons-uppladdning`
+(meddelande `1554507758047330365`).
+
+**7 källrader → `Approved`** — deras US-annonser kom upp i natt:
+
+| Källrad | US-annons |
+|---|---|
+| `Takoverdrag_SP_4_H4` | `120251650670480435` |
+| `Takoverdrag_SP_4_H3` | `120251650660230435` |
+| `Takoverdrag_OB_4_H1` | `120251651140340435` |
+| `Takoverdrag_OB_3_H1` | `120251651131140435` |
+| `Takoverdrag_CO_5_H1` | `120251650907860435` |
+| `Takoverdrag_PD_10_H1` | `120251650898200435` |
+| `Takoverdrag_CS_9_H1` | `120251650890260435` |
+
+Kvar i `CaraShell EN ready to be active` (3): `SP_4_H2`, `CS_12_H1`, `UG_2_H1`
+— US-rutinen har inte kommit till dem än.
+
+Priserna lästa live: SE 1 129 kr, NO 1 106 NOK. Kampanjerna ACTIVE (SE 11
+adsets, NO 12). Varningen om `CARASHELL_SE_Taköverdraget LISTICLE` är rätt
+beteende — eget spår, tar inte emot speglade annonser.
+
+⚠️ Inget loggat i registret: `register.mjs log` vägrar 0, och noll rader
+speglades. En dag utan spegling lämnar alltså inget spår i `register.json` —
+rutinvakten mäter den här rutinen på commit-rubriken, och den här commiten är
+spåret.
+
+---
+
+## USA-runda 16 — 2026-09-29 (`/ops-oversatt carashell/takskyddet --marknad US`)
+
+Tre videor ur `SE-ACTIVE to be translated`, alla klara i NO, ingen med slutkort
+(`rodtext.py`: `slutkort_frames` 0 i alla tre — kön dömde dem "ren").
+
+| SE-rad | US-annons | Adset | Ad-ID |
+|---|---|---|---|
+| `CaraShellRoof_UG_102_H1` | `CaraShellRoof_US_UG_102_H1` | `CARASHELL_US_UG` | `120251671833900435` |
+| `CaraShellRoof_CS_112_H1` | `CaraShellRoof_US_CS_112_H1` | `CARASHELL_US_CS` | `120251671852550435` |
+| `CaraShellRoof_SP_104_H2` | `CaraShellRoof_US_SP_104_H2` | `CARASHELL_US_SP` | `120251671868600435` |
+
+Alla tre ACTIVE/ACTIVE i `1 CARASHELL_US_Taköverdrag … – kopia`
+(`120251451415500435`, CBO 8 000 kr/dag), tillbakalästa ur Meta. Priset läst
+live ur schema.org på carashell.com samma dag: **199 dollar, jämförpris 249**,
+storleken 21 × 10 ft. Kön kan fortfarande inte läsa priset själv — den ärvda
+länken pekar på listiclen, inte `/products/`.
+
+### Tre fel i källorna, rättade i stället för översatta
+
+1. **"rem och dragsko i kanten"** i UG_102 och CS_112 (både tal och caption).
+   Produkten HAR ingen dragsko: SP-briefen säger det rakt ut ("the product has
+   no drawcord"), och sidans egen faktarad är remmar på alla fyra sidor som
+   hakas i en krok i nederkant. Den raden gäller i båda de engelska versionerna.
+   CS_112:s Meta-copy hade redan den rättade raden — det var bara videon som
+   låg kvar.
+2. **"5,0/5" inbränt i CS_112:s röda slutblock.** Ett betyg, och alla tre
+   briefer skriver att produkten bara har seedade recensioner. Panelen är
+   dragen ned över raden med flit; jämförpriset tog dess plats. Samma beslut
+   som slutkortets recensionsrad 2026-09-28.
+3. **HeyGen hörde jämförpriset som "1 460"** i CS_112 där briefen säger 1 469.
+   Spelar ingen roll i dollar, men siffran är alltså inte avläst ur källan.
+
+### HeyGen: precision är standard sedan 2026-09-28
+
+Alla tre gick i `precision` (`pipeline/translate-batch.mjs` sätter det själv
+sedan `f0b4eb6e`). Renderingarna kostade **2,73 USD** av plånbokens 170,30 →
+167,57. ⚠️ **Moderationskön tog ~35 minuter** — `download` svarar
+"moderationskö: väntar (släpps oftast inom ~1 h)" och exit 2, alltså ingen
+körning att rädda: vänta ut den. ⚠️ Nedladdningen landade den här gången i
+`video/out/`, inte `video/heygen/` som 2026-09-28 — `forbehandla.py` läser
+`video/render/`, så kolla var filerna faktiskt hamnade i stället för att lita
+på gårdagens sökväg.
+
+### Captions och de svenska resterna
+
+`svenskkoll.py` (OCR över HELA filmen, 4 fps): **0 träffar i alla tre.**
+`kvarkoll.py` gav några utslag som alla visade sig vara bakgrund utanför
+pillret — kontrollerade i frames, inte i loggen.
+
+⚠️ **Ett verkligt fynd som bara ögat såg:** i SP_104_H2 är den sista svenska
+captionen ("1 129 kr i stället för 1 469 kr.") BREDARE än den engelska, och
+kvar stod dels ett spöke på 1–3 % kontrast (uppmätt: pixelvärden 248–253 mot
+255), dels **den svenska punkten** som en tydlig mörk prick vid högerkanten.
+Rättat med en `fyll`-platta `[28, 958, 714, 1082]` i fönstret 16,4–21,5 s;
+pricken är borta, spöket ligger kvar på samma 1–3 % och syns inte i normal
+kontrast. UG_102 och CS_112 har samma svaga spöke men ingen mörk rest.
+**Lärdomen: svenskkoll mäter OCR, inte kontrast — en caption som är bredare än
+sin ersättare ska alltid tittas på i en frame.**
+
+### Kontroller
+
+- `rostkoll.py` per video **mot källan och den rättade SRT:n** (matchade
+  filnamn, så drift och avhugget slut faktiskt mättes): 3 av 3 gröna. UG_102
+  fick en notering om att sista repliken ligger 0,14 s från slutet — dubben
+  tonar ut som källan (−19,6 mot −9,5 dB), alltså inte avhugget.
+- `node tools/ai-rad.mjs … --ai rost` på alla tre: raden "Contains
+  AI-generated content" inbränd, och det är `-ai.mp4` som laddades upp.
+- Marknadsvakten (`factory/marknadskoll.mjs carashell --marknad US --discord`)
+  efter uppladdningen: 12 av 12 adsets rätt placeringar, **spend i går
+  10 229 kr och i dag 5 495 kr — allt i tillåtna placeringar**, startsida,
+  landningssida, produktsida och kassa engelska, kassan förvalde United States.
+- Approved-kön: 69 rader, **0 eftersläpande i USA**.
+
+### Oförändrat sedan tidigare ronder
+
+- Den ursprungliga `CARASHELL_US_Taköverdrag …` står PAUSED med 2 246 kr spend
+  — ägarens beslut, inget laddas upp dit.
+- Kampanjen har fortfarande två adsets för samma vinkel (`CARASHELL_US_GT` och
+  `CARASHELL_US_G`) som delar vinkelns budget i CBO:n.
