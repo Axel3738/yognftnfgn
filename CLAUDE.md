@@ -86,7 +86,16 @@ FI, da + fi, EUR med DKK som lokal valuta) och **USA/UK/AU/CA/NZ** (en, USD
 fast = Axels sushisock-priser, GBP/AUD/CAD/NZD omräknade) — fri frakt till alla
 åtta, 5–10 arbetsdagar, adresserna `matstrumpor.se/nb|da|fi|en`, 196 texter
 per språk översatta av sonnet-subagenter mot `REGLER.md` och granskade
-adversariellt (`output/underlag-<locale>.json` är minnet). Temats hårdkodade
+adversariellt (`output/underlag-<locale>.json` är minnet). 📧 **Fraktmejlen på alla tolv språk sedan
+2026-09-29** — inte med `{% case %}` som CaraShell utan som Shopifys EGNA
+översättningar av de tre fraktnotiserna (`translatableResources` EMAIL_TEMPLATE,
+`translationsRegister`, `node mejl/notis-oversattning.mjs matstrumpor --skarpt`,
+33 lästa tillbaka): Shopify skickar notisen på det språk kunden HANDLADE på.
+Före det bar våra tre mallar Shopifys standardöversättning på alla elva språk
+(en tysk kund hade fått Shopifys tyska standardmejl med fraktbolagets länk).
+Spårningsrutinen lägger in språken igen varje timme om den svenska mallen
+klistrats om (`sparning.md` steg 2b). Allt i `mejl/README.md` → "Matstrumpor på
+tolv språk". Temats hårdkodade
 svenska (paketväljaren, trust-raden, "Verifierat köp", pris- och datumformatet
 i `ms-cro.js`) får locale-grenar av `bygg.mjs --steg tema`; löftena "framme
 till fars dag/jul" visas bara på svenska. `matstrumpor.no` är INTE registrerad

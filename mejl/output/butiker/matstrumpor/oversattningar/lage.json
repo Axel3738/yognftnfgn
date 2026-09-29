@@ -1,0 +1,266 @@
+{
+ "butik": "matstrumpor",
+ "tid": "2026-09-29T11:09:26.411Z",
+ "lage": "skarpt",
+ "mallar": {
+  "fraktbekraftelse": {
+   "resurs": "gid://shopify/EmailTemplate/126064296275",
+   "huvud_titel": "Ditt paket är på väg",
+   "huvud_sha": "beeb7958efd122bf",
+   "sprak": {
+    "nb": {
+     "fore": "annan",
+     "sha": "192963dfb878e07b",
+     "tecken": 7212,
+     "efter": "lika"
+    },
+    "da": {
+     "fore": "annan",
+     "sha": "f33ab57cb53fe239",
+     "tecken": 7209,
+     "efter": "lika"
+    },
+    "fi": {
+     "fore": "annan",
+     "sha": "3c2b7053b9aa15af",
+     "tecken": 7265,
+     "efter": "lika"
+    },
+    "en": {
+     "fore": "annan",
+     "sha": "ddedb1385a8079c8",
+     "tecken": 7256,
+     "efter": "lika"
+    },
+    "de": {
+     "fore": "annan",
+     "sha": "d33acd5d52c0c72a",
+     "tecken": 7302,
+     "efter": "lika"
+    },
+    "fr": {
+     "fore": "annan",
+     "sha": "0187a0ece1d88906",
+     "tecken": 7329,
+     "efter": "lika"
+    },
+    "nl": {
+     "fore": "annan",
+     "sha": "919fbd37734e0919",
+     "tecken": 7269,
+     "efter": "lika"
+    },
+    "es": {
+     "fore": "annan",
+     "sha": "8e079b435441a280",
+     "tecken": 7294,
+     "efter": "lika"
+    },
+    "it": {
+     "fore": "annan",
+     "sha": "7a631cc991b3fac1",
+     "tecken": 7287,
+     "efter": "lika"
+    },
+    "pl": {
+     "fore": "annan",
+     "sha": "0d9cbc9a1b11dd38",
+     "tecken": 7252,
+     "efter": "lika"
+    },
+    "pt-PT": {
+     "fore": "annan",
+     "sha": "f1829f4388b6da1c",
+     "tecken": 7300,
+     "efter": "lika"
+    }
+   },
+   "registrerade": [
+    "nb",
+    "da",
+    "fi",
+    "en",
+    "de",
+    "fr",
+    "nl",
+    "es",
+    "it",
+    "pl",
+    "pt-PT"
+   ]
+  },
+  "fraktuppdatering": {
+   "resurs": "gid://shopify/EmailTemplate/126064361811",
+   "huvud_titel": "Ny info om ditt paket",
+   "huvud_sha": "25484111c59c6277",
+   "sprak": {
+    "nb": {
+     "fore": "annan",
+     "sha": "24b0d6dbf0d62fda",
+     "tecken": 6156,
+     "efter": "lika"
+    },
+    "da": {
+     "fore": "annan",
+     "sha": "8d05f1424affd39b",
+     "tecken": 6145,
+     "efter": "lika"
+    },
+    "fi": {
+     "fore": "annan",
+     "sha": "154ef83dcb3736aa",
+     "tecken": 6157,
+     "efter": "lika"
+    },
+    "en": {
+     "fore": "annan",
+     "sha": "6f638a41b7d71921",
+     "tecken": 6191,
+     "efter": "lika"
+    },
+    "de": {
+     "fore": "annan",
+     "sha": "b290122dde826492",
+     "tecken": 6201,
+     "efter": "lika"
+    },
+    "fr": {
+     "fore": "annan",
+     "sha": "f342e5fa9a00e382",
+     "tecken": 6227,
+     "efter": "lika"
+    },
+    "nl": {
+     "fore": "annan",
+     "sha": "a016981444a84fff",
+     "tecken": 6170,
+     "efter": "lika"
+    },
+    "es": {
+     "fore": "annan",
+     "sha": "3193673feccdc974",
+     "tecken": 6218,
+     "efter": "lika"
+    },
+    "it": {
+     "fore": "annan",
+     "sha": "2f8e23a0352be7e6",
+     "tecken": 6197,
+     "efter": "lika"
+    },
+    "pl": {
+     "fore": "annan",
+     "sha": "6966fb1da70a705d",
+     "tecken": 6200,
+     "efter": "lika"
+    },
+    "pt-PT": {
+     "fore": "annan",
+     "sha": "1b54f409fdfe7a8d",
+     "tecken": 6205,
+     "efter": "lika"
+    }
+   },
+   "registrerade": [
+    "nb",
+    "da",
+    "fi",
+    "en",
+    "de",
+    "fr",
+    "nl",
+    "es",
+    "it",
+    "pl",
+    "pt-PT"
+   ]
+  },
+  "ute_for_leverans": {
+   "resurs": "gid://shopify/EmailTemplate/126064427347",
+   "huvud_titel": "Paketet kommer idag",
+   "huvud_sha": "b7fc01a1f19ddcd1",
+   "sprak": {
+    "nb": {
+     "fore": "annan",
+     "sha": "2e768402bac9ee66",
+     "tecken": 6159,
+     "efter": "lika"
+    },
+    "da": {
+     "fore": "annan",
+     "sha": "ded558752ce0e288",
+     "tecken": 6153,
+     "efter": "lika"
+    },
+    "fi": {
+     "fore": "annan",
+     "sha": "839ae80c429e6e4a",
+     "tecken": 6174,
+     "efter": "lika"
+    },
+    "en": {
+     "fore": "annan",
+     "sha": "a861106652b4c346",
+     "tecken": 6183,
+     "efter": "lika"
+    },
+    "de": {
+     "fore": "annan",
+     "sha": "4845253f806382e9",
+     "tecken": 6206,
+     "efter": "lika"
+    },
+    "fr": {
+     "fore": "annan",
+     "sha": "24fe0de84461ae8f",
+     "tecken": 6246,
+     "efter": "lika"
+    },
+    "nl": {
+     "fore": "annan",
+     "sha": "0ab14256d9869b00",
+     "tecken": 6188,
+     "efter": "lika"
+    },
+    "es": {
+     "fore": "annan",
+     "sha": "bb65f441ebbdbdc0",
+     "tecken": 6198,
+     "efter": "lika"
+    },
+    "it": {
+     "fore": "annan",
+     "sha": "0b1b2991baad22e8",
+     "tecken": 6195,
+     "efter": "lika"
+    },
+    "pl": {
+     "fore": "annan",
+     "sha": "aff9fcd80451a504",
+     "tecken": 6170,
+     "efter": "lika"
+    },
+    "pt-PT": {
+     "fore": "annan",
+     "sha": "6f298bfe3f3e5feb",
+     "tecken": 6198,
+     "efter": "lika"
+    }
+   },
+   "registrerade": [
+    "nb",
+    "da",
+    "fi",
+    "en",
+    "de",
+    "fr",
+    "nl",
+    "es",
+    "it",
+    "pl",
+    "pt-PT"
+   ]
+  }
+ },
+ "fel": 0
+}

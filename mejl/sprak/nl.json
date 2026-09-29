@@ -1,0 +1,43 @@
+{
+  "comment": "Nederländska för Matstrumpors fraktmejl (marknaden Europa). Skriven av en sonnet-subagent 2026-09-29 för Matstrumpors fraktmejl, mot sv-källan och butikens egna ord; knappen och tilltalet (je/jij) matchar spårningssidan.",
+  "kod": "nl",
+  "ord": {
+    "Hej": "Hoi",
+    "I paketet": "In het pakket",
+    "Levereras till": "Wordt bezorgd aan",
+    "Antal": "Aantal",
+    "Ditt paketnummer": "Je pakketnummer",
+    "Klicka på knappen ovan så visas ditt paket direkt.": "Klik op de knop hierboven en je pakket verschijnt direct."
+  },
+  "manader": ["januari", "februari", "maart", "april", "mei", "juni", "juli", "augustus", "september", "oktober", "november", "december"],
+  "dagsuffix": "",
+  "menyrad": "Volg je pakket",
+  "sidfot": "Vragen over je bestelling? Reageer op deze e-mail of schrijf naar {{support}}.",
+  "mallar": {
+    "fraktbekraftelse": {
+      "amne": ["Je pakket is onderweg", "{{ordernummer}} heeft het magazijn verlaten", "Nu onderweg naar jou"],
+      "preheader": ["Hier vind je de trackinglink.", "Kijk in je spam als je de mail niet ziet."],
+      "rubrik": "Je pakket is onderweg!",
+      "intro": "Je bestelling {{ordernummer}} heeft het magazijn verlaten en is onderweg naar jou.",
+      "knapp": "Volg je pakket",
+      "tips": "De tracking kan 2–4 dagen stilstaan terwijl het pakket naar het vliegveld gaat. Dat is helemaal normaal. Kijk daarna nog een keer.",
+      "beraknad_rubrik": "Verwachte levering",
+      "beraknad": "{{leverans_fran}}–{{leverans_till}}",
+      "tysta_dagar": "De tracking laat de eerste 2–4 dagen vaak niets zien. Het pakket is onderweg naar het vliegveld en dus niet kwijt. Je hoeft niets te doen: de status wordt bijgewerkt zodra het pakket is ingecheckt."
+    },
+    "fraktuppdatering": {
+      "amne": ["Nieuws over je pakket", "Je tracking is bijgewerkt", "Update: {{ordernummer}}"],
+      "preheader": ["Zo staat het er nu voor.", "Bekijk hier de laatste gegevens."],
+      "rubrik": "Je tracking is bijgewerkt",
+      "intro": "De trackinggegevens van je bestelling {{ordernummer}} zijn bijgewerkt.",
+      "knapp": "Volg je pakket"
+    },
+    "ute_for_leverans": {
+      "amne": ["Je pakket komt vandaag", "De bezorger is onderweg naar je", "{{ordernummer}} wordt vandaag bezorgd"],
+      "preheader": ["Houd je pakket vandaag in de gaten.", "Straks in je brievenbus of bij het afhaalpunt."],
+      "rubrik": "Je pakket komt vandaag",
+      "intro": "Je bestelling {{ordernummer}} is onderweg voor levering en komt vandaag bij je aan.",
+      "knapp": "Volg je pakket"
+    }
+  }
+}

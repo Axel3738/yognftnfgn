@@ -1,0 +1,43 @@
+{
+  "comment": "Italienska för Matstrumpors fraktmejl. Skriven av en sonnet-subagent 2026-09-29 mot sv-källan och butikens egna italienska ord (tu-tilltal, knappen och sidan låsta mot spårningssidan).",
+  "kod": "it",
+  "ord": {
+    "Hej": "Ciao",
+    "I paketet": "Nel pacco",
+    "Levereras till": "Consegna a",
+    "Antal": "Quantità",
+    "Ditt paketnummer": "Il numero del tuo pacco",
+    "Klicka på knappen ovan så visas ditt paket direkt.": "Clicca sul pulsante qui sopra e il tuo pacco apparirà subito."
+  },
+  "manader": ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"],
+  "dagsuffix": "",
+  "menyrad": "Traccia il pacco",
+  "sidfot": "Domande sul tuo ordine? Rispondi a questa email o scrivi a {{support}}.",
+  "mallar": {
+    "fraktbekraftelse": {
+      "amne": ["Il tuo pacco è in viaggio", "{{ordernummer}} ha lasciato il magazzino", "Sta arrivando da te"],
+      "preheader": ["Il link per il tracciamento è qui.", "Controlla lo spam se non vedi l'email."],
+      "rubrik": "Il tuo pacco è in viaggio!",
+      "intro": "Il tuo ordine {{ordernummer}} ha lasciato il magazzino ed è in viaggio verso di te.",
+      "knapp": "Traccia il pacco",
+      "tips": "Il tracciamento può restare fermo per 2–4 giorni mentre il pacco raggiunge l'aeroporto: è del tutto normale. Ricontrolla dopo questo periodo.",
+      "beraknad_rubrik": "Consegna prevista",
+      "beraknad": "{{leverans_fran}}–{{leverans_till}}",
+      "tysta_dagar": "Nei primi 2–4 giorni il tracciamento spesso non mostra nulla: il pacco sta raggiungendo l'aeroporto, non si è perso. Non devi fare niente, il tracciamento si aggiornerà appena il pacco sarà registrato."
+    },
+    "fraktuppdatering": {
+      "amne": ["Novità sul tuo pacco", "Il tracciamento è aggiornato", "Aggiornamento: {{ordernummer}}"],
+      "preheader": ["Ecco a che punto è il tuo pacco.", "Guarda gli ultimi dati qui."],
+      "rubrik": "Il tracciamento è aggiornato",
+      "intro": "I dati di tracciamento del tuo ordine {{ordernummer}} sono stati aggiornati.",
+      "knapp": "Traccia il pacco"
+    },
+    "ute_for_leverans": {
+      "amne": ["Il pacco arriva oggi", "Ora è in consegna", "{{ordernummer}} arriva oggi"],
+      "preheader": ["Tieni d'occhio la consegna durante la giornata.", "Presto nella cassetta della posta o al punto di ritiro."],
+      "rubrik": "Il pacco arriva oggi",
+      "intro": "Il tuo ordine {{ordernummer}} è in consegna e arriverà durante la giornata.",
+      "knapp": "Traccia il pacco"
+    }
+  }
+}
