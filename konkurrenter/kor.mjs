@@ -81,7 +81,7 @@ import { hamtaCpm, valjCpm, cpmRad } from './cpm.mjs';
 import { byggAnmalningar, kontrolleraAnmalan, anmalanText, annonsLank } from './anmalan.mjs';
 import { bevisbildHtml, bevisbildPng, verifieringHtml } from './bevisbild.mjs';
 import { kortAnmalan, kortMejl, byggGranskning, statusFor, smsText, attGora, sidaHtml } from './granskning.mjs';
-import { tolkaAnnonsinput, byggAnnonsfynd } from './annonsfall.mjs';
+import { tolkaAnnonsinput, byggAnnonsfynd, annonsUppfoljning } from './annonsfall.mjs';
 import { hamtaAdLibrary, sidaIdUr } from './adlibrary.mjs';
 import { skickaAnmalan, formularVarden, coworkPrompt } from './anmal-skicka.mjs';
 import { hittaFfmpeg, hamtaFil, varVideo, videoKalla, egnaFilmer, prefixUrNamn, rutorUrVideo, hashUrBild, bildRuta, graRuta, skillnadOvre, langd, skrivRutaNr, paraRutor, lanadeKlipp, klippbyten, tagningar, tid, avstand, FPS, MAX_AVSTAND, KONTROLL_AVSTAND, SAMMA_TAGNING, FRO_AVSTAND, BOKSTAVER, RUTOR_VERSION, BIBLIOTEK_VERSION, bevisStatus, produktForPar, filmdatum } from './klipp.mjs';
@@ -530,6 +530,7 @@ async function rapport() {
     const id = nyttId(arenden, new Date(nu));
     const a = nyttArende({ id, nyckel: f.nyckel, verksamhet: f.verksamhet, typ: f.typ, var: f.var, deras: f.deras, bevis: f.bevis, styrka: f.styrka, skal: f.skal, skalEn: f.skalEn, brev, nu });
     a.kalla = f.kalla;
+    if (f.land) a.land = f.land; // annonsbibliotekets land (NO …) — uppföljningen läser samma land
     if (bef?.status === STATUS.ATGARDAD) a.historik.push({ nar: nu, fran: null, till: STATUS.NY, av: 'rutinen', not: `kopian är tillbaka — tidigare ärende ${bef.id}` });
     arenden.set(id, a); nya.push(a); skrivningar.push({ a, f });
   }
@@ -1329,26 +1330,33 @@ async function foljupp() {
   const arenden = lasArenden(ARENDEFIL, { logg });
   const egna = egnaDomaner(k);
   const nu = new Date().toISOString();
-  const att = [...arenden.values()].filter((a) => [STATUS.SKICKAD, STATUS.PAMIND].includes(a.status) && a.deras?.url);
+  const att = [...arenden.values()].filter((a) => [STATUS.SKICKAD, STATUS.PAMIND].includes(a.status) && (a.deras?.url || (a.typ === 'annons' && a.deras?.sidaId)));
   if (!att.length) { console.log('Inga skickade ärenden att följa upp.'); return; }
   let hashare = null;
   try { hashare = await startaHashare({ logg }); } catch (e) { logg(`  ⚠️ ${e.message}`); }
   const cache = new Bildcache(join(OUTPUT, 'bildcache.json'));
   for (const a of att) {
-    const sida = await hamtaKonkurrent(a.deras.url, { logg, egna, medKontakt: false });
     let kvar; let detalj;
-    if (!sida.ok && [404, 410].includes(sida.status)) { kvar = false; detalj = `sidan svarar ${sida.status}`; }
-    else if (!sida.ok) { kvar = null; detalj = `gick inte att läsa: ${sida.fel ?? sida.status}`; }
-    else {
-      const p = { text: null, bilder: a.var?.produkt?.bilder ?? [], annonser: [] };
-      try { const j = await (await fetch(`${a.var.produkt.url}.json`, { signal: AbortSignal.timeout(20000) })).json(); p.text = (await import('./korpus.mjs')).textUrHtml(j?.product?.body_html); } catch { p.text = null; }
-      let derasHashar = new Map(); const egnaHashar = new Map();
-      if (hashare) {
-        const r1 = await hashaLankar(p.bilder.slice(0, 12), { hashare, cache, logg }); for (const [u, v] of r1.hashar) egnaHashar.set(u, v);
-        const r2 = await hashaLankar(sida.bilder.slice(0, 24), { hashare, cache, logg }); derasHashar = r2.hashar;
+    if (a.typ === 'annons') {
+      // Annonsfallet följs upp i annonsbiblioteket: kopian är annonserna, inte sajten (annonsfall.mjs annonsUppfoljning).
+      let bib = null;
+      if (a.deras?.sidaId) { try { bib = await hamtaAdLibrary(a.deras.sidaId, { land: a.land ?? 'SE', logg, medRackvidd: false }); } catch (e) { bib = { annonser: [], fel: [e.message.split('\n')[0]] }; } }
+      ({ kvar, detalj } = annonsUppfoljning(a.bevis?.annonser, bib));
+    } else {
+      const sida = await hamtaKonkurrent(a.deras.url, { logg, egna, medKontakt: false });
+      if (!sida.ok && [404, 410].includes(sida.status)) { kvar = false; detalj = `sidan svarar ${sida.status}`; }
+      else if (!sida.ok) { kvar = null; detalj = `gick inte att läsa: ${sida.fel ?? sida.status}`; }
+      else {
+        const p = { text: null, bilder: a.var?.produkt?.bilder ?? [], annonser: [] };
+        try { const j = await (await fetch(`${a.var.produkt.url}.json`, { signal: AbortSignal.timeout(20000) })).json(); p.text = (await import('./korpus.mjs')).textUrHtml(j?.product?.body_html); } catch { p.text = null; }
+        let derasHashar = new Map(); const egnaHashar = new Map();
+        if (hashare) {
+          const r1 = await hashaLankar(p.bilder.slice(0, 12), { hashare, cache, logg }); for (const [u, v] of r1.hashar) egnaHashar.set(u, v);
+          const r2 = await hashaLankar(sida.bilder.slice(0, 24), { hashare, cache, logg }); derasHashar = r2.hashar;
+        }
+        const j = jamforMotProdukt(p, sida, { k, derasHashar, egnaHashar });
+        kvar = Boolean(j.styrka); detalj = kvar ? j.skal.join('; ') : `text ${j.text?.langsta ?? 0} ord i följd, ${j.bilder.length} bilder — under tröskeln`;
       }
-      const j = jamforMotProdukt(p, sida, { k, derasHashar, egnaHashar });
-      kvar = Boolean(j.styrka); detalj = kvar ? j.skal.join('; ') : `text ${j.text?.langsta ?? 0} ord i följd, ${j.bilder.length} bilder — under tröskeln`;
     }
     const fristPasserad = a.brev?.frist ? Date.parse(a.brev.frist) < Date.now() : false;
     let upp = { ...a, uppfoljning: { nar: nu, kvar, detalj, fristPasserad } };
