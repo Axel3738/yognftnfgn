@@ -1,0 +1,34 @@
+{
+  "lage": "gron",
+  "tjuvar": [
+    {
+      "id": "120250147352270291",
+      "namn": "Takoverdrag_CS_2_H1",
+      "status": "ACTIVE",
+      "spend": 4042.14,
+      "roas": 1.235979,
+      "kop": 4,
+      "alder_dagar": 20,
+      "spend_7d": 8348.21,
+      "roas_7d": 2.261335,
+      "backdagar_i_rad": null,
+      "etikett": "KPI_WINNER",
+      "etikett_datum": "2026-09-21",
+      "roas_livstid": 3.655764,
+      "intakt": 4996.00015506,
+      "dranering": 760.6781525382421,
+      "trott_vinnare": true,
+      "orsak": "TROTT_VINNARE"
+    }
+  ],
+  "vantar": [],
+  "break_even": 1.5224922267264678,
+  "break_even_cpa": 815.0799097022143,
+  "kampanj_spend": 30449.12,
+  "noteringar": [],
+  "dom": "TJUV_I_GRON",
+  "tjuvSpend": 4042.14,
+  "motivering": "1 spendtjuv i en grön kampanj (break-even 1,52): Takoverdrag_CS_2_H1 (4 042 kr, 4 köp, ROAS 1,24, TROTT_VINNARE). Pausa exakt dessa — kampanjen rörs inte.",
+  "kampanj_id": "120250147343350291",
+  "kampanj_namn": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09"
+}

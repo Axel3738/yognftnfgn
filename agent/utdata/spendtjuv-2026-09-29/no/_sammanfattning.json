@@ -1,0 +1,80 @@
+[
+  {
+    "kampanj_id": "120252321093160233",
+    "namn": "Feiesett NO",
+    "lage": "gron",
+    "dom_i_planen": "VANTA_KONSEKVENT",
+    "annonser": 28,
+    "break_even": 1.62,
+    "break_even_cpa": 279.04176077529024,
+    "raddningar_14d": 0,
+    "forlangning_idag": false,
+    "agarbeslut_idag": false,
+    "dom": "INGEN_TJUV",
+    "tjuvar": [],
+    "vantar": [],
+    "rest": null,
+    "raddade": null,
+    "motivering": "Ingen annons uppfyller den gröna grinden (≥ 300 kr, ≥ 10 % av spenden, ≥ 500 kr dränering, och ≥ 3 köp under 1,46 eller 0 köp över 3 × break-even-CPA)."
+  },
+  {
+    "kampanj_id": "120252183519570233",
+    "namn": "Takovertrekk Campingvogn NO",
+    "lage": "gron",
+    "dom_i_planen": "LAT_VARA",
+    "annonser": 75,
+    "break_even": 1.62,
+    "break_even_cpa": 852.6217675239836,
+    "raddningar_14d": 0,
+    "forlangning_idag": false,
+    "agarbeslut_idag": false,
+    "dom": "INGEN_TJUV",
+    "tjuvar": [],
+    "vantar": [],
+    "rest": null,
+    "raddade": null,
+    "motivering": "Ingen annons uppfyller den gröna grinden (≥ 300 kr, ≥ 10 % av spenden, ≥ 500 kr dränering, och ≥ 3 köp under 1,46 eller 0 köp över 3 × break-even-CPA)."
+  },
+  {
+    "kampanj_id": "120252102071560233",
+    "namn": "Arbeidslampe NO",
+    "lage": "trappa",
+    "dom_i_planen": "ATGARDSTRAPPAN",
+    "annonser": 12,
+    "break_even": 1.63,
+    "break_even_cpa": 296.6205085700803,
+    "raddningar_14d": 0,
+    "forlangning_idag": false,
+    "agarbeslut_idag": false,
+    "dom": "STANG_AV",
+    "tjuvar": [
+      "Arbeidslampe_NO_PD_1_H1 1273.06 roas 0.277921 TROTT_VINNARE"
+    ],
+    "vantar": [],
+    "rest": {
+      "spend": 299.09999999999997,
+      "intakt": 353.81000439999997,
+      "kop": 1,
+      "roas": 1.182915427616182
+    },
+    "raddade": [
+      {
+        "id": "120252102097880233",
+        "namn": "Arbeidslampe_NO_CS_1_H3",
+        "status": "ACTIVE",
+        "spend": 82.3,
+        "roas": 4.299028,
+        "kop": 1,
+        "alder_dagar": 23,
+        "spend_7d": 161.44,
+        "roas_7d": 2.191588,
+        "backdagar_i_rad": null,
+        "etikett": "LOSER",
+        "etikett_datum": "2026-09-21",
+        "roas_livstid": 2.902903,
+        "intakt": 353.81000439999997
+      }
+    ],
+    "motivering": "Resten av kampanjen är inte bedömbar utan tjuvarna: 299 kr och 1 köp (grinden går vid 300 kr och 1 köp). Det finns ingen bevisat lönsam kärna att rädda."
+  }
+]

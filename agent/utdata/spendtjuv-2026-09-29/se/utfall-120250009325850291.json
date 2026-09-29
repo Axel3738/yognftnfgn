@@ -1,0 +1,34 @@
+{
+  "lage": "gron",
+  "tjuvar": [
+    {
+      "id": "120250229963530291",
+      "namn": "Batmotor_BF_12_1",
+      "status": "ACTIVE",
+      "spend": 2319.4,
+      "roas": 0.998534,
+      "kop": 4,
+      "alder_dagar": 14,
+      "spend_7d": 4855.56,
+      "roas_7d": 1.430937,
+      "backdagar_i_rad": null,
+      "etikett": "LOSER",
+      "etikett_datum": "2026-09-22",
+      "roas_livstid": 1.720978,
+      "intakt": 2315.9997596000003,
+      "dranering": 889.7705187654321,
+      "trott_vinnare": true,
+      "orsak": "TROTT_VINNARE"
+    }
+  ],
+  "vantar": [],
+  "break_even": 1.62,
+  "break_even_cpa": 378.307289519943,
+  "kampanj_spend": 9342.58,
+  "noteringar": [],
+  "dom": "TJUV_I_GRON",
+  "tjuvSpend": 2319.4,
+  "motivering": "1 spendtjuv i en grön kampanj (break-even 1,62): Batmotor_BF_12_1 (2 319 kr, 4 köp, ROAS 1,00, TROTT_VINNARE). Pausa exakt dessa — kampanjen rörs inte.",
+  "kampanj_id": "120250009325850291",
+  "kampanj_namn": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29"
+}
