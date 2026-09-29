@@ -13,5 +13,5 @@ och besökarens eget land läggs först (orange etikett).
 ⚠️ Personerna är AI-genererade. Rutorna bär bara landets namn — aldrig citat, namn eller "kund".
 ⚠️ AI-kartor blev fel två gånger (strumpor i Afrika, Sydamerika, Kina) — därför en globbild i stället för en karta.
 
-Läst som kund 2026-09-29: SE (sv, Sverige först), NO (nb, Norge först), US (en, USA först), 0 trasiga bilder, dator + mobil.
+Omgång 2 samma dag (Axels dom: "hyperrealistiskt eller tydligt tecknat — ingen halvdålig AI slop"): alla 13 omgjorda som mobil/blixtfoton i riktiga hem, i samma stil som sajtens "Som de används"-bilder (en av dem är referensbild), flaggan som en naturlig del av miljön. AI-raden under collaget = samma text som "ugc_markning". Läst som kund: SE, NO, US, 0 trasiga bilder, dator + mobil.
 Ta bort: radera sektionen "Matstrumpor i världen" på startsidan i temaredigeraren.

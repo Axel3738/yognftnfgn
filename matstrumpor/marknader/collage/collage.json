@@ -3,73 +3,74 @@
  "modell": "google/nano-banana-edit",
  "referenser": [
   "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/WhatsAppImage2025-11-25at08.41.59_5.jpg?v=1771995278",
-  "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/WhatsAppImage2025-11-27at03.41.37_80407476-11ab-4ab2-a940-b37398596e88_2.jpg?v=1771995278"
+  "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/WhatsAppImage2025-11-27at03.41.37_80407476-11ab-4ab2-a940-b37398596e88_2.jpg?v=1771995278",
+  "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/matstrumpor_52_alla_fotter_soffan.jpg"
  ],
- "stil": "Authentic UGC-style smartphone photo, natural daylight, candid and happy, slightly imperfect framing like a social media post. The sushi socks and the black sushi gift box must look exactly like the product in the reference images (salmon nigiri, maki rolls, tamago, striped red/white/black/yellow socks). No text, no words, no logos, no watermarks anywhere in the image. Square composition, subject centered.",
+ "stil": "Hyperrealistic amateur smartphone snapshot taken by a friend, NOT a stock photo, NOT a studio shot: warm indoor lamp light or on-camera flash, slight grain, imperfect casual framing, a real lived-in home with everyday clutter, ordinary-looking people with natural skin, no posing for the camera. Match the look of the third reference image (candid feet on a sofa, warm yellow light). The socks and the black sushi gift box must look exactly like the product in the first two reference images (salmon nigiri, maki rolls, tamago, striped salmon/red/black/yellow socks). No text, no words, no letters, no logos, no watermarks anywhere. Square composition.",
  "karta": {
   "id": "karta",
-  "prompt": "Bright, cheerful lifestyle product photo on a light cream table: the black sushi sock gift box from the reference images sits open next to a vintage desk globe, a few pairs of the striped sushi socks rolled up and scattered around the globe, an open passport and a paper airplane beside them, soft warm daylight, orange (#dd821d) accent props. Square composition. No text, no words, no letters, no logos anywhere."
+  "prompt": "Hyperrealistic amateur phone photo, top-down, on a worn wooden floor in warm evening lamp light: an opened brown cardboard parcel with the black sushi sock gift box inside, three more plain brown parcels stacked next to it, an old paper desk globe beside them, a pair of the striped sushi socks thrown on top. Casual, slightly grainy, real home, not a stock photo. The socks and gift box must look exactly like the reference images. No text, no labels, no letters, no logos anywhere."
  },
  "rutor": [
   {
    "id": "se",
    "namn": "Sverige",
-   "prompt": "A young Swedish woman takes a selfie on a sunny Stockholm Gamla Stan street with colorful old buildings behind her, holding the sushi sock gift box up next to her face and a small blue-and-yellow Swedish flag in her other hand."
+   "prompt": "Swedish birthday at a pine kitchen table in the evening: a laughing middle-aged woman just opened the sushi sock gift box, a homemade cake with tiny paper Swedish flags (blue with yellow cross) stuck in it, coffee cups, on-camera flash."
   },
   {
    "id": "no",
    "namn": "Norge",
-   "prompt": "A young Norwegian man in a knitted sweater stands by a dramatic Norwegian fjord with a red wooden cabin behind him, proudly holding up a pair of striped sushi socks and a small Norwegian flag (red with a white-edged blue Nordic cross)."
+   "prompt": "Cozy Norwegian cabin living room in winter: two pairs of feet wearing the striped sushi socks up on a wooden coffee table next to a thermos, a small Norwegian flag (red with blue cross outlined in white) in a jar on the windowsill, snowy mountains visible through the window."
   },
   {
    "id": "dk",
    "namn": "Danmark",
-   "prompt": "A smiling young Danish woman sits on the quay at Nyhavn in Copenhagen with the colorful harbor houses behind her, holding the open sushi sock gift box on her lap, a small Danish flag (red with a white Nordic cross) stuck in the box."
+   "prompt": "Danish family kitchen at a kid's birthday: a string of small Danish flag bunting (red with a white Nordic cross) across the kitchen, a boy around ten grinning and holding up the opened black sushi sock gift box with both hands (salmon nigiri, maki rolls, tamago clearly visible), cake on the table, flash photo."
   },
   {
    "id": "fi",
    "namn": "Suomi",
-   "prompt": "A young Finnish man sits on a wooden sauna dock by a calm Finnish lake with pine forest, wearing the striped sushi socks on his feet stretched towards the camera, a small Finnish flag (white with a blue Nordic cross) planted in the dock next to him."
+   "prompt": "Finnish summer cottage porch by a lake: bare legs stretched out on a wooden bench, feet wearing the striped sushi socks, a Finnish flag (white with blue cross) on a tall flagpole by the lake in the background, soft evening light."
   },
   {
    "id": "de",
    "namn": "Deutschland",
-   "prompt": "A young German woman takes a selfie in front of the Brandenburg Gate in Berlin, laughing and holding the sushi sock gift box, a small German flag (black, red, gold horizontal stripes) in her hand."
+   "prompt": "German old-building apartment living room during a football evening: three friends' feet in sushi socks resting on a coffee table with beer bottles and crisps, a black-red-gold German flag hanging on the wall behind the sofa, warm lamp light."
   },
   {
    "id": "fr",
    "namn": "France",
-   "prompt": "A young French woman sits at a Paris café terrace with the Eiffel Tower in the background, holding up a pair of striped sushi socks next to a croissant and coffee, a small French flag (blue, white, red vertical stripes) on the table."
+   "prompt": "Small Paris apartment in the morning: feet in the striped sushi socks resting on a little balcony railing, a croissant and coffee cup on a tiny table, Paris zinc rooftops outside, a small blue-white-red French tricolour paper flag in a glass."
   },
   {
    "id": "it",
    "namn": "Italia",
-   "prompt": "A young Italian man on a sunny Rome piazza with the Colosseum behind him, grinning and holding the sushi sock gift box up to the camera with one hand, and in his other hand clearly waving a small Italian flag with three vertical stripes: green, white, red."
+   "prompt": "Italian grandmother's kitchen: an elderly Italian man laughing at the table with a pizza, holding the opened sushi sock gift box, an Italian flag tea towel (green, white, red stripes) hanging on the oven, warm light, flash."
   },
   {
    "id": "es",
    "namn": "España",
-   "prompt": "A young Spanish woman on a sunny Barcelona street with Sagrada Familia in the background, holding up the sushi sock gift box and a small Spanish flag (red, yellow, red horizontal stripes)."
+   "prompt": "Sunny Spanish apartment terrace with terracotta tiles and plants: feet in the sushi socks propped on a plastic chair, a glass of lemonade, a red-yellow-red Spanish flag hanging from the neighbour's balcony across the street."
   },
   {
    "id": "nl",
    "namn": "Nederland",
-   "prompt": "A young Dutch man sitting on a bicycle by an Amsterdam canal with narrow canal houses, the sushi sock gift box in the bike basket, a small Dutch flag (red, white, blue horizontal stripes) on the basket."
+   "prompt": "Dutch living room on King's Day: a young woman in an orange t-shirt laughing on the sofa, feet in the striped sushi socks up on the coffee table, the gift box on her lap, through the big window a Dutch flag with exactly three equal horizontal stripes (red on top, white middle, blue bottom) hangs from the house across the street."
   },
   {
    "id": "gb",
    "namn": "UK",
-   "prompt": "A young British woman in a trench coat takes a selfie in London with a red double-decker bus and Big Ben behind her, holding up a pair of striped sushi socks and a small Union Jack flag."
+   "prompt": "British living room on a rainy evening: feet in the sushi socks on a patterned sofa, a mug of tea with milk, a biscuit tin, Union Jack bunting strung above the fireplace, warm lamp light."
   },
   {
    "id": "us",
    "namn": "USA",
-   "prompt": "A young American man in Times Square New York takes an excited selfie, holding the open sushi sock gift box and a small American flag (stars and stripes)."
+   "prompt": "American suburban backyard on the 4th of July: a smiling dad in a baseball cap holding up a pair of sushi socks, the gift box on a picnic table with burgers, small American flags stuck in the lawn, late afternoon sun."
   },
   {
    "id": "au",
    "namn": "Australia",
-   "prompt": "A young Australian woman on a sunny Sydney harbour promenade with the Sydney Opera House behind her, wearing the striped sushi socks with sandals, holding the sushi sock gift box and a small Australian flag."
+   "prompt": "Australian backyard barbecue in summer: feet in the striped sushi socks with rubber flip-flops on a sunny wooden deck, a stubby holder drink, an Australian flag hanging on the fence, bright harsh sunlight."
   }
  ]
 }
