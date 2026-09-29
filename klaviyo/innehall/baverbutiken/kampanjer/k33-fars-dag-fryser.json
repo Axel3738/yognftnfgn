@@ -39,7 +39,7 @@
     {
       "typ": "text",
       "rubrik": null,
-      "text": "Att sitta still gör det värre. Kroppen slutar producera egen värme, och kylan tar över på minuter.\n\nTjockaste jackan har han redan på sig, men stillasittandet gör att den inte räcker till."
+      "text": "Att sitta still gör det värre. Utan rörelse blir det mindre värme inifrån, och kylan tar över på minuter.\n\nTjockaste jackan har han redan på sig, men stillasittandet gör att den inte räcker till."
     },
     {
       "typ": "produkt",
@@ -59,7 +59,7 @@
     },
     {
       "typ": "produktrad",
-      "rubrik": "Värme för fötter, kropp och händer",
+      "rubrik": "Mot kylan i fötter, kropp och händer",
       "handles": [
         "varmesulor-med-fjarrkontroll-varma-fotter-pa-passet",
         "laktarponcho-med-varme-tre-varmelagen-via-usb",
@@ -81,7 +81,7 @@
     { "rad": "Kall på passet? Värmesulor med fjärrkontroll, 30 %", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Fyra värmeprylar med koden FARSDAG30, till och med måndag 19 oktober.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Den kalla sitsen känns i hela kroppen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Värme för fötter, kropp och händer", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Mot kylan i fötter, kropp och händer", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Se värmesitsen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Hämta 30 % med FARSDAG30", "visualisera": true, "falsifiera": true, "ingen_annan": true }
   ],

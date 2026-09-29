@@ -21,7 +21,7 @@
       "begar": "torra fötter hela turen, med problemet först"
     },
     {
-      "text": "Kroka, dra, slut kardborren. 30 % på damaskerna",
+      "text": "Kroka, dra, fäst kardborren. 30 % på damaskerna",
       "begar": "enkelhet: tre grepp och de sitter"
     },
     {
@@ -47,7 +47,7 @@
       "punkter": [
         "Kroka fast i snörningen.",
         "Dra remmen under foten.",
-        "Slut kardborren runt benet."
+        "Fäst kardborren runt benet."
       ]
     },
     {
@@ -78,7 +78,7 @@
       "ingen_annan": true
     },
     {
-      "rad": "Kroka, dra, slut kardborren. 30 % på damaskerna (ämnesrad 2)",
+      "rad": "Kroka, dra, fäst kardborren. 30 % på damaskerna (ämnesrad 2)",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true

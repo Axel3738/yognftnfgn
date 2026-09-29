@@ -1,7 +1,7 @@
 {
   "id": "k02-baten-ska-upp",
-  "namn": "MAIL_20261001_Batmotorskydd_S_1_uppvarmning_solution_baten-ska-upp_v1",
-  "memo": "Hypotes: båtägare köper ihop, motorhölje/sitsöverdrag/spöhållare är vanliga par i ordrarna (60 d). En checklista (\"det här ska på innan båten ställs undan\") testar om en lista säljer fler produkter per order än ett enproduktsmejl, mätt som AOV mot K01.",
+  "namn": "MAIL_20261001_Batmotorskydd_S_1_tier1_problem_motorn-star-ute_v2",
+  "memo": "Hypotes: båtägare köper ihop, motorhölje/sitsöverdrag/spöhållare är vanliga par i ordrarna (60 d). En checklista (\"det här ska på innan båten ställs undan\") testar om en lista säljer fler produkter per order än ett enproduktsmejl, mätt som AOV mot K01. Rea 30 % med BAT30 till och med söndag 4 oktober (Axel 2026-09-29: rabatt på båtöverdraget och på det som brukar följa med). Omskriven 2026-09-29: problemet först (hero utan produktbild), sedan skyddet, koden och det som brukar följa med i samma order. Axel behöll rubriken Motorn står ute i sex månader.",
   "taggar": {
     "typ": "S",
     "kalla": "egen-data",
@@ -9,39 +9,66 @@
     "lardom": null,
     "avatar": "båtägaren som tar upp båten i oktober",
     "begar": "att båten ska vara i skick till våren utan jobb",
-    "awareness": "solution",
-    "urgency": "sasong",
+    "awareness": "problem",
+    "urgency": "sasong + slutdag (4 oktober)",
     "confidence": "medium",
     "prefix": "Batmotorskydd",
     "kod": "S"
   },
   "amnesrader": [
-    { "text": "Motorn står ute i sex månader", "begar": "skydda motorn från ett halvår ute" },
-    { "text": "Klart innan båten är surrad", "begar": "sätta på skyddet utan verktyg eller hjälp" },
-    { "text": "Fyra saker innan båten ställs undan", "begar": "få allt klart i en enda genomgång" }
+    {
+      "text": "Motorn står ute i sex månader",
+      "begar": "skydda motorn från ett halvår ute"
+    },
+    {
+      "text": "Klart innan båten är surrad, 30 % med BAT30",
+      "begar": "sätta på skyddet utan verktyg eller hjälp"
+    },
+    {
+      "text": "BAT30 ger 30 % på motorskydd och tre saker till",
+      "begar": "köpa det båten behöver inför vintern i en enda order, billigare"
+    }
   ],
-  "forhandstext": "Regn, snö och frost jobbar på motorn hela vintern.",
+  "forhandstext": "Och en blank motor syns från vägen. BAT30 ger 30 % på skyddet till och med söndag 4 oktober.",
   "block": [
     {
       "typ": "hero",
       "rubrik": "Motorn står ute i sex månader",
-      "text": "Hej {{fornamn}},\n\nRegn, snö och frost jobbar på utombordaren i sex månader efter att båten kommit upp på land.",
-      "bild": "produkt:batmotorskydd-420d-heltackande-for-utombordare",
-      "knapp": { "text": "Skydda motorn", "lank": "produkt:batmotorskydd-420d-heltackande-for-utombordare" }
+      "text": "Hej {{fornamn}},\n\nRegn, snö och frost jobbar på utombordaren i sex månader efter att båten kommit upp på land."
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Motorn står oskyddad till våren, och en blank motor på en upplagd båt är det första en tjuv får syn på från vägen."
+    },
+    {
+      "typ": "produkt",
+      "handle": "batmotorskydd-420d-heltackande-for-utombordare",
+      "text": "Dra skyddet över hela motorn, från kåpan ner över riggen, och spänn remmen runt mitten. Det behövs inga verktyg, så skyddet är på innan båten ens är surrad.\n\n420D Oxford-tyg mot regn, snö och UV. Ingen ser vilken motor som står under, och en övertäckt motor är ett betydligt tråkigare byte än en öppen. Nio storlekar, upp till 350 hk.",
+      "knapp": "Se skyddet i nio storlekar"
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Koden BAT30 ger 30 % på båtmotorskyddet och på det som brukar följa med i samma order: motorhöljet, sitsöverdraget och spöhållaren. Den gäller till och med söndag 4 oktober. Tryck på knappen så ligger koden redan i kassan, eller skriv in den själv. Rabatten dras i kassan, en gång per kund, på priset som står på produktsidan."
+    },
+    {
+      "typ": "knapp",
+      "text": "Hämta 30 % med BAT30",
+      "lank": "rabatt:BAT30:produkt:batmotorskydd-420d-heltackande-for-utombordare"
     },
     {
       "typ": "punkter",
-      "rubrik": "Innan båten ställs undan",
+      "rubrik": "Motorhölje, sitsöverdrag och spöhållare, också 30 %",
       "punkter": [
-        "Utombordaren: skydd från kåpa till rigg, 420D-tyg mot regn, snö och UV.",
-        "En annan motor ombord: samma typ av skydd, för motorer från 6 till 250 hk.",
-        "Sitsarna: dras enkelt på och skyddar mot sol, regn och fågelsmuts.",
-        "Spöna: fyra hållare så de inte trasslar in i varandra i garaget."
+        "Motorhöljet är ett allvädersskydd mot sol, regn och salt, för marinmotorer från 6 till 250 hk.",
+        "Sitsöverdraget skyddar båtstolen mot sol, regn, damm och fågelsmuts.",
+        "Spöhållaren är fyra kraftiga hållare, så varje spö får sin egen plats i stället för att trassla ihop sig."
       ]
     },
     {
       "typ": "produktrad",
-      "rubrik": "Mer som brukar följa med",
+      "rubrik": null,
       "handles": [
         "marin-motorholje-420d-universellt-skydd",
         "batsitsoverdrag-210d-vadertaligt-stolsskydd",
@@ -49,25 +76,71 @@
       ]
     },
     {
-      "typ": "text",
-      "rubrik": "Aldrig mer trassliga fiskespön",
-      "text": "Fyra kraftiga hållare håller varje spö på sin egen plats. Ingen mer hopplock av trassliga linor."
-    },
-    { "typ": "fakta" }
+      "typ": "fakta"
+    }
   ],
   "tretest": [
-    { "rad": "Motorn står ute i sex månader", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Klart innan båten är surrad", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Fyra saker innan båten ställs undan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "En blank motor är det första en tjuv ser från vägen.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Innan båten ställs undan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Mer som brukar följa med", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Aldrig mer trassliga fiskespön", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Skydda motorn", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+    {
+      "rad": "Motorn står ute i sex månader",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Klart innan båten är surrad, 30 % med BAT30",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "BAT30 ger 30 % på motorskydd och tre saker till",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Och en blank motor syns från vägen. BAT30 ger 30 % på skyddet till och med söndag 4 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Se skyddet i nio storlekar",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Hämta 30 % med BAT30",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Motorhölje, sitsöverdrag och spöhållare, också 30 %",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    }
   ],
   "planerad": "2026-10-01T18:00:00+02:00",
-  "segment": ["SEG_uppvarmning_steg1"],
-  "exkludera": ["SEG_oengagerade_180d"],
+  "segment": [
+    "Warmup tier 1"
+  ],
+  "exkludera": [],
   "status_plan": "klar",
-  "kraver_axel": null
+  "kraver_axel": null,
+  "rabatt": {
+    "typ": "kod",
+    "kod": "BAT30",
+    "procent": 30,
+    "start": "2026-10-01T06:00:00Z",
+    "slut": "2026-10-04T21:59:59Z",
+    "handles": [
+      "batmotorskydd-420d-heltackande-for-utombordare",
+      "marin-motorholje-420d-universellt-skydd",
+      "batsitsoverdrag-210d-vadertaligt-stolsskydd",
+      "fiskespohallare-4-pack-kraftig-forvaring"
+    ]
+  }
 }

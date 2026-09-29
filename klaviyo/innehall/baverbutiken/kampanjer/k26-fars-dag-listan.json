@@ -29,7 +29,7 @@
       "begar": "hitta rätt present snabbt, efter om han har båt, verkstad eller kamin"
     }
   ],
-  "forhandstext": "Fars dag är söndag 8 november. Koden FARSDAG30 gäller alla sex.",
+  "forhandstext": "Fars dag är söndag 8 november och kommer fortare än du tror. FARSDAG30 gäller alla sex.",
   "block": [
     {
       "typ": "hero",
@@ -103,7 +103,7 @@
       "ingen_annan": true
     },
     {
-      "rad": "Fars dag är söndag 8 november. Koden FARSDAG30 gäller alla sex.",
+      "rad": "Fars dag är söndag 8 november och kommer fortare än du tror. FARSDAG30 gäller alla sex.",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true
