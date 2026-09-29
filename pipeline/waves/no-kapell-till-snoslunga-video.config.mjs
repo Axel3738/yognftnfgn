@@ -1,4 +1,4 @@
-// Kampanj: Snøfresertrekk NO — videobatch 2026-09-24 (rutinen /translate-no).
+// Kampanj: Snøfresertrekk NO — videobatch 2026-09-24 (lanserad 2026-09-29) (rutinen /translate-no).
 // Norsk copy skriven direkt av huvudsessionen (inget Agent-verktyg tillgängligt i
 // den här körningen) ur svenska ADCOPY-docsen i Drive (G/PD/SP), verifierad mot
 // beverbutikken.no: pris 389 kr (før 509 = 24 %), fri frakt over 300 kr OK,
@@ -13,13 +13,13 @@ export default {
   page: '879054088633562',     // Beverbutikken
   pixel: '1554276343018184',
   country: 'NO',
-  campaignName: 'Snøfresertrekk NO | BE-ROAS 1,62 | 2026-09-24',
+  campaignName: 'Snøfresertrekk NO | BE-ROAS 1,62 | 2026-09-29',
   link: 'https://beverbutikken.no/products/trekk-til-snofreser-120-82-60-cm-holder-skitt-unna',
   dailyBudget: '100000', // öre SEK = 1000 kr/dag, CBO på kampanjnivå
   campaignStatus: 'ACTIVE',
   adsetStatus: 'ACTIVE',
   adStatus: 'ACTIVE',
-  videoDir: '../market-expansion/no/video-batches/2026-09-24/final/kapell-till-snoslunga', // relativt pipeline/
+  videoDir: '../market-expansion/no/video-batches/2026-09-29/final/kapell-till-snoslunga', // relativt pipeline/
   adsets: [
     {
       name: 'Snofresertrekk NO - PD',
@@ -55,8 +55,6 @@ export default {
         description: 'Bare 389 kr. Nesten utsolgt.',
       },
       ads: [
-        { name: 'Snofresertrekk_NO_CS_1_H1', file: 'NO_kapell-till-snoslunga_CS_1_H1.mp4' },
-        { name: 'Snofresertrekk_NO_CS_1_H2', file: 'NO_kapell-till-snoslunga_CS_1_H2.mp4' },
         { name: 'Snofresertrekk_NO_CS_1_H3', file: 'NO_kapell-till-snoslunga_CS_1_H3.mp4' },
       ],
     },
