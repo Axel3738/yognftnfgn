@@ -501,6 +501,11 @@ Järnreglerna (kostar pengar eller förtroende att bryta):
    HeyGen-videor (våra AI-avatarer) översätts inte alls — de görs om direkt på
    målspråket i HeyGen** ("annars kör vi bara våra egna HeyGen"). En avatarvideo
    genom translate-pipelinen är alltså fel väg.
+6. ⛔ **Bäverbutikens NO-videobatch (`/translate-no`) dubbar med ElevenLabs, inte
+   HeyGen — Axels beslut 2026-09-29** ("det blir så jävla mycket bättre … och det
+   blev billigare"). Kedjan står överst i `.claude/commands/translate-no.md`
+   (STT → norskt manus → `pipeline/omdubb/elevenlabs-omdubb.mjs` → captions → röstkoll).
+   Regel 5 om UGC gäller därmed inte längre för `/translate-no`.
 
 Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 

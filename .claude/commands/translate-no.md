@@ -20,6 +20,21 @@ Meddelandena skrivs i **Axels läsformat** — samma som svaren i chatten: en me
 per rad, max 10 ord per rad, inga filnamn, inga kommandon, ingen teknik, inget
 "vad jag gjorde". Rad 1 = resultatet, börjar med ✅ eller ⚠️.
 
+⛔ **RÖSTEN GÖRS MED ELEVENLABS, INTE HEYGEN — Axels beslut 2026-09-29** ("istället
+för HeyGen borde du använda ElevenLabs för voice over, det blir så jävla mycket
+bättre … och det blev billigare"). Fas 1–2 nedan beskriver den gamla HeyGen-vägen;
+den används inte längre. Kedjan per video:
+1. ElevenLabs Speech-to-Text (`scribe_v1`, `swe`, ordtider) → svensk SRT med källans tider.
+2. Norska rader cue för cue av sonnet-subagent (samma antal cues, NOK-priser, claims
+   mot butiken, copy-reglerna) + regexgrind.
+3. `node pipeline/omdubb/elevenlabs-omdubb.mjs --kalla --srt --ut --rost=<röst>` —
+   man: "Martin - Clear and Comforting" / "Helge", kvinna: "Celine F".
+4. `python3 pipeline/no-captions.py <ut> <ut>.srt <final>` (den omtajmade srt:n), läs QA-bilderna.
+5. `python3 pipeline/rostkoll.py --kalla … --ny … --srt … --omtajmad`.
+Kvoten som räknas är ElevenLabs tecken (`GET /v1/user/subscription`), inte HeyGen.
+⚠️ Omdubben kastar källans ljud — resultatet är röst utan musik (samma som
+CaraShell DK/Termoskydd NO som redan gått live).
+
 Läs först: `.claude/skills/translate/SKILL.md` (järnreglerna + alla HeyGen-fallgropar)
 och `docs/temu-launch-flow.md` (kampanjstruktur, BE-ROAS, prispolicy). Kör alla faser
 klart utan att invänta godkännande; stanna bara vid ägarbeslut eller ❌ nedan.

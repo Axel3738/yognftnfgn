@@ -1,0 +1,32 @@
+(node:10494) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+=== ops-till-meta — CaraShell (carashell/takskyddet) · marknad US · konto 1107817401910319 (Magiborsten UK) ===
+1. Butik: prefix carashellroof_ · carashellroof · annons "CaraShellRoof_US_CS_112_H1" · video CaraShellRoof_US_CS_112_H1-ai.mp4 (4.02 MB)
+3. Marknadskoll: "CaraShellRoof_US_CS_112_H1" bär US — ok för US
+2. Kampanj (--kampanj): "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia" (120251451415500435) ACTIVE/ACTIVE — matchar via annonserna, inte namnet
+   CBO: 8000 kr/dag · kampanjbas "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m"
+4. Dubblett: "CaraShellRoof_US_CS_112_H1" finns inte bland kontots 476 annonser — ok
+5. Koncept CS → adset "CARASHELL_US_CS" (120251451415170435) — finns, ACTIVE
+6. Sida 1381171778405935 (ärvd) (ingen IG) · länk https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US (ärvd) · DSA saknas — skickar inget
+7. Media: video 2192185214698523 uppladdad, thumbnail klar
+8. Creative-spec (SHOP_NOW, alla enhancements OPT_OUT):
+   {
+     "page_id": "1381171778405935",
+     "video_data": {
+       "video_id": "2192185214698523",
+       "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/795581372_1234867425500936_4395264372449363929_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=e3495b&_nc_ohc=xhp-mvmme0UQ7kNvwGYvM1a&_nc_oc=AdpoxIRCR61-RdWp6sWkQdb3pip8dtDFlD9cieOIHEzRYWkLtMO1Qi23a8E8TqbJG8k&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=APRAPSkEAAAA&_nc_gid=dOMcCUExmHDymRGDJ_6itQ&_nc_tpa=Q5bMBQLtuHJoWOfLprs70Xk1zEnFkz6NFq9NYHnoaonSWUw4PCa6658j3aLB71uVDA2C-HRq4gjAElfXdg&oh=00_AQO_dWRJItawKWk0GcogQI18x2qK0del7T4pDy3udp3_IQ&oe=6AC1CDC6",
+       "message": "The roof is the most expensive surface on your trailer. This cover goes on the roof only, in silver-coated 210D oxford weave. Straps on all four sides hook at the bottom edge. $199, regular price $249.",
+       "title": "Protect the roof. $199.",
+       "link_description": "Regular price $249",
+       "call_to_action": {
+         "type": "SHOP_NOW",
+         "value": {
+           "link": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US"
+         }
+       }
+     }
+   }
+8. Annons skapad PAUSED: CaraShellRoof_US_CS_112_H1 (120251671852550435), creative 1090675163575789
+9. Aktiverad: annons 120251671852550435: PAUSED → ACTIVE
+   Tillbakaläsning: CaraShellRoof_US_CS_112_H1 → ACTIVE / effective IN_PROCESS (adset 120251451415170435)
