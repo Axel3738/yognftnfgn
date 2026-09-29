@@ -37,10 +37,12 @@ const KLAR = join(HAR, '../annonser/klar');
 const API = 'https://api.elevenlabs.io/v1';
 export const SPRAKKOD = { NO: 'no', DK: 'da', FI: 'fi', US: 'en', DE: 'de', FR: 'fr', NL: 'nl', ES: 'es', IT: 'it', PL: 'pl', PT: 'pt' };
 export const RÖST = 'lRBvixWrjVcBSKxchtgC'; // "Matstrumpor AI-kvinna (klon ur annonserna)"
-// Norska finns inte i eleven_multilingual_v2 — där tar v3 med språkkod över.
-export const MODELL = { NO: 'eleven_v3' };
+// Norska finns inte i eleven_multilingual_v2. eleven_v3 prövades (2026-09-29, NO haikuh2): Whisper
+// hörde svenska 0,96, ordtäckning 0,43, och v3 bryr sig inte om farten (11 av 18 över fönstret).
+export const MODELL = { NO: 'eleven_turbo_v2_5' };
 const STANDARDMODELL = 'eleven_multilingual_v2';
 const MAXFART = 1.2, MAXTEMPO = 1.15;
+const OM = process.argv.includes('--om'); // ❌ i QA: nytt frö, nya klipp (cachenyckeln bär fröet)
 
 /** Ren: tidsfönstret per talat segment — från segmentets start till nästa segments start
  *  (strukna segment räknas som gräns, där är det tyst), sista segmentet till slut − 0,15 s. */
@@ -105,10 +107,10 @@ function talnivå(fil) {
 
 async function tts(text, lang, modell, fart, prev, next, fil) {
   if (existsSync(fil)) return;
-  const kropp = { text, model_id: modell, seed: 29,
+  const kropp = { text, model_id: modell, seed: OM ? 30 : 29,
     voice_settings: { stability: 0.5, similarity_boost: 0.85, style: 0, use_speaker_boost: true, speed: fart } };
   if (modell !== STANDARDMODELL) kropp.language_code = lang;
-  else { if (prev) kropp.previous_text = prev; if (next) kropp.next_text = next; }
+  if (modell !== 'eleven_v3') { if (prev) kropp.previous_text = prev; if (next) kropp.next_text = next; }
   const r = await api(`/text-to-speech/${RÖST}?output_format=mp3_44100_192`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(kropp) });
   const rå = `${fil}.ra.mp3`;
   writeFileSync(rå, Buffer.from(await r.arrayBuffer()));
@@ -155,7 +157,7 @@ async function main() {
     const s = lok.segment[i];
     const prev = lok.segment.slice(Math.max(0, i - 2), i).map((x) => x.text).join(' ');
     const next = lok.segment[i + 1]?.text ?? '';
-    const klipp = (fart) => join(HAR, 'ut', 'tts', `${kod}_${video}_${String(i + 1).padStart(2, '0')}_${createHash('sha256').update(`${modell}|${fart}|${prev}|${s.text}|${next}`).digest('hex').slice(0, 10)}.mp3`);
+    const klipp = (fart) => join(HAR, 'ut', 'tts', `${kod}_${video}_${String(i + 1).padStart(2, '0')}_${createHash('sha256').update(`${modell}|${fart}|${prev}|${s.text}|${next}`).digest('hex').slice(0, 10)}${OM ? '_om' : ''}.mp3`);
     let fart = 1, fil = klipp(1);
     if (!existsSync(fil)) tecken += s.text.length;
     await tts(s.text, lang, modell, 1, prev, next, fil);
