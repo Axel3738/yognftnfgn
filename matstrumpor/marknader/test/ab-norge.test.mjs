@@ -1,7 +1,7 @@
 // Tester för ab-norge.mjs — utan nät.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { klassaOrder, pVarde, jamfor, rapport } from '../annonser/ab-norge.mjs';
+import { klassaOrder, pVarde, jamfor, rapport, splitTest } from '../annonser/ab-norge.mjs';
 
 const order = (last, first = last, utm = null) => ({ customerJourneySummary: { lastVisit: { landingPage: last, utmParameters: utm ? { campaign: utm } : null }, firstVisit: { landingPage: first } } });
 
@@ -54,4 +54,13 @@ test('rapporten håller Metas köp och Shopifys ordrar isär och säger att kost
   assert.match(text, /B \(.no\): 17 ordrar/);
   assert.match(text, /Okänd .*: 2 ordrar/);
   assert.match(text, /landade kostnad saknas/);
+});
+
+test('split-testet: 50/50, en kampanj per cell, 14 dagar från 00:00 svensk tid', () => {
+  const t = splitTest({ kampanjA: '111', kampanjB: '222', start: '2026-10-01' });
+  assert.equal(t.type, 'SPLIT_TEST');
+  assert.deepEqual(t.cells.map((c) => [c.treatment_percentage, c.campaigns[0]]), [[50, '111'], [50, '222']]);
+  assert.equal(new Date(t.start_time * 1000).toISOString(), '2026-09-30T22:00:00.000Z');
+  assert.equal(t.end_time - t.start_time, 14 * 86400 - 60);
+  assert.throws(() => splitTest({ kampanjA: '1', kampanjB: '2', start: 'i morgon' }), /--start/);
 });

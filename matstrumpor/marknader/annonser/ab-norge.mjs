@@ -107,11 +107,31 @@ export function rapport({ fran, till, A, B, ordrar, dom }) {
   ].join('\n');
 }
 
+/** Ren: Metas split-test (ad_studies, typ SPLIT_TEST) med A och B, 50/50, som delar publiken så att ingen
+ *  norrman ser båda. start/slut i svensk tid (00:00 startdagen, 23:59 sista dagen). */
+export function splitTest({ kampanjA, kampanjB, start, dagar = 14 }) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(start ?? '')) throw new Error('--start YYYY-MM-DD krävs');
+  const t0 = Date.parse(`${start}T00:00:00+02:00`) / 1000;
+  const t1 = t0 + dagar * 86400 - 60;
+  return {
+    name: `Matstrumpor Norge: svenskt varumärke (A) mot norsk sida (B) ${start}`,
+    description: 'A = MATSTRUMP_NO_SALES (matstrumpor.se/nb, "Et svensk merke."), B = MATSTRUMP_NOB_SALES (matstrumpor.no). matstrumpor/marknader/annonser/ab-norge.mjs',
+    type: 'SPLIT_TEST',
+    start_time: t0,
+    end_time: t1,
+    cells: [
+      { name: 'A svenskt varumärke', treatment_percentage: 50, campaigns: [kampanjA] },
+      { name: 'B norsk sida', treatment_percentage: 50, campaigns: [kampanjB] },
+    ],
+  };
+}
+
 // ---- Nät -------------------------------------------------------------------
 
 async function huvud() {
   const arg = process.argv.slice(2);
   const val = (f) => (arg.includes(f) ? arg[arg.indexOf(f) + 1] : null);
+  if (arg.includes('--splittest')) return skapaSplitTest(arg, val);
   const { api } = await import('../../../tools/meta-lib.mjs');
   const { tolkaRad, idagSE, plusDagar } = await import('../../meta.mjs');
   const { lasButik, skapaKlient } = await import('../../../sparning/butik.mjs');
@@ -157,6 +177,23 @@ async function huvud() {
     efter = d.orders.pageInfo.endCursor;
   }
   console.log(rapport({ fran, till, A, B, ordrar, dom: jamfor(A, B) }));
+}
+
+// Skapar BARA testet — slår aldrig på kampanjerna (det är Axels beslut, bygg.mjs --aktivera och hans ord).
+// Oprövat skarpt 2026-09-29: token:en läser {business}/ad_studies (tom lista). Svarar Meta med fel, gör Axel
+// testet i Ads Manager: Kampanjer → markera MATSTRUMP_NO_SALES och MATSTRUMP_NOB_SALES → "A/B-test".
+async function skapaSplitTest(arg, val) {
+  const { api } = await import('../../../tools/meta-lib.mjs');
+  const lage = JSON.parse(readFileSync(join(ROT, 'lage.json'), 'utf8'));
+  const id = (kod) => lage.kampanjer.find((k) => k.kod === kod)?.kampanj?.id;
+  const M = JSON.parse(readFileSync(join(ROT, 'marknader.json'), 'utf8'));
+  const konto = await api(`act_${M.konto}`, { params: { fields: 'business{id,name}' } });
+  const test = splitTest({ kampanjA: id('NO'), kampanjB: id('NOB'), start: val('--start'), dagar: Number(val('--dagar') ?? 14) });
+  console.log(`Business ${konto.business?.name} (${konto.business?.id}):\n${JSON.stringify(test, null, 1)}`);
+  if (!arg.includes('--skarpt')) { console.log('torrt — --skarpt skapar testet (kampanjerna rörs inte)'); return; }
+  const r = await api(`${konto.business.id}/ad_studies`, { form: { ...test, cells: JSON.stringify(test.cells) } });
+  const las = await api(r.id, { params: { fields: 'id,name,type,start_time,end_time,cells{name,treatment_percentage}' } });
+  console.log(`✅ split-testet skapat och tillbakaläst: ${JSON.stringify(las)}`);
 }
 
 if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
