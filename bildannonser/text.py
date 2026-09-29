@@ -84,6 +84,20 @@ def _font(sokvag, storlek):
         raise TextFel(f"Hittar inte typsnittet {sokvag}: {fel}") from fel
 
 
+def _storlek(stil, block):
+    """Startgraden för blocket. `storlek` i spec:en låter en layout matcha en
+    förälder-creative exakt (Beltgrinder_PD_2_3 ärver Balteslipmaskin_PD_2_1:s
+    rubrikgrad, mätt i den live-annonsen). passa_in krymper fortfarande texten
+    tills den ryms, så fältet kan bara välja utgångspunkt, aldrig spränga ramen."""
+    storlek = block.get("storlek")
+    if storlek is None:
+        return stil["storlek"]
+    storlek = int(storlek)
+    if storlek < 12 or storlek > 240:
+        raise TextFel(f'"storlek" ska ligga mellan 12 och 240, inte {storlek}')
+    return storlek
+
+
 def _blackfarg(stil, block):
     """Vit text på en ljus platta är osynlig. Plattan finns just för att bära
     mörk text, så en ljus stil vänds till mörkt bläck när plattan ritas.
@@ -263,12 +277,16 @@ def rita_lista(rita, rader, font, bredd, y, farg):
     return rh * len(rensade)
 
 
-def rita_etikett(bild, rita, text, font, x, y):
+def rita_etikett(bild, rita, text, font, x, y, plattfarg=None):
+    """Liten tagg med text. `plattfarg` (t.ex. "#C4271F") byter plattans färg —
+    fars dag-batchen 2026-09-28 vill ha en röd badge i hörnet, och utan fältet
+    hade badgen ritats i standardmörkret och avvikit från briefen."""
     bredd = int(rita.textlength(text, font=font))
     hoj = _radhojd(font)
     pad = 14
+    fyll = plattfarg or (10, 14, 18, 190)
     rita.rounded_rectangle(
-        [x - pad, y - pad, x + bredd + pad, y + hoj + pad], radius=8, fill=(10, 14, 18, 190)
+        [x - pad, y - pad, x + bredd + pad, y + hoj + pad], radius=8, fill=fyll
     )
     rita.text((x, y), text, font=font, fill="#FFFFFF")
 
@@ -316,14 +334,17 @@ def lagg_pa_text(spec):
         rita_scrim(bild, int(hojd * 0.66), int(hojd * 0.34), uppifran=False)
     rita = ImageDraw.Draw(bild)
 
-    y_topp = MARGINAL
+    # "marginal_topp" flyttar ner hela toppstapeln. Fars dag-batchen 2026-09-28
+    # har en badge i övre vänstra hörnet, och utan fältet börjar rubriken på
+    # samma höjd som badgen och skrivs rakt igenom den (mätt i första renderingen).
+    y_topp = int(spec.get("marginal_topp", MARGINAL))
     y_botten = hojd - MARGINAL
 
     # Botten ritas nerifrån och upp, så blocken staplas i angiven ordning.
     for b in reversed(bottenblock):
         stil = STILAR[b["stil"]]
         kalla = dela_meningar(b["text"]) if b["stil"] in ("rubrik", "citat") else b["text"]
-        font, rader = passa_in(kalla, stil["font"], stil["storlek"],
+        font, rader = passa_in(kalla, stil["font"], _storlek(stil, b),
                                maxbredd, stil["rader"], rita)
         if b["stil"] == "knapp":
             y_botten -= rita_knapp(bild, rita, b["text"], font, y_botten - _radhojd(font) // 2)
@@ -345,7 +366,7 @@ def lagg_pa_text(spec):
     for b in toppblock:
         stil = STILAR[b["stil"]]
         kalla = dela_meningar(b["text"]) if b["stil"] in ("rubrik", "citat") else b["text"]
-        font, rader = passa_in(kalla, stil["font"], stil["storlek"],
+        font, rader = passa_in(kalla, stil["font"], _storlek(stil, b),
                                maxbredd, stil["rader"], rita)
         rh = _radhojd(font)
         stjarnor = int(b.get("stjarnor") or 0)
@@ -373,7 +394,7 @@ def lagg_pa_text(spec):
         if zon.startswith(("topp", "botten")):
             continue
         stil = STILAR[b["stil"]]
-        font, rader = passa_in(b["text"], stil["font"], stil["storlek"],
+        font, rader = passa_in(b["text"], stil["font"], _storlek(stil, b),
                                maxbredd // 2, stil["rader"], rita)
         rh = _radhojd(font)
         if zon == "mitt":
@@ -395,7 +416,7 @@ def lagg_pa_text(spec):
                 andel = 0.46 if zon.endswith("mitt") else 0.775
             y = int(hojd * float(andel))
             if b["stil"] == "etikett":
-                rita_etikett(bild, rita, b["text"], font, x, y)
+                rita_etikett(bild, rita, b["text"], font, x, y, b.get("plattfarg"))
             elif b["stil"] == "badge":
                 b_bredd = maxbredd // 2 - MARGINAL // 2
                 rita.rounded_rectangle([x, y, x + b_bredd, y + rh * len(rader) + 36],
