@@ -163,16 +163,21 @@ takt-frågan redan i **fråga 4** (2026-09-24) och svarade "inget i källorna, a
 directly"; det den har är Billys lanseringskadens (svar 5). Klaviyos egen riktlinje
 (`docs/os/EPOST-STRATEGI.md` §4) säger dagligen bara till engagerade 30 d. Frågan är därför
 skriven kort, med siffror, och funkar både till boten och som inlägg i communityn (människorna).
-Klistras in ordagrant; svaret klistras tillbaka och sparas i `SVAR.md`.
+**Omskriven samma dag på Axels ord** ("varenda mail handlade om fars dag. Fråga vad den tycker
+att vi ska skicka varje dag de dagarna … beskriv så mycket du kan … men det får inte bli för
+långt så att det blir en txt-fil i Discord"): frågan handlar nu främst om MIXEN per dag, med
+hela läget beskrivet, och håller sig under Discords 2 000 tecken (mätt med `wc -m`) så den
+klistras in som text och inte blir en bilaga. Klistras in ordagrant; svaret klistras tillbaka
+och sparas i `SVAR.md`.
 
 ```
-Swedish gift brand (sock boxes that look like sushi/pizza/burgers/donuts, ~$40, Christmas product). ~3,000 subscribers with consent who have never received a campaign; new sending domain (Spoks). Standing offer all year: buy 1 get 1 (no codes, applied on the product page). Father's Day in Sweden is Nov 8; last order day for delivery is Oct 24.
+Swedish gift brand: sock boxes that look like sushi (5 pairs), pizza (4), burgers (2), donuts (3), ~$30-45. Christmas product: 86% of orders are Dec-Mar, the sushi box sold out last November. ~3,000 subscribers with consent, never received a campaign, new sending domain (Spoks). ~2,400 of them bought last Christmas; only 2.5% ever buy twice. Standing offer all year: buy 1 get 1, applied on the product page, no codes. The list is run as a "members club": welcome flow with a membership card, a weekly draw where 3 members get a free box for a short video, no discounts. Father's Day in Sweden is Nov 8; last order day for delivery is Oct 24.
 
-Plan: one email every day from Sep 29 to Oct 25 (27 emails): a different angle each day (recipient, box type, customer quotes, countdown to the last order day, "missed it? gift card"). Billy's launch cadence (curiosity, teaser, reveal with date, countdown, "did you miss it?") is basically the shape of the series.
+Plan I built: one email EVERY day Sep 29 - Oct 25 (27 emails), and right now every single one is about Father's Day: recipient angles (dad, father-in-law, grandpa, the dad who has everything), one box type per day, customer quotes, buy-1-get-1 for two dads, a countdown the last 9 days, then "missed it? gift card". Same hero product (sushi) most days.
 
 Questions:
-1. Daily to the whole consent list for four weeks, or daily only to people who opened/clicked recently and 2-3 per week to the rest? What do members actually do around a hard deadline?
-2. At what unsubscribe rate or spam-complaint rate per send do members pause or slow down? (Our current rule: over 1% unsubscribes or over 0.3% spam on one send = skip the next day.)
-3. In the last week before the deadline, how many emails is normal: one a day, two on the final day?
-4. Same hero product almost every day: does repeating it kill response, or is the angle what matters?
+1. Daily for four weeks: what should the MIX be? How many of the 27 should be Father's Day sales emails vs other things (club/draw, behind the scenes, customer stories, product education, early Christmas, restock news)? A rough day-by-day pattern would help a lot.
+2. What do members send on the non-sales days that still sells without asking?
+3. Daily to the whole consent list, or daily only to openers/clickers and 2-3 per week to the rest? At what unsubscribe or spam rate per send do you pause? (Our rule: over 1% unsubs or over 0.3% spam on one send = skip the next day.)
+4. Last week before the deadline: one a day, two on the final day?
 ```
