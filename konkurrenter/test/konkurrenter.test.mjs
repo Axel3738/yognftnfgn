@@ -3,16 +3,17 @@
 // fetch-funktioner med de former som mättes 2026-09-27.
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtempSync, readFileSync, existsSync } from 'node:fs';
+import { mkdtempSync, readFileSync, existsSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
 import { normalisera, ord, gemensammaPassager, jamforText, hamming, jamforBilder, sammanvag, arGenerisk } from '../likhet.mjs';
-import { textUrHtml, handleUr, meningar, fingeravtryck, valjProdukter, textUrAnnons, bildUrAnnons, hamtaProdukter, hamtaEgnaAnnonser, hamtaAnnonssidor, egnaDomaner } from '../korpus.mjs';
+import { textUrHtml, handleUr, meningar, fingeravtryck, valjProdukter, fordelaProdukter, butikFor, kampanjTillhor, textUrAnnons, bildUrAnnons, hamtaProdukter, hamtaEgnaAnnonser, hamtaAnnonssidor, egnaDomaner } from '../korpus.mjs';
+import { lasExterna, externaIRutor, externaIFilmer, spannText } from '../externa.mjs';
 import { bingUrl, tolkaRss, filtreraTraffar, arEgen, arIgnorerad, sokAdLibrary, sokBing, adLibraryLank } from '../sok.mjs';
 import { plockaEpost, plockaOrgnr, upptackPlattform, shopifyJsonUrl, plockaBilder, valjMottagare, hamtaKonkurrent, arIntressantBildUrl } from '../hamta.mjs';
 import { STATUS, lasArenden, sparaArende, nyttId, nyckelFor, hittaBefintligt, overgang, nyttArende, uppdateraFynd, oppna } from '../arenden.mjs';
-import { valjSprak, byggBrev, bevisrader, kontrolleraBrev, fristText } from '../brev.mjs';
+import { valjSprak, byggBrev, bevisrader, kontrolleraBrev, fristText, hemsida, sekvensRad } from '../brev.mjs';
 import { skickaBrev, kontrolleraForeSandning, SPARR_ENV, byggSandpaket, registreraSkickat } from '../skicka.mjs';
 import { fakturanummer, belopp, fakturarader, byggFaktura, kontrolleraFaktura, fakturaText, fakturaHtml, momsregNr, ibanGiltig, svenskKopare } from '../faktura.mjs';
 import { tolkaAnnonsinput, jamforAnnons, byggAnnonsfynd, tolkaAntal, exponeringarUr, vardAttJaga, aktivUr } from '../annonsfall.mjs';
@@ -141,6 +142,89 @@ test('hamtaAnnonssidor: "reduce the amount of data" halverar sidan, prefixet fil
   assert.equal(r.status[0].annonser, 1);
 });
 
+test('alla varumärken (Axel 2026-09-29): butiken ur länken, prefixet som ord, prioriteten per språkbutik, taket över alla', async () => {
+  // butikFor: längsta butiksadressen vinner — /nb före roten, www spelar ingen roll, främmande domän ⇒ null
+  const ms = KONFIG.verksamheter.Matstrumpor.butiker;
+  assert.equal(butikFor('https://matstrumpor.se/nb/products/sushisokker?x=1', ms), 'https://matstrumpor.se/nb');
+  assert.equal(butikFor('https://www.matstrumpor.se/products/sushi', ms), 'https://matstrumpor.se');
+  assert.equal(butikFor('https://matstrumpor.se/pt/products/x', ms), 'https://matstrumpor.se/pt');
+  assert.equal(butikFor('https://carashell.com/products/takskyddet', ms), null);
+  assert.equal(butikFor('inte en länk', ms), null);
+  // Alla verksamheter och marknader står i konfigen: Bäverbutiken SE/NO/DK/FI, CaraShell sv/nb/da/en, Matstrumpor tolv språk
+  assert.equal(KONFIG.verksamheter['Bäverbutiken'].butiker.length, 4); assert.ok(KONFIG.verksamheter['Bäverbutiken'].konton.some((k) => k.id === '1050941584152547' && k.cpm === false));
+  assert.ok(KONFIG.verksamheter.CaraShell.butiker.includes('https://carashell.com')); assert.equal(ms.length, 12);
+  assert.ok(KONFIG.sok.max_produkter_totalt > 0);
+  // kampanjTillhor: prefixet som ett ord var som helst (mätt 2026-09-29: "1 CARASHELL_US_… – kopia" föll bort med startsWith)
+  assert.equal(kampanjTillhor('1 CARASHELL_US_Taköverdrag – kopia', 'CARASHELL_'), true);
+  assert.equal(kampanjTillhor('CARASHELL_SE_Tak', 'CARASHELL_'), true);
+  assert.equal(kampanjTillhor('NYA takskydd', 'CARASHELL_'), false);
+  assert.equal(kampanjTillhor('XCARASHELL_SE', 'CARASHELL_'), false);
+  // Delat konto: länken till verksamhetens butik räcker, fel domän utan prefix faller bort
+  const klient = { get: async () => ({ data: [
+    { id: '1', name: 'CaraShellRoof_1', campaign: { name: 'NYA takskydd' }, creative: { body: 'a', object_story_spec: { link_data: { link: 'https://carashell.se/nb/products/takskyddet' } } } },
+    { id: '2', name: 'CaraShellRoof_2', campaign: { name: '1 CARASHELL_US_Tak – kopia' }, creative: { body: 'b', object_story_spec: { link_data: { link: 'https://carashell.com/products/takskyddet' } } } },
+    { id: '3', name: 'Annan', campaign: { name: 'HEIMGUARD_SE' }, creative: { body: 'c', object_story_spec: { link_data: { link: 'https://heimguard.se/products/kamera' } } } },
+  ], paging: {} }) };
+  const r = await hamtaEgnaAnnonser([{ id: '9', namn: 'OPS', prefix: 'CARASHELL_' }], { klient, sov: async () => {}, butiker: KONFIG.verksamheter.CaraShell.butiker });
+  assert.deepEqual(r.annonser.map((a) => a.id), ['1', '2']);
+  assert.equal(r.annonser[0].butik, 'https://carashell.se/nb'); assert.equal(r.annonser[1].butik, 'https://carashell.com');
+  // valjProdukter: en annons till /nb prioriterar den norska texten, inte alla tolv språk med samma handle
+  const p = (butik, handle) => ({ butik, handle, titel: handle, text: '' });
+  const produkter = [p('https://matstrumpor.se', 'sushi'), p('https://matstrumpor.se/nb', 'sushi'), p('https://matstrumpor.se/de', 'sushi'), p('https://matstrumpor.se', 'pizza')];
+  const val = valjProdukter({ produkter, annonserade: new Set(['https://matstrumpor.se/nb|sushi']), max: 2, lage: {}, nu: Date.now() });
+  assert.deepEqual(val.map((x) => `${x.butik}|${x.handle}|${x.prioriterad}`), ['https://matstrumpor.se/nb|sushi|true', 'https://matstrumpor.se|sushi|false']);
+  // En bar handle (bevaka, äldre anrop) gäller fortfarande alla butiker
+  assert.equal(valjProdukter({ produkter, bevaka: ['pizza'], max: 1, lage: {}, nu: Date.now() })[0].handle, 'pizza');
+  // Rotationen turas om mellan butikerna — inte hela den svenska katalogen först
+  const fyra = ['se', 'no', 'dk', 'fi'].flatMap((b) => ['x', 'y'].map((h) => p(`https://${b}`, h)));
+  assert.deepEqual(valjProdukter({ produkter: fyra, max: 5, lage: {}, nu: Date.now() }).map((x) => x.butik.slice(8)), ['se', 'no', 'dk', 'fi', 'se']);
+  // fordelaProdukter: en i taget ur varje verksamhet tills taket
+  assert.deepEqual(fordelaProdukter([['a1', 'a2', 'a3'], ['b1'], ['c1', 'c2']], 4), ['a1', 'b1', 'c1', 'a2']);
+  assert.deepEqual(fordelaProdukter([['a1'], []], 10), ['a1']);
+});
+
+test('externa klipp (Eoka AB 2026-09-29): registret utesluter rutorna, ett original som bär dem länkas aldrig', () => {
+  // Registret i repot: Specialised Covers video + två okända inspelningar, alla med rutor
+  const kallor = lasExterna();
+  assert.ok(kallor.some((k) => k.id === 'specialised-covers-7507334595818294550' && k.rutor.length > 500 && /tiktok\.com/.test(k.lank)));
+  assert.ok(kallor.every((k) => k.rutor.length && k.orsak), 'varje källa säger varför den står där');
+  // En tom källa är ett fel, inte en tyst lucka
+  const tom = mkdtempSync(join(tmpdir(), 'externa-'));
+  writeFileSync(join(tom, 'x.json'), JSON.stringify({ id: 'x', rutor: [] }));
+  assert.throws(() => lasExterna({ mapp: tom }), /inga rutor/);
+  assert.deepEqual(lasExterna({ mapp: join(tom, 'finns-inte') }), []);
+  // externaIRutor: träff ≤ 6/64 plus ± 1 s, platta rutor träffar aldrig
+  const rutor = [{ i: 0, t: 0, hash: HC, kontrast: 30 }, { i: 1, t: 0.5, hash: H0, kontrast: 30 }, { i: 2, t: 1, hash: HC, kontrast: 30 }, { i: 3, t: 3, hash: H0b, kontrast: 30 }, { i: 4, t: 5, hash: H0, kontrast: 2 }];
+  assert.deepEqual([...externaIRutor(rutor, [H0])].sort(), [0, 1, 2, 3]);
+  assert.equal(externaIRutor(rutor, [H1]).size, 0);
+  // externaIFilmer: per film, med källa och tider
+  const ext = externaIFilmer([{ id: 'f1', namn: 'Takoverdrag_SP_4_H1', rutor }, { id: 'f2', namn: 'Ren', rutor: [{ i: 0, t: 0, hash: H1, kontrast: 30 }] }], [{ id: 'sc', rutor: [{ hash: H0 }] }]);
+  assert.deepEqual([...ext.perFilm.keys()], ['f1']); assert.deepEqual(ext.filmer.Takoverdrag_SP_4_H1.kallor, ['sc']);
+  assert.equal(spannText([30, 30.5, 31, 31.5, 34, 60]), '0:30–0:31, 0:34, 1:00');
+  // paraRutor med de externa rutorna som lånade: de bär aldrig ett par och räknas inte i andelen
+  const egna = [{ id: 'f1', namn: 'Takoverdrag_SP_4_H1', rutor: [{ i: 0, t: 0, hash: H0, kontrast: 30 }, { i: 1, t: 10, hash: H1, kontrast: 30 }] }];
+  const deras = [{ i: 0, t: 0, hash: H0, kontrast: 30 }, { i: 1, t: 10, hash: H1, kontrast: 30 }];
+  const utan = paraRutor(egna, deras, { antal: 3 });
+  const med = paraRutor(egna, deras, { antal: 3, lanadeEgnaExtra: externaIFilmer(egna, [{ id: 'sc', rutor: [{ hash: H0 }] }], { fonsterS: 0 }).perFilm });
+  assert.equal(utan.statistik.traffar, 2); assert.equal(med.statistik.traffar, 1, 'den externa rutan räknas inte');
+  assert.ok(med.val.every((v) => v.derasT !== 0), 'den externa rutan bär aldrig ett par');
+  // originalFor hoppar över ett original som bär externa klipp
+  const klipp = { filmer: ['Takoverdrag_SP_4_H1', 'Takoverdrag_OB_1_H1'], par: [{ film: 'Takoverdrag_SP_4_H1' }, { film: 'Takoverdrag_OB_1_H1' }] };
+  const o = originalFor(klipp, { Takoverdrag_SP_4_H1: { lank: 'L1', start: '2026-09-15', externa: 10 }, Takoverdrag_OB_1_H1: { lank: 'L2', start: '2026-09-18' } }, { fore: '2026-09-24' });
+  assert.deepEqual(o.map((x) => x.lank), ['L2']);
+});
+
+test('brevet: hemsidan ur produkten, sekvensraden med tidskoder, kravet bara på det uppräknade', () => {
+  assert.equal(hemsida('https://matstrumpor.se/nb/products/x'), 'https://matstrumpor.se'); assert.equal(hemsida('nej'), null);
+  assert.equal(sekvensRad({ derasT: 6, egenT: 2, film: 'CaraShellRoof_OB_101_H1', skapad: '2026-09-19T20:50:58+0200' }, { start: '2026-09-24' }, null, 'sv'), 'er 0:06 = vår film "CaraShellRoof_OB_101_H1" (publicerad 19 september 2026) vid 0:02');
+  assert.equal(sekvensRad({ derasT: 6, egenT: null, film: 'X' }, {}, null, 'en'), 'your 0:06 = our film "X" (still frame)');
+  // Ett original som startade samma dag som deras annons länkas aldrig (startadeFore)
+  assert.match(sekvensRad({ derasT: 6, egenT: 2, film: 'F' }, { start: '2026-09-24' }, { F: { lank: 'https://www.facebook.com/ads/library/?id=5', start: '2026-09-24' } }, 'sv'), /vår film "F"/);
+  const a = ARENDE(); a.var = { ...a.var, produkt: { ...(a.var?.produkt ?? {}), butik: 'https://carashell.com', url: 'https://carashell.com/products/takskyddet' } };
+  const b = byggBrev(a, { avsandare: { brand: 'CaraShell', mail: 'contact@stonebite.org', butikUrl: 'https://carashell.se' }, foretag: KONFIG.brev.foretag, nu: new Date('2026-09-27T08:00:00Z') });
+  assert.match(b.text, /driver CaraShell \(https:\/\/carashell\.com\)/, 'butiken vars material kopierats, inte verksamhetens första');
+});
+
 test('egnaDomaner tar med konfig, spårningsregistret och kommentarernas domäner', () => {
   const d = egnaDomaner(KONFIG);
   for (const x of ['baverbutiken.se', 'carashell.com', 'matstrumpor.se', 'beverbutikken.no', 'majavakauppa.fi']) assert.ok(d.includes(x), x);
@@ -267,7 +351,9 @@ test('byggBrev (svenska): bolaget, org.nr, deras adress, passagerna, bilderna, f
   const b = byggBrev(ARENDE(), { avsandare: { brand: 'Bäverbutiken', mail: 'kundsupport@baverbutiken.se', butikUrl: 'https://baverbutiken.se' }, foretag: FORETAG, nu: new Date('2026-09-27T08:00:00Z'), fristTimmar: 48 });
   assert.equal(b.sprak, 'sv'); assert.equal(b.mottagare, 'info@kopian.se'); assert.equal(b.fran, 'kundsupport@baverbutiken.se');
   assert.match(b.amne, /^Upphovsrättsintrång på kopian\.se – krav på borttagning inom 48 timmar \(ärende KD-2026-007\)$/);
-  for (const m of ['Stonebite Ecom AB', '559576-2401', 'https://kopian.se/products/tak', 'regnet löven och fågelskiten', '46 ord löpande text', '1 av bilderna', 'https://kopian.se/cdn/k1.jpg', 'tisdag 29 september 2026 kl. 10:00', 'och till Shopify', '1960:729', '2008:486', '54 §', 'Patent- och marknadsdomstolen', 'tidsstämplade skärmdumpar', 'Stenkolsgatan 1B', 'Ärende: KD-2026-007']) assert.ok(b.text.includes(m), `saknar: ${m}`);
+  for (const m of ['Stonebite Ecom AB', '559576-2401', 'https://kopian.se/products/tak', 'regnet löven och fågelskiten', '46 ord löpande text', '1 av bilderna', 'https://kopian.se/cdn/k1.jpg', 'tisdag 29 september 2026 kl. 10:00', 'och till Shopify', '1960:729', 'Kravet gäller enbart det uppräknade materialet', '54 §', 'Patent- och marknadsdomstolen', 'tidsstämplade skärmdumpar', 'Stenkolsgatan 1B', 'Ärende: KD-2026-007']) assert.ok(b.text.includes(m), `saknar: ${m}`);
+  // ORVO-lärdomen (Eoka AB 2026-09-29): ingen marknadsföringslag, inga "produktsidor" i allmänhet, inte "filmerna är framställda av oss"
+  assert.doesNotMatch(b.text, /2008:486|marknadsföringslagen|efterbildning|renommé|våra produktsidor|filmerna är framställda av oss/);
   assert.doesNotMatch(b.text, /undefined|null|Sjöhed/);
   assert.deepEqual(kontrolleraBrev(b, { egna: ['baverbutiken.se'] }), []);
 });
@@ -432,7 +518,7 @@ test('annonsfallet: deras annonser mot våra annonstexter + produkttexter, en ra
   const skarm = { egen: 'https://cdn/ann1.png', deras: '/tmp/axels-skarmdump.png', avstand: 0, grad: 'identisk' };
   const arende = { ...fynd, id: 'KD-2026-009', status: 'ny', skapad: '2026-09-29T08:00:00Z', brev: { mottagare: 'info@kopian.se' }, bevis: { ...fynd.bevis, bilder: [skarm], annonser: fynd.bevis.annonser.map((t, i) => (i === 0 ? { ...t, bilder: [skarm] } : t)) } };
   const b = byggBrev(arende, { avsandare: { brand: 'Bäverbutiken', mail: 'contact@stonebite.org' }, foretag: FORETAG });
-  assert.match(b.text, /2 av era annonser på Facebook\/Instagram återger våra annonser \(text och\/eller bild\)/); assert.match(b.text, /1 bild\(er\) identiska med våra/);
+  assert.match(b.text, /2 av era annonser på Facebook\/Instagram återger vårt material \(text och\/eller bild\)\. Per annons, med tidskoder:/); assert.match(b.text, /1 bild\(er\) identiska med vår annonsbild "Takoverdrag_PD_1_H1"/);
   // Annonsfallet pekar på annonserna och Facebook-sidan, aldrig på en sajt som kan vara ren
   assert.match(b.text, /dokumenterat att ni i\n\n    era annonser på Facebook och Instagram \(sidan "Kopian"\)/); assert.doesNotMatch(b.text, /https:\/\/kopian\.se\n/);
   assert.match(b.text, /från alla era annonser, er webbplats/); assert.match(b.text, /kopior av annonserna och deras länkar i Metas annonsbibliotek/);
@@ -816,7 +902,7 @@ test('bevisbildHtml och verifieringHtml med klipp: paren ur våra filmer, aldrig
   const html = bevisbildHtml(a, annons, { miniatyr: () => 'data:image/jpeg;base64,MINI', nu: '2026-09-29T10:00:00Z', nr: 1, antal: 10, klipp });
   assert.match(html, /cut from our own advertising films \("Takoverdrag_PD_2_H1", "Takoverdrag_OB_1_H1"\)/);
   assert.match(html, /Pair A · perceptual-hash distance 0\/64 · scene 0:14–0:16/); assert.match(html, /Our film — Takoverdrag_OB_1_H1 · 0:08/); assert.match(html, /Reported ad · 0:23/);
-  assert.match(html, /74% of the reported video's sampled frames \(50 of 68\) match our films frame for frame \(compared against 131 of our films\)/);
+  assert.doesNotMatch(html, /% of the reported video/, 'ingen andel till Meta — den räknade lånade klipp som våra (Eoka AB 2026-09-29)'); assert.match(html, /Only these frames are claimed\./);
   assert.doesNotMatch(html, /MINI/, 'miniatyrträffen (det lånade klippet) visas aldrig när klippen finns'); assert.doesNotMatch(html, /Our original/);
   assert.match(html, /EGEN1/); assert.match(html, /DERAS2/);
   const utan = bevisbildHtml(a, annons, { miniatyr: () => 'data:image/jpeg;base64,MINI', nr: 1, antal: 10 });
@@ -832,12 +918,14 @@ test('bevisbildHtml och verifieringHtml med klipp: paren ur våra filmer, aldrig
 test('byggAnmalan och beskrivning500 med klipp: filmen klippt ur våra, tiderna och andelen — miniatyrträffen nämns inte', () => {
   const a = ARENDE(); const annons = KLIPP_ANNONS();
   const an = byggAnmalan(a, annons, KONFIG, { undertecknare: { namn: 'Axel Odhner', epost: 'axel.odhner@stonebite.org', roll: 'CEO' }, nr: 3, antal: 10, nu: '2026-09-29T10:00:00Z', bevisbildUrl: 'https://cdn.shopify.com/s/files/x/bevis-3.png' });
-  assert.match(an.falt.contentDescription, /The ad's video is cut from our own ad films "Takoverdrag_PD_2_H1", "Takoverdrag_OB_1_H1": 2 still frames from different scenes of the reported video \(at 0:15, 0:23\) are identical to frames of our films \(perceptual-hash distance 0, 0\/64\), and 74% of the reported video's sampled frames match our films frame for frame \(compared against 131 of our films\)\./);
+  assert.match(an.falt.contentDescription, /The ad's video is cut from our own ad films "Takoverdrag_PD_2_H1", "Takoverdrag_OB_1_H1": 2 still frames from different scenes of the reported video \(at 0:15, 0:23\) are identical to frames of our films \(perceptual-hash distance 0, 0\/64\)\./);
+  assert.doesNotMatch(an.falt.contentDescription, /%/, 'ingen andel i anmälan');
+  assert.match(an.falt.originalWorkDescription, /This report concerns only those frames; it makes no claim to any other footage in either video\./);
   assert.doesNotMatch(an.falt.contentDescription, /our own copyrighted advertising image/); assert.doesNotMatch(an.falt.contentDescription, /The ad is a video that uses our material/);
   assert.match(an.falt.additionalInfo, /frames from our film on the left, the same frames in the reported ad on the right/);
   const b = beskrivning500(an);
   assert.ok(b.length <= 500, String(b.length));
-  assert.match(b, /Its video is cut from our own ad films: 2 stills from different scenes \(at 0:15, 0:23\) are identical to ours; 74% of its frames match our films\./);
+  assert.match(b, /Its video is cut from our own ad films: 2 stills from different scenes \(at 0:15, 0:23\) are identical to ours\./); assert.doesNotMatch(b, /% of its frames/);
   assert.match(b, /Original: our ad films "Takoverdrag_PD_2_H1", "Takoverdrag_OB_1_H1" for "/); assert.doesNotMatch(b, /CaraShellRoof_DK_PD_1_H1/, 'miniatyrens annons nämns aldrig');
   // Filmernas datum: publicerade före deras annons
   const medDatum = byggAnmalan(a, { ...annons, klipp: { ...annons.klipp, datum: { forsta: '2026-08-12', sista: '2026-09-02' } } }, KONFIG, { undertecknare: { namn: 'Axel Odhner', epost: 'axel.odhner@stonebite.org', roll: 'CEO' }, nr: 3, antal: 10, nu: '2026-09-29T10:00:00Z', bevisbildUrl: 'https://cdn.shopify.com/s/files/x/bevis-3.png' });
@@ -932,10 +1020,17 @@ test('byggAnmalan med originalen: exemplet är vår annons i annonsbiblioteket, 
 test('brevet och ärenderapporten med klipp: filmen är klippt ur vår — inte "bild(er) identiska"', () => {
   const a = ARENDE(); a.bevis.annonser = [KLIPP_ANNONS()];
   const sv = [].concat(bevisrader(a, 'sv')).join('\n');
-  assert.match(sv, /film klippt ur våra egna reklamfilmer/); assert.match(sv, /filmen är klippt ur våra: 2 rutor ur olika scener identiska med våra, 74 % av er film matchar våra filmer ruta för ruta/); assert.doesNotMatch(sv, /bild\(er\) identiska/);
-  assert.match(sv, /← Takoverdrag_PD_2_H1, Takoverdrag_OB_1_H1 ·/); assert.doesNotMatch(sv, /CaraShellRoof_DK_PD_1_H1/, 'miniatyrens annons nämns aldrig');
+  assert.match(sv, /sekvenser ur våra egna reklamfilmer/); assert.doesNotMatch(sv, /bild\(er\) identiska/); assert.doesNotMatch(sv, /%/, 'ingen andel i brevet');
+  // En rad per sekvens: deras tid = vår film och vår tid (Eoka AB:s krav: "identifiera, med tidskoder, exakt vilket inslag")
+  assert.match(sv, /– er 0:15 = vår film "Takoverdrag_PD_2_H1" vid 0:11/); assert.match(sv, /– er 0:23 = vår film "Takoverdrag_OB_1_H1" vid 0:08/);
+  assert.doesNotMatch(sv, /CaraShellRoof_DK_PD_1_H1/, 'miniatyrens annons nämns aldrig');
   const en = [].concat(bevisrader(a, 'en')).join('\n');
-  assert.match(en, /the video is cut from ours: 2 frames from different scenes identical to ours, 74% of your video matches our films frame for frame/);
+  assert.match(en, /– your 0:15 = our film "Takoverdrag_PD_2_H1" at 0:11/);
+  // Med original: vår annons i annonsbiblioteket i stället för filmnamnet — men aldrig ett original som bär ett externt klipp eller startade efter deras
+  const org = { Takoverdrag_PD_2_H1: { lank: 'https://www.facebook.com/ads/library/?id=111', start: '2026-09-15' }, Takoverdrag_OB_1_H1: { lank: 'https://www.facebook.com/ads/library/?id=222', start: '2026-09-18', externa: 4 } };
+  const svO = [].concat(bevisrader(a, 'sv', { original: org })).join('\n');
+  assert.match(svO, /– er 0:15 = vår annons https:\/\/www\.facebook\.com\/ads\/library\/\?id=111 \(visas sedan 15 september 2026\) vid 0:11/);
+  assert.doesNotMatch(svO, /id=222/, 'ett original med externa klipp länkas aldrig'); assert.match(svO, /– er 0:23 = vår film "Takoverdrag_OB_1_H1" vid 0:08/);
   // En film där bara det lånade klippet matchade står inte i brevet alls
   const b2 = ARENDE(); b2.bevis.annonser = [KLIPP_ANNONS(), { ...KLIPP_ANNONS(), nr: 9, lank: 'https://www.facebook.com/ads/library/?id=9', klipp: null, klippStatus: 'ej_bevisad', klippFel: 'bara det lånade' }];
   const sv2 = [].concat(bevisrader(b2, 'sv')).join('\n');

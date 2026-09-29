@@ -18,6 +18,7 @@ Argument: `$ARGUMENTS` — normalt tomt (rutinen, varje morgon). Axels egna verb
 /konkurrentdodaren avfarda KD-2026-001 "ingen kopia"
 /konkurrentdodaren paminn KD-2026-001       påminnelsen (brev 2) när fristen gått ut och kopian ligger kvar
 /konkurrentdodaren eskalera KD-2026-001 ["anmält till Meta"]
+/konkurrentdodaren extern <länk> <id> "ägare" "orsak"   ett klipp vi vet INTE är vårt → registret (konkurrenter/externa/)
 /konkurrentdodaren lista
 ```
 
@@ -50,6 +51,34 @@ rad per mätt sak (`konkurrenter/faktura.mjs`, taxan i `konfig.json` →
 `faktura.taxa`). Skriv aldrig till en konkurrent om något rutinen inte har
 bevis för, och lägg aldrig till egna anklagelser eller belopp.
 
+⛔ **Bara det vi kan bevisa — ORVO-lärdomen** (Eoka AB bestred KD-2026-001
+2026-09-29 med EN TikTok-länk: sekvensen i vårt "original"
+Takoverdrag_SP_4_H1 var Specialised Covers, och samma klipp låg i 58 av våra
+240 takskyddsfilmer; Axel släppte ärendet). Brevet och anmälan påstår sedan
+dess bara det uppräknade: varje kopierad sekvens med tidskod hos dem, vår
+annons (länk + startdatum) och tidskod hos oss — aldrig "filmerna är våra",
+aldrig en andel, aldrig marknadsföringslagen, aldrig "produktsidor" utan en
+uppmätt text (`konkurrenter/brev.mjs`, README → "Bara det vi kan bevisa").
+Tre regler för sessionen:
+1. **Titta på varje par innan `skicka` eller `anmal`.** Är en ruta på VÅR
+   sida inte inspelad eller gjord av oss (leverantörens video, ett
+   TikTok-konto, en annan butik, en utländsk husvagn vi aldrig filmat): lägg
+   källan i registret med `extern` (eller `--lanat <anm>:<bokstav>` för en
+   enstaka tagning) och kör `--klipp` igen. Osäker: fråga Axel varifrån
+   klippet kommer — gissa aldrig att det är vårt.
+2. **`--original` före `--skicka`** på ett filmärende — då pekar
+   sekvensraderna på våra annonser i annonsbiblioteket, inte på interna
+   filmnamn. En annons vars film bär ett externt klipp länkas aldrig.
+3. **Visar en motpart att ett klipp är någon annans: `extern <länk>` direkt**
+   och säg Axel hur många av våra filmer (och aktiva annonser) som bär det —
+   det är en risk för våra egna annonskonton, inte bara för ärendet.
+
+⚠️ **Alla varumärken sedan 2026-09-29** (Axel: "applicable för alla brands
+och även Matstrumpor"): Bäverbutiken SE/NO/DK/FI, CaraShell sv/nb/da/en och
+Matstrumpor på tolv språk, med sina konton (`konfig.json → verksamheter`). I
+delade konton avgör annonsens länk vems den är. Taket är 30 produkter per
+morgon över alla verksamheter, en i taget ur varje.
+
 ⚠️ **Marknadsplatser och sociala nätverk (Amazon, Temu, AliExpress, Facebook …)
 är inte konkurrenter här** — leverantörens egna bilder ligger lagligt där och
 ett brev dit går ingenstans (`konfig.json` → `ignorera_domaner`).
@@ -76,9 +105,12 @@ första rad till Axel och kör vidare på den kod som finns.
 
 `node konkurrenter/kor.mjs --fraser`
 
-Skriptet läser butikernas produkter (publika `/products.json`), de annonser
-som visas just nu (Meta), väljer dagens produkter (annonserade först, sedan
-rotation: aldrig kollad, äldst kollad) och skriver två fingeravtryck per
+Skriptet läser alla verksamheters butiker och språk (publika
+`/products.json`, 20 butiker 2026-09-29), de annonser som visas just nu
+(Meta, alla konton i `konfig.json`), väljer dagens produkter (annonserade
+först — i den butik/det språk annonsen länkar till — sedan rotation där
+butikerna turas om; taket `sok.max_produkter_totalt` = 30 över alla
+verksamheter) och skriver två fingeravtryck per
 produkt — meningar på 7–16 ord utan siffror och utan butiksnamn — till
 `konkurrenter/output/<datum>.fraser.json`. Läs utskriften: produkter "för
 lite text" (OPS-butikernas texter ligger i temat, inte i `body_html`) hoppas
@@ -86,7 +118,7 @@ med orsak.
 
 ### 2. Sök — det här är sessionens jobb
 
-För varje fras i filen (max 40 per körning, i filens ordning): kör
+För varje fras i filen (max 60 per körning, i filens ordning): kör
 **WebSearch** med frasen inom citattecken, exakt som den står. Ta de
 träffar som INTE är våra egna domäner (`konfig.json` → `egna_domaner` +
 `sparning/butiker.json`) och inte marknadsplatser/sociala nätverk
@@ -231,6 +263,19 @@ inget: "Inget för dig i dag."
   (formatet överst i `annonsfall.mjs`, `aktiv` och `exponeringar` per annons
   — hitta aldrig på ett tal) och kör
   `node konkurrenter/kor.mjs --hamta --annonser <fil>`.
+
+- **`extern <länk eller mp4> <id> "ägare" "orsak"`** — ett klipp vi vet INTE
+  är vårt (Eoka AB 2026-09-29: Specialised Covers TikTok låg i vårt
+  "original"). `node konkurrenter/kor.mjs --extern <länk> --id <id> --agare
+  "<ägare>" --orsak "<vem som visade det och var>" [--publicerad ÅÅÅÅ-MM-DD]`
+  laddar ner videon (TikTok via Chromium), skriver
+  `konkurrenter/externa/<id>.json` och listar vilka av våra filmer i
+  klippcachen som bär klippet, med tider. Committa filen. Från nästa
+  `--klipp` bär klippet aldrig ett par och räknas aldrig i andelen, och
+  `--original` länkar aldrig en film som bär det. Säg Axel antalet filmer och
+  vilka aktiva annonser som bär klippet (Meta: annonsernas video-id mot
+  filmerna) — det är en risk för VÅRA annonskonton om ägaren anmäler dem.
+  Ta aldrig bort en källa ur registret för att ett fall ska bli starkare.
 
 - **`skicka <id> [--till adress] [--sprak sv|en] [--kopare "Bolag AB, adress"] [--land GB] [--cpm 98] [--utan-faktura] [--direkt]`**
   Axels ord `skicka` i chatten ÄR godkännandet — fråga inte en gång till.
@@ -465,6 +510,7 @@ sidnamn eller domän i stället för ett bolag, be Axel om `--kopare`.
 - [ ] Varje anmälans exempel på vårt original är VÅR annons i annonsbiblioteket (`--original` före `--anmal`, verifierad ruta för ruta) — aldrig produktsidan; saknas ett original står det i svaret till Axel
 - [ ] Varje annons i brev, faktura och anmälan är BEVISAD med vårt eget material (`bevisStatus`: text, film ur våra klipp eller en bildannons bild) — obevisade står med orsak i ärendet, och inget par bygger på en platt ruta eller en film publicerad efter deras annons
 - [ ] Sessionen har TITTAT på varje par (översiktsark av `output/klipp/<id>/<nr>-<bokstav>-egen/deras.jpg`) — inga av de lånade klippen från förhandsbilderna, och kortets två bilder är samma bild; ett lånat par är utpekat med `--klipp <id> --lanat <anmälan>:<bokstav>` och korten ombyggda
+- [ ] Varje ruta på VÅR sida i paren är inspelad eller gjord av oss — en lånad källa ligger i `konkurrenter/externa/` (`extern`) eller är utpekad med `--lanat`, och brevet räknar bara upp sekvenser med tidskoder (inga andelar, ingen marknadsföringslag, inga "produktsidor" utan uppmätt text)
 - [ ] Ett annonsfynd under Axels tröskel (ingen annons över 10 000 i räckvidd och färre än 10 live) blev INGET ärende — det står i rapporten under "Under din tröskel"
 - [ ] Commit + push till main (arenden.jsonl, arenden/, lage.json, sida.json) — aldrig `output/`
 - [ ] Svaret till Axel är på svenska, kort, och hans uppgifter står sist, numrerade
