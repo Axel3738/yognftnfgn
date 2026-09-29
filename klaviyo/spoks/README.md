@@ -1178,7 +1178,9 @@ Gäller alla mejl, även de nio flöden som redan var igång och den schemalagda
 kräver ett inaktivt flöde och har inget fält för att slå på det. Klicken görs därför i appen, av Axel eller
 av Cowork med `klaviyo/spoks/cowork/1-matstrumpor-sprakbyte.txt` (ett flöde i taget: nya flödets
 sändsteg på → nya flödet på → gamla flödets stora knapp av → läs av). Mätt före bytet 2026-09-29
-kväll med `get_flows`: de sex gamla på (160/20/15/201/204/193 inrullade), de sex nya av med 0.
+kväll med `get_flows`: de sex gamla på (160/20/15/201/204/193 inrullade), de sex nya av med 0. **Välkomst bytt 2026-09-29 21:10–21:12 CEST av Cowork:** nya F01 på med alla 36
+sändsteg på och triggern på, gamla F01:s trigger av (flödet står kvar "Aktiv" med sina 160 inrullade),
+båda tillbakalästa med `get_flow`. Rad 2–6 kvar.
 
 **Bytet från de svenska flödena** är Axels klick: i varje nytt flöde slås sändstegen och flödet på,
 sedan stängs det gamla svenska flödets trigger (den stora knappen — de redan inrullade får sina

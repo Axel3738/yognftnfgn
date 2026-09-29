@@ -14,7 +14,10 @@ Gör ETT flöde i taget, i den här ordningen. För varje rad nedan:
      är något sändsteg fortfarande av: gå tillbaka till B.
   D. Öppna det GAMLA svenska flödet (andra länken) och stäng av det med den stora knappen överst.
      Rör INTE dess sändsteg: de kunder som redan är inne ska få sina mejl klart.
-  E. Ladda om båda sidorna och läs av: nya = på, gamla = av. Skriv ned vad du såg.
+  E. Ladda om båda sidorna och läs av. Nya: brickan "Aktiv" och Triggare på. Gamla: Triggare AV.
+     Det gamla flödets bricka står KVAR på "Aktiv" — det är rätt: knappen stänger bara triggern,
+     och kunderna som redan är inne får sina mejl klart (mätt med get_flow 2026-09-29 21:12 på
+     Välkomst: trigger.isActive false, flödet isActive true). Skriv ned vad du såg.
   Gå sedan till nästa rad. Gör aldrig nästa rad innan E är klart.
 
 1. Välkomst: 36 sändsteg
