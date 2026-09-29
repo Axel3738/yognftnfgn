@@ -129,7 +129,8 @@ utomlands: Norge först, Axels budget 1 000 kr/dag (2026-09-27), kampanjen
 2026-09-27 ~15:30 CEST** (Axel gav rollen; före det `Permissions error …
 ads_management`). `matstrumpor/marknader/annonser/bygg.mjs --alla --skarpt`
 byggde samma eftermiddag **fem kampanjer, alla PAUSED**: NO (Axels 1 000 kr/dag),
-DK, FI, US och WW (NO+DK+FI+US+GB+AU+CA+NZ, engelska, `/en/` utan `?country=`) —
+DK, FI, US och WW (engelska, `/en/` utan `?country=`; **sedan 2026-09-29 bara GB+AU+CA+NZ**,
+Axels "en kampanj per marknad borde bli bäst", så inget land ligger i två kampanjer) —
 de fyra sista med PLATSHÅLLARBUDGET 1 000 kr/dag som `--aktivera` vägrar tills
 Axel sagt en budget. Id:n och regler i `marknader/README.md` → Kampanjerna.
 Materialet: `marknader/heygen/` (Nathalie + Sofie H1/H2 → elva språk; ⛔ **Katarinas
@@ -165,7 +166,20 @@ aldrig temat). Kvar och varför: `marknader/README.md` → "QA som kund". ⛔ **
 sajten sedan 2026-09-29 kväll** (Axel: "ta bort inkl. moms / Skriv inget / C"): "Skatter ingår." under
 priset och hela korgraden under totalsumman är borta på alla värdar och tolv språk
 (`domantema.mjs` → `patchaProduktMoms`/`patchaKorgMoms`). Skriv aldrig in en moms- eller tulltext
-igen. Fraktpolicyn står som den står, och skatteinställningen rörs inte. ⚠️ Shopify mätt
+igen. Fraktpolicyn står som den står, och skatteinställningen rörs inte. ✅ **Loggan och namnet är
+"Matstrumpor" i alla länder utom Sverige sedan 2026-09-29 kväll** (Axel: "vi borde bara ha
+Matstrumpor"). Villkoret är kundens land (`localization.country.iso_code != 'SE'`) eller egen domän,
+för 12 av 13 utlandskampanjer länkar till `matstrumpor.se/<språk>` (`domantema.mjs` layout v6).
+⚠️ Kassan har EN logga för hela butiken, MATSTRUMPOR.SE, eftersom en logga per marknad kräver Plus.
+**Utlandsannonserna visas som Facebook-sidan "Matstrumpor" `1285064981363590`** (Axels sida, samma
+BM). Instagram visas via sidans page-backed identitet `17841423405715219`, eftersom kontot
+matstrumpor.se säger .se. Källan är `annonser/marknader.json`, och `bygg.mjs --byt-text` byter sidan
+i PAUSED annonser. Sverige och sidan Matstrumpor.se `820358954504320` rörs aldrig därifrån.
+Sidans profilbild var tom, så annonserna visade en grå gubbe. Sedan 2026-09-29 är den loggan utan ".SE"
+(sessionen, `POST /{sida}/picture`, tillbakaläst).
+**Judge.me:** rutans texter är översatta på alla tolv språk. Axel slog på "automatic" 2026-09-29, men
+recensionerna var ännu inte översatta samma kväll, eftersom Judge.me anger upp till 48 timmar
+(`marknader/README.md` → "Judge.me på tolv språk"). ⚠️ Shopify mätt
 2026-09-27: `translationsRegister` kan svara `INTERNAL_SERVER_ERROR` en stund
 (kör om), och en batchläsning av temats översättningar kan svara med FEL
 språk (`--steg kontroll` läser om ensamt) — lita aldrig på en enda läsning.

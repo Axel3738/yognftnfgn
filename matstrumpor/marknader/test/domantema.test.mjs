@@ -5,7 +5,7 @@ import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
 import {
-  MARK, LOGGA_FIL, PRESENTKORT_SV, PRESENTKORT_HANDLE, patchaLayout, patchaLayoutV1, patchaLayoutV2, patchaLayoutV3, patchaLayoutV4, patchaFiLocale, FI_FEL, FI_RATT, patchaMetaTags, patchaHeader, patchaFooter, patchaMsHead,
+  MARK, LOGGA_FIL, PRESENTKORT_SV, PRESENTKORT_HANDLE, patchaLayout, patchaLayoutV1, patchaLayoutV2, patchaLayoutV3, patchaLayoutV4, patchaLayoutV5, patchaFiLocale, FI_FEL, FI_RATT, patchaMetaTags, patchaHeader, patchaFooter, patchaMsHead,
   patchaProduktMall, omdomenJson, bytNamn, SEKTION_OMDOMEN, SNIPPET_BADGE, FAQ_EPOST, FAQ_KONTAKT,
   patchaProduktMoms, patchaKorgMoms, MOMS_MARK, PRODUKT_MOMS_VILLKOR, PATCHAR,
 } from '../domantema.mjs';
@@ -42,7 +42,9 @@ ${SIDAN}  </body>
 test('layouten: Sverige får exakt den gamla sidan i else-grenen, egen domän får namnbytet', () => {
   const r = patchaLayout(LAYOUT);
   assert.ok(r.kod.includes(MARK));
-  assert.deepEqual(r.byten, ['villkor', 'titel', 'titelsuffix', 'sidan']);
+  assert.deepEqual(r.byten, ['villkor', 'titel', 'titelsuffix', 'sidan', 'utland_v6']);
+  // Axel 2026-09-29 kväll: "vi borde bara ha Matstrumpor" — alla länder utom Sverige, även på matstrumpor.se/<språk>.
+  assert.match(r.kod, /request\.host contains 'matstrumpor\.com' or localization\.country\.iso_code != 'SE'\n        assign ms_egen = true/);
   // Beskrivningen rörs inte: replace + escape dubbelkodar Shopifys text ("don&amp;#39;t", mätt på .com).
   assert.ok(r.kod.includes('<meta name="description" content="{{ page_description | escape }}">'));
   // Den gamla sidan står oförändrad i else-grenen — .se ritas som förut.
@@ -80,15 +82,16 @@ test('layouten: presentkortets bild byts på alla språk utom svenska, med filer
   assert.match(r.kod, /\{%- else -%\}\n        \{\{ ms_sida \}\}/);
 });
 
-test('layouten: v1–v4 (live 2026-09-29) uppgraderas till exakt samma som en ny patch', () => {
+test('layouten: v1–v5 (live 2026-09-29) uppgraderas till exakt samma som en ny patch', () => {
   const ny = patchaLayout(LAYOUT).kod;
-  for (const [namn, fn] of [['v1', patchaLayoutV1], ['v2', patchaLayoutV2], ['v3', patchaLayoutV3], ['v4', patchaLayoutV4]]) {
+  for (const [namn, fn] of [['v1', patchaLayoutV1], ['v2', patchaLayoutV2], ['v3', patchaLayoutV3], ['v4', patchaLayoutV4], ['v5', patchaLayoutV5]]) {
     const gammal = fn(LAYOUT);
     assert.notEqual(gammal, ny, namn);
     const r = patchaLayout(gammal);
-    assert.deepEqual(r.byten, ['uppgradering_v5'], namn);
+    assert.deepEqual(r.byten, namn === 'v5' ? ['utland_v6'] : ['uppgradering_v5', 'utland_v6'], namn);
     assert.equal(r.kod, ny, namn);
   }
+  assert.ok(!patchaLayoutV5(LAYOUT).includes("localization.country.iso_code != 'SE'"), 'v5 hade bara värden');
   assert.ok(patchaLayoutV3(LAYOUT).includes('?pk=2&v='));
 });
 
@@ -110,7 +113,15 @@ test('meta-taggarna: namnet byts bara på egen domän och bara när värdet ÄR 
   assert.match(r.kod, /if ms_namn != shop\.name\n    if og_title == shop\.name\n      assign og_title = ms_namn/);
   assert.doesNotMatch(r.kod, /\| replace:/, 'ingen replace på Shopifys färdiga text');
   assert.ok(r.kod.includes('<meta property="og:site_name" content="{{ ms_namn }}">'));
+  assert.match(r.kod, /or localization\.country\.iso_code != 'SE'\n    assign ms_namn = 'Matstrumpor'/);
   assert.equal(patchaMetaTags(r.kod).kod, r.kod);
+  // v1 (live 2026-09-29 eftermiddag, bara egen domän) uppgraderas till samma som en ny patch.
+  const v1 = r.kod.replace(" or localization.country.iso_code != 'SE'\n    assign ms_namn", "\n    assign ms_namn").replace('egen domän och alla länder utom Sverige ⇒', 'egen domän ⇒');
+  assert.notEqual(v1, r.kod);
+  const upp = patchaMetaTags(v1);
+  assert.deepEqual(upp.byten, ['utland_v2']);
+  assert.equal(upp.kod, r.kod);
+  assert.throws(() => patchaMetaTags(`{%- liquid\n  # ${MARK}: något annat\n`), /okänd version/);
 });
 
 test('sidhuvudet: loggan byts i båda loggblocken, faller tillbaka på temats logga om filen saknas', () => {
@@ -134,6 +145,13 @@ test('sidhuvudet: loggan byts i båda loggblocken, faller tillbaka på temats lo
   assert.equal(r.kod.split('settings.logo != blank').length - 1, 0);
   assert.equal(r.kod.split('ms_logga\n              | image_url: width: 600').length - 1, 2);
   assert.throws(() => patchaHeader(`<link>\n${block}`), /hittades 1 gånger, väntade 2/);
+  // Alla länder utom Sverige får loggan utan .SE (Axel 2026-09-29 kväll), och v1 uppgraderas på plats.
+  assert.match(r.kod, /or localization\.country\.iso_code != 'SE'\n    if images\[/);
+  assert.deepEqual(patchaHeader(r.kod).byten, []);
+  const v1 = r.kod.replace(" or localization.country.iso_code != 'SE'\n    if images[", '\n    if images[').replace(' och i alla länder utom Sverige, bilden', ', bilden');
+  const upp = patchaHeader(v1);
+  assert.deepEqual(upp.byten, ['utland_v2']);
+  assert.equal(upp.kod, r.kod);
 });
 
 test('sidfoten: bara menyrader med @ hoppas, och bara på .no', () => {

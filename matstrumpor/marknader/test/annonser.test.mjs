@@ -1,7 +1,8 @@
 // Tester för annonser/bygg.mjs — spärrarna före aktivering (ren logik, inget nät).
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { farAktiveras, lankOk, slaIhopLage, textSkillnad } from '../annonser/bygg.mjs';
+import { farAktiveras, identitetSkillnad, lankOk, slaIhopLage, textSkillnad } from '../annonser/bygg.mjs';
+import { readFileSync } from 'node:fs';
 import { tillB, VARUMARKESRAD } from '../annonser/nob.mjs';
 
 test('slaIhopLage: en körning för en marknad byter bara ut den raden, resten står kvar i marknadsordning', () => {
@@ -75,4 +76,16 @@ test('--byt-text: bara de fält som skiljer mot annonsens creative byts, video o
   const bild = { link_data: { name: 'Rubrik', message: 'Rad 1\nRad 2', description: an.link_description } };
   assert.deepEqual(textSkillnad(an, bild), []);
   assert.deepEqual(textSkillnad(an, {}), ['title', 'message', 'link_description']);
+});
+
+test('--byt-text byter också sidan: utlandsannonserna visas som sidan Matstrumpor, aldrig Matstrumpor.se', () => {
+  const M = JSON.parse(readFileSync(new URL('../annonser/marknader.json', import.meta.url), 'utf8'));
+  // Axel 2026-09-29 kväll: sidan 1285064981363590 "Matstrumpor". 820358954504320 är Matstrumpor.se (Sverige).
+  assert.equal(M.sida, '1285064981363590');
+  assert.notEqual(M.sida, '820358954504320');
+  assert.notEqual(M.instagram_user_id, '17841479011543544', 'Instagram-kontot matstrumpor.se visar .se');
+  const gammal = { page_id: '820358954504320', instagram_user_id: '17841479011543544', video_data: {} };
+  assert.deepEqual(identitetSkillnad(M, gammal), ['sida', 'instagram']);
+  assert.deepEqual(identitetSkillnad(M, { page_id: M.sida, instagram_user_id: M.instagram_user_id }), []);
+  assert.deepEqual(identitetSkillnad(M, {}), ['sida', 'instagram']);
 });

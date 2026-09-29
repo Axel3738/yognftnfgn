@@ -3,8 +3,11 @@
  "konto": "730973156224390",
  "konto_namn": "nya kungen",
  "pixel": "1785935302094082",
- "sida": "820358954504320",
- "instagram_user_id": "17841479011543544",
+ "sida": "1285064981363590",
+ "sida_namn": "Matstrumpor",
+ "sida_beslut": "Axel 2026-09-29 kväll: 'Och jag har ett Facebook-page också … 1285064981363590 … Den heter endast \"Matstrumpor\"' + 'vi borde bara ha Matstrumpor'. Utlandsannonserna visas som sidan Matstrumpor (samma Business Manager Matstrumpor.se, token:en har ADVERTISE). Förut sidan Matstrumpor.se 820358954504320 + Instagram matstrumpor.se 17841479011543544 — de bär fortfarande de svenska annonserna och rörs inte härifrån.",
+ "instagram_user_id": "17841423405715219",
+ "instagram_beslut": "Sidan Matstrumpor har inget eget Instagram-konto, så Instagram-annonserna visas genom sidan (page-backed, skapad 2026-09-29 kväll): namnet Matstrumpor, utan profil att klicka på. Sessionens beslut, efter Axels 'vi borde bara ha Matstrumpor' — Instagram-kontot matstrumpor.se hade visat .se. Byt tillbaka till 17841479011543544 här + --byt-text om Axel vill ha det riktiga kontot.",
  "adset_mall": "SE-adsetet 09-17 UGC (mätt 2026-09-27): OFFSITE_CONVERSIONS/IMPRESSIONS, köp via pixeln, Advantage+ audience, 18–65, 7d klick, WEBSITE, DSA STonebite",
  "kampanjer": {
   "NO": {
@@ -83,22 +86,19 @@
    "kampanj": "MATSTRUMP_WW_SALES",
    "adset": "MATSTRUMP_WW_ugc",
    "geo": [
-    "NO",
-    "DK",
-    "FI",
-    "US",
     "GB",
     "AU",
     "CA",
     "NZ"
    ],
+   "geo_beslut": "2026-09-29: Axel 'en kampanj per marknad borde bli bäst'. NO, DK, FI och US har egna kampanjer, så WW bär bara de engelska länderna utan egen kampanj (sessionens beslut; före det NO+DK+FI+US+GB+AU+CA+NZ, alltså två kampanjer på samma land). Adsetet 120251749614670023 ändrat PAUSED och tillbakaläst samma dag. Vill Axel ha GB/AU/CA/NZ som fyra egna kampanjer: nya rader här + bygg.mjs --marknad <KOD> --skarpt.",
    "locale": "en",
    "heygen_sprak": "English (United States)",
    "lank": "https://matstrumpor.se/en/products/sushi-strumpor",
-   "lank_not": "Utan ?country= väljer Shopify marknad efter kundens IP (alla åtta länder är marknader), så en norsk kund ser engelska + NOK. Sverige ingår inte — SE har egen kampanj.",
+   "lank_not": "Utan ?country= väljer Shopify marknad efter kundens IP (alla fyra länderna ligger i marknaden USA/UK/AU/CA/NZ med egen valuta). Sverige ingår inte — SE har egen kampanj.",
    "budget_sek_dag": 1000,
    "budget_beslut": "Axel 2026-09-27 kväll: 'Worldwide kanske vi kan börja på 1000kr per dag. Sen respektive kampanjer 1000kr per dag också' — 1 000 kr/dag. ⛔ Förblir PAUSED tills Axel granskat annonserna ('jag vill inte att du aktiverar kampanjerna i meta för ens jag har granskat alla'); --aktivera körs aldrig utan hans ord",
-   "geo_not": "WW = de åtta engelsk-/nordiska länderna. De sju språkkampanjerna täcker sina länder på eget språk; övriga europeiska länder (IE, GR, CZ, HU, RO, BG, HR, SK, SI, LT, LV, EE, MT, CY, IS, LI) kan läggas i WW när engelskan är bekräftad som deras språk — Axels beslut."
+   "geo_not": "WW = de engelska länderna utan egen kampanj (GB, AU, CA, NZ sedan 2026-09-29). De sju språkkampanjerna täcker sina länder på eget språk; övriga europeiska länder (IE, GR, CZ, HU, RO, BG, HR, SK, SI, LT, LV, EE, MT, CY, IS, LI) kan läggas i WW när engelskan är bekräftad som deras språk — Axels beslut."
   },
   "DE": {
    "kampanj": "MATSTRUMP_DE_SALES",

@@ -12,6 +12,8 @@
 //       byter rubrik, brödtext eller länkbeskrivning i annonser som redan finns när <KOD>.json
 //       ändrats: samma video/bild (ingen ny uppladdning), ny creative, samma annons. BARA i
 //       annonser som är PAUSED — en annons som går rörs aldrig (den skulle börja om inlärningen).
+//       Byter också Facebook-sidan och Instagram-kontot när marknader.json säger något annat
+//       (sidan "Matstrumpor" sedan 2026-09-29 kväll, Axels sida — inte "Matstrumpor.se").
 //
 // Läser marknader.json (kampanj, adset, geo, länk, budget, budgetbeslut) och <KOD>.json
 // (copy + en post per annons: namn, videofil relativt annonser/klar/, title, message,
@@ -62,6 +64,14 @@ export function textSkillnad(an, story = {}) {
   const live = v ? { title: v.title, message: v.message, link_description: v.link_description }
     : l ? { title: l.name, message: l.message, link_description: l.description } : {};
   return ['title', 'message', 'link_description'].filter((f) => (live[f] ?? '') !== (an[f] ?? ''));
+}
+
+/** Ren: vilken Facebook-sida och vilket Instagram-konto annonsen visas som, mot marknader.json. */
+export function identitetSkillnad(M, story = {}) {
+  const ut = [];
+  if ((story.page_id ?? '') !== (M.sida ?? '')) ut.push('sida');
+  if ((story.instagram_user_id ?? '') !== (M.instagram_user_id ?? '')) ut.push('instagram');
+  return ut;
 }
 
 /** Ren: annonsens länk måste bära marknadens locale och (för enlandskampanjer) landet. */
@@ -135,7 +145,8 @@ async function byggMarknad(kod) {
       const fil = kallfil(an) ? join(ROT, kallfil(an)) : null;
       const gammal = finns.find((x) => x.name === an.namn);
       if (gammal && bytText) {
-        const andrat = textSkillnad(an, gammal.creative?.object_story_spec);
+        // Texten OCH vem annonsen visas som (Facebook-sidan "Matstrumpor" sedan 2026-09-29, Axels sida).
+        const andrat = [...textSkillnad(an, gammal.creative?.object_story_spec), ...identitetSkillnad(M, gammal.creative?.object_story_spec)];
         if (!andrat.length) { log(`texten stämmer: ${an.namn}`); continue; }
         if (gammal.status !== 'PAUSED' || gammal.effective_status === 'ACTIVE') { log(`⛔ ${an.namn} går (${gammal.status}/${gammal.effective_status}) — texten byts bara i pausade annonser`); continue; }
         if (!skarpt) { log(`torrt: skulle byta ${andrat.join(', ')} i ${an.namn} (${gammal.id})`); continue; }
@@ -147,11 +158,11 @@ async function byggMarknad(kod) {
         await api(gammal.id, { form: { creative: JSON.stringify({ creative_id: creative.id }) } });
         const las = await api(gammal.id, { params: { fields: 'status,creative{id,object_story_spec}' } });
         if (las.creative?.id !== creative.id) throw new Error(`${an.namn}: creative byttes inte (läst ${las.creative?.id}, ville ${creative.id})`);
-        const kvar = textSkillnad(an, las.creative.object_story_spec);
+        const kvar = [...textSkillnad(an, las.creative.object_story_spec), ...identitetSkillnad(M, las.creative.object_story_spec)];
         if (kvar.length) throw new Error(`${an.namn}: ${kvar.join(', ')} läste tillbaka fel`);
         videor[an.namn] = { ...videor[an.namn], ...minne(an, m, { creative_id: creative.id, annons_id: gammal.id, text_bytt: new Date().toISOString() }) };
         sparaVideor();
-        log(`✅ ny text (${andrat.join(', ')}) i ${an.namn} (${gammal.id}): creative ${creative.id}, status ${las.status}`);
+        log(`✅ nytt (${andrat.join(', ')}) i ${an.namn} (${gammal.id}): creative ${creative.id}, status ${las.status}`);
         continue;
       }
       if (gammal) {

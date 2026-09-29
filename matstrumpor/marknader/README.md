@@ -378,8 +378,8 @@ mättes rent.
 
 **Står kvar med flit:**
 
-- Judge.me-rutan är svensk på alla språk. Det är appens inställning "multi-locale", och på .no döljs
-  den redan.
+- ~~Judge.me-rutan är svensk på alla språk.~~ Axel slog på flerspråk och automatisk översättning
+  själv samma kväll. Mätningen står under "Judge.me på tolv språk" nedan.
 - Trustpilot-rutorna, som en annan session byggde på Axels beställning, visar de riktiga svenska
   omdömena, även på .no.
 - Landväljarens namn på /nb är svenska. Shopify har inga bokmålsnamn.
@@ -414,6 +414,80 @@ moms". Axels svar: "ta bort inkl. moms / Skriv inget / C", och "Jag fixar Judge.
   förut.
 - ⚠️ På .eu är portugisiskan `/pt-pt/`. `/pt/` skickar till engelska startsidan. Annonsernas länk
   är `matstrumpor.se/pt/…`, och den visar portugisiska (mätt samma kväll).
+
+### Loggan "Matstrumpor" i alla länder utom Sverige (Axel 2026-09-29 kväll)
+
+Axels fråga: "om loggan bara är Matstrumpor … eller om det är Matstrumpor.se i varje marknad. För vi
+borde bara ha Matstrumpor." Svaret var nej: 12 av 13 utlandskampanjer länkar till
+`matstrumpor.se/<språk>`, och där stod MATSTRUMPOR.SE. Bara de egna domänerna (.no/.eu/.com) hade
+loggan utan .SE.
+
+- **Villkoret är kundens land, inte adressen:** `localization.country.iso_code != 'SE'` eller egen
+  domän. Då får kunden loggan utan .SE i sidhuvudet, sidfoten och JSON-LD. Butiksnamnet blir
+  "Matstrumpor" i titeln, i `og:site_name` och i löptexten, där till exempel leverantörsraden stod
+  "MATSTRUMPOR.SE". Marknaden Sverige har bara SE, så Sverige ritas exakt som förut.
+- `domantema.mjs`: layouten v6, `patchaMetaTags` v2 och `patchaHeader` v2. Äldre versioner
+  uppgraderas på plats, och en okänd version stoppar. Testerna bevisar att v1–v5 blir samma fil som
+  en ny patch.
+- **Mätt som kund i 24 länk/land-par:** Sverige MATSTRUMPOR.SE och alla andra "Matstrumpor". Språk,
+  land, valuta och pris var rätt i alla par. Sidhuvudet är sett i Chromium på de och sv.
+  "matstrumpor.se" står kvar i supportadressen kundsupport@matstrumpor.se. Det är den riktiga
+  brevlådan, och kortets descriptor `SP Matstrumpor.se` skyddas som förut.
+- ⚠️ **Kassan visar MATSTRUMPOR.SE i alla länder**, och flikens titel är "Checkout - Matstrumpor.se".
+  Det mättes som tysk kund samma kväll. Kassan har EN logga för hela butiken. En logga per marknad
+  kräver Shopify Plus (Checkout and Accounts Configuration API). Namnet i kassan och i Shopifys mejl
+  är butikens namn, alltså Settings → General. Det här är en fråga till Axel.
+
+### Judge.me på tolv språk (mätt 2026-09-29 kväll, efter Axels inställning)
+
+- **Rutans egna texter är översatta på alla tolv språk.** Mätt i Chromium på produktsidan:
+  - Kundrecensioner, Kundeanmeldelser (nb, da), Asiakasarvostelut, Customer Reviews;
+  - Kundenbewertungen, Avis Clients, Klantbeoordelingen, Reseñas de Clientes, Recensioni Clienti;
+  - Recenzje klientów, Avaliações de Clientes.
+- **Recensionerna själva är inte översatta än.** Inställningen står rätt i sidans `jdgmSettings`:
+  `widget_translate_review_content_enabled: true` och `widget_translate_review_content_method:
+  automatic`. Men produktens data (`metafield_updated_at` 13:23 UTC) bär översättningar bara till
+  `sv`. Recensionerna visas därför på svenska under "Recensioner på andra språk", med knappen
+  "Översätt recensionen till …". Judge.me skriver att språkigenkänningen tar upp till 48 timmar efter
+  att inställningen slagits på, och Shopifys språk upp till 24 timmar. Inställningen kräver planen
+  Awesome. [Judge.me: Translating reviews](https://judge.me/help/en/articles/11379816-translating-reviews-in-the-review-widget)
+- ⚠️ **Shop-appens tre recensioner är märkta `en`** fast de är svenska (Kent, Wide Pia, Niklas). På
+  engelska sidor visas de därför på svenska utan knapp, som om de vore engelska. Kolla igen efter
+  48 timmar. Rättar inte språkigenkänningen dem, är det Judge.me:s sak.
+- Läses om med `scratchpad`-skriptet `judgeme5.mjs`, som räknar per språk hur många recensioner som
+  visas översatta ("Visa original") och hur många som bara har knappen.
+
+### Facebook-sidan "Matstrumpor" på utlandsannonserna (Axel 2026-09-29 kväll)
+
+Axel: "jag har ett Facebook-page också … 1285064981363590", och "Den heter endast 'Matstrumpor'".
+
+- Sidan ligger i samma Business Manager som kontot (Matstrumpor.se `3354502211392342`). Token:ens
+  användare "API LONG TERM" har ADVERTISE på den (mätt med `me/accounts`).
+- Förut visades annonserna som **Matstrumpor.se** på Facebook och **matstrumpor.se** på Instagram
+  (mätt i Metas förhandsvisning). Sidan Matstrumpor har inget eget Instagram-konto. Därför skapade
+  sessionen sidans page-backed Instagram-identitet `17841423405715219`, så att Instagram också säger
+  "Matstrumpor". Då finns ingen profil att klicka på. Vill Axel ha det riktiga kontot matstrumpor.se
+  byts `instagram_user_id` tillbaka till `17841479011543544` i `annonser/marknader.json`, och sedan
+  körs `--byt-text` igen.
+- `bygg.mjs --byt-text` byter nu också sida och Instagram (`identitetSkillnad`), bara i PAUSED
+  annonser, med ny creative och tillbakaläsning. De svenska annonserna och sidan Matstrumpor.se rörs
+  aldrig härifrån.
+- **Profilbilden** var tom (`is_silhouette: true`, 0 följare), så alla 104 annonser visades med en grå
+  gubbe, också på Instagram, där identiteten lånar sidans bild. Sessionen satte loggan utan ".SE"
+  (`domantema/matstrumpor-logga-utan-se.png`) på en vit kvadrat 1600 × 1600, där allt ryms i Facebooks
+  cirkel. Den laddades upp med `POST /1285064981363590/picture` och sidtoken (`{"success":true}`) och
+  lästes tillbaka som 720 × 720 utan silhuett 2026-09-29 kväll. Omslagsbild saknas fortfarande. Den
+  syns inte i annonserna.
+
+### En kampanj per marknad — WW utan dubbletter (Axel 2026-09-29 kväll)
+
+Axel: "vi borde köra en kampanj per marknad tycker jag faktiskt, en kampanj per marknad borde bli
+bäst". Så var det redan byggt: NO (A/B: NO + NOB), DK, FI, US, DE, FR, NL, ES, IT, PL, PT. Undantaget
+var WW, som också bar NO, DK, FI och US. De länderna låg alltså i två kampanjer samtidigt, och WW hade
+bjudit mot dem. Sessionen har ändrat WW-adsetet `120251749614670023` (PAUSED) så att det bara bär de
+engelska länderna utan egen kampanj: **GB, AU, CA och NZ**. Resten av inriktningen är orörd (18–65,
+Advantage+, platstyperna). Den är tillbakaläst och står i `marknader.json` → `WW.geo_beslut`.
+Kampanjen heter fortfarande `MATSTRUMP_WW_SALES`, för annonsnamnen bär `WW`.
 
 ## Hela Europa + worldwide — Axels mål 2026-09-27 kväll (`/goal`)
 
