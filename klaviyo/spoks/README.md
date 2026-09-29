@@ -1131,6 +1131,14 @@ samma bild en gång till.
   inom 21 dygn** (brandfilens `bildregler`, från 30/9; produktbilder räknas också).
   Granskningssidan hämtar bilderna i 640 px (`bilder.mjs sidUrl`), så den väger 5 MB och
   inte 8.
+- **I Spoks: alla 37 utkast har sin nya bild överst** (samma kväll, varje byte läst tillbaka
+  och loggat med hash i `konto/matstrumpor/spoks-uppladdat.jsonl`, `atgard: hero-bild`). 35
+  bytte bildblocket på plats (`update_draft_campaign_blocks`, blockets id och stil kvar);
+  K03 och K13 hade ingen bild överst och fick den som nytt första block. K13:s bild länkade
+  först till sushilådan och går nu till presentkortet (`--synka`). ⚠️ **Spoks har ett tak
+  per minut:** tre arbetare samtidigt gav "Rate limit exceeded. Try again in 13 seconds"
+  efter ungefär 25 ändringar; en enda arbetare, ett anrop i taget, tog de sista 12 utan
+  stopp. Kör aldrig ändringar i Spoks parallellt.
 - **Kvar som förut:** produktkorten längre ner i mejlen visar produktens egen bild (den
   hydreras av Spoks och går inte att byta per mejl). Flödena (F01–F09) har kvar sina
   produktbilder: de är aktiva, och ett aktivt flöde går inte att ändra via MCP:n.
