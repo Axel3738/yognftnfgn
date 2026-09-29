@@ -5,7 +5,7 @@
   "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/WhatsAppImage2025-11-25at08.41.59_5.jpg?v=1771995278",
   "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/Namnlos_design_-_2026-03-19T120925.579.png"
  ],
- "stil": "Clearly a cartoon illustration, NOT a photo: cute, cheerful 2D cartoon style matching the kawaii sushi mascot logo in the second reference image — bold dark rounded outlines, flat bright colors with soft simple shading, rounded chunky shapes, big friendly smiles, warm cream background tones with orange (#dd821d) accents. The sushi socks and the black sushi gift box are drawn in the same cartoon style but clearly recognizable from the first reference image (salmon nigiri, maki rolls, tamago; socks striped salmon, red, black, yellow, white). One simple scene, a happy cartoon character in the country, the country's flag drawn correctly. No text, no words, no letters, no logos anywhere. Square composition. Full-bleed: the scene fills the entire square edge to edge, NO frame, NO border, NO rounded card, NO margin, NO decorative blobs around it.",
+ "stil": "Clearly a cartoon illustration, NOT a photo: cute, cheerful 2D cartoon style matching the kawaii sushi mascot logo in the second reference image — bold dark rounded outlines, flat bright colors with soft simple shading, rounded chunky shapes, big friendly smiles, warm cream background tones with orange (#dd821d) accents. The sushi socks and the black sushi gift box are drawn in the same cartoon style but clearly recognizable from the first reference image (salmon nigiri, maki rolls, tamago; socks striped salmon, red, black, yellow, white). One simple scene, adult cartoon characters only (no children, no teenagers): a woman around 35 to 55 giving the sushi sock gift box as a present, or the adult who receives it laughing because they think it is real sushi, the country's flag drawn correctly. No text, no words, no letters, no logos anywhere. Square composition. Full-bleed: the scene fills the entire square edge to edge, NO frame, NO border, NO rounded card, NO margin, NO decorative blobs around it.",
  "karta": {
   "id": "karta",
   "prompt": "Cute 2D cartoon illustration in the style of the kawaii sushi mascot logo (second reference image): a big smiling cartoon globe wearing a pair of striped sushi socks like a scarf, surrounded by little flying parcels and paper airplanes, the black sushi gift box (first reference image) open next to it, tiny flags of Sweden, Norway, Denmark, Finland, Germany, France, Italy, Spain, the Netherlands, the UK, the USA and Australia on little sticks around it. Bold dark rounded outlines, flat bright colors, warm cream background, orange (#dd821d) accents. No text, no words, no letters. Square composition. Full-bleed: the scene fills the entire square edge to edge, NO frame, NO border, NO rounded card, NO margin, NO decorative blobs around it."
@@ -14,62 +14,62 @@
   {
    "id": "se",
    "namn": "Sverige",
-   "prompt": "A cartoon Swedish girl with blonde braids at a midsummer maypole on a green meadow, holding up the sushi sock gift box, a Swedish flag (blue with a yellow Nordic cross) waving next to her."
+   "prompt": "At a Swedish midsummer table on a green meadow with a maypole behind, a cartoon woman around 40 hands the sushi sock gift box to her laughing mother around 65, a Swedish flag (blue with a yellow Nordic cross) waving."
   },
   {
    "id": "no",
    "namn": "Norge",
-   "prompt": "A cartoon Norwegian boy in a knitted sweater sitting on a red wooden cabin porch by a fjord with mountains, wearing the striped sushi socks, waving a Norwegian flag (red with a blue Nordic cross outlined in white)."
+   "prompt": "On a red wooden cabin porch by a Norwegian fjord, a cartoon woman around 45 in a knitted sweater gives her grown-up brother around 40 the sushi sock gift box, he laughs, both wear the striped sushi socks, a Norwegian flag (red with a blue Nordic cross outlined in white)."
   },
   {
    "id": "dk",
    "namn": "Danmark",
-   "prompt": "A cartoon Danish girl riding a bicycle past colorful Nyhavn harbour houses in Copenhagen, the sushi sock gift box in the bike basket, a small Danish flag (red with a white Nordic cross) on the bike."
+   "prompt": "By the colorful Nyhavn harbour houses in Copenhagen, two cartoon women friends around 35 sit on the quay, one just opened the sushi sock gift box and laughs, a Danish flag (red with a white Nordic cross)."
   },
   {
    "id": "fi",
    "namn": "Suomi",
-   "prompt": "A cartoon Finnish man relaxing on a wooden sauna jetty by a blue lake with pine trees, feet in the striped sushi socks, a Finnish flag (white with a blue Nordic cross) on a flagpole."
+   "prompt": "On a wooden sauna jetty by a Finnish lake with pine trees, a cartoon couple around 45 sit together, the husband wearing the striped sushi socks, his wife holding the open gift box and laughing, a Finnish flag (white with a blue Nordic cross) on a flagpole."
   },
   {
    "id": "de",
    "namn": "Deutschland",
-   "prompt": "A cartoon German woman in front of the Brandenburg Gate holding a pretzel and the sushi sock gift box, a German flag (black, red, gold horizontal stripes) waving."
+   "prompt": "In front of the Brandenburg Gate, a cartoon woman around 40 surprises her partner around 40 with the sushi sock gift box, he pretends to eat a sock with chopsticks, both laughing, a German flag (black, red, gold horizontal stripes)."
   },
   {
    "id": "fr",
    "namn": "France",
-   "prompt": "A cartoon French man with a beret at a café table with the Eiffel Tower behind him, holding up striped sushi socks next to a croissant, a French flag (blue, white, red vertical stripes)."
+   "prompt": "At a Paris café table with the Eiffel Tower behind, a cartoon woman around 50 with a scarf gives her best friend around 50 the open sushi sock gift box, the friend laughs, croissants on the table, a French flag (blue, white, red vertical stripes)."
   },
   {
    "id": "it",
    "namn": "Italia",
-   "prompt": "A cartoon Italian grandma in her kitchen in front of the Colosseum view out of the window, holding a pizza in one hand and the sushi sock gift box in the other, an Italian flag (green, white, red vertical stripes)."
+   "prompt": "In an Italian kitchen with a view of the Colosseum, a cartoon woman around 40 gives her laughing father around 70 the sushi sock gift box next to a pizza, an Italian flag (green, white, red vertical stripes)."
   },
   {
    "id": "es",
    "namn": "España",
-   "prompt": "A cartoon Spanish girl dancing on a sunny terrace with Sagrada Familia in the background, wearing the striped sushi socks, a Spanish flag (red, yellow, red horizontal stripes, yellow band twice as wide) hanging from the balcony."
+   "prompt": "On a sunny Spanish terrace with Sagrada Familia behind, a cartoon woman around 35 holds up the sushi sock gift box while her colleague around 40 tries to pick up a sock with chopsticks thinking it is sushi, both laughing, a Spanish flag (red, yellow, red horizontal stripes)."
   },
   {
    "id": "nl",
    "namn": "Nederland",
-   "prompt": "A cartoon Dutch boy in an orange shirt next to a windmill and tulip field, holding the sushi sock gift box, a Dutch flag (red, white, blue horizontal stripes)."
+   "prompt": "Next to a windmill and tulip field, a cartoon woman around 45 in orange gives her grown-up sister the sushi sock gift box, both laughing, a Dutch flag (red, white, blue horizontal stripes)."
   },
   {
    "id": "gb",
    "namn": "UK",
-   "prompt": "A cartoon British woman with an umbrella and a cup of tea next to a red double-decker bus and Big Ben, wearing the striped sushi socks, a Union Jack flag."
+   "prompt": "Next to a red double-decker bus and Big Ben, a cartoon woman around 50 with an umbrella hands a wrapped-open sushi sock gift box to her laughing husband around 55 holding a cup of tea, a Union Jack flag."
   },
   {
    "id": "us",
    "namn": "USA",
-   "prompt": "A cartoon American dad in a baseball cap at a backyard barbecue grill holding up the sushi sock gift box, the New York skyline far behind, an American flag (stars and stripes)."
+   "prompt": "At a backyard barbecue with the New York skyline far behind, a cartoon woman around 40 gives her brother around 40 in a baseball cap the sushi sock gift box, he laughs, an American flag (stars and stripes)."
   },
   {
    "id": "au",
    "namn": "Australia",
-   "prompt": "A cartoon Australian surfer girl on the beach with the Sydney Opera House behind her and a kangaroo peeking in, wearing the striped sushi socks with flip-flops, an Australian flag."
+   "prompt": "On a sunny beach with the Sydney Opera House behind, a cartoon woman around 45 gives her mother around 70 the sushi sock gift box, the mother laughs wearing the striped sushi socks with flip-flops, an Australian flag."
   }
  ]
 }

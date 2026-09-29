@@ -20,3 +20,8 @@ Ta bort: radera sektionen "Matstrumpor i världen" på startsidan i temaredigera
 illustrationer i loggans kawaii-stil (loggan + produktfotot som referens), en figur per land med
 landmärke och flagga, globen med sockhalsduk överst. Ramar som modellen ritade själv gjordes om (NO, NL, GB),
 och Norges vita kant beskars i koden. Läst som kund: SE, NO, US, 0 trasiga bilder, dator + mobil.
+
+**Omgång 4 (Axel samma dag: "ta bort AI-raden" + "är det våra målgrupper?"):** AI-raden under collaget borttagen
+(raden under "Som de används" är en annan sektion och står kvar). Figurerna bytta till målgruppen ur
+`products/matstrumpor/dna.md` → Avatarer: presentköparen (kvinna 30–55) som ger lådan till mamma/pappa/brorsa/partner/väninna,
+mottagaren skrattar, och skämtaren (någon försöker äta strumpan med ätpinnar). Inga barn.
