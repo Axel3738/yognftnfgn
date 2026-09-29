@@ -27,6 +27,7 @@ import { readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { kr, bildLiten, kortnamn } from '../mejl/mallar.mjs';
+import { valjCitat } from './citat.mjs';
 
 export const ROT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -447,8 +448,8 @@ const BLOCK = {
   },
   citat(b, ctx) {
     const { s } = ctx;
-    const antal = Math.min(Number(b.antal ?? 2) || 2, 2);
-    const lista = (ctx.recensioner?.[b.handle] ?? []).slice(0, antal);
+    const { lista, saknas } = valjCitat(b, ctx.recensioner?.[b.handle]);
+    for (const ord of saknas) ctx.varningar.push(`Citatet "${ord}" (valj) finns inte bland recensionerna för "${b.handle}" — mejlet visar det inte.`);
     if (!lista.length) {
       ctx.varningar.push(`Inga riktiga recensioner (4-5 stjärnor) för "${b.handle}", citatblocket utgår.`);
       return '';

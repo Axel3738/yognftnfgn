@@ -29,6 +29,7 @@ import { ROT } from './mallar.mjs';
 import { lasInnehall, planeraMejl } from './bygg.mjs';
 import { hamtaProdukterCache } from './produkter.mjs';
 import { hamtaRecensionerCache } from './recensioner.mjs';
+import { valjCitat } from './citat.mjs';
 
 // ---------------------------------------------------------------------------
 // Byggstenar
@@ -192,8 +193,9 @@ const BLOCK = {
     return [...(b.rubrik ? [text(b.rubrik, { typ: 'h2', align: 'center' })] : []), pb];
   },
   citat(b, ctx) {
-    const antal = Math.min(Number(b.antal ?? 2) || 2, 2);
-    const lista = (ctx.recensioner?.[b.handle] ?? []).slice(0, antal);
+    const { lista, saknas } = valjCitat(b, ctx.recensioner?.[b.handle]);
+    // Ett valt citat som inte går att visa stoppar paketet: mejlet bygger på det.
+    for (const ord of saknas) ctx.fel.push(`Citatet "${ord}" (valj) finns inte bland de hämtade recensionerna för "${b.handle}" — kör utan --offline, eller välj ett annat citat.`);
     if (!lista.length) {
       ctx.varningar.push(`Inga riktiga recensioner (4-5 stjärnor) för "${b.handle}", citatblocket utgår.`);
       return [];

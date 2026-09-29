@@ -62,6 +62,19 @@ test('citat: riktig recension med namn, annars utgår blocket med varning', () =
   assert.ok(utan.varningar.some((v) => /Inga riktiga recensioner/.test(v)));
 });
 
+test('citat med valj: det valda citatet visas, ett saknat blir en varning, fel valj-form stoppas av valideringen', () => {
+  const rec = { 'motorholje-test': [
+    { namn: 'Nyast N.', betyg: 5, text: 'Den nyaste recensionen tar annars platsen.', datum: '2026-09-28T10:00:00Z' },
+    ...RECENSIONER['motorholje-test'],
+  ] };
+  const m = mejl({ block: [{ typ: 'citat', handle: 'motorholje-test', valj: ['Yamaha'] }] });
+  const valt = byggMejl(m, { brand: BRAND, produkter: PRODUKTER, recensioner: rec, lage: 'exempel' });
+  assert.match(valt.html, /Satt som en smäck/);
+  assert.doesNotMatch(valt.html, /Den nyaste recensionen/);
+  const borta = byggMejl(mejl({ block: [{ typ: 'citat', handle: 'motorholje-test', valj: ['finns inte'] }] }), { brand: BRAND, produkter: PRODUKTER, recensioner: rec, lage: 'exempel' });
+  assert.ok(borta.varningar.some((v) => v.includes('"finns inte"')));
+});
+
 test('fakta-blocket tar texterna ur brandfilen, men aldrig leveranstiden bredvid spårningslänken', () => {
   const { html, text } = bygg(mejl({ block: [{ typ: 'fakta' }] }));
   // Axels order 2026-09-21 och 2026-09-25: spårningssidan visar beräknad leverans själv.

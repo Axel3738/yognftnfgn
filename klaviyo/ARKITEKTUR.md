@@ -205,7 +205,11 @@ Regler för blocken:
   kundtextkontroll som rubriker och punkter (`validera.mjs kundtexter`).
 - `citat` hämtar RIKTIGA recensioner ur Judge.me för produkten (4–5 stjärnor, ordagrant,
   förnamn + initial). Finns inga: blocket försvinner och byggaren säger det. Copyn får
-  aldrig hitta på en recension.
+  aldrig hitta på en recension. Utan `valj` visas de två bästa och nyaste, och det urvalet
+  flyttar sig när nya recensioner kommer in. Bygger ämnesraden eller texten på ett visst
+  citat: skriv `"valj": ["mottagaren vart så glad"]` (ordbitar ur recensionstexten, högst två,
+  `klaviyo/citat.mjs`). Ett valt citat som saknas stoppar Spoks-paketet. Skriv aldrig antal
+  eller snitt ur recensionerna i copyn: de ändras av våra egna utskick (K15 2026-09-28).
 - `fakta` = butikens trygghetsrad: leverans, ångerrätt, spårningssida. Texten kommer
   ur brandfilen, aldrig ur copyn.
 - `erbjudande` = det befintliga "köp igen → gratisprodukt"-erbjudandet (Axels beslut

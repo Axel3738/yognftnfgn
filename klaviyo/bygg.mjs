@@ -19,7 +19,8 @@ import { hamtaProdukterCache } from './produkter.mjs';
 import { hamtaRecensionerCache } from './recensioner.mjs';
 import { nyttRegister, medPlatshallare, bildSkript } from './bilder.mjs';
 
-const STATUS_PLAN = new Set(['klar', 'utkast-skrivs-om-efter-lardom', 'kraver-axel']);
+// parkerad = skriven och byggd men schemaläggs inte (bänken); fältet `parkerad` i mejlet säger varför.
+const STATUS_PLAN = new Set(['klar', 'utkast-skrivs-om-efter-lardom', 'kraver-axel', 'parkerad']);
 
 function lasMapp(mapp, fel) {
   if (!existsSync(mapp)) return [];
@@ -237,7 +238,7 @@ function svensktDatum(iso, tidszon = 'Europe/Stockholm') {
 
 const ENHET = { minutes: ['minut', 'minuter'], hours: ['timme', 'timmar'], days: ['dag', 'dagar'], weeks: ['vecka', 'veckor'], minute: ['minut', 'minuter'], hour: ['timme', 'timmar'], day: ['dag', 'dagar'], week: ['vecka', 'veckor'] };
 const enhetOrd = (enhet, varde) => (ENHET[enhet] ? ENHET[enhet][Number(varde) === 1 ? 0 : 1] : enhet);
-const STATUS_ORD = { klar: 'Klar', 'utkast-skrivs-om-efter-lardom': 'Skrivs om efter lärdom', 'kraver-axel': 'Kräver Axel' };
+const STATUS_ORD = { klar: 'Klar', 'utkast-skrivs-om-efter-lardom': 'Skrivs om efter lärdom', 'kraver-axel': 'Kräver Axel', parkerad: 'Bänken (schemaläggs inte)' };
 
 function triggerText(t) {
   if (!t) return 'ingen trigger';

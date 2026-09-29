@@ -1,0 +1,68 @@
+{
+  "id": "fd22-sista-dagen-mitt-pa-dagen",
+  "namn": "MAIL_20261024_FarsDag_GT_2_uppvarmning_promo_sista-dagen-mitt-pa-dagen_v1",
+  "memo": "Hypotes: mitt på sista dagen har den engagerade läsaren sett sushilådan som huvudperson i tre mejl sedan i går (fd18, fd21, fd19). En annan sort i fokus (pizzalådan, fyra par) svarar på frågan om det finns något annat och visar att den har samma sista dag, medan produktraden med de tre andra sorterna tar den som ändå ville ha sushi eller något annat. Lördag 24 oktober lunch är den sista dagens mittersta rond för de engagerade (SEG_uppvarmning_steg1). Källa: klaviyo/evolve/SVAR.md → Svar 16 (Damons BFCM-mönster: 2 per dag dagen före, 2 till 3 på sista dagen).",
+  "taggar": {
+    "typ": "S",
+    "kalla": "evolve",
+    "kalla_ref": "klaviyo/evolve/SVAR.md#svar-16",
+    "lardom": null,
+    "avatar": "presentkoparen (till pappa) som ännu inte beställt",
+    "begar": "kontroll",
+    "awareness": "promo",
+    "urgency": "konsekvens",
+    "confidence": "medium",
+    "prefix": "FarsDag",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    { "text": "Inte sushi? Då finns pizzalådan.", "begar": "hitta ett alternativ till sushin de redan sett" },
+    { "text": "Lunchdags. Pizzalådan har fyra par strumpor.", "begar": "få pizzalådan presenterad som ett enkelt val" },
+    { "text": "Pizzalådan hinner fram om du beställer i dag", "begar": "veta att också pizzalådan hinner i tid" }
+  ],
+  "forhandstext": "Samma sista beställningsdag som sushilådan. Fyra par i stället för fem.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Fyra par i en pizzalåda. Ingen ost.",
+      "text": "Hej {{fornamn}},\n\nSushi är en av fyra lådor. Pizzalådan kan beställas till och med i dag.",
+      "bild": "produkt:pizza-strumpor",
+      "knapp": { "text": "Beställ pizzalådan", "lank": "produkt:pizza-strumpor" }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Resten av lördagen är kvar. Efter det kan pizzalådan komma efter fars dag."
+    },
+    {
+      "typ": "produkt",
+      "handle": "pizza-strumpor",
+      "text": "Ser ut som pizza. Är strumpor.",
+      "knapp": "Öppna pizzalådan"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Eller en av de tre andra lådorna",
+      "handles": ["sushi-strumpor", "hamburger-strumpor", "donut-strumpor"]
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "Inte sushi? Då finns pizzalådan.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Lunchdags. Pizzalådan har fyra par strumpor.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Pizzalådan hinner fram om du beställer i dag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Samma sista beställningsdag som sushilådan. Fyra par i stället för fem.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fyra par i en pizzalåda. Ingen ost.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sushi är en av fyra lådor. Pizzalådan kan beställas till och med i dag.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Beställ pizzalådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Resten av lördagen är kvar. Efter det kan pizzalådan komma efter fars dag.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Ser ut som pizza. Är strumpor.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Öppna pizzalådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Eller en av de tre andra lådorna", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-10-24T13:00:00+02:00",
+  "segment": ["SEG_uppvarmning_steg1"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "kraver-axel",
+  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Blitzmejl i dagliga serien efter Evolves svar 16 (2026-09-29)."
+}

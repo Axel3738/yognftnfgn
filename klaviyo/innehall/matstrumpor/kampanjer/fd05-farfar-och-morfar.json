@@ -16,9 +16,18 @@
     "kod": "GT"
   },
   "amnesrader": [
-    { "text": "En donutlåda åt farfar, inte bara pappa", "begar": "se att fars dag också gäller farfar och morfar" },
-    { "text": "Morfar tror det är en donut. Det är strumpor.", "begar": "nyfikenhet på vad som egentligen ligger i lådan" },
-    { "text": "Farfar glöms lätt. En donutlåda gör det svårare.", "begar": "känna igen att farfar sällan får en egen present" }
+    {
+      "text": "En donutlåda åt farfar, inte bara pappa",
+      "begar": "se att fars dag också gäller farfar och morfar"
+    },
+    {
+      "text": "Morfar tror det är en donut. Det är strumpor.",
+      "begar": "nyfikenhet på vad som egentligen ligger i lådan"
+    },
+    {
+      "text": "Farfar glöms lätt. En donutlåda gör det svårare.",
+      "begar": "känna igen att farfar sällan får en egen present"
+    }
   ],
   "forhandstext": "Farfar och morfar räknas också. Se donutlådan.",
   "block": [
@@ -27,26 +36,93 @@
       "rubrik": "Farfar öppnar en donutlåda. Hittar tre par strumpor.",
       "text": "Hej {{fornamn}},\n\nFars dag brukar handla om pappa. Farfar och morfar räknas också, och de får sällan en egen present.\n\nDonutlådan är tre par strumpor, rullade som donuts i en färgglad box.",
       "bild": "produkt:donut-strumpor",
-      "knapp": { "text": "Se donutlådan", "lank": "produkt:donut-strumpor" }
+      "knapp": {
+        "text": "Se donutlådan",
+        "lank": "produkt:donut-strumpor"
+      }
     },
-    { "typ": "text", "rubrik": null, "text": "Den som öppnar den tror först att det är bakverk." },
-    { "typ": "produkt", "handle": "donut-strumpor", "text": "Tre par som ser ut som donuts, tills lådan öppnas.", "knapp": "Till donutlådan" },
-    { "typ": "produktrad", "rubrik": "Om farfar hellre vill ha sushi eller pizza", "handles": ["sushi-strumpor", "pizza-strumpor", "hamburger-strumpor"] },
-    { "typ": "fakta" }
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Den som öppnar den tror först att det är bakverk."
+    },
+    {
+      "typ": "produkt",
+      "handle": "donut-strumpor",
+      "text": "Tre par som ser ut som donuts, tills lådan öppnas.",
+      "knapp": "Till donutlådan"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Om farfar hellre vill ha sushi eller pizza",
+      "handles": [
+        "sushi-strumpor",
+        "pizza-strumpor",
+        "hamburger-strumpor"
+      ]
+    },
+    {
+      "typ": "fakta"
+    }
   ],
   "tretest": [
-    { "rad": "En donutlåda åt farfar, inte bara pappa", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Morfar tror det är en donut. Det är strumpor.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Farfar glöms lätt. En donutlåda gör det svårare.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Farfar och morfar räknas också. Se donutlådan.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Farfar öppnar en donutlåda. Hittar tre par strumpor.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Se donutlådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Om farfar hellre vill ha sushi eller pizza", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Till donutlådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+    {
+      "rad": "En donutlåda åt farfar, inte bara pappa",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Morfar tror det är en donut. Det är strumpor.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Farfar glöms lätt. En donutlåda gör det svårare.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Farfar och morfar räknas också. Se donutlådan.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Farfar öppnar en donutlåda. Hittar tre par strumpor.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Se donutlådan",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Om farfar hellre vill ha sushi eller pizza",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Till donutlådan",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    }
   ],
   "planerad": "2026-10-05T18:00:00+02:00",
-  "segment": ["SEG_samtycke"],
-  "exkludera": ["SEG_oengagerade_180d"],
-  "status_plan": "kraver-axel",
-  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28)."
+  "segment": [
+    "SEG_samtycke"
+  ],
+  "exkludera": [
+    "SEG_oengagerade_180d"
+  ],
+  "status_plan": "parkerad",
+  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28).",
+  "parkerad": "2026-09-29: bänken efter Evolves svar 16 (vecka 1 tål tre säljmejl, inte sju). Schemaläggs inte; återanvänds mot jul med nya datum."
 }

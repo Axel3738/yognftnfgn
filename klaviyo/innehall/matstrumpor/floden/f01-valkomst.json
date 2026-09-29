@@ -194,7 +194,7 @@
       "mejl": {
         "id": "f01-valkomst-e2",
         "namn": "FLOW_prenumerant_E2_SP_det-har-skrev-kunderna_v1",
-        "memo": "Åtta riktiga recensioner finns men har aldrig visats för en prenumerant som inte redan är inne på produktsidan. Hypotes: verifierade kundord, ordagrant, gör en mottagare som tycker produkten är udda tryggare att handla än produktbeskrivning ensam.",
+        "memo": "Åtta riktiga recensioner finns men har aldrig visats för en prenumerant som inte redan är inne på produktsidan. Hypotes: verifierade kundord, ordagrant, gör en mottagare som tycker produkten är udda tryggare att handla än produktbeskrivning ensam. Rättat 2026-09-29: förhandstexten sa \"Åtta recensioner, snitt 4,5\"; efter K15 var det 11 med snitt 4,36. Texten bär inga tal längre. ⚠️ Flödet är live i Spoks och går inte att ändra via MCP:n: Axel byter förhandstexten i appen (F01 → mejl 2).",
         "taggar": {
           "typ": "I",
           "kalla": "egen-data",
@@ -222,7 +222,7 @@
             "begar": "hitta fler presenter att ge"
           }
         ],
-        "forhandstext": "Åtta recensioner, snitt 4,5. Ingen är skriven av oss.",
+        "forhandstext": "Två kunder, ordagrant. Ingen är skriven av oss.",
         "block": [
           {
             "typ": "citat",
@@ -266,7 +266,7 @@
             "ingen_annan": true
           },
           {
-            "rad": "Åtta recensioner, snitt 4,5. Ingen är skriven av oss.",
+            "rad": "Två kunder, ordagrant. Ingen är skriven av oss.",
             "visualisera": true,
             "falsifiera": true,
             "ingen_annan": true

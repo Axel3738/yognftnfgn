@@ -16,9 +16,18 @@
     "kod": "GT"
   },
   "amnesrader": [
-    { "text": "En pizzalåda pappa inte kan äta", "begar": "se att lådan bara ser ut som mat" },
-    { "text": "Fredagspizzan pappa faktiskt kan ha på fötterna", "begar": "koppla fredagspizzan till något han kan ha på sig" },
-    { "text": "Fyra skivor i en låda som ser ut som pizza", "begar": "se vad som faktiskt ligger i pizzalådan" }
+    {
+      "text": "En pizzalåda pappa inte kan äta",
+      "begar": "se att lådan bara ser ut som mat"
+    },
+    {
+      "text": "Fredagspizzan pappa faktiskt kan ha på fötterna",
+      "begar": "koppla fredagspizzan till något han kan ha på sig"
+    },
+    {
+      "text": "Fyra skivor i en låda som ser ut som pizza",
+      "begar": "se vad som faktiskt ligger i pizzalådan"
+    }
   ],
   "forhandstext": "Lådan ser ut som fredagspizzan. Innehållet gör det inte.",
   "block": [
@@ -27,7 +36,10 @@
       "rubrik": "Fredagspizzan är hans. Den här är strumpor.",
       "text": "Hej {{fornamn}},\n\nVarje fredag är det han som bestämmer pizzan. Den här lådan ser ut som hans vanliga beställning, men innehåller fyra par strumpor.",
       "bild": "produkt:pizza-strumpor",
-      "knapp": { "text": "Se pizzalådan", "lank": "produkt:pizza-strumpor" }
+      "knapp": {
+        "text": "Se pizzalådan",
+        "lank": "produkt:pizza-strumpor"
+      }
     },
     {
       "typ": "text",
@@ -43,23 +55,74 @@
     {
       "typ": "produktrad",
       "rubrik": "Om han hellre är sushi- eller burgartypen",
-      "handles": ["sushi-strumpor", "hamburger-strumpor", "donut-strumpor"]
+      "handles": [
+        "sushi-strumpor",
+        "hamburger-strumpor",
+        "donut-strumpor"
+      ]
     },
-    { "typ": "fakta" }
+    {
+      "typ": "fakta"
+    }
   ],
   "tretest": [
-    { "rad": "En pizzalåda pappa inte kan äta", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Fredagspizzan pappa faktiskt kan ha på fötterna", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Fyra skivor i en låda som ser ut som pizza", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Lådan ser ut som fredagspizzan. Innehållet gör det inte.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Fredagspizzan är hans. Den här är strumpor.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Se pizzalådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Om han hellre är sushi- eller burgartypen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Till pizzalådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+    {
+      "rad": "En pizzalåda pappa inte kan äta",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Fredagspizzan pappa faktiskt kan ha på fötterna",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Fyra skivor i en låda som ser ut som pizza",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Lådan ser ut som fredagspizzan. Innehållet gör det inte.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Fredagspizzan är hans. Den här är strumpor.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Se pizzalådan",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Om han hellre är sushi- eller burgartypen",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Till pizzalådan",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    }
   ],
   "planerad": "2026-10-03T18:00:00+02:00",
-  "segment": ["SEG_samtycke"],
-  "exkludera": ["SEG_oengagerade_180d"],
-  "status_plan": "kraver-axel",
-  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28)."
+  "segment": [
+    "SEG_samtycke"
+  ],
+  "exkludera": [
+    "SEG_oengagerade_180d"
+  ],
+  "status_plan": "parkerad",
+  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28).",
+  "parkerad": "2026-09-29: bänken efter Evolves svar 16 (vecka 1 tål tre säljmejl, inte sju). Schemaläggs inte; återanvänds mot jul med nya datum."
 }

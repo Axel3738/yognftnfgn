@@ -24,6 +24,13 @@ test('saknad avregistrering eller adress stoppar', () => {
   assert.ok(harFel(r2, /full_address/));
 });
 
+test('citatets valj: en lista med ordbitar, högst två', () => {
+  assert.ok(!harFel(kor(mejl({ block: [{ typ: 'citat', handle: 'motorholje-test', valj: ['Yamaha'] }] })), /valj/));
+  assert.ok(harFel(kor(mejl({ block: [{ typ: 'citat', handle: 'motorholje-test', valj: 'Yamaha' }] })), /valj ska vara en lista/));
+  assert.ok(harFel(kor(mejl({ block: [{ typ: 'citat', handle: 'motorholje-test', valj: ['ab'] }] })), /minst fyra tecken/));
+  assert.ok(harFel(kor(mejl({ block: [{ typ: 'citat', handle: 'motorholje-test', valj: ['Yamaha', 'regnet', 'hösten'] }] })), /högst två/));
+});
+
 test('tankstreck stoppas i ämnesrad, förhandstext och block', () => {
   assert.ok(harFel(kor(mejl({ amnesrader: [{ text: 'Vinter — ute' }, { text: 'B' }, { text: 'C' }] })), /Tankstreck i ämnesrad A/));
   assert.ok(harFel(kor(mejl({ forhandstext: 'Leverans 5–10' })), /Tankstreck i förhandstext/));

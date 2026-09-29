@@ -365,6 +365,14 @@ butikens egen domän när något slås på. Inget är påslaget.
    ⚠️ Lärdom: mejlet om övergiven kassa ligger under **Marknadsföring →
    Automatiseringar**, inte under Inställningar → Aviseringar (där finns bara
    kassasystemets "Övergiven betalning i kassasystemet", som är den fysiska kassan).
+   ⚠️ **2026-09-29:** Axels skärmdump av **Shopify Messaging** (appen, egen lista) visade två
+   automatiseringar som **Aktiv**: "You left items at checkout" och "We're happy to see you
+   again", plus fem utkast och en skickad Alla hjärtans dag-kampanj från 21/1. De två aktiva gör
+   samma jobb som F02 (kassan) och F04/F05 (efter köp, vinna tillbaka), så en kund kan få två
+   mejl om samma sak.
+   Svaret till Axel: stäng av båda, låt utkasten vara. Spoks F02 skickade själv samma morgon
+   (`get_flow`: 20 inrullade, 3 väntar efter E1, 17 efter E2), så inget kassamejl försvinner.
+   Kolla båda listorna när en butik flyttar till Spoks.
 3. ✅ **Klart 2026-09-26 07:56–07:57:** F01, F03, F04, F05 och F07 live. (Spoks vägrar
    aktivera ett flöde vars sändsteg är av — rutan "Detta flöde har inga aktiva åtgärder";
    stegen slås på ett i taget i flödesredigeraren, sedan flödet.)
@@ -871,7 +879,7 @@ idag faktiskt till alla tidigare kunder" — SEG_kopare är köparna med samtyck
 inklusive dem utan samtycke är hans MFL-beslut, se `CLAUDE.md` → Klaviyo, kampanjer bara
 subscribed); ✅ (3) F09: påslaget 2026-09-27 14:16 UTC, mätt (se ovan).
 
-## Dagliga serien till fars dag — FD01–FD20 + REA01–REA03 (byggd 2026-09-28, 23 utkast, inget schemalagt)
+## Dagliga serien till fars dag — omgång 2 (2026-09-29): 28 utkast, 2 platshållare, 5 på bänken, inget schemalagt utöver K01
 
 Axels order 2026-09-28, ordagrant: "BARA SPAMMAR mina kunder … kampanjer varje dag med produkter
 skräddarsydda för våra kunder … REA mail för den pågående rean … massa fars dag kampanjer …
@@ -896,61 +904,114 @@ segment). **Schemat med länkar: `klaviyo/innehall/matstrumpor/KALENDER-2026.md`
 serien.** Tillsammans med tisdagarna K01–K04 (serien hoppar 6/10, 13/10 och 20/10 med flit) blir
 det **ett mejl om dagen 29/9–25/10, 27 dagar utan lucka.**
 
-| Kort | Dag | Segment | Spoks-id |
-|---|---|---|---|
-| FD01 | ons 30/9 | samtycke | `fe8c9abf-4cbe-41fc-aaca-1d4400717049` |
-| FD02 | tor 1/10 | samtycke | `4f1d87cf-633d-4ddd-870a-6710e73d7d59` |
-| REA01 | fre 2/10 | samtycke | `411d7f9e-a68b-4b69-a07b-4a9d32bb8b1d` |
-| FD03 | lör 3/10 | samtycke | `f915735d-7f9d-41d5-b658-cddb15e02e20` |
-| FD04 | sön 4/10 | samtycke | `35eda39a-52a8-4c72-8879-dabf3ef28b6e` |
-| FD05 | mån 5/10 | samtycke | `11247ac0-87cf-4b4a-9c52-73e705aeef31` |
-| FD06 | ons 7/10 | samtycke | `19db626c-e88e-4900-bb19-c2e5ca196144` |
-| FD07 | tor 8/10 | samtycke | `df000c31-0eb7-4572-b4c0-4891a53df843` |
-| REA02 | fre 9/10 | samtycke | `9d41c29d-d7e4-42c7-aaaa-b8f49f17da12` |
-| FD08 | lör 10/10 | samtycke | `f4696d2a-8358-4fcd-a67a-4b5ac280c0d5` |
-| FD09 | sön 11/10 | samtycke | `5317562c-2e88-4549-a23e-13329494c9a3` |
-| FD10 | mån 12/10 | **kopare_forra_sasongen** | `f7e75509-9397-4ed6-bfb3-aabec4f0ea63` |
-| FD11 | ons 14/10 | samtycke | `9a8e6ea5-f889-4df1-8109-ca5f665908ed` |
-| FD12 | tor 15/10 | **kopare** | `69506961-866a-4f47-bb09-6c503672f9d8` |
-| REA03 | fre 16/10 | samtycke | `45aabe88-d6c9-490d-a634-2ddfb936aeb0` |
-| FD13 | lör 17/10 | samtycke | `f68abd56-a4bb-4608-b5ea-610375ca6e05` |
-| FD14 | sön 18/10 | **ej_kopt** | `faaafae6-7469-4251-9dfe-0fb88588c461` |
-| FD15 | mån 19/10 | samtycke | `656f890e-5629-431d-9efa-5f6ef55a95dd` |
-| FD16 | ons 21/10 | samtycke | `56fb1045-5139-4d04-bb52-f2fd704c7d10` |
-| FD17 | tor 22/10 | samtycke | `a2529b5a-c43b-4fc3-bc1e-5fbe2f5e9f59` |
-| FD18 | fre 23/10 | samtycke | `ea849786-ea60-43bc-8d8b-cc6ca4eceea8` |
-| FD19 | lör 24/10 **09:00** | samtycke | `b91692ad-d7ab-4e71-b8db-1799f97af346` |
-| FD20 | sön 25/10 | samtycke | `385b6fc9-f41c-43c3-bb02-96bd0970b849` |
+**Omgång 2 (2026-09-29, efter Evolves svar 16 i `klaviyo/evolve/SVAR.md`).** Omgång 1 ovan var
+ett mejl om dagen till hela listan, nästan bara fars dag. Nu: **de engagerade**
+(`SEG_uppvarmning_steg1`, samtycke + aktiv i Spoks senaste 30 d, **1 305 mätt 29/9 06:1x UTC**
+med `get_segment`; 0 vid bygget 26/9, 19 vid K01-förberedelsen) får ett mejl om dagen, **hela
+listan** (`SEG_samtycke`) 2–3 i veckan (tisdagens K-mejl + veckans starkaste), mixen per vecka
+är Evolves (v1 **3 sälj / 4 värde**, v2 **5 / 2**, v3 **6 / 1**, v4 bara sälj, räknat ur tabellen
+nedan med veckor som börjar tisdag 29/9), och sista två dagarna är en blitz (fre 23/10
+09:00 + 20:00, lör 24/10 09:00 + 13:00 + 20:00). Sex nya utkast skrivna av Sonnet-subagenter:
+**V01** *Du är med i klubben* (30/9, alla), **V02** *Svara med ett ord* (3/10), **V03** *Så ser
+lådan ut inuti* (5/10), **FD21–FD23** (blitzen). K03 flyttad 13/10 → **tor 1/10**, FD01 → sön 4/10,
+FD08 → tor 8/10 (värdemejl), FD18 → 09:00; FD02–FD05 och FD07 till **bänken** (titeln
+`BÄNK · …`, schemaläggs inte, återanvänds mot jul). K02 och K04 heter `… · samtycke · …` i
+Spoks sedan samma dag (tisdagarna går till hela listan). **V04** (lör 10/10, engagerade) skrivs
+fre 9/10 ur svaren på V01 och V02 i kundsupport@matstrumpor.se (reserv FD03); **V05** (tis 13/10,
+alla) skrivs mån 12/10 ur de nya Judge.me-recensionerna (reserv FD02). Alla titlar tillbakalästa
+med `search_campaigns` 29/9 06:0x UTC. Loggen: raderna 2026-09-29 i
+`klaviyo/konto/matstrumpor/spoks-uppladdat.jsonl`.
+
+| Kort | Dag | Publik | Typ | Spoks-id |
+|---|---|---|---|---|
+| K01 | tis 29/9 | samtycke | sälj | `9aa10213-3bf1-42bc-b23e-315e088d92be` |
+| V01 | ons 30/9 | samtycke | värde | `1f01d495-8a67-4719-a6a0-817f1822295d` |
+| K03 | tor 1/10 | uppvarmning_steg1 | värde | `920afd93-03be-4aba-9c25-8d6a12603f06` |
+| REA01 | fre 2/10 | samtycke | sälj | `411d7f9e-a68b-4b69-a07b-4a9d32bb8b1d` |
+| V02 | lör 3/10 | uppvarmning_steg1 | värde | `277058be-7182-4cfc-b36c-1522e84cdbb5` |
+| FD01 | sön 4/10 | uppvarmning_steg1 | sälj | `fe8c9abf-4cbe-41fc-aaca-1d4400717049` |
+| V03 | mån 5/10 | uppvarmning_steg1 | värde | `436d851d-3dac-4dd5-b733-984b2af584e1` |
+| K02 | tis 6/10 | samtycke | sälj | `b7acd85c-236d-4b46-9469-2df548361492` |
+| FD06 | ons 7/10 | uppvarmning_steg1 | sälj | `19db626c-e88e-4900-bb19-c2e5ca196144` |
+| FD08 | tor 8/10 | uppvarmning_steg1 | värde | `f4696d2a-8358-4fcd-a67a-4b5ac280c0d5` |
+| REA02 | fre 9/10 | samtycke | sälj | `9d41c29d-d7e4-42c7-aaaa-b8f49f17da12` |
+| V04 | lör 10/10 | uppvarmning_steg1 | värde | skrivs fre 9/10, reserv FD03 |
+| FD09 | sön 11/10 | uppvarmning_steg1 | sälj | `5317562c-2e88-4549-a23e-13329494c9a3` |
+| FD10 | mån 12/10 | kopare_forra_sasongen | sälj | `f7e75509-9397-4ed6-bfb3-aabec4f0ea63` |
+| V05 | tis 13/10 | samtycke | värde | skrivs mån 12/10, reserv FD02 |
+| FD11 | ons 14/10 | uppvarmning_steg1 | sälj | `9a8e6ea5-f889-4df1-8109-ca5f665908ed` |
+| FD12 | tor 15/10 | kopare | sälj | `69506961-866a-4f47-bb09-6c503672f9d8` |
+| REA03 | fre 16/10 | samtycke | sälj | `45aabe88-d6c9-490d-a634-2ddfb936aeb0` |
+| FD13 | lör 17/10 | samtycke | sälj | `f68abd56-a4bb-4608-b5ea-610375ca6e05` |
+| FD14 | sön 18/10 | ej_kopt | sälj | `faaafae6-7469-4251-9dfe-0fb88588c461` |
+| FD15 | mån 19/10 | uppvarmning_steg1 | sälj | `656f890e-5629-431d-9efa-5f6ef55a95dd` |
+| K04 | tis 20/10 | samtycke | sälj | `6f1e2e50-43af-446b-8284-ff0ae91b4125` |
+| FD16 | ons 21/10 | uppvarmning_steg1 | sälj | `56fb1045-5139-4d04-bb52-f2fd704c7d10` |
+| FD17 | tor 22/10 | samtycke | sälj | `a2529b5a-c43b-4fc3-bc1e-5fbe2f5e9f59` |
+| FD18 | fre 23/10 **09:00** | samtycke | sälj | `ea849786-ea60-43bc-8d8b-cc6ca4eceea8` |
+| FD21 | fre 23/10 **20:00** | uppvarmning_steg1 | sälj | `bd3a0b77-3e86-42a4-a727-e360fa5b2592` |
+| FD19 | lör 24/10 **09:00** | samtycke | sälj | `b91692ad-d7ab-4e71-b8db-1799f97af346` |
+| FD22 | lör 24/10 **13:00** | uppvarmning_steg1 | sälj | `2acfa603-1aaa-4b45-b1ab-a242cd827d0f` |
+| FD23 | lör 24/10 **20:00** | samtycke | sälj | `6aa3c5c6-6cea-417e-90b5-a89b829b4226` |
+| FD20 | sön 25/10 | samtycke | sälj | `385b6fc9-f41c-43c3-bb02-96bd0970b849` |
+| FD02 | **bänken** | samtycke | sälj | `4f1d87cf-633d-4ddd-870a-6710e73d7d59` |
+| FD03 | **bänken** | samtycke | sälj | `f915735d-7f9d-41d5-b658-cddb15e02e20` |
+| FD04 | **bänken** | samtycke | sälj | `35eda39a-52a8-4c72-8879-dabf3ef28b6e` |
+| FD05 | **bänken** | samtycke | sälj | `11247ac0-87cf-4b4a-9c52-73e705aeef31` |
+| FD07 | **bänken** | samtycke | sälj | `df000c31-0eb7-4572-b4c0-4891a53df843` |
 
 **Skräddarsytt per segment där segment finns** (Spoks-storlekar vid bygget): FD10 till
 `SEG_kopare_forra_sasongen` (2 396: "förra gången jul, den här gången fars dag" — så är
 KUNDRESA §7 punkt 4, "börja tidigare med förra årets köpare", delvis löst två veckor före K05),
 FD12 till `SEG_kopare` (2 700: "du har redan sushin, ge pappa pizzan"), FD14 till `SEG_ej_kopt`
 (300). Kategorisegmenten (sushi 105, pizza 3, hamburgare 2, donut 9) är för små för egna mejl,
-så sorterna får varsin dag till hela listan i stället (FD03 pizza, FD04 burgare, FD05 donut, FD16
-burgare, REA03 donut). Övriga tjugo går till `SEG_samtycke` (3 000). Vinklarna är olika varje
-dag: mottagaren (pappa, barnen, svärfar, farfar/morfar, pappan som har allt), sorten,
-kundcitaten (FD08), Köp 1, få 1 (REA01–03, FD11), nedräkningen (FD09, FD13, FD15–FD19) och
-presentkortet dagen efter sista dagen (FD20).
+så sorterna fick varsin dag i omgång 1 (FD03 pizza, FD04 burgare, FD05 donut, FD16 burgare,
+REA03 donut). I omgång 2 ligger FD03–FD05 på bänken, och sorterna bärs av FD16 (burgare), REA03
+(donut), FD22 (pizza, sista dagen 13:00) och produktraden i nästan varje mejl. Vinklarna är olika
+varje dag: mottagaren (pappa, svärfar, pappan som säger nej), kundcitaten (K03, FD08),
+lådans innehåll (V03), Köp 1, få 1 (REA01–03, FD11), nedräkningen (FD09, FD13, FD15–FD19,
+FD21–FD23) och presentkortet dagen efter sista dagen (FD20).
 
 **Faktakollen som rättade agenterna — skriv aldrig om dem:** par per låda är **sushi 5, pizza
-4, hamburgare 2, donut 3** (två agenter skrev "fem" på pizza och donut); **ätpinnar är INTE
-lådans innehåll** (de finns bara på foton och i BOGO-kodnamnen), tre ätpinnelöften strukna;
-fd09 "äkta pizzakartong" ⇒ "ser ut som en pizzakartong"; fd20 påstår inte att en låda beställd
-25/10 missar fars dag, bara att den "kan komma fram efter"; `klaviyo/validera.mjs`
-`ANDRA_VERKSAMHETER` stoppar ordet "grill" (Grillkliniken-spärren) — fd03/fd04 skrevs om utan
-grillord och fd04 heter `burgarpappan`; spärren är kvar med flit. Leveranstiden står aldrig i
-ett mejl; sushin har inget jämförpris så ingen "rea" på sushin; butikens namn står inte i copyn.
+4, hamburgare 2, donut 3** (två agenter skrev "fem" på pizza och donut; produktsidorna lästa
+2026-09-29: sushi "5 par strumpor, rullade som sushibitar", pizza "4 par", hamburgare "2 par",
+donut "3 par", alla One Size, sushin "passar 36–44"); fd09 "äkta pizzakartong" ⇒ "ser ut som en
+pizzakartong"; fd20 påstår inte att en låda beställd 25/10 missar fars dag, bara att den "kan
+komma fram efter"; `klaviyo/validera.mjs` `ANDRA_VERKSAMHETER` stoppar ordet "grill"
+(Grillkliniken-spärren) — fd03/fd04 skrevs om utan grillord och fd04 heter `burgarpappan`;
+spärren är kvar med flit. Leveranstiden står aldrig i ett mejl; sushin har inget jämförpris så
+ingen "rea" på sushin; butikens namn står inte i copyn.
+⚠️ **Rättelse 2026-09-29 — ätpinnarna INGÅR i sushilådan.** Sessionen strök 2026-09-28 tre
+ätpinnelöften ur fd06/fd14/fd18 med motiveringen "ätpinnar är inte lådans innehåll". Det var
+fel: produktsidan matstrumpor.se/products/sushi-strumpor säger ordagrant *"Ätpinnar av trä
+ingår, för hela illusionen"* (läst 2026-09-29, `/products/sushi-strumpor.json`). K01 ("med
+ätpinnar bredvid", "Ätpinnar av trä ingår."), K05, F05 och F07 har alltså rätt och ska inte
+röras. Strykningarna i den dagliga serien är ofarliga (ett sant argument mindre, inget falskt
+kvar) och de sex nya mejlen (V01–V03, FD21–FD23) nämner inte ätpinnar. Bara sushilådan har
+dem — pizza-, hamburgar- och donutsidorna nämner inga.
+⚠️ **Rättelse 2026-09-29 — talen ur recensionerna blev fel på ett dygn.** K03, FD08 och F01 E2
+sa "åtta recensioner" och "4,5 av 5 i snittbetyg" (sant 26/9). K15 gick ut 28/9 och gav tre nya
+betyg (5, 4 och 3 stjärnor), så Judge.me-widgeten visade 29/9 **11 recensioner, snitt 4,36**.
+K03 och FD08 bär inga tal längre (förhandstexten säger "Två verifierade kunder …"), och deras
+citat är **valda med `valj`** i citatblocket (`klaviyo/citat.mjs`): K03 Kents "mottagaren vart så
+glad" + "barnbarnen", FD08 Jonas "Uppskattat och rolig present" + "Jätte sköna". Utan `valj` tar
+blocket alltid de två nyaste, och då hade K03 byggd 29/9 tappat Kents citat, som ämnesraden
+"Recensionerna säger att mottagaren blev glad" bygger på. Ett valt citat som inte finns stoppar
+Spoks-paketet (`fel`). Båda utkasten patchade i Spoks och tillbakalästa. **F01 E2 är live och
+går inte att ändra via MCP:n:** repot säger nu "Två kunder, ordagrant. Ingen är skriven av oss.",
+och Axel byter förhandstexten i appen. **Regeln:** skriv aldrig antal eller snitt ur
+recensionerna i ett mejl som går ut senare än samma dag; recensionerna ändras av våra egna
+utskick.
 
-**Guardrails:** inget schemalagt, inget skickat — **publik och Schedule per mejl är Axels klick
-i appen** (MCP:n kan varken välja publik eller schemalägga). Bara segment med samtycke (MFL
+**Guardrails:** inget schemalagt utöver K01 (Axels eget klick), inget skickat av sessionen —
+**publik och Schedule per mejl är Axels klick i appen** (MCP:n kan varken välja publik eller
+schemalägga). Bara segment med samtycke (MFL
 19 §). Klaviyo-utkasten i `UV6Rqg` rörs inte. Sessionen raderar aldrig ett utkast.
 
 **Stoppregeln finns redan — `LARM_LEVERANS` i `docs/os/EPOST-STRATEGI.md` §8:** spamklagomål
 **över 0,3 %** eller avregistreringar **över 1 %** på ett utskick ⇒ stoppa nästa kampanj,
 tillbaka till det engagerade segmentet, Axel pingas (0,3 % är Gmails gräns, 1 % en startsiffra).
-Ett mejl om dagen till 3 000 personer är cirka 70 000 mejl på fyra veckor, så regeln läses
-efter VARJE utskick (`get_campaign_statistics` dagen efter). Två utskick i rad utan en enda
+Regeln läses efter VARJE utskick (`get_campaign_statistics` dagen efter). Två utskick i rad utan en enda
 order ⇒ byt vinkel innan nästa. Öppningsgraden fäller aldrig en dom ensam (Evolve/Billy).
 ⚠️ **Takten mot vad vi vet (Axels fråga 2026-09-29 "är det såhär vi ska köra?"):** Klaviyos
 riktlinje i samma dokument §4 är *dagligen bara till engagerade 30 d, upp till 3/vecka till
@@ -959,8 +1020,14 @@ avsändardomän i Spoks) ligger över den. Evolve-boten fick takt-frågan redan 
 (fråga 4) och svarade "inget i källorna, ask the community directly"; det den HAR är Billys
 lanseringskadens *nyfikenhet → teaser → avslöjande med datum → nedräkning → "missade du?"*
 (svar 5), som är exakt seriens form. Fråga 16 i `klaviyo/evolve/FRAGOR.md` (2026-09-29) är
-skriven för communityn OCH boten; Axels beslut A/B/C om takten står i chatten 2026-09-29 och
-skrivs in här när det kommer. Tills dess: inget schemalagt utöver K01.
+skriven för communityn OCH boten. Boten svarade samma dag (svar 16 i `klaviyo/evolve/SVAR.md`:
+segmentera på engagemang, blanda värde och sälj per vecka, blitza de sista dagarna), och
+omgång 2 ovan följer svaret.
 
-**Kvar / nästa:** Veckans dragning-blocket hör till tisdagarna (K02 6/10 först), inte till de
-dagliga; K16 förtur + F01 E1 v4 (KUNDRESA §7); K15 kvar att skicka (Recensionerna ovan).
+**Kvar / nästa:** V04 skrivs fre 9/10 och V05 mån 12/10 (reserverna FD03 och FD02). Veckans
+dragning-blocket hör till tisdagarna (K02 6/10 först), inte till de dagliga; K16 förtur + F01
+E1 v4 (KUNDRESA §7). K15 skickades 28/9 11:18 CEST. Svaren på V01 och V02 landar i
+kundsupport@matstrumpor.se. Autosvaret skickar inget på dem: Matstrumpor går torrt, och ett
+svar vars citat bär vår supportadress räknas som redan besvarat (`redanBesvaradAvOss` i
+`kundtjanst/autosvar/hinkar.mjs`). Ett svar utan sådant citat kan hamna hos VA:n som ett
+ärende. De behöver inget svar var för sig; V04 är svaret.

@@ -1,0 +1,62 @@
+{
+  "id": "fd23-sista-kvallen",
+  "namn": "MAIL_20261024_FarsDag_GT_2_samtycke_promo_sista-kvallen_v1",
+  "memo": "Hypotes: sista kvällen till hela listan (SEG_samtycke) fungerar som ett kort, ärligt slutmejl. Det säger rakt ut att det är sista påminnelsen och att vi efter i kväll inte räknar med att lådan hinner före fars dag, utan någon ny information, och det förklarar lådan på en rad för dem som aldrig öppnat något (segmentet är alla som sagt ja). Allra kortast av de tre med flit: det enda som ska stå kvar är beslutet. Påstår inte att det är sista mejlet om fars dag, för presentkortsmejlet (fd20) går 25 oktober. Källa: klaviyo/evolve/SVAR.md → Svar 16 (Damons BFCM-mönster: 2 per dag dagen före, 2 till 3 på sista dagen).",
+  "taggar": {
+    "typ": "S",
+    "kalla": "evolve",
+    "kalla_ref": "klaviyo/evolve/SVAR.md#svar-16",
+    "lardom": null,
+    "avatar": "presentkoparen (till pappa) som ännu inte beställt",
+    "begar": "kontroll",
+    "awareness": "promo",
+    "urgency": "konsekvens",
+    "confidence": "medium",
+    "prefix": "FarsDag",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    { "text": "Sista påminnelsen om sushilådan före fars dag", "begar": "veta att det här är sista påminnelsen" },
+    { "text": "Efter i kväll räknar vi inte med att lådan hinner", "begar": "förstå att tiden är ute efter i kväll" },
+    { "text": "Sushilådan är fem par strumpor. Beställ i kväll.", "begar": "förstå vad sushilådan är, snabbt och utan förkunskap" }
+  ],
+  "forhandstext": "Fars dag är söndag 8 november. Beställer du sushilådan nu räknar vi med att den hinner fram.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Beställ sushilådan i kväll",
+      "text": "Hej {{fornamn}},\n\nEfter i kväll räknar vi inte med att sushilådan hinner fram före fars dag.",
+      "bild": "produkt:sushi-strumpor",
+      "knapp": { "text": "Beställ sushilådan nu", "lank": "produkt:sushi-strumpor" }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Det här är sista påminnelsen om att beställa sushilådan till fars dag."
+    },
+    {
+      "typ": "produkt",
+      "handle": "sushi-strumpor",
+      "text": "Fem par strumpor i en sushilåda.",
+      "knapp": "Öppna sushilådan"
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "Sista påminnelsen om sushilådan före fars dag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Efter i kväll räknar vi inte med att lådan hinner", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sushilådan är fem par strumpor. Beställ i kväll.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fars dag är söndag 8 november. Beställer du sushilådan nu räknar vi med att den hinner fram.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Beställ sushilådan i kväll", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Efter i kväll räknar vi inte med att sushilådan hinner fram före fars dag.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Beställ sushilådan nu", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Det här är sista påminnelsen om att beställa sushilådan till fars dag.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fem par strumpor i en sushilåda.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Öppna sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-10-24T20:00:00+02:00",
+  "segment": ["SEG_samtycke"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "kraver-axel",
+  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Blitzmejl i dagliga serien efter Evolves svar 16 (2026-09-29)."
+}

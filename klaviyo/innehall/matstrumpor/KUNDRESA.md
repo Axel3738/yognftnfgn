@@ -174,3 +174,7 @@ förturen, inte rabatten.
    `SEG_kopare_forra_sasongen` redan 12/10**, två veckor före K05. Inget schemalagt: publik
    och Schedule per mejl är Axels klick. Schemat med länkar i `KALENDER-2026.md` → Dagliga
    serien; id:n, faktakollen och stoppregeln i `klaviyo/spoks/README.md` → Dagliga serien.
+   **Omgång 2 samma vecka (2026-09-29, efter Evolves svar 16):** ett mejl om dagen bara till
+   de engagerade (`SEG_uppvarmning_steg1`, 1 305), hela listan 2–3 i veckan, värdemejl
+   blandade in (3/4, 5/2, 6/1, sedan bara sälj) och en blitz 23–24/10. Fem säljmejl ligger
+   på bänken till jul.

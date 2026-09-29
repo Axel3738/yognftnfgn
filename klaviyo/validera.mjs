@@ -173,6 +173,11 @@ export function validera(mejl, { html = null, text = null, produkter = [], brand
       }
     }
     if (b.typ === 'citat' && !b.handle) fel.push(`Block ${i + 1} (citat) saknar handle.`);
+    if (b.typ === 'citat' && b.valj != null) {
+      // valj = ordbitar ur recensionstexten (citat.mjs), högst två, aldrig påhittad text.
+      if (!Array.isArray(b.valj) || !b.valj.length || !b.valj.every((x) => typeof x === 'string' && x.trim().length >= 4)) fel.push(`Block ${i + 1} (citat): valj ska vara en lista med ordbitar ur recensionerna, minst fyra tecken var.`);
+      else if (b.valj.length > 2) fel.push(`Block ${i + 1} (citat): valj tar högst två citat.`);
+    }
   });
   const mejlnivaText = [...amnen.map((a) => a?.text), mejl.forhandstext].join(' ');
   if (SPARA.test(mejlnivaText) && handles.size && !harSparaProdukt) fel.push('Ämnesrad eller förhandstext säger spara/rea, men ingen produkt i mejlet har jämförpris över priset.');

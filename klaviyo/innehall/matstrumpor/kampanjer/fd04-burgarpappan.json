@@ -16,9 +16,18 @@
     "kod": "GT"
   },
   "amnesrader": [
-    { "text": "En burgare han inte kan äta", "begar": "se att lådan bara ser ut som mat" },
-    { "text": "Burgarpappan får sin burgare utan att laga mat", "begar": "koppla lådan till burgarpappans vanliga grej" },
-    { "text": "Två par i en box som ser ut som en burgare", "begar": "se vad som faktiskt ligger i burgarlådan" }
+    {
+      "text": "En burgare han inte kan äta",
+      "begar": "se att lådan bara ser ut som mat"
+    },
+    {
+      "text": "Burgarpappan får sin burgare utan att laga mat",
+      "begar": "koppla lådan till burgarpappans vanliga grej"
+    },
+    {
+      "text": "Två par i en box som ser ut som en burgare",
+      "begar": "se vad som faktiskt ligger i burgarlådan"
+    }
   ],
   "forhandstext": "Lådan ser ut som en burgare. Innehållet är strumpor.",
   "block": [
@@ -27,7 +36,10 @@
       "rubrik": "Burgaren är hans. Den här går inte att äta.",
       "text": "Hej {{fornamn}},\n\nHan är den som alltid beställer burgaren, oavsett var ni äter. Den här lådan ser ut som hans vanliga beställning, men innehåller två par strumpor.",
       "bild": "produkt:hamburger-strumpor",
-      "knapp": { "text": "Se burgarlådan", "lank": "produkt:hamburger-strumpor" }
+      "knapp": {
+        "text": "Se burgarlådan",
+        "lank": "produkt:hamburger-strumpor"
+      }
     },
     {
       "typ": "text",
@@ -43,23 +55,74 @@
     {
       "typ": "produktrad",
       "rubrik": "Om han hellre är sushi- eller pizzatypen",
-      "handles": ["sushi-strumpor", "pizza-strumpor", "donut-strumpor"]
+      "handles": [
+        "sushi-strumpor",
+        "pizza-strumpor",
+        "donut-strumpor"
+      ]
     },
-    { "typ": "fakta" }
+    {
+      "typ": "fakta"
+    }
   ],
   "tretest": [
-    { "rad": "En burgare han inte kan äta", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Burgarpappan får sin burgare utan att laga mat", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Två par i en box som ser ut som en burgare", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Lådan ser ut som en burgare. Innehållet är strumpor.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Burgaren är hans. Den här går inte att äta.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Se burgarlådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Om han hellre är sushi- eller pizzatypen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Till burgarlådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+    {
+      "rad": "En burgare han inte kan äta",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Burgarpappan får sin burgare utan att laga mat",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Två par i en box som ser ut som en burgare",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Lådan ser ut som en burgare. Innehållet är strumpor.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Burgaren är hans. Den här går inte att äta.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Se burgarlådan",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Om han hellre är sushi- eller pizzatypen",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Till burgarlådan",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    }
   ],
   "planerad": "2026-10-04T18:00:00+02:00",
-  "segment": ["SEG_samtycke"],
-  "exkludera": ["SEG_oengagerade_180d"],
-  "status_plan": "kraver-axel",
-  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28)."
+  "segment": [
+    "SEG_samtycke"
+  ],
+  "exkludera": [
+    "SEG_oengagerade_180d"
+  ],
+  "status_plan": "parkerad",
+  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28).",
+  "parkerad": "2026-09-29: bänken efter Evolves svar 16 (vecka 1 tål tre säljmejl, inte sju). Schemaläggs inte; återanvänds mot jul med nya datum."
 }

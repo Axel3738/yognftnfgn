@@ -1,0 +1,69 @@
+{
+  "id": "v01-du-ar-med-i-klubben",
+  "namn": "MAIL_20260930_Varde_KL_1_samtycke_problem_du-ar-med-i-klubben_v1",
+  "memo": "Hypotes: ett värdemejl utan säljpitch, som säger varför mottagaren får mejl, vad klubben är (mejllistan) och vad den inte ger (inga rabattkoder, inga poäng), ger fler svar och färre avanmälningar än ett säljmejl till en publik som aldrig fått en kampanj. Uppmaningen är att svara med vilken låda man har hemma, eller att man aldrig köpt, och svar på mejl är den starkaste signalen för leverbarheten. Bara sanna klubbpåståenden: mejlen går först till klubben (nya sorter, påfyllning, sista beställningsdagarna), och sista beställningsdagen är lördag 24 oktober till fars dag och tisdag 8 december till jul (klaviyo/brands/matstrumpor.json#kalender). Bort med flit: pris, leveranstid, ätpinnar, dragning, siffror eller koder om Köp 1, få 1. Källa: klaviyo/evolve/SVAR.md → Svar 16 (Evolve: blanda fritt värde med sälj, Billy och Spencer; svar på mejl som leverbarhetssignal).",
+  "taggar": {
+    "typ": "N",
+    "kalla": "evolve",
+    "kalla_ref": "klaviyo/evolve/SVAR.md#svar-16",
+    "lardom": null,
+    "avatar": "prenumeranten som anmälde sig eller köpte och aldrig fått en kampanj",
+    "begar": "förstå vad man är med i och vad man får, innan man bestämmer sig för att vara kvar",
+    "awareness": "problem",
+    "urgency": "ingen",
+    "confidence": "low",
+    "prefix": "Varde",
+    "kod": "KL"
+  },
+  "amnesrader": [
+    { "text": "Du är med i Matstrumpor-klubben", "begar": "tillhörighet: få bekräftat att man redan är med" },
+    { "text": "Har du en låda som ser ut som mat hemma?", "begar": "vilja svara på en enkel fråga om sin egen låda" },
+    { "text": "Matstrumpor-klubben: mejlen först, inga koder", "begar": "veta exakt vad man får och inte får innan man bestämmer sig" }
+  ],
+  "forhandstext": "Klubben är mejllistan. Nya sorter och påfyllning får du före sajten.",
+  "block": [
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Hej {{fornamn}},\n\nDu anmälde dig till Matstrumpor eller köpte en av lådorna, och sa ja till mejl. Därför får du det här.\n\nMejllistan kallar vi Matstrumpor-klubben, och du är med i den."
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "Det här får Matstrumpor-klubben först",
+      "punkter": [
+        "Nya sorter av lådorna, före sajten.",
+        "Påfyllning av lådor som tagit slut, före sajten.",
+        "Sista beställningsdagarna före sajten: lördag 24 oktober till fars dag, tisdag 8 december till jul."
+      ]
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Det du inte får är rabattkoder. Matstrumpor-klubben ger inga koder och inga poäng."
+    },
+    {
+      "typ": "grundare",
+      "text": "Svara på det här mejlet och skriv vilken låda du har hemma: sushi, pizza, hamburgare eller donut. Har du aldrig köpt en låda, skriv det.\n\nJag vill veta hur många av er som har en låda hemma."
+    }
+  ],
+  "tretest": [
+    { "rad": "Du är med i Matstrumpor-klubben", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Har du en låda som ser ut som mat hemma?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Matstrumpor-klubben: mejlen först, inga koder", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Klubben är mejllistan. Nya sorter och påfyllning får du före sajten.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Du anmälde dig till Matstrumpor eller köpte en av lådorna, och sa ja till mejl. Därför får du det här.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Mejllistan kallar vi Matstrumpor-klubben, och du är med i den.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Det här får Matstrumpor-klubben först", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Nya sorter av lådorna, före sajten.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Påfyllning av lådor som tagit slut, före sajten.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sista beställningsdagarna före sajten: lördag 24 oktober till fars dag, tisdag 8 december till jul.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Det du inte får är rabattkoder. Matstrumpor-klubben ger inga koder och inga poäng.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Svara på det här mejlet och skriv vilken låda du har hemma: sushi, pizza, hamburgare eller donut. Har du aldrig köpt en låda, skriv det.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Jag vill veta hur många av er som har en låda hemma.", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-09-30T18:00:00+02:00",
+  "segment": ["SEG_samtycke"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "kraver-axel",
+  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Värdemejl i dagliga serien efter Evolves svar 16 (2026-09-29)."
+}

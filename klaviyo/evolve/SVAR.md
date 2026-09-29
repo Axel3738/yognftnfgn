@@ -194,3 +194,93 @@ community … Paste as-is."
   och vägs mot bästa-praxis-listan. Inget väntar på det.
 - Facit blir våra egna siffror: K15:s klick per stjärna i Spoks och antalet nya recensioner
   i Judge.me två veckor efter utskicket.
+
+---
+
+## Svar 16, 2026-09-29: takten och mixen i dagliga serien till fars dag (Matstrumpor)
+
+Fråga 16 i `FRAGOR.md` (omskriven på Axels ord samma dag: vad ska vi skicka varje dag, inte
+bara fars dag). Axel klistrade in svaret ordagrant; Discords formatering (numreringen "2."
+och tomma punkter) är botens, inte vår. `[C1]`–`[C5]` är botens källor.
+
+> 1. Don't send 27 daily emails to the full list — segment by engagement and ramp intensity toward the deadline.
+>
+> The community consensus: volume is safe only when paired with segmentation and deliverability management [C1]. Daily to a list that's never received a campaign, on a new sending domain, is the highest-risk setup you can run.
+>    1. The mix across 27 days
+>
+> Billy runs 3-5 emails/week mixing sales + free value [C1][C4] — roughly 50/50. No source gives a 27-day template, but combining Billy's mix with Damon's deadline-ramp pattern [C3] gives you a framework:
+>    * Week 1 (Sep 29–Oct 5): ~3 sales, 4 non-sales. You're warming a cold list and a new domain — build the habit of opening first.
+>    * Week 2 (Oct 6–12): ~5 sales, 2 non-sales. Start the deadline countdown logic.
+>    * Week 3 (Oct 13–19): ~6 sales, 1 non-sales. Pressure builds.
+>    * Week 4 (Oct 20–25): All sales, ramping to blitz (see below).
+>
+> Billy's point that "if someone receives 3 emails and doesn't purchase, they're Most Aware" [C1] supports ramping sales intensity over time — early emails build awareness, later ones convert it.
+>
+> What sources don't give: A tested day-by-day template. The ratios above are extrapolated from principles, not a proven sequence.
+>    2. Non-sales days that still sell
+>
+> Billy and Spencer both say to mix in "free value" alongside sales [C1][C4]. Umar's principle applies here: engaged community members should get usage/engagement content, not conversion pitches [C5]. Your weekly draw videos, behind-the-scenes, and customer stories fit this. But no source gives concrete examples of non-sales emails that drove sales for a seasonal gift product. This is a genuine gap — worth asking the community for specifics.
+>    3. Full list vs segments, and pause thresholds
+>
+> Don't send daily to the whole consent list. Three converging points:
+> 2.
+>
+> * Billy: Segment by engagement (last 14/30 days), exclude past buyers from conversion sends [C1][C4].
+> * Ankit P: Don't go daily to the full list cold — start with smaller engaged segments, prove it works, expand based on data [C2].
+> * Damon: Send 1-2/day per segment, not per list — different segments get different emails [C3].
+>
+> Tension on past buyers: Billy excludes them [C1], but yours is a gift product — someone who bought last Christmas for their dad might buy again for their father-in-law. With only 2.5% repeat rate, Billy's assumption (past buyers already have the product) may not hold. Worth testing inclusion vs exclusion.
+>
+> Your pause rule (>1% unsubs, >0.3% spam): No source validates specific thresholds. Sources emphasize segmentation and deliverability as the guardrails [C1] but don't give numeric cutoffs. Your rule is reasonable but unvalidated — calibrate it with data from the first sends.
+>
+> New domain risk: Ankit P's staged-rollout principle [C2] applies directly — start with your most engaged segment, prove deliverability, then expand. A new domain sending daily to 3,000 people who've never heard from you is a spam-complaint magnet.
+>
+> 4. Final week cadence
+>
+> Damon's BFCM pattern [C3] maps directly to your Oct 24 deadline: 1-2/day per segment early in the week, then blitz the final day(s).
+>
+> * Oct 20–22: 1/day per segment
+> * Oct 23: 2/day per segment (morning + afternoon)
+> * Oct 24 (last order day): 2-3 across the day — morning urgency, midday last-call, evening final push. Damon also says hit SMS if you have it [C3].
+>
+> What sources don't cover:
+>
+> * A specific 27-day day-by-day template
+> * Concrete non-sales email examples that drove sales
+> * Validated unsubscribe/spam pause thresholds
+> * Gift-product timing (delivery vs when the gift is opened)
+> * Whether a second reminder to non-clickers helps or hurts
+> * Subject-line or wording examples for this campaign type
+
+### Vad vi gör med svaret (beslutat av sessionen 2026-09-29, Axel kan ändra)
+
+- **Två publiker i stället för en.** *Engagerade* (`SEG_uppvarmning_steg1`: samtycke + öppnat,
+  klickat, tittat på en produkt eller köpt senaste 30 d; **1 305 mätt 2026-09-29** med
+  `get_segment`) får nästan ett mejl om dagen. *Alla*
+  (`SEG_samtycke`, cirka 3 000) får 2–3 i veckan: tisdagens K-mejl plus veckans starkaste
+  fars dag- eller Köp 1, få 1-mejl. En dag = ett mejl; på "alla"-dagarna får de engagerade
+  samma mejl, så ingen får två. Köparna hålls KVAR i utskicken (Evolves egen invändning:
+  presentprodukt, 2,5 % återköp), och FD12 går bara till köpare; uteslutning testas senare.
+- **Mixen per vecka enligt Evolve:** v1 3 sälj / 4 värde, v2 5 / 2, v3 6 / 1, v4 bara sälj
+  med blitz: 23/10 två mejl (09:00 + 20:00), 24/10 tre (09:00, 13:00, 20:00). Värdemejlen är
+  nya: V01 *Du är med i klubben* (30/9, alla, listan har aldrig fått ett mejl), V02 *Svara med
+  ett ord* (3/10, engagerade — svar på mejl är leverbarhetssignalen), V03 *Så ser lådan ut
+  inuti* (5/10, engagerade, produktkunskap utan pitch); K03 *Kundernas ord* flyttas från 13/10
+  till 1/10 (vecka 1:s fjärde värdemejl — K15, recensionen, gick redan ut 28/9 11:18 CEST,
+  mätt med `search_campaigns`), FD08 (kundcitat) flyttas till 8/10 och räknas som värde.
+  Två värdeplatser skrivs när underlaget finns, aldrig i förväg: **V04 *Ni svarade*** (lör
+  10/10, engagerade, ur svaren på V01 och V02 — de landar i kundsupport@matstrumpor.se, läses
+  med `loopia-mail`; färre än tio svar ⇒ FD03 från bänken tar platsen) och **V05 *Vad ni skrev
+  om lådan*** (tis 13/10, hela listan, ur de nya Judge.me-recensionerna efter K15; färre än tre
+  nya ⇒ FD02 tar platsen). Blitzmejlen är
+  nya: FD21 (23/10 20:00), FD22 (24/10 13:00, pizzalådan i fokus), FD23 (24/10 20:00).
+  Nedräkningsmejlen (FD09, FD13, FD15–FD19) ligger kvar på sina datum.
+- **Fem mejl till bänken:** FD02, FD03, FD04, FD05 och FD07 schemaläggs inte (v1 hade sju
+  säljmejl, Evolve säger tre). De återanvänds mot jul (sista beställning 8/12) med nya datum.
+- **Stoppregeln står kvar** (`LARM_LEVERANS`: spam över 0,3 %, avreg över 1 % på ett utskick ⇒
+  hoppa nästa dag, tillbaka till engagerade) och kalibreras mot de första utskicken, precis
+  som boten säger. SMS finns inte.
+- **Luckorna Evolve pekar ut** (konkreta värdemejl som sålt, tidpunkt för presentprodukter, en
+  andra påminnelse till dem som inte klickat) fylls av våra egna siffror: klick och ordrar per
+  utskick i Spoks, lästa dagen efter. Schemat: `klaviyo/innehall/matstrumpor/KALENDER-2026.md`
+  → Dagliga serien (omgång 2).

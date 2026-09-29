@@ -21,9 +21,18 @@
     "kod": "GT"
   },
   "amnesrader": [
-    { "text": "I morgon är sista dagen att beställa till fars dag", "begar": "hinna beställa sushilådan innan tiden är ute" },
-    { "text": "Pappa tror att det är riktig sushi, tills han öppnar lådan", "begar": "se pappas förvåning när han förstår att det är strumpor" },
-    { "text": "Väntar du en dag till hinner inte lådan fram till fars dag", "begar": "förstå vad som händer om beställningen kommer in för sent" }
+    {
+      "text": "I morgon är sista dagen att beställa till fars dag",
+      "begar": "hinna beställa sushilådan innan tiden är ute"
+    },
+    {
+      "text": "Pappa tror att det är riktig sushi, tills han öppnar lådan",
+      "begar": "se pappas förvåning när han förstår att det är strumpor"
+    },
+    {
+      "text": "Väntar du en dag till hinner inte lådan fram till fars dag",
+      "begar": "förstå vad som händer om beställningen kommer in för sent"
+    }
   ],
   "forhandstext": "Fars dag är den 8 november. I morgon är sista dagen att beställa.",
   "block": [
@@ -32,7 +41,10 @@
       "rubrik": "I morgon är sista dagen till fars dag",
       "text": "Hej {{fornamn}},\n\nFör att sushilådan ska hinna fram till fars dag behöver ordern läggas senast i morgon. Fars dag är den 8 november.",
       "bild": "produkt:sushi-strumpor",
-      "knapp": { "text": "Se sushilådan", "lank": "produkt:sushi-strumpor" }
+      "knapp": {
+        "text": "Se sushilådan",
+        "lank": "produkt:sushi-strumpor"
+      }
     },
     {
       "typ": "text",
@@ -48,23 +60,73 @@
     {
       "typ": "produktrad",
       "rubrik": "Om han hellre vill ha en annan låda",
-      "handles": ["pizza-strumpor", "hamburger-strumpor", "donut-strumpor"]
+      "handles": [
+        "pizza-strumpor",
+        "hamburger-strumpor",
+        "donut-strumpor"
+      ]
     },
-    { "typ": "fakta" }
+    {
+      "typ": "fakta"
+    }
   ],
   "tretest": [
-    { "rad": "I morgon är sista dagen att beställa till fars dag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Pappa tror att det är riktig sushi, tills han öppnar lådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Väntar du en dag till hinner inte lådan fram till fars dag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Fars dag är den 8 november. I morgon är sista dagen att beställa.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "I morgon är sista dagen till fars dag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Se sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Om han hellre vill ha en annan låda", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Till sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+    {
+      "rad": "I morgon är sista dagen att beställa till fars dag",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Pappa tror att det är riktig sushi, tills han öppnar lådan",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Väntar du en dag till hinner inte lådan fram till fars dag",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Fars dag är den 8 november. I morgon är sista dagen att beställa.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "I morgon är sista dagen till fars dag",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Se sushilådan",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Om han hellre vill ha en annan låda",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Till sushilådan",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    }
   ],
-  "planerad": "2026-10-23T18:00:00+02:00",
-  "segment": ["SEG_samtycke"],
-  "exkludera": ["SEG_oengagerade_180d"],
+  "planerad": "2026-10-23T09:00:00+02:00",
+  "segment": [
+    "SEG_samtycke"
+  ],
+  "exkludera": [
+    "SEG_oengagerade_180d"
+  ],
   "status_plan": "kraver-axel",
   "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28)."
 }

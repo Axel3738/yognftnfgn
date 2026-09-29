@@ -1,6 +1,6 @@
 {
   "id": "fd11-tva-lador-en-till-pappa",
-  "namn": "MAIL_20261014_FarsDag_GT_6_samtycke_solution_tva-lador-en-till-pappa_v1",
+  "namn": "MAIL_20261014_FarsDag_GT_6_uppvarmning_solution_tva-lador-en-till-pappa_v1",
   "memo": "Hypotes: K07 bevisar att \"Köp 1, få 1\" landar bäst konkret uttryckt (\"en till mamma, en till brorsan\"), och fars dag ger den andra lådan en tydlig mottagare: pappa, eller vem kunden själv väljer. Serien (Axels order 2026-09-28: ett mejl varje dag fram till fars dag) öppnar med den bredaste versionen av vinkeln, till hela SEG_samtycke, innan fd12 smalnar av mot köpare och fd13 mot ren datumräkning. Källa: K07:s erbjudandetext + klaviyo/brands/matstrumpor.json#kalender (fars dag 8 november).",
   "taggar": {
     "typ": "S",
@@ -16,9 +16,18 @@
     "kod": "GT"
   },
   "amnesrader": [
-    { "text": "En sushilåda till pappa, en till dig själv", "begar": "se att köpet räcker till både pappa och en själv" },
-    { "text": "Pappa öppnar en sushilåda. Den är full av strumpor.", "begar": "nyfikenhet på överraskningen när lådan öppnas" },
-    { "text": "Köp en sushilåda till fars dag, få en till", "begar": "förstå att erbjudandet ger två lådor för priset av en" }
+    {
+      "text": "En sushilåda till pappa, en till dig själv",
+      "begar": "se att köpet räcker till både pappa och en själv"
+    },
+    {
+      "text": "Pappa öppnar en sushilåda. Den är full av strumpor.",
+      "begar": "nyfikenhet på överraskningen när lådan öppnas"
+    },
+    {
+      "text": "Köp en sushilåda till fars dag, få en till",
+      "begar": "förstå att erbjudandet ger två lådor för priset av en"
+    }
   ],
   "forhandstext": "En låda till pappa, en låda kvar till dig själv.",
   "block": [
@@ -27,7 +36,10 @@
       "rubrik": "Två sushilådor till fars dag för priset av en",
       "text": "Hej {{fornamn}},\n\nFars dag är den 8 november. Köp en sushilåda och få en till, det står på produktsidan.\n\nGe den ena till pappa. Behåll den andra, eller ge bort den till någon annan.",
       "bild": "produkt:sushi-strumpor",
-      "knapp": { "text": "Se sushilådan", "lank": "produkt:sushi-strumpor" }
+      "knapp": {
+        "text": "Se sushilådan",
+        "lank": "produkt:sushi-strumpor"
+      }
     },
     {
       "typ": "text",
@@ -43,23 +55,73 @@
     {
       "typ": "produktrad",
       "rubrik": "Om den andra lådan ska bli en annan sort",
-      "handles": ["hamburger-strumpor", "pizza-strumpor", "donut-strumpor"]
+      "handles": [
+        "hamburger-strumpor",
+        "pizza-strumpor",
+        "donut-strumpor"
+      ]
     },
-    { "typ": "fakta" }
+    {
+      "typ": "fakta"
+    }
   ],
   "tretest": [
-    { "rad": "En sushilåda till pappa, en till dig själv", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Pappa öppnar en sushilåda. Den är full av strumpor.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Köp en sushilåda till fars dag, få en till", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "En låda till pappa, en låda kvar till dig själv.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Två sushilådor till fars dag för priset av en", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Se sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Om den andra lådan ska bli en annan sort", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Till sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+    {
+      "rad": "En sushilåda till pappa, en till dig själv",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Pappa öppnar en sushilåda. Den är full av strumpor.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Köp en sushilåda till fars dag, få en till",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "En låda till pappa, en låda kvar till dig själv.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Två sushilådor till fars dag för priset av en",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Se sushilådan",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Om den andra lådan ska bli en annan sort",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Till sushilådan",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    }
   ],
   "planerad": "2026-10-14T18:00:00+02:00",
-  "segment": ["SEG_samtycke"],
-  "exkludera": ["SEG_oengagerade_180d"],
+  "segment": [
+    "SEG_uppvarmning_steg1"
+  ],
+  "exkludera": [
+    "SEG_oengagerade_180d"
+  ],
   "status_plan": "kraver-axel",
-  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28)."
+  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28). Omgång 2 efter Evolves svar 16 (2026-09-29): publiken är de engagerade (öppnat eller klickat 30 d), inte hela listan."
 }

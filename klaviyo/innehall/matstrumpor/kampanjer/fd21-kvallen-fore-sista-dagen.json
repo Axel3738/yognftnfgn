@@ -1,0 +1,62 @@
+{
+  "id": "fd21-kvallen-fore-sista-dagen",
+  "namn": "MAIL_20261023_FarsDag_GT_2_uppvarmning_promo_kvallen-fore-sista-dagen_v1",
+  "memo": "Hypotes: ett andra mejl kvällen före sista beställningsdagen ger fler beställningar än att vänta på morgondagen, om det inte förklarar något nytt. Den som redan sett sushilådan i serien får en enda anledning att beställa nu i stället för på sista dagen: beställer man i kväll slipper man tänka på det i morgon. Kort med flit, en produkt, ingen alternativrad, och tydligt att morgondagen fortfarande räknas (ingen falsk brådska). Går till de engagerade (SEG_uppvarmning_steg1) eftersom det är ett andra mejl samma dag. Fredag 23 oktober kväll, sista beställningsdagen lördag 24 oktober (klaviyo/brands/matstrumpor.json#kalender). Källa: klaviyo/evolve/SVAR.md → Svar 16 (Damons BFCM-mönster: 2 per dag dagen före, 2 till 3 på sista dagen).",
+  "taggar": {
+    "typ": "S",
+    "kalla": "evolve",
+    "kalla_ref": "klaviyo/evolve/SVAR.md#svar-16",
+    "lardom": null,
+    "avatar": "presentkoparen (till pappa) som ännu inte beställt",
+    "begar": "kontroll",
+    "awareness": "promo",
+    "urgency": "konsekvens",
+    "confidence": "medium",
+    "prefix": "FarsDag",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    { "text": "Sushilådan kan vara beställd innan du lägger dig", "begar": "bli klar med pappas present redan i kväll" },
+    { "text": "Fredagsmys med sushi. Fast fem par strumpor.", "begar": "skratta åt kontrasten mellan sushi och strumpor" },
+    { "text": "Efter lördag kan sushilådan komma efter fars dag", "begar": "slippa att presenten kommer efter fars dag" }
+  ],
+  "forhandstext": "Beställer du sushilådan i kväll är det gjort. Sista beställningsdagen är lördag 24 oktober.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Slipp tänka på det i morgon. Beställ sushilådan nu.",
+      "text": "Hej {{fornamn}},\n\nSushilådan till fars dag kan beställas till och med i morgon, lördag 24 oktober.",
+      "bild": "produkt:sushi-strumpor",
+      "knapp": { "text": "Beställ sushilådan", "lank": "produkt:sushi-strumpor" }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Beställs sushilådan efter lördag kan den komma efter fars dag, söndag 8 november."
+    },
+    {
+      "typ": "produkt",
+      "handle": "sushi-strumpor",
+      "text": "Fem par strumpor. Lådan ser ut som takeaway.",
+      "knapp": "Öppna sushilådan"
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "Sushilådan kan vara beställd innan du lägger dig", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fredagsmys med sushi. Fast fem par strumpor.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Efter lördag kan sushilådan komma efter fars dag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Beställer du sushilådan i kväll är det gjort. Sista beställningsdagen är lördag 24 oktober.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Slipp tänka på det i morgon. Beställ sushilådan nu.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sushilådan till fars dag kan beställas till och med i morgon, lördag 24 oktober.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Beställ sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Beställs sushilådan efter lördag kan den komma efter fars dag, söndag 8 november.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fem par strumpor. Lådan ser ut som takeaway.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Öppna sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-10-23T20:00:00+02:00",
+  "segment": ["SEG_uppvarmning_steg1"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "kraver-axel",
+  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Blitzmejl i dagliga serien efter Evolves svar 16 (2026-09-29)."
+}

@@ -24,7 +24,9 @@ import { join, dirname } from 'node:path';
 import { ROT } from './mallar.mjs';
 
 export const MAX_TECKEN = 220;
-export const PER_HANDLE = 5;
+// 20 och inte 5 sedan 2026-09-29: citatblockens `valj` (citat.mjs) väljer ett
+// bestämt citat, och det ska finnas kvar i cachen när nyare recensioner kommer in.
+export const PER_HANDLE = 20;
 export const WIDGET_URL = 'https://judge.me/reviews/reviews_for_widget';
 
 export function cacheSokvag(brandId, rot = ROT) {
@@ -124,7 +126,9 @@ async function hamtaAlla({ token, shop, fetchFn, maxSidor }) {
 }
 
 // En fråga per produkt mot widgetens publika JSON. Produkter utan Shopify-id hoppas.
-export async function hamtaViaWidget({ shop, produkter, fetchFn, perProdukt = 10 }) {
+// perProdukt 50: sushilådan hade 11 recensioner 2026-09-29 och 10 per sida
+// tappade den äldsta.
+export async function hamtaViaWidget({ shop, produkter, fetchFn, perProdukt = 50 }) {
   if (!shop) throw new Error('recensioner.shop_domain saknas i brandfilen (myshopify-domänen).');
   const rader = [];
   for (const p of produkter) {

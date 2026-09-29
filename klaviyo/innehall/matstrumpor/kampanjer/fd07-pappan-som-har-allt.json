@@ -16,9 +16,18 @@
     "kod": "GT"
   },
   "amnesrader": [
-    { "text": "Han har allt. Inte en sushilåda med strumpor.", "begar": "se att presenten är något han garanterat inte redan har" },
-    { "text": "Ingen har fem par strumpor i en sushilåda", "begar": "förstå att produkten är unik nog för någon som redan har allt" },
-    { "text": "Pappan som har allt saknar en sushilåda", "begar": "hitta en present till pappan som redan har allt" }
+    {
+      "text": "Han har allt. Inte en sushilåda med strumpor.",
+      "begar": "se att presenten är något han garanterat inte redan har"
+    },
+    {
+      "text": "Ingen har fem par strumpor i en sushilåda",
+      "begar": "förstå att produkten är unik nog för någon som redan har allt"
+    },
+    {
+      "text": "Pappan som har allt saknar en sushilåda",
+      "begar": "hitta en present till pappan som redan har allt"
+    }
   ],
   "forhandstext": "Ser ut som en sushibeställning. Är fem par strumpor han inte har.",
   "block": [
@@ -27,26 +36,93 @@
       "rubrik": "Han har allt. Inte fem par strumpor i en sushilåda.",
       "text": "Hej {{fornamn}},\n\nHan har redan det mesta han bad om. Verktyg, kläder, prylar.\n\nHan har garanterat inte fem par strumpor i en låda som ser ut som sushi.",
       "bild": "produkt:sushi-strumpor",
-      "knapp": { "text": "Se sushilådan", "lank": "produkt:sushi-strumpor" }
+      "knapp": {
+        "text": "Se sushilådan",
+        "lank": "produkt:sushi-strumpor"
+      }
     },
-    { "typ": "text", "rubrik": null, "text": "Ingen gissar innehållet innan lådan öppnas." },
-    { "typ": "produkt", "handle": "sushi-strumpor", "text": "Fem par i en låda som är svår att gissa i förväg.", "knapp": "Till sushilådan" },
-    { "typ": "produktrad", "rubrik": "Tre andra sorter han garanterat inte har", "handles": ["pizza-strumpor", "hamburger-strumpor", "donut-strumpor"] },
-    { "typ": "fakta" }
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Ingen gissar innehållet innan lådan öppnas."
+    },
+    {
+      "typ": "produkt",
+      "handle": "sushi-strumpor",
+      "text": "Fem par i en låda som är svår att gissa i förväg.",
+      "knapp": "Till sushilådan"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Tre andra sorter han garanterat inte har",
+      "handles": [
+        "pizza-strumpor",
+        "hamburger-strumpor",
+        "donut-strumpor"
+      ]
+    },
+    {
+      "typ": "fakta"
+    }
   ],
   "tretest": [
-    { "rad": "Han har allt. Inte en sushilåda med strumpor.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Ingen har fem par strumpor i en sushilåda", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Pappan som har allt saknar en sushilåda", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Ser ut som en sushibeställning. Är fem par strumpor han inte har.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Han har allt. Inte fem par strumpor i en sushilåda.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Se sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Tre andra sorter han garanterat inte har", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Till sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+    {
+      "rad": "Han har allt. Inte en sushilåda med strumpor.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Ingen har fem par strumpor i en sushilåda",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Pappan som har allt saknar en sushilåda",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Ser ut som en sushibeställning. Är fem par strumpor han inte har.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Han har allt. Inte fem par strumpor i en sushilåda.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Se sushilådan",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Tre andra sorter han garanterat inte har",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Till sushilådan",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    }
   ],
   "planerad": "2026-10-08T18:00:00+02:00",
-  "segment": ["SEG_samtycke"],
-  "exkludera": ["SEG_oengagerade_180d"],
-  "status_plan": "kraver-axel",
-  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28)."
+  "segment": [
+    "SEG_samtycke"
+  ],
+  "exkludera": [
+    "SEG_oengagerade_180d"
+  ],
+  "status_plan": "parkerad",
+  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28).",
+  "parkerad": "2026-09-29: bänken efter Evolves svar 16 (vecka 1 tål tre säljmejl, inte sju). Schemaläggs inte; återanvänds mot jul med nya datum."
 }

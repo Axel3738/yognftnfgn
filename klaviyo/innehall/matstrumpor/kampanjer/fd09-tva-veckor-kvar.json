@@ -1,6 +1,6 @@
 {
   "id": "fd09-tva-veckor-kvar",
-  "namn": "MAIL_20261011_FarsDag_GT_3_samtycke_solution_tva-veckor-kvar_v1",
+  "namn": "MAIL_20261011_FarsDag_GT_3_uppvarmning_solution_tva-veckor-kvar_v1",
   "memo": "Hypotes: K04 (20 oktober) är den sista, snäva påminnelsen fyra dagar före gränsen. Ett tidigare mejl, två veckor innan, ger hela listan tid att välja i lugn takt i stället för att pressas i sista veckan, med samma verkliga datum (24 oktober, p90 15 dygn, brandfilens kalender) som enda orsak. Hero pizza i stället för sushi, så serien inte bara visar samma bild varje dag. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28).",
   "taggar": {
     "typ": "I",
@@ -16,9 +16,18 @@
     "kod": "GT"
   },
   "amnesrader": [
-    { "text": "Två veckor kvar till 24 oktober", "begar": "veta exakt hur lång tid som är kvar" },
-    { "text": "Efter 24 oktober hinner den inte till fars dag", "begar": "förstå konsekvensen av att beställa för sent" },
-    { "text": "Beställ i dag, redan klart till fars dag", "begar": "kunna bocka av presenten utan att tänka mer på det" }
+    {
+      "text": "Två veckor kvar till 24 oktober",
+      "begar": "veta exakt hur lång tid som är kvar"
+    },
+    {
+      "text": "Efter 24 oktober hinner den inte till fars dag",
+      "begar": "förstå konsekvensen av att beställa för sent"
+    },
+    {
+      "text": "Beställ i dag, redan klart till fars dag",
+      "begar": "kunna bocka av presenten utan att tänka mer på det"
+    }
   ],
   "forhandstext": "24 oktober är sista dagen vi räknar med.",
   "block": [
@@ -27,7 +36,10 @@
       "rubrik": "Två veckor kvar innan sista beställningsdagen",
       "text": "Hej {{fornamn}},\n\n24 oktober är sista dagen vi räknar med. Då hinner en beställning fram till fars dag den 8 november.\n\nDet är två veckor bort. Nu hinner du välja i lugn och ro.",
       "bild": "produkt:pizza-strumpor",
-      "knapp": { "text": "Se pizzalådan", "lank": "produkt:pizza-strumpor" }
+      "knapp": {
+        "text": "Se pizzalådan",
+        "lank": "produkt:pizza-strumpor"
+      }
     },
     {
       "typ": "text",
@@ -43,23 +55,73 @@
     {
       "typ": "produktrad",
       "rubrik": "Sushi, hamburgare eller donut",
-      "handles": ["sushi-strumpor", "hamburger-strumpor", "donut-strumpor"]
+      "handles": [
+        "sushi-strumpor",
+        "hamburger-strumpor",
+        "donut-strumpor"
+      ]
     },
-    { "typ": "fakta" }
+    {
+      "typ": "fakta"
+    }
   ],
   "tretest": [
-    { "rad": "Två veckor kvar till 24 oktober", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Efter 24 oktober hinner den inte till fars dag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Beställ i dag, redan klart till fars dag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "24 oktober är sista dagen vi räknar med.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Två veckor kvar innan sista beställningsdagen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Se pizzalådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Till pizzalådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Sushi, hamburgare eller donut", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+    {
+      "rad": "Två veckor kvar till 24 oktober",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Efter 24 oktober hinner den inte till fars dag",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Beställ i dag, redan klart till fars dag",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "24 oktober är sista dagen vi räknar med.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Två veckor kvar innan sista beställningsdagen",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Se pizzalådan",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Till pizzalådan",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Sushi, hamburgare eller donut",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    }
   ],
   "planerad": "2026-10-11T18:00:00+02:00",
-  "segment": ["SEG_samtycke"],
-  "exkludera": ["SEG_oengagerade_180d"],
+  "segment": [
+    "SEG_uppvarmning_steg1"
+  ],
+  "exkludera": [
+    "SEG_oengagerade_180d"
+  ],
   "status_plan": "kraver-axel",
-  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28)."
+  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28). Omgång 2 efter Evolves svar 16 (2026-09-29): publiken är de engagerade (öppnat eller klickat 30 d), inte hela listan."
 }

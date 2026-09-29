@@ -1,6 +1,6 @@
 {
   "id": "fd01-pappa-som-inte-vill-ha-nagot",
-  "namn": "MAIL_20260930_FarsDag_GT_1_samtycke_problem_pappa-som-inte-vill-ha-nagot_v1",
+  "namn": "MAIL_20261004_FarsDag_GT_1_uppvarmning_problem_pappa-som-inte-vill-ha-nagot_v1",
   "memo": "Hypotes: den vanligaste invändningen inför fars dag är att pappa säger att han inte vill ha något, och en låda som ser ut som mat är lätt att ge ändå eftersom den inte känns som en vanlig present. Vinkeln bygger vidare på K04:s datum (fars dag 8/11, sista beställning 24/10, brandfilens kalender och p90 15 dygn) men leder med invändningen i stället för datumet, och lägger till att köp 1, få 1 räcker till både pappa och farfar.",
   "taggar": {
     "typ": "N",
@@ -16,9 +16,18 @@
     "kod": "GT"
   },
   "amnesrader": [
-    { "text": "Han säger nej till presenter. Inte till sushi.", "begar": "se att invändningen inte gäller den här lådan" },
-    { "text": "En till pappa, en till farfar", "begar": "se att en beställning räcker till två mottagare" },
-    { "text": "En låda pappa öppnar som om den vore mat", "begar": "se pappa öppna en låda som ser ut som mat" }
+    {
+      "text": "Han säger nej till presenter. Inte till sushi.",
+      "begar": "se att invändningen inte gäller den här lådan"
+    },
+    {
+      "text": "En till pappa, en till farfar",
+      "begar": "se att en beställning räcker till två mottagare"
+    },
+    {
+      "text": "En låda pappa öppnar som om den vore mat",
+      "begar": "se pappa öppna en låda som ser ut som mat"
+    }
   ],
   "forhandstext": "Söndag 8 november. Beställ senast 24 oktober om du vill hinna.",
   "block": [
@@ -27,7 +36,10 @@
       "rubrik": "Han säger att han inte vill ha något. Ge honom en låda som ser ut som sushi.",
       "text": "Hej {{fornamn}},\n\nDe flesta pappor säger att de inte vill ha något. Den här lådan ser ut som en sushibeställning, inte som en present.",
       "bild": "produkt:sushi-strumpor",
-      "knapp": { "text": "Se lådan han inte bad om", "lank": "produkt:sushi-strumpor" }
+      "knapp": {
+        "text": "Se lådan han inte bad om",
+        "lank": "produkt:sushi-strumpor"
+      }
     },
     {
       "typ": "text",
@@ -43,23 +55,73 @@
     {
       "typ": "produktrad",
       "rubrik": "Andra sorter, om han säger nej till sushi också",
-      "handles": ["pizza-strumpor", "hamburger-strumpor", "donut-strumpor"]
+      "handles": [
+        "pizza-strumpor",
+        "hamburger-strumpor",
+        "donut-strumpor"
+      ]
     },
-    { "typ": "fakta" }
+    {
+      "typ": "fakta"
+    }
   ],
   "tretest": [
-    { "rad": "Han säger nej till presenter. Inte till sushi.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "En till pappa, en till farfar", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "En låda pappa öppnar som om den vore mat", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Söndag 8 november. Beställ senast 24 oktober om du vill hinna.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Han säger att han inte vill ha något. Ge honom en låda som ser ut som sushi.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Se lådan han inte bad om", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Andra sorter, om han säger nej till sushi också", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Till sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+    {
+      "rad": "Han säger nej till presenter. Inte till sushi.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "En till pappa, en till farfar",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "En låda pappa öppnar som om den vore mat",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Söndag 8 november. Beställ senast 24 oktober om du vill hinna.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Han säger att han inte vill ha något. Ge honom en låda som ser ut som sushi.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Se lådan han inte bad om",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Andra sorter, om han säger nej till sushi också",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Till sushilådan",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    }
   ],
-  "planerad": "2026-09-30T18:00:00+02:00",
-  "segment": ["SEG_samtycke"],
-  "exkludera": ["SEG_oengagerade_180d"],
+  "planerad": "2026-10-04T18:00:00+02:00",
+  "segment": [
+    "SEG_uppvarmning_steg1"
+  ],
+  "exkludera": [
+    "SEG_oengagerade_180d"
+  ],
   "status_plan": "kraver-axel",
-  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28)."
+  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28). Omgång 2 efter Evolves svar 16 (2026-09-29): publiken är de engagerade (öppnat eller klickat 30 d), inte hela listan."
 }

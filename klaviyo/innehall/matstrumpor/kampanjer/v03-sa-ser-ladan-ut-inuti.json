@@ -1,0 +1,72 @@
+{
+  "id": "v03-sa-ser-ladan-ut-inuti",
+  "namn": "MAIL_20261005_Varde_PD_1_uppvarmning_problem_sa-ser-ladan-ut-inuti_v1",
+  "memo": "Hypotes: produktkunskap utan säljpitch (vad som faktiskt ligger i varje låda, att lådan är förpackningen, en storlek och dubbeltitten när någon öppnar den) tar bort osäkerheten om vad man får hos den som funderar på en låda, och ger fler klick på produktsidan än ett mejl som öppnar med en uppmaning att köpa, trots en lågmäld knapp ('Titta på sushilådan'). Fakta som används är bara paren per sort (sushi 5, pizza 4, donut 3, hamburgare 2), en storlek och att ingen inslagning behövs. Bort med flit: ätpinnar (ingår inte), pris, leveranstid, rabatter, dragning. Källa: klaviyo/evolve/SVAR.md → Svar 16 (Evolve: blanda fritt värde med sälj, Billy och Spencer; svar på mejl som leverbarhetssignal).",
+  "taggar": {
+    "typ": "N",
+    "kalla": "evolve",
+    "kalla_ref": "klaviyo/evolve/SVAR.md#svar-16",
+    "lardom": null,
+    "avatar": "prenumeranten som funderar på en låda men inte vet vad som ligger i den",
+    "begar": "veta exakt vad man får innan man köper",
+    "awareness": "problem",
+    "urgency": "ingen",
+    "confidence": "low",
+    "prefix": "Varde",
+    "kod": "PD"
+  },
+  "amnesrader": [
+    { "text": "Inuti sushilådan: fem par strumpor", "begar": "veta exakt vad som ligger i lådan innan man köper" },
+    { "text": "Hur många par ligger i pizzalådan?", "begar": "nyfikenhet på hur många par en pizzalåda rymmer" },
+    { "text": "Ingen inslagning: lådan ser ut som mat", "begar": "slippa besväret med inslagning när man ger bort något" }
+  ],
+  "forhandstext": "Fem, fyra, tre eller två par, beroende på lådan. En storlek, ingen inslagning.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Fem par strumpor, rullade som sushibitar",
+      "text": "Hej {{fornamn}},\n\nUtsidan ser ut som en takeaway-låda från en sushirestaurang. Insidan är strumpor.",
+      "bild": "produkt:sushi-strumpor",
+      "knapp": { "text": "Titta på sushilådan", "lank": "produkt:sushi-strumpor" }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Alla fyra lådorna är förpackningen. Du ger bort dem som de är, utan att slå in dem.\n\nAlla fyra har strumpor i en storlek, One Size.\n\nNär någon öppnar sushilådan ser det ut som sushi.\n\nSedan ser man strumporna och tittar en gång till. Det är dubbeltitten."
+    },
+    {
+      "typ": "punkter",
+      "rubrik": "Så många par ligger i varje låda",
+      "punkter": [
+        "Fem par i sushilådan, rullade som sushibitar.",
+        "Fyra par i pizzalådan, en låda som ser ut som en pizzakartong.",
+        "Tre par i donutlådan.",
+        "Två par i hamburgarlådan."
+      ]
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "Inuti sushilådan: fem par strumpor", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Hur många par ligger i pizzalådan?", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Ingen inslagning: lådan ser ut som mat", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fem, fyra, tre eller två par, beroende på lådan. En storlek, ingen inslagning.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fem par strumpor, rullade som sushibitar", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Utsidan ser ut som en takeaway-låda från en sushirestaurang. Insidan är strumpor.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Titta på sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Alla fyra lådorna är förpackningen. Du ger bort dem som de är, utan att slå in dem.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Alla fyra har strumpor i en storlek, One Size.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "När någon öppnar sushilådan ser det ut som sushi.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Sedan ser man strumporna och tittar en gång till. Det är dubbeltitten.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Så många par ligger i varje låda", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fem par i sushilådan, rullade som sushibitar.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Fyra par i pizzalådan, en låda som ser ut som en pizzakartong.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Tre par i donutlådan.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Två par i hamburgarlådan.", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-10-05T18:00:00+02:00",
+  "segment": ["SEG_uppvarmning_steg1"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "kraver-axel",
+  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Värdemejl i dagliga serien efter Evolves svar 16 (2026-09-29)."
+}

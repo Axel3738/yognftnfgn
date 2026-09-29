@@ -1,6 +1,6 @@
 {
   "id": "fd06-svarfar-ar-svarast",
-  "namn": "MAIL_20261007_FarsDag_GT_2_samtycke_problem_svarfar-ar-svarast_v1",
+  "namn": "MAIL_20261007_FarsDag_GT_2_uppvarmning_problem_svarfar-ar-svarast_v1",
   "memo": "Hypotes: svärfar är den klassiska \"känner honom minst\" personen på presentlistan, och just därför funkar en present som inte kräver kännedom om hans smak bättre än en vanlig pryl. Sushilådans överraskningsmoment har redan bevisats i K01 (+3 078 kr vinstbidrag, dubbeltitten, dna.md mönster 1). Ny mottagarvinkel för mejlserien, ingen egen data för just svärfar än.",
   "taggar": {
     "typ": "N",
@@ -16,9 +16,18 @@
     "kod": "GT"
   },
   "amnesrader": [
-    { "text": "Sushilådan funkar även om du knappt känner svärfar", "begar": "se att presenten inte kräver att man känner mottagarens smak" },
-    { "text": "Svärfar öppnar en sushilåda. Hittar strumpor.", "begar": "nyfikenhet på vad som egentligen ligger i lådan" },
-    { "text": "Svärfar tror det är sushi. Det är strumpor.", "begar": "se den konkreta överraskningen när lådan öppnas" }
+    {
+      "text": "Sushilådan funkar även om du knappt känner svärfar",
+      "begar": "se att presenten inte kräver att man känner mottagarens smak"
+    },
+    {
+      "text": "Svärfar öppnar en sushilåda. Hittar strumpor.",
+      "begar": "nyfikenhet på vad som egentligen ligger i lådan"
+    },
+    {
+      "text": "Svärfar tror det är sushi. Det är strumpor.",
+      "begar": "se den konkreta överraskningen när lådan öppnas"
+    }
   ],
   "forhandstext": "En sushibeställning för svärfar. Fast inte riktigt.",
   "block": [
@@ -27,26 +36,92 @@
       "rubrik": "Svärfar öppnar lådan. Tror det är sushi.",
       "text": "Hej {{fornamn}},\n\nSvärfar är ofta den på listan du känner sämst. Vad han faktiskt gillar är svårt att gissa.\n\nDen här lådan kräver ingen gissning. Den ser ut som sushi och är fem par strumpor.",
       "bild": "produkt:sushi-strumpor",
-      "knapp": { "text": "Se sushilådan", "lank": "produkt:sushi-strumpor" }
+      "knapp": {
+        "text": "Se sushilådan",
+        "lank": "produkt:sushi-strumpor"
+      }
     },
-    { "typ": "text", "rubrik": null, "text": "Lådan ser ut som en sushibeställning ända tills den öppnas." },
-    { "typ": "produkt", "handle": "sushi-strumpor", "text": "Fem par som inte kräver att du känner hans smak.", "knapp": "Till sushilådan" },
-    { "typ": "produktrad", "rubrik": "Om svärfar hellre vill ha en annan sort", "handles": ["pizza-strumpor", "hamburger-strumpor", "donut-strumpor"] },
-    { "typ": "fakta" }
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Lådan ser ut som en sushibeställning ända tills den öppnas."
+    },
+    {
+      "typ": "produkt",
+      "handle": "sushi-strumpor",
+      "text": "Fem par som inte kräver att du känner hans smak.",
+      "knapp": "Till sushilådan"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Om svärfar hellre vill ha en annan sort",
+      "handles": [
+        "pizza-strumpor",
+        "hamburger-strumpor",
+        "donut-strumpor"
+      ]
+    },
+    {
+      "typ": "fakta"
+    }
   ],
   "tretest": [
-    { "rad": "Sushilådan funkar även om du knappt känner svärfar", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Svärfar öppnar en sushilåda. Hittar strumpor.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Svärfar tror det är sushi. Det är strumpor.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "En sushibeställning för svärfar. Fast inte riktigt.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Svärfar öppnar lådan. Tror det är sushi.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Se sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Om svärfar hellre vill ha en annan sort", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Till sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+    {
+      "rad": "Sushilådan funkar även om du knappt känner svärfar",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Svärfar öppnar en sushilåda. Hittar strumpor.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Svärfar tror det är sushi. Det är strumpor.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "En sushibeställning för svärfar. Fast inte riktigt.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Svärfar öppnar lådan. Tror det är sushi.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Se sushilådan",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Om svärfar hellre vill ha en annan sort",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Till sushilådan",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    }
   ],
   "planerad": "2026-10-07T18:00:00+02:00",
-  "segment": ["SEG_samtycke"],
-  "exkludera": ["SEG_oengagerade_180d"],
+  "segment": [
+    "SEG_uppvarmning_steg1"
+  ],
+  "exkludera": [
+    "SEG_oengagerade_180d"
+  ],
   "status_plan": "kraver-axel",
-  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28)."
+  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28). Omgång 2 efter Evolves svar 16 (2026-09-29): publiken är de engagerade (öppnat eller klickat 30 d), inte hela listan."
 }

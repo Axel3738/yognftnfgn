@@ -97,6 +97,17 @@ test('produkt, produktrad, punkter, text och citat', () => {
   assert.equal(ut[11].text, '★★★★ "Jättefina"\nWide P., verifierad kund');
 });
 
+test('citat med valj: exakt de valda recensionerna i vald ordning, ett saknat citat stoppar paketet', () => {
+  const c = ctx();
+  const ut = blockTillSpoks({ block: [{ typ: 'citat', handle: 'sushi-strumpor', valj: ['tredje', 'UNDERBARA'] }] }, c);
+  assert.deepEqual(ut.map((b) => b.text), ['★★★★★ "tredje"\nTre, verifierad kund', '★★★★★ "Underbara strumpor"\nKent, verifierad kund']);
+  assert.equal(c.fel.length, 0);
+  const c2 = ctx();
+  const ut2 = blockTillSpoks({ block: [{ typ: 'citat', handle: 'sushi-strumpor', valj: ['Underbara', 'finns inte'] }] }, c2);
+  assert.equal(ut2.length, 1);
+  assert.ok(c2.fel.some((f) => f.includes('"finns inte"')), 'mejlet bygger på citatet, så det får inte tyst utgå');
+});
+
 test('citat utan recensioner utgår med varning, produkt utan Spoks-id ger fel', () => {
   const c = ctx();
   const ut = blockTillSpoks({ block: [{ typ: 'citat', handle: 'pizza-strumpor' }, { typ: 'produkt', handle: 'okand' }] }, c);

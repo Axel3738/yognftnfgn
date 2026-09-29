@@ -16,9 +16,18 @@
     "kod": "GT"
   },
   "amnesrader": [
-    { "text": "Från barnen: en låda som ser ut som sushi", "begar": "se att den här sushilådan är från barnen" },
-    { "text": "Barnen kan ge den här utan hjälp", "begar": "hitta en present barnen kan ge på egen hand" },
-    { "text": "Han skrattar. Barnen vet varför.", "begar": "se varför pappa skrattar när barnen ger presenten" }
+    {
+      "text": "Från barnen: en låda som ser ut som sushi",
+      "begar": "se att den här sushilådan är från barnen"
+    },
+    {
+      "text": "Barnen kan ge den här utan hjälp",
+      "begar": "hitta en present barnen kan ge på egen hand"
+    },
+    {
+      "text": "Han skrattar. Barnen vet varför.",
+      "begar": "se varför pappa skrattar när barnen ger presenten"
+    }
   ],
   "forhandstext": "En låda som ser ut som mat, vald av barnen.",
   "block": [
@@ -27,7 +36,10 @@
       "rubrik": "En present från barnen. Han skrattar när han öppnar den.",
       "text": "Hej {{fornamn}},\n\nBarnen har sällan en egen present att ge. Den här är en låda de kan lämna över själva. Den ser ut som sushi och får honom att skratta.",
       "bild": "produkt:sushi-strumpor",
-      "knapp": { "text": "Se lådan från barnen", "lank": "produkt:sushi-strumpor" }
+      "knapp": {
+        "text": "Se lådan från barnen",
+        "lank": "produkt:sushi-strumpor"
+      }
     },
     {
       "typ": "text",
@@ -43,23 +55,74 @@
     {
       "typ": "produktrad",
       "rubrik": "Andra sorter barnen kan ge i stället",
-      "handles": ["pizza-strumpor", "hamburger-strumpor", "donut-strumpor"]
+      "handles": [
+        "pizza-strumpor",
+        "hamburger-strumpor",
+        "donut-strumpor"
+      ]
     },
-    { "typ": "fakta" }
+    {
+      "typ": "fakta"
+    }
   ],
   "tretest": [
-    { "rad": "Från barnen: en låda som ser ut som sushi", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Barnen kan ge den här utan hjälp", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Han skrattar. Barnen vet varför.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "En låda som ser ut som mat, vald av barnen.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "En present från barnen. Han skrattar när han öppnar den.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Se lådan från barnen", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Andra sorter barnen kan ge i stället", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Till sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+    {
+      "rad": "Från barnen: en låda som ser ut som sushi",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Barnen kan ge den här utan hjälp",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Han skrattar. Barnen vet varför.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "En låda som ser ut som mat, vald av barnen.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "En present från barnen. Han skrattar när han öppnar den.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Se lådan från barnen",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Andra sorter barnen kan ge i stället",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Till sushilådan",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    }
   ],
   "planerad": "2026-10-01T18:00:00+02:00",
-  "segment": ["SEG_samtycke"],
-  "exkludera": ["SEG_oengagerade_180d"],
-  "status_plan": "kraver-axel",
-  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28)."
+  "segment": [
+    "SEG_samtycke"
+  ],
+  "exkludera": [
+    "SEG_oengagerade_180d"
+  ],
+  "status_plan": "parkerad",
+  "kraver_axel": "Publiken (segmentet ovan) och schemaläggningen görs i Spoks-appen, Axels klick. Del av den dagliga serien fram till fars dag (Axels order 2026-09-28).",
+  "parkerad": "2026-09-29: bänken efter Evolves svar 16 (vecka 1 tål tre säljmejl, inte sju). Schemaläggs inte; återanvänds mot jul med nya datum."
 }
