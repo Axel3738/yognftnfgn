@@ -74,8 +74,13 @@
    "basvaluta": "NOK",
    "lokala_valutor": false,
    "priser": "fasta",
-   "doman": null,
-   "doman_comment": "matstrumpor.no svarar NXDOMAIN 2026-09-27 (dns.google) — inte registrerad. Köps av Axel hos Loopia (där .se och .com ligger), kopplas i Settings → Domains, sedan `node matstrumpor/marknader/bygg.mjs --steg doman` (webPresenceCreate + marketUpdate webPresencesToAdd, receptet i factory/API-GRANSER.md). Tills dess: matstrumpor.se/nb.",
+   "doman": {
+    "host": "matstrumpor.no",
+    "standard": "nb",
+    "alternativa": [],
+    "comment": "Kopplad i Shopify av Axel 2026-09-29 (SSL på), bunden till Norge med `bygg.mjs --steg domaner`. Bara norska (inga alternativa språk) — det är B-versionen i A/B-testet (Axel 2026-09-29: 'en sid-version där vi får det att kännas väldigt norskt'). .se-närvaron ligger KVAR i marknaden: A-versionen är matstrumpor.se/nb?country=NO, och båda måste fungera för norska kunder samtidigt."
+   },
+   "doman_comment": "Närvaron skapas och binds av `node matstrumpor/marknader/bygg.mjs --steg domaner --skarpt` (webPresenceCreate + marketUpdate webPresencesToAdd, CaraShells recept i factory/API-GRANSER.md — men utan att ta bort .se).",
    "leveranstid": "5–10 arbetsdagar",
    "frakt": "fri",
    "annons": {
@@ -167,7 +172,24 @@
     "sushipinnar-i-akta-tra": 4.9
    },
    "namn_not": "Utökad 2026-09-27 från DK+FI till EU 27 (utom SE) + IS, LI, CH; språk da, fi, de, fr, nl, es, it, pl, pt. Axels order: \"hela Europa redo\".",
-   "beslut_priser": "Axel 2026-09-27: \"lite dyrare priser worldwide\", \"hellre för högt\" ⇒ fasta EUR-priser ~+20 % över SEK-nivån, charm-avrundade."
+   "beslut_priser": "Axel 2026-09-27: \"lite dyrare priser worldwide\", \"hellre för högt\" ⇒ fasta EUR-priser ~+20 % över SEK-nivån, charm-avrundade.",
+   "doman": {
+    "host": "matstrumpor.eu",
+    "standard": "en",
+    "alternativa": [
+     "da",
+     "fi",
+     "de",
+     "fr",
+     "nl",
+     "es",
+     "it",
+     "pl",
+     "pt-PT"
+    ],
+    "comment": "Kopplad av Axel 2026-09-29. Engelska i roten och samma språkmappar som på .se (/de, /fr … /pt), så en länk flyttas genom att bara byta domän. .se-närvaron ligger kvar i marknaden — de pausade annonserna länkar dit."
+   },
+   "doman_comment": "Närvaron skapas och binds av `node matstrumpor/marknader/bygg.mjs --steg domaner --skarpt` (webPresenceCreate + marketUpdate webPresencesToAdd, CaraShells recept i factory/API-GRANSER.md — men utan att ta bort .se)."
   },
   {
    "id": "EN",
@@ -200,7 +222,14 @@
    "leveranstid": "5–10 arbetsdagar",
    "leveranstid_comment": "Koncernens standardlöfte (CaraShell US fick 5–10 av Axel 2026-09-16). ⚠️ Inte mätt för Matstrumpor utanför Sverige — Axel bekräftar eller ändrar.",
    "frakt": "fri",
-   "beslut_priser": "FÖRSLAG — Axel 2026-09-27: '60 eller 70 dollar' för buy one get one, 'hellre för högt' ⇒ $69 (tidigare $59 = sushisock-priset)"
+   "beslut_priser": "FÖRSLAG — Axel 2026-09-27: '60 eller 70 dollar' för buy one get one, 'hellre för högt' ⇒ $69 (tidigare $59 = sushisock-priset)",
+   "doman": {
+    "host": "matstrumpor.com",
+    "standard": "en",
+    "alternativa": [],
+    "comment": "Kopplad av Axel 2026-09-29. Bara engelska, utan språkmapp (som carashell.com: /en/ finns inte på en domän med engelska som standard — länkar byggs utan /en/). .se-närvaron ligger kvar — WW-kampanjen (NO+DK+FI+US+GB+AU+CA+NZ) länkar till matstrumpor.se/en/ och når alla länder därifrån."
+   },
+   "doman_comment": "Närvaron skapas och binds av `node matstrumpor/marknader/bygg.mjs --steg domaner --skarpt` (webPresenceCreate + marketUpdate webPresencesToAdd, CaraShells recept i factory/API-GRANSER.md — men utan att ta bort .se)."
   }
  ],
  "frakt": {
@@ -322,10 +351,7 @@
   "mallar_comment": "custom_liquid-blocken i product.json (trust-raden 'Fri frakt i Sverige', leveransraden 'Beräknad leverans', storleksraden) och index.json (AI-bildmarkeringen) är inte translatable — de får sina grenar i själva JSON-strängen (temapatch.patchaMallJson)."
  },
  "domaner": {
-  "NO": "matstrumpor.no (köps)",
-  "EU": "matstrumpor.eu (köps)",
-  "EN": "matstrumpor.com (finns hos Loopia)",
-  "cowork": "matstrumpor/marknader/cowork/1-domaner.txt",
-  "efter": "webPresenceCreate + marketUpdate(webPresencesToAdd) per marknad, sedan kundvy per domän"
+  "comment": "Alla tre kopplade i Shopify (Settings → Domains) av Axel 2026-09-29 med cowork/1-domaner.txt; bundna till sin marknad med --steg domaner. Värdena står under varje marknads `doman`.",
+  "cowork": "matstrumpor/marknader/cowork/1-domaner.txt"
  }
 }

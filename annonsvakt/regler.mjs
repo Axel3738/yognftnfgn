@@ -11,10 +11,14 @@
 //               vid 3 000 och 6 000 — aldrig varje timme.
 //   hjärtslag — en rad om dagen som säger att vakten lever.
 //
-// Texterna är engelska (allt i Discord är på engelska, Axels order 2026-09-05)
-// och korta (Axels dyslexi, 2026-09-10: "simpla och lätta att läsa"). Namn
+// Varje fynd bär TVÅ texter: `text` på engelska för Discord (allt i Discord är
+// på engelska, Axels order 2026-09-05) och `sv` på svenska för Slack #urgent
+// (läsaren är Axel, samma regel som akut/text.mjs: kort, inga tankstreck).
+// Båda korta (Axels dyslexi, 2026-09-10: "simpla och lätta att läsa"). Namn
 // på konton, kampanjer och annonser står i `kod` — det är data, och
-// svenskdetektorn (tools/lib/engelska.mjs) räknar inte kodspann.
+// svenskdetektorn (tools/lib/engelska.mjs) räknar inte kodspann. Varje fynd
+// bär också `lank`: Ads Manager med objektet markerat, det Axel klickar på
+// (hans fråga 2026-09-29: "Kan du skicka en länk till annonsen?").
 
 export const KONTOSTATUS = Object.freeze({
   1: 'ACTIVE', 2: 'DISABLED', 3: 'UNSETTLED', 7: 'PENDING_RISK_REVIEW', 8: 'PENDING_SETTLEMENT',
@@ -37,6 +41,17 @@ const KONTOSTATUS_TEXT = Object.freeze({
   IN_GRACE_PERIOD: 'is IN GRACE PERIOD — a payment failed; fix it before Meta disables the account',
   PENDING_CLOSURE: 'is PENDING CLOSURE',
   CLOSED: 'is CLOSED',
+});
+
+/** Samma sak på svenska, till Slack. */
+const KONTOSTATUS_SV = Object.freeze({
+  DISABLED: 'är AVSTÄNGT av Meta, inget i det kan spendera',
+  UNSETTLED: 'är OBETALT, en faktura blockerar leveransen',
+  PENDING_RISK_REVIEW: 'granskas av Meta (riskgranskning), leveransen kan stanna',
+  PENDING_SETTLEMENT: 'väntar på en betalning',
+  IN_GRACE_PERIOD: 'har en misslyckad betalning, fixa den innan Meta stänger kontot',
+  PENDING_CLOSURE: 'håller på att stängas',
+  CLOSED: 'är STÄNGT',
 });
 
 /** Objekt som ska köra: status ACTIVE och kampanj + adset som levererar (eller har fel). */
@@ -67,16 +82,30 @@ export function roasUr(rad) {
 export const dagStockholm = (nu) => new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Stockholm' }).format(nu);
 export const timmeStockholm = (nu) => Number(new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Stockholm', hour: '2-digit', hourCycle: 'h23' }).format(nu));
 export const tidText = (nu) => new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Stockholm', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).format(nu).replace(',', '');
+/** "27 sep 16:44" — svensk tid, till Slack. */
+export const tidTextSv = (nu) => new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Stockholm', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }).format(nu).replace(/\./g, '').replace(/\s+/g, ' ').replace(' kl ', ' ').trim();
+/** Valutan som Axel skriver den: SEK → kr, annat oförändrat. */
+export const valutaSv = (v) => (String(v ?? 'SEK').toUpperCase() === 'SEK' ? 'kr' : String(v));
+/** 0.31 → "0,31". */
+export const decimalSv = (n, d = 2) => Number(n).toFixed(d).replace('.', ',');
+
+// ----------------------------------------------------------------- länkarna
+
+/** Ads Manager med objektet markerat — det Axel klickar på. Kontot är act_<id>. */
+export const lankKonto = (kontoId) => `https://adsmanager.facebook.com/adsmanager/manage/campaigns?act=${kontoId}`;
+export const lankKampanj = (kontoId, id) => `https://adsmanager.facebook.com/adsmanager/manage/campaigns?act=${kontoId}&selected_campaign_ids=${id}`;
+export const lankAdset = (kontoId, id) => `https://adsmanager.facebook.com/adsmanager/manage/adsets?act=${kontoId}&selected_adset_ids=${id}`;
+export const lankAnnons = (kontoId, id) => `https://adsmanager.facebook.com/adsmanager/manage/ads?act=${kontoId}&selected_ad_ids=${id}`;
+export const LANK_SYSTEMANVANDARE = 'https://business.facebook.com/settings/system-users';
 
 /** issues_info utan koderna i ignorera-listan. */
 export function riktigaFel(issues, ignorera = {}) {
   return (Array.isArray(issues) ? issues : []).filter((i) => i && !(String(i.error_code) in (ignorera ?? {})));
 }
 
-const felText = (i) => {
-  const s = String(i.error_summary ?? '').trim() || String(i.error_message ?? '').split(/[.:]/)[0].trim() || 'unknown issue';
-  return `${kod(s)} (code ${i.error_code ?? '?'})`;
-};
+const felSammanfattning = (i) => String(i.error_summary ?? '').trim() || String(i.error_message ?? '').split(/[.:]/)[0].trim() || 'unknown issue';
+const felText = (i) => `${kod(felSammanfattning(i))} (code ${i.error_code ?? '?'})`;
+const felTextSv = (i) => `${kod(felSammanfattning(i))} (kod ${i.error_code ?? '?'})`;
 
 // ----------------------------------------------------------------- kontona
 
@@ -93,6 +122,9 @@ export function bedomKonton({ konton = [], olasta = [], tokenFel = null } = {}, 
       nyckel: 'token:ogiltig', typ: 'token', niva: 'rod', slag: 'tillstand', konto: null,
       rubrik: 'Meta token not working',
       text: `The Meta token (META_ACCESS_TOKEN) no longer works: ${kod(tokenFel)}. Every ad routine is blind until it is renewed — Meta Business settings → System users → generate a new token and put it in Environments.`,
+      rubrikSv: 'Meta-token:en fungerar inte',
+      sv: `Meta-token:en (META_ACCESS_TOKEN) fungerar inte längre: ${kod(tokenFel)}. Alla annonsrutiner är blinda tills den byts: Meta Business-inställningar, Systemanvändare, skapa en ny token och lägg in den i Environments.`,
+      lank: LANK_SYSTEMANVANDARE,
     });
     return ut;
   }
@@ -101,10 +133,14 @@ export function bedomKonton({ konton = [], olasta = [], tokenFel = null } = {}, 
     if (Number(k.account_status) === 1) continue;
     const status = KONTOSTATUS[k.account_status] ?? `status ${k.account_status}`;
     const orsak = Number(k.disable_reason) ? ` Reason: ${DISABLE_REASON[k.disable_reason] ?? k.disable_reason}.` : '';
+    const orsakSv = Number(k.disable_reason) ? ` Metas skäl: ${DISABLE_REASON[k.disable_reason] ?? k.disable_reason}.` : '';
     ut.push({
       nyckel: `konto:${k.id}:status:${k.account_status}`, typ: 'konto', niva: 'rod', slag: 'tillstand', konto: kontoRef(k),
       rubrik: `Ad account ${kod(k.namn)} ${status}`,
       text: `Ad account ${kod(k.namn)} (${k.id}${var_(k.id)}) ${KONTOSTATUS_TEXT[status] ?? `has status ${status}`}.${orsak} Check Ads Manager → Account quality and Billing.`,
+      rubrikSv: `Annonskontot ${kod(k.namn)} ${status}`,
+      sv: `Annonskontot ${kod(k.namn)} (${k.id}${var_(k.id)}) ${KONTOSTATUS_SV[status] ?? `har status ${status}`}.${orsakSv} Kolla Kontokvalitet och Betalning i Ads Manager.`,
+      lank: lankKonto(k.id),
     });
   }
   for (const o of olasta) {
@@ -112,6 +148,9 @@ export function bedomKonton({ konton = [], olasta = [], tokenFel = null } = {}, 
       nyckel: `konto:${o.id}:oatkomlig`, typ: 'konto', niva: 'rod', slag: 'tillstand', konto: kontoRef(o),
       rubrik: `Ad account ${kod(o.namn ?? o.id)} unreachable`,
       text: `Ad account ${kod(o.namn ?? o.id)} (${o.id}${var_(o.id)}) can no longer be read by the token: ${kod(o.fel)}. Either the account was disabled/removed or the system user lost its permission — check Business settings → Ad accounts.`,
+      rubrikSv: `Annonskontot ${kod(o.namn ?? o.id)} går inte att läsa`,
+      sv: `Annonskontot ${kod(o.namn ?? o.id)} (${o.id}${var_(o.id)}) går inte längre att läsa med token:en: ${kod(o.fel)}. Antingen är kontot avstängt eller borttaget, eller så har systemanvändaren tappat rättigheten. Kolla Business-inställningar, Annonskonton.`,
+      lank: lankKonto(o.id),
     });
   }
   return ut;
@@ -119,10 +158,14 @@ export function bedomKonton({ konton = [], olasta = [], tokenFel = null } = {}, 
 
 /** Ett konto vars annonser inte gick att läsa den här timmen (tillfälligt eller inte). 🟡, påminns dagligen. */
 export function lasfel(konto, fel) {
+  const felrad = kod(String(fel).split('\n')[0].slice(0, 200));
   return {
     nyckel: `konto:${konto.id}:lasfel`, typ: 'konto', niva: 'gul', slag: 'tillstand', konto: kontoRef(konto),
     rubrik: `Could not read ${kod(konto.namn)}`,
-    text: `Could not read the ads in ${kod(konto.namn)} (${konto.id}) this hour: ${kod(String(fel).split('\n')[0].slice(0, 200))}. The account itself answers, so this is the token's permissions or Meta's rate limit — if it stays, check Business settings.`,
+    text: `Could not read the ads in ${kod(konto.namn)} (${konto.id}) this hour: ${felrad}. The account itself answers, so this is the token's permissions or Meta's rate limit — if it stays, check Business settings.`,
+    rubrikSv: `Kunde inte läsa ${kod(konto.namn)}`,
+    sv: `Annonserna i ${kod(konto.namn)} (${konto.id}) gick inte att läsa den här timmen: ${felrad}. Kontot självt svarar, så det är token:ens rättigheter eller Metas rate limit.`,
+    lank: lankKonto(konto.id),
   };
 }
 
@@ -143,10 +186,15 @@ export function bedomObjekt({ konto, annonser = [], kampanjer = [], adsets = [] 
   const ut = [];
   const kampanjnamn = new Map(kampanjer.map((k) => [String(k.id), k.name]));
   const iKonto = ` (account ${kod(konto?.namn)})`;
+  const iKontoSv = ` (konto ${kod(konto?.namn)})`;
+  const kid = konto?.id;
 
   for (const a of annonser) {
     if (!menadAttKora(a)) continue;
     const var_ = `Ad ${kod(a.name)} in ${kod(a.campaign?.name)}`;
+    const varSv = `Annonsen ${kod(a.name)} i ${kod(a.campaign?.name)}`;
+    const lank = lankAnnons(kid, a.id);
+    const forhandsvisning = a.preview_shareable_link || null;
     if (a.effective_status === 'DISAPPROVED') {
       const skal = [...Object.keys(a.ad_review_feedback?.global ?? {}), ...Object.values(a.ad_review_feedback?.placement_specific ?? {}).flatMap((p) => Object.keys(p ?? {}))];
       const unika = [...new Set(skal)];
@@ -154,12 +202,18 @@ export function bedomObjekt({ konto, annonser = [], kampanjer = [], adsets = [] 
         nyckel: `annons:${a.id}:DISAPPROVED`, typ: 'annons', niva: 'rod', slag: 'tillstand', konto: kontoRef(konto),
         rubrik: `Ad ${kod(a.name)} DISAPPROVED`,
         text: `${var_} was DISAPPROVED by Meta${unika.length ? ` — ${unika.map(kod).join(', ')}` : ''}. It is not delivering. Fix or appeal it in Ads Manager${iKonto}.`,
+        rubrikSv: `Annonsen ${kod(a.name)} AVVISAD`,
+        sv: `${varSv} är AVVISAD av Meta${unika.length ? ` (${unika.map(kod).join(', ')})` : ''}. Den visas inte. Rätta eller överklaga den i Ads Manager${iKontoSv}.`,
+        lank, forhandsvisning,
       });
     } else if (a.effective_status === 'PENDING_BILLING_INFO') {
       ut.push({
         nyckel: `annons:${a.id}:PENDING_BILLING_INFO`, typ: 'annons', niva: 'rod', slag: 'tillstand', konto: kontoRef(konto),
         rubrik: `Ad ${kod(a.name)} blocked: billing`,
         text: `${var_} is blocked: PENDING BILLING INFO — the account has no valid payment method${iKonto}.`,
+        rubrikSv: `Annonsen ${kod(a.name)} stoppad: betalning`,
+        sv: `${varSv} är stoppad: kontot ${kod(konto?.namn)} saknar en giltig betalmetod.`,
+        lank, forhandsvisning,
       });
     } else if (a.effective_status === 'WITH_ISSUES') {
       const fel = riktigaFel(a.issues_info, ignorera);
@@ -168,6 +222,9 @@ export function bedomObjekt({ konto, annonser = [], kampanjer = [], adsets = [] 
         nyckel: `annons:${a.id}:WITH_ISSUES:${fel.map((f) => f.error_code).join('+')}`, typ: 'annons', niva: 'rod', slag: 'tillstand', konto: kontoRef(konto),
         rubrik: `Ad ${kod(a.name)} has an issue`,
         text: `${var_} is not delivering: ${fel.map(felText).join('; ')}${iKonto}.`,
+        rubrikSv: `Annonsen ${kod(a.name)} har ett fel`,
+        sv: `${varSv} levererar inte: ${fel.map(felTextSv).join('; ')}${iKontoSv}.`,
+        lank, forhandsvisning,
       });
     } else if (a.effective_status === 'PENDING_REVIEW') {
       const sedan = Date.parse(a.updated_time);
@@ -177,6 +234,9 @@ export function bedomObjekt({ konto, annonser = [], kampanjer = [], adsets = [] 
         nyckel: `granskning:${a.id}`, typ: 'granskning', niva: 'gul', slag: 'tillstand', konto: kontoRef(konto),
         rubrik: `Ad ${kod(a.name)} stuck in review`,
         text: `${var_} has been waiting for Meta's review for ${timmar} hours${iKonto}. Usually it clears by itself; if not, ask Meta support.`,
+        rubrikSv: `Annonsen ${kod(a.name)} fast i granskning`,
+        sv: `${varSv} har väntat på Metas granskning i ${timmar} timmar${iKontoSv}. Oftast löser det sig självt, annars Metas support.`,
+        lank, forhandsvisning,
       });
     }
   }
@@ -189,6 +249,9 @@ export function bedomObjekt({ konto, annonser = [], kampanjer = [], adsets = [] 
       nyckel: `kampanj:${k.id}:issues:${fel.map((f) => f.error_code).join('+')}`, typ: 'kampanj', niva: 'rod', slag: 'tillstand', konto: kontoRef(konto),
       rubrik: `Campaign ${kod(k.name)} has an issue`,
       text: `Campaign ${kod(k.name)} has an issue: ${fel.map(felText).join('; ')}${iKonto}.`,
+      rubrikSv: `Kampanjen ${kod(k.name)} har ett fel`,
+      sv: `Kampanjen ${kod(k.name)} har ett fel: ${fel.map(felTextSv).join('; ')}${iKontoSv}.`,
+      lank: lankKampanj(kid, k.id),
     });
   }
 
@@ -201,6 +264,9 @@ export function bedomObjekt({ konto, annonser = [], kampanjer = [], adsets = [] 
       nyckel: `adset:${s.id}:issues:${fel.map((f) => f.error_code).join('+')}`, typ: 'adset', niva: 'rod', slag: 'tillstand', konto: kontoRef(konto),
       rubrik: `Ad set ${kod(s.name)} has an issue`,
       text: `Ad set ${kod(s.name)} in ${kod(kamp)} has an issue: ${fel.map(felText).join('; ')}${iKonto}.`,
+      rubrikSv: `Annonsgruppen ${kod(s.name)} har ett fel`,
+      sv: `Annonsgruppen ${kod(s.name)} i ${kod(kamp)} har ett fel: ${fel.map(felTextSv).join('; ')}${iKontoSv}.`,
+      lank: lankAdset(kid, s.id),
     });
   }
   return ut;
@@ -236,11 +302,11 @@ export function skapaBreakEvenFor({ produkter = [], matstrumpor = null, standard
   }
   return (rad, konto) => {
     const urNamn = breakEvenUrNamn(rad?.kampanjNamn);
-    if (urNamn) return { varde: urNamn, kalla: 'from the campaign name' };
+    if (urNamn) return { varde: urNamn, kalla: 'from the campaign name', kallaSv: 'ur kampanjnamnet' };
     const prefix = normPrefix(String(rad?.adNamn ?? '').split('_')[0]);
-    if (prefix && perPrefix.has(prefix)) return { varde: perPrefix.get(prefix), kalla: 'from products.json' };
-    if (ms && String(konto?.id) === ms.kontoId) return { varde: ms.varde, kalla: 'from matstrumpor/konfig.json' };
-    return { varde: Number(standard) || 1.6, kalla: 'default break-even' };
+    if (prefix && perPrefix.has(prefix)) return { varde: perPrefix.get(prefix), kalla: 'from products.json', kallaSv: 'ur products.json' };
+    if (ms && String(konto?.id) === ms.kontoId) return { varde: ms.varde, kalla: 'from matstrumpor/konfig.json', kallaSv: 'ur matstrumpor/konfig.json' };
+    return { varde: Number(standard) || 1.6, kalla: 'default break-even', kallaSv: 'standardvärdet' };
   };
 }
 
@@ -277,24 +343,43 @@ export function bedomSpend({ konto, idag = [], kampanjer = [], adsets = [] }, { 
   const budgetAdset = new Map(adsets.map((s) => [String(s.id), { namn: s.name, budget: Number(s.daily_budget) / 100 }]));
   const ut = [];
 
+  const vsv = valutaSv(valuta);
+  const iKontoSv = konto?.namn ? ` (konto ${kod(konto.namn)})` : '';
+
   for (const r of rader) {
     if (r.spend < min) continue;
     const niva = Math.floor(Math.log2(r.spend / min));
     const procent = total > 0 ? Math.round((r.spend / total) * 100) : 0;
     const b = budgetKampanj.get(r.kampanjId)?.budget > 0 ? budgetKampanj.get(r.kampanjId).budget : budgetAdset.get(r.adsetId)?.budget > 0 ? budgetAdset.get(r.adsetId).budget : null;
     const budgetText = b ? `, daily budget ${heltal(b)} ${valuta}` : '';
+    const budgetSv = b ? `, dagsbudget ${heltal(b)} ${vsv}` : '';
     const var_ = `${kod(r.adNamn)} in ${kod(r.kampanjNamn)}${budgetText}`;
-    const bas = { nyckel: `spend:${r.adId}:${datum}:${niva}`, typ: 'spend', niva: 'rod', slag: 'handelse', konto: kontoRef(konto), rubrik: `Ad ${kod(r.adNamn)} spending badly`, data: { spend: r.spend, kop: r.kop, roas: r.roas, andel: procent, niva } };
+    const varSv = `${kod(r.adNamn)} i ${kod(r.kampanjNamn)}${budgetSv}`;
+    const andelSv = `${procent} % av allt ${kod(konto?.namn)} spenderat i dag.`;
+    const bas = {
+      nyckel: `spend:${r.adId}:${datum}:${niva}`, typ: 'spend', niva: 'rod', slag: 'handelse', konto: kontoRef(konto),
+      rubrik: `Ad ${kod(r.adNamn)} spending badly`, rubrikSv: `Annonsen ${kod(r.adNamn)} drar iväg`,
+      lank: lankAnnons(konto?.id, r.adId), data: { spend: r.spend, kop: r.kop, roas: r.roas, andel: procent, niva },
+    };
     if (r.kop === 0) {
-      ut.push({ ...bas, text: `${var_}: ${heltal(r.spend)} ${valuta} spent today, 0 purchases — ${procent} % of everything ${kod(konto?.namn)} spent today. Open it in Ads Manager and decide (budget, placements or off).` });
+      ut.push({
+        ...bas,
+        text: `${var_}: ${heltal(r.spend)} ${valuta} spent today, 0 purchases — ${procent} % of everything ${kod(konto?.namn)} spent today. Open it in Ads Manager and decide (budget, placements or off).`,
+        sv: `${varSv}: ${heltal(r.spend)} ${vsv} i dag, 0 köp. ${andelSv} Öppna den i Ads Manager och bestäm: budget, placeringar eller av.`,
+      });
       continue;
     }
     const be = breakEvenFor(r, konto);
     if (r.spend >= 2 * min && r.roas !== null && r.roas < be.varde * andel) {
-      ut.push({ ...bas, text: `${var_}: ${heltal(r.spend)} ${valuta} spent today for ${r.kop} purchase${r.kop === 1 ? '' : 's'} — ROAS ${r.roas.toFixed(2)} against break-even ${be.varde.toFixed(2)} (${be.kalla}). ${procent} % of everything ${kod(konto?.namn)} spent today. Open it in Ads Manager and decide.` });
+      ut.push({
+        ...bas,
+        text: `${var_}: ${heltal(r.spend)} ${valuta} spent today for ${r.kop} purchase${r.kop === 1 ? '' : 's'} — ROAS ${r.roas.toFixed(2)} against break-even ${be.varde.toFixed(2)} (${be.kalla}). ${procent} % of everything ${kod(konto?.namn)} spent today. Open it in Ads Manager and decide.`,
+        sv: `${varSv}: ${heltal(r.spend)} ${vsv} i dag för ${r.kop} köp, ROAS ${decimalSv(r.roas)} mot break-even ${decimalSv(be.varde)} (${be.kallaSv ?? be.kalla}). ${andelSv} Öppna den i Ads Manager och bestäm.`,
+      });
     }
   }
 
+  const overSv = (vad, namn, spend, budget) => `${vad} ${kod(namn)} har spenderat ${heltal(spend)} ${vsv} i dag mot dagsbudgeten ${heltal(budget)} ${vsv} (${decimalSv(spend / budget, 1)} gånger). Meta håller sig normalt inom +75 %. Ändrades budgeten i dag?${iKontoSv}`;
   for (const [id, { namn, budget }] of budgetKampanj) {
     const spend = perKampanj.get(id) ?? 0;
     if (!(budget > 0) || spend < faktor * budget) continue;
@@ -302,6 +387,7 @@ export function bedomSpend({ konto, idag = [], kampanjer = [], adsets = [] }, { 
       nyckel: `overspend:kampanj:${id}:${datum}`, typ: 'overspend', niva: 'gul', slag: 'handelse', konto: kontoRef(konto),
       rubrik: `Campaign ${kod(namn)} over budget`,
       text: `Campaign ${kod(namn)} has spent ${heltal(spend)} ${valuta} today against a daily budget of ${heltal(budget)} ${valuta} (${(spend / budget).toFixed(1)}×). Meta normally stays within +75 % — was the budget changed today?${konto?.namn ? ` (account ${kod(konto.namn)})` : ''}`,
+      rubrikSv: `Kampanjen ${kod(namn)} över budget`, sv: overSv('Kampanjen', namn, spend, budget), lank: lankKampanj(konto?.id, id),
     });
   }
   for (const [id, { namn, budget }] of budgetAdset) {
@@ -311,6 +397,7 @@ export function bedomSpend({ konto, idag = [], kampanjer = [], adsets = [] }, { 
       nyckel: `overspend:adset:${id}:${datum}`, typ: 'overspend', niva: 'gul', slag: 'handelse', konto: kontoRef(konto),
       rubrik: `Ad set ${kod(namn)} over budget`,
       text: `Ad set ${kod(namn)} has spent ${heltal(spend)} ${valuta} today against a daily budget of ${heltal(budget)} ${valuta} (${(spend / budget).toFixed(1)}×). Meta normally stays within +75 % — was the budget changed today?${konto?.namn ? ` (account ${kod(konto.namn)})` : ''}`,
+      rubrikSv: `Annonsgruppen ${kod(namn)} över budget`, sv: overSv('Annonsgruppen', namn, spend, budget), lank: lankAdset(konto?.id, id),
     });
   }
   return ut;
@@ -349,14 +436,16 @@ export function sammanfoga({ problem = [], minne, nu = new Date(), konfig, lasta
     nuKeys.add(p.nyckel);
     const o = oppna[p.nyckel];
     if (!o) {
-      oppna[p.nyckel] = { typ: p.typ, niva: p.niva, rubrik: p.rubrik, konto: p.konto?.id ?? null, forst: nuIso, larmat: nuIso };
+      oppna[p.nyckel] = { typ: p.typ, niva: p.niva, rubrik: p.rubrik, rubrikSv: p.rubrikSv ?? null, konto: p.konto?.id ?? null, forst: nuIso, larmat: nuIso };
       nya.push(p);
       continue;
     }
+    if (!o.rubrikSv && p.rubrikSv) o.rubrikSv = p.rubrikSv; // minnen från före svenskan får rubriken i efterhand
     const timmar = Number(paminn[p.typ] ?? 168);
     if (nu.getTime() - Date.parse(o.larmat) >= timmar * TIMME) {
       o.larmat = nuIso;
       o.rubrik = p.rubrik;
+      o.rubrikSv = p.rubrikSv ?? o.rubrikSv ?? null;
       paminnelser.push({ ...p, forst: o.forst });
     }
   }
@@ -379,6 +468,11 @@ export function sammanfoga({ problem = [], minne, nu = new Date(), konfig, lasta
 const nummer = (rader) => rader.map((r, i) => `${i + 1}. ${r}`);
 const punkter = (rader) => rader.map((r) => `• ${r}`);
 const sedanText = (iso) => { const d = Date.parse(iso); return Number.isFinite(d) ? tidText(new Date(d)) : '?'; };
+const sedanTextSv = (iso) => { const d = Date.parse(iso); return Number.isFinite(d) ? tidTextSv(new Date(d)) : '?'; };
+
+/** Länkarna på ett fynd i Discord: maskerade, i <> så Discord inte ritar förhandsvisningar. */
+const lankDiscord = (p) => [p.lank ? `[Ads Manager](<${p.lank}>)` : null, p.forhandsvisning ? `[preview](<${p.forhandsvisning}>)` : null].filter(Boolean).join(' · ');
+const medLank = (p, s) => (lankDiscord(p) ? `${s} ${lankDiscord(p)}` : s);
 
 /**
  * Discord-texten. null när det inte finns något att säga. Axel pingas bara
@@ -398,18 +492,18 @@ export function formulera({ nya = [], paminnelser = [], handelser = [], losta = 
   if (roda.length) {
     delar.push(`🔴 **AD ALERT — ${tid}**`);
     if (ping) { delar.push(ping); pingas = true; }
-    delar.push(...nummer(roda.map((p) => p.text)));
+    delar.push(...nummer(roda.map((p) => medLank(p, p.text))));
   }
   if (gula.length) {
     if (delar.length) delar.push('');
     delar.push(`🟡 **Warnings — ${tid}**`);
-    delar.push(...punkter(gula.map((p) => p.text)));
+    delar.push(...punkter(gula.map((p) => medLank(p, p.text))));
   }
   if (paminnelser.length) {
     if (delar.length) delar.push('');
     delar.push(`⏰ **Still open** (reminder${rodaPaminnelser.length && !pingas && ping ? `, ${ping}` : ''})`);
     if (rodaPaminnelser.length) pingas = true;
-    delar.push(...punkter(paminnelser.map((p) => `${p.text} Open since ${sedanText(p.forst)}.`)));
+    delar.push(...punkter(paminnelser.map((p) => medLank(p, `${p.text} Open since ${sedanText(p.forst)}.`))));
   }
   if (losta.length) {
     if (delar.length) delar.push('');
@@ -423,6 +517,47 @@ export function formulera({ nya = [], paminnelser = [], handelser = [], losta = 
   }
   if (!delar.length) return null;
   return { text: delar.join('\n'), mentions: pingas ? axel : [] };
+}
+
+/**
+ * Slack-texten till #urgent: svenska, BARA det röda — nya 🔴, 🔴 som påminns
+ * och ✅ när ett 🔴 tillstånd är borta. 🟡 och 💓 stannar i Discord: #urgent
+ * är kanalen Axel faktiskt läser (hans ord 2026-09-27: "Discorden vägrar jag
+ * kolla"), och den ska bara bära det han måste agera på. null när inget
+ * rött hänt. Två renderingar av samma text: `text` (Markdown, det
+ * Slack-connectorn tar) och `mrkdwn` (Slacks eget, det webhook/bot tar).
+ * @returns {{ text: string, mrkdwn: string } | null}
+ */
+export function formuleraSlack({ nya = [], paminnelser = [], handelser = [], losta = [], nu = new Date() } = {}) {
+  const roda = [...nya, ...handelser].filter((p) => p.niva === 'rod');
+  const rodaPaminnelser = paminnelser.filter((p) => p.niva === 'rod');
+  const rodaLosta = losta.filter((l) => l.niva === 'rod');
+  if (!roda.length && !rodaPaminnelser.length && !rodaLosta.length) return null;
+  const tid = tidTextSv(nu);
+  const bygg = (fet, lank) => {
+    const lankar = (p) => [p.lank ? lank('Öppna i Ads Manager', p.lank) : null, p.forhandsvisning ? lank('Se annonsen', p.forhandsvisning) : null].filter(Boolean).join(' · ');
+    const rad = (p, s) => (lankar(p) ? `${s} ${lankar(p)}` : s);
+    const ut = [];
+    if (roda.length) {
+      ut.push(fet(`🔴 ANNONSLARM · ${tid}`));
+      roda.forEach((p, i) => ut.push(`${i + 1}. ${rad(p, p.sv ?? p.text)}`));
+    }
+    if (rodaPaminnelser.length) {
+      if (ut.length) ut.push('');
+      ut.push(fet(`⏰ Står kvar · ${tid}`));
+      for (const p of rodaPaminnelser) ut.push(`• ${rad(p, `${p.sv ?? p.text} Öppet sedan ${sedanTextSv(p.forst)}.`)}`);
+    }
+    if (rodaLosta.length) {
+      if (ut.length) ut.push('');
+      ut.push(fet(`✅ Löst · ${tid}`));
+      for (const l of rodaLosta) ut.push(`• ${l.rubrikSv ?? l.rubrik ?? l.nyckel}: borta ur Meta, inget mer att göra.`);
+    }
+    return ut.join('\n').replace(/—|–/g, '-');
+  };
+  return {
+    text: bygg((s) => `**${s}**`, (t, u) => `[${t}](${u})`),
+    mrkdwn: bygg((s) => `*${s}*`, (t, u) => `<${u}|${t}>`),
+  };
 }
 
 /** Discord tar 2 000 tecken per meddelande — dela på radgränser. */

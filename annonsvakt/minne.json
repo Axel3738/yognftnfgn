@@ -1,5 +1,5 @@
 {
- "uppdaterad": "2026-09-29T05:45:41.123Z",
+ "uppdaterad": "2026-09-29T08:44:59.961Z",
  "konton": {
   "1867947880635861": {
    "namn": "MagiBorsten",
@@ -44,7 +44,8 @@
    "rubrik": "Ad `Beltgrinder_REV_2_1` DISAPPROVED",
    "konto": "1867947880635861",
    "forst": "2026-09-27T14:10:56.188Z",
-   "larmat": "2026-09-27T14:10:56.188Z"
+   "larmat": "2026-09-27T14:10:56.188Z",
+   "rubrikSv": "Annonsen `Beltgrinder_REV_2_1` AVVISAD"
   }
  },
  "handelser": [

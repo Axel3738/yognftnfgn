@@ -1,0 +1,23 @@
+Uppdrag i Cowork: bygg en Incoming Webhook i Slack åt Annonsvakten och Akutlarmet, så att rutinerna på claude.ai kan posta i #urgent utan connector.
+
+Bakgrund (läs innan du klickar): Slack-workspacen heter Stonebite. Kanalen #urgent (id C0C4MTQNMT7) är PRIVAT och Axel är enda medlemmen — den ska förbli privat, lägg aldrig in någon annan. Rutinerna kör på claude.ai och kan inte använda Slack-connectorn (mätt 2026-09-29), så de behöver en webhook-adress i sin miljö. Du bygger webhooken; själva adressen (hemligheten) klistrar Axel in själv — du skriver ALDRIG in nycklar eller lösenord någonstans, och du klistrar aldrig in adressen i en chatt, ett mejl eller ett dokument.
+
+Rör ingenting annat i Slack: inga andra appar, inga kanalinställningar, inga medlemmar, inga meddelanden.
+
+Gör så här, i ordning:
+
+1. Öppna https://api.slack.com/apps i webbläsaren där Axel är inloggad i Slack (workspace Stonebite). Är han inte inloggad: stanna och be honom logga in.
+
+2. Klicka "Create New App" → "From scratch". App Name: Vakterna. Välj workspace: Stonebite. Klicka "Create App".
+
+3. I appens meny till vänster: "Incoming Webhooks". Slå på reglaget "Activate Incoming Webhooks" (On).
+
+4. Längst ner på samma sida: "Add New Webhook to Workspace". Välj kanalen #urgent i listan (den syns eftersom Axel är medlem i den privata kanalen). Klicka "Allow".
+
+5. Nu står en Webhook URL på sidan (börjar med https://hooks.slack.com/services/). Kopiera INTE adressen någonstans. Säg till Axel: "Webhooken är klar. Kopiera adressen under Incoming Webhooks och klistra in den som SLACK_WEBHOOK_URL i claude.ai → Code → Environments → miljön som rutinerna kör i (env_018aG5VVb69sSagge8CfgghK)."
+
+6. Kontroll utan att posta: läs att sidan visar exakt EN webhook, kanal #urgent. Ta en skärmdump av sidan med adressen dold (skrolla så att adressen inte syns) och visa Axel.
+
+Stanna och fråga om något ser annorlunda ut än beskrivet (annan knapptext, en app som redan heter Vakterna, kanalen syns inte i listan). Gissa aldrig.
+
+När Axel lagt in variabeln postar Annonsvakten (varje timme :44) det röda på svenska i #urgent av sig själv, och Akutlarmet (:28) slutar dubbelrapportera avstängda konton och pengar som brinner. Ingen ny rutin, inget kommando — nyckeln räcker.

@@ -65,6 +65,7 @@ Plockas ett item: märk raden `[använd i batch #N]` i stället för att radera 
 | Koncept | Varför just detta | Källa | Status |
 |---|---|---|---|
 | **OB "Fukten under överdraget" med distansprodukten** — kundens egen invändning som hook, sedan distansen som ger luftspalt | Fuktinvändningen fortsätter i tre länder, och Axel har nu bekräftat att kunderna har rätt (produktfakta 2026-09-27). En kund skriver att hon fortfarande väntar på svar om väven är diffusionstät. Ingen annons som lovar torrt tak före distansen. | kommentarer på CaraShellRoof_PD_2_H1, PD_2_1 + Bäverbutikens Takoverdrag_*, 9 belägg, 28 sep, `kalla=voc`, se `kommentarer/leads.md` | **väntar** — distansprodukten |
+| **Kundens egen distans som hook** — "Legg isopor kasser … med bunnen opp og trekk oppe på disse" (2 likes), sedan distansprodukten | En norsk kund löser fuktinvändningen själv med frigolitlådor under duken och öppna ändar för luft. Kundens eget trick gör fuktfrågan till en lösning i stället för en invändning. | kommentar 122134881411209535_1101966402765375 på Takovertrekk_NO_SP_4_H1 + 6 fuktbelägg, 29 sep, `kalla=voc`, se `kommentarer/leads.md` | **väntar** — distansprodukten |
 
 ⚠️ De fem ursprungliga koncepten är alla plockade (batch #2). De två som briefades
 som video och aldrig blev gjorda — **#4 "En person, en minut"** och **#5

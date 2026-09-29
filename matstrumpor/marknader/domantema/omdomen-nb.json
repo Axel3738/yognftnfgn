@@ -1,0 +1,97 @@
+{
+ "_om": "De riktiga Judge.me-recensionerna på sushi-strumpor (reviews_for_widget, hämtade 2026-09-29, alla elva i Judge.me:s ordning), troget översatta till norska för B-sidan matstrumpor.no: sonnet översatte, en infödd skeptisk granskare rättade sju ('kul' = coolt på norska → 'morsom'/'artig', 'verdsatt' → 'godt mottatt'/'falt i smak', 'siden' → 'fordi'). Kritiken står kvar (treorna, 'Lang leveringstid'). `node matstrumpor/marknader/domantema.mjs --omdomen --skarpt` skriver dem i produktens metafält matstrumpor.omdomen_nb. Nya recensioner i Judge.me kommer INTE hit av sig själva — lägg till dem här (översatta och granskade) och kör om.",
+ "handle": "sushi-strumpor",
+ "kalla": "Judge.me reviews_for_widget 2026-09-29, översatt sv→nb och granskad",
+ "snitt_judgeme": 4.36,
+ "antal_judgeme": 11,
+ "rader": [
+  {
+   "stjarnor": 5,
+   "namn": "Anonym",
+   "verifierad": true,
+   "datum": "2026-09-28",
+   "sv": "Strumppaketen var så roliga att ge barn och barnbarnen i present! Och vad jag hört efteråt så var det bra kvalitet också!",
+   "nb": "Sokkepakkene var så morsomme å gi i gave til barn og barnebarn! Og etterpå har jeg hørt at det var bra kvalitet også!"
+  },
+  {
+   "stjarnor": 3,
+   "namn": "Ylva",
+   "verifierad": true,
+   "datum": "2026-09-28",
+   "sv": "Uppskattades inte så mycket av sonen. Inget fel på kvaliten.",
+   "nb": "Ble ikke satt så stor pris på av sønnen. Ikke noe galt med kvaliteten."
+  },
+  {
+   "stjarnor": 4,
+   "namn": "Ovessonmaria",
+   "verifierad": true,
+   "datum": "2026-09-28",
+   "sv": "Mycket uppskattad julklapp till sushiälskande dotter!",
+   "nb": "Veldig godt mottatt julegave til sushielskende datter!"
+  },
+  {
+   "stjarnor": 5,
+   "namn": "Anonym",
+   "verifierad": true,
+   "datum": "2026-09-25",
+   "sv": "Jätte sköna strumpor",
+   "nb": "Kjempedeilige sokker"
+  },
+  {
+   "stjarnor": 5,
+   "namn": "Kent",
+   "verifierad": true,
+   "datum": "2026-09-16",
+   "sv": "Underbara strumpor, mottagaren vart så glad.",
+   "nb": "Herlige sokker, mottakeren ble så glad."
+  },
+  {
+   "stjarnor": 5,
+   "namn": "Wide Pia",
+   "verifierad": true,
+   "datum": "2026-04-09",
+   "sv": "Jättefina i rolig förpackning! Snabb leverans",
+   "nb": "Kjempefine i morsom innpakning! Rask levering"
+  },
+  {
+   "stjarnor": 3,
+   "namn": "Niklas",
+   "verifierad": true,
+   "datum": "2026-01-22",
+   "sv": "Kul förpackning, vet inte ännu om kvalitet på strumpor",
+   "nb": "Morsom innpakning, vet ikke noe om kvaliteten på sokkene ennå"
+  },
+  {
+   "stjarnor": 5,
+   "namn": "Jonas",
+   "verifierad": true,
+   "datum": "2026-01-07",
+   "sv": "Uppskattat och rolig present",
+   "nb": "Morsom gave som falt i smak"
+  },
+  {
+   "stjarnor": 4,
+   "namn": "Gittan",
+   "verifierad": true,
+   "datum": "2026-01-02",
+   "sv": "Ser helt fantastiskt ut. Ej öppnat då de är en gåva.",
+   "nb": "Ser helt fantastisk ut. Ikke åpnet fordi det er en gave."
+  },
+  {
+   "stjarnor": 4,
+   "namn": "Fredrik",
+   "verifierad": true,
+   "datum": "2026-01-02",
+   "sv": "Lång leveranstid men kul present/produkt till en sushi-älskare.",
+   "nb": "Lang leveringstid, men artig gave/produkt til en sushielsker."
+  },
+  {
+   "stjarnor": 5,
+   "namn": "Annika",
+   "verifierad": true,
+   "datum": "2025-12-29",
+   "sv": "Jättefina!!!",
+   "nb": "Kjempefine!!!"
+  }
+ ]
+}

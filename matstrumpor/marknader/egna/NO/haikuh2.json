@@ -10,7 +10,7 @@
    "a": 4.04,
    "b": 5.54,
    "sv": "Ett: de är helt enkelt unika.",
-   "text": "Én: de er rett og slett unike."
+   "text": "Én: De er rett og slett unike."
   },
   {
    "a": 5.72,
@@ -40,7 +40,7 @@
    "a": 15.56,
    "b": 17.74,
    "sv": "Två: värdet för pengarna är helt absurt.",
-   "text": "To: du får helt absurd mye for pengene."
+   "text": "To: Du får helt absurd mye for pengene."
   },
   {
    "a": 17.94,
@@ -64,7 +64,7 @@
    "a": 26.14,
    "b": 28.28,
    "sv": "Tre: du gör mottagaren väldigt glad.",
-   "text": "Tre: du gjør mottakeren kjempeglad."
+   "text": "Tre: Du gjør mottakeren kjempeglad."
   },
   {
    "a": 28.28,
@@ -100,7 +100,7 @@
    "a": 40.52,
    "b": 42.16,
    "sv": "Alla frågar: var köpte du det här?",
-   "text": "Alle spør: hvor kjøpte du dette?"
+   "text": "Alle spør: Hvor kjøpte du dette?"
   },
   {
    "a": 42.3,
@@ -119,5 +119,5 @@
   "knapp": "BESTILL NÅ"
  },
  "granskad": true,
- "granskning": "godkänd av infödd granskare i runda 2 (2026-09-29)"
+ "granskning": "godkänd av infödd granskare i runda 2 (2026-09-29); 2026-09-29: stor bokstav efter kolon i segment 2, 7, 11, 17 (norsk regel vid hel mening/direkt fråga — samma rättning som granskaren fällde i NO haikuh3)"
 }

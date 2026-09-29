@@ -1,5 +1,5 @@
 {
-  "_om": "Annonsvakten (/annonsvakt), Axels beställning 2026-09-27: 'en rutin som scannar alla annonskonton … efter problem med nedstängda annonser … rädda mig ifall något annonskonto blir nedtaget, eller om annonsen blir nedtagen … någon annons som drar åt helvete, som tar all spend'. Varje timme: alla annonskonton token:en når → 🔴/🟡 i Discord #ad-alerts (Bäverbutikens server), Axel pingas bara på 🔴. Läs annonsvakt/README.md. Trösklarna här är BESLUT, inte mätvärden — ändra här, aldrig i koden, och skriv datum.",
+  "_om": "Annonsvakten (/annonsvakt), Axels beställning 2026-09-27: 'en rutin som scannar alla annonskonton … efter problem med nedstängda annonser … rädda mig ifall något annonskonto blir nedtaget, eller om annonsen blir nedtagen … någon annons som drar åt helvete, som tar all spend'. Varje timme: alla annonskonton token:en når → 🔴/🟡 i Discord #ad-alerts (Bäverbutikens server), Axel pingas bara på 🔴 — och det röda på svenska i Slack #urgent (kanalen Axel läser). Läs annonsvakt/README.md. Trösklarna här är BESLUT, inte mätvärden — ändra här, aldrig i koden, och skriv datum.",
   "kanal": {
     "discord": {
       "server": "Bäverbutiken",
@@ -8,8 +8,12 @@
       "_om": "Servern är Bäverbutikens (samma id som tools/notify-discord.mjs GUILD, läst tillbaka i stonebite/data/snapshot.json). Kanalen skapas av boten om den saknas (factory/discord.mjs hittaEllerSkapaKanal) — ingen människa ska behöva skapa den (Axels besked 2026-09-10)."
     },
     "slack": {
+      "workspace": "Stonebite",
+      "kanal": "urgent",
+      "kanalId": "C0C4MTQNMT7",
+      "bot_token_env": "SLACK_BOT_TOKEN",
       "webhook_env": "SLACK_WEBHOOK_URL",
-      "_om": "Axel 2026-09-27: 'genom en Slack-kanal som jag inte har byggt än, men som jag ska bygga'. Finns variabeln i rutinens miljö postas samma text även dit (incoming webhook, POST {text}). Utan variabeln: bara Discord, och rapporten säger det. Kanalen finns sedan 2026-09-27 kväll: #urgent (privat, C0C4MTQNMT7, Axel enda medlemmen) — byggd av /akut (akut/), som redan postar dit via Slack-connectorn. Pekas webhooken dit: lägg 'konto' och 'pengar' i akut/konfig.json → kontroller_av, annars får Axel samma larm två gånger."
+      "_om": "Axel 2026-09-27: 'genom en Slack-kanal … som jag ska bygga', 2026-09-29: 'du kan ju koppla Slack själv, eftersom att den redan är connectad här'. Kanalen är #urgent (privat, C0C4MTQNMT7, Axel enda medlemmen — larmen bär spend och ROAS, redigerarna får aldrig se spend), samma som akut/. Hit går BARA det röda, på svenska (regler.mjs formuleraSlack); 🟡 och 💓 stannar i Discord. Tre vägar: SLACK_BOT_TOKEN i miljön (chat.postMessage till kanalId), SLACK_WEBHOOK_URL i miljön (webhook låst till kanalen), annars kön annonsvakt/output/att-posta.json som sessionen postar med mcp__Slack__slack_send_message och kvitterar med --postat. ⚠️ Mätt 2026-09-29: rutinens fasta session har INGA Slack-verktyg och create_trigger avvisar connectors i organisationen — i rutinen är det nyckeln i miljön (env_018aG5VVb69sSagge8CfgghK) som gäller. Samma nyckel får akut/ att stänga av sina konto- och pengar-kontroller (akut/konfig.json kontroller_av_med_slacknyckel), annars får Axel samma larm två gånger."
     }
   },
   "axel_discord": [
