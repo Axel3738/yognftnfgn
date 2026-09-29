@@ -46,7 +46,7 @@
    "a": 19.26,
    "b": 22.72,
    "sv": "Det är typ den perfekta balansen mellan praktiskt och oväntat.",
-   "text": "Det er typ den perfekte balansen mellom praktisk og uventet."
+   "text": "Det er liksom den perfekte balansen mellom praktisk og uventet."
   },
   {
    "a": 22.82,
@@ -101,5 +101,5 @@
   "etikett": "Sushisokker"
  },
  "granskad": true,
- "granskning": "godkänd av infödd granskare i runda 3 (2026-09-29)"
+ "granskning": "godkänd av infödd granskare i runda 3 (2026-09-29); 2026-09-29: 'typ' → 'liksom' i segment 8 (svenskt lån/ungdomsslang enligt granskaren av NO haikuh3, som fick samma rättning)"
 }
