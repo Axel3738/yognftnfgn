@@ -1,0 +1,14 @@
+Uppdrag: de manuella klicken i Shopify-butiken Matstrumpor som inte går att göra via API (1r46tp-qx.myshopify.com, admin.shopify.com/store/1r46tp-qx). Gör bara det som står nedan.
+
+Rör ALDRIG: DNS och Loopia, domäner (Inställningar → Domäner), Shopify Payments, marknader, temakod, appar, Meta/Facebook-kampanjer. Aktivera ingenting.
+
+1. Kassans logga: MATSTRUMPOR (utan .SE)
+   Varför: kassan har EN logga för alla länder, och den säger MATSTRUMPOR.SE, också för tyska, norska och amerikanska kunder. En logga per land kräver Shopify Plus, och API:t nekar utan Plus. Axel vill ha loggan utan .SE. Den gäller även svenska kunder.
+   a. Shopify admin → Inställningar (Settings) → Kassa (Checkout) → knappen "Anpassa" (Customize) vid den publicerade konfigurationen "Kopia av FixKliniken-konfiguration".
+   b. I kassaredigeraren: öppna varumärkesinställningarna (penselikonen, "Varumärke"/"Branding" eller "Inställningar"/"Settings" i vänsterkanten) → Logotyp (Logo).
+   c. Byt bild: välj den BEFINTLIGA filen "matstrumpor-kassa-logga.png" ur butikens filer. Ladda inte upp något nytt. Filen ligger redan i Innehåll → Filer och har samma format som den nuvarande loggan (1920 × 1080).
+   d. Ändra inte loggans storlek, position eller något annat i redigeraren.
+   e. Klicka Spara (Save).
+   f. Kontrollera som kund i ett privat fönster: öppna https://matstrumpor.com/de/products/sushi-strumpor?country=DE → "In den Warenkorb" → gå till kassan. Överst ska det stå MATSTRUMPOR utan .SE. Gör samma sak på https://matstrumpor.se/products/sushi-strumpor?country=SE och se att den svenska kassan också visar loggan och fungerar.
+
+Rapportera: sparat ja/nej, vad kassan visade som tysk och som svensk kund (gärna en skärmdump per land), och eventuella varningar Shopify visade. Skriv sedan "Slutklick klara" i chatten med Claude, så läser Claude tillbaka kassan själv.

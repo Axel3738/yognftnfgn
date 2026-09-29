@@ -27,6 +27,13 @@ I övrigt: skriv som situationen kräver. Fattar du ett beslut åt honom, säg
 vilket. Är något osäkert, säg det i stället för att gissa. En fråga i taget,
 med svarsalternativ.
 
+**Manuella klick samlas i EN Cowork-prompt i slutet** (Axels order 2026-09-29: "alla manuella små
+tasks ska fixas i slutet av en enda cowork prompt"). Ge honom aldrig klicklistor i admin under
+arbetets gång. Samla allt som inte går via API i en prompt, lägg den i repot (`<område>/cowork/`) och
+ge den sist i ett kodblock som går att kopiera. Hans egen lista blir då "klistra in prompten i
+Cowork", plus det som bara han kan avgöra: granskning, pengar och aktivering. Prompten säger vad som
+aldrig får röras och hur resultatet kontrolleras som kund.
+
 ⚠️ **Språket följer läsaren, inte den här filen** (Axels beslut 2026-09-09):
 Axel svaras på svenska, **VA:n och redigerarna på engelska**. Ett kommando
 som säger "svara henne på engelska" gäller — den här filen ska aldrig
@@ -180,7 +187,7 @@ marknad" (CaraShell 2026-09-17) stämmer inte här: `marketUpdate(webPresencesTo
 ⚠️ Kassan har EN logga för hela butiken, MATSTRUMPOR.SE, eftersom en logga per marknad kräver Plus.
 API:t nekar också (`checkoutBranding` ⇒ ACCESS_DENIED "must be on a Plus plan", mätt 2026-09-29). Loggan
 utan .SE ligger i Filer som `matstrumpor-kassa-logga.png`, i samma format som den nuvarande. Bytet görs
-i Inställningar → Kassa → Anpassa, är Axels klick och gäller även Sverige.
+med Cowork-prompten `matstrumpor/marknader/cowork/2-slutklick.txt` och gäller även Sverige.
 **Utlandsannonserna visas som Facebook-sidan "Matstrumpor" `1285064981363590`** (Axels sida, samma
 BM). Instagram visas via sidans page-backed identitet `17841423405715219`, eftersom kontot
 matstrumpor.se säger .se. Källan är `annonser/marknader.json`, och `bygg.mjs --byt-text` byter sidan
