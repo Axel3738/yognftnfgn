@@ -27,7 +27,9 @@ export function norm(b) {
   if (t === 'columns') return { t, kol: b.columns.map((k) => ({ flex: k.flex, blocks: k.blocks.map(norm) })) };
   if (t === 'section') return { t, blocks: b.blocks.map(norm) };
   if (t === 'abandonedCart') return { t, knapp: b.buttonText ?? null, pris: b.isProductPriceVisible ?? true };
-  if (t === 'products' && b.selectionMode === 'dynamic') return { t, dyn: b.dynamicCriteria, knapp: b.buttonText ?? null, pris: b.productVisibilitySettings?.isPriceVisible ?? null };
+  // Spoks svar visar inte knapptext eller synlighet på produktblock (samma som
+  // utkast-koll.mjs noterar) — de jämförs i det som SKICKADES, se jamfor().
+  if (t === 'products' && b.selectionMode === 'dynamic') return { t, dyn: b.dynamicCriteria, antal: b.dynamicProductsCount ?? null };
   return normBlock(b);
 }
 
@@ -51,8 +53,14 @@ export function lasPayloads(utDir) {
   return ut;
 }
 
-export function jamfor(kamp, post) {
+// Knapptext och prisinställning på produktblock syns bara i det som skickades.
+const dolda = (blocks = []) => blocks.flatMap((b) => (b.type === 'columns' ? b.columns.flatMap((k) => dolda(k.blocks)) : b.type === 'section' ? dolda(b.blocks) : b.type === 'products' ? [{ knapp: b.buttonText ?? null, synligt: b.productVisibilitySettings ?? null, kort: (b.products ?? []).map((p) => p.button ?? null) }] : []));
+
+export function jamfor(kamp, post, skickat = null) {
   const brister = [];
+  if (skickat && JSON.stringify(dolda(skickat.blocks)) !== JSON.stringify(dolda(post.blocks))) {
+    brister.push(`knapptext/synlighet på produktblock: skickat ${JSON.stringify(dolda(skickat.blocks))} ≠ payload ${JSON.stringify(dolda(post.blocks))}`);
+  }
   if (kamp.title !== post.title) brister.push(`titel "${kamp.title}" ≠ "${post.title}"`);
   for (const f of ['emailTitle', 'emailDescription']) {
     const a = kamp.customizedNotification?.[f] ?? '';
@@ -80,20 +88,21 @@ if (process.argv[1] && path.resolve(process.argv[1]) === path.resolve(new URL(im
   // Senaste svaret per post-id, över alla loggar (ordningen i varje logg).
   const perNyckel = new Map();
   for (const l of loggar) {
-    const { senast } = lasLogg(l);
+    const { senast, skickat } = lasLogg(l);
     for (const { kamp } of senast.values()) {
       const k = nyckel(kamp.title);
       if (!k) continue;
       const tid = Date.parse(kamp.updated ?? kamp.created ?? 0) || 0;
       const forra = perNyckel.get(k);
-      if (!forra || tid >= forra.tid) perNyckel.set(k, { kamp, tid });
+      if (!forra || tid >= forra.tid) perNyckel.set(k, { kamp, tid, skickat: skickat.get(kamp.id) ?? forra?.skickat ?? null });
     }
   }
   let fel = 0;
-  for (const [k, { kamp }] of [...perNyckel].sort()) {
+  for (const [k, { kamp, skickat }] of [...perNyckel].sort()) {
     const p = payloads.get(k);
     if (!p) { console.log(`❌ ${k}: finns i Spoks men inte i payloaden`); fel++; continue; }
-    const brister = jamfor(kamp, p.post);
+    const brister = jamfor(kamp, p.post, skickat);
+    if (!skickat) brister.push('inget fullständigt skickat postData i loggarna — knapptexterna är okontrollerade');
     if (brister.length) { fel++; console.log(`❌ ${k} ${kamp.id}\n   - ${brister.join('\n   - ')}`); }
   }
   console.log(`${perNyckel.size} mejl med Spoks-svar kontrollerade, ${fel} med avvikelser.`);
