@@ -1,53 +1,53 @@
 {
   "id": "k26-fars-dag-listan",
-  "namn": "MAIL_20261004_Farsdag_GT_4_tier1_solution_tva-veckor-kvar-tre-pappor_v1",
-  "memo": "Första fars dag-mejlet, två veckor före sista beställningsdagen (Axel 2026-09-28: \"fem veckor kvar\" var en urgency-minskare, så ämnesraden bär deadlinen). Presentvinkeln är bevisad (Takoverdrag_GT_2_H1, 8 202 kr vinstbidrag). Hypotes: en lista sorterad på vad pappan sysslar med (båt, verkstad, kamin) ger fler klick än ett enproduktsmejl, mätt mot K05.",
+  "namn": "MAIL_20261004_Farsdag_GT_4_tier1_promo_farsdag-rean-borjar_v2",
+  "memo": "Första fars dag-mejlet och första dagen med fars dag-rean: 30 % med FARSDAG30 på sex presenter till och med måndag 19 oktober (Axel 2026-09-29: rean börjar med det första fars dag-mejlet). Axels ord om förra versionen: aldrig \"sista dagen 19 oktober\" eller att ordern måste läggas senast då, \"för då tänker folk bara vilken lång frakttid\", och \"fem veckor kvar\" var \"en urgency-minskare\". Mejlet säger i stället att fars dag är söndag 8 november och kommer fortare än man tror, så att det stressar redan nu. 19 oktober står bara som reans sista dag i kodstycket, aldrig i ämnesrad, hero eller förhandstext, och aldrig kopplat till frakt. Presentvinkeln är bevisad (Takoverdrag_GT_2_H1, 8 202 kr vinstbidrag). Hypotes: en lista sorterad på vad pappan sysslar med (båt, verkstad, kamin) plus en kod som börjar samma dag ger fler klick och köp än ett enproduktsmejl; mätt mot K05 på köp per mottagare.",
   "taggar": {
     "typ": "I",
     "kalla": "egen-data",
     "kalla_ref": "products/carashell/takskyddet/dna.md:56-66",
     "lardom": null,
     "avatar": "den som redan nu vill ha fars dag ur vägen, och pappan som skickar vidare önskelistan",
-    "begar": "en present som används, beställd i tid",
-    "awareness": "solution",
-    "urgency": "konsekvens",
+    "begar": "en present som används, köpt medan den är 30 % billigare",
+    "awareness": "promo",
+    "urgency": "pris + slutdag (reans, 19 oktober) + sasong (fars dag 8 november)",
     "confidence": "medium",
     "prefix": "Farsdag",
     "kod": "GT"
   },
   "amnesrader": [
     {
-      "text": "Sista dag att beställa till fars dag: 19 oktober",
-      "begar": "hinna beställa presenten före sista dagen"
+      "text": "Redan oktober. Fars dag: sex presenter, 30 % nu",
+      "begar": "slippa köpa presenten i sista stund, nu när den är 30 % billigare"
     },
     {
-      "text": "Beställ senast 19 oktober till fars dag",
-      "begar": "hitta rätt present snabbt utifrån vad han sysslar med"
+      "text": "Skicka listan till den som frågar vad du vill ha",
+      "begar": "kunna skicka en färdig önskelista när någon frågar vad han vill ha"
     },
     {
-      "text": "Efter 19 oktober kan vi inte lova att det hinner fram",
-      "begar": "slippa gissa, skicka vidare mejlet och låta pappan peka ut sin egen present"
+      "text": "Båt, verkstad eller kamin? 30 % på presenten",
+      "begar": "hitta rätt present snabbt, efter om han har båt, verkstad eller kamin"
     }
   ],
-  "forhandstext": "Sex presenter sorterade efter vad han sysslar med.",
+  "forhandstext": "Fars dag är söndag 8 november. Koden FARSDAG30 gäller alla sex.",
   "block": [
     {
       "typ": "hero",
-      "rubrik": "Sista dagen att beställa till fars dag är 19 oktober",
-      "text": "Hej {{fornamn}},\n\nOm paketet ska hinna fram till fars dag den 8 november behöver ordern läggas senast 19 oktober. Sex presenter, sorterade efter vad han faktiskt sysslar med: båten, verkstaden eller kaminen.",
+      "rubrik": "Fars dag är söndag 8 november. 30 % på sex presenter",
+      "text": "Hej {{fornamn}},\n\nFars dag kommer fortare än man tror. Den som köper presenten i sista stund köper det som fanns kvar.\n\nFars dag-rean har börjat, och den gäller alla sex.",
       "knapp": {
-        "text": "Se hela listan",
-        "lank": "kollektion:alla-produkter"
+        "text": "Hämta 30 % med FARSDAG30",
+        "lank": "rabatt:FARSDAG30:kollektion:alla-produkter"
       }
     },
     {
       "typ": "text",
       "rubrik": null,
-      "text": "Du kanske läser det här som present till pappan i huset. Eller så är det han som läser det, och skickar mejlet vidare som sin egen önskelista.\n\nBåda funkar. Listan nedan är sorterad efter vad han sysslar med."
+      "text": "Kanske ska du köpa något till pappan i huset. Kanske är det han som läser, och då är det bara att skicka mejlet vidare som önskelista.\n\nBåda sätten funkar. Presenterna är sorterade efter vad han brukar hålla på med: båt, verkstad eller kamin."
     },
     {
       "typ": "produktrad",
-      "rubrik": "Om han har båt",
+      "rubrik": "Om han har båt: motorn låst och under tak",
       "handles": [
         "motorlas-i-rostfritt-stal-laser-utombordarens-fastskruvar",
         "batmotorskydd-420d-heltackande-for-utombordare"
@@ -55,7 +55,7 @@
     },
     {
       "typ": "produktrad",
-      "rubrik": "Om han har verkstad",
+      "rubrik": "Om han har verkstad: jämn egg och 30 delar att tälja med",
       "handles": [
         "balteslipmaskin-mini-3-i-1-knivslip-polerare",
         "taljset-30-delar-6-knivar-och-6-jarn"
@@ -63,7 +63,7 @@
     },
     {
       "typ": "produktrad",
-      "rubrik": "Om han har kamin",
+      "rubrik": "Om han har kamin: rent rör och klyvd tändved",
       "handles": [
         "sotarset-med-bojliga-stanger-rensar-rokkanal-och-kaminror",
         "tandvedsklyv-i-gjutjarn-klyv-utan-yxa-i-handen"
@@ -72,7 +72,12 @@
     {
       "typ": "text",
       "rubrik": null,
-      "text": "Beställ senast 19 oktober om paketet ska vara framme till fars dag den 8 november."
+      "text": "Koden FARSDAG30 ger 30 % på motorlåset, båtmotorskyddet, bälteslipmaskinen, täljsetet, sotarsetet och tändvedsklyven till och med måndag 19 oktober. Tryck på knappen så ligger koden redan i kassan, eller skriv in den själv. Rabatten dras i kassan, en gång per kund, på priset som står på produktsidan."
+    },
+    {
+      "typ": "knapp",
+      "text": "Välj present för 30 % mindre",
+      "lank": "rabatt:FARSDAG30:kollektion:alla-produkter"
     },
     {
       "typ": "fakta"
@@ -80,55 +85,61 @@
   ],
   "tretest": [
     {
-      "rad": "Sista dag att beställa till fars dag: 19 oktober",
+      "rad": "Redan oktober. Fars dag: sex presenter, 30 % nu",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true
     },
     {
-      "rad": "Beställ senast 19 oktober till fars dag",
+      "rad": "Skicka listan till den som frågar vad du vill ha",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true
     },
     {
-      "rad": "Efter 19 oktober kan vi inte lova att det hinner fram",
+      "rad": "Båt, verkstad eller kamin? 30 % på presenten",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true
     },
     {
-      "rad": "Sex presenter sorterade efter vad han sysslar med.",
+      "rad": "Fars dag är söndag 8 november. Koden FARSDAG30 gäller alla sex.",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true
     },
     {
-      "rad": "Sista dagen att beställa till fars dag är 19 oktober",
+      "rad": "Fars dag är söndag 8 november. 30 % på sex presenter",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true
     },
     {
-      "rad": "Se hela listan",
+      "rad": "Hämta 30 % med FARSDAG30",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true
     },
     {
-      "rad": "Om han har båt",
+      "rad": "Om han har båt: motorn låst och under tak",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true
     },
     {
-      "rad": "Om han har verkstad",
+      "rad": "Om han har verkstad: jämn egg och 30 delar att tälja med",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true
     },
     {
-      "rad": "Om han har kamin",
+      "rad": "Om han har kamin: rent rör och klyvd tändved",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Välj present för 30 % mindre",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true
@@ -140,5 +151,20 @@
   ],
   "exkludera": [],
   "status_plan": "klar",
-  "kraver_axel": null
+  "kraver_axel": null,
+  "rabatt": {
+    "typ": "kod",
+    "kod": "FARSDAG30",
+    "procent": 30,
+    "start": "2026-10-04T06:00:00Z",
+    "slut": "2026-10-19T21:59:59Z",
+    "handles": [
+      "motorlas-i-rostfritt-stal-laser-utombordarens-fastskruvar",
+      "batmotorskydd-420d-heltackande-for-utombordare",
+      "balteslipmaskin-mini-3-i-1-knivslip-polerare",
+      "taljset-30-delar-6-knivar-och-6-jarn",
+      "sotarset-med-bojliga-stanger-rensar-rokkanal-och-kaminror",
+      "tandvedsklyv-i-gjutjarn-klyv-utan-yxa-i-handen"
+    ]
+  }
 }
