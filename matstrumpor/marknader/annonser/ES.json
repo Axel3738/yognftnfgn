@@ -66,7 +66,47 @@
    "title": "Diversión esta noche. En tus pies mañana.",
    "message": "Nadie celebra un detergente. Nadie guarda un regalo de broma.\nLa respuesta a ambos: una caja que parece comida a domicilio de verdad, 5 pares enrollados como maki, palillos de madera al lado.\nNo se queda en la caja después. Está en tus pies, semana tras semana.\nUna marca sueca.",
    "link_description": "4 tipos. Compra 1 – Llévate 1 GRATIS. Envío gratis."
+  },
+  {
+   "namn": "MATSTRUMP_ES_sushi_offer_static_008_v1",
+   "kalla": "D3 Köp 2 – få 2 (bildannons: textfri bas bas.png + textlagret egna/d3/rita.py, texten egna/d3/texter/ES.json, granskad av infödda 2026-09-29)",
+   "bild": "klar/ES_d3.jpg",
+   "title": "Compra 2, llévate 2 gratis: cuatro cajas",
+   "message": "Recibes cuatro cajas.\nCompra 2 – llévate 2 gratis, veinte pares de calcetines en total.\nEnrollados como maki, palillos de madera en cada caja.\nTalla única, de la 36 a la 44.\nUna marca sueca.",
+   "link_description": "Compra 2 – Llévate 2 GRATIS. Envío gratis."
   }
  ],
- "_svenskt_varumarke": "Axels beslut 2026-09-27 kväll (\"Svenskt varumärke? … Jag tycker definitivt vi gör så!\"): sista raden i brödtexten är \"Una marca sueca.\". Utan butiksnamnet — regeln från 2026-09-18 att butikens namn aldrig står i en annons gäller."
+ "_svenskt_varumarke": "Axels beslut 2026-09-27 kväll (\"Svenskt varumärke? … Jag tycker definitivt vi gör så!\"): sista raden i brödtexten är \"Una marca sueca.\". Utan butiksnamnet — regeln från 2026-09-18 att butikens namn aldrig står i en annons gäller.",
+ "tre_fragor": [
+  {
+   "rad": "Parece comida para llevar. Son 20 pares.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Recibes cuatro cajas.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Compra 2 – llévate 2 gratis, veinte pares de calcetines en total.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Enrollados como maki, palillos de madera en cada caja.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Talla única, de la 36 a la 44.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  }
+ ]
 }

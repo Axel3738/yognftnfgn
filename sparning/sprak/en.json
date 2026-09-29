@@ -72,7 +72,7 @@
     "Paketet levereras till det ombud du har valt": "The parcel is being delivered to the pickup point you chose",
     "Paketet har levererats hem till dig": "The parcel has been delivered to your home",
     "Paketet är levererat": "The parcel has been delivered",
-    "Paketet är levererat vid din dörr": "The parcel has been delivered at your door",
+    "Paketet är levererat vid din dörr": "The parcel has been delivered to your door",
     "Paketet är levererat i din brevlåda": "The parcel has been delivered to your mailbox",
     "Paketet är uthämtat ur paketboxen": "The parcel has been collected from the parcel locker",
     "Det har blivit en störning i leveransen. Leveransdatumet uppdateras": "There has been a disruption in the delivery. The delivery date will be updated",
@@ -155,7 +155,7 @@
     "Paketnumret börjar med {{prefix}} och står i ditt leveransmejl, under knappen Spåra paketet. Har du ett spårningsnummer från fraktbolaget fungerar det också. Mellanslag och bindestreck spelar ingen roll.": "Your parcel number starts with {{prefix}} and is in your shipping email, below the Track your parcel button. A carrier tracking number works too. Spaces and hyphens do not matter.",
     "Vi hittar inte det numret": "We can't find that number",
     "Kontrollera att hela numret kom med när du klistrade in det.": "Check that the whole number was included when you pasted it.",
-    "Fick du leveransmejlet nyss? Då är paketet på väg in här — sidan hämtar nya paket varje timme, så prova igen om en liten stund.": "Did you just get the shipping email? Then the parcel is on its way in here — the page picks up new parcels every hour, so try again in a little while.",
+    "Fick du leveransmejlet nyss? Då är paketet på väg in här — sidan hämtar nya paket varje timme, så prova igen om en liten stund.": "Just got your shipping email? Then your parcel hasn't reached this page yet — new parcels are added every hour, so please try again shortly.",
     "Stämmer numret och det ändå inte syns här: mejla": "If the number is right and it still does not show up here, email",
     "så letar vi upp paketet åt dig.": "and we will find the parcel for you.",
     "Till butiken": "Back to the store",
@@ -202,6 +202,7 @@
     "Lägg till för {{pris}}": "Add for {{pris}}",
     "Priset gäller dig som beställt hos oss och läggs på av sig själv i kassan.": "This price applies to you as a customer of ours and is added automatically at checkout.",
     "Paketet är på väg till ombud": "The parcel is on its way to a pickup point",
-    "Vi planerar ett nytt hemleveransförsök till dig": "We are scheduling another home delivery attempt"
+    "Vi planerar ett nytt hemleveransförsök till dig": "We are scheduling another home delivery attempt",
+    "2–4 dagar": "2–4 days"
   }
 }

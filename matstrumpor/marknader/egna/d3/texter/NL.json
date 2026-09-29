@@ -1,0 +1,43 @@
+{
+ "kod": "NL",
+ "locale": "nl",
+ "wordmark": "SUSHISOKKEN",
+ "underrubrik": "Lijkt op takeaway. Het zijn 20 paar sokken.",
+ "banner": "KOOP 2 – KRIJG 2 GRATIS",
+ "message": "Je krijgt vier dozen.\nKoop 2 – krijg 2 gratis, twintig paar sokken in totaal.\nOpgerold als maki, houten eetstokjes in elke doos.\nOne size, past maat 36–44.\nEen Zweeds merk.",
+ "title": "Koop 2, krijg 2 gratis: vier dozen",
+ "link_description": "Koop 2 – Krijg 2 GRATIS. Gratis verzending.",
+ "tre_fragor": [
+  {
+   "rad": "Lijkt op takeaway. Het zijn 20 paar sokken.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Je krijgt vier dozen.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Koop 2 – krijg 2 gratis, twintig paar sokken in totaal.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Opgerold als maki, houten eetstokjes in elke doos.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "One size, past maat 36–44.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  }
+ ],
+ "sajt_fel": ""
+}

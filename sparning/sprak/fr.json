@@ -199,6 +199,7 @@
     "Lägg till för {{pris}}": "Ajouter pour {{pris}}",
     "Priset gäller dig som beställt hos oss och läggs på av sig själv i kassan.": "Ce prix s'applique à vous en tant que client ayant commandé chez nous et s'ajoute automatiquement lors du paiement.",
     "Paketet är på väg till ombud": "Le colis est en route vers un point relais",
-    "Vi planerar ett nytt hemleveransförsök till dig": "Nous programmons une nouvelle tentative de livraison à votre domicile"
+    "Vi planerar ett nytt hemleveransförsök till dig": "Nous programmons une nouvelle tentative de livraison à votre domicile",
+    "2–4 dagar": "2 à 4 jours"
   }
 }

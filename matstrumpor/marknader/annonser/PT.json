@@ -66,7 +66,47 @@
    "title": "Diversão à noite. Nos teus pés amanhã.",
    "message": "Ninguém festeja um detergente da roupa. Ninguém guarda um presente de brincadeira.\nA resposta a ambas: uma caixa que parece mesmo comida para levar, 5 pares enrolados como maki, pauzinhos de madeira ao lado.\nNão fica na caixa depois. Fica nos teus pés, semana após semana.\nUma marca sueca.",
    "link_description": "4 tipos. Compre 1 – Receba 1 GRÁTIS. Envio grátis."
+  },
+  {
+   "namn": "MATSTRUMP_PT_sushi_offer_static_008_v1",
+   "kalla": "D3 Köp 2 – få 2 (bildannons: textfri bas bas.png + textlagret egna/d3/rita.py, texten egna/d3/texter/PT.json, granskad av infödda 2026-09-29)",
+   "bild": "klar/PT_d3.jpg",
+   "title": "Compre 2, receba 2 grátis: quatro caixas",
+   "message": "Recebes quatro caixas.\nCompre 2 – receba 2 grátis, vinte pares de meias ao todo.\nEnroladas como maki, pauzinhos de madeira em cada caixa.\nTamanho único, serve do 36 ao 44.\nUma marca sueca.",
+   "link_description": "Compre 2 – Receba 2 GRÁTIS. Envio grátis."
   }
  ],
- "_svenskt_varumarke": "Axels beslut 2026-09-27 kväll (\"Svenskt varumärke? … Jag tycker definitivt vi gör så!\"): sista raden i brödtexten är \"Uma marca sueca.\". Utan butiksnamnet — regeln från 2026-09-18 att butikens namn aldrig står i en annons gäller."
+ "_svenskt_varumarke": "Axels beslut 2026-09-27 kväll (\"Svenskt varumärke? … Jag tycker definitivt vi gör så!\"): sista raden i brödtexten är \"Uma marca sueca.\". Utan butiksnamnet — regeln från 2026-09-18 att butikens namn aldrig står i en annons gäller.",
+ "tre_fragor": [
+  {
+   "rad": "Parece take-away. São 20 pares de meias.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Recebes quatro caixas.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Compre 2 – receba 2 grátis, vinte pares de meias ao todo.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Enroladas como maki, pauzinhos de madeira em cada caixa.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Tamanho único, serve do 36 ao 44.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  }
+ ]
 }

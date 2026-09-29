@@ -5,7 +5,7 @@ import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
 import {
-  MARK, LOGGA_FIL, PRESENTKORT_SV, patchaLayout, patchaLayoutV1, patchaMetaTags, patchaHeader, patchaFooter, patchaMsHead,
+  MARK, LOGGA_FIL, PRESENTKORT_SV, PRESENTKORT_HANDLE, patchaLayout, patchaLayoutV1, patchaLayoutV2, patchaLayoutV3, patchaLayoutV4, patchaFiLocale, FI_FEL, FI_RATT, patchaMetaTags, patchaHeader, patchaFooter, patchaMsHead,
   patchaProduktMall, omdomenJson, bytNamn, SEKTION_OMDOMEN, SNIPPET_BADGE, FAQ_EPOST, FAQ_KONTAKT,
 } from '../domantema.mjs';
 
@@ -65,22 +65,30 @@ test('layouten: idempotent, och fel mall stoppar i stället för att patcha halv
   assert.throws(() => patchaLayout(LAYOUT.replace('role="main"', 'role="huvud"')), /hittades 0 gånger/);
 });
 
-test('layouten v2: presentkortets bild byts på alla språk utom svenska, svenska sidor fångas inte', () => {
+test('layouten: presentkortets bild byts på alla språk utom svenska, med filernas egna adresser', () => {
   const r = patchaLayout(LAYOUT);
   assert.match(r.kod, /if request\.locale\.iso_code != 'sv'\n        assign ms_lokal = true/);
   assert.match(r.kod, /\{%- if ms_egen or ms_lokal -%\}/);
-  assert.ok(r.kod.includes(`replace: '${PRESENTKORT_SV}', ms_pk`));
-  assert.ok(r.kod.includes("assign ms_pk = 'presentkort-' | append: request.locale.iso_code | append: '.png'"));
+  // Båda adresserna läses ur Shopify med sin egen ?v= (CDN:en väljer filversion efter v, mätt).
+  assert.ok(r.kod.includes("assign ms_pk_ny = images[ms_pk_fil] | image_url | split: 'files/' | last"));
+  assert.ok(r.kod.includes(`assign ms_pk_gammal = all_products['${PRESENTKORT_HANDLE}'].featured_image | image_url | split: 'files/' | last`));
+  // Gardering mot tomt sökord (replace '' skriver in texten mellan varje tecken).
+  assert.ok(r.kod.includes("{%- if ms_pk_ny contains '?v=' and ms_pk_gammal contains '?v=' -%}"));
+  assert.ok(!r.kod.includes(`replace: '${PRESENTKORT_SV}'`), 'inget fast filnamn kvar');
   // Utan egen domän skrivs den fångade sidan ut orörd (inget namnbyte på matstrumpor.se/<språk>).
   assert.match(r.kod, /\{%- else -%\}\n        \{\{ ms_sida \}\}/);
 });
 
-test('layouten: version 1 (live förmiddagen 2026-09-29) uppgraderas till exakt samma som en ny v2', () => {
-  const v1 = patchaLayoutV1(LAYOUT);
-  assert.ok(v1.includes(MARK) && !v1.includes('ms_lokal'));
-  const upp = patchaLayout(v1);
-  assert.deepEqual(upp.byten, ['uppgradering_v2']);
-  assert.equal(upp.kod, patchaLayout(LAYOUT).kod);
+test('layouten: v1–v4 (live 2026-09-29) uppgraderas till exakt samma som en ny patch', () => {
+  const ny = patchaLayout(LAYOUT).kod;
+  for (const [namn, fn] of [['v1', patchaLayoutV1], ['v2', patchaLayoutV2], ['v3', patchaLayoutV3], ['v4', patchaLayoutV4]]) {
+    const gammal = fn(LAYOUT);
+    assert.notEqual(gammal, ny, namn);
+    const r = patchaLayout(gammal);
+    assert.deepEqual(r.byten, ['uppgradering_v5'], namn);
+    assert.equal(r.kod, ny, namn);
+  }
+  assert.ok(patchaLayoutV3(LAYOUT).includes('?pk=2&v='));
 });
 
 test('meta-taggarna: namnet byts bara på egen domän och bara när värdet ÄR butiksnamnet', () => {
@@ -191,4 +199,27 @@ test('sektionen och märket ritar bara på matstrumpor.no, på norska, aldrig et
   assert.match(SEKTION_OMDOMEN, /Hva kundene sier/);
   assert.match(SEKTION_OMDOMEN, /Verifisert kjøp/);
   assert.match(SNIPPET_BADGE, /anmeldelser/);
+});
+
+test('layouten v5: gamla loggan byts mot loggan utan .SE i hela sidan, bara på egen domän och bara med ?v=', () => {
+  const r = patchaLayout(LAYOUT).kod;
+  const egen = r.slice(r.indexOf("      {%- if ms_egen -%}\n        {%- assign ms_logga_ny"), r.indexOf('      {%- else -%}\n        {{ ms_sida }}'));
+  assert.ok(egen.includes(`images['${LOGGA_FIL}'] | image_url | split: 'files/' | last`));
+  assert.ok(egen.includes("settings.brand_image | image_url | split: 'files/' | last"), 'sidfotens bild');
+  assert.ok(egen.includes("settings.logo | image_url | split: 'files/' | last"), 'JSON-LD:ns logo');
+  assert.ok(egen.includes("{%- if ms_logga_ny contains '?v=' -%}"));
+  assert.ok(egen.includes("{%- if ms_logga_fot contains '?v=' -%}"));
+  // Bytet står före namnkedjan och gäller bara egen domän: svenska sidor på .se/<språk> skrivs ut orörda.
+  assert.ok(egen.indexOf('ms_logga_ny') < egen.indexOf("replace: 'Matstrumpor.se', 'Matstrumpor'"));
+  assert.equal((r.match(/ms_logga_ny/g) ?? []).length, 4);
+});
+
+test('finska locale-filen: namnfältet får sin egen etikett, idempotent', () => {
+  const fil = `{\n  "recipient": {\n    "form": {\n      "email_label": "Vastaanottajan sähköpostiosoite",\n      ${FI_FEL}\n      "name": "Nimi",\n      "email_label_optional_for_no_js_behavior": "Vastaanottajan sähköpostiosoite (valinnainen)"\n    }\n  }\n}`;
+  const r = patchaFiLocale(fil);
+  assert.deepEqual(r.byten, ['mottagarens_namn']);
+  assert.ok(r.kod.includes(FI_RATT));
+  assert.ok(r.kod.includes('"email_label_optional_for_no_js_behavior": "Vastaanottajan sähköpostiosoite (valinnainen)"'), 'e-postfältet orört');
+  assert.doesNotThrow(() => JSON.parse(r.kod));
+  assert.deepEqual(patchaFiLocale(r.kod).byten, []);
 });

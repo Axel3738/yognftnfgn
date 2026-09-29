@@ -342,6 +342,34 @@ HeyGen (Axels order 2026-09-28).
 **Uppladdat:** 2026-09-29, i marknadens enda adset, PAUSED och tillbakaläst.
 **Utfall (dag 7):** inget ännu. ⛔ Inget aktiveras förrän Axel granskat.
 
+## 2026-09-29 — utlandet: bildannonsen D3 "Köp 2 – få 2" som annons 008 (13 annonser, PAUSED)
+
+**Hypotes:** Erbjudandet "Köp 2, få 2 gratis" i bild (sex lådor, röd pill) säljer utomlands utan
+röst och utan person, och kan därför lokaliseras billigt till elva språk.
+**Mix:** 0 vidarebyggen / 13 lokaliseringar av D3 (erbjudandevinkeln, `offer static`).
+**Källa:** D3 ur `docs/briefs/sushi-bogo-…` (grenen `claude/sushi-strumpor-ad-swipes-y1d0ke`, basen
+ur kie.ai), lokaliserad i `matstrumpor/marknader/egna/d3/`.
+**Copy:** sonnet mot copy-reglerna, sedan infödda granskare per språk. Fällt och rättat: rad 1
+beskrev "fyra lådor på bordet" fast bilden visar sex. Nu står "Du får fyra lådor" på alla elva
+språk. Dessutom rättades IT, NL och PL underrad, IT och PT storleksraden, PL och FR rad 3 och US
+rad 2–3 och rubrik. Tre-frågorstestet ligger i `egna/d3/texter/<KOD>.json`, utan ❌.
+**Annonser:** `MATSTRUMP_<KOD>_sushi_offer_static_008_v1` × NO NOB DK FI US WW DE FR NL ES IT PL PT.
+**Utfall (dag 7):** inget ännu. ⛔ Inget aktiveras förrän Axel granskat.
+
+## 2026-09-29 — A/B-testet i Norge: svenskt varumärke (A) mot norsk sida (B)
+
+**Hypotes:** Norska kunder köper hellre när sidan känns norsk (matstrumpor.no, utan
+språkväljare, med norska omdömen, utan "Et svensk merke.") än när annonsen säger svenskt varumärke
+och länkar till matstrumpor.se/nb. Axels order samma dag.
+**Uppställning:** A `MATSTRUMP_NO_SALES` och B `MATSTRUMP_NOB_SALES`, 500 + 500 kr/dag. Båda har
+samma annonser 001–008 med samma video- och bild-id. Den enda skillnaden är varumärkesraden och
+landningssidan. Båda är PAUSED.
+**Avläsning:** efter cirka två veckors spend med
+`node matstrumpor/marknader/annonser/ab-norge.mjs`: Meta per kampanj + Shopify-ordrar till Norge
+delade på landningssidan. Ingen dom under 300 kr och 3 köp per variant. "Säker" betyder p < 0,05
+på köp per sidvisning.
+**Utfall:** inget ännu. Testet startar när Axel slår på båda.
+
 ## Format för kommande rader
 
 ```

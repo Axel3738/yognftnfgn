@@ -341,7 +341,8 @@
    "sections/ms-review-slider.liquid",
    "sections/ms-compare.liquid",
    "snippets/ms-delivery-estimate.liquid",
-   "assets/ms-cro.js"
+   "assets/ms-cro.js",
+   "assets/ms-paket.js"
   ],
   "js_comment": "assets/ms-cro.js formaterade paketpriset med butikens 'kr'-format och datumen på svenska oavsett marknad (mätt 2026-09-27) — patchaJs byter till kundens språk (<html lang>) och Intl.NumberFormat i den aktiva valutan.",
   "mallar": [

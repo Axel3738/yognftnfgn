@@ -148,7 +148,20 @@ den session som byggde verktygen, så rösten görs i en egen session enligt
 `pipeline/textboxar.py` + `textbyte.py`; ✅ **annons 004 PAUSED i alla tolv kampanjer
 2026-09-29**); allt i `marknader/egna/`. ⛔ Källorna bär butikens logga "MATSTRUMPOR.SE" i
 bild (012v2:s sista scen, haiku-videornas slutkort) — den målas bort (`pipeline/logga.py`,
-`kopiera` i `textbyte.py`), för butikens namn står aldrig i en annons. ⚠️ Shopify mätt
+`kopiera` i `textbyte.py`), för butikens namn står aldrig i en annons. ✅ **Annons 005–007
+(röstvideorna, PR #266) och 008 (bildannonsen D3 "Köp 2 – få 2", `marknader/egna/d3/`) PAUSED i
+alla tolv kampanjer 2026-09-29.** 🇳🇴 **A/B-testet i Norge (Axels order 2026-09-29):** A
+`MATSTRUMP_NO_SALES` (matstrumpor.se/nb, "Et svensk merke.") mot B `MATSTRUMP_NOB_SALES`
+(matstrumpor.no, norska B-sidan i `marknader/domantema.mjs`), 500 + 500 kr/dag, samma annonser,
+PAUSED. Varje ny NO-annons ⇒ `annonser/nob.mjs` + `bygg.mjs --marknad NOB --skarpt`. Avläs med
+`annonser/ab-norge.mjs` efter ~två veckor. ⛔ B påstår aldrig att butiken är norsk. Domänerna
+.no/.eu/.com, temapatchen per domän, presentkortets egen mall (`marknader/presentkort.mjs`) och
+allt detta i `marknader/README.md` → "Domänerna". ✅ **QA som kund på alla tolv språk
+2026-09-29** (fyra agenter, 289 fynd, rättade samma dag): "Ångra köp" i sidfoten ledde till
+BÄVERBUTIKENS kundkonto, loggan "MATSTRUMPOR.SE" stod kvar i sidfot + JSON-LD på egna domäner,
+köpknappen sa "Lägger i…" på alla språk, ätpinnarnas sida visade strumpstorlekarna. `bygg.mjs --steg
+tema` uppdaterar sedan dess översättningar i redan patchade filer (förut nådde en ändrad översättning
+aldrig temat). Kvar och varför: `marknader/README.md` → "QA som kund". ⚠️ Shopify mätt
 2026-09-27: `translationsRegister` kan svara `INTERNAL_SERVER_ERROR` en stund
 (kör om), och en batchläsning av temats översättningar kan svara med FEL
 språk (`--steg kontroll` läser om ensamt) — lita aldrig på en enda läsning.

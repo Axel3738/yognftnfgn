@@ -1,0 +1,43 @@
+{
+ "kod": "NO",
+ "locale": "nb",
+ "wordmark": "SUSHISOKKER",
+ "underrubrik": "Ser ut som takeaway. Er 20 par sokker.",
+ "banner": "KJØP 2 – FÅ 2 GRATIS",
+ "message": "Du får fire bokser.\nKjøp 2 – få 2 gratis, tjue par sokker til sammen.\nRullet som maki, spisepinner av tre i hver boks.\nOnesize, passer str. 36–44.\nEt svensk merke.",
+ "title": "Kjøp 2, få 2 gratis: fire bokser",
+ "link_description": "Kjøp 2, få 2 gratis. Fri frakt til Norge.",
+ "tre_fragor": [
+  {
+   "rad": "Ser ut som takeaway. Er 20 par sokker.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Du får fire bokser.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Kjøp 2 – få 2 gratis, tjue par sokker til sammen.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Rullet som maki, spisepinner av tre i hver boks.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Onesize, passer str. 36–44.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  }
+ ],
+ "sajt_fel": ""
+}

@@ -177,6 +177,10 @@
  "liquid.ms-paket.par": "par",
  "liquid.ms-paket.varde": "värde",
  "liquid.ms-paket.gratis_pa_kopet": "Gratis på köpet",
+ "liquid.ms-paket.sort_i_lada": "Sort i låda",
+ "liquid.ms-paket.js.lagger_i": "Lägger i…",
+ "liquid.ms-paket.js.fel_lagga_i": "Kunde inte lägga i varukorgen.",
+ "liquid.ms-paket.js.fel_forsok_igen": "Det gick inte att lägga i varukorgen. Försök igen.",
  "liquid.ms-sista-dag.fars_dag": "Beställ senast 24 oktober så är paketet framme till fars dag.",
  "liquid.ms-sista-dag.jul": "Beställ senast 8 december så är paketet framme till jul.",
  "liquid.ms-trust-row.fri_frakt": "Fri frakt i Sverige",
@@ -197,5 +201,9 @@
  "liquid.ms-delivery-estimate.arbetsdagar": "arbetsdagar",
  "liquid.product.ms_storlek": "Passar strl 36–44 · stretchigt material",
  "liquid.index.ugc_markning": "Miljöbilderna är AI-genererade illustrationer.",
- "_liquid": "liquid.*-raderna är hårdkodad text i temats ms-*.liquid — de patchas med locale-grenar av bygg.mjs --steg tema, aldrig via translationsRegister."
+ "_liquid": "liquid.*-raderna är hårdkodad text i temats ms-*.liquid — de patchas med locale-grenar av bygg.mjs --steg tema, aldrig via translationsRegister.",
+ "bildalt.61864814084435.alt": "Fraktkartongen med sushi- och donutlådan på dörrmattan (AI-genererad illustrationsbild)",
+ "bildalt.61864814117203.alt": "Fyra par fötter i soffan med varsin matstrumpa och en skål popcorn (AI-genererad illustrationsbild)",
+ "bildalt.61864814149971.alt": "Mormor skrattar vid födelsedagsbordet med burgarlådan i handen (AI-genererad illustrationsbild)",
+ "bildalt.61864814182739.alt": "Morfar i fåtöljen visar upp pizzastrumporna på fötterna (AI-genererad illustrationsbild)"
 }

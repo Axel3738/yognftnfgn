@@ -26,7 +26,8 @@
 
 import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { join, dirname } from 'node:path';
+import { join, dirname, relative } from 'node:path';
+import { execFileSync } from 'node:child_process';
 import { lasButik, skapaKlient } from '../../sparning/butik.mjs';
 import { KONFIG, OUTPUT, underlagsfil, resursfil, LIQUID_TEXTER } from './underlag.mjs';
 import { granska } from './granska.mjs';
@@ -417,6 +418,24 @@ async function stegOversattningar(k, { skarpt, bara: baraLocale = null }) {
 /** Språken som låg i temats grenar efter första patchen 2026-09-27 12:30 — facit för ombyggnaden. */
 const GAMLA_LOCALES = ['nb', 'da', 'fi', 'en'];
 
+/** Tidigare versioner av översättningarna ur git — en per commit som rört underlaget, nyast först.
+ *  Temat byggdes med en av dem: den som ger exakt live-filen bevisar att filen är vår och får byggas om. */
+function gamlaOversattningar(max = 12) {
+  const repo = join(ROT, '..', '..');
+  const rel = relative(repo, OUTPUT);
+  let revs;
+  try {
+    revs = execFileSync('git', ['-C', repo, 'log', '--format=%H', `-n${max}`, '--', `${rel}/underlag-*.json`], { encoding: 'utf8' }).split('\n').filter(Boolean);
+  } catch { return []; }
+  return revs.map((rev) => {
+    const ov = {};
+    for (const l of LOCALES) {
+      try { ov[l] = JSON.parse(execFileSync('git', ['-C', repo, 'show', `${rev}:${rel}/underlag-${l}.json`], { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024, stdio: ['ignore', 'pipe', 'ignore'] })); } catch { /* språket fanns inte i den versionen */ }
+    }
+    return { namn: `underlaget i ${rev.slice(0, 7)}`, ov };
+  });
+}
+
 /** Filens ORIGINAL ur den äldsta backupen som har den (output/tema-original/<tid>/<fil>). */
 function urOriginal(fil) {
   const bas = join(OUTPUT, 'tema-original');
@@ -436,7 +455,15 @@ async function stegTema(k, { skarpt }) {
   const f = await k.graphql(`query($id: ID!, $f: [String!]) { theme(id: $id) { files(first: 50, filenames: $f) { nodes { filename body { ... on OnlineStoreThemeFileBodyText { content } } } } } }`, { id: temaId, f: filer });
   const innehall = Object.fromEntries(f.theme.files.nodes.map((x) => [x.filename, x.body?.content ?? null]));
   const skriv = [];
-  const patcha = (fil, kod, o) => (fil.endsWith('.json') ? patchaMallJson(fil, kod, o, LIQUID_TEXTER) : patchaFil(fil, kod, o));
+  // Kandidaterna för "så byggdes filen": nuvarande underlag, den första fyrspråkspatchen och varje
+  // committad version av underlaget. En ändrad översättning går då ut på en redan patchad fil
+  // (2026-09-29: rättningarna efter QA som kund) — förut vägrade steget allt utom fyrspråksversionen.
+  const gamla = [
+    { namn: 'nuvarande underlag', ov },
+    { namn: 'första patchen (nb, da, fi, en)', ov: Object.fromEntries(GAMLA_LOCALES.filter((l) => l in ov).map((l) => [l, ov[l]])) },
+    ...gamlaOversattningar(),
+  ];
+  const patcha = (fil, kod, o) => (fil.endsWith('.json') ? patchaMallJson(fil, kod, o, LIQUID_TEXTER, gamla.map((g) => g.ov)) : patchaFil(fil, kod, o));
   for (const fil of filer) {
     const kod = innehall[fil];
     if (kod === null || kod === undefined) { log(`⚠️ ${fil} finns inte i temat — hoppar`); continue; }
@@ -447,14 +474,16 @@ async function stegTema(k, { skarpt }) {
       // byggs den om från ORIGINALET i output/tema-original, men bara om originalet + den
       // gamla patchen ger exakt det som ligger i temat nu (annars har någon rört filen).
       let bas = kod;
-      if (/request\.locale\.iso_code|var LANG = /.test(kod)) {
+      // JSON-mallarna rörs också av domantema och Trustpilot-sektionen, så de byggs aldrig om från
+      // originalet — patchaMallJson byter bara sina egna grenar på plats (gammal översättning → ny).
+      // ms-paket.js bär sin ordlista som byts på plats, och räknas därför inte som "patchad" här.
+      if (!fil.endsWith('.json') && /request\.locale\.iso_code|var LANG = /.test(kod)) {
         const orig = urOriginal(fil);
         if (!orig) { log(`⚠️ ${fil}: redan patchad och originalet saknas i output/tema-original — hoppar`); continue; }
-        const ovGammal = Object.fromEntries(GAMLA_LOCALES.filter((l) => l in ov).map((l) => [l, ov[l]]));
-        const kontroll = patcha(fil, orig, ovGammal);
-        if (kontroll.kod !== kod) { log(`❌ ${fil}: temat är inte originalet + den gamla patchen (någon har ändrat filen) — rör den inte`); continue; }
+        const traff = gamla.find((g) => { try { return patcha(fil, orig, g.ov).kod === kod; } catch { return false; } });
+        if (!traff) { log(`❌ ${fil}: temat är inte originalet + någon av våra patchar (någon har ändrat filen) — rör den inte`); continue; }
         bas = orig;
-        log(`${fil}: byggs om från originalet (${GAMLA_LOCALES.join(',')} → ${LOCALES.join(',')})`);
+        log(`${fil}: byggs om från originalet (live = patchen med ${traff.namn})`);
       }
       r = patcha(fil, bas, ov);
     } catch (e) { log(`❌ ${fil}: ${e.message}`); continue; }
@@ -469,12 +498,16 @@ async function stegTema(k, { skarpt }) {
   log(`originalen sparade i ${backup}`);
   const u = await mutation(k, `mutation($id: ID!, $files: [OnlineStoreThemeFilesUpsertFileInput!]!) { themeFilesUpsert(themeId: $id, files: $files) { upsertedThemeFiles { filename } userErrors { filename code message } } }`, { id: temaId, files: skriv });
   if (u.fel.length) throw new Error(`themeFilesUpsert: ${u.fel.join('; ')}`);
-  // Tillbakaläsning
-  const efter = await k.graphql(`query($id: ID!, $f: [String!]) { theme(id: $id) { files(first: 50, filenames: $f) { nodes { filename body { ... on OnlineStoreThemeFileBodyText { content } } } } } }`, { id: temaId, f: skriv.map((s) => s.filename) });
-  for (const s of skriv) {
-    const nu = efter.theme.files.nodes.find((x) => x.filename === s.filename)?.body?.content;
-    if (nu !== s.body.value) throw new Error(`${s.filename} läses inte tillbaka identiskt efter skrivningen.`);
+  // Tillbakaläsning. Shopify kan svara med den förra versionen en kort stund efter skrivningen (mätt
+  // 2026-09-29: assets/ms-paket.js läste fel direkt efter, rätt en minut senare) — upp till tre läsningar.
+  let fel = [];
+  for (let forsok = 1; forsok <= 3; forsok++) {
+    const efter = await k.graphql(`query($id: ID!, $f: [String!]) { theme(id: $id) { files(first: 50, filenames: $f) { nodes { filename body { ... on OnlineStoreThemeFileBodyText { content } } } } } }`, { id: temaId, f: skriv.map((s) => s.filename) });
+    fel = skriv.filter((s) => efter.theme.files.nodes.find((x) => x.filename === s.filename)?.body?.content !== s.body.value).map((s) => s.filename);
+    if (fel.length === 0) break;
+    if (forsok < 3) await paus(5000);
   }
+  if (fel.length) throw new Error(`${fel.join(', ')} läses inte tillbaka identiskt efter skrivningen (tre försök).`);
   log(`✅ ${skriv.length} temafiler skrivna och tillbakalästa: ${skriv.map((s) => s.filename).join(', ')}`);
 }
 

@@ -62,6 +62,14 @@ export const LIQUID_TEXTER = {
     par: 'par',
     varde: 'värde',
     gratis_pa_kopet: 'Gratis på köpet',
+    // Sortvalet per låda (rullistan i A/B-varianten sortval:b) — skärmläsarens etikett, "Sort i låda 1".
+    sort_i_lada: 'Sort i låda',
+  },
+  // Köpknappen i paketväljaren (JS). Mätt 2026-09-29 av QA som kund: "Lägger i…" på varje språk.
+  'assets/ms-paket.js': {
+    lagger_i: 'Lägger i…',
+    fel_lagga_i: 'Kunde inte lägga i varukorgen.',
+    fel_forsok_igen: 'Det gick inte att lägga i varukorgen. Försök igen.',
   },
   'snippets/ms-sista-dag.liquid': {
     fars_dag: 'Beställ senast 24 oktober så är paketet framme till fars dag.',
@@ -90,7 +98,10 @@ export const LIQUID_TEXTER = {
   'templates/index.json': { ugc_markning: 'Miljöbilderna är AI-genererade illustrationer.' },
 };
 
-const slug = (s) => String(s).toLowerCase().replace(/[åä]/g, 'a').replace(/ö/g, 'o').replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '').slice(0, 40) || 'x';
+/** Ren: en alt-text som bara är ett filnamn (bevis-1.png) — ingen kundtext. */
+export const arFilnamn = (v) => /^[^\s/]+\.(png|jpe?g|webp|gif|svg|avif)$/i.test(String(v ?? '').trim());
+
+const slug = (s) =>String(s).toLowerCase().replace(/[åä]/g, 'a').replace(/ö/g, 'o').replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '').slice(0, 40) || 'x';
 
 async function translatableIds(k, ids) {
   const ut = [];
@@ -177,6 +188,15 @@ export async function byggUnderlag({ k, konfig = KONFIG, logg = () => {} } = {})
   for (const r of await translatableTyp(k, 'LINK')) laggTill('menylänk', r.resourceId, null, `meny.${r.resourceId.split('/').pop()}`, r.translatableContent);
   for (const r of await translatableTyp(k, 'FILTER')) laggTill('filter', r.resourceId, null, `filter.${r.resourceId.split('/').pop()}`, r.translatableContent);
   for (const r of await translatableTyp(k, 'DELIVERY_METHOD_DEFINITION')) laggTill('fraktsätt', r.resourceId, null, `frakt.${r.resourceId.split('/').pop()}`, r.translatableContent);
+
+  // Bildernas alt-text (Files). Startsidans miljöbilder bär svensk alt ("Fyra par fötter i soffan …
+  // (AI-genererad illustrationsbild)") som skärmläsare och Google läste på alla språk (QA 2026-09-29).
+  // Filnamn som alt (bevis-1.png, 022_H1-thumb.jpg) är ingen kundtext och tas inte med.
+  for (const r of await translatableTyp(k, 'MEDIA_IMAGE')) {
+    const alt = (r.translatableContent ?? []).find((c) => c.key === 'alt');
+    if (!alt || arFilnamn(alt.value)) continue;
+    laggTill('bildalt', r.resourceId, null, `bildalt.${r.resourceId.split('/').pop()}`, r.translatableContent);
+  }
 
   // Paketnivåerna — bara om definitionen är translatable (annars tom translatableContent).
   const def = await k.graphql(`{ metaobjectDefinitionByType(type: "ms_paketniva") { capabilities { translatable { enabled } } } }`);
