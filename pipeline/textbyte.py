@@ -36,8 +36,8 @@ def radbryt(text, font, max_bredd):
 
 
 def rita_ruta(t, fontfil):
-    """En RGBA-bild med rutan och texten. Returnerar (bild, bredd, höjd)."""
-    font = ImageFont.truetype(fontfil, t['font_px'])
+    """En RGBA-bild med rutan och texten. Returnerar (bild, bredd, höjd). En text kan bära egen font."""
+    font = ImageFont.truetype(t.get('font', fontfil), t['font_px'])
     padx, pady = t.get('pad', [18, 8])
     maxb = t.get('max_bredd', 600) - 2 * padx
     rader = []

@@ -35,7 +35,7 @@ KONF = {
                 'slutkort': {'fran_s': 50.12, 'ruta': [188, 524, 532, 748], 'kalla_y': 300}},
     'haikuh2': {'under': {'stil': 'mork', 'band': [800, 930], 'falt': [104, 816, 616, 918], 'bak': MORK, 'farg': [255, 255, 255]},
                 'rubrik_band': [200, 340],
-                'hook': {'ruta': [108, 226, 616, 384]},
+                'hook': {'ruta': [104, 220, 620, 386]},  # svenska remsorna x 110–609, y 224–380 (mätt 1,0 s)
                 'knapp': {'band': [760, 860]},
                 'slutkort': {'fran_s': 45.92, 'ruta': [188, 524, 532, 748], 'kalla_y': 300}},
     's001h1': {'under': {'stil': 'ljus', 'band': [840, 960], 'falt': [184, 860, 536, 952], 'bak': VIT, 'farg': SVART},
@@ -173,8 +173,20 @@ def main():
     if 'hook' in k and texter.get('hook'):
         r = k['hook']['ruta']
         forsta = min([t['a'] for t in texts if t['font_px'] == 26] or [manus[1]['b']])
+        # Originalets inledning är stor fet text — den bär annonsens första sekund. Samma här: fet
+        # Poppins, största storlek (44 → 28 px) där texten ryms i rutan på högst tre rader.
+        from PIL import ImageFont
+        sys.path.insert(0, os.path.join(REPO, 'pipeline'))
+        from textbyte import radbryt  # samma radbrytning som renderaren
+        fet = os.path.join(REPO, 'pipeline/fonts/Poppins-Bold.ttf')
+        px = 28
+        for prov in range(44, 27, -2):
+            f = ImageFont.truetype(fet, prov)
+            rader = [x for stycke in texter['hook'].split('\n') for x in radbryt(stycke, f, (r[2] - r[0]) - 36)]
+            asc, desc = f.getmetrics()
+            if len(rader) <= 3 and (asc + desc) * len(rader) + 20 <= r[3] - r[1]: px = prov; break
         texts.append({'a': 0, 'b': forsta, 'text': texter['hook'], 'mitt': [(r[0] + r[2]) / 2, (r[1] + r[3]) / 2], 'min': [r[2] - r[0], r[3] - r[1]],
-                      'max_bredd': 620, 'font_px': 30, 'farg': SVART, 'bakgrund': VIT, 'radie': 12, 'pad': [18, 10]})
+                      'max_bredd': r[2] - r[0], 'font_px': px, 'font': fet, 'farg': SVART, 'bakgrund': VIT, 'radie': 12, 'pad': [18, 10], 'radavstand': 1.0})
 
     # 4) knappen på slutbilden (haiku): den orange rutan i knappbandet
     if 'knapp' in k and not texter.get('knapp'):

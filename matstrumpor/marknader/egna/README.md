@@ -93,5 +93,17 @@ visar loggan "MATSTRUMPOR.SE" med sushifiguren:
   - **Orange laxbitar** tas för orange rutor. Orange används bara i knappbandet och i 012v2.
 - **haikuh3 har ingen egen knapptext** i `bildtexter.sv.json`. Den tar samma marknads
   haikuh2-knapp ("BESTÄLL NU" → t.ex. "JETZT KAUFEN").
+- **Avsnitten börjar på "Ett:", "Två:" och "Tre:" med kolon.** Utan kolonet tog haikuh2:s
+  inledning "Tre anledningar att inte köpa …" första platsen, och varje rubrik hamnade ett avsnitt
+  för sent. Den svenska "TRE: DU GÖR DEM GLADA" stod då kvar, mätt i NO 2026-09-29. En svensk
+  rubrikruta som ingen ny rubrik täcker suddas nu alltid.
+- **Undertextfältet suddas inte under meningar som står i övre rutan eller på etiketten**
+  (s001h1: "Ser ut som sushi, är strumpor." och "Sushistrumpor."). Där fanns ingen svensk text i
+  fältet, och suddningen blev en grå rektangel mitt i bilden.
+- **Butikens adress efter sista meningen** ("Matstrumpor.se", struken) täcks av att sista
+  undertexten står kvar tills slutkortet är helt beige. Suddad syntes den som en grå ruta.
+- **Inledningen är fet och så stor som ryms** (Poppins Bold, 44 → 28 px, högst tre rader i
+  rutan): originalets inledning är stor fet text och bär annonsens första sekund. Mätt: 30–36 px
+  på alla elva språk.
 - **"Matstrumpor.se" i slutet** av haiku-videorna sägs inte och suddas bort. Rutan ersätts inte.
 - Poppins (OFL, `pipeline/fonts/`) täcker alla elva språkens tecken (kontrollerat med fontTools).
