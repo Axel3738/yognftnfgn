@@ -5,3 +5,22 @@ Kampanj `Värmesitsen 45 × 90 cm | BE ROAS 1.63 | Launch 2026-09-25` (id 120250
 ## Förstabatchen — VÄNTAR (2026-09-29)
 
 `annonsbehov` sa `forsta_batch` (3 927 kr, 25,0 % vinst, ROAS 3d 2,46) 2026-09-29. Ronden ville höja 1 000 → 1 200 kr (SKALA 20 %) men sköt upp — 0,0 procentenheter från zongränsen (UPPSKJUTEN_GRANS). Batchen skrevs inte: **varje brief måste peka på en lärdom** (CS-KLART punkt 6), lärdomar skrivs bara för etiketterade annonser, och etiketten sätts dag 7 på annonsens egen första vecka — annonserna skapades 2026-09-25, så sju dygn är fyllda först **2026-10-02**. Samma regel som ATV-Kapellet 24/9 och Värmesulorna 28/9. Annonsidéer: 0 rader Ny för produkten (handväskevinkeln är Byggd). Ingen Notion-hub än (skapas ur MALL först när briefer finns). Tills dess står behovet kvar i kön varje morgon, med flit — ingen `FORSTA_BATCH_KLAR`-rad är skriven.
+
+
+## Batch #1 — byggd 2026-09-29 kväll på Axels order ("När får dom hubbar då??????")
+
+Hubben **Heated seat cushion creative hub** (3ea270ab-908c-81cf-a1e4-f281af5ba113) skapades ur MALL i samma steg som raderna. Drive: `Batch #1` i Joshs produktmapp (1hPwwyPc_3dwacDhuwuF0hscQiXOIqXjz) med en undermapp per förstabatch-annons. Alla 9 briefer gröna i spärren (regi 5/5 resp. 4/4, 0 fel), som `Draft` i hubben, skapade via Notion-verktyget (integrationen Bäverbutiken RUTINER är inte inbjuden i hubben — Axels uppgift). Lärdomen L-120250365214170291 är **förtida (dag 5) och preliminär** — etiketten dag 7 (2026-10-02) bekräftar eller river den; `products/varmesitsen/lardomar.md`. Loggkoder `FORSTA_BATCH_KLAR` + `FARSDAG_BATCH_KLAR`.
+
+| Annons | Typ | Hook / rubrik | Hypotes / mätning | Notion |
+|---|---|---|---|---|
+| Varmesits_PD_3_H2 | video 16 s, iteration 1 på Varmesits_PD_3 | Den kalla sitsen känns innan du ens satt dig. | PD_3 carries all 11 purchases on 93 % of spend, ROAS 1. | https://www.notion.so/3ea270ab908c8187b58ff6365141293a |
+| Varmesits_PD_4_H1 | video 16 s, ny vinkel | Bilsätet är iskallt när du sätter dig på morgonen. | The page's own opening line names the car seat first ("Bilsätet, kontorsstolen eller campingstolen är iskall när du sätter dig på morgonen"); the winner speaks only to the sideline. | https://www.notion.so/3ea270ab908c81859179d8a580d495e8 |
+| Varmesits_FD_3_H1 | video 13 s, fars dag BOF | Värmesitsen får ström via USB. Powerbank ingår inte. | H1 mot H2 mot H3: vilken öppning (invändning, pris, sista dag) | https://www.notion.so/3ea270ab908c815daf06eeccc0c7ce3a |
+| Varmesits_FD_3_H2 | video 13 s, fars dag BOF | Fars dag: 599 kr, ord. 779 kr. USB-driven värmesits. | H1 mot H2 mot H3: vilken öppning (invändning, pris, sista dag) | https://www.notion.so/3ea270ab908c81889e7defbc3e8e0405 |
+| Varmesits_FD_3_H3 | video 13 s, fars dag BOF | Beställ senast 19 oktober. Värmesits med 4 värmezoner. | H1 mot H2 mot H3: vilken öppning (invändning, pris, sista dag) | https://www.notion.so/3ea270ab908c8176aefaf18249672268 |
+| Varmesits_FD_4_1 | bild, fars dag BOF | Den drivs via USB. | textrutans budskap mot syskonen | https://www.notion.so/3ea270ab908c81049ce7fbcd9566e5cb |
+| Varmesits_FD_4_2 | bild, fars dag BOF | 599 kr till fars dag. Ord. 779 kr. | textrutans budskap mot syskonen | https://www.notion.so/3ea270ab908c812fa2efc1593afcbc14 |
+| Varmesits_FD_4_3 | bild, fars dag BOF | Fars dag: beställ senast 19 oktober. | textrutans budskap mot syskonen | https://www.notion.so/3ea270ab908c81999b59cb9600fbfd81 |
+| Varmesits_FD_4_4 | bild, fars dag BOF | 45 × 90 cm. Täcker sits och rygg. | textrutans budskap mot syskonen | https://www.notion.so/3ea270ab908c81469d8ee126b7eea9fc |
+
+Mätning (ANALYSMETOD): ingen dom under 300 kr / 3 köp; varje annons mot förälderns CPA (414 kr) och break-even-CPA (519 kr), aldrig mot ROAS ensam. Etikett dag 7 → lärdom → dna.md.

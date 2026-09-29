@@ -1,0 +1,116 @@
+{
+  "batch": {
+    "Värmesulorna_PD_1_H4": {
+      "hook": {"rad": "Kylan kryper uppåt medan du står still på passet.", "engelska": "The cold creeps upward while you stand still on the stand.", "alternativ": ["Tårna kallnar efter en kvart på passet.", "Timmar kvar på passet och tårna är redan kalla."]},
+      "rader": [
+        {"nr": 2, "rad": "Sulan klipps längs tryckta linjer, 41 till 46.", "engelska": "The insole is cut along printed lines, 41 to 46."},
+        {"nr": 3, "rad": "Sulan glider ner i skon. Skon på.", "engelska": "The insole slides into the boot. Boot on."},
+        {"nr": 4, "rad": "Tre värmelägen: hög, medel, låg. Fjärren har egen nyckelring.", "engelska": "Three heat levels: high, medium, low. The remote has its own keyring."},
+        {"nr": 5, "rad": "Värmesulor med fjärrkontroll. 869 kr, ord. 1 139 kr.", "engelska": "Heated insoles with remote. 869 kr, ord. 1 139 kr."}
+      ],
+      "text_pa_skarm": {"1": "Kylan kryper uppåt", "2": "Klipps längs linjerna, 41 till 46", "3": "Sulan ner i skon", "4": "Tre lägen: hög, medel, låg"},
+      "copy_card": {"primar": "Kylan kryper uppåt medan du står still på passet. Sulorna klipps efter din skostorlek, 41 till 46. Tre värmelägen styrs från fjärren på nyckelringen. 869 kr, ord. 1 139 kr.", "rubrik": "Tre värmelägen i skon", "beskrivning": "869 kr, ord. 1 139 kr"}
+    },
+    "Värmesulorna_PD_1_H5": {
+      "hook": {"rad": "Tre värmelägen du styr utan att röra en fot.", "engelska": "Three heat levels you control without moving a foot.", "alternativ": ["Du ändrar värmen med tummen. Skorna sitter kvar.", "Värmen styrs från nyckelringen. Ingen sko behöver av."]},
+      "rader": [
+        {"nr": 2, "rad": "Sulan klipps längs tryckta linjer, 41 till 46.", "engelska": "The insole is cut along printed lines, 41 to 46."},
+        {"nr": 3, "rad": "Sulan glider ner i skon. Skon på.", "engelska": "The insole slides into the boot. Boot on."},
+        {"nr": 4, "rad": "Tre värmelägen: hög, medel, låg. Fjärren har egen nyckelring.", "engelska": "Three heat levels: high, medium, low. The remote has its own keyring."},
+        {"nr": 5, "rad": "Värmesulor med fjärrkontroll. 869 kr, ord. 1 139 kr.", "engelska": "Heated insoles with remote. 869 kr, ord. 1 139 kr."}
+      ],
+      "text_pa_skarm": {"1": "Utan att röra en fot", "2": "Klipps längs linjerna, 41 till 46", "3": "Sulan ner i skon", "4": "Tre lägen: hög, medel, låg"},
+      "copy_card": {"primar": "Tre värmelägen du styr utan att röra en fot. Sulorna klipps efter din skostorlek, 41 till 46. Laddas med vanlig USB-kabel, 4 till 10 timmar per laddning enligt leverantören. 869 kr, ord. 1 139 kr.", "rubrik": "Värmen styrs från nyckelringen", "beskrivning": "869 kr, ord. 1 139 kr"}
+    },
+    "Värmesulorna_PD_3_H1": {
+      "hook": {"rad": "Står du stilla på jobbet kryper kylan uppåt.", "engelska": "Stand still at work and the cold creeps upward.", "alternativ": ["Timmar på betonggolvet och tårna har redan gett upp.", "Timme efter timme stilla i arbetsskor. Tårna märker det."]},
+      "rader": [
+        {"nr": 2, "rad": "Klipp sulan efter din storlek, 41 till 46.", "engelska": "Cut the insole to your size, 41 to 46."},
+        {"nr": 3, "rad": "Sulan ner i skon. Sedan skon på.", "engelska": "Insole into the boot. Then the boot on."},
+        {"nr": 4, "rad": "Du står still. Fjärren på nyckelringen styr värmen.", "engelska": "You stand still. The remote on the keyring controls the heat."},
+        {"nr": 5, "rad": "Värmesulor med fjärrkontroll. 869 kr, ord. 1 139 kr.", "engelska": "Heated insoles with remote. 869 kr, ord. 1 139 kr."}
+      ],
+      "text_pa_skarm": {"1": "Stilla på jobbet. Kylan kryper.", "2": "Klipp efter din storlek", "3": "Sulan ner i skon", "4": "Fjärren styr värmen"},
+      "copy_card": {"primar": "Står du stilla på jobbet kryper kylan uppåt. Sulorna klipps efter din skostorlek, 41 till 46. Tre värmelägen styrs med fjärren på nyckelringen. 869 kr, ord. 1 139 kr.", "rubrik": "Värmesulor med fjärrkontroll", "beskrivning": "869 kr, ord. 1 139 kr"}
+    }
+  },
+  "bof": {
+    "hook_H1": {"rad": "Fars dag: fjärren styr värmen, sulan klipps till skon.", "engelska": "Father's Day: the remote controls the heat, the insole is cut to the boot.", "alternativ": ["Fars dag: klipps efter skon, 41 till 46.", "Sulorna till fars dag klipps efter hans sko."]},
+    "hook_H2": {"rad": "869 kr, ord. 1 139 kr. Värmesulor med klipplinjer.", "engelska": "869 kr, ord. 1 139 kr. Heated insoles with cut lines.", "alternativ": ["Värmesulor med klipplinjer: 869 kr, ord. 1 139 kr.", "Fars dag-rea: 869 kr, ord. 1 139 kr."]},
+    "hook_H3": {"rad": "Beställ senast 19 oktober. Värmesulor till fars dag.", "engelska": "Order by 19 October. Heated insoles for Father's Day.", "alternativ": ["Beställ senast 19 oktober: pappan står stilla i kylan.", "Beställ senast 19 oktober: värmesulor till pappan på passet."]},
+    "rader": [
+      {"nr": 2, "rad": "Tryckta linjer på sulan för storlek 41 till 46.", "engelska": "Printed lines on the insole for sizes 41 to 46."},
+      {"nr": 3, "rad": "Fjärren styr tre lägen utan att röra en fot.", "engelska": "The remote controls three levels without moving a foot."},
+      {"nr": 4, "rad": "Fars dag-rea: 869 kr, ord. 1 139 kr. Beställ senast 19 oktober.", "engelska": "Father's Day sale: 869 kr, ord. 1 139 kr. Order by 19 October."}
+    ],
+    "text_pa_skarm": {"1_H1": "Fars dag: klipps till din storlek", "1_H2": "Fars dag-rea: 869 kr", "1_H3": "Fars dag: beställ senast 19 oktober", "2": "Klipplinjer för 41 till 46", "3": "Fjärren styr tre lägen"},
+    "bilder": {
+      "FD_4_1": {"rubrik": "Klipps efter din skostorlek, 41 till 46.", "underrad": "Tryckta klipplinjer på sulan. Fjärren styr tre värmelägen.", "engelska": {"rubrik": "Cut to your shoe size, 41 to 46.", "underrad": "Printed cut lines on the insole. The remote controls three heat levels."}},
+      "FD_4_2": {"rubrik": "869 kr. Ord. 1 139 kr. Fars dag-rea.", "underrad": "Två värmesulor med fjärrkontroll på nyckelring, klipps till din storlek.", "engelska": {"rubrik": "869 kr. Ord. 1 139 kr. Father's Day sale.", "underrad": "Two heated insoles with a keyring remote, cut to your size."}},
+      "FD_4_3": {"rubrik": "Beställ senast 19 oktober. Värmesulor till fars dag.", "underrad": "Laddas med vanlig USB-kabel, 4 till 10 timmar per laddning enligt leverantören.", "engelska": {"rubrik": "Order by 19 October. Heated insoles for Father's Day.", "underrad": "Charged with an ordinary USB cable, 4 to 10 hours per charge according to the supplier."}},
+      "FD_4_4": {"rubrik": "Två sulor, tre värmelägen, en fjärr.", "underrad": "Hög, medel, låg. Batteri 2000 mAh enligt leverantören.", "engelska": {"rubrik": "Two insoles, three heat levels, one remote.", "underrad": "High, medium, low. Battery 2000 mAh according to the supplier."}}
+    },
+    "copy_card": {"primar": "Fars dag: fjärren styr värmen, sulan klipps till skon. Klipplinjer för 41 till 46 står tryckta på sulan. Fars dag-rea: 869 kr, ord. 1 139 kr. Beställ senast 19 oktober.", "rubrik": "Värmesulor som klipps efter skon", "beskrivning": "Fars dag-rea: 869 kr, ord. 1 139 kr"}
+  },
+  "tretest": [
+    {"rad": "Kylan kryper uppåt medan du står still på passet.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Sidans egen scen: stilla, kylan uppåt. Bilden visar stövlar och andedräkt."},
+    {"rad": "Tårna kallnar efter en kvart på passet.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Sidans kvart, konkret tidpunkt."},
+    {"rad": "Timmar kvar på passet och tårna är redan kalla.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Sidans scen, jägarens pass."},
+    {"rad": "Sulan klipps längs tryckta linjer, 41 till 46.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Saxen syns på linjen; storlekarna står på sidan."},
+    {"rad": "Sulan glider ner i skon. Skon på.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Handen som skjuter in sulan syns."},
+    {"rad": "Tre värmelägen: hög, medel, låg. Fjärren har egen nyckelring.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Tre lägen och nyckelringen är sidans fakta och syns."},
+    {"rad": "Värmesulor med fjärrkontroll. 869 kr, ord. 1 139 kr.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Pris och jämförpris ur sidan, slutkort med prisband."},
+    {"rad": "Tre värmelägen du styr utan att röra en fot.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Sidans egen rubrik; tummen på knappen, skorna stilla."},
+    {"rad": "Du ändrar värmen med tummen. Skorna sitter kvar.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Bryter tvivlet att man måste ta av skorna."},
+    {"rad": "Värmen styrs från nyckelringen. Ingen sko behöver av.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Nyckelringsfjärren är unik mekanism."},
+    {"rad": "Står du stilla på jobbet kryper kylan uppåt.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Ny avatar (gissning); samma mekanism som sidan, stillastående i kylan."},
+    {"rad": "Timmar på betonggolvet och tårna har redan gett upp.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Betonggolv syns i bilden; upplevelsen är observerbar."},
+    {"rad": "Timme efter timme stilla i arbetsskor. Tårna märker det.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Arbetsskor på golv syns i bilden."},
+    {"rad": "Klipp sulan efter din storlek, 41 till 46.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Saxen syns; 41 till 46 är sidans fakta."},
+    {"rad": "Sulan ner i skon. Sedan skon på.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Bilden visar exakt detta."},
+    {"rad": "Du står still. Fjärren på nyckelringen styr värmen.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Fjärren syns på nyckelringen i bilden."},
+    {"rad": "Kylan kryper uppåt", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Skärmtext, kortversion av hooken."},
+    {"rad": "Klipps längs linjerna, 41 till 46", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Skärmtext, saxen syns."},
+    {"rad": "Sulan ner i skon", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Skärmtext, handen syns."},
+    {"rad": "Tre lägen: hög, medel, låg", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Skärmtext, sidans tre lägen."},
+    {"rad": "Utan att röra en fot", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Skärmtext, tummen på fjärren."},
+    {"rad": "Stilla på jobbet. Kylan kryper.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Skärmtext för ny avatar."},
+    {"rad": "Klipp efter din storlek", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Skärmtext, saxen syns."},
+    {"rad": "Fjärren styr värmen", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Skärmtext, fjärren syns."},
+    {"rad": "Kylan kryper uppåt medan du står still på passet. Sulorna klipps efter din skostorlek, 41 till 46. Tre värmelägen styrs från fjärren på nyckelringen. 869 kr, ord. 1 139 kr.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Copy card H4, allt ur sidan."},
+    {"rad": "Tre värmelägen i skon", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Rubrik H4."},
+    {"rad": "869 kr, ord. 1 139 kr", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Beskrivning, priset ur sidan."},
+    {"rad": "Tre värmelägen du styr utan att röra en fot. Sulorna klipps efter din skostorlek, 41 till 46. Laddas med vanlig USB-kabel, 4 till 10 timmar per laddning enligt leverantören. 869 kr, ord. 1 139 kr.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Copy card H5, leverantörens tid med förbehåll."},
+    {"rad": "Värmen styrs från nyckelringen", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Rubrik H5."},
+    {"rad": "Står du stilla på jobbet kryper kylan uppåt. Sulorna klipps efter din skostorlek, 41 till 46. Tre värmelägen styrs med fjärren på nyckelringen. 869 kr, ord. 1 139 kr.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Copy card PD_3_H1."},
+    {"rad": "Värmesulor med fjärrkontroll", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Rubrik PD_3_H1, produktens namn."},
+    {"rad": "Fars dag: fjärren styr värmen, sulan klipps till skon.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Tummen på fjärren och sulorna i skorna syns; svarar på passform."},
+    {"rad": "Fars dag: klipps efter skon, 41 till 46.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Svar på passform med sidans storlekar."},
+    {"rad": "Sulorna till fars dag klipps efter hans sko.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Sidans klippning kopplad till pappan."},
+    {"rad": "869 kr, ord. 1 139 kr. Värmesulor med klipplinjer.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Pris först; klipplinjerna syns uppifrån."},
+    {"rad": "Värmesulor med klipplinjer: 869 kr, ord. 1 139 kr.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Samma, omvänd ordning."},
+    {"rad": "Fars dag-rea: 869 kr, ord. 1 139 kr.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Erbjudandet som hook."},
+    {"rad": "Beställ senast 19 oktober. Värmesulor till fars dag.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Riktig sista dag kopplad till produkten."},
+    {"rad": "Beställ senast 19 oktober: pappan står stilla i kylan.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Bilden visar honom stilla i kylan."},
+    {"rad": "Beställ senast 19 oktober: värmesulor till pappan på passet.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Passet är sidans scen."},
+    {"rad": "Tryckta linjer på sulan för storlek 41 till 46.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Linjerna syns i bilden."},
+    {"rad": "Fjärren styr tre lägen utan att röra en fot.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Tummen på knappen syns."},
+    {"rad": "Fars dag-rea: 869 kr, ord. 1 139 kr. Beställ senast 19 oktober.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Erbjudandet, slutkortet visar det."},
+    {"rad": "Fars dag: klipps till din storlek", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Skärmtext bär fars dag."},
+    {"rad": "Fars dag-rea: 869 kr", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Skärmtext bär fars dag och priset."},
+    {"rad": "Fars dag: beställ senast 19 oktober", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Skärmtext bär fars dag och sista dag."},
+    {"rad": "Klipplinjer för 41 till 46", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Skärmtext, linjerna syns."},
+    {"rad": "Fjärren styr tre lägen", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Skärmtext, fjärren syns."},
+    {"rad": "Klipps efter din skostorlek, 41 till 46.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Bildrubrik, svar på passform."},
+    {"rad": "Tryckta klipplinjer på sulan. Fjärren styr tre värmelägen.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Underrad, sidans fakta."},
+    {"rad": "869 kr. Ord. 1 139 kr. Fars dag-rea.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Priset som rubrik."},
+    {"rad": "Två värmesulor med fjärrkontroll på nyckelring, klipps till din storlek.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Vad han får; fotot visar två sulor och fjärren."},
+    {"rad": "Beställ senast 19 oktober. Värmesulor till fars dag.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Sista dagen som rubrik."},
+    {"rad": "Laddas med vanlig USB-kabel, 4 till 10 timmar per laddning enligt leverantören.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Sidans laddning och tid med förbehåll."},
+    {"rad": "Två sulor, tre värmelägen, en fjärr.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Innehållet som rubrik; fotot visar det."},
+    {"rad": "Hög, medel, låg. Batteri 2000 mAh enligt leverantören.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Sidans lägen och batteri med förbehåll."},
+    {"rad": "Fars dag: fjärren styr värmen, sulan klipps till skon. Klipplinjer för 41 till 46 står tryckta på sulan. Fars dag-rea: 869 kr, ord. 1 139 kr. Beställ senast 19 oktober.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Copy card BOF."},
+    {"rad": "Värmesulor som klipps efter skon", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Rubrik BOF."},
+    {"rad": "Fars dag-rea: 869 kr, ord. 1 139 kr", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Beskrivning BOF."}
+  ]
+}

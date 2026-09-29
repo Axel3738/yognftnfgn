@@ -1,0 +1,110 @@
+{
+  "batch": {
+    "Varmesits_PD_3_H2": {
+      "hook": {"rad": "Den kalla sitsen känns innan du ens satt dig.", "engelska": "The cold seat is felt before you've even sat down.", "alternativ": ["Stolen är iskall innan du ens satt dig.", "Du fryser i onödan på en iskall stol."]},
+      "rader": [
+        {"nr": 2, "rad": "45 × 90 cm. Den täcker sits och rygg.", "engelska": "45 × 90 cm. It covers seat and back."},
+        {"nr": 3, "rad": "4 värmezoner över både sits och rygg.", "engelska": "4 heat zones over both seat and back."},
+        {"nr": 4, "rad": "Sitsen värmer där du sitter och lutar dig.", "engelska": "The cushion heats where you sit and lean."},
+        {"nr": 5, "rad": "599 kr, ord. 779 kr.", "engelska": "599 SEK, was 779 SEK."}
+      ],
+      "text_pa_skarm": {"1": "Iskall sits innan du satt dig", "2": "45 × 90 cm", "3": "4 värmezoner", "4": "Värmer där du sitter"},
+      "copy_card": {
+        "primar": "Den kalla sitsen känns innan du ens satt dig. Värmesitsen är 45 × 90 cm och täcker sits och rygg med 4 värmezoner. Tre lägen väljs med en knapp. Drivs via USB, powerbank ingår inte.",
+        "rubrik": "Värmesits med 4 värmezoner",
+        "beskrivning": "599 kr, ord. 779 kr"
+      }
+    },
+    "Varmesits_PD_4_H1": {
+      "hook": {"rad": "Bilsätet är iskallt när du sätter dig på morgonen.", "engelska": "The car seat is ice cold when you sit down in the morning.", "alternativ": ["Frost på rutan. Iskallt under dig.", "Lägg den över förarsätet och tryck på knappen."]},
+      "rader": [
+        {"nr": 2, "rad": "Över sits och rygg: 45 × 90 cm.", "engelska": "Over seat and back: 45 × 90 cm."},
+        {"nr": 3, "rad": "4 värmezoner. Tre lägen, väljs med en knapp.", "engelska": "4 heat zones. Three levels, chosen with a button."},
+        {"nr": 4, "rad": "Den drivs via USB. Powerbank ingår inte.", "engelska": "It runs on USB. Powerbank not included."},
+        {"nr": 5, "rad": "599 kr, ord. 779 kr.", "engelska": "599 SEK, was 779 SEK."}
+      ],
+      "text_pa_skarm": {"1": "Iskallt bilsäte på morgonen", "2": "Över sits och rygg", "3": "4 värmezoner, 3 lägen", "4": "Powerbank ingår inte"},
+      "copy_card": {
+        "primar": "Bilsätet är iskallt när du sätter dig på morgonen. Lägg Värmesitsen över sätet och tryck på knappen. 45 × 90 cm, 4 värmezoner, 3 lägen. Drivs via USB, powerbank ingår inte.",
+        "rubrik": "Värmesits för ett iskallt bilsäte",
+        "beskrivning": "599 kr, ord. 779 kr"
+      }
+    }
+  },
+  "bof": {
+    "hook_H1": {"rad": "Värmesitsen får ström via USB. Powerbank ingår inte.", "engelska": "The heated seat cushion gets its power via USB. Powerbank not included.", "alternativ": ["Tryck på knappen. Ström via USB, tre lägen.", "Värmesits till fars dag. Drivs via USB."]},
+    "hook_H2": {"rad": "Fars dag: 599 kr, ord. 779 kr. USB-driven värmesits.", "engelska": "Father's Day: 599 SEK, was 779 SEK. USB-powered heated seat cushion.", "alternativ": ["Fars dag-rea: 599 kr, ord. 779 kr.", "Värmesits till fars dag: 599 kr, ord. 779 kr."]},
+    "hook_H3": {"rad": "Beställ senast 19 oktober. Värmesits med 4 värmezoner.", "engelska": "Order by 19 October. Heated seat cushion with 4 heat zones.", "alternativ": ["Beställ senast 19 oktober. Värmesits till fars dag.", "Beställ senast 19 oktober. Fars dag-värmesits."]},
+    "rader": [
+      {"nr": 2, "rad": "Ström via USB. Powerbank ingår inte.", "engelska": "Power via USB. Powerbank not included."},
+      {"nr": 3, "rad": "45 × 90 cm. Täcker sits och rygg.", "engelska": "45 × 90 cm. Covers seat and back."},
+      {"nr": 4, "rad": "Fars dag-rea: 599 kr, ord. 779 kr. Beställ senast 19 oktober.", "engelska": "Father's Day sale: 599 SEK, was 779 SEK. Order by 19 October."}
+    ],
+    "text_pa_skarm": {"1_H1": "Fars dag: ström via USB", "1_H2": "Fars dag-rea: 599 kr", "1_H3": "Fars dag: beställ senast 19 oktober", "2": "Ström via USB", "3": "45 × 90 cm"},
+    "bilder": {
+      "FD_4_1": {"rubrik": "Den drivs via USB.", "underrad": "Anslut en vanlig USB-kabel. Powerbank ingår inte.", "engelska": {"rubrik": "It runs on USB.", "underrad": "Connect an ordinary USB cable. Powerbank not included."}},
+      "FD_4_2": {"rubrik": "599 kr till fars dag. Ord. 779 kr.", "underrad": "Värmesits, 45 × 90 cm, med 4 värmezoner.", "engelska": {"rubrik": "599 SEK for Father's Day. Was 779 SEK.", "underrad": "Heated seat cushion, 45 × 90 cm, with 4 heat zones."}},
+      "FD_4_3": {"rubrik": "Fars dag: beställ senast 19 oktober.", "underrad": "USB-driven värmesits för sits och rygg, 45 × 90 cm.", "engelska": {"rubrik": "Father's Day: order by 19 October.", "underrad": "USB-powered heated seat cushion for seat and back, 45 × 90 cm."}},
+      "FD_4_4": {"rubrik": "45 × 90 cm. Täcker sits och rygg.", "underrad": "4 värmezoner och 3 lägen, väljs med en knapp.", "engelska": {"rubrik": "45 × 90 cm. Covers seat and back.", "underrad": "4 heat zones and 3 levels, chosen with a button."}}
+    },
+    "copy_card": {
+      "primar": "Värmesitsen får ström via USB. Powerbank ingår inte. 4 värmezoner, 3 lägen med en knapp. Fars dag-rea: 599 kr, ord. 779 kr. Beställ senast 19 oktober.",
+      "rubrik": "Fars dag: värmesits med USB",
+      "beskrivning": "Fars dag-rea: 599 kr, ord. 779 kr"
+    }
+  },
+  "tretest": [
+    {"rad": "Den kalla sitsen känns innan du ens satt dig.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Bilden: frusen på tom kall stol. Sidans egen rad, kortad."},
+    {"rad": "Stolen är iskall innan du ens satt dig.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Samma scen, stolen som subjekt."},
+    {"rad": "Du fryser i onödan på en iskall stol.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Sidans 'fryser i onödan'."},
+    {"rad": "45 × 90 cm. Den täcker sits och rygg.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Mått och täckning, syns när personen sätter sig."},
+    {"rad": "4 värmezoner över både sits och rygg.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Räknebart i närbilden."},
+    {"rad": "Sitsen värmer där du sitter och lutar dig.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Sidans funktionsrad."},
+    {"rad": "599 kr, ord. 779 kr.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Pris live 2026-09-29."},
+    {"rad": "Iskall sits innan du satt dig", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Kortversion av hooken."},
+    {"rad": "45 × 90 cm", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Mått."},
+    {"rad": "4 värmezoner", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Räknebart."},
+    {"rad": "Värmer där du sitter", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Kortversion av rad 4."},
+    {"rad": "Den kalla sitsen känns innan du ens satt dig. Värmesitsen är 45 × 90 cm och täcker sits och rygg med 4 värmezoner. Tre lägen väljs med en knapp. Drivs via USB, powerbank ingår inte.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Bara sidans fakta."},
+    {"rad": "Värmesits med 4 värmezoner", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Rubrik, 4 ord."},
+    {"rad": "Bilsätet är iskallt när du sätter dig på morgonen.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Sidans öppningsscen, bilförare. Bilden: frost på rutan."},
+    {"rad": "Frost på rutan. Iskallt under dig.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Matchar första bildrutan."},
+    {"rad": "Lägg den över förarsätet och tryck på knappen.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Beskriver bilden ordagrant."},
+    {"rad": "Över sits och rygg: 45 × 90 cm.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Mått och täckning."},
+    {"rad": "4 värmezoner. Tre lägen, väljs med en knapp.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Sidans fakta."},
+    {"rad": "Den drivs via USB. Powerbank ingår inte.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Sidans fakta, powerbank-förbehåll."},
+    {"rad": "Iskallt bilsäte på morgonen", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Kortversion av hooken."},
+    {"rad": "Över sits och rygg", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Kort."},
+    {"rad": "4 värmezoner, 3 lägen", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Räknebart."},
+    {"rad": "Powerbank ingår inte", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Sidans förbehåll."},
+    {"rad": "Bilsätet är iskallt när du sätter dig på morgonen. Lägg Värmesitsen över sätet och tryck på knappen. 45 × 90 cm, 4 värmezoner, 3 lägen. Drivs via USB, powerbank ingår inte.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Bara sidans fakta."},
+    {"rad": "Värmesits för ett iskallt bilsäte", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Rubrik, 5 ord."},
+    {"rad": "599 kr, ord. 779 kr", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Beskrivning, pris live."},
+    {"rad": "Värmesitsen får ström via USB. Powerbank ingår inte.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Svarar på invändningen. Bilden: tumme på knappen."},
+    {"rad": "Tryck på knappen. Ström via USB, tre lägen.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Bilden visar knappen."},
+    {"rad": "Värmesits till fars dag. Drivs via USB.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Fars dag hörs direkt."},
+    {"rad": "Fars dag: 599 kr, ord. 779 kr. USB-driven värmesits.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Priset först. Bilden: USB-kontakt."},
+    {"rad": "Fars dag-rea: 599 kr, ord. 779 kr.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Priset först."},
+    {"rad": "Värmesits till fars dag: 599 kr, ord. 779 kr.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Pris plus produkt."},
+    {"rad": "Beställ senast 19 oktober. Värmesits med 4 värmezoner.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Sista dagen först, zonerna syns i närbilden."},
+    {"rad": "Beställ senast 19 oktober. Värmesits till fars dag.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Sista dagen kopplad till fars dag."},
+    {"rad": "Beställ senast 19 oktober. Fars dag-värmesits.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Kort variant."},
+    {"rad": "Ström via USB. Powerbank ingår inte.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Bilden: kontakt i powerbank i jackfickan."},
+    {"rad": "45 × 90 cm. Täcker sits och rygg.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Syns när personen sätter sig."},
+    {"rad": "Fars dag-rea: 599 kr, ord. 779 kr. Beställ senast 19 oktober.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Erbjudandet, 11 ord, ägarens pris."},
+    {"rad": "Fars dag: ström via USB", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Skärmtext bär fars dag."},
+    {"rad": "Fars dag-rea: 599 kr", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Kort."},
+    {"rad": "Fars dag: beställ senast 19 oktober", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Riktig deadline."},
+    {"rad": "Ström via USB", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Kort."},
+    {"rad": "Den drivs via USB.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Bild 1, invändningen."},
+    {"rad": "Anslut en vanlig USB-kabel. Powerbank ingår inte.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Sidans ordalydelse."},
+    {"rad": "599 kr till fars dag. Ord. 779 kr.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Pris som rubrik, 8 ord."},
+    {"rad": "Värmesits, 45 × 90 cm, med 4 värmezoner.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Vad han får."},
+    {"rad": "Fars dag: beställ senast 19 oktober.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Bild 3, riktig deadline."},
+    {"rad": "USB-driven värmesits för sits och rygg, 45 × 90 cm.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Sidans fakta."},
+    {"rad": "4 värmezoner och 3 lägen, väljs med en knapp.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Sidans fakta."},
+    {"rad": "Värmesitsen får ström via USB. Powerbank ingår inte. 4 värmezoner, 3 lägen med en knapp. Fars dag-rea: 599 kr, ord. 779 kr. Beställ senast 19 oktober.", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Copy card, bara sidans fakta."},
+    {"rad": "Fars dag: värmesits med USB", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Rubrik, 5 ord."},
+    {"rad": "Fars dag-rea: 599 kr, ord. 779 kr", "visualisera": true, "falsifiera": true, "konkurrent_kan_signera": false, "kommentar": "Beskrivning."}
+  ]
+}

@@ -61,8 +61,8 @@ function svenskaRader(c) {
     ...c.rader.map((r) => r.rad), ...Object.values(c.text_pa_skarm ?? {}), ...b, c.copy_card.primar, c.copy_card.rubrik, c.copy_card.beskrivning];
 }
 
-function bygg(p) {
-  const c = JSON.parse(readFileSync(join(MAPP, 'copy', 'bof', `${p.nyckel}.json`), 'utf8'));
+export function bygg(p, copyFil = join(MAPP, 'copy', 'bof', `${p.nyckel}.json`), copyObj = null) {
+  const c = copyObj ?? JSON.parse(readFileSync(copyFil, 'utf8'));
   const streck = svenskaRader(c).filter((r) => /[–—]/.test(String(r)));
   if (streck.length) throw new Error(`tankstreck i svensk rad: ${streck.join(' | ')}`);
   const butik = svenskaRader(c).filter((r) => /bäverbutik|baverbutik|bever/i.test(String(r)));
@@ -107,7 +107,7 @@ function bygg(p) {
     const unika = [...new Set([...alla.map((r) => r.rad), ...alla.map(skarm), marke, prisband, sista, c.copy_card.primar, c.copy_card.rubrik, c.copy_card.beskrivning])];
     const tt = tretestTabell(c, unika);
     for (const s of tt.saknas) warn.push(`${namnVideo(h)}: tre-frågorstestet saknar raden "${s}"`);
-    const kallor = f.video ? `the parent ${f.namn} (Meta ad ${f.ad}, video ${f.video}, ${f.langd} s) — cut from the parent's project file or raw clips WITHOUT burned captions (the editor who delivered the parent has them in the product's Drive folder). The OUR AD timestamps refer to the live parent.` : `the parent ${f.namn} (Meta ad ${f.ad}) — the Drive file named in the Source column (Josh's product folder); the parent's own captions and VO are not used.`;
+    const kallor = f.video && f.langd ? `the parent ${f.namn} (Meta ad ${f.ad}, video ${f.video}, ${f.langd} s) — cut from the parent's project file or raw clips WITHOUT burned captions (the editor who delivered the parent has them in the product's Drive folder). The OUR AD timestamps refer to the live parent.` : `the parent ${f.namn} (Meta ad ${f.ad}) — the Drive file named in the Source column (Josh's product folder${f.driveFil ? `: https://drive.google.com/file/d/${f.driveFil}/view` : ''}); the parent's own captions and VO are not used.`;
 
     const md = `# ${namnVideo(h)} — Father's Day BOF recut of ${f.namn}: the objection answered, hook ${h} (${hookTyp[h]})
 
@@ -227,6 +227,7 @@ ${REA_BESLUT}
   return { video, bilder, warn };
 }
 
+if (process.argv[1] && process.argv[1].endsWith('bygg-bof.mjs')) {
 const bara = process.argv.slice(2);
 const manifest = { batch: 'fars-dag-bof-2026', datum: DATUM, briefer: [] };
 const allaVarningar = [];
@@ -246,3 +247,4 @@ if (!bara.length) writeFileSync(join(MAPP, 'manifest-bof.json'), JSON.stringify(
 console.log(`${manifest.briefer.length} briefer skrivna.`);
 for (const v of allaVarningar) console.log(`⚠ ${v}`);
 process.exitCode = allaVarningar.length ? 1 : 0;
+}
