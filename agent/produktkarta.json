@@ -9,8 +9,56 @@
     "Magiborsten NO (NO)"
   ],
   "lage_regel": "drift = minst 30 köp sedan start OCH livstids-ROAS över break-even (produkten har bevisat sig). Allt annat = test. Skillnaden spelar roll bara vid förlust: en testprodukt går åtgärdstrappan, en driftprodukt halveras ner mot 500 kr.",
-  "uppdaterad": "2026-09-27",
+  "uppdaterad": "2026-09-29",
   "kampanjer": [
+    {
+      "campaign_id": "120252423658210233",
+      "produkt": "ATV-Trekk NO",
+      "lage": "test",
+      "lage_motivering": "ny norsk kampanj startad 2026-09-29 04:57, 118 kr spend och 1 köp vid morgonens rond — tillagd av /rond-auto 2026-09-29. Break-even står i kampanjnamnet (norskt skrivsätt BE-ROAS 1,62). Prissheetets rad \"ATV-kapellet Heavy Duty\" har Norway-kolumnen 7,08 + 12,09 = 19.17 USD, men NO-posterna i kartan bär inget kostnadsblock (priset i NOK i beverbutikken.no är inte avläst) — kampanjnamnet gäller, som för övriga NO-kampanjer.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120252423739800233",
+      "produkt": "Snøfresertrekk NO",
+      "lage": "test",
+      "lage_motivering": "ny norsk kampanj startad 2026-09-29 05:09, 81 kr spend och noll köp vid morgonens rond — tillagd av /rond-auto 2026-09-29. Break-even står i kampanjnamnet (norskt skrivsätt BE-ROAS 1,62). Prissheetets rad \"Snow Blower Cover …\" bär bara AliExpress-noten (US $13.47, landad ca 195 kr), inga frakt- eller landskolumner — därför inget kostnadsblock, kampanjnamnet gäller.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250409032260291",
+      "produkt": "Läktarponchon med Värme",
+      "lage": "test",
+      "lage_motivering": "ny kampanj startad 2026-09-29 02:25, 138 kr spend och noll köp vid morgonens rond — tillagd av /rond-auto 2026-09-29. Break-even står i kampanjnamnet (1.64). Priset i butiken 849 kr (jämförpris 1 109) läst ur baverbutiken.se/products.json 2026-09-29 (handle laktarponcho-med-varme-tre-varmelagen-via-usb). Kostnadsblocket fyllt 2026-09-29 ur prissheetets CSV-export (export?format=csv).",
+      "break_even_roas": null,
+      "break_even_kalla": "uträknad ur kostnadsblocket (Axels prissheet)",
+      "kostnad": {
+        "pris_sek": 849,
+        "usd": 26.32,
+        "eur": 2.9,
+        "sek": 0,
+        "kalla": "Axels prissheet (Google Sheet 10VrOx…, CSV-export 2026-09-29, raden \"Läktarponchon med värme\"), 1 st till Sverige (kolumnen SWEDEN): produkt + frakt 7,69 + 18,63 = 26.32 USD, plus 2,9 EUR EU-avgift per order. Priset 849 kr läst ur baverbutiken.se/products.json 2026-09-29.",
+        "datum": "2026-09-29"
+      }
+    },
+    {
+      "campaign_id": "120250409571040291",
+      "produkt": "Sorkkorgarna 15-pack",
+      "lage": "test",
+      "lage_motivering": "ny kampanj startad 2026-09-29 03:34, 154 kr spend och noll köp vid morgonens rond — tillagd av /rond-auto 2026-09-29. Break-even står i kampanjnamnet (1.31). Priset i butiken 569 kr (jämförpris 749) läst ur baverbutiken.se/products.json 2026-09-29 (handle sorkkorgar-i-rostfritt-nat-15-pack-skydd-runt-rotterna). Kostnadsblocket fyllt 2026-09-29 ur prissheetets CSV-export (export?format=csv).",
+      "break_even_roas": null,
+      "break_even_kalla": "uträknad ur kostnadsblocket (Axels prissheet)",
+      "kostnad": {
+        "pris_sek": 569,
+        "usd": 16.35,
+        "eur": 2.9,
+        "sek": 0,
+        "kalla": "Axels prissheet (Google Sheet 10VrOx…, CSV-export 2026-09-29, raden \"Sorkkorgarna i rostfritt, 15-pack (09-15)\"), 1 st till Sverige (kolumnen SWEDEN): produkt + frakt 6,92 + 9,43 = 16.35 USD, plus 2,9 EUR EU-avgift per order. Priset 569 kr läst ur baverbutiken.se/products.json 2026-09-29.",
+        "datum": "2026-09-29"
+      }
+    },
     {
       "campaign_id": "120250333936950291",
       "produkt": "Spabadskapellet i Svart 210D",
