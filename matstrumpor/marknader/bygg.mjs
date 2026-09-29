@@ -478,6 +478,10 @@ async function stegTema(k, { skarpt }) {
   log(`✅ ${skriv.length} temafiler skrivna och tillbakalästa: ${skriv.map((s) => s.filename).join(', ')}`);
 }
 
+// Marknadernas egna domäner (konfig.json → marknader[].doman.host). Allt annat är delat.
+const EGNA_DOMANER = new Set(KONFIG.marknader.map((m) => m.doman?.host).filter(Boolean));
+const delad = (wp) => !EGNA_DOMANER.has(wp.domain?.host);
+
 async function stegPublicera(k, { skarpt }) {
   let lage = await hamtaLage(k);
   for (const locale of LOCALES) {
@@ -489,8 +493,10 @@ async function stegPublicera(k, { skarpt }) {
     if (r.fel.length) throw new Error(`Publicera ${locale}: ${r.fel.join('; ')}`);
     log(`✅ ${locale} publicerat`);
   }
-  // alternateLocales på varje webbnärvaro (domänen + myshopify) — alla launchspråk.
-  for (const wp of lage.webPresences) {
+  // alternateLocales på varje DELAD webbnärvaro (matstrumpor.se + myshopify) — alla launchspråk.
+  // Marknadernas egna domäner (.no/.eu/.com, `doman` i konfig.json) sköts av --steg domaner: .no
+  // ska bara ha norska (A/B-testets B-version), och en egen domän kan inte delas mellan marknader.
+  for (const wp of lage.webPresences.filter(delad)) {
     const har = wp.alternateLocales.map((l) => l.locale);
     const nya = LOCALES.filter((l) => !har.includes(l) && wp.defaultLocale?.locale !== l);
     if (nya.length === 0) { log(`webbnärvaro ${wp.domain?.host}: har redan ${har.join(',')}`); continue; }
@@ -501,7 +507,7 @@ async function stegPublicera(k, { skarpt }) {
   }
   // Koppla närvaron till marknaderna (annars är /nb bara ett språk på Sveriges marknad — DryTrek 2026-09-10).
   lage = await hamtaLage(k);
-  const ids = lage.webPresences.map((w) => w.id);
+  const ids = lage.webPresences.filter(delad).map((w) => w.id);
   for (const m of KONFIG.marknader) {
     const mk = lage.marknader.find((x) => m.lander.some((c) => x.lander.includes(c)));
     if (!mk) { log(`⚠️ ${m.namn}: marknaden finns inte`); continue; }
@@ -514,6 +520,70 @@ async function stegPublicera(k, { skarpt }) {
     if (r.fel.length && !redan) throw new Error(`Koppla närvaron till ${mk.name}: ${r.fel.join('; ')}`);
     log(`✅ ${mk.name}: närvaro ${redan ? 'var redan kopplad' : r.data.marketUpdate.market.webPresences.nodes.map((w) => w.domain?.host).join(',')}`);
   }
+}
+
+// Marknadernas egna domäner (Axel kopplade .no/.eu/.com i Settings → Domains 2026-09-29):
+// webPresenceCreate({ domainId, defaultLocale, alternateLocales }) → marketUpdate(webPresencesToAdd).
+// Samma recept som carashell.com (factory/API-GRANSER.md) men .se-närvaron tas INTE bort ur
+// marknaden: de pausade annonserna länkar till matstrumpor.se/<språk>?country=<LAND>, och
+// A/B-testet i Norge kräver att matstrumpor.se/nb (A) och matstrumpor.no (B) fungerar samtidigt.
+// En egen domän kan bara ligga i EN marknad (mätt på CaraShell 2026-09-17: RESOURCE_NOT_FOUND).
+// Läser tillbaka närvaron och marknadens koppling efter varje ändring.
+async function stegDomaner(k, { skarpt }) {
+  const lasNarvaro = async () => (await k.graphql(`{ shop { domains { id host sslEnabled } }
+    webPresences(first: 30) { nodes { id domain { id host } defaultLocale { locale } alternateLocales { locale }
+      rootUrls { locale url } markets(first: 10) { nodes { id name } } } } }`));
+  let d = await lasNarvaro();
+  const lage = await hamtaLage(k);
+  for (const m of KONFIG.marknader) {
+    const dm = m.doman;
+    if (!dm?.host) { log(`${m.namn}: ingen egen domän i konfig.json`); continue; }
+    const domain = d.shop.domains.find((x) => x.host === dm.host);
+    if (!domain) { log(`⚠️ ${m.namn}: ${dm.host} är inte kopplad i Shopify (Settings → Domains) — ${KONFIG.domaner.cowork}`); continue; }
+    if (!domain.sslEnabled) log(`⚠️ ${dm.host}: SSL är inte klart än — Shopify utfärdar det inom en timme efter kopplingen`);
+    const mk = lage.marknader.find((x) => m.lander.some((c) => x.lander.includes(c)));
+    if (!mk) { log(`⚠️ ${m.namn}: marknaden finns inte — kör --steg marknader först`); continue; }
+    const alt = dm.alternativa ?? [];
+    let wp = d.webPresences.nodes.find((w) => w.domain?.id === domain.id);
+    if (!wp) {
+      if (!skarpt) { log(`torrt: ${dm.host} får en webbnärvaro (standard ${dm.standard}, alternativa ${alt.join(',') || '—'}) och kopplas till ${mk.name}`); continue; }
+      const r = await mutation(k, `mutation($input: WebPresenceCreateInput!) { webPresenceCreate(input: $input) { webPresence { id } userErrors { field message code } } }`, { input: { domainId: domain.id, defaultLocale: dm.standard, alternateLocales: alt } });
+      if (r.fel.length) throw new Error(`webPresenceCreate ${dm.host}: ${r.fel.join('; ')}`);
+      log(`✅ ${dm.host}: webbnärvaro skapad ${r.data.webPresenceCreate.webPresence.id}`);
+      d = await lasNarvaro();
+      wp = d.webPresences.nodes.find((w) => w.domain?.id === domain.id);
+      if (!wp) throw new Error(`${dm.host}: närvaron syns inte vid tillbakaläsningen`);
+    }
+    const harAlt = wp.alternateLocales.map((l) => l.locale);
+    const sprakRatt = wp.defaultLocale?.locale === dm.standard && harAlt.length === alt.length && alt.every((l) => harAlt.includes(l));
+    if (!sprakRatt) {
+      if (!skarpt) log(`torrt: ${dm.host} byter språk ${wp.defaultLocale?.locale}+${harAlt.join(',') || '—'} → ${dm.standard}+${alt.join(',') || '—'}`);
+      else {
+        const r = await mutation(k, `mutation($id: ID!, $input: WebPresenceUpdateInput!) { webPresenceUpdate(id: $id, input: $input) { webPresence { id } userErrors { field message } } }`, { id: wp.id, input: { defaultLocale: dm.standard, alternateLocales: alt } });
+        if (r.fel.length) throw new Error(`webPresenceUpdate ${dm.host}: ${r.fel.join('; ')}`);
+        log(`✅ ${dm.host}: språken satta`);
+      }
+    }
+    const iMarknader = wp.markets.nodes.map((x) => x.name);
+    const fel = wp.markets.nodes.filter((x) => x.id !== mk.id);
+    if (fel.length) log(`⚠️ ${dm.host} ligger även i ${fel.map((x) => x.name).join(', ')} — rörs inte, kontrollera i admin`);
+    if (wp.markets.nodes.some((x) => x.id === mk.id)) log(`${dm.host}: kopplad till ${mk.name}`);
+    else if (!skarpt) log(`torrt: ${dm.host} kopplas till ${mk.name}`);
+    else {
+      const r = await mutation(k, `mutation($id: ID!, $input: MarketUpdateInput!) { marketUpdate(id: $id, input: $input) { market { id } userErrors { field message code } } }`, { id: mk.id, input: { webPresencesToAdd: [wp.id] } });
+      if (r.fel.length) throw new Error(`Koppla ${dm.host} till ${mk.name}: ${r.fel.join('; ')}`);
+      log(`✅ ${dm.host}: kopplad till ${mk.name}`);
+    }
+  }
+  // Tillbakaläsning: varje egen domän med sina språk, rotadresser och marknader.
+  d = await lasNarvaro();
+  for (const m of KONFIG.marknader) {
+    const w = d.webPresences.nodes.find((x) => x.domain?.host === m.doman?.host);
+    if (!w) { log(`❌ ${m.namn}: ${m.doman?.host ?? '—'} har ingen närvaro`); continue; }
+    log(`${m.doman.host}: standard ${w.defaultLocale.locale}, alternativa ${w.alternateLocales.map((l) => l.locale).join(',') || '—'} · marknader ${w.markets.nodes.map((x) => x.name).join(' | ')} · ${w.rootUrls.map((r) => r.url).join(' ')}`);
+  }
+  const se = d.webPresences.nodes.find((x) => x.domain?.host === KONFIG.primar?.doman || x.domain?.host === 'matstrumpor.se');
+  if (se) log(`matstrumpor.se (delad, rörs inte): marknader ${se.markets.nodes.map((x) => x.name).join(' | ')}`);
 }
 
 // Tillbakaläsning: läser varje resurs' översättningar per språk ur Shopify och jämför med
@@ -571,8 +641,8 @@ async function stegKontroll(k, { bara: baraLocale = null }) {
   return ut;
 }
 
-const STEG = { definition: stegDefinition, marknader: stegMarknader, sprak: stegSprak, frakt: stegFrakt, prislista: stegPrislista, oversattningar: stegOversattningar, tema: stegTema, publicera: stegPublicera, kontroll: stegKontroll };
-const ORDNING = ['definition', 'marknader', 'sprak', 'frakt', 'prislista', 'oversattningar', 'tema', 'publicera', 'kontroll'];
+const STEG = { definition: stegDefinition, marknader: stegMarknader, sprak: stegSprak, frakt: stegFrakt, prislista: stegPrislista, oversattningar: stegOversattningar, tema: stegTema, publicera: stegPublicera, domaner: stegDomaner, kontroll: stegKontroll };
+const ORDNING = ['definition', 'marknader', 'sprak', 'frakt', 'prislista', 'oversattningar', 'tema', 'publicera', 'domaner', 'kontroll'];
 
 async function huvud() {
   const arg = process.argv.slice(2);
