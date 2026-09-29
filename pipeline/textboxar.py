@@ -49,7 +49,9 @@ def masker(rgb):
     H, S, V = hsv[..., 0], hsv[..., 1], hsv[..., 2]
     return {
         'ljus': (V >= 228) & (S <= 45),
-        'mork': (V <= 75) & (S <= 90),
+        # halvgenomskinlig mörk ruta: bara ljusheten — mättnaden är instabil vid låg ljushet och en
+        # mörk ruta över en brun tröja fick S 140–180 (mätt haikuh3 16 s)
+        'mork': (V <= 75),
         # Matstrumpors orange (#F68A28-ish): OpenCV-hue 6–22 av 180, mycket mättad och ljus.
         # S ≥ 180 och V ≥ 225 skiljer rutan från ett trägolv i samma kulör (S ~100–120, mätt 012v2)
         'orange': (H >= 6) & (H <= 22) & (S >= 180) & (V >= 225),
