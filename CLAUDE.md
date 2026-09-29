@@ -214,7 +214,11 @@ gällde till och med 2026-09-25. Skriv den aldrig i något nytt.
   stå publikt igen: inte i en policy, på en sida, i en mejlsidfot eller i en
   ny butik. Mätt 2026-09-27 morgon: den stod kvar i integritetspolicyn i sju
   butiker, i Bäverbutikens användarvillkor och i Grillklinikens policyer, alla
-  i väntan på Cowork-prompten ovan.
+  i väntan på Cowork-prompten ovan. ✅ **Borta, mätt 2026-09-29 kväll som
+  kund:** 0 träffar på "Sjöhed" i integritetspolicyn hos Matstrumpor (.se och
+  .eu/de), Bäverbutiken, CaraShell, NO, DK, FI och HeimGuard, i Bäverbutikens
+  användarvillkor och i Grillklinikens integritetspolicy och villkor.
+  AdventLane är inte mätt.
 - Klaviyo `QZ4jLG` (avstängt) bär fortfarande gamla postadressen. Byt den
   först om Klaviyo slås på igen.
 
