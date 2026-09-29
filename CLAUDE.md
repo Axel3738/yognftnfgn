@@ -2388,7 +2388,13 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
   "OPS-hubbar undantagna: N" varje körning. Aldrig på titel. **En ny OPS-hub
   måste skrivas in i registret** (`node factory/register.mjs notion <nyckel>
   <id>`), annars sugs den in i Leveransrundan och laddas upp i fel konto.
-  Lista: `node tools/lib/ops-hubbar.mjs`.
+  Lista: `node tools/lib/ops-hubbar.mjs`. ⚠️ **Fish rod holder
+  `3c3270ab-…` är Bäverbutikens sedan 2026-09-29** (Axels ord: "märk om
+  TackleBay-skiten till Bäverbutiken"): id:t är borttaget ur
+  `tacklebay/fiskespohallare-4-pack` (flytten i `notion.overford`), och de
+  elva gamla `TackleBayRod_`-raderna med tacklebay.se är blockerade i
+  `products/prefix-alias.json` → `blockerade`. De laddas aldrig upp och rörs
+  aldrig.
 - **Matstrumpors hub undantas nu också per id** (2026-09-21). `Matstrumpor
   creative hub` `3a7270ab-…` sågs av samma integration som Bäverbutikens och
   låg därmed i `/notionkorning`s kö. Den räddades bara av att inget

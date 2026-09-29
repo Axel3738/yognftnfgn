@@ -67,13 +67,18 @@ om "nya hubbar" (det är hans befintliga hubbar) — listan är orörd, i ställ
   är EN färg, så fyra färger i bild hade lovat fel.
 - **Leveranskön torrläst 2026-09-28 ~17:50:** Solcellslampa, Golfkalender och
   Täljset hittade med kampanj ur kontot. `Rodholder_FD_2_1` finns inte i kön
-  (Fish rod holder undantas). **Axels svar 2026-09-29:** hubben ska vara
-  Bäverbutikens, men han laddar upp själv ("jag vill inte att du gör det,
-  jag vill gärna göra det manuellt"). `factory/produkter/register.json` är
-  därför orörd: `Rodholder_FD_2_1` går upp för hand i kampanjen
-  `Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18` (`120249850522830291`),
-  adsetet `Fiskespöhållare GT Batch 2` (gåvovinkeln). Pris live samma morgon:
-  289 kr, ord. 482 kr.
+  (Fish rod holder undantas). **Axels svar 2026-09-29:** först "jag vill
+  gärna göra det manuellt", sedan samma morgon "Jag orkar fan inte ladda upp
+  de där. Det där får du göra." Därför är **hubben flyttad till
+  Bäverbutiken**: `notion.database_id` borttaget ur
+  `tacklebay/fiskespohallare-4-pack` i `factory/produkter/register.json`
+  (flytten står i `notion.overford`), och prefixet `TackleBayRod_` är
+  **blockerat** i `products/prefix-alias.json` så de elva gamla raderna med
+  tacklebay.se aldrig laddas upp eller rörs (`kampanjForPrefix` i
+  `tools/lib/kampanjval.mjs`, fem tester). Torrkörd 06:2x CEST:
+  `Rodholder_FD_2_1` och `Rodholder_PD_39_H1` → kampanjen Fiskespöhållaren
+  (ur kontot), elva `TackleBayRod_` → blockerade. Leveransrundan 13:20 laddar
+  upp dem; de framtida fars dag-videorna i hubben går samma väg.
 
 ⛔ **Ordet "rea" stoppades av bildrutinens textspärr** (`verifiera.py`: "ordet
 rea … stoppas alltid"), så alla elva `FD_2_1` hade fastnat i Draft i kväll.

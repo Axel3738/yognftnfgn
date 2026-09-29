@@ -63,3 +63,22 @@ export function prefixKarta(annonser) {
   Object.defineProperty(karta, '_uteslutna', { value: uteslutna, enumerable: false });
   return karta;
 }
+
+/**
+ * Kampanjen för ett prefix: products.json först, sedan kontot, sedan
+ * prefix-alias.json. Ett BLOCKERAT prefix (prefix-alias.json → `blockerade`)
+ * får ingen kampanj alls, vad kontot än säger — raden rapporteras och rörs
+ * aldrig. *(2026-09-29: hubben Fish rod holder flyttades från TackleBay till
+ * Bäverbutiken på Axels ord. I den låg elva gamla `TackleBayRod_`-annonser med
+ * tacklebay.se som landningssida; de får aldrig gissas in i Bäverbutikens
+ * Fiskespöhållaren-kampanj bara för att det är samma produkt.)*
+ */
+export function kampanjForPrefix(pfx, { konfig = {}, karta = {}, alias = {}, blockerade = {} } = {}) {
+  const p = konfig[pfx] ?? null;
+  if (blockerade[pfx]) return { p, kampanj: null, kalla: 'blockerad', blockerad: blockerade[pfx].orsak ?? 'blockerat prefix' };
+  const al = alias[pfx];
+  if (p) return { p, kampanj: { id: p.campaign_ids[0], name: null, status: null }, kalla: 'products.json' };
+  if (karta[pfx]) return { p, kampanj: karta[pfx], kalla: 'kontot' };
+  if (al) return { p, kampanj: { id: al.kampanj_id, name: al.kampanj_namn, status: null }, kalla: 'prefix-alias.json' };
+  return { p, kampanj: null, kalla: null };
+}

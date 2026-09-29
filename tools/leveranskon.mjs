@@ -19,7 +19,7 @@
 import { execFileSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import { allaKlaraRader, valjLeveransfiler } from './notion-kalla.mjs';
-import { annonsdel, prefixAv, prefixKarta, arListiclekampanj } from './lib/kampanjval.mjs';
+import { annonsdel, prefixAv, prefixKarta, arListiclekampanj, kampanjForPrefix } from './lib/kampanjval.mjs';
 
 // Redigerarnas leveransrot. Innehåller "Week N"-mappar, en mapp per annons.
 const EDITED_FOLDER = '1V4V8y4QQnX0tvZ3MQUicu1Y1k-l95yFM';
@@ -85,8 +85,11 @@ for (const p of products) {
 // "Balteslipmaskinen"). Da finns ingen gemensam strang att matcha pa — kopplingen
 // skrivs upp en gang i prefix-alias.json i stallet for att gissas.
 let alias = {};
+let blockerade = {};
 try {
-  alias = JSON.parse(readFileSync(`${ROT}products/prefix-alias.json`, 'utf8')).alias ?? {};
+  const fil = JSON.parse(readFileSync(`${ROT}products/prefix-alias.json`, 'utf8'));
+  alias = fil.alias ?? {};
+  blockerade = fil.blockerade ?? {};
 } catch { /* filen ar frivillig */ }
 
 // Notion-titlar bar ibland ett suffix: "Beachslippers_PD_2_8 – COPY ONLY: ...".
@@ -115,14 +118,10 @@ for (const v of veckor) {
     const namn = annonsdel(m.titel);
     const pfx = prefixAv(namn);
     if (!pfx) continue;                       // inte ett annonsnamn — hoppa tyst
-    const p = konfig[pfx] ?? null;
-    const al = alias[pfx];
-    const kampanj = p ? { id: p.campaign_ids[0], name: null, status: null }
-                  : (karta[pfx] ?? (al ? { id: al.kampanj_id, name: al.kampanj_namn, status: null } : null));
+    const { p, kampanj, kalla, blockerad } = kampanjForPrefix(pfx, { konfig, karta, alias, blockerade });
     leveranser.push({
       vecka: v.titel, mapp: m.id, namn, prefix: pfx,
-      produktId: p?.id ?? pfx, kampanj,
-      kalla: p ? 'products.json' : (karta[pfx] ? 'kontot' : (al ? 'prefix-alias.json' : null)),
+      produktId: p?.id ?? pfx, kampanj, kalla, ...(blockerad ? { blockerad } : {}),
     });
   }
 }
@@ -164,16 +163,12 @@ try {
     // går namnet inte att tolka ska den SYNAS som ett problem, inte försvinna.
     // *(Det var exakt så 13 MC-Kapell-creatives var osynliga fram till 2026-09-15.)*
     if (!pfx) { otolkade.push({ namn: r.namn, hub: r.hub, url: r.url }); continue; }
-    const p = konfig[pfx] ?? null;
-    const al = alias[pfx];
     // Kampanjkartan ur MagiBorsten ar ocksa teamspace-sparren: en hub vars prefix inte
     // finns i Baverbutikens konto hor till en annan verksamhet och laddas aldrig upp.
-    const kampanj = p ? { id: p.campaign_ids[0], name: null, status: null }
-                  : (karta[pfx] ?? (al ? { id: al.kampanj_id, name: al.kampanj_namn, status: null } : null));
+    const { p, kampanj, kalla, blockerad } = kampanjForPrefix(pfx, { konfig, karta, alias, blockerade });
     leveranser.push({
       vecka: r.hub, mapp: r.id, namn, prefix: pfx,
-      produktId: p?.id ?? pfx, kampanj,
-      kalla: p ? 'products.json' : (karta[pfx] ? 'kontot' : (al ? 'prefix-alias.json' : null)),
+      produktId: p?.id ?? pfx, kampanj, kalla, ...(blockerad ? { blockerad } : {}),
       kalla2: 'notion', notionUrl: r.url, notionFiler: r.filer, skapad: r.skapad,
       leverans: r.leverans, drive: r.drive ?? [], notionMedia: r.media ?? [],
     });
@@ -184,6 +179,14 @@ try {
   notionFel = e.saknarToken
     ? 'NOTION_TOKEN saknas — Notion-källan lästes INTE. Bildannonser från /bildannonser är osynliga i den här körningen.'
     : `Notion kunde inte läsas: ${e.message}`;
+}
+
+// Blockerade prefix skrivs ut varje körning, precis som listicle-uteslutningen:
+// raderna ligger kvar i "To be Reviewed" med flit och ska synas som ett beslut.
+const blockeradeRader = leveranser.filter(l => l.blockerad);
+for (const [pfx, b] of Object.entries(blockerade)) {
+  const antal = blockeradeRader.filter(l => l.prefix === pfx).length;
+  if (antal) console.error(`  ⤫ blockerat prefix "${pfx}_": ${antal} rad(er) laddas aldrig upp — ${b.orsak}`);
 }
 
 if (filter) {
