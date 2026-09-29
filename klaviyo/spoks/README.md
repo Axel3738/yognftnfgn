@@ -1024,7 +1024,11 @@ skriven för communityn OCH boten. Boten svarade samma dag (svar 16 i `klaviyo/e
 segmentera på engagemang, blanda värde och sälj per vecka, blitza de sista dagarna), och
 omgång 2 ovan följer svaret.
 
-**Kvar / nästa:** V04 skrivs fre 9/10 och V05 mån 12/10 (reserverna FD03 och FD02). Veckans
+**Kvar / nästa:** V04 skrivs fre 9/10 och V05 mån 12/10 (reserverna FD03 och FD02). Axel
+schemalägger en vecka i taget, efter att sessionen läst föregående veckas siffror mot
+`LARM_LEVERANS`. Påminnelser (`send_later` till sessionen som byggde serien, 08:30 CEST): mån
+5/10 vecka 2-listan `trig_01EH4bY8pvLc4UPkaCMn5RGt`, fre 9/10 V04 `trig_01GoTUd9oR7vppKrahMMyZ51`,
+mån 12/10 V05 + vecka 3 `trig_01M7GAcm5zvRmfcL1yDRQD4e`. Veckans
 dragning-blocket hör till tisdagarna (K02 6/10 först), inte till de dagliga; K16 förtur + F01
 E1 v4 (KUNDRESA §7). K15 skickades 28/9 11:18 CEST. Svaren på V01 och V02 landar i
 kundsupport@matstrumpor.se. Autosvaret skickar inget på dem: Matstrumpor går torrt, och ett
