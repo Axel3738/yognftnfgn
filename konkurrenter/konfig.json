@@ -92,6 +92,12 @@
     "taxa": { "annons": 5000, "video": 8000, "bild": 3000, "produkttext": 5000 },
     "_om": "Fakturan som följer med brevet (Axels order 2026-09-29: 'vi skickar med en färdig faktura'): skälig ersättning för nyttjandet enligt 54 § URL, en rad per kopierad annons/bild/produkttext som rutinen MÄTT (konkurrenter/faktura.mjs). BELOPPET (Axels beslut 2026-09-29, andra vändan: 'räkna ut det utifrån antalet exponeringar och sen bara fakturera det som de har spenderat'): berakning 'exponeringar' = per annons exponeringar × vår CPM ÷ 1000, alltså vad deras annonsutrymme kostat i samma kanal; exponeringarna läser Axel av i annonsbibliotekets EU-ruta och skriver i annonsfilen. Saknas talet går annonsen på schablontaxan (taxa, sessionens förslag). minst_per_annons 0 = inget golv (Axels 'bara'). iban ifyllt av Axel 2026-09-29 (kontrollsiffran stämmer, mod 97 = 1). MOMS: 25 % till svenska köpare (Axels svar 'ja, B2B … 25 %'), moms_utland_procent 0 med omvänd betalningsskyldighet till utländska näringsidkare; är ersättningen skadestånd utan moms enligt redovisningskonsulten sätts moms_procent 0. Momsreg.nr härleds ur org.nr (SE559576240101)."
   },
+  "anmalan": {
+    "undertecknare": { "namn": "Axel Odhner", "roll": "CEO", "epost": "contact@stonebite.org", "telefon": "", "adress": "Stenkolsgatan 1B, 417 07 Göteborg, Sweden" },
+    "vara_sidor": { "Bäverbutiken": "678639638662543", "CaraShell": "1381171778405935", "Matstrumpor": "820358954504320" },
+    "cdn_butik": "matstrumpor",
+    "_om": "Meta-anmälan av kopierade annonser (Axels order 2026-09-29: en anmälan per annons, allt ifyllt, skärmdump med, han verifierar en gång). undertecknare = den som skriver under i Metas upphovsrättsformulär — formuläret kräver en riktig person, så VD:ns namn står HÄR men aldrig i brevet (CLAUDE.md-regeln gäller brevet). vara_sidor = våra Facebook-sidor per verksamhet (ur kommentarer/konfig.json → sidor) för länken till originalet i annonsbiblioteket. cdn_butik = butiken vars Shopify Files bär bevisbilderna publikt (matstrumpors app 'Fabriken' har write_files, samma väg som matstrumpor/thumbnails.mjs) — Metas formulär tar inte alltid bilagor, så länken står i anmälan; tom sträng = ingen uppladdning, bara bilagan. Formulären står i anmalan.mjs → FORMULAR och läses av live i Chrome — fälten kan ändras hos Meta."
+  },
   "discord": {
     "kanal": "copycats",
     "servrar": { "Bäverbutiken": "Bäverbutiken", "CaraShell": "CaraShell — OPS" },

@@ -7,7 +7,7 @@
 //
 // Indata (konkurrenter/output/<datum>.annonser.json, eller valfri fil med --annonser):
 // {
-//   "deras": { "sidnamn": "Kopian", "doman": "kopian.se", "url": "https://kopian.se", "mottagare": "info@kopian.se", "foretag": "Kopian AB", "orgnr": "556677-8899" },
+//   "deras": { "sidnamn": "Kopian", "sida_id": "1299101096626433", "doman": "kopian.se", "url": "https://kopian.se", "mottagare": "info@kopian.se", "foretag": "Kopian AB", "orgnr": "556677-8899" },
 //   "annonser": [
 //     { "lank": "https://www.facebook.com/ads/library/?id=…", "text": "…deras primärtext…", "rubrik": "…", "bilder": ["https://…/bild.jpg", "/sökväg/skärmdump.png"], "video": true, "start": "2026-09-01", "exponeringar": "12 345" }
 //   ]
@@ -127,7 +127,7 @@ export function byggAnnonsfynd(input, { egnaAnnonser, egnaProdukter, konfig, der
       annons: basta.varAnnons ? { id: basta.varAnnons.id, namn: basta.varAnnons.namn, bild: basta.varAnnons.bild } : null,
     },
     deras: {
-      url: deras.url, doman: deras.doman, sidnamn: deras.sidnamn ?? null, foretag: deras.foretag ?? null, adress: deras.adress ?? null,
+      url: deras.url, doman: deras.doman, sidnamn: deras.sidnamn ?? null, sidaId: deras.sida_id ?? deras.sidaId ?? deras.page_id ?? null, foretag: deras.foretag ?? null, adress: deras.adress ?? null,
       titel: sida?.titel ?? null, lang: sida?.lang ?? deras.lang ?? null, plattform: sida?.plattform ?? null,
       epost: sida?.epost ?? [], orgnr: deras.orgnr ? [{ typ: 'SE', nr: deras.orgnr }] : (sida?.orgnr ?? []),
       kontakt: sida?.kontakt ?? { epost: [], kallor: [] }, mottagare: deras.mottagare ?? sida?.mottagare ?? null,

@@ -12,6 +12,8 @@ Argument: `$ARGUMENTS` — normalt tomt (rutinen, varje morgon). Axels egna verb
                                             Axels godkännande: brev + faktura som UTKAST i Stonebite-Gmail (--direkt = skicka därifrån)
 /konkurrentdodaren skickad KD-2026-001      kvittot när Axel själv tryckt Skicka i Gmail
 /konkurrentdodaren faktura KD-2026-001      bara fakturan (titta på den, eller efter ändrad taxa)
+/konkurrentdodaren anmal KD-2026-001        Meta-anmälningarna: EN per kopierad annons, allt ifyllt + bevisbild → Axel verifierar EN gång
+/konkurrentdodaren anmald KD-2026-001 --nr 1 --referens <Metas nr>   kvittot per inskickad anmälan (skrivs av sessionen)
 /konkurrentdodaren avfarda KD-2026-001 "ingen kopia"
 /konkurrentdodaren paminn KD-2026-001       påminnelsen (brev 2) när fristen gått ut och kopian ligger kvar
 /konkurrentdodaren eskalera KD-2026-001 ["anmält till Meta"]
@@ -177,10 +179,23 @@ inget: "Inget för dig i dag."
   handle jämförs sidan mot ALLA våra produkter; den som matchar bäst blir
   ärendet. Ingen träff över tröskeln: säg det, med talen (längsta svit, bilder).
 
-- **`annons <sidnamn eller domän>`** — Axels fall 2026-09-29: "han har snott
-  asmycket ads … men han har ingenting på hemsidan". Metas annonsbibliotek går
-  inte att läsa härifrån (403 i Chromium, API:t saknar behörighet), så
-  **Axel klistrar in annonserna** i samma meddelande: Ad Library-länkar,
+- **`annons <sidnamn, domän eller Ad Library-länk med view_all_page_id>`** —
+  Axels fall 2026-09-29: "han har snott asmycket ads … men han har ingenting
+  på hemsidan" (första sidan: `view_all_page_id=1299101096626433`, rippat
+  Bäverbutiken/CaraShell). Metas annonsbibliotek går inte att läsa från
+  containern (403 i Chromium, API:t saknar behörighet), så annonserna kommer
+  in på ett av två sätt:
+  **(a) Claude in Chrome finns i sessionen** (`mcp__claude-in-chrome__*`,
+  eller `enable__mcp__claude-in-chrome` som slås på först — läs skillen
+  `anthropic-skills:chrome-browser` innan första klicket): öppna en NY flik på
+  `https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=SE&search_type=page&view_all_page_id=<id>`
+  i Axels inloggade Chrome, läs sidan (`read_page`), rulla tills alla annonser
+  är lästa, och skriv per annons: bibliotekets id ur "Library ID"/länken,
+  startdatum, primärtext ordagrant, rubrik, landningslänk, bild-URL:erna
+  (`img src` — hämtas och hashas av skriptet) och **räckvidden** ur
+  "Se annonsdetaljer"/EU-rutan ("Räckvidd totalt"/"Total reach"). Sidans namn
+  och `sida_id` i `deras`. Stäng fliken. **(b) Utan Chrome:** **Axel klistrar
+  in annonserna** i samma meddelande: Ad Library-länkar,
   annonstexterna (primärtext + rubrik), **exponeringarna per annons**
   (EU-rutan i annonsbiblioteket: "Total reach"/"Räckvidd totalt" — det är
   talet fakturan räknar på) och gärna skärmdumpar/bilder (bifogade filer i
@@ -250,6 +265,52 @@ inget: "Inget för dig i dag."
 - **`faktura <id> [--kopare …] [--sprak …] [--cpm …] [--land …]`** → `node konkurrenter/kor.mjs --faktura <id> …`,
   PDF:en till Axel med SendUserFile och grunden i klartext (exponeringar × CPM,
   schablonrader, moms). Bygger inte om en faktura som redan gått ut.
+- **`anmal <id>`** — Meta-anmälan av de kopierade annonserna (Axels order
+  2026-09-29: "den går in och reportar annonsen också, och fyller i allting med
+  rätt uppgifter … tio rippade annonser = tio olika reports … det enda jag
+  vill göra är att bara verifiera reporten … sen skickar du in allting").
+  1. `node konkurrenter/kor.mjs --anmal <id>` — bygger **en anmälan per
+     annons** med länk och träff: bevisbilden (vårt original ↔ deras annons,
+     kopierad text markerad; PNG i Chromium, publik länk på butikens CDN via
+     `anmalan.cdn_butik`), fältpaketet `arenden/<id>/anmalan/<nr>.json` +
+     `<nr>.txt` (engelska: kontakt, rättighetshavare, annonsens URL, vad som
+     kopierats, originalets länkar, försäkringarna, underskriften — allt ur
+     mätningarna och konfig, inget påhittat) och verifieringssidan
+     `arenden/<id>/anmalan/verifiering.html`. Stoppar den (ingen undertecknare,
+     ingen länk, ingen bevisbild): skriv orsaken.
+  2. Publicera verifieringssidan som en NY privat artifact (`icon: "shield"`,
+     titel `Anmälningar <id>`) och ge Axel länken + en rad per anmälan
+     (annons, exponeringar, bevisbild ja/nej). **Vänta på hans
+     "kör anmälningarna <id>".** Det är hans enda verifiering — fråga inte
+     igen per anmälan.
+  3. **På "kör anmälningarna <id>": Claude in Chrome krävs** (facebook.com
+     svarar 403 från containern och formuläret kräver hans inloggning). Finns
+     inte `mcp__claude-in-chrome__*` (eller `enable__mcp__claude-in-chrome`):
+     säg det som första rad och ge honom stegen (Chrome Web Store →
+     "Claude" av Anthropic → installera → logga in med samma konto → öppna
+     chatten i Chrome). Med Chrome: läs skillen `anthropic-skills:chrome-browser`,
+     ladda verktygen i EN ToolSearch, `tabs_context_mcp`, och **för varje
+     `<nr>.json` i nummerordning, en i taget:** ny flik på `formular`
+     (Metas upphovsrättsformulär), läs formuläret (`read_page`) och para
+     ihop fälten på etikett — fälten kan heta annat än i paketet och Meta
+     ändrar dem; fyll `reporter` (namn, e-post, telefon, adress),
+     `rightsOwner` (rättighetshavare + relation), `contentUrls`,
+     `contentDescription`, `originalWorkDescription` + `originalWorkUrls`,
+     `additionalInfo` (bär CDN-länken till bevisbilden — bilagor kan inte
+     laddas upp från Axels dator av sessionen, länken ÄR skärmdumpen; finns
+     ett bilagefält och en CDN-länk saknas: bygg om med CDN först), kryssa
+     alla `declarations`, skriv `signature`. Skicka in. Läs
+     bekräftelsesidan och Metas referens-/rapportnummer, kör
+     `node konkurrenter/kor.mjs --anmald <id> --nr <nr> --referens <nummer>`,
+     stäng fliken, nästa. Har formuläret ett fält paketet inte täcker, eller
+     saknar ett fält paketet har: stanna, säg exakt vad, fyll inte på med
+     gissningar. Fel/utebliven respons 2–3 gånger: stanna och säg vad som
+     hände (skillens regel).
+  4. Efteråt: steg 6 och 7 (commit-rubrik `konkurrentdodaren: anmält <id>`)
+     och EN rad till Axel: "N av N inskickade, referenser …".
+- **`anmald <id> --nr <n> --referens <r>`** → `node konkurrenter/kor.mjs --anmald …`
+  (bara när anmälan faktiskt gick in; alla inskickade ⇒ ärendet "anmält
+  vidare" när brevet redan gått, annars står anmälan som klar på ärendet).
 - **`paminn <id>`** → `--skicka <id> --paminnelse` (paketet), Gmail-utkast/sändning
   som ovan, `--skickad <id> --paminnelse` när den gått ut. Sedan steg 6 och 7.
 - **`avfarda <id> "skäl"`** → `node konkurrenter/kor.mjs --avfarda <id> "<skäl>"`, steg 6 och 7.
@@ -270,5 +331,6 @@ sidnamn eller domän i stället för ett bolag, be Axel om `--kopare`.
 - [ ] `kor.mjs --rapport --discord` gav exit 0 (eller 3/4 står först i svaret), `--foljupp` kördes
 - [ ] Granskningssidan publicerad på samma länk som `konkurrenter/sida.json` (eller länken sparad första gången)
 - [ ] Inget brev skickades av rutinen; Gmail rördes bara på Axels `skicka <id>` (utkast) eller `skicka <id> --direkt` (sänt)
+- [ ] Ingen Meta-anmälan skickades utan Axels "kör anmälningarna <id>"; varje inskickad anmälan kvitterad med `--anmald` och referens
 - [ ] Commit + push till main (arenden.jsonl, arenden/, lage.json, sida.json) — aldrig `output/`
 - [ ] Svaret till Axel är på svenska, kort, och hans uppgifter står sist, numrerade
