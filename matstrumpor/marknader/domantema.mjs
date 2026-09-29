@@ -52,6 +52,12 @@ export function bytNamn(s) {
 // Presentkortets bild bär svensk text och svenska kronor (PRESENTKORT / 150 KR / GILTIG I 3 MÅNADER).
 // På alla andra språk byts filnamnet mot presentkort-<locale>.png i Files (domantema/presentkort/).
 export const PRESENTKORT_SV = 'BlackRedBowPremiumGiftCertificate_3.png';
+// Adressen till den lokala bilden läses ur Files i Liquid (images['presentkort-<locale>.png'] | image_url),
+// med filens EGEN ?v=. Shopifys CDN väljer filversion efter v: med originalets v och en extra parameter
+// svarade den fortfarande med den gamla bilden (mätt 2026-09-29 efter fileUpdate). Originalets adress
+// läses på samma sätt ur produkten (all_products['presentkort'].featured_image), så bytet följer med
+// om Axel byter den svenska bilden.
+export const PRESENTKORT_HANDLE = 'presentkort';
 
 const villkor = (v2) => `{%- comment -%} ${MARK}: egen domän (.no/.eu/.com) och norska B-sidan (.no) — matstrumpor/marknader/domantema.mjs {%- endcomment -%}
     {%- liquid
@@ -110,21 +116,50 @@ ${SIDAN}      {%- endcapture -%}
 ${SIDAN}    {%- endif -%}
 `;
 
+// Version 3: som v2, men bildadressen får ?pk=<version>& framför originalets ?v= (cachen, se ovan).
+const blockV3 = (version = 2) => BLOCK_V2.replace(
+  `{%- assign ms_pk = 'presentkort-' | append: request.locale.iso_code | append: '.png' -%}\n        {%- assign ms_sida = ms_sida | replace: '${PRESENTKORT_SV}', ms_pk -%}`,
+  `{%- assign ms_pk = 'presentkort-' | append: request.locale.iso_code | append: '.png?pk=${version}&v=' -%}\n        {%- assign ms_sida = ms_sida | replace: '${PRESENTKORT_SV}?v=', ms_pk -%}`);
+
+// Version 4: filens egen adress (se PRESENTKORT_HANDLE ovan). Gardering: bara när båda adresserna finns
+// och bär ?v= — ett tomt sökord i replace hade skrivit in bilden mellan varje tecken på sidan.
+const BLOCK_V4 = BLOCK_V2.replace(
+  `{%- assign ms_pk = 'presentkort-' | append: request.locale.iso_code | append: '.png' -%}\n        {%- assign ms_sida = ms_sida | replace: '${PRESENTKORT_SV}', ms_pk -%}`,
+  `{%- assign ms_pk_fil = 'presentkort-' | append: request.locale.iso_code | append: '.png' -%}\n        {%- assign ms_pk_ny = images[ms_pk_fil] | image_url | split: 'files/' | last -%}\n        {%- assign ms_pk_gammal = all_products['${PRESENTKORT_HANDLE}'].featured_image | image_url | split: 'files/' | last -%}\n        {%- if ms_pk_ny contains '?v=' and ms_pk_gammal contains '?v=' -%}\n          {%- assign ms_sida = ms_sida | replace: ms_pk_gammal, ms_pk_ny -%}\n        {%- endif -%}`);
+
 export function patchaLayout(kod) {
-  if (kod.includes('assign ms_lokal = true')) return { kod, byten: [], hoppade: ['layout: redan patchad (v2)'] };
+  if (kod.includes(BLOCK_V4)) return { kod, byten: [], hoppade: ['layout: redan patchad (v4)'] };
+  const aldreV3 = /\?pk=(\d+)&v='/.exec(kod);
+  if (aldreV3) {
+    kod = bytExakt(kod, blockV3(Number(aldreV3[1])), BLOCK_V4, 1);
+    return { kod, byten: ['uppgradering_v4'], hoppade: [] };
+  }
+  if (kod.includes(BLOCK_V2)) {
+    kod = bytExakt(kod, BLOCK_V2, BLOCK_V4, 1);
+    return { kod, byten: ['uppgradering_v4'], hoppade: [] };
+  }
   if (kod.includes(MARK)) {
-    // Uppgradering v1 → v2: villkoret får ms_lokal, sidblocket får presentkortsbytet.
     kod = bytExakt(kod, `    ${villkor(false)}    <title>\n`, `    ${villkor(true)}    <title>\n`, 1);
-    kod = bytExakt(kod, BLOCK_V1, BLOCK_V2, 1);
-    return { kod, byten: ['uppgradering_v2'], hoppade: [] };
+    kod = bytExakt(kod, BLOCK_V1, BLOCK_V4, 1);
+    return { kod, byten: ['uppgradering_v4'], hoppade: [] };
   }
   kod = bytExakt(kod, '    <title>\n', `    ${villkor(true)}    <title>\n`, 1);
   kod = bytExakt(kod, '      {{ page_title }}\n',
     "      {% if ms_egen %}{{ page_title | replace: 'Matstrumpor.se', 'Matstrumpor' }}{% else %}{{ page_title }}{% endif %}\n", 1);
   kod = bytExakt(kod, '      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}\n',
     "      {%- if ms_egen -%}{%- unless page_title contains 'Matstrumpor' %} &ndash; Matstrumpor{% endunless -%}{%- else -%}{%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}{%- endif -%}\n", 1);
-  kod = bytExakt(kod, SIDAN, BLOCK_V2, 1);
+  kod = bytExakt(kod, SIDAN, BLOCK_V4, 1);
   return { kod, byten: ['villkor', 'titel', 'titelsuffix', 'sidan'], hoppade: [] };
+}
+
+/** Bara för testerna: version 2 av layoutpatchen, som den gick live förmiddagen 2026-09-29. */
+export function patchaLayoutV2(kod) {
+  return bytExakt(patchaLayoutV1(kod), BLOCK_V1, BLOCK_V2, 1).replace(`    ${villkor(false)}    <title>\n`, `    ${villkor(true)}    <title>\n`);
+}
+
+/** Bara för testerna: version 3 av layoutpatchen (live 2026-09-29 ~11:00). */
+export function patchaLayoutV3(kod) {
+  return patchaLayoutV2(kod).replace(BLOCK_V2, blockV3(2));
 }
 
 /** Bara för testerna: version 1 av layoutpatchen, som den gick live. */

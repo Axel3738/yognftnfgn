@@ -16,8 +16,32 @@
    "locale": "nb",
    "heygen_sprak": "Norwegian Bokmål (Norway)",
    "lank": "https://matstrumpor.se/nb/products/sushi-strumpor?country=NO",
-   "budget_sek_dag": 1000,
-   "budget_beslut": "Axel 2026-09-27: '1000kr per dag'. ⛔ Förblir PAUSED tills Axel granskat annonserna (hans ord samma kväll: 'jag vill inte att du aktiverar kampanjerna i meta för ens jag har granskat alla')"
+   "budget_sek_dag": 500,
+   "budget_beslut": "Axel 2026-09-27: '1000kr per dag'. A/B-test 2026-09-29 (Axel: 'AB-testa att köra det som att det är ett norskt varumärke … ett svenskt varumärke … skillnaden efter typ två veckor'): 1 000 kr/dag delas 500 här (A, svenskt varumärke, matstrumpor.se/nb) + 500 i NOB (B, matstrumpor.no) — sessionens förslag, sagt till Axel samma dag. ⛔ Förblir PAUSED tills Axel granskat annonserna (hans ord 2026-09-27: 'jag vill inte att du aktiverar kampanjerna i meta för ens jag har granskat alla')",
+   "ab": {
+    "test": "NO svensk mot norsk (2026-09-29)",
+    "variant": "A",
+    "mot": "NOB"
+   }
+  },
+  "NOB": {
+   "kampanj": "MATSTRUMP_NOB_SALES",
+   "adset": "MATSTRUMP_NOB_ugc",
+   "geo": [
+    "NO"
+   ],
+   "locale": "nb",
+   "doman": "matstrumpor.no",
+   "heygen_sprak": "Norwegian Bokmål (Norway)",
+   "lank": "https://matstrumpor.no/products/sushi-strumpor?country=NO",
+   "budget_sek_dag": 500,
+   "budget_beslut": "A/B-test Norge 2026-09-29, B-sidan: 500 kr/dag av Axels 1 000 (A = MATSTRUMP_NO_SALES 500) — sessionens förslag, sagt till Axel samma dag. ⛔ Förblir PAUSED tills Axel granskat annonserna.",
+   "ab": {
+    "test": "NO svensk mot norsk (2026-09-29)",
+    "variant": "B",
+    "mot": "NO",
+    "skillnad": "Samma videor och bilder (återanvända ur NO:s annonser via video_fran/bild_fran), samma målgrupp och budget. Två skillnader: raden 'Et svensk merke.' finns inte i brödtexten, och länken går till matstrumpor.no (norska B-sidan, matstrumpor/marknader/domantema.mjs) i stället för matstrumpor.se/nb."
+   }
   },
   "DK": {
    "kampanj": "MATSTRUMP_DK_SALES",

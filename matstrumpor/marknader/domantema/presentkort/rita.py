@@ -8,8 +8,10 @@ Den svenska bilden (BlackRedBowPremiumGiftCertificate_3.png) säger PRESENTKORT 
 språk. bas.png är samma bild med texten borttagen (pipeline/logga.py fyll_lodratt: papperet fylls
 lodrätt mellan raden ovanför och under texten, med papperets brus). Här ritas ordet för
 presentkort (butikens egen översättning av produktnamnet, output/underlag-<locale>.json →
-produkt.presentkort.title), MATSTRUMPOR utan .SE och giltighetsraden. Beloppet ritas INTE: kortet
-säljs i kundens valuta och priset står bredvid bilden. Temat byter bild per språk
+produkt.presentkort.title) överst och MATSTRUMPOR utan .SE där beloppet stod. Beloppet ritas INTE:
+kortet säljs i kundens valuta och priset står bredvid bilden. Giltighetstiden ritas INTE heller:
+"3 månader" är olagligt i USA (minst 5 år), Kanada (inget utgångsdatum), Australien (minst 3 år),
+Tyskland och Österrike (granskarna 2026-09-29) — giltigheten styrs av Shopifys inställning, Axels beslut. Temat byter bild per språk
 (domantema.mjs → presentkort-<locale>.png).
 """
 import json, os, sys
@@ -19,7 +21,7 @@ HAR = os.path.dirname(os.path.abspath(__file__))
 UNDERLAG = os.path.join(HAR, '..', '..', 'output')
 FET = '/home/user/yognftnfgn/pipeline/fonts/Poppins-Bold.ttf'
 HALV = '/home/user/yognftnfgn/pipeline/fonts/Poppins-SemiBold.ttf'
-GILTIG = json.load(open(os.path.join(HAR, 'giltighet.json')))
+LOCALES = ['nb', 'da', 'fi', 'en', 'de', 'fr', 'nl', 'es', 'it', 'pl', 'pt-PT']
 
 def spärrad(d, text, cx, topp, fontfil, storlek, sparr_em, max_bredd, fyll='#ffffff'):
     """Versaler med luft mellan bokstäverna (som originalet), centrerat; krymper tills raden ryms."""
@@ -43,14 +45,12 @@ def rita(locale, ut):
     d = ImageDraw.Draw(im)
     W = im.width
     spärrad(d, ord_, W / 2, 148, FET, 118, 0.42, 1500)            # baslinje som PRESENTKORT (y 62–148)
-    spärrad(d, 'MATSTRUMPOR', W / 2, 232, FET, 60, 0.50, 1100)     # som MATSTRUMPOR.SE (y 190–232), utan .SE
-    spärrad(d, GILTIG[locale], W / 2, 1122, HALV, 50, 0.14, 1300)  # där beloppet stod
+    spärrad(d, 'MATSTRUMPOR', W / 2, 1122, FET, 72, 0.50, 1300)    # där beloppet stod, utan .SE
     im.save(ut, optimize=True)
     return ord_
 
 if __name__ == '__main__':
     mapp = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HAR, 'ut')
     os.makedirs(mapp, exist_ok=True)
-    for loc in GILTIG:
-        if loc.startswith('_'): continue
-        print(loc, rita(loc, os.path.join(mapp, f'presentkort-{loc}.png')), '|', GILTIG[loc])
+    for loc in LOCALES:
+        print(loc, rita(loc, os.path.join(mapp, f'presentkort-{loc}.png')))

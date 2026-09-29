@@ -159,3 +159,6 @@ matstrumpor/marknader/annonser/klar/*.rutor.json
 # Matstrumpors egna videor: källorna och renderingarna ligger inte i repot
 matstrumpor/marknader/egna/kalla/
 matstrumpor/marknader/egna/ut/
+
+# D3-bildannonsens renderingar (ritas om av egna/d3/annons.mjs --skriv; hash:en ligger i videor.json)
+matstrumpor/marknader/annonser/klar/*_d3.jpg

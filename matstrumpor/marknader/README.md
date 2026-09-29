@@ -240,13 +240,97 @@ orsak. `kor.mjs --ekonomi --marknad US` räknar break-even per produkt med ECB-k
 vinsten på stonebite.org räknar Matstrumpors Big 5-ordrar på leveranslandets kostnad
 (`stonebite/kallor/vinst.mjs` → `kostnadPerLand`).
 
-## Domänen matstrumpor.no
+## Domänerna .no, .eu och .com — och A/B-testet i Norge (2026-09-29)
 
-`matstrumpor.no` svarar NXDOMAIN (2026-09-27) — inte registrerad. Köps hos Loopia (där
-.se och .com ligger), kopplas i Settings → Domains, och sedan kopplas den till marknaden
-Norge med `webPresenceCreate` + `marketUpdate(webPresencesToAdd)` (receptet mättes på
-CaraShell 2026-09-16, `factory/API-GRANSER.md`). Tills dess är matstrumpor.se/nb
-adressen — allt fungerar utan .no.
+Axels besked 2026-09-29: "Jag har kopplat .no, .com och .eu-domäner", och beställningen samma
+morgon: A/B-testa Norge som svenskt varumärke mot en sida som "känns väldigt norsk", och "se
+skillnaden efter typ två veckor".
+
+**Domänerna** (`bygg.mjs --steg domaner`, fältet `doman` per marknad i `konfig.json`): Norge →
+**matstrumpor.no** (nb), Europa → **matstrumpor.eu** (en som standard + da, fi, de, fr, nl, es, it,
+pl, pt-PT), USA/UK/AU/CA/NZ → **matstrumpor.com** (en). En egen domän hör till EN marknad i Shopify,
+så .se-närvaron ligger kvar i alla marknader (`delad` i `stegPublicera`) — därför fungerar både
+matstrumpor.se/nb (A) och matstrumpor.no (B) för norska kunder.
+
+**Temat per domän: `domantema.mjs` (v4 sedan 2026-09-29)**, en patch i MAIN som bara slår på
+de egna domänerna och de icke-svenska språken. Den svenska sidan på .se renderas byte för byte som
+förut (testat).
+- **.no, .eu och .com:** loggan utan ".SE" (`domantema/matstrumpor-logga-utan-se.png`) och
+  butiksnamnet "Matstrumpor" i stället för "Matstrumpor.se" i titel, meta och sidfot.
+  Kortutdragets descriptor `SP Matstrumpor.se` skyddas och byts aldrig.
+- **Alla språk utom svenska:** presentkortets bild på kundens språk (`presentkort-<locale>.png`),
+  ritad av `domantema/presentkort/rita.py` utan belopp och utan giltighetstid. Giltighetstiden
+  togs bort 2026-09-29, för tre månader är olagligt i USA, Kanada, Australien, Tyskland och Österrike.
+  Temat läser varje fils egen `image_url`, eftersom Shopifys CDN väljer version på `?v=` och en
+  extra parameter inte tömmer cachen.
+- **Bara .no (variant B):** ingen språk- eller landsväljare och ingen världskollage (`.ms-varlden`).
+  Judge.me-rutan är dold och ersatt av elva norska omdömen ur metafältet `matstrumpor.omdomen_nb`
+  (`domantema/omdomen-nb.json`, båda 3-stjärniga kvar, snitt 4,4; `--omdomen --skarpt`).
+  FAQ:ns mejlmening blir en länk till kontaktsidan.
+- Kör: `node matstrumpor/marknader/domantema.mjs [--tema <gid>] [--fran <gid>] [--skarpt]`.
+  Prova alltid i en kopia av MAIN först, med `?preview_theme_id=`. Förhandsvisningen kräver kakor,
+  så använd scratchpadens `prov.mjs` eller en webbläsare.
+- ⛔ **B påstår aldrig att butiken är norsk.** Sidan säger ingenting om ursprunget, och
+  bolagsuppgifterna (STONEBITE ECOM AB, org.nr, Göteborg) står kvar i sidfoten
+  (ehandelsloven § 8, markedsføringsloven §§ 7–8).
+
+**A/B-testet: två kampanjer i nya kungen, alla PAUSED, 500 + 500 kr/dag.** Axels 1 000 kr/dag
+delas i två. Det är sessionens förslag, och Axel har fått det sagt.
+
+| | A | B |
+|---|---|---|
+| Kampanj | `MATSTRUMP_NO_SALES` `120251749551520023` | `MATSTRUMP_NOB_SALES` `120251777339520023` |
+| Länk | matstrumpor.se/nb/…?country=NO | matstrumpor.no/…?country=NO |
+| Brödtextens sista rad | "Et svensk merke." | (ingen) |
+| Annonser | 001–008 | samma 001–008, samma video- och bild-id |
+
+B:s annonser härleds ur A:s med `annonser/nob.mjs`. Allt är lika utom varumärkesraden och sidan
+kunden landar på, så testet mäter bara en sak. **Varje ny NO-annons:** kör
+`node matstrumpor/marknader/annonser/nob.mjs` och sedan `bygg.mjs --marknad NOB --skarpt`.
+
+**Avläsningen:** `node matstrumpor/marknader/annonser/ab-norge.mjs [--fran <datum>] [--till <datum>]`.
+Den är läs-bar och visar Metas tal per kampanj (spend, visningar, CTR, sidvisningar, köp, köp per
+sidvisning, ROAS, CPA, 7 dagars klick). Den visar också Shopifys ordrar till Norge, delade på
+landningssidan (matstrumpor.no ⇒ B, .se/nb ⇒ A). Domen kräver minst 300 kr och 3 köp per variant.
+Den säger "säker skillnad" först vid p < 0,05 på köp per sidvisning.
+⚠️ Norges landade kostnad saknas (`cogs.json` → `norden`), så varken break-even eller vinstbidrag
+går att räkna. Jämförelsen håller ändå, eftersom produkt, pris och kostnad är lika i A och B.
+⚠️ Våra annonser bär inga UTM-taggar (mätt 2026-09-29, `creative.url_tags` tom). Delningen i
+Shopify bygger alltså på landningssidan. Order som bara har en kassalänk räknas som okända.
+⚠️ De två kampanjerna riktar sig till samma publik (Norge, brett) och möts i samma auktion. Metas
+eget split-test (`ad_studies`) delar publiken rent men låser start- och slutdatum. Det väljer Axel
+när han slår på kampanjerna.
+
+## Presentkortets egen sidmall (`presentkort.mjs`, 2026-09-29)
+
+Presentkortet delade `templates/product.json` med strumporna. Det visade därför "Passar strl
+36–44", "Fri frakt", "30 dagars öppet köp", "Beräknad leverans 5–10 arbetsdagar", fars dag-raden
+och sex strumpfrågor. Valörväljaren visade "150,00 kr" på euro-sidorna.
+
+Nu har presentkortet egen mall, `templates/product.presentkort.json`, med `templateSuffix:
+presentkort`. Mallen byggs ur strumpornas mall och har bara titel, pris och köpknappen med
+gåvoformuläret. Den har inga egna texter och behöver därför inga översättningar.
+`node matstrumpor/marknader/presentkort.mjs --skarpt`, och `--utan-koppling` för att först prova
+med `?view=presentkort`. Sidan lästes som kund 2026-09-29 på alla tolv språk plus .no, .eu och
+.com: inget strumpblock kvar i `<main>`.
+
+⚠️ Utanför Sverige är priset Shopifys omräkning av 150 kr (146,85 NOK, €13,49, $15.29, 58,98 zł).
+Ett jämnt pris per marknad är Axels beslut.
+
+## Språkrättningar efter infödda granskare (2026-09-29)
+
+| Språk | Rättat |
+|---|---|
+| FR | paketrubrikerna "1 acheté – 1 OFFERT" och "2 achetés – 2 OFFERTS", brickan "Le plus généreux" |
+| ES | brickan "Más cajas gratis" |
+| IT | brickan "Più omaggi" |
+| NL | "Het zijn sokken." |
+| PL | "To skarpetki." och liten bokstav i "otrzymaj" |
+| PT | "serve do 36 ao 44" (även direkt i temats `product.json`) och presentkortet "Cartão de oferta", som ersatte det brasilianska "Cartão-presente" |
+
+Ändringarna ligger i `output/underlag-<locale>.json`. De registrerades med
+`bygg.mjs --steg oversattningar --locale <l> --skarpt` (157–159 texter per språk) och lästes
+tillbaka som kund.
 
 ## Hela Europa + worldwide — Axels mål 2026-09-27 kväll (`/goal`)
 
@@ -373,8 +457,25 @@ HeyGen (Axels order 2026-09-28):
   laddades upp med loggan och fick videon utbytt i samma annons.
 
 Allt är tillbakaläst PAUSED. Detaljerna står i `egna/README.md`. Röstvideorna haikuh3, haikuh2
-och s001h1 blir annons 005–007 med ElevenLabs-röst i en egen session
-(`egna/PROMPT-elevenlabs.md`).
+och s001h1 blev annons 005–007 med ElevenLabs-röst i en egen session
+(`egna/PROMPT-elevenlabs.md`, PR #266).
+
+### Annons 008: bildannonsen D3 "Köp 2 – få 2" (2026-09-29) — 13 st, alla PAUSED
+
+`MATSTRUMP_<KOD>_sushi_offer_static_008_v1` finns i alla tolv kampanjer och i B-kampanjen i
+Norge. WW bär den engelska. Bilden visar sex lådor i en pyramid med ordmärket, en underrad och
+det röda pillret "Köp 2 – få 2 gratis" på marknadens språk. Texten ritas som skarp text ovanpå
+den textfria basen (`egna/d3/rita.py` på `egna/d3/bas.png`). Bildmodellen ritar aldrig text.
+
+- Texterna skrevs av sonnet mot copy-reglerna och granskades av infödda granskare per språk. De
+  ligger i `egna/d3/texter/<KOD>.json`, med tre-frågorstestet.
+- Granskningen fällde bland annat rad 1, som beskrev "fyra lådor på bordet" fast bilden visar sex.
+  Nu säger raden vad kunden får: "Du får fyra lådor".
+- `egna/d3/annons.mjs` ritar bilderna och lägger in annonsen i `annonser/<KOD>.json`. Den stoppar
+  om sista raden inte är kampanjens varumärkesrad, om butiken, en domän eller ett pris står i
+  texten, och om tre-frågorstestet har ett ❌.
+- Bilderna i `annonser/klar/*_d3.jpg` är gitignorerade (de ritas om med `annons.mjs --skriv`).
+  Deras hash står i `videor.json`.
 
 ⚠️ **HeyGen-nyckeln sitter på kontot `subscriptions@stonebite.org`** (Axel Odhner, mätt
 `GET /v1/user/me` 2026-09-27 kväll): `billing_type: wallet`, **saldo 0,10 USD, ingen

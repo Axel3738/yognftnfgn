@@ -66,7 +66,47 @@
    "title": "Fou rire ce soir. À vos pieds demain.",
    "message": "La lessive n'enthousiasme personne. Un cadeau gag ne se garde pas.\nLa réponse aux deux : une boîte qui ressemble à un vrai repas à emporter, 5 paires roulées comme des makis, de vraies baguettes en bois à côté.\nElles ne restent pas dans la boîte : elles sont à vos pieds, semaine après semaine.\nUne marque suédoise.",
    "link_description": "4 sortes. Achetez-en 1 – Recevez-en 1 GRATUIT. Livraison gratuite."
+  },
+  {
+   "namn": "MATSTRUMP_FR_sushi_offer_static_008_v1",
+   "kalla": "D3 Köp 2 – få 2 (bildannons: textfri bas bas.png + textlagret egna/d3/rita.py, texten egna/d3/texter/FR.json, granskad av infödda 2026-09-29)",
+   "bild": "klar/FR_d3.jpg",
+   "title": "2 achetés, 2 offerts : quatre boîtes",
+   "message": "Vous recevez quatre boîtes.\n2 achetés – 2 offerts, vingt paires de chaussettes au total.\nRoulées comme des makis. Des baguettes en bois dans chaque boîte.\nTaille unique, du 36 au 44.\nUne marque suédoise.",
+   "link_description": "2 achetés – 2 offerts. Livraison gratuite."
   }
  ],
- "_svenskt_varumarke": "Axels beslut 2026-09-27 kväll (\"Svenskt varumärke? … Jag tycker definitivt vi gör så!\"): sista raden i brödtexten är \"Une marque suédoise.\". Utan butiksnamnet — regeln från 2026-09-18 att butikens namn aldrig står i en annons gäller."
+ "_svenskt_varumarke": "Axels beslut 2026-09-27 kväll (\"Svenskt varumärke? … Jag tycker definitivt vi gör så!\"): sista raden i brödtexten är \"Une marque suédoise.\". Utan butiksnamnet — regeln från 2026-09-18 att butikens namn aldrig står i en annons gäller.",
+ "tre_fragor": [
+  {
+   "rad": "On dirait des sushis à emporter. 20 paires.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Vous recevez quatre boîtes.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "2 achetés – 2 offerts, vingt paires de chaussettes au total.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Roulées comme des makis. Des baguettes en bois dans chaque boîte.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Taille unique, du 36 au 44.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  }
+ ]
 }

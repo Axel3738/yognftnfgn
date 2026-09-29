@@ -1,0 +1,43 @@
+{
+ "kod": "ES",
+ "locale": "es",
+ "wordmark": "CALCETINES DE SUSHI",
+ "underrubrik": "Parece comida para llevar. Son 20 pares.",
+ "banner": "COMPRA 2 – LLÉVATE 2 GRATIS",
+ "message": "Recibes cuatro cajas.\nCompra 2 – llévate 2 gratis, veinte pares de calcetines en total.\nEnrollados como maki, palillos de madera en cada caja.\nTalla única, de la 36 a la 44.\nUna marca sueca.",
+ "title": "Compra 2, llévate 2 gratis: cuatro cajas",
+ "link_description": "Compra 2 – Llévate 2 GRATIS. Envío gratis.",
+ "tre_fragor": [
+  {
+   "rad": "Parece comida para llevar. Son 20 pares.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Recibes cuatro cajas.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Compra 2 – llévate 2 gratis, veinte pares de calcetines en total.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Enrollados como maki, palillos de madera en cada caja.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Talla única, de la 36 a la 44.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  }
+ ],
+ "sajt_fel": ""
+}

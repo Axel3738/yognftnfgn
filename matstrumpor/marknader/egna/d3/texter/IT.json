@@ -1,0 +1,43 @@
+{
+ "kod": "IT",
+ "locale": "it",
+ "wordmark": "CALZINI SUSHI",
+ "underrubrik": "Sembra da asporto. Sono 20 paia di calzini.",
+ "banner": "COMPRI 2 – RICEVI 2 GRATIS",
+ "message": "Ricevi quattro scatole.\nCompri 2 – ricevi 2 gratis, venti paia di calzini in tutto.\nArrotolati come maki, bacchette di legno in ogni scatola.\nTaglia unica, dal 36 al 44.\nUn marchio svedese.",
+ "title": "Compri 2, ricevi 2 gratis: quattro scatole",
+ "link_description": "Compri 2 – Ricevi 2 GRATIS. Spedizione gratuita.",
+ "tre_fragor": [
+  {
+   "rad": "Sembra da asporto. Sono 20 paia di calzini.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Ricevi quattro scatole.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Compri 2 – ricevi 2 gratis, venti paia di calzini in tutto.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Arrotolati come maki, bacchette di legno in ogni scatola.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Taglia unica, dal 36 al 44.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  }
+ ],
+ "sajt_fel": ""
+}

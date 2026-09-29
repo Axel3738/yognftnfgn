@@ -139,7 +139,15 @@ den session som byggde verktygen, så rösten görs i en egen session enligt
 `pipeline/textboxar.py` + `textbyte.py`; ✅ **annons 004 PAUSED i alla tolv kampanjer
 2026-09-29**); allt i `marknader/egna/`. ⛔ Källorna bär butikens logga "MATSTRUMPOR.SE" i
 bild (012v2:s sista scen, haiku-videornas slutkort) — den målas bort (`pipeline/logga.py`,
-`kopiera` i `textbyte.py`), för butikens namn står aldrig i en annons. ⚠️ Shopify mätt
+`kopiera` i `textbyte.py`), för butikens namn står aldrig i en annons. ✅ **Annons 005–007
+(röstvideorna, PR #266) och 008 (bildannonsen D3 "Köp 2 – få 2", `marknader/egna/d3/`) PAUSED i
+alla tolv kampanjer 2026-09-29.** 🇳🇴 **A/B-testet i Norge (Axels order 2026-09-29):** A
+`MATSTRUMP_NO_SALES` (matstrumpor.se/nb, "Et svensk merke.") mot B `MATSTRUMP_NOB_SALES`
+(matstrumpor.no, norska B-sidan i `marknader/domantema.mjs`), 500 + 500 kr/dag, samma annonser,
+PAUSED. Varje ny NO-annons ⇒ `annonser/nob.mjs` + `bygg.mjs --marknad NOB --skarpt`. Avläs med
+`annonser/ab-norge.mjs` efter ~två veckor. ⛔ B påstår aldrig att butiken är norsk. Domänerna
+.no/.eu/.com, temapatchen per domän, presentkortets egen mall (`marknader/presentkort.mjs`) och
+allt detta i `marknader/README.md` → "Domänerna". ⚠️ Shopify mätt
 2026-09-27: `translationsRegister` kan svara `INTERNAL_SERVER_ERROR` en stund
 (kör om), och en batchläsning av temats översättningar kan svara med FEL
 språk (`--steg kontroll` läser om ensamt) — lita aldrig på en enda läsning.

@@ -1,0 +1,43 @@
+{
+ "kod": "PL",
+ "locale": "pl",
+ "wordmark": "SKARPETKI SUSHI",
+ "underrubrik": "Niby sushi na wynos, a to 20 par skarpetek.",
+ "banner": "KUP 2 – OTRZYMAJ 2 GRATIS",
+ "message": "Dostajesz cztery pudełka.\nKup 2 – otrzymaj 2 gratis, w sumie dwadzieścia par skarpetek.\nZwinięte jak maki, a w każdym pudełku drewniane pałeczki.\nRozmiar uniwersalny, pasuje na 36–44.\nSzwedzka marka.",
+ "title": "Kup 2, otrzymaj 2 gratis: cztery pudełka",
+ "link_description": "Kup 2 – otrzymaj 2 GRATIS. Darmowa dostawa.",
+ "tre_fragor": [
+  {
+   "rad": "Niby sushi na wynos, a to 20 par skarpetek.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Dostajesz cztery pudełka.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Kup 2 – otrzymaj 2 gratis, w sumie dwadzieścia par skarpetek.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Zwinięte jak maki, a w każdym pudełku drewniane pałeczki.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Rozmiar uniwersalny, pasuje na 36–44.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  }
+ ],
+ "sajt_fel": ""
+}

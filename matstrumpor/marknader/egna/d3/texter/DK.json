@@ -1,0 +1,43 @@
+{
+ "kod": "DK",
+ "locale": "da",
+ "wordmark": "SUSHISOKKER",
+ "underrubrik": "Ligner takeaway. Er 20 par sokker.",
+ "banner": "KØB 2 – FÅ 2 GRATIS",
+ "message": "Du får fire bokse.\nKøb 2 – få 2 gratis, tyve par sokker i alt.\nRullet som maki, spisepinde i træ i hver boks.\nÉn størrelse, passer str. 36–44.\nEt svensk mærke.",
+ "title": "Køb 2, få 2 gratis: fire bokse",
+ "link_description": "Køb 2 – Få 2 GRATIS. Fri fragt til Danmark.",
+ "tre_fragor": [
+  {
+   "rad": "Ligner takeaway. Er 20 par sokker.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Du får fire bokse.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Køb 2 – få 2 gratis, tyve par sokker i alt.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Rullet som maki, spisepinde i træ i hver boks.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Én størrelse, passer str. 36–44.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  }
+ ],
+ "sajt_fel": ""
+}

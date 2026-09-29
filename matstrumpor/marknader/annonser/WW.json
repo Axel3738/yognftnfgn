@@ -66,7 +66,47 @@
    "title": "Fun tonight. On your feet tomorrow.",
    "message": "No one cheers for detergent. No one keeps a joke gift.\nThe answer to both: a box that looks like real takeout, 5 pairs rolled like maki, wooden chopsticks on the side.\nIt doesn't stay in the box afterward. It's on your feet, week after week.\nA Swedish brand.",
    "link_description": "4 kinds. Buy 1, get 1. Free shipping."
+  },
+  {
+   "namn": "MATSTRUMP_WW_sushi_offer_static_008_v1",
+   "kalla": "D3 Köp 2 – få 2 (bildannons: textfri bas bas.png + textlagret egna/d3/rita.py, texten egna/d3/texter/US.json, granskad av infödda 2026-09-29)",
+   "bild": "klar/US_d3.jpg",
+   "title": "Buy 2, get 2 free: 4 boxes",
+   "message": "You get four boxes.\nBuy 2 – get 2 free: 20 pairs of socks in total.\nRolled like maki. Wooden chopsticks in every box.\nOne size, fits EU 36–44.\nA Swedish brand.",
+   "link_description": "Buy 2, get 2 free. Free shipping."
   }
  ],
- "_svenskt_varumarke": "Axels beslut 2026-09-27 kväll (\"Svenskt varumärke? … Jag tycker definitivt vi gör så!\"): sista raden i brödtexten är \"A Swedish brand.\". Utan butiksnamnet — regeln från 2026-09-18 att butikens namn aldrig står i en annons gäller."
+ "_svenskt_varumarke": "Axels beslut 2026-09-27 kväll (\"Svenskt varumärke? … Jag tycker definitivt vi gör så!\"): sista raden i brödtexten är \"A Swedish brand.\". Utan butiksnamnet — regeln från 2026-09-18 att butikens namn aldrig står i en annons gäller.",
+ "tre_fragor": [
+  {
+   "rad": "Looks like takeout. It's 20 pairs of socks.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "You get four boxes.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Buy 2 – get 2 free: 20 pairs of socks in total.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "Rolled like maki. Wooden chopsticks in every box.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  },
+  {
+   "rad": "One size, fits EU 36–44.",
+   "visualisera": "✅",
+   "falsifiera": "✅",
+   "unik": "✅"
+  }
+ ]
 }
