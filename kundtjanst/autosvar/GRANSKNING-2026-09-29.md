@@ -23,3 +23,12 @@ Mätt i `INBOX.Sent` 23/9–29/9 01:49: 164 skickade mejl, **16 från boten**
 
 Matstrumpor och CaraShell (torra, utkast i egna brevlådor) kunde inte läsas:
 `KUNDTJANST_MAIL_PASS_MATSTRUMPOR/_CARASHELL` finns bara på Railway.
+
+## Axels beslut 2026-09-29 kväll — inlagda
+
+Alla beslut är inskrivna i koden samma dag (`hinkar.mjs`, `svar.mjs`,
+`autosvar.mjs`, `brands.mjs`) och beskrivna i `kundtjanst/README.md` →
+"Axels granskning av de 16 skarpa svaren 2026-09-29". Kvar: retursedeln
+(Axels PDF, görs om med Stenkolsgatan 1B och länkas i returmallen) och
+lösenorden `KUNDTJANST_MAIL_PASS_MATSTRUMPOR`/`_CARASHELL` i claude.ai-miljön
+så Matstrumpors och CaraShells utkast kan granskas på samma sätt.

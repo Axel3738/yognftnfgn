@@ -114,7 +114,8 @@ svar:
   autosvar: true              # false = motorn rör inte den här brevlådan alls
   sprak: ""                   # sv|nb|da|fi|en — kundens språk vinner; tomt = ur brand.land
   signatur: ""                # "Kundtjänst Bäverbutiken" — tomt = "Kundtjänst <namn>" på kundens språk. ALDRIG "AI"
-  leverans_dagar: [7, 14]     # butikens leveranslöfte, kalenderdagar från skickdagen (samma som fraktmejlen lovar)
+  leverans_dagar: [7, 14]     # butikens leveranslöfte, kalenderdagar från skickdagen (samma som fraktmejlen lovar) — bara för datumfönstret
+  leverans_arbetsdagar: [5, 10] # samma löfte i arbetsdagar — det som står i svaren (aldrig "7-14 dagar")
   packas_dagar: 2             # arbetsdagar från order till sändning
   sparningssida: ""           # https://<butik>/pages/spara — kundens spårningssida (sparning/butiker.json). Tomt = ingen länk i svaret
   sparning_prefix: "BB-"      # bävernumrets prefix på den sidan (sparning/butiker.json prefix; CaraShell CS-)

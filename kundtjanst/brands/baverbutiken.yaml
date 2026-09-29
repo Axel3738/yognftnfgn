@@ -44,6 +44,8 @@ svar:
   sprak: sv
   signatur: "Kundtjänst Bäverbutiken"
   leverans_dagar: [7, 14]
+  # Samma löfte i arbetsdagar — det som står i svaren (Axels order 2026-09-21, granskningen 2026-09-29).
+  leverans_arbetsdagar: [5, 10]
   packas_dagar: 2
   sparningssida: "https://baverbutiken.se/pages/spara"
   sparning_prefix: "BB-"
