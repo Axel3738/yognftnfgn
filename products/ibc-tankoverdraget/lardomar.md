@@ -3287,3 +3287,83 @@ UGC: ingen beställning ur den här lärdomen — det som saknas är inte tro/au
 **Nästa annonser:**
 - `SLÄPP` — under 300 kr, 0 köp; presenningsjämförelsen bärs vidare av IBC_OB_1_H1 (In progress i hubben, kalla=voc), så en andra RI-video vore en dubblett. Idén kom ur produktsidan (egen-data), men den prövas färdigt av OB_1_H1 först.
 
+### Lärdom L-120252336848000233 — IBC-tanktrekk_NO_PD_11_H1 (LOSER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | okänd |
+| Utfall | LOSER |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 126 kr / 5 868 kr (2 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 1,42 |
+| Konverteringsgrad | 0,0 % (0 köp / 5 LPV) |
+| Hook rate / hold rate | 37 % / 7 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "Vannet i tanken var grønt av alger før trekket kom på." · rubrik: "Grønt vann. Så satte jeg på trekket."
+- Första frame / VO: inte avläst i den här ronden (videon inte transkriberad) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — ingen person eller scen i texten | okänd |
+| Vinkel | — (brief saknas i repot) | okänd enligt namnkoden; copyn: "Vannet i tanken var grønt av alger før trekket kom på. Stoffet er tykt 210D-materiale – je…" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "Vannet i tanken var grønt av alger før trekket kom på. Stoffet er tykt 210D-materiale – jeg kjente etter selv. Glidelåse…" | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 126 kr och 0 köp första veckan är under grinden (300 kr / 3 köp) — annonsen förlorade auktionen mot syskonen, och siffrorna kan inte skilja en svag idé från en svag öppning; ingen dom.
+
+**Nästa annonser:**
+- `SLÄPP` — kampanjen är inte aktiv i dag (avstängd eller pausad): ingen iteration byggs på en annons vars kampanj inte kör.
+
+### Lärdom L-120252336843630233 — IBC-tanktrekk_NO_RI_1_H1 (INGEN_LEVERANS, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | okänd |
+| Utfall | INGEN_LEVERANS |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 9 kr / 5 868 kr |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 1,42 |
+| Konverteringsgrad | okänd — backfillad före 2026-09-21 (inga klick i fönstret hämtade) |
+| Hook rate / hold rate | 30 % / 4 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "En tynn presenning blåste av i høststormen." · rubrik: "Stormen tok presenningen. Ikke trekket."
+- Första frame / VO: inte avläst i den här ronden (videon inte transkriberad) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — ingen person eller scen i texten | okänd |
+| Vinkel | — (brief saknas i repot) | okänd enligt namnkoden; copyn: "En tynn presenning blåste av i høststormen. Uten lokk for lyset blir vannet grønt og grums…" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "En tynn presenning blåste av i høststormen. Uten lokk for lyset blir vannet grønt og grumsete. Denne gangen er det ikke …" | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Ingen leverans: hooken föll för Meta — logga och släpp, aldrig ABO.
+
+**Hypotes (gissning):** Gissning: Meta gav den 9 kr första veckan — öppningen vann aldrig auktionen mot syskonen i samma adset; utfallet säger inget om idén, bara att den inte fick leverans.
+
+**Nästa annonser:**
+- `SLÄPP` — kampanjen är inte aktiv i dag (avstängd eller pausad): ingen iteration byggs på en annons vars kampanj inte kör.
+
