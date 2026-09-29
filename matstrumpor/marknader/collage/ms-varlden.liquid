@@ -1,0 +1,125 @@
+{%- comment -%}
+  Matstrumpor i världen — startsidans bildcollage (byggt 2026-09-29 ur
+  matstrumpor/marknader/collage/, skrivet av tema.mjs — ändra där, inte här).
+  Rubriken följer butikens språk; landsnamnen står på landets eget språk.
+  Besökarens eget land läggs först. Personerna på bilderna är AI-genererade:
+  rutorna bär bara landets namn, aldrig citat, namn eller "kund".
+{%- endcomment -%}
+{%- liquid
+  assign sprak = request.locale.iso_code | downcase
+  case sprak
+    when 'nb'
+      assign rubrik = 'Nå i hele verden'
+      assign under = 'Samme sushiboks, samme latter – nå fra Oslo til Sydney.'
+    when 'da'
+      assign rubrik = 'Nu i hele verden'
+      assign under = 'Samme sushiæske, samme grin – nu fra København til Sydney.'
+    when 'fi'
+      assign rubrik = 'Nyt ympäri maailmaa'
+      assign under = 'Sama sushirasia, samat naurut – nyt Helsingistä Sydneyyn.'
+    when 'en'
+      assign rubrik = 'Now all over the world'
+      assign under = 'Same sushi box, same laughs – now from London to Sydney.'
+    when 'de'
+      assign rubrik = 'Jetzt auf der ganzen Welt'
+      assign under = 'Dieselbe Sushi-Box, dasselbe Lachen – jetzt von Berlin bis Sydney.'
+    when 'fr'
+      assign rubrik = 'Désormais partout dans le monde'
+      assign under = 'La même boîte à sushis, les mêmes rires – de Paris à Sydney.'
+    when 'nl'
+      assign rubrik = 'Nu over de hele wereld'
+      assign under = 'Dezelfde sushidoos, hetzelfde plezier – nu van Amsterdam tot Sydney.'
+    when 'es'
+      assign rubrik = 'Ahora en todo el mundo'
+      assign under = 'La misma caja de sushi, las mismas risas – ahora de Madrid a Sídney.'
+    when 'it'
+      assign rubrik = 'Ora in tutto il mondo'
+      assign under = 'La stessa scatola di sushi, le stesse risate – ora da Roma a Sydney.'
+    when 'pl'
+      assign rubrik = 'Teraz na całym świecie'
+      assign under = 'To samo pudełko sushi, ten sam uśmiech – teraz od Warszawy po Sydney.'
+    when 'pt-pt', 'pt'
+      assign rubrik = 'Agora em todo o mundo'
+      assign under = 'A mesma caixa de sushi, as mesmas gargalhadas – agora de Lisboa a Sydney.'
+    else
+      assign rubrik = 'Nu i hela världen'
+      assign under = 'Samma sushilåda, samma skratt – nu från Stockholm till Sydney.'
+  endcase
+  assign land = localization.country.iso_code | downcase
+  assign rutor = '__RUTOR__' | split: ','
+-%}
+<section class="ms-varlden" aria-label="{{ rubrik | escape }}">
+  <div class="ms-varlden__huvud page-width">
+    <h2 class="ms-varlden__rubrik h1">{{ rubrik }}</h2>
+    <p class="ms-varlden__under">{{ under }}</p>
+  </div>
+  <div class="ms-varlden__rutnat page-width">
+    <figure class="ms-varlden__ruta ms-varlden__ruta--stor">
+      <img
+        src="{{ 'ms-varlden-karta.jpg' | asset_img_url: '800x' }}"
+        srcset="{{ 'ms-varlden-karta.jpg' | asset_img_url: '500x' }} 500w, {{ 'ms-varlden-karta.jpg' | asset_img_url: '900x' }} 900w"
+        sizes="(min-width: 750px) 50vw, 100vw"
+        alt="" width="900" height="900" loading="lazy">
+    </figure>
+    {%- for r in rutor -%}
+      {%- assign delar = r | split: ':' -%}
+      {%- assign kod = delar[0] -%}
+      {%- assign fil = 'ms-varlden-' | append: kod | append: '.jpg' -%}
+      <figure class="ms-varlden__ruta{% if kod == land %} ms-varlden__ruta--din{% endif %}">
+        <img
+          src="{{ fil | asset_img_url: '400x' }}"
+          srcset="{{ fil | asset_img_url: '300x' }} 300w, {{ fil | asset_img_url: '600x' }} 600w"
+          sizes="(min-width: 750px) 25vw, 33vw"
+          alt="{{ delar[1] | escape }}" width="600" height="600" loading="lazy">
+        <figcaption class="ms-varlden__land">{{ delar[1] }}</figcaption>
+      </figure>
+    {%- endfor -%}
+  </div>
+</section>
+
+<style>
+  .ms-varlden { padding: 44px 0 36px; }
+  .ms-varlden__huvud { text-align: center; margin-bottom: 22px; }
+  .ms-varlden__rubrik { margin: 0 0 8px; }
+  .ms-varlden__under { margin: 0 auto; max-width: 560px; opacity: .8; }
+  .ms-varlden__rutnat {
+    display: grid; gap: 8px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .ms-varlden__ruta {
+    position: relative; margin: 0; overflow: hidden; border-radius: 14px;
+    aspect-ratio: 1 / 1; background: #f3ece2;
+  }
+  .ms-varlden__ruta img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    transition: transform .5s ease;
+  }
+  .ms-varlden__ruta--stor { grid-column: 1 / -1; aspect-ratio: 3 / 2; }
+  .ms-varlden__ruta--din { order: -1; }
+  .ms-varlden__ruta--stor { order: -2; }
+  .ms-varlden__land {
+    position: absolute; left: 6px; bottom: 6px;
+    background: rgba(253, 251, 247, .92); color: #1c1c1c;
+    font-size: 11px; line-height: 1; font-weight: 700;
+    padding: 5px 8px; border-radius: 999px;
+  }
+  .ms-varlden__ruta--din .ms-varlden__land { background: #dd821d; color: #fdfbf7; }
+  @media (min-width: 750px) {
+    .ms-varlden { padding: 64px 0 48px; }
+    .ms-varlden__rutnat { grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .ms-varlden__ruta--stor { grid-column: span 2; grid-row: span 2; aspect-ratio: 1 / 1; }
+    .ms-varlden__ruta:nth-child(odd):not(.ms-varlden__ruta--stor) { transform: rotate(-1.2deg); }
+    .ms-varlden__ruta:nth-child(even):not(.ms-varlden__ruta--stor) { transform: rotate(1.2deg); }
+    .ms-varlden__land { left: 10px; bottom: 10px; font-size: 13px; padding: 6px 10px; }
+  }
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .ms-varlden__ruta:hover img { transform: scale(1.05); }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Matstrumpor i världen",
+  "settings": []
+}
+{% endschema %}
