@@ -35,7 +35,8 @@ ersätter rea-delen i `BRIEFER-DAGLIGA.md` (15 % med BASTSALJARE15/FROST15/PAPPA
   alltså samma dag som den räknade sista beställningsdagen, utan att mejlen säger något om
   frakt. Fars dag-mejlen räknar ner till att REAN slutar.
 - **Bästsäljarna (K23) ersätts av tofflorna** till köparna av skor och tofflor, och ett nytt
-  mejl samma kväll går till gräsklippar- och trimmerköparna (K38). **Fisket (K39)** går till
+  mejl samma kväll går till gräsklippar- och trimmerköparna (K38; breddat samma eftermiddag
+  till tier 1 + köparna, se K38 nedan). **Fisket (K39)** går till
   fiskeköparna måndag 5/10. **K29 blir kalendermejlet** (PAPPA15-mejlet behövs inte när
   varje fars dag-mejl har FARSDAG30); fars dag har då elva mejl.
 - **Nya segment i Spoks 2026-09-29:** Köpare tofflor & skor `e79329e4-b0e0-4d1e-b1cc-cfa4060dec88`
@@ -123,7 +124,7 @@ slår ihop filerna per kod.
 | Dag | Mejl | Publik | Vinkel | Kod |
 |---|---|---|---|---|
 | ons 30/9 | **K23** Tofflor (ny) | Köpare tofflor & skor | golvet blir kallt | TOFFLOR30 |
-| ons 30/9 | **K38** Gräsklipparen (ny) | Köpare gräsklippare & trimmer | säsongen är slut | GRAS30 |
+| ons 30/9 | **K38** Gräsklipparen (ny, bred) | Gräsklipparrean 30/9 (tier 1 + köparna, utan toffelköparna) | säsongen är slut | GRAS30 |
 | tor 1/10 | K02 | Warmup tier 1 | motorn står ute i sex månader + det som brukar följa med | BAT30 |
 | fre 2/10 | K24 | Köpare båt | hela motorn under tak | BAT30 |
 | lör 3/10 | K25 | Köpare trädgård & tomt | kranen spricker (PAS) | FROST30 |
@@ -148,8 +149,10 @@ slår ihop filerna per kod.
 | ons 21/10 | K37 | Köpare MC & fordon | hojen ställs undan | MC30 |
 | tor 22/10 | K08 | Warmup tier 2 | mörkret kommer | LJUS30 |
 
-Två skräddarsydda mejl samma dag (30/9, 5/10) går till olika köpargrupper; den som köpt i
-båda grupperna får två mejl den dagen. Det är priset för mindre grupper som träffar hårdare.
+Två skräddarsydda mejl samma dag (5/10) går till olika köpargrupper; den som köpt i båda
+grupperna får två mejl den dagen. Det är priset för mindre grupper som träffar hårdare. 30/9
+är annorlunda sedan gräsklipparen blev bred (Axels fråga samma eftermiddag): segmentet
+"Gräsklipparrean 30/9" tar bort köparna av tofflor och skor, så ingen får två mejl den dagen.
 
 ---
 
@@ -174,8 +177,20 @@ båda grupperna får två mejl den dagen. Det är priset för mindre grupper som
 
 ### K38, ons 30/9: Gräsklipparen, säsongen är slut (nytt)
 - **Fil:** `kampanjer/k38-grasklipparen-sasongsslut.json`, id `k38-grasklipparen-sasongsslut`.
-- **Namn:** `MAIL_20260930_Grasklippare_S_1_kopare-grasklippare_problem_sasongen-ar-slut_v1`
-- **Publik:** Köpare gräsklippare & trimmer.
+- **Namn:** `MAIL_20260930_Grasklippare_S_1_tier1-kopare-grasklippare_problem_sasongen-ar-slut_v2`
+  (v1 var `…_kopare-grasklippare_…_v1`).
+- **Publik:** **Gräsklipparrean 30/9** `d4f13555-2710-4f1b-ac18-aa9db74ef5b9` (2 578 vid
+  skapandet): samtycke och (Warmup tier 1 eller köpt någon av de elva), utan den som köpt tofflor
+  eller skor. **Ändrat 2026-09-29 eftermiddag efter Axels fråga:** "ska vi verkligen ta samma
+  personer som har köpt sådana innan och sälja det samma igen, eller kan vi inte boka ut en om
+  gräsklippningsgrejerna till alla?" Sessionens svar: brett, men inom uppvärmningen (tier 1 är
+  vecka 40:s breda publik; All subscribed först vecka 45), med köparna kvar eftersom de har
+  gräsmattan, och utan toffelköparna eftersom de får tofflorrean samma kväll (2 697 före
+  undantaget, 119 undantagna, mätt med `preview_segment`: 2 697 − 119 = 2 578). Heron skrevs om
+  för en publik som inte köpt av oss (v1 sa "Du har handlat till klipparen eller trimmern hos
+  oss"). **Mätningen svarar på Axels fråga:** GRAS30-ordrar per mottagare hos de **318** i
+  segmentet som redan köpt klippar- eller trimmergrejer mot de **2 260** som inte gjort det
+  (`preview_segment` 2026-09-29; ordrarnas kunder slås upp mot köparsegmentet efter 4/10).
 - **Produkter:** produkt `grasklippartacke-600d-oxford-med-dragsko`; produktrad "Gör klipparen klar för
   vintern": `rengoringsborste-for-grasklippare-uteplats-10-tum-3-taggad`,
   `grasklipparslipare-for-borrmaskin-dubbelsidig-slipsten`, `rullknivslipen-i-tra-20-vinkeln-ar-redan-bestamd`,
@@ -189,9 +204,10 @@ båda grupperna får två mejl den dagen. Det är priset för mindre grupper som
   täcket och sliparen bär det). Lösning: täck, slipa, häng upp trimmern. Erbjudandet: 30 %
   på allt för klipparen och trimmern till och med söndag, för att säsongen är slut. Skriv
   aldrig "utförsäljning" eller att något tar slut.
-- **Memo:** "Säsongsslut-rea till gräsklippar- och trimmerköparna (Axels idé 2026-09-29).
-  Hypotes: vinterförvaringen (täcke, slipning, väggfäste) ger en äkta anledning i oktober,
-  och trimmergrejerna följer med på samma kod; mätt på köp per mottagare."
+- **Memo:** "Säsongsslut-rea brett: Warmup tier 1 plus gräsklippar- och trimmerköparna, utan
+  toffelköparna. Hypotes: vinterförvaringen (täcke, slipning, väggfäste) ger en äkta anledning
+  i oktober för alla som har gräsmatta, och trimmergrejerna följer med på samma kod; mätt på
+  GRAS30-ordrar per mottagare, köpare mot icke-köpare." (Hela texten i filen.)
 - **Taggar:** typ S · kalla egen-data · avatar den som klipper sin egen gräsmatta · begär att
   klipparen startar i vår · awareness problem · urgency sasong + slutdag (4 oktober) ·
   confidence medium · prefix Grasklippare · kod S.

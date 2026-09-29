@@ -19,12 +19,15 @@ fars dag 8/11 (sista beställning **19/10**), Black Week 23–30/11, jul (sista 
 "Köpare …" = köparsegmenten (samtycke + köpt en produkt i gruppen). Vecka 40–41 går breda
 utskick till tier 1, vecka 42–43 till tier 2, vecka 44 till tier 3, sedan All subscribed.
 Ingen får två mejl samma dag: ett skräddarsytt mejl ligger aldrig samma dag som ett brett.
+Går ett brett mejl ändå samma dag som ett skräddarsytt (gräsklipparen 30/9, bred sedan
+Axels fråga 2026-09-29), bygger det breda segmentet in undantaget: "Gräsklipparrean 30/9"
+tar bort köparna av tofflor och skor, som får tofflorrean samma kväll.
 
 | Vecka | Dag | Kampanj | Produkter | Vinkel | Publik | Läge |
 |---|---|---|---|---|---|---|
 | 40 | tis 29/9 | K01 v2 | Taköverdrag | Vinterförvaring av vagnen | tier 1 | ✅ **SCHEMALAGD** 29/9 18:00 |
 | 40 | ons 30/9 | **K23** | Fodrade tofflor, plyschtofflor, ergonomiska tofflor, strandtofflor | **Tofflor:** golvet blir kallt, 30 % med TOFFLOR30 till sön 4/10 | Köpare tofflor & skor | omskriven 2026-09-29 (ersätter bästsäljarna) |
-| 40 | ons 30/9 | **K38** | Gräsklippartäcke, rengöringsborste, slipare, sätesöverdrag, väggfäste, trimmergrejer (11) | **Gräsklipparen:** säsongen är slut, 30 % med GRAS30 till sön 4/10 | Köpare gräsklippare & trimmer | ny 2026-09-29 |
+| 40 | ons 30/9 | **K38** | Gräsklippartäcke, rengöringsborste, slipare, sätesöverdrag, väggfäste, trimmergrejer (11) | **Gräsklipparen:** säsongen är slut, 30 % med GRAS30 till sön 4/10 | **Gräsklipparrean 30/9** (tier 1 + köpare gräsklippare & trimmer, utan köpare tofflor & skor, 2 578) | ny 2026-09-29, **bred sedan samma eftermiddag** (Axels fråga: "till alla?") |
 | 40 | tor 1/10 | K02 | Båtmotorskydd + det som brukar följa med (motorhölje, sitsöverdrag, spöhållare) | Motorn står ute i sex månader, 30 % med BAT30 till sön 4/10 | tier 1 | omskriven 2026-09-29 |
 | 40 | fre 2/10 | K24 | Båtmotorskydd, motorlås, förtöjningslina, spolklamma | Båtköpare: hela motorn under tak, BAT30 | Köpare båt | rea tillagd 2026-09-29 |
 | 40 | lör 3/10 | K25 | Kranskydd, IBC, krukväxthuv, regntunnehuv | Kranen spricker (problem först), 30 % med FROST30 till ons 7/10 | Köpare trädgård & tomt | omskriven 2026-09-29 |

@@ -1,11 +1,11 @@
 {
   "id": "k38-grasklipparen-sasongsslut",
-  "namn": "MAIL_20260930_Grasklippare_S_1_kopare-grasklippare_problem_sasongen-ar-slut_v1",
-  "memo": "Säsongsslut-rea till gräsklippar- och trimmerköparna (Axels idé 2026-09-29). Hypotes: vinterförvaringen (täcke, slipning, väggfäste) ger en äkta anledning i oktober, och trimmergrejerna följer med på samma kod; mätt på köp per mottagare. Rea 30 % med GRAS30 på elva produkter till och med söndag 4 oktober. Mejlet påstår aldrig att något säljs ut: varorna tar inte slut, det är säsongen som gör det. Ordningen är problem, agitation, lösning, erbjudande: hero utan produktbild och utan knapp, koden först efter täcket och de tre sakerna till.",
+  "namn": "MAIL_20260930_Grasklippare_S_1_tier1-kopare-grasklippare_problem_sasongen-ar-slut_v2",
+  "memo": "Säsongsslut-rea brett: Warmup tier 1 plus gräsklippar- och trimmerköparna, utan toffelköparna som får tofflorrean samma kväll (Axels fråga 2026-09-29: \"kan vi inte boka ut en om gräsklippningsgrejerna till alla?\"; v1 gick bara till köparna). Hypotes: vinterförvaringen (täcke, slipning, väggfäste) ger en äkta anledning i oktober för alla som har gräsmatta, inte bara för dem som redan köpt klippargrejer av oss, och trimmergrejerna följer med på samma kod. Mätt på GRAS30-ordrar per mottagare, uppdelat på de 318 i segmentet som redan köpt klippar- eller trimmergrejer och de 2 260 som inte gjort det: det är svaret på Axels fråga. Rea 30 % med GRAS30 på elva produkter till och med söndag 4 oktober. Mejlet påstår aldrig att något säljs ut: varorna tar inte slut, det är säsongen som gör det. Ordningen är problem, agitation, lösning, erbjudande: hero utan produktbild och utan knapp, koden först efter täcket och de tre sakerna till.",
   "taggar": {
     "typ": "S",
     "kalla": "egen-data",
-    "kalla_ref": "segmentet Köpare gräsklippare & trimmer 2026-09-29",
+    "kalla_ref": "segmentet Gräsklipparrean 30/9 (Warmup tier 1 + Köpare gräsklippare & trimmer, utan Köpare tofflor & skor) 2026-09-29",
     "lardom": null,
     "avatar": "den som klipper sin egen gräsmatta",
     "begar": "att klipparen startar i vår",
@@ -161,7 +161,7 @@
   ],
   "planerad": "2026-09-30T18:00:00+02:00",
   "segment": [
-    "Köpare gräsklippare & trimmer"
+    "Gräsklipparrean 30/9"
   ],
   "exkludera": [],
   "status_plan": "klar",

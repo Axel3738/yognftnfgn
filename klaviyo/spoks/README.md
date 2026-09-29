@@ -317,6 +317,22 @@ alla fjorton.
 
 "Köpare fiske" är bara de sju fiskeprodukterna, utan vandrarna i "Köpare fiske & friluft".
 
+**Gräsklipparen blev bred samma eftermiddag** (Axels fråga: "ska vi verkligen ta samma
+personer som har köpt sådana innan och sälja det samma igen, eller kan vi inte boka ut en om
+gräsklippningsgrejerna till alla?"). Nytt segment **Gräsklipparrean 30/9**
+`d4f13555-2710-4f1b-ac18-aa9db74ef5b9`, 2 578 kontakter: samtycke och (Warmup tier 1 eller köpt
+någon av de elva klippar- och trimmerprodukterna), utan den som köpt tofflor eller skor. Tre
+beslut i det: (1) tier 1 och inte All subscribed, för uppvärmningen ger vecka 40 bara tier 1
+breda utskick; (2) köparna är kvar, de har gräsmattan; (3) toffelköparna är borta, de får
+tofflorrean samma kväll och ingen får två mejl samma dag. Mätt med `preview_segment` före
+sparandet: 2 697 utan undantaget, 119 toffelköpare i den mängden, 2 697 − 119 = 2 578 = det
+sparade segmentets storlek. Undantaget byggs som `OR[purchasedProducts nis, purchasedProducts
+nin [ids]]`; `nin` ensamt gav samma 2 578 (mätt samma minut), så `nis`-grenen är bara hängslen
+för kontakter utan köp. Av de 2 578 har
+**318** köpt klippar- eller trimmergrejer och **2 260** inte; GRAS30-ordrarna delas på de två
+grupperna efter 4/10, och det är svaret på Axels fråga. Heron skrevs om av en Sonnet-agent
+(v1 sa "Du har handlat till klipparen eller trimmern hos oss").
+
 **Utkasten i Spoks (25, uppladdade 2026-09-29 06:36–08:22 CEST;** 23 uppdaterade med
 `update_draft_campaign` och hash, K38 och K39 nya med `draft_campaign`; alla `draft`, ingen
 publik, inget datum). Titeln bär dag, publik och ämnesrad; Axel väljer publiken och tiden i
@@ -325,7 +341,7 @@ appen:
 | Mejl | Dag 18:00 | Publik | Ämnesrad | Post-id |
 |---|---|---|---|---|
 | K23 | ons 30/9 | Köpare tofflor & skor | Golvet blir kallt. 30 % på tofflorna till söndag | `32ced8c7-e3dc-412f-9e0e-f36c6a03f975` |
-| K38 | ons 30/9 | Köpare gräsklippare & trimmer | Säsongen är slut. 30 % på klippargrejer till söndag | `8850aa7d-f30b-4e88-842e-02290c14cd12` |
+| K38 | ons 30/9 | **Gräsklipparrean 30/9** (bred sedan eftermiddagen, se nedan) | Säsongen är slut. 30 % på klippargrejer till söndag | `8850aa7d-f30b-4e88-842e-02290c14cd12` |
 | K02 | tor 1/10 | Warmup tier 1 | Motorn står ute i sex månader | `8e970060-558d-4ec6-bc04-89780ab20b95` |
 | K24 | fre 2/10 | Köpare båt | Ett vinterskydd som täcker hela motorn | `357d53cb-8e2f-43a1-8116-e8f7e72b9df1` |
 | K25 | lör 3/10 | Köpare trädgård & tomt | Isen spränger kranen. 30 % på skyddet till onsdag | `334c5fd5-5f5b-47d0-93aa-475976211195` |
