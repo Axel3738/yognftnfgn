@@ -290,6 +290,6 @@ som inte svarat (fyra vardagar).
 
 | Datum | Profil | Från | Svar | Nästa steg |
 |---|---|---|---|---|
-| 2026-09-29 17:18 | Else Kåss Furuseth | Kristin Starheim, Booking & Sånt | **Nej.** "På grunn av hennes NRK avtale kan hun dessverre ikke gjøre betalte samarbeid." | Tacka med en rad (kursen: ingen invändningshantering). NRK-flaggan stämde; samma risk finns för Martha Leivestad. |
+| 2026-09-29 17:18 | Else Kåss Furuseth | Kristin Starheim, Booking & Sånt | **Nej.** "På grunn av hennes NRK avtale kan hun dessverre ikke gjøre betalte samarbeid." | Tack skickat 2026-09-29 kväll i samma tråd (Gmail-id 1a0eecc990b60568). Avslutad. NRK-flaggan stämde; samma risk finns för Martha Leivestad. |
 
 Inga studsar på de nio mailen per 2026-09-29 kväll, inte heller på Marnas obekräftade adress.
