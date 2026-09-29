@@ -118,6 +118,19 @@ första och fyra veckor efter sista sändning för återkommande programledare, 
 repriser räknas. Undantaget för det egna yrket täcker bara deras egen bransch.
 Stryk profiler som redan har ett pågående samarbete med en direkt konkurrent.
 
+## FAS 2B: IKON ELLER HIGH PERFORMER (läs kursen, video 2, innan du poängsätter)
+
+Klassificera varje kandidat innan du poängsätter, för de två sorterna mäts olika.
+IKON: hela landet vet vem hen är (9 av 10 i alla åldrar), omtyckt, respekterad, känd för något
+annat än underhållning, reality eller drama. Radio- och nyhetsprofiler är starkast. Mäts med
+AI-hjärnan plus lokala intervjuer med cirka 50 personer ur köpargruppen: gillar du hen, litar du
+på hen, skulle du köpa om hen rekommenderade något? Modash-skalan och publikens ålder avgör INTE.
+Kostar mer; kursen säger att ikoner passar etablerade varumärken bäst.
+HIGH PERFORMER: nischad, stark relation till sina följare, dagliga stories där hen pratar in i
+kameran, minst 60 kommentarer i snitt. Mäts med Modash-skalan (30 %) och tvåveckorsobservationen
+(70 %).
+Bevisad försäljning från någon du litar på (en vän som kört samma profil) väger tyngre än båda.
+
 ## FAS 3: SCORECARD PER FINALIST
 
 Använd kursens prompt (HappyFlops Brain) men lägg till produkttoleransen som egen

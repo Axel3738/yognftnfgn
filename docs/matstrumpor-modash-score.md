@@ -5,6 +5,15 @@ Talavera går igenom de sex Modash-siffror HappyFlops tittar på och säger att 
 resten ("once we started to look at more things, we always mess it up"). Modash-siffrorna är
 30 % av beslutet. Tvåveckorsobservationen av stories är 70 % (se rapportens avsnitt 7).
 
+> **Rättelse 2026-09-29 (efter omläsning av kursen, video 2, 00:00–13:28 och 32:33–39:53):**
+> Skalan gäller bara *high-performing influencers*. Kursen har en andra kategori, **ikoner** (kändisar),
+> som mäts på ett annat sätt: 9 av 10 i alla åldrar vet vem hen är, hen är omtyckt, respekterad och
+> beundrad, och känd för något annat än underhållning eller drama. Det testas med AI-hjärnan plus
+> **lokala intervjuer med cirka 50 personer**: gillar du, litar du på, respekterar du, skulle du köpa
+> om hen rekommenderade? Kursen säger att intervjuerna väger tyngre än AI-analysen. Radioprogramledare
+> lyfts särskilt fram som "guldgruvan", eftersom lyssnarna känner att de känner dem.
+> Publikens ålder i Modash avgör alltså inte för en ikon.
+
 ## De sju siffrorna kursen tittar på
 
 | Siffra i Modash-rapporten | Kursens tröskel | Kursens ord om "normalt" |
