@@ -20,7 +20,9 @@ export function kallrader(korning = {}) {
   const w = korning.websearch ?? null;
   if (w) ut.push(`Webbsök (sessionens WebSearch): ${w.rader ?? 0} kandidater på ${korning.sok?.fraser ?? '?'} fraser, ${b.kandidater ?? 0} sidor lästa${w.orsak ? ` — ${w.orsak}` : ''}`);
   if (b.fraser) ut.push(`Bing: ${b.fraser} fraser sökta, ${b.traffar ?? 0} träffar${b.fel?.length ? ` — ${b.fel.length} sökningar gick inte (${b.fel[0]})` : ''}`);
-  if (korning.annonsfil) ut.push(`Annonser ur ${korning.annonsfil} (Axels lista) jämförda mot ${korning.sok?.produkter ?? '?'} produkter och ${korning.sok?.annonser ?? '?'} av våra aktiva annonser`);
+  const ab = korning.annonsbibliotek ?? null;
+  if (ab) ut.push(`Annonsbiblioteket: sidan "${ab.sidnamn ?? '?'}" (${ab.sida ?? '?'}) läst i Chromium härifrån — ${ab.antal?.lasta ?? 0} annonser (${ab.antal?.aktiva ?? 0} aktiva), räckvidd läst för ${ab.antal?.rackvidd_last ?? 0}${ab.antal?.rackvidd_saknas ? `, saknas för ${ab.antal.rackvidd_saknas}` : ''}${ab.fel?.length ? ` — ${ab.fel.length} fel (${ab.fel[0]})` : ''}`);
+  if (korning.annonsfil) ut.push(`Annonser ur ${korning.annonsfil} ${ab ? '(annonsbiblioteket)' : '(Axels lista)'} jämförda mot ${korning.sok?.produkter ?? '?'} produkter och ${korning.sok?.annonser ?? '?'} av våra aktiva annonser`);
   else if (!w && !b.fraser) ut.push(`Webbsök: ingen kandidatfil för dagen — bara Ad Library och egna länkar (${b.kandidater ?? 0} sidor lästa)`);
   const al = korning.adLibrary ?? {};
   if (al.status === 'ok') ut.push(`Ad Library: ${al.annonser ?? 0} främmande annonser lästa på ${al.termer ?? 0} söktermer`);
@@ -54,7 +56,7 @@ export function arendeRader(a, { sidaUrl = null } = {}) {
  * Rapporten till Axel. `nya`/`uppdaterade`/`oppna` är ärenden, `korning` är
  * körningens räkneverk, `sidaUrl` granskningssidan.
  */
-export function rapportSv({ datum, korning = {}, nya = [], uppdaterade = [], oppna = [], sidaUrl = null, atgardade = [], pamindKlara = [] } = {}) {
+export function rapportSv({ datum, korning = {}, nya = [], uppdaterade = [], oppna = [], sidaUrl = null, atgardade = [], pamindKlara = [], ejVarda = [] } = {}) {
   const r = [];
   r.push(`# Konkurrentdödaren ${datum}`);
   r.push('');
@@ -67,6 +69,15 @@ export function rapportSv({ datum, korning = {}, nya = [], uppdaterade = [], opp
     for (const a of nya) { r.push(...arendeRader(a, { sidaUrl })); r.push(''); }
   } else {
     r.push('## Inga nya kopior i dag.');
+    r.push('');
+  }
+  if (ejVarda.length) {
+    // Axels kriterier (2026-09-29): kopior finns, men sidan är inte värd att jaga — inget ärende, inget brev.
+    r.push(`## Under din tröskel — inget ärende (${ejVarda.length})`);
+    for (const f of ejVarda) {
+      const v = f.varde ?? {};
+      r.push(`- ${f.deras?.sidnamn ?? f.deras?.doman ?? '?'} (${f.verksamhet ?? '?'}): ${f.bevis?.annonser?.length ?? 0} annons(er) återger vårt, men ${v.orsak ?? 'under tröskeln'}. Tröskeln är en annons över ${Number(v.minRackvidd ?? 10000).toLocaleString('sv-SE').replace(/[  ]/g, ' ')} i räckvidd eller ${v.minLive ?? 10} live. Vill du jaga ändå: \`node konkurrenter/kor.mjs --rapport --tvinga\`.`);
+    }
     r.push('');
   }
   if (atgardade.length) {

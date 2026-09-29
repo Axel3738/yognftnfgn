@@ -56,11 +56,22 @@ node konkurrenter/kor.mjs --lista
    bild i 400 px ger avstånd 0–2, en annan bild 35). `sammanvag` ger
    styrkan: **stark** (kopierat stycke, ≥ 2 identiska bilder, eller 1 + text)
    eller **trolig**. Under tröskeln = inget ärende, men står i output-filen.
-5. **Annonsfallet** (`annonsfall.mjs`, `--hamta --annonser <fil>`): när
-   kopian sitter i konkurrentens ANNONSER och inte på hans sajt. Metas
-   annonsbibliotek går inte att läsa härifrån, så Axel (eller sessionen)
-   skriver ner annonserna — länk, text, rubrik, bilder/skärmdumpar (URL eller
-   lokal fil) — i en JSON-fil (formatet står överst i `annonsfall.mjs`).
+5. **Annonsfallet** (`annonsfall.mjs` + `adlibrary.mjs`,
+   `--hamta --annonser-sida <sid-id>`): när kopian sitter i konkurrentens
+   ANNONSER och inte på hans sajt. **Annonsbiblioteket läses härifrån sedan
+   2026-09-29:** Chromium öppnar sidans lista (403 tre–fyra gånger, sedan 200
+   med annonserna inbäddade som JSON — active/inactive var för sig, media_type
+   vid taket 30), räckvidden per annons hämtas ur EU-transparensen genom att
+   detaljfrågan AdLibraryV3AdDetailsQuery spelas upp per annons, och sidans
+   info (namn, kategori, Instagram, domän) följer med. Mätt på ORVO: 37
+   annonser med räckvidd på 42 s. Reserv (`--hamta --annonser <fil>`): Axel
+   eller Cowork (`cowork/1-annonser.txt`) skriver ner annonserna — länk,
+   text, rubrik, `aktiv`, `exponeringar`, bilder — i en JSON-fil (formatet
+   står överst i `annonsfall.mjs`). **Axels kriterier** (`trosklar.annons`,
+   `vardAttJaga`): sidan jagas bara om EN kopierande annons har över 10 000
+   i räckvidd ELLER minst 10 av dem är live; annars står den i rapporten
+   under "Under din tröskel" och `--rapport` skapar inget ärende
+   (`--tvinga` överstyr).
    Varje annons jämförs mot ALLA våra aktiva annonstexter (≥ 6 ord i följd)
    och produkttexter; deras bilder hashas mot våra annonsbilder (träffade
    produkters bilder först, sedan alla annonsbilder, aldrig hela katalogen).
@@ -138,11 +149,18 @@ node konkurrenter/kor.mjs --lista
     bilagor och sessionen inte kan ladda upp en containerfil från Axels
     dator — länken står i "Övrig information". Verifieringssidan
     `arenden/<id>/anmalan/verifiering.html` (alla fält, alla bilder) är Axels
-    ENDA klick: på hans "kör anmälningarna <id>" fyller sessionen i
-    formuläret i hans **Claude in Chrome** (facebook.com svarar 403 från
-    containern), en anmälan i taget, och kvitterar varje med `--anmald`
-    (Metas referensnummer; en anmälan kvitteras aldrig två gånger; alla
-    inskickade ⇒ ärendet "anmält vidare" när brevet gått). Lokala skärmdumpar
+    ENDA klick: på hans "kör anmälningarna <id>" kör sessionen
+    `--anmal-skicka <id> --ja` — **formuläret fylls i HÄRIFRÅN** i Chromium
+    (`anmal-skicka.mjs`; help.meta.com svarar 200 utan inloggning, kartlagt
+    2026-09-29: rättighet → plattform → land + "authorised to represent" +
+    rättighetshavarens namn → URL, originalets länk, beskrivning ≤ 500 tecken,
+    namn, e-post ×2, **engångskod till e-postadressen**, underskrift →
+    Submit), en anmälan i taget; koden läser sessionen ur Gmail-connectorn
+    och skriver i `arenden/<id>/anmalan/kod.txt` (skriptet väntar på filen),
+    kvittot skrivs av sig självt ur Metas svar (`--anmald` finns kvar för
+    hand; en anmälan kvitteras aldrig två gånger; alla inskickade ⇒ ärendet
+    "anmält vidare"). Utan `--ja` torrkörs formuläret: allt ifyllt, skärmdump
+    `<nr>-torr.png`, ingen kod, inget skickat. Lokala skärmdumpar
     Axel gett står aldrig i anmälan. Mätt 2026-09-29 (syntetiskt ärende): två
     anmälningar, två bevisbilder (2400 px, ~0,9 MB), verifieringssidan tittad
     på. ⚠️ Formulärets fält läses av LIVE i Chrome och paras på etikett —
@@ -167,6 +185,9 @@ node konkurrenter/kor.mjs --lista
 | `arenden/<id>/brev.txt`, `brev.json`, `faktura-<nr>.pdf` + `.html` | ✅ | Sändpaketet: exakt det som lades i Gmail |
 | `arenden/<id>/anmalan/<nr>.json` + `.txt` | ✅ | Meta-anmälan per annons: fälten, bevisbildens CDN-länk, status + Metas referens |
 | `arenden/<id>/anmalan/bevis-<nr>.png`, `verifiering.html` | ❌ | Bevisbilderna (~1 MB styck) och Axels verifieringssida — byggs om med `--anmal` |
+| `arenden/<id>/anmalan/<nr>-torr.png`, `<nr>-formular.png`, `<nr>-kvitto.png`, `kod.txt*` | ❌ | Formulärets skärmdumpar (torrkörning, ifyllt före Submit, kvittot) och engångskodens fil — referensen står i `<nr>.json` |
+| `output/<datum>.annonser-<sid-id>.json` | ❌ | Annonsfilen läsaren skrev ur annonsbiblioteket (alla annonser, räckvidd, sidinfo) — byggs om med `--annonser-sida` |
+| `cowork/1-annonser.txt` | ✅ | Reservprompten till Cowork när containern inte kan läsa annonsbiblioteket |
 | `lage.json` | ✅ | När varje produkt kollades senast (rotationen), senaste körning |
 | `sida.json` | ✅ | Granskningssidans artifact-länk: https://claude.ai/artifact/6JenXfVagtgw2THL8Q4y4v (publiceras om på samma länk varje körning) |
 | `output/` | ❌ | Rådata, kandidater, annonsfiler, bildcache, skärmdumpar, sidan — dör med containern |
@@ -187,9 +208,11 @@ output/ dit (tester och provkörningar — repot rörs inte).
 - Fakturan: IBAN ifyllt 2026-09-29 (`--kolla` säger "kontrollsiffran
   stämmer"); bankgiro och BIC tomma. Moms 25 % SE / omvänd utomlands — om
   redovisningskonsulten säger skadestånd utan moms: `moms_procent: 0`.
-- **Ad Library:** `(#10) 2332002 Application does not have permission` med
-  `META_ACCESS_TOKEN`; webbversionen ger 403 "Client challenge" i headless
-  Chromium. Det är ett EGET program hos Meta (Ad Library API), skilt från
+- **Ad Library:** **webbversionen läses härifrån sedan 2026-09-29** —
+  `adlibrary.mjs`: 403 "Client challenge" tre–fyra gånger, sedan 200 och
+  annonserna som JSON i HTML:en; räckvidden per annons via detaljfrågan;
+  ORVO:s 37 annonser på 42 s. API:t svarar fortfarande `(#10) 2332002
+  Application does not have permission` med `META_ACCESS_TOKEN`. Det är ett EGET program hos Meta (Ad Library API), skilt från
   appen och systemanvändaren som läser annonskontona: det kräver att en
   fysisk person bekräftat sin identitet **och en användartoken från den
   personen** — enligt Metas dokumentation räcker inte systemanvändarens
@@ -201,7 +224,11 @@ output/ dit (tester och provkörningar — repot rörs inte).
   dess: annonsfallet ovan.
 - Meta: OPS-kontot svarar "(#1) Please reduce the amount of data" på
   200 annonser med breda fält — därför 50 per sida, smala fält och
-  halvering vid felet (`korpus.mjs hamtaAnnonssidor`).
+  halvering vid felet (`korpus.mjs hamtaAnnonssidor`). ⚠️ En nättimeout
+  (90 s) på EN sida tömde 2026-09-29 hela MagiBorsten (0 av 629 annonser)
+  och ORVO:s 14 IBC-kopior försvann ur fyndet: sidan läses nu om upp till
+  tre gånger, och annonsfallet STANNAR om något konto inte gick att läsa
+  (`--tillat-trasigt-konto` överstyr) — hellre inget fynd än ett falskt.
 - Chromium: finns (Playwright i `/opt/node22/lib/node_modules/playwright`),
   3 bilder hashade på 440 ms, skärmdump 1280 × 2200 JPEG ≈ 200 kB, faktura-PDF
   på 2,2 s.

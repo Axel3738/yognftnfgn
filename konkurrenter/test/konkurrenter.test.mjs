@@ -15,7 +15,9 @@ import { STATUS, lasArenden, sparaArende, nyttId, nyckelFor, hittaBefintligt, ov
 import { valjSprak, byggBrev, bevisrader, kontrolleraBrev, fristText } from '../brev.mjs';
 import { skickaBrev, kontrolleraForeSandning, SPARR_ENV, byggSandpaket, registreraSkickat } from '../skicka.mjs';
 import { fakturanummer, belopp, fakturarader, byggFaktura, kontrolleraFaktura, fakturaText, fakturaHtml, momsregNr, ibanGiltig, svenskKopare } from '../faktura.mjs';
-import { tolkaAnnonsinput, jamforAnnons, byggAnnonsfynd, tolkaAntal, exponeringarUr } from '../annonsfall.mjs';
+import { tolkaAnnonsinput, jamforAnnons, byggAnnonsfynd, tolkaAntal, exponeringarUr, vardAttJaga, aktivUr } from '../annonsfall.mjs';
+import { sidaIdUr, listaUrl, annonserUrHtml, normaliseraAnnons, rackviddUrDetalj, derasDoman, annonsfilUr, antalUrText } from '../adlibrary.mjs';
+import { beskrivning500, formularVarden, kodUrText, kvarUrText, referensUrText } from '../anmal-skicka.mjs';
 import { cpmUr, summeraInsights, insightsSokvag, hamtaCpm, valjCpm } from '../cpm.mjs';
 import { adLibraryToken } from '../sok.mjs';
 import { annonsLank, varAdLibraryLank, byggAnmalan, byggAnmalningar, kontrolleraAnmalan, anmalanText, FORSAKRINGAR } from '../anmalan.mjs';
@@ -456,6 +458,77 @@ test('annonsfallet: deras annonser mot våra annonstexter + produkttexter, en ra
   assert.doesNotMatch(html, /axels-skarmdump/);
 });
 
+test('Axels kriterier (vardAttJaga): EN annons över 10 000 i räckvidd ELLER tio live — annars under tröskeln, och inget nytt ärende', () => {
+  const t = (nr, exp, aktiv = true) => ({ nr, exponeringar: exp, aktiv });
+  const en = vardAttJaga([t(1, 100)]);
+  assert.equal(en.vard, false); assert.match(en.orsak, /1 kopierande annons\(er\) live \(färre än 10\) och största räckvidden 100 \(inte över 10 000\)/);
+  assert.equal(vardAttJaga([t(1, 10000)]).vard, false, '10 000 är inte ÖVER 10 000');
+  const v = vardAttJaga([t(1, 10001), t(2, 50)]); assert.equal(v.vard, true); assert.equal(v.viaRackvidd, true); assert.equal(v.storstNr, 1); assert.match(v.orsak, /annons 1 har 10 001 i räckvidd \(över 10 000\)/); assert.match(v.orsakEn, /ad 1 reached 10,001 people/);
+  const tio = Array.from({ length: 10 }, (_, i) => t(i + 1, null)); const a = vardAttJaga(tio); assert.equal(a.vard, true); assert.equal(a.viaAntal, true); assert.match(a.orsak, /10 kopierande annonser live \(minst 10\)/);
+  const nio = [...tio.slice(0, 9), t(10, null, false)]; const n = vardAttJaga(nio); assert.equal(n.vard, false); assert.equal(n.live, 9); assert.match(n.orsak, /9 kopierande annons\(er\) live .*största räckvidden okänd .*10 annons\(er\) utan räckvidd/);
+  assert.equal(vardAttJaga([t(1, 20000)], { min_rackvidd_en_annons: 30000, min_antal_live: 1 }).vard, true, 'konfig styr: en live räcker');
+  assert.equal(aktivUr({ aktiv: false }), false); assert.equal(aktivUr({ is_active: true }), true); assert.equal(aktivUr({ status: 'Active' }), true); assert.equal(aktivUr({ status: 'inaktiv' }), false); assert.equal(aktivUr({}), null);
+  assert.equal(KONFIG.trosklar.annons.min_rackvidd_en_annons, 10000); assert.equal(KONFIG.trosklar.annons.min_antal_live, 10);
+  // Fyndet bär domen: en general store med en enda kopierande annons på ~100 räckvidd
+  const egnaAnnonser = [{ id: '1', namn: 'Takoverdrag_PD_1_H1', verksamhet: 'Bäverbutiken', handle: 'takoverdrag', text: VAR_TEXT, bild: null }];
+  const egnaProdukter = [{ verksamhet: 'Bäverbutiken', handle: 'takoverdrag', titel: 'Taköverdrag Husvagn', url: 'https://baverbutiken.se/products/takoverdrag', butik: 'https://baverbutiken.se', text: VAR_TEXT, bilder: [] }];
+  const input = tolkaAnnonsinput({ deras: { sidnamn: 'General Store', sida_id: '42' }, annonser: [{ lank: 'https://www.facebook.com/ads/library/?id=901', text: 'Regnet, löven och fågelskiten hamnar på taket, och det är precis den ytan du inte går upp och kollar.', reach: 100, aktiv: true }] });
+  const fynd = byggAnnonsfynd(input, { egnaAnnonser, egnaProdukter, konfig: KONFIG, derasHashar: new Map(), egnaHashar: new Map(), nu: '2026-09-29T08:00:00Z', kalla: 'adlibrary' });
+  assert.equal(fynd.varde.vard, false); assert.match(fynd.skal.at(-1), /^under Axels tröskel: 1 kopierande annons/); assert.match(fynd.skalEn.at(-1), /^below the threshold/); assert.match(fynd.skal.join(' '), /100 exponeringar enligt annonsbibliotekets EU-ruta/); assert.equal(fynd.bevis.annonser[0].aktiv, true);
+  const r = rapportSv({ datum: '2026-09-29', ejVarda: [fynd] });
+  assert.match(r, /## Under din tröskel — inget ärende \(1\)/); assert.match(r, /General Store \(Bäverbutiken\): 1 annons\(er\) återger vårt, men 1 kopierande annons\(er\) live/); assert.match(r, /--rapport --tvinga/); assert.match(r, /## Inga nya kopior i dag/);
+  // Över tröskeln via räckvidden ⇒ värd att jaga, skälet sist
+  const stor = byggAnnonsfynd(tolkaAnnonsinput({ deras: { sidnamn: 'Stor' }, annonser: [{ lank: 'https://www.facebook.com/ads/library/?id=902', text: input.annonser[0].text, reach: '12,3 tn' }] }), { egnaAnnonser, egnaProdukter, konfig: KONFIG, derasHashar: new Map(), egnaHashar: new Map() });
+  assert.equal(stor.varde.vard, true); assert.match(stor.skal.at(-1), /^värd att jaga: annons 1 har 12 300 i räckvidd/);
+});
+
+test('adlibrary: sid-id ur länk, annonserna ur den inbäddade JSON:en, normalisering, räckvidd ur detaljsvaret, annonsfilen rakt in i annonsfallet', () => {
+  assert.equal(sidaIdUr('1299101096626433'), '1299101096626433');
+  assert.equal(sidaIdUr('https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=SE&view_all_page_id=1299101096626433&x=1'), '1299101096626433');
+  assert.equal(sidaIdUr('orvo'), null); assert.equal(sidaIdUr(''), null);
+  assert.match(listaUrl('1', { status: 'inactive', media: 'video' }), /active_status=inactive.*media_type=video.*view_all_page_id=1$/);
+  const nod = (id, extra = {}) => ({ ad_archive_id: id, is_active: true, start_date: 1790233200, end_date: 1790578800, page_id: '1299101096626433', page_name: 'ORVO', publisher_platform: ['FACEBOOK', 'INSTAGRAM'], collation_count: 2, snapshot: { body: { text: 'Regnet slår på taket.' }, title: 'Skyddar taket', link_url: 'https://orvo.se/products/takskydd', cta_text: 'Shop now', display_format: 'VIDEO', images: [], videos: [{ video_hd_url: 'https://video/hd.mp4', video_preview_image_url: 'https://scontent/poster.jpg' }], cards: [] }, ...extra });
+  const inbaddat = { require: [['ScheduledServerJS', 'handle', null, [{ __bbox: { result: { data: { ad_library_main: { search_results_connection: { edges: [{ node: { collated_results: [nod('111'), nod('222', { is_active: false, snapshot: { body: { markup: { __html: 'Rad ett<br>Rad två &amp; tre' } }, images: [{ original_image_url: 'https://scontent/bild.jpg' }], cards: [{ body: 'Kortet', title: 'Kortrubrik', link_url: 'https://orvo.se/products/blad', original_image_url: 'https://scontent/kort.jpg' }] } })] } }] } } } } } }]]] };
+  const html = `<html><head><script type="application/json" data-content-len="1">${JSON.stringify(inbaddat)}</script><script type="application/json">{"x":1}</script></head></html>`;
+  const raa = annonserUrHtml(html + html); // samma annons i två skript räknas en gång
+  assert.equal(raa.length, 2);
+  const a = normaliseraAnnons(raa[0]);
+  assert.equal(a.id, '111'); assert.equal(a.lank, 'https://www.facebook.com/ads/library/?id=111'); assert.equal(a.aktiv, true); assert.equal(a.start, '2026-09-24'); assert.equal(a.slut, '2026-09-28');
+  assert.equal(a.text, 'Regnet slår på taket.'); assert.equal(a.rubrik, 'Skyddar taket'); assert.equal(a.doman, 'orvo.se'); assert.deepEqual(a.bilder, ['https://scontent/poster.jpg']); assert.equal(a.video, true); assert.equal(a.videoUrl, 'https://video/hd.mp4'); assert.equal(a.varianter, 2); assert.equal(a.sida, 'ORVO');
+  const b = normaliseraAnnons(raa[1]);
+  assert.equal(b.aktiv, false); assert.equal(b.text, 'Rad ett\nRad två & tre\n\nKortet'); assert.equal(b.rubrik, 'Kortrubrik'); assert.deepEqual(b.bilder, ['https://scontent/bild.jpg', 'https://scontent/kort.jpg']); assert.equal(b.video, false);
+  assert.equal(antalUrText('Filters\n~37 results\nSort'), 37); assert.equal(antalUrText('1 234 resultat'), 1234); assert.equal(antalUrText('inget'), null);
+  const detalj = rackviddUrDetalj({ data: { ad_library_main: { ad_details: { advertiser: { page: { about: { text: 'Tools' } }, ad_library_page_info: { page_info: { page_name: 'ORVO', page_category: 'Tools/Equipment', ig_username: 'orvogear', likes: 1, page_profile_uri: 'https://www.facebook.com/61594472230799/' } } }, transparency_by_location: { eu_transparency: { targets_eu: true, eu_total_reach: 3948, location_audience: [{ name: 'Sweden', excluded: false }, { name: 'Norway', excluded: true }] } } } } } });
+  assert.equal(detalj.rackvidd, 3948); assert.deepEqual(detalj.lander, ['Sweden']); assert.equal(detalj.sidinfo.instagram, 'orvogear'); assert.equal(detalj.sidinfo.om, 'Tools'); assert.equal(detalj.fel, null);
+  assert.match(rackviddUrDetalj({}).fel, /ad_details/);
+  assert.equal(derasDoman([a, b, { doman: 'facebook.com' }, { doman: null }]), 'orvo.se');
+  const fil = annonsfilUr({ sidaId: '1299101096626433', annonser: [a, b], sidinfo: detalj.sidinfo, rackvidd: new Map([['111', { rackvidd: 3948, lander: ['Sweden'] }]]), hamtad: '2026-09-29T10:00:00Z', antal: { active: 1, inactive: 1 } });
+  assert.equal(fil.deras.sidnamn, 'ORVO'); assert.equal(fil.deras.sida_id, '1299101096626433'); assert.equal(fil.deras.doman, 'orvo.se'); assert.equal(fil.deras.url, 'https://orvo.se'); assert.match(fil.deras.ad_library, /view_all_page_id=1299101096626433/);
+  assert.equal(fil.annonser[0].exponeringar, 3948); assert.equal(fil.annonser[0].exponeringar_kalla, 'eu_total_reach'); assert.equal(fil.annonser[1].exponeringar, null); assert.equal(fil.annonser[1].exponeringar_kalla, null);
+  assert.deepEqual(fil.antal, { active: 1, inactive: 1, lasta: 2, aktiva: 1, inaktiva: 1, rackvidd_last: 1, rackvidd_saknas: 1 }); assert.equal(fil.kalla, 'adlibrary');
+  const input = tolkaAnnonsinput(fil);
+  assert.equal(input.deras.doman, 'orvo.se'); assert.equal(input.annonser.length, 2); assert.equal(input.annonser[0].aktiv, true); assert.equal(input.annonser[1].aktiv, false); assert.equal(input.annonser[0].exponeringar, 3948); assert.equal(input.annonser[1].exponeringar, null);
+});
+
+test('anmal-skicka: formulärets fält ur anmälan (produkt per annons, beskrivning ≤ 500), koden ur mejlet, kvar-räknaren och referensen ur kvittot', () => {
+  const arende = { id: 'KD-2026-011', verksamhet: 'Bäverbutiken', typ: 'annons', status: 'ny', deras: { sidnamn: 'ORVO', sidaId: '1299101096626433' }, var: { produkt: { handle: 'ibc', titel: 'IBC-tanköverdrag', url: 'https://baverbutiken.se/products/ibc' } }, brev: null };
+  const annons = { nr: 2, lank: 'https://www.facebook.com/ads/library/?id=2011809009499730', aktiv: true, exponeringar: 3364, video: true, start: '2026-09-24', text: { styrka: 'trolig', kopieradeOrd: 7, langsta: 7, passager: [{ text: 'stänger ute ljuset som får algerna att' }] }, varAnnons: { id: '1', namn: 'Takoverdrag_PD_3_H1', handle: 'takoverdrag' }, produkt: { handle: 'takoverdrag', titel: 'Taköverdrag Husvagn', url: 'https://baverbutiken.se/products/takoverdrag', verksamhet: 'Bäverbutiken' }, bilder: [{ egen: 'https://cdn/a.jpg', deras: 'https://scontent/b.jpg', avstand: 1, grad: 'identisk' }] };
+  const an = byggAnmalan(arende, annons, KONFIG, { nr: 1, antal: 10, nu: '2026-09-29T10:00:00Z', bevisbildUrl: 'https://cdn.shopify.com/s/files/bevis-1.png' });
+  // Produkten PER ANNONS vinner över ärendets (en sida kan kopiera flera av våra produkter)
+  assert.match(an.falt.contentDescription, /for the product "Taköverdrag Husvagn"/); assert.equal(an.falt.originalWorkUrls[0], 'https://baverbutiken.se/products/takoverdrag');
+  const b = beskrivning500(an);
+  assert.ok(b.length <= 500, `beskrivningen är ${b.length} tecken`); assert.match(b, /7 consecutive identical words/); assert.match(b, /our own product photograph/); assert.match(b, /our ad "Takoverdrag_PD_3_H1"/); assert.match(b, /bevis-1\.png/); assert.match(b, /Ref KD-2026-011 1\/10\.$/);
+  const lang = byggAnmalan(arende, { ...annons, text: { ...annons.text, langsta: 80, kopieradeOrd: 80, passager: [{ text: 'ord '.repeat(200).trim() }] } }, KONFIG, { nr: 1, antal: 1, bevisbildUrl: 'https://cdn/x.png' });
+  assert.ok(beskrivning500(lang).length <= 500, 'en lång passage kortas tills 500 håller');
+  const v = formularVarden(an);
+  assert.deepEqual(v.fel, []); assert.equal(v.ratt, 'Copyright'); assert.equal(v.plattform, 'Facebook'); assert.equal(v.land, 'Sweden'); assert.equal(v.ombud, true);
+  assert.equal(v.rattighetshavare, 'Stonebite Ecom AB'); assert.equal(v.urls, an.lank); assert.equal(v.original, 'https://baverbutiken.se/products/takoverdrag'); assert.equal(v.namn, 'Axel Odhner'); assert.equal(v.epost, KONFIG.anmalan.undertecknare.epost); assert.equal(v.signatur, 'Axel Odhner');
+  assert.match(formularVarden({ ...an, falt: { ...an.falt, reporter: { ...an.falt.reporter, email: 'fel' } } }).fel.join(), /e-postadressen/);
+  assert.equal(kodUrText('Your Meta verification code is 482913. Enter it within 10 minutes.'), '482913'); assert.equal(kodUrText('Kod: 1234'), '1234'); assert.equal(kodUrText('Hej! 55555555 är ditt tal'), '55555555'); assert.equal(kodUrText('ingen kod här'), null);
+  assert.equal(kvarUrText('Foo 6 required fields remaining Submit'), 6); assert.equal(kvarUrText('1 required field remaining'), 1); assert.equal(kvarUrText('Submit'), 0);
+  assert.equal(referensUrText('Thank you. Your report number is 1234567890123. We will'), '1234567890123'); assert.equal(referensUrText('Reference #: 98765432'), '98765432'); assert.equal(referensUrText('Thanks, nothing here 12'), null);
+});
+
 test('tolkaAntal och exponeringarUr: Axels avlästa tal i alla former', () => {
   assert.equal(tolkaAntal(12345), 12345); assert.equal(tolkaAntal('12 345'), 12345); assert.equal(tolkaAntal('12.345'), 12345); assert.equal(tolkaAntal('12,3 tn'), 12300);
   assert.equal(tolkaAntal('12.3K'), 12300); assert.equal(tolkaAntal('1,2 M'), 1200000); assert.equal(tolkaAntal('abc'), null); assert.equal(tolkaAntal(0), null); assert.equal(tolkaAntal(''), null); assert.equal(tolkaAntal(null), null);
@@ -493,7 +566,7 @@ test('Meta-anmälan: en per annons med länk, alla fält ifyllda på engelska, s
   assert.equal(anmalningar.length, 2); assert.deepEqual(hoppade, [{ nr: 2, orsak: 'ingen Ad Library-länk' }]);
   const a1 = anmalningar[0];
   assert.equal(a1.nr, 1); assert.equal(a1.antal, 2); assert.equal(a1.libraryId, '111'); assert.equal(a1.formular, 'https://www.facebook.com/help/contact/1758255661104383');
-  assert.equal(a1.falt.reporter.fullName, 'Axel Odhner'); assert.equal(a1.falt.reporter.email, 'contact@stonebite.org'); assert.match(a1.falt.reporter.address, /Göteborg, Sweden$/);
+  assert.equal(a1.falt.reporter.fullName, 'Axel Odhner'); assert.equal(a1.falt.reporter.email, KONFIG.anmalan.undertecknare.epost); assert.match(a1.falt.reporter.address, /Göteborg, Sweden$/);
   assert.equal(a1.falt.rightsOwner.name, 'Stonebite Ecom AB'); assert.equal(a1.falt.rightsOwner.registrationNumber, '559576-2401'); assert.match(a1.falt.rightsOwner.relationship, /^CEO of the rights owner Stonebite Ecom AB/);
   assert.deepEqual(a1.falt.contentUrls, ['https://www.facebook.com/ads/library/?id=111']);
   for (const m of ['Facebook page "Kopian" (page ID 1299101096626433)', '31 words of our advertising copy appear verbatim', '31 consecutive words: "regnet löven och fågelskiten hamnar på taket"', 'running since 1 September 2026', 'approximately 12,345 people in the EU', 'our ad "Takoverdrag_PD_1_H1" for the product "Taköverdrag Husvagn"', 'report 1 of 2', 'each ad is reported separately']) assert.ok(a1.falt.contentDescription.includes(m), `saknar: ${m}`);

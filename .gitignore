@@ -144,8 +144,9 @@ klaviyo/output/
 
 # Konkurrentdödaren: rådata, kandidater, bildcache, skärmdumpar och den byggda granskningssidan — dör med containern. Ärendena (arenden.jsonl, arenden/) och lage.json committas.
 konkurrenter/output/
-# Meta-anmälningarnas bevisbilder (~1 MB PNG styck) och verifieringssidan (data-URI:er) — bevisets länk på CDN och fälten står i <nr>.json som committas.
-konkurrenter/arenden/*/anmalan/bevis-*.png
+# Meta-anmälningarnas bevisbilder (~1 MB PNG styck), formulärets skärmdumpar (<nr>-torr/-formular/-kvitto.png), engångskodens filer och verifieringssidan (data-URI:er) — bevisets länk på CDN, fälten och kvittot (referens) står i <nr>.json och arenden.jsonl som committas.
+konkurrenter/arenden/*/anmalan/*.png
+konkurrenter/arenden/*/anmalan/kod.txt*
 konkurrenter/arenden/*/anmalan/verifiering.html
 
 # Matstrumpors lokaliserade videor (HeyGen + undertexter) — stora filer, laddas upp till Meta, aldrig i git

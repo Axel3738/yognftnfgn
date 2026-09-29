@@ -148,11 +148,20 @@ export async function hamtaAnnonssidor(klient, act, { limit = 50, sov = vanta, l
   const ut = [];
   let nasta = `${act}/ads?fields=${ANNONSFALT}&filtering=${AKTIVA}&limit=${limit}`;
   let vantetider = [30_000, 60_000, 120_000];
+  let natForsok = 0;
   while (nasta) {
     let j;
     try { j = await klient.get(nasta); }
     catch (e) {
       const f = e.meta ?? {};
+      // Nätet, inte Meta: en timeout (90 s i meta-lib) eller ett tappat socket på EN sida ska inte tömma hela kontot —
+      // ORVO-körningen 2026-09-29 tappade MagiBorstens 629 annonser på en enda timeout, och jämförelsen blev falsk.
+      if (!f.code && /aborted due to timeout|TimeoutError|ECONNRESET|fetch failed|socket hang up/i.test(e.message ?? '') && natForsok < 3) {
+        natForsok++;
+        logg(`  ⏳ ${act}: ${e.message.split('\n')[0]} — försök ${natForsok + 1} av 4 om ${5 * natForsok} s`);
+        await sov(5_000 * natForsok);
+        continue;
+      }
       if (/reduce the amount of data/i.test(f.message ?? '') && limit > 5) {
         limit = Math.max(5, Math.floor(limit / 2));
         nasta = nasta.replace(/([?&])limit=\d+/, `$1limit=${limit}`);

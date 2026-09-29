@@ -11,10 +11,24 @@
 //        Läser kandidaterna (sessionens fil, Bing om --bing, Ad Library när
 //        token:en får), hämtar varje sida, jämför text och bilder mot vårt,
 //        tar skärmdump på träffarna → output/<datum>.json. Rör INTE minnet.
-//   node konkurrenter/kor.mjs --rapport [--discord] [--torr]
+//   node konkurrenter/kor.mjs --hamta --annonser-sida <sid-id|Ad Library-länk> [--land SE] [--utan-rackvidd]
+//        Läser en Facebook-sidas ANNONSER ur annonsbiblioteket härifrån
+//        (adlibrary.mjs: Chromium, räckvidd per annons) → annonsfilen →
+//        samma jämförelse som --annonser <fil>. Slutar med Axels kriterier.
+//   node konkurrenter/kor.mjs --hamta --annonser <fil.json>
+//        Samma jämförelse på en annonsfil Axel/Cowork skrivit (annonsfall.mjs).
+//   node konkurrenter/kor.mjs --rapport [--discord] [--torr] [--tvinga]
 //        Fynden → ärenden (arenden.jsonl, arenden/<id>.md, skärmdumpar),
 //        lage.json, granskningssidan output/sida.html, svensk rapport,
-//        engelsk Discord-post när något nytt finns.
+//        engelsk Discord-post när något nytt finns. Ett annonsfynd under
+//        Axels tröskel (trosklar.annons) blir inget ärende utan --tvinga.
+//   node konkurrenter/kor.mjs --anmal <id> [--utan-bevisbild] [--utan-cdn]
+//        Meta-anmälningarna: en per kopierad annons + bevisbild + verifieringssida.
+//   node konkurrenter/kor.mjs --anmal-skicka <id> [--nr n] [--ja] [--kod-fil <fil>]
+//        Fyller i Metas formulär HÄRIFRÅN (anmal-skicka.mjs). Utan --ja: torrt.
+//        Med --ja (Axels "kör anmälningarna"): engångskoden ur kodfilen, Submit, kvitto.
+//   node konkurrenter/kor.mjs --anmald <id> --nr <n> --referens <r>
+//        Kvittot för hand när en anmälan skickats på annat sätt.
 //   node konkurrenter/kor.mjs --lista
 //   node konkurrenter/kor.mjs --brev <id> [--sprak sv|en] [--paminnelse]
 //   node konkurrenter/kor.mjs --skicka <id> [--ja] [--till adress] [--sprak sv|en] [--utkast] [--paminnelse]
@@ -42,6 +56,8 @@ import { hamtaCpm, valjCpm, cpmRad } from './cpm.mjs';
 import { byggAnmalningar, kontrolleraAnmalan, anmalanText } from './anmalan.mjs';
 import { bevisbildHtml, bevisbildPng, verifieringHtml } from './bevisbild.mjs';
 import { tolkaAnnonsinput, byggAnnonsfynd } from './annonsfall.mjs';
+import { hamtaAdLibrary, sidaIdUr } from './adlibrary.mjs';
+import { skickaAnmalan } from './anmal-skicka.mjs';
 import { rapportSv, rapportEn, kallrader, arendeMd, KANAL_INTRO } from './rapport.mjs';
 import { byggSida } from './sida.mjs';
 
@@ -123,20 +139,26 @@ async function byggKorpus(k, { bara = null, produktFilter = null, max = null, la
  * ALLA våra annonser och produkttexter, bilderna hashas, deras sida läses för
  * kontaktuppgifter. Skriver output/<datum>.json som en vanlig hämtning.
  */
-async function hamtaAnnonser(k, fil) {
+async function hamtaAnnonser(k, fil, { kalla = 'axel-annonser', bibliotek = null } = {}) {
   const idag = flagga('idag') ?? idagSthlm();
   const nu = new Date().toISOString();
   const egna = egnaDomaner(k);
   const input = tolkaAnnonsinput(lasJson(fil) ?? (() => { throw new Error(`${fil} finns inte eller är inte JSON.`); })());
   if (input.deras.doman && arEgen(input.deras.doman, egna)) throw new Error(`${input.deras.doman} är en av våra egna domäner.`);
   const { allaProdukter, allaAnnonser, status } = await byggKorpus(k, { max: 10_000 });
-  const korning = { sok: { produkter: allaProdukter.length, annonser: allaAnnonser.length }, annonsfil: basename(fil), adLibrary: { status: 'ej_provad' }, bilder: { status: null }, fel: [], egnaAnnonser: { fel: status.annonser.filter((s) => s.fel) } };
+  // Annonsfallet jämför mot ALLA våra annonser: ett konto som inte gick att läsa gör jämförelsen falsk (färre träffar,
+  // fel produkt, kanske "under tröskeln") — då stannar vi hellre än skriver ett fynd. Mätt 2026-09-29: en timeout på
+  // MagiBorsten gav 0 av 629 annonser och ORVO:s 14 IBC-kopior försvann ur fyndet.
+  const trasiga = status.annonser.filter((s) => s.fel);
+  if (trasiga.length && !har('tillat-trasigt-konto')) throw new Error(`våra annonser i ${trasiga.map((s) => `${s.namn} (${s.fel})`).join('; ')} gick inte att läsa — jämförelsen hade blivit falsk. Kör igen (eller --tillat-trasigt-konto för att jämföra mot det som lästes).`);
+  const korning = { sok: { produkter: allaProdukter.length, annonser: allaAnnonser.length }, annonsfil: basename(fil), adLibrary: { status: 'ej_provad' }, bilder: { status: null }, fel: [], egnaAnnonser: { fel: trasiga } };
+  if (bibliotek) korning.annonsbibliotek = { sida: bibliotek.deras?.sida_id ?? null, sidnamn: bibliotek.deras?.sidnamn ?? null, land: bibliotek.land ?? null, antal: bibliotek.antal ?? {}, fel: bibliotek.fel ?? [], hamtad: bibliotek.hamtad ?? null };
   let hashare = null; const cache = new Bildcache(join(OUTPUT, 'bildcache.json'));
   const derasHashar = new Map(); const egnaHashar = new Map();
   const derasBilder = input.annonser.flatMap((a) => a.bilder);
   let sida = null;
   if (input.deras.url) { sida = await hamtaKonkurrent(input.deras.url, { logg, egna }); if (!sida.ok) { korning.fel.push(`${input.deras.url}: ${sida.fel ?? sida.status}`); sida = null; } }
-  const jamfor = () => byggAnnonsfynd(input, { egnaAnnonser: allaAnnonser, egnaProdukter: allaProdukter, konfig: k, derasHashar, egnaHashar, sida, nu, kalla: 'axel-annonser' });
+  const jamfor = () => byggAnnonsfynd(input, { egnaAnnonser: allaAnnonser, egnaProdukter: allaProdukter, konfig: k, derasHashar, egnaHashar, sida, nu, kalla });
   // Första passet på text ensam pekar ut vilka av våra produkter/annonser som är
   // träffade — deras bilder hashas i sin helhet, våra i ordningen: träffade
   // produkters bilder, träffade annonsers bilder, ALLA våra annonsbilder (en
@@ -173,7 +195,8 @@ async function hamtaAnnonser(k, fil) {
   skrivJson(join(OUTPUT, `${idag}.json`), ut);
   if (fynd) {
     console.log(`Klart: ${input.annonser.length} annonser lästa → ${fynd.styrka.toUpperCase()}: ${fynd.skal.join('; ')} → konkurrenter/output/${idag}.json`);
-    for (const t of fynd.bevis.annonser) console.log(`  annons ${t.nr}${t.lank ? ` (${t.lank})` : ''}: ${t.text ? `${t.text.langsta} ord i följd ur ${t.varAnnons?.namn ?? 'produkttexten'}` : 'ingen text-träff'}${t.bilder.length ? ` · ${t.bilder.length} bild(er)` : ''}`);
+    for (const t of fynd.bevis.annonser) console.log(`  annons ${t.nr}${t.lank ? ` (${t.lank})` : ''}: ${t.text ? `${t.text.langsta} ord i följd ur ${t.varAnnons?.namn ?? 'produkttexten'}` : 'ingen text-träff'}${t.bilder.length ? ` · ${t.bilder.length} bild(er)` : ''}${t.aktiv === false ? ' · inaktiv' : ''}${t.exponeringar ? ` · räckvidd ${t.exponeringar.toLocaleString('sv-SE').replace(/[  ]/g, ' ')}` : ''}`);
+    console.log(fynd.varde?.vard ? `  Värd att jaga (Axels kriterier): ${fynd.varde.orsak}` : `  ⛔ UNDER AXELS TRÖSKEL: ${fynd.varde?.orsak} — --rapport skapar inget ärende (överstyr med --rapport --tvinga)`);
   } else console.log(`Klart: ${input.annonser.length} annonser lästa, ingen över tröskeln — jämför texterna själv; deras bilder kan behöva skärmdumpar (bilder i filen).`);
   if (korning.bilder.status !== 'ok') console.log(`  Bilder: ${korning.bilder.orsak ?? korning.bilder.status}`);
 }
@@ -219,8 +242,32 @@ function jamforMotProdukt(p, kand, { k, derasHashar, egnaHashar }) {
   return { text, annons: annons?.styrka ? annons : null, annonsRad: annons?.styrka ? annonsRad : null, bilder, ...v };
 }
 
+/**
+ * Läser konkurrentens ANNONSER själv ur Metas annonsbibliotek (adlibrary.mjs,
+ * Chromium härifrån): `--hamta --annonser-sida <sid-id eller Ad Library-länk>
+ * [--land SE] [--utan-rackvidd]`. Skriver annonsfilen till output/ och kör
+ * sedan samma jämförelse som `--annonser <fil>`.
+ */
+async function hamtaAnnonserSida(k, sida) {
+  const idag = flagga('idag') ?? idagSthlm();
+  const sidaId = sidaIdUr(sida);
+  if (!sidaId) throw new Error(`"${sida}" är varken ett sid-id eller en Ad Library-länk med view_all_page_id.`);
+  const land = flagga('land') ?? (k.ad_library?.lander?.[0] ?? 'SE');
+  logg(`Läser annonsbiblioteket för sidan ${sidaId} (${land}) i Chromium …`);
+  const bibliotek = await hamtaAdLibrary(sidaId, { land, logg, medRackvidd: !har('utan-rackvidd') });
+  mkdirSync(OUTPUT, { recursive: true });
+  const fil = join(OUTPUT, `${idag}.annonser-${sidaId}.json`);
+  skrivJson(fil, bibliotek);
+  const an = bibliotek.antal;
+  console.log(`Annonsbiblioteket: "${bibliotek.deras.sidnamn ?? '?'}" (${sidaId}) — ${an.lasta} annonser (${an.aktiva} aktiva, ${an.inaktiva} inaktiva), räckvidd läst för ${an.rackvidd_last}${bibliotek.deras.doman ? `, domän ${bibliotek.deras.doman}` : ''} → konkurrenter/output/${basename(fil)}`);
+  for (const f of bibliotek.fel) console.log(`  ⚠️ ${f}`);
+  if (!bibliotek.annonser.length) { console.log('Inga annonser att jämföra.'); return; }
+  return hamtaAnnonser(k, fil, { kalla: 'adlibrary', bibliotek });
+}
+
 async function hamta() {
   const k = konfig();
+  if (flagga('annonser-sida')) return hamtaAnnonserSida(k, flagga('annonser-sida'));
   if (flagga('annonser')) return hamtaAnnonser(k, flagga('annonser'));
   const idag = flagga('idag') ?? idagSthlm();
   const nu = new Date().toISOString();
@@ -437,10 +484,12 @@ async function rapport() {
   const nu = new Date().toISOString();
   const arenden = lasArenden(ARENDEFIL, { logg });
   const sidaUrl = lasJson(SIDAFIL, {})?.url ?? null;
-  const nya = []; const uppdaterade = [];
+  const nya = []; const uppdaterade = []; const ejVarda = [];
   const skrivningar = [];
   for (const f of data.fynd ?? []) {
     const bef = hittaBefintligt(arenden, f.nyckel);
+    // Axels kriterier (trosklar.annons): en sida under tröskeln blir aldrig ett NYTT ärende — --tvinga är hans överstyrning.
+    if (f.varde && f.varde.vard === false && !har('tvinga') && !(bef && bef.status !== STATUS.ATGARDAD)) { ejVarda.push(f); continue; }
     const avs = await avsandareFor(f.verksamhet, k);
     const sprakBrev = byggBrev({ ...f, id: 'KD-?', skapad: nu }, { avsandare: { brand: f.verksamhet, mail: avs.mail ?? '', butikUrl: avs.butikUrl ?? '' }, foretag: k.brev.foretag, fristTimmar: k.brev.svarsfrist_timmar });
     const brev = { sprak: sprakBrev.sprak, mottagare: f.deras.mottagare ?? null, fran: avs.mail ?? null, brand: avs.brand, skickat: null };
@@ -461,7 +510,7 @@ async function rapport() {
   const alla = [...arenden.values()];
   const pamindKlara = alla.filter((a) => a.status === STATUS.SKICKAD && a.uppfoljning?.kvar && a.brev?.frist && Date.parse(a.brev.frist) < Date.now());
   const atgardade = alla.filter((a) => a.status === STATUS.ATGARDAD && a.uppfoljning?.nar && a.uppfoljning.nar.slice(0, 10) === datum);
-  const text = rapportSv({ datum, korning: data.korning, nya, uppdaterade, oppna: oppna(arenden), sidaUrl, atgardade, pamindKlara });
+  const text = rapportSv({ datum, korning: data.korning, nya, uppdaterade, oppna: oppna(arenden), sidaUrl, atgardade, pamindKlara, ejVarda });
   console.log(text);
   if (torr) { console.log('\n(--torr: inget skrivet, inget postat)'); return; }
 
@@ -667,8 +716,12 @@ async function anmal() {
   const k = konfig();
   const { arenden, a } = hamtaArende(flagga('anmal'));
   const nu = new Date().toISOString();
-  const annonser = (a.bevis?.annonser ?? []).filter((t) => t.text?.styrka || t.bilder?.length);
-  if (!annonser.length) { console.log(`${a.id} har inga annonsträffar att anmäla (typ ${a.typ}). Meta-anmälan gäller kopierade ANNONSER — en kopierad sajt går via brevet.`); process.exitCode = 1; return; }
+  const allaTraffar = (a.bevis?.annonser ?? []).filter((t) => t.text?.styrka || t.bilder?.length);
+  // --bara-aktiva: bara annonserna som är live anmäls (Axel 2026-09-29 om ORVO:s 14 avstängda IBC-kopior: "det var så få, så strunt i dem") — de står kvar som bevis i brevet.
+  const annonser = har('bara-aktiva') ? allaTraffar.filter((t) => t.aktiv !== false) : allaTraffar;
+  const hoppadeInaktiva = allaTraffar.length - annonser.length;
+  if (hoppadeInaktiva) logg(`  ${hoppadeInaktiva} inaktiva annons(er) anmäls inte (--bara-aktiva) — de finns kvar som bevis i ärendet`);
+  if (!annonser.length) { console.log(`${a.id} har inga annonsträffar att anmäla (typ ${a.typ}${hoppadeInaktiva ? `, ${hoppadeInaktiva} inaktiva hoppade` : ''}). Meta-anmälan gäller kopierade ANNONSER — en kopierad sajt går via brevet.`); process.exitCode = 1; return; }
   const mapp = join(ARENDEMAPP, a.id, 'anmalan'); mkdirSync(mapp, { recursive: true });
   const undertecknare = { ...(k.anmalan?.undertecknare ?? {}), ...(flagga('namn') ? { namn: flagga('namn') } : {}), ...(flagga('epost') ? { epost: flagga('epost') } : {}), ...(flagga('telefon') ? { telefon: flagga('telefon') } : {}) };
 
@@ -701,39 +754,85 @@ async function anmal() {
       } catch (e) { logg(`  ⚠️ CDN: ${e.message} — bevisbilden följer bara som bilaga`); }
     }
   }
-  const { anmalningar, hoppade } = byggAnmalningar(a, k, { undertecknare, nu, bevisbilder });
+  const { anmalningar, hoppade } = byggAnmalningar({ ...a, bevis: { ...a.bevis, annonser } }, k, { undertecknare, nu, bevisbilder });
   if (!anmalningar.length) { console.log(`Inga anmälningar byggda: ${hoppade.map((h) => `annons ${h.nr}: ${h.orsak}`).join('; ') || 'inga annonser med länk'}`); process.exitCode = 1; return; }
   const fel = anmalningar.flatMap(kontrolleraAnmalan);
   for (const an of anmalningar) { skrivJson(join(mapp, `${an.nr}.json`), an); writeFileSync(join(mapp, `${an.nr}.txt`), `${anmalanText(an)}\n`); }
   const bilder = Object.fromEntries(anmalningar.filter((an) => an.bevisbild && existsSync(join(DATAMAPP, an.bevisbild))).map((an) => [an.nr, `data:image/png;base64,${readFileSync(join(DATAMAPP, an.bevisbild)).toString('base64')}`]));
   writeFileSync(join(mapp, 'verifiering.html'), verifieringHtml({ arende: a, anmalningar, bilder, uppdaterad: nu }));
-  const upp = { ...a, miniatyrer, anmalan: { byggd: nu, antal: anmalningar.length, hoppade, stoppad: fel.length ? fel : null, verifiering: `arenden/${a.id}/anmalan/verifiering.html`, rapporter: anmalningar.map((an) => ({ nr: an.nr, lank: an.lank, libraryId: an.libraryId, annonsNr: an.annonsNr, bevisbild: an.bevisbild, bevisbildUrl: an.bevisbildUrl, fil: `arenden/${a.id}/anmalan/${an.nr}.json`, status: 'utkast', referens: null, inskickad: null })) } };
+  const upp = { ...a, miniatyrer, anmalan: { byggd: nu, antal: anmalningar.length, hoppade, baraAktiva: har('bara-aktiva'), hoppadeInaktiva, stoppad: fel.length ? fel : null, verifiering: `arenden/${a.id}/anmalan/verifiering.html`, rapporter: anmalningar.map((an) => ({ nr: an.nr, lank: an.lank, libraryId: an.libraryId, annonsNr: an.annonsNr, bevisbild: an.bevisbild, bevisbildUrl: an.bevisbildUrl, fil: `arenden/${a.id}/anmalan/${an.nr}.json`, status: 'utkast', referens: null, inskickad: null })) } };
   sparaArende(upp, ARENDEFIL, { nu }); skrivArendefiler(upp); arenden.set(upp.id, upp);
   console.log(`${anmalningar.length} anmälning${anmalningar.length === 1 ? '' : 'ar'} byggd${anmalningar.length === 1 ? '' : 'a'} för ${a.id} (en per annons)${hoppade.length ? `, ${hoppade.length} hoppad(e): ${hoppade.map((h) => `annons ${h.nr} ${h.orsak}`).join(', ')}` : ''}:`);
   for (const an of anmalningar) console.log(`  ${an.nr}/${an.antal}: ${an.lank}${an.exponeringar ? ` · ${an.exponeringar} exponeringar` : ''} · bevisbild ${an.bevisbild ? (an.bevisbildUrl ? 'PNG + CDN-länk' : 'PNG (ingen CDN-länk)') : 'SAKNAS'}`);
   console.log(`Fälten: konkurrenter/arenden/${a.id}/anmalan/<nr>.json (.txt = samma i klartext) · verifieringssidan: konkurrenter/arenden/${a.id}/anmalan/verifiering.html`);
   if (fel.length) { console.log(`⚠️ Stoppat: ${[...new Set(fel)].join('; ')}`); process.exitCode = 1; return; }
-  console.log(`Nästa steg: publicera verifieringssidan till Axel. På hans "kör anmälningarna ${a.id}" fyller sessionen i formuläret i hans Chrome, en anmälan i taget, och kvitterar varje med: node konkurrenter/kor.mjs --anmald ${a.id} --nr <n> --referens <Metas referens>`);
+  console.log(`Nästa steg: publicera verifieringssidan till Axel. Torrkör formuläret härifrån med: node konkurrenter/kor.mjs --anmal-skicka ${a.id} (allt fylls i, inget skickas). På hans "kör anmälningarna ${a.id}": node konkurrenter/kor.mjs --anmal-skicka ${a.id} --ja — en anmälan i taget, koden ur Gmail skrivs i konkurrenter/arenden/${a.id}/anmalan/kod.txt, kvittot skrivs av sig självt (för hand: --anmald ${a.id} --nr <n> --referens <r>).`);
 }
 
-/** --anmald <id> --nr <n> --referens <r>: kvittot för EN inskickad anmälan. Alla inskickade ⇒ ärendet märks "anmält vidare". */
+/** Kvittot för EN inskickad anmälan — delas av --anmald (Axels hand) och --anmal-skicka (formuläret härifrån). Kastar när anmälan saknas eller redan är kvitterad. Ren. */
+function kvitteraAnmalan(a, { nr, referens = null, nu = new Date().toISOString(), av = 'axel', kvitto = null, kvittoText = null }) {
+  const rapporter = a.anmalan?.rapporter ?? [];
+  const r = rapporter.find((x) => x.nr === nr);
+  if (!r) throw new Error(`${a.id} har ingen anmälan ${nr} — bygg dem med --anmal ${a.id} först (finns: ${rapporter.map((x) => x.nr).join(', ') || 'inga'}).`);
+  if (r.status === 'inskickad') throw new Error(`Anmälan ${nr} är redan kvitterad ${r.inskickad} (referens ${r.referens ?? '—'}) — en anmälan skickas aldrig två gånger.`);
+  const nya = rapporter.map((x) => (x.nr === nr ? { ...x, status: 'inskickad', referens, inskickad: nu, ...(kvitto ? { kvitto } : {}), ...(kvittoText ? { kvittoText: String(kvittoText).slice(0, 600) } : {}) } : x));
+  const alla = nya.every((x) => x.status === 'inskickad');
+  let upp = { ...a, anmalan: { ...a.anmalan, rapporter: nya, klar: alla ? nu : null }, historik: [...(a.historik ?? []), { nar: nu, fran: a.status, till: a.status, av, not: `Meta-anmälan ${nr}/${rapporter.length} inskickad${referens ? ` (referens ${referens})` : ''}` }] };
+  if (alla) { try { upp = overgang(upp, STATUS.ESKALERAD, { av, nu, not: `alla ${rapporter.length} Meta-anmälningar inskickade` }); } catch { /* från "ny" finns ingen övergång — anmälan står ändå som klar */ } }
+  return { upp, alla, kvar: nya.filter((x) => x.status !== 'inskickad').length };
+}
+
+/** --anmald <id> --nr <n> --referens <r>: kvittot för EN inskickad anmälan, för hand. Alla inskickade ⇒ ärendet märks "anmält vidare". */
 async function anmald() {
   const k = konfig();
   const { arenden, a } = hamtaArende(flagga('anmald'));
   const nr = Number(flagga('nr'));
   const referens = flagga('referens') ?? null;
   const nu = flagga('nar') ?? new Date().toISOString();
-  const rapporter = a.anmalan?.rapporter ?? [];
-  const r = rapporter.find((x) => x.nr === nr);
-  if (!r) { console.log(`${a.id} har ingen anmälan ${flagga('nr') ?? '?'} — bygg dem med --anmal ${a.id} först (finns: ${rapporter.map((x) => x.nr).join(', ') || 'inga'}).`); process.exitCode = 1; return; }
-  if (r.status === 'inskickad') { console.log(`Anmälan ${nr} är redan kvitterad ${r.inskickad} (referens ${r.referens ?? '—'}) — en anmälan skickas aldrig två gånger.`); process.exitCode = 1; return; }
-  const nya = rapporter.map((x) => (x.nr === nr ? { ...x, status: 'inskickad', referens, inskickad: nu } : x));
-  const alla = nya.every((x) => x.status === 'inskickad');
-  let upp = { ...a, anmalan: { ...a.anmalan, rapporter: nya, klar: alla ? nu : null }, historik: [...(a.historik ?? []), { nar: nu, fran: a.status, till: a.status, av: 'axel', not: `Meta-anmälan ${nr}/${rapporter.length} inskickad${referens ? ` (referens ${referens})` : ''}` }] };
-  if (alla) { try { upp = overgang(upp, STATUS.ESKALERAD, { av: 'axel', nu, not: `alla ${rapporter.length} Meta-anmälningar inskickade` }); } catch { /* från "ny" finns ingen övergång — anmälan står ändå som klar */ } }
-  sparaArende(upp, ARENDEFIL, { nu }); skrivArendefiler(upp); arenden.set(upp.id, upp);
+  let res;
+  try { res = kvitteraAnmalan(a, { nr, referens, nu, av: 'axel' }); } catch (e) { console.log(e.message); process.exitCode = 1; return; }
+  sparaArende(res.upp, ARENDEFIL, { nu }); skrivArendefiler(res.upp); arenden.set(res.upp.id, res.upp);
   await byggSidaFil({ k, arenden });
-  console.log(`✅ Anmälan ${nr}/${rapporter.length} kvitterad${referens ? ` — referens ${referens}` : ''}. ${alla ? `Alla inskickade; ${upp.id} är nu ${upp.status}.` : `${nya.filter((x) => x.status !== 'inskickad').length} kvar.`}`);
+  console.log(`✅ Anmälan ${nr}/${res.upp.anmalan.rapporter.length} kvitterad${referens ? ` — referens ${referens}` : ''}. ${res.alla ? `Alla inskickade; ${res.upp.id} är nu ${res.upp.status}.` : `${res.kvar} kvar.`}`);
+}
+
+/**
+ * --anmal-skicka <id> [--nr n] [--ja] [--kod-fil <fil>]: fyller i Metas
+ * upphovsrättsformulär HÄRIFRÅN (anmal-skicka.mjs), en anmälan i taget.
+ * Utan --ja: torrt — allt ifyllt, skärmdump, ingen kod, inget skickat.
+ * Med --ja (Axels "kör anmälningarna <id>"): koden begärs, sessionen skriver
+ * den i kodfilen (ur Gmail), Submit, kvittot skrivs in. Aldrig två gånger.
+ */
+async function anmalSkicka() {
+  const k = konfig();
+  const { arenden, a } = hamtaArende(flagga('anmal-skicka'));
+  const rapporter = a.anmalan?.rapporter ?? [];
+  if (!rapporter.length) { console.log(`${a.id} har inga byggda anmälningar — kör --anmal ${a.id} först.`); process.exitCode = 1; return; }
+  const ja = har('ja');
+  if (ja && process.env.KONKURRENTER_INGEN_SANDNING === '1') { console.log('KONKURRENTER_INGEN_SANDNING=1 i miljön — inget skickas.'); process.exitCode = 1; return; }
+  const bara = flagga('nr') ? Number(flagga('nr')) : null;
+  const mapp = join(ARENDEMAPP, a.id, 'anmalan');
+  const kodFil = flagga('kod-fil') ?? join(mapp, 'kod.txt');
+  const ko = rapporter.filter((r) => (bara ? r.nr === bara : true));
+  if (!ko.length) { console.log(`anmälan ${bara} finns inte (finns: ${rapporter.map((x) => x.nr).join(', ')})`); process.exitCode = 1; return; }
+  let arende = a; let skickade = 0;
+  for (const r of ko) {
+    if (r.status === 'inskickad') { console.log(`anmälan ${r.nr}/${rapporter.length} är redan inskickad${r.referens ? ` (referens ${r.referens})` : ''} — hoppar, en anmälan skickas aldrig två gånger`); continue; }
+    const an = lasJson(join(DATAMAPP, r.fil));
+    if (!an) { console.log(`anmälan ${r.nr}: ${r.fil} saknas`); process.exitCode = 1; continue; }
+    console.log(`${ja ? 'Skickar' : 'Torrkör'} anmälan ${r.nr}/${rapporter.length}: ${an.lank}`);
+    let ut;
+    try { ut = await skickaAnmalan(an, { ja, kodFil, logg, skarmdumpar: mapp, land: k.anmalan?.land ?? 'Sweden' }); }
+    catch (e) { console.log(`  ❌ ${e.message}`); process.exitCode = 1; if (ja) break; continue; }
+    if (ut.status === 'torr') { console.log(`  torrt: alla fält ifyllda — ${ut.kvar === 1 ? 'kvar är bara engångskoden (begärs först med --ja)' : ut.kvar === 0 ? 'inget obligatoriskt fält kvar' : `⚠️ ${ut.kvarText}`}${ut.skarmdump ? ` · skärmdump ${ut.skarmdump.replace(`${DATAMAPP}/`, '')}` : ''}`); if (ut.kvar > 1) process.exitCode = 1; continue; }
+    console.log(`  ✅ inskickad${ut.referens ? ` — referens ${ut.referens}` : ' — inget referensnummer i kvittot (läs skärmdumpen)'}${ut.kvittoFil ? ` · ${ut.kvittoFil.replace(`${DATAMAPP}/`, '')}` : ''}`);
+    try {
+      const res = kvitteraAnmalan(arende, { nr: r.nr, referens: ut.referens, nu: ut.nar, av: 'sessionen', kvitto: ut.kvittoFil ? ut.kvittoFil.replace(`${DATAMAPP}/`, '') : null, kvittoText: ut.text });
+      arende = res.upp; sparaArende(arende, ARENDEFIL, { nu: ut.nar }); skrivArendefiler(arende); arenden.set(arende.id, arende); skickade++;
+      if (res.alla) console.log(`  Alla ${rapporter.length} anmälningar inskickade — ${arende.id} är nu ${arende.status}.`);
+    } catch (e) { console.log(`  ⚠️ kvittot gick inte att skriva: ${e.message} — skriv det för hand: --anmald ${a.id} --nr ${r.nr}${ut.referens ? ` --referens ${ut.referens}` : ''}`); process.exitCode = 1; }
+  }
+  if (skickade) await byggSidaFil({ k, arenden });
 }
 
 /** --faktura <id>: bygg (om) fakturan utan brev — för att titta på den eller efter ändrad taxa. */
@@ -853,6 +952,6 @@ async function sidaEnbart() {
   console.log(`Granskningssidan byggd: ${f}`);
 }
 
-const huvud = har('kolla') ? kolla : har('fraser') ? fraser : har('hamta') ? hamta : har('rapport') ? rapport : har('brev') ? visaBrev : har('skickad') ? skickad : har('skicka') ? skicka : har('faktura') ? fakturaEnbart : har('anmald') ? anmald : har('anmal') ? anmal : har('avfarda') ? avfarda : har('eskalera') ? eskalera : har('foljupp') ? foljupp : har('lista') ? lista : har('sida') ? sidaEnbart : null;
+const huvud = har('kolla') ? kolla : har('fraser') ? fraser : har('hamta') ? hamta : har('rapport') ? rapport : har('brev') ? visaBrev : har('skickad') ? skickad : har('skicka') ? skicka : har('faktura') ? fakturaEnbart : har('anmal-skicka') ? anmalSkicka : har('anmald') ? anmald : har('anmal') ? anmal : har('avfarda') ? avfarda : har('eskalera') ? eskalera : har('foljupp') ? foljupp : har('lista') ? lista : har('sida') ? sidaEnbart : null;
 if (!huvud) { console.error('Ange --kolla, --fraser, --hamta [--annonser <fil>], --rapport, --lista, --brev <id>, --skicka <id>, --skickad <id>, --faktura <id>, --anmal <id>, --anmald <id> --nr <n> --referens <r>, --avfarda <id>, --eskalera <id>, --foljupp eller --sida.'); process.exit(1); }
 huvud().catch((e) => { console.error(`✗ ${e.message}`); process.exit(e.exit ?? 1); });
