@@ -271,6 +271,26 @@ gällde till och med 2026-09-25. Skriv den aldrig i något nytt.
 14. **Korta svar.** Inga bibelsvar. Axel har sagt det två gånger.
     Ett kommando som ber om ett längre leveransformat i chatten gäller — men
     Axels egna uppgifter står alltid sist, numrerade och omöjliga att missa.
+15. **Chadbot finns: erbjud den när du är osäker** (Axels beslut 2026-09-29).
+    **Chadbot = Evolve-boten**, AI-boten i Evolve-kursens Discord-server.
+    Den kan mer än vi om annonser, creative strategy, skalning och e-handel.
+    Om du är osäker, om vi behöver inspiration, eller om något kan göras
+    bättre av någon med mer kunskap: **ge Axel "fråga Chadbot" som ett
+    alternativ.** Exempel: "Ska vi fråga Chadbot om X och Y? Då kan vi levla
+    upp idén." Gissa aldrig i tysthet när Chadbot kan svara.
+    - Sessionen når inte boten. Du skriver frågan på **engelska**, i ett
+      kodblock under 2 000 tecken, med vår situation i själva frågan. Axel
+      klistrar in den och klistrar tillbaka svaret.
+    - ⛔ **Frågan avslöjar aldrig brandet** (Axels krav 2026-09-26): inga
+      butiksnamn, inga domäner, inga ordagranna produkttitlar och inga
+      exakta tal, bara avrundade.
+    - Spara svaret i repot, bredvid ämnet, så att nästa session slipper
+      fråga igen. Mönstret finns redan: `klaviyo/evolve/FRAGOR.md` + `SVAR.md`,
+      `factory/tacksida/EVOLVE-FRAGOR.md` + `EVOLVE-SVAR.md`, `stonebite/evolve/`.
+      Läs de svaren först. Har boten redan svarat på något ska du inte
+      fråga igen.
+    - Chadbot ger inspiration och metod, aldrig våra siffror. Regel 3 gäller
+      fortfarande: data kommer ur Meta, Shopify, Notion och products.json.
 
 ---
 
