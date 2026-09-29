@@ -65,6 +65,11 @@ export function arVarMall(body, reg) {
   return typeof body === 'string' && body.includes(sparningsKedja(reg.prefix)) && body.includes(`/pages/${reg.handle}?nummer=`);
 }
 
+// Butikens publicerade språk som saknar egen fraktmall (huvudspråket räknas inte).
+export function saknadeSprak(shopLocales, vara) {
+  return (shopLocales ?? []).filter((l) => !l.primary && !vara.includes(l.locale)).map((l) => l.locale);
+}
+
 export async function kor(id, { skarpt = false, omInaktuell = false, klient = null, logg = console.log } = {}) {
   const b = byggButik(id);
   if (!b.oversattningar.length) throw new Error(`${id}: registret (sparning/butiker.json) bär ingen mejl_sprak — inget att översätta.`);
@@ -116,6 +121,21 @@ export async function kor(id, { skarpt = false, omInaktuell = false, klient = nu
     logg(`${mallId} (${resurs.split('/').pop()}) — ${skarpt ? `${attRegistrera.length} registrerade, ` : ''}${kort}`);
   }
   if (!Object.keys(idn).length) throw new Error(`${id}: mejl/butiker/${id}.json saknar shopify_mallar (notisernas EmailTemplate-id).`);
+  // Nya språk i butiken: fler marknader kommer (Axel 2026-09-29). Ett
+  // publicerat språk utan rad i mejl_sprak får Shopifys STANDARDöversättning
+  // av våra fraktmejl — alltså fraktbolagets länk i stället för vår sida.
+  // Det bryter inget, men det ska synas i rapporten varje timme tills någon
+  // lagt till mejl/sprak/<kod>.json + en rad i sparning/butiker.json.
+  try {
+    const d = await k.graphql('{ shopLocales(published: true) { locale primary } }');
+    rapport.saknade_sprak = saknadeSprak(d.shopLocales, locales);
+  } catch (e) {
+    rapport.saknade_sprak = null;
+    logg(`⚠️ Kunde inte läsa butikens språk: ${e.message}`);
+  }
+  if (rapport.saknade_sprak?.length) {
+    logg(`⚠️ Språk i butiken utan egna fraktmejl (får Shopifys standard): ${rapport.saknade_sprak.join(', ')} — lägg till mejl/sprak/<kod>.json + en rad i sparning/butiker.json → ${id}.mejl_sprak, bygg och kör skriptet.`);
+  }
   rapport.fel = fel;
   return rapport;
 }
