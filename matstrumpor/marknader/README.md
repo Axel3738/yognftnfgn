@@ -465,6 +465,14 @@ loggan utan .SE.
   Det mättes som tysk kund samma kväll. Kassan har EN logga för hela butiken. En logga per marknad
   kräver Shopify Plus (Checkout and Accounts Configuration API). Namnet i kassan och i Shopifys mejl
   är butikens namn, alltså Settings → General. Det här är en fråga till Axel.
+  - API:t går inte heller. `checkoutBranding` svarar ACCESS_DENIED: "the shop must be on a Plus plan
+    or a Development store plan" (planen är "Shopify", mätt 2026-09-29). Den publicerade profilen är
+    "Kopia av FixKliniken-konfiguration" `gid://shopify/CheckoutProfile/6876528979`.
+  - Axel frågade samma kväll: "The logo tho in the german checkout?". Därför laddade sessionen upp
+    loggan utan .SE till Filer som **`matstrumpor-kassa-logga.png`** (`gid://shopify/MediaImage/62475343495507`).
+    Den har samma format som den nuvarande kassaloggan, 1920 × 1080 med transparens och samma
+    inramning, så storleken i kassan blir densamma. Bytet är Axels klick: Inställningar → Kassa →
+    Anpassa → loggan. Det gäller alla länder, också Sverige.
 
 ### Judge.me på tolv språk (mätt 2026-09-29 kväll, efter Axels inställning)
 

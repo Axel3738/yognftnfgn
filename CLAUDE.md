@@ -178,6 +178,9 @@ B-sidan på .no. .eu och .se/<språk> fungerar kvar, men inget länkar dit. ⚠�
 marknad" (CaraShell 2026-09-17) stämmer inte här: `marketUpdate(webPresencesToAdd)` delade .com utan fel
 (mätt 2026-09-29, också i ett prov som återställdes).
 ⚠️ Kassan har EN logga för hela butiken, MATSTRUMPOR.SE, eftersom en logga per marknad kräver Plus.
+API:t nekar också (`checkoutBranding` ⇒ ACCESS_DENIED "must be on a Plus plan", mätt 2026-09-29). Loggan
+utan .SE ligger i Filer som `matstrumpor-kassa-logga.png`, i samma format som den nuvarande. Bytet görs
+i Inställningar → Kassa → Anpassa, är Axels klick och gäller även Sverige.
 **Utlandsannonserna visas som Facebook-sidan "Matstrumpor" `1285064981363590`** (Axels sida, samma
 BM). Instagram visas via sidans page-backed identitet `17841423405715219`, eftersom kontot
 matstrumpor.se säger .se. Källan är `annonser/marknader.json`, och `bygg.mjs --byt-text` byter sidan
