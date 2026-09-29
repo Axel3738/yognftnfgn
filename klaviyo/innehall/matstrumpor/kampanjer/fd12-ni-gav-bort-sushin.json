@@ -26,7 +26,7 @@
       "typ": "hero",
       "rubrik": "I år får pappa pizzan, inte sushin",
       "text": "Hej {{fornamn}},\n\nSushilådan har du redan skickat vidare. I år är turen kommen till pizzalådan, samma trick men med en annan maträtt.\n\nGe den till pappa. Köper du pizzalådan får du en låda till, och du väljer själv om den blir sushi, pizza, hamburgare eller donut.",
-      "bild": "produkt:pizza-strumpor",
+      "bild": "bild:pizzastrumpor-pa-fotter",
       "knapp": { "text": "Se pizzalådan", "lank": "produkt:pizza-strumpor" }
     },
     {

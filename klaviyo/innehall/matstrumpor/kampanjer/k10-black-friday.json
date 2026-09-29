@@ -31,7 +31,7 @@
       "typ": "hero",
       "rubrik": "Black Friday. Trappan gäller till och med måndag.",
       "text": "{{fornamn}}, i dag är det Black Friday, och rabattrappan gäller ända till och med måndag 30 november. En vara ger 10 %, två ger 20 %, tre eller fler ger 30 %, och kassan räknar ut det åt dig.",
-      "bild": "produkt:hamburger-strumpor",
+      "bild": "bild:black-friday-burgare",
       "knapp": { "text": "Till sortimentet", "lank": "kollektion:alla-produkter" }
     },
     {

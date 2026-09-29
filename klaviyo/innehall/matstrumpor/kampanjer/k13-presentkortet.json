@@ -28,6 +28,10 @@
   "forhandstext": "Ett presentkort som kommer fram även om strumporna inte hinner.",
   "block": [
     {
+      "typ": "hero",
+      "bild": "bild:rott-kuvert-jul"
+    },
+    {
       "typ": "text",
       "rubrik": "Missade du sista dagen?",
       "text": "Strumporna hinner inte fram till julafton längre, men en present som skickas direkt via mejl gör det."

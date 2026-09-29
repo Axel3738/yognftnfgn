@@ -25,7 +25,7 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { ROT } from './mallar.mjs';
+import { ROT, bildNamn, lasBildregister } from './mallar.mjs';
 import { lasInnehall, planeraMejl } from './bygg.mjs';
 import { hamtaProdukterCache } from './produkter.mjs';
 import { hamtaRecensionerCache } from './recensioner.mjs';
@@ -166,6 +166,18 @@ const BLOCK = {
       // produktkort utan knapp (bilden, namnet och priset hydreras av Spoks).
       if (p?.bild_id) ut.push({ type: 'image', fileId: p.bild_id, altText: ctx.produkt(h)?.titel ?? h, urlRedirect: lankTillSpoks(`produkt:${h}`, ctx) });
       else if (p) ut.push(produktBlock([h], ctx, { perRad: 1 }));
+    } else if (bildNamn(b.bild)) {
+      // Mejlets egen bild ur registret (klaviyo/mejlbilder.mjs): Spoks-id:t kommer
+      // från upload_media. Utan id stoppar paketet — hellre inget utkast än ett
+      // mejl med tom ruta överst.
+      const namn = bildNamn(b.bild);
+      const r = ctx.bilder?.[namn];
+      if (!r?.url) ctx.fel.push(`Bilden "${namn}" finns inte i bildregistret (klaviyo/konto/${ctx.brand.id}/bilder.json).`);
+      else if (!r.spoks_id) ctx.fel.push(`Bilden "${namn}" saknar Spoks-id — ladda upp den med upload_media och kör node klaviyo/mejlbilder.mjs --brand ${ctx.brand.id} --spoks ${namn} <fileId>.`);
+      else {
+        const mal = b.bild_lank ?? b.knapp?.lank ?? r.lank ?? null;
+        ut.push({ type: 'image', fileId: r.spoks_id, altText: r.alt ?? '', ...(mal ? { urlRedirect: lankTillSpoks(mal, ctx) } : {}) });
+      }
     } else if (b.bild) {
       ctx.varningar.push(`Hero-bilden "${b.bild}" är ingen produkt — ladda upp den med upload_media och lägg in bildblocket i redigeraren.`);
     }
@@ -519,7 +531,7 @@ const kortDatum = (iso, tidszon) => {
   return `${p.day}/${p.month}`;
 };
 
-export async function paket({ brandId = 'matstrumpor', rot = ROT, offline = false, innehallDir = null, utDir = null, produkter = null, recensioner = null, facit = null, logg = () => {} } = {}) {
+export async function paket({ brandId = 'matstrumpor', rot = ROT, offline = false, innehallDir = null, utDir = null, produkter = null, recensioner = null, facit = null, bilder = null, logg = () => {} } = {}) {
   const brand = JSON.parse(readFileSync(join(rot, 'klaviyo', 'brands', `${brandId}.json`), 'utf8'));
   const facitFil = join(rot, 'klaviyo', 'konto', brandId, 'spoks.json');
   const fac = facit ?? (existsSync(facitFil) ? JSON.parse(readFileSync(facitFil, 'utf8')) : null);
@@ -544,7 +556,7 @@ export async function paket({ brandId = 'matstrumpor', rot = ROT, offline = fals
     varningarTopp.push(...r.varningar);
   }
   const perHandle = new Map(lista.map((p) => [p.handle, p]));
-  const ctx = { brand, facit: fac, produkt: (h) => perHandle.get(h) ?? null, produktlista: lista, recensioner: rec, stil: null };
+  const ctx = { brand, facit: fac, produkt: (h) => perHandle.get(h) ?? null, produktlista: lista, recensioner: rec, stil: null, bilder: bilder ?? lasBildregister(brandId, rot) };
 
   const plan = planeraMejl(innehall);
   const mejlUt = new Map();

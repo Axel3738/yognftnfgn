@@ -19,6 +19,8 @@
   },
   "avsandare_comment": "kundsupport@matstrumpor.se är Shopifys shop.contactEmail (läst live 2026-09-25) och brevlådan kundtjänstboten läser (kundtjanst/brands/matstrumpor.yaml). Kontots standardavsändare i Klaviyo var TOM 2026-09-25 (default_sender_name 'Matstrumpor', default_sender_email ''), så motorn sätter avsändaren på varje mejl och Cowork fyller i kontots.",
   "stil_fran": "mejl/butiker/matstrumpor.json",
+  "bildregler": { "unik_hero_dagar": 21, "fran": "2026-09-30" },
+  "bildregler_comment": "Axels dom 2026-09-29: \"det är bara samma bild i alla mejl, och ingen vill riktigt se det där. Så alla kommer unsubscribea\". Bygget stoppar när två kampanjer planerade från 2026-09-30 har samma bild överst inom 21 dygn (klaviyo/bygg.mjs → samma). Bilderna: klaviyo/innehall/matstrumpor/bildplan.json, registret klaviyo/konto/matstrumpor/bilder.json, motorn node klaviyo/mejlbilder.mjs.",
   "sprak": "sv",
   "tidszon": "Europe/Stockholm",
   "leverans_text": "5-10 arbetsdagar",

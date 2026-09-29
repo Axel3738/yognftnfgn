@@ -26,7 +26,7 @@
       "typ": "hero",
       "rubrik": "Köp 1, få 1, i alla fyra sorterna",
       "text": "Hej {{fornamn}},\n\nKöp 1, få 1 gäller sushi, pizza, hamburgare och donut.\n\nEn låda till pappa, en till någon annan.",
-      "bild": "produkt:sushi-strumpor",
+      "bild": "bild:fyra-sorter-ovanifran",
       "knapp": { "text": "Se sushilådan", "lank": "produkt:sushi-strumpor" }
     },
     {

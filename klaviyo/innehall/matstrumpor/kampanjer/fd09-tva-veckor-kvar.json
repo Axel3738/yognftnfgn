@@ -35,7 +35,7 @@
       "typ": "hero",
       "rubrik": "Två veckor kvar innan sista beställningsdagen",
       "text": "Hej {{fornamn}},\n\n24 oktober är sista dagen vi räknar med. Då hinner en beställning fram till fars dag den 8 november.\n\nDet är två veckor bort. Nu hinner du välja i lugn och ro.",
-      "bild": "produkt:pizza-strumpor",
+      "bild": "bild:pizza-rutig-duk",
       "knapp": {
         "text": "Se pizzalådan",
         "lank": "produkt:pizza-strumpor"

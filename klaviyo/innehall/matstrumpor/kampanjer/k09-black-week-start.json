@@ -31,7 +31,7 @@
       "typ": "hero",
       "rubrik": "Fler varor i kundvagnen ger mer rabatt, hela veckan",
       "text": "{{fornamn}}, fram till och med måndag 30 november räknar kassan ut din rabatt automatiskt, utifrån hur många varor som ligger i kundvagnen. En vara ger 10 %, två varor ger 20 %, tre eller fler ger 30 %. Ingen kod behövs, den dras direkt i kassan.",
-      "bild": "produkt:pizza-strumpor",
+      "bild": "bild:black-week-morkt",
       "knapp": { "text": "Se hela sortimentet", "lank": "kollektion:alla-produkter" }
     },
     {

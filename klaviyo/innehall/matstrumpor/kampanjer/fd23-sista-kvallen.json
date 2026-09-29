@@ -26,7 +26,7 @@
       "typ": "hero",
       "rubrik": "Beställ sushilådan i kväll",
       "text": "Hej {{fornamn}},\n\nEfter i kväll räknar vi inte med att sushilådan hinner fram före fars dag.",
-      "bild": "produkt:sushi-strumpor",
+      "bild": "bild:ljus-i-kvall",
       "knapp": { "text": "Beställ sushilådan nu", "lank": "produkt:sushi-strumpor" }
     },
     {

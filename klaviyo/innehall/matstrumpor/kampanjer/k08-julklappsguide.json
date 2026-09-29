@@ -31,7 +31,7 @@
       "typ": "hero",
       "rubrik": "Sushi till en, pizza till en annan",
       "text": "{{fornamn}}, fyra sorter i lådan, fyra olika personer att ge bort till. Sushi till den som gillar sushi, eller aldrig skulle gissa vad som är i lådan. Pizza till den som delar med sig av allt. Burgare till brorsan eller pappan. Donut till barnen.",
-      "bild": "produkt:sushi-strumpor",
+      "bild": "bild:julpapper-flatlay",
       "knapp": { "text": "Se hela guiden", "lank": "kollektion:alla-produkter" }
     },
     {

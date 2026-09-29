@@ -35,7 +35,7 @@
       "typ": "hero",
       "rubrik": "Svärfar öppnar lådan. Tror det är sushi.",
       "text": "Hej {{fornamn}},\n\nSvärfar är ofta den på listan du känner sämst. Vad han faktiskt gillar är svårt att gissa.\n\nDen här lådan kräver ingen gissning. Den ser ut som sushi och är fem par strumpor.",
-      "bild": "produkt:sushi-strumpor",
+      "bild": "bild:pinnarna-och-soja",
       "knapp": {
         "text": "Se sushilådan",
         "lank": "produkt:sushi-strumpor"

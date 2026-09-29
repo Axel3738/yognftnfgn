@@ -1062,8 +1062,10 @@ kommer bli kaos för kundsupporten". Fyra beslut, alla genomförda:
   rabatternas starttid i Shopify flyttad till sön 22/11 17:00Z samma dag
   (`konto/matstrumpor/shopify-rabatter.jsonl`), tröstpriset 100 kr är Axels beslut 27/9 och
   byggs 2/11 tillsammans med K16 (påminnelse `trig_011Xqt44pRC5Ax5yg6ZkBJRA`), och första
-  skarpa dragningen tis 6/10 kräver Axels "kör" den morgonen (påminnelse
-  `trig_017jCVjHEjJmkJP4qS51iNjE`). "100 kr" släpps igenom av `validera.mjs` bara för att
+  skarpa dragningen tis 6/10 är **godkänd av Axel samma dag** ("A, kör lotteriet 6/10"):
+  påminnelsen `trig_017jCVjHEjJmkJP4qS51iNjE` kör `/klubbdragning kör` på morgonen utan ny
+  fråga, efter kollen att F08 v2 är på och v1 av, och lägger Premiär-blocket i K02 om K02
+  fortfarande är utkast. "100 kr" släpps igenom av `validera.mjs` bara för att
   mejlet listar beloppet i `tillatna_belopp` med källa. "Med ätpinnar av trä" struket ur
   dragningsraden: vinsten är en utkastorder med bara sushivarianten, och att ätpinnarna följer
   med den är inte mätt.
@@ -1096,3 +1098,39 @@ kommer bli kaos för kundsupporten". Fyra beslut, alla genomförda:
   och bilderna är desamma. **Scheman läggs fortfarande av Axel i appen**: Spoks MCP har inget
   verktyg för att schemalägga eller skicka (`get_links` säger det själv: "sending a campaign"
   är en app-länk).
+
+### Bilderna 2026-09-29: en egen bild överst i varje mejl
+
+Axels dom samma eftermiddag: "det är bara samma bild i alla mejl, och ingen vill riktigt se
+det där. Så alla kommer unsubscribea … du kan bara göra nya bilder också med API:n". Mätt i
+innehållet: 29 av de 37 mejlen från 30/9 till 29/12 hade sushilådans produktbild
+(`produkt:sushi-strumpor`, Spoks `572aba92`) överst, och produktkortet längre ner visade
+samma bild en gång till.
+
+- **37 egna bilder, en per mejl.** 31 nya ur kie.ai (`google/nano-banana-edit`, butikens
+  riktiga produktfoton som referens, så lådorna ser ut som de gör) och 6 av butikens egna
+  livsstilsbilder ur Shopify Files (familjen i soffan, morfar i fåtöljen, mormor som skrattar,
+  paketet vid dörren, sushibordet, bambufatet). Motiven följer mejlet: tre lådor med
+  guldrosett i V01 (veckans tre vinster), en tvättmedelsflaska mot sushilådan i K02,
+  ätpinnar som doppar en laxbit i soja i FD06, frukost på sängen i K04, julstrumpan i K05,
+  glögg vid brasan i K12 och så vidare. Hela listan med mejl, motiv och prompt:
+  `klaviyo/innehall/matstrumpor/bildplan.json`.
+- **Granskade av sessionen, bild för bild.** Underkända och gjorda om: donutlådan
+  (strumporna svävade i luften), hyllan i K06 (såg ut som ett bord) och fyra-sorter-bilden
+  (hamburgarlådan syntes inte; den godkända saknade först donutlådan och beskars sedan till
+  2:1). Inga ansikten i de nya bilderna, ingen påhittad text; det tryck som syns ("PIZZA
+  SOCKS", "DOUNT SOCKS") står på de riktiga förpackningarna.
+- **Var bilderna ligger:** i Matstrumpors Shopify Files (`mejl-<namn>.jpg`, butikens CDN) och
+  i Spoks mediebibliotek (samma namn). Registret `klaviyo/konto/matstrumpor/bilder.json` bär
+  url, alt-text, länk och Spoks-id per bild. Innehållet pekar dit med `"bild": "bild:<namn>"`
+  i hero-blocket; bilden länkar dit hero-knappen går.
+- **Motorn:** `node klaviyo/mejlbilder.mjs --brand matstrumpor` (`--generera`, `--godkann`,
+  `--befintlig`, `--spoks-lista`, `--spoks`, och utan flagga en kontroll).
+  `validera.mjs` stoppar ett mejl vars bild saknas i registret, `spoks-paket.mjs` stoppar
+  en bild utan Spoks-id, och **`bygg.mjs` stoppar två kampanjer som har samma bild överst
+  inom 21 dygn** (brandfilens `bildregler`, från 30/9; produktbilder räknas också).
+  Granskningssidan hämtar bilderna i 640 px (`bilder.mjs sidUrl`), så den väger 5 MB och
+  inte 8.
+- **Kvar som förut:** produktkorten längre ner i mejlen visar produktens egen bild (den
+  hydreras av Spoks och går inte att byta per mejl). Flödena (F01–F09) har kvar sina
+  produktbilder: de är aktiva, och ett aktivt flöde går inte att ändra via MCP:n.

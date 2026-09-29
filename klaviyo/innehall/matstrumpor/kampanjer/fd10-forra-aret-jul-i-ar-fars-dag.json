@@ -26,7 +26,7 @@
       "typ": "hero",
       "rubrik": "Förra gången jul. Den här gången fars dag.",
       "text": "Hej {{fornamn}},\n\nDu köpte en låda i vintras, förmodligen sushi till julklapp.\n\nDen här gången handlar det om fars dag den 8 november. Hamburgaren är en annan sort att ge bort.",
-      "bild": "produkt:hamburger-strumpor",
+      "bild": "bild:burgare-pa-diner",
       "knapp": { "text": "Se hamburgarlådan", "lank": "produkt:hamburger-strumpor" }
     },
     {

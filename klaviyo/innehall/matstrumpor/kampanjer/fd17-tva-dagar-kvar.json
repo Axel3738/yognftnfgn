@@ -26,7 +26,7 @@
       "typ": "hero",
       "rubrik": "Två dagar kvar att beställa till fars dag",
       "text": "Hej {{fornamn}},\n\nPaketet behöver skickas i tid för att hinna fram till fars dag. Beställ senast lördag. Köp 1, få 1 gäller fortfarande, så du betalar för en sushilåda och får två. Det är bara tiden till fars dag som är knapp.",
-      "bild": "produkt:sushi-strumpor",
+      "bild": "bild:paketet-vid-dorren",
       "knapp": { "text": "Beställ innan lördag", "lank": "produkt:sushi-strumpor" }
     },
     {

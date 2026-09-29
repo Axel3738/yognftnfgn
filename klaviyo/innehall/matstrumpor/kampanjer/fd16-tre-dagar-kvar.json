@@ -35,7 +35,7 @@
       "typ": "hero",
       "rubrik": "Lådan som ser ut som burgare, för honom som hoppar sushin",
       "text": "Hej {{fornamn}},\n\nInte alla pappor vill ha sushi. Den här lådan ser ut som burgare i stället, med två par strumpor inuti. Tre dagar kvar innan 24 oktober.",
-      "bild": "produkt:hamburger-strumpor",
+      "bild": "bild:burgare-mot-burgare",
       "knapp": {
         "text": "Se burgarlådan",
         "lank": "produkt:hamburger-strumpor"

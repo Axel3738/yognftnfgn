@@ -7,7 +7,7 @@ import { mkdtempSync, readFileSync, existsSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { bygg, galleri, lasInnehall } from '../bygg.mjs';
-import { bildUrlar, nyttRegister, medPlatshallare, hamtaBilder, bildSkript } from '../bilder.mjs';
+import { bildUrlar, nyttRegister, medPlatshallare, hamtaBilder, bildSkript, sidUrl } from '../bilder.mjs';
 import { galleriKampanjer, galleriFloden, galleriMallar, mejlUtUrManifest, kodFor, spoksLankar, attGranska } from '../gallerier.mjs';
 import { FIXTURER, PRODUKTER, RECENSIONER, BRAND } from './hjalp.mjs';
 
@@ -70,6 +70,20 @@ test('hamtaBilder: hämtar varje URL en gång, skriver cachen, återanvänder de
   const r2 = await hamtaBilder({ urlar: [A], cacheDir: dir, fetchFn: async () => { throw new Error('nätet ska inte röras'); } });
   assert.equal(r2.bilder.get(A), 'data:image/jpeg;base64,AQID');
   assert.deepEqual(r2.saknas, []);
+});
+
+test('sidUrl: stora Shopify-bilder hämtas i 640 px till sidan, allt annat orört', async () => {
+  const stor = 'https://cdn.shopify.com/s/files/1/0/files/mejl-x_1000x1000.jpg?v=1';
+  assert.equal(sidUrl(stor), 'https://cdn.shopify.com/s/files/1/0/files/mejl-x_640x640.jpg?v=1');
+  assert.equal(sidUrl('https://cdn.shopify.com/s/files/1/0/files/a_600x600.png?v=2'), 'https://cdn.shopify.com/s/files/1/0/files/a_600x600.png?v=2');
+  assert.equal(sidUrl('https://cdn.shopify.com/s/files/1/0/files/a.jpg?v=2'), 'https://cdn.shopify.com/s/files/1/0/files/a.jpg?v=2');
+  assert.equal(sidUrl('https://cdn.example/b_2000x2000.jpg'), 'https://cdn.example/b_2000x2000.jpg');
+  // Sidan slår upp på mejlets URL, men det är 640-bilden som hämtas och cachas.
+  const dir = mkdtempSync(join(tmpdir(), 'klaviyo-bilder-'));
+  const anrop = [];
+  const r = await hamtaBilder({ urlar: [stor], cacheDir: dir, fetchFn: async (u) => { anrop.push(u); return { ok: true, status: 200, headers: new Map([['content-type', 'image/jpeg']]), arrayBuffer: async () => Uint8Array.from([9]).buffer }; } });
+  assert.deepEqual(anrop, [sidUrl(stor)]);
+  assert.equal(r.bilder.get(stor), 'data:image/jpeg;base64,CQ==');
 });
 
 test('bildSkript: JSON-blocket bär data-URI:n, eller den riktiga URL:en när bilden saknas, och "</" är ofarligt', () => {

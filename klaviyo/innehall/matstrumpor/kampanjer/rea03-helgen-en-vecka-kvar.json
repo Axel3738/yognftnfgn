@@ -26,7 +26,7 @@
       "typ": "hero",
       "rubrik": "En vecka kvar. Fortfarande Köp 1, få 1.",
       "text": "Hej {{fornamn}},\n\nHelgen är här. Drygt en vecka är kvar till sista beställningsdagen 24 oktober, för att hinna till fars dag.\n\nKöp en låda och få en till i valfri sort. Donutlådan är med precis som de andra tre.",
-      "bild": "produkt:donut-strumpor",
+      "bild": "bild:donut-bageri",
       "knapp": { "text": "Se donutlådan", "lank": "produkt:donut-strumpor" }
     },
     {

@@ -35,7 +35,7 @@
       "typ": "hero",
       "rubrik": "Fem dagar kvar till sista beställningsdagen",
       "text": "Hej {{fornamn}},\n\nFars dag är den 8 november. Beställ senast lördag 24 oktober för att hinna fram. Fem dagar kvar.",
-      "bild": "produkt:sushi-strumpor",
+      "bild": "bild:hostpasen-i-hallen",
       "knapp": {
         "text": "Beställ innan lördag",
         "lank": "produkt:sushi-strumpor"

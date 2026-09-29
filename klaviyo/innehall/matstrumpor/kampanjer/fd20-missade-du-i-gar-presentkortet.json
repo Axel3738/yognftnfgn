@@ -31,7 +31,7 @@
       "typ": "hero",
       "rubrik": "Missade du sista dagen till fars dag?",
       "text": "Hej {{fornamn}},\n\nEn låda som beställs nu kan komma fram efter fars dag. Ett presentkort skickas direkt i mejlet, och pappa väljer sin egen låda själv.",
-      "bild": "produkt:presentkort",
+      "bild": "bild:kuvert-pa-frukostbordet",
       "knapp": { "text": "Se presentkortet", "lank": "produkt:presentkort" }
     },
     {

@@ -31,7 +31,7 @@
       "typ": "hero",
       "rubrik": "I dag är sista dagen att beställa",
       "text": "Hej {{fornamn}},\n\nBeställer du i dag hinner sushilådan fram till fars dag den 8 november. I morgon räknar vi inte längre med det.",
-      "bild": "produkt:sushi-strumpor",
+      "bild": "bild:packas-i-kartong",
       "knapp": { "text": "Beställ i dag", "lank": "produkt:sushi-strumpor" }
     },
     {

@@ -35,7 +35,7 @@
       "typ": "hero",
       "rubrik": "Riktiga ord om lådan till pappa",
       "text": "Hej {{fornamn}},\n\nInnan du väljer en låda till pappa kan det vara bra att se vad andra köpare tyckte.\n\nAlla recensioner står på produktsidan, i köparnas egna ord.",
-      "bild": "produkt:sushi-strumpor",
+      "bild": "bild:sushibordet",
       "knapp": {
         "text": "Läs recensionerna om sushilådan",
         "lank": "produkt:sushi-strumpor"

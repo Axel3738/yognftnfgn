@@ -26,7 +26,7 @@
       "typ": "hero",
       "rubrik": "Fem par strumpor, rullade som sushibitar",
       "text": "Hej {{fornamn}},\n\nUtsidan ser ut som en takeaway-låda från en sushirestaurang. Insidan är strumpor.",
-      "bild": "produkt:sushi-strumpor",
+      "bild": "bild:sushi-pa-bambufat",
       "knapp": { "text": "Titta på sushilådan", "lank": "produkt:sushi-strumpor" }
     },
     {

@@ -1,0 +1,314 @@
+{
+  "om": "Bildplanen för Matstrumpors mejl: ett eget motiv per mejl i stället för samma sushibild i alla (Axels dom 2026-09-29: \"det är bara samma bild i alla mejl, och ingen vill riktigt se det där. Så alla kommer unsubscribea\"). Nya bilder görs med kie.ai (google/nano-banana-edit) med butikens riktiga produktfoton som referens, så att lådorna ser ut som de gör; befintliga bilder är butikens egna livsstilsbilder i Shopify Files. Motorn: node klaviyo/mejlbilder.mjs --brand matstrumpor. Varje bild granskas av sessionen innan den godkänns: rätt produkt, ingen påhittad text, inga ansikten i nya bilder, inga konstiga händer eller fötter.",
+  "referenser": {
+    "sushi-lada": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/Skarmbild2026-01-29190257.png",
+    "sushi-tallrik": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/WhatsAppImage2025-11-27at03.41.38.jpg",
+    "sushi-strumpor": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/WhatsAppImage2025-11-27at03.41.39.jpg",
+    "pizza-lada": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/WhatsAppImage2025-12-12at06.15.42.jpg",
+    "pizza-strumpor": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/WhatsAppImage2025-12-12at06.15aaa.42.jpg",
+    "burgare": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/WhatsAppImage2025-12-12at06.1sdsds5.43.jpg",
+    "donut": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/WhatsAppImage2025-12-02at10.33.29.jpg"
+  },
+  "produkter": {
+    "sushi-lada": "the sushi sock gift box from the reference photo: a black plastic tray with a clear plastic lid holding socks rolled up to look exactly like sushi, two salmon nigiri (orange with thin white stripes), two tamago nigiri (yellow with a black band) and maki rolls with a black or red outside and white, green and orange centers, with strips of green plastic grass between them",
+    "sushi-tallrik": "socks rolled up to look exactly like sushi, as in the reference photo: salmon nigiri (orange with thin white stripes), tamago nigiri (yellow with a black band) and maki rolls with a black or red outside and white, green and orange centers",
+    "sushi-strumpor": "the sushi-pattern socks from the reference photo: orange socks with thin white diagonal stripes like salmon, and white socks with a black band and a green or yellow foot",
+    "pizza-lada": "the pizza sock gift box from the reference photo: a white pizza box with green lettering, holding yellow socks printed with pizza toppings arranged in a circle to look like a whole pizza, with beige socks as the crust",
+    "pizza-strumpor": "the yellow pizza socks from the reference photo, printed with pepperoni, tomato slices, olives and green herbs",
+    "burgare": "the hamburger sock gift box from the reference photo: a white box printed with a black line drawing of a hamburger and a dark red lid, holding folded socks with a burger pattern (red socks with green lettuce and brown patty print)",
+    "donut": "the donut sock gift box from the reference photo: a long pink box with a clear window, holding socks rolled into donut shapes, plus socks printed with chocolate, green and pink donut frosting and sprinkles"
+  },
+  "stil": "Photorealistic lifestyle photograph, natural soft light, shallow depth of field, warm and inviting Scandinavian home style, high detail. The product must look exactly like in the reference photos: same colors, same patterns, same packaging. Do not add any text, letters, numbers, logos, labels or watermarks anywhere; only print that is already on the product packaging may appear. No human faces: people appear only as hands, arms, legs or feet.",
+  "bilder": [
+    {
+      "namn": "klubb-tre-vinster",
+      "mejl": ["v01-du-ar-med-i-klubben"],
+      "alt": "Tre sushilådor med guldrosett, veckans tre vinster i klubben",
+      "format": "4:3",
+      "ref": ["sushi-lada"],
+      "prompt": "Three identical sushi sock gift boxes lined up side by side on a dark walnut table, each tied with a thin gold satin ribbon and a small gold bow, like three prizes waiting to be handed out. Soft spotlight from above, dark warm background, a few pieces of gold confetti on the table."
+    },
+    {
+      "namn": "barnbarn-ger-ladan",
+      "mejl": ["k03-kundernas-ord"],
+      "alt": "Ett barn ger sushilådan till sin morfar",
+      "format": "4:3",
+      "ref": ["sushi-lada"],
+      "prompt": "A child's small hands handing the sushi sock gift box, tied with a red ribbon bow, to an older man's hands in a knitted cardigan, in a cozy living room with warm lamp light. Close-up on the hands and the box, no faces visible."
+    },
+    {
+      "namn": "morfar-i-fatoljen",
+      "mejl": ["rea01-tva-pappor"],
+      "alt": "Morfar i fåtöljen med pizzastrumporna på",
+      "lank": "produkt:pizza-strumpor",
+      "befintlig": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/matstrumpor_63_morfar_fatoljen.jpg"
+    },
+    {
+      "namn": "familjen-i-soffan",
+      "mejl": ["v02-sex-saker-innan-du-koper"],
+      "alt": "Hela familjens fötter i soffan, i sushi-, pizza- och donutstrumpor",
+      "lank": "kollektion:alla-produkter",
+      "befintlig": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/matstrumpor_52_alla_fotter_soffan.jpg"
+    },
+    {
+      "namn": "pappa-oppnar-ladan",
+      "mejl": ["fd01-pappa-som-inte-vill-ha-nagot"],
+      "alt": "Pappas händer lyfter locket på sushilådan",
+      "format": "4:3",
+      "ref": ["sushi-lada"],
+      "prompt": "Close-up of an older man's hands, wearing a knitted cardigan and a wristwatch, lifting the clear lid off the sushi sock gift box on a kitchen table. Torn gift wrapping paper and a loose ribbon around the box, a cup of coffee in the background, morning light. Only hands and forearms visible."
+    },
+    {
+      "namn": "sushi-pa-bambufat",
+      "mejl": ["v03-sa-ser-ladan-ut-inuti"],
+      "alt": "Sushistrumporna uppdukade på ett bambufat",
+      "lank": "produkt:sushi-strumpor",
+      "befintlig": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/openart-bc64e45b-b775-417a-99cd-d269208aafcf_1.png"
+    },
+    {
+      "namn": "trakig-mot-rolig",
+      "mejl": ["k02-ingen-jublar-at-tvattmedel"],
+      "alt": "En tråkig tvättmedelsflaska bredvid den färgglada sushilådan",
+      "format": "4:3",
+      "ref": ["sushi-lada"],
+      "prompt": "Humorous gift comparison on a white table: on the left a plain white plastic laundry detergent bottle with no label and a dull grey gift bow on top, on the right the colorful sushi sock gift box with a bright red bow. The sushi box is sharp, bright and inviting, the detergent bottle looks boring. Minimalist light studio background."
+    },
+    {
+      "namn": "pinnarna-och-soja",
+      "mejl": ["fd06-svarfar-ar-svarast"],
+      "alt": "Ätpinnar lyfter en laxbit av strumpor mot sojan",
+      "format": "4:3",
+      "ref": ["sushi-lada", "sushi-tallrik"],
+      "prompt": "A man's hand holding wooden chopsticks, picking up one salmon nigiri sock from the open sushi sock gift box and about to dip it into a small dish of soy sauce. Dinner table with ceramic plates and a small sake cup, warm evening light. It looks funny because the sushi is made of socks. Only the hand visible."
+    },
+    {
+      "namn": "sushibordet",
+      "mejl": ["fd08-sa-reagerade-de"],
+      "alt": "Sushilådan och strumporna på ett dukat bord med soja",
+      "lank": "produkt:sushi-strumpor",
+      "befintlig": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/hf_20260225_045241_92dce67d-dbb6-4a7b-a5ff-ca8ba3833899.jpg"
+    },
+    {
+      "namn": "fyra-sorter-ovanifran",
+      "mejl": ["rea02-alla-fyra-sorter"],
+      "alt": "Alla fyra lådorna ovanifrån: sushi, pizza, hamburgare och donut",
+      "format": "4:3",
+      "ref": ["sushi-lada", "pizza-lada", "burgare", "donut"],
+      "prompt": "Top-down flat lay on a light oak table: the four sock gift boxes in a neat row with space between them, the sushi sock box with its clear lid, the pizza sock box open with the socks arranged like a pizza, the hamburger sock box closed (a white box with a black line drawing of a hamburger and a dark red lid) and the long pink donut sock box. Nothing else on the table. Bright, colorful, evenly lit."
+    },
+    {
+      "namn": "pizza-rutig-duk",
+      "mejl": ["fd09-tva-veckor-kvar"],
+      "alt": "Pizzalådan på en rutig duk med pizzaskärare och basilika",
+      "format": "4:3",
+      "ref": ["pizza-lada", "pizza-strumpor"],
+      "prompt": "The open pizza sock gift box on a red and white checkered tablecloth, the socks arranged like a whole pizza, with a real pizza cutter, a few fresh basil leaves and a glass bottle of water beside it. Cozy Italian pizzeria mood, warm light."
+    },
+    {
+      "namn": "burgare-pa-diner",
+      "mejl": ["fd10-forra-aret-jul-i-ar-fars-dag"],
+      "alt": "Hamburgarlådan på en röd diner-bricka med pommes",
+      "format": "4:3",
+      "ref": ["burgare"],
+      "prompt": "The hamburger sock gift box on a red plastic diner tray next to a paper cup with a striped straw and a small paper tray of french fries, on a retro diner counter with chrome details. Playful and bright."
+    },
+    {
+      "namn": "tva-sushilador",
+      "mejl": ["fd11-tva-lador-en-till-pappa"],
+      "alt": "Två sushilådor: en inslagen till pappa, en öppen att behålla",
+      "format": "4:3",
+      "ref": ["sushi-lada"],
+      "prompt": "Two sushi sock gift boxes side by side on a wooden sideboard: the left one tied with a wide navy blue ribbon and a bow as a gift, the right one open with its clear lid lying beside it. Cozy home, soft afternoon light."
+    },
+    {
+      "namn": "pizzastrumpor-pa-fotter",
+      "mejl": ["fd12-ni-gav-bort-sushin"],
+      "alt": "Pappas fötter i pizzastrumporna på soffbordet",
+      "format": "4:3",
+      "ref": ["pizza-strumpor", "pizza-lada"],
+      "prompt": "A man's feet wearing the yellow pizza socks, crossed at the ankles and resting on a wooden coffee table next to the open pizza sock gift box and a TV remote, relaxed Sunday afternoon in a living room. Only legs and feet visible."
+    },
+    {
+      "namn": "donut-bageri",
+      "mejl": ["rea03-helgen-en-vecka-kvar"],
+      "alt": "Donutlådan bredvid riktiga munkar på en bagerikaka",
+      "format": "4:3",
+      "ref": ["donut"],
+      "prompt": "The pink donut sock gift box standing on a bakery counter next to a wooden tray of real glazed donuts with colorful sprinkles, pastel colors, bright bakery light. The socks stay inside the box and nothing floats in the air. At first glance it is hard to tell which donuts are real."
+    },
+    {
+      "namn": "slas-in-i-papper",
+      "mejl": ["fd13-en-vecka-kvar"],
+      "alt": "Sushilådan slås in i brunt papper med snöre",
+      "format": "4:3",
+      "ref": ["sushi-lada"],
+      "prompt": "Top-down view of two hands wrapping the sushi sock gift box in brown kraft paper on a wooden table, with twine, scissors, a roll of tape and a sprig of eucalyptus around it. Only hands visible."
+    },
+    {
+      "namn": "ur-presentpasen",
+      "mejl": ["fd14-tittat-men-aldrig-bestallt"],
+      "alt": "Sushilådan lyfts upp ur en presentpåse vid middagsbordet",
+      "format": "4:3",
+      "ref": ["sushi-lada"],
+      "prompt": "Two hands lifting the sushi sock gift box out of a white gift bag with red tissue paper at a family dinner table with lit candles and plates, background softly blurred. Only hands visible."
+    },
+    {
+      "namn": "hostpasen-i-hallen",
+      "mejl": ["fd15-fem-dagar-kvar"],
+      "alt": "En presentpåse med sushilådan i hallen bland höstlöv",
+      "format": "4:3",
+      "ref": ["sushi-lada"],
+      "prompt": "A brown kraft paper gift bag with the sushi sock gift box peeking out of it, standing on a wooden bench in a hallway next to a pair of brown leather boots, a few yellow autumn leaves on the floor, soft October daylight."
+    },
+    {
+      "namn": "frukost-pa-sangen",
+      "mejl": ["k04-fars-dag-bestall-senast-24-okt"],
+      "alt": "Frukost på sängen till fars dag med sushilådan på brickan",
+      "format": "4:3",
+      "ref": ["sushi-lada", "sushi-strumpor"],
+      "prompt": "Father's Day breakfast in bed: a wooden tray with a cup of coffee, a croissant and a glass of orange juice, and the sushi sock gift box with a small red bow on the white duvet beside it. At the end of the bed a man's feet wearing the orange salmon-striped sushi socks. Morning light. No faces."
+    },
+    {
+      "namn": "burgare-mot-burgare",
+      "mejl": ["fd16-tre-dagar-kvar"],
+      "alt": "Hamburgarlådan bredvid en riktig hamburgare",
+      "format": "4:3",
+      "ref": ["burgare"],
+      "prompt": "The hamburger sock gift box standing next to a real hamburger on a wooden serving board, both about the same size, on a sunny outdoor table. A playful side by side comparison."
+    },
+    {
+      "namn": "paketet-vid-dorren",
+      "mejl": ["fd17-tva-dagar-kvar"],
+      "alt": "Paketet med sushilådan har kommit fram till dörren",
+      "lank": "produkt:sushi-strumpor",
+      "befintlig": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/matstrumpor_61_dorrmattan.jpg"
+    },
+    {
+      "namn": "morgonkaffe-bredvid-ladan",
+      "mejl": ["fd18-i-morgon-ar-sista-dagen"],
+      "alt": "Sushilådan på köksbänken bredvid morgonkaffet",
+      "format": "4:3",
+      "ref": ["sushi-lada"],
+      "prompt": "The sushi sock gift box on a kitchen counter next to a steaming cup of coffee and a small green plant, soft morning light through a window with autumn trees outside."
+    },
+    {
+      "namn": "nattduksbordet",
+      "mejl": ["fd21-kvallen-fore-sista-dagen"],
+      "alt": "Sushilådan på nattduksbordet en kväll",
+      "format": "4:3",
+      "ref": ["sushi-lada", "sushi-strumpor"],
+      "prompt": "Evening in a cozy bedroom: a bedside table with a warm lamp, a stack of books and the sushi sock gift box with a small bow. At the edge of the frame feet in the orange salmon-striped sushi socks under a knitted blanket. Dark, warm and calm. No faces."
+    },
+    {
+      "namn": "packas-i-kartong",
+      "mejl": ["fd19-sista-dagen-i-dag"],
+      "alt": "Sushilådan packas i en kartong för att skickas",
+      "format": "4:3",
+      "ref": ["sushi-lada"],
+      "prompt": "Two hands placing the sushi sock gift box into a brown shipping carton on a packing table, with a roll of packing tape and crinkle paper filling, bright morning light, ready to be shipped. Only hands visible."
+    },
+    {
+      "namn": "pizzabit-med-spade",
+      "mejl": ["fd22-sista-dagen-mitt-pa-dagen"],
+      "alt": "En pizzaspade lyfter en pizzastrumpa ur pizzalådan",
+      "format": "4:3",
+      "ref": ["pizza-lada", "pizza-strumpor"],
+      "prompt": "The open pizza sock gift box on a lunch table, a hand using a metal pizza server to lift one folded yellow pizza sock as if it were a slice of pizza, bright midday light, playful."
+    },
+    {
+      "namn": "ljus-i-kvall",
+      "mejl": ["fd23-sista-kvallen"],
+      "alt": "Sushilådan i levande ljus en kväll",
+      "format": "4:3",
+      "ref": ["sushi-lada"],
+      "prompt": "The sushi sock gift box on a dark wooden table lit by two lit candles in brass holders, evening, warm dramatic light, close-up."
+    },
+    {
+      "namn": "kuvert-pa-frukostbordet",
+      "mejl": ["fd20-missade-du-i-gar-presentkortet"],
+      "alt": "Ett kuvert med rött band och en laxbit av strumpor på frukostbordet",
+      "format": "4:3",
+      "ref": ["sushi-tallrik"],
+      "prompt": "A plain cream-colored envelope tied with a thin red ribbon lying on a breakfast table next to a cup of coffee, with one salmon nigiri sock placed on top of the envelope like a paperweight. Soft morning light. The envelope has no writing on it."
+    },
+    {
+      "namn": "julstrumpan",
+      "mejl": ["k05-julstrumpan"],
+      "alt": "En julstrumpa vid brasan med sushistrumpor som sticker upp",
+      "format": "4:3",
+      "ref": ["sushi-tallrik"],
+      "prompt": "A red knitted Christmas stocking hanging from a fireplace mantel with a salmon nigiri sock and a maki roll sock peeking out of the top, pine garland and warm fairy lights, cozy Swedish Christmas mood."
+    },
+    {
+      "namn": "sista-ladan-pa-hyllan",
+      "mejl": ["k06-slut-i-november-forra-aret"],
+      "alt": "En nästan tom hylla med en enda sushilåda kvar",
+      "format": "4:3",
+      "ref": ["sushi-lada"],
+      "prompt": "A white shop display shelf with three levels, all of them empty except for one single sushi sock gift box on the middle level, clean retail interior, soft light. The empty shelves make it obvious that this is the last box left."
+    },
+    {
+      "namn": "tva-klappar-under-granen",
+      "mejl": ["k07-tva-lador-tva-personer"],
+      "alt": "Sushilådan och pizzalådan som två julklappar under granen",
+      "format": "4:3",
+      "ref": ["sushi-lada", "pizza-lada"],
+      "prompt": "Under a decorated Christmas tree with warm lights: the sushi sock gift box tied with a red ribbon bow and the pizza sock gift box tied with a green ribbon bow, each with a small blank brown gift tag, on a wooden floor."
+    },
+    {
+      "namn": "julpapper-flatlay",
+      "mejl": ["k08-julklappsguide"],
+      "alt": "Alla fyra lådorna på julpapper med band och pepparkakor",
+      "format": "4:3",
+      "ref": ["sushi-lada", "pizza-lada", "burgare", "donut"],
+      "prompt": "Christmas gift wrapping flat lay seen from above: the sushi sock box, the pizza sock box, the hamburger sock box and the pink donut sock box on red and white Christmas wrapping paper, with ribbons, scissors, pine branches and Swedish gingerbread cookies around them."
+    },
+    {
+      "namn": "black-week-morkt",
+      "mejl": ["k09-black-week-start"],
+      "alt": "Pizzalådan, sushilådan och donutlådan i mörkt ljus",
+      "format": "4:3",
+      "ref": ["pizza-lada", "sushi-lada", "donut"],
+      "prompt": "Moody, premium dark studio photo: the pizza sock gift box, the sushi sock gift box and the pink donut sock gift box arranged on a matte black surface with dramatic side lighting and a black silk ribbon, dark background."
+    },
+    {
+      "namn": "black-friday-burgare",
+      "mejl": ["k10-black-friday"],
+      "alt": "Hamburgarlådan i strålkastarljus på svart marmor",
+      "format": "4:3",
+      "ref": ["burgare"],
+      "prompt": "The hamburger sock gift box on a black marble surface under a single dramatic spotlight, black background, a black ribbon draped beside it, premium and bold."
+    },
+    {
+      "namn": "under-granen",
+      "mejl": ["k11-bestall-senast-8-dec"],
+      "alt": "Sushilådan med rött band under julgranen",
+      "format": "4:3",
+      "ref": ["sushi-lada"],
+      "prompt": "The sushi sock gift box tied with a red satin ribbon lying under a decorated Christmas tree with warm white lights, on a wooden floor in a Scandinavian living room."
+    },
+    {
+      "namn": "glogg-vid-brasan",
+      "mejl": ["k12-sista-dagen-idag"],
+      "alt": "Fötter i sushistrumpor vid brasan med glögg och pepparkakor",
+      "format": "4:3",
+      "ref": ["sushi-strumpor", "sushi-lada"],
+      "prompt": "Feet in the orange salmon-striped sushi socks resting on a footstool by a fireplace, a mug of Swedish glogg with almonds and raisins and a plate of heart-shaped gingerbread cookies on a small side table, the sushi sock gift box next to them, candlelight. Only feet and legs visible."
+    },
+    {
+      "namn": "rott-kuvert-jul",
+      "mejl": ["k13-presentkortet"],
+      "alt": "Ett rött kuvert med guldband på julbordet",
+      "format": "4:3",
+      "ref": ["sushi-tallrik"],
+      "prompt": "A plain red envelope with a gold ribbon on a Christmas table with gingerbread cookies, a lit candle and a pine sprig, and one maki roll sock lying next to the envelope. The envelope has no writing on it."
+    },
+    {
+      "namn": "mormor-skrattar",
+      "mejl": ["k14-vem-har-fodelsedag-harnast"],
+      "alt": "Mormor skrattar med lådan i händerna på sitt födelsedagskalas",
+      "lank": "kollektion:alla-produkter",
+      "befintlig": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/matstrumpor_62_mormor_skrattar.jpg"
+    }
+  ]
+}

@@ -14,6 +14,7 @@ import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync } from 
 import { join, basename } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { byggMejl, laddaBrandResurser, esk, ROT, webbfont } from './mallar.mjs';
+import { samma } from './mejlbilder.mjs';
 import { validera } from './validera.mjs';
 import { hamtaProdukterCache } from './produkter.mjs';
 import { hamtaRecensionerCache } from './recensioner.mjs';
@@ -74,7 +75,7 @@ export async function bygg({
   logg = () => {},
 } = {}) {
   const brand = JSON.parse(readFileSync(join(rot, 'klaviyo', 'brands', `${brandId}.json`), 'utf8'));
-  const { stil, erbjudande } = laddaBrandResurser(brand, rot);
+  const { stil, erbjudande, bilder } = laddaBrandResurser(brand, rot);
   const inDir = innehallDir ?? join(rot, 'klaviyo', 'innehall', brandId);
   const ut = utDir ?? join(rot, 'klaviyo', 'output', brandId);
   mkdirSync(ut, { recursive: true });
@@ -112,7 +113,7 @@ export async function bygg({
     }
     if (sedda.has(id)) toppFel.push(`Mejl-id "${id}" finns två gånger (${sedda.get(id)} och ${p.kalla}).`);
     sedda.set(id, p.kalla);
-    const indata = { brand, stil, erbjudande, produkter: lista, recensioner: rec };
+    const indata = { brand, stil, erbjudande, bilder, produkter: lista, recensioner: rec };
     const k = byggMejl(m, { ...indata, lage: 'klaviyo' });
     const ex = byggMejl(m, { ...indata, lage: 'exempel' });
     const v = validera(m, {
@@ -124,6 +125,7 @@ export async function bygg({
       kalla: p.kalla,
       segment: p.kampanj?.segment ?? null,
       trigger: p.flode?.trigger ?? null,
+      bilder,
     });
     const fel = [...v.fel];
     const varningar = [...new Set([...k.varningar, ...v.varningar])];
@@ -196,6 +198,15 @@ export async function bygg({
         }),
       };
     });
+  // Samma bild överst i två kampanjer nära varandra (Axels dom 2026-09-29: "det
+  // är bara samma bild i alla mejl … alla kommer unsubscribea"). Bara brand som
+  // bär bildregler, och bara kampanjer planerade från regelns startdatum.
+  if (brand.bildregler?.unik_hero_dagar) {
+    const { unik_hero_dagar: dagar, fran = null } = brand.bildregler;
+    for (const d of samma(innehall.kampanjer, { dagar, fran })) {
+      toppFel.push(`${d.a} och ${d.b} har samma bild överst (${d.bild}), ${d.dagar} dygn isär — ge det ena mejlet en egen bild (klaviyo/innehall/${brand.id}/bildplan.json, node klaviyo/mejlbilder.mjs).`);
+    }
+  }
   for (const f of innehall.floden) {
     if (!f.trigger?.typ) toppFel.push(`Flödet ${f.id} saknar trigger.`);
     if (!String(f.memo ?? '').trim()) toppFel.push(`Flödet ${f.id} saknar memo.`);

@@ -26,7 +26,7 @@
       "typ": "hero",
       "rubrik": "Sju dagar kvar till sista beställningsdagen",
       "text": "Hej {{fornamn}},\n\nI dag är det lördag 17 oktober. Sista dagen att beställa till fars dag är lördag 24 oktober, exakt en vecka bort.\n\nIngen brådska än, bara en påminnelse medan det finns gott om tid att välja sort.",
-      "bild": "produkt:sushi-strumpor",
+      "bild": "bild:slas-in-i-papper",
       "knapp": { "text": "Se sushilådan", "lank": "produkt:sushi-strumpor" }
     },
     {

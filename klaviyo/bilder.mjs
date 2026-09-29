@@ -45,6 +45,18 @@ export function medPlatshallare(html, register) {
   });
 }
 
+// Sidorna visar mejlen som mest 640 px breda, men mejlets egna bilder beställs
+// större ur Shopifys CDN (_1000x1000, skarpt i mobilen). Inbäddat i en sida hade
+// 37 sådana bilder gett 8 MB (granskningssidan 2026-09-29) — så sidan hämtar
+// samma bild i 640 px. Bara Shopify-URL:er med storlekssuffix rörs; mejlet
+// ändras inte, bara det sidan bäddar in.
+export const SIDBREDD = 640;
+export function sidUrl(url, max = SIDBREDD) {
+  const m = /^(https:\/\/cdn\.shopify\.com\/.+)_(\d+)x(\d+)(\.[a-z0-9]+)(\?.*)?$/i.exec(String(url));
+  if (!m || (Number(m[2]) <= max && Number(m[3]) <= max)) return url;
+  return `${m[1]}_${max}x${max}${m[4]}${m[5] ?? ''}`;
+}
+
 const FILANDELSE = { 'image/jpeg': 'jpg', 'image/png': 'png', 'image/gif': 'gif', 'image/webp': 'webp', 'image/svg+xml': 'svg', 'image/avif': 'avif' };
 
 function lasIndex(cacheDir) {
@@ -63,21 +75,24 @@ export async function hamtaBilder({ urlar, cacheDir, fetchFn = globalThis.fetch,
   let hamtade = 0;
 
   async function en(url) {
-    const post = index[url];
+    // Cachen och hämtningen går på den URL som faktiskt hämtas (sidUrl), sidan
+    // slår upp på mejlets URL.
+    const hamtas = sidUrl(url);
+    const post = index[hamtas];
     if (post && existsSync(join(cacheDir, post.fil))) {
       bilder.set(url, `data:${post.typ};base64,${readFileSync(join(cacheDir, post.fil)).toString('base64')}`);
       return;
     }
     try {
-      const svar = await fetchFn(url, { headers: { accept: 'image/*' } });
+      const svar = await fetchFn(hamtas, { headers: { accept: 'image/*' } });
       const typ = String(svar.headers.get('content-type') ?? '').split(';')[0].trim().toLowerCase();
       if (!svar.ok) throw new Error(`HTTP ${svar.status}`);
       if (!typ.startsWith('image/')) throw new Error(`inte en bild (${typ || 'okänd typ'})`);
       const buf = Buffer.from(await svar.arrayBuffer());
       if (!buf.length) throw new Error('tom fil');
-      const fil = `${createHash('sha1').update(url).digest('hex').slice(0, 16)}.${FILANDELSE[typ] ?? 'bin'}`;
+      const fil = `${createHash('sha1').update(hamtas).digest('hex').slice(0, 16)}.${FILANDELSE[typ] ?? 'bin'}`;
       writeFileSync(join(cacheDir, fil), buf);
-      index[url] = { fil, typ, bytes: buf.length, hamtad: new Date().toISOString() };
+      index[hamtas] = { fil, typ, bytes: buf.length, hamtad: new Date().toISOString() };
       bilder.set(url, `data:${typ};base64,${buf.toString('base64')}`);
       hamtade += 1;
     } catch (e) {

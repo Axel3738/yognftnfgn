@@ -26,7 +26,7 @@
       "typ": "hero",
       "rubrik": "Fyra par i en pizzalåda. Ingen ost.",
       "text": "Hej {{fornamn}},\n\nSushi är en av fyra lådor. Pizzalådan kan beställas till och med i dag.",
-      "bild": "produkt:pizza-strumpor",
+      "bild": "bild:pizzabit-med-spade",
       "knapp": { "text": "Beställ pizzalådan", "lank": "produkt:pizza-strumpor" }
     },
     {

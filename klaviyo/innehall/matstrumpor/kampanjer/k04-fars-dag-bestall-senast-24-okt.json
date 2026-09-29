@@ -26,7 +26,7 @@
       "typ": "hero",
       "rubrik": "Beställ senast 24 oktober till fars dag",
       "text": "Hej {{fornamn}},\n\nFör att paketet ska hinna fram till fars dag den 8 november behöver ordern läggas senast 24 oktober.",
-      "bild": "produkt:sushi-strumpor",
+      "bild": "bild:frukost-pa-sangen",
       "knapp": { "text": "Se presenten", "lank": "produkt:sushi-strumpor" }
     },
     {

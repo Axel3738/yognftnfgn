@@ -26,7 +26,7 @@
       "typ": "hero",
       "rubrik": "En till pappa. En till farfar.",
       "text": "Hej {{fornamn}},\n\nKöp en sushilåda, så ingår en till. Den ena lådan går till pappa. Den andra kan gå till svärfar, farfar eller morfar.",
-      "bild": "produkt:sushi-strumpor",
+      "bild": "bild:morfar-i-fatoljen",
       "knapp": { "text": "Se sushilådan", "lank": "produkt:sushi-strumpor" }
     },
     { "typ": "text", "rubrik": null, "text": "Ingen av dem väntar sig en låda som ser ut som sushi." },

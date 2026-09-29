@@ -41,6 +41,7 @@ node klaviyo/kolla.mjs --prov       # första gången: mäter det obekräftade i
 node klaviyo/bygg.mjs [--brand …]   # innehåll + Shopify → output/<brand>/ (+ galleri index.html)
 node klaviyo/gallerier.mjs --brand … [--lankar <fil.json>]   # de tre gallerierna + index.html med bilderna inbäddade (kräver nät första gången)
 node klaviyo/schema-sida.mjs --brand matstrumpor --villkor <fil.json>   # schemasidan → output/<brand>/schema.html
+node klaviyo/mejlbilder.mjs --brand matstrumpor [--generera|--godkann <namn> <fil>|--spoks <namn> <id>]   # en egen bild per mejl (kie.ai → Shopify Files → Spoks), utan flagga: kontrollen
 node klaviyo/ladda-upp.mjs [--brand …]          # torrt: planen och exakta request-kroppar
 node klaviyo/ladda-upp.mjs --brand … --skarpt   # skapar segment, mallar, kampanjer och flöden, ALLT som utkast
 node klaviyo/ladda-upp.mjs --brand … --skarpt --uppdatera   # patchar mallar + Draft-kampanjer som finns (flöden skapas bara nya: byt version i namnet)

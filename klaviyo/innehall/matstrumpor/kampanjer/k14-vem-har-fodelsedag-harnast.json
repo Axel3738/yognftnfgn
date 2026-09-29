@@ -31,7 +31,7 @@
       "typ": "hero",
       "rubrik": "Vem har födelsedag härnäst?",
       "text": "{{fornamn}}, julen är över, men presenterna behöver inte vara det. Nästa födelsedag på listan är alltid närmare än du tror.",
-      "bild": "produkt:sushi-strumpor",
+      "bild": "bild:mormor-skrattar",
       "knapp": { "text": "Se alla sorter", "lank": "kollektion:alla-produkter" }
     },
     {

@@ -35,7 +35,7 @@
       "typ": "hero",
       "rubrik": "Han säger att han inte vill ha något. Ge honom en låda som ser ut som sushi.",
       "text": "Hej {{fornamn}},\n\nDe flesta pappor säger att de inte vill ha något. Den här lådan ser ut som en sushibeställning, inte som en present.",
-      "bild": "produkt:sushi-strumpor",
+      "bild": "bild:pappa-oppnar-ladan",
       "knapp": {
         "text": "Se lådan han inte bad om",
         "lank": "produkt:sushi-strumpor"

@@ -26,7 +26,7 @@
       "typ": "hero",
       "rubrik": "Den får plats i julstrumpan",
       "text": "Hej {{fornamn}},\n\nEn liten låda. Fem par strumpor och ätpinnar inuti.\n\nPrecis den storleken en julstrumpa är gjord för.",
-      "bild": "produkt:sushi-strumpor",
+      "bild": "bild:julstrumpan",
       "knapp": { "text": "Se sushilådan", "lank": "produkt:sushi-strumpor" }
     },
     {

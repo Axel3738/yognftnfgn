@@ -23,7 +23,7 @@
 // Händelsevariablerna står vid DYNAMISKA längre ner, var och en med källa
 // eller märkt "verifieras med template-render".
 
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { kr, bildLiten, kortnamn } from '../mejl/mallar.mjs';
@@ -57,7 +57,21 @@ export function laddaBrandResurser(brand, rot = ROT) {
     const hjul = lasRef(`${fil}#hjul`, rot);
     if (hjul?.handle) erbjudande.hjul_handle = hjul.handle;
   }
-  return { stil, erbjudande };
+  return { stil, erbjudande, bilder: lasBildregister(brand.id, rot) };
+}
+
+// Mejlbildernas register (klaviyo/mejlbilder.mjs): namn → { url, alt, lank, spoks_id }.
+// Saknas filen finns inga bilder, och bara "bild:<namn>" i ett hero-block märker det.
+export function lasBildregister(brandId, rot = ROT) {
+  const fil = join(rot, 'klaviyo', 'konto', String(brandId ?? ''), 'bilder.json');
+  if (!brandId || !existsSync(fil)) return {};
+  return JSON.parse(readFileSync(fil, 'utf8')).bilder ?? {};
+}
+
+// "bild:<namn>" → namnet, allt annat → null.
+export function bildNamn(spec) {
+  const m = /^bild:([a-z0-9][a-z0-9-]*)$/.exec(String(spec ?? '').trim());
+  return m ? m[1] : null;
 }
 
 export const EXEMPEL_FORNAMN = 'Anna';
@@ -365,9 +379,19 @@ const BLOCK = {
     const { s, lage } = ctx;
     const h = handleUr(b.bild);
     const p = h ? ctx.produkt(h) : null;
+    const namn = bildNamn(b.bild);
     let bild = '';
     if (h && p?.bild) bild = `<a href="${esk(p.url)}" target="_blank">${produktbild(s, bildLiten(p.bild, 600), 536, p.titel)}</a>`;
-    else if (b.bild && /^https:\/\//.test(b.bild)) bild = produktbild(s, b.bild, 536);
+    else if (namn) {
+      // Mejlets egen bild ur registret (klaviyo/mejlbilder.mjs). Länken följer
+      // hero-knappen, så bild och knapp går till samma ställe.
+      const r = ctx.bilder?.[namn];
+      if (r?.url) {
+        const mal = b.bild_lank ?? b.knapp?.lank ?? r.lank ?? null;
+        const img = produktbild(s, bildLiten(r.url, 1000), 536, r.alt ?? '');
+        bild = mal ? `<a href="${esk(lank(mal, ctx))}" target="_blank">${img}</a>` : img;
+      } else ctx.varningar.push(`Bilden "${namn}" finns inte i bildregistret (klaviyo/konto/${ctx.brand?.id}/bilder.json).`);
+    } else if (b.bild && /^https:\/\//.test(b.bild)) bild = produktbild(s, b.bild, 536);
     else if (b.bild) ctx.varningar.push(`Hero-bilden "${b.bild}" gick inte att hitta.`);
     return (
       (bild ? rad(bild, '24px 32px 0') : '') +
@@ -922,7 +946,7 @@ export function handlesI(mejl) {
 // Ingången
 // ---------------------------------------------------------------------------
 
-export function byggMejl(mejl, { brand, stil = null, erbjudande = undefined, produkter = [], recensioner = {}, lage = 'klaviyo' } = {}) {
+export function byggMejl(mejl, { brand, stil = null, erbjudande = undefined, bilder = null, produkter = [], recensioner = {}, lage = 'klaviyo' } = {}) {
   if (!brand) throw new Error('byggMejl: brand saknas.');
   if (lage !== 'klaviyo' && lage !== 'exempel') throw new Error(`byggMejl: okänt läge "${lage}".`);
   const res = stil && erbjudande !== undefined ? { stil, erbjudande } : laddaBrandResurser(brand);
@@ -939,6 +963,7 @@ export function byggMejl(mejl, { brand, stil = null, erbjudande = undefined, pro
     recensioner: recensioner ?? {},
     produktlista: lista,
     produkt: (h) => perHandle.get(h) ?? null,
+    bilder: bilder ?? res.bilder ?? lasBildregister(brand.id),
     handles: handlesI(mejl),
     varningar,
   };

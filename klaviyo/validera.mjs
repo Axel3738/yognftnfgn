@@ -95,7 +95,7 @@ export function kollaTaggar(html) {
   return fel;
 }
 
-export function validera(mejl, { html = null, text = null, produkter = [], brand = null, lage = 'klaviyo', kalla = null, segment = null, trigger = null } = {}) {
+export function validera(mejl, { html = null, text = null, produkter = [], brand = null, lage = 'klaviyo', kalla = null, segment = null, trigger = null, bilder = null } = {}) {
   const fel = [];
   const varningar = [];
   const lista = Array.isArray(produkter) ? produkter : [...(produkter?.values?.() ?? [])];
@@ -146,6 +146,18 @@ export function validera(mejl, { html = null, text = null, produkter = [], brand
     const mall = t.replace(/\{\{fornamn\}\}/g, '');
     if (/\{\{|\{%/.test(mall)) fel.push(`Mallspråk i copyn (${var_}): bara {{fornamn}} är tillåtet.`);
     if (/\{\{\s*f[oö]rnamn\s*\}\}/i.test(t) && !t.includes('{{fornamn}}')) fel.push(`Felstavad platshållare i ${var_}: skriv exakt {{fornamn}}.`);
+  }
+
+  // Mejlets egen bild (bild:<namn>) måste finnas i bildregistret, annars går
+  // mejlet ut med en tom ruta överst. Registret skrivs av klaviyo/mejlbilder.mjs.
+  if (bilder) {
+    for (const [i, blk] of (mejl.block ?? []).entries()) {
+      const m = /^bild:(.*)$/.exec(String(blk?.bild ?? '').trim());
+      if (!m) continue;
+      if (!/^[a-z0-9][a-z0-9-]*$/.test(m[1])) fel.push(`Block ${i + 1}: bildnamnet "${m[1]}" duger inte (bara a-z, 0-9 och -).`);
+      else if (!bilder[m[1]]?.url) fel.push(`Block ${i + 1}: bilden "${m[1]}" finns inte i bildregistret — generera, titta och godkänn den med node klaviyo/mejlbilder.mjs.`);
+      else if (!bilder[m[1]].alt) varningar.push(`Block ${i + 1}: bilden "${m[1]}" saknar alt-text i registret.`);
+    }
   }
 
   // format: "rentext" — personligt mejl, bara vissa block och högst en knapp.

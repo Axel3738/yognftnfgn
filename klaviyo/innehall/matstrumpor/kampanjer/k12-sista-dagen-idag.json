@@ -31,7 +31,7 @@
       "typ": "hero",
       "rubrik": "I dag är sista dagen att beställa till jul",
       "text": "{{fornamn}}, beställer du i dag hinner paketet fram innan julafton. I morgon räknar vi inte längre med det.",
-      "bild": "produkt:sushi-strumpor",
+      "bild": "bild:glogg-vid-brasan",
       "knapp": { "text": "Beställ i dag", "lank": "kollektion:alla-produkter" }
     },
     {

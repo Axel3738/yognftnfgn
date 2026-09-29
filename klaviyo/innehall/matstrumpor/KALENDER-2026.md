@@ -79,6 +79,8 @@ beställningsdagen **lör 24/10**).
 - **Bänken:** FD02, FD03, FD04, FD05 och FD07 schemaläggs inte. De ligger kvar som utkast med
   titeln `BÄNK · …` och återanvänds mot jul (sista beställning tis 8/12).
 
+**Varje mejl har en egen bild överst** sedan 2026-09-29 (Axels dom: "det är bara samma bild i alla mejl … alla kommer unsubscribea"): motivet per mejl står i `bildplan.json` bredvid den här filen, registret i `klaviyo/konto/matstrumpor/bilder.json`, och bygget stoppar två kampanjer med samma bild överst inom 21 dygn. Nytt mejl i serien = ny rad i bildplanen, `node klaviyo/mejlbilder.mjs --brand matstrumpor --generera --bara <namn>`, titta, `--godkann`, `upload_media`, `--spoks` (`klaviyo/spoks/README.md` → Bilderna).
+
 **Granska allt på en sida:** https://claude.ai/artifact/VgHANQtbtSFQZnVkogj9ma (alla mejl som ska ut, i utskicksordning, med knapp till varje utkast; byggs om med `node klaviyo/gallerier.mjs --brand matstrumpor --granska --fran <datum>` och publiceras på samma länk). **Publik och Schedule per mejl är Axels klick** i appen, klockslaget står i tabellen. Fältet
 "Till:" ska vara exakt segmentet i kolumnen Publik, och `SEG_oengagerade_180d` utesluts.
 
@@ -169,3 +171,5 @@ skriver in det här.
   `VECKANS-DRAGNING.md` sist i brödtexten (Premiär första gången, sedan Återkommande).
   Bara tisdagar med en skarp rad i `klaviyo/konto/matstrumpor/dragningar.jsonl`; ingen
   dragning ⇒ inget block. K01 (schemalagd) rörs inte; K02 6/10 är första kandidaten.
+  **Första skarpa dragningen tis 6/10 är godkänd** (Axel 2026-09-29: "A, kör lotteriet 6/10");
+  påminnelsen `trig_017jCVjHEjJmkJP4qS51iNjE` kör den på morgonen.

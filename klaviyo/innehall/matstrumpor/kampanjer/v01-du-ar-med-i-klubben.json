@@ -26,7 +26,7 @@
       "typ": "hero",
       "rubrik": "Du är med i klubben",
       "text": "Hej {{fornamn}},\n\nDu är medlem i Matstrumpor-klubben, och det här får du.",
-      "bild": "produkt:sushi-strumpor",
+      "bild": "bild:klubb-tre-vinster",
       "knapp": null
     },
     {

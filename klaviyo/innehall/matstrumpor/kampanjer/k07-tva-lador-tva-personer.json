@@ -26,7 +26,7 @@
       "typ": "hero",
       "rubrik": "Två lådor, två personer på listan",
       "text": "Hej {{fornamn}},\n\nDe flesta beställningar innehåller två lådor. En till mamma, en till brorsan. En till dig, en till någon annan.\n\nMed Köp 1, få 1 köper du sushilådan till mamma och får en till brorsan på köpet.",
-      "bild": "produkt:sushi-strumpor",
+      "bild": "bild:tva-klappar-under-granen",
       "knapp": { "text": "Se sushilådan", "lank": "produkt:sushi-strumpor" }
     },
     {

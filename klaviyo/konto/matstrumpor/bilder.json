@@ -1,0 +1,301 @@
+{
+  "om": "Mejlbildernas register: namn → url (butikens Shopify-CDN), alt, länk och Spoks-id. Skrivs av node klaviyo/mejlbilder.mjs, aldrig för hand. Innehållet pekar hit med \"bild\": \"bild:<namn>\".",
+  "bilder": {
+    "barnbarn-ger-ladan": {
+      "url": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/mejl-barnbarn-ger-ladan.jpg?v=1790686515",
+      "alt": "Ett barn ger sushilådan till sin morfar",
+      "lank": "produkt:sushi-strumpor",
+      "kalla": "egen fil 0f63891919ebd2f70b72924839f8089e-1.jpg",
+      "godkand": "2026-09-29",
+      "spoks_id": "bf95610f-6c66-4f18-a2b4-cc97879cf1b6"
+    },
+    "black-friday-burgare": {
+      "url": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/mejl-black-friday-burgare.jpg?v=1790686714",
+      "alt": "Hamburgarlådan i strålkastarljus på svart marmor",
+      "lank": "produkt:hamburger-strumpor",
+      "kalla": "egen fil 40e1e39213e22d1ec8e1f577f611a198-1.jpg",
+      "godkand": "2026-09-29",
+      "spoks_id": "325bb520-51fb-4e16-860f-31a04b3d9174"
+    },
+    "black-week-morkt": {
+      "url": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/mejl-black-week-morkt.jpg?v=1790686709",
+      "alt": "Pizzalådan, sushilådan och donutlådan i mörkt ljus",
+      "lank": "kollektion:alla-produkter",
+      "kalla": "egen fil 7ec3ebd71acf2152a33264b2760bf555-1.jpg",
+      "godkand": "2026-09-29",
+      "spoks_id": "79821167-c34e-4c3e-8221-0875eab85d38"
+    },
+    "burgare-mot-burgare": {
+      "url": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/mejl-burgare-mot-burgare.jpg?v=1790686562",
+      "alt": "Hamburgarlådan bredvid en riktig hamburgare",
+      "lank": "produkt:hamburger-strumpor",
+      "kalla": "egen fil ee3e5d9e980823604ba87da5c921acb0-1.jpg",
+      "godkand": "2026-09-29",
+      "spoks_id": "0a72df5d-a634-45d4-b401-ac4114cfde38"
+    },
+    "burgare-pa-diner": {
+      "url": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/mejl-burgare-pa-diner.jpg?v=1790686520",
+      "alt": "Hamburgarlådan på en röd diner-bricka med pommes",
+      "lank": "produkt:hamburger-strumpor",
+      "kalla": "egen fil 2ada8d407fbe2b9f828eb52efc0e6d9f-1.jpg",
+      "godkand": "2026-09-29",
+      "spoks_id": "3a9c86f0-5ec0-4921-ab67-54fa37b7da36"
+    },
+    "donut-bageri": {
+      "url": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/mejl-donut-bageri.jpg?v=1790686683",
+      "alt": "Donutlådan bredvid riktiga munkar på en bagerikaka",
+      "lank": "produkt:donut-strumpor",
+      "kalla": "egen fil 78954b13cf69fd8935ee2c3ee82c5424-1.jpg",
+      "godkand": "2026-09-29",
+      "spoks_id": "a258b327-9bf6-411a-94f0-f9bc66513a54"
+    },
+    "familjen-i-soffan": {
+      "url": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/matstrumpor_52_alla_fotter_soffan.jpg",
+      "alt": "Hela familjens fötter i soffan, i sushi-, pizza- och donutstrumpor",
+      "lank": "kollektion:alla-produkter",
+      "kalla": "butikens egen bild i Shopify Files",
+      "godkand": "2026-09-29",
+      "spoks_id": "6f40798f-cf15-49a9-92b9-53e4ba02a7b5"
+    },
+    "frukost-pa-sangen": {
+      "url": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/mejl-frukost-pa-sangen.jpg?v=1790686604",
+      "alt": "Frukost på sängen till fars dag med sushilådan på brickan",
+      "lank": "produkt:sushi-strumpor",
+      "kalla": "egen fil 4f3b5422b2194231bb1ebd2f2913ac74-1.jpg",
+      "godkand": "2026-09-29",
+      "spoks_id": "ff8a5cf8-bb82-4c2a-a7db-aad1c7e9b96e"
+    },
+    "fyra-sorter-ovanifran": {
+      "url": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/mejl-fyra-sorter-ovanifran.jpg?v=1790686678",
+      "alt": "Alla fyra lådorna ovanifrån: sushi, pizza, hamburgare och donut",
+      "lank": "kollektion:alla-produkter",
+      "kalla": "egen fil 59c0a0fd4ba5820694b82fbecf0955b4-2-beskuren.jpg",
+      "godkand": "2026-09-29",
+      "spoks_id": "a9c1cf74-d796-4e96-817d-f587664dc588"
+    },
+    "glogg-vid-brasan": {
+      "url": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/mejl-glogg-vid-brasan.jpg?v=1790686725",
+      "alt": "Fötter i sushistrumpor vid brasan med glögg och pepparkakor",
+      "lank": "produkt:sushi-strumpor",
+      "kalla": "egen fil adc81b97d48c98bde71bb9757ac23fc4-1.jpg",
+      "godkand": "2026-09-29",
+      "spoks_id": "3ff672c0-f728-4180-be1c-444d7bf2844c"
+    },
+    "hostpasen-i-hallen": {
+      "url": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/mejl-hostpasen-i-hallen.jpg?v=1790686525",
+      "alt": "En presentpåse med sushilådan i hallen bland höstlöv",
+      "lank": "produkt:sushi-strumpor",
+      "kalla": "egen fil 0515f802815069a7b888893b0847d158-1.jpg",
+      "godkand": "2026-09-29",
+      "spoks_id": "37d93967-ed46-4e20-9d7b-05f35ddadedb"
+    },
+    "julpapper-flatlay": {
+      "url": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/mejl-julpapper-flatlay.jpg?v=1790686704",
+      "alt": "Alla fyra lådorna på julpapper med band och pepparkakor",
+      "lank": "kollektion:alla-produkter",
+      "kalla": "egen fil 4d7433460a867d11081dce1910ba5d44-1.jpg",
+      "godkand": "2026-09-29",
+      "spoks_id": "dd69e2e8-1b34-4bb3-96ce-7b8b1efc0e1e"
+    },
+    "julstrumpan": {
+      "url": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/mejl-julstrumpan.jpg?v=1790686567",
+      "alt": "En julstrumpa vid brasan med sushistrumpor som sticker upp",
+      "lank": "produkt:sushi-strumpor",
+      "kalla": "egen fil a1830c259dfc4c5939871c226f2232fc-1.jpg",
+      "godkand": "2026-09-29",
+      "spoks_id": "f5712b45-81e1-4c25-8da3-9d8471e7059d"
+    },
+    "klubb-tre-vinster": {
+      "url": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/mejl-klubb-tre-vinster.jpg?v=1790686495",
+      "alt": "Tre sushilådor med guldrosett, veckans tre vinster i klubben",
+      "lank": "produkt:sushi-strumpor",
+      "kalla": "egen fil 9a765b606752116e0b40fcd742a04d7f-1.jpg",
+      "godkand": "2026-09-29",
+      "spoks_id": "a1e80851-eb3b-4113-a9d9-8eb3966d5f7e"
+    },
+    "kuvert-pa-frukostbordet": {
+      "url": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/mejl-kuvert-pa-frukostbordet.jpg?v=1790686572",
+      "alt": "Ett kuvert med rött band och en laxbit av strumpor på frukostbordet",
+      "lank": "produkt:sushi-strumpor",
+      "kalla": "egen fil 25ccb265846b5271b0c82841dbc4e708-1.jpg",
+      "godkand": "2026-09-29",
+      "spoks_id": "85a49bde-d5a2-47c9-a383-fffa57d3d280"
+    },
+    "ljus-i-kvall": {
+      "url": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/mejl-ljus-i-kvall.jpg?v=1790686577",
+      "alt": "Sushilådan i levande ljus en kväll",
+      "lank": "produkt:sushi-strumpor",
+      "kalla": "egen fil 276a8439b930fe8a95772ad2694aff19-1.jpg",
+      "godkand": "2026-09-29",
+      "spoks_id": "0a8651e1-4cad-404f-98bf-2ddd8eaab800"
+    },
+    "morfar-i-fatoljen": {
+      "url": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/matstrumpor_63_morfar_fatoljen.jpg",
+      "alt": "Morfar i fåtöljen med pizzastrumporna på",
+      "lank": "produkt:pizza-strumpor",
+      "kalla": "butikens egen bild i Shopify Files",
+      "godkand": "2026-09-29",
+      "spoks_id": "1838cc17-ac54-4c3c-8f0e-8b4d33f814f9"
+    },
+    "morgonkaffe-bredvid-ladan": {
+      "url": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/mejl-morgonkaffe-bredvid-ladan.jpg?v=1790686582",
+      "alt": "Sushilådan på köksbänken bredvid morgonkaffet",
+      "lank": "produkt:sushi-strumpor",
+      "kalla": "egen fil 2908a511429cbc3d35a22bcf676f1f1a-1.jpg",
+      "godkand": "2026-09-29",
+      "spoks_id": "ee9c63ec-88c2-4dd1-bce0-ce6d4d9985dc"
+    },
+    "mormor-skrattar": {
+      "url": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/matstrumpor_62_mormor_skrattar.jpg",
+      "alt": "Mormor skrattar med lådan i händerna på sitt födelsedagskalas",
+      "lank": "kollektion:alla-produkter",
+      "kalla": "butikens egen bild i Shopify Files",
+      "godkand": "2026-09-29",
+      "spoks_id": "f5300efa-5453-4c24-a8ca-4d6f4a66153f"
+    },
+    "nattduksbordet": {
+      "url": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/mejl-nattduksbordet.jpg?v=1790686693",
+      "alt": "Sushilådan på nattduksbordet en kväll",
+      "lank": "produkt:sushi-strumpor",
+      "kalla": "egen fil 8d1e6c055f0cef3326e06ac50bbbbd6a-1.jpg",
+      "godkand": "2026-09-29",
+      "spoks_id": "f96b0a5a-d9e6-457f-a8f8-efda4e122f24"
+    },
+    "packas-i-kartong": {
+      "url": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/mejl-packas-i-kartong.jpg?v=1790686587",
+      "alt": "Sushilådan packas i en kartong för att skickas",
+      "lank": "produkt:sushi-strumpor",
+      "kalla": "egen fil e71afa0eec602f8e4a707e26a43aa31c-1.jpg",
+      "godkand": "2026-09-29",
+      "spoks_id": "57eb4dcc-a530-4e54-82ba-28b3dfc59b62"
+    },
+    "paketet-vid-dorren": {
+      "url": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/matstrumpor_61_dorrmattan.jpg",
+      "alt": "Paketet med sushilådan har kommit fram till dörren",
+      "lank": "produkt:sushi-strumpor",
+      "kalla": "butikens egen bild i Shopify Files",
+      "godkand": "2026-09-29",
+      "spoks_id": "0550a4a7-7fda-4e8f-9b6e-b4374a8824fc"
+    },
+    "pappa-oppnar-ladan": {
+      "url": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/mejl-pappa-oppnar-ladan.jpg?v=1790686510",
+      "alt": "Pappas händer lyfter locket på sushilådan",
+      "lank": "produkt:sushi-strumpor",
+      "kalla": "egen fil 5309a882bedf34ca67bd3a403abeefb3-1.jpg",
+      "godkand": "2026-09-29",
+      "spoks_id": "d25ac8c6-4f33-4519-93d2-e7ff9e38cc33"
+    },
+    "pinnarna-och-soja": {
+      "url": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/mejl-pinnarna-och-soja.jpg?v=1790686500",
+      "alt": "Ätpinnar lyfter en laxbit av strumpor mot sojan",
+      "lank": "produkt:sushi-strumpor",
+      "kalla": "egen fil b06f48d364aca84e1fb89dc6b759cbe0-1.jpg",
+      "godkand": "2026-09-29",
+      "spoks_id": "fbbf054e-77db-4727-99fd-1b5f9728c575"
+    },
+    "pizza-rutig-duk": {
+      "url": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/mejl-pizza-rutig-duk.jpg?v=1790686530",
+      "alt": "Pizzalådan på en rutig duk med pizzaskärare och basilika",
+      "lank": "produkt:pizza-strumpor",
+      "kalla": "egen fil e2a681aed950bdb58a8e80d2358a4921-1.jpg",
+      "godkand": "2026-09-29",
+      "spoks_id": "c52d278b-f243-401d-834f-30f756130ed2"
+    },
+    "pizzabit-med-spade": {
+      "url": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/mejl-pizzabit-med-spade.jpg?v=1790686593",
+      "alt": "En pizzaspade lyfter en pizzastrumpa ur pizzalådan",
+      "lank": "produkt:pizza-strumpor",
+      "kalla": "egen fil c912d454aa15c784ea2feac4d23d1f55-1.jpg",
+      "godkand": "2026-09-29",
+      "spoks_id": "7f1e3dcf-72ae-46df-ba96-141c85480bea"
+    },
+    "pizzastrumpor-pa-fotter": {
+      "url": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/mejl-pizzastrumpor-pa-fotter.jpg?v=1790686535",
+      "alt": "Pappas fötter i pizzastrumporna på soffbordet",
+      "lank": "produkt:pizza-strumpor",
+      "kalla": "egen fil b5f13f2e6f36474c5b72901ae58a3395-1.jpg",
+      "godkand": "2026-09-29",
+      "spoks_id": "b0261e3b-1e1e-496e-9918-73b0338980ba"
+    },
+    "rott-kuvert-jul": {
+      "url": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/mejl-rott-kuvert-jul.jpg?v=1790686729",
+      "alt": "Ett rött kuvert med guldband på julbordet",
+      "lank": "produkt:sushi-strumpor",
+      "kalla": "egen fil c1e7d6a3291f87154db74d3e192776d9-1.jpg",
+      "godkand": "2026-09-29",
+      "spoks_id": "6e9ab02f-a20a-4bfa-ac24-44a2ee7519ca"
+    },
+    "sista-ladan-pa-hyllan": {
+      "url": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/mejl-sista-ladan-pa-hyllan.jpg?v=1790686688",
+      "alt": "En nästan tom hylla med en enda sushilåda kvar",
+      "lank": "produkt:sushi-strumpor",
+      "kalla": "egen fil aaebb3c7a8a1439ed9a4af2ddc1e5ad9-1.jpg",
+      "godkand": "2026-09-29",
+      "spoks_id": "4962f276-a373-4c5b-8a96-4fdf94d82fb1"
+    },
+    "slas-in-i-papper": {
+      "url": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/mejl-slas-in-i-papper.jpg?v=1790686540",
+      "alt": "Sushilådan slås in i brunt papper med snöre",
+      "lank": "produkt:sushi-strumpor",
+      "kalla": "egen fil c0770310d41b7c917f0be496b98f32a4-1.jpg",
+      "godkand": "2026-09-29",
+      "spoks_id": "abde5ffb-b122-4d47-91ce-ac5cbfe4e5f7"
+    },
+    "sushi-pa-bambufat": {
+      "url": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/openart-bc64e45b-b775-417a-99cd-d269208aafcf_1.png",
+      "alt": "Sushistrumporna uppdukade på ett bambufat",
+      "lank": "produkt:sushi-strumpor",
+      "kalla": "butikens egen bild i Shopify Files",
+      "godkand": "2026-09-29",
+      "spoks_id": "6002a641-51ba-408c-b8e1-ba513b6e48df"
+    },
+    "sushibordet": {
+      "url": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/hf_20260225_045241_92dce67d-dbb6-4a7b-a5ff-ca8ba3833899.jpg",
+      "alt": "Sushilådan och strumporna på ett dukat bord med soja",
+      "lank": "produkt:sushi-strumpor",
+      "kalla": "butikens egen bild i Shopify Files",
+      "godkand": "2026-09-29",
+      "spoks_id": "ce6fc06d-4c8e-468e-9b21-ca0254972289"
+    },
+    "trakig-mot-rolig": {
+      "url": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/mejl-trakig-mot-rolig.jpg?v=1790686505",
+      "alt": "En tråkig tvättmedelsflaska bredvid den färgglada sushilådan",
+      "lank": "produkt:sushi-strumpor",
+      "kalla": "egen fil 1ecf5cd227b8f7fc8c751fa5b0cbf094-1.jpg",
+      "godkand": "2026-09-29",
+      "spoks_id": "2d19ecbe-e269-4a31-8691-f86cc1568028"
+    },
+    "tva-klappar-under-granen": {
+      "url": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/mejl-tva-klappar-under-granen.jpg?v=1790686698",
+      "alt": "Sushilådan och pizzalådan som två julklappar under granen",
+      "lank": "kollektion:alla-produkter",
+      "kalla": "egen fil 45fe3426cfad53b8eb85bc0fc117ced1-1.jpg",
+      "godkand": "2026-09-29",
+      "spoks_id": "2df7363c-2455-4905-8c50-bb83b754d0b7"
+    },
+    "tva-sushilador": {
+      "url": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/mejl-tva-sushilador.jpg?v=1790686551",
+      "alt": "Två sushilådor: en inslagen till pappa, en öppen att behålla",
+      "lank": "produkt:sushi-strumpor",
+      "kalla": "egen fil 170f77ac372a72dde2a90a6d231f1a4e-1.jpg",
+      "godkand": "2026-09-29",
+      "spoks_id": "cd1431b1-3cf5-4342-9277-96971c183938"
+    },
+    "under-granen": {
+      "url": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/mejl-under-granen.jpg?v=1790686719",
+      "alt": "Sushilådan med rött band under julgranen",
+      "lank": "produkt:sushi-strumpor",
+      "kalla": "egen fil f207225c09db59c29b1096764f021da0-1.jpg",
+      "godkand": "2026-09-29",
+      "spoks_id": "9ac48563-a2b1-4bd0-b57f-68268e18fc6e"
+    },
+    "ur-presentpasen": {
+      "url": "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/mejl-ur-presentpasen.jpg?v=1790686556",
+      "alt": "Sushilådan lyfts upp ur en presentpåse vid middagsbordet",
+      "lank": "produkt:sushi-strumpor",
+      "kalla": "egen fil 4f6f915c563fd3b3398df1ad113fe989-1.jpg",
+      "godkand": "2026-09-29",
+      "spoks_id": "dd611b89-bd35-416d-b049-4c48b37620dd"
+    }
+  }
+}

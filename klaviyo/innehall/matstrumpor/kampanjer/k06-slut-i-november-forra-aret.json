@@ -35,7 +35,7 @@
       "typ": "hero",
       "rubrik": "I november förra året sålde vi slut",
       "text": "Hej {{fornamn}},\n\nI november 2025 sålde sushilådan slut. Vi vet inte om det händer igen, men om du ändå tänkte köpa till jul kan det vara läge att göra det nu.",
-      "bild": "produkt:sushi-strumpor",
+      "bild": "bild:sista-ladan-pa-hyllan",
       "knapp": {
         "text": "Se sushilådan",
         "lank": "produkt:sushi-strumpor"

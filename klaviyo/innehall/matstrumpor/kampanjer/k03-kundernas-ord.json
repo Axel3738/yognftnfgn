@@ -32,6 +32,10 @@
   "forhandstext": "Två köpare av sushilådan berättar hur det gick när de gav bort den.",
   "block": [
     {
+      "typ": "hero",
+      "bild": "bild:barnbarn-ger-ladan"
+    },
+    {
       "typ": "text",
       "rubrik": "Det här skrev kunderna",
       "text": "Den ena skrev att mottagaren blev så glad, den andra att lådorna var roliga att ge till barn och barnbarn."

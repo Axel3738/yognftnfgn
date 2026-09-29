@@ -31,7 +31,7 @@
       "typ": "hero",
       "rubrik": "Beställ senast tisdag 8 december",
       "text": "{{fornamn}}, beställer du senast tisdag 8 december hinner paketet fram innan julafton. Efter det datumet räknar vi inte med att det gör det.",
-      "bild": "produkt:sushi-strumpor",
+      "bild": "bild:under-granen",
       "knapp": { "text": "Beställ innan tisdag", "lank": "kollektion:alla-produkter" }
     },
     {
