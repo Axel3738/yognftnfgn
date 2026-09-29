@@ -239,3 +239,1207 @@ En per etiketterad annons (docs/os/CS-KLART.md punkt 1–5). Skrivs av `node age
 
 ## Bälteslipmaskinen (120249902177470291)
 
+### Lärdom L-120250330247960291 — Takoverdrag_PD_10_1 (KPI_WINNER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 3 |
+| Utfall | KPI_WINNER |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 8 043 kr / 94 712 kr (8 %) |
+| Köp | 17 |
+| ROAS / CPA | 2,82 / 473 kr — kampanjens ROAS 2,06 |
+| Konverteringsgrad | 4,8 % (17 köp / 357 LPV) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | ja |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Bilden (statisk): produktfoto, rubrik överst i bilden — inte avläst i den här ronden (thumbnail via Graph, ffmpeg/bildläsning saknas); primärtext (live 2026-09-29): "Nio storlekar – från 3 × 5,5 till 3 × 13,5 meter. Från 1 129 kr. Sitter kvar när det blåser – remmar på alla fyra sidor, 2,5 meter och justerbara efter din vagn." · rubrik: "Nio storlekar. Från 1 129 kr."
+- Samma creative som LISTICLE-kampanjens Takoverdrag_PD_10_1 (BREAKTHROUGH 2026-09-27, komponentkarta i dna.md) — här i SE-huvudkampanjen med 8 043 kr / 17 köp
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | husvagnsagare-som-tvekar-pa-storleken ("finns den för min?") — Axels annonsidé 2026-09-18, dna.md avatar 4 | ja |
+| Vinkel | — (brief saknas i repot) | PD som statisk: storlekarna som påstående ("Nio storlekar – från 3 × 5,5 till 3 × 13,5 meter"), rent formattest på PD_10_H1 (batch #3) | ja |
+| Medvetandenivå | — (brief saknas i repot) | lösningsmedveten (tvivlet på passform tas bort före klicket) | ja |
+| Mekanism | — (brief saknas i repot) | remmar på alla fyra sidor, 2,5 m, justerbara — "Sitter kvar när det blåser" | ja |
+| Tro | — (brief saknas i repot) | måtten och storleksspannet i klartext; inga recensioner i copyn | ja |
+| Positionering | — (brief saknas i repot) | "Från 1 129 kr" — pris från, nio storlekar | ja |
+| Brådska | — (brief saknas i repot) | ingen | ja |
+**Utförandet föll:** nej — batch #3:s rad "Samma nya variabel som PD_10_H1 som bild — rent formattest" (batch-log 2026-09-22) stämmer med den live copyn · utford_som_briefad: okänd
+
+**Diagnos:** KPI winner: läs hook rate, sedan hold rate, sedan förbi hooken. Den säljer men får inte spend — får den ingen spend på sju dagar är den en förlorare.
+
+**Hypotes (gissning):** Gissning: storleksinvändningen som statisk bild konverterar i huvudkampanjen precis som i listiclen (CPA 473 kr mot break-even-CPA ~880 kr = AOV 1 334 ÷ 1,52; ROAS 2,82 mot kampanjens 2,06) — bilden svarar på "finns den för min?" innan klicket, så de som klickar har redan sållat sig rätt; att den bara får 8 % av spenden är auktionen som föredrar video, inte bildens fel (n = 17 köp, en annons, samma dygn som SP_4_H1-breakthrough tog 40 %).
+
+**Nästa annonser:**
+- `Takoverdrag_PD_10_2` — typ I, parent Takoverdrag_PD_10_1, iteration 1: samma bild och prisband, BARA rubriken byts — mekanismen först ("Sitter kvar när det blåser. Nio storlekar."), storlekarna som underrad; enda variabeln är rubriken (KPI winner-playbook: tre nya hookar, allt annat lika)
+- `Takoverdrag_PD_10_3` — typ I, parent Takoverdrag_PD_10_1, iteration 2: samma bild, rubriken som måttet på den egna vagnen ("3 × 5,5 till 3 × 13,5 meter — en passar din"), priset i bandet
+Not: Numren PD_10_2/PD_10_3 ska läsas lediga i hubben BÄVER Taköverdraget OCH kontot innan de används (statisk ny version = nästa siffra på samma AD-ID); rundan tas när Taköverdragets nästa brief-runda förfaller (batch #7 skrevs 2026-09-28)
+
+### Lärdom L-120250330347560291 — Takoverdrag_CS_8_H1 (LOSER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | LOSER |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 3 569 kr / 94 712 kr (4 %) |
+| Köp | 4 |
+| ROAS / CPA | 1,58 / 892 kr — kampanjens ROAS 2,06 |
+| Konverteringsgrad | 1,7 % (4 köp / 242 LPV) |
+| Hook rate / hold rate | 39 % / 12 % |
+| Bedömbar | ja |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "Taket — den delen du aldrig ser efter." · rad 2: "Rem och dragsko håller den på plats, 210D-väv hela vintersäsongen." · rad 3: "1 129 kr mot 1 469 kr. 5,0 av 5 på 10 recensioner." · rubrik: "Taket du aldrig ser efter. 210D-väv."
+- VO/första frame: inte transkriberad (ffmpeg saknas). Samma tak-idé som RI_3_H1 men prisankaret (1 129 mot 1 469) och recensionsraden (⚠️ importrader) i stället för reparationskostnaden
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | husvagnsagare-infor-vintern — samma som RI_3_H1 | ja |
+| Vinkel | — (brief saknas i repot) | CS (prisankare): 1 129 kr mot 1 469 kr, taket som du aldrig ser efter | nej |
+| Medvetandenivå | — (brief saknas i repot) | lösningsmedveten (priset först) | okänd |
+| Mekanism | — (brief saknas i repot) | rem och dragsko håller den på plats, 210D-väv hela vintersäsongen | ja |
+| Tro | — (brief saknas i repot) | "5,0 av 5 på 10 recensioner" (⚠️ importrader) | nej |
+| Positionering | — (brief saknas i repot) | prisankare mot jämförpriset — batch #2 ville ankra mot reparationskostnaden, det gör RI_3_H1, inte den här | nej |
+| Brådska | — (brief saknas i repot) | ingen | ja |
+**Utförandet föll:** ja — batch #2:s rad "Priset ankrat mot reparationskostnaden i stället för mot jämförpriset" är INTE vad som kör: den live copyn ankrar mot jämförpriset 1 469 kr; idén (reparationskostnaden) hamnade i RI_3_H1, som vann · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: samma tak-öppning som RI_3_H1 men med prisankare + importrecensioner i stället för reparationskostnaden gav 4 köp på 3 569 kr (ROAS 1,58, CPA 892 kr över break-even-CPA ~865 kr) mot RI_3_H1:s 4 köp på 1 855 kr — Meta gav prisvarianten dubbelt så mycket spend men den sålde hälften så bra per krona; gissningen är att "taket du aldrig ser" behöver kostnaden av skadan som bridge, inte rabatten, och att recensionsraden inte tillför något (n = 4, preliminär).
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER bedömbar (ROAS 1,58 under kampanjens 2,06 och break-even-CPA): idén lever vidare i RI_3_H1:s vidarebyggen (RI_3_H2/H3), inte i en till prisvariant; ingen iteration på CS_8
+
+### Lärdom L-120250330348390291 — Takoverdrag_RI_2_H1 (KPI_WINNER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | KPI_WINNER |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 2 927 kr / 94 712 kr (3 %) |
+| Köp | 5 |
+| ROAS / CPA | 2,25 / 585 kr — kampanjens ROAS 2,06 |
+| Konverteringsgrad | 3,3 % (5 köp / 154 LPV) |
+| Hook rate / hold rate | 46 % / 10 % |
+| Bedömbar | ja |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "Frosten kommer i gryningen — en tunn presenning stelnar och spricker." · rad 2: "Vår 210D-väv böjs ändå, i samma kyla." · rad 3: "1 129 kr. 5,0 av 5 på 10 recensioner." · rubrik: "Första frosten. 210D-väv håller formen."
+- VO/första frame: inte transkriberad (ffmpeg saknas) — hook rate/hold rate ur etikettraden. ⚠️ "5,0 av 5 på 10 recensioner" är de tio launchimporterade recensionerna (dna.md, komponentkartan SP_4_H1) — raden ärvs inte i en iteration
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | husvagnsagare-infor-vintern (frosten i gryningen, presenningen som spricker) — dna.md avatar 1 | ja |
+| Vinkel | — (brief saknas i repot) | RI (risken/kostnaden av fel skydd): presenningen spricker i frost, 210D-väven böjs | ja |
+| Medvetandenivå | — (brief saknas i repot) | problemmedveten → lösningsmedveten (presenning mot väv) | ja |
+| Mekanism | — (brief saknas i repot) | 210D-väv som böjs i kyla i stället för att stelna | ja |
+| Tro | — (brief saknas i repot) | "5,0 av 5 på 10 recensioner" (⚠️ importrader) + materialraden ur sidan | nej |
+| Positionering | — (brief saknas i repot) | 1 129 kr, mot en tunn presenning (inte mot jämförpriset) | ja |
+| Brådska | — (brief saknas i repot) | säsongens — första frosten som äkta deadline (batch #2:s hypotes), ingen påhittad lagerbrist | ja |
+**Utförandet föll:** ja (tro) — recensionsraden "5,0 av 5 på 10" är importrader: utförandets fel, inte idéns; idén (frosten som deadline) stämmer · utford_som_briefad: okänd
+
+**Diagnos:** KPI winner: läs hook rate, sedan hold rate, sedan förbi hooken. Den säljer men får inte spend — får den ingen spend på sju dagar är den en förlorare.
+
+**Hypotes (gissning):** Gissning: frosten som äkta deadline säljer (CPA 585 kr mot break-even-CPA ~865 kr = AOV 1 316 ÷ 1,52, ROAS 2,25 mot kampanjens 2,06) men får bara 3 % av spenden — en säsongshook som Meta ger lite volym tills första frosten faktiskt kommer; de fem köpen på 2 927 kr är nära grinden och kan revideras, så domen är preliminär (n = 5).
+
+**Nästa annonser:**
+- `Takoverdrag_RI_2_H2` — typ I, parent Takoverdrag_RI_2_H1, iteration 1: ny hook (0–3 s) — presenningen som spricker visad, inte berättad (bild av stel presenning i frost), resten som H1; recensionsraden "5,0 av 5 på 10" tas bort ur copyn (importrader, Brief review-regel 2: förälderns obelagda rad rättas i iterationen)
+Not: Fler RI_2-hookar först när H2 fått etikett — KPI winner-playbooken säger tre nya hookar, men frosten är en säsongshook och H2 avgör om det är hooken eller kalendern som håller spenden nere
+
+### Lärdom L-120250330352260291 — Takoverdrag_RI_3_H1 (KPI_WINNER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | KPI_WINNER |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 1 855 kr / 94 712 kr (2 %) |
+| Köp | 4 |
+| ROAS / CPA | 2,86 / 464 kr — kampanjens ROAS 2,06 |
+| Konverteringsgrad | 3,0 % (4 köp / 133 LPV) |
+| Hook rate / hold rate | 34 % / 8 % |
+| Bedömbar | ja |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "Taket är det du aldrig ser. Det är också den ytan som kostar mest att laga om den går sönder." · rad 2: "Ett överdrag i 210D-väv täcker hela taket, 6,5 × 3 meter, så vatten aldrig blir stående kring takluckorna." · rad 3: "1 129 kr, ord. 1 469 kr (spara 340 kr)." · rubrik: "Taket du aldrig ser"
+- VO/första frame: inte transkriberad (ffmpeg saknas) — hook rate/hold rate ur etikettraden
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | husvagnsagare-infor-vintern — ägaren som aldrig går upp och tittar på sitt eget tak (sidans egen rad) | ja |
+| Vinkel | — (brief saknas i repot) | RI (den blinda ytan kostar mest att laga): risken av att inte skydda | ja |
+| Medvetandenivå | — (brief saknas i repot) | problemmedveten (taket är ytan du aldrig ser) | ja |
+| Mekanism | — (brief saknas i repot) | 210D-väv över hela taket 6,5 × 3 m så vatten inte står vid takluckorna | ja |
+| Tro | — (brief saknas i repot) | sidans egna rader (måttet, takluckorna); inga recensioner i copyn | ja |
+| Positionering | — (brief saknas i repot) | 1 129 kr mot ord. 1 469 kr (spara 340 kr) | ja |
+| Brådska | — (brief saknas i repot) | ingen | ja |
+**Utförandet föll:** nej — batch #2:s rad "Den blinda ytan: taket är det enda ägaren aldrig ser på sin egen vagn" stämmer med den live copyn · utford_som_briefad: okänd
+
+**Diagnos:** KPI winner: läs hook rate, sedan hold rate, sedan förbi hooken. Den säljer men får inte spend — får den ingen spend på sju dagar är den en förlorare.
+
+**Hypotes (gissning):** Gissning: "taket du aldrig ser" + reparationskostnaden konverterar bäst av dagens tre bedömbara videor (ROAS 2,86, CPA 464 kr mot break-even-CPA ~865 kr) men får bara 2 % av spenden — samma mönster som RI_2_H1: en RI-hook som säljer till dem den når men inte vinner auktionen; syskonet CS_8_H1 med samma tak-idé men prisankaret först fick 4 köp på 3 569 kr, så det är risk-framingen, inte prisankaret, som bär (n = 4, preliminär).
+
+**Nästa annonser:**
+- `Takoverdrag_RI_3_H2` — typ I, parent Takoverdrag_RI_3_H1, iteration 1: ny hook (0–3 s) — taket filmat rakt uppifrån med stående vatten vid takluckan (sidans egen scen), sedan H1:s rader; enda variabeln är hooken
+- `Takoverdrag_RI_3_H3` — typ I, parent Takoverdrag_RI_3_H1, iteration 2: längre problemdel (4–6 s) — vad en takreparation innebär för ägaren (utan påhittad kronsiffra, backlog-regeln), sedan H1:s lösning
+
+### Lärdom L-120250330248770291 — Takoverdrag_PD_8_1 (LOSER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | LOSER |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 756 kr / 94 712 kr (1 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,06 |
+| Konverteringsgrad | 0,0 % (0 köp / 31 LPV) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "6,5 × 3 meter – hela taket, inget mer. 210D-väv som tål en hel vintersäsong ute. 19,5 m², hanteras av en person." · rubrik: "6,5 × 3 meter – hela taket"
+- Första frame / VO: inte avläst i den här ronden (bilden ej avläst) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — ingen person eller scen i texten | okänd |
+| Vinkel | — (brief saknas i repot) | PD (problem → demo) enligt namnkoden; copyn: "6,5 × 3 meter – hela taket, inget mer. 210D-väv som tål en hel vintersäsong ute. 19,5 m², …" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "6,5 × 3 meter – hela taket, inget mer. 210D-väv som tål en hel vintersäsong ute. 19,5 m², hanteras av en person." | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 756 kr och 0 köp första veckan är under grinden (300 kr / 3 köp) — annonsen förlorade auktionen mot syskonen, och siffrorna kan inte skilja en svag idé från en svag öppning; ingen dom.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden: en observation, ingen dom och ingen iteration (loser-regeln: iterera bara ur research, och det finns ingen bedömbar signal att iterera på).
+
+### Lärdom L-120250330347950291 — Takoverdrag_CS_7_H1 (LOSER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | LOSER |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 712 kr / 94 712 kr (1 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,06 |
+| Konverteringsgrad | 0,0 % (0 köp / 35 LPV) |
+| Hook rate / hold rate | 29 % / 12 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "1 129 kr. Inte 1 469 kr — 340 kr mindre." · rubrik: "1 129 kr, inte 1 469 kr."
+- Första frame / VO: inte avläst i den här ronden (videon inte transkriberad) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — ingen person eller scen i texten | okänd |
+| Vinkel | — (brief saknas i repot) | CS (pris/kostnadsankare) enligt namnkoden; copyn: "1 129 kr. Inte 1 469 kr — 340 kr mindre. En person fäster den, hand mot 210D-väven. Täckt …" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "1 129 kr. Inte 1 469 kr — 340 kr mindre. En person fäster den, hand mot 210D-väven. Täckt av snö. 5,0 av 5 på 10 recensi…" | okänd |
+| Tro | — (brief saknas i repot) | recensioner/stjärnor i copyn | okänd |
+| Positionering | — (brief saknas i repot) | pris 1 129 kr i copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 712 kr och 0 köp första veckan är under grinden (300 kr / 3 köp) — annonsen förlorade auktionen mot syskonen, och siffrorna kan inte skilja en svag idé från en svag öppning; ingen dom.
+
+**Nästa annonser:**
+- `SLÄPP` för SE — LOSER under grinden (712 kr, 0 köp). ⚠️ Samma creative kör som `CaraShellRoof_NO_CS_107_H1` i CaraShells NO-kampanj med 10 köp på 5 060 kr (KPI_WINNER, bedömbar, etikett 2026-09-29): prisankaret vinner i Norge men fick inget köp i SE-huvudkampanjen — läs om dag 14 innan något byggs; ingen SE-iteration nu
+
+### Lärdom L-120250330253570291 — Takoverdrag_BOF_4_1 (LOSER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | LOSER · BOF |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 498 kr / 94 712 kr (1 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,06 |
+| Konverteringsgrad | 0,0 % (0 köp / 10 LPV) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "1 129 kr. 340 kr billigare än ordinarie pris 1 469 kr, en rabatt på 23 %. Täcker hela taket, 19,5 m²." · rubrik: "1 129 kr för taköverdraget"
+- Första frame / VO: inte avläst i den här ronden (bilden ej avläst) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — ingen person eller scen i texten | okänd |
+| Vinkel | — (brief saknas i repot) | BOF (retargeting, invändning) enligt namnkoden; copyn: "1 129 kr. 340 kr billigare än ordinarie pris 1 469 kr, en rabatt på 23 %. Täcker hela take…" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | produktmedveten (copyn förutsätter att läsaren vet vad produkten är) | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "1 129 kr. 340 kr billigare än ordinarie pris 1 469 kr, en rabatt på 23 %. Täcker hela taket, 19,5 m²." | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | pris 1 129 kr i copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** BOF — räknas inte i frekvensen; lärdomen handlar om invändningen den svarar på.
+
+**Hypotes (gissning):** Gissning: 498 kr och 0 köp första veckan är under grinden (300 kr / 3 köp) — annonsen förlorade auktionen mot syskonen, och siffrorna kan inte skilja en svag idé från en svag öppning; ingen dom.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden: en observation, ingen dom och ingen iteration (loser-regeln: iterera bara ur research, och det finns ingen bedömbar signal att iterera på).
+
+### Lärdom L-120250330250170291 — Takoverdrag_PD_9_1 (LOSER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | LOSER |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 433 kr / 94 712 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,06 |
+| Konverteringsgrad | 0,0 % (0 köp / 12 LPV) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "Vattnet blir stående kring takluckorna. Taket är det du aldrig ser – och det som kostar mest att laga om det går sönder. Täcker hela takytan, 6,5 × 3 m." · rubrik: "Vattnet blir stående på taket"
+- Första frame / VO: inte avläst i den här ronden (bilden ej avläst) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — tilltalad som du/din, ingen namngiven person eller scen | okänd |
+| Vinkel | — (brief saknas i repot) | PD (problem → demo) enligt namnkoden; copyn: "Vattnet blir stående kring takluckorna. Taket är det du aldrig ser – och det som kostar me…" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "Vattnet blir stående kring takluckorna. Taket är det du aldrig ser – och det som kostar mest att laga om det går sönder.…" | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 433 kr och 0 köp första veckan är under grinden (300 kr / 3 köp) — annonsen förlorade auktionen mot syskonen, och siffrorna kan inte skilja en svag idé från en svag öppning; ingen dom.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden: en observation, ingen dom och ingen iteration (loser-regeln: iterera bara ur research, och det finns ingen bedömbar signal att iterera på).
+
+### Lärdom L-120250330352620291 — Takoverdrag_PD_6_H1 (LOSER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | LOSER |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 293 kr / 94 712 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,06 |
+| Konverteringsgrad | 0,0 % (0 köp / 19 LPV) |
+| Hook rate / hold rate | 32 % / 9 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "En person. Det är allt det tar. Ingen extra hjälp behövs för att få överdraget på plats — bara rem och dragsko som spänns fast i kanten. Passar i medföljande vä…" · rubrik: "En person räcker för taket"
+- Första frame / VO: inte avläst i den här ronden (videon inte transkriberad) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — ingen person eller scen i texten | okänd |
+| Vinkel | — (brief saknas i repot) | PD (problem → demo) enligt namnkoden; copyn: "En person. Det är allt det tar. Ingen extra hjälp behövs för att få överdraget på plats — …" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "En person. Det är allt det tar. Ingen extra hjälp behövs för att få överdraget på plats — bara rem och dragsko som spänn…" | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | pris 1 129 kr i copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 293 kr och 0 köp första veckan är under grinden (300 kr / 3 köp) — annonsen förlorade auktionen mot syskonen, och siffrorna kan inte skilja en svag idé från en svag öppning; ingen dom.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden: en observation, ingen dom och ingen iteration (loser-regeln: iterera bara ur research, och det finns ingen bedömbar signal att iterera på).
+
+### Lärdom L-120250330248500291 — Takoverdrag_BOF_9_1 (LOSER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 3 |
+| Utfall | LOSER · BOF |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 273 kr / 94 712 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,06 |
+| Konverteringsgrad | 0,0 % (0 köp / 7 LPV) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "1 129 kr nu. Ett tak du inte vet priset på sen. Taket är det du aldrig ser – och det som kostar mest att laga. 1 129 kr är hela notan, ingen gissning." · rubrik: "Skydda taket – 1 129 kr."
+- Första frame / VO: inte avläst i den här ronden (bilden ej avläst) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — tilltalad som du/din, ingen namngiven person eller scen | okänd |
+| Vinkel | — (brief saknas i repot) | BOF (retargeting, invändning) enligt namnkoden; copyn: "1 129 kr nu. Ett tak du inte vet priset på sen. Taket är det du aldrig ser – och det som k…" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | produktmedveten (copyn förutsätter att läsaren vet vad produkten är) | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "1 129 kr nu. Ett tak du inte vet priset på sen. Taket är det du aldrig ser – och det som kostar mest att laga. 1 129 kr …" | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | pris 1 129 kr i copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** BOF — räknas inte i frekvensen; lärdomen handlar om invändningen den svarar på.
+
+**Hypotes (gissning):** Gissning: 273 kr och 0 köp första veckan är under grinden (300 kr / 3 köp) — annonsen förlorade auktionen mot syskonen, och siffrorna kan inte skilja en svag idé från en svag öppning; ingen dom.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden: en observation, ingen dom och ingen iteration (loser-regeln: iterera bara ur research, och det finns ingen bedömbar signal att iterera på).
+
+### Lärdom L-120250330348980291 — Takoverdrag_GT_8_H1 (LOSER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | LOSER |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 271 kr / 94 712 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,06 |
+| Konverteringsgrad | 0,0 % (0 köp / 12 LPV) |
+| Hook rate / hold rate | 40 % / 7 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "Mitt i natten går han ut och känner efter — remmen sitter still." · rubrik: "En person. Rem och dragsko på plats."
+- Första frame / VO: inte avläst i den här ronden (videon inte transkriberad) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — ingen person eller scen i texten | okänd |
+| Vinkel | — (brief saknas i repot) | GT (present) enligt namnkoden; copyn: "Mitt i natten går han ut och känner efter — remmen sitter still. En gåva som en person fäs…" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "Mitt i natten går han ut och känner efter — remmen sitter still. En gåva som en person fäster själv, rem och dragsko på …" | okänd |
+| Tro | — (brief saknas i repot) | recensioner/stjärnor i copyn | okänd |
+| Positionering | — (brief saknas i repot) | pris 1 129 kr i copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 271 kr och 0 köp första veckan är under grinden (300 kr / 3 köp) — annonsen förlorade auktionen mot syskonen, och siffrorna kan inte skilja en svag idé från en svag öppning; ingen dom.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden: en observation, ingen dom och ingen iteration (loser-regeln: iterera bara ur research, och det finns ingen bedömbar signal att iterera på).
+
+### Lärdom L-120250330462810291 — Takoverdrag_OB_2_H1 (LOSER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 3 |
+| Utfall | LOSER |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 228 kr / 94 712 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,06 |
+| Konverteringsgrad | 0,0 % (0 köp / 6 LPV) |
+| Hook rate / hold rate | 33 % / 9 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "Han viker ihop den och stoppar den i sin egen förvaringspåse." · rubrik: "1 129 kr. Ryms i en påse."
+- Första frame / VO: inte avläst i den här ronden (videon inte transkriberad) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — ingen person eller scen i texten | okänd |
+| Vinkel | — (brief saknas i repot) | OB (invändning) enligt namnkoden; copyn: "Han viker ihop den och stoppar den i sin egen förvaringspåse. Påsen får plats i bagageutry…" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "Han viker ihop den och stoppar den i sin egen förvaringspåse. Påsen får plats i bagageutrymmet, bredvid dunken. 1 129 kr…" | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | pris 1 129 kr i copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 228 kr och 0 köp första veckan är under grinden (300 kr / 3 köp) — annonsen förlorade auktionen mot syskonen, och siffrorna kan inte skilja en svag idé från en svag öppning; ingen dom.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden: en observation, ingen dom och ingen iteration (loser-regeln: iterera bara ur research, och det finns ingen bedömbar signal att iterera på).
+
+### Lärdom L-120250330252190291 — Takoverdrag_CS_11_1 (LOSER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | LOSER |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 192 kr / 94 712 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,06 |
+| Konverteringsgrad | 0,0 % (0 köp / 3 LPV) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "Spara 23 % på taköverdraget. 1 469 kr blir 1 129 kr. Betyg 5,0 av 5 på 10 recensioner." · rubrik: "Spara 23 % på taköverdraget"
+- Första frame / VO: inte avläst i den här ronden (bilden ej avläst) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — ingen person eller scen i texten | okänd |
+| Vinkel | — (brief saknas i repot) | CS (pris/kostnadsankare) enligt namnkoden; copyn: "Spara 23 % på taköverdraget. 1 469 kr blir 1 129 kr. Betyg 5,0 av 5 på 10 recensioner." | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "Spara 23 % på taköverdraget. 1 469 kr blir 1 129 kr. Betyg 5,0 av 5 på 10 recensioner." | okänd |
+| Tro | — (brief saknas i repot) | recensioner/stjärnor i copyn | okänd |
+| Positionering | — (brief saknas i repot) | pris 1 469 kr i copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 192 kr och 0 köp första veckan är under grinden (300 kr / 3 köp) — annonsen förlorade auktionen mot syskonen, och siffrorna kan inte skilja en svag idé från en svag öppning; ingen dom.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden: en observation, ingen dom och ingen iteration (loser-regeln: iterera bara ur research, och det finns ingen bedömbar signal att iterera på).
+
+### Lärdom L-120250330350170291 — Takoverdrag_GT_7_H1 (LOSER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | LOSER |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 128 kr / 94 712 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,06 |
+| Konverteringsgrad | 0,0 % (0 köp / 3 LPV) |
+| Hook rate / hold rate | 51 % / 7 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "Han går ut i pyjamas i skymningen för att känna att den sitter kvar." · rubrik: "Känner att den sitter kvar, i mörkret."
+- Första frame / VO: inte avläst i den här ronden (videon inte transkriberad) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — ingen person eller scen i texten | okänd |
+| Vinkel | — (brief saknas i repot) | GT (present) enligt namnkoden; copyn: "Han går ut i pyjamas i skymningen för att känna att den sitter kvar. Han drar i remmen. De…" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "Han går ut i pyjamas i skymningen för att känna att den sitter kvar. Han drar i remmen. Den rör sig inte. Gåvan är samma…" | okänd |
+| Tro | — (brief saknas i repot) | recensioner/stjärnor i copyn | okänd |
+| Positionering | — (brief saknas i repot) | pris 1 129 kr i copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 128 kr och 0 köp första veckan är under grinden (300 kr / 3 köp) — annonsen förlorade auktionen mot syskonen, och siffrorna kan inte skilja en svag idé från en svag öppning; ingen dom.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden: en observation, ingen dom och ingen iteration (loser-regeln: iterera bara ur research, och det finns ingen bedömbar signal att iterera på).
+
+### Lärdom L-120250330351320291 — Takoverdrag_PD_7_H1 (LOSER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | LOSER |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 115 kr / 94 712 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,06 |
+| Konverteringsgrad | 0,0 % (0 köp / 8 LPV) |
+| Hook rate / hold rate | 30 % / 10 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "6,5 gånger 3 meter. Läggs rakt över taket. Rem och dragsko spänner fast kanten, så vatten aldrig blir stående kring takluckorna. En hink vatten hälls rakt över …" · rubrik: "6,5 × 3 m rakt över taket"
+- Första frame / VO: inte avläst i den här ronden (videon inte transkriberad) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — ingen person eller scen i texten | okänd |
+| Vinkel | — (brief saknas i repot) | PD (problem → demo) enligt namnkoden; copyn: "6,5 gånger 3 meter. Läggs rakt över taket. Rem och dragsko spänner fast kanten, så vatten …" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "6,5 gånger 3 meter. Läggs rakt över taket. Rem och dragsko spänner fast kanten, så vatten aldrig blir stående kring takl…" | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | pris 1 129 kr i copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 115 kr och 0 köp första veckan är under grinden (300 kr / 3 köp) — annonsen förlorade auktionen mot syskonen, och siffrorna kan inte skilja en svag idé från en svag öppning; ingen dom.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden: en observation, ingen dom och ingen iteration (loser-regeln: iterera bara ur research, och det finns ingen bedömbar signal att iterera på).
+
+### Lärdom L-120250330255540291 — Takoverdrag_RI_4_1 (LOSER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | LOSER |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 110 kr / 94 712 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,06 |
+| Konverteringsgrad | 0,0 % (0 köp / 4 LPV) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "Vattnet blir aldrig stående kring takluckorna. Taket är det du aldrig ser – och det som kostar mest att laga om det går sönder. Det är 210D-väv, inte en tunn pr…" · rubrik: "Vattnet blir aldrig stående"
+- Första frame / VO: inte avläst i den här ronden (bilden ej avläst) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — tilltalad som du/din, ingen namngiven person eller scen | okänd |
+| Vinkel | — (brief saknas i repot) | RI (risk/kostnaden av att inte skydda) enligt namnkoden; copyn: "Vattnet blir aldrig stående kring takluckorna. Taket är det du aldrig ser – och det som ko…" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "Vattnet blir aldrig stående kring takluckorna. Taket är det du aldrig ser – och det som kostar mest att laga om det går …" | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | pris 1 129 kr i copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 110 kr och 0 köp första veckan är under grinden (300 kr / 3 köp) — annonsen förlorade auktionen mot syskonen, och siffrorna kan inte skilja en svag idé från en svag öppning; ingen dom.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden: en observation, ingen dom och ingen iteration (loser-regeln: iterera bara ur research, och det finns ingen bedömbar signal att iterera på).
+
+### Lärdom L-120250330350540291 — Takoverdrag_GT_10_H1 (LOSER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 3 |
+| Utfall | LOSER |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 84 kr / 94 712 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,06 |
+| Konverteringsgrad | 0,0 % (0 köp / 3 LPV) |
+| Hook rate / hold rate | 34 % / 8 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "Han har markis, klossar och gasvärmare till husvagnen." · rubrik: "Nio storlekar. Från 1 129 kr."
+- Första frame / VO: inte avläst i den här ronden (videon inte transkriberad) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — ingen person eller scen i texten | okänd |
+| Vinkel | — (brief saknas i repot) | GT (present) enligt namnkoden; copyn: "Han har markis, klossar och gasvärmare till husvagnen. Men taket har stått obeskyddat hela…" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "Han har markis, klossar och gasvärmare till husvagnen. Men taket har stått obeskyddat hela sommaren. Nio storlekar, från…" | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | pris 1 129 kr i copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 84 kr och 0 köp första veckan är under grinden (300 kr / 3 köp) — annonsen förlorade auktionen mot syskonen, och siffrorna kan inte skilja en svag idé från en svag öppning; ingen dom.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden: en observation, ingen dom och ingen iteration (loser-regeln: iterera bara ur research, och det finns ingen bedömbar signal att iterera på).
+
+### Lärdom L-120250330250730291 — Takoverdrag_CS_10_1 (LOSER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | LOSER |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 71 kr / 94 712 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,06 |
+| Konverteringsgrad | 0,0 % (0 köp / 2 LPV) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "Spara 340 kr på taköverdraget. 1 469 kr blir 1 129 kr. Betyg 5,0 av 5 på 10 recensioner." · rubrik: "Spara 340 kr på taköverdraget"
+- Första frame / VO: inte avläst i den här ronden (bilden ej avläst) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — ingen person eller scen i texten | okänd |
+| Vinkel | — (brief saknas i repot) | CS (pris/kostnadsankare) enligt namnkoden; copyn: "Spara 340 kr på taköverdraget. 1 469 kr blir 1 129 kr. Betyg 5,0 av 5 på 10 recensioner." | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "Spara 340 kr på taköverdraget. 1 469 kr blir 1 129 kr. Betyg 5,0 av 5 på 10 recensioner." | okänd |
+| Tro | — (brief saknas i repot) | recensioner/stjärnor i copyn | okänd |
+| Positionering | — (brief saknas i repot) | pris 340 kr i copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 71 kr och 0 köp första veckan är under grinden (300 kr / 3 köp) — annonsen förlorade auktionen mot syskonen, och siffrorna kan inte skilja en svag idé från en svag öppning; ingen dom.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden: en observation, ingen dom och ingen iteration (loser-regeln: iterera bara ur research, och det finns ingen bedömbar signal att iterera på).
+
+### Lärdom L-120250330351050291 — Takoverdrag_CO_3_H1 (LOSER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | LOSER |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 70 kr / 94 712 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,06 |
+| Konverteringsgrad | 0,0 % (0 köp / 1 LPV) |
+| Hook rate / hold rate | 23 % / 6 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "Ett helt husvagnsöverdrag du bänder på själv, kant mot kant mot lacken hela vintern." · rubrik: "En hand. Ingen kontakt med lacken."
+- Första frame / VO: inte avläst i den här ronden (videon inte transkriberad) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — tilltalad som du/din, ingen namngiven person eller scen | okänd |
+| Vinkel | — (brief saknas i repot) | CO (jämförelse) enligt namnkoden; copyn: "Ett helt husvagnsöverdrag du bänder på själv, kant mot kant mot lacken hela vintern. Ett t…" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "Ett helt husvagnsöverdrag du bänder på själv, kant mot kant mot lacken hela vintern. Ett taköverdrag lyfter du på med en…" | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | pris 1 129 kr i copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 70 kr och 0 köp första veckan är under grinden (300 kr / 3 köp) — annonsen förlorade auktionen mot syskonen, och siffrorna kan inte skilja en svag idé från en svag öppning; ingen dom.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden: en observation, ingen dom och ingen iteration (loser-regeln: iterera bara ur research, och det finns ingen bedömbar signal att iterera på).
+
+### Lärdom L-120250330254390291 — Takoverdrag_BOF_5_1 (LOSER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | LOSER · BOF |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 57 kr / 94 712 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,06 |
+| Konverteringsgrad | 0,0 % (0 köp / 1 LPV) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "Räcker inte en presenning? En tunn presenning spricker i kylan. Taköverdraget är 210D-väv och tål vintern ute – utan att spricka." · rubrik: "Räcker inte en presenning?"
+- Första frame / VO: inte avläst i den här ronden (bilden ej avläst) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — ingen person eller scen i texten | okänd |
+| Vinkel | — (brief saknas i repot) | BOF (retargeting, invändning) enligt namnkoden; copyn: "Räcker inte en presenning? En tunn presenning spricker i kylan. Taköverdraget är 210D-väv …" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | produktmedveten (copyn förutsätter att läsaren vet vad produkten är) | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "Räcker inte en presenning? En tunn presenning spricker i kylan. Taköverdraget är 210D-väv och tål vintern ute – utan att…" | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** BOF — räknas inte i frekvensen; lärdomen handlar om invändningen den svarar på.
+
+**Hypotes (gissning):** Gissning: 57 kr och 0 köp första veckan är under grinden (300 kr / 3 köp) — annonsen förlorade auktionen mot syskonen, och siffrorna kan inte skilja en svag idé från en svag öppning; ingen dom.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden: en observation, ingen dom och ingen iteration (loser-regeln: iterera bara ur research, och det finns ingen bedömbar signal att iterera på).
+
+### Lärdom L-120250330248220291 — Takoverdrag_CS_13_1 (LOSER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 3 |
+| Utfall | LOSER |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 51 kr / 94 712 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,06 |
+| Konverteringsgrad | 0,0 % (0 köp / 3 LPV) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "58 kr per kvadratmeter skyddat tak. 1 129 kr för 19,5 m² – hela takytan på en 6,5-meters husvagn. Taket är det du aldrig ser, och det som kostar mest att laga." · rubrik: "58 kr per kvadratmeter tak"
+- Första frame / VO: inte avläst i den här ronden (bilden ej avläst) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — tilltalad som du/din, ingen namngiven person eller scen | okänd |
+| Vinkel | — (brief saknas i repot) | CS (pris/kostnadsankare) enligt namnkoden; copyn: "58 kr per kvadratmeter skyddat tak. 1 129 kr för 19,5 m² – hela takytan på en 6,5-meters h…" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "58 kr per kvadratmeter skyddat tak. 1 129 kr för 19,5 m² – hela takytan på en 6,5-meters husvagn. Taket är det du aldrig…" | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | pris 58 kr i copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 51 kr och 0 köp första veckan är under grinden (300 kr / 3 köp) — annonsen förlorade auktionen mot syskonen, och siffrorna kan inte skilja en svag idé från en svag öppning; ingen dom.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden: en observation, ingen dom och ingen iteration (loser-regeln: iterera bara ur research, och det finns ingen bedömbar signal att iterera på).
+
+### Lärdom L-120250330247620291 — Takoverdrag_BOF_8_1 (LOSER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 3 |
+| Utfall | LOSER · BOF |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 41 kr / 94 712 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,06 |
+| Konverteringsgrad | 0,0 % (0 köp / 1 LPV) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "På sommaren bor den i en påse, inte i vägen. Ryms i förvaringspåsen som följer med. Ingen skrymmande vinterförvaring – bara påsen som kom med paketet." · rubrik: "1 129 kr. Ryms i en påse."
+- Första frame / VO: inte avläst i den här ronden (bilden ej avläst) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — ingen person eller scen i texten | okänd |
+| Vinkel | — (brief saknas i repot) | BOF (retargeting, invändning) enligt namnkoden; copyn: "På sommaren bor den i en påse, inte i vägen. Ryms i förvaringspåsen som följer med. Ingen …" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | produktmedveten (copyn förutsätter att läsaren vet vad produkten är) | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "På sommaren bor den i en påse, inte i vägen. Ryms i förvaringspåsen som följer med. Ingen skrymmande vinterförvaring – b…" | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | pris 1 129 kr i copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** BOF — räknas inte i frekvensen; lärdomen handlar om invändningen den svarar på.
+
+**Hypotes (gissning):** Gissning: 41 kr och 0 köp första veckan är under grinden (300 kr / 3 köp) — annonsen förlorade auktionen mot syskonen, och siffrorna kan inte skilja en svag idé från en svag öppning; ingen dom.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden: en observation, ingen dom och ingen iteration (loser-regeln: iterera bara ur research, och det finns ingen bedömbar signal att iterera på).
+
+### Lärdom L-120250330255120291 — Takoverdrag_LI_2_1 (LOSER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | LOSER |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 23 kr / 94 712 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,06 |
+| Konverteringsgrad | okänd — backfillad före 2026-09-21 (inga klick i fönstret hämtade) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "6,5 × 3 meter tak. Inget mer. Rem och dragsko i kanten, sätts på av en person. 210D-väv som ryms i medföljande påse. 1 129 kr, 23 % rabatt mot 1 469 kr." · rubrik: "6,5 × 3 meter tak. Inget mer."
+- Första frame / VO: inte avläst i den här ronden (bilden ej avläst) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — ingen person eller scen i texten | okänd |
+| Vinkel | — (brief saknas i repot) | LI (listicle) enligt namnkoden; copyn: "6,5 × 3 meter tak. Inget mer. Rem och dragsko i kanten, sätts på av en person. 210D-väv so…" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "6,5 × 3 meter tak. Inget mer. Rem och dragsko i kanten, sätts på av en person. 210D-väv som ryms i medföljande påse. 1 1…" | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | pris 1 129 kr i copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 23 kr och 0 köp första veckan är under grinden (300 kr / 3 köp) — annonsen förlorade auktionen mot syskonen, och siffrorna kan inte skilja en svag idé från en svag öppning; ingen dom.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden: en observation, ingen dom och ingen iteration (loser-regeln: iterera bara ur research, och det finns ingen bedömbar signal att iterera på).
+
+### Lärdom L-120250330254110291 — Takoverdrag_TR_2_1 (LOSER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | LOSER |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 16 kr / 94 712 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,06 |
+| Konverteringsgrad | okänd — backfillad före 2026-09-21 (inga klick i fönstret hämtade) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "Bara 10 recensioner. Alla 5 av 5. 5,0 av 5 på 10 recensioner. 1 129 kr för taköverdraget." · rubrik: "Bara 10 recensioner. Alla 5 av 5."
+- Första frame / VO: inte avläst i den här ronden (bilden ej avläst) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — ingen person eller scen i texten | okänd |
+| Vinkel | — (brief saknas i repot) | TR (transparens/ärlighet) enligt namnkoden; copyn: "Bara 10 recensioner. Alla 5 av 5. 5,0 av 5 på 10 recensioner. 1 129 kr för taköverdraget." | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "Bara 10 recensioner. Alla 5 av 5. 5,0 av 5 på 10 recensioner. 1 129 kr för taköverdraget." | okänd |
+| Tro | — (brief saknas i repot) | recensioner/stjärnor i copyn | okänd |
+| Positionering | — (brief saknas i repot) | pris 1 129 kr i copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 16 kr och 0 köp första veckan är under grinden (300 kr / 3 köp) — annonsen förlorade auktionen mot syskonen, och siffrorna kan inte skilja en svag idé från en svag öppning; ingen dom.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden: en observation, ingen dom och ingen iteration (loser-regeln: iterera bara ur research, och det finns ingen bedömbar signal att iterera på).
+
+### Lärdom L-120250330463600291 — Takoverdrag_OB_1_H1 (LOSER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | LOSER |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 11 kr / 94 712 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,06 |
+| Konverteringsgrad | 0,0 % (0 köp / 1 klick) |
+| Hook rate / hold rate | 13 % / 6 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "”Blåser det inte av?”, tänker du. Rem och dragsko spänner kanten hårt, ingen flaxning även i hård vind. 210D-väv, gjort för en hel vintersäsong utomhus. 1 129 k…" · rubrik: "Sitter kvar när det blåser"
+- Första frame / VO: inte avläst i den här ronden (videon inte transkriberad) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — tilltalad som du/din, ingen namngiven person eller scen | okänd |
+| Vinkel | — (brief saknas i repot) | OB (invändning) enligt namnkoden; copyn: "”Blåser det inte av?”, tänker du. Rem och dragsko spänner kanten hårt, ingen flaxning även…" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "”Blåser det inte av?”, tänker du. Rem och dragsko spänner kanten hårt, ingen flaxning även i hård vind. 210D-väv, gjort …" | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | pris 1 129 kr i copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 11 kr och 0 köp första veckan är under grinden (300 kr / 3 köp) — annonsen förlorade auktionen mot syskonen, och siffrorna kan inte skilja en svag idé från en svag öppning; ingen dom.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden: en observation, ingen dom och ingen iteration (loser-regeln: iterera bara ur research, och det finns ingen bedömbar signal att iterera på).
+
+### Lärdom L-120250330247030291 — Takoverdrag_BOF_7_1 (INGEN_LEVERANS, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 3 |
+| Utfall | INGEN_LEVERANS · BOF |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 7 kr / 94 712 kr |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,06 |
+| Konverteringsgrad | okänd — backfillad före 2026-09-21 (inga klick i fönstret hämtade) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "Din husvagns längd är en av nio. Nio storlekar, 3 × 5,5 till 3 × 13,5 meter. Från 1 129 kr." · rubrik: "Se alla nio storlekar"
+- Första frame / VO: inte avläst i den här ronden (bilden ej avläst) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — tilltalad som du/din, ingen namngiven person eller scen | okänd |
+| Vinkel | — (brief saknas i repot) | BOF (retargeting, invändning) enligt namnkoden; copyn: "Din husvagns längd är en av nio. Nio storlekar, 3 × 5,5 till 3 × 13,5 meter. Från 1 129 kr…" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | produktmedveten (copyn förutsätter att läsaren vet vad produkten är) | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "Din husvagns längd är en av nio. Nio storlekar, 3 × 5,5 till 3 × 13,5 meter. Från 1 129 kr." | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | pris 1 129 kr i copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** BOF — räknas inte i frekvensen; lärdomen handlar om invändningen den svarar på.
+
+**Hypotes (gissning):** Gissning: Meta gav den 7 kr första veckan — öppningen vann aldrig auktionen mot syskonen i samma adset; utfallet säger inget om idén, bara att den inte fick leverans.
+
+**Nästa annonser:**
+- `SLÄPP` — INGEN_LEVERANS (under 300 kr, 0 köp): logga och släpp, aldrig ABO (Axels beslut 2026-09-20); idén får bara komma igen som en ny öppning på en levande vinnare, inte som samma annons.
+
+### Lärdom L-120250330350820291 — Takoverdrag_TR_3_H1 (INGEN_LEVERANS, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 3 |
+| Utfall | INGEN_LEVERANS |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 6 kr / 94 712 kr |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,06 |
+| Konverteringsgrad | okänd — backfillad före 2026-09-21 (inga klick i fönstret hämtade) |
+| Hook rate / hold rate | 26 % / 11 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "Den täcker bara taket." · rubrik: "Bara taket. En hand räcker."
+- Första frame / VO: inte avläst i den här ronden (videon inte transkriberad) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — ingen person eller scen i texten | okänd |
+| Vinkel | — (brief saknas i repot) | TR (transparens/ärlighet) enligt namnkoden; copyn: "Den täcker bara taket. Inte hela husvagnen — därför räcker en person, och ingenting nöter …" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "Den täcker bara taket. Inte hela husvagnen — därför räcker en person, och ingenting nöter mot lacken på sidorna. 1 129 k…" | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | pris 1 129 kr i copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Ingen leverans: hooken föll för Meta — logga och släpp, aldrig ABO.
+
+**Hypotes (gissning):** Gissning: Meta gav den 6 kr första veckan — öppningen vann aldrig auktionen mot syskonen i samma adset; utfallet säger inget om idén, bara att den inte fick leverans.
+
+**Nästa annonser:**
+- `SLÄPP` — INGEN_LEVERANS (under 300 kr, 0 köp): logga och släpp, aldrig ABO (Axels beslut 2026-09-20); idén får bara komma igen som en ny öppning på en levande vinnare, inte som samma annons.
+
+### Lärdom L-120250330252730291 — Takoverdrag_BOF_6_1 (INGEN_LEVERANS, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | INGEN_LEVERANS · BOF |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 6 kr / 94 712 kr |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,06 |
+| Konverteringsgrad | okänd — backfillad före 2026-09-21 (inga klick i fönstret hämtade) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "Klarar jag det själv? Ja. Bara taket, inte hela vagnen – en person sätter fast rem och dragsko i kanten utan hjälp." · rubrik: "Klarar jag det själv?"
+- Första frame / VO: inte avläst i den här ronden (bilden ej avläst) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — ingen person eller scen i texten | okänd |
+| Vinkel | — (brief saknas i repot) | BOF (retargeting, invändning) enligt namnkoden; copyn: "Klarar jag det själv? Ja. Bara taket, inte hela vagnen – en person sätter fast rem och dra…" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | produktmedveten (copyn förutsätter att läsaren vet vad produkten är) | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "Klarar jag det själv? Ja. Bara taket, inte hela vagnen – en person sätter fast rem och dragsko i kanten utan hjälp." | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** BOF — räknas inte i frekvensen; lärdomen handlar om invändningen den svarar på.
+
+**Hypotes (gissning):** Gissning: Meta gav den 6 kr första veckan — öppningen vann aldrig auktionen mot syskonen i samma adset; utfallet säger inget om idén, bara att den inte fick leverans.
+
+**Nästa annonser:**
+- `SLÄPP` — INGEN_LEVERANS (under 300 kr, 0 köp): logga och släpp, aldrig ABO (Axels beslut 2026-09-20); idén får bara komma igen som en ny öppning på en levande vinnare, inte som samma annons.
+
+### Lärdom L-120250330249920291 — Takoverdrag_CO_4_1 (INGEN_LEVERANS, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | INGEN_LEVERANS |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 6 kr / 94 712 kr |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,06 |
+| Konverteringsgrad | okänd — backfillad före 2026-09-21 (inga klick i fönstret hämtade) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "Bara taket. Inte hela vagnen. Ett helöverdrag är tungt att få på plats själv och skaver mot lacken hela vintern. Taköverdraget hanteras av en person." · rubrik: "Bara taket. Inte hela vagnen."
+- Första frame / VO: inte avläst i den här ronden (bilden ej avläst) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — ingen person eller scen i texten | okänd |
+| Vinkel | — (brief saknas i repot) | CO (jämförelse) enligt namnkoden; copyn: "Bara taket. Inte hela vagnen. Ett helöverdrag är tungt att få på plats själv och skaver mo…" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "Bara taket. Inte hela vagnen. Ett helöverdrag är tungt att få på plats själv och skaver mot lacken hela vintern. Taköver…" | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Ingen leverans: hooken föll för Meta — logga och släpp, aldrig ABO.
+
+**Hypotes (gissning):** Gissning: Meta gav den 6 kr första veckan — öppningen vann aldrig auktionen mot syskonen i samma adset; utfallet säger inget om idén, bara att den inte fick leverans.
+
+**Nästa annonser:**
+- `SLÄPP` — INGEN_LEVERANS (under 300 kr, 0 köp): logga och släpp, aldrig ABO (Axels beslut 2026-09-20); idén får bara komma igen som en ny öppning på en levande vinnare, inte som samma annons.
+
+### Lärdom L-120250330251630291 — Takoverdrag_GT_9_1 (INGEN_LEVERANS, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | INGEN_LEVERANS |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 5 kr / 94 712 kr |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,06 |
+| Konverteringsgrad | 0,0 % (0 köp / 1 LPV) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "Han går ut i pyjamas för att kolla att överdraget sitter. Rem och dragsko i kanten håller det på plats när det blåser. Betyg 5,0 av 5 på 10 recensioner." · rubrik: "Han går ut i pyjamas och kollar taket"
+- Första frame / VO: inte avläst i den här ronden (bilden ej avläst) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — ingen person eller scen i texten | okänd |
+| Vinkel | — (brief saknas i repot) | GT (present) enligt namnkoden; copyn: "Han går ut i pyjamas för att kolla att överdraget sitter. Rem och dragsko i kanten håller …" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "Han går ut i pyjamas för att kolla att överdraget sitter. Rem och dragsko i kanten håller det på plats när det blåser. B…" | okänd |
+| Tro | — (brief saknas i repot) | recensioner/stjärnor i copyn | okänd |
+| Positionering | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Ingen leverans: hooken föll för Meta — logga och släpp, aldrig ABO.
+
+**Hypotes (gissning):** Gissning: Meta gav den 5 kr första veckan — öppningen vann aldrig auktionen mot syskonen i samma adset; utfallet säger inget om idén, bara att den inte fick leverans.
+
+**Nästa annonser:**
+- `SLÄPP` — INGEN_LEVERANS (under 300 kr, 0 köp): logga och släpp, aldrig ABO (Axels beslut 2026-09-20); idén får bara komma igen som en ny öppning på en levande vinnare, inte som samma annons.
+

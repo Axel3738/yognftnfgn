@@ -1690,3 +1690,205 @@ En per etiketterad annons (docs/os/CS-KLART.md punkt 1–5). Skrivs av `node age
 **Nästa annonser:**
 - `SLÄPP` — INGEN_LEVERANS (8 kr, Metas dom, aldrig ABO); nästa batch får 0 BOF-bilder (BOF_4_1/5_1/6_1 utan KPI_WINNER, regeln 2026-09-20). Storleksinvändningen står kvar i minnet (recensionen i dna.md) och tas upp igen först om kommentarerna ger ≥ 3 poster på den — då som video-svar, inte som statisk bild.
 
+### Lärdom L-120250327394520291 — Beltgrinder_JF_1_1 (LOSER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 5 |
+| Utfall | LOSER |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 316 kr / 8 723 kr (4 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,40 |
+| Konverteringsgrad | 0,0 % (0 köp / 26 LPV) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "Brynstenen kräver rätt vinkel och tålamod, varje gång du slipar." · rubrik: "Brynsten gissar. Maskinen har 15°."
+- Första frame / VO: inte avläst i den här ronden (bilden ej avläst) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — tilltalad som du/din, ingen namngiven person eller scen | okänd |
+| Vinkel | — (brief saknas i repot) | JF enligt namnkoden; copyn: "Brynstenen kräver rätt vinkel och tålamod, varje gång du slipar. Maskinen håller 15° fast …" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "Brynstenen kräver rätt vinkel och tålamod, varje gång du slipar. Maskinen håller 15° fast vinkel – du slipper hålla den …" | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | pris 909 kr i copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 316 kr och 0 köp första veckan är under grinden (300 kr / 3 köp) — annonsen förlorade auktionen mot syskonen, och siffrorna kan inte skilja en svag idé från en svag öppning; ingen dom.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden: en observation, ingen dom och ingen iteration (loser-regeln: iterera bara ur research, och det finns ingen bedömbar signal att iterera på).
+
+### Lärdom L-120250327346700291 — Beltgrinder_PD_29_H1 (KPI_WINNER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 5 |
+| Utfall | KPI_WINNER |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 315 kr / 8 723 kr (4 %) |
+| Köp | 1 |
+| ROAS / CPA | 4,79 / 315 kr — kampanjens ROAS 2,40 |
+| Konverteringsgrad | 3,2 % (1 köp / 31 LPV) |
+| Hook rate / hold rate | 31 % / 15 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "Hela lådan med knivar – en efter en genom bältet." · rubrik: "Hela lådan skarp. En efter en."
+- Första frame / VO: inte avläst i den här ronden (videon inte transkriberad) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — tilltalad som du/din, ingen namngiven person eller scen | okänd |
+| Vinkel | — (brief saknas i repot) | PD (problem → demo) enligt namnkoden; copyn: "Hela lådan med knivar – en efter en genom bältet. Sista kniven skär tomaten utan att du tr…" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "Hela lådan med knivar – en efter en genom bältet. Sista kniven skär tomaten utan att du trycker. 909 kr, alla knivar kla…" | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | pris 909 kr i copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** KPI winner: läs hook rate, sedan hold rate, sedan förbi hooken. Den säljer men får inte spend — får den ingen spend på sju dagar är den en förlorare.
+
+**Hypotes (gissning):** Gissning: 1 köp på 315 kr första veckan ser ut som en KPI winner men ligger under grinden (300 kr / 3 köp) — köpen kan vara slump, och ingen dom fälls förrän grinden är passerad.
+
+**Nästa annonser:**
+- `SLÄPP` tills vidare — under grinden: läs om dag 14 (--uppgradering); ingen iteration byggs på färre än 3 köp.
+
+### Lärdom L-120250327293500291 — Beltgrinder_CS_5_H1 (LOSER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 5 |
+| Utfall | LOSER |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 36 kr / 8 723 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,40 |
+| Konverteringsgrad | okänd — backfillad före 2026-09-21 (inga klick i fönstret hämtade) |
+| Hook rate / hold rate | 26 % / 9 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "909 kr. Inte 1 182 kr." · rubrik: "909 kr – spara 273 kr (23 %)"
+- Första frame / VO: inte avläst i den här ronden (videon inte transkriberad) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — tilltalad som du/din, ingen namngiven person eller scen | okänd |
+| Vinkel | — (brief saknas i repot) | CS (pris/kostnadsankare) enligt namnkoden; copyn: "909 kr. Inte 1 182 kr. Du sparar 273 kr – 23 % rakt av, ingen kod behövs." | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "909 kr. Inte 1 182 kr. Du sparar 273 kr – 23 % rakt av, ingen kod behövs." | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | pris 909 kr i copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 36 kr och 0 köp första veckan är under grinden (300 kr / 3 köp) — annonsen förlorade auktionen mot syskonen, och siffrorna kan inte skilja en svag idé från en svag öppning; ingen dom.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden: en observation, ingen dom och ingen iteration (loser-regeln: iterera bara ur research, och det finns ingen bedömbar signal att iterera på).
+
+### Lärdom L-120250327375680291 — Beltgrinder_PD_31_1 (LOSER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 5 |
+| Utfall | LOSER |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 35 kr / 8 723 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,40 |
+| Konverteringsgrad | 0,0 % (0 köp / 3 LPV) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "Tre verktyg i en maskin: sliphjul, bälte, polerhjul." · rubrik: "Tre verktyg. En maskin. Fyra material."
+- Första frame / VO: inte avläst i den här ronden (bilden ej avläst) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — ingen person eller scen i texten | okänd |
+| Vinkel | — (brief saknas i repot) | PD (problem → demo) enligt namnkoden; copyn: "Tre verktyg i en maskin: sliphjul, bälte, polerhjul. Samma maskin tar kniv, trä, metall oc…" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "Tre verktyg i en maskin: sliphjul, bälte, polerhjul. Samma maskin tar kniv, trä, metall och smycken. 909 kr – spara 273 …" | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | pris 909 kr i copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 35 kr och 0 köp första veckan är under grinden (300 kr / 3 köp) — annonsen förlorade auktionen mot syskonen, och siffrorna kan inte skilja en svag idé från en svag öppning; ingen dom.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden: en observation, ingen dom och ingen iteration (loser-regeln: iterera bara ur research, och det finns ingen bedömbar signal att iterera på).
+
+### Lärdom L-120250327324420291 — Beltgrinder_PD_30_H1 (LOSER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 5 |
+| Utfall | LOSER |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 24 kr / 8 723 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,40 |
+| Konverteringsgrad | 0,0 % (0 köp / 1 LPV) |
+| Hook rate / hold rate | 33 % / 14 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "Den här kniven klarar inte ens en tomat." · rubrik: "Slö kniv. Vass kniv. Samma tomat."
+- Första frame / VO: inte avläst i den här ronden (videon inte transkriberad) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — ingen person eller scen i texten | okänd |
+| Vinkel | — (brief saknas i repot) | PD (problem → demo) enligt namnkoden; copyn: "Den här kniven klarar inte ens en tomat. Samma kniv, samma tomat – nu i rena skivor. 909 k…" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "Den här kniven klarar inte ens en tomat. Samma kniv, samma tomat – nu i rena skivor. 909 kr." | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | pris 909 kr i copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 24 kr och 0 köp första veckan är under grinden (300 kr / 3 köp) — annonsen förlorade auktionen mot syskonen, och siffrorna kan inte skilja en svag idé från en svag öppning; ingen dom.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden: en observation, ingen dom och ingen iteration (loser-regeln: iterera bara ur research, och det finns ingen bedömbar signal att iterera på).
+
+## Motorhöljet ABO-test 08-19 (120249860739760291)
+

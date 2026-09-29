@@ -1092,3 +1092,205 @@ En per etiketterad annons (docs/os/CS-KLART.md punkt 1–5). Skrivs av `node age
 **Nästa annonser:**
 - `SLÄPP` — INGEN_LEVERANS (under 300 kr, 0 köp): logga och släpp, aldrig ABO (Axels beslut 2026-09-20); idén får bara komma igen som en ny öppning på en levande vinnare, inte som samma annons.
 
+### Lärdom L-120250327702230291 — Termoskydd_UG_2_H1 (KPI_WINNER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | KPI_WINNER |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 180 kr / 15 756 kr (1 %) |
+| Köp | 1 |
+| ROAS / CPA | 3,10 / 180 kr — kampanjens ROAS 2,05 |
+| Konverteringsgrad | 9,1 % (1 köp / 11 LPV) |
+| Hook rate / hold rate | 25 % / 11 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "Ingen imma att skrapa bort på morgonen." · rubrik: "Ingen imma i morse. Två minuter av."
+- Första frame / VO: inte avläst i den här ronden (videon inte transkriberad) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — ingen person eller scen i texten | okänd |
+| Vinkel | — (brief saknas i repot) | UG (UGC-stil) enligt namnkoden; copyn: "Ingen imma att skrapa bort på morgonen. Skyddet satt utanpå hela natten, och rutan var hel…" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "Ingen imma att skrapa bort på morgonen. Skyddet satt utanpå hela natten, och rutan var helt klar. Av på två minuter, och…" | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** KPI winner: läs hook rate, sedan hold rate, sedan förbi hooken. Den säljer men får inte spend — får den ingen spend på sju dagar är den en förlorare.
+
+**Hypotes (gissning):** Gissning: 1 köp på 180 kr första veckan ser ut som en KPI winner men ligger under grinden (300 kr / 3 köp) — köpen kan vara slump, och ingen dom fälls förrän grinden är passerad.
+
+**Nästa annonser:**
+- `SLÄPP` tills vidare — under grinden: läs om dag 14 (--uppgradering); ingen iteration byggs på färre än 3 köp.
+
+### Lärdom L-120250327725500291 — Termoskydd_OB_2_H1 (LOSER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | LOSER |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 23 kr / 15 756 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,05 |
+| Konverteringsgrad | okänd — backfillad före 2026-09-21 (inga klick i fönstret hämtade) |
+| Hook rate / hold rate | 28 % / 9 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "211 cm bred, 171 cm över mitten, sidoflikar på 90 cm." · rubrik: "211 cm framruta – mät före köp"
+- Första frame / VO: inte avläst i den här ronden (videon inte transkriberad) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — tilltalad som du/din, ingen namngiven person eller scen | okänd |
+| Vinkel | — (brief saknas i repot) | OB (invändning) enligt namnkoden; copyn: "211 cm bred, 171 cm över mitten, sidoflikar på 90 cm. Rätt storlek kräver att du mäter fra…" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "211 cm bred, 171 cm över mitten, sidoflikar på 90 cm. Rätt storlek kräver att du mäter framrutan först. Flikarna kläms f…" | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 23 kr och 0 köp första veckan är under grinden (300 kr / 3 köp) — annonsen förlorade auktionen mot syskonen, och siffrorna kan inte skilja en svag idé från en svag öppning; ingen dom.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden: en observation, ingen dom och ingen iteration (loser-regeln: iterera bara ur research, och det finns ingen bedömbar signal att iterera på).
+
+### Lärdom L-120250327745810291 — Termoskydd_PD_12_1 (INGEN_LEVERANS, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | INGEN_LEVERANS |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 0 kr / 15 756 kr |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,05 |
+| Konverteringsgrad | 0,0 % (0 köp / 1 LPV) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "Vänster sida: gardinen hänger kvar, och kondensen bildas ändå." · rubrik: "Vänster immigt. Höger torrt."
+- Första frame / VO: inte avläst i den här ronden (bilden ej avläst) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — ingen person eller scen i texten | okänd |
+| Vinkel | — (brief saknas i repot) | PD (problem → demo) enligt namnkoden; copyn: "Vänster sida: gardinen hänger kvar, och kondensen bildas ändå. Höger sida: skyddet sitter …" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "Vänster sida: gardinen hänger kvar, och kondensen bildas ändå. Höger sida: skyddet sitter utanpå glaset, och rutan bakom…" | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | pris 559 kr i copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Ingen leverans: hooken föll för Meta — logga och släpp, aldrig ABO.
+
+**Hypotes (gissning):** Gissning: Meta gav den 0 kr första veckan — öppningen vann aldrig auktionen mot syskonen i samma adset; utfallet säger inget om idén, bara att den inte fick leverans.
+
+**Nästa annonser:**
+- `SLÄPP` — INGEN_LEVERANS (under 300 kr, 0 köp): logga och släpp, aldrig ABO (Axels beslut 2026-09-20); idén får bara komma igen som en ny öppning på en levande vinnare, inte som samma annons.
+
+### Lärdom L-120250327674030291 — Termoskydd_PD_11_H1 (INGEN_LEVERANS, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | INGEN_LEVERANS |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 0 kr / 15 756 kr |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,05 |
+| Konverteringsgrad | okänd — backfillad före 2026-09-21 (inga klick i fönstret hämtade) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "En gardin innanför glaset löser inget – imman bildas på insidan ändå." · rubrik: "Imma innanför. Torrt utanpå."
+- Första frame / VO: inte avläst i den här ronden (videon inte transkriberad) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — ingen person eller scen i texten | okänd |
+| Vinkel | — (brief saknas i repot) | PD (problem → demo) enligt namnkoden; copyn: "En gardin innanför glaset löser inget – imman bildas på insidan ändå. Skyddet sitter utanp…" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "En gardin innanför glaset löser inget – imman bildas på insidan ändå. Skyddet sitter utanpå glaset, så rutan bakom hålls…" | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | pris 559 kr i copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Ingen leverans: hooken föll för Meta — logga och släpp, aldrig ABO.
+
+**Hypotes (gissning):** Gissning: Meta gav den 0 kr första veckan — öppningen vann aldrig auktionen mot syskonen i samma adset; utfallet säger inget om idén, bara att den inte fick leverans.
+
+**Nästa annonser:**
+- `SLÄPP` — INGEN_LEVERANS (under 300 kr, 0 köp): logga och släpp, aldrig ABO (Axels beslut 2026-09-20); idén får bara komma igen som en ny öppning på en levande vinnare, inte som samma annons.
+
+### Lärdom L-120250327643960291 — Termoskydd_PD_10_H1 (INGEN_LEVERANS, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 2 |
+| Utfall | INGEN_LEVERANS |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 0 kr / 15 756 kr |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 2,05 |
+| Konverteringsgrad | okänd — backfillad före 2026-09-21 (inga klick i fönstret hämtade) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "Skyddet täcker hela framrutan och sidorutorna bredvid." · rubrik: "Ingen ser in – fram och sida"
+- Första frame / VO: inte avläst i den här ronden (videon inte transkriberad) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — tilltalad som du/din, ingen namngiven person eller scen | okänd |
+| Vinkel | — (brief saknas i repot) | PD (problem → demo) enligt namnkoden; copyn: "Skyddet täcker hela framrutan och sidorutorna bredvid. Flikarna kläms fast i dörrkarmen – …" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "Skyddet täcker hela framrutan och sidorutorna bredvid. Flikarna kläms fast i dörrkarmen – du slipper öppna dörren. En fö…" | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | pris 559 kr i copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Ingen leverans: hooken föll för Meta — logga och släpp, aldrig ABO.
+
+**Hypotes (gissning):** Gissning: Meta gav den 0 kr första veckan — öppningen vann aldrig auktionen mot syskonen i samma adset; utfallet säger inget om idén, bara att den inte fick leverans.
+
+**Nästa annonser:**
+- `SLÄPP` — INGEN_LEVERANS (under 300 kr, 0 köp): logga och släpp, aldrig ABO (Axels beslut 2026-09-20); idén får bara komma igen som en ny öppning på en levande vinnare, inte som samma annons.
+
+## Fiskespöhållaren (120249850522830291)
+

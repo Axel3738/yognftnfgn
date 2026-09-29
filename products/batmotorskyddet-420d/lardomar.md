@@ -2612,3 +2612,245 @@ En per etiketterad annons (docs/os/CS-KLART.md punkt 1–5). Skrivs av `node age
 **Nästa annonser:**
 - `SLÄPP` — INGEN_LEVERANS (under 300 kr, 0 köp): logga och släpp, aldrig ABO (Axels beslut 2026-09-20); idén får bara komma igen som en ny öppning på en levande vinnare, inte som samma annons.
 
+### Lärdom L-120250327222620291 — Batmotor_FM_4_H1 (LOSER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 3 |
+| Utfall | LOSER |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 1 442 kr / 24 977 kr (6 %) |
+| Köp | 2 |
+| ROAS / CPA | 0,80 / 721 kr — kampanjens ROAS 1,75 |
+| Konverteringsgrad | 2,7 % (2 köp / 75 LPV) |
+| Hook rate / hold rate | 49 % / 9 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "Tre saker innan båten tas upp för vintern." · rubrik: "Steg ett: täck motorn."
+- Första frame / VO: inte avläst i den här ronden (videon inte transkriberad) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — tilltalad som du/din, ingen namngiven person eller scen | okänd |
+| Vinkel | — (brief saknas i repot) | FM (säsong/first mover) enligt namnkoden; copyn: "Tre saker innan båten tas upp för vintern. 420D-skyddet tar hand om steg ett — täcker moto…" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "Tre saker innan båten tas upp för vintern. 420D-skyddet tar hand om steg ett — täcker motorn. Steg två och tre: du sköte…" | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | pris 579 kr i copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 1442 kr och 2 köp första veckan är under grinden (300 kr / 3 köp) — annonsen förlorade auktionen mot syskonen, och siffrorna kan inte skilja en svag idé från en svag öppning; ingen dom.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden: en observation, ingen dom och ingen iteration (loser-regeln: iterera bara ur research, och det finns ingen bedömbar signal att iterera på).
+
+### Lärdom L-120250327107400291 — Batmotor_SP_1_H12 (KPI_WINNER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 3 |
+| Utfall | KPI_WINNER |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 542 kr / 24 977 kr (2 %) |
+| Köp | 2 |
+| ROAS / CPA | 2,14 / 271 kr — kampanjens ROAS 1,75 |
+| Konverteringsgrad | 7,4 % (2 köp / 27 LPV) |
+| Hook rate / hold rate | 21 % / 4 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "420D Oxford-tyg. Vattnet rinner rakt av." · rubrik: "420D-tyg. Vattnet rinner av."
+- Första frame / VO: inte avläst i den här ronden (videon inte transkriberad) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — ingen person eller scen i texten | okänd |
+| Vinkel | — (brief saknas i repot) | SP (situation/proof) enligt namnkoden; copyn: "420D Oxford-tyg. Vattnet rinner rakt av. Täcker kåpan och hela vägen ner över riggen. Inge…" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "420D Oxford-tyg. Vattnet rinner rakt av. Täcker kåpan och hela vägen ner över riggen. Ingen montering — dra över, spänn …" | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | pris 579 kr i copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** KPI winner: läs hook rate, sedan hold rate, sedan förbi hooken. Den säljer men får inte spend — får den ingen spend på sju dagar är den en förlorare.
+
+**Hypotes (gissning):** Gissning: 2 köp på 542 kr första veckan ser ut som en KPI winner men ligger under grinden (300 kr / 3 köp) — köpen kan vara slump, och ingen dom fälls förrän grinden är passerad.
+
+**Nästa annonser:**
+- `SLÄPP` tills vidare — under grinden: läs om dag 14 (--uppgradering); ingen iteration byggs på färre än 3 köp.
+
+### Lärdom L-120250327152190291 — Batmotor_SP_1_H11 (LOSER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 3 |
+| Utfall | LOSER |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 107 kr / 24 977 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 1,75 |
+| Konverteringsgrad | 0,0 % (0 köp / 5 LPV) |
+| Hook rate / hold rate | 14 % / 2 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "Nio storlekar. 0 till 350 hästkrafter." · rubrik: "Nio storlekar. 0–350 hästkrafter."
+- Första frame / VO: inte avläst i den här ronden (videon inte transkriberad) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — ingen person eller scen i texten | okänd |
+| Vinkel | — (brief saknas i repot) | SP (situation/proof) enligt namnkoden; copyn: "Nio storlekar. 0 till 350 hästkrafter. 420D-tyget stänger vattnet ute. Täcker kåpan och ne…" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "Nio storlekar. 0 till 350 hästkrafter. 420D-tyget stänger vattnet ute. Täcker kåpan och ner över riggen — en rem räcker.…" | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | pris 579 kr i copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 107 kr och 0 köp första veckan är under grinden (300 kr / 3 köp) — annonsen förlorade auktionen mot syskonen, och siffrorna kan inte skilja en svag idé från en svag öppning; ingen dom.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden: en observation, ingen dom och ingen iteration (loser-regeln: iterera bara ur research, och det finns ingen bedömbar signal att iterera på).
+
+### Lärdom L-120250327271400291 — Batmotor_BF_14_1 (KPI_WINNER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 3 |
+| Utfall | KPI_WINNER |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 40 kr / 24 977 kr (0 %) |
+| Köp | 1 |
+| ROAS / CPA | 14,44 / 40 kr — kampanjens ROAS 1,75 |
+| Konverteringsgrad | 33,3 % (1 köp / 3 LPV) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "Täcker kåpan och hela vägen ner över riggen." · rubrik: "Täcker kåpan och riggen. En rem."
+- Första frame / VO: inte avläst i den här ronden (bilden ej avläst) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — ingen person eller scen i texten | okänd |
+| Vinkel | — (brief saknas i repot) | BF (bottom funnel-bild) enligt namnkoden; copyn: "Täcker kåpan och hela vägen ner över riggen. En rem räcker. 579 kr. Ord. 965 kr." | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "Täcker kåpan och hela vägen ner över riggen. En rem räcker. 579 kr. Ord. 965 kr." | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | pris 579 kr i copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** KPI winner: läs hook rate, sedan hold rate, sedan förbi hooken. Den säljer men får inte spend — får den ingen spend på sju dagar är den en förlorare.
+
+**Hypotes (gissning):** Gissning: 1 köp på 40 kr första veckan ser ut som en KPI winner men ligger under grinden (300 kr / 3 köp) — köpen kan vara slump, och ingen dom fälls förrän grinden är passerad.
+
+**Nästa annonser:**
+- `SLÄPP` tills vidare — under grinden: läs om dag 14 (--uppgradering); ingen iteration byggs på färre än 3 köp.
+
+### Lärdom L-120250327197070291 — Batmotor_PD_8_H1 (LOSER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 3 |
+| Utfall | LOSER |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 15 kr / 24 977 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 1,75 |
+| Konverteringsgrad | 0,0 % (0 köp / 1 LPV) |
+| Hook rate / hold rate | 25 % / 4 % |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "Utan skydd: snö rakt på motorn." · rubrik: "Utan skydd. Med 420D-skydd."
+- Första frame / VO: inte avläst i den här ronden (videon inte transkriberad) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — ingen person eller scen i texten | okänd |
+| Vinkel | — (brief saknas i repot) | PD (problem → demo) enligt namnkoden; copyn: "Utan skydd: snö rakt på motorn. Med 420D-skydd: täckt. Tyget håller den ren och torr — ing…" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "Utan skydd: snö rakt på motorn. Med 420D-skydd: täckt. Tyget håller den ren och torr — ingen montering, en rem. 579 kr." | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | pris 579 kr i copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 15 kr och 0 köp första veckan är under grinden (300 kr / 3 köp) — annonsen förlorade auktionen mot syskonen, och siffrorna kan inte skilja en svag idé från en svag öppning; ingen dom.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden: en observation, ingen dom och ingen iteration (loser-regeln: iterera bara ur research, och det finns ingen bedömbar signal att iterera på).
+
+### Lärdom L-120250327246660291 — Batmotor_CS_11_1 (LOSER, etikett 2026-09-29)
+
+| Fält | Värde |
+|---|---|
+| Batch | 3 |
+| Utfall | LOSER |
+| Fönster | 2026-09-22 – 2026-09-28 (annonsens första vecka, 7d_click) |
+| Spend annons / kampanj | 11 kr / 24 977 kr (0 %) |
+| Köp | 0 |
+| ROAS / CPA | 0,00 / ingen (0 köp) — kampanjens ROAS 1,75 |
+| Konverteringsgrad | okänd — backfillad före 2026-09-21 (inga klick i fönstret hämtade) |
+| Hook rate / hold rate | okänd / okänd |
+| Bedömbar | nej (under 300 kr eller 3 köp — lärdomen är en observation, ingen dom) |
+
+**Koncept/typ/parent/källa:** brief saknas i repot — läs annonsen
+
+
+**Hookar (ordagrant, med hook rate / hold rate ovan):**
+- Primärtext rad 1 (live 2026-09-29): "420D-tyg, hela vägen ner över riggen — en rem räcker." · rubrik: "579 kr. Ord. 965 kr. Spara 386 kr."
+- Första frame / VO: inte avläst i den här ronden (bilden ej avläst) — under grinden, observation utan dom
+
+**Planerat mot utfört** (briefens taggar mot den live annonsen — stämde inte utförandet är det utförandet som föll, inte idén):
+| Komponent | Planerat | Utfört | Stämmer |
+|---|---|---|---|
+| Avatar | — (brief saknas i repot) | läst ur copyn: svensk ägare av produkten som grupp — ingen person eller scen i texten | okänd |
+| Vinkel | — (brief saknas i repot) | CS (pris/kostnadsankare) enligt namnkoden; copyn: "420D-tyg, hela vägen ner över riggen — en rem räcker. 579 kr. Ord. 965 kr. Spara 386 kr (4…" | okänd |
+| Medvetandenivå | — (brief saknas i repot) | okänd — inte avläst utöver copyn | okänd |
+| Mekanism | — (brief saknas i repot) | ur copyn: "420D-tyg, hela vägen ner över riggen — en rem räcker. 579 kr. Ord. 965 kr. Spara 386 kr (40 %). Sätt på skyddet innan fö…" | okänd |
+| Tro | — (brief saknas i repot) | ingen trosbarriär bemöts i copyn | okänd |
+| Positionering | — (brief saknas i repot) | pris 579 kr i copyn | okänd |
+| Brådska | — (brief saknas i repot) | ingen i copyn | okänd |
+**Utförandet föll:** okänd · utford_som_briefad: okänd
+
+**Diagnos:** Loser: en lärdom, sedan släpp. Iterera BARA om idén kom ur research (kalla=voc/swipe/egen-data/playbook/winning-line/feedback), aldrig om den var en imiterad format-kopia (typ=IM).
+
+**Hypotes (gissning):** Gissning: 11 kr och 0 köp första veckan är under grinden (300 kr / 3 köp) — annonsen förlorade auktionen mot syskonen, och siffrorna kan inte skilja en svag idé från en svag öppning; ingen dom.
+
+**Nästa annonser:**
+- `SLÄPP` — LOSER under grinden: en observation, ingen dom och ingen iteration (loser-regeln: iterera bara ur research, och det finns ingen bedömbar signal att iterera på).
+
+## Arbetslampan för Makita-batteri (120250083675400291)
+
