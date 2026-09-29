@@ -383,8 +383,9 @@ mättes rent.
 - Trustpilot-rutorna, som en annan session byggde på Axels beställning, visar de riktiga svenska
   omdömena, även på .no.
 - Landväljarens namn på /nb är svenska. Shopify har inga bokmålsnamn.
-- Integritetspolicyns adress. Policyn är autoManaged och bär platshållare, så Axels adressbyte i
-  Shopify rättar alla språk på en gång.
+- ~~Integritetspolicyns adress.~~ Den är rättad. Mätt som kund 2026-09-29 kväll på .se och .eu/de:
+  Stenkolsgatan står där och Sjöhed 160 syns inte. Policyn är autoManaged, så adressbytet i Shopify
+  rättade alla språk på en gång.
 - `hreflang` på .eu/.com/.no pekar på .se. Shopify skriver dem själv.
 - Kvar som ägarbeslut:
   - presentkortets omräknade pris;
