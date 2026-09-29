@@ -41,6 +41,34 @@ export function handleUr(lank) {
 }
 
 /**
+ * Vilken av verksamhetens butiker en länk hör till: den LÄNGSTA butiksadress länken börjar med
+ * (värd utan www + språkmapp). matstrumpor.se/nb/products/x → "https://matstrumpor.se/nb", inte roten.
+ * Samma sträng som produkternas `butik` (utan avslutande snedstreck). null när ingen butik matchar. Ren.
+ */
+export function butikFor(lank, butiker = []) {
+  const norm = (u) => { try { const x = new URL(u); return `${x.hostname.replace(/^www\./, '').toLowerCase()}${x.pathname.replace(/\/+$/, '').toLowerCase()}`; } catch { return null; } };
+  const l = norm(lank);
+  if (!l) return null;
+  let bast = null;
+  for (const b of butiker ?? []) {
+    const n = norm(b);
+    if (n && (l === n || l.startsWith(`${n}/`)) && (!bast || n.length > bast.n.length)) bast = { b: String(b).replace(/\/+$/, ''), n };
+  }
+  return bast?.b ?? null;
+}
+
+/**
+ * Hör kampanjen till prefixet? Prefixet ska stå som ett eget ord i namnet, var som helst:
+ * "1 CARASHELL_US_Taköverdrag … – kopia" bär CARASHELL_. Mätt 2026-09-29: startsWith tappade
+ * 130 av CaraShells 130 aktiva annonser i UK-kontot och 12 i OPS-kontot ("NYA …"). Ren.
+ */
+export function kampanjTillhor(namn, prefix) {
+  if (!prefix) return true;
+  const p = String(prefix).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return new RegExp(`(^|[^A-Za-z0-9])${p}`, 'i').test(String(namn ?? ''));
+}
+
+/**
  * Alla produkter i en butik via den publika /products.json (250 per sida).
  * @returns {Promise<Array<{butik, handle, titel, url, text, bilder, pris, jamforpris, uppdaterad}>>}
  */
@@ -162,7 +190,8 @@ export async function hamtaAnnonssidor(klient, act, { limit = 50, sov = vanta, l
         await sov(5_000 * natForsok);
         continue;
       }
-      if (/reduce the amount of data/i.test(f.message ?? '') && limit > 5) {
+      // Kod 1 "An unknown error occurred" är samma sak i en annan dräkt (mätt 2026-09-29: Magiborsten NO, 136 aktiva annonser).
+      if ((/reduce the amount of data/i.test(f.message ?? '') || (f.code === 1 && /unknown error/i.test(f.message ?? ''))) && limit > 5) {
         limit = Math.max(5, Math.floor(limit / 2));
         nasta = nasta.replace(/([?&])limit=\d+/, `$1limit=${limit}`);
         logg(`  Meta: för mycket data — läser ${limit} annonser per sida i stället`);
@@ -201,10 +230,12 @@ export function bildUrAnnons(c = {}) {
 }
 
 /**
- * Annonserna som visas just nu i våra konton: [{ id, namn, kampanj, konto, text, rubrik, bild, lank, handle }].
- * `konton` = [{ id, namn, prefix? }] — prefix = bara kampanjer vars namn börjar så (delade konton).
+ * Annonserna som visas just nu i våra konton: [{ id, namn, kampanj, konto, text, rubrik, bild, lank, handle, butik }].
+ * `konton` = [{ id, namn, prefix? }]. Ett delat konto (prefix satt) bär flera verksamheter: en annons hör hit
+ * när kampanjnamnet bär prefixet som ett ord (kampanjTillhor) ELLER när länken går till en av verksamhetens
+ * `butiker` — länken avgör, som i kommentarsgranskningen, för kampanjer döps om och kopieras ("NYA …", "1 CARASHELL_ …").
  */
-export async function hamtaEgnaAnnonser(konton, { token = process.env.META_ACCESS_TOKEN, klient = null, logg = () => {}, sov = vanta } = {}) {
+export async function hamtaEgnaAnnonser(konton, { token = process.env.META_ACCESS_TOKEN, klient = null, logg = () => {}, sov = vanta, butiker = [] } = {}) {
   const k = klient ?? skapaKlient({ token, logg, backoff: [] });
   const ut = []; const status = [];
   for (const konto of konton) {
@@ -214,10 +245,11 @@ export async function hamtaEgnaAnnonser(konton, { token = process.env.META_ACCES
       let antal = 0;
       for (const a of rader) {
         const kampanj = a.campaign?.name ?? '';
-        if (konto.prefix && !kampanj.toUpperCase().startsWith(String(konto.prefix).toUpperCase())) continue;
         const c = a.creative ?? {};
         const lank = lankUrCreative(c);
-        ut.push({ id: a.id, namn: a.name, kampanj, konto: konto.id, text: textUrAnnons(c), rubrik: rubrikUrAnnons(c), bild: bildUrAnnons(c), lank, handle: handleUr(lank) });
+        const butik = butikFor(lank, butiker);
+        if (konto.prefix && !kampanjTillhor(kampanj, konto.prefix) && !butik) continue;
+        ut.push({ id: a.id, namn: a.name, kampanj, konto: konto.id, text: textUrAnnons(c), rubrik: rubrikUrAnnons(c), bild: bildUrAnnons(c), lank, handle: handleUr(lank), butik });
         antal++;
       }
       status.push({ id: konto.id, namn: konto.namn, annonser: antal });
@@ -241,11 +273,32 @@ export async function hamtaEgnaAnnonser(konton, { token = process.env.META_ACCES
 export function valjProdukter({ produkter, annonserade = new Set(), bevaka = [], lage = {}, max = 20, kollaOmDagar = 5, nu = Date.now() }) {
   const kollade = lage.kollade ?? {};
   const senast = (p) => (kollade[`${p.butik}|${p.handle}`] ? Date.parse(kollade[`${p.butik}|${p.handle}`]) : 0);
-  const prio = new Set([...annonserade, ...bevaka.map((h) => String(h).toLowerCase())]);
-  const forst = produkter.filter((p) => prio.has(p.handle)).sort((a, b) => senast(a) - senast(b));
+  // `annonserade` bär "butik|handle" (annonsens länk slagen mot butikerna) eller en bar handle (gäller alla butiker).
+  // Med språkbutikerna (matstrumpor.se/nb …) delar tolv butiker samma handle — bara den butik annonsen länkar till prioriteras.
+  const handlar = new Set([...[...annonserade].filter((x) => !String(x).includes('|')), ...bevaka.map((h) => String(h).toLowerCase())]);
+  const nycklar = new Set([...annonserade].filter((x) => String(x).includes('|')));
+  const arPrio = (p) => handlar.has(p.handle) || nycklar.has(`${p.butik}|${p.handle}`);
+  // Rang inom butiken: butikerna turas om i rotationen (SE, NO, DK, FI, SE …). Utan det tar den svenska butikens
+  // 248 produkter veckor innan en enda norsk text söks (mätt 2026-09-29: 10 av 10 valda var svenska).
+  const rang = new Map(); const perButik = new Map();
+  for (const p of produkter) { const n = perButik.get(p.butik) ?? 0; rang.set(p, n); perButik.set(p.butik, n + 1); }
+  const ordning = (a, b) => senast(a) - senast(b) || rang.get(a) - rang.get(b);
+  const forst = produkter.filter(arPrio).sort(ordning);
   const gräns = nu - kollaOmDagar * 86_400_000;
-  const resten = produkter.filter((p) => !prio.has(p.handle) && senast(p) < gräns).sort((a, b) => senast(a) - senast(b));
-  return [...forst, ...resten].slice(0, max).map((p) => ({ ...p, prioriterad: prio.has(p.handle) }));
+  const resten = produkter.filter((p) => !arPrio(p) && senast(p) < gräns).sort(ordning);
+  return [...forst, ...resten].slice(0, max).map((p) => ({ ...p, prioriterad: arPrio(p) }));
+}
+
+/**
+ * Taket över ALLA verksamheter: en i taget ur varje lista (listorna är redan i prioritetsordning), tills
+ * `max` är nått. Utan det gav fler butiker fler sökningar varje dag — 20 per verksamhet × 3 = 120 fraser.
+ * Ren.
+ */
+export function fordelaProdukter(listor, max) {
+  const kvar = listor.map((l) => [...l]);
+  const ut = [];
+  while (ut.length < max && kvar.some((l) => l.length)) for (const l of kvar) { if (ut.length >= max) break; const p = l.shift(); if (p) ut.push(p); }
+  return ut;
 }
 
 /** Alla domäner som är våra: konfig + spårningsregistret + kommentarernas domäner. */

@@ -38,7 +38,9 @@ export function annonsLank(lank) {
 
 /** Vår sidas Ad Library-lista (originalet), ur konfig.anmalan.vara_sidor. Ren. */
 export function varAdLibraryLank(konfig, verksamhet, land = 'SE') {
-  const sida = konfig?.anmalan?.vara_sidor?.[verksamhet];
+  // Värdet är en sid-id eller en lista (Bäverbutiken har en sida per marknad) — den första är huvudsidan.
+  const v = konfig?.anmalan?.vara_sidor?.[verksamhet];
+  const sida = Array.isArray(v) ? v[0] : v;
   return sida ? `https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=${encodeURIComponent(land)}&search_type=page&view_all_page_id=${sida}` : null;
 }
 
@@ -72,7 +74,7 @@ export function byggAnmalan(arende, annons, konfig, { undertecknare, nr = 1, ant
   if (klipp) {
     const d = klipp.datum ?? null;
     const nar = d ? (d.forsta === d.sista ? ` (published by us on ${datumEn(d.forsta)}${annons.start ? `, before this ad started running on ${datumEn(annons.start)}` : ''})` : ` (published by us between ${datumEn(d.forsta)} and ${datumEn(d.sista)}${annons.start ? `, before this ad started running on ${datumEn(annons.start)}` : ''})`) : '';
-    delar.push(`The ad's video is cut from our own ad film${filmer.length === 1 ? '' : 's'}${filmer.length ? ` ${filmer.map((f) => `"${f}"`).join(', ')}` : ''}${nar}: ${klipp.antal} still frames from different scenes of the reported video (at ${(klipp.par ?? []).map((p) => tid(p.derasT)).join(', ')}) are identical to frames of our film${filmer.length === 1 ? '' : 's'} (perceptual-hash distance ${(klipp.par ?? []).map((p) => p.avstand).join(', ')}/64), and ${klipp.andel}% of the reported video's sampled frames match our films frame for frame${klipp.jamforda ? ` (compared against ${klipp.jamforda} of our films)` : ''}.`);
+    delar.push(`The ad's video is cut from our own ad film${filmer.length === 1 ? '' : 's'}${filmer.length ? ` ${filmer.map((f) => `"${f}"`).join(', ')}` : ''}${nar}: ${klipp.antal} still frames from different scenes of the reported video (at ${(klipp.par ?? []).map((p) => tid(p.derasT)).join(', ')}) are identical to frames of our film${filmer.length === 1 ? '' : 's'} (perceptual-hash distance ${(klipp.par ?? []).map((p) => p.avstand).join(', ')}/64).`);
   }
   else if (bilder.length) delar.push(`${bilder.length} image${bilder.length === 1 ? '' : 's'} in the ad ${bilder.length === 1 ? 'is' : 'are'} our own copyrighted advertising image${bilder.length === 1 ? '' : 's'} — a still frame or photo taken from our own ad (perceptual-hash comparison: ${bilder.map((b) => `${b.grad === 'identisk' ? 'identical' : 'near-identical'}, distance ${b.avstand}/64`).join('; ')}).`);
   if (s.overifierad && annons.video) delar.push('The ad is a video that uses our material.');
@@ -88,7 +90,7 @@ export function byggAnmalan(arende, annons, konfig, { undertecknare, nr = 1, ant
   const originalWorkUrls = [...new Set([...originaler.map((o) => o.lank), varAdLibraryLank(konfig, prod.verksamhet ?? arende.verksamhet), prod.url].filter(Boolean))];
   const sidnamn = originaler.find((o) => o.sida)?.sida ?? null;
   const originalWorkDescription = klipp
-    ? `Original advertising films produced by ${foretag.namn ?? 'Stonebite Ecom AB'} for our store${prod.butik ? ` ${prod.butik}` : ''} (product: "${prod.titel ?? ''}")${filmer.length ? `: ${filmer.map((f) => `"${f}"`).join(', ')}` : ''}. The footage is our own work and we hold the copyright. ${originaler.length ? `The original ads are public in Meta's Ad Library, run by our page${sidnamn ? ` ${sidnamn}` : ''} (links below).` : 'Our ads are listed in the Ad Library and the product page is at the links below.'}`
+    ? `Original advertising films produced by ${foretag.namn ?? 'Stonebite Ecom AB'} for our store${prod.butik ? ` ${prod.butik}` : ''} (product: "${prod.titel ?? ''}")${filmer.length ? `: ${filmer.map((f) => `"${f}"`).join(', ')}` : ''}. The frames shown on the evidence image come from footage we produced, and we hold the copyright to it. This report concerns only those frames; it makes no claim to any other footage in either video. ${originaler.length ? `The original ads are public in Meta's Ad Library, run by our page${sidnamn ? ` ${sidnamn}` : ''} (links below).` : 'Our ads are listed in the Ad Library and the product page is at the links below.'}`
     : `Original advertising copy, product photographs and video produced by ${foretag.namn ?? 'Stonebite Ecom AB'} for our store${prod.butik ? ` ${prod.butik}` : ''} (product: "${prod.titel ?? ''}"). The text and the images are our own work and we hold the copyright. The original ad and product page are at the links below.`;
   const brevRad = arende.brev?.skickat ? ` A cease-and-desist letter${arende.faktura?.nr ? ` with invoice ${arende.faktura.nr}` : ''} was sent to the advertiser on ${datumEn(arende.brev.skickat.nar)}.` : '';
   const additionalInfo = `Evidence screenshot (${klipp ? 'frames from our film on the left, the same frames in the reported ad on the right' : 'our original on the left, the reported ad on the right, copied passage highlighted'}): ${bevisbildUrl ?? (bevisbild ? 'attached to this report' : 'available on request')}. Internal reference: ${arende.id}, report ${nr}/${antal}, prepared ${datumEn(nu)}.${brevRad}`;

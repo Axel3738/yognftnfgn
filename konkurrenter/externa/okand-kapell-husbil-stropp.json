@@ -1,0 +1,46 @@
+{
+ "id": "okand-kapell-husbil-stropp",
+ "agare": "okänd (riktig inspelning, person i mörk jacka spänner ett svart kapell på en husbil)",
+ "lank": null,
+ "publicerad": null,
+ "tillagd": "2026-09-29",
+ "orsak": "Märkt lånad i KD-2026-002 (--lanat, CaraShellRoof_NO_PD_3 och CaraShellRoof_DK_PD_3_H1 ~20 s). Matchar inte Specialised Covers video 7507334595818294550 (avstånd 17–23), så en egen källa.",
+ "kalla": "våra rutor 2/s ur output/klipp, tagningen runt märket ±3 s",
+ "rutor": [
+  {
+   "t": 20,
+   "hash": "cc8c9c30071b4f0f",
+   "film": "2110716253151876"
+  },
+  {
+   "t": 20.5,
+   "hash": "c4cc88071b37638f",
+   "film": "2110716253151876"
+  },
+  {
+   "t": 21,
+   "hash": "e649838f3b6b4f8f",
+   "film": "2110716253151876"
+  },
+  {
+   "t": 19.5,
+   "hash": "cc8c9c30071f6d0f",
+   "film": "926846713407543"
+  },
+  {
+   "t": 20,
+   "hash": "c4cc88051b37658f",
+   "film": "926846713407543"
+  },
+  {
+   "t": 20.5,
+   "hash": "e449838f3b3b698f",
+   "film": "926846713407543"
+  },
+  {
+   "t": 21,
+   "hash": "e440c59b335b4187",
+   "film": "926846713407543"
+  }
+ ]
+}

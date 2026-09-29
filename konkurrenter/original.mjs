@@ -179,7 +179,9 @@ export function ledfilm(klipp) {
 export function originalFor(klipp, original = {}, { fore = null } = {}) {
   const led = ledfilm(klipp);
   const ordning = [led, ...(klipp?.filmer ?? []).filter((f) => f !== led)].filter(Boolean);
-  return ordning.map((f) => ({ film: f, ...(original[f] ?? {}) })).filter((o) => o.lank && startadeFore(o, fore));
+  // `externa` (--original, konkurrenter/externa/): filmen bär ett klipp vi vet inte är vårt. Den är aldrig
+  // "vårt original" — Eoka AB fällde just det 2026-09-29 (Specialised Covers klipp i Takoverdrag_SP_4_H1).
+  return ordning.map((f) => ({ film: f, ...(original[f] ?? {}) })).filter((o) => o.lank && !o.externa && startadeFore(o, fore));
 }
 
 /**
