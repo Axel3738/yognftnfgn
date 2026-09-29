@@ -1,11 +1,11 @@
 {
- "datum": "2026-09-28",
- "facit_datum": "2026-09-28",
+ "datum": "2026-09-29",
+ "facit_datum": "2026-09-29",
  "antal": {
-  "REAL_WINNER": 25,
-  "REAL_LOSER": 31,
+  "REAL_WINNER": 26,
+  "REAL_LOSER": 30,
   "INSUFFICIENT_DATA": 47,
-  "UNTESTED": 3
+  "UNTESTED": 5
  },
  "signaler": {
   "arketyp": {
@@ -17,8 +17,8 @@
     "ja": 23,
     "kanske": 2,
     "nej": 3,
-    "vinst_kr": 288511.52,
-    "spend": 558067.51,
+    "vinst_kr": 289183.91,
+    "spend": 574348.27,
     "exempel_v": [
      "Taköverdraget för Husvagn 6,5 × 3 m",
      "Motorhöljet",
@@ -32,8 +32,8 @@
      "Isolerade Utekattkojan"
     ],
     "exempel_f": [
-     "Gräsklippartäcket",
      "Spabadskapell I Svart 210D",
+     "Gräsklippartäcket",
      "Motorlås I Rostfritt Stål",
      "Kapell Till Snöslunga"
     ],
@@ -43,32 +43,32 @@
     "riktning": "vinnare"
    },
    "A_AGARE_FRIKTION": {
-    "REAL_WINNER": 2,
-    "REAL_LOSER": 8,
+    "REAL_WINNER": 3,
+    "REAL_LOSER": 7,
     "INSUFFICIENT_DATA": 9,
     "UNTESTED": 0,
     "ja": 4,
     "kanske": 5,
     "nej": 4,
-    "vinst_kr": 41553.23999999999,
-    "spend": 180770.6900000001,
+    "vinst_kr": 42535.85,
+    "spend": 182794.15000000008,
     "exempel_v": [
      "Fiskespöhållaren",
-     "Axelbältet"
+     "Axelbältet",
+     "Värmesits 45 × 90 cm"
     ],
     "exempel_f": [
      "Surfplattestället",
      "Väggfästet",
      "Golfklubbsborsten",
-     "Värmesits 45 × 90 cm",
      "Skotvättpåsen",
      "Krananslutningen",
      "Lastnätet",
      "Magnethyllan"
     ],
     "domda": 10,
-    "vinstandel": 0.2,
-    "konfidens": "HÖG",
+    "vinstandel": 0.3,
+    "konfidens": "LÅG",
     "riktning": "förlorare"
    },
    "C_LAGA_ISTALLET": {
@@ -100,8 +100,8 @@
     "ja": 8,
     "kanske": 0,
     "nej": 3,
-    "vinst_kr": 37099.280000000006,
-    "spend": 93179.05999999998,
+    "vinst_kr": 38403.810000000005,
+    "spend": 96967.82999999997,
     "exempel_v": [
      "Bälteslipmaskinen",
      "Sotarset Med Böjliga Stänger"
@@ -123,8 +123,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 1103.0399999999977,
-    "spend": 132855.95,
+    "vinst_kr": 945.5699999999983,
+    "spend": 134743.36000000002,
     "exempel_v": [
      "Strandtofflorna",
      "Cykelshorts Herr",
@@ -152,12 +152,12 @@
     "REAL_WINNER": 2,
     "REAL_LOSER": 2,
     "INSUFFICIENT_DATA": 1,
-    "UNTESTED": 1,
+    "UNTESTED": 2,
     "ja": 18,
     "kanske": 2,
     "nej": 3,
     "vinst_kr": 4881.419999999999,
-    "spend": 28839.59,
+    "spend": 29047.41,
     "exempel_v": [
      "Damasker Vandring",
      "Kranskydd Frost 420D"
@@ -179,8 +179,8 @@
     "ja": 12,
     "kanske": 2,
     "nej": 6,
-    "vinst_kr": 13898.599999999999,
-    "spend": 39088.399999999994,
+    "vinst_kr": 17030.97,
+    "spend": 45167.24,
     "exempel_v": [
      "Adventskalendern Racingbilar",
      "Täljset 30 Delar",
@@ -253,15 +253,15 @@
   },
   "arketyp_sekundar": {
    "E_VADER_SASONG": {
-    "REAL_WINNER": 9,
-    "REAL_LOSER": 3,
+    "REAL_WINNER": 10,
+    "REAL_LOSER": 2,
     "INSUFFICIENT_DATA": 3,
     "UNTESTED": 0,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 268656.80000000005,
-    "spend": 510160.0799999999,
+    "vinst_kr": 270280.14999999997,
+    "spend": 527731.5,
     "exempel_v": [
      "Taköverdraget för Husvagn 6,5 × 3 m",
      "Motorhöljet",
@@ -271,15 +271,15 @@
      "MC-Kapellet",
      "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED",
      "ATV-Kapell Storlek 3XL",
-     "Isolerade Utekattkojan"
+     "Isolerade Utekattkojan",
+     "Värmesits 45 × 90 cm"
     ],
     "exempel_f": [
      "Spabadskapell I Svart 210D",
-     "Värmesits 45 × 90 cm",
      "Kapell Till Snöslunga"
     ],
     "domda": 12,
-    "vinstandel": 0.75,
+    "vinstandel": 0.83,
     "konfidens": "HÖG",
     "riktning": "vinnare"
    },
@@ -287,12 +287,12 @@
     "REAL_WINNER": 3,
     "REAL_LOSER": 2,
     "INSUFFICIENT_DATA": 1,
-    "UNTESTED": 1,
+    "UNTESTED": 2,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 60510.41,
-    "spend": 151570.83000000002,
+    "vinst_kr": 60542.060000000005,
+    "spend": 152511.45,
     "exempel_v": [
      "Fiskespöhållaren",
      "Övervakningskameran",
@@ -359,8 +359,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 15344.25,
-    "spend": 24510.72,
+    "vinst_kr": 16827.75,
+    "spend": 27247.42,
     "exempel_v": [
      "Sotarset Med Böjliga Stänger"
     ],
@@ -397,8 +397,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 14830.009999999998,
-    "spend": 32629.010000000002,
+    "vinst_kr": 17804.91,
+    "spend": 38317.5,
     "exempel_v": [
      "Täljset 30 Delar",
      "Golf Adventskalender – 24 golftillbehör"
@@ -459,7 +459,7 @@
     "kanske": 0,
     "nej": 0,
     "vinst_kr": 0.0,
-    "spend": 3391.4,
+    "spend": 4243.05,
     "exempel_v": [],
     "exempel_f": [],
     "domda": 0,
@@ -470,15 +470,15 @@
   },
   "objekt_ute": {
    "ja": {
-    "REAL_WINNER": 18,
-    "REAL_LOSER": 11,
+    "REAL_WINNER": 19,
+    "REAL_LOSER": 10,
     "INSUFFICIENT_DATA": 19,
     "UNTESTED": 1,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 375920.43,
-    "spend": 898030.9,
+    "vinst_kr": 377575.43,
+    "spend": 916335.1200000001,
     "exempel_v": [
      "Taköverdraget för Husvagn 6,5 × 3 m",
      "Motorhöljet",
@@ -494,10 +494,11 @@
      "Damasker Vandring",
      "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED",
      "Soptunneklistermärkena",
-     "Cykelshorts Herr",
      "ATV-Kapell Storlek 3XL",
+     "Cykelshorts Herr",
      "Kranskydd Frost 420D",
-     "Isolerade Utekattkojan"
+     "Isolerade Utekattkojan",
+     "Värmesits 45 × 90 cm"
     ],
     "exempel_f": [
      "Gravstenspennan",
@@ -505,7 +506,6 @@
      "Spabadskapell I Svart 210D",
      "Motorlås I Rostfritt Stål",
      "Golfklubbsborsten",
-     "Värmesits 45 × 90 cm",
      "Ståltrådsborsthuvuden",
      "Krananslutningen",
      "Lastnätet",
@@ -513,7 +513,7 @@
      "Hönsgårdsduk 145 × 109 cm"
     ],
     "domda": 29,
-    "vinstandel": 0.62,
+    "vinstandel": 0.66,
     "konfidens": "LÅG",
     "riktning": "vinnare"
    },
@@ -525,8 +525,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 38815.31,
-    "spend": 226140.39000000004,
+    "vinst_kr": 43094.73999999999,
+    "spend": 237043.76000000007,
     "exempel_v": [
      "Bälteslipmaskinen",
      "Sotarset Med Böjliga Stänger",
@@ -543,8 +543,8 @@
      "Väggfästet",
      "Gräsklippartäcket",
      "Badshorts med Skämttryck",
-     "Magnetfiskesatsen",
      "Bänkhyllan med Utdragbar Korg",
+     "Magnetfiskesatsen",
      "Skotvättpåsen",
      "Magnethyllan",
      "Lättviktsryggsäcken",
@@ -572,8 +572,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 307591.62999999995,
-    "spend": 629561.8799999999,
+    "vinst_kr": 309320.83,
+    "spend": 647121.9299999999,
     "exempel_v": [
      "Taköverdraget för Husvagn 6,5 × 3 m",
      "Motorhöljet",
@@ -606,8 +606,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 78681.93999999999,
-    "spend": 262245.88000000006,
+    "vinst_kr": 79140.28,
+    "spend": 264436.08999999997,
     "exempel_v": [
      "Fiskespöhållaren",
      "Axelbältet",
@@ -638,8 +638,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 25359.02,
-    "spend": 89780.01,
+    "vinst_kr": 25180.050000000003,
+    "spend": 91142.87,
     "exempel_v": [
      "Bälteslipmaskinen",
      "Soptunneklistermärkena",
@@ -655,20 +655,21 @@
     "riktning": "vinnare"
    },
    "inget": {
-    "REAL_WINNER": 5,
-    "REAL_LOSER": 17,
+    "REAL_WINNER": 6,
+    "REAL_LOSER": 16,
     "INSUFFICIENT_DATA": 25,
     "UNTESTED": 2,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 3103.150000000001,
-    "spend": 142583.52000000002,
+    "vinst_kr": 7029.009999999997,
+    "spend": 150677.99,
     "exempel_v": [
      "Adventskalendern Racingbilar",
      "Täljset 30 Delar",
-     "Isolerade Utekattkojan",
      "Golf Adventskalender – 24 golftillbehör",
+     "Isolerade Utekattkojan",
+     "Värmesits 45 × 90 cm",
      "Vandringskängor Herr"
     ],
     "exempel_f": [
@@ -676,9 +677,8 @@
      "Ergonomiska Tofflorna",
      "Plyschtofflorna Herr",
      "Badshorts med Skämttryck",
-     "Magnetfiskesatsen",
      "Bänkhyllan med Utdragbar Korg",
-     "Värmesits 45 × 90 cm",
+     "Magnetfiskesatsen",
      "Lättviktsryggsäcken",
      "Luffarschacket i Trä",
      "Medicinasken i Fickformat",
@@ -691,8 +691,8 @@
      "Bollpannbandet"
     ],
     "domda": 22,
-    "vinstandel": 0.23,
-    "konfidens": "HÖG",
+    "vinstandel": 0.27,
+    "konfidens": "LÅG",
     "riktning": "förlorare"
    }
   },
@@ -705,8 +705,8 @@
     "ja": 16,
     "kanske": 1,
     "nej": 2,
-    "vinst_kr": 292272.99000000005,
-    "spend": 553769.4800000001,
+    "vinst_kr": 292675.4700000001,
+    "spend": 569084.0200000001,
     "exempel_v": [
      "Taköverdraget för Husvagn 6,5 × 3 m",
      "Motorhöljet",
@@ -719,8 +719,8 @@
      "Kranskydd Frost 420D"
     ],
     "exempel_f": [
-     "Gräsklippartäcket",
      "Spabadskapell I Svart 210D",
+     "Gräsklippartäcket",
      "Kapell Till Snöslunga"
     ],
     "domda": 12,
@@ -736,8 +736,8 @@
     "ja": 0,
     "kanske": 1,
     "nej": 0,
-    "vinst_kr": 39895.71,
-    "spend": 91967.88,
+    "vinst_kr": 39927.36,
+    "spend": 92700.68,
     "exempel_v": [
      "Fiskespöhållaren"
     ],
@@ -755,8 +755,8 @@
     "ja": 8,
     "kanske": 0,
     "nej": 2,
-    "vinst_kr": 37099.280000000006,
-    "spend": 102079.71999999999,
+    "vinst_kr": 38403.810000000005,
+    "spend": 105868.48999999998,
     "exempel_v": [
      "Bälteslipmaskinen",
      "Sotarset Med Böjliga Stänger"
@@ -798,8 +798,8 @@
     "ja": 2,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 23830.67,
-    "spend": 73876.45999999999,
+    "vinst_kr": 24100.58,
+    "spend": 74842.68,
     "exempel_v": [
      "Övervakningskameran",
      "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED"
@@ -820,8 +820,8 @@
     "ja": 5,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 14103.339999999998,
-    "spend": 98502.91,
+    "vinst_kr": 13945.869999999999,
+    "spend": 98964.21,
     "exempel_v": [
      "Strandtofflorna",
      "Damasker Vandring",
@@ -847,8 +847,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 3005.96,
-    "spend": 23206.02,
+    "vinst_kr": 4053.5700000000006,
+    "spend": 25000.179999999997,
     "exempel_v": [
      "Adventskalendern Racingbilar",
      "Golf Adventskalender – 24 golftillbehör"
@@ -891,8 +891,8 @@
     "ja": 4,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 10892.64,
-    "spend": 7746.89,
+    "vinst_kr": 12977.4,
+    "spend": 11179.92,
     "exempel_v": [
      "Täljset 30 Delar"
     ],
@@ -911,15 +911,15 @@
     "kanske": 10,
     "nej": 22,
     "vinst_kr": -11198.949999999999,
-    "spend": 95507.47,
+    "spend": 97785.22999999998,
     "exempel_v": [],
     "exempel_f": [
      "Gravstenspennan",
      "Surfplattestället",
      "Väggfästet",
+     "Bänkhyllan med Utdragbar Korg",
      "Magnetfiskesatsen",
      "Motorlås I Rostfritt Stål",
-     "Bänkhyllan med Utdragbar Korg",
      "Skotvättpåsen",
      "Krananslutningen",
      "Lastnätet",
@@ -955,23 +955,23 @@
     "riktning": "vinnare"
    },
    "dyna": {
-    "REAL_WINNER": 0,
-    "REAL_LOSER": 1,
+    "REAL_WINNER": 1,
+    "REAL_LOSER": 0,
     "INSUFFICIENT_DATA": 0,
     "UNTESTED": 0,
     "ja": 1,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": -2.16,
-    "spend": 2715.43,
-    "exempel_v": [],
-    "exempel_f": [
+    "vinst_kr": 948.8,
+    "spend": 4006.09,
+    "exempel_v": [
      "Värmesits 45 × 90 cm"
     ],
+    "exempel_f": [],
     "domda": 1,
-    "vinstandel": 0.0,
+    "vinstandel": 1.0,
     "konfidens": "LÅG",
-    "riktning": "förlorare"
+    "riktning": "vinnare"
    },
    "leksak": {
     "REAL_WINNER": 0,
@@ -1013,12 +1013,12 @@
     "REAL_WINNER": 0,
     "REAL_LOSER": 0,
     "INSUFFICIENT_DATA": 0,
-    "UNTESTED": 1,
+    "UNTESTED": 2,
     "ja": 2,
     "kanske": 0,
     "nej": 0,
     "vinst_kr": 0.0,
-    "spend": 0.0,
+    "spend": 207.82,
     "exempel_v": [],
     "exempel_f": [],
     "domda": 0,
@@ -1097,15 +1097,15 @@
   },
   "agare_55plus_smahus": {
    "ja": {
-    "REAL_WINNER": 21,
-    "REAL_LOSER": 16,
+    "REAL_WINNER": 22,
+    "REAL_LOSER": 15,
     "INSUFFICIENT_DATA": 27,
-    "UNTESTED": 2,
+    "UNTESTED": 3,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 419885.91000000003,
-    "spend": 1007941.4300000002,
+    "vinst_kr": 425820.3400000001,
+    "spend": 1037578.2000000003,
     "exempel_v": [
      "Taköverdraget för Husvagn 6,5 × 3 m",
      "Motorhöljet",
@@ -1123,22 +1123,22 @@
      "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED",
      "Adventskalendern Racingbilar",
      "Soptunneklistermärkena",
+     "Täljset 30 Delar",
      "ATV-Kapell Storlek 3XL",
      "Kranskydd Frost 420D",
-     "Täljset 30 Delar",
+     "Golf Adventskalender – 24 golftillbehör",
      "Isolerade Utekattkojan",
-     "Golf Adventskalender – 24 golftillbehör"
+     "Värmesits 45 × 90 cm"
     ],
     "exempel_f": [
      "Fodrade Inomhustofflor – Kamouflage, Herr 40–47",
      "Gravstenspennan",
      "Biltvättborste Med Teleskopskaft – Dubbelt Borsthuvud",
      "Väggfästet",
-     "Gräsklippartäcket",
      "Spabadskapell I Svart 210D",
+     "Gräsklippartäcket",
      "Motorlås I Rostfritt Stål",
      "Golfklubbsborsten",
-     "Värmesits 45 × 90 cm",
      "Ståltrådsborsthuvuden",
      "Krananslutningen",
      "Lastnätet",
@@ -1148,7 +1148,7 @@
      "Hönsgårdsduk 145 × 109 cm"
     ],
     "domda": 37,
-    "vinstandel": 0.57,
+    "vinstandel": 0.59,
     "konfidens": "LÅG",
     "riktning": "blandat"
    },
@@ -1161,7 +1161,7 @@
     "kanske": 0,
     "nej": 0,
     "vinst_kr": -5150.170000000001,
-    "spend": 118137.88000000002,
+    "spend": 118768.17000000003,
     "exempel_v": [
      "Damasker Vandring",
      "Cykelshorts Herr",
@@ -1172,8 +1172,8 @@
      "Surfplattestället",
      "Plyschtofflorna Herr",
      "Badshorts med Skämttryck",
-     "Magnetfiskesatsen",
      "Bänkhyllan med Utdragbar Korg",
+     "Magnetfiskesatsen",
      "Skotvättpåsen",
      "Magnethyllan",
      "Lättviktsryggsäcken",
@@ -1199,8 +1199,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 310929.68000000005,
-    "spend": 654409.67,
+    "vinst_kr": 312392.7300000001,
+    "spend": 668040.8000000002,
     "exempel_v": [
      "Taköverdraget för Husvagn 6,5 × 3 m",
      "Motorhöljet",
@@ -1214,8 +1214,8 @@
     ],
     "exempel_f": [
      "Väggfästet",
-     "Gräsklippartäcket",
      "Spabadskapell I Svart 210D",
+     "Gräsklippartäcket",
      "Skotvättpåsen",
      "Uteduschen",
      "Kapell Till Snöslunga",
@@ -1227,15 +1227,15 @@
     "riktning": "blandat"
    },
    "köpt produkt som fungerar": {
-    "REAL_WINNER": 11,
-    "REAL_LOSER": 19,
+    "REAL_WINNER": 12,
+    "REAL_LOSER": 18,
     "INSUFFICIENT_DATA": 34,
     "UNTESTED": 2,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 75609.23000000001,
-    "spend": 352260.42000000004,
+    "vinst_kr": 79626.03000000001,
+    "spend": 361888.1500000001,
     "exempel_v": [
      "Bälteslipmaskinen",
      "Övervakningskameran",
@@ -1244,9 +1244,10 @@
      "Damasker Vandring",
      "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED",
      "Adventskalendern Racingbilar",
-     "Cykelshorts Herr",
      "Täljset 30 Delar",
+     "Cykelshorts Herr",
      "Golf Adventskalender – 24 golftillbehör",
+     "Värmesits 45 × 90 cm",
      "Vandringskängor Herr"
     ],
     "exempel_f": [
@@ -1256,9 +1257,8 @@
      "Plyschtofflorna Herr",
      "Biltvättborste Med Teleskopskaft – Dubbelt Borsthuvud",
      "Badshorts med Skämttryck",
-     "Golfklubbsborsten",
      "Bänkhyllan med Utdragbar Korg",
-     "Värmesits 45 × 90 cm",
+     "Golfklubbsborsten",
      "Ståltrådsborsthuvuden",
      "Krananslutningen",
      "Lastnätet",
@@ -1271,7 +1271,7 @@
      "Första Hjälpen-Kitet"
     ],
     "domda": 30,
-    "vinstandel": 0.37,
+    "vinstandel": 0.4,
     "konfidens": "LÅG",
     "riktning": "förlorare"
    },
@@ -1283,8 +1283,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 13324.039999999997,
-    "spend": 77680.32,
+    "vinst_kr": 12295.119999999999,
+    "spend": 80096.53,
     "exempel_v": [
      "Termoskyddet för Husbil 211 × 171 cm",
      "Soptunneklistermärkena",
@@ -1309,8 +1309,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 14872.79,
-    "spend": 30578.510000000002,
+    "vinst_kr": 16356.29,
+    "spend": 33315.21,
     "exempel_v": [
      "Sotarset Med Böjliga Stänger"
     ],
@@ -1325,15 +1325,15 @@
   },
   "latent_behov": {
    "nej": {
-    "REAL_WINNER": 23,
-    "REAL_LOSER": 16,
+    "REAL_WINNER": 24,
+    "REAL_LOSER": 15,
     "INSUFFICIENT_DATA": 23,
     "UNTESTED": 1,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 425646.35,
-    "spend": 1014567.95,
+    "vinst_kr": 431580.78,
+    "spend": 1042349.4300000002,
     "exempel_v": [
      "Taköverdraget för Husvagn 6,5 × 3 m",
      "Motorhöljet",
@@ -1351,12 +1351,13 @@
      "Damasker Vandring",
      "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED",
      "Adventskalendern Racingbilar",
-     "Cykelshorts Herr",
-     "ATV-Kapell Storlek 3XL",
-     "Kranskydd Frost 420D",
      "Täljset 30 Delar",
-     "Isolerade Utekattkojan",
+     "ATV-Kapell Storlek 3XL",
+     "Cykelshorts Herr",
+     "Kranskydd Frost 420D",
      "Golf Adventskalender – 24 golftillbehör",
+     "Isolerade Utekattkojan",
+     "Värmesits 45 × 90 cm",
      "Vandringskängor Herr"
     ],
     "exempel_f": [
@@ -1367,7 +1368,6 @@
      "Spabadskapell I Svart 210D",
      "Motorlås I Rostfritt Stål",
      "Golfklubbsborsten",
-     "Värmesits 45 × 90 cm",
      "Ståltrådsborsthuvuden",
      "Krananslutningen",
      "Lastnätet",
@@ -1378,9 +1378,9 @@
      "Hönsgårdsduk 145 × 109 cm"
     ],
     "domda": 39,
-    "vinstandel": 0.59,
+    "vinstandel": 0.62,
     "konfidens": "LÅG",
-    "riktning": "blandat"
+    "riktning": "vinnare"
    },
    "ja": {
     "REAL_WINNER": 1,
@@ -1391,7 +1391,7 @@
     "kanske": 0,
     "nej": 0,
     "vinst_kr": -10910.609999999999,
-    "spend": 100360.96999999999,
+    "spend": 100991.25999999998,
     "exempel_v": [
      "Soptunneklistermärkena"
     ],
@@ -1401,8 +1401,8 @@
      "Väggfästet",
      "Gräsklippartäcket",
      "Badshorts med Skämttryck",
-     "Magnetfiskesatsen",
      "Bänkhyllan med Utdragbar Korg",
+     "Magnetfiskesatsen",
      "Skotvättpåsen",
      "Magnethyllan",
      "Luffarschacket i Trä",
@@ -1427,8 +1427,8 @@
     "ja": 6,
     "kanske": 1,
     "nej": 1,
-    "vinst_kr": 218858.47999999998,
-    "spend": 332985.59,
+    "vinst_kr": 220446.30000000002,
+    "spend": 346058.20000000007,
     "exempel_v": [
      "Taköverdraget för Husvagn 6,5 × 3 m",
      "Båtmotorskyddet 420D",
@@ -1451,8 +1451,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 68482.68999999999,
-    "spend": 212066.04,
+    "vinst_kr": 68639.46999999999,
+    "spend": 212557.23,
     "exempel_v": [
      "Motorhöljet",
      "Sätesöverdragaren",
@@ -1475,8 +1475,8 @@
     "ja": 2,
     "kanske": 2,
     "nej": 1,
-    "vinst_kr": 76831.93000000002,
-    "spend": 359273.07000000007,
+    "vinst_kr": 76797.05000000002,
+    "spend": 363911.57,
     "exempel_v": [
      "Fiskespöhållaren",
      "Bälteslipmaskinen",
@@ -1494,9 +1494,9 @@
      "Väggfästet",
      "Gräsklippartäcket",
      "Badshorts med Skämttryck",
+     "Bänkhyllan med Utdragbar Korg",
      "Magnetfiskesatsen",
      "Golfklubbsborsten",
-     "Bänkhyllan med Utdragbar Korg",
      "Ståltrådsborsthuvuden",
      "Skotvättpåsen",
      "Krananslutningen",
@@ -1545,8 +1545,8 @@
     "ja": 4,
     "kanske": 1,
     "nej": 1,
-    "vinst_kr": 15344.25,
-    "spend": 26487.120000000003,
+    "vinst_kr": 16827.75,
+    "spend": 29223.82,
     "exempel_v": [
      "Sotarset Med Böjliga Stänger"
     ],
@@ -1564,8 +1564,8 @@
     "ja": 6,
     "kanske": 0,
     "nej": 2,
-    "vinst_kr": 8535.06,
-    "spend": 27829.729999999996,
+    "vinst_kr": 7192.9400000000005,
+    "spend": 29172.010000000002,
     "exempel_v": [
      "Damasker Vandring",
      "ATV-Kapell Storlek 3XL"
@@ -1586,8 +1586,8 @@
     "ja": 4,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 3005.96,
-    "spend": 24230.43,
+    "vinst_kr": 4053.5700000000006,
+    "spend": 26024.589999999997,
     "exempel_v": [
      "Adventskalendern Racingbilar",
      "Golf Adventskalender – 24 golftillbehör"
@@ -1601,16 +1601,35 @@
     "konfidens": "LÅG",
     "riktning": "blandat"
    },
+   "fars dag": {
+    "REAL_WINNER": 1,
+    "REAL_LOSER": 0,
+    "INSUFFICIENT_DATA": 1,
+    "UNTESTED": 0,
+    "ja": 5,
+    "kanske": 1,
+    "nej": 0,
+    "vinst_kr": 12977.4,
+    "spend": 13939.59,
+    "exempel_v": [
+     "Täljset 30 Delar"
+    ],
+    "exempel_f": [],
+    "domda": 1,
+    "vinstandel": 1.0,
+    "konfidens": "LÅG",
+    "riktning": "vinnare"
+   },
    "första frost": {
     "REAL_WINNER": 2,
     "REAL_LOSER": 1,
     "INSUFFICIENT_DATA": 2,
-    "UNTESTED": 0,
+    "UNTESTED": 1,
     "ja": 11,
     "kanske": 2,
     "nej": 2,
     "vinst_kr": 330.76,
-    "spend": 20916.029999999995,
+    "spend": 21532.309999999998,
     "exempel_v": [
      "Kranskydd Frost 420D",
      "Isolerade Utekattkojan"
@@ -1623,43 +1642,24 @@
     "konfidens": "LÅG",
     "riktning": "vinnare"
    },
-   "fars dag": {
+   "jaktstart": {
     "REAL_WINNER": 1,
     "REAL_LOSER": 0,
     "INSUFFICIENT_DATA": 1,
     "UNTESTED": 0,
-    "ja": 5,
-    "kanske": 1,
+    "ja": 1,
+    "kanske": 0,
     "nej": 0,
-    "vinst_kr": 10892.64,
-    "spend": 9654.91,
+    "vinst_kr": 948.8,
+    "spend": 5853.9800000000005,
     "exempel_v": [
-     "Täljset 30 Delar"
+     "Värmesits 45 × 90 cm"
     ],
     "exempel_f": [],
     "domda": 1,
     "vinstandel": 1.0,
     "konfidens": "LÅG",
     "riktning": "vinnare"
-   },
-   "jaktstart": {
-    "REAL_WINNER": 0,
-    "REAL_LOSER": 1,
-    "INSUFFICIENT_DATA": 1,
-    "UNTESTED": 0,
-    "ja": 1,
-    "kanske": 0,
-    "nej": 0,
-    "vinst_kr": -2.16,
-    "spend": 4563.32,
-    "exempel_v": [],
-    "exempel_f": [
-     "Värmesits 45 × 90 cm"
-    ],
-    "domda": 1,
-    "vinstandel": 0.0,
-    "konfidens": "LÅG",
-    "riktning": "förlorare"
    },
    "jul": {
     "REAL_WINNER": 0,
@@ -1851,15 +1851,15 @@
   },
   "timing_vid_launch": {
    "rätt": {
-    "REAL_WINNER": 18,
-    "REAL_LOSER": 13,
+    "REAL_WINNER": 19,
+    "REAL_LOSER": 12,
     "INSUFFICIENT_DATA": 20,
     "UNTESTED": 1,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 368706.5299999999,
-    "spend": 854731.5199999998,
+    "vinst_kr": 374977.39999999997,
+    "spend": 881851.28,
     "exempel_v": [
      "Taköverdraget för Husvagn 6,5 × 3 m",
      "Motorhöljet",
@@ -1873,11 +1873,12 @@
      "Sotarset Med Böjliga Stänger",
      "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED",
      "Adventskalendern Racingbilar",
-     "Cykelshorts Herr",
-     "ATV-Kapell Storlek 3XL",
      "Täljset 30 Delar",
-     "Isolerade Utekattkojan",
+     "ATV-Kapell Storlek 3XL",
+     "Cykelshorts Herr",
      "Golf Adventskalender – 24 golftillbehör",
+     "Isolerade Utekattkojan",
+     "Värmesits 45 × 90 cm",
      "Vandringskängor Herr"
     ],
     "exempel_f": [
@@ -1886,7 +1887,6 @@
      "Magnetfiskesatsen",
      "Motorlås I Rostfritt Stål",
      "Golfklubbsborsten",
-     "Värmesits 45 × 90 cm",
      "Ståltrådsborsthuvuden",
      "Krananslutningen",
      "Lättviktsryggsäcken",
@@ -1896,9 +1896,9 @@
      "Hönsgårdsduk 145 × 109 cm"
     ],
     "domda": 31,
-    "vinstandel": 0.58,
+    "vinstandel": 0.61,
     "konfidens": "LÅG",
-    "riktning": "blandat"
+    "riktning": "vinnare"
    },
    "ingen säsong": {
     "REAL_WINNER": 3,
@@ -1908,8 +1908,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 37537.749999999985,
-    "spend": 190220.55,
+    "vinst_kr": 37201.30999999999,
+    "spend": 193160.03,
     "exempel_v": [
      "Bälteslipmaskinen",
      "Övervakningskameran",
@@ -2009,8 +2009,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 328617.19999999995,
-    "spend": 595079.1799999999,
+    "vinst_kr": 330214.48000000004,
+    "spend": 610427.8499999999,
     "exempel_v": [
      "Taköverdraget för Husvagn 6,5 × 3 m",
      "Fiskespöhållaren",
@@ -2041,8 +2041,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 49771.430000000015,
-    "spend": 398189.8499999999,
+    "vinst_kr": 49883.87000000001,
+    "spend": 400247.65999999986,
     "exempel_v": [
      "Motorhöljet",
      "Axelbältet",
@@ -2063,8 +2063,8 @@
      "Väggfästet",
      "Gräsklippartäcket",
      "Badshorts med Skämttryck",
-     "Magnetfiskesatsen",
      "Bänkhyllan med Utdragbar Korg",
+     "Magnetfiskesatsen",
      "Ståltrådsborsthuvuden",
      "Skotvättpåsen",
      "Krananslutningen",
@@ -2090,8 +2090,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 189359.02,
-    "spend": 342059.03,
+    "vinst_kr": 190850.3,
+    "spend": 352411.25,
     "exempel_v": [
      "Taköverdraget för Husvagn 6,5 × 3 m",
      "Sätesöverdragaren",
@@ -2117,8 +2117,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 73889.62999999999,
-    "spend": 182496.40000000002,
+    "vinst_kr": 71339.62000000001,
+    "spend": 187715.41999999998,
     "exempel_v": [
      "Bälteslipmaskinen",
      "Övervakningskameran",
@@ -2137,15 +2137,15 @@
   },
   "montering_app": {
    "nej": {
-    "REAL_WINNER": 22,
-    "REAL_LOSER": 24,
+    "REAL_WINNER": 23,
+    "REAL_LOSER": 23,
     "INSUFFICIENT_DATA": 35,
-    "UNTESTED": 3,
+    "UNTESTED": 4,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 393921.09,
-    "spend": 1025186.7000000001,
+    "vinst_kr": 399585.6100000001,
+    "spend": 1054168.0400000003,
     "exempel_v": [
      "Taköverdraget för Husvagn 6,5 × 3 m",
      "Motorhöljet",
@@ -2162,12 +2162,13 @@
      "Damasker Vandring",
      "Adventskalendern Racingbilar",
      "Soptunneklistermärkena",
-     "Cykelshorts Herr",
-     "ATV-Kapell Storlek 3XL",
-     "Kranskydd Frost 420D",
      "Täljset 30 Delar",
-     "Isolerade Utekattkojan",
+     "ATV-Kapell Storlek 3XL",
+     "Cykelshorts Herr",
+     "Kranskydd Frost 420D",
      "Golf Adventskalender – 24 golftillbehör",
+     "Isolerade Utekattkojan",
+     "Värmesits 45 × 90 cm",
      "Vandringskängor Herr"
     ],
     "exempel_f": [
@@ -2176,12 +2177,11 @@
      "Surfplattestället",
      "Plyschtofflorna Herr",
      "Biltvättborste Med Teleskopskaft – Dubbelt Borsthuvud",
+     "Spabadskapell I Svart 210D",
      "Gräsklippartäcket",
      "Badshorts med Skämttryck",
-     "Spabadskapell I Svart 210D",
      "Magnetfiskesatsen",
      "Golfklubbsborsten",
-     "Värmesits 45 × 90 cm",
      "Skotvättpåsen",
      "Lastnätet",
      "Magnethyllan",
@@ -2197,7 +2197,7 @@
      "Bollpannbandet"
     ],
     "domda": 46,
-    "vinstandel": 0.48,
+    "vinstandel": 0.5,
     "konfidens": "LÅG",
     "riktning": "blandat"
    },
@@ -2209,8 +2209,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 20814.65,
-    "spend": 100892.61,
+    "vinst_kr": 21084.559999999998,
+    "spend": 102178.33,
     "exempel_v": [
      "Övervakningskameran",
      "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED"
@@ -2218,8 +2218,8 @@
     "exempel_f": [
      "Gravstenspennan",
      "Väggfästet",
-     "Motorlås I Rostfritt Stål",
      "Bänkhyllan med Utdragbar Korg",
+     "Motorlås I Rostfritt Stål",
      "Ståltrådsborsthuvuden",
      "Krananslutningen",
      "Uteduschen"
@@ -2239,8 +2239,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 255051.72,
-    "spend": 524636.0099999999,
+    "vinst_kr": 256639.53999999998,
+    "spend": 538019.4099999999,
     "exempel_v": [
      "Taköverdraget för Husvagn 6,5 × 3 m",
      "Motorhöljet",
@@ -2264,15 +2264,15 @@
     "riktning": "blandat"
    },
    "en variant": {
-    "REAL_WINNER": 12,
-    "REAL_LOSER": 15,
+    "REAL_WINNER": 13,
+    "REAL_LOSER": 14,
     "INSUFFICIENT_DATA": 30,
     "UNTESTED": 1,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 141246.42,
-    "spend": 460720.37000000005,
+    "vinst_kr": 147092.62,
+    "spend": 473536.7,
     "exempel_v": [
      "Fiskespöhållaren",
      "Bälteslipmaskinen",
@@ -2283,19 +2283,19 @@
      "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED",
      "Adventskalendern Racingbilar",
      "Soptunneklistermärkena",
-     "Kranskydd Frost 420D",
      "Täljset 30 Delar",
-     "Golf Adventskalender – 24 golftillbehör"
+     "Kranskydd Frost 420D",
+     "Golf Adventskalender – 24 golftillbehör",
+     "Värmesits 45 × 90 cm"
     ],
     "exempel_f": [
      "Surfplattestället",
      "Biltvättborste Med Teleskopskaft – Dubbelt Borsthuvud",
      "Väggfästet",
+     "Bänkhyllan med Utdragbar Korg",
      "Magnetfiskesatsen",
      "Motorlås I Rostfritt Stål",
      "Golfklubbsborsten",
-     "Bänkhyllan med Utdragbar Korg",
-     "Värmesits 45 × 90 cm",
      "Skotvättpåsen",
      "Kasta & Fånga-settet",
      "Dinosaurie Adventskalender – 24 Dinosaurier",
@@ -2305,7 +2305,7 @@
      "Kapell Till Snöslunga"
     ],
     "domda": 27,
-    "vinstandel": 0.44,
+    "vinstandel": 0.48,
     "konfidens": "LÅG",
     "riktning": "blandat"
    },
@@ -2317,22 +2317,22 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 18437.6,
-    "spend": 129572.54000000001,
+    "vinst_kr": 16938.010000000002,
+    "spend": 131784.58,
     "exempel_v": [
      "Strandtofflorna",
      "MC-Kapellet",
-     "Cykelshorts Herr",
      "ATV-Kapell Storlek 3XL",
+     "Cykelshorts Herr",
      "Vandringskängor Herr"
     ],
     "exempel_f": [
      "Fodrade Inomhustofflor – Kamouflage, Herr 40–47",
      "Ergonomiska Tofflorna",
      "Plyschtofflorna Herr",
+     "Spabadskapell I Svart 210D",
      "Gräsklippartäcket",
      "Badshorts med Skämttryck",
-     "Spabadskapell I Svart 210D",
      "Ståltrådsborsthuvuden",
      "Krananslutningen",
      "Lastnätet",
@@ -2346,15 +2346,15 @@
   },
   "flerkop": {
    "nej": {
-    "REAL_WINNER": 19,
-    "REAL_LOSER": 29,
+    "REAL_WINNER": 20,
+    "REAL_LOSER": 28,
     "INSUFFICIENT_DATA": 38,
     "UNTESTED": 2,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 348043.3500000001,
-    "spend": 945805.2000000002,
+    "vinst_kr": 352898.5200000001,
+    "spend": 973337.4800000003,
     "exempel_v": [
      "Taköverdraget för Husvagn 6,5 × 3 m",
      "Motorhöljet",
@@ -2369,11 +2369,12 @@
      "MC-Kapellet",
      "Damasker Vandring",
      "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED",
-     "Cykelshorts Herr",
-     "ATV-Kapell Storlek 3XL",
-     "Kranskydd Frost 420D",
      "Täljset 30 Delar",
+     "ATV-Kapell Storlek 3XL",
+     "Cykelshorts Herr",
+     "Kranskydd Frost 420D",
      "Isolerade Utekattkojan",
+     "Värmesits 45 × 90 cm",
      "Vandringskängor Herr"
     ],
     "exempel_f": [
@@ -2384,14 +2385,13 @@
      "Plyschtofflorna Herr",
      "Biltvättborste Med Teleskopskaft – Dubbelt Borsthuvud",
      "Väggfästet",
+     "Spabadskapell I Svart 210D",
      "Gräsklippartäcket",
      "Badshorts med Skämttryck",
-     "Spabadskapell I Svart 210D",
+     "Bänkhyllan med Utdragbar Korg",
      "Magnetfiskesatsen",
      "Motorlås I Rostfritt Stål",
      "Golfklubbsborsten",
-     "Bänkhyllan med Utdragbar Korg",
-     "Värmesits 45 × 90 cm",
      "Ståltrådsborsthuvuden",
      "Skotvättpåsen",
      "Krananslutningen",
@@ -2408,9 +2408,9 @@
      "Bollpannbandet"
     ],
     "domda": 48,
-    "vinstandel": 0.4,
+    "vinstandel": 0.42,
     "konfidens": "LÅG",
-    "riktning": "förlorare"
+    "riktning": "blandat"
    },
    "ja": {
     "REAL_WINNER": 5,
@@ -2420,8 +2420,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 66692.39,
-    "spend": 180274.11,
+    "vinst_kr": 67771.65000000001,
+    "spend": 182801.06999999998,
     "exempel_v": [
      "Fiskespöhållaren",
      "Övervakningskameran",
@@ -2448,8 +2448,8 @@
     "ja": 9,
     "kanske": 0,
     "nej": 4,
-    "vinst_kr": 158520.26,
-    "spend": 215969.04,
+    "vinst_kr": 160011.54,
+    "spend": 226321.26,
     "exempel_v": [
      "Taköverdraget för Husvagn 6,5 × 3 m"
     ],
@@ -2467,8 +2467,8 @@
     "ja": 1,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 51862.20999999999,
-    "spend": 257054.75000000012,
+    "vinst_kr": 51893.85999999999,
+    "spend": 258583.37000000008,
     "exempel_v": [
      "Motorhöljet",
      "Fiskespöhållaren",
@@ -2491,15 +2491,15 @@
     "riktning": "förlorare"
    },
    "500–999": {
-    "REAL_WINNER": 12,
-    "REAL_LOSER": 6,
+    "REAL_WINNER": 13,
+    "REAL_LOSER": 5,
     "INSUFFICIENT_DATA": 13,
-    "UNTESTED": 1,
+    "UNTESTED": 2,
     "ja": 43,
     "kanske": 10,
     "nej": 24,
-    "vinst_kr": 149572.75000000003,
-    "spend": 393154.56999999995,
+    "vinst_kr": 152501.43999999997,
+    "spend": 407221.31,
     "exempel_v": [
      "Båtmotorskyddet 420D",
      "Sätesöverdragaren",
@@ -2508,22 +2508,22 @@
      "Övervakningskameran",
      "Termoskyddet för Husbil 211 × 171 cm",
      "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED",
-     "ATV-Kapell Storlek 3XL",
      "Täljset 30 Delar",
-     "Isolerade Utekattkojan",
+     "ATV-Kapell Storlek 3XL",
      "Golf Adventskalender – 24 golftillbehör",
+     "Isolerade Utekattkojan",
+     "Värmesits 45 × 90 cm",
      "Vandringskängor Herr"
     ],
     "exempel_f": [
      "Biltvättborste Med Teleskopskaft – Dubbelt Borsthuvud",
      "Spabadskapell I Svart 210D",
      "Motorlås I Rostfritt Stål",
-     "Värmesits 45 × 90 cm",
      "Lättviktsryggsäcken",
      "Uteduschen"
     ],
     "domda": 18,
-    "vinstandel": 0.67,
+    "vinstandel": 0.72,
     "konfidens": "LÅG",
     "riktning": "vinnare"
    },
@@ -2535,8 +2535,8 @@
     "ja": 23,
     "kanske": 5,
     "nej": 4,
-    "vinst_kr": 54780.520000000004,
-    "spend": 252845.36000000004,
+    "vinst_kr": 56263.33,
+    "spend": 256845.34000000005,
     "exempel_v": [
      "IBC-Tanköverdraget",
      "Strandtofflorna",
@@ -2603,8 +2603,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 111950.09,
-    "spend": 246974.22,
+    "vinst_kr": 111802.77000000002,
+    "spend": 248759.08999999997,
     "exempel_v": [
      "Fiskespöhållaren",
      "Sätesöverdragaren",
@@ -2625,8 +2625,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 26597.760000000002,
-    "spend": 58087.8,
+    "vinst_kr": 26754.54,
+    "spend": 58578.990000000005,
     "exempel_v": [
      "IBC-Tanköverdraget"
     ],
@@ -2679,8 +2679,8 @@
     "Adventskalendern Racingbilar",
     "ATV-Kapell Storlek 3XL",
     "Kranskydd Frost 420D",
-    "Isolerade Utekattkojan",
-    "Golf Adventskalender – 24 golftillbehör"
+    "Golf Adventskalender – 24 golftillbehör",
+    "Isolerade Utekattkojan"
    ],
    "forlorare": [
     "Spabadskapell I Svart 210D",
@@ -2689,7 +2689,7 @@
     "Gör Din Egen Adventskalender – 24 tomma askar att fylla",
     "Kapell Till Snöslunga"
    ],
-   "otillrackligt": 8,
+   "otillrackligt": 9,
    "status": "aktiv"
   },
   {
@@ -2710,11 +2710,12 @@
     "Damasker Vandring",
     "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED",
     "Adventskalendern Racingbilar",
-    "Cykelshorts Herr",
-    "ATV-Kapell Storlek 3XL",
-    "Kranskydd Frost 420D",
     "Täljset 30 Delar",
+    "ATV-Kapell Storlek 3XL",
+    "Cykelshorts Herr",
+    "Kranskydd Frost 420D",
     "Golf Adventskalender – 24 golftillbehör",
+    "Värmesits 45 × 90 cm",
     "Vandringskängor Herr"
    ],
    "forlorare": [
@@ -2724,12 +2725,11 @@
     "Plyschtofflorna Herr",
     "Biltvättborste Med Teleskopskaft – Dubbelt Borsthuvud",
     "Väggfästet",
+    "Spabadskapell I Svart 210D",
     "Gräsklippartäcket",
     "Badshorts med Skämttryck",
-    "Spabadskapell I Svart 210D",
-    "Golfklubbsborsten",
     "Bänkhyllan med Utdragbar Korg",
-    "Värmesits 45 × 90 cm",
+    "Golfklubbsborsten",
     "Ståltrådsborsthuvuden",
     "Skotvättpåsen",
     "Krananslutningen",
@@ -2797,8 +2797,8 @@
     "Väggfästet",
     "Gräsklippartäcket",
     "Badshorts med Skämttryck",
-    "Magnetfiskesatsen",
     "Bänkhyllan med Utdragbar Korg",
+    "Magnetfiskesatsen",
     "Ståltrådsborsthuvuden",
     "Skotvättpåsen",
     "Krananslutningen",
@@ -2896,9 +2896,9 @@
    "axel": "—",
    "klass": "REAL_WINNER",
    "band": "HIGH",
-   "spend": 187001.19,
-   "kop": 445,
-   "roas": 2.949,
+   "spend": 196148.33,
+   "kop": 458,
+   "roas": 2.8976,
    "kommentar": "FEL — Axel launchade 2026-09-09 för 1 129 kr (över 1 000-kronorstaket): 2 657 kr / 15 köp / ROAS 6,37 mot BE 1,63 (2026-09-11). Lagerdjupet hos ankaret spelade ingen roll; priset över 1 000 kr spelade ingen roll."
   },
   {
@@ -2910,9 +2910,9 @@
    "axel": "—",
    "klass": "REAL_WINNER",
    "band": "HIGH",
-   "spend": 34942.09,
-   "kop": 142,
-   "roas": 2.4212,
+   "spend": 37358.3,
+   "kop": 146,
+   "roas": 2.3245,
    "kommentar": ""
   },
   {
@@ -2924,9 +2924,9 @@
    "axel": "kanske",
    "klass": "REAL_WINNER",
    "band": "HIGH",
-   "spend": 24510.72,
-   "kop": 123,
-   "roas": 2.6179,
+   "spend": 27247.42,
+   "kop": 135,
+   "roas": 2.6043,
    "kommentar": ""
   },
   {
@@ -2944,20 +2944,6 @@
    "kommentar": "FEL — 3 298 kr / 16 köp / ROAS 3,07 mot BE 1,62 (2026-09-11). Hårt datum (1 dec) + svikande default (chokladkalender) + 24 synliga saker slog varje regel i den negativa rymden."
   },
   {
-   "id": "K0234",
-   "namn": "ATV-kapellet Heavy Duty",
-   "arketyp": "B_SKYDDA_DYRT",
-   "prediktion": "levererad",
-   "poang": null,
-   "axel": "ja",
-   "klass": "REAL_WINNER",
-   "band": "HIGH",
-   "spend": 8452.22,
-   "kop": 29,
-   "roas": 2.3222,
-   "kommentar": ""
-  },
-  {
    "id": "K0243",
    "namn": "Täljsetet 30 delar i väska",
    "arketyp": "G_Q4_GAVA",
@@ -2966,9 +2952,23 @@
    "axel": "ja",
    "klass": "REAL_WINNER",
    "band": "HIGH",
-   "spend": 7746.89,
-   "kop": 33,
-   "roas": 3.9219,
+   "spend": 11179.92,
+   "kop": 43,
+   "roas": 3.5221,
+   "kommentar": ""
+  },
+  {
+   "id": "K0234",
+   "namn": "ATV-kapellet Heavy Duty",
+   "arketyp": "B_SKYDDA_DYRT",
+   "prediktion": "levererad",
+   "poang": null,
+   "axel": "ja",
+   "klass": "REAL_WINNER",
+   "band": "HIGH",
+   "spend": 9794.5,
+   "kop": 29,
+   "roas": 2.004,
    "kommentar": ""
   },
   {
@@ -3014,6 +3014,20 @@
    "kommentar": ""
   },
   {
+   "id": "K0240",
+   "namn": "Värmesitsen för älgpasset",
+   "arketyp": "A_AGARE_FRIKTION",
+   "prediktion": "levererad",
+   "poang": null,
+   "axel": "ja",
+   "klass": "REAL_WINNER",
+   "band": "HIGH",
+   "spend": 4006.09,
+   "kop": 10,
+   "roas": 2.0161,
+   "kommentar": ""
+  },
+  {
    "id": "K0236",
    "namn": "Motorlåset rostfritt utombordare",
    "arketyp": "B_SKYDDA_DYRT",
@@ -3028,17 +3042,17 @@
    "kommentar": ""
   },
   {
-   "id": "K0240",
-   "namn": "Värmesitsen för älgpasset",
-   "arketyp": "A_AGARE_FRIKTION",
+   "id": "K0264",
+   "namn": "Rullknivslipen i trä, 2 diamantskivor",
+   "arketyp": "G_Q4_GAVA",
    "prediktion": "levererad",
    "poang": null,
-   "axel": "ja",
-   "klass": "REAL_LOSER",
-   "band": "MEANINGFUL",
-   "spend": 2715.43,
-   "kop": 6,
-   "roas": 1.6287,
+   "axel": "kanske",
+   "klass": "INSUFFICIENT_DATA",
+   "band": "EARLY_SIGNAL",
+   "spend": 2759.67,
+   "kop": 4,
+   "roas": 1.3994,
    "kommentar": ""
   },
   {
@@ -3109,20 +3123,6 @@
    "spend": 1933.17,
    "kop": 1,
    "roas": 1.3879,
-   "kommentar": ""
-  },
-  {
-   "id": "K0264",
-   "namn": "Rullknivslipen i trä, 2 diamantskivor",
-   "arketyp": "G_Q4_GAVA",
-   "prediktion": "levererad",
-   "poang": null,
-   "axel": "kanske",
-   "klass": "INSUFFICIENT_DATA",
-   "band": "EARLY_SIGNAL",
-   "spend": 1908.02,
-   "kop": 3,
-   "roas": 1.5476,
    "kommentar": ""
   },
   {
@@ -3204,7 +3204,7 @@
    "axel": "kanske",
    "klass": "INSUFFICIENT_DATA",
    "band": "TOO_EARLY",
-   "spend": 1065.51,
+   "spend": 1473.97,
    "kop": 0,
    "roas": null,
    "kommentar": ""
@@ -3219,6 +3219,20 @@
    "klass": "INSUFFICIENT_DATA",
    "band": "EARLY_SIGNAL",
    "spend": 1024.41,
+   "kop": 0,
+   "roas": null,
+   "kommentar": ""
+  },
+  {
+   "id": "K0280",
+   "namn": "Sorkkorgarna i rostfritt, 15-pack",
+   "arketyp": "E_VADER_SASONG",
+   "prediktion": "levererad",
+   "poang": null,
+   "axel": "ja",
+   "klass": "UNTESTED",
+   "band": "UNTESTED",
+   "spend": 207.82,
    "kop": 0,
    "roas": null,
    "kommentar": ""

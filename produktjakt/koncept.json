@@ -51,18 +51,18 @@
     "datum": "2026-09-09"
    },
    "meta": {
-    "spend": 187001.19,
-    "kop": 445,
-    "roas": 2.949,
-    "cpa": 420.23,
+    "spend": 196148.33,
+    "kop": 458,
+    "roas": 2.8976,
+    "cpa": 428.27,
     "be": 1.63,
-    "be_cpa": 760.28,
-    "vinstbidrag": 151322.25,
+    "be_cpa": 761.32,
+    "vinstbidrag": 152536.9,
     "band": "HIGH",
     "klass": "REAL_WINNER",
     "lutning": "positiv",
     "bekraftelse": "bekräftad (snapshot 2026-09-11)",
-    "last": "2026-09-28",
+    "last": "2026-09-29",
     "utfall": ">=BE"
    },
    "status": "vinnare",
@@ -146,7 +146,7 @@
     "klass": "REAL_WINNER",
     "lutning": "positiv (marginell, < 5 % från BE)",
     "bekraftelse": "bekräftad (snapshot 2026-09-11)",
-    "last": "2026-09-28",
+    "last": "2026-09-29",
     "utfall": ">=BE"
    },
    "status": "vinnare",
@@ -223,7 +223,7 @@
     "klass": "REAL_WINNER",
     "lutning": "positiv",
     "bekraftelse": "bekräftad (snapshot 2026-09-11)",
-    "last": "2026-09-28",
+    "last": "2026-09-29",
     "utfall": ">=BE"
    },
    "status": "vinnare",
@@ -358,7 +358,7 @@
     "klass": "REAL_LOSER",
     "lutning": "negativ",
     "bekraftelse": "bekräftad (snapshot 2026-09-23)",
-    "last": "2026-09-28"
+    "last": "2026-09-29"
    },
    "status": "forlorare",
    "aterupptas_om": [],
@@ -886,7 +886,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-28"
+    "last": "2026-09-29"
    },
    "status": "launchad",
    "aterupptas_om": [],
@@ -1685,18 +1685,18 @@
     "datum": "2026-09-19"
    },
    "meta": {
-    "spend": 24510.72,
-    "kop": 123,
-    "roas": 2.6179,
-    "cpa": 199.27,
+    "spend": 27247.42,
+    "kop": 135,
+    "roas": 2.6043,
+    "cpa": 201.83,
     "be": 1.61,
-    "be_cpa": 324.02,
-    "vinstbidrag": 15344.25,
+    "be_cpa": 326.48,
+    "vinstbidrag": 16827.75,
     "band": "HIGH",
     "klass": "REAL_WINNER",
     "lutning": "positiv",
     "bekraftelse": "bekräftad (snapshot 2026-09-23)",
-    "last": "2026-09-28"
+    "last": "2026-09-29"
    },
    "status": "vinnare",
    "aterupptas_om": [],
@@ -2029,7 +2029,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-28",
+    "last": "2026-09-29",
     "utfall": "launchad"
    },
    "status": "launchad",
@@ -2429,7 +2429,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-28",
+    "last": "2026-09-29",
     "utfall": "launchad"
    },
    "status": "launchad",
@@ -2811,7 +2811,7 @@
     "datum": "2026-09-23"
    },
    "meta": {
-    "spend": 1065.51,
+    "spend": 1473.97,
     "kop": 0,
     "roas": null,
     "cpa": null,
@@ -2822,7 +2822,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-28"
+    "last": "2026-09-29"
    },
    "status": "forlorare",
    "aterupptas_om": [],
@@ -6335,7 +6335,7 @@
     "klass": "REAL_LOSER",
     "lutning": "negativ",
     "bekraftelse": "bekräftad (snapshot 2026-09-23)",
-    "last": "2026-09-28"
+    "last": "2026-09-29"
    },
    "status": "forlorare",
    "aterupptas_om": [
@@ -8636,7 +8636,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-28"
+    "last": "2026-09-29"
    },
    "status": "launchad",
    "aterupptas_om": [],
@@ -10229,7 +10229,7 @@
     "klass": "REAL_LOSER",
     "lutning": "negativ",
     "bekraftelse": "bekräftad (snapshot 2026-09-23)",
-    "last": "2026-09-28"
+    "last": "2026-09-29"
    },
    "status": "forlorare",
    "aterupptas_om": [
@@ -11267,7 +11267,7 @@
     "klass": "REAL_LOSER",
     "lutning": "negativ",
     "bekraftelse": "bekräftad (snapshot 2026-09-24)",
-    "last": "2026-09-28"
+    "last": "2026-09-29"
    },
    "status": "forlorare",
    "aterupptas_om": [],
@@ -11397,7 +11397,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-28",
+    "last": "2026-09-29",
     "utfall": "launchad"
    },
    "status": "launchad",
@@ -11450,18 +11450,18 @@
     "datum": "2026-09-11"
    },
    "meta": {
-    "spend": 34942.09,
-    "kop": 142,
-    "roas": 2.4212,
-    "cpa": 246.07,
+    "spend": 37358.3,
+    "kop": 146,
+    "roas": 2.3245,
+    "cpa": 255.88,
     "be": 1.61,
-    "be_cpa": 370.06,
-    "vinstbidrag": 17606.58,
+    "be_cpa": 369.43,
+    "vinstbidrag": 16578.3,
     "band": "HIGH",
     "klass": "REAL_WINNER",
     "lutning": "positiv",
     "bekraftelse": "bekräftad (snapshot 2026-09-12)",
-    "last": "2026-09-28",
+    "last": "2026-09-29",
     "utfall": ">=BE"
    },
    "status": "vinnare",
@@ -12232,18 +12232,18 @@
     "datum": "2026-09-22"
    },
    "meta": {
-    "spend": 8452.22,
+    "spend": 9794.5,
     "kop": 29,
-    "roas": 2.3222,
-    "cpa": 291.46,
+    "roas": 2.004,
+    "cpa": 337.74,
     "be": 1.62,
     "be_cpa": 417.8,
-    "vinstbidrag": 3663.86,
+    "vinstbidrag": 2321.74,
     "band": "HIGH",
     "klass": "REAL_WINNER",
     "lutning": "positiv",
     "bekraftelse": "bekräftad (snapshot 2026-09-24)",
-    "last": "2026-09-28"
+    "last": "2026-09-29"
    },
    "status": "vinnare",
    "aterupptas_om": [],
@@ -12496,7 +12496,7 @@
     "klass": "REAL_LOSER",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-28"
+    "last": "2026-09-29"
    },
    "status": "forlorare",
    "aterupptas_om": [],
@@ -12623,7 +12623,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-28"
+    "last": "2026-09-29"
    },
    "status": "launchad",
    "aterupptas_om": [],
@@ -12764,7 +12764,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-28"
+    "last": "2026-09-29"
    },
    "status": "launchad",
    "aterupptas_om": [],
@@ -12905,7 +12905,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-28"
+    "last": "2026-09-29"
    },
    "status": "launchad",
    "aterupptas_om": [],
@@ -13021,20 +13021,20 @@
     "datum": "2026-09-25"
    },
    "meta": {
-    "spend": 2715.43,
-    "kop": 6,
-    "roas": 1.6287,
-    "cpa": 452.57,
+    "spend": 4006.09,
+    "kop": 10,
+    "roas": 2.0161,
+    "cpa": 400.61,
     "be": 1.63,
-    "be_cpa": 452.21,
-    "vinstbidrag": -2.16,
-    "band": "MEANINGFUL",
-    "klass": "REAL_LOSER",
-    "lutning": "negativ (marginell, < 5 % från BE)",
+    "be_cpa": 495.49,
+    "vinstbidrag": 948.8,
+    "band": "HIGH",
+    "klass": "REAL_WINNER",
+    "lutning": "positiv",
     "bekraftelse": "preliminär",
-    "last": "2026-09-28"
+    "last": "2026-09-29"
    },
-   "status": "forlorare",
+   "status": "vinnare",
    "aterupptas_om": [],
    "historik": [
     {
@@ -13269,7 +13269,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "positiv",
     "bekraftelse": "preliminär",
-    "last": "2026-09-28"
+    "last": "2026-09-29"
    },
    "status": "launchad",
    "aterupptas_om": [],
@@ -13385,18 +13385,18 @@
     "datum": "2026-09-24"
    },
    "meta": {
-    "spend": 7746.89,
-    "kop": 33,
-    "roas": 3.9219,
-    "cpa": 234.75,
+    "spend": 11179.92,
+    "kop": 43,
+    "roas": 3.5221,
+    "cpa": 260.0,
     "be": 1.63,
-    "be_cpa": 564.83,
-    "vinstbidrag": 10892.64,
+    "be_cpa": 561.8,
+    "vinstbidrag": 12977.4,
     "band": "HIGH",
     "klass": "REAL_WINNER",
     "lutning": "positiv",
-    "bekraftelse": "preliminär",
-    "last": "2026-09-28"
+    "bekraftelse": "bekräftad (snapshot 2026-09-26)",
+    "last": "2026-09-29"
    },
    "status": "vinnare",
    "aterupptas_om": [],
@@ -15792,18 +15792,18 @@
     "datum": "2026-09-26"
    },
    "meta": {
-    "spend": 1908.02,
-    "kop": 3,
-    "roas": 1.5476,
-    "cpa": 636.01,
+    "spend": 2759.67,
+    "kop": 4,
+    "roas": 1.3994,
+    "cpa": 689.92,
     "be": 1.63,
-    "be_cpa": 603.87,
-    "vinstbidrag": -96.42,
+    "be_cpa": 592.32,
+    "vinstbidrag": -390.4,
     "band": "EARLY_SIGNAL",
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-28"
+    "last": "2026-09-29"
    },
    "status": "launchad",
    "aterupptas_om": [],
@@ -17663,9 +17663,26 @@
      "ts": "2026-09-16T04:42:28.789Z"
     }
    ],
-   "launch": null,
-   "meta": null,
-   "status": "ja",
+   "launch": {
+    "kampanj": "Sorkkorgarna 15-pack | BE ROAS 1.31 | Launch 2026-09-29",
+    "kampanj_id": "120250409571040291",
+    "datum": "2026-09-29"
+   },
+   "meta": {
+    "spend": 207.82,
+    "kop": 0,
+    "roas": null,
+    "cpa": null,
+    "be": 1.31,
+    "be_cpa": 434.35,
+    "vinstbidrag": null,
+    "band": "UNTESTED",
+    "klass": "UNTESTED",
+    "lutning": null,
+    "bekraftelse": "preliminär",
+    "last": "2026-09-29"
+   },
+   "status": "launchad",
    "aterupptas_om": [],
    "historik": [
     {
@@ -17679,6 +17696,10 @@
     {
      "datum": "2026-09-15",
      "handelse": "Axel: ja "
+    },
+    {
+     "datum": "2026-09-29",
+     "handelse": "launchad i kontot: Sorkkorgarna 15-pack | BE ROAS 1.31 | Launch 2026-09-29"
     }
    ],
    "namn_sv": "Sorkkorgarna i rostfritt, 15-pack",
@@ -25308,7 +25329,15 @@
    "arketyp": "A_AGARE_FRIKTION",
    "arketyp_sekundar": "I_FLERKOP",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Sopkärlets lockrem — locket hålls stängt mot skator och vind",
+    "form": "annat",
+    "arketyp": "A_AGARE_FRIKTION",
+    "deadline_typ": "höstregn",
+    "prisband": "300–499",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "ej mätt — ingen märkesvara i formen; fodertunna med låsbart lock 80 L (V-Plast) 269 kr är närmaste 'låst lock' men annan SAK"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -25384,7 +25413,15 @@
    "arketyp": "A_AGARE_FRIKTION",
    "arketyp_sekundar": "E_VADER_SASONG",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Sopkärlets vägglist — kärlet blåser inte omkull i storm",
+    "form": "annat",
+    "arketyp": "A_AGARE_FRIKTION",
+    "deadline_typ": "höstregn",
+    "prisband": "500–999",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "ej mätt i samma form — strukturankaret är sopkärlsskjulet: vidaXL skjul för 2 sopkärl 3 779 kr, för 3 st 5 818 kr (PriceRunner 'wheelie bin' 2026-09-28) — annan form, inte prisankare"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -25460,7 +25497,15 @@
    "arketyp": "A_AGARE_FRIKTION",
    "arketyp_sekundar": "E_VADER_SASONG",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Stuprörets utkastare — gångjärnet som fäller upp den för krattan och snöskoveln",
+    "form": "annat",
+    "arketyp": "A_AGARE_FRIKTION",
+    "deadline_typ": "lövfällning",
+    "prisband": "300–499",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Lindab Fällbar utkastare FUTK silvermetallic 87 — 339 kr (Velltra, PriceRunner-sidan läst 2026-09-28); Wijo Fällbar utkastare 075/100 411–469 kr; Plannja Fällbar Utkastare 90 546 kr"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -25536,7 +25581,15 @@
    "arketyp": "H_VISUELL_NYHET",
    "arketyp_sekundar": "E_VADER_SASONG",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Ekorrbordet med parasoll — ekorren sitter vid bordet och äter majskolven",
+    "form": "annat",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "vintermatning",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Vivara Ekorrbo (närmaste ekorrobjekt i fackhandeln — annan form, hus); Wildlife Garden Ekorrmatare lockbox 489 (annan form)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -25626,7 +25679,15 @@
    "arketyp": "G_Q4_GAVA",
    "arketyp_sekundar": "F_HOBBY_IDENTITET",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Surdegssetet med jäskorg, burk och lame — hemmabagarens första surdegsbröd före jul",
+    "form": "låda",
+    "arketyp": "G_Q4_GAVA",
+    "deadline_typ": "fars dag",
+    "prisband": "500–999",
+    "ankare_klass": "golv utan ankare",
+    "ankare_kalla": "Bryggahemma 'Surdegskit Large' (oval + rund jäskorg, liners, dansk visp, rakbladskniv, 2 skrapor, 2 silikonskjortor, 32 oz-burk + spatel — ca 11 delar)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -25716,7 +25777,15 @@
    "arketyp": "G_Q4_GAVA",
    "arketyp_sekundar": "F_HOBBY_IDENTITET",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Stentrumlaren — stensamlarens råstenar blir blanka ädelstenar på fyra veckor, klara till jul",
+    "form": "annat",
+    "arketyp": "G_Q4_GAVA",
+    "deadline_typ": "julafton (trumlingen tar 4 veckor — måste starta senast v 47)",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "National Geographic Starter Rock Tumbler Kit"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -25806,7 +25875,15 @@
    "arketyp": "F_HOBBY_IDENTITET",
    "arketyp_sekundar": "G_Q4_GAVA",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Jerkypistolen med 5 munstycken — jägarens älgkött blir torkat kött i ugnen",
+    "form": "låda",
+    "arketyp": "F_HOBBY_IDENTITET",
+    "deadline_typ": "fars dag",
+    "prisband": "500–999",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "ej mätt i exakt form — närmaste svenska referens är korvstopparen (Holm 426, 'Korvstoppare 3L rostfritt' 699, Costway 858, PriceRunner 'korvstoppare' 08:53:30Z) som är en annan sak (korv, inte torkat kött)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -25896,7 +25973,15 @@
    "arketyp": "E_VADER_SASONG",
    "arketyp_sekundar": "B_SKYDDA_DYRT",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "Igelkotten i trädgården",
+    "form": "hus",
+    "arketyp": "E_VADER_SASONG",
+    "deadline_typ": "första frost",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Vivara Igelkottshus XL (fackhandel, synligt ankare); därutöver 'Igelkottshus Deluxe XXL Grön' 1 799,90 på PriceRunner (brand: null)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {

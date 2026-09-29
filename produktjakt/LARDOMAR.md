@@ -3,7 +3,7 @@
 Läses av `/produktjakt` INNAN sökningen. Auto-delen räknas av `feedback.py vikter`; skriv aldrig i den för hand.
 
 <!-- auto:start -->
-Uppdaterad 2026-09-28. **141 svar** — ja 85, kanske 20, nej 36.
+Uppdaterad 2026-09-29. **141 svar** — ja 85, kanske 20, nej 36.
 
 ## Det Axel säger ja till
 
