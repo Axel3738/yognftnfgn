@@ -1,0 +1,299 @@
+{
+ "Takoverdrag_FD_2_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Farsdagssalg"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "Gave til farsdag: taket han aldri sjekker."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Hele takflaten, 6,5 × 3 m. 210D-duk, ikke tynn presenning."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Fra 1 189 kr"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "ord. 1 549 kr"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Bestill senest 19. oktober"
+     }
+    ]
+   }
+  ]
+ },
+ "Takoverdrag_FD_2_2": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Farsdagssalg"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "Til farsdag: campingtaket han faktisk dekker"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Hele takflaten, 6,5 × 3 m. 210D-duk, ikke tynn presenning."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Fra 1 189 kr"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "ord. 1 549 kr"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Bestill senest 19. oktober"
+     }
+    ]
+   }
+  ]
+ },
+ "Sotarset_FD_2_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Farsdagssalg"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "Farsdagsgave: skru sammen 3,69 meter selv."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "9 fleksible stenger og en nylonbørste på 100 mm renser pipen."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "389 kr"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "ord. 509 kr"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Bestill senest 19. oktober"
+     }
+    ]
+   }
+  ]
+ },
+ "Sotarset_FD_2_2": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Farsdagssalg"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "Til farsdag: pipen han faktisk feier selv"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "9 fleksible stenger og en nylonbørste på 100 mm renser pipen."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "389 kr"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "ord. 509 kr"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Bestill senest 19. oktober"
+     }
+    ]
+   }
+  ]
+ },
+ "_adcopy": {
+  "Takovertrekk_NO_FD_2_1": {
+   "message": "En gave til farsdag. Taket han aldri sjekker. 210D-oxfordstoff med stropper på alle fire sider holder det på plass. Farsdagssalg: fra 1 189 kr, ord. 1 549 kr. Bestill senest 19. oktober.",
+   "headline": "Taket pappa aldri sjekker.",
+   "description": "Farsdagssalg: fra 1 189 kr, ord. 1 549 kr"
+  },
+  "Takovertrekk_NO_FD_2_2": {
+   "message": "En gave til farsdag. Taket han aldri sjekker. 210D-oxfordstoff med stropper på alle fire sider holder det på plass. Farsdagssalg: fra 1 189 kr, ord. 1 549 kr. Bestill senest 19. oktober.",
+   "headline": "Taket pappa aldri sjekker.",
+   "description": "Farsdagssalg: fra 1 189 kr, ord. 1 549 kr"
+  },
+  "Sotarset_NO_FD_2_1": {
+   "message": "Farsdagsgave: han skrur sammen 3,69 meter selv, og renser mellom feierens besøk. 9 fleksible stenger følger svingene i røret i stedet for å stoppe i første sving, og en nylonbørste på 100 mm børster bort sotet i stedet for å skrape. Farsdagssalg: 389 kr, ord. 509 kr. Bestill senest 19. oktober.",
+   "headline": "Farsdagsgave: 3,69 meter, bygget selv.",
+   "description": "Farsdagssalg: 389 kr, ord. 509 kr"
+  },
+  "Sotarset_NO_FD_2_2": {
+   "message": "Farsdagsgave: han skrur sammen 3,69 meter selv, og renser mellom feierens besøk. 9 fleksible stenger følger svingene i røret i stedet for å stoppe i første sving, og en nylonbørste på 100 mm børster bort sotet i stedet for å skrape. Farsdagssalg: 389 kr, ord. 509 kr. Bestill senest 19. oktober.",
+   "headline": "Farsdagsgave: 3,69 meter, bygget selv.",
+   "description": "Farsdagssalg: 389 kr, ord. 509 kr"
+  }
+ },
+ "_test": {
+  "Takovertrekk_NO_FD_2_1": "visualisera: et campingvogntak pappa aldri klatrer opp og ser på / falsifiera: stemmer eller ikke at han aldri sjekker det, og at produktet er 210D med 4 stropper / ingen annan: en konkurrent kan ikke skrive 'Taket pappa aldri sjekker' uten å selge takdekke til campingvogn og farsdagssalg",
+  "Takovertrekk_NO_FD_2_2": "samme copy som _2_1 (rubrikken i bildet er forskjellig): visualisera ja / falsifiera ja / ingen annan ja",
+  "Sotarset_NO_FD_2_1": "visualisera: en mann som skrur sammen stenger til 3,69 m / falsifiera: 9 stenger a 41 cm = 3,69 m, kan telles / ingen annan: 3,69 m og 100 mm børste er spesifikt for dette settet",
+  "Sotarset_NO_FD_2_2": "samme copy som _2_1 (rubrikken i bildet er forskjellig): visualisera ja / falsifiera ja / ingen annan ja"
+ },
+ "_andringar": [
+  "Svensk underrubrik om kantens hengelengde strøket (ikke på norsk produktside); erstattet med verifisert mål: hele takflaten 6,5 × 3 m, 210D-duk.",
+  "Svensk 'vattentett'-påstand strøket i bilde og annonse (ikke verifisert på norsk side); annonsen bruker i stedet stropper på alle fire sider.",
+  "Priser byttet til norske: 1 189 / 1 549 og 389 / 509.",
+  "Farsdag i ett ord: Farsdagssalg (badge, 12 tegn), Farsdagsgave.",
+  "Sotare = feier, skorsten = pipe; Bestill senest 19. oktober.",
+  "Rubrikene brutt på naturlig sted, lengde per rad innen ca. 15 % (laveste 0,84); husvagn = campingvogn.",
+  "Feiesett-underrubrikken bruker verifisert form '100 mm'."
+ ]
+}
