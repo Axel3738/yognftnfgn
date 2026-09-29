@@ -106,7 +106,9 @@ export function tolkaAnnonsinput(data) {
     .map((a, i) => { const e = exponeringarUr(a); return { nr: i + 1, lank: a.lank ?? null, text: String(a.text ?? '').trim(), rubrik: String(a.rubrik ?? '').trim(), bilder: Array.isArray(a.bilder) ? a.bilder.filter(Boolean) : [], video: Boolean(a.video), start: a.start ?? null, slut: a.slut ?? null, aktiv: aktivUr(a), exponeringar: e.antal, exponeringarKalla: e.kalla }; })
     .filter((a) => a.text || a.bilder.length);
   if (!rader.length) throw new Error('annonsfilen har inga annonser med text eller bilder.');
-  return { deras: { ...deras, doman, url: deras.url ?? (doman ? `https://${doman}` : null) }, annonser: rader };
+  // Landet annonsbiblioteket lästes för (adlibrary.mjs skriver det i filen) — ett norskt fynd är ett eget ärende.
+  const land = typeof data?.land === 'string' && /^[A-Z]{2}$/.test(data.land) ? data.land : null;
+  return { deras: { ...deras, doman, url: deras.url ?? (doman ? `https://${doman}` : null) }, annonser: rader, land };
 }
 
 /**
@@ -144,6 +146,25 @@ export function jamforAnnons(a, { egnaAnnonser, egnaProdukter, konfig, derasHash
 /** Produktraden som fyndet bär (aldrig hela produkttexten). Ren. */
 function produktRad(p) {
   return p ? { handle: p.handle, titel: p.titel, url: p.url, butik: p.butik, verksamhet: p.verksamhet, bilder: (p.bilder ?? []).slice(0, 12) } : null;
+}
+
+/**
+ * Uppföljningen av ett annonsfall: är de anmälda annonserna kvar? Kopian är
+ * ANNONSERNA, och deras sajt säger ingenting. ORVO hade inget på hemsidan, och
+ * uppföljningen jämförde sajten med vår produktsida. Den hade alltså stängt ärendet
+ * som "åtgärdat" morgonen efter brevet, medan annonserna rullade (mätt 2026-09-29).
+ * `bibliotek` = hamtaAdLibrary() för sidan och landet. Oläst eller fel ⇒ kvar: null
+ * (okänt), aldrig "borta". Ren.
+ */
+export function annonsUppfoljning(bevisAnnonser, bibliotek) {
+  const idn = [...new Set((bevisAnnonser ?? []).filter((t) => t.aktiv !== false).map((t) => String(t.lank ?? '').match(/[?&]id=(\d+)/)?.[1]).filter(Boolean))];
+  if (!idn.length) return { kvar: null, detalj: 'inga aktiva annonser i bevisen — kan inte följas upp automatiskt', aktiva: [] };
+  if (!bibliotek || (!(bibliotek.annonser ?? []).length && (bibliotek.fel ?? []).length)) return { kvar: null, detalj: `annonsbiblioteket gick inte att läsa${bibliotek?.fel?.[0] ? `: ${bibliotek.fel[0]}` : ''}`, aktiva: [] };
+  const aktiva = new Set((bibliotek.annonser ?? []).filter((x) => x.aktiv).map((x) => String(x.id)));
+  const kvar = idn.filter((id) => aktiva.has(id));
+  return kvar.length
+    ? { kvar: true, detalj: `${kvar.length} av ${idn.length} anmälda annonser är fortfarande aktiva`, aktiva: kvar }
+    : { kvar: false, detalj: `ingen av de ${idn.length} anmälda annonserna är aktiv längre`, aktiva: [] };
 }
 
 /**
@@ -189,9 +210,13 @@ export function byggAnnonsfynd(input, { egnaAnnonser, egnaProdukter, konfig, der
   const verksamhet = produkt?.verksamhet ?? topp.varAnnons?.verksamhet ?? basta.varAnnons?.verksamhet ?? Object.keys(konfig.verksamheter)[0];
   const huvudAnnons = topp.varAnnons ?? basta.varAnnons ?? null;
   const deras = input.deras;
+  // Nyckeln bär landet utanför Sverige: samma sida i Norge är ett EGET ärende, aldrig en uppdatering
+  // av det svenska (mätt 2026-09-29: ORVO:s 13 norska annonser hade annars skrivit över bevisen i
+  // KD-2026-001 — efter att brevet gått).
+  const land = input.land && input.land !== 'SE' ? input.land : null;
   return {
-    nyckel: nyckelFor({ typ: 'annons', doman: deras.doman, sidaId: deras.doman ? null : deras.sidnamn, handle: 'annonser' }),
-    verksamhet, typ: 'annons', kalla,
+    nyckel: nyckelFor({ typ: 'annons', doman: deras.doman, sidaId: deras.doman ? null : deras.sidnamn, handle: land ? `annonser-${land}` : 'annonser' }),
+    verksamhet, typ: 'annons', kalla, ...(land ? { land } : {}),
     var: {
       produkt: produkt ? { handle: produkt.handle, titel: produkt.titel, url: produkt.url, butik: produkt.butik, bilder: (produkt.bilder ?? []).slice(0, 12) } : { handle: 'annonser', titel: `${traffar.length} ${traffar.length === 1 ? 'annons' : 'annonser'}`, url: null, butik: null, bilder: [] },
       annons: huvudAnnons ? { id: huvudAnnons.id, namn: huvudAnnons.namn, bild: huvudAnnons.bild ?? egnaAnnonser.find((e) => e.id === huvudAnnons.id)?.bild ?? null } : null,

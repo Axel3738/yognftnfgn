@@ -146,7 +146,7 @@ export function metaRad({ n, antal = n, baraAktiva = false, redanAnmalt = false,
   return `${vem} ${verb} to Meta (Facebook and Instagram) for copyright infringement${n > 1 ? ', one report per ad' : ''}.`;
 }
 
-export function byggBrev(arende, { avsandare, foretag, sprak = null, nu = new Date(), fristTimmar = 48, paminnelseTimmar = 24, paminnelse = false, mottagare = null, faktura = null, anmalanSamtidigt = false, anmalanAntal = null } = {}) {
+export function byggBrev(arende, { avsandare, foretag, sprak = null, nu = new Date(), fristTimmar = 48, paminnelseTimmar = 24, paminnelse = false, mottagare = null, faktura = null, anmalanSamtidigt = false, anmalanAntal = null, utanMeta = false } = {}) {
   const s = valjSprak({ lang: arende.deras?.lang, doman: arende.deras?.doman, tvinga: sprak });
   const deras = arende.deras ?? {};
   const doman = deras.doman ?? deras.sidnamn ?? '?';
@@ -174,7 +174,10 @@ export function byggBrev(arende, { avsandare, foretag, sprak = null, nu = new Da
   // `anmalanAntal`: hur många Axel sagt ja till i granskningsappen (null = alla byggda).
   const antalByggda = arende.anmalan?.antal ?? 0;
   const nAnm = anmalanAntal ?? antalByggda;
-  const metaNu = annonsfall && (anmalanSamtidigt || redanAnmalt) && nAnm > 0;
+  // `utanMeta` (Axel 2026-09-29: "vi borde inte säga att vi har skickat DMCA-takedowns … han kommer att försöka få ner
+  // våra annonser"): brevet nämner inte Meta alls — varken att annonserna anmäls/är anmälda eller som ett villkorat hot,
+  // för ett hot om något som redan är gjort vore vilseledande.
+  const metaNu = !utanMeta && annonsfall && (anmalanSamtidigt || redanAnmalt) && nAnm > 0;
   const metaArg = { n: nAnm, antal: antalByggda, baraAktiva: Boolean(arende.anmalan?.baraAktiva), redanAnmalt };
   const metaRadSv = metaNu ? [metaRad({ ...metaArg, sprak: 'sv' }), ''] : [];
   const metaRadEn = metaNu ? [metaRad({ ...metaArg, sprak: 'en' }), ''] : [];
@@ -207,7 +210,7 @@ export function byggBrev(arende, { avsandare, foretag, sprak = null, nu = new Da
         ...metaRadSv,
         `${fakt ? 'Uteblir borttagningen eller betalningen' : 'Sker inte det'} kommer vi utan ytterligare påminnelse att:`,
         '',
-        metaNu
+        metaNu || utanMeta
           ? `– anmäla intrånget till ${shopify ? 'Shopify' : 'er e-handelsplattform'} enligt deras rutiner för immaterialrättsintrång, vilket normalt leder till att butiker stängs av,`
           : `– anmäla intrånget till Meta (Facebook och Instagram)${shopify ? ' och till Shopify' : ' och till er e-handelsplattform'} enligt deras rutiner för immaterialrättsintrång, vilket normalt leder till att annonser och butiker stängs av,`,
         '– anmäla intrånget till er domänregistrar och ert webbhotell, och',
@@ -253,7 +256,7 @@ export function byggBrev(arende, { avsandare, foretag, sprak = null, nu = new Da
       ...metaRadEn,
       `${fakt ? 'Should the removal or the payment not take place' : 'Failing that'}, we will without further notice:`,
       '',
-      metaNu
+      metaNu || utanMeta
         ? `– report the infringement to ${shopify ? 'Shopify' : 'your e-commerce platform'} under their intellectual property procedures, which normally results in stores being taken down,`
         : `– report the infringement to Meta (Facebook and Instagram)${shopify ? ' and to Shopify' : ' and to your e-commerce platform'} under their intellectual property procedures, which normally results in ads and stores being taken down,`,
       '– report the infringement to your domain registrar and hosting provider, and',
@@ -286,7 +289,7 @@ export function byggBrev(arende, { avsandare, foretag, sprak = null, nu = new Da
       '',
       ...rader,
       '',
-      `Ni får en sista frist till ${fristText(nu, paminnelseTimmar, 'sv')}. ${redanAnmalt ? `Annonserna är redan anmälda till Meta. Därefter anmäler vi intrånget till ${shopify ? 'Shopify' : 'er e-handelsplattform'}` : `Därefter anmäler vi intrånget till Meta${shopify ? ' och Shopify' : ' och er e-handelsplattform'}`} och lämnar ärendet till vårt ombud för talan vid Patent- och marknadsdomstolen, med krav på ersättning enligt 54 § upphovsrättslagen för hela den tid materialet använts.`,
+      `Ni får en sista frist till ${fristText(nu, paminnelseTimmar, 'sv')}. ${utanMeta ? `Därefter anmäler vi intrånget till ${shopify ? 'Shopify' : 'er e-handelsplattform'}` : redanAnmalt ? `Annonserna är redan anmälda till Meta. Därefter anmäler vi intrånget till ${shopify ? 'Shopify' : 'er e-handelsplattform'}` : `Därefter anmäler vi intrånget till Meta${shopify ? ' och Shopify' : ' och er e-handelsplattform'}`} och lämnar ärendet till vårt ombud för talan vid Patent- och marknadsdomstolen, med krav på ersättning enligt 54 § upphovsrättslagen för hela den tid materialet använts.`,
       '',
       `Bekräfta borttagningen skriftligen till ${mail}.`,
       '',
@@ -305,7 +308,7 @@ export function byggBrev(arende, { avsandare, foretag, sprak = null, nu = new Da
     '',
     ...rader,
     '',
-    `You have a final deadline of ${fristText(nu, paminnelseTimmar, 'en')}. ${redanAnmalt ? `The ads have already been reported to Meta. After that we will report the infringement to ${shopify ? 'Shopify' : 'your e-commerce platform'}` : `After that we will report the infringement to Meta${shopify ? ' and Shopify' : ' and your e-commerce platform'}`} and hand the matter to our counsel for proceedings before the Swedish Patent and Market Court, claiming compensation under section 54 of the Copyright Act for the entire period the material has been used.`,
+    `You have a final deadline of ${fristText(nu, paminnelseTimmar, 'en')}. ${utanMeta ? `After that we will report the infringement to ${shopify ? 'Shopify' : 'your e-commerce platform'}` : redanAnmalt ? `The ads have already been reported to Meta. After that we will report the infringement to ${shopify ? 'Shopify' : 'your e-commerce platform'}` : `After that we will report the infringement to Meta${shopify ? ' and Shopify' : ' and your e-commerce platform'}`} and hand the matter to our counsel for proceedings before the Swedish Patent and Market Court, claiming compensation under section 54 of the Copyright Act for the entire period the material has been used.`,
     '',
     `Confirm the removal in writing to ${mail}.`,
     '',

@@ -420,6 +420,14 @@ test('annonsfallet: deras annonser mot våra annonstexter + produkttexter, en ra
   assert.match(fynd.skal[0], /2 av deras annonser återger våra annonstexter ordagrant/);
   // Ingen träff alls ⇒ null, aldrig ett påhittat ärende
   assert.equal(byggAnnonsfynd({ ...input, annonser: [input.annonser[2]] }, { egnaAnnonser, egnaProdukter, konfig: KONFIG, derasHashar: new Map(), egnaHashar: new Map() }), null);
+  // Samma sida i Norge är ett EGET ärende (ORVO 2026-09-29): landet ur annonsfilen hamnar i nyckeln, Sverige behåller den gamla.
+  assert.equal(input.land, null);
+  const no = tolkaAnnonsinput({ land: 'NO', deras: { sidnamn: 'Kopian', url: 'https://www.kopian.se/' }, annonser: [{ lank: 'https://www.facebook.com/ads/library/?id=1', text: input.annonser[0].text }] });
+  assert.equal(no.land, 'NO');
+  const fyndNo = byggAnnonsfynd(no, { egnaAnnonser, egnaProdukter, konfig: KONFIG, derasHashar: new Map(), egnaHashar: new Map() });
+  assert.notEqual(fyndNo.nyckel, fynd.nyckel); assert.match(fyndNo.nyckel, /annonser-NO$/); assert.equal(fyndNo.land, 'NO');
+  assert.equal(tolkaAnnonsinput({ land: 'SE', deras: { sidnamn: 'K', url: 'https://www.kopian.se/' }, annonser: [{ lank: 'x', text: 'y' }] }).land, 'SE');
+  assert.equal(byggAnnonsfynd({ ...input, land: 'SE' }, { egnaAnnonser, egnaProdukter, konfig: KONFIG, derasHashar: new Map(), egnaHashar: new Map() }).nyckel, fynd.nyckel, 'SE ger samma nyckel som förut');
   // Brevet räknar upp annonserna, fakturan tar en rad per annons (video dyrare)
   const skarm = { egen: 'https://cdn/ann1.png', deras: '/tmp/axels-skarmdump.png', avstand: 0, grad: 'identisk' };
   const arende = { ...fynd, id: 'KD-2026-009', status: 'ny', skapad: '2026-09-29T08:00:00Z', brev: { mottagare: 'info@kopian.se' }, bevis: { ...fynd.bevis, bilder: [skarm], annonser: fynd.bevis.annonser.map((t, i) => (i === 0 ? { ...t, bilder: [skarm] } : t)) } };

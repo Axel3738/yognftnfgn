@@ -22,11 +22,15 @@
 //
 // Utan bankgiro/IBAN vägrar kontrollen: en faktura utan konto att betala till
 // är bara ett hot. IBAN:et kontrolleras med mod 97 — en felskriven siffra ska
-// stoppa här, inte hos banken. PDF:en görs i Chromium — inga npm-beroenden.
+// stoppa här, inte hos banken. PDF:en görs av textpdf.mjs med PDF:ens
+// standardtypsnitt (några kB — bilagan går som base64 i Gmail-connectorns anrop,
+// där Chromiums 72 kB inte ryms säkert, mätt 2026-09-29); Chromium är reserven.
+// Inga npm-beroenden.
 
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { dirname } from 'node:path';
 import { bevisStatus } from './klipp.mjs';
+import { TextPdf, textbredd, radbryt } from './textpdf.mjs';
 
 export const STANDARDTAXA = Object.freeze({ annons: 5000, video: 8000, bild: 3000, produkttext: 5000 });
 
@@ -263,7 +267,106 @@ table.rader td{padding:2.5mm 1mm;border-bottom:1px solid #d5dad2;vertical-align:
 </body></html>`;
 }
 
-/** HTML → PDF i Chromium. Returnerar filens sökväg, eller kastar med orsak. */
+/**
+ * Fakturan som LITEN PDF (textpdf.mjs: standardtypsnitten Helvetica, inget
+ * inbäddat — några kB i stället för Chromiums ~70 kB, så att bilagan ryms som
+ * base64 i Gmail-connectorns anrop). Samma innehåll som fakturaHtml(): huvud,
+ * parter, rader, summa, grund, villkor och konto. Returnerar en Buffer. Ren.
+ */
+export function fakturaLitenPdf(f, { skapad = new Date() } = {}) {
+  const L = ORD[f.sprak] ?? ORD.sv;
+  const s = f.saljare; const k = f.kopare;
+  const pdf = new TextPdf();
+  const MM = 72 / 25.4;
+  const V = 16 * MM; const H = pdf.bredd - 16 * MM; const B = H - V;
+  const TOPP = 18 * MM; const BOTTEN = pdf.hojd - 22 * MM;
+  const MORK = '#151a21'; const GRA = '#5b6570'; const LJUS = '#d5dad2';
+  const pris = (n) => belopp(n, f.valuta, f.sprak);
+  let y = TOPP;
+  const nySidaOm = (behov) => { if (y + behov <= BOTTEN) return false; pdf.nySida(); y = TOPP; return true; };
+  // Huvudet: titel + fakturans uppgifter till vänster, säljaren till höger.
+  pdf.text(V, y + 22, L.titel, { storlek: 24, fet: true, sparr: 1.4 });
+  const meta = [[L.nr, f.nr, true], [L.datum, f.datum, false], [L.forfaller, f.forfaller, true], [L.ref, f.referens, false]];
+  const etikettB = Math.max(...meta.map(([e]) => textbredd(e, 10))) + 14;
+  let ym = y + 44;
+  for (const [e, v, fet] of meta) { pdf.text(V, ym, e, { storlek: 10, farg: GRA }); pdf.text(V + etikettB, ym, v, { storlek: 10, fet }); ym += 14.5; }
+  let yh = y + 10;
+  for (const [t, fet] of [[s.namn, true], [`${L.orgnr} ${s.orgnr}`], ...(s.momsreg ? [[`${L.momsreg} ${s.momsreg}`]] : []), [s.adress], [s.mail]]) { pdf.text(H, yh, t, { storlek: 10, fet: Boolean(fet), justera: 'hoger' }); yh += 14.5; }
+  y = Math.max(ym, yh) + 2;
+  pdf.linje(V, y, H, y, { tjocklek: 1.6, farg: MORK });
+  y += 22;
+  // Parterna.
+  const kol = (B - 34) / 2;
+  const part = (x, rubrik, rader) => {
+    pdf.text(x, y, rubrik.toUpperCase(), { storlek: 8, farg: GRA, sparr: 0.6 });
+    let yy = y + 15;
+    for (const [t, fet] of rader) for (const r of radbryt(t, kol, 10, { fet: Boolean(fet) })) { pdf.text(x, yy, r, { storlek: 10, fet: Boolean(fet) }); yy += 14; }
+    return yy;
+  };
+  const yk = part(V, L.kopare, [[k.namn, true], ...(k.orgnr ? [[`${L.orgnr} ${k.orgnr}`]] : []), ...(k.adress ? [[k.adress]] : []), ...(k.doman ? [[k.doman]] : []), ...(k.mail ? [[k.mail]] : [])]);
+  const ys = part(V + kol + 34, L.saljare, [[s.namn, true], [`${L.orgnr} ${s.orgnr}`], ...(s.momsreg ? [[`${L.momsreg} ${s.momsreg}`]] : []), [s.adress]]);
+  y = Math.max(yk, ys) + 12;
+  // Raderna; tabellhuvudet upprepas på varje ny sida.
+  const xBelopp = H; const xApris = H - 72; const xAntal = H - 144;
+  const beskrB = xAntal - 36 - V - 8;
+  const tabellHuvud = () => {
+    const t = (x, str, justera) => pdf.text(x, y + 10, str.toUpperCase(), { storlek: 8, farg: GRA, sparr: 0.5, justera });
+    t(V, L.beskrivning, 'vanster'); t(xAntal, L.antal, 'hoger'); t(xApris, L.apris, 'hoger'); t(xBelopp, L.belopp, 'hoger');
+    y += 15; pdf.linje(V, y, H, y, { tjocklek: 0.8, farg: MORK }); y += 2;
+  };
+  tabellHuvud();
+  for (const r of f.rader) {
+    const rader = radbryt(r.beskrivning, beskrB, 9.5);
+    const hojd = rader.length * 12.5 + 10;
+    if (nySidaOm(hojd)) tabellHuvud();
+    const yy = y + 13;
+    rader.forEach((t, i) => pdf.text(V, yy + i * 12.5, t, { storlek: 9.5 }));
+    pdf.text(xAntal, yy, String(r.antal), { storlek: 9.5, justera: 'hoger' });
+    pdf.text(xApris, yy, pris(r.apris), { storlek: 9.5, justera: 'hoger' });
+    pdf.text(xBelopp, yy, pris(r.belopp), { storlek: 9.5, justera: 'hoger' });
+    y += hojd; pdf.linje(V, y, H, y, { tjocklek: 0.5, farg: LJUS });
+  }
+  // Summan.
+  nySidaOm(72);
+  y += 16;
+  const xS = H - 200;
+  const summa = (etikett, varde, stor = false) => { const st = stor ? 13 : 10; pdf.text(xS, y, etikett, { storlek: st, fet: stor }); pdf.text(H, y, varde, { storlek: st, fet: stor, justera: 'hoger' }); };
+  summa(L.netto, pris(f.netto)); y += 15;
+  summa(`${L.moms} ${f.momsProcent} %`, pris(f.moms)); y += 8;
+  pdf.linje(xS, y, H, y, { tjocklek: 1.6, farg: MORK }); y += 17;
+  summa(L.att_betala, pris(f.brutto), true); y += 20;
+  // Grunden i en grå ruta.
+  const stycken = [`${L.grund} ${f.referens}.`, ...(f.berakning === 'exponeringar' ? [cpmText(f, L)] : []), ...(f.omvand ? [L.omvand] : [])].filter(Boolean).map((p) => radbryt(p, B - 22, 9));
+  const grundHojd = stycken.reduce((n, r) => n + r.length * 12, 0) + (stycken.length - 1) * 5 + 16;
+  nySidaOm(grundHojd + 12);
+  pdf.ruta(V, y, B, grundHojd, { farg: '#f2f4f1' });
+  let yg = y + 17;
+  for (const rader of stycken) { for (const t of rader) { pdf.text(V + 11, yg, t, { storlek: 9, farg: '#333333' }); yg += 12; } yg += 5; }
+  y += grundHojd + 20;
+  // Villkor och konto.
+  const villkor = radbryt(`${L.villkorText(f.betalvillkor_dagar)} ${L.ange}`, kol, 9.5);
+  const konto = [s.bankgiro && [L.bankgiro, s.bankgiro], s.iban && [L.iban, s.iban], s.bic && [L.bic, s.bic]].filter(Boolean);
+  nySidaOm(Math.max(villkor.length * 12.5 + 18, konto.length * 14 + 6));
+  pdf.text(V, y, L.villkor.toUpperCase(), { storlek: 8, farg: GRA, sparr: 0.6 });
+  villkor.forEach((t, i) => pdf.text(V, y + 15 + i * 12.5, t, { storlek: 9.5 }));
+  const xk = V + kol + 34;
+  konto.forEach(([e, v], i) => { pdf.text(xk, y + 15 + i * 14, `${e}:`, { storlek: 10, fet: true }); pdf.text(xk + textbredd(`${e}: `, 10, { fet: true }), y + 15 + i * 14, v, { storlek: 10 }); });
+  // Sidfoten på varje sida.
+  const fot = [`${s.namn} · ${L.orgnr} ${s.orgnr}${s.momsreg ? ` · ${L.momsreg} ${s.momsreg}` : ''}`, `${s.adress} · ${s.mail}`];
+  const antal = pdf.sidor.length;
+  const aktuell = pdf.ops;
+  pdf.sidor.forEach((ops, i) => {
+    pdf.ops = ops;
+    const yf = pdf.hojd - 16 * MM;
+    pdf.linje(V, yf - 13, H, yf - 13, { tjocklek: 0.5, farg: LJUS });
+    fot.forEach((t, j) => pdf.text(V, yf + j * 10, t, { storlek: 7.5, farg: GRA }));
+    if (antal > 1) pdf.text(H, yf, `${i + 1}/${antal}`, { storlek: 7.5, farg: GRA, justera: 'hoger' });
+  });
+  pdf.ops = aktuell;
+  return pdf.bytes({ titel: `${L.titel} ${f.nr}`, skapad });
+}
+
+/** HTML → PDF i Chromium (reserven när den lilla PDF:en inte går). Returnerar filens sökväg, eller kastar med orsak. */
 export async function fakturaPdf(html, fil, { playwrightSokvag = process.env.LR_PLAYWRIGHT || '/opt/node22/lib/node_modules/playwright/index.mjs', kandidater = ['/opt/pw-browsers/chromium-1194/chrome-linux/chrome', '/opt/pw-browsers/chromium'] } = {}) {
   let pw;
   try { pw = await import(playwrightSokvag); } catch (e) { throw new Error(`Playwright saknas (${e.message.split('\n')[0]}) — PDF:en kan inte göras här`); }

@@ -228,10 +228,15 @@ inget: "Inget för dig i dag."
   "De N aktiva annonserna anmäls samtidigt till Meta …" och hotar inte med Meta-anmälan som villkor
   (utan flaggan står Meta kvar bland det som händer om de inte tar bort materialet). Kör sedan
   anmälningarna direkt efter brevet (steg under `anmal`).
-  1. `node konkurrenter/kor.mjs --skicka <id> [--med-anmalan] [--till …] [--sprak …] [--kopare …] [--land …] [--cpm …] [--utan-faktura]`
-     — bygger brevet och fakturan (PDF i Chromium) till
+  **Har Axel sagt att brevet och sms:et inte ska nämna Meta-anmälningarna: `--utan-meta`** (ORVO
+  2026-09-29: "vi borde lugnt inte säga att vi har skickat DMCA"). Flaggan sparas på ärendet och gäller
+  även påminnelsen och sms:et. Säg samtidigt att Metas formulär själv lämnar ut rättighetshavarens namn,
+  anmälarens e-post och vad anmälan gäller till den anmälde.
+  1. `node konkurrenter/kor.mjs --skicka <id> [--med-anmalan | --utan-meta] [--till …] [--sprak …] [--kopare …] [--land …] [--cpm …] [--utan-faktura]`
+     — bygger brevet och fakturan (liten PDF, `textpdf.mjs`) till
      `konkurrenter/arenden/<id>/brev.txt`, `brev.json` (sändpaketet:
-     till/från/ämne/text/bilagor) och `faktura-<nr>.pdf`. Fakturan räknar
+     till/från/ämne/text/bilagor + `omslag`), **`brev.pdf`** (brevet
+     ordagrant, klickbara länkar) och `faktura-<nr>.pdf`. Fakturan räknar
      varje annons med exponeringar som exponeringar × vår CPM (mäts ur
      Meta i samma körning, `--cpm` vinner), resten på schablon; 25 % moms
      till svensk köpare, omvänd utomlands (`--land` när domänen inte säger
@@ -242,18 +247,23 @@ inget: "Inget för dig i dag."
      `--utan-faktura`. Läs utskriftens rad "Faktura …: <belopp> (<grund>)"
      och skriv grunden till Axel — han ska se att beloppet är deras
      exponeringar gånger vår CPM, inte en gissning.
-  2. Läs `brev.json`. Gmail-verktygen: `ToolSearch("select:mcp__Gmail__create_draft,mcp__Gmail__send_message")`
-     (finns i sessionen sedan 2026-09-29; `create_draft` tar `attachments`
-     med `filename`, `mimeType: "application/pdf"` och `content` = PDF:en
-     base64 — läs filen med `base64 -w0 <fil>` i Bash). **Utan `--direkt`:
-     skapa ett UTKAST i Gmail** med `to`, `subject`, `body` (brevets text,
-     ren text — ingen markdown) och PDF:en bifogad. Svara Axel med utkastets
-     `viewUrl`. Ärendet står kvar som `ny` med `brev.paket` tills Axel tryckt
-     Skicka och skrivit `skickad <id>`. **Med `--direkt`: `send_message`
-     från Gmail** med samma fält, och kör sedan
-     `node konkurrenter/kor.mjs --skickad <id> [--till …]` (kvittot: status
-     `skickad`, fristen 48 h börjar). Gmail-verktyget svarar med `id`: skriv
-     det i kvittot (`--meddelande <id>`).
+  2. Läs `brev.json`. Gmail-verktygen: `ToolSearch("select:mcp__Gmail__create_draft,mcp__Gmail__get_draft,mcp__Gmail__send_message,mcp__Gmail__delete_draft")`.
+     ⛔ **Mejlets text är `omslag` (följetexten), ALDRIG brevtexten.** Gmail-connectorn skriver om varje
+     länk och domän i mejlets text till en Google-omdirigering (mätt 2026-09-29, `brevpdf.mjs`).
+     Brevet går som bilagan `brev.pdf`. Skapa ett UTKAST: `to`, `subject` = `amne`, `body` =
+     `omslag` (ren text), `attachments` = `brev.pdf` + fakturan (`filename`, `mimeType:
+     "application/pdf"`, `content` = `base64 -w0 <fil>`). Båda är några kB, och Chromiums 72 kB
+     rymdes inte säkert i anropet.
+     **Läs sedan tillbaka utkastet innan något skickas:** `get_draft` med `messageFormat: "RAW"`, skriv
+     `raw` till en fil i scratchpad och avkoda i Python (`email.message_from_bytes(base64.urlsafe_b64decode(…))`).
+     Varje bilagas sha256 ska vara LIKA med filen, och text/plain ska sakna `google.com/url`. Stämmer
+     något inte: radera utkastet och gör om. Gå aldrig vidare på "ser rätt ut".
+     **Utan `--direkt`:** svara Axel med utkastets `viewUrl`. Ärendet står kvar som `ny` med
+     `brev.paket` tills Axel tryckt Skicka och skrivit `skickad <id>`. **Med `--direkt` eller hans Ja
+     på mejlkortet: `send_message` med `draftId`** (samma utkast som lästes tillbaka), sedan
+     `node konkurrenter/kor.mjs --skickad <id> --meddelande <id>` (kvittot: status `skickad`, fristen
+     48 h börjar). Radera varje annat utkast du lagt i samma ärende (`delete_draft`), så att inget
+     gammalt kan gå av misstag.
   3. Saknas Gmail-connectorn i sessionen: säg det som första rad, ge Axel
      brevet (`brev.txt`) och PDF:en med SendUserFile, och hans uppgifter:
      koppla Gmail (claude.ai → Settings → Connectors → Gmail) eller klistra
@@ -343,15 +353,26 @@ inget: "Inget för dig i dag."
      Gmail** (connectorn är Axels `axel.odhner@stonebite.org`; koden går till
      `anmalan.undertecknare.epost`, som därför måste vara en adress den
      brevlådan tar emot): `mcp__Gmail__search_threads` med
-     `newer_than:1h (meta OR facebook) code`, läs tråden (`get_thread`,
-     PLAIN_TEXT), skriv BARA siffrorna i `kod.txt`. Skriptet fyller i,
-     klickar Submit, läser referensnumret ur kvittot, sparar `<nr>-kvitto.png`
-     och skriver kvittot i ärendet (`status: inskickad`, referens) —
+     `newer_than:1h (meta OR facebook) code`, och läs mejlet med `get_message`
+     **FULL_CONTENT**. Koden står bara i HTML-delen; PLAIN_TEXT saknar den (mätt
+     2026-09-29). Skriv BARA siffrorna i `kod.txt`. Skriptet fyller i,
+     klickar Submit och skriver kvittot i ärendet **bara när Meta bekräftar**
+     (`kvittoUtfall`). Då sparas `<nr>-kvitto.png` och referensen, och
      `--anmald <id> --nr <n> --referens <r>` finns kvar för hand. Nästa
      anmälan begär en ny kod: upprepa tills alla är inskickade (⇒ ärendet
      "anmält vidare"). Rapportera till Axel: en rad per anmälan med
      referensnummer, och det som inte gick. Stoppar skriptet ("obligatoriskt
-     fält kvar", fält som inte hittas): inget är skickat — säg exakt vad.
+     fält kvar", fält som inte hittas): inget är skickat, säg exakt vad.
+     ⛔ **Säkerhetskontrollen:** mätt 2026-09-29 (ORVO anmälan 1) visar Meta en
+     captcha ("Security check") vid Submit från containern. Skriptet stoppar då
+     med `❌ Meta kräver en säkerhetskontroll` och `<nr>-sakerhetskontroll.png`.
+     **Lös den aldrig härifrån, och försök inte ta dig runt den** (ingen annan
+     webbläsare, inga knep): den är en människas. Kör
+     `node konkurrenter/kor.mjs --anmal-cowork <id>` → `arenden/<id>/anmalan/COWORK-PROMPT.txt`,
+     skicka filen till Axel med SendUserFile och ge honom stegen: öppna Cowork i Chrome, klistra in,
+     gör säkerhetskontrollen när Cowork säger till. Kvittona skriver sessionen sedan med
+     `--anmald <id> --nr <n> --referens <r>`, ur Metas bekräftelsemejl i Gmail eller ur Coworks lista.
+     Står ett kvitto fel (en anmälan som inte gick in): `--anmald <id> --nr <n> --angra "<skäl>"`.
 
 - **`granska <id>` — granskningsappen, Axels Ja/Nej per kort** (Axels order
   2026-09-29: "jag kan swipa mellan anmälningarna, läsa igenom all text och
