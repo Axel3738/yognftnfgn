@@ -1,7 +1,7 @@
 {
   "id": "k34-fars-dag-bat",
-  "namn": "MAIL_20261017_Motorlas_GT_10_kopare-bat_product_motorn-han-laser-fast_v2",
-  "memo": "Båtköparna får sin egen fars dag-lista som önskelista att skicka vidare. Hypotes: motorlåset är presenten båtägaren vill ha men inte köper själv. 2026-09-29: fars dag-rean, 30 % med FARSDAG30, lades till (Axels order). Rean slutar måndag 19 oktober och det är den enda deadline mejlet nämner, aldrig beställning eller frakt.",
+  "namn": "MAIL_20261017_Motorlas_GT_10_tier2-kopare-bat_product_motorn-han-laser-fast_v3",
+  "memo": "Fars dag-listan för båtfolk, som önskelista att skicka vidare. Brett (Axels order 2026-09-29: \"samma gäller för tofflor och liknande, vi ska ju skicka till alla våra kunder\"): Fars dag båt 17/10 är Warmup tier 2 plus båtköparna. Hypotes: motorlåset är presenten båtägaren vill ha men inte köper själv. 2026-09-29: fars dag-rean, 30 % med FARSDAG30, lades till (Axels order). Rean slutar måndag 19 oktober och det är den enda deadline mejlet nämner, aldrig beställning eller frakt.",
   "taggar": {
     "typ": "S",
     "kalla": "egen-data",
@@ -81,7 +81,7 @@
     { "rad": "Hämta 30 % med FARSDAG30", "visualisera": true, "falsifiera": true, "ingen_annan": true }
   ],
   "planerad": "2026-10-17T18:00:00+02:00",
-  "segment": ["Köpare båt"],
+  "segment": ["Fars dag båt 17/10"],
   "exkludera": [],
   "status_plan": "klar",
   "kraver_axel": null,

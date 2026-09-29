@@ -140,6 +140,17 @@
       "productsPerRow": 3
     },
     {
+      "type": "divider"
+    },
+    {
+      "type": "h1",
+      "text": "FISKE30",
+      "alignment": "center"
+    },
+    {
+      "type": "divider"
+    },
+    {
       "type": "regular",
       "text": "Koden FISKE30 ger 30 % på fiskekalendern, linupprullaren, fiskesetet, mini-spöet, magnetfiskesatsen och båda spöhållarna till och med torsdag 8 oktober. Tryck på knappen så ligger koden redan i kassan, eller skriv in den själv. Rabatten dras i kassan, en gång per kund, på priset som står på produktsidan.",
       "alignment": "left"

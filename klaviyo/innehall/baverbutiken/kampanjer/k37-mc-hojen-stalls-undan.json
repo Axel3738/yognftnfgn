@@ -1,7 +1,7 @@
 {
   "id": "k37-mc-hojen-stalls-undan",
-  "namn": "MAIL_20261021_MCkapell_S_1_kopare-mc_solution_hojen-stalls-undan_v2",
-  "memo": "Säsongen är slut för de flesta hojar i slutet av oktober. Till dem som redan köpt MC- eller fordonsprylar. Nu med 30 % (MC30, till och med söndag 25 oktober) på kapellet, styrlåset, sätesöverdraget och bensindunken, och med problemet först: matt lack och rost på kromet visas före kapellet och koden (Axels krav 2026-09-29 på anledning före rabatt). Hypotes: 'ställs undan'-vinkeln, som K17 kör brett 10/11, funkar tre veckor tidigare till rätt grupp, och en kod med slutdag gör det till ett köp nu i stället för i vår; mätt på köp per mottagare.",
+  "namn": "MAIL_20261021_MCkapell_S_1_tier2-kopare-mc_solution_hojen-stalls-undan_v3",
+  "memo": "Säsongen är slut för de flesta hojar i slutet av oktober. Brett (Axels order 2026-09-29: \"samma gäller för tofflor och liknande, vi ska ju skicka till alla våra kunder\"): MC-rean 21/10 är Warmup tier 2 plus MC- och fordonsköparna. Nu med 30 % (MC30, till och med söndag 25 oktober) på kapellet, styrlåset, sätesöverdraget och bensindunken, och med problemet först: matt lack och rost på kromet visas före kapellet och koden (Axels krav 2026-09-29 på anledning före rabatt). Hypotes: 'ställs undan'-vinkeln, som K17 kör brett 10/11, funkar tre veckor tidigare, och en kod med slutdag gör det till ett köp nu i stället för i vår; mätt på köp per mottagare.",
   "taggar": {
     "typ": "S",
     "kalla": "egen-data",
@@ -131,7 +131,7 @@
   ],
   "planerad": "2026-10-21T18:00:00+02:00",
   "segment": [
-    "Köpare MC & fordon"
+    "MC-rean 21/10"
   ],
   "exkludera": [],
   "status_plan": "klar",

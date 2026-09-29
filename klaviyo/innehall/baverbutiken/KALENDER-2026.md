@@ -19,34 +19,42 @@ fars dag 8/11 (sista beställning **19/10**), Black Week 23–30/11, jul (sista 
 "Köpare …" = köparsegmenten (samtycke + köpt en produkt i gruppen). Vecka 40–41 går breda
 utskick till tier 1, vecka 42–43 till tier 2, vecka 44 till tier 3, sedan All subscribed.
 Ingen får två mejl samma dag: ett skräddarsytt mejl ligger aldrig samma dag som ett brett.
+Sedan köparmejlen blev breda (Axels två frågor 2026-09-29: "kan vi inte boka ut en om
+gräsklippningsgrejerna till alla?" och "samma gäller såklart för tofflor och liknande, vi ska
+ju skicka till alla våra kunder") går varje sådant mejl till ett eget segment: samtycke och
+(veckans uppvärmningssteg eller köparna i gruppen). Där ett köparmejl ändå ligger samma dag
+bär det breda segmentet undantaget: Tofflorrean 2/10 utan båtköparna (K24), Fiskerean 5/10
+utan husvagnsköparna (K27). Tofflorrean flyttades från ons 30/9 till fre 2/10, så att tier 1
+inte får den och gräsklipparrean samma kväll. Segmenten och storlekarna står i
+`klaviyo/spoks/README.md` → Köparmejlen blev breda.
 
 | Vecka | Dag | Kampanj | Produkter | Vinkel | Publik | Läge |
 |---|---|---|---|---|---|---|
 | 40 | tis 29/9 | K01 v2 | Taköverdrag | Vinterförvaring av vagnen | tier 1 | ✅ **SCHEMALAGD** 29/9 18:00 |
-| 40 | ons 30/9 | **K23** | Fodrade tofflor, plyschtofflor, ergonomiska tofflor, strandtofflor | **Tofflor:** golvet blir kallt, 30 % med TOFFLOR30 till sön 4/10 | Köpare tofflor & skor | omskriven 2026-09-29 (ersätter bästsäljarna) |
-| 40 | ons 30/9 | **K38** | Gräsklippartäcke, rengöringsborste, slipare, sätesöverdrag, väggfäste, trimmergrejer (11) | **Gräsklipparen:** säsongen är slut, 30 % med GRAS30 till sön 4/10 | Köpare gräsklippare & trimmer | ny 2026-09-29 |
+| 40 | ons 30/9 | **K38** | Gräsklippartäcke, rengöringsborste, slipare, sätesöverdrag, väggfäste, trimmergrejer (11) | **Gräsklipparen:** säsongen är slut, 30 % med GRAS30 till sön 4/10 | **Gräsklipparrean 30/9** (tier 1 + köpare gräsklippare & trimmer, 2 697) | ny 2026-09-29, **bred sedan samma eftermiddag** (Axels fråga: "till alla?") |
 | 40 | tor 1/10 | K02 | Båtmotorskydd + det som brukar följa med (motorhölje, sitsöverdrag, spöhållare) | Motorn står ute i sex månader, 30 % med BAT30 till sön 4/10 | tier 1 | omskriven 2026-09-29 |
-| 40 | fre 2/10 | K24 | Båtmotorskydd, motorlås, förtöjningslina, spolklamma | Båtköpare: hela motorn under tak, BAT30 | Köpare båt | rea tillagd 2026-09-29 |
-| 40 | lör 3/10 | K25 | Kranskydd, IBC, krukväxthuv, regntunnehuv | Kranen spricker (problem först), 30 % med FROST30 till ons 7/10 | Köpare trädgård & tomt | omskriven 2026-09-29 |
+| 40 | fre 2/10 | K24 | Båtmotorskydd, motorlås, förtöjningslina, spolklamma | Båtköpare: hela motorn under tak, BAT30 | Köpare båt | rea tillagd 2026-09-29, stannar hos köparna |
+| 40 | fre 2/10 | **K23** | Fodrade tofflor, plyschtofflor, ergonomiska tofflor, strandtofflor | **Tofflor:** golvet blir kallt, 30 % med TOFFLOR30 till sön 4/10 | **Tofflorrean 2/10** (tier 1 + köpare tofflor & skor, utan köpare båt, 2 219) | omskriven 2026-09-29 (ersätter bästsäljarna), **bred och flyttad från ons 30/9 samma eftermiddag** |
+| 40 | lör 3/10 | K25 | Kranskydd, IBC, krukväxthuv, regntunnehuv | Kranen spricker (problem först), 30 % med FROST30 till ons 7/10 | **Kranskyddet 3/10** (tier 1 + köpare trädgård & tomt, 2 752) | omskriven 2026-09-29, bred samma eftermiddag |
 | 40 | sön 4/10 | K26 | Motorlås, båtmotorskydd, bälteslip, täljset, sotarset, tändvedsklyv | **Fars dag 1:** fars dag kommer fortare än man tror, fars dag-rean börjar (FARSDAG30) | tier 1 | omskriven 2026-09-29 |
-| 41 | mån 5/10 | K27 | Tak-AC-huv, cykelhållarskydd, husbilskalendern, fönstertermomatta | Husvagnsköpare: resten av bilen, 30 % med HUSVAGN30 till tor 8/10 | Köpare husvagn & husbil | rea tillagd 2026-09-29 |
-| 41 | mån 5/10 | **K39** | Fiskekalendern, linupprullare, fiskeset, mini-spö, magnetfiske, spöhållare (7) | **Fisket:** ett drag om dagen i december + vinterns underhåll, 30 % med FISKE30 till tor 8/10 | Köpare fiske | ny 2026-09-29 |
+| 41 | mån 5/10 | K27 | Tak-AC-huv, cykelhållarskydd, husbilskalendern, fönstertermomatta | Husvagnsköpare: resten av bilen, 30 % med HUSVAGN30 till tor 8/10 | Köpare husvagn & husbil | rea tillagd 2026-09-29, stannar hos köparna |
+| 41 | mån 5/10 | **K39** | Fiskekalendern, linupprullare, fiskeset, mini-spö, magnetfiske, spöhållare (7) | **Fisket:** ett drag om dagen i december + vinterns underhåll, 30 % med FISKE30 till tor 8/10 | **Fiskerean 5/10** (tier 1 + köpare fiske, utan köpare husvagn & husbil, 1 942) | ny 2026-09-29, bred samma eftermiddag |
 | 41 | tis 6/10 | K03 | Termoskydd (+ fönstertermomatta) | Immig ruta varje morgon, 30 % med TERMO30 till fre 9/10 | tier 1 | omskriven 2026-09-29 (utan citat) |
 | 41 | ons 7/10 | K28 | Bälteslip, rullknivslip, täljset, makita-hållare | **Fars dag 2:** verkstadspappan, FARSDAG30 | tier 1 | rea tillagd 2026-09-29 |
 | 41 | tor 8/10 | K04 | Sotarset | Innan eldningssäsongen, 30 % med SOTAR30 till sön 11/10 | tier 1 | rea tillagd 2026-09-29 |
 | 41 | fre 9/10 | **K29** | Alla fjorton adventskalendrar | **Kalendrarna:** lucka 1 öppnas 1 december, 30 % med KALENDER30 till mån 12/10 | tier 1 | ny vinkel 2026-09-29 (samma Spoks-utkast) |
-| 41 | lör 10/10 | K30 | Tändvedsklyv, vedklyvborr, manuell vedklyv, vedklyvshuv | **Fars dag 3:** vedpappan, FARSDAG30 | Köpare trädgård & tomt | rea tillagd 2026-09-29 |
+| 41 | lör 10/10 | K30 | Tändvedsklyv, vedklyvborr, manuell vedklyv, vedklyvshuv | **Fars dag 3:** vedpappan, FARSDAG30 | **Fars dag ved 10/10** (tier 1 + köpare trädgård & tomt, 2 752) | rea tillagd 2026-09-29, bred samma eftermiddag |
 | 41 | sön 11/10 | K31 | Fiskespöhållare, mini-spö, fiskeset, linupprullare | **Fars dag 4:** fiskepappan, FARSDAG30 | tier 1 | rea tillagd 2026-09-29 |
-| 42 | mån 12/10 | K32 | Fågelmatare med kamera, jumpstart, inspektionskamera, solcellsladdare | **Fars dag 5:** prylpappan, FARSDAG30 | Köpare verkstad & garage | rea tillagd 2026-09-29 |
+| 42 | mån 12/10 | K32 | Fågelmatare med kamera, jumpstart, inspektionskamera, solcellsladdare | **Fars dag 5:** prylpappan, FARSDAG30 | **Fars dag fågelmataren 12/10** (tier 2 + köpare verkstad & garage, 5 023) | rea tillagd 2026-09-29, bred samma eftermiddag |
 | 42 | tis 13/10 | K05 | Taköverdrag, bälteslip, fiskespöhållare, kamera | **Fars dag 6**, FARSDAG30 | tier 2 | rea tillagd 2026-09-29 |
 | 42 | ons 14/10 | K33 | Värmesits, värmesulor, läktarponcho, MC-handvärmare | **Fars dag 7:** pappan som fryser, FARSDAG30 | tier 2 | rea tillagd 2026-09-29 |
 | 42 | tor 15/10 | K06 | Övervakningskamera | Mörkret, larm på personer, 30 % med KAMERA30 till sön 18/10 | tier 2 | omskriven 2026-09-29 (utan citat) |
 | 42 | fre 16/10 | K15 | Sex presenter i två grupper | **Fars dag 8:** sista helgen med fars dag-rean | tier 2 | rea tillagd 2026-09-29 |
-| 42 | lör 17/10 | K34 | Motorlås, båtmotorskydd, spolklamma, båthuv | **Fars dag 9:** båtpappan (önskelistan), FARSDAG30 | Köpare båt | rea tillagd 2026-09-29 |
+| 42 | lör 17/10 | K34 | Motorlås, båtmotorskydd, spolklamma, båthuv | **Fars dag 9:** båtpappan (önskelistan), FARSDAG30 | **Fars dag båt 17/10** (tier 2 + köpare båt, 5 019) | rea tillagd 2026-09-29, bred samma eftermiddag |
 | 42 | sön 18/10 | K35 | Bälteslip, fiskespöhållare, kamera, motorlås, täljset, taköverdrag | **Fars dag 10:** i morgon slutar fars dag-rean | tier 2 | rea tillagd 2026-09-29 |
 | 43 | mån 19/10 | K36 | Bälteslip, fiskespöhållare, motorlås, värmesits | **Fars dag 11:** i dag är sista dagen på fars dag-rean | tier 2 | rea tillagd 2026-09-29 |
 | 43 | tis 20/10 | K07 | Damasker | Höstlovet, 30 % med DAMASK30 till fre 23/10 | tier 2 | rea tillagd 2026-09-29 |
-| 43 | ons 21/10 | K37 | MC-kapell, styrlås, MC-sätesöverdrag, bensindunk | MC-köpare: hojen ställs undan, 30 % med MC30 till sön 25/10 | Köpare MC & fordon | rea tillagd 2026-09-29 |
+| 43 | ons 21/10 | K37 | MC-kapell, styrlås, MC-sätesöverdrag, bensindunk | MC-köpare: hojen ställs undan, 30 % med MC30 till sön 25/10 | **MC-rean 21/10** (tier 2 + köpare MC & fordon, 4 989) | rea tillagd 2026-09-29, bred samma eftermiddag |
 | 43 | tor 22/10 | K08 | Bäverlampa, solcellslampa m.fl. | Mörkret kommer, 30 % med LJUS30 till sön 25/10 | tier 2 | rea tillagd 2026-09-29 |
 | 43–44 | 23/10–2/11 | **omgång 2** | skrivs när omgång 1 är schemalagd | dagliga rader, samma regler | | ej skrivna |
 | 44 | tis 27/10 | K09 | Adventskalendrar | Beställ senast 11/11 för lucka 1 | tier 3 | utkast |
@@ -73,10 +81,13 @@ den räknade sista beställningsdagen.
 **30 % i varje mejl 30/9 till 22/10 (Axels order 2026-09-29: "fixa rea på allt, på alla
 kampanjer här").** En kod per anledning, strategin och koderna i `BRIEFER-REA30.md`.
 
-**Totalt 29/9 till 22/10:** 26 kampanjer på 24 dagar (två dagar med två skräddarsydda mejl till olika köpargrupper). Därefter omgång 2.
+**Totalt 29/9 till 22/10:** 26 kampanjer på 24 dagar. Två dagar har två mejl, fre 2/10 och
+mån 5/10, och ingen får båda: det breda segmentet utesluter köpargruppen som får det andra.
+Därefter omgång 2.
 
 **Uppladdat i Spoks 2026-09-28:** alla femton, K23–K37 (post-id:n och redigeringslänkar i
-`klaviyo/spoks/README.md`).
+`klaviyo/spoks/README.md`). **Alla 25 utkast för 30/9–22/10 uppdaterade 2026-09-29
+eftermiddag** med den stora kodrutan och de breda segmenten i titeln, kontrollerade mot filerna.
 
 ## Räcker planen?
 
