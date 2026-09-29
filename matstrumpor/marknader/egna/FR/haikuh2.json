@@ -1,0 +1,123 @@
+{
+ "segment": [
+  {
+   "a": 0,
+   "b": 3.5,
+   "sv": "Tre anledningar att inte köpa sushistrumpor.",
+   "text": "Trois raisons de ne pas acheter de chaussettes sushi."
+  },
+  {
+   "a": 4.04,
+   "b": 5.54,
+   "sv": "Ett: de är helt enkelt unika.",
+   "text": "Un : elles sont vraiment uniques."
+  },
+  {
+   "a": 5.72,
+   "b": 8.7,
+   "sv": "Glöm alla de där tråkiga presenterna som hamnar i en låda.",
+   "text": "Oubliez tous ces cadeaux ennuyeux qui finissent au fond d'un tiroir."
+  },
+  {
+   "a": 8.8,
+   "b": 10.56,
+   "sv": "Det här är en hel upplevelse.",
+   "text": "Ça, c'est toute une expérience."
+  },
+  {
+   "a": 10.64,
+   "b": 13.68,
+   "sv": "Folk tror alltid att det är riktig sushi när de öppnar lådan.",
+   "text": "En ouvrant la boîte, tout le monde croit voir de vrais sushis."
+  },
+  {
+   "a": 13.78,
+   "b": 15.56,
+   "sv": "Och sen, vänta, det är strumpor.",
+   "text": "Et là, surprise : des chaussettes !"
+  },
+  {
+   "a": 15.56,
+   "b": 17.74,
+   "sv": "Två: värdet för pengarna är helt absurt.",
+   "text": "Deux : le rapport qualité-prix est dingue."
+  },
+  {
+   "a": 17.94,
+   "b": 19.6,
+   "sv": "Det är inte bara fem par strumpor.",
+   "text": "Pas juste cinq paires de chaussettes."
+  },
+  {
+   "a": 19.68,
+   "b": 22.9,
+   "sv": "Det är hög kvalitet, mjukt material och de håller länge.",
+   "text": "C'est de la qualité, une matière douce, et elles durent longtemps."
+  },
+  {
+   "a": 22.98,
+   "b": 26.14,
+   "sv": "Plus att de faktiskt används. Ingen present som bara samlar damm.",
+   "text": "En plus, on les porte vraiment. Pas un cadeau qui prend la poussière."
+  },
+  {
+   "a": 26.14,
+   "b": 28.28,
+   "sv": "Tre: du gör mottagaren väldigt glad.",
+   "text": "Trois : vous faites vraiment plaisir."
+  },
+  {
+   "a": 28.28,
+   "b": 30.34,
+   "sv": "Mamma sa att det var hennes favoritgåva.",
+   "text": "Maman m'a dit que c'était son cadeau préféré."
+  },
+  {
+   "a": 30.44,
+   "b": 32.04,
+   "sv": "Och gissa vad, hon vill redan ha fler.",
+   "text": "Devinez quoi ? Elle en redemande déjà !"
+  },
+  {
+   "a": 32.12,
+   "b": 35,
+   "sv": "Det är liksom garanterat att få en reaktion och ett skratt.",
+   "text": "À tous les coups, ça fait réagir et ça fait rire."
+  },
+  {
+   "a": 35.12,
+   "b": 37.74,
+   "sv": "Det är den typen av present där givaren är den smarta.",
+   "text": "Ce genre de cadeau vous fait passer pour un génie."
+  },
+  {
+   "a": 37.82,
+   "b": 40.36,
+   "sv": "Du blir personen som ger de bästa presenterna.",
+   "text": "Vous devenez la personne qui offre les meilleurs cadeaux."
+  },
+  {
+   "a": 40.52,
+   "b": 42.16,
+   "sv": "Alla frågar: var köpte du det här?",
+   "text": "Tout le monde vous demande l'adresse."
+  },
+  {
+   "a": 42.3,
+   "b": 44.3,
+   "sv": "Klicka bara på länken nu och kolla in allt.",
+   "text": "Cliquez sur le lien maintenant et découvrez tout."
+  }
+ ],
+ "texter": {
+  "hook": "Stop ! N'achetez pas de chaussettes sushi avant d'avoir vu ça",
+  "rubriker": [
+   "UN : ELLES SONT VRAIMENT UNIQUES",
+   "DEUX : ÇA VAUT LE COUP",
+   "TROIS : VOUS FAITES PLAISIR"
+  ],
+  "knapp": "COMMANDER"
+ },
+ "granskad": true,
+ "granskning": "godkänd av infödd granskare i runda 3 (2026-09-29)"
+}
