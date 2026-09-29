@@ -1,0 +1,443 @@
+{
+ "agent": "AW",
+ "datum": "2026-09-29-carashell",
+ "kandidater": [
+  {
+   "koncept_id": null,
+   "namn_sv": "Kylskåpsspärrarna 2-pack husvagn",
+   "objekt": "NYTT: Husvagnens/husbilens kylskåp — hyllorna (Dometic/Thetford 80–170 l, 12–25 tkr; innehållet välter och rasar ut när dörren öppnas efter körning)",
+   "form": "spärr",
+   "arketyp": "I_FLERKOP",
+   "arketyp_sekundar": "A_AGARE_FRIKTION",
+   "slot": "exploration",
+   "hypotes_id": "H10",
+   "vinnarlikhet": {
+    "likast": "Fiskespöhållaren (spöklämma 4-pack)",
+    "delade_variabler": [
+     "kaos → ordning i ett grepp",
+     "flerköp (2–3 hyllor per kylskåp)",
+     "improvisation i dag (handdukar, tidningar, matlådor på tvären)",
+     "< 500 kr"
+    ],
+    "avvikelser": [
+     "objektet sitter inne i vagnen (objekt_ute = nej i signalerna)",
+     "ingen deadline — pågående friktion varje resa"
+    ]
+   },
+   "sasong": {
+    "fonster_id": null,
+    "deadline_typ": "ingen — pågående friktion varje resa; vintercampare (Sälen/Åre/Idre nov–apr, ORDER.md) kör hela vintern",
+    "veckor_kvar": null,
+    "timing": "ingen — sasong.py saknar fönster för objektet; uppställarna (10–31 okt) köper det inte nu"
+   },
+   "listning": {
+    "product_id": "1005010339744458",
+    "url": "https://www.aliexpress.com/item/1005010339744458.html",
+    "pris_usd": 16.05,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-29T11:44:47Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-29-carashell/v3/bilder/1005010339744458.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "2 st dubbelstänger 16–28 tum (40–71 cm), en variant enligt titeln",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron är delad: kylskåpet fullt med stängerna monterade (vänster) + packshot (höger) — beskär till kontextbilden"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen svensk aktör i exakt form (getcamping 'kylskåpsspärr', 'spärr kylskåp husbil', 'stag kylskåp', 'skåp' = 0 träffar i formen; PriceRunner 'kylskåpsspärr' = bara barnsäkerhetslås 105–245 kr)",
+     "pris_sek": null,
+     "url": "https://www.getcamping.se/search/?q=sp%C3%A4rr%20kylsk%C3%A5p%20husbil",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "ej mätt i exakt form — närmast: Thetford Hyllklämma S/L (hyllfäste, annan form) 125–135 kr; Thetford Kylskåpslås 195 kr (dörrlås, annan form) — getcamping 2026-09-29",
+     "pris_sek": null,
+     "url": "https://www.getcamping.se/search/?q=kl%C3%A4mma",
+     "i_sortiment": false
+    },
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "getcamping.se",
+     "pricerunner.se",
+     "campingvaruhuset.se (JS-sök, oläst)",
+     "biltema.se (403, oläst)",
+     "jula.se (403, oläst)",
+     "kama.se (500, oläst)",
+     "husvagnsexperten.se (ingen anslutning, oläst)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     209,
+     255
+    ],
+    "pris_sek": 499,
+    "brutto_sek": [
+     244,
+     290
+    ],
+    "be_cpa_sek": [
+     244,
+     290
+    ],
+    "be_roas": 1.87,
+    "flerkop": true,
+    "returrisk": "låg — teleskopisk 40–71 cm, passar Dometic/Thetford-hyllor utan mätning"
+   },
+   "meta_tanke": {
+    "hook": "Vad välter i kylen när ni stannar?",
+    "objekt_i_bild": "husvagnskylskåpet öppnat efter körning, allt står kvar bakom stängerna",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "dörren öppnas — burkarna står kvar mot stången i stället för att rasa ut på golvet"
+   },
+   "varfor": "Spöklämmans struktur (kaos → ordning, flerköp: 2–3 hyllor per kylskåp) på ett objekt varje husvagnsägare har; formen finns inte hos getcamping/PriceRunner (bara hyllklämmor och dörrlås) — H10 kategorinyhet med hero i kontext. Pris saknar ankare: landad × 2,4 = 557 men två fjäderstänger bär knappast över 499.",
+   "huvudrisk": "Ingen deadline och objektet är inne i vagnen (deadline=ingen och objekt_ute=nej är båda förlorarsignaler); upplevt värde för två stänger vid 499 kr är oprövat.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 3,
+    "efterfragan": 1,
+    "lucka": 3,
+    "ekonomi": 1,
+    "sasong": 1,
+    "leverantor": 2,
+    "nyhet": 3,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 10,
+    "K3": 8,
+    "K4": 6,
+    "K5": 8,
+    "K6": 12,
+    "K7": 6,
+    "K8": 5,
+    "K9": 5,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (Magnethylla för Tvättmaskin och Kylskåp = annat objekt)",
+     "koncept.py sok kylskåp/kylskåpsspärr/spärr/fridge = 0",
+     "REDAN-PROVAT.md"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/w/wholesale-caravan-fridge-bar-adjustable.html",
+    "https://www.getcamping.se/search/?q=sp%C3%A4rr%20kylsk%C3%A5p%20husbil",
+    "https://www.getcamping.se/search/?q=sk%C3%A5p",
+    "https://www.pricerunner.se/search?q=kylsk%C3%A5pssp%C3%A4rr"
+   ]
+  },
+  {
+   "koncept_id": null,
+   "namn_sv": "Markisdukklämmorna 2-pack (anti-flap)",
+   "objekt": "NYTT: Markisen på husvagnen/husbilen — duken (Thule Omnistor/Fiamma 6–9 tkr; fladdrar och smäller i vind, dukfästet slits)",
+   "form": "klämma",
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "I_FLERKOP",
+   "slot": "exploration",
+   "hypotes_id": "H06",
+   "vinnarlikhet": {
+    "likast": "Fiskespöhållaren (spöklämma 4-pack)",
+    "delade_variabler": [
+     "form klämma",
+     "objekt ute, medel 1–10 tkr",
+     "improvisation i dag (stormband, tvättklämmor, tejp)",
+     "flerköp (2 per markis)",
+     "< 500 kr"
+    ],
+    "avvikelser": [
+     "ankare finns (Thule 465, Peggy Peg 541) — spöhållaren hade inget",
+     "säsongen för markisen är i praktiken slut för uppställarna"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "hostregn",
+    "deadline_typ": "höstregn/blåst (NOW 1,6 v) — men bara för de som campar vidare; markisen är infälld hos uppställarna 10–31 okt",
+    "veckor_kvar": 1.6,
+    "timing": "LATE"
+   },
+   "listning": {
+    "product_id": "1005013172970339",
+    "url": "https://www.aliexpress.com/item/1005013172970339.html",
+    "pris_usd": 6.95,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-29T11:44:47Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-29-carashell/v3/bilder/1005013172970339.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "Pack of 2, universal, en variant enligt titeln",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "ren packshot på vitt — kontextbild (klämman på markisarmen i blåst) måste tas själv"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Thule Markisdukklämma 2 st / getcamping.se",
+     "pris_sek": 465,
+     "url": "https://www.getcamping.se/search/?q=markisdukkl%C3%A4mma",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Peggy Peg Fix & Go Antiflap Awning Clamp (PriceRunner 2026-09-29) 540,93 kr; Thule Markisdukklämma 2 st 465 kr (getcamping, i sortiment)",
+     "pris_sek": 465,
+     "url": "https://www.pricerunner.se/search?q=awning%20clamp",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.33,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "getcamping.se (antal=2 på 'markisdukklämma': Thule 465 + Vanheim Markisduksspännare 195 = annan form)",
+     "pricerunner.se ('markisklämma' = bara generiska presenningsklämmor 101 kr/20 st; 'awning clamp' = Peggy Peg 541)",
+     "campingvaruhuset.se (JS-sök, oläst)",
+     "biltema.se/jula.se (403, oläst)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     90,
+     111
+    ],
+    "pris_sek": 349,
+    "brutto_sek": [
+     238,
+     259
+    ],
+    "be_cpa_sek": [
+     238,
+     259
+    ],
+    "be_roas": 1.4,
+    "flerkop": true,
+    "returrisk": "låg — universal klämma med vridlås och rem, en per markisarm"
+   },
+   "meta_tanke": {
+    "hook": "Smäller markisen så fort det blåser?",
+    "objekt_i_bild": "markisarmen med klämman på, duken spänd i vind",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "duken fladdrar — klämman sätts på armen — duken står stilla"
+   },
+   "varfor": "Ingen kopia under oss; enda svenska aktören är Thule 465 kr (kvot 1,33) och Peggy Peg 541 — H06-struktur med klämform som vann i kontot (spöhållaren). Landad ~100 kr ger BE-CPA 238–259 vid 349.",
+   "huvudrisk": "Timing: markisen är infälld hos de flesta 10–31 okt — säsongen är i praktiken slut till påsk; packshot-hero utan kontext.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 3,
+    "meta_creative": 1,
+    "efterfragan": 1,
+    "lucka": 2,
+    "ekonomi": 1,
+    "sasong": 1,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 10,
+    "K3": 8,
+    "K4": 6,
+    "K5": 8,
+    "K6": 8,
+    "K7": 7,
+    "K8": 5,
+    "K9": 5,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (ingen markis-rad)",
+     "koncept.py sok markis/klämma/awning = 0 i formen",
+     "REDAN-PROVAT.md (K0107 markisöverdrag = annan form)"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/w/wholesale-rv-awning-de-flapper-clamp.html",
+    "https://www.getcamping.se/search/?q=markisdukkl%C3%A4mma",
+    "https://www.getcamping.se/search/?q=kl%C3%A4mma",
+    "https://www.pricerunner.se/search?q=awning%20clamp"
+   ]
+  },
+  {
+   "koncept_id": null,
+   "namn_sv": "Överskåpsspärrarna 3-pack (elastisk lina)",
+   "objekt": "NYTT: Husvagnens överskåp — luckorna och innehållet (4–8 skåp per vagn; burkar, muggar och kryddor rasar ut när luckan öppnas efter körning)",
+   "form": "spärr",
+   "arketyp": "I_FLERKOP",
+   "arketyp_sekundar": "A_AGARE_FRIKTION",
+   "slot": "exploration",
+   "hypotes_id": "H11",
+   "vinnarlikhet": {
+    "likast": "Fiskespöhållaren (spöklämma 4-pack)",
+    "delade_variabler": [
+     "kaos → ordning",
+     "flerköp (4–8 skåp per vagn)",
+     "improvisation i dag (antiskakmatta, handdukar, gummiband)",
+     "< 500 kr"
+    ],
+    "avvikelser": [
+     "lågt upplevt värde — en gummilina och två fästen går att improvisera",
+     "objekt inne i vagnen",
+     "kräver skruvning i skåpväggen (montering)"
+    ]
+   },
+   "sasong": {
+    "fonster_id": null,
+    "deadline_typ": "ingen — pågående friktion varje resa; vintercampare kör hela vintern",
+    "veckor_kvar": null,
+    "timing": "ingen — sasong.py saknar fönster för objektet"
+   },
+   "listning": {
+    "product_id": "1005012201958598",
+    "url": "https://www.aliexpress.com/item/1005012201958598.html",
+    "pris_usd": 6.39,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-29T11:44:47Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-29-carashell/v3/bilder/1005012201958598.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "ett kit (elastisk lina + 2 fästen) per listning — titeln säger 'Cargo Net' men produkten är en elastisk linspärr, inte ett nät; 3 kit = 3-pack",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron visar linan spänd i tre varv över ett öppet överskåp (kontext) + packshot av lina och fästen"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen svensk aktör i formen (getcamping 'elastisk', 'skåp', 'förvaringsnät', 'hyllnät' = 0 i formen; PriceRunner 'förvaringsnät'/'elastiskt nät' = bilbagagenät 145–239 kr, annan form)",
+     "pris_sek": null,
+     "url": "https://www.getcamping.se/search/?q=elastisk",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "ej mätt — Ali-listningen 1005009612926818 bär Fiamma-liknande artikelnummer (0307043) men Fiamma-priset i Sverige är inte läst",
+     "pris_sek": null,
+     "url": null,
+     "i_sortiment": false
+    },
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "getcamping.se",
+     "pricerunner.se",
+     "campingvaruhuset.se (JS-sök, oläst)",
+     "biltema.se/jula.se (403, oläst)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     249,
+     305
+    ],
+    "pris_sek": 499,
+    "brutto_sek": [
+     194,
+     250
+    ],
+    "be_cpa_sek": [
+     194,
+     250
+    ],
+    "be_roas": 2.25,
+    "flerkop": true,
+    "returrisk": "låg — 5 m elastisk lina kapas till skåpbredden, två skruvfästen"
+   },
+   "meta_tanke": {
+    "hook": "Rasar det ur skåpet när ni öppnar?",
+    "objekt_i_bild": "överskåpet öppnat efter körning, burkarna står kvar bakom linan",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "luckan öppnas, allt står kvar bakom tre svarta linor"
+   },
+   "varfor": "Samma struktur som kylskåpsspärren men på 4–8 objekt per vagn (renaste flerköpet i rundan); formen saknas i svensk fackhandel. Levereras som H11-test med LÅG konfidens: upplevt värde är lågt och BE-CPA 194–250 vid 499 för tre kit är precis över golvet.",
+   "huvudrisk": "Lågt upplevt värde (gummilina + två skruvfästen) och skruvmontering i skåpvägg — form=annat-typen har 0 av 15 vinnare i kontot.",
+   "konfidens": "LÅG",
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 3,
+    "efterfragan": 1,
+    "lucka": 3,
+    "ekonomi": 1,
+    "sasong": 1,
+    "leverantor": 2,
+    "nyhet": 3,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 10,
+    "K2": 8,
+    "K3": 6,
+    "K4": 6,
+    "K5": 6,
+    "K6": 12,
+    "K7": 5,
+    "K8": 3,
+    "K9": 5,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (Lastnät/Skuggnät/Golfnät = andra objekt)",
+     "koncept.py sok skåp/nät/överskåp/skåpspärr = 0 i formen",
+     "REDAN-PROVAT.md"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/w/wholesale-rv-overhead-cabinet-net-elastic-mesh-4pcs.html",
+    "https://www.getcamping.se/search/?q=elastisk",
+    "https://www.getcamping.se/search/?q=sk%C3%A5p",
+    "https://www.pricerunner.se/search?q=f%C3%B6rvaringsn%C3%A4t"
+   ]
+  }
+ ]
+}
