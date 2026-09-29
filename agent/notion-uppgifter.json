@@ -1,8 +1,8 @@
 {
   "kommentar": "Var arbetet finns i Notion. Det ligger i TVA databaser, inte en - det ar den vanligaste missen och den far en att svara 'det finns inget arbete' nar det finns massor.",
   "VARNING_LAS_DETTA_FORST": "Hittar du inget i en databas betyder det INTE att det inte finns arbete. Det betyder att du letat pa ett stalle. Sag alltid VILKA kallor du kollat, och foresla den du inte kollat. Pasta aldrig att nagot inte finns.",
-  "uppdaterad": "2026-09-28",
-  "kalla": "Notion-svepet i /rond-auto steg 4c, kört 2026-09-26 ~06:05 UTC via Notion-MCP: notion-query-data-sources på testcentret (54 rader), notion-search på \"creative hub\", \"BÄVER\", \"Fish rod holder\", \"Övervakningskameran\", \"Utekattkojan\" + tolv produktnamn ur produktkartan för ACTIVE-kampanjer utan hub (is_archived avläst per träff), notion-fetch på de hubbar sökningen inte visade (a6b270ab, d38270ab, c5a270ab, 3c3270ab-…80f8 — is_archived läst ur svaret), SQL med Typ-filter på INKLUDERING över 21 collections (10 + 10 + 1 per fråga). tools/lib/ops-hubbar.mjs och factory/produkter/register.json finns inte på den här grenen — OPS-hubbarna drogs bort enligt listan andra_verksamheters_hubbar_bortdragna.",
+  "uppdaterad": "2026-09-29",
+  "kalla": "Notion-svepet i /rond-auto steg 4c, kört 2026-09-29 ~06:45 UTC via Notion-MCP: notion-query-data-sources på testcentret (57 rader), notion-search på \"creative hub\" och \"BÄVER\" (is_archived läst per träff), SQL-räkning av Status × Typ i 11 levande hubbar (10 + Fish rod holder). Annonsidéer (collection b950b849) läst: 1 rad Ny.",
   "VARNING_FARSKHET": "Ogonblicksbild. Notion andras hela tiden. Ar uppdaterad mer an nagra dagar gammalt: sag det och hamta om.",
   "databas_1_product_test_center": {
     "namn": "Product test center SE BÄVER",
@@ -110,7 +110,7 @@
       }
     ],
     "not_2026_09_16": "7 produktrader i Ads review, men bara TVÅ av dem saknar kampanj (Lövblåsaren och Solcellslarmet). De fem andra kör redan — statusraden i testcentret uppdateras inte när en produkt launchas, så \"Ads review\" betyder här inte alltid att något väntar. Raderna i Testing är till största delen SOP-sidor (HOW TO TRANSLATE ADS, how to make swipe on ads osv), inte produkter.",
-    "avlast": "2026-09-27",
+    "avlast": "2026-09-29",
     "nya_sedan_igar": [
       {
         "namn": "13 Lövsilarna 6-pack",
@@ -156,7 +156,8 @@
     },
     "matt_2026_09_26": "54 rader i Ads review/Ready to launch/In progress/Testing (SQL 2026-09-26, mot 51 i går = +3: Lövsilarna, Värmesulorna, Radiostyrd offroadbil). Ads review-rader MED ACTIVE SE-kampanj i dag: Maskinhyllan, Värmesulorna, Radiostyrd driftbil, Rullknivslipen, Golfkalender, Pusselkalender, Täljset, Solcellsladdare, Värmesits, ATV-kapell, Motorlås, Sotarset, Solcellslampa, Dörr- och Fönsterlarm, Inomhustofflor, Termoskydd Husbil. Ads review-rader UTAN ACTIVE kampanj i dagens kontodata: Lövsilarna (ny), K Gör din egen-kalender, K Dinosauriekalender, Kapell till snöslunga, Kajakhållare, Spabadskapell, Hönsgårdsduk, Snöflingor, Snöskyffel, Fågelmatare (avstängd 21/9), Vedklyvborr, Stegstöd, Solcellslarm, Infartslarm, Sittkäpp, Staketstolpsbygel, Lövblåsare, Biltvättborste (avstängd 23/9) + den namnlösa raden. In progress: Radiostyrd offroadbil 1:16 (ny), Vedställskapell 122 cm — ingen av dem har kampanj. Statusraden i testcentret uppdateras fortfarande inte när en kampanj stängs av.",
     "matt_2026_09_27": "54 rader i Ads review/Ready to launch/In progress/Testing (SQL 2026-09-27, samma som 2026-09-26). Nya rader sedan 2026-09-23: 11 Maskinhyllan, 12 Radiostyrd offroadbil 1:16 (In progress), 13 Lövsilarna 6-pack, 11 Värmesulorna, 12 Radiostyrd driftbil 1:24, 13 Rullknivslipen — alla utom offroadbilen och Lövsilarna har kampanj i SE-kontot.",
-    "matt_2026_09_28": "REST (db-id 3a7270ab-908c-807d-b90d-c55d885cad13 — collection-id:t i filen svarar 404 via REST): Ads review 35, In progress 2, Testing 16 (varav 10 är SOP-sidor, inte produkter), Ready to launch 1. Ads review: 11 Maskinhyllan · 13 Lövsilarna 6-pack · 11 Värmesulorna · 12 Radiostyrd driftbil 1:24 · 13 Rullknivslipen · K Golfkalender · K Pusselkalender · K Gör din egen-kalender · K Dinosauriekalender · 10 Fågelmatare med kamera · 10 Täljset 30 delar · 9 Solcellsladdare 10 W · 10 Kapell till snöslunga · 10 Värmesits 45 × 90 cm · 10 ATV-kapell 3XL · 10 Motorlås utombordare · 10 Hönsgårdsduk 145 × 109 cm · 10 Snöflingor 25-pack · 9 Spabadskapell 215 cm · 10 Snöskyffel utan batteri · 10 Kajakhållare 2-pack · 8 Biltvättborste Teleskop 100 cm · 8 Sotarset Böjliga Stänger · 8 Solcellslampa 210 LED Sensor · 8 Dörr- och Fönsterlarm 110 dB · 8 Inomhustofflor Fodrade Herr 40–47 · 8 Vedklyvborr Ø32 mm · 7 Stegstöd 2-pack · 7 Solcellslarm 2-pack · 7 Infartslarm Trådlöst · 7 Termoskydd Husbil 211 × 171 cm · 7 Sittkäpp Hopfällbar · 6 Staketstolpsbygel 2-pack (2 st ingår) · 5.1 Lövblåsare  · ?. In progress: 12 Radiostyrd offroadbil 1:16 · 9 Vedställskapell 122 cm. Ready to launch: ?"
+    "matt_2026_09_28": "REST (db-id 3a7270ab-908c-807d-b90d-c55d885cad13 — collection-id:t i filen svarar 404 via REST): Ads review 35, In progress 2, Testing 16 (varav 10 är SOP-sidor, inte produkter), Ready to launch 1. Ads review: 11 Maskinhyllan · 13 Lövsilarna 6-pack · 11 Värmesulorna · 12 Radiostyrd driftbil 1:24 · 13 Rullknivslipen · K Golfkalender · K Pusselkalender · K Gör din egen-kalender · K Dinosauriekalender · 10 Fågelmatare med kamera · 10 Täljset 30 delar · 9 Solcellsladdare 10 W · 10 Kapell till snöslunga · 10 Värmesits 45 × 90 cm · 10 ATV-kapell 3XL · 10 Motorlås utombordare · 10 Hönsgårdsduk 145 × 109 cm · 10 Snöflingor 25-pack · 9 Spabadskapell 215 cm · 10 Snöskyffel utan batteri · 10 Kajakhållare 2-pack · 8 Biltvättborste Teleskop 100 cm · 8 Sotarset Böjliga Stänger · 8 Solcellslampa 210 LED Sensor · 8 Dörr- och Fönsterlarm 110 dB · 8 Inomhustofflor Fodrade Herr 40–47 · 8 Vedklyvborr Ø32 mm · 7 Stegstöd 2-pack · 7 Solcellslarm 2-pack · 7 Infartslarm Trådlöst · 7 Termoskydd Husbil 211 × 171 cm · 7 Sittkäpp Hopfällbar · 6 Staketstolpsbygel 2-pack (2 st ingår) · 5.1 Lövblåsare  · ?. In progress: 12 Radiostyrd offroadbil 1:16 · 9 Vedställskapell 122 cm. Ready to launch: ?",
+    "matt_2026_09_29": "57 rader i Ads review/Ready to launch/In progress/Testing (SQL via MCP 2026-09-29, mot 54 i går): Ads review 38 (inkl. en namnlös), In progress 2, Ready to launch 1 (namnlös), Testing 16 (6 produkter + 10 SOP-sidor). Nya sedan 2026-09-28: \"12 Läktarponchon\" och \"13 Sorkkorgarna 15-pack\" (båda fick kampanj i MagiBorsten natten till 29/9, FOR_LITE_DATA, inskrivna i produktkartan) och \"13 Trädansiktet\" (In progress, ingen kampanj). Ads review-rader MED ACTIVE SE-kampanj i dag: Maskinhyllan, Värmesulorna, Rullknivslipen, Täljset, Golfkalender, Värmesits, ATV-kapell, Sotarset, Solcellslampa, Inomhustofflor, Termoskydd, Läktarponchon, Sorkkorgarna."
   },
   "databas_2_creative_hubs": {
     "vad_de_ar": "En hub per produkt som gatt vidare fran testcentret. Har ligger de enskilda annonserna som briefer.",
@@ -167,10 +168,10 @@
         "produkt": "Taköverdraget för Husvagn 6,5 × 3 m",
         "hub_id": "7ec270ab-908c-82f6-a2a8-0153159b20fa",
         "collection": "collection://5f2270ab-908c-82ef-b029-0767819050db",
-        "drafts": 10,
+        "drafts": 6,
         "drafts_video": 7,
         "drafts_bild": 3,
-        "not": "10 drafts (mätt 2026-09-28 ~06:45 UTC: video 7, bild 3)",
+        "not": "6 drafts (mätt 2026-09-29 ~06:45 UTC via MCP SQL: video 5, bild 1)",
         "draft_rader": [
           "Takoverdrag_OB_22_H1",
           "Takoverdrag_OB_21_1",
@@ -192,31 +193,20 @@
         "drafts": 1,
         "drafts_video": 0,
         "drafts_bild": 1,
-        "not": "1 drafts (mätt 2026-09-28 ~06:45 UTC: video 0, bild 1)",
+        "not": "1 drafts (mätt 2026-09-29 ~06:45 UTC via MCP SQL: video 0, bild 1)",
         "draft_rader": [
           "Termoskydd_CS_12_1"
         ]
-      },
-      {
-        "namn": "Motorcycle Cover creative hub",
-        "produkt": "MC-Kapellet",
-        "hub_id": "3cf270ab-908c-81c1-bfd2-d78f9a45b3d8",
-        "collection": "collection://632270ab-908c-8307-a318-873192ba664a",
-        "drafts": 0,
-        "drafts_video": 0,
-        "drafts_bild": 0,
-        "not": "0 drafts (mätt 2026-09-28 ~06:45 UTC: video 0, bild 0)",
-        "draft_rader": []
       },
       {
         "namn": "Belt grinder creative hub",
         "produkt": "Bälteslipmaskinen",
         "hub_id": "3cc270ab-908c-813c-94fa-d90daa9bf776",
         "collection": "collection://a1d270ab-908c-82e2-b3be-07b523257509",
-        "drafts": 5,
+        "drafts": 6,
         "drafts_video": 3,
         "drafts_bild": 2,
-        "not": "5 drafts (mätt 2026-09-28 ~06:45 UTC: video 3, bild 2)",
+        "not": "6 drafts (mätt 2026-09-29 ~06:45 UTC via MCP SQL: video 5, bild 1)",
         "draft_rader": [
           "Beltgrinder_PD_2_3",
           "Beltgrinder_OB_1_H1",
@@ -233,7 +223,7 @@
         "drafts": 2,
         "drafts_video": 2,
         "drafts_bild": 0,
-        "not": "2 drafts (mätt 2026-09-28 ~06:45 UTC: video 2, bild 0)",
+        "not": "2 drafts (mätt 2026-09-29 ~06:45 UTC via MCP SQL: video 2, bild 0)",
         "draft_rader": [
           "Batmotor_CS_5_H2",
           "Batmotor_CS_5_H3"
@@ -244,47 +234,10 @@
         "produkt": "IBC-Tanköverdraget",
         "hub_id": "76b270ab-908c-8393-8a47-01f6ae366d42",
         "collection": "collection://4ce270ab-908c-8260-9ad0-07426ac2b1c2",
-        "drafts": 0,
+        "drafts": 2,
         "drafts_video": 0,
         "drafts_bild": 0,
-        "not": "0 drafts (mätt 2026-09-28 ~06:45 UTC: video 0, bild 0)",
-        "draft_rader": []
-      },
-      {
-        "namn": "BÄVER Adventskalendern Racingbilar",
-        "produkt": "Adventskalendern Racingbilar",
-        "hub_id": "e53270ab-908c-8297-be2d-0162a09dc253",
-        "collection": "collection://efe270ab-908c-83ef-aa11-87c98e87f5b0",
-        "drafts": 3,
-        "drafts_video": 3,
-        "drafts_bild": 0,
-        "not": "3 drafts (mätt 2026-09-28 ~06:45 UTC: video 3, bild 0)",
-        "draft_rader": [
-          "Adventskalender_UG_3_H1",
-          "Adventskalender_PD_11_H1",
-          "Adventskalender_GT_4_H1"
-        ]
-      },
-      {
-        "namn": "Bird feeder with camera creative hub",
-        "produkt": "Fågelmataren med Kamera",
-        "hub_id": "3e0270ab-908c-818b-9630-cd66fb6f7db6",
-        "collection": "collection://2fa270ab-908c-82e9-9a4a-8763b56702bd",
-        "drafts": 0,
-        "drafts_video": 0,
-        "drafts_bild": 0,
-        "not": "0 drafts (mätt 2026-09-28 ~06:45 UTC: video 0, bild 0)",
-        "draft_rader": []
-      },
-      {
-        "namn": "Car wash brush creative hub",
-        "produkt": "Biltvättborsten med Teleskopskaft",
-        "hub_id": "3e1270ab-908c-810c-9d50-f14ab53b461f",
-        "collection": "collection://905270ab-908c-8354-935d-071286e4e9b2",
-        "drafts": 0,
-        "drafts_video": 0,
-        "drafts_bild": 0,
-        "not": "0 drafts (mätt 2026-09-28 ~06:45 UTC: video 0, bild 0)",
+        "not": "2 drafts (mätt 2026-09-29 ~06:45 UTC via MCP SQL: video 2, bild 0)",
         "draft_rader": []
       },
       {
@@ -292,10 +245,10 @@
         "produkt": "Inomhustofflorna i Kamouflage",
         "hub_id": "3e1270ab-908c-8131-a121-fe435a4e22aa",
         "collection": "collection://63a270ab-908c-8215-a509-87aeee113477",
-        "drafts": 2,
+        "drafts": 4,
         "drafts_video": 2,
         "drafts_bild": 0,
-        "not": "2 drafts (mätt 2026-09-28 ~06:45 UTC: video 2, bild 0)",
+        "not": "4 drafts (mätt 2026-09-29 ~06:45 UTC via MCP SQL: video 4, bild 0)",
         "draft_rader": [
           "Inomhustofflor_SP_1_H5",
           "Inomhustofflor_SP_1_H6"
@@ -306,10 +259,10 @@
         "produkt": "Sotarsetet med Böjliga Stänger",
         "hub_id": "3e2270ab-908c-8171-bbae-fff6adedbe5a",
         "collection": "collection://af6270ab-908c-8256-879b-07429bfd3596",
-        "drafts": 2,
+        "drafts": 4,
         "drafts_video": 2,
         "drafts_bild": 0,
-        "not": "2 drafts (mätt 2026-09-28 ~06:45 UTC: video 2, bild 0)",
+        "not": "4 drafts (mätt 2026-09-29 ~06:45 UTC via MCP SQL: video 4, bild 0)",
         "draft_rader": [
           "Sotarset_PD_1_H7",
           "Sotarset_PD_1_H6"
@@ -320,10 +273,10 @@
         "produkt": "Solcellslampan med Rörelsesensor 210 LED",
         "hub_id": "3e5270ab-908c-81ed-8316-f0f4327d75db",
         "collection": "collection://397270ab-908c-8253-ae5b-87a01a38c0c4",
-        "drafts": 0,
+        "drafts": 2,
         "drafts_video": 0,
         "drafts_bild": 0,
-        "not": "2026-09-28: integrationen \"Bäverbutiken RUTINER\" ser INTE hubben (REST: Could not find database with ID: 3e5270ab-908c-81ed-8316-f0f4327d75db. Make sure) — läst via MCP i stället: 0 drafts",
+        "not": "2 drafts (mätt 2026-09-29 ~06:45 UTC via MCP SQL: video 2, bild 0)",
         "draft_rader": []
       },
       {
@@ -331,7 +284,7 @@
         "produkt": "Golf Adventskalendern",
         "hub_id": "3e8270ab-908c-817b-9e74-efe7a636609e",
         "collection": "collection://64a270ab-908c-8281-9151-071ae0ea9c62",
-        "drafts": 18,
+        "drafts": 20,
         "drafts_video": 8,
         "drafts_bild": 10,
         "draft_rader": [
@@ -354,14 +307,14 @@
           "Golfkalender_PD_1_H4",
           "Golfkalender_PD_1_H5"
         ],
-        "not": "18 drafts (mätt 2026-09-28 ~06:50 UTC via MCP)"
+        "not": "20 drafts (mätt 2026-09-29 ~06:45 UTC via MCP SQL: video 11, bild 9)"
       },
       {
         "namn": "Whittling set creative hub",
         "produkt": "Täljsetet 30 Delar",
         "hub_id": "3e8270ab-908c-8156-bd42-e5fcbe833705",
         "collection": "collection://99c270ab-908c-83f9-b32d-07c644fed308",
-        "drafts": 12,
+        "drafts": 11,
         "drafts_video": 3,
         "drafts_bild": 9,
         "draft_rader": [
@@ -378,23 +331,43 @@
           "Taljset_PD_1_H5",
           "Taljset_PD_4_1"
         ],
-        "not": "12 drafts (mätt 2026-09-28 ~06:50 UTC via MCP)"
+        "not": "11 drafts (mätt 2026-09-29 ~06:45 UTC via MCP SQL: video 2, bild 9)"
       },
       {
         "namn": "Fish rod holder",
         "produkt": "Fiskespöhållaren",
         "hub_id": "3c3270ab-908c-80f8-824d-eed3c4aa94e1",
         "collection": "collection://3c3270ab-908c-8356-ad6c-87ff779e647d",
-        "drafts": 58,
+        "drafts": 55,
         "drafts_video": 16,
         "drafts_bild": 42,
         "draft_rader": [
           "58 rader — Rodholder_* (inkl. PD_38_1, PD_41_1, PD_62_1, PD_65–67_H1, CS_11_H1) + 16 TackleBayRod_*"
         ],
-        "not": "58 drafts (mätt 2026-09-28 ~06:50 UTC via MCP)"
+        "not": "55 drafts (mätt 2026-09-29 ~06:45 UTC via MCP SQL: video 12, bild 43)"
       }
     ],
     "arkiverade": [
+      {
+        "namn": "Car wash brush creative hub",
+        "collection": "collection://905270ab-908c-8354-935d-071286e4e9b2",
+        "not": "is_archived: true (notion-search 2026-09-29, senast rörd 2026-09-28) — Axel arkiverade den 2026-09-28 efter rondens lista \"Hubbar att arkivera\" (Biltvättborsten, STANG_AV 2026-09-23)."
+      },
+      {
+        "namn": "Bird feeder with camera creative hub",
+        "collection": "collection://2fa270ab-908c-82e9-9a4a-8763b56702bd",
+        "not": "is_archived: true (notion-search 2026-09-29, senast rörd 2026-09-28) — Axel arkiverade den 2026-09-28 efter rondens lista \"Hubbar att arkivera\" (Fågelmataren, STANG_AV 2026-09-21)."
+      },
+      {
+        "namn": "BÄVER Adventskalendern Racingbilar",
+        "collection": "collection://efe270ab-908c-83ef-aa11-87c98e87f5b0",
+        "not": "is_archived: true (notion-search 2026-09-29, senast rörd 2026-09-28) — Axel arkiverade den 2026-09-28 efter rondens lista \"Hubbar att arkivera\" (STANG_AV 2026-09-23, 3 drafts vid arkiveringen)."
+      },
+      {
+        "namn": "Motorcycle Cover creative hub",
+        "collection": "collection://632270ab-908c-8307-a318-873192ba664a",
+        "not": "is_archived: true (notion-search 2026-09-29, senast rörd 2026-09-28) — Axel arkiverade den 2026-09-28 efter rondens lista \"Hubbar att arkivera\" (MC-Kapellet, STANG_AV 2026-09-19)."
+      },
       {
         "namn": "Fish rod holder",
         "id": "3c3270ab-908c-80f8-824d-eed3c4aa94e1",
@@ -701,7 +674,7 @@
     "annonsideer_2026_09_23": "Annonsidéer: 0 rader med Status Ny (alla 6 står som Byggd). Inget att bygga ur databasen i dag.",
     "summering_2026_09_23": "111 draftrader över 14 levande hubbar före dagens briefer (mot 126 i går). Inga nya hubbar, inga nyss arkiverade. Product test center: Ads review 23, In progress 2, Ready to launch 1, Testing 16, To be Reviewed 2.",
     "nya_sedan_igar": 0,
-    "arkiverade_sedan_igar": 0,
+    "arkiverade_sedan_igar": 4,
     "svep_2026_09_24": "notion-search 'creative hub' + 'BÄVER' 2026-09-24: inga nya Bäver-hubbar sedan 2026-09-23 och inga nyss arkiverade (arkiverade oförändrade: Beach crocs, Mower seat, Trimmer belt, Boat cover 420D, Men's Plush Slippers, Fish rod holder NO, Kranbeskyttelse Frost NO, Kranskydd Frost 420D, ARKIVERAD Smiley face trash can stickers). Sökträffar utanför Bäverbutiken (OPS/andra verksamheter, räknas aldrig): Racing Car Advent Calendar creative hub, Carashell Taköverdrag creative hub, Matstrumpor creative hub, Creative Hub master, MALL Creative hub MALL, Creative hub prank apron, Creative hub golf grill kit, Dont work here Surveillance Camera creative hub. Solcellslampan (kampanj 120250253948980291, BREAKTHROUGH 2026-09-24) och ATV-Kapellet (startskott 2026-09-24) saknar hub — Solcellslampan får en i dag (rond-auto 4b), ATV-Kapellet i förstabatchen.",
     "svep_2026_09_25": "notion-search 'creative hub' + 'BÄVER' 2026-09-25 ~05:50 UTC: en ny Bäver-hub sedan 2026-09-24 — Solar motion sensor light creative hub (skapad av gårdagens rond, i dag registrerad här). Inga nyss arkiverade (arkiverade oförändrade). Sökträffar utanför Bäverbutiken (räknas aldrig): Matstrumpor creative hub, Racing Car Advent Calendar creative hub, Carashell Taköverdrag creative hub, MALL Creative hub MALL, Creative hub prank apron, Creative hub golf grill kit. Summa drafts 75 (Fisk 54 + Tak 4 + Termo 5 + Överv 7 + Advent 3 + Sotar 2; gårdagen 111 räknade Bild-drafts i döda kampanjer som i dag togs av redigerarna: Biltvättborsten 4 → 0). Brief-rundor i dag: Termoskyddet batch #5 (SP_2_H2, SP_2_H3 i Draft). Inomhustofflorna: brief-runda 4 (3 namngivna SP_1_H4/H5/H6) — se rondens rapport. ATV-Kapellet väntar på etiketter dag 7 (2026-09-29). Annonsidéer 2026-09-25: 6 rader, alla Byggd, 0 Ny.",
     "DODA_KAMPANJERS_DRAFTS_2026_09_26": {
@@ -756,7 +729,12 @@
     "svep_2026_09_28": "REST-svep (NOTION_TOKEN, POST /v1/search object=database) 2026-09-28 ~06:45 UTC: integrationen \"Bäverbutiken RUTINER\" ser 29 databaser. ⚠️ TRE Bäver-hubbar är OSYNLIGA för integrationen: Solar motion sensor light creative hub (3e5270ab…), Golf advent calendar creative hub (3e8270ab-…-609e) och Whittling set creative hub (3e8270ab-…-3705) — alla tre skapade via Notion-MCP:n (dubblett av MALL) 2026-09-25/27; REST svarar \"Could not find database\". Leveransrundan (/notionkorning, NOTION_TOKEN) kan alltså INTE se deras rader — Axel måste bjuda in integrationen (••• → Connections → Bäverbutiken RUTINER) på de tre hubbarna. Lästa via MCP i stället: Solar 0 drafts, Golf 18 (8 video, 10 bild — förstabatchen 2026-09-27), Whittling 12 (3 video, 9 bild; 6 av 18 har lämnat Draft). Fish rod holder (3c3270ab…) fanns i integrationens lista men inte i levande-listan — tillagd: 58 drafts (16 video, 42 bild; PD_38_1/PD_41_1/PD_62_1 fortfarande Draft ⇒ Rodholder_PD_68_1:s villkor är inte uppfyllt). Inga nyss arkiverade. Drafts i dag (REST): Taköverdraget 10 (7 video, 3 bild — batch #7 OB_13–22, den andra sessionen), Termoskyddet 1, Belt grinder 5 (dagens 4 + PD_35_1), Boat motor 2, IBC 0 (batch #10 kommer), Adventskalendern 3, Indoor slippers 2, Chimney sweep 2, Motorcycle/Bird feeder/Car wash 0. Summa drafts 111 (REST 25 + MCP 88 varav Fish 58). Andra verksamheters hubbar (räknas aldrig): Matstrumpor creative hub, Carashell Taköverdrag creative hub, Racing Car Advent Calendar creative hub, catcabin creative hub, Damasker vandring, IBC Tank Cover creative hub, Dont work here Surveillance Camera creative hub, Kranskydd Frost 420D creative hub (arkiverade/OPS), Creative Hub master, Termoskyddet (OPS-hub 3dd270ab), ADVENTLANE Product test center, Customer support bäverbutiken, Bäverkoppling.se, kundsupport Grillkliniken, Annonsidéer.",
     "brief_reviews_2026_09_28": "Brief review 2026-09-25 skapade 2026-09-28 05:28 UTC av /briefgranskning i Belt grinder creative hub (3e9270ab908c81ee9b81ebee639694c0) och BÄVER IBC-Tanköverdraget (3e9270ab908c814aaba8c5f498cf46a0) — båda lästa före dagens briefer; Belt: iterationen behåller förälderns nummer (PD_1_H3/PD_1_H4/PD_2_3), 10 sekunder bara ärvd, COPY CARD deklarativ utan idag. IBC: hookar är påståenden, raden och bilden säger samma sak (tyget är GRÖNT enligt sidan), CPA + köp mot break-even-CPA i varje föräldradom.",
     "annonsideer_2026_09_28": "Annonsidéer: 1 rad Status Ny — Taköverdraget, USA (\"AI-gubbar … riktiga amerikaner i AI-videorna\", skapad 2026-09-27 12:58). Taköverdragets brief-runda kördes i dag av EN ANNAN session (commit b0a224e, batch #7 = 10 matrisbriefer) — raden är dess, lämnad som Ny och rapporterad till Axel. Övriga 7 står Byggd.",
-    "hubbar_att_arkivera_2026_09_28": "Axels beslut 2026-09-28 (Car wash brush hade 7 rader i To be Reviewed som leveransrundan aldrig laddar upp — kampanjen STANG_AV 23/9): hubbar vars kampanj ronden stängt av ska arkiveras så redigerarna slutar producera. Fyra i dag, alla PAUSED i Meta med spend: Car wash brush creative hub (Biltvättborsten, STANG_AV 2026-09-23), Motorcycle Cover creative hub (MC-Kapellet, 2026-09-19), Bird feeder with camera creative hub (Fågelmataren, 2026-09-21), BÄVER Adventskalendern Racingbilar (2026-09-23, 3 drafts). Arkiveringen via REST nekades av sessionens behörighetsspärr — Axels klick. När de är arkiverade: flytta dem till `arkiverade` i den här filen."
+    "hubbar_att_arkivera_2026_09_28": "Axels beslut 2026-09-28 (Car wash brush hade 7 rader i To be Reviewed som leveransrundan aldrig laddar upp — kampanjen STANG_AV 23/9): hubbar vars kampanj ronden stängt av ska arkiveras så redigerarna slutar producera. Fyra i dag, alla PAUSED i Meta med spend: Car wash brush creative hub (Biltvättborsten, STANG_AV 2026-09-23), Motorcycle Cover creative hub (MC-Kapellet, 2026-09-19), Bird feeder with camera creative hub (Fågelmataren, 2026-09-21), BÄVER Adventskalendern Racingbilar (2026-09-23, 3 drafts). Arkiveringen via REST nekades av sessionens behörighetsspärr — Axels klick. När de är arkiverade: flytta dem till `arkiverade` i den här filen.",
+    "svep_2026_09_29": "notion-search \"creative hub\" + \"BÄVER\" 2026-09-29 ~06:45 UTC: inga nya Bäver-hubbar sedan 2026-09-28 (Värmesulorna, Värmesitsen, Sorkkorgarna, Läktarponchon har bara sina Product test center-rader). FYRA hubbar arkiverade sedan gårdagens svep, alla ur gårdagens lista \"Hubbar att arkivera\": Car wash brush, Motorcycle Cover, Bird feeder with camera, BÄVER Adventskalendern Racingbilar (is_archived: true, senast rörda 2026-09-28) — Axels klick, flyttade till `arkiverade`. Solar/Golf/Whittling läses via MCP (integrationen ser dem inte, REST-fyndet 2026-09-28 kvarstår). Sökträffar utanför Bäverbutiken (räknas aldrig): Matstrumpor creative hub, Carashell Taköverdrag creative hub, Creative Hub master, Creative hub prank apron, Creative hub golf grill kit, MALL Creative hub MALL.",
+    "summering_2026_09_29": "113 draftrader över 11 levande hubbar: Fish rod holder 55 (43 bild + 12 video — ner från 58), Golf 20 (18 i går: FD-rader?), Whittling 11 (12 → 11; 9 videor i SE-ACTIVE to be translated = leveransrundan tog dem 28/9), Belt 6 (5 → 6), Tak 6 (10 → 6, fyra i In progress), Slippers 4 (2 → 4), Chimney 4, IBC 2 (0 → 2, batch #10), Boat 2, Solar 2, Termo 1. ⚠️ Nya rader med prefixet `FD_` (FD_1_H1, FD_1_H2 Draft + FD_2_1 To be Reviewed) i Indoor slippers, Boat motor cover och Fish rod holder — inte rondens, sannolikt en fars dag-runda från en annan session (Annonsidéer 21/9: fars dag). Hubbar att arkivera i dag: 0 (alla fyra från 28/9 är arkiverade).",
+    "hubbar_att_arkivera_2026_09_29": "0 — de fyra från 2026-09-28 (Car wash brush, Motorcycle Cover, Bird feeder with camera, BÄVER Adventskalendern Racingbilar) är arkiverade (is_archived: true 2026-09-29). Ingen ny kampanj stängdes av i SE i dag; NO Arbeidslampe (STANG_AV i dag) har ingen egen hub — norska annonser översätts ur SE.",
+    "annonsideer_2026_09_29": "Annonsidéer: 1 rad Status Ny — Taköverdraget, USA (\"AI-gubbar … riktiga amerikaner i AI-videorna\", skapad 2026-09-27 12:58), oförändrad sedan 2026-09-28. Taköverdraget hade ingen brief-runda i dag (LAT_VARA, förra batchen 28/9) — raden lämnad som Ny, rapporterad till Axel. Övriga 7 rader Byggd.",
+    "brief_reviews_2026_09_29": "Lästa före dagens rundor: Indoor slippers \"Brief review 2026-09-25\" (engelska EDITOR PICKS; `AI content:` säger hur rösten gjordes; NEW FOOTAGE-block överst) och Boat motor cover \"Brief review 2026-09-26\" (deklarativ hook på varje nytt koncept — storlekens är \"Mät kåpan. Välj storlek. Beställ rätt.\"; förbjudet ord i förälderns copy rättas i iterationen; NEW FOOTAGE namnger kontrollerade filer). Fish rod holder har INGEN Feedback-rad. Inga briefer skrevs i dag (se batch-log per produkt), reglerna gäller nästa runda."
   },
   "dod_data": "Hubbar utan produkt i produktkartan och kampanjer utan hub redovisas i leveransen. Kartan fick MC-Kapellets hub inskriven 2026-09-15. 2026-09-26: 0 levande hubbar utan kartpost; 12 ACTIVE test-kampanjer (22–26/9) utan hub, väntat; Fiskespöhållarens hub i kartan är arkiverad.",
   "arbetsfordelning": {
