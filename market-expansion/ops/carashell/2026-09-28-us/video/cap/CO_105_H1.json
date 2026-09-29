@@ -1,0 +1,29 @@
+{
+ "in": "../forbehandlad/carashell_CO_105_H1.mp4",
+ "ut": "../../us/CaraShellRoof_US_CO_105_H1.mp4",
+ "srt": "../srt-us/carashell_CO_105_H1.srt",
+ "captions": {
+  "zon": [
+   680,
+   1130
+  ],
+  "max_chars": 34,
+  "font_px": 30,
+  "standard_cy": 950,
+  "h_min": 30,
+  "h_max": 135,
+  "x0": 50,
+  "x1": 670,
+  "bredd_max": 620
+ },
+ "lager": [
+  {
+   "png": "../lager/co105-pris.png",
+   "t": [
+    9.4,
+    13.5
+   ]
+  }
+ ],
+ "qa": "qa-CO_105_H1"
+}

@@ -24,7 +24,7 @@
 // granska.mjs registreras aldrig; ingen marknad som redan bär en valuta får den bytt; inget i
 // Meta rörs härifrån.
 
-import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
 import { lasButik, skapaKlient } from '../../sparning/butik.mjs';
@@ -84,17 +84,36 @@ export function arLacka(l, samma = new Set()) {
   return true;
 }
 
-/** Fraktplanen: vilka länder ska UT ur en zon och vilka zoner ska skapas. Ren logik över konfigens zoner och Shopifys. */
+/**
+ * Fraktplanen — ren logik över konfigens zoner och Shopifys:
+ *  - en konfigzon som finns (samma namn, eller `tidigare_namn` när zonen ska döpas om) och
+ *    bär exakt sina länder ⇒ `redan`; finns men skiljer ⇒ `uppdatera` till konfigens länder/namn;
+ *  - en konfigzon som saknas ⇒ `skapa`;
+ *  - varje annan Shopify-zon släpper de länder konfigen gör anspråk på ⇒ `uppdatera`, och blir
+ *    den tom ⇒ `radera` (en tom zon är meningslös och Shopify avvisar den).
+ * Mätt 2026-09-27: den gamla planen tömde zoner som redan var rätt ("Engelska marknader")
+ * bara för att alla dess länder stod i konfigen — därav den här omskrivningen.
+ */
 export function fraktplan(zonerIShopify, konfigZoner) {
-  const nya = konfigZoner.map((z) => ({ namn: z.namn, lander: z.lander, metod: z.metod, pris: z.pris_sek }));
-  const flyttas = new Set(konfigZoner.flatMap((z) => z.lander));
-  const uppdatera = [];
-  for (const z of zonerIShopify) {
-    const kvar = z.lander.filter((c) => !flyttas.has(c));
-    if (kvar.length !== z.lander.length) uppdatera.push({ id: z.id, namn: z.namn, fore: z.lander, efter: kvar, bort: z.lander.filter((c) => flyttas.has(c)) });
+  const lika = (a, b) => a.length === b.length && [...a].sort().every((x, i) => x === [...b].sort()[i]);
+  const anspråk = new Set(konfigZoner.flatMap((z) => z.lander));
+  const skapa = [], redan = [], uppdatera = [], radera = [];
+  const tagna = new Set();
+  for (const kz of konfigZoner) {
+    const z = zonerIShopify.find((x) => x.namn === kz.namn) ?? (kz.tidigare_namn ? zonerIShopify.find((x) => x.namn === kz.tidigare_namn) : null);
+    if (!z) { skapa.push({ namn: kz.namn, lander: kz.lander, metod: kz.metod, pris: kz.pris_sek }); continue; }
+    tagna.add(z.id);
+    if (lika(z.lander, kz.lander) && z.namn === kz.namn) { redan.push(kz.namn); continue; }
+    uppdatera.push({ id: z.id, namn: kz.namn, fore: z.lander, efter: kz.lander, bort: z.lander.filter((c) => !kz.lander.includes(c)), till: kz.lander.filter((c) => !z.lander.includes(c)), bytNamn: z.namn !== kz.namn ? z.namn : null });
   }
-  const finns = new Set(zonerIShopify.map((z) => z.namn));
-  return { skapa: nya.filter((z) => !finns.has(z.namn)), redan: nya.filter((z) => finns.has(z.namn)).map((z) => z.namn), uppdatera };
+  for (const z of zonerIShopify) {
+    if (tagna.has(z.id)) continue;
+    const kvar = z.lander.filter((c) => !anspråk.has(c));
+    if (kvar.length === z.lander.length) continue;
+    if (kvar.length === 0) radera.push({ id: z.id, namn: z.namn, fore: z.lander });
+    else uppdatera.push({ id: z.id, namn: z.namn, fore: z.lander, efter: kvar, bort: z.lander.filter((c) => anspråk.has(c)), till: [], bytNamn: null });
+  }
+  return { skapa, redan, uppdatera, radera };
 }
 
 /** Priset för en variant ur konfigens fasta_priser: tal för alla varianter, eller objekt per varianttitel. */
@@ -258,15 +277,17 @@ async function stegFrakt(k, { skarpt }) {
   const lage = await hamtaLage(k);
   if (!lage.frakt) throw new Error('Ingen fraktprofil.');
   const plan = fraktplan(lage.frakt.zoner, KONFIG.frakt.zoner);
-  for (const z of plan.redan) log(`Fraktzon "${z}" finns redan.`);
-  for (const u of plan.uppdatera) log(`${skarpt ? '' : 'torrt: '}zonen "${u.namn}" släpper ${u.bort.join(', ')} (kvar: ${u.efter.length} länder)`);
+  for (const z of plan.redan) log(`Fraktzon "${z}" finns redan med rätt länder.`);
+  for (const u of plan.uppdatera) log(`${skarpt ? '' : 'torrt: '}zonen "${u.bytNamn ?? u.namn}"${u.bytNamn ? ` döps om till "${u.namn}",` : ''}${u.bort.length ? ` släpper ${u.bort.join(', ')}` : ''}${u.till.length ? ` får ${u.till.join(', ')}` : ''} (efteråt ${u.efter.length} länder)`);
+  for (const z of plan.radera) log(`${skarpt ? '' : 'torrt: '}zonen "${z.namn}" blir tom (${z.fore.join(', ')} flyttar) och tas bort`);
   for (const z of plan.skapa) log(`${skarpt ? '' : 'torrt: '}ny zon "${z.namn}" ${z.lander.join(', ')} med "${z.metod}" ${z.pris} SEK`);
-  if (!skarpt || (plan.skapa.length === 0 && plan.uppdatera.length === 0)) return;
+  if (!skarpt || (plan.skapa.length === 0 && plan.uppdatera.length === 0 && plan.radera.length === 0)) return;
   const land = (kod) => (kod === '*' ? { restOfWorld: true } : { code: kod, includeAllProvinces: true });
   const profile = {
+    ...(plan.radera.length ? { zonesToDelete: plan.radera.map((z) => z.id) } : {}),
     locationGroupsToUpdate: [{
       id: lage.frakt.gruppId,
-      zonesToUpdate: plan.uppdatera.map((u) => ({ id: u.id, countries: u.efter.map(land) })),
+      zonesToUpdate: plan.uppdatera.map((u) => ({ id: u.id, name: u.namn, countries: u.efter.map(land) })),
       zonesToCreate: plan.skapa.map((z) => ({ name: z.namn, countries: z.lander.map(land), methodDefinitionsToCreate: [{ name: z.metod, active: true, rateDefinition: { price: { amount: Number(z.pris).toFixed(1), currencyCode: 'SEK' } } }] })),
     }],
   };
@@ -393,6 +414,17 @@ async function stegOversattningar(k, { skarpt, bara: baraLocale = null }) {
   return sammanfattning;
 }
 
+/** Språken som låg i temats grenar efter första patchen 2026-09-27 12:30 — facit för ombyggnaden. */
+const GAMLA_LOCALES = ['nb', 'da', 'fi', 'en'];
+
+/** Filens ORIGINAL ur den äldsta backupen som har den (output/tema-original/<tid>/<fil>). */
+function urOriginal(fil) {
+  const bas = join(OUTPUT, 'tema-original');
+  if (!existsSync(bas)) return null;
+  for (const d of readdirSync(bas).sort()) { const p = join(bas, d, fil); if (existsSync(p)) return readFileSync(p, 'utf8'); }
+  return null;
+}
+
 async function stegTema(k, { skarpt }) {
   const ov = Object.fromEntries(LOCALES.map((l) => [l, lasOversattning(l) ?? {}]));
   const saknar = LOCALES.filter((l) => !lasOversattning(l));
@@ -404,12 +436,27 @@ async function stegTema(k, { skarpt }) {
   const f = await k.graphql(`query($id: ID!, $f: [String!]) { theme(id: $id) { files(first: 50, filenames: $f) { nodes { filename body { ... on OnlineStoreThemeFileBodyText { content } } } } } }`, { id: temaId, f: filer });
   const innehall = Object.fromEntries(f.theme.files.nodes.map((x) => [x.filename, x.body?.content ?? null]));
   const skriv = [];
+  const patcha = (fil, kod, o) => (fil.endsWith('.json') ? patchaMallJson(fil, kod, o, LIQUID_TEXTER) : patchaFil(fil, kod, o));
   for (const fil of filer) {
     const kod = innehall[fil];
     if (kod === null || kod === undefined) { log(`⚠️ ${fil} finns inte i temat — hoppar`); continue; }
     let r;
     try {
-      r = fil.endsWith('.json') ? patchaMallJson(fil, kod, ov, LIQUID_TEXTER) : patchaFil(fil, kod, ov);
+      // En redan patchad fil bär bara de språk som fanns vid förra patchen (2026-09-27 12:30:
+      // nb, da, fi, en) och patchen är idempotent — den lägger inte till nya grenar. Därför
+      // byggs den om från ORIGINALET i output/tema-original, men bara om originalet + den
+      // gamla patchen ger exakt det som ligger i temat nu (annars har någon rört filen).
+      let bas = kod;
+      if (/request\.locale\.iso_code|var LANG = /.test(kod)) {
+        const orig = urOriginal(fil);
+        if (!orig) { log(`⚠️ ${fil}: redan patchad och originalet saknas i output/tema-original — hoppar`); continue; }
+        const ovGammal = Object.fromEntries(GAMLA_LOCALES.filter((l) => l in ov).map((l) => [l, ov[l]]));
+        const kontroll = patcha(fil, orig, ovGammal);
+        if (kontroll.kod !== kod) { log(`❌ ${fil}: temat är inte originalet + den gamla patchen (någon har ändrat filen) — rör den inte`); continue; }
+        bas = orig;
+        log(`${fil}: byggs om från originalet (${GAMLA_LOCALES.join(',')} → ${LOCALES.join(',')})`);
+      }
+      r = patcha(fil, bas, ov);
     } catch (e) { log(`❌ ${fil}: ${e.message}`); continue; }
     log(`${fil}: ${r.byten.length} byten${r.byten.length ? ` (${r.byten.join(', ')})` : ''}${r.hoppade.length ? ` · hoppade: ${r.hoppade.join('; ')}` : ''}`);
     if (r.byten.length && r.kod !== kod) skriv.push({ filename: fil, body: { type: 'TEXT', value: r.kod } });

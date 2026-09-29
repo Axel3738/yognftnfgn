@@ -1,4 +1,4 @@
-// Kampanj: ATV-Trekk 3XL NO — videobatch 2026-09-24 (rutinen /translate-no).
+// Kampanj: ATV-Trekk 3XL NO — videobatch 2026-09-24 (lanserad 2026-09-29) (rutinen /translate-no).
 // Norsk copy skriven direkt av huvudsessionen (inget Agent-verktyg tillgängligt i
 // den här körningen) ur svenska ADCOPY-docsen i Drive, verifierad mot beverbutikken.no:
 // pris 539 kr (før 709 = 24 %), fri frakt over 300 kr OK, 30 dagers åpent kjøp OK.
@@ -10,13 +10,13 @@ export default {
   page: '879054088633562',     // Beverbutikken
   pixel: '1554276343018184',
   country: 'NO',
-  campaignName: 'ATV-Trekk NO | BE-ROAS 1,62 | 2026-09-24',
+  campaignName: 'ATV-Trekk NO | BE-ROAS 1,62 | 2026-09-29',
   link: 'https://beverbutikken.no/products/atv-trekk-storrelse-3xl-256-110-120-cm-svart',
   dailyBudget: '100000', // öre SEK = 1000 kr/dag, CBO på kampanjnivå
   campaignStatus: 'ACTIVE',
   adsetStatus: 'ACTIVE',
   adStatus: 'ACTIVE',
-  videoDir: '../market-expansion/no/video-batches/2026-09-24/final/atv-kapell', // relativt pipeline/
+  videoDir: '../market-expansion/no/video-batches/2026-09-29/final/atv-kapell', // relativt pipeline/
   adsets: [
     {
       name: 'ATVTrekk NO - PD',
@@ -67,7 +67,6 @@ export default {
       ads: [
         { name: 'ATVTrekk_NO_G_1_H1', file: 'NO_atv-kapell_G_1_H1.mp4' },
         { name: 'ATVTrekk_NO_G_1_H2', file: 'NO_atv-kapell_G_1_H2.mp4' },
-        { name: 'ATVTrekk_NO_G_1_H3', file: 'NO_atv-kapell_G_1_H3.mp4' },
       ],
     },
   ],

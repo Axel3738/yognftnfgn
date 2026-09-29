@@ -1,0 +1,72 @@
+{
+ "SP_104_H3": {
+  "sekunder": 28.7,
+  "svenska_ord": {
+   "och": 1,
+   "att": 1,
+   "taket": 1,
+   "inte": 1,
+   "kr": 2
+  }
+ },
+ "SP_104_H4": {
+  "sekunder": 19.9,
+  "svenska_ord": {
+   "taket": 1,
+   "inte": 1,
+   "det": 1,
+   "kr": 2
+  }
+ },
+ "CS_109_H1": {
+  "sekunder": 25.4,
+  "svenska_ord": {
+   "och": 1,
+   "kr": 1
+  }
+ },
+ "PD_110_H1": {
+  "sekunder": 23.9,
+  "svenska_ord": {
+   "din": 1,
+   "husvagn": 1,
+   "den": 1,
+   "med": 2,
+   "taket": 1,
+   "inte": 1,
+   "kr": 2
+  }
+ },
+ "CO_105_H1": {
+  "sekunder": 13.4,
+  "svenska_ord": {
+   "och": 1,
+   "det": 1,
+   "som": 1,
+   "kr": 1,
+   "att": 1
+  }
+ },
+ "OB_103_H1": {
+  "sekunder": 27.0,
+  "svenska_ord": {
+   "inte": 1,
+   "att": 1,
+   "kr": 2,
+   "baverbutiken": 1,
+   "husvagn": 1,
+   "den": 1
+  }
+ },
+ "OB_104_H1": {
+  "sekunder": 22.6,
+  "svenska_ord": {
+   "det": 2,
+   "och": 1,
+   "kr": 2,
+   "baverbutiken": 1,
+   "husvagn": 1,
+   "den": 1
+  }
+ }
+}

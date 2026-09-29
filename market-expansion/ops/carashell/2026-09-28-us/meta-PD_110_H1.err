@@ -1,0 +1,32 @@
+(node:6970) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+=== ops-till-meta — CaraShell (carashell/takskyddet) · marknad US · konto 1107817401910319 (Magiborsten UK) ===
+1. Butik: prefix carashellroof_ · carashellroof · annons "CaraShellRoof_US_PD_110_H1" · video CaraShellRoof_US_PD_110_H1-ai.mp4 (3.96 MB)
+3. Marknadskoll: "CaraShellRoof_US_PD_110_H1" bär US — ok för US
+2. Kampanj (--kampanj): "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia" (120251451415500435) ACTIVE/ACTIVE — matchar via annonserna, inte namnet
+   CBO: 8000 kr/dag · kampanjbas "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m"
+4. Dubblett: "CaraShellRoof_US_PD_110_H1" finns inte bland kontots 471 annonser — ok
+5. Koncept PD → adset "CARASHELL_US_PD" (120251451415190435) — finns, ACTIVE
+6. Sida 1381171778405935 (ärvd) (ingen IG) · länk https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US (ärvd) · DSA saknas — skickar inget
+7. Media: video 1027507970348784 uppladdad, thumbnail klar
+8. Creative-spec (SHOP_NOW, alla enhancements OPT_OUT):
+   {
+     "page_id": "1381171778405935",
+     "video_data": {
+       "video_id": "1027507970348784",
+       "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/825253525_1106695745131277_9089774721534762425_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=e3495b&_nc_ohc=RjbiJS54N0UQ7kNvwHpn2ye&_nc_oc=AdoRJ5qMNVyOxOtMw7QaVPQ9kiU0-XdkiC-HQznyOnKAtNx5yfwUPmqwloC3niyyHHI&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=APRAPSkEAAAA&_nc_gid=E4eWlmAjsefKpk0O-yoqSA&_nc_tpa=Q5bMBQIj-IiazVpGxGeSvzBtKEFOcUeLbXa9BMZ7EpCcYfwUHeyecik0liLEmup6wDzga-ba3UN9OyNFrQ&oh=00_AQPxUUt_OzE3qt9_KwjNPgfXyVfm_BUD7jtxfC3xiKNZww&oe=6AC0569F",
+       "message": "Your RV probably isn't 21 feet.\nThe roof cover comes in nine sizes, 18 to 44 ft.\nOne person gets it on — just strap the edges down.\nFrom $199.",
+       "title": "9 sizes, from $199.",
+       "link_description": "Every roof from 18 to 44 ft, same 210D weave.",
+       "call_to_action": {
+         "type": "SHOP_NOW",
+         "value": {
+           "link": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US"
+         }
+       }
+     }
+   }
+8. Annons skapad PAUSED: CaraShellRoof_US_PD_110_H1 (120251650898200435), creative 1099969582614585
+9. Aktiverad: annons 120251650898200435: PAUSED → ACTIVE
+   Tillbakaläsning: CaraShellRoof_US_PD_110_H1 → ACTIVE / effective IN_PROCESS (adset 120251451415190435)

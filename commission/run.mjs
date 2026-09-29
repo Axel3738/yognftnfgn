@@ -109,6 +109,14 @@ function skrivRapport(r, kallor) {
     rad.push('> ⚠️ Hubbarna hittades via REST-sök, inte via teamspacet Bäverbutiken '
       + '(Notion-MCP:n saknades i körningen). Kontrollera listan under "Källor" innan utbetalning.');
   }
+  if (kallor.kontosparrForbigangen) {
+    const paverkar = (kallor.onaddaKonton ?? []).filter((k) => !k.utlandskt);
+    rad.push('');
+    rad.push('> ⛔ **OFULLSTÄNDIGT KVITTO — kontospärren är förbigången med `--utan-kontospärr`.**');
+    rad.push('> Annonskonton som kunde ha påverkat utbetalningen gick INTE att läsa: '
+      + `${paverkar.map((k) => `${k.namn} (${k.id})`).join(', ')}.`);
+    rad.push('> Finns spend på dem har redigerarna fått för lite. Hela listan står under "Källor".');
+  }
   rad.push('');
 
   rad.push('## Att betala ut');
@@ -174,6 +182,17 @@ function skrivRapport(r, kallor) {
   rad.push('');
   rad.push('**Annonskonton:**');
   for (const k of kallor.konton) rad.push(`- ${k.namn} (${k.id}) · ${k.valuta}`);
+  if (kallor.onaddaKonton?.length) {
+    rad.push('');
+    rad.push(`**Annonskonton som INTE gick att läsa** (${kallor.onaddaKonton.length} av `
+      + `${kallor.konton.length + kallor.onaddaKonton.length} kända) — Meta svarar `
+      + '"(#200) Ad account owner has NOT grant ads_management or ads_read permission":');
+    for (const k of kallor.onaddaKonton) {
+      rad.push(`- ${k.namn} (${k.id})${k.utlandskt
+        ? ' · utlandskonto — filtreras bort ur commission ändå, påverkar inte utbetalningen'
+        : ' · **kan ha påverkat utbetalningen**'}`);
+    }
+  }
   if (kallor.fel.length) {
     rad.push('');
     rad.push('**⚠️ Källor som inte gick att läsa** — siffrorna ovan är därför ofullständiga:');
@@ -326,6 +345,15 @@ async function main() {
       + `  De filtreras bort ur commission ändå (bara svenska annonser betalas),\n`
       + `  så utbetalningen påverkas inte. Körningen fortsätter.`);
   }
+  // Går spärren förbi med --utan-kontospärr FÅR rapportfilen aldrig se komplett
+  // ut. Kvittot bär därför listan själv (2026-09-28): utan den listade "Källor"
+  // bara de sju konton som gick att läsa, och ett sparat kvitto hade dolt luckan
+  // i stället för att visa den. Ett kvitto som tiger om en lucka är värre än
+  // inget kvitto — det är hela skälet till att spärren finns.
+  const onaddaKonton = onadda.map((k) => ({
+    ...k,
+    utlandskt: UTLANDSKA_KONTON.has(String(k.id)),
+  }));
   if (saknadeKonton.length && !finns('utan-kontospärr')) {
     do_(`Annonskonton som PÅVERKAR utbetalningen saknas i körningen: `
       + `${saknadeKonton.map((k) => `${k.namn} (${k.id})`).join(', ')}.\n`
@@ -368,6 +396,7 @@ async function main() {
   }
 
   const kallor = { hubbar, konton, teamspaceVerifierad, svenskaBara, bortfiltrerat, bortfiltreradSpend,
+    onaddaKonton, kontosparrForbigangen: saknadeKonton.length > 0 && finns('utan-kontospärr'),
     fel: [...notionFel, ...metaFel] };
 
   if (finns('json')) {

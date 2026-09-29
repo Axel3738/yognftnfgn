@@ -1,0 +1,145 @@
+{
+  "id": "k31-fars-dag-fiske",
+  "emailTitle": "Aldrig mer trassliga fiskespön",
+  "emailDescription": "Fyra hållare, varje spö sin egen plats.",
+  "amnesrader": [
+    "Aldrig mer trassliga fiskespön",
+    "En present för honom som fiskar",
+    "Hinn beställa innan 19 oktober"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Aldrig mer trassliga fiskespön",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hej {{ contact.first_name | default: 'där' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Fyra kraftiga hållare ger varje spö sin egen plats, i båten eller i garaget. Inget mer att reda ut innan ni kommer ut på vattnet.",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "d0832750-b091-43b4-9d92-e2889d5b5a0a",
+          "button": "Se fiskespöhållaren"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Se presenten",
+      "url": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "Lösa spön trasslar lätt ihop sig i båten och garaget, och linor och beten fastnar i varandra. Hållarna gör slut på det, för strand, sjö eller båt.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Fyra hållare i ett set, för både proffs och nybörjare.",
+      "alignment": "left"
+    },
+    {
+      "type": "h2",
+      "text": "Mer för fiskaren",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "4be2e797-74d3-43c3-8232-169ab5d856a3",
+          "button": "Se produkten"
+        },
+        {
+          "id": "6860aaa7-3d53-476c-8886-3c689cd7766d",
+          "button": "Se produkten"
+        },
+        {
+          "id": "80331aaa-6327-4283-9ad3-1f9e2e7570fa",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "regular",
+      "text": "Beställ senast 19 oktober om paketet ska vara framme till fars dag den 8 november.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

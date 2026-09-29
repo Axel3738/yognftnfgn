@@ -47,7 +47,7 @@ Shopifys produkttitlar (Axels beslut). Utkasten K02–K22 är inte omlästa 2026
 - **F01 E2: 37 kontakter väntar** (get_flow), inte 17 som ett fynd nedan säger.
 - **Repot:** payload-filerna för K03, K18 och K21 är inte omgenererade (gammal text kvar). Kör `node klaviyo/spoks/konvertera.mjs` med en färsk recensionscache innan något laddas upp ur repot. Byggs K18 om ur repot blir det två citat; sätt källfilens `antal: 1` om bara Thore K. ska stå kvar.
 - K14-knappen `e7235624` saknar spårningslänk (`urlRedirect`), adressen är rätt.
-- Konverteraren gör fortfarande dubblettkort (hero med produktbild + samma produkt längre ner). Nästa ombyggnad av payloads ger dem tillbaka tills koden rättas.
+- ✅ **Dubblettkortet rättat i `konvertera.mjs` 2026-09-28:** `konverteraMejl` stryker ett senare enprodukts-block med samma produkt som ett tidigare och flyttar dess knapptext till första kortet (test i `klaviyo/test/konvertera.test.mjs`). K04, K05, K07, K08 och K16 fick nya payloads i repot samma dag — men utkasten K02–K22 i Spoks bär fortfarande dubbletten tills de laddas upp igen.
 
 ## KVAR i LIVE-flödena (MCP:n kan inte ändra ett live-flöde med inrullade kontakter)
 

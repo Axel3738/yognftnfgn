@@ -1,0 +1,149 @@
+{
+ "fakta": {
+  "IBC-tanktrekk": {
+   "pris": "439 kr",
+   "jamforpris": "586 kr",
+   "spar": "147 kr",
+   "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
+   "fakta": [
+    "210D oxfordstoff, grønt",
+    "glidelås",
+    "åpning på toppen så du når lokket",
+    "mål 120 × 100 × 116 cm, passer standard 1000-liters IBC-tank",
+    "stenger lyset ute så alger ikke kommer i gang",
+    "tar UV-strålingen i stedet for plasten"
+   ]
+  },
+  "Sotarset": {
+   "pris": "389 kr",
+   "jamforpris": "509 kr",
+   "spar": "120 kr",
+   "link": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror",
+   "fakta": [
+    "9 fleksible stenger à 41 cm, skrus sammen til 3,69 meter",
+    "nylonbørste 100 mm",
+    "sekskantadapter",
+    "stengene følger svingene i røret i stedet for å stoppe",
+    "soten børstes løs, ikke skrapes",
+    "når bak ovnen eller tørketrommelen",
+    "produktet heter Feiesett på norsk"
+   ]
+  },
+  "Takovertrekk": {
+   "pris": "1 189 kr",
+   "jamforpris": "1 549 kr",
+   "spar": "360 kr",
+   "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
+   "fakta": [
+    "210D-duk, ikke tynn presenning som sprekker i frost",
+    "dekker bare takflaten, 6,5 × 3 m — ikke hele vognen",
+    "strammes med reim og strammesnor i kanten",
+    "håndteres av én person",
+    "tåler en hel vintersesong ute",
+    "oppbevaringspose følger med",
+    "30 dagers åpent kjøp"
+   ]
+  }
+ },
+ "rader": [
+  {
+   "malnamn": "IBC-tanktrekk_NO_PD_12_H1",
+   "produkt": "IBC-tanktrekk",
+   "se_message": "Grönt vatten i en IBC-tank utan UV-skydd.\nVårt överdrag blockerar solljus och UV – vattnet hålls klart.\nKraftigt 210D Oxford-tyg, enkelt blixtlås.\nÖppning upptill – du kommer åt locket ändå.",
+   "se_headline": "Grönt vatten utan UV-skydd.",
+   "no_pris": "439.00",
+   "no_jamforpris": "586.00",
+   "no_link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+  },
+  {
+   "malnamn": "IBC-tanktrekk_NO_PD_12_H2",
+   "produkt": "IBC-tanktrekk",
+   "se_message": "Solljuset når vattnet i en oskyddad IBC-tank.\nAlgerna växer i ljuset, och UV-ljuset sliter ut tanken i förtid.\nEtt 210D Oxford-överdrag stoppar båda delarna.\nBlixtlås och öppning upptill gör det enkelt.",
+   "se_headline": "Solljus når vattnet i tanken.",
+   "no_pris": "439.00",
+   "no_jamforpris": "586.00",
+   "no_link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+  },
+  {
+   "malnamn": "IBC-tanktrekk_NO_PD_12_H3",
+   "produkt": "IBC-tanktrekk",
+   "se_message": "Det här är 210D Oxford-tyget – tätt vävt, blockerar ljus.\nSamma tyg täcker hela din IBC-tank.\nSolljus och UV stängs ute, vattnet hålls klart.\nBlixtlås i sidan, lock du når utan att lyfta av allt.",
+   "se_headline": "210D Oxford-tyg blockerar ljuset.",
+   "no_pris": "439.00",
+   "no_jamforpris": "586.00",
+   "no_link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+  },
+  {
+   "malnamn": "Sotarset_NO_PD_9_H1",
+   "produkt": "Sotarset",
+   "se_message": "Bakom torktumlaren är det för trångt för att krypa in – 3,69 meter böjlig stång når dit. Nio stänger på 41 cm skruvas ihop en och en, följer krökarna i röret och nylonborsten borstar loss det som fastnat. Bygg bara den längd du behöver. Rensa själv – från där du står. Beställ ditt Sotarset.",
+   "se_headline": "3,69 meter bakom torktumlaren – utan att krypa in",
+   "no_pris": "389.00",
+   "no_jamforpris": "509.00",
+   "no_link": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror"
+  },
+  {
+   "malnamn": "Sotarset_NO_PD_8_H2",
+   "produkt": "Sotarset",
+   "se_message": "Borsten är inne i röret – sotet borstas loss, inte skrapas. Nio böjliga stänger böjer med i kröken i stället för att ta stopp. Skruva ihop 3,69 meter, bygg bara den längd du behöver, och rensa själv mellan sotarens besök. Beställ ditt Sotarset idag och få tillbaka draget.",
+   "se_headline": "Rent rör, bättre drag – på minuter",
+   "no_pris": "389.00",
+   "no_jamforpris": "509.00",
+   "no_link": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror"
+  },
+  {
+   "malnamn": "Sotarset_NO_PD_8_H1",
+   "produkt": "Sotarset",
+   "se_message": "Borsten är inne i röret – sotet borstas loss, inte skrapas. Nio böjliga stänger böjer med i kröken i stället för att ta stopp. Skruva ihop 3,69 meter, bygg bara den längd du behöver, och rensa själv mellan sotarens besök. Beställ ditt Sotarset idag och få tillbaka draget.",
+   "se_headline": "Rent rör, bättre drag – på minuter",
+   "no_pris": "389.00",
+   "no_jamforpris": "509.00",
+   "no_link": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror"
+  },
+  {
+   "malnamn": "Sotarset_NO_PD_7_H1",
+   "produkt": "Sotarset",
+   "se_message": "Kaminen drar sämre för varje eldning – och du vet varför. Sotlagret växer tyst längst i kröken, där en stel stång tar stopp. Nio böjliga stänger följer krökarna – skruva ihop 3,69 meter och dra nylonborsten genom röret. Rensa själv mellan sotarens besök. Beställ ditt Sotarset idag och få tillbaka draget.",
+   "se_headline": "Rent rör, bättre drag – på minuter",
+   "no_pris": "389.00",
+   "no_jamforpris": "509.00",
+   "no_link": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror"
+  },
+  {
+   "malnamn": "Takovertrekk_NO_SP_4_H4",
+   "produkt": "Takovertrekk",
+   "se_message": "Det här täcker bara taket, inte hela vagnen — en person klarar det på egen hand. Vattnet står aldrig vid takluckorna, och 210D-väven håller hela vintersäsongen ute. Remmarna sitter på alla fyra sidor och hakas fast i en krok i nederkant. 1 129 kr i stället för 1 469 kr.",
+   "se_headline": "En person räcker. 210D-väv.",
+   "no_pris": "1189.00",
+   "no_jamforpris": "1549.00",
+   "no_link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+  },
+  {
+   "malnamn": "Takovertrekk_NO_SP_4_H3",
+   "produkt": "Takovertrekk",
+   "se_message": "Vid en taklucka utan skydd blir vattnet lätt stående, och tätmassan tar stryk. Ett helöverdrag är tungt att få på plats ensam — det här täcker bara taket, och en person klarar det själv. Vattnet står aldrig vid takluckorna, och 210D-väven håller hela vintersäsongen ute. Remmarna sitter på alla fyra sidor och hakas fast i en krok i nederkant. 1 129 kr i stället för 1 469 kr.",
+   "se_headline": "En person räcker. 210D-väv.",
+   "no_pris": "1189.00",
+   "no_jamforpris": "1549.00",
+   "no_link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+  },
+  {
+   "malnamn": "Takovertrekk_NO_SP_4_H2",
+   "produkt": "Takovertrekk",
+   "se_message": "En hand hakar fast remmen i kroken vid takkanten – en person räcker för att få det här på plats. Det här täcker bara taket, inte hela vagnen. Vattnet står aldrig vid takluckorna, och 210D-väven håller hela vintersäsongen ute. Remmarna sitter på alla fyra sidor och hakas fast i en krok i nederkant. 1 129 kr i stället för 1 469 kr.",
+   "se_headline": "En person räcker. 210D-väv.",
+   "no_pris": "1189.00",
+   "no_jamforpris": "1549.00",
+   "no_link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+  },
+  {
+   "malnamn": "Takovertrekk_NO_CS_12_H1",
+   "produkt": "Takovertrekk",
+   "se_message": "Jag betalade 1 129 kronor för det här. Taket är den dyraste ytan på hela vagnen. Tål en hel vintersäsong ute – 210D-väv, inte tunn presenning som spricker i frost. Sitter kvar när det blåser – remmarna sitter på alla fyra sidor och hakas fast i en krok i nederkant. Jämförpriset är 1 469 kronor. Jag betalade 1 129. Skydda taket – 1 129 kr.",
+   "se_headline": "Skydda taket – 1 129 kr.",
+   "no_pris": "1189.00",
+   "no_jamforpris": "1549.00",
+   "no_link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+  }
+ ]
+}

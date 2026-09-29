@@ -127,6 +127,7 @@ ner någonstans. Det här är de som bär mest spend, avlästa ur kontot
 | `GT` | 100 | Present (gift) |
 | `BOF` | 48 | **Funnelposition**, inte vad annonsen gör — se varningen nedan |
 | `OB` | 4 | **Invändning.** Annonsen bemöter en sak publiken faktiskt säger |
+| `FD` | ny 2026-09-28 | **Fars dag** — säsongsannons (fars dag 8 november, "beställ senast 19 oktober", rean = dagens jämförpris, Axels beslut 2026-09-28). **Bara Sverige:** översätts och speglas aldrig (`tools/lib/bara-sverige.mjs`) |
 
 ### `OB` betyder invändning
 

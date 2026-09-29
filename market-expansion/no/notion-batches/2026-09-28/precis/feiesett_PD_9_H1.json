@@ -1,0 +1,24 @@
+{
+ "in": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-28/out/feiesett_PD_9_H1.mp4",
+ "ut": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-28/no-video/Sotarset_NO_PD_9_H1.mp4",
+ "srt": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-28/srt-no/feiesett_PD_9_H1.srt",
+ "captions": {
+  "zon": [
+   840,
+   940
+  ],
+  "standard_cy": 887,
+  "font_px": 42,
+  "max_chars": 26,
+  "x0": 0,
+  "x1": 720,
+  "bredd_max": 660,
+  "pad_x": 34,
+  "pad_y": 8,
+  "h_min": 62,
+  "h_max": 95
+ },
+ "blur": [],
+ "lager": [],
+ "qa": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-28/qa"
+}

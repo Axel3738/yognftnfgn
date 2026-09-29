@@ -27,6 +27,18 @@ export const SPRAK = {
   da: { namn: 'danska', locale: 'da-DK', html: 'da' },
   fi: { namn: 'finska', locale: 'fi-FI', html: 'fi' },
   en: { namn: 'engelska', locale: 'en-GB', html: 'en' },
+  // Matstrumpors sju extra marknadsspråk (sprak_extra i butiker.json, filerna
+  // skrivna 2026-09-27). ⚠️ Lades till här 2026-09-28: filerna fanns men
+  // SPRAK gjorde det inte, så skapaOversattare kastade "Okänt språk 'de'" och
+  // HELA spårningssidan slutade publiceras (mätt i rundan 16:56 CEST).
+  // Ett språk i sprak_extra utan rad här stoppar sidan för alla kunder.
+  de: { namn: 'tyska', locale: 'de-DE', html: 'de' },
+  fr: { namn: 'franska', locale: 'fr-FR', html: 'fr' },
+  nl: { namn: 'nederländska', locale: 'nl-NL', html: 'nl' },
+  es: { namn: 'spanska', locale: 'es-ES', html: 'es' },
+  it: { namn: 'italienska', locale: 'it-IT', html: 'it' },
+  pl: { namn: 'polska', locale: 'pl-PL', html: 'pl' },
+  pt: { namn: 'portugisiska', locale: 'pt-PT', html: 'pt' },
 };
 
 export function lasSprakfil(kod) {

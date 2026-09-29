@@ -1,0 +1,146 @@
+{
+  "id": "k37-mc-hojen-stalls-undan",
+  "emailTitle": "Ett kapell som tar smällen i stället för lacken",
+  "emailDescription": "Dras över på en minut, hela hojen skyddad.",
+  "amnesrader": [
+    "Ett kapell som tar smällen i stället för lacken",
+    "Innan hojen ställs undan för vintern",
+    "Lås styret och hjälmen i ett enda lås"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Ett kapell som tar smällen i stället för lacken",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hej {{ contact.first_name | default: 'där' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Säsongen är på väg mot sitt slut för de flesta hojar. Innan den ställs undan är det tre saker värda att ha koll på.",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "d091553e-f265-47f7-816c-e40134950a9b",
+          "button": "Köp kapellet"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Se kapellet",
+      "url": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv",
+      "style": "button"
+    },
+    {
+      "type": "h2",
+      "text": "Innan hojen ställs undan"
+    },
+    {
+      "type": "list",
+      "text": "Lås fast styret och hjälmen."
+    },
+    {
+      "type": "list",
+      "text": "Skydda sätet mot slitage under vintern."
+    },
+    {
+      "type": "list",
+      "text": "En låsbar bensinreserv på 3 liter, redo till våren."
+    },
+    {
+      "type": "regular",
+      "text": "Dras över hela hojen på en minut, 218 × 118,5 cm. Regnet rinner av, dammet stannar utanpå och solen bleker kapellet i stället för lacken.",
+      "alignment": "left"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "0e363a79-524a-4ca7-8e4c-85de78479f2b",
+          "button": "Se produkten"
+        },
+        {
+          "id": "df7aad9c-957e-4134-ab5f-5df0430f89c0",
+          "button": "Se produkten"
+        },
+        {
+          "id": "d149b83d-d19b-4358-b196-d96146942be9",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

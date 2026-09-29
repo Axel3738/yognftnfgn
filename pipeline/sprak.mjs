@@ -25,6 +25,14 @@ export const HEYGEN_SPRAK_PER_MARKNAD = Object.freeze({
   CA: 'English (Canada)',
   AU: 'English (Australia)',
   NZ: 'English (New Zealand)',
+  // Matstrumpors Europa-lansering 2026-09-27 (namnen lästa ur listTargetLanguages samma dag).
+  DE: 'German (Germany)',
+  FR: 'French (France)',
+  NL: 'Dutch (Netherlands)',
+  ES: 'Spanish (Spain)',
+  IT: 'Italian (Italy)',
+  PL: 'Polish (Poland)',
+  PT: 'Portuguese (Portugal)',
 });
 
 /** HeyGen-språket för en marknad, eller null för en okänd kod. */
@@ -32,7 +40,9 @@ export function heygenSprakFor(marknad) {
   return HEYGEN_SPRAK_PER_MARKNAD[String(marknad ?? '').trim().toUpperCase()] ?? null;
 }
 
-/** Språkfamiljen ett HeyGen-språknamn tillhör: en | nb | da | fi | sv | null. */
+/** Språkfamiljen ett HeyGen-språknamn tillhör: en | nb | da | fi | sv | de | fr | nl | es | it | pl | pt | null.
+ *  De sju sista kom till 2026-09-28 (Matstrumpors Europa): utan dem fick en tysk
+ *  eller polsk körning `null` här, och då kontrollerades SRT-texten inte alls. */
 export function sprakfamilj(heygenSprak) {
   const s = String(heygenSprak ?? '').toLowerCase();
   if (s.startsWith('english')) return 'en';
@@ -40,6 +50,13 @@ export function sprakfamilj(heygenSprak) {
   if (s.startsWith('danish')) return 'da';
   if (s.startsWith('finnish')) return 'fi';
   if (s.startsWith('swedish')) return 'sv';
+  if (s.startsWith('german')) return 'de';
+  if (s.startsWith('french')) return 'fr';
+  if (s.startsWith('dutch')) return 'nl';
+  if (s.startsWith('spanish')) return 'es';
+  if (s.startsWith('italian')) return 'it';
+  if (s.startsWith('polish')) return 'pl';
+  if (s.startsWith('portuguese')) return 'pt';
   return null;
 }
 
@@ -66,6 +83,37 @@ const LISTOR = {
     'får', 'gør', 'gøre', 'blive', 'nok', 'sådan', 'lidt', 'ud', 'nu', 'så', 'eller', 'men', 'mere', 'både', 'end', 'kun'],
   fi: ['ja', 'ei', 'on', 'se', 'että', 'joka', 'kun', 'tai', 'myös', 'vain', 'kaikki', 'sinun', 'sinä', 'tämä', 'ole', 'voi',
     'mutta', 'jos', 'niin', 'kanssa', 'ilman', 'koko', 'yksi', 'ovat', 'olla', 'mitä', 'miten', 'nyt', 'vielä', 'euroa', 'ei'],
+  // Europa-språken (2026-09-28). Delade småord (de, en, a, la, que …) står i flera
+  // listor med flit — det som avgör är orden bara ett av språken har.
+  de: ['der', 'die', 'das', 'und', 'ist', 'nicht', 'ein', 'eine', 'einen', 'einem', 'einer', 'ich', 'du', 'wir', 'sie', 'es', 'mit',
+    'für', 'auf', 'zu', 'den', 'dem', 'des', 'von', 'im', 'in', 'sind', 'war', 'auch', 'nur', 'noch', 'schon', 'aber', 'oder', 'wenn',
+    'wie', 'was', 'wer', 'dass', 'so', 'sehr', 'hier', 'jetzt', 'mal', 'man', 'kann', 'ganz', 'diese', 'dieser', 'dieses', 'alle',
+    'kein', 'keine', 'mehr', 'als', 'bei', 'aus', 'nach', 'um', 'über', 'dir', 'dich', 'mich', 'mir', 'uns', 'haben', 'hat', 'habe',
+    'wird', 'gibt', 'echt', 'einfach', 'jeden', 'jedes', 'bekommst', 'zwei'],
+  fr: ['le', 'la', 'les', 'un', 'une', 'des', 'et', 'est', 'ce', 'cette', 'ces', 'je', 'tu', 'il', 'elle', 'nous', 'vous', 'ils',
+    'pas', 'ne', 'que', 'qui', 'dans', 'pour', 'sur', 'avec', 'au', 'aux', 'du', 'de', 'en', 'mais', 'ou', 'si', 'comme', 'tout',
+    'tous', 'toute', 'très', 'bien', 'plus', 'aussi', 'déjà', 'encore', 'ici', "c'est", "j'ai", "n'est", "qu'il", 'ça', 'sont',
+    'suis', 'être', 'avoir', 'ont', 'fait', 'vraiment', 'même', 'votre', 'vos', 'mon', 'ma', 'mes', 'deux', 'chaque'],
+  nl: ['de', 'het', 'een', 'en', 'is', 'niet', 'ik', 'je', 'jij', 'we', 'wij', 'ze', 'zij', 'dat', 'dit', 'die', 'met', 'voor',
+    'op', 'van', 'in', 'te', 'om', 'aan', 'bij', 'uit', 'naar', 'ook', 'maar', 'als', 'wat', 'wie', 'hoe', 'zo', 'nog', 'al',
+    'wel', 'geen', 'nu', 'hier', 'er', 'zijn', 'hebben', 'heeft', 'heb', 'kan', 'echt', 'heel', 'gewoon', 'jouw', 'jullie',
+    'mij', 'me', 'ons', 'krijg', 'krijgt', 'twee', 'elke'],
+  es: ['el', 'la', 'los', 'las', 'un', 'una', 'unos', 'y', 'es', 'no', 'que', 'de', 'en', 'por', 'para', 'con', 'del', 'al',
+    'lo', 'le', 'se', 'su', 'sus', 'tu', 'tus', 'te', 'mi', 'me', 'yo', 'tú', 'nos', 'pero', 'o', 'si', 'como', 'más', 'muy',
+    'también', 'ya', 'aquí', 'esto', 'este', 'esta', 'estos', 'ese', 'esa', 'son', 'está', 'están', 'hay', 'ser', 'tiene',
+    'todo', 'todos', 'cuando', 'qué', 'dos', 'cada', 'solo'],
+  it: ['il', 'lo', 'la', 'i', 'gli', 'le', 'un', 'una', 'uno', 'e', 'è', 'non', 'che', 'di', 'da', 'in', 'per', 'con', 'su',
+    'del', 'della', 'dei', 'delle', 'al', 'alla', 'ma', 'o', 'se', 'come', 'più', 'molto', 'anche', 'già', 'qui', 'questo',
+    'questa', 'questi', 'sono', 'sei', 'ha', 'hanno', "c'è", 'tutto', 'tutti', 'ti', 'mi', 'ci', 'si', 'tuo', 'tua', 'due',
+    'ogni', 'solo', 'davvero'],
+  pl: ['i', 'w', 'z', 'na', 'nie', 'to', 'jest', 'się', 'że', 'do', 'po', 'od', 'dla', 'ale', 'jak', 'tak', 'już', 'tylko',
+    'co', 'czy', 'są', 'być', 'bardzo', 'ten', 'ta', 'te', 'tego', 'mi', 'mnie', 'ci', 'cię', 'ty', 'twój', 'twoja', 'jej',
+    'jego', 'oni', 'my', 'wy', 'też', 'jeszcze', 'tu', 'tutaj', 'kiedy', 'gdy', 'który', 'która', 'które', 'ma', 'mają',
+    'dwa', 'dwie', 'każdy', 'naprawdę'],
+  pt: ['o', 'a', 'os', 'as', 'um', 'uma', 'e', 'é', 'não', 'que', 'de', 'do', 'da', 'dos', 'das', 'em', 'no', 'na', 'nos',
+    'nas', 'por', 'para', 'com', 'se', 'mas', 'ou', 'como', 'mais', 'muito', 'também', 'já', 'aqui', 'isto', 'este', 'esta',
+    'estes', 'são', 'está', 'estão', 'tem', 'ter', 'ser', 'tu', 'te', 'teu', 'tua', 'ti', 'eu', 'nós', 'quando', 'dois',
+    'duas', 'cada', 'só', 'mesmo'],
 };
 export const SPRAKFAMILJER = Object.freeze(Object.keys(LISTOR));
 const MANGDER = Object.fromEntries(Object.entries(LISTOR).map(([k, v]) => [k, new Set(v)]));
@@ -78,7 +126,9 @@ export function srtText(srt) {
     .join('\n');
 }
 
-const orden = (text) => String(text ?? '').toLowerCase().match(/[a-zåäöæøü']+/g) ?? [];
+// Alla bokstäver (\p{L}), inte bara a–ö: med den gamla klassen blev "não",
+// "się" och "très" till stympade ord och de sju Europa-språken gick inte att döma.
+const orden = (text) => String(text ?? '').toLowerCase().replace(/’/g, "'").match(/[\p{L}']+/gu) ?? [];
 
 /**
  * Gissar språkfamiljen i en text. Räknar funktionsord per familj.
@@ -122,7 +172,7 @@ export function kollaSprak(text, forvantad) {
   return { ok: true, forvantad: f, gissat: g.sprak ?? f, poang: g.poang, ord: g.ord, skal: null };
 }
 
-const NAMN = { en: 'engelska', sv: 'svenska', nb: 'norska', da: 'danska', fi: 'finska' };
+const NAMN = { en: 'engelska', sv: 'svenska', nb: 'norska', da: 'danska', fi: 'finska', de: 'tyska', fr: 'franska', nl: 'nederländska', es: 'spanska', it: 'italienska', pl: 'polska', pt: 'portugisiska' };
 export const namnFor = (k) => NAMN[k] ?? String(k);
 
 /** Språk och locale ur ett HeyGen-id ("…-nb-nb-NO" → { kod: 'nb', locale: 'nb-NO' }).

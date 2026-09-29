@@ -1,0 +1,145 @@
+{
+  "id": "k33-fars-dag-fryser",
+  "emailTitle": "Den kalla sitsen känns i hela kroppen",
+  "emailDescription": "Fyra värmezoner värmer både sits och rygg.",
+  "amnesrader": [
+    "Den kalla sitsen känns i hela kroppen",
+    "Beställ senast 19 oktober till fars dag",
+    "Värmesulor, poncho eller handvärmare"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Den kalla sitsen känns i hela kroppen",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hej {{ contact.first_name | default: 'där' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Bilsätet, kontorsstolen eller campingstolen är iskall på morgonen, och det tar sin tid innan värmen kommer av sig själv.",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "08757c7e-7d50-498a-a1b4-70370bcd3c5c",
+          "button": "Se värmesitsen"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Se presenten",
+      "url": "https://baverbutiken.se/products/varmesits-45-90-cm-4-varmezoner-usb-driven",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "Fyra värmezoner täcker sits och rygg i ett stycke, och tre lägen väljs med en knapp på sitsen. Den drivs via USB, så en vanlig powerbank räcker. Powerbanken följer inte med.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Sits och rygg värms i samma stund, med tre lägen du växlar mellan på en knapp.",
+      "alignment": "left"
+    },
+    {
+      "type": "h2",
+      "text": "Tre till mot kylan",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "3c65b764-fbec-473e-9545-e28de1f82877",
+          "button": "Se produkten"
+        },
+        {
+          "id": "32177830-77e2-45ee-b5b9-dd1ffb5fe72e",
+          "button": "Se produkten"
+        },
+        {
+          "id": "48b8dd3f-9844-4233-a9da-8d4e6284c413",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "regular",
+      "text": "Beställ senast 19 oktober om paketet ska vara framme till fars dag den 8 november.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

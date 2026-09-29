@@ -1,0 +1,37 @@
+(node:7051) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+=== ops-till-meta — CaraShell (carashell/takskyddet) · marknad US · konto 1107817401910319 (Magiborsten UK) ===
+1. Butik: prefix carashellroof_ · carashellroof · annons "CaraShellRoof_US_OB_103_H1" · video CaraShellRoof_US_OB_103_H1-ai.mp4 (4.91 MB)
+3. Marknadskoll: "CaraShellRoof_US_OB_103_H1" bär US — ok för US
+  ⏳ Meta rate limit (försök 1/8) — väntar 30s
+  ⏳ Meta rate limit (försök 2/8) — väntar 60s
+  ⏳ Meta rate limit (försök 3/8) — väntar 120s
+  ⏳ Meta rate limit (försök 4/8) — väntar 240s
+  ⏳ Meta rate limit (försök 5/8) — väntar 300s
+2. Kampanj (--kampanj): "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia" (120251451415500435) ACTIVE/ACTIVE — matchar via annonserna, inte namnet
+   CBO: 8000 kr/dag · kampanjbas "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m"
+4. Dubblett: "CaraShellRoof_US_OB_103_H1" finns inte bland kontots 473 annonser — ok
+5. Koncept OB → adset "CARASHELL_US_OB" (120251517179380435) — finns, ACTIVE
+6. Sida 1381171778405935 (ärvd) (ingen IG) · länk https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US (ärvd) · DSA saknas — skickar inget
+7. Media: video 1417755516981039 uppladdad, thumbnail klar
+8. Creative-spec (SHOP_NOW, alla enhancements OPT_OUT):
+   {
+     "page_id": "1381171778405935",
+     "video_data": {
+       "video_id": "1417755516981039",
+       "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/826000148_1487949820020587_4926316418915291571_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=e3495b&_nc_ohc=1tpbJsPBipQQ7kNvwHLnXSc&_nc_oc=AdpmsBir12gXRKcyh4-GGZkbk60qDjo_ow9vEGad9--yOr6MRZzhJKwlnoLI21BK3lU&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=APRAPSkEAAAA&_nc_gid=IJ2_j77awDzahvxTG1j_lA&_nc_tpa=Q5bMBQJIosSCEEcJMM2fscEt5gfzgyxszIy1HyDb0v_LqoE_nctZov7g3dGzMC3isa4mM4TuB-qLrSnOPQ&oh=00_AQPL5sw3RkORCq3Lmwkr_VBUaeyRb5s26_QEwS2AS752jw&oe=6AC07547",
+       "message": "A question people ask: \"Is it waterproof?\"\nHonest answer: no.\nBut water runs off the silver-coated weave instead of pooling.\nThe seals around your roof hatches never have to sit in water all winter.\n$199, was $249 — save $50 (20%).",
+       "title": "Water runs off. It doesn't sit.",
+       "link_description": "210D weave sheds rain instead of holding it.",
+       "call_to_action": {
+         "type": "SHOP_NOW",
+         "value": {
+           "link": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US"
+         }
+       }
+     }
+   }
+8. Annons skapad PAUSED: CaraShellRoof_US_OB_103_H1 (120251651131140435), creative 1563107375056900
+9. Aktiverad: annons 120251651131140435: PAUSED → ACTIVE
+   Tillbakaläsning: CaraShellRoof_US_OB_103_H1 → ACTIVE / effective IN_PROCESS (adset 120251517179380435)

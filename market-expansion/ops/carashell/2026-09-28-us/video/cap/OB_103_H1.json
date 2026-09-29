@@ -1,0 +1,49 @@
+{
+ "in": "../forbehandlad/carashell_OB_103_H1.mp4",
+ "ut": "../../us/CaraShellRoof_US_OB_103_H1.mp4",
+ "srt": "../srt-us/carashell_OB_103_H1.srt",
+ "captions": {
+  "zon": [
+   630,
+   1060
+  ],
+  "max_chars": 34,
+  "font_px": 30,
+  "standard_cy": 995,
+  "h_min": 25,
+  "h_max": 175,
+  "x0": 50,
+  "x1": 670,
+  "bredd_max": 620,
+  "av": [
+   [
+    24.0,
+    999
+   ]
+  ]
+ },
+ "lager": [
+  {
+   "png": "../lager/ob103-fraga.png",
+   "t": [
+    0.85,
+    2.95
+   ]
+  },
+  {
+   "png": "../lager/ob103-pris.png",
+   "t": [
+    19.6,
+    24.0
+   ]
+  },
+  {
+   "png": "../lager/slutkort-720.png",
+   "t": [
+    24.0,
+    999
+   ]
+  }
+ ],
+ "qa": "qa-OB_103_H1"
+}

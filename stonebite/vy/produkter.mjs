@@ -3,7 +3,9 @@
 // Produkttest är trappan en ny produkt går uppför: godkänd research → fick sin
 // chans → går med vinst → skalas. Trappan visar var produkterna står; pengarna
 // (15 dollar per färdig produkt, Axels beslut 2026-09-21) faller på första
-// steget — resten är läge, inte lön. Beloppet bor i bonus/regler.json.
+// steget — resten är läge, inte lön. Beloppet bor i bonus/regler.json, och
+// utbetalningen går varannan vecka: 1–15 den 15:e, 16–sista dagen den sista
+// dagen i månaden (Axel 2026-09-28). Själva talen står på Min sida och Bonus.
 //
 // Recensionssidan svarar på EN fråga: får någon betalt för det kunderna
 // skriver? Står det noll i "med namn" är bonusprogrammet bara ett löfte.
@@ -47,7 +49,7 @@ export function produkttestSida({ snapshot, anvandare, nu = new Date() }) {
     kort({
       etikett: 'Produkter i trappan',
       varde: tal(p.antal),
-      forklaring: 'Produkter som passerat minst ett steg. Första steget är pengar till den som gjorde produkten klar.',
+      forklaring: 'Produkter som passerat minst ett steg. Första steget är pengar till den som gjorde produkten klar — betalas den 15:e och sista dagen i månaden.',
     }),
     kort({
       etikett: 'Fick sin chans',

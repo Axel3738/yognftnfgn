@@ -1,0 +1,35 @@
+🔎 BÄVERBUTIKEN brief review — 2026-09-28
+Hubs found: 23 · reviewed: 7 · skipped: 12 · unreadable: 4
+
+**Reviewed**
+• `Boat motor cover creative hub` — round 2026-09-26, 3 briefs: 0 clean · 3 with notes · 0 with errors · Feedback row `Brief review 2026-09-26`
+• `BÄVER IBC-Tanköverdraget` — round 2026-09-25, 4 briefs: 0 clean · 3 with notes · 1 with errors · Feedback row `Brief review 2026-09-25` · 1 comment on rows
+• `Chimney sweep set creative hub` — round 2026-09-26, 6 briefs: 0 clean · 6 with notes · 0 with errors · Feedback row `Brief review 2026-09-26`
+• `BÄVER Termoskyddet för Husbil` — round 2026-09-27, 7 briefs: 0 clean · 7 with notes · 0 with errors · Feedback row `Brief review 2026-09-27` · rules in products/carashell/termoskyddet/feedback.md
+• `BÄVER Taköverdraget för Husvagn` — round 2026-09-25, 7 briefs: 0 clean · 6 with notes · 1 with errors · Feedback row `Brief review 2026-09-25` · 1 comment on rows · rules in products/carashell/takskyddet/feedback.md
+• `Indoor slippers creative hub` — round 2026-09-25, 2 briefs: 0 clean · 0 with notes · 2 with errors · Feedback row `Brief review 2026-09-25` · 2 comments on rows
+• `Belt grinder creative hub` — round 2026-09-25, 2 briefs: 0 clean · 2 with notes · 0 with errors · Feedback row `Brief review 2026-09-25`
+
+**Skipped**
+• `Car wash brush creative hub` — round 2026-09-20 already reviewed (Brief review 2026-09-20)
+• `Annonsidéer` — not a creative hub: no Typ field
+• `Product test center SE BÄVER` — not a creative hub: Status lacks the brief lifecycle (Draft → To be Reviewed) — products or SOPs, not briefs
+• `Bird feeder with camera creative hub` — round 2026-09-19 already reviewed (Brief review 2026-09-19)
+• `Bäverkoppling.se` — not a creative hub: other business or the template (by title)
+• `kundsupport Grillkliniken` — not a creative hub: other business or the template (by title)
+• `BÄVER Adventskalendern Racingbilar` — round 2026-09-20 already reviewed (Brief review 2026-09-20)
+• `Kranskydd Frost 420D creative hub` — latest round 2026-09-05 is 23 days old (limit 10) — no newer briefs to give feedback on
+• `BÄVER Termoskyddet för Husbil` — no ad rows (Typ … Pending Approval)
+• `Motorcycle Cover creative hub` — round 2026-09-18 already reviewed (Brief review 2026-09-18)
++2 more
+
+**Unreadable**
+• `Boat cover 420D creative hub` — Notion 404 — archived or not shared with the integration
+• `Beach crocs creative hub` — Notion 404 — archived or not shared with the integration
+• `Trimmer belt creative hub` — Notion 404 — archived or not shared with the integration
+• `Mower seat creative hub` — Notion 404 — archived or not shared with the integration
+
+**⚠️ Warnings**
+• no product folder in the repo (products.json / register.json) — dna.md and feedback.md do not apply; the Feedback row in the hub is the memory
+
+✅ Nothing for you to do. Next run: 2026-10-01

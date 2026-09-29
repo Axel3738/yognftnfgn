@@ -14,13 +14,15 @@
 // Undantag: ms-sista-dag visar sina datumlöften BARA på svenska (löftet är
 // mätt för Sverige), och ms-trust-row får sin fallback-lista per språk.
 
-const LOCALES = ['nb', 'da', 'fi', 'en'];
+// Språken kommer ur översättningsobjektet (konfigens ordning), inte ur en fast lista här:
+// 2026-09-27 stod ['nb','da','fi','en'] hårdkodat och Europa-språken hade tyst fallit på svenskan.
+const locales = (ov) => Object.keys(ov ?? {});
 
 /** `oversattningar` = { nb: {nyckel: text}, da: …, fi: …, en: … } där nyckeln är `liquid.<fil>.<n>`. */
 export function grenFor(sv, nyckel, oversattningar, { citat = false } = {}) {
   const esc = (s) => (citat ? String(s).replace(/'/g, "\\'") : String(s));
   const delar = [];
-  for (const l of LOCALES) {
+  for (const l of locales(oversattningar)) {
     const t = oversattningar?.[l]?.[nyckel];
     if (typeof t !== 'string' || !t.trim() || t === sv) continue;
     delar.push(`{% when '${l}' %}${esc(t)}`);
@@ -85,7 +87,7 @@ export function patchaFil(fil, kod, ov) {
     case 'snippets/ms-trust-row.liquid': {
       const sok = "  assign fallback = 'truck:Fri frakt i Sverige|refresh:30 dagars öppet köp|lock:Trygg betalning'\n";
       const rader = [];
-      for (const l of LOCALES) {
+      for (const l of locales(ov)) {
         const a = ov?.[l]?.[N('fri_frakt')], b = ov?.[l]?.[N('oppet_kop')], c = ov?.[l]?.[N('trygg_betalning')];
         if (!a || !b || !c) continue;
         rader.push(`    when '${l}'\n      assign fallback = '${[`truck:${a}`, `refresh:${b}`, `lock:${c}`].join('|').replace(/'/g, "\\'")}'`);
@@ -99,7 +101,7 @@ export function patchaFil(fil, kod, ov) {
     case 'snippets/ms-bundle-picker.liquid': {
       // Liquid-tilldelningar: grenen skrivs som case-block runt tilldelningen.
       const tilldela = (namn, variabel, sok, sv) => {
-        const rader = LOCALES.map((l) => [l, ov?.[l]?.[N(namn)]]).filter(([, t]) => t && t !== sv);
+        const rader = locales(ov).map((l) => [l, ov?.[l]?.[N(namn)]]).filter(([, t]) => t && t !== sv);
         if (rader.length === 0) { hoppade.push(`${namn}: ingen översättning`); return; }
         const block = `${sok}\n  case request.locale.iso_code\n${rader.map(([l, t]) => `    when '${l}'\n      assign ${variabel} = ${variabel} | replace: '${sv}', '${String(t).replace(/'/g, "\\'")}'`).join('\n')}\n  endcase`;
         if (redan(block)) { hoppade.push(`${namn}: redan patchad`); return; }
@@ -114,7 +116,7 @@ export function patchaFil(fil, kod, ov) {
         // properly terminated"). Därför en variabel som tilldelas på raden före elementet.
         const sok = "aria-label=\"{{ heading | default: 'Välj paket' | escape }}\"";
         const ny = 'aria-label="{{ heading | default: valj_paket | escape }}"';
-        const rader = LOCALES.map((l) => [l, ov?.[l]?.[N('valj_paket')]]).filter(([, t]) => t && t !== 'Välj paket');
+        const rader = locales(ov).map((l) => [l, ov?.[l]?.[N('valj_paket')]]).filter(([, t]) => t && t !== 'Välj paket');
         if (redan(ny)) hoppade.push('valj_paket: redan patchad');
         else if (rader.length === 0) hoppade.push('valj_paket: ingen översättning');
         else {
@@ -221,7 +223,7 @@ export function patchaMallJson(fil, kod, ov, liquidTexter = {}) {
     let ersatt = null;
     if (b.typ === 'trust') {
       const rader = [];
-      for (const l of LOCALES) {
+      for (const l of locales(ov)) {
         const a = ov?.[l]?.['liquid.ms-trust-row.fri_frakt'], c = ov?.[l]?.['liquid.ms-trust-row.oppet_kop'], d = ov?.[l]?.['liquid.ms-trust-row.trygg_betalning'];
         if (!a || !c || !d) continue;
         rader.push(`{% when '${l}' %}${[`truck:${a}`, `refresh:${c}`, `lock:${d}`].join('|')}`);

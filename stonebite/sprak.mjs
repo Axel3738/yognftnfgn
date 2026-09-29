@@ -51,16 +51,21 @@ const ORDBOK = {
 
   // --- Min sida
   'Inloggad som': 'Logged in as',
-  'Dina pengar den här månaden': 'Your money this month',
+  // Utbetalningarna (Axel 2026-09-28): produkttest varannan vecka, bonusen en
+  // gång i månaden, commission för sig. Namnen och betaltexterna per
+  // utbetalning bor i bonus/regler.json på båda språken — här står bara
+  // sidans egna ord runt dem.
+  'Dina utbetalningar': 'Your payouts',
+  'Varje krona pekar på ett bevis. Inget betalas utan underlag.':
+    'Every dollar points to proof. Nothing is paid without evidence.',
   'Varje rad går att klicka fram beviset för. Inget betalas utan underlag.':
     'Every line has proof behind it. Nothing is paid without evidence.',
   'Du har inte tjänat något än den här månaden — uppdragen nedan visar hur du gör.':
     'You have not earned anything yet this month — the tasks below show you how.',
   'Intjänat': 'Earned',
-  'Löneperiod': 'Pay period',
-  'Andel av spenden (hela månaden)': 'Share of ad spend (whole month)',
-  'Räknas på hela månaden och delas inte på perioderna.':
-    'Calculated on the whole month, so it is not split between the pay periods.',
+  'slut': 'end',
+  'person': 'person',
+  'personer': 'people',
   'Betalas ut med lönen.': 'Paid out with your salary.',
   'på väg till dig': 'on its way to you',
   'inget än': 'nothing yet',
@@ -200,6 +205,8 @@ const ORDBOK = {
 
   // --- produkttest
   'Trappan från hittad produkt till egen butik.': 'The ladder from found product to its own store.',
+  'Produkter som passerat minst ett steg. Första steget är pengar till den som gjorde produkten klar — betalas den 15:e och sista dagen i månaden.':
+    'Products that passed at least one step. The first step is money to whoever got the product ready — paid on the 15th and on the last day of the month.',
   'Produkter i trappan': 'Products on the ladder',
   'Fick sin chans': 'Got its chance',
   'Går med vinst': 'Profitable',
@@ -227,8 +234,12 @@ const ORDBOK = {
   'Godkänn': 'Approve',
   'Neka': 'Reject',
   'öppna': 'open',
-  'Vem tjänar vad': 'Who earns what',
-  'Din intjäning': 'Your earnings',
+  'Vad som betalas ut, till vem och när — och vad som driver det.':
+    'What gets paid out, to whom and when — and what drives it.',
+  'Utbetalningarna': 'The payouts',
+  'Vem som får vad, och när. Produkttest varannan vecka, bonusen en gång i månaden och commission för sig — de blandas aldrig i en summa.':
+    'Who gets what, and when. Product testing every two weeks, the bonus once a month and commission on its own — they are never mixed into one total.',
+  'Ingen har tjänat något här än.': 'Nobody has earned anything here yet.',
   'Person': 'Person',
   'På vad': 'For what',
   'Vad pengarna går till': 'Where the money goes',

@@ -1,0 +1,111 @@
+{
+ "uppdaterad": "2026-09-29T03:45:08.014Z",
+ "konton": {
+  "1867947880635861": {
+   "namn": "MagiBorsten",
+   "valuta": "SEK",
+   "forstSedd": "2026-09-27"
+  },
+  "1346450049878358": {
+   "namn": "SnarkLös",
+   "valuta": "SEK",
+   "forstSedd": "2026-09-27"
+  },
+  "730973156224390": {
+   "namn": "nya kungen",
+   "valuta": "SEK",
+   "forstSedd": "2026-09-27"
+  },
+  "915422744950975": {
+   "namn": "Magiborsten DK",
+   "valuta": "SEK",
+   "forstSedd": "2026-09-27"
+  },
+  "1107817401910319": {
+   "namn": "Magiborsten UK",
+   "valuta": "SEK",
+   "forstSedd": "2026-09-27"
+  },
+  "1619718346388201": {
+   "namn": "Magiborsten FI",
+   "valuta": "SEK",
+   "forstSedd": "2026-09-27"
+  },
+  "1050941584152547": {
+   "namn": "Magiborsten NO",
+   "valuta": "SEK",
+   "forstSedd": "2026-09-27"
+  }
+ },
+ "oppna": {
+  "annons:120250063374440291:DISAPPROVED": {
+   "typ": "annons",
+   "niva": "rod",
+   "rubrik": "Ad `Beltgrinder_REV_2_1` DISAPPROVED",
+   "konto": "1867947880635861",
+   "forst": "2026-09-27T14:10:56.188Z",
+   "larmat": "2026-09-27T14:10:56.188Z"
+  },
+  "konto:1050941584152547:lasfel": {
+   "typ": "konto",
+   "niva": "gul",
+   "rubrik": "Could not read `Magiborsten NO`",
+   "konto": "1050941584152547",
+   "forst": "2026-09-29T03:45:08.014Z",
+   "larmat": "2026-09-29T03:45:08.014Z"
+  }
+ },
+ "handelser": [
+  {
+   "nyckel": "spend:120251471312620435:2026-09-27:1",
+   "tid": "2026-09-27T14:10:56.188Z",
+   "rubrik": "Ad `CaraShellRoof_US_CS_3_H1` spending badly"
+  },
+  {
+   "nyckel": "spend:120251574965360435:2026-09-27:3",
+   "tid": "2026-09-27T14:10:56.188Z",
+   "rubrik": "Ad `CaraShellRoof_US_CO_103_H1` spending badly"
+  },
+  {
+   "nyckel": "overspend:kampanj:120251451415500435:2026-09-27",
+   "tid": "2026-09-27T14:10:56.188Z",
+   "rubrik": "Campaign `1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia` over budget"
+  },
+  {
+   "nyckel": "spend:120251471312620435:2026-09-28:1",
+   "tid": "2026-09-27T22:45:18.415Z",
+   "rubrik": "Ad `CaraShellRoof_US_CS_3_H1` spending badly"
+  },
+  {
+   "nyckel": "spend:120251574965360435:2026-09-28:3",
+   "tid": "2026-09-27T22:45:18.415Z",
+   "rubrik": "Ad `CaraShellRoof_US_CO_103_H1` spending badly"
+  },
+  {
+   "nyckel": "overspend:kampanj:120251451415500435:2026-09-28",
+   "tid": "2026-09-27T22:45:18.415Z",
+   "rubrik": "Campaign `1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia` over budget"
+  },
+  {
+   "nyckel": "spend:120251471312620435:2026-09-28:0",
+   "tid": "2026-09-28T04:44:43.195Z",
+   "rubrik": "Ad `CaraShellRoof_US_CS_3_H1` spending badly"
+  },
+  {
+   "nyckel": "spend:120251609594670435:2026-09-28:0",
+   "tid": "2026-09-28T18:45:24.732Z",
+   "rubrik": "Ad `CaraShellRoof_US_OB_105_1` spending badly"
+  },
+  {
+   "nyckel": "spend:120251471312620435:2026-09-29:0",
+   "tid": "2026-09-28T22:44:32.051Z",
+   "rubrik": "Ad `CaraShellRoof_US_CS_3_H1` spending badly"
+  },
+  {
+   "nyckel": "spend:120251609594670435:2026-09-29:0",
+   "tid": "2026-09-28T22:44:32.051Z",
+   "rubrik": "Ad `CaraShellRoof_US_OB_105_1` spending badly"
+  }
+ ],
+ "hjartslag": "2026-09-28"
+}

@@ -1,0 +1,109 @@
+{
+  "id": "k35-fars-dag-i-morgon",
+  "namn": "MAIL_20261018_Farsdag_GT_11_tier2_promo_i-morgon-sista-dagen_v1",
+  "memo": "Äkta brådska: måndag 19 oktober är sista beställningsdagen för fars dag. Söndagsmejlet fångar den som sköt upp det. Hypotes: samma sex presenter som setts tidigare, nu med deadline i ämnesraden.",
+  "taggar": {
+    "typ": "S",
+    "kalla": "egen-data",
+    "kalla_ref": "klaviyo/brands/baverbutiken.json (kalender)",
+    "lardom": null,
+    "avatar": "den som fortfarande inte beställt",
+    "begar": "hinna",
+    "awareness": "promo",
+    "urgency": "konsekvens",
+    "confidence": "medium",
+    "prefix": "Farsdag",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    {
+      "text": "I morgon är sista dagen till fars dag",
+      "begar": "veta att i morgon, inte 'snart', är sista dagen"
+    },
+    {
+      "text": "Efter i morgon hinner paketet inte fram",
+      "begar": "förstå konsekvensen av att vänta för länge"
+    },
+    {
+      "text": "Sex förslag om presenten inte är klar",
+      "begar": "hitta en present snabbt utan att leta själv"
+    }
+  ],
+  "forhandstext": "Söndag 18 oktober. Beställer du efter i morgon kan vi inte lova det till fars dag.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "I morgon är sista dagen till fars dag",
+      "text": "Hej {{fornamn}},\n\nOm presenten till fars dag inte är klar än, är det bråttom nu. Sex förslag väntar nedan.",
+      "knapp": {
+        "text": "Se presenterna",
+        "lank": "kollektion:alla-produkter"
+      }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "I morgon, måndag 19 oktober, är sista dagen att beställa om paketet ska vara framme till fars dag den 8 november. Efter det kan vi inte lova det."
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": null,
+      "handles": [
+        "balteslipmaskin-mini-3-i-1-knivslip-polerare",
+        "fiskespohallare-4-pack-kraftig-forvaring",
+        "overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+      ]
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": null,
+      "handles": [
+        "motorlas-i-rostfritt-stal-laser-utombordarens-fastskruvar",
+        "taljset-30-delar-6-knivar-och-6-jarn",
+        "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+      ]
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    {
+      "rad": "I morgon är sista dagen till fars dag",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Efter i morgon hinner paketet inte fram",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Sex förslag om presenten inte är klar",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Söndag 18 oktober. Beställer du efter i morgon kan vi inte lova det till fars dag.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Se presenterna",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    }
+  ],
+  "planerad": "2026-10-18T18:00:00+02:00",
+  "segment": [
+    "Warmup tier 2"
+  ],
+  "exkludera": [],
+  "status_plan": "klar",
+  "kraver_axel": null
+}

@@ -1,0 +1,145 @@
+{
+  "id": "k32-fars-dag-prylar",
+  "emailTitle": "Han ser fåglarna innan han reser sig",
+  "emailDescription": "Kameran filmar sittrampen, appen visar bilden i mobilen.",
+  "amnesrader": [
+    "Han ser fåglarna innan han reser sig",
+    "Beställ senast 19 oktober till fars dag",
+    "Tre andra presenter för garaget"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Han ser fåglarna innan han reser sig",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hej {{ contact.first_name | default: 'där' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Kameran i fågelmatarens hus filmar sittrampen. En app visar bilden i mobilen, så pappan ser vem som landat innan han hunnit resa sig från soffan.",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "8e7d71b3-e2d8-4ce1-b8eb-7edbf327df24",
+          "button": "Se fågelmataren"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Se presenten",
+      "url": "https://baverbutiken.se/products/fagelmatare-med-kamera-och-solcellspanel-se-faglarna-i-appen",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "Instruktionerna för att koppla ihop kameran och appen ligger i förpackningen. Solcellspanelen sitter på taket av fågelmatarens hus och laddar kameran i dagsljus, så pappan slipper dra en sladd till väggen.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Kameran har 5 MP och filmar sittrampen, med en vattenkopp bredvid som ger fåglarna en anledning att stanna.",
+      "alignment": "left"
+    },
+    {
+      "type": "h2",
+      "text": "För garaget",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "0118cd74-d1c8-41f1-800f-5037f05c1901",
+          "button": "Se produkten"
+        },
+        {
+          "id": "91de8779-7fc1-4b0b-9387-70e24e961d6e",
+          "button": "Se produkten"
+        },
+        {
+          "id": "f147f088-4a34-411a-bb9c-228b5b20b418",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "regular",
+      "text": "Beställ senast 19 oktober om paketet ska vara framme till fars dag den 8 november.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

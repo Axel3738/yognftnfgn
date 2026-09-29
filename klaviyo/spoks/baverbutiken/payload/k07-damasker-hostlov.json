@@ -24,7 +24,7 @@
       "products": [
         {
           "id": "25febc20-e723-4f07-9e64-e0fd12754294",
-          "button": "Se produkten"
+          "button": "Se damaskerna"
         }
       ],
       "dynamicProductsCount": null,
@@ -62,29 +62,6 @@
     {
       "type": "list",
       "text": "Slut kardborren runt benet"
-    },
-    {
-      "type": "products",
-      "selectionMode": "manual",
-      "products": [
-        {
-          "id": "25febc20-e723-4f07-9e64-e0fd12754294",
-          "button": "Se damaskerna"
-        }
-      ],
-      "dynamicProductsCount": null,
-      "dynamicCriteria": null,
-      "productVisibilitySettings": {
-        "isImageVisible": true,
-        "isTitleVisible": true,
-        "isPriceVisible": true,
-        "isButtonVisible": true,
-        "isDescriptionVisible": false,
-        "isOriginalPriceVisible": true
-      },
-      "buttonText": null,
-      "alignment": "center",
-      "productsPerRow": 1
     },
     {
       "type": "regular",

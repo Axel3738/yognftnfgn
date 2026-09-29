@@ -1,0 +1,145 @@
+{
+  "id": "k30-fars-dag-ved",
+  "emailTitle": "En present för honom med kamin och vedbod",
+  "emailDescription": "Vedträet står i ringen. Klubban gör resten.",
+  "amnesrader": [
+    "En present för honom med kamin och vedbod",
+    "Tändveden klar, utan yxa i handen",
+    "Sista dag att beställa är 19 oktober"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "En present för honom med kamin och vedbod",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hej {{ contact.first_name | default: 'där' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Om han redan har kamin och vedbod är tändvedsklyven nästa. Vedträet ställs i ringen, du slår med klubban, kilen gör jobbet.",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "3916cdca-0432-4350-8636-5d6c5392b5c3",
+          "button": "Se tändvedsklyven"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "link",
+      "text": "Se presenten",
+      "url": "https://baverbutiken.se/products/tandvedsklyv-i-gjutjarn-klyv-utan-yxa-i-handen",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "Ringen håller vedträet upprätt genom hela slaget, och kilen tar det sista steget. Klyven i gjutjärn står stadigt på egen fot, redo på en stubbe eller i vedboden.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "En vanlig tändvedsbit får plats rakt av, och foten står kvar utan att skruvas fast.",
+      "alignment": "left"
+    },
+    {
+      "type": "h2",
+      "text": "Mer för vedboden",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "2edf175c-bc12-4458-a9b1-459b11e7ba73",
+          "button": "Se produkten"
+        },
+        {
+          "id": "d2dfbcb0-875b-4290-966b-9cc89913f777",
+          "button": "Se produkten"
+        },
+        {
+          "id": "1d0ae6fa-bfa3-431f-8cae-2ee475f57762",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "regular",
+      "text": "Beställ senast 19 oktober om paketet ska vara framme till fars dag den 8 november.",
+      "alignment": "left"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

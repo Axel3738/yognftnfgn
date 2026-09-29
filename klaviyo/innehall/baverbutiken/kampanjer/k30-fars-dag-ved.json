@@ -1,0 +1,124 @@
+{
+  "id": "k30-fars-dag-ved",
+  "namn": "MAIL_20261010_Tandvedsklyv_GT_6_kopare-tradgard_product_vinterns-ved_v1",
+  "memo": "Vedsäsongen börjar. Till dem som redan köpt till tomten, som önskelista eller present. Hypotes: en produktfamilj (klyva, klyva mer, skydda klyven) säljer som helhet.",
+  "taggar": {
+    "typ": "N",
+    "kalla": "gissning",
+    "kalla_ref": null,
+    "lardom": null,
+    "avatar": "pappan med kamin och vedbod, och den som ger honom presenten",
+    "begar": "att tändveden är klar utan yxa i handen",
+    "awareness": "product",
+    "urgency": "konsekvens (19 oktober)",
+    "confidence": "low",
+    "prefix": "Tandvedsklyv",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    {
+      "text": "En present för honom med kamin och vedbod",
+      "begar": "hitta en present till pappan med kamin, utan att gissa"
+    },
+    {
+      "text": "Tändveden klar, utan yxa i handen",
+      "begar": "se exakt hur tändveden blir klar utan att svinga en yxa"
+    },
+    {
+      "text": "Sista dag att beställa är 19 oktober",
+      "begar": "hinna beställa innan tidsfristen går ut"
+    }
+  ],
+  "forhandstext": "Vedträet står i ringen. Klubban gör resten.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "En present för honom med kamin och vedbod",
+      "text": "Hej {{fornamn}},\n\nOm han redan har kamin och vedbod är tändvedsklyven nästa. Vedträet ställs i ringen, du slår med klubban, kilen gör jobbet.",
+      "bild": "produkt:tandvedsklyv-i-gjutjarn-klyv-utan-yxa-i-handen",
+      "knapp": {
+        "text": "Se presenten",
+        "lank": "produkt:tandvedsklyv-i-gjutjarn-klyv-utan-yxa-i-handen"
+      }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Ringen håller vedträet upprätt genom hela slaget, och kilen tar det sista steget. Klyven i gjutjärn står stadigt på egen fot, redo på en stubbe eller i vedboden."
+    },
+    {
+      "typ": "produkt",
+      "handle": "tandvedsklyv-i-gjutjarn-klyv-utan-yxa-i-handen",
+      "text": "En vanlig tändvedsbit får plats rakt av, och foten står kvar utan att skruvas fast.",
+      "knapp": "Se tändvedsklyven"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Mer för vedboden",
+      "handles": [
+        "vedklyvborr-till-borrmaskin-kon-o32-mm-3-skaft",
+        "manuell-vedklyv-vaggmonterad-gjutjarn",
+        "vedklyvshuv-i-svart-210d-haller-fukt-och-smuts-borta"
+      ]
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Beställ senast 19 oktober om paketet ska vara framme till fars dag den 8 november."
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    {
+      "rad": "En present för honom med kamin och vedbod",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Tändveden klar, utan yxa i handen",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Sista dag att beställa är 19 oktober",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Vedträet står i ringen. Klubban gör resten.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Se presenten",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Se tändvedsklyven",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Mer för vedboden",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    }
+  ],
+  "planerad": "2026-10-10T18:00:00+02:00",
+  "segment": [
+    "Köpare trädgård & tomt"
+  ],
+  "exkludera": [],
+  "status_plan": "klar",
+  "kraver_axel": null
+}

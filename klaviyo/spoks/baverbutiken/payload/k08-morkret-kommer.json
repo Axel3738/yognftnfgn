@@ -24,7 +24,7 @@
       "products": [
         {
           "id": "66ab4154-18a8-4fe9-aa81-2cd3846389da",
-          "button": "Se produkten"
+          "button": "Se lampan"
         }
       ],
       "dynamicProductsCount": null,
@@ -56,29 +56,6 @@
       "type": "regular",
       "text": "Varje huvud vrids för sig, så du riktar ljuset mot uppfarten, trappan eller nyckelhålet, inte bara rakt fram.",
       "alignment": "left"
-    },
-    {
-      "type": "products",
-      "selectionMode": "manual",
-      "products": [
-        {
-          "id": "66ab4154-18a8-4fe9-aa81-2cd3846389da",
-          "button": "Se lampan"
-        }
-      ],
-      "dynamicProductsCount": null,
-      "dynamicCriteria": null,
-      "productVisibilitySettings": {
-        "isImageVisible": true,
-        "isTitleVisible": true,
-        "isPriceVisible": true,
-        "isButtonVisible": true,
-        "isDescriptionVisible": false,
-        "isOriginalPriceVisible": true
-      },
-      "buttonText": null,
-      "alignment": "center",
-      "productsPerRow": 1
     },
     {
       "type": "regular",

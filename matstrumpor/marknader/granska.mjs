@@ -49,7 +49,8 @@ export function granska(sv, mal, locale) {
   const malN = Object.keys(mal ?? {}).filter((k) => !k.startsWith('_'));
   for (const k of svN) if (!(k in (mal ?? {}))) fel.push({ nyckel: k, typ: 'nycklar', text: 'saknas i översättningen' });
   for (const k of malN) if (!(k in sv)) fel.push({ nyckel: k, typ: 'nycklar', text: 'finns inte i svenskan' });
-  const svenska = SVENSKA_ORD[locale] ?? SVENSKA_ORD.en;
+  // Shopify skriver portugisiskan som `pt-PT` — ordlistan slås upp på språkdelen.
+  const svenska = SVENSKA_ORD[locale] ?? SVENSKA_ORD[String(locale).split('-')[0]] ?? SVENSKA_ORD.en;
 
   for (const k of svN) {
     const s = sv[k];

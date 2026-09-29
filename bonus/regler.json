@@ -3,6 +3,42 @@
   "valuta_kommentar": "Allt till människor räknas i USD (som redigerarnas topplista). Underlag i SEK växlas med ECB-kursen i commission/valutakurs.json. Valutor summeras aldrig ihop.",
   "valuta": "USD",
   "period": "manad",
+  "utbetalningar": {
+    "kommentar": "Axels beslut 2026-09-28: tre utbetalningar med tre olika takter, och sajten visar dem var för sig — aldrig i en summa. Produkttest betalas varannan vecka: 1–15 den 15:e, 16–sista dagen den sista dagen i månaden (raden hamnar i den halva dess bevisdatum ligger i; den 15:e hör till första halvan). Bonusarna (kundtjänst + Head of support, även teamandelen) betalas en gång i månaden och delas aldrig på halvor. Commission (redigerarnas andel av spenden) räknas separat av commission-körningen och visas för sig. Varje program pekar på sin utbetalning med fältet `utbetalning`; saknas det räknas programmet som bonus. Ersatte halvmånaderna från 2026-09-24, som delade ALLA rader på 1–15/16–slut.",
+    "produkttest": {
+      "namn": "Produkttest",
+      "takt": "halvmanad",
+      "betalas": {
+        "forsta": "Betalas den 15:e.",
+        "andra": "Betalas sista dagen i månaden."
+      },
+      "en": {
+        "namn": "Product testing",
+        "betalas": {
+          "forsta": "Paid on the 15th.",
+          "andra": "Paid on the last day of the month."
+        }
+      }
+    },
+    "bonus": {
+      "namn": "Bonus",
+      "takt": "manad",
+      "betalas": "Betalas en gång i månaden.",
+      "en": {
+        "namn": "Bonus",
+        "betalas": "Paid once a month."
+      }
+    },
+    "commission": {
+      "namn": "Commission",
+      "takt": "manad",
+      "betalas": "Räknas separat av commission-körningen — samma siffra som på topplistan.",
+      "en": {
+        "namn": "Commission",
+        "betalas": "Calculated separately by the commission run — the same figure as on the leaderboard."
+      }
+    }
+  },
   "program": {
     "va": {
       "namn": "Kundtjänst",
@@ -10,6 +46,7 @@
         "va",
         "support_chef"
       ],
+      "utbetalning": "bonus",
       "beskrivning": "Du tjänar på tre saker: att kunder skriver bra om dig, att vi vinner tvister, och att inkorgen är tom.",
       "uppdrag": [
         {
@@ -140,6 +177,7 @@
       "roller": [
         "support_chef"
       ],
+      "utbetalning": "bonus",
       "beskrivning": "Du tjänar på ditt eget arbete OCH på att teamet levererar. Coachar du dem tjänar du mer.",
       "uppdrag": [
         {
@@ -207,8 +245,9 @@
       "roller": [
         "produkttest"
       ],
-      "kommentar": "Axels beslut 2026-09-21: trappan 2 / 5 / 25 / 100 är ersatt med 15 dollar per FÄRDIG produkt. Andelen av spenden (0,4 % på de egna annonserna, bara Sverige) är redigerarprogrammet — Josh och Annabelle får den redan där, så den skrivs inte en gång till här. Trappans steg finns kvar i kallor.mjs för sidan Produkttest (var produkterna står), men bara 'produkt_fardig' betalar.",
-      "beskrivning": "Du tjänar 15 dollar för varje produkt du gör klar för annonser. Redigerar du dessutom annonserna själv får du 0,4 % av spenden på dem (bara Sverige) — det står under Videoredigerare.",
+      "kommentar": "Axels beslut 2026-09-21: trappan 2 / 5 / 25 / 100 är ersatt med 15 dollar per FÄRDIG produkt. Andelen av spenden (0,4 % på de egna annonserna, bara Sverige) är redigerarprogrammet — Josh och Annabelle får den redan där, så den skrivs inte en gång till här. Trappans steg finns kvar i kallor.mjs för sidan Produkttest (var produkterna står), men bara 'produkt_fardig' betalar. Utbetalningen är halvmånad (Axel 2026-09-28): 1–15 betalas den 15:e, 16–sista betalas sista dagen i månaden.",
+      "utbetalning": "produkttest",
+      "beskrivning": "Du tjänar 15 dollar för varje produkt du gör klar för annonser, utbetalt varannan vecka. Redigerar du dessutom annonserna själv får du 0,4 % av spenden på dem (bara Sverige) — det står under Videoredigerare.",
       "uppdrag": [
         {
           "id": "produkt_fardig",
@@ -216,7 +255,7 @@
           "belopp": 15,
           "enhet": "per produkt",
           "hur": "Research klar, sida och underlag godkänt — produkten är klar för annonser.",
-          "mats": "Raden i Product test center når status 'Ads review' eller längre, med dig som Ansvarig. Betalas en gång per produkt, den månad raden nådde dit.",
+          "mats": "Raden i Product test center når status 'Ads review' eller längre, med dig som Ansvarig. Betalas en gång per produkt: nådde raden dit den 1–15 betalas den den 15:e, nådde den dit den 16–sista betalas den sista dagen i månaden.",
           "kalla": "produkttest",
           "auto": true,
           "krav": {
@@ -227,13 +266,13 @@
             "namn": "Finished product",
             "enhet": "per product",
             "hur": "Research done, page and material approved — the product is ready for ads.",
-            "mats": "The row in Product test center reaches status 'Ads review' or further, with you as Owner. Paid once per product, in the month the row got there."
+            "mats": "The row in Product test center reaches status 'Ads review' or further, with you as Owner. Paid once per product: if the row got there on the 1st–15th it is paid on the 15th, if on the 16th–last day it is paid on the last day of the month."
           }
         }
       ],
       "en": {
         "namn": "Product testing",
-        "beskrivning": "You earn 15 dollars for every product you get ready for ads. If you also edit the ads yourself you get 0.4 % of the spend on them (Sweden only) — that is listed under Video editors."
+        "beskrivning": "You earn 15 dollars for every product you get ready for ads, paid every two weeks. If you also edit the ads yourself you get 0.4 % of the spend on them (Sweden only) — that is listed under Video editors."
       }
     },
     "redigerare": {
@@ -241,6 +280,7 @@
       "roller": [
         "redigerare"
       ],
+      "utbetalning": "commission",
       "beskrivning": "Du får en andel av all annonsspend dina godkända annonser drar. Ju bättre annons, desto mer pengar bakom den — och desto mer till dig.",
       "uppdrag": [
         {

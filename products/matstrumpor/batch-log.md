@@ -251,6 +251,33 @@ rondens rekommendation med nya tal.
 
 ---
 
+## 2026-09-28/29 — utlandet: 36 annonser PAUSED i tolv kampanjer (HeyGen precision)
+
+**Vad:** Axels egen UGC — Nathalie (`09-17 Nathalie captions musik`, vinnaren), Sofie H1 och
+Sofie H2 (jul) — på elva språk: nb, da, fi, en, de, fr, nl, es, it, pl, pt. Katarina aldrig
+(Axel 2026-09-27). Tre annonser per kampanj: `MATSTRUMP_<KOD>_sushi_gift_ugc_001_v1`
+(Nathalie), `…_gift_ugc_002_v1` (Sofie H1), `…_jul_ugc_003_v1` (Sofie H2); WW bär de
+engelska. Id:n i `matstrumpor/marknader/annonser/lage.json`.
+
+**Hur:** proofread → text skriven av en sonnet-skribent per språk och video, dömd av en
+skeptisk infödd granskare (högst tre rundor) och maskinkontrollen → rendering i HeyGens
+dyraste läge `precision` → röstkollen + Whisper-lyssning → svensk inbränd text suddad bara i
+sin ruta (`no-captions.py --rutor`, Axels "det suddiga tar upp för mycket av skärmen") →
+Meta PAUSED. Hela flödet: `matstrumpor/marknader/heygen/README.md`.
+
+**Två fel på vägen, båda rättade samma dygn:**
+1. De första 24 renderingarna gick i HeyGens standardläge `speed` — koden valde inget läge.
+   Alla gjordes om i `precision`; NO:s och NL:s tre annonser fick videon utbytt i samma annons.
+2. Precision delar talet i andra block än speed: 26 av 33 texter fick flyttas till de nya
+   blocken — ord för ord identiska utom tre skiljetecken vid blockgränser (PL, PT, IT), alla
+   godkända av en infödd granskare.
+
+**QA:** 33 av 33 gröna i röstkollen; Whisper hör rätt språk i alla 33 (0,93–1,0), 77–100 %
+av orden hörs, rösten inom 21 % av källans tonhöjd. Kostnad ≈ 49 USD (2 930 API-enheter).
+
+**Utfall:** inget ännu — ⛔ inget är aktiverat förrän Axel granskat annonserna. Etikett dag 7
+efter att en kampanj slagits på.
+
 ## Format för kommande rader
 
 ```

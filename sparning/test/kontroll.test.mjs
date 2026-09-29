@@ -30,6 +30,13 @@ import { kontrollera, kontrolleraFullstandighet, kontrolleraLander, kontrolleraS
 
 const FIXTUR = JSON.parse(readFileSync(new URL('./fixturer/riktiga-paket.json', import.meta.url), 'utf8'));
 const NU = Date.parse('2026-09-19T21:00:00Z');
+
+// Ett paket för sig, med egen klocka: riktiga skanningar ur CaraShells
+// YT2626200704724679 (order till Australien, hämtade 2026-09-27), där två
+// skanningar står på samma minut. Den delade fixturens klocka står på den 19:e
+// och får inte flyttas — varje annat test i filen mäter mot den.
+const TVILLING_FIXTUR = JSON.parse(readFileSync(new URL('./fixturer/tidstampel-tvilling.json', import.meta.url), 'utf8'));
+const TVILLING_NU = Date.parse('2026-09-27T14:00:00Z');
 const LAND = 'Sverige';
 
 // Svenska texter vars innebörd ÄR ankomst till mottagarlandet, oavsett vad
@@ -57,14 +64,14 @@ const somSvar = (p) => ({
   },
 });
 
-function byggAllt(paketFixtur = FIXTUR) {
+function byggAllt(paketFixtur = FIXTUR, nu = NU) {
   const paket = paketFixtur.map((p) => ({
     nummer: p.n,
     bolag: p.c === 190008 ? 'YunExpress' : '4PX',
     statusKod: null,
-    handelser: handelserUr(somSvar(p), { oversattFras, stadaPlats, landFor, nu: NU }),
+    handelser: handelserUr(somSvar(p), { oversattFras, stadaPlats, landFor, nu }),
   }));
-  const { data, statistik } = byggData(paket, { nu: NU, mottagarland: LAND });
+  const { data, statistik } = byggData(paket, { nu, mottagarland: LAND });
   return { paket, data, statistik };
 }
 
@@ -253,6 +260,32 @@ test('kontrollen fäller "Ankommit till Sverige" utan svensk skanning', () => {
   const r = kontrollera([offer], trasig, { mottagarland: LAND });
   assert.equal(r.ok, false, 'kontrollen missade en påhittad ankomst');
   assert.ok(r.problem.some((p) => p.krav === 4), 'krav 4 larmade inte');
+});
+
+test('krav 4 fäller inte en riktig ankomst vars minut bär två skanningar', () => {
+  // Motprovet till testet ovan: här ÄR ankomsten sann, och kontrollen får inte
+  // fälla den. Paketet är CaraShells YT2626200704724679 (order till
+  // Australien): "Delivered to local carrier · Sydney, AU" bär ankomsten, men
+  // "Received by Australia Post for transportation to processing facility"
+  // står på samma minut. Uppslaget i rådatan matchade förr bara på tid och tog
+  // tvillingen, så krav 4 larmade och hela sidan vägrade publiceras
+  // (2026-09-27, 18 timmar utan uppdaterad spårningssida).
+  // Egen fixtur med egen klocka: skanningarna är från 27 september, medan den
+  // delade fixturen står på den 19:e. Att flytta den delades klocka hade
+  // ändrat varje annat test.
+  const { paket, data } = byggAllt(TVILLING_FIXTUR, TVILLING_NU);
+  const offer = paket[0];
+  assert.equal(offer.nummer, 'YT2626200704724679', 'fixturen saknar paketet med tidstämpel-tvilling');
+  const ankomst = offer.handelser.find((x) => /local carrier/i.test(x.ra ?? ''));
+  assert.ok(ankomst, 'fixturen bär inte längre ankomstskanningen');
+  const tvillingar = offer.handelser.filter((h) => h.tid.slice(0, 16) === ankomst.tid.slice(0, 16));
+  assert.ok(tvillingar.length >= 2, 'fixturen bär inte längre två skanningar på samma minut');
+  const packat = packaUppEtt(data, offer.nummer);
+  const steg = packat.sammanfattning.steg.find((s) => s.nyckel === 'i_landet');
+  assert.ok(steg?.nadd, 'paketet nådde inte i_landet — fixturen ändrad?');
+  const r = kontrollera([offer], data, { mottagarland: LAND });
+  assert.ok(!r.problem.some((p) => p.krav === 4 && p.nummer === offer.nummer),
+    'krav 4 fällde en riktig ankomstskanning: ' + JSON.stringify(r.problem.filter((p) => p.krav === 4)));
 });
 
 test('en avvikelse kan aldrig bli ett skede i sammanfattningen', () => {

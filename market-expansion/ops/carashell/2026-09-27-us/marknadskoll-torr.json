@@ -1,0 +1,4242 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "marknad": "US",
+  "datum": "2026-09-27",
+  "act": "1107817401910319",
+  "prefix": "CARASHELL_US_",
+  "country": "US",
+  "placeringar": {
+    "publisher_platforms": [
+      "facebook",
+      "instagram"
+    ],
+    "facebook_positions": [
+      "feed"
+    ],
+    "instagram_positions": [
+      "stream"
+    ]
+  },
+  "torr": true,
+  "kampanjer": [
+    {
+      "id": "120251451415500435",
+      "name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+      "daily_budget": 800000,
+      "adsets": [
+        {
+          "id": "120251517605150435",
+          "name": "CARASHELL_US_TR",
+          "status": "ACTIVE",
+          "effective_status": "ACTIVE",
+          "targeting": {
+            "age_max": 65,
+            "age_min": 25,
+            "geo_locations": {
+              "countries": [
+                "US"
+              ],
+              "location_types": [
+                "frequently_in",
+                "home",
+                "recent"
+              ]
+            },
+            "targeting_automation": {
+              "advantage_audience": 1
+            },
+            "publisher_platforms": [
+              "facebook",
+              "instagram"
+            ],
+            "facebook_positions": [
+              "feed"
+            ],
+            "instagram_positions": [
+              "stream"
+            ]
+          },
+          "updated_time": "2026-09-27T11:32:33+0000"
+        },
+        {
+          "id": "120251517179380435",
+          "name": "CARASHELL_US_OB",
+          "status": "ACTIVE",
+          "effective_status": "ACTIVE",
+          "targeting": {
+            "age_max": 65,
+            "age_min": 25,
+            "geo_locations": {
+              "countries": [
+                "US"
+              ],
+              "location_types": [
+                "frequently_in",
+                "home",
+                "recent"
+              ]
+            },
+            "targeting_automation": {
+              "advantage_audience": 1
+            },
+            "publisher_platforms": [
+              "facebook",
+              "instagram"
+            ],
+            "facebook_positions": [
+              "feed"
+            ],
+            "instagram_positions": [
+              "stream"
+            ]
+          },
+          "updated_time": "2026-09-27T11:32:34+0000"
+        },
+        {
+          "id": "120251489956580435",
+          "name": "CARASHELL_US_UG",
+          "status": "ACTIVE",
+          "effective_status": "ACTIVE",
+          "targeting": {
+            "age_max": 65,
+            "age_min": 25,
+            "geo_locations": {
+              "countries": [
+                "US"
+              ],
+              "location_types": [
+                "frequently_in",
+                "home",
+                "recent"
+              ]
+            },
+            "targeting_automation": {
+              "advantage_audience": 1
+            },
+            "publisher_platforms": [
+              "facebook",
+              "instagram"
+            ],
+            "facebook_positions": [
+              "feed"
+            ],
+            "instagram_positions": [
+              "stream"
+            ]
+          },
+          "updated_time": "2026-09-27T11:32:37+0000"
+        },
+        {
+          "id": "120251489804770435",
+          "name": "CARASHELL_US_RI",
+          "status": "ACTIVE",
+          "effective_status": "ACTIVE",
+          "targeting": {
+            "age_max": 65,
+            "age_min": 25,
+            "geo_locations": {
+              "countries": [
+                "US"
+              ],
+              "location_types": [
+                "frequently_in",
+                "home",
+                "recent"
+              ]
+            },
+            "targeting_automation": {
+              "advantage_audience": 1
+            },
+            "publisher_platforms": [
+              "facebook",
+              "instagram"
+            ],
+            "facebook_positions": [
+              "feed"
+            ],
+            "instagram_positions": [
+              "stream"
+            ]
+          },
+          "updated_time": "2026-09-27T11:32:36+0000"
+        },
+        {
+          "id": "120251488345710435",
+          "name": "CARASHELL_US_BOF",
+          "status": "ACTIVE",
+          "effective_status": "ACTIVE",
+          "targeting": {
+            "age_max": 65,
+            "age_min": 25,
+            "geo_locations": {
+              "countries": [
+                "US"
+              ],
+              "location_types": [
+                "frequently_in",
+                "home",
+                "recent"
+              ]
+            },
+            "targeting_automation": {
+              "advantage_audience": 1
+            },
+            "publisher_platforms": [
+              "facebook",
+              "instagram"
+            ],
+            "facebook_positions": [
+              "feed"
+            ],
+            "instagram_positions": [
+              "stream"
+            ]
+          },
+          "updated_time": "2026-09-27T11:32:38+0000"
+        },
+        {
+          "id": "120251488318130435",
+          "name": "CARASHELL_US_CO",
+          "status": "ACTIVE",
+          "effective_status": "ACTIVE",
+          "targeting": {
+            "age_max": 65,
+            "age_min": 25,
+            "geo_locations": {
+              "countries": [
+                "US"
+              ],
+              "location_types": [
+                "frequently_in",
+                "home",
+                "recent"
+              ]
+            },
+            "targeting_automation": {
+              "advantage_audience": 1
+            },
+            "publisher_platforms": [
+              "facebook",
+              "instagram"
+            ],
+            "facebook_positions": [
+              "feed"
+            ],
+            "instagram_positions": [
+              "stream"
+            ]
+          },
+          "updated_time": "2026-09-27T11:32:43+0000"
+        },
+        {
+          "id": "120251488214830435",
+          "name": "CARASHELL_US_LI",
+          "status": "ACTIVE",
+          "effective_status": "ACTIVE",
+          "targeting": {
+            "age_max": 65,
+            "age_min": 25,
+            "geo_locations": {
+              "countries": [
+                "US"
+              ],
+              "location_types": [
+                "frequently_in",
+                "home",
+                "recent"
+              ]
+            },
+            "targeting_automation": {
+              "advantage_audience": 1
+            },
+            "publisher_platforms": [
+              "facebook",
+              "instagram"
+            ],
+            "facebook_positions": [
+              "feed"
+            ],
+            "instagram_positions": [
+              "stream"
+            ]
+          },
+          "updated_time": "2026-09-27T11:32:42+0000"
+        },
+        {
+          "id": "120251451415290435",
+          "name": "CARASHELL_US_GT",
+          "status": "ACTIVE",
+          "effective_status": "ACTIVE",
+          "targeting": {
+            "age_max": 65,
+            "age_min": 25,
+            "geo_locations": {
+              "countries": [
+                "US"
+              ],
+              "location_types": [
+                "frequently_in",
+                "home",
+                "recent"
+              ]
+            },
+            "targeting_automation": {
+              "advantage_audience": 1
+            },
+            "publisher_platforms": [
+              "facebook",
+              "instagram"
+            ],
+            "facebook_positions": [
+              "feed"
+            ],
+            "instagram_positions": [
+              "stream"
+            ]
+          },
+          "updated_time": "2026-09-27T11:32:44+0000"
+        },
+        {
+          "id": "120251451415210435",
+          "name": "CARASHELL_US_SP",
+          "status": "ACTIVE",
+          "effective_status": "ACTIVE",
+          "targeting": {
+            "age_max": 65,
+            "age_min": 25,
+            "geo_locations": {
+              "countries": [
+                "US"
+              ],
+              "location_types": [
+                "frequently_in",
+                "home",
+                "recent"
+              ]
+            },
+            "targeting_automation": {
+              "advantage_audience": 1
+            },
+            "publisher_platforms": [
+              "facebook",
+              "instagram"
+            ],
+            "facebook_positions": [
+              "feed"
+            ],
+            "instagram_positions": [
+              "stream"
+            ]
+          },
+          "updated_time": "2026-09-27T11:32:47+0000"
+        },
+        {
+          "id": "120251451415190435",
+          "name": "CARASHELL_US_PD",
+          "status": "ACTIVE",
+          "effective_status": "ACTIVE",
+          "targeting": {
+            "age_max": 65,
+            "age_min": 25,
+            "geo_locations": {
+              "countries": [
+                "US"
+              ],
+              "location_types": [
+                "frequently_in",
+                "home",
+                "recent"
+              ]
+            },
+            "targeting_automation": {
+              "advantage_audience": 1
+            },
+            "publisher_platforms": [
+              "facebook",
+              "instagram"
+            ],
+            "facebook_positions": [
+              "feed"
+            ],
+            "instagram_positions": [
+              "stream"
+            ]
+          },
+          "updated_time": "2026-09-27T11:32:47+0000"
+        },
+        {
+          "id": "120251451415170435",
+          "name": "CARASHELL_US_CS",
+          "status": "ACTIVE",
+          "effective_status": "ACTIVE",
+          "targeting": {
+            "age_max": 65,
+            "age_min": 25,
+            "geo_locations": {
+              "countries": [
+                "US"
+              ],
+              "location_types": [
+                "frequently_in",
+                "home",
+                "recent"
+              ]
+            },
+            "targeting_automation": {
+              "advantage_audience": 1
+            },
+            "publisher_platforms": [
+              "facebook",
+              "instagram"
+            ],
+            "facebook_positions": [
+              "feed"
+            ],
+            "instagram_positions": [
+              "stream"
+            ]
+          },
+          "updated_time": "2026-09-27T11:32:48+0000"
+        },
+        {
+          "id": "120251451415060435",
+          "name": "CARASHELL_US_G",
+          "status": "ACTIVE",
+          "effective_status": "ACTIVE",
+          "targeting": {
+            "age_max": 65,
+            "age_min": 25,
+            "geo_locations": {
+              "countries": [
+                "US"
+              ],
+              "location_types": [
+                "frequently_in",
+                "home",
+                "recent"
+              ]
+            },
+            "targeting_automation": {
+              "advantage_audience": 1
+            },
+            "publisher_platforms": [
+              "facebook",
+              "instagram"
+            ],
+            "facebook_positions": [
+              "feed"
+            ],
+            "instagram_positions": [
+              "stream"
+            ]
+          },
+          "updated_time": "2026-09-27T11:32:49+0000"
+        }
+      ],
+      "annonser": 76
+    }
+  ],
+  "adsets": [
+    {
+      "id": "120251517605150435",
+      "name": "CARASHELL_US_TR",
+      "kampanj": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+      "avviker": false,
+      "skillnader": [],
+      "rattad": false,
+      "fel": null
+    },
+    {
+      "id": "120251517179380435",
+      "name": "CARASHELL_US_OB",
+      "kampanj": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+      "avviker": false,
+      "skillnader": [],
+      "rattad": false,
+      "fel": null
+    },
+    {
+      "id": "120251489956580435",
+      "name": "CARASHELL_US_UG",
+      "kampanj": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+      "avviker": false,
+      "skillnader": [],
+      "rattad": false,
+      "fel": null
+    },
+    {
+      "id": "120251489804770435",
+      "name": "CARASHELL_US_RI",
+      "kampanj": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+      "avviker": false,
+      "skillnader": [],
+      "rattad": false,
+      "fel": null
+    },
+    {
+      "id": "120251488345710435",
+      "name": "CARASHELL_US_BOF",
+      "kampanj": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+      "avviker": false,
+      "skillnader": [],
+      "rattad": false,
+      "fel": null
+    },
+    {
+      "id": "120251488318130435",
+      "name": "CARASHELL_US_CO",
+      "kampanj": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+      "avviker": false,
+      "skillnader": [],
+      "rattad": false,
+      "fel": null
+    },
+    {
+      "id": "120251488214830435",
+      "name": "CARASHELL_US_LI",
+      "kampanj": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+      "avviker": false,
+      "skillnader": [],
+      "rattad": false,
+      "fel": null
+    },
+    {
+      "id": "120251451415290435",
+      "name": "CARASHELL_US_GT",
+      "kampanj": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+      "avviker": false,
+      "skillnader": [],
+      "rattad": false,
+      "fel": null
+    },
+    {
+      "id": "120251451415210435",
+      "name": "CARASHELL_US_SP",
+      "kampanj": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+      "avviker": false,
+      "skillnader": [],
+      "rattad": false,
+      "fel": null
+    },
+    {
+      "id": "120251451415190435",
+      "name": "CARASHELL_US_PD",
+      "kampanj": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+      "avviker": false,
+      "skillnader": [],
+      "rattad": false,
+      "fel": null
+    },
+    {
+      "id": "120251451415170435",
+      "name": "CARASHELL_US_CS",
+      "kampanj": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+      "avviker": false,
+      "skillnader": [],
+      "rattad": false,
+      "fel": null
+    },
+    {
+      "id": "120251451415060435",
+      "name": "CARASHELL_US_G",
+      "kampanj": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+      "avviker": false,
+      "skillnader": [],
+      "rattad": false,
+      "fel": null
+    }
+  ],
+  "senastAndrad": "2026-09-27T11:32:49.000Z",
+  "spend": {
+    "i går": [
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "49.998883",
+        "impressions": "439",
+        "actions": [
+          {
+            "action_type": "web_in_store_purchase",
+            "value": "2"
+          },
+          {
+            "action_type": "omni_purchase",
+            "value": "2"
+          },
+          {
+            "action_type": "link_click",
+            "value": "8"
+          },
+          {
+            "action_type": "initiate_checkout",
+            "value": "2"
+          },
+          {
+            "action_type": "offsite_purchase_add_20_s_calls",
+            "value": "2"
+          },
+          {
+            "action_type": "add_to_cart",
+            "value": "2"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_purchase",
+            "value": "2"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_initiate_checkout",
+            "value": "2"
+          },
+          {
+            "action_type": "offsite_initiate_checkout_add_20_s_calls",
+            "value": "2"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_add_to_cart",
+            "value": "2"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "3"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "7"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "7"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "36"
+          },
+          {
+            "action_type": "onsite_web_app_purchase",
+            "value": "2"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "36"
+          },
+          {
+            "action_type": "purchase",
+            "value": "2"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "3"
+          },
+          {
+            "action_type": "onsite_web_add_to_cart",
+            "value": "2"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "3"
+          },
+          {
+            "action_type": "view_content",
+            "value": "3"
+          },
+          {
+            "action_type": "web_app_in_store_purchase",
+            "value": "2"
+          },
+          {
+            "action_type": "onsite_web_app_add_to_cart",
+            "value": "2"
+          },
+          {
+            "action_type": "onsite_web_initiate_checkout",
+            "value": "2"
+          },
+          {
+            "action_type": "omni_initiated_checkout",
+            "value": "2"
+          },
+          {
+            "action_type": "omni_add_to_cart",
+            "value": "2"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "3"
+          },
+          {
+            "action_type": "onsite_web_purchase",
+            "value": "2"
+          },
+          {
+            "action_type": "offsite_add_to_cart_add_20_s_calls",
+            "value": "2"
+          },
+          {
+            "action_type": "video_view",
+            "value": "28"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "3"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "3"
+          }
+        ],
+        "date_start": "2026-09-26",
+        "date_stop": "2026-09-26",
+        "publisher_platform": "audience_network",
+        "platform_position": "an_classic"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "6.999844",
+        "impressions": "42",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "3"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "2"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "2"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "45"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "45"
+          },
+          {
+            "action_type": "video_view",
+            "value": "42"
+          }
+        ],
+        "date_start": "2026-09-26",
+        "date_stop": "2026-09-26",
+        "publisher_platform": "audience_network",
+        "platform_position": "rewarded_video"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "14.669672",
+        "impressions": "18",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "2"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "1"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "1"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "2"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "2"
+          }
+        ],
+        "date_start": "2026-09-26",
+        "date_stop": "2026-09-26",
+        "publisher_platform": "facebook",
+        "platform_position": "facebook_notification"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "19.949554",
+        "impressions": "130",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "1"
+          },
+          {
+            "action_type": "post_reaction",
+            "value": "1"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "1"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "1"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "13"
+          },
+          {
+            "action_type": "post_interaction_gross",
+            "value": "1"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "13"
+          },
+          {
+            "action_type": "post_interaction_net",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_conversion.post_net_like",
+            "value": "1"
+          },
+          {
+            "action_type": "video_view",
+            "value": "11"
+          }
+        ],
+        "date_start": "2026-09-26",
+        "date_stop": "2026-09-26",
+        "publisher_platform": "facebook",
+        "platform_position": "facebook_profile_feed"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "1808.5396",
+        "impressions": "5306",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "215"
+          },
+          {
+            "action_type": "initiate_checkout",
+            "value": "1"
+          },
+          {
+            "action_type": "add_to_cart",
+            "value": "15"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_initiate_checkout",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_initiate_checkout_add_20_s_calls",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_add_to_cart",
+            "value": "15"
+          },
+          {
+            "action_type": "post_reaction",
+            "value": "23"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "154"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "192"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "192"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "1091"
+          },
+          {
+            "action_type": "post_interaction_gross",
+            "value": "30"
+          },
+          {
+            "action_type": "comment",
+            "value": "1"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "1091"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "154"
+          },
+          {
+            "action_type": "onsite_web_add_to_cart",
+            "value": "15"
+          },
+          {
+            "action_type": "post_interaction_net",
+            "value": "30"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "154"
+          },
+          {
+            "action_type": "view_content",
+            "value": "154"
+          },
+          {
+            "action_type": "onsite_conversion.post_save",
+            "value": "6"
+          },
+          {
+            "action_type": "onsite_conversion.post_net_comment",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_web_app_add_to_cart",
+            "value": "15"
+          },
+          {
+            "action_type": "onsite_conversion.post_net_save",
+            "value": "6"
+          },
+          {
+            "action_type": "onsite_conversion.post_net_like",
+            "value": "23"
+          },
+          {
+            "action_type": "onsite_web_initiate_checkout",
+            "value": "1"
+          },
+          {
+            "action_type": "omni_initiated_checkout",
+            "value": "1"
+          },
+          {
+            "action_type": "omni_add_to_cart",
+            "value": "15"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "154"
+          },
+          {
+            "action_type": "offsite_add_to_cart_add_20_s_calls",
+            "value": "15"
+          },
+          {
+            "action_type": "video_view",
+            "value": "846"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "154"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "154"
+          }
+        ],
+        "date_start": "2026-09-26",
+        "date_stop": "2026-09-26",
+        "publisher_platform": "facebook",
+        "platform_position": "facebook_reels"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "17.44961",
+        "impressions": "179",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "3"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "1"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "2"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "2"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "3"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "3"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "1"
+          },
+          {
+            "action_type": "view_content",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "1"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "1"
+          }
+        ],
+        "date_start": "2026-09-26",
+        "date_stop": "2026-09-26",
+        "publisher_platform": "facebook",
+        "platform_position": "facebook_reels_overlay"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "80.838194",
+        "impressions": "86",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "7"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "4"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "5"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "5"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "28"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "28"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "4"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "4"
+          },
+          {
+            "action_type": "view_content",
+            "value": "4"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "4"
+          },
+          {
+            "action_type": "video_view",
+            "value": "21"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "4"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "4"
+          }
+        ],
+        "date_start": "2026-09-26",
+        "date_stop": "2026-09-26",
+        "publisher_platform": "facebook",
+        "platform_position": "facebook_stories"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "7290.93713",
+        "impressions": "24524",
+        "actions": [
+          {
+            "action_type": "web_in_store_purchase",
+            "value": "5"
+          },
+          {
+            "action_type": "omni_purchase",
+            "value": "5"
+          },
+          {
+            "action_type": "link_click",
+            "value": "892"
+          },
+          {
+            "action_type": "initiate_checkout",
+            "value": "8"
+          },
+          {
+            "action_type": "offsite_purchase_add_20_s_calls",
+            "value": "5"
+          },
+          {
+            "action_type": "add_to_cart",
+            "value": "49"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_purchase",
+            "value": "5"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_initiate_checkout",
+            "value": "8"
+          },
+          {
+            "action_type": "offsite_initiate_checkout_add_20_s_calls",
+            "value": "8"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_add_to_cart",
+            "value": "49"
+          },
+          {
+            "action_type": "post_reaction",
+            "value": "65"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "576"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "837"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "837"
+          },
+          {
+            "action_type": "onsite_conversion.post_unlike",
+            "value": "1"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "3098"
+          },
+          {
+            "action_type": "like",
+            "value": "2"
+          },
+          {
+            "action_type": "post_interaction_gross",
+            "value": "127"
+          },
+          {
+            "action_type": "comment",
+            "value": "6"
+          },
+          {
+            "action_type": "onsite_web_app_purchase",
+            "value": "5"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "3100"
+          },
+          {
+            "action_type": "purchase",
+            "value": "5"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "576"
+          },
+          {
+            "action_type": "onsite_web_add_to_cart",
+            "value": "49"
+          },
+          {
+            "action_type": "post_interaction_net",
+            "value": "128"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "576"
+          },
+          {
+            "action_type": "post",
+            "value": "33"
+          },
+          {
+            "action_type": "view_content",
+            "value": "576"
+          },
+          {
+            "action_type": "onsite_conversion.post_save",
+            "value": "23"
+          },
+          {
+            "action_type": "onsite_conversion.post_net_comment",
+            "value": "6"
+          },
+          {
+            "action_type": "web_app_in_store_purchase",
+            "value": "5"
+          },
+          {
+            "action_type": "onsite_web_app_add_to_cart",
+            "value": "49"
+          },
+          {
+            "action_type": "onsite_conversion.post_net_save",
+            "value": "23"
+          },
+          {
+            "action_type": "onsite_conversion.post_net_like",
+            "value": "64"
+          },
+          {
+            "action_type": "onsite_web_initiate_checkout",
+            "value": "8"
+          },
+          {
+            "action_type": "omni_initiated_checkout",
+            "value": "8"
+          },
+          {
+            "action_type": "omni_add_to_cart",
+            "value": "49"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "576"
+          },
+          {
+            "action_type": "onsite_web_purchase",
+            "value": "5"
+          },
+          {
+            "action_type": "offsite_add_to_cart_add_20_s_calls",
+            "value": "49"
+          },
+          {
+            "action_type": "video_view",
+            "value": "2079"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "576"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "576"
+          }
+        ],
+        "date_start": "2026-09-26",
+        "date_stop": "2026-09-26",
+        "publisher_platform": "facebook",
+        "platform_position": "feed"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "82.36816",
+        "impressions": "166",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "6"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "2"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "6"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "6"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "79"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "79"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "2"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "2"
+          },
+          {
+            "action_type": "view_content",
+            "value": "2"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "2"
+          },
+          {
+            "action_type": "video_view",
+            "value": "73"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "2"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "2"
+          }
+        ],
+        "date_start": "2026-09-26",
+        "date_stop": "2026-09-26",
+        "publisher_platform": "facebook",
+        "platform_position": "instream_video"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "116.997386",
+        "impressions": "801",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "19"
+          },
+          {
+            "action_type": "add_to_cart",
+            "value": "3"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_add_to_cart",
+            "value": "3"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "13"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "14"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "14"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "59"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "59"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "13"
+          },
+          {
+            "action_type": "onsite_web_add_to_cart",
+            "value": "3"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "13"
+          },
+          {
+            "action_type": "view_content",
+            "value": "13"
+          },
+          {
+            "action_type": "onsite_web_app_add_to_cart",
+            "value": "3"
+          },
+          {
+            "action_type": "omni_add_to_cart",
+            "value": "3"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "13"
+          },
+          {
+            "action_type": "offsite_add_to_cart_add_20_s_calls",
+            "value": "3"
+          },
+          {
+            "action_type": "video_view",
+            "value": "40"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "13"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "13"
+          }
+        ],
+        "date_start": "2026-09-26",
+        "date_stop": "2026-09-26",
+        "publisher_platform": "facebook",
+        "platform_position": "marketplace"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "28.599361",
+        "impressions": "1276",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "1"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "1"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "1"
+          }
+        ],
+        "date_start": "2026-09-26",
+        "date_stop": "2026-09-26",
+        "publisher_platform": "facebook",
+        "platform_position": "right_hand_column"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "34.729224",
+        "impressions": "459",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "10"
+          },
+          {
+            "action_type": "add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "5"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "10"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "10"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "22"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "22"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "5"
+          },
+          {
+            "action_type": "onsite_web_add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "5"
+          },
+          {
+            "action_type": "view_content",
+            "value": "5"
+          },
+          {
+            "action_type": "onsite_web_app_add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "omni_add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "5"
+          },
+          {
+            "action_type": "offsite_add_to_cart_add_20_s_calls",
+            "value": "1"
+          },
+          {
+            "action_type": "video_view",
+            "value": "12"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "5"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "5"
+          }
+        ],
+        "date_start": "2026-09-26",
+        "date_stop": "2026-09-26",
+        "publisher_platform": "facebook",
+        "platform_position": "search"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "1052.616486",
+        "impressions": "5044",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "28"
+          },
+          {
+            "action_type": "post_reaction",
+            "value": "11"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "2"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "23"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "23"
+          },
+          {
+            "action_type": "onsite_conversion.post_unlike",
+            "value": "1"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "509"
+          },
+          {
+            "action_type": "post_interaction_gross",
+            "value": "12"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "509"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "2"
+          },
+          {
+            "action_type": "post_interaction_net",
+            "value": "13"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "2"
+          },
+          {
+            "action_type": "view_content",
+            "value": "2"
+          },
+          {
+            "action_type": "onsite_conversion.post_save",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_conversion.post_net_save",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_conversion.post_net_like",
+            "value": "10"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "2"
+          },
+          {
+            "action_type": "video_view",
+            "value": "469"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "2"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "2"
+          }
+        ],
+        "date_start": "2026-09-26",
+        "date_stop": "2026-09-26",
+        "publisher_platform": "instagram",
+        "platform_position": "feed"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "0.029999",
+        "impressions": "1",
+        "date_start": "2026-09-26",
+        "date_stop": "2026-09-26",
+        "publisher_platform": "instagram",
+        "platform_position": "instagram_explore_grid_home"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "226.364943",
+        "impressions": "1323",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "16"
+          },
+          {
+            "action_type": "add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "post_reaction",
+            "value": "2"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "1"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "12"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "12"
+          },
+          {
+            "action_type": "onsite_conversion.post_unlike",
+            "value": "1"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "89"
+          },
+          {
+            "action_type": "post_interaction_gross",
+            "value": "2"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "89"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_web_add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "post_interaction_net",
+            "value": "3"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "1"
+          },
+          {
+            "action_type": "view_content",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_web_app_add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_conversion.post_net_like",
+            "value": "1"
+          },
+          {
+            "action_type": "omni_add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_add_to_cart_add_20_s_calls",
+            "value": "1"
+          },
+          {
+            "action_type": "video_view",
+            "value": "71"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "1"
+          }
+        ],
+        "date_start": "2026-09-26",
+        "date_stop": "2026-09-26",
+        "publisher_platform": "instagram",
+        "platform_position": "instagram_reels"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "0.179996",
+        "impressions": "1",
+        "actions": [
+          {
+            "action_type": "post_engagement",
+            "value": "1"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "1"
+          },
+          {
+            "action_type": "video_view",
+            "value": "1"
+          }
+        ],
+        "date_start": "2026-09-26",
+        "date_stop": "2026-09-26",
+        "publisher_platform": "instagram",
+        "platform_position": "instagram_search"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "2570.44258",
+        "impressions": "15094",
+        "actions": [
+          {
+            "action_type": "web_in_store_purchase",
+            "value": "1"
+          },
+          {
+            "action_type": "omni_purchase",
+            "value": "1"
+          },
+          {
+            "action_type": "link_click",
+            "value": "65"
+          },
+          {
+            "action_type": "initiate_checkout",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_purchase_add_20_s_calls",
+            "value": "1"
+          },
+          {
+            "action_type": "add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_purchase",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_initiate_checkout",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_initiate_checkout_add_20_s_calls",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "4"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "68"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "68"
+          },
+          {
+            "action_type": "onsite_conversion.post_unlike",
+            "value": "5"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "406"
+          },
+          {
+            "action_type": "onsite_web_app_purchase",
+            "value": "1"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "406"
+          },
+          {
+            "action_type": "purchase",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "4"
+          },
+          {
+            "action_type": "onsite_web_add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "post_interaction_net",
+            "value": "5"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "4"
+          },
+          {
+            "action_type": "view_content",
+            "value": "4"
+          },
+          {
+            "action_type": "web_app_in_store_purchase",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_web_app_add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_conversion.post_net_like",
+            "value": "0"
+          },
+          {
+            "action_type": "onsite_web_initiate_checkout",
+            "value": "1"
+          },
+          {
+            "action_type": "omni_initiated_checkout",
+            "value": "1"
+          },
+          {
+            "action_type": "omni_add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "4"
+          },
+          {
+            "action_type": "onsite_web_purchase",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_add_to_cart_add_20_s_calls",
+            "value": "1"
+          },
+          {
+            "action_type": "video_view",
+            "value": "341"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "4"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "4"
+          }
+        ],
+        "date_start": "2026-09-26",
+        "date_stop": "2026-09-26",
+        "publisher_platform": "instagram",
+        "platform_position": "instagram_stories"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "5.989866",
+        "impressions": "44",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "1"
+          },
+          {
+            "action_type": "post_reaction",
+            "value": "2"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "5"
+          },
+          {
+            "action_type": "post_interaction_gross",
+            "value": "2"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "5"
+          },
+          {
+            "action_type": "post_interaction_net",
+            "value": "2"
+          },
+          {
+            "action_type": "onsite_conversion.post_net_like",
+            "value": "2"
+          },
+          {
+            "action_type": "video_view",
+            "value": "2"
+          }
+        ],
+        "date_start": "2026-09-26",
+        "date_stop": "2026-09-26",
+        "publisher_platform": "threads",
+        "platform_position": "threads_feed"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "21.889511",
+        "impressions": "100",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "3"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "3"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "8"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "8"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "13"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "13"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "3"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "3"
+          },
+          {
+            "action_type": "view_content",
+            "value": "3"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "3"
+          },
+          {
+            "action_type": "video_view",
+            "value": "10"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "3"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "3"
+          }
+        ],
+        "date_start": "2026-09-26",
+        "date_stop": "2026-09-26",
+        "publisher_platform": "unknown",
+        "platform_position": "unknown"
+      }
+    ],
+    "i dag": [
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "1.762606",
+        "impressions": "64",
+        "date_start": "2026-09-27",
+        "date_stop": "2026-09-27",
+        "publisher_platform": "audience_network",
+        "platform_position": "an_classic"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "0.05036",
+        "impressions": "1",
+        "actions": [
+          {
+            "action_type": "post_engagement",
+            "value": "1"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "1"
+          },
+          {
+            "action_type": "video_view",
+            "value": "1"
+          }
+        ],
+        "date_start": "2026-09-27",
+        "date_stop": "2026-09-27",
+        "publisher_platform": "audience_network",
+        "platform_position": "rewarded_video"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "1.641741",
+        "impressions": "8",
+        "date_start": "2026-09-27",
+        "date_stop": "2026-09-27",
+        "publisher_platform": "facebook",
+        "platform_position": "facebook_profile_feed"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "140.877509",
+        "impressions": "557",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "25"
+          },
+          {
+            "action_type": "add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "post_reaction",
+            "value": "3"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "19"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "24"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "24"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "101"
+          },
+          {
+            "action_type": "post_interaction_gross",
+            "value": "3"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "101"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "19"
+          },
+          {
+            "action_type": "onsite_web_add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "post_interaction_net",
+            "value": "3"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "19"
+          },
+          {
+            "action_type": "view_content",
+            "value": "19"
+          },
+          {
+            "action_type": "onsite_web_app_add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_conversion.post_net_like",
+            "value": "3"
+          },
+          {
+            "action_type": "omni_add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "19"
+          },
+          {
+            "action_type": "offsite_add_to_cart_add_20_s_calls",
+            "value": "1"
+          },
+          {
+            "action_type": "video_view",
+            "value": "73"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "19"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "19"
+          }
+        ],
+        "date_start": "2026-09-27",
+        "date_stop": "2026-09-27",
+        "publisher_platform": "facebook",
+        "platform_position": "facebook_reels"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "2.507936",
+        "impressions": "31",
+        "date_start": "2026-09-27",
+        "date_stop": "2026-09-27",
+        "publisher_platform": "facebook",
+        "platform_position": "facebook_reels_overlay"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "7.926689",
+        "impressions": "6",
+        "actions": [
+          {
+            "action_type": "post_engagement",
+            "value": "1"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "1"
+          },
+          {
+            "action_type": "video_view",
+            "value": "1"
+          }
+        ],
+        "date_start": "2026-09-27",
+        "date_stop": "2026-09-27",
+        "publisher_platform": "facebook",
+        "platform_position": "facebook_stories"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "1662.197484",
+        "impressions": "5260",
+        "actions": [
+          {
+            "action_type": "web_in_store_purchase",
+            "value": "2"
+          },
+          {
+            "action_type": "omni_purchase",
+            "value": "2"
+          },
+          {
+            "action_type": "link_click",
+            "value": "187"
+          },
+          {
+            "action_type": "initiate_checkout",
+            "value": "4"
+          },
+          {
+            "action_type": "offsite_purchase_add_20_s_calls",
+            "value": "2"
+          },
+          {
+            "action_type": "add_to_cart",
+            "value": "15"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_purchase",
+            "value": "2"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_initiate_checkout",
+            "value": "4"
+          },
+          {
+            "action_type": "offsite_initiate_checkout_add_20_s_calls",
+            "value": "4"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_add_to_cart",
+            "value": "15"
+          },
+          {
+            "action_type": "post_reaction",
+            "value": "13"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "118"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "164"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "164"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "775"
+          },
+          {
+            "action_type": "post_interaction_gross",
+            "value": "22"
+          },
+          {
+            "action_type": "comment",
+            "value": "2"
+          },
+          {
+            "action_type": "onsite_web_app_purchase",
+            "value": "2"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "775"
+          },
+          {
+            "action_type": "purchase",
+            "value": "2"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "118"
+          },
+          {
+            "action_type": "onsite_web_add_to_cart",
+            "value": "15"
+          },
+          {
+            "action_type": "post_interaction_net",
+            "value": "22"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "118"
+          },
+          {
+            "action_type": "post",
+            "value": "5"
+          },
+          {
+            "action_type": "view_content",
+            "value": "118"
+          },
+          {
+            "action_type": "onsite_conversion.post_save",
+            "value": "2"
+          },
+          {
+            "action_type": "onsite_conversion.post_net_comment",
+            "value": "2"
+          },
+          {
+            "action_type": "web_app_in_store_purchase",
+            "value": "2"
+          },
+          {
+            "action_type": "onsite_web_app_add_to_cart",
+            "value": "15"
+          },
+          {
+            "action_type": "onsite_conversion.post_net_save",
+            "value": "2"
+          },
+          {
+            "action_type": "onsite_conversion.post_net_like",
+            "value": "13"
+          },
+          {
+            "action_type": "onsite_web_initiate_checkout",
+            "value": "4"
+          },
+          {
+            "action_type": "omni_initiated_checkout",
+            "value": "4"
+          },
+          {
+            "action_type": "omni_add_to_cart",
+            "value": "15"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "118"
+          },
+          {
+            "action_type": "onsite_web_purchase",
+            "value": "2"
+          },
+          {
+            "action_type": "offsite_add_to_cart_add_20_s_calls",
+            "value": "15"
+          },
+          {
+            "action_type": "video_view",
+            "value": "566"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "118"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "118"
+          }
+        ],
+        "date_start": "2026-09-27",
+        "date_stop": "2026-09-27",
+        "publisher_platform": "facebook",
+        "platform_position": "feed"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "2.961177",
+        "impressions": "12",
+        "actions": [
+          {
+            "action_type": "post_engagement",
+            "value": "1"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "1"
+          },
+          {
+            "action_type": "video_view",
+            "value": "1"
+          }
+        ],
+        "date_start": "2026-09-27",
+        "date_stop": "2026-09-27",
+        "publisher_platform": "facebook",
+        "platform_position": "instream_video"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "5.479185",
+        "impressions": "58",
+        "actions": [
+          {
+            "action_type": "post_engagement",
+            "value": "2"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "2"
+          },
+          {
+            "action_type": "video_view",
+            "value": "2"
+          }
+        ],
+        "date_start": "2026-09-27",
+        "date_stop": "2026-09-27",
+        "publisher_platform": "facebook",
+        "platform_position": "marketplace"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "1.097851",
+        "impressions": "64",
+        "date_start": "2026-09-27",
+        "date_stop": "2026-09-27",
+        "publisher_platform": "facebook",
+        "platform_position": "right_hand_column"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "1.259004",
+        "impressions": "39",
+        "actions": [
+          {
+            "action_type": "post_engagement",
+            "value": "1"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "1"
+          },
+          {
+            "action_type": "video_view",
+            "value": "1"
+          }
+        ],
+        "date_start": "2026-09-27",
+        "date_stop": "2026-09-27",
+        "publisher_platform": "facebook",
+        "platform_position": "search"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "636.824356",
+        "impressions": "4677",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "9"
+          },
+          {
+            "action_type": "post_reaction",
+            "value": "6"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "2"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "7"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "7"
+          },
+          {
+            "action_type": "onsite_conversion.post_unlike",
+            "value": "1"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "372"
+          },
+          {
+            "action_type": "post_interaction_gross",
+            "value": "7"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "372"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "2"
+          },
+          {
+            "action_type": "post_interaction_net",
+            "value": "8"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "2"
+          },
+          {
+            "action_type": "view_content",
+            "value": "2"
+          },
+          {
+            "action_type": "onsite_conversion.post_save",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_conversion.post_net_save",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_conversion.post_net_like",
+            "value": "5"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "2"
+          },
+          {
+            "action_type": "video_view",
+            "value": "356"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "2"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "2"
+          }
+        ],
+        "date_start": "2026-09-27",
+        "date_stop": "2026-09-27",
+        "publisher_platform": "instagram",
+        "platform_position": "feed"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "12.005862",
+        "impressions": "95",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "2"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "2"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "2"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "12"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "12"
+          },
+          {
+            "action_type": "video_view",
+            "value": "10"
+          }
+        ],
+        "date_start": "2026-09-27",
+        "date_stop": "2026-09-27",
+        "publisher_platform": "instagram",
+        "platform_position": "instagram_reels"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "16780.619414",
+        "impressions": "170484",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "709"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "4"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "696"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "696"
+          },
+          {
+            "action_type": "onsite_conversion.post_unlike",
+            "value": "43"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "4724"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "4724"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "4"
+          },
+          {
+            "action_type": "post_interaction_net",
+            "value": "43"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "4"
+          },
+          {
+            "action_type": "view_content",
+            "value": "4"
+          },
+          {
+            "action_type": "onsite_conversion.post_net_like",
+            "value": "0"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "4"
+          },
+          {
+            "action_type": "video_view",
+            "value": "4015"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "4"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "4"
+          }
+        ],
+        "date_start": "2026-09-27",
+        "date_stop": "2026-09-27",
+        "publisher_platform": "instagram",
+        "platform_position": "instagram_stories"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "0.080576",
+        "impressions": "1",
+        "date_start": "2026-09-27",
+        "date_stop": "2026-09-27",
+        "publisher_platform": "threads",
+        "platform_position": "threads_feed"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "5.348249",
+        "impressions": "25",
+        "actions": [
+          {
+            "action_type": "post_engagement",
+            "value": "6"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "6"
+          },
+          {
+            "action_type": "video_view",
+            "value": "6"
+          }
+        ],
+        "date_start": "2026-09-27",
+        "date_stop": "2026-09-27",
+        "publisher_platform": "unknown",
+        "platform_position": "unknown"
+      }
+    ]
+  },
+  "spendUtanfor": {
+    "i går": [
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "49.998883",
+        "impressions": "439",
+        "actions": [
+          {
+            "action_type": "web_in_store_purchase",
+            "value": "2"
+          },
+          {
+            "action_type": "omni_purchase",
+            "value": "2"
+          },
+          {
+            "action_type": "link_click",
+            "value": "8"
+          },
+          {
+            "action_type": "initiate_checkout",
+            "value": "2"
+          },
+          {
+            "action_type": "offsite_purchase_add_20_s_calls",
+            "value": "2"
+          },
+          {
+            "action_type": "add_to_cart",
+            "value": "2"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_purchase",
+            "value": "2"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_initiate_checkout",
+            "value": "2"
+          },
+          {
+            "action_type": "offsite_initiate_checkout_add_20_s_calls",
+            "value": "2"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_add_to_cart",
+            "value": "2"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "3"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "7"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "7"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "36"
+          },
+          {
+            "action_type": "onsite_web_app_purchase",
+            "value": "2"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "36"
+          },
+          {
+            "action_type": "purchase",
+            "value": "2"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "3"
+          },
+          {
+            "action_type": "onsite_web_add_to_cart",
+            "value": "2"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "3"
+          },
+          {
+            "action_type": "view_content",
+            "value": "3"
+          },
+          {
+            "action_type": "web_app_in_store_purchase",
+            "value": "2"
+          },
+          {
+            "action_type": "onsite_web_app_add_to_cart",
+            "value": "2"
+          },
+          {
+            "action_type": "onsite_web_initiate_checkout",
+            "value": "2"
+          },
+          {
+            "action_type": "omni_initiated_checkout",
+            "value": "2"
+          },
+          {
+            "action_type": "omni_add_to_cart",
+            "value": "2"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "3"
+          },
+          {
+            "action_type": "onsite_web_purchase",
+            "value": "2"
+          },
+          {
+            "action_type": "offsite_add_to_cart_add_20_s_calls",
+            "value": "2"
+          },
+          {
+            "action_type": "video_view",
+            "value": "28"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "3"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "3"
+          }
+        ],
+        "date_start": "2026-09-26",
+        "date_stop": "2026-09-26",
+        "publisher_platform": "audience_network",
+        "platform_position": "an_classic"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "6.999844",
+        "impressions": "42",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "3"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "2"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "2"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "45"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "45"
+          },
+          {
+            "action_type": "video_view",
+            "value": "42"
+          }
+        ],
+        "date_start": "2026-09-26",
+        "date_stop": "2026-09-26",
+        "publisher_platform": "audience_network",
+        "platform_position": "rewarded_video"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "14.669672",
+        "impressions": "18",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "2"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "1"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "1"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "2"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "2"
+          }
+        ],
+        "date_start": "2026-09-26",
+        "date_stop": "2026-09-26",
+        "publisher_platform": "facebook",
+        "platform_position": "facebook_notification"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "19.949554",
+        "impressions": "130",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "1"
+          },
+          {
+            "action_type": "post_reaction",
+            "value": "1"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "1"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "1"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "13"
+          },
+          {
+            "action_type": "post_interaction_gross",
+            "value": "1"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "13"
+          },
+          {
+            "action_type": "post_interaction_net",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_conversion.post_net_like",
+            "value": "1"
+          },
+          {
+            "action_type": "video_view",
+            "value": "11"
+          }
+        ],
+        "date_start": "2026-09-26",
+        "date_stop": "2026-09-26",
+        "publisher_platform": "facebook",
+        "platform_position": "facebook_profile_feed"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "1808.5396",
+        "impressions": "5306",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "215"
+          },
+          {
+            "action_type": "initiate_checkout",
+            "value": "1"
+          },
+          {
+            "action_type": "add_to_cart",
+            "value": "15"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_initiate_checkout",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_initiate_checkout_add_20_s_calls",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_add_to_cart",
+            "value": "15"
+          },
+          {
+            "action_type": "post_reaction",
+            "value": "23"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "154"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "192"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "192"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "1091"
+          },
+          {
+            "action_type": "post_interaction_gross",
+            "value": "30"
+          },
+          {
+            "action_type": "comment",
+            "value": "1"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "1091"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "154"
+          },
+          {
+            "action_type": "onsite_web_add_to_cart",
+            "value": "15"
+          },
+          {
+            "action_type": "post_interaction_net",
+            "value": "30"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "154"
+          },
+          {
+            "action_type": "view_content",
+            "value": "154"
+          },
+          {
+            "action_type": "onsite_conversion.post_save",
+            "value": "6"
+          },
+          {
+            "action_type": "onsite_conversion.post_net_comment",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_web_app_add_to_cart",
+            "value": "15"
+          },
+          {
+            "action_type": "onsite_conversion.post_net_save",
+            "value": "6"
+          },
+          {
+            "action_type": "onsite_conversion.post_net_like",
+            "value": "23"
+          },
+          {
+            "action_type": "onsite_web_initiate_checkout",
+            "value": "1"
+          },
+          {
+            "action_type": "omni_initiated_checkout",
+            "value": "1"
+          },
+          {
+            "action_type": "omni_add_to_cart",
+            "value": "15"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "154"
+          },
+          {
+            "action_type": "offsite_add_to_cart_add_20_s_calls",
+            "value": "15"
+          },
+          {
+            "action_type": "video_view",
+            "value": "846"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "154"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "154"
+          }
+        ],
+        "date_start": "2026-09-26",
+        "date_stop": "2026-09-26",
+        "publisher_platform": "facebook",
+        "platform_position": "facebook_reels"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "17.44961",
+        "impressions": "179",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "3"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "1"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "2"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "2"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "3"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "3"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "1"
+          },
+          {
+            "action_type": "view_content",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "1"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "1"
+          }
+        ],
+        "date_start": "2026-09-26",
+        "date_stop": "2026-09-26",
+        "publisher_platform": "facebook",
+        "platform_position": "facebook_reels_overlay"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "80.838194",
+        "impressions": "86",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "7"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "4"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "5"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "5"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "28"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "28"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "4"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "4"
+          },
+          {
+            "action_type": "view_content",
+            "value": "4"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "4"
+          },
+          {
+            "action_type": "video_view",
+            "value": "21"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "4"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "4"
+          }
+        ],
+        "date_start": "2026-09-26",
+        "date_stop": "2026-09-26",
+        "publisher_platform": "facebook",
+        "platform_position": "facebook_stories"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "82.36816",
+        "impressions": "166",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "6"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "2"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "6"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "6"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "79"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "79"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "2"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "2"
+          },
+          {
+            "action_type": "view_content",
+            "value": "2"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "2"
+          },
+          {
+            "action_type": "video_view",
+            "value": "73"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "2"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "2"
+          }
+        ],
+        "date_start": "2026-09-26",
+        "date_stop": "2026-09-26",
+        "publisher_platform": "facebook",
+        "platform_position": "instream_video"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "116.997386",
+        "impressions": "801",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "19"
+          },
+          {
+            "action_type": "add_to_cart",
+            "value": "3"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_add_to_cart",
+            "value": "3"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "13"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "14"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "14"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "59"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "59"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "13"
+          },
+          {
+            "action_type": "onsite_web_add_to_cart",
+            "value": "3"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "13"
+          },
+          {
+            "action_type": "view_content",
+            "value": "13"
+          },
+          {
+            "action_type": "onsite_web_app_add_to_cart",
+            "value": "3"
+          },
+          {
+            "action_type": "omni_add_to_cart",
+            "value": "3"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "13"
+          },
+          {
+            "action_type": "offsite_add_to_cart_add_20_s_calls",
+            "value": "3"
+          },
+          {
+            "action_type": "video_view",
+            "value": "40"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "13"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "13"
+          }
+        ],
+        "date_start": "2026-09-26",
+        "date_stop": "2026-09-26",
+        "publisher_platform": "facebook",
+        "platform_position": "marketplace"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "28.599361",
+        "impressions": "1276",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "1"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "1"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "1"
+          }
+        ],
+        "date_start": "2026-09-26",
+        "date_stop": "2026-09-26",
+        "publisher_platform": "facebook",
+        "platform_position": "right_hand_column"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "34.729224",
+        "impressions": "459",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "10"
+          },
+          {
+            "action_type": "add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "5"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "10"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "10"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "22"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "22"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "5"
+          },
+          {
+            "action_type": "onsite_web_add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "5"
+          },
+          {
+            "action_type": "view_content",
+            "value": "5"
+          },
+          {
+            "action_type": "onsite_web_app_add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "omni_add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "5"
+          },
+          {
+            "action_type": "offsite_add_to_cart_add_20_s_calls",
+            "value": "1"
+          },
+          {
+            "action_type": "video_view",
+            "value": "12"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "5"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "5"
+          }
+        ],
+        "date_start": "2026-09-26",
+        "date_stop": "2026-09-26",
+        "publisher_platform": "facebook",
+        "platform_position": "search"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "0.029999",
+        "impressions": "1",
+        "date_start": "2026-09-26",
+        "date_stop": "2026-09-26",
+        "publisher_platform": "instagram",
+        "platform_position": "instagram_explore_grid_home"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "226.364943",
+        "impressions": "1323",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "16"
+          },
+          {
+            "action_type": "add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "post_reaction",
+            "value": "2"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "1"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "12"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "12"
+          },
+          {
+            "action_type": "onsite_conversion.post_unlike",
+            "value": "1"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "89"
+          },
+          {
+            "action_type": "post_interaction_gross",
+            "value": "2"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "89"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_web_add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "post_interaction_net",
+            "value": "3"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "1"
+          },
+          {
+            "action_type": "view_content",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_web_app_add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_conversion.post_net_like",
+            "value": "1"
+          },
+          {
+            "action_type": "omni_add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_add_to_cart_add_20_s_calls",
+            "value": "1"
+          },
+          {
+            "action_type": "video_view",
+            "value": "71"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "1"
+          }
+        ],
+        "date_start": "2026-09-26",
+        "date_stop": "2026-09-26",
+        "publisher_platform": "instagram",
+        "platform_position": "instagram_reels"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "0.179996",
+        "impressions": "1",
+        "actions": [
+          {
+            "action_type": "post_engagement",
+            "value": "1"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "1"
+          },
+          {
+            "action_type": "video_view",
+            "value": "1"
+          }
+        ],
+        "date_start": "2026-09-26",
+        "date_stop": "2026-09-26",
+        "publisher_platform": "instagram",
+        "platform_position": "instagram_search"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "2570.44258",
+        "impressions": "15094",
+        "actions": [
+          {
+            "action_type": "web_in_store_purchase",
+            "value": "1"
+          },
+          {
+            "action_type": "omni_purchase",
+            "value": "1"
+          },
+          {
+            "action_type": "link_click",
+            "value": "65"
+          },
+          {
+            "action_type": "initiate_checkout",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_purchase_add_20_s_calls",
+            "value": "1"
+          },
+          {
+            "action_type": "add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_purchase",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_initiate_checkout",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_initiate_checkout_add_20_s_calls",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "4"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "68"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "68"
+          },
+          {
+            "action_type": "onsite_conversion.post_unlike",
+            "value": "5"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "406"
+          },
+          {
+            "action_type": "onsite_web_app_purchase",
+            "value": "1"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "406"
+          },
+          {
+            "action_type": "purchase",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "4"
+          },
+          {
+            "action_type": "onsite_web_add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "post_interaction_net",
+            "value": "5"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "4"
+          },
+          {
+            "action_type": "view_content",
+            "value": "4"
+          },
+          {
+            "action_type": "web_app_in_store_purchase",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_web_app_add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_conversion.post_net_like",
+            "value": "0"
+          },
+          {
+            "action_type": "onsite_web_initiate_checkout",
+            "value": "1"
+          },
+          {
+            "action_type": "omni_initiated_checkout",
+            "value": "1"
+          },
+          {
+            "action_type": "omni_add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "4"
+          },
+          {
+            "action_type": "onsite_web_purchase",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_add_to_cart_add_20_s_calls",
+            "value": "1"
+          },
+          {
+            "action_type": "video_view",
+            "value": "341"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "4"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "4"
+          }
+        ],
+        "date_start": "2026-09-26",
+        "date_stop": "2026-09-26",
+        "publisher_platform": "instagram",
+        "platform_position": "instagram_stories"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "5.989866",
+        "impressions": "44",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "1"
+          },
+          {
+            "action_type": "post_reaction",
+            "value": "2"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "5"
+          },
+          {
+            "action_type": "post_interaction_gross",
+            "value": "2"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "5"
+          },
+          {
+            "action_type": "post_interaction_net",
+            "value": "2"
+          },
+          {
+            "action_type": "onsite_conversion.post_net_like",
+            "value": "2"
+          },
+          {
+            "action_type": "video_view",
+            "value": "2"
+          }
+        ],
+        "date_start": "2026-09-26",
+        "date_stop": "2026-09-26",
+        "publisher_platform": "threads",
+        "platform_position": "threads_feed"
+      }
+    ],
+    "i dag": [
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "1.762606",
+        "impressions": "64",
+        "date_start": "2026-09-27",
+        "date_stop": "2026-09-27",
+        "publisher_platform": "audience_network",
+        "platform_position": "an_classic"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "0.05036",
+        "impressions": "1",
+        "actions": [
+          {
+            "action_type": "post_engagement",
+            "value": "1"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "1"
+          },
+          {
+            "action_type": "video_view",
+            "value": "1"
+          }
+        ],
+        "date_start": "2026-09-27",
+        "date_stop": "2026-09-27",
+        "publisher_platform": "audience_network",
+        "platform_position": "rewarded_video"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "1.641741",
+        "impressions": "8",
+        "date_start": "2026-09-27",
+        "date_stop": "2026-09-27",
+        "publisher_platform": "facebook",
+        "platform_position": "facebook_profile_feed"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "140.877509",
+        "impressions": "557",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "25"
+          },
+          {
+            "action_type": "add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "post_reaction",
+            "value": "3"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "19"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "24"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "24"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "101"
+          },
+          {
+            "action_type": "post_interaction_gross",
+            "value": "3"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "101"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "19"
+          },
+          {
+            "action_type": "onsite_web_add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "post_interaction_net",
+            "value": "3"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "19"
+          },
+          {
+            "action_type": "view_content",
+            "value": "19"
+          },
+          {
+            "action_type": "onsite_web_app_add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "onsite_conversion.post_net_like",
+            "value": "3"
+          },
+          {
+            "action_type": "omni_add_to_cart",
+            "value": "1"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "19"
+          },
+          {
+            "action_type": "offsite_add_to_cart_add_20_s_calls",
+            "value": "1"
+          },
+          {
+            "action_type": "video_view",
+            "value": "73"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "19"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "19"
+          }
+        ],
+        "date_start": "2026-09-27",
+        "date_stop": "2026-09-27",
+        "publisher_platform": "facebook",
+        "platform_position": "facebook_reels"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "2.507936",
+        "impressions": "31",
+        "date_start": "2026-09-27",
+        "date_stop": "2026-09-27",
+        "publisher_platform": "facebook",
+        "platform_position": "facebook_reels_overlay"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "7.926689",
+        "impressions": "6",
+        "actions": [
+          {
+            "action_type": "post_engagement",
+            "value": "1"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "1"
+          },
+          {
+            "action_type": "video_view",
+            "value": "1"
+          }
+        ],
+        "date_start": "2026-09-27",
+        "date_stop": "2026-09-27",
+        "publisher_platform": "facebook",
+        "platform_position": "facebook_stories"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "2.961177",
+        "impressions": "12",
+        "actions": [
+          {
+            "action_type": "post_engagement",
+            "value": "1"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "1"
+          },
+          {
+            "action_type": "video_view",
+            "value": "1"
+          }
+        ],
+        "date_start": "2026-09-27",
+        "date_stop": "2026-09-27",
+        "publisher_platform": "facebook",
+        "platform_position": "instream_video"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "5.479185",
+        "impressions": "58",
+        "actions": [
+          {
+            "action_type": "post_engagement",
+            "value": "2"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "2"
+          },
+          {
+            "action_type": "video_view",
+            "value": "2"
+          }
+        ],
+        "date_start": "2026-09-27",
+        "date_stop": "2026-09-27",
+        "publisher_platform": "facebook",
+        "platform_position": "marketplace"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "1.097851",
+        "impressions": "64",
+        "date_start": "2026-09-27",
+        "date_stop": "2026-09-27",
+        "publisher_platform": "facebook",
+        "platform_position": "right_hand_column"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "1.259004",
+        "impressions": "39",
+        "actions": [
+          {
+            "action_type": "post_engagement",
+            "value": "1"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "1"
+          },
+          {
+            "action_type": "video_view",
+            "value": "1"
+          }
+        ],
+        "date_start": "2026-09-27",
+        "date_stop": "2026-09-27",
+        "publisher_platform": "facebook",
+        "platform_position": "search"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "12.005862",
+        "impressions": "95",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "2"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "2"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "2"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "12"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "12"
+          },
+          {
+            "action_type": "video_view",
+            "value": "10"
+          }
+        ],
+        "date_start": "2026-09-27",
+        "date_stop": "2026-09-27",
+        "publisher_platform": "instagram",
+        "platform_position": "instagram_reels"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "16780.619414",
+        "impressions": "170484",
+        "actions": [
+          {
+            "action_type": "link_click",
+            "value": "709"
+          },
+          {
+            "action_type": "offsite_content_view_add_20_s_calls",
+            "value": "4"
+          },
+          {
+            "action_type": "landing_page_view",
+            "value": "696"
+          },
+          {
+            "action_type": "omni_landing_page_view",
+            "value": "696"
+          },
+          {
+            "action_type": "onsite_conversion.post_unlike",
+            "value": "43"
+          },
+          {
+            "action_type": "post_engagement",
+            "value": "4724"
+          },
+          {
+            "action_type": "page_engagement",
+            "value": "4724"
+          },
+          {
+            "action_type": "onsite_web_view_content",
+            "value": "4"
+          },
+          {
+            "action_type": "post_interaction_net",
+            "value": "43"
+          },
+          {
+            "action_type": "onsite_web_app_view_content",
+            "value": "4"
+          },
+          {
+            "action_type": "view_content",
+            "value": "4"
+          },
+          {
+            "action_type": "onsite_conversion.post_net_like",
+            "value": "0"
+          },
+          {
+            "action_type": "offsite_content_view_add_meta_leads",
+            "value": "4"
+          },
+          {
+            "action_type": "video_view",
+            "value": "4015"
+          },
+          {
+            "action_type": "omni_view_content",
+            "value": "4"
+          },
+          {
+            "action_type": "offsite_conversion.fb_pixel_view_content",
+            "value": "4"
+          }
+        ],
+        "date_start": "2026-09-27",
+        "date_stop": "2026-09-27",
+        "publisher_platform": "instagram",
+        "platform_position": "instagram_stories"
+      },
+      {
+        "campaign_name": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "spend": "0.080576",
+        "impressions": "1",
+        "date_start": "2026-09-27",
+        "date_stop": "2026-09-27",
+        "publisher_platform": "threads",
+        "platform_position": "threads_feed"
+      }
+    ]
+  },
+  "spendFore": {
+    "i går": true,
+    "i dag": true
+  },
+  "sidor": {
+    "lasta": [
+      {
+        "typ": "startsida",
+        "url": "https://carashell.com/?country=US",
+        "lang": "en",
+        "rader": 88,
+        "svenska": [],
+        "produktlankar": [
+          "https://carashell.com/products/takskyddet",
+          "https://carashell.com/products/termoskyddet",
+          "https://carashell.com/products/takskyddet",
+          "https://carashell.com/products/termoskyddet",
+          "https://carashell.com/products/takskyddet",
+          "https://carashell.com/products/takskyddet",
+          "https://carashell.com/products/termoskyddet",
+          "https://carashell.com/products/termoskyddet",
+          "https://carashell.com/products/takskyddet",
+          "https://carashell.com/products/termoskyddet"
+        ],
+        "variant": null,
+        "fel": null
+      },
+      {
+        "typ": "landningssida",
+        "url": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US",
+        "lang": "en",
+        "rader": 34,
+        "svenska": [],
+        "produktlankar": [
+          "https://carashell.com/products/takskyddet?country=US",
+          "https://carashell.com/products/takskyddet?country=US",
+          "https://carashell.com/products/takskyddet?country=US",
+          "https://carashell.com/products/takskyddet?country=US",
+          "https://carashell.com/products/takskyddet?country=US",
+          "https://carashell.com/products/takskyddet?country=US",
+          "https://carashell.com/products/takskyddet?country=US",
+          "https://carashell.com/products/takskyddet?country=US"
+        ],
+        "variant": null,
+        "fel": null
+      },
+      {
+        "typ": "produktsida",
+        "url": "https://carashell.com/products/takskyddet?country=US",
+        "lang": "en",
+        "rader": 105,
+        "svenska": [],
+        "produktlankar": [
+          "https://carashell.com/products/takskyddet",
+          "https://carashell.com/products/termoskyddet",
+          "https://carashell.com/products/takskyddet",
+          "https://carashell.com/products/termoskyddet",
+          "https://carashell.com/products/takskyddet",
+          "https://carashell.com/products/takskyddet",
+          "https://carashell.com/products/takskyddet",
+          "https://carashell.com/products/termoskyddet"
+        ],
+        "variant": "58872837374284",
+        "fel": null
+      }
+    ],
+    "kassa": {
+      "url": "https://carashell.com/checkouts/cn/hWNHJtXmNUV3VDbYVWg0i5XG/en-us?_r=AQABFAdieaDHzAN9VUBt8G7DGsa7SOCDV22mmGItUy1Y&auto_redirect=false&country=US&edge_redirect=true&skip_shop_pay=true",
+      "lang": "en-US",
+      "land": "US",
+      "svenska": [],
+      "fel": null
+    },
+    "fel": null
+  },
+  "jobb": {
+    "brand": "CaraShell",
+    "butik": "carashell",
+    "datum": "2026-09-27",
+    "lage": "oversatt",
+    "marknad": "US",
+    "kanal": "annons-uppladdning",
+    "gjort": [],
+    "varningar": [],
+    "action_axel": [],
+    "problem": false
+  }
+}

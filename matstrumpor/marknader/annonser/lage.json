@@ -1,0 +1,414 @@
+{
+ "_om": "Skrivet av annonser/bygg.mjs efter tillbakaläsning ur kontot.",
+ "skrivet": "2026-09-29T03:25:24.559Z",
+ "kampanjer": [
+  {
+   "kod": "NO",
+   "kampanj": {
+    "id": "120251749551520023",
+    "name": "MATSTRUMP_NO_SALES",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "daily_budget": "100000"
+   },
+   "adset": {
+    "id": "120251749551860023",
+    "namn": "MATSTRUMP_NO_ugc"
+   },
+   "annonser": [
+    {
+     "id": "120251766982410023",
+     "name": "MATSTRUMP_NO_sushi_jul_ugc_003_v1",
+     "status": "PAUSED",
+     "effective_status": "PAUSED"
+    },
+    {
+     "id": "120251766972450023",
+     "name": "MATSTRUMP_NO_sushi_gift_ugc_002_v1",
+     "status": "PAUSED",
+     "effective_status": "PAUSED"
+    },
+    {
+     "id": "120251766960870023",
+     "name": "MATSTRUMP_NO_sushi_gift_ugc_001_v1",
+     "status": "PAUSED",
+     "effective_status": "PAUSED"
+    }
+   ]
+  },
+  {
+   "kod": "DK",
+   "kampanj": {
+    "id": "120251749599180023",
+    "name": "MATSTRUMP_DK_SALES",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "daily_budget": "100000"
+   },
+   "adset": {
+    "id": "120251749600560023",
+    "namn": "MATSTRUMP_DK_ugc"
+   },
+   "annonser": [
+    {
+     "id": "120251767925650023",
+     "name": "MATSTRUMP_DK_sushi_jul_ugc_003_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251767922010023",
+     "name": "MATSTRUMP_DK_sushi_gift_ugc_002_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251767917830023",
+     "name": "MATSTRUMP_DK_sushi_gift_ugc_001_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    }
+   ]
+  },
+  {
+   "kod": "FI",
+   "kampanj": {
+    "id": "120251749604200023",
+    "name": "MATSTRUMP_FI_SALES",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "daily_budget": "100000"
+   },
+   "adset": {
+    "id": "120251749605630023",
+    "namn": "MATSTRUMP_FI_ugc"
+   },
+   "annonser": [
+    {
+     "id": "120251767836390023",
+     "name": "MATSTRUMP_FI_sushi_jul_ugc_003_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251767833370023",
+     "name": "MATSTRUMP_FI_sushi_gift_ugc_002_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251767830080023",
+     "name": "MATSTRUMP_FI_sushi_gift_ugc_001_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    }
+   ]
+  },
+  {
+   "kod": "US",
+   "kampanj": {
+    "id": "120251749609010023",
+    "name": "MATSTRUMP_US_SALES",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "daily_budget": "100000"
+   },
+   "adset": {
+    "id": "120251749610210023",
+    "namn": "MATSTRUMP_US_ugc"
+   },
+   "annonser": [
+    {
+     "id": "120251773138150023",
+     "name": "MATSTRUMP_US_sushi_jul_ugc_003_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251773135140023",
+     "name": "MATSTRUMP_US_sushi_gift_ugc_002_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251773130030023",
+     "name": "MATSTRUMP_US_sushi_gift_ugc_001_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    }
+   ]
+  },
+  {
+   "kod": "WW",
+   "kampanj": {
+    "id": "120251749612350023",
+    "name": "MATSTRUMP_WW_SALES",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "daily_budget": "100000"
+   },
+   "adset": {
+    "id": "120251749614670023",
+    "namn": "MATSTRUMP_WW_ugc"
+   },
+   "annonser": [
+    {
+     "id": "120251773126030023",
+     "name": "MATSTRUMP_WW_sushi_jul_ugc_003_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251773120110023",
+     "name": "MATSTRUMP_WW_sushi_gift_ugc_001_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251773122350023",
+     "name": "MATSTRUMP_WW_sushi_gift_ugc_002_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    }
+   ]
+  },
+  {
+   "kod": "DE",
+   "kampanj": {
+    "id": "120251750242530023",
+    "name": "MATSTRUMP_DE_SALES",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "daily_budget": "100000"
+   },
+   "adset": {
+    "id": "120251750243010023",
+    "namn": "MATSTRUMP_DE_ugc"
+   },
+   "annonser": [
+    {
+     "id": "120251767714620023",
+     "name": "MATSTRUMP_DE_sushi_jul_ugc_003_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251767709150023",
+     "name": "MATSTRUMP_DE_sushi_gift_ugc_002_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251767700350023",
+     "name": "MATSTRUMP_DE_sushi_gift_ugc_001_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    }
+   ]
+  },
+  {
+   "kod": "FR",
+   "kampanj": {
+    "id": "120251750244370023",
+    "name": "MATSTRUMP_FR_SALES",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "daily_budget": "100000"
+   },
+   "adset": {
+    "id": "120251750244800023",
+    "namn": "MATSTRUMP_FR_ugc"
+   },
+   "annonser": [
+    {
+     "id": "120251767752770023",
+     "name": "MATSTRUMP_FR_sushi_jul_ugc_003_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251767749360023",
+     "name": "MATSTRUMP_FR_sushi_gift_ugc_002_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251767746410023",
+     "name": "MATSTRUMP_FR_sushi_gift_ugc_001_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    }
+   ]
+  },
+  {
+   "kod": "NL",
+   "kampanj": {
+    "id": "120251750246440023",
+    "name": "MATSTRUMP_NL_SALES",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "daily_budget": "100000"
+   },
+   "adset": {
+    "id": "120251750247190023",
+    "namn": "MATSTRUMP_NL_ugc"
+   },
+   "annonser": [
+    {
+     "id": "120251767094320023",
+     "name": "MATSTRUMP_NL_sushi_jul_ugc_003_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251767088900023",
+     "name": "MATSTRUMP_NL_sushi_gift_ugc_002_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251767086320023",
+     "name": "MATSTRUMP_NL_sushi_gift_ugc_001_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    }
+   ]
+  },
+  {
+   "kod": "ES",
+   "kampanj": {
+    "id": "120251750248310023",
+    "name": "MATSTRUMP_ES_SALES",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "daily_budget": "100000"
+   },
+   "adset": {
+    "id": "120251750249260023",
+    "namn": "MATSTRUMP_ES_ugc"
+   },
+   "annonser": [
+    {
+     "id": "120251773393680023",
+     "name": "MATSTRUMP_ES_sushi_gift_ugc_001_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251773397880023",
+     "name": "MATSTRUMP_ES_sushi_jul_ugc_003_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251773395390023",
+     "name": "MATSTRUMP_ES_sushi_gift_ugc_002_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    }
+   ]
+  },
+  {
+   "kod": "IT",
+   "kampanj": {
+    "id": "120251750250830023",
+    "name": "MATSTRUMP_IT_SALES",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "daily_budget": "100000"
+   },
+   "adset": {
+    "id": "120251750251380023",
+    "namn": "MATSTRUMP_IT_ugc"
+   },
+   "annonser": [
+    {
+     "id": "120251773115760023",
+     "name": "MATSTRUMP_IT_sushi_jul_ugc_003_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251773110070023",
+     "name": "MATSTRUMP_IT_sushi_gift_ugc_002_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251773106790023",
+     "name": "MATSTRUMP_IT_sushi_gift_ugc_001_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    }
+   ]
+  },
+  {
+   "kod": "PL",
+   "kampanj": {
+    "id": "120251750321130023",
+    "name": "MATSTRUMP_PL_SALES",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "daily_budget": "100000"
+   },
+   "adset": {
+    "id": "120251750322480023",
+    "namn": "MATSTRUMP_PL_ugc"
+   },
+   "annonser": [
+    {
+     "id": "120251767868150023",
+     "name": "MATSTRUMP_PL_sushi_jul_ugc_003_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251767864530023",
+     "name": "MATSTRUMP_PL_sushi_gift_ugc_002_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251767862200023",
+     "name": "MATSTRUMP_PL_sushi_gift_ugc_001_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    }
+   ]
+  },
+  {
+   "kod": "PT",
+   "kampanj": {
+    "id": "120251750324340023",
+    "name": "MATSTRUMP_PT_SALES",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "daily_budget": "100000"
+   },
+   "adset": {
+    "id": "120251750325430023",
+    "namn": "MATSTRUMP_PT_ugc"
+   },
+   "annonser": [
+    {
+     "id": "120251767996050023",
+     "name": "MATSTRUMP_PT_sushi_gift_ugc_001_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251768008570023",
+     "name": "MATSTRUMP_PT_sushi_jul_ugc_003_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    },
+    {
+     "id": "120251768003540023",
+     "name": "MATSTRUMP_PT_sushi_gift_ugc_002_v1",
+     "status": "PAUSED",
+     "effective_status": "IN_PROCESS"
+    }
+   ]
+  }
+ ]
+}

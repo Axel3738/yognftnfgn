@@ -29,7 +29,7 @@
       "products": [
         {
           "id": "b1d4717b-d737-46ad-a9c2-be85081a15ac",
-          "button": "Se produkten"
+          "button": "Se sotarsetet"
         }
       ],
       "dynamicProductsCount": null,
@@ -72,29 +72,6 @@
     {
       "type": "list",
       "text": "Borstar loss sotet med nylonstrån i stället för att skrapa."
-    },
-    {
-      "type": "products",
-      "selectionMode": "manual",
-      "products": [
-        {
-          "id": "b1d4717b-d737-46ad-a9c2-be85081a15ac",
-          "button": "Se sotarsetet"
-        }
-      ],
-      "dynamicProductsCount": null,
-      "dynamicCriteria": null,
-      "productVisibilitySettings": {
-        "isImageVisible": true,
-        "isTitleVisible": true,
-        "isPriceVisible": true,
-        "isButtonVisible": true,
-        "isDescriptionVisible": false,
-        "isOriginalPriceVisible": true
-      },
-      "buttonText": null,
-      "alignment": "center",
-      "productsPerRow": 1
     },
     {
       "type": "regular",

@@ -1,0 +1,24 @@
+{
+  "hub_id": "3e2270ab-908c-8171-bbae-fff6adedbe5a",
+  "hub_titel": "Chimney sweep set creative hub",
+  "slug": "chimney-sweep-set-creative-hub-3e2270ab",
+  "rond": "2026-09-26",
+  "idag": "2026-09-28",
+  "antal": 6,
+  "rena": 0,
+  "anm": 6,
+  "fel": 0,
+  "feedback_rad": {
+    "skapad": true,
+    "page_id": "3e9270ab-908c-8157-ad4f-f0304fd6e994",
+    "url": "https://app.notion.com/p/Brief-review-2026-09-26-3e9270ab908c8157ad4ff0304fd6e994",
+    "titel": "Brief review 2026-09-26",
+    "block": 20
+  },
+  "feedback_fil": null,
+  "kommentarer": [],
+  "varningar": [
+    "no product folder in the repo (products.json / register.json) — dna.md and feedback.md do not apply; the Feedback row in the hub is the memory"
+  ],
+  "torr": false
+}

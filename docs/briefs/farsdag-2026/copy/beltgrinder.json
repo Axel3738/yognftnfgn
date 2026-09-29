@@ -1,0 +1,193 @@
+{
+  "hook_H1": {
+    "rad": "Fars dag-present: bälteslipmaskinen som fixar pappans slöa knivar.",
+    "engelska": "Father's Day gift: the belt sander that fixes dad's dull knives.",
+    "alternativ": [
+      "Fars dag-present: slipbandet mot pappans slöa knivar.",
+      "Fars dag-present för pappan med slöa köksknivar."
+    ]
+  },
+  "hook_H2": {
+    "rad": "Fars dag-present: en bälteslipmaskin med slip, polering och buffert.",
+    "engelska": "Father's Day gift: one belt sander with sharpening, polishing and buffing.",
+    "alternativ": [
+      "Fars dag-present: bälteslipmaskinen med tre funktioner i en.",
+      "Fars dag-present: en maskin för slip, polering och buffert."
+    ]
+  },
+  "rader": [
+    {
+      "nr": 2,
+      "rad": "Slipbandet gör jobbet: 7 hastigheter, 15° vinkel, jämn egg.",
+      "engelska": "The belt does the work: 7 speeds, 15-degree angle, an even edge."
+    },
+    {
+      "nr": 3,
+      "rad": "Tre maskiner i en. Slip, polering och buffert.",
+      "engelska": "Three machines in one. Sharpening, polishing, buffing."
+    },
+    {
+      "nr": 4,
+      "rad": "909 kr, ord. 1 182 kr. Beställ senast 19 oktober.",
+      "engelska": "909 kr, was 1,182 kr. Order by October 19."
+    }
+  ],
+  "text_pa_skarm": {
+    "1_H1": "Fars dag-present: bälteslipmaskinen mot slöa knivar",
+    "1_H2": "Fars dag-present: slip, polering, buffert",
+    "2": "7 hastigheter, 15° vinkel, jämn egg.",
+    "3": "Slip, polering, buffert. Tre i en.",
+    "4": "909 kr. Beställ senast 19 oktober."
+  },
+  "bild": {
+    "rubrik": "Fars dag-present för pappans slöa knivar",
+    "underrad": "Bälteslipmaskin med 7 hastigheter och 15 graders slipvinkel. Tre maskiner i en.",
+    "marke": "Fars dag-rea",
+    "prisband": "909 kr, ord. 1 182 kr",
+    "sista_raden": "Beställ senast 19 oktober",
+    "engelska": {
+      "rubrik": "Father's Day gift for dad's dull knives",
+      "underrad": "Belt sander with 7 speeds and a 15-degree angle. Three machines in one."
+    }
+  },
+  "copy_card": {
+    "primar": "Fars dag-present: bälteslipmaskinen som fixar pappans slöa knivar. Den har slip, polering och buffert i samma maskin, med 15 graders slipvinkel för jämn egg varje gång. Fars dag-rea: 909 kr, ord. 1 182 kr. Beställ senast 19 oktober.",
+    "rubrik": "Fars dag-present för pappans knivar",
+    "beskrivning": "Fars dag-rea: 909 kr, ord. 1 182 kr"
+  },
+  "tretest": [
+    {
+      "rad": "Fars dag-present: bälteslipmaskinen som fixar pappans slöa knivar.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Namnger mekanismen (bälteslipmaskin) och matchar bilden under (kniv mot slipbandet). En sten- eller manuell konkurrent kan inte äkta signera den."
+    },
+    {
+      "rad": "Fars dag-present: slipbandet mot pappans slöa knivar.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Alternativ H1, samma mekanism-koppling."
+    },
+    {
+      "rad": "Fars dag-present för pappan med slöa köksknivar.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Alternativ H1, snävare på pappans egna köksknivar."
+    },
+    {
+      "rad": "Fars dag-present: en bälteslipmaskin med slip, polering och buffert.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Matchar bilden (händer håller maskinen). De tre exakta funktionerna är produktens, inte en generisk 3-i-1-formulering."
+    },
+    {
+      "rad": "Fars dag-present: bälteslipmaskinen med tre funktioner i en.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Alternativ H2."
+    },
+    {
+      "rad": "Fars dag-present: en maskin för slip, polering och buffert.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Alternativ H2."
+    },
+    {
+      "rad": "Slipbandet gör jobbet: 7 hastigheter, 15° vinkel, jämn egg.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Tre exakta produktpåståenden (slipbandet gör jobbet, 7 hastigheter, 15° vinkel, jämn egg), ingen motsägelse om vem som styr vinkeln. Peka, inte prata."
+    },
+    {
+      "rad": "Tre maskiner i en. Slip, polering och buffert.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Nästan ordagrant ur produktsidan, matchar bilden där maskinens tre delar syns."
+    },
+    {
+      "rad": "909 kr, ord. 1 182 kr. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Exakt pris och deadline, kan inte signeras av någon annan."
+    },
+    {
+      "rad": "Fars dag-present: bälteslipmaskinen mot slöa knivar",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Skärmtext H1, kortad."
+    },
+    {
+      "rad": "Fars dag-present: slip, polering, buffert",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Skärmtext H2, kortad."
+    },
+    {
+      "rad": "7 hastigheter, 15° vinkel, jämn egg.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Skärmtext rad 2, kortad."
+    },
+    {
+      "rad": "Slip, polering, buffert. Tre i en.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Skärmtext rad 3, kortad."
+    },
+    {
+      "rad": "909 kr. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Skärmtext rad 4, kortad."
+    },
+    {
+      "rad": "Fars dag-present för pappans slöa knivar",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Bildannonsens rubrik."
+    },
+    {
+      "rad": "Bälteslipmaskin med 7 hastigheter och 15 graders slipvinkel. Tre maskiner i en.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Bildannonsens underrad, ren produktfakta."
+    },
+    {
+      "rad": "Fars dag-present för pappans knivar",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Copy card-rubrik."
+    },
+    {
+      "rad": "Fars dag-rea: 909 kr, ord. 1 182 kr",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Copy card-beskrivning, exakt pris."
+    },
+    {
+      "rad": "Fars dag-present: bälteslipmaskinen som fixar pappans slöa knivar. Den har slip, polering och buffert i samma maskin, med 15 graders slipvinkel för jämn egg varje gång. Fars dag-rea: 909 kr, ord. 1 182 kr. Beställ senast 19 oktober.",
+      "visualisera": true,
+      "falsifiera": true,
+      "konkurrent_kan_signera": false,
+      "kommentar": "Copy card-primär i sin helhet: fyra meningar, inte en enda annonsrad. Öppnar med hooken (konkret, visualiserbar), mitten är ren produktfakta (sourcad, falsifierbar men listande snarare än ett enda bildlikt ögonblick), sista meningen är exakt pris och datum. Ärligt: helheten är längre och mer uppräknande än en skarp enradare, men varje delpåstående går att peka på i faktafilen, och det exakta priset/datumet gör att ingen konkurrent kan signera den."
+    }
+  ]
+}

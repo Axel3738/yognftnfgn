@@ -208,7 +208,14 @@ export async function kor({ manad = null, utanNat = false, rot = ROT, env = proc
   const utan = utfall.personer.filter((p) => p.summa <= 0);
   if (utan.length) logg(`  ${utan.length} personer utan bonus den här perioden.`);
   if (utfall.otilldelat.length) logg(`  ⚠️ ${utfall.otilldelat.length} träffar kunde inte kopplas till en person — se utfallet.`);
-  logg(`  Summa: ${utfall.summa} ${utfall.valuta}`);
+  // Tre utbetalningar, tre takter (Axel 2026-09-28) — aldrig i en summa.
+  const h = utfall.halvmanader;
+  for (const u of Object.values(utfall.utbetalningar ?? {})) {
+    logg(u.takt === 'halvmanad'
+      ? `  ${u.namn}: 1–15 ${u.forsta} ${utfall.valuta} (betalas ${h?.forsta.betalas ?? 'den 15:e'}) · 16–slut ${u.andra} ${utfall.valuta} (betalas ${h?.andra.betalas ?? 'sista dagen'})`
+      : `  ${u.namn}: ${u.summa} ${utfall.valuta} (${u.takt === 'manad' ? 'per månad' : u.takt})`);
+  }
+  logg(`  Allt ihop: ${utfall.summa} ${utfall.valuta}`);
 
   return utfall;
 }

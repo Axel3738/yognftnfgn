@@ -1,0 +1,119 @@
+{
+  "id": "k24-batkopare-nasta-steg",
+  "namn": "MAIL_20261002_Batmotorskydd_S_2_kopare-bat_solution_motorholje-till-batmotorskydd_v1",
+  "memo": "Det enda belagda återköpsparet i butiken: Marin Motorhölje till Båtmotorskydd, 12 av 21 återköpare, median 28 dagar (klaviyo/evolve/ATERKOP-ANALYS.md). F07 gör det i flödet 21 dagar efter köpet; det här mejlet tar alla som köpt motorhölje tidigare än så. Hypotes: \"motorhöljet täcker huven, det här täcker hela riggen\" konverterar bättre än ett allmänt båtmejl.",
+  "taggar": {
+    "typ": "I",
+    "kalla": "egen-data",
+    "kalla_ref": "klaviyo/evolve/ATERKOP-ANALYS.md:121 + products/motorholjet/dna.md",
+    "lardom": null,
+    "avatar": "båtägaren som köpte motorhöljet i somras",
+    "begar": "att motorn står torr hela vintern utan att han behöver tänka på den",
+    "awareness": "solution",
+    "urgency": "sasong",
+    "confidence": "high",
+    "prefix": "Batmotorskydd",
+    "kod": "S"
+  },
+  "amnesrader": [
+    {
+      "text": "Ett vinterskydd som täcker hela motorn",
+      "begar": "att motorn står torr och skyddad hela vintern"
+    },
+    {
+      "text": "Från kåpan till riggen, under samma skydd",
+      "begar": "veta exakt vad skyddet täcker, inte bara toppen"
+    },
+    {
+      "text": "En täckt motor lockar ingen tjuv",
+      "begar": "att en uppställd båt inte drar till sig tjuvar"
+    }
+  ],
+  "forhandstext": "420D Oxford-tyg, draget hela vägen ner över riggen.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Ett vinterskydd som täcker hela motorn",
+      "text": "Hej {{fornamn}},\n\nDu har handlat båtprylar hos oss, och snart står båten på land för vintern.",
+      "bild": "produkt:batmotorskydd-420d-heltackande-for-utombordare",
+      "knapp": {
+        "text": "Se vinterskyddet",
+        "lank": "produkt:batmotorskydd-420d-heltackande-for-utombordare"
+      }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Motorhöljet skyddar mot sol, regn och salt.\n\nBåtmotorskyddet går längre: det dras över hela motorn, från kåpan och ner över riggen, och spänns fast med en rem runt mitten."
+    },
+    {
+      "typ": "produkt",
+      "handle": "batmotorskydd-420d-heltackande-for-utombordare",
+      "text": "420D Oxford-tyg mot regn, snö och UV, en hel vinter ute. Ingen ser vilken motor som står under.",
+      "knapp": "Se båtmotorskyddet"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Mer för båten",
+      "handles": [
+        "motorlas-i-rostfritt-stal-laser-utombordarens-fastskruvar",
+        "marin-fortojningslina-elastisk-uv-talig",
+        "spolklamma-for-batmotor-testvattenklamma"
+      ]
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    {
+      "rad": "Ett vinterskydd som täcker hela motorn",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Från kåpan till riggen, under samma skydd",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "En täckt motor lockar ingen tjuv",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "420D Oxford-tyg, draget hela vägen ner över riggen.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Se vinterskyddet",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Se båtmotorskyddet",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Mer för båten",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    }
+  ],
+  "planerad": "2026-10-02T18:00:00+02:00",
+  "segment": [
+    "Köpare båt"
+  ],
+  "exkludera": [],
+  "status_plan": "klar",
+  "kraver_axel": null
+}

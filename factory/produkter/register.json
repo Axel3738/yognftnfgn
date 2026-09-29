@@ -219,10 +219,17 @@
       "redigerare": "Eric J",
       "redigerare_discord_id": "1534158659691483356",
       "notion": {
-        "name": "Fish rod holder",
-        "database_id": "3c3270ab-908c-80f8-824d-eed3c4aa94e1",
+        "name": "",
+        "database_id": "",
         "foralder_page_id": "",
-        "url": ""
+        "url": "",
+        "overford": {
+          "till": "baverbutiken",
+          "database_id": "3c3270ab-908c-80f8-824d-eed3c4aa94e1",
+          "name": "Fish rod holder",
+          "datum": "2026-09-29",
+          "orsak": "Axels beslut 2026-09-28/29: \"JA MÄRK OM TACKLEBAY SKITEN till bäverbutiken\" + \"Det där får du göra\". TackleBay är nedlagd (rutinerna av sedan 2026-09-15); hubben levereras av Bäverbutikens redigerare och annonserna går i MagiBorsten-kampanjen Fiskespöhållaren. Utan id här undantas hubben inte längre av tools/lib/ops-hubbar.mjs."
+        }
       },
       "kordag_offset": 0,
       "senaste_korning": "2026-09-15",
@@ -308,7 +315,7 @@
         "url": ""
       },
       "kordag_offset": 0,
-      "senaste_korning": "2026-09-26",
+      "senaste_korning": "2026-09-29",
       "senaste_brief": "2026-09-16",
       "cycle_start": "2026-09-14",
       "launches": [
@@ -355,6 +362,10 @@
         {
           "date": "2026-09-26",
           "count": 3
+        },
+        {
+          "date": "2026-09-28",
+          "count": 5
         }
       ],
       "anteckning": "Upptäckt automatiskt ur state-filen.",

@@ -1,0 +1,138 @@
+{
+  "id": "k23-rea-bastsaljarna",
+  "emailTitle": "Sätesöverdraget och fem till, 15 % extra",
+  "emailDescription": "BASTSALJARE15 ger 15 % extra på de sex mest sålda till söndag.",
+  "amnesrader": [
+    "Sätesöverdraget och fem till, 15 % extra",
+    "15 % extra på fiskespöhållaren och fler",
+    "Koden BASTSALJARE15 är här"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Extra rabatt på bästsäljarna. Kod: BASTSALJARE15",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hej {{ contact.first_name | default: 'där' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "De sex vi säljer mest av får 15 % extra rabatt till och med söndag 4 oktober. Koden läggs på automatiskt när du klickar dig vidare, eller så skriver du in BASTSALJARE15 själv i kassan.",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Hämta BASTSALJARE15",
+      "url": "https://baverbutiken.se/discount/BASTSALJARE15?redirect=%2Fcollections%2Fbestsaljare",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "Koden BASTSALJARE15 ger 15 % extra på priset som redan står på produktsidan, till och med söndag 4 oktober. Den gäller sätesöverdraget, axelbältet, strandtofflorna, motorhöljet, väggfästet och fiskespöhållaren, en gång per kund. Klicka på knappen ovan så läggs den på av sig själv, eller skriv in koden i kassan.",
+      "alignment": "left"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "3d9c25f8-0d98-4ec2-a6cf-a9256153dcae",
+          "button": "Se produkten"
+        },
+        {
+          "id": "670d3945-df09-45c3-b964-32787803d365",
+          "button": "Se produkten"
+        },
+        {
+          "id": "c83b3823-91aa-4fba-9e80-a37e87ccf981",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "d01d20c5-a2cf-40fa-894d-3149ff871b81",
+          "button": "Se produkten"
+        },
+        {
+          "id": "30c452ab-c3b4-41c4-8c40-53aa1072d7e4",
+          "button": "Se produkten"
+        },
+        {
+          "id": "d0832750-b091-43b4-9d92-e2889d5b5a0a",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

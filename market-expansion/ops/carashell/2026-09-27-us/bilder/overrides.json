@@ -1,0 +1,31 @@
+{
+ "_kalla": "Rutor mätta 2026-09-27 ur SE-bilderna (oversatt-bild.py --analys + matrader.py). Båda 1080×1350. Storlekarna KALIBRERADE mot de svenska radernas uppmätta bläckbredd i Liberation Sans (kalibrera.py): rubrik 77, underrad 40, pris 32, knapp 41 i BÅDA; etiketten 28 i OB_108 och 24 i OB_110 — samma mall, olika pill, så storleken mäts per bild. ⚠️ Pillets och knappens rutor ligger i formens MITTBAND, aldrig över de rundade hörnen: suddningen fyller avvikande pixlar med rutans median, så en ruta som tar med hörnen målar fotot och fyrkantar pillret. ⚠️ Pillet är SMALARE än den svenska texten plus renderarens 6 %-marginal (OB_108: 500 px pill mot 471 px bläck), så den engelska raden måste hålla sig under maxbredden — den mättes före körning, inte efter.",
+ "CaraShellRoof_OB_108_1": {
+  "box_for_form": {
+   "0": [{ "box": [32, 58, 1048, 400], "post": 0, "rader": 3, "storlek": 77, "fet": true,
+           "radavstand": 1.56, "utvidga": 6, "troskel": 25, "farg": [19, 18, 16] }],
+   "1": [{ "box": [40, 438, 1040, 562], "post": 0, "rader": 2, "storlek": 40,
+           "radavstand": 1.65, "utvidga": 6, "troskel": 25, "farg": [19, 18, 16] }],
+   "2": [{ "box": [564, 962, 1054, 1016], "post": 0, "rader": 1, "storlek": 28, "fet": true,
+           "farg": [255, 255, 255] }],
+   "3": [{ "box": [40, 1074, 1040, 1145], "post": 0, "rader": 1, "storlek": 32,
+           "utvidga": 6, "troskel": 25, "farg": [20, 18, 16] }],
+   "4": [{ "box": [274, 1230, 806, 1290], "post": 0, "rader": 1, "storlek": 41, "fet": true,
+           "farg": [255, 255, 255] }]
+  }
+ },
+ "CaraShellRoof_OB_110_1": {
+  "box_for_form": {
+   "0": [{ "box": [30, 58, 1050, 400], "post": 0, "rader": 3, "storlek": 77, "fet": true,
+           "radavstand": 1.56, "utvidga": 6, "troskel": 25, "farg": [18, 17, 15] }],
+   "1": [{ "box": [40, 438, 1040, 562], "post": 0, "rader": 2, "storlek": 40,
+           "radavstand": 1.65, "utvidga": 6, "troskel": 25, "farg": [19, 18, 16] }],
+   "2": [{ "box": [58, 780, 530, 824], "post": 0, "rader": 1, "storlek": 24, "fet": true,
+           "farg": [255, 255, 255] }],
+   "3": [{ "box": [40, 1074, 1040, 1145], "post": 0, "rader": 1, "storlek": 32,
+           "utvidga": 6, "troskel": 25, "farg": [19, 18, 17] }],
+   "4": [{ "box": [274, 1230, 806, 1290], "post": 0, "rader": 1, "storlek": 41, "fet": true,
+           "farg": [255, 255, 255] }]
+  }
+ }
+}

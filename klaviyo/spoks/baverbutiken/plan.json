@@ -632,6 +632,141 @@
         "SEG_engagerade_90d"
       ],
       "mejl": "k22-nyarskoll"
+    },
+    {
+      "id": "k23-rea-bastsaljarna",
+      "namn": "MAIL_20260930_Rea_CS_1_tier1_promo_bastsaljare-15-procent_v1",
+      "planerad": "2026-09-30T18:00:00+02:00",
+      "segment": [
+        "Warmup tier 1"
+      ],
+      "mejl": "k23-rea-bastsaljarna"
+    },
+    {
+      "id": "k24-batkopare-nasta-steg",
+      "namn": "MAIL_20261002_Batmotorskydd_S_2_kopare-bat_solution_motorholje-till-batmotorskydd_v1",
+      "planerad": "2026-10-02T18:00:00+02:00",
+      "segment": [
+        "Köpare båt"
+      ],
+      "mejl": "k24-batkopare-nasta-steg"
+    },
+    {
+      "id": "k25-tradgard-frosten",
+      "namn": "MAIL_20261003_Kranskydd_S_1_kopare-tradgard_problem_utekranen-fryser-frost15_v1",
+      "planerad": "2026-10-03T18:00:00+02:00",
+      "segment": [
+        "Köpare trädgård & tomt"
+      ],
+      "mejl": "k25-tradgard-frosten"
+    },
+    {
+      "id": "k26-fars-dag-listan",
+      "namn": "MAIL_20261004_Farsdag_GT_4_tier1_solution_tva-veckor-kvar-tre-pappor_v1",
+      "planerad": "2026-10-04T18:00:00+02:00",
+      "segment": [
+        "Warmup tier 1"
+      ],
+      "mejl": "k26-fars-dag-listan"
+    },
+    {
+      "id": "k27-husvagn-resten",
+      "namn": "MAIL_20261005_Husbil_S_1_kopare-husvagn_solution_resten-av-bilen_v1",
+      "planerad": "2026-10-05T18:00:00+02:00",
+      "segment": [
+        "Köpare husvagn & husbil"
+      ],
+      "mejl": "k27-husvagn-resten"
+    },
+    {
+      "id": "k28-fars-dag-verkstad",
+      "namn": "MAIL_20261007_Balteslip_GT_5_tier1_product_kniven-som-legat-slo_v1",
+      "planerad": "2026-10-07T18:00:00+02:00",
+      "segment": [
+        "Warmup tier 1"
+      ],
+      "mejl": "k28-fars-dag-verkstad"
+    },
+    {
+      "id": "k29-rea-presenterna",
+      "namn": "MAIL_20261009_Rea_CS_2_tier1_promo_presenter-pappa15_v1",
+      "planerad": "2026-10-09T18:00:00+02:00",
+      "segment": [
+        "Warmup tier 1"
+      ],
+      "mejl": "k29-rea-presenterna"
+    },
+    {
+      "id": "k30-fars-dag-ved",
+      "namn": "MAIL_20261010_Tandvedsklyv_GT_6_kopare-tradgard_product_vinterns-ved_v1",
+      "planerad": "2026-10-10T18:00:00+02:00",
+      "segment": [
+        "Köpare trädgård & tomt"
+      ],
+      "mejl": "k30-fars-dag-ved"
+    },
+    {
+      "id": "k31-fars-dag-fiske",
+      "namn": "MAIL_20261011_Rodholder_GT_7_tier1_product_fyra-spon-pa-vaggen_v1",
+      "planerad": "2026-10-11T18:00:00+02:00",
+      "segment": [
+        "Warmup tier 1"
+      ],
+      "mejl": "k31-fars-dag-fiske"
+    },
+    {
+      "id": "k32-fars-dag-prylar",
+      "namn": "MAIL_20261012_Fagelmatare_GT_8_kopare-verkstad_product_faglarna-i-mobilen_v1",
+      "planerad": "2026-10-12T18:00:00+02:00",
+      "segment": [
+        "Köpare verkstad & garage"
+      ],
+      "mejl": "k32-fars-dag-prylar"
+    },
+    {
+      "id": "k33-fars-dag-fryser",
+      "namn": "MAIL_20261014_Varmesits_GT_9_tier2_problem_pappan-som-fryser_v1",
+      "planerad": "2026-10-14T18:00:00+02:00",
+      "segment": [
+        "Warmup tier 2"
+      ],
+      "mejl": "k33-fars-dag-fryser"
+    },
+    {
+      "id": "k34-fars-dag-bat",
+      "namn": "MAIL_20261017_Motorlas_GT_10_kopare-bat_product_motorn-han-laser-fast_v1",
+      "planerad": "2026-10-17T18:00:00+02:00",
+      "segment": [
+        "Köpare båt"
+      ],
+      "mejl": "k34-fars-dag-bat"
+    },
+    {
+      "id": "k35-fars-dag-i-morgon",
+      "namn": "MAIL_20261018_Farsdag_GT_11_tier2_promo_i-morgon-sista-dagen_v1",
+      "planerad": "2026-10-18T18:00:00+02:00",
+      "segment": [
+        "Warmup tier 2"
+      ],
+      "mejl": "k35-fars-dag-i-morgon"
+    },
+    {
+      "id": "k36-fars-dag-i-dag",
+      "namn": "MAIL_20261019_Farsdag_GT_12_tier2_promo_sista-dagen-i-dag_v1",
+      "planerad": "2026-10-19T18:00:00+02:00",
+      "segment": [
+        "Warmup tier 2"
+      ],
+      "mejl": "k36-fars-dag-i-dag"
+    },
+    {
+      "id": "k37-mc-hojen-stalls-undan",
+      "namn": "MAIL_20261021_MCkapell_S_1_kopare-mc_solution_hojen-stalls-undan_v1",
+      "planerad": "2026-10-21T18:00:00+02:00",
+      "segment": [
+        "Köpare MC & fordon"
+      ],
+      "mejl": "k37-mc-hojen-stalls-undan"
     }
   ]
 }

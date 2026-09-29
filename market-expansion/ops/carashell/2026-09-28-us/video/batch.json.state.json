@@ -1,0 +1,177 @@
+{
+ "carashell_SP_104_H3": {
+  "assetUrl": "https://resource2.heygen.ai/video/09c0808eb8d4460485057c129d076890/original.mp4",
+  "proofreadId": "1c989408c22d4022b83a41016f26c9ef-en-en-US",
+  "sprak": "English (United States)",
+  "marknad": "US",
+  "output_language": "English (United States)",
+  "sprakkoll": {
+   "HeyGens översättning": {
+    "ok": true,
+    "gissat": "en",
+    "ord": 77,
+    "skal": null
+   },
+   "den rättade SRT:n": {
+    "ok": true,
+    "gissat": "en",
+    "ord": 65,
+    "skal": null
+   }
+  },
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "dcde29ca575f4da192e18b6e2ba91337-en",
+  "downloaded": true
+ },
+ "carashell_SP_104_H4": {
+  "assetUrl": "https://resource2.heygen.ai/video/e7f62382e15140f18510ddc1aab3d612/original.mp4",
+  "proofreadId": "a30437cfde554266871f76758d9a7754-en-en-US",
+  "sprak": "English (United States)",
+  "marknad": "US",
+  "output_language": "English (United States)",
+  "sprakkoll": {
+   "HeyGens översättning": {
+    "ok": true,
+    "gissat": "en",
+    "ord": 52,
+    "skal": null
+   },
+   "den rättade SRT:n": {
+    "ok": true,
+    "gissat": "en",
+    "ord": 43,
+    "skal": null
+   }
+  },
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "2260adac46934557b81dcc8b3a9136ef-en",
+  "downloaded": true
+ },
+ "carashell_CS_109_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/3a6236b8f1514cea80a44b22c0f32706/original.mp4",
+  "proofreadId": "cc81ef6fdcae4b4eadb66bfb50350f1b-en-en-US",
+  "sprak": "English (United States)",
+  "marknad": "US",
+  "output_language": "English (United States)",
+  "sprakkoll": {
+   "HeyGens översättning": {
+    "ok": true,
+    "gissat": "en",
+    "ord": 47,
+    "skal": null
+   },
+   "den rättade SRT:n": {
+    "ok": true,
+    "gissat": "en",
+    "ord": 41,
+    "skal": null
+   }
+  },
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "660ad26bdcbe426ebb991a5572df7536-en",
+  "downloaded": true
+ },
+ "carashell_PD_110_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/b0de812f8f224e868ff5d65971ed5720/original.mp4",
+  "proofreadId": "843f63b6001347718950ccce3e2ddd0e-en-en-US",
+  "sprak": "English (United States)",
+  "marknad": "US",
+  "output_language": "English (United States)",
+  "sprakkoll": {
+   "HeyGens översättning": {
+    "ok": true,
+    "gissat": "en",
+    "ord": 57,
+    "skal": null
+   },
+   "den rättade SRT:n": {
+    "ok": true,
+    "gissat": "en",
+    "ord": 43,
+    "skal": null
+   }
+  },
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "bd2bd517e9bb4d118d05313da2f41205-en",
+  "downloaded": true
+ },
+ "carashell_CO_105_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/1de8ba4bfc7945819d8482c5ed1866e7/original.mp4",
+  "proofreadId": "24dcc092fa9043ce9c1f07450ca1eaa2-en-en-US",
+  "sprak": "English (United States)",
+  "marknad": "US",
+  "output_language": "English (United States)",
+  "sprakkoll": {
+   "HeyGens översättning": {
+    "ok": true,
+    "gissat": "en",
+    "ord": 44,
+    "skal": null
+   },
+   "den rättade SRT:n": {
+    "ok": true,
+    "gissat": "en",
+    "ord": 32,
+    "skal": null
+   }
+  },
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "af8f5a12f7e04c91af8f2e1516acd9b0-en",
+  "downloaded": true
+ },
+ "carashell_OB_103_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/13ddfacd93fd4613afdf1df223a4a7db/original.mp4",
+  "proofreadId": "8272b07afc9c4470b23965bfd18091b0-en-en-US",
+  "sprak": "English (United States)",
+  "marknad": "US",
+  "output_language": "English (United States)",
+  "sprakkoll": {
+   "HeyGens översättning": {
+    "ok": true,
+    "gissat": "en",
+    "ord": 60,
+    "skal": null
+   },
+   "den rättade SRT:n": {
+    "ok": true,
+    "gissat": "en",
+    "ord": 48,
+    "skal": null
+   }
+  },
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "85747fbf1db5466490eab8656e4794d0-en",
+  "downloaded": true
+ },
+ "carashell_OB_104_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/dfda213730dd478cb02224f596b26dcf/original.mp4",
+  "proofreadId": "82bf09b8b64e4075b54f294a209f4978-en-en-US",
+  "sprak": "English (United States)",
+  "marknad": "US",
+  "output_language": "English (United States)",
+  "sprakkoll": {
+   "HeyGens översättning": {
+    "ok": true,
+    "gissat": "en",
+    "ord": 53,
+    "skal": null
+   },
+   "den rättade SRT:n": {
+    "ok": true,
+    "gissat": "en",
+    "ord": 39,
+    "skal": null
+   }
+  },
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "d9467f8cbb694ac09726a0a318b0e989-en",
+  "downloaded": true
+ }
+}

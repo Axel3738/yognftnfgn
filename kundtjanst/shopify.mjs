@@ -81,6 +81,16 @@ export function normaliseraTvist(d, ordrar = []) {
     valuta: d.currency ?? null,
     initierad: d.initiated_at ? new Date(d.initiated_at) : null,
     evidensSenast: d.evidence_due_by ? String(d.evidence_due_by).slice(0, 10) : null,
+    // ⚠️ Deadline är en TIDPUNKT, inte ett datum. Mätt 2026-09-28 på #5053:
+    // `evidence_due_by` var `2026-09-28T01:00:00+02:00` — alltså klockan ett på
+    // natten, inte "någon gång under måndagen". Larmet skrev "due 2026-09-28 —
+    // 1 day left" på söndagsmorgonen, vilket läser som ett helt dygn kvar när
+    // det i själva verket var 19 timmar. Datumsträngen ovan finns kvar för allt
+    // som redan läser den; den här bär hela tidpunkten så timmarna går att räkna.
+    evidensSenastTid: d.evidence_due_by ? String(d.evidence_due_by) : null,
+    // Det enda fältet som säger om VÅRT bevis faktiskt gick in. `under_review`
+    // säger det inte: Shopify skickar själv det den har när tiden går ut.
+    bevisSkickat: d.evidence_sent_on ? String(d.evidence_sent_on) : null,
   };
 }
 

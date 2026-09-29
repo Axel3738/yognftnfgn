@@ -68,6 +68,20 @@
           "status": "nytt"
         },
         {
+          "namn": "Akutlarmet",
+          "vad": "Varje timme: det som bara Axel kan påverka — butiker nere, annonskonton avstängda, pengar som brinner, pixeln död, backend, rutiner som står still, döda nycklar, chargeback-graden, misslyckade utbetalningar — postat en gång i Slack #urgent (privat). Läser bara.",
+          "var": "akut/",
+          "kommando": "/akut",
+          "status": "nytt"
+        },
+        {
+          "namn": "Annonsvakten",
+          "vad": "Varje timme: alla annonskonton — nedstängt konto, tappad åtkomst, död token, avvisade annonser, adsets och kampanjer med fel, annons som drar iväg med spend utan köp → larm i Discord #ad-alerts, Axel pingas bara på 🔴. Läser, ändrar aldrig något i Meta.",
+          "var": "annonsvakt/",
+          "kommando": "/annonsvakt",
+          "status": "nytt"
+        },
+        {
           "namn": "Bildannonser",
           "vad": "Genererar bildannonser ur briefen varje kväll och lägger dem i granskningskön.",
           "var": "bildannonser/",
@@ -132,7 +146,7 @@
         },
         {
           "namn": "Bonusprogrammen",
-          "vad": "Nytt 2026-09-21: alla roller kan tjäna extra — recensioner, tvister, tom inkorg, produkter som skalar.",
+          "vad": "Nytt 2026-09-21: alla roller kan tjäna extra — recensioner, tvister, tom inkorg, färdiga produkter. Sedan 2026-09-28 visas pengarna som de betalas ut: produkttest varannan vecka (den 15:e och sista dagen), bonusen en gång i månaden, commission för sig.",
           "var": "bonus/",
           "kommando": "node bonus/kor.mjs",
           "status": "nytt"
@@ -350,6 +364,12 @@
       "kommando": "/kommentarer"
     },
     {
+      "tid": "varje timme :28",
+      "namn": "Akutlarmet",
+      "vad": "Det som bara Axel kan påverka, en gång per händelse — Slack #urgent (privat).",
+      "kommando": "/akut"
+    },
+    {
       "tid": "06:00",
       "namn": "Commission",
       "vad": "Räknar redigerarnas andel av spenden. Var tredje dag och månadens sista dag.",
@@ -420,6 +440,12 @@
       "namn": "Paketspårningen (5 butiker)",
       "vad": "Skanningar in i Shopify och spårningssidan byggs om.",
       "kommando": "/sparning"
+    },
+    {
+      "tid": "Varje timme (:44)",
+      "namn": "Annonsvakten",
+      "vad": "Alla annonskonton: nedstängt, avvisat, fel, annons som drar iväg med spend → Discord #ad-alerts, Axel pingas på 🔴.",
+      "kommando": "/annonsvakt"
     }
   ],
   "rutiner_kommentar": "Tiderna är svensk tid. Rutinerna körs som Routines på claude.ai och ligger på två olika konton — se rutintabellen i CLAUDE.md för trigger-id och vilket konto som äger vilken."
