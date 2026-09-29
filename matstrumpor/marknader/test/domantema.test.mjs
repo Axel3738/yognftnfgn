@@ -7,6 +7,7 @@ import { join, dirname } from 'node:path';
 import {
   MARK, LOGGA_FIL, PRESENTKORT_SV, PRESENTKORT_HANDLE, patchaLayout, patchaLayoutV1, patchaLayoutV2, patchaLayoutV3, patchaLayoutV4, patchaFiLocale, FI_FEL, FI_RATT, patchaMetaTags, patchaHeader, patchaFooter, patchaMsHead,
   patchaProduktMall, omdomenJson, bytNamn, SEKTION_OMDOMEN, SNIPPET_BADGE, FAQ_EPOST, FAQ_KONTAKT,
+  patchaProduktMoms, patchaKorgMoms, MOMS_MARK, PRODUKT_MOMS_VILLKOR, PATCHAR,
 } from '../domantema.mjs';
 
 const ROT = dirname(dirname(fileURLToPath(import.meta.url)));
@@ -222,4 +223,94 @@ test('finska locale-filen: namnfältet får sin egen etikett, idempotent', () =>
   assert.ok(r.kod.includes('"email_label_optional_for_no_js_behavior": "Vastaanottajan sähköpostiosoite (valinnainen)"'), 'e-postfältet orört');
   assert.doesNotThrow(() => JSON.parse(r.kod));
   assert.deepEqual(patchaFiLocale(r.kod).byten, []);
+});
+
+// De exakta blocken ur MAIN-temat 2026-09-29 (sections/main-product.liquid och snippets/cart-drawer.liquid).
+const PRODUKT_MOMS_BLOCK = `                {%- endif -%}
+                {%- if cart.taxes_included or cart.duties_included or shop.shipping_policy.body != blank -%}
+                  <div class="product__tax caption rte">
+                    {%- if cart.duties_included and cart.taxes_included -%}
+                      {{ 'products.product.duties_and_taxes_included' | t }}
+                    {%- elsif cart.taxes_included -%}
+                      {{ 'products.product.taxes_included' | t }}
+                    {%- elsif cart.duties_included -%}
+                      {{ 'products.product.duties_included' | t }}
+                    {%- endif -%}
+                    {%- if shop.shipping_policy.body != blank -%}
+                      {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+                <div {{ block.shopify_attributes }}>
+{% schema %}
+{ "name": "t:sections.main-product.name" }
+{% endschema %}
+`;
+const KORG_MOMS_BLOCK = `          <div class="totals" role="status">
+            <h2 class="totals__total">{{ 'sections.cart.estimated_total' | t }}</h2>
+            <p class="totals__total-value">{{ cart.total_price | money_with_currency }}</p>
+          </div>
+
+          <small class="tax-note caption-large rte">
+            {%- if cart.duties_included and cart.taxes_included -%}
+              {%- if shop.shipping_policy.body == blank -%}
+                {{ 'sections.cart.duties_and_taxes_included_shipping_at_checkout_without_policy' | t }}
+              {%- else -%}
+                {{
+                  'sections.cart.duties_and_taxes_included_shipping_at_checkout_with_policy_html'
+                  | t: link: shop.shipping_policy.url
+                }}
+              {%- endif -%}
+            {%- elsif cart.duties_included == false and cart.taxes_included -%}
+              {%- if shop.shipping_policy.body == blank -%}
+                {{ 'sections.cart.taxes_included_shipping_at_checkout_without_policy' | t }}
+              {%- else -%}
+                {{
+                  'sections.cart.taxes_included_shipping_at_checkout_with_policy_html'
+                  | t: link: shop.shipping_policy.url
+                }}
+              {%- endif -%}
+            {%- elsif cart.duties_included == false and cart.taxes_included == false -%}
+              {%- if shop.shipping_policy.body == blank -%}
+                {{ 'sections.cart.taxes_at_checkout_shipping_at_checkout_without_policy' | t }}
+              {%- endif -%}
+            {%- endif -%}
+          </small>
+        </div>
+
+        {% render 'ms-trustpilot-rad', kompakt: true %}
+        <!-- CTAs -->
+`;
+
+test('momsraden: borta under priset på alla språk, fraktpolicyns länk ritas som förut, idempotent', () => {
+  const r = patchaProduktMoms(PRODUKT_MOMS_BLOCK);
+  assert.deepEqual(r.byten, ['momsraden_under_priset']);
+  assert.ok(!/taxes_included|duties_included/.test(r.kod), 'ingen skatte- eller tullnyckel kvar');
+  assert.ok(!r.kod.includes(PRODUKT_MOMS_VILLKOR), 'diven ritas bara när fraktpolicyn finns');
+  assert.ok(r.kod.includes("{%- if shop.shipping_policy.body != blank -%}\n                  <div class=\"product__tax caption rte\">"));
+  assert.ok(r.kod.includes("{{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}"));
+  assert.ok(r.kod.includes(MOMS_MARK));
+  assert.ok(r.kod.endsWith('{% schema %}\n{ "name": "t:sections.main-product.name" }\n{% endschema %}\n'), 'schemat orört');
+  // Liquid-taggarna går jämnt upp (fixturens första rad är ett endif från blocket före).
+  assert.equal((r.kod.match(/\{%- if /g) ?? []).length, (r.kod.match(/\{%- endif -%\}/g) ?? []).length - 1);
+  assert.ok(!/\{%- elsif/.test(r.kod), 'inga lösa elsif kvar');
+  assert.deepEqual(patchaProduktMoms(r.kod).byten, []);
+  assert.throws(() => patchaProduktMoms('<div class="product__tax">Skatter ingår.</div>'), /hittades 0 gånger/);
+});
+
+test('momsraden: korgens rad är tom, elementet och Trustpilot-raden står kvar, idempotent', () => {
+  const r = patchaKorgMoms(KORG_MOMS_BLOCK);
+  assert.deepEqual(r.byten, ['momsraden_i_varukorgen']);
+  assert.ok(!/taxes|duties|shipping_at_checkout/.test(r.kod), 'ingen text om skatt, tull, rabatter eller frakt kvar');
+  assert.ok(r.kod.includes(`          <small class="tax-note caption-large rte">\n            {%- comment -%} ${MOMS_MARK}`));
+  assert.ok(r.kod.includes('{%- endcomment -%}\n          </small>\n        </div>'), 'elementet stängs på samma rad som förut');
+  assert.ok(r.kod.includes("{% render 'ms-trustpilot-rad', kompakt: true %}"), 'den andra sessionens Trustpilot-rad orörd');
+  assert.ok(r.kod.includes("{{ cart.total_price | money_with_currency }}"), 'totalsumman orörd');
+  assert.deepEqual(patchaKorgMoms(r.kod).byten, []);
+  assert.throws(() => patchaKorgMoms('<small class="tax-note">x</small>'), /hittades 0 gånger/);
+});
+
+test('momsraden: alla fem Dawn-filer som ritar raden patchas', () => {
+  for (const f of ['sections/main-product.liquid', 'sections/featured-product.liquid']) assert.equal(PATCHAR[f], patchaProduktMoms, f);
+  for (const f of ['sections/main-cart-footer.liquid', 'snippets/cart-drawer.liquid', 'snippets/quick-order-list.liquid']) assert.equal(PATCHAR[f], patchaKorgMoms, f);
 });
