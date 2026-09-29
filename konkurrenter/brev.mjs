@@ -126,7 +126,27 @@ export function fakturastycke(faktura, sprak, { fristTimmar = 48 } = {}) {
     ];
 }
 
-export function byggBrev(arende, { avsandare, foretag, sprak = null, nu = new Date(), fristTimmar = 48, paminnelseTimmar = 24, paminnelse = false, mottagare = null, faktura = null, anmalanSamtidigt = false } = {}) {
+/**
+ * Meningen om Meta-anmälningarna i brevet. `n` = antalet som anmäls (Axels ja i
+ * granskningsappen), `antal` = antalet byggda; färre än alla ⇒ "7 av de 10".
+ * Tom sträng när inget anmäls. Samma text i appens förhandsvisning och i brevet. Ren.
+ */
+export function metaRad({ n, antal = n, baraAktiva = false, redanAnmalt = false, sprak = 'sv' }) {
+  if (!(n > 0)) return '';
+  const alla = n >= antal;
+  if (sprak === 'sv') {
+    const aktiva = baraAktiva ? 'aktiva ' : '';
+    const verb = redanAnmalt ? (n === 1 ? 'är anmäld' : 'är anmälda') : 'anmäls samtidigt';
+    const vem = alla ? (n === 1 ? `Den ${aktiva}annonsen` : `De ${n} ${aktiva}annonserna`) : `${n} av de ${antal} ${aktiva}annonserna`;
+    return `${vem} ${verb} till Meta (Facebook och Instagram) för upphovsrättsintrång${n > 1 ? ', en anmälan per annons' : ''}.`;
+  }
+  const aktiva = baraAktiva ? 'active ' : '';
+  const verb = redanAnmalt ? (n === 1 ? 'has been reported' : 'have been reported') : (n === 1 ? 'is being reported at the same time' : 'are being reported at the same time');
+  const vem = alla ? (n === 1 ? `The ${aktiva}ad` : `The ${n} ${aktiva}ads`) : `${n} of the ${antal} ${aktiva}ads`;
+  return `${vem} ${verb} to Meta (Facebook and Instagram) for copyright infringement${n > 1 ? ', one report per ad' : ''}.`;
+}
+
+export function byggBrev(arende, { avsandare, foretag, sprak = null, nu = new Date(), fristTimmar = 48, paminnelseTimmar = 24, paminnelse = false, mottagare = null, faktura = null, anmalanSamtidigt = false, anmalanAntal = null } = {}) {
   const s = valjSprak({ lang: arende.deras?.lang, doman: arende.deras?.doman, tvinga: sprak });
   const deras = arende.deras ?? {};
   const doman = deras.doman ?? deras.sidnamn ?? '?';
@@ -151,11 +171,13 @@ export function byggBrev(arende, { avsandare, foretag, sprak = null, nu = new Da
   // Meta-anmälan: går den in samtidigt som brevet (Axels "kör anmälningarna" i samma veva, --med-anmalan) eller
   // har den redan gått in, säger brevet det rakt ut — och hotar inte med den som om den vore villkorad.
   const redanAnmalt = (arende.anmalan?.rapporter ?? []).some((r) => r.inskickad || r.referens);
-  const metaNu = annonsfall && (anmalanSamtidigt || redanAnmalt) && (arende.anmalan?.antal ?? 0) > 0;
-  const nAnm = arende.anmalan?.antal ?? 0;
-  const aktivaSv = arende.anmalan?.baraAktiva ? 'aktiva ' : ''; const aktivaEn = arende.anmalan?.baraAktiva ? 'active ' : '';
-  const metaRadSv = metaNu ? [`De ${nAnm} ${aktivaSv}annonserna ${redanAnmalt ? 'är anmälda' : 'anmäls samtidigt'} till Meta (Facebook och Instagram) för upphovsrättsintrång, en anmälan per annons.`, ''] : [];
-  const metaRadEn = metaNu ? [`The ${nAnm} ${aktivaEn}ads ${redanAnmalt ? 'have been reported' : 'are being reported at the same time'} to Meta (Facebook and Instagram) for copyright infringement, one report per ad.`, ''] : [];
+  // `anmalanAntal`: hur många Axel sagt ja till i granskningsappen (null = alla byggda).
+  const antalByggda = arende.anmalan?.antal ?? 0;
+  const nAnm = anmalanAntal ?? antalByggda;
+  const metaNu = annonsfall && (anmalanSamtidigt || redanAnmalt) && nAnm > 0;
+  const metaArg = { n: nAnm, antal: antalByggda, baraAktiva: Boolean(arende.anmalan?.baraAktiva), redanAnmalt };
+  const metaRadSv = metaNu ? [metaRad({ ...metaArg, sprak: 'sv' }), ''] : [];
+  const metaRadEn = metaNu ? [metaRad({ ...metaArg, sprak: 'en' }), ''] : [];
 
   if (!paminnelse) {
     if (s === 'sv') {

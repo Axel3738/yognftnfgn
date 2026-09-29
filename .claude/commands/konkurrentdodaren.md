@@ -309,11 +309,10 @@ inget: "Inget för dig i dag."
      mätningarna och konfig, inget påhittat) och verifieringssidan
      `arenden/<id>/anmalan/verifiering.html`. Stoppar den (ingen undertecknare,
      ingen länk, ingen bevisbild): skriv orsaken.
-  2. Publicera verifieringssidan som en NY privat artifact (`icon: "shield"`,
-     titel `Anmälningar <id>`) och ge Axel länken + en rad per anmälan
-     (annons, exponeringar, bevisbild ja/nej). **Vänta på hans
-     "kör anmälningarna <id>".** Det är hans enda verifiering — fråga inte
-     igen per anmälan.
+  2. Bygg och publicera **granskningsappen** (nästa punkt, `granska <id>`) på
+     ärendets verifieringslänk — inte längre `verifiering.html`. Axel svarar
+     Ja/Nej per kort där; ett "kör anmälningarna <id>" i chatten gäller
+     fortfarande som ja på alla anmälningar.
   3. **Torrkör formuläret härifrån först** (inget skickas, ingen kod begärs):
      `node konkurrenter/kor.mjs --anmal-skicka <id>` — `anmal-skicka.mjs`
      öppnar Metas upphovsrättsformulär i Chromium (svarar 200 utan inloggning
@@ -342,6 +341,55 @@ inget: "Inget för dig i dag."
      referensnummer, och det som inte gick. Stoppar skriptet ("obligatoriskt
      fält kvar", fält som inte hittas): inget är skickat — säg exakt vad.
 
+- **`granska <id>` — granskningsappen, Axels Ja/Nej per kort** (Axels order
+  2026-09-29: "jag kan swipa mellan anmälningarna, läsa igenom all text och
+  bilderna … och så kan jag bara klicka ja eller nej … mejlet … fakturan kan jag
+  granska här också … och sen så skickas det").
+  1. `node konkurrenter/kor.mjs --granska <id> --forsta` bygger
+     `output/granska/<id>/`: `index.html` (ett kort per anmälan med bevisbilden och
+     exakt det `anmal-skicka.mjs` skriver in i Metas formulär, ett kort för mejlet
+     med fakturan som bild, ett för sms:et), `data/granskning.json` (korten och
+     deras `version`), `data/status.json`, en tom `data/beslut.json` och `bilder/`.
+  2. Publicera på ärendets verifieringslänk (ORVO:
+     https://claude.ai/artifact/MouCtSpLNiTjWbnsizkFms; ett nytt ärende får en ny
+     privat artifact, `icon: "shield"`): `file_path` = index.html, `files` = det
+     `--granska` skriver ut och **`capabilities: {"artifact": {}}`**.
+     `data/beslut.json` följer med BARA första gången — sedan äger sidan filen.
+  3. Axel trycker Ja eller Nej. Sidan sparar svaret i `data/beslut.json`
+     (artifact-kapabilitetens files-form, `ifMatch` = sha256 av filen; mätt
+     2026-09-29: serverns sha är sha256 av råa byten). Det blir en ny version av
+     artifacten, och den **väcker den här sessionen** (bevakningen). **Ett Ja på
+     ett kort ÄR Axels ok för just det kortet** — inget "skicka" i chatten behövs.
+     Svaret gäller bara kortets aktuella `version`; byggs ett kort om väntar det på
+     nytt svar.
+  4. Vid väckning: `Artifact read` med `url` och `paths: ["data/beslut.json"]`
+     (plus `data/granskning.json` om `output/granska/<id>/` saknas i containern),
+     sedan `node konkurrenter/kor.mjs --granska-svar <id> --beslut <sparad fil>
+     [--granskning <sparad fil>]`. Den säger vad som ska göras: anmälningar med ja,
+     mejlet först när varje anmälan har ett svar (med antalet ja), aldrig något som
+     redan är inskickat eller skickat.
+  5. **Mejlet:** `--granska <id> --bara-status --pagar mejl` → publicera status (7) →
+     `--skicka <id> --med-anmalan --anmalan-antal <n>` → `mcp__Gmail__send_message`
+     med `brev.json` (till, ämne, text, fakturans PDF som base64) →
+     `--skickad <id> --meddelande <gmail-id>`. Det går från det kopplade kontot
+     `brev.avsandare.gmail_konto` (axel.odhner@stonebite.org), och appen visar det.
+  6. **Varje anmälan:** `--granska <id> --bara-status --pagar anmalan-<n>` →
+     publicera → `--anmal-skicka <id> --nr <n> --ja` med koden ur Gmail (punkt 4
+     under `anmal <id>` ovan) → kvittot skrivs.
+  7. Efter varje steg: `--granska <id> --bara-status` och publicera BARA
+     `data/status.json` (`file_path` index.html oförändrad + `files:
+     {"data/status.json": …}`). Sidan visar "Inskickad · Metas referens …" eller
+     "Mejlet är skickat". När mejlet gått bär status sms-texten
+     (`arenden/<id>/sms-mall.txt` med fakturan som faktiskt gick ut), och Axel
+     kopierar den i appen. Refuseras publiceringen för att sidan sparat ett nytt
+     svar under tiden: läs `data/beslut.json` igen och kör om från punkt 4.
+  8. **Nej** = skickas inte. En kommentar är Axels ord: rätta det som går utan att
+     röra redan inskickade anmälningar (en lånad ruta: `--klipp <id> --lanat <n>:<X>`
+     + `--anmal` innan något är inskickat), bygg om appen (kortet får ny version)
+     och publicera, eller svara honom i chatten.
+  Händer inget efter hans Ja (sessionen väcktes inte): han skriver "kolla appen" i
+  chatten, och du gör punkt 4–7.
+
 - **`anmald <id> --nr <n> --referens <r>`** → `node konkurrenter/kor.mjs --anmald …`
   (bara när anmälan faktiskt gick in; alla inskickade ⇒ ärendet "anmält
   vidare" när brevet redan gått, annars står anmälan som klar på ärendet).
@@ -364,8 +412,8 @@ sidnamn eller domän i stället för ett bolag, be Axel om `--kopare`.
 - [ ] `kor.mjs --hamta` gav exit 0; Ad Library och bilder står som lästa eller med orsak
 - [ ] `kor.mjs --rapport --discord` gav exit 0 (eller 3/4 står först i svaret), `--foljupp` kördes
 - [ ] Granskningssidan publicerad på samma länk som `konkurrenter/sida.json` (eller länken sparad första gången)
-- [ ] Inget brev skickades av rutinen; Gmail rördes bara på Axels `skicka <id>` (utkast) eller `skicka <id> --direkt` (sänt)
-- [ ] Ingen Meta-anmälan skickades utan Axels "kör anmälningarna <id>" (`--anmal-skicka <id> --ja` bara då; torrt utan `--ja`); varje inskickad anmälan kvitterad (automatiskt eller `--anmald`) med referens
+- [ ] Inget brev skickades av rutinen; Gmail rördes bara på Axels `skicka <id>` (utkast), `skicka <id> --direkt` (sänt) eller hans Ja på mejlkortet i granskningsappen (aktuell version, alla anmälningar besvarade)
+- [ ] Ingen Meta-anmälan skickades utan Axels "kör anmälningarna <id>" eller hans Ja på just det kortet i granskningsappen (`--granska-svar` säger vilka; `--anmal-skicka <id> --nr <n> --ja` bara då); varje inskickad anmälan kvitterad med referens och `data/status.json` publicerad efteråt
 - [ ] Bevisbilderna för videoannonser är byggda ur våra egna klipp (`--klipp` före `--anmal`), aldrig ur miniatyrträffen — och en ruta Axel pekat ut som lånad är utesluten med `--lanat` och kortet ombyggt
 - [ ] Varje annons i brev, faktura och anmälan är BEVISAD med vårt eget material (`bevisStatus`: text, film ur våra klipp eller en bildannons bild) — obevisade står med orsak i ärendet, och inget par bygger på en platt ruta eller en film publicerad efter deras annons
 - [ ] Sessionen har TITTAT på varje par (översiktsark av `output/klipp/<id>/<nr>-<bokstav>-egen/deras.jpg`) — inga av de lånade klippen från förhandsbilderna, och kortets två bilder är samma bild; ett lånat par är utpekat med `--klipp <id> --lanat <anmälan>:<bokstav>` och korten ombyggda

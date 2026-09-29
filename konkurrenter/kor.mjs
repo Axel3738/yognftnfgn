@@ -34,6 +34,11 @@
 //        Med --ja (Axels "kör anmälningarna"): engångskoden ur kodfilen, Submit, kvitto.
 //   node konkurrenter/kor.mjs --anmald <id> --nr <n> --referens <r>
 //        Kvittot för hand när en anmälan skickats på annat sätt.
+//   node konkurrenter/kor.mjs --granska <id> [--forsta] [--bara-status] [--pagar nyckel,…] [--fel nyckel=text] [--notis text]
+//        Axels granskningsapp (ett kort per anmälan + mejlet med fakturan + sms:et,
+//        Ja/Nej som sidan sparar i data/beslut.json) → output/granska/<id>/.
+//   node konkurrenter/kor.mjs --granska-svar <id> --beslut <fil> [--granskning <fil>]
+//        Vad Axels svar betyder: vilka anmälningar som ska in, om mejlet ska gå.
 //   node konkurrenter/kor.mjs --lista
 //   node konkurrenter/kor.mjs --brev <id> [--sprak sv|en] [--paminnelse]
 //   node konkurrenter/kor.mjs --skicka <id> [--ja] [--till adress] [--sprak sv|en] [--utkast] [--paminnelse]
@@ -60,6 +65,7 @@ import { byggFaktura, kontrolleraFaktura, fakturaHtml, fakturaPdf, skrivFakturaH
 import { hamtaCpm, valjCpm, cpmRad } from './cpm.mjs';
 import { byggAnmalningar, kontrolleraAnmalan, anmalanText, annonsLank } from './anmalan.mjs';
 import { bevisbildHtml, bevisbildPng, verifieringHtml } from './bevisbild.mjs';
+import { kortAnmalan, kortMejl, byggGranskning, statusFor, smsText, attGora, sidaHtml } from './granskning.mjs';
 import { tolkaAnnonsinput, byggAnnonsfynd } from './annonsfall.mjs';
 import { hamtaAdLibrary, sidaIdUr } from './adlibrary.mjs';
 import { skickaAnmalan } from './anmal-skicka.mjs';
@@ -585,9 +591,9 @@ function hamtaArende(id) {
   return { arenden, a };
 }
 
-async function brevFor(a, k, { sprak = null, paminnelse = false, mottagare = null, via = null, faktura = null, anmalanSamtidigt = false } = {}) {
+async function brevFor(a, k, { sprak = null, paminnelse = false, mottagare = null, via = null, faktura = null, anmalanSamtidigt = false, anmalanAntal = null, nu = new Date() } = {}) {
   const avs = await avsandareFor(a.verksamhet, k, { via });
-  const brev = byggBrev(a, { avsandare: { brand: a.verksamhet, mail: avs.mail ?? a.brev?.fran ?? '', butikUrl: avs.butikUrl ?? '' }, foretag: k.brev.foretag, sprak, fristTimmar: k.brev.svarsfrist_timmar, paminnelse, mottagare, faktura: faktura ?? a.faktura ?? null, anmalanSamtidigt });
+  const brev = byggBrev(a, { avsandare: { brand: a.verksamhet, mail: avs.mail ?? a.brev?.fran ?? '', butikUrl: avs.butikUrl ?? '' }, foretag: k.brev.foretag, sprak, fristTimmar: k.brev.svarsfrist_timmar, paminnelse, mottagare, faktura: faktura ?? a.faktura ?? null, anmalanSamtidigt, anmalanAntal, nu });
   return { brev, avs };
 }
 
@@ -647,13 +653,16 @@ function fakturaGrundRad(f) {
   return delar.join(' · ');
 }
 
+/** --anmalan-antal 7 → 7 (Axels ja i granskningsappen), annars null = alla byggda anmälningar. */
+const antalFlagga = () => { const v = flagga('anmalan-antal'); const n = Number(v); return v !== null && v !== undefined && Number.isInteger(n) && n >= 0 ? n : null; };
+
 /** --cpm 120 → 120, annars null. */
 const cpmFlagga = () => { const v = flagga('cpm'); const n = Number(String(v ?? '').replace(',', '.')); return v !== null && v !== undefined && Number.isFinite(n) && n > 0 ? n : null; };
 
 async function visaBrev() {
   const k = konfig();
   const { a } = hamtaArende(flagga('brev'));
-  const { brev, avs } = await brevFor(a, k, { sprak: flagga('sprak'), paminnelse: har('paminnelse'), mottagare: flagga('till'), anmalanSamtidigt: har('med-anmalan') });
+  const { brev, avs } = await brevFor(a, k, { sprak: flagga('sprak'), paminnelse: har('paminnelse'), mottagare: flagga('till'), anmalanSamtidigt: har('med-anmalan'), anmalanAntal: antalFlagga() });
   console.log(`Från: ${brev.fran || '(ingen avsändare — ' + (avs.saknas ?? []).join(', ') + ')'}\nTill: ${brev.mottagare ?? '(ingen mottagare hittad — ange --till)'}\nÄmne: ${brev.amne}\n\n${brev.text}`);
   const fel = kontrolleraBrev(brev, { egna: egnaDomaner(k) });
   if (fel.length) console.log(`\n⚠️ Skulle stoppas: ${fel.join('; ')}`);
@@ -687,7 +696,7 @@ async function skicka() {
     faktura = r.faktura;
   }
   // --med-anmalan: Axel har sagt både "skicka" och "kör anmälningarna" — brevet säger då att annonserna anmäls samtidigt.
-  const { brev, avs } = await brevFor(a, k, { sprak: flagga('sprak'), paminnelse, mottagare: flagga('till'), via, faktura: paminnelse ? null : faktura, anmalanSamtidigt: har('med-anmalan') });
+  const { brev, avs } = await brevFor(a, k, { sprak: flagga('sprak'), paminnelse, mottagare: flagga('till'), via, faktura: paminnelse ? null : faktura, anmalanSamtidigt: har('med-anmalan'), anmalanAntal: antalFlagga() });
   const fel = kontrolleraBrev(brev, { egna });
   const bilagor = paminnelse && a.faktura?.fil ? [a.faktura.fil] : [];
   const paket = byggSandpaket(a, brev, { faktura: paminnelse ? null : faktura, via, bilagor });
@@ -711,7 +720,7 @@ async function skicka() {
   }
 
   // Gmail-vägen: paketet ligger klart, statusen rörs inte förrän --skickad.
-  const upp = { ...a, faktura: paminnelse ? a.faktura ?? null : faktura, brev: { ...(a.brev ?? {}), mottagare: brev.mottagare ?? a.brev?.mottagare ?? null, fran: brev.fran, sprak: brev.sprak, amne: brev.amne, paket: { nar: nu, via, fil: `arenden/${a.id}/${namn}.json`, paminnelse, stoppad: fel.length ? fel : null } } };
+  const upp = { ...a, faktura: paminnelse ? a.faktura ?? null : faktura, brev: { ...(a.brev ?? {}), mottagare: brev.mottagare ?? a.brev?.mottagare ?? null, fran: brev.fran, sprak: brev.sprak, amne: brev.amne, paket: { nar: nu, via, fil: `arenden/${a.id}/${namn}.json`, paminnelse, stoppad: fel.length ? fel : null, anmalanAntal: har('med-anmalan') ? (antalFlagga() ?? a.anmalan?.antal ?? null) : null } } };
   sparaArende(upp, ARENDEFIL, { nu }); skrivArendefiler(upp); arenden.set(upp.id, upp);
   await byggSidaFil({ k, arenden });
   if (fel.length) { console.log('Paketet är skrivet men ska inte gå förrän stoppen ovan är lösta.'); process.exitCode = 1; return; }
@@ -1224,12 +1233,108 @@ async function kolla() {
   console.log(rader.join('\n'));
 }
 
+// ------------------------------------------------------------------ granskningsappen
+
+const GRANSKAMAPP = (id) => join(MAPP, 'output', 'granska', id);
+const listaFlagga = (f) => String(flagga(f) ?? '').split(',').map((x) => x.trim()).filter(Boolean);
+const felFlagga = () => { const v = flagga('fel'); const i = v ? v.indexOf('=') : -1; return i > 0 ? { [v.slice(0, i)]: v.slice(i + 1) } : {}; };
+
+/** Fakturan som bild i A4-bredd (samma HTML som PDF:en), till granskningsappen. */
+async function fakturaBild(a, fil) {
+  const kalla = a.faktura?.htmlFil ? join(DATAMAPP, a.faktura.htmlFil) : null;
+  if (!kalla || !existsSync(kalla)) return null;
+  const html = readFileSync(kalla, 'utf8').replace('</head>', '<style>body{padding:18mm 16mm;background:#fff}</style></head>');
+  try { await bevisbildPng(html, fil.replace(/\.jpg$/, '.png'), { jpg: fil, bredd: 794 }); return fil; }
+  catch (e) { logg(`  ⚠️ fakturabilden: ${e.message}`); return null; }
+}
+
+/** Sms-texten när brevet har gått: ärendets sms-mall.txt + fakturan som skickades + antalet anmälningar brevet nämnde. */
+function smsFor(a) {
+  const mall = join(ARENDEMAPP, a.id, 'sms-mall.txt');
+  if (!a.brev?.skickat || !existsSync(mall)) return null;
+  const antal = a.anmalan?.antal ?? 0;
+  return smsText(readFileSync(mall, 'utf8'), { faktura: a.faktura, n: a.brev?.paket?.anmalanAntal ?? antal, antal });
+}
+
+/**
+ * --granska <id> [--forsta] [--bara-status] [--pagar nyckel,…] [--fel nyckel=text] [--notis text]:
+ * Axels granskningsapp → output/granska/<id>/ (index.html, data/*.json, bilder/).
+ * Sessionen publicerar mappen på verifieringslänken med capabilities {artifact: {}}.
+ * `--forsta` skriver också en tom data/beslut.json — BARA vid första publiceringen,
+ * sedan äger sidan den filen (Axels svar). `--bara-status` skriver bara data/status.json.
+ */
+async function granska() {
+  const k = konfig();
+  const { a } = hamtaArende(flagga('granska'));
+  const ut = flagga('ut') ?? GRANSKAMAPP(a.id);
+  mkdirSync(join(ut, 'data'), { recursive: true });
+  const sms = smsFor(a);
+  if (sms) writeFileSync(join(ARENDEMAPP, a.id, 'sms.txt'), `${sms}\n`);
+  skrivJson(join(ut, 'data', 'status.json'), statusFor(a, { pagar: listaFlagga('pagar'), fel: felFlagga(), notis: flagga('notis'), sms }));
+  const filer = { 'data/status.json': join(ut, 'data', 'status.json') };
+  if (har('bara-status')) { console.log(JSON.stringify({ ut, filer }, null, 2)); return; }
+
+  const rapporter = a.anmalan?.rapporter ?? [];
+  if (!rapporter.length) { console.log(`${a.id} har inga byggda anmälningar — kör --anmal ${a.id} först.`); process.exitCode = 1; return; }
+  mkdirSync(join(ut, 'bilder'), { recursive: true });
+  const kort = [];
+  for (const r of rapporter) {
+    const paket = lasJson(join(DATAMAPP, r.fil));
+    if (!paket) { console.log(`anmälan ${r.nr}: ${r.fil} saknas`); process.exitCode = 1; return; }
+    const annons = (a.bevis?.annonser ?? []).find((t) => t.nr === paket.annonsNr) ?? null;
+    const kallbild = join(ARENDEMAPP, a.id, 'anmalan', `bevis-${r.nr}.jpg`);
+    let bild = null;
+    if (existsSync(kallbild)) { bild = `bilder/bevis-${r.nr}.jpg`; copyFileSync(kallbild, join(ut, bild)); filer[bild] = join(ut, bild); }
+    kort.push(kortAnmalan(r, paket, { annons, bild, land: k.anmalan?.land ?? 'Sweden' }));
+  }
+  const { brev } = await brevFor(a, k, { anmalanSamtidigt: true });
+  const gmail = k.brev?.avsandare?.gmail_konto ?? null;
+  const fran = gmail ?? brev.fran;
+  const franNot = gmail && gmail !== brev.fran ? `Det Gmail-konto som är kopplat, så ditt namn syns som avsändare. Brevet ber dem svara till ${brev.fran}.` : null;
+  let fbild = null;
+  if (a.faktura) { const f = await fakturaBild(a, join(ut, 'bilder', 'faktura.jpg')); if (f) { fbild = 'bilder/faktura.jpg'; filer[fbild] = f; } }
+  kort.push(kortMejl({ brev, faktura: a.faktura, fran, franNot, antalByggda: a.anmalan?.antal ?? rapporter.length, baraAktiva: Boolean(a.anmalan?.baraAktiva), bild: fbild }));
+  if (existsSync(join(ARENDEMAPP, a.id, 'sms-mall.txt'))) kort.push({ nyckel: 'sms', typ: 'sms', version: 'sms' });
+  const g = byggGranskning({ a, kort });
+  skrivJson(join(ut, 'data', 'granskning.json'), g);
+  filer['data/granskning.json'] = join(ut, 'data', 'granskning.json');
+  writeFileSync(join(ut, 'index.html'), sidaHtml(g));
+  if (har('forsta')) { skrivJson(join(ut, 'data', 'beslut.json'), { svar: {} }); filer['data/beslut.json'] = join(ut, 'data', 'beslut.json'); }
+  const saknas = kort.filter((x) => x.typ === 'anmalan' && !x.bild).map((x) => x.nr);
+  console.log(JSON.stringify({ ut, sida: join(ut, 'index.html'), filer, versioner: Object.fromEntries(kort.map((x) => [x.nyckel, x.version])), bilderSaknas: saknas }, null, 2));
+  if (saknas.length) console.log(`⚠️ Bevisbilden saknas lokalt för anmälan ${saknas.join(', ')} — publicera utan de bilderna (de som redan är publicerade ligger kvar) eller bygg dem med --anmal.`);
+}
+
+/**
+ * --granska-svar <id> --beslut <fil> [--granskning <fil>]: vad Axels svar i appen
+ * betyder just nu. Sessionen läser data/beslut.json (och vid behov
+ * data/granskning.json) ur artifacten och kör detta. Skriver ingenting.
+ */
+async function granskaSvar() {
+  const { a } = hamtaArende(flagga('granska-svar'));
+  const gFil = flagga('granskning') ?? join(GRANSKAMAPP(a.id), 'data', 'granskning.json');
+  const granskning = lasJson(gFil);
+  if (!granskning) { console.log(`${gFil} saknas — läs data/granskning.json ur artifacten (Artifact read med path) och ange --granskning <fil>.`); process.exitCode = 1; return; }
+  if (granskning.arende !== a.id) { console.log(`${gFil} gäller ${granskning.arende}, inte ${a.id}.`); process.exitCode = 1; return; }
+  const bFil = flagga('beslut');
+  const beslut = bFil ? lasJson(bFil) : null;
+  if (!beslut) { console.log('Ange --beslut <fil>: data/beslut.json ur artifacten.'); process.exitCode = 1; return; }
+  const r = attGora({ granskning, beslut, status: statusFor(a) });
+  const rader = [
+    r.anmalningar.length ? `Skicka in till Meta: anmälan ${r.anmalningar.join(', ')} (en i taget: --anmal-skicka ${a.id} --nr <n> --ja)` : 'Inga nya anmälningar att skicka in.',
+    r.mejl ? `Skicka mejlet: --skicka ${a.id} --med-anmalan --anmalan-antal ${r.mejl.antal} → Gmail → --skickad ${a.id}` : r.mejlVantar ? `Mejlet väntar: ${r.mejlVantar}` : 'Mejlet: inget att göra.',
+    ...r.nej.map((n) => `Nej på ${n.nyckel}${n.not ? `: "${n.not}"` : ' (utan kommentar)'}`),
+    ...(r.gamla.length ? [`Svar på äldre versioner av korten (gäller inte längre): ${r.gamla.join(', ')}`] : []),
+  ];
+  console.log(`${rader.join('\n')}\n${JSON.stringify(r)}`);
+}
+
 async function sidaEnbart() {
   const k = konfig();
   const f = await byggSidaFil({ k, arenden: lasArenden(ARENDEFIL, { logg }) });
   console.log(`Granskningssidan byggd: ${f}`);
 }
 
-const huvud = har('kolla') ? kolla : har('fraser') ? fraser : har('hamta') ? hamta : har('rapport') ? rapport : har('brev') ? visaBrev : har('skickad') ? skickad : har('skicka') ? skicka : har('faktura') ? fakturaEnbart : har('klipp') ? klipp : har('anmal-skicka') ? anmalSkicka : har('anmald') ? anmald : har('anmal') ? anmal : har('avfarda') ? avfarda : har('eskalera') ? eskalera : har('foljupp') ? foljupp : har('lista') ? lista : har('sida') ? sidaEnbart : null;
+const huvud = har('granska-svar') ? granskaSvar : har('granska') ? granska : har('kolla') ? kolla : har('fraser') ? fraser : har('hamta') ? hamta : har('rapport') ? rapport : har('brev') ? visaBrev : har('skickad') ? skickad : har('skicka') ? skicka : har('faktura') ? fakturaEnbart : har('klipp') ? klipp : har('anmal-skicka') ? anmalSkicka : har('anmald') ? anmald : har('anmal') ? anmal : har('avfarda') ? avfarda : har('eskalera') ? eskalera : har('foljupp') ? foljupp : har('lista') ? lista : har('sida') ? sidaEnbart : null;
 if (!huvud) { console.error('Ange --kolla, --fraser, --hamta [--annonser <fil>], --rapport, --lista, --brev <id>, --skicka <id>, --skickad <id>, --faktura <id>, --anmal <id>, --anmald <id> --nr <n> --referens <r>, --avfarda <id>, --eskalera <id>, --foljupp eller --sida.'); process.exit(1); }
 huvud().catch((e) => { console.error(`✗ ${e.message}`); process.exit(e.exit ?? 1); });
