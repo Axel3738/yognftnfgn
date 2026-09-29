@@ -1130,3 +1130,31 @@ laddar EN uppladdare åt gången upp, stannar vid första gränssvaret och logga
 stannade. Anropet för varje steg skrivs ut av `klaviyo/spoks/sprak-steg.mjs`, och varje
 uppladdat mejl jämförs maskinellt med filen av `klaviyo/spoks/sprak-koll.mjs` (Spoks egna
 svar ur sessionsloggarna).
+
+### Läget 2026-09-29 kväll (mätt: get_flow på alla sex, sprak-koll mot sessionsloggarna)
+
+| Flöde (nytt, AVSTÄNGT) | Spoks-id | Steg | Ersätter det svenska (live) |
+|---|---|---|---|
+| F01 Välkomst (Matstrumpor-klubben) · alla språk | `89976b01-a650-4ad5-94a5-0556c490ae03` | 72 (36 mejl) | `4e8a9b59-4192-4bb4-8829-785e6af01f7c` |
+| F02 Övergiven kassa · alla språk | `6b22283c-d686-405b-8b6d-7d0b1f762028` | 72 (36) | `7e1dab93-5aba-4f69-b497-66636df338e2` |
+| F03 Webbhistorik · alla språk | `17aa6927-46a0-405d-b787-cd5e0e2513dc` | 48 (24) | `dafa3c59-7a47-4a9e-a5cc-80eba2716612` |
+| F04 Efter köp · alla språk | `0594aa1b-dfce-4a46-81ef-8bd20989c16c` | 48 (24) | `d9f24905-8dab-43f3-a427-d8478701f315` |
+| F05 Vinna tillbaka · alla språk | `32d23706-635e-4e1e-9c1f-e25d61df7bdf` | 48 (24) | `6728bb3b-fa5d-402b-8a66-f0f6ac360fca` |
+| F07 En låda till (sushi, dag 21) · alla språk | `8c9c1204-99bd-4b0f-a988-4d7af65e4702` | 24 (12) | `615a6e65-9a43-4a29-8af8-afc82ee7cd23` |
+
+`node klaviyo/spoks/sprak-floden-koll.mjs`: alla sex ✅ (samma steg, väntetider och landsfilter
+som planen, en post bakom varje sändsteg, flöde + trigger + alla sändsteg AV). `sprak-koll.mjs`:
+alla 156 flödesmejl och 103 kampanjutkast lika med filerna tecken för tecken (tre avskrivningsfel
+hittades och rättades på vägen: fransk hård blanksteg, ett polskt "pudłka", ett dolt mjukt
+bindestreck i en polsk titel). Språksegmenten `SEG_samtycke_<sprak>` (12 st) id:n i
+`klaviyo/konto/matstrumpor/spoks-sprak-uppladdat.jsonl`; svenska 3 025 medlemmar, de andra 0 vid
+skapandet (annonserna utomlands är pausade).
+
+**Kvar:** kampanjutkast index 103–120 i `uppdrag/kampanjer.json` (K13 de/fr/nl/es/it/pl/pt, K14
+alla elva) — Spoks-connectorn krävde ny inloggning mitt i omgången. Prompten:
+`klaviyo/spoks/PROMPT-matstrumpor-sprak-rest.md`.
+
+**Bytet från de svenska flödena** är Axels klick: i varje nytt flöde slås sändstegen och flödet på,
+sedan stängs det gamla svenska flödets trigger (den stora knappen — de redan inrullade får sina
+svenska mejl klart). Två flöden med samma trigger på samtidigt ger svenska kunder dubbla mejl, så
+byt ett flöde i taget, nytt på och gammalt av i samma minut.
