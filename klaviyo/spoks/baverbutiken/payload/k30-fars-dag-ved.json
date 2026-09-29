@@ -1,16 +1,16 @@
 {
   "id": "k30-fars-dag-ved",
-  "emailTitle": "En present för honom med kamin och vedbod",
-  "emailDescription": "Vedträet står i ringen. Klubban gör resten.",
+  "emailTitle": "Fars dag: tändved utan yxa i handen. 30 % nu",
+  "emailDescription": "Koden FARSDAG30 gäller tändvedsklyven och tre till för vedboden.",
   "amnesrader": [
-    "En present för honom med kamin och vedbod",
-    "Tändveden klar, utan yxa i handen",
-    "Sista dag att beställa är 19 oktober"
+    "Fars dag: tändved utan yxa i handen. 30 % nu",
+    "Sluta köpa tändved i påse. 30 % på tändvedsklyven",
+    "Till honom med kamin och vedbod: klyven i gjutjärn"
   ],
   "blocks": [
     {
       "type": "h1",
-      "text": "En present för honom med kamin och vedbod",
+      "text": "Presenten till honom som köper tändved i påse",
       "alignment": "center"
     },
     {
@@ -20,7 +20,22 @@
     },
     {
       "type": "regular",
-      "text": "Om han redan har kamin och vedbod är tändvedsklyven nästa. Vedträet ställs i ringen, du slår med klubban, kilen gör jobbet.",
+      "text": "Tändved är det pilligaste man kan klyva.",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Träbiten är för liten för att hålla stadigt och yxan studsar på kvistarna, så det slutar med tändved i påse.",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Vedsäsongen börjar, och fars dag är söndag 8 november. Det kommer fortare än man tror.",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Tändvedsklyven är 30 % billigare i fars dag-rean, så påsarna kan stå kvar i affären.",
       "alignment": "center"
     },
     {
@@ -29,7 +44,7 @@
       "products": [
         {
           "id": "3916cdca-0432-4350-8636-5d6c5392b5c3",
-          "button": "Se tändvedsklyven"
+          "button": "Se produkten"
         }
       ],
       "dynamicProductsCount": null,
@@ -48,23 +63,33 @@
     },
     {
       "type": "link",
-      "text": "Se presenten",
-      "url": "https://baverbutiken.se/products/tandvedsklyv-i-gjutjarn-klyv-utan-yxa-i-handen",
+      "text": "Hämta 30 % med FARSDAG30",
+      "url": "https://baverbutiken.se/discount/FARSDAG30?redirect=%2Fproducts%2Ftandvedsklyv-i-gjutjarn-klyv-utan-yxa-i-handen",
       "style": "button"
     },
     {
       "type": "regular",
-      "text": "Ringen håller vedträet upprätt genom hela slaget, och kilen tar det sista steget. Klyven i gjutjärn står stadigt på egen fot, redo på en stubbe eller i vedboden.",
+      "text": "Så funkar den: ställ vedträet i ringen och slå ner det på kilen med en klubba.",
       "alignment": "left"
     },
     {
       "type": "regular",
-      "text": "En vanlig tändvedsbit får plats rakt av, och foten står kvar utan att skruvas fast.",
+      "text": "Ringen tar en normal tändvedsbit, 12,5 cm i innerdiameter, och håller den upprätt hela vägen ner.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Klyven är av gjutjärn rakt igenom och står stadigt på en gjuten fot på 14,5 cm, så det räcker att ställa den på en stubbe.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Har han redan kamin och vedbod är det här nästa steg. Är det du som har dem kan du skicka mejlet vidare som önskelista.",
       "alignment": "left"
     },
     {
       "type": "h2",
-      "text": "Mer för vedboden",
+      "text": "Vedklyvborr, väggmonterad klyv och huv, också 30 %",
       "alignment": "center"
     },
     {
@@ -100,8 +125,14 @@
     },
     {
       "type": "regular",
-      "text": "Beställ senast 19 oktober om paketet ska vara framme till fars dag den 8 november.",
+      "text": "Koden FARSDAG30 ger 30 % på tändvedsklyven, vedklyvborren, den väggmonterade vedklyven och vedklyvshuven till och med måndag 19 oktober. Tryck på knappen så ligger koden redan i kassan, eller skriv in den själv. Rabatten dras i kassan, en gång per kund, på priset som står på produktsidan.",
       "alignment": "left"
+    },
+    {
+      "type": "link",
+      "text": "Köp tändvedsklyven för 30 % mindre",
+      "url": "https://baverbutiken.se/discount/FARSDAG30?redirect=%2Fproducts%2Ftandvedsklyv-i-gjutjarn-klyv-utan-yxa-i-handen",
+      "style": "button"
     },
     {
       "type": "columns",

@@ -1,60 +1,54 @@
 {
   "id": "k31-fars-dag-fiske",
-  "namn": "MAIL_20261011_Rodholder_GT_7_tier1_product_fyra-spon-pa-vaggen_v1",
-  "memo": "Spöhållaren är bästsäljare och raden \"Aldrig mer trassliga fiskespön\" bar 85 köp (products/tacklebay/fiskespohallare-4-pack/dna.md:111-122, får användas ordagrant). Hypotes: den bevisade raden som ämnesrad i ett presentmejl.",
+  "namn": "MAIL_20261011_Rodholder_GT_7_tier1_product_fyra-spon-pa-vaggen_v2",
+  "memo": "Spöhållaren är bästsäljare och raden \"Aldrig mer trassliga fiskespön\" bar 85 köp (products/tacklebay/fiskespohallare-4-pack/dna.md:111-122, får användas ordagrant). Hypotes: den bevisade raden som ämnesrad i ett presentmejl, nu med fars dag-rean (30 % med FARSDAG30 på spöhållaren och tre till, till och med måndag 19 oktober, Axel 2026-09-29) i ämnesraden. Aldrig beställningsdatum eller frakt: mejlet säger att fars dag är söndag 8 november och kommer fortare än man tror, och 19 oktober står bara som reans sista dag i kodstycket.",
   "taggar": {
     "typ": "I",
     "kalla": "winning-line",
     "kalla_ref": "products/tacklebay/fiskespohallare-4-pack/dna.md:111-122",
     "lardom": null,
     "avatar": "den som ger present till pappan som fiskar",
-    "begar": "att spöna hänger på plats i stället för att trassla i garaget",
+    "begar": "att spöna hänger på plats i stället för att trassla i garaget, till 30 % lägre pris",
     "awareness": "product",
-    "urgency": "konsekvens (19 oktober)",
+    "urgency": "pris + slutdag (reans, 19 oktober) + sasong (fars dag 8 november)",
     "confidence": "high",
     "prefix": "Rodholder",
     "kod": "GT"
   },
   "amnesrader": [
     {
-      "text": "Aldrig mer trassliga fiskespön",
-      "begar": "sluta trassla med spön i garaget eller båten"
+      "text": "Aldrig mer trassliga fiskespön. 30 % till fars dag",
+      "begar": "sluta trassla med spön i garaget eller båten, medan hållarna är 30 % billigare"
     },
     {
-      "text": "En present för honom som fiskar",
-      "begar": "hitta en present till pappan som fiskar, utan att gissa"
+      "text": "Fiskeset med låda och midjeväska: färdig present",
+      "begar": "hitta en färdig present till pappan som fiskar, utan att gissa"
     },
     {
-      "text": "Hinn beställa innan 19 oktober",
-      "begar": "hinna beställa i tid till fars dag"
+      "text": "Byt lina på minuter, utan pinne mellan knäna",
+      "begar": "slippa det tråkiga linbytet på rullen"
     }
   ],
-  "forhandstext": "Fyra hållare, varje spö sin egen plats.",
+  "forhandstext": "Koden FARSDAG30 gäller fiskespöhållaren och tre till för fiskaren.",
   "block": [
     {
       "typ": "hero",
       "rubrik": "Aldrig mer trassliga fiskespön",
-      "text": "Hej {{fornamn}},\n\nFyra kraftiga hållare ger varje spö sin egen plats, i båten eller i garaget. Inget mer att reda ut innan ni kommer ut på vattnet.",
+      "text": "Hej {{fornamn}},\n\nFyra spön i garaget blir lätt en enda härva, och linor och beten fastnar i varandra. Med fyra hållare får varje spö sin egen plats.\n\nFars dag är söndag 8 november, och den söndagen kommer ikapp en fortare än man tror. Spöhållaren är 30 % billigare i fars dag-rean.",
       "bild": "produkt:fiskespohallare-4-pack-kraftig-forvaring",
       "knapp": {
-        "text": "Se presenten",
-        "lank": "produkt:fiskespohallare-4-pack-kraftig-forvaring"
+        "text": "Hämta 30 % med FARSDAG30",
+        "lank": "rabatt:FARSDAG30:produkt:fiskespohallare-4-pack-kraftig-forvaring"
       }
     },
     {
       "typ": "text",
       "rubrik": null,
-      "text": "Lösa spön trasslar lätt ihop sig i båten och garaget, och linor och beten fastnar i varandra. Hållarna gör slut på det, för strand, sjö eller båt."
-    },
-    {
-      "typ": "produkt",
-      "handle": "fiskespohallare-4-pack-kraftig-forvaring",
-      "text": "Fyra hållare i ett set, för både proffs och nybörjare.",
-      "knapp": "Se fiskespöhållaren"
+      "text": "Hållarna är kraftigt byggda och håller spöna stadigt, för strand, sjö och båtfiske. De passar både proffs och nybörjare.\n\nÄr det du som fiskar kan du skicka det här mejlet vidare, så vet de vad du vill ha."
     },
     {
       "typ": "produktrad",
-      "rubrik": "Mer för fiskaren",
+      "rubrik": "Mini-spö, fiskeset och linupprullare, också 30 %",
       "handles": [
         "mini-fiskespo-set-teleskopiskt-dubbelsidigt",
         "fiskeset-med-forvaringslada-komplett-fiskeredskapsset",
@@ -64,7 +58,12 @@
     {
       "typ": "text",
       "rubrik": null,
-      "text": "Beställ senast 19 oktober om paketet ska vara framme till fars dag den 8 november."
+      "text": "Koden FARSDAG30 ger 30 % på fiskespöhållaren, mini-fiskespöt, fiskesetet och linupprullaren till och med måndag 19 oktober. Tryck på knappen så ligger koden redan i kassan, eller skriv in den själv. Rabatten dras i kassan, en gång per kund, på priset som står på produktsidan."
+    },
+    {
+      "typ": "knapp",
+      "text": "Köp spöhållaren för 30 % mindre",
+      "lank": "rabatt:FARSDAG30:produkt:fiskespohallare-4-pack-kraftig-forvaring"
     },
     {
       "typ": "fakta"
@@ -72,43 +71,49 @@
   ],
   "tretest": [
     {
+      "rad": "Aldrig mer trassliga fiskespön. 30 % till fars dag",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Fiskeset med låda och midjeväska: färdig present",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Byt lina på minuter, utan pinne mellan knäna",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Koden FARSDAG30 gäller fiskespöhållaren och tre till för fiskaren.",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
       "rad": "Aldrig mer trassliga fiskespön",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true
     },
     {
-      "rad": "En present för honom som fiskar",
+      "rad": "Hämta 30 % med FARSDAG30",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true
     },
     {
-      "rad": "Hinn beställa innan 19 oktober",
+      "rad": "Mini-spö, fiskeset och linupprullare, också 30 %",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true
     },
     {
-      "rad": "Fyra hållare, varje spö sin egen plats.",
-      "visualisera": true,
-      "falsifiera": true,
-      "ingen_annan": true
-    },
-    {
-      "rad": "Se presenten",
-      "visualisera": true,
-      "falsifiera": true,
-      "ingen_annan": true
-    },
-    {
-      "rad": "Se fiskespöhållaren",
-      "visualisera": true,
-      "falsifiera": true,
-      "ingen_annan": true
-    },
-    {
-      "rad": "Mer för fiskaren",
+      "rad": "Köp spöhållaren för 30 % mindre",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true
@@ -120,5 +125,18 @@
   ],
   "exkludera": [],
   "status_plan": "klar",
-  "kraver_axel": null
+  "kraver_axel": null,
+  "rabatt": {
+    "typ": "kod",
+    "kod": "FARSDAG30",
+    "procent": 30,
+    "start": "2026-10-04T06:00:00Z",
+    "slut": "2026-10-19T21:59:59Z",
+    "handles": [
+      "fiskespohallare-4-pack-kraftig-forvaring",
+      "mini-fiskespo-set-teleskopiskt-dubbelsidigt",
+      "fiskeset-med-forvaringslada-komplett-fiskeredskapsset",
+      "linupprullare-aluminium-snabbt-linbyte-pa-rullen"
+    ]
+  }
 }

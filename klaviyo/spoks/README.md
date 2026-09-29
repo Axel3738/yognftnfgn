@@ -129,6 +129,9 @@ köparsegment på fältet, aldrig på händelsen. Och skriv aldrig ett produkt-i
 `klaviyo/spoks/baverbutiken/produkter.json` (alla 248 handles → Spoks-id sedan 2026-09-28) är
 facit; en första förhandsvisning med gissade id:n gav 23 träffar av fel skäl.
 
+⛔ **Tabellen och 15 %-stycket nedan är historik sedan 2026-09-29:** alla utkast är omskrivna
+med 30 % och nya ämnesrader, se **30 %-rean** längre ner.
+
 **Utkast i Spoks (alla 15, uppladdade 2026-09-28 eftermiddag; K33–K37 18:45–18:49 CEST efter Axels "A"):**
 
 | Mejl | Dag | Publik | Ämnesrad | Post-id |
@@ -252,6 +255,114 @@ ha hunnit fram (22 dagar efter köpet, samma gräns som F14):
   (`bonus/README.md` → Trustpilot). Tills dess räknas omdömena på
   https://se.trustpilot.com/review/www.baverbutiken.se, och kampanjen tillskrivs det som
   skrivits efter 2026-09-27 14:01 CEST.
+
+### 30 %-rean 30/9 till 25/10 (Axels dom 2026-09-29, uppladdad samma morgon)
+
+Axels röstmemo på de fem klicken: K23 bästsäljarna var "helt jävla cooked" (ingen anledning
+till rabatten, och produkterna är inte bästsäljare längre, "jag bara har dem som bästsäljare
+på startsidan"). Hellre mindre grupper som träffas hårdare, ett mejl var: tofflorna,
+gräsklippargrejerna, båten, fisket "där vi har fiskekalendern med också", och en kampanj för
+alla kalendrar. Båtmejlet ska säga att det som brukar följa med också är på rea, K24 "fixa
+rea på allt", kranmejlet 30 % med problem och agitation före produkten, och fars dag-mejlet
+utan "sista dagen 19 oktober" ("då tänker folk bara 'what the fuck, vilken lång frakttid'")
+men med riktig brådska: "det är 8 november, och det kommer snabbare än vad man tror … så de
+får en 30 % där också". Strategin, reglerna och varje mejls spec:
+`klaviyo/innehall/baverbutiken/BRIEFER-REA30.md`; schemat: `KALENDER-2026.md`.
+
+**Sessionens beslut:** 30 % överallt (Axel sa 25–30 för gräsklipparen). Gräsklipparen
+säger "säsongen är slut", aldrig "utförsäljning" (vi säljer inte ut sortimentet). K29 blev
+kalendermejlet, så fars dag har elva mejl. FARSDAG30 slutar måndag 19 oktober, den uträknade
+sista beställningsdagen, men datumet står bara som reans sista dag i kodstycket och i
+förhandstexten i de sena mejlen, aldrig som beställnings- eller fraktgräns. Den lägsta
+marginalen efter 30 % är 32 % (BAT30 och FARSDAG30, räknad per variant ur `unitCost`);
+`mc-satesoverdrag-camo-ventilerande-skydd` saknar kostnad i Shopify.
+
+**Koderna** (Shopify, skapade 2026-09-29 före uppladdningen med `node klaviyo/rea-kod.mjs --brand
+baverbutiken --alla --ja`, alla `SCHEDULED`, tillbakalästa på id och sedan på kod: "stämmer";
+30 %, en gång per kund, bara mejlets produkter, kombinerbara bara med fraktrabatt; start 08:00
+och slut 23:59:59 svensk tid):
+
+| Kod | Mejl | Gäller | Produkter | `DiscountCodeNode` |
+|---|---|---|---|---|
+| TOFFLOR30 | K23 | 30/9–4/10 | 4 | `2304714146141` |
+| GRAS30 | K38 | 30/9–4/10 | 11 | `2304714309981` |
+| BAT30 | K02, K24 | 1/10–4/10 | 7 | `2304713916765` |
+| FROST30 | K25 | 3/10–7/10 | 4 | `2304714178909` |
+| FARSDAG30 | K26, K28, K30, K31, K32, K05, K33, K15, K34, K35, K36 | 4/10–19/10 | 30 | `2304714015069` |
+| HUSVAGN30 | K27 | 5/10–8/10 | 4 | `2304714211677` |
+| FISKE30 | K39 | 5/10–8/10 | 7 | `2304714342749` |
+| TERMO30 | K03 | 6/10–9/10 | 1 | `2304713949533` |
+| SOTAR30 | K04 | 8/10–11/10 | 1 | `2304713982301` |
+| KALENDER30 | K29 | 9/10–12/10 | 14 | `2304714244445` |
+| KAMERA30 | K06 | 15/10–18/10 | 1 | `2304714047837` |
+| DAMASK30 | K07 | 20/10–23/10 | 1 | `2304714080605` |
+| MC30 | K37 | 21/10–25/10 | 4 | `2304714277213` |
+| LJUS30 | K08 | 22/10–25/10 | 4 | `2304714113373` |
+
+BASTSALJARE15, FROST15 och PAPPA15 är avaktiverade (`EXPIRED`, `rea-kod.mjs --avaktivera`).
+`--alla` grupperar en kod som bärs av flera mejl till EN rabatt med unionen av produkterna och
+stoppar om procent, start eller slut skiljer (`grupperaPerKod`, testat). ⚠️ `lasKampanj` tar
+första filen med prefixet: radera en ersatt kampanjfil (som `k23-rea-bastsaljarna.json`) innan
+koden skapas, annars byggs den gamla. Adventskalendrar-kollektionen fick highland cow,
+ädelstenarna och husbilskalendern samma dag (14 produkter), så KALENDER30-knappen landar på
+alla fjorton.
+
+**Tre nya köparsegment** (samma form som de åtta, storlek vid skapandet):
+
+| Segment | id | Kontakter |
+|---|---|---|
+| Köpare tofflor & skor | `e79329e4-b0e0-4d1e-b1cc-cfa4060dec88` | 237 |
+| Köpare gräsklippare & trimmer | `0e7af15f-f5cf-4b7d-9395-ee0d37abaf23` | 321 |
+| Köpare fiske | `90b1bc60-237b-4d67-9fc0-880921a542e2` | 390 |
+
+"Köpare fiske" är bara de sju fiskeprodukterna, utan vandrarna i "Köpare fiske & friluft".
+
+**Utkasten i Spoks (25, uppladdade 2026-09-29 06:36–08:22 CEST;** 23 uppdaterade med
+`update_draft_campaign` och hash, K38 och K39 nya med `draft_campaign`; alla `draft`, ingen
+publik, inget datum). Titeln bär dag, publik och ämnesrad; Axel väljer publiken och tiden i
+appen:
+
+| Mejl | Dag 18:00 | Publik | Ämnesrad | Post-id |
+|---|---|---|---|---|
+| K23 | ons 30/9 | Köpare tofflor & skor | Golvet blir kallt. 30 % på tofflorna till söndag | `32ced8c7-e3dc-412f-9e0e-f36c6a03f975` |
+| K38 | ons 30/9 | Köpare gräsklippare & trimmer | Säsongen är slut. 30 % på klippargrejer till söndag | `8850aa7d-f30b-4e88-842e-02290c14cd12` |
+| K02 | tor 1/10 | Warmup tier 1 | Motorn står ute i sex månader | `8e970060-558d-4ec6-bc04-89780ab20b95` |
+| K24 | fre 2/10 | Köpare båt | Ett vinterskydd som täcker hela motorn | `357d53cb-8e2f-43a1-8116-e8f7e72b9df1` |
+| K25 | lör 3/10 | Köpare trädgård & tomt | Isen spränger kranen. 30 % på skyddet till onsdag | `334c5fd5-5f5b-47d0-93aa-475976211195` |
+| K26 | sön 4/10 | Warmup tier 1 | Redan oktober. Fars dag: sex presenter, 30 % nu | `ab2e0398-224c-46c4-b6b1-40778c2a56d2` |
+| K27 | mån 5/10 | Köpare husvagn & husbil | Taket är täckt, resten inte. 30 % på resten | `bfec6cff-0d81-44a8-a2f9-acc2592b6c49` |
+| K39 | mån 5/10 | Köpare fiske | Ett drag om dagen till jul. 30 % på fiskegrejer | `9088238b-2715-4c0a-805d-d63b1dc80842` |
+| K03 | tis 6/10 | Warmup tier 1 | Immig ruta varje morgon. 30 % på termoskyddet | `c2646bdb-c6d4-4474-9ee8-acb0132536e5` |
+| K28 | ons 7/10 | Warmup tier 1 | Slö kniv sedan midsommar? 30 % på bälteslipen | `63bad9d8-0b9e-41fe-893c-7af4dfbaa05c` |
+| K04 | tor 8/10 | Warmup tier 1 | Sämre drag för varje eldning. 30 % på sotarset | `64690af6-fd81-46aa-91eb-e7562705991b` |
+| K29 | fre 9/10 | Warmup tier 1 | Lucka 1 öppnas 1 december. 30 % på kalendrarna | `c7ac660a-4969-4e04-a03f-e7fe6e378909` |
+| K30 | lör 10/10 | Köpare trädgård & tomt | Fars dag: tändved utan yxa i handen. 30 % nu | `7e49c595-6cdc-4740-b9e8-5ba58e0f5dbd` |
+| K31 | sön 11/10 | Warmup tier 1 | Aldrig mer trassliga fiskespön. 30 % till fars dag | `9f0eb81e-6084-4e5e-854e-fe2d340425cc` |
+| K32 | mån 12/10 | Köpare verkstad & garage | Han ser fåglarna innan han reser sig. 30 % nu | `a97045ba-936c-4889-8bdc-c8db87a78656` |
+| K05 | tis 13/10 | Warmup tier 2 | Taket han aldrig kollar. Fars dag-rea: 30 % | `d45975e2-904a-456d-99d9-ca15c5232a00` |
+| K33 | ons 14/10 | Warmup tier 2 | Sitsen är iskall. Fars dag-rean ger 30 % | `c759a3ac-e639-4177-967d-b5e0762f23b1` |
+| K06 | tor 15/10 | Warmup tier 2 | Klockan tre: gren eller människa? 30 % på kameran | `b71f44c6-ff62-4580-9efa-8eb1b61d4841` |
+| K15 | fre 16/10 | Warmup tier 2 | Fars dag-rean: sista helgen. Sex presenter, 30 % | `f3eb1359-dd1c-42c1-a489-b19aa57b625b` |
+| K34 | lör 17/10 | Köpare båt | Motorn låst vid bryggan. Fars dag-rea: 30 % | `de65f9b4-4ded-493d-9aec-1a2b5f38d3b8` |
+| K35 | sön 18/10 | Warmup tier 2 | I morgon slutar fars dag-rean: 30 % | `923a2200-c498-4cb1-a5b4-a34904fcea24` |
+| K36 | mån 19/10 | Warmup tier 2 | I dag är sista dagen på fars dag-rean: 30 % | `d6c2a03b-5ca7-4abc-91cb-420ce077bf15` |
+| K07 | tis 20/10 | Warmup tier 2 | Blöta strumpor? 44 cm skydd, 30 % till fredag | `7b02cb3f-cd47-43ec-a207-06b28599efca` |
+| K37 | ons 21/10 | Köpare MC & fordon | Hojen ställs undan: 30 % på kapellet med MC30 | `93dd1b86-c942-40fd-827c-4bc9b41d366a` |
+| K08 | tor 22/10 | Warmup tier 2 | Söndag: mörkt en timme tidigare. LJUS30 ger 30 % | `6465b615-4c3b-4b6f-9e9a-8647c79331f9` |
+
+Copyn av fem Sonnet-subagenter mot briefen och produktsidorna; huvudsessionen läste alla 25
+som text och rättade fyra saker för sanningens och språkets skull (K33 "kroppen slutar
+producera egen värme" → "utan rörelse blir det mindre värme inifrån" och produktradens
+rubrik "Värme för …" → "Mot kylan i …", eftersom handvärmaren är ett greppöverdrag, inte
+eluppvärmd; K05 "fågelskit" → "fågelspillning"; K07 "slut kardborren" → "fäst kardborren";
+K26:s förhandstext fick "kommer fortare än du tror"). Varje påstående i de nya mejlen
+(K23, K38, K02, K24, K25, K27, K39, K29, K04) kontrollerades mot produktsidan före
+uppladdningen; "det som brukar följa med i samma order" i K02 är köpta-tillsammans-paren i
+kartläggningen 2026-09-24 (60 dagars ordrar). ⚠️ Spoks lägger om ordningen på korten i ett
+produktblock med flera produkter (mätt 2026-09-29: första produkten hamnar sist) — skriv
+aldrig text som pekar på ett korts plats ("den till vänster"). ⚠️ 32 av 248 aktiva
+produktsidor lovar "Vår garanti 30 dagars öppet köp" medan butikens villkor är 14 dagar (mätt 2026-09-29, bl.a. tak-AC-huven och båthuven) — mejlen säger
+14 dagars ångerrätt; sidorna är en egen fråga till Axel.
 
 ### Regler ur de två dagarna (för nästa som ger Axel klick)
 

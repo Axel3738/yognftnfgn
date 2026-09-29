@@ -1,59 +1,70 @@
 {
   "id": "k08-morkret-kommer",
-  "namn": "MAIL_20261022_Solcellslampa_S_1_engagerade60d_problem_morkret-kommer_v1",
-  "memo": "Vintertid söndag 25 okt: det blir mörkt en timme tidigare. Inget produktminne finns, så det är en GISSNING. Hypotes: en konkret händelse med datum gör ett ljusmejl relevant.",
+  "namn": "MAIL_20261022_Solcellslampa_S_1_tier2_problem_morkret-kommer_v2",
+  "memo": "Vintertid söndag 25 oktober: det blir mörkt en timme tidigare. Inget produktminne finns, så det är en GISSNING. Hypotes: en konkret händelse med datum gör ett ljusmejl relevant, och en kod som slutar samma söndag (LJUS30, 30 % på solcellslampan, solcellslarmet, pannlampan och kepslampan) ger köpet en riktig slutdag. Anledningen står före rabatten (Axels krav 2026-09-29): klockan, nyckelhålet, de två sätten att lösa det som kostar mer, och sist lampan. Kepslampan har jämförpris under priset i Shopify, så copyn säger aldrig spara.",
   "taggar": {
     "typ": "S",
     "kalla": "gissning",
     "kalla_ref": null,
+    "lardom": null,
     "avatar": "villaägaren med mörk uppfart eller trädgård",
     "begar": "att se var man går när man kommer hem",
     "awareness": "problem",
-    "urgency": "sasong",
+    "urgency": "sasong + slutdag (25 oktober)",
     "confidence": "low",
     "prefix": "Solcellslampa",
     "kod": "S"
   },
   "amnesrader": [
     {
-      "text": "210 lysdioder, tre huvuden som vrids var för sig",
-      "begar": "flexibilitet, ljuset dit du pekar"
+      "text": "Söndag: mörkt en timme tidigare. LJUS30 ger 30 %",
+      "begar": "slippa famla i mörkret när klockan ställs om"
     },
     {
-      "text": "Söndag blir det mörkt en timme tidigare",
-      "begar": "slippa famla i mörkret när man kommer hem"
+      "text": "Ljuset tänds innan du hittar nyckelhålet. LJUS30",
+      "begar": "att ljuset tänds av sig självt innan man står vid dörren"
     },
     {
-      "text": "Ljuset som tänds innan du hittar nyckelhålet",
-      "begar": "trygghet och bekvämlighet vid hemkomst"
+      "text": "Ingen elektriker, ingen sladd. 30 % på lampan",
+      "begar": "ljus utan elektriker och sladdar"
     }
   ],
-  "forhandstext": "1200 mAh-batteriet laddas själv i solljus.",
+  "forhandstext": "Klockan ställs om. Koden gäller till och med söndag 25 oktober.",
   "block": [
     {
       "typ": "hero",
-      "rubrik": "Tre huvuden vrids var för sig, mot nyckelhålet",
-      "text": "Klockan ställs om på söndag, och det blir mörkt en timme tidigare. En fast monterad lampa hade krävt en elektriker, en sladdlampa fryser fast i snön till våren.",
-      "bild": "produkt:solcellslampa-med-rorelsesensor-tre-huvuden-210-led",
-      "knapp": {
-        "text": "Se lampan",
-        "lank": "produkt:solcellslampa-med-rorelsesensor-tre-huvuden-210-led"
-      }
+      "rubrik": "Söndag blir det mörkt en timme tidigare. Nyckelhålet flyttar inte.",
+      "text": "Hej {{fornamn}},\n\nDu kommer hem när det redan är mörkt, med mobillampan i ena handen, och famlar efter nyckelhålet."
     },
     {
       "typ": "text",
       "rubrik": null,
-      "text": "Solcellslampan monteras på väggen utan en enda kabel. Solcellspanelen laddar det inbyggda 1200 mAh-batteriet under dagen, och rörelsesensorn tänder alla tre huvudena, 210 lysdioder, när du kommer gående.\n\nVarje huvud vrids för sig, så du riktar ljuset mot uppfarten, trappan eller nyckelhålet, inte bara rakt fram."
+      "text": "Du kan låta en elektriker dra nya kablar i väggen. Du kan dra en förlängningssladd, som fryser fast i snön till våren.\n\nEller så sätter du upp en lampa som inte behöver någotdera."
     },
     {
       "typ": "produkt",
       "handle": "solcellslampa-med-rorelsesensor-tre-huvuden-210-led",
-      "text": "Ingen elektriker, ingen sladd. Bara solljus och en rörelsesensor.",
-      "knapp": "Se lampan"
+      "text": "Solcellslampan monteras på väggen utan en enda kabel. Solcellspanelen laddar det inbyggda 1200 mAh-batteriet under dagen, och när rörelsesensorn märker att du närmar dig tänds de tre huvudena med 210 lysdioder.\n\nVarje huvud vrids för sig, så du riktar ljuset mot uppfarten, trappan eller nyckelhålet.",
+      "knapp": "Se lampan med 210 LED"
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Koden LJUS30 ger 30 % på solcellslampan, solcellslarmet, pannlampan och kepslampan till och med söndag 25 oktober. Tryck på knappen så ligger koden redan i kassan, eller skriv in den själv. Rabatten dras i kassan, en gång per kund, på priset som står på produktsidan."
+    },
+    {
+      "typ": "knapp",
+      "text": "Hämta 30 % med LJUS30",
+      "lank": "rabatt:LJUS30:produkt:solcellslampa-med-rorelsesensor-tre-huvuden-210-led"
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Boden och garaget är mörka också. Samma kod gäller där.\n\nSolcellslarmet ger siren och blixtljus när något rör sig. Pannlampan ger 1500 lumen och båda händerna fria. Kepslampan lyser där du tittar."
     },
     {
       "typ": "produktrad",
-      "rubrik": "Mer ljus",
+      "rubrik": null,
       "handles": [
         "solcellslarm-2-pack-siren-och-blixt-vid-rorelse",
         "baverlampa-pro",
@@ -66,49 +77,66 @@
   ],
   "tretest": [
     {
-      "rad": "210 lysdioder, tre huvuden som vrids var för sig (ämnesrad)",
+      "rad": "Söndag: mörkt en timme tidigare. LJUS30 ger 30 % (ämnesrad 1)",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true
     },
     {
-      "rad": "Söndag blir det mörkt en timme tidigare (ämnesrad, annonsens bevisade hook)",
+      "rad": "Ljuset tänds innan du hittar nyckelhålet. LJUS30 (ämnesrad 2)",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true
     },
     {
-      "rad": "Ljuset som tänds innan du hittar nyckelhålet (ämnesrad)",
+      "rad": "Ingen elektriker, ingen sladd. 30 % på lampan (ämnesrad 3)",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true
     },
     {
-      "rad": "1200 mAh-batteriet laddas själv i solljus. (förhandstext)",
+      "rad": "Klockan ställs om. Koden gäller till och med söndag 25 oktober. (förhandstext)",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true
     },
     {
-      "rad": "Tre huvuden vrids var för sig, mot nyckelhålet (rubrik, hero)",
+      "rad": "Söndag blir det mörkt en timme tidigare. Nyckelhålet flyttar inte. (rubrik, hero)",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true
     },
     {
-      "rad": "Se lampan (knapp, hero och produkt)",
+      "rad": "Se lampan med 210 LED (knapp, produkt)",
       "visualisera": true,
       "falsifiera": true,
-      "ingen_annan": false
+      "ingen_annan": true
+    },
+    {
+      "rad": "Hämta 30 % med LJUS30 (knapp, kodknappen)",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
     }
   ],
   "planerad": "2026-10-22T18:00:00+02:00",
   "segment": [
-    "SEG_engagerade_60d"
+    "Warmup tier 2"
   ],
-  "exkludera": [
-    "SEG_oengagerade_180d"
-  ],
-  "status_plan": "utkast-skrivs-om-efter-lardom",
-  "kraver_axel": null
+  "exkludera": [],
+  "status_plan": "klar",
+  "kraver_axel": null,
+  "rabatt": {
+    "typ": "kod",
+    "kod": "LJUS30",
+    "procent": 30,
+    "start": "2026-10-22T06:00:00Z",
+    "slut": "2026-10-25T22:59:59Z",
+    "handles": [
+      "solcellslampa-med-rorelsesensor-tre-huvuden-210-led",
+      "solcellslarm-2-pack-siren-och-blixt-vid-rorelse",
+      "baverlampa-pro",
+      "kepslampa-300-lumen-clip-on-led-pannlampa"
+    ]
+  }
 }

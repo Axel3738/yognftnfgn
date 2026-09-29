@@ -1,0 +1,119 @@
+{
+  "id": "k39-fiske-kalendern",
+  "namn": "MAIL_20261005_Rodholder_S_1_kopare-fiske_solution_ett-drag-om-dagen_v1",
+  "memo": "Skräddarsytt rea-mejl till fiskeköparna. Hypotes: kalendern är nyheten för den som redan har spöhållaren, och 30 % med slutdag gör december-köpet till ett oktober-köp; mätt på köp per mottagare och andelen kalendrar. Axel 2026-09-29: 30 % på fiskegrejer, där vi har fiskekalendern med. FISKE30 gäller till och med torsdag 8 oktober på kalendern och sex fiskegrejer. Spöhållaren är inte hero, eftersom många i gruppen redan har den.",
+  "taggar": {
+    "typ": "S",
+    "kalla": "egen-data",
+    "kalla_ref": "segmentet Köpare fiske 2026-09-29",
+    "lardom": null,
+    "avatar": "den som köpt fiskegrejer av oss",
+    "begar": "nya drag och ordning på grejerna",
+    "awareness": "solution",
+    "urgency": "pris + slutdag (8 oktober)",
+    "confidence": "medium",
+    "prefix": "Rodholder",
+    "kod": "S"
+  },
+  "amnesrader": [
+    {
+      "text": "Ett drag om dagen till jul. 30 % på fiskegrejer",
+      "begar": "ha något nytt att prova varje morgon i december"
+    },
+    {
+      "text": "Byt lina på minuter. 30 % på fiskegrejer",
+      "begar": "slippa den tråkigaste sysslan i fisket, linbytet"
+    },
+    {
+      "text": "Krokar, beten och drag i en låda. 30 % på fisket",
+      "begar": "ordning på krokar, beten och drag i en enda låda"
+    }
+  ],
+  "forhandstext": "Bakom varje lucka sitter ett färdigt drag. Koden FISKE30 gäller till och med torsdag.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "Ett drag om dagen, från 1 december",
+      "text": "Hej {{fornamn}},\n\nBakom varje lucka i fiskekalendern sitter ett färdigt drag: en wobbler ena morgonen, ett skeddrag nästa, ett mjukbete den tredje.",
+      "bild": "produkt:adventskalender-fiskedrag-24-drag-bakom-24-luckor",
+      "knapp": {
+        "text": "Hämta 30 % med FISKE30",
+        "lank": "rabatt:FISKE30:produkt:adventskalender-fiskedrag-24-drag-bakom-24-luckor"
+      }
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Åtta skeddrag, sju wobblers, sex mjukbeten och tre vibrationsdrag, alltså fyra sorters drag och inte 24 av samma. Krokar och sprängringar sitter redan på, så de går att knyta på och fiska med direkt.\n\nDu behöver inte kunna märken eller storlekar. Poängen är att prova något du inte valt själv, och dragen ska ut och provas i vår, inte ligga kvar i en skål."
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Och grejerna då? Har du bytt lina själv känner du igen det: en pinne mellan knäna och en timme av ditt liv. Med en upprullare tar det minuter, utan trassel."
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Ny lina och ordning till våren",
+      "handles": [
+        "linupprullare-aluminium-snabbt-linbyte-pa-rullen",
+        "fiskeset-med-forvaringslada-komplett-fiskeredskapsset",
+        "fiskespohallare-4-pack-kraftig-forvaring"
+      ]
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Till båten och bryggan",
+      "handles": [
+        "fiskespohallare-for-bat-2-pack-i-kraftig-nylon",
+        "mini-fiskespo-set-teleskopiskt-dubbelsidigt",
+        "magnetfiskesats-320lb-neodymmagnet-med-10m-rep"
+      ]
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Koden FISKE30 ger 30 % på fiskekalendern, linupprullaren, fiskesetet, mini-spöet, magnetfiskesatsen och båda spöhållarna till och med torsdag 8 oktober. Tryck på knappen så ligger koden redan i kassan, eller skriv in den själv. Rabatten dras i kassan, en gång per kund, på priset som står på produktsidan."
+    },
+    {
+      "typ": "knapp",
+      "text": "Hämta 30 % med FISKE30",
+      "lank": "rabatt:FISKE30:produkt:adventskalender-fiskedrag-24-drag-bakom-24-luckor"
+    },
+    {
+      "typ": "fakta"
+    }
+  ],
+  "tretest": [
+    { "rad": "Ett drag om dagen till jul. 30 % på fiskegrejer", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Byt lina på minuter. 30 % på fiskegrejer", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Krokar, beten och drag i en låda. 30 % på fisket", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Bakom varje lucka sitter ett färdigt drag. Koden FISKE30 gäller till och med torsdag.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Ett drag om dagen, från 1 december", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Hämta 30 % med FISKE30", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Ny lina och ordning till våren", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Till båten och bryggan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-10-05T18:00:00+02:00",
+  "segment": [
+    "Köpare fiske"
+  ],
+  "exkludera": [],
+  "status_plan": "klar",
+  "kraver_axel": null,
+  "rabatt": {
+    "typ": "kod",
+    "kod": "FISKE30",
+    "procent": 30,
+    "start": "2026-10-05T06:00:00Z",
+    "slut": "2026-10-08T21:59:59Z",
+    "handles": [
+      "adventskalender-fiskedrag-24-drag-bakom-24-luckor",
+      "linupprullare-aluminium-snabbt-linbyte-pa-rullen",
+      "fiskeset-med-forvaringslada-komplett-fiskeredskapsset",
+      "fiskespohallare-4-pack-kraftig-forvaring",
+      "fiskespohallare-for-bat-2-pack-i-kraftig-nylon",
+      "mini-fiskespo-set-teleskopiskt-dubbelsidigt",
+      "magnetfiskesats-320lb-neodymmagnet-med-10m-rep"
+    ]
+  }
+}

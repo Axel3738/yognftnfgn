@@ -1,5 +1,11 @@
 # Briefer: dagliga kampanjer i Spoks, omgång 1 (skrivna 2026-09-28)
 
+> ⚠️ **Rean är omskriven 2026-09-29, läs `BRIEFER-REA30.md` först.** Axels granskning: 30 %
+> med kod i VARJE mejl (även de skräddarsydda köparmejlen, så regeln "ingen rabatt i
+> köparmejlen" nedan gäller inte längre), tofflor (K23) och gräsklippare (K38) i stället för
+> bästsäljarna, fisket (K39), kalendrarna (K29), och fars dag utan beställningsdag. Det som
+> står nedan om K23, K29, 15 % och 19 oktober som beställningsdag är historik.
+
 Axels order 2026-09-28: kampanjer **varje dag**, produkter skräddarsydda för kunderna,
 rea-mejl för den pågående rean (butiken visar "Rea" med ordinarie pris och reapris på
 produkterna) och **minst tio fars dag-kampanjer**. **Tillägg samma kväll (Axel: "du har ju

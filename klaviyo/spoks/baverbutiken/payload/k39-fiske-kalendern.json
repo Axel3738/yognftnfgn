@@ -1,16 +1,16 @@
 {
-  "id": "k26-fars-dag-listan",
-  "emailTitle": "Redan oktober. Fars dag: sex presenter, 30 % nu",
-  "emailDescription": "Fars dag är söndag 8 november och kommer fortare än du tror. FARSDAG30 gäller alla sex.",
+  "id": "k39-fiske-kalendern",
+  "emailTitle": "Ett drag om dagen till jul. 30 % på fiskegrejer",
+  "emailDescription": "Bakom varje lucka sitter ett färdigt drag. Koden FISKE30 gäller till och med torsdag.",
   "amnesrader": [
-    "Redan oktober. Fars dag: sex presenter, 30 % nu",
-    "Skicka listan till den som frågar vad du vill ha",
-    "Båt, verkstad eller kamin? 30 % på presenten"
+    "Ett drag om dagen till jul. 30 % på fiskegrejer",
+    "Byt lina på minuter. 30 % på fiskegrejer",
+    "Krokar, beten och drag i en låda. 30 % på fisket"
   ],
   "blocks": [
     {
       "type": "h1",
-      "text": "Fars dag är söndag 8 november. 30 % på sex presenter",
+      "text": "Ett drag om dagen, från 1 december",
       "alignment": "center"
     },
     {
@@ -20,33 +20,56 @@
     },
     {
       "type": "regular",
-      "text": "Fars dag kommer fortare än man tror. Den som köper presenten i sista stund köper det som fanns kvar.",
+      "text": "Bakom varje lucka i fiskekalendern sitter ett färdigt drag: en wobbler ena morgonen, ett skeddrag nästa, ett mjukbete den tredje.",
       "alignment": "center"
     },
     {
-      "type": "regular",
-      "text": "Fars dag-rean har börjat, och den gäller alla sex.",
-      "alignment": "center"
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "353d688f-de6b-4d74-8b9e-b3c23ac9b9db",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
     },
     {
       "type": "link",
-      "text": "Hämta 30 % med FARSDAG30",
-      "url": "https://baverbutiken.se/discount/FARSDAG30?redirect=%2Fcollections%2Falla-produkter",
+      "text": "Hämta 30 % med FISKE30",
+      "url": "https://baverbutiken.se/discount/FISKE30?redirect=%2Fproducts%2Fadventskalender-fiskedrag-24-drag-bakom-24-luckor",
       "style": "button"
     },
     {
       "type": "regular",
-      "text": "Kanske ska du köpa något till pappan i huset. Kanske är det han som läser, och då är det bara att skicka mejlet vidare som önskelista.",
+      "text": "Åtta skeddrag, sju wobblers, sex mjukbeten och tre vibrationsdrag, alltså fyra sorters drag och inte 24 av samma. Krokar och sprängringar sitter redan på, så de går att knyta på och fiska med direkt.",
       "alignment": "left"
     },
     {
       "type": "regular",
-      "text": "Båda sätten funkar. Presenterna är sorterade efter vad han brukar hålla på med: båt, verkstad eller kamin.",
+      "text": "Du behöver inte kunna märken eller storlekar. Poängen är att prova något du inte valt själv, och dragen ska ut och provas i vår, inte ligga kvar i en skål.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Och grejerna då? Har du bytt lina själv känner du igen det: en pinne mellan knäna och en timme av ditt liv. Med en upprullare tar det minuter, utan trassel.",
       "alignment": "left"
     },
     {
       "type": "h2",
-      "text": "Om han har båt: motorn låst och under tak",
+      "text": "Ny lina och ordning till våren",
       "alignment": "center"
     },
     {
@@ -54,11 +77,15 @@
       "selectionMode": "manual",
       "products": [
         {
-          "id": "039975de-c295-4409-a7aa-78df00cf06c0",
+          "id": "80331aaa-6327-4283-9ad3-1f9e2e7570fa",
           "button": "Se produkten"
         },
         {
-          "id": "6f01ed7d-90e1-45a9-bb43-f0fbbc8c2285",
+          "id": "6860aaa7-3d53-476c-8886-3c689cd7766d",
+          "button": "Se produkten"
+        },
+        {
+          "id": "d0832750-b091-43b4-9d92-e2889d5b5a0a",
           "button": "Se produkten"
         }
       ],
@@ -74,11 +101,11 @@
       },
       "buttonText": null,
       "alignment": "center",
-      "productsPerRow": 2
+      "productsPerRow": 3
     },
     {
       "type": "h2",
-      "text": "Om han har verkstad: jämn egg och 30 delar att tälja med",
+      "text": "Till båten och bryggan",
       "alignment": "center"
     },
     {
@@ -86,11 +113,15 @@
       "selectionMode": "manual",
       "products": [
         {
-          "id": "e5b2eb1f-3eba-4603-a09c-1c9692e4ae66",
+          "id": "32ec9dbb-9297-41ca-8e8b-dd97b9f75947",
           "button": "Se produkten"
         },
         {
-          "id": "9bbccd1d-d249-44c3-92ea-015ef372432c",
+          "id": "4be2e797-74d3-43c3-8232-169ab5d856a3",
+          "button": "Se produkten"
+        },
+        {
+          "id": "92f1c46e-5f2c-43f7-b479-07faca1a7acb",
           "button": "Se produkten"
         }
       ],
@@ -106,49 +137,17 @@
       },
       "buttonText": null,
       "alignment": "center",
-      "productsPerRow": 2
-    },
-    {
-      "type": "h2",
-      "text": "Om han har kamin: rent rör och klyvd tändved",
-      "alignment": "center"
-    },
-    {
-      "type": "products",
-      "selectionMode": "manual",
-      "products": [
-        {
-          "id": "b1d4717b-d737-46ad-a9c2-be85081a15ac",
-          "button": "Se produkten"
-        },
-        {
-          "id": "3916cdca-0432-4350-8636-5d6c5392b5c3",
-          "button": "Se produkten"
-        }
-      ],
-      "dynamicProductsCount": null,
-      "dynamicCriteria": null,
-      "productVisibilitySettings": {
-        "isImageVisible": true,
-        "isTitleVisible": true,
-        "isPriceVisible": true,
-        "isButtonVisible": true,
-        "isDescriptionVisible": false,
-        "isOriginalPriceVisible": true
-      },
-      "buttonText": null,
-      "alignment": "center",
-      "productsPerRow": 2
+      "productsPerRow": 3
     },
     {
       "type": "regular",
-      "text": "Koden FARSDAG30 ger 30 % på motorlåset, båtmotorskyddet, bälteslipmaskinen, täljsetet, sotarsetet och tändvedsklyven till och med måndag 19 oktober. Tryck på knappen så ligger koden redan i kassan, eller skriv in den själv. Rabatten dras i kassan, en gång per kund, på priset som står på produktsidan.",
+      "text": "Koden FISKE30 ger 30 % på fiskekalendern, linupprullaren, fiskesetet, mini-spöet, magnetfiskesatsen och båda spöhållarna till och med torsdag 8 oktober. Tryck på knappen så ligger koden redan i kassan, eller skriv in den själv. Rabatten dras i kassan, en gång per kund, på priset som står på produktsidan.",
       "alignment": "left"
     },
     {
       "type": "link",
-      "text": "Välj present för 30 % mindre",
-      "url": "https://baverbutiken.se/discount/FARSDAG30?redirect=%2Fcollections%2Falla-produkter",
+      "text": "Hämta 30 % med FISKE30",
+      "url": "https://baverbutiken.se/discount/FISKE30?redirect=%2Fproducts%2Fadventskalender-fiskedrag-24-drag-bakom-24-luckor",
       "style": "button"
     },
     {

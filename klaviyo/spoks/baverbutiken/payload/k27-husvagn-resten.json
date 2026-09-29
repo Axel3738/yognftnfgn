@@ -1,11 +1,11 @@
 {
   "id": "k27-husvagn-resten",
-  "emailTitle": "Taket är skyddat, resten är det inte.",
-  "emailDescription": "Tak-AC:n, cyklarna och rutorna står fortfarande i vädret.",
+  "emailTitle": "Taket är täckt, resten inte. 30 % på resten",
+  "emailDescription": "Koden HUSVAGN30 gäller till och med torsdag på huven, cykelskyddet, fönstermattorna och kalendern.",
   "amnesrader": [
-    "Taket är skyddat, resten är det inte.",
-    "Regnet och kådan hittar tak-AC:n",
-    "Cyklarna bak tar all smuts från resan"
+    "Taket är täckt, resten inte. 30 % på resten",
+    "Regnet och kådan hittar tak-AC:n. 30 % på huven",
+    "Cyklarna bak tar resans smuts. 30 % på skyddet"
   ],
   "blocks": [
     {
@@ -20,8 +20,23 @@
     },
     {
       "type": "regular",
-      "text": "Du har redan börjat skydda husvagnen eller husbilen inför vintern. Tak-AC:n, cyklarna och rutorna står kvar.",
+      "text": "Du har redan börjat skydda husvagnen eller husbilen inför vintern. Men tak-AC:n, cyklarna bak och fönstren står fortfarande i vädret.",
       "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Tak-AC:n sitter högst upp. Regn, kåda och skräp lägger sig direkt på höljet, oavsett om det gått en vecka eller en hel säsong.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Cyklarna på hållaren bak får resans vägsmuts och regn över sig, och syns för alla som går förbi på campingplatsen.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Och fönstren släpper in nattens kyla, så du känner den även med täcket uppdraget.",
+      "alignment": "left"
     },
     {
       "type": "products",
@@ -29,7 +44,7 @@
       "products": [
         {
           "id": "c261264d-38d5-4fe2-a75c-e835546fcf70",
-          "button": "Se AC-huven"
+          "button": "Se huven, 80 × 80 × 38 cm"
         }
       ],
       "dynamicProductsCount": null,
@@ -47,29 +62,13 @@
       "productsPerRow": 1
     },
     {
-      "type": "link",
-      "text": "Se skyddet",
-      "url": "https://baverbutiken.se/products/husbilens-tak-ac-huv-80-80-38-cm-skydd-mellan-resorna",
-      "style": "button"
-    },
-    {
       "type": "regular",
-      "text": "Tak-AC:n står högst upp och tar regn och kåda rakt av.",
-      "alignment": "left"
-    },
-    {
-      "type": "regular",
-      "text": "Cyklarna på hållaren bak tar smutsen från hela resan, och rutorna släpper igenom kylan på natten.",
-      "alignment": "left"
-    },
-    {
-      "type": "regular",
-      "text": "Läggs över hela tak-AC:n i längd, bredd och höjd, och snörs åt i nederkanten så den sitter kvar mellan resorna.",
+      "text": "Huven läggs över hela tak-AC:n i höjd, bredd och djup och dras åt i nederkanten, så den sitter kvar mellan resorna. Den passar tak-AC:er upp till 80 × 80 × 38 cm. AC:n ingår inte, bara huven.",
       "alignment": "left"
     },
     {
       "type": "h2",
-      "text": "Mer för resten av fordonet",
+      "text": "Cyklarna, fönstren och december",
       "alignment": "center"
     },
     {
@@ -81,11 +80,11 @@
           "button": "Se produkten"
         },
         {
-          "id": "fa219263-0372-48c2-9848-aa9eca884708",
+          "id": "836eee86-a9c3-4cdb-8486-1678d49adfdf",
           "button": "Se produkten"
         },
         {
-          "id": "836eee86-a9c3-4cdb-8486-1678d49adfdf",
+          "id": "fa219263-0372-48c2-9848-aa9eca884708",
           "button": "Se produkten"
         }
       ],
@@ -102,6 +101,17 @@
       "buttonText": null,
       "alignment": "center",
       "productsPerRow": 3
+    },
+    {
+      "type": "regular",
+      "text": "Koden HUSVAGN30 ger 30 % på AC-huven, cykelhållarskyddet, fönstermattorna och husbilskalendern till och med torsdag 8 oktober. Tryck på knappen så ligger koden redan i kassan, eller skriv in den själv. Rabatten dras i kassan, en gång per kund, på priset som står på produktsidan.",
+      "alignment": "left"
+    },
+    {
+      "type": "link",
+      "text": "Hämta 30 % med HUSVAGN30",
+      "url": "https://baverbutiken.se/discount/HUSVAGN30?redirect=%2Fproducts%2Fhusbilens-tak-ac-huv-80-80-38-cm-skydd-mellan-resorna",
+      "style": "button"
     },
     {
       "type": "columns",

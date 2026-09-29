@@ -1,7 +1,7 @@
 {
   "id": "k04-sotarset-fore-eldning",
-  "namn": "MAIL_20261008_Sotarset_N_1_uppvarmning_problem_sota-innan-du-eldar_v1",
-  "memo": "Nytt koncept utan produktminne. Säsongsvinkel: eldningssäsongen börjar och det svåråtkomliga röret. Hypotes: säsongen gör problemet aktuellt nog för att sälja utan bevisad vinkel. Det är en GISSNING.",
+  "namn": "MAIL_20261008_Sotarset_N_1_tier1_problem_sota-innan-du-eldar_v2",
+  "memo": "Nytt koncept utan produktminne. Säsongsvinkel: eldningssäsongen börjar och röret är svårt att komma åt. Hypotes: säsongen gör problemet aktuellt nog för att sälja utan bevisad vinkel, och 30 % med SOTAR30 till och med söndag 11 oktober ger en anledning att köpa nu (Axel 2026-09-29: rea på alla kampanjer, problemet först). Det är en GISSNING. Omskriven med problemet före produkten: sämre drag, det trånga bakom kaminen, sedan lösningen och koden. Inga påståenden om brandrisk, lagkrav eller sotningsplikt.",
   "taggar": {
     "typ": "N",
     "kalla": "gissning",
@@ -10,58 +10,91 @@
     "avatar": "villaägaren med kamin eller braskamin",
     "begar": "elda tryggt i vinter utan att ringa någon för varje rör",
     "awareness": "problem",
-    "urgency": "sasong",
+    "urgency": "sasong + slutdag (11 oktober)",
     "confidence": "low",
     "prefix": "Sotarset",
     "kod": "PD"
   },
   "amnesrader": [
-    { "text": "Draget blir sämre för varje eldning", "begar": "elda utan att draget blir sämre och sämre" },
-    { "text": "Rensa själv mellan sotarens besök", "begar": "kunna rensa själv i stället för att boka sotare" },
-    { "text": "Når bakom kaminen utan att krypa dit", "begar": "komma åt bakom kaminen utan att krypa dit själv" }
+    {
+      "text": "Sämre drag för varje eldning. 30 % på sotarset",
+      "begar": "elda utan att draget blir sämre och sämre"
+    },
+    {
+      "text": "Rensa själv mellan sotarens besök. 30 % rabatt",
+      "begar": "kunna rensa själv i stället för att boka någon"
+    },
+    {
+      "text": "Når bakom kaminen utan att krypa dit. 30 % rabatt",
+      "begar": "komma åt bakom kaminen utan att krypa dit själv"
+    }
   ],
-  "forhandstext": "Nio böjliga stänger följer krökarna i röret.",
+  "forhandstext": "Nio böjliga stänger följer krökarna i röret. Koden SOTAR30 gäller till och med söndag.",
   "block": [
     {
       "typ": "hero",
       "rubrik": "Draget blir sämre för varje eldning",
-      "text": "Hej {{fornamn}},\n\nSotlagret växer tyst i bakgrunden. Kaminen drar sämre och lukten sitter i.",
-      "bild": "produkt:sotarset-med-bojliga-stanger-rensar-rokkanal-och-kaminror",
-      "knapp": { "text": "Se sotarsetet", "lank": "produkt:sotarset-med-bojliga-stanger-rensar-rokkanal-och-kaminror" }
+      "text": "Hej {{fornamn}},\n\nNu börjar det bli dags att elda igen. Sotlagret i röret växer tyst i bakgrunden, kaminen drar sämre och lukten sitter i."
     },
     {
       "typ": "text",
       "rubrik": null,
-      "text": "Nio böjliga stänger på 41 cm skruvas ihop till 3,69 meters räckvidd. De följer krökarna i röret i stället för att ta stopp i första kröken, och når bakom kaminen eller torktumlaren."
+      "text": "Att boka sotare för en snabb kontroll känns onödigt. Att strunta i det känns fel.\n\nOch bakom pelletskaminen eller torktumlaren är det för trångt för att du ska vilja krypa dit själv."
+    },
+    {
+      "typ": "produkt",
+      "handle": "sotarset-med-bojliga-stanger-rensar-rokkanal-och-kaminror",
+      "text": "Nio böjliga stänger på 41 cm skruvas ihop en och en till 3,69 meters räckvidd. Nylonborsten på 100 mm sitter i toppen, och en sexkantsadapter ingår.",
+      "knapp": "Se settet, 3,69 m räckvidd"
     },
     {
       "typ": "punkter",
       "rubrik": "Tre saker settet gör",
       "punkter": [
-        "Rensar mellan sotarens besök, utan att boka någon.",
-        "Böjer med i kröken där en stel stång fastnar.",
-        "Borstar loss sotet med nylonstrån i stället för att skrapa."
+        "Du rensar själv mellan sotarens besök.",
+        "Stängerna följer krökarna i röret i stället för att ta stopp i första kröken.",
+        "De når bakom kaminen eller torktumlaren, så du slipper krypa dit."
       ]
     },
     {
-      "typ": "produkt",
-      "handle": "sotarset-med-bojliga-stanger-rensar-rokkanal-och-kaminror",
-      "text": "Byggs i den längd du behöver, en stång i taget.",
-      "knapp": "Se sotarsetet"
+      "typ": "text",
+      "rubrik": null,
+      "text": "Koden SOTAR30 ger 30 % på sotarsetet till och med söndag 11 oktober. Tryck på knappen så ligger koden redan i kassan, eller skriv in den själv. Rabatten dras i kassan, en gång per kund, på priset som står på produktsidan."
     },
-    { "typ": "fakta" }
+    {
+      "typ": "knapp",
+      "text": "Rensa röret för 30 % mindre",
+      "lank": "rabatt:SOTAR30:produkt:sotarset-med-bojliga-stanger-rensar-rokkanal-och-kaminror"
+    },
+    {
+      "typ": "fakta"
+    }
   ],
   "tretest": [
+    { "rad": "Sämre drag för varje eldning. 30 % på sotarset", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Rensa själv mellan sotarens besök. 30 % rabatt", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Når bakom kaminen utan att krypa dit. 30 % rabatt", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Nio böjliga stänger följer krökarna i röret. Koden SOTAR30 gäller till och med söndag.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Draget blir sämre för varje eldning", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Rensa själv mellan sotarens besök", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Når bakom kaminen utan att krypa dit", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Nio böjliga stänger följer krökarna i röret.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se settet, 3,69 m räckvidd", "visualisera": true, "falsifiera": true, "ingen_annan": true },
     { "rad": "Tre saker settet gör", "visualisera": true, "falsifiera": true, "ingen_annan": true },
-    { "rad": "Se sotarsetet", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+    { "rad": "Rensa röret för 30 % mindre", "visualisera": true, "falsifiera": true, "ingen_annan": true }
   ],
   "planerad": "2026-10-08T18:00:00+02:00",
-  "segment": ["SEG_uppvarmning_steg1"],
-  "exkludera": ["SEG_oengagerade_180d"],
+  "segment": [
+    "Warmup tier 1"
+  ],
+  "exkludera": [],
   "status_plan": "klar",
-  "kraver_axel": null
+  "kraver_axel": null,
+  "rabatt": {
+    "typ": "kod",
+    "kod": "SOTAR30",
+    "procent": 30,
+    "start": "2026-10-08T06:00:00Z",
+    "slut": "2026-10-11T21:59:59Z",
+    "handles": [
+      "sotarset-med-bojliga-stanger-rensar-rokkanal-och-kaminror"
+    ]
+  }
 }

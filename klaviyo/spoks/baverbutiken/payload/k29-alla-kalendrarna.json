@@ -1,0 +1,221 @@
+{
+  "id": "k29-alla-kalendrarna",
+  "emailTitle": "Lucka 1 öppnas 1 december. 30 % på kalendrarna",
+  "emailDescription": "Fjorton kalendrar, ingen med choklad. Koden KALENDER30 gäller till och med måndag.",
+  "amnesrader": [
+    "Lucka 1 öppnas 1 december. 30 % på kalendrarna",
+    "Drag, golfbollar eller dinosaurier? 30 % på alla",
+    "Chokladen är uppäten på tio sekunder. 30 % rabatt"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Lucka 1 öppnas 1 december",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hej {{ contact.first_name | default: 'där' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Då ska det finnas något bakom den. Helst inte en chokladbit som är uppäten på tio sekunder, med en ny likadan nästa morgon.",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Vi har fjorton kalendrar, en för varje sorts mottagare.",
+      "alignment": "center"
+    },
+    {
+      "type": "link",
+      "text": "Se kalendrarna med KALENDER30",
+      "url": "https://baverbutiken.se/discount/KALENDER30?redirect=%2Fcollections%2Fadventskalendrar",
+      "style": "button"
+    },
+    {
+      "type": "regular",
+      "text": "Barnet som älskar dinosaurier får dinosaurier.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Den som pusslar får en tavla på 70 × 50 cm att sätta upp den 24:e.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Fiskaren får ett drag om dagen.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Golfaren får bollar och peggar, sånt som ändå tar slut.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Den som hellre pratar cocktails än pepparkakor får dekorflaskor, helt utan alkohol.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Köper du kalendern nu slipper du leta efter en i november.",
+      "alignment": "left"
+    },
+    {
+      "type": "h2",
+      "text": "Att leka, samla, gräva, pussla och fylla själv",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "2e0ade4f-dd9f-41d3-89f0-af530993d0ad",
+          "button": "Se produkten"
+        },
+        {
+          "id": "f81164f9-c69b-471e-9be1-ca881fd0a3e5",
+          "button": "Se produkten"
+        },
+        {
+          "id": "336627c5-97d7-48ed-affc-59c154c3b76e",
+          "button": "Se produkten"
+        },
+        {
+          "id": "744b8360-4045-44ef-a746-546b06cc10ec",
+          "button": "Se produkten"
+        },
+        {
+          "id": "77226311-7415-4264-8ae3-5d0275caa409",
+          "button": "Se produkten"
+        },
+        {
+          "id": "c26301d5-df47-42b9-bf8d-c58140bec02f",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "h2",
+      "text": "Fiske, golf, hockey, husbil och bar",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "353d688f-de6b-4d74-8b9e-b3c23ac9b9db",
+          "button": "Se produkten"
+        },
+        {
+          "id": "9901201d-8100-4ec0-87c9-f025065d2702",
+          "button": "Se produkten"
+        },
+        {
+          "id": "94255ff9-c650-46e3-b6c9-4cbae2b84d16",
+          "button": "Se produkten"
+        },
+        {
+          "id": "fa219263-0372-48c2-9848-aa9eca884708",
+          "button": "Se produkten"
+        },
+        {
+          "id": "23456c03-9621-493f-a4df-57b6cdff0e3d",
+          "button": "Se produkten"
+        },
+        {
+          "id": "f45de3e8-00a6-4855-aa96-c39d80ee0e19",
+          "button": "Se produkten"
+        },
+        {
+          "id": "fb775dd6-3e00-4128-84aa-67191195e819",
+          "button": "Se produkten"
+        },
+        {
+          "id": "7affbc9c-619f-4e71-bdcb-105f668dfc74",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "regular",
+      "text": "Koden KALENDER30 ger 30 % på alla fjorton kalendrar till och med måndag 12 oktober. Tryck på knappen så ligger koden redan i kassan, eller skriv in den själv. Rabatten dras i kassan, en gång per kund, på priset som står på produktsidan.",
+      "alignment": "left"
+    },
+    {
+      "type": "link",
+      "text": "Hämta 30 % med KALENDER30",
+      "url": "https://baverbutiken.se/discount/KALENDER30?redirect=%2Fcollections%2Fadventskalendrar",
+      "style": "button"
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

@@ -1,11 +1,11 @@
 {
   "id": "k02-baten-ska-upp",
   "emailTitle": "Motorn står ute i sex månader",
-  "emailDescription": "Regn, snö och frost jobbar på motorn hela vintern.",
+  "emailDescription": "Och en blank motor syns från vägen. BAT30 ger 30 % på skyddet till och med söndag 4 oktober.",
   "amnesrader": [
     "Motorn står ute i sex månader",
-    "Klart innan båten är surrad",
-    "Fyra saker innan båten ställs undan"
+    "Klart innan båten är surrad, 30 % med BAT30",
+    "BAT30 ger 30 % på motorskydd och tre saker till"
   ],
   "blocks": [
     {
@@ -24,12 +24,17 @@
       "alignment": "center"
     },
     {
+      "type": "regular",
+      "text": "Motorn står oskyddad till våren, och en blank motor på en upplagd båt är det första en tjuv får syn på från vägen.",
+      "alignment": "left"
+    },
+    {
       "type": "products",
       "selectionMode": "manual",
       "products": [
         {
           "id": "6f01ed7d-90e1-45a9-bb43-f0fbbc8c2285",
-          "button": "Se produkten"
+          "button": "Se skyddet i nio storlekar"
         }
       ],
       "dynamicProductsCount": null,
@@ -47,35 +52,41 @@
       "productsPerRow": 1
     },
     {
+      "type": "regular",
+      "text": "Dra skyddet över hela motorn, från kåpan ner över riggen, och spänn remmen runt mitten. Det behövs inga verktyg, så skyddet är på innan båten ens är surrad.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "420D Oxford-tyg mot regn, snö och UV. Ingen ser vilken motor som står under, och en övertäckt motor är ett betydligt tråkigare byte än en öppen. Nio storlekar, upp till 350 hk.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Koden BAT30 ger 30 % på båtmotorskyddet och på det som brukar följa med i samma order: motorhöljet, sitsöverdraget och spöhållaren. Den gäller till och med söndag 4 oktober. Tryck på knappen så ligger koden redan i kassan, eller skriv in den själv. Rabatten dras i kassan, en gång per kund, på priset som står på produktsidan.",
+      "alignment": "left"
+    },
+    {
       "type": "link",
-      "text": "Skydda motorn",
-      "url": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+      "text": "Hämta 30 % med BAT30",
+      "url": "https://baverbutiken.se/discount/BAT30?redirect=%2Fproducts%2Fbatmotorskydd-420d-heltackande-for-utombordare",
       "style": "button"
     },
     {
       "type": "h2",
-      "text": "Innan båten ställs undan"
+      "text": "Motorhölje, sitsöverdrag och spöhållare, också 30 %"
     },
     {
       "type": "list",
-      "text": "Utombordaren: skydd från kåpa till rigg, 420D-tyg mot regn, snö och UV."
+      "text": "Motorhöljet är ett allvädersskydd mot sol, regn och salt, för marinmotorer från 6 till 250 hk."
     },
     {
       "type": "list",
-      "text": "En annan motor ombord: samma typ av skydd, för motorer från 6 till 250 hk."
+      "text": "Sitsöverdraget skyddar båtstolen mot sol, regn, damm och fågelsmuts."
     },
     {
       "type": "list",
-      "text": "Sitsarna: dras enkelt på och skyddar mot sol, regn och fågelsmuts."
-    },
-    {
-      "type": "list",
-      "text": "Spöna: fyra hållare så de inte trasslar in i varandra i garaget."
-    },
-    {
-      "type": "h2",
-      "text": "Mer som brukar följa med",
-      "alignment": "center"
+      "text": "Spöhållaren är fyra kraftiga hållare, så varje spö får sin egen plats i stället för att trassla ihop sig."
     },
     {
       "type": "products",
@@ -107,15 +118,6 @@
       "buttonText": null,
       "alignment": "center",
       "productsPerRow": 3
-    },
-    {
-      "type": "h2",
-      "text": "Aldrig mer trassliga fiskespön"
-    },
-    {
-      "type": "regular",
-      "text": "Fyra kraftiga hållare håller varje spö på sin egen plats. Ingen mer hopplock av trassliga linor.",
-      "alignment": "left"
     },
     {
       "type": "columns",
