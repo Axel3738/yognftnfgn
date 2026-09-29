@@ -97,11 +97,19 @@ export function promptText({ brand, arbetsyta, rader, lankMall, andraSegment = [
     ? `Sommartiden slutar natten mot söndag 25 oktober. Mejl före dess visar ${zoner.find((z) => z.startsWith('CEST')) ?? 'CEST (UTC+2)'} i pillret, mejl från 25/10 visar ${zoner.find((z) => z.startsWith('CET')) ?? 'CET (UTC+1)'}. Det är rätt. Skriv alltid klockslaget exakt som i listan och räkna aldrig om det.`
     : `Pillret ska visa ${zoner[0] ?? 'svensk tid'}. Skriv klockslaget exakt som i listan och räkna aldrig om det.`;
   const n = rader.length;
-  return `Jag vill att du schemalägger ${n} färdiga ${n === 1 ? 'mejl' : 'mejl'} i Spoks för min butik ${brand.namn}. Innehållet är klart och granskat. Du ändrar ingen text och ingen bild. Du väljer bara mottagare och tid, ett mejl i taget. Gör allt i den här fliken och fråga mig om inloggning när du behöver den.
+  const kampanjLista = arbetsyta.lankar?.kampanjer ?? `${arbetsyta.app}/campaigns`;
+  return `Jag vill att du schemalägger ${n} färdiga ${n === 1 ? 'mejl' : 'mejl'} i Spoks för min butik ${brand.namn}. Innehållet är klart och granskat. Du ändrar ingen text och ingen bild. Du väljer bara mottagare och tid, ett mejl i taget. Gör allt i en och samma flik och fråga mig om inloggning när du behöver den.
+
+INNAN DU BÖRJAR.
+Öppna ${kampanjLista}. Ser du Spoks meny och kampanjlistan: börja med listan nedan.
+Spoks ritar bara upp sidan när fliken syns på skärmen. Är sidan helt vit, nu eller mitt i arbetet: skriv till mig exakt det här och vänta tills jag svarar "fortsätt":
+"Spoks syns inte. Gå ur helskärm om Claude fyller skärmen, gör Claude-fönstret smalt så att Chrome syns bredvid, och klicka en gång på Chrome-fönstrets översta kant där flikarna sitter. Skriv sedan fortsätt."
+Hamnar du på Spoks startsida ("God kväll" och en lista med flöden) utan att ha klickat dit: klicka inte på något där. Öppna länken till mejlet du höll på med igen.
+Mejl som inte står i listan är redan klara eller ska inte skickas. Öppna dem inte.
 
 BAKGRUND, så du vet vad du tittar på.
 Spoks är mitt mejlprogram, app.spoks.com. Butikens arbetsyta heter "${arbetsyta.namn}" och alla länkar nedan börjar med ${arbetsyta.app}/. Varje mejl ligger som ett utkast. Länken i listan öppnar utkastet direkt, så använd alltid länkarna: kampanjlistan i Spoks visar ämnesraden, inte koden. Ämnesraden står i listan så du kan känna igen mejlet. Ser du en titel, börjar den med koden (till exempel "${rader[0]?.kod ?? 'K02'} · …").
-Spoks ritar bara upp sidan när fliken syns på skärmen. Är sidan helt vit: stanna och be mig klicka en gång i Chrome-fönstret. Ladda sedan om sidan och fortsätt först när du ser Spoks meny. Ser du en inloggningssida: be mig logga in.
+Ser du en inloggningssida: be mig logga in.
 Arbetsytans tidszon är Stockholm. ${zonRad}
 
 RÖR ALDRIG DE HÄR, oavsett vad du ser:

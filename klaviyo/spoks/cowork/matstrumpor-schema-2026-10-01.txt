@@ -1,8 +1,15 @@
-Jag vill att du schemalägger 36 färdiga mejl i Spoks för min butik Matstrumpor. Innehållet är klart och granskat. Du ändrar ingen text och ingen bild. Du väljer bara mottagare och tid, ett mejl i taget. Gör allt i den här fliken och fråga mig om inloggning när du behöver den.
+Jag vill att du schemalägger 36 färdiga mejl i Spoks för min butik Matstrumpor. Innehållet är klart och granskat. Du ändrar ingen text och ingen bild. Du väljer bara mottagare och tid, ett mejl i taget. Gör allt i en och samma flik och fråga mig om inloggning när du behöver den.
+
+INNAN DU BÖRJAR.
+Öppna https://app.spoks.com/matstrumpor/campaigns. Ser du Spoks meny och kampanjlistan: börja med listan nedan.
+Spoks ritar bara upp sidan när fliken syns på skärmen. Är sidan helt vit, nu eller mitt i arbetet: skriv till mig exakt det här och vänta tills jag svarar "fortsätt":
+"Spoks syns inte. Gå ur helskärm om Claude fyller skärmen, gör Claude-fönstret smalt så att Chrome syns bredvid, och klicka en gång på Chrome-fönstrets översta kant där flikarna sitter. Skriv sedan fortsätt."
+Hamnar du på Spoks startsida ("God kväll" och en lista med flöden) utan att ha klickat dit: klicka inte på något där. Öppna länken till mejlet du höll på med igen.
+Mejl som inte står i listan är redan klara eller ska inte skickas. Öppna dem inte.
 
 BAKGRUND, så du vet vad du tittar på.
 Spoks är mitt mejlprogram, app.spoks.com. Butikens arbetsyta heter "Matstrumpor.se" och alla länkar nedan börjar med https://app.spoks.com/matstrumpor/. Varje mejl ligger som ett utkast. Länken i listan öppnar utkastet direkt, så använd alltid länkarna: kampanjlistan i Spoks visar ämnesraden, inte koden. Ämnesraden står i listan så du kan känna igen mejlet. Ser du en titel, börjar den med koden (till exempel "K03 · …").
-Spoks ritar bara upp sidan när fliken syns på skärmen. Är sidan helt vit: stanna och be mig klicka en gång i Chrome-fönstret. Ladda sedan om sidan och fortsätt först när du ser Spoks meny. Ser du en inloggningssida: be mig logga in.
+Ser du en inloggningssida: be mig logga in.
 Arbetsytans tidszon är Stockholm. Sommartiden slutar natten mot söndag 25 oktober. Mejl före dess visar CEST (UTC+2) i pillret, mejl från 25/10 visar CET (UTC+1). Det är rätt. Skriv alltid klockslaget exakt som i listan och räkna aldrig om det.
 
 RÖR ALDRIG DE HÄR, oavsett vad du ser:
