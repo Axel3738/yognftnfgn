@@ -3,6 +3,27 @@
 Kör `/no-recensioner` (`.claude/commands/no-recensioner.md`). Den här filen är
 bara lägesrapporten.
 
+## Läget 2026-09-29 — 0 nya, allt redan klart, 38 i `sources.json`
+
+Drive oförändrad tredje dygnet: 39 produktmappar + WINNERS med 5 = 44, minus de
+sex som aldrig gått in = de 38 i `sources.json`. Bygget gav 332 klara / 10
+bortvalda (alla gamasjer) och identiska filer — `git status` tomt. Kartorna står
+på 509 översättningar och 124 namn. Inget 429, inget 503.
+
+`--dry` mot Kajakkholder och Feiesett: "redan 10 synliga, hoppar över" — de
+spam-publicerade raderna sitter kvar sjunde respektive åttonde dygnet.
+
+### Orättat, och vem det väntar på
+
+* **Kajakkholder: tio identiska titlar** i källarket ("Bra och stabila"), sjätte
+  dygnet. Recensionerna är importerade och synliga; bara rubrikerna ser
+  maskinskrivna ut. Rättas i arket, sedan om-import med `--anda` på Axels
+  uttryckliga begäran.
+* **De fyra arken oförändrade elfte dygnet:** Dinosauriekalender (alla namn
+  "(EXEMPEL)"), Gravstenspenna (TEST-rader), Medicinask (exempelrader +
+  `not-a-real-product-handle`, produkten dessutom utgången och kan strykas helt),
+  Lövblåsare/Jetviften (personnamn i `title`, utekattkojans `product_handle`).
+
 ## Läget 2026-09-28 — 0 nya, allt redan klart, 38 i `sources.json`
 
 Drive oförändrad: 39 produktmappar + WINNERS med 5 = 44, minus de sex som aldrig

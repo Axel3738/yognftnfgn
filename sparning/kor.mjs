@@ -142,6 +142,17 @@ console.log(`Ordrar senaste ${DAGAR} dagarna: ${ordrar.length}. Paket att följa
 // Paketminnet räcker 60 dagar bakåt, så resten hämtas därifrån. De får inga
 // event och registreras aldrig — bara läses, och att läsa är gratis hos
 // 17TRACK. Bara registreringen kostar kvot.
+// Manuella paket utan order (sparning/lagg-till.mjs, t.ex. influencerpaket)
+// registreras här om lagg-till kördes i en miljö utan 17TRACK-nyckel. De får
+// aldrig event — bara en plats på sidan.
+const manuellaOreg = Object.entries(lage.paket).filter(([, p]) => p?.manuell && !p.registrerad).map(([n]) => n);
+if (manuellaOreg.length && !torr && nyckel()) {
+  const r = await registrera(manuellaOreg.map((n) => ({ number: n })));
+  const idag = new Date().toISOString().slice(0, 10);
+  const ok = [...r.accepterade, ...r.avvisade.filter((a) => /already|-18019901/i.test(`${a.kod} ${a.fel}`)).map((a) => a.number)];
+  for (const n of ok) lage.paket[n].registrerad = idag;
+  console.log(`Manuella paket registrerade: ${ok.length} av ${manuellaOreg.length}.`);
+}
 const iRundan = new Set(kandidater.map((k) => k.nummer));
 const baraSidan = Object.entries(lage.paket)
   .filter(([n, p]) => p?.registrerad && !iRundan.has(n))
@@ -221,6 +232,8 @@ if (rader.length > 40) console.log(`  … och ${rader.length - 40} till`);
 const grans = Date.now() - LEVERERAD_BEHALL_DAGAR * 86400 * 1000;
 for (const [n, p] of Object.entries(lage.paket)) {
   if (p.levererad && new Date(p.levererad).getTime() < grans) delete lage.paket[n];
+  // Manuella paket (sparning/lagg-till.mjs) får aldrig event, så de städas på tillagd-datum.
+  else if (p.manuell && p.tillagd && new Date(p.tillagd).getTime() < grans) delete lage.paket[n];
 }
 lage.senaste_korning = { datum: new Date().toISOString(), ordrar: ordrar.length, paket: kandidater.length, registrerade: nya.length, skrivna, fel, torr };
 if (!torr) writeFileSync(LAGE, `${JSON.stringify(lage, null, 1)}\n`);
