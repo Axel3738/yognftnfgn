@@ -1181,7 +1181,13 @@ webbläsare) gör dem.
 - ⚠️ **Spoks ritar ingenting i en dold flik** (Coworks första försök 2026-09-29 ~17:15 CEST: vit
   sida, Chrome rapporterade fliken som `hidden`, ingen inloggningssida, inget ändrat). Fliken
   måste ligga överst i ett synligt fönster medan Cowork arbetar. Prompten säger det sedan dess
-  och ber Cowork be om hjälp i stället för att gissa.
+  och ber Cowork be om hjälp i stället för att gissa. **Samma kväll ~21 CEST, efter två vita
+  sidor till:** varje gång Axel gick till sessionen med Coworks rapport hamnade ett annat fönster
+  över Spoks, och Cowork stannade. Mätt med `search_campaigns` (`publishedAfter`): bara V01
+  schemalagd. Sedan dess skriver Cowork ingenting mellan mejlen, bara en slutrapport (steg 9), en
+  vit sida betyder "be Axel klicka en gång i Chrome-fönstret", och Axel lägger Chrome och Cowork
+  sida vid sida: ett Chrome-fönster, ingen helskärm. Omstarten från K03 i en ny Cowork-chatt:
+  `cowork/matstrumpor-schema-2026-10-01.txt` (`--fran 2026-10-01 --aldrig "K01,K15,V01"`, 36 mejl).
 - ✅ **`notify: false` på ett SCHEMALAGT mejl är normalt — rättat samma kväll.** Efter Coworks första
   mejl läste sessionen V01 (`search_campaigns` 2026-09-29 ~20:4x CEST): `waiting_to_be_published`,
   `2026-09-30T16:00Z`, `notify: false`, `notificationRecipientsCount: 0`, och drog slutsatsen att V01

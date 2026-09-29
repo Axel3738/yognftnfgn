@@ -75,7 +75,9 @@ test('promptText: länk, publik och tid per mejl, förväxlingsbara segment, ald
   assert.match(text, /Särskilt inte K01, K15/);
   assert.match(text, /Skicka aldrig något direkt/);
   // Mätt 2026-09-29: Cowork fick en vit sida, Spoks ritar inte i en dold flik.
-  assert.match(text, /Är sidan helt vit/);
+  assert.match(text, /Är sidan helt vit: stanna och be mig klicka en gång i Chrome-fönstret/);
+  // Mätt samma kväll: varje rapport mitt i körningen lade ett annat fönster över Spoks.
+  assert.match(text, /Skriv inte till mig mellan mejlen/);
   // Mätt 2026-09-29: granskningssidan, Smart sending av och mottagare > 0 är obligatoriska steg,
   // och notify false på ett schemalagt mejl är normalt (får inte stoppa Cowork).
   assert.match(text, /rutan "Smart sending" är tom/);

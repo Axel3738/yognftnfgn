@@ -101,7 +101,7 @@ export function promptText({ brand, arbetsyta, rader, lankMall, andraSegment = [
 
 BAKGRUND, så du vet vad du tittar på.
 Spoks är mitt mejlprogram, app.spoks.com. Butikens arbetsyta heter "${arbetsyta.namn}" och alla länkar nedan börjar med ${arbetsyta.app}/. Varje mejl ligger som ett utkast. Länken i listan öppnar utkastet direkt, så använd alltid länkarna: kampanjlistan i Spoks visar ämnesraden, inte koden. Ämnesraden står i listan så du kan känna igen mejlet. Ser du en titel, börjar den med koden (till exempel "${rader[0]?.kod ?? 'K02'} · …").
-Spoks ritar bara upp sidan när fliken syns på skärmen. Är sidan helt vit: be mig ta fram fliken och ladda om den, och börja först när du ser Spoks meny. Ser du en inloggningssida: be mig logga in.
+Spoks ritar bara upp sidan när fliken syns på skärmen. Är sidan helt vit: stanna och be mig klicka en gång i Chrome-fönstret. Ladda sedan om sidan och fortsätt först när du ser Spoks meny. Ser du en inloggningssida: be mig logga in.
 Arbetsytans tidszon är Stockholm. ${zonRad}
 
 RÖR ALDRIG DE HÄR, oavsett vad du ser:
@@ -128,7 +128,7 @@ SÅ HÄR GÖR DU MED VARJE MEJL, i listans ordning:
   6. På granskningssidan: kontrollera ämnesraden och förhandstexten, att rutan "Smart sending" är tom (av), och att "… beräknas skickas" visar fler än 0. Är det 0: tryck inte vidare, skriv det i rapporten och ta nästa.
   7. Klicka på "Planera" (på engelska "Schedule") längst ner på granskningssidan, välj datum och klockslag exakt som i listan och tryck "Tillämpa". Tryck aldrig "Publicera nu".
   8. Kontrollera resultatet: överst ska det stå "Schemalagd kampanj" och pillret ska säga "Kommer att publiceras <dag> <datum> kl <tid> …" med listans datum och klockslag, och "Till:" ska visa listans segment. Är tiden fel: rätta den med pennan bredvid pillret och kontrollera igen. Läser du kampanjen bakom kulisserna: notify false och 0 mottagare är normalt på ett schemalagt mejl, Spoks sätter dem när mejlet går ut.
-  9. Skriv en rad i rapporten (med antalet som "… beräknas skickas" visade) och ta nästa mejl.
+  9. Skriv en rad i rapporten (med antalet som "… beräknas skickas" visade) och ta nästa mejl. Skriv inte till mig mellan mejlen: varje gång jag svarar dig hamnar ett annat fönster över Spoks. Rapporten kommer först när hela listan är klar, eller när du inte kan fortsätta.
 Heter en knapp något annat än jag skrivit: leta på samma ställe, det är samma sak. Är du osäker på om en knapp skickar direkt: tryck inte, stanna och fråga mig.
 Svarar Spoks med ett fel eller "försök igen": vänta en minut och försök en gång till. Går det inte då heller: stanna och skriv vid vilket mejl du stannade.
 

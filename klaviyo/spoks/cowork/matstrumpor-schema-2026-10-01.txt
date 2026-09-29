@@ -1,0 +1,220 @@
+Jag vill att du schemalägger 36 färdiga mejl i Spoks för min butik Matstrumpor. Innehållet är klart och granskat. Du ändrar ingen text och ingen bild. Du väljer bara mottagare och tid, ett mejl i taget. Gör allt i den här fliken och fråga mig om inloggning när du behöver den.
+
+BAKGRUND, så du vet vad du tittar på.
+Spoks är mitt mejlprogram, app.spoks.com. Butikens arbetsyta heter "Matstrumpor.se" och alla länkar nedan börjar med https://app.spoks.com/matstrumpor/. Varje mejl ligger som ett utkast. Länken i listan öppnar utkastet direkt, så använd alltid länkarna: kampanjlistan i Spoks visar ämnesraden, inte koden. Ämnesraden står i listan så du kan känna igen mejlet. Ser du en titel, börjar den med koden (till exempel "K03 · …").
+Spoks ritar bara upp sidan när fliken syns på skärmen. Är sidan helt vit: stanna och be mig klicka en gång i Chrome-fönstret. Ladda sedan om sidan och fortsätt först när du ser Spoks meny. Ser du en inloggningssida: be mig logga in.
+Arbetsytans tidszon är Stockholm. Sommartiden slutar natten mot söndag 25 oktober. Mejl före dess visar CEST (UTC+2) i pillret, mejl från 25/10 visar CET (UTC+1). Det är rätt. Skriv alltid klockslaget exakt som i listan och räkna aldrig om det.
+
+RÖR ALDRIG DE HÄR, oavsett vad du ser:
+  - Skicka aldrig något direkt. Knappar som skickar eller publicerar NU (till exempel "Skicka nu", "Send now", "Publicera nu") trycker du aldrig på. Välj bara alternativet där du sätter datum och klockslag.
+  - Ändra ingen text, ingen ämnesrad, ingen bild, inga produkter och inga länkar i mejlen.
+  - Rör inga mejl som inte står i listan. Särskilt inte K01, K15, V01, utkast vars titel börjar med "BÄNK" eller "SKICKAS INTE", och inget som redan är skickat.
+  - Rör inga flöden (Flows / Flöden), inga inställningar, inga segment och inga kontakter. Skapa, ändra eller ta aldrig bort något segment.
+  - Byt aldrig arbetsyta. Står det något annat än "Matstrumpor.se" som arbetsyta, eller börjar adressen inte med https://app.spoks.com/matstrumpor/: stanna och fråga mig.
+  - Ta aldrig bort något och kopiera aldrig ett mejl.
+
+MOTTAGARNA.
+Varje mejl går till EXAKT ett segment, och det heter exakt som i listan, tecken för tecken: SEG_uppvarmning_steg1, SEG_samtycke, SEG_kopare_forra_sasongen, SEG_kopare, SEG_ej_kopt.
+Det finns segment med nästan samma namn. Välj ALDRIG något av de här: SEG_flerkopare, SEG_engagerade_60d, SEG_engagerade_90d, SEG_kopare_30d, SEG_vinback_90d, SEG_oengagerade_180d, SEG_kategori_sushi, SEG_kategori_pizza, SEG_kategori_hamburgare, SEG_kategori_donut, All contacts, All subscribed, All customers, All repeat customers, VIP customers, Warmup tier 1, Warmup tier 2, Warmup tier 3.
+Lägg inte till något under "exkludera" eller liknande. Står ett annat segment redan i fältet: ta bort det så att bara listans segment står kvar.
+"Smart sending" ska vara AV (rutan tom) på varje mejl. Med den på hoppar Spoks över alla som fått ett mejl de senaste 24 timmarna, och mejlen går ut varje dag kl 18, så den skulle stryka nästan alla mottagare.
+Visar Spoks en ruta om uppvärmning (warm-up, "I'll handle warmup manually" eller liknande): välj ingenting i rutan. Stanna och fråga mig, det är mitt beslut.
+
+SÅ HÄR GÖR DU MED VARJE MEJL, i listans ordning:
+  1. Öppna länken.
+  2. Kontrollera att ämnesraden stämmer med listan (och koden, om du ser titeln). Stämmer det inte: gör ingenting med mejlet, skriv det i rapporten och ta nästa.
+  3. Står det redan "Schemalagd kampanj" med ett pill "Kommer att publiceras …": ändra ingenting. Stämmer datum, klockslag och "Till:" med listan, skriv "redan schemalagd" i rapporten. Stämmer något inte, skriv exakt vad det står i rapporten. Ta nästa.
+  4. Klicka i fältet "Till:" (på engelska "To:") och välj listans segment. Kontrollera att bara det står där.
+  5. Klicka på "TITTA IGENOM" (på engelska "REVIEW").
+  6. På granskningssidan: kontrollera ämnesraden och förhandstexten, att rutan "Smart sending" är tom (av), och att "… beräknas skickas" visar fler än 0. Är det 0: tryck inte vidare, skriv det i rapporten och ta nästa.
+  7. Klicka på "Planera" (på engelska "Schedule") längst ner på granskningssidan, välj datum och klockslag exakt som i listan och tryck "Tillämpa". Tryck aldrig "Publicera nu".
+  8. Kontrollera resultatet: överst ska det stå "Schemalagd kampanj" och pillret ska säga "Kommer att publiceras <dag> <datum> kl <tid> …" med listans datum och klockslag, och "Till:" ska visa listans segment. Är tiden fel: rätta den med pennan bredvid pillret och kontrollera igen. Läser du kampanjen bakom kulisserna: notify false och 0 mottagare är normalt på ett schemalagt mejl, Spoks sätter dem när mejlet går ut.
+  9. Skriv en rad i rapporten (med antalet som "… beräknas skickas" visade) och ta nästa mejl. Skriv inte till mig mellan mejlen: varje gång jag svarar dig hamnar ett annat fönster över Spoks. Rapporten kommer först när hela listan är klar, eller när du inte kan fortsätta.
+Heter en knapp något annat än jag skrivit: leta på samma ställe, det är samma sak. Är du osäker på om en knapp skickar direkt: tryck inte, stanna och fråga mig.
+Svarar Spoks med ett fel eller "försök igen": vänta en minut och försök en gång till. Går det inte då heller: stanna och skriv vid vilket mejl du stannade.
+
+LISTAN (36 mejl, i den ordning de går ut):
+
+ 1. K03  tor 1/10 kl 18:00  (pillret: 01.10 kl 18:00 CEST (UTC+2))
+    Till: SEG_uppvarmning_steg1
+    Ämnesrad: Recensionerna säger att mottagaren blev glad
+    https://app.spoks.com/matstrumpor/post/920afd93-03be-4aba-9c25-8d6a12603f06/edit
+
+ 2. REA01  fre 2/10 kl 18:00  (pillret: 02.10 kl 18:00 CEST (UTC+2))
+    Till: SEG_samtycke
+    Ämnesrad: En till pappa, en till svärfar
+    https://app.spoks.com/matstrumpor/post/411d7f9e-a68b-4b69-a07b-4a9d32bb8b1d/edit
+
+ 3. V02  lör 3/10 kl 18:00  (pillret: 03.10 kl 18:00 CEST (UTC+2))
+    Till: SEG_uppvarmning_steg1
+    Ämnesrad: Sex saker att veta innan du köper en låda
+    https://app.spoks.com/matstrumpor/post/277058be-7182-4cfc-b36c-1522e84cdbb5/edit
+
+ 4. FD01  sön 4/10 kl 18:00  (pillret: 04.10 kl 18:00 CEST (UTC+2))
+    Till: SEG_uppvarmning_steg1
+    Ämnesrad: Han säger nej till presenter. Inte till sushi.
+    https://app.spoks.com/matstrumpor/post/fe8c9abf-4cbe-41fc-aaca-1d4400717049/edit
+
+ 5. V03  mån 5/10 kl 18:00  (pillret: 05.10 kl 18:00 CEST (UTC+2))
+    Till: SEG_uppvarmning_steg1
+    Ämnesrad: Inuti sushilådan: fem par strumpor
+    https://app.spoks.com/matstrumpor/post/436d851d-3dac-4dd5-b733-984b2af584e1/edit
+
+ 6. K02  tis 6/10 kl 18:00  (pillret: 06.10 kl 18:00 CEST (UTC+2))
+    Till: SEG_samtycke
+    Ämnesrad: Ingen jublar åt tvättmedel
+    https://app.spoks.com/matstrumpor/post/b7acd85c-236d-4b46-9469-2df548361492/edit
+
+ 7. FD06  ons 7/10 kl 18:00  (pillret: 07.10 kl 18:00 CEST (UTC+2))
+    Till: SEG_uppvarmning_steg1
+    Ämnesrad: Sushilådan funkar även om du knappt känner svärfar
+    https://app.spoks.com/matstrumpor/post/19db626c-e88e-4900-bb19-c2e5ca196144/edit
+
+ 8. FD08  tor 8/10 kl 18:00  (pillret: 08.10 kl 18:00 CEST (UTC+2))
+    Till: SEG_uppvarmning_steg1
+    Ämnesrad: Så här skrev de om lådan till pappa
+    https://app.spoks.com/matstrumpor/post/f4696d2a-8358-4fcd-a67a-4b5ac280c0d5/edit
+
+ 9. REA02  fre 9/10 kl 18:00  (pillret: 09.10 kl 18:00 CEST (UTC+2))
+    Till: SEG_samtycke
+    Ämnesrad: Köp 1, få 1 gäller alla fyra sorterna
+    https://app.spoks.com/matstrumpor/post/9d41c29d-d7e4-42c7-aaaa-b8f49f17da12/edit
+
+10. FD09  sön 11/10 kl 18:00  (pillret: 11.10 kl 18:00 CEST (UTC+2))
+    Till: SEG_uppvarmning_steg1
+    Ämnesrad: Två veckor kvar till 24 oktober
+    https://app.spoks.com/matstrumpor/post/5317562c-2e88-4549-a23e-13329494c9a3/edit
+
+11. FD10  mån 12/10 kl 18:00  (pillret: 12.10 kl 18:00 CEST (UTC+2))
+    Till: SEG_kopare_forra_sasongen
+    Ämnesrad: Förra gången jul, den här gången fars dag
+    https://app.spoks.com/matstrumpor/post/f7e75509-9397-4ed6-bfb3-aabec4f0ea63/edit
+
+12. FD11  ons 14/10 kl 18:00  (pillret: 14.10 kl 18:00 CEST (UTC+2))
+    Till: SEG_uppvarmning_steg1
+    Ämnesrad: En sushilåda till pappa, en till dig själv
+    https://app.spoks.com/matstrumpor/post/9a8e6ea5-f889-4df1-8109-ca5f665908ed/edit
+
+13. FD12  tor 15/10 kl 18:00  (pillret: 15.10 kl 18:00 CEST (UTC+2))
+    Till: SEG_kopare
+    Ämnesrad: Du har redan sushin. Ge pappa pizzan.
+    https://app.spoks.com/matstrumpor/post/69506961-866a-4f47-bb09-6c503672f9d8/edit
+
+14. REA03  fre 16/10 kl 18:00  (pillret: 16.10 kl 18:00 CEST (UTC+2))
+    Till: SEG_samtycke
+    Ämnesrad: En vecka och en helg kvar till 24 oktober
+    https://app.spoks.com/matstrumpor/post/45aabe88-d6c9-490d-a634-2ddfb936aeb0/edit
+
+15. FD13  lör 17/10 kl 18:00  (pillret: 17.10 kl 18:00 CEST (UTC+2))
+    Till: SEG_samtycke
+    Ämnesrad: Exakt en vecka kvar till 24 oktober
+    https://app.spoks.com/matstrumpor/post/f68abd56-a4bb-4608-b5ea-610375ca6e05/edit
+
+16. FD14  sön 18/10 kl 18:00  (pillret: 18.10 kl 18:00 CEST (UTC+2))
+    Till: SEG_ej_kopt
+    Ämnesrad: Du har aldrig sett hans min när lådan öppnas
+    https://app.spoks.com/matstrumpor/post/faaafae6-7469-4251-9dfe-0fb88588c461/edit
+
+17. FD15  mån 19/10 kl 18:00  (pillret: 19.10 kl 18:00 CEST (UTC+2))
+    Till: SEG_uppvarmning_steg1
+    Ämnesrad: Fem dagar kvar att beställa till fars dag
+    https://app.spoks.com/matstrumpor/post/656f890e-5629-431d-9efa-5f6ef55a95dd/edit
+
+18. K04  tis 20/10 kl 18:00  (pillret: 20.10 kl 18:00 CEST (UTC+2))
+    Till: SEG_samtycke
+    Ämnesrad: Sista dagen till fars dag: 24 oktober
+    https://app.spoks.com/matstrumpor/post/6f1e2e50-43af-446b-8284-ff0ae91b4125/edit
+
+19. FD16  ons 21/10 kl 18:00  (pillret: 21.10 kl 18:00 CEST (UTC+2))
+    Till: SEG_uppvarmning_steg1
+    Ämnesrad: Tre dagar kvar. Ingen sushi i den här lådan.
+    https://app.spoks.com/matstrumpor/post/56fb1045-5139-4d04-bb52-f2fd704c7d10/edit
+
+20. FD17  tor 22/10 kl 18:00  (pillret: 22.10 kl 18:00 CEST (UTC+2))
+    Till: SEG_samtycke
+    Ämnesrad: Två dagar kvar innan paketet inte hinner fram
+    https://app.spoks.com/matstrumpor/post/a2529b5a-c43b-4fc3-bc1e-5fbe2f5e9f59/edit
+
+21. FD18  fre 23/10 kl 09:00  (pillret: 23.10 kl 09:00 CEST (UTC+2))
+    Till: SEG_samtycke
+    Ämnesrad: I morgon är sista dagen att beställa till fars dag
+    https://app.spoks.com/matstrumpor/post/ea849786-ea60-43bc-8d8b-cc6ca4eceea8/edit
+
+22. FD21  fre 23/10 kl 20:00  (pillret: 23.10 kl 20:00 CEST (UTC+2))
+    Till: SEG_uppvarmning_steg1
+    Ämnesrad: Sushilådan kan vara beställd innan du lägger dig
+    https://app.spoks.com/matstrumpor/post/bd3a0b77-3e86-42a4-a727-e360fa5b2592/edit
+
+23. FD19  lör 24/10 kl 09:00  (pillret: 24.10 kl 09:00 CEST (UTC+2))
+    Till: SEG_samtycke
+    Ämnesrad: I dag är sista dagen att beställa till fars dag
+    https://app.spoks.com/matstrumpor/post/b91692ad-d7ab-4e71-b8db-1799f97af346/edit
+
+24. FD22  lör 24/10 kl 13:00  (pillret: 24.10 kl 13:00 CEST (UTC+2))
+    Till: SEG_uppvarmning_steg1
+    Ämnesrad: Inte sushi? Då finns pizzalådan.
+    https://app.spoks.com/matstrumpor/post/2acfa603-1aaa-4b45-b1ab-a242cd827d0f/edit
+
+25. FD23  lör 24/10 kl 20:00  (pillret: 24.10 kl 20:00 CEST (UTC+2))
+    Till: SEG_samtycke
+    Ämnesrad: Sista påminnelsen om sushilådan före fars dag
+    https://app.spoks.com/matstrumpor/post/6aa3c5c6-6cea-417e-90b5-a89b829b4226/edit
+
+26. FD20  sön 25/10 kl 18:00  (pillret: 25.10 kl 18:00 CET (UTC+1))
+    Till: SEG_samtycke
+    Ämnesrad: En present till pappa som hinner fram ändå
+    https://app.spoks.com/matstrumpor/post/385b6fc9-f41c-43c3-bb02-96bd0970b849/edit
+
+27. K05  tis 27/10 kl 18:00  (pillret: 27.10 kl 18:00 CET (UTC+1))
+    Till: SEG_kopare_forra_sasongen
+    Ämnesrad: Gissa vad jag la i julstrumpan
+    https://app.spoks.com/matstrumpor/post/c6b1d0b0-a959-4cb6-b643-4f2a41418ac1/edit
+
+28. K06  tis 3/11 kl 18:00  (pillret: 03.11 kl 18:00 CET (UTC+1))
+    Till: SEG_kopare_forra_sasongen
+    Ämnesrad: Sushilådan sålde slut i november förra året
+    https://app.spoks.com/matstrumpor/post/eeec137e-8a9b-4c97-a6df-1722f1e52232/edit
+
+29. K07  tis 10/11 kl 18:00  (pillret: 10.11 kl 18:00 CET (UTC+1))
+    Till: SEG_samtycke
+    Ämnesrad: Köp 1, få 1, till två olika personer
+    https://app.spoks.com/matstrumpor/post/f914fe1f-1874-4275-836f-8497c807ae25/edit
+
+30. K08  tis 17/11 kl 18:00  (pillret: 17.11 kl 18:00 CET (UTC+1))
+    Till: SEG_samtycke
+    Ämnesrad: Sushi, pizza, burgare, donut. En lista.
+    https://app.spoks.com/matstrumpor/post/960a9002-d3ea-4a41-9826-c3305bc39d52/edit
+
+31. K09  mån 23/11 kl 18:00  (pillret: 23.11 kl 18:00 CET (UTC+1))
+    Till: SEG_samtycke
+    Ämnesrad: Din rabatt räknas ut automatiskt i kassan
+    https://app.spoks.com/matstrumpor/post/34c4f671-2004-4591-b7f6-06fd88e9baf8/edit
+
+32. K10  fre 27/11 kl 18:00  (pillret: 27.11 kl 18:00 CET (UTC+1))
+    Till: SEG_samtycke
+    Ämnesrad: Black Friday: rabatten gäller ännu
+    https://app.spoks.com/matstrumpor/post/eca0a6db-0d05-459b-aa8a-cde9e21dda9a/edit
+
+33. K11  tis 1/12 kl 18:00  (pillret: 01.12 kl 18:00 CET (UTC+1))
+    Till: SEG_samtycke
+    Ämnesrad: Tisdag 8 december är sista dagen
+    https://app.spoks.com/matstrumpor/post/2457c8d7-ca82-430f-8eeb-04e5898ce585/edit
+
+34. K12  tis 8/12 kl 18:00  (pillret: 08.12 kl 18:00 CET (UTC+1))
+    Till: SEG_samtycke
+    Ämnesrad: I dag är sista dagen för jul
+    https://app.spoks.com/matstrumpor/post/3a072256-fab0-45c2-987d-48a15295a975/edit
+
+35. K13  tis 15/12 kl 18:00  (pillret: 15.12 kl 18:00 CET (UTC+1))
+    Till: SEG_samtycke
+    Ämnesrad: En present som hinner fram ändå
+    https://app.spoks.com/matstrumpor/post/45bd1681-7580-4fb8-8de0-772a7ae2a844/edit
+
+36. K14  tis 29/12 kl 18:00  (pillret: 29.12 kl 18:00 CET (UTC+1))
+    Till: SEG_samtycke
+    Ämnesrad: Vem fyller år näst på listan?
+    https://app.spoks.com/matstrumpor/post/5637c25a-f2a7-45df-9d82-5d94326e161b/edit
+
+NÄR DU ÄR KLAR.
+Öppna https://app.spoks.com/matstrumpor/campaigns, fliken med schemalagda kampanjer ("Planned" / "Planerade"). Räkna hur många som står där och ta en skärmdump av listan.
+Rapportera sedan till mig i en tabell, en rad per mejl: kod | Till | datum och klockslag som pillret visar | schemalagd / redan schemalagd / hoppad och varför. Skriv under tabellen allt som såg konstigt ut, även om du löste det.
