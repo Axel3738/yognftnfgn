@@ -1,22 +1,37 @@
 {
   "id": "k08-morkret-kommer",
-  "emailTitle": "210 lysdioder, tre huvuden som vrids var för sig",
-  "emailDescription": "1200 mAh-batteriet laddas själv i solljus.",
+  "emailTitle": "Söndag: mörkt en timme tidigare. LJUS30 ger 30 %",
+  "emailDescription": "Klockan ställs om. Koden gäller till och med söndag 25 oktober.",
   "amnesrader": [
-    "210 lysdioder, tre huvuden som vrids var för sig",
-    "Söndag blir det mörkt en timme tidigare",
-    "Ljuset som tänds innan du hittar nyckelhålet"
+    "Söndag: mörkt en timme tidigare. LJUS30 ger 30 %",
+    "Ljuset tänds innan du hittar nyckelhålet. LJUS30",
+    "Ingen elektriker, ingen sladd. 30 % på lampan"
   ],
   "blocks": [
     {
       "type": "h1",
-      "text": "Tre huvuden vrids var för sig, mot nyckelhålet",
+      "text": "Söndag blir det mörkt en timme tidigare. Nyckelhålet flyttar inte.",
       "alignment": "center"
     },
     {
       "type": "regular",
-      "text": "Klockan ställs om på söndag, och det blir mörkt en timme tidigare. En fast monterad lampa hade krävt en elektriker, en sladdlampa fryser fast i snön till våren.",
+      "text": "Hej {{ contact.first_name | default: 'där' }},",
       "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Du kommer hem när det redan är mörkt, med mobillampan i ena handen, och famlar efter nyckelhålet.",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Du kan låta en elektriker dra nya kablar i väggen. Du kan dra en förlängningssladd, som fryser fast i snön till våren.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Eller så sätter du upp en lampa som inte behöver någotdera.",
+      "alignment": "left"
     },
     {
       "type": "products",
@@ -24,7 +39,7 @@
       "products": [
         {
           "id": "66ab4154-18a8-4fe9-aa81-2cd3846389da",
-          "button": "Se lampan"
+          "button": "Se lampan med 210 LED"
         }
       ],
       "dynamicProductsCount": null,
@@ -42,30 +57,35 @@
       "productsPerRow": 1
     },
     {
+      "type": "regular",
+      "text": "Solcellslampan monteras på väggen utan en enda kabel. Solcellspanelen laddar det inbyggda 1200 mAh-batteriet under dagen, och när rörelsesensorn märker att du närmar dig tänds de tre huvudena med 210 lysdioder.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Varje huvud vrids för sig, så du riktar ljuset mot uppfarten, trappan eller nyckelhålet.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Koden LJUS30 ger 30 % på solcellslampan, solcellslarmet, pannlampan och kepslampan till och med söndag 25 oktober. Tryck på knappen så ligger koden redan i kassan, eller skriv in den själv. Rabatten dras i kassan, en gång per kund, på priset som står på produktsidan.",
+      "alignment": "left"
+    },
+    {
       "type": "link",
-      "text": "Se lampan",
-      "url": "https://baverbutiken.se/products/solcellslampa-med-rorelsesensor-tre-huvuden-210-led",
+      "text": "Hämta 30 % med LJUS30",
+      "url": "https://baverbutiken.se/discount/LJUS30?redirect=%2Fproducts%2Fsolcellslampa-med-rorelsesensor-tre-huvuden-210-led",
       "style": "button"
     },
     {
       "type": "regular",
-      "text": "Solcellslampan monteras på väggen utan en enda kabel. Solcellspanelen laddar det inbyggda 1200 mAh-batteriet under dagen, och rörelsesensorn tänder alla tre huvudena, 210 lysdioder, när du kommer gående.",
+      "text": "Boden och garaget är mörka också. Samma kod gäller där.",
       "alignment": "left"
     },
     {
       "type": "regular",
-      "text": "Varje huvud vrids för sig, så du riktar ljuset mot uppfarten, trappan eller nyckelhålet, inte bara rakt fram.",
+      "text": "Solcellslarmet ger siren och blixtljus när något rör sig. Pannlampan ger 1500 lumen och båda händerna fria. Kepslampan lyser där du tittar.",
       "alignment": "left"
-    },
-    {
-      "type": "regular",
-      "text": "Ingen elektriker, ingen sladd. Bara solljus och en rörelsesensor.",
-      "alignment": "left"
-    },
-    {
-      "type": "h2",
-      "text": "Mer ljus",
-      "alignment": "center"
     },
     {
       "type": "products",

@@ -1,0 +1,123 @@
+{
+ "segment": [
+  {
+   "a": 0,
+   "b": 3.5,
+   "sv": "Tre anledningar att inte köpa sushistrumpor.",
+   "text": "Trzy powody, żeby nie kupować skarpetek sushi."
+  },
+  {
+   "a": 4.04,
+   "b": 5.54,
+   "sv": "Ett: de är helt enkelt unika.",
+   "text": "Raz, są po prostu wyjątkowe."
+  },
+  {
+   "a": 5.72,
+   "b": 8.7,
+   "sv": "Glöm alla de där tråkiga presenterna som hamnar i en låda.",
+   "text": "Zapomnij o tych nudnych prezentach, które lądują w szufladzie."
+  },
+  {
+   "a": 8.8,
+   "b": 10.56,
+   "sv": "Det här är en hel upplevelse.",
+   "text": "To jest jedno wielkie przeżycie."
+  },
+  {
+   "a": 10.64,
+   "b": 13.68,
+   "sv": "Folk tror alltid att det är riktig sushi när de öppnar lådan.",
+   "text": "Każdy myśli, że to prawdziwe sushi, kiedy otwiera pudełko."
+  },
+  {
+   "a": 13.78,
+   "b": 15.56,
+   "sv": "Och sen, vänta, det är strumpor.",
+   "text": "A potem, chwila, to skarpetki."
+  },
+  {
+   "a": 15.56,
+   "b": 17.74,
+   "sv": "Två: värdet för pengarna är helt absurt.",
+   "text": "Dwa, dostajesz mega dużo za te pieniądze."
+  },
+  {
+   "a": 17.94,
+   "b": 19.6,
+   "sv": "Det är inte bara fem par strumpor.",
+   "text": "To nie tylko pięć par skarpetek."
+  },
+  {
+   "a": 19.68,
+   "b": 22.9,
+   "sv": "Det är hög kvalitet, mjukt material och de håller länge.",
+   "text": "To wysoka jakość, miękki materiał i długo wytrzymują."
+  },
+  {
+   "a": 22.98,
+   "b": 26.14,
+   "sv": "Plus att de faktiskt används. Ingen present som bara samlar damm.",
+   "text": "Do tego naprawdę się je nosi. To nie kolejny kurzołap."
+  },
+  {
+   "a": 26.14,
+   "b": 28.28,
+   "sv": "Tre: du gör mottagaren väldigt glad.",
+   "text": "Trzy, sprawiasz komuś ogromną radość."
+  },
+  {
+   "a": 28.28,
+   "b": 30.34,
+   "sv": "Mamma sa att det var hennes favoritgåva.",
+   "text": "Mama mówi, że to jej ulubiony prezent."
+  },
+  {
+   "a": 30.44,
+   "b": 32.04,
+   "sv": "Och gissa vad, hon vill redan ha fler.",
+   "text": "I zgadnij co, już chce więcej."
+  },
+  {
+   "a": 32.12,
+   "b": 35,
+   "sv": "Det är liksom garanterat att få en reaktion och ett skratt.",
+   "text": "Reakcja i śmiech są praktycznie murowane."
+  },
+  {
+   "a": 35.12,
+   "b": 37.74,
+   "sv": "Det är den typen av present där givaren är den smarta.",
+   "text": "Kto daje coś takiego, wychodzi na sprytnego."
+  },
+  {
+   "a": 37.82,
+   "b": 40.36,
+   "sv": "Du blir personen som ger de bästa presenterna.",
+   "text": "Będziesz osobą, która daje najlepsze prezenty."
+  },
+  {
+   "a": 40.52,
+   "b": 42.16,
+   "sv": "Alla frågar: var köpte du det här?",
+   "text": "Wszyscy pytają: skąd to masz?"
+  },
+  {
+   "a": 42.3,
+   "b": 44.3,
+   "sv": "Klicka bara på länken nu och kolla in allt.",
+   "text": "Kliknij teraz w link i zobacz wszystko."
+  }
+ ],
+ "texter": {
+  "hook": "Stop! Nie kupuj skarpetek sushi, zanim to zobaczysz.",
+  "rubriker": [
+   "RAZ: SĄ PO PROSTU WYJĄTKOWE",
+   "DWA: TO SIĘ OPŁACA",
+   "TRZY: SPRAWIASZ IM RADOŚĆ"
+  ],
+  "knapp": "ZAMÓW TERAZ"
+ },
+ "granskad": true,
+ "granskning": "godkänd av infödd granskare i runda 3 (2026-09-29)"
+}

@@ -1,22 +1,32 @@
 {
   "id": "k06-kamera-ljud-klockan-tre",
-  "emailTitle": "Larmar på personer, inte på katter",
-  "emailDescription": "AI:n vet skillnaden mellan en gren och en människa.",
+  "emailTitle": "Klockan tre: gren eller människa? 30 % på kameran",
+  "emailDescription": "Två linser, 355 grader och direktnotis i mobilen. Koden KAMERA30 gäller till och med söndag.",
   "amnesrader": [
-    "Larmar på personer, inte på katter",
-    "Ett ljud på tomten klockan tre",
-    "Kameran vänder sig efter det som rör sig"
+    "Klockan tre: gren eller människa? 30 % på kameran",
+    "Larmar på personer, inte katter. 30 % till söndag",
+    "Kameran följer det som rör sig. 30 % med KAMERA30"
   ],
   "blocks": [
     {
       "type": "h1",
-      "text": "En gren rör sig. Kameran vet skillnaden.",
+      "text": "Klockan tre kan det vara en gren, en katt eller en människa",
       "alignment": "center"
     },
     {
       "type": "regular",
-      "text": "Du ligger vaken och gissar: katten, vinden eller något annat. Att gå ut och kolla är det sista du vill.",
+      "text": "Hej {{ contact.first_name | default: 'där' }},",
       "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Du vaknar av ett ljud på tomten. Att gå ut och kolla är det sista du vill.",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Att inte veta är värre. Så du ligger kvar och gissar: katten, vinden eller något annat?",
+      "alignment": "left"
     },
     {
       "type": "products",
@@ -24,7 +34,7 @@
       "products": [
         {
           "id": "c4fdb786-0a7d-4499-b1db-f81ad5272edd",
-          "button": "Se produkten"
+          "button": "Se kameran med två linser"
         }
       ],
       "dynamicProductsCount": null,
@@ -40,78 +50,32 @@
       "buttonText": null,
       "alignment": "center",
       "productsPerRow": 1
+    },
+    {
+      "type": "regular",
+      "text": "Kameran tar gissningen ifrån dig. Den har två linser och täcker 355 grader med panorering och zoom, så det finns inga döda vinklar.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "AI:n skiljer människor från grenar och katter. Den larmar på personer. Katter och grenar går fria.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Rör sig någon på tomten följer kameran automatiskt, och mobilen säger till direkt. Den tål utomhusbruk året om.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Koden KAMERA30 ger 30 % på kameran till och med söndag 18 oktober. Tryck på knappen så ligger koden redan i kassan, eller skriv in den själv. Rabatten dras i kassan, en gång per kund, på priset som står på produktsidan.",
+      "alignment": "left"
     },
     {
       "type": "link",
-      "text": "Se vad som rör sig",
-      "url": "https://baverbutiken.se/products/overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
+      "text": "Hämta 30 % med KAMERA30",
+      "url": "https://baverbutiken.se/discount/KAMERA30?redirect=%2Fproducts%2Fovervakningskamera-tradlos-dubbellins-ptz-med-ai-sparning",
       "style": "button"
-    },
-    {
-      "type": "regular",
-      "text": "En kamera med två linser täcker 355 grader med panorering och zoom. AI:n skiljer människor från grenar och katter, så den larmar på rätt saker.",
-      "alignment": "left"
-    },
-    {
-      "type": "regular",
-      "text": "Rör sig något på tomten följer kameran automatiskt, och mobilen säger till direkt.",
-      "alignment": "left"
-    },
-    {
-      "type": "quote",
-      "text": "\"Lätt att sätta upp och fungerar som den ska.\"\nEmma, verifierad kund"
-    },
-    {
-      "type": "quote",
-      "text": "\"Mycket nöjd med köpet. Enkel och praktisk.\"\nSara, verifierad kund"
-    },
-    {
-      "type": "h2",
-      "text": "Vad kameran gör"
-    },
-    {
-      "type": "list",
-      "text": "Inga döda vinklar, dubbla linser och PTZ 355 grader"
-    },
-    {
-      "type": "list",
-      "text": "Larmar på personer, inte på katter, med AI-detektering"
-    },
-    {
-      "type": "list",
-      "text": "Följer rörelsen automatiskt och skickar direktnotis i mobilen"
-    },
-    {
-      "type": "list",
-      "text": "Tål utomhusbruk året om"
-    },
-    {
-      "type": "products",
-      "selectionMode": "manual",
-      "products": [
-        {
-          "id": "c4fdb786-0a7d-4499-b1db-f81ad5272edd",
-          "button": "Se kameran"
-        }
-      ],
-      "dynamicProductsCount": null,
-      "dynamicCriteria": null,
-      "productVisibilitySettings": {
-        "isImageVisible": true,
-        "isTitleVisible": true,
-        "isPriceVisible": true,
-        "isButtonVisible": true,
-        "isDescriptionVisible": false,
-        "isOriginalPriceVisible": true
-      },
-      "buttonText": null,
-      "alignment": "center",
-      "productsPerRow": 1
-    },
-    {
-      "type": "regular",
-      "text": "Övervakningskamera Trådlös, med AI som vet skillnaden mellan en gren och en person.",
-      "alignment": "left"
     },
     {
       "type": "columns",

@@ -5,7 +5,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
   domSajter, domKonton, domPengar, domPixel, domBackend, domRutiner, domNotion, domShopifyNycklar, domTvistgrad, domUtbetalningar,
-  domAllt, isoVecka, kortNamn, verksamhetForKonto, verksamhetForButik, stockholmTimme,
+  domAllt, isoVecka, kortNamn, verksamhetForKonto, verksamhetForButik, stockholmTimme, klockan, dagText,
 } from '../kontroller.mjs';
 
 const NU = new Date('2026-09-27T14:00:00Z'); // 16:00 svensk tid, söndag
@@ -34,7 +34,15 @@ test('sajterna: svarar = frisk; 5xx, timeout, 402 och lösenordssidan är tre ol
   assert.match(larm[2].gor[0], /Billing/);
   assert.match(larm[3].rubrik, /lösenordsskyddad/);
   assert.match(larm[3].gor[0], /Password protection/);
-  for (const l of larm) { assert.equal(l.typ, 'butik'); assert.ok(l.gor.length >= 1); assert.match(l.rader[0], /Mätt \d\d:\d\d/); }
+  for (const l of larm) { assert.equal(l.typ, 'butik'); assert.ok(l.gor.length >= 1); assert.match(l.rader[0], /Mätt sön 27\/9 16:00\./); }
+});
+
+test('klockan och dagText: veckodag + datum står alltid med — Axel läser larmet dagar senare', () => {
+  assert.equal(klockan(NU), 'sön 27/9 16:00');
+  assert.equal(klockan(new Date('2026-09-27T22:29:00Z')), 'mån 28/9 00:29', 'svensk tid, inte UTC');
+  assert.equal(dagText('2026-09-27'), 'sön 27/9', 'Metas eget dygn som text');
+  assert.equal(dagText(new Date('2026-10-03T21:59:00Z')), 'lör 3/10');
+  assert.equal(dagText(new Date('2026-10-03T22:01:00Z')), 'sön 4/10', 'midnatt räknas i Stockholm');
 });
 
 const konto = (id, namn, konto, extra = {}) => ({ id, namn, verksamhet: 'baverbutiken', konto, kampanjer: [], fel: null, ...extra });
@@ -94,9 +102,11 @@ test('pengar brinner: noll köp över 5 000, eller ROAS under halva break-even �
   assert.equal(larm[0].verksamhet, 'carashell', 'delat konto: kampanjens prefix avgör verksamheten');
   assert.equal(larm[1].verksamhet, 'baverbutiken');
   assert.equal(larm[0].data.regel, 'under');
-  assert.match(larm[0].rader[0], /18 512 kr i dag med 2 köp, ROAS 0,32 \(break-even 1,63\)/);
+  assert.match(larm[0].rader[0], /18 512 kr sön 27\/9 med 2 köp, ROAS 0,32 \(break-even 1,63\)\. Mätt sön 27\/9 16:00, konto Magiborsten UK\./);
+  assert.match(larm[0].rubrik, /^Pengar brinner sön 27\/9: 18 512 kr, ROAS 0,32$/);
   assert.equal(larm[1].data.regel, 'noll');
-  assert.match(larm[1].rubrik, /6 000 kr i dag, 0 köp/);
+  assert.match(larm[1].rubrik, /^Pengar brinner sön 27\/9: 6 000 kr, 0 köp$/);
+  assert.ok(!larm.some((l) => /i dag/.test(l.rubrik) || /i dag/.test(l.rader[0])), 'aldrig "i dag" — larmet läses dagar senare');
   assert.equal(larm[2].data.regel, 'under_okand');
   assert.match(larm[2].rader[0], /break-even står inte i kampanjnamnet/);
   assert.match(larm[0].gor[0], /kampanjen "1 CARASHELL_US_Taköverdrag"/, 'namnet utan BE-svansen');
@@ -115,6 +125,10 @@ test('pengar brinner: nyckeln bär Metas eget dygn, inte svenskt datum — samma
     'pengar:1107817401910319:b:2026-09-28',
     'pengar:1107817401910319:c:2026-09-28',
   ]);
+  // Texten bär samma dygn som nyckeln: Metas dag på a, svensk dag på b — och mättiden är svensk.
+  assert.match(larm[0].rubrik, /^Pengar brinner sön 27\/9: 22 419 kr, ROAS 0,52$/);
+  assert.match(larm[0].rader[0], /22 419 kr sön 27\/9 med 4 köp, ROAS 0,52 .* Mätt mån 28\/9 00:29, konto Magiborsten UK\./);
+  assert.match(larm[1].rubrik, /^Pengar brinner mån 28\/9: 6 000 kr, 0 köp$/);
   for (const l of larm) assert.match(l.rader.at(-1), /ditt beslut/);
 });
 

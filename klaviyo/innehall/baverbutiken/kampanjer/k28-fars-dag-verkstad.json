@@ -1,60 +1,54 @@
 {
   "id": "k28-fars-dag-verkstad",
-  "namn": "MAIL_20261007_Balteslip_GT_5_tier1_product_kniven-som-legat-slo_v1",
-  "memo": "Bälteslipen är en av butikens storsäljare och en klassisk present till den som slipar själv. Hypotes: den konkreta bilden \"kniven som legat slö sedan midsommar\" slår \"presenttips\" som rubrik. Kornstorlek och kitets innehåll är okänt (kommentarer/leads.md 2026-09-27) och får inte påstås.",
+  "namn": "MAIL_20261007_Balteslip_GT_5_tier1_product_kniven-som-legat-slo_v2",
+  "memo": "Bälteslipen är en av butikens storsäljare och en klassisk present till den som slipar själv. Hypotes: den konkreta bilden \"kniven som legat slö sedan midsommar\" slår \"presenttips\" som rubrik. Fars dag-rean, 30 % med FARSDAG30 på bälteslipen och tre till för verkstaden till och med måndag 19 oktober, lades till 2026-09-29 (Axel). Axels regel för alla fars dag-mejl: aldrig beställningsdatum eller frakt, i stället \"fars dag är söndag 8 november och kommer fortare än man tror\"; 19 oktober står bara som reans sista dag i kodstycket. Obs: Kornstorlek och kitets innehåll är okänt (kommentarer/leads.md 2026-09-27) och får inte påstås.",
   "taggar": {
     "typ": "I",
     "kalla": "voc",
     "kalla_ref": "kommentarer/leads.md (Beltgrinder, frågorna om förbrukning)",
     "lardom": null,
     "avatar": "den som ska ge en present till pappan med verkstad",
-    "begar": "en present han använder redan första helgen",
+    "begar": "en present han använder redan första helgen, till 30 % lägre pris",
     "awareness": "product",
-    "urgency": "konsekvens",
+    "urgency": "pris + slutdag (reans, 19 oktober) + sasong (fars dag 8 november)",
     "confidence": "medium",
     "prefix": "Balteslip",
     "kod": "GT"
   },
   "amnesrader": [
     {
-      "text": "Kniven som legat slö sedan midsommar",
-      "begar": "ge en present som äntligen löser den där slöa kniven"
+      "text": "Slö kniv sedan midsommar? 30 % på bälteslipen",
+      "begar": "få den slöa kniven skarp till slut och betala 30 % mindre för det"
     },
     {
-      "text": "En present han provar samma helg",
-      "begar": "en present som används direkt, inte läggs i en låda"
+      "text": "En bälteslip som får plats på minsta arbetsbänk",
+      "begar": "en present han kan använda direkt, även på en liten arbetsbänk"
     },
     {
       "text": "15 graders vinkel, jämn egg varje gång",
-      "begar": "veta att verktyget ger samma resultat varje gång, utan gissning"
+      "begar": "veta att verktyget ger samma egg varje gång, utan gissning"
     }
   ],
-  "forhandstext": "En present till pappan med verkstad, redo att användas på lördag.",
+  "forhandstext": "Fars dag-rean: koden FARSDAG30 gäller även rullknivslipen, täljsetet och Makita-hållarna.",
   "block": [
     {
       "typ": "hero",
       "rubrik": "Kniven som legat slö sedan midsommar",
-      "text": "Hej {{fornamn}},\n\nEn present till pappan med verkstad. Inte en till pryl som hamnar i en låda.",
+      "text": "Hej {{fornamn}},\n\nSlöa knivar, rostiga eggar och en slipning som aldrig blev av.\n\nAtt slipa för hand kräver teknik, tid och tålamod, så kniven blir liggande i lådan.\n\nFars dag är söndag 8 november, och helgerna dit går fortare än man tror. Med en bälteslip blir slipningen äntligen av, och den är 30 % billigare i fars dag-rean.",
       "bild": "produkt:balteslipmaskin-mini-3-i-1-knivslip-polerare",
       "knapp": {
-        "text": "Se presenten",
-        "lank": "produkt:balteslipmaskin-mini-3-i-1-knivslip-polerare"
+        "text": "Hämta 30 % med FARSDAG30",
+        "lank": "rabatt:FARSDAG30:produkt:balteslipmaskin-mini-3-i-1-knivslip-polerare"
       }
     },
     {
       "typ": "text",
       "rubrik": null,
-      "text": "En mini-bälteslipmaskin med 7 hastigheter och 15 graders slipvinkel. Slipar knivar, polerar metall och formar trä, tre maskiner i en.\n\nFår plats på minsta arbetsbänk."
-    },
-    {
-      "typ": "produkt",
-      "handle": "balteslipmaskin-mini-3-i-1-knivslip-polerare",
-      "text": "Rätt fart för materialet, för knivar, trä, metall och smycken.",
-      "knapp": "Se bälteslipen"
+      "text": "Det är en mini-bälteslipmaskin med 7 hastigheter och 15 graders slipvinkel, så eggen blir jämn varje gång.\n\nDen slipar knivar, polerar metall och formar trä, tre maskiner i en, och får plats på minsta arbetsbänk.\n\nStår du själv i verkstaden kan du skicka det här mejlet vidare som önskelista."
     },
     {
       "typ": "produktrad",
-      "rubrik": "Tre till för verkstaden",
+      "rubrik": "Rullknivslip, täljset och Makita-hållare, också 30 %",
       "handles": [
         "rullknivslipen-i-tra-20-vinkeln-ar-redan-bestamd",
         "taljset-30-delar-6-knivar-och-6-jarn",
@@ -64,7 +58,12 @@
     {
       "typ": "text",
       "rubrik": null,
-      "text": "Beställ senast 19 oktober om paketet ska vara framme till fars dag den 8 november."
+      "text": "Koden FARSDAG30 ger 30 % på bälteslipmaskinen, rullknivslipen, täljsetet och Makita-hållarna till och med måndag 19 oktober. Tryck på knappen så ligger koden redan i kassan, eller skriv in den själv. Rabatten dras i kassan, en gång per kund, på priset som står på produktsidan."
+    },
+    {
+      "typ": "knapp",
+      "text": "Köp bälteslipen för 30 % mindre",
+      "lank": "rabatt:FARSDAG30:produkt:balteslipmaskin-mini-3-i-1-knivslip-polerare"
     },
     {
       "typ": "fakta"
@@ -72,13 +71,13 @@
   ],
   "tretest": [
     {
-      "rad": "Kniven som legat slö sedan midsommar",
+      "rad": "Slö kniv sedan midsommar? 30 % på bälteslipen",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true
     },
     {
-      "rad": "En present han provar samma helg",
+      "rad": "En bälteslip som får plats på minsta arbetsbänk",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true
@@ -90,25 +89,31 @@
       "ingen_annan": true
     },
     {
-      "rad": "En present till pappan med verkstad, redo att användas på lördag.",
+      "rad": "Fars dag-rean: koden FARSDAG30 gäller även rullknivslipen, täljsetet och Makita-hållarna.",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true
     },
     {
-      "rad": "Se presenten",
+      "rad": "Kniven som legat slö sedan midsommar",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true
     },
     {
-      "rad": "Se bälteslipen",
+      "rad": "Hämta 30 % med FARSDAG30",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true
     },
     {
-      "rad": "Tre till för verkstaden",
+      "rad": "Rullknivslip, täljset och Makita-hållare, också 30 %",
+      "visualisera": true,
+      "falsifiera": true,
+      "ingen_annan": true
+    },
+    {
+      "rad": "Köp bälteslipen för 30 % mindre",
       "visualisera": true,
       "falsifiera": true,
       "ingen_annan": true
@@ -120,5 +125,18 @@
   ],
   "exkludera": [],
   "status_plan": "klar",
-  "kraver_axel": null
+  "kraver_axel": null,
+  "rabatt": {
+    "typ": "kod",
+    "kod": "FARSDAG30",
+    "procent": 30,
+    "start": "2026-10-04T06:00:00Z",
+    "slut": "2026-10-19T21:59:59Z",
+    "handles": [
+      "balteslipmaskin-mini-3-i-1-knivslip-polerare",
+      "rullknivslipen-i-tra-20-vinkeln-ar-redan-bestamd",
+      "taljset-30-delar-6-knivar-och-6-jarn",
+      "makita-hallare-5-pack-verktygen-samlade-pa-vaggen"
+    ]
+  }
 }

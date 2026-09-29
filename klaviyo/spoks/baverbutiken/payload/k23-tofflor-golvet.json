@@ -1,0 +1,161 @@
+{
+  "id": "k23-tofflor-golvet",
+  "emailTitle": "Golvet blir kallt. 30 % på tofflorna till söndag",
+  "emailDescription": "Plysch från häl till tå och en hälrem som sitter kvar. Koden är TOFFLOR30.",
+  "amnesrader": [
+    "Golvet blir kallt. 30 % på tofflorna till söndag",
+    "Tofflan som inte glider av i källartrappan",
+    "TOFFLOR30 ger 30 % på fyra sorters tofflor"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Golvet i hallen är iskallt innan kaffet är klart",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hej {{ contact.first_name | default: 'där' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Du har handlat skor eller tofflor hos oss. Nu kommer kylan, och strumpor hjälper bara en stund.",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Och de gamla tofflorna? På väg ner i källaren efter ved glider de av redan i första trappsteget. Hälen är uttrampad, så du fortsätter på sockorna.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Tunna, platta tofflor är inte svaret heller. Varje steg landar hårt på hälar och knän. Det märks inte direkt. Det märks på kvällen.",
+      "alignment": "left"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "ce010bae-533c-479d-a121-52fec7dfd9b7",
+          "button": "Se den fodrade tofflan med hälrem"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "regular",
+      "text": "Plysch från häl till tå, så golvets kyla stannar utanför. Hälremmen håller tofflan kvar på foten i trappan, och den öppna modellen har du på dig innan kaffet hunnit brygga. Khaki eller svart, herr 40 till 47.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Koden TOFFLOR30 ger 30 % på de fyra tofflorna i mejlet till och med söndag 4 oktober. Tryck på knappen så ligger koden redan i kassan, eller skriv in den själv. Rabatten dras i kassan, en gång per kund, på priset som står på produktsidan.",
+      "alignment": "left"
+    },
+    {
+      "type": "link",
+      "text": "Hämta 30 % med TOFFLOR30",
+      "url": "https://baverbutiken.se/discount/TOFFLOR30?redirect=%2Fproducts%2Ffodrade-inomhustofflor-kamouflage-herr-40-47",
+      "style": "button"
+    },
+    {
+      "type": "h2",
+      "text": "Tre till: soporna, kvällen och trädgården"
+    },
+    {
+      "type": "list",
+      "text": "Soporna: plyschtofflorna är fodrade som en vinterjacka, och TPR-sulan tål uppfarten, så du kan gå ut utan att byta skor."
+    },
+    {
+      "type": "list",
+      "text": "Kvällen: de ergonomiska har en tjock, stötdämpande sula som tar emot varje steg och avlastar knän och rygg."
+    },
+    {
+      "type": "list",
+      "text": "Trädgården: strandtofflorna är lätta, halkfria och torkar snabbt, så de klarar den snabba svängen ut."
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "e13df74f-ad6c-45c6-b9ed-aca26a58b8c5",
+          "button": "Se produkten"
+        },
+        {
+          "id": "541710c4-223e-4d90-9b5c-5e5204ad3a66",
+          "button": "Se produkten"
+        },
+        {
+          "id": "c83b3823-91aa-4fba-9e80-a37e87ccf981",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

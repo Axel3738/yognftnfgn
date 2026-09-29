@@ -2724,3 +2724,28 @@ till Instagram Stories, men att dygnet bar spend från före bytet 11:32 UTC. I 
 är första HELA dygnet med bara flödet: **6 044 kr på tre placeringar, allt inne i
 flödet, noll utanför.** Alla 12 adsets bär rätt placeringar, och sidorna och
 kassan läses som engelska med USA förvalt.
+
+## Nattvakten 2026-09-29 — inga ändringar, Axels budgetar står
+
+**Budgetronden (konto 915422744950975, MagiBorsten DK): 0 ändringar.**
+- Huvudkampanjen `CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11`
+  **3 000 kr** (Axels tal 28/9 19:09 CEST, ronden satte 4 750 kl 00:41 samma
+  natt). 3d: 17 818 kr, 20 köp, ROAS 1,45, vinst −7,5 % — under golvet, men
+  kadensspärren håller (1 av 3 dygn). Nästa fönster 2026-10-01.
+- `CARASHELL_SE_Taköverdraget LISTICLE` **2 800 kr** (Axel 19:09, ronden satte
+  1 400 den 27/9). 3d: 5 605 kr, 8 köp, ROAS 1,90, vinst 8,6 % — under golvet,
+  kadensspärren håller (2 av 3).
+- **NY kampanj: `NYA LISTICLE CARASHELL_SE_Taköverdraget … – kopia`**, 2 000 kr,
+  ACTIVE sedan 28/9 19:15, 22 annonser med prefixet. Första dygnet 371 kr,
+  1 köp, ROAS 3,91 — under grinden (300 kr OCH 3 köp), ingen dom.
+- **Inga annonser pausade.**
+
+**7 dygn SE (tre kampanjer):** 70 470 kr, 87 köp, ROAS 1,69, CPA 810 kr mot
+break-even 693 ⇒ vinstbidrag **−10 179 kr**. Andra negativa natten.
+
+**Nattens fynd:** `SP_5_1` är bekräftad på tredje mätningen — 7-dygns-CPA 765 →
+951 → **1 164 kr**, spenden stilla och köpen 25 → 21 → 16. 14-dygnsklassen
+skyddar den fortfarande som `vinnare` (CPA 664), så ronden kan inte röra den.
+Detaljerna och instruktionen i `dna.md`.
+
+**Briefronden:** pausad sedan 2026-09-18 (Axels beslut) — bara `kord` stämplad.

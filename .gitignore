@@ -141,3 +141,17 @@ klaviyo/output/
 # Matstrumpors översättningar är minnet — de committas (Axels marknadsbygge 2026-09-27)
 !matstrumpor/marknader/output/
 !matstrumpor/marknader/output/underlag-*.json
+
+# Konkurrentdödaren: rådata, kandidater, bildcache, skärmdumpar och den byggda granskningssidan — dör med containern. Ärendena (arenden.jsonl, arenden/) och lage.json committas.
+konkurrenter/output/
+# Meta-anmälningarnas bevisbilder (~1 MB PNG styck) och verifieringssidan (data-URI:er) — bevisets länk på CDN och fälten står i <nr>.json som committas.
+konkurrenter/arenden/*/anmalan/bevis-*.png
+konkurrenter/arenden/*/anmalan/verifiering.html
+
+# Matstrumpors lokaliserade videor (HeyGen + undertexter) — stora filer, laddas upp till Meta, aldrig i git
+matstrumpor/marknader/annonser/klar/*.mp4
+matstrumpor/marknader/annonser/klar/*.png
+matstrumpor/marknader/annonser/klar/*.rutor.json
+# Matstrumpors egna videor: källorna och renderingarna ligger inte i repot
+matstrumpor/marknader/egna/kalla/
+matstrumpor/marknader/egna/ut/

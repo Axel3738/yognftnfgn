@@ -1,16 +1,16 @@
 {
   "id": "k26-fars-dag-listan",
-  "emailTitle": "Fem veckor kvar till fars dag",
-  "emailDescription": "Sex presenter sorterade efter vad han sysslar med.",
+  "emailTitle": "Redan oktober. Fars dag: sex presenter, 30 % nu",
+  "emailDescription": "Fars dag är söndag 8 november och kommer fortare än du tror. FARSDAG30 gäller alla sex.",
   "amnesrader": [
-    "Fem veckor kvar till fars dag",
-    "Tre pappor, sex presenter",
-    "Funkar också som hans egen önskelista"
+    "Redan oktober. Fars dag: sex presenter, 30 % nu",
+    "Skicka listan till den som frågar vad du vill ha",
+    "Båt, verkstad eller kamin? 30 % på presenten"
   ],
   "blocks": [
     {
       "type": "h1",
-      "text": "Fem veckor kvar till fars dag",
+      "text": "Fars dag är söndag 8 november. 30 % på sex presenter",
       "alignment": "center"
     },
     {
@@ -20,28 +20,33 @@
     },
     {
       "type": "regular",
-      "text": "Sex presenter till fars dag, sorterade efter vad han faktiskt sysslar med: båten, verkstaden eller kaminen.",
+      "text": "Fars dag kommer fortare än man tror. Den som köper presenten i sista stund köper det som fanns kvar.",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Fars dag-rean har börjat, och den gäller alla sex.",
       "alignment": "center"
     },
     {
       "type": "link",
-      "text": "Se hela listan",
-      "url": "https://baverbutiken.se/collections/alla-produkter",
+      "text": "Hämta 30 % med FARSDAG30",
+      "url": "https://baverbutiken.se/discount/FARSDAG30?redirect=%2Fcollections%2Falla-produkter",
       "style": "button"
     },
     {
       "type": "regular",
-      "text": "Du kanske läser det här som present till pappan i huset. Eller så är det han som läser det, och skickar mejlet vidare som sin egen önskelista.",
+      "text": "Kanske ska du köpa något till pappan i huset. Kanske är det han som läser, och då är det bara att skicka mejlet vidare som önskelista.",
       "alignment": "left"
     },
     {
       "type": "regular",
-      "text": "Båda funkar. Listan nedan är sorterad efter vad han sysslar med.",
+      "text": "Båda sätten funkar. Presenterna är sorterade efter vad han brukar hålla på med: båt, verkstad eller kamin.",
       "alignment": "left"
     },
     {
       "type": "h2",
-      "text": "Om han har båt",
+      "text": "Om han har båt: motorn låst och under tak",
       "alignment": "center"
     },
     {
@@ -73,7 +78,7 @@
     },
     {
       "type": "h2",
-      "text": "Om han har verkstad",
+      "text": "Om han har verkstad: jämn egg och 30 delar att tälja med",
       "alignment": "center"
     },
     {
@@ -105,7 +110,7 @@
     },
     {
       "type": "h2",
-      "text": "Om han har kamin",
+      "text": "Om han har kamin: rent rör och klyvd tändved",
       "alignment": "center"
     },
     {
@@ -137,8 +142,14 @@
     },
     {
       "type": "regular",
-      "text": "Beställ senast 19 oktober om paketet ska vara framme till fars dag den 8 november.",
+      "text": "Koden FARSDAG30 ger 30 % på motorlåset, båtmotorskyddet, bälteslipmaskinen, täljsetet, sotarsetet och tändvedsklyven till och med måndag 19 oktober. Tryck på knappen så ligger koden redan i kassan, eller skriv in den själv. Rabatten dras i kassan, en gång per kund, på priset som står på produktsidan.",
       "alignment": "left"
+    },
+    {
+      "type": "link",
+      "text": "Välj present för 30 % mindre",
+      "url": "https://baverbutiken.se/discount/FARSDAG30?redirect=%2Fcollections%2Falla-produkter",
+      "style": "button"
     },
     {
       "type": "columns",

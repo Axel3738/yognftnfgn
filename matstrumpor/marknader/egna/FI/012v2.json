@@ -1,0 +1,13 @@
+{
+ "texter": [
+  "Yksi laatikoista\non feikkipizza.",
+  "Feikki onkin\nsukkia.",
+  "Katsoo kahdesti.\nSitten nauraa.",
+  "Omaasi ei lainata.",
+  "Asuu tavallisten\nsukkien kanssa",
+  "Makunsa kullakin.",
+  "Neljä makua. Valitse omasi."
+ ],
+ "granskad": true,
+ "not": "text 4: granskarens förslag efter runda 3 ('Kukaan ei lainaa omaasi.' underkänd); text 7: granskarens förslag efter runda 3 ('Neljä makua. Yksi kullekin.' underkänd)"
+}

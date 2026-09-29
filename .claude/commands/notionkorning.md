@@ -199,6 +199,7 @@ Fyra utfall per leverans, och de behandlas olika:
 | Kampanj **PAUSED, 0 kr spend** | Ladda upp. Kampanjen har aldrig kommit igång och kan aktiveras. |
 | Kampanj **PAUSED med spend > 0** | **AVVECKLAD. Ladda inte upp.** Rapportera bara. |
 | **Ingen kampanj** i kontot | Produkten är inte launchad. **Ladda inte upp, gissa aldrig en kampanj.** Rapportera raden. |
+| **Blockerat prefix** (`kalla: blockerad`, `products/prefix-alias.json` → `blockerade`) | **Ladda aldrig upp, rör aldrig raden** (ingen status, ingen kommentar). En rad i rapporten med antalet, inte en rad per annons. Lägg aldrig ett alias som kringgår blockeringen. *(2026-09-29: elva `TackleBayRod_`-rader med tacklebay.se i hubben Fish rod holder, som flyttades från TackleBay till Bäverbutiken samma dag.)* |
 
 ⚠️ **En avstängd kampanj som har spenderat är avvecklad, inte tom.** Axels regel
 2026-08-30. Nya creatives ska inte in där: de begravs bakom en pausad kampanj,

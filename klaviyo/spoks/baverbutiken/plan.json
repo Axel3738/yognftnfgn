@@ -446,64 +446,64 @@
     },
     {
       "id": "k02-baten-ska-upp",
-      "namn": "MAIL_20261001_Batmotorskydd_S_1_uppvarmning_solution_baten-ska-upp_v1",
+      "namn": "MAIL_20261001_Batmotorskydd_S_1_tier1_problem_motorn-star-ute_v2",
       "planerad": "2026-10-01T18:00:00+02:00",
       "segment": [
-        "SEG_uppvarmning_steg1"
+        "Warmup tier 1"
       ],
       "mejl": "k02-baten-ska-upp"
     },
     {
       "id": "k03-termoskydd-kundernas-ord",
-      "namn": "MAIL_20261006_Termoskydd_SP_2_uppvarmning_product_kundernas-ord_v1",
+      "namn": "MAIL_20261006_Termoskydd_SP_2_tier1_problem_immig-ruta-varje-morgon_v2",
       "planerad": "2026-10-06T18:00:00+02:00",
       "segment": [
-        "SEG_uppvarmning_steg1"
+        "Warmup tier 1"
       ],
       "mejl": "k03-termoskydd-kundernas-ord"
     },
     {
       "id": "k04-sotarset-fore-eldning",
-      "namn": "MAIL_20261008_Sotarset_N_1_uppvarmning_problem_sota-innan-du-eldar_v1",
+      "namn": "MAIL_20261008_Sotarset_N_1_tier1_problem_sota-innan-du-eldar_v2",
       "planerad": "2026-10-08T18:00:00+02:00",
       "segment": [
-        "SEG_uppvarmning_steg1"
+        "Warmup tier 1"
       ],
       "mejl": "k04-sotarset-fore-eldning"
     },
     {
       "id": "k05-fars-dag",
-      "namn": "MAIL_20261013_Takoverdrag_GT_2_engagerade60d_product_farsdag-19okt_v1",
+      "namn": "MAIL_20261013_Takoverdrag_GT_2_tier2_problem_farsdag-rean-taket_v2",
       "planerad": "2026-10-13T18:00:00+02:00",
       "segment": [
-        "SEG_engagerade_60d"
+        "Warmup tier 2"
       ],
       "mejl": "k05-fars-dag"
     },
     {
       "id": "k06-kamera-ljud-klockan-tre",
-      "namn": "MAIL_20261015_Overvakningskamera_PD_2_engagerade60d_problem_ljud-klockan-tre_v1",
+      "namn": "MAIL_20261015_Overvakningskamera_PD_2_tier2_problem_ljud-klockan-tre_v2",
       "planerad": "2026-10-15T18:00:00+02:00",
       "segment": [
-        "SEG_engagerade_60d"
+        "Warmup tier 2"
       ],
       "mejl": "k06-kamera-ljud-klockan-tre"
     },
     {
       "id": "k07-damasker-hostlov",
-      "namn": "MAIL_20261020_Damasker_PD_1_engagerade60d_solution_torra-fotter_v1",
+      "namn": "MAIL_20261020_Damasker_PD_1_tier2_solution_torra-fotter_v2",
       "planerad": "2026-10-20T18:00:00+02:00",
       "segment": [
-        "SEG_engagerade_60d"
+        "Warmup tier 2"
       ],
       "mejl": "k07-damasker-hostlov"
     },
     {
       "id": "k08-morkret-kommer",
-      "namn": "MAIL_20261022_Solcellslampa_S_1_engagerade60d_problem_morkret-kommer_v1",
+      "namn": "MAIL_20261022_Solcellslampa_S_1_tier2_problem_morkret-kommer_v2",
       "planerad": "2026-10-22T18:00:00+02:00",
       "segment": [
-        "SEG_engagerade_60d"
+        "Warmup tier 2"
       ],
       "mejl": "k08-morkret-kommer"
     },
@@ -563,10 +563,10 @@
     },
     {
       "id": "k15-fars-dag-sista-helgen",
-      "namn": "MAIL_20261016_Farsdagshelg_GT_3_engagerade60d_product_sista-helgen-farsdag_v1",
+      "namn": "MAIL_20261016_Farsdagshelg_GT_3_tier2_promo_sista-helgen-farsdag-rean_v2",
       "planerad": "2026-10-16T18:00:00+02:00",
       "segment": [
-        "SEG_engagerade_60d"
+        "Warmup tier 2"
       ],
       "mejl": "k15-fars-dag-sista-helgen"
     },
@@ -634,17 +634,17 @@
       "mejl": "k22-nyarskoll"
     },
     {
-      "id": "k23-rea-bastsaljarna",
-      "namn": "MAIL_20260930_Rea_CS_1_tier1_promo_bastsaljarna-reapris_v1",
+      "id": "k23-tofflor-golvet",
+      "namn": "MAIL_20260930_Tofflor_S_1_kopare-tofflor_problem_golvet-blir-kallt_v1",
       "planerad": "2026-09-30T18:00:00+02:00",
       "segment": [
-        "Warmup tier 1"
+        "Köpare tofflor & skor"
       ],
-      "mejl": "k23-rea-bastsaljarna"
+      "mejl": "k23-tofflor-golvet"
     },
     {
       "id": "k24-batkopare-nasta-steg",
-      "namn": "MAIL_20261002_Batmotorskydd_S_2_kopare-bat_solution_motorholje-till-batmotorskydd_v1",
+      "namn": "MAIL_20261002_Batmotorskydd_S_2_kopare-bat_solution_motorholje-till-batmotorskydd_v2",
       "planerad": "2026-10-02T18:00:00+02:00",
       "segment": [
         "Köpare båt"
@@ -653,7 +653,7 @@
     },
     {
       "id": "k25-tradgard-frosten",
-      "namn": "MAIL_20261003_Kranskydd_S_1_kopare-tradgard_problem_utekranen-fryser-forst_v1",
+      "namn": "MAIL_20261003_Kranskydd_S_1_kopare-tradgard_problem_kranen-spricker_v2",
       "planerad": "2026-10-03T18:00:00+02:00",
       "segment": [
         "Köpare trädgård & tomt"
@@ -662,7 +662,7 @@
     },
     {
       "id": "k26-fars-dag-listan",
-      "namn": "MAIL_20261004_Farsdag_GT_4_tier1_solution_fem-veckor-tre-pappor_v1",
+      "namn": "MAIL_20261004_Farsdag_GT_4_tier1_promo_farsdag-rean-borjar_v2",
       "planerad": "2026-10-04T18:00:00+02:00",
       "segment": [
         "Warmup tier 1"
@@ -671,7 +671,7 @@
     },
     {
       "id": "k27-husvagn-resten",
-      "namn": "MAIL_20261005_Husbil_S_1_kopare-husvagn_solution_resten-av-bilen_v1",
+      "namn": "MAIL_20261005_Husbil_S_1_kopare-husvagn_solution_resten-av-bilen_v2",
       "planerad": "2026-10-05T18:00:00+02:00",
       "segment": [
         "Köpare husvagn & husbil"
@@ -680,7 +680,7 @@
     },
     {
       "id": "k28-fars-dag-verkstad",
-      "namn": "MAIL_20261007_Balteslip_GT_5_tier1_product_kniven-som-legat-slo_v1",
+      "namn": "MAIL_20261007_Balteslip_GT_5_tier1_product_kniven-som-legat-slo_v2",
       "planerad": "2026-10-07T18:00:00+02:00",
       "segment": [
         "Warmup tier 1"
@@ -688,17 +688,17 @@
       "mejl": "k28-fars-dag-verkstad"
     },
     {
-      "id": "k29-rea-presenterna",
-      "namn": "MAIL_20261009_Rea_CS_2_tier1_promo_presenterna-pa-rea_v1",
+      "id": "k29-alla-kalendrarna",
+      "namn": "MAIL_20261009_Adventskalender_S_1_tier1_promo_lucka-1-kalender30_v1",
       "planerad": "2026-10-09T18:00:00+02:00",
       "segment": [
         "Warmup tier 1"
       ],
-      "mejl": "k29-rea-presenterna"
+      "mejl": "k29-alla-kalendrarna"
     },
     {
       "id": "k30-fars-dag-ved",
-      "namn": "MAIL_20261010_Tandvedsklyv_GT_6_kopare-tradgard_product_vinterns-ved_v1",
+      "namn": "MAIL_20261010_Tandvedsklyv_GT_6_kopare-tradgard_product_vinterns-ved_v2",
       "planerad": "2026-10-10T18:00:00+02:00",
       "segment": [
         "Köpare trädgård & tomt"
@@ -707,7 +707,7 @@
     },
     {
       "id": "k31-fars-dag-fiske",
-      "namn": "MAIL_20261011_Rodholder_GT_7_tier1_product_fyra-spon-pa-vaggen_v1",
+      "namn": "MAIL_20261011_Rodholder_GT_7_tier1_product_fyra-spon-pa-vaggen_v2",
       "planerad": "2026-10-11T18:00:00+02:00",
       "segment": [
         "Warmup tier 1"
@@ -716,7 +716,7 @@
     },
     {
       "id": "k32-fars-dag-prylar",
-      "namn": "MAIL_20261012_Fagelmatare_GT_8_kopare-verkstad_product_faglarna-i-mobilen_v1",
+      "namn": "MAIL_20261012_Fagelmatare_GT_8_kopare-verkstad_product_faglarna-i-mobilen_v2",
       "planerad": "2026-10-12T18:00:00+02:00",
       "segment": [
         "Köpare verkstad & garage"
@@ -725,7 +725,7 @@
     },
     {
       "id": "k33-fars-dag-fryser",
-      "namn": "MAIL_20261014_Varmesits_GT_9_tier2_problem_pappan-som-fryser_v1",
+      "namn": "MAIL_20261014_Varmesits_GT_9_tier2_problem_pappan-som-fryser_v2",
       "planerad": "2026-10-14T18:00:00+02:00",
       "segment": [
         "Warmup tier 2"
@@ -734,7 +734,7 @@
     },
     {
       "id": "k34-fars-dag-bat",
-      "namn": "MAIL_20261017_Motorlas_GT_10_kopare-bat_product_motorn-han-laser-fast_v1",
+      "namn": "MAIL_20261017_Motorlas_GT_10_kopare-bat_product_motorn-han-laser-fast_v2",
       "planerad": "2026-10-17T18:00:00+02:00",
       "segment": [
         "Köpare båt"
@@ -743,7 +743,7 @@
     },
     {
       "id": "k35-fars-dag-i-morgon",
-      "namn": "MAIL_20261018_Farsdag_GT_11_tier2_promo_i-morgon-sista-dagen_v1",
+      "namn": "MAIL_20261018_Farsdag_GT_11_tier2_promo_i-morgon-slutar-rean_v2",
       "planerad": "2026-10-18T18:00:00+02:00",
       "segment": [
         "Warmup tier 2"
@@ -752,7 +752,7 @@
     },
     {
       "id": "k36-fars-dag-i-dag",
-      "namn": "MAIL_20261019_Farsdag_GT_12_tier2_promo_sista-dagen-i-dag_v1",
+      "namn": "MAIL_20261019_Farsdag_GT_12_tier2_promo_rean-slutar-i-dag_v2",
       "planerad": "2026-10-19T18:00:00+02:00",
       "segment": [
         "Warmup tier 2"
@@ -761,12 +761,30 @@
     },
     {
       "id": "k37-mc-hojen-stalls-undan",
-      "namn": "MAIL_20261021_MCkapell_S_1_kopare-mc_solution_hojen-stalls-undan_v1",
+      "namn": "MAIL_20261021_MCkapell_S_1_kopare-mc_solution_hojen-stalls-undan_v2",
       "planerad": "2026-10-21T18:00:00+02:00",
       "segment": [
         "Köpare MC & fordon"
       ],
       "mejl": "k37-mc-hojen-stalls-undan"
+    },
+    {
+      "id": "k38-grasklipparen-sasongsslut",
+      "namn": "MAIL_20260930_Grasklippare_S_1_kopare-grasklippare_problem_sasongen-ar-slut_v1",
+      "planerad": "2026-09-30T18:00:00+02:00",
+      "segment": [
+        "Köpare gräsklippare & trimmer"
+      ],
+      "mejl": "k38-grasklipparen-sasongsslut"
+    },
+    {
+      "id": "k39-fiske-kalendern",
+      "namn": "MAIL_20261005_Rodholder_S_1_kopare-fiske_solution_ett-drag-om-dagen_v1",
+      "planerad": "2026-10-05T18:00:00+02:00",
+      "segment": [
+        "Köpare fiske"
+      ],
+      "mejl": "k39-fiske-kalendern"
     }
   ]
 }

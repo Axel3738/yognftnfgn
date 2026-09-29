@@ -1,7 +1,9 @@
 // CLI för video-lokaliseringen (docs/video-localization.md).
 //
 // STANDARDFLÖDE (kreditsnålt — rendera ALDRIG före proofread):
-//   node localize.mjs proofread --file=annons.mp4 --lang="Norwegian Bokmål (Norway)"   # 0 krediter
+//   node localize.mjs proofread --file=annons.mp4 --lang="Norwegian Bokmål (Norway)" [--mode=speed]
+//     ↳ läget är "precision" som standard (Axels regel: UGC alltid HeyGens dyraste version);
+//       precision drar krediter redan vid proofread (mätt 2026-09-28), inte bara vid render
 //     ↳ transkriberar + översätter UTAN att rendera; laddar ner SRT för granskning
 //   (gör lokaliseringsrättningarna i SRT-filen)
 //   node localize.mjs apply-srt --id=<proofread_id> --srt=rättad.srt                   # 0 krediter
@@ -73,8 +75,8 @@ async function main() {
         videoUrl = await uploadAsset(args.file);
       }
       const title = args.title ?? (args.file ? path.basename(args.file, path.extname(args.file)) : undefined);
-      const pid = await proofreadCreate({ videoUrl, outputLanguage: args.lang, title });
-      console.log(`Proofread-session skapad (0 krediter): ${pid}`);
+      const pid = await proofreadCreate({ videoUrl, outputLanguage: args.lang, title, mode: args.mode });
+      console.log(`Proofread-session skapad (${args.mode ?? 'precision'}): ${pid}`);
       let st = await proofreadStatus(pid);
       while (!['completed', 'success', 'failed'].includes(st.status)) {
         console.log(`status: ${st.status} … väntar 15s`);

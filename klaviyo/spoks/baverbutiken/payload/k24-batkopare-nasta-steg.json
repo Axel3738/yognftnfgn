@@ -1,11 +1,11 @@
 {
   "id": "k24-batkopare-nasta-steg",
   "emailTitle": "Ett vinterskydd som täcker hela motorn",
-  "emailDescription": "420D Oxford-tyg, draget hela vägen ner över riggen.",
+  "emailDescription": "En rem runt mitten, inga verktyg. 30 % billigare med BAT30 till och med söndag 4 oktober.",
   "amnesrader": [
     "Ett vinterskydd som täcker hela motorn",
     "Från kåpan till riggen, under samma skydd",
-    "En täckt motor lockar ingen tjuv"
+    "En täckt motor är ett tråkigare byte för en tjuv"
   ],
   "blocks": [
     {
@@ -29,7 +29,7 @@
       "products": [
         {
           "id": "6f01ed7d-90e1-45a9-bb43-f0fbbc8c2285",
-          "button": "Se båtmotorskyddet"
+          "button": "Se skyddet i nio storlekar"
         }
       ],
       "dynamicProductsCount": null,
@@ -48,8 +48,8 @@
     },
     {
       "type": "link",
-      "text": "Se vinterskyddet",
-      "url": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+      "text": "Se skyddet, 30 % med BAT30",
+      "url": "https://baverbutiken.se/discount/BAT30?redirect=%2Fproducts%2Fbatmotorskydd-420d-heltackande-for-utombordare",
       "style": "button"
     },
     {
@@ -68,8 +68,19 @@
       "alignment": "left"
     },
     {
+      "type": "regular",
+      "text": "Koden BAT30 ger 30 % på båtmotorskyddet och på motorlåset, förtöjningslinan och spolklämman längre ner, till och med söndag 4 oktober. Tryck på knappen så ligger koden redan i kassan, eller skriv in den själv. Rabatten dras i kassan, en gång per kund, på priset som står på produktsidan.",
+      "alignment": "left"
+    },
+    {
+      "type": "link",
+      "text": "Hämta 30 % med BAT30",
+      "url": "https://baverbutiken.se/discount/BAT30?redirect=%2Fproducts%2Fbatmotorskydd-420d-heltackande-for-utombordare",
+      "style": "button"
+    },
+    {
       "type": "h2",
-      "text": "Mer för båten",
+      "text": "Motorlås, förtöjningslina och spolklämma, också 30 %",
       "alignment": "center"
     },
     {

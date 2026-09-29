@@ -312,6 +312,27 @@ export class Brevlada {
     return this.svara(uid, { ...val, utkast: true });
   }
 
+  /**
+   * Ett NYTT mejl utan tråd, till `till`. Byggt 2026-09-27 för
+   * Konkurrentdödaren (varningsbrevet går till en adress som aldrig skrivit
+   * till oss). Samma spärrar som svara(): tom text eller tomt ämne skickas
+   * aldrig, adressen måste se ut som en adress, `utkast: true` sparar i
+   * Drafts i stället för att skicka. Returnerar { typ, till, amne, fran, utkastUid }.
+   */
+  async skickaNytt({ till, amne, text, utkast = false } = {}) {
+    const adress = String(till ?? '').trim();
+    if (!/^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(adress)) throw new Error(`skickaNytt: "${till}" är ingen giltig mejladress.`);
+    const egen = String(text ?? '').replace(/\r\n/g, '\n').trim();
+    if (!egen) throw new Error('skickaNytt: texten är tom — ett tomt mejl skickas aldrig.');
+    const rubrik = String(amne ?? '').replace(/\s+/g, ' ').trim();
+    if (!rubrik) throw new Error('skickaNytt: ämnesraden är tom.');
+    return this.medSession(async (k) => {
+      const kompose = await k.oppnaNytt();
+      const r = await k.skickaSvar({ ...kompose, till: adress }, { text: egen, amne: rubrik, utkast });
+      return { typ: r.typ, till: adress, amne: rubrik, fran: kompose.identiteter?.find((i) => i.id === kompose.fran)?.text ?? kompose.fran, utkastUid: r.utkastUid, sparfel: r.sparfel, meddelande: r.meddelande, utkastMapp: kompose.utkastMapp };
+    });
+  }
+
   /** Flaggar (\Flagged) mejlet, eller tar bort flaggan med `av: true`. */
   async flagga(uid, { mapp = this.inkorg, av = false } = {}) {
     const n = kollaUid(uid);

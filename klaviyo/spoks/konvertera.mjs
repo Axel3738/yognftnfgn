@@ -147,6 +147,15 @@ export function skapaKonverterare({ brand, produktIds = {}, recCache = {}, erbju
     const s = String(spec ?? '').trim();
     const [typ, ...rest] = s.split(':');
     const v = rest.join(':');
+    // rabatt:<KOD>:<inre länk> — Shopifys /discount/<KOD> lägger koden i kundens kassa och
+    // skickar vidare till den inre länken (produkt:, kollektion: …). Extrarean 2026-09-28.
+    if (typ === 'rabatt') {
+      const [kod, ...inre] = v.split(':');
+      const mal = lank(inre.join(':') || 'kollektion:alla-produkter', l);
+      const b = bas(l);
+      const vag = mal.startsWith(b) ? mal.slice(b.length) || '/' : mal;
+      return `${b}/discount/${kod}?redirect=${encodeURIComponent(vag)}`;
+    }
     if (typ === 'produkt') return `${bas(l)}/products/${v}${l.lank_suffix}`;
     if (typ === 'kollektion') return `${bas(l)}/collections/${v}${l.lank_suffix}`;
     if (typ === 'sparning') return l.sparningssida;
@@ -394,8 +403,15 @@ export function skapaKonverterare({ brand, produktIds = {}, recCache = {}, erbju
     const regler = [...FORBJUDET.alla, ...(FORBJUDET[s] ?? [])];
     // Ett mejl med rabatt: "black_week" får nämna brandets trappa (brand.black_week.procent,
     // CaraShell 10/20/30, Axels beslut B 2026-09-26) — bara de talen, och bara i det mejlet.
-    const tillatna = m.rabatt && Array.isArray(brand[m.rabatt]?.procent) ? new Set(brand[m.rabatt].procent.map(Number)) : null;
-    if (m.rabatt && !tillatna) fel.push(`${m.id}: rabatt "${m.rabatt}" saknas i brandfilen (procent-listan)`);
+    // Ett mejl med rabatt: { typ: "kod", kod, procent, start, slut } (extrarean med rabattkod,
+    // Axels beslut A 2026-09-28) får nämna exakt sin egen procentsats, och koden måste finnas
+    // i Shopify innan mejlet går (klaviyo/rea-kod.mjs skapar och läser tillbaka den).
+    const kodRabatt = m.rabatt && typeof m.rabatt === 'object' ? m.rabatt : null;
+    const tillatna = kodRabatt
+      ? (Number.isFinite(Number(kodRabatt.procent)) ? new Set([Number(kodRabatt.procent)]) : null)
+      : m.rabatt && Array.isArray(brand[m.rabatt]?.procent) ? new Set(brand[m.rabatt].procent.map(Number)) : null;
+    if (kodRabatt && (!tillatna || !/^[A-Z0-9]{4,20}$/.test(String(kodRabatt.kod ?? '')) || !kodRabatt.start || !kodRabatt.slut)) fel.push(`${m.id}: rabatt-blocket kräver kod (A-Z0-9), procent, start och slut`);
+    if (m.rabatt && !kodRabatt && !tillatna) fel.push(`${m.id}: rabatt "${m.rabatt}" saknas i brandfilen (procent-listan)`);
     for (const [var_, t] of texterI(m)) {
       for (const [re, vad] of regler) {
         if (vad === 'procent' && tillatna) {

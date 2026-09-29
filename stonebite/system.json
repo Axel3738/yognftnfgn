@@ -115,6 +115,13 @@
           "var": "tools/briefgranskning.mjs",
           "kommando": "/briefgranskning",
           "status": "drift"
+        },
+        {
+          "namn": "Konkurrentdödaren",
+          "vad": "Hittar butiker och annonser som kopierat våra produkttexter, bilder eller annonstexter, lägger fram bevisen på en granskningssida och skriver varningsbrevet — som skickas först när Axel säger skicka.",
+          "var": "konkurrenter/",
+          "kommando": "/konkurrentdodaren",
+          "status": "drift"
         }
       ]
     },
@@ -139,7 +146,7 @@
         },
         {
           "namn": "Bonusprogrammen",
-          "vad": "Nytt 2026-09-21: alla roller kan tjäna extra — recensioner, tvister, tom inkorg, produkter som skalar.",
+          "vad": "Nytt 2026-09-21: alla roller kan tjäna extra — recensioner, tvister, tom inkorg, färdiga produkter. Sedan 2026-09-28 visas pengarna som de betalas ut: produkttest varannan vecka (den 15:e och sista dagen), bonusen en gång i månaden, commission för sig.",
           "var": "bonus/",
           "kommando": "node bonus/kor.mjs",
           "status": "nytt"
@@ -369,16 +376,22 @@
       "kommando": "/commission"
     },
     {
-      "tid": "07:00 (mån)",
-      "namn": "Kundtjänstens veckorapport",
-      "vad": "Alla brands: ärenden, obesvarat, tvister, risk och en arbetslista till VA:n.",
-      "kommando": "/kundtjanst"
+      "tid": "06:25",
+      "namn": "Konkurrentdödaren",
+      "vad": "Sök kopior, jämför, ärenden, rapport. Skickar aldrig själv.",
+      "kommando": "/konkurrentdodaren"
     },
     {
       "tid": "07:00 (mån + tors)",
       "namn": "Briefgranskningen",
       "vad": "Creative director dömer senaste briefronden i alla Bäverbutikens hubbar.",
       "kommando": "/briefgranskning"
+    },
+    {
+      "tid": "07:00 (mån)",
+      "namn": "Kundtjänstens veckorapport",
+      "vad": "Alla brands: ärenden, obesvarat, tvister, risk och en arbetslista till VA:n.",
+      "kommando": "/kundtjanst"
     },
     {
       "tid": "07:30",

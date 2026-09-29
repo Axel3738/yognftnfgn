@@ -1,0 +1,33 @@
+{
+ "_om": "De fyra svenska annonserna som görs om på elva språk med egen röst (Axels order 2026-09-28: 'alla videos som inte är Nathalie och Sofie' med egen ElevenLabs/HeyGen, aldrig HeyGens videoöversättning). Urvalet: de videor utöver Nathalie/Sofie/Katarina som har minst 300 kr och 3 köp i Sverige (CLAUDE.md: ingen dom under det). Tal ur Meta 2026-09-29, date_preset maximum, 7d_click. Alla fyra låg under break-even i Sverige — utomlands är de test. hamta.mjs laddar ner källorna via annonsens förhandsvisning.",
+ "videor": {
+  "haikuh3": {
+   "annons": "MATSTRUMP_sushi_gift_ugc_haikuh3_v1",
+   "video_id": "996449943431525",
+   "spend_sek": 14549,
+   "kop": 30,
+   "vad": "klipp på lådan och strumporna, svensk AI-kvinnoröst, 'efter jag gav dem till min mamma fattade jag tre grejer', mörka undertextrutor, rubriker ETT/TVÅ/TRE, slutbild med knappen BESTÄLL NU"
+  },
+  "haikuh2": {
+   "annons": "MATSTRUMP_sushi_gift_ugc_haikuh2_v1",
+   "video_id": "3084560565211662",
+   "spend_sek": 6441,
+   "kop": 17,
+   "vad": "samma som haikuh3 men omvänd psykologi: 'Tre anledningar att inte köpa sushistrumpor', hook 'Stopp! Köp inte sushistrumpor förrän du har sett det här'"
+  },
+  "s001h1": {
+   "annons": "MATSTRUMP_sushi_gift_ugc_s001h1_v2",
+   "video_id": "1593728122281460",
+   "spend_sek": 1994,
+   "kop": 9,
+   "vad": "AI-personer och produktklipp, svensk AI-kvinnoröst berättar varför hon startade företaget, vita undertextrutor, slutetikett 'Sushistrumpor'"
+  },
+  "012v2": {
+   "annons": "MATSTRUMP_sushi_gift_ugc_012v2_v1",
+   "video_id": "4323418044575220",
+   "spend_sek": 2073,
+   "kop": 5,
+   "vad": "sju AI-bilder med orange textrutor, ingen röst (bluffpizza, fyra sorter)"
+  }
+ }
+}

@@ -1,0 +1,123 @@
+{
+ "segment": [
+  {
+   "a": 0,
+   "b": 3.5,
+   "sv": "Tre anledningar att inte köpa sushistrumpor.",
+   "text": "Three reasons why you shouldn't buy sushi socks."
+  },
+  {
+   "a": 4.04,
+   "b": 5.54,
+   "sv": "Ett: de är helt enkelt unika.",
+   "text": "One: they're simply unique."
+  },
+  {
+   "a": 5.72,
+   "b": 8.7,
+   "sv": "Glöm alla de där tråkiga presenterna som hamnar i en låda.",
+   "text": "Forget all those boring gifts that end up in a drawer."
+  },
+  {
+   "a": 8.8,
+   "b": 10.56,
+   "sv": "Det här är en hel upplevelse.",
+   "text": "This is a whole experience."
+  },
+  {
+   "a": 10.64,
+   "b": 13.68,
+   "sv": "Folk tror alltid att det är riktig sushi när de öppnar lådan.",
+   "text": "People always think it's real sushi when they open the box."
+  },
+  {
+   "a": 13.78,
+   "b": 15.56,
+   "sv": "Och sen, vänta, det är strumpor.",
+   "text": "And then, wait, it's socks."
+  },
+  {
+   "a": 15.56,
+   "b": 17.74,
+   "sv": "Två: värdet för pengarna är helt absurt.",
+   "text": "Two: the value for money is insane."
+  },
+  {
+   "a": 17.94,
+   "b": 19.6,
+   "sv": "Det är inte bara fem par strumpor.",
+   "text": "Not just five pairs of socks."
+  },
+  {
+   "a": 19.68,
+   "b": 22.9,
+   "sv": "Det är hög kvalitet, mjukt material och de håller länge.",
+   "text": "It's high-quality, soft material, and they last a long time."
+  },
+  {
+   "a": 22.98,
+   "b": 26.14,
+   "sv": "Plus att de faktiskt används. Ingen present som bara samlar damm.",
+   "text": "Plus, they actually get worn. Not another gift that collects dust."
+  },
+  {
+   "a": 26.14,
+   "b": 28.28,
+   "sv": "Tre: du gör mottagaren väldigt glad.",
+   "text": "Three: you make them so happy."
+  },
+  {
+   "a": 28.28,
+   "b": 30.34,
+   "sv": "Mamma sa att det var hennes favoritgåva.",
+   "text": "Mom said it was her favorite gift."
+  },
+  {
+   "a": 30.44,
+   "b": 32.04,
+   "sv": "Och gissa vad, hon vill redan ha fler.",
+   "text": "Guess what? She already wants more."
+  },
+  {
+   "a": 32.12,
+   "b": 35,
+   "sv": "Det är liksom garanterat att få en reaktion och ett skratt.",
+   "text": "It's sure to get a reaction and a laugh."
+  },
+  {
+   "a": 35.12,
+   "b": 37.74,
+   "sv": "Det är den typen av present där givaren är den smarta.",
+   "text": "It's the kind of gift that makes you look smart."
+  },
+  {
+   "a": 37.82,
+   "b": 40.36,
+   "sv": "Du blir personen som ger de bästa presenterna.",
+   "text": "You become the person who gives the best gifts."
+  },
+  {
+   "a": 40.52,
+   "b": 42.16,
+   "sv": "Alla frågar: var köpte du det här?",
+   "text": "Everyone asks: where'd you get this?"
+  },
+  {
+   "a": 42.3,
+   "b": 44.3,
+   "sv": "Klicka bara på länken nu och kolla in allt.",
+   "text": "Click the link now and check everything out."
+  }
+ ],
+ "texter": {
+  "hook": "Stop! Don't buy sushi socks until you've seen this",
+  "rubriker": [
+   "ONE: THEY'RE SIMPLY UNIQUE",
+   "TWO: IT'S WORTH IT",
+   "THREE: YOU MAKE THEM HAPPY"
+  ],
+  "knapp": "ORDER NOW"
+ },
+ "granskad": true,
+ "granskning": "godkänd av infödd granskare i runda 4 (2026-09-29)"
+}

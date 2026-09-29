@@ -1,0 +1,123 @@
+{
+ "segment": [
+  {
+   "a": 0,
+   "b": 3.5,
+   "sv": "Tre anledningar att inte köpa sushistrumpor.",
+   "text": "Drie redenen om geen sushisokken te kopen."
+  },
+  {
+   "a": 4.04,
+   "b": 5.54,
+   "sv": "Ett: de är helt enkelt unika.",
+   "text": "Één: ze zijn gewoon uniek."
+  },
+  {
+   "a": 5.72,
+   "b": 8.7,
+   "sv": "Glöm alla de där tråkiga presenterna som hamnar i en låda.",
+   "text": "Vergeet al die saaie cadeaus die in een la verdwijnen."
+  },
+  {
+   "a": 8.8,
+   "b": 10.56,
+   "sv": "Det här är en hel upplevelse.",
+   "text": "Dit is een hele beleving."
+  },
+  {
+   "a": 10.64,
+   "b": 13.68,
+   "sv": "Folk tror alltid att det är riktig sushi när de öppnar lådan.",
+   "text": "Wie de doos opent, denkt altijd dat het echte sushi is."
+  },
+  {
+   "a": 13.78,
+   "b": 15.56,
+   "sv": "Och sen, vänta, det är strumpor.",
+   "text": "En dan, wacht, het zijn sokken."
+  },
+  {
+   "a": 15.56,
+   "b": 17.74,
+   "sv": "Två: värdet för pengarna är helt absurt.",
+   "text": "Twee: je krijgt absurd veel voor je geld."
+  },
+  {
+   "a": 17.94,
+   "b": 19.6,
+   "sv": "Det är inte bara fem par strumpor.",
+   "text": "Niet zomaar vijf paar sokken."
+  },
+  {
+   "a": 19.68,
+   "b": 22.9,
+   "sv": "Det är hög kvalitet, mjukt material och de håller länge.",
+   "text": "Het is topkwaliteit, lekker zacht materiaal en ze gaan lang mee."
+  },
+  {
+   "a": 22.98,
+   "b": 26.14,
+   "sv": "Plus att de faktiskt används. Ingen present som bara samlar damm.",
+   "text": "Ze worden ook echt gedragen. Geen cadeau dat stof ligt te vangen."
+  },
+  {
+   "a": 26.14,
+   "b": 28.28,
+   "sv": "Tre: du gör mottagaren väldigt glad.",
+   "text": "Drie: je maakt de ontvanger heel blij."
+  },
+  {
+   "a": 28.28,
+   "b": 30.34,
+   "sv": "Mamma sa att det var hennes favoritgåva.",
+   "text": "Mijn moeder noemde het haar favoriete cadeau."
+  },
+  {
+   "a": 30.44,
+   "b": 32.04,
+   "sv": "Och gissa vad, hon vill redan ha fler.",
+   "text": "Raad eens, ze wil er al meer."
+  },
+  {
+   "a": 32.12,
+   "b": 35,
+   "sv": "Det är liksom garanterat att få en reaktion och ett skratt.",
+   "text": "Je krijgt er sowieso een reactie en een lach mee."
+  },
+  {
+   "a": 35.12,
+   "b": 37.74,
+   "sv": "Det är den typen av present där givaren är den smarta.",
+   "text": "Met zo'n cadeau kom je als gever slim over."
+  },
+  {
+   "a": 37.82,
+   "b": 40.36,
+   "sv": "Du blir personen som ger de bästa presenterna.",
+   "text": "Je wordt de persoon die de beste cadeaus geeft."
+  },
+  {
+   "a": 40.52,
+   "b": 42.16,
+   "sv": "Alla frågar: var köpte du det här?",
+   "text": "Iedereen vraagt: waar koop je dit?"
+  },
+  {
+   "a": 42.3,
+   "b": 44.3,
+   "sv": "Klicka bara på länken nu och kolla in allt.",
+   "text": "Klik nu op de link en bekijk alles."
+  }
+ ],
+ "texter": {
+  "hook": "Stop! Koop geen sushisokken voordat je dit hebt gezien",
+  "rubriker": [
+   "ÉÉN: ZE ZIJN GEWOON UNIEK",
+   "TWEE: HET IS HET WAARD",
+   "DRIE: JE MAAKT ZE BLIJ"
+  ],
+  "knapp": "NU BESTELLEN"
+ },
+ "granskad": true,
+ "granskning": "godkänd av infödd granskare i runda 3 (2026-09-29)"
+}

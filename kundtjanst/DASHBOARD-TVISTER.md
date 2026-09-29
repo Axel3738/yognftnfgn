@@ -141,7 +141,22 @@ Per varumärke:
    ⚠️ En `under_review` vars deadline passerat är det farligaste fallet: den
    läser som ett missat ärende och är i själva verket avklarad och låst.
 
-4. **`under_review` betyder inte att VÅRA bevis gick in.** Shopify skickar
+4. ⛔ **`under_review` betyder inte ens att NÅGON svarat — mätt 2026-09-29, och
+   det kostade 509 kr.** Tvist `17751572829` (order `17584203399517`, 508,99 kr,
+   `general`) stod `inquiry` / `under_review` med deadline 2026-09-26 och
+   **`evidence_sent_on: null`**. Ingen hade skickat in något. Den låg utanför
+   tvistkollens larm i flera dygn just för att statusen var `under_review`, och
+   2026-09-29 är den **`chargeback` / `needs_response`** med ny deadline
+   2026-10-10. Pengarna är tagna.
+   **Regeln är därför: det som avgör om vi fortfarande äger tvisten är
+   `evidence_sent_on`, aldrig statusen.** Tom ⇒ ingen har svarat, oavsett
+   status. Satt ⇒ besvarad, och då ska den inte stå på någons lista (det var
+   felet 2026-09-23). `tvistkoll.mjs` → `obesvarad()` är den enda domen, och
+   den faller tillbaka på statusen bara för data som saknar fältet.
+   ⚠️ En sida eller ett larm som skiljer "besvarad" från "obesvarad" på
+   statusen kommer att missa exakt den tvist som blir en chargeback.
+
+4c. **`under_review` betyder inte att VÅRA bevis gick in.** Shopify skickar
    själv ett svar på deadline-dagen om ingen gjort något
    (`12-CREDIT-NOT-PROCESSED.md` §1), och det autosvaret bär varken policytext,
    mejltråd eller kvitto. Statusen säger bara att något är inskickat och att

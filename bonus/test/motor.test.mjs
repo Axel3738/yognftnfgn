@@ -6,7 +6,10 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { raknaUt, namnetStarIText, personIText, veckonyckel, iPerioden, uppdragForRoll, harRollen, rollerFor } from '../motor.mjs';
+import {
+  raknaUt, namnetStarIText, personIText, veckonyckel, iPerioden, uppdragForRoll, harRollen, rollerFor,
+  halvmanader, utbetalningarFor, utbetalningFor, utbetalningsdefinitioner, summeraUtbetalningar,
+} from '../motor.mjs';
 
 const ROT = dirname(dirname(dirname(fileURLToPath(import.meta.url))));
 const regler = JSON.parse(readFileSync(join(ROT, 'bonus', 'regler.json'), 'utf8'));
@@ -292,7 +295,14 @@ test('reglerna är hela: varje uppdrag har id, namn, belopp och förklaring', ()
   }
 });
 
-test('halvmånaderna: 1–15 och 16–slut, commission delas aldrig (Josh 2026-09-24)', () => {
+// ------------------------------------------------------- utbetalningarna
+//
+// Axels beslut 2026-09-28: "betalningar i tvåveckorsperioder, men bonusarna
+// ska fortfarande vara varje månad … produkttesterna får betalt den 15:e och
+// sista dagen i månaden … kommissionen separat". Tre utbetalningar, tre
+// takter — och de blandas aldrig i en summa.
+
+test('tre utbetalningar, tre takter: produkttest per halvmånad, bonus per månad, commission separat', () => {
   const tvaRoller = personer.map((p) => (p.id === 'josh' ? { ...p, extraRoller: ['produkttest'] } : p));
   const matningar = {
     produkttest: [
@@ -301,9 +311,117 @@ test('halvmånaderna: 1–15 och 16–slut, commission delas aldrig (Josh 2026-0
       { produkt: 'C', ansvarig: 'Josh Naelga', status: 'Ads review', datum: '2026-09-29', steg: ['produkt_godkand'] },
     ],
     commission: [{ personId: 'josh', namn: 'Josh Naelga', usd: 50.94, annonser: 263, datum: '2026-09-21' }],
+    recensioner: [rec('Maria!', { datum: '2026-09-10' }), rec('Tack Maria', { datum: '2026-09-20' })],
   };
   const u = raknaUt({ regler, personer: tvaRoller, matningar, period });
+
+  // Produkttestaren: den 15:e hör till första halvan, den 16:e till andra.
   const josh = u.personer.find((p) => p.id === 'josh');
-  assert.deepEqual(josh.halvor, { forsta: 15, andra: 30, manad: 50.94 }, 'den 15:e hör till första halvan, den 16:e till andra');
-  assert.equal(josh.halvor.forsta + josh.halvor.andra + josh.halvor.manad, josh.summa, 'halvorna går alltid jämnt ut med summan');
+  assert.deepEqual(josh.utbetalningar.produkttest, { takt: 'halvmanad', forsta: 15, andra: 30, summa: 45 });
+  assert.deepEqual(josh.utbetalningar.commission, { takt: 'manad', summa: 50.94 }, 'commission står för sig');
+  assert.deepEqual(josh.utbetalningar.bonus, { takt: 'manad', summa: 0 });
+  assert.equal(josh.halvor, undefined, 'personen bär inga halvor längre — utbetalningarna är det som gäller');
+  const produkter = josh.rader.find((r) => r.uppdrag === 'produkt_fardig');
+  assert.equal(produkter.utbetalning, 'produkttest');
+  assert.deepEqual(produkter.halvor, { forsta: 15, andra: 30 });
+  assert.deepEqual(produkter.halvorAntal, { forsta: 1, andra: 2 });
+  const spend = josh.rader.find((r) => r.uppdrag === 'spend_andel');
+  assert.equal(spend.utbetalning, 'commission');
+  assert.equal(spend.halvor, undefined, 'commission delas aldrig på halvor');
+
+  // VA:n: bonusen är per månad — inte delad fast recensionerna kom den 10:e och 20:e.
+  const maria = u.personer.find((p) => p.id === 'maria');
+  assert.deepEqual(maria.utbetalningar.bonus, { takt: 'manad', summa: 10 });
+  assert.equal(maria.rader[0].utbetalning, 'bonus');
+  assert.equal(maria.rader[0].halvor, undefined);
+  assert.equal(maria.utbetalningar.produkttest.summa, 0);
+
+  // Head of support: teamandelen är bonus, per månad.
+  const hanna = u.personer.find((p) => p.id === 'hanna');
+  assert.equal(hanna.rader.find((r) => r.uppdrag === 'teamets_andel').utbetalning, 'bonus');
+  assert.equal(hanna.utbetalningar.bonus.summa, 1, '10 % av Marias 10 dollar');
+
+  // Summan per person är alltid summan av utbetalningarna.
+  for (const p of u.personer) {
+    const s = Object.values(p.utbetalningar).reduce((a, x) => a + x.summa, 0);
+    assert.equal(Math.round(s * 100) / 100, p.summa, `${p.id}: utbetalningarna går jämnt ut med summan`);
+  }
+
+  // Lagets kvitto: vad som betalas ut när.
+  assert.equal(u.utbetalningar.produkttest.forsta, 15);
+  assert.equal(u.utbetalningar.produkttest.andra, 30);
+  assert.equal(u.utbetalningar.produkttest.summa, 45);
+  assert.deepEqual(u.utbetalningar.produkttest.personer, { forsta: 1, andra: 1 });
+  assert.equal(u.utbetalningar.bonus.summa, 11, 'Maria 10 + Hannas andel 1');
+  assert.equal(u.utbetalningar.bonus.personer, 2);
+  assert.equal(u.utbetalningar.commission.summa, 50.94);
+  assert.equal(u.utbetalningar.produkttest.namn, 'Produkttest', 'kvittot bär definitionen så filen går att läsa för sig');
+  assert.deepEqual(u.halvmanader, {
+    forsta: { fran: '2026-09-01', till: '2026-09-15', betalas: '2026-09-15' },
+    andra: { fran: '2026-09-16', till: '2026-09-30', betalas: '2026-09-30' },
+  });
+});
+
+test('halvmånaderna följer månadens längd, och betaldagen är den 15:e respektive sista dagen', () => {
+  assert.deepEqual(halvmanader({ fran: '2026-02-01', till: '2026-02-28' }), {
+    forsta: { fran: '2026-02-01', till: '2026-02-15', betalas: '2026-02-15' },
+    andra: { fran: '2026-02-16', till: '2026-02-28', betalas: '2026-02-28' },
+  });
+  assert.equal(halvmanader({}), null);
+  assert.equal(halvmanader(null), null);
+});
+
+test('utbetalningarFor räknar fram uppdelningen ur raderna — även ur en snapshot från före bygget', () => {
+  // Gamla formen (2026-09-24): halvor { forsta, andra, manad } på raderna, ingen utbetalning.
+  const gammal = {
+    id: 'josh',
+    rader: [
+      { uppdrag: 'produkt_fardig', summa: 330, antal: 22, halvor: { forsta: 240, andra: 90, manad: 0 } },
+      { uppdrag: 'spend_andel', summa: 60.88, antal: 1, halvor: { forsta: 0, andra: 0, manad: 60.88 } },
+    ],
+  };
+  const u = utbetalningarFor(gammal, regler);
+  assert.deepEqual(u.produkttest, { takt: 'halvmanad', forsta: 240, andra: 90, summa: 330 });
+  assert.deepEqual(u.commission, { takt: 'manad', summa: 60.88 });
+  assert.deepEqual(u.bonus, { takt: 'manad', summa: 0 });
+
+  // En produkttestrad utan halvor alls hamnar i andra halvan: betalas sist i månaden, aldrig före.
+  const utanHalvor = utbetalningarFor({ rader: [{ uppdrag: 'produkt_fardig', summa: 15, antal: 1 }] }, regler);
+  assert.deepEqual(utanHalvor.produkttest, { takt: 'halvmanad', forsta: 0, andra: 15, summa: 15 });
+
+  assert.equal(utbetalningFor(regler, 'recension_med_namn'), 'bonus');
+  assert.equal(utbetalningFor(regler, 'teamets_andel'), 'bonus');
+  assert.equal(utbetalningFor(regler, 'produkt_fardig'), 'produkttest');
+  assert.equal(utbetalningFor(regler, 'spend_andel'), 'commission');
+  assert.equal(utbetalningFor(regler, 'finns_inte'), 'bonus', 'okänt uppdrag räknas som bonus — månadstakten är den försiktiga');
+
+  // Summeringen över laget räknar personer per del.
+  const lag = summeraUtbetalningar([{ utbetalningar: u }, { utbetalningar: utanHalvor }], regler);
+  assert.equal(lag.produkttest.forsta, 240);
+  assert.equal(lag.produkttest.andra, 105);
+  assert.deepEqual(lag.produkttest.personer, { forsta: 1, andra: 2 });
+  assert.equal(lag.commission.personer, 1);
+});
+
+test('reglerna pekar ut en utbetalning för varje program, med takt och betaltext på båda språken', () => {
+  const defs = utbetalningsdefinitioner(regler);
+  assert.deepEqual(Object.keys(defs).sort(), ['bonus', 'commission', 'produkttest']);
+  assert.equal(defs.produkttest.takt, 'halvmanad', 'produkttest betalas varannan vecka (Axel 2026-09-28)');
+  assert.equal(defs.bonus.takt, 'manad', 'bonusarna är fortfarande varje månad');
+  assert.equal(defs.commission.takt, 'manad');
+  for (const [id, d] of Object.entries(defs)) {
+    assert.ok(d.namn && d.en?.namn, `${id} saknar namn på båda språken`);
+    if (d.takt === 'halvmanad') {
+      assert.ok(d.betalas?.forsta && d.betalas?.andra && d.en?.betalas?.forsta && d.en?.betalas?.andra, `${id} saknar betaltext per halva`);
+    } else {
+      assert.ok(typeof d.betalas === 'string' && typeof d.en?.betalas === 'string', `${id} saknar betaltext`);
+    }
+  }
+  for (const [id, program] of Object.entries(regler.program)) {
+    assert.ok(defs[program.utbetalning], `${id} pekar på okänd utbetalning "${program.utbetalning}"`);
+  }
+  assert.equal(uppdragForRoll(regler, 'produkttest')[0].utbetalning, 'produkttest', 'sidan läser utbetalningen ur programmet');
+  assert.equal(uppdragForRoll(regler, 'va')[0].utbetalning, 'bonus');
+  assert.equal(uppdragForRoll(regler, 'redigerare')[0].utbetalning, 'commission');
+  assert.equal(utbetalningsdefinitioner({}).produkttest.takt, 'halvmanad', 'utan regler gäller standarden');
 });

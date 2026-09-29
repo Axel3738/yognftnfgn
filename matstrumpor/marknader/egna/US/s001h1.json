@@ -1,0 +1,105 @@
+{
+ "segment": [
+  {
+   "a": 0,
+   "b": 4.74,
+   "sv": "Om du ska ge bort en present snart så är sushiformade strumpor det snällaste du kan ge dem.",
+   "text": "Need a gift soon? Sushi-shaped socks are the nicest thing you can give someone."
+  },
+  {
+   "a": 4.84,
+   "b": 7.08,
+   "sv": "Jag startade Matstrumpor ur en ilska.",
+   "text": "I started this brand out of pure frustration."
+  },
+  {
+   "a": 7.22,
+   "b": 10.92,
+   "sv": "Jag brukar alltid vänta till sista sekund med att tänka ut vad jag ska ge bort till present.",
+   "text": "I always wait until the last minute to think of gift ideas."
+  },
+  {
+   "a": 11.1,
+   "b": 13.12,
+   "sv": "Och varje gång blir det panikletande.",
+   "text": "And every time, it's panic shopping."
+  },
+  {
+   "a": 13.26,
+   "b": 15.9,
+   "sv": "Men en grej vi alla går kort om är strumpor.",
+   "text": "But one thing everyone runs out of is socks."
+  },
+  {
+   "a": 16.04,
+   "b": 17.52,
+   "sv": "Och udda par är vardag.",
+   "text": "And mismatched pairs? Always."
+  },
+  {
+   "a": 17.58,
+   "b": 19.16,
+   "sv": "De här blandar du aldrig ihop.",
+   "text": "You'll never mix these up."
+  },
+  {
+   "a": 19.26,
+   "b": 22.72,
+   "sv": "Det är typ den perfekta balansen mellan praktiskt och oväntat.",
+   "text": "It's like the perfect balance between practical and unexpected."
+  },
+  {
+   "a": 22.82,
+   "b": 24.14,
+   "sv": "Först tror man att det är sushi.",
+   "text": "First you think it's sushi."
+  },
+  {
+   "a": 24.24,
+   "b": 25.92,
+   "sv": "Sen inser man att det är strumpor.",
+   "text": "Then you realize they're socks."
+  },
+  {
+   "a": 26.02,
+   "b": 29.42,
+   "sv": "Och helt plötsligt har du gett bort något som faktiskt får en reaktion.",
+   "text": "And suddenly you've given a gift that gets a real reaction."
+  },
+  {
+   "a": 29.42,
+   "b": 31.02,
+   "sv": "Och som används på riktigt.",
+   "text": "And it actually gets worn."
+  },
+  {
+   "a": 31.22,
+   "b": 34.74,
+   "sv": "Det är den typen av lilla present som passar perfekt till alla tillfällen.",
+   "text": "It's the kind of little gift that's perfect for any occasion."
+  },
+  {
+   "a": 35.24,
+   "b": 38.06,
+   "sv": "Genomtänkt, kul men utan att försöka för mycket.",
+   "text": "Thoughtful, fun, but without trying too hard."
+  },
+  {
+   "a": 38.3,
+   "b": 40.14,
+   "sv": "Ser ut som sushi, är strumpor.",
+   "text": "Looks like sushi. They're socks."
+  },
+  {
+   "a": 40.34,
+   "b": 41.34,
+   "sv": "Sushistrumpor.",
+   "text": "Sushi socks."
+  }
+ ],
+ "texter": {
+  "etikett": "Sushi Socks"
+ },
+ "granskad": true,
+ "granskning": "godkänd av infödd granskare i runda 3 (2026-09-29)"
+}

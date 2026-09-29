@@ -1,11 +1,11 @@
 {
   "id": "k31-fars-dag-fiske",
-  "emailTitle": "Aldrig mer trassliga fiskespön",
-  "emailDescription": "Fyra hållare, varje spö sin egen plats.",
+  "emailTitle": "Aldrig mer trassliga fiskespön. 30 % till fars dag",
+  "emailDescription": "Koden FARSDAG30 gäller fiskespöhållaren och tre till för fiskaren.",
   "amnesrader": [
-    "Aldrig mer trassliga fiskespön",
-    "En present för honom som fiskar",
-    "Hinn beställa innan 19 oktober"
+    "Aldrig mer trassliga fiskespön. 30 % till fars dag",
+    "Fiskeset med låda och midjeväska: färdig present",
+    "Byt lina på minuter, utan pinne mellan knäna"
   ],
   "blocks": [
     {
@@ -20,7 +20,12 @@
     },
     {
       "type": "regular",
-      "text": "Fyra kraftiga hållare ger varje spö sin egen plats, i båten eller i garaget. Inget mer att reda ut innan ni kommer ut på vattnet.",
+      "text": "Fyra spön i garaget blir lätt en enda härva, och linor och beten fastnar i varandra. Med fyra hållare får varje spö sin egen plats.",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Fars dag är söndag 8 november, och den söndagen kommer ikapp en fortare än man tror. Spöhållaren är 30 % billigare i fars dag-rean.",
       "alignment": "center"
     },
     {
@@ -29,7 +34,7 @@
       "products": [
         {
           "id": "d0832750-b091-43b4-9d92-e2889d5b5a0a",
-          "button": "Se fiskespöhållaren"
+          "button": "Se produkten"
         }
       ],
       "dynamicProductsCount": null,
@@ -48,23 +53,23 @@
     },
     {
       "type": "link",
-      "text": "Se presenten",
-      "url": "https://baverbutiken.se/products/fiskespohallare-4-pack-kraftig-forvaring",
+      "text": "Hämta 30 % med FARSDAG30",
+      "url": "https://baverbutiken.se/discount/FARSDAG30?redirect=%2Fproducts%2Ffiskespohallare-4-pack-kraftig-forvaring",
       "style": "button"
     },
     {
       "type": "regular",
-      "text": "Lösa spön trasslar lätt ihop sig i båten och garaget, och linor och beten fastnar i varandra. Hållarna gör slut på det, för strand, sjö eller båt.",
+      "text": "Hållarna är kraftigt byggda och håller spöna stadigt, för strand, sjö och båtfiske. De passar både proffs och nybörjare.",
       "alignment": "left"
     },
     {
       "type": "regular",
-      "text": "Fyra hållare i ett set, för både proffs och nybörjare.",
+      "text": "Är det du som fiskar kan du skicka det här mejlet vidare, så vet de vad du vill ha.",
       "alignment": "left"
     },
     {
       "type": "h2",
-      "text": "Mer för fiskaren",
+      "text": "Mini-spö, fiskeset och linupprullare, också 30 %",
       "alignment": "center"
     },
     {
@@ -100,8 +105,14 @@
     },
     {
       "type": "regular",
-      "text": "Beställ senast 19 oktober om paketet ska vara framme till fars dag den 8 november.",
+      "text": "Koden FARSDAG30 ger 30 % på fiskespöhållaren, mini-fiskespöt, fiskesetet och linupprullaren till och med måndag 19 oktober. Tryck på knappen så ligger koden redan i kassan, eller skriv in den själv. Rabatten dras i kassan, en gång per kund, på priset som står på produktsidan.",
       "alignment": "left"
+    },
+    {
+      "type": "link",
+      "text": "Köp spöhållaren för 30 % mindre",
+      "url": "https://baverbutiken.se/discount/FARSDAG30?redirect=%2Fproducts%2Ffiskespohallare-4-pack-kraftig-forvaring",
+      "style": "button"
     },
     {
       "type": "columns",

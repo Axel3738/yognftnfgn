@@ -1,60 +1,60 @@
 {
   "id": "k34-fars-dag-bat",
-  "namn": "MAIL_20261017_Motorlas_GT_10_kopare-bat_product_motorn-han-laser-fast_v1",
-  "memo": "Båtköparna får sin egen fars dag-lista två dagar före sista beställningsdagen, som önskelista att skicka vidare. Hypotes: motorlåset är presenten båtägaren vill ha men inte köper själv.",
+  "namn": "MAIL_20261017_Motorlas_GT_10_kopare-bat_product_motorn-han-laser-fast_v2",
+  "memo": "Båtköparna får sin egen fars dag-lista som önskelista att skicka vidare. Hypotes: motorlåset är presenten båtägaren vill ha men inte köper själv. 2026-09-29: fars dag-rean, 30 % med FARSDAG30, lades till (Axels order). Rean slutar måndag 19 oktober och det är den enda deadline mejlet nämner, aldrig beställning eller frakt.",
   "taggar": {
     "typ": "S",
     "kalla": "egen-data",
     "kalla_ref": "klaviyo/evolve/ATERKOP-ANALYS.md:161",
     "lardom": null,
     "avatar": "båtägaren som skickar vidare önskelistan, och den som köper åt honom",
-    "begar": "att motorn sitter kvar och står skyddad",
+    "begar": "att motorn sitter kvar och står skyddad, till 30 % lägre pris",
     "awareness": "product",
-    "urgency": "konsekvens",
+    "urgency": "pris + slutdag (19 oktober)",
     "confidence": "medium",
     "prefix": "Motorlas",
     "kod": "GT"
   },
   "amnesrader": [
     {
-      "text": "Motorn han låser fast vid bryggan",
-      "begar": "låsa fast motorn så den inte går att skruva loss vid bryggan"
+      "text": "Motorn låst vid bryggan. Fars dag-rea: 30 %",
+      "begar": "veta att motorn sitter kvar när han går hem från bryggan"
     },
     {
-      "text": "Beställ senast måndag 19 oktober",
-      "begar": "hinna beställa innan sista dagen för fars dag"
+      "text": "Tappar du nyckeln flyter den. 30 % på låset",
+      "begar": "få ett lås med en nyckelring som inte sjunker"
     },
     {
-      "text": "Skydd för motorn, kylsystemet eller båten",
-      "begar": "hitta en present för en annan del av båten"
+      "text": "Motorlås, motorskydd, spolklämma, båthuv: 30 %",
+      "begar": "se vad som finns på båtägarens önskelista och skicka den vidare"
     }
   ],
-  "forhandstext": "Nyckelringen flyter om den hamnar i vattnet vid båten.",
+  "forhandstext": "Rean slutar måndag 19 oktober. Koden FARSDAG30 gäller motorlåset och tre båtgrejer till.",
   "block": [
     {
       "typ": "hero",
       "rubrik": "Motorn han låser fast vid bryggan",
-      "text": "Hej {{fornamn}},\n\nUtombordaren sitter fast med några fästskruvar som går att lossa på några minuter, och båten ligger ofta obevakad vid bryggan över natten.",
-      "bild": "produkt:motorlas-i-rostfritt-stal-laser-utombordarens-fastskruvar",
-      "knapp": {
-        "text": "Se presenten",
-        "lank": "produkt:motorlas-i-rostfritt-stal-laser-utombordarens-fastskruvar"
-      }
-    },
-    {
-      "typ": "text",
-      "rubrik": null,
-      "text": "Nyckelringen flyter. Tappar han nyckeln i vattnet vid båten guppar den upp i stället för att sjunka. Två nycklar följer med, en till honom och en i reserv."
+      "text": "Hej {{fornamn}},\n\nFars dag är söndag 8 november. Den kommer fortare än man tror.\n\nHar han båten vid bryggan finns det en present som passar: ett lås över utombordarens fästskruvar. Utan det går skruvarna att lossa med rätt verktyg på några minuter, och båten ligger ofta obevakad över natten.\n\nAtt kolla att allt sitter kvar innan man går hem känns sällan helt säkert."
     },
     {
       "typ": "produkt",
       "handle": "motorlas-i-rostfritt-stal-laser-utombordarens-fastskruvar",
-      "text": "Ett lås i rostfritt stål läggs över fästskruvarna och låses med en av de två nycklarna som följer med.",
+      "text": "Ett lås i rostfritt stål läggs över fästskruvarna och låses med en av de två nycklarna som följer med. Utan nyckeln går skruvarna inte att skruva loss.\n\nNyckelringen flyter. Tappar han nyckeln i vattnet vid båten guppar den upp i stället för att sjunka. Det är den sortens detalj man sällan tänker på, tills man behöver den.",
       "knapp": "Se motorlåset"
     },
     {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Koden FARSDAG30 ger 30 % på motorlåset, båtmotorskyddet, spolklämman och båthuven till och med måndag 19 oktober. Tryck på knappen så ligger koden redan i kassan, eller skriv in den själv. Rabatten dras i kassan, en gång per kund, på priset som står på produktsidan."
+    },
+    {
+      "typ": "knapp",
+      "text": "Hämta 30 % med FARSDAG30",
+      "lank": "rabatt:FARSDAG30:produkt:motorlas-i-rostfritt-stal-laser-utombordarens-fastskruvar"
+    },
+    {
       "typ": "produktrad",
-      "rubrik": "Mer för båten",
+      "rubrik": "Motorskydd, spolklämma och båthuv",
       "handles": [
         "batmotorskydd-420d-heltackande-for-utombordare",
         "spolklamma-for-batmotor-testvattenklamma",
@@ -64,61 +64,38 @@
     {
       "typ": "text",
       "rubrik": null,
-      "text": "Beställ senast måndag 19 oktober om paketet ska vara framme till fars dag den 8 november."
+      "text": "Är det du som har båten? Skicka mejlet vidare till den som ska köpa presenten."
     },
     {
       "typ": "fakta"
     }
   ],
   "tretest": [
-    {
-      "rad": "Motorn han låser fast vid bryggan",
-      "visualisera": true,
-      "falsifiera": true,
-      "ingen_annan": true
-    },
-    {
-      "rad": "Beställ senast måndag 19 oktober",
-      "visualisera": true,
-      "falsifiera": true,
-      "ingen_annan": true
-    },
-    {
-      "rad": "Skydd för motorn, kylsystemet eller båten",
-      "visualisera": true,
-      "falsifiera": true,
-      "ingen_annan": true
-    },
-    {
-      "rad": "Nyckelringen flyter om den hamnar i vattnet vid båten.",
-      "visualisera": true,
-      "falsifiera": true,
-      "ingen_annan": true
-    },
-    {
-      "rad": "Se presenten",
-      "visualisera": true,
-      "falsifiera": true,
-      "ingen_annan": true
-    },
-    {
-      "rad": "Se motorlåset",
-      "visualisera": true,
-      "falsifiera": true,
-      "ingen_annan": true
-    },
-    {
-      "rad": "Mer för båten",
-      "visualisera": true,
-      "falsifiera": true,
-      "ingen_annan": true
-    }
+    { "rad": "Motorn låst vid bryggan. Fars dag-rea: 30 %", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Tappar du nyckeln flyter den. 30 % på låset", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Motorlås, motorskydd, spolklämma, båthuv: 30 %", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Rean slutar måndag 19 oktober. Koden FARSDAG30 gäller motorlåset och tre båtgrejer till.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Motorn han låser fast vid bryggan", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Motorskydd, spolklämma och båthuv", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se motorlåset", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Hämta 30 % med FARSDAG30", "visualisera": true, "falsifiera": true, "ingen_annan": true }
   ],
   "planerad": "2026-10-17T18:00:00+02:00",
-  "segment": [
-    "Köpare båt"
-  ],
+  "segment": ["Köpare båt"],
   "exkludera": [],
   "status_plan": "klar",
-  "kraver_axel": null
+  "kraver_axel": null,
+  "rabatt": {
+    "typ": "kod",
+    "kod": "FARSDAG30",
+    "procent": 30,
+    "start": "2026-10-04T06:00:00Z",
+    "slut": "2026-10-19T21:59:59Z",
+    "handles": [
+      "motorlas-i-rostfritt-stal-laser-utombordarens-fastskruvar",
+      "batmotorskydd-420d-heltackande-for-utombordare",
+      "spolklamma-for-batmotor-testvattenklamma",
+      "bathuv-for-trailerbat-17-19-fot-600-310-cm-i-600d-vav"
+    ]
+  }
 }

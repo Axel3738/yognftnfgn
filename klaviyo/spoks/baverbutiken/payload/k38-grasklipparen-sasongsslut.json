@@ -1,0 +1,228 @@
+{
+  "id": "k38-grasklipparen-sasongsslut",
+  "emailTitle": "Säsongen är slut. 30 % på klippargrejer till söndag",
+  "emailDescription": "Täcket, sliparen, trimmerlinan och åtta till. Koden är GRAS30.",
+  "amnesrader": [
+    "Säsongen är slut. 30 % på klippargrejer till söndag",
+    "Rost på bladen, löv i motorn, slö kniv",
+    "Trimmern på väggen i stället för på golvet"
+  ],
+  "blocks": [
+    {
+      "type": "h1",
+      "text": "Regnet bryr sig inte om vad klipparen kostade",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Hej {{ contact.first_name | default: 'där' }},",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Du har handlat till klipparen eller trimmern hos oss. Nu är säsongen slut, och vintern har gott om tid att jobba på det som står oskyddat.",
+      "alignment": "center"
+    },
+    {
+      "type": "regular",
+      "text": "Solen bleker lacken. Regnet rostar bladen. Löven samlas i motorn.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Och en slö kniv river gräset i stället för att skära det. Stråna blir fransiga och gulnar, och motorn får jobba hårdare.",
+      "alignment": "left"
+    },
+    {
+      "type": "regular",
+      "text": "Trimmern som står lutad mot väggen då? Den faller lätt omkull, och garaget blir rörigt.",
+      "alignment": "left"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "cb002b67-11b4-450f-aaab-895f8eaeedd1",
+          "button": "Se täcket i 600D Oxford"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 1
+    },
+    {
+      "type": "regular",
+      "text": "Täcket i 600D Oxford skyddar mot regn, UV, damm och löv, och det sitter tätt runt maskinen. Det tål väder året om och passar de flesta klippare, även åkgräsklippare. Diskret svart, om det får stå ute.",
+      "alignment": "left"
+    },
+    {
+      "type": "h2",
+      "text": "Slipa kniven, häng upp trimmern, skydda sätet"
+    },
+    {
+      "type": "list",
+      "text": "Sliparen sätts i din vanliga borrmaskin och ger rätt vinkel varje gång, på ett par minuter."
+    },
+    {
+      "type": "list",
+      "text": "Väggfästet i metall håller trimmern på plats i stället för att den faller omkull."
+    },
+    {
+      "type": "list",
+      "text": "Har du åkgräsklippare träs sätesöverdraget över dynan och håller sätet torrt även efter regn."
+    },
+    {
+      "type": "regular",
+      "text": "Koden GRAS30 ger 30 % på täcket och de tio andra produkterna för klipparen och trimmern i mejlet, till och med söndag 4 oktober. Tryck på knappen så ligger koden redan i kassan, eller skriv in den själv. Rabatten dras i kassan, en gång per kund, på priset som står på produktsidan.",
+      "alignment": "left"
+    },
+    {
+      "type": "link",
+      "text": "Hämta 30 % med GRAS30",
+      "url": "https://baverbutiken.se/discount/GRAS30?redirect=%2Fproducts%2Fgrasklippartacke-600d-oxford-med-dragsko",
+      "style": "button"
+    },
+    {
+      "type": "h2",
+      "text": "Mer för garaget och gräsmattan, också 30 %",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "d87f030c-84ec-4696-8eab-ad3fcc9eb786",
+          "button": "Se produkten"
+        },
+        {
+          "id": "3ff1c90a-fa1a-41de-be0e-7b872c128b84",
+          "button": "Se produkten"
+        },
+        {
+          "id": "47d815ce-1c35-4423-aae7-628d74d43ca6",
+          "button": "Se produkten"
+        },
+        {
+          "id": "3d9c25f8-0d98-4ec2-a6cf-a9256153dcae",
+          "button": "Se produkten"
+        },
+        {
+          "id": "30c452ab-c3b4-41c4-8c40-53aa1072d7e4",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "regular",
+      "text": "Trimmern får också sitt. Selarna fördelar vikten över axlar och rygg, linan skär genom gräs och ogräs i stället för att slita av det, och ståltrådshuvudena tar segt ogräs och mossa.",
+      "alignment": "left"
+    },
+    {
+      "type": "h2",
+      "text": "Trimmergrejerna, också 30 %",
+      "alignment": "center"
+    },
+    {
+      "type": "products",
+      "selectionMode": "manual",
+      "products": [
+        {
+          "id": "670d3945-df09-45c3-b964-32787803d365",
+          "button": "Se produkten"
+        },
+        {
+          "id": "87e04ba8-f361-4742-a518-f38d221e81a1",
+          "button": "Se produkten"
+        },
+        {
+          "id": "0cbec5f0-46c6-4459-b88f-cb15ab44f96b",
+          "button": "Se produkten"
+        },
+        {
+          "id": "9dffcc14-3607-438b-a23b-80db3c2e29f6",
+          "button": "Se produkten"
+        },
+        {
+          "id": "c8c72f0e-6a89-4a4e-b528-d1a5e5b33a89",
+          "button": "Se produkten"
+        }
+      ],
+      "dynamicProductsCount": null,
+      "dynamicCriteria": null,
+      "productVisibilitySettings": {
+        "isImageVisible": true,
+        "isTitleVisible": true,
+        "isPriceVisible": true,
+        "isButtonVisible": true,
+        "isDescriptionVisible": false,
+        "isOriginalPriceVisible": true
+      },
+      "buttonText": null,
+      "alignment": "center",
+      "productsPerRow": 3
+    },
+    {
+      "type": "columns",
+      "stackedOnMobile": true,
+      "verticalAlignment": "top",
+      "columns": [
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Ångerrätt**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "14 dagars ångerrätt",
+              "alignment": "center"
+            }
+          ]
+        },
+        {
+          "flex": 1,
+          "blocks": [
+            {
+              "type": "regular",
+              "text": "**Spåra paketet**",
+              "alignment": "center"
+            },
+            {
+              "type": "regular",
+              "text": "[Följ det hela vägen](https://baverbutiken.se/pages/spara)",
+              "alignment": "center"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "varningar": []
+}

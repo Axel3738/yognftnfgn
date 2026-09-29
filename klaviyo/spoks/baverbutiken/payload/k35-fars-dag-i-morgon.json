@@ -1,16 +1,16 @@
 {
   "id": "k35-fars-dag-i-morgon",
-  "emailTitle": "I morgon är sista dagen till fars dag",
-  "emailDescription": "Söndag 18 oktober. Beställer du efter i morgon kan vi inte lova det till fars dag.",
+  "emailTitle": "I morgon slutar fars dag-rean: 30 %",
+  "emailDescription": "Sex presenter och koden FARSDAG30, till och med måndag 19 oktober.",
   "amnesrader": [
-    "I morgon är sista dagen till fars dag",
-    "Efter i morgon hinner paketet inte fram",
-    "Sex förslag om presenten inte är klar"
+    "I morgon slutar fars dag-rean: 30 %",
+    "Slipmaskin, spöhållare, kamera: 30 % rea",
+    "Presenten inte klar? Skriv FARSDAG30 i kassan"
   ],
   "blocks": [
     {
       "type": "h1",
-      "text": "I morgon är sista dagen till fars dag",
+      "text": "I morgon slutar fars dag-rean",
       "alignment": "center"
     },
     {
@@ -20,19 +20,19 @@
     },
     {
       "type": "regular",
-      "text": "Om presenten till fars dag inte är klar än, är det bråttom nu. Sex förslag väntar nedan.",
+      "text": "Fars dag är söndag 8 november. Om presenten fortfarande inte är köpt är du i gott sällskap, men i morgon är sista dagen med 30 % på sex av dem.",
       "alignment": "center"
     },
     {
-      "type": "link",
-      "text": "Se presenterna",
-      "url": "https://baverbutiken.se/collections/alla-produkter",
-      "style": "button"
+      "type": "regular",
+      "text": "Koden FARSDAG30 ger 30 % på bälteslipmaskinen, fiskespöhållaren, övervakningskameran, motorlåset, täljsetet och taköverdraget till och med i morgon, måndag 19 oktober. Tryck på knappen så ligger koden redan i kassan, eller skriv in den själv. Rabatten dras i kassan, en gång per kund, på priset som står på produktsidan.",
+      "alignment": "left"
     },
     {
-      "type": "regular",
-      "text": "I morgon, måndag 19 oktober, är sista dagen att beställa om paketet ska vara framme till fars dag den 8 november. Efter det kan vi inte lova det.",
-      "alignment": "left"
+      "type": "link",
+      "text": "Hämta 30 % med FARSDAG30",
+      "url": "https://baverbutiken.se/discount/FARSDAG30?redirect=%2Fcollections%2Falla-produkter",
+      "style": "button"
     },
     {
       "type": "products",

@@ -27,7 +27,7 @@ test('formulera: rubrik med verksamhet, raderna, "Det här gör du" numrerat, tv
 
 test('formuleraLost: ✅ Löst med när det larmades', () => {
   const { text } = formuleraLost({ typ: 'butik', nyckel: 'butik:carashell', verksamhet: 'carashell', rubrik: 'carashell.se svarar inte', tid: '2026-09-27T12:28:00Z' }, { nu: NU });
-  assert.match(text, /^\*\*✅ Löst · CaraShell · carashell.se svarar inte\*\*\nLarmat 27 sep\.? 14:28, borta 16:00\. Inget mer att göra\.$/);
+  assert.match(text, /^\*\*✅ Löst · CaraShell · carashell.se svarar inte\*\*\nLarmat sön 27\/9 14:28, borta sön 27\/9 16:00\. Inget mer att göra\.$/);
 });
 
 test('grupperaMeddelanden: ett meddelande per larm, men rutiner och Shopify-nycklar slås ihop; lösta sist', () => {
