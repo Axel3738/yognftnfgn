@@ -66,8 +66,10 @@ def kor(plan):
         x0, y0, x1, y1 = s['ruta']
         x0, y0 = max(0, x0 - 6), max(0, y0 - 6)
         w, h = x1 - x0 + 12, y1 - y0 + 12
-        r = max(4, min(w, h) // 3)
-        filt.append(f"{senaste}split[bas{i}][kalla{i}];[kalla{i}]crop={w}:{h}:{x0}:{y0},boxblur={r}:3[bl{i}];"
+        # boxblur tål högst halva sidan i luma och en fjärdedel i chroma (yuv420) — annars vägrar ffmpeg
+        lr = max(2, min(min(w, h) // 3, min(w, h) // 2 - 1)); cr = max(1, min(lr // 2, min(w, h) // 4 - 1))
+        filt.append(f"{senaste}split[bas{i}][kalla{i}];[kalla{i}]crop={w}:{h}:{x0}:{y0},"
+                    f"boxblur=luma_radius={lr}:luma_power=3:chroma_radius={cr}:chroma_power=3[bl{i}];"
                     f"[bas{i}][bl{i}]overlay={x0}:{y0}:enable='between(t,{s['a']:.2f},{s['b']:.2f})'[s{i}]")
         senaste = f'[s{i}]'
     # 2) nya rutor
