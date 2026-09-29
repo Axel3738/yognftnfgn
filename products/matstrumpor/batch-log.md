@@ -278,6 +278,23 @@ av orden hörs, rösten inom 21 % av källans tonhöjd. Kostnad ≈ 49 USD (2 93
 **Utfall:** inget ännu — ⛔ inget är aktiverat förrän Axel granskat annonserna. Etikett dag 7
 efter att en kampanj slagits på.
 
+## 2026-09-29 — utlandet: 012v2 som fjärde annons i alla tolv kampanjer (12 annonser, PAUSED)
+
+**Hypotes:** Bildannonsen i video (bluffpizzan: "en av lådorna är fejk-pizza") bär utan röst. Den
+fungerar därför på alla språk med bara ny text i rutorna. Test utomlands, fast den låg under
+break-even i Sverige (2 073 kr, 5 köp).
+**Mix:** 0 vidarebyggen / 12 lokaliseringar av en befintlig svensk annons (ingen ny vinkel).
+**Källa:** `MATSTRUMP_sushi_gift_ugc_012v2_v1` (video 4323418044575220), egna verktyg, aldrig HeyGen
+(Axels order 2026-09-28).
+**Annonser:** `MATSTRUMP_<KOD>_sushi_gift_anim_004_v1` × NO DK FI US DE FR NL ES IT PL PT WW.
+Id:n finns i `matstrumpor/marknader/annonser/lage.json` och `videor.json`.
+**Uppladdat:** 2026-09-29, i marknadens enda adset, PAUSED och tillbakaläst.
+**Rättat samma morgon:** källans sista scen visar butikens logga "MATSTRUMPOR.SE". Den är nu
+bortmålad (`pipeline/logga.py`), och de sju först uppladdade fick videon utbytt i samma annons.
+**Utfall (dag 7):** inget ännu. ⛔ Inget aktiveras förrän Axel granskat.
+**Nästa:** haikuh3, haikuh2 och s001h1 som annons 005–007 med ElevenLabs-röst (egen session,
+`matstrumpor/marknader/egna/PROMPT-elevenlabs.md`).
+
 ## Format för kommande rader
 
 ```

@@ -23,14 +23,21 @@ VIT, SVART, MORK, ORANGE = [255, 255, 255, 255], [0, 0, 0], [22, 22, 22, 215], [
 
 # Mätt i källorna 2026-09-29 (textboxar.py + titt på bilder). Rutor i px vid 720×1280.
 KONF = {
+    # slutkort: loggan "MATSTRUMPOR.SE" zoomar in på slät beige bakgrund (RGB 248,237,204, brus < 1)
+    # från ruta 1505 resp. 1379 och står kvar till slutet; största utbredning x 204–515, y 538–731.
+    # Uttoningen från sista klippet är klar först i ruta 1504 resp. 1378 (mätt: 1503 är ännu mörkare).
+    # Från den rutan kopieras bakgrunden ovanför (y 300–524, alltid tom) över loggans yta — butikens
+    # namn och adress står aldrig i en annons. Knappen (y 765–853) ligger utanför och byts som förut.
     'haikuh3': {'under': {'stil': 'mork', 'band': [800, 930], 'falt': [104, 816, 616, 918], 'bak': MORK, 'farg': [255, 255, 255]},
                 'rubrik_band': [230, 340],
                 'hook': {'ruta': [60, 292, 660, 466]},
-                'knapp': {'band': [760, 860]}},
+                'knapp': {'band': [760, 860]},
+                'slutkort': {'fran_s': 50.12, 'ruta': [188, 524, 532, 748], 'kalla_y': 300}},
     'haikuh2': {'under': {'stil': 'mork', 'band': [800, 930], 'falt': [104, 816, 616, 918], 'bak': MORK, 'farg': [255, 255, 255]},
                 'rubrik_band': [200, 340],
                 'hook': {'ruta': [108, 226, 616, 384]},
-                'knapp': {'band': [760, 860]}},
+                'knapp': {'band': [760, 860]},
+                'slutkort': {'fran_s': 45.92, 'ruta': [188, 524, 532, 748], 'kalla_y': 300}},
     's001h1': {'under': {'stil': 'ljus', 'band': [840, 960], 'falt': [184, 860, 536, 952], 'bak': VIT, 'farg': SVART},
                'topp': {'sv_borjar': 'Ser ut som sushi', 'ruta': [84, 198, 637, 314]},
                'etikett': {'sv_borjar': 'Sushistrumpor', 'ruta': [151, 854, 569, 937]}},
@@ -169,10 +176,20 @@ def main():
         texts.append({'a': seg[i]['a'] - 0.2, 'b': slut + 1, 'text': texter['etikett'], 'mitt': [(r[0] + r[2]) / 2, (r[1] + r[3]) / 2],
                       'min': [r[2] - r[0] + 6, r[3] - r[1] + 6], 'max_bredd': 640, 'font_px': 44, 'farg': SVART, 'bakgrund': VIT, 'radie': 4, 'pad': [18, 8]})
 
-    plan = {'video': kalla, 'ut': ut, 'font': FONT, 'sudda': sudda, 'texter': texts}
+    # 6) loggan på slutkortet (haiku): tom bakgrund ur samma bild kopieras över den
+    kopiera = []
+    if 'slutkort' in k:
+        sk = k['slutkort']; r = sk['ruta']; w, h = r[2] - r[0], r[3] - r[1]
+        kopiera.append({'a': sk['fran_s'], 'b': slut + 1, 'fran': [r[0], sk['kalla_y'], w, h], 'till': [r[0], r[1]]})
+
+    plan = {'video': kalla, 'ut': ut, 'font': FONT, 'sudda': sudda, 'kopiera': kopiera, 'texter': texts}
     json.dump(plan, open(ut + '.plan.json', 'w'), ensure_ascii=False, indent=1)
     r = subprocess.run(['python3', os.path.join(REPO, 'pipeline/textbyte.py'), ut + '.plan.json'], capture_output=True, text=True)
     if r.returncode: sys.exit(r.stderr[-800:] or r.stdout[-800:])
+    # vilken text lagret byggdes på — dubba.mjs vägrar lägga rösten på ett lager från en äldre text
+    import hashlib
+    lok_sha = hashlib.sha256(open(os.path.join(HAR, kod, f'{video}.json'), 'rb').read()).hexdigest()
+    json.dump({'lok_sha': lok_sha}, open(ut + '.sha.json', 'w'))
     print(f'{kod} {video}: {len(texts)} texter, {len(sudda)} suddningar → {ut}')
 
 

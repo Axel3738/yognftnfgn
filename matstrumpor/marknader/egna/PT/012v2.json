@@ -1,0 +1,13 @@
+{
+ "texter": [
+  "Uma destas caixas\né pizza de mentira.",
+  "A de mentira\né de meias.",
+  "Olhas duas vezes.\nE ris.",
+  "A tua não se empresta.",
+  "Moram na gaveta\ncom as normais",
+  "Cada um, o seu.",
+  "Quatro sabores.\nUm para cada um."
+ ],
+ "granskad": true,
+ "not": "text 7: granskarens eget förslag efter runda 3 ('Quatro sabores. Escolhe o teu.' underkänd)"
+}

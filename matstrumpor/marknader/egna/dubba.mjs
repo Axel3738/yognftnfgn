@@ -12,10 +12,13 @@
 //   GET  /v1/dubbing/{id}/audio/{språkkod}    → dubbad mp4 (videoinput) / mp3
 // ⚠️ Manuellt läge är "experimental" enligt ElevenLabs. Skrivet innan nyckeln fanns i en session —
 // första körningen ska läsas noga (status, error, lyssna.py) innan resten körs.
+// Två spärrar: ändras texten efter att dubbningen skapats görs en ny (text_sha i state), och bara en
+// text med "granskad": true blir annonsfil i annonser/klar/ — ett utkast stannar i ut/.
 import { readFileSync, writeFileSync, existsSync, mkdirSync, copyFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
 
 if ((process.env.HTTPS_PROXY || process.env.https_proxy) && !process.env.NODE_USE_ENV_PROXY) {
   const env = { ...process.env, NODE_USE_ENV_PROXY: '1' };
@@ -61,19 +64,23 @@ async function main() {
   if (!lang || !video) { console.error('node dubba.mjs <KOD> <video>'); process.exit(2); }
   if (!process.env.ELEVENLABS_API_KEY) { console.error('Saknar ELEVENLABS_API_KEY i miljön.'); process.exit(1); }
   const manus = JSON.parse(readFileSync(join(HAR, `${video}.manus.json`), 'utf8'));
-  const lok = JSON.parse(readFileSync(join(HAR, kod, `${video}.json`), 'utf8'));
+  const lokFil = join(HAR, kod, `${video}.json`);
+  const lok = JSON.parse(readFileSync(lokFil, 'utf8'));
+  const textSha = createHash('sha256').update(readFileSync(lokFil)).digest('hex');
   mkdirSync(join(HAR, 'ut'), { recursive: true });
   const bas = join(HAR, 'ut', `${kod}_${video}`);
   writeFileSync(`${bas}.srt`, byggSrt(lok));
   const stateFil = `${bas}.dub.json`;
   let st = existsSync(stateFil) && !process.argv.includes('--om') ? JSON.parse(readFileSync(stateFil, 'utf8')) : {};
+  // texten har ändrats sedan dubbningen skapades (granskaren rättade) → ny dubbning, aldrig gammalt tal
+  if (st.dubbing_id && st.text_sha !== textSha) { console.log(`texten har ändrats sedan ${st.dubbing_id} — ny dubbning`); st = {}; }
   if (!st.dubbing_id) {
     const fd = new FormData();
     fd.append('file', new Blob([readFileSync(join(HAR, 'kalla', `${video}.mp4`))], { type: 'video/mp4' }), `${video}.mp4`);
     fd.append('csv_file', new Blob([byggCsv(manus, lok)], { type: 'text/csv' }), `${kod}_${video}.csv`);
     for (const [k, v] of Object.entries({ mode: 'manual', source_lang: 'sv', target_lang: lang, num_speakers: '1', watermark: 'false', name: `MATSTRUMP_${kod}_${video}` })) fd.append(k, v);
     const svar = await (await api('/dubbing', { method: 'POST', body: fd })).json();
-    st = { dubbing_id: svar.dubbing_id, forvantat_s: svar.expected_duration_sec, skapad: new Date().toISOString(), lang };
+    st = { dubbing_id: svar.dubbing_id, forvantat_s: svar.expected_duration_sec, skapad: new Date().toISOString(), lang, text_sha: textSha };
     writeFileSync(stateFil, JSON.stringify(st, null, 1));
     console.log(`dubbning skapad ${st.dubbing_id} (${lang}), väntat ${st.forvantat_s} s`);
   }
@@ -91,9 +98,13 @@ async function main() {
   // dubbens ljud på textlagret — videon ur textlager.py, ljudet ur ElevenLabs
   const text = `${bas}.text.mp4`;
   if (!existsSync(text)) throw new Error(`textlagret saknas: ${text} (kör textlager.py först)`);
+  const lager = existsSync(`${text}.sha.json`) ? JSON.parse(readFileSync(`${text}.sha.json`, 'utf8')).lok_sha : null;
+  if (lager !== textSha) throw new Error(`textlagret ${text} är byggt på en annan text än ${lokFil} — kör textlager.py ${kod} ${video} igen`);
   const ut = `${bas}.mp4`;
   const r = spawnSync('ffmpeg', ['-nostdin', '-y', '-v', 'error', '-i', text, '-i', `${bas}.dub.mp4`, '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '160k', '-shortest', '-movflags', '+faststart', ut]);
   if (r.status) throw new Error(`ffmpeg: ${r.stderr}`);
+  // bara granskad text blir en annonsfil — ett utkast (t.ex. piloten) stannar i ut/
+  if (lok.granskad !== true) { console.log(`utkast (granskad ≠ true): ${ut} — inte till annonser/klar/`); return; }
   mkdirSync(KLAR, { recursive: true });
   copyFileSync(ut, join(KLAR, `${kod}_${video}.mp4`));
   console.log(`klar: ${join(KLAR, `${kod}_${video}.mp4`)}`);

@@ -359,6 +359,23 @@ den 33:e, norska Nathalie, var provet). Hela flödet: `heygen/README.md`.
 ⛔ **Inget är påslaget.** Axel granskar annonserna först; `--aktivera` vägrar så länge
 budgetbeslutet i `marknader.json` bär "tills Axel granskat".
 
+### Den fjärde annonsen: 012v2, egen video utan röst (2026-09-29) — 12 st, alla PAUSED
+
+`MATSTRUMP_<KOD>_sushi_gift_anim_004_v1` finns i alla tolv kampanjer (WW bär den engelska). Den
+svenska `MATSTRUMP_sushi_gift_ugc_012v2_v1` (2 073 kr, 5 köp, under break-even i Sverige) består
+av sju AI-bilder med orange textrutor och ingen röst. Allt byggdes med egna verktyg, aldrig
+HeyGen (Axels order 2026-09-28):
+
+- Samma sju rutor ritas med marknadens text (`egna/rendera-012v2.py`).
+- Texten är skriven av sonnet och dömd av en skeptisk infödd granskare. NO, FI, IT och PT
+  underkändes i tredje rundan på en rad var, och granskarens eget förslag lades in.
+- Loggan "MATSTRUMPOR.SE" är bortmålad ur sista scenen (`pipeline/logga.py`). De sju första
+  laddades upp med loggan och fick videon utbytt i samma annons.
+
+Allt är tillbakaläst PAUSED. Detaljerna står i `egna/README.md`. Röstvideorna haikuh3, haikuh2
+och s001h1 blir annons 005–007 med ElevenLabs-röst i en egen session
+(`egna/PROMPT-elevenlabs.md`).
+
 ⚠️ **HeyGen-nyckeln sitter på kontot `subscriptions@stonebite.org`** (Axel Odhner, mätt
 `GET /v1/user/me` 2026-09-27 kväll): `billing_type: wallet`, **saldo 0,10 USD, ingen
 prenumeration på det kontot**. Det är därför API:t svarar "Insufficient credit … requires 'api'

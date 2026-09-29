@@ -12,6 +12,8 @@ rutan och bara medan den syns.
 plan.json:
   {"video": "in.mp4", "ut": "ut.mp4", "font": "pipeline/fonts/Poppins-Bold.ttf",
    "sudda": [{"a": 0.0, "b": 2.0, "ruta": [x0, y0, x1, y1]}],
+   "kopiera": [{"a": 50.12, "b": 99, "fran": [x, y, w, h], "till": [x, y]}],
+   "bilder": [{"a": 12.0, "b": 99, "fil": "lapp.png", "x": 160, "y": 10}],
    "texter": [{"a": 0.0, "b": 2.0, "text": "…", "mitt": [cx, cy], "min": [w, h], "max_bredd": 600,
                "font_px": 38, "farg": [255,255,255], "bakgrund": [246,132,38,255], "radie": 10, "pad": [18, 8]}]}
 
@@ -72,6 +74,19 @@ def kor(plan):
                     f"boxblur=luma_radius={lr}:luma_power=3:chroma_radius={cr}:chroma_power=3[bl{i}];"
                     f"[bas{i}][bl{i}]overlay={x0}:{y0}:enable='between(t,{s['a']:.2f},{s['b']:.2f})'[s{i}]")
         senaste = f'[s{i}]'
+    # 1a) kopiera en bit av samma bild över en annan (slät bakgrund över en logga): samma pixlar och
+    #     samma brus i samma färgrymd, så lappen syns inte ens på en helt jämn yta (en fast RGB-färg
+    #     gav en svag rektangel, mätt på haikuh3:s slutkort 2026-09-29)
+    for i, c in enumerate(plan.get('kopiera', [])):
+        fx, fy, w, h = c['fran']; tx, ty = c['till']
+        filt.append(f"{senaste}split[kb{i}][kk{i}];[kk{i}]crop={w}:{h}:{fx}:{fy}[kc{i}];"
+                    f"[kb{i}][kc{i}]overlay={tx}:{ty}:enable='between(t,{c['a']:.3f},{c['b']:.3f})'[k{i}]")
+        senaste = f'[k{i}]'
+    # 1b) fasta lappar (PNG med alfa, t.ex. en borttagen logga ur pipeline/logga.py), bara medan de gäller
+    for i, l in enumerate(plan.get('bilder', [])):
+        inputs += ['-loop', '1', '-i', l['fil']]
+        filt.append(f"{senaste}[{n}:v]overlay={l['x']}:{l['y']}:shortest=1:enable='between(t,{l['a']:.2f},{l['b']:.2f})'[l{i}]")
+        senaste = f'[l{i}]'; n += 1
     # 2) nya rutor
     qa = []
     for i, t in enumerate(plan['texter']):
