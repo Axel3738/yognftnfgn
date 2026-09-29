@@ -487,6 +487,11 @@ plattformens egen.
   **Kontrollerat igen 2026-09-28 07:01 UTC** av rutinen "Kolla Matstrumpors schemalagda mejl"
   (`trig_013G65e8CvGdpybAJctqjCMc`, samma `search_campaigns publishedAfter 2026-09-25`): K01
   `waiting_to_be_published` `2026-09-29T16:00Z`, F06 E2 `draft` — rätt, inget att göra.
+  **Sista kollen 2026-09-29 10:20 UTC** (`trig_019jHo4yKekS39zXBqZtkfmq`, samma fråga): K01
+  `waiting_to_be_published` `2026-09-29T16:00Z`, F06 E2 `draft`, K15 publicerad 28/9 09:18 UTC,
+  inget annat schemalagt — rätt, inget att göra. K01:s titel i Spoks säger fortfarande
+  `uppvarmning_steg1` (en schemalagd kampanj går inte att ändra via MCP:n); publiken är
+  SEG_samtycke enligt ovan, och källfilen säger samtycke sedan samma dag.
   **Publiken mätt** med `update_segment` på SEG_samtycke UTAN `acknowledgeWarnings` och med
   identisk beskrivning (`applied: false`, inget ändrat): `postsUsingSegment` = K01 (schemalagd)
   + F06 E2 (utkast). Det är det enda sättet via MCP:n att se vilken publik en kampanj har —
