@@ -4,6 +4,12 @@
 //
 //   node klaviyo/rea-kod.mjs --brand baverbutiken k23 k25 k29          # torrt: visar vad som finns och vad som skulle skapas
 //   node klaviyo/rea-kod.mjs --brand baverbutiken k23 k25 k29 --ja     # skapar/rättar och läser tillbaka på koden
+//   node klaviyo/rea-kod.mjs --brand baverbutiken --alla [--ja]        # alla kampanjfiler med rabatt-block
+//   node klaviyo/rea-kod.mjs --brand baverbutiken --avaktivera KOD1,KOD2 [--ja]   # stänger gamla koder (utgår nu)
+//
+// En kod kan bäras av FLERA mejl (Axels 30 %-rea 2026-09-29: FARSDAG30 i elva fars dag-mejl,
+// BAT30 i båtmejlen K02 och K24). Filerna grupperas per kod: procent, start och slut måste vara
+// lika i alla, och koden gäller unionen av mejlens produkter.
 //
 // Kampanjfilen (klaviyo/innehall/<brand>/kampanjer/<id>-*.json) bär beslutet i
 // `rabatt`: { typ: "kod", kod, procent, start, slut, handles? }. Saknas handles
@@ -29,6 +35,8 @@ const arg = (n, std) => { const i = process.argv.indexOf(n); return i >= 0 ? pro
 const brandId = arg('--brand', 'baverbutiken');
 const suffix = arg('--suffix', brandId === 'baverbutiken' ? 'SE' : null);
 const skarpt = process.argv.includes('--ja');
+const alla = process.argv.includes('--alla');
+const avaktivera = String(arg('--avaktivera', '') || '').split(',').map((x) => x.trim()).filter(Boolean);
 const ids = process.argv.slice(2).filter((a) => /^k\d+/.test(a));
 
 export function lasKampanj(brand, id) {
@@ -65,6 +73,31 @@ export function rabattUr(m) {
   return { kod: r.kod, procent, start: r.start, slut: r.slut, handles, titel: r.titel ?? `Extrarea ${r.kod}: ${procent} % (mejl ${m.id.split('-')[0].toUpperCase()})` };
 }
 
+// Alla kampanjfiler i brandets mapp som bär ett rabatt-block av typen kod.
+export function allaMedRabatt(brand) {
+  const mapp = path.join(ROT, 'klaviyo', 'innehall', brand, 'kampanjer');
+  return fs.readdirSync(mapp).filter((f) => f.endsWith('.json')).sort()
+    .map((f) => /^(k\d+)/.exec(f)?.[1]).filter(Boolean)
+    .filter((id) => { const { d } = lasKampanj(brand, id); return d.rabatt && typeof d.rabatt === 'object' && d.rabatt.typ === 'kod'; });
+}
+
+// Samma kod i flera mejl blir EN rabatt: procent, start och slut måste stämma i alla filer,
+// och produkterna är unionen. Titeln räknar upp mejlen så att Shopify-listan går att läsa.
+export function grupperaPerKod(poster) {
+  const per = new Map();
+  for (const { id, r } of poster) {
+    const g = per.get(r.kod);
+    if (!g) { per.set(r.kod, { ...r, handles: [...r.handles], mejl: [id] }); continue; }
+    if (g.procent !== r.procent || !sammaTid(g.start, r.start) || !sammaTid(g.slut, r.slut)) {
+      throw new Error(`${r.kod}: ${g.mejl.join(', ')} och ${id} säger olika procent, start eller slut (${g.procent} % ${g.start}–${g.slut} mot ${r.procent} % ${r.start}–${r.slut})`);
+    }
+    for (const h of r.handles) if (!g.handles.includes(h)) g.handles.push(h);
+    g.mejl.push(id);
+  }
+  for (const g of per.values()) g.titel = `Extrarea ${g.kod}: ${g.procent} % (mejl ${g.mejl.map((m) => m.split('-')[0].toUpperCase()).join(', ')})`;
+  return [...per.values()];
+}
+
 async function klient(env = process.env) {
   if (!suffix) throw new Error('Ange --suffix <ENV-suffix> för butikens Shopify-app.');
   const shop = String(env[`SHOPIFY_SHOP_${suffix}`] ?? '').replace(/^https?:\/\//, '').replace(/\/$/, '').replace('_', '-');
@@ -90,6 +123,7 @@ const LAS_ID = LAS.replace('query($kod: String!) { codeDiscountNodeByCode(code: 
 const SKAPA = `mutation($d: DiscountCodeBasicInput!) { discountCodeBasicCreate(basicCodeDiscount: $d) { codeDiscountNode { id } userErrors { field code message } } }`;
 const RATTA = `mutation($id: ID!, $d: DiscountCodeBasicInput!) { discountCodeBasicUpdate(id: $id, basicCodeDiscount: $d) { codeDiscountNode { id } userErrors { field code message } } }`;
 const PRODUKT = `query($q: String!) { products(first: 5, query: $q) { nodes { id handle title status } } }`;
+const AVAKTIVERA = `mutation($id: ID!) { discountCodeDeactivate(id: $id) { codeDiscountNode { id codeDiscount { ... on DiscountCodeBasic { status endsAt } } } userErrors { field code message } } }`;
 
 const sammaTid = (a, b) => Date.parse(a) === Date.parse(b);
 const sammaMangd = (a, b) => a.length === b.length && a.every((x) => b.includes(x));
@@ -134,17 +168,37 @@ export function bedom(las, r, ids) {
 }
 
 async function main() {
-  if (!ids.length) throw new Error('Ange kampanj-id:n, t.ex. k23 k25 k29.');
+  const valda = alla ? allaMedRabatt(brandId) : ids;
+  if (!valda.length && !avaktivera.length) throw new Error('Ange kampanj-id:n (t.ex. k23 k25), --alla eller --avaktivera KOD1,KOD2.');
   const k = await klient();
   console.log(`${brandId} (${k.shop}) via SHOPIFY_*_${suffix}, ${skarpt ? 'SKARPT' : 'torrt'}`);
   let fel = 0;
-  for (const id of ids) {
+
+  for (const kod of avaktivera) {
+    const las = (await k.graphql(LAS, { kod })).codeDiscountNodeByCode;
+    const c = las?.codeDiscount;
+    if (!c) { console.log(`\n${kod}: finns inte i butiken, inget att stänga.`); continue; }
+    console.log(`\n${kod}: ${las.id} ${c.status}, använd ${c.asyncUsageCount} ggr, ${c.startsAt} → ${c.endsAt}`);
+    if (c.status === 'EXPIRED') { console.log('  redan utgången, rör inte.'); continue; }
+    if (!skarpt) { console.log('  skulle stängas (torrt).'); continue; }
+    const s2 = (await k.graphql(AVAKTIVERA, { id: las.id })).discountCodeDeactivate;
+    if (s2.userErrors?.length) throw new Error(`${kod}: ${JSON.stringify(s2.userErrors)}`);
+    const efter = (await k.graphql(LAS_ID, { id: las.id })).codeDiscountNode?.codeDiscount;
+    if (efter?.status !== 'EXPIRED') { fel++; console.log(`  ⚠️ status efter stängning: ${efter?.status ?? 'hittas inte'}`); }
+    else console.log(`  stängd: ${efter.status}, slut ${efter.endsAt} ✅`);
+  }
+
+  const poster = [];
+  for (const id of valda) {
     const { fil, d } = lasKampanj(brandId, id);
     const r = rabattUr(d);
     if (!r) { console.log(`${fil}: inget rabatt-block (typ kod) — hoppar.`); continue; }
+    poster.push({ id: d.id ?? id, r });
+  }
+  for (const r of grupperaPerKod(poster)) {
     const pids = await produktIds(k, r.handles);
     const fore = bedom((await k.graphql(LAS, { kod: r.kod })).codeDiscountNodeByCode, r, pids);
-    console.log(`\n${id}: ${r.kod} ${r.procent} % på ${r.handles.length} produkter, ${r.start} → ${r.slut}`);
+    console.log(`\n${r.kod}: ${r.procent} % på ${r.handles.length} produkter, ${r.start} → ${r.slut} (mejl ${r.mejl.join(', ')})`);
     for (const h of r.handles) console.log(`  ${h} → ${pids[h]}`);
     if (fore.finns) console.log(`  finns: ${fore.id} (${fore.status}, använd ${fore.anvand} ggr)${fore.avvikelser.length ? `, avviker: ${fore.avvikelser.join('; ')}` : ', stämmer'}`);
     else console.log('  finns inte i butiken.');
@@ -152,16 +206,16 @@ async function main() {
     if (fore.finns && !fore.avvikelser.length) { console.log('  redan rätt, rör inte.'); continue; }
     let skapadId = null;
     if (!fore.finns) {
-      const s = (await k.graphql(SKAPA, { d: indata(r, pids, { skapa: true }) })).discountCodeBasicCreate;
-      if (s.userErrors?.length) throw new Error(`${r.kod}: ${JSON.stringify(s.userErrors)}`);
-      skapadId = s.codeDiscountNode.id;
+      const s2 = (await k.graphql(SKAPA, { d: indata(r, pids, { skapa: true }) })).discountCodeBasicCreate;
+      if (s2.userErrors?.length) throw new Error(`${r.kod}: ${JSON.stringify(s2.userErrors)}`);
+      skapadId = s2.codeDiscountNode.id;
       console.log(`  skapad: ${skapadId}`);
     } else {
       const bort = fore.har.filter((x) => !r.handles.map((h) => pids[h]).includes(x));
       const dIn = indata(r, pids, { skapa: false });
       if (bort.length) dIn.customerGets.items.products.productsToRemove = bort;
-      const s = (await k.graphql(RATTA, { id: fore.id, d: dIn })).discountCodeBasicUpdate;
-      if (s.userErrors?.length) throw new Error(`${r.kod}: ${JSON.stringify(s.userErrors)}`);
+      const s2 = (await k.graphql(RATTA, { id: fore.id, d: dIn })).discountCodeBasicUpdate;
+      if (s2.userErrors?.length) throw new Error(`${r.kod}: ${JSON.stringify(s2.userErrors)}`);
       console.log(`  rättad: ${fore.id}`);
     }
     // codeDiscountNodeByCode släpar några sekunder efter en ny kod (mätt 2026-09-28: tre
