@@ -67,7 +67,13 @@ om "nya hubbar" (det är hans befintliga hubbar) — listan är orörd, i ställ
   är EN färg, så fyra färger i bild hade lovat fel.
 - **Leveranskön torrläst 2026-09-28 ~17:50:** Solcellslampa, Golfkalender och
   Täljset hittade med kampanj ur kontot. `Rodholder_FD_2_1` finns inte i kön
-  (Fish rod holder undantas) — väntar på Axels svar.
+  (Fish rod holder undantas). **Axels svar 2026-09-29:** hubben ska vara
+  Bäverbutikens, men han laddar upp själv ("jag vill inte att du gör det,
+  jag vill gärna göra det manuellt"). `factory/produkter/register.json` är
+  därför orörd: `Rodholder_FD_2_1` går upp för hand i kampanjen
+  `Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18` (`120249850522830291`),
+  adsetet `Fiskespöhållare GT Batch 2` (gåvovinkeln). Pris live samma morgon:
+  289 kr, ord. 482 kr.
 
 ⛔ **Ordet "rea" stoppades av bildrutinens textspärr** (`verifiera.py`: "ordet
 rea … stoppas alltid"), så alla elva `FD_2_1` hade fastnat i Draft i kväll.
