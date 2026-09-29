@@ -716,11 +716,30 @@ efteråt. Danska och engelska var rena (danskan har `citat: false`, engelskan in
 - ✅ **Black Week sv `eba4e395-…` och nb `549ee8cb-…`**: citatet borttaget via
   `update_draft_campaign` 12:50–12:51 CEST, allt annat kvar (block-id:n ekade, produktkorten ur
   payloaden), tillbakaläst: noll citat.
-- ⏳ **Första kampanjen sv `52181edf-…` och nb `e2bc52fd-…`**: `waiting_to_be_published` går inte
-  att ändra via MCP (`campaign_not_editable`). Axel tar bort schemaläggningen i appen → sessionen
-  tar bort de två citaten ur samma kampanj (blocklistorna förberedda) → Axel schemalägger igen
-  18:00 med samma segment (`SEG_samtycke_sv` / `SEG_samtycke_nb`). Inga dubbletter byggs: appen
-  visar ämnesraden, och två kampanjer med samma ämnesrad är en felklickning som väntar.
+- ✅ **Första kampanjen sv `52181edf-…` och nb `e2bc52fd-…`**: `waiting_to_be_published` går inte
+  att ändra via MCP (`campaign_not_editable`). Axel tog bort schemaläggningen 13:48 CEST, sessionen
+  tog bort citaten med `update_draft_campaign` 13:49 (block-id:n ekade; tillbakaläst: noll citat),
+  Axel schemalade om 13:53. Inga dubbletter byggdes: appen visar ämnesraden, och två kampanjer med
+  samma ämnesrad är en felklickning som väntar. Sidoeffekt: produktkortet i den svenska hämtade vid
+  omsparningen butikens nuvarande bild (`c4c8eba1`, husvagn i höstmiljö; förut `39902356`, husbil),
+  medan nb/da/en har den fasta husbilsbilden `6830b5d9` (produktkortet visar SEK). Sessionens
+  beslut: rätt produkt i båda, lämnas.
+- ⛔ **`update_draft_campaign` nollställer `notify`** (mätt 2026-09-29): efter omsparningen stod sv
+  och nb på `notify: false`, medan da och en (orörda) stod på `true`. Varje kampanj som gått ut i de
+  tre arbetsytorna har `notify: true`, och appens statistiksida säger "This post did not notify any
+  contacts" för ett inlägg med `false`. MCP:n har inget `notify`-fält; bara appen sätter det, och
+  redigeraren visar det inte: "To:" visar segmentet som vanligt (Axels skärmdump samma eftermiddag,
+  NB: "SEG_samtycke_nb (18)"). **Sv blev `true`** efter Axels omschemaläggning 14:14. **Nb stod kvar
+  på `false`** efter tre omschemaläggningar (sparad 14:16, 14:24 och 14:35; den sista enligt
+  instruktionen pennan → Remove time → REVIEW → Schedule), orsak oklar. Appens kod har knappen "Send out notifications now" på statistiksidan för
+  ett inlägg som inte notifierat någon (oprövad). Uppföljning 30/9 08:40 CEST:
+  `get_campaign_statistics` på alla fyra visar om nb mejlades.
+- **Regler ur samma eftermiddag:** (1) rätta aldrig en schemalagd kampanj via MCP utan att räkna med
+  att utskicket måste slås på igen i appen, och läs `notify` med `search_campaigns` innan något
+  kallas klart; (2) gissa aldrig ett knappnamn i appen. Sessionen skrev "Notify only" ur appens kod,
+  men knappen fanns inte i redigeraren. Be om en skärmdump först. (3) Fyra rundor klick samma
+  eftermiddag slutade med Axels "håll käften nu". Ge hela vägen i ett meddelande, och ta resten
+  själv eller nästa dag.
 - Repots payload (sv/nb k01 och k09) har citaten borttagna för hand, bara citaten. En
   omgenerering med `konvertera.mjs --brand carashell` slår dessutom ihop dubbla produktkort i sv
   K01, K02, K05, K06 och K07 (spärren från Bäverbutikens granskning) — Spoks-utkasten har kvar
