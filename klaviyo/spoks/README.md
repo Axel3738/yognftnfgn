@@ -1182,6 +1182,22 @@ webbläsare) gör dem.
   sida, Chrome rapporterade fliken som `hidden`, ingen inloggningssida, inget ändrat). Fliken
   måste ligga överst i ett synligt fönster medan Cowork arbetar. Prompten säger det sedan dess
   och ber Cowork be om hjälp i stället för att gissa.
+- ⛔ **V01 schemalades första gången UTAN utskick** (Cowork 2026-09-29 ~20:30 CEST; mätt 20:4x med
+  `search_campaigns`: `waiting_to_be_published`, `2026-09-30T16:00Z`, **`notify: false`**,
+  `notificationRecipientsCount: 0`). K01 samma kväll: `published`, `notify: true`, **2 990 mottagare**.
+  Coworks väg var "Till:" (SEG_samtycke stod redan där) → **"Planera"** → datum och tid →
+  **"Tillämpa"** (appens svenska knappnamn, avlästa av Cowork; "Publicera nu" finns bredvid och rördes
+  aldrig). Spoks hjälpartikel *Scheduling an email campaign* (help.spoks.com/en/articles/13563019,
+  läst samma kväll): mottagarna överst → **Review** → kontrollera ämnesrad och förhandstext →
+  **Schedule längst ner på granskningssidan**, och *"With smart sending on, contacts who received any
+  marketing email in the last 24 hours, from a campaign or a flow, are left out, so a list you emailed
+  less than 24 hours ago can show 0 recipients."* Hela SEG_samtycke fick K01 två timmar innan V01
+  schemalades, så granskningssidan borde ha visat 0 mottagare. **Sessionens beslut: Smart sending AV
+  på varje kampanj i serien** (Axels order är ett mejl om dagen till de aktiva, alltid kl 18, och
+  24-timmarsregeln stryker då nästan alla varannan dag; stoppregeln `LARM_LEVERANS` är skyddet).
+  Prompten kräver sedan dess granskningssidan, Smart sending av, mottagare > 0 och `notify: true` efter
+  varje mejl. Orsaken till `notify: false` är en slutsats ur hjälptexten, inte mätt i appen: mät om
+  efter V01:s omschemaläggning.
 - **Stoppregeln läses varje morgon** av rutinen `trig_0184cEo3qqjRg5GxemevSEYf` (08:38 svensk tid,
   `CRON_TZ=Europe/Stockholm`, i den här sessionen, sedd i svaret från `create_trigger` 2026-09-29):
   gårdagens utskick mot `LARM_LEVERANS`, och `notify` på de närmaste 48 timmarnas mejl. Tyst utom

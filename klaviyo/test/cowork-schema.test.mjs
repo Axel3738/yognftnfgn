@@ -76,6 +76,11 @@ test('promptText: länk, publik och tid per mejl, förväxlingsbara segment, ald
   assert.match(text, /Skicka aldrig något direkt/);
   // Mätt 2026-09-29: Cowork fick en vit sida, Spoks ritar inte i en dold flik.
   assert.match(text, /Är sidan helt vit/);
+  // Mätt 2026-09-29: V01 schemalades med notify false (0 mottagare) — granskningssidan,
+  // Smart sending av och notify-kollen är obligatoriska steg.
+  assert.match(text, /Stäng av "Smart sending"/);
+  assert.match(text, /"Planera" \(på engelska "Schedule"\) längst ner på granskningssidan/);
+  assert.match(text, /notify ska vara true/);
   // Förväxlingslistan: arbetsytans andra segment och Spoks egna, aldrig ett segment listan använder.
   const aldrigRad = text.split('\n').find((r) => r.startsWith('Det finns segment med nästan samma namn'));
   assert.match(aldrigRad, /SEG_engagerade_90d/);
