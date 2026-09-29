@@ -1,5 +1,18 @@
 # Creative DNA – Motorhöljet (Bäverbutiken)
 
+## ⛔ AXELS BESLUT 2026-09-29 — SÄNK FÖRVÄNTNINGARNA (gäller alla motoröverdrag)
+
+Axel 2026-09-29 om motoröverdraget: *"vi sätter alldeles för höga förväntningar
+på kvaliteten av materialet och visar funktioner som vi inte har … vi kommer få
+så många returer."* Beslutet är skrivet i full form i
+`products/batmotorskyddet-420d/dna.md` (blocket överst) och gäller lika för
+Marin Motorhölje 420D om kampanjen startas om: inga värdeord om materialet
+("kraftigt", "tåligt", "allväder", "slitstarkt"), inget "vattentätt/tätt",
+ingen funktion som inte syns på produktfotot, inga iscensatta hållbarhetsdemos.
+Produkten är ett enkelt tygöverdrag för 299 kr som håller sol, regn och smuts
+borta mellan turerna — säg det, inget mer. Live-annonser rörs inte.
+
+
 **Produkt:** Marin Motorhölje 420D – Universellt Skydd · 299 kr (jämförpris 367 kr)
 **LP:** https://baverbutiken.se/products/marin-motorholje-420d-universellt-skydd
 **Konto:** MagiBorsten `1867947880635861` (SEK) · Kampanj `120249435814310291` · CBO **4 000 kr/dag**

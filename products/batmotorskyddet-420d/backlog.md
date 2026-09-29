@@ -66,3 +66,13 @@ Koncept som väntar, inte briefade ännu.
   Inga fler CS_5-hookar förrän båda fått etikett.
 - **Storleksinvändningen som video** (`OB_3_H1`): får den KPI_WINNER ⇒ bild-formatet är stängt för
   gott och nästa storleksbrief är en video med ny hook; LOSER ⇒ invändningen är mättad i alla format.
+
+## 2026-09-29 — Axels beslut: sänk förväntningarna (styr allt nedan)
+
+Alla väntande koncept (OB_2_1 fukt, nästa CS_5-steg, storleks-OB) skrivs om
+enligt ⛔-blocket överst i `dna.md`: inga värdeord om materialet, inga funktioner
+som inte syns på fotot, hook på problem eller pris — aldrig på tygets styrka.
+Koncept som bygger på "tål vintern"/"vattnet rinner av" (SP_1_H9-familjens
+"Vattnet rinner av tyget", RI-vinkelns "tål en hel vinter") stryks som
+vidarebyggen. Skälet: returer. Produktsidans egna rader ("Tål en hel vinter
+ute", "slitstarkt") behöver Axel skriva om innan de får citeras igen.

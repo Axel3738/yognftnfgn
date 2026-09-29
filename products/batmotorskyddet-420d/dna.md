@@ -1,5 +1,47 @@
 # Creative DNA — Båtmotorskyddet 420D
 
+## ⛔ AXELS BESLUT 2026-09-29 — SÄNK FÖRVÄNTNINGARNA. Läs detta före varje brief.
+
+Axel 2026-09-29: *"vi sätter alldeles för höga förväntningar på kvaliteten av
+materialet och visar funktioner som vi inte har … vi kommer få så många returer."*
+Gäller ALLA kommande briefer på produkten (video, bild, copy, VO, captions,
+Meta-copy). Live-annonser rörs inte (stoppregeln gäller före uppladdning).
+
+**Så här låter produkten från och med nu:** ett enkelt, prisvärt tygöverdrag
+för 579 kr som håller regn, smuts, löv och sol borta från motorn när båten
+står still. Inte ett premiumskydd, inte ett löfte om vintern.
+
+**FÖRBJUDET i ny copy och bild (överlovar materialet eller visar funktioner
+som inte finns):**
+- "tål en hel vinter", "hela vintersäsongen", "sex månader", "övervintrar
+  under tak", "hela uppläggningen"
+- "slitstarkt", "kraftigt", "tåligt", "premium", "hållbart", "håller i år"
+- "vattentätt", "tätt", "vattnet rinner av", "håller allt väder ute", "UV-skydd"
+  (säg *skyddar mot regn och sol*, aldrig *tätt* eller *vattentätt*)
+- "sitter kvar i storm/hård vind", "håller i blåst" — bara *spänns med en rem*
+- varje funktion som inte syns på produktfotot: ventilation, dragkedja,
+  fodrat, vadderat, dragsko, dubbla remmar, fäste under motorn
+- demo som iscensätter mer än produkten gör: hink vatten som "rinner av",
+  vindtest, "efter en vinter"-jämförelse, hårda vrid/dragprov på tyget
+- recensionsrader om kvalitet ("känns starkt", "hållbart") — importrader
+
+**TILLÅTET (det produkten faktiskt är):** 420D Oxford-tyg (materialnamnet, utan
+värdeord), täcker kåpan ner över riggen, spänns med en rem, nio storlekar
+0–5 till 250–350 hk (mät först), dras på utan verktyg, döljer motorn för den
+som går förbi, 579 kr / jämförpris 965 kr, ångerrätt 14 dagar enligt lag.
+Skriv "håller regn, smuts och löv borta" — inte "skyddar mot allt väder".
+Visa produkten som den är: tyget, remmen, passformen på en motor. Hellre en
+ärlig rad ("ett tygöverdrag, inte mer") än ett löfte som ger en retur.
+
+**Hook-regel:** hooken får bygga på PROBLEMET (motorn står oskyddad, smuts,
+löv, sol, nyfikna blickar) eller PRISET — aldrig på materialets styrka.
+
+⚠️ Produktsidan säger fortfarande "Tål en hel vinter ute – slitstarkt 420D
+Oxford-tyg mot regn, snö och UV" och "håller väder och smuts ute under hela
+uppläggningen". Annonserna får inte ärva de raderna. Sidan är Axels att
+skriva om (uppgift till honom 2026-09-29).
+
+
 Skapad 2026-09-02 av `/forsta-batch` (körning nr 1, automatisk rutinkörning via
 `agent/rond.mjs`-behovet `forsta_batch`). Datakälla: MagiBorsten `1867947880635861`,
 kampanj `120250009325850291` ("Båtmotorskyddet 420D | BE ROAS 1.62 | Launch
