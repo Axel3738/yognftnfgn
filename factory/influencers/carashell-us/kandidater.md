@@ -32,7 +32,7 @@ Avsändare: **axel.odhner@stonebite.org** (Gmail-connectorn — den enda brevlå
 sessionen når; `hello@carashell.com` saknar lösenord i miljön). Signatur:
 "Axel Odhner, Founder, CaraShell, carashell.com". Svaren landar i Axels inkorg.
 
-## 1. Kontaktade 2026-09-29 (16 mejl, alla adresser lästa på personens egen sida samma dag)
+## 1. Kontaktade 2026-09-29 (27 mejl i två omgångar, alla adresser lästa på personens egen sida samma dag)
 
 | # | Namn | Kanal | Storlek (källa) | Rigg | Snitt kommentarer | Mejl | Ämnesrad | Gmail-id | Status |
 |---|---|---|---|---|---|---|---|---|---|
@@ -51,7 +51,26 @@ sessionen når; `hello@carashell.com` saknar lösenord i miljön). Signatur:
 | 13 | Tony & Tina — TNT RVing | [YouTube](https://www.youtube.com/@TNTRVing) | YT 6K | Rockwood Ultra Lite 2618RD "Ellie", husvagn | 25 (5 senaste) | tntrving@yahoo.com | Winterizing Ellie again this year? | 1a0ed07addc1d796 | kontaktad 2026-09-29 |
 | 14 | Chris & Katrina — Our Everyday Getaway | [YouTube](https://www.youtube.com/@oureverydaygetaway) | YT 28,8K | Class A eller femtehjulare | **113** (5 senaste) | oureverydaygetaway@gmail.com | Your "Winterize or risk it?" video | 1a0ed07b761e3f99 | kontaktad 2026-09-29 |
 | 15 | Izzy, MJ & Jason — Endless RVing | [YouTube](https://www.youtube.com/@EndlessRVing) | YT 176K, TikTok 53,9K | Class C/Super C | 57 (5 senaste) | endlessrving@gmail.com | Your "Should you use an RV cover?" video | 1a0ed07c063b9947 | kontaktad 2026-09-29 |
-| 16 | Sierra — A Life Simply Loved | [TikTok](https://www.tiktok.com/@alifesimplyloved) · [YouTube](https://www.youtube.com/@Alifesimplyloved) | TikTok 43K, YT 17,3K | 40 fot, heltid, North Dakota-vinter | 9 median (långa videor) | alifesimplyloved@yahoo.com | Your North Dakota winter videos | 1a0ed07cb27a322a | kontaktad 2026-09-29 |
+| 16 | Sierra — A Life Simply Loved | [TikTok](https://www.tiktok.com/@alifesimplyloved) · [YouTube](https://www.youtube.com/@Alifesimplyloved) · [IG](https://www.instagram.com/alifesimplyloved/) | TikTok 43K, IG 26K, YT 17,3K | 40 fot, heltid, North Dakota-vinter | 9 median (långa videor) | alifesimplyloved@yahoo.com | Your North Dakota winter videos | 1a0ed07cb27a322a | kontaktad 2026-09-29 |
+
+### Omgång 2 samma dag (Instagram-agenten, 11 mejl, adresserna lästa på deras sida/Linktree)
+
+Instagram-följare lästa ur profilens metadata 2026-09-29. Kommentarer per
+inlägg gick inte att mäta (Instagram spärrar inläggen utan inloggning).
+
+| # | Namn | Kanal | Storlek | Rigg / hur de campar | Mejl | Ämnesrad | Gmail-id | Status |
+|---|---|---|---|---|---|---|---|---|
+| 17 | Tammy & Donny — 2Benedicts | [IG](https://www.instagram.com/2benedicts/) | IG 35K | 2021 Keystone Cougar, femtehjulare; **står still under läsåret** (Tammy är lärare) — bäst passform | 2benedicts.dt@gmail.com | A roof cover for the school year | 1a0ed1e379f3253e | kontaktad 2026-09-29 |
+| 18 | Jeremy & Stephanie — The RV Atlas (podd) | [IG](https://www.instagram.com/thervatlas/) · [sajt](https://thervatlas.com) | IG 31K, podd 25K/vecka (mediakit) | Helgcampare, Jersey Shore (NJ) | thervatlas@gmail.com | Your podcast, and a Jersey Shore winter | 1a0ed1e4154eaafd | kontaktad 2026-09-29 |
+| 19 | Jenny — Girl of 10,000 Lakes | [IG](https://www.instagram.com/girlof10000lakes/) | IG 46K | Retro-husvagn + isfiskehus, Minnesota — **kan vara under 18 ft**, mejlet säger det | girlof10000lakes@gmail.com | A Minnesota winter for the trailer | 1a0ed1e4a02deae9 | kontaktad 2026-09-29 |
+| 20 | Kelley & Renee — Fifty and Fifth Wheeling | [IG](https://www.instagram.com/fiftyandfifthwheeling/) | IG 22K | Keystone Raptor, heltid, Georgia; många sponsorer | fiftyandfifthwheeling@aol.com | Seven years of fifth wheeling | 1a0ed1e5755e5dca | kontaktad 2026-09-29 |
+| 21 | Nathan & Marissa — Less Junk More Journey | [IG](https://www.instagram.com/lessjunkmorejourney/) | IG 107K | Heltid, uppgraderingar och reparationer | media@lessjunkmorejourney.com | Your RV upgrades and fixes | 1a0ed1e6012d1be1 | kontaktad 2026-09-29 |
+| 22 | Mel & Luke — Lahrs With Latitude | [IG](https://www.instagram.com/lahrs.with.latitude/) | IG 45K | Heartland Torque, toy hauler, heltid | lahrs.with.latitude@gmail.com | A roof cover for the Torque | 1a0ed1e69d359eef | kontaktad 2026-09-29 |
+| 23 | Lindsay & Chase — We're Out N About | [IG](https://www.instagram.com/wereoutnabout/) | IG 117K | Keystone Fuzion 424 (kan vara över 44 ft — mejlet säger största storleken) | wereoutnabout@gmail.com | A roof cover for the Fuzion | 1a0ed1e73be178f9 | kontaktad 2026-09-29 |
+| 24 | Jessica & Zach — The Everywhere Family (Campies 2024 ×2) | [IG](https://www.instagram.com/theeverywherefamily/) | IG 83K, TikTok 194K | Dutchmen Voltage Triton, toy hauler | theeverywherefamily@yahoo.com | Congrats on your two Campies wins | 1a0ed1e7de4916d9 | kontaktad 2026-09-29 |
+| 25 | Lia & Trevor — Llama Llama Adventure | [IG](https://www.instagram.com/llamallamaadventure/) | IG 10K | Keystone Sprinter, femtehjulare, långsamt resande | lia@liaeyre.com | Slow travel in the Sprinter | 1a0ed1e877701f8e | kontaktad 2026-09-29 |
+| 26 | Cassie — Wild Thornbaileys | [IG](https://www.instagram.com/wildthornbaileys/) | IG 158K | Open Range 395BHS, femtehjulare, familj på sex | contact@wildthornbaileys.com | A roof cover for a big Open Range | 1a0ed1e905dcc019 | kontaktad 2026-09-29 |
+| 27 | Michelle & Brian — Cruisin' with the Colemans | [YouTube](https://www.youtube.com/@CruisinwiththeColemans) | IG ~5,5K (sökträff) | Okänd rigg; på Hershey-mässans kreatörslista 19/9 | cruisinwiththecolemans@gmail.com | Saw you on the Hershey creator lineup | 1a0ed1e9cf2e9e5f | kontaktad 2026-09-29 |
 
 ## 2. Hålls tillbaka med flit (kontakta inte utan nytt beslut)
 
@@ -64,6 +83,10 @@ sessionen når; `hello@carashell.com` saknar lösenord i miljön). Signatur:
 | All About RV's (314K), RV Tips & Travels (277K) | För stora för mikro. All About RV's gör jämförelsetester — ett eget beslut. |
 | Happy Nomads | Unga heltidare, sajten drivs av en mediebyrå, aspiration i stället för identitet. |
 | @rvlifeduo, Callie Nguyen | Mejladressen syns bara i en sökträff, inte på deras sida. |
+| Boundless Bronnekes (Boundlessbronnekes@gmail.com) | Sponsras av etrailer, som själva säljer RV-överdrag — konkurrent i knät. |
+| Tara's Tiny Trailer (tarastinytrailer@gmail.com) | Happier Camper på 13 ft — minsta taköverdraget är 18 ft, inget i erbjudandet passar. |
+| Gills on Wheels (211K), The Rollin Boles (207K), Bonnie Hoellein (288K) | För stora för mikro. |
+| Mountains to the Sea RV (mountainstothesearv@gmail.com) | Adressen finns, men ingen storlek eller rigg gick att läsa — för tunt underlag. |
 
 ## 3. Bara DM, formulär eller marknadsplats — nästa batch (manuellt)
 
@@ -74,6 +97,7 @@ eller Collabstr/Fiverr — sessionen kan inte skicka dit. Detaljer och källor i
 - **UGC-kreatörer med husvagn/husbil:** Gwendolyn — Chaos Kiddos & Harmony (femtehjulare, IG ~22K), Jess Bell — Miles from Missouri (femtehjulare, gör UGC för RV-märken), Lana McManus (Fiverr-gig "RV lifestyle UGC"), Lora Norwood (Collabstr, RV-område i Texas), Amanda Bone — The Adventure Bones (Heartland Bighorn 39 ft), Anna & Stephan — Uproot and Adventure (Airstream), Gianna Cestone (bor i RV i Mammoth, har gjort Go RVing-UGC — dyr), Gabe Rovick (Jay Flight SLX, enda manliga husvagnsspåret), Hannah & Dillon — @rvlifeduo (Collabstr).
 - **Deltidsägare som ställer av rigg på vintern (bäst passform):** Jim & Heather — Super C Chow Adventures (Pennsylvania, jobbar heltid), Donny & Tammy — 2 Benedicts (lärare, Keystone Cougar), Jasmin & Mathew Rios (helgcampare, Jay Flight), Jerry & Teresa — Happy Place Diaries (Oregon, Montana-femtehjulare), Brian & Tina — Jonesin 2 Go (Ohio, Montana).
 - **YouTube utan mejl:** Why Wait (takserien Eternabond, snitt 62), Rusty78609 (daglig vlogg, "Comment Call", snitt 62), Over The Hill Adventures (pensionärspar, snitt 112), Sin City Country Homestead (har en video om RV-överdrag som gick fel), RV Inspection And Care, RV Repair Woman, Boundless Bronnekes (Linktree), Broken Dreams Reborn (partnerformulär + mediakit), Thirteen Adventures (formulär), RV Habit (har recenserat vindrutetäcken), Grand Adventure, Changing Lanes, Mortons on the Move, DIY Outdoor Life, We Chase Horizons (täckte sin Class A i december), Living Life Fulfilled, John Marucci, RobtheRVguy.
+- **Instagram, bara DM:** Jess Bell — Miles From Missouri (10K, Missouri, arbetande familj), Alison & Jason Takacs (23K, deltid, Jay Flight), Cory & Brooke — Wandering Weekends (7K, helgcampare, formulär på sajten), Lacey Autumn Brooke (15K, femtehjulare parkerad året runt i South Carolina, 89 % USA-publik enligt Modash), Chasing the Cashes (33K, pensionärer, tankunderhåll), The Taste for Adventure (16K), Wild RV Life (35K), Us and the Mutts (28K), Essentially Streaming (22K, Tanner är RV-tekniker), The Adventure Bones (26K), Traveling with Sherise (17K), Finding Our Someday (35K), The Stoleys (68K), The Flippin' Tilbys (14K), Wilson Grand Adventures (13K, husbil), Travel in Thoms (118K), Big AL Texas RV Family (157K), Wandering RV Babe (148K, låg interaktion).
 - **Priser, poddar, communityn (formulär):** Happily Ever Hanks (Campies 2025), Campin' Erin (Campies 2024, arbetsformulär), Janine Pettit — Girl Camper, StressLess Camping (tar inte sponsrade inlägg), The RV Atlas, Family Travel Go (mejlet syns på sajten men lästes förvanskat — läs om).
 
 ## 4. För stora (över ~400K)
