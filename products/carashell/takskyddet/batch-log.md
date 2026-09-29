@@ -2877,3 +2877,27 @@ sin ersättare ska alltid tittas på i en frame.**
   — ägarens beslut, inget laddas upp dit.
 - Kampanjen har fortfarande två adsets för samma vinkel (`CARASHELL_US_GT` och
   `CARASHELL_US_G`) som delar vinkelns budget i CBO:n.
+
+## Nattvakten 2026-09-30 — tre annonser pausade, taket nått, sämsta dygnet hittills
+
+**Budgetronden (konto 915422744950975, MagiBorsten DK): 3 ändringar, alla
+tillbakalästa.**
+- Pausade `CaraShellRoof_CS_1_H1` (14d 3 201 kr / 4 köp / CPA 800, 0 köp på 7d),
+  `CaraShellRoof_PD_2_1` i huvudkampanjen (14d 2 889 kr / 4 köp / CPA 722, 7d-CPA
+  2 566) och `CaraShellRoof_CS_3_H1` i LISTICLE (1 301 kr, 0 köp på 14 dygn).
+- **Taket på tre ändringar nåddes.** Kvar i kön till nästa natt: pausa
+  `CaraShellRoof_SP_3_H1` (1 287 kr, 1 köp, CPA 1 287) och sänka
+  `CARASHELL_SE_Taköverdraget LISTICLE` 2 800 → 2 000 kr (3d-vinst −3,2 %).
+- Huvudkampanjen **3 000 kr** (Axels tal) hölls av kadensspärren, 2 av 3 dygn.
+  3d: 14 573 kr, 17 köp, ROAS 1,51, vinst −4,8 %. Fönstret öppnar 2026-10-01.
+- `NYA LISTICLE … – kopia` 2 000 kr: 2 735 kr och 2 köp på 3 dygn — fortfarande
+  under grinden (300 kr OCH 3 köp), ingen dom.
+
+**29 september, alla tre kampanjerna:** 8 949 kr, 4 köp, ROAS 0,66, CPA 2 237 kr.
+Sämsta dygnet produkten haft. LISTICLE föll hårdast (ROAS 0,53) trots att den
+var den friska halvan fram till dess.
+
+**7 dygn SE:** 65 374 kr, 70 köp, ROAS 1,44, CPA 934 kr ⇒ vinstbidrag
+**−16 864 kr** (i går −10 179, i förrgår −9 693).
+
+**Briefronden:** pausad sedan 2026-09-18 (Axels beslut) — bara `kord` stämplad.

@@ -1,0 +1,26 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-30",
+  "lage": "budget",
+  "server": "CaraShell — OPS",
+  "gjort": [
+    "Budget round: paused three ads. CS_1_H1 (3 201 kr and 4 purchases over 14 days, CPA 800, and nothing at all over the last 7), PD_2_1 in the main campaign (CPA 722 over 14 days, 2 566 over 7) and CS_3_H1 in the LISTICLE campaign (1 301 kr, zero purchases in 14 days). All three read back",
+    "The run hit its cap of three changes per night. Two things go first tomorrow: pausing SP_3_H1 (1 287 kr for one purchase) and cutting the LISTICLE campaign 2 800 → 2 000 kr, whose 3-day profit is now -3.2 %",
+    "The main campaign stays at 3 000 kr, held by the cadence lock at 2 of 3 days. Its window opens 1 October",
+    "70 purchases over 7 days on 65 374 kr at ROAS 1.44. Profit contribution -16 864 kr, the third negative night and the deepest: -9 693, then -10 179, now this"
+  ],
+  "siffror": { "spend_7d": 65374, "kop_7d": 70, "roas_7d": 1.44, "vinstbidrag_7d": -16864 },
+  "briefer": [],
+  "action_axel": [
+    "Yesterday was the worst single day this product has had: 8 949 kr across all three campaigns for 4 purchases, ROAS 0.66, CPA 2 237 kr against break-even 693. The part you need to see is which campaign fell hardest. The LISTICLE one, at its new 2 800 kr, returned ROAS 0.53 on 3 312 kr for one purchase. The main campaign returned 0.73 and the new listicle copy 0.75. So the money you moved into the listicle track on Sunday evening did not land, at least not on its first full day. I am NOT telling you the move was wrong: one day where all three fall together points at something above campaign level, not at which landing page is used. But it does mean the reallocation has not bought anything yet, and at these numbers the whole product is losing roughly 2 000 to 2 500 kr a day. Decide whether it keeps running this week at all. If you want it smaller now rather than waiting for the round, the main campaign is the one with the cadence lock on it until tomorrow night"
+  ],
+  "action_redigerare": [],
+  "nasta_korning": "2026-10-01",
+  "varningar": [
+    "SP_5_1, fourth reading in a row above break-even: 7-day CPA 765, 951, 1 164, now 1 090. Its 14-day CPA is 672, which is 21 kr under break-even 693 — so the rules still class it a winner and protect it. If that 14-day number crosses 693 the round pauses it by itself, with no decision needed from you. Worth waiting for rather than pre-empting",
+    "Four kill candidates appeared tonight against zero last night. That is not the rules getting stricter. Ads that were sitting in the too-early class passed three times target CPA without a purchase, all at once, because spend per ad rises as the campaign shrinks. Expect more pausing over the next few nights and read it as an effect of the budget level, not as a new signal per ad",
+    "Norway and Denmark still run unwatched. Measured 23 September, not re-measured since. Only Sweden is managed by this round",
+    "Briefs stay paused by owner decision from 18 September"
+  ]
+}
