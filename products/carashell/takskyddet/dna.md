@@ -1210,3 +1210,47 @@ ORVO:s bildsvit som mall, vilket är en idé och inte ett verk.
 Lärdom: **att läsa konkurrentens sida noga innan man skriver är rätt; att
 skriva med den öppen bredvid sig är fel.** Nästa gång: skriv ur produktfakta
 och Axels egna rader, mät mot konkurrenten EFTERÅT.
+
+---
+
+## 2026-09-29 — A/B-test: UGC-bild först i galleriet (`forstabild`)
+
+**Axels hypotes:** en person som håller upp produkten som första bild skapar mer
+förtroende än en produktbild, och höjer konverteringen.
+
+**Bilden:** bildruta 0,15 s ur `Takoverdrag_UG_2_H1` — vår egen annons, gjord av
+Carl Vicente efter Bäverbutikens brief ("Selfie-style UGC, one take …", skapad
+2026-09-16). Ren beskärning ovanför textremsan, ingen AI-retusch. 128 kr spend,
+0 köp som annons (ingen dom). Vald ur de 34 mest spenderade + alla UG-märkta
+taköverdragsvideorna: det är den **enda** där en person håller upp produkten i
+första sekunden.
+
+**Så går testet:** CaraShell, 50/50 per besökare (kaka 30 dagar), alla
+marknader. Variant a ser UGC-bilden först, variant b dagens galleri. Order-
+attribut `AB forstabild`. Byggt med `factory/forstabild.mjs` (PROCESS.md →
+"UGC-bild först i galleriet"). Start 2026-09-29 ~14:00 CEST. Kör parallellt med
+`korgtrygg` (oberoende lottning).
+
+**Före start rättat:** huvudbilden (`husvagn-grusplan`) och `krokar-makro` hade
+vita kanter från bildmodellen (95/107 px upptill och nertill) — kontrollgruppen
+fick annars en sämre första bild än nödvändigt. Förlängda till kvadrat och filen
+bytt bakom samma media-id, i **båda** butikerna. Mätt på de levererade filerna:
+0 px vitt.
+
+**Läs av:** ordrar med taköverdraget, per variant, utan `forced`. ~10
+taköverdragsordrar/dygn i CaraShell ⇒ ~100 per variant om ungefär tre veckor.
+Vinner a: bilden först på riktigt, och samma sak i Bäverbutiken (som saknar
+A/B-motorn och därför inte testar).
+
+**⚠️ Fynd på vägen — annat folks material i våra LIVE annonser (mätt
+2026-09-29, bildrutor ur de 34 videorna):** flera av de mest spenderade
+taköverdragsannonserna visar andra märkens produkter och loggor, inte vårt
+överdrag: `TOURING WITH RIVA`-loggan (`Takoverdrag_PD_2_H1`,
+`CaraShellRoof_PD_2`, `_PD_2_H1`, och en RIVA-märkt fronthuv i `SP_2_H1` /
+`CaraShellRoof_SP_2(_H1)`), en Sterling-husvagn som får en fronthuv
+(`GT_5_H1`, `CS_1_H1`, `PD_1_H1`, `GT_4_H1`, `CaraShellRoof_GT_105_H1`,
+`_CS_1_H1`) och en Jayco med grått helöverdrag i drönarbild (`SP_4_H1`, 52 606
+kr, 106 köp — top spendern). Om klippen är hämtade från någon annans video är
+det HÄR DMCA-risken ligger, inte i produktbilderna. Inget rört (live annonser
+stängs aldrig i efterhand) — ägarens beslut; fråga redigerarna varifrån klippen
+kommer.

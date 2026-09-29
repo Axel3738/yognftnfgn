@@ -909,6 +909,21 @@ test('slaIhopTester: paketvalets A/B får ALDRIG skrivas över av korgtestet', a
   assert.equal(r2.current.ms_ab_tests, 'korgtrygg');
 });
 
+test('rensaSettings: ett test som startats av eget verktyg (forstabild) överlever nästa fabriksvarv', async () => {
+  const { rensaSettings, KORGTRYGGHET_TEST, FORSTABILD_TEST } = await import('../tema.mjs');
+  const produkt = { offer: { paket: { test: 'paket' } } };
+  // CaraShell 2026-09-29: forstabild.mjs lade till raden i temat. Utan
+  // bevarandet hade --igen brand byggt om listan ur produktfilen och tappat den.
+  const r = rensaSettings({ current: { ms_ab_tests: '#paket\nkorgtrygg\nforstabild' } }, { produkt, extraTester: [KORGTRYGGHET_TEST] });
+  assert.equal(r.current.ms_ab_tests, '#paket\nkorgtrygg\nforstabild');
+  // Avstängd (#) eller viktad står kvar exakt som den skrevs.
+  const av = rensaSettings({ current: { ms_ab_tests: `#${FORSTABILD_TEST}` } }, { produkt, extraTester: [KORGTRYGGHET_TEST] });
+  assert.equal(av.current.ms_ab_tests, '#paket\nkorgtrygg\n#forstabild');
+  // En källbutiks egna tester (okända id:n) följer INTE med in i en ny butik.
+  const smuts = rensaSettings({ current: { ms_ab_tests: 'buybox\nhero' } }, { produkt, extraTester: [KORGTRYGGHET_TEST] });
+  assert.equal(smuts.current.ms_ab_tests, '#paket\nkorgtrygg');
+});
+
 test('paketvalets A/B (rabatterna) är AV om inte produktfilen säger test_aktivt: true — Axels beslut 2026-09-24', async () => {
   const { rensaSettings, paketTest, KORGTRYGGHET_TEST } = await import('../tema.mjs');
   const produkt = (paket) => ({ offer: { paket } });

@@ -182,6 +182,46 @@
     ],
     "files": [
       {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-husvagn-grusplan-kvadrat.png",
+        "contentType": "IMAGE",
+        "alt": "Husvagn med taköverdraget på grusplanen vid sjön"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-studio-husbil.png",
+        "contentType": "IMAGE",
+        "alt": "Husbil med taköverdraget, spännbanden hakade under karossens kant"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-fore-efter-husvagn.png",
+        "contentType": "IMAGE",
+        "alt": "Samma husvagn utan och med taköverdraget"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-detaljer-collage.png",
+        "contentType": "IMAGE",
+        "alt": "Taköverdraget hopvikt, vävens struktur och den sydda bandfästningen"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-krok-under-kanten.png",
+        "contentType": "IMAGE",
+        "alt": "Spännbandet hakat under husvagnens nederkant"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-krokar-makro-kvadrat.png",
+        "contentType": "IMAGE",
+        "alt": "Två spännband med plastkrokar"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-regn-pa-vaven.png",
+        "contentType": "IMAGE",
+        "alt": "Regn som rinner av taköverdragets väv"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-husbil-vinterplats.png",
+        "contentType": "IMAGE",
+        "alt": "Husbil med taköverdraget på vinterplatsen"
+      },
+      {
         "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/image4.png",
         "contentType": "IMAGE",
         "alt": "Husbil sedd snett framifrån med CaraShell taköverdrag på taket"
@@ -199,7 +239,12 @@
       {
         "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-spanne.jpg",
         "contentType": "IMAGE",
-        "alt": "Elastiska spännband med plastkrokar som håller fast taköverdraget"
+        "alt": "Vävda spännband med plastkrokar som håller fast taköverdraget"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-ugc-haller-upp.jpg",
+        "contentType": "IMAGE",
+        "alt": "[UGC] Man håller upp det hopvikta taköverdraget framför en husbil"
       }
     ]
   },
@@ -208,55 +253,55 @@
       "namespace": "opf",
       "key": "problem_rubrik",
       "type": "single_line_text_field",
-      "value": "Regnet står kvar vid takluckan"
+      "value": "Taket är det du aldrig ser – och det som kostar mest att laga"
     },
     {
       "namespace": "opf",
       "key": "problem_text",
       "type": "multi_line_text_field",
-      "value": "Husvagnen eller husbilen står ute över vintern. Regnvatten samlas kring takluckor och skarvar, och ingen går upp och kollar förrän våren – då avgör fukttestet om tätningarna höll."
+      "value": "Regnet, löven och fågelskiten hamnar på taket, och det är precis den ytan du inte går upp och kollar. Vattnet står kvar kring takluckor och skarvar hela vintern, och tätmassan mjuknar. Den dag fukten är inne i taket räcker det inte med en tvätt till våren. Då är det en reparation."
     },
     {
       "namespace": "opf",
       "key": "gif_problem",
       "type": "url",
-      "value": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-takoverdrag-4.gif"
+      "value": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-fore-efter-husvagn.png"
     },
     {
       "namespace": "opf",
       "key": "losning_rubrik",
       "type": "single_line_text_field",
-      "value": "CaraShell täcker bara taket"
+      "value": "Täck bara taket – inte hela vagnen"
     },
     {
       "namespace": "opf",
       "key": "losning_text",
       "type": "multi_line_text_field",
-      "value": "CaraShell täcker takytan, med kanten hängande 30–40 cm ner över sidorna, så regnvatten inte blir stående vid takluckorna. Elastiska spännband med plastkrokar hakar under karossens kant och sitter kvar i blåst. En person sätter på det själv."
+      "value": "Ett helöverdrag är tungt att få på plats ensam och sitter och skaver mot lacken hela vintern. CaraShell täcker bara den yta som faktiskt tar stryk: vattnet rinner av den vattentäta 210D-väven, och kanten hänger 30–40 cm ner över sidorna så skarven mellan tak och vägg ligger under skydd. Vävda spännband hakar med plastkrok under karossens kant, två förstärkta band dras tvärs över taket – och en person lägger på det själv."
     },
     {
       "namespace": "opf",
       "key": "media_losning",
       "type": "url",
-      "value": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-van.jpg"
+      "value": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-krok-under-kanten.png"
     },
     {
       "namespace": "opf",
       "key": "benefits",
       "type": "list.single_line_text_field",
-      "value": "[\"Torrt tak fram till våren\",\"Lugn inför fukttestet\",\"Sätts på utan att be om hjälp\",\"Lacken slipper skava mot ett tungt helöverdrag\"]"
+      "value": "[\"Torrt tak fram till våren\",\"Lugn inför fukttestet\",\"Läggs på av en person\",\"Ligger stilla – inget som skaver mot lacken\"]"
     },
     {
       "namespace": "opf",
       "key": "features",
       "type": "list.single_line_text_field",
-      "value": "[\"Nio storlekar: 5,5 till 13,5 m långt, 3 m brett – välj efter ditt tak\",\"Svart 210D Oxford-väv, vattentät och tål sol\",\"Elastiska spännband på alla fyra sidor, justerbara, med plastkrokar som hakar under karossens kant\",\"Två extra förstärkta band på 10,5 m följer med\",\"Sätts på av en person\",\"Kanten hänger ner ca 30–40 cm över sidorna\"]"
+      "value": "[\"Nio storlekar: 5,5 till 13,5 m långt, 3 m brett – mät vagnen från front till bakkant, utan dragstången, och ta den storlek som är minst lika lång\",\"Svart 210D Oxford-väv, vattentät och tål sol – vattnet rinner av i stället för att bli stående\",\"Vävda spännband (inte gummi, töjs inte ut) på alla fyra sidor, 2,5 m och justerbara, med plastkrok som hakar under karossens kant\",\"Två extra förstärkta spännband på 10,5 m följer med – dras tvärs över taket\",\"Kanten hänger ca 30–40 cm ner över sidorna, så skarven mellan tak och vägg ligger under skydd\",\"Viks ihop till en famnstor packe efter säsongen\"]"
     },
     {
       "namespace": "opf",
       "key": "bild_lifestyle",
       "type": "url",
-      "value": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/image4.png"
+      "value": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-husbil-vinterplats.png"
     },
     {
       "namespace": "opf",
@@ -274,7 +319,7 @@
       "namespace": "opf",
       "key": "faq",
       "type": "json",
-      "value": "[{\"fraga\":\"Vilken storlek ska jag välja?\",\"svar\":\"Taköverdraget finns i nio längder, 5,5 till 13,5 meter, alla 3 meter breda. Mät taket från front till bakkant och välj närmaste längd uppåt. Passar både husvagn och husbil.\"},{\"fraga\":\"Hur fäster jag överdraget?\",\"svar\":\"Elastiska spännband med plastkrokar hakar under karossens kant, längs sidorna.\"},{\"fraga\":\"Sitter det kvar i blåst?\",\"svar\":\"Ja, de elastiska spännbanden håller det på plats i blåst.\"},{\"fraga\":\"Hur många behövs för att lägga på det?\",\"svar\":\"En person räcker, eftersom överdraget bara täcker taket.\"},{\"fraga\":\"Vad gäller om jag ångrar mig?\",\"svar\":\"14 dagars ångerrätt enligt svensk lag. Mejla hello@carashell.se.\"}]"
+      "value": "[{\"fraga\":\"Vilken storlek ska jag välja?\",\"svar\":\"Mät hur lång vagnen är från front till bakkant, utan dragstången. Ta den storlek som är minst lika lång – är vagnen 7,2 m tar du 7,5 m. Alla nio är 3 m breda och passar både husvagn och husbil.\"},{\"fraga\":\"Hur läggs det på?\",\"svar\":\"Lägg packen på taket, ta tag i ena kortsidan och dra ut väven tills den täcker hela taket. Gå sedan runt vagnen och kroka fast spännbanden under karossens nederkant, sida för sida, och dra åt varje band i spännet. Till sist kastar du de två förstärkta banden tvärs över taket och drar åt dem. En person klarar det själv.\"},{\"fraga\":\"Blåser det av?\",\"svar\":\"Nej. Banden hakar under karossens nederkant på alla fyra sidor, och de två förstärkta banden tvärs över taket håller väven nere så vinden inte får tag under den. Banden är vävda, inte gummi, så de töjs inte ut.\"},{\"fraga\":\"Kan jag ha det på från höst till vår?\",\"svar\":\"Ja, det är precis så det är tänkt att användas. Kommer det tung blötsnö: skotta av den, som du gjort utan överdrag.\"},{\"fraga\":\"Kommer jag åt dörren och fönstren?\",\"svar\":\"Ja. Överdraget ligger bara på taket och kanten hänger 30–40 cm ner – dörr, fönster och luckor är fria.\"},{\"fraga\":\"Har jag en husvagn och en husbil – kan jag ta olika storlekar i ett paket?\",\"svar\":\"Ja. I paketrutan har varje överdrag sin egen storleksrulle, så du kan välja 6,5 m på det ena och 8,5 m på det andra i samma köp.\"},{\"fraga\":\"Vad gäller om jag ångrar mig?\",\"svar\":\"14 dagars ångerrätt enligt svensk lag, räknat från den dag du får varan. Mejla hello@carashell.com.\"}]"
     }
   ]
 }

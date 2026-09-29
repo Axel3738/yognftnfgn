@@ -9,7 +9,7 @@ This store has several products – it is still ONE store, ONE domain, ONE check
 
 * STORE NAME: **CaraShell**
 * DOMAIN: **carashell.se**
-* STORE EMAIL: **hello@carashell.se**
+* STORE EMAIL: **hello@carashell.com**
 * FORWARD TO: **subscriptions@stonebite.org**
 * OWNER (hand over to): **axelodhner.business@gmail.com**
 * PRODUCT: **Taköverdrag Husvagn & Husbil 5,5–13,5 m** (takskyddet)
@@ -21,7 +21,7 @@ market.** Shopify takes them from the store address, not from your account.
 Type the COMPANY address below – never your own, wherever you are sitting.
 - [ ] Go to shopify.com → **Start free trial** → sign up with the work Gmail
 - [ ] When it asks where the business is located, enter:
-      **STONEBITE ECOM AB**, Sjöhed 160, 442 74 Harestad, **Sweden**
+      **STONEBITE ECOM AB**, Stenkolsgatan 1B, 417 07 Göteborg, **Sweden**
       The country is the field that decides the currency – never your own.
 - [ ] If Shopify asks for a store name, type **CaraShell** – that removes a
       click in section 5. If it names the store itself ("My Store 4"), leave it.
@@ -106,10 +106,10 @@ Loopia first – Shopify cannot connect a domain that is not bought, and the
 sender-email verification link is only readable once the forwarding works.
 - [ ] Log in to Loopia
 - [ ] Buy **carashell.se** – registrant must be the company, not you
-- [ ] Domain → Email → Forwarding → create **hello@carashell.se** → forward to **subscriptions@stonebite.org**
-- [ ] Send a test email to **hello@carashell.se** – confirm it arrives
+- [ ] Domain → Email → Forwarding → create **hello@carashell.com** → forward to **subscriptions@stonebite.org**
+- [ ] Send a test email to **hello@carashell.com** – confirm it arrives
 - [ ] Shopify → Settings → Domains → Connect existing domain → **carashell.se** → follow the DNS steps → **Set as primary**
-- [ ] Shopify → Settings → Notifications → Sender email → **hello@carashell.se** → Save → click the verification link in the inbox
+- [ ] Shopify → Settings → Notifications → Sender email → **hello@carashell.com** → Save → click the verification link in the inbox
   If Shopify refuses the domain on the free trial: do this section after
   section 13 instead, and tell Claude – the order in this file gets corrected.
 

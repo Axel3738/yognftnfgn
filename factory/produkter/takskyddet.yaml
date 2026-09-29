@@ -273,7 +273,7 @@ media:
   # products/carashell/takskyddet/produktsida/bildplan.json. Samma åtta ligger
   # i Bäverbutiken (kopierade från den här CDN:en). Inga bilder bär text.
   bilder:
-    - url: "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-husvagn-grusplan.png"
+    - url: "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-husvagn-grusplan-kvadrat.png"
       alt: "Husvagn med taköverdraget på grusplanen vid sjön"
     - url: "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-studio-husbil.png"
       alt: "Husbil med taköverdraget, spännbanden hakade under karossens kant"
@@ -283,7 +283,7 @@ media:
       alt: "Taköverdraget hopvikt, vävens struktur och den sydda bandfästningen"
     - url: "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-krok-under-kanten.png"
       alt: "Spännbandet hakat under husvagnens nederkant"
-    - url: "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-krokar-makro.jpg"
+    - url: "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-krokar-makro-kvadrat.png"
       alt: "Två spännband med plastkrokar"
     - url: "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-regn-pa-vaven.png"
       alt: "Regn som rinner av taköverdragets väv"
@@ -297,9 +297,19 @@ media:
       alt: "CaraShell taköverdrag hopvikt med spännband och tygdetalj synlig"
     - url: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-spanne.jpg"
       alt: "Vävda spännband med plastkrokar som håller fast taköverdraget"
+    # A/B-testet "forstabild" (factory/forstabild.mjs, Axels idé 2026-09-29):
+    # bildrutan 0,15 s ur vår egen UGC-annons Takoverdrag_UG_2_H1 (Carl
+    # Vicente, Bäverbutikens hubb). SIST med flit — temat visar den FÖRST
+    # bara för variant a och döljer den för alla andra. [UGC]-prefixet i alt
+    # är det CSS:en och skriptet känner igen bilden på: ändra det aldrig.
+    - url: "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/takoverdrag-ugc-haller-upp.jpg"
+      alt: "[UGC] Man håller upp det hopvikta taköverdraget framför en husbil"
   videor:
   # ⚠️ Demot ska vara en MP4 (Axel 2026-09-09), men Shopify Files tar inga
-  # videor på trial (API-GRANSER.md, mätt 2026-09-10). Sedan 2026-09-27 bär
+  # videor på trial (API-GRANSER.md, mätt 2026-09-10). Huvudbilden och
+  # krokmakrot fick vita kanter från bildmodellen (95 resp. 107 px upptill och
+  # nertill) — förlängda till kvadrat 2026-09-29 och filen bytt bakom samma
+  # media-id i båda butikerna. Sedan 2026-09-27 bär
   # problemblocket före/efter-bilden i stället för källans GIF (samma husvagn
   # utan och med överdrag), lösningen kroken under kanten och lifestyle-
   # blocket vinterplatsen. Ägarens val om en MP4 ska in: node factory/filer.mjs

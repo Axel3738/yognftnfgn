@@ -1199,6 +1199,23 @@ export function byggKorgTrygghet({ butik, oversattningar = {}, test = null } = {
 /** Testnamnet för trygghetsblocket i varukorgen (samma namn i CSS och i inställningen). */
 export const KORGTRYGGHET_TEST = 'korgtrygg';
 
+/** Testnamnet för UGC-bilden först i galleriet (factory/forstabild.mjs, 2026-09-29). */
+export const FORSTABILD_TEST = 'forstabild';
+
+/**
+ * Tester som startas av ett eget verktyg och INTE står i produktfilen. De
+ * får inte släckas av nästa fabriksvarv: rensaSettings bygger annars om
+ * ms_ab_tests ur produktfilen och tappar raden tyst — testet slutar lotta,
+ * ordrarna slutar stämplas och kontrollgruppen ser plötsligt allt. En
+ * källbutiks egna tester (okända id:n) följer däremot aldrig med.
+ */
+export const BEVARADE_TESTER = Object.freeze([FORSTABILD_TEST]);
+const bevaradeRader = (befintlig) => String(befintlig ?? '')
+  .split(/\r?\n/)
+  .map((r) => r.trim())
+  .filter((r) => BEVARADE_TESTER.includes(r.replace(/^#/, '').split(':')[0].trim().toLowerCase()))
+  .join('\n');
+
 /**
  * Slår ihop A/B-testrader utan att tappa någon: inställningen `ms_ab_tests`
  * är en textarea med ETT test per rad, och paketvalsstestet ligger redan
@@ -1357,7 +1374,7 @@ export function rensaSettings(settingsData, { butik = null, produkt = null, logg
   if (test !== undefined && test !== null) {
     const id = text(test);
     const rad = id && paketAv ? `#${id.replace(/^#/, '')}` : String(id ?? '');
-    c.ms_ab_tests = slaIhopTester(rad, ...lista(extraTester));
+    c.ms_ab_tests = slaIhopTester(rad, ...lista(extraTester), bevaradeRader(c.ms_ab_tests));
     c.ms_ab_cookie_days = Number(c.ms_ab_cookie_days) > 0 ? c.ms_ab_cookie_days : 30;
   } else if (lista(extraTester).length > 0) {
     c.ms_ab_tests = slaIhopTester(c.ms_ab_tests, ...lista(extraTester));

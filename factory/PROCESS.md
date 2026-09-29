@@ -1737,3 +1737,46 @@ NO `16 anmeldelser · Gratis frakt`, DK `16 anmeldelser · Gratis fragt til Danm
 FI `16 arvostelua · Ilmainen toimitus Suomeen`,
 US `16 reviews · 🇺🇸 Free shipping to the US · 90-day guarantee` — med decimalPUNKT.
 A/B verifierat i webbläsare: variant a `display: grid`, variant b `display: none`.
+
+## UGC-bild först i galleriet — som A/B-test (bevisat 2026-09-29, CaraShell → takskyddet)
+
+Axels idé: en skärmdump ur en av våra egna UGC-annonser, där personen håller
+upp produkten, som första produktbild — "det känns som att det skapar mer
+trust". Byggt som ett riktigt A/B-test, inte ett byte, så utfallet går att
+läsa i ordrarna.
+
+```bash
+node factory/forstabild.mjs --butik <id> --handle <produkt> --bild <fil> --alt "<text>" [--torr]
+node factory/forstabild.mjs --butik <id> --handle <produkt> --kolla
+```
+
+1. ⚙️ Bilden läggs **sist** i produktens media med alt som börjar med `[UGC]`.
+   Sist med flit: `featured_image` (varukorgen, kassan, produktkortens
+   hoverbild = `media[1]`, flöden) blir densamma för båda grupperna.
+2. ⚙️ `snippets/ms-head.liquid` får blocket `opf-forstabild`: CSS döljer
+   `[UGC]`-bilden för alla som inte är variant a (kontrollen, JS av, testet
+   avstängt = dagens galleri, även i zoom-modalen). Variant a: skriptet
+   flyttar bilden först med galleriets egen `setActiveMedia(id, true)` — samma
+   anrop Dawn gör när en variant har egen bild — och `order:-1` täcker
+   ögonblicket innan.
+3. ⚙️ `forstabild` läggs till i `ms_ab_tests` (50/50). `tema.mjs`
+   `BEVARADE_TESTER` gör att nästa `--igen brand` inte stryker raden —
+   `rensaSettings` byggde annars om listan ur produktfilen och tappade den tyst.
+4. ⚙️ Lägg bilden i produktfilens `media.bilder` (sist, med `[UGC]`-alt), annars
+   tar ett `--igen produkt` bort den (`productSet` sätter exakt listan).
+5. ✅ Kontroll i Chromium med `?ms_ab=forstabild:a` resp. `:b` (egen
+   `--user-data-dir` per variant, kakan lever 30 dagar): a ⇒ `[UGC]` först i
+   DOM och `is-active`, b ⇒ dagens första bild. Mobil + dator.
+
+⚠️ **`settings_data.json` går inte att verifiera på bytestorlek** — Shopify
+packar om JSON:en (13 474 byte skrivna, 10 023 lagrade). Läs tillbaka värdet.
+
+⚠️ **Bara ms-temat har A/B-motorn.** Bäverbutikens tema ("Story v2") har ingen
+`ms-ab.js`, så testet går inte att köra där utan att bygga in motorn i
+huvudbutikens live-tema.
+
+**Läsa utfallet:** ordrarna bär `AB forstabild: a|b`. Räkna bara ordrar som
+innehåller produkten, räkna bort `AB forstabild forced`. Samma regel som
+`korgtrygg`: "vet inte" tills ~100 köp per variant.
+**Stänga:** `#forstabild` i temainställningen ⇒ alla ser kontrollen. Vinner a:
+flytta bilden först i media på riktigt och stäng testet.
