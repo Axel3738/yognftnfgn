@@ -107,7 +107,8 @@ function arendeHtml(a, { miniatyr, skarmdump, brevtext }) {
   const avfardaKommando = `/konkurrentdodaren avfarda ${a.id} "ingen kopia"`;
   const brev = brevtext ? brevtext(a) : null;
   const faktura = a.faktura ?? null;
-  const fakturaRad = faktura ? `Fakturan ${esc(faktura.nr)} på <strong>${esc(belopp(faktura.brutto, faktura.valuta, faktura.sprak))}</strong> (förfaller ${esc(faktura.forfaller)}) följer med brevet som PDF.` : 'Fakturan byggs ur bevisen när du skickar (taxan i konkurrenter/konfig.json).';
+  const fakturaGrund = faktura?.berakning === 'exponeringar' && faktura.cpm?.sek ? ` — ${esc(String(faktura.exponeringar).replace(/\B(?=(\d{3})+(?!\d))/g, ' '))} exponeringar × CPM ${esc(belopp(faktura.cpm.sek, 'SEK', 'sv', 1))}${faktura.momsProcent ? `, moms ${faktura.momsProcent} %` : ''}` : faktura ? ` — schablontaxa${faktura.momsProcent ? `, moms ${faktura.momsProcent} %` : ''}` : '';
+  const fakturaRad = faktura ? `Fakturan ${esc(faktura.nr)} på <strong>${esc(belopp(faktura.brutto, faktura.valuta, faktura.sprak))}</strong>${fakturaGrund} (förfaller ${esc(faktura.forfaller)}) följer med brevet som PDF.` : 'Fakturan byggs ur bevisen när du skickar: deras exponeringar × vår uppmätta CPM per annons, schablon när exponeringar saknas (konkurrenter/konfig.json).';
   const paket = a.brev?.paket && !a.brev?.skickat ? a.brev.paket : null;
   const skickadKommando = `/konkurrentdodaren skickad ${a.id}${mottagare ? '' : ' --till <deras mejladress>'}`;
 

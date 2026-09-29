@@ -96,13 +96,16 @@ export function bevisrader(arende, sprak = 'sv') {
 export function fakturastycke(faktura, sprak, { fristTimmar = 48 } = {}) {
   if (!faktura) return [];
   const summa = belopp(faktura.brutto, faktura.valuta, sprak);
+  const exp = faktura.berakning === 'exponeringar' && faktura.exponeringar > 0 && faktura.cpm?.sek > 0;
+  const expSv = exp ? ` Beloppet är räknat på annonsernas ${faktura.exponeringar.toLocaleString('sv-SE').replace(/[  ]/g, ' ')} exponeringar enligt Metas annonsbibliotek och vår uppmätta kostnad per tusen visningar i samma kanal (CPM ${belopp(faktura.cpm.sek, 'SEK', 'sv', 1)}), det vill säga det annonsutrymme ni fått med vårt material.` : '';
+  const expEn = exp ? ` The amount is calculated from the ads' ${faktura.exponeringar.toLocaleString('en-GB')} impressions as reported by the Meta Ad Library and our measured cost per thousand impressions in the same channel (CPM ${belopp(faktura.cpm.sek, 'SEK', 'en', 1)}), i.e. the advertising exposure you obtained with our material.` : '';
   return sprak === 'sv'
     ? [
-      `Bifogat finns faktura ${faktura.nr} på ${summa} avseende skälig ersättning för nyttjandet fram till i dag (54 § upphovsrättslagen), förfallodag ${faktura.forfaller}. Betalas fakturan i tid och materialet tas bort inom ${fristTimmar} timmar avslutar vi ärendet utan vidare åtgärd.`,
+      `Bifogat finns faktura ${faktura.nr} på ${summa}${faktura.momsProcent ? ` inklusive moms` : ''} avseende skälig ersättning för nyttjandet fram till i dag (54 § upphovsrättslagen), förfallodag ${faktura.forfaller}.${expSv} Betalas fakturan i tid och materialet tas bort inom ${fristTimmar} timmar avslutar vi ärendet utan vidare åtgärd.`,
       '',
     ]
     : [
-      `Attached is invoice ${faktura.nr} for ${summa}, being reasonable compensation for the use up to today (section 54 of the Swedish Copyright Act), due ${faktura.forfaller}. If the invoice is paid on time and the material is removed within ${fristTimmar} hours, we will close the matter without further action.`,
+      `Attached is invoice ${faktura.nr} for ${summa}${faktura.momsProcent ? ` including VAT` : ''}, being reasonable compensation for the use up to today (section 54 of the Swedish Copyright Act), due ${faktura.forfaller}.${expEn} If the invoice is paid on time and the material is removed within ${fristTimmar} hours, we will close the matter without further action.`,
       '',
     ];
 }

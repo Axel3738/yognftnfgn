@@ -37,7 +37,8 @@ import { jamforText, jamforBilder, sammanvag } from './likhet.mjs';
 import { startaHashare, hashaLankar, Bildcache } from './bild.mjs';
 import { byggBrev, kontrolleraBrev, valjSprak } from './brev.mjs';
 import { skickaBrev, byggSandpaket, registreraSkickat } from './skicka.mjs';
-import { byggFaktura, kontrolleraFaktura, fakturaHtml, fakturaPdf, skrivFakturaHtml, belopp } from './faktura.mjs';
+import { byggFaktura, kontrolleraFaktura, fakturaHtml, fakturaPdf, skrivFakturaHtml, belopp, ibanGiltig } from './faktura.mjs';
+import { hamtaCpm, valjCpm, cpmRad } from './cpm.mjs';
 import { tolkaAnnonsinput, byggAnnonsfynd } from './annonsfall.mjs';
 import { rapportSv, rapportEn, kallrader, arendeMd, KANAL_INTRO } from './rapport.mjs';
 import { byggSida } from './sida.mjs';
@@ -535,11 +536,23 @@ async function brevFor(a, k, { sprak = null, paminnelse = false, mottagare = nul
  * arenden/<id>/faktura-<nr>.html + .pdf. Returnerar { faktura, fel }.
  * Samma nummer så länge ingen faktura skickats; `--ny-faktura` ger nästa löpnummer.
  */
-async function byggOchSkrivFaktura(a, k, { nu = new Date(), sprak = null, kopare = null, ny = false } = {}) {
+async function byggOchSkrivFaktura(a, k, { nu = new Date(), sprak = null, kopare = null, ny = false, cpmOverride = null, land = null } = {}) {
   const sprakF = valjSprak({ lang: a.deras?.lang, doman: a.deras?.doman, tvinga: sprak });
   const befintlig = a.faktura && !ny ? a.faktura : null;
   const lopnr = befintlig ? (befintlig.lopnr ?? 1) : (a.faktura?.lopnr ?? 0) + 1;
-  const f = byggFaktura(a, k, { nu, lopnr, sprak: sprakF, kopare: kopare ?? befintlig?.kopare ?? null });
+  // CPM:en behövs bara när någon annons har exponeringar (Axels avläsning ur annonsbiblioteket).
+  let cpm = null;
+  const behoverCpm = (k.faktura?.berakning ?? 'exponeringar') === 'exponeringar' && (a.bevis?.annonser ?? []).some((t) => Number(t.exponeringar) > 0);
+  if (behoverCpm) {
+    let matt = null;
+    if (cpmOverride === null && k.faktura?.cpm?.lage !== 'reserv' && process.env.META_ACCESS_TOKEN) {
+      matt = await hamtaCpm(k.verksamheter[a.verksamhet]?.konton ?? [], { preset: k.faktura?.cpm?.period ?? 'last_30d', logg });
+      logg(`  ${cpmRad(a.verksamhet, matt, k.faktura?.cpm?.reserv_sek?.[a.verksamhet] ?? null)}`);
+    }
+    cpm = valjCpm({ override: cpmOverride, matt, konfig: k, verksamhet: a.verksamhet });
+    if (cpm) logg(`  Fakturan räknar med CPM ${cpm.sek} kr (${cpm.kalla === 'axel' ? '--cpm' : cpm.kalla === 'matt' ? `mätt ur Meta, ${cpm.period}` : `reserven i konfig från ${cpm.matt ?? '?'}`})`);
+  }
+  const f = byggFaktura(a, k, { nu, lopnr, sprak: sprakF, kopare: kopare ?? befintlig?.kopare ?? null, cpm, land });
   const fel = kontrolleraFaktura(f);
   if (fel.length) return { faktura: null, fel };
   const html = fakturaHtml(f);
@@ -549,6 +562,20 @@ async function byggOchSkrivFaktura(a, k, { nu = new Date(), sprak = null, kopare
   try { pdf = await fakturaPdf(html, `${bas}.pdf`); } catch (e) { pdfFel = e.message; logg(`  ⚠️ PDF: ${e.message}`); }
   return { faktura: { ...f, lopnr, fil: pdf ? pdf.replace(`${DATAMAPP}/`, '') : null, htmlFil: `${bas}.html`.replace(`${DATAMAPP}/`, ''), pdfFel, skapad: nu.toISOString() }, fel: [] };
 }
+
+/** Fakturans grund som en rad till Axel. */
+function fakturaGrundRad(f) {
+  const exp = f.rader.filter((r) => r.grund === 'exponeringar');
+  const schablon = f.rader.filter((r) => r.grund === 'schablon');
+  const delar = [];
+  if (exp.length) delar.push(`${exp.length} annons(er) på exponeringar: ${f.exponeringar.toLocaleString('sv-SE').replace(/[  ]/g, ' ')} × CPM ${f.cpm?.sek ?? '?'} kr`);
+  if (schablon.length) delar.push(`${schablon.length} rad(er) på schablontaxa`);
+  delar.push(f.omvand ? 'omvänd betalningsskyldighet (utländsk köpare)' : `moms ${f.momsProcent} %`);
+  return delar.join(' · ');
+}
+
+/** --cpm 120 → 120, annars null. */
+const cpmFlagga = () => { const v = flagga('cpm'); const n = Number(String(v ?? '').replace(',', '.')); return v !== null && v !== undefined && Number.isFinite(n) && n > 0 ? n : null; };
 
 async function visaBrev() {
   const k = konfig();
@@ -580,7 +607,7 @@ async function skicka() {
   // Fakturan följer med första brevet (Axels order 2026-09-29), aldrig påminnelsen.
   let faktura = a.faktura ?? null;
   if (!paminnelse && k.faktura?.aktiv !== false && !har('utan-faktura')) {
-    const r = await byggOchSkrivFaktura(a, k, { nu: new Date(nu), sprak: flagga('sprak'), kopare: flagga('kopare'), ny: har('ny-faktura') });
+    const r = await byggOchSkrivFaktura(a, k, { nu: new Date(nu), sprak: flagga('sprak'), kopare: flagga('kopare'), ny: har('ny-faktura'), cpmOverride: cpmFlagga(), land: flagga('land') });
     if (r.fel.length) { console.log(`Fakturan kan inte byggas: ${r.fel.join('; ')}\n(--utan-faktura skickar brevet utan faktura)`); process.exitCode = 1; return; }
     faktura = r.faktura;
   }
@@ -593,7 +620,7 @@ async function skicka() {
   writeFileSync(join(mapp, `${namn}.txt`), `Till: ${brev.mottagare ?? ''}\nFrån: ${brev.fran ?? ''}\nÄmne: ${brev.amne}\n\n${brev.text}\n`);
   skrivJson(join(mapp, `${namn}.json`), paket);
   console.log(`Från: ${brev.fran || '?'}\nTill: ${brev.mottagare ?? '(ingen adress hittad — ange --till)'}\nÄmne: ${brev.amne}\n\n${brev.text}\n`);
-  if (faktura && !paminnelse) console.log(`Faktura ${faktura.nr}: ${belopp(faktura.brutto, faktura.valuta, faktura.sprak)}, förfaller ${faktura.forfaller} — ${faktura.fil ? `konkurrenter/${faktura.fil}` : `PDF gick inte att göra (${faktura.pdfFel ?? '?'}); HTML: konkurrenter/${faktura.htmlFil}`}`);
+  if (faktura && !paminnelse) console.log(`Faktura ${faktura.nr}: ${belopp(faktura.brutto, faktura.valuta, faktura.sprak)} (${fakturaGrundRad(faktura)}), förfaller ${faktura.forfaller} — ${faktura.fil ? `konkurrenter/${faktura.fil}` : `PDF gick inte att göra (${faktura.pdfFel ?? '?'}); HTML: konkurrenter/${faktura.htmlFil}`}`);
   if (fel.length) console.log(`⚠️ Brevet stoppas: ${fel.join('; ')}`);
 
   if (via === 'loopia') {
@@ -631,11 +658,11 @@ async function fakturaEnbart() {
   const k = konfig();
   const { a } = hamtaArende(flagga('faktura'));
   if (a.brev?.skickat) { console.log(`Fakturan ${a.faktura?.nr ?? ''} har redan gått ut med brevet ${a.brev.skickat.nar} — bygg inte om den. (--ny-faktura ger ett nytt nummer om en ny ska ställas ut.)`); if (!har('ny-faktura')) { process.exitCode = 1; return; } }
-  const r = await byggOchSkrivFaktura(a, k, { sprak: flagga('sprak'), kopare: flagga('kopare'), ny: har('ny-faktura') });
+  const r = await byggOchSkrivFaktura(a, k, { sprak: flagga('sprak'), kopare: flagga('kopare'), ny: har('ny-faktura'), cpmOverride: cpmFlagga(), land: flagga('land') });
   if (r.fel.length) { console.log(`Fakturan kan inte byggas: ${r.fel.join('; ')}`); process.exitCode = 1; return; }
   const upp = { ...a, faktura: r.faktura };
   sparaArende(upp, ARENDEFIL); skrivArendefiler(upp);
-  console.log(`Faktura ${r.faktura.nr} på ${belopp(r.faktura.brutto, r.faktura.valuta, r.faktura.sprak)} (förfaller ${r.faktura.forfaller}):`);
+  console.log(`Faktura ${r.faktura.nr} på ${belopp(r.faktura.brutto, r.faktura.valuta, r.faktura.sprak)} (${fakturaGrundRad(r.faktura)}; förfaller ${r.faktura.forfaller}):`);
   for (const rad of r.faktura.rader) console.log(`  ${rad.beskrivning}: ${rad.antal} × ${belopp(rad.apris, r.faktura.valuta, r.faktura.sprak)}`);
   console.log(r.faktura.fil ? `PDF: konkurrenter/${r.faktura.fil}` : `PDF gick inte att göra (${r.faktura.pdfFel}); HTML: konkurrenter/${r.faktura.htmlFil}`);
 }
@@ -707,14 +734,19 @@ async function lista() {
 async function kolla() {
   const k = konfig();
   const rader = [];
-  rader.push(`META_ACCESS_TOKEN: ${process.env.META_ACCESS_TOKEN ? 'finns' : 'SAKNAS — egna annonser och Ad Library läses inte'}`);
+  rader.push(`META_ACCESS_TOKEN: ${process.env.META_ACCESS_TOKEN ? 'finns' : 'SAKNAS — egna annonser läses inte'} · META_ACCESS_TOKEN_ADLIBRARY (den verifierade personens användartoken för Ad Library): ${process.env.META_ACCESS_TOKEN_ADLIBRARY ? 'finns' : 'saknas — Ad Library provas med META_ACCESS_TOKEN'}`);
   rader.push(`DISCORD_BOT_TOKEN: ${process.env.DISCORD_BOT_TOKEN ? 'finns' : 'saknas — ingen Discord-post'}`);
   rader.push(`Avsändare: ${k.brev.avsandare?.mail ?? '?'} via ${k.brev.avsandare?.via ?? 'gmail'} — brevet läggs som utkast i Stonebite-Gmail av sessionen (Gmail-connectorn måste vara kopplad på claude.ai). Reserv: --via loopia från butikens kundtjänstbrevlåda.`);
   const fk = k.faktura ?? {};
-  rader.push(`Faktura: ${fk.aktiv === false ? 'AV' : `på — taxa annons ${fk.taxa?.annons ?? '?'} / video ${fk.taxa?.video ?? '?'} / bild ${fk.taxa?.bild ?? '?'} / produkttext ${fk.taxa?.produkttext ?? '?'} ${fk.valuta ?? 'SEK'}, ${fk.betalvillkor_dagar ?? 10} dagar, moms ${fk.moms_procent ?? 0} %`}${fk.bankgiro || fk.iban ? '' : ' — ⚠️ BANKGIRO/IBAN SAKNAS i konfig.json: ingen faktura kan byggas förrän Axel fyllt i det'}`);
+  const ibanRad = fk.iban ? (ibanGiltig(fk.iban) ? `IBAN ${fk.iban} (kontrollsiffran stämmer)` : `⚠️ IBAN ${fk.iban} KLARAR INTE kontrollsiffran — en siffra är fel`) : (fk.bankgiro ? `bankgiro ${fk.bankgiro}` : '⚠️ BANKGIRO/IBAN SAKNAS i konfig.json: ingen faktura kan byggas förrän Axel fyllt i det');
+  rader.push(`Faktura: ${fk.aktiv === false ? 'AV' : `på — ${fk.berakning === 'exponeringar' ? 'exponeringar × vår CPM per annons, schablon när exponeringar saknas' : 'schablontaxa'} (annons ${fk.taxa?.annons ?? '?'} / video ${fk.taxa?.video ?? '?'} / bild ${fk.taxa?.bild ?? '?'} / produkttext ${fk.taxa?.produkttext ?? '?'} ${fk.valuta ?? 'SEK'}), ${fk.betalvillkor_dagar ?? 10} dagar, moms ${fk.moms_procent ?? 0} % i Sverige / ${fk.moms_utland_procent ?? 0} % utomlands (omvänd)`} — ${ibanRad}`);
   for (const [namn, v] of Object.entries(k.verksamheter)) {
     const avs = await avsandareFor(namn, k, { via: 'loopia' });
     rader.push(`${namn}: reservbrevlåda (Loopia) ${avs.mail ?? '?'} — ${avs.konfigurerad ? 'finns i miljön' : `saknas (${(avs.saknas ?? []).join(', ')}) — behövs bara för --via loopia`}`);
+    if (process.env.META_ACCESS_TOKEN && (v.konton ?? []).length) {
+      const m = await hamtaCpm(v.konton, { preset: fk.cpm?.period ?? 'last_30d', logg: () => {} });
+      rader.push(`  ${cpmRad(namn, m, fk.cpm?.reserv_sek?.[namn] ?? null)}`);
+    }
     for (const b of v.butiker ?? []) {
       try { const p = await hamtaProdukter(b, { maxSidor: 1 }); rader.push(`  ${b}: ${p.length} produkter läsbara`); } catch (e) { rader.push(`  ${b}: ${e.message}`); }
     }

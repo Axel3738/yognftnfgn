@@ -9,13 +9,45 @@
 // {
 //   "deras": { "sidnamn": "Kopian", "doman": "kopian.se", "url": "https://kopian.se", "mottagare": "info@kopian.se", "foretag": "Kopian AB", "orgnr": "556677-8899" },
 //   "annonser": [
-//     { "lank": "https://www.facebook.com/ads/library/?id=…", "text": "…deras primärtext…", "rubrik": "…", "bilder": ["https://…/bild.jpg", "/sökväg/skärmdump.png"], "video": true, "start": "2026-09-01" }
+//     { "lank": "https://www.facebook.com/ads/library/?id=…", "text": "…deras primärtext…", "rubrik": "…", "bilder": ["https://…/bild.jpg", "/sökväg/skärmdump.png"], "video": true, "start": "2026-09-01", "exponeringar": "12 345" }
 //   ]
 // }
+//
+// `exponeringar` (även `rackvidd`/`reach`/`visningar`, tal eller "12,3 tn") är
+// det Axel läser av i annonsbibliotekets EU-ruta ("Total reach") — fakturan
+// räknar exponeringar × vår CPM per annons (faktura.mjs). Utan tal: schablon.
 
 import { jamforText, jamforBilder, sammanvag } from './likhet.mjs';
 import { nyckelFor } from './arenden.mjs';
 import { domanUr } from './sok.mjs';
+
+/**
+ * Ett antal som Axel skrivit av: 12345, "12 345", "12,3 tn", "12.3K", "1,2 M".
+ * null när det inte går att läsa. Ren.
+ */
+export function tolkaAntal(v) {
+  if (v === null || v === undefined || v === '') return null;
+  if (typeof v === 'number') return Number.isFinite(v) && v > 0 ? Math.round(v) : null;
+  const s = String(v).trim().toLowerCase().replace(/\s+/g, '');
+  const m = s.match(/^([\d.,]+)(k|tn|tusen|m|mn|milj(?:oner)?)?$/);
+  if (!m) return null;
+  let tal = m[1];
+  // "12,3" och "12.3" är decimaler när det står ett suffix; "12.345"/"12,345" utan suffix är tusental.
+  if (m[2]) tal = tal.replace(',', '.'); else tal = tal.replace(/[.,]/g, '');
+  const n = Number(tal);
+  if (!Number.isFinite(n) || n <= 0) return null;
+  const faktor = !m[2] ? 1 : /^(k|tn|tusen)$/.test(m[2]) ? 1000 : 1_000_000;
+  return Math.round(n * faktor);
+}
+
+/** Exponeringarna ur en annonsrad — Ad Library-rutans "Total reach"/räckvidd eller riktiga visningar. Ren. */
+export function exponeringarUr(a) {
+  for (const nyckel of ['exponeringar', 'visningar', 'impressions', 'rackvidd', 'räckvidd', 'reach', 'total_reach']) {
+    const n = tolkaAntal(a?.[nyckel]);
+    if (n) return { antal: n, kalla: nyckel };
+  }
+  return { antal: null, kalla: null };
+}
 
 /** Läser och kontrollerar indatafilen. Kastar med klartext om något saknas. Ren. */
 export function tolkaAnnonsinput(data) {
@@ -24,7 +56,7 @@ export function tolkaAnnonsinput(data) {
   const doman = deras.doman ? String(deras.doman).toLowerCase().replace(/^www\./, '') : (deras.url ? domanUr(deras.url) : null);
   if (!deras.sidnamn && !doman) throw new Error('annonsfilen saknar deras.sidnamn och deras.doman — en av dem behövs.');
   const rader = annonser
-    .map((a, i) => ({ nr: i + 1, lank: a.lank ?? null, text: String(a.text ?? '').trim(), rubrik: String(a.rubrik ?? '').trim(), bilder: Array.isArray(a.bilder) ? a.bilder.filter(Boolean) : [], video: Boolean(a.video), start: a.start ?? null }))
+    .map((a, i) => { const e = exponeringarUr(a); return { nr: i + 1, lank: a.lank ?? null, text: String(a.text ?? '').trim(), rubrik: String(a.rubrik ?? '').trim(), bilder: Array.isArray(a.bilder) ? a.bilder.filter(Boolean) : [], video: Boolean(a.video), start: a.start ?? null, slut: a.slut ?? null, exponeringar: e.antal, exponeringarKalla: e.kalla }; })
     .filter((a) => a.text || a.bilder.length);
   if (!rader.length) throw new Error('annonsfilen har inga annonser med text eller bilder.');
   return { deras: { ...deras, doman, url: deras.url ?? (doman ? `https://${doman}` : null) }, annonser: rader };
@@ -68,7 +100,7 @@ export function byggAnnonsfynd(input, { egnaAnnonser, egnaProdukter, konfig, der
   for (const a of input.annonser) {
     const j = jamforAnnons(a, { egnaAnnonser, egnaProdukter, konfig, derasHashar, egnaHashar });
     if (!j.text && !j.bilder.length) continue;
-    traffar.push({ nr: a.nr, lank: a.lank, derasText: a.text.slice(0, 2000), video: a.video, start: a.start, text: j.text, varAnnons: j.varAnnons, produkt: j.produkt, bilder: j.bilder });
+    traffar.push({ nr: a.nr, lank: a.lank, derasText: a.text.slice(0, 2000), video: a.video, start: a.start, slut: a.slut, exponeringar: a.exponeringar ?? null, exponeringarKalla: a.exponeringarKalla ?? null, text: j.text, varAnnons: j.varAnnons, produkt: j.produkt, bilder: j.bilder });
   }
   if (!traffar.length) return null;
   traffar.sort((x, y) => (y.text?.langsta ?? 0) - (x.text?.langsta ?? 0) || y.bilder.length - x.bilder.length);
@@ -79,6 +111,9 @@ export function byggAnnonsfynd(input, { egnaAnnonser, egnaProdukter, konfig, der
   const skal = []; const skalEn = [];
   if (medText) { skal.push(`${medText} av deras annonser återger våra annonstexter ordagrant (längsta sviten ${basta.text?.langsta ?? 0} ord)`); skalEn.push(`${medText} of their ads reproduce our ad copy verbatim (longest run ${basta.text?.langsta ?? 0} words)`); }
   if (allaBilder.length) { skal.push(`${allaBilder.length} annonsbilder identiska eller mycket lika våra`); skalEn.push(`${allaBilder.length} ad images identical or near-identical to ours`); }
+  const exponeringar = traffar.reduce((s, t) => s + (t.exponeringar ?? 0), 0);
+  const utanExp = traffar.filter((t) => !t.exponeringar).length;
+  if (exponeringar) { skal.push(`${exponeringar.toLocaleString('sv-SE').replace(/[  ]/g, ' ')} exponeringar enligt Axels avläsning${utanExp ? ` (${utanExp} annons(er) utan tal — går på schablon)` : ''}`); skalEn.push(`${exponeringar.toLocaleString('en-GB')} impressions as read off the Ad Library${utanExp ? ` (${utanExp} ad(s) without a figure — flat rate)` : ''}`); }
   // Flera annonser som matchar är i sig starkt — en är en slump, tre är ett mönster.
   const styrka = medText >= 2 || v.styrka === 'stark' ? 'stark' : v.styrka;
   const produkt = basta.produkt ?? (basta.varAnnons?.handle ? egnaProdukter.find((p) => p.handle === basta.varAnnons.handle) : null) ?? null;
@@ -100,7 +135,7 @@ export function byggAnnonsfynd(input, { egnaAnnonser, egnaProdukter, konfig, der
     },
     bevis: {
       text: null, annons: basta.text, bilder: allaBilder,
-      annonser: traffar.map((t) => ({ nr: t.nr, lank: t.lank, video: t.video, start: t.start, text: t.text, varAnnons: t.varAnnons ? { id: t.varAnnons.id, namn: t.varAnnons.namn } : null, bilder: t.bilder, derasText: t.derasText })),
+      annonser: traffar.map((t) => ({ nr: t.nr, lank: t.lank, video: t.video, start: t.start, slut: t.slut, exponeringar: t.exponeringar, exponeringarKalla: t.exponeringarKalla, text: t.text, varAnnons: t.varAnnons ? { id: t.varAnnons.id, namn: t.varAnnons.namn } : null, bilder: t.bilder, derasText: t.derasText })),
       skarmdump: null, nar: nu,
     },
     styrka, skal, skalEn, miniatyrer: {},
