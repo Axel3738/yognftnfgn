@@ -25,6 +25,57 @@ annan vinkel + bildformat                              → broad_advplus_purchas
 Därför är namnet inte kosmetika: ett namn utanför mönstret går inte att routa
 och laddas aldrig upp på gissning.
 
+## Trustpilot på sajten (2026-09-29)
+
+Axels beställning: "flexa Matstrumpors Trustpilot på hemsidan … lite widgets
+utöver hemsidan". Profilen https://se.trustpilot.com/review/www.matstrumpor.se
+är claimad (business unit `69458c03ae5298305b500fde`); vid bygget 4,2 av 5
+("Bra"), 16 omdömen, 12 femstjärniga.
+
+⚠️ **Trustpilots egna widgetar går inte att använda på gratisplanen.** Mätt
+2026-09-29 mot `widget.trustpilot.com/trustbox-data`: bara mallen "Starter"
+svarar med data, alla andra (Micro Combo, Mini, Carousel, Slider, Grid …)
+svarar "BusinessUnit does not have access to that trustbox". Starter är rutan
+"Lämna ett omdöme om oss på Trustpilot" — inget betyg, inga omdömen. Därför
+ritar temat blocken självt, i Trustpilots gröna stjärnor, med namn, datum och
+länk till varje omdöme (Trustpilots villkor för att visa omdömen utanför
+deras widgetar). Betyget är alltid det aktuella; det uppdateras varje morgon.
+
+| Var | Vad |
+|---|---|
+| Startsidan, under rullande bandet | kompakt rad: stjärnor · Bra · 4,2 av 5 · 16 omdömen på Trustpilot |
+| Startsidan, där den handskrivna slidern stod | rubrik, betyg och de 6 senaste omdömena ≥ 4 stjärnor som kort + knapp. Slidern `omdomen` är gömd (`visible: false`), kvar i temaredigeraren |
+| Produktsidan, under trygghetsraden | kompakt rad (block `ms_trustpilot` i `main-product`) |
+| Varukorgslådan, ovanför "Gå till kassan" | kompakt rad (`snippets/cart-drawer.liquid`) |
+| Varukorgssidan och kollektionssidan | rad-sektionen |
+
+Korten (svensk text) ritas bara på sv, nb och da; övriga nio språk får
+betyg, etikett (Trustpilots egen per språk: Great, Gut, Bien …) och knappen.
+Texterna: `matstrumpor/trustpilot/sprak.json` (tolv språk).
+
+```bash
+node matstrumpor/trustpilot.mjs --hamta            # Trustpilot → trustpilot/data.json, inget skrivs i butiken
+node matstrumpor/trustpilot.mjs --skarpt           # + shop-metafältet matstrumpor.trustpilot (bara vid ändring), tillbakaläst
+node matstrumpor/trustpilot.mjs --tema [--skarpt]  # sektionen, snippeten och de fem mallarna (idempotent, torrt utan --skarpt)
+node matstrumpor/trustpilot.mjs --kundvy           # startsidan publikt: raden, korten, betyget, namnen
+node --test matstrumpor/test/trustpilot.test.mjs   # 17 tester utan nät
+```
+
+Så hänger det ihop: betyget kommer ur Starter-mallens JSON (stabil, utan
+botspärr, en läsning per språk för etiketten); omdömena ur profilsidans
+`__NEXT_DATA__` i Chromium (sidan svarar 403 på curl men bär innehållet, samma
+som annonsbiblioteket). Går sidan inte att läsa står förra körningens omdömen
+kvar och bara betyget byts. Temafilerna i repot är källan
+(`trustpilot/ms-trustpilot.liquid`, `ms-trustpilot-rad.liquid`); `--tema`
+byter platshållarna `{{{ sprak:… }}}` mot en `case` per språk och skriver bara
+det som skiljer sig. **Uppdateringen är metafältet, aldrig temat** — därför
+läser sektionen `shop.metafields.matstrumpor.trustpilot.value`. Körs varje
+morgon av `/matstrumporkungen` steg 0 (före kördagsfrågan).
+
+Trustpilot-rubriker som Trustpilot satt själva (textens början + "…") ritas
+inte (`egenRubrik`); texter klipps vid 280 tecken på ordgräns. Bara omdömen
+med ≥ 4 stjärnor visas som kort — betyget och fördelningen visas oavkortade.
+
 ## Kommandon i terminalen
 
 ```bash

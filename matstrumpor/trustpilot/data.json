@@ -1,0 +1,135 @@
+{
+  "hamtad": "2026-09-29T10:37:22.292Z",
+  "poang": 4.2,
+  "poang_text": "4,2",
+  "poang_en": "4.2",
+  "stjarnor": 4,
+  "antal": 16,
+  "fordelning": {
+    "1": 4,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 12
+  },
+  "etikett": {
+    "sv": "Bra",
+    "nb": "Bra",
+    "da": "God",
+    "fi": "Hyvä",
+    "en": "Great",
+    "de": "Gut",
+    "fr": "Bien",
+    "nl": "Goed",
+    "es": "Muy bueno",
+    "it": "Molto buono",
+    "pl": "Dobra",
+    "pt-PT": "Bom"
+  },
+  "profil": {
+    "sv": "https://se.trustpilot.com/review/www.matstrumpor.se",
+    "nb": "https://no.trustpilot.com/review/www.matstrumpor.se",
+    "da": "https://dk.trustpilot.com/review/www.matstrumpor.se",
+    "fi": "https://fi.trustpilot.com/review/www.matstrumpor.se",
+    "en": "https://www.trustpilot.com/review/www.matstrumpor.se",
+    "de": "https://de.trustpilot.com/review/www.matstrumpor.se",
+    "fr": "https://fr.trustpilot.com/review/www.matstrumpor.se",
+    "nl": "https://nl.trustpilot.com/review/www.matstrumpor.se",
+    "es": "https://es.trustpilot.com/review/www.matstrumpor.se",
+    "it": "https://it.trustpilot.com/review/www.matstrumpor.se",
+    "pl": "https://pl.trustpilot.com/review/www.matstrumpor.se",
+    "pt-PT": "https://pt.trustpilot.com/review/www.matstrumpor.se"
+  },
+  "omdomen": [
+    {
+      "id": "6abb77e89684cbcbde781234",
+      "stjarnor": 5,
+      "datum": "2026-09-29",
+      "datum_sv": "29 sep 2026",
+      "namn": "Mats Eriksson",
+      "rubrik": "",
+      "text": "Fantastiskt rolig idé! Mitt sushiälskande barnbarn blev jätteglad över ”matlådan” med alla olika typer av sushi.",
+      "lank": "https://se.trustpilot.com/reviews/6abb77e89684cbcbde781234"
+    },
+    {
+      "id": "6abb2f4b9a7b1b9bbd12e5ed",
+      "stjarnor": 5,
+      "datum": "2026-09-29",
+      "datum_sv": "29 sep 2026",
+      "namn": "Anna-Lee",
+      "rubrik": "Sushi-strumporna blev mycket uppskattade",
+      "text": "Sushi-strumporna var believe extremt bra designade. Verkligen smart gjorda och mycket uppskattat som present",
+      "lank": "https://se.trustpilot.com/reviews/6abb2f4b9a7b1b9bbd12e5ed"
+    },
+    {
+      "id": "6abab6e8b033a4ccef2af95e",
+      "stjarnor": 5,
+      "datum": "2026-09-28",
+      "datum_sv": "28 sep 2026",
+      "namn": "Carina Andersson",
+      "rubrik": "",
+      "text": "Kul att ge till någon som verkligen uppskattar dessa strumpor.",
+      "lank": "https://se.trustpilot.com/reviews/6abab6e8b033a4ccef2af95e"
+    },
+    {
+      "id": "6abab35c2880c4a0d64ce2cb",
+      "stjarnor": 5,
+      "datum": "2026-09-28",
+      "datum_sv": "28 sep 2026",
+      "namn": "gittan andersson",
+      "rubrik": "",
+      "text": "Otroligt uppskattad present till dotter och sonhustru. Fina strumpor i härlig förpackning.",
+      "lank": "https://se.trustpilot.com/reviews/6abab35c2880c4a0d64ce2cb"
+    },
+    {
+      "id": "6aba68bd36d66a2ab216f50b",
+      "stjarnor": 5,
+      "datum": "2026-09-28",
+      "datum_sv": "28 sep 2026",
+      "namn": "Bosse",
+      "rubrik": "",
+      "text": "Det blev uppskattade presenter!",
+      "lank": "https://se.trustpilot.com/reviews/6aba68bd36d66a2ab216f50b"
+    },
+    {
+      "id": "6aba5da0f5d99748a584cd2e",
+      "stjarnor": 5,
+      "datum": "2026-09-28",
+      "datum_sv": "28 sep 2026",
+      "namn": "Ravesta",
+      "rubrik": "",
+      "text": "Allt går inte att åta! Men man fryser inte om föterna.",
+      "lank": "https://se.trustpilot.com/reviews/6aba5da0f5d99748a584cd2e"
+    },
+    {
+      "id": "6aba45623725215dc8a8df01",
+      "stjarnor": 5,
+      "datum": "2026-09-28",
+      "datum_sv": "28 sep 2026",
+      "namn": "Jonny Gustavsson",
+      "rubrik": "",
+      "text": "Kanon bra varor och kvalitet",
+      "lank": "https://se.trustpilot.com/reviews/6aba45623725215dc8a8df01"
+    },
+    {
+      "id": "6aba3488fc88ab3bb58d696d",
+      "stjarnor": 5,
+      "datum": "2026-09-28",
+      "datum_sv": "28 sep 2026",
+      "namn": "Inger Iréne Anna-Lena Persson",
+      "rubrik": "",
+      "text": "Jätterolig julklapp väntar redan på hur det ska tas emot snabb leverans🥰🙏❤️",
+      "lank": "https://se.trustpilot.com/reviews/6aba3488fc88ab3bb58d696d"
+    },
+    {
+      "id": "6aba33acde231c428d1f728a",
+      "stjarnor": 5,
+      "datum": "2026-09-28",
+      "datum_sv": "28 sep 2026",
+      "namn": "Lennart Edvardsson",
+      "rubrik": "",
+      "text": "Det var verkligen ett snyggt packet med sockor, en snabb blick och det såg ut som en äkta sushi-låda. Mottagaren i mitt fall äter inte sushi, så det blev väldigt lyckat. Det tog en stund innan poletten ramlade ned.",
+      "lank": "https://se.trustpilot.com/reviews/6aba33acde231c428d1f728a"
+    }
+  ]
+}
