@@ -1,0 +1,25 @@
+{
+ "brand": "CaraShell",
+ "datum": "2026-09-29",
+ "lage": "spegla",
+ "gjort": [
+  "Takoverdrag_SP_4_H4: 🇺🇸 English version 120251650670480435 is live — source row set to Approved",
+  "Takoverdrag_SP_4_H3: 🇺🇸 English version 120251650660230435 is live — source row set to Approved",
+  "Takoverdrag_OB_4_H1: 🇺🇸 English version 120251651140340435 is live — source row set to Approved",
+  "Takoverdrag_OB_3_H1: 🇺🇸 English version 120251651131140435 is live — source row set to Approved",
+  "Takoverdrag_CO_5_H1: 🇺🇸 English version 120251650907860435 is live — source row set to Approved",
+  "Takoverdrag_PD_10_H1: 🇺🇸 English version 120251650898200435 is live — source row set to Approved",
+  "Takoverdrag_CS_9_H1: 🇺🇸 English version 120251650890260435 is live — source row set to Approved",
+  "7 source rows set to Approved. Nothing to mirror today: the SE queue held only the skipped row, so no new ads were created."
+ ],
+ "varningar": [
+  "Takoverdrag_GT_11_H1: skipped — nämner Bäverbutiken: Bäverbutiken",
+  "Takoverdrag_GT_11_H1 (SE): end card could not be checked — ffmpeg could not read the duration. Does not block the upload — someone has to look at the last seconds.",
+  "Takoverdrag_GT_11_H1 (NO): end card could not be checked — ffmpeg could not read the duration. Does not block the upload — someone has to look at the last seconds.",
+  "SE-kampanj: \"NYA LISTICLE CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11 – kopia\" · \"CARASHELL_SE_Taköverdraget LISTICLE\" är eget spår (namnet bär LISTICLE) och tog inte emot annonserna."
+ ],
+ "action_axel": [
+  "Takoverdrag_GT_11_H1: still skipped — the copy names Bäverbutiken. Sixth day in a row (24-29 Sep) and it is now the only row left in the SE queue. Decide whether the editor should make a store-neutral version, or the row stays parked."
+ ],
+ "nasta_korning": "tomorrow 16:20 + slot"
+}

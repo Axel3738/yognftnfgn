@@ -2760,3 +2760,38 @@ CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11 – kopia`. Den bär ord
 LISTICLE och filtrerades därför bort som eget spår (`tools/lib/sidokampanjer.mjs`)
 — huvudkampanjen `CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11` är
 fortfarande ACTIVE med 11 adsets och är den kön skulle laddat upp i.
+
+---
+
+## 2026-09-29 — speglingen: 0 speglade, 7 källrader → Approved
+
+**Inget att spegla.** SE-kön (`CaraShell SE ready to be active`) hade EN rad,
+`Takoverdrag_GT_11_H1`, och den stoppas av brandregeln — copyn nämner
+Bäverbutiken. Sjätte dygnet i rad (24–29/9), och nu den enda raden i kön.
+Källradens status orörd, ingen ny kommentar (stopp-kommentaren står redan där).
+Ligger hos Axel; ACTION NEEDED postad igen i `#annons-uppladdning`
+(meddelande `1554507758047330365`).
+
+**7 källrader → `Approved`** — deras US-annonser kom upp i natt:
+
+| Källrad | US-annons |
+|---|---|
+| `Takoverdrag_SP_4_H4` | `120251650670480435` |
+| `Takoverdrag_SP_4_H3` | `120251650660230435` |
+| `Takoverdrag_OB_4_H1` | `120251651140340435` |
+| `Takoverdrag_OB_3_H1` | `120251651131140435` |
+| `Takoverdrag_CO_5_H1` | `120251650907860435` |
+| `Takoverdrag_PD_10_H1` | `120251650898200435` |
+| `Takoverdrag_CS_9_H1` | `120251650890260435` |
+
+Kvar i `CaraShell EN ready to be active` (3): `SP_4_H2`, `CS_12_H1`, `UG_2_H1`
+— US-rutinen har inte kommit till dem än.
+
+Priserna lästa live: SE 1 129 kr, NO 1 106 NOK. Kampanjerna ACTIVE (SE 11
+adsets, NO 12). Varningen om `CARASHELL_SE_Taköverdraget LISTICLE` är rätt
+beteende — eget spår, tar inte emot speglade annonser.
+
+⚠️ Inget loggat i registret: `register.mjs log` vägrar 0, och noll rader
+speglades. En dag utan spegling lämnar alltså inget spår i `register.json` —
+rutinvakten mäter den här rutinen på commit-rubriken, och den här commiten är
+spåret.
