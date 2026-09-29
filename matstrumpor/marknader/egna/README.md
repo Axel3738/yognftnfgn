@@ -37,11 +37,17 @@ Alla tre röstvideorna har **samma svenska AI-kvinnoröst** (mediantonhöjd 198�
 4. **Röstvideorna, textlagret:** `python3 matstrumpor/marknader/egna/textlager.py <KOD> <video>`
    → `ut/<KOD>_<video>.text.mp4`. Alla svenska texter byts, originalljudet ligger kvar. Tar ~2,5 min per video.
 5. **Röstvideorna, rösten:** `node matstrumpor/marknader/egna/dubba.mjs <KOD> <video>` →
-   `../annonser/klar/<KOD>_<video>.mp4`. Så fungerar det:
-   - ElevenLabs dubbning i manuellt läge får vår granskade text per segment, i samma tidsfönster.
-   - Rösten klonas ur källan och musiken behålls.
-   - Dubbens ljud läggs på textlagret.
-   - Kräver `ELEVENLABS_API_KEY`. Den syns bara i en session som startats efter att nyckeln lades in.
+   `../annonser/klar/<KOD>_<video>.mp4`. Så fungerar det (vägen som bar 2026-09-29, se Läget):
+   - ElevenLabs text-till-tal, ett anrop per segment med vår granskade text, med en klon av källans
+     röst (`RÖST` i skriptet).
+   - Klippet läggs där den svenska meningen började. Är det för långt görs det om snabbare
+     (speed ≤ 1,2) och pressas sedan med atempo (≤ 1,15).
+   - Bakgrunden är källans eget ljud utan röst (demucs `htdemucs`, `no_vocals`), och talet läggs på
+     källans talnivå.
+   - Ljudet läggs på textlagret och tonas ut de sista 0,28 s, som källorna.
+   - Klippen cachas i `ut/tts/`, så en omkörning med samma text kostar inga tecken.
+   - Kräver `ELEVENLABS_API_KEY`, `pip install demucs` (torch CPU) och ffmpeg.
+   - ⚠️ `dubba.mjs` lägger filen i `klar/` innan QA körts. En video med ❌ ska tas bort därifrån.
    - Två spärrar:
      - Ändras texten efter dubbningen görs en ny dubbning (`text_sha`), och ett textlager
        byggt på en äldre text stoppar sammanfogningen.
@@ -107,3 +113,89 @@ visar loggan "MATSTRUMPOR.SE" med sushifiguren:
   på alla elva språk.
 - **"Matstrumpor.se" i slutet** av haiku-videorna sägs inte och suddas bort. Rutan ersätts inte.
 - Poppins (OFL, `pipeline/fonts/`) täcker alla elva språkens tecken (kontrollerat med fontTools).
+
+## Läget (2026-09-29): 33 av 33 uppladdade PAUSED som annons 005–007
+
+**Vägen som bar: text-till-tal med klonad röst, inte dubbning.**
+
+- `POST /v1/dubbing` med `mode=manual` kräver `dubbing_studio=true`. Det ger bara ett studio-projekt:
+  - status `dubbed` och vår text i transkriptet,
+  - men `GET /audio/<språk>` svarar 404 "There is no dubbing for language".
+- Rendering via `/v1/dubbing/resource` svarar 403 "closed-beta" för kontot.
+- Automatiskt läge översätter själv och får inte användas.
+- Försöket (pilot DE haikuh3, id `ZVSEy74PxnJS7KzXnuax`) kostade ~2 590 tecken. Det finns kvar som
+  studio-projekt i kontot.
+
+**Rösten:** en ny instant-klon, **"Matstrumpor AI-kvinna (klon ur annonserna)"**
+`lRBvixWrjVcBSKxchtgC`. Den är gjord ur demucs-isolerat tal från alla tre källorna.
+
+- Modellen är `eleven_multilingual_v2` för tio språk.
+- Norskan finns inte i v2 och tas av `eleven_turbo_v2_5` med `language_code: no`.
+  - `eleven_v3` prövades först: Whisper hörde svenska (0,96), ordtäckningen var 0,43, och v3
+    följer inte farten (11 av 18 meningar gick över fönstret).
+- Kontots övriga röster (premade, bibliotek, egna kloner som "Gamla 70 årig sushi" och
+  "Lisa UGC") används inte.
+
+**Kostnad:** kontot är Creator, 100 017 tecken per månad. Förbrukat:
+
+- före jobbet: 16 641
+- efter: 56 757
+- alltså ~40 100 tecken, varav:
+  - ~2 590 till det misslyckade dubbningsförsöket,
+  - ~1 400 till v3-provet för norskan,
+  - resten till text-till-tal, i snitt ~1 100 per video. Norskan kostar hälften per tecken.
+
+**Två rättningar efter första QA:** PL och PT s001h1 fick ❌ i rostkoll ("hinner inte tala klart").
+
+- Sista meningen fick ta tiden till 0,15 s före slutet.
+- `-shortest` kapade ljudets tysta svans vid bildens slut. Källorna tonar ut till −64/−89 dB.
+- Rättat: sista meningen slutar senast 0,35 s före slutet, och ljudet tonas ut på bildens sista
+  0,28 s. Därefter var alla gröna.
+
+**Texterna ändrades efter bygget en gång:** NO haikuh2 och NO s001h1 ("norskan likriktad",
+`8a6922d`). Båda byggdes om. Före uppladdning kontrollerades alla 33 mot `main`: textens sha =
+`text_sha` i `ut/<KOD>_<video>.dub.json` och `"granskad": true`.
+
+**QA per video** (Whisper small: hört språk + sannolikhet, ordtäckning, mediantonhöjd dub/källa i Hz,
+rostkoll). Alla 33 är dessutom tittade på i bild: 8 rutor + slutkortet, inget svenskt ord, ingen
+logga, knappen på marknadens språk.
+
+| Marknad | Video | Språk | Ordtäckning | Tonhöjd | rostkoll |
+|---|---|---|---|---|---|
+| NO | haikuh3 | no 0.86 | 0.92 | 208 / 200 | ✅ |
+| NO | haikuh2 | no 0.73 | 0.88 | 205 / 198 | ✅ |
+| NO | s001h1 | no 0.83 | 0.9 | 219 / 200 | ✅ |
+| DK | haikuh3 | da 0.91 | 0.94 | 213 / 200 | ✅ |
+| DK | haikuh2 | da 0.97 | 0.92 | 219 / 198 | ✅ |
+| DK | s001h1 | da 0.92 | 0.96 | 190 / 200 | ✅ |
+| FI | haikuh3 | fi 0.99 | 0.94 | 211 / 200 | ✅ |
+| FI | haikuh2 | fi 0.95 | 0.92 | 205 / 198 | ✅ |
+| FI | s001h1 | fi 0.96 | 0.94 | 186 / 200 | ✅ |
+| US | haikuh3 | en 0.99 | 1.0 | 203 / 200 | ✅ |
+| US | haikuh2 | en 0.98 | 1.0 | 216 / 198 | ✅ |
+| US | s001h1 | en 0.99 | 1.0 | 216 / 200 | ✅ |
+| DE | haikuh3 | de 0.99 | 0.97 | 229 / 200 | ✅ |
+| DE | haikuh2 | de 0.99 | 0.97 | 211 / 198 | ✅ |
+| DE | s001h1 | de 1.0 | 1.0 | 216 / 200 | ✅ |
+| FR | haikuh3 | fr 1.0 | 0.98 | 235 / 200 | ✅ |
+| FR | haikuh2 | fr 1.0 | 0.97 | 239 / 198 | ✅ |
+| FR | s001h1 | fr 1.0 | 0.97 | 216 / 200 | ✅ |
+| NL | haikuh3 | nl 1.0 | 0.95 | 225 / 200 | ✅ |
+| NL | haikuh2 | nl 0.99 | 0.97 | 213 / 198 | ✅ |
+| NL | s001h1 | nl 0.99 | 0.97 | 216 / 200 | ✅ |
+| ES | haikuh3 | es 1.0 | 1.0 | 222 / 200 | ✅ |
+| ES | haikuh2 | es 0.99 | 1.0 | 225 / 198 | ✅ |
+| ES | s001h1 | es 1.0 | 0.98 | 203 / 200 | ✅ |
+| IT | haikuh3 | it 1.0 | 0.98 | 222 / 200 | ✅ |
+| IT | haikuh2 | it 1.0 | 0.99 | 216 / 198 | ✅ |
+| IT | s001h1 | it 1.0 | 0.99 | 208 / 200 | ✅ |
+| PL | haikuh3 | pl 1.0 | 0.99 | 205 / 200 | ✅ |
+| PL | haikuh2 | pl 0.99 | 0.98 | 203 / 198 | ✅ |
+| PL | s001h1 | pl 1.0 | 1.0 | 216 / 200 | ✅ |
+| PT | haikuh3 | pt 0.99 | 0.97 | 222 / 200 | ✅ |
+| PT | haikuh2 | pt 0.97 | 0.94 | 219 / 198 | ✅ |
+| PT | s001h1 | pt 0.99 | 0.97 | 219 / 200 | ✅ |
+
+Whisper small stavar fel på produktord och hör ibland ett kort ord fel. DE haikuh3 "Kein Geschenk"
+lästes som "Das ist ein Geschenk", men Whisper medium på klippet hörde rätt. Norskan hörs som `no`
+med lägre säkerhet (0,73–0,86): klonen är svensk, och Whisper blandar ihop språken.
