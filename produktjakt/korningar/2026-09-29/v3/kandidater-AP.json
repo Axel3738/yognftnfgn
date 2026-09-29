@@ -1,0 +1,186 @@
+{
+  "agent": "AP — elbilsladdaren hemma inför vintern",
+  "datum": "2026-09-29",
+  "sammanfattning": "Lins på elbilsägaren 55+ i villa: laddboxen på väggen, laddhandtaget i snön, laddluckan öppen i snöfallet. Golvet lästes FÖRE Ali (PriceRunner via curl 2026-09-29; Kjell renderas i JS = oläst; evify/laddstation.se svarar 143 byte = blockerade; Clas/Jula/Biltema/Elgiganten olästa). Kabelkrok/kabelhållare = SORTIMENT 20+ (Deltaco 77–219, Zaptec 389, Easee U-Hook 569–599) → fälld. Kabelväska (Deltaco 99 … DEFA 384), kabelmatta (20 kort) och kabellås (Evify 260) → fällda. Tre former överlever: (1) laddboxens mjuka väderhuv — EN kopia 299 på PriceRunner + Absina eMobility Skyddstak 1 265 som ankare (H06, 2,3× mot 549); (2) laddhandtagets TPE-frosthuv — 0 exakta kopior, INF säljer en regnpåse 129 i angränsande form (H10); (3) laddluckans magnethuv över porten under laddning — INF 149 en kopia, ingen kedja, formen sitter PÅ det ägda objektet (H10, LÅG med flit). Ägarantal: Trafa 322 000 laddbara vägfordon slutet 2021 (läst i dag); ~700 000 enligt uppdragsraden är ej mätt. 12 sökfraser, 10 produktsidor öppnade, 10 heroer sedda, 3 levererade, 7 strukna.",
+  "kandidater": [
+    {
+      "koncept_id": null,
+      "namn_sv": "Laddboxhuven med dragsko",
+      "objekt": "Laddbox/utomhusuttag",
+      "form": "huv",
+      "arketyp": "B_SKYDDA_DYRT",
+      "arketyp_sekundar": "E_VADER_SASONG",
+      "slot": "exploration",
+      "hypotes_id": "H06",
+      "vinnarlikhet": {
+        "likast": "Termoskyddet för Husbil",
+        "delade_variabler": ["objekt_ute", "agare_55plus_smahus", "form huv/överdrag", "old way ingenting", "deadline första snö", "ankare ≥1,6×"],
+        "avvikelser": ["objektet är medel 1–10 tkr (laddbox 5–8 tkr + installation), inte >10 tkr", "laddboxen är IP54 och byggd för ute — hotet är snö/is ovanpå och i handtaget, inte en pågående skada"]
+      },
+      "sasong": {"fonster_id": "forsta_sno_norr", "deadline_typ": "första snö", "veckor_kvar": 3.7, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005013172928875",
+        "url": "https://www.aliexpress.com/item/1005013172928875.html",
+        "pris_usd": 20.24,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-29T07:01:16Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-29/v3/bilder/1005013172928875.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "ej läst ur titeln (drawstring-huv, troligen en storlek 'universal') — måste kollas mot Easee/Zaptec/Garo-måtten före offert",
+          "video": "ej tillgänglig i containern",
+          "alternativ_listning": "1005012304913784 (10,49 USD, LIVE 07:03:06Z, hero = packshot utan kontext, silverfodrad) — billigare men sämre bild"
+        }
+      },
+      "material": {"klass": 1, "hero_textfri": false, "hero_i_kontext": true, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "Rubrik 'Electric Vehicle Charger Cover' + ikon uppe till vänster måste beskäras; huven på boxen med bil som laddar i bakgrunden är rätt bild"},
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "PriceRunner (okänd återförsäljare) — 'Väderskydd Regnskydd Skyddshuv Elbilsladdare Wallbox'", "pris_sek": 299, "url": "https://www.pricerunner.se/pl/1622-3545388280/Elbilsladdning/Vaederskydd-Regnskydd-Skyddshuv-Elbilsladdare-Wallbox-priser", "exakt_samma_form": true, "antal_kopior_i_formen": 1, "datum": "2026-09-29"},
+        "premium_ankare": {"namn": "Absina eMobility Skyddstak (styvt tak för laddbox)", "pris_sek": 1265, "url": "https://www.pricerunner.se/pl/1622-3415252704/Elbilsladdning/Absina-eMobility-Skyddstak-priser", "i_sortiment": true, "exakt_samma_form": false, "kommentar": "samma syfte (väderskydd för laddboxen), annan form (aluminiumtak som skruvas i väggen)"},
+        "ankare_kvot": 2.3,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["pricerunner.se (sök 'laddbox regnskydd', 'wallbox skyddshuv', 'laddbox skydd')", "kjell.com (JS-renderad, oläst)", "evify.se / laddstation.se (143 byte, blockerade)"]
+      },
+      "ekonomi": {"landad_sek": [263, 322], "pris_sek": 549, "brutto_sek": [227, 286], "be_cpa_sek": [227, 286], "be_roas": 2.1, "flerkop": false, "returrisk": "medel — laddboxarna varierar i mått (Easee Home 26×19 cm, Zaptec Go 24×17 cm, Garo 30×20 cm); universal-huv med dragsko bör klara alla tre, kontrollera måtten före offert"},
+      "meta_tanke": {"hook": "Står laddboxen ute i snön i vinter?", "objekt_i_bild": "laddboxen på husväggen under huven, kabeln hänger ut, snö runt om", "sjalvselekterande": true, "forstas_3s": true, "bevisas_visuellt": "huven dras över boxen med ett drag, handtaget hänger torrt under"},
+      "varfor": "Samma struktur som termoskyddet och kranskyddet: ägd sak på husväggen, första snö 3,7 v bort, ingen gör något i dag; en enda kopia under oss (299) med Absina-ankare 1 265 = H06-fall som ATV-kapellet. Objektfamiljen (elbilsägaren) har aldrig sökts i kontot.",
+      "huvudrisk": "Laddboxen är IP54 och tillverkarna säger 'monteras ute' — köpskälet är upplevt värde (K8) och snö/is i handtaget, inte en dokumenterad skada; kan bli Motorlåset-mönstret (skydd ingen saknar).",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 2, "meta_creative": 2, "efterfragan": 2, "lucka": 2, "ekonomi": 2, "sasong": 2, "leverantor": 2, "nyhet": 2, "hypotesvarde": 2},
+      "per_kriterium": {"K0": "ok", "K1": 12, "K2": 12, "K3": 8, "K4": 8, "K5": 7, "K6": 8, "K7": 6, "K8": 7, "K9": 4, "K10": 2, "K11": 1, "K12": 1},
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (grep ladd/elbil/kabel: inget laddboxobjekt)", "koncept.py sok 'laddbox' → K0058 (samma sak-nyckel, status kandidat, SOKTRAFF 09-10, aldrig levererad — det här är en ny LIVE-listning på samma koncept)", "kontot 7 d: ej kollat (linsen rör inte Meta)"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005013172928875.html",
+        "https://www.aliexpress.com/item/1005012304913784.html",
+        "https://www.pricerunner.se/search?q=wallbox%20skyddshuv",
+        "https://www.pricerunner.se/pl/1622-3415252704/Elbilsladdning/Absina-eMobility-Skyddstak-priser",
+        "https://www.trafa.se/vagtrafik/fordon/ (322 000 laddbara vägfordon slutet 2021, läst 2026-09-29)"
+      ]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Laddhandtagets frosthuv Type 2",
+      "objekt": "NYTT: Laddhandtagets Type 2-kontakt — hänger ute i frost och snö vid laddboxen",
+      "form": "huv",
+      "arketyp": "H_VISUELL_NYHET",
+      "arketyp_sekundar": "B_SKYDDA_DYRT",
+      "slot": "exploration",
+      "hypotes_id": "H10",
+      "vinnarlikhet": {
+        "likast": "Soptunneklistermärkena",
+        "delade_variabler": ["objekt_ute", "agare_55plus_smahus", "old way improvisation (plastpåse över handtaget)", "<300–349 kr", "noll montering"],
+        "avvikelser": ["har ett problem (is i stiften → laddfel), inte ren dekor", "objektet (kabeln 1–3 tkr, bilen >300 tkr) — kåpan skyddar stiften, inte bilen"]
+      },
+      "sasong": {"fonster_id": "forsta_frost_mellan", "deadline_typ": "första frost", "veckor_kvar": 2.3, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005013167428465",
+        "url": "https://www.aliexpress.com/item/1005013167428465.html",
+        "pris_usd": 8.69,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-29T07:01:22Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-29/v3/bilder/1005013167428465.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "Type 2 (EU-standard, passar alla laddboxars fasta kabel och alla Type 2-kablar) — en variant; sibling 1005010325235582 (7,46 USD, LIVE 07:01:25Z) är hon+han-par för lös kabel, packshot",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {"klass": 1, "hero_textfri": false, "hero_i_kontext": true, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "Rubrik 'NEW ENERGY VEHICLE CHARGING GUN COVER' + två ikoner måste beskäras; kåpan på handtaget i regnet vid bilen är rätt bild — byt till snö/frost i egen bild"},
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "INF (via PriceRunner) — 'Elfordonsladdningspistol Regnskydd Förtjockad Vattentät' (tygpåse över handtaget under laddning, INTE TPE-kåpa)", "pris_sek": 129, "url": "https://www.pricerunner.se/pl/1622-3456537248/Elbilsladdning/INF-Elfordonsladdningspistol-Regnskydd-Foertjockad-Vattentaet-priser", "exakt_samma_form": false, "antal_kopior_i_formen": 0, "datum": "2026-09-29"},
+        "premium_ankare": null,
+        "ankare_kvot": null,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["pricerunner.se (sök 'laddhandtag skydd', 'laddpistol regnskydd', 'typ 2 skyddslock', 'laddkontakt skydd typ 2', 'laddkabel vinterskydd' — 0 TPE-kåpor, bara INF-påsen 129 och Evify-låset 260)", "kjell.com (JS-renderad, oläst)"]
+      },
+      "ekonomi": {"landad_sek": [113, 138], "pris_sek": 349, "brutto_sek": [211, 236], "be_cpa_sek": [211, 236], "be_roas": 1.56, "flerkop": false, "returrisk": "låg — Type 2 är en standard, en variant"},
+      "meta_tanke": {"hook": "Hänger laddhandtaget ute i frosten?", "objekt_i_bild": "Type 2-handtaget i hållaren på husväggen med snö på stiften, sedan med kåpan på", "sjalvselekterande": true, "forstas_3s": true, "bevisas_visuellt": "is/snö i kontakten utan kåpa mot torra stift med kåpa — och bilens 'laddfel'-symbol som never syns"},
+      "varfor": "Ren H10-test: ny form på ett ägt objekt utanför kontots överdragsfamilj, 0 exakta kopior i svenskt flöde (PriceRunner 2026-09-29), ingen montering, första frost 2,3 v. Improvisationen (plastpåse/handduk över handtaget) är synlig i varje villaområde med laddbox.",
+      "huvudrisk": "Pris 349 för en TPE-kåpa som kostar 8,69 USD utan svenskt ankare — upplevt värde (K8) kan vara för lågt; INF:s regnpåse 129 ligger i angränsande form.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 1, "meta_creative": 2, "efterfragan": 2, "lucka": 2, "ekonomi": 1, "sasong": 2, "leverantor": 2, "nyhet": 3, "hypotesvarde": 3},
+      "per_kriterium": {"K0": "ok", "K1": 10, "K2": 12, "K3": 6, "K4": 9, "K5": 8, "K6": 6, "K7": 4, "K8": 5, "K9": 5, "K10": 2, "K11": 1, "K12": 1},
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (inget Type 2-/laddobjekt)", "koncept.py sok 'laddhandtag', 'kabel', 'elbil' → 0 träffar", "kontot 7 d: ej kollat (linsen rör inte Meta)"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005013167428465.html",
+        "https://www.aliexpress.com/item/1005010325235582.html",
+        "https://www.pricerunner.se/search?q=laddpistol%20regnskydd",
+        "https://www.pricerunner.se/search?q=laddkontakt%20skydd%20typ%202",
+        "https://www.trafa.se/vagtrafik/fordon/ (322 000 laddbara vägfordon slutet 2021, läst 2026-09-29)"
+      ]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Laddluckans magnethuv",
+      "objekt": "NYTT: Elbilens laddlucka — porten står öppen i snöfallet hela natten medan bilen laddar",
+      "form": "huv",
+      "arketyp": "H_VISUELL_NYHET",
+      "arketyp_sekundar": "B_SKYDDA_DYRT",
+      "slot": "exploration",
+      "hypotes_id": "H10",
+      "vinnarlikhet": {
+        "likast": "Motorhöljet",
+        "delade_variabler": ["objekt_ute", "dyr>10tkr (bilen)", "agare_55plus_smahus", "old way improvisation/ingenting", "formen sitter PÅ det ägda objektet (metodfynd 09-27)"],
+        "avvikelser": ["ingen pågående skada — is i porten/laddluckan som fryser fast är ett irritationsmoment, inte en rostskada", "magnet fäster inte på aluminiumkaross"]
+      },
+      "sasong": {"fonster_id": "forsta_sno_norr", "deadline_typ": "första snö", "veckor_kvar": 3.7, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005012491342097",
+        "url": "https://www.aliexpress.com/item/1005012491342097.html",
+        "pris_usd": 7.44,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-29T07:01:31Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-29/v3/bilder/1005012491342097.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "universal (magnetlist, 'for most electric cars') — en variant; sibling 1005012262838955 (7,31 USD, LIVE 07:01:38Z, oxford med magnetremsa, hero i regn) som reserv",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {"klass": 1, "hero_textfri": false, "hero_i_kontext": true, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "Blå textbanner uppe måste beskäras; huven över porten med regndroppar på vit bil är rätt bild — egen bild i snö"},
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "INF (via PriceRunner) — 'Magnetiskt vattentätt skydd'", "pris_sek": 149, "url": "https://www.pricerunner.se/pl/1622-3269326028/Elbilsladdning/INF-Magnetiskt-vattentaett-skydd-priser", "exakt_samma_form": true, "antal_kopior_i_formen": 1, "datum": "2026-09-29", "kommentar": "plus Tesla-specifikt 'Magnetic Waterproof Charging Side Cover Cable Kit' 296 kr i kategorin Laddningsportar"},
+        "premium_ankare": null,
+        "ankare_kvot": null,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["pricerunner.se (sök 'laddlucka skydd elbil' 0 i formen, 'laddport skydd magnet' 1 universell + Tesla-kit, 'laddbox skydd' → INF 149)", "kjell.com (JS-renderad, oläst)"]
+      },
+      "ekonomi": {"landad_sek": [97, 118], "pris_sek": 349, "brutto_sek": [231, 252], "be_cpa_sek": [231, 252], "be_roas": 1.5, "flerkop": false, "returrisk": "medel — magneten fäster inte på aluminiumkaross (Audi e-tron, Jaguar I-Pace, Tesla S/X); universalpassform kan slira på porter i fronten (Nissan Leaf, Polestar)"},
+      "meta_tanke": {"hook": "Laddar bilen ute när det snöar?", "objekt_i_bild": "elbilen på uppfarten med öppen laddlucka i snöfall, huven fälls över porten", "sjalvselekterande": true, "forstas_3s": true, "bevisas_visuellt": "snö i den öppna porten mot torr port under huven — tre sekunder, ingen förklaring"},
+      "varfor": "H10-kandidat med flit: kategorinyhet i svenskt flöde (en INF-kopia 149, ingen kedja), sitter på ett objekt som kostar 300–700 tkr och står ute hos precis kontots avatar; första snö norr 3,7 v. Testar om 'visste inte att det fanns' bär på en form som inte är ett överdrag av hela objektet.",
+      "huvudrisk": "Golv INF 149 under oss utan ankare (lucka 0) och magneten misslyckas på aluminium — LÅG med flit, rank.py avgör; ingen egen skada att peka på.",
+      "konfidens": "LÅG",
+      "poang": {"vinnarlikhet": 2, "meta_creative": 2, "efterfragan": 2, "lucka": 0, "ekonomi": 1, "sasong": 2, "leverantor": 2, "nyhet": 2, "hypotesvarde": 3},
+      "per_kriterium": {"K0": "ok", "K1": 10, "K2": 12, "K3": 8, "K4": 6, "K5": 8, "K6": 6, "K7": 3, "K8": 5, "K9": 4, "K10": 2, "K11": 1, "K12": 1},
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (inget)", "koncept.py sok 'laddbox' → K0087 (magnetisk portshuv, status kandidat, SOKTRAFF 09-10, aldrig levererad, objekt satt till 'Laddbox/utomhusuttag' — objektet är egentligen bilens laddlucka; nytt objektfält här så raden inte kolliderar med laddboxhuven på SAK-nyckeln)", "kontot 7 d: ej kollat (linsen rör inte Meta)"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005012491342097.html",
+        "https://www.aliexpress.com/item/1005012262838955.html",
+        "https://www.pricerunner.se/search?q=laddport%20skydd%20magnet",
+        "https://www.pricerunner.se/pl/1622-3269326028/Elbilsladdning/INF-Magnetiskt-vattentaett-skydd-priser",
+        "https://www.trafa.se/vagtrafik/fordon/ (322 000 laddbara vägfordon slutet 2021, läst 2026-09-29)"
+      ]
+    }
+  ],
+  "strukna": [
+    {"form": "Laddkabelkrok/kabelhållare på väggen (Type 2-hållare, kabelvinda)", "skal": "SORTIMENT 20+ på PriceRunner 2026-09-29: Deltaco EV-5101/5102 77–79, Gembird 129, Absina 138, J&EL 149, Deltaco holder 219, Zaptec Chill 389, Malmbergs 500, Easee U-Hook 569–599 — golvet är hyllvara, ankaret (Easee 599) är bara 1,5× över golvets mitt; H06 gäller EN kopia, inte sortiment", "kalla": "https://www.pricerunner.se/search?q=laddkabelh%C3%A5llare"},
+    {"form": "Laddkabelväska med handtag i bagaget", "skal": "8+ kopior 99–384 (Deltaco 99, Nedis 149, Xtra 177, Green Cell 243, DEFA 384) — sortiment utan lucka, objektet ligger inne i bilen (objekt_ute = nej)", "kalla": "https://www.pricerunner.se/search?q=laddkabelv%C3%A4ska"},
+    {"form": "Kabelmatta/kabelskydd över gången (H08)", "skal": "20 kort på PriceRunner 33–1 027 kr (Zexum, D-Line, VEVOR …) — sortiment i elfackhandel, formen är känd", "kalla": "https://www.pricerunner.se/search?q=kabelskydd%20golv"},
+    {"form": "Laddkabellås / stöldskydd Type 2", "skal": "Evify Stöldskydd Typ 2 med lås 260 kr under oss, inget ankare, form 'annat' = 0 av 15 dömda vann i kontot; publik laddning är inte villaägarens uppfart", "kalla": "https://www.pricerunner.se/pl/1622-3410114120/Elbilsladdning/Evify-Stoeldskydd-Typ-2-Med-Laas-22-mm-priser"},
+    {"form": "Laddboxens styva tak (aluminiumkåpa 33 USD, Ali 1005013107681175)", "skal": "Kräver borrning i fasaden (montering = HÖG förlorarsignal), Absina-ankaret 1 265 blir bara 1,3× mot nödvändigt pris 999; objekt.json-regeln 'styvt tak med montering söks inte igen'", "kalla": "https://www.aliexpress.com/item/1005013107681175.html"},
+    {"form": "Vägghållare med lock för Type 2-handtaget (Ali 1005012124017449, LIVE 07:01:34Z, hero sedd)", "skal": "Samma form som Absina 'Laddkabelhållare och kontakthållare' 138 kr — sortiment + skruvmontering", "kalla": "https://www.aliexpress.com/item/1005012124017449.html"},
+    {"form": "Magnethuv 'for Tesla Model 3' (Ali 1005010368296391, LIVE, hero sedd) och laddboxhuv med kinesisk tryck (1005013095971257, LIVE, hero sedd)", "skal": "Varumärke i titeln respektive kinesisk varningstext tryckt på produkten — går inte att sälja som generisk", "kalla": "https://www.aliexpress.com/item/1005010368296391.html"},
+    {"form": "Skylt 'Laddplats' (H_VISUELL < 300), elbilens frontgrillskydd i vinter, 12 V-laddare, solcellsvindruteskydd", "skal": "Skylten löser inget på egen uppfart och är dekor utan objekt; grillskydd är modellspecifika; 12 V-laddare och solcell = kedja/sortiment — inte sökta på Ali", "kalla": "https://www.pricerunner.se/search?q=skylt%20laddplats%20elbil"}
+  ]
+}
