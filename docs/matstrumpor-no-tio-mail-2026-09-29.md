@@ -264,3 +264,24 @@ Vennlig hilsen
 Axel Odhner
 Matstrumpor.no, Stonebite Ecom AB
 ```
+
+## Utskickslogg
+
+Skickade 2026-09-29 runt 12:20 UTC (14:20 svensk tid) från axel.odhner@stonebite.org via
+Gmail. Ett mail per mottagare, ingen kopia eller hemlig kopia. Texterna är exakt de ovan.
+
+| # | Profil | Mottagare | Gmail-id |
+|---|---|---|---|
+| 1 | Kathrine Sørland | sebastian.r@plan-b.no | 1a0ed1a51911162a |
+| 2 | Sandra Lyng | sandra@sandralyng.no | 1a0ed1a644f4e98e |
+| 3 | Marna Haugen | Marnahaugen.no@gmail.com | 1a0ed1a79334e0d8 |
+| 4 | Henriette Steenstrup | Julianne@brandpeople.no | 1a0ed1a8da11db56 |
+| 5 | Tiril Sjåstad Christiansen | karianne@maxsocial.no | 1a0ed1afc851e557 |
+| 6 | Linn Skåber | mail@viggolund.no | 1a0ed1b848ab2e4f |
+| 8 | Jannecke Weeden | elisabeth.saether@egmont.com | 1a0ed1bd4139dab3 |
+| 9 | Martha Leivestad | hei@baff.no | 1a0ed1c3fd3c5c4a |
+| 10 | Else Kåss Furuseth | Kristin@bookingogsant.no | 1a0ed1c73a7fef76 |
+
+Nummer 7, Charlotte Hvide Smith, är inte skickat. Det går till samma Sebastian som Kathrine
+och skickas fredag 2 oktober. Påminnelsen enligt mallen skickas måndag 5 oktober till dem
+som inte svarat (fyra vardagar).
