@@ -1,0 +1,539 @@
+{
+ "agent": "AN — det som sitter på objektet, runda 2",
+ "datum": "2026-09-29",
+ "sammanfattning": "Linsen sökte det som SITTER PÅ det dyra objektet från uppställning/upptagning (1,6 v) och MC-avställning (2,3 v) — stöd, lås, hållare, propp, mätare, inte överdrag. Golvet lästes FÖRE AliExpress (PriceRunner via curl 30 sökningar, Watski, Hjertmans, getcamping; Biltema/Jula/ATVhuset = oläst). Utfall: strukturen 'stöd/hållare' är i praktiken uttömd efter motorstödet och däckvaggorna — spolöron (Seatec 109/Plastimo 179), fenderhållare/fenderkrok (1852/Seatec 10+ varianter), avfuktare (1852 Marine 84), sidostödsplatta (Oxford 140, 10 varianter), ATV-vinschskydd (Robship 179/B&S 219/365) är alla golv utan ankare ≥ 1,6×; spolpåse, sågfäste till ATV, takluckskudde 40×40 och skoterhjul har ingen leverantör på Ali; skegskydd kostar 44–92 USD; MC-avställningen gav noll (samma som AF 26/9). Tre kandidater levereras, alla hårda delar som sitter på husbilen/båten hela vintern: invändig 3-delad termomatta till Ducato-hytten (syskon i form till Termoskyddet, golv Vanheim/Brunner 796 med Hindermann-ankare 1 596 = H06), husbilens spegelhuvar i par (ingen svensk kopia i formen, Milenco-ankare 1 116 = H06) och kölskyddslisten som limmas på det torra skrovet i vinter (KeelShield-ankare 2 069–3 269, ingen kopia under). OBS: två av tre är skyddsformer (matta, kåpa) — rank.py:s formtak får avgöra; kölskyddet är en list (form annat). Två listningar som såg invändiga ut (1005013082113660, 1005012564726014) visade sig vara UTVÄNDIGA i heron = K0 mot Termoskyddet och ströks.",
+ "kandidater": [
+  {
+   "koncept_id": null,
+   "namn_sv": "Husbilshyttens invändiga termomatta, 3 delar",
+   "objekt": "Husbil — hytt och vindruta",
+   "form": "skydd",
+   "form_kommentar": "invändig isolermatta med sugkoppar (vindruta + två dörrfönster) — objekt.json:s 'nästa fas' på samma objekt som Termoskyddet; skyddsform, räknas mot formtaket",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploitation",
+   "hypotes_id": "H06",
+   "vinnarlikhet": {
+    "likast": "Termoskyddet för Husbil 211 × 171 cm",
+    "delade_variabler": [
+     "exakt samma objekt och ägare som Termoskyddet (REAL_WINNER 37 358 / 146 / 2,32) — husbil 300 tkr–1,5 Mkr, ägare 55+ småhus",
+     "deadline uppställning 1,6 v (4 av 5 dömda vann på 'uppställning')",
+     "objekt_ute = ja, dyr > 10 tkr",
+     "prisband 500–999",
+     "ägarkänd parameter (Ducato/Boxer/Jumper 2006–2022 = den vanligaste husbilsbasen; ägaren vet vilken bil han har)",
+     "material klass 1 (leverantörsfoto på husbil i kontext)"
+    ],
+    "avvikelser": [
+     "form invändig i stället för utvändig — samma kund kan redan ha köpt Termoskyddet (kannibalisering, inte dubblett)",
+     "golvet ligger UNDER oss: Vanheim/Brunner invändig Ducato 796 kr (getcamping 2026-09-29) mot vårt 799 — bara Hindermann Travel 1 596 och Four Seasons 1 084 är ankare (H06-villkor: en kopia under ankare ≥ 1,6× → 2,0×)",
+     "sugkoppar på 3 delar = mer pill än det utvändiga skyddet som bara hakas över dörrarna",
+     "old way = köpt produkt som fungerar (gardin/rullgardin/utvändigt skydd) snarare än improvisation"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "uppstallning_husvagn",
+    "deadline_typ": "uppställning",
+    "veckor_kvar": 1.6,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005009777300988",
+    "url": "https://www.aliexpress.com/item/1005009777300988.html",
+    "pris_usd": 29.39,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-29T07:08:46Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-29/v3/bilder/1005009777300988.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "passform Fiat Ducato / Peugeot Boxer / Citroën Jumper (X250/X290) — en modellfamilj, 3 delar + 20 sugkoppar + förvaringspåse; syskon: 1005007843526110 (29,09 USD, 'Ducato 2006-2022, 7 lager', LIVE 07:08:43Z — heron ser ut som ett Hindermann-katalogfoto, använd inte) och 1005009570479634 (36,89 USD, sökträff, ej öppnad)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron är tvådelad: husbilen framifrån med alla tre mattorna på insidan (dörrarna öppna så sidodelarna syns) + packshot av de tre delarna, sugkopparna och påsen — textfri, men collaget bör beskäras till husbilsfotot"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Vanheim Invändig Isolermatta Fiat Ducato / Brunner Invändig Isolermatta Fiat Ducato (getcamping.se)",
+     "pris_sek": 796,
+     "url": "https://www.getcamping.se/search?q=isolermatta",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Hindermann Travel Invändig Isolermatta Fiat Ducato (getcamping.se 2026-09-29); Hindermann Four Seasons Isolermatta Husbil 1 084; Hindermann Thermal Window Mat Classic 2 396",
+     "pris_sek": 1596,
+     "url": "https://www.getcamping.se/search?q=termomatta",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 2.0,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "getcamping.se ('isolermatta' 8 produkter, 'termomatta' 8 produkter: invändig Ducato Vanheim 796, Brunner 799, Iveco Daily 796, Hindermann Travel 1 596, Four Seasons 1 084/1 076; utvändig Smart Living 596, Vanheim 1 199)",
+     "pricerunner.se ('isolermatta husbil': Hindermann Four Seasons VW T5 1 675, CampOut Ford Transit 799; 'termomatta husbil': Carbest Isoflex Transit 737; 'vindruteskydd husbil invändig': bara bilsnöskydd 515–635)",
+     "campingvaruhuset.se / campingshopen.se (oläst i dag; objekt.json 09-10: WeCamp utvändig 793, Hindermann termomatta Ducato 1 700)",
+     "biltema.se / jula.se (oläst)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     382,
+     467
+    ],
+    "pris_sek": 799,
+    "brutto_sek": [
+     332,
+     417
+    ],
+    "be_cpa_sek": [
+     332,
+     417
+    ],
+    "be_roas": 2.1,
+    "flerkop": false,
+    "returrisk": "medel — passar bara Ducato-basen (X250/X290 2006–2022); Sprinter-/Transit-ägare måste sorteras bort i annonsen"
+   },
+   "meta_tanke": {
+    "hook": "Frost på insidan av husbilsrutan?",
+    "objekt_i_bild": "husbilens hytt framifrån, silvermattan täcker vindruta och dörrfönster inifrån",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "mattan sätts på inifrån utan stege — ingen kan stjäla den och instrumentbrädan ligger i skugga hela vintern"
+   },
+   "varfor": "Samma objekt, ägare och datum (uppställning 1,6 v) som Termoskyddet — kontots femte största vinnare — i den invändiga formen objekt.json redan pekat ut som nästa fas; golvet 796 kr ligger under oss men Hindermann 1 596 ger 2,0× (H06, samma mönster som ATV-kapellet). Levereras som linsens enda matta/huv-form.",
+   "huvudrisk": "Kannibaliserar Termoskyddet hos samma kund och kräver 20 sugkoppar på tre delar — och bara Ducato-basen passar.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 3,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 14,
+    "K2": 13,
+    "K3": 8,
+    "K4": 7,
+    "K5": 7,
+    "K6": 10,
+    "K7": 6,
+    "K8": 7,
+    "K9": 4,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (grep termo/husbil: 'Termoskydd Husbil 211 × 171 cm – Utvändigt och Mörkläggande' 559 = samma objekt, UTVÄNDIG form; 'Husbilens Tak-AC-Huv' 449 och 'Husbilens Cykelhållarskydd' 669 = andra delar) — syskon i form, inte dubblett",
+     "koncept.py sok 'windscreen'/'blind' → K0181 (Ducato thermal, kandidat, SOKTRAFF 09-10, aldrig levererad), K0182 (Internal Thermal Blind Set VW T5, kandidat, aldrig levererad), K0150/K0178 kandidater — ingen levererad, inget svar",
+     "kontot 7 d: ej läst (linsen rör inte Meta)",
+     "två listningar med 'blinds' i titeln (1005013082113660 13,05 USD, 1005012564726014 20,55 USD) öppnades och heron visade UTVÄNDIGT skydd = K0 mot Termoskyddet — strukna"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005009777300988.html",
+    "https://www.aliexpress.com/item/1005007843526110.html",
+    "https://www.getcamping.se/search?q=isolermatta",
+    "https://www.getcamping.se/search?q=termomatta",
+    "https://www.pricerunner.se/search?q=isolermatta%20husbil"
+   ]
+  },
+  {
+   "koncept_id": null,
+   "namn_sv": "Husbilens spegelhuvar i par, Ducato",
+   "objekt": "NYTT: Husbilens backspeglar (Ducato-basen) — kåporna som får stenskott, is och grenar",
+   "form": "skydd",
+   "form_kommentar": "hård ABS-kåpa som knäpps över spegelhuset (clip-on, inga verktyg) och sitter kvar året runt; skyddsform — räknas mot formtaket",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "H_VISUELL_NYHET",
+   "slot": "exploitation",
+   "hypotes_id": "H06",
+   "vinnarlikhet": {
+    "likast": "Termoskyddet för Husbil 211 × 171 cm",
+    "delade_variabler": [
+     "samma ägare och samma bil som Termoskyddet (husbil på Ducato-bas, ägare 55+)",
+     "objekt_ute = ja, dyr > 10 tkr (ett Ducato-spegelhus kostar 2–4 tkr att byta; PriceRunner: OEM-kåpor 54–246 kr men hela spegeln är verkstadsjobb)",
+     "ankare ≥ 1,6× i fackhandeln (Milenco Skyddskåpa Backspegel 1 116 kr, getcamping) och ingen kopia i formen på PriceRunner",
+     "ägarkänd parameter (lång/medellång arm, vit/svart)",
+     "prisband 500–999"
+    ],
+    "avvikelser": [
+     "hotet är inte uppställningen utan året runt (grenar, parkeringsskador, is som slår mot kåpan) — datumet är svagt: sasong 1",
+     "old way = ingenting (de flesta kör utan) — inte en svikande presenning",
+     "H_VISUELL_NYHET som sekundär: formen är okänd i svenskt flöde (Milenco säljs bara i fackhandel) — H10-test snarare än ren H01",
+     "montering = ja, fast utan verktyg (knäpps på)"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "uppstallning_husvagn",
+    "deadline_typ": "uppställning",
+    "veckor_kvar": 1.6,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005010581700454",
+    "url": "https://www.aliexpress.com/item/1005010581700454.html",
+    "pris_usd": 28.59,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-29T07:07:42Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-29/v3/bilder/1005010581700454.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "1 par vita, 'Long Arm' (Ducato/Boxer/Relay X250/X290); syskon: 1005012811122466 (27,79 USD, svart par 'Long Medium Arm 2006–2019', LIVE 07:07:45Z — heron full av text/logga, använd inte), 1005012231511914 (20,02 USD, sökträff, styck?), 1005012725837476 (22,65 USD 'Short Arm', sökträff)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron: packshot av de två vita kåporna till vänster + foto av kåpan monterad på en vit husbils spegel till höger — textfri, i kontext, ser ut som en riktig bildel"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen i formen — PriceRunner 'backspegelskydd husbil' / 'spegelskydd husbil' / 'spegelskydd ducato' ger bara OEM-ersättningskåpor (Alkar/Van Wezel 54–246 kr = reservdelen, inte ett skydd ovanpå) och spegelfilm 135–155",
+     "pris_sek": null,
+     "url": "https://www.pricerunner.se/search?q=spegelskydd%20ducato",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "Milenco Skyddskåpa Backspegel (getcamping.se 2026-09-29)",
+     "pris_sek": 1116,
+     "url": "https://www.getcamping.se/search?q=spegel",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.6,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "getcamping.se ('spegel': Milenco Skyddskåpa Backspegel 1 116, Milenco Grand Aero-speglar 996–1 276 = husvagnsspeglar, annan sak)",
+     "pricerunner.se (3 sökningar: inga skyddskåpor, bara OEM-kåpor och film)",
+     "campingvaruhuset.se / biltema.se / jula.se (oläst)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     372,
+     455
+    ],
+    "pris_sek": 699,
+    "brutto_sek": [
+     244,
+     327
+    ],
+    "be_cpa_sek": [
+     244,
+     327
+    ],
+    "be_roas": 2.4,
+    "flerkop": false,
+    "returrisk": "medel — lång/medellång/kort arm måste väljas rätt (ägaren ser det på sin spegel), passar bara Ducato-basen"
+   },
+   "meta_tanke": {
+    "hook": "Vad kostar en ny husbilsspegel?",
+    "objekt_i_bild": "husbilens spegel med den vita kåpan påknäppt",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "kåpan knäpps på med händerna, grenen/isen tar kåpan i stället för spegelhuset"
+   },
+   "varfor": "Hård del som sitter på husbilen året runt, på samma bil som Termoskyddet: ingen svensk kopia i formen (PriceRunner 0), Milenco 1 116 kr som synligt ankare (1,6× — H06-tröskeln), textfri hero i kontext och en 3-sekundersbild (kåpan på, spegeln hel). Svagt datum — levereras som H06/H10-test, inte som datumdriven vinnare.",
+   "huvudrisk": "Inget hårt datum och ett hot (grenar, parkering) som är svårt att visa på 3 s — plus arm-varianten som kan ge fel köp.",
+   "konfidens": "LÅG",
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 3,
+    "efterfragan": 1,
+    "lucka": 2,
+    "ekonomi": 1,
+    "sasong": 1,
+    "leverantor": 2,
+    "nyhet": 3,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 12,
+    "K3": 9,
+    "K4": 9,
+    "K5": 7,
+    "K6": 8,
+    "K7": 7,
+    "K8": 7,
+    "K9": 3,
+    "K10": 3,
+    "K11": 1,
+    "K12": 0
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (grep spegel/husbil: inga spegeldelar; Husbilens Tak-AC-Huv, Cykelhållarskydd, Termoskydd = andra delar)",
+     "koncept.py sok 'spegel'/'mirror' → 0 träffar",
+     "kontot 7 d: ej läst (linsen rör inte Meta)"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005010581700454.html",
+    "https://www.aliexpress.com/item/1005012811122466.html",
+    "https://www.getcamping.se/search?q=spegel",
+    "https://www.pricerunner.se/search?q=spegelskydd%20ducato",
+    "https://www.pricerunner.se/search?q=backspegelskydd%20husbil"
+   ]
+  },
+  {
+   "koncept_id": null,
+   "namn_sv": "Kölskyddslisten — limmas på i vinter",
+   "objekt": "NYTT: Båtens köl vid trailerrampen och stranden — slitytan som limmas medan skrovet står torrt",
+   "form": "annat",
+   "form_kommentar": "självhäftande polymerlist (kölskydd/keel guard) med primer och skrapa — ingen huv/överdrag; monteras på TORRT skrov, dvs. under vinteruppställningen",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "C_LAGA_ISTALLET",
+   "slot": "exploitation",
+   "hypotes_id": "H06",
+   "vinnarlikhet": {
+    "likast": "Båtmotorskyddet 420D",
+    "delade_variabler": [
+     "samma ägare och samma objekt (trailerbåt 100 tkr+) som Båtmotorskyddet (REAL_WINNER 63 406 / 269 / 2,63) och Motorhöljet",
+     "objekt_ute = ja, dyr > 10 tkr",
+     "deadline upptagning 1,6 v — listen kräver torrt, rent skrov, alltså båten på land",
+     "ankare ≥ 1,6× i fackhandeln (KeelShield 1,22 m 2 069, 1,83 m 3 269, Plastimo 2 549 — Watski säljer Keelshield) och ingen kopia under oss på PriceRunner",
+     "ägare 55+ småhus, prisband 500–999"
+    ],
+    "avvikelser": [
+     "form list/annat (0 av 15 dömda 'annat' vann — men det är en del som limmas på skrovet, inte en pryl på hyllan)",
+     "montering = ja: rengöring, primer, limma (självhäftande, inga verktyg) — vinnarna kräver ingen montering",
+     "old way = ingenting / gelcoat-spackel på våren (C_LAGA_ISTALLET) — inte en svikande presenning",
+     "listens längd står inte i titeln (ej mätt) — KeelShield säljs per fotlängd, vår måste anges",
+     "aluminiumbåtar (Linder/Buster, mycket vanliga i Sverige) har ett eget syskon 1005013070329013 (25,49 USD, 1 m, svart)"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "batupptagning",
+    "deadline_typ": "upptagning",
+    "veckor_kvar": 1.6,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005012725075740",
+    "url": "https://www.aliexpress.com/item/1005012725075740.html",
+    "pris_usd": 25.69,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-29T07:08:18Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-29/v3/bilder/1005012725075740.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "vit list med primer + skrapa ('Complete Installation Kit'), längd står inte i titeln (ej mätt — måste frågas leverantören); syskon: 1005013070329013 (25,49 USD, svart 1 m 'For Aluminum Boat', LIVE 07:08:23Z, hero sedd: svart rulle med rött skyddspapper) och 1005012309306157 (9,75 USD, 1 m med primer, LIVE 07:08:21Z, ej hero); 1005012950044274 (49,24 USD, sökträff) för dyr",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron är en textfri packshot på vitt: vit list i rulle med rött skyddspapper, primerkudde och gul skrapa — ingen båt i bild; creativen måste byggas på egen bild av listen på en köl (skrapmärken bredvid)"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen kopia under oss — PriceRunner 'kölskydd båt' / 'keelguard' / 'kölskydd' ger bara KeelShield/Plastimo 2 069–5 282 och båtpresenningar",
+     "pris_sek": null,
+     "url": "https://www.pricerunner.se/search?q=k%C3%B6lskydd%20b%C3%A5t",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "KeelShield Kölskydd 1,22 m svart (PriceRunner 2026-09-29); KeelShield 1,83 m 3 269; Plastimo Keelshield 6\" 1,83 m 2 549; Watski för Keelshield svart/vit (pris ej läst ur sidan)",
+     "pris_sek": 2069,
+     "url": "https://www.pricerunner.se/pl/630-3206966914/Baattillbehoer/KeelShield-Keelshield-Koelskydd-1-22Msvart-priser",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 2.6,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se ('kölskydd båt' 20 träffar: Plastimo 2 549, KeelShield 2 069; 'keelguard' 15: KeelShield 2 069/3 269/5 282, KeelGuard SkegGuard 2 254; 'kölskydd': samma)",
+     "watski.se ('kölskydd': Keelshield Kölskydd Svart/Vit i sortiment, pris ej utläst ur sidan; 'keelguard': ingen träff)",
+     "hjertmans.se ('kölskydd': inget i svaret)",
+     "biltema.se / jula.se (oläst)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     334,
+     408
+    ],
+    "pris_sek": 799,
+    "brutto_sek": [
+     391,
+     465
+    ],
+    "be_cpa_sek": [
+     391,
+     465
+    ],
+    "be_roas": 1.95,
+    "flerkop": false,
+    "returrisk": "medel — längden är okänd i listningen och skrovformen (V-botten glasfiber vs aluminium) styr vilken list som passar; priset förutsätter ≥ 1,5 m"
+   },
+   "meta_tanke": {
+    "hook": "Skrapmärken under fören efter sommaren?",
+    "objekt_i_bild": "båtens köl på trailern med listen påsatt, skrapmärkena bredvid",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "listen tar rampen och stenarna i stället för gelcoaten — limmas på nu när skrovet är torrt"
+   },
+   "varfor": "Del som sitter på det dyraste objektet (skrovet) och bara kan sättas dit när båten står torr på land — alltså exakt nu, upptagning 1,6 v; ingen svensk kopia under oss och KeelShield 2 069–3 269 som ankare (2,6×). Samma ägare som Båtmotorskyddet och Motorhöljet.",
+   "huvudrisk": "Kräver rengöring + primer + limning på ett 100-tusenkronorsskrov (montering = ja är förlorarsignal) och listens längd är inte mätt.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 3,
+    "meta_creative": 1,
+    "efterfragan": 1,
+    "lucka": 3,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 13,
+    "K2": 10,
+    "K3": 8,
+    "K4": 10,
+    "K5": 7,
+    "K6": 8,
+    "K7": 6,
+    "K8": 6,
+    "K9": 3,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (grep köl/keel/skrov/båt: Båthuv 989, Båtskydd 1 049, Båtmotorskydd, Motorhölje, Spolklämma, Motorlås, Förtöjningslina, Anti-Slip Tejp — inget på skrovet)",
+     "koncept.py sok 'köl'/'keel'/'skrov' → 0 träffar; 'trailer' → K0009/K0015 navskydd (nej), K0052 stötta (ja), K0336 motorstöd (ja) — andra delar",
+     "kontot 7 d: ej läst (linsen rör inte Meta)"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012725075740.html",
+    "https://www.aliexpress.com/item/1005013070329013.html",
+    "https://www.aliexpress.com/item/1005012309306157.html",
+    "https://www.pricerunner.se/search?q=k%C3%B6lskydd%20b%C3%A5t",
+    "https://www.pricerunner.se/search?q=keelguard",
+    "https://www.watski.se/search?q=k%C3%B6lskydd"
+   ]
+  }
+ ],
+ "strukna": [
+  {
+   "namn": "Utombordarens spolöron/spolmuff (upptagning 1,6 v)",
+   "skal": "Golv i exakt form utan ankare ≥ 1,6×: Seatec Spolmuff 1852 Marine 109 kr, Osculati Motorspolare 119, Plastimo Spolmuff 179 (PriceRunner 2026-09-29; 'spolöron' 0 träffar, 'spolmuff' 20). Ali flush kits 5–15 USD. K0038 kandidat kvar. Uppdragets villkor (bara H06 med ankare) uppfylls inte."
+  },
+  {
+   "namn": "Utombordarens spolpåse (flush bag) för vinterkonservering",
+   "skal": "Ingen leverantör: tre Ali-fraser ('outboard motor flushing bag', 'outboard engine flush bag winterize', 'outboard motor flush bag') gav bara riggstrumpor 15–28 USD, spolkit och motorvagnar. Svensk fackhandel har inte formen heller (Watski/Hjertmans/PriceRunner 0) — lucka utan vara, till backloggen."
+  },
+  {
+   "namn": "Utombordarens propellerskydd i skum / riggväska (annan form än väskan)",
+   "skal": "Ali 'outboard lower unit cover propeller bag' och 'outboard propeller cover storage': Flicker EVA 70,19 USD (samma som ströks 09-24), propellernät 24,49 USD (för elmotor), propellerburar 52–123 USD — inget under 20 USD. PriceRunner 'propellerskydd': Seatec bur 3 009 + drönarskydd. K0/aterupptas_om oförändrat."
+  },
+  {
+   "namn": "Utombordarens skegskydd i rostfritt (skeg guard)",
+   "skal": "Ali 44,49–92,69 USD per modell (Mercury/Yamaha/Evinrude) → landad 640–1 340 → pris ≥ 1 499; modellspecifikt = måste mäta; skruvas fast. PriceRunner 'skegskydd'/'skeg guard' 0 i formen (KeelGuard SkegGuard 2 254 finns som ankare). Sökt, ej öppnad."
+  },
+  {
+   "namn": "Båtens fenderhållare / fenderkrok (H08)",
+   "skal": "Sortiment i fackhandeln: PriceRunner 'fenderhållare' 10+ varianter 1852 Marine/Seatec/Osculati 529–1 479; 'fenderkrok' 60–705 (Seatec, Roca, 1852) — 20+ i formen, golvregeln fäller. Inte sökt på Ali."
+  },
+  {
+   "namn": "Båtens avfuktarpåsar i storformat (H08)",
+   "skal": "Kedjeform: PriceRunner 'avfuktare båt' ger 1852 Marine Luftavfuktare 84 kr, Renkforce 750, Arida 2 170 — Absodry/Biltema/Jula-sortiment (oläst 404 men känt). Inte sökt på Ali."
+  },
+  {
+   "namn": "Båttrailerns vinschrems-/vajerskydd",
+   "skal": "Ingen form att söka: Vinschrem 629 redan ACTIVE i katalogen; PriceRunner 'vinschskydd' ger Robship 179/413, B&S vinschkåpa 219, elektrisk 395 = kåpor för vinschen (se ATV nedan). Inte sökt på Ali."
+  },
+  {
+   "namn": "Husvagnens fönster-/luckspärrar mot vind",
+   "skal": "PriceRunner 'fönsterspärr husvagn'/'fönsterstopp husvagn': bara barnsäkerhetsspärrar 99–225 och en marknadsplats-'Window Catch For Polyplastic x2' 159 (= originalhaken). Vid uppställning är fönstren stängda — inget hot att visa, lågt upplevt värde. Inte sökt på Ali."
+  },
+  {
+   "namn": "Husbilens invändiga vindruteskydd 1-del (1005013082113660 13,05 USD; 1005012564726014 20,55 USD)",
+   "skal": "Båda öppnade (07:07:37Z/07:07:40Z) och heron sedd: UTVÄNDIGA termoskydd som hakas över dörrarna = samma sak som 'Termoskydd Husbil 211 × 171 cm' 559 kr ACTIVE i katalogen. K0 på sak. Den invändiga 3-delade levererad i stället."
+  },
+  {
+   "namn": "Husbilens/husvagnens avloppstank-propp i vinter, torkarbladslyft",
+   "skal": "Tillbehör under 30 kr i landad — lågt upplevt värde (K8) och ingen bild att bygga creative på. Inte sökt."
+  },
+  {
+   "namn": "Husvagnens takluckskudde (isolerkudde i Heki 40×40, invändigt)",
+   "skal": "Ingen leverantör i europeiskt mått: Ali 'caravan roof vent insulation cushion 40x40' ger bara bilisolering och en 14×14-tums US-taklucka 75,89 USD. PriceRunner 'takluckskudde'/'isolerkudde taklucka' 0 i formen; getcamping 'takluck' 8 produkter (fläktar, Beisel överdrag 636) — ingen kudde. Takluckehuven (utvändig) levererades 09-11 som 2-pack."
+  },
+  {
+   "namn": "MC:ns sidostödsplatta (kickstand pad)",
+   "skal": "Sortiment: PriceRunner 'sidostödsplatta mc' 19 träffar (Oxford MagniMate 140, INF 85, Tlily 290, Maxpower 507 …) = golv i exakt form utan ankare; avställd MC står inne på betong och behöver ingen platta. Inte sökt på Ali."
+  },
+  {
+   "namn": "MC:ns tanklock-/sadeldammskydd inne, kedjeoljare-set, avgasplugg, batteriladdare",
+   "skal": "Dammskydd: MC-Kapell 349 + MC Sätesöverdrag Camo 289 ACTIVE (K0, samma som AF 26/9). Kedjeoljare/underhållsladdare: kedjeform (Motul/CTEK, Biltema/Jula) och Solcellsladdaren K0173 launchad. Avgasplugg: PriceRunner bara Akrapovic Wash Plug 179 (tvättplugg), 5-dollarsvara utan K8. MC-avställningen ger noll — andra linsen i rad."
+  },
+  {
+   "namn": "ATV:ns vinschskydd/vinschkåpa (älgjakt 1,3 v)",
+   "skal": "Golv i exakt form utan synligt ankare: PriceRunner 'vinschskydd' — Robship 179, Berger & Schröter Vinschkåpa 219, 'Atv Utv Vinschskydd Kabelstopp' 365, elektrisk 395; 'warn vinschskydd' 0 träffar. K0064 kandidat kvar. Inte sökt på Ali."
+  },
+  {
+   "namn": "ATV:ns sågfäste / motorsågshållare på racket (vedsäsong 2,3 v, älgjakt)",
+   "skal": "Ali 'ATV chainsaw holder mount' gav bara vägghängare 8–14 USD och en 'ATV Chainsaw Mount' som är en garagehängare (39,13 USD) — ingen rackmonterad form (Kolpin Saw Press-typ). PriceRunner 'motorsågshållare atv'/'sågfäste atv': bara Husqvarna-reservdelar och sågbockar. Vapenhållaren ströks redan 09-24 (AC: ATVhuset 19 produkter)."
+  },
+  {
+   "namn": "ATV:ns handtagsvärme/muffar, däcktrycksmätare, gräsklipparens batteriladdare",
+   "skal": "Uteslutna av uppdraget (kedja) och K0: 'MC Handvärmare – Vindtäta Greppöverdrag' 369 och 'Digital Däckdjupsmätare' 169 ACTIVE i katalogen. Inte sökta."
+  },
+  {
+   "namn": "Snöskoterns skidhjul/skotervagn (första snö Norrland 3,7 v)",
+   "skal": "Ali 'snowmobile ski wheels' ger fatbike-hjul, isrivare 35–39 USD och tomgångshjul — ingen skidhjulsform. PriceRunner 'skoterhjul'/'skidhjul snöskoter' ger sparkcykel- och rullskidhjul. Isrivarna: sitter på skotern i drift, inte vid avställning, och Skogma-golvet är oläst — inte levererad."
+  },
+  {
+   "namn": "Elverkets hjulsats/handtag",
+   "skal": "Stålram + två hjul väger > 4 kg och bultas på ramen (montering); elverket står oftast inne. Inte sökt — uppdragets viktgräns."
+  },
+  {
+   "namn": "Husvagnens dragkrokslås, trailerns kulhandske, robotklipparen, spabadet, poolen",
+   "skal": "Uteslutna av uppdraget: kedja (lås), sett innan (kulhandske, SIGNALER §sett innan), AG struck (robot), REAL_LOSER (spabad 2 075 / 0), stängd (pool). Inte sökta."
+  },
+  {
+   "namn": "Utombordarens riggstrumpa (rigging sleeve, 15–17 USD)",
+   "skal": "Dök upp i spolpåse-sökningen: skyddar reglagekablarna året runt, ingen svensk kopia (PriceRunner 'riggskydd utombordare' 0) — men ännu en skyddsform (strumpa) utanför linsens enda huv-plats och inget datum. Till backloggen, inte levererad."
+  }
+ ]
+}
