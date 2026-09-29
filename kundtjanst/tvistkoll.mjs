@@ -53,8 +53,37 @@ const OPPEN = ['needs_response', 'under_review'];
  * #4845, båda chargebacks) låg utanför gränsen och nämndes inte. Ett larm som
  * ropar om det som är gjort och tiger om det som inte är, slutar läsas.
  * Samma regel står i `kundtjanst/DASHBOARD-TVISTER.md` → Kända luckor punkt 3.
+ *
+ * ⚠️ **Men statusen var fel signal, och det kostade 509 kr.** Rättat 2026-09-29.
+ * Antagandet ovan — "`under_review` betyder att något redan är inskickat" — är
+ * FALSKT. Tvist `17751572829` (order `17584203399517`, 508,99 kr, `general`)
+ * stod `inquiry` / `under_review` med deadline 2026-09-26 och
+ * **`evidence_sent_on: null`**: ingenting hade någonsin skickats in. Den låg
+ * utanför larmet i flera dygn just för att den var `under_review`, och
+ * 2026-09-29 är den `chargeback` / `needs_response` med ny deadline 2026-10-10.
+ * Pengarna är tagna.
+ *
+ * Det som avgör om VI fortfarande äger tvisten är alltså inte statusen utan
+ * **`evidence_sent_on`**: är den tom har ingen svarat, oavsett vad statusen
+ * säger. Är den satt är tvisten besvarad och VA:n ska inte röra den — vilket
+ * också är exakt det 2026-09-23-larmet gjorde fel. Båda lärdomarna ryms i en
+ * regel, och `obesvarad()` nedan är den.
  */
 const BEHOVER_SVAR = ['needs_response'];
+
+/**
+ * Väntar tvisten på VÅRT svar? Öppen status OCH inget bevis inskickat. Ren.
+ *
+ * `evidence_sent_on` saknas i äldre data (fältet lästes inte före 2026-09-28) —
+ * då faller domen tillbaka på statusen, som förut, så ingen gammal fixtur
+ * börjar larma om något som är gjort.
+ */
+export function obesvarad(t) {
+  if (!OPPEN.includes(t?.status)) return false;
+  if (t?.bevisSkickat) return false;
+  if (t?.bevisSkickat === undefined) return BEHOVER_SVAR.includes(t?.status);
+  return true;
+}
 
 /** Kalenderdagar kvar till deadline. Ingen deadline: null. Ren. */
 export function dagarKvar(deadline, nu = new Date()) {
@@ -103,7 +132,7 @@ export function klockslag(tidpunkt) {
  */
 export function bradskande(lista = [], { nu = new Date(), grans = LARMGRANS_DAGAR } = {}) {
   return lista
-    .filter((x) => BEHOVER_SVAR.includes(x.status))
+    .filter(obesvarad)
     .map((x) => ({ ...x, kvar: dagarKvar(x.evidensSenast, nu), timmar: timmarKvar(x.evidensSenastTid, nu) }))
     // En ÖPPEN CHARGEBACK larmas ALLTID, oavsett hur många dagar som är kvar.
     // Mätt 2026-09-23: #4914 (348 kr, 7 dagar kvar) var osynlig i både

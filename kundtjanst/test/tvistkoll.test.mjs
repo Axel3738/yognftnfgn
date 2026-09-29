@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 import { join, dirname } from 'node:path';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { dagarKvar, timmarKvar, klockslag, bradskande, narText, renderaLarm, kollaBrand, LARMGRANS_DAGAR, TVISTFONSTER_DAGAR } from '../tvistkoll.mjs';
+import { dagarKvar, timmarKvar, klockslag, obesvarad, bradskande, narText, renderaLarm, kollaBrand, LARMGRANS_DAGAR, TVISTFONSTER_DAGAR } from '../tvistkoll.mjs';
 import { normaliseraTvist } from '../shopify.mjs';
 import { brandUrEgenfil } from '../brands.mjs';
 import { lasYaml } from '../../factory/yaml.mjs';
@@ -51,10 +51,13 @@ test('bradskande tar bara tvister som väntar på vårt svar — avgjorda rör i
 });
 
 // Larmet 2026-09-23 sa "3 open disputes need evidence ... 1 already past the
-// due date" om #5122, #4446 och #4407 — alla tre `under_review`, alltså redan
-// besvarade och låsta av Shopify. En förfallen `under_review` är det värsta
-// fallet: den läser som ett missat ärende och är i själva verket avklarat.
-test('en under_review med passerad deadline larmas ALDRIG som försenad', () => {
+// due date" om #5122, #4446 och #4407 — alla tre `under_review`. En förfallen
+// `under_review` som ÄR besvarad läser som ett missat ärende och är avklarad.
+// ⚠️ De två testerna här nedanför saknar `bevisSkickat` med flit: så ser gammal
+// data ut (fältet lästes inte före 2026-09-28), och då ska domen falla tillbaka
+// på statusen precis som förut. Att statusen ensam INTE räcker för färsk data
+// bevisas av "en under_review som ingen svarat på" längre ner.
+test('en under_review utan avläst bevisfält larmas inte som försenad', () => {
   const lista = [
     tvist({ id: 'besvarad-sen', status: 'under_review', evidensSenast: '2026-09-10' }),
     tvist({ id: 'obesvarad-sen', status: 'needs_response', evidensSenast: '2026-09-10' }),
@@ -329,4 +332,36 @@ test('larmet säger aldrig "submit on the due date"', () => {
   assert.doesNotMatch(text, /^4\. Submit before the due date/m);
   assert.match(text, /01:00 in the night/);
   assert.match(text, /day BEFORE the due date/);
+});
+
+// ------------------------------------- bevisfältet, inte statusen, avgör
+// Tvist 17751572829 (order 17584203399517, 508,99 kr, `general`) stod
+// `inquiry` / `under_review` med deadline 2026-09-26 och `evidence_sent_on:
+// null` — ingen hade svarat. Statusfiltret höll den utanför larmet i flera
+// dygn, och 2026-09-29 var den en chargeback med deadline 2026-10-10. Pengarna
+// är tagna. Statusen sa "någon har svarat"; bevisfältet sa sanningen.
+
+test('en under_review som ingen svarat på larmas — det är den som blir en chargeback', () => {
+  const lista = [
+    tvist({ id: 'ingen-svarade', status: 'under_review', bevisSkickat: null, evidensSenast: '2026-09-16' }),
+    tvist({ id: 'besvarad', status: 'under_review', bevisSkickat: '2026-09-15T07:10:14+02:00', evidensSenast: '2026-09-16' }),
+  ];
+  assert.deepEqual(bradskande(lista, { nu: NU }).map((x) => x.id), ['ingen-svarade']);
+});
+
+test('ett inskickat bevis tystar tvisten även när statusen står kvar på needs_response', () => {
+  // Skickat men Shopify har inte hunnit flytta statusen: VA:n ska inte göra om det.
+  const lista = [tvist({ id: 'klar', status: 'needs_response', bevisSkickat: '2026-09-13T09:00:00+02:00' })];
+  assert.deepEqual(bradskande(lista, { nu: NU }), []);
+});
+
+test('obesvarad följer bevisfältet, med statusen som reserv för gammal data', () => {
+  assert.equal(obesvarad({ status: 'needs_response', bevisSkickat: null }), true);
+  assert.equal(obesvarad({ status: 'under_review', bevisSkickat: null }), true);
+  assert.equal(obesvarad({ status: 'under_review', bevisSkickat: '2026-09-28T07:10:14+02:00' }), false);
+  assert.equal(obesvarad({ status: 'won', bevisSkickat: null }), false, 'avgjord är avgjord');
+  assert.equal(obesvarad({ status: 'lost', bevisSkickat: null }), false);
+  // Gammal data utan fältet: statusen får avgöra, som före 2026-09-29.
+  assert.equal(obesvarad({ status: 'under_review' }), false);
+  assert.equal(obesvarad({ status: 'needs_response' }), true);
 });
