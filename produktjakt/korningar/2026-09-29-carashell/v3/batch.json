@@ -10,6 +10,156 @@
  "under_minimum": {},
  "batch": [
   {
+   "koncept_id": "K0068",
+   "namn_sv": "Hjulöverdragen 4-pack — ett per hjul, silver",
+   "objekt": "NYTT: Husvagnens/husbilens fyra hjul på uppställningsplatsen — däcksidorna mot sol, frost och sprickor",
+   "form": "överdrag",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploitation",
+   "hypotes_id": "H06",
+   "vinnarlikhet": {
+    "likast": "Taköverdraget husvagn (V1)",
+    "delade_variabler": [
+     "objekt_ute",
+     "husvagnsägaren 55+",
+     "uppställning 1,6 v",
+     "överdrag",
+     "flerköp (4 hjul)"
+    ],
+    "avvikelser": [
+     "objekt = däcket (1 000–2 000 kr styck), inte hela vagnen",
+     "golv i fackhandeln per styck"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "uppstallning_husvagn",
+    "deadline_typ": "uppställning",
+    "veckor_kvar": 1.6,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005005932851254",
+    "url": "https://www.aliexpress.com/item/1005005932851254.html",
+    "pris_usd": 24.49,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-29T14:53:29Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-29-carashell/v3/bilder/1005005932851254.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "4-pack, justerbar 19–36 tum (svensk husvagn 185R14 ≈ 26 tum passar); silver",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "BENOO-logga och ikonrad i heron — beskär; bilden på bilhjulet är i kontext, husvagnshjul måste fotas själv"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Campout Däckskydd (campingvaruhuset.se)",
+     "pris_sek": 139,
+     "url": "https://www.campingvaruhuset.se/shop?funk=gor_sokning&term=däckskydd",
+     "exakt_samma_form": true,
+     "anm": "per STYCK — 4 st = 556; Kegel 195, ProPlus XL 194, Däckskydd Husvagn 215, HI-GEAR 189 (PriceRunner) — sex varianter, alla styckvis"
+    },
+    "premium_ankare": {
+     "namn": "Däckskydd Husbil (campingvaruhuset.se) 269 kr/st → 4 st",
+     "pris_sek": 1076,
+     "url": "https://www.campingvaruhuset.se/shop?funk=gor_sokning&term=däckskydd",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.8,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se (hjulskydd husvagn/husbil, däckskydd husvagn — läst 2026-09-29)",
+     "campingvaruhuset.se (däckskydd)",
+     "getcamping.se (däckskydd, hjulöverdrag — bara Dometic hjulhuskappa 319–375)",
+     "kama.se/husvagnsexperten.se/Biltema/Jula = oläst (403)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     320,
+     390
+    ],
+    "pris_sek": 599,
+    "brutto_sek": [
+     209,
+     279
+    ],
+    "be_cpa_sek": [
+     209,
+     279
+    ],
+    "be_roas": 2.4,
+    "flerkop": true,
+    "returrisk": "låg — justerbar 19–36 tum med resår"
+   },
+   "meta_tanke": {
+    "hook": "Står husvagnen på samma däck i vinter?",
+    "objekt_i_bild": "fyra silverhjul på den uppställda husvagnen",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "spruckna däcksidor bredvid ett täckt hjul; fyra hjul, fyra skydd"
+   },
+   "varfor": "Axels order 2026-09-29: USA-brandets storage-produkt nr 1. Fackhandeln säljer formen bara STYCKVIS 139–269 kr (4 st = 556–1 076), vi säljer 4-pack silver på 599 = under ankaret 1,8× (H06, ATV-kapellets struktur); samma ägare, objekt ute och datum (uppställning 1,6 v) som V1.",
+   "huvudrisk": "Hjulskydden 4-pack fick 'kanske' 2026-09-11 (K0235, 27–29 tum) — samma form, nu justerbar 19–36 och silver; heron bär logga + ikoner och visar ett bilhjul.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 3,
+    "meta_creative": 2,
+    "efterfragan": 3,
+    "lucka": 2,
+    "ekonomi": 1,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "K0235 kanske 09-11 — annan listning/storlek",
+    "K1": 14,
+    "K2": 14,
+    "K3": 8,
+    "K4": 6,
+    "K5": 8,
+    "K6": 10,
+    "K7": 4,
+    "K8": 7,
+    "K9": 5,
+    "K10": 3,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (inga hjulskydd i butiken)",
+     "koncept.py sok hjulskydd (K0235 kanske, K0020/25/55/68/84/101 kandidater)",
+     "kontot 7 d"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005005932851254.html",
+    "https://www.pricerunner.se/search?q=däckskydd husvagn",
+    "https://www.campingvaruhuset.se/shop?funk=gor_sokning&term=däckskydd"
+   ],
+   "_kalla": "kandidater-HS2.json",
+   "rank_poang": 15.0,
+   "rank_forklaring": "exploitation: vinnarlikhet 3×2 + ekonomi 1 + säsong 2 + creative 2 + lucka 2 + signalbonus +2.0 [arketyp=B_SKYDDA_DYRT 10V/4F (+0.4); form=överdrag 9V/3F (+0.5); deadline_typ=uppställning 4V/1F (+0.6); prisband=500–999 13V/5F (+0.4)] = 15.0",
+   "asymmetrisk": true,
+   "rank": 1
+  },
+  {
    "koncept_id": "K0153",
    "namn_sv": "Gnagarstaketet runt husbilen, 304-nät",
    "objekt": "NYTT: Husbilens motorrum och hjulhus (Ducato) — mössen som klättrar in via däcken under uppställningen",
@@ -162,7 +312,7 @@
    "rank_poang": 17.5,
    "rank_forklaring": "exploitation: vinnarlikhet 3×2 + ekonomi 3 + säsong 2 + creative 2 + lucka 3 + signalbonus +1.5 [arketyp=B_SKYDDA_DYRT 10V/4F (+0.4); deadline_typ=uppställning 4V/1F (+0.6); prisband=500–999 13V/5F (+0.4)] = 17.5",
    "asymmetrisk": false,
-   "rank": 1
+   "rank": 2
   },
   {
    "koncept_id": "K0361",
@@ -323,7 +473,7 @@
    "rank_poang": 16.8,
    "rank_forklaring": "exploitation: vinnarlikhet 3×2 + ekonomi 3 + säsong 2 + creative 3 + lucka 2 + signalbonus +0.8 [arketyp=B_SKYDDA_DYRT 10V/4F (+0.4); deadline_typ=första frost 2V/1F (+0.3)] = 16.8",
    "asymmetrisk": false,
-   "rank": 2
+   "rank": 3
   },
   {
    "koncept_id": "K0362",
@@ -459,7 +609,7 @@
    "rank_poang": 16.5,
    "rank_forklaring": "exploitation: vinnarlikhet 3×2 + ekonomi 2 + säsong 2 + creative 3 + lucka 2 + signalbonus +1.5 [arketyp=B_SKYDDA_DYRT 10V/4F (+0.4); deadline_typ=uppställning 4V/1F (+0.6); prisband=500–999 13V/5F (+0.4)] = 16.5",
    "asymmetrisk": false,
-   "rank": 3
+   "rank": 4
   },
   {
    "koncept_id": "K0363",
@@ -620,7 +770,7 @@
    "rank_poang": 15.8,
    "rank_forklaring": "exploitation: vinnarlikhet 3×2 + ekonomi 2 + säsong 3 + creative 2 + lucka 2 + signalbonus +0.8 [arketyp=E_VADER_SASONG 2V/2F (+0.0); deadline_typ=säsongsstart 2V/1F (+0.3); prisband=500–999 13V/5F (+0.4)] = 15.8",
    "asymmetrisk": false,
-   "rank": 4
+   "rank": 5
   },
   {
    "koncept_id": "K0364",
@@ -776,156 +926,6 @@
    "_kalla": "kandidater-AR.json",
    "rank_poang": 15.2,
    "rank_forklaring": "exploitation: vinnarlikhet 2×2 + ekonomi 3 + säsong 2 + creative 3 + lucka 2 + signalbonus +1.2 [arketyp=B_SKYDDA_DYRT 10V/4F (+0.4); deadline_typ=första frost 2V/1F (+0.3); prisband=500–999 13V/5F (+0.4)] = 15.2",
-   "asymmetrisk": true,
-   "rank": 5
-  },
-  {
-   "koncept_id": "K0068",
-   "namn_sv": "Hjulskydden 4-pack, silver 19–36 tum",
-   "objekt": "NYTT: Husvagnens/husbilens fyra hjul på uppställningsplatsen — däcksidorna mot sol, frost och sprickor",
-   "form": "överdrag",
-   "arketyp": "B_SKYDDA_DYRT",
-   "arketyp_sekundar": "E_VADER_SASONG",
-   "slot": "exploitation",
-   "hypotes_id": "H06",
-   "vinnarlikhet": {
-    "likast": "Taköverdraget husvagn (V1)",
-    "delade_variabler": [
-     "objekt_ute",
-     "husvagnsägaren 55+",
-     "uppställning 1,6 v",
-     "överdrag",
-     "flerköp (4 hjul)"
-    ],
-    "avvikelser": [
-     "objekt = däcket (1 000–2 000 kr styck), inte hela vagnen",
-     "golv i fackhandeln per styck"
-    ]
-   },
-   "sasong": {
-    "fonster_id": "uppstallning_husvagn",
-    "deadline_typ": "uppställning",
-    "veckor_kvar": 1.6,
-    "timing": "NOW"
-   },
-   "listning": {
-    "product_id": "1005005932851254",
-    "url": "https://www.aliexpress.com/item/1005005932851254.html",
-    "pris_usd": 24.49,
-    "sald": "",
-    "verdict": "LIVE_VERIFIED",
-    "verifierad_at": "2026-09-29T14:53:29Z",
-    "kontroll": {
-     "produktsida_oppnad": true,
-     "titel_stammer": true,
-     "hero_nedladdad": "korningar/2026-09-29-carashell/v3/bilder/1005005932851254.jpg",
-     "hero_sedd": true,
-     "pris_sett": true,
-     "varianter": "4-pack, justerbar 19–36 tum (svensk husvagn 185R14 ≈ 26 tum passar); silver",
-     "video": "ej tillgänglig i containern"
-    }
-   },
-   "material": {
-    "klass": 1,
-    "hero_textfri": false,
-    "hero_i_kontext": true,
-    "samma_produkt": true,
-    "forsta_3s": "ej mätt (ingen video)",
-    "kommentar": "BENOO-logga och ikonrad i heron — beskär; bilden på bilhjulet är i kontext, husvagnshjul måste fotas själv"
-   },
-   "marknad": {
-    "lagsta_jamforbara": {
-     "aktor": "Campout Däckskydd (campingvaruhuset.se)",
-     "pris_sek": 139,
-     "url": "https://www.campingvaruhuset.se/shop?funk=gor_sokning&term=däckskydd",
-     "exakt_samma_form": true,
-     "anm": "per STYCK — 4 st = 556; Kegel 195, ProPlus XL 194, Däckskydd Husvagn 215, HI-GEAR 189 (PriceRunner) — sex varianter, alla styckvis"
-    },
-    "premium_ankare": {
-     "namn": "Däckskydd Husbil (campingvaruhuset.se) 269 kr/st → 4 st",
-     "pris_sek": 1076,
-     "url": "https://www.campingvaruhuset.se/shop?funk=gor_sokning&term=däckskydd",
-     "i_sortiment": true
-    },
-    "ankare_kvot": 1.8,
-    "annonsorer_se": "ej mätt",
-    "kollade_kallor": [
-     "pricerunner.se (hjulskydd husvagn/husbil, däckskydd husvagn — läst 2026-09-29)",
-     "campingvaruhuset.se (däckskydd)",
-     "getcamping.se (däckskydd, hjulöverdrag — bara Dometic hjulhuskappa 319–375)",
-     "kama.se/husvagnsexperten.se/Biltema/Jula = oläst (403)"
-    ]
-   },
-   "ekonomi": {
-    "landad_sek": [
-     320,
-     390
-    ],
-    "pris_sek": 599,
-    "brutto_sek": [
-     209,
-     279
-    ],
-    "be_cpa_sek": [
-     209,
-     279
-    ],
-    "be_roas": 2.4,
-    "flerkop": true,
-    "returrisk": "låg — justerbar 19–36 tum med resår"
-   },
-   "meta_tanke": {
-    "hook": "Står husvagnen på samma däck i vinter?",
-    "objekt_i_bild": "fyra silverhjul på den uppställda husvagnen",
-    "sjalvselekterande": true,
-    "forstas_3s": true,
-    "bevisas_visuellt": "spruckna däcksidor bredvid ett täckt hjul; fyra hjul, fyra skydd"
-   },
-   "varfor": "Axels order 2026-09-29: USA-brandets storage-produkt nr 1. Fackhandeln säljer formen bara STYCKVIS 139–269 kr (4 st = 556–1 076), vi säljer 4-pack silver på 599 = under ankaret 1,8× (H06, ATV-kapellets struktur); samma ägare, objekt ute och datum (uppställning 1,6 v) som V1.",
-   "huvudrisk": "Hjulskydden 4-pack fick 'kanske' 2026-09-11 (K0235, 27–29 tum) — samma form, nu justerbar 19–36 och silver; heron bär logga + ikoner och visar ett bilhjul.",
-   "konfidens": "MEDEL",
-   "poang": {
-    "vinnarlikhet": 3,
-    "meta_creative": 2,
-    "efterfragan": 3,
-    "lucka": 2,
-    "ekonomi": 1,
-    "sasong": 2,
-    "leverantor": 2,
-    "nyhet": 1,
-    "hypotesvarde": 2
-   },
-   "per_kriterium": {
-    "K0": "K0235 kanske 09-11 — annan listning/storlek",
-    "K1": 14,
-    "K2": 14,
-    "K3": 8,
-    "K4": 6,
-    "K5": 8,
-    "K6": 10,
-    "K7": 4,
-    "K8": 7,
-    "K9": 5,
-    "K10": 3,
-    "K11": 1,
-    "K12": 1
-   },
-   "k0": {
-    "dubblett": false,
-    "kollat": [
-     "katalog-live.txt (inga hjulskydd i butiken)",
-     "koncept.py sok hjulskydd (K0235 kanske, K0020/25/55/68/84/101 kandidater)",
-     "kontot 7 d"
-    ]
-   },
-   "kallor": [
-    "https://www.aliexpress.com/item/1005005932851254.html",
-    "https://www.pricerunner.se/search?q=däckskydd husvagn",
-    "https://www.campingvaruhuset.se/shop?funk=gor_sokning&term=däckskydd"
-   ],
-   "_kalla": "kandidater-HS2.json",
-   "rank_poang": 15.0,
-   "rank_forklaring": "exploitation: vinnarlikhet 3×2 + ekonomi 1 + säsong 2 + creative 2 + lucka 2 + signalbonus +2.0 [arketyp=B_SKYDDA_DYRT 10V/4F (+0.4); form=överdrag 9V/3F (+0.5); deadline_typ=uppställning 4V/1F (+0.6); prisband=500–999 13V/5F (+0.4)] = 15.0",
    "asymmetrisk": true,
    "rank": 6
   },
