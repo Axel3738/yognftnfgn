@@ -15,9 +15,38 @@
 
 import { oppnaBrevlada } from '../kundtjanst/brevlada.mjs';
 import { kontrolleraBrev } from './brev.mjs';
-import { STATUS } from './arenden.mjs';
+import { STATUS, overgang } from './arenden.mjs';
 
 export const SPARR_ENV = 'KONKURRENTER_INGEN_SANDNING';
+
+/**
+ * Sändpaketet för Gmail-vägen (Axels beslut 2026-09-29): skriptet skickar
+ * inget själv — sessionen lägger brevet + fakturan som utkast i Axels
+ * Stonebite-Gmail (eller skickar därifrån på hans ord) och registrerar sedan
+ * kvittot med `--skickad`. Ren.
+ */
+export function byggSandpaket(arende, brev, { faktura = null, bilagor = [], via = 'gmail' } = {}) {
+  return {
+    arende: arende.id, via, till: brev.mottagare ?? null, fran: brev.fran ?? null, amne: brev.amne, text: brev.text, sprak: brev.sprak,
+    bilagor: [...bilagor, ...(faktura?.fil ? [faktura.fil] : [])],
+    faktura: faktura ? { nr: faktura.nr, belopp: faktura.brutto, valuta: faktura.valuta, forfaller: faktura.forfaller, fil: faktura.fil ?? null } : null,
+    skapad: new Date().toISOString(),
+  };
+}
+
+/**
+ * Kvittot när brevet gått ut via Gmail (sessionen/Axel): flyttar ärendet till
+ * skickad (eller pamind), sätter fristen. Ren — skriver inget.
+ */
+export function registreraSkickat(arende, { till, fran = null, nar = new Date().toISOString(), via = 'gmail', meddelande = null, paminnelse = false, fristTimmar = 48, paminnelseTimmar = 24, sprak = null, amne = null } = {}) {
+  const adress = String(till ?? arende.brev?.mottagare ?? '').trim();
+  if (!/^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(adress)) throw new Error(`registreraSkickat: "${till}" är ingen giltig mejladress — ange --till.`);
+  const kvitto = { nar, till: adress, fran, amne: amne ?? arende.brev?.amne ?? null, sprak: sprak ?? arende.brev?.sprak ?? null, typ: 'skickat', via, meddelande, paminnelse, faktura: arende.faktura?.nr ?? null };
+  const frist = new Date(Date.parse(nar) + (paminnelse ? paminnelseTimmar : fristTimmar) * 3_600_000).toISOString();
+  return paminnelse
+    ? overgang(arende, STATUS.PAMIND, { av: 'axel', nu: nar, not: `påminnelse skickad via ${via} till ${adress}`, extra: { brev: { ...(arende.brev ?? {}), mottagare: adress, paminnelse: kvitto, frist } } })
+    : overgang(arende, STATUS.SKICKAD, { av: 'axel', nu: nar, not: `brev skickat via ${via} till ${adress}`, extra: { brev: { ...(arende.brev ?? {}), mottagare: adress, fran: fran ?? arende.brev?.fran ?? null, skickat: kvitto, frist } } });
+}
 
 /** Får det här brevet gå för det här ärendet? Lista med fel, tom = ja. Ren. */
 export function kontrolleraForeSandning(arende, brev, { paminnelse = false, egna = [] } = {}) {

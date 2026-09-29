@@ -13,7 +13,9 @@ import { bingUrl, tolkaRss, filtreraTraffar, arEgen, arIgnorerad, sokAdLibrary, 
 import { plockaEpost, plockaOrgnr, upptackPlattform, shopifyJsonUrl, plockaBilder, valjMottagare, hamtaKonkurrent, arIntressantBildUrl } from '../hamta.mjs';
 import { STATUS, lasArenden, sparaArende, nyttId, nyckelFor, hittaBefintligt, overgang, nyttArende, uppdateraFynd, oppna } from '../arenden.mjs';
 import { valjSprak, byggBrev, bevisrader, kontrolleraBrev, fristText } from '../brev.mjs';
-import { skickaBrev, kontrolleraForeSandning, SPARR_ENV } from '../skicka.mjs';
+import { skickaBrev, kontrolleraForeSandning, SPARR_ENV, byggSandpaket, registreraSkickat } from '../skicka.mjs';
+import { fakturanummer, belopp, fakturarader, byggFaktura, kontrolleraFaktura, fakturaText, fakturaHtml } from '../faktura.mjs';
+import { tolkaAnnonsinput, jamforAnnons, byggAnnonsfynd } from '../annonsfall.mjs';
 import { rapportSv, rapportEn, arendeMd, kallrader } from '../rapport.mjs';
 import { byggSida } from '../sida.mjs';
 import { gissaTyp, Bildcache } from '../bild.mjs';
@@ -306,6 +308,112 @@ test('skickaBrev: utan --ja visas bara brevet, med spärren i miljön stannar de
   assert.match(kontrolleraForeSandning(a, { ...brev, mottagare: 'x@carashell.com' }, { egna: ['carashell.com'] }).join(), /egna adresser/);
   const utanBrevlada = await skickaBrev(a, brev, { brand: 'baverbutiken', ja: true, env: {}, oppna: () => { throw new Error('saknar KUNDTJANST_MAIL_PASS_BAVERBUTIKEN'); } });
   assert.match(utanBrevlada.orsak, /går inte att öppna: saknar KUNDTJANST_MAIL_PASS_BAVERBUTIKEN/);
+});
+
+// ------------------------------------------------------------------ faktura, Gmail-vägen och annonsfallet
+
+const KONFIG_MED_KONTO = () => ({ ...KONFIG, faktura: { ...KONFIG.faktura, bankgiro: '1234-5678', taxa: { annons: 5000, video: 8000, bild: 3000, produkttext: 5000 } } });
+
+test('faktura: en rad per mätt bevis, taxan ur konfig, stopp utan bankgiro/köpare, sv/en, HTML utan tomma fält', () => {
+  const a = ARENDE();
+  assert.equal(fakturanummer('KD-2026-007'), 'F-KD-2026-007-1');
+  assert.equal(belopp(25000, 'SEK', 'sv'), '25 000 kr'); assert.equal(belopp(25000, 'SEK', 'en'), '25,000 SEK');
+  const rader = fakturarader(a, KONFIG.faktura.taxa, 'sv');
+  assert.deepEqual(rader.map((r) => [r.typ, r.antal, r.belopp]), [['produkttext', 1, 5000], ['bild', 1, 3000]]);
+  // Utan bankgiro/IBAN: stopp med Axels uppgift, inte en faktura utan konto
+  const utanKonto = byggFaktura(a, KONFIG, { nu: new Date('2026-09-29T08:00:00Z') });
+  assert.match(kontrolleraFaktura(utanKonto).join(), /bankgiro eller IBAN saknas/);
+  const f = byggFaktura(a, KONFIG_MED_KONTO(), { nu: new Date('2026-09-29T08:00:00Z'), kopare: 'Kopian AB, Storgatan 1, 111 22 Stockholm' });
+  assert.deepEqual(kontrolleraFaktura(f), []);
+  assert.equal(f.nr, 'F-KD-2026-007-1'); assert.equal(f.datum, '2026-09-29'); assert.equal(f.forfaller, '2026-10-09');
+  assert.equal(f.netto, 8000); assert.equal(f.moms, 0); assert.equal(f.brutto, 8000);
+  assert.equal(f.kopare.namn, 'Kopian AB'); assert.equal(f.kopare.adress, 'Storgatan 1, 111 22 Stockholm'); assert.equal(f.kopare.mail, 'info@kopian.se');
+  assert.equal(f.saljare.orgnr, '559576-2401'); assert.equal(f.saljare.mail, 'contact@stonebite.org');
+  // Utan --kopare: deras domän som namn räcker inte om inget företag lästs
+  const utanNamn = byggFaktura({ ...a, deras: { ...a.deras, doman: null, sidnamn: null } }, KONFIG_MED_KONTO());
+  assert.match(kontrolleraFaktura(utanNamn).join(), /köparen saknar namn/);
+  const txt = fakturaText(f);
+  for (const m of ['FAKTURA F-KD-2026-007-1', 'Produkttext kopierad', '1 × 5 000 kr', 'Att betala: 8 000 kr', 'Bankgiro 1234-5678']) assert.ok(txt.includes(m), `saknar: ${m}`);
+  const html = fakturaHtml(f);
+  for (const m of ['<title>FAKTURA F-KD-2026-007-1</title>', 'Stonebite Ecom AB', '559576-2401', 'Kopian AB', '54 § lagen (1960:729)', '8 000 kr', '1234-5678', 'Stenkolsgatan 1B']) assert.ok(html.includes(m), `saknar: ${m}`);
+  assert.doesNotMatch(html, /undefined|null|Sjöhed/);
+  const en = fakturaHtml(byggFaktura(a, KONFIG_MED_KONTO(), { sprak: 'en', kopare: 'Copy Ltd' }));
+  assert.match(en, /<title>INVOICE F-KD-2026-007-1<\/title>/); assert.match(en, /section 54 of the Swedish Act/); assert.match(en, /8,000 SEK/);
+});
+
+test('byggBrev med faktura: stycket, ämnesraden och "eller betalningen" — påminnelsen bär ingen faktura', () => {
+  const a = ARENDE();
+  const f = byggFaktura(a, KONFIG_MED_KONTO(), { nu: new Date('2026-09-29T08:00:00Z'), kopare: 'Kopian AB' });
+  const b = byggBrev(a, { avsandare: { brand: 'Bäverbutiken', mail: 'contact@stonebite.org', butikUrl: 'https://baverbutiken.se' }, foretag: FORETAG, nu: new Date('2026-09-29T08:00:00Z'), faktura: f });
+  assert.equal(b.fran, 'contact@stonebite.org');
+  assert.match(b.amne, /och faktura F-KD-2026-007-1/);
+  for (const m of ['Bifogat finns faktura F-KD-2026-007-1 på 8 000 kr', '54 § upphovsrättslagen', 'förfallodag 2026-10-09', 'Uteblir borttagningen eller betalningen']) assert.ok(b.text.includes(m), `saknar: ${m}`);
+  const utan = byggBrev(a, { avsandare: { brand: 'Bäverbutiken', mail: 'contact@stonebite.org' }, foretag: FORETAG });
+  assert.doesNotMatch(utan.text, /faktura/i); assert.doesNotMatch(utan.amne, /faktura/);
+  const en = byggBrev({ ...a, deras: { ...a.deras, lang: 'en', doman: 'copy.com' } }, { avsandare: { brand: 'Bäverbutiken', mail: 'contact@stonebite.org' }, foretag: FORETAG, faktura: byggFaktura(a, KONFIG_MED_KONTO(), { sprak: 'en', kopare: 'Copy Ltd' }) });
+  assert.match(en.text, /Attached is invoice F-KD-2026-007-1 for 8,000 SEK/); assert.match(en.text, /removal or the payment/);
+});
+
+test('Gmail-vägen: sändpaketet bär brev + bilaga, kvittot flyttar ärendet och kräver en riktig adress', () => {
+  const a = { ...ARENDE(), faktura: { nr: 'F-KD-2026-007-1', brutto: 8000, valuta: 'SEK', forfaller: '2026-10-09', fil: 'arenden/KD-2026-007/faktura-F-KD-2026-007-1.pdf' } };
+  const brev = byggBrev(a, { avsandare: { brand: 'Bäverbutiken', mail: 'contact@stonebite.org' }, foretag: FORETAG });
+  const p = byggSandpaket(a, brev, { faktura: a.faktura, via: 'gmail' });
+  assert.equal(p.via, 'gmail'); assert.equal(p.till, 'info@kopian.se'); assert.equal(p.fran, 'contact@stonebite.org'); assert.equal(p.amne, brev.amne);
+  assert.deepEqual(p.bilagor, ['arenden/KD-2026-007/faktura-F-KD-2026-007-1.pdf']); assert.equal(p.faktura.nr, 'F-KD-2026-007-1');
+  const s = registreraSkickat(a, { nar: '2026-09-29T10:00:00Z', fristTimmar: 48 });
+  assert.equal(s.status, STATUS.SKICKAD); assert.equal(s.brev.skickat.via, 'gmail'); assert.equal(s.brev.skickat.till, 'info@kopian.se'); assert.equal(s.brev.skickat.faktura, 'F-KD-2026-007-1');
+  assert.equal(s.brev.frist, '2026-10-01T10:00:00.000Z'); assert.equal(s.historik.at(-1).av, 'axel');
+  const pm = registreraSkickat(s, { nar: '2026-10-02T10:00:00Z', paminnelse: true, paminnelseTimmar: 24 });
+  assert.equal(pm.status, STATUS.PAMIND); assert.equal(pm.brev.frist, '2026-10-03T10:00:00.000Z'); assert.equal(pm.brev.skickat.via, 'gmail');
+  assert.throws(() => registreraSkickat({ ...a, brev: {} }, {}), /ingen giltig mejladress/);
+  assert.throws(() => registreraSkickat(a, { till: 'inte en adress' }), /ingen giltig mejladress/);
+  // Kvittot går aldrig två gånger: skickad → skickad är ingen tillåten övergång
+  assert.throws(() => registreraSkickat(s, {}), /kan inte gå från skickad till skickad/);
+});
+
+test('annonsfallet: deras annonser mot våra annonstexter + produkttexter, en rad per träff, två träffar = stark, faktura per annons', () => {
+  assert.throws(() => tolkaAnnonsinput({ annonser: [{ text: 'x' }] }), /sidnamn/);
+  assert.throws(() => tolkaAnnonsinput({ deras: { sidnamn: 'Kopian' }, annonser: [{ lank: 'x' }] }), /inga annonser/);
+  const input = tolkaAnnonsinput({
+    deras: { sidnamn: 'Kopian', url: 'https://www.kopian.se/', mottagare: 'info@kopian.se', foretag: 'Kopian AB', orgnr: '556677-8899' },
+    annonser: [
+      { lank: 'https://www.facebook.com/ads/library/?id=1', text: 'Regnet, löven och fågelskiten hamnar på taket, och det är precis den ytan du inte går upp och kollar. Beställ i dag!' },
+      { lank: 'https://www.facebook.com/ads/library/?id=2', text: 'Täck bara taket – inte hela vagnen. Ett helöverdrag är tungt att få på plats ensam och sitter och skaver mot lacken.', video: true },
+      { lank: 'https://www.facebook.com/ads/library/?id=3', text: 'Helt egen text om ett annat skydd för en annan vagn, utan något gemensamt alls.' },
+    ],
+  });
+  assert.equal(input.deras.doman, 'kopian.se'); assert.equal(input.annonser.length, 3);
+  const egnaAnnonser = [{ id: '1', namn: 'Takoverdrag_PD_1_H1', verksamhet: 'Bäverbutiken', handle: 'takoverdrag', text: VAR_TEXT, bild: 'https://cdn/ann1.png' }];
+  const egnaProdukter = [{ verksamhet: 'Bäverbutiken', handle: 'takoverdrag', titel: 'Taköverdrag Husvagn', url: 'https://baverbutiken.se/products/takoverdrag', butik: 'https://baverbutiken.se', text: VAR_TEXT, bilder: ['https://cdn/p1.png'] }];
+  const j = jamforAnnons(input.annonser[0], { egnaAnnonser, egnaProdukter, konfig: KONFIG });
+  assert.ok(j.text?.styrka, 'annons 1 ska matcha'); assert.equal(j.varAnnons.namn, 'Takoverdrag_PD_1_H1');
+  const fynd = byggAnnonsfynd(input, { egnaAnnonser, egnaProdukter, konfig: KONFIG, derasHashar: new Map(), egnaHashar: new Map(), nu: '2026-09-29T08:00:00Z' });
+  assert.equal(fynd.typ, 'annons'); assert.equal(fynd.styrka, 'stark'); assert.equal(fynd.verksamhet, 'Bäverbutiken');
+  assert.equal(fynd.bevis.annonser.length, 2); assert.deepEqual(fynd.bevis.annonser.map((t) => t.nr).sort(), [1, 2]);
+  assert.equal(fynd.deras.mottagare, 'info@kopian.se'); assert.equal(fynd.deras.foretag, 'Kopian AB'); assert.deepEqual(fynd.deras.orgnr, [{ typ: 'SE', nr: '556677-8899' }]);
+  assert.equal(fynd.var.produkt.handle, 'takoverdrag');
+  assert.match(fynd.skal[0], /2 av deras annonser återger våra annonstexter ordagrant/);
+  // Ingen träff alls ⇒ null, aldrig ett påhittat ärende
+  assert.equal(byggAnnonsfynd({ ...input, annonser: [input.annonser[2]] }, { egnaAnnonser, egnaProdukter, konfig: KONFIG, derasHashar: new Map(), egnaHashar: new Map() }), null);
+  // Brevet räknar upp annonserna, fakturan tar en rad per annons (video dyrare)
+  const skarm = { egen: 'https://cdn/ann1.png', deras: '/tmp/axels-skarmdump.png', avstand: 0, grad: 'identisk' };
+  const arende = { ...fynd, id: 'KD-2026-009', status: 'ny', skapad: '2026-09-29T08:00:00Z', brev: { mottagare: 'info@kopian.se' }, bevis: { ...fynd.bevis, bilder: [skarm], annonser: fynd.bevis.annonser.map((t, i) => (i === 0 ? { ...t, bilder: [skarm] } : t)) } };
+  const b = byggBrev(arende, { avsandare: { brand: 'Bäverbutiken', mail: 'contact@stonebite.org' }, foretag: FORETAG });
+  assert.match(b.text, /2 av era annonser på Facebook\/Instagram återger våra annonser \(text och\/eller bild\)/); assert.match(b.text, /1 bild\(er\) identiska med våra/);
+  // Annonsfallet pekar på annonserna och Facebook-sidan, aldrig på en sajt som kan vara ren
+  assert.match(b.text, /dokumenterat att ni i\n\n    era annonser på Facebook och Instagram \(sidan "Kopian"\)/); assert.doesNotMatch(b.text, /https:\/\/kopian\.se\n/);
+  assert.match(b.text, /från alla era annonser, er webbplats/); assert.match(b.text, /kopior av annonserna och deras länkar i Metas annonsbibliotek/);
+  const bEn = byggBrev({ ...arende, deras: { ...arende.deras, lang: 'en', doman: 'copy.com' } }, { avsandare: { brand: 'Bäverbutiken', mail: 'contact@stonebite.org' }, foretag: FORETAG });
+  assert.match(bEn.text, /documented that in\n\n    your ads on Facebook and Instagram \(page "Kopian"\)/);
+  // Axels lokala skärmdump står aldrig i brevet, och ingen rad om "bilderna på er sida"
+  assert.doesNotMatch(b.text, /axels-skarmdump|på er sida är våra egna produktbilder/);
+  const f = byggFaktura(arende, KONFIG_MED_KONTO(), { nu: new Date('2026-09-29T08:00:00Z') });
+  assert.deepEqual(kontrolleraFaktura(f), []);
+  // Raderna följer bevisordningen (starkaste träffen först) — videon hade den längsta sviten; skärmdumpen ger en bildrad
+  assert.deepEqual(f.rader.map((r) => [r.typ, r.belopp]).sort(), [['annons', 5000], ['bild', 3000], ['video', 8000]]); assert.equal(f.brutto, 16000); assert.equal(f.kopare.namn, 'Kopian AB'); assert.equal(f.kopare.orgnr, '556677-8899');
+  const html = byggSida({ arenden: [{ ...arende, faktura: { ...f, fil: 'x.pdf' } }], datum: '2026-09-29' });
+  assert.match(html, /Deras annonser som återger våra — 2 st/); assert.match(html, /Fakturan F-KD-2026-009-1 på <strong>16 000 kr<\/strong>/); assert.match(html, /utkast i din Gmail/);
+  assert.doesNotMatch(html, /axels-skarmdump/);
 });
 
 // ------------------------------------------------------------------ rapport och sida

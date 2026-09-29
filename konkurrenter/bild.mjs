@@ -24,6 +24,10 @@ export const CHROME_KANDIDATER = ['/opt/pw-browsers/chromium-1194/chrome-linux/c
 
 /** Hämtar en bild som bytes. null när det inte är en bild, för stor, eller inte svarar. */
 export async function hamtaBild(url, { fetchFn = fetch, timeout = 20000, maxByte = 6_000_000 } = {}) {
+  // En lokal fil (Axels skärmdump av en annons) hashas på samma sätt som en länk.
+  if (!/^https?:\/\//i.test(String(url)) && existsSync(String(url))) {
+    try { const b = readFileSync(String(url)); return b.length && b.length <= maxByte ? { url: String(url), bytes: b, typ: gissaTyp(b) } : null; } catch { return null; }
+  }
   try {
     const res = await fetchFn(url, { headers: { 'User-Agent': UA, Accept: 'image/*,*/*;q=0.5' }, signal: AbortSignal.timeout(timeout) });
     if (!res.ok) return null;

@@ -20,7 +20,8 @@ export function kallrader(korning = {}) {
   const w = korning.websearch ?? null;
   if (w) ut.push(`Webbsök (sessionens WebSearch): ${w.rader ?? 0} kandidater på ${korning.sok?.fraser ?? '?'} fraser, ${b.kandidater ?? 0} sidor lästa${w.orsak ? ` — ${w.orsak}` : ''}`);
   if (b.fraser) ut.push(`Bing: ${b.fraser} fraser sökta, ${b.traffar ?? 0} träffar${b.fel?.length ? ` — ${b.fel.length} sökningar gick inte (${b.fel[0]})` : ''}`);
-  if (!w && !b.fraser) ut.push(`Webbsök: ingen kandidatfil för dagen — bara Ad Library och egna länkar (${b.kandidater ?? 0} sidor lästa)`);
+  if (korning.annonsfil) ut.push(`Annonser ur ${korning.annonsfil} (Axels lista) jämförda mot ${korning.sok?.produkter ?? '?'} produkter och ${korning.sok?.annonser ?? '?'} av våra aktiva annonser`);
+  else if (!w && !b.fraser) ut.push(`Webbsök: ingen kandidatfil för dagen — bara Ad Library och egna länkar (${b.kandidater ?? 0} sidor lästa)`);
   const al = korning.adLibrary ?? {};
   if (al.status === 'ok') ut.push(`Ad Library: ${al.annonser ?? 0} främmande annonser lästa på ${al.termer ?? 0} söktermer`);
   else if (al.status === 'saknar_behorighet') ut.push('Ad Library: SAKNAR BEHÖRIGHET — Metas API släpper inte in token:en förrän identiteten är bekräftad (Axels klick, se uppgifterna nedan)');

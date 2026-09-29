@@ -35,8 +35,10 @@ import { sokBing, sokAdLibrary, filtreraTraffar, arEgen, domanUr, adLibraryLank 
 import { hamtaKonkurrent } from './hamta.mjs';
 import { jamforText, jamforBilder, sammanvag } from './likhet.mjs';
 import { startaHashare, hashaLankar, Bildcache } from './bild.mjs';
-import { byggBrev, kontrolleraBrev } from './brev.mjs';
-import { skickaBrev } from './skicka.mjs';
+import { byggBrev, kontrolleraBrev, valjSprak } from './brev.mjs';
+import { skickaBrev, byggSandpaket, registreraSkickat } from './skicka.mjs';
+import { byggFaktura, kontrolleraFaktura, fakturaHtml, fakturaPdf, skrivFakturaHtml, belopp } from './faktura.mjs';
+import { tolkaAnnonsinput, byggAnnonsfynd } from './annonsfall.mjs';
 import { rapportSv, rapportEn, kallrader, arendeMd, KANAL_INTRO } from './rapport.mjs';
 import { byggSida } from './sida.mjs';
 
@@ -60,20 +62,30 @@ const antalOrd = (t) => String(t ?? '').split(/\s+/).filter(Boolean).length;
 function konfig() { return JSON.parse(readFileSync(join(MAPP, 'konfig.json'), 'utf8')); }
 function lasLage() { return lasJson(LAGEFIL, { senast_korning: null, kollade: {} }); }
 
-/** Avsändaruppgifterna för en verksamhet: brandets supportadress ur kundtjänstens brandfiler. */
-async function avsandareFor(verksamhet, k) {
+/**
+ * Avsändaren. Standard (Axels beslut 2026-09-29): bolagets Stonebite-mejl via
+ * Gmail-connectorn i sessionen (konfig → brev.avsandare). Reserv `--via loopia`:
+ * verksamhetens supportbrevlåda (kundtjanst/brands, kräver KUNDTJANST_MAIL_PASS_<ID>).
+ */
+async function avsandareFor(verksamhet, k, { via = null } = {}) {
   const v = k.verksamheter[verksamhet];
-  if (!v) return { brand: null, mail: null, butikUrl: null, saknas: `okänd verksamhet ${verksamhet}` };
+  const valdVia = String(via ?? k.brev.avsandare?.via ?? 'gmail').toLowerCase();
+  if (valdVia !== 'loopia') {
+    const mail = k.brev.avsandare?.mail ?? null;
+    return { via: 'gmail', brand: null, namn: verksamhet, mail, butikUrl: v?.butiker?.[0] ?? null, konfigurerad: Boolean(mail), saknas: mail ? [] : ['brev.avsandare.mail i konkurrenter/konfig.json'] };
+  }
+  if (!v) return { via: 'loopia', brand: null, mail: null, butikUrl: null, saknas: [`okänd verksamhet ${verksamhet}`] };
   const { upptackBrands, korkonfig } = await import('../kundtjanst/brands.mjs');
   const brand = upptackBrands().find((b) => b.id === v.avsandare);
   const kk = brand ? korkonfig(brand) : null;
-  return { brand: v.avsandare, namn: verksamhet, mail: kk?.mail?.user ?? null, butikUrl: v.butiker?.[0] ?? null, konfigurerad: Boolean(kk?.mail?.konfigurerad), saknas: kk ? kk.mail.saknas : [`ingen brandfil för ${v.avsandare}`] };
+  return { via: 'loopia', brand: v.avsandare, namn: verksamhet, mail: kk?.mail?.user ?? null, butikUrl: v.butiker?.[0] ?? null, konfigurerad: Boolean(kk?.mail?.konfigurerad), saknas: kk ? kk.mail.saknas : [`ingen brandfil för ${v.avsandare}`] };
 }
 
 // ------------------------------------------------------------------ korpus
 
 async function byggKorpus(k, { bara = null, produktFilter = null, max = null, lage = lasLage(), medAnnonser = true }) {
   const ut = []; const status = { butiker: [], annonser: [] };
+  const allaProdukter = []; const allaAnnonser = [];
   for (const [namn, v] of Object.entries(k.verksamheter)) {
     if (bara && bara.toLowerCase() !== namn.toLowerCase()) continue;
     let produkter = [];
@@ -96,8 +108,71 @@ async function byggKorpus(k, { bara = null, produktFilter = null, max = null, la
       ut.push({ verksamhet: namn, ...p, annonser: annonser.filter((a) => a.handle === p.handle).slice(0, 6), fraser: fingeravtryck(p.text, { minOrd: k.sok.min_ord, maxOrd: k.sok.max_ord, antal: k.sok.fraser_per_produkt, undvik, boilerplate }), ordITexten: antalOrd(p.text) });
     }
     logg(`  ${namn}: ${produkter.length} produkter, ${annonser.length} aktiva annonser, ${valda.length} valda`);
+    allaProdukter.push(...produkter.map((p) => ({ verksamhet: namn, ...p })));
+    allaAnnonser.push(...annonser.map((a) => ({ verksamhet: namn, ...a })));
   }
-  return { produkter: ut, status };
+  return { produkter: ut, status, allaProdukter, allaAnnonser };
+}
+
+/**
+ * Ärende ur konkurrentens ANNONSER (Axels fall 2026-09-29): `--annonser <fil>`
+ * med deras annonstexter/länkar/bilder (formatet i annonsfall.mjs). Jämförs mot
+ * ALLA våra annonser och produkttexter, bilderna hashas, deras sida läses för
+ * kontaktuppgifter. Skriver output/<datum>.json som en vanlig hämtning.
+ */
+async function hamtaAnnonser(k, fil) {
+  const idag = flagga('idag') ?? idagSthlm();
+  const nu = new Date().toISOString();
+  const egna = egnaDomaner(k);
+  const input = tolkaAnnonsinput(lasJson(fil) ?? (() => { throw new Error(`${fil} finns inte eller är inte JSON.`); })());
+  if (input.deras.doman && arEgen(input.deras.doman, egna)) throw new Error(`${input.deras.doman} är en av våra egna domäner.`);
+  const { allaProdukter, allaAnnonser, status } = await byggKorpus(k, { max: 10_000 });
+  const korning = { sok: { produkter: allaProdukter.length, annonser: allaAnnonser.length }, annonsfil: basename(fil), adLibrary: { status: 'ej_provad' }, bilder: { status: null }, fel: [], egnaAnnonser: { fel: status.annonser.filter((s) => s.fel) } };
+  let hashare = null; const cache = new Bildcache(join(OUTPUT, 'bildcache.json'));
+  const derasHashar = new Map(); const egnaHashar = new Map();
+  const derasBilder = input.annonser.flatMap((a) => a.bilder);
+  let sida = null;
+  if (input.deras.url) { sida = await hamtaKonkurrent(input.deras.url, { logg, egna }); if (!sida.ok) { korning.fel.push(`${input.deras.url}: ${sida.fel ?? sida.status}`); sida = null; } }
+  const jamfor = () => byggAnnonsfynd(input, { egnaAnnonser: allaAnnonser, egnaProdukter: allaProdukter, konfig: k, derasHashar, egnaHashar, sida, nu, kalla: 'axel-annonser' });
+  // Första passet på text ensam pekar ut vilka av våra produkter/annonser som är
+  // träffade — deras bilder hashas i sin helhet, våra i ordningen: träffade
+  // produkters bilder, träffade annonsers bilder, ALLA våra annonsbilder (en
+  // kopierad annons behöver inte ha kopierad text), aldrig hela produktkatalogen.
+  const forsta = jamfor();
+  if (derasBilder.length && !har('utan-bilder')) {
+    try {
+      hashare = await startaHashare({ logg }); korning.bilder = { status: 'ok', hashade: 0 };
+      const t0 = Date.now();
+      const d = await hashaLankar(derasBilder, { hashare, cache, logg, max: 60 }); for (const [u, v] of d.hashar) derasHashar.set(u, v);
+      const traffade = forsta?.bevis.annonser ?? [];
+      const egnaLankar = [...new Set([
+        ...(forsta?.var.produkt?.bilder ?? []),
+        ...traffade.flatMap((t) => allaProdukter.find((p) => p.handle === t.varAnnons?.id)?.bilder ?? []),
+        ...traffade.map((t) => allaAnnonser.find((x) => x.id === t.varAnnons?.id)?.bild).filter(Boolean),
+        ...allaAnnonser.map((a) => a.bild).filter(Boolean),
+      ])];
+      const e = await hashaLankar(egnaLankar, { hashare, cache, logg, max: 1500 }); for (const [u, v] of e.hashar) egnaHashar.set(u, v);
+      korning.bilder.hashade = d.hashar.size + e.hashar.size; korning.bilder.ms = Date.now() - t0;
+      logg(`  ${korning.bilder.hashade} bilder hashade (${derasHashar.size} deras, ${egnaHashar.size} våra) på ${Math.round(korning.bilder.ms / 1000)} s`);
+    } catch (e) { korning.bilder = { status: 'saknas', orsak: e.message }; logg(`  ⚠️ ${e.message}`); }
+  } else korning.bilder = { status: 'av', orsak: derasBilder.length ? '--utan-bilder' : 'inga bilder i annonsfilen' };
+  const fynd = derasHashar.size ? jamfor() : forsta;
+  const miniatyrer = {};
+  if (fynd && hashare) {
+    const behov = [...new Set([fynd.var.annons?.bild, fynd.var.produkt?.bilder?.[0], ...fynd.bevis.bilder.flatMap((b) => [b.egen, b.deras])].filter(Boolean))].slice(0, 12);
+    const m = await hashaLankar(behov, { hashare, cache: null, medMiniatyr: true, logg });
+    for (const [u, v] of m.hashar) if (v.miniatyr) miniatyrer[u] = v.miniatyr;
+    fynd.miniatyrer = miniatyrer;
+  }
+  cache.spara();
+  if (hashare) await hashare.stang();
+  const ut = { datum: idag, hamtad: nu, korning, produkter: [], kandidater: [{ url: input.deras.url, doman: input.deras.doman, kallor: ['axel-annonser'], produkter: [] }], fynd: fynd ? [fynd] : [], underTroskeln: fynd ? [] : [{ url: input.deras.url, doman: input.deras.doman, produkt: 'annonser', tackning: 0, langsta: 0, bilder: 0 }] };
+  skrivJson(join(OUTPUT, `${idag}.json`), ut);
+  if (fynd) {
+    console.log(`Klart: ${input.annonser.length} annonser lästa → ${fynd.styrka.toUpperCase()}: ${fynd.skal.join('; ')} → konkurrenter/output/${idag}.json`);
+    for (const t of fynd.bevis.annonser) console.log(`  annons ${t.nr}${t.lank ? ` (${t.lank})` : ''}: ${t.text ? `${t.text.langsta} ord i följd ur ${t.varAnnons?.namn ?? 'produkttexten'}` : 'ingen text-träff'}${t.bilder.length ? ` · ${t.bilder.length} bild(er)` : ''}`);
+  } else console.log(`Klart: ${input.annonser.length} annonser lästa, ingen över tröskeln — jämför texterna själv; deras bilder kan behöva skärmdumpar (bilder i filen).`);
+  if (korning.bilder.status !== 'ok') console.log(`  Bilder: ${korning.bilder.orsak ?? korning.bilder.status}`);
 }
 
 async function fraser() {
@@ -143,6 +218,7 @@ function jamforMotProdukt(p, kand, { k, derasHashar, egnaHashar }) {
 
 async function hamta() {
   const k = konfig();
+  if (flagga('annonser')) return hamtaAnnonser(k, flagga('annonser'));
   const idag = flagga('idag') ?? idagSthlm();
   const nu = new Date().toISOString();
   const egna = egnaDomaner(k);
@@ -448,10 +524,30 @@ function hamtaArende(id) {
   return { arenden, a };
 }
 
-async function brevFor(a, k, { sprak = null, paminnelse = false, mottagare = null } = {}) {
-  const avs = await avsandareFor(a.verksamhet, k);
-  const brev = byggBrev(a, { avsandare: { brand: a.verksamhet, mail: avs.mail ?? a.brev?.fran ?? '', butikUrl: avs.butikUrl ?? '' }, foretag: k.brev.foretag, sprak, fristTimmar: k.brev.svarsfrist_timmar, paminnelse, mottagare });
+async function brevFor(a, k, { sprak = null, paminnelse = false, mottagare = null, via = null, faktura = null } = {}) {
+  const avs = await avsandareFor(a.verksamhet, k, { via });
+  const brev = byggBrev(a, { avsandare: { brand: a.verksamhet, mail: avs.mail ?? a.brev?.fran ?? '', butikUrl: avs.butikUrl ?? '' }, foretag: k.brev.foretag, sprak, fristTimmar: k.brev.svarsfrist_timmar, paminnelse, mottagare, faktura: faktura ?? a.faktura ?? null });
   return { brev, avs };
+}
+
+/**
+ * Bygger (eller bygger om) fakturan för ett ärende och skriver
+ * arenden/<id>/faktura-<nr>.html + .pdf. Returnerar { faktura, fel }.
+ * Samma nummer så länge ingen faktura skickats; `--ny-faktura` ger nästa löpnummer.
+ */
+async function byggOchSkrivFaktura(a, k, { nu = new Date(), sprak = null, kopare = null, ny = false } = {}) {
+  const sprakF = valjSprak({ lang: a.deras?.lang, doman: a.deras?.doman, tvinga: sprak });
+  const befintlig = a.faktura && !ny ? a.faktura : null;
+  const lopnr = befintlig ? (befintlig.lopnr ?? 1) : (a.faktura?.lopnr ?? 0) + 1;
+  const f = byggFaktura(a, k, { nu, lopnr, sprak: sprakF, kopare: kopare ?? befintlig?.kopare ?? null });
+  const fel = kontrolleraFaktura(f);
+  if (fel.length) return { faktura: null, fel };
+  const html = fakturaHtml(f);
+  const bas = join(ARENDEMAPP, a.id, `faktura-${f.nr}`);
+  skrivFakturaHtml(html, `${bas}.html`);
+  let pdf = null; let pdfFel = null;
+  try { pdf = await fakturaPdf(html, `${bas}.pdf`); } catch (e) { pdfFel = e.message; logg(`  ⚠️ PDF: ${e.message}`); }
+  return { faktura: { ...f, lopnr, fil: pdf ? pdf.replace(`${DATAMAPP}/`, '') : null, htmlFil: `${bas}.html`.replace(`${DATAMAPP}/`, ''), pdfFel, skapad: nu.toISOString() }, fel: [] };
 }
 
 async function visaBrev() {
@@ -463,35 +559,85 @@ async function visaBrev() {
   if (fel.length) console.log(`\n⚠️ Skulle stoppas: ${fel.join('; ')}`);
 }
 
+/**
+ * --skicka <id>: bygger brevet + fakturan och lägger SÄNDPAKETET i
+ * arenden/<id>/ (brev.txt, brev.json, faktura-<nr>.pdf). Skickar inget själv
+ * på Gmail-vägen — sessionen lägger paketet som utkast i Stonebite-Gmail (eller
+ * skickar därifrån på Axels ord) och kvitterar med --skickad. `--via loopia --ja`
+ * är reservvägen som skickar från butikens kundtjänstbrevlåda direkt.
+ */
 async function skicka() {
   const k = konfig();
   const id = flagga('skicka');
   const { arenden, a } = hamtaArende(id);
   const paminnelse = har('paminnelse');
-  const { brev, avs } = await brevFor(a, k, { sprak: flagga('sprak'), paminnelse, mottagare: flagga('till') });
+  const via = String(flagga('via') ?? k.brev.avsandare?.via ?? 'gmail').toLowerCase();
   const nu = new Date().toISOString();
-  console.log(`Från: ${brev.fran || '?'}\nTill: ${brev.mottagare ?? '?'}\nÄmne: ${brev.amne}\n\n${brev.text}\n`);
-  const r = await skickaBrev(a, brev, { brand: avs.brand, ja: har('ja'), utkast: har('utkast'), paminnelse, egna: egnaDomaner(k), logg });
-  if (!r.skickat && !r.utkast) {
-    console.log(`Inget skickat: ${r.orsak}`);
-    if (!har('ja') && !r.fel?.length) console.log(`Kör igen med --ja för att skicka (eller --utkast för att lägga det i Drafts först).`);
-    if (r.fel?.length) process.exitCode = 1;
+  const egna = egnaDomaner(k);
+  if (!paminnelse && a.status !== STATUS.NY) { console.log(`Ärendet är ${a.status} — första brevet går bara från "ny"${a.brev?.skickat ? ` (skickat ${a.brev.skickat.nar} till ${a.brev.skickat.till})` : ''}.`); process.exitCode = 1; return; }
+  if (paminnelse && a.status !== STATUS.SKICKAD) { console.log(`Påminnelsen går bara efter ett skickat brev — ärendet är ${a.status}.`); process.exitCode = 1; return; }
+
+  // Fakturan följer med första brevet (Axels order 2026-09-29), aldrig påminnelsen.
+  let faktura = a.faktura ?? null;
+  if (!paminnelse && k.faktura?.aktiv !== false && !har('utan-faktura')) {
+    const r = await byggOchSkrivFaktura(a, k, { nu: new Date(nu), sprak: flagga('sprak'), kopare: flagga('kopare'), ny: har('ny-faktura') });
+    if (r.fel.length) { console.log(`Fakturan kan inte byggas: ${r.fel.join('; ')}\n(--utan-faktura skickar brevet utan faktura)`); process.exitCode = 1; return; }
+    faktura = r.faktura;
+  }
+  const { brev, avs } = await brevFor(a, k, { sprak: flagga('sprak'), paminnelse, mottagare: flagga('till'), via, faktura: paminnelse ? null : faktura });
+  const fel = kontrolleraBrev(brev, { egna });
+  const bilagor = paminnelse && a.faktura?.fil ? [a.faktura.fil] : [];
+  const paket = byggSandpaket(a, brev, { faktura: paminnelse ? null : faktura, via, bilagor });
+  const mapp = join(ARENDEMAPP, a.id); mkdirSync(mapp, { recursive: true });
+  const namn = paminnelse ? 'paminnelse' : 'brev';
+  writeFileSync(join(mapp, `${namn}.txt`), `Till: ${brev.mottagare ?? ''}\nFrån: ${brev.fran ?? ''}\nÄmne: ${brev.amne}\n\n${brev.text}\n`);
+  skrivJson(join(mapp, `${namn}.json`), paket);
+  console.log(`Från: ${brev.fran || '?'}\nTill: ${brev.mottagare ?? '(ingen adress hittad — ange --till)'}\nÄmne: ${brev.amne}\n\n${brev.text}\n`);
+  if (faktura && !paminnelse) console.log(`Faktura ${faktura.nr}: ${belopp(faktura.brutto, faktura.valuta, faktura.sprak)}, förfaller ${faktura.forfaller} — ${faktura.fil ? `konkurrenter/${faktura.fil}` : `PDF gick inte att göra (${faktura.pdfFel ?? '?'}); HTML: konkurrenter/${faktura.htmlFil}`}`);
+  if (fel.length) console.log(`⚠️ Brevet stoppas: ${fel.join('; ')}`);
+
+  if (via === 'loopia') {
+    const r = await skickaBrev(a, { ...brev }, { brand: avs.brand, ja: har('ja'), utkast: har('utkast'), paminnelse, egna, logg });
+    if (!r.skickat && !r.utkast) { console.log(`Inget skickat: ${r.orsak}`); if (!har('ja') && !r.fel?.length) console.log('Kör igen med --ja för att skicka via Loopia (eller --utkast för Drafts).'); if (r.fel?.length) process.exitCode = 1; return; }
+    if (r.utkast) { const upp = { ...a, faktura, historik: [...(a.historik ?? []), { nar: nu, fran: a.status, till: a.status, av: 'axel', not: `utkast sparat i Drafts (uid ${r.kvitto.utkastUid ?? '?'}) till ${brev.mottagare}` }] }; sparaArende(upp, ARENDEFIL, { nu }); skrivArendefiler(upp); console.log(`Utkast sparat i ${avs.brand}s Drafts (uid ${r.kvitto.utkastUid ?? '?'}). Inget skickat.`); return; }
+    const upp = registreraSkickat({ ...a, faktura }, { till: brev.mottagare, fran: r.kvitto.fran ?? brev.fran, nar: nu, via: 'loopia', paminnelse, fristTimmar: k.brev.svarsfrist_timmar, sprak: brev.sprak, amne: brev.amne });
+    sparaArende(upp, ARENDEFIL, { nu }); skrivArendefiler(upp); arenden.set(upp.id, upp);
+    await byggSidaFil({ k, arenden });
+    console.log(`✅ ${paminnelse ? 'Påminnelsen' : 'Brevet'} skickat via Loopia till ${brev.mottagare}. Frist: ${upp.brev.frist}. Ärendet ${upp.id} är nu ${upp.status}.`);
     return;
   }
-  if (r.utkast) {
-    const upp = { ...a, historik: [...(a.historik ?? []), { nar: nu, fran: a.status, till: a.status, av: 'axel', not: `utkast sparat i Drafts (uid ${r.kvitto.utkastUid ?? '?'}) till ${brev.mottagare}` }] };
-    sparaArende(upp, ARENDEFIL, { nu }); skrivArendefiler(upp);
-    console.log(`Utkast sparat i ${avs.brand}s Drafts (uid ${r.kvitto.utkastUid ?? '?'}). Inget skickat.`);
-    return;
-  }
-  const frist = new Date(Date.parse(nu) + (paminnelse ? 24 : k.brev.svarsfrist_timmar) * 3_600_000).toISOString();
-  const upp = paminnelse
-    ? overgang(a, STATUS.PAMIND, { av: 'axel', nu, not: `påminnelse skickad till ${brev.mottagare}`, extra: { brev: { ...a.brev, paminnelse: r.kvitto, frist } } })
-    : overgang(a, STATUS.SKICKAD, { av: 'axel', nu, not: `brev skickat till ${brev.mottagare}`, extra: { brev: { ...a.brev, mottagare: brev.mottagare, fran: r.kvitto.fran ?? brev.fran, sprak: brev.sprak, skickat: r.kvitto, frist } } });
-  sparaArende(upp, ARENDEFIL, { nu }); skrivArendefiler(upp);
-  arenden.set(upp.id, upp);
+
+  // Gmail-vägen: paketet ligger klart, statusen rörs inte förrän --skickad.
+  const upp = { ...a, faktura: paminnelse ? a.faktura ?? null : faktura, brev: { ...(a.brev ?? {}), mottagare: brev.mottagare ?? a.brev?.mottagare ?? null, fran: brev.fran, sprak: brev.sprak, amne: brev.amne, paket: { nar: nu, via, fil: `arenden/${a.id}/${namn}.json`, paminnelse, stoppad: fel.length ? fel : null } } };
+  sparaArende(upp, ARENDEFIL, { nu }); skrivArendefiler(upp); arenden.set(upp.id, upp);
   await byggSidaFil({ k, arenden });
-  console.log(`✅ ${paminnelse ? 'Påminnelsen' : 'Brevet'} skickat till ${brev.mottagare} från ${r.kvitto.fran ?? brev.fran}. Frist: ${frist}. Ärendet ${upp.id} är nu ${upp.status}.`);
+  if (fel.length) { console.log('Paketet är skrivet men ska inte gå förrän stoppen ovan är lösta.'); process.exitCode = 1; return; }
+  console.log(`Sändpaketet ligger i konkurrenter/arenden/${a.id}/${namn}.json (brevet i ${namn}.txt${paket.bilagor.length ? `, bilagor: ${paket.bilagor.map((b) => `konkurrenter/${b}`).join(', ')}` : ''}).\nNästa steg: sessionen lägger det som utkast i Stonebite-Gmail. När det gått ut: node konkurrenter/kor.mjs --skickad ${a.id}${paminnelse ? ' --paminnelse' : ''}${brev.mottagare ? '' : ' --till <adress>'}`);
+}
+
+/** --skickad <id>: kvittot när brevet gått ut via Gmail (Axel eller sessionen). Flyttar ärendet till skickad/pamind. */
+async function skickad() {
+  const k = konfig();
+  const { arenden, a } = hamtaArende(flagga('skickad'));
+  const paminnelse = har('paminnelse');
+  const upp = registreraSkickat(a, { till: flagga('till'), fran: a.brev?.fran ?? k.brev.avsandare?.mail ?? null, nar: flagga('nar') ?? new Date().toISOString(), via: flagga('via') ?? 'gmail', meddelande: flagga('meddelande'), paminnelse, fristTimmar: k.brev.svarsfrist_timmar });
+  sparaArende(upp, ARENDEFIL); skrivArendefiler(upp); arenden.set(upp.id, upp);
+  await byggSidaFil({ k, arenden });
+  console.log(`✅ ${upp.id} är nu ${upp.status}: ${paminnelse ? 'påminnelsen' : 'brevet'}${upp.faktura?.nr && !paminnelse ? ` + faktura ${upp.faktura.nr}` : ''} gick till ${upp.brev.mottagare} via ${upp.brev[paminnelse ? 'paminnelse' : 'skickat'].via}. Frist: ${upp.brev.frist}. Uppföljningen läser om deras sida från nästa körning.`);
+}
+
+/** --faktura <id>: bygg (om) fakturan utan brev — för att titta på den eller efter ändrad taxa. */
+async function fakturaEnbart() {
+  const k = konfig();
+  const { a } = hamtaArende(flagga('faktura'));
+  if (a.brev?.skickat) { console.log(`Fakturan ${a.faktura?.nr ?? ''} har redan gått ut med brevet ${a.brev.skickat.nar} — bygg inte om den. (--ny-faktura ger ett nytt nummer om en ny ska ställas ut.)`); if (!har('ny-faktura')) { process.exitCode = 1; return; } }
+  const r = await byggOchSkrivFaktura(a, k, { sprak: flagga('sprak'), kopare: flagga('kopare'), ny: har('ny-faktura') });
+  if (r.fel.length) { console.log(`Fakturan kan inte byggas: ${r.fel.join('; ')}`); process.exitCode = 1; return; }
+  const upp = { ...a, faktura: r.faktura };
+  sparaArende(upp, ARENDEFIL); skrivArendefiler(upp);
+  console.log(`Faktura ${r.faktura.nr} på ${belopp(r.faktura.brutto, r.faktura.valuta, r.faktura.sprak)} (förfaller ${r.faktura.forfaller}):`);
+  for (const rad of r.faktura.rader) console.log(`  ${rad.beskrivning}: ${rad.antal} × ${belopp(rad.apris, r.faktura.valuta, r.faktura.sprak)}`);
+  console.log(r.faktura.fil ? `PDF: konkurrenter/${r.faktura.fil}` : `PDF gick inte att göra (${r.faktura.pdfFel}); HTML: konkurrenter/${r.faktura.htmlFil}`);
 }
 
 async function avfarda() {
@@ -563,9 +709,12 @@ async function kolla() {
   const rader = [];
   rader.push(`META_ACCESS_TOKEN: ${process.env.META_ACCESS_TOKEN ? 'finns' : 'SAKNAS — egna annonser och Ad Library läses inte'}`);
   rader.push(`DISCORD_BOT_TOKEN: ${process.env.DISCORD_BOT_TOKEN ? 'finns' : 'saknas — ingen Discord-post'}`);
+  rader.push(`Avsändare: ${k.brev.avsandare?.mail ?? '?'} via ${k.brev.avsandare?.via ?? 'gmail'} — brevet läggs som utkast i Stonebite-Gmail av sessionen (Gmail-connectorn måste vara kopplad på claude.ai). Reserv: --via loopia från butikens kundtjänstbrevlåda.`);
+  const fk = k.faktura ?? {};
+  rader.push(`Faktura: ${fk.aktiv === false ? 'AV' : `på — taxa annons ${fk.taxa?.annons ?? '?'} / video ${fk.taxa?.video ?? '?'} / bild ${fk.taxa?.bild ?? '?'} / produkttext ${fk.taxa?.produkttext ?? '?'} ${fk.valuta ?? 'SEK'}, ${fk.betalvillkor_dagar ?? 10} dagar, moms ${fk.moms_procent ?? 0} %`}${fk.bankgiro || fk.iban ? '' : ' — ⚠️ BANKGIRO/IBAN SAKNAS i konfig.json: ingen faktura kan byggas förrän Axel fyllt i det'}`);
   for (const [namn, v] of Object.entries(k.verksamheter)) {
-    const avs = await avsandareFor(namn, k);
-    rader.push(`${namn}: avsändare ${avs.mail ?? '?'} — ${avs.konfigurerad ? 'brevlådan finns i miljön' : `brevlådan SAKNAS (${(avs.saknas ?? []).join(', ')}) — brev kan visas men inte skickas härifrån`}`);
+    const avs = await avsandareFor(namn, k, { via: 'loopia' });
+    rader.push(`${namn}: reservbrevlåda (Loopia) ${avs.mail ?? '?'} — ${avs.konfigurerad ? 'finns i miljön' : `saknas (${(avs.saknas ?? []).join(', ')}) — behövs bara för --via loopia`}`);
     for (const b of v.butiker ?? []) {
       try { const p = await hamtaProdukter(b, { maxSidor: 1 }); rader.push(`  ${b}: ${p.length} produkter läsbara`); } catch (e) { rader.push(`  ${b}: ${e.message}`); }
     }
@@ -589,6 +738,6 @@ async function sidaEnbart() {
   console.log(`Granskningssidan byggd: ${f}`);
 }
 
-const huvud = har('kolla') ? kolla : har('fraser') ? fraser : har('hamta') ? hamta : har('rapport') ? rapport : har('brev') ? visaBrev : har('skicka') ? skicka : har('avfarda') ? avfarda : har('eskalera') ? eskalera : har('foljupp') ? foljupp : har('lista') ? lista : har('sida') ? sidaEnbart : null;
-if (!huvud) { console.error('Ange --kolla, --fraser, --hamta, --rapport, --lista, --brev <id>, --skicka <id>, --avfarda <id>, --eskalera <id>, --foljupp eller --sida.'); process.exit(1); }
+const huvud = har('kolla') ? kolla : har('fraser') ? fraser : har('hamta') ? hamta : har('rapport') ? rapport : har('brev') ? visaBrev : har('skickad') ? skickad : har('skicka') ? skicka : har('faktura') ? fakturaEnbart : har('avfarda') ? avfarda : har('eskalera') ? eskalera : har('foljupp') ? foljupp : har('lista') ? lista : har('sida') ? sidaEnbart : null;
+if (!huvud) { console.error('Ange --kolla, --fraser, --hamta [--annonser <fil>], --rapport, --lista, --brev <id>, --skicka <id>, --skickad <id>, --faktura <id>, --avfarda <id>, --eskalera <id>, --foljupp eller --sida.'); process.exit(1); }
 huvud().catch((e) => { console.error(`✗ ${e.message}`); process.exit(e.exit ?? 1); });

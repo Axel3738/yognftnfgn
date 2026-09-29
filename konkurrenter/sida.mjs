@@ -9,6 +9,7 @@
 // externa skript. Svenska — sidan är Axels.
 
 import { STATUS } from './arenden.mjs';
+import { belopp } from './faktura.mjs';
 
 const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const attr = esc;
@@ -98,24 +99,30 @@ function arendeHtml(a, { miniatyr, skarmdump, brevtext }) {
   const deras = a.deras ?? {};
   const text = a.bevis?.text?.styrka ? a.bevis.text : (a.bevis?.annons?.styrka ? a.bevis.annons : null);
   const passager = (text?.passager ?? []).slice(0, 5);
+  const annonser = Array.isArray(a.bevis?.annonser) ? a.bevis.annonser.filter((t) => t.text?.styrka || t.bilder?.length) : [];
   const bilder = a.bevis?.bilder ?? [];
   const sd = skarmdump(a);
   const mottagare = a.brev?.mottagare ?? null;
   const skickaKommando = `/konkurrentdodaren skicka ${a.id}${mottagare ? '' : ' --till <deras mejladress>'}`;
   const avfardaKommando = `/konkurrentdodaren avfarda ${a.id} "ingen kopia"`;
   const brev = brevtext ? brevtext(a) : null;
+  const faktura = a.faktura ?? null;
+  const fakturaRad = faktura ? `Fakturan ${esc(faktura.nr)} på <strong>${esc(belopp(faktura.brutto, faktura.valuta, faktura.sprak))}</strong> (förfaller ${esc(faktura.forfaller)}) följer med brevet som PDF.` : 'Fakturan byggs ur bevisen när du skickar (taxan i konkurrenter/konfig.json).';
+  const paket = a.brev?.paket && !a.brev?.skickat ? a.brev.paket : null;
+  const skickadKommando = `/konkurrentdodaren skickad ${a.id}${mottagare ? '' : ' --till <deras mejladress>'}`;
 
   const beslut = a.status === STATUS.NY ? `
     <section class="gor">
       <h3>Ditt beslut</h3>
-      <p>Brevet går från <span class="mottagare">${esc(a.brev?.fran ?? '?')}</span> till ${mottagare ? `<span class="mottagare">${esc(mottagare)}</span>` : '<span class="varning">ingen adress hittad — skriv den själv i kommandot</span>'}. Skickas först när du skriver kommandot i chatten.</p>
-      <div class="kommando"><code>${esc(skickaKommando)}</code><button class="kopiera" type="button" data-text="${attr(skickaKommando)}">Kopiera</button><small>Är det en kopia: skicka.</small></div>
+      <p>Brevet går från <span class="mottagare">${esc(a.brev?.fran ?? '?')}</span> (Stonebite-mejlen) till ${mottagare ? `<span class="mottagare">${esc(mottagare)}</span>` : '<span class="varning">ingen adress hittad — skriv den själv i kommandot</span>'}. ${fakturaRad} Inget går ut förrän du skrivit kommandot: då lägger sessionen brevet och fakturan som utkast i din Gmail, och du trycker Skicka där.</p>
+      ${paket ? `<p class="varning">Sändpaketet är byggt ${esc(datumLang(paket.nar))}${paket.stoppad ? ` men stoppat: ${esc(paket.stoppad.join('; '))}` : ' — ligger som utkast i Gmail om sessionen hann dit. När det gått ut, kvittera:'}</p>${paket.stoppad ? '' : `<div class="kommando"><code>${esc(skickadKommando)}</code><button class="kopiera" type="button" data-text="${attr(skickadKommando)}">Kopiera</button><small>Kvittot: ärendet blir "brev skickat" och fristen börjar räknas.</small></div>`}` : ''}
+      <div class="kommando"><code>${esc(skickaKommando)}</code><button class="kopiera" type="button" data-text="${attr(skickaKommando)}">Kopiera</button><small>Är det en kopia: skicka (brev + faktura).</small></div>
       <div class="kommando"><code>${esc(avfardaKommando)}</code><button class="kopiera" type="button" data-text="${attr(avfardaKommando)}">Kopiera</button><small>Är det ingen kopia: avfärda, så kommer den inte upp igen.</small></div>
       ${brev ? `<details><summary>Brevet som skickas (${brev.sprak === 'sv' ? 'svenska' : 'engelska'})</summary><pre>${esc(brev.amne)}\n\n${esc(brev.text)}</pre></details>` : ''}
     </section>` : `
     <section class="gor">
       <h3>Läge</h3>
-      <p>${esc(STATUSORD[a.status] ?? a.status)}${a.brev?.skickat ? ` — brev skickat ${esc(datumLang(a.brev.skickat.nar))} till <span class="mottagare">${esc(a.brev.skickat.till)}</span>` : ''}${a.uppfoljning ? `. Kollad ${esc(datumLang(a.uppfoljning.nar))}: ${a.uppfoljning.kvar ? '<span class="varning">kopian ligger kvar</span>' : 'kopian är borta'}` : ''}.</p>
+      <p>${esc(STATUSORD[a.status] ?? a.status)}${a.brev?.skickat ? ` — brev skickat ${esc(datumLang(a.brev.skickat.nar))} till <span class="mottagare">${esc(a.brev.skickat.till)}</span>${a.brev.skickat.via ? ` via ${esc(a.brev.skickat.via)}` : ''}` : ''}${faktura && a.brev?.skickat ? `, faktura ${esc(faktura.nr)} på ${esc(belopp(faktura.brutto, faktura.valuta, faktura.sprak))} förfaller ${esc(faktura.forfaller)}` : ''}${a.uppfoljning ? `. Kollad ${esc(datumLang(a.uppfoljning.nar))}: ${a.uppfoljning.kvar ? '<span class="varning">kopian ligger kvar</span>' : 'kopian är borta'}` : ''}.</p>
       ${a.status === STATUS.SKICKAD && a.uppfoljning?.kvar ? `<div class="kommando"><code>/konkurrentdodaren paminn ${esc(a.id)}</code><button class="kopiera" type="button" data-text="/konkurrentdodaren paminn ${attr(a.id)}">Kopiera</button><small>Fristen har gått ut. Påminnelsen är brev nummer två.</small></div>` : ''}
       ${[STATUS.SKICKAD, STATUS.PAMIND].includes(a.status) ? `<div class="kommando"><code>/konkurrentdodaren eskalera ${esc(a.id)}</code><button class="kopiera" type="button" data-text="/konkurrentdodaren eskalera ${attr(a.id)}">Kopiera</button><small>När du anmält vidare till Meta/Shopify själv.</small></div>` : ''}
     </section>`;
@@ -132,7 +139,7 @@ function arendeHtml(a, { miniatyr, skarmdump, brevtext }) {
     <div class="kol"><h3>Vårt</h3>${bildBlock(prod.bilder?.[0] ?? a.var?.annons?.bild, { miniatyr })}<p><a href="${attr(prod.url ?? '#')}" target="_blank" rel="noopener">${esc(prod.titel ?? prod.url ?? '?')}</a></p>${a.var?.annons?.namn ? `<p class="meta">Annons: ${esc(a.var.annons.namn)}</p>` : ''}</div>
     <div class="kol"><h3>Deras</h3>${sd ? `<img src="${attr(sd)}" alt="Skärmdump av ${attr(motpart(a))}">` : bildBlock(bilder[0]?.deras ?? deras.bilder?.[0] ?? null, { miniatyr })}<p class="lank"><a href="${attr(deras.url ?? deras.snapshot ?? '#')}" target="_blank" rel="noopener">${esc(deras.url ?? deras.snapshot ?? '?')}</a></p>${deras.titel ? `<p class="meta">${esc(deras.titel)}</p>` : ''}${deras.kontakt?.epost?.length ? `<p class="meta">Adresser på deras sida: ${esc(deras.kontakt.epost.slice(0, 4).join(', '))}</p>` : ''}</div>
   </div>
-  ${passager.length ? `<section class="citat"><h3>Kopierad text — ${esc(text.kopieradeOrd)} ord ordagrant, längsta sviten ${esc(text.langsta)} ord</h3>${passager.map((p) => `<blockquote>”${esc(p.text)}”<small>${p.ord} ord i följd${text === a.bevis?.annons ? ' · ur vår annonstext' : ' · ur vår produktsida'}</small></blockquote>`).join('')}</section>` : ''}
+  ${annonser.length ? `<section class="citat"><h3>Deras annonser som återger våra — ${annonser.length} st</h3>${annonser.slice(0, 8).map((t) => `<blockquote>${t.text?.passager?.[0] ? `”${esc(t.text.passager[0].text)}”` : '<em>ingen ordagrann text — bilden är beviset</em>'}<small>${t.lank ? `<a href="${attr(t.lank)}" target="_blank" rel="noopener">annons ${t.nr}</a>` : `annons ${t.nr}`}${t.varAnnons?.namn ? ` ← vår ${esc(t.varAnnons.namn)}` : ''}${t.text ? ` · ${t.text.langsta} ord i följd, ${t.text.kopieradeOrd} ord totalt` : ''}${t.bilder?.length ? ` · ${t.bilder.length} bild(er) lika våra` : ''}${t.video ? ' · video' : ''}</small></blockquote>`).join('')}</section>` : passager.length ? `<section class="citat"><h3>Kopierad text — ${esc(text.kopieradeOrd)} ord ordagrant, längsta sviten ${esc(text.langsta)} ord</h3>${passager.map((p) => `<blockquote>”${esc(p.text)}”<small>${p.ord} ord i följd${text === a.bevis?.annons ? ' · ur vår annonstext' : ' · ur vår produktsida'}</small></blockquote>`).join('')}</section>` : ''}
   ${bilder.length ? `<section><h3>Samma bilder — ${bilder.length} st</h3><div class="bildpar">${bilder.slice(0, 8).map((b) => `<figure>${bildBlock(b.egen, { miniatyr })}${bildBlock(b.deras, { miniatyr })}<figcaption>vår ↔ deras · ${esc(b.grad)} (avstånd ${b.avstand}/64)</figcaption></figure>`).join('')}</div></section>` : ''}
   ${beslut}
 </article>`;
@@ -166,7 +173,7 @@ export function byggSida({ arenden = [], datum, korning = {}, kallrader = [], mi
     <strong>Så gör du</strong>
     <ol>
       <li>Titta på bevisen: den kopierade texten står ordagrant, bilderna ligger par om par, deras sida är fotad.</li>
-      <li>Är det en kopia: kopiera skicka-kommandot och klistra in det i chatten. Brevet går från butikens supportadress.</li>
+      <li>Är det en kopia: kopiera skicka-kommandot och klistra in det i chatten. Sessionen bygger brevet och fakturan och lägger dem som utkast i Stonebite-Gmail; du trycker Skicka där (eller skriver "skicka direkt").</li>
       <li>Är det ingen kopia: kopiera avfärda-kommandot. Då dyker den inte upp igen.</li>
     </ol>
   </section>
