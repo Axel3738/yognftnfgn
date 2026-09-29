@@ -1,0 +1,56 @@
+{%- comment -%}
+  snippets/ms-trustpilot-rad.liquid — skrivs av matstrumpor/trustpilot.mjs --tema, ändra inte i temat.
+  Den kompakta Trustpilot-raden: stjärnor, etikett, betyg, antal och Trustpilots namn, som en
+  länk till profilen. Ur shop-metafältet matstrumpor.trustpilot (matstrumpor/trustpilot.mjs --skarpt).
+  Parametrar: kompakt (true = utan kantlinjer, vänsterställd, för köprutan och varukorgslådan).
+  Ritas bara när metafältet finns och bär minst ett omdöme.
+{%- endcomment -%}
+{%- liquid
+  assign d = shop.metafields.matstrumpor.trustpilot.value
+  assign sprak = request.locale.iso_code
+-%}
+{%- if d and d.antal > 0 -%}
+  {%- liquid
+    assign profil = d.profil[sprak] | default: d.profil.sv
+    assign etikett = d.etikett[sprak] | default: d.etikett.sv
+    if sprak == 'en'
+      assign poang = d.poang_en
+    else
+      assign poang = d.poang_text
+    endif
+  -%}
+  {%- capture av5 -%}{{{ sprak:av5 }}}{%- endcapture -%}
+  {%- capture ordet_omdomen -%}{{{ sprak:omdomen }}}{%- endcapture -%}
+  {%- capture pa_trustpilot -%}{{{ sprak:pa_trustpilot }}}{%- endcapture -%}
+  <div class="ms-scope ms-tp ms-tp--rad{% if kompakt %} ms-tp--kompakt{% endif %}">
+    <a class="ms-tp__rad" href="{{ profil }}" target="_blank" rel="noopener">
+      <span class="ms-tp__stj" role="img" aria-label="{{ poang }} {{ av5 }}">
+        {%- for i in (1..5) -%}
+          {%- assign fyll = d.stjarnor | minus: i | plus: 1 -%}
+          <span class="ms-tp__box{% if fyll >= 1 %} is-full{% elsif fyll >= 0.5 %} is-half{% endif %}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.6l3.3 6.8 7.5 1.1-5.4 5.3 1.3 7.5L12 18.7l-6.7 3.6 1.3-7.5L1.2 9.5l7.5-1.1z"/></svg></span>
+        {%- endfor -%}
+      </span>
+      <span class="ms-tp__radtext"><strong>{{ etikett }}</strong> · {{ poang }} {{ av5 }} · {{ d.antal }} {{ ordet_omdomen }} {{ pa_trustpilot }}</span>
+      <span class="ms-tp__logga" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 1.6l3.3 6.8 7.5 1.1-5.4 5.3 1.3 7.5L12 18.7l-6.7 3.6 1.3-7.5L1.2 9.5l7.5-1.1z"/></svg>Trustpilot</span>
+    </a>
+  </div>
+  <style>
+    .ms-tp { --tp-gron: #00b67a; --tp-gra: #dcdce6; }
+    .ms-tp__stj { display: inline-flex; gap: 3px; vertical-align: middle; }
+    .ms-tp__box { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; background: var(--tp-gra); border-radius: 3px; }
+    .ms-tp__box.is-full { background: var(--tp-gron); }
+    .ms-tp__box.is-half { background: linear-gradient(90deg, var(--tp-gron) 50%, var(--tp-gra) 50%); }
+    .ms-tp__box svg { width: 70%; height: 70%; fill: #fff; }
+    .ms-tp__logga { display: inline-flex; align-items: center; gap: 4px; font-weight: 700; font-size: var(--ms-fs-sm); color: currentColor; white-space: nowrap; }
+    .ms-tp__logga svg { width: 1.05em; height: 1.05em; fill: var(--tp-gron); }
+    .ms-tp--rad { border-block: 1px solid var(--ms-line); background: var(--ms-surface); }
+    .ms-tp__rad { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 14px; padding: 11px 16px; color: inherit; text-decoration: none; font-size: var(--ms-fs-sm); }
+    .ms-tp__rad:hover .ms-tp__radtext { text-decoration: underline; }
+    /* Kompakt (köprutan, varukorgslådan): texten säger redan "på Trustpilot", så loggan är överflödig. */
+    .ms-tp--kompakt { border: 0; background: transparent; margin: 10px 0 4px; }
+    .ms-tp--kompakt .ms-tp__rad { padding: 0; gap: 6px 10px; font-size: var(--ms-fs-xs); }
+    .ms-tp--kompakt .ms-tp__box { width: 18px; height: 18px; border-radius: 2px; }
+    .ms-tp--kompakt .ms-tp__logga { display: none; }
+    @media (max-width: 600px) { .ms-tp__rad { font-size: var(--ms-fs-xs); } .ms-tp__rad .ms-tp__box { width: 20px; height: 20px; } .ms-tp--kompakt .ms-tp__box { width: 16px; height: 16px; } }
+  </style>
+{%- endif -%}
