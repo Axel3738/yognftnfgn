@@ -299,7 +299,16 @@ går att räkna. Jämförelsen håller ändå, eftersom produkt, pris och kostna
 Shopify bygger alltså på landningssidan. Order som bara har en kassalänk räknas som okända.
 ⚠️ De två kampanjerna riktar sig till samma publik (Norge, brett) och möts i samma auktion. Metas
 eget split-test (`ad_studies`) delar publiken rent men låser start- och slutdatum. Det väljer Axel
-när han slår på kampanjerna.
+när han slår på kampanjerna. Testet byggs med
+`ab-norge.mjs --splittest --start <YYYY-MM-DD> [--dagar 14] [--skarpt]`. Det är torrt som standard
+och skapar bara testet, aldrig påslagningen. Skapandet är oprövat skarpt. Svarar Meta med fel gör
+Axel det i Ads Manager: markera båda kampanjerna och välj "A/B-test".
+
+**Rättad text i en pausad annons:** ändra `<KOD>.json` och kör
+`bygg.mjs --marknad <KOD> --skarpt --byt-text`. Samma video eller bild behålls, bara creativen byts,
+och texten läses tillbaka. En annons som går rörs aldrig. Första användningen var FR och PL
+2026-09-29: erbjudanderaden följer nu sidans rättade paketrubriker ("1 acheté – 1 offert",
+"otrzymaj").
 
 ## Presentkortets egen sidmall (`presentkort.mjs`, 2026-09-29)
 
