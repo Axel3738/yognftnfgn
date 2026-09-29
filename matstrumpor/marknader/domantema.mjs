@@ -127,29 +127,65 @@ const BLOCK_V4 = BLOCK_V2.replace(
   `{%- assign ms_pk = 'presentkort-' | append: request.locale.iso_code | append: '.png' -%}\n        {%- assign ms_sida = ms_sida | replace: '${PRESENTKORT_SV}', ms_pk -%}`,
   `{%- assign ms_pk_fil = 'presentkort-' | append: request.locale.iso_code | append: '.png' -%}\n        {%- assign ms_pk_ny = images[ms_pk_fil] | image_url | split: 'files/' | last -%}\n        {%- assign ms_pk_gammal = all_products['${PRESENTKORT_HANDLE}'].featured_image | image_url | split: 'files/' | last -%}\n        {%- if ms_pk_ny contains '?v=' and ms_pk_gammal contains '?v=' -%}\n          {%- assign ms_sida = ms_sida | replace: ms_pk_gammal, ms_pk_ny -%}\n        {%- endif -%}`);
 
+// Version 5: på egen domän byts dessutom den gamla loggan ("MATSTRUMPOR.SE") mot LOGGA_FIL i hela den
+// fångade sidan — sidfotens bild (settings.brand_image) och JSON-LD:ns Organization-logo (settings.logo)
+// stod kvar när sidhuvudet fått sin egen patch (QA som kund 2026-09-29: 79 av 79 .eu-sidor, alla .com och
+// .no). Filerna har samma mått (1920×1080, mätt), så sidfotens bredd/höjd-attribut stämmer. Samma
+// gardering som presentkortet: bara när adresserna bär ?v= (ett tomt sökord hade förstört sidan).
+const LOGGA_I_SIDAN = `        {%- assign ms_logga_ny = images['${LOGGA_FIL}'] | image_url | split: 'files/' | last -%}
+        {%- if ms_logga_ny contains '?v=' -%}
+          {%- assign ms_logga_fot = settings.brand_image | image_url | split: 'files/' | last -%}
+          {%- assign ms_logga_lo = settings.logo | image_url | split: 'files/' | last -%}
+          {%- if ms_logga_fot contains '?v=' -%}{%- assign ms_sida = ms_sida | replace: ms_logga_fot, ms_logga_ny -%}{%- endif -%}
+          {%- if ms_logga_lo contains '?v=' and ms_logga_lo != ms_logga_fot -%}{%- assign ms_sida = ms_sida | replace: ms_logga_lo, ms_logga_ny -%}{%- endif -%}
+        {%- endif -%}
+`;
+const V4_EGEN = `      {%- if ms_egen -%}\n        {{ ${KEDJA} }}`;
+const BLOCK_V5 = BLOCK_V4.replace(V4_EGEN, `      {%- if ms_egen -%}\n${LOGGA_I_SIDAN}        {{ ${KEDJA} }}`);
+if (BLOCK_V5 === BLOCK_V4) throw new Error('domantema: version 5 hittade inte egen-domän-grenen i version 4');
+
 export function patchaLayout(kod) {
-  if (kod.includes(BLOCK_V4)) return { kod, byten: [], hoppade: ['layout: redan patchad (v4)'] };
+  if (kod.includes(BLOCK_V5)) return { kod, byten: [], hoppade: ['layout: redan patchad (v5)'] };
+  if (kod.includes(BLOCK_V4)) {
+    kod = bytExakt(kod, BLOCK_V4, BLOCK_V5, 1);
+    return { kod, byten: ['uppgradering_v5'], hoppade: [] };
+  }
   const aldreV3 = /\?pk=(\d+)&v='/.exec(kod);
   if (aldreV3) {
-    kod = bytExakt(kod, blockV3(Number(aldreV3[1])), BLOCK_V4, 1);
-    return { kod, byten: ['uppgradering_v4'], hoppade: [] };
+    kod = bytExakt(kod, blockV3(Number(aldreV3[1])), BLOCK_V5, 1);
+    return { kod, byten: ['uppgradering_v5'], hoppade: [] };
   }
   if (kod.includes(BLOCK_V2)) {
-    kod = bytExakt(kod, BLOCK_V2, BLOCK_V4, 1);
-    return { kod, byten: ['uppgradering_v4'], hoppade: [] };
+    kod = bytExakt(kod, BLOCK_V2, BLOCK_V5, 1);
+    return { kod, byten: ['uppgradering_v5'], hoppade: [] };
   }
   if (kod.includes(MARK)) {
     kod = bytExakt(kod, `    ${villkor(false)}    <title>\n`, `    ${villkor(true)}    <title>\n`, 1);
-    kod = bytExakt(kod, BLOCK_V1, BLOCK_V4, 1);
-    return { kod, byten: ['uppgradering_v4'], hoppade: [] };
+    kod = bytExakt(kod, BLOCK_V1, BLOCK_V5, 1);
+    return { kod, byten: ['uppgradering_v5'], hoppade: [] };
   }
   kod = bytExakt(kod, '    <title>\n', `    ${villkor(true)}    <title>\n`, 1);
   kod = bytExakt(kod, '      {{ page_title }}\n',
     "      {% if ms_egen %}{{ page_title | replace: 'Matstrumpor.se', 'Matstrumpor' }}{% else %}{{ page_title }}{% endif %}\n", 1);
   kod = bytExakt(kod, '      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}\n',
     "      {%- if ms_egen -%}{%- unless page_title contains 'Matstrumpor' %} &ndash; Matstrumpor{% endunless -%}{%- else -%}{%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}{%- endif -%}\n", 1);
-  kod = bytExakt(kod, SIDAN, BLOCK_V4, 1);
+  kod = bytExakt(kod, SIDAN, BLOCK_V5, 1);
   return { kod, byten: ['villkor', 'titel', 'titelsuffix', 'sidan'], hoppade: [] };
+}
+
+/** Bara för testerna: version 4 av layoutpatchen (live 2026-09-29 ~12:00). */
+export function patchaLayoutV4(kod) {
+  return patchaLayout(kod).kod.replace(BLOCK_V5, BLOCK_V4);
+}
+
+// Dawns egen finska locale-fil bär e-postfältets text på NAMNfältet i presentkortets mottagarformulär
+// ("Vastaanottajan sähköpostiosoite (valinnainen)" — QA 2026-09-29 på /fi/products/presentkort).
+// Inte domänbundet, men ligger här för att köras med samma steg och läsas tillbaka.
+export const FI_FEL = '"name_label": "Vastaanottajan sähköpostiosoite (valinnainen)",';
+export const FI_RATT = '"name_label": "Vastaanottajan nimi (valinnainen)",';
+export function patchaFiLocale(kod) {
+  if (kod.includes(FI_RATT)) return { kod, byten: [], hoppade: ['fi.json: redan rätt'] };
+  return { kod: bytExakt(kod, FI_FEL, FI_RATT, 1), byten: ['mottagarens_namn'], hoppade: [] };
 }
 
 /** Bara för testerna: version 2 av layoutpatchen, som den gick live förmiddagen 2026-09-29. */
@@ -346,6 +382,7 @@ export const PATCHAR = {
   'sections/header.liquid': patchaHeader,
   'sections/footer.liquid': patchaFooter,
   'snippets/ms-head.liquid': patchaMsHead,
+  'locales/fi.json': patchaFiLocale,
 };
 export const NYA_FILER = {
   'sections/ms-omdomen-no.liquid': SEKTION_OMDOMEN,
@@ -407,10 +444,20 @@ async function huvud() {
     if (fel.length) throw new Error(`${f.filename}: ${fel.map((e) => `${e.code} ${e.message}`).join('; ')}`);
     log(`✅ ${f.filename}`);
   }
-  // Tillbakaläsning: markören i varje patchad fil.
-  const las = await k.graphql(`query($id: ID!, $f: [String!]) { theme(id: $id) { files(filenames: $f, first: 20) { nodes { filename body { ... on OnlineStoreThemeFileBodyText { content } } } } } }`, { id: temaId, f: ut.map((x) => x.filename) });
+  // Tillbakaläsning: markören i varje patchad fil. Shopify kan svara med den gamla versionen en kort stund
+  // efter skrivningen (mätt 2026-09-29: locales/fi.json läste fel direkt efter, rätt en minut senare) —
+  // därför upp till tre läsningar innan en fil döms.
+  const okFor = (n) => (n.filename === 'templates/product.json' ? n.body.content.includes('ms_omdomen_no')
+    : n.filename === 'locales/fi.json' ? n.body.content.includes(FI_RATT)
+      : n.filename === 'layout/theme.liquid' ? n.body.content.includes(BLOCK_V5) : n.body.content.includes(MARK));
+  let las;
+  for (let forsok = 1; forsok <= 3; forsok++) {
+    las = await k.graphql(`query($id: ID!, $f: [String!]) { theme(id: $id) { files(filenames: $f, first: 20) { nodes { filename body { ... on OnlineStoreThemeFileBodyText { content } } } } } }`, { id: temaId, f: ut.map((x) => x.filename) });
+    if (las.theme.files.nodes.every(okFor) || forsok === 3) break;
+    await new Promise((r) => setTimeout(r, 5000));
+  }
   for (const n of las.theme.files.nodes) {
-    const ok = n.filename === 'templates/product.json' ? n.body.content.includes('ms_omdomen_no') : n.body.content.includes(MARK);
+    const ok = okFor(n);
     log(`${ok ? '✅' : '❌'} tillbakaläst ${n.filename}`);
   }
 }

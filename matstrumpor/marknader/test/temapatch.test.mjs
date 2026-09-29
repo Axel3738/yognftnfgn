@@ -24,10 +24,14 @@ test('bytExakt kräver exakt antal och rör inte schemat', () => {
   assert.throws(() => bytExakt(kod, 'Ja', 'X', 1), /hittades 2/);
 });
 
-test('patchaFil ms-compare: Ja/Nej två gånger var, Egenskap en gång, idempotent', () => {
+test('patchaFil ms-compare: Ja/Nej två gånger var, idempotent — Egenskap utan översättning står kvar (aldrig "null")', () => {
   const kod = '<span class="ms-sr">Egenskap</span><span class="ms-sr">Ja</span><span class="ms-sr">Nej</span><span class="ms-sr">Ja</span><span class="ms-sr">Nej</span>{% schema %}{"a":"Ja"}';
   const r = patchaFil('sections/ms-compare.liquid', kod, OV);
-  assert.deepEqual(r.byten, ['egenskap', 'ja', 'nej']);
+  // Fixturen har bara nb "Egenskap" = svenskan: ingen gren. Före 2026-09-29 blev det <span>null</span>.
+  assert.deepEqual(r.byten, ['ja', 'nej']);
+  assert.ok(r.hoppade.includes('egenskap: ingen översättning'));
+  assert.ok(r.kod.includes('<span class="ms-sr">Egenskap</span>'));
+  assert.ok(!r.kod.includes('null'));
   assert.equal((r.kod.match(/{% when 'en' %}Yes/g) ?? []).length, 2);
   assert.ok(r.kod.endsWith('{% schema %}{"a":"Ja"}'));
   const igen = patchaFil('sections/ms-compare.liquid', r.kod, OV);
@@ -97,4 +101,54 @@ test('patchaJs: språk ur <html lang>, valuta via Intl när den inte är butiken
   // Koden ska fortfarande vara giltig JavaScript.
   assert.doesNotThrow(() => new Function(r.kod));
   assert.deepEqual(patchaJs(r.kod).byten, []);
+});
+
+test('patchaFil ms-paket: sortvalets aria-etikett får språkgren, citattecken escapas', () => {
+  const kod = '<select class="ms-paket__sort" data-lada="{{ n }}" aria-label="Sort i låda {{ n }}">{{ sort_options }}</select>';
+  const ov = { en: { 'liquid.ms-paket.sort_i_lada': 'Choose socks for box' }, fr: { 'liquid.ms-paket.sort_i_lada': 'Chaussettes de la "boîte"' } };
+  const r = patchaFil('snippets/ms-paket.liquid', kod, ov);
+  assert.deepEqual(r.byten, ['sort_i_lada']);
+  assert.ok(r.kod.includes(`aria-label="{% case request.locale.iso_code %}{% when 'en' %}Choose socks for box{% when 'fr' %}Chaussettes de la &quot;boîte&quot;{% else %}Sort i låda{% endcase %} {{ n }}"`));
+  assert.deepEqual(patchaFil('snippets/ms-paket.liquid', r.kod, ov).byten, []);
+});
+
+test('patchaPaketJs: köpknappens tre texter på kundens språk, svenskan som reserv, ordlistan byts på plats', async () => {
+  const { patchaPaketJs } = await import('../temapatch.mjs');
+  const js = [
+    '(function () {', "  'use strict';", '', '  function kop() {',
+    "      knapp.textContent = 'Lägger i…';",
+    "              throw new Error(d.description || d.message || 'Kunde inte lägga i varukorgen.');",
+    "          fel.textContent = e.message || 'Det gick inte att lägga i varukorgen. Försök igen.';",
+    '  }', '  window.msTest = { kop: kop, text: function (n, sv) { return msPaketText(n, sv); } };', '})();',
+  ].join('\n');
+  const ov = { de: { 'liquid.ms-paket.js.lagger_i': 'Wird hinzugefügt …', 'liquid.ms-paket.js.fel_lagga_i': 'Konnte nicht in den Warenkorb gelegt werden.', 'liquid.ms-paket.js.fel_forsok_igen': 'Das hat nicht geklappt. Bitte versuche es erneut.' }, 'pt-PT': { 'liquid.ms-paket.js.lagger_i': 'A adicionar…' } };
+  const r = patchaPaketJs(js, ov);
+  assert.deepEqual(r.byten, ['ordlista', 'lagger_i', 'fel_lagga_i', 'fel_forsok_igen']);
+  assert.ok(!/'Lägger i…';/.test(r.kod.replace("msPaketText('lagger_i', 'Lägger i…')", '')));
+  // Giltig JS som slår upp <html lang>: de, pt-PT, och svenskan när språket saknas.
+  const kor = (lang) => { const w = {}; new Function('window', 'document', r.kod)(w, { documentElement: { lang } }); return w.msTest; };
+  assert.equal(kor('de').text('lagger_i', 'Lägger i…'), 'Wird hinzugefügt …');
+  assert.equal(kor('pt-PT').text('lagger_i', 'Lägger i…'), 'A adicionar…');
+  assert.equal(kor('pt-PT').text('fel_lagga_i', 'Kunde inte lägga i varukorgen.'), 'Kunde inte lägga i varukorgen.');
+  assert.equal(kor('sv').text('lagger_i', 'Lägger i…'), 'Lägger i…');
+  // Idempotent — och en ändrad översättning byter bara ordlistan.
+  assert.deepEqual(patchaPaketJs(r.kod, ov).byten, []);
+  const ov2 = { ...ov, de: { ...ov.de, 'liquid.ms-paket.js.lagger_i': 'Wird in den Warenkorb gelegt …' } };
+  const r2 = patchaPaketJs(r.kod, ov2);
+  assert.deepEqual(r2.byten, ['ordlista (uppdaterad)']);
+  assert.equal(kor.call(null, 'de') && (() => { const w = {}; new Function('window', 'document', r2.kod)(w, { documentElement: { lang: 'de' } }); return w.msTest.text('lagger_i', 'x'); })(), 'Wird in den Warenkorb gelegt …');
+});
+
+test('patchaMallJson: en gren byggd med en äldre översättning byts på plats mot den nya', () => {
+  const mall = JSON.stringify({ sections: { main: { blocks: { ms_storlek: { type: 'custom_liquid', settings: { custom_liquid: '<p class="ms-storlek">Passar strl 36–44 · stretchigt material</p>' } } } } } }, null, 2);
+  const gammal = { en: { 'liquid.product.ms_storlek': 'Fits EU 36–44 · stretchy fabric' } };
+  const ny = { en: { 'liquid.product.ms_storlek': 'Fits EU sizes 36–44 · stretchy fabric' } };
+  const v1 = patchaMallJson('templates/product.json', mall, gammal).kod;
+  // Utan den gamla versionen går det inte att hitta grenen — steget stannar hellre än gissar.
+  assert.throws(() => patchaMallJson('templates/product.json', v1, ny), /hittades inte/);
+  const r = patchaMallJson('templates/product.json', v1, ny, {}, [gammal]);
+  assert.deepEqual(r.byten, ['ms_storlek (uppdaterad)']);
+  assert.ok(r.kod.includes("{% when 'en' %}Fits EU sizes 36–44 · stretchy fabric{% else %}Passar strl 36–44"));
+  assert.ok(!r.kod.includes('Fits EU 36–44'));
+  assert.deepEqual(patchaMallJson('templates/product.json', r.kod, ny, {}, [gammal]).byten, []);
 });
