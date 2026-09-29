@@ -34,7 +34,7 @@ export function formulera(larm) {
 
 /** Ett löst tillstånd → { text, mrkdwn }. `post` är minnesraden (nyckel, rubrik, verksamhet, tid). */
 export function formuleraLost(post, { nu = new Date() } = {}) {
-  const sedan = post.tid ? new Date(post.tid).toLocaleString('sv-SE', { timeZone: 'Europe/Stockholm', hour: '2-digit', minute: '2-digit', day: 'numeric', month: 'short' }) : '?';
+  const sedan = post.tid ? klockan(new Date(post.tid)) : '?';
   const rubrik = `✅ Löst · ${namn(post.verksamhet)} · ${post.rubrik ?? post.nyckel}`;
   const rad = `Larmat ${sedan}, borta ${klockan(nu)}. Inget mer att göra.`;
   return { text: bygg(rubrik, [rad], [], (s) => `**${s}**`), mrkdwn: bygg(rubrik, [rad], [], (s) => `*${s}*`) };
