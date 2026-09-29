@@ -27,7 +27,7 @@ Kommandot är `/akut` (`.claude/commands/akut.md`), rutinen går varje timme :28
 |---|---|---|---|
 | Butikerna svarar | GET på varje butik i drift (ordrar senaste 7 dygnen), marknadsdomänerna (carashell.com), `sajter_extra` | 5xx/timeout tre gånger, 402 Unavailable Shop, lösenordssidan | tillstånd |
 | Annonskontona | Meta `act_<id>` (status, disable_reason, spend_cap) — kontona ur `stonebite/varumarken.json` | status ≠ aktivt; utgiftstaket nått | tillstånd |
-| Pengar brinner | Meta insights `today`, kampanjnivå | ≥ 5 000 kr utan köp, eller ≥ 10 000 kr med ROAS < halva break-even (ur namnet `BE ROAS 1.63`) | händelse (per kampanj och dag) |
+| Pengar brinner | Meta insights `today`, kampanjnivå | ≥ 5 000 kr utan köp, eller ≥ 10 000 kr med ROAS < halva break-even (ur namnet `BE ROAS 1.63`) | händelse (per kampanj och Metas dygn) |
 | Pixeln | snapshotens ordrar i dag mot Metas köp i dag, per varumärke (delade konton på kampanjprefix, `kampanjTillhor`) | ≥ 15 ordrar men 0 köp på ≥ 2 000 kr | händelse (per dag) |
 | Backend | `https://www.stonebite.org/halsa`, direktadressen som reserv | sajten svarar inte (säger om det är domänen eller Railway); `autosvar.kor: false`; ≥ 5 omstarter | tillstånd |
 | Rutinerna | `stonebite/kallor/rutiner.mjs` (git-loggen mot `stonebite/rutiner.json`) | status `saknas` — aldrig `omatbar` eller `avstangd` | tillstånd |
@@ -78,15 +78,19 @@ med Axels eget konto; meddelandena postas alltså som honom.
   `--postat <id>`. Connectorn Slack måste vara kopplad på rutinen (den ärvs
   inte). Kvitteringen är det som skriver minnet — ett meddelande som inte gick
   iväg ligger kvar i kön till nästa körning.
-  ⚠️ **Mätt vid bygget 2026-09-27:** `create_trigger` avvisar `connectors`
-  ("not available for this organization"), rutinen står med
-  `mcp_connections: []`, och dess session har bara Bash/Read/Write/Edit/Glob/
-  Grep/Agent/WebFetch (`get_session` → `turn_handoff.tools`, inga `mcp__*`).
-  Tills Axel kopplat Slack på rutinen i Routines-vyn — eller lagt en
-  `SLACK_WEBHOOK_URL` i miljön — köar rutinen larmen och säger det i sin
-  rapport; en session med Slack (som den som byggde larmet) postar kön och
-  kvitterar. Larmen försvinner aldrig: det som inte kvitterats är "nytt"
-  nästa timme igen.
+  ✅ **Mätt i drift 2026-09-27 17:30 CEST: rutinen postar själv.** Första
+  cron-körningen (:28) postade CaraShell-larmet i `#urgent` två minuter
+  senare, som Axel via Claude, utan något klick — och kvitterade det i nästa
+  körning (`skickade` i `larm.json`). `create_trigger` avvisar visserligen
+  `connectors` ("not available for this organization") och triggern visar
+  `mcp_connections: []`, men rutinens session har Slack-connectorn ändå (den
+  skapades från en session som hade den). ⚠️ `get_session` →
+  `turn_handoff.tools` listar ALDRIG `mcp__*`-verktyg, inte ens i en session
+  som bevisligen postar i Slack — den listan säger inget om connectors, och
+  bygget skrev fel i ett dygn på grund av den ("rutinen köar tills Axel
+  kopplat Slack"). Postar rutinen någon gång inte: kön ligger kvar i
+  `att-posta.json`, det som inte kvitterats är "nytt" nästa timme igen, och
+  en session med Slack postar och kvitterar.
 - **Reserven:** finns `SLACK_BOT_TOKEN` (en Slack-app med `chat:write`,
   inbjuden i kanalen) eller `SLACK_WEBHOOK_URL` (Incoming Webhook låst till
   kanalen) i miljön postar `kor.mjs` själv. Då behövs inget verktygsanrop
@@ -112,6 +116,12 @@ med Axels eget konto; meddelandena postas alltså som honom.
   `carashell.se` svarar med carashell.com (302) — det är 200 och rätt.
 - `toLocaleString('sv-SE')` sätter hårda mellanslag i talen; `kr()` byter till
   vanliga så "18 512 kr" går att söka på.
+- **Veckodag och datum står i varje larm** (`klockan()` → "sön 27/9 17:29",
+  och pengar-rubriken bär dygnet: "Pengar brinner sön 27/9: 19 299 kr, ROAS
+  0,31"). Första versionen skrev "19 299 kr i dag … Mätt 17:29": Axel läste
+  söndagens larm på tisdag morgon 29/9 och frågade om det var i dag eller i
+  går. Slack visar tiden bredvid, inte i texten han läser. Skriv aldrig
+  "i dag" i ett larm.
 - Metas `today` räknas i kontots tidszon (UK-kontot: London). Nyckeln för
   "pengar brinner" bär därför Metas eget `date_start` (`dag` på kampanjen),
   svenskt datum bara som reserv. Första versionen byggde nyckeln på svenskt

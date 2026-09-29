@@ -56,8 +56,20 @@ export function kr(v, valuta = 'SEK') {
   return valuta === 'SEK' ? `${n} kr` : `${n} ${valuta}`;
 }
 export function tal(v, dec = 2) { return mellanslag(Number(v).toLocaleString(SV, { maximumFractionDigits: dec, minimumFractionDigits: 0 })); }
+/**
+ * "sön 27/9 17:29" i svensk tid — veckodag och datum står alltid med. Axel
+ * läser larmet i Slack en eller två dagar senare, och första versionen skrev
+ * bara "Mätt 17:29" + "i dag": söndagens larm lästes tisdag 29/9 som om det
+ * gällt i dag eller i går (hans fråga samma morgon).
+ */
 export function klockan(nu = new Date()) {
-  return new Intl.DateTimeFormat(SV, { timeZone: 'Europe/Stockholm', hour: '2-digit', minute: '2-digit' }).format(nu);
+  return `${dagText(nu)} ${new Intl.DateTimeFormat(SV, { timeZone: 'Europe/Stockholm', hour: '2-digit', minute: '2-digit', hour12: false }).format(nu)}`;
+}
+/** "sön 27/9" i svensk tid. Tar ett Date eller Metas eget dygn som "YYYY-MM-DD" (tolkas mitt på dagen, så datumet är samma i alla tidszoner). */
+export function dagText(d = new Date()) {
+  const dat = /^\d{4}-\d{2}-\d{2}$/.test(String(d)) ? new Date(`${d}T12:00:00Z`) : new Date(d);
+  const delar = Object.fromEntries(new Intl.DateTimeFormat(SV, { timeZone: 'Europe/Stockholm', weekday: 'short', day: 'numeric', month: 'numeric' }).formatToParts(dat).map((p) => [p.type, p.value]));
+  return `${String(delar.weekday ?? '').replace(/\.$/, '')} ${delar.day}/${delar.month}`;
 }
 export function stockholmTimme(nu = new Date()) {
   const h = new Intl.DateTimeFormat(SV, { timeZone: 'Europe/Stockholm', hour: '2-digit', hour12: false }).format(nu);
@@ -238,13 +250,16 @@ export function domPengar(konton = [], { nu = new Date(), trosklar = TROSKLAR, v
       const vm = verksamhetForKonto(varumarken, k.id, c.namn) ?? k.verksamhet ?? null;
       const roasText = roas === null ? 'ROAS saknas' : `ROAS ${tal(roas)}`;
       const beText = be ? `break-even ${tal(be)}` : 'break-even står inte i kampanjnamnet';
+      // Dygnet är Metas (kontots tidszon) när insights ger date_start, annars svenskt.
+      const dag = /^\d{4}-\d{2}-\d{2}$/.test(c.dag ?? '') ? c.dag : datum;
+      const dagen = dagText(dag);
       const rader = regel === 'noll'
-        ? [`"${c.namn}" har dragit ${kr(spend, valuta)} i dag utan ett enda köp (${beText}). Mätt ${klockan(nu)}, konto ${k.namn}.`]
-        : [`"${c.namn}" har dragit ${kr(spend, valuta)} i dag med ${kop} köp, ${roasText} (${beText}). Mätt ${klockan(nu)}, konto ${k.namn}.`];
+        ? [`"${c.namn}" har dragit ${kr(spend, valuta)} ${dagen} utan ett enda köp (${beText}). Mätt ${klockan(nu)}, konto ${k.namn}.`]
+        : [`"${c.namn}" har dragit ${kr(spend, valuta)} ${dagen} med ${kop} köp, ${roasText} (${beText}). Mätt ${klockan(nu)}, konto ${k.namn}.`];
       rader.push('Ingen session eller rutin rör dina budgetar — det här är ditt beslut.');
       larm.push({
-        typ: 'pengar', nyckel: `pengar:${k.id}:${c.id}:${/^\d{4}-\d{2}-\d{2}$/.test(c.dag ?? '') ? c.dag : datum}`, verksamhet: vm,
-        rubrik: regel === 'noll' ? `Pengar brinner: ${kr(spend, valuta)} i dag, 0 köp` : `Pengar brinner: ${kr(spend, valuta)} i dag, ROAS ${roas === null ? '–' : tal(roas)}`,
+        typ: 'pengar', nyckel: `pengar:${k.id}:${c.id}:${dag}`, verksamhet: vm,
+        rubrik: regel === 'noll' ? `Pengar brinner ${dagen}: ${kr(spend, valuta)}, 0 köp` : `Pengar brinner ${dagen}: ${kr(spend, valuta)}, ROAS ${roas === null ? '–' : tal(roas)}`,
         rader,
         gor: [
           `Ads Manager → kontot ${k.namn} → kampanjen "${kortNamn(c.namn)}".`,
@@ -282,8 +297,8 @@ export function domPixel({ butiker = [], konton = [], varumarken = [], nu = new 
     if (ordrar >= trosklar.pixel_min_ordrar && kop === 0 && spend >= trosklar.pixel_min_spend) {
       larm.push({
         typ: 'pixel', nyckel: `pixel:${vm.id}:${datum}`, verksamhet: vm.id,
-        rubrik: `Pixeln ser inga köp: ${ordrar} ordrar i butiken, 0 köp i Meta`,
-        rader: [`${vm.namn}: butikerna har ${ordrar} ordrar i dag, men Meta rapporterar 0 köp på ${kr(spend)} spend. Mätt ${klockan(nu)}.`, 'Meta optimerar blint och all annonsanalys blir fel, utan något felmeddelande.'],
+        rubrik: `Pixeln ser inga köp ${dagText(nu)}: ${ordrar} ordrar i butiken, 0 köp i Meta`,
+        rader: [`${vm.namn}: butikerna har ${ordrar} ordrar ${dagText(nu)}, men Meta rapporterar 0 köp på ${kr(spend)} spend. Mätt ${klockan(nu)}.`, 'Meta optimerar blint och all annonsanalys blir fel, utan något felmeddelande.'],
         gor: [
           'Shopify admin → Apps → Facebook & Instagram → Settings → Data sharing: pixeln ska vara på (Maximum).',
           'business.facebook.com/events_manager → pixeln → Test events: lägg en vara i varukorgen och se om händelsen kommer.',
