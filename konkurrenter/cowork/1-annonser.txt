@@ -1,0 +1,44 @@
+RESERV — används bara när sessionen inte kan läsa Metas annonsbibliotek själv
+(normalt läser `node konkurrenter/kor.mjs --hamta --annonser-sida <sid-id>` det
+härifrån; mätt 2026-09-29: ORVO:s 37 annonser på 42 s). Klistra in allt nedanför
+strecket i Cowork, byt SID-ID mot sidans id (talet efter view_all_page_id= i
+Ad Library-länken). Cowork svarar med ett JSON-block — klistra in det i chatten
+här, så skriver sessionen konkurrenter/output/<datum>.annonser.json och kör
+jämförelsen (`--hamta --annonser <fil>`).
+
+------------------------------------------------------------------------------
+
+Läs en Facebook-sidas annonser i Metas annonsbibliotek och lämna tillbaka dem
+som JSON. Bara läsa: klicka aldrig på "Report as unlawful", skicka inget, logga
+inte in någonstans, rör inga andra sidor.
+
+1. Öppna i webbläsaren:
+   https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=SE&media_type=all&search_type=page&view_all_page_id=SID-ID
+   Vänta tills raden "N results" / "N resultat" syns. Rulla ner tills inga fler
+   annonser laddas (antalet kort ska bli lika med N).
+
+2. För VARJE annons, skriv av exakt (inget får hittas på — saknas ett värde,
+   skriv null):
+   - lank: "https://www.facebook.com/ads/library/?id=" + talet efter
+     "Library ID" / "Biblioteks-id"
+   - aktiv: true om det står "Active"/"Aktiv", false om "Inactive"/"Inaktiv"
+   - start: datumet efter "Started running on" / "Började köras den" som ÅÅÅÅ-MM-DD
+   - text: hela primärtexten ordagrant (klicka "See more"/"Visa mer" först)
+   - rubrik: rubrikraden under bilden/videon
+   - landning: länken annonsen pekar på (domänen som står ovanför rubriken räcker)
+   - video: true om det är en video
+   - bilder: bildens/videoaffischens URL (högerklicka → kopiera bildadress) om det går
+   - exponeringar: klicka "See ad details" / "Se annonsinformation", leta upp
+     rutan "EU transparency" / "EU-transparens" och skriv talet vid
+     "Total reach" / "Räckvidd totalt" (bara siffror). Stäng rutan.
+
+3. Skriv av sidans namn (står i varje kort) och, om det syns i "See ad details",
+   sidans kategori och Instagram-konto.
+
+4. Svara med ENBART detta JSON-block, inget annat:
+   {
+     "deras": { "sidnamn": "<sidans namn>", "sida_id": "SID-ID", "doman": "<domänen ur landningslänkarna>", "url": "https://<domänen>", "kategori": null, "instagram": null },
+     "annonser": [
+       { "lank": "https://www.facebook.com/ads/library/?id=…", "aktiv": true, "start": "2026-09-24", "text": "…", "rubrik": "…", "landning": "https://…", "video": true, "bilder": ["https://…"], "exponeringar": 3364 }
+     ]
+   }

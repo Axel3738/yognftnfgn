@@ -49,6 +49,53 @@ export function exponeringarUr(a) {
   return { antal: null, kalla: null };
 }
 
+/**
+ * Live eller inte, som läsaren/Axel skrev det: `aktiv` (bool), `is_active`,
+ * eller `status` "active"/"inactive". null = okänt, räknas som live (en annons
+ * Axel klistrar in ur listan "aktiva" är live). Ren.
+ */
+export function aktivUr(a) {
+  if (typeof a?.aktiv === 'boolean') return a.aktiv;
+  if (typeof a?.is_active === 'boolean') return a.is_active;
+  const s = String(a?.status ?? a?.aktiv ?? '').trim().toLowerCase();
+  if (/^(aktiv|active|live|ja|yes)$/.test(s)) return true;
+  if (/^(inaktiv|inactive|paus(ad|ed)?|nej|no|avslutad|ended)$/.test(s)) return false;
+  return null;
+}
+
+const fmtSv = (n) => Number(n).toLocaleString('sv-SE').replace(/[  ]/g, ' ');
+const fmtEn = (n) => Number(n).toLocaleString('en-GB');
+
+/**
+ * AXELS KRITERIER (2026-09-29) för när en Facebook-sida är värd att jaga:
+ * minst EN av de kopierande annonserna har ÖVER `min_rackvidd_en_annons` i
+ * räckvidd, ELLER minst `min_antal_live` av dem är live. Räknas bara på
+ * annonserna som återger VÅRT material — "en general store som kör massa
+ * ads, men bara en annons på min produkt med hundra reach" är inte värd att
+ * ta ner. Under tröskeln: inget ärende, inget brev, ingen faktura, inga
+ * anmälningar. Okänd räckvidd är okänd — den räknas aldrig som över. Ren.
+ */
+export function vardAttJaga(traffar, trosk = {}) {
+  const minRackvidd = Number(trosk?.min_rackvidd_en_annons ?? 10000);
+  const minLive = Number(trosk?.min_antal_live ?? 10);
+  const live = traffar.filter((t) => t.aktiv !== false);
+  const medTal = traffar.filter((t) => Number(t.exponeringar) > 0);
+  const storst = medTal.reduce((b, t) => (!b || t.exponeringar > b.exponeringar ? t : b), null);
+  const maxRackvidd = storst?.exponeringar ?? null;
+  const viaRackvidd = maxRackvidd !== null && maxRackvidd > minRackvidd;
+  const viaAntal = live.length >= minLive;
+  const utanRackvidd = traffar.length - medTal.length;
+  const vard = viaRackvidd || viaAntal;
+  let orsak; let orsakEn;
+  if (viaRackvidd) { orsak = `annons ${storst.nr} har ${fmtSv(maxRackvidd)} i räckvidd (över ${fmtSv(minRackvidd)})`; orsakEn = `ad ${storst.nr} reached ${fmtEn(maxRackvidd)} people (over ${fmtEn(minRackvidd)})`; }
+  else if (viaAntal) { orsak = `${live.length} kopierande annonser live (minst ${minLive})`; orsakEn = `${live.length} copying ads live (at least ${minLive})`; }
+  else {
+    orsak = `${live.length} kopierande annons(er) live (färre än ${minLive}) och största räckvidden ${maxRackvidd !== null ? fmtSv(maxRackvidd) : 'okänd'} (inte över ${fmtSv(minRackvidd)})${utanRackvidd ? ` — ${utanRackvidd} annons(er) utan räckvidd` : ''}`;
+    orsakEn = `${live.length} copying ad(s) live (fewer than ${minLive}) and the largest reach ${maxRackvidd !== null ? fmtEn(maxRackvidd) : 'unknown'} (not over ${fmtEn(minRackvidd)})${utanRackvidd ? ` — ${utanRackvidd} ad(s) without a reach figure` : ''}`;
+  }
+  return { vard, viaRackvidd, viaAntal, live: live.length, annonser: traffar.length, maxRackvidd, storstNr: storst?.nr ?? null, utanRackvidd, minRackvidd, minLive, orsak, orsakEn };
+}
+
 /** Läser och kontrollerar indatafilen. Kastar med klartext om något saknas. Ren. */
 export function tolkaAnnonsinput(data) {
   const deras = data?.deras ?? {};
@@ -56,7 +103,7 @@ export function tolkaAnnonsinput(data) {
   const doman = deras.doman ? String(deras.doman).toLowerCase().replace(/^www\./, '') : (deras.url ? domanUr(deras.url) : null);
   if (!deras.sidnamn && !doman) throw new Error('annonsfilen saknar deras.sidnamn och deras.doman — en av dem behövs.');
   const rader = annonser
-    .map((a, i) => { const e = exponeringarUr(a); return { nr: i + 1, lank: a.lank ?? null, text: String(a.text ?? '').trim(), rubrik: String(a.rubrik ?? '').trim(), bilder: Array.isArray(a.bilder) ? a.bilder.filter(Boolean) : [], video: Boolean(a.video), start: a.start ?? null, slut: a.slut ?? null, exponeringar: e.antal, exponeringarKalla: e.kalla }; })
+    .map((a, i) => { const e = exponeringarUr(a); return { nr: i + 1, lank: a.lank ?? null, text: String(a.text ?? '').trim(), rubrik: String(a.rubrik ?? '').trim(), bilder: Array.isArray(a.bilder) ? a.bilder.filter(Boolean) : [], video: Boolean(a.video), start: a.start ?? null, slut: a.slut ?? null, aktiv: aktivUr(a), exponeringar: e.antal, exponeringarKalla: e.kalla }; })
     .filter((a) => a.text || a.bilder.length);
   if (!rader.length) throw new Error('annonsfilen har inga annonser med text eller bilder.');
   return { deras: { ...deras, doman, url: deras.url ?? (doman ? `https://${doman}` : null) }, annonser: rader };
@@ -85,10 +132,18 @@ export function jamforAnnons(a, { egnaAnnonser, egnaProdukter, konfig, derasHash
     }
   }
   // Bilderna: deras annonsbilder mot våra annonsbilder + den träffade produktens bilder.
+  // Varje bildträff bär VÅR annons (id, namn, produkt) — anmälan per annons pekar på rätt original.
   const deras = a.bilder.map((u) => ({ url: u, hash: derasHashar.get(u)?.hash })).filter((x) => x.hash);
   const egnaBilder = [...egnaAnnonser.map((e) => e.bild).filter(Boolean), ...(basta?.produkt?.bilder ?? [])].map((u) => ({ url: u, hash: egnaHashar.get(u)?.hash })).filter((x) => x.hash);
-  const bilder = jamforBilder(egnaBilder, deras, konfig.trosklar.bild);
-  return { text: basta?.text ?? null, varAnnons: basta?.varAnnons ?? null, produkt: basta?.produkt ?? null, bilder };
+  const bilder = jamforBilder(egnaBilder, deras, konfig.trosklar.bild).map((b) => { const e = egnaAnnonser.find((x) => x.bild === b.egen); return e ? { ...b, egenAnnons: { id: e.id, namn: e.namn, handle: e.handle ?? null, verksamhet: e.verksamhet ?? null } } : b; });
+  const varAnnons = basta?.varAnnons ?? bilder.find((b) => b.egenAnnons)?.egenAnnons ?? null;
+  const produkt = basta?.produkt ?? produktRad(varAnnons?.handle ? egnaProdukter.find((p) => p.handle === varAnnons.handle) : null);
+  return { text: basta?.text ?? null, varAnnons, produkt, bilder };
+}
+
+/** Produktraden som fyndet bär (aldrig hela produkttexten). Ren. */
+function produktRad(p) {
+  return p ? { handle: p.handle, titel: p.titel, url: p.url, butik: p.butik, verksamhet: p.verksamhet, bilder: (p.bilder ?? []).slice(0, 12) } : null;
 }
 
 /**
@@ -100,7 +155,7 @@ export function byggAnnonsfynd(input, { egnaAnnonser, egnaProdukter, konfig, der
   for (const a of input.annonser) {
     const j = jamforAnnons(a, { egnaAnnonser, egnaProdukter, konfig, derasHashar, egnaHashar });
     if (!j.text && !j.bilder.length) continue;
-    traffar.push({ nr: a.nr, lank: a.lank, derasText: a.text.slice(0, 2000), video: a.video, start: a.start, slut: a.slut, exponeringar: a.exponeringar ?? null, exponeringarKalla: a.exponeringarKalla ?? null, text: j.text, varAnnons: j.varAnnons, produkt: j.produkt, bilder: j.bilder });
+    traffar.push({ nr: a.nr, lank: a.lank, derasText: a.text.slice(0, 2000), video: a.video, start: a.start, slut: a.slut, aktiv: a.aktiv ?? null, exponeringar: a.exponeringar ?? null, exponeringarKalla: a.exponeringarKalla ?? null, text: j.text, varAnnons: j.varAnnons, produkt: j.produkt, bilder: j.bilder });
   }
   if (!traffar.length) return null;
   traffar.sort((x, y) => (y.text?.langsta ?? 0) - (x.text?.langsta ?? 0) || y.bilder.length - x.bilder.length);
@@ -113,18 +168,33 @@ export function byggAnnonsfynd(input, { egnaAnnonser, egnaProdukter, konfig, der
   if (allaBilder.length) { skal.push(`${allaBilder.length} annonsbilder identiska eller mycket lika våra`); skalEn.push(`${allaBilder.length} ad images identical or near-identical to ours`); }
   const exponeringar = traffar.reduce((s, t) => s + (t.exponeringar ?? 0), 0);
   const utanExp = traffar.filter((t) => !t.exponeringar).length;
-  if (exponeringar) { skal.push(`${exponeringar.toLocaleString('sv-SE').replace(/[  ]/g, ' ')} exponeringar enligt Axels avläsning${utanExp ? ` (${utanExp} annons(er) utan tal — går på schablon)` : ''}`); skalEn.push(`${exponeringar.toLocaleString('en-GB')} impressions as read off the Ad Library${utanExp ? ` (${utanExp} ad(s) without a figure — flat rate)` : ''}`); }
-  // Flera annonser som matchar är i sig starkt — en är en slump, tre är ett mönster.
-  const styrka = medText >= 2 || v.styrka === 'stark' ? 'stark' : v.styrka;
-  const produkt = basta.produkt ?? (basta.varAnnons?.handle ? egnaProdukter.find((p) => p.handle === basta.varAnnons.handle) : null) ?? null;
-  const verksamhet = produkt?.verksamhet ?? basta.varAnnons?.verksamhet ?? Object.keys(konfig.verksamheter)[0];
+  const expKalla = kalla === 'adlibrary' ? 'enligt annonsbibliotekets EU-ruta' : 'enligt Axels avläsning';
+  if (exponeringar) { skal.push(`${fmtSv(exponeringar)} exponeringar ${expKalla}${utanExp ? ` (${utanExp} annons(er) utan tal — går på schablon)` : ''}`); skalEn.push(`${fmtEn(exponeringar)} impressions as read off the Ad Library${utanExp ? ` (${utanExp} ad(s) without a figure — flat rate)` : ''}`); }
+  // Axels kriterier: värd att jaga eller inte — står sist bland skälen, och som eget fält.
+  const varde = vardAttJaga(traffar, konfig.trosklar?.annons);
+  skal.push(varde.vard ? `värd att jaga: ${varde.orsak}` : `under Axels tröskel: ${varde.orsak}`);
+  skalEn.push(varde.vard ? `worth pursuing: ${varde.orsakEn}` : `below the threshold: ${varde.orsakEn}`);
+  // Flera annonser som matchar är i sig starkt — en är en slump, tre är ett mönster. Men bara STARKA
+  // textträffar (ordagranna stycken) räknas dit: två 7-ordssviter är "trolig". Två identiska bilder är
+  // stark — ORVO 2026-09-29 hade 14 av 19 bildpar på avstånd 0–4: våra egna videor med nya undertexter.
+  const medStarkText = traffar.filter((t) => t.text?.styrka === 'stark').length;
+  const identiska = allaBilder.filter((b) => b.grad === 'identisk').length;
+  const styrka = medStarkText >= 2 || identiska >= 2 || v.styrka === 'stark' ? 'stark' : v.styrka;
+  // Huvudprodukten = den med flest kopierande annonser LIVE (sedan flest totalt) — inte den med längsta textsviten.
+  // ORVO 2026-09-29: 14 inaktiva IBC-annonser mot 10 live takskyddsannonser ⇒ brevet och sidan handlar om takskyddet.
+  const perProdukt = new Map();
+  for (const t of traffar) { const h = t.produkt?.handle ?? t.varAnnons?.handle ?? null; if (!h) continue; const r = perProdukt.get(h) ?? { live: 0, alla: 0, t }; r.alla++; if (t.aktiv !== false) r.live++; perProdukt.set(h, r); }
+  const topp = [...perProdukt.values()].sort((x, y) => y.live - x.live || y.alla - x.alla)[0]?.t ?? basta;
+  const produkt = topp.produkt ?? produktRad(topp.varAnnons?.handle ? egnaProdukter.find((p) => p.handle === topp.varAnnons.handle) : null) ?? basta.produkt ?? null;
+  const verksamhet = produkt?.verksamhet ?? topp.varAnnons?.verksamhet ?? basta.varAnnons?.verksamhet ?? Object.keys(konfig.verksamheter)[0];
+  const huvudAnnons = topp.varAnnons ?? basta.varAnnons ?? null;
   const deras = input.deras;
   return {
     nyckel: nyckelFor({ typ: 'annons', doman: deras.doman, sidaId: deras.doman ? null : deras.sidnamn, handle: 'annonser' }),
     verksamhet, typ: 'annons', kalla,
     var: {
       produkt: produkt ? { handle: produkt.handle, titel: produkt.titel, url: produkt.url, butik: produkt.butik, bilder: (produkt.bilder ?? []).slice(0, 12) } : { handle: 'annonser', titel: `${traffar.length} ${traffar.length === 1 ? 'annons' : 'annonser'}`, url: null, butik: null, bilder: [] },
-      annons: basta.varAnnons ? { id: basta.varAnnons.id, namn: basta.varAnnons.namn, bild: basta.varAnnons.bild } : null,
+      annons: huvudAnnons ? { id: huvudAnnons.id, namn: huvudAnnons.namn, bild: huvudAnnons.bild ?? egnaAnnonser.find((e) => e.id === huvudAnnons.id)?.bild ?? null } : null,
     },
     deras: {
       url: deras.url, doman: deras.doman, sidnamn: deras.sidnamn ?? null, sidaId: deras.sida_id ?? deras.sidaId ?? deras.page_id ?? null, foretag: deras.foretag ?? null, adress: deras.adress ?? null,
@@ -135,9 +205,10 @@ export function byggAnnonsfynd(input, { egnaAnnonser, egnaProdukter, konfig, der
     },
     bevis: {
       text: null, annons: basta.text, bilder: allaBilder,
-      annonser: traffar.map((t) => ({ nr: t.nr, lank: t.lank, video: t.video, start: t.start, slut: t.slut, exponeringar: t.exponeringar, exponeringarKalla: t.exponeringarKalla, text: t.text, varAnnons: t.varAnnons ? { id: t.varAnnons.id, namn: t.varAnnons.namn } : null, bilder: t.bilder, derasText: t.derasText })),
+      // Live först, sedan störst räckvidd — brevets bevislista och anmälningarnas numrering följer den ordningen.
+      annonser: [...traffar].sort((x, y) => Number(y.aktiv !== false) - Number(x.aktiv !== false) || (y.exponeringar ?? 0) - (x.exponeringar ?? 0)).map((t) => ({ nr: t.nr, lank: t.lank, video: t.video, start: t.start, slut: t.slut, aktiv: t.aktiv, exponeringar: t.exponeringar, exponeringarKalla: t.exponeringarKalla, text: t.text, varAnnons: t.varAnnons ? { id: t.varAnnons.id, namn: t.varAnnons.namn, handle: t.varAnnons.handle ?? null } : null, produkt: t.produkt ? { handle: t.produkt.handle, titel: t.produkt.titel, url: t.produkt.url, butik: t.produkt.butik ?? null, verksamhet: t.produkt.verksamhet ?? null } : null, bilder: t.bilder, derasText: t.derasText })),
       skarmdump: null, nar: nu,
     },
-    styrka, skal, skalEn, miniatyrer: {},
+    styrka, skal, skalEn, varde, miniatyrer: {},
   };
 }

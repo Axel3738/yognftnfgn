@@ -31,8 +31,11 @@ export function markera(text, passage) {
  * Fast ljust tema med flit — bilden ska se likadan ut hos Metas granskare.
  */
 export function bevisbildHtml(arende, annons, { miniatyr = () => null, nu = new Date().toISOString(), nr = 1, antal = 1 } = {}) {
-  const prod = arende.var?.produkt ?? {};
-  const varBild = miniatyr(annons.varAnnons?.bild) ?? miniatyr(prod.bilder?.[0]) ?? miniatyr(arende.var?.annons?.bild);
+  const prod = annons.produkt ?? arende.var?.produkt ?? {};
+  // Vänster: den bild av VÅR som faktiskt matchade (annonsbilden/filmrutan) — inte produktfotot. ORVO 2026-09-29:
+  // första bygget visade produktfotot bredvid deras filmruta, fast träffen var vår egen filmruta (avstånd 1/64).
+  const traffadEgen = (annons.bilder ?? []).map((b) => miniatyr(b.egen)).find(Boolean) ?? null;
+  const varBild = traffadEgen ?? miniatyr(annons.varAnnons?.bild) ?? miniatyr(prod.bilder?.[0]) ?? miniatyr(arende.var?.annons?.bild);
   const derasBild = annons.bilder?.map((b) => miniatyr(b.deras)).find(Boolean) ?? null;
   const passage = annons.text?.passager?.[0]?.text ?? null;
   const derasText = annons.derasText ?? '';
@@ -63,7 +66,7 @@ mark{background:#ffe08a;padding:0 2px}
   <div class="kol"><h2>Our original${annons.varAnnons?.namn ? ` — ${esc(annons.varAnnons.namn)}` : ''}</h2>${bild(varBild, 'Our original ad image')}<div class="text">${markera(varText, passage)}</div><p class="rad">${esc(prod.url ?? '')}</p></div>
   <div class="kol deras"><h2>Reported ad${arende.deras?.sidnamn ? ` — page "${esc(arende.deras.sidnamn)}"` : ''}</h2>${bild(derasBild, 'The reported ad')}<div class="text">${markera(derasText, passage)}</div><p class="rad">${esc(annons.lank ?? '')}${annons.exponeringar ? ` · EU reach ≈ ${Number(annons.exponeringar).toLocaleString('en-GB')}` : ''}${annons.start ? ` · running since ${esc(annons.start)}` : ''}</p></div>
 </div>
-${annons.text?.styrka ? `<div class="dom">${annons.text.kopieradeOrd} words copied verbatim — longest identical run ${annons.text.langsta} consecutive words (highlighted).${annons.bilder?.length ? ` ${annons.bilder.length} image(s) identical or near-identical to ours.` : ''}</div>` : annons.bilder?.length ? `<div class="dom">${annons.bilder.length} image(s) identical or near-identical to our copyrighted product photographs (perceptual hash distance ${annons.bilder.map((b) => b.avstand).join(', ')}/64).</div>` : ''}
+${annons.text?.styrka ? `<div class="dom">${annons.text.kopieradeOrd} words copied verbatim — longest identical run ${annons.text.langsta} consecutive words (highlighted).${annons.bilder?.length ? ` ${annons.bilder.length} image(s) identical or near-identical to ours.` : ''}</div>` : annons.bilder?.length ? `<div class="dom">${annons.bilder.length} image(s) identical or near-identical to our own copyrighted advertising images — the still frame on the left is taken from our ad (perceptual hash distance ${annons.bilder.map((b) => b.avstand).join(', ')}/64).</div>` : ''}
 <div class="fot"><span>Measured by an automated text/image comparison; passages are exact word-for-word matches.</span><span>${esc(arende.id)} · report ${nr}/${antal}</span></div>
 </div></body></html>`;
 }

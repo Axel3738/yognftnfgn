@@ -50,21 +50,22 @@ export function byggAnmalan(arende, annons, konfig, { undertecknare, nr = 1, ant
   const foretag = konfig.brev?.foretag ?? {};
   const u = undertecknare ?? konfig.anmalan?.undertecknare ?? {};
   const deras = arende.deras ?? {};
-  const prod = arende.var?.produkt ?? {};
+  // Produkten PER ANNONS när fyndet bär den (en sida kan kopiera flera av våra produkter — ORVO: takskydd + IBC), annars ärendets.
+  const prod = annons.produkt ?? arende.var?.produkt ?? {};
   const { lank, libraryId } = annonsLank(annons.lank);
   const text = annons.text?.styrka ? annons.text : null;
   const bilder = annons.bilder ?? [];
   const passage = text?.passager?.[0]?.text ?? null;
   const delar = [];
   if (text) delar.push(`${text.kopieradeOrd} words of our advertising copy appear verbatim in this ad; the longest identical run is ${text.langsta} consecutive words: "${passage}".`);
-  if (bilder.length) delar.push(`${bilder.length} image${bilder.length === 1 ? '' : 's'} in the ad ${bilder.length === 1 ? 'is' : 'are'} our own copyrighted product photograph${bilder.length === 1 ? '' : 's'} (perceptual-hash comparison: ${bilder.map((b) => `${b.grad === 'identisk' ? 'identical' : 'near-identical'}, distance ${b.avstand}/64`).join('; ')}).`);
+  if (bilder.length) delar.push(`${bilder.length} image${bilder.length === 1 ? '' : 's'} in the ad ${bilder.length === 1 ? 'is' : 'are'} our own copyrighted advertising image${bilder.length === 1 ? '' : 's'} — a still frame or photo taken from our own ad (perceptual-hash comparison: ${bilder.map((b) => `${b.grad === 'identisk' ? 'identical' : 'near-identical'}, distance ${b.avstand}/64`).join('; ')}).`);
   if (annons.video) delar.push('The ad is a video that uses our material.');
   const sida = deras.sidnamn ? `the Facebook page "${deras.sidnamn}"${deras.sidaId ? ` (page ID ${deras.sidaId})` : ''}` : `the advertiser${deras.doman ? ` behind ${deras.doman}` : ''}`;
   const exp = Number(annons.exponeringar) > 0 ? ` According to the Ad Library it has reached approximately ${talEn(annons.exponeringar)} people in the EU.` : '';
   const start = annons.start ? ` The ad has been running since ${datumEn(annons.start)}.` : '';
   const varAnnons = annons.varAnnons?.namn ? `our ad "${annons.varAnnons.namn}"` : 'our ad';
   const contentDescription = `This advertisement, run by ${sida}, reproduces our copyrighted advertising material without authorisation. ${delar.join(' ')}${start}${exp} It copies ${varAnnons} for the product "${prod.titel ?? prod.handle ?? ''}", which our page has been running since before this ad appeared. This is report ${nr} of ${antal} concerning ads from the same advertiser; each ad is reported separately.`;
-  const originalWorkUrls = [prod.url, varAdLibraryLank(konfig, arende.verksamhet)].filter(Boolean);
+  const originalWorkUrls = [prod.url, varAdLibraryLank(konfig, prod.verksamhet ?? arende.verksamhet)].filter(Boolean);
   const originalWorkDescription = `Original advertising copy, product photographs and video produced by ${foretag.namn ?? 'Stonebite Ecom AB'} for our store${prod.butik ? ` ${prod.butik}` : ''} (product: "${prod.titel ?? ''}"). The text and the images are our own work and we hold the copyright. The original ad and product page are at the links below.`;
   const brevRad = arende.brev?.skickat ? ` A cease-and-desist letter${arende.faktura?.nr ? ` with invoice ${arende.faktura.nr}` : ''} was sent to the advertiser on ${datumEn(arende.brev.skickat.nar)}.` : '';
   const additionalInfo = `Evidence screenshot (our original on the left, the reported ad on the right, copied passage highlighted): ${bevisbildUrl ?? (bevisbild ? 'attached to this report' : 'available on request')}. Internal reference: ${arende.id}, report ${nr}/${antal}, prepared ${datumEn(nu)}.${brevRad}`;
