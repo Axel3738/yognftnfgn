@@ -1,0 +1,214 @@
+{
+ "agent": "AU",
+ "datum": "2026-09-29-carashell",
+ "struktur": "USA-KATALOGEN — former som är standard hos Camco/ADCO/Lippert/MaxxAir/RVMasking men saknas eller bara finns som dyr märkesvara i svenskt husvagnsflöde",
+ "kandidater": [
+  {
+   "koncept_id": null,
+   "namn_sv": "Takrännans droppnäsor, 4-pack",
+   "objekt": "NYTT: Takrännans droppnäsa — husvagnens/husbilens takränneände (regnvattnet rinner rakt ner längs sidoväggen och lämnar svarta ränder på vagnen)",
+   "form": "annat",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "B_SKYDDA_DYRT",
+   "slot": "exploration",
+   "hypotes_id": "H10",
+   "vinnarlikhet": {
+    "likast": "Soptunneklistermärkena / Taköverdraget",
+    "delade_variabler": ["objekt_ute", "agare_55plus", "deadline uppställning", "objekt dyr>10tkr (vagnen)", "flerköp 4-pack"],
+    "avvikelser": ["ingen skyddsform", "liten sak i bild", "passform mot europeisk takränneprofil ej verifierad"]
+   },
+   "sasong": {"fonster_id": "uppstallning_husvagn", "deadline_typ": "uppställning", "veckor_kvar": 1.6, "timing": "NOW"},
+   "listning": {
+    "product_id": "1005013242934199",
+    "url": "https://www.aliexpress.com/item/1005013242934199.html",
+    "pris_usd": 11.55,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-29T11:39:47Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-29-carashell/v3/bilder/1005013242934199.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "4-pack, vit, en variant (titel: '4Pcs Rv Gutter Spout Extensions Heavy Duty Roof Drainage Outlets')",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron visar en husbil uppifrån med produkten i en cirkelinfällning — kontext ja, men produkten är inte monterad i bild; monteringsbild behövs i creativen"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {"aktor": "PriceRunner-marknadsplats (Inoomp, 2-pack)", "pris_sek": 92.29, "url": "https://www.pricerunner.se/search?q=gutter%20spout", "exakt_samma_form": true},
+    "premium_ankare": {"namn": "inget svenskt märkesankare läst — Camco finns bara som Wheel Dock 289 kr på PriceRunner; getcamping.se har inget i formen", "pris_sek": null, "url": "https://www.pricerunner.se/search?q=camco", "i_sortiment": false},
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": ["pricerunner.se (droppnäsa husvagn / takränna husvagn / regnavrinning husvagn / gutter spout / camco — 2026-09-29)", "getcamping.se (takränna / regnavledare — 0 träffar i formen, 2026-09-29)", "kama.se 403 = oläst", "husvagnsexperten.se 403 = oläst", "campingvaruhuset.se sök 404 = oläst", "amazon.se 503 = oläst"]
+   },
+   "ekonomi": {"landad_sek": [150, 184], "pris_sek": 429, "brutto_sek": [245, 279], "be_cpa_sek": [245, 279], "be_roas": 1.64, "flerkop": true, "returrisk": "medel — spouten är formad för amerikansk takränneprofil; passformen mot Kabe/Polar/Hobby-lister är inte verifierad"},
+   "meta_tanke": {
+    "hook": "Svarta ränder på vagnens sida?",
+    "objekt_i_bild": "takränneänden med droppnäsan, vattnet leds ut från väggen",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "regnvatten som droppar fritt från näsan i stället för att rinna längs väggen; före/efter-rand"
+   },
+   "varfor": "Standardtillbehör i USA-katalogen (Camco Gutter Spouts) som inte finns i svensk fackhandel — bara marknadsplatskopior à 92 kr/2-pack utan ankare. Ren H10-nyhet på 283 840 husvagnar inför uppställning (1,6 v), löser ett välkänt svenskt problem (svarta ränder).",
+   "huvudrisk": "Passform mot europeisk takränneprofil är inte verifierad — fel profil ger returer; BE-CPA 245–279 är tunn utan ankare.",
+   "konfidens": "MEDEL",
+   "poang": {"vinnarlikhet": 2, "meta_creative": 2, "efterfragan": 2, "lucka": 1, "ekonomi": 1, "sasong": 2, "leverantor": 2, "nyhet": 3, "hypotesvarde": 2},
+   "per_kriterium": null,
+   "k0": {"dubblett": false, "kollat": ["katalog-live.txt (takränna/droppn = 0)", "koncept.py sok takränna/droppnäsa/gutter/spout = bara stuprörsförlängningar för villan (K0018, K0021), annat objekt", "REDAN-PROVAT.md"]},
+   "kallor": ["https://www.aliexpress.com/w/wholesale-rv-gutter-spout-extension.html", "https://www.pricerunner.se/search?q=gutter%20spout", "https://www.getcamping.se/search/?q=takr%C3%A4nna"]
+  },
+  {
+   "koncept_id": null,
+   "namn_sv": "Midi Heki-huven hagel & termo",
+   "objekt": "NYTT: Midi Heki-takfönstret 70 × 50 (Dometic, 6 100–7 700 kr, står ute under uppställning och vintercamping — hagel, UV, snölast, kondens genom akrylkupolen)",
+   "form": "huv",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploitation",
+   "hypotes_id": "H01",
+   "vinnarlikhet": {
+    "likast": "Taköverdraget för Husvagn / Takluckehuven 40×40 (K0231, Axel ja)",
+    "delade_variabler": ["objekt_ute", "dyr>10tkr (vagnen) / objektet självt 6–8 tkr", "formsydd skydd", "deadline uppställning", "ankare ≥1,6×", "agare_55plus"],
+    "avvikelser": ["syskon i form till K0231 (40×40) — formtaket", "storleksvariant S/M i listningen måste stämmas av mot Midi Heki 70×50"]
+   },
+   "sasong": {"fonster_id": "uppstallning_husvagn", "deadline_typ": "uppställning", "veckor_kvar": 1.6, "timing": "NOW"},
+   "listning": {
+    "product_id": "1005013036934132",
+    "url": "https://www.aliexpress.com/item/1005013036934132.html",
+    "pris_usd": 12.15,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-29T11:43:07Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-29-carashell/v3/bilder/1005013036934132.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "'For Dometic Midi Heki Skylights S/M Size' — två storlekar, måste kontrolleras mot 70×50; systerlistning 1005012870132686 à 9,89 USD samma produkt (packshot-hero)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "huven monterad på en uppfälld taklucka med husvagn i bakgrunden, textfri — direkt användbar"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {"aktor": "Beisel Överdrag Taklucka 50 × 50 cm (getcamping.se)", "pris_sek": 795, "url": "https://www.getcamping.se/search/?q=taklucka+skydd", "exakt_samma_form": false},
+    "premium_ankare": {"namn": "Silber Dachlukenabdeckung Midi Heki", "pris_sek": 1665, "url": "https://www.pricerunner.se/search?q=midi%20heki", "i_sortiment": true},
+    "ankare_kvot": 2.78,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": ["pricerunner.se (midi heki / dometic heki cover / hagelskydd taklucka / heki isolering — 2026-09-29)", "getcamping.se (heki / midi heki / taklucka skydd / hagelskydd — 2026-09-29)", "kama.se 403 = oläst", "husvagnsexperten.se 403 = oläst"]
+   },
+   "ekonomi": {"landad_sek": [158, 193], "pris_sek": 599, "brutto_sek": [406, 441], "be_cpa_sek": [406, 441], "be_roas": 1.41, "flerkop": false, "returrisk": "medel — kunden måste veta att luckan är en Midi Heki (70×50) och välja rätt storlek"},
+   "meta_tanke": {
+    "hook": "Står Midi Hekin ute i vinter?",
+    "objekt_i_bild": "takfönstret på husbilstaket under den grå huven",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "huven på luckan, hagel/snö utanpå, torr kupol under"
+   },
+   "varfor": "Samma struktur som Taköverdraget och Takluckehuven (Axel ja) på ett NYTT objekt: Dometics dyraste standardlucka (6–8 tkr) står ute i 1,6 v inför uppställning. Svenskt ankare Silber 1 665 kr (2,78×) och Beisel 795 kr för mindre storlek — vi ligger under båda med BE-CPA 406–441.",
+   "huvudrisk": "Syskon i form till Takluckehuven 40×40 (formtaket) och listningens S/M-storlek måste stämmas av mot Midi Heki 70×50 före launch.",
+   "konfidens": "MEDEL",
+   "poang": {"vinnarlikhet": 3, "meta_creative": 3, "efterfragan": 2, "lucka": 2, "ekonomi": 2, "sasong": 2, "leverantor": 2, "nyhet": 2, "hypotesvarde": 1},
+   "per_kriterium": null,
+   "k0": {"dubblett": false, "kollat": ["katalog-live.txt (heki/taklucka = 0)", "koncept.py sok heki = 0, skylight = K0069 (invändig solskärm, annan form)", "REDAN-PROVAT.md: K0231 Takluckehuven 40×40 = annat objekt (Mini Heki), samma form"]},
+   "kallor": ["https://www.aliexpress.com/w/wholesale-rv-skylight-cover.html", "https://www.pricerunner.se/search?q=midi%20heki", "https://www.getcamping.se/search/?q=taklucka+skydd"]
+  },
+  {
+   "koncept_id": null,
+   "namn_sv": "Färskvattentankens värmedyna 12 V",
+   "objekt": "NYTT: Färskvattentanken under husbilen vid vintercamping (tank + pump 3–8 tkr; fryser och spricker vid −5° på skidcampingen)",
+   "form": "annat",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "B_SKYDDA_DYRT",
+   "slot": "exploration",
+   "hypotes_id": "H10",
+   "vinnarlikhet": {
+    "likast": "Kranskydd Frost 420D",
+    "delade_variabler": ["objekt_ute", "deadline första snö", "agare_55plus"],
+    "avvikelser": ["montering (limmas på tanken + 12 V-inkoppling)", "packshot-hero", "elektronik", "ägarantal vintercampare ej mätt"]
+   },
+   "sasong": {"fonster_id": "forsta_sno_norr", "deadline_typ": "första snö", "veckor_kvar": 3.7, "timing": "NOW"},
+   "listning": {
+    "product_id": "1005007345717544",
+    "url": "https://www.aliexpress.com/item/1005007345717544.html",
+    "pris_usd": 13.65,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-29T11:43:07Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-29-carashell/v3/bilder/1005007345717544.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "'12V Thermostat Water Holding Tank Heater Pad Mat for RV' — en variant, termostatstyrd; systerlistning 1005007910366862 (23 × 13 cm, 20,95 USD)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 0,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "orange silikondyna som packshot på vit bakgrund — ingen tank, ingen vinter; creativen måste byggas från egen bild"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {"aktor": "ingen läst i formen — PriceRunner 'tankvärmare 12V/husvagn' och 'frostvakt husbil' ger bara DEFA/dieselvärmare/frostvakter", "pris_sek": null, "url": "https://www.pricerunner.se/search?q=tankv%C3%A4rmare%20husvagn", "exakt_samma_form": false},
+    "premium_ankare": {"namn": "inget läst — getcamping.se 'tankvärmare'/'frostskydd tank' 0 träffar i formen; kama.se 403 = oläst (Truma/Reimo-tankvärmare ej verifierad)", "pris_sek": null, "url": "https://www.getcamping.se/search/?q=tankv%C3%A4rmare", "i_sortiment": false},
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": ["pricerunner.se (tankvärmare 12V / tankvärmare husvagn / frostvakt husbil — 2026-09-29)", "getcamping.se (tankvärmare / frostskydd tank — 2026-09-29)", "kama.se 403 = oläst"]
+   },
+   "ekonomi": {"landad_sek": [178, 217], "pris_sek": 479, "brutto_sek": [262, 301], "be_cpa_sek": [262, 301], "be_roas": 1.7, "flerkop": true, "returrisk": "medel — kunden måste ha 12 V-uttag nära tanken och limma dynan själv"},
+   "meta_tanke": {
+    "hook": "Fryser tanken på skidcampingen?",
+    "objekt_i_bild": "vattentanken under husbilen med dynan fastsatt, snö runt hjulen",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "frost på tanken utanför dynan, is i slangen som tinar"
+   },
+   "varfor": "USA-standard (tank heating pads hos Camco/UltraHeat) som saknas helt i svenskt flöde — lucka 3 på lästa källor. Ren H10-exploration mot vintercamparen (Sälen/Åre/Idre nov–apr) med första snö Norrland 3,7 v bort.",
+   "huvudrisk": "Montering (lim + 12 V) är förlorarsignalen montering_app 7/9, heron är packshot utan kontext och vintercamparnas antal är ej mätt — låg konfidens, testas bara som exploration.",
+   "konfidens": "LÅG",
+   "poang": {"vinnarlikhet": 1, "meta_creative": 0, "efterfragan": 0, "lucka": 3, "ekonomi": 1, "sasong": 2, "leverantor": 2, "nyhet": 3, "hypotesvarde": 2},
+   "per_kriterium": null,
+   "k0": {"dubblett": false, "kollat": ["katalog-live.txt (tank = bara IBC/bensindunk/tratt, annat objekt)", "koncept.py sok tank/tank heater/holding/värme = 0 i formen", "REDAN-PROVAT.md"]},
+   "kallor": ["https://www.aliexpress.com/w/wholesale-rv-holding-tank-heater-pad-12v.html", "https://www.pricerunner.se/search?q=tankv%C3%A4rmare%20husvagn", "https://www.getcamping.se/search/?q=tankv%C3%A4rmare"]
+  }
+ ],
+ "strukna": [
+  {"form": "vent insulator pillow / isolerkudde i takluckan 40×40 (Ali 1005010355342812, 6,55 USD)", "skal": "Fiamma Thermovent Isolering Taklucka 40×40 finns i exakt form för 215 kr på getcamping.se (247 kr PriceRunner) = golv under oss utan ankare"},
+  {"form": "roof seam sealant tape / fogtejp tak (Ali 1005009916258123, 12,85 USD)", "skal": "sortiment i svenskt flöde: Canopus butyl 5 cm × 15 m 'Husvagn Husbil' 225 kr, Tec7 Roof Tape 442–1 484 kr, Tecca, Tectis, Clas Ohlson (PriceRunner 'tätningstejp tak husvagn' 20+ rader) utan märkesankare över oss"},
+  {"form": "vent cover MaxxAir-typ (öppen fläkt i regn)", "skal": "Ali-generiken kostar 111,47 USD (landad ~1 600 kr) — ingen marginal mot fackhandelns ankare"},
+  {"form": "skylight cover Mini Heki 40×40 (Ali 1005013139788740, 50 USD)", "skal": "samma objekt + form som K0231 Takluckehuven (Axel ja) — dubblett"},
+  {"form": "RV door holder / dörrhållare", "skal": "getcamping.se säljer formen för 35–75 kr (Vanheim, Fawo) och Ali-priset 2,59–6,69 USD ger inget pris ≥ 300 med marginal — standardtillbehör"},
+  {"form": "RV step rug / fotstegsmatta (Ali 1005013161450986, 25,28 USD)", "skal": "Fiamma Clean Step Instegsmatta 299 kr på getcamping.se = golv i formen; ingen deadline (förlorarsignal deadline ingen 22/30)"},
+  {"form": "caravan nose weight gauge / kultrycksvåg (Ali 9,39–38,69 USD)", "skal": "sortiment: Carsafe 179 kr (getcamping), Calima 199, Reich 681, digital 1 255 (PriceRunner) — och timing är vår/dragsäsong, inte uppställning"},
+  {"form": "Ducato mud flaps helbredd (Ali 33,99–84,85 USD)", "skal": "Proplus Stänkskydd Fiat Ducato 2 st 319 kr på PriceRunner under vår landade kostnad (~490 kr); skruvmontering; ingen deadline"},
+  {"form": "awning de-flapper / markisklämmor (Ali 1005012095567306, 17,49 USD)", "skal": "sommarform — markisen är inrullad från oktober; produktsidan svarade dessutom tomt (BLOCKED)"},
+  {"form": "screen door grille / insektsnät till dörren (Ali 99,45 USD alu-galler, 13–22 USD magnetnät)", "skal": "sommarform utanför fönstret; alu-gallret landar > 1 400 kr"},
+  {"form": "fridge vent winter cover / vinterlucka kylskåpsventil", "skal": "OEM-sortiment Dometic/Thetford 145–795 kr (getcamping 12 rader) = standardutrustning; Ali har bara clips à 2,85 USD"},
+  {"form": "RV tongue jack cover / stödhjuls- och dragkuleskydd", "skal": "amerikanska elektriska stödben finns inte på svenska vagnar; dragkuleskydd = standard (SIGNALER 'sett innan'); K0074/K0116/K0168 redan kandidater"},
+  {"form": "caravan awning bag cover / påsmarkisskydd", "skal": "ingen Ali-listning i formen (bara bakdörrsmarkiser för skåpbilar); getcamping 'påsmarkis skydd' ger bara Fiamma Väggskydd 299 kr"},
+  {"form": "caravan window rain deflector / regnavvisare fönster", "skal": "Ali ger bara bilvindavvisare (Transit/moonroof), inte husvagnsfönsterformen"},
+  {"form": "RV ladder cover / stegskydd", "skal": "Ali-sökningen ger inga stegskydd alls — bara fotstegsmattor; husbilsstegar är sällsynta i SE"},
+  {"form": "slide-out cover, sewer hose support, heated water hose (AS), faucet cover, mirror covers (AV), jack pads (nej), wheel chocks, cable organizer, tank monitor", "skal": "struket enligt ORDER.md/lins-fördelningen utan sökning"}
+ ]
+}
