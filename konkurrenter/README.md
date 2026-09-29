@@ -200,6 +200,52 @@ node konkurrenter/kor.mjs --lista
     gången (131 filmer nedladdade), sekunder därefter. Verifieringssidan
     visar per anmälan paren (A/B/C med film och tid) och det lånade klippet
     som utesluts, så Axel ser att rätt scen kastats.
+    **Tre skydd sedan samma kväll** (efter att bevis-8 visat ett par ur ett
+    nästan svart övertoningsparti): (1) **platta rutor räknas aldrig** —
+    standardavvikelsen i 9 × 8-miniatyren ska vara ≥ 8 (`KONTRAST_MIN`),
+    annars matchar varje svart ruta varje annan svart ruta; (2) **bara filmer
+    publicerade FÖRE deras annons** får bära ett par (`fore` = annonsens
+    startdatum ur annonsbiblioteket mot vår annons `created_time`; biblioteket
+    bär `skapad`, version 2 — en äldre cache läses om av sig själv); (3)
+    **`bevisStatus` avgör vad varje annons bevisar** (`klipp.mjs`): *text*
+    (ordagrann annonstext), *film* (par ur våra klipp), *bild* (en
+    BILDannons bild — en films miniatyr räknas aldrig, den kan vara lånad),
+    *miniatyr* (en film där `--klipp` aldrig körts: `overifierad`, och då
+    stoppar `--anmal`, `--faktura` och `--skicka` tills klippen körts), eller
+    *ej bevisad* (bara det lånade matchade, eller jämförelsen föll) — den
+    annonsen står med orsak på sidan och i ärendet men tas aldrig med i
+    brev, faktura eller anmälan. Fakturaraden säger vad som är bevisat
+    ("Annonsfilm klippt ur våra annonsfilmer (…)" / "Annonstext kopierad …"),
+    anmälan nämner filmerna och deras datum ("published by us between … before
+    this ad started running on …") och aldrig miniatyrens annons.
+    **Tre lärdomar till samma kväll, alla inbyggda** (efter att två bevisbilder
+    visat fel): (4) **bilden tas ut på rutnummer, inte på tid** (`skrivRutaNr`:
+    samma fps-kedja som hashen) — `-ss 4` gav rutan FÖRE ett klippbyte i vår
+    film medan den jämförda rutan redan var nästa scen, och kortet visade två
+    olika bilder med "avstånd 0/64"; varje par **kontrolleras nu i de uttagna
+    bilderna** (`KONTROLL_AVSTAND` 10) och byts mot nästa kandidat om det inte
+    håller, och par mitt i ett gemensamt klipp (grannrutorna matchar också,
+    `stod`) går före par vid ett klippbyte; lika nära ⇒ vår ÄLDSTA film. (5)
+    **Förhandsbilden är deras allra första bildruta** (1–7 bitar mot rutan vid
+    0,00 s i alla tio, läst med 30 rutor/s) men 16–23 bitar från närmaste ruta
+    i 2-per-sekund-serien — så uteslutningen runt hashen missade de lånade
+    inledningarna. Nu: deras **tagningar** ur ffmpegs klippbyten
+    (`klippbyten`, scenpoäng ≥ 0,3; ORVO klipper hårt) och `lanadeKlipp`:
+    tagningen med förhandsbilden är lånad, liksom varje tagning i en annan av
+    deras annonser där minst två rutor ligger inom 5 bitar från en lånad ruta
+    (samma lånade klipp återanvänt, högst två varv; kantrutan vid ett
+    klippbyte sprider aldrig — den kan visa grannklippet). På VÅR sida
+    utesluts bara rutorna som liknar det lånade (± 1 s), och vår sida sprider
+    aldrig tillbaka. (6) **Mätt fel väg två gånger innan det satt:** att
+    sprida via våra filmer märkte 184 av 240 filmer (våra AI-filmer har mjuka
+    övergångar, så ffmpeg slår ihop flera av våra klipp till en tagning — och
+    kantrutan i annons 18 var redan ett av VÅRA klipp som finns i nästan
+    alla deras annonser); nu utesluts 5–17 rutor per annons, 48–72 % av deras
+    film matchar fortfarande våra klipp. Ett lånat klipp som inte hänger ihop
+    med någon förhandsbild (ORVO:s Sterling-klipp mitt i annons 7) fångas
+    inte automatiskt — sessionen tittar på alla par (översiktsark) och Axel
+    pekar ut med `--lanat <anmälan>:<bokstav>`, som nu utesluter hela
+    TAGNINGEN hos dem och rutan ± 1 s i vår film.
 11. **Rapport och sida** (`rapport.mjs`, `sida.mjs`): svensk rapport med
     Axels uppgifter sist, engelsk Discord-post i `#copycats` bara när något
     är nytt, och granskningssidan (`output/sida.html`, publiceras som

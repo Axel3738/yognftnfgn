@@ -14,10 +14,12 @@
 
 import { existsSync, mkdirSync } from 'node:fs';
 import { dirname } from 'node:path';
-import { tid } from './klipp.mjs';
+import { tid, bevisStatus } from './klipp.mjs';
 
 const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const nar = (iso) => (iso ? new Intl.DateTimeFormat('en-GB', { dateStyle: 'long', timeStyle: 'short', timeZone: 'Europe/Stockholm' }).format(new Date(iso)) : '?');
+/** "12 Aug 2026" / "12 aug. 2026" — när vår film publicerades (annonsens created_time). Ren. */
+export const dag = (iso, sprak = 'en') => (iso ? new Intl.DateTimeFormat(sprak === 'sv' ? 'sv-SE' : 'en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'Europe/Stockholm' }).format(new Date(iso)) : null);
 
 /** Markerar den kopierade passagen i deras text (ordagrann, skiftlägesokänslig, tolerant för skiljetecken). Ren. */
 export function markera(text, passage) {
@@ -44,10 +46,13 @@ export const egenPlats = (v, { sprak = 'en' } = {}) => (v.egenT === null || v.eg
  * Fast ljust tema med flit — bilden ska se likadan ut hos Metas granskare.
  */
 export function bevisbildHtml(arende, annons, { miniatyr = () => null, nu = new Date().toISOString(), nr = 1, antal = 1, klipp = null } = {}) {
-  const prod = annons.produkt ?? arende.var?.produkt ?? {};
-  const passage = annons.text?.passager?.[0]?.text ?? null;
+  const val0 = klipp?.val?.length ? klipp.val : null;
+  // Produkten: filmernas när kortet bärs av våra klipp (paren pekar på vår film), annars fyndets.
+  const prod = (val0 && annons.klipp?.produkt?.url ? annons.klipp.produkt : null) ?? annons.produkt ?? arende.var?.produkt ?? {};
+  const passage = annons.text?.styrka ? annons.text?.passager?.[0]?.text ?? null : null;
   const derasText = annons.derasText ?? '';
-  const varText = annons.varAnnons?.text ?? arende.var?.annons?.text ?? '';
+  // Vår text: annonsens egen om ärendet bär den, annars de ordagranna passagerna (de är per definition identiska med vår text).
+  const varText = annons.varAnnons?.text ?? arende.var?.annons?.text ?? (annons.text?.styrka ? (annons.text.passager ?? []).map((x) => x.text).join(' … ') : '');
   const bild = (src, alt) => (src ? `<img src="${esc(src)}" alt="${esc(alt)}">` : '<div class="tom">No image in this ad</div>');
   const derasRad = `${esc(annons.lank ?? '')}${annons.exponeringar ? ` · EU reach ≈ ${Number(annons.exponeringar).toLocaleString('en-GB')}` : ''}${annons.start ? ` · running since ${esc(annons.start)}` : ''}`;
   const val = klipp?.val?.length ? klipp.val : null;
@@ -55,24 +60,33 @@ export function bevisbildHtml(arende, annons, { miniatyr = () => null, nu = new 
   if (val) {
     const st = klipp.statistik ?? {};
     const filmer = [...new Set(val.map((v) => v.egenFilm?.namn).filter(Boolean))];
-    const filmnamn = (v) => v.egenFilm?.namn ?? annons.varAnnons?.namn ?? null;
+    const filmnamn = (v) => v.egenFilm?.namn ?? null;
+    const filmdag = (v) => (v.egenFilm?.skapad ? ` (ours since ${esc(dag(v.egenFilm.skapad))})` : '');
     kropp = `<p class="ingress">The reported video is cut from our own advertising film${filmer.length === 1 ? ` "${esc(filmer[0])}"` : filmer.length > 1 ? `s (${filmer.map((f) => `"${esc(f)}"`).join(', ')})` : annons.varAnnons?.namn ? ` "${esc(annons.varAnnons.namn)}"` : ''}. Below: ${val.length} still${val.length === 1 ? '' : 's'} from different scenes of the reported ad (right) next to the same frame${val.length === 1 ? '' : 's'} in our film${filmer.length > 1 ? 's' : ''} (left).</p>
-<div class="rader">${val.map((v) => `<div class="klipprad"><div class="kol"><h2>Our film${filmnamn(v) ? ` — ${esc(filmnamn(v))}` : ''} · ${esc(egenPlats(v))}</h2>${bild(v.egenData, 'Frame from our ad film')}</div><div class="kol deras"><h2>Reported ad · ${esc(tid(v.derasT))}</h2>${bild(v.derasData, 'The same frame in the reported ad')}</div><p class="parrad">Pair ${esc(v.bokstav)} · perceptual-hash distance ${esc(v.avstand)}/64${v.scen ? ` · scene ${esc(tid(v.scen.tFran))}–${esc(tid(v.scen.tTill))} of the reported ad` : ''}</p></div>`).join('')}</div>
-<div class="par texter"><div class="kol"><h2>Our ad text</h2><div class="text">${markera(varText, passage)}</div><p class="rad">${esc(prod.url ?? '')}</p></div><div class="kol deras"><h2>Reported ad text</h2><div class="text">${markera(derasText, passage)}</div><p class="rad">${derasRad}</p></div></div>`;
-    dom = `<div class="dom">The reported video is cut from our own advertising film${filmer.length > 1 ? 's' : ''}: ${val.length} still frame${val.length === 1 ? '' : 's'} from different scenes of the reported ad (at ${val.map((v) => tid(v.derasT)).join(', ')}) ${val.length === 1 ? 'is' : 'are'} identical to frames of our film${filmer.length > 1 ? 's' : ''} (perceptual-hash distance ${val.map((v) => v.avstand).join(', ')}/64)${st.andel !== undefined ? `; ${st.andel}% of the reported video's sampled frames (${st.traffar} of ${st.derasRutor}) match our films frame for frame${st.filmer ? ` (compared against ${st.filmer} of our films)` : ''}` : ''}.${annons.text?.styrka ? ` The ad copy also repeats ${annons.text.kopieradeOrd} of our words verbatim (longest identical run ${annons.text.langsta} words, highlighted).` : ''}</div>`;
+<div class="rader">${val.map((v) => `<div class="klipprad"><div class="kol"><h2>Our film${filmnamn(v) ? ` — ${esc(filmnamn(v))}` : ''}${filmdag(v)} · ${esc(egenPlats(v))}</h2>${bild(v.egenData, 'Frame from our ad film')}</div><div class="kol deras"><h2>Reported ad · ${esc(tid(v.derasT))}</h2>${bild(v.derasData, 'The same frame in the reported ad')}</div><p class="parrad">Pair ${esc(v.bokstav)} · perceptual-hash distance ${esc(v.avstand)}/64${v.scen ? ` · scene ${esc(tid(v.scen.tFran))}–${esc(tid(v.scen.tTill))} of the reported ad` : ''}</p></div>`).join('')}</div>
+${passage
+    ? `<div class="par texter"><div class="kol"><h2>Our ad text</h2><div class="text">${markera(varText, passage)}</div><p class="rad">${esc(prod.url ?? '')}</p></div><div class="kol deras"><h2>Reported ad text</h2><div class="text">${markera(derasText, passage)}</div><p class="rad">${derasRad}</p></div></div>`
+    : `<div class="texter"><div class="kol deras"><h2>Reported ad${arende.deras?.sidnamn ? ` — page "${esc(arende.deras.sidnamn)}"` : ''}</h2>${derasText ? `<div class="text">${esc(derasText)}</div>` : ''}<p class="rad">${derasRad}</p></div></div>`}`;
+    const d = annons.klipp?.datum ?? null;
+    const publicerad = d ? `, published by us ${d.forsta === d.sista ? `on ${esc(dag(d.forsta))}` : `between ${esc(dag(d.forsta))} and ${esc(dag(d.sista))}`}${annons.start ? ` — before the reported ad started running on ${esc(dag(annons.start))}` : ''}` : '';
+    dom = `<div class="dom">The reported video is cut from our own advertising film${filmer.length > 1 ? 's' : ''}${publicerad}: ${val.length} still frame${val.length === 1 ? '' : 's'} from different scenes of the reported ad (at ${val.map((v) => tid(v.derasT)).join(', ')}) ${val.length === 1 ? 'is' : 'are'} identical to frames of our film${filmer.length > 1 ? 's' : ''} (perceptual-hash distance ${val.map((v) => v.avstand).join(', ')}/64)${st.andel !== undefined ? `; ${st.andel}% of the reported video's sampled frames (${st.traffar} of ${st.derasRutor}) match our films frame for frame${st.filmer ? ` (compared against ${st.filmer} of our films)` : ''}` : ''}.${annons.text?.styrka ? ` The ad copy also repeats ${annons.text.kopieradeOrd} of our words verbatim (longest identical run ${annons.text.langsta} words, highlighted).` : ''}</div>`;
   } else {
     // Vänster: den bild av VÅR som faktiskt matchade (annonsbilden/filmrutan) — inte produktfotot. ORVO 2026-09-29:
     // första bygget visade produktfotot bredvid deras filmruta, fast träffen var vår egen filmruta (avstånd 1/64).
-    const traffadEgen = (annons.bilder ?? []).map((b) => miniatyr(b.egen)).find(Boolean) ?? null;
+    // En films miniatyr visas bara när den är det enda (och då overifierat) — annars kan den vara ett lånat klipp (Axel 2026-09-29).
+    const st = bevisStatus(annons);
+    const bildBevis = st.bild || st.overifierad;
+    const visaBilder = bildBevis || !annons.video;
+    const traffadEgen = bildBevis ? (annons.bilder ?? []).map((b) => miniatyr(b.egen)).find(Boolean) ?? null : null;
     const varBild = traffadEgen ?? miniatyr(annons.varAnnons?.bild) ?? miniatyr(prod.bilder?.[0]) ?? miniatyr(arende.var?.annons?.bild);
-    const derasBild = annons.bilder?.map((b) => miniatyr(b.deras)).find(Boolean) ?? null;
+    const derasBild = bildBevis ? annons.bilder?.map((b) => miniatyr(b.deras)).find(Boolean) ?? null : null;
     kropp = `<div class="par">
-  <div class="kol"><h2>Our original${annons.varAnnons?.namn ? ` — ${esc(annons.varAnnons.namn)}` : ''}</h2>${bild(varBild, 'Our original ad image')}<div class="text">${markera(varText, passage)}</div><p class="rad">${esc(prod.url ?? '')}</p></div>
-  <div class="kol deras"><h2>Reported ad${arende.deras?.sidnamn ? ` — page "${esc(arende.deras.sidnamn)}"` : ''}</h2>${bild(derasBild, 'The reported ad')}<div class="text">${markera(derasText, passage)}</div><p class="rad">${derasRad}</p></div>
+  <div class="kol"><h2>Our original${annons.varAnnons?.namn ? ` — ${esc(annons.varAnnons.namn)}` : ''}</h2>${visaBilder ? bild(varBild, 'Our original ad image') : ''}<div class="text">${markera(varText, passage)}</div><p class="rad">${esc(prod.url ?? '')}</p></div>
+  <div class="kol deras"><h2>Reported ad${arende.deras?.sidnamn ? ` — page "${esc(arende.deras.sidnamn)}"` : ''}</h2>${visaBilder ? bild(derasBild, 'The reported ad') : ''}<div class="text">${markera(derasText, passage)}</div><p class="rad">${derasRad}</p></div>
 </div>`;
     dom = annons.text?.styrka
-      ? `<div class="dom">${annons.text.kopieradeOrd} words copied verbatim — longest identical run ${annons.text.langsta} consecutive words (highlighted).${annons.bilder?.length ? ` ${annons.bilder.length} image(s) identical or near-identical to ours.` : ''}</div>`
-      : annons.bilder?.length
+      ? `<div class="dom">${annons.text.kopieradeOrd} words copied verbatim — longest identical run ${annons.text.langsta} consecutive words (highlighted).${bildBevis && annons.bilder?.length ? ` ${annons.bilder.length} image(s) identical or near-identical to ours.` : ''}</div>`
+      : bildBevis && annons.bilder?.length
         ? `<div class="dom">${annons.bilder.length} image(s) identical or near-identical to our own copyrighted advertising images — the still frame on the left is taken from our ad (perceptual hash distance ${annons.bilder.map((b) => b.avstand).join(', ')}/64).</div>`
         : '';
   }
@@ -111,8 +125,12 @@ ${dom}
 </div></body></html>`;
 }
 
-/** HTML → PNG i Chromium (bredd 1200). Returnerar filen eller kastar med orsak. */
-export async function bevisbildPng(html, fil, { playwrightSokvag = process.env.LR_PLAYWRIGHT || '/opt/node22/lib/node_modules/playwright/index.mjs', kandidater = ['/opt/pw-browsers/chromium-1194/chrome-linux/chrome', '/opt/pw-browsers/chromium'] } = {}) {
+/**
+ * HTML → PNG i Chromium (bredd 1200, skala 2 — det Meta får). Med `jpg` skrivs också en lätt JPEG i
+ * skala 1 för verifieringssidan: tio PNG:er inbäddade gav 34,6 MB (mätt 2026-09-29), gränsen är 16 MB.
+ * Returnerar PNG-filen eller kastar med orsak.
+ */
+export async function bevisbildPng(html, fil, { jpg = null, playwrightSokvag = process.env.LR_PLAYWRIGHT || '/opt/node22/lib/node_modules/playwright/index.mjs', kandidater = ['/opt/pw-browsers/chromium-1194/chrome-linux/chrome', '/opt/pw-browsers/chromium'] } = {}) {
   let pw;
   try { pw = await import(playwrightSokvag); } catch (e) { throw new Error(`Playwright saknas (${e.message.split('\n')[0]}) — bevisbilden kan inte göras här`); }
   const exe = kandidater.find((k) => existsSync(k));
@@ -122,6 +140,7 @@ export async function bevisbildPng(html, fil, { playwrightSokvag = process.env.L
     await page.setContent(html, { waitUntil: 'load' });
     mkdirSync(dirname(fil), { recursive: true });
     await page.screenshot({ path: fil, type: 'png', fullPage: true });
+    if (jpg) await page.screenshot({ path: jpg, type: 'jpeg', quality: 80, fullPage: true, scale: 'css' });
     return fil;
   } finally { await browser.close().catch(() => {}); }
 }
@@ -134,14 +153,14 @@ export async function bevisbildPng(html, fil, { playwrightSokvag = process.env.L
  * då står också det lånade klippet som utesluts, så Axel ser att rätt scen
  * kastats.
  */
-export function verifieringHtml({ arende, anmalningar, bilder = {}, klippen = {}, uppdaterad = new Date().toISOString() }) {
+export function verifieringHtml({ arende, anmalningar, bilder = {}, klippen = {}, hoppade = [], uppdaterad = new Date().toISOString() }) {
   const n = anmalningar.length;
   const medKlipp = anmalningar.filter((a) => klippen[a.annonsNr]?.val?.length).length;
   const kort = anmalningar.map((a) => {
     const f = a.falt;
     const rad = (k, v) => `<tr><th>${esc(k)}</th><td>${esc(v ?? '—')}</td></tr>`;
     const kl = klippen[a.annonsNr] ?? null;
-    const klippBlock = kl?.val?.length ? `<div class="klipp"><p><strong>Rutorna på bevisbilden är ur våra egna klipp:</strong> ${kl.val.map((v) => `${esc(v.bokstav)} = deras ${esc(tid(v.derasT))} ↔ vår ${v.egenFilm?.namn ? `${esc(v.egenFilm.namn)} ` : ''}${esc(egenPlats(v, { sprak: 'sv' }))} (${esc(v.avstand)}/64)`).join(' · ')}.${kl.statistik?.andel !== undefined ? ` ${esc(kl.statistik.andel)} % av deras rutor matchar våra filmer${kl.statistik.filmer ? ` (${esc(kl.statistik.filmer)} av våra filmer jämförda)` : ''}.` : ''}</p>${kl.uteslutna?.length ? `<p class="lanat">Lånat klipp som INTE används (uteslutet med flit): ${kl.uteslutna.map((u) => `deras ${esc(tid(u.derasT))}`).join(', ')}</p><div class="lanatbilder">${kl.uteslutna.slice(0, 2).map((u) => `${u.egenData ? `<img src="${esc(u.egenData)}" alt="Lånat klipp, vår version">` : ''}${u.derasData ? `<img src="${esc(u.derasData)}" alt="Lånat klipp, deras version">` : ''}`).join('')}</div>` : ''}</div>` : '';
+    const klippBlock = kl?.val?.length ? `<div class="klipp"><p><strong>Rutorna på bevisbilden är ur våra egna klipp:</strong> ${kl.val.map((v) => `${esc(v.bokstav)} = deras ${esc(tid(v.derasT))} ↔ vår ${v.egenFilm?.namn ? `${esc(v.egenFilm.namn)} ` : ''}${v.egenFilm?.skapad ? `(publicerad ${esc(dag(v.egenFilm.skapad, 'sv'))}) ` : ''}${esc(egenPlats(v, { sprak: 'sv' }))} (${esc(v.avstand)}/64)`).join(' · ')}.${kl.statistik?.andel !== undefined ? ` ${esc(kl.statistik.andel)} % av deras rutor matchar våra filmer${kl.statistik.filmer ? ` (${esc(kl.statistik.filmer)} av våra filmer jämförda)` : ''}.` : ''}</p>${kl.uteslutna?.length ? `<p class="lanat">Lånat klipp som INTE används (uteslutet med flit): ${kl.uteslutna.map((u) => `deras ${esc(tid(u.derasT))}`).join(', ')}</p><div class="lanatbilder">${kl.uteslutna.slice(0, 2).map((u) => `${u.egenData ? `<img src="${esc(u.egenData)}" alt="Lånat klipp, vår version">` : ''}${u.derasData ? `<img src="${esc(u.derasData)}" alt="Lånat klipp, deras version">` : ''}`).join('')}</div>` : ''}</div>` : '';
     return `<article>
 <h2>Anmälan ${a.nr} av ${n} — annons ${a.libraryId ?? a.annonsNr ?? '?'}</h2>
 <p class="meta"><a href="${esc(a.lank)}" target="_blank" rel="noopener">${esc(a.lank)}</a>${a.exponeringar ? ` · ${Number(a.exponeringar).toLocaleString('sv-SE').replace(/[  ]/g, ' ')} exponeringar` : ''}${a.video ? ' · video' : ''} · formulär: <a href="${esc(a.formular)}" target="_blank" rel="noopener">Metas upphovsrättsformulär</a></p>
@@ -177,5 +196,6 @@ table{border-collapse:collapse;width:100%;font-size:15px}th{text-align:left;vert
 <h1>${n} ${n === 1 ? 'anmälan' : 'anmälningar'} till Meta — en per annons</h1></header>
 <div class="gor"><strong>Det enda du gör:</strong> läs igenom. Stämmer allt skriver du <code>kör anmälningarna ${esc(arende.id)}</code> i chatten, så fyller jag i och skickar in alla ${n} härifrån, en i taget, och skriver tillbaka Metas referensnummer. Ska något ändras: skriv vad, så bygger jag om.${medKlipp ? ` Bevisbilderna visar rutor ur våra egna klipp (A, B, C med tider); det lånade klippet står utanför. Är någon ruta ändå lånad: skriv <code>anmälan 3 ruta B är lånad</code>, så byter jag den.` : ''}</div>
 ${kort}
+${hoppade.length ? `<article><h2>Anmäls inte (${hoppade.length})</h2><p class="meta">Bara annonser som är bevisade med vårt eget material anmäls. En annons som inte är bevisad tas inte heller med i brevet eller fakturan.</p><ul>${hoppade.map((h) => `<li>Annons ${esc(h.nr)}: ${esc(h.orsak)}</li>`).join('')}</ul></article>` : ''}
 </div>`;
 }

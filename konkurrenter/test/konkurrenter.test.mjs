@@ -25,7 +25,7 @@ import { markera, bevisbildHtml, verifieringHtml } from '../bevisbild.mjs';
 import { rapportSv, rapportEn, arendeMd, kallrader } from '../rapport.mjs';
 import { byggSida } from '../sida.mjs';
 import { gissaTyp, Bildcache } from '../bild.mjs';
-import { dHash, avstand, tid, prefixUrNamn, scener, lanadeRutor, paraRutor, klippSammanfattning, hittaFfmpeg, videoIdn } from '../klipp.mjs';
+import { dHash, avstand, tid, prefixUrNamn, scener, lanadeRutor, paraRutor, klippSammanfattning, hittaFfmpeg, videoIdn, kontrastAv, bevisStatus, produktForPar, filmdatum, tagningar, lanadeKlipp } from '../klipp.mjs';
 
 const KONFIG = JSON.parse(readFileSync(new URL('../konfig.json', import.meta.url), 'utf8'));
 const FORETAG = KONFIG.brev.foretag;
@@ -231,6 +231,9 @@ test('ärenden: id per år, nyckel, logg där senaste raden vinner, övergångar
   const igen = lasArenden(fil);
   assert.equal(igen.size, 1); assert.equal(igen.get('KD-2026-001').status, 'skickad'); assert.equal(igen.get('KD-2026-001').historik.length, 2);
   assert.equal(nyttId(igen, new Date('2026-09-28')), 'KD-2026-002');
+  // Förhandsbilderna skrivs aldrig i loggen (ORVO 2026-09-29: 1,7 MB per rad, 35 MB på 22 rader) — de bor i arenden/<id>/miniatyrer.json
+  sparaArende({ ...skickad, miniatyrer: { 'https://x/y.jpg': 'data:image/jpeg;base64,' + 'A'.repeat(5000) } }, fil);
+  assert.doesNotMatch(readFileSync(fil, 'utf8').trim().split('\n').at(-1), /miniatyrer|AAAAAAAAAA/);
   assert.equal(nyttId(igen, new Date('2027-01-01')), 'KD-2027-001');
   assert.equal(hittaBefintligt(igen, nyckel).id, 'KD-2026-001'); assert.equal(hittaBefintligt(igen, 'annan'), null);
   const upp = uppdateraFynd(igen.get('KD-2026-001'), { deras: { titel: 'ny' }, bevis: { x: 1 }, styrka: 'trolig', skal: [], skalEn: [] });
@@ -429,17 +432,26 @@ test('annonsfallet: deras annonser mot våra annonstexter + produkttexter, en ra
   // Axels lokala skärmdump står aldrig i brevet, och ingen rad om "bilderna på er sida"
   assert.doesNotMatch(b.text, /axels-skarmdump|på er sida är våra egna produktbilder/);
   assert.match(fynd.skal.join(' '), /20 345 exponeringar enligt Axels avläsning/);
-  // Schablon: en rad per annons (video dyrare) + skärmdumpen som bildrad, 25 % moms på svensk köpare
+  // Schablon: en rad per annons + skärmdumpen som bildrad, 25 % moms på svensk köpare. Videoannonsen bär bara
+  // sin TEXT (klippvalet inte kört, Axel 2026-09-29) ⇒ annonstexttaxan, inte filmtaxan.
   const fSchablon = byggFaktura(arende, { ...KONFIG_MED_KONTO(), faktura: { ...KONFIG_MED_KONTO().faktura, berakning: 'schablon' } }, { nu: new Date('2026-09-29T08:00:00Z') });
   assert.deepEqual(kontrolleraFaktura(fSchablon), []);
-  assert.deepEqual(fSchablon.rader.map((r) => [r.typ, r.belopp]).sort(), [['annons', 5000], ['bild', 3000], ['video', 8000]]); assert.equal(fSchablon.netto, 16000); assert.equal(fSchablon.brutto, 20000); assert.equal(fSchablon.kopare.namn, 'Kopian AB'); assert.equal(fSchablon.kopare.orgnr, '556677-8899');
+  assert.deepEqual(fSchablon.rader.map((r) => [r.typ, r.belopp]).sort(), [['annons', 5000], ['annons', 5000], ['bild', 3000]]); assert.equal(fSchablon.netto, 13000); assert.equal(fSchablon.brutto, 16250);
+  // Samma videoannons med rutor ur våra egna klipp ⇒ text + film, filmtaxan
+  const medFilm = { ...arende, bevis: { ...arende.bevis, annonser: arende.bevis.annonser.map((t, i) => (i === 1 ? { ...t, klipp: { antal: 3, andel: 60, filmer: ['Takoverdrag_OB_1_H1'] }, klippStatus: 'bevisad' } : t)) } };
+  const fFilm = byggFaktura(medFilm, { ...KONFIG_MED_KONTO(), faktura: { ...KONFIG_MED_KONTO().faktura, berakning: 'schablon' } }, { nu: new Date('2026-09-29T08:00:00Z') });
+  assert.deepEqual(fFilm.rader.map((r) => [r.typ, r.belopp]).sort(), [['annons', 5000], ['bild', 3000], ['video', 8000]]);
+  assert.match(fFilm.rader.find((r) => r.typ === 'video').beskrivning, /^Annonstext och annonsfilm kopierade från våra annonser \(Takoverdrag_PD_1_H1, Takoverdrag_OB_1_H1\)/);
+  // … och en film där bara det lånade klippet matchade (klippvalet kört, inga egna rutor) och ingen text bär: ingen rad alls
+  const lanad = { ...arende, bevis: { ...arende.bevis, bilder: [], annonser: [{ ...arende.bevis.annonser[1], text: null, bilder: [skarm], klipp: null, klippStatus: 'ej_bevisad', klippFel: 'bara det lånade' }] } };
+  assert.deepEqual(byggFaktura(lanad, { ...KONFIG_MED_KONTO(), faktura: { ...KONFIG_MED_KONTO().faktura, berakning: 'schablon' } }).rader, []); assert.equal(fSchablon.kopare.namn, 'Kopian AB'); assert.equal(fSchablon.kopare.orgnr, '556677-8899');
   // Exponeringar (Axels beslut): annons = exponeringar × CPM ÷ 1000; utan CPM stoppar kontrollen, med CPM räknas bilden inuti annonsen inte en gång till
   const utanCpm = byggFaktura(arende, KONFIG_MED_KONTO(), { nu: new Date('2026-09-29T08:00:00Z') });
   assert.match(kontrolleraFaktura(utanCpm).join(), /2 annons\(er\) har exponeringar men ingen CPM/);
   const cpm = { sek: 100, text: 'Bäverbutiken, Meta', period: 'last_30d', matt: '2026-09-29T08:00:00Z' };
   const fExp = byggFaktura(arende, KONFIG_MED_KONTO(), { nu: new Date('2026-09-29T08:00:00Z'), cpm });
   assert.deepEqual(kontrolleraFaktura(fExp), []);
-  assert.deepEqual(fExp.rader.map((r) => [r.typ, r.grund, r.belopp]).sort(), [['annons', 'exponeringar', 1235], ['video', 'exponeringar', 800]]);
+  assert.deepEqual(fExp.rader.map((r) => [r.typ, r.grund, r.belopp]).sort(), [['annons', 'exponeringar', 1235], ['annons', 'exponeringar', 800]]);
   assert.equal(fExp.berakning, 'exponeringar'); assert.equal(fExp.exponeringar, 20345); assert.equal(fExp.netto, 2035); assert.equal(fExp.moms, 509); assert.equal(fExp.brutto, 2544); assert.equal(fExp.cpm.sek, 100);
   assert.match(fExp.rader.find((r) => r.typ === 'annons').beskrivning, /12 345 exponeringar × CPM 100 kr$/);
   const fTxt = fakturaText(fExp); assert.match(fTxt, /Raderna märkta CPM är beräknade på annonsens exponeringar/); assert.match(fTxt, /senaste 30 dagarna/);
@@ -518,7 +530,8 @@ test('anmal-skicka: formulärets fält ur anmälan (produkt per annons, beskrivn
   // Produkten PER ANNONS vinner över ärendets (en sida kan kopiera flera av våra produkter)
   assert.match(an.falt.contentDescription, /for the product "Taköverdrag Husvagn"/); assert.equal(an.falt.originalWorkUrls[0], 'https://baverbutiken.se/products/takoverdrag');
   const b = beskrivning500(an);
-  assert.ok(b.length <= 500, `beskrivningen är ${b.length} tecken`); assert.match(b, /7 consecutive identical words/); assert.match(b, /our own advertising image/); assert.match(b, /our ad "Takoverdrag_PD_3_H1"/); assert.match(b, /bevis-1\.png/); assert.match(b, /Ref KD-2026-011 1\/10\.$/);
+  // En films miniatyr kan vara ett lånat klipp (Axel 2026-09-29) — när texten bär beviset görs inget anspråk på bilden
+  assert.ok(b.length <= 500, `beskrivningen är ${b.length} tecken`); assert.match(b, /7 consecutive identical words/); assert.doesNotMatch(b, /our own advertising image/); assert.match(b, /our ad "Takoverdrag_PD_3_H1"/); assert.match(b, /bevis-1\.png/); assert.match(b, /Ref KD-2026-011 1\/10\.$/);
   const lang = byggAnmalan(arende, { ...annons, text: { ...annons.text, langsta: 80, kopieradeOrd: 80, passager: [{ text: 'ord '.repeat(200).trim() }] } }, KONFIG, { nr: 1, antal: 1, bevisbildUrl: 'https://cdn/x.png' });
   assert.ok(beskrivning500(lang).length <= 500, 'en lång passage kortas tills 500 håller');
   const v = formularVarden(an);
@@ -686,6 +699,88 @@ test('klipp: scener, lånade rutor med fönster, och paren ur olika scener och f
   assert.match(klippSammanfattning({ antal: 3, andel: 80 }, { sprak: 'en' }), /80% of its frames/);
 });
 
+test('klipp: platta rutor bär aldrig ett par, bara filmer publicerade före deras annons, och lika nära ⇒ vår äldsta film', () => {
+  const R = (t, hash, kontrast = 30) => ({ i: Math.round(t * 2), t, hash, kontrast });
+  assert.equal(kontrastAv(Buffer.alloc(72, 7)), 0); assert.ok(kontrastAv(Buffer.from(Array.from({ length: 72 }, (_, i) => (i % 2 ? 0 : 200)))) > 90);
+  const gammal = { id: 'g', namn: 'Takoverdrag_GL_1_H1', skapad: '2026-09-01T10:00:00+0200', rutor: [R(0, H0)] };
+  const mellan = { id: 'm', namn: 'Takoverdrag_ML_1_H1', skapad: '2026-09-10T10:00:00+0200', rutor: [R(0, H0), R(5, HC)] };
+  const ny = { id: 'n', namn: 'Takoverdrag_NY_1_H1', skapad: '2026-09-25T10:00:00+0200', rutor: [R(0, H0), R(1, HE)] };
+  const deras = [R(0, H0), R(3, HC), R(6, HE)];
+  const p = paraRutor([mellan, ny, gammal], deras, { fore: '2026-09-24' });
+  assert.equal(p.statistik.filmerSenare, 1, 'filmen från 25/9 kan inte vara originalet till en annons som startade 24/9'); assert.equal(p.statistik.filmer, 2);
+  assert.equal(p.val.length, 2, 'rutan som bara finns i den senare filmen blir inget par');
+  assert.equal(p.val.find((v) => v.derasT === 0).egenFilm.namn, 'Takoverdrag_GL_1_H1', 'lika nära ⇒ den äldsta filmen'); assert.equal(p.val.find((v) => v.derasT === 0).egenFilm.skapad, '2026-09-01T10:00:00+0200');
+  assert.equal(paraRutor([mellan, ny, gammal], deras, {}).val.length, 3, 'utan startdatum räknas alla filmer');
+  const platt = paraRutor([gammal], [R(0, H0, 2)], {});
+  assert.equal(platt.val.length, 0, 'en svart övertoning matchar varje annan svart ruta — den räknas aldrig'); assert.equal(platt.statistik.utanInnehall, 1);
+  assert.equal(paraRutor([{ ...gammal, rutor: [R(0, H0, 3)] }], [R(0, H0)], {}).val.length, 0, 'en platt ruta hos oss räknas inte heller');
+  // Produkten och datumen för paren
+  const karta = new Map([['Takoverdrag_', { handle: 'takoverdrag' }], ['CaraShellRoof_', { handle: 'takskyddet' }]]);
+  assert.equal(produktForPar([{ egenFilm: { namn: 'Takoverdrag_A_1' } }, { egenFilm: { namn: 'CaraShellRoof_B_1' } }, { egenFilm: { namn: 'Takoverdrag_C_1' } }], karta).handle, 'takoverdrag');
+  assert.equal(produktForPar([{ egenFilm: { namn: 'Okand_A' } }], karta, { handle: 'reserv' }).handle, 'reserv');
+  assert.deepEqual(filmdatum([{ egenFilm: { skapad: '2026-09-18T10:00:00+0200' } }, { egenFilm: { skapad: '2026-09-09T10:00:00+0200' } }]), { forsta: '2026-09-09', sista: '2026-09-18' }); assert.equal(filmdatum([]), null);
+});
+
+test('klipp: tagningarna ur klippbytena, och det lånade klippet spritt över HELA tagningen — hos dem och i våra filmer', () => {
+  const R = (t, hash, kontrast = 30) => ({ i: Math.round(t * 2), t, hash, kontrast });
+  const rutor = [R(0, H0), R(0.5, HE), R(1, H1), R(1.5, HC), R(2, H0b)];
+  const tg = tagningar(rutor, [0.9, 1.9]);
+  assert.deepEqual(tg.map((x) => [x.fran, x.till]), [[0, 1], [2, 3], [4, 4]]);
+  assert.ok(scener(rutor).length > tg.length, 'hashhoppen delar skakig film i en scen per ruta — tagningen håller ihop den');
+  assert.deepEqual(tagningar([{ i: 0, t: null, hash: H0 }, { i: 1, t: null, hash: H0 }]).length, 2, 'utan tid (thumbnails) är varje ruta en egen tagning');
+  // Frö vid 0 s i annons 1 (förhandsbilden) ⇒ hela tagningen 0–0,5 s; samma lånade klipp i annons 3 ⇒ dess tagning också;
+  // i vår film bara rutan som liknar det lånade (± 1 s) — och vår film sprider ALDRIG tillbaka till annons 2
+  const a1r = [R(0, H0), R(0.5, HE), R(1, HE), R(1.5, H1)]; const fr = [R(0, HE), R(0.5, HC), R(3, H1)]; const a2r = [R(0, H1), R(0.5, HC)]; const a3r = [R(0, HC), R(0.5, H0b), R(1, H0b)];
+  const lan = lanadeKlipp([{ nr: 1, rutor: a1r, fron: [0], scener: tagningar(a1r, [1.4]) }, { nr: 2, rutor: a2r, scener: tagningar(a2r, [0.4]) }, { nr: 3, rutor: a3r, scener: tagningar(a3r, [0.4]) }], [{ id: 'f', rutor: fr }]);
+  assert.deepEqual([...lan.deras.get(1)].sort(), [0, 1, 2], 'tagningen 0–1 s, inte rutan vid 1,5 s');
+  // Kantrutan (sista rutan före ett klippbyte) utesluts men sprider inte — den kan visa grannklippet
+  const kant = lanadeKlipp([{ nr: 1, rutor: [R(0, H0), R(0.5, H1), R(1, HC)], fron: [0], scener: tagningar([R(0, H0), R(0.5, H1), R(1, HC)], [0.9]) }, { nr: 2, rutor: [R(0, H1), R(0.5, H1)] }], []);
+  assert.equal(kant.deras.has(2), false, 'H1 var kantrutan i annons 1 — annons 2 som bär H1 märks inte');
+  // En enstaka lik ruta räcker inte: tagningen behöver två träffar
+  const en = lanadeKlipp([{ nr: 1, rutor: [R(0, H0), R(0.5, H0)], fron: [0], scener: tagningar([R(0, H0), R(0.5, H0)], []) }, { nr: 2, rutor: [R(0, H0b), R(0.5, HE), R(1, HC)], scener: tagningar([R(0, H0b), R(0.5, HE), R(1, HC)], []) }], []);
+  assert.equal(en.deras.has(2), false, 'bara en av tre rutor liknar det lånade');
+  assert.deepEqual([...lan.deras.get(3)].sort(), [1, 2], 'annons 3 bär samma lånade klipp (H0b ~ H0) i tagningen 0,5–1 s');
+  assert.deepEqual([...lan.egna.get('f')].sort(), [0, 1], 'vår film: rutan som liknar det lånade + 1 s runt den, inte rutan vid 3 s');
+  assert.equal(lan.deras.has(2), false, 'vår film sprider aldrig tillbaka (HC hos oss ligger bredvid det lånade, men är inte lånat)');
+  assert.deepEqual([...lanadeKlipp([], [{ id: 'f', rutor: fr }], { fronEgna: [{ id: 'f', t: 0.5 }] }).egna.get('f')].sort(), [0, 1], '--lanat pekar ut rutan i vår film (± 1 s)');
+  assert.equal(lanadeKlipp([{ nr: 1, rutor: [R(0, H0, 2)], fron: [0] }], [{ id: 'g', rutor: [R(0, H0, 2)] }]).egna.size, 0, 'platta rutor sprider aldrig');
+  // paraRutor: en lånad ruta i en tagning hos dem utesluter HELA tagningen
+  const deras = [R(0, H0), R(0.5, HE), R(1, HC)];
+  const p = paraRutor([{ id: 'g', namn: 'Takoverdrag_X_1_H1', rutor: [R(0, H0), R(0.5, HE), R(1, HC)] }], deras, { derasScener: tagningar(deras, [0.9]), lanadeDerasExtra: new Set([0]) });
+  assert.ok(p.val.length >= 1 && p.val.every((v) => v.derasT >= 1), 'bara tagningen vid 1 s får bära ett par');
+});
+
+test('brevet och Meta-anmälan: går anmälningarna in samtidigt säger brevet det rakt ut — och hotar inte med dem som villkor', () => {
+  const t = { nr: 1, lank: 'https://www.facebook.com/ads/library/?id=1', text: { styrka: 'stark', kopieradeOrd: 12, langsta: 12, passager: [{ ord: 12, text: 'regnet löven och fågelskiten hamnar på taket och det är precis den ytan' }] }, bilder: [] };
+  const a = { id: 'KD-2026-012', typ: 'annons', verksamhet: 'Bäverbutiken', skapad: '2026-09-29T08:00:00Z', deras: { sidnamn: 'Kopian', doman: 'kopian.se', plattform: 'shopify', mottagare: 'info@kopian.se' }, bevis: { annonser: [t] }, anmalan: { antal: 3, baraAktiva: true, rapporter: [{ nr: 1 }, { nr: 2 }, { nr: 3 }] } };
+  const opt = { avsandare: { brand: 'Bäverbutiken', mail: 'contact@stonebite.org' }, foretag: FORETAG, nu: new Date('2026-09-29T10:00:00Z') };
+  const villkor = byggBrev(a, opt).text;
+  assert.match(villkor, /– anmäla intrånget till Meta \(Facebook och Instagram\) och till Shopify/); assert.doesNotMatch(villkor, /anmäls samtidigt/);
+  const nu = byggBrev(a, { ...opt, anmalanSamtidigt: true }).text;
+  assert.match(nu, /De 3 aktiva annonserna anmäls samtidigt till Meta \(Facebook och Instagram\) för upphovsrättsintrång, en anmälan per annons\./);
+  assert.match(nu, /– anmäla intrånget till Shopify enligt/); assert.doesNotMatch(nu, /– anmäla intrånget till Meta/);
+  const en = byggBrev({ ...a, deras: { ...a.deras, lang: 'en', doman: 'copy.com' } }, { ...opt, anmalanSamtidigt: true }).text;
+  assert.match(en, /The 3 active ads are being reported at the same time to Meta/);
+  // Redan inskickade: påminnelsen hotar inte med Meta igen
+  const inne = { ...a, status: 'skickad', brev: { skickat: { nar: '2026-09-29T10:00:00Z' } }, anmalan: { ...a.anmalan, rapporter: [{ nr: 1, inskickad: '2026-09-29T10:05:00Z', referens: '123456789' }] } };
+  const pam = byggBrev(inne, { ...opt, paminnelse: true, nu: new Date('2026-10-01T12:00:00Z') }).text;
+  assert.match(pam, /Annonserna är redan anmälda till Meta\. Därefter anmäler vi intrånget till Shopify/);
+});
+
+test('bevisStatus: text, film ur våra klipp, en bildannons bild — en films miniatyr bär aldrig ensam', () => {
+  const vid = { video: true, bilder: [{ egen: 'e', deras: 'd' }] };
+  assert.deepEqual([bevisStatus({ text: { styrka: 'stark' } }).grund, bevisStatus({ text: { styrka: 'stark' } }).bevisad], ['text', true]);
+  assert.equal(bevisStatus({ ...vid, klipp: { antal: 3 }, klippStatus: 'bevisad' }).grund, 'film');
+  assert.equal(bevisStatus({ ...vid, text: { styrka: 'trolig' }, klipp: { antal: 3 }, klippStatus: 'bevisad' }).grund, 'text+film');
+  assert.equal(bevisStatus({ video: false, bilder: [{ egen: 'e', deras: 'd' }] }).grund, 'bild');
+  const ov = bevisStatus(vid); assert.equal(ov.grund, 'miniatyr'); assert.equal(ov.overifierad, true);
+  const lanad = bevisStatus({ ...vid, klippStatus: 'ej_bevisad', klippFel: 'alla matchande scener bär den uteslutna (lånade) rutan' });
+  assert.equal(lanad.bevisad, false); assert.match(lanad.orsak, /^bara lånat material matchar — alla matchande scener/);
+  assert.equal(bevisStatus({ ...vid, text: { styrka: 'trolig' }, klippStatus: 'ej_bevisad' }).grund, 'text', 'texten bär även när klippen bara hittade det lånade');
+  assert.match(bevisStatus({ ...vid, klippStatus: 'fel', klippFel: '404' }).orsak, /klippjämförelsen gick inte: 404/);
+  assert.equal(bevisStatus({}).bevisad, false);
+});
+
 test('klipp: hittaFfmpeg tar första binären som klarar H.264 och redovisar dem som inte gör det', () => {
   const finns = () => true; const lasMapp = () => { throw new Error('inget'); };
   const a = hittaFfmpeg({ env: { FFMPEG: '/x/utan' }, hem: '/ingen', kolla: () => false, finns, lasMapp });
@@ -703,7 +798,9 @@ test('bevisbildHtml och verifieringHtml med klipp: paren ur våra filmer, aldrig
   assert.doesNotMatch(html, /MINI/, 'miniatyrträffen (det lånade klippet) visas aldrig när klippen finns'); assert.doesNotMatch(html, /Our original/);
   assert.match(html, /EGEN1/); assert.match(html, /DERAS2/);
   const utan = bevisbildHtml(a, annons, { miniatyr: () => 'data:image/jpeg;base64,MINI', nr: 1, antal: 10 });
-  assert.match(utan, /MINI/); assert.match(utan, /Our original/);
+  assert.doesNotMatch(utan, /MINI/, 'en film med klipp visar aldrig miniatyren, inte ens utan rutorna'); assert.match(utan, /Our original/);
+  const overifierad = bevisbildHtml(a, { ...annons, klipp: null }, { miniatyr: () => 'data:image/jpeg;base64,MINI', nr: 1, antal: 10 });
+  assert.match(overifierad, /MINI/, 'klippvalet aldrig kört: miniatyren är det enda — kor.mjs stoppar anmälan tills --klipp körts');
   const an = byggAnmalan(a, annons, KONFIG, { undertecknare: { namn: 'Axel Odhner', epost: 'axel.odhner@stonebite.org', roll: 'CEO' }, nr: 1, antal: 10, nu: '2026-09-29T10:00:00Z', bevisbild: 'arenden/x/anmalan/bevis-1.png' });
   const v = verifieringHtml({ arende: a, anmalningar: [an], bilder: { 1: 'data:image/png;base64,PNG' }, klippen: { 2: klipp }, uppdaterad: '2026-09-29T10:00:00Z' });
   assert.match(v, /Rutorna på bevisbilden är ur våra egna klipp:/); assert.match(v, /A = deras 0:15 ↔ vår Takoverdrag_PD_2_H1 0:11 \(0\/64\)/);
@@ -718,16 +815,29 @@ test('byggAnmalan och beskrivning500 med klipp: filmen klippt ur våra, tiderna 
   assert.match(an.falt.additionalInfo, /frames from our film on the left, the same frames in the reported ad on the right/);
   const b = beskrivning500(an);
   assert.ok(b.length <= 500, String(b.length));
-  assert.match(b, /Its video is cut from our own ad film: 2 stills from different scenes \(at 0:15, 0:23\) are identical to ours; 74% of its frames match our film\./);
+  assert.match(b, /Its video is cut from our own ad films: 2 stills from different scenes \(at 0:15, 0:23\) are identical to ours; 74% of its frames match our films\./);
+  assert.match(b, /Original: our ad films "Takoverdrag_PD_2_H1", "Takoverdrag_OB_1_H1" for "/); assert.doesNotMatch(b, /CaraShellRoof_DK_PD_1_H1/, 'miniatyrens annons nämns aldrig');
+  // Filmernas datum: publicerade före deras annons
+  const medDatum = byggAnmalan(a, { ...annons, klipp: { ...annons.klipp, datum: { forsta: '2026-08-12', sista: '2026-09-02' } } }, KONFIG, { undertecknare: { namn: 'Axel Odhner', epost: 'axel.odhner@stonebite.org', roll: 'CEO' }, nr: 3, antal: 10, nu: '2026-09-29T10:00:00Z', bevisbildUrl: 'https://cdn.shopify.com/s/files/x/bevis-3.png' });
+  assert.match(medDatum.falt.contentDescription, /\(published by us between 12 August 2026 and 2 September 2026, before this ad started running on 24 September 2026\)/);
+  assert.match(medDatum.falt.originalWorkDescription, /^Original advertising films produced by/); assert.deepEqual(medDatum.filmer, ['Takoverdrag_PD_2_H1', 'Takoverdrag_OB_1_H1']);
   assert.match(b, /Ref KD-2026-007 3\/10\./);
+  // Tre långa filmnamn + CDN-länken: texten kortas i steg, referensen i slutet klipps aldrig
+  const lang = beskrivning500({ ...an, filmer: ['CaraShellRoof_OB_101_H1', 'Takoverdrag_OB_1_H1', 'Takoverdrag_SP_4_H1'], produkt: 'Taköverdrag Husvagn – Skyddar Den Dyraste Ytan', bevisbildUrl: 'https://cdn.shopify.com/s/files/1/0976/7508/4115/files/bevis-1_ec5b0e36-a63f-44eb-b297-ed5cfd0ec94b.png?v=1790682335' });
+  assert.ok(lang.length <= 500, String(lang.length)); assert.match(lang, /Ref KD-2026-007 3\/10\.$/);
 });
 
 test('brevet och ärenderapporten med klipp: filmen är klippt ur vår — inte "bild(er) identiska"', () => {
   const a = ARENDE(); a.bevis.annonser = [KLIPP_ANNONS()];
   const sv = [].concat(bevisrader(a, 'sv')).join('\n');
-  assert.match(sv, /film klippt ur våra egna reklamfilmer/); assert.match(sv, /filmen är klippt ur vår: 2 rutor ur olika scener identiska med våra, 74 % av er film matchar vår ruta för ruta/); assert.doesNotMatch(sv, /bild\(er\) identiska/);
+  assert.match(sv, /film klippt ur våra egna reklamfilmer/); assert.match(sv, /filmen är klippt ur våra: 2 rutor ur olika scener identiska med våra, 74 % av er film matchar våra filmer ruta för ruta/); assert.doesNotMatch(sv, /bild\(er\) identiska/);
+  assert.match(sv, /← Takoverdrag_PD_2_H1, Takoverdrag_OB_1_H1 ·/); assert.doesNotMatch(sv, /CaraShellRoof_DK_PD_1_H1/, 'miniatyrens annons nämns aldrig');
   const en = [].concat(bevisrader(a, 'en')).join('\n');
-  assert.match(en, /the video is cut from ours: 2 frames from different scenes identical to ours, 74% of your video matches ours frame for frame/);
+  assert.match(en, /the video is cut from ours: 2 frames from different scenes identical to ours, 74% of your video matches our films frame for frame/);
+  // En film där bara det lånade klippet matchade står inte i brevet alls
+  const b2 = ARENDE(); b2.bevis.annonser = [KLIPP_ANNONS(), { ...KLIPP_ANNONS(), nr: 9, lank: 'https://www.facebook.com/ads/library/?id=9', klipp: null, klippStatus: 'ej_bevisad', klippFel: 'bara det lånade' }];
+  const sv2 = [].concat(bevisrader(b2, 'sv')).join('\n');
+  assert.match(sv2, /• Annonser: 1 av era annonser/); assert.doesNotMatch(sv2, /id=9/);
   const md = arendeMd(a);
   assert.match(md, /## Rutorna ur våra egna klipp \(1 annonser\)/); assert.match(md, /A 0:15 ↔ Takoverdrag_PD_2_H1 0:11 \(0\/64\)/); assert.match(md, /74 % \(131 filmer jämförda\)/); assert.match(md, /lånat klipp och används inte som bevis/);
 });

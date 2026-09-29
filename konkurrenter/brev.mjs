@@ -16,6 +16,7 @@
 // Patent- och marknadsdomstolen vid Stockholms tingsrätt.
 
 import { belopp } from './faktura.mjs';
+import { bevisStatus } from './klipp.mjs';
 
 const FRISTFORMAT = { sv: 'sv-SE', en: 'en-GB' };
 
@@ -54,20 +55,30 @@ export function bevisrader(arende, sprak = 'sv') {
       : `• Text: ${text.kopieradeOrd} words of running text on your page are taken verbatim from our product page ${arende.var?.produkt?.url}. Among them:`);
     for (const p of pass) ut.push(`    ${citat(p.text)} (${p.ord} ${sprak === 'sv' ? 'ord i följd' : 'consecutive words'})`);
   }
-  // Flera annonser (ärende ur Ad Library eller Axels lista): en rad per annons.
-  const flera = Array.isArray(b.annonser) ? b.annonser.filter((a) => a.text?.styrka || a.bilder?.length) : [];
+  // Flera annonser (ärende ur Ad Library eller Axels lista): en rad per annons —
+  // bara de som är BEVISADE med vårt eget material (bevisStatus, Axel 2026-09-29:
+  // miniatyrträffen var ett lånat klipp och nämns aldrig).
+  const flera = Array.isArray(b.annonser) ? b.annonser.filter((a) => bevisStatus(a).bevisad) : [];
   if (flera.length) {
-    // Klippen (Axel 2026-09-29): en annons med valda rutor ur våra egna klipp beskrivs som klippt ur vår film — miniatyrträffen (det lånade klippet) nämns inte.
-    const medFilm = flera.some((a) => a.klipp?.antal);
-    ut.push(sprak === 'sv'
-      ? `• Annonser: ${flera.length} av era annonser på Facebook/Instagram återger våra annonser${medFilm ? ' (text, bild och/eller film klippt ur våra egna reklamfilmer)' : flera.some((a) => a.bilder?.length) ? ' (text och/eller bild)' : ' ordagrant'}:`
-      : `• Ads: ${flera.length} of your ads on Facebook/Instagram reproduce our ads${medFilm ? ' (copy, image and/or video cut from our own advertising films)' : flera.some((a) => a.bilder?.length) ? ' (copy and/or image)' : ' verbatim'}:`);
+    const st = flera.map((a) => bevisStatus(a));
+    const sv = sprak === 'sv';
+    const delar = [
+      st.some((x) => x.text) && (sv ? 'text' : 'copy'),
+      st.some((x) => x.film) && (sv ? 'film klippt ur våra egna reklamfilmer' : 'video cut from our own advertising films'),
+      st.some((x) => x.bild || x.overifierad) && (sv ? 'bild' : 'image'),
+    ].filter(Boolean);
+    const vad = delar.length > 1 ? ` (${delar.join(sv ? ' och/eller ' : ' and/or ')})` : delar[0] === (sv ? 'text' : 'copy') ? (sv ? ' ordagrant' : ' verbatim') : ` (${delar[0]})`;
+    ut.push(sv
+      ? `• Annonser: ${flera.length} av era annonser på Facebook/Instagram återger våra annonser${vad}:`
+      : `• Ads: ${flera.length} of your ads on Facebook/Instagram reproduce our ads${vad}:`);
     for (const a of flera.slice(0, 8)) {
-      const p = a.text?.passager?.[0];
-      const film = a.klipp?.antal
-        ? ` · ${sprak === 'sv' ? `filmen är klippt ur vår: ${a.klipp.antal} rutor ur olika scener identiska med våra, ${a.klipp.andel} % av er film matchar vår ruta för ruta` : `the video is cut from ours: ${a.klipp.antal} frames from different scenes identical to ours, ${a.klipp.andel}% of your video matches ours frame for frame`}`
-        : a.bilder?.length ? ` · ${a.bilder.length} ${sprak === 'sv' ? 'bild(er) identiska med våra' : 'image(s) identical to ours'}` : '';
-      ut.push(`    ${a.lank ?? `${sprak === 'sv' ? 'annons' : 'ad'} ${a.nr}`}${a.varAnnons?.namn ? ` ← ${a.varAnnons.namn}` : ''}${p ? `: ${citat(p.text, 140)} (${p.ord} ${sprak === 'sv' ? 'ord i följd' : 'consecutive words'})` : ''}${film}`);
+      const s = bevisStatus(a);
+      const p = s.text ? a.text?.passager?.[0] : null;
+      const kallor = [...new Set([s.text ? a.varAnnons?.namn : null, ...(s.film ? a.klipp?.filmer ?? [] : []), s.bild || s.overifierad ? a.varAnnons?.namn : null].filter(Boolean))].slice(0, 3);
+      const film = s.film
+        ? ` · ${sv ? `filmen är klippt ur våra: ${a.klipp.antal} rutor ur olika scener identiska med våra, ${a.klipp.andel} % av er film matchar våra filmer ruta för ruta` : `the video is cut from ours: ${a.klipp.antal} frames from different scenes identical to ours, ${a.klipp.andel}% of your video matches our films frame for frame`}`
+        : (s.bild || s.overifierad) && a.bilder?.length ? ` · ${a.bilder.length} ${sv ? 'bild(er) identiska med våra' : 'image(s) identical to ours'}` : '';
+      ut.push(`    ${a.lank ?? `${sv ? 'annons' : 'ad'} ${a.nr}`}${kallor.length ? ` ← ${kallor.join(', ')}` : ''}${p ? `: ${citat(p.text, 140)} (${p.ord} ${sv ? 'ord i följd' : 'consecutive words'})` : ''}${film}`);
     }
     if (flera.length > 8) ut.push(`    … ${sprak === 'sv' ? `och ${flera.length - 8} till (fullständig lista på begäran)` : `and ${flera.length - 8} more (full list on request)`}`);
   } else {
@@ -115,7 +126,7 @@ export function fakturastycke(faktura, sprak, { fristTimmar = 48 } = {}) {
     ];
 }
 
-export function byggBrev(arende, { avsandare, foretag, sprak = null, nu = new Date(), fristTimmar = 48, paminnelseTimmar = 24, paminnelse = false, mottagare = null, faktura = null } = {}) {
+export function byggBrev(arende, { avsandare, foretag, sprak = null, nu = new Date(), fristTimmar = 48, paminnelseTimmar = 24, paminnelse = false, mottagare = null, faktura = null, anmalanSamtidigt = false } = {}) {
   const s = valjSprak({ lang: arende.deras?.lang, doman: arende.deras?.doman, tvinga: sprak });
   const deras = arende.deras ?? {};
   const doman = deras.doman ?? deras.sidnamn ?? '?';
@@ -137,6 +148,14 @@ export function byggBrev(arende, { avsandare, foretag, sprak = null, nu = new Da
   const id = arende.id;
   const fakt = faktura ?? arende.faktura ?? null;
   const fakturarader = fakturastycke(fakt, s, { fristTimmar });
+  // Meta-anmälan: går den in samtidigt som brevet (Axels "kör anmälningarna" i samma veva, --med-anmalan) eller
+  // har den redan gått in, säger brevet det rakt ut — och hotar inte med den som om den vore villkorad.
+  const redanAnmalt = (arende.anmalan?.rapporter ?? []).some((r) => r.inskickad || r.referens);
+  const metaNu = annonsfall && (anmalanSamtidigt || redanAnmalt) && (arende.anmalan?.antal ?? 0) > 0;
+  const nAnm = arende.anmalan?.antal ?? 0;
+  const aktivaSv = arende.anmalan?.baraAktiva ? 'aktiva ' : ''; const aktivaEn = arende.anmalan?.baraAktiva ? 'active ' : '';
+  const metaRadSv = metaNu ? [`De ${nAnm} ${aktivaSv}annonserna ${redanAnmalt ? 'är anmälda' : 'anmäls samtidigt'} till Meta (Facebook och Instagram) för upphovsrättsintrång, en anmälan per annons.`, ''] : [];
+  const metaRadEn = metaNu ? [`The ${nAnm} ${aktivaEn}ads ${redanAnmalt ? 'have been reported' : 'are being reported at the same time'} to Meta (Facebook and Instagram) for copyright infringement, one report per ad.`, ''] : [];
 
   if (!paminnelse) {
     if (s === 'sv') {
@@ -163,9 +182,12 @@ export function byggBrev(arende, { avsandare, foretag, sprak = null, nu = new Da
         '3. avstår från all framtida användning av vårt material.',
         '',
         ...fakturarader,
+        ...metaRadSv,
         `${fakt ? 'Uteblir borttagningen eller betalningen' : 'Sker inte det'} kommer vi utan ytterligare påminnelse att:`,
         '',
-        `– anmäla intrånget till Meta (Facebook och Instagram)${shopify ? ' och till Shopify' : ' och till er e-handelsplattform'} enligt deras rutiner för immaterialrättsintrång, vilket normalt leder till att annonser och butiker stängs av,`,
+        metaNu
+          ? `– anmäla intrånget till ${shopify ? 'Shopify' : 'er e-handelsplattform'} enligt deras rutiner för immaterialrättsintrång, vilket normalt leder till att butiker stängs av,`
+          : `– anmäla intrånget till Meta (Facebook och Instagram)${shopify ? ' och till Shopify' : ' och till er e-handelsplattform'} enligt deras rutiner för immaterialrättsintrång, vilket normalt leder till att annonser och butiker stängs av,`,
         '– anmäla intrånget till er domänregistrar och ert webbhotell, och',
         '– överlämna ärendet till vårt ombud för talan vid Patent- och marknadsdomstolen om vitesförbud, skälig ersättning och skadestånd enligt 54 § upphovsrättslagen, för hela den tid materialet använts.',
         '',
@@ -206,9 +228,12 @@ export function byggBrev(arende, { avsandare, foretag, sprak = null, nu = new Da
       '3. refrain from any future use of our material.',
       '',
       ...fakturarader,
+      ...metaRadEn,
       `${fakt ? 'Should the removal or the payment not take place' : 'Failing that'}, we will without further notice:`,
       '',
-      `– report the infringement to Meta (Facebook and Instagram)${shopify ? ' and to Shopify' : ' and to your e-commerce platform'} under their intellectual property procedures, which normally results in ads and stores being taken down,`,
+      metaNu
+        ? `– report the infringement to ${shopify ? 'Shopify' : 'your e-commerce platform'} under their intellectual property procedures, which normally results in stores being taken down,`
+        : `– report the infringement to Meta (Facebook and Instagram)${shopify ? ' and to Shopify' : ' and to your e-commerce platform'} under their intellectual property procedures, which normally results in ads and stores being taken down,`,
       '– report the infringement to your domain registrar and hosting provider, and',
       '– hand the matter to our counsel for proceedings before the Swedish Patent and Market Court for an injunction under penalty of a fine, reasonable compensation and damages under section 54 of the Copyright Act, for the entire period the material has been used.',
       '',
@@ -239,7 +264,7 @@ export function byggBrev(arende, { avsandare, foretag, sprak = null, nu = new Da
       '',
       ...rader,
       '',
-      `Ni får en sista frist till ${fristText(nu, paminnelseTimmar, 'sv')}. Därefter anmäler vi intrånget till Meta${shopify ? ' och Shopify' : ' och er e-handelsplattform'} och lämnar ärendet till vårt ombud för talan vid Patent- och marknadsdomstolen, med krav på ersättning enligt 54 § upphovsrättslagen för hela den tid materialet använts.`,
+      `Ni får en sista frist till ${fristText(nu, paminnelseTimmar, 'sv')}. ${redanAnmalt ? `Annonserna är redan anmälda till Meta. Därefter anmäler vi intrånget till ${shopify ? 'Shopify' : 'er e-handelsplattform'}` : `Därefter anmäler vi intrånget till Meta${shopify ? ' och Shopify' : ' och er e-handelsplattform'}`} och lämnar ärendet till vårt ombud för talan vid Patent- och marknadsdomstolen, med krav på ersättning enligt 54 § upphovsrättslagen för hela den tid materialet använts.`,
       '',
       `Bekräfta borttagningen skriftligen till ${mail}.`,
       '',
@@ -258,7 +283,7 @@ export function byggBrev(arende, { avsandare, foretag, sprak = null, nu = new Da
     '',
     ...rader,
     '',
-    `You have a final deadline of ${fristText(nu, paminnelseTimmar, 'en')}. After that we will report the infringement to Meta${shopify ? ' and Shopify' : ' and your e-commerce platform'} and hand the matter to our counsel for proceedings before the Swedish Patent and Market Court, claiming compensation under section 54 of the Copyright Act for the entire period the material has been used.`,
+    `You have a final deadline of ${fristText(nu, paminnelseTimmar, 'en')}. ${redanAnmalt ? `The ads have already been reported to Meta. After that we will report the infringement to ${shopify ? 'Shopify' : 'your e-commerce platform'}` : `After that we will report the infringement to Meta${shopify ? ' and Shopify' : ' and your e-commerce platform'}`} and hand the matter to our counsel for proceedings before the Swedish Patent and Market Court, claiming compensation under section 54 of the Copyright Act for the entire period the material has been used.`,
     '',
     `Confirm the removal in writing to ${mail}.`,
     '',

@@ -4,7 +4,7 @@
 // ärendeloggen.
 
 import { STATUS } from './arenden.mjs';
-import { tid } from './klipp.mjs';
+import { tid, bevisStatus } from './klipp.mjs';
 
 export const KANAL_INTRO = [
   'This channel gets a post when the copycat watch (Konkurrentdödaren) finds a store or an ad that copied our product texts or photos.',
@@ -185,6 +185,8 @@ export function arendeMd(a) {
     for (const t of medKlipp) r.push(`| ${t.lank ?? t.nr} | ${(t.klipp.filmer ?? []).join(', ') || t.varAnnons?.namn || '?'} | ${(t.klipp.par ?? []).map((p) => `${p.bokstav} ${tid(p.derasT)} ↔ ${p.film ? `${p.film} ` : ''}${p.egenT === null || p.egenT === undefined ? 'thumbnail' : tid(p.egenT)} (${p.avstand}/64)`).join(', ')} | ${t.klipp.andel} %${t.klipp.jamforda ? ` (${t.klipp.jamforda} filmer jämförda)` : ''} |`);
     r.push('');
     r.push('Miniatyrträffen (annonsens förhandsbild) är ett lånat klipp och används inte som bevis (Axel 2026-09-29).');
+    const obevisade = (a.bevis?.annonser ?? []).filter((t) => !bevisStatus(t).bevisad);
+    if (obevisade.length) { r.push(''); r.push(`**Inte bevisade med vårt eget material (${obevisade.length}) — tas inte med i brev, faktura eller anmälan:** ${obevisade.map((t) => `annons ${t.nr} (${bevisStatus(t).orsak})`).join('; ')}`); }
   }
   if (a.bevis?.skarmdump?.fil) { r.push(''); r.push(`Skärmdump: \`${a.bevis.skarmdump.fil}\` (${a.bevis.skarmdump.nar ?? ''})`); }
   if (a.brev?.skickat) {
