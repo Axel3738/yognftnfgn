@@ -145,10 +145,23 @@ test('patchaMallJson: en gren byggd med en äldre översättning byts på plats 
   const ny = { en: { 'liquid.product.ms_storlek': 'Fits EU sizes 36–44 · stretchy fabric' } };
   const v1 = patchaMallJson('templates/product.json', mall, gammal).kod;
   // Utan den gamla versionen går det inte att hitta grenen — steget stannar hellre än gissar.
-  assert.throws(() => patchaMallJson('templates/product.json', v1, ny), /hittades inte/);
+  assert.throws(() => patchaMallJson('templates/product.json', v1, ny), /redan en språkgren/);
   const r = patchaMallJson('templates/product.json', v1, ny, {}, [gammal]);
   assert.deepEqual(r.byten, ['ms_storlek (uppdaterad)']);
   assert.ok(r.kod.includes("{% when 'en' %}Fits EU sizes 36–44 · stretchy fabric{% else %}Passar strl 36–44"));
   assert.ok(!r.kod.includes('Fits EU 36–44'));
   assert.deepEqual(patchaMallJson('templates/product.json', r.kod, ny, {}, [gammal]).byten, []);
+});
+
+test('patchaMallJson: en rad utan omslag (bildmarkeringen) uppdateras på plats — aldrig en ny gren inuti den gamla', () => {
+  const mall = JSON.stringify({ sections: { m: { type: 'custom_liquid', settings: { custom_liquid: '<p class="ms-ugc-markning">Miljöbilderna är AI-genererade illustrationer.</p>' } } } }, null, 2);
+  const gammal = { en: { 'liquid.index.ugc_markning': 'The lifestyle images are AI-generated illustrations.' } };
+  const ny = { en: { 'liquid.index.ugc_markning': 'These lifestyle images are AI-generated illustrations.' } };
+  const v1 = patchaMallJson('templates/index.json', mall, gammal).kod;
+  const r = patchaMallJson('templates/index.json', v1, ny, {}, [gammal]);
+  assert.deepEqual(r.byten, ['ugc_markning (uppdaterad)']);
+  assert.equal((r.kod.match(/case request\.locale\.iso_code/g) ?? []).length, 1, 'en enda case-sats');
+  assert.ok(r.kod.includes('These lifestyle images'));
+  // Utan känd gammal version: stopp — inte en ny case-sats i else-grenen.
+  assert.throws(() => patchaMallJson('templates/index.json', v1, ny), /redan en språkgren/);
 });

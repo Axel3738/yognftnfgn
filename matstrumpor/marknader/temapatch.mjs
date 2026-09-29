@@ -320,16 +320,19 @@ export function patchaMallJson(fil, kod, ov, liquidTexter = {}, gamla = []) {
     const f = mallForm(b, ov);
     if (!f) { hoppade.push(`${b.namn}: ingen översättning`); continue; }
     if (kod.includes(f.ny)) { hoppade.push(`${b.namn}: redan patchad`); continue; }
-    const n = kod.split(f.sok).length - 1;
-    if (n > 0) {
-      if (f.exakt && n !== 1) throw new Error(`${fil}: "${b.sv.slice(0, 30)}" hittades ${n} gånger, väntade 1`);
-      kod = kod.split(f.sok).join(f.ny);
-      byten.push(b.namn);
-      continue;
-    }
+    // En gren byggd med en äldre översättning byts FÖRST. Svenskan står kvar i grenens else-del, så
+    // "originalet" hittas även i en redan patchad fil — mätt 2026-09-29: index.json:s bildrad hade
+    // annars fått den nya case-satsen inuti den gamlas else-gren, och de nya texterna aldrig syntts.
     const gammal = gamla.map((o) => mallForm(b, o)).find((g) => g && g.ny !== f.ny && kod.split(g.ny).length - 1 === 1);
     if (gammal) { kod = kod.split(gammal.ny).join(f.ny); byten.push(`${b.namn} (uppdaterad)`); continue; }
-    throw new Error(`${fil}: ${f.fel}`);
+    const json = (x) => JSON.stringify(x).slice(1, -1);
+    const redanGren = kod.includes(json(`{% else %}${b.sv ?? 'truck:Fri frakt i Sverige|refresh:30 dagars öppet köp|lock:Trygg betalning'}{% endcase %}`));
+    if (redanGren) throw new Error(`${fil}: ${b.namn} bär redan en språkgren som inte kommer ur någon känd version av underlaget — rör den inte (läs filen och underlagets historik)`);
+    const n = kod.split(f.sok).length - 1;
+    if (n === 0) throw new Error(`${fil}: ${f.fel}`);
+    if (f.exakt && n !== 1) throw new Error(`${fil}: "${b.sv.slice(0, 30)}" hittades ${n} gånger, väntade 1`);
+    kod = kod.split(f.sok).join(f.ny);
+    byten.push(b.namn);
   }
   return { kod, byten, hoppade };
 }
