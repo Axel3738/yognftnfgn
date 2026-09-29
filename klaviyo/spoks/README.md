@@ -1150,11 +1150,21 @@ bindestreck i en polsk titel). Språksegmenten `SEG_samtycke_<sprak>` (12 st) id
 `klaviyo/konto/matstrumpor/spoks-sprak-uppladdat.jsonl`; svenska 3 025 medlemmar, de andra 0 vid
 skapandet (annonserna utomlands är pausade).
 
-**Kvar:** kampanjutkast index 103–120 i `uppdrag/kampanjer.json` (K13 de/fr/nl/es/it/pl/pt, K14
-alla elva) — Spoks-connectorn krävde ny inloggning mitt i omgången, och efter att Axel kopplat om
-den svarade `whoami` fortfarande "Internal server error" två gånger i samma session (mätt
-2026-09-29 kväll). Prompten för en ny session, som kollar kopplingen först:
-`klaviyo/spoks/PROMPT-matstrumpor-sprak-rest.md`.
+✅ **277 av 277 uppe (2026-09-29 20:17–20:22 CEST, ny session):** de sista 18 kampanjutkasten
+(index 103–120: K13 de/fr/nl/es/it/pl/pt, K14 nb/da/fi/en/de/fr/nl/es/it/pl/pt) laddades upp
+ett i taget efter att `whoami` svarat med arbetsytan Matstrumpor.se, id:n i
+`klaviyo/konto/matstrumpor/spoks-sprak/kampanjer.jsonl` (121 rader). Alla 121 kampanjer är
+utkast utan publik och datum. `sprak-koll.mjs` mot sessionens logg: 18 mejl, 0 avvikelser.
+`get_flow` på alla sex flödena samma kväll och `sprak-floden-koll.mjs`: alla sex ✅, flöde +
+trigger + alla sändsteg AV, 0 inrullade. Totalt 156 flödesmejl + 121 kampanjutkast = 277.
+
+⚠️ **Judge.me bytte widgetens svar 2026-09-29 ~18:16 UTC** (butiken fick
+`multi_language_sorting`): `reviews` kommer tom och recensionerna ligger i
+`primary_language_reviews` + `other_language_reviews`, med egen sidning. Bygget läste då 0
+recensioner och stoppade med "Citatblocket har ingen översatt recension" på alla elva språk
+(exit 1). `klaviyo/recensioner.mjs` läser nu alla tre listorna (uuid en gång) och bläddrar tills
+Judge.me:s `total_pages` är slut; efter rättningen 11 recensioner, bygget grönt. Testat i
+`klaviyo/test/brand.test.mjs`.
 
 **Bytet från de svenska flödena** är Axels klick: i varje nytt flöde slås sändstegen och flödet på,
 sedan stängs det gamla svenska flödets trigger (den stora knappen — de redan inrullade får sina
