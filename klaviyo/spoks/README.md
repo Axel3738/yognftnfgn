@@ -1075,3 +1075,58 @@ butikens egen domän när något slås på. Inget är påslaget.
 6. **Planen:** Free räcker till september–oktober (K01/K02 till alla = 2 × 2 911, K03–K06
    små). **November har fyra utskick till alla (K07–K10 ≈ 11 600 mejl) + flödena — det
    kräver ett planbyte före 10/11.** Pengar = Axels beslut.
+
+## Matstrumpor på alla språk (Axels beslut A 2026-09-29)
+
+Axels ord: "alla tolv språk nu, som CaraShell. Men fler marknader kommer – bygg det så att ett
+nytt land eller språk bara är en rad till i konfigen, inte en ombyggnad", och sedan "vi kör ju
+hur många marknader som helst". Knappen i "efter köp" går till spårningssidan på kundens språk
+(`matstrumpor.se/<mapp>/pages/spara`, portugisiska `/pt`), mappningen ur
+`sparning/butiker.json` → `matstrumpor.mejl_sprak`.
+
+**Formen: ETT flöde per mejltyp, ett sändsteg per språk** (inte ett flöde per språk som
+CaraShell). Varje sändsteg har ett landsfilter, så Spoks lista förblir sex flöden hur många
+språk det än blir. Ett nytt språk = tolv nya sändsteg i de befintliga flödena, inga nya flöden.
+
+| Ändring | Vad du gör |
+|---|---|
+| Nytt LAND | En rad i `klaviyo/brands/matstrumpor.json` → `spoks_sprak.lander` (`"AT": "de"`). Ett land UTAN rad får engelska av sig självt (reservspråket), aldrig svenska. Kör om bygget och uppdatera landsfiltren på stegen. |
+| Nytt SPRÅK | En rad i `sparning/butiker.json` → `matstrumpor.mejl_sprak` (samma rad som fraktmejlen) + `klaviyo/innehall/matstrumpor/sprak/<kod>.json` (sonnet-översättare + skeptisk granskare enligt `sprak/README.md`) + raderna i `lander`. |
+| Ändrad svenska | `node klaviyo/spoks-sprak.mjs --kalla` → bygget säger vilka mejl som är gamla på vilket språk (`kalla`-hashen). Bara de översätts om. |
+
+**Motorn:** `klaviyo/spoks-sprak.mjs` (tester `klaviyo/test/spoks-sprak.test.mjs`).
+Översättningen läggs på den svenska formen: länkar, produkter och blockordning kommer alltid
+ur svenskan. Motorn stoppar på påhittade tal (ett tal som inte står i svenskan), tankstreck,
+okända tokens och gammal källa. Produktkorten på andra språk är bild + produktnamnet ur
+butikens egna översättningar (`matstrumpor/marknader/output/underlag-<locale>.json`) + knapp
+till `/<mapp>/products/<handle>`, utan pris, eftersom Spoks produktkort visar katalogens
+svenska titel och kronor. Kassablocket och "senast visade" visas utan pris av samma skäl.
+Kundcitaten är översatta och märkta "översatt från svenska" på språket.
+
+**Språket följer landet.** Spoks vet bara `contact.country` (engelskt landsnamn, mätt
+2026-09-29: "Sweden", "United States"). Kontakter utan land (anmälda i sidfoten utan köp) får
+svenska. Engelskans filter är "landet finns och är inte ett av de andra språkens länder".
+
+**Bara svenska:** K04 (fars dag 8 november), K11 och K12 (sista beställningsdag före jul) bär
+datum räknade på svensk leveranstid, så de skickas bara på svenska (`kampanjer_bara`). F06
+Sunset följer Axels beslut 2026-09-29 "ingen tas bort" och byggs inte på andra språk.
+Översättarna tog bort varje sista beställningsdag, fars dag och "hinner fram"-löfte ur de
+andra mejlen (bland annat K08:s sista rad och en medlemspunkt i F01 E1).
+
+**Granskningen hittade riktiga fel:** K02:s rubrik "den roliga glöms" hade vänts till sin
+motsats på engelska, nederländska, spanska och polska; polskans "Ja, lämna mig" i F06 betydde
+"lämna mig ifred"; franskans reservord gav "Bonjour vous,". Alla rättade före uppladdningen.
+
+**Rabatterna:** Black Week-trappans tre automatiska rabatter gäller alla köpare i alla
+marknader (`context: DiscountBuyerSelectionAll`, mätt 2026-09-29), så K09/K10 lovar inget som
+saknas utomlands. Men rabatternas namn är svenska ("Black Week 2026: 10 % vid 1 vara") och syns
+så i kassan för utländska kunder. Black Week-frågan till Axel (2026-09-25) är fortfarande öppen.
+
+**Rate limit (mätt 2026-09-29):** Spoks svarade "Rate limit exceeded. Try again in 28 seconds"
+när tre uppladdare och segmentanrop gick samtidigt (runt 35 anrop på 45 sekunder). Spoks egna
+regler: försök aldrig runt gränsen, tung användning kan stänga av kontots MCP-åtkomst. Därför
+laddar EN uppladdare åt gången upp, stannar vid första gränssvaret och loggar varje steg i
+`klaviyo/konto/matstrumpor/spoks-sprak/<flöde>.jsonl` så att nästa körning fortsätter där den
+stannade. Anropet för varje steg skrivs ut av `klaviyo/spoks/sprak-steg.mjs`, och varje
+uppladdat mejl jämförs maskinellt med filen av `klaviyo/spoks/sprak-koll.mjs` (Spoks egna
+svar ur sessionsloggarna).
