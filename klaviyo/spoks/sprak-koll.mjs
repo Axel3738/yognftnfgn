@@ -94,7 +94,9 @@ if (process.argv[1] && path.resolve(process.argv[1]) === path.resolve(new URL(im
       if (!k) continue;
       const tid = Date.parse(kamp.updated ?? kamp.created ?? 0) || 0;
       const forra = perNyckel.get(k);
-      if (!forra || tid >= forra.tid) perNyckel.set(k, { kamp, tid, skickat: skickat.get(kamp.id) ?? forra?.skickat ?? null });
+      const sk = skickat.get(kamp.id) ?? null;
+      if (!forra || tid >= forra.tid) perNyckel.set(k, { kamp, tid, skickat: sk ?? forra?.skickat ?? null });
+      else if (!forra.skickat && sk) forra.skickat = sk;
     }
   }
   let fel = 0;
