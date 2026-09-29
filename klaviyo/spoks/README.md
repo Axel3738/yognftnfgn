@@ -1166,6 +1166,17 @@ recensioner och stoppade med "Citatblocket har ingen översatt recension" på al
 Judge.me:s `total_pages` är slut; efter rättningen 11 recensioner, bygget grönt. Testat i
 `klaviyo/test/brand.test.mjs`.
 
+**Sidfoten är tvåspråkig sedan 2026-09-29 kväll** (Axels val A): Spoks har EN sidfot per arbetsyta,
+så den bär nu svenska + engelska (`update_settings` → `looks.postFooter`, tillbakaläst):
+"… Frågor? Svara på mejlet eller skriv till kundsupport@matstrumpor.se · You joined the Matstrumpor
+club yourself, and these emails only go to members. Questions? Reply to this email or write to
+kundsupport@matstrumpor.se · matstrumpor.se", avregistreringen "Avregistrera dig · Unsubscribe".
+Gäller alla mejl, även de nio flöden som redan var igång och den schemalagda kampanjen.
+
+**Bytet går inte via MCP** (mätt 2026-09-29 i verktygens egna beskrivningar): `update_flow_step`
+"Send steps cannot be enabled here — the user enables them in the flow editor", och `update_flow`
+kräver ett inaktivt flöde och har inget fält för att slå på det. Så det är Axels klick, varje gång.
+
 **Bytet från de svenska flödena** är Axels klick: i varje nytt flöde slås sändstegen och flödet på,
 sedan stängs det gamla svenska flödets trigger (den stora knappen — de redan inrullade får sina
 svenska mejl klart). Två flöden med samma trigger på samtidigt ger svenska kunder dubbla mejl, så
