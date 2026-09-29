@@ -152,7 +152,7 @@ bild (012v2:s sista scen, haiku-videornas slutkort) — den målas bort (`pipeli
 `kopiera` i `textbyte.py`), för butikens namn står aldrig i en annons. ✅ **Annons 005–007
 (röstvideorna, PR #266) och 008 (bildannonsen D3 "Köp 2 – få 2", `marknader/egna/d3/`) PAUSED i
 alla tolv kampanjer 2026-09-29.** 🇳🇴 **A/B-testet i Norge (Axels order 2026-09-29):** A
-`MATSTRUMP_NO_SALES` (matstrumpor.se/nb, "Et svensk merke.") mot B `MATSTRUMP_NOB_SALES`
+`MATSTRUMP_NO_SALES` (matstrumpor.com/nb sedan 2026-09-29 kväll, förut .se/nb; "Et svensk merke.") mot B `MATSTRUMP_NOB_SALES`
 (matstrumpor.no, norska B-sidan i `marknader/domantema.mjs`), 500 + 500 kr/dag, samma annonser,
 PAUSED. Varje ny NO-annons ⇒ `annonser/nob.mjs` + `bygg.mjs --marknad NOB --skarpt`. Avläs med
 `annonser/ab-norge.mjs` efter ~två veckor. ⛔ B påstår aldrig att butiken är norsk. Domänerna
@@ -168,8 +168,15 @@ priset och hela korgraden under totalsumman är borta på alla värdar och tolv 
 (`domantema.mjs` → `patchaProduktMoms`/`patchaKorgMoms`). Skriv aldrig in en moms- eller tulltext
 igen. Fraktpolicyn står som den står, och skatteinställningen rörs inte. ✅ **Loggan och namnet är
 "Matstrumpor" i alla länder utom Sverige sedan 2026-09-29 kväll** (Axel: "vi borde bara ha
-Matstrumpor"). Villkoret är kundens land (`localization.country.iso_code != 'SE'`) eller egen domän,
-för 12 av 13 utlandskampanjer länkar till `matstrumpor.se/<språk>` (`domantema.mjs` layout v6).
+Matstrumpor"). Villkoret är kundens land (`localization.country.iso_code != 'SE'`) eller egen domän
+(`domantema.mjs` layout v6), så gamla länkar till `matstrumpor.se/<språk>` visar också Matstrumpor.
+🌐 **Allt utland går via matstrumpor.com sedan 2026-09-29 kväll** (Axel: "varför är alla dessa .se
+domäner??? Ska inte alla vara via .com domänen?"). .com-närvaron bär alla utlandsspråk (/nb /da /fi
+/de /fr /nl /es /it /pl /pt-pt, engelska i roten) och ligger i Norge, Europa och USA-marknaden
+(`konfig.json` → `ocksa_domaner`, `bygg.mjs --steg domaner`). Alla utlandsannonser länkar dit, utom
+B-sidan på .no. .eu och .se/<språk> fungerar kvar, men inget länkar dit. ⚠️ "En egen domän hör till EN
+marknad" (CaraShell 2026-09-17) stämmer inte här: `marketUpdate(webPresencesToAdd)` delade .com utan fel
+(mätt 2026-09-29, också i ett prov som återställdes).
 ⚠️ Kassan har EN logga för hela butiken, MATSTRUMPOR.SE, eftersom en logga per marknad kräver Plus.
 **Utlandsannonserna visas som Facebook-sidan "Matstrumpor" `1285064981363590`** (Axels sida, samma
 BM). Instagram visas via sidans page-backed identitet `17841423405715219`, eftersom kontot

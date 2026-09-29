@@ -12,8 +12,9 @@
 //       byter rubrik, brödtext eller länkbeskrivning i annonser som redan finns när <KOD>.json
 //       ändrats: samma video/bild (ingen ny uppladdning), ny creative, samma annons. BARA i
 //       annonser som är PAUSED — en annons som går rörs aldrig (den skulle börja om inlärningen).
-//       Byter också Facebook-sidan och Instagram-kontot när marknader.json säger något annat
-//       (sidan "Matstrumpor" sedan 2026-09-29 kväll, Axels sida — inte "Matstrumpor.se").
+//       Byter också Facebook-sidan, Instagram-kontot och länken när marknader.json säger något
+//       annat (sidan "Matstrumpor" sedan 2026-09-29 kväll, Axels sida — inte "Matstrumpor.se";
+//       länken matstrumpor.com/<språk> sedan samma kväll — inte matstrumpor.se).
 //
 // Läser marknader.json (kampanj, adset, geo, länk, budget, budgetbeslut) och <KOD>.json
 // (copy + en post per annons: namn, videofil relativt annonser/klar/, title, message,
@@ -74,12 +75,28 @@ export function identitetSkillnad(M, story = {}) {
   return ut;
 }
 
-/** Ren: annonsens länk måste bära marknadens locale och (för enlandskampanjer) landet. */
+/** Ren: länken i annonsens creative (video: call_to_action, bild: link_data.link och dess
+ *  call_to_action) mot marknadens `lank` i marknader.json. */
+export function lankSkillnad(k, story = {}) {
+  const v = story.video_data, l = story.link_data;
+  const live = [v?.call_to_action?.value?.link, l?.link, l?.call_to_action?.value?.link].filter((x) => x !== undefined);
+  if (!live.length) return (k.lank ?? '') ? ['länk'] : [];
+  return live.every((x) => x === k.lank) ? [] : ['länk'];
+}
+
+// Domänernas standardspråk: roten bär språket utan mapp (matstrumpor.com/ är engelska, .no/ norska).
+const STANDARDSPRAK = { 'matstrumpor.se': 'sv', 'matstrumpor.com': 'en', 'matstrumpor.no': 'nb', 'matstrumpor.eu': 'en' };
+
+/** Ren: annonsens länk måste gå till marknadens domän (`doman`, annars matstrumpor.se), bära språkmappen
+ *  (`sprakmapp`, annars locale; ingen mapp för domänens standardspråk) och, för enlandskampanjer, landet.
+ *  Allt utland länkar till matstrumpor.com sedan 2026-09-29 kväll (Axel: "Ska inte alla vara via .com
+ *  domänen?"). Undantaget är A/B-testets B-sida på matstrumpor.no. */
 export function lankOk(k, lank) {
   if (!lank) return false;
-  // Egen domän (A/B-testets B-sida i Norge, `doman` i marknader.json): länken ska gå dit, aldrig till .se.
-  if (k.doman) { if (!lank.startsWith(`https://${k.doman}/`)) return false; }
-  else if (!lank.includes(`matstrumpor.se/${k.locale}/`)) return false;
+  const doman = k.doman ?? 'matstrumpor.se';
+  if (!lank.startsWith(`https://${doman}/`)) return false;
+  const mapp = k.sprakmapp ?? (STANDARDSPRAK[doman] === k.locale ? '' : k.locale);
+  if (mapp && !lank.startsWith(`https://${doman}/${mapp}/`)) return false;
   if (k.geo.length === 1 && !lank.includes(`country=${k.geo[0]}`)) return false;
   return true;
 }
@@ -146,7 +163,7 @@ async function byggMarknad(kod) {
       const gammal = finns.find((x) => x.name === an.namn);
       if (gammal && bytText) {
         // Texten OCH vem annonsen visas som (Facebook-sidan "Matstrumpor" sedan 2026-09-29, Axels sida).
-        const andrat = [...textSkillnad(an, gammal.creative?.object_story_spec), ...identitetSkillnad(M, gammal.creative?.object_story_spec)];
+        const andrat = [...textSkillnad(an, gammal.creative?.object_story_spec), ...identitetSkillnad(M, gammal.creative?.object_story_spec), ...lankSkillnad(k, gammal.creative?.object_story_spec)];
         if (!andrat.length) { log(`texten stämmer: ${an.namn}`); continue; }
         if (gammal.status !== 'PAUSED' || gammal.effective_status === 'ACTIVE') { log(`⛔ ${an.namn} går (${gammal.status}/${gammal.effective_status}) — texten byts bara i pausade annonser`); continue; }
         if (!skarpt) { log(`torrt: skulle byta ${andrat.join(', ')} i ${an.namn} (${gammal.id})`); continue; }
@@ -158,7 +175,7 @@ async function byggMarknad(kod) {
         await api(gammal.id, { form: { creative: JSON.stringify({ creative_id: creative.id }) } });
         const las = await api(gammal.id, { params: { fields: 'status,creative{id,object_story_spec}' } });
         if (las.creative?.id !== creative.id) throw new Error(`${an.namn}: creative byttes inte (läst ${las.creative?.id}, ville ${creative.id})`);
-        const kvar = [...textSkillnad(an, las.creative.object_story_spec), ...identitetSkillnad(M, las.creative.object_story_spec)];
+        const kvar = [...textSkillnad(an, las.creative.object_story_spec), ...identitetSkillnad(M, las.creative.object_story_spec), ...lankSkillnad(k, las.creative.object_story_spec)];
         if (kvar.length) throw new Error(`${an.namn}: ${kvar.join(', ')} läste tillbaka fel`);
         videor[an.namn] = { ...videor[an.namn], ...minne(an, m, { creative_id: creative.id, annons_id: gammal.id, text_bytt: new Date().toISOString() }) };
         sparaVideor();

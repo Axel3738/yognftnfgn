@@ -78,8 +78,12 @@
     "host": "matstrumpor.no",
     "standard": "nb",
     "alternativa": [],
-    "comment": "Kopplad i Shopify av Axel 2026-09-29 (SSL på), bunden till Norge med `bygg.mjs --steg domaner`. Bara norska (inga alternativa språk) — det är B-versionen i A/B-testet (Axel 2026-09-29: 'en sid-version där vi får det att kännas väldigt norskt'). .se-närvaron ligger KVAR i marknaden: A-versionen är matstrumpor.se/nb?country=NO, och båda måste fungera för norska kunder samtidigt."
+    "comment": "Kopplad i Shopify av Axel 2026-09-29 (SSL på), bunden till Norge med `bygg.mjs --steg domaner`. Bara norska (inga alternativa språk) — det är B-versionen i A/B-testet (Axel 2026-09-29: 'en sid-version där vi får det att kännas väldigt norskt'). A-versionen är matstrumpor.com/nb?country=NO sedan 2026-09-29 kväll (före det matstrumpor.se/nb). Båda måste fungera för norska kunder samtidigt."
    },
+   "ocksa_domaner": [
+    "matstrumpor.com"
+   ],
+   "ocksa_domaner_comment": "Axel 2026-09-29 kväll: 'Ska inte alla vara via .com domänen?' Utlandskunderna landar på matstrumpor.com/<språk>. Närvaron ägs av USA-marknaden (språken står där). .se-närvaron ligger kvar, så gamla länkar fungerar.",
    "doman_comment": "Närvaron skapas och binds av `node matstrumpor/marknader/bygg.mjs --steg domaner --skarpt` (webPresenceCreate + marketUpdate webPresencesToAdd, CaraShells recept i factory/API-GRANSER.md — men utan att ta bort .se).",
    "leveranstid": "5–10 arbetsdagar",
    "frakt": "fri",
@@ -187,8 +191,12 @@
      "pl",
      "pt-PT"
     ],
-    "comment": "Kopplad av Axel 2026-09-29. Engelska i roten och samma språkmappar som på .se (/de, /fr … /pt), så en länk flyttas genom att bara byta domän. .se-närvaron ligger kvar i marknaden — de pausade annonserna länkar dit."
+    "comment": "Kopplad av Axel 2026-09-29. Engelska i roten och språkmappar (/de, /fr … /pt-pt). Sedan 2026-09-29 kväll länkar ingen annons hit: utlandet går via matstrumpor.com (`ocksa_domaner`). .eu ligger kvar och fungerar."
    },
+   "ocksa_domaner": [
+    "matstrumpor.com"
+   ],
+   "ocksa_domaner_comment": "Axel 2026-09-29 kväll: 'Ska inte alla vara via .com domänen?' Utlandskunderna landar på matstrumpor.com/<språk>. Närvaron ägs av USA-marknaden (språken står där).",
    "doman_comment": "Närvaron skapas och binds av `node matstrumpor/marknader/bygg.mjs --steg domaner --skarpt` (webPresenceCreate + marketUpdate webPresencesToAdd, CaraShells recept i factory/API-GRANSER.md — men utan att ta bort .se)."
   },
   {
@@ -226,8 +234,19 @@
    "doman": {
     "host": "matstrumpor.com",
     "standard": "en",
-    "alternativa": [],
-    "comment": "Kopplad av Axel 2026-09-29. Bara engelska, utan språkmapp (som carashell.com: /en/ finns inte på en domän med engelska som standard — länkar byggs utan /en/). .se-närvaron ligger kvar — WW-kampanjen (NO+DK+FI+US+GB+AU+CA+NZ) länkar till matstrumpor.se/en/ och når alla länder därifrån."
+    "alternativa": [
+     "nb",
+     "da",
+     "fi",
+     "de",
+     "fr",
+     "nl",
+     "es",
+     "it",
+     "pl",
+     "pt-PT"
+    ],
+    "comment": "Kopplad av Axel 2026-09-29. Engelska i roten, utan /en/ (som carashell.com). Sedan 2026-09-29 kväll är det UTLANDETS adress. Axel: 'Ska inte alla vara via .com domänen?' Därför bär närvaron alla utlandsspråk (/nb, /da … /pt-pt) och ligger även i Norge och Europa (`ocksa_domaner` där). Språken för .com står bara här, hos ägaren, och --steg domaner skriver över närvarons språk med den här listan."
    },
    "doman_comment": "Närvaron skapas och binds av `node matstrumpor/marknader/bygg.mjs --steg domaner --skarpt` (webPresenceCreate + marketUpdate webPresencesToAdd, CaraShells recept i factory/API-GRANSER.md — men utan att ta bort .se)."
   }

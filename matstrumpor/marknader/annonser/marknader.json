@@ -18,7 +18,9 @@
    ],
    "locale": "nb",
    "heygen_sprak": "Norwegian Bokmål (Norway)",
-   "lank": "https://matstrumpor.se/nb/products/sushi-strumpor?country=NO",
+   "lank": "https://matstrumpor.com/nb/products/sushi-strumpor?country=NO",
+   "doman": "matstrumpor.com",
+   "lank_beslut": "2026-09-29 kväll: Axel \"Ska inte alla vara via .com domänen?\" ⇒ matstrumpor.com (delad med Norge och Europa i Shopify, --steg domaner). Förut matstrumpor.se/<språk>, som fortfarande fungerar.",
    "budget_sek_dag": 500,
    "budget_beslut": "Axel 2026-09-27: '1000kr per dag'. A/B-test 2026-09-29 (Axel: 'AB-testa att köra det som att det är ett norskt varumärke … ett svenskt varumärke … skillnaden efter typ två veckor'): 1 000 kr/dag delas 500 här (A, svenskt varumärke, matstrumpor.se/nb) + 500 i NOB (B, matstrumpor.no) — sessionens förslag, sagt till Axel samma dag. ⛔ Förblir PAUSED tills Axel granskat annonserna (hans ord 2026-09-27: 'jag vill inte att du aktiverar kampanjerna i meta för ens jag har granskat alla')",
    "ab": {
@@ -43,7 +45,7 @@
     "test": "NO svensk mot norsk (2026-09-29)",
     "variant": "B",
     "mot": "NO",
-    "skillnad": "Samma videor och bilder (återanvända ur NO:s annonser via video_fran/bild_fran), samma målgrupp och budget. Två skillnader: raden 'Et svensk merke.' finns inte i brödtexten, och länken går till matstrumpor.no (norska B-sidan, matstrumpor/marknader/domantema.mjs) i stället för matstrumpor.se/nb."
+    "skillnad": "Samma videor och bilder (återanvända ur NO:s annonser via video_fran/bild_fran), samma målgrupp och budget. Två skillnader: raden 'Et svensk merke.' finns inte i brödtexten, och länken går till matstrumpor.no (norska B-sidan, matstrumpor/marknader/domantema.mjs) i stället för matstrumpor.com/nb (A:s adress sedan 2026-09-29 kväll, förut matstrumpor.se/nb)."
    }
   },
   "DK": {
@@ -54,7 +56,9 @@
    ],
    "locale": "da",
    "heygen_sprak": "Danish (Denmark)",
-   "lank": "https://matstrumpor.se/da/products/sushi-strumpor?country=DK",
+   "lank": "https://matstrumpor.com/da/products/sushi-strumpor?country=DK",
+   "doman": "matstrumpor.com",
+   "lank_beslut": "2026-09-29 kväll: Axel \"Ska inte alla vara via .com domänen?\" ⇒ matstrumpor.com (delad med Norge och Europa i Shopify, --steg domaner). Förut matstrumpor.se/<språk>, som fortfarande fungerar.",
    "budget_sek_dag": 1000,
    "budget_beslut": "Axel 2026-09-27 kväll: 'Worldwide kanske vi kan börja på 1000kr per dag. Sen respektive kampanjer 1000kr per dag också' — 1 000 kr/dag. ⛔ Förblir PAUSED tills Axel granskat annonserna ('jag vill inte att du aktiverar kampanjerna i meta för ens jag har granskat alla'); --aktivera körs aldrig utan hans ord"
   },
@@ -66,7 +70,9 @@
    ],
    "locale": "fi",
    "heygen_sprak": "Finnish (Finland)",
-   "lank": "https://matstrumpor.se/fi/products/sushi-strumpor?country=FI",
+   "lank": "https://matstrumpor.com/fi/products/sushi-strumpor?country=FI",
+   "doman": "matstrumpor.com",
+   "lank_beslut": "2026-09-29 kväll: Axel \"Ska inte alla vara via .com domänen?\" ⇒ matstrumpor.com (delad med Norge och Europa i Shopify, --steg domaner). Förut matstrumpor.se/<språk>, som fortfarande fungerar.",
    "budget_sek_dag": 1000,
    "budget_beslut": "Axel 2026-09-27 kväll: 'Worldwide kanske vi kan börja på 1000kr per dag. Sen respektive kampanjer 1000kr per dag också' — 1 000 kr/dag. ⛔ Förblir PAUSED tills Axel granskat annonserna ('jag vill inte att du aktiverar kampanjerna i meta för ens jag har granskat alla'); --aktivera körs aldrig utan hans ord"
   },
@@ -78,7 +84,9 @@
    ],
    "locale": "en",
    "heygen_sprak": "English (United States)",
-   "lank": "https://matstrumpor.se/en/products/sushi-strumpor?country=US",
+   "lank": "https://matstrumpor.com/products/sushi-strumpor?country=US",
+   "doman": "matstrumpor.com",
+   "lank_beslut": "2026-09-29 kväll: Axel \"Ska inte alla vara via .com domänen?\" ⇒ matstrumpor.com (delad med Norge och Europa i Shopify, --steg domaner). Förut matstrumpor.se/<språk>, som fortfarande fungerar.",
    "budget_sek_dag": 1000,
    "budget_beslut": "Axel 2026-09-27 kväll: 'Worldwide kanske vi kan börja på 1000kr per dag. Sen respektive kampanjer 1000kr per dag också' — 1 000 kr/dag. ⛔ Förblir PAUSED tills Axel granskat annonserna ('jag vill inte att du aktiverar kampanjerna i meta för ens jag har granskat alla'); --aktivera körs aldrig utan hans ord"
   },
@@ -94,7 +102,9 @@
    "geo_beslut": "2026-09-29: Axel 'en kampanj per marknad borde bli bäst'. NO, DK, FI och US har egna kampanjer, så WW bär bara de engelska länderna utan egen kampanj (sessionens beslut; före det NO+DK+FI+US+GB+AU+CA+NZ, alltså två kampanjer på samma land). Adsetet 120251749614670023 ändrat PAUSED och tillbakaläst samma dag. Vill Axel ha GB/AU/CA/NZ som fyra egna kampanjer: nya rader här + bygg.mjs --marknad <KOD> --skarpt.",
    "locale": "en",
    "heygen_sprak": "English (United States)",
-   "lank": "https://matstrumpor.se/en/products/sushi-strumpor",
+   "lank": "https://matstrumpor.com/products/sushi-strumpor",
+   "doman": "matstrumpor.com",
+   "lank_beslut": "2026-09-29 kväll: Axel \"Ska inte alla vara via .com domänen?\" ⇒ matstrumpor.com (delad med Norge och Europa i Shopify, --steg domaner). Förut matstrumpor.se/<språk>, som fortfarande fungerar.",
    "lank_not": "Utan ?country= väljer Shopify marknad efter kundens IP (alla fyra länderna ligger i marknaden USA/UK/AU/CA/NZ med egen valuta). Sverige ingår inte — SE har egen kampanj.",
    "budget_sek_dag": 1000,
    "budget_beslut": "Axel 2026-09-27 kväll: 'Worldwide kanske vi kan börja på 1000kr per dag. Sen respektive kampanjer 1000kr per dag också' — 1 000 kr/dag. ⛔ Förblir PAUSED tills Axel granskat annonserna ('jag vill inte att du aktiverar kampanjerna i meta för ens jag har granskat alla'); --aktivera körs aldrig utan hans ord",
@@ -110,7 +120,9 @@
    ],
    "locale": "de",
    "heygen_sprak": "German (Germany)",
-   "lank": "https://matstrumpor.se/de/products/sushi-strumpor",
+   "lank": "https://matstrumpor.com/de/products/sushi-strumpor",
+   "doman": "matstrumpor.com",
+   "lank_beslut": "2026-09-29 kväll: Axel \"Ska inte alla vara via .com domänen?\" ⇒ matstrumpor.com (delad med Norge och Europa i Shopify, --steg domaner). Förut matstrumpor.se/<språk>, som fortfarande fungerar.",
    "lank_not": "Tre länder i samma språk ⇒ utan ?country= (Shopify väljer marknad/valuta efter IP; alla tre ligger i marknaden Europa)",
    "budget_sek_dag": 1000,
    "budget_beslut": "Axel 2026-09-27 kväll: 'Worldwide kanske vi kan börja på 1000kr per dag. Sen respektive kampanjer 1000kr per dag också' — 1 000 kr/dag. ⛔ Förblir PAUSED tills Axel granskat annonserna ('jag vill inte att du aktiverar kampanjerna i meta för ens jag har granskat alla'); --aktivera körs aldrig utan hans ord"
@@ -125,7 +137,9 @@
    ],
    "locale": "fr",
    "heygen_sprak": "French (France)",
-   "lank": "https://matstrumpor.se/fr/products/sushi-strumpor",
+   "lank": "https://matstrumpor.com/fr/products/sushi-strumpor",
+   "doman": "matstrumpor.com",
+   "lank_beslut": "2026-09-29 kväll: Axel \"Ska inte alla vara via .com domänen?\" ⇒ matstrumpor.com (delad med Norge och Europa i Shopify, --steg domaner). Förut matstrumpor.se/<språk>, som fortfarande fungerar.",
    "lank_not": "Belgien får franska här och nederländska i NL-kampanjen — Meta visar båda; språket följer annonsen",
    "budget_sek_dag": 1000,
    "budget_beslut": "Axel 2026-09-27 kväll: 'Worldwide kanske vi kan börja på 1000kr per dag. Sen respektive kampanjer 1000kr per dag också' — 1 000 kr/dag. ⛔ Förblir PAUSED tills Axel granskat annonserna ('jag vill inte att du aktiverar kampanjerna i meta för ens jag har granskat alla'); --aktivera körs aldrig utan hans ord"
@@ -138,7 +152,9 @@
    ],
    "locale": "nl",
    "heygen_sprak": "Dutch (Netherlands)",
-   "lank": "https://matstrumpor.se/nl/products/sushi-strumpor?country=NL",
+   "lank": "https://matstrumpor.com/nl/products/sushi-strumpor?country=NL",
+   "doman": "matstrumpor.com",
+   "lank_beslut": "2026-09-29 kväll: Axel \"Ska inte alla vara via .com domänen?\" ⇒ matstrumpor.com (delad med Norge och Europa i Shopify, --steg domaner). Förut matstrumpor.se/<språk>, som fortfarande fungerar.",
    "budget_sek_dag": 1000,
    "budget_beslut": "Axel 2026-09-27 kväll: 'Worldwide kanske vi kan börja på 1000kr per dag. Sen respektive kampanjer 1000kr per dag också' — 1 000 kr/dag. ⛔ Förblir PAUSED tills Axel granskat annonserna ('jag vill inte att du aktiverar kampanjerna i meta för ens jag har granskat alla'); --aktivera körs aldrig utan hans ord"
   },
@@ -150,7 +166,9 @@
    ],
    "locale": "es",
    "heygen_sprak": "Spanish (Spain)",
-   "lank": "https://matstrumpor.se/es/products/sushi-strumpor?country=ES",
+   "lank": "https://matstrumpor.com/es/products/sushi-strumpor?country=ES",
+   "doman": "matstrumpor.com",
+   "lank_beslut": "2026-09-29 kväll: Axel \"Ska inte alla vara via .com domänen?\" ⇒ matstrumpor.com (delad med Norge och Europa i Shopify, --steg domaner). Förut matstrumpor.se/<språk>, som fortfarande fungerar.",
    "budget_sek_dag": 1000,
    "budget_beslut": "Axel 2026-09-27 kväll: 'Worldwide kanske vi kan börja på 1000kr per dag. Sen respektive kampanjer 1000kr per dag också' — 1 000 kr/dag. ⛔ Förblir PAUSED tills Axel granskat annonserna ('jag vill inte att du aktiverar kampanjerna i meta för ens jag har granskat alla'); --aktivera körs aldrig utan hans ord"
   },
@@ -162,7 +180,9 @@
    ],
    "locale": "it",
    "heygen_sprak": "Italian (Italy)",
-   "lank": "https://matstrumpor.se/it/products/sushi-strumpor?country=IT",
+   "lank": "https://matstrumpor.com/it/products/sushi-strumpor?country=IT",
+   "doman": "matstrumpor.com",
+   "lank_beslut": "2026-09-29 kväll: Axel \"Ska inte alla vara via .com domänen?\" ⇒ matstrumpor.com (delad med Norge och Europa i Shopify, --steg domaner). Förut matstrumpor.se/<språk>, som fortfarande fungerar.",
    "budget_sek_dag": 1000,
    "budget_beslut": "Axel 2026-09-27 kväll: 'Worldwide kanske vi kan börja på 1000kr per dag. Sen respektive kampanjer 1000kr per dag också' — 1 000 kr/dag. ⛔ Förblir PAUSED tills Axel granskat annonserna ('jag vill inte att du aktiverar kampanjerna i meta för ens jag har granskat alla'); --aktivera körs aldrig utan hans ord"
   },
@@ -174,7 +194,9 @@
    ],
    "locale": "pl",
    "heygen_sprak": "Polish (Poland)",
-   "lank": "https://matstrumpor.se/pl/products/sushi-strumpor?country=PL",
+   "lank": "https://matstrumpor.com/pl/products/sushi-strumpor?country=PL",
+   "doman": "matstrumpor.com",
+   "lank_beslut": "2026-09-29 kväll: Axel \"Ska inte alla vara via .com domänen?\" ⇒ matstrumpor.com (delad med Norge och Europa i Shopify, --steg domaner). Förut matstrumpor.se/<språk>, som fortfarande fungerar.",
    "budget_sek_dag": 1000,
    "budget_beslut": "Axel 2026-09-27 kväll: 'Worldwide kanske vi kan börja på 1000kr per dag. Sen respektive kampanjer 1000kr per dag också' — 1 000 kr/dag. ⛔ Förblir PAUSED tills Axel granskat annonserna ('jag vill inte att du aktiverar kampanjerna i meta för ens jag har granskat alla'); --aktivera körs aldrig utan hans ord"
   },
@@ -186,7 +208,10 @@
    ],
    "locale": "pt",
    "heygen_sprak": "Portuguese (Portugal)",
-   "lank": "https://matstrumpor.se/pt/products/sushi-strumpor?country=PT",
+   "lank": "https://matstrumpor.com/pt-pt/products/sushi-strumpor?country=PT",
+   "doman": "matstrumpor.com",
+   "sprakmapp": "pt-pt",
+   "lank_beslut": "2026-09-29 kväll: Axel \"Ska inte alla vara via .com domänen?\" ⇒ matstrumpor.com (delad med Norge och Europa i Shopify, --steg domaner). Förut matstrumpor.se/<språk>, som fortfarande fungerar.",
    "budget_sek_dag": 1000,
    "budget_beslut": "Axel 2026-09-27 kväll: 'Worldwide kanske vi kan börja på 1000kr per dag. Sen respektive kampanjer 1000kr per dag också' — 1 000 kr/dag. ⛔ Förblir PAUSED tills Axel granskat annonserna ('jag vill inte att du aktiverar kampanjerna i meta för ens jag har granskat alla'); --aktivera körs aldrig utan hans ord"
   }

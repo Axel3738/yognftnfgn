@@ -248,9 +248,37 @@ skillnaden efter typ två veckor".
 
 **Domänerna** (`bygg.mjs --steg domaner`, fältet `doman` per marknad i `konfig.json`): Norge →
 **matstrumpor.no** (nb), Europa → **matstrumpor.eu** (en som standard + da, fi, de, fr, nl, es, it,
-pl, pt-PT), USA/UK/AU/CA/NZ → **matstrumpor.com** (en). En egen domän hör till EN marknad i Shopify,
-så .se-närvaron ligger kvar i alla marknader (`delad` i `stegPublicera`) — därför fungerar både
-matstrumpor.se/nb (A) och matstrumpor.no (B) för norska kunder.
+pl, pt-PT), USA/UK/AU/CA/NZ → **matstrumpor.com** (en). **Sedan 2026-09-29 kväll delas .com med
+Norge och Europa och bär alla utlandsspråk** (avsnittet nedan). .se-närvaron ligger kvar i alla
+marknader (`delad` i `stegPublicera`), så gamla .se/<språk>-länkar fungerar. A-sidan är
+matstrumpor.com/nb och B-sidan matstrumpor.no.
+
+### Allt utland via matstrumpor.com (Axel 2026-09-29 kväll)
+
+Axel: "Varför gav du mig 2 olika domäner nu igen? Och varför är alla dessa .se domäner??? Ska inte
+alla vara via .com domänen?" Annonserna byggdes 27–28/9, före domänerna, och länkade därför till
+matstrumpor.se/<språk>. Förhandsgranskningslistan blandade dessutom .se med .eu och .com.
+
+- **Shopify:** .com-närvaron bär nu alla utlandsspråk. Engelska ligger i roten, och övriga språk har
+  mapparna /nb, /da, /fi, /de, /fr, /nl, /es, /it, /pl och /pt-pt. Närvaron ligger i Norge, Europa
+  och USA-marknaden. Språken står hos ägaren (USA-radens `doman` i `konfig.json`), och delningen
+  styrs av `ocksa_domaner` hos Norge och Europa. Den gjordes med `bygg.mjs --steg domaner --skarpt`
+  och lästes tillbaka. .no (B-sidan), .eu och .se/<språk> fungerar kvar.
+- **Mätt som kund 2026-09-29 kväll:** alla tolv språk och 19 länder på .com svarade 200 med rätt
+  språk, land, valuta, pris och loggan "Matstrumpor". /nb, /da och /fi gav 404 respektive
+  myshopify-omdirigering i första läsningen, direkt efter bytet. Minuten efter var de rätt, alltså
+  Shopifys uppdatering. Utan `?country=` läser containern från USA, så .com/de hamnar på engelska
+  härifrån. En tysk besökare hamnar i Europa-marknaden, precis som på .se.
+- ⚠️ **"En egen domän kan bara ligga i EN marknad" stämmer inte här.** Anteckningen kommer från
+  CaraShell 2026-09-17, där en nyskapad GB-marknad fick `RESOURCE_NOT_FOUND`. Samma kväll lade
+  sessionen först .com i Europa som prov: `userErrors` var tomt, .com låg kvar i USA-marknaden, och
+  provet återställdes exakt. Därefter gjordes delningen på riktigt. Orsaken till CaraShells fel är
+  inte utredd.
+- **Annonserna:** alla utlandskampanjer länkar till matstrumpor.com (`annonser/marknader.json` →
+  `lank`, `doman`, PT med `sprakmapp: pt-pt`). Undantaget är NOB, som går till .no. `lankOk` kräver
+  domänen, språkmappen och landet. `lankSkillnad` gör att `--byt-text` också byter länken i PAUSED
+  annonser. Testet "marknader.json: … allt utland går via matstrumpor.com utom B-sidan" stoppar en
+  ny .se-länk. `ab-norge.mjs` räknar både .com/nb och .se/nb som A.
 
 **Temat per domän: `domantema.mjs` (v4 sedan 2026-09-29)**, en patch i MAIN som bara slår på
 de egna domänerna och de icke-svenska språken. Den svenska sidan på .se renderas byte för byte som
@@ -280,7 +308,7 @@ delas i två. Det är sessionens förslag, och Axel har fått det sagt.
 | | A | B |
 |---|---|---|
 | Kampanj | `MATSTRUMP_NO_SALES` `120251749551520023` | `MATSTRUMP_NOB_SALES` `120251777339520023` |
-| Länk | matstrumpor.se/nb/…?country=NO | matstrumpor.no/…?country=NO |
+| Länk | matstrumpor.com/nb/…?country=NO (förut .se/nb, till 2026-09-29 kväll) | matstrumpor.no/…?country=NO |
 | Brödtextens sista rad | "Et svensk merke." | (ingen) |
 | Annonser | 001–008 | samma 001–008, samma video- och bild-id |
 
