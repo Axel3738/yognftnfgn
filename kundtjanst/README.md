@@ -442,6 +442,18 @@ granskning 2026-09-29"):
 | Mats (hos ombudet utan kod, "dom vägrar lämna ut paketet!") | generisk ARG utan lösning | "bra att den hanterar hans invändning — han ska kontakta postföretaget" | `svar.namnerHamtaUt` ⇒ X-raden `hamta_ut` + läget med ombud och kolli + raden **"Aviseringen med koden skickas av fraktbolaget, inte av oss. Kolla SMS och skräpposten. Hos ombudet räcker det oftast med legitimation och kollinumret … kontakta PostNord direkt"** (ARG när tonen är arg, annars ENKEL wismo) |
 | Ann, Pierre, Sören (returer) | rätt svar, men **Sjöhed 160** som returadress | "bara byt till nya adressen; vi ska skicka med retursedeln" | Brandfilen bär Stenkolsgatan 1B sedan 2026-09-28; Railway kör bygget efter bytet (omstart 2026-09-29 07:26 UTC). **Retursedeln väntar på Axels PDF** — görs om med nya adressen och länkas i returmallen när den finns. Kunden betalar returfrakten själv (Axel: "varför kan inte kunden stå för den?") |
 
+✅ **Retursedeln (Axels bild 2026-09-29 kväll):** `kundtjanst/retursedel/bygg.mjs`
+renderar `retursedel.html` (STONEBITE, "Posta till:", Stonebite Ecom AB,
+Stenkolsgatan 1B, 417 07 Göteborg, Sverige) i Chromium → `retursedel.png`, och
+`--ladda-upp` lägger den i Matstrumpors Shopify Files (samma väg som
+konkurrentdödarens bevisbilder): https://cdn.shopify.com/s/files/1/0976/7508/4115/files/retursedel.png?v=1790677409
+(200, 64 kB, läst tillbaka). Länken står i `tvister.retursedel_url` i
+Bäverbutikens, CaraShells och Matstrumpors brandfiler, och returmallen bär
+raden "Skriv gärna ut retursedeln och klistra den på paketet: …" på fem språk
+(tom URL ⇒ ingen rad). Ny adress ⇒ ändra html:en, kör `bygg.mjs --ladda-upp`,
+byt URL:en i brandfilerna. CaraShells danska kunder får `/da/pages/spara`
+sedan samma kväll (`svar.sparningssidor.da`).
+
 Svaren till Axels frågor, mätta: Mats paket (#7020, 4PX) stod hos ombudet från
 24/9 09:12, han skrev 25/9 18:43 och hämtade 26/9 10:01 — avin/koden kommer
 från sista-bitens fraktbolag, inte från oss (vår spårningssida visar ombud och

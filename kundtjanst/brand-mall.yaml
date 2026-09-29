@@ -61,6 +61,7 @@ tvister:
   # för att få den. Det ger färre returer, men bara om svaret går ut inom
   # forsta_svar_timmar nedan — ett missat mejl blir en tvist, och en tvist
   # kostar mer än returen. false = adressen står i policyn och får skickas fritt.
+  retursedel_url: ""          # länk till retursedeln kunden skriver ut (kundtjanst/retursedel/bygg.mjs --ladda-upp); tom ⇒ ingen rad
   returadress_pa_forfragan: true
   # {{RETURN_POSTAGE_PAID_BY}} — "kund" eller "butik". ⚠️ Lämna tom tills ägaren
   # sagt vilket; VA:n får aldrig gissa det i ett kundmejl.

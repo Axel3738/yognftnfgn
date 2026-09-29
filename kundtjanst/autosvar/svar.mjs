@@ -121,6 +121,7 @@ const T = {
       '3. Skicka paketet till:',
       ...r.adress,
       'Skicka det som brev eller paket direkt till adressen ovan, inte till ett ombud. Vi hämtar inte ut paket från ombud.',
+      ...(r.sedel ? [`Skriv gärna ut retursedeln och klistra den på paketet: ${r.sedel}`] : []),
       '4. Använd gärna en spårbar frakttjänst, och svara på det här mejlet med spårningsnumret när du postat paketet. Då följer vi upp så fort det kommit fram.',
       ...(r.frakt === 'kund' ? ['Returfrakten står du själv för.'] : r.frakt === 'butik' ? ['Vi står för returfrakten. Svara på det här mejlet så ordnar vi en fraktsedel.'] : []),
       ...(r.dagar ? [`Returen ska skickas inom ${r.dagar} dagar från att du tog emot varan.`] : []),
@@ -194,6 +195,7 @@ const T = {
       '3. Send pakken til:',
       ...r.adress,
       'Send den som brev eller pakke direkte til adressen over, ikke til et hentested. Vi henter ikke ut pakker fra hentesteder.',
+      ...(r.sedel ? [`Skriv gjerne ut returseddelen og fest den på pakken: ${r.sedel}`] : []),
       '4. Bruk gjerne en sporbar frakttjeneste, og svar på denne e-posten med sporingsnummeret når du har sendt pakken. Da følger vi opp så snart den har kommet frem.',
       ...(r.frakt === 'kund' ? ['Returfrakten betaler du selv.'] : r.frakt === 'butik' ? ['Vi dekker returfrakten. Svar på denne e-posten, så ordner vi en fraktseddel.'] : []),
       ...(r.dagar ? [`Returen må sendes innen ${r.dagar} dager etter at du mottok varen.`] : []),
@@ -264,6 +266,7 @@ const T = {
       '3. Send pakken til:',
       ...r.adress,
       'Send den som brev eller pakke direkte til adressen ovenfor, ikke til en pakkeshop. Vi henter ikke pakker i pakkeshops.',
+      ...(r.sedel ? [`Print gerne retursedlen og sæt den på pakken: ${r.sedel}`] : []),
       '4. Brug gerne en sporbar fragtservice, og svar på denne mail med sporingsnummeret, når du har sendt pakken. Så følger vi op, så snart den er nået frem.',
       ...(r.frakt === 'kund' ? ['Returfragten betaler du selv.'] : r.frakt === 'butik' ? ['Vi betaler returfragten. Svar på denne mail, så sender vi en fragtlabel.'] : []),
       ...(r.dagar ? [`Returen skal sendes inden for ${r.dagar} dage, efter at du modtog varen.`] : []),
@@ -334,6 +337,7 @@ const T = {
       '3. Lähetä paketti osoitteeseen:',
       ...r.adress,
       'Lähetä se kirjeenä tai pakettina suoraan yllä olevaan osoitteeseen, ei noutopisteeseen. Emme nouda paketteja noutopisteistä.',
+      ...(r.sedel ? [`Tulosta palautuslappu ja kiinnitä se pakettiin: ${r.sedel}`] : []),
       '4. Käytä mielellään seurattavaa lähetystapaa ja vastaa tähän viestiin seurantanumerolla, kun olet postittanut paketin. Seuraamme asiaa heti, kun paketti on saapunut.',
       ...(r.frakt === 'kund' ? ['Palautuskulut maksat itse.'] : r.frakt === 'butik' ? ['Me maksamme palautuskulut. Vastaa tähän viestiin, niin järjestämme rahtikirjan.'] : []),
       ...(r.dagar ? [`Palautus on lähetettävä ${r.dagar} päivän kuluessa tuotteen vastaanottamisesta.`] : []),
@@ -404,6 +408,7 @@ const T = {
       '3. Send the parcel to:',
       ...r.adress,
       'Send it as a letter or parcel directly to the address above, not to a pickup point. We do not collect parcels from pickup points.',
+      ...(r.sedel ? [`Please print the return label and stick it on the parcel: ${r.sedel}`] : []),
       '4. Please use a tracked shipping service, and reply to this email with the tracking number once you have posted it. We will follow up as soon as it arrives.',
       ...(r.frakt === 'kund' ? ['Return shipping is at your own cost.'] : r.frakt === 'butik' ? ['We cover the return shipping. Reply to this email and we will arrange a label.'] : []),
       ...(r.dagar ? [`The return must be sent within ${r.dagar} days of receiving the item.`] : []),
@@ -504,6 +509,8 @@ export function returText({ sprak = 'sv', brand = {}, ordernummer = '' } = {}) {
     dagar: Number(tv.returfonster_dagar) || 0,
     frakt: ['kund', 'kunden', 'customer'].includes(frakt) ? 'kund' : ['butik', 'butiken', 'vi', 'store', 'shop'].includes(frakt) ? 'butik' : '',
     policy: String(tv.policy_url ?? '').trim(),
+    // Retursedeln kunden skriver ut (Axels bild 2026-09-29, byggd i kundtjanst/retursedel/). Tom ⇒ raden ritas inte.
+    sedel: String(tv.retursedel_url ?? '').trim(),
   });
 }
 

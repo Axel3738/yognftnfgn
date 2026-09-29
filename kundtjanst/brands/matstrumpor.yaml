@@ -66,6 +66,8 @@ tvister:
   # 2026-09-26 (Axels order). Står INTE publikt i villkoren. Till och med
   # 2026-09-25: Sjöhed 160, 442 74 Harestad (Shopifys faktureringsadress då).
   returadress: "STONEBITE ECOM AB, Stenkolsgatan 1B, 417 07 Göteborg, Sverige"
+  # Retursedeln kunden skriver ut och klistrar på paketet (Axels bild 2026-09-29, kundtjanst/retursedel/).
+  retursedel_url: "https://cdn.shopify.com/s/files/1/0976/7508/4115/files/retursedel.png?v=1790677409"
   # Policyn: "Om returen accepteras skickar vi dig en returfraktsedel samt
   # instruktioner … Artiklar som skickas tillbaka utan att retur först har
   # begärts accepteras inte." ⇒ mejla först.

@@ -441,7 +441,7 @@ test('flödet (--torr): ENKEL blir utkast med fakta, ARG blir utkast + flagga + 
   // ENKEL retur (Disa "vill returnera … hur gör jag?"): returinformationen ur brandfilen, flagga + VA-PRIO (VA:n tar emot returen), ingen order ⇒ inget ordernummer i raden.
   assert.deepEqual([per[15].hink, per[15].typ, per[15].atgard, per[15].flaggad, per[15].flyttad], ['ENKEL', 'retur', 'utkast', true, 'VA-PRIO']);
   const utkastDisa = b.utkast().find((u) => /disa@x\.se/.test(u.ra)).text;
-  assert.match(utkastDisa, /^Hej Disa!\n\nTack för ditt mejl\.\nSå här gör du returen:\n1\. Packa varan i originalförpackningen och i samma skick som du fick den\.\n2\. Skriv ditt namn och ordernummer tydligt på utsidan av paketet, och lägg med en kopia av orderbekräftelsen inuti\.\n3\. Skicka paketet till:\nSTONEBITE ECOM AB\nStenkolsgatan 1B\n417 07 Göteborg\nSverige\nSkicka det som brev eller paket direkt till adressen ovan, inte till ett ombud\. Vi hämtar inte ut paket från ombud\.\n4\. Använd gärna en spårbar frakttjänst/);
+  assert.match(utkastDisa, /^Hej Disa!\n\nTack för ditt mejl\.\nSå här gör du returen:\n1\. Packa varan i originalförpackningen och i samma skick som du fick den\.\n2\. Skriv ditt namn och ordernummer tydligt på utsidan av paketet, och lägg med en kopia av orderbekräftelsen inuti\.\n3\. Skicka paketet till:\nSTONEBITE ECOM AB\nStenkolsgatan 1B\n417 07 Göteborg\nSverige\nSkicka det som brev eller paket direkt till adressen ovan, inte till ett ombud\. Vi hämtar inte ut paket från ombud\.\nSkriv gärna ut retursedeln och klistra den på paketet: https:\/\/cdn\.shopify\.com\/[^\n]+retursedel\.png[^\n]*\n4\. Använd gärna en spårbar frakttjänst/);
   // Axels beslut 2026-09-22 (B): 14 dagar från mottagandet, ur brandfilens tvister.returfonster_dagar.
   assert.match(utkastDisa, /\nReturen ska skickas inom 14 dagar från att du tog emot varan\.\nHela returpolicyn: https:\/\/baverbutiken\.se\/policies\/refund-policy\n/);
   // Brandfilen säger returfrakt_betalas_av: kund sedan 2026-09-21 (retur-SOP:en, commit 9cfa779a) ⇒ fraktraden står med. Aldrig ordet återbetalning.
@@ -1229,7 +1229,8 @@ test('CaraShell: spårningslänken går till sidan på kundens språk', () => {
   assert.match(sparningslank(k.svar, nr, 'en'), /^https:\/\/carashell\.com\/pages\/spara\?nummer=CS-/);
   assert.match(sparningslank(k.svar, nr, 'nb'), /^https:\/\/carashell\.se\/nb\/pages\/spara\?nummer=CS-/);
   assert.match(sparningslank(k.svar, nr, 'sv'), /^https:\/\/carashell\.se\/pages\/spara\?nummer=CS-/);
-  assert.match(sparningslank(k.svar, nr, 'da'), /^https:\/\/carashell\.se\/pages\/spara\?/, 'inget danskt ⇒ standardsidan');
+  assert.match(sparningslank(k.svar, nr, 'da'), /^https:\/\/carashell\.se\/da\/pages\/spara\?nummer=CS-/, 'danska sidan sedan 2026-09-29');
+  assert.match(sparningslank(k.svar, nr, 'de'), /^https:\/\/carashell\.se\/pages\/spara\?/, 'okänt språk ⇒ standardsidan');
   assert.match(sparningslank(k.svar, nr), /^https:\/\/carashell\.se\/pages\/spara\?/);
 });
 
