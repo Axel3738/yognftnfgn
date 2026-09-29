@@ -2,7 +2,69 @@
  "agent": "AQ",
  "datum": "2026-09-29-carashell",
  "struktur": "hjulen, underredet och kopplingen på den uppställda husvagnen/husbilen (10–31 oktober)",
- "kandidater": [
+ "kandidater": [],
+ "strukna": [
+  {
+   "koncept": "Stödhjulets punkteringsfria hjul 200×50 (C_LAGA)",
+   "skal": "campingvaruhuset säljer 'Hjul 200*50 Plåtfälg/Gummihjul' för 119 kr — under landad (Ali $7,50 ≈ 108 kr); AL-KO 645 på pricerunner räddar inte golvet. Produktsidan 1005003214389203 svarade dessutom tomt."
+  },
+  {
+   "koncept": "Däckavlastningsramperna / tyre saver 2-pack (K0085/K0096/K0102)",
+   "skal": "campingvaruhuset: 'Fiamma Wheel Saver 2-Pack' 279 kr — samma form och funktion, under Ali-landad ~465 kr ($32,17). Gäller i praktiken även däckvaggorna K0335 (ja)."
+  },
+  {
+   "koncept": "Stödhjulshuven (jockey wheel cover)",
+   "skal": "Ali har bara USA-'tongue jack covers' (cylinder utan hjul, för A-ramsdomkraft) — ingen listning för europeiskt 48 mm-stödhjul med hjul."
+  },
+  {
+   "koncept": "Hjulbultsindikatorerna 20-pack",
+   "skal": "Milenco Fälgbultsindikatorer 17 mm 10-pack 112 kr på pricerunner — golv utan premiumankare; landad för 25-pack ~223 kr ger BE-CPA < 190."
+  },
+  {
+   "koncept": "Stödhjulsplattan / jockey pad",
+   "skal": "'Stödhjulsunderlägg Jockey Pocket' 154 kr i campingvaruhuset — plattor är dessutom nej (K0274) och ORDER säger plattor är nej."
+  },
+  {
+   "koncept": "Dubbelt stödhjul 260×85 (sjunker inte i gruset)",
+   "skal": "Ali saknar europeiskt 48 mm-tvillingset; bara USA swing-up ($56–73). Ankaret finns (Uppgraderingsset dubbla stödhjul 1 155 kr) men ingen listning."
+  },
+  {
+   "koncept": "Hjulkilar/stoppklossar (husbilens handbroms ska inte stå åtdragen)",
+   "skal": "campingvaruhuset 39–188 kr (Fiamma, Kampa, ProPlus) — sortiment under landad, kusin till nivåklossarna (sett innan)."
+  },
+  {
+   "koncept": "Vinterkjol/underredsskärm för vintercamping",
+   "skal": "Ali ger bara förtältskjolar (awning draught skirt) — annan sak, standard i kedjan (Dometic Hjulhuskappa 255–300 kr)."
+  },
+  {
+   "koncept": "Rangerhjälp / trailer dolly",
+   "skal": "Ali $290–410 — landad ~4 200 kr, över vidaXL 4 499. För tungt/dyrt."
+  },
+  {
+   "koncept": "Underredsskydd/rostskydd som sprutas",
+   "skal": "aerosol-förbrukningsvara, skickas inte från Ali; Biltema/Dinitrol-sortiment i kedjan."
+  },
+  {
+   "koncept": "Tankvärmaren 12 V (gråvattentanken under golvet, vintercamping)",
+   "skal": "en annan lins hade redan hämtat heron 1005007345717544/1005009338535468 kl 11:44 — lämnad för att inte dubbla."
+  },
+  {
+   "koncept": "Stödbensskydd mot rost/frysfast",
+   "skal": "finns inte som produkt på Ali (sök 'corner steady leg cover' gav bara hela stödben)."
+  },
+  {
+   "koncept": "Låsbara hjulbultar / hjulbultskåpor",
+   "skal": "McGard 415 / stöldskyddsmuttrar 205 i sortiment, måste mäta gänga och kona — returrisk hög, inte nytt i flödet."
+  }
+ ],
+ "karnfynd": [
+  "Kedjan (campingvaruhuset.se) ligger UNDER Ali-landad på nästan allt kring hjul/stödhjul: hjul 200×50 119 kr, Fiamma Wheel Saver 279 kr, stoppklossar 39–188 kr, Jockey Pocket 154 kr. Strukturen 'hjulen/underredet' bär bara där ett Milenco-ankare finns.",
+  "Fiamma Wheel Saver 2-pack 279 kr är ett golv under däckvaggorna K0335 (ja) — bör läsas in innan den launchas.",
+  "Milenco är ankaret i hela strukturen: kopplingslås 1 436–1 829, hjullås 1 619. Universalkopior finns i kedjan 199–665, så båda leveranserna är rena H06-tester och lever eller dör på om ägaren redan har ett godkänt lås.",
+  "Ingen svensk aktör i stödhjulshuv-formen, men ingen Ali-listning heller — europeiskt stödhjul (48 mm, hjul) saknar leverantör.",
+  "Två av fyra objekt i strukturen (stödhjulet, stödbenen) är döda av kedjepris eller nej; det som återstår NYTT är stöldformen (lås), inte skydd."
+ ],
+ "strukna_huvudsession": [
   {
    "koncept_id": null,
    "namn_sv": "Kopplingslåset universal 50 mm",
@@ -14,10 +76,25 @@
    "hypotes_id": "H06",
    "vinnarlikhet": {
     "likast": "Taköverdraget för Husvagn",
-    "delade_variabler": ["objekt_ute", "dyr>10tkr", "deadline uppställning", "agare_55plus", "ankare ≥1,6×"],
-    "avvikelser": ["form lås (Motorlåset i rostfritt = REAL_LOSER 0,50 på utombordaren)", "kedjan har samma form under oss (LTC 225, AL-KO 573)", "många vagnar har redan ett försäkringsgodkänt lås — ej mätt hur många"]
+    "delade_variabler": [
+     "objekt_ute",
+     "dyr>10tkr",
+     "deadline uppställning",
+     "agare_55plus",
+     "ankare ≥1,6×"
+    ],
+    "avvikelser": [
+     "form lås (Motorlåset i rostfritt = REAL_LOSER 0,50 på utombordaren)",
+     "kedjan har samma form under oss (LTC 225, AL-KO 573)",
+     "många vagnar har redan ett försäkringsgodkänt lås — ej mätt hur många"
+    ]
    },
-   "sasong": {"fonster_id": "uppstallning_husvagn", "deadline_typ": "uppställning", "veckor_kvar": 1.6, "timing": "NOW"},
+   "sasong": {
+    "fonster_id": "uppstallning_husvagn",
+    "deadline_typ": "uppställning",
+    "veckor_kvar": 1.6,
+    "timing": "NOW"
+   },
    "listning": {
     "product_id": "1005012497485498",
     "url": "https://www.aliexpress.com/item/1005012497485498.html",
@@ -25,31 +102,115 @@
     "sald": "",
     "verdict": "LIVE_VERIFIED",
     "verifierad_at": "2026-09-29T11:45:58Z",
-    "kontroll": {"produktsida_oppnad": true, "titel_stammer": true, "hero_nedladdad": "korningar/2026-09-29-carashell/v3/bilder/1005012497485498.jpg", "hero_sedd": true, "pris_sett": true, "varianter": "universal 50 mm kula, en variant (zinklegering, 2 nycklar + insexnyckel)", "video": "ej tillgänglig i containern"}
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-29-carashell/v3/bilder/1005012497485498.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "universal 50 mm kula, en variant (zinklegering, 2 nycklar + insexnyckel)",
+     "video": "ej tillgänglig i containern"
+    }
    },
-   "material": {"klass": 1, "hero_textfri": true, "hero_i_kontext": false, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "ren packshot på vit botten — behöver egen bild där låset sitter i AKS-kopplingen på en uppställd vagn"},
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "ren packshot på vit botten — behöver egen bild där låset sitter i AKS-kopplingen på en uppställd vagn"
+   },
    "marknad": {
-    "lagsta_jamforbara": {"aktor": "LTC ProCamp / campingvaruhuset.se", "pris_sek": 225, "url": "https://www.campingvaruhuset.se/shop?funk=gor_sokning&term=kopplingsl%C3%A5s", "exakt_samma_form": true},
-    "premium_ankare": {"namn": "Milenco Kopplingslås AKS3004", "pris_sek": 1670, "url": "https://www.campingvaruhuset.se/shop?funk=gor_sokning&term=kopplingsl%C3%A5s", "i_sortiment": true},
+    "lagsta_jamforbara": {
+     "aktor": "LTC ProCamp / campingvaruhuset.se",
+     "pris_sek": 225,
+     "url": "https://www.campingvaruhuset.se/shop?funk=gor_sokning&term=kopplingsl%C3%A5s",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Milenco Kopplingslås AKS3004",
+     "pris_sek": 1670,
+     "url": "https://www.campingvaruhuset.se/shop?funk=gor_sokning&term=kopplingsl%C3%A5s",
+     "i_sortiment": true
+    },
     "ankare_kvot": 2.39,
     "annonsorer_se": "ej mätt",
     "ovriga_golv": "AL-KO Universal kopplingslås 573 (campingvaruhuset), Carpoint 50 mm 199 / Seatec 399 / AL-KO 566 (pricerunner.se), Milenco WS3000 1 599 + AKS 2004/3004 1 436 (getcamping.se) — sortiment ~13–15 SKU:er, därav H06-märkningen",
-    "kollade_kallor": ["campingvaruhuset.se", "getcamping.se", "pricerunner.se"]
+    "kollade_kallor": [
+     "campingvaruhuset.se",
+     "getcamping.se",
+     "pricerunner.se"
+    ]
    },
-   "ekonomi": {"landad_sek": [330, 404], "pris_sek": 699, "brutto_sek": [295, 369], "be_cpa_sek": [295, 369], "be_roas": 2.11, "flerkop": false, "returrisk": "medel — universal 50 mm kula, men AKS-kopplingshuvudets passform är obevisad"},
-   "meta_tanke": {"hook": "Står husvagnen olåst i vinter?", "objekt_i_bild": "låset i kopplingen på den uppställda vagnen, stödhjulet nere", "sjalvselekterande": true, "forstas_3s": true, "bevisas_visuellt": "kulan sitter i kopplingen — ingen bil kan haka på"},
+   "ekonomi": {
+    "landad_sek": [
+     330,
+     404
+    ],
+    "pris_sek": 699,
+    "brutto_sek": [
+     295,
+     369
+    ],
+    "be_cpa_sek": [
+     295,
+     369
+    ],
+    "be_roas": 2.11,
+    "flerkop": false,
+    "returrisk": "medel — universal 50 mm kula, men AKS-kopplingshuvudets passform är obevisad"
+   },
+   "meta_tanke": {
+    "hook": "Står husvagnen olåst i vinter?",
+    "objekt_i_bild": "låset i kopplingen på den uppställda vagnen, stödhjulet nere",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "kulan sitter i kopplingen — ingen bil kan haka på"
+   },
    "varfor": "Samma objekt/datum/ägare som taköverdraget (REAL_WINNER) och ett synligt Milenco-ankare på 2,4× — ORDER:s uttryckliga H06-öppning för dragkulans lås. Stölden är en av de fem månadernas verkliga felmoder.",
    "huvudrisk": "Låsformen förlorade senast (Motorlåset 0,50) och kedjan säljer samma universalform för 225–573 kr; dessutom har många vagnar redan ett försäkringsgodkänt lås (ej mätt).",
    "konfidens": "LÅG",
-   "poang": {"vinnarlikhet": 2, "meta_creative": 1, "efterfragan": 3, "lucka": 2, "ekonomi": 2, "sasong": 2, "leverantor": 2, "nyhet": 1, "hypotesvarde": 2},
-   "per_kriterium": {"K0": "ok", "K1": 12, "K2": 12, "K3": 8, "K4": 6, "K5": 6, "K6": 8, "K7": 5, "K8": 7, "K9": 4, "K10": 2, "K11": 1, "K12": 1},
-   "k0": {"dubblett": false, "kollat": ["katalog-live.txt (Motorlås/Styrlås är andra objekt)", "koncept.py sok lås/kopplingslås/hitch lock", "REDAN-PROVAT.md (K0116/K0168 är kopplingsHUVAR, inte lås)"]},
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 1,
+    "efterfragan": 3,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 12,
+    "K3": 8,
+    "K4": 6,
+    "K5": 6,
+    "K6": 8,
+    "K7": 5,
+    "K8": 7,
+    "K9": 4,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (Motorlås/Styrlås är andra objekt)",
+     "koncept.py sok lås/kopplingslås/hitch lock",
+     "REDAN-PROVAT.md (K0116/K0168 är kopplingsHUVAR, inte lås)"
+    ]
+   },
    "kallor": [
     "https://www.aliexpress.com/item/1005012497485498.html",
     "https://www.campingvaruhuset.se/shop?funk=gor_sokning&term=kopplingsl%C3%A5s",
     "https://www.getcamping.se/search/?q=milenco",
     "https://www.pricerunner.se/search?q=kopplingsl%C3%A5s%20husvagn"
-   ]
+   ],
+   "_struken": "kopplingslås = standardutrustning/sortiment (AL-KO/Milenco/LTC 225–4 495) — ORDER: död"
   },
   {
    "koncept_id": null,
@@ -62,10 +223,25 @@
    "hypotes_id": "H06",
    "vinnarlikhet": {
     "likast": "Taköverdraget för Husvagn",
-    "delade_variabler": ["objekt_ute", "dyr>10tkr", "deadline uppställning", "agare_55plus", "ankare ≥1,6×"],
-    "avvikelser": ["form lås (Motorlåset = REAL_LOSER)", "Ali-kopia under oss på pricerunner (281 kr) och Proplus 665 i samma form", "hero textbelagd"]
+    "delade_variabler": [
+     "objekt_ute",
+     "dyr>10tkr",
+     "deadline uppställning",
+     "agare_55plus",
+     "ankare ≥1,6×"
+    ],
+    "avvikelser": [
+     "form lås (Motorlåset = REAL_LOSER)",
+     "Ali-kopia under oss på pricerunner (281 kr) och Proplus 665 i samma form",
+     "hero textbelagd"
+    ]
    },
-   "sasong": {"fonster_id": "uppstallning_husvagn", "deadline_typ": "uppställning", "veckor_kvar": 1.6, "timing": "NOW"},
+   "sasong": {
+    "fonster_id": "uppstallning_husvagn",
+    "deadline_typ": "uppställning",
+    "veckor_kvar": 1.6,
+    "timing": "NOW"
+   },
    "listning": {
     "product_id": "1005012878544159",
     "url": "https://www.aliexpress.com/item/1005012878544159.html",
@@ -73,54 +249,121 @@
     "sald": "",
     "verdict": "LIVE_VERIFIED",
     "verifierad_at": "2026-09-29T11:49:30Z",
-    "kontroll": {"produktsida_oppnad": true, "titel_stammer": true, "hero_nedladdad": "korningar/2026-09-29-carashell/v3/bilder/1005012878544159.jpg", "hero_sedd": true, "pris_sett": true, "varianter": "en variant, ställbar klo (hålrad) — passform mot 185–195 mm husvagnsdäck ej mätt", "video": "ej tillgänglig i containern"},
-    "alternativ_listning": {"product_id": "1005013252059050", "pris_usd": 39.99, "hero": "korningar/2026-09-29-carashell/v3/bilder/1005013252059050.jpg", "kommentar": "LIVE, hero med bild i kontext (klon på däcket) men tung inbränd text/brand ROSEKEYSB; landad 578 ger BE-CPA 221 vid 799"}
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-29-carashell/v3/bilder/1005012878544159.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant, ställbar klo (hålrad) — passform mot 185–195 mm husvagnsdäck ej mätt",
+     "video": "ej tillgänglig i containern"
+    },
+    "alternativ_listning": {
+     "product_id": "1005013252059050",
+     "pris_usd": 39.99,
+     "hero": "korningar/2026-09-29-carashell/v3/bilder/1005013252059050.jpg",
+     "kommentar": "LIVE, hero med bild i kontext (klon på däcket) men tung inbränd text/brand ROSEKEYSB; landad 578 ger BE-CPA 221 vid 799"
+    }
    },
-   "material": {"klass": 1, "hero_textfri": false, "hero_i_kontext": false, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "båda heron textbelagda (PREMIUM QUALITY / UNIVERSAL WHEEL LOCK) — måste beskäras eller fotas om på husvagnshjulet"},
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "båda heron textbelagda (PREMIUM QUALITY / UNIVERSAL WHEEL LOCK) — måste beskäras eller fotas om på husvagnshjulet"
+   },
    "marknad": {
-    "lagsta_jamforbara": {"aktor": "okänd Ali-kopia / pricerunner.se", "pris_sek": 281, "url": "https://www.pricerunner.se/search?q=hjulkl%C3%A4mma", "exakt_samma_form": true},
-    "premium_ankare": {"namn": "Milenco Hjullås Compact (fälg 12–16\", däck 145–225 mm)", "pris_sek": 1619, "url": "https://www.campingvaruhuset.se/sv/milenco-hjullas-compact", "i_sortiment": true},
+    "lagsta_jamforbara": {
+     "aktor": "okänd Ali-kopia / pricerunner.se",
+     "pris_sek": 281,
+     "url": "https://www.pricerunner.se/search?q=hjulkl%C3%A4mma",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Milenco Hjullås Compact (fälg 12–16\", däck 145–225 mm)",
+     "pris_sek": 1619,
+     "url": "https://www.campingvaruhuset.se/sv/milenco-hjullas-compact",
+     "i_sortiment": true
+    },
     "ankare_kvot": 2.03,
     "annonsorer_se": "ej mätt",
     "ovriga_golv": "Proplus Universal Hjulklämma 665, Maypole 13–17\" 845 (pricerunner.se); Nemesis 2 398–2 729 (campingvaruhuset) — få SKU:er, ingen kedja under 281",
-    "kollade_kallor": ["campingvaruhuset.se", "getcamping.se", "pricerunner.se"]
+    "kollade_kallor": [
+     "campingvaruhuset.se",
+     "getcamping.se",
+     "pricerunner.se"
+    ]
    },
-   "ekonomi": {"landad_sek": [418, 511], "pris_sek": 799, "brutto_sek": [288, 381], "be_cpa_sek": [288, 381], "be_roas": 2.39, "flerkop": false, "returrisk": "medel — ställbar, men kunden kan behöva veta däckbredd"},
-   "meta_tanke": {"hook": "Vem vaktar husvagnen i vinter?", "objekt_i_bild": "gul klo på husvagnshjulet, vagnen uppställd på grus", "sjalvselekterande": true, "forstas_3s": true, "bevisas_visuellt": "klon syns från vägen — vagnen går inte att rulla"},
+   "ekonomi": {
+    "landad_sek": [
+     418,
+     511
+    ],
+    "pris_sek": 799,
+    "brutto_sek": [
+     288,
+     381
+    ],
+    "be_cpa_sek": [
+     288,
+     381
+    ],
+    "be_roas": 2.39,
+    "flerkop": false,
+    "returrisk": "medel — ställbar, men kunden kan behöva veta däckbredd"
+   },
+   "meta_tanke": {
+    "hook": "Vem vaktar husvagnen i vinter?",
+    "objekt_i_bild": "gul klo på husvagnshjulet, vagnen uppställd på grus",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "klon syns från vägen — vagnen går inte att rulla"
+   },
    "varfor": "Samma struktur som kopplingslåset men med färre svenska varianter (3–4 i kedjan) och ett Milenco-ankare på 2,0×; synligt stöldskydd är det USA-brands säljer bredvid tire covers. Kompletterar snarare än dubblerar kopplingslåset (116 344 avställda vagnar står ute).",
    "huvudrisk": "Låsformen har ett REAL_LOSER-facit i kontot, en Ali-kopia ligger på 281 kr på PriceRunner, och heron kräver egen fotografering.",
    "konfidens": "LÅG",
-   "poang": {"vinnarlikhet": 2, "meta_creative": 1, "efterfragan": 3, "lucka": 2, "ekonomi": 2, "sasong": 2, "leverantor": 2, "nyhet": 2, "hypotesvarde": 2},
-   "per_kriterium": {"K0": "ok", "K1": 12, "K2": 12, "K3": 8, "K4": 7, "K5": 6, "K6": 8, "K7": 5, "K8": 7, "K9": 4, "K10": 2, "K11": 1, "K12": 1},
-   "k0": {"dubblett": false, "kollat": ["katalog-live.txt", "koncept.py sok hjullås/wheel lock/lås", "REDAN-PROVAT.md"]},
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 1,
+    "efterfragan": 3,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 12,
+    "K3": 8,
+    "K4": 7,
+    "K5": 6,
+    "K6": 8,
+    "K7": 5,
+    "K8": 7,
+    "K9": 4,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt",
+     "koncept.py sok hjullås/wheel lock/lås",
+     "REDAN-PROVAT.md"
+    ]
+   },
    "kallor": [
     "https://www.aliexpress.com/item/1005012878544159.html",
     "https://www.aliexpress.com/item/1005013252059050.html",
     "https://www.campingvaruhuset.se/sv/milenco-hjullas-compact",
     "https://www.pricerunner.se/search?q=hjulkl%C3%A4mma"
-   ]
+   ],
+   "_struken": "dubblett: lins AT levererade samma hjullås med Milenco-ankare 1,71× och MEDEL"
   }
- ],
- "strukna": [
-  {"koncept": "Stödhjulets punkteringsfria hjul 200×50 (C_LAGA)", "skal": "campingvaruhuset säljer 'Hjul 200*50 Plåtfälg/Gummihjul' för 119 kr — under landad (Ali $7,50 ≈ 108 kr); AL-KO 645 på pricerunner räddar inte golvet. Produktsidan 1005003214389203 svarade dessutom tomt."},
-  {"koncept": "Däckavlastningsramperna / tyre saver 2-pack (K0085/K0096/K0102)", "skal": "campingvaruhuset: 'Fiamma Wheel Saver 2-Pack' 279 kr — samma form och funktion, under Ali-landad ~465 kr ($32,17). Gäller i praktiken även däckvaggorna K0335 (ja)."},
-  {"koncept": "Stödhjulshuven (jockey wheel cover)", "skal": "Ali har bara USA-'tongue jack covers' (cylinder utan hjul, för A-ramsdomkraft) — ingen listning för europeiskt 48 mm-stödhjul med hjul."},
-  {"koncept": "Hjulbultsindikatorerna 20-pack", "skal": "Milenco Fälgbultsindikatorer 17 mm 10-pack 112 kr på pricerunner — golv utan premiumankare; landad för 25-pack ~223 kr ger BE-CPA < 190."},
-  {"koncept": "Stödhjulsplattan / jockey pad", "skal": "'Stödhjulsunderlägg Jockey Pocket' 154 kr i campingvaruhuset — plattor är dessutom nej (K0274) och ORDER säger plattor är nej."},
-  {"koncept": "Dubbelt stödhjul 260×85 (sjunker inte i gruset)", "skal": "Ali saknar europeiskt 48 mm-tvillingset; bara USA swing-up ($56–73). Ankaret finns (Uppgraderingsset dubbla stödhjul 1 155 kr) men ingen listning."},
-  {"koncept": "Hjulkilar/stoppklossar (husbilens handbroms ska inte stå åtdragen)", "skal": "campingvaruhuset 39–188 kr (Fiamma, Kampa, ProPlus) — sortiment under landad, kusin till nivåklossarna (sett innan)."},
-  {"koncept": "Vinterkjol/underredsskärm för vintercamping", "skal": "Ali ger bara förtältskjolar (awning draught skirt) — annan sak, standard i kedjan (Dometic Hjulhuskappa 255–300 kr)."},
-  {"koncept": "Rangerhjälp / trailer dolly", "skal": "Ali $290–410 — landad ~4 200 kr, över vidaXL 4 499. För tungt/dyrt."},
-  {"koncept": "Underredsskydd/rostskydd som sprutas", "skal": "aerosol-förbrukningsvara, skickas inte från Ali; Biltema/Dinitrol-sortiment i kedjan."},
-  {"koncept": "Tankvärmaren 12 V (gråvattentanken under golvet, vintercamping)", "skal": "en annan lins hade redan hämtat heron 1005007345717544/1005009338535468 kl 11:44 — lämnad för att inte dubbla."},
-  {"koncept": "Stödbensskydd mot rost/frysfast", "skal": "finns inte som produkt på Ali (sök 'corner steady leg cover' gav bara hela stödben)."},
-  {"koncept": "Låsbara hjulbultar / hjulbultskåpor", "skal": "McGard 415 / stöldskyddsmuttrar 205 i sortiment, måste mäta gänga och kona — returrisk hög, inte nytt i flödet."}
- ],
- "karnfynd": [
-  "Kedjan (campingvaruhuset.se) ligger UNDER Ali-landad på nästan allt kring hjul/stödhjul: hjul 200×50 119 kr, Fiamma Wheel Saver 279 kr, stoppklossar 39–188 kr, Jockey Pocket 154 kr. Strukturen 'hjulen/underredet' bär bara där ett Milenco-ankare finns.",
-  "Fiamma Wheel Saver 2-pack 279 kr är ett golv under däckvaggorna K0335 (ja) — bör läsas in innan den launchas.",
-  "Milenco är ankaret i hela strukturen: kopplingslås 1 436–1 829, hjullås 1 619. Universalkopior finns i kedjan 199–665, så båda leveranserna är rena H06-tester och lever eller dör på om ägaren redan har ett godkänt lås.",
-  "Ingen svensk aktör i stödhjulshuv-formen, men ingen Ali-listning heller — europeiskt stödhjul (48 mm, hjul) saknar leverantör.",
-  "Två av fyra objekt i strukturen (stödhjulet, stödbenen) är döda av kedjepris eller nej; det som återstår NYTT är stöldformen (lås), inte skydd."
  ]
 }

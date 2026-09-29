@@ -1,0 +1,508 @@
+{
+ "agent": "AR",
+ "datum": "2026-09-29-carashell",
+ "kandidater": [
+  {
+   "koncept_id": null,
+   "namn_sv": "Hyttavskiljaren — termogardin Ducato",
+   "objekt": "NYTT: Husbilshyttens öppning mot bodelen — termoavskiljaren (Ducato/Boxer/Jumper 2006+, halvintegrerad och plåtis)",
+   "form": "skydd",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploitation",
+   "hypotes_id": "H04",
+   "vinnarlikhet": {
+    "likast": "Termoskyddet för Husbil 211 × 171 cm",
+    "delade_variabler": [
+     "objekt_ute ja (husbilen)",
+     "dyr>10tkr (husbil 500 tkr–1,5 mkr)",
+     "agare_55plus",
+     "deadline väder (första frost)",
+     "ankare ≥1,6×",
+     "ägarkänd parameter (Ducato/Boxer/Jumper ja/nej)"
+    ],
+    "avvikelser": [
+     "formen sitter INUTI bilen — hela vinnarlistan är utsida",
+     "used-in-use, inte uppställning: köps av den som kör på hösten/vintern, inte av den som ställer av",
+     "pris 1 199 (≥1000-bandet: 1 vinnare / 0 förlorare, H04-test)"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "forsta_frost_mellan",
+    "deadline_typ": "första frost",
+    "veckor_kvar": 2.3,
+    "timing": "NOW",
+    "kommentar": "gardinerna används när husbilen står i kyla med folk i (höstlov v 44, älgjakt, vintercamping) — objektraden 'Husbil — hytt och vindruta' ger uppställning 1,6 v, men köpet styrs av kalla nätter, inte av avställningen"
+   },
+   "listning": {
+    "product_id": "1005010501442950",
+    "url": "https://www.aliexpress.com/item/1005010501442950.html",
+    "pris_usd": 33.49,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-29T11:46:47Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-29-carashell/v3/bilder/1005010501442950.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en modellfamilj: Fiat Ducato / Peugeot Boxer / Citroën Relay 2006+ (X250/X290) + Ram Promaster — ägaren vet om hen har Ducato-chassi; färg/stormlek ej mätt ur sökträffen",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron visar den quiltade gardinen uppsatt i hyttöppningen med soffan framför — textfri, i kontext, redo som första bild"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Thermogardin Förarhytt Invändig / campingvaruhuset.se",
+     "pris_sek": 2995,
+     "url": "https://www.campingvaruhuset.se/sv/thermogardin-forarhytt-invandig",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "GoCamp Thermogardin För Halvintegrerad Husbil",
+     "pris_sek": 8795,
+     "url": "https://www.campingvaruhuset.se/sv/go-camp-thermogardin-for-halvintegrerad-husbil",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 2.5,
+    "annonsorer_se": "ej mätt",
+    "ovriga_golv": "Thermo Wall för Ducato 06- 3 196 (campingvaruhuset, samma öppning, styv variant); getcamping.se: inget i formen (draperi 415 = tyggardin utan isolering); pricerunner.se 'isolergardin ducato' / 'termodraperi husbil': inga hyttavskiljare, bara Hindermann bakdörr 6 121 och Reimo sidodörr 4 290. Inget golv UNDER oss läst — kama.se/husvagnsexperten.se svarar 403 (oläst).",
+    "kollade_kallor": [
+     "campingvaruhuset.se",
+     "getcamping.se",
+     "pricerunner.se",
+     "kama.se (403, oläst)",
+     "husvagnsexperten.se (403, oläst)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     436,
+     533
+    ],
+    "pris_sek": 1199,
+    "brutto_sek": [
+     666,
+     763
+    ],
+    "be_cpa_sek": [
+     666,
+     763
+    ],
+    "be_roas": 1.68,
+    "flerkop": false,
+    "returrisk": "låg–medel — modellfamiljen är ägarkänd, men infästning (tryckknappar/kardborre mot hyttens B-stolpe) kan skilja mellan årsmodeller"
+   },
+   "meta_tanke": {
+    "hook": "Kall hytt i husbilen i höst?",
+    "objekt_i_bild": "gardinen dragen för hyttöppningen, soffan och den varma bodelen framför",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "före/efter: öppen hytt med frost på rutorna → gardinen stänger av kylan, termometer i bodelen"
+   },
+   "varfor": "Kusin till Termoskyddet (REAL_WINNER) och Axels ja på hyttens invändiga termomatta K0358 — samma husbil, samma kalla hytt, nästa köldbrygga. Svensk fackhandel säljer exakt formen för 2 995–8 795 kr, Ali-kopian landar på ~480 kr.",
+   "huvudrisk": "Formen sitter inuti bilen — kontots vinnare är alla utsida; och gardinen köps av den som KÖR husbilen på hösten/vintern (vintercampare, jägare), inte av de 116 000 som ställer av — ägarantalet i fönstret är ej mätt.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 3,
+    "meta_creative": 3,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 3,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 14,
+    "K2": 12,
+    "K3": 10,
+    "K4": 8,
+    "K5": 8,
+    "K6": 10,
+    "K7": 5,
+    "K8": 9,
+    "K9": 4,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (gardin/hytt/Ducato: 0)",
+     "koncept.py sok hytt/gardin/Ducato/avskiljare",
+     "REDAN-PROVAT.md (K0358 = termomatta mot rutorna, annan sak)"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005010501442950.html",
+    "https://www.aliexpress.com/w/wholesale-cab-divider-thermal-curtain-motorhome-quilted.html",
+    "https://www.campingvaruhuset.se/shop?funk=gor_sokning&term=thermo",
+    "https://www.campingvaruhuset.se/sv/thermogardin-forarhytt-invandig",
+    "https://www.campingvaruhuset.se/sv/go-camp-thermogardin-for-halvintegrerad-husbil",
+    "https://www.campingvaruhuset.se/sv/thermo-wall-for-ducato-06",
+    "https://www.getcamping.se/search?q=termo",
+    "https://www.getcamping.se/search?q=draperi",
+    "https://www.pricerunner.se/search?q=isolergardin%20ducato",
+    "https://www.pricerunner.se/search?q=termodraperi%20husbil"
+   ]
+  },
+  {
+   "koncept_id": null,
+   "namn_sv": "Bakdörrsgardinerna Ducato, 2 delar",
+   "objekt": "NYTT: Plåtisens bakdörrar (Ducato/Boxer/Jumper 2006+ skåpbilsbaserad husbil) — invändig termogardin i två delar",
+   "form": "skydd",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploitation",
+   "hypotes_id": "H06",
+   "vinnarlikhet": {
+    "likast": "Termoskyddet för Husbil 211 × 171 cm",
+    "delade_variabler": [
+     "objekt_ute ja (husbilen)",
+     "dyr>10tkr (husbil 500 tkr–1,5 mkr)",
+     "agare_55plus",
+     "deadline väder (första frost)",
+     "ankare ≥1,6×"
+    ],
+    "avvikelser": [
+     "formen sitter INUTI bilen — hela vinnarlistan är utsida",
+     "used-in-use, inte uppställning: köps av den som kör på hösten/vintern, inte av den som ställer av",
+     "ägaren är plåtisägare — delmängd av husbilarna (andel ej mätt), mer 45+ än 55+"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "forsta_frost_mellan",
+    "deadline_typ": "första frost",
+    "veckor_kvar": 2.3,
+    "timing": "NOW",
+    "kommentar": "gardinerna används när husbilen står i kyla med folk i (höstlov v 44, älgjakt, vintercamping) — objektraden 'Husbil — hytt och vindruta' ger uppställning 1,6 v, men köpet styrs av kalla nätter, inte av avställningen"
+   },
+   "listning": {
+    "product_id": "1005010569162335",
+    "url": "https://www.aliexpress.com/item/1005010569162335.html",
+    "pris_usd": 26.19,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-29T11:52:57Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-29-carashell/v3/bilder/1005010569162335.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en modellfamilj (Ducato X250/X290, Boxer, Relay), 1 set = två dörrar; övriga varianter ej mätta",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron är en närbild inifrån bilen: quiltad folie-gardin hängd över bakdörrarna — textfri men saknar hela bilen; behöver en andra bild där dörrarna syns"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Hindermann Isolergardin Till Bakdörrar För Fiat Ducato, 2-delad / pricerunner.se",
+     "pris_sek": 6121,
+     "url": "https://www.pricerunner.se/pl/636-3613920924/Bilvaard-Fordonstillbehoer/Hindermann-Isolergardin-Till-Bakdoerrar-Foer-Fiat-Ducato-2-delad-Graa-priser",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Hindermann Isolergardin Till Bakdörrar För Fiat Ducato, 2-delad",
+     "pris_sek": 6121,
+     "url": "https://www.pricerunner.se/pl/636-3613920924/Bilvaard-Fordonstillbehoer/Hindermann-Isolergardin-Till-Bakdoerrar-Foer-Fiat-Ducato-2-delad-Graa-priser",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 5.11,
+    "annonsorer_se": "ej mätt",
+    "ovriga_golv": "Reimo Thermoisolering Sidodörr Ducato 4 290 (pricerunner, systerprodukt för skjutdörren); campingvaruhuset 'thermo': Thermo Wall Ducato 3 196, hyttgardiner 2 995–8 795, inget för bakdörrar; getcamping: inget. Inget golv under oss läst; kama.se/husvagnsexperten.se 403 (oläst).",
+    "kollade_kallor": [
+     "pricerunner.se",
+     "campingvaruhuset.se",
+     "getcamping.se",
+     "kama.se (403, oläst)",
+     "husvagnsexperten.se (403, oläst)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     341,
+     417
+    ],
+    "pris_sek": 1199,
+    "brutto_sek": [
+     782,
+     858
+    ],
+    "be_cpa_sek": [
+     782,
+     858
+    ],
+    "be_roas": 1.46,
+    "flerkop": false,
+    "returrisk": "medel — bakdörrarnas fönster/utan fönster och H2/H3-höjd skiljer mellan plåtisar; passformen mot dörrens kant är obevisad"
+   },
+   "meta_tanke": {
+    "hook": "Kallt från bakdörrarna i plåtisen?",
+    "objekt_i_bild": "sängen i bakdelen av plåtisen med bakdörrarna bakom, gardinen på/av",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "handen mot plåtdörren utan gardin (frost) → gardinen upp, kondensen borta"
+   },
+   "varfor": "Plåtisens tre köldbryggor är hytten, skjutdörren och bakdörrarna — Hindermann tar 6 121 kr för exakt formen, Ali-kopian landar på ~380 kr (H06, ankare 5,1×). Samma ägare och säsong som K0358.",
+   "huvudrisk": "Plåtisägaren är en delmängd av husbilsägarna (andel ej mätt) och passformen mot dörrkanten/dörrfönstren skiljer per bygge — returrisk medel; heron saknar hela bilen.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 2,
+    "efterfragan": 1,
+    "lucka": 2,
+    "ekonomi": 3,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 12,
+    "K3": 8,
+    "K4": 8,
+    "K5": 8,
+    "K6": 10,
+    "K7": 5,
+    "K8": 8,
+    "K9": 3,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt",
+     "koncept.py sok bakdörr/plåtis/Ducato (K0105 = kandidat utan leverans, samma familj — får levereras)",
+     "REDAN-PROVAT.md"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005010569162335.html",
+    "https://www.aliexpress.com/w/wholesale-motorhome-door-thermal-curtain-insulation-winter.html",
+    "https://www.pricerunner.se/pl/636-3613920924/Bilvaard-Fordonstillbehoer/Hindermann-Isolergardin-Till-Bakdoerrar-Foer-Fiat-Ducato-2-delad-Graa-priser",
+    "https://www.pricerunner.se/search?q=isolergardin%20ducato",
+    "https://www.campingvaruhuset.se/shop?funk=gor_sokning&term=thermo",
+    "https://www.getcamping.se/search?q=termo"
+   ]
+  },
+  {
+   "koncept_id": null,
+   "namn_sv": "Skjutdörrsgardinen Ducato, magnetisk",
+   "objekt": "NYTT: Plåtisens skjutdörr (Ducato/Boxer/Jumper 2006+) — magnetisk termogardin i dörröppningen",
+   "form": "skydd",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploitation",
+   "hypotes_id": "H06",
+   "vinnarlikhet": {
+    "likast": "Termoskyddet för Husbil 211 × 171 cm",
+    "delade_variabler": [
+     "objekt_ute ja (husbilen)",
+     "dyr>10tkr (husbil 500 tkr–1,5 mkr)",
+     "agare_55plus",
+     "deadline väder (första frost)",
+     "ankare ≥1,6×"
+    ],
+    "avvikelser": [
+     "formen sitter INUTI bilen — hela vinnarlistan är utsida",
+     "used-in-use, inte uppställning: köps av den som kör på hösten/vintern, inte av den som ställer av",
+     "plåtisägare (delmängd, ej mätt)",
+     "magnetstängning = ny funktion i svenskt flöde (Reimo är fast panel)"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "forsta_frost_mellan",
+    "deadline_typ": "första frost",
+    "veckor_kvar": 2.3,
+    "timing": "NOW",
+    "kommentar": "gardinerna används när husbilen står i kyla med folk i (höstlov v 44, älgjakt, vintercamping) — objektraden 'Husbil — hytt och vindruta' ger uppställning 1,6 v, men köpet styrs av kalla nätter, inte av avställningen"
+   },
+   "listning": {
+    "product_id": "1005010001321489",
+    "url": "https://www.aliexpress.com/item/1005010001321489.html",
+    "pris_usd": 23.09,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-29T11:53:59Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-29-carashell/v3/bilder/1005010001321489.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en modellfamilj (Ducato/Boxer/Relay 2006+), magnetstängd mitt på; storlek/färg ej mätt",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "bästa heron i linsen: hel plåtis utomhus med skjutdörren öppen och den quiltade gardinen på plats — textfri, säljer sig själv"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Reimo Thermoisolering Sidodörr Ducato Modell 2 / pricerunner.se",
+     "pris_sek": 4290,
+     "url": "https://www.pricerunner.se/pl/1310-3399791828/Doerrar/Reimo-Thermoisolering-Sidodoerr-Ducato-Modell-2-Ytterdoerr-S-0502-Y-%2890x210cm%29-priser",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Reimo Thermoisolering Sidodörr Ducato Modell 2 (90×210)",
+     "pris_sek": 4290,
+     "url": "https://www.pricerunner.se/pl/1310-3399791828/Doerrar/Reimo-Thermoisolering-Sidodoerr-Ducato-Modell-2-Ytterdoerr-S-0502-Y-%2890x210cm%29-priser",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 4.29,
+    "annonsorer_se": "ej mätt",
+    "ovriga_golv": "Hindermann bakdörr 6 121 (systerprodukt); campingvaruhuset 'skjutdörr': 0 träffar i formen; getcamping 'dörr': bara dörrmattor, dörrlås och Dometic Rest vindskydd 596 (utvändigt). Inget golv under oss läst; kama.se/husvagnsexperten.se 403 (oläst).",
+    "kollade_kallor": [
+     "pricerunner.se",
+     "campingvaruhuset.se",
+     "getcamping.se",
+     "kama.se (403, oläst)",
+     "husvagnsexperten.se (403, oläst)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     300,
+     367
+    ],
+    "pris_sek": 999,
+    "brutto_sek": [
+     632,
+     699
+    ],
+    "be_cpa_sek": [
+     632,
+     699
+    ],
+    "be_roas": 1.5,
+    "flerkop": false,
+    "returrisk": "låg–medel — dörröppningen är standardmått på Ducato 2006+, men infästningen upptill (kardborre/magneter mot plåt) ej mätt"
+   },
+   "meta_tanke": {
+    "hook": "Fryser du i plåtisen på natten?",
+    "objekt_i_bild": "plåtisen med öppen skjutdörr, gardinen i öppningen (heron)",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "gardinen öppnas med handen genom magnetskarven och faller ihop bakom — kylan stannar ute"
+   },
+   "varfor": "Reimo säljer en fast termopanel för skjutdörren för 4 290 kr; Ali-kopian är en magnetstängd gardin (bättre funktion: man kan gå ut och in) för ~330 kr landad. Bästa heron i linsen — hela bilen i bild, ingen text.",
+   "huvudrisk": "Plåtisägaren är en delmängd av husbilsägarna (andel ej mätt); syskon till A och B i samma form — rank.py får inte ta alla tre om formtaket biter.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 3,
+    "efterfragan": 1,
+    "lucka": 2,
+    "ekonomi": 3,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 13,
+    "K3": 8,
+    "K4": 8,
+    "K5": 8,
+    "K6": 10,
+    "K7": 5,
+    "K8": 8,
+    "K9": 3,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt",
+     "koncept.py sok gardin/Ducato/hytt",
+     "REDAN-PROVAT.md"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005010001321489.html",
+    "https://www.aliexpress.com/w/wholesale-ducato-sliding-door-thermal-insulation-curtain-magnetic-camper.html",
+    "https://www.pricerunner.se/pl/1310-3399791828/Doerrar/Reimo-Thermoisolering-Sidodoerr-Ducato-Modell-2-Ytterdoerr-S-0502-Y-%2890x210cm%29-priser",
+    "https://www.pricerunner.se/search?q=isolergardin%20ducato",
+    "https://www.campingvaruhuset.se/shop?funk=gor_sokning&term=thermo",
+    "https://www.getcamping.se/search?q=d%C3%B6rr"
+   ]
+  }
+ ],
+ "struktur": "INSIDAN av den uppställda/vinterkörda husvagnen/husbilen — fukt, mögel, möss, lukt, kyla i vattensystemet",
+ "strukna": [
+  {
+   "objekt": "Kylskåpsventilen — vinterlock (Dometic LS 100/200/300, Thetford)",
+   "skal": "ingen Ali-listning i formen på sex sökningar; svenskt golv Dometic LS 300 vinterlucka 145 kr / LS 330 745 / Thetford 315–795 (getcamping 2026-09-29) — originalet är billigare än en tänkbar kopia + frakt"
+  },
+  {
+   "objekt": "Madrassen/sängbotten — ventilerande 3D-meshunderlag mot kondens",
+   "skal": "svenskt golv starkt och läst (getcamping Madrassunderlägg 3D Airmesh 1 295, campingvaruhuset Luftspaltsmatta 200×200 800, Northern Comfort 899, Watski rullvara) men Ali har bara metervara (4000150132888 $52,64, enhet/tjocklek ej mätt) → landad ~760 mot golv 800 = ekonomin faller (BE-ROAS > 3). KÄRNFYND: rätt produkt, fel källa — kräver Alibaba-bulk av 20 mm-mesh, inte en Ali-listning"
+  },
+  {
+   "objekt": "Takluckan inifrån — isolerkudde/termolock 40×40",
+   "skal": "svenskt golv Fiamma Thermovent Isolering Taklucka 215 kr (getcamping) → pristak 0,85× = 183 < BE-CPA-golvet 190; Ali-varianten ($14,15) passar bara Fiamma Vent 40, USA-kuddarna är 14×14 tum (måste mäta)"
+  },
+  {
+   "objekt": "Ventiler/genomföringar — musnät (K0120–K0164)",
+   "skal": "nya listningarna är USA-form (Suburban/Atwood 'furnace vent screens', Dometic LS100-grillar utan nät); ingen svensk fackhandelsform (getcamping 'mus'/'gnagare' 0 träffar) och ultraljud 12 V är Biltema-sortiment"
+  },
+  {
+   "objekt": "Vattensystemet — blåsa ur ledningarna (tryckluftsadapter)",
+   "skal": "USA-form: alla adaptrar har GHT-gänga för 'city water inlet' som svenska vagnar saknar; avtappningskranar och Truma FrostControl är standardutrustning"
+  },
+  {
+   "objekt": "Vattenslangen på vintercampingen — värmekabel/frostfri slang",
+   "skal": "utsida (utanför linsen) och sortiment: värmekabel 69–2 150 kr på pricerunner, ingen färdig Ali-produkt i EU-form"
+  },
+  {
+   "objekt": "Truma-skorstenen — snöförlängning",
+   "skal": "Truma original 144–462 kr (pricerunner), ingen Ali-listning"
+  },
+  {
+   "objekt": "Hyttgolvet Ducato — kabinmatta",
+   "skal": "sortiment utan ankare: 20+ Ducato-mattor 370–985 kr på pricerunner (Avant 370, Autostyle 501–749, CampOut 595, Kupématta 985), Vanheim 425 / Brunner 795 på getcamping; ingen vinterfelmod"
+  },
+  {
+   "objekt": "Kondens, lukt, möss, batteri — avfuktarburk/hängpåse, luktkuddar, ultraljud, 12 V-värmefilt, frostvakt 400 W, hygrometer",
+   "skal": "standardutrustning eller kedjesortiment (Biltema/Jula/Clas) utan ankare — död enligt ORDER"
+  },
+  {
+   "objekt": "Hyttdörrarnas rutor — termomattor/'barn door blinds'",
+   "skal": "samma sak + form som K0358 (Axels ja) — syskon, inte nytt objekt"
+  }
+ ]
+}

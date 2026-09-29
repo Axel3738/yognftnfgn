@@ -308,5 +308,53 @@
   "deadline": "uppställning 1,6 v",
   "korningsvecka": 40,
   "orsak": "2026-09-29 lins AN: LIVE 28,59 USD, pris 699, Milenco 1 116 = 1,6×, ingen kopia i SE. Lyftes ut av arketyptaket. LÅG (svagt datum)."
+ },
+ {
+  "objekt": "NYTT: Markisen på husvagnen/husbilen — dukklämmorna mot fladder (anti-flap) 2-pack",
+  "form": "klämma",
+  "arketyp": "A_AGARE_FRIKTION",
+  "deadline": "påsk 26/3 2027 (markisen fälls ut)",
+  "korningsvecka": 10,
+  "orsak": "2026-09-29 lins AW: LIVE 1005013172970339 6,95 USD, pris 349, Thule 465 = 1,33× (< 1,6). Fel fönster i oktober — markisen är infälld till påsk."
+ },
+ {
+  "objekt": "NYTT: Madrassen i husvagnen — ventilerande 3D-meshunderlägg mot kondens",
+  "form": "annat",
+  "arketyp": "B_SKYDDA_DYRT",
+  "deadline": "uppställning / vintercamping",
+  "korningsvecka": 41,
+  "orsak": "2026-09-29 lins AR+AS: fyra svenska aktörer 800–1 295 kr (getcamping 1 036 ankare), Watski rullvara — Ali har bara metervara. Rätt väg är Alibaba-bulk av 20 mm 3D-mesh, inte en Ali-listning."
+ },
+ {
+  "objekt": "NYTT: Kylskåpsventilen på husvagnen — vinterluckan (Dometic EWS 300-form)",
+  "form": "lock",
+  "arketyp": "E_VADER_SASONG",
+  "deadline": "vintercamping nov",
+  "korningsvecka": 41,
+  "orsak": "2026-09-29 lins AS/AU: ankare Dometic EWS 300 640 kr men ingen Ali-listning i formen (bara clips 3 USD); OEM-sortiment 145–795 = standard. Öppnas om en listning < 12 USD dyker upp."
+ },
+ {
+  "objekt": "NYTT: Vattenslangen på vintercampingen — frostfri/uppvärmd slang",
+  "form": "annat",
+  "arketyp": "E_VADER_SASONG",
+  "deadline": "vintercamping nov",
+  "korningsvecka": 41,
+  "orsak": "2026-09-29 lins AS: fackhandel 1 500–2 500, VEVOR 706 golv — Ali har bara värmekabel (Biltema/Jula-sortiment), ingen färdig husvagnsslang."
+ },
+ {
+  "objekt": "NYTT: Stödhjulet 48 mm — huv / punkteringsfritt tvillinghjul",
+  "form": "annat",
+  "arketyp": "B_SKYDDA_DYRT",
+  "deadline": "uppställning",
+  "korningsvecka": 41,
+  "orsak": "2026-09-29 lins AQ: ankare dubbelt stödhjul 1 155 kr, men Ali har bara USA 'tongue jack covers' och 200×50-hjul som kedjan säljer för 119 kr. Lucka utan produkt."
+ },
+ {
+  "objekt": "NYTT: Starlink-antennen på husbilen — fodral/väska",
+  "form": "skydd",
+  "arketyp": "B_SKYDDA_DYRT",
+  "deadline": "resesäsong (vår)",
+  "korningsvecka": 14,
+  "orsak": "2026-09-29 lins AV: Ali 17–30 USD finns, men används på resa — fel fönster vid uppställning."
  }
 ]

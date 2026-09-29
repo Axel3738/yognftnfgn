@@ -43,6 +43,8 @@ skäl att köpa 2+? Returrisk: måste kunden mäta?
 
 **Högst EN skyddsform (överdrag/huv/kapell/skydd) per lins** (mätt 2026-09-29: en lins levererade tre huvar på ett nytt objekt och rank.py:s formtak kastade alla tre — sök andra former på samma objekt i stället). **Skogma:** söksidan är JS, men kategorisidorna bär produkt-JSON med `brutto`/`netto` — läs dem med curl.
 
+**Golvkällor i campingnischen (mätt 2026-09-29, Carashell-rundan):** getcamping.se läses via `/search?q=<ord>` och korten bär `data-title`/`data-price` (0 träffar i formen = fallback-listan är generisk); campingvaruhuset.se söks med `/shop?funk=gor_sokning&term=<ord>`, inte `?q=`. kama.se, husvagnsexperten.se, Biltema, Jula svarar 403/000 — skriv "oläst". **Nischbutik:** för en butik där skydd ÄR sortimentet (Carashell) körs `rank.py --tema --formtak 1.0`; linsregeln "max tre skyddsformer på olika objekt" gäller ändå.
+
 **Objektfältet börjar med SAKEN, aldrig situationen** (mätt 2026-09-24: fyra linser skrev "Julbordets spelkväll — …" och kolliderade på SAK-nyckeln med gårdagens rad). Rätt: "NYTT: Magnetstenarna på snöret — …"; fel: "NYTT: Julbordets spelkväll — magnetstenarna …".
 
 **Golv i exakt form under oss** (uppdaterat 2026-09-24): fäll när golvet är SORTIMENT (20+ varianter i kedja/fackhandel) utan ankare. En kopia under oss med synligt ankare ≥ 1,6× = märk `hypotes_id: "H06"` och leverera — ATV-kapellet (Meta REAL_WINNER) och Axels ja på vindrutan + pingisroboten är beviset.

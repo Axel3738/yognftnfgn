@@ -1,6 +1,6 @@
 {
  "_om": "Konceptregistret (V3). Skrivs av koncept.py; feedback.py och meta_facit.py uppdaterar via koncept.py. Ett koncept = objekt + form, med alla listningar, svar, förutsägelser och Metas facit.",
- "nasta": 361,
+ "nasta": 376,
  "koncept": {
   "K0001": {
    "id": "K0001",
@@ -7635,7 +7635,7 @@
   "K0153": {
    "id": "K0153",
    "skapad": "2026-09-10",
-   "namn": "Car Anti-rodent Cover To Prevent Plague Mesh Block Engine Compartment Anti-mouse Fence Pro",
+   "namn": "Gnagarstaketet runt husbilen, 304-nät",
    "objekt": "Husvagn/husbil — ventiler och genomföringar (möss)",
    "form": "nät",
    "sak": "husvagn/husbil+nät",
@@ -7661,22 +7661,76 @@
        "datum": "2026-09-10",
        "verdict": "SOKTRAFF",
        "kalla": "korningar/2026-09-10/fynd-doa2.json"
+      },
+      {
+       "datum": "2026-09-29-carashell",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-29T11:42:50Z",
+       "kalla": "v3 discovery"
       }
      ]
     }
    ],
-   "leveranser": [],
+   "leveranser": [
+    {
+     "datum": "2026-09-29-carashell",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 1,
+     "rank_poang": 17.5,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 2,
+      "efterfragan": 2,
+      "lucka": 3,
+      "ekonomi": 3,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 3,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 979,
+     "landad": 406,
+     "be_cpa": 572,
+     "hook": "Möss i husbilen i vinter igen?",
+     "varfor": "Möss i motorrummet är den vanligaste vinterskadan på en uppställd husbil och det finns ingen svensk vara i den här formen — bara ultraljud som är sortiment; samma struktur som taköverdraget (dyrt objekt ute, uppställning 1,6 v, svikande improvisation) i en ny form (nät) som Axel gett 2 ja men kontot aldrig testat.",
+     "huvudrisk": "Omkretsen är inte mätt (heron visar en SUV, husbilen är 7 m) och priset 979 saknar märkesankare — plus text i heron.",
+     "hypotes_id": "H10",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 14,
+      "K2": 12,
+      "K3": 9,
+      "K4": 9,
+      "K5": 6,
+      "K6": 10,
+      "K7": 5,
+      "K8": 8,
+      "K9": 4,
+      "K10": 3,
+      "K11": 1,
+      "K12": 0
+     },
+     "kalla": "v3 batch"
+    }
+   ],
    "feedback": [],
    "launch": null,
    "meta": null,
-   "status": "kandidat",
+   "status": "levererad",
    "aterupptas_om": [],
    "historik": [
     {
      "datum": "2026-09-10",
      "handelse": "skapat (produktjakt)"
+    },
+    {
+     "datum": "2026-09-29-carashell",
+     "handelse": "levererad på V3-arket (rank 1, exploitation, konfidens MEDEL)"
     }
-   ]
+   ],
+   "namn_sv": "Gnagarstaketet runt husbilen, 304-nät"
   },
   "K0154": {
    "id": "K0154",
@@ -26526,6 +26580,1272 @@
     }
    ],
    "namn_sv": "Vedmåttet på svärdet"
+  },
+  "K0361": {
+   "id": "K0361",
+   "skapad": "2026-09-29-carashell",
+   "namn": "Hyttavskiljaren — termogardin Ducato",
+   "objekt": "NYTT: Husbilshyttens öppning mot bodelen — termoavskiljaren (Ducato/Boxer/Jumper 2006+, halvintegrerad och plåtis)",
+   "form": "skydd",
+   "sak": "nytt: husbilshyttens öppning mot bodelen+skydd",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005010501442950",
+     "url": "https://www.aliexpress.com/item/1005010501442950.html",
+     "bild": null,
+     "pris_usd": 33.49,
+     "forst_sedd": "2026-09-29-carashell",
+     "verifieringar": [
+      {
+       "datum": "2026-09-29-carashell",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-29T11:46:47Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-29-carashell",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 2,
+     "rank_poang": 16.8,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 3,
+      "efterfragan": 2,
+      "lucka": 2,
+      "ekonomi": 3,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 1199,
+     "landad": 484,
+     "be_cpa": 714,
+     "hook": "Kall hytt i husbilen i höst?",
+     "varfor": "Kusin till Termoskyddet (REAL_WINNER) och Axels ja på hyttens invändiga termomatta K0358 — samma husbil, samma kalla hytt, nästa köldbrygga. Svensk fackhandel säljer exakt formen för 2 995–8 795 kr, Ali-kopian landar på ~480 kr.",
+     "huvudrisk": "Formen sitter inuti bilen — kontots vinnare är alla utsida; och gardinen köps av den som KÖR husbilen på hösten/vintern (vintercampare, jägare), inte av de 116 000 som ställer av — ägarantalet i fönstret är ej mätt.",
+     "hypotes_id": "H04",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 14,
+      "K2": 12,
+      "K3": 10,
+      "K4": 8,
+      "K5": 8,
+      "K6": 10,
+      "K7": 5,
+      "K8": 9,
+      "K9": 4,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-29-carashell",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-29-carashell",
+     "handelse": "levererad på V3-arket (rank 2, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Hyttavskiljaren — termogardin Ducato"
+  },
+  "K0362": {
+   "id": "K0362",
+   "skapad": "2026-09-29-carashell",
+   "namn": "Midi Heki-huven hagel & termo",
+   "objekt": "NYTT: Midi Heki-takfönstret 70 × 50 (Dometic, 6 100–7 700 kr, står ute under uppställning och vintercamping — hagel, UV, snölast, kondens genom akrylkupolen)",
+   "form": "huv",
+   "sak": "nytt: midi heki-takfönstret 70 × 50+huv",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005013036934132",
+     "url": "https://www.aliexpress.com/item/1005013036934132.html",
+     "bild": null,
+     "pris_usd": 12.15,
+     "forst_sedd": "2026-09-29-carashell",
+     "verifieringar": [
+      {
+       "datum": "2026-09-29-carashell",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-29T11:43:07Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-29-carashell",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 3,
+     "rank_poang": 16.5,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 3,
+      "efterfragan": 2,
+      "lucka": 2,
+      "ekonomi": 2,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 1
+     },
+     "konfidens": "MEDEL",
+     "pris": 599,
+     "landad": 176,
+     "be_cpa": 424,
+     "hook": "Står Midi Hekin ute i vinter?",
+     "varfor": "Samma struktur som Taköverdraget och Takluckehuven (Axel ja) på ett NYTT objekt: Dometics dyraste standardlucka (6–8 tkr) står ute i 1,6 v inför uppställning. Svenskt ankare Silber 1 665 kr (2,78×) och Beisel 795 kr för mindre storlek — vi ligger under båda med BE-CPA 406–441.",
+     "huvudrisk": "Syskon i form till Takluckehuven 40×40 (formtaket) och listningens S/M-storlek måste stämmas av mot Midi Heki 70×50 före launch.",
+     "hypotes_id": "H01",
+     "per_kriterium": null,
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-29-carashell",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-29-carashell",
+     "handelse": "levererad på V3-arket (rank 3, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Midi Heki-huven hagel & termo"
+  },
+  "K0363": {
+   "id": "K0363",
+   "skapad": "2026-09-29-carashell",
+   "namn": "Vinterkjolen 7 m med hjulhuskappor",
+   "objekt": "NYTT: Husvagnens undersida (golvet mellan vagn och mark) — vinden och snön som blåser in under golvet och förtältet på skidcampingen november–april; i dag improviseras med presenning och snövall runt vagnen",
+   "form": "skydd",
+   "sak": "nytt: husvagnens undersida+skydd",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "B_SKYDDA_DYRT",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005009861098478",
+     "url": "https://www.aliexpress.com/item/1005009861098478.html",
+     "bild": null,
+     "pris_usd": 17.09,
+     "forst_sedd": "2026-09-29-carashell",
+     "verifieringar": [
+      {
+       "datum": "2026-09-29-carashell",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-29T11:44:27Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-29-carashell",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 4,
+     "rank_poang": 15.8,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 2,
+      "efterfragan": 2,
+      "lucka": 2,
+      "ekonomi": 2,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 599,
+     "landad": 247,
+     "be_cpa": 352,
+     "hook": "Blåser det in under vagnen i Sälen?",
+     "varfor": "Samma struktur som termoskyddet (skydd på dyr husvagn ute inför ett datum) på ett nytt objekt: undersidan. Golv finns (markkappa 316–476 kr) men ankaret Thule Windslip 1 249 kr ger 2,09× och kitet med hjulhuskappor saknar svensk motsvarighet under 900 kr — H06-fallet rent.",
+     "huvudrisk": "Markkappa är känd form hos förtältsägare (kan räknas som 'har redan') och alla Ali-heron har inbränd text utan vinterkontext — creativen måste fotas i snö.",
+     "hypotes_id": "H06",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 12,
+      "K2": 12,
+      "K3": 9,
+      "K4": 8,
+      "K5": 7,
+      "K6": 8,
+      "K7": 5,
+      "K8": 7,
+      "K9": 5,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-29-carashell",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-29-carashell",
+     "handelse": "levererad på V3-arket (rank 4, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Vinterkjolen 7 m med hjulhuskappor"
+  },
+  "K0364": {
+   "id": "K0364",
+   "skapad": "2026-09-29-carashell",
+   "namn": "Skjutdörrsgardinen Ducato, magnetisk",
+   "objekt": "NYTT: Plåtisens skjutdörr (Ducato/Boxer/Jumper 2006+) — magnetisk termogardin i dörröppningen",
+   "form": "skydd",
+   "sak": "nytt: plåtisens skjutdörr+skydd",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005010001321489",
+     "url": "https://www.aliexpress.com/item/1005010001321489.html",
+     "bild": null,
+     "pris_usd": 23.09,
+     "forst_sedd": "2026-09-29-carashell",
+     "verifieringar": [
+      {
+       "datum": "2026-09-29-carashell",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-29T11:53:59Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-29-carashell",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 5,
+     "rank_poang": 15.2,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 3,
+      "efterfragan": 1,
+      "lucka": 2,
+      "ekonomi": 3,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 999,
+     "landad": 334,
+     "be_cpa": 666,
+     "hook": "Fryser du i plåtisen på natten?",
+     "varfor": "Reimo säljer en fast termopanel för skjutdörren för 4 290 kr; Ali-kopian är en magnetstängd gardin (bättre funktion: man kan gå ut och in) för ~330 kr landad. Bästa heron i linsen — hela bilen i bild, ingen text.",
+     "huvudrisk": "Plåtisägaren är en delmängd av husbilsägarna (andel ej mätt); syskon till A och B i samma form — rank.py får inte ta alla tre om formtaket biter.",
+     "hypotes_id": "H06",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 12,
+      "K2": 13,
+      "K3": 8,
+      "K4": 8,
+      "K5": 8,
+      "K6": 10,
+      "K7": 5,
+      "K8": 8,
+      "K9": 3,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-29-carashell",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-29-carashell",
+     "handelse": "levererad på V3-arket (rank 5, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Skjutdörrsgardinen Ducato, magnetisk"
+  },
+  "K0365": {
+   "id": "K0365",
+   "skapad": "2026-09-29-carashell",
+   "namn": "Bakdörrsgardinerna Ducato, 2 delar",
+   "objekt": "NYTT: Plåtisens bakdörrar (Ducato/Boxer/Jumper 2006+ skåpbilsbaserad husbil) — invändig termogardin i två delar",
+   "form": "skydd",
+   "sak": "nytt: plåtisens bakdörrar+skydd",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005010569162335",
+     "url": "https://www.aliexpress.com/item/1005010569162335.html",
+     "bild": null,
+     "pris_usd": 26.19,
+     "forst_sedd": "2026-09-29-carashell",
+     "verifieringar": [
+      {
+       "datum": "2026-09-29-carashell",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-29T11:52:57Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-29-carashell",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 6,
+     "rank_poang": 13.8,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 2,
+      "efterfragan": 1,
+      "lucka": 2,
+      "ekonomi": 3,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 1199,
+     "landad": 379,
+     "be_cpa": 820,
+     "hook": "Kallt från bakdörrarna i plåtisen?",
+     "varfor": "Plåtisens tre köldbryggor är hytten, skjutdörren och bakdörrarna — Hindermann tar 6 121 kr för exakt formen, Ali-kopian landar på ~380 kr (H06, ankare 5,1×). Samma ägare och säsong som K0358.",
+     "huvudrisk": "Plåtisägaren är en delmängd av husbilsägarna (andel ej mätt) och passformen mot dörrkanten/dörrfönstren skiljer per bygge — returrisk medel; heron saknar hela bilen.",
+     "hypotes_id": "H06",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 12,
+      "K2": 12,
+      "K3": 8,
+      "K4": 8,
+      "K5": 8,
+      "K6": 10,
+      "K7": 5,
+      "K8": 8,
+      "K9": 3,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-29-carashell",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-29-carashell",
+     "handelse": "levererad på V3-arket (rank 6, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Bakdörrsgardinerna Ducato, 2 delar"
+  },
+  "K0366": {
+   "id": "K0366",
+   "skapad": "2026-09-29-carashell",
+   "namn": "Husbilens spegelhuvar i par, Ducato",
+   "objekt": "NYTT: Husbilens backspeglar (Ducato-basen) — kåporna som får stenskott, is och grenar",
+   "form": "skydd",
+   "sak": "nytt: husbilens backspeglar+skydd",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "H_VISUELL_NYHET",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005010581700454",
+     "url": "https://www.aliexpress.com/item/1005010581700454.html",
+     "bild": null,
+     "pris_usd": 28.59,
+     "forst_sedd": "2026-09-29-carashell",
+     "verifieringar": [
+      {
+       "datum": "2026-09-29-carashell",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-29T07:07:42Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-29-carashell",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 7,
+     "rank_poang": 12.5,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 3,
+      "efterfragan": 1,
+      "lucka": 2,
+      "ekonomi": 1,
+      "sasong": 1,
+      "leverantor": 2,
+      "nyhet": 3,
+      "hypotesvarde": 2
+     },
+     "konfidens": "LÅG",
+     "pris": 699,
+     "landad": 414,
+     "be_cpa": 286,
+     "hook": "Vad kostar en ny husbilsspegel?",
+     "varfor": "Hård del som sitter på husbilen året runt, på samma bil som Termoskyddet: ingen svensk kopia i formen (PriceRunner 0), Milenco 1 116 kr som synligt ankare (1,6× — H06-tröskeln), textfri hero i kontext och en 3-sekundersbild (kåpan på, spegeln hel). Svagt datum — levereras som H06/H10-test, inte som datumdriven vinnare.",
+     "huvudrisk": "Inget hårt datum och ett hot (grenar, parkering) som är svårt att visa på 3 s — plus arm-varianten som kan ge fel köp.",
+     "hypotes_id": "H06",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 12,
+      "K2": 12,
+      "K3": 9,
+      "K4": 9,
+      "K5": 7,
+      "K6": 8,
+      "K7": 7,
+      "K8": 7,
+      "K9": 3,
+      "K10": 3,
+      "K11": 1,
+      "K12": 0
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-29-carashell",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-29-carashell",
+     "handelse": "levererad på V3-arket (rank 7, exploitation, konfidens LÅG)"
+    }
+   ],
+   "namn_sv": "Husbilens spegelhuvar i par, Ducato"
+  },
+  "K0367": {
+   "id": "K0367",
+   "skapad": "2026-09-29-carashell",
+   "namn": "Vindavvisarna till Ducato-hytten, par",
+   "objekt": "NYTT: Husbilshyttens dörrfönster utvändigt (Ducato/Boxer/Jumper 2006–) — regnet som kommer in när fönstret står på glänt",
+   "form": "annat",
+   "sak": "nytt: husbilshyttens dörrfönster utvändigt+annat",
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012880104542",
+     "url": "https://www.aliexpress.com/item/1005012880104542.html",
+     "bild": null,
+     "pris_usd": 24.09,
+     "forst_sedd": "2026-09-29-carashell",
+     "verifieringar": [
+      {
+       "datum": "2026-09-29-carashell",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-29T11:44:26Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-29-carashell",
+     "levererad": true,
+     "slot": "exploration",
+     "rank": 8,
+     "rank_poang": 11,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 3,
+      "efterfragan": 2,
+      "lucka": 2,
+      "ekonomi": 2,
+      "sasong": 1,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "LÅG",
+     "pris": 649,
+     "landad": 348,
+     "be_cpa": 301,
+     "hook": "Regn in genom husbilsfönstret på glänt?",
+     "varfor": "Del som sitter på samma bil som Termoskyddet året runt, ingen Ducato-variant sedd i svensk handel och ClimAir som synligt ankare 1,8× (H06/H10-struktur, textfri hero i kontext). Levereras som exploration med svagt datum — inte som datumdriven vinnare.",
+     "huvudrisk": "Inget hårt datum och form 'annat' med clips-montering; hooken måste bära på regnet, inte på uppställningen.",
+     "hypotes_id": "H10",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 12,
+      "K2": 12,
+      "K3": 8,
+      "K4": 8,
+      "K5": 7,
+      "K6": 8,
+      "K7": 7,
+      "K8": 6,
+      "K9": 3,
+      "K10": 2,
+      "K11": 1,
+      "K12": 0
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-29-carashell",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-29-carashell",
+     "handelse": "levererad på V3-arket (rank 8, exploration, konfidens LÅG)"
+    }
+   ],
+   "namn_sv": "Vindavvisarna till Ducato-hytten, par"
+  },
+  "K0368": {
+   "id": "K0368",
+   "skapad": "2026-09-29-carashell",
+   "namn": "Kylskåpsspärrarna 2-pack husvagn",
+   "objekt": "NYTT: Husvagnens/husbilens kylskåp — hyllorna (Dometic/Thetford 80–170 l, 12–25 tkr; innehållet välter och rasar ut när dörren öppnas efter körning)",
+   "form": "spärr",
+   "sak": "nytt: husvagnens/husbilens kylskåp+spärr",
+   "arketyp": "I_FLERKOP",
+   "arketyp_sekundar": "A_AGARE_FRIKTION",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005010339744458",
+     "url": "https://www.aliexpress.com/item/1005010339744458.html",
+     "bild": null,
+     "pris_usd": 16.05,
+     "forst_sedd": "2026-09-29-carashell",
+     "verifieringar": [
+      {
+       "datum": "2026-09-29-carashell",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-29T11:44:47Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-29-carashell",
+     "levererad": true,
+     "slot": "exploration",
+     "rank": 9,
+     "rank_poang": 11,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 3,
+      "efterfragan": 1,
+      "lucka": 3,
+      "ekonomi": 1,
+      "sasong": 1,
+      "leverantor": 2,
+      "nyhet": 3,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 499,
+     "landad": 232,
+     "be_cpa": 267,
+     "hook": "Vad välter i kylen när ni stannar?",
+     "varfor": "Spöklämmans struktur (kaos → ordning, flerköp: 2–3 hyllor per kylskåp) på ett objekt varje husvagnsägare har; formen finns inte hos getcamping/PriceRunner (bara hyllklämmor och dörrlås) — H10 kategorinyhet med hero i kontext. Pris saknar ankare: landad × 2,4 = 557 men två fjäderstänger bär knappast över 499.",
+     "huvudrisk": "Ingen deadline och objektet är inne i vagnen (deadline=ingen och objekt_ute=nej är båda förlorarsignaler); upplevt värde för två stänger vid 499 kr är oprövat.",
+     "hypotes_id": "H10",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 12,
+      "K2": 10,
+      "K3": 8,
+      "K4": 6,
+      "K5": 8,
+      "K6": 12,
+      "K7": 6,
+      "K8": 5,
+      "K9": 5,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-29-carashell",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-29-carashell",
+     "handelse": "levererad på V3-arket (rank 9, exploration, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Kylskåpsspärrarna 2-pack husvagn"
+  },
+  "K0369": {
+   "id": "K0369",
+   "skapad": "2026-09-29-carashell",
+   "namn": "Överskåpsspärrarna 3-pack (elastisk lina)",
+   "objekt": "NYTT: Husvagnens överskåp — luckorna och innehållet (4–8 skåp per vagn; burkar, muggar och kryddor rasar ut när luckan öppnas efter körning)",
+   "form": "spärr",
+   "sak": "nytt: husvagnens överskåp+spärr",
+   "arketyp": "I_FLERKOP",
+   "arketyp_sekundar": "A_AGARE_FRIKTION",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012201958598",
+     "url": "https://www.aliexpress.com/item/1005012201958598.html",
+     "bild": null,
+     "pris_usd": 6.39,
+     "forst_sedd": "2026-09-29-carashell",
+     "verifieringar": [
+      {
+       "datum": "2026-09-29-carashell",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-29T11:44:47Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-29-carashell",
+     "levererad": true,
+     "slot": "exploration",
+     "rank": 10,
+     "rank_poang": 11,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 3,
+      "efterfragan": 1,
+      "lucka": 3,
+      "ekonomi": 1,
+      "sasong": 1,
+      "leverantor": 2,
+      "nyhet": 3,
+      "hypotesvarde": 2
+     },
+     "konfidens": "LÅG",
+     "pris": 499,
+     "landad": 277,
+     "be_cpa": 222,
+     "hook": "Rasar det ur skåpet när ni öppnar?",
+     "varfor": "Samma struktur som kylskåpsspärren men på 4–8 objekt per vagn (renaste flerköpet i rundan); formen saknas i svensk fackhandel. Levereras som H11-test med LÅG konfidens: upplevt värde är lågt och BE-CPA 194–250 vid 499 för tre kit är precis över golvet.",
+     "huvudrisk": "Lågt upplevt värde (gummilina + två skruvfästen) och skruvmontering i skåpvägg — form=annat-typen har 0 av 15 vinnare i kontot.",
+     "hypotes_id": "H11",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 10,
+      "K2": 8,
+      "K3": 6,
+      "K4": 6,
+      "K5": 6,
+      "K6": 12,
+      "K7": 5,
+      "K8": 3,
+      "K9": 5,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-29-carashell",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-29-carashell",
+     "handelse": "levererad på V3-arket (rank 10, exploration, konfidens LÅG)"
+    }
+   ],
+   "namn_sv": "Överskåpsspärrarna 3-pack (elastisk lina)"
+  },
+  "K0370": {
+   "id": "K0370",
+   "skapad": "2026-09-29-carashell",
+   "namn": "Dörrhaspen med dolt hänglås",
+   "objekt": "NYTT: Husvagnens bodelsdörr — enda dörren in i den uppställda vagnen (Thule/Fiamma säljer utanpåliggande säkerhetslås 850–1 600 kr)",
+   "form": "annat",
+   "sak": "nytt: husvagnens bodelsdörr+annat",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005010518810434",
+     "url": "https://www.aliexpress.com/item/1005010518810434.html",
+     "bild": null,
+     "pris_usd": 18.36,
+     "forst_sedd": "2026-09-29-carashell",
+     "verifieringar": [
+      {
+       "datum": "2026-09-29-carashell",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-29T11:47:19Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-29-carashell",
+     "levererad": true,
+     "slot": "exploration",
+     "rank": 11,
+     "rank_poang": 10,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 2,
+      "efterfragan": 3,
+      "lucka": 2,
+      "ekonomi": 2,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "LÅG",
+     "pris": 599,
+     "landad": 265,
+     "be_cpa": 334,
+     "hook": "Vem vaktar vagnens dörr i vinter?",
+     "varfor": "Thule/Fiamma säljer utanpåliggande säkerhetslås för exakt den här dörren för 850–1 600 kr och ingen svensk aktör säljer haspformen; vagnen står obevakad fem månader med TV, gasol och inredning bakom en dörr som öppnas med en skruvmejsel. Dörrlarmet (K0010, i butiken) bevisar att Axel köpt objektet — låset är nästa form på samma dörr.",
+     "huvudrisk": "Lås har aldrig vunnit i kontot (Motorlåset förlorade), och fyra genomgående bultar i en husvagnsdörr skrämmer 55+-ägaren — ankaret är bara 1,45× så H06-kravet 1,6× nås inte utan Fiamma-jämförelsen (965 = 1,61×).",
+     "hypotes_id": "H06",
+     "per_kriterium": null,
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-29-carashell",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-29-carashell",
+     "handelse": "levererad på V3-arket (rank 11, exploration, konfidens LÅG)"
+    }
+   ],
+   "namn_sv": "Dörrhaspen med dolt hänglås"
+  },
+  "K0371": {
+   "id": "K0371",
+   "skapad": "2026-09-29-carashell",
+   "namn": "Takrännans droppnäsor, 4-pack",
+   "objekt": "NYTT: Takrännans droppnäsa — husvagnens/husbilens takränneände (regnvattnet rinner rakt ner längs sidoväggen och lämnar svarta ränder på vagnen)",
+   "form": "annat",
+   "sak": "nytt: takrännans droppnäsa+annat",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "B_SKYDDA_DYRT",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005013242934199",
+     "url": "https://www.aliexpress.com/item/1005013242934199.html",
+     "bild": null,
+     "pris_usd": 11.55,
+     "forst_sedd": "2026-09-29-carashell",
+     "verifieringar": [
+      {
+       "datum": "2026-09-29-carashell",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-29T11:39:47Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-29-carashell",
+     "levererad": true,
+     "slot": "exploration",
+     "rank": 12,
+     "rank_poang": 10,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 2,
+      "efterfragan": 2,
+      "lucka": 1,
+      "ekonomi": 1,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 3,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 429,
+     "landad": 167,
+     "be_cpa": 262,
+     "hook": "Svarta ränder på vagnens sida?",
+     "varfor": "Standardtillbehör i USA-katalogen (Camco Gutter Spouts) som inte finns i svensk fackhandel — bara marknadsplatskopior à 92 kr/2-pack utan ankare. Ren H10-nyhet på 283 840 husvagnar inför uppställning (1,6 v), löser ett välkänt svenskt problem (svarta ränder).",
+     "huvudrisk": "Passform mot europeisk takränneprofil är inte verifierad — fel profil ger returer; BE-CPA 245–279 är tunn utan ankare.",
+     "hypotes_id": "H10",
+     "per_kriterium": null,
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-29-carashell",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-29-carashell",
+     "handelse": "levererad på V3-arket (rank 12, exploration, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Takrännans droppnäsor, 4-pack"
+  },
+  "K0372": {
+   "id": "K0372",
+   "skapad": "2026-09-29-carashell",
+   "namn": "Droppkantslisten mot svarta ränder, 2 × 3 m",
+   "objekt": "NYTT: Husbilens sidoväggar under takkanten — regnvattnet som rinner från taket och lämnar svarta ränder",
+   "form": "annat",
+   "sak": "nytt: husbilens sidoväggar under takkanten+annat",
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "B_SKYDDA_DYRT",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005009863338287",
+     "url": "https://www.aliexpress.com/item/1005009863338287.html",
+     "bild": null,
+     "pris_usd": 12.06,
+     "forst_sedd": "2026-09-29-carashell",
+     "verifieringar": [
+      {
+       "datum": "2026-09-29-carashell",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-29T11:44:32Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-29-carashell",
+     "levererad": true,
+     "slot": "exploration",
+     "rank": 13,
+     "rank_poang": 10,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 2,
+      "efterfragan": 2,
+      "lucka": 2,
+      "ekonomi": 2,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 699,
+     "landad": 349,
+     "be_cpa": 350,
+     "hook": "Svarta ränder på husbilen varje vår?",
+     "varfor": "Svarta ränder är husbilsägarens synligaste vinterskada och den svenska lösningen är kemi varje vår (H03: svikande köpt default 195 kr) — listen sitter på husbilen och löser orsaken; Fiamma-formen finns i fackhandel till 233 kr/m (2,0× vårt meterpris) och ingen svensk aktör säljer rullen.",
+     "huvudrisk": "Form 'annat' + limning på kall yta i oktober, och Fiammas styckpris 175 kr ser billigare ut än vårt paket i en jämförelse.",
+     "hypotes_id": "H03",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 12,
+      "K2": 12,
+      "K3": 8,
+      "K4": 8,
+      "K5": 7,
+      "K6": 9,
+      "K7": 6,
+      "K8": 6,
+      "K9": 5,
+      "K10": 2,
+      "K11": 2,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-29-carashell",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-29-carashell",
+     "handelse": "levererad på V3-arket (rank 13, exploration, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Droppkantslisten mot svarta ränder, 2 × 3 m"
+  },
+  "K0373": {
+   "id": "K0373",
+   "skapad": "2026-09-29-carashell",
+   "namn": "Hjullåset för husvagn (Milenco-kopia)",
+   "objekt": "NYTT: Husvagnshjulet på uppställningsplatsen — hjullåset som stoppar bortrullning/stöld (Milenco-formen)",
+   "form": "annat",
+   "sak": "nytt: husvagnshjulet på uppställningsplatsen+annat",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012671051312",
+     "url": "https://www.aliexpress.com/item/1005012671051312.html",
+     "bild": null,
+     "pris_usd": 34.56,
+     "forst_sedd": "2026-09-29-carashell",
+     "verifieringar": [
+      {
+       "datum": "2026-09-29-carashell",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-29T11:43:32Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-29-carashell",
+     "levererad": true,
+     "slot": "exploration",
+     "rank": 14,
+     "rank_poang": 9,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 2,
+      "efterfragan": 3,
+      "lucka": 2,
+      "ekonomi": 2,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 949,
+     "landad": 500,
+     "be_cpa": 449,
+     "hook": "Står vagnen olåst i vinter?",
+     "varfor": "Samma H06-struktur som ATV-kapellet: kopia under fackhandelns Milenco Compact 1 619 kr (1,71×), generiskt golv 281–850 på PriceRunner men ingen kedja med sortiment. Objekt 150–400 tkr ute obevakat oktober–april, uppställning NOW 1,6 v — och ett hjullås syns, till skillnad från kopplingslåset som alla redan har.",
+     "huvudrisk": "Form lås = 'annat' (0 av 15 vinnare) och Motorlåset förlorade på exakt samma deadline — stöldskydd har aldrig burit i kontot; hero måste byggas om på en riktig husvagn.",
+     "hypotes_id": "H06",
+     "per_kriterium": null,
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-29-carashell",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-29-carashell",
+     "handelse": "levererad på V3-arket (rank 14, exploration, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Hjullåset för husvagn (Milenco-kopia)"
+  },
+  "K0374": {
+   "id": "K0374",
+   "skapad": "2026-09-29-carashell",
+   "namn": "Fönsterspärrarna Seitz/Dometic, 3 par",
+   "objekt": "NYTT: Husvagnens sidofönster — Seitz/Dometic-spärrhandtagen (3–5 fönster per vagn, samma SAK som K0267 men form lås)",
+   "form": "annat",
+   "sak": "nytt: husvagnens sidofönster+annat",
+   "arketyp": "I_FLERKOP",
+   "arketyp_sekundar": "B_SKYDDA_DYRT",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012010863972",
+     "url": "https://www.aliexpress.com/item/1005012010863972.html",
+     "bild": null,
+     "pris_usd": 2.26,
+     "forst_sedd": "2026-09-29-carashell",
+     "verifieringar": [
+      {
+       "datum": "2026-09-29-carashell",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-29T11:47:19Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-29-carashell",
+     "levererad": true,
+     "slot": "exploration",
+     "rank": 15,
+     "rank_poang": 8,
+     "poang_axlar": {
+      "vinnarlikhet": 1,
+      "meta_creative": 2,
+      "efterfragan": 3,
+      "lucka": 2,
+      "ekonomi": 1,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 2
+     },
+     "konfidens": "LÅG",
+     "pris": 349,
+     "landad": 98,
+     "be_cpa": 251,
+     "hook": "Går dina fönster att öppna utifrån?",
+     "varfor": "Dometics original kostar 199 kr per fönster och vagnen har 3–5 — vårt 3-pack landar under originalets 597 (1,71×) med flerköpsskäl inbyggt (H08, spöklämme-strukturen). Uppställning NOW 1,6 v.",
+     "huvudrisk": "Liten röd plastbit — inbrottspåståendet håller bara mot handtaget, inte mot rutan, och lågt pris (349) i förlorarbandet 300–499; Dometic-originalet finns i varje fackhandel.",
+     "hypotes_id": "H08",
+     "per_kriterium": null,
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-29-carashell",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-29-carashell",
+     "handelse": "levererad på V3-arket (rank 15, exploration, konfidens LÅG)"
+    }
+   ],
+   "namn_sv": "Fönsterspärrarna Seitz/Dometic, 3 par"
+  },
+  "K0375": {
+   "id": "K0375",
+   "skapad": "2026-09-29-carashell",
+   "namn": "Vattentankens värmedyna 12 V",
+   "objekt": "NYTT: Färsk-/gråvattentanken under husbilen vid vintercamping — värmedynan som hindrar att den fryser",
+   "form": "annat",
+   "sak": "nytt: färsk-/gråvattentanken under husbilen vid vintercamping+annat",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "B_SKYDDA_DYRT",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005007345717544",
+     "url": "https://www.aliexpress.com/item/1005007345717544.html",
+     "bild": null,
+     "pris_usd": 13.65,
+     "forst_sedd": "2026-09-29-carashell",
+     "verifieringar": [
+      {
+       "datum": "2026-09-29-carashell",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-29T11:43:07Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-29-carashell",
+     "levererad": true,
+     "slot": "exploration",
+     "rank": 16,
+     "rank_poang": 8,
+     "poang_axlar": {
+      "vinnarlikhet": 1,
+      "meta_creative": 0,
+      "efterfragan": 0,
+      "lucka": 3,
+      "ekonomi": 1,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 3,
+      "hypotesvarde": 2
+     },
+     "konfidens": "LÅG",
+     "pris": 479,
+     "landad": 198,
+     "be_cpa": 282,
+     "hook": "Fryser tanken på skidcampingen?",
+     "varfor": "USA-standard (tank heating pads hos Camco/UltraHeat) som saknas helt i svenskt flöde — lucka 3 på lästa källor. Ren H10-exploration mot vintercamparen (Sälen/Åre/Idre nov–apr) med första snö Norrland 3,7 v bort.",
+     "huvudrisk": "Montering (lim + 12 V) är förlorarsignalen montering_app 7/9, heron är packshot utan kontext och vintercamparnas antal är ej mätt — låg konfidens, testas bara som exploration.",
+     "hypotes_id": "H10",
+     "per_kriterium": null,
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-29-carashell",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-29-carashell",
+     "handelse": "levererad på V3-arket (rank 16, exploration, konfidens LÅG)"
+    }
+   ],
+   "namn_sv": "Vattentankens värmedyna 12 V"
   }
  }
 }

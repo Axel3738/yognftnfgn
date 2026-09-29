@@ -449,7 +449,71 @@
     "https://www.pricerunner.se/search?q=heko%20ducato",
     "https://www.getcamping.se/search?q=vindavvisare"
    ]
+  }
+ ],
+ "strukna": [
+  {
+   "namn": "Markisskyddet / kassettmarkisens vinterhylsa (awning cover sleeve)",
+   "skal": "Ingen form att leverera: Ali 'motorhome awning cover sleeve cassette' och 'caravan awning protective cover storage' ger bara terrassmarkishylsor (9–36 USD) och bakdörrsmarkiser; getcamping 'markis' 89 produkter utan ett enda skydd (Fiamma F45/Thule 6300 = hårda kassetter som inget behöver; påsmarkiserna har egen påse). PriceRunner 'markisskydd husbil' bara husbilsöverdrag/lackskydd. K0107 (Universal RV Awning Cover 600D) är ett soltak, inte ett skydd."
   },
+  {
+   "namn": "Torkarbladslyftaren 2-pack (wiper stand-off)",
+   "skal": "Ali 0,96–5,09 USD per par → landad 14–74 kr; PriceRunner 'torkarbladslyftare' 0 (Biltema/Jula 403, oläst). Lågt upplevt värde (K8) och ingen bild att bygga creative på — samma dom som AN 09-29. Inte öppnad."
+  },
+  {
+   "namn": "Torkarbladsskyddet / vindrutans frostskydd",
+   "skal": "Ali 'windshield wiper cover frost snow' ger vindrutesnöskydd 10–29 USD = samma sak som 'Termoskydd Husbil 211 × 171 cm' 559 kr ACTIVE (K0 på sak) samt 2,88 USD torkararmshylsor (K8). Inte öppnad."
+  },
+  {
+   "namn": "Motorrummets ultraljudsskrämma 12 V",
+   "skal": "Sortiment: PriceRunner 'musskrämma bil' Rejekt 2-pack 348 kr, Biltema/Jula-form känd (403, oläst). Uppdraget bad om nät/spärr-formen — den levererades (gnagarstaketet). Inte sökt på Ali."
+  },
+  {
+   "namn": "Startbatteriets vakt / batteriunderhåll i hytten",
+   "skal": "K0: 'Batterifrånskiljare – Huvudströmbrytare 12/24V' 189 kr och '7-i-1 Jumpstart 5000A' 1 599 kr ACTIVE i katalogen; Solcellsladdaren 10 W (K0173) launchad 09-24; CTEK Battery Sense/underhållsladdare = sortiment (ankare 900). Inte sökt."
+  },
+  {
+   "namn": "El-fotstegets skydd (Thule Omnistep)",
+   "skal": "Ali 'motorhome electric step cover' ger hela el-fotsteg 215–1 139 USD och US-stegöverdrag för Lippert-trappor (25 USD) — ingen form för den europeiska Omnistep-modellen. getcamping 'fotsteg' 0 skydd. Struken."
+  },
+  {
+   "namn": "Anti-siphon / låsbart tanklock Ducato (dieselstöld under uppställningen)",
+   "skal": "Ali 'anti siphon fuel device Ducato' ger bara handpumpar (3–25 USD) och bränslereservdelar; PriceRunner 'tanklock ducato' 20 låsbara tanklock 75–690 kr = sortiment (Biltema/Mekonomen). Struken."
+  },
+  {
+   "namn": "Reservhjulslås Ducato (reservhjulet under chassit)",
+   "skal": "Ali 'spare wheel lock Fiat Ducato' ger inga reservhjulslås — bara hjulklampar 19–37 USD (Biltema-sortiment) och rattlås; PriceRunner 'reservhjulslås' bara klampar 175–593. Ingen leverantör i formen."
+  },
+  {
+   "namn": "Ducatos bakdörrslås / hyttdörrslås (BEVINSEE 33,99 USD, 3-pack 51,79 USD)",
+   "skal": "Kräver borrning i dörren (montering = ja), lås-form på uppställt objekt = Motorlåset REAL_LOSER 0,50 (09-27); Heosafe-ankaret syns varken på PriceRunner ('heosafe' 1 boksafe) eller getcamping; PriceRunner 'dörrlås husbil' = 14 trycklås 195–995 (annan sak). Sökträff, ej öppnad."
+  },
+  {
+   "namn": "Avgasplugg mot möss",
+   "skal": "Ali 'exhaust pipe plug rodent car' ger bara MC-tvättpluggar 1,65–3,65 USD och svetsmuffar; PriceRunner 'avgasplugg' = skoterventiler. K8 lågt, ingen bild. Struken."
+  },
+  {
+   "namn": "Solpanelens snöskydd på taket",
+   "skal": "Ingen failure mode att visa (MPPT-regulatorn klarar snötäcket, panelen ska helst vara fri) och ingen form på Ali — 'satellite dish cover motorhome' ger Starlink-fodral 11–75 USD. Struken."
+  },
+  {
+   "namn": "Starlink Mini-fodralet på husbilstaket",
+   "skal": "Formen finns (silikonfodral 17–30 USD) men Starlink används på resa, inte under uppställningen — inget datum; PriceRunner 'starlink mini skydd' bara kablar. Utanför rundans struktur, till backloggen."
+  },
+  {
+   "namn": "Teleskopborsten med vattenanslutning för tak/sida",
+   "skal": "Uteslutet av ordern (kedjan har bilborstar = sortiment) och Biltvättborsten REAL_LOSER 1,16 (H07: jobbet ägaren klarar). Inte sökt."
+  },
+  {
+   "namn": "Fläckborttagare för svarta ränder",
+   "skal": "Kemi (nej enligt ordern) — och det är den svikande defaulten (Ren fritid 195 kr, getcamping) som droppkantslisten byggs mot."
+  },
+  {
+   "namn": "Hyttkapell Ducato, spegelhuvar, invändig termomatta, gummilister, lyktskydd, dragkrok, AdBlue, backkamera, taköverdrag, takluckehuv, hjulskydd, stegskydd, kylskåpsventil, gasolkoffert",
+   "skal": "Uteslutna av ordern: gjorda (AN 09-29 / katalog), andra linser (AU, AR) eller 'nej' i ordern. Inte sökta."
+  }
+ ],
+ "strukna_huvudsession": [
   {
    "koncept_id": null,
    "namn_sv": "Gråvattentankens 12 V-värmematta",
@@ -595,69 +659,8 @@
     "https://www.pricerunner.se/search?q=tankv%C3%A4rmare%20husbil",
     "https://www.pricerunner.se/search?q=gr%C3%A5vattentank%20v%C3%A4rme",
     "https://www.getcamping.se/search?q=tankv%C3%A4rmare"
-   ]
-  }
- ],
- "strukna": [
-  {
-   "namn": "Markisskyddet / kassettmarkisens vinterhylsa (awning cover sleeve)",
-   "skal": "Ingen form att leverera: Ali 'motorhome awning cover sleeve cassette' och 'caravan awning protective cover storage' ger bara terrassmarkishylsor (9–36 USD) och bakdörrsmarkiser; getcamping 'markis' 89 produkter utan ett enda skydd (Fiamma F45/Thule 6300 = hårda kassetter som inget behöver; påsmarkiserna har egen påse). PriceRunner 'markisskydd husbil' bara husbilsöverdrag/lackskydd. K0107 (Universal RV Awning Cover 600D) är ett soltak, inte ett skydd."
-  },
-  {
-   "namn": "Torkarbladslyftaren 2-pack (wiper stand-off)",
-   "skal": "Ali 0,96–5,09 USD per par → landad 14–74 kr; PriceRunner 'torkarbladslyftare' 0 (Biltema/Jula 403, oläst). Lågt upplevt värde (K8) och ingen bild att bygga creative på — samma dom som AN 09-29. Inte öppnad."
-  },
-  {
-   "namn": "Torkarbladsskyddet / vindrutans frostskydd",
-   "skal": "Ali 'windshield wiper cover frost snow' ger vindrutesnöskydd 10–29 USD = samma sak som 'Termoskydd Husbil 211 × 171 cm' 559 kr ACTIVE (K0 på sak) samt 2,88 USD torkararmshylsor (K8). Inte öppnad."
-  },
-  {
-   "namn": "Motorrummets ultraljudsskrämma 12 V",
-   "skal": "Sortiment: PriceRunner 'musskrämma bil' Rejekt 2-pack 348 kr, Biltema/Jula-form känd (403, oläst). Uppdraget bad om nät/spärr-formen — den levererades (gnagarstaketet). Inte sökt på Ali."
-  },
-  {
-   "namn": "Startbatteriets vakt / batteriunderhåll i hytten",
-   "skal": "K0: 'Batterifrånskiljare – Huvudströmbrytare 12/24V' 189 kr och '7-i-1 Jumpstart 5000A' 1 599 kr ACTIVE i katalogen; Solcellsladdaren 10 W (K0173) launchad 09-24; CTEK Battery Sense/underhållsladdare = sortiment (ankare 900). Inte sökt."
-  },
-  {
-   "namn": "El-fotstegets skydd (Thule Omnistep)",
-   "skal": "Ali 'motorhome electric step cover' ger hela el-fotsteg 215–1 139 USD och US-stegöverdrag för Lippert-trappor (25 USD) — ingen form för den europeiska Omnistep-modellen. getcamping 'fotsteg' 0 skydd. Struken."
-  },
-  {
-   "namn": "Anti-siphon / låsbart tanklock Ducato (dieselstöld under uppställningen)",
-   "skal": "Ali 'anti siphon fuel device Ducato' ger bara handpumpar (3–25 USD) och bränslereservdelar; PriceRunner 'tanklock ducato' 20 låsbara tanklock 75–690 kr = sortiment (Biltema/Mekonomen). Struken."
-  },
-  {
-   "namn": "Reservhjulslås Ducato (reservhjulet under chassit)",
-   "skal": "Ali 'spare wheel lock Fiat Ducato' ger inga reservhjulslås — bara hjulklampar 19–37 USD (Biltema-sortiment) och rattlås; PriceRunner 'reservhjulslås' bara klampar 175–593. Ingen leverantör i formen."
-  },
-  {
-   "namn": "Ducatos bakdörrslås / hyttdörrslås (BEVINSEE 33,99 USD, 3-pack 51,79 USD)",
-   "skal": "Kräver borrning i dörren (montering = ja), lås-form på uppställt objekt = Motorlåset REAL_LOSER 0,50 (09-27); Heosafe-ankaret syns varken på PriceRunner ('heosafe' 1 boksafe) eller getcamping; PriceRunner 'dörrlås husbil' = 14 trycklås 195–995 (annan sak). Sökträff, ej öppnad."
-  },
-  {
-   "namn": "Avgasplugg mot möss",
-   "skal": "Ali 'exhaust pipe plug rodent car' ger bara MC-tvättpluggar 1,65–3,65 USD och svetsmuffar; PriceRunner 'avgasplugg' = skoterventiler. K8 lågt, ingen bild. Struken."
-  },
-  {
-   "namn": "Solpanelens snöskydd på taket",
-   "skal": "Ingen failure mode att visa (MPPT-regulatorn klarar snötäcket, panelen ska helst vara fri) och ingen form på Ali — 'satellite dish cover motorhome' ger Starlink-fodral 11–75 USD. Struken."
-  },
-  {
-   "namn": "Starlink Mini-fodralet på husbilstaket",
-   "skal": "Formen finns (silikonfodral 17–30 USD) men Starlink används på resa, inte under uppställningen — inget datum; PriceRunner 'starlink mini skydd' bara kablar. Utanför rundans struktur, till backloggen."
-  },
-  {
-   "namn": "Teleskopborsten med vattenanslutning för tak/sida",
-   "skal": "Uteslutet av ordern (kedjan har bilborstar = sortiment) och Biltvättborsten REAL_LOSER 1,16 (H07: jobbet ägaren klarar). Inte sökt."
-  },
-  {
-   "namn": "Fläckborttagare för svarta ränder",
-   "skal": "Kemi (nej enligt ordern) — och det är den svikande defaulten (Ren fritid 195 kr, getcamping) som droppkantslisten byggs mot."
-  },
-  {
-   "namn": "Hyttkapell Ducato, spegelhuvar, invändig termomatta, gummilister, lyktskydd, dragkrok, AdBlue, backkamera, taköverdrag, takluckehuv, hjulskydd, stegskydd, kylskåpsventil, gasolkoffert",
-   "skal": "Uteslutna av ordern: gjorda (AN 09-29 / katalog), andra linser (AU, AR) eller 'nej' i ordern. Inte sökta."
+   ],
+   "_struken": "dubblett: samma listning som lins AU:s färskvattentankens värmedyna"
   }
  ]
 }
