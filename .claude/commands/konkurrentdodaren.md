@@ -202,6 +202,16 @@ inget: "Inget för dig i dag."
   (videoaffischer, annonsbilder) hashade mot våra annonsbilder, deras sajt
   läst för kontaktuppgifter. Mätt 2026-09-29 på ORVO: 37 annonser (23 aktiva,
   14 inaktiva), räckvidd för alla 37, 42 s.
+  **Andra länder: `--land NO`** (ORVO körde 13 annonser i Norge, no.orvo.se;
+  Axel: "så vi ska ta ner honom"). Filen heter då `…annonser-<id>-NO.json` och
+  fyndet blir ett EGET ärende (nyckeln `annonser-NO`, KD-2026-002), aldrig en
+  uppdatering av det svenska som redan kan vara skickat. Utanför EU visar
+  biblioteket ingen räckvidd, så Axels tröskel kan inte mätas: Axels ord är
+  `--rapport --tvinga`. **Filmer som inte matchade på text eller förhandsbild**
+  (3 av 10 norska hade en annan förhandsbild) tas med som kandidater med
+  `--lagg-till <id> --annonser <id,…>`. `--klipp <id> --alla` avgör, och en
+  kandidat utan rutor ur våra klipp kommer aldrig med (`bevisStatus`). Bildannonser
+  som inte matchar våra annonsbilder läggs inte till: säg dem till Axel.
   Utskriften slutar med **Axels kriterier** (`konfig.json → trosklar.annons`,
   hans ord 2026-09-29): sidan är *värd att jaga* när minst EN kopierande
   annons har **över 10 000 i räckvidd** ELLER **minst 10 av dem är live** —
@@ -388,6 +398,10 @@ inget: "Inget för dig i dag."
      privat artifact, `icon: "shield"`): `file_path` = index.html, `files` = det
      `--granska` skriver ut och **`capabilities: {"artifact": {}}`**.
      `data/beslut.json` följer med BARA första gången — sedan äger sidan filen.
+     **En runda med bara anmälningar** (samma Facebook-sida har redan fått brevet
+     i ett annat ärende, t.ex. ORVO Norge KD-2026-002 efter KD-2026-001): lägg till
+     `--utan-mejl` i VARJE `--granska` för det ärendet. Då finns inget mejl- eller
+     sms-kort, och överst står vilket ärende som bär brevet.
   3. Axel trycker Ja eller Nej. Sidan sparar svaret i `data/beslut.json`
      (artifact-kapabilitetens files-form, `ifMatch` = sha256 av filen; mätt
      2026-09-29: serverns sha är sha256 av råa byten). Det blir en ny version av

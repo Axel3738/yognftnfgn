@@ -190,6 +190,19 @@ node konkurrenter/kor.mjs --lista
     hand; en anmälan kvitteras aldrig två gånger; alla inskickade ⇒ ärendet
     "anmält vidare"). Utan `--ja` torrkörs formuläret: allt ifyllt, skärmdump
     `<nr>-torr.png`, ingen kod, inget skickat.
+    **Andra länder** (ORVO Norge 2026-09-29): `--hamta --annonser-sida <id>
+    --land NO` skriver `…annonser-<id>-NO.json`, och fyndet får nyckeln
+    `annonser-NO`. Samma sida i Norge blir alltså ett EGET ärende (KD-2026-002),
+    aldrig en uppdatering av det svenska. Ärendet bär `land`, och uppföljningen
+    läser samma land. Filmer som varken matchar på text eller förhandsbild tas med
+    som kandidater med `--lagg-till <id> --annonser <id,…>`. `--klipp` avgör, och
+    utan rutor ur våra klipp kommer de aldrig med i en anmälan (`bevisStatus`).
+    ⛔ **Uppföljningen av ett annonsfall läser annonsbiblioteket, inte sajten**
+    (`annonsfall.mjs annonsUppfoljning`). Den gamla `--foljupp` jämförde deras
+    hemsida med vår produktsida. ORVO har inget på hemsidan, så rutinen hade
+    stängt KD-2026-001 som "åtgärdat" morgonen efter brevet. Nu gäller: finns
+    någon anmäld annons kvar som aktiv ⇒ KVAR. Går biblioteket inte att läsa ⇒
+    OKÄNT, aldrig borta.
     ⛔ **Meta kräver en säkerhetskontroll (captcha) vid Submit** (mätt
     2026-09-29, ORVO anmälan 1). Koden gick igenom, men efter Submit kom rutan
     "Security check: A security check is required to proceed" och formuläret
@@ -319,6 +332,13 @@ node konkurrenter/kor.mjs --lista
     annonser (+ tiderna i deras film), bevisbilden länken per par, och kortet i
     appen en svensk rad om vilken annons det är. Utan hittat original blir
     exemplet vår sidas lista (aldrig produktsidan) och `--anmal` varnar.
+    ⛔ **En annons av våra som startade samma dag som deras eller senare länkas
+    aldrig** (`originalFor(…, { fore: deras start })`, ORVO Norge 2026-09-29):
+    samma film går ofta i flera av våra konton, och vår US-kopia av en film
+    startade 27/9 medan deras annons startade 24/9. Metas granskare ser bara
+    annonsbibliotekets datum, och där hade vi sett ut att komma efter. Filmen
+    står kvar i beskrivningen (den skapades hos oss före deras annons), bara
+    länken faller bort. Okänt startdatum hos oss står kvar.
     **Mätt 2026-09-29 på ORVO:** 15 av 15 filmer hittade (två efter att den
     andra frasen provats), alla 100/100; ledfilmerna Takoverdrag_SP_4_H1
     (id 2000363993957496) och OB_1_H1 (id 1619798969500412), Bäverbutiken.se.
@@ -347,6 +367,12 @@ kan jag granska här också … och sen så skickas det."
   ny version av artifacten och väcker sessionen som bevakar den. Sidan skriver
   aldrig `data/status.json`, sessionen skriver aldrig `data/beslut.json`, så två
   skrivare krockar inte.
+- `--granska <id> --utan-mejl` = en runda med BARA anmälningar (ORVO Norge
+  KD-2026-002: brevet och fakturan gick redan i KD-2026-001 mot samma
+  Facebook-sida, och ett andra brev samma kväll hade bara rört till det). Inget
+  mejlkort, inget sms-kort, ingen mejlstatus. Överst står vilket ärende som bär
+  brevet (`granskning.mjs mejlRedanNot`). Flaggan skickas vid varje ombyggnad av
+  den rundan, annars kommer mejlkortet tillbaka.
 - `--granska-svar <id> --beslut <fil>` läser svaret (`granskning.mjs attGora`):
   ja på aktuell version ⇒ skicka in, mejlet först när varje anmälan har ett svar
   och med antalet ja i brevet (`brev.mjs metaRad`: "7 av de 10 aktiva

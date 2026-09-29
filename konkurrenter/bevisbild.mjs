@@ -15,6 +15,7 @@
 import { existsSync, mkdirSync } from 'node:fs';
 import { dirname } from 'node:path';
 import { tid, bevisStatus } from './klipp.mjs';
+import { startadeFore } from './original.mjs';
 
 const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const nar = (iso) => (iso ? new Intl.DateTimeFormat('en-GB', { dateStyle: 'long', timeStyle: 'short', timeZone: 'Europe/Stockholm' }).format(new Date(iso)) : '?');
@@ -62,8 +63,9 @@ export function bevisbildHtml(arende, annons, { miniatyr = () => null, nu = new 
     const filmer = [...new Set(val.map((v) => v.egenFilm?.namn).filter(Boolean))];
     const filmnamn = (v) => v.egenFilm?.namn ?? null;
     const filmdag = (v) => (v.egenFilm?.skapad ? ` (ours since ${esc(dag(v.egenFilm.skapad))})` : '');
-    // Var granskaren ser vår film: vår egen annons i annonsbiblioteket (kor.mjs --original), verifierad ruta för ruta.
-    const bibl = (v) => { const o = original?.[filmnamn(v)]; return o?.lank ? ` · our original in the Ad Library: ${esc(o.lank)}` : ''; };
+    // Var granskaren ser vår film: vår egen annons i annonsbiblioteket (kor.mjs --original), verifierad ruta för ruta —
+    // bara en annons som startade FÖRE deras (ORVO Norge 2026-09-29: vår US-kopia startade 27/9, deras 24/9).
+    const bibl = (v) => { const o = original?.[filmnamn(v)]; return o?.lank && startadeFore(o, annons.start) ? ` · our original in the Ad Library: ${esc(o.lank)}` : ''; };
     kropp = `<p class="ingress">The reported video is cut from our own advertising film${filmer.length === 1 ? ` "${esc(filmer[0])}"` : filmer.length > 1 ? `s (${filmer.map((f) => `"${esc(f)}"`).join(', ')})` : annons.varAnnons?.namn ? ` "${esc(annons.varAnnons.namn)}"` : ''}. Below: ${val.length} still${val.length === 1 ? '' : 's'} from different scenes of the reported ad (right) next to the same frame${val.length === 1 ? '' : 's'} in our film${filmer.length > 1 ? 's' : ''} (left).</p>
 <div class="rader">${val.map((v) => `<div class="klipprad"><div class="kol"><h2>Our film${filmnamn(v) ? ` — ${esc(filmnamn(v))}` : ''}${filmdag(v)} · ${esc(egenPlats(v))}</h2>${bild(v.egenData, 'Frame from our ad film')}</div><div class="kol deras"><h2>Reported ad · ${esc(tid(v.derasT))}</h2>${bild(v.derasData, 'The same frame in the reported ad')}</div><p class="parrad">Pair ${esc(v.bokstav)} · perceptual-hash distance ${esc(v.avstand)}/64${v.scen ? ` · scene ${esc(tid(v.scen.tFran))}–${esc(tid(v.scen.tTill))} of the reported ad` : ''}${bibl(v)}</p></div>`).join('')}</div>
 ${passage

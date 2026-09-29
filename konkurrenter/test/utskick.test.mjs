@@ -14,6 +14,7 @@ import { brevPdf, foljetext, harLankbartOrd } from '../brevpdf.mjs';
 import { kvittoUtfall, coworkPrompt } from '../anmal-skicka.mjs';
 import { angraKvittoAnmalan } from '../arenden.mjs';
 import { annonsUppfoljning } from '../annonsfall.mjs';
+import { bevisStatus } from '../klipp.mjs';
 
 const ARENDE = { id: 'KD-TEST-001', typ: 'annons', verksamhet: 'Bäverbutiken', deras: { sidnamn: 'X', doman: 'x.se', lang: 'sv' }, anmalan: { antal: 10, baraAktiva: true, rapporter: [] }, bevis: { annonser: [] } };
 const BAS = { avsandare: { brand: 'Bäverbutiken', mail: 'contact@example.se' }, foretag: { namn: 'Exempel AB', orgnr: '556000-0000', adress: 'Gatan 1' }, nu: new Date('2026-09-29T10:00:00Z') };
@@ -136,6 +137,13 @@ test('annonsUppfoljning: annonsfallet följs upp i annonsbiblioteket, aldrig på
   assert.equal(annonsUppfoljning(bevis, { annonser: [], fel: ['HTTP 403'] }).kvar, null, 'oläst är okänt, aldrig åtgärdat');
   assert.equal(annonsUppfoljning(bevis, null).kvar, null);
   assert.equal(annonsUppfoljning([{ lank: 'x', aktiv: false }], { annonser: [] }).kvar, null, 'inga aktiva i bevisen ⇒ okänt');
+});
+
+test('--lagg-till: en kandidatfilm är obevisad tills klippen hittat rutor ur våra filmer', () => {
+  const kandidat = { nr: 4, lank: 'https://www.facebook.com/ads/library/?id=1619427313174835', video: true, text: null, bilder: [], kandidat: 'film' };
+  assert.equal(bevisStatus(kandidat).bevisad, false, 'aldrig med i brev, faktura eller anmälan före --klipp');
+  assert.equal(bevisStatus({ ...kandidat, klippStatus: 'ej_bevisad', klippFel: 'inga rutor' }).bevisad, false);
+  assert.deepEqual(bevisStatus({ ...kandidat, klipp: { antal: 3 } }).grund, 'film');
 });
 
 test('coworkPrompt: exakt de godkända fälten, och säkerhetskontrollen lämnas till Axel', () => {
