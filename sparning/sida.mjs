@@ -295,7 +295,9 @@ function copydata(c) {
             c.extra.map((x) => [
               x.kod,
               {
-                ...copydata({ ...c, T: x.T, tidszon: x.tidszon, locale: x.locale, sprak: x.kod, extra: [] }),
+                // Väntetiden ("2–4 dagar") är butikens svenska sträng — den översätts som allt annat,
+                // annars stod "…das dauert normalerweise 2–4 dagar" på den tyska sidan (QA 2026-09-29).
+                ...copydata({ ...c, T: x.T, tidszon: x.tidszon, locale: x.locale, sprak: x.kod, extra: [], vaknar: c.vaknar ? x.T(c.vaknar) : null }),
                 markup: markupTexter(x.T, String(c.prefix ?? '').replace(/-+$/, '')),
               },
             ])
