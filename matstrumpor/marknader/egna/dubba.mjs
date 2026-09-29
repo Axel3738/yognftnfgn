@@ -45,12 +45,13 @@ const MAXFART = 1.2, MAXTEMPO = 1.15;
 const OM = process.argv.includes('--om'); // ❌ i QA: nytt frö, nya klipp (cachenyckeln bär fröet)
 
 /** Ren: tidsfönstret per talat segment — från segmentets start till nästa segments start
- *  (strukna segment räknas som gräns, där är det tyst), sista segmentet till slut − 0,15 s. */
+ *  (strukna segment räknas som gräns, där är det tyst), sista segmentet till slut − 0,35 s (rostkoll kräver
+ *  att sista 100 ms är tysta — 0,15 s gav ❌ "hinner inte tala klart" på PL/PT s001h1). */
 export function fonster(manus, lok, langd) {
   const alla = [...manus].sort((x, y) => x.a - y.a);
   return lok.segment.map((s) => {
     const nasta = alla.find((m) => m.a > s.a + 0.001);
-    const slut = nasta ? nasta.a : Math.min(langd - 0.15, s.b + 1.5);
+    const slut = nasta ? nasta.a : Math.min(langd - 0.35, s.b + 1.5);
     return { a: s.a, max: +(slut - s.a).toFixed(3) };
   });
 }
@@ -193,7 +194,10 @@ async function main() {
   console.log(`${kod} ${video}: ${logg.length} segment, modell ${modell}, ${tecken} nya tecken, fart>1 på ${logg.filter((x) => x.fart > 1).length}, atempo på ${logg.filter((x) => x.tempo > 1).length}${over.length ? `, ⚠️ ${over.length} går över fönstret: ${over.map((x) => x.seg).join(', ')}` : ''}`);
 
   const ut = `${bas}.mp4`;
-  kor('ffmpeg', ['-nostdin', '-y', '-v', 'error', '-i', text, '-i', dub, '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '160k', '-shortest', '-movflags', '+faststart', ut]);
+  // ljudet tonas ut på bildens sista 0,28 s (tyst de sista 30 ms, som källorna): -shortest kapar vid bildens slut, och utan utoning ligger
+  // talet/musiken kvar i sista 100 ms (rostkoll ❌ "hinner inte tala klart", mätt PL/PT s001h1)
+  const vLangd = parseFloat(String(kor('ffprobe', ['-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=duration', '-of', 'csv=p=0', text])));
+  kor('ffmpeg', ['-nostdin', '-y', '-v', 'error', '-i', text, '-i', dub, '-map', '0:v', '-map', '1:a', '-af', `afade=t=out:st=${(vLangd - 0.28).toFixed(3)}:d=0.25`, '-c:v', 'copy', '-c:a', 'aac', '-b:a', '160k', '-shortest', '-movflags', '+faststart', ut]);
   // bara granskad text blir en annonsfil — ett utkast (t.ex. piloten) stannar i ut/
   if (lok.granskad !== true) { console.log(`utkast (granskad ≠ true): ${ut} — inte till annonser/klar/`); return; }
   mkdirSync(KLAR, { recursive: true });

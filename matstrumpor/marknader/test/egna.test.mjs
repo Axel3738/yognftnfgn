@@ -33,7 +33,7 @@ test('byggSrt och språkkoderna', () => {
 test('fonster: segmentet får tiden fram till nästa segment, ett struket segment är en gräns, sista till slutet', () => {
   const f = fonster(manus, lok, 10);
   assert.deepEqual(f, [{ a: 0, max: 3 }, { a: 3, max: 2.5 }]);
-  assert.deepEqual(fonster(manus.slice(0, 2), lok, 6), [{ a: 0, max: 3 }, { a: 3, max: 2.85 }]);
+  assert.deepEqual(fonster(manus.slice(0, 2), lok, 6), [{ a: 0, max: 3 }, { a: 3, max: 2.65 }]);
 });
 
 test('fartFor: orört när klippet ryms, annars lite snabbare men aldrig över 1,2', () => {
