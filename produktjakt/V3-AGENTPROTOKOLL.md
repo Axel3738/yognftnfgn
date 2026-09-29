@@ -41,6 +41,8 @@ landad ≈ USD × 9,64 × 1,5 (frakt/avgifter; skriv intervall ±10 %). Pris: 0,
 ankare: landad × 2,4, minst 300. BE-CPA = pris − landad (utan moms). BE-ROAS = pris ÷ (pris − landad). Flerköp: finns fysiskt
 skäl att köpa 2+? Returrisk: måste kunden mäta?
 
+**Högst EN skyddsform (överdrag/huv/kapell/skydd) per lins** (mätt 2026-09-29: en lins levererade tre huvar på ett nytt objekt och rank.py:s formtak kastade alla tre — sök andra former på samma objekt i stället). **Skogma:** söksidan är JS, men kategorisidorna bär produkt-JSON med `brutto`/`netto` — läs dem med curl.
+
 **Objektfältet börjar med SAKEN, aldrig situationen** (mätt 2026-09-24: fyra linser skrev "Julbordets spelkväll — …" och kolliderade på SAK-nyckeln med gårdagens rad). Rätt: "NYTT: Magnetstenarna på snöret — …"; fel: "NYTT: Julbordets spelkväll — magnetstenarna …".
 
 **Golv i exakt form under oss** (uppdaterat 2026-09-24): fäll när golvet är SORTIMENT (20+ varianter i kedja/fackhandel) utan ankare. En kopia under oss med synligt ankare ≥ 1,6× = märk `hypotes_id: "H06"` och leverera — ATV-kapellet (Meta REAL_WINNER) och Axels ja på vindrutan + pingisroboten är beviset.

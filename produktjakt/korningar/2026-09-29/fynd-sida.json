@@ -1,0 +1,1858 @@
+{
+ "datum": "2026-09-29",
+ "version": "v3",
+ "kalla": "korningar/2026-09-29/v3/batch.json",
+ "antal_kandidater": 7,
+ "per_slot": {
+  "exploitation": 2,
+  "exploration": 1,
+  "sasong": 0
+ },
+ "produkter": [
+  {
+   "product_id": "1005009777300988",
+   "titel": "Husbilshyttens invändiga termomatta, 3 delar",
+   "url": "https://www.aliexpress.com/item/1005009777300988.html",
+   "pris": 29.39,
+   "valuta": "USD",
+   "pris_text": "US $29.39",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-29/v3/bilder/1005009777300988.jpg",
+   "sald": "",
+   "grupp": "NYTT: Husbilshyttens insida — termomattan i tre delar mot rutorna",
+   "objekt": "NYTT: Husbilshyttens insida — termomattan i tre delar mot rutorna",
+   "taggar": {
+    "objekt": "NYTT: Husbilshyttens insida — termomattan i tre delar mot rutorna",
+    "form": "skydd",
+    "arketyp": "B_SKYDDA_DYRT",
+    "deadline_typ": "uppställning",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Hindermann Travel Invändig Isolermatta Fiat Ducato (getcamping.se 2026-09-29); Hindermann Four Seasons Isolermatta Husbil 1 084; Hindermann Thermal Window Mat Classic 2 396"
+   },
+   "ekonomi": {
+    "landad": 424,
+    "forslag_pris": 799,
+    "multipel": 1.88,
+    "be_cpa": 374,
+    "be_roas": 2.1,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     382,
+     467
+    ]
+   },
+   "namn_sv": "Husbilshyttens invändiga termomatta, 3 delar",
+   "status": "bevisad struktur",
+   "poang": 15.5,
+   "rank_slutlig": 15.5,
+   "rank": 1,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 14,
+    "K2": 13,
+    "K3": 8,
+    "K4": 7,
+    "K5": 7,
+    "K6": 10,
+    "K7": 6,
+    "K8": 7,
+    "K9": 4,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "hook": "Frost på insidan av husbilsrutan?",
+   "efter_bild": "mattan sätts på inifrån utan stege — ingen kan stjäla den och instrumentbrädan ligger i skugga hela vintern",
+   "huvudrisk": "Kannibaliserar Termoskyddet hos samma kund och kräver 20 sugkoppar på tre delar — och bara Ducato-basen passar.",
+   "varfor": "Samma objekt, ägare och datum (uppställning 1,6 v) som Termoskyddet — kontots femte största vinnare — i den invändiga formen objekt.json redan pekat ut som nästa fas; golvet 796 kr ligger under oss men Hindermann 1 596 ger 2,0× (H06, samma mönster som ATV-kapellet). Levereras som linsens enda matta/huv-form.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0358",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploitation",
+   "hypotes_id": "H06",
+   "sasong": {
+    "fonster_id": "uppstallning_husvagn",
+    "deadline_typ": "uppställning",
+    "veckor_kvar": 1.6,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Termoskyddet för Husbil 211 × 171 cm",
+    "delade_variabler": [
+     "exakt samma objekt och ägare som Termoskyddet (REAL_WINNER 37 358 / 146 / 2,32) — husbil 300 tkr–1,5 Mkr, ägare 55+ småhus",
+     "deadline uppställning 1,6 v (4 av 5 dömda vann på 'uppställning')",
+     "objekt_ute = ja, dyr > 10 tkr",
+     "prisband 500–999",
+     "ägarkänd parameter (Ducato/Boxer/Jumper 2006–2022 = den vanligaste husbilsbasen; ägaren vet vilken bil han har)",
+     "material klass 1 (leverantörsfoto på husbil i kontext)"
+    ],
+    "avvikelser": [
+     "form invändig i stället för utvändig — samma kund kan redan ha köpt Termoskyddet (kannibalisering, inte dubblett)",
+     "golvet ligger UNDER oss: Vanheim/Brunner invändig Ducato 796 kr (getcamping 2026-09-29) mot vårt 799 — bara Hindermann Travel 1 596 och Four Seasons 1 084 är ankare (H06-villkor: en kopia under ankare ≥ 1,6× → 2,0×)",
+     "sugkoppar på 3 delar = mer pill än det utvändiga skyddet som bara hakas över dörrarna",
+     "old way = köpt produkt som fungerar (gardin/rullgardin/utvändigt skydd) snarare än improvisation"
+    ]
+   },
+   "rank_forklaring": "exploitation: vinnarlikhet 3×2 + ekonomi 2 + säsong 2 + creative 2 + lucka 2 + signalbonus +1.5 [arketyp=B_SKYDDA_DYRT 10V/4F (+0.4); deadline_typ=uppställning 4V/1F (+0.6); prisband=500–999 13V/5F (+0.4)] = 15.5",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Vanheim Invändig Isolermatta Fiat Ducato / Brunner Invändig Isolermatta Fiat Ducato (getcamping.se)",
+     "pris_sek": 796,
+     "url": "https://www.getcamping.se/search?q=isolermatta",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Hindermann Travel Invändig Isolermatta Fiat Ducato (getcamping.se 2026-09-29); Hindermann Four Seasons Isolermatta Husbil 1 084; Hindermann Thermal Window Mat Classic 2 396",
+     "pris_sek": 1596,
+     "url": "https://www.getcamping.se/search?q=termomatta",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 2.0,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "getcamping.se ('isolermatta' 8 produkter, 'termomatta' 8 produkter: invändig Ducato Vanheim 796, Brunner 799, Iveco Daily 796, Hindermann Travel 1 596, Four Seasons 1 084/1 076; utvändig Smart Living 596, Vanheim 1 199)",
+     "pricerunner.se ('isolermatta husbil': Hindermann Four Seasons VW T5 1 675, CampOut Ford Transit 799; 'termomatta husbil': Carbest Isoflex Transit 737; 'vindruteskydd husbil invändig': bara bilsnöskydd 515–635)",
+     "campingvaruhuset.se / campingshopen.se (oläst i dag; objekt.json 09-10: WeCamp utvändig 793, Hindermann termomatta Ducato 1 700)",
+     "biltema.se / jula.se (oläst)"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron är tvådelad: husbilen framifrån med alla tre mattorna på insidan (dörrarna öppna så sidodelarna syns) + packshot av de tre delarna, sugkopparna och påsen — textfri, men collaget bör beskäras till husbilsfotot"
+   },
+   "meta_tanke": {
+    "hook": "Frost på insidan av husbilsrutan?",
+    "objekt_i_bild": "husbilens hytt framifrån, silvermattan täcker vindruta och dörrfönster inifrån",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "mattan sätts på inifrån utan stege — ingen kan stjäla den och instrumentbrädan ligger i skugga hela vintern"
+   },
+   "listning": {
+    "product_id": "1005009777300988",
+    "url": "https://www.aliexpress.com/item/1005009777300988.html",
+    "pris_usd": 29.39,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-29T07:08:46Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-29/v3/bilder/1005009777300988.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "passform Fiat Ducato / Peugeot Boxer / Citroën Jumper (X250/X290) — en modellfamilj, 3 delar + 20 sugkoppar + förvaringspåse; syskon: 1005007843526110 (29,09 USD, 'Ducato 2006-2022, 7 lager', LIVE 07:08:43Z — heron ser ut som ett Hindermann-katalogfoto, använd inte) och 1005009570479634 (36,89 USD, sökträff, ej öppnad)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 3,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005009777300988.html",
+    "https://www.aliexpress.com/item/1005007843526110.html",
+    "https://www.getcamping.se/search?q=isolermatta",
+    "https://www.getcamping.se/search?q=termomatta",
+    "https://www.pricerunner.se/search?q=isolermatta%20husbil"
+   ]
+  },
+  {
+   "product_id": "1005012725075740",
+   "titel": "Kölskyddslisten — limmas på i vinter",
+   "url": "https://www.aliexpress.com/item/1005012725075740.html",
+   "pris": 25.69,
+   "valuta": "USD",
+   "pris_text": "US $25.69",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-29/v3/bilder/1005012725075740.jpg",
+   "sald": "",
+   "grupp": "NYTT: Båtens köl vid trailerrampen och stranden — slitytan som limmas medan skrovet står torrt",
+   "objekt": "NYTT: Båtens köl vid trailerrampen och stranden — slitytan som limmas medan skrovet står torrt",
+   "taggar": {
+    "objekt": "NYTT: Båtens köl vid trailerrampen och stranden — slitytan som limmas medan skrovet står torrt",
+    "form": "annat",
+    "arketyp": "B_SKYDDA_DYRT",
+    "deadline_typ": "upptagning",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "KeelShield Kölskydd 1,22 m svart (PriceRunner 2026-09-29); KeelShield 1,83 m 3 269; Plastimo Keelshield 6\" 1,83 m 2 549; Watski för Keelshield svart/vit (pris ej läst ur sidan)"
+   },
+   "ekonomi": {
+    "landad": 371,
+    "forslag_pris": 799,
+    "multipel": 2.15,
+    "be_cpa": 428,
+    "be_roas": 1.95,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     334,
+     408
+    ]
+   },
+   "namn_sv": "Kölskyddslisten — limmas på i vinter",
+   "status": "bevisad struktur",
+   "poang": 13.9,
+   "rank_slutlig": 13.9,
+   "rank": 2,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 13,
+    "K2": 10,
+    "K3": 8,
+    "K4": 10,
+    "K5": 7,
+    "K6": 8,
+    "K7": 6,
+    "K8": 6,
+    "K9": 3,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "hook": "Skrapmärken under fören efter sommaren?",
+   "efter_bild": "listen tar rampen och stenarna i stället för gelcoaten — limmas på nu när skrovet är torrt",
+   "huvudrisk": "Kräver rengöring + primer + limning på ett 100-tusenkronorsskrov (montering = ja är förlorarsignal) och listens längd är inte mätt.",
+   "varfor": "Del som sitter på det dyraste objektet (skrovet) och bara kan sättas dit när båten står torr på land — alltså exakt nu, upptagning 1,6 v; ingen svensk kopia under oss och KeelShield 2 069–3 269 som ankare (2,6×). Samma ägare som Båtmotorskyddet och Motorhöljet.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0359",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "C_LAGA_ISTALLET",
+   "slot": "exploitation",
+   "hypotes_id": "H06",
+   "sasong": {
+    "fonster_id": "batupptagning",
+    "deadline_typ": "upptagning",
+    "veckor_kvar": 1.6,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Båtmotorskyddet 420D",
+    "delade_variabler": [
+     "samma ägare och samma objekt (trailerbåt 100 tkr+) som Båtmotorskyddet (REAL_WINNER 63 406 / 269 / 2,63) och Motorhöljet",
+     "objekt_ute = ja, dyr > 10 tkr",
+     "deadline upptagning 1,6 v — listen kräver torrt, rent skrov, alltså båten på land",
+     "ankare ≥ 1,6× i fackhandeln (KeelShield 1,22 m 2 069, 1,83 m 3 269, Plastimo 2 549 — Watski säljer Keelshield) och ingen kopia under oss på PriceRunner",
+     "ägare 55+ småhus, prisband 500–999"
+    ],
+    "avvikelser": [
+     "form list/annat (0 av 15 dömda 'annat' vann — men det är en del som limmas på skrovet, inte en pryl på hyllan)",
+     "montering = ja: rengöring, primer, limma (självhäftande, inga verktyg) — vinnarna kräver ingen montering",
+     "old way = ingenting / gelcoat-spackel på våren (C_LAGA_ISTALLET) — inte en svikande presenning",
+     "listens längd står inte i titeln (ej mätt) — KeelShield säljs per fotlängd, vår måste anges",
+     "aluminiumbåtar (Linder/Buster, mycket vanliga i Sverige) har ett eget syskon 1005013070329013 (25,49 USD, 1 m, svart)"
+    ]
+   },
+   "rank_forklaring": "exploitation: vinnarlikhet 3×2 + ekonomi 2 + säsong 2 + creative 1 + lucka 3 + signalbonus -0.1 [arketyp=B_SKYDDA_DYRT 10V/4F (+0.4); form=annat 0V/15F (-1.0); prisband=500–999 13V/5F (+0.4)] = 13.9",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen kopia under oss — PriceRunner 'kölskydd båt' / 'keelguard' / 'kölskydd' ger bara KeelShield/Plastimo 2 069–5 282 och båtpresenningar",
+     "pris_sek": null,
+     "url": "https://www.pricerunner.se/search?q=k%C3%B6lskydd%20b%C3%A5t",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "KeelShield Kölskydd 1,22 m svart (PriceRunner 2026-09-29); KeelShield 1,83 m 3 269; Plastimo Keelshield 6\" 1,83 m 2 549; Watski för Keelshield svart/vit (pris ej läst ur sidan)",
+     "pris_sek": 2069,
+     "url": "https://www.pricerunner.se/pl/630-3206966914/Baattillbehoer/KeelShield-Keelshield-Koelskydd-1-22Msvart-priser",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 2.6,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se ('kölskydd båt' 20 träffar: Plastimo 2 549, KeelShield 2 069; 'keelguard' 15: KeelShield 2 069/3 269/5 282, KeelGuard SkegGuard 2 254; 'kölskydd': samma)",
+     "watski.se ('kölskydd': Keelshield Kölskydd Svart/Vit i sortiment, pris ej utläst ur sidan; 'keelguard': ingen träff)",
+     "hjertmans.se ('kölskydd': inget i svaret)",
+     "biltema.se / jula.se (oläst)"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron är en textfri packshot på vitt: vit list i rulle med rött skyddspapper, primerkudde och gul skrapa — ingen båt i bild; creativen måste byggas på egen bild av listen på en köl (skrapmärken bredvid)"
+   },
+   "meta_tanke": {
+    "hook": "Skrapmärken under fören efter sommaren?",
+    "objekt_i_bild": "båtens köl på trailern med listen påsatt, skrapmärkena bredvid",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "listen tar rampen och stenarna i stället för gelcoaten — limmas på nu när skrovet är torrt"
+   },
+   "listning": {
+    "product_id": "1005012725075740",
+    "url": "https://www.aliexpress.com/item/1005012725075740.html",
+    "pris_usd": 25.69,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-29T07:08:18Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-29/v3/bilder/1005012725075740.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "vit list med primer + skrapa ('Complete Installation Kit'), längd står inte i titeln (ej mätt — måste frågas leverantören); syskon: 1005013070329013 (25,49 USD, svart 1 m 'For Aluminum Boat', LIVE 07:08:23Z, hero sedd: svart rulle med rött skyddspapper) och 1005012309306157 (9,75 USD, 1 m med primer, LIVE 07:08:21Z, ej hero); 1005012950044274 (49,24 USD, sökträff) för dyr",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 3,
+    "meta_creative": 1,
+    "efterfragan": 1,
+    "lucka": 3,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012725075740.html",
+    "https://www.aliexpress.com/item/1005013070329013.html",
+    "https://www.aliexpress.com/item/1005012309306157.html",
+    "https://www.pricerunner.se/search?q=k%C3%B6lskydd%20b%C3%A5t",
+    "https://www.pricerunner.se/search?q=keelguard",
+    "https://www.watski.se/search?q=k%C3%B6lskydd"
+   ]
+  },
+  {
+   "product_id": "1005010480947261",
+   "titel": "Vedmåttet på svärdet",
+   "url": "https://www.aliexpress.com/item/1005010480947261.html",
+   "pris": 14.11,
+   "valuta": "USD",
+   "pris_text": "US $14.11",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-29/v3/bilder/1005010480947261.jpg",
+   "sald": "",
+   "grupp": "NYTT: Motorsågen — vedkapningen till jämna klabbar (30/50 cm)",
+   "objekt": "NYTT: Motorsågen — vedkapningen till jämna klabbar (30/50 cm)",
+   "taggar": {
+    "objekt": "NYTT: Motorsågen — vedkapningen till jämna klabbar (30/50 cm)",
+    "form": "verktyg",
+    "arketyp": "D_SNABBARE_METOD",
+    "deadline_typ": "vedsäsong",
+    "prisband": "300–499",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Nestle Längdmätare Kolibri för Motorsåg (12–100 cm, snabbkoppling på svärdmuttern) — Skogma"
+   },
+   "ekonomi": {
+    "landad": 204,
+    "forslag_pris": 499,
+    "multipel": 2.45,
+    "be_cpa": 295,
+    "be_roas": 1.69,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     184,
+     224
+    ]
+   },
+   "namn_sv": "Vedmåttet på svärdet",
+   "status": "utforskning",
+   "poang": 9,
+   "rank_slutlig": 9,
+   "rank": 3,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 10,
+    "K2": 9,
+    "K3": 6,
+    "K4": 8,
+    "K5": 5,
+    "K6": 7,
+    "K7": 5,
+    "K8": 5,
+    "K9": 3,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "hook": "Blir klabbarna aldrig lika långa?",
+   "efter_bild": "kap-kap-kap utan måttband eller krita, sedan en jämn stapel bredvid en ojämn — payoffen är stapeln, inte verktyget",
+   "huvudrisk": "H07:s förlorarsida (Vedklyvborren 0,67) plus okänd räckvidd — syskonet anger 40–66 cm, och svensk kaminved är 30 cm, så fel variant gör produkten obrukbar för halva målgruppen.",
+   "varfor": "Fackhandeln säljer exakt formen (Cut Control 530, Nestle 839) men ingen kedja och ingen marknadsplats syns på PriceRunner — en lucka med synligt ankare 1,68× i vedsäsongens NOW-fönster, och payoffen (den jämna stapeln) syns på 3 s. Levereras som exploration: den testar om ett 499-kronors verktyg med fackhandelsankare kan slå H07:s förlorarklausul (jobb ägaren redan klarar).",
+   "konfidens": "LÅG",
+   "koncept_id": "K0360",
+   "arketyp": "D_SNABBARE_METOD",
+   "arketyp_sekundar": "A_AGARE_FRIKTION",
+   "slot": "exploration",
+   "hypotes_id": "H10",
+   "sasong": {
+    "fonster_id": "vedsasong",
+    "deadline_typ": "vedsäsong",
+    "veckor_kvar": 2.3,
+    "timing": "NOW",
+    "kommentar": "objektraden saknas i sasong.json — fönstret vedsasong (Vedstapeln) valt: kapning och stapling sker sept–nov inför eldningsstart (vedmatch.se i SASONG.md)"
+   },
+   "vinnarlikhet": {
+    "likast": "Sotarset Med Böjliga Stänger",
+    "delade_variabler": [
+     "arketyp D_SNABBARE_METOD + form verktyg",
+     "deadline rätt: vedsäsong NOW 2,3 v (sotarsetet: vedsäsong)",
+     "prisband 300–499 (sotarsetet 300–499)",
+     "ägare 55+ småhus/gård med egen ved och motorsåg",
+     "en variant, inget att mäta, montering utan verktyg (svärdbulten/svärdmuttern)"
+    ],
+    "avvikelser": [
+     "old way = improvisation (måttband, ögonmått, ristad linje på svärdet) — inte tjänst. Det är H07:s förlorarsida (verktyg som ersätter ett jobb ägaren redan klarar: Vedklyvborren 1 976 / 3 / 0,67); raden testar om synlig payoff (jämn stapel) + fackhandelsankare räcker ändå",
+     "objekt ute ja (sotarsetet inne) men objektet är billigt (måttbandet), det dyra (motorsågen) är bäraren",
+     "hero är en 3D-rendering utan ved i bild — kontextklipp (skivan mot stockänden, kap-kap-kap, stapeln) måste skjutas själv",
+     "räckvidd ej mätt på huvudlistningen; syskonet anger 40–66 cm, vilket inte når svensk kaminved 30 cm"
+    ]
+   },
+   "rank_forklaring": "exploration: hypotesvärde 2×2 + nyhet 2 + creative 2 + ekonomi 1 = 9",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Skogma — Cut Control Längdmätare (monteras på svärdets främre fästbult, ändskiva mot stockkanten, 200 g)",
+     "pris_sek": 530,
+     "url": "https://skogma.se/p/cut-control-laengdmaetare/290150/",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Nestle Längdmätare Kolibri för Motorsåg (12–100 cm, snabbkoppling på svärdmuttern) — Skogma",
+     "pris_sek": 839,
+     "url": "https://skogma.se/p/nestle-laengdmaetare-kolibri-foer-motorsag/630741/",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.68,
+    "ankare_kvot_kommentar": "Kolibri 839/499 = 1,68; Cut Control 530/499 = 1,06 — golvet i exakt form ligger ÖVER oss, inte under (fackhandel, 2 varianter, inte sortiment)",
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "skogma.se kategori Skärhjälpmedel & Längdmätare + Vedkapning (Cut Control 530, Nestle Kolibri 839, adapter 96/424) 2026-09-29",
+     "pricerunner.se 'vedmått' (3 stickmått), 'vedmått motorsåg' (bara motorsågar), 'kapmått' (köksmått), 'mätsticka motorsåg' (Husqvarna kombimall/ryttarmall 50–139 = filmallar, annan sak), 'mätsticka ved' (köksmått) — 0 i formen 2026-09-29",
+     "granngarden.se sök (JSON utan pris — namn utan vedmått), skogma.se sök (JS-skal; kategorisidorna lästa i stället) 2026-09-29",
+     "jula.se / biltema.se / clasohlson.com / rusta.com (404) / bauhaus.se (404) / amazon.se / fyndiq / cdon — oläst"
+    ]
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron: 3D-render av röd teleskopstång med svart ändskiva monterad vid svärdbulten på en gul batterisåg, vit botten, ingen text — men ingen ved. Syskonet 1005006159923444 visar stången på en röd bensinsåg med en stock i bild (textfri) och ska användas som referens. Payoffklippet (skivan mot stockänden → kap → jämn stapel) måste skjutas själv.",
+    "hero_syskon": "korningar/2026-09-29/v3/bilder/1005006159923444.jpg"
+   },
+   "meta_tanke": {
+    "hook": "Blir klabbarna aldrig lika långa?",
+    "objekt_i_bild": "stången på svärdet, ändskivan mot stockänden, tre kap i rad, sedan stapeln där alla klabbar ligger i linje",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "kap-kap-kap utan måttband eller krita, sedan en jämn stapel bredvid en ojämn — payoffen är stapeln, inte verktyget"
+   },
+   "listning": {
+    "product_id": "1005010480947261",
+    "url": "https://www.aliexpress.com/item/1005010480947261.html",
+    "pris_usd": 14.11,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-29T07:06:43Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-29/v3/bilder/1005010480947261.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant: teleskopstång i aluminium med ändskiva, fästs vid svärdets fästbult (titel: 'Quick Measure Firewood Length Adjustable Aluminum Measuring Tool'); räckvidd står inte i titeln. Syskon i samma form: 1005011824280922 (11,89 USD, 'Attaches to Chainsaw Bar, Telescoping Shaft 16inch to 26inch' = 40–66 cm, LIVE 07:06:48Z, hero sedd = packshot) och 1005006159923444 (22,38 USD, magnetisk stång, LIVE 07:06:45Z, hero sedd: stången på sågen bredvid en stock, textfri — bästa creative-referensen).",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 1,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005010480947261.html",
+    "https://www.aliexpress.com/item/1005011824280922.html",
+    "https://www.aliexpress.com/item/1005006159923444.html",
+    "https://skogma.se/p/cut-control-laengdmaetare/290150/",
+    "https://skogma.se/p/nestle-laengdmaetare-kolibri-foer-motorsag/630741/",
+    "https://skogma.se/skog/produkter-foer-skogsbruk/skaerhjaelpmedel-laengdmaetare/",
+    "https://www.pricerunner.se/search?q=vedm%C3%A5tt",
+    "https://www.pricerunner.se/search?q=m%C3%A4tsticka%20motors%C3%A5g"
+   ]
+  },
+  {
+   "product_id": "1005010294815366",
+   "titel": "Sopkärlets lockrem 2-pack",
+   "url": "https://www.aliexpress.com/item/1005010294815366.html",
+   "pris": 8.32,
+   "valuta": "USD",
+   "pris_text": "US $8.32",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-28/v3/bilder/1005010294815366.jpg",
+   "sald": "",
+   "grupp": "NYTT: Sopkärlets lockrem — locket hålls stängt mot skator och vind",
+   "objekt": "NYTT: Sopkärlets lockrem — locket hålls stängt mot skator och vind",
+   "taggar": {
+    "objekt": "NYTT: Sopkärlets lockrem — locket hålls stängt mot skator och vind",
+    "form": "annat",
+    "arketyp": "A_AGARE_FRIKTION",
+    "deadline_typ": "höstregn",
+    "prisband": "300–499",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "ej mätt — ingen märkesvara i formen; fodertunna med låsbart lock 80 L (V-Plast) 269 kr är närmaste 'låst lock' men annan SAK"
+   },
+   "ekonomi": {
+    "landad": 120,
+    "forslag_pris": 349,
+    "multipel": 2.91,
+    "be_cpa": 229,
+    "be_roas": 1.52,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     108,
+     132
+    ]
+   },
+   "namn_sv": "(från 28/9) Sopkärlets lockrem 2-pack",
+   "status": "bevisad struktur",
+   "poang": 12.0,
+   "rank_slutlig": 12.0,
+   "rank": 1,
+   "per_kriterium": null,
+   "hook": "Skatorna hittade sopkärlet igen?",
+   "efter_bild": "kroken hakas på kärlkanten, remmen dras över locket, kroken på lockkanten — skatan landar, locket rör sig inte; sedan: vinden tar locket på grannens kärl, inte på detta",
+   "huvudrisk": "Friktionen är inte mätt för svenska kärl (locken är tunga och stängs av sig själva; skatorna tar mest lösa påsar) och tömningsdagen kräver att remmen hakas av — glöms det töms inte kärlet.",
+   "varfor": "Samma flerköpsstruktur som spöklämman (< 350 kr, 2-pack, ägt objekt ute, improvisation som default) på ett objekt varje hushåll har flera av, och formen saknas i svenskt flöde på sex PriceRunner-sökningar. Ingen skruv i kommunens kärl — hakas på och av.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0350",
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "I_FLERKOP",
+   "slot": "exploitation",
+   "hypotes_id": "H08",
+   "sasong": {
+    "fonster_id": "hostregn",
+    "deadline_typ": "höstregn",
+    "veckor_kvar": 1.7,
+    "timing": "NOW",
+    "kommentar": "sasong.py --objekt Soptunnan = EVERGREEN; höstregn/höststormar valt som fönster (välta kärl, lock som slår i vind); skator/kråkor är helårsproblem — uppskattning"
+   },
+   "vinnarlikhet": {
+    "likast": "Fiskespöhållaren (spöklämma 4-pack)",
+    "delade_variabler": [
+     "A_AGARE_FRIKTION på ägt objekt ute",
+     "flerkop_ja (2-pack, ett par per kärl, 2–4 kärl per hushåll)",
+     "old way improvisation (tegelsten/spännband/gummiband — svikande default, H03)",
+     "< 300–349 kr, en variant, universal (rem 60–122 cm, krokar 38 mm)",
+     "golv under nej (PriceRunner 0 i formen)",
+     "montering utan verktyg — hakas på lockkant och kärlkant, inget hål i kommunens kärl"
+    ],
+    "avvikelser": [
+     "ingen 'kaos → ordning'-bild, utan 'stängt → öppet'",
+     "remmen måste hakas av före tömning (sidlastaren tippar kärlet) — en handling per tömningsdag",
+     "hero är AI-komposit med björn/tvättbjörn (US-djur) som måste beskäras"
+    ]
+   },
+   "rank_forklaring": "exploitation: vinnarlikhet 3×2 + ekonomi 1 + säsong 2 + creative 2 + lucka 3 + signalbonus -2.0 [arketyp=A_AGARE_FRIKTION 2V/8F (-0.6); form=annat 0V/15F (-1.0); prisband=300–499 7V/16F (-0.4)] = 12.0",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen svensk aktör hittad i exakt form (rem/lås som håller sopkärlets lock stängt). PriceRunner 2026-09-28: 'sopkärl locklås' 4 träffar 0 i formen (kolfilterlock, kommodvattenlås, barnlås), 'soptunna lockhållare' 2 träffar 0 i formen, 'sopkärl rem' 1 träff 0 i formen, 'soptunna lock vind' 11 träffar 0 i formen (fodertunnor), 'sopkärl lås' 12 träffar 0 i formen (vattenlås), 'sopkärl lockstöd' 0 i formen",
+     "pris_sek": null,
+     "url": "https://www.pricerunner.se/search?q=sopk%C3%A4rl%20lockl%C3%A5s",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "ej mätt — ingen märkesvara i formen; fodertunna med låsbart lock 80 L (V-Plast) 269 kr är närmaste 'låst lock' men annan SAK",
+     "pris_sek": null,
+     "url": "https://www.pricerunner.se/search?q=soptunna%20lock%20vind",
+     "i_sortiment": false
+    },
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se 'sopkärl locklås' 2026-09-28: 0 i formen",
+     "pricerunner.se 'soptunna lockhållare' 2026-09-28: 0 i formen",
+     "pricerunner.se 'sopkärl rem' 2026-09-28: 0 i formen",
+     "pricerunner.se 'soptunna lock vind' 2026-09-28: 0 i formen",
+     "pricerunner.se 'sopkärl lås' 2026-09-28: 0 i formen",
+     "pricerunner.se 'sopkärl lockstöd' 2026-09-28: 0 i formen",
+     "bauhaus.se 'sopkärl lock' (404), jula.se/biltema.se (403), k-rauta.se (JS-skal) — oläst"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron: grönt 240 L-kärl med två remmar monterade + två remmar bredvid — textfri (bara 'TIDY MAN' tryckt på kärlet) men AI-komposit med björn, tvättbjörn och råtta ovanpå som måste beskäras; syskonet 1005012347794265 bild 2 (korningar/2026-09-28/v3/bilder/1005012347794265-2.jpg) visar remmen på ett kärl i verklig trädgård med rubriktext — bättre kontextreferens. Svensk creative: skata på kärlkanten, lock som fladdrar, remmen på — stängt.",
+    "hero_syskon": "korningar/2026-09-28/v3/bilder/1005012347794265-2.jpg"
+   },
+   "meta_tanke": {
+    "hook": "Skatorna hittade sopkärlet igen?",
+    "objekt_i_bild": "sopkärlet vid tomtgränsen med locket uppslaget och påsar utdragna på marken, skata på kanten",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "kroken hakas på kärlkanten, remmen dras över locket, kroken på lockkanten — skatan landar, locket rör sig inte; sedan: vinden tar locket på grannens kärl, inte på detta"
+   },
+   "listning": {
+    "product_id": "1005010294815366",
+    "url": "https://www.aliexpress.com/item/1005010294815366.html",
+    "pris_usd": 8.32,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-28T09:04:58Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-28/v3/bilder/1005010294815366.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "bild 2 (sedd): '2 Pack, Fully Adjustable Slide Buckle', krok 1,5 tum (38 mm) × 0,32 tum tjock, rem min 23,6 tum (60 cm) – max 48 tum (122 cm). Bild 3 (sedd): fyra steg — haka kroken på kärlkanten, justera, haka andra kroken på lockkanten. En variant (svart). Syskon i samma form: 1005012347794265 'Double Claw Windproof' metallkrokar 23,29 USD (LIVE 09:05:01Z, hero + bild 2 sedda: remmen monterad på 240 L-kärl i trädgård, packstorlek ej läst) och 1005012600928981 lockklämma 2 st 5,74 USD (LIVE 09:05:04Z, hero sedd: grön plastklämma på kärlhörn, textfri). 1005009990087189 (9,55 USD, hero med två sopkärl) kräver skruv i kärlet — struken för Sverige (kommunens kärl).",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 3,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 3,
+    "ekonomi": 1,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005010294815366.html",
+    "https://www.aliexpress.com/item/1005012347794265.html",
+    "https://www.aliexpress.com/item/1005012600928981.html",
+    "https://www.pricerunner.se/search?q=sopk%C3%A4rl%20lockl%C3%A5s",
+    "https://www.pricerunner.se/search?q=soptunna%20lock%20vind",
+    "https://www.pricerunner.se/search?q=sopk%C3%A4rl%20l%C3%A5s"
+   ],
+   "fran_datum": "2026-09-28"
+  },
+  {
+   "product_id": "1005012868726670",
+   "titel": "Sopkärlets vägglist 2-pack",
+   "url": "https://www.aliexpress.com/item/1005012868726670.html",
+   "pris": 9.02,
+   "valuta": "USD",
+   "pris_text": "US $9.02",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-28/v3/bilder/1005012868726670.jpg",
+   "sald": "",
+   "grupp": "NYTT: Sopkärlets vägglist — kärlet blåser inte omkull i storm",
+   "objekt": "NYTT: Sopkärlets vägglist — kärlet blåser inte omkull i storm",
+   "taggar": {
+    "objekt": "NYTT: Sopkärlets vägglist — kärlet blåser inte omkull i storm",
+    "form": "annat",
+    "arketyp": "A_AGARE_FRIKTION",
+    "deadline_typ": "höstregn",
+    "prisband": "500–999",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "ej mätt i samma form — strukturankaret är sopkärlsskjulet: vidaXL skjul för 2 sopkärl 3 779 kr, för 3 st 5 818 kr (PriceRunner 'wheelie bin' 2026-09-28) — annan form, inte prisankare"
+   },
+   "ekonomi": {
+    "landad": 261,
+    "forslag_pris": 599,
+    "multipel": 2.3,
+    "be_cpa": 338,
+    "be_roas": 1.77,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     235,
+     287
+    ]
+   },
+   "namn_sv": "(från 28/9) Sopkärlets vägglist 2-pack",
+   "status": "utforskning",
+   "poang": 12,
+   "rank_slutlig": 12,
+   "rank": 2,
+   "per_kriterium": null,
+   "hook": "Ligger sopkärlet på uppfarten igen?",
+   "efter_bild": "två skruvar i fasaden, kärlet rullas in under listen, någon drar i kärlet — det står; klipp på höststorm mot samma kärl",
+   "huvudrisk": "Friktionen är inte mätt (hur ofta välter kärl i Sverige?) och Jula/Biltema är oläsbara — en galvad sopkärlshållare kan ligga där för 149 kr; blå färg och packshot-hero kräver egen creative.",
+   "varfor": "Objektet finns i varje hushåll (2–4 kärl sedan fyrfackssystemet), friktionen syns på 3 s (välta kärl på tömningsdagen i höststorm) och formen saknas helt i svenskt flöde — nio PriceRunner-sökningar utan en enda träff i formen. Samma struktur som klistermärkena (sopkärlet + noll förklaring) fast med friktion i stället för dekor, och flerköp inbyggt.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0351",
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploration",
+   "hypotes_id": "H10",
+   "sasong": {
+    "fonster_id": "hostregn",
+    "deadline_typ": "höstregn",
+    "veckor_kvar": 1.7,
+    "timing": "NOW",
+    "kommentar": "sasong.py --objekt Sopkärlet = EVERGREEN (ingen objektrad); fönstret höstregn valt för höststormarna okt–nov då kärlen välter på tömningsdagen — uppskattning, ingen extern källa"
+   },
+   "vinnarlikhet": {
+    "likast": "Soptunneklistermärkena",
+    "delade_variabler": [
+     "samma objekt (sopkärlet) — objekt alla har, ute, billig<1tkr",
+     "agare_55plus_smahus",
+     "old way ingenting/improvisation (tegelsten på locket, kärlet mot väggen, spännband)",
+     "flerkop_ja (2–4 kärl per hushåll sedan fyrfackssystemet)",
+     "montering utan app/elektriker (två skruvar i fasaden)",
+     "golv under nej — PriceRunner 0 i formen på nio sökningar"
+    ],
+    "avvikelser": [
+     "friktion (kärlet omkull, soporna över uppfarten) i stället för ren nyhet — klistermärkena hade noll friktion",
+     "kräver att kärlet står vid en vägg/plank",
+     "blå färg i listningen (55+ vill ha svart/galv) — färgvariant ej läst",
+     "hero är packshot, kontextbilderna är kompositer"
+    ]
+   },
+   "rank_forklaring": "exploration: hypotesvärde 3×2 + nyhet 3 + creative 1 + ekonomi 2 = 12",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen svensk aktör hittad i exakt form (vägglist/fäste som håller sopkärlet upprätt). PriceRunner 'sopkärlshållare' 2026-09-28: 20 träffar, 0 i formen (badrumshållare); 'soptunnehållare' 0 träffar; 'kärlhållare' 0 i formen; 'sopkärl fixering'/'sopkärl vägg fäste galvad'/'soptunna fäste' 0 i formen; 'wheelie bin' ger bara skjul 1 579–8 839 kr (vidaXL)",
+     "pris_sek": null,
+     "url": "https://www.pricerunner.se/search?q=sopk%C3%A4rlsh%C3%A5llare",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "ej mätt i samma form — strukturankaret är sopkärlsskjulet: vidaXL skjul för 2 sopkärl 3 779 kr, för 3 st 5 818 kr (PriceRunner 'wheelie bin' 2026-09-28) — annan form, inte prisankare",
+     "pris_sek": null,
+     "url": "https://www.pricerunner.se/search?q=wheelie%20bin",
+     "i_sortiment": false
+    },
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se 'sopkärlshållare' 2026-09-28: 0 i formen",
+     "pricerunner.se 'soptunnehållare' 2026-09-28: 0 träffar",
+     "pricerunner.se 'kärlhållare' 2026-09-28: 0 i formen",
+     "pricerunner.se 'soptunneställ' 2026-09-28: 0 i formen (notställ)",
+     "pricerunner.se 'sopkärl vindsäkring' 2026-09-28: 0 i formen",
+     "pricerunner.se 'sopkärl fixering' / 'soptunna fäste' / 'sopkärl vägg fäste galvad' / 'sopkärlshållare vägg' 2026-09-28: 0 i formen",
+     "pricerunner.se 'wheelie bin' 2026-09-28: bara skjul (vidaXL 1 579–8 839)",
+     "bauhaus.se (404 på tre sökvägar), byggmax.se (404), k-rauta.se (JS-skal 3,8 kB text), jula.se (403), beijerbygg.se (404) — oläst; en sopkärlshållare hos Jula/Biltema kan finnas utan att synas på PriceRunner"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron är en ren packshot av den blå listen på vitt (textfri). Bild 2 (tre gråa 240 L-kärl med gula lock mot putsad vägg, listen ovanför) och bild 3 (tegelvägg, kärl med blå/orange lock) är kompositer men visar SAKEN i kontext och duger som referens; annonsen behöver ett eget klipp: kärlet välter i blåst → listen skruvas fast → kärlet står. Blå färg måste bort ur bild eller bytas till svart variant (ej läst om den finns)."
+   },
+   "meta_tanke": {
+    "hook": "Ligger sopkärlet på uppfarten igen?",
+    "objekt_i_bild": "två sopkärl vid husväggen i blåst — det ena omkullvält med påsar över gruset, det andra står kvar under listen",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "två skruvar i fasaden, kärlet rullas in under listen, någon drar i kärlet — det står; klipp på höststorm mot samma kärl"
+   },
+   "listning": {
+    "product_id": "1005012868726670",
+    "url": "https://www.aliexpress.com/item/1005012868726670.html",
+    "pris_usd": 9.02,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-28T09:01:06Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-28/v3/bilder/1005012868726670.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "ur titeln 'Heavy Duty Steel Outdoor Trash Can Hook … Wind Resistant Garbage Container Coupler Wheeled Can Clip' — en variant, blå pulverlackad stålprofil 35 × 6 × 5 cm (måttbild 4 sedd), två avlånga skruvhål; kärlets bakre handtagsbalk/lockkant glider in under listen. Pris 9,02 USD per st i sökträffen. Bilder 2–3 (sedda) visar listen på vägg ovanför tre 240 L-kärl. Syskon i annan form: 1005013145671958 'Steel Trash Can Wheel Holder … Fixing Bracket' 47,29 USD (markplatta för hjulen — landar 684, struken).",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 1,
+    "efterfragan": 2,
+    "lucka": 3,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 3,
+    "hypotesvarde": 3
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012868726670.html",
+    "https://www.aliexpress.com/item/1005013145671958.html",
+    "https://www.pricerunner.se/search?q=sopk%C3%A4rlsh%C3%A5llare",
+    "https://www.pricerunner.se/search?q=soptunneh%C3%A5llare",
+    "https://www.pricerunner.se/search?q=wheelie%20bin",
+    "korningar/2026-09-28/SASONG.md rad 'Höstregn' (topp 10 okt, 1,7 v)"
+   ],
+   "fran_datum": "2026-09-28"
+  },
+  {
+   "product_id": "1005011822160178",
+   "titel": "Stuprörets uppfällbara gångjärn 2-pack",
+   "url": "https://www.aliexpress.com/item/1005011822160178.html",
+   "pris": 8.45,
+   "valuta": "USD",
+   "pris_text": "US $8.45",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-28/v3/bilder/1005011822160178.jpg",
+   "sald": "",
+   "grupp": "NYTT: Stuprörets utkastare — gångjärnet som fäller upp den för krattan och snöskoveln",
+   "objekt": "NYTT: Stuprörets utkastare — gångjärnet som fäller upp den för krattan och snöskoveln",
+   "taggar": {
+    "objekt": "NYTT: Stuprörets utkastare — gångjärnet som fäller upp den för krattan och snöskoveln",
+    "form": "annat",
+    "arketyp": "A_AGARE_FRIKTION",
+    "deadline_typ": "lövfällning",
+    "prisband": "300–499",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Lindab Fällbar utkastare FUTK silvermetallic 87 — 339 kr (Velltra, PriceRunner-sidan läst 2026-09-28); Wijo Fällbar utkastare 075/100 411–469 kr; Plannja Fällbar Utkastare 90 546 kr"
+   },
+   "ekonomi": {
+    "landad": 122,
+    "forslag_pris": 349,
+    "multipel": 2.86,
+    "be_cpa": 227,
+    "be_roas": 1.63,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     110,
+     134
+    ]
+   },
+   "namn_sv": "(från 28/9) Stuprörets uppfällbara gångjärn 2-pack",
+   "status": "bevisad struktur",
+   "poang": 9.0,
+   "rank_slutlig": 9.0,
+   "rank": 3,
+   "per_kriterium": null,
+   "hook": "Sparkar du loss utkastaren varje höst?",
+   "efter_bild": "en hand fäller upp utkastaren, snöskoveln/krattan går rakt under; vattnet rinner som vanligt när den är nere",
+   "huvudrisk": "Byggd för rektangulära amerikanska rör — passar den inte svenska runda 87 mm-rör är raden död oavsett ankare; 'sett innan' (fällbar utkastare är standard i bygghandeln) kan ge nej från Axel.",
+   "varfor": "H06-test med ovanligt tydligt ankare: hela fackhandeln (Lindab/Plannja/Wijo/Rias) tar 319–546 kr per fällbar utkastare, gångjärnet gör samma sak på den utkastare ägaren redan har för 175 kr/st — ordning på flera ägda saker (2–6 stuprör), textfri hero i kontext, lövfällning NOW.",
+   "konfidens": "LÅG",
+   "koncept_id": "K0352",
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploitation",
+   "hypotes_id": "H06",
+   "sasong": {
+    "fonster_id": "lovfallning",
+    "deadline_typ": "lövfällning",
+    "veckor_kvar": 2.4,
+    "timing": "NOW",
+    "kommentar": "sasong.py --objekt Stupröret = EVERGREEN, Hängrännor = lovfallning (2,4 v). Lövfällning valt: heron visar löv och vatten, utkastaren fälls upp när man krattar/lövblåser runt grunden; andra köpskälet är snöskottning (första snö Svealand 7,6 v)"
+   },
+   "vinnarlikhet": {
+    "likast": "Fiskespöhållaren (spöklämma 4-pack)",
+    "delade_variabler": [
+     "A_AGARE_FRIKTION på ägt objekt ute (utkastaren i vägen, sparkas loss, snöskoveln fastnar)",
+     "flerkop_ja (2-pack; hus har 2–6 stuprör)",
+     "old way köpt produkt som fungerar dåligt — fast utkastare som lossnar/böjs (H03)",
+     "synligt märkesankare ≥ 1,6× i samma FUNKTION: Lindab Fällbar utkastare FUTK 339 kr, Rias 319, Wijo 411–469, Plannja 546 (PriceRunner 2026-09-28) mot 175 kr/st hos oss = 1,8–3,1× (H06)",
+     "montering: åtta skruvar, ingen elektriker"
+    ],
+    "avvikelser": [
+     "formen är byggd för USA:s rektangulära 2×3-/3×4-tums stuprör — svenska rör är runda 87/100 mm; klämplattorna (bild 3 sedd) är ~30 mm breda fjäderclips som griper rörväggen och KAN sitta på ett runt rörs krön, men det är inte verifierat",
+     "funktionen finns redan i fackhandeln som komplett fällbar utkastare (319–546) — 'sett innan'-risk hos Axel",
+     "ingen kaos → ordning-bild; payoffen är 'fäll upp, kratta, fäll ner'"
+    ]
+   },
+   "rank_forklaring": "exploitation: vinnarlikhet 2×2 + ekonomi 1 + säsong 2 + creative 2 + lucka 2 + signalbonus -2.0 [arketyp=A_AGARE_FRIKTION 2V/8F (-0.6); form=annat 0V/15F (-1.0); prisband=300–499 7V/16F (-0.4)] = 9.0",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen svensk aktör i exakt form (gångjärn för eftermontering på befintlig utkastare): PriceRunner 'stuprör gångjärn' och 'utkastare gångjärn' 2026-09-28 — 0 i formen (Lindab stuprör 109–207, möbelgångjärn); 'stuprör utkastare uppfällbar' 0 träffar. Funktionen finns som komplett utkastare: Rias Fällbar utkastare 90 319 kr (lägst)",
+     "pris_sek": 319,
+     "url": "https://www.pricerunner.se/search?q=f%C3%A4llbar%20utkastare",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "Lindab Fällbar utkastare FUTK silvermetallic 87 — 339 kr (Velltra, PriceRunner-sidan läst 2026-09-28); Wijo Fällbar utkastare 075/100 411–469 kr; Plannja Fällbar Utkastare 90 546 kr",
+     "pris_sek": 339,
+     "url": "https://www.pricerunner.se/pl/1432-3202941052/Tak/Lindab-Faellbar-utkastare-FUTK-silvermetallic-87-priser",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.94,
+    "ankare_kvot_kommentar": "räknat per stuprör: Lindab 339 / (349 ÷ 2 = 175) = 1,94; Rias 319/175 = 1,82; Plannja 546/175 = 3,1. Räknat per paket (339/349 = 0,97) finns inget ankare — kunden med fyra stuprör jämför 698 mot 1 356",
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se 'fällbar utkastare' 2026-09-28: Rias 319, Lindab 339, Wijo 411/469, Plannja 546 ×2 (6 varianter, alla kompletta utkastare)",
+     "pricerunner.se/pl/1432-3202941052 Lindab FUTK: 339 kr Velltra, läst 2026-09-28",
+     "pricerunner.se 'stuprör gångjärn' / 'utkastare gångjärn' / 'stuprör utkastare uppfällbar' / 'lövutkastare stuprör' (Lindab UTK fast 119, Wijo 123) 2026-09-28",
+     "bauhaus.se/byggmax.se/k-rauta.se/beijerbygg.se: 404/JS-skal — oläst"
+    ]
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron är ett textfritt collage: fyra stuprör med vatten och löv runt utkastaren + gångjärnet monterat i mitten — SAKEN och problemet syns. Bild 3 (hand håller gångjärnet, clipsen synliga) och bild 4 (utkastaren uppfälld mot husvägg, gräsmatta) sedda. Svensk creative måste visa ett RUNT Lindab-rör — annars ser 55+-tittaren ett amerikanskt rör och känner inte igen sitt."
+   },
+   "meta_tanke": {
+    "hook": "Sparkar du loss utkastaren varje höst?",
+    "objekt_i_bild": "stuprörets utkastare vid husgrunden, löv och kratta runt den — utkastaren fälls upp mot väggen med en hand, krattan går fritt, fälls ner när regnet kommer",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "en hand fäller upp utkastaren, snöskoveln/krattan går rakt under; vattnet rinner som vanligt när den är nere"
+   },
+   "listning": {
+    "product_id": "1005011822160178",
+    "url": "https://www.aliexpress.com/item/1005011822160178.html",
+    "pris_usd": 8.45,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-28T09:01:19Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-28/v3/bilder/1005011822160178.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "titel 'Flip-Up Downspout Hinge 2pcs Waterproof Extension' — 2 st aluminiumgångjärn med clips + 8 skruvar + bricka (bild 4 sedd), en variant, silver. Sökträffens titel: 'Innovative Flip Design Gutter Extension Hinge Anti-slip Durable Downspout'. Syskon i samma form: 1005013236212506 (2 st 4,42 USD, LIVE 09:01:13Z, hero = AI-vardagsrum, struken på hero), 1005013191790196 (2 set 4,79 USD, LIVE 09:01:16Z, hero i kontext med text 'Rectangle Square'), 1005009439821930 AT14 rostfri (11,16 USD, LIVE 09:01:21Z, texttung hero). Passform: ingen listning nämner runda rör — 'downspout hinge round pipe' gav bara möbelgångjärn.",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 1,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005011822160178.html",
+    "https://www.aliexpress.com/item/1005013191790196.html",
+    "https://www.aliexpress.com/item/1005009439821930.html",
+    "https://www.pricerunner.se/search?q=f%C3%A4llbar%20utkastare",
+    "https://www.pricerunner.se/pl/1432-3202941052/Tak/Lindab-Faellbar-utkastare-FUTK-silvermetallic-87-priser",
+    "https://www.pricerunner.se/search?q=stupr%C3%B6r%20g%C3%A5ngj%C3%A4rn",
+    "korningar/2026-09-28/SASONG.md rad 'Lövfällning' (topp 15 okt, 2,4 v)"
+   ],
+   "fran_datum": "2026-09-28"
+  },
+  {
+   "product_id": "1005012793616870",
+   "titel": "Ekorrbordet med parasoll",
+   "url": "https://www.aliexpress.com/item/1005012793616870.html",
+   "pris": 21.33,
+   "valuta": "USD",
+   "pris_text": "US $21.33",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-28/v3/bilder/1005012793616870.jpg",
+   "sald": "",
+   "grupp": "NYTT: Ekorrbordet med parasoll — ekorren sitter vid bordet och äter majskolven",
+   "objekt": "NYTT: Ekorrbordet med parasoll — ekorren sitter vid bordet och äter majskolven",
+   "taggar": {
+    "objekt": "NYTT: Ekorrbordet med parasoll — ekorren sitter vid bordet och äter majskolven",
+    "form": "annat",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "vintermatning",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Vivara Ekorrbo (närmaste ekorrobjekt i fackhandeln — annan form, hus); Wildlife Garden Ekorrmatare lockbox 489 (annan form)"
+   },
+   "ekonomi": {
+    "landad": 308,
+    "forslag_pris": 599,
+    "multipel": 1.94,
+    "be_cpa": 290,
+    "be_roas": 2.06,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     278,
+     339
+    ]
+   },
+   "namn_sv": "(från 28/9) Ekorrbordet med parasoll",
+   "status": "utforskning",
+   "poang": 9,
+   "rank_slutlig": 9,
+   "rank": 4,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 14,
+    "K3": 10,
+    "K4": 6,
+    "K5": 6,
+    "K6": 10,
+    "K7": 4,
+    "K8": 8,
+    "K9": 4,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "hook": "Har ekorren ett eget bord hos dig?",
+   "efter_bild": "ekorren hoppar upp, sätter sig vid bordet och äter — filmat genom köksfönstret, frost på gräset",
+   "huvudrisk": "Hero är en inomhuspackshot utan ekorre — creativen måste filmas själv; utan ankare i exakt form är 599 satt på upplevt värde (Ekorrbo 959,92 är ett annat objekt), och ekorrmatare finns i lockboxform 139–489 ('kedjan har den'-risk på kategorin).",
+   "varfor": "Formen finns inte i svensk handel (PriceRunner/Vivara 0 i formen 2026-09-28) medan ekorrburken fick ja i går och vintermatningen toppar om 4 v — rent H10-test på det vilda djur alla 55+ redan ser på tomten, med en mekanism som är videon i sig.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0353",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploration",
+   "hypotes_id": "H10",
+   "sasong": {
+    "fonster_id": "vintermatning_faglar",
+    "deadline_typ": "vintermatning",
+    "veckor_kvar": 3.9,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Isolerade Utekattkojan (REAL_WINNER) + Ekorrburken K0347 (ja 09-27)",
+    "delade_variabler": [
+     "älskat djur ute",
+     "55+ småhus vid köksfönstret",
+     "datum (vintermatning NOW)",
+     "old way ingenting / nötter på marken"
+    ],
+    "avvikelser": [
+     "ekorren är vild, inte ägd",
+     "ingen skada att skydda mot — ren nyhet",
+     "hero är en inomhuspackshot utan ekorre"
+    ]
+   },
+   "rank_forklaring": "exploration: hypotesvärde 2×2 + nyhet 3 + creative 1 + ekonomi 1 = 9",
+   "asymmetrisk": true,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "PriceRunner: ingen ekorrbord/picknickbord för ekorrar i handeln — enda träffen är Baker Ross 'Squirrel Feeder Wooden Picnic Table Kit' (pysselkit för barn, annan produkt)",
+     "pris_sek": 37.76,
+     "url": "https://www.pricerunner.se/pl/456-3328979840/Husdjur/Baker-Ross-Squirrel-Feeder-Wooden-Picn",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "Vivara Ekorrbo (närmaste ekorrobjekt i fackhandeln — annan form, hus); Wildlife Garden Ekorrmatare lockbox 489 (annan form)",
+     "pris_sek": 959.92,
+     "url": "https://www.vivara.se/ekorrbo",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.6,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se 'ekorrbord' (0 i formen), 'ekorre bord' (0), 'ekorrmatare bänk' (0), 'majskolv ekorre' (0), 'ekorrgunga' (0), 'picnic table squirrel' (bara Baker Ross-kitet), 'ekorrmatare' (lockbox 139 / Galiano 349,90 / Wildlife Garden 489 / Metalltak 109–159), 'ekorrholk' (Lifetime 369), 'ekorrbo' (Ekorrbo Grön 1 199,90)",
+     "vivara.se 2026-09-28: ekorrmatare-galiano, ekorrmatare-metall, ekorrmatare-sanjo-byggsats, victoria-ekorrmatare (alla lockbox), ekorrbo 959,92 — inget bord",
+     "granngarden.se/jula/clas/fyndiq/cdon/amazon — oläst enligt protokollet"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video) — men ekorren som sätter sig vid bordet under parasollet ÄR videon",
+    "kommentar": "textfri packshot på ett skrivbord inomhus (tavla i bakgrunden), ingen ekorre, ingen majskolv i bild; rött parasoll, bränd furu; filen är WebP trots .jpg-namnet"
+   },
+   "meta_tanke": {
+    "hook": "Har ekorren ett eget bord hos dig?",
+    "objekt_i_bild": "ekorren som sitter på bänken under parasollet och gnager på majskolven",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "ekorren hoppar upp, sätter sig vid bordet och äter — filmat genom köksfönstret, frost på gräset"
+   },
+   "listning": {
+    "product_id": "1005012793616870",
+    "url": "https://www.aliexpress.com/item/1005012793616870.html",
+    "pris_usd": 21.33,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-28T08:56:28Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-28/v3/bilder/1005012793616870.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant enligt titeln (bord + bänkar + ryggstöd + parasoll, majskolvhållare + jordnötsbricka); parasollfärg står inte i titeln — ej verifierad",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 1,
+    "efterfragan": 2,
+    "lucka": 3,
+    "ekonomi": 1,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 3,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/w/wholesale-squirrel-picnic-table-feeder.html",
+    "https://www.aliexpress.com/w/wholesale-squirrel-chair-feeder-corn-cob-holder.html",
+    "https://www.pricerunner.se/search?q=ekorrbord",
+    "https://www.pricerunner.se/search?q=picnic%20table%20squirrel",
+    "https://www.pricerunner.se/search?q=ekorrmatare",
+    "https://www.vivara.se/ekorrbo"
+   ],
+   "fran_datum": "2026-09-28"
+  },
+  {
+   "product_id": "1005013242685679",
+   "titel": "Surdegssetet 15 delar med jäskorg",
+   "url": "https://www.aliexpress.com/item/1005013242685679.html",
+   "pris": 24.05,
+   "valuta": "USD",
+   "pris_text": "US $24.05",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-28/v3/bilder/1005013242685679.jpg",
+   "sald": "",
+   "grupp": "NYTT: Surdegssetet med jäskorg, burk och lame — hemmabagarens första surdegsbröd före jul",
+   "objekt": "NYTT: Surdegssetet med jäskorg, burk och lame — hemmabagarens första surdegsbröd före jul",
+   "taggar": {
+    "objekt": "NYTT: Surdegssetet med jäskorg, burk och lame — hemmabagarens första surdegsbröd före jul",
+    "form": "låda",
+    "arketyp": "G_Q4_GAVA",
+    "deadline_typ": "fars dag",
+    "prisband": "500–999",
+    "ankare_klass": "golv utan ankare",
+    "ankare_kalla": "Bryggahemma 'Surdegskit Large' (oval + rund jäskorg, liners, dansk visp, rakbladskniv, 2 skrapor, 2 silikonskjortor, 32 oz-burk + spatel — ca 11 delar)"
+   },
+   "ekonomi": {
+    "landad": 348,
+    "forslag_pris": 649,
+    "multipel": 1.86,
+    "be_cpa": 301,
+    "be_roas": 2.16,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     313,
+     383
+    ]
+   },
+   "namn_sv": "(från 28/9) Surdegssetet 15 delar med jäskorg",
+   "status": "säsong",
+   "poang": 9,
+   "rank_slutlig": 9,
+   "rank": 5,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 12,
+    "K3": 8,
+    "K4": 8,
+    "K5": 7,
+    "K6": 8,
+    "K7": 4,
+    "K8": 8,
+    "K9": 4,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "hook": "Har han satt sin första surdeg än?",
+   "efter_bild": "dag 1 burken matas, dag 7 snittet med lamen, brödet ur korgen — allt ur samma låda",
+   "huvudrisk": "Golv i delform under oss (FreakyKitchen 496 för 5 delar) och heron bär engelska etiketter — creativen måste byggas på egen bild; surdegen ingår inte i lådan och det måste sägas.",
+   "varfor": "Täljsetets struktur i köket: en låda med allt (korg, burk, lame, visp, skrapor, duk, recept) till en namngiven mottagare inför fars dag/jul — och svensk handel säljer bara 4–5-delars startset hos specialister (299–496) medan det enda större setet (729) är utsålt.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0354",
+   "arketyp": "G_Q4_GAVA",
+   "arketyp_sekundar": "F_HOBBY_IDENTITET",
+   "slot": "sasong",
+   "hypotes_id": "H05",
+   "sasong": {
+    "fonster_id": "fars_dag",
+    "deadline_typ": "fars dag",
+    "veckor_kvar": 5.9,
+    "timing": "NOW",
+    "alternativ": {
+     "fonster_id": "jul",
+     "veckor_kvar": 11.9,
+     "timing": "NOW"
+    }
+   },
+   "vinnarlikhet": {
+    "likast": "Täljset 30 Delar",
+    "delade_variabler": [
+     "G_Q4_GAVA",
+     "form låda/set",
+     "mottagare mannen själv/partnern med namn",
+     "deadline fars dag/jul",
+     "delarna syns i heron (15 st uppradade)",
+     "kan börja i kväll (burken matas dag 1, brödet dag 7)",
+     "prisband 500–999"
+    ],
+    "avvikelser": [
+     "objekt nej/inne (som täljsetet)",
+     "golv i delform finns hos fyra svenska specialister (299–496), täljsetet hade okänt golv",
+     "kunden får 15 delar men inte surdegen själv — den odlas på mjöl och vatten"
+    ]
+   },
+   "rank_forklaring": "säsong: säsong 3×2 + efterfrågan 2 + ekonomi 1 = 9",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Suradegen.se 'Startkit surdeg' (glasburk 1 L + slev + tidsremsa + tygskydd — 4 delar, ingen jäskorg/lame)",
+     "pris_sek": 299,
+     "url": "https://www.suradegen.se/produkter/startkit-surdeg/",
+     "exakt_samma_form": false,
+     "kommentar": "FreakyKitchen 'Startset för surdegsbakning' 496 kr (rund jäskorg + burk 0,5 L + snittkniv + degskrapa + borste = 5 delar, 'skickas inom 3–6 arbetsdagar') är närmast exakt form men en tredjedel av delarna: https://www.freakykitchen.se/sv/artiklar/surdegsbakning-startset.html · Kilner Sourdough Starter Set 307 (burk, PriceRunner 09:00:50Z) · MikaMax Sourdough Starter Kit 259 (Matvaror, PriceRunner) · lyckasmedmat.se surdegskit 6 delar (burk-kit, pris ej visat)"
+    },
+    "premium_ankare": {
+     "namn": "Bryggahemma 'Surdegskit Large' (oval + rund jäskorg, liners, dansk visp, rakbladskniv, 2 skrapor, 2 silikonskjortor, 32 oz-burk + spatel — ca 11 delar)",
+     "pris_sek": 729,
+     "url": "https://www.bryggahemma.se/product/21187039/surdegskit-large",
+     "i_sortiment": false,
+     "kommentar": "UTSÅLD 2026-09-28 (WebFetch 09:05Z) — samma hyllfrånvaro som Frödinflies/Flydressing i flugbindningsraden; Brød & Taylor jäskorg boule set om 2 = 499 (PriceRunner 'jäskorg set' 09:58:00Z)"
+    },
+    "ankare_kvot": 1.12,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se ('surdegsset' 0 i exakt form, 'surdeg kit' 0, 'jäskorg set' 14, 'brödbakningsset surdeg' → Kilner 307 + MikaMax 259, 'surdegskit' 2 irrelevanta, 'kilner sourdough' — 08:53–09:00Z)",
+     "bagarenochkocken.se (kategorin 'Surdegskit' finns i sajtens meny — kategorisidan 404 via WebFetch, priser olästa)",
+     "kitchentime.se (söksidan JS-renderad, oläst)",
+     "panduro.com (sök JS-renderad, oläst)",
+     "freakykitchen.se 496 (5 delar)",
+     "bryggahemma.se 729 utsåld",
+     "suradegen.se 299 (4 delar)",
+     "lyckasmedmat.se (6 delar, pris ej visat)"
+    ]
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": false,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "Hero: alla 15 delar uppradade på ljus botten med engelska etiketter ('Scoring Lame +5 Blades', 'Banneton Bread Basket') — delarna syns på 3 s men texten måste bort; ingen inbränd brand. Alternativ 21-delarslistningen har textfri produktbild i kontext (bröd i korgarna) att bygga creative på."
+   },
+   "meta_tanke": {
+    "hook": "Har han satt sin första surdeg än?",
+    "objekt_i_bild": "burken med bubblande surdeg + brödet i jäskorgen",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "dag 1 burken matas, dag 7 snittet med lamen, brödet ur korgen — allt ur samma låda"
+   },
+   "listning": {
+    "product_id": "1005013242685679",
+    "url": "https://www.aliexpress.com/item/1005013242685679.html",
+    "pris_usd": 24.05,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-28T09:00:00Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-28/v3/bilder/1005013242685679.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant (15pc set) i titeln — färg/storlek ej mätt",
+     "video": "ej tillgänglig i containern"
+    },
+    "alternativ_listning": {
+     "product_id": "1005012876572377",
+     "pris_usd": 43.61,
+     "verifierad_at": "2026-09-28T09:00:04Z",
+     "hero": "korningar/2026-09-28/v3/bilder/1005012876572377.jpg (21 delar: två jäskorgar + burk + visp + lame + skrapor + duk, i kontext med två färdiga bröd — bästa heron, men landad 568–694 → pris 999 över ankaret 729)",
+     "kommentar": "1005013031620222 (36,60 USD, LIVE 09:00:02Z, hero sedd: burk med aktiv surdeg + korg + bröd, presentlåda 'The Complete Bread Proofing Basket' i bild) är mellanalternativet — landad 476–582 → 899."
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 3,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 1,
+    "ekonomi": 1,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005013242685679.html",
+    "https://www.aliexpress.com/item/1005012876572377.html",
+    "https://www.aliexpress.com/item/1005013031620222.html",
+    "https://www.freakykitchen.se/sv/artiklar/surdegsbakning-startset.html",
+    "https://www.bryggahemma.se/product/21187039/surdegskit-large",
+    "https://www.suradegen.se/produkter/startkit-surdeg/",
+    "https://www.lyckasmedmat.se/broedbakning/24607-startpaket-surdeg-surdegskit.html",
+    "https://www.pricerunner.se/search?q=j%C3%A4skorg%20set",
+    "https://www.pricerunner.se/search?q=br%C3%B6dbakningsset%20surdeg",
+    "https://www.pricerunner.se/search?q=surdegsset"
+   ],
+   "fran_datum": "2026-09-28"
+  },
+  {
+   "product_id": "1005012429987187",
+   "titel": "Stentrumlaren med råstenar och slipmedel",
+   "url": "https://www.aliexpress.com/item/1005012429987187.html",
+   "pris": 29.99,
+   "valuta": "USD",
+   "pris_text": "US $29.99",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-28/v3/bilder/1005012429987187.jpg",
+   "sald": "",
+   "grupp": "NYTT: Stentrumlaren — stensamlarens råstenar blir blanka ädelstenar på fyra veckor, klara till jul",
+   "objekt": "NYTT: Stentrumlaren — stensamlarens råstenar blir blanka ädelstenar på fyra veckor, klara till jul",
+   "taggar": {
+    "objekt": "NYTT: Stentrumlaren — stensamlarens råstenar blir blanka ädelstenar på fyra veckor, klara till jul",
+    "form": "annat",
+    "arketyp": "G_Q4_GAVA",
+    "deadline_typ": "julafton (trumlingen tar 4 veckor — måste starta senast v 47)",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "National Geographic Starter Rock Tumbler Kit"
+   },
+   "ekonomi": {
+    "landad": 434,
+    "forslag_pris": 799,
+    "multipel": 1.84,
+    "be_cpa": 366,
+    "be_roas": 2.19,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     390,
+     477
+    ]
+   },
+   "namn_sv": "(från 28/9) Stentrumlaren med råstenar och slipmedel",
+   "status": "säsong",
+   "poang": 9,
+   "rank_slutlig": 9,
+   "rank": 6,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 8,
+    "K2": 9,
+    "K3": 6,
+    "K4": 6,
+    "K5": 6,
+    "K6": 8,
+    "K7": 3,
+    "K8": 6,
+    "K9": 3,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "hook": "Grå sten in, ädelsten ut — på 4 veckor",
+   "efter_bild": "före/efter i samma hand, trumman snurrar i bakgrunden, dagräknaren på fyra knappar",
+   "huvudrisk": "Mottagaren är snarare barnbarnet än vuxen med namn, alla fyra heron bär vattenstämpel utan stenar i bild, och Ädelstenskalendern (K0266, ja) talar redan till samma stensamlare i butiken.",
+   "varfor": "H06 i ren form (Discovery 649 under, National Geographic 1 400 över) på en hobby-i-låda med hårt datum där maskinen själv sätter tidsgränsen: fyra veckors trumling betyder att lådan måste köpas i november för att stenarna ska vara blanka till jul.",
+   "konfidens": "LÅG",
+   "koncept_id": "K0355",
+   "arketyp": "G_Q4_GAVA",
+   "arketyp_sekundar": "F_HOBBY_IDENTITET",
+   "slot": "sasong",
+   "hypotes_id": "H06",
+   "sasong": {
+    "fonster_id": "jul",
+    "deadline_typ": "julafton (trumlingen tar 4 veckor — måste starta senast v 47)",
+    "veckor_kvar": 11.9,
+    "timing": "NOW",
+    "alternativ": {
+     "fonster_id": "fars_dag",
+     "veckor_kvar": 5.9,
+     "timing": "NOW"
+    }
+   },
+   "vinnarlikhet": {
+    "likast": "Täljset 30 Delar",
+    "delade_variabler": [
+     "G_Q4_GAVA med hårt datum (jul)",
+     "allt i lådan — maskin + råstenar + fyra slipmedel + smyckesfästen",
+     "kan börja i kväll, resultatet syns",
+     "prisband 500–999"
+    ],
+    "avvikelser": [
+     "mottagaren är oftare barnbarnet 8–14 än en vuxen med namn — linsens order sa vuxen",
+     "formen är en maskin (H12), inte delar på bordet: stenarna syns inte i någon av de fyra heron",
+     "golv Discovery 649 under vårt pris (H06-test, ankare National Geographic 1 400 = 1,75×)",
+     "alla fyra heron bär vattenstämpel",
+     "220 V/100–240 V — kontakttyp ej mätt"
+    ]
+   },
+   "rank_forklaring": "säsong: säsong 3×2 + efterfrågan 1 + ekonomi 2 = 9",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Shopping4net 'Discovery Rock Tumbler Scientific' (experimentlåda från 8 år, fri frakt 1–3 dagar)",
+     "pris_sek": 649,
+     "url": "https://www.pricerunner.se/pl/72-3444156856/Leksaker/Discovery-Rock-Tumbler-Scientific-priser",
+     "exakt_samma_form": true,
+     "kommentar": "PriceRunner 09:05Z: 'Pris 649 kr · Placering 150 i Experimentlådor' — en kopia under oss, inte sortiment (4 träffar på 'rock tumbler kit', 0 på 'stentrumlare'/'stenpolerare' i hobbyform)"
+    },
+    "premium_ankare": {
+     "namn": "National Geographic Starter Rock Tumbler Kit",
+     "pris_sek": 1400,
+     "url": "https://www.pricerunner.se/search?q=rock%20tumbler%20kit",
+     "i_sortiment": true,
+     "kommentar": "PriceRunner 09:06Z: NatGeo Starter 1 400,02 · Dan&Darci Rock Tumbler Kit 1 466,85 · National Geographic Rock Tumbling Kit 3LB 3 297 (PriceRunner 'national geographic stentrumlare' 09:02:58Z) · VEVOR Stenputsarkit 706,83 ('stenpolerare' 09:02:55Z); Amazon.se/Fyndiq säljer NatGeo Hobby-kitet men priset gick inte att läsa (JS)"
+    },
+    "ankare_kvot": 1.75,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se ('rock tumbler' → glas, 'stentrumlare' 0, 'stenpolerare' → VEVOR 707, 'national geographic stentrumlare' → Discovery 649 + NatGeo 3LB 3 297, 'rock tumbler kit' → NatGeo Starter 1 400 + Dan&Darci 1 467, 'stenslipmaskin ädelstenar' → betongslipar — 09:00–09:06Z)",
+     "pricerunner.se produktsidan Discovery (curl 09:05Z: Shopping4net 649 + 1 butik utanför PriceRunner)",
+     "WebSearch 'National Geographic Rock Tumbler pris Sverige' (Etsy DK 1 299, Amazon.se/Fyndiq/Ubuy/Jollyroom-träffar, priser olästa)",
+     "amazon.se (två produktsidor via WebFetch: JS, pris oläst)"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "Hero: vit maskin med svart trumma och fyra timerknappar, 'FitGearHaven'-vattenstämpel i sex exemplar — inga stenar, ingen payoff. Materialet är sämst i linsen; raden lever på strukturen (H06 + hårt datum), inte på bilden."
+   },
+   "meta_tanke": {
+    "hook": "Grå sten in, ädelsten ut — på 4 veckor",
+    "objekt_i_bild": "råstenarna i handen bredvid de blanka ur trumman",
+    "sjalvselekterande": false,
+    "forstas_3s": true,
+    "bevisas_visuellt": "före/efter i samma hand, trumman snurrar i bakgrunden, dagräknaren på fyra knappar"
+   },
+   "listning": {
+    "product_id": "1005012429987187",
+    "url": "https://www.aliexpress.com/item/1005012429987187.html",
+    "pris_usd": 29.99,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-28T09:04:30Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-28/v3/bilder/1005012429987187.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "100–240 V i titeln; kontakt (EU/US) ej mätt",
+     "video": "ej tillgänglig i containern"
+    },
+    "alternativ_listning": {
+     "product_id": "1005012198773641",
+     "pris_usd": 30.69,
+     "verifierad_at": "2026-09-28T09:06:27Z",
+     "hero": "korningar/2026-09-28/v3/bilder/1005012198773641.jpg (sprängskiss av trumman, säljar-id-vattenstämpel över hela bilden)",
+     "kommentar": "1005012474069251 (27,79 USD, LIVE 09:04:33Z, hero = timerknappar med kinesisk text) och 1005012372916798 (30,59 USD, LIVE 09:06:30Z, hero = maskinen bakifrån med vattenstämpel) — ingen av fyra heron duger; creative måste byggas på egen bild med stenarna före/efter."
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 1,
+    "efterfragan": 1,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 3
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012429987187.html",
+    "https://www.aliexpress.com/item/1005012198773641.html",
+    "https://www.aliexpress.com/item/1005012474069251.html",
+    "https://www.aliexpress.com/item/1005012372916798.html",
+    "https://www.pricerunner.se/pl/72-3444156856/Leksaker/Discovery-Rock-Tumbler-Scientific-priser",
+    "https://www.pricerunner.se/search?q=rock%20tumbler%20kit",
+    "https://www.pricerunner.se/search?q=national%20geographic%20stentrumlare",
+    "https://www.pricerunner.se/search?q=stenpolerare"
+   ],
+   "fran_datum": "2026-09-28"
+  },
+  {
+   "product_id": "1005012555830300",
+   "titel": "Jerkysetet i rostfritt, 5 munstycken",
+   "url": "https://www.aliexpress.com/item/1005012555830300.html",
+   "pris": 27.39,
+   "valuta": "USD",
+   "pris_text": "US $27.39",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-28/v3/bilder/1005012555830300.jpg",
+   "sald": "",
+   "grupp": "NYTT: Jerkypistolen med 5 munstycken — jägarens älgkött blir torkat kött i ugnen",
+   "objekt": "NYTT: Jerkypistolen med 5 munstycken — jägarens älgkött blir torkat kött i ugnen",
+   "taggar": {
+    "objekt": "NYTT: Jerkypistolen med 5 munstycken — jägarens älgkött blir torkat kött i ugnen",
+    "form": "låda",
+    "arketyp": "F_HOBBY_IDENTITET",
+    "deadline_typ": "fars dag",
+    "prisband": "500–999",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "ej mätt i exakt form — närmaste svenska referens är korvstopparen (Holm 426, 'Korvstoppare 3L rostfritt' 699, Costway 858, PriceRunner 'korvstoppare' 08:53:30Z) som är en annan sak (korv, inte torkat kött)"
+   },
+   "ekonomi": {
+    "landad": 396,
+    "forslag_pris": 699,
+    "multipel": 1.77,
+    "be_cpa": 303,
+    "be_roas": 2.31,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     356,
+     436
+    ]
+   },
+   "namn_sv": "(från 28/9) Jerkysetet i rostfritt, 5 munstycken",
+   "status": "säsong",
+   "poang": 8,
+   "rank_slutlig": 8,
+   "rank": 7,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 10,
+    "K2": 10,
+    "K3": 8,
+    "K4": 7,
+    "K5": 8,
+    "K6": 9,
+    "K7": 4,
+    "K8": 6,
+    "K9": 4,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "hook": "Vad gör han med 40 kilo älgkött?",
+   "efter_bild": "färsen in i röret, strimlorna ut på gallret, torkat kött i burken på passet",
+   "huvudrisk": "Formen är närmare verktyg än set (7 delar) och F_HOBBY_IDENTITET är 0/1 i kontot; utan ankare kan 699 se dyrt ut mot vad kunden ser på Amazon.se (oläst).",
+   "varfor": "Äkta hyllucka (noll svenska säljare på sex PriceRunner-sökningar + WebSearch) på ett objekt jägaren redan har hemma i frysen, med två hårda datum i rad — älgjakt 1,4 v och fars dag 5,9 v — och en hero som visar payoffen utan text.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0356",
+   "arketyp": "F_HOBBY_IDENTITET",
+   "arketyp_sekundar": "G_Q4_GAVA",
+   "slot": "sasong",
+   "hypotes_id": "H05",
+   "sasong": {
+    "fonster_id": "fars_dag",
+    "deadline_typ": "fars dag",
+    "veckor_kvar": 5.9,
+    "timing": "NOW",
+    "alternativ": {
+     "fonster_id": "algjakt_syd",
+     "deadline_typ": "älgjaktspremiär södra/mellersta Sverige 8 okt",
+     "veckor_kvar": 1.4,
+     "timing": "NOW"
+    }
+   },
+   "vinnarlikhet": {
+    "likast": "Täljset 30 Delar",
+    "delade_variabler": [
+     "hobby med namn (jägaren med frysen full av älgkött)",
+     "set som gör att han kan börja i kväll (kött + ugn räcker)",
+     "mottagare mannen själv/partnern",
+     "deadline älgjakt syd 1,4 v + fars dag 5,9 v",
+     "ingen svensk aktör i exakt form"
+    ],
+    "avvikelser": [
+     "7 delar, inte 30 — pistolen bär bilden, inte en låda med delar",
+     "form närmare verktyg/maskin än set (LEARNING_STATE: verktyg 1 vinnare / 2 förlorare)",
+     "F_HOBBY_IDENTITET har 0 vinnare / 1 förlorare (Magnetfiskesatsen)",
+     "pris utan ankare — formeln landad × 2,4 ger 949 kr, mer än pistolen tål"
+    ]
+   },
+   "rank_forklaring": "säsong: säsong 3×2 + efterfrågan 1 + ekonomi 1 = 8",
+   "asymmetrisk": true,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen — PriceRunner 'jerky pistol' / 'jerky gun' / 'jerky maker' / 'köttspruta jerky' / 'beef jerky kit' / 'jerky pistol kött' ger bara leksakspistoler, färdig jerky och raclettejärn (08:57–09:03Z); WebSearch 'jerky gun köp Sverige' ger bara torkat kött (Jaroslavs, Jerky House, Cooperscandy)",
+     "pris_sek": null,
+     "url": "https://www.pricerunner.se/search?q=jerky%20gun",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "ej mätt i exakt form — närmaste svenska referens är korvstopparen (Holm 426, 'Korvstoppare 3L rostfritt' 699, Costway 858, PriceRunner 'korvstoppare' 08:53:30Z) som är en annan sak (korv, inte torkat kött)",
+     "pris_sek": null,
+     "url": "https://www.pricerunner.se/search?q=korvstoppare",
+     "i_sortiment": false
+    },
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se (6 sökningar, 0 jerkypistoler)",
+     "WebSearch 'jerky gun köp Sverige jerkypistol torkat kött' (0 säljare)",
+     "jaktia.se (search?q=jerky → 404 via WebFetch; söksidan via curl generisk)",
+     "hyltejaktlantman.se (svarade inte på curl, som 26/9)",
+     "Fyndiq/CDON/Amazon.se = oläst"
+    ]
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "Hero: rostfri pistol i förgrunden, fem munstycken uppradade under, torkade köttstrimlor och korvar i bakgrunden — textfri, ingen brand, payoff syns. Bäst hero av de tre listningarna."
+   },
+   "meta_tanke": {
+    "hook": "Vad gör han med 40 kilo älgkött?",
+    "objekt_i_bild": "pistolen som lägger strimlor på ugnsgallret",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "färsen in i röret, strimlorna ut på gallret, torkat kött i burken på passet"
+   },
+   "listning": {
+    "product_id": "1005012555830300",
+    "url": "https://www.aliexpress.com/item/1005012555830300.html",
+    "pris_usd": 27.39,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-28T09:04:26Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-28/v3/bilder/1005012555830300.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant i titeln (5 nozzles) — svarade tomt utan gateway-parametrar, LIVE med xman-kakan på första försöket",
+     "video": "ej tillgänglig i containern"
+    },
+    "alternativ_listning": {
+     "product_id": "1005010158352378",
+     "pris_usd": 20.19,
+     "verifierad_at": "2026-09-28T09:00:10Z",
+     "hero": "korningar/2026-09-28/v3/bilder/1005010158352378.jpg (aluminiumrör + ett munstycke, textfri packshot utan kontext)",
+     "kommentar": "landad 263–321 → pris 599 → BE-CPA 278–336; billigare men bara ett munstycke (K8 svagare). 1005013192465242 (24,99 USD, LIVE 09:00:12Z, og-titeln klipps vid tumtecknet '15\"', hero sedd: vitt rör + 2 munstycken + 2 borstar, textfri) är tredje alternativet."
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 3,
+    "efterfragan": 1,
+    "lucka": 3,
+    "ekonomi": 1,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 3,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012555830300.html",
+    "https://www.aliexpress.com/item/1005010158352378.html",
+    "https://www.aliexpress.com/item/1005013192465242.html",
+    "https://www.pricerunner.se/search?q=jerky%20gun",
+    "https://www.pricerunner.se/search?q=jerky%20maker",
+    "https://www.pricerunner.se/search?q=korvstoppare",
+    "https://en.wikipedia.org/wiki/Jerky_gun"
+   ],
+   "fran_datum": "2026-09-28"
+  },
+  {
+   "product_id": "1005011561558562",
+   "titel": "Igelkotthuset i trä med filttak",
+   "url": "https://www.aliexpress.com/item/1005011561558562.html",
+   "pris": 25.89,
+   "valuta": "USD",
+   "pris_text": "US $25.89",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-28/v3/bilder/1005011561558562.jpg",
+   "sald": "",
+   "grupp": "Igelkotten i trädgården",
+   "objekt": "Igelkotten i trädgården",
+   "taggar": {
+    "objekt": "Igelkotten i trädgården",
+    "form": "hus",
+    "arketyp": "E_VADER_SASONG",
+    "deadline_typ": "första frost",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Vivara Igelkottshus XL (fackhandel, synligt ankare); därutöver 'Igelkottshus Deluxe XXL Grön' 1 799,90 på PriceRunner (brand: null)"
+   },
+   "ekonomi": {
+    "landad": 374,
+    "forslag_pris": 649,
+    "multipel": 1.74,
+    "be_cpa": 274,
+    "be_roas": 2.36,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     337,
+     412
+    ]
+   },
+   "namn_sv": "(från 28/9) Igelkotthuset i trä med filttak",
+   "status": "säsong",
+   "poang": 7,
+   "rank_slutlig": 7,
+   "rank": 8,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 10,
+    "K3": 12,
+    "K4": 4,
+    "K5": 6,
+    "K6": 6,
+    "K7": 4,
+    "K8": 7,
+    "K9": 4,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "hook": "Var sover igelkotten hos dig i vinter?",
+   "efter_bild": "huset ställs under busken, löv läggs på taket, igelkotten kryper in i skymningen — kattens tass når inte förbi skiljeväggen",
+   "huvudrisk": "Nio svenska igelkotthus 342–659 i exakt samma form — H06 hänger på att ankaret 1,60× räcker (ATV-kapellet vann med Jula 399 under sig, kojan skalade inte); heron är oanvändbar (vattenstämpel) och listningen ströks tre gånger tidigare på > 20 USD.",
+   "varfor": "Samma struktur som kojan (älskat djur ute + kyla + hus) på det vilda djur som har hårdast datum av alla — igelkotten går i ide vid första frosten om 2,4 v; golvet 342–659 ligger under oss men Vivara Igelkottshus XL 1 039,92 ger 1,60× mot 649 = H06-test, och ekorr-/rådjursraderna fick ja i går.",
+   "konfidens": "LÅG",
+   "koncept_id": "K0357",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "B_SKYDDA_DYRT",
+   "slot": "sasong",
+   "hypotes_id": "H06",
+   "sasong": {
+    "fonster_id": "forsta_frost_mellan",
+    "deadline_typ": "första frost",
+    "veckor_kvar": 2.4,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Isolerade Utekattkojan (REAL_WINNER)",
+    "delade_variabler": [
+     "älskat djur ute i kylan",
+     "kvinna/man 55+ småhus",
+     "hårt datum (första frost 2,4 v — igelkotten går i ide)",
+     "form hus/koja",
+     "old way ingenting / lövhög"
+    ],
+    "avvikelser": [
+     "igelkotten är vild, inte ägd",
+     "golv i exakt form 342–659 i kedjan (H06-test)",
+     "hero med vattenstämpel"
+    ]
+   },
+   "rank_forklaring": "säsong: säsong 2×2 + efterfrågan 2 + ekonomi 1 = 7",
+   "asymmetrisk": true,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "PriceRunner: Tiaki Vinterresistent Igelkotthus 40,4 × 32 × 33 cm (trä, samma form)",
+     "pris_sek": 342,
+     "url": "https://www.pricerunner.se/pl/456-3375147676/Husdjur/Tiaki-Vinterresistent-Igelkotthus-40.4-x-B-32-x-H-33-cm-priser",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Vivara Igelkottshus XL (fackhandel, synligt ankare); därutöver 'Igelkottshus Deluxe XXL Grön' 1 799,90 på PriceRunner (brand: null)",
+     "pris_sek": 1039.92,
+     "url": "https://www.vivara.se/igelkotts-hus-xl",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.6,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se 'igelkotthus' + 'igelkottshus' + 'igelkottbo' 2026-09-28: Tiaki 342, Melbu Furu 464, Med Golv 499 / 589, Dehner Natura 637, Northix Kattsäker 659, Northix Upphöjt Golv 659, Deluxe XXL 1 799,90, Insektshotell XXL med igelkottshus 2 769 (9 i formen — inte sortiment 20+)",
+     "vivara.se produktsidor 2026-09-28: igelkottshus 639,92 · igelkotts-hus-xl 1 039,92 · hus för matning av igelkottar 389,80 · grind för igelkottar 103,92",
+     "pricerunner.se 'wildlife garden igelkott' — inget igelkotthus (bara prydnadsfigur 459)",
+     "naturbutiken.se — oläst (JS, ingen produktdata i HTML)",
+     "granngarden.se/jula/clas/fyndiq/cdon/amazon — oläst enligt protokollet"
+    ]
+   },
+   "material": {
+    "klass": 0,
+    "hero_textfri": false,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "packshot på vit botten med 'Produced by Stellar Home' som vattenstämpel över hela bilden — oanvändbar, egen foto krävs; huset visar sidoingång med skiljevägg (labyrint/kattspärr) och grönt filttak; filen är WebP trots .jpg-namnet"
+   },
+   "meta_tanke": {
+    "hook": "Var sover igelkotten hos dig i vinter?",
+    "objekt_i_bild": "igelkotten på väg in i tunnelöppningen, löv och frost runt huset",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "huset ställs under busken, löv läggs på taket, igelkotten kryper in i skymningen — kattens tass når inte förbi skiljeväggen"
+   },
+   "listning": {
+    "product_id": "1005011561558562",
+    "url": "https://www.aliexpress.com/item/1005011561558562.html",
+    "pris_usd": 25.89,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-28T08:58:16Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-28/v3/bilder/1005011561558562.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant enligt titeln (trähus med filttak, ingångstunnel med skiljevägg); mått står inte i titeln — ej verifierade. Produktsidan svarade tomt via ali.py 08:57:03Z, öppnad med gateway-kakan i första försöket 08:58:16Z",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 3,
+    "meta_creative": 0,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 1,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/w/wholesale-wooden-hedgehog-house-outdoor.html",
+    "https://www.pricerunner.se/search?q=igelkottshus",
+    "https://www.pricerunner.se/search?q=igelkotthus",
+    "https://www.vivara.se/igelkotts-hus-xl",
+    "https://www.vivara.se/igelkottshus",
+    "https://www.pricerunner.se/pl/456-3546054354/Husdjur/Igelkottshus-Deluxe-XXL-Groen-priser"
+   ],
+   "fran_datum": "2026-09-28"
+  }
+ ],
+ "strukna": [],
+ "utanfor_batch": [
+  {
+   "namn_sv": "Laddboxhuven med dragsko",
+   "slot": "exploration",
+   "rank_poang": 10,
+   "orsak": "formtak skyddsform: 40 % av batchen"
+  },
+  {
+   "namn_sv": "Laddluckans magnethuv",
+   "slot": "exploration",
+   "rank_poang": 11,
+   "orsak": "formtak skyddsform: 40 % av batchen"
+  },
+  {
+   "namn_sv": "Laddhandtagets frosthuv Type 2",
+   "slot": "exploration",
+   "rank_poang": 12,
+   "orsak": "formtak skyddsform: 40 % av batchen"
+  },
+  {
+   "namn_sv": "Husbilens spegelhuvar i par, Ducato",
+   "slot": "exploitation",
+   "rank_poang": 12.5,
+   "orsak": "arketyptak B_SKYDDA_DYRT: 50 % av batchen"
+  }
+ ]
+}

@@ -276,5 +276,37 @@
   "deadline": "första frost 2,4 v (isgata vid utkastaren)",
   "korningsvecka": 41,
   "orsak": "2026-09-28 lins AM: K0018/K0021 finns i registret; Ali-listningarna är US-dimensioner. Rad när 87 mm-listning hittas."
+ },
+ {
+  "objekt": "NYTT: Laddhandtagets Type 2-kontakt — frosthuven",
+  "form": "huv",
+  "arketyp": "H_VISUELL_NYHET",
+  "deadline": "första frost 2,3 v",
+  "korningsvecka": 40,
+  "orsak": "2026-09-29 lins AP: LIVE 1005013167428465 8,69 USD, pris 349, BE-CPA 211–236, 0 kopior i SE (INF regnpåse 129 grannform). Lyftes ut av formtaket (tre huvar i batchen). Ta in en dag med < 40 % skydd."
+ },
+ {
+  "objekt": "NYTT: Laddboxen på ytterväggen — huven med dragsko",
+  "form": "huv",
+  "arketyp": "B_SKYDDA_DYRT",
+  "deadline": "första snö norr 3,7 v",
+  "korningsvecka": 40,
+  "orsak": "2026-09-29 lins AP: LIVE 1005013172928875 20,24 USD, pris 549, H06 (kopia 299, Absina skyddstak 1 265 = 2,3×). Formtak. K0058 i registret."
+ },
+ {
+  "objekt": "NYTT: Varmluftständaren till kaminen och grillen",
+  "form": "maskin",
+  "arketyp": "D_SNABBARE_METOD",
+  "deadline": "vedsäsong 2,3 v",
+  "korningsvecka": 41,
+  "orsak": "2026-09-29 lins AO: bästa strukturkusin till sotarsetet — ankare Looft 679–2 995, golv 6 varianter 389–799 (inte sortiment) — men 12 Ali-fraser utan listning. Annan källa."
+ },
+ {
+  "objekt": "NYTT: Husbilens backspeglar (Ducato) — spegelhuvar i par",
+  "form": "skydd",
+  "arketyp": "B_SKYDDA_DYRT",
+  "deadline": "uppställning 1,6 v",
+  "korningsvecka": 40,
+  "orsak": "2026-09-29 lins AN: LIVE 28,59 USD, pris 699, Milenco 1 116 = 1,6×, ingen kopia i SE. Lyftes ut av arketyptaket. LÅG (svagt datum)."
  }
 ]

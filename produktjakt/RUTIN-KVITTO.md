@@ -28,3 +28,4 @@ noll passerade. De två levererade är Axels egna val.
 | 2026-09-25 | — | — | — | — | rutinen stod stilla (triggern nådde sessionen ett dygn sent) |
 | 2026-09-27 (V3, 3 linser) | 9 sökta / ~50 prövade | 9 (+7 obesvarade kort från 26/9) | 0 i grinden + 49 i linserna | ja (v28) | ja (26+27) |
 | 2026-09-28 (V3, 3 linser) | 8 sökta / ~90 prövade | 8 | 0 i grinden + 67 i linserna | ja (v29) | ja |
+| 2026-09-29 (V3, 3 linser) | 7 sökta / ~45 prövade | 3 (+8 obesvarade kort) | 4 i formtak/arketyptak + 42 i linserna | ja (v30) | ja |

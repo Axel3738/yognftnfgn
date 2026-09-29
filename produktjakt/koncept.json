@@ -1,6 +1,6 @@
 {
  "_om": "Konceptregistret (V3). Skrivs av koncept.py; feedback.py och meta_facit.py uppdaterar via koncept.py. Ett koncept = objekt + form, med alla listningar, svar, förutsägelser och Metas facit.",
- "nasta": 358,
+ "nasta": 361,
  "koncept": {
   "K0001": {
    "id": "K0001",
@@ -26060,6 +26060,276 @@
     }
    ],
    "namn_sv": "Igelkotthuset i trä med filttak"
+  },
+  "K0358": {
+   "id": "K0358",
+   "skapad": "2026-09-29",
+   "namn": "Husbilshyttens invändiga termomatta, 3 delar",
+   "objekt": "NYTT: Husbilshyttens insida — termomattan i tre delar mot rutorna",
+   "form": "skydd",
+   "sak": "nytt: husbilshyttens insida+skydd",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005009777300988",
+     "url": "https://www.aliexpress.com/item/1005009777300988.html",
+     "bild": null,
+     "pris_usd": 29.39,
+     "forst_sedd": "2026-09-29",
+     "verifieringar": [
+      {
+       "datum": "2026-09-29",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-29T07:08:46Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-29",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 1,
+     "rank_poang": 15.5,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 2,
+      "efterfragan": 2,
+      "lucka": 2,
+      "ekonomi": 2,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 799,
+     "landad": 424,
+     "be_cpa": 374,
+     "hook": "Frost på insidan av husbilsrutan?",
+     "varfor": "Samma objekt, ägare och datum (uppställning 1,6 v) som Termoskyddet — kontots femte största vinnare — i den invändiga formen objekt.json redan pekat ut som nästa fas; golvet 796 kr ligger under oss men Hindermann 1 596 ger 2,0× (H06, samma mönster som ATV-kapellet). Levereras som linsens enda matta/huv-form.",
+     "huvudrisk": "Kannibaliserar Termoskyddet hos samma kund och kräver 20 sugkoppar på tre delar — och bara Ducato-basen passar.",
+     "hypotes_id": "H06",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 14,
+      "K2": 13,
+      "K3": 8,
+      "K4": 7,
+      "K5": 7,
+      "K6": 10,
+      "K7": 6,
+      "K8": 7,
+      "K9": 4,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-29",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-29",
+     "handelse": "levererad på V3-arket (rank 1, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Husbilshyttens invändiga termomatta, 3 delar"
+  },
+  "K0359": {
+   "id": "K0359",
+   "skapad": "2026-09-29",
+   "namn": "Kölskyddslisten — limmas på i vinter",
+   "objekt": "NYTT: Båtens köl vid trailerrampen och stranden — slitytan som limmas medan skrovet står torrt",
+   "form": "annat",
+   "sak": "nytt: båtens köl vid trailerrampen och stranden+annat",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "C_LAGA_ISTALLET",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012725075740",
+     "url": "https://www.aliexpress.com/item/1005012725075740.html",
+     "bild": null,
+     "pris_usd": 25.69,
+     "forst_sedd": "2026-09-29",
+     "verifieringar": [
+      {
+       "datum": "2026-09-29",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-29T07:08:18Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-29",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 2,
+     "rank_poang": 13.9,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 1,
+      "efterfragan": 1,
+      "lucka": 3,
+      "ekonomi": 2,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 799,
+     "landad": 371,
+     "be_cpa": 428,
+     "hook": "Skrapmärken under fören efter sommaren?",
+     "varfor": "Del som sitter på det dyraste objektet (skrovet) och bara kan sättas dit när båten står torr på land — alltså exakt nu, upptagning 1,6 v; ingen svensk kopia under oss och KeelShield 2 069–3 269 som ankare (2,6×). Samma ägare som Båtmotorskyddet och Motorhöljet.",
+     "huvudrisk": "Kräver rengöring + primer + limning på ett 100-tusenkronorsskrov (montering = ja är förlorarsignal) och listens längd är inte mätt.",
+     "hypotes_id": "H06",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 13,
+      "K2": 10,
+      "K3": 8,
+      "K4": 10,
+      "K5": 7,
+      "K6": 8,
+      "K7": 6,
+      "K8": 6,
+      "K9": 3,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-29",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-29",
+     "handelse": "levererad på V3-arket (rank 2, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Kölskyddslisten — limmas på i vinter"
+  },
+  "K0360": {
+   "id": "K0360",
+   "skapad": "2026-09-29",
+   "namn": "Vedmåttet på svärdet",
+   "objekt": "NYTT: Motorsågen — vedkapningen till jämna klabbar (30/50 cm)",
+   "form": "verktyg",
+   "sak": "nytt: motorsågen+verktyg",
+   "arketyp": "D_SNABBARE_METOD",
+   "arketyp_sekundar": "A_AGARE_FRIKTION",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005010480947261",
+     "url": "https://www.aliexpress.com/item/1005010480947261.html",
+     "bild": null,
+     "pris_usd": 14.11,
+     "forst_sedd": "2026-09-29",
+     "verifieringar": [
+      {
+       "datum": "2026-09-29",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-29T07:06:43Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-29",
+     "levererad": true,
+     "slot": "exploration",
+     "rank": 3,
+     "rank_poang": 9,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 2,
+      "efterfragan": 2,
+      "lucka": 2,
+      "ekonomi": 1,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "LÅG",
+     "pris": 499,
+     "landad": 204,
+     "be_cpa": 295,
+     "hook": "Blir klabbarna aldrig lika långa?",
+     "varfor": "Fackhandeln säljer exakt formen (Cut Control 530, Nestle 839) men ingen kedja och ingen marknadsplats syns på PriceRunner — en lucka med synligt ankare 1,68× i vedsäsongens NOW-fönster, och payoffen (den jämna stapeln) syns på 3 s. Levereras som exploration: den testar om ett 499-kronors verktyg med fackhandelsankare kan slå H07:s förlorarklausul (jobb ägaren redan klarar).",
+     "huvudrisk": "H07:s förlorarsida (Vedklyvborren 0,67) plus okänd räckvidd — syskonet anger 40–66 cm, och svensk kaminved är 30 cm, så fel variant gör produkten obrukbar för halva målgruppen.",
+     "hypotes_id": "H10",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 10,
+      "K2": 9,
+      "K3": 6,
+      "K4": 8,
+      "K5": 5,
+      "K6": 7,
+      "K7": 5,
+      "K8": 5,
+      "K9": 3,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-29",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-29",
+     "handelse": "levererad på V3-arket (rank 3, exploration, konfidens LÅG)"
+    }
+   ],
+   "namn_sv": "Vedmåttet på svärdet"
   }
  }
 }

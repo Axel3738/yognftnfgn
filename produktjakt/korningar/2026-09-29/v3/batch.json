@@ -1,0 +1,518 @@
+{
+ "datum": "2026-09-29",
+ "antal": 3,
+ "tema": false,
+ "per_slot": {
+  "exploitation": 2,
+  "exploration": 1,
+  "sasong": 0
+ },
+ "under_minimum": {
+  "exploitation": 3,
+  "exploration": 1,
+  "sasong": 1
+ },
+ "batch": [
+  {
+   "koncept_id": "K0358",
+   "namn_sv": "Husbilshyttens invändiga termomatta, 3 delar",
+   "objekt": "NYTT: Husbilshyttens insida — termomattan i tre delar mot rutorna",
+   "form": "skydd",
+   "form_kommentar": "invändig isolermatta med sugkoppar (vindruta + två dörrfönster) — objekt.json:s 'nästa fas' på samma objekt som Termoskyddet; skyddsform, räknas mot formtaket",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploitation",
+   "hypotes_id": "H06",
+   "vinnarlikhet": {
+    "likast": "Termoskyddet för Husbil 211 × 171 cm",
+    "delade_variabler": [
+     "exakt samma objekt och ägare som Termoskyddet (REAL_WINNER 37 358 / 146 / 2,32) — husbil 300 tkr–1,5 Mkr, ägare 55+ småhus",
+     "deadline uppställning 1,6 v (4 av 5 dömda vann på 'uppställning')",
+     "objekt_ute = ja, dyr > 10 tkr",
+     "prisband 500–999",
+     "ägarkänd parameter (Ducato/Boxer/Jumper 2006–2022 = den vanligaste husbilsbasen; ägaren vet vilken bil han har)",
+     "material klass 1 (leverantörsfoto på husbil i kontext)"
+    ],
+    "avvikelser": [
+     "form invändig i stället för utvändig — samma kund kan redan ha köpt Termoskyddet (kannibalisering, inte dubblett)",
+     "golvet ligger UNDER oss: Vanheim/Brunner invändig Ducato 796 kr (getcamping 2026-09-29) mot vårt 799 — bara Hindermann Travel 1 596 och Four Seasons 1 084 är ankare (H06-villkor: en kopia under ankare ≥ 1,6× → 2,0×)",
+     "sugkoppar på 3 delar = mer pill än det utvändiga skyddet som bara hakas över dörrarna",
+     "old way = köpt produkt som fungerar (gardin/rullgardin/utvändigt skydd) snarare än improvisation"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "uppstallning_husvagn",
+    "deadline_typ": "uppställning",
+    "veckor_kvar": 1.6,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005009777300988",
+    "url": "https://www.aliexpress.com/item/1005009777300988.html",
+    "pris_usd": 29.39,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-29T07:08:46Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-29/v3/bilder/1005009777300988.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "passform Fiat Ducato / Peugeot Boxer / Citroën Jumper (X250/X290) — en modellfamilj, 3 delar + 20 sugkoppar + förvaringspåse; syskon: 1005007843526110 (29,09 USD, 'Ducato 2006-2022, 7 lager', LIVE 07:08:43Z — heron ser ut som ett Hindermann-katalogfoto, använd inte) och 1005009570479634 (36,89 USD, sökträff, ej öppnad)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron är tvådelad: husbilen framifrån med alla tre mattorna på insidan (dörrarna öppna så sidodelarna syns) + packshot av de tre delarna, sugkopparna och påsen — textfri, men collaget bör beskäras till husbilsfotot"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Vanheim Invändig Isolermatta Fiat Ducato / Brunner Invändig Isolermatta Fiat Ducato (getcamping.se)",
+     "pris_sek": 796,
+     "url": "https://www.getcamping.se/search?q=isolermatta",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Hindermann Travel Invändig Isolermatta Fiat Ducato (getcamping.se 2026-09-29); Hindermann Four Seasons Isolermatta Husbil 1 084; Hindermann Thermal Window Mat Classic 2 396",
+     "pris_sek": 1596,
+     "url": "https://www.getcamping.se/search?q=termomatta",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 2.0,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "getcamping.se ('isolermatta' 8 produkter, 'termomatta' 8 produkter: invändig Ducato Vanheim 796, Brunner 799, Iveco Daily 796, Hindermann Travel 1 596, Four Seasons 1 084/1 076; utvändig Smart Living 596, Vanheim 1 199)",
+     "pricerunner.se ('isolermatta husbil': Hindermann Four Seasons VW T5 1 675, CampOut Ford Transit 799; 'termomatta husbil': Carbest Isoflex Transit 737; 'vindruteskydd husbil invändig': bara bilsnöskydd 515–635)",
+     "campingvaruhuset.se / campingshopen.se (oläst i dag; objekt.json 09-10: WeCamp utvändig 793, Hindermann termomatta Ducato 1 700)",
+     "biltema.se / jula.se (oläst)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     382,
+     467
+    ],
+    "pris_sek": 799,
+    "brutto_sek": [
+     332,
+     417
+    ],
+    "be_cpa_sek": [
+     332,
+     417
+    ],
+    "be_roas": 2.1,
+    "flerkop": false,
+    "returrisk": "medel — passar bara Ducato-basen (X250/X290 2006–2022); Sprinter-/Transit-ägare måste sorteras bort i annonsen"
+   },
+   "meta_tanke": {
+    "hook": "Frost på insidan av husbilsrutan?",
+    "objekt_i_bild": "husbilens hytt framifrån, silvermattan täcker vindruta och dörrfönster inifrån",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "mattan sätts på inifrån utan stege — ingen kan stjäla den och instrumentbrädan ligger i skugga hela vintern"
+   },
+   "varfor": "Samma objekt, ägare och datum (uppställning 1,6 v) som Termoskyddet — kontots femte största vinnare — i den invändiga formen objekt.json redan pekat ut som nästa fas; golvet 796 kr ligger under oss men Hindermann 1 596 ger 2,0× (H06, samma mönster som ATV-kapellet). Levereras som linsens enda matta/huv-form.",
+   "huvudrisk": "Kannibaliserar Termoskyddet hos samma kund och kräver 20 sugkoppar på tre delar — och bara Ducato-basen passar.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 3,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 14,
+    "K2": 13,
+    "K3": 8,
+    "K4": 7,
+    "K5": 7,
+    "K6": 10,
+    "K7": 6,
+    "K8": 7,
+    "K9": 4,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (grep termo/husbil: 'Termoskydd Husbil 211 × 171 cm – Utvändigt och Mörkläggande' 559 = samma objekt, UTVÄNDIG form; 'Husbilens Tak-AC-Huv' 449 och 'Husbilens Cykelhållarskydd' 669 = andra delar) — syskon i form, inte dubblett",
+     "koncept.py sok 'windscreen'/'blind' → K0181 (Ducato thermal, kandidat, SOKTRAFF 09-10, aldrig levererad), K0182 (Internal Thermal Blind Set VW T5, kandidat, aldrig levererad), K0150/K0178 kandidater — ingen levererad, inget svar",
+     "kontot 7 d: ej läst (linsen rör inte Meta)",
+     "två listningar med 'blinds' i titeln (1005013082113660 13,05 USD, 1005012564726014 20,55 USD) öppnades och heron visade UTVÄNDIGT skydd = K0 mot Termoskyddet — strukna"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005009777300988.html",
+    "https://www.aliexpress.com/item/1005007843526110.html",
+    "https://www.getcamping.se/search?q=isolermatta",
+    "https://www.getcamping.se/search?q=termomatta",
+    "https://www.pricerunner.se/search?q=isolermatta%20husbil"
+   ],
+   "_kalla": "kandidater-AN.json",
+   "rank_poang": 15.5,
+   "rank_forklaring": "exploitation: vinnarlikhet 3×2 + ekonomi 2 + säsong 2 + creative 2 + lucka 2 + signalbonus +1.5 [arketyp=B_SKYDDA_DYRT 10V/4F (+0.4); deadline_typ=uppställning 4V/1F (+0.6); prisband=500–999 13V/5F (+0.4)] = 15.5",
+   "asymmetrisk": false,
+   "rank": 1
+  },
+  {
+   "koncept_id": "K0359",
+   "namn_sv": "Kölskyddslisten — limmas på i vinter",
+   "objekt": "NYTT: Båtens köl vid trailerrampen och stranden — slitytan som limmas medan skrovet står torrt",
+   "form": "annat",
+   "form_kommentar": "självhäftande polymerlist (kölskydd/keel guard) med primer och skrapa — ingen huv/överdrag; monteras på TORRT skrov, dvs. under vinteruppställningen",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "C_LAGA_ISTALLET",
+   "slot": "exploitation",
+   "hypotes_id": "H06",
+   "vinnarlikhet": {
+    "likast": "Båtmotorskyddet 420D",
+    "delade_variabler": [
+     "samma ägare och samma objekt (trailerbåt 100 tkr+) som Båtmotorskyddet (REAL_WINNER 63 406 / 269 / 2,63) och Motorhöljet",
+     "objekt_ute = ja, dyr > 10 tkr",
+     "deadline upptagning 1,6 v — listen kräver torrt, rent skrov, alltså båten på land",
+     "ankare ≥ 1,6× i fackhandeln (KeelShield 1,22 m 2 069, 1,83 m 3 269, Plastimo 2 549 — Watski säljer Keelshield) och ingen kopia under oss på PriceRunner",
+     "ägare 55+ småhus, prisband 500–999"
+    ],
+    "avvikelser": [
+     "form list/annat (0 av 15 dömda 'annat' vann — men det är en del som limmas på skrovet, inte en pryl på hyllan)",
+     "montering = ja: rengöring, primer, limma (självhäftande, inga verktyg) — vinnarna kräver ingen montering",
+     "old way = ingenting / gelcoat-spackel på våren (C_LAGA_ISTALLET) — inte en svikande presenning",
+     "listens längd står inte i titeln (ej mätt) — KeelShield säljs per fotlängd, vår måste anges",
+     "aluminiumbåtar (Linder/Buster, mycket vanliga i Sverige) har ett eget syskon 1005013070329013 (25,49 USD, 1 m, svart)"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "batupptagning",
+    "deadline_typ": "upptagning",
+    "veckor_kvar": 1.6,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005012725075740",
+    "url": "https://www.aliexpress.com/item/1005012725075740.html",
+    "pris_usd": 25.69,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-29T07:08:18Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-29/v3/bilder/1005012725075740.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "vit list med primer + skrapa ('Complete Installation Kit'), längd står inte i titeln (ej mätt — måste frågas leverantören); syskon: 1005013070329013 (25,49 USD, svart 1 m 'For Aluminum Boat', LIVE 07:08:23Z, hero sedd: svart rulle med rött skyddspapper) och 1005012309306157 (9,75 USD, 1 m med primer, LIVE 07:08:21Z, ej hero); 1005012950044274 (49,24 USD, sökträff) för dyr",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron är en textfri packshot på vitt: vit list i rulle med rött skyddspapper, primerkudde och gul skrapa — ingen båt i bild; creativen måste byggas på egen bild av listen på en köl (skrapmärken bredvid)"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen kopia under oss — PriceRunner 'kölskydd båt' / 'keelguard' / 'kölskydd' ger bara KeelShield/Plastimo 2 069–5 282 och båtpresenningar",
+     "pris_sek": null,
+     "url": "https://www.pricerunner.se/search?q=k%C3%B6lskydd%20b%C3%A5t",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "KeelShield Kölskydd 1,22 m svart (PriceRunner 2026-09-29); KeelShield 1,83 m 3 269; Plastimo Keelshield 6\" 1,83 m 2 549; Watski för Keelshield svart/vit (pris ej läst ur sidan)",
+     "pris_sek": 2069,
+     "url": "https://www.pricerunner.se/pl/630-3206966914/Baattillbehoer/KeelShield-Keelshield-Koelskydd-1-22Msvart-priser",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 2.6,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se ('kölskydd båt' 20 träffar: Plastimo 2 549, KeelShield 2 069; 'keelguard' 15: KeelShield 2 069/3 269/5 282, KeelGuard SkegGuard 2 254; 'kölskydd': samma)",
+     "watski.se ('kölskydd': Keelshield Kölskydd Svart/Vit i sortiment, pris ej utläst ur sidan; 'keelguard': ingen träff)",
+     "hjertmans.se ('kölskydd': inget i svaret)",
+     "biltema.se / jula.se (oläst)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     334,
+     408
+    ],
+    "pris_sek": 799,
+    "brutto_sek": [
+     391,
+     465
+    ],
+    "be_cpa_sek": [
+     391,
+     465
+    ],
+    "be_roas": 1.95,
+    "flerkop": false,
+    "returrisk": "medel — längden är okänd i listningen och skrovformen (V-botten glasfiber vs aluminium) styr vilken list som passar; priset förutsätter ≥ 1,5 m"
+   },
+   "meta_tanke": {
+    "hook": "Skrapmärken under fören efter sommaren?",
+    "objekt_i_bild": "båtens köl på trailern med listen påsatt, skrapmärkena bredvid",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "listen tar rampen och stenarna i stället för gelcoaten — limmas på nu när skrovet är torrt"
+   },
+   "varfor": "Del som sitter på det dyraste objektet (skrovet) och bara kan sättas dit när båten står torr på land — alltså exakt nu, upptagning 1,6 v; ingen svensk kopia under oss och KeelShield 2 069–3 269 som ankare (2,6×). Samma ägare som Båtmotorskyddet och Motorhöljet.",
+   "huvudrisk": "Kräver rengöring + primer + limning på ett 100-tusenkronorsskrov (montering = ja är förlorarsignal) och listens längd är inte mätt.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 3,
+    "meta_creative": 1,
+    "efterfragan": 1,
+    "lucka": 3,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 13,
+    "K2": 10,
+    "K3": 8,
+    "K4": 10,
+    "K5": 7,
+    "K6": 8,
+    "K7": 6,
+    "K8": 6,
+    "K9": 3,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (grep köl/keel/skrov/båt: Båthuv 989, Båtskydd 1 049, Båtmotorskydd, Motorhölje, Spolklämma, Motorlås, Förtöjningslina, Anti-Slip Tejp — inget på skrovet)",
+     "koncept.py sok 'köl'/'keel'/'skrov' → 0 träffar; 'trailer' → K0009/K0015 navskydd (nej), K0052 stötta (ja), K0336 motorstöd (ja) — andra delar",
+     "kontot 7 d: ej läst (linsen rör inte Meta)"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012725075740.html",
+    "https://www.aliexpress.com/item/1005013070329013.html",
+    "https://www.aliexpress.com/item/1005012309306157.html",
+    "https://www.pricerunner.se/search?q=k%C3%B6lskydd%20b%C3%A5t",
+    "https://www.pricerunner.se/search?q=keelguard",
+    "https://www.watski.se/search?q=k%C3%B6lskydd"
+   ],
+   "_kalla": "kandidater-AN.json",
+   "rank_poang": 13.9,
+   "rank_forklaring": "exploitation: vinnarlikhet 3×2 + ekonomi 2 + säsong 2 + creative 1 + lucka 3 + signalbonus -0.1 [arketyp=B_SKYDDA_DYRT 10V/4F (+0.4); form=annat 0V/15F (-1.0); prisband=500–999 13V/5F (+0.4)] = 13.9",
+   "asymmetrisk": false,
+   "rank": 2
+  },
+  {
+   "koncept_id": "K0360",
+   "namn_sv": "Vedmåttet på svärdet",
+   "objekt": "NYTT: Motorsågen — vedkapningen till jämna klabbar (30/50 cm)",
+   "form": "verktyg",
+   "arketyp": "D_SNABBARE_METOD",
+   "arketyp_sekundar": "A_AGARE_FRIKTION",
+   "slot": "exploration",
+   "hypotes_id": "H10",
+   "hypotes_sekundar": "H07",
+   "vinnarlikhet": {
+    "likast": "Sotarset Med Böjliga Stänger",
+    "delade_variabler": [
+     "arketyp D_SNABBARE_METOD + form verktyg",
+     "deadline rätt: vedsäsong NOW 2,3 v (sotarsetet: vedsäsong)",
+     "prisband 300–499 (sotarsetet 300–499)",
+     "ägare 55+ småhus/gård med egen ved och motorsåg",
+     "en variant, inget att mäta, montering utan verktyg (svärdbulten/svärdmuttern)"
+    ],
+    "avvikelser": [
+     "old way = improvisation (måttband, ögonmått, ristad linje på svärdet) — inte tjänst. Det är H07:s förlorarsida (verktyg som ersätter ett jobb ägaren redan klarar: Vedklyvborren 1 976 / 3 / 0,67); raden testar om synlig payoff (jämn stapel) + fackhandelsankare räcker ändå",
+     "objekt ute ja (sotarsetet inne) men objektet är billigt (måttbandet), det dyra (motorsågen) är bäraren",
+     "hero är en 3D-rendering utan ved i bild — kontextklipp (skivan mot stockänden, kap-kap-kap, stapeln) måste skjutas själv",
+     "räckvidd ej mätt på huvudlistningen; syskonet anger 40–66 cm, vilket inte når svensk kaminved 30 cm"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "vedsasong",
+    "deadline_typ": "vedsäsong",
+    "veckor_kvar": 2.3,
+    "timing": "NOW",
+    "kommentar": "objektraden saknas i sasong.json — fönstret vedsasong (Vedstapeln) valt: kapning och stapling sker sept–nov inför eldningsstart (vedmatch.se i SASONG.md)"
+   },
+   "listning": {
+    "product_id": "1005010480947261",
+    "url": "https://www.aliexpress.com/item/1005010480947261.html",
+    "pris_usd": 14.11,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-29T07:06:43Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-29/v3/bilder/1005010480947261.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant: teleskopstång i aluminium med ändskiva, fästs vid svärdets fästbult (titel: 'Quick Measure Firewood Length Adjustable Aluminum Measuring Tool'); räckvidd står inte i titeln. Syskon i samma form: 1005011824280922 (11,89 USD, 'Attaches to Chainsaw Bar, Telescoping Shaft 16inch to 26inch' = 40–66 cm, LIVE 07:06:48Z, hero sedd = packshot) och 1005006159923444 (22,38 USD, magnetisk stång, LIVE 07:06:45Z, hero sedd: stången på sågen bredvid en stock, textfri — bästa creative-referensen).",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron: 3D-render av röd teleskopstång med svart ändskiva monterad vid svärdbulten på en gul batterisåg, vit botten, ingen text — men ingen ved. Syskonet 1005006159923444 visar stången på en röd bensinsåg med en stock i bild (textfri) och ska användas som referens. Payoffklippet (skivan mot stockänden → kap → jämn stapel) måste skjutas själv.",
+    "hero_syskon": "korningar/2026-09-29/v3/bilder/1005006159923444.jpg"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Skogma — Cut Control Längdmätare (monteras på svärdets främre fästbult, ändskiva mot stockkanten, 200 g)",
+     "pris_sek": 530,
+     "url": "https://skogma.se/p/cut-control-laengdmaetare/290150/",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Nestle Längdmätare Kolibri för Motorsåg (12–100 cm, snabbkoppling på svärdmuttern) — Skogma",
+     "pris_sek": 839,
+     "url": "https://skogma.se/p/nestle-laengdmaetare-kolibri-foer-motorsag/630741/",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.68,
+    "ankare_kvot_kommentar": "Kolibri 839/499 = 1,68; Cut Control 530/499 = 1,06 — golvet i exakt form ligger ÖVER oss, inte under (fackhandel, 2 varianter, inte sortiment)",
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "skogma.se kategori Skärhjälpmedel & Längdmätare + Vedkapning (Cut Control 530, Nestle Kolibri 839, adapter 96/424) 2026-09-29",
+     "pricerunner.se 'vedmått' (3 stickmått), 'vedmått motorsåg' (bara motorsågar), 'kapmått' (köksmått), 'mätsticka motorsåg' (Husqvarna kombimall/ryttarmall 50–139 = filmallar, annan sak), 'mätsticka ved' (köksmått) — 0 i formen 2026-09-29",
+     "granngarden.se sök (JSON utan pris — namn utan vedmått), skogma.se sök (JS-skal; kategorisidorna lästa i stället) 2026-09-29",
+     "jula.se / biltema.se / clasohlson.com / rusta.com (404) / bauhaus.se (404) / amazon.se / fyndiq / cdon — oläst"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     184,
+     224
+    ],
+    "pris_sek": 499,
+    "brutto_sek": [
+     275,
+     315
+    ],
+    "be_cpa_sek": [
+     275,
+     315
+    ],
+    "be_roas": 1.69,
+    "flerkop": false,
+    "returrisk": "medel — passar sågar med fästbult/svärdmutter (universal), men om räckvidden är 40–66 cm kan 30 cm-vedhuggaren inte använda den: räckvidd måste verifieras hos leverantören före launch och skrivas på sidan. Vid pris 449: BE 225–265, ankare 1,87×."
+   },
+   "meta_tanke": {
+    "hook": "Blir klabbarna aldrig lika långa?",
+    "objekt_i_bild": "stången på svärdet, ändskivan mot stockänden, tre kap i rad, sedan stapeln där alla klabbar ligger i linje",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "kap-kap-kap utan måttband eller krita, sedan en jämn stapel bredvid en ojämn — payoffen är stapeln, inte verktyget"
+   },
+   "varfor": "Fackhandeln säljer exakt formen (Cut Control 530, Nestle 839) men ingen kedja och ingen marknadsplats syns på PriceRunner — en lucka med synligt ankare 1,68× i vedsäsongens NOW-fönster, och payoffen (den jämna stapeln) syns på 3 s. Levereras som exploration: den testar om ett 499-kronors verktyg med fackhandelsankare kan slå H07:s förlorarklausul (jobb ägaren redan klarar).",
+   "huvudrisk": "H07:s förlorarsida (Vedklyvborren 0,67) plus okänd räckvidd — syskonet anger 40–66 cm, och svensk kaminved är 30 cm, så fel variant gör produkten obrukbar för halva målgruppen.",
+   "konfidens": "LÅG",
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 1,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "poang_kommentar": "efterfragan: ägarantal ej mätt (motorsågsägare i SE saknar källa i denna körning) — 2 för NOW-fönstret, inte för volymen",
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 10,
+    "K2": 9,
+    "K3": 6,
+    "K4": 8,
+    "K5": 5,
+    "K6": 7,
+    "K7": 5,
+    "K8": 5,
+    "K9": 3,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt 2026-09-29 (såg/ved/klyv: Fickkedjesåg 229, Hopfällbar såg 279, Handdriven kedjeslip 249, Vedklyvborr 369, Tändvedsklyv 529, Manuell vedklyv väggmonterad 1 489, Vedklyvshuv 459, Vedställskapell 529, Sotarset 459 — inget mått)",
+     "koncept.py sok mått/motorsåg/såg/ved/klyv/stapel (0 träffar på mått och motorsåg; K0248 minikedjesågen ja, K0271 stånggrensågen ja, K0334 repsågen ja — andra saker)",
+     "kandidater-AG 09-26 (kedjesågens filset struket = annan sak; vedmått ej sökt)"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005010480947261.html",
+    "https://www.aliexpress.com/item/1005011824280922.html",
+    "https://www.aliexpress.com/item/1005006159923444.html",
+    "https://skogma.se/p/cut-control-laengdmaetare/290150/",
+    "https://skogma.se/p/nestle-laengdmaetare-kolibri-foer-motorsag/630741/",
+    "https://skogma.se/skog/produkter-foer-skogsbruk/skaerhjaelpmedel-laengdmaetare/",
+    "https://www.pricerunner.se/search?q=vedm%C3%A5tt",
+    "https://www.pricerunner.se/search?q=m%C3%A4tsticka%20motors%C3%A5g"
+   ],
+   "_kalla": "kandidater-AO.json",
+   "rank_poang": 9,
+   "rank_forklaring": "exploration: hypotesvärde 2×2 + nyhet 2 + creative 2 + ekonomi 1 = 9",
+   "asymmetrisk": false,
+   "rank": 3
+  }
+ ],
+ "skyddsformer_i_batch": 1,
+ "strukna": [],
+ "utanfor_batch": [
+  {
+   "namn_sv": "Laddboxhuven med dragsko",
+   "slot": "exploration",
+   "rank_poang": 10,
+   "orsak": "formtak skyddsform: 40 % av batchen"
+  },
+  {
+   "namn_sv": "Laddluckans magnethuv",
+   "slot": "exploration",
+   "rank_poang": 11,
+   "orsak": "formtak skyddsform: 40 % av batchen"
+  },
+  {
+   "namn_sv": "Laddhandtagets frosthuv Type 2",
+   "slot": "exploration",
+   "rank_poang": 12,
+   "orsak": "formtak skyddsform: 40 % av batchen"
+  },
+  {
+   "namn_sv": "Husbilens spegelhuvar i par, Ducato",
+   "slot": "exploitation",
+   "rank_poang": 12.5,
+   "orsak": "arketyptak B_SKYDDA_DYRT: 50 % av batchen"
+  }
+ ]
+}
