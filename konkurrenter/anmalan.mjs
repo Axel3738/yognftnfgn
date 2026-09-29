@@ -15,6 +15,8 @@
 // 403 från containern och formuläret kräver hans inloggning. Kvittot
 // (Metas referensnummer) skrivs tillbaka med --anmald. Rena funktioner.
 
+import { tid } from './klipp.mjs';
+
 export const FORMULAR = Object.freeze({
   facebook: 'https://www.facebook.com/help/contact/1758255661104383',
   instagram: 'https://help.instagram.com/contact/372592039493026',
@@ -55,20 +57,27 @@ export function byggAnmalan(arende, annons, konfig, { undertecknare, nr = 1, ant
   const { lank, libraryId } = annonsLank(annons.lank);
   const text = annons.text?.styrka ? annons.text : null;
   const bilder = annons.bilder ?? [];
+  // Klippen (Axel 2026-09-29): finns valda rutor ur våra egna klipp är DE beviset — miniatyrträffen
+  // (annonsens förhandsbild) är det lånade klippet och nämns då inte alls.
+  const klipp = annons.klipp?.antal ? annons.klipp : null;
   const passage = text?.passager?.[0]?.text ?? null;
+  const varAnnons = annons.varAnnons?.namn ? `our ad "${annons.varAnnons.namn}"` : 'our ad';
   const delar = [];
   if (text) delar.push(`${text.kopieradeOrd} words of our advertising copy appear verbatim in this ad; the longest identical run is ${text.langsta} consecutive words: "${passage}".`);
-  if (bilder.length) delar.push(`${bilder.length} image${bilder.length === 1 ? '' : 's'} in the ad ${bilder.length === 1 ? 'is' : 'are'} our own copyrighted advertising image${bilder.length === 1 ? '' : 's'} — a still frame or photo taken from our own ad (perceptual-hash comparison: ${bilder.map((b) => `${b.grad === 'identisk' ? 'identical' : 'near-identical'}, distance ${b.avstand}/64`).join('; ')}).`);
-  if (annons.video) delar.push('The ad is a video that uses our material.');
+  if (klipp) {
+    const filmer = (klipp.filmer ?? []).length ? klipp.filmer : annons.varAnnons?.namn ? [annons.varAnnons.namn] : [];
+    delar.push(`The ad's video is cut from our own ad film${filmer.length === 1 ? '' : 's'}${filmer.length ? ` ${filmer.map((f) => `"${f}"`).join(', ')}` : ''}: ${klipp.antal} still frames from different scenes of the reported video (at ${(klipp.par ?? []).map((p) => tid(p.derasT)).join(', ')}) are identical to frames of our film${filmer.length === 1 ? '' : 's'} (perceptual-hash distance ${(klipp.par ?? []).map((p) => p.avstand).join(', ')}/64), and ${klipp.andel}% of the reported video's sampled frames match our films frame for frame${klipp.jamforda ? ` (compared against ${klipp.jamforda} of our films)` : ''}.`);
+  }
+  else if (bilder.length) delar.push(`${bilder.length} image${bilder.length === 1 ? '' : 's'} in the ad ${bilder.length === 1 ? 'is' : 'are'} our own copyrighted advertising image${bilder.length === 1 ? '' : 's'} — a still frame or photo taken from our own ad (perceptual-hash comparison: ${bilder.map((b) => `${b.grad === 'identisk' ? 'identical' : 'near-identical'}, distance ${b.avstand}/64`).join('; ')}).`);
+  if (annons.video && !klipp) delar.push('The ad is a video that uses our material.');
   const sida = deras.sidnamn ? `the Facebook page "${deras.sidnamn}"${deras.sidaId ? ` (page ID ${deras.sidaId})` : ''}` : `the advertiser${deras.doman ? ` behind ${deras.doman}` : ''}`;
   const exp = Number(annons.exponeringar) > 0 ? ` According to the Ad Library it has reached approximately ${talEn(annons.exponeringar)} people in the EU.` : '';
   const start = annons.start ? ` The ad has been running since ${datumEn(annons.start)}.` : '';
-  const varAnnons = annons.varAnnons?.namn ? `our ad "${annons.varAnnons.namn}"` : 'our ad';
   const contentDescription = `This advertisement, run by ${sida}, reproduces our copyrighted advertising material without authorisation. ${delar.join(' ')}${start}${exp} It copies ${varAnnons} for the product "${prod.titel ?? prod.handle ?? ''}", which our page has been running since before this ad appeared. This is report ${nr} of ${antal} concerning ads from the same advertiser; each ad is reported separately.`;
   const originalWorkUrls = [prod.url, varAdLibraryLank(konfig, prod.verksamhet ?? arende.verksamhet)].filter(Boolean);
   const originalWorkDescription = `Original advertising copy, product photographs and video produced by ${foretag.namn ?? 'Stonebite Ecom AB'} for our store${prod.butik ? ` ${prod.butik}` : ''} (product: "${prod.titel ?? ''}"). The text and the images are our own work and we hold the copyright. The original ad and product page are at the links below.`;
   const brevRad = arende.brev?.skickat ? ` A cease-and-desist letter${arende.faktura?.nr ? ` with invoice ${arende.faktura.nr}` : ''} was sent to the advertiser on ${datumEn(arende.brev.skickat.nar)}.` : '';
-  const additionalInfo = `Evidence screenshot (our original on the left, the reported ad on the right, copied passage highlighted): ${bevisbildUrl ?? (bevisbild ? 'attached to this report' : 'available on request')}. Internal reference: ${arende.id}, report ${nr}/${antal}, prepared ${datumEn(nu)}.${brevRad}`;
+  const additionalInfo = `Evidence screenshot (${klipp ? 'frames from our film on the left, the same frames in the reported ad on the right' : 'our original on the left, the reported ad on the right, copied passage highlighted'}): ${bevisbildUrl ?? (bevisbild ? 'attached to this report' : 'available on request')}. Internal reference: ${arende.id}, report ${nr}/${antal}, prepared ${datumEn(nu)}.${brevRad}`;
   return {
     nr, antal, arende: arende.id, verksamhet: arende.verksamhet, plattform: 'facebook', formular: FORMULAR.facebook,
     lank, libraryId, annonsNr: annons.nr ?? null, exponeringar: annons.exponeringar ?? null, video: Boolean(annons.video),

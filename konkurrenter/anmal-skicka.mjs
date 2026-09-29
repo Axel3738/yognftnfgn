@@ -43,13 +43,15 @@ export function beskrivning500(a, max = MAX.beskrivning) {
   const f = a.falt ?? {};
   const m = f.contentDescription?.match(/(\d+) words of our advertising copy appear verbatim[\s\S]*?longest identical run is (\d+) consecutive words: "([^"]+)"/);
   const bilder = /image[s]? in the ad (?:is|are) our own copyrighted advertising image/.test(f.contentDescription ?? '');
+  // Klippen (anmalan.mjs): rutor ur våra egna klipp — antal, tiderna hos dem och andelen matchande rutor.
+  const klipp = f.contentDescription?.match(/video is cut from our own ad film[^:]*: (\d+) still frames from different scenes of the reported video \(at ([^)]+)\)[\s\S]*?and (\d+)% of the reported video/);
   const video = /The ad is a video that uses our material/.test(f.contentDescription ?? '');
   const varAnnons = f.contentDescription?.match(/It copies our ad "([^"]+)"/)?.[1] ?? null;
   const produkt = f.contentDescription?.match(/for the product "([^"]+)"/)?.[1] ?? null;
   const bygg = (passage) => [
     m ? `Verbatim copy of our ad copy: ${m[2]} consecutive identical words ("${passage}"), ${m[1]} words in total.` : null,
-    bilder ? 'It uses our own advertising image (a still frame from our ad video).' : null,
-    !m && !bilder && video ? 'The video uses our material.' : null,
+    klipp ? `Its video is cut from our own ad film: ${klipp[1]} stills from different scenes (at ${klipp[2]}) are identical to ours; ${klipp[3]}% of its frames match our film.` : bilder ? 'It uses our own advertising image (a still frame from our ad video).' : null,
+    !m && !bilder && !klipp && video ? 'The video uses our material.' : null,
     `Original: ${varAnnons ? `our ad "${varAnnons}"` : 'our ad'}${produkt ? ` for "${produkt}"` : ''}, running before this ad.`,
     a.bevisbildUrl ? `Evidence screenshot (ours left, theirs right): ${a.bevisbildUrl}` : null,
     `Ref ${a.arende} ${a.nr}/${a.antal}.`,

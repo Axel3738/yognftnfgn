@@ -25,6 +25,7 @@ import { markera, bevisbildHtml, verifieringHtml } from '../bevisbild.mjs';
 import { rapportSv, rapportEn, arendeMd, kallrader } from '../rapport.mjs';
 import { byggSida } from '../sida.mjs';
 import { gissaTyp, Bildcache } from '../bild.mjs';
+import { dHash, avstand, tid, prefixUrNamn, scener, lanadeRutor, paraRutor, klippSammanfattning, hittaFfmpeg, videoIdn } from '../klipp.mjs';
 
 const KONFIG = JSON.parse(readFileSync(new URL('../konfig.json', import.meta.url), 'utf8'));
 const FORETAG = KONFIG.brev.foretag;
@@ -643,4 +644,90 @@ test('gissaTyp och Bildcache utan fil', () => {
   c.set('u', { hash: 'ff', bredd: 1, hojd: 1 }); c.spara();
   assert.ok(existsSync(join(dir, 'cache.json')));
   assert.equal(new Bildcache(join(dir, 'cache.json')).get('u').hash, 'ff');
+});
+
+// ------------------------------------------------------------------ klipp (rutorna ur våra egna klipp, Axel 2026-09-29)
+
+const H0 = '0000000000000000'; const H1 = 'ffffffffffffffff'; const H0b = '0000000000000001'; const HC = '00000000ffffffff'; const HE = '0f0f0f0f0f0f0f0f';
+const RUTA = (t, hash) => ({ i: Math.round(t * 2), t, hash });
+const KLIPP_ANNONS = () => ({ nr: 2, lank: 'https://www.facebook.com/ads/library/?id=2011809009499730', video: true, aktiv: true, exponeringar: 3364, start: '2026-09-24', text: null, bilder: [{ egen: 'https://cdn/v1.png', deras: 'https://kopian.se/cdn/k1.jpg', avstand: '8', grad: 'lik' }], varAnnons: { id: '1', namn: 'CaraShellRoof_DK_PD_1_H1' }, derasText: 'Regnet slår på taket.', klipp: { antal: 2, andel: 74, traffar: 50, rutor: 68, filmer: ['Takoverdrag_PD_2_H1', 'Takoverdrag_OB_1_H1'], jamforda: 131, par: [{ bokstav: 'A', derasT: 15, egenT: 11, avstand: 0, film: 'Takoverdrag_PD_2_H1' }, { bokstav: 'B', derasT: 23, egenT: 8, avstand: 0, film: 'Takoverdrag_OB_1_H1' }] } });
+const KLIPP = () => ({ val: [{ bokstav: 'A', derasT: 15, egenT: 11, avstand: 0, egenFilm: { id: 'f1', namn: 'Takoverdrag_PD_2_H1' }, scen: { tFran: 14.5, tTill: 16 }, egenData: 'data:image/jpeg;base64,EGEN1', derasData: 'data:image/jpeg;base64,DERAS1' }, { bokstav: 'B', derasT: 23, egenT: 8, avstand: 0, egenFilm: { id: 'f2', namn: 'Takoverdrag_OB_1_H1' }, scen: { tFran: 22.5, tTill: 24 }, egenData: 'data:image/jpeg;base64,EGEN2', derasData: 'data:image/jpeg;base64,DERAS2' }], statistik: { andel: 74, traffar: 50, derasRutor: 68, filmer: 131 }, uteslutna: [{ derasT: 0, egenT: 0, avstand: 2, orsak: 'lånat klipp — utesluten ruta i scenen', egenData: 'data:image/jpeg;base64,LANAT1', derasData: 'data:image/jpeg;base64,LANAT2' }] });
+
+test('klipp: dHash, avstand, tid, prefix och video-id-ordningen är rena och deterministiska', () => {
+  const stigande = Buffer.from(Array.from({ length: 72 }, (_, i) => i % 9)); // varje rad 0..8: mörkare än grannen till höger ⇒ alla bitar 1
+  const fallande = Buffer.from(Array.from({ length: 72 }, (_, i) => 8 - (i % 9)));
+  assert.equal(dHash(stigande), H1); assert.equal(dHash(fallande), H0);
+  assert.equal(avstand(H0, H1), 64); assert.equal(avstand(H0, H0b), 1); assert.equal(avstand(HC, HC), 0); assert.equal(avstand(H0, HC), 32);
+  assert.equal(tid(7), '0:07'); assert.equal(tid(65.5), '1:05'); assert.equal(tid(null), '?');
+  assert.equal(prefixUrNamn('Takoverdrag_RI_1_H1'), 'Takoverdrag_'); assert.equal(prefixUrNamn('CaraShellRoof_DK_PD_1_H1'), 'CaraShellRoof_'); assert.equal(prefixUrNamn('x'), null);
+  assert.deepEqual(videoIdn({ video_id: 'reel', object_story_spec: { video_data: { video_id: 'story' } }, asset_feed_spec: { videos: [{ video_id: 'feed' }, { video_id: 'story' }] } }), ['story', 'reel', 'feed']);
+});
+
+test('klipp: scener, lånade rutor med fönster, och paren ur olika scener och filmer — det lånade klippet kastas och räknas inte', () => {
+  const sc = scener([RUTA(0, H0), RUTA(0.5, H0), RUTA(1, H1), RUTA(1.5, H1)]);
+  assert.equal(sc.length, 2); assert.deepEqual([sc[0].fran, sc[0].till, sc[1].fran, sc[1].tTill], [0, 1, 2, 1.5]);
+  const lanade = lanadeRutor([RUTA(0, H0), RUTA(0.5, HC), RUTA(1, H1), RUTA(1.5, HC), RUTA(2, HC), RUTA(3, HC)], [H1], { fonsterS: 0.6 });
+  assert.deepEqual([...lanade].sort((x, y) => x - y), [1, 2, 3], 'rutan vid 1 s och ± 0,6 s runt den');
+  const film1 = { id: 'f1', namn: 'Takoverdrag_OB_1_H1', rutor: [RUTA(0, H0), RUTA(0.5, H0), RUTA(1, H0b), RUTA(6, H1)] };
+  const film2 = { id: 'f2', namn: 'CaraShellRoof_PD_5_H1', rutor: [RUTA(0, HC), RUTA(0.5, HC), RUTA(1, HC)] };
+  const deras = [RUTA(0, H0), RUTA(0.5, H0), RUTA(1, HE), RUTA(1.5, HC), RUTA(2, HC), RUTA(6, H1)];
+  const p = paraRutor([film1, film2], deras, { uteslut: [H1], antal: 3 });
+  assert.equal(p.val.length, 2, 'två scener hos dem matchar våra klipp — den tredje är det lånade klippet');
+  assert.deepEqual(p.val.map((v) => v.bokstav), ['A', 'B']);
+  assert.ok(p.val[0].derasT < p.val[1].derasT, 'i tidsordning');
+  assert.deepEqual(p.val.map((v) => v.egenFilm.namn), ['Takoverdrag_OB_1_H1', 'CaraShellRoof_PD_5_H1']);
+  assert.ok(p.val.every((v) => v.avstand === 0));
+  assert.equal(p.uteslutna.length, 1); assert.match(p.uteslutna[0].orsak, /lånat klipp/); assert.equal(p.uteslutna[0].derasT, 6);
+  assert.deepEqual([p.statistik.traffar, p.statistik.lanadeRutor, p.statistik.andel, p.statistik.uteslutnaScener, p.statistik.filmer], [4, 1, 67, 1, 2]);
+  assert.deepEqual(p.statistik.perFilm, { Takoverdrag_OB_1_H1: 2, CaraShellRoof_PD_5_H1: 2 });
+  const q = paraRutor(film1.rutor, deras, { antal: 3 }); // en platt rutlista = en film; utan uteslutning är det lånade klippet med
+  assert.equal(q.uteslutna.length, 0); assert.equal(q.statistik.lanadeRutor, 0); assert.ok(q.val.some((v) => v.derasT === 6));
+  assert.match(klippSammanfattning({ val: p.val, statistik: p.statistik }), /2 rutor ur olika scener/);
+  assert.match(klippSammanfattning({ antal: 3, andel: 80 }, { sprak: 'en' }), /80% of its frames/);
+});
+
+test('klipp: hittaFfmpeg tar första binären som klarar H.264 och redovisar dem som inte gör det', () => {
+  const finns = () => true; const lasMapp = () => { throw new Error('inget'); };
+  const a = hittaFfmpeg({ env: { FFMPEG: '/x/utan' }, hem: '/ingen', kolla: () => false, finns, lasMapp });
+  assert.equal(a.bin, null); assert.ok(a.provade.includes('/x/utan'));
+  const b = hittaFfmpeg({ env: { FFMPEG: '/x/med' }, hem: '/ingen', kolla: (k) => k === '/x/med', finns, lasMapp });
+  assert.equal(b.bin, '/x/med');
+});
+
+test('bevisbildHtml och verifieringHtml med klipp: paren ur våra filmer, aldrig miniatyrträffen, det lånade klippet utpekat', () => {
+  const a = ARENDE(); const annons = KLIPP_ANNONS(); const klipp = KLIPP();
+  const html = bevisbildHtml(a, annons, { miniatyr: () => 'data:image/jpeg;base64,MINI', nu: '2026-09-29T10:00:00Z', nr: 1, antal: 10, klipp });
+  assert.match(html, /cut from our own advertising films \("Takoverdrag_PD_2_H1", "Takoverdrag_OB_1_H1"\)/);
+  assert.match(html, /Pair A · perceptual-hash distance 0\/64 · scene 0:14–0:16/); assert.match(html, /Our film — Takoverdrag_OB_1_H1 · 0:08/); assert.match(html, /Reported ad · 0:23/);
+  assert.match(html, /74% of the reported video's sampled frames \(50 of 68\) match our films frame for frame \(compared against 131 of our films\)/);
+  assert.doesNotMatch(html, /MINI/, 'miniatyrträffen (det lånade klippet) visas aldrig när klippen finns'); assert.doesNotMatch(html, /Our original/);
+  assert.match(html, /EGEN1/); assert.match(html, /DERAS2/);
+  const utan = bevisbildHtml(a, annons, { miniatyr: () => 'data:image/jpeg;base64,MINI', nr: 1, antal: 10 });
+  assert.match(utan, /MINI/); assert.match(utan, /Our original/);
+  const an = byggAnmalan(a, annons, KONFIG, { undertecknare: { namn: 'Axel Odhner', epost: 'axel.odhner@stonebite.org', roll: 'CEO' }, nr: 1, antal: 10, nu: '2026-09-29T10:00:00Z', bevisbild: 'arenden/x/anmalan/bevis-1.png' });
+  const v = verifieringHtml({ arende: a, anmalningar: [an], bilder: { 1: 'data:image/png;base64,PNG' }, klippen: { 2: klipp }, uppdaterad: '2026-09-29T10:00:00Z' });
+  assert.match(v, /Rutorna på bevisbilden är ur våra egna klipp:/); assert.match(v, /A = deras 0:15 ↔ vår Takoverdrag_PD_2_H1 0:11 \(0\/64\)/);
+  assert.match(v, /Lånat klipp som INTE används/); assert.match(v, /LANAT2/); assert.match(v, /ruta B är lånad/);
+});
+
+test('byggAnmalan och beskrivning500 med klipp: filmen klippt ur våra, tiderna och andelen — miniatyrträffen nämns inte', () => {
+  const a = ARENDE(); const annons = KLIPP_ANNONS();
+  const an = byggAnmalan(a, annons, KONFIG, { undertecknare: { namn: 'Axel Odhner', epost: 'axel.odhner@stonebite.org', roll: 'CEO' }, nr: 3, antal: 10, nu: '2026-09-29T10:00:00Z', bevisbildUrl: 'https://cdn.shopify.com/s/files/x/bevis-3.png' });
+  assert.match(an.falt.contentDescription, /The ad's video is cut from our own ad films "Takoverdrag_PD_2_H1", "Takoverdrag_OB_1_H1": 2 still frames from different scenes of the reported video \(at 0:15, 0:23\) are identical to frames of our films \(perceptual-hash distance 0, 0\/64\), and 74% of the reported video's sampled frames match our films frame for frame \(compared against 131 of our films\)\./);
+  assert.doesNotMatch(an.falt.contentDescription, /our own copyrighted advertising image/); assert.doesNotMatch(an.falt.contentDescription, /The ad is a video that uses our material/);
+  assert.match(an.falt.additionalInfo, /frames from our film on the left, the same frames in the reported ad on the right/);
+  const b = beskrivning500(an);
+  assert.ok(b.length <= 500, String(b.length));
+  assert.match(b, /Its video is cut from our own ad film: 2 stills from different scenes \(at 0:15, 0:23\) are identical to ours; 74% of its frames match our film\./);
+  assert.match(b, /Ref KD-2026-007 3\/10\./);
+});
+
+test('brevet och ärenderapporten med klipp: filmen är klippt ur vår — inte "bild(er) identiska"', () => {
+  const a = ARENDE(); a.bevis.annonser = [KLIPP_ANNONS()];
+  const sv = [].concat(bevisrader(a, 'sv')).join('\n');
+  assert.match(sv, /film klippt ur våra egna reklamfilmer/); assert.match(sv, /filmen är klippt ur vår: 2 rutor ur olika scener identiska med våra, 74 % av er film matchar vår ruta för ruta/); assert.doesNotMatch(sv, /bild\(er\) identiska/);
+  const en = [].concat(bevisrader(a, 'en')).join('\n');
+  assert.match(en, /the video is cut from ours: 2 frames from different scenes identical to ours, 74% of your video matches ours frame for frame/);
+  const md = arendeMd(a);
+  assert.match(md, /## Rutorna ur våra egna klipp \(1 annonser\)/); assert.match(md, /A 0:15 ↔ Takoverdrag_PD_2_H1 0:11 \(0\/64\)/); assert.match(md, /74 % \(131 filmer jämförda\)/); assert.match(md, /lånat klipp och används inte som bevis/);
 });

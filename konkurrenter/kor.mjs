@@ -22,8 +22,13 @@
 //        lage.json, granskningssidan output/sida.html, svensk rapport,
 //        engelsk Discord-post när något nytt finns. Ett annonsfynd under
 //        Axels tröskel (trosklar.annons) blir inget ärende utan --tvinga.
-//   node konkurrenter/kor.mjs --anmal <id> [--utan-bevisbild] [--utan-cdn]
+//   node konkurrenter/kor.mjs --klipp <id> [--antal 3] [--lanat <anmälan>:<bokstav>,…] [--alla]
+//        Bevisrutorna ur VÅRA EGNA klipp: deras video (annonsbiblioteket) och vår
+//        (Meta) laddas ner, rutor matchas, scenen med miniatyren (det lånade klippet)
+//        och det Axel pekat ut kastas, 3 par ur olika scener per annons → klipp.json.
+//   node konkurrenter/kor.mjs --anmal <id> [--bara-aktiva] [--utan-bevisbild] [--utan-cdn]
 //        Meta-anmälningarna: en per kopierad annons + bevisbild + verifieringssida.
+//        Finns klipp.json byggs bevisbilden ur paren, aldrig ur miniatyrträffen.
 //   node konkurrenter/kor.mjs --anmal-skicka <id> [--nr n] [--ja] [--kod-fil <fil>]
 //        Fyller i Metas formulär HÄRIFRÅN (anmal-skicka.mjs). Utan --ja: torrt.
 //        Med --ja (Axels "kör anmälningarna"): engångskoden ur kodfilen, Submit, kvitto.
@@ -58,6 +63,7 @@ import { bevisbildHtml, bevisbildPng, verifieringHtml } from './bevisbild.mjs';
 import { tolkaAnnonsinput, byggAnnonsfynd } from './annonsfall.mjs';
 import { hamtaAdLibrary, sidaIdUr } from './adlibrary.mjs';
 import { skickaAnmalan } from './anmal-skicka.mjs';
+import { hittaFfmpeg, hamtaFil, varVideo, videoKalla, egnaFilmer, prefixUrNamn, rutorUrVideo, hashUrBild, langd, skrivRuta, paraRutor, tid, FPS, MAX_AVSTAND } from './klipp.mjs';
 import { rapportSv, rapportEn, kallrader, arendeMd, KANAL_INTRO } from './rapport.mjs';
 import { byggSida } from './sida.mjs';
 
@@ -725,6 +731,22 @@ async function anmal() {
   const mapp = join(ARENDEMAPP, a.id, 'anmalan'); mkdirSync(mapp, { recursive: true });
   const undertecknare = { ...(k.anmalan?.undertecknare ?? {}), ...(flagga('namn') ? { namn: flagga('namn') } : {}), ...(flagga('epost') ? { epost: flagga('epost') } : {}), ...(flagga('telefon') ? { telefon: flagga('telefon') } : {}) };
 
+  // Klippen (Axel 2026-09-29): bär ärendet valda rutor ur våra egna klipp (--klipp) byggs kortet ur dem —
+  // aldrig ur miniatyrträffen, den är det lånade klippet. Saknas rutfilerna (cache i output/) stoppar vi
+  // hellre än att falla tillbaka på den gamla bilden.
+  const klippfil = lasJson(join(mapp, 'klipp.json'), null);
+  const dataUri = (rel) => { const f = rel ? join(DATAMAPP, rel) : null; return f && existsSync(f) ? `data:image/jpeg;base64,${readFileSync(f).toString('base64')}` : null; };
+  const klippen = {}; const klippFel = [];
+  for (const t of annonser) {
+    if (!t.klipp?.antal) continue;
+    const p = klippfil?.per?.[t.nr];
+    const val = (p?.val ?? []).map((v) => ({ ...v, egenData: dataUri(v.egenFil), derasData: dataUri(v.derasFil) }));
+    if (!val.length || val.some((v) => !v.egenData || !v.derasData)) { klippFel.push(`annons ${t.nr}: rutorna ur våra klipp saknas i output/klipp — kör node konkurrenter/kor.mjs --klipp ${a.id} igen`); continue; }
+    klippen[t.nr] = { val, statistik: p.statistik ?? {}, uteslutna: (p.uteslutna ?? []).map((v) => ({ ...v, egenData: dataUri(v.egenFil), derasData: dataUri(v.derasFil) })), egen: p.egen ?? null };
+  }
+  if (klippFel.length) { console.log(`⚠️ Stoppat: ${klippFel.join('; ')}`); process.exitCode = 1; return; }
+  if (Object.keys(klippen).length) logg(`  bevisbilderna byggs ur våra egna klipp för ${Object.keys(klippen).length} av ${annonser.length} annonser (klipp.json)`);
+
   // Bilderna till bevisbilden: ärendets miniatyrer + det som saknas hämtas nu (Chromium behövs ändå för PNG:n).
   const miniatyrer = { ...(a.miniatyrer ?? {}) };
   const bevisbilder = {};
@@ -738,7 +760,7 @@ async function anmal() {
       const antal = annonser.length;
       for (let i = 0; i < annonser.length; i++) {
         const t = annonser[i];
-        const html = bevisbildHtml(a, t, { miniatyr: (u) => miniatyrer[u] ?? null, nu, nr: i + 1, antal });
+        const html = bevisbildHtml(a, t, { miniatyr: (u) => miniatyrer[u] ?? null, nu, nr: i + 1, antal, klipp: klippen[t.nr] ?? null });
         const fil = join(mapp, `bevis-${i + 1}.png`);
         try { await bevisbildPng(html, fil); bevisbilder[t.nr] = { fil: fil.replace(`${DATAMAPP}/`, ''), url: null }; logg(`  bevisbild ${i + 1}/${antal}: ${basename(fil)}`); }
         catch (e) { logg(`  ⚠️ bevisbild ${i + 1}: ${e.message}`); }
@@ -759,7 +781,7 @@ async function anmal() {
   const fel = anmalningar.flatMap(kontrolleraAnmalan);
   for (const an of anmalningar) { skrivJson(join(mapp, `${an.nr}.json`), an); writeFileSync(join(mapp, `${an.nr}.txt`), `${anmalanText(an)}\n`); }
   const bilder = Object.fromEntries(anmalningar.filter((an) => an.bevisbild && existsSync(join(DATAMAPP, an.bevisbild))).map((an) => [an.nr, `data:image/png;base64,${readFileSync(join(DATAMAPP, an.bevisbild)).toString('base64')}`]));
-  writeFileSync(join(mapp, 'verifiering.html'), verifieringHtml({ arende: a, anmalningar, bilder, uppdaterad: nu }));
+  writeFileSync(join(mapp, 'verifiering.html'), verifieringHtml({ arende: a, anmalningar, bilder, klippen, uppdaterad: nu }));
   const upp = { ...a, miniatyrer, anmalan: { byggd: nu, antal: anmalningar.length, hoppade, baraAktiva: har('bara-aktiva'), hoppadeInaktiva, stoppad: fel.length ? fel : null, verifiering: `arenden/${a.id}/anmalan/verifiering.html`, rapporter: anmalningar.map((an) => ({ nr: an.nr, lank: an.lank, libraryId: an.libraryId, annonsNr: an.annonsNr, bevisbild: an.bevisbild, bevisbildUrl: an.bevisbildUrl, fil: `arenden/${a.id}/anmalan/${an.nr}.json`, status: 'utkast', referens: null, inskickad: null })) } };
   sparaArende(upp, ARENDEFIL, { nu }); skrivArendefiler(upp); arenden.set(upp.id, upp);
   console.log(`${anmalningar.length} anmälning${anmalningar.length === 1 ? '' : 'ar'} byggd${anmalningar.length === 1 ? '' : 'a'} för ${a.id} (en per annons)${hoppade.length ? `, ${hoppade.length} hoppad(e): ${hoppade.map((h) => `annons ${h.nr} ${h.orsak}`).join(', ')}` : ''}:`);
@@ -767,6 +789,151 @@ async function anmal() {
   console.log(`Fälten: konkurrenter/arenden/${a.id}/anmalan/<nr>.json (.txt = samma i klartext) · verifieringssidan: konkurrenter/arenden/${a.id}/anmalan/verifiering.html`);
   if (fel.length) { console.log(`⚠️ Stoppat: ${[...new Set(fel)].join('; ')}`); process.exitCode = 1; return; }
   console.log(`Nästa steg: publicera verifieringssidan till Axel. Torrkör formuläret härifrån med: node konkurrenter/kor.mjs --anmal-skicka ${a.id} (allt fylls i, inget skickas). På hans "kör anmälningarna ${a.id}": node konkurrenter/kor.mjs --anmal-skicka ${a.id} --ja — en anmälan i taget, koden ur Gmail skrivs i konkurrenter/arenden/${a.id}/anmalan/kod.txt, kvittot skrivs av sig självt (för hand: --anmald ${a.id} --nr <n> --referens <r>).`);
+}
+
+/**
+ * --klipp <id> [--antal 3] [--lanat <anmälan>:<bokstav>,…] [--alla]: bevisrutorna
+ * ur VÅRA EGNA klipp (Axel 2026-09-29: miniatyrerna — annonsernas förhandsbilder
+ * — var de lånade klippen, resten av filmerna är våra AI-klipp). Deras video
+ * laddas ner ur annonsbiblioteket och vår ur Meta, rutor tas var halva sekund
+ * och matchas; scenen som bär miniatyren (och det Axel pekat ut med --lanat)
+ * kastas, och 3 par ur olika scener väljs per annons. Skriver
+ * arenden/<id>/anmalan/klipp.json (facit, committas), rutorna i output/klipp/<id>/
+ * (cache) och en sammanfattning på ärendets annonser — --anmal bygger sedan
+ * bevisbilden ur paren och vägrar den gamla rutan.
+ */
+async function klipp() {
+  const k = konfig();
+  const { arenden, a } = hamtaArende(flagga('klipp'));
+  const ff = hittaFfmpeg();
+  if (!ff.bin) { console.log(`ffmpeg med H.264 saknas${ff.provade.length ? ` (provade utan H.264: ${ff.provade.join(', ')})` : ''} — installera: pip3 install --user imageio-ffmpeg, eller sätt FFMPEG=<sökväg>.`); process.exitCode = 1; return; }
+  const nu = new Date().toISOString();
+  const antal = Number(flagga('antal', 3)) || 3;
+  const allaTraffar = (a.bevis?.annonser ?? []).filter((t) => t.text?.styrka || t.bilder?.length);
+  const baraAktiva = har('bara-aktiva') || (!har('alla') && Boolean(a.anmalan?.baraAktiva));
+  const annonser = baraAktiva ? allaTraffar.filter((t) => t.aktiv !== false) : allaTraffar;
+  if (!annonser.length) { console.log(`${a.id} har inga annonsträffar att välja rutor för.`); process.exitCode = 1; return; }
+  const mapp = join(ARENDEMAPP, a.id, 'anmalan'); mkdirSync(mapp, { recursive: true });
+  const cache = join(OUTPUT, 'klipp', a.id); mkdirSync(cache, { recursive: true });
+  const klippfil = join(mapp, 'klipp.json');
+  const gammal = lasJson(klippfil, { per: {}, lanade_hashar: [] });
+  const lanade = new Set(gammal.lanade_hashar ?? []);
+  // --lanat 3:B = anmälans nummer + rutans bokstav på verifieringssidan ⇒ båda rutornas hashar utesluts i alla annonser.
+  for (const del of String(flagga('lanat', '')).split(',').map((s) => s.trim()).filter(Boolean)) {
+    const m = del.match(/^(\d+)\s*[:-]\s*([A-Za-z])$/);
+    if (!m) { console.log(`--lanat: förstår inte "${del}" — skriv <anmälan>:<bokstav>, till exempel 3:B`); process.exitCode = 1; return; }
+    const rapport = (a.anmalan?.rapporter ?? []).find((r) => String(r.nr) === m[1]);
+    const annonsNr = rapport?.annonsNr ?? Number(m[1]);
+    const par = gammal.per?.[annonsNr]?.val?.find((v) => v.bokstav === m[2].toUpperCase());
+    if (!par) { console.log(`--lanat ${del}: ingen ruta ${m[2].toUpperCase()} för anmälan ${m[1]} (annons ${annonsNr}) i klipp.json`); process.exitCode = 1; return; }
+    lanade.add(par.egenHash); lanade.add(par.derasHash);
+    logg(`  lånat klipp utpekat: anmälan ${m[1]} ruta ${m[2].toUpperCase()} (annons ${annonsNr}, deras ${tid(par.derasT)}) — utesluts överallt`);
+  }
+  // Deras videolänkar ur den senaste annonsfilen för sidan.
+  const sidaId = a.deras?.sidaId ?? null;
+  const filer = existsSync(OUTPUT) && sidaId ? readdirSync(OUTPUT).filter((f) => f.endsWith(`.annonser-${sidaId}.json`)).sort() : [];
+  const annonsfil = filer.length ? lasJson(join(OUTPUT, filer.at(-1)), null) : null;
+  const videoUrl = new Map((annonsfil?.annonser ?? []).map((x) => [String(x.id), x.videoUrl ?? null]));
+  if (!annonsfil) logg(`  ⚠️ ingen annonsfil för sidan ${sidaId ?? '?'} i output/ — kör --hamta --annonser-sida ${sidaId ?? '<sid-id>'} först`);
+  const { skapaKlient } = await import('../kommentarer/meta.mjs');
+  const klient = skapaKlient({ token: process.env.META_ACCESS_TOKEN, logg: () => {} }); // standard-backoff: väntar vid kod 17 i stället för att kasta
+  const rel = (f) => f.replace(`${DATAMAPP}/`, '');
+  const hashUrDataUri = (dataUri, fil) => { try { const m = String(dataUri ?? '').match(/^data:([^;]+);base64,(.+)$/); if (!m) return null; writeFileSync(fil, Buffer.from(m[2], 'base64')); return hashUrBild(ff.bin, fil); } catch { return null; } };
+
+  // Biblioteket: ALLA våra filmer för produkten — annonser i våra konton med samma namnprefix som de träffade
+  // (aktiva och pausade; mätt 2026-09-29: ORVO klipper ur många av våra filmer, inte bara den miniatyren pekade på).
+  const prefixer = [...new Set(annonser.map((t) => prefixUrNamn(t.varAnnons?.namn)).filter(Boolean))];
+  const konton = Object.values(k.verksamheter ?? {}).flatMap((v) => v.konton ?? []);
+  const bibliotekFil = join(cache, 'bibliotek.json');
+  let bibliotek = har('utan-bibliotek') ? null : lasJson(bibliotekFil, null);
+  if (!bibliotek && !har('utan-bibliotek') && prefixer.length) {
+    logg(`  biblioteket: våra filmer med prefix ${prefixer.join(', ')} i ${konton.length} konton …`);
+    const b = await egnaFilmer(klient, konton, prefixer, { logg, max: Number(flagga('max-filmer', 120)) || 120 });
+    bibliotek = { byggt: nu, prefixer, filmer: b.filmer, status: b.status };
+    skrivJson(bibliotekFil, bibliotek);
+  }
+  const poster = new Map(); // videoId eller annons:<id> → { videoId?, ider?, annonsId, namn }
+  for (const f of bibliotek?.filmer ?? []) poster.set(f.videoId, f);
+  for (const t of annonser) { const id = t.varAnnons?.id; if (id && ![...poster.values()].some((f) => f.annonsId === id)) poster.set(`annons:${id}`, { annonsId: id, namn: t.varAnnons?.namn ?? null, ider: null }); }
+  // Varje film laddas ner och hashas EN gång (cache: egen-<videoId>.mp4 + rutor-<videoId>.json).
+  const filmer = []; const filmFel = [];
+  for (const f of poster.values()) {
+    try {
+      // Cachen först: finns rutor-<video>.json för något av filmens id:n behövs varken Meta eller nedladdning (131 anrop annars, mätt 2026-09-29).
+      const cachad = (f.ider ?? [f.videoId]).filter(Boolean).map((id) => lasJson(join(cache, `rutor-${id}.json`), null)).find(Boolean);
+      if (cachad) { if (!filmer.some((x) => x.id === cachad.id)) filmer.push(cachad); continue; }
+      const kalla = f.ider?.length ? { namn: f.namn, ...(await videoKalla(klient, f.ider)) } : await varVideo(klient, f.annonsId);
+      if (kalla.fel) throw new Error(kalla.fel);
+      const id = kalla.videoId;
+      if (filmer.some((x) => x.id === id)) continue;
+      const rutorFil = join(cache, `rutor-${id}.json`);
+      let post = lasJson(rutorFil, null);
+      if (!post) {
+        if (kalla.kalla === 'source') {
+          const fil = join(cache, `egen-${id}.mp4`);
+          if (!existsSync(fil)) { const h = await hamtaFil(kalla.source, fil); logg(`  vår ${kalla.namn ?? f.namn ?? id}: film ${Math.round(h.byte / 1e5) / 10} MB`); }
+          post = { id, namn: kalla.namn ?? f.namn ?? null, annonsId: f.annonsId, fil: rel(fil), kalla: 'source', langd: kalla.langd ?? langd(ff.bin, fil), rutor: rutorUrVideo(ff.bin, fil) };
+        } else {
+          const rutor = [];
+          for (let i = 0; i < kalla.thumbnails.length; i++) {
+            const fil = join(cache, `egen-${id}-thumb-${i}.jpg`);
+            try { if (!existsSync(fil)) await hamtaFil(kalla.thumbnails[i], fil); const hash = hashUrBild(ff.bin, fil); if (hash) rutor.push({ i, t: null, hash, fil: rel(fil) }); } catch {}
+          }
+          logg(`  vår ${kalla.namn ?? f.namn ?? id}: Meta lämnar ingen source — ${rutor.length} thumbnails som rutor`);
+          post = { id, namn: kalla.namn ?? f.namn ?? null, annonsId: f.annonsId, fil: null, kalla: 'thumbnails', langd: kalla.langd ?? null, rutor };
+        }
+        skrivJson(rutorFil, post);
+      }
+      filmer.push(post);
+    } catch (e) { filmFel.push(`${f.namn ?? f.annonsId ?? f.videoId}: ${e.message}`); }
+  }
+  if (!filmer.length) { console.log(`Ingen av våra filmer gick att läsa: ${filmFel.join('; ')}`); process.exitCode = 1; return; }
+  logg(`  ${filmer.length} av våra filmer i jämförelsen (${filmer.reduce((s, f) => s + f.rutor.length, 0)} rutor)${filmFel.length ? ` · ${filmFel.length} gick inte: ${filmFel.join('; ')}` : ''}`);
+  // Utesluts överallt: miniatyrträffarna (det lånade klippet, båda sidor, ALLA annonser) + det Axel pekat ut.
+  const uteslut = new Set(lanade);
+  for (const t of annonser) for (const b of t.bilder ?? []) for (const [u, vem] of [[b.egen, 'egen'], [b.deras, 'deras']]) { const h = hashUrDataUri(a.miniatyrer?.[u], join(cache, `mini-${t.nr}-${vem}.jpg`)); if (h) uteslut.add(h); }
+  const per = {}; const nya = new Map();
+  for (const t of annonser) {
+    const libraryId = String(t.lank ?? '').match(/[?&]id=(\d+)/)?.[1] ?? String(t.nr);
+    const rad = { nr: t.nr, libraryId, lank: t.lank ?? null, varAnnons: t.varAnnons ?? null, fel: null };
+    try {
+      if (!t.video) throw new Error('bildannons — ingen film att jämföra (miniatyrträffen gäller)');
+      const url = videoUrl.get(libraryId);
+      if (!url) throw new Error(`ingen videolänk i annonsfilen — kör --hamta --annonser-sida ${sidaId} igen`);
+      const derasFil = join(cache, `deras-${libraryId}.mp4`);
+      if (!existsSync(derasFil)) { const h = await hamtaFil(url, derasFil); logg(`  annons ${t.nr}: deras film ${Math.round(h.byte / 1e5) / 10} MB`); }
+      const derasRutor = rutorUrVideo(ff.bin, derasFil);
+      const p = paraRutor(filmer, derasRutor, { uteslut: [...uteslut], antal });
+      const filmFor = (v) => filmer.find((f) => f.id === v.egenFilm?.id);
+      const ruta = (vem, v, namn) => {
+        if (vem === 'egen' && v.egenFil) return v.egenFil;
+        const fil = join(cache, namn);
+        skrivRuta(ff.bin, vem === 'egen' ? join(DATAMAPP, filmFor(v)?.fil ?? '') : derasFil, vem === 'egen' ? v.egenT : v.derasT, fil);
+        return rel(fil);
+      };
+      p.val = p.val.map((v) => ({ ...v, egenFil: ruta('egen', v, `${t.nr}-${v.bokstav}-egen.jpg`), derasFil: ruta('deras', v, `${t.nr}-${v.bokstav}-deras.jpg`) }));
+      p.uteslutna = p.uteslutna.slice(0, 3).map((v, i) => ({ ...v, egenFil: ruta('egen', v, `${t.nr}-lanat-${i + 1}-egen.jpg`), derasFil: ruta('deras', v, `${t.nr}-lanat-${i + 1}-deras.jpg`) }));
+      Object.assign(rad, {
+        deras: { video: rel(derasFil), langd: langd(ff.bin, derasFil), rutor: derasRutor.length },
+        egen: { jamforda: filmer.length, anvanda: [...new Set(p.val.map((v) => v.egenFilm?.namn).filter(Boolean))], perFilm: p.statistik.perFilm },
+        statistik: p.statistik, val: p.val, uteslutna: p.uteslutna,
+      });
+      if (!p.val.length) rad.fel = p.statistik.traffar ? 'alla matchande scener bär den uteslutna rutan — inga egna klipp att visa' : `inga rutor hos dem matchar våra filmer (avstånd > ${MAX_AVSTAND}/64)`;
+    } catch (e) { rad.fel = e.message; }
+    per[t.nr] = rad;
+    const sammanfattning = rad.val?.length
+      ? { byggd: nu, antal: rad.val.length, andel: rad.statistik.andel, traffar: rad.statistik.traffar, rutor: rad.statistik.derasRutor, lanade: rad.uteslutna?.length ?? 0, filmer: rad.egen.anvanda, jamforda: filmer.length, par: rad.val.map((v) => ({ bokstav: v.bokstav, derasT: v.derasT, egenT: v.egenT, egenI: v.egenI, avstand: v.avstand, film: v.egenFilm?.namn ?? null })) }
+      : null;
+    nya.set(t.nr, { ...t, klipp: sammanfattning, ...(rad.fel ? { klippFel: rad.fel } : {}) });
+    console.log(`  annons ${t.nr} (miniatyr ← ${t.varAnnons?.namn ?? '?'}): ${rad.fel ? `⚠️ ${rad.fel}` : `${rad.val.length} par ur olika scener — ${rad.val.map((v) => `${v.bokstav}: deras ${tid(v.derasT)} ↔ ${v.egenFilm?.namn ?? 'vår'} ${v.egenT === null ? `ruta ${v.egenI + 1}` : tid(v.egenT)} (${v.avstand}/64)`).join(', ')} · ${rad.statistik.traffar} av ${rad.statistik.derasRutor} rutor matchar våra egna klipp (${rad.statistik.andel} %) · ${rad.statistik.uteslutnaScener} lånad(e) scen(er) utesluten (${rad.statistik.lanadeRutor} rutor)`}`);
+  }
+  skrivJson(klippfil, { byggd: nu, ffmpeg: ff.bin, fps: FPS, maxAvstand: MAX_AVSTAND, arende: a.id, lanade_hashar: [...lanade], bibliotek: { prefixer, filmer: filmer.map((f) => ({ id: f.id, namn: f.namn, annonsId: f.annonsId, kalla: f.kalla, langd: f.langd, rutor: f.rutor.length })), fel: filmFel }, per });
+  const upp = { ...a, bevis: { ...a.bevis, annonser: (a.bevis?.annonser ?? []).map((t) => nya.get(t.nr) ?? t) } };
+  sparaArende(upp, ARENDEFIL, { nu }); skrivArendefiler(upp); arenden.set(upp.id, upp);
+  const klara = Object.values(per).filter((r) => r.val?.length).length; const fel = Object.values(per).filter((r) => r.fel);
+  console.log(`Klippen valda för ${klara} av ${annonser.length} annonser i ${a.id} (mot ${filmer.length} av våra filmer) → konkurrenter/arenden/${a.id}/anmalan/klipp.json (rutorna i konkurrenter/output/klipp/${a.id}/).${fel.length ? ` ${fel.length} utan: ${fel.map((r) => `annons ${r.nr} (${r.fel})`).join('; ')}.` : ''}`);
+  console.log(`Nästa steg: node konkurrenter/kor.mjs --anmal ${a.id}${baraAktiva ? ' --bara-aktiva' : ''} bygger om bevisbilderna ur paren. Pekar Axel ut en ruta som lånad: --klipp ${a.id} --lanat <anmälan>:<bokstav> och sedan --anmal igen.`);
+  if (fel.length && !klara) process.exitCode = 1;
 }
 
 /** Kvittot för EN inskickad anmälan — delas av --anmald (Axels hand) och --anmal-skicka (formuläret härifrån). Kastar när anmälan saknas eller redan är kvitterad. Ren. */
@@ -952,6 +1119,6 @@ async function sidaEnbart() {
   console.log(`Granskningssidan byggd: ${f}`);
 }
 
-const huvud = har('kolla') ? kolla : har('fraser') ? fraser : har('hamta') ? hamta : har('rapport') ? rapport : har('brev') ? visaBrev : har('skickad') ? skickad : har('skicka') ? skicka : har('faktura') ? fakturaEnbart : har('anmal-skicka') ? anmalSkicka : har('anmald') ? anmald : har('anmal') ? anmal : har('avfarda') ? avfarda : har('eskalera') ? eskalera : har('foljupp') ? foljupp : har('lista') ? lista : har('sida') ? sidaEnbart : null;
+const huvud = har('kolla') ? kolla : har('fraser') ? fraser : har('hamta') ? hamta : har('rapport') ? rapport : har('brev') ? visaBrev : har('skickad') ? skickad : har('skicka') ? skicka : har('faktura') ? fakturaEnbart : har('klipp') ? klipp : har('anmal-skicka') ? anmalSkicka : har('anmald') ? anmald : har('anmal') ? anmal : har('avfarda') ? avfarda : har('eskalera') ? eskalera : har('foljupp') ? foljupp : har('lista') ? lista : har('sida') ? sidaEnbart : null;
 if (!huvud) { console.error('Ange --kolla, --fraser, --hamta [--annonser <fil>], --rapport, --lista, --brev <id>, --skicka <id>, --skickad <id>, --faktura <id>, --anmal <id>, --anmald <id> --nr <n> --referens <r>, --avfarda <id>, --eskalera <id>, --foljupp eller --sida.'); process.exit(1); }
 huvud().catch((e) => { console.error(`✗ ${e.message}`); process.exit(e.exit ?? 1); });

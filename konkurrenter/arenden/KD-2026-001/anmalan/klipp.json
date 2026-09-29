@@ -1,0 +1,3405 @@
+{
+  "byggd": "2026-09-29T08:52:23.523Z",
+  "ffmpeg": "/root/.local/lib/python3.11/site-packages/imageio_ffmpeg/binaries/ffmpeg-linux-x86_64-v7.0.2",
+  "fps": 2,
+  "maxAvstand": 6,
+  "arende": "KD-2026-001",
+  "lanade_hashar": [],
+  "bibliotek": {
+    "prefixer": [
+      "CaraShellRoof_",
+      "Takoverdrag_"
+    ],
+    "filmer": [
+      {
+        "id": "1627891502009585",
+        "namn": "Takoverdrag_CS_2_H1",
+        "annonsId": "120250147352270291",
+        "kalla": "source",
+        "langd": 26.353,
+        "rutor": 53
+      },
+      {
+        "id": "1604517611454232",
+        "namn": "Takoverdrag_CS_12_H1",
+        "annonsId": "120250371708270291",
+        "kalla": "source",
+        "langd": 23.032,
+        "rutor": 46
+      },
+      {
+        "id": "4572957359625651",
+        "namn": "Takoverdrag_SP_4_H4",
+        "annonsId": "120250371696280291",
+        "kalla": "source",
+        "langd": 19.8,
+        "rutor": 40
+      },
+      {
+        "id": "1098418466410287",
+        "namn": "Takoverdrag_SP_4_H3",
+        "annonsId": "120250371676420291",
+        "kalla": "source",
+        "langd": 28.6,
+        "rutor": 57
+      },
+      {
+        "id": "4708239646167646",
+        "namn": "Takoverdrag_SP_4_H2",
+        "annonsId": "120250371639930291",
+        "kalla": "source",
+        "langd": 21.332,
+        "rutor": 43
+      },
+      {
+        "id": "2009369086434994",
+        "namn": "Takoverdrag_UG_2_H1",
+        "annonsId": "120250357009170291",
+        "kalla": "source",
+        "langd": 20.48,
+        "rutor": 41
+      },
+      {
+        "id": "2238823400028473",
+        "namn": "Takoverdrag_CS_9_H1",
+        "annonsId": "120250341609420291",
+        "kalla": "source",
+        "langd": 25.286,
+        "rutor": 51
+      },
+      {
+        "id": "2165753887623386",
+        "namn": "Takoverdrag_PD_10_H1",
+        "annonsId": "120250341572220291",
+        "kalla": "source",
+        "langd": 23.733,
+        "rutor": 47
+      },
+      {
+        "id": "1062629803323334",
+        "namn": "Takoverdrag_CO_5_H1",
+        "annonsId": "120250341545560291",
+        "kalla": "source",
+        "langd": 13.232,
+        "rutor": 26
+      },
+      {
+        "id": "1055843663993823",
+        "namn": "Takoverdrag_OB_3_H1",
+        "annonsId": "120250341520820291",
+        "kalla": "source",
+        "langd": 26.932,
+        "rutor": 54
+      },
+      {
+        "id": "2274279546663682",
+        "namn": "Takoverdrag_GT_11_H1",
+        "annonsId": "120250341502740291",
+        "kalla": "source",
+        "langd": 26.467,
+        "rutor": 53
+      },
+      {
+        "id": "1455550966388281",
+        "namn": "Takoverdrag_OB_4_H1",
+        "annonsId": "120250341482970291",
+        "kalla": "source",
+        "langd": 22.467,
+        "rutor": 45
+      },
+      {
+        "id": "1906776980305994",
+        "namn": "Takoverdrag_OB_1_H1",
+        "annonsId": "120250330463600291",
+        "kalla": "source",
+        "langd": 18.032,
+        "rutor": 36
+      },
+      {
+        "id": "1826453095026173",
+        "namn": "Takoverdrag_OB_2_H1",
+        "annonsId": "120250330462810291",
+        "kalla": "source",
+        "langd": 16.718,
+        "rutor": 33
+      },
+      {
+        "id": "1799802437683001",
+        "namn": "Takoverdrag_PD_6_H1",
+        "annonsId": "120250330352620291",
+        "kalla": "source",
+        "langd": 16.182,
+        "rutor": 32
+      },
+      {
+        "id": "973503352439826",
+        "namn": "Takoverdrag_RI_3_H1",
+        "annonsId": "120250330352260291",
+        "kalla": "source",
+        "langd": 17.275,
+        "rutor": 35
+      },
+      {
+        "id": "961591576997026",
+        "namn": "Takoverdrag_PD_7_H1",
+        "annonsId": "120250330351320291",
+        "kalla": "source",
+        "langd": 17.9,
+        "rutor": 36
+      },
+      {
+        "id": "1445308770789193",
+        "namn": "Takoverdrag_TR_3_H1",
+        "annonsId": "120250330350820291",
+        "kalla": "source",
+        "langd": 24.149,
+        "rutor": 48
+      },
+      {
+        "id": "1650750200017215",
+        "namn": "Takoverdrag_GT_10_H1",
+        "annonsId": "120250330350540291",
+        "kalla": "source",
+        "langd": 17.786,
+        "rutor": 36
+      },
+      {
+        "id": "1066431556240617",
+        "namn": "Takoverdrag_CS_7_H1",
+        "annonsId": "120250330347950291",
+        "kalla": "source",
+        "langd": 22.268,
+        "rutor": 45
+      },
+      {
+        "id": "1637241178064828",
+        "namn": "Takoverdrag_RI_2_H1",
+        "annonsId": "120250330348390291",
+        "kalla": "source",
+        "langd": 16.832,
+        "rutor": 34
+      },
+      {
+        "id": "4715692158754983",
+        "namn": "Takoverdrag_CO_3_H1",
+        "annonsId": "120250330351050291",
+        "kalla": "source",
+        "langd": 19.899,
+        "rutor": 40
+      },
+      {
+        "id": "2035796930428239",
+        "namn": "Takoverdrag_GT_7_H1",
+        "annonsId": "120250330350170291",
+        "kalla": "source",
+        "langd": 18.15,
+        "rutor": 36
+      },
+      {
+        "id": "2014143355963963",
+        "namn": "Takoverdrag_GT_8_H1",
+        "annonsId": "120250330348980291",
+        "kalla": "source",
+        "langd": 14.367,
+        "rutor": 29
+      },
+      {
+        "id": "1794612261680643",
+        "namn": "Takoverdrag_CS_8_H1",
+        "annonsId": "120250330347560291",
+        "kalla": "source",
+        "langd": 20.082,
+        "rutor": 40
+      },
+      {
+        "id": "28026609890344616",
+        "namn": "Takoverdrag_SP_1_H1",
+        "annonsId": "120250252311510291",
+        "kalla": "source",
+        "langd": 23.4,
+        "rutor": 47
+      },
+      {
+        "id": "1393647809607009",
+        "namn": "Takoverdrag_RI_1_H1",
+        "annonsId": "120250252311710291",
+        "kalla": "source",
+        "langd": 31.45,
+        "rutor": 63
+      },
+      {
+        "id": "1629374438803173",
+        "namn": "Takoverdrag_UG_1_H1",
+        "annonsId": "120250252311540291",
+        "kalla": "source",
+        "langd": 27.082,
+        "rutor": 54
+      },
+      {
+        "id": "4425339637679185",
+        "namn": "Takoverdrag_PD_4_H1",
+        "annonsId": "120250252311830291",
+        "kalla": "source",
+        "langd": 25.432,
+        "rutor": 51
+      },
+      {
+        "id": "1135726582116215",
+        "namn": "Takoverdrag_GT_2_H1",
+        "annonsId": "120250252311810291",
+        "kalla": "source",
+        "langd": 27.748,
+        "rutor": 55
+      },
+      {
+        "id": "29253924880875293",
+        "namn": "Takoverdrag_PD_1_H1",
+        "annonsId": "120250252311470291",
+        "kalla": "source",
+        "langd": 37.755,
+        "rutor": 75
+      },
+      {
+        "id": "1077720491316831",
+        "namn": "Takoverdrag_CO_1_H1",
+        "annonsId": "120250252311550291",
+        "kalla": "source",
+        "langd": 25.75,
+        "rutor": 51
+      },
+      {
+        "id": "1596124075334669",
+        "namn": "Takoverdrag_SP_4_H1",
+        "annonsId": "120250252311480291",
+        "kalla": "source",
+        "langd": 39.817,
+        "rutor": 80
+      },
+      {
+        "id": "1402932001225062",
+        "namn": "Takoverdrag_SP_2_H1",
+        "annonsId": "120250252311500291",
+        "kalla": "source",
+        "langd": 24.766,
+        "rutor": 49
+      },
+      {
+        "id": "1615028910329688",
+        "namn": "Takoverdrag_GT_5_H1",
+        "annonsId": "120250252311750291",
+        "kalla": "source",
+        "langd": 23.166,
+        "rutor": 46
+      },
+      {
+        "id": "2388339611978148",
+        "namn": "Takoverdrag_PD_2_H1",
+        "annonsId": "120250252311460291",
+        "kalla": "source",
+        "langd": 37.632,
+        "rutor": 75
+      },
+      {
+        "id": "28131074066587234",
+        "namn": "Takoverdrag_CS_3_H1",
+        "annonsId": "120250252311780291",
+        "kalla": "source",
+        "langd": 29.187,
+        "rutor": 58
+      },
+      {
+        "id": "1067361515911303",
+        "namn": "Takoverdrag_PD_3_H1",
+        "annonsId": "120250252311560291",
+        "kalla": "source",
+        "langd": 37.918,
+        "rutor": 76
+      },
+      {
+        "id": "1075240581763143",
+        "namn": "Takoverdrag_GT_3_H1",
+        "annonsId": "120250252311800291",
+        "kalla": "source",
+        "langd": 28.467,
+        "rutor": 57
+      },
+      {
+        "id": "1481340267178614",
+        "namn": "Takoverdrag_GT_4_H1",
+        "annonsId": "120250252311440291",
+        "kalla": "source",
+        "langd": 26.733,
+        "rutor": 53
+      },
+      {
+        "id": "1658293378988495",
+        "namn": "Takoverdrag_GT_1_H1",
+        "annonsId": "120250252311820291",
+        "kalla": "source",
+        "langd": 29.581,
+        "rutor": 59
+      },
+      {
+        "id": "1538677984965189",
+        "namn": "Takoverdrag_CS_1_H1",
+        "annonsId": "120250252311790291",
+        "kalla": "source",
+        "langd": 28.35,
+        "rutor": 57
+      },
+      {
+        "id": "2239839696801908",
+        "namn": "Takoverdrag_SP_3_H1",
+        "annonsId": "120250252311680291",
+        "kalla": "source",
+        "langd": 22.932,
+        "rutor": 46
+      },
+      {
+        "id": "1348028590866369",
+        "namn": "CaraShellRoof_SP_3_H1 – kopia",
+        "annonsId": "120249305727070172",
+        "kalla": "source",
+        "langd": 22.941,
+        "rutor": 46
+      },
+      {
+        "id": "1423280463099933",
+        "namn": "CaraShellRoof_CS_1_H1 – kopia",
+        "annonsId": "120249305727140172",
+        "kalla": "source",
+        "langd": 28.63,
+        "rutor": 57
+      },
+      {
+        "id": "1622439879521452",
+        "namn": "CaraShellRoof_NO_SP_104_H2",
+        "annonsId": "120249304588710172",
+        "kalla": "source",
+        "langd": 21.333,
+        "rutor": 42
+      },
+      {
+        "id": "1253560923610589",
+        "namn": "CaraShellRoof_NO_CS_112_H1",
+        "annonsId": "120249304605860172",
+        "kalla": "source",
+        "langd": 23.019,
+        "rutor": 46
+      },
+      {
+        "id": "1652433423131201",
+        "namn": "CaraShellRoof_NO_UG_102_H1",
+        "annonsId": "120249304260960172",
+        "kalla": "source",
+        "langd": 20.48,
+        "rutor": 41
+      },
+      {
+        "id": "2532558620578049",
+        "namn": "CaraShellRoof_UG_102_H1",
+        "annonsId": "120249304159620172",
+        "kalla": "source",
+        "langd": 20.48,
+        "rutor": 41
+      },
+      {
+        "id": "3350782465092166",
+        "namn": "CaraShellRoof_CS_112_H1",
+        "annonsId": "120249303997750172",
+        "kalla": "source",
+        "langd": 23.033,
+        "rutor": 46
+      },
+      {
+        "id": "1761934668355976",
+        "namn": "CaraShellRoof_SP_104_H2",
+        "annonsId": "120249303842690172",
+        "kalla": "source",
+        "langd": 21.339,
+        "rutor": 43
+      },
+      {
+        "id": "1412486877658998",
+        "namn": "CaraShellRoof_NO_SP_104_H3",
+        "annonsId": "120249303609050172",
+        "kalla": "source",
+        "langd": 28.608,
+        "rutor": 57
+      },
+      {
+        "id": "1077839678351814",
+        "namn": "CaraShellRoof_SP_104_H3",
+        "annonsId": "120249303595620172",
+        "kalla": "source",
+        "langd": 28.607,
+        "rutor": 57
+      },
+      {
+        "id": "1449926570335863",
+        "namn": "CaraShellRoof_NO_SP_104_H4",
+        "annonsId": "120249303471350172",
+        "kalla": "source",
+        "langd": 19.776,
+        "rutor": 39
+      },
+      {
+        "id": "1655299202919021",
+        "namn": "CaraShellRoof_SP_104_H4",
+        "annonsId": "120249303450790172",
+        "kalla": "source",
+        "langd": 19.807,
+        "rutor": 40
+      },
+      {
+        "id": "1581078819611847",
+        "namn": "CaraShellRoof_GT_108_H1",
+        "annonsId": "120249219941370172",
+        "kalla": "source",
+        "langd": 14.372,
+        "rutor": 29
+      },
+      {
+        "id": "1992753328079778",
+        "namn": "CaraShellRoof_NO_CS_109_H1",
+        "annonsId": "120249251181710172",
+        "kalla": "source",
+        "langd": 25.28,
+        "rutor": 50
+      },
+      {
+        "id": "1113931614900422",
+        "namn": "CaraShellRoof_CS_109_H1",
+        "annonsId": "120249251079280172",
+        "kalla": "source",
+        "langd": 25.287,
+        "rutor": 51
+      },
+      {
+        "id": "2385602205304737",
+        "namn": "CaraShellRoof_NO_PD_110_H1",
+        "annonsId": "120249251068280172",
+        "kalla": "source",
+        "langd": 23.723,
+        "rutor": 47
+      },
+      {
+        "id": "3374872859568095",
+        "namn": "CaraShellRoof_PD_110_H1",
+        "annonsId": "120249251052800172",
+        "kalla": "source",
+        "langd": 23.753,
+        "rutor": 47
+      },
+      {
+        "id": "2570676566701204",
+        "namn": "CaraShellRoof_NO_CO_105_H1",
+        "annonsId": "120249250978490172",
+        "kalla": "source",
+        "langd": 13.205,
+        "rutor": 26
+      },
+      {
+        "id": "1704771903955594",
+        "namn": "CaraShellRoof_CO_105_H1",
+        "annonsId": "120249250968760172",
+        "kalla": "source",
+        "langd": 13.236,
+        "rutor": 26
+      },
+      {
+        "id": "1363705672420084",
+        "namn": "CaraShellRoof_NO_OB_103_H1",
+        "annonsId": "120249250960120172",
+        "kalla": "source",
+        "langd": 26.923,
+        "rutor": 54
+      },
+      {
+        "id": "1639679094163224",
+        "namn": "CaraShellRoof_OB_103_H1",
+        "annonsId": "120249250865390172",
+        "kalla": "source",
+        "langd": 26.935,
+        "rutor": 54
+      },
+      {
+        "id": "4654945931450127",
+        "namn": "CaraShellRoof_NO_OB_104_H1",
+        "annonsId": "120249250842220172",
+        "kalla": "source",
+        "langd": 22.485,
+        "rutor": 45
+      },
+      {
+        "id": "1735622540880260",
+        "namn": "CaraShellRoof_OB_104_H1",
+        "annonsId": "120249250828910172",
+        "kalla": "source",
+        "langd": 22.477,
+        "rutor": 45
+      },
+      {
+        "id": "1658410342588356",
+        "namn": "CaraShellRoof_PD_5_H1",
+        "annonsId": "120249156254490172",
+        "kalla": "source",
+        "langd": 39.403,
+        "rutor": 79
+      },
+      {
+        "id": "1106555205158745",
+        "namn": "CaraShellRoof_NO_CS_107_H1",
+        "annonsId": "120249220320230172",
+        "kalla": "source",
+        "langd": 22.293,
+        "rutor": 44
+      },
+      {
+        "id": "1825495121938837",
+        "namn": "CaraShellRoof_NO_CS_108_H1",
+        "annonsId": "120249220305570172",
+        "kalla": "source",
+        "langd": 20.096,
+        "rutor": 40
+      },
+      {
+        "id": "3607041216139485",
+        "namn": "CaraShellRoof_CS_107_H1",
+        "annonsId": "120249220065150172",
+        "kalla": "source",
+        "langd": 22.268,
+        "rutor": 45
+      },
+      {
+        "id": "965612976568336",
+        "namn": "CaraShellRoof_CS_108_H1",
+        "annonsId": "120249219971810172",
+        "kalla": "source",
+        "langd": 20.085,
+        "rutor": 40
+      },
+      {
+        "id": "1595318538708903",
+        "namn": "CaraShellRoof_NO_GT_108_H1",
+        "annonsId": "120249219954690172",
+        "kalla": "source",
+        "langd": 14.379,
+        "rutor": 29
+      },
+      {
+        "id": "1079569404945831",
+        "namn": "CaraShellRoof_NO_RI_102_H1",
+        "annonsId": "120249219766110172",
+        "kalla": "source",
+        "langd": 16.811,
+        "rutor": 33
+      },
+      {
+        "id": "1071192608954056",
+        "namn": "CaraShellRoof_RI_102_H1",
+        "annonsId": "120249219751100172",
+        "kalla": "source",
+        "langd": 16.835,
+        "rutor": 34
+      },
+      {
+        "id": "2826851037702309",
+        "namn": "CaraShellRoof_NO_GT_107_H1",
+        "annonsId": "120249219738560172",
+        "kalla": "source",
+        "langd": 18.133,
+        "rutor": 36
+      },
+      {
+        "id": "1741108893778636",
+        "namn": "CaraShellRoof_GT_107_H1",
+        "annonsId": "120249219634340172",
+        "kalla": "source",
+        "langd": 18.158,
+        "rutor": 36
+      },
+      {
+        "id": "1403871565193476",
+        "namn": "CaraShellRoof_NO_CO_103_H1",
+        "annonsId": "120249219610580172",
+        "kalla": "source",
+        "langd": 19.883,
+        "rutor": 40
+      },
+      {
+        "id": "977388375383939",
+        "namn": "CaraShellRoof_CO_103_H1",
+        "annonsId": "120249219580260172",
+        "kalla": "source",
+        "langd": 19.9,
+        "rutor": 40
+      },
+      {
+        "id": "1900610934243464",
+        "namn": "CaraShellRoof_NO_GT_110_H1",
+        "annonsId": "120249219376980172",
+        "kalla": "source",
+        "langd": 17.771,
+        "rutor": 35
+      },
+      {
+        "id": "1380709547105585",
+        "namn": "CaraShellRoof_GT_110_H1",
+        "annonsId": "120249219359450172",
+        "kalla": "source",
+        "langd": 17.787,
+        "rutor": 36
+      },
+      {
+        "id": "2029903231000078",
+        "namn": "CaraShellRoof_NO_TR_103_H1",
+        "annonsId": "120249219342600172",
+        "kalla": "source",
+        "langd": 24.128,
+        "rutor": 48
+      },
+      {
+        "id": "1793739685294307",
+        "namn": "CaraShellRoof_TR_103_H1",
+        "annonsId": "120249219198500172",
+        "kalla": "source",
+        "langd": 24.171,
+        "rutor": 48
+      },
+      {
+        "id": "1548948153663624",
+        "namn": "CaraShellRoof_NO_OB_102_H1",
+        "annonsId": "120249219188850172",
+        "kalla": "source",
+        "langd": 16.725,
+        "rutor": 33
+      },
+      {
+        "id": "1126795003184713",
+        "namn": "CaraShellRoof_OB_102_H1",
+        "annonsId": "120249219182040172",
+        "kalla": "source",
+        "langd": 16.719,
+        "rutor": 33
+      },
+      {
+        "id": "2987493098255555",
+        "namn": "CaraShellRoof_GT_105_H1",
+        "annonsId": "120249154846540172",
+        "kalla": "source",
+        "langd": 23.173,
+        "rutor": 46
+      },
+      {
+        "id": "1719383225792035",
+        "namn": "CaraShellRoof_DK_SP_2_H1",
+        "annonsId": "120249189967000172",
+        "kalla": "source",
+        "langd": 23.2,
+        "rutor": 46
+      },
+      {
+        "id": "926846713407543",
+        "namn": "CaraShellRoof_DK_PD_3_H1",
+        "annonsId": "120249187181850172",
+        "kalla": "source",
+        "langd": 35.5,
+        "rutor": 71
+      },
+      {
+        "id": "1112671017763391",
+        "namn": "CaraShellRoof_DK_GT_3_H1",
+        "annonsId": "120249187102110172",
+        "kalla": "source",
+        "langd": 25,
+        "rutor": 50
+      },
+      {
+        "id": "1762380161577491",
+        "namn": "CaraShellRoof_DK_GT_105_H1",
+        "annonsId": "120249187007770172",
+        "kalla": "source",
+        "langd": 19.7,
+        "rutor": 39
+      },
+      {
+        "id": "1558660875531572",
+        "namn": "CaraShellRoof_DK_UG_101_H1",
+        "annonsId": "120249187272840172",
+        "kalla": "source",
+        "langd": 22.733,
+        "rutor": 45
+      },
+      {
+        "id": "1443400564308108",
+        "namn": "CaraShellRoof_DK_SP_3_H1",
+        "annonsId": "120249187270580172",
+        "kalla": "source",
+        "langd": 20.2,
+        "rutor": 40
+      },
+      {
+        "id": "2387749111634154",
+        "namn": "CaraShellRoof_DK_SP_1_H1",
+        "annonsId": "120249187226770172",
+        "kalla": "source",
+        "langd": 21.1,
+        "rutor": 42
+      },
+      {
+        "id": "1601642511625040",
+        "namn": "CaraShellRoof_DK_SP_104_H1",
+        "annonsId": "120249187225080172",
+        "kalla": "source",
+        "langd": 32.733,
+        "rutor": 65
+      },
+      {
+        "id": "1399910959005311",
+        "namn": "CaraShellRoof_DK_RI_103_H1",
+        "annonsId": "120249187222290172",
+        "kalla": "source",
+        "langd": 15.633,
+        "rutor": 31
+      },
+      {
+        "id": "1668887704850139",
+        "namn": "CaraShellRoof_DK_RI_101_H1",
+        "annonsId": "120249187188530172",
+        "kalla": "source",
+        "langd": 24.233,
+        "rutor": 48
+      },
+      {
+        "id": "1054982260693152",
+        "namn": "CaraShellRoof_DK_PD_5_H1",
+        "annonsId": "120249187185630172",
+        "kalla": "source",
+        "langd": 40.033,
+        "rutor": 80
+      },
+      {
+        "id": "1788133572536635",
+        "namn": "CaraShellRoof_DK_PD_2_H1",
+        "annonsId": "120249187160370172",
+        "kalla": "source",
+        "langd": 34,
+        "rutor": 68
+      },
+      {
+        "id": "1893661364993107",
+        "namn": "CaraShellRoof_DK_PD_1_H1",
+        "annonsId": "120249187152190172",
+        "kalla": "source",
+        "langd": 35.2,
+        "rutor": 70
+      },
+      {
+        "id": "1562827285066963",
+        "namn": "CaraShellRoof_DK_PD_107_H1",
+        "annonsId": "120249187149100172",
+        "kalla": "source",
+        "langd": 16.933,
+        "rutor": 34
+      },
+      {
+        "id": "1790801295300915",
+        "namn": "CaraShellRoof_DK_PD_106_H1",
+        "annonsId": "120249187147650172",
+        "kalla": "source",
+        "langd": 14.232,
+        "rutor": 28
+      },
+      {
+        "id": "1101893395858515",
+        "namn": "CaraShellRoof_DK_PD_104_H1",
+        "annonsId": "120249187112080172",
+        "kalla": "source",
+        "langd": 26,
+        "rutor": 52
+      },
+      {
+        "id": "1595493122321634",
+        "namn": "CaraShellRoof_DK_OB_101_H1",
+        "annonsId": "120249187105790172",
+        "kalla": "source",
+        "langd": 17.133,
+        "rutor": 34
+      },
+      {
+        "id": "1022957367434548",
+        "namn": "CaraShellRoof_DK_GT_2_H1",
+        "annonsId": "120249187072590172",
+        "kalla": "source",
+        "langd": 25.6,
+        "rutor": 51
+      },
+      {
+        "id": "1794412381825348",
+        "namn": "CaraShellRoof_DK_GT_1_H1",
+        "annonsId": "120249187069000172",
+        "kalla": "source",
+        "langd": 26.5,
+        "rutor": 53
+      },
+      {
+        "id": "1101144385596275",
+        "namn": "CaraShellRoof_DK_GT_104_H1",
+        "annonsId": "120249186988920172",
+        "kalla": "source",
+        "langd": 24,
+        "rutor": 48
+      },
+      {
+        "id": "2375217519952762",
+        "namn": "CaraShellRoof_DK_CS_3_H1",
+        "annonsId": "120249186885890172",
+        "kalla": "source",
+        "langd": 25.5,
+        "rutor": 51
+      },
+      {
+        "id": "1830113652113718",
+        "namn": "CaraShellRoof_DK_CS_2_H1",
+        "annonsId": "120249186879890172",
+        "kalla": "source",
+        "langd": 23,
+        "rutor": 46
+      },
+      {
+        "id": "2247752302434581",
+        "namn": "CaraShellRoof_DK_CS_1_H1",
+        "annonsId": "120249186876760172",
+        "kalla": "source",
+        "langd": 24.2,
+        "rutor": 48
+      },
+      {
+        "id": "1389951253307800",
+        "namn": "CaraShellRoof_DK_CO_101_H1",
+        "annonsId": "120249186841290172",
+        "kalla": "source",
+        "langd": 21.533,
+        "rutor": 43
+      },
+      {
+        "id": "1389971213334396",
+        "namn": "CaraShellRoof_NO_PD_5_H1",
+        "annonsId": "120249184161160172",
+        "kalla": "source",
+        "langd": 39.402,
+        "rutor": 79
+      },
+      {
+        "id": "1108472061580364",
+        "namn": "CaraShellRoof_NO_OB_101_H1",
+        "annonsId": "120249174817930172",
+        "kalla": "source",
+        "langd": 18.005,
+        "rutor": 36
+      },
+      {
+        "id": "1556049345748382",
+        "namn": "CaraShellRoof_OB_101_H1",
+        "annonsId": "120249174782070172",
+        "kalla": "source",
+        "langd": 18.041,
+        "rutor": 36
+      },
+      {
+        "id": "1816274386037604",
+        "namn": "CaraShellRoof_NO_PD_107_H1",
+        "annonsId": "120249174771810172",
+        "kalla": "source",
+        "langd": 17.899,
+        "rutor": 36
+      },
+      {
+        "id": "1974597696535578",
+        "namn": "CaraShellRoof_PD_107_H1",
+        "annonsId": "120249174717100172",
+        "kalla": "source",
+        "langd": 17.902,
+        "rutor": 36
+      },
+      {
+        "id": "1394314669552194",
+        "namn": "CaraShellRoof_RI_103_H1",
+        "annonsId": "120249174703490172",
+        "kalla": "source",
+        "langd": 17.276,
+        "rutor": 35
+      },
+      {
+        "id": "1392852839189930",
+        "namn": "CaraShellRoof_NO_RI_103_H1",
+        "annonsId": "120249174709540172",
+        "kalla": "source",
+        "langd": 17.28,
+        "rutor": 34
+      },
+      {
+        "id": "1010500768679806",
+        "namn": "CaraShellRoof_NO_PD_106_H1",
+        "annonsId": "120249174602710172",
+        "kalla": "source",
+        "langd": 16.171,
+        "rutor": 32
+      },
+      {
+        "id": "1614606223663086",
+        "namn": "CaraShellRoof_PD_106_H1",
+        "annonsId": "120249174596040172",
+        "kalla": "source",
+        "langd": 16.185,
+        "rutor": 32
+      },
+      {
+        "id": "1082133370890277",
+        "namn": "CaraShellRoof_NO_CO_101_H1",
+        "annonsId": "120249156971740172",
+        "kalla": "source",
+        "langd": 25.728,
+        "rutor": 51
+      },
+      {
+        "id": "4358986354354178",
+        "namn": "CaraShellRoof_CO_101_H1",
+        "annonsId": "120249156949620172",
+        "kalla": "source",
+        "langd": 25.773,
+        "rutor": 51
+      },
+      {
+        "id": "1468539521804448",
+        "namn": "CaraShellRoof_NO_RI_101_H1",
+        "annonsId": "120249156825270172",
+        "kalla": "source",
+        "langd": 31.445,
+        "rutor": 63
+      },
+      {
+        "id": "909489265306307",
+        "namn": "CaraShellRoof_RI_101_H1",
+        "annonsId": "120249156812030172",
+        "kalla": "source",
+        "langd": 31.462,
+        "rutor": 63
+      },
+      {
+        "id": "1089156770495240",
+        "namn": "CaraShellRoof_NO_SP_104_H1",
+        "annonsId": "120249156792690172",
+        "kalla": "source",
+        "langd": 39.808,
+        "rutor": 79
+      },
+      {
+        "id": "5545430099015735",
+        "namn": "CaraShellRoof_SP_104_H1",
+        "annonsId": "120249156702540172",
+        "kalla": "source",
+        "langd": 39.821,
+        "rutor": 80
+      },
+      {
+        "id": "956181934199479",
+        "namn": "CaraShellRoof_NO_UG_101_H1",
+        "annonsId": "120249156691640172",
+        "kalla": "source",
+        "langd": 27.093,
+        "rutor": 54
+      },
+      {
+        "id": "908138792119136",
+        "namn": "CaraShellRoof_UG_101_H1",
+        "annonsId": "120249156622630172",
+        "kalla": "source",
+        "langd": 27.098,
+        "rutor": 54
+      },
+      {
+        "id": "1410737117056018",
+        "namn": "CaraShellRoof_NO_PD_104_H1",
+        "annonsId": "120249156611760172",
+        "kalla": "source",
+        "langd": 25.408,
+        "rutor": 51
+      },
+      {
+        "id": "1125943453292960",
+        "namn": "CaraShellRoof_PD_104_H1",
+        "annonsId": "120249156601060172",
+        "kalla": "source",
+        "langd": 25.449,
+        "rutor": 51
+      },
+      {
+        "id": "1138703088490461",
+        "namn": "CaraShellRoof_NO_GT_104_H1",
+        "annonsId": "120249156483200172",
+        "kalla": "source",
+        "langd": 26.731,
+        "rutor": 53
+      },
+      {
+        "id": "1061397679972242",
+        "namn": "CaraShellRoof_GT_104_H1",
+        "annonsId": "120249156466900172",
+        "kalla": "source",
+        "langd": 26.75,
+        "rutor": 53
+      },
+      {
+        "id": "2061757411100613",
+        "namn": "CaraShellRoof_NO_GT_105_H1",
+        "annonsId": "120249155104410172",
+        "kalla": "source",
+        "langd": 23.168,
+        "rutor": 46
+      }
+    ],
+    "fel": []
+  },
+  "per": {
+    "2": {
+      "nr": 2,
+      "libraryId": "2011809009499730",
+      "lank": "https://www.facebook.com/ads/library/?id=2011809009499730",
+      "varAnnons": {
+        "id": "120249187152190172",
+        "namn": "CaraShellRoof_DK_PD_1_H1",
+        "handle": "takskyddet"
+      },
+      "fel": null,
+      "deras": {
+        "video": "output/klipp/KD-2026-001/deras-2011809009499730.mp4",
+        "langd": 34.4,
+        "rutor": 68
+      },
+      "egen": {
+        "jamforda": 131,
+        "anvanda": [
+          "Takoverdrag_PD_2_H1",
+          "Takoverdrag_OB_1_H1",
+          "Takoverdrag_CO_1_H1"
+        ],
+        "perFilm": {
+          "Takoverdrag_SP_3_H1": 1,
+          "Takoverdrag_SP_1_H1": 1,
+          "CaraShellRoof_SP_3_H1 – kopia": 1,
+          "CaraShellRoof_NO_GT_104_H1": 1,
+          "Takoverdrag_SP_2_H1": 2,
+          "Takoverdrag_TR_3_H1": 5,
+          "CaraShellRoof_DK_RI_103_H1": 2,
+          "CaraShellRoof_NO_GT_107_H1": 1,
+          "Takoverdrag_CS_12_H1": 1,
+          "Takoverdrag_SP_4_H4": 1,
+          "CaraShellRoof_NO_CS_108_H1": 1,
+          "Takoverdrag_CO_5_H1": 1,
+          "CaraShellRoof_PD_5_H1": 2,
+          "Takoverdrag_PD_1_H1": 2,
+          "Takoverdrag_PD_2_H1": 2,
+          "CaraShellRoof_DK_PD_2_H1": 1,
+          "Takoverdrag_CS_1_H1": 1,
+          "CaraShellRoof_DK_CS_2_H1": 1,
+          "Takoverdrag_GT_7_H1": 1,
+          "Takoverdrag_RI_3_H1": 1,
+          "Takoverdrag_OB_1_H1": 5,
+          "CaraShellRoof_NO_PD_5_H1": 1,
+          "Takoverdrag_SP_4_H1": 5,
+          "CaraShellRoof_OB_101_H1": 1,
+          "CaraShellRoof_NO_OB_101_H1": 1,
+          "Takoverdrag_CO_1_H1": 3,
+          "Takoverdrag_PD_10_H1": 1,
+          "CaraShellRoof_CO_101_H1": 1,
+          "CaraShellRoof_NO_SP_104_H1": 2,
+          "CaraShellRoof_DK_SP_104_H1": 1
+        }
+      },
+      "statistik": {
+        "derasRutor": 68,
+        "egnaRutor": 6180,
+        "filmer": 131,
+        "traffar": 50,
+        "andel": 74,
+        "scener": 36,
+        "matchadeScener": 26,
+        "uteslutnaScener": 7,
+        "perFilm": {
+          "Takoverdrag_SP_3_H1": 1,
+          "Takoverdrag_SP_1_H1": 1,
+          "CaraShellRoof_SP_3_H1 – kopia": 1,
+          "CaraShellRoof_NO_GT_104_H1": 1,
+          "Takoverdrag_SP_2_H1": 2,
+          "Takoverdrag_TR_3_H1": 5,
+          "CaraShellRoof_DK_RI_103_H1": 2,
+          "CaraShellRoof_NO_GT_107_H1": 1,
+          "Takoverdrag_CS_12_H1": 1,
+          "Takoverdrag_SP_4_H4": 1,
+          "CaraShellRoof_NO_CS_108_H1": 1,
+          "Takoverdrag_CO_5_H1": 1,
+          "CaraShellRoof_PD_5_H1": 2,
+          "Takoverdrag_PD_1_H1": 2,
+          "Takoverdrag_PD_2_H1": 2,
+          "CaraShellRoof_DK_PD_2_H1": 1,
+          "Takoverdrag_CS_1_H1": 1,
+          "CaraShellRoof_DK_CS_2_H1": 1,
+          "Takoverdrag_GT_7_H1": 1,
+          "Takoverdrag_RI_3_H1": 1,
+          "Takoverdrag_OB_1_H1": 5,
+          "CaraShellRoof_NO_PD_5_H1": 1,
+          "Takoverdrag_SP_4_H1": 5,
+          "CaraShellRoof_OB_101_H1": 1,
+          "CaraShellRoof_NO_OB_101_H1": 1,
+          "Takoverdrag_CO_1_H1": 3,
+          "Takoverdrag_PD_10_H1": 1,
+          "CaraShellRoof_CO_101_H1": 1,
+          "CaraShellRoof_NO_SP_104_H1": 2,
+          "CaraShellRoof_DK_SP_104_H1": 1
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "derasT": 15.5,
+          "derasI": 31,
+          "egenT": 11,
+          "egenI": 22,
+          "egenFil": "output/klipp/KD-2026-001/2-A-egen.jpg",
+          "egenFilm": {
+            "id": "2388339611978148",
+            "namn": "Takoverdrag_PD_2_H1"
+          },
+          "avstand": 0,
+          "derasHash": "f94f65333a3d79ca",
+          "egenHash": "f94f65333a3d79ca",
+          "scen": {
+            "nr": 20,
+            "tFran": 15.5,
+            "tTill": 15.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/2-A-deras.jpg"
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "derasT": 23.5,
+          "derasI": 47,
+          "egenT": 8.5,
+          "egenI": 17,
+          "egenFil": "output/klipp/KD-2026-001/2-B-egen.jpg",
+          "egenFilm": {
+            "id": "1906776980305994",
+            "namn": "Takoverdrag_OB_1_H1"
+          },
+          "avstand": 0,
+          "derasHash": "c01f4f48499aa49e",
+          "egenHash": "c01f4f48499aa49e",
+          "scen": {
+            "nr": 26,
+            "tFran": 22,
+            "tTill": 23.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/2-B-deras.jpg"
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "derasT": 27.5,
+          "derasI": 55,
+          "egenT": 13.5,
+          "egenI": 27,
+          "egenFil": "output/klipp/KD-2026-001/2-C-egen.jpg",
+          "egenFilm": {
+            "id": "1077720491316831",
+            "namn": "Takoverdrag_CO_1_H1"
+          },
+          "avstand": 1,
+          "derasHash": "eafecc4b191b0f56",
+          "egenHash": "eafecc4b193b0f56",
+          "scen": {
+            "nr": 27,
+            "tFran": 24,
+            "tTill": 28
+          },
+          "derasFil": "output/klipp/KD-2026-001/2-C-deras.jpg"
+        }
+      ],
+      "uteslutna": [
+        {
+          "derasT": 0,
+          "derasI": 0,
+          "egenT": 11.5,
+          "egenI": 23,
+          "egenFil": "output/klipp/KD-2026-001/2-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "2239839696801908",
+            "namn": "Takoverdrag_SP_3_H1"
+          },
+          "avstand": 6,
+          "derasHash": "989e8e7676f8f17c",
+          "egenHash": "b8de9e7676f0f1f8",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 0
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/2-lanat-1-deras.jpg"
+        },
+        {
+          "derasT": 2.5,
+          "derasI": 5,
+          "egenT": 16,
+          "egenI": 32,
+          "egenFil": "output/klipp/KD-2026-001/2-lanat-2-egen.jpg",
+          "egenFilm": {
+            "id": "1402932001225062",
+            "namn": "Takoverdrag_SP_2_H1"
+          },
+          "avstand": 2,
+          "derasHash": "98aefefd7d7171de",
+          "egenHash": "b8aefefd7d3171de",
+          "scen": {
+            "nr": 1,
+            "tFran": 0.5,
+            "tTill": 2.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/2-lanat-2-deras.jpg"
+        },
+        {
+          "derasT": 9.5,
+          "derasI": 19,
+          "egenT": 1.5,
+          "egenI": 3,
+          "egenFil": "output/klipp/KD-2026-001/2-lanat-3-egen.jpg",
+          "egenFilm": {
+            "id": "1445308770789193",
+            "namn": "Takoverdrag_TR_3_H1"
+          },
+          "avstand": 4,
+          "derasHash": "0ee021b91fa17563",
+          "egenHash": "0ee021b91fa56963",
+          "scen": {
+            "nr": 11,
+            "tFran": 9.5,
+            "tTill": 10
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/2-lanat-3-deras.jpg"
+        }
+      ]
+    },
+    "4": {
+      "nr": 4,
+      "libraryId": "2255393811922676",
+      "lank": "https://www.facebook.com/ads/library/?id=2255393811922676",
+      "varAnnons": {
+        "id": "120250242493840291",
+        "namn": "Takoverdrag_RI_1_H1",
+        "handle": "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+      },
+      "fel": null,
+      "deras": {
+        "video": "output/klipp/KD-2026-001/deras-2255393811922676.mp4",
+        "langd": 37.7,
+        "rutor": 75
+      },
+      "egen": {
+        "jamforda": 131,
+        "anvanda": [
+          "Takoverdrag_RI_1_H1",
+          "Takoverdrag_GT_7_H1",
+          "CaraShellRoof_NO_SP_104_H1"
+        ],
+        "perFilm": {
+          "CaraShellRoof_DK_RI_101_H1": 1,
+          "Takoverdrag_RI_1_H1": 16,
+          "CaraShellRoof_RI_101_H1": 2,
+          "CaraShellRoof_NO_RI_101_H1": 1,
+          "Takoverdrag_OB_3_H1": 1,
+          "CaraShellRoof_NO_OB_103_H1": 1,
+          "CaraShellRoof_NO_SP_104_H4": 1,
+          "Takoverdrag_PD_6_H1": 1,
+          "Takoverdrag_SP_4_H4": 2,
+          "CaraShellRoof_NO_UG_101_H1": 1,
+          "Takoverdrag_SP_4_H3": 2,
+          "CaraShellRoof_SP_104_H2": 1,
+          "CaraShellRoof_NO_PD_106_H1": 2,
+          "Takoverdrag_SP_4_H2": 1,
+          "CaraShellRoof_NO_SP_104_H2": 1,
+          "CaraShellRoof_SP_104_H1": 1,
+          "Takoverdrag_SP_4_H1": 5,
+          "CaraShellRoof_NO_SP_104_H1": 2,
+          "Takoverdrag_GT_7_H1": 1,
+          "Takoverdrag_RI_3_H1": 1,
+          "CaraShellRoof_PD_5_H1": 3,
+          "CaraShellRoof_NO_OB_101_H1": 1,
+          "CaraShellRoof_NO_RI_103_H1": 1,
+          "Takoverdrag_CO_1_H1": 1,
+          "CaraShellRoof_DK_SP_104_H1": 1
+        }
+      },
+      "statistik": {
+        "derasRutor": 75,
+        "egnaRutor": 6180,
+        "filmer": 131,
+        "traffar": 51,
+        "andel": 68,
+        "scener": 38,
+        "matchadeScener": 27,
+        "uteslutnaScener": 9,
+        "perFilm": {
+          "CaraShellRoof_DK_RI_101_H1": 1,
+          "Takoverdrag_RI_1_H1": 16,
+          "CaraShellRoof_RI_101_H1": 2,
+          "CaraShellRoof_NO_RI_101_H1": 1,
+          "Takoverdrag_OB_3_H1": 1,
+          "CaraShellRoof_NO_OB_103_H1": 1,
+          "CaraShellRoof_NO_SP_104_H4": 1,
+          "Takoverdrag_PD_6_H1": 1,
+          "Takoverdrag_SP_4_H4": 2,
+          "CaraShellRoof_NO_UG_101_H1": 1,
+          "Takoverdrag_SP_4_H3": 2,
+          "CaraShellRoof_SP_104_H2": 1,
+          "CaraShellRoof_NO_PD_106_H1": 2,
+          "Takoverdrag_SP_4_H2": 1,
+          "CaraShellRoof_NO_SP_104_H2": 1,
+          "CaraShellRoof_SP_104_H1": 1,
+          "Takoverdrag_SP_4_H1": 5,
+          "CaraShellRoof_NO_SP_104_H1": 2,
+          "Takoverdrag_GT_7_H1": 1,
+          "Takoverdrag_RI_3_H1": 1,
+          "CaraShellRoof_PD_5_H1": 3,
+          "CaraShellRoof_NO_OB_101_H1": 1,
+          "CaraShellRoof_NO_RI_103_H1": 1,
+          "Takoverdrag_CO_1_H1": 1,
+          "CaraShellRoof_DK_SP_104_H1": 1
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "derasT": 3,
+          "derasI": 6,
+          "egenT": 3,
+          "egenI": 6,
+          "egenFil": "output/klipp/KD-2026-001/4-A-egen.jpg",
+          "egenFilm": {
+            "id": "1393647809607009",
+            "namn": "Takoverdrag_RI_1_H1"
+          },
+          "avstand": 1,
+          "derasHash": "b2b4725b7c7f79ac",
+          "egenHash": "b2b4725b7c7d79ac",
+          "scen": {
+            "nr": 3,
+            "tFran": 2.5,
+            "tTill": 3.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/4-A-deras.jpg"
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "derasT": 26.5,
+          "derasI": 53,
+          "egenT": 8,
+          "egenI": 16,
+          "egenFil": "output/klipp/KD-2026-001/4-B-egen.jpg",
+          "egenFilm": {
+            "id": "2035796930428239",
+            "namn": "Takoverdrag_GT_7_H1"
+          },
+          "avstand": 1,
+          "derasHash": "1eb8e6e4edbeaa89",
+          "egenHash": "1eb8e6e4edbaaa89",
+          "scen": {
+            "nr": 26,
+            "tFran": 26.5,
+            "tTill": 28
+          },
+          "derasFil": "output/klipp/KD-2026-001/4-B-deras.jpg"
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "derasT": 32,
+          "derasI": 64,
+          "egenT": 6,
+          "egenI": 12,
+          "egenFil": "output/klipp/KD-2026-001/4-C-egen.jpg",
+          "egenFilm": {
+            "id": "1089156770495240",
+            "namn": "CaraShellRoof_NO_SP_104_H1"
+          },
+          "avstand": 0,
+          "derasHash": "fcb21a0f8fc069bc",
+          "egenHash": "fcb21a0f8fc069bc",
+          "scen": {
+            "nr": 30,
+            "tFran": 32,
+            "tTill": 32
+          },
+          "derasFil": "output/klipp/KD-2026-001/4-C-deras.jpg"
+        }
+      ],
+      "uteslutna": [
+        {
+          "derasT": 0,
+          "derasI": 0,
+          "egenT": 5.5,
+          "egenI": 11,
+          "egenFil": "output/klipp/KD-2026-001/4-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "1668887704850139",
+            "namn": "CaraShellRoof_DK_RI_101_H1"
+          },
+          "avstand": 4,
+          "derasHash": "10be780c1810e001",
+          "egenHash": "909e780c1850e801",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 0
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/4-lanat-1-deras.jpg"
+        },
+        {
+          "derasT": 0.5,
+          "derasI": 1,
+          "egenT": 0.5,
+          "egenI": 1,
+          "egenFil": "output/klipp/KD-2026-001/4-lanat-2-egen.jpg",
+          "egenFilm": {
+            "id": "1393647809607009",
+            "namn": "Takoverdrag_RI_1_H1"
+          },
+          "avstand": 3,
+          "derasHash": "840c3c86ce08c000",
+          "egenHash": "842e3c86ce08e000",
+          "scen": {
+            "nr": 1,
+            "tFran": 0.5,
+            "tTill": 1
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/4-lanat-2-deras.jpg"
+        },
+        {
+          "derasT": 5.5,
+          "derasI": 11,
+          "egenT": 5.5,
+          "egenI": 11,
+          "egenFil": "output/klipp/KD-2026-001/4-lanat-3-egen.jpg",
+          "egenFilm": {
+            "id": "909489265306307",
+            "namn": "CaraShellRoof_RI_101_H1"
+          },
+          "avstand": 0,
+          "derasHash": "666572bbb57e7b1b",
+          "egenHash": "666572bbb57e7b1b",
+          "scen": {
+            "nr": 5,
+            "tFran": 4.5,
+            "tTill": 5.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/4-lanat-3-deras.jpg"
+        }
+      ]
+    },
+    "5": {
+      "nr": 5,
+      "libraryId": "1432012392223391",
+      "lank": "https://www.facebook.com/ads/library/?id=1432012392223391",
+      "varAnnons": {
+        "id": "120250147367410291",
+        "namn": "Takoverdrag_GT_3_H1",
+        "handle": "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+      },
+      "fel": null,
+      "deras": {
+        "video": "output/klipp/KD-2026-001/deras-1432012392223391.mp4",
+        "langd": 47.5,
+        "rutor": 95
+      },
+      "egen": {
+        "jamforda": 131,
+        "anvanda": [
+          "Takoverdrag_OB_1_H1",
+          "CaraShellRoof_DK_PD_106_H1"
+        ],
+        "perFilm": {
+          "Takoverdrag_GT_3_H1": 1,
+          "CaraShellRoof_DK_SP_3_H1": 1,
+          "Takoverdrag_SP_1_H1": 2,
+          "CaraShellRoof_SP_3_H1 – kopia": 1,
+          "Takoverdrag_PD_3_H1": 3,
+          "CaraShellRoof_GT_104_H1": 1,
+          "Takoverdrag_PD_1_H1": 4,
+          "Takoverdrag_PD_4_H1": 2,
+          "Takoverdrag_CS_2_H1": 1,
+          "CaraShellRoof_DK_CS_3_H1": 1,
+          "Takoverdrag_CS_1_H1": 1,
+          "CaraShellRoof_DK_CS_2_H1": 1,
+          "Takoverdrag_CS_3_H1": 1,
+          "Takoverdrag_SP_4_H3": 3,
+          "CaraShellRoof_NO_SP_104_H4": 2,
+          "Takoverdrag_SP_4_H4": 1,
+          "Takoverdrag_CS_12_H1": 1,
+          "Takoverdrag_RI_3_H1": 1,
+          "CaraShellRoof_PD_5_H1": 3,
+          "Takoverdrag_OB_1_H1": 7,
+          "CaraShellRoof_OB_101_H1": 3,
+          "CaraShellRoof_NO_OB_101_H1": 1,
+          "Takoverdrag_SP_4_H1": 4,
+          "CaraShellRoof_DK_PD_106_H1": 1,
+          "Takoverdrag_RI_1_H1": 3,
+          "Takoverdrag_PD_7_H1": 1,
+          "Takoverdrag_CS_8_H1": 1,
+          "Takoverdrag_GT_8_H1": 1,
+          "CaraShellRoof_NO_GT_107_H1": 1,
+          "CaraShellRoof_DK_RI_103_H1": 1,
+          "CaraShellRoof_DK_PD_5_H1": 1,
+          "Takoverdrag_GT_5_H1": 1,
+          "Takoverdrag_PD_2_H1": 3,
+          "Takoverdrag_OB_3_H1": 1,
+          "CaraShellRoof_NO_SP_104_H2": 1,
+          "Takoverdrag_PD_10_H1": 1,
+          "Takoverdrag_CO_1_H1": 2,
+          "Takoverdrag_PD_6_H1": 1
+        }
+      },
+      "statistik": {
+        "derasRutor": 95,
+        "egnaRutor": 6180,
+        "filmer": 131,
+        "traffar": 66,
+        "andel": 69,
+        "scener": 51,
+        "matchadeScener": 33,
+        "uteslutnaScener": 13,
+        "perFilm": {
+          "Takoverdrag_GT_3_H1": 1,
+          "CaraShellRoof_DK_SP_3_H1": 1,
+          "Takoverdrag_SP_1_H1": 2,
+          "CaraShellRoof_SP_3_H1 – kopia": 1,
+          "Takoverdrag_PD_3_H1": 3,
+          "CaraShellRoof_GT_104_H1": 1,
+          "Takoverdrag_PD_1_H1": 4,
+          "Takoverdrag_PD_4_H1": 2,
+          "Takoverdrag_CS_2_H1": 1,
+          "CaraShellRoof_DK_CS_3_H1": 1,
+          "Takoverdrag_CS_1_H1": 1,
+          "CaraShellRoof_DK_CS_2_H1": 1,
+          "Takoverdrag_CS_3_H1": 1,
+          "Takoverdrag_SP_4_H3": 3,
+          "CaraShellRoof_NO_SP_104_H4": 2,
+          "Takoverdrag_SP_4_H4": 1,
+          "Takoverdrag_CS_12_H1": 1,
+          "Takoverdrag_RI_3_H1": 1,
+          "CaraShellRoof_PD_5_H1": 3,
+          "Takoverdrag_OB_1_H1": 7,
+          "CaraShellRoof_OB_101_H1": 3,
+          "CaraShellRoof_NO_OB_101_H1": 1,
+          "Takoverdrag_SP_4_H1": 4,
+          "CaraShellRoof_DK_PD_106_H1": 1,
+          "Takoverdrag_RI_1_H1": 3,
+          "Takoverdrag_PD_7_H1": 1,
+          "Takoverdrag_CS_8_H1": 1,
+          "Takoverdrag_GT_8_H1": 1,
+          "CaraShellRoof_NO_GT_107_H1": 1,
+          "CaraShellRoof_DK_RI_103_H1": 1,
+          "CaraShellRoof_DK_PD_5_H1": 1,
+          "Takoverdrag_GT_5_H1": 1,
+          "Takoverdrag_PD_2_H1": 3,
+          "Takoverdrag_OB_3_H1": 1,
+          "CaraShellRoof_NO_SP_104_H2": 1,
+          "Takoverdrag_PD_10_H1": 1,
+          "Takoverdrag_CO_1_H1": 2,
+          "Takoverdrag_PD_6_H1": 1
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "derasT": 20.5,
+          "derasI": 41,
+          "egenT": 6.5,
+          "egenI": 13,
+          "egenFil": "output/klipp/KD-2026-001/5-A-egen.jpg",
+          "egenFilm": {
+            "id": "1906776980305994",
+            "namn": "Takoverdrag_OB_1_H1"
+          },
+          "avstand": 0,
+          "derasHash": "8080e08b83295936",
+          "egenHash": "8080e08b83295936",
+          "scen": {
+            "nr": 23,
+            "tFran": 18,
+            "tTill": 21
+          },
+          "derasFil": "output/klipp/KD-2026-001/5-A-deras.jpg"
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "derasT": 22,
+          "derasI": 44,
+          "egenT": 8.5,
+          "egenI": 17,
+          "egenFil": "output/klipp/KD-2026-001/5-B-egen.jpg",
+          "egenFilm": {
+            "id": "1906776980305994",
+            "namn": "Takoverdrag_OB_1_H1"
+          },
+          "avstand": 0,
+          "derasHash": "c01f4f48499aa49e",
+          "egenHash": "c01f4f48499aa49e",
+          "scen": {
+            "nr": 24,
+            "tFran": 21.5,
+            "tTill": 22.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/5-B-deras.jpg"
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "derasT": 24,
+          "derasI": 48,
+          "egenT": 7,
+          "egenI": 14,
+          "egenFil": "output/klipp/KD-2026-001/5-C-egen.jpg",
+          "egenFilm": {
+            "id": "1790801295300915",
+            "namn": "CaraShellRoof_DK_PD_106_H1"
+          },
+          "avstand": 0,
+          "derasHash": "7c3d1b1e1c0f1738",
+          "egenHash": "7c3d1b1e1c0f1738",
+          "scen": {
+            "nr": 26,
+            "tFran": 24,
+            "tTill": 25.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/5-C-deras.jpg"
+        }
+      ],
+      "uteslutna": [
+        {
+          "derasT": 2.5,
+          "derasI": 5,
+          "egenT": 14.5,
+          "egenI": 29,
+          "egenFil": "output/klipp/KD-2026-001/5-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "28026609890344616",
+            "namn": "Takoverdrag_SP_1_H1"
+          },
+          "avstand": 3,
+          "derasHash": "b8aedeffdd7131de",
+          "egenHash": "d8aedeffdd7171de",
+          "scen": {
+            "nr": 1,
+            "tFran": 1,
+            "tTill": 2.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/5-lanat-1-deras.jpg"
+        },
+        {
+          "derasT": 3.5,
+          "derasI": 7,
+          "egenT": 2.5,
+          "egenI": 5,
+          "egenFil": "output/klipp/KD-2026-001/5-lanat-2-egen.jpg",
+          "egenFilm": {
+            "id": "1061397679972242",
+            "namn": "CaraShellRoof_GT_104_H1"
+          },
+          "avstand": 6,
+          "derasHash": "f3a79f8fd7ab2b76",
+          "egenHash": "f3e7df8f972b6b36",
+          "scen": {
+            "nr": 3,
+            "tFran": 3.5,
+            "tTill": 3.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/5-lanat-2-deras.jpg"
+        },
+        {
+          "derasT": 4.5,
+          "derasI": 9,
+          "egenT": 5,
+          "egenI": 10,
+          "egenFil": "output/klipp/KD-2026-001/5-lanat-3-egen.jpg",
+          "egenFilm": {
+            "id": "29253924880875293",
+            "namn": "Takoverdrag_PD_1_H1"
+          },
+          "avstand": 3,
+          "derasHash": "cd95997b2d4c4202",
+          "egenHash": "8d95997b2d4c6203",
+          "scen": {
+            "nr": 5,
+            "tFran": 4.5,
+            "tTill": 4.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/5-lanat-3-deras.jpg"
+        }
+      ]
+    },
+    "7": {
+      "nr": 7,
+      "libraryId": "1379264000855257",
+      "lank": "https://www.facebook.com/ads/library/?id=1379264000855257",
+      "varAnnons": {
+        "id": "120249156601060172",
+        "namn": "CaraShellRoof_PD_104_H1",
+        "handle": "takskyddet"
+      },
+      "fel": null,
+      "deras": {
+        "video": "output/klipp/KD-2026-001/deras-1379264000855257.mp4",
+        "langd": 44.8,
+        "rutor": 89
+      },
+      "egen": {
+        "jamforda": 131,
+        "anvanda": [
+          "CaraShellRoof_OB_101_H1",
+          "CaraShellRoof_PD_5_H1",
+          "CaraShellRoof_NO_GT_107_H1"
+        ],
+        "perFilm": {
+          "Takoverdrag_GT_3_H1": 2,
+          "CaraShellRoof_NO_PD_104_H1": 1,
+          "CaraShellRoof_PD_104_H1": 1,
+          "CaraShellRoof_NO_RI_101_H1": 1,
+          "Takoverdrag_RI_1_H1": 6,
+          "CaraShellRoof_DK_RI_101_H1": 1,
+          "Takoverdrag_PD_4_H1": 2,
+          "Takoverdrag_PD_1_H1": 3,
+          "Takoverdrag_PD_3_H1": 2,
+          "Takoverdrag_PD_2_H1": 1,
+          "Takoverdrag_TR_3_H1": 4,
+          "CaraShellRoof_PD_5_H1": 2,
+          "CaraShellRoof_NO_PD_5_H1": 3,
+          "Takoverdrag_GT_11_H1": 1,
+          "Takoverdrag_SP_4_H1": 4,
+          "Takoverdrag_CO_1_H1": 3,
+          "Takoverdrag_OB_1_H1": 6,
+          "CaraShellRoof_OB_101_H1": 3,
+          "Takoverdrag_GT_7_H1": 1,
+          "Takoverdrag_RI_3_H1": 1,
+          "CaraShellRoof_NO_RI_103_H1": 1,
+          "Takoverdrag_CO_3_H1": 1,
+          "CaraShellRoof_NO_GT_107_H1": 1,
+          "Takoverdrag_RI_2_H1": 1,
+          "CaraShellRoof_NO_SP_104_H3": 1,
+          "Takoverdrag_SP_2_H1": 11,
+          "Takoverdrag_SP_1_H1": 1,
+          "Takoverdrag_OB_3_H1": 1,
+          "CaraShellRoof_NO_OB_103_H1": 1,
+          "CaraShellRoof_NO_SP_104_H4": 1,
+          "Takoverdrag_PD_6_H1": 1,
+          "CaraShellRoof_DK_UG_101_H1": 1,
+          "CaraShellRoof_RI_101_H1": 1,
+          "CaraShellRoof_NO_SP_104_H2": 1,
+          "Takoverdrag_SP_4_H3": 1,
+          "CaraShellRoof_DK_SP_104_H1": 1
+        }
+      },
+      "statistik": {
+        "derasRutor": 89,
+        "egnaRutor": 6180,
+        "filmer": 131,
+        "traffar": 74,
+        "andel": 83,
+        "scener": 38,
+        "matchadeScener": 32,
+        "uteslutnaScener": 4,
+        "perFilm": {
+          "Takoverdrag_GT_3_H1": 2,
+          "CaraShellRoof_NO_PD_104_H1": 1,
+          "CaraShellRoof_PD_104_H1": 1,
+          "CaraShellRoof_NO_RI_101_H1": 1,
+          "Takoverdrag_RI_1_H1": 6,
+          "CaraShellRoof_DK_RI_101_H1": 1,
+          "Takoverdrag_PD_4_H1": 2,
+          "Takoverdrag_PD_1_H1": 3,
+          "Takoverdrag_PD_3_H1": 2,
+          "Takoverdrag_PD_2_H1": 1,
+          "Takoverdrag_TR_3_H1": 4,
+          "CaraShellRoof_PD_5_H1": 2,
+          "CaraShellRoof_NO_PD_5_H1": 3,
+          "Takoverdrag_GT_11_H1": 1,
+          "Takoverdrag_SP_4_H1": 4,
+          "Takoverdrag_CO_1_H1": 3,
+          "Takoverdrag_OB_1_H1": 6,
+          "CaraShellRoof_OB_101_H1": 3,
+          "Takoverdrag_GT_7_H1": 1,
+          "Takoverdrag_RI_3_H1": 1,
+          "CaraShellRoof_NO_RI_103_H1": 1,
+          "Takoverdrag_CO_3_H1": 1,
+          "CaraShellRoof_NO_GT_107_H1": 1,
+          "Takoverdrag_RI_2_H1": 1,
+          "CaraShellRoof_NO_SP_104_H3": 1,
+          "Takoverdrag_SP_2_H1": 11,
+          "Takoverdrag_SP_1_H1": 1,
+          "Takoverdrag_OB_3_H1": 1,
+          "CaraShellRoof_NO_OB_103_H1": 1,
+          "CaraShellRoof_NO_SP_104_H4": 1,
+          "Takoverdrag_PD_6_H1": 1,
+          "CaraShellRoof_DK_UG_101_H1": 1,
+          "CaraShellRoof_RI_101_H1": 1,
+          "CaraShellRoof_NO_SP_104_H2": 1,
+          "Takoverdrag_SP_4_H3": 1,
+          "CaraShellRoof_DK_SP_104_H1": 1
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "derasT": 14.5,
+          "derasI": 29,
+          "egenT": 4,
+          "egenI": 8,
+          "egenFil": "output/klipp/KD-2026-001/7-A-egen.jpg",
+          "egenFilm": {
+            "id": "1556049345748382",
+            "namn": "CaraShellRoof_OB_101_H1"
+          },
+          "avstand": 1,
+          "derasHash": "004080078335f0c0",
+          "egenHash": "004080078135f0c0",
+          "scen": {
+            "nr": 10,
+            "tFran": 14,
+            "tTill": 16
+          },
+          "derasFil": "output/klipp/KD-2026-001/7-A-deras.jpg"
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "derasT": 19,
+          "derasI": 38,
+          "egenT": 28.5,
+          "egenI": 57,
+          "egenFil": "output/klipp/KD-2026-001/7-B-egen.jpg",
+          "egenFilm": {
+            "id": "1658410342588356",
+            "namn": "CaraShellRoof_PD_5_H1"
+          },
+          "avstand": 1,
+          "derasHash": "1cf099b73e2b4bc3",
+          "egenHash": "1cf099b73e2b4bc2",
+          "scen": {
+            "nr": 12,
+            "tFran": 18.5,
+            "tTill": 20.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/7-B-deras.jpg"
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "derasT": 23.5,
+          "derasI": 47,
+          "egenT": 9.5,
+          "egenI": 19,
+          "egenFil": "output/klipp/KD-2026-001/7-C-egen.jpg",
+          "egenFilm": {
+            "id": "2826851037702309",
+            "namn": "CaraShellRoof_NO_GT_107_H1"
+          },
+          "avstand": 0,
+          "derasHash": "cf8c049d8c1f1cd8",
+          "egenHash": "cf8c049d8c1f1cd8",
+          "scen": {
+            "nr": 16,
+            "tFran": 23.5,
+            "tTill": 23.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/7-C-deras.jpg"
+        }
+      ],
+      "uteslutna": [
+        {
+          "derasT": 0.5,
+          "derasI": 1,
+          "egenT": 0.5,
+          "egenI": 1,
+          "egenFil": "output/klipp/KD-2026-001/7-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "1410737117056018",
+            "namn": "CaraShellRoof_NO_PD_104_H1"
+          },
+          "avstand": 3,
+          "derasHash": "67c82097939faa8a",
+          "egenHash": "77c92097939f8a8a",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 1.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/7-lanat-1-deras.jpg"
+        },
+        {
+          "derasT": 2.5,
+          "derasI": 5,
+          "egenT": 0.5,
+          "egenI": 1,
+          "egenFil": "output/klipp/KD-2026-001/7-lanat-2-egen.jpg",
+          "egenFilm": {
+            "id": "1393647809607009",
+            "namn": "Takoverdrag_RI_1_H1"
+          },
+          "avstand": 2,
+          "derasHash": "840e3c86cc08e000",
+          "egenHash": "842e3c86ce08e000",
+          "scen": {
+            "nr": 1,
+            "tFran": 2,
+            "tTill": 3
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/7-lanat-2-deras.jpg"
+        },
+        {
+          "derasT": 4,
+          "derasI": 8,
+          "egenT": 4.5,
+          "egenI": 9,
+          "egenFil": "output/klipp/KD-2026-001/7-lanat-3-egen.jpg",
+          "egenFilm": {
+            "id": "4425339637679185",
+            "namn": "Takoverdrag_PD_4_H1"
+          },
+          "avstand": 1,
+          "derasHash": "a965f4183c3c2881",
+          "egenHash": "a965e4183c3c2881",
+          "scen": {
+            "nr": 2,
+            "tFran": 3.5,
+            "tTill": 4.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/7-lanat-3-deras.jpg"
+        }
+      ]
+    },
+    "9": {
+      "nr": 9,
+      "libraryId": "1075928918391127",
+      "lank": "https://www.facebook.com/ads/library/?id=1075928918391127",
+      "varAnnons": {
+        "id": "120250147364200291",
+        "namn": "Takoverdrag_GT_2_H1",
+        "handle": "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+      },
+      "fel": null,
+      "deras": {
+        "video": "output/klipp/KD-2026-001/deras-1075928918391127.mp4",
+        "langd": 38.5,
+        "rutor": 77
+      },
+      "egen": {
+        "jamforda": 131,
+        "anvanda": [
+          "Takoverdrag_GT_5_H1",
+          "Takoverdrag_SP_4_H1"
+        ],
+        "perFilm": {
+          "Takoverdrag_CS_2_H1": 1,
+          "CaraShellRoof_DK_CS_1_H1": 1,
+          "Takoverdrag_CS_3_H1": 1,
+          "Takoverdrag_PD_4_H1": 2,
+          "CaraShellRoof_NO_GT_105_H1": 2,
+          "Takoverdrag_GT_3_H1": 1,
+          "CaraShellRoof_DK_GT_1_H1": 2,
+          "Takoverdrag_GT_2_H1": 1,
+          "Takoverdrag_GT_5_H1": 8,
+          "Takoverdrag_PD_3_H1": 2,
+          "CaraShellRoof_DK_SP_2_H1": 1,
+          "CaraShellRoof_DK_GT_105_H1": 1,
+          "CaraShellRoof_DK_SP_1_H1": 1,
+          "CaraShellRoof_NO_PD_104_H1": 2,
+          "Takoverdrag_SP_4_H1": 5,
+          "CaraShellRoof_NO_RI_101_H1": 1,
+          "Takoverdrag_SP_4_H4": 4,
+          "Takoverdrag_SP_4_H2": 2,
+          "CaraShellRoof_NO_SP_104_H4": 3,
+          "Takoverdrag_RI_1_H1": 2,
+          "CaraShellRoof_NO_UG_101_H1": 1,
+          "CaraShellRoof_DK_GT_104_H1": 1,
+          "CaraShellRoof_OB_101_H1": 1,
+          "Takoverdrag_OB_1_H1": 2,
+          "CaraShellRoof_NO_TR_103_H1": 1,
+          "Takoverdrag_CO_1_H1": 5,
+          "CaraShellRoof_DK_SP_104_H1": 2,
+          "Takoverdrag_PD_6_H1": 3,
+          "CaraShellRoof_NO_OB_103_H1": 1,
+          "Takoverdrag_SP_4_H3": 1,
+          "CaraShellRoof_DK_PD_106_H1": 1,
+          "Takoverdrag_UG_1_H1": 2,
+          "CaraShellRoof_DK_CO_101_H1": 1
+        }
+      },
+      "statistik": {
+        "derasRutor": 77,
+        "egnaRutor": 6180,
+        "filmer": 131,
+        "traffar": 65,
+        "andel": 84,
+        "scener": 34,
+        "matchadeScener": 33,
+        "uteslutnaScener": 15,
+        "perFilm": {
+          "Takoverdrag_CS_2_H1": 1,
+          "CaraShellRoof_DK_CS_1_H1": 1,
+          "Takoverdrag_CS_3_H1": 1,
+          "Takoverdrag_PD_4_H1": 2,
+          "CaraShellRoof_NO_GT_105_H1": 2,
+          "Takoverdrag_GT_3_H1": 1,
+          "CaraShellRoof_DK_GT_1_H1": 2,
+          "Takoverdrag_GT_2_H1": 1,
+          "Takoverdrag_GT_5_H1": 8,
+          "Takoverdrag_PD_3_H1": 2,
+          "CaraShellRoof_DK_SP_2_H1": 1,
+          "CaraShellRoof_DK_GT_105_H1": 1,
+          "CaraShellRoof_DK_SP_1_H1": 1,
+          "CaraShellRoof_NO_PD_104_H1": 2,
+          "Takoverdrag_SP_4_H1": 5,
+          "CaraShellRoof_NO_RI_101_H1": 1,
+          "Takoverdrag_SP_4_H4": 4,
+          "Takoverdrag_SP_4_H2": 2,
+          "CaraShellRoof_NO_SP_104_H4": 3,
+          "Takoverdrag_RI_1_H1": 2,
+          "CaraShellRoof_NO_UG_101_H1": 1,
+          "CaraShellRoof_DK_GT_104_H1": 1,
+          "CaraShellRoof_OB_101_H1": 1,
+          "Takoverdrag_OB_1_H1": 2,
+          "CaraShellRoof_NO_TR_103_H1": 1,
+          "Takoverdrag_CO_1_H1": 5,
+          "CaraShellRoof_DK_SP_104_H1": 2,
+          "Takoverdrag_PD_6_H1": 3,
+          "CaraShellRoof_NO_OB_103_H1": 1,
+          "Takoverdrag_SP_4_H3": 1,
+          "CaraShellRoof_DK_PD_106_H1": 1,
+          "Takoverdrag_UG_1_H1": 2,
+          "CaraShellRoof_DK_CO_101_H1": 1
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "derasT": 6.5,
+          "derasI": 13,
+          "egenT": 8,
+          "egenI": 16,
+          "egenFil": "output/klipp/KD-2026-001/9-A-egen.jpg",
+          "egenFilm": {
+            "id": "1615028910329688",
+            "namn": "Takoverdrag_GT_5_H1"
+          },
+          "avstand": 1,
+          "derasHash": "3918190102012367",
+          "egenHash": "3918190102012267",
+          "scen": {
+            "nr": 7,
+            "tFran": 6,
+            "tTill": 7.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/9-A-deras.jpg"
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "derasT": 8,
+          "derasI": 16,
+          "egenT": 9.5,
+          "egenI": 19,
+          "egenFil": "output/klipp/KD-2026-001/9-B-egen.jpg",
+          "egenFilm": {
+            "id": "1615028910329688",
+            "namn": "Takoverdrag_GT_5_H1"
+          },
+          "avstand": 1,
+          "derasHash": "3e766160220e08c9",
+          "egenHash": "3e766160260e08c9",
+          "scen": {
+            "nr": 8,
+            "tFran": 8,
+            "tTill": 8.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/9-B-deras.jpg"
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "derasT": 13,
+          "derasI": 26,
+          "egenT": 23.5,
+          "egenI": 47,
+          "egenFil": "output/klipp/KD-2026-001/9-C-egen.jpg",
+          "egenFilm": {
+            "id": "1596124075334669",
+            "namn": "Takoverdrag_SP_4_H1"
+          },
+          "avstand": 1,
+          "derasHash": "f0692c8e8fc0a025",
+          "egenHash": "f0692c8e8fc0b025",
+          "scen": {
+            "nr": 14,
+            "tFran": 13,
+            "tTill": 13
+          },
+          "derasFil": "output/klipp/KD-2026-001/9-C-deras.jpg"
+        }
+      ],
+      "uteslutna": [
+        {
+          "derasT": 0,
+          "derasI": 0,
+          "egenT": 17.5,
+          "egenI": 35,
+          "egenFil": "output/klipp/KD-2026-001/9-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "1627891502009585",
+            "namn": "Takoverdrag_CS_2_H1"
+          },
+          "avstand": 2,
+          "derasHash": "e1627cfdcdae1e2e",
+          "egenHash": "e1627cfdcdae5e3e",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 0.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/9-lanat-1-deras.jpg"
+        },
+        {
+          "derasT": 1,
+          "derasI": 2,
+          "egenT": 21.5,
+          "egenI": 43,
+          "egenFil": "output/klipp/KD-2026-001/9-lanat-2-egen.jpg",
+          "egenFilm": {
+            "id": "28131074066587234",
+            "namn": "Takoverdrag_CS_3_H1"
+          },
+          "avstand": 5,
+          "derasHash": "840bf3f5edcc2c78",
+          "egenHash": "860bf3f5cdcc7c79",
+          "scen": {
+            "nr": 1,
+            "tFran": 1,
+            "tTill": 1
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/9-lanat-2-deras.jpg"
+        },
+        {
+          "derasT": 1.5,
+          "derasI": 3,
+          "egenT": 16,
+          "egenI": 32,
+          "egenFil": "output/klipp/KD-2026-001/9-lanat-3-egen.jpg",
+          "egenFilm": {
+            "id": "4425339637679185",
+            "namn": "Takoverdrag_PD_4_H1"
+          },
+          "avstand": 1,
+          "derasHash": "1a36ecd4ce8bf8f4",
+          "egenHash": "1a34ecd4ce8bf8f4",
+          "scen": {
+            "nr": 2,
+            "tFran": 1.5,
+            "tTill": 1.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/9-lanat-3-deras.jpg"
+        }
+      ]
+    },
+    "10": {
+      "nr": 10,
+      "libraryId": "2354225538650112",
+      "lank": "https://www.facebook.com/ads/library/?id=2354225538650112",
+      "varAnnons": {
+        "id": "120250242482300291",
+        "namn": "Takoverdrag_SP_4_H1",
+        "handle": "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+      },
+      "fel": null,
+      "deras": {
+        "video": "output/klipp/KD-2026-001/deras-2354225538650112.mp4",
+        "langd": 47.1,
+        "rutor": 94
+      },
+      "egen": {
+        "jamforda": 131,
+        "anvanda": [
+          "CaraShellRoof_SP_104_H1",
+          "Takoverdrag_OB_1_H1"
+        ],
+        "perFilm": {
+          "Takoverdrag_CO_3_H1": 3,
+          "CaraShellRoof_SP_104_H1": 3,
+          "Takoverdrag_SP_4_H1": 7,
+          "CaraShellRoof_NO_SP_104_H1": 1,
+          "CaraShellRoof_NO_OB_101_H1": 3,
+          "CaraShellRoof_CO_101_H1": 1,
+          "Takoverdrag_CO_1_H1": 5,
+          "Takoverdrag_RI_1_H1": 5,
+          "CaraShellRoof_NO_SP_104_H2": 1,
+          "CaraShellRoof_NO_PD_106_H1": 2,
+          "Takoverdrag_PD_6_H1": 3,
+          "Takoverdrag_UG_1_H1": 3,
+          "CaraShellRoof_NO_SP_104_H3": 1,
+          "Takoverdrag_GT_2_H1": 1,
+          "CaraShellRoof_DK_GT_104_H1": 1,
+          "CaraShellRoof_NO_PD_104_H1": 1,
+          "Takoverdrag_PD_4_H1": 1,
+          "Takoverdrag_GT_3_H1": 1,
+          "CaraShellRoof_NO_CO_101_H1": 2,
+          "CaraShellRoof_DK_PD_2_H1": 1,
+          "CaraShellRoof_DK_CS_2_H1": 2,
+          "Takoverdrag_CS_12_H1": 1,
+          "CaraShellRoof_PD_5_H1": 5,
+          "Takoverdrag_OB_1_H1": 7,
+          "CaraShellRoof_OB_101_H1": 2,
+          "Takoverdrag_RI_3_H1": 1,
+          "Takoverdrag_CO_5_H1": 1,
+          "Takoverdrag_TR_3_H1": 2,
+          "Takoverdrag_OB_4_H1": 1,
+          "CaraShellRoof_DK_PD_106_H1": 1,
+          "CaraShellRoof_NO_SP_104_H4": 1,
+          "Takoverdrag_SP_4_H4": 1,
+          "CaraShellRoof_SP_104_H3": 2,
+          "CaraShellRoof_DK_CO_101_H1": 1,
+          "CaraShellRoof_NO_RI_101_H1": 1,
+          "CaraShellRoof_NO_UG_101_H1": 1,
+          "CaraShellRoof_UG_101_H1": 1
+        }
+      },
+      "statistik": {
+        "derasRutor": 94,
+        "egnaRutor": 6180,
+        "filmer": 131,
+        "traffar": 77,
+        "andel": 82,
+        "scener": 38,
+        "matchadeScener": 29,
+        "uteslutnaScener": 5,
+        "perFilm": {
+          "Takoverdrag_CO_3_H1": 3,
+          "CaraShellRoof_SP_104_H1": 3,
+          "Takoverdrag_SP_4_H1": 7,
+          "CaraShellRoof_NO_SP_104_H1": 1,
+          "CaraShellRoof_NO_OB_101_H1": 3,
+          "CaraShellRoof_CO_101_H1": 1,
+          "Takoverdrag_CO_1_H1": 5,
+          "Takoverdrag_RI_1_H1": 5,
+          "CaraShellRoof_NO_SP_104_H2": 1,
+          "CaraShellRoof_NO_PD_106_H1": 2,
+          "Takoverdrag_PD_6_H1": 3,
+          "Takoverdrag_UG_1_H1": 3,
+          "CaraShellRoof_NO_SP_104_H3": 1,
+          "Takoverdrag_GT_2_H1": 1,
+          "CaraShellRoof_DK_GT_104_H1": 1,
+          "CaraShellRoof_NO_PD_104_H1": 1,
+          "Takoverdrag_PD_4_H1": 1,
+          "Takoverdrag_GT_3_H1": 1,
+          "CaraShellRoof_NO_CO_101_H1": 2,
+          "CaraShellRoof_DK_PD_2_H1": 1,
+          "CaraShellRoof_DK_CS_2_H1": 2,
+          "Takoverdrag_CS_12_H1": 1,
+          "CaraShellRoof_PD_5_H1": 5,
+          "Takoverdrag_OB_1_H1": 7,
+          "CaraShellRoof_OB_101_H1": 2,
+          "Takoverdrag_RI_3_H1": 1,
+          "Takoverdrag_CO_5_H1": 1,
+          "Takoverdrag_TR_3_H1": 2,
+          "Takoverdrag_OB_4_H1": 1,
+          "CaraShellRoof_DK_PD_106_H1": 1,
+          "CaraShellRoof_NO_SP_104_H4": 1,
+          "Takoverdrag_SP_4_H4": 1,
+          "CaraShellRoof_SP_104_H3": 2,
+          "CaraShellRoof_DK_CO_101_H1": 1,
+          "CaraShellRoof_NO_RI_101_H1": 1,
+          "CaraShellRoof_NO_UG_101_H1": 1,
+          "CaraShellRoof_UG_101_H1": 1
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "derasT": 1,
+          "derasI": 2,
+          "egenT": 1,
+          "egenI": 2,
+          "egenFil": "output/klipp/KD-2026-001/10-A-egen.jpg",
+          "egenFilm": {
+            "id": "5545430099015735",
+            "namn": "CaraShellRoof_SP_104_H1"
+          },
+          "avstand": 0,
+          "derasHash": "b0d0f1e4f0f0f9b9",
+          "egenHash": "b0d0f1e4f0f0f9b9",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 2.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/10-A-deras.jpg"
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "derasT": 18.5,
+          "derasI": 37,
+          "egenT": 12,
+          "egenI": 24,
+          "egenFil": "output/klipp/KD-2026-001/10-B-egen.jpg",
+          "egenFilm": {
+            "id": "1906776980305994",
+            "namn": "Takoverdrag_OB_1_H1"
+          },
+          "avstand": 0,
+          "derasHash": "1dbcebf674d79584",
+          "egenHash": "1dbcebf674d79584",
+          "scen": {
+            "nr": 12,
+            "tFran": 17,
+            "tTill": 18.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/10-B-deras.jpg"
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "derasT": 29,
+          "derasI": 58,
+          "egenT": 6.5,
+          "egenI": 13,
+          "egenFil": "output/klipp/KD-2026-001/10-C-egen.jpg",
+          "egenFilm": {
+            "id": "1906776980305994",
+            "namn": "Takoverdrag_OB_1_H1"
+          },
+          "avstand": 0,
+          "derasHash": "8080e08b83295936",
+          "egenHash": "8080e08b83295936",
+          "scen": {
+            "nr": 20,
+            "tFran": 28.5,
+            "tTill": 29.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/10-C-deras.jpg"
+        }
+      ],
+      "uteslutna": [
+        {
+          "derasT": 7,
+          "derasI": 14,
+          "egenT": 0,
+          "egenI": 0,
+          "egenFil": "output/klipp/KD-2026-001/10-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "1799802437683001",
+            "namn": "Takoverdrag_PD_6_H1"
+          },
+          "avstand": 1,
+          "derasHash": "2082f84b8f8fc0d6",
+          "egenHash": "2082f84f8f8fc0d6",
+          "scen": {
+            "nr": 4,
+            "tFran": 6.5,
+            "tTill": 7.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/10-lanat-1-deras.jpg"
+        },
+        {
+          "derasT": 8,
+          "derasI": 16,
+          "egenT": 10.5,
+          "egenI": 21,
+          "egenFil": "output/klipp/KD-2026-001/10-lanat-2-egen.jpg",
+          "egenFilm": {
+            "id": "1412486877658998",
+            "namn": "CaraShellRoof_NO_SP_104_H3"
+          },
+          "avstand": 3,
+          "derasHash": "a093dfcb930397ca",
+          "egenHash": "a0d3dfcb93039eca",
+          "scen": {
+            "nr": 5,
+            "tFran": 8,
+            "tTill": 9
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/10-lanat-2-deras.jpg"
+        },
+        {
+          "derasT": 11,
+          "derasI": 22,
+          "egenT": 1,
+          "egenI": 2,
+          "egenFil": "output/klipp/KD-2026-001/10-lanat-3-egen.jpg",
+          "egenFilm": {
+            "id": "4425339637679185",
+            "namn": "Takoverdrag_PD_4_H1"
+          },
+          "avstand": 0,
+          "derasHash": "66984097931e9a4e",
+          "egenHash": "66984097931e9a4e",
+          "scen": {
+            "nr": 6,
+            "tFran": 9.5,
+            "tTill": 11.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/10-lanat-3-deras.jpg"
+        }
+      ]
+    },
+    "14": {
+      "nr": 14,
+      "libraryId": "883337508196166",
+      "lank": "https://www.facebook.com/ads/library/?id=883337508196166",
+      "varAnnons": {
+        "id": "120249186879890172",
+        "namn": "CaraShellRoof_DK_CS_2_H1",
+        "handle": "takskyddet"
+      },
+      "fel": null,
+      "deras": {
+        "video": "output/klipp/KD-2026-001/deras-883337508196166.mp4",
+        "langd": 34.2,
+        "rutor": 68
+      },
+      "egen": {
+        "jamforda": 131,
+        "anvanda": [
+          "Takoverdrag_PD_1_H1",
+          "Takoverdrag_SP_4_H1",
+          "Takoverdrag_CO_1_H1"
+        ],
+        "perFilm": {
+          "Takoverdrag_PD_3_H1": 2,
+          "Takoverdrag_PD_2_H1": 2,
+          "CaraShellRoof_NO_PD_104_H1": 1,
+          "Takoverdrag_TR_3_H1": 1,
+          "Takoverdrag_RI_3_H1": 3,
+          "CaraShellRoof_NO_PD_5_H1": 1,
+          "CaraShellRoof_RI_103_H1": 1,
+          "CaraShellRoof_DK_GT_104_H1": 1,
+          "Takoverdrag_SP_2_H1": 1,
+          "Takoverdrag_CS_2_H1": 2,
+          "Takoverdrag_GT_2_H1": 1,
+          "CaraShellRoof_DK_RI_103_H1": 1,
+          "Takoverdrag_CS_3_H1": 1,
+          "Takoverdrag_PD_4_H1": 2,
+          "Takoverdrag_PD_1_H1": 1,
+          "CaraShellRoof_DK_PD_106_H1": 2,
+          "Takoverdrag_SP_4_H1": 8,
+          "CaraShellRoof_UG_101_H1": 1,
+          "CaraShellRoof_NO_SP_104_H2": 1,
+          "CaraShellRoof_NO_SP_104_H4": 1,
+          "Takoverdrag_RI_1_H1": 3,
+          "CaraShellRoof_SP_104_H4": 1,
+          "Takoverdrag_SP_4_H4": 1,
+          "Takoverdrag_UG_1_H1": 1,
+          "CaraShellRoof_NO_CO_101_H1": 1,
+          "Takoverdrag_CO_1_H1": 4,
+          "CaraShellRoof_CO_101_H1": 1,
+          "Takoverdrag_SP_4_H2": 1
+        }
+      },
+      "statistik": {
+        "derasRutor": 68,
+        "egnaRutor": 6180,
+        "filmer": 131,
+        "traffar": 47,
+        "andel": 69,
+        "scener": 38,
+        "matchadeScener": 29,
+        "uteslutnaScener": 7,
+        "perFilm": {
+          "Takoverdrag_PD_3_H1": 2,
+          "Takoverdrag_PD_2_H1": 2,
+          "CaraShellRoof_NO_PD_104_H1": 1,
+          "Takoverdrag_TR_3_H1": 1,
+          "Takoverdrag_RI_3_H1": 3,
+          "CaraShellRoof_NO_PD_5_H1": 1,
+          "CaraShellRoof_RI_103_H1": 1,
+          "CaraShellRoof_DK_GT_104_H1": 1,
+          "Takoverdrag_SP_2_H1": 1,
+          "Takoverdrag_CS_2_H1": 2,
+          "Takoverdrag_GT_2_H1": 1,
+          "CaraShellRoof_DK_RI_103_H1": 1,
+          "Takoverdrag_CS_3_H1": 1,
+          "Takoverdrag_PD_4_H1": 2,
+          "Takoverdrag_PD_1_H1": 1,
+          "CaraShellRoof_DK_PD_106_H1": 2,
+          "Takoverdrag_SP_4_H1": 8,
+          "CaraShellRoof_UG_101_H1": 1,
+          "CaraShellRoof_NO_SP_104_H2": 1,
+          "CaraShellRoof_NO_SP_104_H4": 1,
+          "Takoverdrag_RI_1_H1": 3,
+          "CaraShellRoof_SP_104_H4": 1,
+          "Takoverdrag_SP_4_H4": 1,
+          "Takoverdrag_UG_1_H1": 1,
+          "CaraShellRoof_NO_CO_101_H1": 1,
+          "Takoverdrag_CO_1_H1": 4,
+          "CaraShellRoof_CO_101_H1": 1,
+          "Takoverdrag_SP_4_H2": 1
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "derasT": 14,
+          "derasI": 28,
+          "egenT": 14,
+          "egenI": 28,
+          "egenFil": "output/klipp/KD-2026-001/14-A-egen.jpg",
+          "egenFilm": {
+            "id": "29253924880875293",
+            "namn": "Takoverdrag_PD_1_H1"
+          },
+          "avstand": 0,
+          "derasHash": "3e77d39090909090",
+          "egenHash": "3e77d39090909090",
+          "scen": {
+            "nr": 24,
+            "tFran": 14,
+            "tTill": 14
+          },
+          "derasFil": "output/klipp/KD-2026-001/14-A-deras.jpg"
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "derasT": 19,
+          "derasI": 38,
+          "egenT": 6,
+          "egenI": 12,
+          "egenFil": "output/klipp/KD-2026-001/14-B-egen.jpg",
+          "egenFilm": {
+            "id": "1596124075334669",
+            "namn": "Takoverdrag_SP_4_H1"
+          },
+          "avstand": 0,
+          "derasHash": "fcb21a0f8fc868bc",
+          "egenHash": "fcb21a0f8fc868bc",
+          "scen": {
+            "nr": 28,
+            "tFran": 19,
+            "tTill": 19
+          },
+          "derasFil": "output/klipp/KD-2026-001/14-B-deras.jpg"
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "derasT": 29,
+          "derasI": 58,
+          "egenT": 13.5,
+          "egenI": 27,
+          "egenFil": "output/klipp/KD-2026-001/14-C-egen.jpg",
+          "egenFilm": {
+            "id": "1077720491316831",
+            "namn": "Takoverdrag_CO_1_H1"
+          },
+          "avstand": 1,
+          "derasHash": "eafecc4b191b0f56",
+          "egenHash": "eafecc4b193b0f56",
+          "scen": {
+            "nr": 34,
+            "tFran": 27.5,
+            "tTill": 29.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/14-C-deras.jpg"
+        }
+      ],
+      "uteslutna": [
+        {
+          "derasT": 0,
+          "derasI": 0,
+          "egenT": 6.5,
+          "egenI": 13,
+          "egenFil": "output/klipp/KD-2026-001/14-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "1067361515911303",
+            "namn": "Takoverdrag_PD_3_H1"
+          },
+          "avstand": 4,
+          "derasHash": "b4b0147429c54721",
+          "egenHash": "34b0147529c54121",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 0
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/14-lanat-1-deras.jpg"
+        },
+        {
+          "derasT": 1.5,
+          "derasI": 3,
+          "egenT": 8,
+          "egenI": 16,
+          "egenFil": "output/klipp/KD-2026-001/14-lanat-2-egen.jpg",
+          "egenFilm": {
+            "id": "1067361515911303",
+            "namn": "Takoverdrag_PD_3_H1"
+          },
+          "avstand": 2,
+          "derasHash": "386034666659ac26",
+          "egenHash": "38203466665bac26",
+          "scen": {
+            "nr": 3,
+            "tFran": 1.5,
+            "tTill": 1.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/14-lanat-2-deras.jpg"
+        },
+        {
+          "derasT": 2,
+          "derasI": 4,
+          "egenT": 8.5,
+          "egenI": 17,
+          "egenFil": "output/klipp/KD-2026-001/14-lanat-3-egen.jpg",
+          "egenFilm": {
+            "id": "2388339611978148",
+            "namn": "Takoverdrag_PD_2_H1"
+          },
+          "avstand": 3,
+          "derasHash": "485fd8d8989c715c",
+          "egenHash": "484f9898989c715c",
+          "scen": {
+            "nr": 4,
+            "tFran": 2,
+            "tTill": 2.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/14-lanat-3-deras.jpg"
+        }
+      ]
+    },
+    "16": {
+      "nr": 16,
+      "libraryId": "2514259155737512",
+      "lank": "https://www.facebook.com/ads/library/?id=2514259155737512",
+      "varAnnons": {
+        "id": "120250242482300291",
+        "namn": "Takoverdrag_SP_4_H1",
+        "handle": "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+      },
+      "fel": null,
+      "deras": {
+        "video": "output/klipp/KD-2026-001/deras-2514259155737512.mp4",
+        "langd": 47.7,
+        "rutor": 95
+      },
+      "egen": {
+        "jamforda": 131,
+        "anvanda": [
+          "Takoverdrag_CS_3_H1",
+          "CaraShellRoof_PD_5_H1",
+          "Takoverdrag_CO_1_H1"
+        ],
+        "perFilm": {
+          "Takoverdrag_CO_3_H1": 3,
+          "Takoverdrag_SP_4_H3": 1,
+          "CaraShellRoof_SP_104_H1": 2,
+          "CaraShellRoof_NO_OB_101_H1": 1,
+          "Takoverdrag_OB_1_H1": 1,
+          "Takoverdrag_CO_1_H1": 6,
+          "Takoverdrag_SP_4_H1": 12,
+          "Takoverdrag_RI_1_H1": 6,
+          "CaraShellRoof_SP_104_H2": 1,
+          "CaraShellRoof_NO_PD_106_H1": 1,
+          "CaraShellRoof_NO_SP_104_H2": 5,
+          "CaraShellRoof_NO_SP_104_H4": 5,
+          "CaraShellRoof_DK_GT_104_H1": 1,
+          "CaraShellRoof_NO_PD_104_H1": 1,
+          "Takoverdrag_PD_4_H1": 1,
+          "Takoverdrag_SP_4_H4": 2,
+          "CaraShellRoof_DK_PD_106_H1": 3,
+          "Takoverdrag_GT_11_H1": 1,
+          "CaraShellRoof_NO_SP_104_H1": 3,
+          "Takoverdrag_CS_3_H1": 1,
+          "Takoverdrag_PD_3_H1": 1,
+          "Takoverdrag_RI_3_H1": 2,
+          "CaraShellRoof_NO_RI_103_H1": 1,
+          "CaraShellRoof_PD_5_H1": 3,
+          "Takoverdrag_SP_1_H1": 3,
+          "CaraShellRoof_DK_GT_105_H1": 1,
+          "Takoverdrag_PD_6_H1": 2,
+          "Takoverdrag_SP_2_H1": 1,
+          "CaraShellRoof_DK_SP_104_H1": 1,
+          "CaraShellRoof_DK_SP_2_H1": 1,
+          "CaraShellRoof_NO_CO_101_H1": 1,
+          "Takoverdrag_SP_4_H2": 1,
+          "CaraShellRoof_NO_OB_104_H1": 1,
+          "Takoverdrag_TR_3_H1": 3,
+          "Takoverdrag_PD_7_H1": 1
+        }
+      },
+      "statistik": {
+        "derasRutor": 95,
+        "egnaRutor": 6180,
+        "filmer": 131,
+        "traffar": 80,
+        "andel": 84,
+        "scener": 43,
+        "matchadeScener": 38,
+        "uteslutnaScener": 12,
+        "perFilm": {
+          "Takoverdrag_CO_3_H1": 3,
+          "Takoverdrag_SP_4_H3": 1,
+          "CaraShellRoof_SP_104_H1": 2,
+          "CaraShellRoof_NO_OB_101_H1": 1,
+          "Takoverdrag_OB_1_H1": 1,
+          "Takoverdrag_CO_1_H1": 6,
+          "Takoverdrag_SP_4_H1": 12,
+          "Takoverdrag_RI_1_H1": 6,
+          "CaraShellRoof_SP_104_H2": 1,
+          "CaraShellRoof_NO_PD_106_H1": 1,
+          "CaraShellRoof_NO_SP_104_H2": 5,
+          "CaraShellRoof_NO_SP_104_H4": 5,
+          "CaraShellRoof_DK_GT_104_H1": 1,
+          "CaraShellRoof_NO_PD_104_H1": 1,
+          "Takoverdrag_PD_4_H1": 1,
+          "Takoverdrag_SP_4_H4": 2,
+          "CaraShellRoof_DK_PD_106_H1": 3,
+          "Takoverdrag_GT_11_H1": 1,
+          "CaraShellRoof_NO_SP_104_H1": 3,
+          "Takoverdrag_CS_3_H1": 1,
+          "Takoverdrag_PD_3_H1": 1,
+          "Takoverdrag_RI_3_H1": 2,
+          "CaraShellRoof_NO_RI_103_H1": 1,
+          "CaraShellRoof_PD_5_H1": 3,
+          "Takoverdrag_SP_1_H1": 3,
+          "CaraShellRoof_DK_GT_105_H1": 1,
+          "Takoverdrag_PD_6_H1": 2,
+          "Takoverdrag_SP_2_H1": 1,
+          "CaraShellRoof_DK_SP_104_H1": 1,
+          "CaraShellRoof_DK_SP_2_H1": 1,
+          "CaraShellRoof_NO_CO_101_H1": 1,
+          "Takoverdrag_SP_4_H2": 1,
+          "CaraShellRoof_NO_OB_104_H1": 1,
+          "Takoverdrag_TR_3_H1": 3,
+          "Takoverdrag_PD_7_H1": 1
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "derasT": 16,
+          "derasI": 32,
+          "egenT": 26,
+          "egenI": 52,
+          "egenFil": "output/klipp/KD-2026-001/16-A-egen.jpg",
+          "egenFilm": {
+            "id": "28131074066587234",
+            "namn": "Takoverdrag_CS_3_H1"
+          },
+          "avstand": 0,
+          "derasHash": "7d0798958c497192",
+          "egenHash": "7d0798958c497192",
+          "scen": {
+            "nr": 13,
+            "tFran": 16,
+            "tTill": 16
+          },
+          "derasFil": "output/klipp/KD-2026-001/16-A-deras.jpg"
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "derasT": 20,
+          "derasI": 40,
+          "egenT": 29,
+          "egenI": 58,
+          "egenFil": "output/klipp/KD-2026-001/16-B-egen.jpg",
+          "egenFilm": {
+            "id": "1658410342588356",
+            "namn": "CaraShellRoof_PD_5_H1"
+          },
+          "avstand": 1,
+          "derasHash": "1cf899b71f5b4be3",
+          "egenHash": "1cf899b71f7b4be3",
+          "scen": {
+            "nr": 17,
+            "tFran": 19,
+            "tTill": 21
+          },
+          "derasFil": "output/klipp/KD-2026-001/16-B-deras.jpg"
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "derasT": 22.5,
+          "derasI": 45,
+          "egenT": 13.5,
+          "egenI": 27,
+          "egenFil": "output/klipp/KD-2026-001/16-C-egen.jpg",
+          "egenFilm": {
+            "id": "1077720491316831",
+            "namn": "Takoverdrag_CO_1_H1"
+          },
+          "avstand": 1,
+          "derasHash": "eafecc4b191b0f56",
+          "egenHash": "eafecc4b193b0f56",
+          "scen": {
+            "nr": 18,
+            "tFran": 21.5,
+            "tTill": 23.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/16-C-deras.jpg"
+        }
+      ],
+      "uteslutna": [
+        {
+          "derasT": 2,
+          "derasI": 4,
+          "egenT": 2,
+          "egenI": 4,
+          "egenFil": "output/klipp/KD-2026-001/16-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "4715692158754983",
+            "namn": "Takoverdrag_CO_3_H1"
+          },
+          "avstand": 1,
+          "derasHash": "e1a2c160ec617139",
+          "egenHash": "e1a2c160ec617939",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 2.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/16-lanat-1-deras.jpg"
+        },
+        {
+          "derasT": 6.5,
+          "derasI": 13,
+          "egenT": 5.5,
+          "egenI": 11,
+          "egenFil": "output/klipp/KD-2026-001/16-lanat-2-egen.jpg",
+          "egenFilm": {
+            "id": "1622439879521452",
+            "namn": "CaraShellRoof_NO_SP_104_H2"
+          },
+          "avstand": 1,
+          "derasHash": "2082f84a8f8f90d6",
+          "egenHash": "2082f84a8f8fd0d6",
+          "scen": {
+            "nr": 5,
+            "tFran": 6,
+            "tTill": 7
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/16-lanat-2-deras.jpg"
+        },
+        {
+          "derasT": 8,
+          "derasI": 16,
+          "egenT": 5.5,
+          "egenI": 11,
+          "egenFil": "output/klipp/KD-2026-001/16-lanat-3-egen.jpg",
+          "egenFilm": {
+            "id": "1449926570335863",
+            "namn": "CaraShellRoof_NO_SP_104_H4"
+          },
+          "avstand": 2,
+          "derasHash": "a0938fc08707dfca",
+          "egenHash": "a0938fc08707ceca",
+          "scen": {
+            "nr": 6,
+            "tFran": 7.5,
+            "tTill": 8.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/16-lanat-3-deras.jpg"
+        }
+      ]
+    },
+    "18": {
+      "nr": 18,
+      "libraryId": "964240652690101",
+      "lank": "https://www.facebook.com/ads/library/?id=964240652690101",
+      "varAnnons": {
+        "id": "120250147388460291",
+        "namn": "Takoverdrag_SP_2_H1",
+        "handle": "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+      },
+      "fel": null,
+      "deras": {
+        "video": "output/klipp/KD-2026-001/deras-964240652690101.mp4",
+        "langd": 38.2,
+        "rutor": 76
+      },
+      "egen": {
+        "jamforda": 131,
+        "anvanda": [
+          "Takoverdrag_OB_1_H1",
+          "CaraShellRoof_OB_101_H1",
+          "CaraShellRoof_SP_104_H2"
+        ],
+        "perFilm": {
+          "Takoverdrag_SP_2_H1": 7,
+          "CaraShellRoof_NO_OB_101_H1": 1,
+          "CaraShellRoof_OB_101_H1": 3,
+          "Takoverdrag_GT_5_H1": 1,
+          "CaraShellRoof_GT_104_H1": 1,
+          "CaraShellRoof_DK_SP_104_H1": 2,
+          "CaraShellRoof_NO_SP_104_H1": 1,
+          "Takoverdrag_SP_4_H2": 1,
+          "Takoverdrag_SP_4_H1": 4,
+          "Takoverdrag_SP_4_H3": 2,
+          "CaraShellRoof_NO_PD_5_H1": 1,
+          "CaraShellRoof_NO_RI_101_H1": 1,
+          "Takoverdrag_RI_1_H1": 4,
+          "CaraShellRoof_RI_101_H1": 2,
+          "Takoverdrag_GT_3_H1": 1,
+          "Takoverdrag_PD_1_H1": 1,
+          "Takoverdrag_SP_1_H1": 4,
+          "CaraShellRoof_CS_1_H1 – kopia": 1,
+          "CaraShellRoof_DK_SP_3_H1": 1,
+          "Takoverdrag_PD_2_H1": 1,
+          "CaraShellRoof_DK_PD_1_H1": 1,
+          "Takoverdrag_OB_1_H1": 8,
+          "CaraShellRoof_SP_104_H3": 3,
+          "CaraShellRoof_NO_SP_104_H2": 2,
+          "Takoverdrag_UG_1_H1": 1,
+          "CaraShellRoof_SP_104_H2": 1,
+          "Takoverdrag_CO_1_H1": 2
+        }
+      },
+      "statistik": {
+        "derasRutor": 76,
+        "egnaRutor": 6180,
+        "filmer": 131,
+        "traffar": 58,
+        "andel": 76,
+        "scener": 34,
+        "matchadeScener": 28,
+        "uteslutnaScener": 8,
+        "perFilm": {
+          "Takoverdrag_SP_2_H1": 7,
+          "CaraShellRoof_NO_OB_101_H1": 1,
+          "CaraShellRoof_OB_101_H1": 3,
+          "Takoverdrag_GT_5_H1": 1,
+          "CaraShellRoof_GT_104_H1": 1,
+          "CaraShellRoof_DK_SP_104_H1": 2,
+          "CaraShellRoof_NO_SP_104_H1": 1,
+          "Takoverdrag_SP_4_H2": 1,
+          "Takoverdrag_SP_4_H1": 4,
+          "Takoverdrag_SP_4_H3": 2,
+          "CaraShellRoof_NO_PD_5_H1": 1,
+          "CaraShellRoof_NO_RI_101_H1": 1,
+          "Takoverdrag_RI_1_H1": 4,
+          "CaraShellRoof_RI_101_H1": 2,
+          "Takoverdrag_GT_3_H1": 1,
+          "Takoverdrag_PD_1_H1": 1,
+          "Takoverdrag_SP_1_H1": 4,
+          "CaraShellRoof_CS_1_H1 – kopia": 1,
+          "CaraShellRoof_DK_SP_3_H1": 1,
+          "Takoverdrag_PD_2_H1": 1,
+          "CaraShellRoof_DK_PD_1_H1": 1,
+          "Takoverdrag_OB_1_H1": 8,
+          "CaraShellRoof_SP_104_H3": 3,
+          "CaraShellRoof_NO_SP_104_H2": 2,
+          "Takoverdrag_UG_1_H1": 1,
+          "CaraShellRoof_SP_104_H2": 1,
+          "Takoverdrag_CO_1_H1": 2
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "derasT": 24,
+          "derasI": 48,
+          "egenT": 6.5,
+          "egenI": 13,
+          "egenFil": "output/klipp/KD-2026-001/18-A-egen.jpg",
+          "egenFilm": {
+            "id": "1906776980305994",
+            "namn": "Takoverdrag_OB_1_H1"
+          },
+          "avstand": 0,
+          "derasHash": "8080e08b83295936",
+          "egenHash": "8080e08b83295936",
+          "scen": {
+            "nr": 25,
+            "tFran": 23.5,
+            "tTill": 25.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/18-A-deras.jpg"
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "derasT": 26.5,
+          "derasI": 53,
+          "egenT": 4,
+          "egenI": 8,
+          "egenFil": "output/klipp/KD-2026-001/18-B-egen.jpg",
+          "egenFilm": {
+            "id": "1556049345748382",
+            "namn": "CaraShellRoof_OB_101_H1"
+          },
+          "avstand": 1,
+          "derasHash": "004080078135b0c0",
+          "egenHash": "004080078135f0c0",
+          "scen": {
+            "nr": 26,
+            "tFran": 26,
+            "tTill": 27
+          },
+          "derasFil": "output/klipp/KD-2026-001/18-B-deras.jpg"
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "derasT": 32,
+          "derasI": 64,
+          "egenT": 3,
+          "egenI": 6,
+          "egenFil": "output/klipp/KD-2026-001/18-C-egen.jpg",
+          "egenFilm": {
+            "id": "1761934668355976",
+            "namn": "CaraShellRoof_SP_104_H2"
+          },
+          "avstand": 1,
+          "derasHash": "e17178cf8fe0f05a",
+          "egenHash": "f17178cf8fe0f05a",
+          "scen": {
+            "nr": 31,
+            "tFran": 31.5,
+            "tTill": 32
+          },
+          "derasFil": "output/klipp/KD-2026-001/18-C-deras.jpg"
+        }
+      ],
+      "uteslutna": [
+        {
+          "derasT": 1,
+          "derasI": 2,
+          "egenT": 1,
+          "egenI": 2,
+          "egenFil": "output/klipp/KD-2026-001/18-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "1402932001225062",
+            "namn": "Takoverdrag_SP_2_H1"
+          },
+          "avstand": 2,
+          "derasHash": "8c999932a31d6120",
+          "egenHash": "8c999b32a3156120",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 2.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/18-lanat-1-deras.jpg"
+        },
+        {
+          "derasT": 3.5,
+          "derasI": 7,
+          "egenT": 8,
+          "egenI": 16,
+          "egenFil": "output/klipp/KD-2026-001/18-lanat-2-egen.jpg",
+          "egenFilm": {
+            "id": "1556049345748382",
+            "namn": "CaraShellRoof_OB_101_H1"
+          },
+          "avstand": 2,
+          "derasHash": "e01e1fc0499ab59e",
+          "egenHash": "c01e1fc8499ab59e",
+          "scen": {
+            "nr": 1,
+            "tFran": 3,
+            "tTill": 4
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/18-lanat-2-deras.jpg"
+        },
+        {
+          "derasT": 7,
+          "derasI": 14,
+          "egenT": 5.5,
+          "egenI": 11,
+          "egenFil": "output/klipp/KD-2026-001/18-lanat-3-egen.jpg",
+          "egenFilm": {
+            "id": "4708239646167646",
+            "namn": "Takoverdrag_SP_4_H2"
+          },
+          "avstand": 1,
+          "derasHash": "2082f84b8f8fd0d6",
+          "egenHash": "2082f84b8f8fd8d6",
+          "scen": {
+            "nr": 6,
+            "tFran": 7,
+            "tTill": 7.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/18-lanat-3-deras.jpg"
+        }
+      ]
+    },
+    "20": {
+      "nr": 20,
+      "libraryId": "28302634086095313",
+      "lank": "https://www.facebook.com/ads/library/?id=28302634086095313",
+      "varAnnons": {
+        "id": "120250147355250291",
+        "namn": "Takoverdrag_CS_3_H1",
+        "handle": "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan"
+      },
+      "fel": null,
+      "deras": {
+        "video": "output/klipp/KD-2026-001/deras-28302634086095313.mp4",
+        "langd": 31.7,
+        "rutor": 63
+      },
+      "egen": {
+        "jamforda": 131,
+        "anvanda": [
+          "CaraShellRoof_OB_101_H1",
+          "Takoverdrag_OB_1_H1"
+        ],
+        "perFilm": {
+          "Takoverdrag_CS_3_H1": 6,
+          "Takoverdrag_SP_4_H2": 2,
+          "Takoverdrag_SP_4_H4": 4,
+          "CaraShellRoof_DK_CS_2_H1": 1,
+          "Takoverdrag_GT_3_H1": 1,
+          "CaraShellRoof_NO_PD_104_H1": 1,
+          "CaraShellRoof_RI_103_H1": 1,
+          "CaraShellRoof_PD_5_H1": 1,
+          "Takoverdrag_CO_3_H1": 1,
+          "Takoverdrag_TR_3_H1": 3,
+          "Takoverdrag_OB_3_H1": 1,
+          "CaraShellRoof_NO_SP_104_H4": 1,
+          "Takoverdrag_PD_6_H1": 2,
+          "CaraShellRoof_NO_UG_101_H1": 1,
+          "CaraShellRoof_SP_104_H4": 1,
+          "CaraShellRoof_DK_PD_106_H1": 1,
+          "Takoverdrag_CO_1_H1": 1,
+          "Takoverdrag_UG_1_H1": 2,
+          "Takoverdrag_GT_11_H1": 1,
+          "CaraShellRoof_NO_CO_101_H1": 1,
+          "Takoverdrag_PD_7_H1": 1,
+          "Takoverdrag_OB_1_H1": 8,
+          "Takoverdrag_RI_3_H1": 1,
+          "Takoverdrag_RI_2_H1": 1,
+          "CaraShellRoof_NO_CS_108_H1": 2,
+          "CaraShellRoof_OB_101_H1": 3,
+          "CaraShellRoof_DK_SP_104_H1": 1
+        }
+      },
+      "statistik": {
+        "derasRutor": 63,
+        "egnaRutor": 6180,
+        "filmer": 131,
+        "traffar": 50,
+        "andel": 79,
+        "scener": 31,
+        "matchadeScener": 24,
+        "uteslutnaScener": 5,
+        "perFilm": {
+          "Takoverdrag_CS_3_H1": 6,
+          "Takoverdrag_SP_4_H2": 2,
+          "Takoverdrag_SP_4_H4": 4,
+          "CaraShellRoof_DK_CS_2_H1": 1,
+          "Takoverdrag_GT_3_H1": 1,
+          "CaraShellRoof_NO_PD_104_H1": 1,
+          "CaraShellRoof_RI_103_H1": 1,
+          "CaraShellRoof_PD_5_H1": 1,
+          "Takoverdrag_CO_3_H1": 1,
+          "Takoverdrag_TR_3_H1": 3,
+          "Takoverdrag_OB_3_H1": 1,
+          "CaraShellRoof_NO_SP_104_H4": 1,
+          "Takoverdrag_PD_6_H1": 2,
+          "CaraShellRoof_NO_UG_101_H1": 1,
+          "CaraShellRoof_SP_104_H4": 1,
+          "CaraShellRoof_DK_PD_106_H1": 1,
+          "Takoverdrag_CO_1_H1": 1,
+          "Takoverdrag_UG_1_H1": 2,
+          "Takoverdrag_GT_11_H1": 1,
+          "CaraShellRoof_NO_CO_101_H1": 1,
+          "Takoverdrag_PD_7_H1": 1,
+          "Takoverdrag_OB_1_H1": 8,
+          "Takoverdrag_RI_3_H1": 1,
+          "Takoverdrag_RI_2_H1": 1,
+          "CaraShellRoof_NO_CS_108_H1": 2,
+          "CaraShellRoof_OB_101_H1": 3,
+          "CaraShellRoof_DK_SP_104_H1": 1
+        }
+      },
+      "val": [
+        {
+          "k": 0,
+          "bokstav": "A",
+          "derasT": 21,
+          "derasI": 42,
+          "egenT": 4,
+          "egenI": 8,
+          "egenFil": "output/klipp/KD-2026-001/20-A-egen.jpg",
+          "egenFilm": {
+            "id": "1556049345748382",
+            "namn": "CaraShellRoof_OB_101_H1"
+          },
+          "avstand": 0,
+          "derasHash": "004080078135f0c0",
+          "egenHash": "004080078135f0c0",
+          "scen": {
+            "nr": 21,
+            "tFran": 19,
+            "tTill": 21.5
+          },
+          "derasFil": "output/klipp/KD-2026-001/20-A-deras.jpg"
+        },
+        {
+          "k": 1,
+          "bokstav": "B",
+          "derasT": 23,
+          "derasI": 46,
+          "egenT": 6.5,
+          "egenI": 13,
+          "egenFil": "output/klipp/KD-2026-001/20-B-egen.jpg",
+          "egenFilm": {
+            "id": "1906776980305994",
+            "namn": "Takoverdrag_OB_1_H1"
+          },
+          "avstand": 0,
+          "derasHash": "8080e08b83295936",
+          "egenHash": "8080e08b83295936",
+          "scen": {
+            "nr": 22,
+            "tFran": 22,
+            "tTill": 24
+          },
+          "derasFil": "output/klipp/KD-2026-001/20-B-deras.jpg"
+        },
+        {
+          "k": 2,
+          "bokstav": "C",
+          "derasT": 25,
+          "derasI": 50,
+          "egenT": 8.5,
+          "egenI": 17,
+          "egenFil": "output/klipp/KD-2026-001/20-C-egen.jpg",
+          "egenFilm": {
+            "id": "1906776980305994",
+            "namn": "Takoverdrag_OB_1_H1"
+          },
+          "avstand": 0,
+          "derasHash": "c01f4f48499aa49e",
+          "egenHash": "c01f4f48499aa49e",
+          "scen": {
+            "nr": 23,
+            "tFran": 24.5,
+            "tTill": 25
+          },
+          "derasFil": "output/klipp/KD-2026-001/20-C-deras.jpg"
+        }
+      ],
+      "uteslutna": [
+        {
+          "derasT": 1,
+          "derasI": 2,
+          "egenT": 7,
+          "egenI": 14,
+          "egenFil": "output/klipp/KD-2026-001/20-lanat-1-egen.jpg",
+          "egenFilm": {
+            "id": "4572957359625651",
+            "namn": "Takoverdrag_SP_4_H4"
+          },
+          "avstand": 1,
+          "derasHash": "901f62a0571fdc4c",
+          "egenHash": "921f62a0571fdc4c",
+          "scen": {
+            "nr": 0,
+            "tFran": 0,
+            "tTill": 3
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/20-lanat-1-deras.jpg"
+        },
+        {
+          "derasT": 9.5,
+          "derasI": 19,
+          "egenT": 0.5,
+          "egenI": 1,
+          "egenFil": "output/klipp/KD-2026-001/20-lanat-2-egen.jpg",
+          "egenFilm": {
+            "id": "1055843663993823",
+            "namn": "Takoverdrag_OB_3_H1"
+          },
+          "avstand": 0,
+          "derasHash": "2082f84f8f0fd0d6",
+          "egenHash": "2082f84f8f0fd0d6",
+          "scen": {
+            "nr": 10,
+            "tFran": 9.5,
+            "tTill": 10
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/20-lanat-2-deras.jpg"
+        },
+        {
+          "derasT": 11.5,
+          "derasI": 23,
+          "egenT": 6.5,
+          "egenI": 13,
+          "egenFil": "output/klipp/KD-2026-001/20-lanat-3-egen.jpg",
+          "egenFilm": {
+            "id": "956181934199479",
+            "namn": "CaraShellRoof_NO_UG_101_H1"
+          },
+          "avstand": 2,
+          "derasHash": "a0d3cf548e07ffca",
+          "egenHash": "a0d3cf548e07f9ca",
+          "scen": {
+            "nr": 11,
+            "tFran": 10.5,
+            "tTill": 11.5
+          },
+          "orsak": "lånat klipp — utesluten ruta i scenen",
+          "derasFil": "output/klipp/KD-2026-001/20-lanat-3-deras.jpg"
+        }
+      ]
+    }
+  }
+}

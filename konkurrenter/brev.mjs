@@ -57,12 +57,17 @@ export function bevisrader(arende, sprak = 'sv') {
   // Flera annonser (ärende ur Ad Library eller Axels lista): en rad per annons.
   const flera = Array.isArray(b.annonser) ? b.annonser.filter((a) => a.text?.styrka || a.bilder?.length) : [];
   if (flera.length) {
+    // Klippen (Axel 2026-09-29): en annons med valda rutor ur våra egna klipp beskrivs som klippt ur vår film — miniatyrträffen (det lånade klippet) nämns inte.
+    const medFilm = flera.some((a) => a.klipp?.antal);
     ut.push(sprak === 'sv'
-      ? `• Annonser: ${flera.length} av era annonser på Facebook/Instagram återger våra annonser${flera.some((a) => a.bilder?.length) ? ' (text och/eller bild)' : ' ordagrant'}:`
-      : `• Ads: ${flera.length} of your ads on Facebook/Instagram reproduce our ads${flera.some((a) => a.bilder?.length) ? ' (copy and/or image)' : ' verbatim'}:`);
+      ? `• Annonser: ${flera.length} av era annonser på Facebook/Instagram återger våra annonser${medFilm ? ' (text, bild och/eller film klippt ur våra egna reklamfilmer)' : flera.some((a) => a.bilder?.length) ? ' (text och/eller bild)' : ' ordagrant'}:`
+      : `• Ads: ${flera.length} of your ads on Facebook/Instagram reproduce our ads${medFilm ? ' (copy, image and/or video cut from our own advertising films)' : flera.some((a) => a.bilder?.length) ? ' (copy and/or image)' : ' verbatim'}:`);
     for (const a of flera.slice(0, 8)) {
       const p = a.text?.passager?.[0];
-      ut.push(`    ${a.lank ?? `${sprak === 'sv' ? 'annons' : 'ad'} ${a.nr}`}${a.varAnnons?.namn ? ` ← ${a.varAnnons.namn}` : ''}${p ? `: ${citat(p.text, 140)} (${p.ord} ${sprak === 'sv' ? 'ord i följd' : 'consecutive words'})` : ''}${a.bilder?.length ? ` · ${a.bilder.length} ${sprak === 'sv' ? 'bild(er) identiska med våra' : 'image(s) identical to ours'}` : ''}`);
+      const film = a.klipp?.antal
+        ? ` · ${sprak === 'sv' ? `filmen är klippt ur vår: ${a.klipp.antal} rutor ur olika scener identiska med våra, ${a.klipp.andel} % av er film matchar vår ruta för ruta` : `the video is cut from ours: ${a.klipp.antal} frames from different scenes identical to ours, ${a.klipp.andel}% of your video matches ours frame for frame`}`
+        : a.bilder?.length ? ` · ${a.bilder.length} ${sprak === 'sv' ? 'bild(er) identiska med våra' : 'image(s) identical to ours'}` : '';
+      ut.push(`    ${a.lank ?? `${sprak === 'sv' ? 'annons' : 'ad'} ${a.nr}`}${a.varAnnons?.namn ? ` ← ${a.varAnnons.namn}` : ''}${p ? `: ${citat(p.text, 140)} (${p.ord} ${sprak === 'sv' ? 'ord i följd' : 'consecutive words'})` : ''}${film}`);
     }
     if (flera.length > 8) ut.push(`    … ${sprak === 'sv' ? `och ${flera.length - 8} till (fullständig lista på begäran)` : `and ${flera.length - 8} more (full list on request)`}`);
   } else {

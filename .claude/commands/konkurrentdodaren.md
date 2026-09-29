@@ -12,6 +12,7 @@ Argument: `$ARGUMENTS` — normalt tomt (rutinen, varje morgon). Axels egna verb
                                             Axels godkännande: brev + faktura som UTKAST i Stonebite-Gmail (--direkt = skicka därifrån)
 /konkurrentdodaren skickad KD-2026-001      kvittot när Axel själv tryckt Skicka i Gmail
 /konkurrentdodaren faktura KD-2026-001      bara fakturan (titta på den, eller efter ändrad taxa)
+/konkurrentdodaren klipp KD-2026-001        Bevisrutorna ur VÅRA EGNA klipp (deras film ↔ alla våra filmer) — före `anmal` när träffen är en film
 /konkurrentdodaren anmal KD-2026-001        Meta-anmälningarna: EN per kopierad annons, allt ifyllt + bevisbild → Axel verifierar EN gång
 /konkurrentdodaren anmald KD-2026-001 --nr 1 --referens <Metas nr>   kvittot per inskickad anmälan (skrivs av sessionen)
 /konkurrentdodaren avfarda KD-2026-001 "ingen kopia"
@@ -266,9 +267,30 @@ inget: "Inget för dig i dag."
   2026-09-29: "den går in och reportar annonsen också, och fyller i allting med
   rätt uppgifter … tio rippade annonser = tio olika reports … det enda jag
   vill göra är att bara verifiera reporten … sen skickar du in allting").
+  0. **Är träffen en FILM (`video: true` i annonsfallet): kör FÖRST
+     `node konkurrenter/kor.mjs --klipp <id>`** (Axel 2026-09-29, andra
+     vändan: "många av de videosarna som vi säger är snodda har vi också
+     snott … typ nittio procent av alla klippen är våra, förutom just de som
+     du tog screenshots på" — miniatyrträffen, annonsens förhandsbild, är det
+     LÅNADE klippet). `klipp.mjs` laddar ner deras film (annonsbiblioteket)
+     och ALLA våra filmer med samma namnprefix i våra konton (Meta `source`;
+     ORVO/takskyddet: 131 filmer), tar en ruta var halva sekund, matchar
+     (dHash i ffmpeg — Playwrights ffmpeg saknar H.264, `pip3 install --user
+     imageio-ffmpeg` har det; skriptet säger vilken som saknas), kastar
+     scenerna med det lånade klippet ± 2 s på båda sidor och väljer 3 par ur
+     olika scener per annons (tätast först). Skriver `klipp.json` (facit,
+     committas), rutorna i `output/klipp/<id>/` (cache) och sammanfattningen
+     på ärendets annonser. Mätt 2026-09-29: 68–84 % av ORVO:s rutor matchar
+     våra filmer, paren 0–1/64. Säger Axel att en ruta ändå är lånad
+     ("anmälan 3 ruta B är lånad"): `--klipp <id> --lanat 3:B` (utesluts
+     överallt, minnet i `klipp.json`) och sedan steg 1 igen. Bildannonser
+     hoppar steget (miniatyrträffen gäller).
   1. `node konkurrenter/kor.mjs --anmal <id>` — bygger **en anmälan per
-     annons** med länk och träff: bevisbilden (vårt original ↔ deras annons,
-     kopierad text markerad; PNG i Chromium, publik länk på butikens CDN via
+     annons** med länk och träff: bevisbilden (för en film: 3 par ur våra
+     egna klipp, vår filmruta till vänster och samma ruta i deras annons till
+     höger, med film, tid och avstånd per par — aldrig miniatyrträffen, den
+     stoppar hellre än att falla tillbaka; annars vårt original ↔ deras annons
+     med kopierad text markerad; PNG i Chromium, publik länk på butikens CDN via
      `anmalan.cdn_butik`), fältpaketet `arenden/<id>/anmalan/<nr>.json` +
      `<nr>.txt` (engelska: kontakt, rättighetshavare, annonsens URL, vad som
      kopierats, originalets länkar, försäkringarna, underskriften — allt ur
@@ -332,6 +354,7 @@ sidnamn eller domän i stället för ett bolag, be Axel om `--kopare`.
 - [ ] Granskningssidan publicerad på samma länk som `konkurrenter/sida.json` (eller länken sparad första gången)
 - [ ] Inget brev skickades av rutinen; Gmail rördes bara på Axels `skicka <id>` (utkast) eller `skicka <id> --direkt` (sänt)
 - [ ] Ingen Meta-anmälan skickades utan Axels "kör anmälningarna <id>" (`--anmal-skicka <id> --ja` bara då; torrt utan `--ja`); varje inskickad anmälan kvitterad (automatiskt eller `--anmald`) med referens
+- [ ] Bevisbilderna för videoannonser är byggda ur våra egna klipp (`--klipp` före `--anmal`), aldrig ur miniatyrträffen — och en ruta Axel pekat ut som lånad är utesluten med `--lanat` och kortet ombyggt
 - [ ] Ett annonsfynd under Axels tröskel (ingen annons över 10 000 i räckvidd och färre än 10 live) blev INGET ärende — det står i rapporten under "Under din tröskel"
 - [ ] Commit + push till main (arenden.jsonl, arenden/, lage.json, sida.json) — aldrig `output/`
 - [ ] Svaret till Axel är på svenska, kort, och hans uppgifter står sist, numrerade
