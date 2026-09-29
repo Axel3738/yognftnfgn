@@ -1151,7 +1151,9 @@ bindestreck i en polsk titel). Språksegmenten `SEG_samtycke_<sprak>` (12 st) id
 skapandet (annonserna utomlands är pausade).
 
 **Kvar:** kampanjutkast index 103–120 i `uppdrag/kampanjer.json` (K13 de/fr/nl/es/it/pl/pt, K14
-alla elva) — Spoks-connectorn krävde ny inloggning mitt i omgången. Prompten:
+alla elva) — Spoks-connectorn krävde ny inloggning mitt i omgången, och efter att Axel kopplat om
+den svarade `whoami` fortfarande "Internal server error" två gånger i samma session (mätt
+2026-09-29 kväll). Prompten för en ny session, som kollar kopplingen först:
 `klaviyo/spoks/PROMPT-matstrumpor-sprak-rest.md`.
 
 **Bytet från de svenska flödena** är Axels klick: i varje nytt flöde slås sändstegen och flödet på,
