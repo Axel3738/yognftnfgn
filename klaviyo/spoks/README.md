@@ -365,14 +365,22 @@ butikens egen domän när något slås på. Inget är påslaget.
    ⚠️ Lärdom: mejlet om övergiven kassa ligger under **Marknadsföring →
    Automatiseringar**, inte under Inställningar → Aviseringar (där finns bara
    kassasystemets "Övergiven betalning i kassasystemet", som är den fysiska kassan).
-   ⚠️ **2026-09-29:** Axels skärmdump av **Shopify Messaging** (appen, egen lista) visade två
-   automatiseringar som **Aktiv**: "You left items at checkout" och "We're happy to see you
-   again", plus fem utkast och en skickad Alla hjärtans dag-kampanj från 21/1. De två aktiva gör
-   samma jobb som F02 (kassan) och F04/F05 (efter köp, vinna tillbaka), så en kund kan få två
-   mejl om samma sak.
-   Svaret till Axel: stäng av båda, låt utkasten vara. Spoks F02 skickade själv samma morgon
-   (`get_flow`: 20 inrullade, 3 väntar efter E1, 17 efter E2), så inget kassamejl försvinner.
-   Kolla båda listorna när en butik flyttar till Spoks.
+   ⚠️ **2026-09-29, två skärmdumpar samma förmiddag:** Messagings **mejllista** visade "You
+   left items at checkout" och "We're happy to see you again" som **Aktiv**. **Messaging →
+   Automatiseringar** visade däremot alla fyra automatiseringar **Inaktiv** (Tacka kunder efter
+   att de har handlat, Merförsäljning till kunder efter deras första inköp, Tacka kunder efter
+   ett köp, Återställ övergiven varukorg; den sista skickade 7 mejl de senaste 30 dagarna, före
+   avstängningen 26/9). Sessionen läste först mejllistan och sa åt Axel att stänga av båda.
+   Det var fel sida: det är Automatiseringar som skickar, och "Aktiv" på mejllistan är mejlets
+   status. Det som återstår är **Flow-appen**: Shopifys ruta säger att Flow-automatiseringar
+   fortsätter att köras efter flytten 1 maj, och Flow går inte att läsa via API
+   (`marketingActivities` ger bara den frågande appens egna aktiviteter, mätt samma dag med
+   Fabriken, och det finns ingen Flow-fråga). Axel tittar därför en gång i Flow och skickar en
+   skärmdump om något arbetsflöde är på. Spoks F02 skickar själv (`get_flow` samma morgon: 20
+   inrullade, 3 väntar efter E1, 17 efter E2). Skärmdumpen är Matstrumpors: apparna i menyn
+   stämmer med `appInstallations` (Claude koppling, Conversion Bear, Flow, Judge.me, Messaging,
+   StonePNL, WorkflowMail, wetracked.io); Klaviyo är också installerat men gick inte att läsa
+   härifrån (`KLAVIYO_API_KEY_MATSTRUMPOR` saknas i sessionens miljö).
 3. ✅ **Klart 2026-09-26 07:56–07:57:** F01, F03, F04, F05 och F07 live. (Spoks vägrar
    aktivera ett flöde vars sändsteg är av — rutan "Detta flöde har inga aktiva åtgärder";
    stegen slås på ett i taget i flödesredigeraren, sedan flödet.)
