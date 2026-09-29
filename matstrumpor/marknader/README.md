@@ -514,6 +514,14 @@ Axel: "jag har ett Facebook-page också … 1285064981363590", och "Den heter en
 - `bygg.mjs --byt-text` byter nu också sida och Instagram (`identitetSkillnad`), bara i PAUSED
   annonser, med ny creative och tillbakaläsning. De svenska annonserna och sidan Matstrumpor.se rörs
   aldrig härifrån.
+- ✅ **Alla 104 utlandsannonser bytta 2026-09-29 kväll.** Bytet tog två omgångar. Den första, som
+  bara bytte sidan, stoppades efter 72 annonser när länken också skulle till .com. Den andra
+  omgången bytte 64 länkar och 32 sidor + Instagram + länk, och NOB:s 8 var redan rätt. Allt är
+  PAUSED och Meta bromsade (kod 17) i omgångar om upp till 300 s.
+- En egen avläsning av hela kontot efteråt gav **104 av 104 rätt**: sidan `1285064981363590`,
+  Instagram `17841423405715219`, länken enligt `marknader.json` både i länken och i knappen, och
+  PAUSED. Nio stod i Metas granskning efter ändringen. Förhandsvisningen av DE 008 (bild) visar
+  "Matstrumpor" med den nya profilbilden på Facebook och Instagram.
 - **Profilbilden** var tom (`is_silhouette: true`, 0 följare), så alla 104 annonser visades med en grå
   gubbe, också på Instagram, där identiteten lånar sidans bild. Sessionen satte loggan utan ".SE"
   (`domantema/matstrumpor-logga-utan-se.png`) på en vit kvadrat 1600 × 1600, där allt ryms i Facebooks

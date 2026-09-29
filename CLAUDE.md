@@ -195,7 +195,9 @@ BM). Instagram visas via sidans page-backed identitet `17841423405715219`, efter
 matstrumpor.se säger .se. Källan är `annonser/marknader.json`, och `bygg.mjs --byt-text` byter sidan
 i PAUSED annonser. Sverige och sidan Matstrumpor.se `820358954504320` rörs aldrig därifrån.
 Sidans profilbild var tom, så annonserna visade en grå gubbe. Sedan 2026-09-29 är den loggan utan ".SE"
-(sessionen, `POST /{sida}/picture`, tillbakaläst).
+(sessionen, `POST /{sida}/picture`, tillbakaläst). ✅ Alla 104 utlandsannonser bär sidan, Instagram-
+identiteten och .com-länken (B-sidan .no) sedan 2026-09-29 kväll. En egen avläsning av kontot gav 104
+av 104, alla PAUSED.
 **Judge.me:** rutans texter är översatta på alla tolv språk. Axel slog på "automatic" 2026-09-29, men
 recensionerna var ännu inte översatta samma kväll, eftersom Judge.me anger upp till 48 timmar
 (`marknader/README.md` → "Judge.me på tolv språk"). ⚠️ Shopify mätt
