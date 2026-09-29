@@ -3940,6 +3940,14 @@
    "status17": "InfoReceived",
    "senast": "2026-09-29T03:57",
    "status": "CONFIRMED"
+  },
+  "YT2626800704776460": {
+   "bolag": "",
+   "kod": null,
+   "order": null,
+   "fulfillment": null,
+   "manuell": "influencer",
+   "tillagd": "2026-09-29"
   }
  },
  "senaste_korning": {
