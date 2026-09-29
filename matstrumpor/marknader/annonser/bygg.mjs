@@ -8,6 +8,10 @@
 //   node matstrumpor/marknader/annonser/bygg.mjs --marknad NO --skarpt --byt-video
 //       byter videon i annonser som redan finns när filen i klar/ har ändrats (ny creative,
 //       samma annons, fortfarande PAUSED). videor.json minns vilken fil varje annons bär.
+//   node matstrumpor/marknader/annonser/bygg.mjs --marknad FR --skarpt --byt-text
+//       byter rubrik, brödtext eller länkbeskrivning i annonser som redan finns när <KOD>.json
+//       ändrats: samma video/bild (ingen ny uppladdning), ny creative, samma annons. BARA i
+//       annonser som är PAUSED — en annons som går rörs aldrig (den skulle börja om inlärningen).
 //
 // Läser marknader.json (kampanj, adset, geo, länk, budget, budgetbeslut) och <KOD>.json
 // (copy + en post per annons: namn, videofil relativt annonser/klar/, title, message,
@@ -30,6 +34,7 @@ const arg = process.argv.slice(2);
 const skarpt = arg.includes('--skarpt');
 const aktivera = arg.includes('--aktivera');
 const bytVideo = arg.includes('--byt-video');
+const bytText = arg.includes('--byt-text');
 const log = (s) => console.log(s);
 // Vilken fil varje annons bär (sha256 av filen i klar/). Utan minnet går det inte att veta om en
 // annons redan har den nya videon — 2026-09-28 byttes speed-renderingarna mot precision.
@@ -50,6 +55,15 @@ export function farAktiveras(k, annonser) {
   if (fel.length) return { ok: false, skal: `${fel.length} annonser länkar fel: ${fel.map((a) => `${a.name} → ${a.lank}`).join('; ')}` };
   return { ok: true };
 }
+/** Ren: vilka av rubrik, brödtext och länkbeskrivning som skiljer mellan filen och annonsens
+ *  creative i kontot (object_story_spec). Video bär title/link_description, bild name/description. */
+export function textSkillnad(an, story = {}) {
+  const v = story.video_data, l = story.link_data;
+  const live = v ? { title: v.title, message: v.message, link_description: v.link_description }
+    : l ? { title: l.name, message: l.message, link_description: l.description } : {};
+  return ['title', 'message', 'link_description'].filter((f) => (live[f] ?? '') !== (an[f] ?? ''));
+}
+
 /** Ren: annonsens länk måste bära marknadens locale och (för enlandskampanjer) landet. */
 export function lankOk(k, lank) {
   if (!lank) return false;
@@ -93,7 +107,7 @@ async function byggMarknad(kod) {
 
   if (!A) log(`inga annonser: ${kod}.json saknas (copy skrivs av sonnet mot docs/copy-regler.md)`);
   else {
-    const finns = adset ? await alla(`${adset.id}/ads`, { fields: 'id,name,status' }, 50) : [];
+    const finns = adset ? await alla(`${adset.id}/ads`, { fields: bytText ? 'id,name,status,effective_status,creative{object_story_spec}' : 'id,name,status' }, 50) : [];
     // Video (an.video, eller an.video_fran = en annan annons vars video återanvänds — A/B-testets B-kampanj
     // bär exakt samma video som A) eller bild (an.bild, eller an.bild_fran) med link_data.
     const spec = (an, media) => media.image_hash
@@ -120,6 +134,26 @@ async function byggMarknad(kod) {
       const lanad = !!(an.video_fran || an.bild_fran);
       const fil = kallfil(an) ? join(ROT, kallfil(an)) : null;
       const gammal = finns.find((x) => x.name === an.namn);
+      if (gammal && bytText) {
+        const andrat = textSkillnad(an, gammal.creative?.object_story_spec);
+        if (!andrat.length) { log(`texten stämmer: ${an.namn}`); continue; }
+        if (gammal.status !== 'PAUSED' || gammal.effective_status === 'ACTIVE') { log(`⛔ ${an.namn} går (${gammal.status}/${gammal.effective_status}) — texten byts bara i pausade annonser`); continue; }
+        if (!skarpt) { log(`torrt: skulle byta ${andrat.join(', ')} i ${an.namn} (${gammal.id})`); continue; }
+        // Samma media som annonsen redan bär: ingen ny uppladdning.
+        const v = videor[an.video_fran ?? an.bild_fran ?? an.namn];
+        if (!v?.video_id && !v?.image_hash) { log(`⚠️ ${an.namn}: videor.json vet inte vilken video/bild annonsen bär — hoppar`); continue; }
+        const m = v.image_hash ? { image_hash: v.image_hash, sha256: v.sha256, fil: v.fil } : { video_id: v.video_id, thumb: await väntaPåThumb(v.video_id), sha256: v.sha256, fil: v.fil };
+        const creative = await api(`act_${act}/adcreatives`, { form: { name: an.namn, object_story_spec: JSON.stringify(spec(an, m)), degrees_of_freedom_spec: JSON.stringify(ingaEnhancements()) } });
+        await api(gammal.id, { form: { creative: JSON.stringify({ creative_id: creative.id }) } });
+        const las = await api(gammal.id, { params: { fields: 'status,creative{id,object_story_spec}' } });
+        if (las.creative?.id !== creative.id) throw new Error(`${an.namn}: creative byttes inte (läst ${las.creative?.id}, ville ${creative.id})`);
+        const kvar = textSkillnad(an, las.creative.object_story_spec);
+        if (kvar.length) throw new Error(`${an.namn}: ${kvar.join(', ')} läste tillbaka fel`);
+        videor[an.namn] = { ...videor[an.namn], ...minne(an, m, { creative_id: creative.id, annons_id: gammal.id, text_bytt: new Date().toISOString() }) };
+        sparaVideor();
+        log(`✅ ny text (${andrat.join(', ')}) i ${an.namn} (${gammal.id}): creative ${creative.id}, status ${las.status}`);
+        continue;
+      }
       if (gammal) {
         if (!bytVideo || lanad) { log(`annons finns: ${an.namn}`); continue; }
         if (!existsSync(fil)) { log(`⚠️ ${an.namn}: filen saknas (${kallfil(an)}) — behåller den gamla`); continue; }

@@ -1,7 +1,7 @@
 // Tester för annonser/bygg.mjs — spärrarna före aktivering (ren logik, inget nät).
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { farAktiveras, lankOk, slaIhopLage } from '../annonser/bygg.mjs';
+import { farAktiveras, lankOk, slaIhopLage, textSkillnad } from '../annonser/bygg.mjs';
 import { tillB, VARUMARKESRAD } from '../annonser/nob.mjs';
 
 test('slaIhopLage: en körning för en marknad byter bara ut den raden, resten står kvar i marknadsordning', () => {
@@ -66,4 +66,13 @@ test('nob: B-annonsen är A-annonsen utan varumärkesraden, med samma video/bild
   const bild = tillB({ ...a, namn: 'MATSTRUMP_NO_sushi_offer_static_008_v1', video: undefined, bild: 'klar/NO_d3.jpg' });
   assert.equal(bild.bild_fran, 'MATSTRUMP_NO_sushi_offer_static_008_v1');
   assert.throws(() => tillB({ ...a, message: 'Utan raden.' }), /sista raden/);
+});
+
+test('--byt-text: bara de fält som skiljer mot annonsens creative byts, video och bild läses rätt', () => {
+  const an = { title: 'Rubrik', message: 'Rad 1\nRad 2', link_description: '4 sortes. 1 acheté – 1 offert. Livraison gratuite.' };
+  const video = { video_data: { title: 'Rubrik', message: 'Rad 1\nRad 2', link_description: '4 sortes. Achetez-en 1 – Recevez-en 1 GRATUIT. Livraison gratuite.' } };
+  assert.deepEqual(textSkillnad(an, video), ['link_description']);
+  const bild = { link_data: { name: 'Rubrik', message: 'Rad 1\nRad 2', description: an.link_description } };
+  assert.deepEqual(textSkillnad(an, bild), []);
+  assert.deepEqual(textSkillnad(an, {}), ['title', 'message', 'link_description']);
 });
