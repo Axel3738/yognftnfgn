@@ -89,6 +89,12 @@ bildbrieferna, i repot och i Notion (tillbakaläst). Fyra tester i
 
 ## Brieferna i Notion (alla `Draft`, skapade 2026-09-28)
 
+**Allt på en sida (Axels fråga 2026-09-29 "vart kan jag se alla farsdag briefs"):**
+https://claude.ai/artifact/U6gefRwvnMgXLvQ7ygjqVG — bilderna, videornas öppningar och manus,
+annonstexten och Notion-länken per rad, status läst 2026-09-29 morgon (11 av 11 bilder i
+`To be Reviewed`, `Rodholder_FD_1_H1/H2` hos redigeraren, resten `Draft`). Byggd ur
+`copy/*.json` + `plan.mjs`; publicera om på samma länk när statusen ändrats.
+
 | Hubb | Video H1 | Video H2 | Bild |
 |---|---|---|---|
 | BÄVER Taköverdraget | [Takoverdrag_FD_1_H1](https://www.notion.so/3e9270ab908c8158b64dc22f0b819337) | [Takoverdrag_FD_1_H2](https://www.notion.so/3e9270ab908c8102bcbdfa3321ed0c3a) | [Takoverdrag_FD_2_1](https://www.notion.so/3e9270ab908c81d1808fff9634f468ec) |
