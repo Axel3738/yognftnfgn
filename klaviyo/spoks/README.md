@@ -685,7 +685,7 @@ false` + tre sändsteg av; flödets `isActive` står kvar `true` i API:t, det ä
 sändstegen 14:39; ✅ (3) testet kört 14:40, kontakten inrullad, VA-SOP:en i Notion
 (`3e8270ab-908c-817c-a874-f5e538f8339e`); Axel bekräftar E1 i sin inkorg; (4) säg "kör" en
 tisdag morgon ⇒ första skarpa dragningen, tisdagens kampanj får Premiär-blocket samma
-kväll; (5) beloppet på tröstpriset, 100 eller 200 kr; (6) länken till Judge.me:s
+kväll; ✅ (5) beloppet på tröstpriset: 100 kr (Axels beslut 2026-09-27 kväll, V01 v2 säger det till klubben); ✅ (6) länken till Judge.me:s
 butiksrecension (avsnittet Recensionerna nedan). En rutin (tisdag 07:30, `/klubbdragning
 kör`) byggs först när det gått rätt tre veckor för hand (Arvids princip). Testkunden bär nu
 taggen `klubb-vinnare`: ett nytt test kräver att taggen tas bort i Shopify först (skriptet

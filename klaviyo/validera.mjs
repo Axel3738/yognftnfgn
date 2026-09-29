@@ -34,6 +34,16 @@ const FALSK_BRADSKA = [/bara\s+i\s*dag/i, /endast\s+i\s*dag/i, /sista\s+chansen/
 // En summa i copyn: "299 kr", "1 299 kronor", "299:-", "299 SEK".
 const KR_SUMMA = /\d[\d\s.,]*\s*(kr\b|kronor|:-|sek\b)/i;
 
+// Belopp som inte är ett pris får stå i copyn när mejlet listar dem i
+// tillatna_belopp med källa, t.ex. klubbens tröstpris 100 kr (Axels beslut
+// 2026-09-27). Varje summa i texten måste vara exakt ett listat belopp:
+// "1 100 kr" släpps inte igenom av "100 kr". Priser kommer alltid ur produktblocken.
+const normBelopp = (s) => String(s).replace(/\s+/g, ' ').trim().toLowerCase();
+function otillatnaBelopp(t, tillatna) {
+  const ok = new Set(tillatna.map((x) => normBelopp(x.belopp)));
+  return [...String(t).matchAll(new RegExp(KR_SUMMA.source, 'gi'))].map((m) => m[0].trim()).filter((b) => !ok.has(normBelopp(b)));
+}
+
 // Prisbesparing, inte "spara tid": spara + summa/pengar, du sparar, rea,
 // rabatt, nedsatt, ordinarie pris.
 const SPARA = /\bspara\s+(\d|pengar|in\b)|\bdu\s+sparar\b|\bsparar\s+du\b|\brea\b|rabatt|nedsatt|ordinarie\s+pris/i;
@@ -105,6 +115,14 @@ export function validera(mejl, { html = null, text = null, produkter = [], brand
     if (!String(a?.begar ?? '').trim()) varningar.push(`${var_} saknar "begar" (vilket begär raden spelar på).`);
   });
   if (!String(mejl.forhandstext ?? '').trim()) fel.push('Förhandstexten är tom.');
+  const tillatnaBelopp = Array.isArray(mejl.tillatna_belopp) ? mejl.tillatna_belopp : [];
+  if (mejl.tillatna_belopp !== undefined && !Array.isArray(mejl.tillatna_belopp)) fel.push('tillatna_belopp ska vara en lista med { belopp, kalla }.');
+  for (const x of tillatnaBelopp) {
+    const b = String(x?.belopp ?? '');
+    const hel = new RegExp(`^(?:${KR_SUMMA.source})$`, 'i');
+    if (!hel.test(b.trim())) fel.push(`tillatna_belopp: "${b}" är inget kronbelopp (skriv t.ex. "100 kr").`);
+    if (!String(x?.kalla ?? '').trim()) fel.push(`tillatna_belopp: "${b}" saknar kalla (vems beslut, var det står).`);
+  }
   if (!Array.isArray(mejl.tretest) || !mejl.tretest.length) varningar.push('Tre-frågorstestet (tretest) är inte redovisat.');
   // docs/copy-regler.md: testet gäller "varje headline, hook och punchline" —
   // alltså ämnesrad, förhandstext och rubriker. En knapptext ("Se kameran") är
@@ -124,7 +142,7 @@ export function validera(mejl, { html = null, text = null, produkter = [], brand
     for (const [re, vad] of FORBJUDNA_LOFTEN) if (re.test(t)) fel.push(`Förbjudet i ${var_}: ${vad}.`);
     if (ANDRA_VERKSAMHETER.test(t)) fel.push(`Annan verksamhet nämns i ${var_} (Grillkliniken/Mastern/SnarkLös/grill).`);
     if (urgency === 'ingen') for (const re of FALSK_BRADSKA) if (re.test(t)) fel.push(`Falsk brådska i ${var_}: "${t.match(re)[0]}" utan orsak i taggar.urgency.`);
-    if (KR_SUMMA.test(t)) fel.push(`Kronbelopp i copyn (${var_}): "${t.match(KR_SUMMA)[0].trim()}". Priser kommer ur produktblocken.`);
+    for (const b of otillatnaBelopp(t, tillatnaBelopp)) fel.push(`Kronbelopp i copyn (${var_}): "${b}". Priser kommer ur produktblocken.`);
     const mall = t.replace(/\{\{fornamn\}\}/g, '');
     if (/\{\{|\{%/.test(mall)) fel.push(`Mallspråk i copyn (${var_}): bara {{fornamn}} är tillåtet.`);
     if (/\{\{\s*f[oö]rnamn\s*\}\}/i.test(t) && !t.includes('{{fornamn}}')) fel.push(`Felstavad platshållare i ${var_}: skriv exakt {{fornamn}}.`);

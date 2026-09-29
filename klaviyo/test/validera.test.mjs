@@ -43,6 +43,19 @@ test('kronbelopp i copyn stoppas, priset ska komma ur produktblocken', () => {
   assert.ok(harFel(kor(mejl({ forhandstext: 'Endast 199:-' })), /Kronbelopp/));
 });
 
+test('tillatna_belopp: ett beslutat belopp med källa släpps igenom, inget annat', () => {
+  const tillatna = [{ belopp: '100 kr', kalla: 'Axels beslut 2026-09-27: tröstpriset' }];
+  const text = (t) => [{ typ: 'text', text: t }];
+  assert.ok(!harFel(kor(mejl({ block: text('På Black Friday får du 100 kr att handla för.'), tillatna_belopp: tillatna })), /Kronbelopp/));
+  // Ett annat belopp i samma mejl stoppas fortfarande, och "1 100 kr" är inte "100 kr".
+  assert.ok(harFel(kor(mejl({ block: text('100 kr nu och lådan för 299 kr.'), tillatna_belopp: tillatna })), /Kronbelopp.*"299 kr"/));
+  assert.ok(harFel(kor(mejl({ block: text('Handla för 1 100 kr.'), tillatna_belopp: tillatna })), /Kronbelopp.*"1 100 kr"/));
+  // Utan listan stoppas även 100 kr, och en rad utan källa eller utan belopp är fel.
+  assert.ok(harFel(kor(mejl({ block: text('Du får 100 kr.') })), /Kronbelopp/));
+  assert.ok(harFel(kor(mejl({ block: text('Du får 100 kr.'), tillatna_belopp: [{ belopp: '100 kr' }] })), /saknar kalla/));
+  assert.ok(harFel(kor(mejl({ tillatna_belopp: [{ belopp: 'hundra', kalla: 'x' }] })), /inget kronbelopp/));
+});
+
 test('falsk brådska stoppas när urgency är ingen, men inte vid säsong', () => {
   const text = [{ typ: 'text', text: 'Sista chansen att fixa båten.' }];
   assert.ok(harFel(kor(mejl({ block: text })), /Falsk brådska/));

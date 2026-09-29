@@ -58,7 +58,7 @@
     { "rad": "Till sushilådan", "visualisera": true, "falsifiera": true, "ingen_annan": true }
   ],
   "planerad": "2026-10-20T18:00:00+02:00",
-  "segment": ["SEG_engagerade_60d"],
+  "segment": ["SEG_samtycke"],
   "exkludera": ["SEG_oengagerade_180d"],
   "status_plan": "klar",
   "kraver_axel": null

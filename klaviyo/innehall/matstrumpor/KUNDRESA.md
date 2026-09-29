@@ -137,12 +137,14 @@ förturen, inte rabatten.
    **Axels beslut 2026-09-27 kväll: alternativ C, båda.** (A) Black Week öppnar för klubben
    söndag 22/11 kl 18:00, ett dygn före alla andra, och bara medlemmarna får veta det; (B) nya
    sorter och påfyllning går till klubben först: mejlet går ut innan sorten syns på sajten och i
-   annonserna. Kvar att bygga (nästa session, i den här ordningen): **F01 E1 v4** med de två
+   annonserna. Kvar att bygga (i den här ordningen): **F01 E1 v4** med de två
    sanna förmånerna (kräver nytt flöde i Spoks, ett aktivt flöde går inte att redigera via
-   MCP:n, Axel byter reglage som för F08), **K16 "Förtur: Black Week öppnar i kväll"** söndag
-   22/11 18:00 till samtycke, och **rabatternas starttid i Shopify flyttad** från mån 23/11 00:00
-   till sön 22/11 18:00 (automatiska rabatter gäller alla på sajten; förturen är att bara klubben
-   får veta). ✅ Black Week-frågan är avgjord (Axels beslut B 2026-09-27 kväll: trappan
+   MCP:n, Axel byter reglage som för F08) och **K16 "Förtur: Black Week öppnar i kväll"** söndag
+   22/11 18:00 till samtycke; påminnelse till sessionen mån 2/11. ✅ **Rabatternas starttid i
+   Shopify flyttad 2026-09-29** från mån 23/11 00:00 till sön 22/11 18:00 (alla tre, `startsAt`
+   2026-11-22T17:00:00Z, läst tillbaka, `klaviyo/konto/matstrumpor/shopify-rabatter.jsonl`;
+   automatiska rabatter gäller alla på sajten, förturen är att bara klubben får veta). V01 v2
+   (ons 30/9) är första mejlet som berättar förturen för klubben. ✅ Black Week-frågan är avgjord (Axels beslut B 2026-09-27 kväll: trappan
    10/20/30 % ligger kvar, fast Köp 1, få 1 slår den på par), så K16 kan skrivas: den lovar
    förturen och tidpunkten, aldrig en procentsats som är sämre än butikens vanliga deal.
 2. **Dragningen är krydda och intäktsmaskin**, inte strategin: **tre** medlemmar dras varje
