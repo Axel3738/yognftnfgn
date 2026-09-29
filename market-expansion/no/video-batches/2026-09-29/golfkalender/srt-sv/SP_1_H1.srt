@@ -1,0 +1,36 @@
+1
+00:00:00,000 --> 00:00:01,300
+Golf Adventskalender.
+
+2
+00:00:01,520 --> 00:00:03,320
+Har redan beställt den här kalendern.
+
+3
+00:00:03,520 --> 00:00:06,160
+Golf Adventskalendern har blivit en favorit inför jul.
+
+4
+00:00:06,260 --> 00:00:07,800
+Nöjda kunder har redan beställt.
+
+5
+00:00:07,880 --> 00:00:10,800
+Många säger att det var den roligaste presenten de gett eller fått.
+
+6
+00:00:10,900 --> 00:00:13,760
+Tjugofyra luckor med tjugofyra småsaker för golfaren.
+
+7
+00:00:13,880 --> 00:00:15,600
+Varje dag är det något nytt att öppna.
+
+8
+00:00:15,700 --> 00:00:16,540
+Vill du också ha en?
+
+9
+00:00:16,660 --> 00:00:18,380
+Klicka nedan innan den tar slut.
+
