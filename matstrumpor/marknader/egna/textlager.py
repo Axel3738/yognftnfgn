@@ -99,7 +99,12 @@ def main():
     fonster_brukade = set()
     def fonster(m):
         return (max(0, m['a'] - 0.15), m['b'] + 0.35)
+    # Meningar som står i övre rutan eller på etiketten har ingen svensk undertext i fältet — att sudda
+    # fältet då gav en grå rektangel mitt i bilden (mätt NO s001h1 38,9–40,3 s). Svenska rutor som ändå
+    # syns där fångas av suddningen per ruta längre ner.
+    egna_rutor = [k[n]['sv_borjar'] for n in ('topp', 'etikett') if n in k]
     for m in alla_manus:
+        if any(m['sv'].startswith(s) for s in egna_rutor): continue
         w0, w1 = fonster(m)
         over = [g for g in gamla_under if overlappar(g, w0, w1)]
         for g in over: fonster_brukade.add(id(g))
@@ -109,11 +114,18 @@ def main():
         m['_U'] = U
         sudda.append({'a': min([w0] + [g['a'] - 0.1 for g in over]), 'b': max([w1] + [g['b'] + 0.1 for g in over]), 'ruta': U})
     manus_utan = [m for m in alla_manus if not m.get('stryk')]
+    strukna = [m for m in alla_manus if m.get('stryk')]
     for i, s in enumerate(seg):
         a, b = s['a'], s['b']
         U = manus_utan[i].get('_U')
         nasta = seg[i + 1]['a'] if i + 1 < len(seg) else slut
         b_ut = min(nasta, b + 0.6) if nasta - b < 0.9 else b + 0.3
+        # Butikens adress (struken mening, "Matstrumpor.se") står kvar som svensk ruta i fältet efter
+        # sista meningen. Suddad syntes den som en grå ruta (mätt DE haikuh3 48,9–50,1 s), så den sista
+        # biten får stå kvar över den — till och med tills slutkortet är helt beige, aldrig in över det.
+        for st in strukna:
+            if b <= st['a'] < nasta:
+                b_ut = max(b_ut, min(st['b'] + 0.35, k.get('slutkort', {}).get('fran_s', slut), nasta))
         if special.get(i) == 'topp':
             r = k['topp']['ruta']
             texts.append({'a': a - 0.1, 'b': b_ut, 'text': s['text'], 'mitt': [(r[0] + r[2]) / 2, (r[1] + r[3]) / 2], 'min': [r[2] - r[0] + 6, r[3] - r[1] + 6],
@@ -135,12 +147,16 @@ def main():
         if id(g) not in fonster_brukade:
             sudda.append({'a': max(0, g['a'] - 0.2), 'b': g['b'] + 0.2, 'ruta': g['ruta']})
 
-    # 2) rubrikerna (haiku): en per avsnitt, avsnitten börjar där manuset säger Ett/Två/Tre
+    # 2) rubrikerna (haiku): en per avsnitt, avsnitten börjar där manuset säger "Ett:", "Två:", "Tre:".
+    #    Kolonet krävs: haikuh2:s inledning "Tre anledningar att inte köpa …" tog annars första platsen,
+    #    och varje rubrik hamnade ett avsnitt för sent — den svenska "TRE:" stod kvar (mätt NO 2026-09-29).
     if 'rubrik_band' in k and texter.get('rubriker'):
         y0, y1 = k['rubrik_band']
         gamla = [s for s in boxar if s['stil'] == 'ljus' and y0 <= (s['ruta'][1] + s['ruta'][3]) / 2 <= y1]
-        starter = [m['a'] for m in manus if re.match(r'^(Ett|Två|Tre)\b', m['sv'])]
+        starter = [m['a'] for m in manus if re.match(r'^(Ett|Två|Tre)\s*:', m['sv'])]
+        assert len(starter) == len(texter['rubriker']), f'{video}: {len(starter)} avsnittsstarter mot {len(texter["rubriker"])} rubriker'
         gransar = starter + [slut]
+        tackta = set()
         for n, rubrik in enumerate(texter['rubriker']):
             ga = [g for g in gamla if gransar[n] - 0.8 <= (g['a'] + g['b']) / 2 < gransar[n + 1] - 0.1]
             if not ga: continue
@@ -148,7 +164,10 @@ def main():
             a_ = min(g['a'] for g in ga); b_ = max(g['b'] for g in ga)
             texts.append({'a': a_, 'b': b_, 'text': rubrik, 'mitt': [(r[0] + r[2]) / 2, (r[1] + r[3]) / 2], 'min': [r[2] - r[0], r[3] - r[1]],
                           'max_bredd': 660, 'font_px': 26, 'farg': SVART, 'bakgrund': VIT, 'radie': 10, 'pad': [14, 6]})
-            for g in ga: sudda.append({'a': max(0, g['a'] - 0.1), 'b': g['b'] + 0.1, 'ruta': g['ruta']})
+            for g in ga: sudda.append({'a': max(0, g['a'] - 0.1), 'b': g['b'] + 0.1, 'ruta': g['ruta']}); tackta.add(id(g))
+        # en svensk rubrikruta som ingen ny rubrik fick täcka suddas ändå — aldrig ett svenskt ord kvar
+        for g in gamla:
+            if id(g) not in tackta: sudda.append({'a': max(0, g['a'] - 0.1), 'b': g['b'] + 0.1, 'ruta': g['ruta']})
 
     # 3) inledningsrutan (haiku): från start till första rubriken
     if 'hook' in k and texter.get('hook'):
