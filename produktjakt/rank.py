@@ -119,8 +119,11 @@ def main():
     ap.add_argument("--tema", action="store_true",
                     help="temarunda (t.ex. Axels julrunda 2026-09-24): alla slots får fyllas upp till --max, inget arketyptak, inga slot-minima")
     ap.add_argument("--datum", help="körningens datum/mapp-namn i batch.json (default i dag)")
+    ap.add_argument("--formtak", type=float, help="andel skyddsformer som får stå i batchen (default 0,4; 1.0 = inget tak — bara för en nischbutik där skydd ÄR sortimentet, t.ex. Carashell-rundan 2026-09-29)")
     a = ap.parse_args()
-    global ARKETYPTAK
+    global ARKETYPTAK, FORMTAK
+    if a.formtak is not None:
+        FORMTAK = a.formtak
     if a.tema:
         for s_ in SLOT_MAX:
             SLOT_MAX[s_] = a.max

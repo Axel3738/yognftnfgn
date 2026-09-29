@@ -1,0 +1,155 @@
+{
+ "agent": "HS",
+ "datum": "2026-09-29-carashell",
+ "anm": "huvudsessionen: spegelhuvarna Ducato ur lins AN 2026-09-29 (lyftes ut av arketyptaket i dagsbatchen, LIVE_VERIFIED samma dag)",
+ "kandidater": [
+  {
+   "koncept_id": null,
+   "namn_sv": "Husbilens spegelhuvar i par, Ducato",
+   "objekt": "NYTT: Husbilens backspeglar (Ducato-basen) — kåporna som får stenskott, is och grenar",
+   "form": "skydd",
+   "form_kommentar": "hård ABS-kåpa som knäpps över spegelhuset (clip-on, inga verktyg) och sitter kvar året runt; skyddsform — räknas mot formtaket",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "H_VISUELL_NYHET",
+   "slot": "exploitation",
+   "hypotes_id": "H06",
+   "vinnarlikhet": {
+    "likast": "Termoskyddet för Husbil 211 × 171 cm",
+    "delade_variabler": [
+     "samma ägare och samma bil som Termoskyddet (husbil på Ducato-bas, ägare 55+)",
+     "objekt_ute = ja, dyr > 10 tkr (ett Ducato-spegelhus kostar 2–4 tkr att byta; PriceRunner: OEM-kåpor 54–246 kr men hela spegeln är verkstadsjobb)",
+     "ankare ≥ 1,6× i fackhandeln (Milenco Skyddskåpa Backspegel 1 116 kr, getcamping) och ingen kopia i formen på PriceRunner",
+     "ägarkänd parameter (lång/medellång arm, vit/svart)",
+     "prisband 500–999"
+    ],
+    "avvikelser": [
+     "hotet är inte uppställningen utan året runt (grenar, parkeringsskador, is som slår mot kåpan) — datumet är svagt: sasong 1",
+     "old way = ingenting (de flesta kör utan) — inte en svikande presenning",
+     "H_VISUELL_NYHET som sekundär: formen är okänd i svenskt flöde (Milenco säljs bara i fackhandel) — H10-test snarare än ren H01",
+     "montering = ja, fast utan verktyg (knäpps på)"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "uppstallning_husvagn",
+    "deadline_typ": "uppställning",
+    "veckor_kvar": 1.6,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005010581700454",
+    "url": "https://www.aliexpress.com/item/1005010581700454.html",
+    "pris_usd": 28.59,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-29T07:07:42Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-29-carashell/v3/bilder/1005010581700454.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "1 par vita, 'Long Arm' (Ducato/Boxer/Relay X250/X290); syskon: 1005012811122466 (27,79 USD, svart par 'Long Medium Arm 2006–2019', LIVE 07:07:45Z — heron full av text/logga, använd inte), 1005012231511914 (20,02 USD, sökträff, styck?), 1005012725837476 (22,65 USD 'Short Arm', sökträff)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron: packshot av de två vita kåporna till vänster + foto av kåpan monterad på en vit husbils spegel till höger — textfri, i kontext, ser ut som en riktig bildel"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen i formen — PriceRunner 'backspegelskydd husbil' / 'spegelskydd husbil' / 'spegelskydd ducato' ger bara OEM-ersättningskåpor (Alkar/Van Wezel 54–246 kr = reservdelen, inte ett skydd ovanpå) och spegelfilm 135–155",
+     "pris_sek": null,
+     "url": "https://www.pricerunner.se/search?q=spegelskydd%20ducato",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "Milenco Skyddskåpa Backspegel (getcamping.se 2026-09-29)",
+     "pris_sek": 1116,
+     "url": "https://www.getcamping.se/search?q=spegel",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.6,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "getcamping.se ('spegel': Milenco Skyddskåpa Backspegel 1 116, Milenco Grand Aero-speglar 996–1 276 = husvagnsspeglar, annan sak)",
+     "pricerunner.se (3 sökningar: inga skyddskåpor, bara OEM-kåpor och film)",
+     "campingvaruhuset.se / biltema.se / jula.se (oläst)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     372,
+     455
+    ],
+    "pris_sek": 699,
+    "brutto_sek": [
+     244,
+     327
+    ],
+    "be_cpa_sek": [
+     244,
+     327
+    ],
+    "be_roas": 2.4,
+    "flerkop": false,
+    "returrisk": "medel — lång/medellång/kort arm måste väljas rätt (ägaren ser det på sin spegel), passar bara Ducato-basen"
+   },
+   "meta_tanke": {
+    "hook": "Vad kostar en ny husbilsspegel?",
+    "objekt_i_bild": "husbilens spegel med den vita kåpan påknäppt",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "kåpan knäpps på med händerna, grenen/isen tar kåpan i stället för spegelhuset"
+   },
+   "varfor": "Hård del som sitter på husbilen året runt, på samma bil som Termoskyddet: ingen svensk kopia i formen (PriceRunner 0), Milenco 1 116 kr som synligt ankare (1,6× — H06-tröskeln), textfri hero i kontext och en 3-sekundersbild (kåpan på, spegeln hel). Svagt datum — levereras som H06/H10-test, inte som datumdriven vinnare.",
+   "huvudrisk": "Inget hårt datum och ett hot (grenar, parkering) som är svårt att visa på 3 s — plus arm-varianten som kan ge fel köp.",
+   "konfidens": "LÅG",
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 3,
+    "efterfragan": 1,
+    "lucka": 2,
+    "ekonomi": 1,
+    "sasong": 1,
+    "leverantor": 2,
+    "nyhet": 3,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 12,
+    "K3": 9,
+    "K4": 9,
+    "K5": 7,
+    "K6": 8,
+    "K7": 7,
+    "K8": 7,
+    "K9": 3,
+    "K10": 3,
+    "K11": 1,
+    "K12": 0
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (grep spegel/husbil: inga spegeldelar; Husbilens Tak-AC-Huv, Cykelhållarskydd, Termoskydd = andra delar)",
+     "koncept.py sok 'spegel'/'mirror' → 0 träffar",
+     "kontot 7 d: ej läst (linsen rör inte Meta)"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005010581700454.html",
+    "https://www.aliexpress.com/item/1005012811122466.html",
+    "https://www.getcamping.se/search?q=spegel",
+    "https://www.pricerunner.se/search?q=spegelskydd%20ducato",
+    "https://www.pricerunner.se/search?q=backspegelskydd%20husbil"
+   ]
+  }
+ ]
+}

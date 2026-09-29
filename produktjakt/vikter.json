@@ -1,10 +1,10 @@
 {
  "datum": "2026-09-29",
- "antal_svar": 141,
+ "antal_svar": 152,
  "per_dom": {
-  "ja": 85,
+  "ja": 92,
   "kanske": 20,
-  "nej": 36
+  "nej": 40
  },
  "antal_utfall": 7,
  "score_regel": "(ja + 0.5*kanske + 1) / (ja + kanske + nej + 2); 0.5 = inget svar; launchad = 2 ja, >=BE = 3 ja, <BE = 3 nej",
@@ -789,6 +789,72 @@
     "kanske": 0,
     "nej": 0,
     "score": 0.667
+   },
+   "NYTT: Husbilshyttens insida — termomattan i tre delar mot rutorna": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Sopkärlets lockrem — locket hålls stängt mot skator och vind": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Motorsågen — vedkapningen till jämna klabbar (30/50 cm)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Igelkotten i trädgården": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Stuprörets utkastare — gångjärnet som fäller upp den för krattan och snöskoveln": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Stentrumlaren — stensamlarens råstenar blir blanka ädelstenar på fyra veckor, klara till jul": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Jerkypistolen med 5 munstycken — jägarens älgkött blir torkat kött i ugnen": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Båtens köl vid trailerrampen och stranden — slitytan som limmas medan skrovet står torrt": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Ekorrbordet med parasoll — ekorren sitter vid bordet och äter majskolven": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Sopkärlets vägglist — kärlet blåser inte omkull i storm": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Surdegssetet med jäskorg, burk och lame — hemmabagarens första surdegsbröd före jul": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
    }
   },
   "ankare_kalla": {
@@ -1560,6 +1626,72 @@
     "nej": 0,
     "score": 0.667
    },
+   "Hindermann Travel Invändig Isolermatta Fiat Ducato (getcamping.se 2026-09-29); Hindermann Four Seasons Isolermatta Husbil 1 084; Hindermann Thermal Window Mat Classic 2 396": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "ej mätt — ingen märkesvara i formen; fodertunna med låsbart lock 80 L (V-Plast) 269 kr är närmaste 'låst lock' men annan SAK": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Nestle Längdmätare Kolibri för Motorsåg (12–100 cm, snabbkoppling på svärdmuttern) — Skogma": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Vivara Igelkottshus XL (fackhandel, synligt ankare); därutöver 'Igelkottshus Deluxe XXL Grön' 1 799,90 på PriceRunner (brand: null)": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "Lindab Fällbar utkastare FUTK silvermetallic 87 — 339 kr (Velltra, PriceRunner-sidan läst 2026-09-28); Wijo Fällbar utkastare 075/100 411–469 kr; Plannja Fällbar Utkastare 90 546 kr": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "National Geographic Starter Rock Tumbler Kit": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "ej mätt i exakt form — närmaste svenska referens är korvstopparen (Holm 426, 'Korvstoppare 3L rostfritt' 699, Costway 858, PriceRunner 'korvstoppare' 08:53:30Z) som är en annan sak (korv, inte torkat kött)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "KeelShield Kölskydd 1,22 m svart (PriceRunner 2026-09-29); KeelShield 1,83 m 3 269; Plastimo Keelshield 6\" 1,83 m 2 549; Watski för Keelshield svart/vit (pris ej läst ur sidan)": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "Vivara Ekorrbo (närmaste ekorrobjekt i fackhandeln — annan form, hus); Wildlife Garden Ekorrmatare lockbox 489 (annan form)": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "ej mätt i samma form — strukturankaret är sopkärlsskjulet: vidaXL skjul för 2 sopkärl 3 779 kr, för 3 st 5 818 kr (PriceRunner 'wheelie bin' 2026-09-28) — annan form, inte prisankare": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Bryggahemma 'Surdegskit Large' (oval + rund jäskorg, liners, dansk visp, rakbladskniv, 2 skrapor, 2 silikonskjortor, 32 oz-burk + spatel — ca 11 delar)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
    "eurotrail/getcamping.se": {
     "ja": 3,
     "kanske": 0,
@@ -1605,10 +1737,10 @@
   },
   "ankare_klass": {
    "≥ 1,6×": {
-    "ja": 30,
+    "ja": 33,
     "kanske": 7,
-    "nej": 17,
-    "score": 0.616
+    "nej": 21,
+    "score": 0.595
    },
    "1,3–1,6×": {
     "ja": 23,
@@ -1617,16 +1749,16 @@
     "score": 0.806
    },
    "golv utan ankare": {
-    "ja": 18,
+    "ja": 19,
     "kanske": 2,
     "nej": 0,
-    "score": 0.909
+    "score": 0.913
    },
    "ej mätt": {
-    "ja": 17,
+    "ja": 20,
     "kanske": 4,
     "nej": 10,
-    "score": 0.606
+    "score": 0.639
    },
    "1,2–1,3×": {
     "ja": 8,
@@ -1661,40 +1793,40 @@
     "score": 0.5
    },
    "B_SKYDDA_DYRT": {
-    "ja": 19,
+    "ja": 20,
     "kanske": 1,
-    "nej": 3,
-    "score": 0.82
+    "nej": 4,
+    "score": 0.796
    },
    "A_AGARE_FRIKTION": {
-    "ja": 4,
+    "ja": 6,
     "kanske": 5,
-    "nej": 4,
-    "score": 0.5
+    "nej": 5,
+    "score": 0.528
    },
    "D_SNABBARE_METOD": {
-    "ja": 8,
+    "ja": 9,
     "kanske": 0,
     "nej": 3,
-    "score": 0.692
+    "score": 0.714
    },
    "H_VISUELL_NYHET": {
     "ja": 13,
     "kanske": 4,
-    "nej": 11,
-    "score": 0.533
+    "nej": 12,
+    "score": 0.516
    },
    "G_Q4_GAVA": {
-    "ja": 12,
+    "ja": 14,
     "kanske": 2,
     "nej": 6,
-    "score": 0.636
+    "score": 0.667
    },
    "E_VADER_SASONG": {
     "ja": 17,
     "kanske": 2,
-    "nej": 3,
-    "score": 0.792
+    "nej": 4,
+    "score": 0.76
    },
    "C_LAGA_ISTALLET": {
     "ja": 0,
@@ -1703,10 +1835,10 @@
     "score": 0.333
    },
    "F_HOBBY_IDENTITET": {
-    "ja": 3,
+    "ja": 4,
     "kanske": 0,
     "nej": 2,
-    "score": 0.571
+    "score": 0.625
    },
    "A4": {
     "ja": 3,
@@ -1755,16 +1887,16 @@
     "score": 0.708
    },
    "uppställning": {
-    "ja": 12,
+    "ja": 13,
     "kanske": 1,
     "nej": 1,
-    "score": 0.844
+    "score": 0.853
    },
    "höstregn": {
-    "ja": 2,
+    "ja": 4,
     "kanske": 1,
     "nej": 2,
-    "score": 0.5
+    "score": 0.611
    },
    "älgjakt": {
     "ja": 7,
@@ -1779,10 +1911,10 @@
     "score": 0.667
    },
    "vedsäsong": {
-    "ja": 4,
+    "ja": 5,
     "kanske": 1,
     "nej": 1,
-    "score": 0.688
+    "score": 0.722
    },
    "1 december": {
     "ja": 8,
@@ -1793,26 +1925,26 @@
    "första frost": {
     "ja": 14,
     "kanske": 2,
-    "nej": 3,
-    "score": 0.762
+    "nej": 4,
+    "score": 0.727
    },
    "upptagning": {
     "ja": 7,
     "kanske": 0,
-    "nej": 2,
-    "score": 0.727
+    "nej": 3,
+    "score": 0.667
    },
    "vintermatning": {
     "ja": 5,
     "kanske": 1,
-    "nej": 0,
-    "score": 0.812
+    "nej": 1,
+    "score": 0.722
    },
    "fars dag": {
-    "ja": 5,
+    "ja": 7,
     "kanske": 1,
     "nej": 0,
-    "score": 0.812
+    "score": 0.85
    },
    "invintring": {
     "ja": 1,
@@ -1841,8 +1973,8 @@
    "lövfällning": {
     "ja": 5,
     "kanske": 1,
-    "nej": 0,
-    "score": 0.812
+    "nej": 1,
+    "score": 0.722
    },
    "isläggning": {
     "ja": 1,
@@ -1862,6 +1994,12 @@
     "nej": 18,
     "score": 0.375
    },
+   "julafton (trumlingen tar 4 veckor — måste starta senast v 47)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
    "tjäle": {
     "ja": 2,
     "kanske": 0,
@@ -1871,10 +2009,10 @@
   },
   "form": {
    "skydd": {
-    "ja": 1,
+    "ja": 2,
     "kanske": 2,
     "nej": 0,
-    "score": 0.6
+    "score": 0.667
    },
    "överdrag": {
     "ja": 22,
@@ -1901,10 +2039,10 @@
     "score": 0.667
    },
    "annat": {
-    "ja": 27,
+    "ja": 30,
     "kanske": 10,
-    "nej": 22,
-    "score": 0.541
+    "nej": 25,
+    "score": 0.537
    },
    "kalenderlåda": {
     "ja": 4,
@@ -1931,16 +2069,16 @@
     "score": 0.5
    },
    "låda": {
-    "ja": 4,
+    "ja": 6,
     "kanske": 0,
     "nej": 0,
-    "score": 0.833
+    "score": 0.875
    },
    "hus": {
     "ja": 2,
     "kanske": 0,
-    "nej": 1,
-    "score": 0.6
+    "nej": 2,
+    "score": 0.5
    },
    "kläder": {
     "ja": 5,
@@ -1949,10 +2087,10 @@
     "score": 0.857
    },
    "verktyg": {
-    "ja": 7,
+    "ja": 8,
     "kanske": 0,
     "nej": 2,
-    "score": 0.727
+    "score": 0.75
    },
    "klämma": {
     "ja": 0,
@@ -2730,6 +2868,72 @@
     "nej": 0,
     "score": 0.667
    },
+   "NYTT: Husbilshyttens insida — termomattan i tre delar mot rutorna": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Sopkärlets lockrem — locket hålls stängt mot skator och vind": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Motorsågen — vedkapningen till jämna klabbar (30/50 cm)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Igelkotten i trädgården": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Stuprörets utkastare — gångjärnet som fäller upp den för krattan och snöskoveln": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Stentrumlaren — stensamlarens råstenar blir blanka ädelstenar på fyra veckor, klara till jul": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Jerkypistolen med 5 munstycken — jägarens älgkött blir torkat kött i ugnen": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Båtens köl vid trailerrampen och stranden — slitytan som limmas medan skrovet står torrt": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Ekorrbordet med parasoll — ekorren sitter vid bordet och äter majskolven": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "NYTT: Sopkärlets vägglist — kärlet blåser inte omkull i storm": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Surdegssetet med jäskorg, burk och lame — hemmabagarens första surdegsbröd före jul": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
    "Staketet — stolpen": {
     "ja": 2,
     "kanske": 0,
@@ -2757,10 +2961,10 @@
   },
   "prisband": {
    "500–999": {
-    "ja": 58,
+    "ja": 63,
     "kanske": 11,
-    "nej": 25,
-    "score": 0.672
+    "nej": 28,
+    "score": 0.668
    },
    "≥ 1 000": {
     "ja": 12,
@@ -2769,10 +2973,10 @@
     "score": 0.722
    },
    "300–499": {
-    "ja": 27,
+    "ja": 29,
     "kanske": 5,
-    "nej": 4,
-    "score": 0.803
+    "nej": 5,
+    "score": 0.793
    },
    "<300": {
     "ja": 1,
@@ -2873,6 +3077,7 @@
   "deadline_typ:fars dag",
   "deadline_typ:första frost",
   "deadline_typ:första snö",
+  "deadline_typ:höstregn",
   "deadline_typ:jul",
   "deadline_typ:lövfällning",
   "deadline_typ:mörker",

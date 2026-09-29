@@ -25352,6 +25352,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-28T09:04:58Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-29",
+       "verdict": "SOKTRAFF",
+       "kalla": "korningar/2026-09-29/fynd-sida.json"
       }
      ]
     }
@@ -25386,10 +25391,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-29",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-29T11:00:25.235Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -25399,6 +25412,10 @@
     {
      "datum": "2026-09-28",
      "handelse": "levererad på V3-arket (rank 1, exploitation, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-29",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Sopkärlets lockrem 2-pack"
@@ -25436,6 +25453,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-28T09:01:06Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-29",
+       "verdict": "SOKTRAFF",
+       "kalla": "korningar/2026-09-29/fynd-sida.json"
       }
      ]
     }
@@ -25470,10 +25492,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-29",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-29T11:00:14.000Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -25483,6 +25513,10 @@
     {
      "datum": "2026-09-28",
      "handelse": "levererad på V3-arket (rank 2, exploration, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-29",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Sopkärlets vägglist 2-pack"
@@ -25520,6 +25554,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-28T09:01:19Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-29",
+       "verdict": "SOKTRAFF",
+       "kalla": "korningar/2026-09-29/fynd-sida.json"
       }
      ]
     }
@@ -25554,10 +25593,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-29",
+     "dom": "nej",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-29T11:00:10.284Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "nej",
    "aterupptas_om": [],
    "historik": [
     {
@@ -25567,6 +25614,10 @@
     {
      "datum": "2026-09-28",
      "handelse": "levererad på V3-arket (rank 3, exploitation, konfidens LÅG)"
+    },
+    {
+     "datum": "2026-09-29",
+     "handelse": "Axel: nej "
     }
    ],
    "namn_sv": "Stuprörets uppfällbara gångjärn 2-pack"
@@ -25604,6 +25655,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-28T08:56:28Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-29",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-29/fynd-sida.json"
       }
      ]
     }
@@ -25652,10 +25708,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-29",
+     "dom": "nej",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-29T11:00:07.235Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "nej",
    "aterupptas_om": [],
    "historik": [
     {
@@ -25665,6 +25729,10 @@
     {
      "datum": "2026-09-28",
      "handelse": "levererad på V3-arket (rank 4, exploration, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-29",
+     "handelse": "Axel: nej "
     }
    ],
    "namn_sv": "Ekorrbordet med parasoll"
@@ -25702,6 +25770,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-28T09:00:00Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-29",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-29/fynd-sida.json"
       }
      ]
     }
@@ -25750,10 +25823,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-29",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-29T11:00:02.370Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -25763,6 +25844,10 @@
     {
      "datum": "2026-09-28",
      "handelse": "levererad på V3-arket (rank 5, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-29",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Surdegssetet 15 delar med jäskorg"
@@ -25800,6 +25885,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-28T09:04:30Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-29",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-29/fynd-sida.json"
       }
      ]
     }
@@ -25848,10 +25938,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-29",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-29T10:59:54.467Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -25861,6 +25959,10 @@
     {
      "datum": "2026-09-28",
      "handelse": "levererad på V3-arket (rank 6, sasong, konfidens LÅG)"
+    },
+    {
+     "datum": "2026-09-29",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Stentrumlaren med råstenar och slipmedel"
@@ -25898,6 +26000,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-28T09:04:26Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-29",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-29/fynd-sida.json"
       }
      ]
     }
@@ -25946,10 +26053,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-29",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-29T10:59:48.818Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -25959,6 +26074,10 @@
     {
      "datum": "2026-09-28",
      "handelse": "levererad på V3-arket (rank 7, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-29",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Jerkysetet i rostfritt, 5 munstycken"
@@ -25996,6 +26115,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-28T08:58:16Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-29",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-29/fynd-sida.json"
       }
      ]
     }
@@ -26044,10 +26168,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-29",
+     "dom": "nej",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-29T10:59:40.705Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "nej",
    "aterupptas_om": [],
    "historik": [
     {
@@ -26057,6 +26189,10 @@
     {
      "datum": "2026-09-28",
      "handelse": "levererad på V3-arket (rank 8, sasong, konfidens LÅG)"
+    },
+    {
+     "datum": "2026-09-29",
+     "handelse": "Axel: nej "
     }
    ],
    "namn_sv": "Igelkotthuset i trä med filttak"
@@ -26071,7 +26207,15 @@
    "arketyp": "B_SKYDDA_DYRT",
    "arketyp_sekundar": "E_VADER_SASONG",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Husbilshyttens insida — termomattan i tre delar mot rutorna",
+    "form": "skydd",
+    "arketyp": "B_SKYDDA_DYRT",
+    "deadline_typ": "uppställning",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Hindermann Travel Invändig Isolermatta Fiat Ducato (getcamping.se 2026-09-29); Hindermann Four Seasons Isolermatta Husbil 1 084; Hindermann Thermal Window Mat Classic 2 396"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -26134,10 +26278,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-29",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-29T11:01:20.901Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -26147,6 +26299,10 @@
     {
      "datum": "2026-09-29",
      "handelse": "levererad på V3-arket (rank 1, exploitation, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-29",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Husbilshyttens invändiga termomatta, 3 delar"
@@ -26161,7 +26317,15 @@
    "arketyp": "B_SKYDDA_DYRT",
    "arketyp_sekundar": "C_LAGA_ISTALLET",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Båtens köl vid trailerrampen och stranden — slitytan som limmas medan skrovet står torrt",
+    "form": "annat",
+    "arketyp": "B_SKYDDA_DYRT",
+    "deadline_typ": "upptagning",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "KeelShield Kölskydd 1,22 m svart (PriceRunner 2026-09-29); KeelShield 1,83 m 3 269; Plastimo Keelshield 6\" 1,83 m 2 549; Watski för Keelshield svart/vit (pris ej läst ur sidan)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -26224,10 +26388,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-29",
+     "dom": "nej",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-29T11:01:16.018Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "nej",
    "aterupptas_om": [],
    "historik": [
     {
@@ -26237,6 +26409,10 @@
     {
      "datum": "2026-09-29",
      "handelse": "levererad på V3-arket (rank 2, exploitation, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-29",
+     "handelse": "Axel: nej "
     }
    ],
    "namn_sv": "Kölskyddslisten — limmas på i vinter"
@@ -26251,7 +26427,15 @@
    "arketyp": "D_SNABBARE_METOD",
    "arketyp_sekundar": "A_AGARE_FRIKTION",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Motorsågen — vedkapningen till jämna klabbar (30/50 cm)",
+    "form": "verktyg",
+    "arketyp": "D_SNABBARE_METOD",
+    "deadline_typ": "vedsäsong",
+    "prisband": "300–499",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Nestle Längdmätare Kolibri för Motorsåg (12–100 cm, snabbkoppling på svärdmuttern) — Skogma"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -26314,10 +26498,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-29",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-29T11:00:55.303Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -26327,6 +26519,10 @@
     {
      "datum": "2026-09-29",
      "handelse": "levererad på V3-arket (rank 3, exploration, konfidens LÅG)"
+    },
+    {
+     "datum": "2026-09-29",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Vedmåttet på svärdet"
