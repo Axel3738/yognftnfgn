@@ -1,0 +1,105 @@
+{
+ "segment": [
+  {
+   "a": 0,
+   "b": 4.74,
+   "sv": "Om du ska ge bort en present snart så är sushiformade strumpor det snällaste du kan ge dem.",
+   "text": "Jos aiot pian antaa lahjan, sushin näköiset sukat ovat ihaninta, mitä voit antaa."
+  },
+  {
+   "a": 4.84,
+   "b": 7.08,
+   "sv": "Jag startade Matstrumpor ur en ilska.",
+   "text": "Perustin tämän firman pelkästä kiukusta."
+  },
+  {
+   "a": 7.22,
+   "b": 10.92,
+   "sv": "Jag brukar alltid vänta till sista sekund med att tänka ut vad jag ska ge bort till present.",
+   "text": "Odotan aina viime tippaan asti, ennen kuin keksin, mitä annan lahjaksi."
+  },
+  {
+   "a": 11.1,
+   "b": 13.12,
+   "sv": "Och varje gång blir det panikletande.",
+   "text": "Ja joka kerta etsin lahjaa paniikissa."
+  },
+  {
+   "a": 13.26,
+   "b": 15.9,
+   "sv": "Men en grej vi alla går kort om är strumpor.",
+   "text": "Mutta sukista meillä kaikilla on aina pulaa."
+  },
+  {
+   "a": 16.04,
+   "b": 17.52,
+   "sv": "Och udda par är vardag.",
+   "text": "Parittomat ovat arkea."
+  },
+  {
+   "a": 17.58,
+   "b": 19.16,
+   "sv": "De här blandar du aldrig ihop.",
+   "text": "Näitä et sekoita ikinä."
+  },
+  {
+   "a": 19.26,
+   "b": 22.72,
+   "sv": "Det är typ den perfekta balansen mellan praktiskt och oväntat.",
+   "text": "Ne ovat täydellinen yhdistelmä käytännöllistä ja yllättävää."
+  },
+  {
+   "a": 22.82,
+   "b": 24.14,
+   "sv": "Först tror man att det är sushi.",
+   "text": "Ensin luulet sitä sushiksi."
+  },
+  {
+   "a": 24.24,
+   "b": 25.92,
+   "sv": "Sen inser man att det är strumpor.",
+   "text": "Sitten tajuat: sukkia."
+  },
+  {
+   "a": 26.02,
+   "b": 29.42,
+   "sv": "Och helt plötsligt har du gett bort något som faktiskt får en reaktion.",
+   "text": "Ja yhtäkkiä olet antanut jotain, mistä saat aidon reaktion."
+  },
+  {
+   "a": 29.42,
+   "b": 31.02,
+   "sv": "Och som används på riktigt.",
+   "text": "Ja sitä oikeasti käytetään."
+  },
+  {
+   "a": 31.22,
+   "b": 34.74,
+   "sv": "Det är den typen av lilla present som passar perfekt till alla tillfällen.",
+   "text": "Sellainen pieni lahja, joka sopii täydellisesti kaikkiin tilaisuuksiin."
+  },
+  {
+   "a": 35.24,
+   "b": 38.06,
+   "sv": "Genomtänkt, kul men utan att försöka för mycket.",
+   "text": "Mietitty ja hauska, mutta ei yritä liikaa."
+  },
+  {
+   "a": 38.3,
+   "b": 40.14,
+   "sv": "Ser ut som sushi, är strumpor.",
+   "text": "Sukat, jotka näyttävät sushilta."
+  },
+  {
+   "a": 40.34,
+   "b": 41.34,
+   "sv": "Sushistrumpor.",
+   "text": "Sushisukat."
+  }
+ ],
+ "texter": {
+  "etikett": "Sushisukat"
+ },
+ "granskad": true,
+ "granskning": "godkänd av infödd granskare i runda 2 (2026-09-29)"
+}

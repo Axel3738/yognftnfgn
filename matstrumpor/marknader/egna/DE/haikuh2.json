@@ -106,7 +106,7 @@
    "a": 42.3,
    "b": 44.3,
    "sv": "Klicka bara på länken nu och kolla in allt.",
-   "text": "Einfach auf den Link klicken und reinschauen."
+   "text": "Jetzt einfach auf den Link klicken und reinschauen."
   }
  ],
  "texter": {
@@ -118,6 +118,6 @@
   ],
   "knapp": "JETZT KAUFEN"
  },
- "granskad": false,
- "not": "utkast för piloten (skriven av sonnet, ännu inte godkänd av granskaren) — laddas aldrig upp"
+ "granskad": true,
+ "granskning": "godkänd av infödd granskare i runda 2 (2026-09-29)"
 }
