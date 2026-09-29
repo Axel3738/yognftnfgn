@@ -53,8 +53,9 @@ ett brev dit går ingenstans (`konfig.json` → `ignorera_domaner`).
 
 CONNECTORS: **Gmail** (bara för `skicka`, i Axels egen session — rutinen
 behöver den inte och ska inte ha den). Meta läses med `META_ACCESS_TOKEN`
-(egna annonser + Ad Library när Meta släpper in token:en), Discord med
-`DISCORD_BOT_TOKEN`. Webbsökningen görs av **sessionens WebSearch-verktyg**
+(egna annonser, vår CPM), Ad Library med `META_ACCESS_TOKEN_ADLIBRARY` (den
+verifierade personens användartoken; utan den provas `META_ACCESS_TOKEN`,
+som svarar "saknar behörighet"), Discord med `DISCORD_BOT_TOKEN`. Webbsökningen görs av **sessionens WebSearch-verktyg**
 (steg 2) — Bing svarar en container med slumpsidor (mätt 2026-09-27:
 "baverbutiken" gav Texas Longhorns), DuckDuckGo och Google spärrar.
 
@@ -180,15 +181,20 @@ inget: "Inget för dig i dag."
   asmycket ads … men han har ingenting på hemsidan". Metas annonsbibliotek går
   inte att läsa härifrån (403 i Chromium, API:t saknar behörighet), så
   **Axel klistrar in annonserna** i samma meddelande: Ad Library-länkar,
-  annonstexterna (primärtext + rubrik) och gärna skärmdumpar/bilder (bifogade
-  filer i chatten sparas till `konkurrenter/output/annonser/<datum>/`). Prova
+  annonstexterna (primärtext + rubrik), **exponeringarna per annons**
+  (EU-rutan i annonsbiblioteket: "Total reach"/"Räckvidd totalt" — det är
+  talet fakturan räknar på) och gärna skärmdumpar/bilder (bifogade filer i
+  chatten sparas till `konkurrenter/output/annonser/<datum>/`). Prova
   WebFetch på varje Ad Library-länk EN gång — svarar den 403/tomt, be om
-  texten. Skriv `konkurrenter/output/<datum>.annonser.json`:
+  texten och talet. Skriv `konkurrenter/output/<datum>.annonser.json`:
 
   ```json
   { "deras": { "sidnamn": "<Facebook-sidans namn>", "doman": "<deras domän om den finns>", "url": "https://…", "mottagare": "<mejl om Axel gav en>", "foretag": "<bolagsnamn om känt>", "orgnr": "<om känt>" },
-    "annonser": [ { "lank": "https://www.facebook.com/ads/library/?id=…", "text": "<primärtexten ordagrant>", "rubrik": "<rubriken>", "bilder": ["https://…", "konkurrenter/output/annonser/<datum>/skarm1.png"], "video": false, "start": "2026-09-01" } ] }
+    "annonser": [ { "lank": "https://www.facebook.com/ads/library/?id=…", "text": "<primärtexten ordagrant>", "rubrik": "<rubriken>", "exponeringar": "12 345", "bilder": ["https://…", "konkurrenter/output/annonser/<datum>/skarm1.png"], "video": false, "start": "2026-09-01" } ] }
   ```
+
+  Saknar en annons talet: lämna fältet tomt — den går på schablontaxan och
+  märks så på fakturan. Hitta aldrig på ett tal.
 
   Sedan `node konkurrenter/kor.mjs --hamta --annonser konkurrenter/output/<datum>.annonser.json`
   — skriptet läser ALLA våra aktiva annonser (Meta) och produkttexter, jämför
@@ -203,27 +209,34 @@ inget: "Inget för dig i dag."
   cachen gör nästa körning snabb) — säg det till Axel innan du kör, och kör
   kommandot i bakgrunden med utskriften till en fil.
 
-- **`skicka <id> [--till adress] [--sprak sv|en] [--kopare "Bolag AB, adress"] [--utan-faktura] [--direkt]`**
+- **`skicka <id> [--till adress] [--sprak sv|en] [--kopare "Bolag AB, adress"] [--land GB] [--cpm 98] [--utan-faktura] [--direkt]`**
   Axels ord `skicka` i chatten ÄR godkännandet — fråga inte en gång till.
-  1. `node konkurrenter/kor.mjs --skicka <id> [--till …] [--sprak …] [--kopare …] [--utan-faktura]`
+  1. `node konkurrenter/kor.mjs --skicka <id> [--till …] [--sprak …] [--kopare …] [--land …] [--cpm …] [--utan-faktura]`
      — bygger brevet och fakturan (PDF i Chromium) till
      `konkurrenter/arenden/<id>/brev.txt`, `brev.json` (sändpaketet:
-     till/från/ämne/text/bilagor) och `faktura-<nr>.pdf`. Stoppar skriptet
-     (bankgiro/IBAN saknas i konfig, köparen saknar namn, ingen mottagare,
-     egen domän, ärendet inte `ny`): skriv exakt orsaken och vad Axel gör
-     (t.ex. `--till` med adressen, `--kopare "Bolag AB, adress"`, eller
-     fylla i `faktura.bankgiro` i `konkurrenter/konfig.json`). Fakturan
-     kräver ett konto att betala till — utan bankgiro/IBAN går bara
-     `--utan-faktura`.
-  2. Läs `brev.json`. Hämta Gmail-verktygen med `ToolSearch("gmail")`.
-     **Utan `--direkt`: skapa ett UTKAST i Gmail** med till, ämne, texten
-     och PDF:en bifogad (om verktyget tar bilagor; annars utkastet utan
-     bilaga + PDF:en till Axel med SendUserFile, och "bifoga fakturan" blir
-     hans uppgift). Ärendet står kvar som `ny` med `brev.paket` tills Axel
-     tryckt Skicka och skrivit `skickad <id>`. **Med `--direkt`: skicka
-     mejlet från Gmail**, och kör sedan
+     till/från/ämne/text/bilagor) och `faktura-<nr>.pdf`. Fakturan räknar
+     varje annons med exponeringar som exponeringar × vår CPM (mäts ur
+     Meta i samma körning, `--cpm` vinner), resten på schablon; 25 % moms
+     till svensk köpare, omvänd utomlands (`--land` när domänen inte säger
+     landet). Stoppar skriptet (IBAN saknas/fel i konfig, köparen saknar
+     namn, exponeringar utan CPM, ingen mottagare, egen domän, ärendet inte
+     `ny`): skriv exakt orsaken och vad Axel gör (t.ex. `--till` med
+     adressen, `--kopare "Bolag AB, adress"`). Utan konto går bara
+     `--utan-faktura`. Läs utskriftens rad "Faktura …: <belopp> (<grund>)"
+     och skriv grunden till Axel — han ska se att beloppet är deras
+     exponeringar gånger vår CPM, inte en gissning.
+  2. Läs `brev.json`. Gmail-verktygen: `ToolSearch("select:mcp__Gmail__create_draft,mcp__Gmail__send_message")`
+     (finns i sessionen sedan 2026-09-29; `create_draft` tar `attachments`
+     med `filename`, `mimeType: "application/pdf"` och `content` = PDF:en
+     base64 — läs filen med `base64 -w0 <fil>` i Bash). **Utan `--direkt`:
+     skapa ett UTKAST i Gmail** med `to`, `subject`, `body` (brevets text,
+     ren text — ingen markdown) och PDF:en bifogad. Svara Axel med utkastets
+     `viewUrl`. Ärendet står kvar som `ny` med `brev.paket` tills Axel tryckt
+     Skicka och skrivit `skickad <id>`. **Med `--direkt`: `send_message`
+     från Gmail** med samma fält, och kör sedan
      `node konkurrenter/kor.mjs --skickad <id> [--till …]` (kvittot: status
-     `skickad`, fristen 48 h börjar).
+     `skickad`, fristen 48 h börjar). Gmail-verktyget svarar med `id`: skriv
+     det i kvittot (`--meddelande <id>`).
   3. Saknas Gmail-connectorn i sessionen: säg det som första rad, ge Axel
      brevet (`brev.txt`) och PDF:en med SendUserFile, och hans uppgifter:
      koppla Gmail (claude.ai → Settings → Connectors → Gmail) eller klistra
@@ -234,8 +247,9 @@ inget: "Inget för dig i dag."
      resp. `konkurrentdodaren: brev skickat <id>`).
 - **`skickad <id> [--till adress]`** → `node konkurrenter/kor.mjs --skickad <id> [--till …]`,
   sedan steg 6 och 7. Bara när brevet faktiskt gått ut (Axel tryckte Skicka).
-- **`faktura <id> [--kopare …] [--sprak …]`** → `node konkurrenter/kor.mjs --faktura <id> …`,
-  PDF:en till Axel med SendUserFile. Bygger inte om en faktura som redan gått ut.
+- **`faktura <id> [--kopare …] [--sprak …] [--cpm …] [--land …]`** → `node konkurrenter/kor.mjs --faktura <id> …`,
+  PDF:en till Axel med SendUserFile och grunden i klartext (exponeringar × CPM,
+  schablonrader, moms). Bygger inte om en faktura som redan gått ut.
 - **`paminn <id>`** → `--skicka <id> --paminnelse` (paketet), Gmail-utkast/sändning
   som ovan, `--skickad <id> --paminnelse` när den gått ut. Sedan steg 6 och 7.
 - **`avfarda <id> "skäl"`** → `node konkurrenter/kor.mjs --avfarda <id> "<skäl>"`, steg 6 och 7.

@@ -21,7 +21,7 @@ node konkurrenter/kor.mjs --rapport --discord           # ärenden, filer, läge
 node konkurrenter/kor.mjs --skicka KD-2026-001 [--till adress] [--sprak sv|en] [--kopare "Bolag AB, adress"] [--utan-faktura] [--paminnelse]
                                                         # SÄNDPAKETET: brev.txt + brev.json + faktura-<nr>.pdf i arenden/<id>/ — skickar inget
 node konkurrenter/kor.mjs --skickad KD-2026-001 [--till adress] [--paminnelse]   # kvittot när brevet gått ut via Gmail
-node konkurrenter/kor.mjs --faktura KD-2026-001 [--kopare …] [--ny-faktura]      # bara fakturan
+node konkurrenter/kor.mjs --faktura KD-2026-001 [--kopare …] [--cpm 98] [--land GB] [--ny-faktura]   # bara fakturan (CPM mäts ur Meta om --cpm saknas)
 node konkurrenter/kor.mjs --skicka KD-2026-001 --via loopia --ja        # RESERV: skicka direkt från butikens kundtjänstbrevlåda
 node konkurrenter/kor.mjs --avfarda KD-2026-001 "ingen kopia"
 node konkurrenter/kor.mjs --foljupp                     # är kopian borta efter brevet?
@@ -81,13 +81,26 @@ node konkurrenter/kor.mjs --lista
    Avsändaren är **bolaget** (`konfig.json` → `brev.avsandare`):
    Stonebite Ecom AB, `contact@stonebite.org`.
 8. **Fakturan** (`faktura.mjs`): skälig ersättning enligt 54 § URL, **en rad
-   per mätt sak** — produkttext, annons (video dyrare), bild — med taxan ur
-   `konfig.json` → `faktura.taxa` (Axels beslut; standardvärdena är
-   sessionens förslag 2026-09-29). Nummer `F-<ärende>-<löpnr>`, 10 dagar
-   netto, dröjsmålsränta enligt räntelagen, moms 0 % (stäm av med
-   redovisningskonsulten före första fakturan). HTML → PDF i Chromium
-   (`page.pdf`, 2 s). **Utan bankgiro/IBAN i konfig vägrar den** — en
-   faktura utan konto är bara ett hot. Köparen läses ur deras sida
+   per mätt sak**. **Beloppet per annons = deras exponeringar × vår CPM ÷ 1000**
+   (Axels beslut 2026-09-29: "räkna ut det utifrån antalet exponeringar och
+   sen bara fakturera det som de har spenderat på annonserna") — alltså vad
+   annonsutrymmet de fått med vårt material kostar i samma kanal och land.
+   Exponeringarna läser Axel av i annonsbibliotekets EU-ruta ("Total reach")
+   och skriver i annonsfilen (`exponeringar`/`reach`, tal eller "12,3 tn");
+   **CPM:en gissas inte utan mäts** ur våra egna konton (`cpm.mjs`: Meta
+   insights, `last_30d`, per verksamhet, delade konton på kampanjprefix,
+   `cpm: false` på CaraShells US-konto). Mätt 2026-09-29: Bäverbutiken
+   97,9 kr, CaraShell 141,5 kr, Matstrumpor 130,8 kr — reserven i konfig
+   används bara när Meta inte svarar, `--cpm <kr>` vinner alltid. Annons utan
+   tal, produkttext och lösa bilder går på schablontaxan (`faktura.taxa`,
+   märkt "schablon"); `minst_per_annons` är 0 (Axels "bara"). **Moms:** 25 %
+   till svenska köpare (Axels svar: B2B), 0 % med omvänd betalningsskyldighet
+   till utländska näringsidkare (landet ur `--land`, annars domänen, annars
+   brevets språk); momsreg.nr härleds ur org.nr. Nummer `F-<ärende>-<löpnr>`,
+   10 dagar netto, dröjsmålsränta enligt räntelagen. HTML → PDF i Chromium
+   (`page.pdf`, 2 s). **Utan bankgiro/IBAN i konfig vägrar den** — och ett
+   IBAN som inte klarar kontrollsiffran (mod 97) stoppar också; Axels IBAN
+   inlagt 2026-09-29 och kontrollerat. Köparen läses ur deras sida
    (bolagsnamn/org.nr) eller ges med `--kopare "Bolag AB, adress"`. Belopp
    skrivs med vanligt mellanslag (Intl:s U+202F blir en ruta i äldre
    mejlklienter). Fakturan följer bara med FÖRSTA brevet, aldrig påminnelsen.
@@ -117,7 +130,7 @@ node konkurrenter/kor.mjs --lista
 
 | Fil | Committas | Vad |
 |---|---|---|
-| `konfig.json` | ✅ | Verksamheter, avsändare (Gmail), faktura (taxa, bankgiro), egna domäner, trösklar, Discord — facit |
+| `konfig.json` | ✅ | Verksamheter, avsändare (Gmail), faktura (beräkning, CPM-reserv, moms, IBAN, schablontaxa), egna domäner, trösklar, Discord — facit |
 | `arenden.jsonl` | ✅ | Ärendeloggen (kvittot på varje brev och faktura) |
 | `arenden/<id>.md`, `arenden/<id>/skarmdump.jpg`, `arenden/<id>/miniatyrer.json` | ✅ | Bevisen per ärende |
 | `arenden/<id>/brev.txt`, `brev.json`, `faktura-<nr>.pdf` + `.html` | ✅ | Sändpaketet: exakt det som lades i Gmail |
@@ -138,17 +151,21 @@ output/ dit (tester och provkörningar — repot rörs inte).
   loopia` fungerar bara för Bäverbutiken i den här miljön
   (`KUNDTJANST_MAIL_PASS_BAVERBUTIKEN`); CaraShells och Matstrumpors ligger
   på Railway för autosvaret.
-- Fakturan: `faktura.bankgiro` och `faktura.iban` är TOMMA tills Axel fyllt
-  i dem — `--skicka` stoppar med orsak, `--utan-faktura` skickar bara
-  brevet.
+- Fakturan: IBAN ifyllt 2026-09-29 (`--kolla` säger "kontrollsiffran
+  stämmer"); bankgiro och BIC tomma. Moms 25 % SE / omvänd utomlands — om
+  redovisningskonsulten säger skadestånd utan moms: `moms_procent: 0`.
 - **Ad Library:** `(#10) 2332002 Application does not have permission` med
   `META_ACCESS_TOKEN`; webbversionen ger 403 "Client challenge" i headless
   Chromium. Det är ett EGET program hos Meta (Ad Library API), skilt från
   appen och systemanvändaren som läser annonskontona: det kräver att en
-  fysisk person bekräftat sin identitet. Axels klick:
-  https://www.facebook.com/ID (identitet) och
-  https://www.facebook.com/ads/library/api ("Kom igång"). Koden slår på
-  källan själv när svaret blir 200. Tills dess: annonsfallet ovan.
+  fysisk person bekräftat sin identitet **och en användartoken från den
+  personen** — enligt Metas dokumentation räcker inte systemanvändarens
+  token ("API LONG TERM"). Axels klick: https://www.facebook.com/ID
+  (identitet), https://www.facebook.com/ads/library/api ("Kom igång"), sedan
+  en token ur https://developers.facebook.com/tools/explorer som
+  `META_ACCESS_TOKEN_ADLIBRARY` i Environments (`sok.mjs adLibraryToken`
+  provar den först). Koden slår på källan själv när svaret blir 200. Tills
+  dess: annonsfallet ovan.
 - Meta: OPS-kontot svarar "(#1) Please reduce the amount of data" på
   200 annonser med breda fält — därför 50 per sida, smala fält och
   halvering vid felet (`korpus.mjs hamtaAnnonssidor`).
@@ -162,8 +179,9 @@ output/ dit (tester och provkörningar — repot rörs inte).
 - Ett brev per ärende; påminnelsen bara efter ett skickat brev; eskalering bara människan.
 - Mottagaren får aldrig vara en av våra domäner; utan mottagare skickas inget.
 - Bevislistan i brevet och fakturaraderna skrivs ur mätningarna, aldrig fritt.
-- Ingen faktura utan bankgiro/IBAN, utan köparnamn, utan rader eller på 0 kr.
+- Ingen faktura utan bankgiro/IBAN (och IBAN:et måste klara mod 97), utan köparnamn, utan rader, på 0 kr, eller med exponeringar utan CPM.
+- CPM:en är mätt (Meta, egna konton, samma land), aldrig gissad; reserven i konfig bär sitt mätdatum.
 - Egna domäner (konfig + `sparning/butiker.json` + `kommentarer/konfig.json` +
   fabrikens filer) blir aldrig kandidater; marknadsplatser och sociala nätverk
   ignoreras.
-- 27 tester utan nät: `node --test konkurrenter/test/*.test.mjs` (ingår i `npm test`).
+- 30 tester utan nät: `node --test konkurrenter/test/*.test.mjs` (ingår i `npm test`).

@@ -14,8 +14,10 @@ import { plockaEpost, plockaOrgnr, upptackPlattform, shopifyJsonUrl, plockaBilde
 import { STATUS, lasArenden, sparaArende, nyttId, nyckelFor, hittaBefintligt, overgang, nyttArende, uppdateraFynd, oppna } from '../arenden.mjs';
 import { valjSprak, byggBrev, bevisrader, kontrolleraBrev, fristText } from '../brev.mjs';
 import { skickaBrev, kontrolleraForeSandning, SPARR_ENV, byggSandpaket, registreraSkickat } from '../skicka.mjs';
-import { fakturanummer, belopp, fakturarader, byggFaktura, kontrolleraFaktura, fakturaText, fakturaHtml } from '../faktura.mjs';
-import { tolkaAnnonsinput, jamforAnnons, byggAnnonsfynd } from '../annonsfall.mjs';
+import { fakturanummer, belopp, fakturarader, byggFaktura, kontrolleraFaktura, fakturaText, fakturaHtml, momsregNr, ibanGiltig, svenskKopare } from '../faktura.mjs';
+import { tolkaAnnonsinput, jamforAnnons, byggAnnonsfynd, tolkaAntal, exponeringarUr } from '../annonsfall.mjs';
+import { cpmUr, summeraInsights, insightsSokvag, hamtaCpm, valjCpm } from '../cpm.mjs';
+import { adLibraryToken } from '../sok.mjs';
 import { rapportSv, rapportEn, arendeMd, kallrader } from '../rapport.mjs';
 import { byggSida } from '../sida.mjs';
 import { gissaTyp, Bildcache } from '../bild.mjs';
@@ -312,33 +314,45 @@ test('skickaBrev: utan --ja visas bara brevet, med spärren i miljön stannar de
 
 // ------------------------------------------------------------------ faktura, Gmail-vägen och annonsfallet
 
-const KONFIG_MED_KONTO = () => ({ ...KONFIG, faktura: { ...KONFIG.faktura, bankgiro: '1234-5678', taxa: { annons: 5000, video: 8000, bild: 3000, produkttext: 5000 } } });
+const KONFIG_MED_KONTO = () => ({ ...KONFIG, faktura: { ...KONFIG.faktura, bankgiro: '1234-5678', iban: '', taxa: { annons: 5000, video: 8000, bild: 3000, produkttext: 5000 } } });
+const KONFIG_UTAN_KONTO = () => ({ ...KONFIG, faktura: { ...KONFIG.faktura, bankgiro: '', iban: '' } });
 
-test('faktura: en rad per mätt bevis, taxan ur konfig, stopp utan bankgiro/köpare, sv/en, HTML utan tomma fält', () => {
+test('faktura: en rad per mätt bevis, taxan ur konfig, stopp utan konto/fel IBAN/köpare, moms 25 % SE och omvänd utomlands, sv/en, HTML utan tomma fält', () => {
   const a = ARENDE();
   assert.equal(fakturanummer('KD-2026-007'), 'F-KD-2026-007-1');
-  assert.equal(belopp(25000, 'SEK', 'sv'), '25 000 kr'); assert.equal(belopp(25000, 'SEK', 'en'), '25,000 SEK');
+  assert.equal(belopp(25000, 'SEK', 'sv'), '25 000 kr'); assert.equal(belopp(25000, 'SEK', 'en'), '25,000 SEK'); assert.equal(belopp(97.9, 'SEK', 'sv', 1), '97,9 kr'); assert.equal(belopp(100, 'SEK', 'sv', 1), '100 kr');
+  assert.equal(momsregNr('559576-2401'), 'SE559576240101'); assert.equal(momsregNr('12'), null);
+  assert.equal(ibanGiltig('SE35 9710 0000 0971 0348 9566'), true); assert.equal(ibanGiltig('SE35 9710 0000 0971 0348 9567'), false); assert.equal(ibanGiltig(''), false);
+  assert.equal(svenskKopare({ doman: 'kopian.se' }), true); assert.equal(svenskKopare({ doman: 'copy.com' }), false); assert.equal(svenskKopare({ land: 'NO', doman: 'x.se' }), false); assert.equal(svenskKopare({ sprak: 'sv' }), true);
   const rader = fakturarader(a, KONFIG.faktura.taxa, 'sv');
   assert.deepEqual(rader.map((r) => [r.typ, r.antal, r.belopp]), [['produkttext', 1, 5000], ['bild', 1, 3000]]);
-  // Utan bankgiro/IBAN: stopp med Axels uppgift, inte en faktura utan konto
-  const utanKonto = byggFaktura(a, KONFIG, { nu: new Date('2026-09-29T08:00:00Z') });
+  // Utan bankgiro/IBAN: stopp med Axels uppgift, inte en faktura utan konto — och ett felskrivet IBAN stoppar också
+  const utanKonto = byggFaktura(a, KONFIG_UTAN_KONTO(), { nu: new Date('2026-09-29T08:00:00Z') });
   assert.match(kontrolleraFaktura(utanKonto).join(), /bankgiro eller IBAN saknas/);
+  const felIban = byggFaktura(a, { ...KONFIG, faktura: { ...KONFIG.faktura, bankgiro: '', iban: 'SE35 9710 0000 0971 0348 9567' } });
+  assert.match(kontrolleraFaktura(felIban).join(), /klarar inte kontrollsiffran/);
+  // Konfigens riktiga IBAN (Axels 2026-09-29) klarar kontrollen och grupperas fyra och fyra
+  assert.equal(byggFaktura(a, KONFIG).saljare.iban, 'SE35 9710 0000 0971 0348 9566'); assert.deepEqual(kontrolleraFaktura(byggFaktura(a, KONFIG, { kopare: 'Kopian AB' })), []);
   const f = byggFaktura(a, KONFIG_MED_KONTO(), { nu: new Date('2026-09-29T08:00:00Z'), kopare: 'Kopian AB, Storgatan 1, 111 22 Stockholm' });
   assert.deepEqual(kontrolleraFaktura(f), []);
   assert.equal(f.nr, 'F-KD-2026-007-1'); assert.equal(f.datum, '2026-09-29'); assert.equal(f.forfaller, '2026-10-09');
-  assert.equal(f.netto, 8000); assert.equal(f.moms, 0); assert.equal(f.brutto, 8000);
-  assert.equal(f.kopare.namn, 'Kopian AB'); assert.equal(f.kopare.adress, 'Storgatan 1, 111 22 Stockholm'); assert.equal(f.kopare.mail, 'info@kopian.se');
-  assert.equal(f.saljare.orgnr, '559576-2401'); assert.equal(f.saljare.mail, 'contact@stonebite.org');
+  // Svensk köpare (kopian.se): 25 % moms ovanpå
+  assert.equal(f.netto, 8000); assert.equal(f.momsProcent, 25); assert.equal(f.moms, 2000); assert.equal(f.brutto, 10000); assert.equal(f.omvand, false); assert.equal(f.berakning, 'schablon');
+  assert.equal(f.kopare.namn, 'Kopian AB'); assert.equal(f.kopare.adress, 'Storgatan 1, 111 22 Stockholm'); assert.equal(f.kopare.mail, 'info@kopian.se'); assert.equal(f.kopare.svensk, true);
+  assert.equal(f.saljare.orgnr, '559576-2401'); assert.equal(f.saljare.momsreg, 'SE559576240101'); assert.equal(f.saljare.mail, 'contact@stonebite.org');
   // Utan --kopare: deras domän som namn räcker inte om inget företag lästs
   const utanNamn = byggFaktura({ ...a, deras: { ...a.deras, doman: null, sidnamn: null } }, KONFIG_MED_KONTO());
   assert.match(kontrolleraFaktura(utanNamn).join(), /köparen saknar namn/);
   const txt = fakturaText(f);
-  for (const m of ['FAKTURA F-KD-2026-007-1', 'Produkttext kopierad', '1 × 5 000 kr', 'Att betala: 8 000 kr', 'Bankgiro 1234-5678']) assert.ok(txt.includes(m), `saknar: ${m}`);
+  for (const m of ['FAKTURA F-KD-2026-007-1', 'Produkttext kopierad', '1 × 5 000 kr', 'Att betala: 10 000 kr (Moms 25 %)', 'Bankgiro 1234-5678']) assert.ok(txt.includes(m), `saknar: ${m}`);
   const html = fakturaHtml(f);
-  for (const m of ['<title>FAKTURA F-KD-2026-007-1</title>', 'Stonebite Ecom AB', '559576-2401', 'Kopian AB', '54 § lagen (1960:729)', '8 000 kr', '1234-5678', 'Stenkolsgatan 1B']) assert.ok(html.includes(m), `saknar: ${m}`);
-  assert.doesNotMatch(html, /undefined|null|Sjöhed/);
-  const en = fakturaHtml(byggFaktura(a, KONFIG_MED_KONTO(), { sprak: 'en', kopare: 'Copy Ltd' }));
-  assert.match(en, /<title>INVOICE F-KD-2026-007-1<\/title>/); assert.match(en, /section 54 of the Swedish Act/); assert.match(en, /8,000 SEK/);
+  for (const m of ['<title>FAKTURA F-KD-2026-007-1</title>', 'Stonebite Ecom AB', '559576-2401', 'Momsreg.nr SE559576240101', 'Kopian AB', '54 § lagen (1960:729)', 'Moms 25 %', '10 000 kr', '1234-5678', 'Stenkolsgatan 1B']) assert.ok(html.includes(m), `saknar: ${m}`);
+  assert.doesNotMatch(html, /undefined|null|Sjöhed|Reverse|Omvänd/);
+  // Utländsk näringsidkare: 0 % och omvänd betalningsskyldighet, momsreg.nr med
+  const fEn = byggFaktura(a, KONFIG_MED_KONTO(), { sprak: 'en', kopare: 'Copy Ltd', land: 'GB' });
+  assert.equal(fEn.momsProcent, 0); assert.equal(fEn.omvand, true); assert.equal(fEn.brutto, 8000); assert.equal(fEn.kopare.svensk, false);
+  const en = fakturaHtml(fEn);
+  assert.match(en, /<title>INVOICE F-KD-2026-007-1<\/title>/); assert.match(en, /section 54 of the Swedish Act/); assert.match(en, /8,000 SEK/); assert.match(en, /Reverse charge/); assert.match(en, /VAT no\. SE559576240101/);
 });
 
 test('byggBrev med faktura: stycket, ämnesraden och "eller betalningen" — påminnelsen bär ingen faktura', () => {
@@ -347,11 +361,12 @@ test('byggBrev med faktura: stycket, ämnesraden och "eller betalningen" — på
   const b = byggBrev(a, { avsandare: { brand: 'Bäverbutiken', mail: 'contact@stonebite.org', butikUrl: 'https://baverbutiken.se' }, foretag: FORETAG, nu: new Date('2026-09-29T08:00:00Z'), faktura: f });
   assert.equal(b.fran, 'contact@stonebite.org');
   assert.match(b.amne, /och faktura F-KD-2026-007-1/);
-  for (const m of ['Bifogat finns faktura F-KD-2026-007-1 på 8 000 kr', '54 § upphovsrättslagen', 'förfallodag 2026-10-09', 'Uteblir borttagningen eller betalningen']) assert.ok(b.text.includes(m), `saknar: ${m}`);
+  for (const m of ['Bifogat finns faktura F-KD-2026-007-1 på 10 000 kr inklusive moms', '54 § upphovsrättslagen', 'förfallodag 2026-10-09', 'Uteblir borttagningen eller betalningen']) assert.ok(b.text.includes(m), `saknar: ${m}`);
+  assert.doesNotMatch(b.text, /exponeringar/);
   const utan = byggBrev(a, { avsandare: { brand: 'Bäverbutiken', mail: 'contact@stonebite.org' }, foretag: FORETAG });
   assert.doesNotMatch(utan.text, /faktura/i); assert.doesNotMatch(utan.amne, /faktura/);
-  const en = byggBrev({ ...a, deras: { ...a.deras, lang: 'en', doman: 'copy.com' } }, { avsandare: { brand: 'Bäverbutiken', mail: 'contact@stonebite.org' }, foretag: FORETAG, faktura: byggFaktura(a, KONFIG_MED_KONTO(), { sprak: 'en', kopare: 'Copy Ltd' }) });
-  assert.match(en.text, /Attached is invoice F-KD-2026-007-1 for 8,000 SEK/); assert.match(en.text, /removal or the payment/);
+  const en = byggBrev({ ...a, deras: { ...a.deras, lang: 'en', doman: 'copy.com' } }, { avsandare: { brand: 'Bäverbutiken', mail: 'contact@stonebite.org' }, foretag: FORETAG, faktura: byggFaktura(a, KONFIG_MED_KONTO(), { sprak: 'en', kopare: 'Copy Ltd', land: 'GB' }) });
+  assert.match(en.text, /Attached is invoice F-KD-2026-007-1 for 8,000 SEK, being/); assert.match(en.text, /removal or the payment/);
 });
 
 test('Gmail-vägen: sändpaketet bär brev + bilaga, kvittot flyttar ärendet och kräver en riktig adress', () => {
@@ -377,12 +392,13 @@ test('annonsfallet: deras annonser mot våra annonstexter + produkttexter, en ra
   const input = tolkaAnnonsinput({
     deras: { sidnamn: 'Kopian', url: 'https://www.kopian.se/', mottagare: 'info@kopian.se', foretag: 'Kopian AB', orgnr: '556677-8899' },
     annonser: [
-      { lank: 'https://www.facebook.com/ads/library/?id=1', text: 'Regnet, löven och fågelskiten hamnar på taket, och det är precis den ytan du inte går upp och kollar. Beställ i dag!' },
-      { lank: 'https://www.facebook.com/ads/library/?id=2', text: 'Täck bara taket – inte hela vagnen. Ett helöverdrag är tungt att få på plats ensam och sitter och skaver mot lacken.', video: true },
+      { lank: 'https://www.facebook.com/ads/library/?id=1', text: 'Regnet, löven och fågelskiten hamnar på taket, och det är precis den ytan du inte går upp och kollar. Beställ i dag!', exponeringar: '12 345' },
+      { lank: 'https://www.facebook.com/ads/library/?id=2', text: 'Täck bara taket – inte hela vagnen. Ett helöverdrag är tungt att få på plats ensam och sitter och skaver mot lacken.', video: true, reach: 8000 },
       { lank: 'https://www.facebook.com/ads/library/?id=3', text: 'Helt egen text om ett annat skydd för en annan vagn, utan något gemensamt alls.' },
     ],
   });
   assert.equal(input.deras.doman, 'kopian.se'); assert.equal(input.annonser.length, 3);
+  assert.equal(input.annonser[0].exponeringar, 12345); assert.equal(input.annonser[1].exponeringar, 8000); assert.equal(input.annonser[1].exponeringarKalla, 'reach'); assert.equal(input.annonser[2].exponeringar, null);
   const egnaAnnonser = [{ id: '1', namn: 'Takoverdrag_PD_1_H1', verksamhet: 'Bäverbutiken', handle: 'takoverdrag', text: VAR_TEXT, bild: 'https://cdn/ann1.png' }];
   const egnaProdukter = [{ verksamhet: 'Bäverbutiken', handle: 'takoverdrag', titel: 'Taköverdrag Husvagn', url: 'https://baverbutiken.se/products/takoverdrag', butik: 'https://baverbutiken.se', text: VAR_TEXT, bilder: ['https://cdn/p1.png'] }];
   const j = jamforAnnons(input.annonser[0], { egnaAnnonser, egnaProdukter, konfig: KONFIG });
@@ -407,13 +423,64 @@ test('annonsfallet: deras annonser mot våra annonstexter + produkttexter, en ra
   assert.match(bEn.text, /documented that in\n\n    your ads on Facebook and Instagram \(page "Kopian"\)/);
   // Axels lokala skärmdump står aldrig i brevet, och ingen rad om "bilderna på er sida"
   assert.doesNotMatch(b.text, /axels-skarmdump|på er sida är våra egna produktbilder/);
-  const f = byggFaktura(arende, KONFIG_MED_KONTO(), { nu: new Date('2026-09-29T08:00:00Z') });
-  assert.deepEqual(kontrolleraFaktura(f), []);
-  // Raderna följer bevisordningen (starkaste träffen först) — videon hade den längsta sviten; skärmdumpen ger en bildrad
-  assert.deepEqual(f.rader.map((r) => [r.typ, r.belopp]).sort(), [['annons', 5000], ['bild', 3000], ['video', 8000]]); assert.equal(f.brutto, 16000); assert.equal(f.kopare.namn, 'Kopian AB'); assert.equal(f.kopare.orgnr, '556677-8899');
-  const html = byggSida({ arenden: [{ ...arende, faktura: { ...f, fil: 'x.pdf' } }], datum: '2026-09-29' });
-  assert.match(html, /Deras annonser som återger våra — 2 st/); assert.match(html, /Fakturan F-KD-2026-009-1 på <strong>16 000 kr<\/strong>/); assert.match(html, /utkast i din Gmail/);
+  assert.match(fynd.skal.join(' '), /20 345 exponeringar enligt Axels avläsning/);
+  // Schablon: en rad per annons (video dyrare) + skärmdumpen som bildrad, 25 % moms på svensk köpare
+  const fSchablon = byggFaktura(arende, { ...KONFIG_MED_KONTO(), faktura: { ...KONFIG_MED_KONTO().faktura, berakning: 'schablon' } }, { nu: new Date('2026-09-29T08:00:00Z') });
+  assert.deepEqual(kontrolleraFaktura(fSchablon), []);
+  assert.deepEqual(fSchablon.rader.map((r) => [r.typ, r.belopp]).sort(), [['annons', 5000], ['bild', 3000], ['video', 8000]]); assert.equal(fSchablon.netto, 16000); assert.equal(fSchablon.brutto, 20000); assert.equal(fSchablon.kopare.namn, 'Kopian AB'); assert.equal(fSchablon.kopare.orgnr, '556677-8899');
+  // Exponeringar (Axels beslut): annons = exponeringar × CPM ÷ 1000; utan CPM stoppar kontrollen, med CPM räknas bilden inuti annonsen inte en gång till
+  const utanCpm = byggFaktura(arende, KONFIG_MED_KONTO(), { nu: new Date('2026-09-29T08:00:00Z') });
+  assert.match(kontrolleraFaktura(utanCpm).join(), /2 annons\(er\) har exponeringar men ingen CPM/);
+  const cpm = { sek: 100, text: 'Bäverbutiken, Meta', period: 'last_30d', matt: '2026-09-29T08:00:00Z' };
+  const fExp = byggFaktura(arende, KONFIG_MED_KONTO(), { nu: new Date('2026-09-29T08:00:00Z'), cpm });
+  assert.deepEqual(kontrolleraFaktura(fExp), []);
+  assert.deepEqual(fExp.rader.map((r) => [r.typ, r.grund, r.belopp]).sort(), [['annons', 'exponeringar', 1235], ['video', 'exponeringar', 800]]);
+  assert.equal(fExp.berakning, 'exponeringar'); assert.equal(fExp.exponeringar, 20345); assert.equal(fExp.netto, 2035); assert.equal(fExp.moms, 509); assert.equal(fExp.brutto, 2544); assert.equal(fExp.cpm.sek, 100);
+  assert.match(fExp.rader.find((r) => r.typ === 'annons').beskrivning, /12 345 exponeringar × CPM 100 kr$/);
+  const fTxt = fakturaText(fExp); assert.match(fTxt, /Raderna märkta CPM är beräknade på annonsens exponeringar/); assert.match(fTxt, /senaste 30 dagarna/);
+  assert.match(fakturaHtml(fExp), /värdet av det annonsutrymme ni fått med vårt material/);
+  // Golvet i konfig (minst_per_annons) lyfter en liten annons och märker raden
+  const fGolv = byggFaktura(arende, { ...KONFIG_MED_KONTO(), faktura: { ...KONFIG_MED_KONTO().faktura, minst_per_annons: 2000 } }, { cpm });
+  assert.deepEqual(fGolv.rader.map((r) => r.belopp).sort(), [2000, 2000]); assert.match(fGolv.rader[0].beskrivning, /minimibelopp/);
+  // En annons utan tal går på schablon och märks så, mitt bland exponeringsraderna
+  const blandat = { ...arende, bevis: { ...arende.bevis, annonser: arende.bevis.annonser.map((t, i) => (i === 1 ? { ...t, exponeringar: null } : t)) } };
+  const fBland = byggFaktura(blandat, KONFIG_MED_KONTO(), { cpm });
+  assert.deepEqual(fBland.rader.map((r) => r.grund).sort(), ['exponeringar', 'schablon']); assert.match(fBland.rader.find((r) => r.grund === 'schablon').beskrivning, /schablon, exponeringar okända/);
+  // Brevet nämner grunden när fakturan räknats på exponeringar
+  const bExp = byggBrev(arende, { avsandare: { brand: 'Bäverbutiken', mail: 'contact@stonebite.org' }, foretag: FORETAG, faktura: fExp });
+  assert.match(bExp.text, /faktura F-KD-2026-009-1 på 2 544 kr inklusive moms/); assert.match(bExp.text, /räknat på annonsernas 20 345 exponeringar enligt Metas annonsbibliotek/); assert.match(bExp.text, /CPM 100 kr\)/);
+  const html = byggSida({ arenden: [{ ...arende, faktura: { ...fExp, fil: 'x.pdf' } }], datum: '2026-09-29' });
+  assert.match(html, /Deras annonser som återger våra — 2 st/); assert.match(html, /Fakturan F-KD-2026-009-1 på <strong>2 544 kr<\/strong> — 20 345 exponeringar × CPM 100 kr, moms 25 %/); assert.match(html, /utkast i din Gmail/);
   assert.doesNotMatch(html, /axels-skarmdump/);
+});
+
+test('tolkaAntal och exponeringarUr: Axels avlästa tal i alla former', () => {
+  assert.equal(tolkaAntal(12345), 12345); assert.equal(tolkaAntal('12 345'), 12345); assert.equal(tolkaAntal('12.345'), 12345); assert.equal(tolkaAntal('12,3 tn'), 12300);
+  assert.equal(tolkaAntal('12.3K'), 12300); assert.equal(tolkaAntal('1,2 M'), 1200000); assert.equal(tolkaAntal('abc'), null); assert.equal(tolkaAntal(0), null); assert.equal(tolkaAntal(''), null); assert.equal(tolkaAntal(null), null);
+  assert.deepEqual(exponeringarUr({ reach: '9 800' }), { antal: 9800, kalla: 'reach' }); assert.deepEqual(exponeringarUr({ exponeringar: 5, visningar: 9 }), { antal: 5, kalla: 'exponeringar' }); assert.deepEqual(exponeringarUr({}), { antal: null, kalla: null });
+});
+
+test('cpm: cpmUr, summeraInsights med prefix, insightsSokvag, hamtaCpm mot falsk klient (hoppar cpm:false, tål ett trasigt konto), valjCpm-ordningen', async () => {
+  assert.equal(cpmUr(734244, 7500569), 97.9); assert.equal(cpmUr(0, 0), null); assert.equal(cpmUr(100, 2000), 50);
+  assert.deepEqual(summeraInsights([{ campaign_name: 'CARASHELL_SE_x', spend: '10', impressions: '100' }, { campaign_name: 'DRYTREK_SE', spend: '99', impressions: '9' }], 'CARASHELL_'), { spend: 10, visningar: 100, kampanjer: 1 });
+  assert.equal(insightsSokvag({ id: '1' }), 'act_1/insights?fields=spend,impressions&date_preset=last_30d');
+  assert.match(insightsSokvag({ id: 'act_2', prefix: 'CARASHELL_' }, 'last_7d'), /^act_2\/insights\?level=campaign.*date_preset=last_7d.*CONTAIN.*CARASHELL_/);
+  const anrop = [];
+  const klient = { get: async (s) => { anrop.push(s); if (s.startsWith('act_9/')) throw new Error('Meta act_9/insights: (190) token'); return s.includes('level=campaign') ? { data: [{ campaign_name: 'CARASHELL_SE', spend: '200', impressions: '1000' }, { campaign_name: 'ANNAT', spend: '5', impressions: '1' }] } : { data: [{ spend: '100', impressions: '2000' }] }; } };
+  const m = await hamtaCpm([{ id: '1', namn: 'A' }, { id: '2', namn: 'B', prefix: 'CARASHELL_' }, { id: '3', namn: 'US', prefix: 'CARASHELL_', cpm: false }, { id: '9', namn: 'Trasigt' }], { klient, nu: () => '2026-09-29T08:00:00Z' });
+  assert.equal(m.sek, 100); assert.equal(m.spend, 300); assert.equal(m.visningar, 3000); assert.equal(m.period, 'last_30d');
+  assert.equal(m.konton.length, 4); assert.equal(m.konton[1].kampanjer, 1); assert.match(m.konton[2].hoppad, /^cpm: false/); assert.match(m.konton[3].fel, /190/); assert.equal(anrop.length, 3);
+  const utan = await hamtaCpm([{ id: '1', namn: 'A' }], { klient: null, token: null }); assert.equal(utan.sek, null); assert.match(utan.fel, /saknas/);
+  assert.deepEqual(valjCpm({ override: 120, konfig: KONFIG, verksamhet: 'Bäverbutiken' }), { sek: 120, text: 'Bäverbutiken, Meta', period: null, kalla: 'axel', matt: null });
+  const mattVal = valjCpm({ matt: { sek: 97.9, period: 'last_30d', matt: '2026-09-29T08:00:00Z' }, konfig: KONFIG, verksamhet: 'Bäverbutiken' }); assert.equal(mattVal.kalla, 'matt'); assert.equal(mattVal.sek, 97.9);
+  const reserv = valjCpm({ konfig: KONFIG, verksamhet: 'Bäverbutiken' }); assert.equal(reserv.kalla, 'reserv'); assert.equal(reserv.sek, 97.9); assert.equal(reserv.matt, '2026-09-29');
+  assert.equal(valjCpm({ konfig: { faktura: {} }, verksamhet: 'X' }), null);
+  // Konfigens konton: CaraShells US-konto räknas inte in i CPM:en
+  assert.equal(KONFIG.verksamheter.CaraShell.konton.find((k) => k.id === '1107817401910319').cpm, false);
+});
+
+test('adLibraryToken: den verifierade personens användartoken först, sedan den vanliga', () => {
+  assert.equal(adLibraryToken({ META_ACCESS_TOKEN: 'sys' }), 'sys'); assert.equal(adLibraryToken({ META_ACCESS_TOKEN: 'sys', META_ACCESS_TOKEN_ADLIBRARY: 'person' }), 'person'); assert.equal(adLibraryToken({}), null);
 });
 
 // ------------------------------------------------------------------ rapport och sida

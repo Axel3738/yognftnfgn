@@ -105,11 +105,15 @@ export function filtreraTraffar(traffar, { egna = [], ignorera = [] } = {}) {
 export const AD_LIBRARY_FALT = ['id', 'page_id', 'page_name', 'ad_creative_bodies', 'ad_creative_link_titles', 'ad_creative_link_captions', 'ad_creative_link_descriptions', 'ad_delivery_start_time', 'ad_snapshot_url', 'publisher_platforms'];
 
 export const AD_LIBRARY_HJALP = [
-  'Meta släpper in i Ad Library-API:t först när den person som äger token:en har bekräftat sin identitet och appen godkänts:',
-  '1. Öppna https://www.facebook.com/ID och gör identitetsbekräftelsen (legitimation, tar 1–2 dagar).',
+  'Ad Library-API:t är ett EGET program hos Meta, skilt från appen och systemanvändaren som läser våra annonskonton: det kräver en PERSON som bekräftat sin identitet, och en användartoken från den personen — systemanvändarens token (API LONG TERM) räcker inte.',
+  '1. Logga in på Facebook som den som är admin för appen. Öppna https://www.facebook.com/ID och gör identitetsbekräftelsen (legitimation, tar 1–2 dagar).',
   '2. Öppna https://www.facebook.com/ads/library/api och klicka "Get started" / "Kom igång" — följ stegen till slutet.',
-  '3. Klart. Rutinen provar API:t varje körning och börjar läsa konkurrenternas annonser den dag svaret blir 200.',
+  '3. Öppna https://developers.facebook.com/tools/explorer, välj appen, klicka "Generate Access Token", kopiera token:en och lägg in den som META_ACCESS_TOKEN_ADLIBRARY i Environments på claude.ai (en användartoken lever 60 dagar — förläng med "Extend" i Access Token Debugger).',
+  '4. Klart. Rutinen provar API:t varje körning (ADLIBRARY-token:en först, sedan META_ACCESS_TOKEN) och börjar läsa konkurrenternas annonser den dag svaret blir 200.',
 ].join('\n');
+
+/** Token:en för ads_archive: den verifierade personens användartoken först, sedan den vanliga. */
+export const adLibraryToken = (env = process.env) => env.META_ACCESS_TOKEN_ADLIBRARY || env.META_ACCESS_TOKEN || null;
 
 export function adLibraryUrl(term, { lander = ['SE'], limit = 50, version = process.env.META_API_VERSION || 'v23.0', falt = AD_LIBRARY_FALT } = {}) {
   const p = new URLSearchParams({
@@ -134,8 +138,8 @@ export function adLibraryLank(term, land = 'SE') {
  * { status: 'ok' | 'saknar_behorighet' | 'fel' | 'saknar_token', annonser, fel, hjalp }
  * Egna sidor (page_id) sorteras bort.
  */
-export async function sokAdLibrary(term, { token = process.env.META_ACCESS_TOKEN, lander = ['SE'], fetchFn = fetch, egnaSidor = new Set(), timeout = 30000, limit = 50 } = {}) {
-  if (!token) return { term, status: 'saknar_token', annonser: [], fel: 'META_ACCESS_TOKEN saknas i miljön', hjalp: null };
+export async function sokAdLibrary(term, { token = adLibraryToken(), lander = ['SE'], fetchFn = fetch, egnaSidor = new Set(), timeout = 30000, limit = 50 } = {}) {
+  if (!token) return { term, status: 'saknar_token', annonser: [], fel: 'META_ACCESS_TOKEN_ADLIBRARY och META_ACCESS_TOKEN saknas i miljön', hjalp: null };
   const url = `${adLibraryUrl(term, { lander, limit })}&access_token=${encodeURIComponent(token)}`;
   let j;
   try {

@@ -14,7 +14,7 @@
       "sprak": "sv",
       "konton": [
         { "id": "915422744950975", "namn": "MagiBorsten DK (OPS-kontot)", "prefix": "CARASHELL_" },
-        { "id": "1107817401910319", "namn": "Magiborsten UK", "prefix": "CARASHELL_" }
+        { "id": "1107817401910319", "namn": "Magiborsten UK", "prefix": "CARASHELL_", "cpm": false, "_om": "USA-kampanjerna: räknas inte in i CPM:en (annan marknad, 256 kr mot 141 i Norden, mätt 2026-09-29) — annonserna läses ändå." }
       ]
     },
     "Matstrumpor": {
@@ -75,12 +75,22 @@
     "aktiv": true,
     "valuta": "SEK",
     "betalvillkor_dagar": 10,
-    "moms_procent": 0,
+    "moms_procent": 25,
+    "moms_utland_procent": 0,
     "bankgiro": "",
-    "iban": "",
+    "iban": "SE35 9710 0000 0971 0348 9566",
     "bic": "",
+    "berakning": "exponeringar",
+    "minst_per_annons": 0,
+    "cpm": {
+      "lage": "matt",
+      "period": "last_30d",
+      "reserv_sek": { "Bäverbutiken": 97.9, "CaraShell": 141.5, "Matstrumpor": 130.8 },
+      "matt": "2026-09-29",
+      "_om": "Vår egen kostnad per tusen visningar, per verksamhet, läst ur Meta (konkurrenter/cpm.mjs) när fakturan byggs — lage 'matt'. reserv_sek är den senast uppmätta (2026-09-29, last_30d: MagiBorsten 734 244 kr / 7 500 569 visningar = 97,9; OPS-kontots CARASHELL_-kampanjer 141,5; nya kungen 130,8; CaraShells US-kampanjer i UK-kontot 256,2 räknas inte in — svensk kanal, svensk köpare) och används bara när Meta inte svarar. --cpm <kr> vinner alltid."
+    },
     "taxa": { "annons": 5000, "video": 8000, "bild": 3000, "produkttext": 5000 },
-    "_om": "Fakturan som följer med brevet (Axels order 2026-09-29: 'vi skickar med en färdig faktura'): skälig ersättning för nyttjandet enligt 54 § URL, en rad per kopierad annons/bild/produkttext som rutinen MÄTT (konkurrenter/faktura.mjs). Taxan är Axels beslut — standardvärdena är sessionens förslag 2026-09-29 tills han sagt annat. bankgiro/iban är TOMMA tills Axel fyller i dem: utan konto vägrar --skicka att bygga fakturan. moms_procent 0 = ersättning för intrång faktureras utan moms här; stäm av med redovisningskonsulten innan första fakturan går."
+    "_om": "Fakturan som följer med brevet (Axels order 2026-09-29: 'vi skickar med en färdig faktura'): skälig ersättning för nyttjandet enligt 54 § URL, en rad per kopierad annons/bild/produkttext som rutinen MÄTT (konkurrenter/faktura.mjs). BELOPPET (Axels beslut 2026-09-29, andra vändan: 'räkna ut det utifrån antalet exponeringar och sen bara fakturera det som de har spenderat'): berakning 'exponeringar' = per annons exponeringar × vår CPM ÷ 1000, alltså vad deras annonsutrymme kostat i samma kanal; exponeringarna läser Axel av i annonsbibliotekets EU-ruta och skriver i annonsfilen. Saknas talet går annonsen på schablontaxan (taxa, sessionens förslag). minst_per_annons 0 = inget golv (Axels 'bara'). iban ifyllt av Axel 2026-09-29 (kontrollsiffran stämmer, mod 97 = 1). MOMS: 25 % till svenska köpare (Axels svar 'ja, B2B … 25 %'), moms_utland_procent 0 med omvänd betalningsskyldighet till utländska näringsidkare; är ersättningen skadestånd utan moms enligt redovisningskonsulten sätts moms_procent 0. Momsreg.nr härleds ur org.nr (SE559576240101)."
   },
   "discord": {
     "kanal": "copycats",
